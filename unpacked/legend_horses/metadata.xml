@@ -70,30 +70,32 @@
   <sprite id="horse_body_pattern_04" offsetY="35" ic="FF4D719A" width="142" height="142" img="entity\bodies\horse_body_pattern_04.png" left="-40" right="40" top="-48" bottom="48" />
   <sprite id="horse_body_pattern_04_dead" offsetX="6" offsetY="10" ic="FF374D76" width="131" height="114" img="entity\bodies\horse_body_pattern_04_dead.png" left="-65" right="66" top="-57" bottom="53" />
  
-  <sprite id="bust_head_100" offsetY="35" ic="FF5B7CAD" width="104" height="142" img="entity\heads\bust_head_100.png" left="-6" right="44" top="-34" bottom="47" />
-  <sprite id="bust_head_100_injured" offsetY="35" ic="FF5B7CAD" width="104" height="142" img="entity\heads\bust_head_100_injured.png" left="-6" right="44" top="-34" bottom="47" />
-  <sprite id="bust_head_100_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4F6C9D" width="131" height="125" img="entity\heads\bust_head_100_dead.png" left="-45" right="15" top="-56" bottom="0" />
-  <sprite id="bust_head_101" offsetY="35" ic="FF5B7CAD" width="104" height="142" img="entity\heads\bust_head_101.png" left="-6" right="44" top="-34" bottom="47" />
-  <sprite id="bust_head_101_injured" offsetY="35" ic="FF5B7CAD" width="104" height="142" img="entity\heads\bust_head_100_injured.png" left="-6" right="44" top="-34" bottom="47" />
-  <sprite id="bust_head_101_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4F6C9D" width="131" height="125" img="entity\heads\bust_head_101_dead.png" left="-45" right="15" top="-56" bottom="0" />
-  <sprite id="bust_head_102" offsetY="35" ic="FF5B7CAD" width="104" height="142" img="entity\heads\bust_head_102.png" left="-6" right="44" top="-34" bottom="47" />
-  <sprite id="bust_head_102_injured" offsetY="35" ic="FF5B7CAD" width="104" height="142" img="entity\heads\bust_head_100_injured.png" left="-6" right="44" top="-34" bottom="47" />
+ <sprite id="bust_head_102" offsetY="35" ic="FF5B7CAD" width="104" height="142" img="entity\heads\bust_head_102.png" left="-6" right="44" top="-34" bottom="47" />
+  <sprite id="bust_head_102_injured" offsetY="35" ic="FF5B7CAD" width="104" height="142" img="entity\heads\bust_head_108_injured.png" left="-6" right="44" top="-34" bottom="47" />
   <sprite id="bust_head_102_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4F6C9D" width="131" height="125" img="entity\heads\bust_head_102_dead.png" left="-45" right="15" top="-56" bottom="0" />
   <sprite id="bust_head_103" offsetY="35" ic="FF5B7CAD" width="104" height="142" img="entity\heads\bust_head_103.png" left="-6" right="44" top="-34" bottom="47" />
-  <sprite id="bust_head_103_injured" offsetY="35" ic="FF5B7CAD" width="104" height="142" img="entity\heads\bust_head_100_injured.png" left="-6" right="44" top="-34" bottom="47" />
+  <sprite id="bust_head_103_injured" offsetY="35" ic="FF5B7CAD" width="104" height="142" img="entity\heads\bust_head_108_injured.png" left="-6" right="44" top="-34" bottom="47" />
   <sprite id="bust_head_103_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4F6C9D" width="131" height="125" img="entity\heads\bust_head_103_dead.png" left="-45" right="15" top="-56" bottom="0" />
   <sprite id="bust_head_104" offsetY="35" ic="FF5B7CAD" width="104" height="142" img="entity\heads\bust_head_104.png" left="-6" right="44" top="-34" bottom="47" />
-  <sprite id="bust_head_104_injured" offsetY="35" ic="FF5B7CAD" width="104" height="142" img="entity\heads\bust_head_100_injured.png" left="-6" right="44" top="-34" bottom="47" />
+  <sprite id="bust_head_104_injured" offsetY="35" ic="FF5B7CAD" width="104" height="142" img="entity\heads\bust_head_108_injured.png" left="-6" right="44" top="-34" bottom="47" />
   <sprite id="bust_head_104_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4F6C9D" width="131" height="125" img="entity\heads\bust_head_104_dead.png" left="-45" right="15" top="-56" bottom="0" />
   <sprite id="bust_head_105" offsetY="35" ic="FF5B7CAD" width="104" height="142" img="entity\heads\bust_head_105.png" left="-6" right="44" top="-34" bottom="47" />
-  <sprite id="bust_head_105_injured" offsetY="35" ic="FF5B7CAD" width="104" height="142" img="entity\heads\bust_head_100_injured.png" left="-6" right="44" top="-34" bottom="47" />
+  <sprite id="bust_head_105_injured" offsetY="35" ic="FF5B7CAD" width="104" height="142" img="entity\heads\bust_head_108_injured.png" left="-6" right="44" top="-34" bottom="47" />
   <sprite id="bust_head_105_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4F6C9D" width="131" height="125" img="entity\heads\bust_head_105_dead.png" left="-45" right="15" top="-56" bottom="0" />
   <sprite id="bust_head_106" offsetY="35" ic="FF5B7CAD" width="104" height="142" img="entity\heads\bust_head_106.png" left="-6" right="44" top="-34" bottom="47" />
-  <sprite id="bust_head_106_injured" offsetY="35" ic="FF5B7CAD" width="104" height="142" img="entity\heads\bust_head_100_injured.png" left="-6" right="44" top="-34" bottom="47" />
+  <sprite id="bust_head_106_injured" offsetY="35" ic="FF5B7CAD" width="104" height="142" img="entity\heads\bust_head_108_injured.png" left="-6" right="44" top="-34" bottom="47" />
   <sprite id="bust_head_106_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4F6C9D" width="131" height="125" img="entity\heads\bust_head_106_dead.png" left="-45" right="15" top="-56" bottom="0" />
   <sprite id="bust_head_107" offsetY="35" ic="FF5B7CAD" width="104" height="142" img="entity\heads\bust_head_107.png" left="-6" right="44" top="-34" bottom="47" />
-  <sprite id="bust_head_107_injured" offsetY="35" ic="FF5B7CAD" width="104" height="142" img="entity\heads\bust_head_100_injured.png" left="-6" right="44" top="-34" bottom="47" />
+  <sprite id="bust_head_107_injured" offsetY="35" ic="FF5B7CAD" width="104" height="142" img="entity\heads\bust_head_108_injured.png" left="-6" right="44" top="-34" bottom="47" />
   <sprite id="bust_head_107_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4F6C9D" width="131" height="125" img="entity\heads\bust_head_107_dead.png" left="-45" right="15" top="-56" bottom="0" />
+ 
+   <sprite id="bust_head_108" offsetY="35" ic="FF5B7CAD" width="104" height="142" img="entity\heads\bust_head_108.png" left="-6" right="44" top="-34" bottom="47" />
+  <sprite id="bust_head_108_injured" offsetY="35" ic="FF5B7CAD" width="104" height="142" img="entity\heads\bust_head_108_injured.png" left="-6" right="44" top="-34" bottom="47" />
+  <sprite id="bust_head_108_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4F6C9D" width="131" height="125" img="entity\heads\bust_head_108_dead.png" left="-45" right="15" top="-56" bottom="0" />
+  <sprite id="bust_head_109" offsetY="35" ic="FF5B7CAD" width="104" height="142" img="entity\heads\bust_head_109.png" left="-6" right="44" top="-34" bottom="47" />
+  <sprite id="bust_head_109_injured" offsetY="35" ic="FF5B7CAD" width="104" height="142" img="entity\heads\bust_head_108_injured.png" left="-6" right="44" top="-34" bottom="47" />
+  <sprite id="bust_head_109_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4F6C9D" width="131" height="125" img="entity\heads\bust_head_109_dead.png" left="-45" right="15" top="-56" bottom="0" />
+ 
  
  
   <sprite id="horse_hair_black" offsetY="35" ic="FF365A74" width="104" height="142" img="entity\heads\horse_hair_black.png" left="-23" right="31" top="-11" bottom="51" />

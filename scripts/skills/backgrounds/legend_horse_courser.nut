@@ -5,7 +5,7 @@ this.legend_horse_courser <- this.inherit("scripts/skills/backgrounds/legend_hor
 		this.legend_horse.create();
 		this.m.ID = "background.legend_horse_courser";
 		this.m.Name = "Courser";
-		this.m.Icon = "ui/backgrounds/donkey.png";
+		this.m.Icon = "ui/backgrounds/legend_horse.png";
 		this.m.BackgroundDescription = "Coursers are swift and strong horses well-suited for war, hunting and transportation.";
 		this.m.GoodEnding = "%name% the Courser was sold to a Lady of a Noble House as her coming-of-age present. Though its fighting skill dulled with age, it was well-loved and enjoyed the luxurious life of a Noble's steed.";
 		this.m.BadEnding = "%name% the Courser didn't wear its warwounds with as much pride and dignity one could have hoped, and one time when the horse encountered a knight in the city, it went wild and started bucking. When the knight himself was unhorsed in the commotion, there was no mercy. %name% was put down.";
@@ -25,6 +25,75 @@ this.legend_horse_courser <- this.inherit("scripts/skills/backgrounds/legend_hor
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[3];
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[2];
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[3];
+		this.m.CustomPerkTree = [
+				[
+				this.Const.Perks.PerkDefs.Colossus,
+				this.Const.Perks.PerkDefs.NineLives,
+				this.Const.Perks.PerkDefs.Steadfast,
+				this.Const.Perks.PerkDefs.Recover,
+				this.Const.Perks.PerkDefs.Adrenalin,
+				this.Const.Perks.PerkDefs.LegendHorseLongeing
+			],
+			[
+				this.Const.Perks.PerkDefs.Dodge,
+				this.Const.Perks.PerkDefs.HoldOut,
+				this.Const.Perks.PerkDefs.LegendComposure,
+				this.Const.Perks.PerkDefs.SteelBrow,
+				this.Const.Perks.PerkDefs.LegendHorseLiberty,
+				this.Const.Perks.PerkDefs.LegendHorseBitting,
+				this.Const.Perks.PerkDefs.LegendHorseDesensitization
+			],
+			[
+				this.Const.Perks.PerkDefs.Anticipation,
+				this.Const.Perks.PerkDefs.Steadfast,
+				this.Const.Perks.PerkDefs.Sprint,
+				this.Const.Perks.PerkDefs.Relentless,
+				this.Const.Perks.PerkDefs.LegendHorseCollection,
+				this.Const.Perks.PerkDefs.LegendBackToBasics,
+				this.Const.Perks.PerkDefs.LegendHorseCharge
+				
+			],
+			[
+				this.Const.Perks.PerkDefs.LegendEfficientPacking,
+				this.Const.Perks.PerkDefs.LegendAmmoBinding,
+				this.Const.Perks.PerkDefs.LegendMedPackages,
+				this.Const.Perks.PerkDefs.LegendToolsDrawers,
+				this.Const.Perks.PerkDefs.LegendHorseImpulsion,
+				this.Const.Perks.PerkDefs.LegendHorseHippology
+			],
+			[
+				this.Const.Perks.PerkDefs.LoneWolf,
+				this.Const.Perks.PerkDefs.Underdog,
+				this.Const.Perks.PerkDefs.Footwork,
+				this.Const.Perks.PerkDefs.LegendHorseLegControl
+				this.Const.Perks.PerkDefs.LegendHorseLeadChange,
+				this.Const.Perks.PerkDefs.LegendHorseParthianShot
+			],
+			[
+				this.Const.Perks.PerkDefs.Nimble,
+				this.Const.Perks.PerkDefs.LastStand,
+				this.Const.Perks.PerkDefs.Rebound,
+				this.Const.Perks.PerkDefs.Rotation,
+				this.Const.Perks.PerkDefs.LegendMuscularity,
+				this.Const.Perks.PerkDefs.LegendHorsePiaffe,
+				this.Const.Perks.PerkDefs.LegendHorseTempiChange,
+			],
+			[
+				this.Const.Perks.PerkDefs.Stalwart,
+				this.Const.Perks.PerkDefs.LegendSkillfulStacking
+				this.Const.Perks.PerkDefs.LegendAmmoBundles,
+				this.Const.Perks.PerkDefs.LegendMedIngredients,
+				this.Const.Perks.PerkDefs.LegendToolsSpares,
+				this.Const.Perks.PerkDefs.LegendHorseFlyingChange,
+				this.Const.Perks.PerkDefs.LegendHorsePirouette,
+				this.Const.Perks.PerkDefs.LegendHorsePassage
+			],
+			[],
+			[],
+			[],
+			[]
+		];
+
 	}
 
 	function onBuildDescription()
