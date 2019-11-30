@@ -1790,9 +1790,10 @@ These can show up in civilians, bandits or militia
 * The gather time required to find one of these items is 1-100 hours of camping, minus your combined total Apothecary levels.
 	
 - Assassin:
-* Hidden - Now has visual effects to show when its working 
-* Untouchable - New Perk - Gain 40 melee and ranged defense while hidden 
-* Assassinate - Damage doubled while hidden
+Recruits now get camouflage
+* Camouflage - Now has visual effects to show when its working 
+* Untouchable - New Perk - Gain 40 melee and ranged defense while camouflaged
+* Assassinate - Damage doubled while camouflaged
 * Gains: BagsAndBelts, Pathfinder, Bullseye, Holdout, Backstabber, Prepare to bleed, push the advantage, slaughter, underdog
 * Loses: Student, Onslaught, Gifted, favoured enemy barbarian, battleheart, rebound, mind over body, battleflow 
 	
@@ -1822,20 +1823,20 @@ These can show up in civilians, bandits or militia
 
 Horses:
 Horses no longer spawn with human heads.
-Charge - Move up to four spaces to engage an enemy 
-Pirouette- disengage from an enemy and move up to three squares away. 
-Longeing - Gain portion of the horse's resolve in battle	
-Liberty	 - gain portion of rider's resolve	 	
-Desensitization	- Gain portion of rider's mattack	
-Bitting	Gain portion of rider's mdef	
-Piaffe	- gain a portion of horses reolve 
-Collection	gain portion of horse's fatigue
-Impulsion	
-Lead change	Movement costs 25% less fatigue
-Flying change	gain AP
-Tempi change	Increased Rdef 
-Passage 	Better movement in rough terrain
-Parthian shot	Increased Rattack 25%
-Leg control	Increased rattack  25%	
-Hippology	Increased hitpoints 25%	
+* Charge - New Perk - Move up to four spaces to engage an enemy 
+* Pirouette - New Perk -  disengage from an enemy and move up to three squares away. 
+* Longeing - New Perk -  Gain portion of the horse's resolve in battle	
+* Liberty	 - New Perk -  gain portion of rider's resolve	 	
+* Desensitization	- New Perk -  Gain portion of rider's mattack	
+* Bitting	- New Perk - Gain portion of rider's mdef	
+* Piaffe	- New Perk -  gain a portion of horses reolve 
+* Collection	- New Perk -  gain portion of horse's fatigue
+* Impulsion - New Perk - 	gain portion of horses initiative 
+* Lead change - New Perk - 	Movement costs 25% less fatigue
+* Flying change	- New Perk -  gain AP
+* Tempi change	- New Perk - Increased Rdef 
+* Passage 	- New Perk - Better movement in rough terrain
+* Parthian shot	- New Perk - Increased Rattack 25%
+* Leg control	- New Perk - Increased rattack  25%	
+* Hippology	- New Perk - Increased hitpoints 25%	
 

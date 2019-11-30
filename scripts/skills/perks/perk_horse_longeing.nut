@@ -1,4 +1,4 @@
-this.perk_legend_horse_longeing <- this.inherit("scripts/skills/skill", {
+this.perk_horse_longeing <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{

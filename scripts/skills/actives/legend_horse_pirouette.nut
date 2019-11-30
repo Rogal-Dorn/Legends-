@@ -5,11 +5,12 @@ this.legend_horse_pirouette <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "actives.legend_horse_pirouette";
 		this.m.Name = "Pirouette";
 		this.m.Description = "Learning to turn quickly allows quick changes in direction required to leave a Zone of Control without triggering free attacks.";
-		this.m.Icon = "ui/perks/perk_25_active.png";
-		this.m.IconDisabled = "ui/perks/perk_25_active_sw.png";
+		this.m.Icon = "ui/perks/piroutte_perk.png";
+		this.m.IconDisabled = "ui/perks/piroutte_perk_bw.png";
 		this.m.Overlay = "perk_25_active";
 		this.m.SoundOnUse = [
-			"sounds/combat/footwork_01.wav"
+			"sounds/combat/rearing_01.wav",
+			"sounds/combat/rearing_02.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.Any;
