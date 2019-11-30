@@ -1,9 +1,9 @@
 <brush name="gfx/legend_characters.png" version="17">
 
-<sprite id="bust_head_100" offsetY="35" ic="FF5B7CAD" width="104" height="142" img="entity\heads\bust_head_100.png" left="-22" right="30" top="-20" bottom="46" />
-<sprite id="bust_head_101" offsetY="35" ic="FF5B7CAD" width="104" height="142" img="entity\heads\bust_head_101.png" left="-22" right="30" top="-20" bottom="46" />
-<sprite id="bust_head_100_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4C6897" width="131" height="125" img="entity\heads\bust_head_100_dead.png" left="-44" right="16" top="-57" bottom="1" />
-<sprite id="bust_head_101_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4C6897" width="131" height="125" img="entity\heads\bust_head_101_dead.png" left="-44" right="16" top="-57" bottom="1" />
+<sprite id="bust_head_50" offsetY="35" ic="FF5B7CAD" width="104" height="142" img="entity\heads\bust_head_50.png" left="-22" right="30" top="-20" bottom="46" />
+<sprite id="bust_head_51" offsetY="35" ic="FF5B7CAD" width="104" height="142" img="entity\heads\bust_head_51.png" left="-22" right="30" top="-20" bottom="46" />
+<sprite id="bust_head_50_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4C6897" width="131" height="125" img="entity\heads\bust_head_50_dead.png" left="-44" right="16" top="-57" bottom="1" />
+<sprite id="bust_head_51_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4C6897" width="131" height="125" img="entity\heads\bust_head_51_dead.png" left="-44" right="16" top="-57" bottom="1" />
 
 <sprite id="bust_head_berserker_01" offsetY="35" ic="FF5B7CAD" width="104" height="142" img="entity\heads\bust_head_berserker_01.png" left="-22" right="30" top="-20" bottom="46" />
 <sprite id="bust_head_berserker_02" offsetY="35" ic="FF5B7CAD" width="104" height="142" img="entity\heads\bust_head_berserker_02.png" left="-22" right="30" top="-20" bottom="46" />
