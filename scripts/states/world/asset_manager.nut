@@ -394,7 +394,6 @@ this.asset_manager <- {
 		this.m.CombatDifficulty = _settings.Difficulty;
 		this.m.EconomicDifficulty = _settings.EconomicDifficulty;
 		this.m.IsIronman = _settings.Ironman;
-		this.m.IsAutosave = _settings.Autosave;
 		this.m.IsPermanentDestruction = _settings.PermanentDestruction;
 		this.m.IsLegendPerkTrees = _settings.LegendPerkTrees;
 		this.m.Origin = _settings.StartingScenario;
@@ -407,7 +406,7 @@ this.asset_manager <- {
 		this.m.Ammo = this.Const.LegendMod.StartResources[_settings.BudgetDifficulty].Ammo;
 		this.m.ArmorParts = this.Const.LegendMod.StartResources[_settings.BudgetDifficulty].ArmorParts;
 		this.m.Medicine = this.Const.LegendMod.StartResources[_settings.BudgetDifficulty].Medicine;
-
+		this.m.IsAutosave = _settings.Autosave;
 		this.m.Stash.clear();
 		this.m.Origin.onSpawnAssets();
 		local bros = this.World.getPlayerRoster().getAll();

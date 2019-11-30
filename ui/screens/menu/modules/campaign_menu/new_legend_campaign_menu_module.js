@@ -683,6 +683,11 @@ NewLegendCampaignMenuModule.prototype.createDIV = function (_parentDiv)
 			radioClass: 'iradio_flat-orange',
 			increaseArea: '30%'
 		});
+
+		var row = $('<div class="row" />');
+		rightColumn.append(row);
+		var title = $('<div class="title title-font-big font-color-title">Autosave</div>');
+		row.append(title);
 		var autosaveControl = $('<div class="control autosave-control"/>');
 		row.append(autosaveControl);
 		this.mAutosaveCheckbox = $('<input type="checkbox" id="cb-autosave"/>');

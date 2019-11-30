@@ -95,7 +95,8 @@ this.new_campaign_menu_module <- this.inherit("scripts/ui/screens/ui_module", {
 			LegendGenderEquality = _settings[25],
 			LegendMagic = _settings[26],
 			LegendArmor = _settings[27],
-			Debug = _settings[28]
+			Debug = _settings[28],
+			Autosave = _settings[29]
 		};
 
 		// local settings = {

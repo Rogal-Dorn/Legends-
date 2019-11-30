@@ -56,6 +56,8 @@ var NewCampaignMenuModule = function () {
 
 	this.mIronmanCheckbox = null;
 	this.mIronmanCheckboxLabel = null;
+	this.mAutosaveCheckbox = null;
+	this.mAutosaveCheckboxLabel = null;
 	this.mCompanyName = null;
 
 	this.mEvilRandomCheckbox = null;
@@ -646,6 +648,18 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv) {
 			radioClass: 'iradio_flat-orange',
 			increaseArea: '30%'
 		});
+
+		var autosaveControl = $('<div class="control autosave-control"/>');
+		row.append(autosaveControl);
+		this.mAutosaveCheckbox = $('<input type="checkbox" id="cb-autosave"/>');
+		autosaveControl.append(this.mAutosaveCheckbox);
+		this.mAutosaveCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-autosave">Autosave Off</label>');
+		autosaveControl.append(this.mAutosaveCheckboxLabel);
+		this.mAutosaveCheckbox.iCheck({
+			checkboxClass: 'icheckbox_flat-orange',
+			radioClass: 'iradio_flat-orange',
+			increaseArea: '30%'
+		});
 	}
 
 	this.mFirstPanel = $('<div class="display-none"/>');
@@ -1168,6 +1182,10 @@ NewCampaignMenuModule.prototype.bindTooltips = function () {
 		elementId: TooltipIdentifier.MenuScreen.NewCampaign.Ironman
 	});
 
+	this.mAutosaveCheckboxLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.Autosave });
+	this.mAutosaveCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.Autosave });
+
+
 	this.mEconomicDifficultyEasyLabel.bindTooltip({
 		contentType: 'ui-element',
 		elementId: TooltipIdentifier.MenuScreen.NewCampaign.EconomicDifficultyEasy
@@ -1479,6 +1497,11 @@ NewCampaignMenuModule.prototype.unbindTooltips = function () {
 
 	this.mIronmanCheckboxLabel.unbindTooltip();
 	this.mIronmanCheckbox.unbindTooltip();
+
+
+	this.mAutosaveCheckboxLabel.unbindTooltip();
+	this.mAutosaveCheckbox.unbindTooltip();
+
 
 	this.mEvilRandomLabel.unbindTooltip();
 	this.mEvilRandomCheckbox.unbindTooltip();
@@ -1878,6 +1901,7 @@ NewCampaignMenuModule.prototype.collectSettings = function () {
 	settings.push(this.mLegendMagicCheckbox.is(":checked"));
 	settings.push(this.mLegendArmorCheckbox.is(":checked"));
 	settings.push(this.mDebugCheckbox.is(":checked"));
+	settings.push(this.mAutosaveCheckbox.is(':checked'));
 	return settings;
 }
 
