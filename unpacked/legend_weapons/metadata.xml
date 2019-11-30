@@ -585,4 +585,10 @@
   <sprite id="icon_legend_great_khopesh_named_bloodied" offsetY="35" ic="FF29344E" width="130" height="142" img="icons\icon_legend_great_khopesh_named_bloodied.png" left="-65" right="13" top="-56" bottom="52" />
   <sprite id="runed_icon_legend_great_khopesh" offsetY="35" ic="FF374554" width="130" height="142" img="icons\runed_icon_legend_great_khopesh.png" left="-65" right="13" top="-56" bottom="52" />
   <sprite id="runed_icon_legend_great_khopesh_bloodied" offsetY="35" ic="FF29344E" width="130" height="142" img="icons\runed_icon_legend_great_khopesh_bloodied.png" left="-65" right="13" top="-56" bottom="52" />
+ 
+ <sprite id="icon_named_lute_01" offsetY="35" ic="FF3F5874" width="130" height="142" img="icons\icon_named_lute_01.png" left="-15" right="65" top="-69" bottom="17" />
+  <sprite id="icon_named_lute_01_bloodied" offsetY="35" ic="FF3F5874" width="130" height="142" img="icons\icon_named_lute_01_bloodied.png" left="-15" right="65" top="-69" bottom="17" />
+   <sprite id="runed_icon_named_lute_01" offsetY="35" ic="FF3F5874" width="130" height="142" img="icons\runed_icon_named_lute_01.png" left="-15" right="65" top="-69" bottom="17" />
+  <sprite id="runed_icon_named_lute_01_bloodied" offsetY="35" ic="FF3F5874" width="130" height="142" img="icons\runed_icon_named_lute_01_bloodied.png" left="-15" right="65" top="-69" bottom="17" />
+ 
  </brush>
