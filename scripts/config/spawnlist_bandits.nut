@@ -335,6 +335,44 @@ gt.Const.World.Spawn.BanditDefenders <-
 			Types =
 			[
 				{
+					Type = this.Const.World.Spawn.Troops.LegendPeasantButcher,
+					Cost = 15,
+					Roll = true
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendPeasantMinstrel,
+					Cost = 15,
+					Roll = true
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendPeasantWoodsman,
+					Cost = 15,
+					Roll = true
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendPeasantMiner,
+					Cost = 15,
+					Roll = true
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendPeasantMonk,
+					Cost = 20,
+					Roll = true
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendPeasantFarmhand,
+					Cost = 15,
+					Roll = true
+				}
+			]
+		},
+
+		{
+			Weight = 1,
+			MinR = 0.50 * 585,
+			Types =
+			[
+				{
 					Type = this.Const.World.Spawn.Troops.HedgeKnight,
 					Cost = 40,
 					Roll = true

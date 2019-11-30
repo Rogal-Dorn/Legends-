@@ -34,6 +34,7 @@ this.legend_peasant_butcher <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_bloodbath"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_slaughter"));
 		this.m.Skills.add(this.new("scripts/skills/actives/legend_prepare_bleed_skill"));
+		this.m.Skills.add(this.new("scripts/skills/racial/legend_rabble_racial"));
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 			{
 			this.m.Hitpoints = b.Hitpoints * 1.5;

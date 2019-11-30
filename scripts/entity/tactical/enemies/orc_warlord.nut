@@ -270,6 +270,40 @@ this.orc_warlord <- this.inherit("scripts/entity/tactical/actor", {
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
 			}
 
+		if (!this.Tactical.State.isScenarioMode())
+		{
+			local dateToSkip = 0;
+			switch (this.World.Assets.getCombatDifficulty())
+			{
+				case this.Const.Difficulty.Easy:
+					dateToSkip = 120;
+					break;
+				case this.Const.Difficulty.Normal:
+					dateToSkip = 90
+					break;
+				case this.Const.Difficulty.Hard:
+					dateToSkip = 60
+					break;
+				case this.Const.Difficulty.Legendary:
+					dateToSkip = 30
+					break;
+			}
+
+			if (this.World.getTime().Days >= dateToSkip)
+			{
+				local bonus = this.Math.min(1, this.Math.floor( (this.World.getTime().Days - dateToSkip) / 15.0));
+				b.MeleeSkill += bonus;
+				b.RangedSkill += bonus;
+				b.MeleeDefense += this.Math.floor(bonus / 2);
+				b.RangedDefense += this.Math.floor(bonus / 2);
+				b.Hitpoints += this.Math.floor(bonus * 2);
+				b.Initiative += this.Math.floor(bonus / 2);
+				b.Stamina += bonus;
+				b.XP += this.Math.floor(bonus * 4);
+				b.Bravery += bonus;
+				b.FatigueRecoveryRate += this.Math.floor(bonus / 4);
+			}
+		}
 	}
 
 	function onFinish()
