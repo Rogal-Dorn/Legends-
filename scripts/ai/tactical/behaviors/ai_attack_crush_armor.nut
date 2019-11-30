@@ -4,6 +4,7 @@ this.ai_attack_crush_armor <- this.inherit("scripts/ai/tactical/behavior", {
 		PossibleSkills = [
 			"actives.crush_armor",
 			"actives.demolish_armor"
+			"actives.legend_halberd_smite"
 		],
 		Skill = null
 	},
