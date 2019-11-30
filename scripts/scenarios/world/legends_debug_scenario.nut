@@ -35,20 +35,20 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			bro.setVeteranPerks(2);
 		}
 
-		// local horsesize = 10
-		// for( local i = 0; i < horsesize; i = ++i )
-		// {
-		// 	local broLevel = broLevelMax
-		// 	local broPerks = broLevel - 1;
-		// 	local bro;
-		// 	bro = roster.create("scripts/entity/tactical/player");
-		// 	bro.m.HireTime = this.Time.getVirtualTimeF();
-		// 	bro.setStartValuesEx(this.Const.HorseBackgrounds);
-		// 	bro.m.Level = broLevel;
-		// 	bro.m.LevelUps = broPerks;
-		// 	bro.m.PerkPoints = broPerks;
-		// 	bro.setVeteranPerks(2);
-		// }
+		 local horsesize = 10
+		 for( local i = 0; i < horsesize; i = ++i )
+		 {
+		 	local broLevel = broLevelMax
+		 	local broPerks = broLevel - 1;
+		 	local bro;
+		 	bro = roster.create("scripts/entity/tactical/player");
+		 	bro.m.HireTime = this.Time.getVirtualTimeF();
+		 	bro.setStartValuesEx(this.Const.HorseBackgrounds);
+		 	bro.m.Level = broLevel;
+		 	bro.m.LevelUps = broPerks;
+		 	bro.m.PerkPoints = broPerks;
+		 	bro.setVeteranPerks(2);
+		 }
 
 
 
