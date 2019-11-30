@@ -73,7 +73,7 @@ this.legends_player_horserider <- this.inherit("scripts/entity/tactical/player",
 //determine action points
 		local horseAP = this.getHorse().getActionPoints();
 		local riderAP = this.getRider().getActionPoints();
-		local totalAP = (horseAP + riderAP) / 2;
+		local totalAP = this.Math.floor((horseAP + riderAP) - 18);
 
 
 		b.ActionPoints = totalAP;
@@ -81,7 +81,7 @@ this.legends_player_horserider <- this.inherit("scripts/entity/tactical/player",
 //determine hitpoints
 		local horseHP = this.getHorse().getHitpoints();
 		local riderHP = this.getRider().getHitpoints();
-		local totalHP = (horseHP + riderHP) / 2;
+		local totalHP = this.Math.floor((horseHP + riderHP) / 2);
 		b.Hitpoints = totalHP;
 
 //determine resolve
@@ -103,8 +103,8 @@ this.legends_player_horserider <- this.inherit("scripts/entity/tactical/player",
 		b.Stamina = totalFatigue;
 
 //determine melee skill 
-		local horseMeleeSkill  = this.getHorse().getMeleeSkill();
-		local riderMeleeSkill  = this.getRider().getMeleeSkill();
+		local horseMeleeSkill  = this.getHorse().getBaseProperties().MeleeSkill;
+		local riderMeleeSkill  = this.getRider().getBaseProperties().MeleeSkill;
 		local totalMeleeSkill  = (horseMeleeSkill  + riderMeleeSkill ) / 2;
 
 		if (this.getHorse().getSkills().hasSkill("perk.legend_horse_desensitization"))
@@ -115,8 +115,8 @@ this.legends_player_horserider <- this.inherit("scripts/entity/tactical/player",
 		b.MeleeSkill = totalMeleeSkill;
 
 //determine ranged skill 
-		local horseRangedSkill  = this.getHorse().getRangedSkill();
-		local riderRangedSkill  = this.getRider().getRangedSkill();
+		local horseRangedSkill  = this.getHorse().getBaseProperties().RangedSkill;
+		local riderRangedSkill  = this.getRider().getBaseProperties().RangedSkill;
 		local totalRangedSkill  = (horseRangedSkill  + riderRangedSkill ) / 2;
 
 		if (this.getHorse().getSkills().hasSkill("perk.legend_horse_parthian_shot"))
@@ -127,8 +127,8 @@ this.legends_player_horserider <- this.inherit("scripts/entity/tactical/player",
 		b.RangedSkill = totalRangedSkill;
 
 //determine melee defense
-		local horseMeleeDefense  = this.getHorse().getMeleeDefense();
-		local riderMeleeDefense  = this.getRider().getMeleeDefense();
+		local horseMeleeDefense  = this.getHorse().getBaseProperties().MeleeDefense;
+		local riderMeleeDefense  = this.getRider().getBaseProperties().MeleeDefense;
 		local totalMeleeDefense  = (horseMeleeDefense  + riderMeleeDefense ) / 2;
 
 		if (this.getHorse().getSkills().hasSkill("perk.legend_horse_bitting"))
@@ -139,14 +139,14 @@ this.legends_player_horserider <- this.inherit("scripts/entity/tactical/player",
 		b.MeleeDefense = totalMeleeDefense;
 
 //determine ranged defense
-		local horseRangedDefense  = this.getHorse().getRangedDefense();
-		local riderRangedDefense  = this.getRider().getRangedDefense();
+		local horseRangedDefense  = this.getHorse().getBaseProperties().RangedDefense;
+		local riderRangedDefense  = this.getRider().getBaseProperties().RangedDefense;
 		local totalRangedDefense  = (horseRangedDefense  + riderRangedDefense ) / 2;
 		b.RangedDefense = totalRangedDefense;
 
 //determine initiative
-		local horseInitiative = this.getHorse().getInitiative();
-		local riderInitiative = this.getRider().getInitiative();
+		local horseInitiative = this.getHorse().getBaseProperties().Initiative;
+		local riderInitiative = this.getRider().getBaseProperties().Initiative;
 		local totalInitiative = (horseInitiative + riderInitiative) / 2;
 		b.Initiative = totalInitiative;
 
