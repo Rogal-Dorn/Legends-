@@ -394,7 +394,10 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 			{
 				r.setTreated(true);
 				r.setQueue(0);
+				if (r.getContainer().getActor() != null)
+				{
 				r.getContainer().getActor().updateInjuryVisuals();
+				}
 				this.m.InjuriesHealed.push(r);
 				this.m.Queue[i] = null;
 			}
