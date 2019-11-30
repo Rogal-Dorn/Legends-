@@ -1738,9 +1738,9 @@ https://drive.google.com/open?id=1WMxpxCXbba7f00vqMXhM_IYmrVU7H47P
 
 13.0.0.10 Balance Patch
 
-- Rebalance Dynamic Perks - Reduces intensity of effect, reduces differences between backgrounds
+- Rebalance Dynamic Perks - Reduces intensity of effect, reduces differences between backgrounds. 
 - Increases stash and ammo carrying capacity for all backgrounds 
-- Nerfs barter
+- Nerfs barter, now has a falloff. Fixes bug where barter was effecting delivery quests 10x too much
 - Fixed black monolith battle not loading.
 - Fixed Piercing bolt perk.
 - Fixed lute being double grippable.
@@ -1754,8 +1754,8 @@ https://drive.google.com/open?id=1WMxpxCXbba7f00vqMXhM_IYmrVU7H47P
 - New higher tier Bandits:
  - Veterans (upgrades to Raiders)
  - Warlord (upgrades to Leaders ; guarenteed multiple famed items!)
- * After (Easy 120, Noraml 90, Hard 60, Legendary 30) days, Bandit Leaders and Bandit Warlords will increase ALL of their stats every 15 days and Bandit Veterans will increase MS, RS, HP every 15 days - until your company perishes!
-- Vampire Lords now have bloodbath and slaughter perks.
+ * After (Easy 120, Normal 90, Hard 60, Legendary 30) days, Bandit Leaders, Bandit Warlords, Militia Captains, Noble Sergeants and Orc warlords will increase ALL of their stats every 15 days and Bandit Veterans will increase MS, RS, HP every 15 days.
+ - Vampire Lords now have bloodbath and slaughter perks.
 
 
 - New Mid tier peasant enemies:
@@ -1765,9 +1765,8 @@ https://drive.google.com/open?id=1WMxpxCXbba7f00vqMXhM_IYmrVU7H47P
  - Peasant Minstrel - drums of war and life 
  - Peasant Monk - high resolve, rallies the peasants 
  - Peasant Poacher - ranged unit with increased accuracy 
-
-Perks:
-
+These can show up in civilians, bandits or militia
+ 
 - Cultists:	
 * Flesh Mortification - damage increased by 5-10% of your resolve while using cat'o'nine tails. Half this effect applies to other whips
 * Scourging - melee skill increased by 10% of your resolve while using cat'o'nine tails. Half this effect applies to other whips
@@ -1808,6 +1807,7 @@ Perks:
  * Drums of life - new perk - 1 healing per turn to all units, stacks 
  * Entice buffed to range 9 
  * Gained revolt 
+ Drums and lutes can now be found in markets. It is possible to find a named golden lute.  
 
 -Peddlers
  * barter skill now has falloff for buying and selling, equal to the square root of your barter skill. 
@@ -1820,22 +1820,22 @@ Perks:
  
 
 
-Horse perks:
-
-Longeing 	Gain resolve 25%	Time spent working on a long rope helps build trust between horse and rider. 
-Liberty	gain portion of rider's resolve	Though extensive roundpenning training, the horse gains trust in the movements of the rider. 	
-Desensitization	Gain portion of rider's mattack	Using loud noises and sudden movements, the horse is trained to not react to the sounds of battle until the rider tells it to. This makes it much more useful in battle. 
-Bitting	Gain portion of rider's mdef	Getting a horse accustomed to the feel of a bit and a bridle, makes it easier to control the movements. This increases defenses in battle
-Pirouette	footwork with 3 range	Learning to turn quickly allows quick changes in direction required to escape enemies
-Piaffe	Better mattack 25%	Keeping the horse moving can retain their focus and prepare them for oncoming battle. 	
-Collection	gain fatigue 25%	By training the horses posture, advanced movements become easier to perform and less draining
-Impulsion	Increase initiative	Effective leverage of equestrian physiology relaxes the spinal column and allows the hindquarters to engage effectively. 
-Lead change	Movement costs 25% less fatigue	A horses lead leg can tire, by training a horse to swap legs it is possible to prevent the horse from tiring. 
-Flying change	gain AP	Changing lead legs at high speeds is an advanced move that can allow horses to cover much larger distances
-Tempi change	Increased Rdef 25%	the most challenging form of lead change, a tempi change requires shifting back and forth between lead legs. This form of training can allow the horse to change lead leg according to the situation, useful in rough terrain.
-Passage 	Better movement in rough terrain	Training the legs to raise higher and push harder can prepare horses for rough or muddy terrain 
-Parthian shot	Increased Rattack 25%	shooting from a moving horse is not easy, extensive practice is required to reliably achieve such a feat. 
-Leg control	Increased rattack  25%	it is not possible to hold the reigns while firing a bow. Horse and rider must learn to communicate through the rider's legs
-Hippology	Increased hitpoints 25%	Knowledge of horse physiology allows for better diet, excercise and care. 
-
+Horses:
+Horses no longer spawn with human heads.
+Charge - Move up to four spaces to engage an enemy 
+Pirouette- disengage from an enemy and move up to three squares away. 
+Longeing - Gain portion of the horse's resolve in battle	
+Liberty	 - gain portion of rider's resolve	 	
+Desensitization	- Gain portion of rider's mattack	
+Bitting	Gain portion of rider's mdef	
+Piaffe	- gain a portion of horses reolve 
+Collection	gain portion of horse's fatigue
+Impulsion	
+Lead change	Movement costs 25% less fatigue
+Flying change	gain AP
+Tempi change	Increased Rdef 
+Passage 	Better movement in rough terrain
+Parthian shot	Increased Rattack 25%
+Leg control	Increased rattack  25%	
+Hippology	Increased hitpoints 25%	
 
