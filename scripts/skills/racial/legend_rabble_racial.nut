@@ -48,7 +48,7 @@ this.legend_rabble_racial <- this.inherit("scripts/skills/skill", {
 			_properties.Bravery += bonus;
 		}
 
-		if (bandits < 1 && )
+		if (bandits < 1 )
 		{
 			_properties.IsAffectedByDyingAllies = true;
 			_properties.IsAffectedByFleeingAllies = true;

@@ -9,10 +9,8 @@ this.line_breaker <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "skills/active_53.png";
 		this.m.Overlay = "active_53";
 		this.m.SoundOnUse = [
-			"sounds/enemies/orc_linebreaker_01.wav",
-			"sounds/enemies/orc_linebreaker_02.wav",
-			"sounds/enemies/orc_linebreaker_03.wav",
-			"sounds/enemies/orc_linebreaker_04.wav"
+			"sounds/combat/gallop.wav"
+
 		];
 		this.m.SoundOnHit = [
 			"sounds/combat/knockback_hit_01.wav",

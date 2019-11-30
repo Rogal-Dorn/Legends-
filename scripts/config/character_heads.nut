@@ -184,14 +184,14 @@ gt.Const.Faces.Donkey <- [
 ];
 
 gt.Const.Faces.Horse <- [
-	"bust_head_100",
-	"bust_head_101",
 	"bust_head_102",
 	"bust_head_103",
 	"bust_head_104",
 	"bust_head_105",
 	"bust_head_106",
-	"bust_head_107"
+	"bust_head_107",
+	"bust_head_108",
+	"bust_head_109",
 ];
 
 gt.Const.Faces.OldFemale <- [

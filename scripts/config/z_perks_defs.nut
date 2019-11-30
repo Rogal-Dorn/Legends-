@@ -2447,7 +2447,7 @@ gt.Const.Perks.PerkDefObjects <- [
 	},
 	{
 		ID = "perk.legend_horse_charge",
-		Script = "scripts/skills/perks/perk_legend_horse_charge",
+		Script = "scripts/skills/perks/perk_horse_charge",
 		Name = this.Const.Strings.PerkName.LegendHorseCharge,
 		Tooltip = this.Const.Strings.PerkDescription.LegendHorseCharge,
 		Icon = "ui/perks/charge_perk.png",
@@ -2465,7 +2465,7 @@ gt.Const.Perks.PerkDefObjects <- [
 	},
 	{
 		ID = "perk.legend_horse_bitting",
-		Script = "scripts/skills/perks/perk_legend_horse_bitting",
+		Script = "scripts/skills/perks/perk_horse_bitting",
 		Name = this.Const.Strings.PerkName.LegendHorseBitting,
 		Tooltip = this.Const.Strings.PerkDescription.LegendHorseBitting,
 		Icon = "ui/perks/bitting_perk.png",
@@ -2474,7 +2474,7 @@ gt.Const.Perks.PerkDefObjects <- [
 	},
 	{
 		ID = "perk.legend_horse_desensitization",
-		Script = "scripts/skills/perks/perk_legend_horse_desensitization",
+		Script = "scripts/skills/perks/perk_horse_desensitization",
 		Name = this.Const.Strings.PerkName.LegendHorseDesensitization,
 		Tooltip = this.Const.Strings.PerkDescription.LegendHorseDesensitization,
 		Icon = "ui/perks/desensitization_perk.png",
@@ -2483,7 +2483,7 @@ gt.Const.Perks.PerkDefObjects <- [
 	},
 	{
 		ID = "perk.legend_horse_hippology",
-		Script = "scripts/skills/perks/perk_legend_horse_hippology",
+		Script = "scripts/skills/perks/perk_horse_hippology",
 		Name = this.Const.Strings.PerkName.LegendHorseHippology,
 		Tooltip = this.Const.Strings.PerkDescription.LegendHorseHippology,
 		Icon = "ui/perks/hippology_perk.png",
@@ -2492,7 +2492,7 @@ gt.Const.Perks.PerkDefObjects <- [
 	},
 	{
 		ID = "perk.legend_horse_impulsion",
-		Script = "scripts/skills/perks/perk_legend_horse_impulsion",
+		Script = "scripts/skills/perks/perk_horse_impulsion",
 		Name = this.Const.Strings.PerkName.LegendHorseImpulsion,
 		Tooltip = this.Const.Strings.PerkDescription.LegendHorseImpulsion,
 		Icon = "ui/perks/impulse_perk.png",
@@ -2501,7 +2501,7 @@ gt.Const.Perks.PerkDefObjects <- [
 	},
 	{
 		ID = "perk.legend_horse_lead_change",
-		Script = "scripts/skills/perks/perk_legend_horse_lead_change",
+		Script = "scripts/skills/perks/perk_horse_lead_change",
 		Name = this.Const.Strings.PerkName.LegendHorseLeadChange,
 		Tooltip = this.Const.Strings.PerkDescription.LegendHorseLeadChange,
 		Icon = "ui/perks/perk_23.png",
@@ -2510,7 +2510,7 @@ gt.Const.Perks.PerkDefObjects <- [
 	},
 	{
 		ID = "perk.legend_horse_leg_control",
-		Script = "scripts/skills/perks/perk_legend_horse_leg_control",
+		Script = "scripts/skills/perks/perk_horse_leg_control",
 		Name = this.Const.Strings.PerkName.LegendHorseLegControl,
 		Tooltip = this.Const.Strings.PerkDescription.LegendHorseLegControl,
 		Icon = "ui/perks/legcontrol_perk.png",
@@ -2519,7 +2519,7 @@ gt.Const.Perks.PerkDefObjects <- [
 	},
 	{
 		ID = "perk.legend_horse_liberty",
-		Script = "scripts/skills/perks/perk_legend_horse_liberty",
+		Script = "scripts/skills/perks/perk_horse_liberty",
 		Name = this.Const.Strings.PerkName.LegendHorseLiberty,
 		Tooltip = this.Const.Strings.PerkDescription.LegendHorseLiberty,
 		Icon = "ui/perks/liberty_perk.png",
@@ -2528,7 +2528,7 @@ gt.Const.Perks.PerkDefObjects <- [
 	},
 	{
 		ID = "perk.legend_horse_longeing",
-		Script = "scripts/skills/perks/perk_legend_horse_longeing",
+		Script = "scripts/skills/perks/perk_horse_longeing",
 		Name = this.Const.Strings.PerkName.LegendHorseLongeing,
 		Tooltip = this.Const.Strings.PerkDescription.LegendHorseLongeing,
 		Icon = "ui/perks/longeing_perk.png",
@@ -2537,7 +2537,7 @@ gt.Const.Perks.PerkDefObjects <- [
 	},
 	{
 		ID = "perk.legend_horse_parthian_shot",
-		Script = "scripts/skills/perks/perk_legend_horse_parthian_shot",
+		Script = "scripts/skills/perks/perk_horse_parthian_shot",
 		Name = this.Const.Strings.PerkName.LegendHorseParthianShot,
 		Tooltip = this.Const.Strings.PerkDescription.LegendHorseParthianShot,
 		Icon = "ui/perks/partian_shot_perk.png",
@@ -2546,7 +2546,7 @@ gt.Const.Perks.PerkDefObjects <- [
 	},
 	{
 		ID = "perk.legend_horse_piaffe",
-		Script = "scripts/skills/perks/perk_legend_horse_piaffe",
+		Script = "scripts/skills/perks/perk_horse_piaffe",
 		Name = this.Const.Strings.PerkName.LegendHorsePiaffe,
 		Tooltip = this.Const.Strings.PerkDescription.LegendHorsePiaffe,
 		Icon = "ui/perks/Piaffe_perk.png",
@@ -2555,7 +2555,7 @@ gt.Const.Perks.PerkDefObjects <- [
 	},
 	{
 		ID = "perk.legend_horse_tempi_change",
-		Script = "scripts/skills/perks/perk_legend_horse_tempi_change",
+		Script = "scripts/skills/perks/perk_horse_tempi_change",
 		Name = this.Const.Strings.PerkName.LegendHorseTempiChange,
 		Tooltip = this.Const.Strings.PerkDescription.LegendHorseTempiChange,
 		Icon = "ui/perks/perk_23.png",
