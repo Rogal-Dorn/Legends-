@@ -103,8 +103,8 @@ this.legends_player_horserider <- this.inherit("scripts/entity/tactical/player",
 		b.Stamina = totalFatigue;
 
 //determine melee skill 
-		local horseMeleeSkill  = this.getHorse().getMeleeSkill ();
-		local riderMeleeSkill  = this.getRider().getMeleeSkill ();
+		local horseMeleeSkill  = this.getHorse().getMeleeSkill();
+		local riderMeleeSkill  = this.getRider().getMeleeSkill();
 		local totalMeleeSkill  = (horseMeleeSkill  + riderMeleeSkill ) / 2;
 
 		if (this.getHorse().getSkills().hasSkill("perk.legend_horse_desensitization"))
@@ -115,8 +115,8 @@ this.legends_player_horserider <- this.inherit("scripts/entity/tactical/player",
 		b.MeleeSkill = totalMeleeSkill;
 
 //determine ranged skill 
-		local horseRangedSkill  = this.getHorse().getRangedSkill ();
-		local riderRangedSkill  = this.getRider().getRangedSkill ();
+		local horseRangedSkill  = this.getHorse().getRangedSkill();
+		local riderRangedSkill  = this.getRider().getRangedSkill();
 		local totalRangedSkill  = (horseRangedSkill  + riderRangedSkill ) / 2;
 
 		if (this.getHorse().getSkills().hasSkill("perk.legend_horse_parthian_shot"))
@@ -127,8 +127,8 @@ this.legends_player_horserider <- this.inherit("scripts/entity/tactical/player",
 		b.RangedSkill = totalRangedSkill;
 
 //determine melee defense
-		local horseMeleeDefense  = this.getHorse().getMeleeDefense ();
-		local riderMeleeDefense  = this.getRider().getMeleeDefense ();
+		local horseMeleeDefense  = this.getHorse().getMeleeDefense();
+		local riderMeleeDefense  = this.getRider().getMeleeDefense();
 		local totalMeleeDefense  = (horseMeleeDefense  + riderMeleeDefense ) / 2;
 
 		if (this.getHorse().getSkills().hasSkill("perk.legend_horse_bitting"))
@@ -139,8 +139,8 @@ this.legends_player_horserider <- this.inherit("scripts/entity/tactical/player",
 		b.MeleeDefense = totalMeleeDefense;
 
 //determine ranged defense
-		local horseRangedDefense  = this.getHorse().getRangedDefense ();
-		local riderRangedDefense  = this.getRider().getRangedDefense ();
+		local horseRangedDefense  = this.getHorse().getRangedDefense();
+		local riderRangedDefense  = this.getRider().getRangedDefense();
 		local totalRangedDefense  = (horseRangedDefense  + riderRangedDefense ) / 2;
 		b.RangedDefense = totalRangedDefense;
 
