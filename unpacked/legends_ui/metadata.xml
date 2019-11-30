@@ -56,6 +56,8 @@
 <sprite id="alcohol" ic="FF23165B" img="skills\alcohol.png" />
 <sprite id="graze" ic="FF23165B" img="skills\graze.png" />
 <sprite id="bleed" ic="FF23165B" img="skills\bleed.png" />
+<sprite id="horse_charge" ic="FF23165B" img="skills\horse_charge.png" />
+<sprite id="horse_pirouette" ic="FF23165B" img="skills\horse_pirouette.png" />
 
 <sprite id="mini_safegaurd_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_safegaurd_circle.png" />
 <sprite id="mini_shimmering_visage_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_shimmering_visage_circle.png" />
