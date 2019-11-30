@@ -1,16 +1,15 @@
-this.line_breaker <- this.inherit("scripts/skills/skill", {
+this.legend_horse_charge <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{
-		this.m.ID = "actives.line_breaker";
+		this.m.ID = "actives.legend_horse_charge";
 		this.m.Name = "Horse Charge";
-		this.m.Description = "";
-		this.m.Icon = "skills/active_53.png";
-		this.m.IconDisabled = "skills/active_53.png";
-		this.m.Overlay = "active_53";
+		this.m.Description = "Push your mount forward with speed, ending in an impact that stuns an enemy";
+		this.m.Icon = "skills/horse_charge.png";
+		this.m.IconDisabled = "skills/horse_pirouette.png";
+		this.m.Overlay = "horse_charge";
 		this.m.SoundOnUse = [
 			"sounds/combat/gallop.wav"
-
 		];
 		this.m.SoundOnHit = [
 			"sounds/combat/knockback_hit_01.wav",
@@ -133,11 +132,13 @@ this.line_breaker <- this.inherit("scripts/skills/skill", {
 			};
 			tag.HitInfo.DamageRegular = damage;
 			tag.HitInfo.DamageFatigue = this.Const.Combat.FatigueReceivedPerHit;
-			tag.HitInfo.DamageDirect = 1.0;
+			tag.HitInfo.DamageDirect = 1.5;
 			tag.HitInfo.BodyPart = this.Const.BodyPart.Body;
-			tag.HitInfo.BodyDamageMult = 1.0;
-			tag.HitInfo.FatalityChanceMult = 1.0;
+			tag.HitInfo.BodyDamageMult = 1.5;
+			tag.HitInfo.FatalityChanceMult = 1.5;
 			this.Tactical.getNavigator().teleport(target, knockToTile, this.onKnockedDown, tag, true);
+			this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectBash);
+			return this.attackEntity(_user, _targetTile.getEntity());
 		}
 
 		local tag = {
