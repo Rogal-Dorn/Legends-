@@ -1,10 +1,13 @@
 this.legend_danger_pay <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+	Cost = 0,
+	Money = 0
+	},
 	function create()
 	{
 		this.m.ID = "actives.legend_danger_pay";
 		this.m.Name = "Danger Pay";
-		this.m.Description = "Pay 10 times their daily wage to set a unit to Confident morale";
+		this.m.Description = "Pay a unit the their daily wage squared, set that unit to Confident morale";
 		this.m.Icon = "skills/coins_square.png";
 		this.m.IconDisabled = "skills/coins_square_bw.png";
 		this.m.Overlay = "active_41";
@@ -37,14 +40,14 @@ this.legend_danger_pay <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/vision.png",
-				text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.MaxRange + "[/color], can only target humans or goblins."
+				text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.MaxRange + "[/color]."
 			}
 		]);
 			ret.push({
 				id = 8,
 				type = "text",
 				icon = "ui/icons/asset_money.png",
-				text = "You have[color=" + this.Const.UI.Color.PositiveValue +"]" + this.World.Assets.getMoney() + "[/color] crowns"
+				text = "This will cost [color=" + this.Const.UI.Color.PositiveValue +"]" + this.m.Cost + "[/color] crowns out of " + this.m.Money +" total"
 			});
 
 		return ret;
@@ -59,7 +62,10 @@ this.legend_danger_pay <- this.inherit("scripts/skills/skill", {
 
 		local target = _targetTile.getEntity();
 		local wage = target.getBaseProperties().DailyWage;
+		this.m.Cost = this.Math.pow(wage, 1.3);
 		local money = this.World.Assets.getMoney();
+		this.m.Money = money;
+
 		if (!target.getTags().has("human"))
 		{
 			return false;
@@ -76,7 +82,7 @@ this.legend_danger_pay <- this.inherit("scripts/skills/skill", {
 	{
 		local target = _targetTile.getEntity();
 		local wage = target.getBaseProperties().DailyWage;
-		local cost = wage * -10;
+		local cost = this.Math.pow(wage, 1.3) -1;
 		this.World.Assets.addMoney(cost);
 		target.setMoraleState(this.Const.MoraleState.Confident);
 		return true;
