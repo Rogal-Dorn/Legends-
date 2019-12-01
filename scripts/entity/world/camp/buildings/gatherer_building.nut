@@ -169,7 +169,7 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 			}
 			
 		
-			if (bro.getBackground().getSkills().hasskill("perk.legend_gatherer"))
+			if (bro.getSkills().hasSkill("perk.legend_gatherer"))
 			{
                apothecaryLevel += bro.getLevel()
             }
@@ -191,7 +191,7 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
                 continue
             }
 
-			if (bro.getBackground().getSkills().hasskill("perk.legend_potion_brewer"))
+			if (bro.getSkills().hasSkill("perk.legend_potion_brewer"))
 			{
                brewerLevel += bro.getLevel()
             }

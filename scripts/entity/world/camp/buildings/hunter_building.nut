@@ -4,7 +4,8 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		NumBros = 0,
 		Points = 0,
 		FoodAmount = 0,
-		Craft = 0
+		Craft = 0,
+		Value = 0
 	},
     function create()
     {
@@ -138,7 +139,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
             }
 
 		
-			if (bro.getSkills().hasskill("perk.legend_meal_preperation"))
+			if (bro.getSkills().hasSkill("perk.legend_meal_preperation"))
 			{
                chefLevel += bro.getLevel()
             }
@@ -160,7 +161,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
                 continue
             }
 
-			if (bro.getSkills().hasskill("perk.legend_alcohol_brewer"))
+			if (bro.getSkills().hasSkill("perk.legend_alcohol_brewer"))
 			{
                brewerLevel += bro.getLevel()
             }
@@ -298,12 +299,12 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 			]);
 		}
 
-		if (this.m.Points < item.m.Value)
+		if (this.m.Points < item.getValue())
 		{
 			return this.getUpdateText();
 		}
 
-		this.m.Points -= item.m.Value;
+		this.m.Points -= item.getValue();
 		item.randomizeAmount();
 		this.m.FoodAmount += item.getAmount();
 		item.randomizeBestBefore();
