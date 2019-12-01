@@ -19,7 +19,7 @@ this.legend_rabble_racial <- this.inherit("scripts/skills/skill", {
 	{
 		local user = this.getContainer();
 		local bandits = 0;
-		local actors = this.Tactical.Entities.getInstancesOfFaction(_user.getFaction());
+		local actors = this.Tactical.Entities.getInstancesOfFaction(user.getFaction());
 		foreach( i in actors )
 		{
 			foreach( a in i )
@@ -39,7 +39,7 @@ this.legend_rabble_racial <- this.inherit("scripts/skills/skill", {
 	{	
 		local user = this.getContainer();
 		local bandits = this.getBandits();
-		local bonus = 5 * bandits;
+		local bonus = 2 * bandits;
 
 		if (bandits >= 1)
 		{

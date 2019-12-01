@@ -138,7 +138,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
             }
 
 		
-			if (bro.getBackground().getSkills().hasskill("perk.legend_meal_preperation"))
+			if (bro.getSkills().hasskill("perk.legend_meal_preperation"))
 			{
                chefLevel += bro.getLevel()
             }
@@ -160,7 +160,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
                 continue
             }
 
-			if (bro.getBackground().getSkills().hasskill("perk.legend_alcohol_brewer"))
+			if (bro.getSkills().hasskill("perk.legend_alcohol_brewer"))
 			{
                brewerLevel += bro.getLevel()
             }
@@ -226,7 +226,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		local secondary = [];
 		if (r == 1 || r == 2)
 		{
-			item = this.new("scripts/items/supplies/fresh_meat_item");
+			item = this.new("scripts/items/supplies/legend_fresh_meat_item");
 			secondary = [
 				"scripts/items/misc/adrenaline_gland_item",
 				"scripts/items/misc/poison_gland_item",
@@ -247,7 +247,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		}
 		else if (r == 4)
 		{
-			item = this.new("scripts/items/supplies/fresh_fruit_item");
+			item = this.new("scripts/items/supplies/legend_fresh_fruit_item");
 				secondary = [
 				"scripts/items/supplies/dried_fruit_item"
 	
