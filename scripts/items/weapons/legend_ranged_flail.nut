@@ -3,7 +3,7 @@ this.legend_ranged_flail <- this.inherit("scripts/items/weapons/weapon", {
 	function create()
 	{
 		this.weapon.create();
-		this.m.ID = "weapon.flail";
+		this.m.ID = "weapon.legend_pole_flail";
 		this.m.Name = "Pole Flail";
 		this.m.Description = "A separate striking head attached to a pole by a chain. A rather unpredictable weapon, but useful to strike over or around shield cover.";
 		this.m.Categories = "Flail, Two-Handed";
