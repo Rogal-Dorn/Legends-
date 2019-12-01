@@ -331,6 +331,36 @@ this.weaponsmith_building <- this.inherit("scripts/entity/world/settlements/buil
 				R = 80,
 				P = 1.0,
 				S = "weapons/legend_swordstaff"
+			},
+			{
+				R = 70,
+				P = 1.0,
+				S = "weapons/legend_halberd"
+			},
+			{
+				R = 80,
+				P = 1.0,
+				S = "weapons/legend_military_voulge"
+			},
+			{
+				R = 80,
+				P = 1.0,
+				S = "weapons/legend_ranged_flail"
+			},
+			{
+				R = 80,
+				P = 1.0,
+				S = "weapons/legend_ranged_reinforced_wooden_flail"
+			},
+			{
+				R = 70,
+				P = 1.0,
+				S = "weapons/legend_ranged_wooden_flail"
+			},
+			{
+				R = 70,
+				P = 1.0,
+				S = "weapons/legend_voulge"
 			}
 		];
 
