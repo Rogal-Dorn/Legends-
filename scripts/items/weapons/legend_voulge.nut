@@ -5,7 +5,7 @@ this.legend_voulge <- this.inherit("scripts/items/weapons/weapon", {
 		this.weapon.create();
 		this.m.ID = "weapon.legend_voulge";
 		this.m.Name = "Voulge";
-		this.m.Description = "A polearm with a heavy knife blade, reminiscent of a butcher\'s clear on a stick.";
+		this.m.Description = "A polearm with a heavy knife blade, reminiscent of a butcher\'s cleaver on a stick.";
 		this.m.Categories = "Cleaver, Two-Handed";
 		this.m.IconLarge = "weapons/melee/legend_voulge_01.png";
 		this.m.Icon = "weapons/melee/legend_voulge_01_70x70.png";
