@@ -1854,3 +1854,7 @@ Fixes error from bandit rabble racial skill
 Berserker start has a small chance of finding other berserkers for hire 
 Assassin hires only get a worse mood if they aren't lowborn or outlaws, instead of all the time. 
 Fixes overhead strike tooltip to correctly descript +5% chance 
+Adds Halberd, Military Voulge, Pole Flail, peasant flail, Voulge, named Halberd and Named Voulge
+Flail is now called a chain mace,  two handed flail is now called a two handed chain mace, two handed wooden flail is now called a Two handed heavy flail 
+Cultist ninetails skill effects flails as well as whips. 
+Pitchfork skills effects voulges and halberds
