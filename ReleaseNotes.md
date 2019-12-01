@@ -1849,3 +1849,8 @@ Hand to hand now has a falloff above 50 damage to nerf orc punches. Also uses ha
 Scaling enemies now appears later (200/150/100/50 days by difficulty), and scale slower (1 stat every 20 days)
 Bribe nerfed.  Scales more strongly based on each enemy's xp reward. A bandit thug now costs about 500 crowns instead of 225, and a bandit leader costs 2500 instead of 600
 Danger pay nerfed. Scales more strongly based on the units daily rate. a unit that costs 10 per day will cost 100, a unit that costs 30 per day will cost 900. 
+Fixes errors from hunter tent not finding fresh fruit, fresh meat, meal perk and brewer perk.
+Fixes error from bandit rabble racial skill
+Berserker start has a small chance of finding other berserkers for hire 
+Assassin hires only get a worse mood if they aren't lowborn or outlaws, instead of all the time. 
+Fixes overhead strike tooltip to correctly descript +5% chance 
