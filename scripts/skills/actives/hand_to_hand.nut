@@ -181,7 +181,7 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 			damageMin = 50 + minFalloff;
 			}
 
-			if (damageMax => 50)
+			if (damageMax > 50)
 			{
 			local maxMod = (damageMax - 50);
 			local maxFalloff = this.Math.pow(maxMod, 0.5);
