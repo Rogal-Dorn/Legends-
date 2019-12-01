@@ -169,10 +169,6 @@ this.female_daytaler_background <- this.inherit("scripts/skills/backgrounds/char
 		];
 		local armor = this.Const.World.Common.pickLegendArmor(cloths)
 		items.equip(armor)
-<<<<<<< HEAD
-
-=======
->>>>>>> be9b26ec9d1a58483313819ede6bfc798b4275c5
 
 		r = this.Math.rand(0, 4);
 
