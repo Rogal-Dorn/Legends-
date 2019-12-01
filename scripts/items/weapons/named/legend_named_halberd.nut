@@ -1,4 +1,4 @@
-this.legend_named_halberd <- this.inherit("scripts/items/weapons/weapon", {
+this.legend_named_halberd <- this.inherit("scripts/items/weapons/named/named_weapon", {
 	m = {},
 	function create()
 	{
