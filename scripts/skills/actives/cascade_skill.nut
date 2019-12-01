@@ -49,7 +49,7 @@ this.cascade_skill <- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Will make three separate strikes for one third of the weapon\'s damage each"
+				text = "Will make three separate strikes for half of the weapon\'s damage each"
 			},
 			{
 				id = 8,
@@ -97,7 +97,7 @@ this.cascade_skill <- this.inherit("scripts/skills/skill", {
 	{
 		if (_skill == this)
 		{
-			_properties.DamageTotalMult *= 0.33;
+			_properties.DamageTotalMult *= 0.5;
 			_properties.DamageTooltipMaxMult *= 3.0;
 		}
 	}
