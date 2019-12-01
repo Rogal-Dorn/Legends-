@@ -5,7 +5,7 @@ this.legend_ranged_wooden_flail <- this.inherit("scripts/items/weapons/weapon", 
 		this.weapon.create();
 		this.m.ID = "weapon.legend_ranged_wooden_flail";
 		this.m.Name = "Peasant Flail";
-		this.m.Description = "A alrge sticks attached with a short chain to a long pole, the Peasant Flail is an agricultural tool used to strike piles of grain to loosen the husks. As an improvised weapon it\'s rather unpredictable but useful to strike over or around shield cover.";
+		this.m.Description = "A large stick attached with a short chain to a long pole, the Peasant Flail is an agricultural tool used to strike piles of grain to loosen the husks. As an improvised weapon it\'s rather unpredictable but useful to strike over or around shield cover.";
 		this.m.Categories = "Flail, Two-Handed";
 		this.m.IconLarge = "weapons/melee/legend_ranged_flail_01.png";
 		this.m.Icon = "weapons/melee/legend_ranged_flail_01_70x70.png";
