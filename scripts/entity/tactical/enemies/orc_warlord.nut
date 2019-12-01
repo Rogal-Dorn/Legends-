@@ -276,22 +276,22 @@ this.orc_warlord <- this.inherit("scripts/entity/tactical/actor", {
 			switch (this.World.Assets.getCombatDifficulty())
 			{
 				case this.Const.Difficulty.Easy:
-					dateToSkip = 120;
+					dateToSkip = 200;
 					break;
 				case this.Const.Difficulty.Normal:
-					dateToSkip = 90
+					dateToSkip = 150
 					break;
 				case this.Const.Difficulty.Hard:
-					dateToSkip = 60
+					dateToSkip = 100
 					break;
 				case this.Const.Difficulty.Legendary:
-					dateToSkip = 30
+					dateToSkip = 50
 					break;
 			}
 
 			if (this.World.getTime().Days >= dateToSkip)
 			{
-				local bonus = this.Math.min(1, this.Math.floor( (this.World.getTime().Days - dateToSkip) / 15.0));
+				local bonus = this.Math.min(1, this.Math.floor( (this.World.getTime().Days - dateToSkip) / 20.0));
 				b.MeleeSkill += bonus;
 				b.RangedSkill += bonus;
 				b.MeleeDefense += this.Math.floor(bonus / 2);
