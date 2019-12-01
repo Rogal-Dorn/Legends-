@@ -1858,3 +1858,4 @@ Adds Halberd, Military Voulge, Pole Flail, Peasant flail, Voulge, named Halberd 
 Flail is now called a chain mace,  two handed flail is now called a two handed chain mace, two handed wooden flail is now called a Two handed heavy flail 
 Cultist ninetails skill effects flails as well as whips. 
 Pitchfork skills effects voulges and halberds
+Updates graphics on several of the new male and female heads.
