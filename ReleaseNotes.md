@@ -1738,7 +1738,7 @@ https://drive.google.com/open?id=1WMxpxCXbba7f00vqMXhM_IYmrVU7H47P
 
 13.0.0.10 Balance Patch
 
-- Rebalance Dynamic Perks - Reduces intensity of effect, reduces differences between backgrounds. 
+- Rebalances Dynamic Stats - Reduces intensity of effect, reduces differences between backgrounds. 
 - Increases stash and ammo carrying capacity for all backgrounds 
 - Nerfs barter, now has a falloff. Fixes bug where barter was effecting delivery quests 10x too much
 - Fixed black monolith battle not loading.
@@ -1749,14 +1749,13 @@ https://drive.google.com/open?id=1WMxpxCXbba7f00vqMXhM_IYmrVU7H47P
 - Fixes rune drop when fighting stollwurms
 - Fixes error in swordmaster fav enemy event  
 - Fixes possible crash with alp teleports
-- Cultist enemies gain ninetails, chains, flails and the cultist perks described below
+- Fixed horses spawning with human heads
 
-- New higher tier Bandits:
+- New higher tier scaling enemies
  - Veterans (upgrades to Raiders)
  - Warlord (upgrades to Leaders ; guarenteed multiple famed items!)
  * After (Easy 120, Normal 90, Hard 60, Legendary 30) days, Bandit Leaders, Bandit Warlords, Militia Captains, Noble Sergeants and Orc warlords will increase ALL of their stats every 15 days and Bandit Veterans will increase MS, RS, HP every 15 days.
  - Vampire Lords now have bloodbath and slaughter perks.
-
 
 - New Mid tier peasant enemies:
  - Peasant Butcher - Applies bleed and deals extra damage to bleeding targets
@@ -1765,7 +1764,7 @@ https://drive.google.com/open?id=1WMxpxCXbba7f00vqMXhM_IYmrVU7H47P
  - Peasant Minstrel - drums of war and life 
  - Peasant Monk - high resolve, rallies the peasants 
  - Peasant Poacher - ranged unit with increased accuracy 
-These can show up in civilians, bandits or militia
+These can show up as civilians, bandits or militia
  
 - Cultists:	
 * Flesh Mortification - damage increased by 5-10% of your resolve while using cat'o'nine tails. Half this effect applies to other whips
@@ -1773,7 +1772,13 @@ These can show up in civilians, bandits or militia
 * Dedication - New perk - melee and ranged defense increased by 10% of your resolve while wearing a cultist hood
 * Penance - New perk - Increase your resolve by 10% of your missing health, while wearing cultist robes, sackcloth or leather wraps
 * Evisceration - New perk - prepare your next attack to inflict a bleed that does 2 damage per round over five rounds. 
-* Lacerate - New perk - Gain a chance to inflict bleed, equal to your missing health as a percentage	
+* Lacerate - New perk - Gain a chance to inflict bleed, equal to your missing health as a percentage
+Cultist enemies gain ninetails, chains, flails and the cultist perks
+	
+-Peddlers
+ * barter skill now has falloff for buying and selling, equal to the square root of your barter skill. 
+ * Fixed deliver item contract paying out 10 times too much from barter bonus
+ 	
 	
 - Butchers and fishmongers: 
 * Also gains evisceration
@@ -1810,10 +1815,7 @@ Recruits now get camouflage
  * Gained revolt 
  Drums and lutes can now be found in markets. It is possible to find a named golden lute.  
 
--Peddlers
- * barter skill now has falloff for buying and selling, equal to the square root of your barter skill. 
- * Fixed deliver item contract paying out 10 times too much from barter bonus
- 
+
 - Others
 * Inspiring presence - Chance to set each ally at confident is now 1/3rd of your resolve. there is a 2% chance of backfire at 50 resolve, falling to 0% at 150 resolve. 
 * Bloodbath - Added as Tier 6 skill in cleaver tree 
@@ -1840,3 +1842,9 @@ Horses no longer spawn with human heads.
 * Leg control	- New Perk - Increased rattack  25%	
 * Hippology	- New Perk - Increased hitpoints 25%	
 
+
+13.0.0.11
+
+hand to hand now has a falloff above 50 damage to nerf orc punches. Also uses half as much fatigue. Brawler, fist mastery and muscularity bonuses apply after the scaling
+Scaling enemies now appears later (200/150/100/50 days by difficulty), and scale slower (1 stat every 20 days)
+ 
