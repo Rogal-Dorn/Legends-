@@ -299,7 +299,7 @@ this.orc_warlord <- this.inherit("scripts/entity/tactical/actor", {
 				b.Hitpoints += this.Math.floor(bonus * 2);
 				b.Initiative += this.Math.floor(bonus / 2);
 				b.Stamina += bonus;
-				b.XP += this.Math.floor(bonus * 4);
+			//	b.XP += this.Math.floor(bonus * 4);
 				b.Bravery += bonus;
 				b.FatigueRecoveryRate += this.Math.floor(bonus / 4);
 			}
