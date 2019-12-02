@@ -45,7 +45,7 @@ this.cultists_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
-		items.equip(this.new("scripts/items/weapons/scramasax"));
+		items.equip(this.new("scripts/items/weapons/legend_cat_o_nine_tails"));
 		items.equip(this.new("scripts/items/helmets/cultist_hood"));
 		items.equip(this.new("scripts/items/armor/leather_wraps"));
 		bros[1].setStartValuesEx([
@@ -83,7 +83,7 @@ this.cultists_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
-		items.equip(this.new("scripts/items/weapons/bludgeon"));
+		items.equip(this.new("scripts/items/weapons/legend_cat_o_nine_tails"));
 		items.equip(this.new("scripts/items/helmets/cultist_hood"));
 		items.equip(this.new("scripts/items/armor/leather_wraps"));
 		this.World.Assets.addMoralReputation(-10);
