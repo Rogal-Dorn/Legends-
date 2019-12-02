@@ -21,6 +21,9 @@ this.legend_military_voulge <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ConditionMax = 80.0;
 		this.m.StaminaModifier = -14;
 		this.m.Value = 1900;
+		this.m.RangeMin = 1;
+		this.m.RangeMax = 2;
+		this.m.RangeIdeal = 2;
 		this.m.RegularDamage = 80;
 		this.m.RegularDamageMax = 100;
 		this.m.ArmorDamageMult = 0.9;
