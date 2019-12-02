@@ -1,14 +1,14 @@
-this.legend_ranged_reinforced_flail <- this.inherit("scripts/items/weapons/weapon", {
+this.legend_named_flail <- this.inherit("scripts/items/weapons/named/named_weapon", {
 	m = {},
 	function create()
 	{
-		this.weapon.create();
-		this.m.ID = "weapon.legend_ranged_reinforced_flail";
-		this.m.Name = "Reinforced Wooden Flail";
-		this.m.Description = "A metal-reinforced stick attached with a short chain to a long pole, the Reinforced Wooden Flail is an agricultural tool turned weapon. A rather unpredictable one at that, but deadly enough to fell most men with a good hit to the head, and useful to strike over or around shield cover.";
+		this.named_weapon.create();
+		this.m.ID = "weapon.legend_named_flail";
+		this.m.NameList = this.Const.Strings.TwoHandedFlailNames;
+		this.m.Description = "A metal weight attached with a short chain to a long pole, the War Flail is a brutal weapon. Deadly enough to fell most men with a good hit to the head, and useful to strike over or around shield cover.";
 		this.m.Categories = "Flail, Two-Handed";
-		this.m.IconLarge = "weapons/melee/legend_ranged_flail_01.png";
-		this.m.Icon = "weapons/melee/legend_ranged_flail_01_70x70.png";
+		this.m.IconLarge = "weapons/melee/legend_flail_ranged_02_named_01.png";
+		this.m.Icon = "weapons/melee/legend_flail_ranged_02_named_01_70x70.png";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;
@@ -17,20 +17,21 @@ this.legend_ranged_reinforced_flail <- this.inherit("scripts/items/weapons/weapo
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
-		this.m.ArmamentIcon = "icon_legend_ranged_flail_01";
-		this.m.Value = 300;
+		this.m.ArmamentIcon = "icon_legend_flail_ranged_02_named_01";
+		this.m.Value = 3000;
 		this.m.ShieldDamage = 0;
-		this.m.Condition = 40.0;
-		this.m.ConditionMax = 40.0;
+		this.m.Condition = 80.0;
+		this.m.ConditionMax = 80.0;
 		this.m.StaminaModifier = -10;
 		this.m.RangeMin = 1;
 		this.m.RangeMax = 2;
 		this.m.RangeIdeal = 2;
-		this.m.RegularDamage = 40;
-		this.m.RegularDamageMax = 70;
+		this.m.RegularDamage = 60;
+		this.m.RegularDamageMax = 90;
 		this.m.ArmorDamageMult = 0.8;
 		this.m.ChanceToHitHead = 10;
 		this.m.DirectDamageMult = 0.3;
+		this.randomizeValues();
 	}
 
 	function onEquip()

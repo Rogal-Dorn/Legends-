@@ -651,7 +651,8 @@ gt.Const.Strings.RandomWeaponPrefix <- [
 	"Gruesome",
 	"Grisly",
 	"Magnificent",
-	"Exquisite"
+	"Exquisite",
+	"Brutal"
 ];
 gt.Const.Strings.RandomArmorPrefix <- [
 	"Captain\'s",

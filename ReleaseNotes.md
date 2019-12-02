@@ -1864,3 +1864,9 @@ Cultist ninetails skill effects flails as well as whips.
 Pitchfork skills effects voulges and halberds
 Von Krolock's additions:
 *Updates graphics on several of the new male and female heads.
+
+13.0.0.12 balance test 3
+Fixes crashes when facing rabble, peasent butcher or peasant minstrel 
+Fixes erros from missing graphics for pole flail,  peasant flail, named volgue, named lute
+Reinforced flail is now a named flail 
+Buffs named halberd slightly

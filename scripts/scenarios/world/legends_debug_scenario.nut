@@ -59,7 +59,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		this.World.Assets.m.Food = 200;
 		this.World.Assets.m.BusinessReputation = 1000;
 		this.World.Assets.getStash().setResizable(true);
-		this.World.Assets.getStash().resize(300);
+		this.World.Assets.getStash().resize(400);
 
 		local armors = [
 			["legend_gambeson", 0, 39],
@@ -285,6 +285,34 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			local pla = this.new("scripts/items/legend_armor/runes/" + p);
 			this.World.Assets.getStash().add(pla);
 		}
+
+		this.logInfo("Adding halberd");
+		local item = this.new("scripts/items/weapons/legend_halberd")
+		this.World.Assets.getStash().add(item);
+		this.logInfo("Adding military voulge");
+		local item = this.new("scripts/items/weapons/legend_military_voulge")
+		this.World.Assets.getStash().add(item);
+		this.logInfo("ranged flail");
+		local item = this.new("scripts/items/weapons/legend_ranged_flail")
+		this.World.Assets.getStash().add(item);
+		this.logInfo("Adding ranged wooden flail");
+		local item = this.new("scripts/items/weapons/legend_ranged_wooden_flail")
+		this.World.Assets.getStash().add(item);
+		this.logInfo("Adding voulge");
+		local item = this.new("scripts/items/weapons/legend_voulge")
+		this.World.Assets.getStash().add(item);
+		this.logInfo("Adding named voulge");
+		local item = this.new("scripts/items/weapons/named/legend_named_voulge")
+		this.World.Assets.getStash().add(item);
+		this.logInfo("Adding named halberd");
+		local item = this.new("scripts/items/weapons/named/legend_named_halberd")
+		this.World.Assets.getStash().add(item);
+		this.logInfo("Adding named lute");
+		local item = this.new("scripts/items/weapons/named/named_lute")
+		this.World.Assets.getStash().add(item);
+		this.logInfo("Adding named flail");
+		local item = this.new("scripts/items/weapons/named/legend_named_flail")
+		this.World.Assets.getStash().add(item);
 	}
 
 

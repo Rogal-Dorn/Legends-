@@ -8,7 +8,7 @@ this.legend_named_voulge <- this.inherit("scripts/items/weapons/named/named_weap
 		this.m.Description = "A polearm with a large, sharpened metal blade designed to deal devastating blows.";
 		this.m.Categories = "Cleaver, Two-Handed";
 		this.m.IconLarge = "weapons/melee/legend_voulge_01_named_01.png";
-		this.m.Icon = "weapons/melee/legend_voulge_01_70x70_01.png";
+		this.m.Icon = "weapons/melee/legend_voulge_01_named_01_70x70.png";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;

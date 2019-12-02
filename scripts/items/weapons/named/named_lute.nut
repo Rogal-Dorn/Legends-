@@ -1,4 +1,4 @@
-this.named_mace <- this.inherit("scripts/items/weapons/named/named_weapon", {
+this.named_lute <- this.inherit("scripts/items/weapons/named/named_weapon", {
 	m = {
 		StunChance = 30
 	},
@@ -33,7 +33,7 @@ this.named_mace <- this.inherit("scripts/items/weapons/named/named_weapon", {
 	{
 		this.m.IconLarge = "weapons/melee/lute_named_0" + this.m.Variant + ".png";
 		this.m.Icon = "weapons/melee/lute_named_0" + this.m.Variant + "_70x70.png";
-		this.m.ArmamentIcon = "icon_named_lute_0" + this.m.Variant;
+		this.m.ArmamentIcon = "icon_lute_named_0" + this.m.Variant;
 	}
 
 	function onEquip()
