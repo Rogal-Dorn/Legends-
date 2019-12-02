@@ -1087,6 +1087,30 @@ gt.Const.World.Spawn.Troops <- {
 		Cost = 25,
 		Row = -1,
 		Script = "scripts/entity/tactical/humans/legend_peasant_witchhunter"
+	},
+	LegendHalberdier = {
+		ID = this.Const.EntityType.LegendHalberdier,
+		Variant = 0,
+		Strength = 35,
+		Cost = 35,
+		Row = 0,
+		Script = "scripts/entity/tactical/humans/legend_noble_halberdier"
+	},
+	LegendSlinger = {
+		ID = this.Const.EntityType.LegendSlinger,
+		Variant = 0,
+		Strength = 35,
+		Cost = 35,
+		Row = 0,
+		Script = "scripts/entity/tactical/humans/legend_noble_slinger"
+	},
+	LegendFencer = {
+		ID = this.Const.EntityType.LegendFencer,
+		Variant = 0,
+		Strength = 35,
+		Cost = 35,
+		Row = 0,
+		Script = "scripts/entity/tactical/humans/legend_noble_fencer"
 	}
 };
 
