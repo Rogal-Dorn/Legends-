@@ -10,4 +10,7 @@
 	o.m.PossibleSkills.push("actives.legend_chain_thresh");
 	o.m.PossibleSkills.push("actives.legend_chain_flail_skill");
 	o.m.PossibleSkills.push("actives.legend_demon_hound_bite");
+	o.m.PossibleSkills.push("actives.legend_ranged_flail");
+	o.m.PossibleSkills.push("actives.legend_halberd_impale");
+	o.m.PossibleSkills.push("actives.legend_voulge_cleave");
 });
