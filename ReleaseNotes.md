@@ -1872,8 +1872,14 @@ Reinforced flail is now a named flail
 Buffs named halberd slightly
 
 13.0.0.13 balance test 4
-Fixes AI crashes when evaluating new ewapon skills
+Fixes AI crashes when evaluating new weapon skills
 blacksmith hammer durability buffed
+Adds Huge quivers with 20 capacity, very expensive. Rarely found in fletchers, more common when there is an attached fletcher's hut. 
+Re-aligns some of the new heads 
+Removes scaling from Militia Captain, Noble Segeant, Bandit Leader and Orc Warlord. 
+Militia Voulge fixed to range 2 
+Cat'o'nine tails can now be used to flog friend or foe 
+Fixed Bandit veterans and warlords havign no names 
 New Enemies - 
 * Noble Halberdiers - higher tier billmen, with the new Voulges and Halberds
 * Noble Slingers - Higher tier arbelsters with slingstaves and sling perks 

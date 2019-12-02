@@ -134,6 +134,16 @@ this.fletchers_hut_location <- this.inherit("scripts/entity/world/attached_locat
 				P = 1.0,
 				S = "weapons/light_crossbow"
 			});
+			_list.push({
+				R = 50,
+				P = 1.0,
+				S = "ammo/huge_quiver_of_arrows"
+			});
+			_list.push({
+				R = 50,
+				P = 1.0,
+				S = "ammo/huge_quiver_of_bolts"
+			});
 		}
 		else if (_id == "building.armorsmith")
 		{
