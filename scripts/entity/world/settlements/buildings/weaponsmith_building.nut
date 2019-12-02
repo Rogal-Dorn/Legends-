@@ -348,11 +348,6 @@ this.weaponsmith_building <- this.inherit("scripts/entity/world/settlements/buil
 				S = "weapons/legend_ranged_flail"
 			},
 			{
-				R = 80,
-				P = 1.0,
-				S = "weapons/legend_ranged_reinforced_wooden_flail"
-			},
-			{
 				R = 70,
 				P = 1.0,
 				S = "weapons/legend_ranged_wooden_flail"
