@@ -19,8 +19,8 @@ this.legend_hammer <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ShowArmamentIcon = true;
 		this.m.ArmamentIcon = "icon_legend_hammer_01";
 		this.m.Value = 50;
-		this.m.Condition = 22.0;
-		this.m.ConditionMax = 22.0;
+		this.m.Condition = 44.0;
+		this.m.ConditionMax = 44.0;
 		this.m.StaminaModifier = -5;
 		this.m.RegularDamage = 15;
 		this.m.RegularDamageMax = 20;

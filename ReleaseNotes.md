@@ -1870,3 +1870,12 @@ Fixes crashes when facing rabble, peasent butcher or peasant minstrel
 Fixes erros from missing graphics for pole flail,  peasant flail, named volgue, named lute
 Reinforced flail is now a named flail 
 Buffs named halberd slightly
+
+13.0.0.13 balance test 4
+Fixes AI crashes when evaluating new ewapon skills
+blacksmith hammer durability buffed
+New Enemies - 
+* Noble Halberdiers - higher tier billmen, with the new Voulges and Halberds
+* Noble Slingers - Higher tier arbelsters with slingstaves and sling perks 
+* Noble Fencers - Higher tier flanking units using estocs and fencing swords 
+
