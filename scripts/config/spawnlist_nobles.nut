@@ -28,11 +28,11 @@ gt.Const.World.Spawn.Noble <- {
 	],
 	Troops = [
 		{
-			Weight = 43,
+			Weight = 44,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Footman,
-					Cost = 20
+					Cost = 15
 				}
 			]
 		},
@@ -59,7 +59,7 @@ gt.Const.World.Spawn.Noble <- {
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Greatsword,
-					Cost = 25
+					Cost = 30
 				}
 			]
 		},
@@ -68,7 +68,7 @@ gt.Const.World.Spawn.Noble <- {
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Sergeant,
-					Cost = 25,
+					Cost = 30,
 					Roll = true
 				}
 			]
@@ -78,7 +78,7 @@ gt.Const.World.Spawn.Noble <- {
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Knight,
-					Cost = 35,
+					Cost = 50,
 					Roll = true
 				}
 			]
@@ -89,6 +89,33 @@ gt.Const.World.Spawn.Noble <- {
 				{
 					Type = this.Const.World.Spawn.Troops.ArmoredWardog,
 					Cost = 8
+				}
+			]
+		},
+		{
+			Weight = 3,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendHalberdier,
+					Cost = 40
+				}
+			]
+		},
+		{
+			Weight = 3,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendFencer,
+					Cost = 40
+				}
+			]
+		},
+		{
+			Weight = 3,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendSlinger,
+					Cost = 40
 				}
 			]
 		}
@@ -116,7 +143,7 @@ gt.Const.World.Spawn.NobleCaravan <-
 	],
 	Troops = [
 		{
-			Weight = 65,
+			Weight = 62,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Footman,
@@ -158,6 +185,33 @@ gt.Const.World.Spawn.NobleCaravan <-
 					Type = this.Const.World.Spawn.Troops.Sergeant,
 					Cost = 25,
 					Roll = true
+				}
+			]
+		},
+		{
+			Weight = 1,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendHalberdier,
+					Cost = 40
+				}
+			]
+		},
+		{
+			Weight = 1,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendFencer,
+					Cost = 40
+				}
+			]
+		},
+		{
+			Weight = 1,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendSlinger,
+					Cost = 40
 				}
 			]
 		}

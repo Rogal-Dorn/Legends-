@@ -162,4 +162,60 @@ gt.Const.Tactical.Actor.Noble <- {
 	],
 	FatigueRecoveryRate = 20
 };
-
+gt.Const.Tactical.Actor.LegendSlinger <- {
+	XP = 400,
+	ActionPoints = 9,
+	Hitpoints = 70,
+	Bravery = 55,
+	Stamina = 120,
+	MeleeSkill = 55,
+	RangedSkill = 80,
+	MeleeDefense = 5,
+	RangedDefense = 15,
+	Initiative = 120,
+	FatigueEffectMult = 1.0,
+	MoraleEffectMult = 1.0,
+	Armor = [
+		0,
+		0
+	],
+	FatigueRecoveryRate = 15
+};
+gt.Const.Tactical.Actor.LegendHalberdier <- {
+	XP = 400,
+	ActionPoints = 9,
+	Hitpoints = 90,
+	Bravery = 70,
+	Stamina = 120,
+	MeleeSkill = 80,
+	RangedSkill = 50,
+	MeleeDefense = 10,
+	RangedDefense = 15,
+	Initiative = 90,
+	FatigueEffectMult = 1.0,
+	MoraleEffectMult = 1.0,
+	Armor = [
+		0,
+		0
+	],
+	FatigueRecoveryRate = 15
+};
+gt.Const.Tactical.Actor.LegendFencer <- {
+	XP = 500,
+	ActionPoints = 12,
+	Hitpoints = 100,
+	Bravery = 75,
+	Stamina = 125,
+	MeleeSkill = 85,
+	RangedSkill = 60,
+	MeleeDefense = 30,
+	RangedDefense = 20,
+	Initiative = 130,
+	FatigueEffectMult = 1.0,
+	MoraleEffectMult = 1.0,
+	Armor = [
+		0,
+		0
+	],
+	FatigueRecoveryRate = 20
+};
