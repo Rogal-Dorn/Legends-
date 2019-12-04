@@ -1873,15 +1873,24 @@ Buffs named halberd slightly
 
 13.0.0.13 balance test 4
 Fixes AI crashes when evaluating new weapon skills
+Fixes crash when entering some towns with weaponsmiths
 blacksmith hammer durability buffed
 Adds Huge quivers with 20 capacity, very expensive. Rarely found in fletchers, more common when there is an attached fletcher's hut. 
 Re-aligns some of the new heads 
 Removes scaling from Militia Captain, Noble Segeant, Bandit Leader and Orc Warlord. 
 Militia Voulge fixed to range 2 
 Cat'o'nine tails can now be used to flog friend or foe 
+Cultist start begins with two cat'o'nine tails 
 Fixed Bandit veterans and warlords havign no names 
-New Enemies - 
+New Enemies:
 * Noble Halberdiers - higher tier billmen, with the new Voulges and Halberds
 * Noble Slingers - Higher tier arbelsters with slingstaves and sling perks 
 * Noble Fencers - Higher tier flanking units using estocs and fencing swords 
+
+13.0.0.14 balance test 4
+Fixes error could not find 113 and 114
+Fixes errors in fencer and slinger
+attempts to fix "break free skill"
+reduces chance each recruit has a random class or favoured enemy
+Increases the number of recruits in towns by 25% 
 
