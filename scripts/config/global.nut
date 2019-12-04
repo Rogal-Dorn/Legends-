@@ -636,6 +636,6 @@ gt.Const.EntityIcon <- [
 	"banditwarlord_orientation",
 	"halberdier_orientation",
 	"slinger_orientation",
-	"fender_orientation"
+	"fencer_orientation"
 ];
 

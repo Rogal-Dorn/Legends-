@@ -29,9 +29,9 @@ this.legend_noble_slinger <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_bullseye"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_brawny"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_anticipation"));
-		this.m.Skills.add(this.new("scripts/skills/perks/legend_specialist_sling_skill"));
-		this.m.Skills.add(this.new("scripts/skills/perks/legend_specialist_sling_damage"));
-		this.m.Skills.add(this.new("scripts/skills/perks/legend_mastery_slings"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_sling_skill"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_sling_damage"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_mastery_slings"));
 		this.m.Skills.add(this.new("scripts/skills/actives/rotation"));
 		this.m.Skills.add(this.new("scripts/skills/actives/recover_skill"));
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
