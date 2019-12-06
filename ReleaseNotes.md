@@ -1890,7 +1890,14 @@ New Enemies:
 13.0.0.14 balance test 4
 Fixes error could not find 113 and 114
 Fixes errors in fencer and slinger
+Fixes crash when fighting peasant butcher
+Fixes named halberd not showing up in battle 
+Fixes hedge knights not getting plate armor 
+Camouflage now costs 8AP, the dark curse has also been eased
 attempts to fix "break free skill"
 reduces chance each recruit has a random class or favoured enemy
 Increases the number of recruits in towns by 25% 
-
+Peddlers gain Danger Pay perk as intended 
+Woodaxe skills correctly identify the woodaxe 
+Fixed fletcher death message gender incompatibility
+Most worldmap and town tooltips updated to be gender neutral 
