@@ -23,7 +23,7 @@ gt.Const.World.Spawn.BanditRoamers <-
 	MaxR = 220,
 	Troops = [
 		{
-			Weight = 60,
+			Weight = 50,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRabble,
@@ -67,7 +67,44 @@ gt.Const.World.Spawn.BanditRoamers <-
 					Cost = 15
 				}
 			]
-		}
+		},
+		{
+			Weight = 10,
+			MinR = 0.50 * 585,
+			Types =
+			[
+				{
+					Type = this.Const.World.Spawn.Troops.LegendPeasantButcher,
+					Cost = 15,
+					Roll = true
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendPeasantMinstrel,
+					Cost = 15,
+					Roll = true
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendPeasantWoodsman,
+					Cost = 15,
+					Roll = true
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendPeasantMiner,
+					Cost = 15,
+					Roll = true
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendPeasantMonk,
+					Cost = 20,
+					Roll = true
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendPeasantFarmhand,
+					Cost = 15,
+					Roll = true
+				}
+			]
+		},
 	]
 }
 
@@ -85,7 +122,7 @@ gt.Const.World.Spawn.BanditScouts <-
 	Fixed = [],
 	Troops = [
 		{
-			Weight = 70,
+			Weight = 60,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRabble,
@@ -140,7 +177,44 @@ gt.Const.World.Spawn.BanditScouts <-
 					Roll = true
 				}
 			]
-		}
+		},
+		{
+			Weight = 10,
+			MinR = 0.50 * 585,
+			Types =
+			[
+				{
+					Type = this.Const.World.Spawn.Troops.LegendPeasantButcher,
+					Cost = 15,
+					Roll = true
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendPeasantMinstrel,
+					Cost = 15,
+					Roll = true
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendPeasantWoodsman,
+					Cost = 15,
+					Roll = true
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendPeasantMiner,
+					Cost = 15,
+					Roll = true
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendPeasantMonk,
+					Cost = 20,
+					Roll = true
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendPeasantFarmhand,
+					Cost = 15,
+					Roll = true
+				}
+			]
+		},
 	]
 }
 
@@ -158,7 +232,7 @@ gt.Const.World.Spawn.BanditRaiders <-
 	Troops =
 	[
 		{
-			Weight = 69,
+			Weight = 59,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRabble,
@@ -246,7 +320,44 @@ gt.Const.World.Spawn.BanditRaiders <-
 					Roll = true
 				}
 			]
-		}
+		},
+		{
+			Weight = 10,
+			MinR = 0.50 * 585,
+			Types =
+			[
+				{
+					Type = this.Const.World.Spawn.Troops.LegendPeasantButcher,
+					Cost = 15,
+					Roll = true
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendPeasantMinstrel,
+					Cost = 15,
+					Roll = true
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendPeasantWoodsman,
+					Cost = 15,
+					Roll = true
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendPeasantMiner,
+					Cost = 15,
+					Roll = true
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendPeasantMonk,
+					Cost = 20,
+					Roll = true
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendPeasantFarmhand,
+					Cost = 15,
+					Roll = true
+				}
+			]
+		},
 	]
 }
 
@@ -264,7 +375,7 @@ gt.Const.World.Spawn.BanditDefenders <-
 	Troops =
 	[
 		{
-			Weight = 74,
+			Weight = 64,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRabble,
@@ -330,7 +441,7 @@ gt.Const.World.Spawn.BanditDefenders <-
 			]
 		},
 		{
-			Weight = 1,
+			Weight = 10,
 			MinR = 0.50 * 585,
 			Types =
 			[

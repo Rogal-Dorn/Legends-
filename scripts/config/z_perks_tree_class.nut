@@ -113,7 +113,10 @@ gt.Const.Perks.BarterClassTree <- {
 		[],
 		[],
 		[gt.Const.Perks.PerkDefs.LegendBarterTrustworthy],
-		[gt.Const.Perks.PerkDefs.LegendBribe]
+		[
+		gt.Const.Perks.PerkDefs.LegendBribe,
+		gt.Const.Perks.PerkDefs.LegendDangerPay
+		]
 	]
 };
 
@@ -373,7 +376,37 @@ gt.Const.Perks.InventorClassTree <- {
 	]
 };
 
+gt.Const.Perks.ValaSpiritClassTree <- {
+	ID = "ValaSpiritClassTree",
+	Descriptions = [
+		"spirits"
+	],
+	Tree = [
+		[gt.Const.Perks.PerkDefs.LegendValaWarden],
+		[],
+		[gt.Const.Perks.PerkDefs.LegendValaPremonition],
+		[],
+		[],
+		[gt.Const.Perks.PerkDefs.LegendValaSpiritualBond],
+		[]
+	]
+};
 
+gt.Const.Perks.RangerHuntClassTree <- {
+	ID = "RangerHuntClassTree",
+	Descriptions = [
+		"spirits"
+	],
+	Tree = [
+		[gt.Const.Perks.PerkDefs.LegendMarkTarget],
+		[],
+		[],
+		[],
+		[],
+		[gt.Const.Perks.PerkDefs.LegendFavouredEnemyArcher],
+		[gt.Const.Perks.PerkDefs.LegendBigGameHunter]
+	]
+};
 
 
 gt.Const.Perks.ClassTrees <- {

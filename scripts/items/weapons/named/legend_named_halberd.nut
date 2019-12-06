@@ -15,7 +15,7 @@ this.legend_named_halberd <- this.inherit("scripts/items/weapons/named/named_wea
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
-		this.m.ArmamentIcon = "icon_legend_halberd_01_named_01";
+		this.m.ArmamentIcon = "icon_legend_halberd_named_01";
 		this.m.Value = 3800;
 		this.m.ShieldDamage = 0;
 		this.m.Condition = 72.0;
