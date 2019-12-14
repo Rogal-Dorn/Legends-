@@ -356,11 +356,9 @@ gt.Const.EntityType <- {
 	LegendPeasantMiner = 107,
 	LegendPeasantSquire = 108,
 	LegendPeasantWitchHunter = 109,
-	LegendBanditVeteran = 110,
-	LegendBanditWarlord = 111,
-	LegendHalberdier = 112,
-	LegendSlinger = 113,
-	LegendFencer = 114
+	LegendHalberdier = 110,
+	LegendSlinger = 111,
+	LegendFencer = 112
 	function convertOldToNew( _id )
 	{
 		switch(_id)
@@ -622,6 +620,8 @@ gt.Const.EntityIcon <- [
 	"banshee_orientation_2",
 	"hollenhound_orientation",
 	"vampire_lord_orientation",
+	"banditveteran_orientation",
+	"banditwarlord_orientation",
 	"butcher_orientation",
 	"blacksmith_orientation",
 	"monk_orientation",
@@ -632,8 +632,6 @@ gt.Const.EntityIcon <- [
 	"miner_orientation",
 	"squire_orientation",
 	"witchhunter_orientation",
-	"banditveteran_orientation",
-	"banditwarlord_orientation",
 	"halberdier_orientation",
 	"slinger_orientation",
 	"fencer_orientation"
