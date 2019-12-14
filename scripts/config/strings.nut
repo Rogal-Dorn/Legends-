@@ -1367,7 +1367,8 @@ gt.Const.Strings.PerkName <- {
 	LegendHorseFlyingChange = "Flying Change",
 	LegendHorsePassage = "Passage",
 	LegendDrumsOfLife = "Drums of Life",
-	LegendLacerate = "Lacerate"
+	LegendLacerate = "Lacerate",
+	LegendPeaceful = "Peaceful"
 
 };
 gt.Const.Strings.PerkDescription <- {
@@ -1593,7 +1594,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendTeleport = "Step through the world, disapearing from one place and reappearing in another place immediately.",
 	LegendSpecialistShieldSkill = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] Melee Defense while using a shield. \n[color=#0b0084]From the Shield perk group[/color]",
 	LegendSpecialistShieldPush = "The skill \'Knock Back\' costs [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color] less fatigue and action points. \n[color=#0b0084]From the Shield perk group[/color]",
-	LegendMasteryNets = "Use advanced net throwing techniques to reduce the fatigue cost by [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color] and reduce AP cost to [color=" + this.Const.UI.Color.PositiveValue + "]3[/color] \n[color=#0b0084]From the Nets perk group[/color]",
+	LegendMasteryNets = "Use advanced net throwing techniques to reduce the fatigue cost by [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color] and reduce AP cost to [color=" + this.Const.UI.Color.PositiveValue + "]3[/color]. Also increases net range to [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] and ammunition to [color=" + this.Const.UI.Color.PositiveValue + "]2[/color] \n[color=#0b0084]From the Nets perk group[/color]",
 	LegendSpecialistScytheSkill = "Practicing with the unweildy scythe has taught you how to twist your torso to produce repeatable smooth strokes. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+15[/color] melee skill while weilding a scythe",
 	LegendSpecialistScytheDamage = "There is a trick to sharpening the blades of scythes, and shifting the position of the handles turns it from a farming tool into a weapon. Mastering these tricks increases the damage output of scythes by [color=" + this.Const.UI.Color.PositiveValue + "]+10-15[/color]",
 	LegendMasterySlings = "Master the difficult angles and timings of slinging rocks from afar. \n\n Accuracy with slings is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] and maximum firing range with slings is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color]. \n[color=#0b0084]From the Sling perk group[/color]",
@@ -1676,6 +1677,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendHorsePassage = "Training the legs to raise higher and push harder can prepare horses for rough or muddy terrain. Decreases movement costs on rough terrain",
 	LegendDrumsOfLife = "Learn powerful rythms that drive your allies on. Unlocks the Drums of Life skill that restores [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] health to every ally on the field. Can only be used with a Drum or Lute equipped. \n[color=#0b0084]From the Bard perk group[/color]"
 	LegendLacerate = "Lust for blood courses through your veins, each stroke rips and tears with a ferocity that intensifies as you bleed. Gain a chance to inflict bleeding with every strike, equal to your percentage of missing health."
+	LegendPeaceful = "Not all folks are built for war, some find contentment in contemplation or practicing a trade. This character becomes content with being in reserve, consumes half rations while in reserve, and their mood occassionaly improves while in researve."
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

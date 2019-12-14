@@ -150,7 +150,13 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		local food = this.Math.maxf(0.0, this.m.CurrentProperties.DailyFood);
 		if (this.isInReserves())
 		{
-			food = food * 3;
+			food = food * 2;
+
+			if (this.m.Skills.hasSkill("perk.legend_peaceful"))
+			{
+			food = food / 2;
+			}
+
 		}
 		return food;
 	}

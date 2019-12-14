@@ -1901,3 +1901,12 @@ Peddlers gain Danger Pay perk as intended
 Woodaxe skills correctly identify the woodaxe 
 Fixed fletcher death message gender incompatibility
 Most worldmap and town tooltips updated to be gender neutral 
+
+13.0.0.15%
+Fixes crash when entering battles vs nobles 
+Nets and Reinforced Nets now use ammo rather than being destroyed
+Net Mastery increases ammunition and range of nets 
+Rations consumed in reserve reduced from x3 to x2 
+New Perk - Peaceful. Become content in reserve, consume half rations in reserve, occassionally improve mood while in reserve 
+Peaceful added to the Organised perk group (most non-combat backgrounds get it in their tree) 
+

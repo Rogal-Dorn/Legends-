@@ -673,7 +673,9 @@ gt.Const.Perks.OrganisedTree <- {
 		[
 			gt.Const.Perks.PerkDefs.LegendEfficientPacking
 		],
-		[],
+		[
+			gt.Const.Perks.PerkDefs.LegendPeaceful
+		],
 		[
 			gt.Const.Perks.PerkDefs.LegendSkillfulStacking
 		],

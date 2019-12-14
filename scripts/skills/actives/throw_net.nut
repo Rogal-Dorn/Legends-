@@ -55,12 +55,62 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 				text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]" + this.getMaxRange() + "[/color] tiles"
 			}
 		]);
+		
+		local ammo = this.getAmmo();
+
+		if (ammo > 0)
+		{
+			ret.push({
+				id = 8,
+				type = "text",
+				icon = "ui/icons/ranged_skill.png",
+				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]" + ammo + "[/color] throwing net left"
+			});
+		}
+		else
+		{
+			ret.push({
+				id = 8,
+				type = "text",
+				icon = "ui/tooltips/warning.png",
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]No throwing net left[/color]"
+			});
+		}
+
 		return ret;
 	}
 
 	function onAfterUpdate( _properties )
 	{
 		this.m.FatigueCostMult = _properties.IsSpecializedInThrowing ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
+	}
+
+	function getAmmo( _properties )
+	{
+		local item = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
+
+		if (item == null)
+		{
+			return 0;
+		}
+
+		return item.getAmmo();
+	}
+
+	function consumeAmmo( _properties )
+	{
+		local item = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
+
+		if (item != null)
+		{
+			item.consumeAmmo();
+		}
+	}
+
+
+	function isUsable()
+	{
+		return !this.Tactical.isActive() || this.skill.isUsable() && this.getAmmo() > 0;
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )
@@ -80,8 +130,10 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
+		this.consumeAmmo();
+		
 		local targetEntity = _targetTile.getEntity();
-
+		
 		if (!targetEntity.getCurrentProperties().IsImmuneToRoot)
 		{
 			if (this.m.SoundOnHit.len() != 0)
@@ -89,7 +141,8 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 				this.Sound.play(this.m.SoundOnHit[this.Math.rand(0, this.m.SoundOnHit.len() - 1)], this.Const.Sound.Volume.Skill, targetEntity.getPos());
 			}
 
-			_user.getItems().unequip(_user.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand));
+			//_user.getItems().unequip(_user.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand));
+			_user.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand).drop(); //drop instead of destroy
 			targetEntity.getSkills().add(this.new("scripts/skills/effects/net_effect"));
 			local breakFree = this.new("scripts/skills/actives/break_free_skill");
 			breakFree.m.Icon = "skills/active_74.png";

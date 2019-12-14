@@ -2607,6 +2607,15 @@ gt.Const.Perks.PerkDefObjects <- [
 		IconDisabled = "ui/perks/bleed_circle_bw.png",
 		Const = "LegendLacerate"
 	},
+	{
+		ID = "perk.legend_peaceful",
+		Script = "scripts/skills/perks/perk_peaceful",
+		Name = this.Const.Strings.PerkName.LegendPeaceful,
+		Tooltip = this.Const.Strings.PerkDescription.LegendPeaceful,
+		Icon = "ui/perks/bandage_circle.png",
+		IconDisabled = "ui/perks/bandage_circle_bw.png",
+		Const = "LegendPeaceful"
+	}
 ];
 gt.Const.Perks.PerkDefs <- {};
 
