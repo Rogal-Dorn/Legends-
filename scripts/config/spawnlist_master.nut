@@ -816,6 +816,14 @@ gt.Const.World.Spawn.Troops <- {
 		NameList = this.Const.Strings.BanditLeaderNames,
 		TitleList = null
 	},	
+	BanditOutrider = {
+		ID = this.Const.EntityType.BanditOutrider,
+		Variant = 0,
+		Strength = 30,
+		Cost = 35,
+		Row = 0,
+		Script = "scripts/entity/tactical/enemies/legend_bandit_outrider"
+	},	
 	Warhound = {
 		ID = this.Const.EntityType.Warhound,
 		Variant = 0,

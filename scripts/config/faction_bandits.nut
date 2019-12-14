@@ -220,3 +220,22 @@ gt.Const.Tactical.Actor.BanditWarlord <- {
 	],
 	FatigueRecoveryRate = 25
 };
+gt.Const.Tactical.Actor.BanditOutrider <- {
+	XP = 300,
+	ActionPoints = 9,
+	Hitpoints = 150,
+	Bravery = 45,
+	Stamina = 200,
+	MeleeSkill = 55,
+	RangedSkill = 15,
+	MeleeDefense = 0,
+	RangedDefense = 0,
+	Initiative = 95,
+	FatigueEffectMult = 1.0,
+	MoraleEffectMult = 1.0,
+	Armor = [
+		0,
+		0
+	],
+	FatigueRecoveryRate = 20
+};
