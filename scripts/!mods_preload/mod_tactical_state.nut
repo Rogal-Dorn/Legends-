@@ -49,6 +49,16 @@
 						bro.getLifetimeStats().BattlesWithoutMe = 0;
 						bro.improveMood(this.Const.MoodChange.BattleWon, "Won a battle");
 					}
+					else if (bro.getSkills().hasSkill("perk.legend_peaceful"))
+					{
+					
+						if ((bro.getLevel() + 1) / bro.getLifetimeStats().BattlesWithoutMe = 2)
+						{
+							bro.improveMood(this.Const.MoodChange.BattleWithoutMe, "Felt glad to be in reserve");
+						}
+
+					}
+
 					else if (bro.getMoodState() > this.Const.MoodState.Concerned && !bro.getCurrentProperties().IsContentWithBeingInReserve)
 					{
 						++bro.getLifetimeStats().BattlesWithoutMe;
