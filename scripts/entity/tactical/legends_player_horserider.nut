@@ -71,14 +71,14 @@ this.legends_player_horserider <- this.inherit("scripts/entity/tactical/player",
 		local b = this.m.BaseProperties;
 
 //determine action points
-		local horseAP = this.getHorse().getActionPoints();
-		this.logInfo("horseAP is " + horseAP)
-		local riderAP = this.getRider().getActionPoints();
-		this.logInfo("riderAP is " + riderAP)
-		local totalAP = this.Math.floor((horseAP + riderAP) - 18);
-		this.logInfo("totalAP is " + totalAP)
-
-		b.ActionPoints = totalAP;
+//		local horseAP = this.getHorse().getActionPoints();
+//		this.logInfo("horseAP is " + horseAP)
+//		local riderAP = this.getRider().getActionPoints();
+//		this.logInfo("riderAP is " + riderAP)
+//		local totalAP = this.Math.floor((horseAP + riderAP) - 9);
+//		this.logInfo("totalAP is " + totalAP)
+//
+		b.ActionPoints = 9;
 
 //determine hitpoints
 		local horseHP = this.getHorse().getHitpoints();
@@ -90,9 +90,9 @@ this.legends_player_horserider <- this.inherit("scripts/entity/tactical/player",
 			this.logInfo("totalHP is " + b.Hitpoints)
 
 //determine resolve
-		local horseBravery = this.getHorse().getBravery();
+		local horseBravery = this.getHorse().getBaseProperties().Bravery;
 			this.logInfo("horseBravery is " + horseBravery)
-		local riderBravery = this.getRider().getBravery();
+		local riderBravery = this.getRider().getBaseProperties().Bravery;
 			this.logInfo("riderBravery is " + riderBravery)
 		local totalBravery = (horseBravery + riderBravery) / 2;
 			
@@ -104,13 +104,14 @@ this.legends_player_horserider <- this.inherit("scripts/entity/tactical/player",
 		b.Bravery = totalBravery;
 
 //determine fatigue 
-		local horseFatigue = this.getHorse().getFatigue();
+		local horseFatigue = this.getHorse().getBaseProperties().Stamina;
 			this.logInfo("horseFatigue is " + horseFatigue)
-		local riderFatigue = this.getRider().getFatigue();
+		local riderFatigue = this.getRider().getBaseProperties().Stamina;
 			this.logInfo("riderFatiguee is " + riderFatigue)
 		local totalFatigue = (horseFatigue + riderFatigue) / 2;
 			this.logInfo("totalFatiguee is " + totalFatigue)
 		b.Stamina = totalFatigue;
+
 
 //determine melee skill 
 		local horseMeleeSkill  = this.getHorse().getBaseProperties().MeleeSkill;
@@ -171,6 +172,13 @@ this.legends_player_horserider <- this.inherit("scripts/entity/tactical/player",
 		this.m.Skills.add(background);
 
 //add horse skills
+		
+		this.m.ActionPointCosts = this.Const.HorseMovementAPCost;
+		this.m.FatigueCosts = clone this.Const.HorseMovementFatigueCost;
+
+		this.getSkills().add(this.new("scripts/skills/actives/legend_horse_kick"));
+		this.getSkills().add(this.new("scripts/skills/actives/legend_horse_charge"));
+
 		if (this.getHorse().getSkills().hasSkill("perk.legend_horse_movement") && !this.getHorse().getSkills().hasSkill("perk.legend_horse_passage"))
 		{
 			this.getSkills().add(this.new("scripts/skills/perks/perk_legend_horse_movement"));
@@ -179,14 +187,25 @@ this.legends_player_horserider <- this.inherit("scripts/entity/tactical/player",
 		{
 			this.getSkills().add(this.new("scripts/skills/perks/perk_legend_horse_passage"));
 		}
-		if (this.getHorse().getSkills().hasSkill("perk.legend_horse_pirouette"))
-		{
+//		if (this.getHorse().getSkills().hasSkill("perk.legend_horse_pirouette"))
+//		{
 			this.getSkills().add(this.new("scripts/skills/perks/perk_legend_horse_pirouette"));
-		}
-		if (this.getHorse().getSkills().hasSkill("perk.legend_horse_charge"))
+//		}
+//		if (this.getHorse().getSkills().hasSkill("perk.legend_horse_charge"))
+//		{
+			this.getSkills().add(this.new("scripts/skills/perks/perk_horse_charge"));
+//		}
+
+//add rider skills
+		if (this.getRider().getSkills().hasSkill("perk.legend_horse_movement") && !this.getHorse().getSkills().hasSkill("perk.legend_horse_passage"))
 		{
-			this.getSkills().add(this.new("scripts/skills/perks/perk_legend_horse_charge"));
+			this.getSkills().add(this.new("scripts/skills/perks/perk_legend_horse_movement"));
 		}
+
+
+
+
+
 
 		background.buildDescription();
 		local c = this.m.CurrentProperties;

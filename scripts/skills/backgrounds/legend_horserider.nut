@@ -218,10 +218,10 @@ this.legend_horserider <- this.inherit("scripts/skills/backgrounds/character_bac
 		horse.setBrush(actor.getHorse().getSprite("body").getBrush().Name);
 		horse.varySaturation(0.15);
 		horse.varyColor(0.07, 0.07, 0.07);
-		local horse = actor.addSprite("horse_head");
+		local horse_head = actor.addSprite("horse_head");
 		horse.setBrush(actor.getHorse().getSprite("head").getBrush().Name);
 		local horse_injury = actor.addSprite("injury_horse_body");
-
+		horse.setBrush(actor.getHorse().getSprite("head").getBrush().Name)
 		local offset = this.createVec(10, 0);
 		actor.setSpriteOffset("horse_body", offset);
 		actor.setSpriteOffset("horse_head", offset);
@@ -232,8 +232,8 @@ this.legend_horserider <- this.inherit("scripts/skills/backgrounds/character_bac
 	function onAdded()
 	{
 		this.character_background.onAdded();
-		this.m.Container.add(this.new("scripts/skills/actives/legend_donkey_kick"));
-		this.m.Container.add(this.new("scripts/skills/traits/legend_appetite_donkey"));
+		this.m.Container.add(this.new("scripts/skills/actives/legend_horse_kick"));
+		this.m.Container.add(this.new("scripts/skills/traits/legend_horse_trait"));
 	}
 
 

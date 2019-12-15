@@ -6,7 +6,7 @@ this.legend_horse_charge <- this.inherit("scripts/skills/skill", {
 		this.m.Name = "Horse Charge";
 		this.m.Description = "Push your mount forward with speed, ending in an impact that stuns an enemy";
 		this.m.Icon = "skills/horse_charge.png";
-		this.m.IconDisabled = "skills/horse_pirouette.png";
+		this.m.IconDisabled = "skills/horse_charge_bw.png";
 		this.m.Overlay = "horse_charge";
 		this.m.SoundOnUse = [
 			"sounds/combat/gallop.wav"
@@ -28,7 +28,7 @@ this.legend_horse_charge <- this.inherit("scripts/skills/skill", {
 		this.m.ActionPointCost = 4;
 		this.m.FatigueCost = 30;
 		this.m.MinRange = 1;
-		this.m.MaxRange = 1;
+		this.m.MaxRange = 3;
 	}
 
 	function findTileToKnockBackTo( _userTile, _targetTile )
@@ -122,8 +122,7 @@ this.legend_horse_charge <- this.inherit("scripts/skills/skill", {
 		{
 			this.Tactical.getNavigator().teleport(target, knockToTile, null, null, true);
 		}
-		else
-		{
+
 			local p = this.getContainer().getActor().getCurrentProperties();
 			local tag = {
 				Attacker = _user,
@@ -139,7 +138,6 @@ this.legend_horse_charge <- this.inherit("scripts/skills/skill", {
 			this.Tactical.getNavigator().teleport(target, knockToTile, this.onKnockedDown, tag, true);
 			this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectBash);
 			return this.attackEntity(_user, _targetTile.getEntity());
-		}
 
 		local tag = {
 			TargetTile = _targetTile,

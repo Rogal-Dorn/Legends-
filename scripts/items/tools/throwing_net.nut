@@ -124,7 +124,7 @@ this.throwing_net <- this.inherit("scripts/items/weapons/weapon", {
 		this.weapon.onEquip();
 		this.addSkill(this.new("scripts/skills/actives/throw_net"));
 
-		if (this.getSkills().hasSkill("perk.legend_mastery_nets"))
+		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_mastery_nets"))
 		{
 		this.m.AmmoMax = 2;
 		this.m.RangeMax = 4;
