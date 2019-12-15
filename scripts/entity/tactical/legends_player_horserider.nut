@@ -40,66 +40,76 @@ this.legends_player_horserider <- this.inherit("scripts/entity/tactical/player",
 
 	function setScenarioValues()
 	{
-// 		foreach(k,v in this)
-// 		{
-// 			this.logInfo("k = " + k + " : v = " + v)
-// 		}
-// 		this.logInfo("PLAYER")
-// 		foreach(k,v in this.player)
-// 		{
-// 			this.logInfo("k = " + k + " : v = " + v)
-// 		}
-// this.logInfo("HUMAN")
-// 		foreach(k,v in this.player.human)
-// 		{
-// 			this.logInfo("k = " + k + " : v = " + v)
-// 		}
+ 		foreach(k,v in this)
+ 		{
+ 			this.logInfo("k = " + k + " : v = " + v)
+ 		}
+ 		this.logInfo("PLAYER")
+ 		foreach(k,v in this.player)
+ 		{
+ 			this.logInfo("k = " + k + " : v = " + v)
+ 		}
+ this.logInfo("HUMAN")
+ 		foreach(k,v in this.player.human)
+ 		{
+ 			this.logInfo("k = " + k + " : v = " + v)
+ 		}
 
-// this.logInfo("ACTOR")
-// 		foreach(k,v in this.player.human.actor)
-// 		{
-// 			this.logInfo("k = " + k + " : v = " + v)
-// 		}
+ this.logInfo("ACTOR")
+ 		foreach(k,v in this.player.human.actor)
+ 		{
+ 			this.logInfo("k = " + k + " : v = " + v)
+ 		}
 
-// this.logInfo("ENTITY")
-// 		foreach(k,v in this.player.human.actor.entity)
-// 		{
-// 			this.logInfo("k = " + k + " : v = " + v)
-// 		}
+ this.logInfo("ENTITY")
+ 		foreach(k,v in this.player.human.actor.entity)
+ 		{
+ 			this.logInfo("k = " + k + " : v = " + v)
+ 		}
 
 
 		local b = this.m.BaseProperties;
 
 //determine action points
 		local horseAP = this.getHorse().getActionPoints();
+		this.logInfo("horseAP is " + horseAP)
 		local riderAP = this.getRider().getActionPoints();
+		this.logInfo("riderAP is " + riderAP)
 		local totalAP = this.Math.floor((horseAP + riderAP) - 18);
-
+		this.logInfo("totalAP is " + totalAP)
 
 		b.ActionPoints = totalAP;
 
 //determine hitpoints
 		local horseHP = this.getHorse().getHitpoints();
+			this.logInfo("horseHP is " + horseHP)
 		local riderHP = this.getRider().getHitpoints();
+			this.logInfo("riderHP is " + riderHP)
 		local totalHP = this.Math.floor((horseHP + riderHP) / 2);
 		b.Hitpoints = totalHP;
+			this.logInfo("totalHP is " + b.Hitpoints)
 
 //determine resolve
 		local horseBravery = this.getHorse().getBravery();
+			this.logInfo("horseBravery is " + horseBravery)
 		local riderBravery = this.getRider().getBravery();
+			this.logInfo("riderBravery is " + riderBravery)
 		local totalBravery = (horseBravery + riderBravery) / 2;
-		
+			
 		if (this.getHorse().getSkills().hasSkill("perk.legend_horse_liberty"))
 		{
 			totalBravery += riderBravery * 0.25;
 		}
-
+		this.logInfo("totalBravery is " + totalBravery)
 		b.Bravery = totalBravery;
 
 //determine fatigue 
 		local horseFatigue = this.getHorse().getFatigue();
+			this.logInfo("horseFatigue is " + horseFatigue)
 		local riderFatigue = this.getRider().getFatigue();
+			this.logInfo("riderFatiguee is " + riderFatigue)
 		local totalFatigue = (horseFatigue + riderFatigue) / 2;
+			this.logInfo("totalFatiguee is " + totalFatigue)
 		b.Stamina = totalFatigue;
 
 //determine melee skill 
