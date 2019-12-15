@@ -1940,7 +1940,7 @@ Legendary difficulty changes:
 * Mercenary ranged - gains pathfinder, lone wolf, lookout and berserk. keeps ballistics, close combat archer and fearless. AI more aggressive
 * Wildmen - gains unarmed mastery, kick and grapple. AI updated to use these skills. 
 * Lindwurm and Stollwurms - lose nimble, gain +50% health, +5 AP, pathfinder, composure and killing frenzy 
-* Vampire - gains bloodbath - AI made more agressive and brutal 
+* Necrosavant - gains bloodbath - AI made more agressive and brutal 
 * Schrat and greenwood schrat - AI knows how to shield bash, gets all the shield skills
 * Gheist - gains footwork, rotation, anctipation, dodge, levitation and teleport 
 * Bandshee - gains the same as gheist, plus nightmare touch 
@@ -1955,5 +1955,9 @@ Non legendary difficulty changes
 * Militia who fight on your side will have the same skills as the militia you fight against 
 * Donkeys will now flee, retreat and defend themselves 
 
-fixes "index 7 not found"
+Fixes "index 7 not found"
+Drums of life now heals 2 hp per turn, only applies to allies within 3 tiles 
+Drums of war now restores 2 fatigue per turn, only applies to allies within 3 tiles 
+Fixes missing drums of war black and white icon 
+Adds cultscidon's armor naming 
 
