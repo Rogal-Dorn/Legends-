@@ -198,7 +198,12 @@ this.legend_banshee <- this.inherit("scripts/entity/tactical/actor", {
 		if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 		{
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_fearsome"));
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_dodge"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_levitation"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_teleport"));
+			this.m.Skills.add(this.new("scripts/skills/actives/nightmare_touch_skill"));
+			this.m.Skills.add(this.new("scripts/skills/actives/nightmare_touch_zoc_skill"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_footwork"));
 		}
 
 	}

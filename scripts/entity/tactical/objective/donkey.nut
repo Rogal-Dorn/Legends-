@@ -131,7 +131,12 @@ this.donkey <- this.inherit("scripts/entity/tactical/actor", {
 		injury.Visible = false;
 		injury.setBrush("donkey_tactical_injured");
 		this.addDefaultStatusSprites();
-		this.m.Skills.update();
+		this.m.Skills.add(this.new("scripts/skills/active/legend_donkey_kick"));
+		 if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+			{
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_muscularity"));
+
+			}
 	}
 
 	function onPlacedOnMap()

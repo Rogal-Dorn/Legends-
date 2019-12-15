@@ -36,6 +36,8 @@ this.schrat_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_engage_melee"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_break_free"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_defend_shieldwall"));
+		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_defend_knock_back"));
+		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_knock_out"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_split"));
 		this.getBehavior(this.Const.AI.Behavior.ID.Split).m.MinTargets = 1;
 		this.getBehavior(this.Const.AI.Behavior.ID.Split).m.Length = 3;
