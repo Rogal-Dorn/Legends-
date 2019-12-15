@@ -1939,8 +1939,14 @@ Legendary difficulty changes:
 * Mercenary - loses nimble, gains colossus, rebound, stalwart, clarity, footwork, underdog, steadfast, berserk. keeps steel brow and fearless. AI more aggressive
 * Mercenary ranged - gains pathfinder, lone wolf, lookout and berserk. keeps ballistics, close combat archer and fearless. AI more aggressive
 * Wildmen - gains unarmed mastery, kick and grapple. AI updated to use these skills. 
+* Lindwurm and Stollwurms - lose nimble, gain +50% health, +5 AP, pathfinder, composure and killing frenzy 
+* Vampire - gains bloodbath 
+
 
 Non legendary difficulty changes
 * Militia weapons changes to spears and glaives, chance for wooden shield. 
 * Militia and militia veterans gain Militia Training and shield bash 
 * Militia who fight on your side will have the same skills as the militia you fight against 
+
+fixes "index 7 not found"
+

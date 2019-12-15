@@ -52,7 +52,9 @@
 					else if (bro.getSkills().hasSkill("perk.legend_peaceful"))
 					{
 					
-						if ((bro.getLevel() + 1) / bro.getLifetimeStats().BattlesWithoutMe == 2)
+						local r = this.Math.rand(1, 10);
+						local levelRequired = 10 - bro.getLevel();
+						if (bro.getLifetimeStats().BattlesWithoutMe >= levelRequired && r >= 10)
 						{
 							bro.improveMood(this.Const.MoodChange.BattleWithoutMe, "Felt glad to be in reserve");
 						}

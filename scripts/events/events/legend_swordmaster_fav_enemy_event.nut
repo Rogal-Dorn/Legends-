@@ -333,11 +333,13 @@ this.legend_swordmaster_fav_enemy_event <- this.inherit("scripts/events/event", 
 				}	
 				_event.m.Champion.getSkills().update();
 				
-				foreach( bro in this.World.getPlayerRoster().getAll() )
+				local playerRoster = this.World.getPlayerRoster().getAll();
+
+				foreach(bro in playerRoster)
 				{
 					if (bro.getBackground().isCombatBackground() && this.Math.rand(1, 100) <= 33)
 					{
-						bro.improveMood(1.0, "The company's champion won impressive duel");
+						bro.improveMood(0.5, "The company's champion won impressive duel");
 					}
 
 					if (bro.getMoodState() > this.Const.MoodState.Neutral)
