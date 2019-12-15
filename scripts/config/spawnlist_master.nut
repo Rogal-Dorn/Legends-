@@ -819,8 +819,8 @@ gt.Const.World.Spawn.Troops <- {
 	BanditOutrider = {
 		ID = this.Const.EntityType.BanditOutrider,
 		Variant = 0,
-		Strength = 30,
-		Cost = 35,
+		Strength = 40,
+		Cost = 45,
 		Row = 0,
 		Script = "scripts/entity/tactical/enemies/legend_bandit_outrider"
 	},	
