@@ -1903,14 +1903,17 @@ Fixed fletcher death message gender incompatibility
 Most worldmap and town tooltips updated to be gender neutral 
 
 13.0.0.15
-Fixes crash when entering battles vs nobles 
+
 Rations consumed in reserve reduced from x3 to x2 
 New Perk - Peaceful. Become content in reserve, consume half rations in reserve, occassionally improve mood while in reserve 
 Peaceful added to the Organised perk group, so most non-combat backgrounds get it in their tree
+Drums of life now heals 2 hp per turn, only applies to allies within 3 tiles 
+Drums of war now restores 2 fatigue per turn, only applies to allies within 3 tiles 
+Fixes missing drums of war black and white icon
 Nets and Reinforced Nets now use ammo rather than being destroyed, prices increased to match 
 Net Mastery increases ammunition and range of nets 
-New Enemy - Bandit Outrider - trial of first horse mounted enemy. 
-Legendary difficulty changes:
+
+Legendary difficulty enemy changes:
 * Bandit Rabble - lost Lithe, gain dodge and backstabber. Keeps fearless. AI more aggressive
 * Bandit Thugs - lost Nimble, gain dodge, relentless and underdog, keep backstabber and fearless. AI more aggressive
 * Bandit Raider - lost Nimble, gain dodge, relentless, backstabber and underdog. Keep battleforged and fearless. AI more aggressive
@@ -1948,16 +1951,14 @@ Legendary difficulty changes:
 * donkeys - gain muscularity 
 * military donkeys - gain muscularity, steadfast and stalwart
 
-
-Non legendary difficulty changes
+Non-legendary difficulty changes
 * Militia weapons changes to spears and glaives, chance for wooden shield. 
 * Militia and militia veterans gain Militia Training and shield bash 
 * Militia who fight on your side will have the same skills as the militia you fight against 
 * Donkeys will now flee, retreat and defend themselves 
 
-Fixes "index 7 not found"
-Drums of life now heals 2 hp per turn, only applies to allies within 3 tiles 
-Drums of war now restores 2 fatigue per turn, only applies to allies within 3 tiles 
-Fixes missing drums of war black and white icon 
-Adds cultscidon's armor naming 
-
+New Enemy - Bandit Outrider - trial of first horse mounted enemy. 
+Horses slightly less broken - still pretty broken.
+Adds cultscidon's armor naming - combined armor layers now show all the layers in the name 
+Fixes crash when entering battles vs nobles 
+Fixes "index 7 not found", "13 not found" and "14 not found" 

@@ -14,19 +14,12 @@ this.perk_legend_peaceful <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = false;
 	}
 
-	function onAdded()
-	{
-		_properties.IsContentWithBeingInReserve = true;
-	}
 
 	function onUpdate( _properties )
 	{
 		_properties.IsContentWithBeingInReserve = true;
 	}
 
-	function onRemoved()
-	{
-		_properties.IsContentWithBeingInReserve = false;
-	}
+
 
 });
