@@ -1902,11 +1902,45 @@ Woodaxe skills correctly identify the woodaxe
 Fixed fletcher death message gender incompatibility
 Most worldmap and town tooltips updated to be gender neutral 
 
-13.0.0.15%
+13.0.0.15
 Fixes crash when entering battles vs nobles 
-Nets and Reinforced Nets now use ammo rather than being destroyed
-Net Mastery increases ammunition and range of nets 
 Rations consumed in reserve reduced from x3 to x2 
 New Perk - Peaceful. Become content in reserve, consume half rations in reserve, occassionally improve mood while in reserve 
-Peaceful added to the Organised perk group (most non-combat backgrounds get it in their tree) 
+Peaceful added to the Organised perk group, so most non-combat backgrounds get it in their tree
+Nets and Reinforced Nets now use ammo rather than being destroyed, prices increased to match 
+Net Mastery increases ammunition and range of nets 
+New Enemy - Bandit Outrider - trial of first horse mounted enemy. 
+Legendary difficulty changes:
+* Bandit Rabble - lost Lithe, gain dodge and backstabber. Keeps fearless. AI more aggressive
+* Bandit Thugs - lost Nimble, gain dodge, relentless and underdog, keep backstabber and fearless. AI more aggressive
+* Bandit Raider - lost Nimble, gain dodge, relentless, backstabber and underdog. Keep battleforged and fearless. AI more aggressive
+* Bandit Poacher and Marksman - lost Nimble, gain Lone wolf, keep ballistics, close combat archer and crippling strikes and fearless
+* Bandit Leader - lost Nimble and inspiring presence, Gain rally the troops, dodge, relentless, backstabber and underdog.  Keeps composure, battleforged, inspiring presence and fearless. AI more aggressive
+* Bandit Veteran -  Lost nimble, gains lithe, dodge, relentless, backstabber and underdog. Keeps fullforce, steelbrow and fearless. AI more aggressive
+* Bandit Warlord -  Lost Nimble, gains lithe, rally the troops, full force, dodge, relentless, backstabber and underdog.  Keeps composure and fearless. AI more aggressive
+* Noble Footman - Lost nimble, gains shield bash, born with a board, push it, steelbrow, back to basics, feint and smashing shields. Keeps full force and fearless. AI more aggressive
+* Noble Arbelester - Lost Nimble, back to basics, feint, lone wolf, close combat archer, ballistics. keeps crippling stricks and fearless. AI more aggressive
+* Noble Billman - List nimble, gains executioner, steel brow, full force, feint and back to basics. Keeps berserk and fearless. AI more aggressive
+* Noble Greatsword - Lost +50% HP, gains underdog, greatsword mastery, forceful swing, feint, back to basics. Keeps bloody harvest and full force. AI more aggressive
+* Noble Sergeant - Gains rally the troops, composure feint, back to basics and full force. Keeps last stand, battle forged and fearless  AI more aggressive
+* Noble Standard bearer - Gains Push Forward and Hold the Line, AI updated to use these skills 
+* Hedge Knight - Loses +50% HP.  Gains Steelbrow, underdog, last stand shield bash, born with a board, push it, back to basics, feint and smashing shields. Keeps bloody harvest and fearless
+* Knight - Loses +100% HP.  Gains forceful swing, bloody harvest, Steelbrow, underdog, last stand shield bash, born with a board, push it, back to basics, feint and smashing shields. Keeps composure and fearless
+* Master archer - gains lone wolf and pathfinder. keeps ballistics, close combat archer, berserk and fearless 
+* Swordmaster - gains feint, pathfinder, head hunter, return favor, keeps battle forged, fearless and composure
+* Militia - gains Militia practice, spear mastery, shield expert, spearwaller and thrust master.  AI more aggressive
+* Militia Captain - loses +100% HP and nimble. Gains composure, rotation, shield bash, born with a board, push it, steelbrow, back to basics, full force and smashing shields. AI more aggressive
+* Militia Ranged - gains Small game, Poachers arm, pathfinder, lone wolf, crippling strikes and fearless
+* Militia veterans - lose nimble. gain Militia practice, spear mastery, shield expert, spearwaller and thrust master, rotation, shield bash, born with a board, push it, back to basics, and smashing shield.  AI more aggressive
+* Caravan gaurd - gains shield bash, underdog, born with a board, push it, hold out, rotation, alert, crippling strikes and fearless 
+* Caravan hand -  gains shield bash, underdog, pathfinder, alert, crippling strikes, fearless 
+* Bounty hunter - gains pathfinder, trophy hunter, big game hunter, head hunter, back to basics, push the advantage, net mastery, onslaught. Keeps battle forged, backstabber and fearless. AI more aggressive
+* Bounty hunter ranged - gains pathfinder, trophy hunter, big game hunter, head hunter, back to basics, push the advantage, onslaught. keeps nimble, crippling strikes and fearless. AI more aggressive
+* Mercenary - loses nimble, gains colossus, rebound, stalwart, clarity, footwork, underdog, steadfast, berserk. keeps steel brow and fearless. AI more aggressive
+* Mercenary ranged - gains pathfinder, lone wolf, lookout and berserk. keeps ballistics, close combat archer and fearless. AI more aggressive
+* Wildmen - gains unarmed mastery, kick and grapple. AI updated to use these skills. 
 
+Non legendary difficulty changes
+* Militia weapons changes to spears and glaives, chance for wooden shield. 
+* Militia and militia veterans gain Militia Training and shield bash 
+* Militia who fight on your side will have the same skills as the militia you fight against 
