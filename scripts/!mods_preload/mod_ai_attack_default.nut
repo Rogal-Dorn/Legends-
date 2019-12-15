@@ -13,4 +13,6 @@
 	o.m.PossibleSkills.push("actives.legend_ranged_flail");
 	o.m.PossibleSkills.push("actives.legend_halberd_impale");
 	o.m.PossibleSkills.push("actives.legend_voulge_cleave");
+	o.m.PossibleSkills.push("actives.legend_horse_kick");
+	o.m.PossibleSkills.push("actives.legend_donkey_kick");
 });

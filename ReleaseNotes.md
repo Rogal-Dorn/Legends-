@@ -1940,13 +1940,20 @@ Legendary difficulty changes:
 * Mercenary ranged - gains pathfinder, lone wolf, lookout and berserk. keeps ballistics, close combat archer and fearless. AI more aggressive
 * Wildmen - gains unarmed mastery, kick and grapple. AI updated to use these skills. 
 * Lindwurm and Stollwurms - lose nimble, gain +50% health, +5 AP, pathfinder, composure and killing frenzy 
-* Vampire - gains bloodbath 
+* Vampire - gains bloodbath - AI made more agressive and brutal 
+* Schrat and greenwood schrat - AI knows how to shield bash, gets all the shield skills
+* Gheist - gains footwork, rotation, anctipation, dodge, levitation and teleport 
+* Bandshee - gains the same as gheist, plus nightmare touch 
+* alp - gains dodge, overwhelm, return favor, fortidied mind. keeps levitation and anticipation
+* donkeys - gain muscularity 
+* military donkeys - gain muscularity, steadfast and stalwart
 
 
 Non legendary difficulty changes
 * Militia weapons changes to spears and glaives, chance for wooden shield. 
 * Militia and militia veterans gain Militia Training and shield bash 
 * Militia who fight on your side will have the same skills as the militia you fight against 
+* Donkeys will now flee, retreat and defend themselves 
 
 fixes "index 7 not found"
 
