@@ -2,7 +2,7 @@ this.legend_horse_kick <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{
-		this.m.ID = "actives.legend_donkey_kick";
+		this.m.ID = "actives.legend_horse_kick";
 		this.m.Name = "Horse Kick";
 		this.m.Description = "The main attack of a horse, more for defense than attack. Maximum damage is the average of your hitpoints and initiative minus 90";
 		this.m.KilledString = "Kicked to death";
@@ -36,42 +36,43 @@ this.legend_horse_kick <- this.inherit("scripts/skills/skill", {
 		this.m.MaxRange = 1;
 	}
 
-function getTooltip()
+	function getTooltip()
 	{
-		local actor = this.getContainer().getActor()
+		local actor = this.getContainer().getActor();
 		local p = actor.getCurrentProperties();
 		local mult = p.MeleeDamageMult;
 		local bodyHealth = actor.getHitpointsMax();
-		local average = (actor.getInitiative() +  bodyHealth) / 2;
+		local average = (actor.getInitiative() + bodyHealth) / 2;
 		local damageMin = 5;
 		local damageMax = 10;
 		local avgMin = average - 100;
-		local avgMax = average - 90;	
+		local avgMax = average - 90;
 
-		if ((average - 100) > 0)
-			{
-			damageMin += avgMin;
-			}
+		if (average - 100 > 0)
+		{
+			damageMin = damageMin + avgMin;
+		}
 
-		if ((average - 90) > 0)
-			{
-			damageMax += avgMax;
-			}
-			
+		if (average - 90 > 0)
+		{
+			damageMax = damageMax + avgMax;
+		}
+
 		local damage_regular_min = this.Math.floor(damageMin * p.DamageRegularMult * p.DamageTotalMult);
 		local damage_regular_max = this.Math.floor(damageMax * p.DamageRegularMult * p.DamageTotalMult);
 		local damage_Armor_min = this.Math.floor(damageMin * p.DamageArmorMult * p.DamageTotalMult);
 		local damage_Armor_max = this.Math.floor(damageMax * p.DamageArmorMult * p.DamageTotalMult);
 		local damage_direct_max = this.Math.floor(damageMax * this.m.DirectDamageMult);
+
 		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_muscularity"))
 		{
 			local muscularity = this.Math.floor(bodyHealth * 0.1);
-			 damage_regular_max += muscularity;
-			 damage_Armor_max += muscularity;
-			 damage_direct_max += muscularity;
+			damage_regular_max = damage_regular_max + muscularity;
+			damage_Armor_max = damage_Armor_max + muscularity;
+			damage_direct_max = damage_direct_max + muscularity;
 		}
-		
-		if(mult != 1.0)
+
+		if (mult != 1.0)
 		{
 			damage_regular_min = this.Math.floor(damage_regular_min * mult);
 			damage_regular_max = this.Math.floor(damage_regular_max * mult);
@@ -79,7 +80,7 @@ function getTooltip()
 			damage_Armor_max = this.Math.floor(damage_Armor_max * mult);
 			damage_direct_max = this.Math.floor(damage_direct_max * mult);
 		}
-		
+
 		local ret = [
 			{
 				id = 1,
@@ -143,7 +144,7 @@ function getTooltip()
 		}
 	}
 
-function onAnySkillUsed( _skill, _targetEntity, _properties )
+	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
 		if (_skill == this)
 		{
@@ -151,26 +152,26 @@ function onAnySkillUsed( _skill, _targetEntity, _properties )
 			local p = actor.getCurrentProperties();
 			local mult = p.MeleeDamageMult;
 			local bodyHealth = actor.getHitpointsMax();
-			local average = (actor.getInitiative() +  bodyHealth) / 2;
+			local average = (actor.getInitiative() + bodyHealth) / 2;
 			local damageMin = 5;
 			local damageMax = 10;
 			local avgMin = average - 100;
-			local avgMax = average - 90;	
+			local avgMax = average - 90;
 
-			if ((average - 100) > 0)
-				{
-				damageMin += avgMin;
-				}
+			if (average - 100 > 0)
+			{
+				damageMin = damageMin + avgMin;
+			}
 
-			if ((average - 90) > 0)
-				{
-				damageMax += avgMax;
-				}
+			if (average - 90 > 0)
+			{
+				damageMax = damageMax + avgMax;
+			}
 
 			if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_muscularity"))
 			{
 				local muscularity = this.Math.floor(bodyHealth * 0.1);
-				damageMax += muscularity;
+				damageMax = damageMax + muscularity;
 			}
 
 			_properties.DamageRegularMin += this.Math.floor(damageMin);
@@ -185,3 +186,4 @@ function onAnySkillUsed( _skill, _targetEntity, _properties )
 	}
 
 });
+
