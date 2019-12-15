@@ -85,7 +85,7 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 		this.m.FatigueCostMult = _properties.IsSpecializedInThrowing ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
 	}
 
-	function getAmmo( _properties )
+	function getAmmo()
 	{
 		local item = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
 
@@ -97,7 +97,7 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 		return item.getAmmo();
 	}
 
-	function consumeAmmo( _properties )
+	function consumeAmmo()
 	{
 		local item = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
 

@@ -2609,7 +2609,7 @@ gt.Const.Perks.PerkDefObjects <- [
 	},
 	{
 		ID = "perk.legend_peaceful",
-		Script = "scripts/skills/perks/perk_peaceful",
+		Script = "scripts/skills/perks/perk_legend_peaceful",
 		Name = this.Const.Strings.PerkName.LegendPeaceful,
 		Tooltip = this.Const.Strings.PerkDescription.LegendPeaceful,
 		Icon = "ui/perks/bandage_circle.png",
