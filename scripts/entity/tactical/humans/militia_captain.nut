@@ -41,9 +41,15 @@ this.militia_captain <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.add(this.new("scripts/skills/actives/recover_skill"));
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 			{
-			this.m.Hitpoints = b.Hitpoints * 2;
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_composure"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));
+			this.m.Skills.add(this.new("scripts/skills/actives/rotation"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_shield_skill"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_shield_push"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_smashing_shields"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_back_to_basics"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_shield_bash"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_full_force"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
 			}
 

@@ -43,9 +43,13 @@ this.noble_greatsword <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_steel_brow"));
 		this.m.Skills.add(this.new("scripts/skills/actives/rotation"));
 		this.m.Skills.add(this.new("scripts/skills/actives/recover_skill"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_mastery_greatsword"))
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 			{
-			this.m.Hitpoints = b.Hitpoints * 1.5;
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_underdog"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_forceful_swing"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_feint"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_back_to_basics"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_bloody_harvest"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_full_force"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));

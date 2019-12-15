@@ -63,7 +63,10 @@ this.bandit_raider <- this.inherit("scripts/entity/tactical/human", {
 		 if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 			{
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_relentless"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_dodge"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_backstabber"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_underdog"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
 			}
 

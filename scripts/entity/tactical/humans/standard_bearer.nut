@@ -37,6 +37,8 @@ this.standard_bearer <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_fortified_mind"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_push_forward"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_hold_the_line"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
 			}
 

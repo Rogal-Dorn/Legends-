@@ -41,6 +41,10 @@ this.swordmaster <- this.inherit("scripts/entity/tactical/human", {
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 			{
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_full_force"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_feint"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_pathfinder"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_head_hunter"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_return_favor"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_composure"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));

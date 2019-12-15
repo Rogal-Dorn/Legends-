@@ -28,9 +28,23 @@ this.militia_veteran <- this.inherit("scripts/entity/tactical/human", {
 		this.getSprite("accessory_special").setBrush("bust_militia_band_01");
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_shield_expert"));
 		this.m.Skills.add(this.new("scripts/skills/actives/recover_skill"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_militia_skill"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_shield_bash"));
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 			{
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_mastery_spear"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_shield_expert"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_militia_damage"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_spearwall"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_spearthrust"));
+			this.m.Skills.add(this.new("scripts/skills/actives/rotation"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_reach_advantage"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_coup_de_grace"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_shield_skill"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_shield_push"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_smashing_shields"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_back_to_basics"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_shield_bash"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_backstabber"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
 			}

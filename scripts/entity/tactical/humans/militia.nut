@@ -31,9 +31,16 @@ this.militia <- this.inherit("scripts/entity/tactical/human", {
 		this.getSprite("socket").setBrush("bust_base_militia");
 		this.getSprite("accessory_special").setBrush("bust_militia_band_01");
 		this.m.Skills.add(this.new("scripts/skills/actives/recover_skill"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_militia_skill"));
+
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_shield_bash"));
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 			{
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_mastery_spear"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_shield_expert"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_militia_damage"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_spearwall"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_spearthrust"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
 			}
 
@@ -41,113 +48,43 @@ this.militia <- this.inherit("scripts/entity/tactical/human", {
 
 	function assignRandomEquipment()
 	{
-		local r = this.Math.rand(0, 11);
+	
+			local r = this.Math.rand(1, 5);
 
-		if (r <= 1)
-		{
-			if (this.Const.DLC.Unhold)
+			if (r == 1)
 			{
-				local r = this.Math.rand(1, 6);
-
-				if (r == 1)
-				{
-					this.m.Items.equip(this.new("scripts/items/weapons/dagger"));
-				}
-				else if (r == 2)
-				{
-					this.m.Items.equip(this.new("scripts/items/weapons/knife"));
-				}
-				else if (r == 3)
-				{
-					this.m.Items.equip(this.new("scripts/items/weapons/hooked_blade"));
-				}
-				else if (r == 4)
-				{
-					this.m.Items.equip(this.new("scripts/items/weapons/pitchfork"));
-				}
-				else if (r == 5)
-				{
-					this.m.Items.equip(this.new("scripts/items/weapons/woodcutters_axe"));
-				}
-				else if (r == 6)
-				{
-					this.m.Items.equip(this.new("scripts/items/weapons/goedendag"));
-				}
+				this.m.Items.equip(this.new("scripts/items/weapons/militia_glaive"));
 			}
-			else
-			{
-				local r = this.Math.rand(1, 5);
-
-				if (r == 1)
-				{
-					this.m.Items.equip(this.new("scripts/items/weapons/dagger"));
-				}
-				else if (r == 2)
-				{
-					this.m.Items.equip(this.new("scripts/items/weapons/knife"));
-				}
-				else if (r == 3)
-				{
-					this.m.Items.equip(this.new("scripts/items/weapons/hooked_blade"));
-				}
-				else if (r == 4)
-				{
-					this.m.Items.equip(this.new("scripts/items/weapons/pitchfork"));
-				}
-				else if (r == 5)
-				{
-					this.m.Items.equip(this.new("scripts/items/weapons/woodcutters_axe"));
-				}
-			}
-		}
-		else
-		{
-			if (r == 2)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/wooden_stick"));
-			}
-			else if (r == 3)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/hatchet"));
-			}
-			else if (r == 4)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/bludgeon"));
-			}
-			else if (r == 5)
+			else if (r == 2)
 			{
 				this.m.Items.equip(this.new("scripts/items/weapons/militia_spear"));
 			}
-			else if (r == 6)
+			else if (r == 3)
 			{
-				this.m.Items.equip(this.new("scripts/items/weapons/scramasax"));
+				this.m.Items.equip(this.new("scripts/items/weapons/legend_glaive"));
 			}
-			else if (r == 7)
+			else if (r == 4)
 			{
-				this.m.Items.equip(this.new("scripts/items/weapons/shortsword"));
+				this.m.Items.equip(this.new("scripts/items/weapons/ancient_spear"));
 			}
-			else if (r == 8)
+			else if (r == 5)
 			{
-				this.m.Items.equip(this.new("scripts/items/weapons/wooden_flail"));
-			}
-			else if (r == 9)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/reinforced_wooden_flail"));
-			}
-			else if (r == 10)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/butchers_cleaver"));
-			}
-			else if (r == 11)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/legend_militia_glaive"));
+				this.m.Items.equip(this.new("scripts/items/weapons/legend_wooden_spear"));
 			}
 
-			if (this.Math.rand(1, 100) <= 25)
+
+			local r = this.Math.rand(1, 4);
+
+			if (r == 1)
 			{
 				this.m.Items.equip(this.new("scripts/items/shields/buckler_shield"));
 			}
-		}
+			if (r == 2)
+			{
+				this.m.Items.equip(this.new("scripts/items/shields/wooden_shield"));
+			}
+
+		
 
 		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
 		{
