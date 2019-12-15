@@ -6,8 +6,8 @@ this.legend_bandit_outrider <- this.inherit("scripts/entity/tactical/human", {
 	},
 	function create()
 	{
-		this.m.Type = this.Const.EntityType.LegendBanditOutrider;
-		this.m.XP = this.Const.Tactical.Actor.LegendBanditOutrider.XP;
+		this.m.Type = this.Const.EntityType.BanditOutrider;
+		this.m.XP = this.Const.Tactical.Actor.BanditOutrider.XP;
 		this.goblin.create();
 		this.m.ShakeLayers = [
 			[
@@ -40,7 +40,7 @@ this.legend_bandit_outrider <- this.inherit("scripts/entity/tactical/human", {
 	{
 		this.bandit.onInit();
 		local b = this.m.BaseProperties;
-		b.setValues(this.Const.Tactical.Actor.LegendBanditOutrider);
+		b.setValues(this.Const.Tactical.Actor.BanditOutrider);
 		b.AdditionalActionPointCost = 1;
 		b.DamageDirectMult = 1.25;
 		b.IsSpecializedInSwords = true;
