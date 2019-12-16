@@ -2615,6 +2615,69 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/bandage_circle.png",
 		IconDisabled = "ui/perks/bandage_circle_bw.png",
 		Const = "LegendPeaceful"
+	},
+	{
+		ID = "perk.legend_summon_hound",
+		Script = "scripts/skills/perks/perk_legend_summon_hound",
+		Name = this.Const.Strings.PerkName.LegendSummonHound,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSummonHound,
+		Icon = "ui/perks/dog_circle.png",
+		IconDisabled = "ui/perks/dog_circle_bw.png",
+		Const = "LegendSummonHound"
+	},
+	{
+		ID = "perk.legend_summon_wolf",
+		Script = "scripts/skills/perks/perk_legend_summon_wolf",
+		Name = this.Const.Strings.PerkName.LegendSummonWolf,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSummonWolf,
+		Icon = "ui/perks/wolf_circle.png",
+		IconDisabled = "ui/perks/wolf_circle_bw.png",
+		Const = "LegendSummonWolf"
+	},
+	{
+		ID = "perk.legend_summon_falcon",
+		Script = "scripts/skills/perks/perk_legend_summon_falcon",
+		Name = this.Const.Strings.PerkName.LegendSummonFalcon,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSummonFalcon,
+		Icon = "ui/perks/falcon_circle.png",
+		IconDisabled = "ui/perks/falcon_circle_bw.png",
+		Const = "LegendSummonFalcon"
+	},
+	{
+		ID = "perk.legend_summon_bear",
+		Script = "scripts/skills/perks/perk_legend_summon_bear",
+		Name = this.Const.Strings.PerkName.LegendSummonBear,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSummonBear,
+		Icon = "ui/perks/bear_circle.png",
+		IconDisabled = "ui/perks/bear_circle_bw.png",
+		Const = "LegendSummonBear"
+	},
+	{
+		ID = "perk.legend_summon_catapult",
+		Script = "scripts/skills/perks/perk_legend_summon_catapult",
+		Name = this.Const.Strings.PerkName.LegendSummonCatapult,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSummonCatapult,
+		Icon = "ui/perks/catapult_circle.png",
+		IconDisabled = "ui/perks/catapult_circle_bw.png",
+		Const = "LegendSummonCatapult"
+	},
+	{
+		ID = "perk.legend_net_repair",
+		Script = "scripts/skills/perks/perk_legend_net_repair",
+		Name = this.Const.Strings.PerkName.LegendNetRepair,
+		Tooltip = this.Const.Strings.PerkDescription.LegendNetRepair,
+		Icon = "ui/perks/net_perk.png",
+		IconDisabled = "ui/perks/net_perk_bw.png",
+		Const = "LegendNetRepair"
+	},
+	{
+		ID = "perk.legend_net_casting",
+		Script = "scripts/skills/perks/perk_legend_net_casting",
+		Name = this.Const.Strings.PerkName.LegendNetCasting,
+		Tooltip = this.Const.Strings.PerkDescription.LegendNetCasting,
+		Icon = "ui/perks/net_perk.png",
+		IconDisabled = "ui/perks/net_perk_bw.png",
+		Const = "LegendNetCasting"
 	}
 ];
 gt.Const.Perks.PerkDefs <- {};

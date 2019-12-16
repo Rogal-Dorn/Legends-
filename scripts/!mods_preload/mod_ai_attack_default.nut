@@ -15,4 +15,6 @@
 	o.m.PossibleSkills.push("actives.legend_voulge_cleave");
 	o.m.PossibleSkills.push("actives.legend_horse_kick");
 	o.m.PossibleSkills.push("actives.legend_donkey_kick");
+	o.m.PossibleSkills.push("actives.legend_bear_bite");
+	o.m.PossibleSkills.push("actives.legend_bear_claws");
 });

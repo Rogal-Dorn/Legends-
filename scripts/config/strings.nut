@@ -1368,8 +1368,14 @@ gt.Const.Strings.PerkName <- {
 	LegendHorsePassage = "Passage",
 	LegendDrumsOfLife = "Drums of Life",
 	LegendLacerate = "Lacerate",
-	LegendPeaceful = "Peaceful"
-
+	LegendPeaceful = "Peaceful",
+	LegendSummonHound = "Summon Hound",
+	LegendSummonWolf = "Summon Wolf",
+	LegendSummonFalcon = "Summon Falcon",
+	LegendSummonBear = "Summon Bear",
+	LegendSummonCatapult = "Summon Catapult",
+	LegendNetRepair = "Net Repair",
+	LegendNetCasting = "Net Casting"
 };
 gt.Const.Strings.PerkDescription <- {
 	Relentless = "Don\'t slow down! At all times your Initiative is reduced only by [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] of your accumulated Fatigue, instead of all of it. \n[color=#0b0084]From the Fit perk group[/color]",
@@ -1676,8 +1682,15 @@ gt.Const.Strings.PerkDescription <- {
 	LegendHorseFlyingChange = "Changing lead legs at high speeds is an advanced move that can allow horses to cover much larger distances. Gain 1 action point",
 	LegendHorsePassage = "Training the legs to raise higher and push harder can prepare horses for rough or muddy terrain. Decreases movement costs on rough terrain",
 	LegendDrumsOfLife = "Learn powerful rythms that drive your allies on. Unlocks the Drums of Life skill that restores [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] health to every ally on the field. Can only be used with a Drum or Lute equipped. \n[color=#0b0084]From the Bard perk group[/color]"
-	LegendLacerate = "Lust for blood courses through your veins, each stroke rips and tears with a ferocity that intensifies as you bleed. Gain a chance to inflict bleeding with every strike, equal to your percentage of missing health."
-	LegendPeaceful = "Not all folks are built for war, some find contentment in contemplation or practicing a trade. This character becomes content with being in reserve, consumes half rations while in reserve, and their mood occassionaly improves while in researve."
+	LegendLacerate = "Lust for blood courses through your veins, each stroke rips and tears with a ferocity that intensifies as you bleed. Gain a chance to inflict bleeding with every strike, equal to your percentage of missing health.",
+	LegendPeaceful = "Not all folks are built for war, some find contentment in contemplation or practicing a trade. This character becomes content with being in reserve, consumes half rations while in reserve, and their mood occassionaly improves while in researve.",
+	LegendSummonHound = "Forming close bonds with hounds grants to teh ability to call to them. Summon a loyal hound to your side in battle.",
+	LegendSummonWolf = "Cultivating a relationship with the wolves allows you to call them to your side. Summon a wolf to aid you in battle.",
+	LegendSummonFalcon = "Years spent feeding and caring for falcons has made them your friends. Summon a falcon to guide you in battle.",
+	LegendSummonBear = "Endless communion with the animals has won you the trust of the bears. Summon a bear to join you in battle.",
+	LegendSummonCatapult = "Your skill in the creation and maintenance of seige weapons allows you to Summon Catapult to your side in battle",
+	LegendNetRepair = "Many years spent repearing and packing nets allows you to carry and repair more nets. Doubles the ammunition of nets and reinforced nets. ",
+	LegendNetCasting = "Learning the ways of the cast takes practice, holding the net in the right position and twisting at the hips allows you to cover a greater distance with each cast. Increases the range of nets and reinforced nets to 4."
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

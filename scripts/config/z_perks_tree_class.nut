@@ -13,10 +13,10 @@ gt.Const.Perks.BeastClassTree <- {
 	Tree = [
 		[],
 		[],
-		[],
+		[gt.Const.Perks.PerkDefs.LegendNetCasting],
 		[gt.Const.Perks.PerkDefs.LegendMasteryNets],
 		[gt.Const.Perks.PerkDefs.LegendEscapeArtist],
-		[],
+		[gt.Const.Perks.PerkDefs.LegendNetRepair],
 		[]
 	]
 };
@@ -371,8 +371,8 @@ gt.Const.Perks.InventorClassTree <- {
 		[],
 		[],
 		[],
-		[],
-		[gt.Const.Perks.PerkDefs.LegendInventorAnatomy]
+		[gt.Const.Perks.PerkDefs.LegendInventorAnatomy],
+		[gt.Const.Perks.PerkDefs.LegendSummonCatapult]
 	]
 };
 

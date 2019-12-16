@@ -39,7 +39,7 @@ gt.Const.World.Spawn.Direwolves <-
 	MaxR = 535,
 	Troops = [
 		{
-			Weight = 90,
+			Weight = 85,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Direwolf,
@@ -53,6 +53,16 @@ gt.Const.World.Spawn.Direwolves <-
 		},
 		{
 			Weight = 10,
+			MinR = 0.85 * 100,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+					Cost = 30
+				}
+			]
+		},
+		{
+			Weight = 5,
 			MinR = 0.85 * 535,
 			Types = [
 				{
@@ -386,7 +396,7 @@ gt.Const.World.Spawn.HexenAndMore <-
 	],
 	Troops = [
 		{
-			Weight = 25,
+			Weight = 22,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Direwolf,
@@ -396,6 +406,15 @@ gt.Const.World.Spawn.HexenAndMore <-
 					Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
 					MinR = 0.3 * 500,
 					Cost = 25
+				}
+			]
+		},
+		{
+			Weight = 3,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendBear,
+					Cost = 30
 				}
 			]
 		},
@@ -549,7 +568,7 @@ gt.Const.World.Spawn.HexenAndNoSpiders <-
 	],
 	Troops = [
 		{
-			Weight = 40,
+			Weight = 35,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Direwolf,
@@ -559,6 +578,16 @@ gt.Const.World.Spawn.HexenAndNoSpiders <-
 					Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
 					MinR = 0.3 * 500,
 					Cost = 25
+				}
+			]
+		},
+		{
+			Weight = 5,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendBear,
+					MinR = 0.3 * 100,
+					Cost = 30
 				}
 			]
 		},

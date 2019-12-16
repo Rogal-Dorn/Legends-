@@ -130,9 +130,13 @@ this.reinforced_throwing_net <- this.inherit("scripts/items/weapons/weapon", {
 		skill.setReinforced(true);
 		this.addSkill(skill);
 
-		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_mastery_nets"))
+		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_net_repair"))
 		{
 		this.m.AmmoMax = 2;
+		}
+
+		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_net_casting"))
+		{
 		this.m.RangeMax = 4;
 		}
 	}

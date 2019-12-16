@@ -388,6 +388,14 @@ gt.Const.World.Spawn.Troops <- {
 		Row = -1,
 		Script = "scripts/entity/tactical/enemies/lindwurm"
 	},
+	Bear = {
+		ID = this.Const.EntityType.LegendBear,
+		Variant = 0,
+		Strength = 30,
+		Cost = 30,
+		Row = -1,
+		Script = "scripts/entity/tactical/enemies/legend_bear"
+	},
 	Unhold = {
 		ID = this.Const.EntityType.Unhold,
 		Variant = 0,
@@ -1119,6 +1127,14 @@ gt.Const.World.Spawn.Troops <- {
 		Cost = 35,
 		Row = 0,
 		Script = "scripts/entity/tactical/humans/legend_noble_fencer"
+	},
+	LegendCatapult = {
+		ID = this.Const.EntityType.LegendCatapult,
+		Variant = 0,
+		Strength = 60,
+		Cost = 60,
+		Row = 2,
+		Script = "scripts/entity/tactical/enemies/legend_catapult"
 	}
 };
 

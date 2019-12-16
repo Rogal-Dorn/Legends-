@@ -37,7 +37,7 @@ gt.Const.World.Spawn.Noble <- {
 			]
 		},
 		{
-			Weight = 22,
+			Weight = 21,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Billman,
@@ -116,6 +116,16 @@ gt.Const.World.Spawn.Noble <- {
 				{
 					Type = this.Const.World.Spawn.Troops.LegendSlinger,
 					Cost = 40
+				}
+			]
+		},
+		{
+			Weight = 1,
+			MinR = 0.85 * 300,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendCatapult,
+					Cost = 60
 				}
 			]
 		}

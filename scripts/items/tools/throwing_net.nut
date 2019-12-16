@@ -124,12 +124,16 @@ this.throwing_net <- this.inherit("scripts/items/weapons/weapon", {
 		this.weapon.onEquip();
 		this.addSkill(this.new("scripts/skills/actives/throw_net"));
 
-		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_mastery_nets"))
+		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_net_repair"))
 		{
 		this.m.AmmoMax = 2;
-		this.m.RangeMax = 4;
 		}
 
+		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_net_casting"))
+		{
+		this.m.RangeMax = 4;
+		}
+		
 	}
 
 	function playInventorySound( _eventType )

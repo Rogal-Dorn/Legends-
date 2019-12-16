@@ -726,6 +726,17 @@ gt.Const.SameMovementAPCost <- [
 	2,
 	2
 ];
+gt.Const.CatapultMovementAPCost <- [
+	0,
+	6,
+	6,
+	7,
+	7,
+	8,
+	8,
+	8,
+	8
+];
 gt.Const.NoMovementFatigueCost <- [
 	0,
 	0,
@@ -791,6 +802,17 @@ gt.Const.LegendFlightMovementFatigueCost <- [
 	2,
 	2,
 	2
+];
+gt.Const.CatapultMovementFatigueCost <- [
+	0,
+	4,
+	8,
+	12,
+	12,
+	16,
+	28,
+	24,
+	24
 ];
 
 gt.Const.SkillCounter <- 0;

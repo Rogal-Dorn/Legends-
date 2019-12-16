@@ -95,6 +95,7 @@
 <sprite id="banditveteran_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\banditveteran_orientation.png" />
 <sprite id="banditwarlord_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\banditwarlord_orientation.png" />
 <sprite id="banditoutrider_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\banditwarlord_orientation.png" />
+<sprite id="bear_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\banditwarlord_orientation.png" />
 
 <sprite id="demon_hound_flame_01" ic="FF23165B" img="skills\demon_hound_flame_01.png" />
 <sprite id="demon_hound_bite" ic="FF23165B" img="skills\demon_hound_bite.png" />

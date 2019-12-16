@@ -359,7 +359,9 @@ gt.Const.EntityType <- {
 	LegendHalberdier = 110,
 	LegendSlinger = 111,
 	LegendFencer = 112,
-	BanditOutrider = 113
+	BanditOutrider = 113,
+	LegendBear = 114,
+	LegendCatapult = 115
 	function convertOldToNew( _id )
 	{
 		switch(_id)
@@ -636,6 +638,8 @@ gt.Const.EntityIcon <- [
 	"halberdier_orientation",
 	"slinger_orientation",
 	"fencer_orientation"
-	"bandit_raider_orientation"
+	"banditoutrider_orientation",
+	"bear_orientation",
+	"catapult_01_orientation",
 ];
 

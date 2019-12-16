@@ -526,3 +526,22 @@ gt.Const.Tactical.Actor.LegendHexeLeader <- {
 		0
 	]
 };
+gt.Const.Tactical.Actor.LegendBear <- {
+	XP = 200,
+	ActionPoints = 9,
+	Hitpoints = 400,
+	Bravery = 80,
+	Stamina = 300,
+	MeleeSkill = 70,
+	RangedSkill = 0,
+	MeleeDefense = 10,
+	RangedDefense = 0,
+	Initiative = 75,
+	FatigueEffectMult = 1.0,
+	MoraleEffectMult = 1.0,
+	FatigueRecoveryRate = 30,
+	Armor = [
+		0,
+		0
+	]
+};

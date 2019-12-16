@@ -219,3 +219,22 @@ gt.Const.Tactical.Actor.LegendFencer <- {
 	],
 	FatigueRecoveryRate = 20
 };
+gt.Const.Tactical.Actor.LegendCatapult <- {
+	XP = 600,
+	ActionPoints = 9,
+	Hitpoints = 200,
+	Bravery = 200,
+	Stamina = 200,
+	MeleeSkill = 0,
+	RangedSkill = 80,
+	MeleeDefense = 0,
+	RangedDefense = 0,
+	Initiative = 60,
+	FatigueEffectMult = 1.0,
+	MoraleEffectMult = 1.0,
+	Armor = [
+		0,
+		0
+	],
+	FatigueRecoveryRate = 15
+};
