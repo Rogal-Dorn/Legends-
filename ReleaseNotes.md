@@ -1904,7 +1904,6 @@ Most worldmap and town tooltips updated to be gender neutral
 
 13.0.0.15 Legendary Difficulty Rework 
 
-
 Legendary difficulty enemy changes:
 * Bandit Rabble - lost Lithe, gain dodge and backstabber. Keeps fearless. AI more aggressive
 * Bandit Thugs - lost Nimble, gain dodge, relentless and underdog, keep backstabber and fearless. AI more aggressive
@@ -1938,9 +1937,9 @@ Legendary difficulty enemy changes:
 * Necrosavant - gains bloodbath - AI made more agressive and brutal 
 * Schrat and greenwood schrat - AI knows how to shield bash, gets all the shield skills
 * Gheist - gains footwork, rotation, anctipation, dodge, levitation and teleport 
-* Bandshee - gains the same as gheist, plus nightmare touch 
-* alp - gains dodge, overwhelm, return favor, fortidied mind. keeps levitation and anticipation
-* donkeys - gain muscularity 
+* Banshee - gains the same as gheist, plus nightmare touch 
+* Alp - gains dodge, overwhelm, return favor, fortidied mind. keeps levitation and anticipation
+* Donkeys - gain muscularity and improved AI
 * military donkeys - gain muscularity, steadfast and stalwart
 
 Non-legendary difficulty changes
@@ -1948,18 +1947,23 @@ Non-legendary difficulty changes
 * Militia and militia veterans gain Militia Training and shield bash 
 * Militia who fight on your side will have the same skills as the militia you fight against 
 * Donkeys will now flee, retreat and defend themselves 
+* Rations consumed in reserve reduced from x3 to x2 
+* New Perk - Peaceful. Become content in reserve, consume half rations in reserve, occassionally improve mood while in reserve 
+* Peaceful added to the Organised perk group, so most non-combat backgrounds get it in their tree
+* Drums of life now heals 2 hp per turn, only applies to allies within 3 tiles 
+* Drums of war now restores 2 fatigue per turn, only applies to allies within 3 tiles 
+* Fixes missing drums of war black and white icon
+* Nets and Reinforced Nets now use ammo rather than being destroyed, prices increased to match 
+* Net Mastery increases ammunition and range of nets 
+* New Enemy - Bandit Outrider - trial of first horse mounted enemy. 
+* Horses slightly less broken - still pretty broken. 
+* Adds cultscidon's armor naming - combined armor layers now show all the layers in the name 
+* Fixes crash when entering battles vs nobles 
+* Fixes "index 7 not found", "13 not found" and "14 not found" 
 
-Other changes
-Rations consumed in reserve reduced from x3 to x2 
-New Perk - Peaceful. Become content in reserve, consume half rations in reserve, occassionally improve mood while in reserve 
-Peaceful added to the Organised perk group, so most non-combat backgrounds get it in their tree
-Drums of life now heals 2 hp per turn, only applies to allies within 3 tiles 
-Drums of war now restores 2 fatigue per turn, only applies to allies within 3 tiles 
-Fixes missing drums of war black and white icon
-Nets and Reinforced Nets now use ammo rather than being destroyed, prices increased to match 
-Net Mastery increases ammunition and range of nets 
-New Enemy - Bandit Outrider - trial of first horse mounted enemy. 
-Horses slightly less broken - still pretty broken. 
-Adds cultscidon's armor naming - combined armor layers now show all the layers in the name 
-Fixes crash when entering battles vs nobles 
-Fixes "index 7 not found", "13 not found" and "14 not found" 
+13.0.0.16 
+Fixes missing orientation errors for bandit warlord, veteran and outrider
+Fixes crash facing bandit warlord 
+Fixes banshee enemy circle images being slightly too big 
+
+
