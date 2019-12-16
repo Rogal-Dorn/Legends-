@@ -44,6 +44,8 @@ while read -r line; do
         echo "skipping $line"
     elif [ "$line" == "scripts/ai/tactical/behaviors/ai_hook.nut" ]; then
         echo "skipping $line"
+    elif [ "$line" == "scripts/contracts/contracts/barbarian_king_contract" ]; then
+        echo "skipping $line"
     elif [ "$line" == "scripts/ai/tactical/behaviors/ai_charm.nut" ]; then
         echo "skipping $line"
     elif [ "$line" == "scripts/factions/faction_action.nut" ]; then
@@ -69,6 +71,7 @@ cd ../bin
 ./bbrusher.exe pack --gfxPath "../Repo/" ../Repo/brushes/legends_ui.brush ../Repo/unpacked/legends_ui
 ./bbrusher.exe pack --gfxPath "../Repo/" ../Repo/brushes/legend_horses.brush ../Repo/unpacked/legend_horses
 ./bbrusher.exe pack --gfxPath "../Repo/" ../Repo/brushes/legend_armor.brush ../Repo/unpacked/legend_armor
+./bbrusher.exe pack --gfxPath "../Repo/" ../Repo/brushes/legend_objects.brush ../Repo/unpacked/legend_objects
 ./masscompile.bat "c:\Steam\steamapps\common\Battle Brothers\data\scripts"
 cd ../Repo
 
