@@ -1,37 +1,35 @@
-this.legend_unleash_wolf <- this.inherit("scripts/skills/skill", {
+this.legend_unleash_hound <- this.inherit("scripts/skills/skill", {
 	m = {
 		Entity = null,			
 		EntityName = "Hound",
-		Script = "scripts/entity/tactical/warwolf",
+		Script = "scripts/entity/tactical/warhound",
 		Sounds0 = [
-			"sounds/enemies/wolf_hurt_00.wav",
-			"sounds/enemies/wolf_hurt_01.wav",
-			"sounds/enemies/wolf_hurt_02.wav",
-			"sounds/enemies/wolf_hurt_03.wav"
+			"sounds/enemies/wardog_hurt_00.wav",
+			"sounds/enemies/wardog_hurt_01.wav",
+			"sounds/enemies/wardog_hurt_02.wav",
+			"sounds/enemies/wardog_hurt_03.wav",
+			"sounds/enemies/wardog_hurt_04.wav",
+			"sounds/enemies/wardog_hurt_05.wav"
 		],
 		Sounds1 = [
-			"sounds/enemies/wolf_death_00.wav",
-			"sounds/enemies/wolf_death_01.wav",
-			"sounds/enemies/wolf_death_02.wav",
-			"sounds/enemies/wolf_death_03.wav",
-			"sounds/enemies/wolf_death_04.wav",
-			"sounds/enemies/wolf_death_05.wav"
+			"sounds/enemies/wardog_death_00.wav",
+			"sounds/enemies/wardog_death_01.wav",
+			"sounds/enemies/wardog_death_02.wav",
+			"sounds/enemies/wardog_death_03.wav"
 		],
 		Sounds2 = [
-			"sounds/enemies/wolf_flee_00.wav",
-			"sounds/enemies/wolf_flee_01.wav",
-			"sounds/enemies/wolf_flee_02.wav"
+			"sounds/enemies/wardog_flee_00.wav",
+			"sounds/enemies/wardog_flee_01.wav",
+			"sounds/enemies/wardog_flee_02.wav",
+			"sounds/enemies/wardog_flee_03.wav",
+			"sounds/enemies/wardog_flee_04.wav"
 		],
 		Sounds3 = [
-			"sounds/enemies/wolf_idle_00.wav",
-			"sounds/enemies/wolf_idle_01.wav",
-			"sounds/enemies/wolf_idle_02.wav",
-			"sounds/enemies/wolf_idle_03.wav",
-			"sounds/enemies/wolf_idle_04.wav",
-			"sounds/enemies/wolf_idle_06.wav",
-			"sounds/enemies/wolf_idle_07.wav",
-			"sounds/enemies/wolf_idle_08.wav",
-			"sounds/enemies/wolf_idle_09.wav"
+			"sounds/enemies/wardog_idle_01.wav",
+			"sounds/enemies/wardog_idle_02.wav",
+			"sounds/enemies/wardog_idle_03.wav",
+			"sounds/enemies/wardog_idle_04.wav",
+			"sounds/enemies/wardog_idle_05.wav"
 		],
 		Sounds4 = [
 			"sounds/enemies/wardog_charge_00.wav",
@@ -52,21 +50,16 @@ this.legend_unleash_wolf <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.ID = "actives.legend_unleash_hound";
-		this.m.Name = "Summon Wolf";
-		this.m.Description = "Summon a faithful wolf. Needs a free tile adjacent.";
+		this.m.Name = "Summon Hound";
+		this.m.Description = "Summon a faithful hound. Needs a free tile adjacent.";
 		this.m.Icon = "skills/active_165.png";
 		this.m.IconDisabled = "skills/active_165_sw.png";
 		this.m.Overlay = "active_165";
 		this.m.SoundOnUse = [
-			"sounds/enemies/wolf_idle_00.wav",
-			"sounds/enemies/wolf_idle_01.wav",
-			"sounds/enemies/wolf_idle_02.wav",
-			"sounds/enemies/wolf_idle_03.wav",
-			"sounds/enemies/wolf_idle_04.wav",
-			"sounds/enemies/wolf_idle_06.wav",
-			"sounds/enemies/wolf_idle_07.wav",
-			"sounds/enemies/wolf_idle_08.wav",
-			"sounds/enemies/wolf_idle_09.wav"
+			"sounds/combat/unleash_wardog_01.wav",
+			"sounds/combat/unleash_wardog_02.wav",
+			"sounds/combat/unleash_wardog_03.wav",
+			"sounds/combat/unleash_wardog_04.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.NonTargeted + 5;
@@ -76,7 +69,7 @@ this.legend_unleash_wolf <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
 		this.m.IsTargetingActor = false;
-		this.m.ActionPointCost = 7;
+		this.m.ActionPointCost = 5;
 		this.m.FatigueCost = 15;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 1;

@@ -1962,8 +1962,20 @@ Non-legendary difficulty changes
 * Fixes "index 7 not found", "13 not found" and "14 not found" 
 
 13.0.0.16 
+
+Ranger has new beast handling perks: Summon Hound, Summon Wolf, Summon Falcon, Summon Bear 
+New Enemy - Bear - Loads of hitpoints, bites like a wolf, claws like a skin ghoul, shows up along side packs of wolves. Drops bear skins 
+New Enemey - Catapult - Does 100-200 damage from 12 tiles away. Can barely move. No melee at all. Shows up very rarely in late game noble parties 
+Inventors gain the new perk: Summon Catapult 
+Classes with the net perk group gain:
+* New Perk - Net Casting - Increases the range of nets by 1 
+* New Perk - Net Repair - Increases the ammunition of nets by 1 
+Cat bite buffed from 15-35 damange to 20-40 damage 
 Fixes missing orientation errors for bandit warlord, veteran and outrider
 Fixes crash facing bandit warlord 
 Fixes banshee enemy circle images being slightly too big 
+
+
+
 
 
