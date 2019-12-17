@@ -51,7 +51,7 @@ this.legend_unleash_hound <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_unleash_hound";
 		this.m.Name = "Summon Hound";
-		this.m.Description = "Summon a faithful hound. Needs a free tile adjacent.";
+		this.m.Description = "Summon a faithful hound. Needs a free tile adjacent. Can only summon one per combat";
 		this.m.Icon = "skills/active_165.png";
 		this.m.IconDisabled = "skills/active_165_sw.png";
 		this.m.Overlay = "active_165";
@@ -134,6 +134,12 @@ this.legend_unleash_hound <- this.inherit("scripts/skills/skill", {
 
 	function isUsable()
 	{
+
+		if (!this.getContainer().hasSkill("effects.legend_summoned_hound_effect")
+		{
+			return false;
+		}
+
 		if (this.m.Entity != null || !this.skill.isUsable())
 		{
 			return false;
@@ -150,6 +156,7 @@ this.legend_unleash_hound <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
+		_user.getSkills().add(this.new("scripts/skills/effects/legend_summoned_hound_effect"));
 		local entity = this.Tactical.spawnEntity(this.m.Script, _targetTile.Coords.X, _targetTile.Coords.Y);
 		entity.setFaction(this.Const.Faction.PlayerAnimals);
 		entity.setName(this.m.EntityName);

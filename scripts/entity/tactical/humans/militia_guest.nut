@@ -62,7 +62,7 @@ this.militia_guest <- this.inherit("scripts/entity/tactical/player", {
 
 			if (r == 1)
 			{
-				this.m.Items.equip(this.new("scripts/items/weapons/militia_glaive"));
+				this.m.Items.equip(this.new("scripts/items/weapons/legend_militia_glaive"));
 			}
 			else if (r == 2)
 			{

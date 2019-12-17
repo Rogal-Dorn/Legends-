@@ -388,7 +388,7 @@ gt.Const.World.Spawn.Troops <- {
 		Row = -1,
 		Script = "scripts/entity/tactical/enemies/lindwurm"
 	},
-	Bear = {
+	LegendBear = {
 		ID = this.Const.EntityType.LegendBear,
 		Variant = 0,
 		Strength = 30,

@@ -2687,6 +2687,15 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/pacifist_circle.png",
 		IconDisabled = "ui/perks/pacifist_circle_bw.png",
 		Const = "LegendPacifist"
+	},
+	{
+		ID = "perk.legend_magic_missile",
+		Script = "scripts/skills/perks/perk_legend_magic_missile",
+		Name = this.Const.Strings.PerkName.LegendMagicMissile,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMagicMissile,
+		Icon = "ui/perks/missile_circle.png",
+		IconDisabled = "ui/perks/missile_circle_bw.png",
+		Const = "LegendMagicMissile"
 	}
 ];
 gt.Const.Perks.PerkDefs <- {};

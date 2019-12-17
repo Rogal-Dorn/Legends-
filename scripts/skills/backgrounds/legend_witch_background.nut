@@ -171,6 +171,7 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 					this.Const.Perks.PerkDefs.NineLives,
 					this.Const.Perks.PerkDefs.Student,
 					this.Const.Perks.PerkDefs.Recover,
+					this.Const.Perks.PerkDefs.LegendMagicMissile,
 					this.Const.Perks.PerkDefs.LegendSummonCat,
 					this.Const.Perks.PerkDefs.LegendDaze,
 				],
@@ -315,7 +316,7 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
 		if (this.Const.LegendMod.Configs.LegendMagicEnabled())
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/legend_magic_missile"));
+			this.m.Container.add(this.new("scripts/skills/perks/perk_legend_magic_missile"));
 		}
 
 		local actor = this.getContainer().getActor();

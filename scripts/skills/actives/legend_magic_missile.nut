@@ -72,7 +72,7 @@ this.legend_magic_missile <- this.inherit("scripts/skills/legend_magic_skill", {
 				id = 8,
 				type = "text",
 				icon = "ui/icons/ranged_skill.png",
-				text = "Accuracy based on ranged skill, damage based on current initiative. requires a staff"
+				text = "Accuracy based on ranged skill, damage based on current initiative. requires a magic staff"
 			});
 
 		return ret;

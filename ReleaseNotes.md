@@ -1991,6 +1991,7 @@ Fixes not found error for outriders
 Fixes donkey error for muscularity 
 Fixes crash from militia using ancient spear 
 Fixes missing image and incorrect skills on the pole flail 
-
+Fixes error from militia glaive
+Fixes magic missile disapearing intermittently on seer 
 
 
