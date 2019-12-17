@@ -49,14 +49,15 @@
 						bro.getLifetimeStats().BattlesWithoutMe = 0;
 						bro.improveMood(this.Const.MoodChange.BattleWon, "Won a battle");
 					}
-					else if (bro.getSkills().hasSkill("perk.legend_peaceful"))
+					else if (bro.getSkills().hasSkill("perk.legend_pacifist"))
 					{
 					
 						local r = this.Math.rand(1, 10);
 						local levelRequired = 10 - bro.getLevel();
-						if (bro.getLifetimeStats().BattlesWithoutMe >= levelRequired && r >= 10)
+	
+						if (bro.getLifetimeStats().BattlesWithoutMe > (bro.getLifetimeStats().Battles / 2))
 						{
-							bro.improveMood(this.Const.MoodChange.BattleWithoutMe, "Felt glad to be in reserve");
+							bro.worsenMood(this.Const.MoodChange.BattleWithoutMe, "Forced into battle against their wishes");
 						}
 
 					}

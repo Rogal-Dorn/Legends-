@@ -17,7 +17,7 @@ this.legend_ranged_flail <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
-		this.m.ArmamentIcon = "icon_legend_ranged_flail_02";
+		this.m.ArmamentIcon = "icon_legend_flail_ranged_02";
 		this.m.Value = 1400;
 		this.m.ShieldDamage = 0;
 		this.m.Condition = 72.0;
@@ -36,8 +36,8 @@ this.legend_ranged_flail <- this.inherit("scripts/items/weapons/weapon", {
 	function onEquip()
 	{
 		this.weapon.onEquip();
-		this.addSkill(this.new("scripts/skills/actives/flail_skill"));
-		this.addSkill(this.new("scripts/skills/actives/lash_skill"));
+		this.addSkill(this.new("scripts/skills/actives/legend_ranged_flail_skill"));
+		this.addSkill(this.new("scripts/skills/actives/legend_ranged_lash_skill"));
 	}
 
 	function onUpdateProperties( _properties )
