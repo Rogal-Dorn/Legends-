@@ -55,11 +55,21 @@ this.legend_falcon_skill <- this.inherit("scripts/skills/skill", {
 		return ret;
 	}
 
+	function isUsable()
+	{
 
+		if (this.getContainer().hasSkill("effects.legend_summoned_falcon_effect"))
+		{
+			return false;
+		}
+
+		return true;
+	}
 
 
 	function onUse( _user, _targetTile )
 	{
+		_user.getSkills().add(this.new("scripts/skills/effects/legend_summoned_falcon_effect"));
 		this.Tactical.queryTilesInRange(_user.getTile(), 1, 12, false, [], this.onQueryTile, _user.getFaction());
 		return true;
 	}
