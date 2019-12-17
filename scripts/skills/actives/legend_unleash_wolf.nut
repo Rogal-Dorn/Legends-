@@ -53,7 +53,7 @@ this.legend_unleash_wolf <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_unleash_hound";
 		this.m.Name = "Summon Wolf";
-		this.m.Description = "Summon a faithful wolf. Needs a free tile adjacent.";
+		this.m.Description = "Summon a faithful wolf. Needs a free tile adjacent. Only one per battle";
 		this.m.Icon = "skills/active_165.png";
 		this.m.IconDisabled = "skills/active_165_sw.png";
 		this.m.Overlay = "active_165";
