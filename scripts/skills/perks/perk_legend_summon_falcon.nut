@@ -16,9 +16,9 @@ this.perk_legend_summon_falcon <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
-		if (!this.m.Container.hasSkill("actives.legend_unleash_falcon"))
+		if (!this.m.Container.hasSkill("actives.legend_falcon_skill"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/legend_unleash_falcon"));
+			this.m.Container.add(this.new("scripts/skills/actives/legend_falcon_skill"));
 		}
 	}
 

@@ -127,7 +127,7 @@ gt.Const.Perks.WarlockMagicTree <- {
 		[gt.Const.Perks.PerkDefs.LegendWither],
 		[gt.Const.Perks.PerkDefs.LegendRust],
 		[],
-		[gt.Const.Perks.PerkDefs.LegendDeathtouch],
+		[],
 		[gt.Const.Perks.PerkDefs.LegendInsects],
 		[gt.Const.Perks.PerkDefs.LegendSiphon],
 		[gt.Const.Perks.PerkDefs.LegendMiasma]
