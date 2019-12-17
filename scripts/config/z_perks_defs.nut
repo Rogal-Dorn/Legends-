@@ -2612,8 +2612,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Script = "scripts/skills/perks/perk_legend_peaceful",
 		Name = this.Const.Strings.PerkName.LegendPeaceful,
 		Tooltip = this.Const.Strings.PerkDescription.LegendPeaceful,
-		Icon = "ui/perks/bandage_circle.png",
-		IconDisabled = "ui/perks/bandage_circle_bw.png",
+		Icon = "ui/perks/peaceful_circle.png",
+		IconDisabled = "ui/perks/peaceful_circle_bw.png",
 		Const = "LegendPeaceful"
 	},
 	{
@@ -2678,6 +2678,15 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/net_perk.png",
 		IconDisabled = "ui/perks/net_perk_bw.png",
 		Const = "LegendNetCasting"
+	},
+	{
+		ID = "perk.legend_pacifist",
+		Script = "scripts/skills/perks/perk_legend_pacifist",
+		Name = this.Const.Strings.PerkName.LegendPacifist,
+		Tooltip = this.Const.Strings.PerkDescription.LegendPacifist,
+		Icon = "ui/perks/pacifist_circle.png",
+		IconDisabled = "ui/perks/pacifist_circle_bw.png",
+		Const = "LegendPacifist"
 	}
 ];
 gt.Const.Perks.PerkDefs <- {};

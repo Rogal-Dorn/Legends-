@@ -58,6 +58,13 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 				skeletonSummonLevel = 2;
 			}
 
+			local brolevel = bro.getLevel();
+
+			if (bro.getSkills().hasSkill("perk.perk.legend_pacifist"))
+			{
+			brolevel = brolevel / 2;
+			}
+
 			if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Easy)
 			{
 				this.m.Strength +=  3 + ((bro.getLevel() / 4) + (bro.getLevel() - 1)) * 1.5;

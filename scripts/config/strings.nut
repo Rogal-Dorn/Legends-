@@ -179,7 +179,10 @@ gt.Const.Strings.EntityName <- [
 	"Bandit Warlord",
 	"Noble Halberdier",
 	"Noble Slinger",
-	"Noble Fencer"
+	"Noble Fencer",
+	"Bandit Outrider",
+	"Bear",
+	"Catapult"
 ];
 gt.Const.Strings.EntityNamePlural <- [
 	"Necromancers",
@@ -294,7 +297,10 @@ gt.Const.Strings.EntityNamePlural <- [
 	"Bandit Warlords",
 	"Noble Halberdiers",
 	"Noble Slingers",
-	"Noble Fencers"
+	"Noble Fencers",
+	"Bandit Outriders",
+	"Bears",
+	"Catapults"
 ];
 gt.Const.Strings.Tactical.EntityName <- {
 	Boulder = "Boulder",
@@ -1375,7 +1381,8 @@ gt.Const.Strings.PerkName <- {
 	LegendSummonBear = "Summon Bear",
 	LegendSummonCatapult = "Summon Catapult",
 	LegendNetRepair = "Net Repair",
-	LegendNetCasting = "Net Casting"
+	LegendNetCasting = "Net Casting",
+	LegendPeaceful = "Pacifist"
 };
 gt.Const.Strings.PerkDescription <- {
 	Relentless = "Don\'t slow down! At all times your Initiative is reduced only by [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] of your accumulated Fatigue, instead of all of it. \n[color=#0b0084]From the Fit perk group[/color]",
@@ -1469,7 +1476,7 @@ gt.Const.Strings.PerkDescription <- {
 	SpecFlail = "Master flails and circumvent your opponent\'s shield. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nLash and Hail ignore the defense bonus of shields.\n\nThresh gains [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] chance to hit. \n[color=#0b0084]From the Flail perk group[/color]",
 	LegendSpecPoison = "Master poison, giving you the ability to keep your weapons covered in poison at all times",
 	LegendCascade = "Let loose a cascade of three striking heads on your opponent. Will strike over or around shield cover.",
-	LegendEvasion = "Enables the character for one turn to move swiftly and safely through any Zone of Control without incurring any free attacks. \n[color=#0b0084]From the Devious perk group[/color]",
+	LegendEvasion = "Enables the character to move swiftly and safely through any Zone of Control for one whole turn without incurring any free attacks. \n[color=#0b0084]From the Devious perk group[/color]",
 	LegendRust = "Deform, rip and otherwise render the target\'s armor unusable with great effect. Although the impact will be felt through the thickest of armor, it won\'t inflict the most injury to the wearer.",
 	LegendWither = "Debilitate a target for one turn, reducing their ability to inflict damage by [color=" + this.Const.UI.Color.NegativeValue + "]-50%[/color].",
 	LegendDeathtouch = "Your fingers turn ghostly and pass through steel and flesh, tearing at the soul of your victim",
@@ -1683,14 +1690,17 @@ gt.Const.Strings.PerkDescription <- {
 	LegendHorsePassage = "Training the legs to raise higher and push harder can prepare horses for rough or muddy terrain. Decreases movement costs on rough terrain",
 	LegendDrumsOfLife = "Learn powerful rythms that drive your allies on. Unlocks the Drums of Life skill that restores [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] health to every ally on the field. Can only be used with a Drum or Lute equipped. \n[color=#0b0084]From the Bard perk group[/color]"
 	LegendLacerate = "Lust for blood courses through your veins, each stroke rips and tears with a ferocity that intensifies as you bleed. Gain a chance to inflict bleeding with every strike, equal to your percentage of missing health.",
-	LegendPeaceful = "Not all folks are built for war, some find contentment in contemplation or practicing a trade. This character becomes content with being in reserve, consumes half rations while in reserve, and their mood occassionaly improves while in researve.",
+	LegendPeaceful = "Not all folks are built for war, some find contentment in contemplation or practicing a trade. This character becomes content with being in reserve, consumes half rations while in reserve.",
 	LegendSummonHound = "Forming close bonds with hounds grants to teh ability to call to them. Summon a loyal hound to your side in battle.",
 	LegendSummonWolf = "Cultivating a relationship with the wolves allows you to call them to your side. Summon a wolf to aid you in battle.",
 	LegendSummonFalcon = "Years spent feeding and caring for falcons has made them your friends. Summon a falcon to guide you in battle.",
 	LegendSummonBear = "Endless communion with the animals has won you the trust of the bears. Summon a bear to join you in battle.",
 	LegendSummonCatapult = "Your skill in the creation and maintenance of seige weapons allows you to Summon Catapult to your side in battle",
 	LegendNetRepair = "Many years spent repearing and packing nets allows you to carry and repair more nets. Doubles the ammunition of nets and reinforced nets. ",
-	LegendNetCasting = "Learning the ways of the cast takes practice, holding the net in the right position and twisting at the hips allows you to cover a greater distance with each cast. Increases the range of nets and reinforced nets to 4."
+	LegendNetCasting = "Learning the ways of the cast takes practice, holding the net in the right position and twisting at the hips allows you to cover a greater distance with each cast. Increases the range of nets and reinforced nets to 4.",
+	LegendPacifist = "Fighting is a brutal thuggish pastime, most folk prefer a life without frequent bouts of ultraviolence.  Since this character is not threatening, they only count for half a person when determining difficulty. They become content with being in reserve, and will grow unhappy if they are placed in more than half your comapany battles. ",
+
+
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

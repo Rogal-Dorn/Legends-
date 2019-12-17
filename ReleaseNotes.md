@@ -1963,19 +1963,34 @@ Non-legendary difficulty changes
 
 13.0.0.16 
 
-Ranger has new beast handling perks: Summon Hound, Summon Wolf, Summon Falcon, Summon Bear 
+
+Ranger has new beast handling perks: 
+* Summon Hound
+* Summon Wolf 
+* Summon Falcon
+* Summon Bear 
 New Enemy - Bear - Loads of hitpoints, bites like a wolf, claws like a skin ghoul, shows up along side packs of wolves. Drops bear skins 
-New Enemey - Catapult - Does 100-200 damage from 12 tiles away. Can barely move. No melee at all. Shows up very rarely in late game noble parties 
 Inventors gain the new perk: Summon Catapult 
+New Enemey - Catapult - Does 100-200 damage from 12 tiles away. Can barely move. No melee at all. Shows up very rarely in late game noble parties 
+
+New Perk - Pacifist - Character only counts for half a character when calculating difficulty. Character will grow unhappy if deployed in more than half of your company's battles. Also Content in reserve. Added to Organised tree 
+Peaceful perk now only sets food usage to 0.5 while in reserve, als makes the character content in reserve. Perk icon updated. moved into the calm tree
+
 Classes with the net perk group gain:
 * New Perk - Net Casting - Increases the range of nets by 1 
 * New Perk - Net Repair - Increases the ammunition of nets by 1 
+
 Cat bite buffed from 15-35 damange to 20-40 damage 
 Fixes missing orientation errors for bandit warlord, veteran and outrider
 Fixes crash facing bandit warlord 
 Fixes banshee enemy circle images being slightly too big 
-
-
+Fixes caravan hand cripping error
+Fixes farmhand pitchfork error
+Fixes outrider errors for "bandit" "goblin" and "rooted" 
+Fixes not found error for outriders
+Fixes donkey error for muscularity 
+Fixes crash from militia using ancient spear 
+Fixes missing image and incorrect skills on the pole flail 
 
 
 

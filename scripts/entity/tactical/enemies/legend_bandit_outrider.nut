@@ -8,7 +8,7 @@ this.legend_bandit_outrider <- this.inherit("scripts/entity/tactical/human", {
 	{
 		this.m.Type = this.Const.EntityType.BanditOutrider;
 		this.m.XP = this.Const.Tactical.Actor.BanditOutrider.XP;
-		this.goblin.create();
+		this.human.create();
 		this.m.ShakeLayers = [
 			[
 				"horse",
@@ -38,7 +38,7 @@ this.legend_bandit_outrider <- this.inherit("scripts/entity/tactical/human", {
 
 	function onInit()
 	{
-		this.bandit.onInit();
+		this.human.onInit();
 		local b = this.m.BaseProperties;
 		b.setValues(this.Const.Tactical.Actor.BanditOutrider);
 		b.AdditionalActionPointCost = 1;
@@ -103,8 +103,6 @@ this.legend_bandit_outrider <- this.inherit("scripts/entity/tactical/human", {
 
 	function onAfterInit()
 	{
-		this.getSprite("status_rooted").Scale = 0.57;
-		this.setSpriteOffset("status_rooted", this.createVec(-2, -3));
 		this.actor.onAfterInit();
 	}
 

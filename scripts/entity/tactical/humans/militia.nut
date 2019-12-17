@@ -65,7 +65,7 @@ this.militia <- this.inherit("scripts/entity/tactical/human", {
 			}
 			else if (r == 4)
 			{
-				this.m.Items.equip(this.new("scripts/items/weapons/ancient_spear"));
+				this.m.Items.equip(this.new("scripts/items/weapons/ancient/ancient_spear"));
 			}
 			else if (r == 5)
 			{
