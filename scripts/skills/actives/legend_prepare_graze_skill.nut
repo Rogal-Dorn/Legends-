@@ -72,21 +72,8 @@ this.legend_prepare_graze_skill <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
-		local poison = _user.getSkills().getSkillByID("effects.legend_graze_prepared");
 
-		if (poison != null)
-		{
-			poison.reset();
-		}
-		else
-		{
-			this.m.Container.add(this.new("scripts/skills/effects/legend_graze_prepared_effect"));
-		}
-
-		if (this.m.Item != null && !this.m.Item.isNull())
-		{
-			this.m.Item.removeSelf();
-		}
+ 	 _user.getSkills().add(this.new("scripts/skills/effects/legend_graze_prepared"));
 
 		return true;
 	}
