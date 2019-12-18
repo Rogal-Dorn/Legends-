@@ -2696,6 +2696,15 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/missile_circle.png",
 		IconDisabled = "ui/perks/missile_circle_bw.png",
 		Const = "LegendMagicMissile"
+	},
+	{
+		ID = "perk.legend_horse_movement",
+		Script = "scripts/skills/perks/perk_horse_movement",
+		Name = this.Const.Strings.PerkName.LegendHorseMovement,
+		Tooltip = this.Const.Strings.PerkDescription.LegendHorseMovement,
+		Icon = "ui/perks/charge_perk.png",
+		IconDisabled = "ui/perks/charge_perk_bw.png",
+		Const = "LegendHorseMovement"
 	}
 ];
 gt.Const.Perks.PerkDefs <- {};

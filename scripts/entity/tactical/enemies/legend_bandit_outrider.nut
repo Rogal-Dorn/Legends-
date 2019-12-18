@@ -85,7 +85,6 @@ this.legend_bandit_outrider <- this.inherit("scripts/entity/tactical/human", {
 		this.setSpriteOffset("arms_icon", this.createVec(15, 15));
 		this.getSprite("arms_icon").Rotation = 13.0;
 		local horse_kick = this.new("scripts/skills/actives/legend_horse_kick");
-
 		this.m.Skills.add(horse_kick);
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_horse_movement"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_horse_charge"))
@@ -236,7 +235,7 @@ this.legend_bandit_outrider <- this.inherit("scripts/entity/tactical/human", {
 	function spawnHorse( _info )
 	{
 		this.Sound.play(this.m.Sound[this.Const.Sound.ActorEvent.DamageReceived][this.Math.rand(0, this.m.Sound[this.Const.Sound.ActorEvent.DamageReceived].len() - 1)], this.Const.Sound.Volume.Actor * this.m.SoundVolume[this.Const.Sound.ActorEvent.Other1], _info.Tile.Pos, 1.0);
-		local entity = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/legend_bandit_horse", _info.Tile.Coords.X, _info.Tile.Coords.Y);
+		local entity = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/legend_horse", _info.Tile.Coords.X, _info.Tile.Coords.Y);
 
 		if (entity != null)
 		{

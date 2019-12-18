@@ -1383,7 +1383,8 @@ gt.Const.Strings.PerkName <- {
 	LegendNetRepair = "Net Repair",
 	LegendNetCasting = "Net Casting",
 	LegendPacifist = "Pacifist",
-	LegendMagicMissile = "Magic Missile"
+	LegendMagicMissile = "Magic Missile",
+	LegendHorseMovement = "Horse Movement"
 };
 gt.Const.Strings.PerkDescription <- {
 	Relentless = "Don\'t slow down! At all times your Initiative is reduced only by [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] of your accumulated Fatigue, instead of all of it. \n[color=#0b0084]From the Fit perk group[/color]",
@@ -1700,8 +1701,8 @@ gt.Const.Strings.PerkDescription <- {
 	LegendNetRepair = "Many years spent repearing and packing nets allows you to carry and repair more nets. Doubles the ammunition of nets and reinforced nets. ",
 	LegendNetCasting = "Learning the ways of the cast takes practice, holding the net in the right position and twisting at the hips allows you to cover a greater distance with each cast. Increases the range of nets and reinforced nets to 4.",
 	LegendPacifist = "Fighting is a brutal thuggish pastime, most folk prefer a life without frequent bouts of ultraviolence.  Since this character is not threatening, they only count for half a person when determining difficulty. They become content with being in reserve, and will grow unhappy if they are placed in more than half your comapany battles. ",
-	LegendMagicMissile = "Release a controlled forceful bolt, leaping towards a foe. Damage based on current initiave, accuracy based on ranged attack skill."
-
+	LegendMagicMissile = "Release a controlled forceful bolt, leaping towards a foe. Damage based on current initiave, accuracy based on ranged attack skill.",
+	LegendHorseMovement = "Move like a horse, quickly across flat terrain, but slowly through bogs and mountains"
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

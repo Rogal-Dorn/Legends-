@@ -159,7 +159,7 @@ this.throwing_net <- this.inherit("scripts/items/weapons/weapon", {
 		{
 			this.m.Name = "Throwing Net";
 			this.m.IconLarge = "tools/inventory_throwing_net.png";
-			this.m.Icon = "tools/inventory_throwing_net_70x70.png";
+			this.m.Icon = "tools/throwing_net_70x70.png";
 			this.m.ShowArmamentIcon = true;
 		}
 		else
