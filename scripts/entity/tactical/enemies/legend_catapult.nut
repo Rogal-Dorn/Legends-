@@ -6,6 +6,14 @@ this.legend_catapult <- this.inherit("scripts/entity/tactical/human", {
 		this.m.BloodType = this.Const.BloodType.Wood;
 		this.m.XP = this.Const.Tactical.Actor.LegendCatapult.XP;
 		this.actor.create();
+		this.m.Sound[this.Const.Sound.ActorEvent.DamageReceived] = [
+			"sounds/enemies/catapult_hurt_01.wav",
+			"sounds/enemies/catapult_hurt_02.wav",
+			"sounds/enemies/catapult_hurt_03.wav"
+		];
+		this.m.Sound[this.Const.Sound.ActorEvent.Death] = [
+			"sounds/enemies/catapult_death_02.wav"
+		];
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/legend_catapult_agent");
 		this.m.AIAgent.setActor(this);
 	}
@@ -15,6 +23,13 @@ this.legend_catapult <- this.inherit("scripts/entity/tactical/human", {
 		this.actor.onInit();
 		local b = this.m.BaseProperties;
 		b.setValues(this.Const.Tactical.Actor.LegendCatapult);
+		b.IsImmuneToKnockBackAndGrab = true;
+		b.IsImmuneToStun = true;
+		b.IsImmuneToRoot = true;
+		b.IsAffectedByInjuries = false;
+		b.IsImmuneToBleeding = true;
+		b.IsImmuneToPoison = true;
+		b.IsAffectedByNight = false;
 		b.TargetAttractionMult = 1.1;
 		this.m.ActionPoints = b.ActionPoints;
 		this.m.Hitpoints = b.Hitpoints;
@@ -22,7 +37,6 @@ this.legend_catapult <- this.inherit("scripts/entity/tactical/human", {
 		this.m.ActionPointCosts = this.Const.DefaultMovementAPCost;
 		this.m.FatigueCosts = this.Const.DefaultMovementFatigueCost;
 		this.setAppearance();
-		this.getSprite("socket").setBrush("bust_base_military");
 		local body = this.addSprite("body");
 		body.setBrush("legend_catapult");
 		body.varySaturation(0.25);

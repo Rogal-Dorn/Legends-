@@ -1961,25 +1961,21 @@ Non-legendary difficulty changes
 * Fixes crash when entering battles vs nobles 
 * Fixes "index 7 not found", "13 not found" and "14 not found" 
 
-13.0.0.16 
-
+13.0.0.16 - summoning and pacifism
 
 Ranger has new beast handling perks: 
-* Summon Hound
+* Summon Hound 
 * Summon Wolf 
 * Summon Falcon
 * Summon Bear 
-New Enemy - Bear - Loads of hitpoints, bites like a wolf, claws like a skin ghoul, shows up along side packs of wolves. Drops bear skins 
+New Enemy - Bear - Loads of hitpoints, bites like a wolf, claws like a skin ghoul, shows up along side packs of wolves. Drops bear skins  (placeholder sounds)
 Inventors gain the new perk: Summon Catapult 
 New Enemey - Catapult - Does 100-200 damage from 12 tiles away. Can barely move. No melee at all. Shows up very rarely in late game noble parties 
-
 New Perk - Pacifist - Character only counts for half a character when calculating difficulty. Character will grow unhappy if deployed in more than half of your company's battles. Also Content in reserve. Added to Organised tree 
 Peaceful perk now only sets food usage to 0.5 while in reserve, als makes the character content in reserve. Perk icon updated. moved into the calm tree
-
 Classes with the net perk group gain:
 * New Perk - Net Casting - Increases the range of nets by 1 
 * New Perk - Net Repair - Increases the ammunition of nets by 1 
-
 Cat bite buffed from 15-35 damange to 20-40 damage 
 Fixes missing orientation errors for bandit warlord, veteran and outrider
 Fixes crash facing bandit warlord 
@@ -1993,5 +1989,18 @@ Fixes crash from militia using ancient spear
 Fixes missing image and incorrect skills on the pole flail 
 Fixes error from militia glaive
 Fixes magic missile disapearing intermittently on seer 
+
+
+13.0.0.17 
+Fixes wolf not being summonable 
+Fixes healertree error
+Fixes bandit outrider freezing on kill by adding a bandit horse
+Bandit outrider AI upgraded
+Fixes throwing nets going invisible in your inventory once being upgraded
+Fixes catapult socket error, sound error, flipping errors and sprite status errors 
+Fixes construct catapult max range error 
+Catapult gets catapult sounds, immune to knockback, grab, stun, root, injuries, bleeding, poison and night. 
+fixes magic missile being selected but not appearing selected  
+Fixes bear not dying due to not being able to find its severed head 
 
 

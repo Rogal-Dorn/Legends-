@@ -171,7 +171,6 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 					this.Const.Perks.PerkDefs.NineLives,
 					this.Const.Perks.PerkDefs.Student,
 					this.Const.Perks.PerkDefs.Recover,
-					this.Const.Perks.PerkDefs.LegendMagicMissile,
 					this.Const.Perks.PerkDefs.LegendSummonCat,
 					this.Const.Perks.PerkDefs.LegendDaze,
 				],

@@ -38,35 +38,6 @@ this.legend_unleash_catapult <- this.inherit("scripts/skills/skill", {
 	{
 		this.skill.addResources();
 
-		foreach( r in this.m.Sounds0 )
-		{
-			this.Tactical.addResource(r);
-		}
-
-		foreach( r in this.m.Sounds1 )
-		{
-			this.Tactical.addResource(r);
-		}
-
-		foreach( r in this.m.Sounds2 )
-		{
-			this.Tactical.addResource(r);
-		}
-
-		foreach( r in this.m.Sounds3 )
-		{
-			this.Tactical.addResource(r);
-		}
-
-		foreach( r in this.m.Sounds4 )
-		{
-			this.Tactical.addResource(r);
-		}
-
-		foreach( r in this.m.Sounds5 )
-		{
-			this.Tactical.addResource(r);
-		}
 	}
 
 	function getTooltip()
@@ -117,7 +88,7 @@ this.legend_unleash_catapult <- this.inherit("scripts/skills/skill", {
 	{
 		_user.getSkills().add(this.new("scripts/skills/effects/legend_summoned_catapult_effect"));
 		local entity = this.Tactical.spawnEntity(this.m.Script, _targetTile.Coords.X, _targetTile.Coords.Y);
-		entity.setFaction(this.Const.Faction.PlayerAnimals);
+		entity.setFaction(_user.getFaction());
 		entity.setName(this.m.EntityName);
 
 		return true;
