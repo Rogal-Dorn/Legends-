@@ -2005,3 +2005,5 @@ Fixes bear not dying due to not being able to find its severed head
 
 13.0.0.18(?)
 Fixes bear spawning backwards when spawned by Ranger
+Fixes Polearm Mastery not being correctly applied to Peasant Farmhands
+Fixes Lithe not being correctly applied to Bandit Veterans
