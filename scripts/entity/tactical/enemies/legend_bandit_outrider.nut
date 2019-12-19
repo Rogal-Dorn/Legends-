@@ -24,10 +24,8 @@ this.legend_bandit_outrider <- this.inherit("scripts/entity/tactical/human", {
 			]
 		];
 		this.m.Sound[this.Const.Sound.ActorEvent.Other1] = [
-			"sounds/enemies/wolf_hurt_00.wav",
-			"sounds/enemies/wolf_hurt_01.wav",
-			"sounds/enemies/wolf_hurt_02.wav",
-			"sounds/enemies/wolf_hurt_03.wav"
+			"sounds/combat/rearing_01.wav",
+			"sounds/combat/rearing_01.wav"
 		];
 		this.m.Sound[this.Const.Sound.ActorEvent.Other2] = [
 			"sounds/enemies/wolf_death_00.wav",
@@ -50,20 +48,7 @@ this.legend_bandit_outrider <- this.inherit("scripts/entity/tactical/human", {
 		];
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.Idle] = 0.6;
 		this.m.Sound[this.Const.Sound.ActorEvent.Move] = [
-			"sounds/enemies/goblin_wolfrider_move_00.wav",
-			"sounds/enemies/goblin_wolfrider_move_01.wav",
-			"sounds/enemies/goblin_wolfrider_move_02.wav",
-			"sounds/enemies/goblin_wolfrider_move_03.wav",
-			"sounds/enemies/goblin_wolfrider_move_04.wav",
-			"sounds/enemies/goblin_wolfrider_move_05.wav",
-			"sounds/enemies/goblin_wolfrider_move_06.wav",
-			"sounds/enemies/goblin_wolfrider_move_07.wav",
-			"sounds/enemies/goblin_wolfrider_move_08.wav",
-			"sounds/enemies/goblin_wolfrider_move_09.wav",
-			"sounds/enemies/goblin_wolfrider_move_10.wav",
-			"sounds/enemies/goblin_wolfrider_move_11.wav",
-			"sounds/enemies/goblin_wolfrider_move_12.wav",
-			"sounds/enemies/goblin_wolfrider_move_13.wav"
+			"sounds/combat/gallop.wav"
 		];
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/goblin_wolfrider_agent");
 		this.m.AIAgent.setActor(this);
