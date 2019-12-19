@@ -2011,3 +2011,4 @@ Fixes Horse not spawning after killing Bandit Outrider
 Fixes Horse spawning backwards after killing Outrider
 Fixes Horse indices not found
 Fixes Horse Trait's error applying Movement and Fatigue costs
+Fixes (Hopefully) Catapult not having horizontalflip/sprite error
