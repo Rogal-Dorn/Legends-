@@ -15,12 +15,14 @@ gt.Const.DLC <- {
 	{
 		local maskInSave = _meta.getInt("dlc");
 
-		for( local i = 0; i != 32; i = ++i )
+		for( local i = 0; i != 32; i = i )
 		{
 			if ((maskInSave & 1 << i) != 0 && (this.Const.DLC.Mask & 1 << i) == 0)
 			{
 				return false;
 			}
+
+			i = ++i;
 		}
 
 		return true;
@@ -79,31 +81,37 @@ gt.Const.getNumDirectionBits <- function ( _dir )
 	if ((_dir & 1) != 0)
 	{
 		n = ++n;
+		n = n;
 	}
 
 	if ((_dir & 2) != 0)
 	{
 		n = ++n;
+		n = n;
 	}
 
 	if ((_dir & 4) != 0)
 	{
 		n = ++n;
+		n = n;
 	}
 
 	if ((_dir & 8) != 0)
 	{
 		n = ++n;
+		n = n;
 	}
 
 	if ((_dir & 16) != 0)
 	{
 		n = ++n;
+		n = n;
 	}
 
 	if ((_dir & 32) != 0)
 	{
 		n = ++n;
+		n = n;
 	}
 
 	return n;
@@ -161,7 +169,7 @@ gt.Const.Difficulty <- {
 	BuyPriceMult = [
 		0.95,
 		1.0,
-		1.05
+		1.05,
 		1.1
 	],
 	SellPriceMult = [
@@ -361,7 +369,8 @@ gt.Const.EntityType <- {
 	LegendFencer = 112,
 	BanditOutrider = 113,
 	LegendBear = 114,
-	LegendCatapult = 115
+	LegendCatapult = 115,
+    LegendHorse = 116
 	function convertOldToNew( _id )
 	{
 		switch(_id)
@@ -605,7 +614,7 @@ gt.Const.EntityIcon <- [
 	"wildman_06_orientation",
 	"dog_02_orientation",
 	"thing_orientation",
-	"wildman_06_orientation"
+	"wildman_06_orientation",
 	"rabble_orientation",
 	"cat_orientation",
 	"orc_elite_orientation",
@@ -637,9 +646,10 @@ gt.Const.EntityIcon <- [
 	"witchhunter_orientation",
 	"halberdier_orientation",
 	"slinger_orientation",
-	"fencer_orientation"
+	"fencer_orientation",
 	"banditoutrider_orientation",
 	"bear_orientation",
 	"catapult_01_orientation",
+	"horse_orientation"
 ];
 
