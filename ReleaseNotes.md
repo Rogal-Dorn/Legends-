@@ -2003,4 +2003,5 @@ Catapult gets catapult sounds, immune to knockback, grab, stun, root, injuries, 
 fixes magic missile being selected but not appearing selected  
 Fixes bear not dying due to not being able to find its severed head 
 
-
+13.0.0.18(?)
+Fixes bear spawning backwards when spawned by Ranger
