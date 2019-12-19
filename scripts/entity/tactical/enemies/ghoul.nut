@@ -11,7 +11,7 @@ this.ghoul <- this.inherit("scripts/entity/tactical/actor", {
 
 	function getXP()
 	{
-		return this.m.XP * thias.m.Size;
+		return this.m.XP * this.m.Size;
 	}
 
 	function create()
