@@ -155,6 +155,7 @@ this.legend_horse <- this.inherit("scripts/entity/tactical/actor", {
 		local variant = this.Math.rand(0, 7);
 		local horse = this.addSprite("horse");
 		horse.setBrush("bust_naked_body_10" + variant);
+		horse.setHorizontalFlipping(true); //Spawns looking wrong way without flipping because of the brush
 		horse.varySaturation(0.15);
 		horse.varyColor(0.07, 0.07, 0.07);
 		local horse = this.addSprite("horse_head");

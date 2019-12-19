@@ -2007,3 +2007,6 @@ Fixes bear not dying due to not being able to find its severed head
 Fixes bear spawning backwards when spawned by Ranger
 Fixes Polearm Mastery not being correctly applied to Peasant Farmhands
 Fixes Lithe not being correctly applied to Bandit Veterans
+Fixes Horse not spawning after killing Bandit Outrider
+Fixes Horse spawning backwards after killing Outrider
+Fixes Horse indices not found
