@@ -20,7 +20,7 @@ this.legend_catapult <- this.inherit("scripts/entity/tactical/human", {
 
 	function onInit()
 	{
-		this.actor.onInit();
+		this.human.onInit();
 		local b = this.m.BaseProperties;
 		b.setValues(this.Const.Tactical.Actor.LegendCatapult);
 		b.IsImmuneToKnockBackAndGrab = true;
@@ -37,7 +37,8 @@ this.legend_catapult <- this.inherit("scripts/entity/tactical/human", {
 		this.m.ActionPointCosts = this.Const.DefaultMovementAPCost;
 		this.m.FatigueCosts = this.Const.DefaultMovementFatigueCost;
 		this.setAppearance();
-		local body = this.getSprite("body").setBrush("legend_catapult");
+		local body = this.addSprite("body");
+		body.setBrush("legend_catapult");
 		body.varySaturation(0.25);
 		body.varyColor(0.2, 0.2, 0.2);
 		b.IsSpecializedInBows = true;
