@@ -79,8 +79,7 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 			}
 			else if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 			{
-			//	this.m.Strength +=  6 + i + pow(bro.getLevel(),1.25);
-				this.m.Strength +=  10 + ((bro.getLevel() / 2) + (bro.getLevel() - 1)) * 2;
+				this.m.Strength +=  6 + i + pow(bro.getLevel(),1.25);
 				local mainhand = bro.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
 				local offhand = bro.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
 				local body = bro.getItems().getItemAtSlot(this.Const.ItemSlot.Body);
@@ -92,22 +91,22 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 
 				if (mainhand != null)
 				{
-					mainhandvalue += (mainhand.getSellPrice())  / 1000;
+					mainhandvalue += (mainhand.getSellPrice())  / 4000;
 				}
 
 				if (offhand != null)
 				{
-					offhandvalue += (offhand.getSellPrice()) / 1000;
+					offhandvalue += (offhand.getSellPrice()) / 4000;
 				}
 
 				if (body != null)
 				{
-					bodyvalue += (body.getSellPrice()) / 1000;
+					bodyvalue += (body.getSellPrice()) / 4000;
 				}
 
 				if (head != null)
 				{
-					headvalue += (head.getSellPrice()) / 1000;
+					headvalue += (head.getSellPrice()) / 4000;
 				}
 
 
@@ -122,24 +121,25 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 			return
 		}
 
-		if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
-		{
-			local items = this.World.Assets.getStash().getItems();
-			
-			local itemsvalue = 0; 
-			foreach( item in items )
-			{
-				if (item != null)
-				{
-					itemsvalue += item.getSellPrice();
-				}
-			}
-			this.m.Strength += itemsvalue / 1000;
-			this.logInfo("Item power " + itemsvalue);
-			local cashvalue = this.World.Assets.getMoney();
-			this.logInfo("Gear power " + cashvalue);
-			this.m.Strength += cashvalue / 750;
-		}
+	//  Scaling based on money and stash - was controversial 
+	//	if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+	//	{
+	//		local items = this.World.Assets.getStash().getItems();
+	//		
+	//		local itemsvalue = 0; 
+	//		foreach( item in items )
+	//		{
+	//			if (item != null)
+	//			{
+	//				itemsvalue += item.getSellPrice();
+	//			}
+	//		}
+	//		this.m.Strength += itemsvalue / 1000;
+	//		this.logInfo("Item power " + itemsvalue);
+	//		local cashvalue = this.World.Assets.getMoney();
+	//		this.logInfo("Gear power " + cashvalue);
+	//		this.m.Strength += cashvalue / 750;
+	//	}
 
 		//When playing a warlock build, we need to account for the summons he can add
 		local stash = this.World.Assets.getStash().getItems();

@@ -541,8 +541,8 @@ gt.Const.Tactical.Actor.LegendBear <- {
 	MoraleEffectMult = 1.0,
 	FatigueRecoveryRate = 30,
 	Armor = [
-		0,
-		0
+		50,
+		50
 	]
 };
 gt.Const.Tactical.Actor.LegendHorse <- {
