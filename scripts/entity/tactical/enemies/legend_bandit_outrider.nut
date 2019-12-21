@@ -98,7 +98,7 @@ this.legend_bandit_outrider <- this.inherit("scripts/entity/tactical/human", {
 		wolf_armor.setBrush("horse_armor_plate");
 		wolf_armor.setHorizontalFlipping(this.isAlliedWithPlayer());
 		offset = this.createVec(8, -20);
-		wolfarmoroffset = this.createVec(8,14);
+		local wolfarmoroffset = this.createVec(8,14);
 		this.setSpriteOffset("wolf", offset);
 		this.setSpriteOffset("wolf_head", offset);
 		this.setSpriteOffset("wolf_armor", wolfarmoroffset);
