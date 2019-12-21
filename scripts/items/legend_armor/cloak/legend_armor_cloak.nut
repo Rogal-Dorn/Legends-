@@ -8,7 +8,7 @@ this.legend_armor_cloak <- this.inherit("scripts/items/legend_armor/legend_armor
 		this.m.Name = "Cloak";
 		this.m.Description = "The Cloak. Everyone needs a good cloak. Offers minimal protection and small boost to moral.";
 		this.m.ArmorDescription = "Has a flowing cloth cloak";
-		this.m.Variant = this.Math.rand(1, 7);
+		this.m.Variant = this.Math.rand(1, 35);
 		this.updateVariant();
 		this.m.Value = 350;
 		this.m.Condition = 3;
