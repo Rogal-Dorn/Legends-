@@ -2003,7 +2003,12 @@ Catapult gets catapult sounds, immune to knockback, grab, stun, root, injuries, 
 fixes magic missile being selected but not appearing selected  
 Fixes bear not dying due to not being able to find its severed head 
 
-13.0.0.18(?)
+13.0.0.18
+Legendary difficulty - player strength calc now counts gear and stash at a rate of 1 strength per 1000 worth. Cash counted at 1 strength per 750 crowns. This means more enemies will show up if you're floating lots of cash. 
+Added 28 new tabard colors 
+Summoned bear's health, resolve, stamina and melee skill nerfed by 25%
+Bears graphics updated to be less blurry and better to scale  
+Fixed tame wolves not having correct stats 
 Fixes bear spawning backwards when spawned by Ranger
 Fixes Polearm Mastery not being correctly applied to Peasant Farmhands
 Fixes Lithe not being correctly applied to Bandit Veterans
