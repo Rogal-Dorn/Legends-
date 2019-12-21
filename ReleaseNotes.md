@@ -2001,8 +2001,14 @@ Fixes catapult socket error, flipping errors, sound error, and sprite status err
 Fixes construct catapult max range error 
 Catapult gets catapult sounds, immune to knockback, grab, stun, root, injuries, bleeding, poison and night. 
 fixes magic missile being selected but not appearing selected  
-Fixes bear not dying due to not finding its severed head 
+Fixes bear not dying due to not being able to find its severed head 
 
-13.0.0.18
-fixes stats on warwolf 
-
+13.0.0.18(?)
+Fixes bear spawning backwards when spawned by Ranger
+Fixes Polearm Mastery not being correctly applied to Peasant Farmhands
+Fixes Lithe not being correctly applied to Bandit Veterans
+Fixes Horse not spawning after killing Bandit Outrider
+Fixes Horse spawning backwards after killing Outrider
+Fixes Horse indices not found
+Fixes Horse Trait's error applying Movement and Fatigue costs
+Fixes Catapult not spawning due to init

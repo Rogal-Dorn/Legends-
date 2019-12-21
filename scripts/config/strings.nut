@@ -182,7 +182,8 @@ gt.Const.Strings.EntityName <- [
 	"Noble Fencer",
 	"Bandit Outrider",
 	"Bear",
-	"Catapult"
+	"Catapult",
+	"Horse"
 ];
 gt.Const.Strings.EntityNamePlural <- [
 	"Necromancers",
@@ -300,7 +301,8 @@ gt.Const.Strings.EntityNamePlural <- [
 	"Noble Fencers",
 	"Bandit Outriders",
 	"Bears",
-	"Catapults"
+	"Catapults",
+	"Horses"
 ];
 gt.Const.Strings.Tactical.EntityName <- {
 	Boulder = "Boulder",
@@ -1662,7 +1664,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendBackToBasics = "Years of practice lead this character to fall back to their instincts and basic training under extreme stress. If this character takes damage while fleeing, they have a chance to rally. The chance is equal to half their resolve. \n[color=#0b0084]From the Trained perk group[/color]",
 	PushTheAdvantage = "Strike hardest where they are weakest. When attacking a sleeping or stunned enemy, gain [color=" + this.Const.UI.Color.PositiveValue + "]+20[/color] Melee and Ranged skill, and [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] chance to hit the head",
 	LegendMindOverBody = "Push your body beyond what is humanly possible through your sheer force of will. Spend less fatigue on skills for each point of Resolve over 75.  \n[color=#0b0084]From the Intelligent perk group[/color]",
-	LegendEscapeArtist = "Others see it as magic, but your deft hands know better. Grants immunity to all rooting effects, including nets and webs. \n[color=#0b0084]From the Nets perk group[/color]"
+	LegendEscapeArtist = "Others see it as magic, but your deft hands know better. Grants immunity to all rooting effects, including nets and webs. \n[color=#0b0084]From the Nets perk group[/color]",
 	LegendGatherer = "Knowledge of the landscape and vegetation provides a wealth of opportunities when gathering in camp. Apothecaries usualy gain their level as a percentage reduction in hours required to find special items. This skill doubles that bonus to twice their level. When the total bonus from all apothecaries is above 10%, they can also find mushrooms, poisons, antidotes and powders",
 	LegendPotionBrewer = "Expertise in potions and tinctures allows the creation of potions while gathering in camp. This skill unlocks the chance to create lionheart, ironwill, recovery and cat potions while gathering. An apocethery or vala must gather the ingredients for the potion brewer. When the total level of all potion brewers gathering is above 20, they have a chance to create potions of knowledge and oblivion. ",
 	LegendSpecCultHood = "In Davkul we find the truth of ourselves. We have no identity beyond his servitude, our glory is his glory. While your face is obscured by a cultist hood, gain [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] of your resolve as a bonus to melee and ranged defense",
@@ -1690,7 +1692,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendHorseCollection = "By training the horse\'s posture, advanced movements become easier to perform and less draining. Increases fatigue by 25%",
 	LegendHorseFlyingChange = "Changing lead legs at high speeds is an advanced move that can allow horses to cover much larger distances. Gain 1 action point",
 	LegendHorsePassage = "Training the legs to raise higher and push harder can prepare horses for rough or muddy terrain. Decreases movement costs on rough terrain",
-	LegendDrumsOfLife = "Learn powerful rythms that drive your allies on. Unlocks the Drums of Life skill that restores [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] health to every ally on the field. Can only be used with a Drum or Lute equipped. \n[color=#0b0084]From the Bard perk group[/color]"
+	LegendDrumsOfLife = "Learn powerful rythms that drive your allies on. Unlocks the Drums of Life skill that restores [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] health to every ally on the field. Can only be used with a Drum or Lute equipped. \n[color=#0b0084]From the Bard perk group[/color]",
 	LegendLacerate = "Lust for blood courses through your veins, each stroke rips and tears with a ferocity that intensifies as you bleed. Gain a chance to inflict bleeding with every strike, equal to your percentage of missing health.",
 	LegendPeaceful = "Not all folks are built for war, some find contentment in contemplation or practicing a trade. This character becomes content with being in reserve, consumes half rations while in reserve.",
 	LegendSummonHound = "Forming close bonds with hounds grants to teh ability to call to them. Summon a loyal hound to your side in battle.",

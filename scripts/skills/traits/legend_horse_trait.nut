@@ -6,7 +6,7 @@ this.legend_horse_trait <- this.inherit("scripts/skills/traits/character_trait",
 		this.m.ID = "trait.legend_horse";
 		this.m.Name = "Horse";
 		this.m.Icon = "ui/traits/trait_icon_07.png";
-		this.m.Description = "A horse eats more than humans, can't wear human armor, moves much better on flat terrain, but worse on rough terrain";
+		this.m.Description = "A horse eats more than humans, can\'t wear human armor, moves much better on flat terrain, but worse on rough terrain";
 		this.m.Titles = [
 			"the Horse",
 			"the Stallion",
@@ -52,8 +52,9 @@ this.legend_horse_trait <- this.inherit("scripts/skills/traits/character_trait",
 	function onUpdate( _properties )
 	{
 		local actor = this.getContainer().getActor();
-		actor.m.ActionPointCosts = this.Const.HorseMovementAPCost;
-		actor.m.FatigueCosts = clone this.Const.HorseMovementFatigueCost;
+		local gt = getroottable();
+		actor.m.ActionPointCosts = gt.Const.HorseMovementAPCost;
+		actor.m.FatigueCosts = clone gt.Const.HorseMovementFatigueCost;
 		_properties.DailyFood += 4.0;
 	}
 
