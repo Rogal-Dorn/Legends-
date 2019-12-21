@@ -20,7 +20,7 @@ this.legend_catapult <- this.inherit("scripts/entity/tactical/human", {
 
 	function onInit()
 	{
-		this.actor.onInit();
+		this.human.onInit();
 		local b = this.m.BaseProperties;
 		b.setValues(this.Const.Tactical.Actor.LegendCatapult);
 		b.IsImmuneToKnockBackAndGrab = true;

@@ -34,7 +34,7 @@ this.legend_peasant_farmhand <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_pitchfork_skill"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_pitchfork_damage"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_reach_advantage"));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_mastery_polearm"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_mastery_polearm"));
 		this.getSprite("socket").setBrush("bust_base_militia");
 			if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 			{

@@ -207,10 +207,12 @@ this.legend_warbear <- this.inherit("scripts/entity/tactical/actor", {
 		body.setBrush("bear_01");
 		body.varySaturation(0.15);
 		body.varyColor(0.07, 0.07, 0.07);
+		body.setHorizontalFlipping(this.isAlliedWithPlayer()); // Body and head both backwards w/o if spawns for player
 		local head = this.addSprite("head");
 		head.setBrush("bear_head_01");
 		head.Color = body.Color;
 		head.Saturation = body.Saturation;
+		head.setHorizontalFlipping(this.isAlliedWithPlayer());
 		local injury = this.addSprite("injury");
 		injury.Visible = false;
 		injury.setBrush("bear_01_injured");
