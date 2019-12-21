@@ -196,7 +196,10 @@ this.legend_warbear <- this.inherit("scripts/entity/tactical/actor", {
 		b.TargetAttractionMult = 0.1;
 		b.IsAffectedByInjuries = false;
 		this.m.ActionPoints = b.ActionPoints;
-		this.m.Hitpoints = b.Hitpoints;
+		this.m.Hitpoints = b.Hitpoints * 0.75;
+		this.m.Stamina = b.Stamina * 0.75;
+		this.m.MeleeSkill = b.MeleeSkill * 0.75;
+		this.m.Bravery = b.Bravery * 0.75;
 		this.m.CurrentProperties = clone b;
 		this.m.ActionPointCosts = this.Const.DefaultMovementAPCost;
 		this.m.FatigueCosts = this.Const.DefaultMovementFatigueCost;
