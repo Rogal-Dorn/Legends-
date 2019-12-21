@@ -1997,10 +1997,12 @@ Fixes healertree error
 Fixes bandit outrider freezing on kill by adding a bandit horse
 Bandit outrider AI upgraded
 Fixes throwing nets going invisible in your inventory once being upgraded
-Fixes catapult socket error, sound error, flipping errors and sprite status errors 
+Fixes catapult socket error, flipping errors, sound error, and sprite status errors 
 Fixes construct catapult max range error 
 Catapult gets catapult sounds, immune to knockback, grab, stun, root, injuries, bleeding, poison and night. 
 fixes magic missile being selected but not appearing selected  
-Fixes bear not dying due to not being able to find its severed head 
+Fixes bear not dying due to not finding its severed head 
 
+13.0.0.18
+fixes stats on warwolf 
 
