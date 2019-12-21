@@ -191,7 +191,7 @@ this.warwolf <- this.inherit("scripts/entity/tactical/actor", {
 	{
 		this.actor.onInit();
 		local b = this.m.BaseProperties;
-		b.setValues(this.Const.Tactical.Actor.Wolf);
+		b.setValues(this.Const.Tactical.Actor.WarWolf);
 		b.TargetAttractionMult = 0.1;
 		b.IsAffectedByInjuries = false;
 		this.m.ActionPoints = b.ActionPoints;
