@@ -86,13 +86,13 @@ this.send_undead_ambushers_action <- this.inherit("scripts/factions/faction_acti
 		local mult = this.World.FactionManager.isUndeadScourge() ? 1.1 : 1.0;
 		if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 			{
-			local mult = this.World.FactionManager.isUndeadScourge() ? 1.2 : 1.0;
+			 mult = this.World.FactionManager.isUndeadScourge() ? 1.2 : 1.0;
 			}
 		local rand = this.Math.rand(75, 120)
-		local distanceToNextSettlement = _action.getDistanceToSettlements(settlement.getTile());
+		local distanceToNextSettlement = this.getDistanceToSettlements(settlement.getTile());
 			if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary && distanceToNextSettlement > 14)
 			{
-				local rand *= distanceToNextSettlement / 14.0;
+			 rand *= distanceToNextSettlement / 14.0;
 			}
 		local party = _faction.spawnEntity(settlement.getTile(), "Undead", false, this.Const.World.Spawn.UndeadScourge, rand * this.getReputationToDifficultyMult() * mult);
 		party.getSprite("banner").setBrush(settlement.getBanner());

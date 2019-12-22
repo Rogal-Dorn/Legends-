@@ -84,11 +84,11 @@ this.send_goblin_roamers_action <- this.inherit("scripts/factions/faction_action
 		local settlement = this.pickWeightedRandom(settlements);
 		settlement.setLastSpawnTimeToNow();
 		local rand = this.Math.rand(50, 110);
-		local distanceToNextSettlement = _action.getDistanceToSettlements(settlement.getTile());
+		local distanceToNextSettlement = this.getDistanceToSettlements(settlement.getTile());
 			if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary && distanceToNextSettlement > 14)
 			{
 				
-				local rand *= distanceToNextSettlement / 14.0;
+				rand *= distanceToNextSettlement / 14.0;
 			}
 		local party = this.getFaction().spawnEntity(settlement.getTile(), "Goblin Hunters", false, this.Const.World.Spawn.GoblinRoamers, this.Math.min(settlement.getResources(), rand) * this.getReputationToDifficultyLightMult());
 		party.getSprite("banner").setBrush(settlement.getBanner());

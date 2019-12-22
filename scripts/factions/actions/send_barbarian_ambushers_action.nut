@@ -95,7 +95,7 @@ this.send_barbarian_ambushers_action <- this.inherit("scripts/factions/faction_a
 			{
 			local mult = this.World.FactionManager.isCivilWar() ? 1.2 : 1.0;
 			}
-		local distanceToNextSettlement = _action.getDistanceToSettlements(settlement.getTile());
+		local distanceToNextSettlement = this.getDistanceToSettlements(settlement.getTile());
 		if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary && distanceToNextSettlement > 14)
 			{
 			 mult *= distanceToNextSettlement / 14;

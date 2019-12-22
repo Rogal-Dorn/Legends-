@@ -100,10 +100,10 @@ this.send_undead_army_action <- this.inherit("scripts/factions/faction_action", 
 
 		local nearestUndead = this.getNearestLocationTo(origin, this.World.FactionManager.getFactionOfType(this.Const.FactionType.Undead).getSettlements());
 		local rand = this.Math.rand(80, 120);
-		local distanceToNextSettlement = _action.getDistanceToSettlements(settlement.getTile());
+		local distanceToNextSettlement = this.getDistanceToSettlements(settlement.getTile());
 			if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary && distanceToNextSettlement > 14)
 			{
-				local rand *= distanceToNextSettlement / 14.0;
+				rand *= distanceToNextSettlement / 14.0;
 			}
 		local party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Undead).spawnEntity(myTile, "Undead", false, this.Const.World.Spawn.UndeadScourge, rand * this.getReputationToDifficultyMult());
 		party.getSprite("banner").setBrush(nearestUndead.getBanner());

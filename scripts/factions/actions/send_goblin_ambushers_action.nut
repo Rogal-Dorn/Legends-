@@ -79,7 +79,7 @@ this.send_goblin_ambushers_action <- this.inherit("scripts/factions/faction_acti
 		local settlement = this.pickWeightedRandom(settlements);
 		settlement.setLastSpawnTimeToNow();
 		local mult = this.World.FactionManager.isGreenskinInvasion() ? 1.1 : 1.0;
-		local distanceToNextSettlement = _action.getDistanceToSettlements(settlement.getTile());
+		local distanceToNextSettlement = this.getDistanceToSettlements(settlement.getTile());
 		if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary && distanceToNextSettlement > 14)
 			{
 			 mult *= distanceToNextSettlement / 14;

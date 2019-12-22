@@ -33,11 +33,11 @@ this.defend_goblins_action <- this.inherit("scripts/factions/faction_action", {
 			foreach( e in entities )
 			{
 
-			local mult = * 0.66;
-			local distanceToNextSettlement = _action.getDistanceToSettlements(this.m.Settlement.getTile());
+			local mult = 0.66;
+			local distanceToNextSettlement = this.getDistanceToSettlements(this.m.Settlement.getTile());
 			if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary && distanceToNextSettlement > 14)
 			{
-				local mult *= distanceToNextSettlement / 14.0;
+				mult *= distanceToNextSettlement / 14.0;
 			}
 				if (e.isParty() && e.isAttackable() && e.isAttackableByAI() && !s.isAlliedWith(e) && e.getStrength() < s.getResources() * mult)
 				{
@@ -86,8 +86,8 @@ this.defend_goblins_action <- this.inherit("scripts/factions/faction_action", {
 
 		for( local i = 0; i != spawnpoints.len(); i = ++i )
 		{
-			local mult = * 0.66;
-			local distanceToNextSettlement = _action.getDistanceToSettlements(this.m.Settlement.getTile());
+			local mult = 0.66;
+			local distanceToNextSettlement = this.getDistanceToSettlements(this.m.Settlement.getTile());
 			if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary && distanceToNextSettlement > 14)
 			{
 				local mult *= distanceToNextSettlement / 14.0;

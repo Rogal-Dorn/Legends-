@@ -81,11 +81,11 @@ this.send_barbarian_roamers_action <- this.inherit("scripts/factions/faction_act
 		local settlement = this.pickWeightedRandom(settlements);
 		settlement.setLastSpawnTimeToNow();
 		local rand = this.Math.rand(60, 110);
-		local distanceToNextSettlement = _action.getDistanceToSettlements(settlement.getTile());
+		local distanceToNextSettlement = this.getDistanceToSettlements(settlement.getTile());
 			if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary && distanceToNextSettlement > 14)
 			{
 				
-				local rand *= distanceToNextSettlement / 14.0;
+				rand *= distanceToNextSettlement / 14.0;
 			}
 		local party = this.getFaction().spawnEntity(settlement.getTile(), "Barbarians", false, this.Const.World.Spawn.BarbarianHunters, this.Math.min(settlement.getResources(), rand));
 		party.getSprite("banner").setBrush(settlement.getBanner());
