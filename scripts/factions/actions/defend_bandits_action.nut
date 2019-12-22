@@ -91,7 +91,7 @@ this.defend_bandits_action <- this.inherit("scripts/factions/faction_action", {
 			local distanceToNextSettlement = this.getDistanceToSettlements(this.m.Settlement.getTile());
 			if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary && distanceToNextSettlement > 14)
 			{
-				local mult *= distanceToNextSettlement / 14.0;
+				mult *= distanceToNextSettlement / 14.0;
 			}
 			local party = this.getFaction().spawnEntity(spawnpoints[i], "Brigands", false, this.Const.World.Spawn.BanditDefenders, this.m.Settlement.getResources() * mult);
 			party.getSprite("banner").setBrush(this.m.Settlement.getBanner());

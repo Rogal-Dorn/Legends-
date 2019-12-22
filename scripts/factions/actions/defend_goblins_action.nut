@@ -90,7 +90,7 @@ this.defend_goblins_action <- this.inherit("scripts/factions/faction_action", {
 			local distanceToNextSettlement = this.getDistanceToSettlements(this.m.Settlement.getTile());
 			if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary && distanceToNextSettlement > 14)
 			{
-				local mult *= distanceToNextSettlement / 14.0;
+				mult *= distanceToNextSettlement / 14.0;
 			}
 			local party = this.getFaction().spawnEntity(spawnpoints[i], "Goblins", false, this.Const.World.Spawn.GoblinDefenders, this.m.Settlement.getResources() * mult);
 			party.setDescription("A band of mischievous goblins, small but cunning and not to be underestimated.");
