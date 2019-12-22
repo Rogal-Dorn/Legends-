@@ -81,6 +81,12 @@ this.send_undead_roamers_action <- this.inherit("scripts/factions/faction_action
 
 		local settlement = this.pickWeightedRandom(settlements);
 		settlement.setLastSpawnTimeToNow();
+		local rand = this.Math.rand(60, 100);
+		local distanceToNextSettlement = _action.getDistanceToSettlements(settlement.getTile());
+			if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary && distanceToNextSettlement > 14)
+			{
+				local rand *= distanceToNextSettlement / 14.0;
+			}
 		local party = this.getFaction().spawnEntity(settlement.getTile(), "Undead", false, settlement.getRoamerSpawnList(), this.Math.max(settlement.getResources() * 0.75, this.Math.rand(60, 100) * this.getReputationToDifficultyLightMult()));
 		party.getSprite("banner").setBrush(settlement.getBanner());
 		party.setDescription("Something seems wrong.");

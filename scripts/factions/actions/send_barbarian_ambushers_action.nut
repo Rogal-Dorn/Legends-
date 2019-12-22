@@ -91,6 +91,15 @@ this.send_barbarian_ambushers_action <- this.inherit("scripts/factions/faction_a
 		local settlement = this.pickWeightedRandom(settlements);
 		settlement.setLastSpawnTimeToNow();
 		local mult = this.World.FactionManager.isCivilWar() ? 1.1 : 1.0;
+			if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+			{
+			local mult = this.World.FactionManager.isCivilWar() ? 1.2 : 1.0;
+			}
+		local distanceToNextSettlement = _action.getDistanceToSettlements(settlement.getTile());
+		if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary && distanceToNextSettlement > 14)
+			{
+			 mult *= distanceToNextSettlement / 14;
+			}
 		local party = this.getFaction().spawnEntity(settlement.getTile(), "Barbarians", false, this.Const.World.Spawn.Barbarians, this.Math.rand(75, 120) * this.getReputationToDifficultyLightMult() * mult);
 		party.getSprite("banner").setBrush(settlement.getBanner());
 		party.setDescription("A warband of barbarian tribals.");

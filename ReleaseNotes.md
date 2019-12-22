@@ -2018,3 +2018,25 @@ Fixes Horse spawning backwards after killing Outrider
 Fixes Horse indices not found
 Fixes Horse Trait's error applying Movement and Fatigue costs
 Fixes Catapult not spawning due to init
+
+13.0.0.18 - legendary scaling v2
+-
+Legendary difficulty:
+
+* Main hand, off hand, body and head equipped items effect scaling, at a rate of 4000g value to 1 strength. 
+* Cash, Stash and other items no longer effect scaling
+* level based scaling set to veteran level 
+* Enemies now have additional scaling based on distance from civilisation 
+** Only kicks in further than 14 tiles from the nearest town 
+** Rate is a multiplier of distance / 14
+** Beasts already had this kind of scaling, their rate is now distance / 7
+** Orcs also scale based on distance from other orcs, kicking in at 28 tiles at a rate of distance / 28
+* Greenskin Crises increases strength of orcs by 20% instead of 10%
+* Undead Crises increases strength of undead by 20% instead of 10%
+* Noble war increases strength of bandits and barbarians by 20% instead of 10% 
+
+-
+Non-legendary changes:
+*Berserker rage perk and tooltip updated
+*Fixed Coordinating volleys effect image error 
+*Bears get 50 body and head armor 

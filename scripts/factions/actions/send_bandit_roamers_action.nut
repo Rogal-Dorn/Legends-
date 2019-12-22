@@ -80,7 +80,14 @@ this.send_bandit_roamers_action <- this.inherit("scripts/factions/faction_action
 
 		local settlement = this.pickWeightedRandom(settlements);
 		settlement.setLastSpawnTimeToNow();
-		local party = this.getFaction().spawnEntity(settlement.getTile(), "Brigand Hunters", false, this.Const.World.Spawn.BanditRoamers, this.Math.min(settlement.getResources(), this.Math.rand(60, 110)));
+		local rand = this.Math.rand(60, 110);
+		local distanceToNextSettlement = _action.getDistanceToSettlements(settlement.getTile());
+			if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary && distanceToNextSettlement > 14)
+			{
+				local rand *= distanceToNextSettlement / 14.0;
+			}
+		local party = this.getFaction().spawnEntity(settlement.getTile(), "Brigand Hunters", false, this.Const.World.Spawn.BanditRoamers, this.Math.min(settlement.getResources(), rand));
+
 		party.getSprite("banner").setBrush(settlement.getBanner());
 		party.setDescription("A rough and tough band of brigands out to hunt for food.");
 		party.getLoot().Money = this.Math.rand(0, 100);

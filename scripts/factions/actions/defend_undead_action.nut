@@ -37,7 +37,13 @@ this.defend_undead_action <- this.inherit("scripts/factions/faction_action", {
 
 			foreach( e in entities )
 			{
-				if (e.isParty() && e.isAttackable() && e.isAttackableByAI() && !s.isAlliedWith(e) && e.getStrength() < s.getResources() * 0.66)
+				local mult = * 0.66;
+				local distanceToNextSettlement = _action.getDistanceToSettlements(this.m.Settlement.getTile());
+				if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary && distanceToNextSettlement > 14)
+				{
+					local mult *= distanceToNextSettlement / 14.0;
+				}
+				if (e.isParty() && e.isAttackable() && e.isAttackableByAI() && !s.isAlliedWith(e) && e.getStrength() < s.getResources() * mult)
 				{
 					if (e.getFaction() == beastFaction)
 					{

@@ -97,9 +97,18 @@ this.send_greenskin_army_action <- this.inherit("scripts/factions/faction_action
 				targets.push(l);
 			}
 		}
-
+		local rand = this.Math.rand(80, 120);
 		local nearestOrcs = this.getNearestLocationTo(origin, this.World.FactionManager.getFactionOfType(this.Const.FactionType.Orcs).getSettlements());
-		local party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Orcs).spawnEntity(myTile, "Greenskin Horde", false, this.Const.World.Spawn.GreenskinHorde, this.Math.rand(80, 120) * this.getReputationToDifficultyMult());
+			if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary && nearestOrcs > 28)
+			{
+				local rand *= nearestOrcs / 28.0;
+			}
+		local distanceToNextSettlement = _action.getDistanceToSettlements(settlement.getTile());
+			if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary && distanceToNextSettlement > 14)
+			{
+				local rand *=  distanceToNextSettlement / 14.0;
+			}
+		local party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Orcs).spawnEntity(myTile, "Greenskin Horde", false, this.Const.World.Spawn.GreenskinHorde, rand * this.getReputationToDifficultyMult());
 		party.getSprite("banner").setBrush(nearestOrcs.getBanner());
 		party.setDescription("A horde of greenskins marching to war.");
 		party.getLoot().ArmorParts = this.Math.rand(0, 10);

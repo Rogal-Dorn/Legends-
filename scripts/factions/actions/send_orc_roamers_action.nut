@@ -83,7 +83,18 @@ this.send_orc_roamers_action <- this.inherit("scripts/factions/faction_action", 
 
 		local settlement = this.pickWeightedRandom(settlements);
 		settlement.setLastSpawnTimeToNow();
-		local party = this.getFaction().spawnEntity(settlement.getTile(), "Orc Hunters", false, this.Const.World.Spawn.OrcRoamers, this.Math.min(settlement.getResources(), this.Math.rand(50, 100)) * this.getReputationToDifficultyLightMult());
+		local rand = this.Math.rand(50, 100)
+		local nearestOrcs = this.getNearestLocationTo(origin, this.World.FactionManager.getFactionOfType(this.Const.FactionType.Orcs).getSettlements());
+			if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary && nearestOrcs > 28)
+			{
+				local rand *=  nearestOrcs / 28.0;
+			}
+		local distanceToNextSettlement = _action.getDistanceToSettlements(settlement.getTile());
+			if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary && distanceToNextSettlement > 14)
+			{
+				local rand *= distanceToNextSettlement / 14.0;
+			}
+		local party = this.getFaction().spawnEntity(settlement.getTile(), "Orc Hunters", false, this.Const.World.Spawn.OrcRoamers, this.Math.min(settlement.getResources(), rand) * this.getReputationToDifficultyLightMult());
 		party.getSprite("banner").setBrush(settlement.getBanner());
 		party.setDescription("A band of menacing orcs, greenskinned and towering any man.");
 		party.getLoot().ArmorParts = this.Math.rand(0, 25);
