@@ -34,7 +34,7 @@ this.defend_goblins_action <- this.inherit("scripts/factions/faction_action", {
 			{
 
 			local mult = 0.66;
-			local distanceToNextSettlement = this.getDistanceToSettlements(this.m.Settlement.getTile());
+			local distanceToNextSettlement = this.getDistanceToSettlements(s.getPos());
 			if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary && distanceToNextSettlement > 14)
 			{
 				mult *= distanceToNextSettlement / 14.0;

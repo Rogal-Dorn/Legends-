@@ -38,7 +38,7 @@ this.defend_undead_action <- this.inherit("scripts/factions/faction_action", {
 			foreach( e in entities )
 			{
 				local mult = 0.66;
-				local distanceToNextSettlement = this.getDistanceToSettlements(this.m.Settlement.getTile());
+				local distanceToNextSettlement = this.getDistanceToSettlements(s.getPos());
 				if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary && distanceToNextSettlement > 14)
 				{
 					mult *= distanceToNextSettlement / 14.0;
