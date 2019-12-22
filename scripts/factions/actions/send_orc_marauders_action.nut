@@ -89,11 +89,11 @@ this.send_orc_marauders_action <- this.inherit("scripts/factions/faction_action"
 			local mult = this.World.FactionManager.isGreenskinInvasion() ? 1.2 : 1.0;
 			}
 		local rand = this.Math.rand(75, 120);
-		local nearestOrcs = this.getNearestLocationTo(origin, this.World.FactionManager.getFactionOfType(this.Const.FactionType.Orcs).getSettlements());
-			if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary && nearestOrcs > 28)
-			{
-				rand *= nearestOrcs / 28.0;
-			}
+	//	local nearestOrcs = this.getNearestLocationTo(origin, this.World.FactionManager.getFactionOfType(this.Const.FactionType.Orcs).getSettlements());
+	//		if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary && nearestOrcs > 28)
+	//		{
+	//			rand *= nearestOrcs / 28.0;
+	//		}
 		local distanceToNextSettlement = this.getDistanceToSettlements(settlement.getTile());
 			if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary && distanceToNextSettlement > 14)
 			{

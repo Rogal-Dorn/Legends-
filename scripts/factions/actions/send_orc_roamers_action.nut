@@ -84,11 +84,11 @@ this.send_orc_roamers_action <- this.inherit("scripts/factions/faction_action", 
 		local settlement = this.pickWeightedRandom(settlements);
 		settlement.setLastSpawnTimeToNow();
 		local rand = this.Math.rand(50, 100)
-		local nearestOrcs = this.getNearestLocationTo(settlement, this.World.FactionManager.getFactionOfType(this.Const.FactionType.Orcs).getSettlements());
-			if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary && nearestOrcs > 28)
-			{
-				rand *=  nearestOrcs / 28.0;
-			}
+	//	local nearestOrcs = this.getNearestLocationTo(settlement, this.World.FactionManager.getFactionOfType(this.Const.FactionType.Orcs).getSettlements());
+	//		if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary && nearestOrcs > 28)
+	//		{
+	//			rand *=  nearestOrcs / 28.0;
+	//		}
 		local distanceToNextSettlement = this.getDistanceToSettlements(settlement.getTile());
 			if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary && distanceToNextSettlement > 14)
 			{
