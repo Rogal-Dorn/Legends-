@@ -33,16 +33,18 @@ this.defend_undead_action <- this.inherit("scripts/factions/faction_action", {
 				continue;
 			}
 
+			local mult = 0.66;
+			local distanceToNextSettlement = this.getDistanceToSettlements(s.getPos());
+			if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary && distanceToNextSettlement > 14)
+			{
+				mult *= distanceToNextSettlement / 14.0;
+			}
+
 			local entities = this.World.getAllEntitiesAtPos(s.getPos(), 300.0);
 
 			foreach( e in entities )
 			{
-				local mult = 0.66;
-				local distanceToNextSettlement = this.getDistanceToSettlements(s.getPos());
-				if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary && distanceToNextSettlement > 14)
-				{
-					mult *= distanceToNextSettlement / 14.0;
-				}
+
 				if (e.isParty() && e.isAttackable() && e.isAttackableByAI() && !s.isAlliedWith(e) && e.getStrength() < s.getResources() * mult)
 				{
 					if (e.getFaction() == beastFaction)
@@ -95,7 +97,14 @@ this.defend_undead_action <- this.inherit("scripts/factions/faction_action", {
 
 		for( local i = 0; i != spawnpoints.len(); i = ++i )
 		{
-			local party = this.getFaction().spawnEntity(spawnpoints[i], "Undead", false, this.m.Settlement.getRoamerSpawnList(), this.m.Settlement.getResources() * 0.66);
+			local mult = 0.66;
+			local distanceToNextSettlement = this.getDistanceToSettlements(this.m.Settlement.getTile());
+			if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary && distanceToNextSettlement > 14)
+			{
+				mult *= distanceToNextSettlement / 14.0;
+			}
+
+			local party = this.getFaction().spawnEntity(spawnpoints[i], "Undead", false, this.m.Settlement.getRoamerSpawnList(), this.m.Settlement.getResources() * mult);
 			party.getSprite("banner").setBrush(this.m.Settlement.getBanner());
 			party.setDescription("Something seems wrong.");
 			party.setSlowerAtNight(false);

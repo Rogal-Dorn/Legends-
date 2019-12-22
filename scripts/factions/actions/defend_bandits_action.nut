@@ -28,17 +28,18 @@ this.defend_bandits_action <- this.inherit("scripts/factions/faction_action", {
 				continue;
 			}
 
-			local entities = this.World.getAllEntitiesAtPos(s.getPos(), 400.0);
-
-			foreach( e in entities )
-			{
 			local mult = 0.66;
-			local distanceToNextSettlement = this.getDistanceToSettlements(s.getPos());
+			local distanceToNextSettlement = this.getDistanceToSettlements(s.getTile());
 			if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary && distanceToNextSettlement > 14)
 			{
 				mult *= distanceToNextSettlement / 14.0;
 			}
 
+			local entities = this.World.getAllEntitiesAtPos(s.getPos(), 400.0);
+
+			foreach( e in entities )
+			{
+	
 				if (e.isParty() && e.isAttackable() && e.isAttackableByAI() && !s.isAlliedWith(e) && e.getStrength() < s.getResources() * mult)
 				{
 					if (e.getFaction() == beastFaction && this.Math.rand(1, 100) > 10)
