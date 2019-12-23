@@ -1139,9 +1139,9 @@
 <sprite id="bust_legend_plate_full_greaves_damaged" offsetY="35" ic="FF242C39" width="104" height="142" img="entity/legend_armor/plate/bust_legend_plate_full_greaves_damaged.png" left="-47" right="45" top="-64" bottom="14" />
 <sprite id="bust_legend_plate_full_greaves_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity/legend_armor/plate/bust_legend_plate_full_greaves_dead.png" left="-57" right="59" top="-53" bottom="55" />
 
-<sprite id="bust_legend_plate_full_greaves_painted" offsetY="35" ic="FF242D3A" width="104" height="142" img="entity/legend_armor/plate/bust_legend_plate_full_greaves.png" left="-44" right="50" top="-53" bottom="13" />
-<sprite id="bust_legend_plate_full_greaves_damaged" offsetY="35" ic="FF242C39" width="104" height="142" img="entity/legend_armor/plate/bust_legend_plate_full_greaves_damaged.png" left="-47" right="45" top="-64" bottom="14" />
-<sprite id="bust_legend_plate_full_greaves_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity/legend_armor/plate/bust_legend_plate_full_greaves_dead.png" left="-57" right="59" top="-53" bottom="55" />
+<sprite id="bust_legend_plate_full_greaves_painted" offsetY="35" ic="FF242D3A" width="104" height="142" img="entity/legend_armor/plate/bust_legend_plate_full_greaves_painted.png" left="-44" right="50" top="-53" bottom="13" />
+<sprite id="bust_legend_plate_full_greaves_damaged" offsetY="35" ic="FF242C39" width="104" height="142" img="entity/legend_armor/plate/bust_legend_plate_full_greaves_painted_damaged.png" left="-47" right="45" top="-64" bottom="14" />
+<sprite id="bust_legend_plate_full_greaves_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity/legend_armor/plate/bust_legend_plate_full_greaves_painted_dead.png" left="-57" right="59" top="-53" bottom="55" />
 
 <sprite id="bust_legend_plate_ancient_chest_restored" offsetY="35" ic="FF242D3A" width="104" height="142" img="entity/legend_armor/plate/bust_legend_plate_ancient_chest_restored.png" left="-44" right="50" top="-53" bottom="13" />
 <sprite id="bust_legend_plate_ancient_chest_restored_damaged" offsetY="35" ic="FF242C39" width="104" height="142" img="entity/legend_armor/plate/bust_legend_plate_ancient_chest_restored_damaged.png" left="-47" right="45" top="-64" bottom="14" />

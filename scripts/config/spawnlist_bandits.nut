@@ -300,7 +300,7 @@ gt.Const.World.Spawn.BanditRaiders <-
 		},
 		{
 			Weight = 5,
-			MinR = 75,
+			MinR = 150,
 			Types =
 			[
 				{
@@ -318,7 +318,7 @@ gt.Const.World.Spawn.BanditRaiders <-
 		},
 		{
 			Weight = 1,
-			MinR = 300,
+			MinR = 600,
 			Types =
 			[
 				{
@@ -330,7 +330,7 @@ gt.Const.World.Spawn.BanditRaiders <-
 		},
 		{
 			Weight = 1,
-			MinR = 300,
+			MinR = 600,
 			Types =
 			[
 				{
@@ -414,7 +414,7 @@ gt.Const.World.Spawn.BanditDefenders <-
 					Cost = 20
 				},
 				{
-					MinR = 500,
+					MinR = 750,
 					Type = this.Const.World.Spawn.Troops.BanditVeteran,
 					Cost = 30
 				}
@@ -457,7 +457,7 @@ gt.Const.World.Spawn.BanditDefenders <-
 		},
 		{
 			Weight = 5,
-			MinR = 75,
+			MinR = 150,
 			Types =
 			[
 				{

@@ -4,6 +4,7 @@ this.legend_armor_plate_full_greaves_painted <- this.inherit("scripts/items/lege
 	function create()
 	{
 		this.legend_named_armor_upgrade.create();
+		this.m.Type = this.Const.Items.ArmorUpgrades.Plate
 		this.m.ID = "legend_armor_plate_full_greaves_painted";
 		this.m.Name = "Full Coat of Painted Heavy Plate Armor";
 		this.m.Description = "A full set of painted solid plated steel with greaves.";

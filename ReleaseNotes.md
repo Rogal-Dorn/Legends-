@@ -2046,7 +2046,7 @@ Non-legendary changes:
 Rebalanced all armor layer stats 
 Changed many enemy armors to reflect the new armor tiers
 New Enemy - Ancient Gladiator - ranged skeleton unit, with a new ancient gladiator armor and helm 
-New Start - Risen Legion - 12 skeletons well equipped in restored armor, 66% chance to resurect on death, all towns hate you, can't hire from towns. 
+New Origin - Risen Legion - 12 skeletons well equipped in restored armor, 66% chance to resurect on death, all towns hate you, can't hire from towns. 
 Added restored legionaire armor and helm - Ancient Legionaires have 1% chance to wear each.  Recipes added to restore legionaire armor. 
 Added four frogmouth helms, including two named helms. Can spawn on knights, named variants on knight champions. 
 Added heavy full plate, can spawn on knights  

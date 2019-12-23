@@ -1,9 +1,9 @@
-this.legend_ancient_legionaire_restored <- this.inherit("scripts/items/helmets/helmet", {
+this.legend_ancient_legionary_helmet_restored <- this.inherit("scripts/items/helmets/helmet", {
 	m = {},
 	function create()
 	{
 		this.helmet.create();
-		this.m.ID = "armor.head.legend_ancient_legionaire_restored";
+		this.m.ID = "armor.head.legend_ancient_legionary_helmet_restored";
 		this.m.Name = "Legionary Helmet";
 		this.m.Description = "A well-crafted legionaire helmet of ancient design.";
 		this.m.ShowOnCharacter = true;

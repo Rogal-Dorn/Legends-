@@ -53,16 +53,16 @@ this.legend_bandit_veteran <- this.inherit("scripts/entity/tactical/human", {
 				switch (this.World.Assets.getCombatDifficulty())
 				{
 					case this.Const.Difficulty.Easy:
-						dateToSkip = 120;
+						dateToSkip = 360;
 						break;
 					case this.Const.Difficulty.Normal:
-						dateToSkip = 90
+						dateToSkip = 270
 						break;
 					case this.Const.Difficulty.Hard:
-						dateToSkip = 60
+						dateToSkip = 180
 						break;
 					case this.Const.Difficulty.Legendary:
-						dateToSkip = 30
+						dateToSkip = 90
 						break;
 				}
 

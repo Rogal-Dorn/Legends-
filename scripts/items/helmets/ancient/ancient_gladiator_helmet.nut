@@ -1,4 +1,4 @@
-this.legend_ancient_gladiator_helmet <- this.inherit("scripts/items/helmets/helmet", {
+this.ancient_gladiator_helmet <- this.inherit("scripts/items/helmets/helmet", {
 	m = {},
 	function create()
 	{
@@ -9,7 +9,7 @@ this.legend_ancient_gladiator_helmet <- this.inherit("scripts/items/helmets/helm
 		this.m.ShowOnCharacter = true;
 		this.m.IsDroppedAsLoot = true;
 		this.m.HideHair = true;
-		this.m.HideBeard = false;
+		this.m.HideBeard = true;
 		this.m.ReplaceSprite = true;
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
