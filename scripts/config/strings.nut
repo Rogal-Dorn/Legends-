@@ -165,6 +165,8 @@ gt.Const.Strings.EntityName <- [
 	"Winselmutter",
 	"Höllenhund",
 	"Necrosavant Lord",
+	"Bandit Veteran",
+	"Bandit Warlord",
 	"Peasant Butcher",
 	"Peasant Blacksmith",
 	"Peasant Monk",
@@ -183,7 +185,8 @@ gt.Const.Strings.EntityName <- [
 	"Bandit Outrider",
 	"Bear",
 	"Catapult",
-	"Horse"
+	"Horse",
+	"Ancient Gladiator"
 ];
 gt.Const.Strings.EntityNamePlural <- [
 	"Necromancers",
@@ -284,6 +287,8 @@ gt.Const.Strings.EntityNamePlural <- [
 	"Winselmutters",
 	"Höllenhunds",
 	"Necrosavant Lords",
+	"Bandit Veterans",
+	"Bandit Warlords",
 	"Peasant Butchers",
 	"Peasant Blacksmiths",
 	"Peasant Monks",
@@ -302,7 +307,8 @@ gt.Const.Strings.EntityNamePlural <- [
 	"Bandit Outriders",
 	"Bears",
 	"Catapults",
-	"Horses"
+	"Horses",
+	"Ancient Gladiators"
 ];
 gt.Const.Strings.Tactical.EntityName <- {
 	Boulder = "Boulder",

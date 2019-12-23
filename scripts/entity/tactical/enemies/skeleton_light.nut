@@ -122,6 +122,7 @@ this.skeleton_light <- this.inherit("scripts/entity/tactical/skeleton", {
 					[0, "plate/legend_armor_leather_riveted_light"],
 					[0, "plate/legend_armor_leather_scale"],
 					[0, "plate/legend_armor_plate_ancient_chest"],
+					[0, "plate/legend_armor_plate_ancient_gladiator"],
 					[0, "plate/legend_armor_plate_ancient_harness"],
 					[0, "plate/legend_armor_plate_ancient_mail"],
 					[0, "plate/legend_armor_plate_ancient_scale"],

@@ -2019,7 +2019,7 @@ Fixes Horse indices not found
 Fixes Horse Trait's error applying Movement and Fatigue costs
 Fixes Catapult not spawning due to init
 
-13.0.0.18 - legendary scaling v2
+13.0.0.19 - legendary scaling v2
 -
 Legendary difficulty:
 * Cash, Stash and other items no longer effect scaling
@@ -2041,4 +2041,19 @@ Non-legendary changes:
 *Bears get 50 body and head armor 
 *Fixed crash facing outriders 
 *Fixed horse movement error 
+
+13.0.0.20 - Armor balance
+Rebalanced all armor layer stats 
+Changed many enemy armors to reflect the new armor tiers
+New Enemy - Ancient Gladiator - ranged skeleton unit, with a new ancient gladiator armor and helm 
+New Start - Risen Legion - 12 skeletons well equipped in restored armor, 66% chance to resurect on death, all towns hate you, can't hire from towns. 
+Added restored legionaire armor and helm - Ancient Legionaires have 1% chance to wear each.  Recipes added to restore legionaire armor. 
+Added four frogmouth helms, including two named helms. Can spawn on knights, named variants on knight champions. 
+Added heavy full plate, can spawn on knights  
+Added named painted heavy full plate layer - 1% chance to spawn on knights.  
+added dark tunic layers - zombies often wear them 
+Fixed incorrect or missing enemy orientation icons showing for some recent enemies 
+Fixed some enemies being named incorrectly 
+
+
 

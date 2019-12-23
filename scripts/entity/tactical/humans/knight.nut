@@ -210,12 +210,14 @@ this.knight <- this.inherit("scripts/entity/tactical/human", {
 						[0, "plate/legend_armor_plate_ancient_scale"],
 						[0, "plate/legend_armor_plate_ancient_scale_coat"],
 						[0, "plate/legend_armor_plate_ancient_scale_harness"],
-						[1, "plate/legend_armor_plate_chest"],
+						[9, "plate/legend_armor_plate_chest"],
 						[0, "plate/legend_armor_plate_chest_rotten"],
-						[1, "plate/legend_armor_plate_cuirass"],
-						[2, "plate/legend_armor_plate_full"],
-						[1, "plate/legend_armor_scale"],
-						[2, "plate/legend_armor_scale_coat"],
+						[20, "plate/legend_armor_plate_cuirass"],
+						[20, "plate/legend_armor_plate_full"],
+						[10, "plate/legend_armor_plate_full_greaves"],
+						[1, "plate/legend_armor_plate_full_greaves_painted"],
+						[20, "plate/legend_armor_scale"],
+						[20, "plate/legend_armor_scale_coat"],
 						[0, "plate/legend_armor_scale_coat_rotten"],
 						[0, "plate/legend_armor_scale_shirt"]
 					]
@@ -250,18 +252,28 @@ this.knight <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Head))
 		{
-			r = this.Math.rand(1, 2);
+			r = this.Math.rand(1, 100);
 
-			if (r == 1)
+			if (r <= 45)
 			{
 				local helmet = this.new("scripts/items/helmets/full_helm");
 				helmet.setPlainVariant();
 				this.m.Items.equip(helmet);
 			}
-			else if (r == 2)
+			else if (r <= 89)
 			{
 				local helm = this.new("scripts/items/helmets/faction_helm");
 				helm.setVariant(banner);
+				this.m.Items.equip(helm);
+			}
+			else if (r <= 95)
+			{
+				local helm = this.new("scripts/items/helmets/legend_frogmouth_helm");
+				this.m.Items.equip(helm);
+			}
+			else if (r <= 100)
+			{
+				local helm = this.new("scripts/items/helmets/legend_frogmouth_helm_crested");
 				this.m.Items.equip(helm);
 			}
 		}
@@ -316,6 +328,8 @@ this.knight <- this.inherit("scripts/entity/tactical/human", {
 				this.m.Items.equip(this.new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]));
 			}
 		}
+				local helm = this.new("scripts/items/helmets/legend_frogmouth_helm_crested_painted");
+				this.m.Items.equip(helm);
 
 		this.m.Skills.add(this.new("scripts/skills/actives/indomitable"));
 		return true;

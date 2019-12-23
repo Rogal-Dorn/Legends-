@@ -331,10 +331,11 @@ this.bandit_raider <- this.inherit("scripts/entity/tactical/human", {
 		{
 			local cloths = [
 				[0, ""],
-				[1, "cloth/legend_gambeson"],
-				[0, "cloth/legend_gambeson_plain"],
-				[0, "cloth/legend_gambeson_wolf"],
-				[1, "cloth/legend_padded_surcoat"],
+				[2, "cloth/legend_gambeson_rare_color"],
+				[70, "cloth/legend_gambeson_plain"],
+				[6, "cloth/legend_gambeson_common_color"],
+				[4, "cloth/legend_gambeson_wolf"],
+				[20, "cloth/legend_padded_surcoat"],
 				[0, "cloth/legend_robes"],
 				[0, "cloth/legend_apron_butcher"],
 				[0, "cloth/legend_robes_nun"],
@@ -343,7 +344,7 @@ this.bandit_raider <- this.inherit("scripts/entity/tactical/human", {
 				[0, "cloth/legend_sackcloth"],
 				[0, "cloth/legend_sackcloth_patched"],
 				[0, "cloth/legend_sackcloth_tattered"],
-				[1, "cloth/legend_tunic"],
+				[5, "cloth/legend_tunic"],
 				[0, "cloth/legend_tunic_noble"]
 			];
 			local armor = this.Const.World.Common.pickLegendArmor(cloths)
@@ -352,21 +353,21 @@ this.bandit_raider <- this.inherit("scripts/entity/tactical/human", {
 			{
 				local chains = [
 					[1, ""],
-					[1, "chain/legend_armor_mail_shirt"],
-					[1, "chain/legend_armor_mail_shirt_simple"],
-					[1, "chain/legend_armor_rusty_mail_shirt"],
+					[5, "chain/legend_armor_mail_shirt"],
+					[25, "chain/legend_armor_mail_shirt_simple"],
+					[40, "chain/legend_armor_rusty_mail_shirt"],
 					[0, "chain/legend_armor_ancient_double_mail"],
 					[0, "chain/legend_armor_ancient_mail"],
-					[1, "chain/legend_armor_basic_mail"],
+					[5, "chain/legend_armor_basic_mail"],
 					[0, "chain/legend_armor_hauberk"],
 					[0, "chain/legend_armor_hauberk_full"],
 					[0, "chain/legend_armor_hauberk_sleevless"],
-					[1, "chain/legend_armor_reinforced_mail"],
-					[1, "chain/legend_armor_reinforced_mail_shirt"],
-					[1, "chain/legend_armor_reinforced_rotten_mail_shirt"],
-					[1, "chain/legend_armor_reinforced_worn_mail"],
-					[1, "chain/legend_armor_reinforced_worn_mail_shirt"],
-					[1, "chain/legend_armor_short_mail"]
+					[5, "chain/legend_armor_reinforced_mail"],
+					[5, "chain/legend_armor_reinforced_mail_shirt"],
+					[5, "chain/legend_armor_reinforced_rotten_mail_shirt"],
+					[5, "chain/legend_armor_reinforced_worn_mail"],
+					[5, "chain/legend_armor_reinforced_worn_mail_shirt"],
+					[0, "chain/legend_armor_short_mail"]
 				]
 
 				local chain = this.Const.World.Common.pickLegendArmor(chains)
@@ -376,22 +377,22 @@ this.bandit_raider <- this.inherit("scripts/entity/tactical/human", {
 				}
 
 				local plates = [
-					[3, ""],
+					[30, ""],
 					[0, "plate/legend_armor_leather_brigandine"],
 					[0, "plate/legend_armor_leather_brigandine_hardened"],
 					[0, "plate/legend_armor_leather_brigandine_hardened_full"],
-					[1, "plate/legend_armor_leather_jacket"],
-					[0, "plate/legend_armor_leather_jacket_simple"],
-					[1, "plate/legend_armor_leather_lamellar"],
-					[1, "plate/legend_armor_leather_lamellar_harness_heavy"],
+					[10, "plate/legend_armor_leather_jacket"],
+					[10, "plate/legend_armor_leather_jacket_simple"],
+					[10, "plate/legend_armor_leather_lamellar"],
+					[0, "plate/legend_armor_leather_lamellar_harness_heavy"],
 					[0, "plate/legend_armor_leather_lamellar_harness_reinforced"],
 					[0, "plate/legend_armor_leather_lamellar_heavy"],
 					[0, "plate/legend_armor_leather_lamellar_reinforced"],
 					[0, "plate/legend_armor_leather_noble"],
-					[1, "plate/legend_armor_leather_padded"],
-					[0, "plate/legend_armor_leather_riveted"],
-					[0, "plate/legend_armor_leather_riveted_light"],
-					[0, "plate/legend_armor_leather_scale"],
+					[10, "plate/legend_armor_leather_padded"],
+					[10, "plate/legend_armor_leather_riveted"],
+					[10, "plate/legend_armor_leather_riveted_light"],
+					[10, "plate/legend_armor_leather_scale"],
 					[0, "plate/legend_armor_plate_ancient_chest"],
 					[0, "plate/legend_armor_plate_ancient_harness"],
 					[0, "plate/legend_armor_plate_ancient_mail"],

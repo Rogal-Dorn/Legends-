@@ -54,6 +54,10 @@ this.legend_gambeson_rare_color <- this.inherit("scripts/items/legend_armor/clot
         ]
 		this.m.Variant = variants[this.Math.rand(1, variants.len() - 1)];
 		this.updateVariant();
+		this.m.Value = 650;
+		this.m.Condition = 62;
+		this.m.ConditionMax = 62;
+		this.m.StaminaModifier = -5;
 
 	}
 

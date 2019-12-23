@@ -99,6 +99,7 @@ gt.Const.Items.LegendNamedArmors <- [
 	"legend_armor/named/legend_brown_coat_of_plates_armor",
 	"legend_armor/named/legend_golden_scale_armor",
 	"legend_armor/named/legend_green_coat_of_plates_armor",
+	"legend_armor/named/legend_heraldic_mail_armor",
 	"legend_armor/named/legend_heraldic_mail_armor"
 //	"legend_armor/named/legend_named_sellswords_armor"
 ];
@@ -109,7 +110,8 @@ gt.Const.Items.NamedHelmets <- [
 	"helmets/named/nasal_feather_helmet",
 	"helmets/named/sallet_green_helmet",
 	"helmets/named/wolf_helmet",
-	"helmets/named/lindwurm_helmet"
+	"helmets/named/legend_frogmouth_helm_crested_painted",
+	"helmets/named/legend_frogmouth_helm_decorated"
 ];
 
 
