@@ -1,18 +1,15 @@
-this.legend_risen_legion <- this.inherit("scripts/scenarios/world/starting_scenario", {
+this.legends_risen_legion <- this.inherit("scripts/scenarios/world/starting_scenario", {
 	m = {},
 	function create()
 	{
 		this.m.ID = "scenario.legend_risen_legion";
 		this.m.Name = "Risen Legion (Legends)";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_73.png[/img][/p][p]An ancient legion risen from the dead to reclaim the world \n[color=#bcad8c]Despised:[/color] All towns will begin hostile to you \n[color=#bcad8c]Beyond death:[/color]Every character in your party has a 66% chance to survive death\n[color=#bcad8c]Dirty Dozen:[/color]Control a team of a dozen from the start, but you can hire no more in towns\n";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_73.png[/img][/p]An ancient legion risen from the dead to reclaim the world \n[color=#bcad8c]Despised:[/color] All towns will begin hostile to you \n[color=#bcad8c]Beyond death:[/color]Every character in your party has a 66% chance to survive death\n[color=#bcad8c]Dirty Dozen:[/color]Control a team of a dozen from the start, but you can hire no more in towns\n";
 		this.m.Difficulty = 3;
 		this.m.Order = 15;
 	}
 
-	function isValid()
-	{
-		return this.Const.DLC.Wildmen;
-	}
+
 
 	function onSpawnAssets()
 	{
@@ -29,7 +26,7 @@ this.legend_risen_legion <- this.inherit("scripts/scenarios/world/starting_scena
 			local bro;
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.m.HireTime = this.Time.getVirtualTimeF();
-			bro.setStartValuesEx(this.Const.CharacterBackgroundsRandom);
+			
 			bro.m.Level = broLevel;
 			bro.m.LevelUps = broPerks;
 			bro.m.PerkPoints = broPerks;
@@ -39,29 +36,108 @@ this.legend_risen_legion <- this.inherit("scripts/scenarios/world/starting_scena
 			bro.getTags().add("skeleton");
 			bro.setStartValuesEx(this.Const.CharacterBackgroundsAnimated);
 			bro.getSkills().add(this.new("scripts/skills/special/legend_animated_player_properties"));
+			local items = bro.getItems();
 			items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 			items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Offhand));
+			items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
+			items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
 			items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Ammo));
-			items.equip(this.new("scripts/items/weapons/ancient/ancient_spear"));
-			items.equip(this.new("scripts/items/shields/ancient/tower_shield"));
-			items.equip(this.new("scripts/items/weapons/javelin"));
-			items.equip(this.new("scripts/items/weapons/javelin"));
-			items.equip(this.new("scripts/items/helmets/ancient/legend_ancient_legionary_helmet_restored"));
-			items.equip(this.new("scripts/items/legend_armor/cloth/sackcloth_tattered"));
-			items.equip(this.new("scripts/items/legend_armor/plate/legend_armor_plate_ancient_chest_restored"));
+
+	
+
+			local r = this.Math.rand(1, 8);
+			if (r <= 4)
+				{
+					local t = this.Math.rand(1, 2);
+					if (t == 1)
+						{
+						items.equip(this.new("scripts/items/helmets/ancient/legend_ancient_legionary_helmet_restored"));
+						}
+					if (t == 2)
+						{
+						items.equip(this.new("scripts/items/helmets/ancient/ancient_legionary_helmet"));
+						}
+				items.equip(this.new("scripts/items/weapons/ancient/ancient_spear"));
+				items.equip(this.new("scripts/items/shields/ancient/tower_shield"));
+				items.addToBag(this.new("scripts/items/weapons/javelin"));
+				items.addToBag(this.new("scripts/items/weapons/javelin"));
+				}
+			if (r == 5)
+				{
+				items.equip(this.new("scripts/items/helmets/ancient/ancient_gladiator_helmet"));
+				items.equip(this.new("scripts/items/weapons/ancient/ancient_sword"));
+				items.equip(this.new("scripts/items/tools/throwing_net"));
+				items.addToBag(this.new("scripts/items/tools/throwing_net"));
+				items.addToBag(this.new("scripts/items/tools/throwing_net"));
+				}
+			if (r == 6)
+				{
+				items.equip(this.new("scripts/items/helmets/ancient/ancient_honorguard_helmet"));
+				items.equip(this.new("scripts/items/weapons/ancient/rhomphaia"));
+				items.addToBag(this.new("scripts/items/weapons/javelin"));
+				items.addToBag(this.new("scripts/items/weapons/javelin"));
+				}
+			if (r >= 7)
+				{
+				items.equip(this.new("scripts/items/helmets/ancient/ancient_household_helmet"));
+				items.equip(this.new("scripts/items/weapons/ancient/bladed_pike"));
+				items.addToBag(this.new("scripts/items/weapons/javelin"));
+				items.addToBag(this.new("scripts/items/weapons/javelin"));
+				}
+
+			
+				local cloths = [
+					[0, ""],
+					[1, "cloth/legend_sackcloth"],
+					[1, "cloth/legend_sackcloth_patched"],
+					[1, "cloth/legend_sackcloth_tattered"],
+					[0, "cloth/legend_tunic"],
+					[0, "cloth/legend_tunic_noble"]
+				];
+				local armor = this.Const.World.Common.pickLegendArmor(cloths)
+
+				local plates = [
+						[0, ""],
+						[0, "plate/legend_armor_leather_brigandine"],
+						[0, "plate/legend_armor_leather_brigandine_hardened"],
+						[0, "plate/legend_armor_leather_brigandine_hardened_full"],
+						[0, "plate/legend_armor_leather_jacket"],
+						[0, "plate/legend_armor_leather_jacket_simple"],
+						[0, "plate/legend_armor_leather_lamellar"],
+						[0, "plate/legend_armor_leather_lamellar_harness_heavy"],
+						[0, "plate/legend_armor_leather_lamellar_harness_reinforced"],
+						[0, "plate/legend_armor_leather_lamellar_heavy"],
+						[0, "plate/legend_armor_leather_lamellar_reinforced"],
+						[0, "plate/legend_armor_leather_noble"],
+						[0, "plate/legend_armor_leather_padded"],
+						[0, "plate/legend_armor_leather_riveted"],
+						[0, "plate/legend_armor_leather_riveted_light"],
+						[0, "plate/legend_armor_leather_scale"],
+						[1, "plate/legend_armor_plate_ancient_gladiator"],
+						[1, "plate/legend_armor_plate_ancient_chest"],
+						[1, "plate/legend_armor_plate_ancient_chest_restored"],
+						[1, "plate/legend_armor_plate_ancient_harness"],
+						[1, "plate/legend_armor_plate_ancient_mail"],
+						[1, "plate/legend_armor_plate_ancient_scale"],
+						[1, "plate/legend_armor_plate_ancient_scale_coat"],
+						[1, "plate/legend_armor_plate_ancient_scale_harness"],
+						[0, "plate/legend_armor_plate_chest"],
+						[0, "plate/legend_armor_plate_chest_rotten"],
+						[0, "plate/legend_armor_plate_cuirass"],
+						[0, "plate/legend_armor_plate_full"],
+						[0, "plate/legend_armor_scale"],
+						[0, "plate/legend_armor_scale_coat"],
+						[0, "plate/legend_armor_scale_coat_rotten"],
+						[0, "plate/legend_armor_scale_shirt"]
+				]
+				local plate = this.Const.World.Common.pickLegendArmor(plates)
+					if (plate != null)
+					{
+						armor.setUpgrade(plate)
+					}
+				items.equip(armor);
 		}
-			items.equip(this.new("scripts/items/helmets/ancient/legend_ancient_gladiator_helmet"));
-			items.equip(this.new("scripts/items/helmets/ancient/legend_ancient_gladiator_helmet"));
-			items.equip(this.new("scripts/items/tools/throwing_net"));
-			items.equip(this.new("scripts/items/tools/throwing_net"));
-			items.equip(this.new("scripts/items/weapons/throwing_spear"));
-			items.equip(this.new("scripts/items/weapons/throwing_spear"));
-			items.equip(this.new("scripts/items/weapons/ancient/bladed_pike"));
-			items.equip(this.new("scripts/items/weapons/ancient/bladed_pike"));
-			items.equip(this.new("scripts/items/legend_armor/plate/legend_armor_plate_ancient_gladiator"));
-			items.equip(this.new("scripts/items/legend_armor/plate/legend_armor_plate_ancient_gladiator"));
-			this.World.Assets.getStash().add(this.new("scripts/items/supplies/bread_item"));
-			this.World.Assets.getStash().add(this.new("scripts/items/supplies/beer_item"));
+
 
 
 	}
