@@ -2045,15 +2045,17 @@ Non-legendary changes:
 13.0.0.20 - Armor balance
 Rebalanced all armor layer stats 
 Changed many enemy armors to reflect the new armor tiers
+Put spawn restrictions on bandit leaders, warlords and veterans so they appear later 
 New Enemy - Ancient Gladiator - ranged skeleton unit, with a new ancient gladiator armor and helm 
 New Origin - Risen Legion - 12 skeletons well equipped in restored armor, 66% chance to resurect on death, all towns hate you, can't hire from towns. 
 Added restored legionaire armor and helm - Ancient Legionaires have 1% chance to wear each.  Recipes added to restore legionaire armor. 
 Added four frogmouth helms, including two named helms. Can spawn on knights, named variants on knight champions. 
 Added heavy full plate, can spawn on knights  
-Added named painted heavy full plate layer - 1% chance to spawn on knights.  
+Added named painted heavy full plate layer - 1% chance to spawn on knights.  First named layer 
 added dark tunic layers - zombies often wear them 
 Fixed incorrect or missing enemy orientation icons showing for some recent enemies 
 Fixed some enemies being named incorrectly 
+Fixed issue misc with gather building 
 
 
 

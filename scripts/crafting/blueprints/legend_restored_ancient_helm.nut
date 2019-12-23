@@ -4,7 +4,7 @@ this.legend_restored_ancient_chest <- this.inherit("scripts/crafting/blueprint",
 	{
 		this.blueprint.create();
 		this.m.ID = "blueprint.legend_restored_ancient_chest";
-		this.m.PreviewCraftable = this.new("scripts/items/helmets/ancient/ancient_legionary_helmet_restored");
+		this.m.PreviewCraftable = this.new("scripts/items/helmets/ancient/legend_ancient_legionary_helmet_restored");
 		this.m.Cost = 500;
 		local ingredients = [
 			{
@@ -23,7 +23,7 @@ this.legend_restored_ancient_chest <- this.inherit("scripts/crafting/blueprint",
 	function onCraft( _stash )
 	{
 
-		item = this.new("scripts/items/helmets/ancient/ancient_legionary_helmet_restored");
+		item = this.new("scripts/items/helmets/ancient/legend_ancient_legionary_helmet_restored");
 
 
 		item.m.Name = "";
