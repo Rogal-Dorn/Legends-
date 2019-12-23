@@ -34,10 +34,10 @@ this.legend_tunic <- this.inherit("scripts/items/legend_armor/legend_armor", {
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.InventorySound = this.Const.Sound.ClothEquip;
-		this.m.Value = 45;
-		this.m.Condition = 20;
-		this.m.ConditionMax = 20;
-		this.m.StaminaModifier = 0;
+		this.m.Value = 100;
+		this.m.Condition = 14;
+		this.m.ConditionMax = 14;
+		this.m.StaminaModifier = -1;
 	}
 
 	function updateVariant()

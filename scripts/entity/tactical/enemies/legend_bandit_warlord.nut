@@ -221,11 +221,15 @@ this.legend_bandit_warlord <- this.inherit("scripts/entity/tactical/human", {
 						"cloth/legend_gambeson_plain"
 					],
 					[
-						1,
+						10,
 						"cloth/legend_gambeson_common_color"
 					],
 					[
-						0,
+						60,
+						"cloth/legend_gambeson_rare_color"
+					],
+					[
+						20,
 						"cloth/legend_gambeson_wolf"
 					],
 					[
@@ -444,7 +448,7 @@ this.legend_bandit_warlord <- this.inherit("scripts/entity/tactical/human", {
 							"plate/legend_armor_plate_chest"
 						],
 						[
-							0,
+							1,
 							"plate/legend_armor_plate_chest_rotten"
 						],
 						[
@@ -464,7 +468,7 @@ this.legend_bandit_warlord <- this.inherit("scripts/entity/tactical/human", {
 							"plate/legend_armor_scale_coat"
 						],
 						[
-							0,
+							1,
 							"plate/legend_armor_scale_coat_rotten"
 						],
 						[

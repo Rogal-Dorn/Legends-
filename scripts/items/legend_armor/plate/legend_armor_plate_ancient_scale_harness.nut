@@ -16,7 +16,7 @@ this.legend_armor_plate_ancient_scale_harness <- this.inherit("scripts/items/leg
 		this.m.SpriteBack = "bust_legend_plate_ancient_scale_harness";
 		this.m.SpriteDamagedBack = "bust_legend_plate_ancient_scale_harness_damaged";
 		this.m.SpriteCorpseBack = "bust_legend_plate_ancient_scale_harness_dead";
-		this.m.Value = 3375;
+		this.m.Value = 1260;
 		this.m.Condition = 125;
 		this.m.ConditionMax = 125;
 		this.m.StaminaModifier = -14;
