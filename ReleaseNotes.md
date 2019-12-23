@@ -2043,9 +2043,9 @@ Non-legendary changes:
 *Fixed horse movement error 
 
 13.0.0.20 - Armor balance
-Rebalanced all armor layer stats 
+Rebalanced all armor layer stats (thanks to wacken)
 Changed many enemy armors to reflect the new armor tiers
-Put spawn restrictions on bandit leaders, warlords and veterans so they appear later 
+Extended spawn restrictions on elite bandit troops so they appear later 
 New Enemy - Ancient Gladiator - ranged skeleton unit, with a new ancient gladiator armor and helm 
 New Origin - Risen Legion - 12 skeletons well equipped in restored armor, 66% chance to resurect on death, all towns hate you, can't hire from towns. 
 Added restored legionaire armor and helm - Ancient Legionaires have 1% chance to wear each.  Recipes added to restore legionaire armor. 

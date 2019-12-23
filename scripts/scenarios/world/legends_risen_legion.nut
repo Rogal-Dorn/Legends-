@@ -214,6 +214,50 @@ this.legends_risen_legion <- this.inherit("scripts/scenarios/world/starting_scen
 			closest.spawnFireAndSmoke();
 		}
 
+		local nobles = this.World.FactionManager.getFactionsOfType(this.Const.FactionType.NobleHouse);
+		local houses = [];
+
+		foreach( n in nobles )
+		{
+			local closest;
+			local dist = 9999;
+
+			foreach( s in n.getSettlements() )
+			{
+				local d = s.getTile().getDistanceTo(randomVillageTile);
+
+				if (d < dist)
+				{
+					dist = d;
+					closest = s;
+				}
+			}
+
+			houses.push({
+				Faction = n,
+				Dist = dist
+			});
+		}
+
+		houses.sort(function ( _a, _b )
+		{
+			if (_a.Dist > _b.Dist)
+			{
+				return 1;
+			}
+			else if (_a.Dist < _b.Dist)
+			{
+				return -1;
+			}
+
+			return 0;
+		});
+
+		for( local i = 0; i < 2; i = ++i )
+		{
+			houses[i].Faction.addPlayerRelation(-400.0, "You are the undead, to be despised");
+		}
+
 		local s = this.new("scripts/entity/world/settlements/situations/raided_situation");
 		s.setValidForDays(5);
 		randomVillage.addSituation(s);
@@ -225,7 +269,7 @@ this.legends_risen_legion <- this.inherit("scripts/scenarios/world/starting_scen
 			this.Music.setTrackList([
 				"music/civilians_01.ogg"
 			], this.Const.Music.CrossFadeTime);
-			this.World.Events.fire("event.legend_random_party_scenario_intro");
+			this.World.Events.fire("event.legend_risen_legion_intro");
 		}, null);
 	}
 
