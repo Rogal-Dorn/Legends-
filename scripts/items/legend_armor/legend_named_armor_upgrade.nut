@@ -1,4 +1,4 @@
-this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
+this.legend_named_armor_upgrade <- this.inherit("scripts/items/item", {
 	m = {
 		OverlayIcon = "",
 		OverlayIconLarge = "",
