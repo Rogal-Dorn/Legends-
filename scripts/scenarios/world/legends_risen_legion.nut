@@ -37,6 +37,7 @@ this.legends_risen_legion <- this.inherit("scripts/scenarios/world/starting_scen
 			bro.setStartValuesEx(this.Const.CharacterBackgroundsAnimated);
 			bro.getSkills().add(this.new("scripts/skills/special/legend_animated_player_properties"));
 			bro.getSkills().add(this.new("scripts/skills/racial/skeleton_racial"));
+			bro.getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));
 			local items = bro.getItems();
 			items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 			items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Offhand));
@@ -237,6 +238,14 @@ this.legends_risen_legion <- this.inherit("scripts/scenarios/world/starting_scen
 			], this.Const.Music.CrossFadeTime);
 			this.World.Events.fire("event.legend_risen_legion_intro");
 		}, null);
+				this.World.Tags.set("HasLegendCampGathering", true);
+				this.World.Tags.set("HasLegendCampCrafting", true);
+				this.World.Tags.set("HasLegendCampFletching", true);
+				this.World.Tags.set("HasLegendCampHealing", true);
+				this.World.Tags.set("HasLegendCampHunting", true);
+				this.World.Tags.set("HasLegendCampScouting", true);
+				this.World.Tags.set("HasLegendCampScraping", true);
+				this.World.Tags.set("HasLegendCampTraining", true);
 	}
 
 	function onUpdateHiringRoster( _roster )

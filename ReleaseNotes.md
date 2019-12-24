@@ -2061,7 +2061,9 @@ Fixed issue misc with gather building
 
 - Fixes incorrectly labeled enemies 
 - Risen Legion is now disliked by ALL towns and relations won't normalise 
+- Risen Legion has scouting, fletching, training, gathering, healing, scrapping and crafting unlocked from start
 - Risen Legion mercs now gain defense against missiles and spikey weapons, like a real skeleton should 
 - Fixed legion and beggar world icons 
- 
-
+- Fixed error from restored helm crafting recipe
+- Undead now have permanent injuries that describe their condition 
+- Warlock and Risen legion revived party members correctly revive as undead (they look undead now)

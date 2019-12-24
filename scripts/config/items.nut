@@ -100,8 +100,11 @@ gt.Const.Items.LegendNamedArmors <- [
 	"legend_armor/named/legend_golden_scale_armor",
 	"legend_armor/named/legend_green_coat_of_plates_armor",
 	"legend_armor/named/legend_heraldic_mail_armor",
-	"legend_armor/named/legend_heraldic_mail_armor"
 //	"legend_armor/named/legend_named_sellswords_armor"
+];
+
+gt.Const.Items.LegendNamedArmorLayers <- [
+	"legend_armor/plate/legend_armor_plate_full_greaves_painted"
 ];
 
 gt.Const.Items.NamedHelmets <- [

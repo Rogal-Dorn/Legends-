@@ -1039,32 +1039,18 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				this.getTags().add("undead");
 				this.getTags().add("skeleton");
 				local body = this.getSprite("body");
-				body.Saturation = 0.4;
-				body.varySaturation(0.2);
-				body.Color = this.createColor("#c1ddaa");
-				body.varyColor(0.05, 0.05, 0.05);
-
-				local head = actor.getSprite("head");
-				head.Saturation = body.Saturation;
-				head.Color = body.Color;
-				return false;
+				local skill = this.new("scripts/skills/injury_permanent/legend_fleshless");
+				this.m.Skills.add(skill);
+				return false
 			}
 			else
 			{
 				this.getTags().add("PlayerZombie");
 				this.getTags().add("undead");
 				this.getTags().add("zombie_minion");
-				local body = this.getSprite("body");
-				body.setBrush("bust_skeleton_body_0" + this.Math.rand(1, 2));
-				body.Saturation = 0.8;
-				body.varySaturation(0.2);
-				body.varyColor(0.025, 0.025, 0.025);
-
-				local head = actor.getSprite("head");
-				head.setBrush("bust_skeleton_head");
-				head.Color = body.Color;
-				head.Saturation = body.Saturation;
-				return false;
+				local skill = this.new("scripts/skills/injury_permanent/legend_rotten_flesh");
+				this.m.Skills.add(skill);
+				return false
 			}
 		}
 
