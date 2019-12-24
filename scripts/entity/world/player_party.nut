@@ -356,6 +356,12 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 				case 110:
 					image = "figure_player_assassin";
 					break;
+				case 111:
+					image = "figure_player_beggar";
+					break;
+				case 112:
+					image = "figure_player_legion";
+					break;
 			}
 		}
 		else if ( _version > 9)

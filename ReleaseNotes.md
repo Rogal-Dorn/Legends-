@@ -2042,7 +2042,7 @@ Non-legendary changes:
 *Fixed crash facing outriders 
 *Fixed horse movement error 
 
-13.0.0.20 - Armor balance
+13.0.0.20 - Armor balance test
 Rebalanced all armor layer stats (thanks to wacken)
 Changed many enemy armors to reflect the new armor tiers
 Extended spawn restrictions on elite bandit troops so they appear later 
@@ -2057,5 +2057,11 @@ Fixed incorrect or missing enemy orientation icons showing for some recent enemi
 Fixed some enemies being named incorrectly 
 Fixed issue misc with gather building 
 
+13.0.0.21 
 
+- Fixes incorrectly labeled enemies 
+- Risen Legion is now disliked by ALL towns and relations won't normalise 
+- Risen Legion mercs now gain defense against missiles and spikey weapons, like a real skeleton should 
+- Fixed legion and beggar world icons 
+ 
 
