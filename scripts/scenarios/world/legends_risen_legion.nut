@@ -36,6 +36,7 @@ this.legends_risen_legion <- this.inherit("scripts/scenarios/world/starting_scen
 			bro.getTags().add("skeleton");
 			bro.setStartValuesEx(this.Const.CharacterBackgroundsAnimated);
 			bro.getSkills().add(this.new("scripts/skills/special/legend_animated_player_properties"));
+			bro.getSkills().add(this.new("scripts/skills/racial/skeleton_racial"));
 			local items = bro.getItems();
 			items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 			items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Offhand));
@@ -219,50 +220,15 @@ this.legends_risen_legion <- this.inherit("scripts/scenarios/world/starting_scen
 
 		foreach( n in nobles )
 		{
-			local closest;
-			local dist = 9999;
 
-			foreach( s in n.getSettlements() )
-			{
-				local d = s.getTile().getDistanceTo(randomVillageTile);
+			n.addPlayerRelation(-400.0, "You are the undead, to be despised");
 
-				if (d < dist)
-				{
-					dist = d;
-					closest = s;
-				}
-			}
-
-			houses.push({
-				Faction = n,
-				Dist = dist
-			});
 		}
 
-		houses.sort(function ( _a, _b )
-		{
-			if (_a.Dist > _b.Dist)
-			{
-				return 1;
-			}
-			else if (_a.Dist < _b.Dist)
-			{
-				return -1;
-			}
 
-			return 0;
-		});
-
-		for( local i = 0; i < 2; i = ++i )
-		{
-			houses[i].Faction.addPlayerRelation(-400.0, "You are the undead, to be despised");
-		}
-
-		local s = this.new("scripts/entity/world/settlements/situations/raided_situation");
-		s.setValidForDays(5);
-		randomVillage.addSituation(s);
 
 		this.World.State.m.Player = this.World.spawnEntity("scripts/entity/world/player_party", randomVillageTile.Coords.X, randomVillageTile.Coords.Y);
+		this.World.Assets.updateLook(112);
 		this.World.getCamera().setPos(this.World.State.m.Player.getPos());
 		this.Time.scheduleEvent(this.TimeUnit.Real, 1000, function ( _tag )
 		{
