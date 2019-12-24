@@ -1018,6 +1018,32 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 		local skill = this.new("scripts/skills/" + potential[this.Math.rand(0, potential.len() - 1)].Script);
 		this.m.Skills.add(skill);
+
+		if(this.m.CurrentProperties.SurvivesAsUndead)
+		{
+			local r = this.Math.rand(0, 1);
+			if (r == 0)
+			{
+				this.getTags().add("PlayerSkeleton");
+				this.getTags().add("undead");
+				this.getTags().add("skeleton");
+				local body = this.getSprite("body");
+				local skill = this.new("scripts/skills/injury_permanent/legend_fleshless");
+				this.m.Skills.add(skill);
+				this.m.Skills.add(this.new("scripts/skills/racial/skeleton_racial"));
+				
+			}
+			else
+			{
+				this.getTags().add("PlayerZombie");
+				this.getTags().add("undead");
+				this.getTags().add("zombie_minion");
+				local skill = this.new("scripts/skills/injury_permanent/legend_rotten_flesh");
+				this.m.Skills.add(skill);
+				this.m.Skills.add(this.new("scripts/skills/actives/zombie_bite"));
+				this.m.Skills.add(this.new("scripts/skills/perks/perk_nine_lives"));
+			}
+		}
 		this.Tactical.getSurvivorRoster().add(this);
 		this.m.IsDying = false;
 		this.worsenMood(this.Const.MoodChange.PermanentInjury, "Suffered a permanent injury");
@@ -1028,34 +1054,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			return false
 		}
 
-		if(this.m.CurrentProperties.SurvivesAsUndead)
-		{
-			local skill = this.new("scripts/skills/special/legend_animated_player_properties");
-			this.m.Skills.add(skill);
-			local r = this.Math.rand(0, 1);
-			if (r == 0)
-			{
-				this.getTags().add("PlayerSkeleton");
-				this.getTags().add("undead");
-				this.getTags().add("skeleton");
-				local body = this.getSprite("body");
-				local skill = this.new("scripts/skills/injury_permanent/legend_fleshless");
-				this.m.Skills.add(skill);
-				return false
-			}
-			else
-			{
-				this.getTags().add("PlayerZombie");
-				this.getTags().add("undead");
-				this.getTags().add("zombie_minion");
-				local skill = this.new("scripts/skills/injury_permanent/legend_rotten_flesh");
-				this.m.Skills.add(skill);
-				return false
-			}
-		}
-
 		return false;
-
 	}
 
 	function onDeath( _killer, _skill, _tile, _fatalityType )

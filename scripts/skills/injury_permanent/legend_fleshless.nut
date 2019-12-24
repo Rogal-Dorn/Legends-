@@ -6,7 +6,7 @@ this.legend_fleshless <- this.inherit("scripts/skills/injury_permanent/permanent
 		this.m.ID = "injury.legend_fleshless";
 		this.m.Name = "Fleshless";
 		this.m.Description = "All skin is rotted or torn away, only bones remain";
-		this.m.Icon = "ui/injury/injury_permanent_icon_05.png";
+		this.m.Icon = "ui/injury/injury_icon_05.png";
 	}
 
 	function getTooltip()
@@ -25,14 +25,14 @@ this.legend_fleshless <- this.inherit("scripts/skills/injury_permanent/permanent
 			{
 				id = 7,
 				type = "text",
-				icon = "ui/icons/damaged_received.png",
+				icon = "ui/icons/damage_received.png",
 				text = "Immune to Bleeding, poison and fresh injuries"
 			},
 			{
 				id = 7,
 				type = "text",
 				icon = "ui/icons/days_wounded.png",
-				text = "Heals at 10% normal rate. Requires no food."
+				text = "50% less hitpoints. Heals at 10% normal rate. Requires no food."
 			},
 			{
 				id = 7,
@@ -74,12 +74,13 @@ this.legend_fleshless <- this.inherit("scripts/skills/injury_permanent/permanent
 		_properties.MovementFatigueCostMult = 0.1;
 		_properties.DailyWageMult = 0;
 		_properties.DailyFood = 0;
+		_properties.HitpointsMult *= 0.5;
 	}
 
 	function onApplyAppearance()
 	{
 		local actor = this.getContainer().getActor();
-		local hairColor = this.Const.HairColors.Zombie[this.Math.rand(0, this.Const.HairColors.Zombie.len() - 1)];
+	//	local hairColor = this.Const.HairColors.Zombie[this.Math.rand(0, this.Const.HairColors.Zombie.len() - 1)];
 		local body = actor.getSprite("body");
 		body.setBrush("bust_skeleton_body_0" + this.Math.rand(1, 2));
 		body.Saturation = 0.8;
@@ -91,24 +92,64 @@ this.legend_fleshless <- this.inherit("scripts/skills/injury_permanent/permanent
 		head.Color = body.Color;
 		head.Saturation = body.Saturation;
 
-		local hair = actor.getSprite("hair");
-		hair.setBrush("hair_" + hairColor + "_" + this.Const.Hair.ZombieOnly[this.Math.rand(0, this.Const.Hair.ZombieOnly.len() - 1)]);
-		hair.varyColor(0.02, 0.02, 0.02);
+	//	local hair = actor.getSprite("hair");
+	//	hair.setBrush("hair_" + hairColor + "_" + this.Const.Hair.ZombieOnly[this.Math.rand(0, this.Const.Hair.ZombieOnly.len() - 1)]);
+	//	hair.varyColor(0.02, 0.02, 0.02);
+ 	//	if (this.Math.rand(1, 100) <= 30)
+	//	{
+	//		local beard = actor.getSprite("beard");
+	//		beard.setBrush("beard_" + hairColor + "_" + this.Const.Beards.ZombieOnly[this.Math.rand(0, this.Const.Beards.ZombieOnly.len() - 1)]);
+	//		beard.Color = hair.Color;
+	//
+	//		if (this.doesBrushExist(beard.getBrush().Name + "_top"))
+	//		{
+	//			local sprite = actor.getSprite("beard_top");
+	//			sprite.setBrush(beard.getBrush().Name + "_top");
+	//			sprite.Color = actor.getSprite("hair").Color;
+	//		}
+	//	}
 
-		if (this.Math.rand(1, 100) <= 50)
-		{
-			local beard = actor.getSprite("beard");
-			beard.setBrush("beard_" + hairColor + "_" + this.Const.Beards.ZombieOnly[this.Math.rand(0, this.Const.Beards.ZombieOnly.len() - 1)]);
-			beard.Color = hair.Color;
+	}
 
-			if (this.doesBrushExist(beard.getBrush().Name + "_top"))
-			{
-				local sprite = actor.getSprite("beard_top");
-				sprite.setBrush(beard.getBrush().Name + "_top");
-				sprite.Color = actor.getSprite("hair").Color;
-			}
-		}
-
+	function onCombatStarted()
+	{
+		local actor = this.getContainer().getActor();
+		actor.m.MoraleState = this.Const.MoraleState.Ignore;
+		actor.m.BloodType = this.Const.BloodType.Bones;
+		actor.m.Sound[this.Const.Sound.ActorEvent.NoDamageReceived] = [
+			"sounds/enemies/skeleton_idle_06.wav"
+		];
+		actor.m.Sound[this.Const.Sound.ActorEvent.DamageReceived] = [
+			"sounds/enemies/skeleton_hurt_01.wav",
+			"sounds/enemies/skeleton_hurt_02.wav",
+			"sounds/enemies/skeleton_hurt_03.wav",
+			"sounds/enemies/skeleton_hurt_04.wav",
+			"sounds/enemies/skeleton_hurt_06.wav"
+		];
+		actor.m.Sound[this.Const.Sound.ActorEvent.Death] = [
+			"sounds/enemies/skeleton_death_01.wav",
+			"sounds/enemies/skeleton_death_02.wav",
+			"sounds/enemies/skeleton_death_03.wav",
+			"sounds/enemies/skeleton_death_04.wav",
+			"sounds/enemies/skeleton_death_05.wav",
+			"sounds/enemies/skeleton_death_06.wav"
+		];
+		actor.m.Sound[this.Const.Sound.ActorEvent.Fatigue] = [
+			"sounds/enemies/skeleton_idle_06.wav"
+		];
+		actor.m.Sound[this.Const.Sound.ActorEvent.Flee] = [
+			"sounds/enemies/skeleton_idle_06.wav"
+		];
+		actor.m.Sound[this.Const.Sound.ActorEvent.Idle] = [
+			"sounds/enemies/skeleton_idle_01.wav",
+			"sounds/enemies/skeleton_idle_02.wav",
+			"sounds/enemies/skeleton_idle_03.wav",
+			"sounds/enemies/skeleton_idle_04.wav",
+			"sounds/enemies/skeleton_idle_05.wav"
+		];
+		actor.m.Sound[this.Const.Sound.ActorEvent.Move] = [
+			"sounds/enemies/skeleton_idle_06.wav"
+		];
 	}
 
 });
