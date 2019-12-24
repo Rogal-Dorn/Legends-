@@ -2064,8 +2064,8 @@ Fixed issue misc with gather building
 * Skeletons have -50% HP, +90% damage reduction vs bows, +66% vs slings snd stakes, +50% against stabbing
 * Zombies lose -3AP, but gain the Zombie Bite ability that infects on legendary difficulty 
 - Risen legion will now each have backgrounds that align with their weapons
-- Risen Legion is now disliked by ALL towns and relations won't normalise 
-- Risen Legion has scouting, fletching, training, gathering, healing, scrapping and crafting unlocked from start
+- Risen Legion is now disliked by human towns, gets along with other undead. Relations won't normalise 
+- Risen Legion has most camp activities unlocked and upgraded from the start 
 - Fixed legion and beggar world icons 
 - Fixed error from restored helm crafting recipe
 - Fixes incorrectly labeled enemies 

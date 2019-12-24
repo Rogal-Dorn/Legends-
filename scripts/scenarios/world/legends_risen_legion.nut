@@ -47,7 +47,7 @@ this.legends_risen_legion <- this.inherit("scripts/scenarios/world/starting_scen
 	
 
 			local r = this.Math.rand(1, 8);
-			if (r <= 4)
+			if (r <= 3)
 				{
 				bro.setStartValuesEx([
 				"militia_background"
@@ -71,6 +71,28 @@ this.legends_risen_legion <- this.inherit("scripts/scenarios/world/starting_scen
 				items.addToBag(this.new("scripts/items/weapons/javelin"));
 				items.addToBag(this.new("scripts/items/weapons/javelin"));
 	
+				}
+			if (r == 4)
+				{
+				bro.setStartValuesEx(this.Const.CharacterBackgroundsAnimated);
+				items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
+				items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Offhand));
+				items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
+				items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
+				items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Ammo));
+					local t = this.Math.rand(1, 2);
+					if (t == 1)
+						{
+						items.equip(this.new("scripts/items/helmets/ancient/legend_ancient_legionary_helmet_restored"));
+						}
+					if (t == 2)
+						{
+						items.equip(this.new("scripts/items/helmets/ancient/ancient_legionary_helmet"));
+						}
+				items.equip(this.new("scripts/items/weapons/ancient/ancient_spear"));
+				items.equip(this.new("scripts/items/shields/ancient/tower_shield"));
+				items.addToBag(this.new("scripts/items/weapons/javelin"));
+				items.addToBag(this.new("scripts/items/weapons/javelin"));
 				}
 			if (r == 5)
 				{
@@ -176,8 +198,13 @@ this.legends_risen_legion <- this.inherit("scripts/scenarios/world/starting_scen
 				items.equip(armor);
 		}
 
-
-
+			this.World.Assets.getStash().add(this.new("scripts/items/supplies/wine_item"));
+			this.World.Assets.getStash().add(this.new("scripts/items/tents/tent_train"));
+			this.World.Assets.getStash().add(this.new("scripts/items/tents/tent_repair"));
+			this.World.Assets.getStash().add(this.new("scripts/items/tents/tent_scout"));
+			this.World.Assets.getStash().add(this.new("scripts/items/tents/tent_heal"));
+			this.World.Assets.getStash().add(this.new("scripts/items/tents/tent_scrap"));
+			this.World.Assets.getStash().add(this.new("scripts/items/tents/tent_fletcher"));
 	}
 
 	function onSpawnPlayer()
@@ -253,7 +280,6 @@ this.legends_risen_legion <- this.inherit("scripts/scenarios/world/starting_scen
 		}
 
 		local nobles = this.World.FactionManager.getFactionsOfType(this.Const.FactionType.NobleHouse);
-		local houses = [];
 
 		foreach( n in nobles )
 		{
@@ -262,7 +288,14 @@ this.legends_risen_legion <- this.inherit("scripts/scenarios/world/starting_scen
 
 		}
 
+		local skellies = this.World.FactionManager.getFactionsOfType(this.Const.FactionType.Undead);
 
+		foreach( n in skellies )
+		{
+
+			n.addPlayerRelation(400.0, "For the empire!");
+
+		}
 
 		this.World.State.m.Player = this.World.spawnEntity("scripts/entity/world/player_party", randomVillageTile.Coords.X, randomVillageTile.Coords.Y);
 		this.World.Assets.updateLook(112);
@@ -270,7 +303,7 @@ this.legends_risen_legion <- this.inherit("scripts/scenarios/world/starting_scen
 		this.Time.scheduleEvent(this.TimeUnit.Real, 1000, function ( _tag )
 		{
 			this.Music.setTrackList([
-				"music/civilians_01.ogg"
+				"music/undead_01.ogg"
 			], this.Const.Music.CrossFadeTime);
 			this.World.Events.fire("event.legend_risen_legion_intro");
 		}, null);
