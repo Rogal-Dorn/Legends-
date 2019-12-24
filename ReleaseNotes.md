@@ -2057,13 +2057,16 @@ Fixed incorrect or missing enemy orientation icons showing for some recent enemi
 Fixed some enemies being named incorrectly 
 Fixed issue misc with gather building 
 
-13.0.0.21 
+13.0.0.21 We are Legion 
 
-- Fixes incorrectly labeled enemies 
+- Warlock and Risen legion revived party members correctly look and act undead
+- Undead now have permanent injuries with tooltips that describe their condition
+* Skeletons have -50% HP, +90% damage reduction vs bows, +66% vs slings snd stakes, +50% against stabbing
+* Zombies lose -3AP, but gain the Zombie Bite ability that infects on legendary difficulty 
+- Risen legion will now each have backgrounds that align with their weapons
 - Risen Legion is now disliked by ALL towns and relations won't normalise 
 - Risen Legion has scouting, fletching, training, gathering, healing, scrapping and crafting unlocked from start
-- Risen Legion mercs now gain defense against missiles and spikey weapons, like a real skeleton should 
 - Fixed legion and beggar world icons 
 - Fixed error from restored helm crafting recipe
-- Undead now have permanent injuries that describe their condition 
-- Warlock and Risen legion revived party members correctly revive as undead (they look undead now)
+- Fixes incorrectly labeled enemies 
+

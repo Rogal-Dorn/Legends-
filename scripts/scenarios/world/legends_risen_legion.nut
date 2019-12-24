@@ -34,8 +34,7 @@ this.legends_risen_legion <- this.inherit("scripts/scenarios/world/starting_scen
 			bro.getTags().add("PlayerSkeleton");
 			bro.getTags().add("undead");
 			bro.getTags().add("skeleton");
-			bro.setStartValuesEx(this.Const.CharacterBackgroundsAnimated);
-			bro.getSkills().add(this.new("scripts/skills/special/legend_animated_player_properties"));
+	
 			bro.getSkills().add(this.new("scripts/skills/racial/skeleton_racial"));
 			bro.getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));
 			local items = bro.getItems();
@@ -50,6 +49,14 @@ this.legends_risen_legion <- this.inherit("scripts/scenarios/world/starting_scen
 			local r = this.Math.rand(1, 8);
 			if (r <= 4)
 				{
+				bro.setStartValuesEx([
+				"militia_background"
+				]);
+				items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
+				items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Offhand));
+				items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
+				items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
+				items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Ammo));
 					local t = this.Math.rand(1, 2);
 					if (t == 1)
 						{
@@ -63,28 +70,57 @@ this.legends_risen_legion <- this.inherit("scripts/scenarios/world/starting_scen
 				items.equip(this.new("scripts/items/shields/ancient/tower_shield"));
 				items.addToBag(this.new("scripts/items/weapons/javelin"));
 				items.addToBag(this.new("scripts/items/weapons/javelin"));
+	
 				}
 			if (r == 5)
 				{
+				bro.setStartValuesEx([
+				"beast_hunter_background"
+				]);
+				items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
+				items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Offhand));
+				items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
+				items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
+				items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Ammo));
 				items.equip(this.new("scripts/items/helmets/ancient/ancient_gladiator_helmet"));
 				items.equip(this.new("scripts/items/weapons/ancient/ancient_sword"));
 				items.equip(this.new("scripts/items/tools/throwing_net"));
 				items.addToBag(this.new("scripts/items/tools/throwing_net"));
 				items.addToBag(this.new("scripts/items/tools/throwing_net"));
+	
 				}
 			if (r == 6)
 				{
+				bro.setStartValuesEx([
+				"swordmaster_background"
+				]);
+
+				items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
+				items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Offhand));
+				items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
+				items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
+				items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Ammo));
 				items.equip(this.new("scripts/items/helmets/ancient/ancient_honorguard_helmet"));
 				items.equip(this.new("scripts/items/weapons/ancient/rhomphaia"));
 				items.addToBag(this.new("scripts/items/weapons/javelin"));
 				items.addToBag(this.new("scripts/items/weapons/javelin"));
+
 				}
 			if (r >= 7)
 				{
+				bro.setStartValuesEx([
+				"retired_soldier_background"
+				]);
+				items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
+				items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Offhand));
+				items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
+				items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
+				items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Ammo));
 				items.equip(this.new("scripts/items/helmets/ancient/ancient_household_helmet"));
 				items.equip(this.new("scripts/items/weapons/ancient/bladed_pike"));
 				items.addToBag(this.new("scripts/items/weapons/javelin"));
 				items.addToBag(this.new("scripts/items/weapons/javelin"));
+
 				}
 
 			
