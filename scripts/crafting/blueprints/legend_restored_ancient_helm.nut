@@ -1,4 +1,4 @@
-this.legend_restored_ancient_chest <- this.inherit("scripts/crafting/blueprint", {
+this.legend_restored_ancient_helm <- this.inherit("scripts/crafting/blueprint", {
 	m = {},
 	function create()
 	{
