@@ -2086,24 +2086,24 @@ Reputation based Recruit Scaling:  Some backgrounds will come with higher levels
 * Poachers, vagabonds, cultists and thieves available at Cruel 
 * Asassins, Killers and Raiders come at Dreaded reputation. 
 Legendary difficulty: All recruits can now come with higher levels in the late game. Stacks with above bonuses. 
-
 -
 50 New Layer Recolours: 
-* 24 Thick tunic layers
+* 24 Thick tunics
 * 10 rusted armors 
 * 5 noble armors, 
 * 2 dark thick tunics 
 * 5 regular tunics 
 * 4 ancient cloth layers  (drops from ancient dead)
 * 5 restored ancient cloth (Legion begins with these)
-Several armor layer colours altered to fit in better 
+Several armor layer and heads altered to fit in better 
 Warlock gains bleed and whip skills, thrall zombies and skeletons get extra perks and abilities. On legendary zombies can infect and skeletons get executioner. 
 Fixes skeletons having health reduction applied twice
 Fixes warlock zombie bite error
 Fixes zombies not dying 
 Fixes knights not loading
 Fixes bears not dying 
+Fixes undead defender error 
 Skeleton Gladiators now spawn properly
 Peasant classes appear earlier in peasant groups 
-XP reduced for orc behemoth 
+
 
