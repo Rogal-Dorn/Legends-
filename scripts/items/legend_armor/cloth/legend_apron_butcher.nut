@@ -8,10 +8,10 @@ this.legend_apron_butcher <- this.inherit("scripts/items/legend_armor/cloth/lege
 		this.m.Description = "A rugged apron worn by butchers to protect against accidental cuts.";
 		this.m.Variant = this.Math.rand(7,10);
 		this.updateVariant();
-		this.m.Value = 160;
-		this.m.Condition = 40;
-		this.m.ConditionMax = 40;
-		this.m.StaminaModifier = -4;
+		this.m.Value = 70;
+		this.m.Condition = 45;
+		this.m.ConditionMax = 45;
+		this.m.StaminaModifier = -3;
 	}
 
 });

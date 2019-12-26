@@ -16,10 +16,10 @@ this.legend_armor_plate_ancient_gladiator <- this.inherit("scripts/items/legend_
 		this.m.SpriteBack = "bust_legend_plate_ancient_gladiator";
 		this.m.SpriteDamagedBack = "bust_legend_plate_ancient_gladiator_damaged";
 		this.m.SpriteCorpseBack = "bust_legend_plate_ancient_gladiator_dead";
-		this.m.Value = 1000;
-		this.m.Condition = 80;
-		this.m.ConditionMax = 80;
-		this.m.StaminaModifier = -6;
+		this.m.Value = 190;
+		this.m.Condition = 40;
+		this.m.ConditionMax = 40;
+		this.m.StaminaModifier = -5;
         this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
 	}
 

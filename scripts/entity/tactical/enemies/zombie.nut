@@ -801,7 +801,9 @@ this.zombie <- this.inherit("scripts/entity/tactical/actor", {
 				[1, "cloth/legend_sackcloth"],
 				[1, "cloth/legend_sackcloth_patched"],
 				[1, "cloth/legend_sackcloth_tattered"],
-				[1, "cloth/legend_tunic"],
+				[1, "cloth/legend_thick_tunic"],
+				[1, "cloth/legend_dark_tunic"],
+				[2, "cloth/legend_tunic"],
 				[0, "cloth/legend_tunic_noble"]
 			];
 			armor = this.Const.World.Common.pickLegendArmor(cloths)

@@ -16,10 +16,10 @@ this.legend_dark_tunic <- this.inherit("scripts/items/legend_armor/legend_armor"
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.InventorySound = this.Const.Sound.ClothEquip;
-		this.m.Value = 102;
-		this.m.Condition = 45;
-		this.m.ConditionMax = 45;
-		this.m.StaminaModifier = -5;
+		this.m.Value = 60;
+		this.m.Condition = 40;
+		this.m.ConditionMax = 40;
+		this.m.StaminaModifier = -3;
 	}
 
 	function updateVariant()

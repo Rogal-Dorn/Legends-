@@ -151,6 +151,8 @@ this.legends_risen_legion <- this.inherit("scripts/scenarios/world/starting_scen
 					[1, "cloth/legend_sackcloth"],
 					[1, "cloth/legend_sackcloth_patched"],
 					[1, "cloth/legend_sackcloth_tattered"],
+					[10, "cloth/legend_ancient_cloth"],
+					[10, "cloth/legend_ancient_cloth_restored"],
 					[0, "cloth/legend_tunic"],
 					[0, "cloth/legend_tunic_noble"]
 				];

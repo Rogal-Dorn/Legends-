@@ -17,10 +17,10 @@ this.legend_reinforced_animal_hide_armor <- this.inherit("scripts/items/legend_a
 		this.m.OverlayIcon = "legend_armor/plate/icon_legend_reinforced_animal_hide_armor.png";
 		this.m.OverlayIconLarge = "legend_armor/plate/inventory_legend_reinforced_animal_hide_armor.png";
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
-		this.m.Value = 300;
+		this.m.Value = 350;
 		this.m.Condition = 65;
 		this.m.ConditionMax = 65;
-		this.m.StaminaModifier = -7;
+		this.m.StaminaModifier = -9;
 	}
 
 });

@@ -1324,7 +1324,52 @@
 <sprite id="bust_legend_tunic_34_dead_javelin" offsetX="6" offsetY="10" f="64FB" ic="FF151C29" width="131" height="134" img="entity/legend_armor/cloth/bust_legend_tunic_01_dead_javelin.png" left="-11" right="35" top="-5" bottom="67" />
 
  
- 
- 
+ <sprite id="bust_ancient_cloth_01" offsetY="35" ic="FF242D3A" width="104" height="142" img="entity/legend_armor/cloth/bust_ancient_cloth_01.png" left="-44" right="50" top="-53" bottom="13" />
+ <sprite id="bust_ancient_cloth_01_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity/legend_armor/cloth/bust_ancient_cloth_01_dead.png" left="-57" right="59" top="-53" bottom="55" />
+ <sprite id="bust_ancient_cloth_01_damaged" offsetY="35" ic="FF242C39" width="104" height="142" img="entity/legend_armor/cloth/bust_ancient_cloth_01.png" left="-47" right="45" top="-64" bottom="14" />
+ <sprite id="bust_ancient_cloth_01_dead_arrows" offsetX="6" offsetY="10" f="64FB" ic="FF495055" width="131" height="114" img="entity/legend_armor/cloth/bust_legend_tunic_01_dead_arrows.png" left="0" right="28" top="-8" bottom="30" />
+ <sprite id="bust_ancient_cloth_01_dead_javelin" offsetX="6" offsetY="10" f="64FB" ic="FF151C29" width="131" height="134" img="entity/legend_armor/cloth/bust_legend_tunic_01_dead_javelin.png" left="-11" right="35" top="-5" bottom="67" />
+  <sprite id="bust_ancient_cloth_02" offsetY="35" ic="FF242D3A" width="104" height="142" img="entity/legend_armor/cloth/bust_ancient_cloth_02.png" left="-44" right="50" top="-53" bottom="13" />
+ <sprite id="bust_ancient_cloth_02_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity/legend_armor/cloth/bust_ancient_cloth_02_dead.png" left="-57" right="59" top="-53" bottom="55" />
+ <sprite id="bust_ancient_cloth_02_damaged" offsetY="35" ic="FF242C39" width="104" height="142" img="entity/legend_armor/cloth/bust_ancient_cloth_02.png" left="-47" right="45" top="-64" bottom="14" />
+ <sprite id="bust_ancient_cloth_02_dead_arrows" offsetX="6" offsetY="10" f="64FB" ic="FF495055" width="131" height="114" img="entity/legend_armor/cloth/bust_legend_tunic_01_dead_arrows.png" left="0" right="28" top="-8" bottom="30" />
+ <sprite id="bust_ancient_cloth_02_dead_javelin" offsetX="6" offsetY="10" f="64FB" ic="FF151C29" width="131" height="134" img="entity/legend_armor/cloth/bust_legend_tunic_01_dead_javelin.png" left="-11" right="35" top="-5" bottom="67" />
+  <sprite id="bust_ancient_cloth_03" offsetY="35" ic="FF242D3A" width="104" height="142" img="entity/legend_armor/cloth/bust_ancient_cloth_03.png" left="-44" right="50" top="-53" bottom="13" />
+ <sprite id="bust_ancient_cloth_03_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity/legend_armor/cloth/bust_ancient_cloth_03_dead.png" left="-57" right="59" top="-53" bottom="55" />
+ <sprite id="bust_ancient_cloth_03_damaged" offsetY="35" ic="FF242C39" width="104" height="142" img="entity/legend_armor/cloth/bust_ancient_cloth_03.png" left="-47" right="45" top="-64" bottom="14" />
+ <sprite id="bust_ancient_cloth_03_dead_arrows" offsetX="6" offsetY="10" f="64FB" ic="FF495055" width="131" height="114" img="entity/legend_armor/cloth/bust_legend_tunic_01_dead_arrows.png" left="0" right="28" top="-8" bottom="30" />
+ <sprite id="bust_ancient_cloth_03_dead_javelin" offsetX="6" offsetY="10" f="64FB" ic="FF151C29" width="131" height="134" img="entity/legend_armor/cloth/bust_legend_tunic_01_dead_javelin.png" left="-11" right="35" top="-5" bottom="67" />
+  <sprite id="bust_ancient_cloth_04" offsetY="35" ic="FF242D3A" width="104" height="142" img="entity/legend_armor/cloth/bust_ancient_cloth_04.png" left="-44" right="50" top="-53" bottom="13" />
+ <sprite id="bust_ancient_cloth_04_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity/legend_armor/cloth/bust_ancient_cloth_04_dead.png" left="-57" right="59" top="-53" bottom="55" />
+ <sprite id="bust_ancient_cloth_04_damaged" offsetY="35" ic="FF242C39" width="104" height="142" img="entity/legend_armor/cloth/bust_ancient_cloth_04.png" left="-47" right="45" top="-64" bottom="14" />
+ <sprite id="bust_ancient_cloth_04_dead_arrows" offsetX="6" offsetY="10" f="64FB" ic="FF495055" width="131" height="114" img="entity/legend_armor/cloth/bust_legend_tunic_01_dead_arrows.png" left="0" right="28" top="-8" bottom="30" />
+ <sprite id="bust_ancient_cloth_04_dead_javelin" offsetX="6" offsetY="10" f="64FB" ic="FF151C29" width="131" height="134" img="entity/legend_armor/cloth/bust_legend_tunic_01_dead_javelin.png" left="-11" right="35" top="-5" bottom="67" />
+  <sprite id="bust_ancient_cloth_restored_01" offsetY="35" ic="FF242D3A" width="104" height="142" img="entity/legend_armor/cloth/bust_ancient_cloth_restored_01.png" left="-44" right="50" top="-53" bottom="13" />
+ <sprite id="bust_ancient_cloth_restored_01_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity/legend_armor/cloth/bust_ancient_cloth_restored_01_dead.png" left="-57" right="59" top="-53" bottom="55" />
+ <sprite id="bust_ancient_cloth_restored_01_damaged" offsetY="35" ic="FF242C39" width="104" height="142" img="entity/legend_armor/cloth/bust_ancient_cloth_restored_01.png" left="-47" right="45" top="-64" bottom="14" />
+ <sprite id="bust_ancient_cloth_restored_01_dead_arrows" offsetX="6" offsetY="10" f="64FB" ic="FF495055" width="131" height="114" img="entity/legend_armor/cloth/bust_legend_tunic_01_dead_arrows.png" left="0" right="28" top="-8" bottom="30" />
+ <sprite id="bust_ancient_cloth_restored_01_dead_javelin" offsetX="6" offsetY="10" f="64FB" ic="FF151C29" width="131" height="134" img="entity/legend_armor/cloth/bust_legend_tunic_01_dead_javelin.png" left="-11" right="35" top="-5" bottom="67" />
+  <sprite id="bust_ancient_cloth_restored_02" offsetY="35" ic="FF242D3A" width="104" height="142" img="entity/legend_armor/cloth/bust_ancient_cloth_restored_02.png" left="-44" right="50" top="-53" bottom="13" />
+ <sprite id="bust_ancient_cloth_restored_02_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity/legend_armor/cloth/bust_ancient_cloth_restored_02_dead.png" left="-57" right="59" top="-53" bottom="55" />
+ <sprite id="bust_ancient_cloth_restored_02_damaged" offsetY="35" ic="FF242C39" width="104" height="142" img="entity/legend_armor/cloth/bust_ancient_cloth_restored_02.png" left="-47" right="45" top="-64" bottom="14" />
+ <sprite id="bust_ancient_cloth_restored_02_dead_arrows" offsetX="6" offsetY="10" f="64FB" ic="FF495055" width="131" height="114" img="entity/legend_armor/cloth/bust_legend_tunic_01_dead_arrows.png" left="0" right="28" top="-8" bottom="30" />
+ <sprite id="bust_ancient_cloth_restored_02_dead_javelin" offsetX="6" offsetY="10" f="64FB" ic="FF151C29" width="131" height="134" img="entity/legend_armor/cloth/bust_legend_tunic_01_dead_javelin.png" left="-11" right="35" top="-5" bottom="67" />
+  <sprite id="bust_ancient_cloth_restored_03" offsetY="35" ic="FF242D3A" width="104" height="142" img="entity/legend_armor/cloth/bust_ancient_cloth_restored_03.png" left="-44" right="50" top="-53" bottom="13" />
+ <sprite id="bust_ancient_cloth_restored_03_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity/legend_armor/cloth/bust_ancient_cloth_restored_03_dead.png" left="-57" right="59" top="-53" bottom="55" />
+ <sprite id="bust_ancient_cloth_restored_03_damaged" offsetY="35" ic="FF242C39" width="104" height="142" img="entity/legend_armor/cloth/bust_ancient_cloth_restored_03.png" left="-47" right="45" top="-64" bottom="14" />
+ <sprite id="bust_ancient_cloth_restored_03_dead_arrows" offsetX="6" offsetY="10" f="64FB" ic="FF495055" width="131" height="114" img="entity/legend_armor/cloth/bust_legend_tunic_01_dead_arrows.png" left="0" right="28" top="-8" bottom="30" />
+ <sprite id="bust_ancient_cloth_restored_03_dead_javelin" offsetX="6" offsetY="10" f="64FB" ic="FF151C29" width="131" height="134" img="entity/legend_armor/cloth/bust_legend_tunic_01_dead_javelin.png" left="-11" right="35" top="-5" bottom="67" />
+  <sprite id="bust_ancient_cloth_restored_04" offsetY="35" ic="FF242D3A" width="104" height="142" img="entity/legend_armor/cloth/bust_ancient_cloth_restored_04.png" left="-44" right="50" top="-53" bottom="13" />
+ <sprite id="bust_ancient_cloth_restored_04_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity/legend_armor/cloth/bust_ancient_cloth_restored_04_dead.png" left="-57" right="59" top="-53" bottom="55" />
+ <sprite id="bust_ancient_cloth_restored_04_damaged" offsetY="35" ic="FF242C39" width="104" height="142" img="entity/legend_armor/cloth/bust_ancient_cloth_restored_04.png" left="-47" right="45" top="-64" bottom="14" />
+ <sprite id="bust_ancient_cloth_restored_04_dead_arrows" offsetX="6" offsetY="10" f="64FB" ic="FF495055" width="131" height="114" img="entity/legend_armor/cloth/bust_legend_tunic_01_dead_arrows.png" left="0" right="28" top="-8" bottom="30" />
+ <sprite id="bust_ancient_cloth_restored_04_dead_javelin" offsetX="6" offsetY="10" f="64FB" ic="FF151C29" width="131" height="134" img="entity/legend_armor/cloth/bust_legend_tunic_01_dead_javelin.png" left="-11" right="35" top="-5" bottom="67" />
+  <sprite id="bust_ancient_cloth_restored_05" offsetY="35" ic="FF242D3A" width="104" height="142" img="entity/legend_armor/cloth/bust_ancient_cloth_restored_05.png" left="-44" right="50" top="-53" bottom="13" />
+ <sprite id="bust_ancient_cloth_restored_05_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity/legend_armor/cloth/bust_ancient_cloth_restored_05_dead.png" left="-57" right="59" top="-53" bottom="55" />
+ <sprite id="bust_ancient_cloth_restored_05_damaged" offsetY="35" ic="FF242C39" width="104" height="142" img="entity/legend_armor/cloth/bust_ancient_cloth_restored_05.png" left="-47" right="45" top="-64" bottom="14" />
+ <sprite id="bust_ancient_cloth_restored_05_dead_arrows" offsetX="6" offsetY="10" f="64FB" ic="FF495055" width="131" height="114" img="entity/legend_armor/cloth/bust_legend_tunic_01_dead_arrows.png" left="0" right="28" top="-8" bottom="30" />
+ <sprite id="bust_ancient_cloth_restored_05_dead_javelin" offsetX="6" offsetY="10" f="64FB" ic="FF151C29" width="131" height="134" img="entity/legend_armor/cloth/bust_legend_tunic_01_dead_javelin.png" left="-11" right="35" top="-5" bottom="67" />
+
+
  
 </brush>

@@ -171,7 +171,7 @@ this.bandit_leader <- this.inherit("scripts/entity/tactical/human", {
 					local chains = [
 						[0, ""],
 						[10, "chain/legend_armor_mail_shirt"],
-						[0, "chain/legend_armor_mail_shirt_simple"],
+						[10, "chain/legend_armor_mail_shirt_simple"],
 						[0, "chain/legend_armor_rusty_mail_shirt"],
 						[0, "chain/legend_armor_ancient_double_mail"],
 						[0, "chain/legend_armor_ancient_mail"],
@@ -179,7 +179,7 @@ this.bandit_leader <- this.inherit("scripts/entity/tactical/human", {
 						[30, "chain/legend_armor_hauberk"],
 						[0, "chain/legend_armor_hauberk_full"],
 						[10, "chain/legend_armor_hauberk_sleevless"],
-						[10, "chain/legend_armor_reinforced_mail"],
+						[0, "chain/legend_armor_reinforced_mail"],
 						[10, "chain/legend_armor_reinforced_mail_shirt"],
 						[0, "chain/legend_armor_reinforced_rotten_mail_shirt"],
 						[0, "chain/legend_armor_reinforced_worn_mail"],
@@ -195,21 +195,21 @@ this.bandit_leader <- this.inherit("scripts/entity/tactical/human", {
 
 					local plates = [
 						[50, ""],
-						[6, "plate/legend_armor_leather_brigandine"],
-						[5, "plate/legend_armor_leather_brigandine_hardened"],
-						[4, "plate/legend_armor_leather_brigandine_hardened_full"],
+						[10, "plate/legend_armor_leather_brigandine"],
+						[0, "plate/legend_armor_leather_brigandine_hardened"],
+						[0, "plate/legend_armor_leather_brigandine_hardened_full"],
 						[0, "plate/legend_armor_leather_jacket"],
 						[0, "plate/legend_armor_leather_jacket_simple"],
-						[20, "plate/legend_armor_leather_lamellar"],
-						[15, "plate/legend_armor_leather_lamellar_harness_heavy"],
-						[15, "plate/legend_armor_leather_lamellar_harness_reinforced"],
-						[12, "plate/legend_armor_leather_lamellar_heavy"],
-						[12, "plate/legend_armor_leather_lamellar_reinforced"],
+						[30, "plate/legend_armor_leather_lamellar"],
+						[0, "plate/legend_armor_leather_lamellar_harness_heavy"],
+						[0, "plate/legend_armor_leather_lamellar_harness_reinforced"],
+						[10, "plate/legend_armor_leather_lamellar_heavy"],
+						[10, "plate/legend_armor_leather_lamellar_reinforced"],
 						[0, "plate/legend_armor_leather_noble"],
 						[0, "plate/legend_armor_leather_padded"],
 						[0, "plate/legend_armor_leather_riveted"],
-						[5, "plate/legend_armor_leather_riveted_light"],
-						[5, "plate/legend_armor_leather_scale"],
+						[0, "plate/legend_armor_leather_riveted_light"],
+						[0, "plate/legend_armor_leather_scale"],
 						[0, "plate/legend_armor_plate_ancient_chest"],
 						[0, "plate/legend_armor_plate_ancient_harness"],
 						[0, "plate/legend_armor_plate_ancient_mail"],
@@ -223,7 +223,7 @@ this.bandit_leader <- this.inherit("scripts/entity/tactical/human", {
 						[0, "plate/legend_armor_scale"],
 						[0, "plate/legend_armor_scale_coat"],
 						[0, "plate/legend_armor_scale_coat_rotten"],
-						[3, "plate/legend_armor_scale_shirt"]
+						[10, "plate/legend_armor_scale_shirt"]
 					]
 					local plate = this.Const.World.Common.pickLegendArmor(plates)
 					if (plate != null)

@@ -90,10 +90,8 @@ this.zombie_yeoman <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 				[0, "cloth/legend_robes_nun"],
 				[0, "cloth/legend_apron_smith"],
 				[0, "cloth/legend_robes_wizard"],
-				[1, "cloth/legend_sackcloth"],
-				[1, "cloth/legend_sackcloth_patched"],
 				[0, "cloth/legend_sackcloth_tattered"],
-				[1, "cloth/legend_tunic"],
+				[1, "cloth/legend_thick_tunic"],
 				[0, "cloth/legend_tunic_noble"]
 			];
 			armor = this.Const.World.Common.pickLegendArmor(cloths)

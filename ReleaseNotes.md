@@ -2071,11 +2071,17 @@ Fixed issue misc with gather building
 - Fixes incorrectly labeled enemies 
 
 
-13.0.0.22 
-- Adds 24 Thick tunic layers, 2 dark thick tunics and 5 regular tunics 
+13.0.0.22 - Armor Rebalance 2 
+- Rebalanced 79 armor layers including enemy updates. 
+- Adds 24 Thick tunic layers, 2 dark thick tunics, 5 regular tunics, 4 ancient cloth layers and 5 restored ancient cloth
+- Legion begins with ancient cloth
+- Fixes skeletons having health reduction applied twice
+- Several gambeson and tunic colours altered to fit in better 
 - Fixes warlock zombie bite error
+- Fixes zombies not dying 
 - Fixes knights not loading
 - Fixes bears not dying 
-- Skeleton Gladiators now spawn
+- Skeleton Gladiators now spawn properly
 - Peasant classes appear earlier in peasant groups 
 - XP reduced for orc behemoth 
+
