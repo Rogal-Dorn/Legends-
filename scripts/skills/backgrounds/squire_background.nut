@@ -66,6 +66,24 @@ this.squire_background <- this.inherit("scripts/skills/backgrounds/character_bac
 		this.m.Modifiers.Salvage = this.Const.LegendMod.ResourceModifiers.Salvage[2];
 		this.m.Modifiers.Fletching = this.Const.LegendMod.ResourceModifiers.Fletching[2];
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[1];
+		if (this.World.Assets.getMoralReputation() > 80) //checks if the player is chivalrous
+		{
+				local roster = this.World.getPlayerRoster().getAll();
+				local levels = 0;
+				local count = 0;
+				foreach( i, bro in roster )
+					{
+					local brolevel = bro.getLevel();
+					levels += brolevel;
+					count += 1;
+					}
+				local avgLevel = this.Math.floor(levels / count);					// gets the average of player levels
+				local busRep = this.World.Assets.getBusinessReputation();			//checks how reliable the player is
+				local repPoints = this.Math.floor(busRep / 1000);					// turns that rep into points
+				local repLevelAvg =  this.Math.floor((avgLevel + repPoints) / 4);	// Averages levels and points and
+				local broLevel = this.Math.rand(1, repLevelAvg);					// level is randomly chosen up to our score
+				this.m.Level += broLevel;										
+		}	
 		this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.SwordTree,

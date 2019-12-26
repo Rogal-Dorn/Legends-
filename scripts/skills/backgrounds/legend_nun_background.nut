@@ -52,6 +52,27 @@ this.legend_nun_background <- this.inherit("scripts/skills/backgrounds/character
 		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[3];
 		this.m.Modifiers.MedConsumption = this.Const.LegendMod.ResourceModifiers.MedConsumption[1];
 		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[1];
+
+		if (this.World.Assets.getMoralReputation() > 90)
+		{
+				local roster = this.World.getPlayerRoster().getAll();
+				local levels = 0;
+				local count = 0;
+				foreach( i, bro in roster )
+					{
+					local brolevel = bro.getLevel();
+					levels += brolevel;
+					count += 1;
+					}
+				local avgLevel = this.Math.floor(levels / count);
+				local busRep = this.World.Assets.getBusinessReputation();
+				local repPoints = this.Math.floor(busRep / 1000);
+				local repLevelAvg =  this.Math.floor((avgLevel + repPoints) / 4);
+				local broLevel = this.Math.rand(1, repLevelAvg);
+				this.m.Level += broLevel;
+		}
+
+
 		this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.FlailTree,

@@ -5,6 +5,16 @@ this.legends_skeleton_high_archer <- this.inherit("scripts/entity/tactical/legen
 	{
 		this.m.SpawnType = this.Const.Tactical.Actor.LegendSkeletonHeavyArcher;
 		this.legend_skeleton.onInit();;
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_crippling_strikes"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_steel_brow"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_fearsome"));	
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_mastery_bow"));
+		this.m.Skills.add(this.new("scripts/skills/injury_permanent/legend_fleshless"));
+		 if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+			{
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_coup_de_grace"));
+			}
 		this.m.Skills.update();
 	}
 
@@ -32,6 +42,7 @@ if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
 				[0, "cloth/legend_robes_nun"],
 				[0, "cloth/legend_apron_smith"],
 				[0, "cloth/legend_robes_wizard"],
+				[3, "cloth/legend_ancient_cloth"],
 				[1, "cloth/legend_sackcloth"],
 				[1, "cloth/legend_sackcloth_patched"],
 				[1, "cloth/legend_sackcloth_tattered"],

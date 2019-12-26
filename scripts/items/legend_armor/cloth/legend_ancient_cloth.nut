@@ -27,11 +27,11 @@ this.legend_ancient_cloth <- this.inherit("scripts/items/legend_armor/legend_arm
 	function updateVariant()
 	{
 		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
-		this.m.Sprite = "bust_legend_ancient_cloth_" + variant;
-		this.m.SpriteDamaged = "bust_legend_ancient_cloth_" + variant + "_damaged";
-		this.m.SpriteCorpse = "bust_legend_ancient_cloth_" + variant + "_dead";
-		this.m.IconLarge = "legend_armor/cloth/inventory_legend_ancient_cloth_" + variant + ".png";
-		this.m.Icon = "legend_armor/cloth/icon_legend_ancient_cloth_" + variant + ".png";
+		this.m.Sprite = "bust_ancient_cloth_" + variant;
+		this.m.SpriteDamaged = "bust_ancient_cloth_" + variant + "_damaged";
+		this.m.SpriteCorpse = "bust_ancient_cloth_" + variant + "_dead";
+		this.m.IconLarge = "legend_armor/cloth/inventory_ancient_cloth_" + variant + ".png";
+		this.m.Icon = "legend_armor/cloth/icon_ancient_cloth_" + variant + ".png";
 	}
 
 });
