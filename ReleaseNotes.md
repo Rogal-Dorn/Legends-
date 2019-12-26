@@ -2079,7 +2079,7 @@ All armor layers rebalanced with these goals:
 4. Layering a higher layer over a lower layer should give similar values to the higher layer's vanilla stats.
 -
 Reputation based Recruit Scaling:  Some backgrounds will come with higher levels if your moral reputation is very low or high. 
-* The scaling is based on your reputation and average level of your company 
+* The scaling is based on your moral reputation and average level of your company 
 * Monks, Nuns, Flagellants, Witch hunters will be available for hire at Saintly reputation. 
 * Squires available at Chivalrous 
 * Sellswords and peddlers available at Neutral repuation 
@@ -2102,8 +2102,9 @@ Fixes warlock zombie bite error
 Fixes zombies not dying 
 Fixes knights not loading
 Fixes bears not dying 
-Fixes undead defender error 
-Skeleton Gladiators now spawn properly
+Fixes undead settlement defender error 
+Fixes gatherer building not spawning items correctly
 Peasant classes appear earlier in peasant groups 
+Skeleton Gladiators now spawn properly
 
 
