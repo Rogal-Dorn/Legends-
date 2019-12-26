@@ -74,7 +74,7 @@ this.legend_fleshless <- this.inherit("scripts/skills/injury_permanent/permanent
 		_properties.MovementFatigueCostMult = 0.1;
 		_properties.DailyWageMult = 0;
 		_properties.DailyFood = 0;
-		_properties.HitpointsMult *= 0.5;
+		_properties.HitpointsMult *= 0.6;
 	}
 
 	function onApplyAppearance()

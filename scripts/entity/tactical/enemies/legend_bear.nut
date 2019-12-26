@@ -179,7 +179,7 @@ this.legend_bear <- this.inherit("scripts/entity/tactical/actor", {
 
 				if (r <= 40)
 				{
-					loot = this.new("scripts/items/misc/furs_item");
+					loot = this.new("scripts/items/trade/furs_item");
 				}
 				else if (r <= 80)
 				{

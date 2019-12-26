@@ -2063,10 +2063,19 @@ Fixed issue misc with gather building
 - Undead now have permanent injuries with tooltips that describe their condition
 * Skeletons have -50% HP, +90% damage reduction vs bows, +66% vs slings snd stakes, +50% against stabbing
 * Zombies lose -3AP, but gain the Zombie Bite ability that infects on legendary difficulty 
-- Risen legion will now each have backgrounds that align with their weapons
+- Risen legion will mostly now each have backgrounds that align with their weapons, still a small chance at different backgrounds.
 - Risen Legion is now disliked by human towns, gets along with other undead. Relations won't normalise 
-- Risen Legion has most camp activities unlocked and upgraded from the start 
+- Risen Legion has most camp activities unlocked and upgraded from the start, also starts with cool music 
 - Fixed legion and beggar world icons 
 - Fixed error from restored helm crafting recipe
 - Fixes incorrectly labeled enemies 
 
+
+13.0.0.22 
+- Adds 24 Thick tunic layers, 2 dark thick tunics and 5 regular tunics 
+- Fixes warlock zombie bite error
+- Fixes knights not loading
+- Fixes bears not dying 
+- Skeleton Gladiators now spawn
+- Peasant classes appear earlier in peasant groups 
+- XP reduced for orc behemoth 
