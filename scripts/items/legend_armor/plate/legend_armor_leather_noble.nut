@@ -10,18 +10,25 @@ this.legend_armor_leather_noble <- this.inherit("scripts/items/legend_armor/lege
 		this.m.Name = "Noble Leather Armor";
 		this.m.Description = "A truly masterfully crafted set of leather armor. Very light and flexible to reduce encumberance while still offering good protection.";
 		this.m.ArmorDescription = "Includes masterfully crafted leather armor.";
-		this.m.Icon = "legend_armor/plate/legend_leather_noble.png";
-		this.m.IconLarge = this.m.Icon;
-		this.m.OverlayIcon = "legend_armor/plate/icon_legend_leather_noble.png";
-		this.m.OverlayIconLarge = "legend_armor/plate/inventory_legend_leather_noble.png";
-		this.m.SpriteBack = "bust_legend_leather_noble";
-		this.m.SpriteDamagedBack = "bust_legend_leather_noble_damaged";
-		this.m.SpriteCorpseBack = "bust_legend_leather_noble_dead";
+		this.m.Variant = this.Math.rand(1, 6);
+		this.updateVariant();
 		this.m.Value = 1500;
 		this.m.Condition = 80;
 		this.m.ConditionMax = 80;
 		this.m.StaminaModifier = -8;
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
+	}
+
+	function updateVariant()
+	{
+		local variant = this.m.Variant < 10 ? "0" + this.m.Variant : this.m.Variant;
+		this.m.SpriteBack = "bust_legend_leather_noble_" + variant ;
+		this.m.SpriteDamagedBack = "bust_legend_leather_noble_" + variant + "_damaged";
+		this.m.SpriteCorpseBack = "bust_legend_leather_noble_" + variant + "_dead";
+		this.m.Icon = "legend_armor/plate/legend_leather_noble_" + variant + ".png";
+		this.m.IconLarge = this.m.Icon;
+		this.m.OverlayIcon = "legend_armor/plate/icon_legend_leather_noble_" + variant + ".png";
+		this.m.OverlayIconLarge = "legend_armor/plate/inventory_legend_leather_noble_"  + variant + ".png";
 	}
 
 });
