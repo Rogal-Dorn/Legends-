@@ -2078,11 +2078,16 @@ All armor layers rebalanced with these goals:
 3. There should be light, medium and heavy options in each layer
 4. Layering a higher layer over a lower layer should give similar values to the higher layer's vanilla stats.
 -
-Morale based Recruit Scaling:  Some backgrounds will come with higher levels if your moral reputation is very low or high. 
-* High level Monks, Nuns, Witch hunters will be available for hire at Saintly reputation. High level squires available at Chivalrous 
-* High level Assassins and Raiders will be available at Dreaded reputation. High level poachers, cultists and thieves available at Cruel 
-Legendary difficulty: All Late game recruits can now come with higher levels, based on your reputation and the average level of your company. 
+Reputation based Recruit Scaling:  Some backgrounds will come with higher levels if your moral reputation is very low or high. 
+* The scaling is based on your reputation and average level of your company 
+* Monks, Nuns, Flagellants, Witch hunters will be available for hire at Saintly reputation. 
+* Squires available at Chivalrous 
+* Sellswords and peddlers available at Neutral repuation 
+* Poachers, vagabonds, cultists and thieves available at Cruel 
+* Asassins, Killers and Raiders come at Dreaded reputation. 
+Legendary difficulty: All recruits can now come with higher levels in the late game. Stacks with above bonuses. 
 
+-
 50 New Layer Recolours: 
 * 24 Thick tunic layers
 * 10 rusted armors 

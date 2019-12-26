@@ -55,6 +55,24 @@ this.peddler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[1];
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[2];
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[3];
+		if (this.World.Assets.getMoralReputation() < 60 && this.World.Assets.getMoralReputation() > 40) //checks if the player is neutral
+		{
+				local roster = this.World.getPlayerRoster().getAll();
+				local levels = 0;
+				local count = 0;
+				foreach( i, bro in roster )
+					{
+					local brolevel = bro.getLevel();
+					levels += brolevel;
+					count += 1;
+					}
+				local avgLevel = this.Math.floor(levels / count);					// gets the average of player levels
+				local busRep = this.World.Assets.getBusinessReputation();			//checks how reliable the player is
+				local repPoints = this.Math.floor(busRep / 1000);					// turns that rep into points
+				local repLevelAvg =  this.Math.floor((avgLevel + repPoints) / 4);	// Averages levels and points and
+				local broLevel = this.Math.rand(1, repLevelAvg);					// level is randomly chosen up to our score
+				this.m.Level += broLevel;										
+		}
 		this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.StavesTree,
