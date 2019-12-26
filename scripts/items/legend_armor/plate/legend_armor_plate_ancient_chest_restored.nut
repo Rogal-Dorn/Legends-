@@ -16,10 +16,10 @@ this.legend_armor_plate_ancient_chest_restored <- this.inherit("scripts/items/le
 		this.m.SpriteBack = "bust_legend_plate_ancient_chest_restored";
 		this.m.SpriteDamagedBack = "bust_legend_plate_ancient_chest_restored_damaged";
 		this.m.SpriteCorpseBack = "bust_legend_plate_ancient_chest_restored_dead";
-		this.m.Value = 2250;
-		this.m.Condition = 150;
-		this.m.ConditionMax = 150;
-		this.m.StaminaModifier = -15;
+		this.m.Value = 800;
+		this.m.Condition = 110;
+		this.m.ConditionMax = 110;
+		this.m.StaminaModifier = -19;
         this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
 	}
 

@@ -17,9 +17,9 @@ this.legend_armor_plate_full_greaves <- this.inherit("scripts/items/legend_armor
 		this.m.SpriteDamagedBack = "bust_legend_plate_full_greaves_damaged";
 		this.m.SpriteCorpseBack = "bust_legend_plate_full_greaves_dead";
 		this.m.Value = 7000;
-		this.m.Condition = 230;
-		this.m.ConditionMax = 230;
-		this.m.StaminaModifier = -26;
+		this.m.Condition = 195;
+		this.m.ConditionMax = 195;
+		this.m.StaminaModifier = -30;
 	}
 
 });

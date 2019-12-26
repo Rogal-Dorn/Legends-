@@ -18,7 +18,7 @@ this.legend_tunic_noble <- this.inherit("scripts/items/legend_armor/cloth/legend
 				]
 		this.m.Variant = variants[this.Math.rand(1, variants.len() - 1)];
 		this.updateVariant();
-		this.m.Value = 450;
+		this.m.Value = 85;
 		this.m.Condition = 25;
 		this.m.ConditionMax = 25;
 		this.m.StaminaModifier = 0;

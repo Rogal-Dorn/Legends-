@@ -16,9 +16,9 @@ this.legend_armor_plate_cuirass <- this.inherit("scripts/items/legend_armor/lege
 		this.m.SpriteBack = "bust_legend_plate_cuirass";
 		this.m.SpriteDamagedBack = "bust_legend_plate_cuirass_damaged";
 		this.m.SpriteCorpseBack = "bust_legend_plate_cuirass_dead";
-		this.m.Value = 4000;
-		this.m.Condition = 170;
-		this.m.ConditionMax = 170;
+		this.m.Value = 5000;
+		this.m.Condition = 185;
+		this.m.ConditionMax = 185;
 		this.m.StaminaModifier = -18;
         this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
 	}

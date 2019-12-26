@@ -17,7 +17,7 @@ this.legend_thick_furs_armor <- this.inherit("scripts/items/legend_armor/legend_
 		this.m.OverlayIcon = "legend_armor/plate/icon_legend_thick_furs_armor.png";
 		this.m.OverlayIconLarge = "legend_armor/plate/inventory_legend_thick_furs_armor.png";
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
-		this.m.Value = 30;
+		this.m.Value = 65;
 		this.m.Condition = 20;
 		this.m.ConditionMax = 20;
 		this.m.StaminaModifier = -2;

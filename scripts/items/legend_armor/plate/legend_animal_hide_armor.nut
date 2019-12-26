@@ -16,7 +16,7 @@ this.legend_animal_hide_armor <- this.inherit("scripts/items/legend_armor/legend
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "legend_armor/plate/icon_legend_animal_hide_armor.png";
 		this.m.OverlayIconLarge = "legend_armor/plate/inventory_legend_animal_hide_armor.png";
-		this.m.Value = 60;
+		this.m.Value = 150;
 		this.m.Condition = 35;
 		this.m.ConditionMax = 35;
 		this.m.StaminaModifier = -4;

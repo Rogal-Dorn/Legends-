@@ -16,10 +16,10 @@ this.legend_armor_plate_ancient_mail <- this.inherit("scripts/items/legend_armor
 		this.m.SpriteBack = "bust_legend_plate_ancient_mail";
 		this.m.SpriteDamagedBack = "bust_legend_plate_ancient_mail_damaged";
 		this.m.SpriteCorpseBack = "bust_legend_plate_ancient_mail_dead";
-		this.m.Value = 1760;
-		this.m.Condition = 160;
-		this.m.ConditionMax = 160;
-		this.m.StaminaModifier = -20;
+		this.m.Value = 300;
+		this.m.Condition = 55;
+		this.m.ConditionMax = 55;
+		this.m.StaminaModifier = -9;
         this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
 	}
 
