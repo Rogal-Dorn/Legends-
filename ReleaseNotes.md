@@ -2071,14 +2071,16 @@ Fixed issue misc with gather building
 - Fixes incorrectly labeled enemies 
 
 
-13.0.0.22 - Armor Rebalance and Recruit Scaling 
-All armor layers rebalanced with these goals:
+13.0.0.22 - Armor Rebalance and Recruit Scaling  (not save ccompatible)
+
+Armor Layer Rebalance:
 1. Vanilla enemies should roughly retain their armor ranges and loot value
 2. Players should end up with roughly the same amount armor per price and fatigue as vanilla
 3. There should be light, medium and heavy options in each layer
 4. Layering a higher layer over a lower layer should give similar values to the higher layer's vanilla stats.
 -
-Reputation based Recruit Scaling:  Some backgrounds will come with higher levels if your moral reputation is very low or high. 
+Reputation based Recruit Scaling:  
+*Some backgrounds will come with higher levels if your moral reputation is very low or high. 
 * The scaling is based on your moral reputation and average level of your company 
 * Monks, Nuns, Flagellants, Witch hunters will be available for hire at Saintly reputation. 
 * Squires available at Chivalrous 
@@ -2095,7 +2097,7 @@ Legendary difficulty: All recruits can now come with higher levels in the late g
 * 5 regular tunics 
 * 4 ancient cloth layers  (drops from ancient dead)
 * 5 restored ancient cloth (Legion begins with these)
-Several armor layer and heads altered to fit in better 
+*Several armor layers, beards and heads altered to fit in better 
 Warlock gains bleed and whip skills, thrall zombies and skeletons get extra perks and abilities. On legendary zombies can infect and skeletons get executioner. 
 Fixes skeletons having health reduction applied twice
 Fixes warlock zombie bite error
@@ -2104,7 +2106,8 @@ Fixes knights not loading
 Fixes bears not dying 
 Fixes undead settlement defender error 
 Fixes gatherer building not spawning items correctly
+Removed Outriders from the spawn pool while working out their bugs 
 Peasant classes appear earlier in peasant groups 
 Skeleton Gladiators now spawn properly
-
-
+Legendary barbarians no longer have Nimble, instead getting Alert, Balance, Relentless, Onslaught and Overwhelm 
+Legendary party strength scaling cares more about party size. 
