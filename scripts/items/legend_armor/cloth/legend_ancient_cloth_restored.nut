@@ -31,7 +31,7 @@ this.legend_ancient_cloth_restored <- this.inherit("scripts/items/legend_armor/l
 		this.m.Sprite = "bust_legend_ancient_cloth_restored_" + variant;
 		this.m.SpriteDamaged = "bust_legend_ancient_cloth_restored_" + variant + "_damaged";
 		this.m.SpriteCorpse = "bust_legend_ancient_cloth_restored_" + variant + "_dead";
-		this.m.IconLarge = "legend_armor/cloth/inventory_legend_ancient_cloth_restored_" + variant + ".png";
+		this.m.IconLarge = "legend_armor/cloth/inventory_ancient_cloth_restored_" + variant + ".png";
 		this.m.Icon = "legend_armor/cloth/icon_legend_ancient_cloth_restored_" + variant + ".png";
 	}
 

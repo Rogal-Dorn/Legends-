@@ -1006,7 +1006,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 				local avgLevel = this.Math.floor(levels / count);
 				local busRep = this.World.Assets.getBusinessReputation();
 				local repPoints = this.Math.floor(busRep / 1000);
-				local repLevelAvg =  this.Math.floor((avgLevel + repPoints) / 2);
+				local repLevelAvg =  this.Math.floor((avgLevel + repPoints) / 4);
 				local broLevel = this.Math.rand(1, repLevelAvg);
 				this.m.Level += broLevel;
 

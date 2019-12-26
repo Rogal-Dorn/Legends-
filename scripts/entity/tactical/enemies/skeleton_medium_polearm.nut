@@ -58,7 +58,7 @@ this.skeleton_medium_polearm <- this.inherit("scripts/entity/tactical/skeleton",
 				[0, "cloth/legend_apron_butcher"],
 				[0, "cloth/legend_robes_nun"],
 				[0, "cloth/legend_apron_smith"],
-				[0, "cloth/legend_robes_wizard"],'
+				[0, "cloth/legend_robes_wizard"],
 				[20, "cloth/legend_ancient_cloth"],
 				[1, "cloth/legend_sackcloth"],
 				[1, "cloth/legend_sackcloth_patched"],

@@ -2071,17 +2071,34 @@ Fixed issue misc with gather building
 - Fixes incorrectly labeled enemies 
 
 
-13.0.0.22 - Armor Rebalance 2 
-- Rebalanced 79 armor layers including enemy updates. 
-- Adds 24 Thick tunic layers, 2 dark thick tunics, 5 regular tunics, 5 noble armors, 4 ancient cloth layers and 5 restored ancient cloth
-- Legion begins with ancient cloth
-- Fixes skeletons having health reduction applied twice
-- Several gambeson and tunic colours altered to fit in better 
-- Fixes warlock zombie bite error
-- Fixes zombies not dying 
-- Fixes knights not loading
-- Fixes bears not dying 
-- Skeleton Gladiators now spawn properly
-- Peasant classes appear earlier in peasant groups 
-- XP reduced for orc behemoth 
+13.0.0.22 - Armor Rebalance and Recruit Scaling 
+All armor layers rebalanced with these goals:
+1. Vanilla enemies should roughly retain their armor ranges and loot value
+2. Players should end up with roughly the same amount armor per price and fatigue as vanilla
+3. There should be light, medium and heavy options in each layer
+4. Layering a higher layer over a lower layer should give similar values to the higher layer's vanilla stats.
+-
+Morale based Recruit Scaling:  Some backgrounds will come with higher levels if your moral reputation is very low or high. 
+* High level Monks, Nuns, Witch hunters will be available for hire at Saintly reputation. High level squires available at Chivalrous 
+* High level Assassins and Raiders will be available at Dreaded reputation. High level poachers, cultists and thieves available at Cruel 
+Legendary difficulty: All Late game recruits can now come with higher levels, based on your reputation and the average level of your company. 
+
+50 New Layer Recolours: 
+* 24 Thick tunic layers
+* 10 rusted armors 
+* 5 noble armors, 
+* 2 dark thick tunics 
+* 5 regular tunics 
+* 4 ancient cloth layers  (drops from ancient dead)
+* 5 restored ancient cloth (Legion begins with these)
+Several armor layer colours altered to fit in better 
+Warlock gains bleed and whip skills, thrall zombies and skeletons get extra perks and abilities. On legendary zombies can infect and skeletons get executioner. 
+Fixes skeletons having health reduction applied twice
+Fixes warlock zombie bite error
+Fixes zombies not dying 
+Fixes knights not loading
+Fixes bears not dying 
+Skeleton Gladiators now spawn properly
+Peasant classes appear earlier in peasant groups 
+XP reduced for orc behemoth 
 
