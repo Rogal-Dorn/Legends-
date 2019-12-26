@@ -54,7 +54,7 @@ gt.Const.World.Spawn.Peasants <-
 		}
 	{
 			Weight = 10,
-			MinR = 0.50 * 585,
+			MinR = 0.50 * 160,
 			Types =
 			[
 				{
@@ -188,7 +188,7 @@ gt.Const.World.Spawn.PeasantsArmed <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendPeasantSquire,
-					Cost = 30
+					Cost = 20
 				}
 			]
 		},

@@ -65,7 +65,7 @@ this.knight <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_back_to_basics"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_last_stand"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_underdog"));
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_forceful_swing"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_forceful_swing"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_bloody_harvest"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_composure"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
@@ -328,7 +328,7 @@ this.knight <- this.inherit("scripts/entity/tactical/human", {
 				this.m.Items.equip(this.new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]));
 			}
 		}
-				local helm = this.new("scripts/items/helmets/legend_frogmouth_helm_crested_painted");
+				local helm = this.new("scripts/items/helmets/named/legend_frogmouth_helm_crested_painted");
 				this.m.Items.equip(helm);
 
 		this.m.Skills.add(this.new("scripts/skills/actives/indomitable"));
