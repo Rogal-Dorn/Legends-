@@ -519,9 +519,9 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		else if (_tag == "skeleton")
 		{
 			a = {
-				Hitpoints = [     
-					30,
-					40
+				Hitpoints = [   
+					50,
+					60
 				],
 				Bravery = [
 					30,
@@ -990,6 +990,26 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			if (actor.getTitle() == "" && this.m.Titles.len() != 0 && this.Math.rand(0, 3) == 3)
 			{
 				actor.setTitle(this.m.Titles[this.Math.rand(0, this.m.Titles.len() - 1)]);
+			}
+
+			if(this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+			{
+				local roster = this.World.getPlayerRoster().getAll();
+				local levels = 0;
+				local count = 0;
+				foreach( i, bro in roster )
+					{
+					local brolevel = bro.getLevel();
+					levels += brolevel;
+					count += 1;
+					}
+				local avgLevel = this.Math.floor(levels / count);
+				local busRep = this.World.Assets.getBusinessReputation();
+				local repPoints = this.Math.floor(busRep / 1000);
+				local repLevelAvg =  this.Math.floor((avgLevel + repPoints) / 2);
+				local broLevel = this.Math.rand(1, repLevelAvg);
+				this.m.Level += broLevel;
+
 			}
 
 			if (this.m.Level != 1)
