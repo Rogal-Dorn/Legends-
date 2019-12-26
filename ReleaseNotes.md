@@ -2073,7 +2073,7 @@ Fixed issue misc with gather building
 
 13.0.0.22 - Armor Rebalance 2 
 - Rebalanced 79 armor layers including enemy updates. 
-- Adds 24 Thick tunic layers, 2 dark thick tunics, 5 regular tunics, 4 ancient cloth layers and 5 restored ancient cloth
+- Adds 24 Thick tunic layers, 2 dark thick tunics, 5 regular tunics, 5 noble armors, 4 ancient cloth layers and 5 restored ancient cloth
 - Legion begins with ancient cloth
 - Fixes skeletons having health reduction applied twice
 - Several gambeson and tunic colours altered to fit in better 
