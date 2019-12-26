@@ -597,7 +597,7 @@ gt.Const.World.Spawn.BanditBoss <-
 				{
 					Type = this.Const.World.Spawn.Troops.Wardog,
 					Cost = 5
-				}}
+				}
 			]
 		},
 		{

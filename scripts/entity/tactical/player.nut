@@ -2193,12 +2193,12 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 					continue;
 				}
 
-				r = this.Math.rand(1, 100);
-				if (r <= 60)
+				t = this.Math.rand(1, 100);
+				if (t <= 60)
 				{
 					this.m.Talents[i] = 1;
 				}
-				else if (r <= 90)
+				else if (t <= 90)
 				{
 					this.m.Talents[i] = 2;
 				}
