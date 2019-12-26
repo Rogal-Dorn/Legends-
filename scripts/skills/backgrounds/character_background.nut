@@ -629,18 +629,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			a.Initiative[1] += _attrs.Initiative[1];
 		}
 		local b = this.getContainer().getActor().getBaseProperties();
-		if (_tag == "zombie")
-		{
-			b.ActionPoints = 6;
-		}
-		else if (_tag == "skeleton")
-		{
-			b.ActionPoints = 9;
-		}
-		else
-		{
-			b.ActionPoints = 9;
-		}
+		b.ActionPoints = 9;
 		local Hitpoints1 = this.Math.rand(a.Hitpoints[0], a.Hitpoints[1]);
 		local Bravery1 = this.Math.rand(a.Bravery[0], a.Bravery[1]);
 		local Stamina1 = this.Math.rand(a.Stamina[0], a.Stamina[1]);
@@ -1003,7 +992,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 					levels += brolevel;
 					count += 1;
 					}
-				local avgLevel = this.Math.floor(levels / count);
+				local avgLevel = this.Math.floor((levels / count)-1);
 				local busRep = this.World.Assets.getBusinessReputation();
 				local repPoints = this.Math.floor(busRep / 1000);
 				local repLevelAvg =  this.Math.floor((avgLevel + repPoints) / 4);

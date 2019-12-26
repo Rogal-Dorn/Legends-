@@ -350,7 +350,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 		local items = this.getContainer().getActor().getItems();
 
 		items.equip(this.new("scripts/items/helmets/dark_cowl"));
-		items.equip(this.new("scripts/items/legend_armor/cloth/legend_tunic"));
+		items.equip(this.new("scripts/items/legend_armor/cloth/legend_dark_tunic"));
 		items.equip(this.new("scripts/items/weapons/legend_grisly_scythe"));
 		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");
