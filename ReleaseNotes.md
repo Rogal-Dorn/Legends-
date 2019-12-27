@@ -2113,5 +2113,12 @@ Skeleton Gladiators now spawn properly
 Legendary barbarians no longer have Nimble, instead getting Alert, Balance, Relentless, Onslaught and Overwhelm 
 Legendary party strength scaling cares more about party size. 
 
-13.0.0.23
+13.0.0.23  Tasty treats 
+New Perk - "Camp Cook" unlocks the creation of food items in the crafting tent. 
+* It is possible to create, dried fruit, cured venison, smoked ham, porridge, pudding, pie and cured rations
+* Alcohol brewing perk now unlocks the crafting of beer and wine 
+Altered Chef, Healer and Repair trees so their perks come earlier. 
 Fixes missing battle orientation icons for slinger, fencer and halberdier 
+Fixes hunting tent error 
+Fixes enemies in thick tunics not dying when shot by arrows 
+Fixes rusty mail not found error 

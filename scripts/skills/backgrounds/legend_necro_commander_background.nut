@@ -37,7 +37,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 			"trait.loyal",
 			"trait.quick",
 			"trait.swift",
-			"trait.suser_footing",
+			"trait.sure_footing",
 			"trait.tough",
 			"trait.disloyal"
 		];
