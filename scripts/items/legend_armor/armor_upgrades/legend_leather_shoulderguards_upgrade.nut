@@ -19,6 +19,8 @@ this.legend_leather_shoulderguards_upgrade <- this.inherit("scripts/items/legend
 		this.m.SpriteCorpseFront = null;
 		this.m.SpriteCorpseBack = "upgrade_08_back_dead";
 		this.m.Value = 100;
+		this.m.Condition = 10;
+		this.m.ConditionMax = 10;
 		this.m.ConditionModifier = 10;
 		this.m.StaminaModifier = 0;
 	}

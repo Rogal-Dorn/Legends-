@@ -165,6 +165,8 @@ gt.Const.Strings.EntityName <- [
 	"Winselmutter",
 	"Höllenhund",
 	"Necrosavant Lord",
+	"Bandit Veteran",
+	"Bandit Warlord",
 	"Peasant Butcher",
 	"Peasant Blacksmith",
 	"Peasant Monk",
@@ -175,15 +177,14 @@ gt.Const.Strings.EntityName <- [
 	"Peasant Miner",
 	"Peasant Squire",
 	"Peasant Witch Hunter",
-	"Bandit Veteran",
-	"Bandit Warlord",
 	"Noble Halberdier",
 	"Noble Slinger",
 	"Noble Fencer",
 	"Bandit Outrider",
 	"Bear",
 	"Catapult",
-	"Horse"
+	"Horse",
+	"Ancient Gladiator"
 ];
 gt.Const.Strings.EntityNamePlural <- [
 	"Necromancers",
@@ -284,6 +285,8 @@ gt.Const.Strings.EntityNamePlural <- [
 	"Winselmutters",
 	"Höllenhunds",
 	"Necrosavant Lords",
+	"Bandit Veterans",
+	"Bandit Warlords",
 	"Peasant Butchers",
 	"Peasant Blacksmiths",
 	"Peasant Monks",
@@ -294,15 +297,14 @@ gt.Const.Strings.EntityNamePlural <- [
 	"Peasant Miners",
 	"Peasant Squires",
 	"Peasant Witch Hunters",
-	"Bandit Veterans",
-	"Bandit Warlords",
 	"Noble Halberdiers",
 	"Noble Slingers",
 	"Noble Fencers",
 	"Bandit Outriders",
 	"Bears",
 	"Catapults",
-	"Horses"
+	"Horses",
+	"Ancient Gladiators"
 ];
 gt.Const.Strings.Tactical.EntityName <- {
 	Boulder = "Boulder",
@@ -1386,7 +1388,8 @@ gt.Const.Strings.PerkName <- {
 	LegendNetCasting = "Net Casting",
 	LegendPacifist = "Pacifist",
 	LegendMagicMissile = "Magic Missile",
-	LegendHorseMovement = "Horse Movement"
+	LegendHorseMovement = "Horse Movement",
+	LegendCampCook = "Camp Cooking"
 };
 gt.Const.Strings.PerkDescription <- {
 	Relentless = "Don\'t slow down! At all times your Initiative is reduced only by [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] of your accumulated Fatigue, instead of all of it. \n[color=#0b0084]From the Fit perk group[/color]",
@@ -1481,7 +1484,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendSpecPoison = "Master poison, giving you the ability to keep your weapons covered in poison at all times",
 	LegendCascade = "Let loose a cascade of three striking heads on your opponent. Will strike over or around shield cover.",
 	LegendEvasion = "Enables the character to move swiftly and safely through any Zone of Control for one whole turn without incurring any free attacks. \n[color=#0b0084]From the Devious perk group[/color]",
-	LegendRust = "Deform, rip and otherwise render the target\'s armor unusable with great effect. Although the impact will be felt through the thickest of armor, it won\'t inflict the most injury to the wearer.",
+	LegendRust = "Unlocks a ranged attack that can deform, rip and otherwise render the target\'s armor unusable with great effect. Although the impact will be felt through the thickest of armor, it won\'t inflict the most injury to the wearer.",
 	LegendWither = "Debilitate a target for one turn, reducing their ability to inflict damage by [color=" + this.Const.UI.Color.NegativeValue + "]-50%[/color].",
 	LegendDeathtouch = "Your fingers turn ghostly and pass through steel and flesh, tearing at the soul of your victim",
 	LegendHex = "You tie your soul to your enemy, your pain becomes their pain",
@@ -1533,7 +1536,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendReclamation = "Weave a bit of your magic through the waste of a corpse so more means may be salvaged. Increases how frequently you gain Human Carrion and Human Bones as loot.",
 	LegendConservation = "Conduct profane rituals meant to stave off the passage of time, further preserving the means of your craft. Reduces the cost of maintaining Human Carrion and Human Bones by 50% medicine per day.",
 	LegendEnthrall = "Pull at the strings of a single creation, compelling them to linger among you as an obedient guardian. Enthralled dead act defensively and attempt to protect you from threats.",
-	LegendViolentDecomposition = "Corrupt the force sustaining one of your thralls, causing them to detonate destructively after the corruption has time to build. Affected dead explode at the end of their turn next round, dealing damage in a 1 tile radius. The less HP they have, the more damage the explosion inflicts. If they are killed before they explode, the effect no longer triggers.",
+	LegendViolentDecomposition = "Corrupt the force sustaining one of your fashioned thralls, causing them to detonate destructively after the corruption has time to build. Affected dead explode at the end of their turn next round, dealing damage in a 1 tile radius. The less HP they have, the more damage the explosion inflicts. If they are killed before they explode, the effect no longer triggers. Only works on minions fashioned from corpses.",
 	LegendPossession = "Enter the mind of a thrall and lend your power for one turn, increasing thralls combat prowess.",
 	LegendSiphon = "Draw from the lifeforce of your victim and transfer up to 30% of their health to yourself. You may not drain more health than you are missing nor drain a victim to their death. Effectiveness drops off 5% for each tile away.",
 	LegendValaInscriptionMastery = "The Vala becomes a master at inscribing the intricate and subtle signs, allowing her to create the rune sigils at faster rate.",
@@ -1554,7 +1557,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendValaPremonition = "As if being warned by some higher being, the Vala occasionally gets glimpses of the immediate future and any dangers it may hold, letting her prepare herself accordingly.\n\nHelps the Vala avoid incoming damage. Her understanding of these visions grows stronger as she becomes more experienced.",
 	LegendInventorAnatomy = "Through extensive study of the human form, you learn how to fashion replacement parts from wood and metal. Unlocks a series of events that let you create prothetic body parts to help your mercanaries resolve their permanent injuries",
 	LegendGuideSteps = "Gives you the Guide Steps skill, that lets you grant Pathfinder to all your allies",
-	LegendBerserkerRage = "Gain rage stacks over the course of a battle. Each stack increases Damage by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color], initiative by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color], resolve by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color] and reduces damage received by [color=" + this.Const.UI.Color.PositiveValue + "]2%[/color]. Gain [color=" + this.Const.UI.Color.PositiveValue + "]1[/color] stack each time you hit, [color=" + this.Const.UI.Color.PositiveValue + "]2[/color] stack each time you take damage, and [color=" + this.Const.UI.Color.PositiveValue + "]3[/color] stacks each time you kill. ",
+	LegendBerserkerRage = "Gain rage stacks over the course of a battle. Each stack increases Damage by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color], initiative by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color], resolve by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color] and reduces damage received by [color=" + this.Const.UI.Color.PositiveValue + "]2%[/color]. Gain [color=" + this.Const.UI.Color.PositiveValue + "]1[/color] stack each time you take damage, and [color=" + this.Const.UI.Color.PositiveValue + "]3[/color] stacks each time you kill. Lose [color=" + this.Const.UI.Color.NegativeValue + "]2[/color] rage stacks per turn. ",
 	LegendAssuredConquest = "[color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] melee skill, melee defense and ranged defense when at confident morale. \n[color=#0b0084]From the Vicious perk group[/color]",
 	LegendTasteThePain = "Whenever getting hurt would normally trigger a morale check, instead gain [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] morale",
 	LegendBecomeBerserker = "This character background changes into a berserker, losing all current perks",
@@ -1666,7 +1669,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendMindOverBody = "Push your body beyond what is humanly possible through your sheer force of will. Spend less fatigue on skills for each point of Resolve over 75.  \n[color=#0b0084]From the Intelligent perk group[/color]",
 	LegendEscapeArtist = "Others see it as magic, but your deft hands know better. Grants immunity to all rooting effects, including nets and webs. \n[color=#0b0084]From the Nets perk group[/color]",
 	LegendGatherer = "Knowledge of the landscape and vegetation provides a wealth of opportunities when gathering in camp. Apothecaries usualy gain their level as a percentage reduction in hours required to find special items. This skill doubles that bonus to twice their level. When the total bonus from all apothecaries is above 10%, they can also find mushrooms, poisons, antidotes and powders",
-	LegendPotionBrewer = "Expertise in potions and tinctures allows the creation of potions while gathering in camp. This skill unlocks the chance to create lionheart, ironwill, recovery and cat potions while gathering. An apocethery or vala must gather the ingredients for the potion brewer. When the total level of all potion brewers gathering is above 20, they have a chance to create potions of knowledge and oblivion. ",
+	LegendPotionBrewer = "Expertise in potions and tinctures allows the creation of potions while gathering in camp. This skill unlocks the chance to create lionheart, ironwill, recovery and cat potions while gathering. An apocethery or vala must gather the ingredients for the potion brewer. When the total level of all potion brewers gathering is above 20, they have a chance to create potions of knowledge and oblivion. Also unlocks alcohol crafting in the crafting tent.",
 	LegendSpecCultHood = "In Davkul we find the truth of ourselves. We have no identity beyond his servitude, our glory is his glory. While your face is obscured by a cultist hood, gain [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] of your resolve as a bonus to melee and ranged defense",
 	LegendSpecCultArmor = "Pain is the embrace of Davkul, our bodies keep us from him. Only in suffering can we know truth.  Gain [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] of your missing health as resolve, while wearing cultist robes, sackcloth or leather wraps",
 	LegendPrepareBleed = "Time spent assessing an enemy, finding the arteries, will pay off in blood shed on the field. Grants the active skill Prepare to Bleed that primes your next strike to inflict intense but short lived bleeding.",
@@ -1675,7 +1678,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendUntouchable = "Staying hidden is about more than just clever disguise, one must be prepared to avoid stray blows and arrows in the heat of battle.  Grants [color=" + this.Const.UI.Color.PositiveValue + "]+40[/color] melee and ranged defense while hidden ",
 	LegendAssassinate = "Becoming invisible is impressive, but it is what you do with this power that really count.  Striking from the shadows allows you to bypass enemy defenses and strike for their unfended weak points. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+200%[/color] damage while hidden",
 	LegendMealPreperation = "A good company chef can make a meal from whatever can be scrounged up, and have it in your belly before camp breaks. Unlocks a chance to get better food rewards when this character hunts in camp. The chance and rewards increase as you level up. Includes porridge, pies and puddings. ",
-	LegendAlcoholBrewing = "Any camp worth its salt will have an alcohol still fashioned out of whatever can be pulled together. Unlocks a chance to get alcohol as a reward when this character hunts in camp. The rewards increase as you level up. Includes beer, wine and mead.",
+	LegendAlcoholBrewing = "Any camp worth its salt will have an alcohol still fashioned out of whatever can be pulled together. Unlocks a chance to get alcohol as a reward when this character hunts in camp. The rewards increase as you level up. Includes beer, wine and mead. Also allows alcohol crafting in the crafting tent.",
 	LegendHorseCharge = "Use the great weight and speed of the horse to charge forward. Move up to four spaces and attack an enemy",
 	LegendHorsePirouette = "Learning to turn quickly allows quick changes in direction required to escape enemies",
 	LegendHorseBitting = "Getting a horse accustomed to the feel of a bit and a bridle, makes it easier to control the movements. This increases defenses in battle by 25% of the rider\'s melee defense",
@@ -1704,7 +1707,8 @@ gt.Const.Strings.PerkDescription <- {
 	LegendNetCasting = "Learning the ways of the cast takes practice, holding the net in the right position and twisting at the hips allows you to cover a greater distance with each cast. Increases the range of nets and reinforced nets to 4.",
 	LegendPacifist = "Fighting is a brutal thuggish pastime, most folk prefer a life without frequent bouts of ultraviolence.  Since this character is not threatening, they only count for half a person when determining difficulty. They become content with being in reserve, and will grow unhappy if they are placed in more than half your comapany battles. ",
 	LegendMagicMissile = "Release a controlled forceful bolt, leaping towards a foe. Damage based on current initiave, accuracy based on ranged attack skill.",
-	LegendHorseMovement = "Move like a horse, quickly across flat terrain, but slowly through bogs and mountains"
+	LegendHorseMovement = "Move like a horse, quickly across flat terrain, but slowly through bogs and mountains",
+	LegendCampCook = "There is a fine art to cooking, skills and ingredients that are not obvious but unlock a world of flavor or preserve food for longer. Unlocks food crafting in the crafting tent. Allows the creation of porridge, puddings, pies, meat curing, fruit drying and ration making."
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

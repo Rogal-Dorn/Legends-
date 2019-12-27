@@ -7,7 +7,7 @@ this.smoked_ham_item <- this.inherit("scripts/items/supplies/food_item", {
 		this.m.Name = "Smoked Ham";
 		this.m.Description = "Provisions. There are many ways to preserve food. This piece of ham has been treated in a smoking hut.";
 		this.m.Icon = "supplies/inventory_provisions_11.png";
-		this.m.Value = 95;
+		this.m.Value = 90;
 		this.m.GoodForDays = 12;
 	}
 

@@ -7,7 +7,7 @@ this.beer_item <- this.inherit("scripts/items/supplies/food_item", {
 		this.m.Name = "Beer";
 		this.m.Description = "Provisions. This fermented hop or barley drink is more durable and safer to drink than plain water.";
 		this.m.Icon = "supplies/inventory_provisions_14.png";
-		this.m.Value = 75;
+		this.m.Value = 120;
 		this.m.GoodForDays = 10;
 	}
 

@@ -519,9 +519,9 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		else if (_tag == "skeleton")
 		{
 			a = {
-				Hitpoints = [     // will start with a minimum of 15 health, set below
-					1,
-					1
+				Hitpoints = [   
+					50,
+					60
 				],
 				Bravery = [
 					30,
@@ -629,19 +629,8 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			a.Initiative[1] += _attrs.Initiative[1];
 		}
 		local b = this.getContainer().getActor().getBaseProperties();
-		if (_tag == "zombie")
-		{
-			b.ActionPoints = 6;
-		}
-		else if (_tag == "skeleton")
-		{
-			b.ActionPoints = 9;
-		}
-		else
-		{
-			b.ActionPoints = 9;
-		}
-		local Hitpoints1 = this.Math.max(15, this.Math.rand(a.Hitpoints[0], a.Hitpoints[1]));
+		b.ActionPoints = 9;
+		local Hitpoints1 = this.Math.rand(a.Hitpoints[0], a.Hitpoints[1]);
 		local Bravery1 = this.Math.rand(a.Bravery[0], a.Bravery[1]);
 		local Stamina1 = this.Math.rand(a.Stamina[0], a.Stamina[1]);
 		local MeleeSkill1 = this.Math.rand(a.MeleeSkill[0], a.MeleeSkill[1]);
@@ -649,7 +638,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		local MeleeDefense1 = this.Math.rand(a.MeleeDefense[0], a.MeleeDefense[1]);
 		local RangedDefense1 = this.Math.rand(a.RangedDefense[0], a.RangedDefense[1]);
 		local Initiative1 = this.Math.rand(a.Initiative[0], a.Initiative[1]);
-		local Hitpoints2 = this.Math.max(15, this.Math.rand(a.Hitpoints[0], a.Hitpoints[1]));
+		local Hitpoints2 = this.Math.rand(a.Hitpoints[0], a.Hitpoints[1]);
 		local Bravery2 = this.Math.rand(a.Bravery[0], a.Bravery[1]);
 		local Stamina2 = this.Math.rand(a.Stamina[0], a.Stamina[1]);
 		local MeleeSkill2 = this.Math.rand(a.MeleeSkill[0], a.MeleeSkill[1]);
@@ -679,14 +668,70 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		this.getContainer().getActor().setHitpoints(b.Hitpoints);
 
 		local weighted = []
-		weighted.push(this.Math.floor((a.Hitpoints[1] - b.Hitpoints) / (a.Hitpoints[1] - a.Hitpoints[0]) * 100.0))
-		weighted.push(this.Math.floor((a.Bravery[1] - b.Bravery) / (a.Bravery[1] - a.Bravery[0]) * 100.0))
-		weighted.push(this.Math.floor((a.Stamina[1] - b.Stamina) / (a.Stamina[1] - a.Stamina[0]) * 100.0))
-		weighted.push(this.Math.floor((a.Initiative[1] - b.Initiative) / (a.Initiative[1] - a.Initiative[0]) * 100.0))
-		weighted.push(this.Math.floor((a.MeleeSkill[1] - b.MeleeSkill) / (a.MeleeSkill[1] - a.MeleeSkill[0]) * 100.0))
-		weighted.push(this.Math.floor((a.RangedSkill[1] - b.RangedSkill) / (a.RangedSkill[1] - a.RangedSkill[0]) * 100.0))
-		weighted.push(this.Math.floor((a.MeleeDefense[1] - b.MeleeDefense) / (a.MeleeDefense[1] - a.MeleeDefense[0]) * 100.0))
-		weighted.push(this.Math.floor((a.RangedDefense[1] - b.RangedDefense) / (a.RangedDefense[1] - a.RangedDefense[0]) * 100.0))
+		if (a.Hitpoints[1] == a.Hitpoints[0])
+		{
+			weighted.push(50)
+		}
+		else
+		{
+			weighted.push(this.Math.floor((b.Hitpoints - a.Hitpoints[0]) * 100.0 / (a.Hitpoints[1] - a.Hitpoints[0])))
+		}
+		if (a.Bravery[1] == a.Bravery[0])
+		{
+			weighted.push(50)
+		}
+		else
+		{
+			weighted.push(this.Math.floor((b.Bravery - a.Bravery[0]) * 100.0 / (a.Bravery[1] - a.Bravery[0])))
+		}
+		if (a.Stamina[1] == a.Stamina[0])
+		{
+			weighted.push(50)
+		}
+		else
+		{
+			weighted.push(this.Math.floor((b.Stamina - a.Stamina[0]) * 100.0 / (a.Stamina[1] - a.Stamina[0])))
+		}
+		if (a.MeleeSkill[1] == a.MeleeSkill[0])
+		{
+			weighted.push(50)
+		}
+		else
+		{
+			weighted.push(this.Math.floor((b.MeleeSkill - a.MeleeSkill[0]) * 100.0 / (a.MeleeSkill[1] - a.MeleeSkill[0])))
+		}
+		if (a.RangedSkill[1] == a.RangedSkill[0])
+		{
+			weighted.push(50)
+		}
+		else
+		{
+			weighted.push(this.Math.floor((b.RangedSkill - a.RangedSkill[0]) * 100.0 / (a.RangedSkill[1] - a.RangedSkill[0])))
+		}
+		if (a.MeleeDefense[1] == a.MeleeDefense[0])
+		{
+			weighted.push(50)
+		}
+		else
+		{
+			weighted.push(this.Math.floor((b.MeleeDefense - a.MeleeDefense[0]) * 100.0 / (a.MeleeDefense[1] - a.MeleeDefense[0])))
+		}
+		if (a.RangedDefense[1] == a.RangedDefense[0])
+		{
+			weighted.push(50)
+		}
+		else
+		{
+			weighted.push(this.Math.floor((b.RangedDefense - a.RangedDefense[0]) * 100.0 / (a.RangedDefense[1] - a.RangedDefense[0])))
+		}
+		if (a.Initiative[1] == a.Initiative[0])
+		{
+			weighted.push(50)
+		}
+		else
+		{
+			weighted.push(this.Math.floor((b.Initiative - a.Initiative[0]) * 100.0 / (a.Initiative[1] - a.Initiative[0])))
+		}
 		return weighted;
 	}
 
@@ -990,6 +1035,26 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			if (actor.getTitle() == "" && this.m.Titles.len() != 0 && this.Math.rand(0, 3) == 3)
 			{
 				actor.setTitle(this.m.Titles[this.Math.rand(0, this.m.Titles.len() - 1)]);
+			}
+
+			if(this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+			{
+				local roster = this.World.getPlayerRoster().getAll();
+				local levels = 0;
+				local count = 0;
+				foreach( i, bro in roster )
+					{
+					local brolevel = bro.getLevel();
+					levels += brolevel;
+					count += 1;
+					}
+				local avgLevel = this.Math.floor(levels / count);
+				local busRep = this.World.Assets.getBusinessReputation();
+				local repPoints = this.Math.floor(busRep / 1000);
+				local repLevelAvg =  this.Math.floor((avgLevel + repPoints) / 4);
+				local broLevel = this.Math.rand(1, repLevelAvg);
+				this.m.Level += broLevel -1;
+
 			}
 
 			if (this.m.Level != 1)

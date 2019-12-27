@@ -51,7 +51,12 @@ gt.Const.World.Spawn.UndeadArmy <-
 					Type = this.Const.World.Spawn.Troops.SkeletonHeavyPolearm,
 					MinR = 400,
 					Cost = 35
-				}
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.SkeletonGladiator,
+					MinR = 400,
+					Cost = 40
+				},
 			]
 		},
 		{

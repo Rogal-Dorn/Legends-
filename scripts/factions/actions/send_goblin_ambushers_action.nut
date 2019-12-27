@@ -79,6 +79,11 @@ this.send_goblin_ambushers_action <- this.inherit("scripts/factions/faction_acti
 		local settlement = this.pickWeightedRandom(settlements);
 		settlement.setLastSpawnTimeToNow();
 		local mult = this.World.FactionManager.isGreenskinInvasion() ? 1.1 : 1.0;
+		local distanceToNextSettlement = this.getDistanceToSettlements(settlement.getTile());
+		if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary && distanceToNextSettlement > 14)
+			{
+			 mult *= distanceToNextSettlement / 14;
+			}
 		local party = this.getFaction().spawnEntity(settlement.getTile(), "Goblin Raiders", false, this.Const.World.Spawn.GoblinRaiders, this.Math.rand(75, 120) * this.getReputationToDifficultyMult() * mult);
 		party.getSprite("banner").setBrush(settlement.getBanner());
 		party.setDescription("A band of mischievous goblins, small but cunning and not to be underestimated.");

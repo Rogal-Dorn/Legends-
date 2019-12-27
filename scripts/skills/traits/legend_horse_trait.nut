@@ -53,8 +53,8 @@ this.legend_horse_trait <- this.inherit("scripts/skills/traits/character_trait",
 	{
 		local actor = this.getContainer().getActor();
 		local gt = getroottable();
-		actor.m.ActionPointCosts = gt.Const.HorseMovementAPCost;
-		actor.m.FatigueCosts = clone gt.Const.HorseMovementFatigueCost;
+		actor.m.ActionPointCosts = this.Const.HorseMovementAPCost;
+		actor.m.FatigueCosts = clone this.Const.HorseMovementFatigueCost;
 		_properties.DailyFood += 4.0;
 	}
 

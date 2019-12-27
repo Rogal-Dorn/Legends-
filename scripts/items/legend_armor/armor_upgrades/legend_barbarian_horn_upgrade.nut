@@ -19,8 +19,10 @@ this.legend_barbarian_horn_upgrade <- this.inherit("scripts/items/legend_armor/l
 		this.m.SpriteCorpseFront = "upgrade_23_front_dead";
 		this.m.SpriteCorpseBack = "upgrade_23_back_dead";
 		this.m.Value = 500;
+		this.m.Condition = 40;
+		this.m.ConditionMax = 40;
 		this.m.ConditionModifier = 40;
-		this.m.StaminaModifier = 4;
+		this.m.StaminaModifier = -4;
 	}
 
 	function getTooltip()

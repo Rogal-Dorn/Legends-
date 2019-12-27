@@ -154,11 +154,6 @@ gt.Const.World.Spawn.BanditScouts <-
 				{
 					Type = this.Const.World.Spawn.Troops.Wardog,
 					Cost = 5
-				},
-				{
-					MinR = 250,
-					Type = this.Const.World.Spawn.Troops.BanditOutrider,
-					Cost = 30
 				}
 			]
 		},
@@ -290,17 +285,12 @@ gt.Const.World.Spawn.BanditRaiders <-
 				{
 					Type = this.Const.World.Spawn.Troops.Wardog,
 					Cost = 5
-				},
-				{
-					MinR = 250,
-					Type = this.Const.World.Spawn.Troops.BanditOutrider,
-					Cost = 30
 				}
 			]
 		},
 		{
 			Weight = 5,
-			MinR = 75,
+			MinR = 150,
 			Types =
 			[
 				{
@@ -318,7 +308,7 @@ gt.Const.World.Spawn.BanditRaiders <-
 		},
 		{
 			Weight = 1,
-			MinR = 300,
+			MinR = 600,
 			Types =
 			[
 				{
@@ -330,7 +320,7 @@ gt.Const.World.Spawn.BanditRaiders <-
 		},
 		{
 			Weight = 1,
-			MinR = 300,
+			MinR = 600,
 			Types =
 			[
 				{
@@ -414,7 +404,7 @@ gt.Const.World.Spawn.BanditDefenders <-
 					Cost = 20
 				},
 				{
-					MinR = 500,
+					MinR = 750,
 					Type = this.Const.World.Spawn.Troops.BanditVeteran,
 					Cost = 30
 				}
@@ -447,17 +437,12 @@ gt.Const.World.Spawn.BanditDefenders <-
 				{
 					Type = this.Const.World.Spawn.Troops.Wardog,
 					Cost = 5
-				},
-				{
-					MinR = 250,
-					Type = this.Const.World.Spawn.Troops.BanditOutrider,
-					Cost = 30
 				}
 			]
 		},
 		{
 			Weight = 5,
-			MinR = 75,
+			MinR = 150,
 			Types =
 			[
 				{
@@ -612,11 +597,6 @@ gt.Const.World.Spawn.BanditBoss <-
 				{
 					Type = this.Const.World.Spawn.Troops.Wardog,
 					Cost = 5
-				},
-				{
-					MinR = 250,
-					Type = this.Const.World.Spawn.Troops.BanditOutrider,
-					Cost = 30
 				}
 			]
 		},

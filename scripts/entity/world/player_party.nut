@@ -79,7 +79,8 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 			}
 			else if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 			{
-				this.m.Strength +=  6 + i + pow(bro.getLevel(),1.25);
+			//	this.m.Strength +=  6 + i + pow(bro.getLevel(),1.25);
+				this.m.Strength +=  i + ((bro.getLevel() / 2) + (pow(bro.getLevel(),1.2)));
 				local mainhand = bro.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
 				local offhand = bro.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
 				local body = bro.getItems().getItemAtSlot(this.Const.ItemSlot.Body);
@@ -354,6 +355,12 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 					break;
 				case 110:
 					image = "figure_player_assassin";
+					break;
+				case 111:
+					image = "figure_player_beggar";
+					break;
+				case 112:
+					image = "figure_player_legion";
 					break;
 			}
 		}

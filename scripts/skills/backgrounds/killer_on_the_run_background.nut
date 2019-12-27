@@ -66,6 +66,23 @@ this.killer_on_the_run_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.m.IsOutlawBackground = true;
 		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[1];
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[2];
+		{
+				local roster = this.World.getPlayerRoster().getAll();
+				local levels = 0;
+				local count = 0;
+				foreach( i, bro in roster )
+					{
+					local brolevel = bro.getLevel();
+					levels += brolevel;
+					count += 1;
+					}
+				local avgLevel = this.Math.floor(levels / count);					// gets the average of player levels
+				local busRep = this.World.Assets.getBusinessReputation();			//checks how reliable the player is
+				local repPoints = this.Math.floor(busRep / 1000);					// turns that rep into points
+				local repLevelAvg =  this.Math.floor((avgLevel + repPoints) / 4);	// Averages levels and points and
+				local broLevel = this.Math.rand(1, repLevelAvg);					// level is randomly chosen up to our score
+				this.m.Level += broLevel;										
+		}		
 		this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.DaggerTree,

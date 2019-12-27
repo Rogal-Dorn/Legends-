@@ -91,7 +91,7 @@ gt.Const.Tactical.Actor.LegendOrcElite <- {
 	DamageTotalMult = 1.25
 };
 gt.Const.Tactical.Actor.LegendOrcBehemoth <- {
-	XP = 600,
+	XP = 400,
 	ActionPoints = 9,
 	Hitpoints = 800,
 	Bravery = 55,

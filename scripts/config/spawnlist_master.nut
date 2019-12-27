@@ -1135,6 +1135,22 @@ gt.Const.World.Spawn.Troops <- {
 		Cost = 60,
 		Row = 2,
 		Script = "scripts/entity/tactical/enemies/legend_catapult"
+	},
+	LegendHorse = {
+		ID = this.Const.EntityType.LegendHorse,
+		Variant = 0,
+		Strength = 20,
+		Cost = 20,
+		Row = 2,
+		Script = "scripts/entity/tactical/enemies/legend_catapult"
+	},
+	SkeletonGladiator = {
+		ID = this.Const.EntityType.SkeletonGladiator,
+		Variant = 0,
+		Strength = 40,
+		Cost = 40,
+		Row = 2,
+		Script = "scripts/entity/tactical/enemies/legend_skeleton_gladiator"
 	}
 };
 

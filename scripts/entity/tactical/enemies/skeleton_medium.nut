@@ -74,6 +74,7 @@ this.skeleton_medium <- this.inherit("scripts/entity/tactical/skeleton", {
 				[0, "cloth/legend_robes_nun"],
 				[0, "cloth/legend_apron_smith"],
 				[0, "cloth/legend_robes_wizard"],
+				[20, "cloth/legend_ancient_cloth"],
 				[1, "cloth/legend_sackcloth"],
 				[1, "cloth/legend_sackcloth_patched"],
 				[1, "cloth/legend_sackcloth_tattered"],
@@ -89,10 +90,10 @@ this.skeleton_medium <- this.inherit("scripts/entity/tactical/skeleton", {
 					[0, "chain/legend_armor_mail_shirt"],
 					[0, "chain/legend_armor_mail_shirt_simple"],
 					[0, "chain/legend_armor_rusty_mail_shirt"],
-					[1, "chain/legend_armor_ancient_double_mail"],
-					[1, "chain/legend_armor_ancient_mail"],
+					[4, "chain/legend_armor_ancient_double_mail"],
+					[4, "chain/legend_armor_ancient_mail"],
 					[0, "chain/legend_armor_basic_mail"],
-					[0, "chain/legend_armor_hauberk"],
+					[1, "chain/legend_armor_hauberk"],
 					[0, "chain/legend_armor_hauberk_full"],
 					[0, "chain/legend_armor_hauberk_sleevless"],
 					[0, "chain/legend_armor_reinforced_mail"],
@@ -126,9 +127,10 @@ this.skeleton_medium <- this.inherit("scripts/entity/tactical/skeleton", {
 					[0, "plate/legend_armor_leather_riveted"],
 					[0, "plate/legend_armor_leather_riveted_light"],
 					[0, "plate/legend_armor_leather_scale"],
-					[1, "plate/legend_armor_plate_ancient_chest"],
-					[1, "plate/legend_armor_plate_ancient_harness"],
-					[1, "plate/legend_armor_plate_ancient_mail"],
+					[50, "plate/legend_armor_plate_ancient_chest"],
+					[1, "plate/legend_armor_plate_ancient_chest_restored"],
+					[30, "plate/legend_armor_plate_ancient_harness"],
+					[29, "plate/legend_armor_plate_ancient_mail"],
 					[0, "plate/legend_armor_plate_ancient_scale"],
 					[0, "plate/legend_armor_plate_ancient_scale_coat"],
 					[0, "plate/legend_armor_plate_ancient_scale_harness"],
@@ -174,7 +176,17 @@ this.skeleton_medium <- this.inherit("scripts/entity/tactical/skeleton", {
 
 
 
-		this.m.Items.equip(this.new("scripts/items/helmets/ancient/ancient_legionary_helmet"));
+		
+
+			local r = this.Math.rand(1, 100);
+			if (r <= 99)
+			{
+			this.m.Items.equip(this.new("scripts/items/helmets/ancient/ancient_legionary_helmet"));
+			}
+			if (r = 100)
+			{
+			this.m.Items.equip(this.new("scripts/items/helmets/ancient/legend_ancient_legionary_helmet_restored"));
+			}
 	}
 
 });

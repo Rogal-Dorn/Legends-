@@ -2018,3 +2018,136 @@ Fixes Horse spawning backwards after killing Outrider
 Fixes Horse indices not found
 Fixes Horse Trait's error applying Movement and Fatigue costs
 Fixes Catapult not spawning due to init
+
+13.0.0.19 - legendary scaling v2
+-
+Legendary difficulty:
+* Cash, Stash and other items no longer effect scaling
+* Mainhand, Offhand, Body and Head equipped items effect scaling, at a rate of 4000g value to 1 strength. 
+* level based scaling set to legend veteran level 
+* Location based scaling:
+** Enemies now have additional scaling based on distance from civilisation 
+** Only kicks in further than 14 tiles from the nearest town 
+** Rate is a multiplier equal to (distance / 14)
+** Beasts already had this kind of scaling, their rate is now distance / 7
+* Greenskin Crises increases strength of orcs by 20% instead of 10%
+* Undead Crises increases strength of undead by 20% instead of 10%
+* Noble war increases strength of bandits and barbarians by 20% instead of 10% 
+
+-
+Non-legendary changes:
+*Berserker rage perk and tooltip updated
+*Fixed Coordinating volleys effect image error 
+*Bears get 50 body and head armor 
+*Fixed crash facing outriders 
+*Fixed horse movement error 
+
+13.0.0.20 - Armor balance test
+Rebalanced all armor layer stats (thanks to wacken)
+Changed many enemy armors to reflect the new armor tiers
+Extended spawn restrictions on elite bandit troops so they appear later 
+New Enemy - Ancient Gladiator - ranged skeleton unit, with a new ancient gladiator armor and helm 
+New Origin - Risen Legion - 12 skeletons well equipped in restored armor, 66% chance to resurect on death, all towns hate you, can't hire from towns. 
+Added restored legionaire armor and helm - Ancient Legionaires have 1% chance to wear each.  Recipes added to restore legionaire armor. 
+Added four frogmouth helms, including two named helms. Can spawn on knights, named variants on knight champions. 
+Added heavy full plate, can spawn on knights  
+Added named painted heavy full plate layer - 1% chance to spawn on knights.  First named layer 
+added dark tunic layers - zombies often wear them 
+Fixed incorrect or missing enemy orientation icons showing for some recent enemies 
+Fixed some enemies being named incorrectly 
+Fixed issue misc with gather building 
+
+13.0.0.21 We are Legion 
+
+- Warlock and Risen legion revived party members correctly look and act undead
+- Undead now have permanent injuries with tooltips that describe their condition
+* Skeletons have -50% HP, +90% damage reduction vs bows, +66% vs slings snd stakes, +50% against stabbing
+* Zombies lose -3AP, but gain the Zombie Bite ability that infects on legendary difficulty 
+- Risen legion will mostly now each have backgrounds that align with their weapons, still a small chance at different backgrounds.
+- Risen Legion is now disliked by human towns, gets along with other undead. Relations won't normalise 
+- Risen Legion has most camp activities unlocked and upgraded from the start, also starts with cool music 
+- Fixed legion and beggar world icons 
+- Fixed error from restored helm crafting recipe
+- Fixes incorrectly labeled enemies 
+
+
+13.0.0.22 - Armor Rebalance and Recruit Scaling  (not save ccompatible)
+
+Armor Layer Rebalance:
+1. Vanilla enemies should roughly retain their armor ranges and loot value
+2. Players should end up with roughly the same amount armor per price and fatigue as vanilla
+3. There should be light, medium and heavy options in each layer
+4. Layering a higher layer over a lower layer should give similar values to the higher layer's vanilla stats.
+-
+Reputation based Recruit Scaling:  
+*Some backgrounds will come with higher levels if your moral reputation is very low or high. 
+* The scaling is based on your moral reputation and average level of your company 
+* Monks, Nuns, Flagellants, Witch hunters will be available for hire at Saintly reputation. 
+* Squires available at Chivalrous 
+* Sellswords and peddlers available at Neutral repuation 
+* Poachers, vagabonds, cultists and thieves available at Cruel 
+* Asassins, Killers and Raiders come at Dreaded reputation. 
+Legendary difficulty: All recruits can now come with higher levels in the late game. Stacks with above bonuses. 
+-
+50 New Layer Recolours: 
+* 24 Thick tunics
+* 10 rusted armors 
+* 5 noble armors, 
+* 2 dark thick tunics 
+* 5 regular tunics 
+* 4 ancient cloth layers  (drops from ancient dead)
+* 5 restored ancient cloth (Legion begins with these)
+*Several armor layers, beards and heads altered to fit in better 
+-
+Warlock gains bleed and whip skills, thrall zombies and skeletons get extra perks and abilities. On legendary zombies can infect and skeletons get executioner. 
+Fixes skeletons having health reduction applied twice
+Fixes warlock zombie bite error
+Fixes zombies not dying 
+Fixes knights not loading
+Fixes bears not dying 
+Fixes undead settlement defender error 
+Fixes gatherer building not spawning items correctly
+Removed Outriders from the spawn pool while working out their bugs 
+Peasant classes appear earlier in peasant groups 
+Skeleton Gladiators now spawn properly
+Legendary barbarians no longer have Nimble, instead getting Alert, Balance, Relentless, Onslaught and Overwhelm 
+Legendary party strength scaling cares more about party size. 
+
+13.0.0.23  Tasty treats 
+New Perk - "Camp Cook" unlocks the creation of food items in the crafting tent. 
+* New item - "Cooking Spices" created from salt with roots and berries, used for crafting other foods.
+* It is possible to create: dried fruit, cured venison, smoked ham, porridge, pudding, pie and cured rations
+* Alcohol brewing perk now unlocks the crafting of beer and wine 
+* Graphics, text and stats updated for craftable foods
+Altered Chef, Healer and Repair trees so their perks come earlier. 
+Fixes missing battle orientation icons for slinger, fencer and halberdier 
+Fixes hunting tent error 
+Fixes enemies in thick tunics not dying when shot by arrows 
+Fixes rusty mail not found error 
+Fixes spelling errors in some backgrounds
+Fixes bandit veterans not loading 
+
+13.0.0.24 Stitches and Fixes 
+Fixes backwards compatibility with saves prior to 13.0.0.22  
+Fixes armor upgrades not granting durability 
+Fixes crash when loading loading saves 
+Fixes display and functional issues with patched mail
+Fixes robe not found error 
+Fixes over-saturation and lightness in some cloaks 
+Fixes invisible armor on bandits 
+Fixes invisble noble mail
+Fixes the last of the undying thugs 
+Cloaks split into Common, Heavy and Noble 
+*Common cloaks available at markets, cheap, heavy, not much protection or resolve
+*Heavy cloaks available at armorsmiths. expensive, heavy, higher protection, standard resolve 
+*Noble cloaks are rarely available at armorsmiths, or commonly if there is an attached dyer. Very expensive, lightweight, good resolve 
+*Cloaks are now craftable if you have a Seamstress or Tailor in your party 
+
+13.0.0.24
+fixes zombies not dying when shot 
+Fixes stray invisble noble mail
+Optimists and pessemists are no longer irrational 
+icon updated for fear/hate nobles 
+Commanders lose excess loyal 
+Talen star distribution more likely to align with stats 
+fixed bug in the talen star distribution that resulted in some characters not getting three stars 

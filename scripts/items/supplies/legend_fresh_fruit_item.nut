@@ -1,4 +1,4 @@
-this.legend_fresh_meat_item <- this.inherit("scripts/items/supplies/food_item", {
+this.legend_fresh_fruit_item <- this.inherit("scripts/items/supplies/food_item", {
 	m = {},
 	function create()
 	{
