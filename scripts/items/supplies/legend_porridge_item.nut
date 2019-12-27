@@ -7,8 +7,8 @@ this.legend_porridge_item <- this.inherit("scripts/items/supplies/food_item", {
 		this.m.Name = "Porridge";
 		this.m.Description = "Provisions. A staple meal that can be made from whatever ingredients are to hand";
 		this.m.Icon = "supplies/legend_porridge.png";
-		this.m.Value = 60;
-		this.m.GoodForDays = 5;
+		this.m.Value = 180;
+		this.m.GoodForDays = 10;
 	}
 
 	function getBuyPrice()

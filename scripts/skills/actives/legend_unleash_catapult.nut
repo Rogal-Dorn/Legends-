@@ -13,7 +13,7 @@ this.legend_unleash_catapult <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_unleash_catapult";
 		this.m.Name = "Summon Catapult";
-		this.m.Description = "Summon a faithful bear. Needs a free tile adjacent.";
+		this.m.Description = "Summon a catapult. Needs a free tile adjacent.";
 		this.m.Icon = "skills/catapult_square.png";
 		this.m.IconDisabled = "skills/catapult_square_bw.png";
 		this.m.Overlay = "active_165";

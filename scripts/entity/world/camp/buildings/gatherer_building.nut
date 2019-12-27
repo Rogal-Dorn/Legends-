@@ -221,9 +221,9 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		}
 
 		local secondary = [
-			"scripts/items/misc/roots_and_berries_item",
+			"scripts/items/supplies/roots_and_berries_item",
 			"scripts/items/misc/mysterious_herbs_item",
-			"scripts/items/misc/medicine_small_item"
+			"scripts/items/supplies/medicine_small_item"
 		];
 
 		//check for apothecaries
@@ -235,8 +235,8 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 				"scripts/items/accessory/berserker_mushrooms_item",
 				"scripts/items/accessory/legend_apothecary_mushrooms_item",
 				"scripts/items/misc/antidote_item",
-				"scripts/items/misc/poison_item",
-				"scripts/items/misc/medicine_item"
+				"scripts/items/accessory/poison_item",
+				"scripts/items/supplies/medicine_item"
 			])
 		}
 
@@ -250,10 +250,10 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		if (apothecarylevels >= 10 && brewerlevels >= 1)
 		{	
 			secondary.extend([
-				"scripts/items/misc/lionheart_potion_item",
-				"scripts/items/misc/ironwill_potion_item",
-				"scripts/items/misc/recovery_potion_item",
-				"scripts/items/misc/cat_potion_item"
+				"scripts/items/accessory/lionheart_potion_item",
+				"scripts/items/accessory/ironwill_potion_item",
+				"scripts/items/accessory/recovery_potion_item",
+				"scripts/items/accessory/cat_potion_item"
 			]);
 		}
 

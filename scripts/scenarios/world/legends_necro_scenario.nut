@@ -48,7 +48,8 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
         bros[1].getTags().add("skeleton");
         bros[1].setStartValuesEx(this.Const.CharacterBackgroundsAnimated);
 		bros[1].getBackground().m.RawDescription = "You found %name% starved to death on the road, you tease him endlessly about being skin and bones. You enjoy the ribbing, but he does not find it humerous.";
-        bros[1].getSkills().add(this.new("scripts/skills/special/legend_animated_player_properties"));
+        bros[1].getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));
+		bros[1].getSkills().add(this.new("scripts/skills/racial/skeleton_racial"));
 		bros[1].setVeteranPerks(3);	
 		bros[2].setPlaceInFormation(4);
         bros[2].getTags().add("PlayerZombie");
@@ -56,7 +57,8 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
         bros[2].getTags().add("zombie_minion");
         bros[2].setStartValuesEx(this.Const.CharacterBackgroundsAnimated);
 		bros[2].getBackground().m.RawDescription = "You can not remember much about who %name% was in life, it is probably for the best that he can\'t either. All that matters is he is yours now.";
-        bros[2].getSkills().add(this.new("scripts/skills/special/legend_animated_player_properties"));
+        bros[2].getSkills().add(this.new("scripts/skills/injury_permanent/legend_rotten_flesh"));
+		bros[2].getSkills().add(this.new("scripts/skills/actives/zombie_bite"));
 		bros[2].setVeteranPerks(3);	
 		this.World.Assets.addMoralReputation(-100);
 		this.World.Assets.m.Money = this.World.Assets.m.Money / 2;

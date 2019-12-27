@@ -258,7 +258,7 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 		this.character_background.onAdded();
 		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_2"));
 		this.m.Container.add(this.new("scripts/skills/perks/perk_pathfinder"));
-		this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
+		this.m.Container.add(this.new("scripts/skills/traits/athletic_trait"));
 		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_guide_steps"));
 		this.m.Container.add(this.new("scripts/skills/perks/perk_footwork"));
 
@@ -280,7 +280,7 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 		local talents = this.getContainer().getActor().getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.RangedSkill] = 3;
-		talents[this.Const.Attributes.Fatigue] = 2;
+		talents[this.Const.Attributes.Fatigue] = 3;
 		this.getContainer().getActor().fillTalentValues(2, true);
 		local items = this.getContainer().getActor().getItems();
 
@@ -325,7 +325,7 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 		local talents = this.getContainer().getActor().getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.RangedSkill] = 3;
-		talents[this.Const.Attributes.Fatigue] = 2;
+		talents[this.Const.Attributes.Fatigue] = 3;
 		this.getContainer().getActor().fillTalentValues(2, true);
 		local items = this.getContainer().getActor().getItems();
 

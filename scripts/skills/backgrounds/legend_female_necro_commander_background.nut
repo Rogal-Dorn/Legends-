@@ -37,7 +37,7 @@ this.legend_female_necro_commander_background <- this.inherit("scripts/skills/ba
 			"trait.loyal",
 			"trait.quick",
 			"trait.swift",
-			"trait.suser_footing",
+			"trait.sure_footing",
 			"trait.tough",
 			"trait.disloyal"
 		];

@@ -7,6 +7,14 @@ this.legends_zombie_high <- this.inherit("scripts/entity/tactical/legend_zombie"
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_fearsome"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_reach_advantage"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));
+		this.m.Skills.add(this.new("scripts/skills/actives/zombie_bite"));
+		this.m.Skills.add(this.new("scripts/skills/injury_permanent/legend_rotten_flesh"));
+		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+		{
+		this.m.Hitpoints = b.Hitpoints * 1.5;
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_nine_lives"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_last_stand"));
+		}
 		this.m.Skills.update();	
 	}
 

@@ -19,8 +19,10 @@ this.legend_joint_cover_upgrade <- this.inherit("scripts/items/legend_armor/lege
 		this.m.SpriteCorpseFront = null;
 		this.m.SpriteCorpseBack = "upgrade_10_back_dead";
 		this.m.Value = 300;
+		this.m.Condition = 40;
+		this.m.ConditionMax = 40;
 		this.m.ConditionModifier = 30;
-		this.m.StaminaModifier = 3;
+		this.m.StaminaModifier = -3;
 	}
 
 	function getTooltip()
