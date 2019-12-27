@@ -129,12 +129,14 @@ this.legend_bandit_outrider <- this.inherit("scripts/entity/tactical/human", {
 
 	function onDamageReceived( _attacker, _skill, _hitInfo )
 	{
+		this.logInfo("Outrider took damage");
 		this.m.LastBodyPartHit = _hitInfo.BodyPart;
 		this.actor.onDamageReceived(_attacker, _skill, _hitInfo);
 	}
 
 	function onDeath( _killer, _skill, _tile, _fatalityType )
 	{
+		this.logInfo("onDeath begun");
 		this.m.Info = {
 			Tile = this.getTile(),
 			Faction = this.getFaction(),
@@ -146,19 +148,24 @@ this.legend_bandit_outrider <- this.inherit("scripts/entity/tactical/human", {
 			WolfSaturation = this.getSprite("wolf").Saturation,
 			Morale = this.Math.max(this.Const.MoraleState.Breaking, this.getMoraleState())
 		};
+		
 
 		if (this.m.LastBodyPartHit == this.Const.BodyPart.Body)
 		{
+			this.logInfo("Spawning dead horse " + Tile);
 			this.spawnDeadWolf(_killer, _skill, _tile, _fatalityType);
+
 		}
 		else
 		{
+			this.logInfo("spawning dead rider " + Tile);
 			this.human.onDeath(_killer, _skill, _tile, _fatalityType);
 		}
 	}
 
 	function onAfterDeath( _tile )
 	{
+		this.logInfo("onAfterDeath begun");
 		if (this.Tactical.Entities.getHostilesNum() == 0)
 		{
 			return;
@@ -196,10 +203,12 @@ this.legend_bandit_outrider <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.m.LastBodyPartHit == this.Const.BodyPart.Body)
 		{
+			this.logInfo("Spawning rider");
 			this.spawnGoblin(this.m.Info);
 		}
 		else
 		{
+			this.logInfo("Spawning mount");
 			this.spawnWolf(this.m.Info);
 		}
 	}
@@ -210,7 +219,7 @@ this.legend_bandit_outrider <- this.inherit("scripts/entity/tactical/human", {
 		{
 			return;
 		}
-
+		this.logInfo("Spawn dead mount begun");
 		local flip = this.Math.rand(0, 100) < 50;
 		local decal;
 		this.m.IsCorpseFlipped = flip;
@@ -258,6 +267,7 @@ this.legend_bandit_outrider <- this.inherit("scripts/entity/tactical/human", {
 
 	function spawnWolf( _info )
 	{
+		this.logInfo("Spawn mount begun");
 		this.Sound.play(this.m.Sound[this.Const.Sound.ActorEvent.DamageReceived][this.Math.rand(0, this.m.Sound[this.Const.Sound.ActorEvent.DamageReceived].len() - 1)], this.Const.Sound.Volume.Actor * this.m.SoundVolume[this.Const.Sound.ActorEvent.Other1], _info.Tile.Pos, 1.0);
 		local entity = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/legend_horse", _info.Tile.Coords.X, _info.Tile.Coords.Y);
 
@@ -272,6 +282,7 @@ this.legend_bandit_outrider <- this.inherit("scripts/entity/tactical/human", {
 
 	function spawnGoblin( _info )
 	{
+		this.logInfo("Spawn rider begun");
 		this.Sound.play(this.m.Sound[this.Const.Sound.ActorEvent.Other1][this.Math.rand(0, this.m.Sound[this.Const.Sound.ActorEvent.Other1].len() - 1)], this.Const.Sound.Volume.Actor * this.m.SoundVolume[this.Const.Sound.ActorEvent.Other1], _info.Tile.Pos, 1.0);
 		local entity = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/bandit_thug", _info.Tile.Coords.X, _info.Tile.Coords.Y);
 

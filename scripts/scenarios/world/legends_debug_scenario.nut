@@ -212,6 +212,16 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			this.World.Assets.getStash().add(item);
 		}
 
+
+		
+			local item = this.new("scripts/items/legend_armor/cloak/legend_armor_cloak_common")
+			this.World.Assets.getStash().add(item);
+			local item = this.new("scripts/items/legend_armor/cloak/legend_armor_cloak_heavy")
+			this.World.Assets.getStash().add(item);
+			local item = this.new("scripts/items/legend_armor/cloak/legend_armor_cloak_noble")
+			this.World.Assets.getStash().add(item);
+
+
 		local fixed = [
 			"legend_armor_crusader",
 			"legend_armor_rabble_fur",

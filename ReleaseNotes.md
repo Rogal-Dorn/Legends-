@@ -2133,3 +2133,12 @@ Fixes crash when loading loading saves
 Fixes display and functional issues with patched mail
 Fixes robe not found error 
 Fixes over-saturation and lightness in some cloaks 
+Fixes invisible armor on bandits 
+Fixes invisble noble mail
+Fixes the last of the undying thugs 
+Cloaks split into Common, Heavy and Noble 
+*Common cloaks available at markets, cheap, heavy, not much protection or resolve
+*Heavy cloaks available at armorsmiths. expensive, heavy, higher protection, standard resolve 
+*Noble cloaks are rarely available at armorsmiths, or commonly if there is an attached dyer. Very expensive, lightweight, high resolve 
+
+
