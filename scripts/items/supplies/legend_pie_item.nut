@@ -8,7 +8,7 @@ this.legend_pie_item <- this.inherit("scripts/items/supplies/food_item", {
 		this.m.Description = "Provisions. A large pie made from freshly sourced ingredients.";
 		this.m.Icon = "supplies/legend_pie.png";
 		this.m.Value = 250;
-		this.m.GoodForDays = 10;
+		this.m.GoodForDays = 8;
 	}
 
 	function getBuyPrice()

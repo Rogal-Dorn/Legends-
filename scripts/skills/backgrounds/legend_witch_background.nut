@@ -41,7 +41,7 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 			"trait.loyal",
 			"trait.quick",
 			"trait.swift",
-			"trait.suser_footing",
+			"trait.sure_footing",
 			"trait.tough",
 			"trait.disloyal",
 			"trait.loyal"

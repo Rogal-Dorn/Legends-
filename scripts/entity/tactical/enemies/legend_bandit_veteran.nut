@@ -285,7 +285,7 @@ this.legend_bandit_veteran <- this.inherit("scripts/entity/tactical/human", {
 				this.m.Skills.add(this.new("scripts/skills/perks/perk_feint"));
 							 if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 							{
-								this.m.Skills.add(this.new("scripts/skills/perks/perk_deulist"));
+								this.m.Skills.add(this.new("scripts/skills/perks/perk_duelist"));
 							}
 			}
 			else if (r == 8)
