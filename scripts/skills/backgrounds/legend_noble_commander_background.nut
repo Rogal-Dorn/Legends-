@@ -253,7 +253,7 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_4"));
 		this.m.Container.add(this.new("scripts/skills/perks/perk_rally_the_troops"));
 		this.m.Container.add(this.new("scripts/skills/perks/perk_fortified_mind"));
-		this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
+		this.m.Container.add(this.new("scripts/skills/traits/determined_trait"));
 
 		if (this.m.IsFemaleBackground == true)
 		{
@@ -270,7 +270,7 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 		local talents = this.getContainer().getActor().getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.Bravery] = 3;
-		talents[this.Const.Attributes.MeleeSkill] = 2;
+		talents[this.Const.Attributes.MeleeSkill] = 3;
 		this.getContainer().getActor().fillTalentValues(2, true);
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/armor/mail_shirt"));
@@ -290,7 +290,7 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 		local talents = this.getContainer().getActor().getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.Bravery] = 3;
-		talents[this.Const.Attributes.MeleeSkill] = 2;
+		talents[this.Const.Attributes.MeleeSkill] = 3;
 		this.getContainer().getActor().fillTalentValues(2, true);
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/helmets/greatsword_hat"));
