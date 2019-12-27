@@ -668,14 +668,70 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		this.getContainer().getActor().setHitpoints(b.Hitpoints);
 
 		local weighted = []
-		weighted.push(this.Math.floor((a.Hitpoints[1] - b.Hitpoints) / (a.Hitpoints[1] - a.Hitpoints[0]) * 100.0))
-		weighted.push(this.Math.floor((a.Bravery[1] - b.Bravery) / (a.Bravery[1] - a.Bravery[0]) * 100.0))
-		weighted.push(this.Math.floor((a.Stamina[1] - b.Stamina) / (a.Stamina[1] - a.Stamina[0]) * 100.0))
-		weighted.push(this.Math.floor((a.Initiative[1] - b.Initiative) / (a.Initiative[1] - a.Initiative[0]) * 100.0))
-		weighted.push(this.Math.floor((a.MeleeSkill[1] - b.MeleeSkill) / (a.MeleeSkill[1] - a.MeleeSkill[0]) * 100.0))
-		weighted.push(this.Math.floor((a.RangedSkill[1] - b.RangedSkill) / (a.RangedSkill[1] - a.RangedSkill[0]) * 100.0))
-		weighted.push(this.Math.floor((a.MeleeDefense[1] - b.MeleeDefense) / (a.MeleeDefense[1] - a.MeleeDefense[0]) * 100.0))
-		weighted.push(this.Math.floor((a.RangedDefense[1] - b.RangedDefense) / (a.RangedDefense[1] - a.RangedDefense[0]) * 100.0))
+		if (a.Hitpoints[1] == a.Hitpoints[0])
+		{
+			weighted.push(50)
+		}
+		else
+		{
+			weighted.push(this.Math.floor((b.Hitpoints - a.Hitpoints[0]) * 100.0 / (a.Hitpoints[1] - a.Hitpoints[0])))
+		}
+		if (a.Bravery[1] == a.Bravery[0])
+		{
+			weighted.push(50)
+		}
+		else
+		{
+			weighted.push(this.Math.floor((b.Bravery - a.Bravery[0]) * 100.0 / (a.Bravery[1] - a.Bravery[0])))
+		}
+		if (a.Stamina[1] == a.Stamina[0])
+		{
+			weighted.push(50)
+		}
+		else
+		{
+			weighted.push(this.Math.floor((b.Stamina - a.Stamina[0]) * 100.0 / (a.Stamina[1] - a.Stamina[0])))
+		}
+		if (a.MeleeSkill[1] == a.MeleeSkill[0])
+		{
+			weighted.push(50)
+		}
+		else
+		{
+			weighted.push(this.Math.floor((b.MeleeSkill - a.MeleeSkill[0]) * 100.0 / (a.MeleeSkill[1] - a.MeleeSkill[0])))
+		}
+		if (a.RangedSkill[1] == a.RangedSkill[0])
+		{
+			weighted.push(50)
+		}
+		else
+		{
+			weighted.push(this.Math.floor((b.RangedSkill - a.RangedSkill[0]) * 100.0 / (a.RangedSkill[1] - a.RangedSkill[0])))
+		}
+		if (a.MeleeDefense[1] == a.MeleeDefense[0])
+		{
+			weighted.push(50)
+		}
+		else
+		{
+			weighted.push(this.Math.floor((b.MeleeDefense - a.MeleeDefense[0]) * 100.0 / (a.MeleeDefense[1] - a.MeleeDefense[0])))
+		}
+		if (a.RangedDefense[1] == a.RangedDefense[0])
+		{
+			weighted.push(50)
+		}
+		else
+		{
+			weighted.push(this.Math.floor((b.RangedDefense - a.RangedDefense[0]) * 100.0 / (a.RangedDefense[1] - a.RangedDefense[0])))
+		}
+		if (a.Initiative[1] == a.Initiative[0])
+		{
+			weighted.push(50)
+		}
+		else
+		{
+			weighted.push(this.Math.floor((b.Initiative - a.Initiative[0]) * 100.0 / (a.Initiative[1] - a.Initiative[0])))
+		}
 		return weighted;
 	}
 

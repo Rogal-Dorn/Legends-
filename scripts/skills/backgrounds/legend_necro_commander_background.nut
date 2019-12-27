@@ -318,14 +318,14 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 		
 		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_1"));
 		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_brink_of_death"));
-		this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
+		this.m.Container.add(this.new("scripts/skills/traits/survivor_trait"));
 	}
 
 	function onAddEquipment()
 	{
 		local talents = this.getContainer().getActor().getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
-		talents[this.Const.Attributes.Fatigue] = 2;
+		talents[this.Const.Attributes.Fatigue] = 3;
 		talents[this.Const.Attributes.Hitpoints] = 3;
 		this.getContainer().getActor().fillTalentValues(2, true);
 		local items = this.getContainer().getActor().getItems();
@@ -344,7 +344,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 	{
 		local talents = this.getContainer().getActor().getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
-		talents[this.Const.Attributes.Fatigue] = 2;
+		talents[this.Const.Attributes.Fatigue] = 3;
 		talents[this.Const.Attributes.Hitpoints] = 3;
 		this.getContainer().getActor().fillTalentValues(2, true);
 		local items = this.getContainer().getActor().getItems();
