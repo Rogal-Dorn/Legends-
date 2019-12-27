@@ -43,7 +43,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		CampHealing = 0,
 		LastCampTime = 0,
 		InReserves = false,
-		StarWeights = [1,1,1,1,1,1,1,1]
+		StarWeights = [50,50,50,50,50,50,50,50]
 	},
 	function setName( _value )
 	{
@@ -2037,11 +2037,11 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.getTags().has("PlayerZombie"))
 		{
-			this.m.StarWeights = background.buildAttributes("zombie");
+			this.m.StarWeights = background.buildAttributes("zombie", attributes);
 		}
 		else if (this.getTags().has("PlayerSkeleton"))
 		{
-			this.m.StarWeights = background.buildAttributes("skeleton");
+			this.m.StarWeights = background.buildAttributes("skeleton", attributes);
 		}
 		else
 		{
@@ -2052,14 +2052,15 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 		if (_addTraits)
 		{
-			local maxTraits = this.Math.rand(this.Math.rand(0, 1) == 0 ? 0 : 1, 2);
+			local maxTraits = 2;	//this.Math.rand(this.Math.rand(0, 1) == 0 ? 0 : 1, 2);
 			local traits = [
 				background
 			];
 
 			for( local i = 0; i < maxTraits; i = ++i )
 			{
-				for( local j = 0; j < 10; j = ++j )
+				//for( local j = 0; j < 10; j = ++j )
+				while( true )
 				{
 					local trait = this.Const.CharacterTraits[this.Math.rand(0, this.Const.CharacterTraits.len() - 1)];
 					local nextTrait = false;
@@ -2127,88 +2128,68 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		{
 			return;
 		}
-
-		local count = 0;
-		for( local done = 0; done < _num;  )
+		
+		local attributes = [];
+		local weights = [];
+		local totalWeight = 0;
+		
+		for (local i = 0; i < this.m.StarWeights.len(); i = ++i)
 		{
-			if (count > this.m.Talents.len())
+			if (this.m.Talents[i] != 0 )
 			{
-				break;
+				continue;
 			}
-			count = ++count
-
-			local totalWeight = 0;
-			for (local i = 0; i < this.m.StarWeights.len() - 1; i = ++i)
+	
+			if (this.getBackground() != null && this.getBackground().getExcludedTalents().find(i) != null)
 			{
-				if (this.m.Talents[i] != 0 )
-				{
-					continue;
-				}
-
-				if (this.getBackground() != null && this.getBackground().getExcludedTalents().find(i) != null)
-				{
-					continue;
-				}
-
-				if (this.getTags().has("PlayerZombie") && (i == this.Const.Attributes.Bravery || i == this.Const.Attributes.Fatigue || i == this.Const.Attributes.Initiative))
-				{
-					continue;
-				}
-
-				if (this.getTags().has("PlayerSkeleton") && (i == this.Const.Attributes.Bravery || i == this.Const.Attributes.Fatigue || i == this.Const.Attributes.Hitpoints))
-				{
-					continue;
-				}
-
-				totalWeight += this.m.StarWeights[i];
+				continue;
 			}
-
-			local r = this.Math.rand(1, totalWeight);
-
-			for (local i = 0; i < this.m.StarWeights.len() - 1; i = ++i)
+	
+			if (this.getTags().has("PlayerZombie") && (i == this.Const.Attributes.Bravery || i == this.Const.Attributes.Fatigue || i == this.Const.Attributes.Initiative))
 			{
-				if (this.m.Talents[i] != 0 )
+				continue;
+			}
+	
+			if (this.getTags().has("PlayerSkeleton") && (i == this.Const.Attributes.Bravery || i == this.Const.Attributes.Fatigue || i == this.Const.Attributes.Hitpoints))
+			{
+				continue;
+			}
+			attributes.push(i);						
+			weights.push(this.m.StarWeights[i]);
+			totalWeight += this.m.StarWeights[i];
+		}
+		
+		for( local done = 0; done < _num; done = ++done)
+		{
+			local weight = this.Math.rand(0, totalWeight);
+			local totalhere = 0
+			for (local i = 0; i < attributes.len(); i = ++i)
+			{
+				if (weight > totalhere && weight <= totalhere + weights[i])
 				{
-					continue;
-				}
-
-				if (this.getBackground() != null && this.getBackground().getExcludedTalents().find(i) != null)
-				{
-					continue;
-				}
-
-				if (this.getTags().has("PlayerZombie") && (i == this.Const.Attributes.Bravery || i == this.Const.Attributes.Fatigue || i == this.Const.Attributes.Initiative))
-				{
-					continue;
-				}
-
-				if (this.getTags().has("PlayerSkeleton") && (i == this.Const.Attributes.Bravery || i == this.Const.Attributes.Fatigue || i == this.Const.Attributes.Hitpoints))
-				{
-					continue;
-				}
-
-				r = r - this.m.StarWeights[i];
-				if (r > 0)
-				{
-					continue;
-				}
-
-				local t = this.Math.rand(1, 100);
-				if (t <= 60)
-				{
-					this.m.Talents[i] = 1;
-				}
-				else if (t <= 90)
-				{
-					this.m.Talents[i] = 2;
+					local r = this.Math.rand(1, 100);
+					local j = attributes[i];
+					if (r <= 60)
+					{
+						this.m.Talents[j] = 1;
+					}
+					else if (r <= 90)
+					{
+						this.m.Talents[j] = 2;
+					}
+					else
+					{
+						this.m.Talents[j] = 3;
+					}
+					attributes.remove(i)
+					totalWeight -= weights[i]
+					weights.remove(i)
+					break;
 				}
 				else
 				{
-					this.m.Talents[i] = 3;
+					totalhere += weights[i]
 				}
-
-				done = ++done;
-				break;
 			}
 		}
 	}
