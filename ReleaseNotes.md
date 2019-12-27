@@ -2151,3 +2151,6 @@ icon updated for fear/hate nobles
 Commanders lose excess loyal 
 Talen star distribution more likely to align with stats 
 fixed bug in the talen star distribution that resulted in some characters not getting three stars 
+
+13.0.0.25
+Fixes mail patch giving +40 Armor, vs +20 as intended
