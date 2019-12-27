@@ -2127,7 +2127,7 @@ Fixes rusty mail not found error
 Fixes spelling errors in some backgrounds
 Fixes bandit veterans not loading 
 
-13.0.0.24
+13.0.0.24 Cloaked in fixes 
 Fixes backwards compatibility with saves prior to 13.0.0.22  
 Fixes armor upgrades not granting durability 
 Fixes crash when loading loading saves 
@@ -2140,6 +2140,6 @@ Fixes the last of the undying thugs
 Cloaks split into Common, Heavy and Noble 
 *Common cloaks available at markets, cheap, heavy, not much protection or resolve
 *Heavy cloaks available at armorsmiths. expensive, heavy, higher protection, standard resolve 
-*Noble cloaks are rarely available at armorsmiths, or commonly if there is an attached dyer. Very expensive, lightweight, high resolve 
+*Noble cloaks are rarely available at armorsmiths, or commonly if there is an attached dyer. Very expensive, lightweight, good resolve 
 *Cloaks are now craftable if you have a Seamstress or Tailor in your party 
 
