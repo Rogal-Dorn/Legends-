@@ -83,20 +83,32 @@
     {
         local perks = this.m.PerkPointsSpent;
 		local hasStudent = false;
+		local hasGifted = false;
 
-		if (this.getSkills().hasSkill("perk.student"))
+		if (this.getSkills().hasSkill("perk.student") && this.getLevel() >= 11)
 		{
 			perks = perks - 1;
 			hasStudent = true;
+		}
+		if (this.getSkills().hasSkill("perk.gifted"))
+		{
+			perks = perks - 1;
+			hasGifted = true;
 		}
 
 		this.m.PerkPoints += perks;
 		this.m.PerkPointsSpent = 0;
 		this.getSkills().removeByType(this.Const.SkillType.Perk);
 
-		if (hasStudent && this.getLevel() >= 11)
+		if (hasStudent)
 		{
+			this.m.PerkPointsSpent += 1;
 			this.getSkills().add(this.new("scripts/skills/perks/perk_student"));
+		}
+		if (hasGifted)
+		{
+			this.m.PerkPointsSpent += 1;
+			this.getSkills().add(this.new("scripts/skills/perks/perk_gifted"));
 		}
     }
 
