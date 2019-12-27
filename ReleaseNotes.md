@@ -2127,7 +2127,7 @@ Fixes rusty mail not found error
 Fixes spelling errors in some backgrounds
 Fixes bandit veterans not loading 
 
-13.0.0.24 Cloaked in fixes 
+13.0.0.24 Stitches and Fixes 
 Fixes backwards compatibility with saves prior to 13.0.0.22  
 Fixes armor upgrades not granting durability 
 Fixes crash when loading loading saves 
@@ -2143,3 +2143,11 @@ Cloaks split into Common, Heavy and Noble
 *Noble cloaks are rarely available at armorsmiths, or commonly if there is an attached dyer. Very expensive, lightweight, good resolve 
 *Cloaks are now craftable if you have a Seamstress or Tailor in your party 
 
+13.0.0.24
+fixes zombies not dying when shot 
+Fixes stray invisble noble mail
+Optimists and pessemists are no longer irrational 
+icon updated for fear/hate nobles 
+Commanders lose excess loyal 
+Talen star distribution more likely to align with stats 
+fixed bug in the talen star distribution that resulted in some characters not getting three stars 
