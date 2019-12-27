@@ -2115,10 +2115,21 @@ Legendary party strength scaling cares more about party size.
 
 13.0.0.23  Tasty treats 
 New Perk - "Camp Cook" unlocks the creation of food items in the crafting tent. 
-* It is possible to create, dried fruit, cured venison, smoked ham, porridge, pudding, pie and cured rations
+* New item - "Cooking Spices" created from salt with roots and berries, used for crafting other foods.
+* It is possible to create: dried fruit, cured venison, smoked ham, porridge, pudding, pie and cured rations
 * Alcohol brewing perk now unlocks the crafting of beer and wine 
+* Graphics, text and stats updated for craftable foods
 Altered Chef, Healer and Repair trees so their perks come earlier. 
 Fixes missing battle orientation icons for slinger, fencer and halberdier 
 Fixes hunting tent error 
 Fixes enemies in thick tunics not dying when shot by arrows 
 Fixes rusty mail not found error 
+Fixes spelling errors in some backgrounds
+Fixes bandit veterans not loading 
+
+13.0.0.24
+Now backwards compatible with saves prior to 13.0.0.22  
+Fixes crash when loading loading saves 
+Fixes display and functional issues with patched mail
+Fixes robe not found error 
+Fixes over-saturation and lightness in some cloaks 

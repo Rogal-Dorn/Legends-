@@ -429,6 +429,7 @@
 <sprite id="bust_legend_robes_07_dead_arrows" offsetX="6" offsetY="10" f="64FB" ic="FF495055" width="131" height="114" img="entity/legend_armor/cloth/bust_legend_robes_07_dead_arrows.png" left="0" right="28" top="-8" bottom="30" />
 <sprite id="bust_legend_robes_06_dead_javelin" offsetX="6" offsetY="10" f="64FB" ic="FF151C29" width="131" height="134" img="entity/legend_armor/cloth/bust_legend_robes_06_dead_javelin.png" left="-11" right="35" top="-5" bottom="67" />
 <sprite id="bust_legend_robes_07_dead_javelin" offsetX="6" offsetY="10" f="64FB" ic="FF151C29" width="131" height="134" img="entity/legend_armor/cloth/bust_legend_robes_07_dead_javelin.png" left="-11" right="35" top="-5" bottom="67" />
+<sprite id="bust_legend_robes_10" offsetY="35" ic="FF242D3A" width="104" height="142" img="entity/legend_armor/cloth/bust_legend_robes_11.png" left="-44" right="50" top="-53" bottom="13" />
 <sprite id="bust_legend_robes_11" offsetY="35" ic="FF242D3A" width="104" height="142" img="entity/legend_armor/cloth/bust_legend_robes_11.png" left="-44" right="50" top="-53" bottom="13" />
 <sprite id="bust_legend_robes_12" offsetY="35" ic="FF242D3A" width="104" height="142" img="entity/legend_armor/cloth/bust_legend_robes_12.png" left="-44" right="50" top="-53" bottom="13" />
 <sprite id="bust_legend_robes_13" offsetY="35" ic="FF242D3A" width="104" height="142" img="entity/legend_armor/cloth/bust_legend_robes_13.png" left="-44" right="50" top="-53" bottom="13" />
@@ -778,6 +779,12 @@
 <sprite id="bust_legend_reinforced_worn_mail" offsetY="35" ic="FF242D3A" width="104" height="142" img="entity/legend_armor/chain/bust_legend_reinforced_worn_mail.png" left="-44" right="50" top="-53" bottom="13" />
 <sprite id="bust_legend_reinforced_worn_mail_damaged" offsetY="35" ic="FF242C39" width="104" height="142" img="entity/legend_armor/chain/bust_legend_reinforced_worn_mail_damaged.png" left="-47" right="45" top="-64" bottom="14" />
 <sprite id="bust_legend_reinforced_worn_mail_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity/legend_armor/chain/bust_legend_reinforced_worn_mail_dead.png" left="-57" right="59" top="-53" bottom="55" />
+
+<sprite id="bust_legend_rusty_mail_shirt" offsetY="35" ic="FF242D3A" width="104" height="142" img="entity/legend_armor/chain/bust_legend_rusty_mail_shirt_01.png" left="-44" right="50" top="-53" bottom="13" />
+<sprite id="bust_legend_rusty_mail_shirt_damaged" offsetY="35" ic="FF242C39" width="104" height="142" img="entity/legend_armor/chain/bust_legend_rusty_mail_shirt_01_damaged.png" left="-47" right="45" top="-64" bottom="14" />
+<sprite id="bust_legend_rusty_mail_shirt_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity/legend_armor/chain/bust_legend_rusty_mail_shirt_01_dead.png" left="-57" right="59" top="-53" bottom="55" />
+
+
 <sprite id="bust_legend_rusty_mail_shirt_01" offsetY="35" ic="FF242D3A" width="104" height="142" img="entity/legend_armor/chain/bust_legend_rusty_mail_shirt_01.png" left="-44" right="50" top="-53" bottom="13" />
 <sprite id="bust_legend_rusty_mail_shirt_01_damaged" offsetY="35" ic="FF242C39" width="104" height="142" img="entity/legend_armor/chain/bust_legend_rusty_mail_shirt_01_damaged.png" left="-47" right="45" top="-64" bottom="14" />
 <sprite id="bust_legend_rusty_mail_shirt_01_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity/legend_armor/chain/bust_legend_rusty_mail_shirt_01_dead.png" left="-57" right="59" top="-53" bottom="55" />

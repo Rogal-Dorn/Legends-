@@ -76,6 +76,10 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			["legend_sackcloth",1,1],
 			["legend_sackcloth",4,12],
 			["legend_tunic_noble",6,6],
+			["legend_thick_tunic",1,24],
+			["legend_dark_tunic",1,2],
+			["legend_ancient_cloth",1,4],
+			["legend_ancient_cloth_restored",1,5],
 			["legend_tunic",1,28],
 		];
 
@@ -116,6 +120,13 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			this.World.Assets.getStash().add(cha);
 		}
 
+		for( local i = 1; i < 11; i = ++i )
+		{
+			local item = this.new("scripts/items/legend_armor/chain/legend_armor_rusty_mail_shirt")
+			item.setVariant(i);
+			this.World.Assets.getStash().add(item);
+		}
+
 		local plate = [
 			"legend_armor_leather_brigandine",
 			"legend_armor_leather_brigandine_hardened",
@@ -154,7 +165,9 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"legend_rugged_scale_armor",
 			"legend_scrap_metal_armor",
 			"legend_thick_furs_armor",
-			"legend_thick_plated_barbarian_armor"
+			"legend_thick_plated_barbarian_armor",
+			"legend_armor_plate_full_greaves",
+			"legend_armor_plate_full_greaves_painted"
 		];
 
 		foreach(p in plate)
@@ -162,6 +175,20 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			this.logInfo("Adding " + p);
 			local pla = this.new("scripts/items/legend_armor/plate/" + p);
 			this.World.Assets.getStash().add(pla);
+		}
+
+		for( local i = 1; i < 6; i = ++i )
+		{
+			local item = this.new("scripts/items/legend_armor/plate/legend_armor_leather_noble")
+			item.setVariant(i);
+			this.World.Assets.getStash().add(item);
+		}
+
+		for( local i = 1; i < 9; i = ++i )
+		{
+			local item = this.new("scripts/items/legend_armor/plate/legend_armor_leather_riveted")
+			item.setVariant(i);
+			this.World.Assets.getStash().add(item);
 		}
 
 		for( local i = 101; i < 113; i = ++i )
@@ -178,7 +205,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			this.World.Assets.getStash().add(item);
 		}
 
-		for( local i = 1; i < 8; i = ++i )
+		for( local i = 1; i < 35; i = ++i )
 		{
 			local item = this.new("scripts/items/legend_armor/cloak/legend_armor_cloak")
 			item.setVariant(i);
