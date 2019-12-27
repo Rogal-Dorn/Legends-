@@ -2098,6 +2098,7 @@ Legendary difficulty: All recruits can now come with higher levels in the late g
 * 4 ancient cloth layers  (drops from ancient dead)
 * 5 restored ancient cloth (Legion begins with these)
 *Several armor layers, beards and heads altered to fit in better 
+-
 Warlock gains bleed and whip skills, thrall zombies and skeletons get extra perks and abilities. On legendary zombies can infect and skeletons get executioner. 
 Fixes skeletons having health reduction applied twice
 Fixes warlock zombie bite error
@@ -2111,3 +2112,6 @@ Peasant classes appear earlier in peasant groups
 Skeleton Gladiators now spawn properly
 Legendary barbarians no longer have Nimble, instead getting Alert, Balance, Relentless, Onslaught and Overwhelm 
 Legendary party strength scaling cares more about party size. 
+
+13.0.0.23
+Fixes missing battle orientation icons for slinger, fencer and halberdier 

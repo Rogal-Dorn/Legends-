@@ -7,7 +7,7 @@ this.legend_fresh_meat_item <- this.inherit("scripts/items/supplies/food_item", 
 		this.m.Name = "Fresh Meat";
 		this.m.Description = "Provisions. Freshly caught and butchered, this meat tastes good but will not last long without curing.";
 		this.m.Icon = "supplies/legend_fresh_game.png";
-		this.m.Value = 60;
+		this.m.Value = 30;
 		this.m.GoodForDays = 3;
 		this.m.IsUndesirable = false;
 	}

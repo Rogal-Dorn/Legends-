@@ -2705,6 +2705,15 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/charge_perk.png",
 		IconDisabled = "ui/perks/charge_perk_bw.png",
 		Const = "LegendHorseMovement"
+	},
+	{
+		ID = "perk.legend_camp_cook",
+		Script = "scripts/skills/perks/perk_legend_camp_cook",
+		Name = this.Const.Strings.PerkName.LegendCampCook,
+		Tooltip = this.Const.Strings.PerkDescription.LegendCampCook,
+		Icon = "ui/perks/cooking_circle.png",
+		IconDisabled = "ui/perks/cooking_circle_bw.png",
+		Const = "LegendCampCook"
 	}
 ];
 gt.Const.Perks.PerkDefs <- {};

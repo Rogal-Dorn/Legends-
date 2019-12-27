@@ -44,10 +44,10 @@ gt.Const.Perks.HealerClassTree <- {
 	],
 	Tree = [
 		[],
-		[],
+		[gt.Const.Perks.PerkDefs.LegendMedIngredients],
 		[],
 		[gt.Const.Perks.PerkDefs.LegendSpecBandage],
-		[gt.Const.Perks.PerkDefs.LegendMedIngredients],
+		[],
 		[],
 		[gt.Const.Perks.PerkDefs.LegendFieldTriage]
 	]
@@ -75,11 +75,11 @@ gt.Const.Perks.ChefClassTree <- {
 		"cooking"
 	],
 	Tree = [
-		[],
 		[gt.Const.Perks.PerkDefs.LegendMealPreperation],
-		[],
-		[],
+		[gt.Const.Perks.PerkDefs.LegendCampCook],
 		[gt.Const.Perks.PerkDefs.LegendAlcoholBrewing],
+		[],
+		[],
 		[],
 		[gt.Const.Perks.PerkDefs.LegendFieldTreats]
 	]
@@ -92,10 +92,10 @@ gt.Const.Perks.RepairClassTree <- {
 	],
 	Tree = [
 		[],
-		[],
 		[gt.Const.Perks.PerkDefs.LegendToolsDrawers],
-		[],
 		[gt.Const.Perks.PerkDefs.LegendToolsSpares],
+		[],
+		[],
 		[],
 		[gt.Const.Perks.PerkDefs.LegendFieldRepairs]
 	]

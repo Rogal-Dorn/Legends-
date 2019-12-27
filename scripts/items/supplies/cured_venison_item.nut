@@ -7,7 +7,7 @@ this.cured_venison_item <- this.inherit("scripts/items/supplies/food_item", {
 		this.m.Name = "Cured Venison";
 		this.m.Description = "Provisions. A cured chunk of venison preserved by salt. Fine food for a travelling sellsword.";
 		this.m.Icon = "supplies/inventory_provisions_10.png";
-		this.m.Value = 95;
+		this.m.Value = 100;
 		this.m.GoodForDays = 12;
 	}
 
