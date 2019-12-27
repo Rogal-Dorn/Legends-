@@ -19,6 +19,8 @@ this.legend_direwolf_pelt_upgrade <- this.inherit("scripts/items/legend_armor/le
 		this.m.SpriteCorpseFront = "upgrade_01_front_dead";
 		this.m.SpriteCorpseBack = "upgrade_01_back_dead";
 		this.m.Value = 600;
+		this.m.Condition = 15;
+		this.m.ConditionMax = 15;
 		this.m.ConditionModifier = 15;
 		this.m.StaminaModifier = 0;
 	}

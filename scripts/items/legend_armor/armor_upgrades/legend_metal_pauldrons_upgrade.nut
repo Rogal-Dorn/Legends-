@@ -19,8 +19,10 @@ this.legend_metal_pauldrons_upgrade <- this.inherit("scripts/items/legend_armor/
 		this.m.SpriteCorpseFront = null;
 		this.m.SpriteCorpseBack = "upgrade_11_back_dead";
 		this.m.Value = 500;
+		this.m.Condition = 40;
+		this.m.ConditionMax = 40;
 		this.m.ConditionModifier = 40;
-		this.m.StaminaModifier = 4;
+		this.m.StaminaModifier = -4;
 	}
 
 	function getTooltip()
