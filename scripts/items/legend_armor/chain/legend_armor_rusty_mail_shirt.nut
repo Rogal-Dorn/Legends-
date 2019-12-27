@@ -8,7 +8,7 @@ this.legend_armor_rusty_mail_shirt <- this.inherit("scripts/items/legend_armor/l
 		this.m.Name = "Patched Mail Shirt";
 		this.m.Description = "This light mail shirt has seen better times but still grants decent protection.";
 		this.m.ArmorDescription = "Includes a rusty and patched mail shirt that offers decent protection.";
-		this.m.Variant = variants[this.Math.rand(1, 11)];
+		this.m.Variant = this.Math.rand(1, 11);
 		this.updateVariant();
 		this.m.Value = 250;
 		this.m.Condition = 40;

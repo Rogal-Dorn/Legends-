@@ -298,13 +298,16 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 				"scripts/items/supplies/preserved_mead_item"
 			]);
 		}
-
-		if (this.m.Points < item.getValue())
+		if (item.getValue() != null)
 		{
-			return this.getUpdateText();
+			if (this.m.Points < item.getValue())
+			{
+				return this.getUpdateText();
+			}
+			this.m.Points -= item.getValue();
 		}
 
-		this.m.Points -= item.getValue();
+	
 		item.randomizeAmount();
 		this.m.FoodAmount += item.getAmount();
 		item.randomizeBestBefore();

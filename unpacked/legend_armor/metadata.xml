@@ -1222,10 +1222,14 @@
 <sprite id="bust_legend_dark_tunic_01" offsetY="35" ic="FF1B1C1E" width="104" height="142" img="entity\legend_armor\cloth\bust_legend_dark_tunic_01.png" left="-52" right="44" top="-60" bottom="14" />  
   <sprite id="bust_legend_dark_tunic_01_damaged" offsetY="35" ic="FF1A1B1E" width="104" height="142" img="entity\legend_armor\cloth\bust_legend_dark_tunic_01_damaged.png" left="-47" right="43" top="-52" bottom="14" />
   <sprite id="bust_legend_dark_tunic_01_dead" offsetX="6" offsetY="10" f="64FE" ic="FF191A1C" width="131" height="125" img="entity\legend_armor\cloth\bust_legend_dark_tunic_01_dead.png" left="-57" right="59" top="-53" bottom="49" />
-  <sprite id="bust_legend_dark_tunic_02" offsetY="35" ic="FF1C2025" width="104" height="142" img="entity\legend_armor\cloth\bust_legend_dark_tunic_02.png" left="-50" right="52" top="-60" bottom="22" />
+ <sprite id="bust_legend_dark_tunic_01_dead_arrows" offsetX="6" offsetY="10" f="64FB" ic="FF495055" width="131" height="114" img="entity/legend_armor/cloth/bust_legend_tunic_01_dead_arrows.png" left="0" right="28" top="-8" bottom="30" />
+<sprite id="bust_legend_dark_tunic_01_dead_javelin" offsetX="6" offsetY="10" f="64FB" ic="FF151C29" width="131" height="134" img="entity/legend_armor/cloth/bust_legend_tunic_01_dead_javelin.png" left="-11" right="35" top="-5" bottom="67" /> 
+ <sprite id="bust_legend_dark_tunic_02" offsetY="35" ic="FF1C2025" width="104" height="142" img="entity\legend_armor\cloth\bust_legend_dark_tunic_02.png" left="-50" right="52" top="-60" bottom="22" />
   <sprite id="bust_legend_dark_tunic_02_damaged" offsetY="35" ic="FF1B1F25" width="104" height="142" img="entity\legend_armor\cloth\bust_legend_dark_tunic_02_damaged.png" top="-57" bottom="19" />
   <sprite id="bust_legend_dark_tunic_02_dead" offsetX="6" offsetY="10" f="64FE" ic="FF1C2026" width="131" height="125" img="entity\legend_armor\cloth\bust_legend_dark_tunic_02_dead.png" left="-58" right="56" top="-53" bottom="49" />
-
+ <sprite id="bust_legend_dark_tunic_02_dead_arrows" offsetX="6" offsetY="10" f="64FB" ic="FF495055" width="131" height="114" img="entity/legend_armor/cloth/bust_legend_tunic_01_dead_arrows.png" left="0" right="28" top="-8" bottom="30" />
+<sprite id="bust_legend_dark_tunic_02_dead_javelin" offsetX="6" offsetY="10" f="64FB" ic="FF151C29" width="131" height="134" img="entity/legend_armor/cloth/bust_legend_tunic_01_dead_javelin.png" left="-11" right="35" top="-5" bottom="67" /> 
+ 
  
    
    <sprite id="bust_thick_tunic_01" offsetY="35" ic="FF141C23" width="104" height="142" img="entity\legend_armor\cloth\bust_thick_tunic_01.png" left="-52" right="42" top="-57" bottom="13" />
