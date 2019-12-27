@@ -20,11 +20,15 @@ this.legend_armor_rusty_mail_shirt <- this.inherit("scripts/items/legend_armor/l
 	function updateVariant()
 	{
 		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
-		this.m.Sprite = "bust_legend_rusty_mail_shirt_" + variant;
-		this.m.SpriteDamaged = "bust_legend_rusty_mail_shirt_" + variant + "_damaged";
-		this.m.SpriteCorpse = "bust_legend_rusty_mail_shirt_" + variant + "_dead";
-		this.m.IconLarge = "legend_armor/cloth/inventory_legend_rusty_mail_shirt_" + variant + ".png";
-		this.m.Icon = "legend_armor/cloth/icon_legend_rusty_mail_shirt_" + variant + ".png";
+		this.m.SpriteBack = "bust_legend_rusty_mail_shirt_" + variant;
+		this.m.SpriteDamagedBack = "bust_legend_rusty_mail_shirt_" + variant + "_damaged";
+		this.m.SpriteCorpseBack = "bust_legend_rusty_mail_shirt_" + variant + "_dead";
+		this.m.IconLarge = "legend_armor/chain/inventory_legend_rusty_mail_shirt_" + variant + ".png";
+		this.m.Icon = "legend_armor/chain/icon_legend_rusty_mail_shirt_" + variant + ".png";
+		this.m.OverlayIcon = "legend_armor/chain/icon_legend_rusty_mail_shirt_" + variant + ".png";
+		this.m.OverlayIconLarge = "legend_armor/chain/inventory_legend_rusty_mail_shirt_" + variant + ".png";
+
+
 	}
 
 });
