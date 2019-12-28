@@ -145,7 +145,7 @@ this.legend_peasant_miner <- this.inherit("scripts/entity/tactical/human", {
 		}
 		else
 		{
-			r = this.Math.rand(1, 10);
+			local r = this.Math.rand(1, 10);
 
 			if (r == 1)
 			{
