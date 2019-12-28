@@ -80,7 +80,8 @@ this.swordmaster_background <- this.inherit("scripts/skills/backgrounds/characte
 				this.Const.Perks.ViciousTree
 			],
 			Enemy = [this.Const.Perks.SwordmastersTree],
-			Class = []
+			Class = [],
+			Magic = []
 		}
 	}
 

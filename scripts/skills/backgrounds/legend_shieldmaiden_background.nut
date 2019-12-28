@@ -57,7 +57,8 @@ this.legend_shieldmaiden_background <- this.inherit("scripts/skills/backgrounds/
 				this.Const.Perks.FastTree
 			],
 			Enemy = [this.Const.Perks.BarbarianTree],
-			Class = []
+			Class = [],
+			Magic = []
 		}
 	}
 

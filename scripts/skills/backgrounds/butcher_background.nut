@@ -79,7 +79,8 @@ this.butcher_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			Enemy = [],
 			Class = [
 				this.Const.Perks.ButcherClassTree,
-				this.Const.Perks.ChefClassTree
+				this.Const.Perks.ChefClassTree,
+			Magic = []
 			]
 		}
 	}

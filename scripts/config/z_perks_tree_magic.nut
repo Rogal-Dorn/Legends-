@@ -69,21 +69,6 @@ gt.Const.Perks.ValaSpiritMagicTree <- {
 	]
 };
 
-gt.Const.Perks.InventorMagicTree <- {
-	ID = "InventorMagicTree",
-	Descriptions = [
-		"inventor"
-	],
-	Tree = [
-		[],
-		[],
-		[],
-		[],
-		[],
-		[],
-		[gt.Const.Perks.PerkDefs.LegendInventorAnatomy]
-	]
-};
 
 
 gt.Const.Perks.RangerHuntMagicTree <- {
@@ -101,6 +86,7 @@ gt.Const.Perks.RangerHuntMagicTree <- {
 		[gt.Const.Perks.PerkDefs.LegendBigGameHunter]
 	]
 };
+
 
 gt.Const.Perks.BasicNecroMagicTree <- {
 	ID = "BasicNecroMagicTree",
@@ -260,12 +246,12 @@ gt.Const.Perks.ConjurationMagicTree <- {
 	],
 	Tree = [
 		[gt.Const.Perks.PerkDefs.LegendSummonCat],
+		[gt.Const.Perks.PerkDefs.LegendSummonHound],
+		[gt.Const.Perks.PerkDefs.LegendSummonFalcon],
 		[],
+		[gt.Const.Perks.PerkDefs.LegendSummonWolf],
 		[],
-		[],
-		[],
-		[],
-		[]
+		[gt.Const.Perks.PerkDefs.LegendSummonBear]
 	]
 };
 

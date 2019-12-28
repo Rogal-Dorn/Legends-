@@ -71,7 +71,8 @@ this.flagellant_background <- this.inherit("scripts/skills/backgrounds/character
 				this.Const.Perks.SturdyTree
 			],
 			Enemy = [],
-			Class = [this.Const.Perks.NinetailsClassTree]
+			Class = [this.Const.Perks.NinetailsClassTree],
+			Magic = []
 		}
 	}
 

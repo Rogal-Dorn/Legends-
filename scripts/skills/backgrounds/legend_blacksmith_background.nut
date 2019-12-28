@@ -59,7 +59,8 @@ this.legend_blacksmith_background <- this.inherit("scripts/skills/backgrounds/ch
 				this.Const.Perks.FitTree
 			],
 			Enemy = [],
-			Class = [this.Const.Perks.RepairClassTree]
+			Class = [this.Const.Perks.RepairClassTree],
+			Magic = []
 		}
 	}
 

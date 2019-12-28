@@ -62,7 +62,8 @@ this.female_minstrel_background <- this.inherit("scripts/skills/backgrounds/char
 				this.Const.Perks.FastTree
 			],
 			Enemy = [this.Const.Perks.NoblesTree],
-			Class = [this.Const.Perks.BardClassTree]
+			Class = [this.Const.Perks.BardClassTree],
+			Magic = []
 		}
 	}
 

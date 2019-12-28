@@ -4,7 +4,7 @@ this.legend_noble_2h <- this.inherit("scripts/skills/backgrounds/character_backg
 	{
 		this.character_background.create();
 		this.m.ID = "background.legend_noble_2h";
-		this.m.Name = "Noble House Warrior";
+		this.m.Name = "Warrior";
 		this.m.Icon = "ui/traits/trait_icon_32.png";
 		this.m.HiringCost = 200;
 		this.m.DailyCost = 18;
@@ -94,7 +94,8 @@ this.legend_noble_2h <- this.inherit("scripts/skills/backgrounds/character_backg
 				this.Const.Perks.LargeTree
 			],
 			Enemy = [],
-			Class = []
+			Class = [],
+			Magic = []
 		}
 	}
 
@@ -256,7 +257,7 @@ this.legend_noble_2h <- this.inherit("scripts/skills/backgrounds/character_backg
 			[0, "cloth/legend_sackcloth"],
 			[0, "cloth/legend_sackcloth_patched"],
 			[0, "cloth/legend_sackcloth_tattered"],
-			[1, "cloth/legend_tunic"],
+			[1, "cloth/legend_thick_tunic"],
 			[1, "cloth/legend_tunic_noble"]
 		];
 		local armor = this.Const.World.Common.pickLegendArmor(cloths)

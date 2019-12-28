@@ -60,7 +60,8 @@ this.legend_taxidermist_background <- this.inherit("scripts/skills/backgrounds/c
 					this.Const.Perks.UnholdTree,
 					this.Const.Perks.AlpTree
 					],
-			Class = []
+			Class = [],
+			Magic = []
 		}
 	}
 

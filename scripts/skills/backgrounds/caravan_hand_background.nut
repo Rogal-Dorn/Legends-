@@ -63,7 +63,8 @@ this.caravan_hand_background <- this.inherit("scripts/skills/backgrounds/charact
 				this.Const.Perks.LargeTree
 			],
 			Enemy = [this.Const.Perks.BanditTree],
-			Class = []
+			Class = [],
+			Magic = []
 		}
 	}
 

@@ -60,7 +60,8 @@ this.minstrel_background <- this.inherit("scripts/skills/backgrounds/character_b
 				this.Const.Perks.InspirationalTree
 			],
 			Enemy = [],
-			Class = [this.Const.Perks.BardClassTree]
+			Class = [this.Const.Perks.BardClassTree],
+			Magic = []
 		}
 	}
 

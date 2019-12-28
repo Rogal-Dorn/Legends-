@@ -80,7 +80,8 @@ this.apprentice_background <- this.inherit("scripts/skills/backgrounds/character
 				this.Const.Perks.FastTree
 			],
 			Enemy = [],
-			Class = []
+			Class = [],
+			Magic = []
 		}
 	}
 

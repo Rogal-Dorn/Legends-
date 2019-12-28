@@ -101,7 +101,8 @@ this.squire_background <- this.inherit("scripts/skills/backgrounds/character_bac
 				this.Const.Perks.FastTree
 			],
 			Enemy = [],
-			Class = []
+			Class = [],
+			Magic = []
 		}
 	}
 

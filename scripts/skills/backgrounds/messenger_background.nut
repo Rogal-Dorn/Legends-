@@ -74,7 +74,8 @@ this.messenger_background <- this.inherit("scripts/skills/backgrounds/character_
 				this.Const.Perks.FitTree
 			],
 			Enemy = [],
-			Class = []
+			Class = [],
+			Magic = []
 		}
 	}
 
