@@ -38,6 +38,8 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 
 	function getAmountColor()
 	{
+		if (this.Math.floor(this.m.Condition / (this.m.ConditionMax * 1.0) * (this.Const.Items.ConditionColor.len() - 1)) > 4)
+			return 4;
 		return this.Const.Items.ConditionColor[this.Math.max(0, this.Math.floor(this.m.Condition / (this.m.ConditionMax * 1.0) * (this.Const.Items.ConditionColor.len() - 1)))];
 	}
 
