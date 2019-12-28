@@ -2169,7 +2169,6 @@ High end orcs and goblins appear later and in lower numbers
 *Peasant Poachers lose nimble, gains ballistics and crippling strikes 
 *Peasant Woodsmen lose nimble, gain bloody harvest, forceful swing, footwork and recovery 
 
-<<<<<<< HEAD
 **Fixes**
 Fixes thick tunics wearers not dying when shot 
 Fixes stray invisble noble mail
@@ -2191,7 +2190,7 @@ Fixes tailors not crafting cloaks
 Cloaks are more common in marketplaces 
 Hedgeknights have better armor, cost more, but may have more variable perks 
 
-=======
-13.0.0.25 
-Armor doesn't take extra damage just for fun now
->>>>>>> origin/MwahChanges
+? (Mwah)
+Uproot skill now doesn't target greenwood schrats by accident
+Fixes peasant miner not getting proper mastery
+Fixes Legend Butcher AI Agent not existing
