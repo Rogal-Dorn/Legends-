@@ -20,7 +20,7 @@ this.legend_cloak_common_blueprint <- this.inherit("scripts/crafting/blueprint",
 		local roster = this.World.getPlayerRoster().getAll();
         foreach( bro in roster )
         {
-            if (bro.getSkills().hasSkill("perk.background.tailor") || bro.getSkills().hasSkill("background.female_tailor") )
+            if (bro.getSkills().hasSkill("background.tailor") || bro.getSkills().hasSkill("background.female_tailor") )
             {
                 return true
             }
