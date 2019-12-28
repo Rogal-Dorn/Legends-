@@ -652,7 +652,7 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 			}
 			else
 			{
-				totalDamage = u.onDamageReceived(totalDamage, _fatalityType, _attacker);
+				totalDamage -= u.onDamageReceived(totalDamage, _fatalityType, _attacker);
 			}
 
 			i = --i;
