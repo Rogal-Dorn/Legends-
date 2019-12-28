@@ -2181,3 +2181,6 @@ High end orcs and goblins appear later and in lower numbers
 *Peasant Monks lose nimble, gain inspire, hold out, fortified mind and onslaught 
 *Peasant Poacher lose nimble, gains ballistics and crippling strikes 
 *Peasant Woodsmen lose nimble, gain bloody harvest, forceful swing, footwork and recovery 
+
+13.0.0.25 
+Armor doesn't take extra damage just for fun now
