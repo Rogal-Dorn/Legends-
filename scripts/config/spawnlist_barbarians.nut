@@ -39,12 +39,14 @@ gt.Const.World.Spawn.Barbarians <-
 					Cost = 12
 				},
 				{
+					MinR = 200,
 					Type = this.Const.World.Spawn.Troops.BarbarianMarauder,
 					Cost = 25
 				},
 				{
+					MinR = 600,
 					Type = this.Const.World.Spawn.Troops.BarbarianChampion,
-					Cost = 35
+					Cost = 40
 				}
 			]
 		},
@@ -137,7 +139,7 @@ gt.Const.World.Spawn.BarbarianKing <-
 		{
 			Type = this.Const.World.Spawn.Troops.BarbarianChosen,
 			Weight = 0,
-			Cost = 45
+			Cost = 50
 		}
 	],
 	Troops = []

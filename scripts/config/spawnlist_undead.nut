@@ -29,12 +29,13 @@ gt.Const.World.Spawn.UndeadArmy <-
 					Cost = 13
 				},
 				{
+					MinR = 200,
 					Type = this.Const.World.Spawn.Troops.SkeletonMedium,
 					Cost = 20
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.SkeletonHeavy,
-					MinR = 400,
+					MinR = 500,
 					Cost = 35
 				}
 			]
@@ -54,7 +55,7 @@ gt.Const.World.Spawn.UndeadArmy <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.SkeletonGladiator,
-					MinR = 400,
+					MinR = 600,
 					Cost = 40
 				},
 			]
@@ -92,12 +93,13 @@ gt.Const.World.Spawn.UndeadArmy <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.Vampire,
-					Cost = 40
+					MinR = 200,
+					Cost = 50
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendVampireLord,
-					MinR = 1.0 * 625,
-					Cost = 60
+					MinR = 800,
+					Cost = 70
 				}
 			]
 		},
@@ -107,7 +109,8 @@ gt.Const.World.Spawn.UndeadArmy <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendDemonHound,
-					Cost = 20
+					MinR = 400,
+					Cost = 40
 				}
 			]
 		}
@@ -135,16 +138,17 @@ gt.Const.World.Spawn.Vampires <-
 				{
 					Type = this.Const.World.Spawn.Troops.Vampire,
 					Cost = 40
+					MinR = 200,
 				}
 			]
 		},
 		{
 			Weight = 10,
-			MinR = 300,
+			MinR = 800,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendVampireLord,
-					Cost = 60
+					Cost = 70
 				}
 			]
 		}
@@ -171,12 +175,12 @@ gt.Const.World.Spawn.VampiresAndSkeletons <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.SkeletonMedium,
-					MinR = 0.5 * 521,
+					MinR = 200,
 					Cost = 20
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.SkeletonHeavy,
-					MinR = 1.0 * 521,
+					MinR = 600,
 					Cost = 35
 				}
 			]
@@ -190,12 +194,13 @@ gt.Const.World.Spawn.VampiresAndSkeletons <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.Vampire,
+					MinR = 200,
 					Cost = 40
 				},
 				{
-					MinR = 300,
+					MinR = 800,
 					Type = this.Const.World.Spawn.Troops.LegendVampireLord,
-					Cost = 60
+					Cost = 70
 				}
 			]
 		}
@@ -204,7 +209,8 @@ gt.Const.World.Spawn.VampiresAndSkeletons <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendDemonHound,
-					Cost = 20
+					MinR = 400,
+					Cost = 40
 				}
 			]
 		}

@@ -237,6 +237,7 @@ this.schrat <- this.inherit("scripts/entity/tactical/actor", {
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_coup_de_grace"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_shield_expert"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_shield_bash"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_lacerate"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_shield_skill"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_shield_push"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));

@@ -269,27 +269,58 @@ this.legend_hexe_leader <- this.inherit("scripts/entity/tactical/actor", {
 		charm_hair.Visible = false;
 		this.addDefaultStatusSprites();
 		this.getSprite("status_rooted").Scale = 0.55;
-		this.m.Skills.add(this.new("scripts/skills/racial/schrat_racial"));
+		
 		this.m.Skills.add(this.new("scripts/skills/actives/legend_intensely_charm_skill"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_anticipation"));
 		this.m.Skills.add(this.new("scripts/skills/actives/hex_skill"));
 		this.m.Skills.add(this.new("scripts/skills/actives/legend_magic_missile"));
+		this.m.Skills.add(this.new("scripts/skills/actives/legend_teleport"));
 		this.m.Skills.add(this.new("scripts/skills/actives/fake_drink_night_vision_skill"));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_inspiring_presence"));
+		
 
 		 if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 			{
-
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_pathfinder"));
+			this.m.Skills.add(this.new("scripts/skills/racial/schrat_racial"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_inspiring_presence"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_levitation"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_hold_out"));
 			b.IsImmuneToStun = true;
-			b.Initiative += 50;
-			b.RangedSkill += 75;
-			b.Stamina += 70;
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
 			}
+		if (!this.Tactical.State.isScenarioMode())
+		{
+			local dateToSkip = 0;
+			switch (this.World.Assets.getCombatDifficulty())
+			{
+				case this.Const.Difficulty.Easy:
+					dateToSkip = 250;
+					break;
+				case this.Const.Difficulty.Normal:
+					dateToSkip = 200
+					break;
+				case this.Const.Difficulty.Hard:
+					dateToSkip = 150
+					break;
+				case this.Const.Difficulty.Legendary:
+					dateToSkip = 100
+					break;
+			}
 
+			if (this.World.getTime().Days >= dateToSkip)
+			{
+				local bonus = this.Math.min(1, this.Math.floor( (this.World.getTime().Days - dateToSkip) / 20.0));
+				b.MeleeSkill += this.Math.floor(bonus / 2);
+				b.RangedSkill += bonus;
+				b.MeleeDefense += this.Math.floor(bonus / 2);
+				b.RangedDefense += this.Math.floor(bonus / 2);
+				b.Hitpoints += this.Math.floor(bonus * 2);
+				b.Initiative += bonus;
+				b.Stamina += bonus;
+			//	b.XP += this.Math.floor(bonus * 4);
+				b.Bravery += bonus;
+				b.FatigueRecoveryRate += this.Math.floor(bonus / 4);
+			}
+		}
 	}
 
 	function onUpdateInjuryLayer()
