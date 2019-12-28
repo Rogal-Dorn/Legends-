@@ -2183,16 +2183,33 @@ Coven leaders lose schrat racial ability and inspiring presence. Gains teleport 
 Rally the troops has a chance to remove charm. %chance is the averag resolve of the rallier and rallied. 
 Charm won't effect player characters 
 
-13.0.0.26
-Cuirass given correct fatigue 
+13.0.0.26 
+
+**Fixes** 
+Full sets of armor should no longer break from a single hit 
 Fixes loading layers from previous versions with impossible armor values  (mwah)
+Uproot skill now doesn't target greenwood schrats by accident (Mwah)
+Fixes peasant miner not getting proper mastery (Mwah)
+Fixes Legend Butcher AI Agent not existing (Mwah)
+(Should) fix greenskin contract settlement selection process error (Mwah)
+Peasant miner correctly initializes values before use when armor layer system is off (Mwah)
+(Should) fix Rally the Troops crash 
 Fixes tailors not crafting cloaks
 Cloaks are more common in marketplaces 
-Hedgeknights have better armor, cost more, but may have more variable perks 
 
-? (Mwah)
-Uproot skill now doesn't target greenwood schrats by accident
-Fixes peasant miner not getting proper mastery
-Fixes Legend Butcher AI Agent not existing
-(Should) fix greenskin contract settlement selection process error
-Peasant miner correctly initializes values before use when armor layer system is off
+**Enemy armor balance changes**
+Padded Surcoat durability decreased to 55 and price increased to 150
+Gambeson price increased to 250
+Cuirass given correct fatigue 
+Bandit thugs no longer have padded surcoats, more likely to have thick tunics 
+Bandit raiders much more likely to have padded surcoats and patched mail, less likely to have gambesons simple mail shirts and short mail 
+Bandit leaders more likely to have simple mail shirts and leather scale, less likely to have hauberks and heavy lamellar 
+armored weidergangers less likely to have padded surcoat, reinforced mail and padded leather, more likely to have dark tunics, rusty mail and leather jackets  
+Fallen heros less likely to have sackcloths, moer likely to have surcoats, reinforced rotten mail, rotten plates and rotten scale 
+Militia no longer have surcoats or sackcloths, more likely to have thick tunics 
+Militia veterans no longer have gambesons, more likely to have rusty mail and padded leather 
+Militia captains more likely to have mail shirts and leather scale 
+Noble footmen more likely to have padded surcoats, mail shirts and leather lamellar  
+Fencers more likely to have padded surcoat, simple mail shirts and noble leather armor 
+Halberdiers more likely to have gambeson, Sleeveless hauberk, heavy leather lamellar
+Hedgeknights have better armor, cost more, but may have more variable perks 

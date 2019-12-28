@@ -331,11 +331,11 @@ this.bandit_raider <- this.inherit("scripts/entity/tactical/human", {
 		{
 			local cloths = [
 				[0, ""],
-				[2, "cloth/legend_gambeson_rare_color"],
-				[70, "cloth/legend_gambeson_plain"],
-				[6, "cloth/legend_gambeson_common_color"],
+				[0, "cloth/legend_gambeson_rare_color"],
+				[7, "cloth/legend_gambeson_plain"],
+				[3, "cloth/legend_gambeson_common_color"],
 				[0, "cloth/legend_gambeson_wolf"],
-				[20, "cloth/legend_padded_surcoat"],
+				[90, "cloth/legend_padded_surcoat"],
 				[0, "cloth/legend_robes"],
 				[0, "cloth/legend_apron_butcher"],
 				[0, "cloth/legend_robes_nun"],
@@ -354,9 +354,9 @@ this.bandit_raider <- this.inherit("scripts/entity/tactical/human", {
 			{
 				local chains = [
 					[1, ""],
-					[5, "chain/legend_armor_mail_shirt"],
-					[25, "chain/legend_armor_mail_shirt_simple"],
-					[40, "chain/legend_armor_rusty_mail_shirt"],
+					[9, "chain/legend_armor_mail_shirt"],
+					[0, "chain/legend_armor_mail_shirt_simple"],
+					[90, "chain/legend_armor_rusty_mail_shirt"],
 					[0, "chain/legend_armor_ancient_double_mail"],
 					[0, "chain/legend_armor_ancient_mail"],
 					[0, "chain/legend_armor_basic_mail"],
@@ -368,7 +368,7 @@ this.bandit_raider <- this.inherit("scripts/entity/tactical/human", {
 					[5, "chain/legend_armor_reinforced_rotten_mail_shirt"],
 					[0, "chain/legend_armor_reinforced_worn_mail"],
 					[0, "chain/legend_armor_reinforced_worn_mail_shirt"],
-					[5, "chain/legend_armor_short_mail"]
+					[1, "chain/legend_armor_short_mail"]
 				]
 
 				local chain = this.Const.World.Common.pickLegendArmor(chains)

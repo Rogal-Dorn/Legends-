@@ -142,10 +142,10 @@ this.zombie_knight <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 		{
 			local cloths = [
 				[0, ""],
-				[0, "cloth/legend_gambeson"],
-				[0, "cloth/legend_gambeson_plain"],
+				[2, "cloth/legend_gambeson"],
+				[1, "cloth/legend_gambeson_plain"],
 				[0, "cloth/legend_gambeson_wolf"],
-				[0, "cloth/legend_padded_surcoat"],
+				[4, "cloth/legend_padded_surcoat"],
 				[0, "cloth/legend_robes"],
 				[0, "cloth/legend_apron_butcher"],
 				[0, "cloth/legend_robes_nun"],
@@ -153,7 +153,9 @@ this.zombie_knight <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 				[0, "cloth/legend_robes_wizard"],
 				[0, "cloth/legend_sackcloth"],
 				[0, "cloth/legend_sackcloth_patched"],
-				[1, "cloth/legend_sackcloth_tattered"],
+				[0, "cloth/legend_sackcloth_tattered"],
+				[2, "cloth/legend_dark_tunic"],
+				[1, "cloth/legend_thick_tunic"],
 				[0, "cloth/legend_tunic"],
 				[0, "cloth/legend_tunic_noble"]
 			];
@@ -169,14 +171,14 @@ this.zombie_knight <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 					[0, "chain/legend_armor_ancient_double_mail"],
 					[0, "chain/legend_armor_ancient_mail"],
 					[0, "chain/legend_armor_basic_mail"],
-					[0, "chain/legend_armor_hauberk"],
+					[2, "chain/legend_armor_hauberk"],
 					[0, "chain/legend_armor_hauberk_full"],
-					[0, "chain/legend_armor_hauberk_sleevless"],
+					[2, "chain/legend_armor_hauberk_sleevless"],
 					[0, "chain/legend_armor_reinforced_mail"],
-					[0, "chain/legend_armor_reinforced_mail_shirt"],
-					[1, "chain/legend_armor_reinforced_rotten_mail_shirt"],
+					[1, "chain/legend_armor_reinforced_mail_shirt"],
+					[4, "chain/legend_armor_reinforced_rotten_mail_shirt"],
 					[0, "chain/legend_armor_reinforced_worn_mail"],
-					[0, "chain/legend_armor_reinforced_worn_mail_shirt"],
+					[1, "chain/legend_armor_reinforced_worn_mail_shirt"],
 					[0, "chain/legend_armor_short_mail"]
 				]
 
@@ -196,7 +198,7 @@ this.zombie_knight <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 					[0, "plate/legend_armor_leather_lamellar"],
 					[0, "plate/legend_armor_leather_lamellar_harness_heavy"],
 					[0, "plate/legend_armor_leather_lamellar_harness_reinforced"],
-					[0, "plate/legend_armor_leather_lamellar_heavy"],
+					[1, "plate/legend_armor_leather_lamellar_heavy"],
 					[0, "plate/legend_armor_leather_lamellar_reinforced"],
 					[0, "plate/legend_armor_leather_noble"],
 					[0, "plate/legend_armor_leather_padded"],
@@ -210,13 +212,13 @@ this.zombie_knight <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 					[0, "plate/legend_armor_plate_ancient_scale_coat"],
 					[0, "plate/legend_armor_plate_ancient_scale_harness"],
 					[0, "plate/legend_armor_plate_chest"],
-					[1, "plate/legend_armor_plate_chest_rotten"],
+					[3, "plate/legend_armor_plate_chest_rotten"],
 					[0, "plate/legend_armor_plate_cuirass"],
 					[0, "plate/legend_armor_plate_full"],
 					[0, "plate/legend_armor_scale"],
 					[0, "plate/legend_armor_scale_coat"],
-					[1, "plate/legend_armor_scale_coat_rotten"],
-					[0, "plate/legend_armor_scale_shirt"]
+					[3, "plate/legend_armor_scale_coat_rotten"],
+					[1, "plate/legend_armor_scale_shirt"]
 				]
 				local plate = this.Const.World.Common.pickLegendArmor(plates)
 				if (plate != null)
