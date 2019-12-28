@@ -2194,3 +2194,4 @@ Hedgeknights have better armor, cost more, but may have more variable perks
 Uproot skill now doesn't target greenwood schrats by accident
 Fixes peasant miner not getting proper mastery
 Fixes Legend Butcher AI Agent not existing
+(Should) fix greenskin contract settlement selection process error
