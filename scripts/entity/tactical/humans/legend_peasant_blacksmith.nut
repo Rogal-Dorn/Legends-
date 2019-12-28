@@ -39,6 +39,7 @@ this.legend_peasant_blacksmith <- this.inherit("scripts/entity/tactical/human", 
 			if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 			{
 			this.m.Hitpoints = b.Hitpoints * 1.5;
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_smackdown"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
 			}
