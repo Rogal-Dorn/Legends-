@@ -54,7 +54,8 @@ this.houndmaster_background <- this.inherit("scripts/skills/backgrounds/characte
 				this.Const.Perks.IndestructibleTree
 			],
 			Enemy = [],
-			Class = []
+			Class = [],
+			Magic = []
 		}
 	}
 

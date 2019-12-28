@@ -81,7 +81,8 @@ this.female_adventurous_noble_background <- this.inherit("scripts/skills/backgro
 				this.Const.Perks.InspirationalTree
 			],
 			Enemy = [this.Const.Perks.ArchersTree],
-			Class = []
+			Class = [],
+			Magic = []
 		}
 	}
 

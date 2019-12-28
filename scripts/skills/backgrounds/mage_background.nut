@@ -3,28 +3,14 @@ this.mage_background <- this.inherit("scripts/skills/backgrounds/character_backg
 	function create()
 	{
 		this.character_background.create();
-		this.m.ID = "background.mage";
+		this.m.ID = "background.legend";
 		this.m.Icon = "ui/backgrounds/background_39.png";
 		local r = this.Math.rand(0, 3);
 
-		if (r == 0)
-		{
-			this.m.Name = "Mage";
-		}
-		else if (r == 1)
-		{
-			this.m.Name = "Sorcerer";
-		}
-		else if (r == 2)
-		{
-			this.m.Name = "Wizard";
-		}
-		else if (r == 3)
-		{
-			this.m.Name = "Warlock";
-		}
+		this.m.Name = "Mage";
 
-		this.m.HiringCost = 250;
+
+		this.m.HiringCost = 1000;
 		this.m.DailyCost = 15;
 		this.m.Excluded = [
 			"trait.impatient",
@@ -55,38 +41,40 @@ this.mage_background <- this.inherit("scripts/skills/backgrounds/character_backg
 
 		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[0];
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[0];
-		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[0];
+		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[1];
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[0];
-		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[0];
+		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[1];
 		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[0];
 		this.m.Modifiers.Repair = this.Const.LegendMod.ResourceModifiers.Repair[0];
 		this.m.Modifiers.Salvage = this.Const.LegendMod.ResourceModifiers.Salvage[0];
 		this.m.Modifiers.Crafting = this.Const.LegendMod.ResourceModifiers.Crafting[0];
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[0];
 		this.m.Modifiers.ToolConsumption = this.Const.LegendMod.ResourceModifiers.ToolConsumption[0];
-		this.m.Modifiers.MedConsumption = this.Const.LegendMod.ResourceModifiers.MedConsumption[0];
+		this.m.Modifiers.MedConsumption = this.Const.LegendMod.ResourceModifiers.MedConsumption[1];
 		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[0];
 		this.m.Modifiers.Fletching = this.Const.LegendMod.ResourceModifiers.Fletching[0];
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[0];
 		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[0];
-		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[0];
+		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[2];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.HammerTree,
-				this.Const.Perks.MaceTree,
-				this.Const.Perks.StavesTree
+				this.Const.Perks.DaggerTree,
+				this.Const.Perks.StavesTree,
+				this.Const.Perks.ThrowingTree,
+				this.Const.Perks.SpearTree
 			],
 			Defense = [
-				this.Const.Perks.MediumArmorTree
+				this.Const.Perks.LightArmorTree
 			],
 			Traits = [
-				this.Const.Perks.AgileTree,
-				this.Const.Perks.LargeTree,
-				this.Const.Perks.FastTree,
-				this.Const.Perks.FitTree
+				this.Const.Perks.IntelligentTree,
+				this.Const.Perks.DeviousTree,
+				this.Const.Perks.OrganisedTree,
+				this.Const.Perks.InspirationalTree
 			],
 			Enemy = [],
-			Class = []
+			Class = [],
+			Magic = []
 		}
 	}
 

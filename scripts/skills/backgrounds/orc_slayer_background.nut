@@ -97,7 +97,8 @@ this.orc_slayer_background <- this.inherit("scripts/skills/backgrounds/character
 					this.Const.Perks.GoblinTree,
 					this.Const.Perks.UnholdTree,
 					],
-			Class = []
+			Class = [],
+			Magic = []
 		}
 	}
 

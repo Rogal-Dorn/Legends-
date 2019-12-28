@@ -103,7 +103,8 @@ this.killer_on_the_run_background <- this.inherit("scripts/skills/backgrounds/ch
 				this.Const.Perks.NoblesTree,
 				this.Const.Perks.MercenaryTree
 				],
-			Class = []
+			Class = [],
+			Magic = []
 		}
 	}
 

@@ -77,7 +77,8 @@ this.vagabond_background <- this.inherit("scripts/skills/backgrounds/character_b
 				this.Const.Perks.FitTree
 			],
 			Enemy = [],
-			Class = []
+			Class = [],
+			Magic = []
 		}
 	}
 
