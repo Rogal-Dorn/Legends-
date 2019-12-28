@@ -26,11 +26,12 @@ gt.Const.World.Spawn.OrcRoamers <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.OrcYoungLOW,
-					MaxR = 1.0 *260,
+					MaxR = 1.0 *360,
 					Cost = 13
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.OrcYoung,
+					MinR = 200,
 					Cost = 16
 				}
 			]
@@ -40,6 +41,7 @@ gt.Const.World.Spawn.OrcRoamers <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.OrcBerserker,
+					MinR = 200,
 					Cost = 25
 				}
 			]
@@ -50,6 +52,7 @@ gt.Const.World.Spawn.OrcRoamers <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+					MinR = 400,
 					Cost = 60,
 					Roll = true
 				}
@@ -66,7 +69,7 @@ gt.Const.World.Spawn.OrcScouts <-
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
 	Body = "figure_orc_01",
-	MaxR = 176,
+	MaxR = 300,
 	MinR = 52,
 	Troops = [
 		{
@@ -79,6 +82,7 @@ gt.Const.World.Spawn.OrcScouts <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.OrcYoung,
+					MinR = 200,
 					Cost = 16
 				}
 			]
@@ -93,7 +97,7 @@ gt.Const.World.Spawn.OrcScouts <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.OrcWarrior,
-					MinR = 0.5 * 176,
+					MinR = 300,
 					Cost = 40
 				}
 			]
@@ -122,6 +126,7 @@ gt.Const.World.Spawn.OrcRaiders <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.OrcYoung,
+					MinR = 200,
 					Cost = 16
 				}
 			]
@@ -137,7 +142,7 @@ gt.Const.World.Spawn.OrcRaiders <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.OrcWarrior,
-					MinR = 0.25 * 1115,
+					MinR = 400,
 					Cost = 40
 				}
 			]
@@ -147,6 +152,7 @@ gt.Const.World.Spawn.OrcRaiders <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.OrcBerserker,
+					MinR = 200,
 					Cost = 25
 				}
 			]
@@ -156,12 +162,13 @@ gt.Const.World.Spawn.OrcRaiders <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.OrcWarlord,
+					MinR = 400,
 					Cost = 50
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendOrcElite,
-					MinR = 0.50 * 1115,
-					Cost = 60,
+					MinR = 800,
+					Cost = 100,
 					Roll = true
 				}
 			]
@@ -201,6 +208,7 @@ gt.Const.World.Spawn.OrcDefenders <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.OrcYoung,
+					MinR = 200,
 					Cost = 16
 				}
 			]
@@ -216,6 +224,7 @@ gt.Const.World.Spawn.OrcDefenders <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.OrcWarrior,
+					MinR = 300,
 					MinR = 0.25 * 1115,
 					Cost = 40
 				}
@@ -226,6 +235,7 @@ gt.Const.World.Spawn.OrcDefenders <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.OrcBerserker,
+					MinR = 200,
 					Cost = 25
 				}
 			]
@@ -235,11 +245,12 @@ gt.Const.World.Spawn.OrcDefenders <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.OrcWarlord,
+					MinR = 400,
 					Cost = 50
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendOrcElite,
-					MinR = 0.50 * 1115,
+					MinR = 800,
 					Cost = 60,
 					Roll = true
 				}
@@ -291,7 +302,7 @@ gt.Const.World.Spawn.OrcBoss <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.OrcWarrior,
-					MinR = 0.25 * 1115,
+					MinR = 200,
 					Cost = 40
 				}
 			]
@@ -310,12 +321,13 @@ gt.Const.World.Spawn.OrcBoss <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.OrcWarlord,
+					MinR = 400,
 					Cost = 50
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendOrcElite,
-					MinR = 0.50 * 798,
-					Cost = 60,
+					MinR = 800,
+					Cost = 100,
 					Roll = true
 				}
 			]
@@ -325,6 +337,7 @@ gt.Const.World.Spawn.OrcBoss <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+					MinR = 400,
 					Cost = 80,
 					Roll = true
 				}
@@ -341,7 +354,7 @@ gt.Const.World.Spawn.YoungOrcsOnly <-
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
 	Body = "figure_orc_01",
-	MaxR = 250,
+	MaxR = 350,
 	MinR = 50,
 	Troops = [
 		{
@@ -353,6 +366,7 @@ gt.Const.World.Spawn.YoungOrcsOnly <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.OrcYoung,
+					MinR = 200,
 					Cost = 16
 				}
 			]
@@ -368,7 +382,7 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <-
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
 	Body = "figure_orc_01",
-	MaxR = 288,
+	MaxR = 388,
 	MinR = 50,
 	Troops = [
 		{
@@ -381,6 +395,7 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.OrcYoung,
+					MinR = 200,
 					Cost = 16
 				}
 			]
@@ -390,6 +405,7 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.OrcBerserker,
+					MinR = 200,
 					Cost = 25
 				}
 			]
@@ -400,6 +416,7 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+					MinR = 300,
 					Cost = 80,
 					Roll = true
 				}
@@ -416,7 +433,7 @@ gt.Const.World.Spawn.BerserkersOnly <-
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
 	Body = "figure_orc_01",
-	MaxR = 248,
+	MaxR = 448,
 	MinR = 50,
 	Troops = [
 		{
@@ -429,6 +446,7 @@ gt.Const.World.Spawn.BerserkersOnly <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.OrcYoung,
+					MinR = 200,
 					Cost = 16
 				}
 			]
@@ -448,6 +466,7 @@ gt.Const.World.Spawn.BerserkersOnly <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+					MinR = 300,
 					Cost = 80,
 					Roll = true
 				}

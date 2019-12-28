@@ -39,7 +39,7 @@ gt.Const.World.Spawn.Direwolves <-
 	MaxR = 535,
 	Troops = [
 		{
-			Weight = 85,
+			Weight = 95,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Direwolf,
@@ -52,22 +52,12 @@ gt.Const.World.Spawn.Direwolves <-
 			]
 		},
 		{
-			Weight = 10,
-			MinR = 0.85 * 100,
-			Types = [
-				{
-					Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
-					Cost = 30
-				}
-			]
-		},
-		{
 			Weight = 5,
-			MinR = 0.85 * 535,
+			MinR = 0.85 * 800,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
-					Cost = 75
+					Cost = 150
 				}
 			]
 		}
@@ -114,11 +104,11 @@ gt.Const.World.Spawn.Ghouls <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendSkinGhoulLOW,
-					Cost = 50
+					Cost = 75
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendSkinGhoulMED,
-					Cost = 100
+					Cost = 150
 				}
 			]
 		}
@@ -150,7 +140,7 @@ gt.Const.World.Spawn.Lindwurm <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendStollwurm,
-					Cost = 270
+					Cost = 320
 				}
 			]
 		}
@@ -182,7 +172,7 @@ gt.Const.World.Spawn.Unhold <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
-					Cost = 180
+					Cost = 250
 				}
 			]
 		}
@@ -214,7 +204,7 @@ gt.Const.World.Spawn.UnholdFrost <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
-					Cost = 180
+					Cost = 250
 				}
 			]
 		}
@@ -246,7 +236,7 @@ gt.Const.World.Spawn.UnholdBog <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
-					Cost = 180
+					Cost = 250
 				}
 			]
 		}
@@ -278,7 +268,7 @@ gt.Const.World.Spawn.Spiders <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-					Cost = 100
+					Cost = 150
 				}
 			]
 		}
@@ -315,11 +305,11 @@ gt.Const.World.Spawn.Alps <-
 		},
 		{
 			Weight = 5,
-			MinR = 1.0 * 480,
+			MinR = 1.0 * 800,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
-					Cost = 105
+					Cost = 400
 				}
 			]
 		}
@@ -351,7 +341,7 @@ gt.Const.World.Spawn.Schrats <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
-					Cost = 210
+					Cost = 280
 				}
 			]
 		}
@@ -414,7 +404,7 @@ gt.Const.World.Spawn.HexenAndMore <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendBear,
-					Cost = 30
+					Cost = 90
 				}
 			]
 		},
@@ -511,21 +501,21 @@ gt.Const.World.Spawn.HexenAndMore <-
 				{
 					Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
 					MinR = 1.0 * 500,
-					Cost = 200,
+					Cost = 400,
 					MinGuards = 2,
 					MaxGuards = 3,
 					MaxGuardsWeight = 50,
 					Guards = [
 						{
 							Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolfBodyguard,
-							Cost = 75,
+							Cost = 250,
 							function Weight(scale) {
 								return 50;
 							}
 						},
 						{
 							Type = this.Const.World.Spawn.Troops.LegendRedbackSpiderBodyguard,
-							Cost = 50,
+							Cost = 150,
 							function Weight(scale) {
 								return 50;
 							}
@@ -843,21 +833,21 @@ gt.Const.World.Spawn.LegendHexeLeader <-
 				{
 					Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
 					MinR = 1.0 * 500,
-					Cost = 200,
+					Cost = 300,
 					MinGuards = 2,
 					MaxGuards = 3,
 					MaxGuardsWeight = 50,
 					Guards = [
 						{
 							Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolfBodyguard,
-							Cost = 75,
+							Cost = 150,
 							function Weight(scale) {
 								return 50;
 							}
 						},
 						{
 							Type = this.Const.World.Spawn.Troops.LegendRedbackSpiderBodyguard,
-							Cost = 55,
+							Cost = 180,
 							function Weight(scale) {
 								return 50;
 							}

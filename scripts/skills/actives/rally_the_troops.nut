@@ -102,7 +102,21 @@ this.rally_the_troops <- this.inherit("scripts/skills/skill", {
 
 			if (a.getFaction() == _user.getFaction() && !a.getSkills().hasSkill("effects.rallied"))
 			{
-				a.getSkills().removeByID("effects.sleeping");
+				
+				local rand = this.Math.rand(1, 100);
+				local userResolve = _user.getCurrentProperties().getBravery();
+				local targetResolve = a.getCurrentProperties().getBravery();
+				local avgResolve = (userResolve + targetResolve) /2;
+				if(avgResolve > rand)
+					{
+					a.getSkills().removeByID("effects.charmed");
+					a.getSkills().removeByID("effects.sleeping");
+					}
+
+				if(avgResolve > (rand * 2))
+					{
+					a.getSkills().removeByID("effects.legend_intensely_charmed");
+					}
 
 				for( ; a.getMoraleState() >= this.Const.MoraleState.Steady;  )
 				{

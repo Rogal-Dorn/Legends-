@@ -2144,10 +2144,34 @@ Cloaks split into Common, Heavy and Noble
 *Cloaks are now craftable if you have a Seamstress or Tailor in your party 
 
 13.0.0.24
-fixes zombies not dying when shot 
+fixes thick tunics wearers not dying when shot 
 Fixes stray invisble noble mail
+Rally the troops has a chance to remove charm. %chance is the averag resolve of the rallier and rallied.  
 Optimists and pessemists are no longer irrational 
 icon updated for fear/hate nobles 
 Commanders lose excess loyal 
 Talen star distribution more likely to align with stats 
-fixed bug in the talen star distribution that resulted in some characters not getting three stars 
+Fixed bug in the talen star distribution that resulted in some characters not getting three stars 
+Coven leaders lose schrat racial ability and inspiring presence. Gains teleport and improved AI. 
+White wolves much less likely to appear early on 
+Elite monsters appear much less frequently and in lower numbers: Stollwurms, Rock Unholds. Redback spiders, Demon Alps, Greenwood schrats, Coven leaders
+Noble sergeants, halberdiers, fencers, slingers and catapults appears later in the game 
+Bandit leaders, raiders, veterans, hedge knights, swordmasters and warlords appear later in the game and in smaller numbers 
+Barbarian marauders and champions appear slightly later and in lower numbers 
+High end skeletons, zombies, vampires, banshees and hounds appear later and in lower numbers 
+High end orcs and goblins
+
+**Legendary difficulty changes:**
+*Rock unholds lose nimble, gain Full Force, Smackdown, Bloody Harvest and time based scaling 
+*Greenwood Schrats lose nimble but gain HP and scale over time 
+*All Schrats are spikey, they gain the Lacerate perk that gives a chance to inflict bleeding based on their missing HP 
+*Coven leaders lose nimble, -50 init, -75 ranged skill and -70 stamina.  They gain levitation, keep schrat racials, inspiring presence  and time based scaling.
+*Orc Elites gain +50%hp. fearless, full force and time based scaling 
+*Vampire lords, redback spiders, skin ghouls, stollwurms and white direwolves all gain time based scaling  
+*Peasant Farmhands lose nimble, gain stalwart, steadfast, relentless and footwork 
+*Peasant Butchers lose nimble. Gains lacerate and slaughter 
+*Peasant Miners lost nimbe. Gains stalwart, indomitable, recovery and onslaught 
+*Peasant Minstrels lose nimble, gain dodge, anticipation and relentless 
+*Peasant Monks lose nimble, gain inspire, hold out, fortified mind and onslaught 
+*Peasant Poacher lose nimble, gains ballistics and crippling strikes 
+*Peasant Woodsmen lose nimble, gain bloody harvest, forceful swing, footwork and recovery 
