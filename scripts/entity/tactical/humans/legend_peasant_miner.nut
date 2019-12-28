@@ -11,7 +11,7 @@ this.legend_peasant_miner <- this.inherit("scripts/entity/tactical/human", {
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
 		this.getTags().add("peasant");
-		this.m.AIAgent = this.new("scripts/ai/tactical/agents/militia_melee_agent");
+		this.m.AIAgent = this.new("scripts/ai/tactical/agents/military_melee_agent");
 		this.m.AIAgent.setActor(this);
 		if (this.Math.rand(1, 100) <= 10)
 		{
@@ -40,7 +40,10 @@ this.legend_peasant_miner <- this.inherit("scripts/entity/tactical/human", {
 			{
 			this.m.Hitpoints = b.Hitpoints * 1.5;
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_flow"));
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_onslaught"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_stalwart"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_indomitable"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_recovery"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
 			}
 	}
