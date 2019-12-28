@@ -103,7 +103,7 @@ this.send_greenskin_army_action <- this.inherit("scripts/factions/faction_action
 	//		{
 	//			rand *= nearestOrcs / 28.0;
 	//		}
-		local distanceToNextSettlement = this.getDistanceToSettlements(settlement.getTile());
+		local distanceToNextSettlement = this.getDistanceToSettlements(best_settlement.getTile());
 			if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary && distanceToNextSettlement > 14)
 			{
 				rand *=  distanceToNextSettlement / 14.0;
