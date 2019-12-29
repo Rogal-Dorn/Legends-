@@ -31,7 +31,7 @@ this.legend_war_catapult <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.BloodType = this.Const.BloodType.Wood;
 		this.m.XP = this.Const.Tactical.Actor.LegendCatapult.XP;
 		this.actor.create();
-		this.m.AIAgent = this.new("scripts/ai/tactical/agents/legend_catapult_agent");
+		this.m.AIAgent = this.new("scripts/ai/tactical/agents/military_ranged_agent");
 		this.m.AIAgent.setActor(this);
 	}
 
@@ -137,6 +137,7 @@ this.legend_war_catapult <- this.inherit("scripts/entity/tactical/actor", {
 		b.IsSpecializedInBows = true;
 		b.IsSpecializedInCrossbows = true;
 		b.IsSpecializedInSlings = true;
+		this.addDefaultStatusSprites();
 		this.setSpriteOffset("status_rooted", this.createVec(-10, 16));
 		this.setSpriteOffset("status_stunned", this.createVec(0, 10));
 		this.setSpriteOffset("arrow", this.createVec(0, 10));
@@ -147,7 +148,7 @@ this.legend_war_catapult <- this.inherit("scripts/entity/tactical/actor", {
 		}
 
 		this.m.Skills.add(this.new("scripts/skills/actives/legend_catapult_boulder_skill"));
-
+		this.m.Skills.add(this.new("scripts/skills/actives/legend_use_catapult_skill"));
 
 		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 20)
 		{
