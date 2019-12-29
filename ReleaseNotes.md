@@ -2224,12 +2224,19 @@ Armor layers take damage correctly (Mwah mah mia)
 Fixes freeze when loading old saves with impossible armor values  (wuxiang)
 Cleans up redundant perks on commanders (wuxiang)
 Bears now have bear sounds (Von Krolock) 
-Catapults:
-*No longer move by themselves
-*Have fixed AI and fire correctly 
-*Have increased accuracy 
 Fixes an error with enemies not dying due to not finding their morale brush 
 Fixes 'prepare to graze' not applying
 Fixes bleed and graze icons looking like poison
 
+**Catapults:**
+*No longer move by themselves
+*Have fixed AI and fire correctly 
+*Have increased accuracy 
+*Fixes log errors finding status brushes 
+
+**Legion:**
+*Added a recruitment event with the same rules as the cultist recruitment event 
+*No longer asks for food
+*Updated world icon that is legionaire instead of gladiator  
+*Fixes fleshless errors 
 
