@@ -96,8 +96,10 @@ this.legend_noble_halberdier <- this.inherit("scripts/entity/tactical/human", {
 		{
 			local cloths = [
 				[0, ""],
-				[1, "cloth/legend_gambeson"],
+				[0, "cloth/legend_gambeson"],
 				[0, "cloth/legend_gambeson_plain"],
+				[1, "cloth/legend_gambeson_rare_color"],
+				[2, "cloth/legend_gambeson_common_color"],
 				[0, "cloth/legend_gambeson_wolf"],
 				[1, "cloth/legend_padded_surcoat"],
 				[0, "cloth/legend_robes"],
@@ -108,6 +110,7 @@ this.legend_noble_halberdier <- this.inherit("scripts/entity/tactical/human", {
 				[0, "cloth/legend_sackcloth"],
 				[0, "cloth/legend_sackcloth_patched"],
 				[0, "cloth/legend_sackcloth_tattered"],
+				[1, "cloth/legend_thick_tunic"],
 				[0, "cloth/legend_tunic"],
 				[0, "cloth/legend_tunic_noble"]
 			];
@@ -117,21 +120,21 @@ this.legend_noble_halberdier <- this.inherit("scripts/entity/tactical/human", {
 			{
 				local chains = [
 					[0, ""],
-					[1, "chain/legend_armor_mail_shirt"],
-					[0, "chain/legend_armor_mail_shirt_simple"],
+					[0, "chain/legend_armor_mail_shirt"],
+					[1, "chain/legend_armor_mail_shirt_simple"],
 					[0, "chain/legend_armor_rusty_mail_shirt"],
 					[0, "chain/legend_armor_ancient_double_mail"],
 					[0, "chain/legend_armor_ancient_mail"],
-					[0, "chain/legend_armor_basic_mail"],
-					[1, "chain/legend_armor_hauberk"],
+					[1, "chain/legend_armor_basic_mail"],
+					[2, "chain/legend_armor_hauberk"],
 					[0, "chain/legend_armor_hauberk_full"],
-					[1, "chain/legend_armor_hauberk_sleevless"],
+					[4, "chain/legend_armor_hauberk_sleevless"],
 					[0, "chain/legend_armor_reinforced_mail"],
-					[0, "chain/legend_armor_reinforced_mail_shirt"],
+					[2, "chain/legend_armor_reinforced_mail_shirt"],
 					[0, "chain/legend_armor_reinforced_rotten_mail_shirt"],
 					[0, "chain/legend_armor_reinforced_worn_mail"],
 					[0, "chain/legend_armor_reinforced_worn_mail_shirt"],
-					[1, "chain/legend_armor_short_mail"]
+					[0, "chain/legend_armor_short_mail"]
 				]
 
 				local chain = this.Const.World.Common.pickLegendArmor(chains)
@@ -142,20 +145,20 @@ this.legend_noble_halberdier <- this.inherit("scripts/entity/tactical/human", {
 
 				local plates = [
 					[0, ""],
-					[1, "plate/legend_armor_leather_brigandine"],
-					[1, "plate/legend_armor_leather_brigandine_hardened"],
-					[1, "plate/legend_armor_leather_brigandine_hardened_full"],
+					[0, "plate/legend_armor_leather_brigandine"],
+					[2, "plate/legend_armor_leather_brigandine_hardened"],
+					[0, "plate/legend_armor_leather_brigandine_hardened_full"],
 					[0, "plate/legend_armor_leather_jacket"],
 					[0, "plate/legend_armor_leather_jacket_simple"],
-					[1, "plate/legend_armor_leather_lamellar"],
-					[1, "plate/legend_armor_leather_lamellar_harness_heavy"],
-					[1, "plate/legend_armor_leather_lamellar_harness_reinforced"],
-					[1, "plate/legend_armor_leather_lamellar_heavy"],
+					[0, "plate/legend_armor_leather_lamellar"],
+					[0, "plate/legend_armor_leather_lamellar_harness_heavy"],
+					[0, "plate/legend_armor_leather_lamellar_harness_reinforced"],
+					[4, "plate/legend_armor_leather_lamellar_heavy"],
 					[1, "plate/legend_armor_leather_lamellar_reinforced"],
 					[0, "plate/legend_armor_leather_noble"],
 					[0, "plate/legend_armor_leather_padded"],
 					[0, "plate/legend_armor_leather_riveted"],
-					[0, "plate/legend_armor_leather_riveted_light"],
+					[1, "plate/legend_armor_leather_riveted_light"],
 					[0, "plate/legend_armor_leather_scale"],
 					[0, "plate/legend_armor_plate_ancient_chest"],
 					[0, "plate/legend_armor_plate_ancient_harness"],
@@ -171,7 +174,7 @@ this.legend_noble_halberdier <- this.inherit("scripts/entity/tactical/human", {
 					[1, "plate/legend_armor_scale"],
 					[0, "plate/legend_armor_scale_coat"],
 					[0, "plate/legend_armor_scale_coat_rotten"],
-					[0, "plate/legend_armor_scale_shirt"]
+					[2, "plate/legend_armor_scale_shirt"]
 				]
 				local plate = this.Const.World.Common.pickLegendArmor(plates)
 				if (plate != null)
@@ -188,7 +191,7 @@ this.legend_noble_halberdier <- this.inherit("scripts/entity/tactical/human", {
 
 			if (r == 1)
 			{
-				this.m.Items.equip(this.new("scripts/items/armor/padded_surcoat"));
+				this.m.Items.equip(this.new("scripts/items/armor/heavy_lamellar_armor"));
 			}
 			else if (r == 2)
 			{
@@ -196,11 +199,11 @@ this.legend_noble_halberdier <- this.inherit("scripts/entity/tactical/human", {
 			}
 			else if (r == 3)
 			{
-				this.m.Items.equip(this.new("scripts/items/armor/basic_mail_shirt"));
+				this.m.Items.equip(this.new("scripts/items/armor/leather_lamellar"));
 			}
 			else if (r == 4)
 			{
-				this.m.Items.equip(this.new("scripts/items/armor/gambeson"));
+				this.m.Items.equip(this.new("scripts/items/armor/lamellar_harness"));
 			}
 
 		}

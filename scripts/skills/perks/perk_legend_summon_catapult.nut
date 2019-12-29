@@ -14,18 +14,6 @@ this.perk_legend_summon_catapult <- this.inherit("scripts/skills/skill", {
 	}
 
 
-	function onAdded()
-	{
-		if (!this.m.Container.hasSkill("actives.legend_unleash_catapult"))
-		{
-			this.m.Container.add(this.new("scripts/skills/actives/legend_unleash_catapult"));
-		}
-	}
-
-	function onRemoved()
-	{
-		this.m.Container.removeByID("actives.legend_unleash_catapult");
-	}
 
 
 });

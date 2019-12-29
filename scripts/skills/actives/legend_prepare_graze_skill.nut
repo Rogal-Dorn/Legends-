@@ -73,7 +73,7 @@ this.legend_prepare_graze_skill <- this.inherit("scripts/skills/skill", {
 	function onUse( _user, _targetTile )
 	{
 
- 	 _user.getSkills().add(this.new("scripts/skills/effects/legend_graze_prepared"));
+ 	 _user.getSkills().add(this.new("scripts/skills/effects/legend_graze_prepared_effect"));
 
 		return true;
 	}

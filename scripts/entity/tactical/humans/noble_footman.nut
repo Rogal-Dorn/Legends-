@@ -112,7 +112,7 @@ this.noble_footman <- this.inherit("scripts/entity/tactical/human", {
 		{
 			local cloths = [
 				[0, ""],
-				[1, "cloth/legend_gambeson"],
+				[0, "cloth/legend_gambeson"],
 				[0, "cloth/legend_gambeson_plain"],
 				[0, "cloth/legend_gambeson_wolf"],
 				[1, "cloth/legend_padded_surcoat"],
@@ -124,6 +124,7 @@ this.noble_footman <- this.inherit("scripts/entity/tactical/human", {
 				[0, "cloth/legend_sackcloth"],
 				[0, "cloth/legend_sackcloth_patched"],
 				[0, "cloth/legend_sackcloth_tattered"],
+				[2, "cloth/legend_thick_tunic"],
 				[1, "cloth/legend_tunic"],
 				[0, "cloth/legend_tunic_noble"]
 			];
@@ -133,14 +134,14 @@ this.noble_footman <- this.inherit("scripts/entity/tactical/human", {
 			{
 				local chains = [
 					[1, ""],
-					[1, "chain/legend_armor_mail_shirt"],
+					[2, "chain/legend_armor_mail_shirt"],
 					[0, "chain/legend_armor_mail_shirt_simple"],
-					[0, "chain/legend_armor_rusty_mail_shirt"],
+					[1, "chain/legend_armor_rusty_mail_shirt"],
 					[0, "chain/legend_armor_ancient_double_mail"],
 					[0, "chain/legend_armor_ancient_mail"],
-					[1, "chain/legend_armor_basic_mail"],
-					[1, "chain/legend_armor_hauberk"],
-					[1, "chain/legend_armor_hauberk_full"],
+					[0, "chain/legend_armor_basic_mail"],
+					[0, "chain/legend_armor_hauberk"],
+					[0, "chain/legend_armor_hauberk_full"],
 					[0, "chain/legend_armor_hauberk_sleevless"],
 					[0, "chain/legend_armor_reinforced_mail"],
 					[0, "chain/legend_armor_reinforced_mail_shirt"],
@@ -157,22 +158,22 @@ this.noble_footman <- this.inherit("scripts/entity/tactical/human", {
 				}
 
 				local plates = [
-					[4, ""],
+					[1, ""],
 					[1, "plate/legend_armor_leather_brigandine"],
-					[1, "plate/legend_armor_leather_brigandine_hardened"],
+					[0, "plate/legend_armor_leather_brigandine_hardened"],
 					[0, "plate/legend_armor_leather_brigandine_hardened_full"],
-					[0, "plate/legend_armor_leather_jacket"],
+					[1, "plate/legend_armor_leather_jacket"],
 					[0, "plate/legend_armor_leather_jacket_simple"],
-					[0, "plate/legend_armor_leather_lamellar"],
+					[4, "plate/legend_armor_leather_lamellar"],
 					[0, "plate/legend_armor_leather_lamellar_harness_heavy"],
 					[0, "plate/legend_armor_leather_lamellar_harness_reinforced"],
 					[0, "plate/legend_armor_leather_lamellar_heavy"],
 					[0, "plate/legend_armor_leather_lamellar_reinforced"],
 					[0, "plate/legend_armor_leather_noble"],
-					[0, "plate/legend_armor_leather_padded"],
+					[2, "plate/legend_armor_leather_padded"],
 					[0, "plate/legend_armor_leather_riveted"],
 					[0, "plate/legend_armor_leather_riveted_light"],
-					[0, "plate/legend_armor_leather_scale"],
+					[2, "plate/legend_armor_leather_scale"],
 					[0, "plate/legend_armor_plate_ancient_chest"],
 					[0, "plate/legend_armor_plate_ancient_harness"],
 					[0, "plate/legend_armor_plate_ancient_mail"],
