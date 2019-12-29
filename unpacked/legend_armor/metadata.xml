@@ -1470,6 +1470,9 @@
   <sprite id="bust_legend_leather_noble_05" offsetY="35" ic="FF242D3A" width="104" height="142" img="entity/legend_armor/plate/bust_legend_leather_noble_05.png" left="-44" right="50" top="-53" bottom="13" />
 <sprite id="bust_legend_leather_noble_05_damaged" offsetY="35" ic="FF242C39" width="104" height="142" img="entity/legend_armor/plate/bust_legend_leather_noble_05_damaged.png" left="-47" right="45" top="-64" bottom="14" />
 <sprite id="bust_legend_leather_noble_05_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity/legend_armor/plate/bust_legend_leather_noble_05_dead.png" left="-57" right="59" top="-53" bottom="55" />
+  <sprite id="bust_legend_leather_noble_06" offsetY="35" ic="FF242D3A" width="104" height="142" img="entity/legend_armor/plate/bust_legend_leather_noble_05.png" left="-44" right="50" top="-53" bottom="13" />
+<sprite id="bust_legend_leather_noble_06_damaged" offsetY="35" ic="FF242C39" width="104" height="142" img="entity/legend_armor/plate/bust_legend_leather_noble_05_damaged.png" left="-47" right="45" top="-64" bottom="14" />
+<sprite id="bust_legend_leather_noble_06_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity/legend_armor/plate/bust_legend_leather_noble_05_dead.png" left="-57" right="59" top="-53" bottom="55" />
 
  
 </brush>
