@@ -55,7 +55,7 @@ gt.Const.LegendMod.Configs <- {
         return this.IsCampUnlock
     }
 
-    LegendrecruitScalingEnabled = function ()
+    LegendRecruitScalingEnabled = function ()
     {
         return this.IsRecruitScaling
     }

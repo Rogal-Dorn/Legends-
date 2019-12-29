@@ -1003,7 +1003,7 @@ NewCampaignMenuModule.prototype.buildConfigPage = function () {
 	row.append(control);
 	this.mLegendPerkTreesCheckbox = $('<input type="checkbox" id="cb-legendperktrees"/>');
 	control.append(this.mLegendPerkTreesCheckbox);
-	this.mLegendPerkTreesCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendperktrees">Dynamic Perk Trees</label>');
+	this.mLegendPerkTreesCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendperktrees">Dynamic Perks</label>');
 	control.append(this.mLegendPerkTreesCheckboxLabel);
 	this.mLegendPerkTreesCheckbox.iCheck({
 		checkboxClass: 'icheckbox_flat-orange',
@@ -1033,7 +1033,7 @@ NewCampaignMenuModule.prototype.buildConfigPage = function () {
 	row.append(control);
 	this.mLegendMagicCheckbox = $('<input type="checkbox" id="cb-legendmagic"/>');
 	control.append(this.mLegendMagicCheckbox);
-	this.mLegendMagicCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendmagic">Allow Magic</label>');
+	this.mLegendMagicCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendmagic">Basic Magic</label>');
 	control.append(this.mLegendMagicCheckboxLabel);
 	this.mLegendMagicCheckbox.iCheck({
 		checkboxClass: 'icheckbox_flat-orange',
@@ -1048,7 +1048,7 @@ NewCampaignMenuModule.prototype.buildConfigPage = function () {
 	row.append(control);
 	this.mLegendArmorCheckbox = $('<input type="checkbox" id="cb-legendarmor"/>');
 	control.append(this.mLegendArmorCheckbox);
-	this.mLegendArmorCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendarmor">Armor Layer System</label>');
+	this.mLegendArmorCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendarmor">Layered Armor</label>');
 	control.append(this.mLegendArmorCheckboxLabel);
 	this.mLegendArmorCheckbox.iCheck({
 		checkboxClass: 'icheckbox_flat-orange',
@@ -1063,7 +1063,7 @@ NewCampaignMenuModule.prototype.buildConfigPage = function () {
 	row.append(control);
 	this.mLegendItemScalingCheckbox = $('<input type="checkbox" id="cb-legenditemscaling"/>');
 	control.append(this.mLegendItemScalingCheckbox);
-	this.mLegendItemScalingCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legenditemscaling">Equipment Adds Difficulty</label>');
+	this.mLegendItemScalingCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legenditemscaling">Equipment Scaling</label>');
 	control.append(this.mLegendItemScalingCheckboxLabel);
 	this.mLegendItemScalingCheckbox.iCheck({
 		checkboxClass: 'icheckbox_flat-orange',
@@ -1078,7 +1078,7 @@ NewCampaignMenuModule.prototype.buildConfigPage = function () {
 	row.append(control);
 	this.mLegendLocationScalingCheckbox = $('<input type="checkbox" id="cb-legendlocationscaling"/>');
 	control.append(this.mLegendLocationScalingCheckbox);
-	this.mLegendLocationScalingCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendlocationscaling">Distance Adds Difficulty</label>');
+	this.mLegendLocationScalingCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendlocationscaling">Distance Scaling</label>');
 	control.append(this.mLegendLocationScalingCheckboxLabel);
 	this.mLegendLocationScalingCheckbox.iCheck({
 		checkboxClass: 'icheckbox_flat-orange',
@@ -1093,7 +1093,7 @@ NewCampaignMenuModule.prototype.buildConfigPage = function () {
 	row.append(control);
 	this.mLegendCampUnlockCheckbox = $('<input type="checkbox" id="cb-legendcampunlock"/>');
 	control.append(this.mLegendCampUnlockCheckbox);
-	this.mLegendCampUnlockCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendcampunlock">Enable Camp Tutorial</label>');
+	this.mLegendCampUnlockCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendcampunlock">Camp Unlocked</label>');
 	control.append(this.mLegendCampUnlockCheckboxLabel);
 	this.mLegendCampUnlockCheckbox.iCheck({
 		checkboxClass: 'icheckbox_flat-orange',
@@ -1108,7 +1108,7 @@ NewCampaignMenuModule.prototype.buildConfigPage = function () {
 	row.append(control);
 	this.mLegendRecruitScalingCheckbox = $('<input type="checkbox" id="cb-legendrecruitscaling"/>');
 	control.append(this.mLegendRecruitScalingCheckbox);
-	this.mLegendRecruitScalingCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendrecruitscaling">Recruits Improve With You</label>');
+	this.mLegendRecruitScalingCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendrecruitscaling">Recruit Scaling</label>');
 	control.append(this.mLegendRecruitScalingCheckboxLabel);
 	this.mLegendRecruitScalingCheckbox.iCheck({
 		checkboxClass: 'icheckbox_flat-orange',
