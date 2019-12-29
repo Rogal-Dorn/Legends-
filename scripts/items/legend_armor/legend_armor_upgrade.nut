@@ -319,15 +319,16 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 	function onDamageReceived( _damage, _fatalityType, _attacker )
 	{
 		//Destroyed, but damage left over
-		if (_damage >= this.m.Condition)
+		if (_damage >= this.m.Condition) 
 		{
+			local leftoverDamage = _damage - this.m.Condition;
 			this.m.Condition = 0.0;
-			return _damage - this.m.Condition;
+			return leftoverDamage;
 		}
 
 		//Took all of the damage
 		this.m.Condition = this.Math.max(0, this.m.Condition - _damage) * 1.0;
-		return 0.0
+		return 0.0;
 	}
 
 	function onArmorTooltip( _result )
