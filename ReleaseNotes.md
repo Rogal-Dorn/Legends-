@@ -2202,7 +2202,7 @@ Fixes Legend Butcher AI Agent not existing (Mwah)
 Peasant miner correctly initializes values before use when armor layer system is off (Mwah)
 (Should) fix Rally the Troops crash 
 
-**Enemy armor balance changes**
+**Enemy armor balance changes**  
 Padded Surcoat durability decreased to 55 and price increased to 150
 Gambeson price increased to 250
 Cuirass given correct fatigue 
