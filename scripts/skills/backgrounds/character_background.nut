@@ -1040,7 +1040,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 				actor.setTitle(this.m.Titles[this.Math.rand(0, this.m.Titles.len() - 1)]);
 			}
 
-			if(this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+			if(this.Const.LegendMod.Configs.LegendRecruitScalingEnabled())
 			{
 				local roster = this.World.getPlayerRoster().getAll();
 				local levels = 0;

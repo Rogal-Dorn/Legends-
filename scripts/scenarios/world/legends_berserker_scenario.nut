@@ -3,10 +3,10 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 	function create()
 	{
 		this.m.ID = "scenario.legends_berserker";
-		this.m.Name = "Solo Berserker (Legends)";
+		this.m.Name = "Berserker";
 		this.m.Description = "[p=c][img]gfx/ui/events/event_139.png[/img][/p][p]You are a barbarian berserker, driven by an unbound rage. Watching your family slaughtered drove you into a self destructive frenzy of violence and revenge.\n\n[color=#bcad8c]Berserker madness:[/color] Unlock powerful abilities allow you to fight naked and bare handed.\n[color=#bcad8c]Infectious rage:[/color] Only the insane, violent or desperate will join you. You will grant berserk to anyone who joins you in battle. You have a tiny chance of finding other berserkers for hire.\n[color=#bcad8c]Avatar:[/color]Begin alone. If you die, it is game over.[/p]";
 		this.m.Difficulty = 2;
-		this.m.Order = 12;
+		this.m.Order = 7;
 	}
 
 	function isValid()
@@ -190,6 +190,18 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 			], this.Const.Music.CrossFadeTime);
 			this.World.Events.fire("event.legend_berserker_scenario_intro");
 		}, null);
+			if(this.Const.LegendMod.Configs.LegendCampUnlockEnabled())
+			{
+				this.World.Tags.set("HasLegendCampGathering", true);
+				this.World.Tags.set("HasLegendCampBarber", true);
+				this.World.Tags.set("HasLegendCampCrafting", true);
+				this.World.Tags.set("HasLegendCampFletching", true);
+				this.World.Tags.set("HasLegendCampHealing", true);
+				this.World.Tags.set("HasLegendCampHunting", true);
+				this.World.Tags.set("HasLegendCampScouting", true);
+				this.World.Tags.set("HasLegendCampScraping", true);
+				this.World.Tags.set("HasLegendCampTraining", true);			
+			}
 	}
 
 	function onInit()

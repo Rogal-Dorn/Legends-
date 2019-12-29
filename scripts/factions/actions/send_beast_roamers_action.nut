@@ -97,7 +97,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 			}
 
 			local distanceToNextSettlement = _action.getDistanceToSettlements(tile);
-			if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+			if (this.Const.LegendMod.Configs.LegendLocationScalingEnabled())
 			{
 			 distanceToNextSettlement *= 2;
 			}
@@ -202,7 +202,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 				}
 
 				local distanceToNextSettlement = _action.getDistanceToSettlements(tile);
-				if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+				if (this.Const.LegendMod.Configs.LegendLocationScalingEnabled())
 					{
 					 distanceToNextSettlement *= 2;
 					}
@@ -258,7 +258,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 				}
 
 				local distanceToNextSettlement = _action.getDistanceToSettlements(tile);
-				if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+				if (this.Const.LegendMod.Configs.LegendLocationScalingEnabled())
 					{
 					 distanceToNextSettlement *= 2;
 					}
@@ -318,7 +318,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 				}
 
 				local distanceToNextSettlement = _action.getDistanceToSettlements(tile);
-				if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+				if (this.Const.LegendMod.Configs.LegendLocationScalingEnabled())
 					{
 					 distanceToNextSettlement *= 2;
 					}
@@ -371,7 +371,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 				}
 
 				local distanceToNextSettlement = _action.getDistanceToSettlements(tile);
-				if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+				if (this.Const.LegendMod.Configs.LegendLocationScalingEnabled())
 					{
 					 distanceToNextSettlement *= 2;
 					}
@@ -422,7 +422,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 				}
 
 				local distanceToNextSettlement = _action.getDistanceToSettlements(tile);
-				if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+				if (this.Const.LegendMod.Configs.LegendLocationScalingEnabled())
 					{
 					 distanceToNextSettlement *= 2;
 					}
@@ -475,7 +475,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 				}
 
 				local distanceToNextSettlement = _action.getDistanceToSettlements(tile);
-				if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+				if (this.Const.LegendMod.Configs.LegendLocationScalingEnabled())
 					{
 					 distanceToNextSettlement *= 2;
 					}
@@ -530,7 +530,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 				}
 
 				local distanceToNextSettlement = _action.getDistanceToSettlements(tile);
-				if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+				if (this.Const.LegendMod.Configs.LegendLocationScalingEnabled())
 					{
 					 distanceToNextSettlement *= 2;
 					}
@@ -584,7 +584,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 				}
 
 				local distanceToNextSettlement = _action.getDistanceToSettlements(tile);
-				if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+				if (this.Const.LegendMod.Configs.LegendLocationScalingEnabled())
 					{
 					 distanceToNextSettlement *= 2;
 					}

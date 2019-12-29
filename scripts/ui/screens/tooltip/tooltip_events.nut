@@ -4386,7 +4386,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "If enabled, low magic is allowed in the world, for most starts this just makes it possible to find vala and rune stones. If disabled, vala will not appear, runes stones will be 10x rarer, and magic commanders have low magic."
+					text = "If enabled, low magic is allowed in the world, this makes it possible to find vala and rune stones. If disabled, vala will not appear, runes stones will be 10x rarer, and magic commanders have low magic."
 				}
 			];
 		case "mapconfig.legendarmor":
@@ -4415,6 +4415,58 @@ this.tooltip_events <- {
 					text = "If enabled, the map will start completely revealed and all enemies and camps will be visible."
 				}
 			];
+		case "mapconfig.legenditemscaling":
+			return [
+					{
+						id = 1,
+						type = "title",
+						text = "Equipment impacts difficulty"
+					},
+					{
+						id = 2,
+						type = "description",
+						text = "If enabled, the value of your equipped items will increase the combat difficulty. This is in addition to other difficulty settings."
+					}
+				];
+		case "mapconfig.legenditemscaling":
+			return [
+					{
+						id = 1,
+						type = "title",
+						text = "Distance impacts difficulty"
+					},
+					{
+						id = 2,
+						type = "description",
+						text = "If enabled, enemies will be stronger the further they spawn from civilisation. This is in addition to other difficulty settings."
+					}
+				];
+		case "mapconfig.legendcampunlock":
+			return [
+					{
+						id = 1,
+						type = "title",
+						text = "Enable Camp Tutorial"
+					},
+					{
+						id = 2,
+						type = "description",
+						text = "If enabled, you will unlock camping activities by visiting towns. Useful for first playthroughs."
+					}
+				];
+		case "mapconfig.legendrecruitcaling":
+			return [
+					{
+						id = 1,
+						type = "title",
+						text = "Recruits improve with you"
+					},
+					{
+						id = 2,
+						type = "description",
+						text = "If enabled, new recruits will gain levels based on the levels in your party, your renown in the world, and your moral reputation."
+					}
+				];
 		case "camp.commander":
 		case "camp.rest":
 		case "camp.repair":
