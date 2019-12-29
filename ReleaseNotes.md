@@ -2227,6 +2227,7 @@ Bears now have bear sounds (Von Krolock)
 Fixes an error with enemies not dying due to not finding their morale brush 
 Fixes 'prepare to graze' not applying
 Fixes bleed and graze icons looking like poison
+Fixes crash from rally the troops 
 
 **Catapults:**
 *No longer move by themselves
