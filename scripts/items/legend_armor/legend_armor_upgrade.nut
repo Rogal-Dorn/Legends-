@@ -319,7 +319,7 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 	function onDamageReceived( _damage, _fatalityType, _attacker )
 	{
 		//Destroyed, but damage left over
-		if (_damage >= this.m.Condition)
+		/*if (_damage >= this.m.Condition)
 		{
 			this.m.Condition = 0.0;
 			return _damage - this.m.Condition;
@@ -327,7 +327,21 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 
 		//Took all of the damage
 		this.m.Condition = this.Math.max(0, this.m.Condition - _damage) * 1.0;
-		return 0.0
+		return 0.0*/
+		//Original code above, commented out by Mwah		
+	
+		//If we do more damage than there is armor on the layer
+		//Leftover damage = damage dealt - current armor
+		if (_damage >= this.m.Condition) 
+		{
+			local leftoverDamage = _damage - this.m.Condition;
+			this.m.Condition = 0.0;
+			return leftoverDamage;
+		}
+
+		//If the armor layer absorbed all the damage
+		this.m.Condition = this.Math.max(0, this.m.Condition - _damage) * 1.0;
+		return this.Math.max(0, this.m.Condition - _damage) * 1.0;
 	}
 
 	function onArmorTooltip( _result )
