@@ -103,11 +103,11 @@ this.legend_peasant_miner <- this.inherit("scripts/entity/tactical/human", {
 				}
 
 				local plates = [
-					[10, ""],
+					[0, ""],
 					[0, "plate/legend_armor_leather_brigandine"],
 					[0, "plate/legend_armor_leather_brigandine_hardened"],
 					[0, "plate/legend_armor_leather_brigandine_hardened_full"],
-					[1, "plate/legend_armor_leather_jacket"],
+					[2, "plate/legend_armor_leather_jacket"],
 					[1, "plate/legend_armor_leather_jacket_simple"],
 					[0, "plate/legend_armor_leather_lamellar"],
 					[0, "plate/legend_armor_leather_lamellar_harness_heavy"],
