@@ -2187,6 +2187,13 @@ Charm won't effect player characters
 
 **Fixes** 
 Full sets of armor should no longer break from a single hit 
+
+Fixes tailors not crafting cloaks
+Cloaks are more common in marketplaces 
+Fixes error with fleshless setting a brush on summoned skeletons 
+Fixes enemies not dying in battles with summoned catapults 
+Catapults are now an item that must be crafted, crafting is unlocked by taking the perk. 
+Fixes battle not loading vs fallen heroes 
 Fixes loading layers from previous versions with impossible armor values  (mwah)
 Uproot skill now doesn't target greenwood schrats by accident (Mwah)
 Fixes peasant miner not getting proper mastery (Mwah)
@@ -2194,12 +2201,6 @@ Fixes Legend Butcher AI Agent not existing (Mwah)
 (Should) fix greenskin contract settlement selection process error (Mwah)
 Peasant miner correctly initializes values before use when armor layer system is off (Mwah)
 (Should) fix Rally the Troops crash 
-Fixes tailors not crafting cloaks
-Cloaks are more common in marketplaces 
-Fixes error with fleshless setting a brush on summoned skeletons 
-Fixes enemies not dying in battles with summoned catapults 
-Catapults are now an item that must be crafted, crafting is unlocked by taking the perk. 
-Fixes battle not loading vs fallen heroes 
 
 **Enemy armor balance changes**
 Padded Surcoat durability decreased to 55 and price increased to 150
