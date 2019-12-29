@@ -2219,5 +2219,17 @@ Fencers more likely to have padded surcoat, simple mail shirts and noble leather
 Halberdiers more likely to have gambeson, Sleeveless hauberk, heavy leather lamellar
 Hedgeknights have better armor, cost more, but may have more variable perks 
 
-13.0.0.27
-Armor now actually takes damage (Mwah mah mia)
+13.0.0.27 Flinging Fixes  
+Armor layers take damage correctly (Mwah mah mia)
+Fixes freeze when loading old saves with impossible armor values  (wuxiang)
+Cleans up redundant perks on commanders (wuxiang)
+Bears now have bear sounds (Von Krolock) 
+Catapults:
+*No longer move by themselves
+*Have fixed AI and fire correctly 
+*Have increased accuracy 
+Fixes an error with enemies not dying due to not finding their morale brush 
+Fixes 'prepare to graze' not applying
+Fixes bleed and graze icons looking like poison
+
+
