@@ -2192,3 +2192,15 @@ Cloaks are more common in marketplaces
 Hedgeknights have better armor, cost more, but may have more variable perks 
 Armor doesn't take extra damage just for fun now
 
+
+13.0.0.28 - Options 
+New Menu Options:
+*Item scaling - split from legendary, controls if your equipped items contribute to difficulty. rate doubled 
+*Location scaling - split from legendary, controls if enemies are stronger further from civilisation
+*Camp Unlock - Allows bypassing the camp unlock process and ambition
+*Recruit scaling - split from legendary. controls if recruits scale up as you advance 
+Scenario select screen made alphabetical
+
+
+
+

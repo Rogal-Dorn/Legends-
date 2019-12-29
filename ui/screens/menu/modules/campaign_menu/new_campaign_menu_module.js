@@ -233,6 +233,14 @@ var NewCampaignMenuModule = function () {
 	this.mLegendMagicCheckboxLabel = null;
 	this.mLegendArmorCheckbox = null;
 	this.mLegendArmorCheckboxLabel = null;
+	this.mLegendItemScalingCheckbox = null;
+	this.mLegendItemScalingCheckboxLabel = null;
+	this.mLegendLocationScalingCheckbox = null;
+	this.mLegendLocationScalingCheckboxLabel = null;
+	this.mLegendCampUnlockCheckbox = null;
+	this.mLegendCampUnlockCheckboxLabel = null;
+	this.mLegendRecruitScalingCheckbox = null;
+	this.mLegendRecruitScalingCheckboxLabel = null;
 	// generics
 	this.mIsVisible = false;
 };
@@ -995,7 +1003,7 @@ NewCampaignMenuModule.prototype.buildConfigPage = function () {
 	row.append(control);
 	this.mLegendPerkTreesCheckbox = $('<input type="checkbox" id="cb-legendperktrees"/>');
 	control.append(this.mLegendPerkTreesCheckbox);
-	this.mLegendPerkTreesCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendperktrees">Dynamic perk trees</label>');
+	this.mLegendPerkTreesCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendperktrees">Dynamic Perk Trees</label>');
 	control.append(this.mLegendPerkTreesCheckboxLabel);
 	this.mLegendPerkTreesCheckbox.iCheck({
 		checkboxClass: 'icheckbox_flat-orange',
@@ -1010,7 +1018,7 @@ NewCampaignMenuModule.prototype.buildConfigPage = function () {
 	row.append(control);
 	this.mLegendGenderEqualityCheckbox = $('<input type="checkbox" id="cb-legendgenderequality"/>');
 	control.append(this.mLegendGenderEqualityCheckbox);
-	this.mLegendGenderEqualityCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendgenderequality">Gender Equality</label>');
+	this.mLegendGenderEqualityCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendgenderequality">Battle Sisters</label>');
 	control.append(this.mLegendGenderEqualityCheckboxLabel);
 	this.mLegendGenderEqualityCheckbox.iCheck({
 		checkboxClass: 'icheckbox_flat-orange',
@@ -1048,6 +1056,66 @@ NewCampaignMenuModule.prototype.buildConfigPage = function () {
 		increaseArea: '30%'
 	});
 	this.mLegendArmorCheckbox.iCheck('check');
+
+	var row = $('<div class="row"></div>');
+	leftColumn.append(row);
+	var control = $('<div class="control"/>');
+	row.append(control);
+	this.mLegendItemScalingCheckbox = $('<input type="checkbox" id="cb-legenditemscaling"/>');
+	control.append(this.mLegendItemScalingCheckbox);
+	this.mLegendItemScalingCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legenditemscaling">Equipment Adds Difficulty</label>');
+	control.append(this.mLegendItemScalingCheckboxLabel);
+	this.mLegendItemScalingCheckbox.iCheck({
+		checkboxClass: 'icheckbox_flat-orange',
+		radioClass: 'iradio_flat-orange',
+		increaseArea: '30%'
+	});
+	this.mLegendItemScalingCheckbox.iCheck('check');
+
+	var row = $('<div class="row"></div>');
+	leftColumn.append(row);
+	var control = $('<div class="control"/>');
+	row.append(control);
+	this.mLegendLocationScalingCheckbox = $('<input type="checkbox" id="cb-legendlocationscaling"/>');
+	control.append(this.mLegendLocationScalingCheckbox);
+	this.mLegendLocationScalingCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendlocationscaling">Distance Adds Difficulty</label>');
+	control.append(this.mLegendLocationScalingCheckboxLabel);
+	this.mLegendLocationScalingCheckbox.iCheck({
+		checkboxClass: 'icheckbox_flat-orange',
+		radioClass: 'iradio_flat-orange',
+		increaseArea: '30%'
+	});
+	this.mLegendLocationScalingCheckbox.iCheck('check');
+
+	var row = $('<div class="row"></div>');
+	leftColumn.append(row);
+	var control = $('<div class="control"/>');
+	row.append(control);
+	this.mLegendCampUnlockCheckbox = $('<input type="checkbox" id="cb-legendcampunlock"/>');
+	control.append(this.mLegendCampUnlockCheckbox);
+	this.mLegendCampUnlockCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendcampunlock">Enable Camp Tutorial</label>');
+	control.append(this.mLegendCampUnlockCheckboxLabel);
+	this.mLegendCampUnlockCheckbox.iCheck({
+		checkboxClass: 'icheckbox_flat-orange',
+		radioClass: 'iradio_flat-orange',
+		increaseArea: '30%'
+	});
+	this.mLegendCampUnlockCheckbox.iCheck('check');
+
+	var row = $('<div class="row"></div>');
+	leftColumn.append(row);
+	var control = $('<div class="control"/>');
+	row.append(control);
+	this.mLegendRecruitScalingCheckbox = $('<input type="checkbox" id="cb-legendrecruitscaling"/>');
+	control.append(this.mLegendRecruitScalingCheckbox);
+	this.mLegendRecruitScalingCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendrecruitscaling">Recruits Improve With You</label>');
+	control.append(this.mLegendRecruitScalingCheckboxLabel);
+	this.mLegendRecruitScalingCheckbox.iCheck({
+		checkboxClass: 'icheckbox_flat-orange',
+		radioClass: 'iradio_flat-orange',
+		increaseArea: '30%'
+	});
+	this.mLegendRecruitScalingCheckbox.iCheck('check');
 
 };
 
@@ -1452,6 +1520,42 @@ NewCampaignMenuModule.prototype.bindTooltips = function () {
 		elementId: 'mapconfig.legenddebug'
 	});
 
+	this.mLegendItemScalingCheckbox.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.legenditemscaling'
+	});
+	this.mLegendItemScalingCheckboxLabel.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.legenditemscaling'
+	});
+
+	this.mLegendLocationScalingCheckbox.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.legendlocationscaling'
+	});
+	this.mLegendLocationScalingCheckboxLabel.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.legendlocationscaling'
+	});
+
+	this.mLegendCampUnlockCheckbox.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.legendcampunlock'
+	});
+	this.mLegendCampUnlockCheckboxLabel.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.legendcampunlock'
+	});
+
+	this.mLegendRecruitScalingCheckbox.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.legendrecruitscaling'
+	});
+	this.mLegendRecruitScalingCheckboxLabel.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.legendrecruitscaling'
+	});
+
 };
 
 NewCampaignMenuModule.prototype.unbindTooltips = function () {
@@ -1574,6 +1678,18 @@ NewCampaignMenuModule.prototype.unbindTooltips = function () {
 
 	this.mDebugCheckbox.unbindTooltip();
 	this.mDebugCheckboxLabel.unbindTooltip();
+
+	this.mLegendItemScalingCheckbox.unbindTooltip();
+	this.mLegendItemScalingCheckboxLabel.unbindTooltip();
+
+	this.mLegendLocationScalingCheckbox.unbindTooltip();
+	this.mLegendLocationScalingCheckboxLabel.unbindTooltip();
+
+	this.mLegendCampUnlockCheckbox.unbindTooltip();
+	this.mLegendCampUnlockCheckboxLabel.unbindTooltip();
+
+	this.mLegendRecruitScalingCheckbox.unbindTooltip();
+	this.mLegendRecruitScalingCheckboxLabel.unbindTooltip();
 };
 
 
@@ -1902,6 +2018,10 @@ NewCampaignMenuModule.prototype.collectSettings = function () {
 	settings.push(this.mLegendArmorCheckbox.is(":checked"));
 	settings.push(this.mDebugCheckbox.is(":checked"));
 	settings.push(this.mAutosaveCheckbox.is(':checked'));
+	settings.push(this.mLegendItemScalingCheckbox.is(":checked"));
+	settings.push(this.mLegendLocationScalingCheckbox.is(":checked"));
+	settings.push(this.mLegendCampUnlockCheckbox.is(":checked"));
+	settings.push(this.mLegendRecruitScalingCheckbox.is(":checked"));
 	return settings;
 }
 
