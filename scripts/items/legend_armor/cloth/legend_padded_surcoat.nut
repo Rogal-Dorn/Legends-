@@ -12,9 +12,9 @@ this.legend_padded_surcoat <- this.inherit("scripts/items/legend_armor/legend_ar
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.InventorySound = this.Const.Sound.ClothEquip;
-		this.m.Value = 90;
-		this.m.Condition = 60;
-		this.m.ConditionMax = 60;
+		this.m.Value = 150;
+		this.m.Condition = 55;
+		this.m.ConditionMax = 55;
 		this.m.StaminaModifier = -4;
 	}
 

@@ -97,7 +97,7 @@ this.militia_veteran <- this.inherit("scripts/entity/tactical/human", {
 		{
 			local cloths = [
 				[0, ""],
-				[1, "cloth/legend_gambeson"],
+				[0, "cloth/legend_gambeson"],
 				[0, "cloth/legend_gambeson_plain"],
 				[0, "cloth/legend_gambeson_wolf"],
 				[1, "cloth/legend_padded_surcoat"],
@@ -109,7 +109,8 @@ this.militia_veteran <- this.inherit("scripts/entity/tactical/human", {
 				[0, "cloth/legend_sackcloth"],
 				[0, "cloth/legend_sackcloth_patched"],
 				[0, "cloth/legend_sackcloth_tattered"],
-				[1, "cloth/legend_tunic"],
+				[1, "cloth/legend_thick_tunic"],
+				[0, "cloth/legend_tunic"],
 				[0, "cloth/legend_tunic_noble"]
 			];
 			local armor = this.Const.World.Common.pickLegendArmor(cloths)
@@ -117,10 +118,10 @@ this.militia_veteran <- this.inherit("scripts/entity/tactical/human", {
 			if (armor != null)
 			{
 				local chains = [
-					[0, ""],
+					[2, ""],
 					[0, "chain/legend_armor_mail_shirt"],
 					[0, "chain/legend_armor_mail_shirt_simple"],
-					[0, "chain/legend_armor_rusty_mail_shirt"],
+					[1, "chain/legend_armor_rusty_mail_shirt"],
 					[0, "chain/legend_armor_ancient_double_mail"],
 					[0, "chain/legend_armor_ancient_mail"],
 					[0, "chain/legend_armor_basic_mail"],
@@ -147,14 +148,14 @@ this.militia_veteran <- this.inherit("scripts/entity/tactical/human", {
 					[0, "plate/legend_armor_leather_brigandine_hardened"],
 					[0, "plate/legend_armor_leather_brigandine_hardened_full"],
 					[1, "plate/legend_armor_leather_jacket"],
-					[1, "plate/legend_armor_leather_jacket_simple"],
+					[0, "plate/legend_armor_leather_jacket_simple"],
 					[1, "plate/legend_armor_leather_lamellar"],
 					[0, "plate/legend_armor_leather_lamellar_harness_heavy"],
 					[0, "plate/legend_armor_leather_lamellar_harness_reinforced"],
 					[0, "plate/legend_armor_leather_lamellar_heavy"],
 					[0, "plate/legend_armor_leather_lamellar_reinforced"],
 					[0, "plate/legend_armor_leather_noble"],
-					[0, "plate/legend_armor_leather_padded"],
+					[2, "plate/legend_armor_leather_padded"],
 					[0, "plate/legend_armor_leather_riveted"],
 					[0, "plate/legend_armor_leather_riveted_light"],
 					[0, "plate/legend_armor_leather_scale"],

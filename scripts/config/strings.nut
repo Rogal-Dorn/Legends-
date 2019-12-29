@@ -1702,7 +1702,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendSummonWolf = "Cultivating a relationship with the wolves allows you to call them to your side. Summon a wolf to aid you in battle.",
 	LegendSummonFalcon = "Years spent feeding and caring for falcons has made them your friends. Summon a falcon to guide you in battle.",
 	LegendSummonBear = "Endless communion with the animals has won you the trust of the bears. Summon a bear to join you in battle.",
-	LegendSummonCatapult = "Your skill in the creation and maintenance of seige weapons allows you to Summon Catapult to your side in battle",
+	LegendSummonCatapult = "Put to use your skill in the creation and maintenance of seige weapons. Unlocks crafting Catapults in the crafting tent",
 	LegendNetRepair = "Many years spent repearing and packing nets allows you to carry and repair more nets. Doubles the ammunition of nets and reinforced nets. ",
 	LegendNetCasting = "Learning the ways of the cast takes practice, holding the net in the right position and twisting at the hips allows you to cover a greater distance with each cast. Increases the range of nets and reinforced nets to 4.",
 	LegendPacifist = "Fighting is a brutal thuggish pastime, most folk prefer a life without frequent bouts of ultraviolence.  Since this character is not threatening, they only count for half a person when determining difficulty. They become content with being in reserve, and will grow unhappy if they are placed in more than half your comapany battles. ",

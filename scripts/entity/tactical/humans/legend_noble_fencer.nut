@@ -95,7 +95,7 @@ this.legend_noble_fencer <- this.inherit("scripts/entity/tactical/human", {
 				[1, "cloth/legend_gambeson"],
 				[0, "cloth/legend_gambeson_plain"],
 				[0, "cloth/legend_gambeson_wolf"],
-				[1, "cloth/legend_padded_surcoat"],
+				[2, "cloth/legend_padded_surcoat"],
 				[0, "cloth/legend_robes"],
 				[0, "cloth/legend_apron_butcher"],
 				[0, "cloth/legend_robes_nun"],
@@ -104,6 +104,7 @@ this.legend_noble_fencer <- this.inherit("scripts/entity/tactical/human", {
 				[0, "cloth/legend_sackcloth"],
 				[0, "cloth/legend_sackcloth_patched"],
 				[0, "cloth/legend_sackcloth_tattered"],
+				[1, "cloth/legend_thick_tunic"],
 				[0, "cloth/legend_tunic"],
 				[0, "cloth/legend_tunic_noble"]
 			];
@@ -113,8 +114,8 @@ this.legend_noble_fencer <- this.inherit("scripts/entity/tactical/human", {
 			{
 				local chains = [
 					[0, ""],
-					[1, "chain/legend_armor_mail_shirt"],
-					[0, "chain/legend_armor_mail_shirt_simple"],
+					[0, "chain/legend_armor_mail_shirt"],
+					[2, "chain/legend_armor_mail_shirt_simple"],
 					[0, "chain/legend_armor_rusty_mail_shirt"],
 					[0, "chain/legend_armor_ancient_double_mail"],
 					[0, "chain/legend_armor_ancient_mail"],
@@ -127,7 +128,7 @@ this.legend_noble_fencer <- this.inherit("scripts/entity/tactical/human", {
 					[0, "chain/legend_armor_reinforced_rotten_mail_shirt"],
 					[0, "chain/legend_armor_reinforced_worn_mail"],
 					[0, "chain/legend_armor_reinforced_worn_mail_shirt"],
-					[1, "chain/legend_armor_short_mail"]
+					[0, "chain/legend_armor_short_mail"]
 				]
 
 				local chain = this.Const.World.Common.pickLegendArmor(chains)
@@ -148,7 +149,7 @@ this.legend_noble_fencer <- this.inherit("scripts/entity/tactical/human", {
 					[0, "plate/legend_armor_leather_lamellar_harness_reinforced"],
 					[0, "plate/legend_armor_leather_lamellar_heavy"],
 					[0, "plate/legend_armor_leather_lamellar_reinforced"],
-					[1, "plate/legend_armor_leather_noble"],
+					[2, "plate/legend_armor_leather_noble"],
 					[0, "plate/legend_armor_leather_padded"],
 					[1, "plate/legend_armor_leather_riveted"],
 					[0, "plate/legend_armor_leather_riveted_light"],
@@ -166,7 +167,7 @@ this.legend_noble_fencer <- this.inherit("scripts/entity/tactical/human", {
 					[0, "plate/legend_armor_scale"],
 					[0, "plate/legend_armor_scale_coat"],
 					[0, "plate/legend_armor_scale_coat_rotten"],
-					[0, "plate/legend_armor_scale_shirt"]
+					[1, "plate/legend_armor_scale_shirt"]
 				]
 				local plate = this.Const.World.Common.pickLegendArmor(plates)
 				if (plate != null)
