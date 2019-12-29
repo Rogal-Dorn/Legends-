@@ -3,10 +3,10 @@ this.tutorial_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 	function create()
 	{
 		this.m.ID = "scenario.tutorial";
-		this.m.Name = "Rebuilding a Company (Tutorial)";
+		this.m.Name = "Rebuilding a Company";
 		this.m.Description = "[p=c][img]gfx/ui/events/event_21.png[/img][/p][p]You are second-in-command in a mercenary company that has been tracking a brigand named Hoggart for some time now. An unexpected turn of events leaves the company in shatters, and you in charge to rebuild it to its former glory.\n\n[color=#bcad8c]Recommended for new players as it includes some helpful guidance in the beginning.[/color][/p]";
 		this.m.Difficulty = 1;
-		this.m.Order = 0;
+		this.m.Order = 21;
 	}
 
 	function onSpawnAssets()
@@ -112,6 +112,19 @@ this.tutorial_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 			this.Music.setTrackList(this.Const.Music.CivilianTracks, this.Const.Music.CrossFadeTime);
 			this.World.Contracts.update(true);
 		}, null);
+
+		if(this.Const.LegendMod.Configs.LegendCampUnlockEnabled())
+		{
+			this.World.Tags.set("HasLegendCampGathering", true);
+			this.World.Tags.set("HasLegendCampBarber", true);
+			this.World.Tags.set("HasLegendCampCrafting", true);
+			this.World.Tags.set("HasLegendCampFletching", true);
+			this.World.Tags.set("HasLegendCampHealing", true);
+			this.World.Tags.set("HasLegendCampHunting", true);
+			this.World.Tags.set("HasLegendCampScouting", true);
+			this.World.Tags.set("HasLegendCampScraping", true);
+			this.World.Tags.set("HasLegendCampTraining", true);			
+		}
 	}
 
 });

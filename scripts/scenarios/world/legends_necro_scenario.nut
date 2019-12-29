@@ -3,10 +3,10 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	function create()
 	{
 		this.m.ID = "scenario.legends_necro";
-		this.m.Name = "Warlock (Legends)";
+		this.m.Name = "Warlock";
 		this.m.Description = "[p=c][img]gfx/ui/events/event_46.png[/img][/p][p] Death is no barrier, others flee from its yawning abyss, but you embrace the other side. \n\n[color=#bcad8c]Necromancy:[/color] Start with undead companions and a scythe that summons the dead\n[color=#bcad8c]Gruesome harvest:[/color] Collect human corpses to fashion new minions, maintain them with medical supplies\n[color=#bcad8c]Blood magic:[/color]Drain blood, feast on corpses and use your own blood in rituals\n[color=#bcad8c]Avatar:[/color]When the warlock dies, the spells fade and the game ends[/p]";
 		this.m.Difficulty = 2;
-		this.m.Order = 13;
+		this.m.Order = 25;
 	}
 
 	function isValid()
@@ -126,6 +126,19 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			this.Music.setTrackList(this.Const.Music.CivilianTracks, this.Const.Music.CrossFadeTime);
 			this.World.Events.fire("event.legend_necro_scenario_intro");
 		}, null);
+
+				if(this.Const.LegendMod.Configs.LegendCampUnlockEnabled())
+				{
+					this.World.Tags.set("HasLegendCampGathering", true);
+					this.World.Tags.set("HasLegendCampBarber", true);
+					this.World.Tags.set("HasLegendCampCrafting", true);
+					this.World.Tags.set("HasLegendCampFletching", true);
+					this.World.Tags.set("HasLegendCampHealing", true);
+					this.World.Tags.set("HasLegendCampHunting", true);
+					this.World.Tags.set("HasLegendCampScouting", true);
+					this.World.Tags.set("HasLegendCampScraping", true);
+					this.World.Tags.set("HasLegendCampTraining", true);			
+				}
 	}
 	
 	function onInit()

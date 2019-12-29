@@ -77,10 +77,13 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 			{
 				this.m.Strength +=  6 + (i / 2) + ((bro.getLevel() / 2) + (pow(bro.getLevel(),1.2)));
 			}
-			else if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+			else if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary )
 			{
-			//	this.m.Strength +=  6 + i + pow(bro.getLevel(),1.25);
-				this.m.Strength +=  i + ((bro.getLevel() / 2) + (pow(bro.getLevel(),1.2)));
+				this.m.Strength +=  i + (bro.getLevel() + (pow(bro.getLevel(),1.2)));
+			}
+
+			if (this.Const.LegendMod.Configs.LegendItemScalingEnabled())
+			{
 				local mainhand = bro.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
 				local offhand = bro.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
 				local body = bro.getItems().getItemAtSlot(this.Const.ItemSlot.Body);
@@ -92,29 +95,29 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 
 				if (mainhand != null)
 				{
-					mainhandvalue += (mainhand.getSellPrice())  / 4000;
+					mainhandvalue += (mainhand.getSellPrice())  / 2000;
 				}
 
 				if (offhand != null)
 				{
-					offhandvalue += (offhand.getSellPrice()) / 4000;
+					offhandvalue += (offhand.getSellPrice()) / 2000;
 				}
 
 				if (body != null)
 				{
-					bodyvalue += (body.getSellPrice()) / 4000;
+					bodyvalue += (body.getSellPrice()) / 2000;
 				}
 
 				if (head != null)
 				{
-					headvalue += (head.getSellPrice()) / 4000;
+					headvalue += (head.getSellPrice()) / 2000;
 				}
-
 
 				local gearvalue = mainhandvalue + offhandvalue + bodyvalue + headvalue;
 				this.logInfo("Gear power " + gearvalue);
-				this.m.Strength +=  gearvalue + i + pow(bro.getLevel(),1.25);
+				this.m.Strength += gearvalue ;
 			}
+
 		}
 
 		if  (zombieSummonLevel == 0 && skeletonSummonLevel == 0)
