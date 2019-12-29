@@ -28,7 +28,7 @@ this.legend_catapult_blueprint <- this.inherit("scripts/crafting/blueprint", {
 		local roster = this.World.getPlayerRoster().getAll();
         foreach( bro in roster )
         {
-            if (bro.getSkills().hasSkill("perk_legend_summon_catapult") )
+            if (bro.getSkills().hasSkill("perk.legend_summon_catapult") )
             {
                 return true
             }
