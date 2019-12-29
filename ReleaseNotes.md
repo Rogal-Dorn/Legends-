@@ -2202,7 +2202,7 @@ Fixes Legend Butcher AI Agent not existing (Mwah)
 Peasant miner correctly initializes values before use when armor layer system is off (Mwah)
 (Should) fix Rally the Troops crash 
 
-**Enemy armor balance changes**
+**Enemy armor balance changes**  
 Padded Surcoat durability decreased to 55 and price increased to 150
 Gambeson price increased to 250
 Cuirass given correct fatigue 
@@ -2218,3 +2218,6 @@ Noble footmen more likely to have padded surcoats, mail shirts and leather lamel
 Fencers more likely to have padded surcoat, simple mail shirts and noble leather armor 
 Halberdiers more likely to have gambeson, Sleeveless hauberk, heavy leather lamellar
 Hedgeknights have better armor, cost more, but may have more variable perks 
+
+13.0.0.27
+Armor now actually takes damage (Mwah mah mia)
