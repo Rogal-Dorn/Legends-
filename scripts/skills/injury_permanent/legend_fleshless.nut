@@ -86,7 +86,10 @@ this.legend_fleshless <- this.inherit("scripts/skills/injury_permanent/permanent
 		body.Saturation = 0.8;
 		body.varySaturation(0.2);
 		body.varyColor(0.025, 0.025, 0.025);
+		if (this.getTages().has("human"))
+		{
 		actor.getSprite("injury_body").setBrush("bust_skeleton_body_injured");
+		}
 		local head = actor.getSprite("head");
 		head.setBrush("bust_skeleton_head");
 		head.Color = body.Color;
