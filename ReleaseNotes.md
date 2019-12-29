@@ -2229,6 +2229,9 @@ Fixes 'prepare to graze' not applying
 Fixes bleed and graze icons looking like poison
 Fixes crash from rally the troops 
 Fixes fight not loading error when facing armored weidergangers
+Fixes gladiator not loading
+Lacerate can now apply stacks of graze
+tweaks peasant armors
 
 **Catapults:**
 *No longer move by themselves
@@ -2241,4 +2244,12 @@ Fixes fight not loading error when facing armored weidergangers
 *No longer get the asks for food event 
 *Updated world icon to legionaire instead of gladiator  
 *Fixes fleshless injury errors 
+
+13.0.0.28 - Options 
+New Menu Options:
+*Item scaling - split from legendary, controls if your equipped items contribute to difficulty. rate doubled 
+*Location scaling - split from legendary, controls if enemies are stronger further from civilisation
+*Camp Unlock - Allows bypassing the camp unlock process and ambition
+*Recruit scaling - split from legendary. controls if recruits scale up as you advance 
+Scenario select screen made alphabetical
 

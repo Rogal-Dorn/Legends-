@@ -3,10 +3,10 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 	function create()
 	{
 		this.m.ID = "scenario.legends_rangers";
-		this.m.Name = "Solo Ranger (Legends)";
+		this.m.Name = "Ranger";
 		this.m.Description = "[p=c][img]gfx/ui/events/event_10.png[/img][/p][p]Originally hailing from far afield, the rangers are sworn to protect their ancestral woodlands. Increasing intrusions led the rangers to these lands. \n\n[color=#bcad8c]Ourdoorsmen:[/color] Not everyone is cut out for the Rangers, some love nature and are eager to join, others will need more coin to convince. All recruits gain Pathfinder \n[color=#bcad8c]Expert Scouts:[/color] You move faster and can always get a scouting report for any enemies near you.\n[color=#bcad8c]Avatar:[/color] If your ranger dies, its game over.[/p]";
 		this.m.Difficulty = 2;
-		this.m.Order = 15;
+		this.m.Order = 20;
 	}
 
 	function isValid()
@@ -135,6 +135,19 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 			this.Music.setTrackList(this.Const.Music.IntroTracks, this.Const.Music.CrossFadeTime);
 			this.World.Events.fire("event.legend_ranger_scenario_intro");
 		}, null);
+
+		if(this.Const.LegendMod.Configs.LegendCampUnlockEnabled())
+		{
+			this.World.Tags.set("HasLegendCampGathering", true);
+			this.World.Tags.set("HasLegendCampBarber", true);
+			this.World.Tags.set("HasLegendCampCrafting", true);
+			this.World.Tags.set("HasLegendCampFletching", true);
+			this.World.Tags.set("HasLegendCampHealing", true);
+			this.World.Tags.set("HasLegendCampHunting", true);
+			this.World.Tags.set("HasLegendCampScouting", true);
+			this.World.Tags.set("HasLegendCampScraping", true);
+			this.World.Tags.set("HasLegendCampTraining", true);			
+		}
 	}
 
 	function onInit()

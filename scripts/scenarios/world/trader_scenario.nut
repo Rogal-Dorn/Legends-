@@ -1,17 +1,16 @@
-this.legends_horse_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
+this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 	m = {},
 	function create()
 	{
-		this.m.ID = "scenario.legends_horse";
-		this.m.Name = "Horse party";
+		this.m.ID = "scenario.trader";
+		this.m.Name = "Trading Caravan";
 		this.m.Description = "[p=c][img]gfx/ui/events/event_41.png[/img][/p][p]You\'re running a small trading caravan and have most of your crowns invested into trading goods. But the roads have become dangerous - brigands and greenskins lay in ambush, and there\'s rumors of even worse things out there.\n\n[color=#bcad8c]Caravan:[/color] Start with a trader and a donkey.\n[color=#bcad8c]Trader:[/color] Get 10% better prices for buying and selling.\n[color=#bcad8c]Not a Warrior:[/color] Start with no renown, and gain renown at half the normal rate.\n[color=#bcad8c]Bribery:[/color] Pay off human enemies instead of fighting them[/p]";
 		this.m.Difficulty = 2;
-		this.m.Order = 11;
+		this.m.Order = 24;
 	}
 
 	function isValid()
 	{
-		return false;
 		return this.Const.DLC.Wildmen;
 	}
 
@@ -20,7 +19,7 @@ this.legends_horse_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		local roster = this.World.getPlayerRoster();
 		local names = [];
 
-		for( local i = 0; i < 3; i = ++i )
+		for( local i = 0; i < 2; i = ++i )
 		{
 			local bro;
 			bro = roster.create("scripts/entity/tactical/player");
@@ -37,23 +36,18 @@ this.legends_horse_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 		local bros = roster.getAll();
 		bros[0].setStartValuesEx([
-			"legend_horse"
+			"legend_donkey"
 		]);
 		bros[0].setPlaceInFormation(3);
 		bros[0].setVeteranPerks(2);
 		bros[1].setStartValuesEx([
-			"legend_horserider"
-		]);
-		bros[1].setPlaceInFormation(3);
-		bros[1].setVeteranPerks(2);
-		bros[2].setStartValuesEx([
 			"legend_trader_commander_background"
 		]);
-		bros[2].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
-		bros[2].getTags().set("IsPlayerCharacter", true);
-		bros[2].setPlaceInFormation(4);
-		bros[2].setVeteranPerks(2);
-		local items = bros[2].getItems();
+		bros[1].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
+		bros[1].getTags().set("IsPlayerCharacter", true);
+		bros[1].setPlaceInFormation(4);
+		bros[1].setVeteranPerks(2);
+		local items = bros[1].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.equip(this.new("scripts/items/weapons/scimitar"));
 		this.World.Assets.m.BusinessReputation = 0;
@@ -177,11 +171,6 @@ this.legends_horse_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			return;
 		}
 		local r;
-		r = this.Math.rand(0, 1);
-		if (r == 0)
-		{
-			_list.push("legend_donkey");
-		}
 		r = this.Math.rand(0, 4);
 		if (r == 0)
 		{
@@ -195,4 +184,3 @@ this.legends_horse_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	}
 
 });
-
