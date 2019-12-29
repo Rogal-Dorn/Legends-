@@ -2196,6 +2196,9 @@ Peasant miner correctly initializes values before use when armor layer system is
 (Should) fix Rally the Troops crash 
 Fixes tailors not crafting cloaks
 Cloaks are more common in marketplaces 
+Fixes error with fleshless setting a brush on summoned skeletons 
+Fixes enemies not dying in battles with summoned catapults 
+Catapults are now an item that must be crafted, crafting is unlocked by taking the perk. 
 
 **Enemy armor balance changes**
 Padded Surcoat durability decreased to 55 and price increased to 150
