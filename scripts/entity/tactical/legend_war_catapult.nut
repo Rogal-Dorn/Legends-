@@ -128,8 +128,8 @@ this.legend_war_catapult <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.ActionPoints = b.ActionPoints;
 		this.m.Hitpoints = b.Hitpoints;
 		this.m.CurrentProperties = clone b;
-		this.m.ActionPointCosts = this.Const.DefaultMovementAPCost;
-		this.m.FatigueCosts = this.Const.DefaultMovementFatigueCost;
+		this.m.ActionPointCosts = this.Const.CatapultMovementAPCost;
+		this.m.FatigueCosts = this.Const.CatapultMovementFatigueCost;
 		local body = this.addSprite("body");
 		body.setBrush("legend_catapult");
 		body.varySaturation(0.25);
