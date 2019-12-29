@@ -231,7 +231,7 @@ this.zombie_knight <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 		{
 			if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Body) == null)
 			{
-				armors = [
+				local armors = [
 					"armor/decayed_coat_of_plates",
 					"armor/decayed_coat_of_scales",
 					"armor/decayed_reinforced_mail_hauberk"
