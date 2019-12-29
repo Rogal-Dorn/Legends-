@@ -29,7 +29,7 @@ this.legend_unleash_catapult <- this.inherit("scripts/skills/skill", {
 		this.m.IsAttack = false;
 		this.m.IsTargetingActor = false;
 		this.m.ActionPointCost = 8;
-		this.m.FatigueCost = 15;
+		this.m.FatigueCost = 30;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 1;
 	}
@@ -65,17 +65,17 @@ this.legend_unleash_catapult <- this.inherit("scripts/skills/skill", {
 	function isUsable()
 	{
 
-		if (this.getContainer().hasSkill("effects.legend_summoned_catapult_effect"))
-		{
-			return false;
-		}
-
-		if (this.m.Entity != null || !this.skill.isUsable())
+		if (this.m.Item.isUnleashed() || !this.skill.isUsable())
 		{
 			return false;
 		}
 
 		return true;
+	}
+
+	function onUpdate( _properties )
+	{
+		this.m.IsHidden = this.m.Item.isUnleashed();
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )
@@ -88,15 +88,12 @@ this.legend_unleash_catapult <- this.inherit("scripts/skills/skill", {
 	{
 		_user.getSkills().add(this.new("scripts/skills/effects/legend_summoned_catapult_effect"));
 		local entity = this.Tactical.spawnEntity(this.m.Script, _targetTile.Coords.X, _targetTile.Coords.Y);
-		entity.setFaction(_user.getFaction());
+		entity.setFaction(this.Const.Faction.PlayerAnimals);
 		entity.setName(this.m.EntityName);
 
 		return true;
 	}
 
-	function onCombatFinished()
-	{
-		this.m.Entity = null;
-	}
+
 
 });
