@@ -280,14 +280,6 @@ this.ai_engage_melee <- this.inherit("scripts/ai/tactical/behavior", {
 						continue;
 					}
 
-					for( ; tile.getDistanceTo(myTile) > 4;  )
-					{
-					}
-
-					for( ; zocs > inZonesOfControl;  )
-					{
-					}
-
 					if (tile.Level <= myTile.Level && tile.IsBadTerrain == myTile.IsBadTerrain && (this.m.Skill == null || !this.m.Skill.isDisengagement()))
 					{
 						continue;
