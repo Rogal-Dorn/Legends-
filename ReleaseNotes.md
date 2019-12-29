@@ -2196,3 +2196,6 @@ Fixes peasant miner not getting proper mastery
 Fixes Legend Butcher AI Agent not existing
 (Should) fix greenskin contract settlement selection process error
 Peasant miner correctly initializes values before use when armor layer system is off
+
+13.0.0.27
+Armor layers now take damage again
