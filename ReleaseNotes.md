@@ -2228,6 +2228,7 @@ Fixes an error with enemies not dying due to not finding their morale brush
 Fixes 'prepare to graze' not applying
 Fixes bleed and graze icons looking like poison
 Fixes crash from rally the troops 
+Fixes fight not loading error when facing armored weidergangers
 
 **Catapults:**
 *No longer move by themselves
@@ -2237,7 +2238,7 @@ Fixes crash from rally the troops
 
 **Legion:**
 *Added a recruitment event with the same rules as the cultist recruitment event 
-*No longer asks for food
-*Updated world icon that is legionaire instead of gladiator  
-*Fixes fleshless errors 
+*No longer get the asks for food event 
+*Updated world icon to legionaire instead of gladiator  
+*Fixes fleshless injury errors 
 
