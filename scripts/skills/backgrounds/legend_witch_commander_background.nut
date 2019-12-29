@@ -150,7 +150,7 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 					this.Const.Perks.PerkDefs.LegendFreedomOfMovement,
 					this.Const.Perks.PerkDefs.PerfectFocus,
 					this.Const.Perks.PerkDefs.LegendSleep,
-					this.Const.Perks.PerkDefs.LegendTeacher,
+					//this.Const.Perks.PerkDefs.LegendTeacher,
 					this.Const.Perks.PerkDefs.LegendFieldTriage,
 					this.Const.Perks.PerkDefs.LegendFirefield,
 					this.Const.Perks.PerkDefs.LegendRoster6
@@ -232,7 +232,7 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 					this.Const.Perks.PerkDefs.LegendFavouredEnemyHexen,
 					this.Const.Perks.PerkDefs.PerfectFocus,
 					this.Const.Perks.PerkDefs.LegendSleep,
-					this.Const.Perks.PerkDefs.LegendTeacher,
+					//this.Const.Perks.PerkDefs.LegendTeacher,
 					this.Const.Perks.PerkDefs.LegendFieldTriage,
 					this.Const.Perks.PerkDefs.LegendTeleport,
 					this.Const.Perks.PerkDefs.LegendFirefield,
@@ -315,7 +315,7 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 		this.m.Container.add(this.new("scripts/skills/traits/bright_trait"));
 		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_daze"));
 		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_1"));
-		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_teacher"));
+		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_teacher"));
 		this.m.Container.add(this.new("scripts/skills/perks/perk_student"));
 
 		if (this.Const.LegendMod.Configs.LegendMagicEnabled())
