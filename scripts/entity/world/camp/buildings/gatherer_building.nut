@@ -228,7 +228,20 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 
 		//check for apothecaries
 		local apothecarylevels = this.getApothecaryLevel();
+
+		// set it to something that wont break if none are present 
+		if (apothecarylevels = null)
+		{
+		apothecarylevels = 0;
+		}
+
 		local brewerlevels = this.getBrewerLevel();
+		if (brewerlevels = null)
+		{
+		apothecarylevels = 0;
+		}
+
+
 		if (apothecarylevels >= 1 && apothecarylevels < 10)
 		{	
 			secondary.extend([
@@ -267,6 +280,7 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 			]);
 		}
 
+
 		local secondarychance = this.Math.min(8, 100 - apothecarylevels);
 		if (this.Math.rand(1, secondarychance) <= this.m.Camp.getCampTimeHours())
 		{
@@ -274,6 +288,7 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 			this.m.Items.push(item);
 			this.Stash.add(item);				
 		}
+
 
     }
     
