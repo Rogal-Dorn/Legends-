@@ -153,7 +153,7 @@
 
 		local morale = this.getSprite("morale");
 
-		if (this.Const.MoraleStateBrush[this.m.MoraleState].len() != 0)
+		if (this.Const.MoraleStateBrush[this.m.MoraleState].len() != 0 && morale != null )
 		{
 			if (this.m.MoraleState == this.Const.MoraleState.Confident)
 			{

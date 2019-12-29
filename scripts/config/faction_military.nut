@@ -226,7 +226,7 @@ gt.Const.Tactical.Actor.LegendCatapult <- {
 	Bravery = 200,
 	Stamina = 200,
 	MeleeSkill = 0,
-	RangedSkill = 80,
+	RangedSkill = 90,
 	MeleeDefense = 0,
 	RangedDefense = 0,
 	Initiative = 60,
