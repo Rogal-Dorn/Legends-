@@ -2253,3 +2253,6 @@ New Menu Options:
 *Recruit scaling - split from legendary. controls if recruits scale up as you advance 
 Scenario select screen made alphabetical
 
+Fixes Drums of Life/War tooltips still saying +1 vs +2 (Mwah)
+Fixes bandit leader sometimes screwing up when being made a miniboss (Mwah)
+Possibly fixes AI file to not freeze (Mwah)
