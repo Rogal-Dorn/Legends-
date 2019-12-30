@@ -2258,4 +2258,5 @@ Fixes bandit leader sometimes screwing up when being made a miniboss (Mwah)
 Possibly fixes AI file to not freeze (Mwah)
 
 13.0.0.29
-Fixes drums of life/war tooltips on perk tree && on skill
+Fixes drums of life/war tooltips on perk tree && on skill (Mwah)
+Militia can now get aprons as previously intended (Mwah)
