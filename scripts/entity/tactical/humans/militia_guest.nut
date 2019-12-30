@@ -184,7 +184,7 @@ this.militia_guest <- this.inherit("scripts/entity/tactical/player", {
 		}
 		else
 		{
-			r = this.Math.rand(1, 6);
+			r = this.Math.rand(1, 7);
 
 			if (r == 1)
 			{
