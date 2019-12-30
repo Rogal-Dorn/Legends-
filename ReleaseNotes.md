@@ -2260,3 +2260,4 @@ Possibly fixes AI file to not freeze (Mwah)
 13.0.0.29
 Fixes drums of life/war tooltips on perk tree && on skill (Mwah)
 Militia can now get aprons as previously intended (Mwah)
+Bribe skill should properly round down to avoid weird gold fractions (Mwah)
