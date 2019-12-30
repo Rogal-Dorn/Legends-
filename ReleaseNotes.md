@@ -2256,3 +2256,6 @@ Scenario select screen made alphabetical
 Fixes Drums of Life/War tooltips still saying +1 vs +2 (Mwah)
 Fixes bandit leader sometimes screwing up when being made a miniboss (Mwah)
 Possibly fixes AI file to not freeze (Mwah)
+
+13.0.0.29
+Fixes drums of life/war tooltip again (Mwah)
