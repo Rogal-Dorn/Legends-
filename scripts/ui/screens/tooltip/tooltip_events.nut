@@ -4315,12 +4315,12 @@ this.tooltip_events <- {
 				{
 					id = 1,
 					type = "title",
-					text = "Settlement Visibility"
+					text = "Hide settlements you have not visited"
 				},
 				{
 					id = 2,
 					type = "description",
-					text = "If enabled, all settlements will be hidden at campaign start, giving a small scale start. For the true explorer experience!"
+					text = "If enabled, all settlements will be hidden at campaign start, giving a small scale start. For the true role playing explorer experience!"
 				}
 			];
 		case "mapconfig.stackcitadels":
@@ -4328,7 +4328,7 @@ this.tooltip_events <- {
 				{
 					id = 1,
 					type = "title",
-					text = "Decked Out Citadels"
+					text = "Gaurantee Citadels Have Everything"
 				},
 				{
 					id = 2,
@@ -4341,12 +4341,12 @@ this.tooltip_events <- {
 				{
 					id = 1,
 					type = "title",
-					text = "All Trade Locations"
+					text = "Guarantee All Trade Locations"
 				},
 				{
 					id = 2,
 					type = "description",
-					text = "If enabled, guarentees at least one of each trade location building on the map."
+					text = "If enabled, ensures there is at least one of each trade location building on the map."
 				}
 			];
 
@@ -4355,7 +4355,7 @@ this.tooltip_events <- {
 					{
 						id = 1,
 						type = "title",
-						text = "Dynamic Perk Trees"
+						text = "Give each recruit a unique perk tree"
 					},
 					{
 						id = 2,
@@ -4368,7 +4368,7 @@ this.tooltip_events <- {
 					{
 						id = 1,
 						type = "title",
-						text = "Battle Sisters"
+						text = "Allow nearly anyone to be female"
 					},
 					{
 						id = 2,
@@ -4381,12 +4381,12 @@ this.tooltip_events <- {
 				{
 					id = 1,
 					type = "title",
-					text = "Magic"
+					text = "Allow Vala, Runestones and Magic Scenarios"
 				},
 				{
 					id = 2,
 					type = "description",
-					text = "If enabled, low magic is allowed in the world, for most starts this just makes it possible to find vala and rune stones. If disabled, vala will not appear, runes stones will be 10x rarer, and magic commanders have low magic."
+					text = "If enabled, low magic is allowed in the world, this makes it possible to find vala and rune stones. If disabled, vala will not appear, runes stones will be 10x rarer, and magic commanders have to get by without magic."
 				}
 			];
 		case "mapconfig.legendarmor":
@@ -4394,7 +4394,7 @@ this.tooltip_events <- {
 				{
 					id = 1,
 					type = "title",
-					text = "Armor layer system"
+					text = "Allow armors to be split into layers"
 				},
 				{
 					id = 2,
@@ -4407,7 +4407,7 @@ this.tooltip_events <- {
 				{
 					id = 1,
 					type = "title",
-					text = "Debug"
+					text = "Debug Map"
 				},
 				{
 					id = 2,
@@ -4415,6 +4415,58 @@ this.tooltip_events <- {
 					text = "If enabled, the map will start completely revealed and all enemies and camps will be visible."
 				}
 			];
+		case "mapconfig.legenditemscaling":
+			return [
+					{
+						id = 1,
+						type = "title",
+						text = "Include your equipped items in difficulty calculations"
+					},
+					{
+						id = 2,
+						type = "description",
+						text = "If enabled, the value of your equipped items will increase the combat difficulty. Only effects mainhand, offhand, body and head. This is in addition to other difficulty settings."
+					}
+				];
+		case "mapconfig.legendlocationscaling":
+			return [
+					{
+						id = 1,
+						type = "title",
+						text = "Allow remote areas to be more dangerous"
+					},
+					{
+						id = 2,
+						type = "description",
+						text = "If enabled, enemies will be stronger the further they spawn from civilisation. This is in addition to other difficulty settings."
+					}
+				];
+		case "mapconfig.legendcampunlock":
+			return [
+					{
+						id = 1,
+						type = "title",
+						text = "Start with all camp activities enabled"
+					},
+					{
+						id = 2,
+						type = "description",
+						text = "If disabled, you will gradually unlock camping activities by visiting towns. Useful for first playthroughs."
+					}
+				];
+		case "mapconfig.legendrecruitscaling":
+			return [
+					{
+						id = 1,
+						type = "title",
+						text = "Recruits improve with you"
+					},
+					{
+						id = 2,
+						type = "description",
+						text = "If enabled, new recruits will gain levels based on the levels in your party, your renown in the world, and your moral reputation."
+					}
+				];
 		case "camp.commander":
 		case "camp.rest":
 		case "camp.repair":

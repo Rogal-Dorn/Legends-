@@ -11,12 +11,7 @@ this.legend_bear <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.ConfidentMoraleBrush = "icon_confident_orcs";
 		this.actor.create();
 		this.m.Sound[this.Const.Sound.ActorEvent.Death] = [
-			"sounds/enemies/unhold_death_01.wav",
-			"sounds/enemies/unhold_death_02.wav",
-			"sounds/enemies/unhold_death_03.wav",
-			"sounds/enemies/unhold_death_04.wav",
-			"sounds/enemies/unhold_death_05.wav",
-			"sounds/enemies/unhold_death_06.wav"
+			"sounds/enemies/bear_dead.wav"
 		];
 		this.m.Sound[this.Const.Sound.ActorEvent.Flee] = [
 			"sounds/enemies/unhold_flee_01.wav",
@@ -25,21 +20,12 @@ this.legend_bear <- this.inherit("scripts/entity/tactical/actor", {
 			"sounds/enemies/unhold_flee_04.wav"
 		];
 		this.m.Sound[this.Const.Sound.ActorEvent.DamageReceived] = [
-			"sounds/enemies/wolf_hurt_00.wav",
-			"sounds/enemies/wolf_hurt_01.wav",
-			"sounds/enemies/wolf_hurt_02.wav",
-			"sounds/enemies/wolf_hurt_03.wav"
+			"sounds/enemies/bear_hit1.wav",
+			"sounds/enemies/bear_hit2.wav"
 		];
 		this.m.Sound[this.Const.Sound.ActorEvent.Idle] = [
-			"sounds/enemies/wolf_idle_00.wav",
-			"sounds/enemies/wolf_idle_01.wav",
-			"sounds/enemies/wolf_idle_02.wav",
-			"sounds/enemies/wolf_idle_03.wav",
-			"sounds/enemies/wolf_idle_04.wav",
-			"sounds/enemies/wolf_idle_06.wav",
-			"sounds/enemies/wolf_idle_07.wav",
-			"sounds/enemies/wolf_idle_08.wav",
-			"sounds/enemies/wolf_idle_09.wav"
+			"sounds/enemies/bear_idle1.wav",
+			"sounds/enemies/bear_idle2.wav"
 		];
 		this.m.Sound[this.Const.Sound.ActorEvent.Other1] = [
 			"sounds/enemies/unhold_confused_01.wav",

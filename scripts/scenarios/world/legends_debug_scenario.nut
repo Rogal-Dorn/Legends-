@@ -3,8 +3,8 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	function create()
 	{
 		this.m.ID = "scenario.legends_debug_party";
-		this.m.Name = "Debug (Legends)";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_80.png[/img][/p][p]Debug mode for legends dev";
+		this.m.Name = "(Developer Debug)";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_80.png[/img][/p][p]Debug mode for legends developers";
 		this.m.Difficulty = 2;
 		this.m.Order = 99;
 	}

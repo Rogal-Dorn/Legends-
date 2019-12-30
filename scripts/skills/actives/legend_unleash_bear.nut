@@ -4,18 +4,11 @@ this.legend_unleash_bear <- this.inherit("scripts/skills/skill", {
 		EntityName = "Bear",
 		Script = "scripts/entity/tactical/legend_warbear",
 		Sounds0 = [
-			"sounds/enemies/wolf_hurt_00.wav",
-			"sounds/enemies/wolf_hurt_01.wav",
-			"sounds/enemies/wolf_hurt_02.wav",
-			"sounds/enemies/wolf_hurt_03.wav"
+			"sounds/enemies/bear_hit1.wav",
+			"sounds/enemies/bear_hit2.wav"
 		],
 		Sounds1 = [
-			"sounds/enemies/unhold_death_01.wav",
-			"sounds/enemies/unhold_death_02.wav",
-			"sounds/enemies/unhold_death_03.wav",
-			"sounds/enemies/unhold_death_04.wav",
-			"sounds/enemies/unhold_death_05.wav",
-			"sounds/enemies/unhold_death_06.wav"
+			"sounds/enemies/bear_dead.wav"
 		],
 		Sounds2 = [
 			"sounds/enemies/unhold_flee_01.wav",
@@ -24,23 +17,16 @@ this.legend_unleash_bear <- this.inherit("scripts/skills/skill", {
 			"sounds/enemies/unhold_flee_04.wav"
 		],
 		Sounds3 = [
-			"sounds/enemies/unhold_idle_01.wav",
-			"sounds/enemies/unhold_idle_02.wav",
-			"sounds/enemies/unhold_idle_03.wav",
-			"sounds/enemies/unhold_idle_04.wav",
-			"sounds/enemies/unhold_idle_05.wav",
-			"sounds/enemies/unhold_idle_06.wav",
-			"sounds/enemies/unhold_idle_07.wav"
+			"sounds/enemies/bear_idle1.wav",
+			"sounds/enemies/bear_idle2.wav"
 		],
 		Sounds4 = [
-			"sounds/enemies/wardog_charge_00.wav",
-			"sounds/enemies/wardog_charge_01.wav",
-			"sounds/enemies/wardog_charge_02.wav"
+			"sounds/enemies/bear_attack1.wav",
+			"sounds/enemies/bear_attack2.wav"
 		],
 		Sounds5 = [
-			"sounds/enemies/wardog_charge_00.wav",
-			"sounds/enemies/wardog_charge_01.wav",
-			"sounds/enemies/wardog_charge_02.wav"
+			"sounds/enemies/bear_attack1.wav",
+			"sounds/enemies/bear_attack2.wav"
 		]
 	},
 	function setItem( _i )
@@ -57,13 +43,8 @@ this.legend_unleash_bear <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "skills/bear_square_bw.png";
 		this.m.Overlay = "active_165";
 		this.m.SoundOnUse = [
-			"sounds/enemies/unhold_idle_01.wav",
-			"sounds/enemies/unhold_idle_02.wav",
-			"sounds/enemies/unhold_idle_03.wav",
-			"sounds/enemies/unhold_idle_04.wav",
-			"sounds/enemies/unhold_idle_05.wav",
-			"sounds/enemies/unhold_idle_06.wav",
-			"sounds/enemies/unhold_idle_07.wav"
+			"sounds/enemies/bear_idle1.wav",
+			"sounds/enemies/bear_idle2.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.NonTargeted + 5;

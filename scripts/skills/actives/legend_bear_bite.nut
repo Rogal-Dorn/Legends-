@@ -9,10 +9,8 @@ this.legend_bear_bite <- this.inherit("scripts/skills/skill", {
 		this.m.Icon = "skills/active_71.png";
 		this.m.Overlay = "active_71";
 		this.m.SoundOnUse = [
-			"sounds/enemies/wolf_bite_01.wav",
-			"sounds/enemies/wolf_bite_02.wav",
-			"sounds/enemies/wolf_bite_03.wav",
-			"sounds/enemies/wolf_bite_04.wav"
+			"sounds/enemies/bear_attack1.wav",
+			"sounds/enemies/bear_attack1.wav"
 		];
 		this.m.SoundOnHitHitpoints = [
 			"sounds/enemies/werewolf_claw_hit_01.wav",

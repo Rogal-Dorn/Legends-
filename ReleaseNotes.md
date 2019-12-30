@@ -2219,5 +2219,37 @@ Fencers more likely to have padded surcoat, simple mail shirts and noble leather
 Halberdiers more likely to have gambeson, Sleeveless hauberk, heavy leather lamellar
 Hedgeknights have better armor, cost more, but may have more variable perks 
 
-13.0.0.27
-Armor now actually takes damage (Mwah mah mia)
+13.0.0.27 Flinging Fixes  
+Armor layers take damage correctly (Mwah mah mia)
+Fixes freeze when loading old saves with impossible armor values  (wuxiang)
+Cleans up redundant perks on commanders (wuxiang)
+Bears now have bear sounds (Von Krolock) 
+Fixes an error with enemies not dying due to not finding their morale brush 
+Fixes 'prepare to graze' not applying
+Fixes bleed and graze icons looking like poison
+Fixes crash from rally the troops 
+Fixes fight not loading error when facing armored weidergangers
+Fixes gladiator not loading
+Lacerate can now apply stacks of graze
+tweaks peasant armors
+
+**Catapults:**
+*No longer move by themselves
+*Have fixed AI and fire correctly 
+*Have increased accuracy 
+*Fixes log errors finding status brushes 
+
+**Legion:**
+*Added a recruitment event with the same rules as the cultist recruitment event 
+*No longer get the asks for food event 
+*Updated world icon to legionaire instead of gladiator  
+*Fixes fleshless injury errors 
+
+13.0.0.28 - Options 
+New Menu Options:
+*Item scaling - split from legendary, controls if your equipped items contribute to difficulty. rate doubled 
+*Location scaling - split from legendary, controls if enemies are stronger further from civilisation
+*Camp Unlock - Allows bypassing the camp unlock process and ambition
+*Recruit scaling - split from legendary. controls if recruits scale up as you advance 
+Scenario select screen made alphabetical
+

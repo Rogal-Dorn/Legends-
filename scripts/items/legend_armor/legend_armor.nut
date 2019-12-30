@@ -118,7 +118,7 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 
 	function getAmountColor()
 	{
-		return this.Const.Items.ConditionColor[this.Math.max(0, this.Math.floor(this.getArmor() / (this.getArmorMax() * 1.0) * (this.Const.Items.ConditionColor.len() - 1)))];
+		return this.Const.Items.ConditionColor[this.Math.min(this.Const.Items.ConditionColor.len() - 1, this.Math.max(0, this.Math.floor(this.getArmor() / (this.getArmorMax() * 1.0) * (this.Const.Items.ConditionColor.len() - 1))))];
 	}
 
 	function upgradeIsBlocked( _slot )

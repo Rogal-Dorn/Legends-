@@ -32,7 +32,7 @@ this.legend_peasant_miner <- this.inherit("scripts/entity/tactical/human", {
 		dirt.Visible = true;
 		dirt.Alpha = this.Math.rand(0, 255);
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_pickaxe_skill"));
-		this.m.Skills.add(this.new("sccripts/skills/perks/perk_legend_specialist_pickaxe_damage"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_pickaxe_damage"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_sundering_strikes"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_mastery_hammer"));
 		this.getSprite("socket").setBrush("bust_base_militia");
@@ -103,11 +103,11 @@ this.legend_peasant_miner <- this.inherit("scripts/entity/tactical/human", {
 				}
 
 				local plates = [
-					[10, ""],
+					[0, ""],
 					[0, "plate/legend_armor_leather_brigandine"],
 					[0, "plate/legend_armor_leather_brigandine_hardened"],
 					[0, "plate/legend_armor_leather_brigandine_hardened_full"],
-					[1, "plate/legend_armor_leather_jacket"],
+					[2, "plate/legend_armor_leather_jacket"],
 					[1, "plate/legend_armor_leather_jacket_simple"],
 					[0, "plate/legend_armor_leather_lamellar"],
 					[0, "plate/legend_armor_leather_lamellar_harness_heavy"],

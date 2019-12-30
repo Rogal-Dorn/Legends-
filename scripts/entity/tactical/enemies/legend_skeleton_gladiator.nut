@@ -47,7 +47,7 @@ this.legend_skeleton_gladiator <- this.inherit("scripts/entity/tactical/skeleton
 		this.m.Items.equip(this.new("scripts/items/weapons/throwing_spear"));
 		this.m.Items.equip(this.new("scripts/items/weapons/throwing_spear"));
 		this.m.Items.equip(this.new("scripts/items/weapons/throwing_spear"));
-		this.m.Items.equip(this.new("scripts/items/weapons/throwing_net"));
+		this.m.Items.equip(this.new("scripts/items/tools/throwing_net"));
 
 
 		this.m.Items.equip(this.new("scripts/items/shields/ancient/tower_shield"));

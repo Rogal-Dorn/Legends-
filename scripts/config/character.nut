@@ -728,14 +728,14 @@ gt.Const.SameMovementAPCost <- [
 ];
 gt.Const.CatapultMovementAPCost <- [
 	0,
-	6,
-	6,
-	7,
-	7,
-	8,
-	8,
-	8,
-	8
+	10,
+	10,
+	10,
+	10,
+	10,
+	10,
+	10,
+	10
 ];
 gt.Const.NoMovementFatigueCost <- [
 	0,

@@ -87,8 +87,8 @@ this.zombie_yeoman <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 				[0, "cloth/legend_robes"],
 				[4, "cloth/legend_dark_tunic"],
 				[0, "cloth/legend_apron_butcher"],
-				[0, "cloth/legend_robes_nun"]
-				[1, "cloth/legend_apron"],,
+				[0, "cloth/legend_robes_nun"],
+				[1, "cloth/legend_apron"],
 				[2, "cloth/legend_apron_smith"],
 				[0, "cloth/legend_robes_wizard"],
 				[0, "cloth/legend_sackcloth_tattered"],

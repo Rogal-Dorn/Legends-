@@ -1,11 +1,11 @@
-this.legend_catapult_boulder_skill <- this.inherit("scripts/skills/skill", {
+this.legend_use_catapult_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		AdditionalAccuracy = -60,
 		AdditionalHitChance = 0
 	},
 	function create()
 	{
-		this.m.ID = "actives.legend_catapult_boulder";
+		this.m.ID = "actives.legend_use_catapult";
 		this.m.Name = "Catapult Boulder";
 		this.m.Description = "Hurl a boulder towards a target with your catapult. Hard to aim and very unweildy, but boulders are everywhere so you never run out of ammunition. Can not be used while engaged in melee.";
 		this.m.KilledString = "Crushed";
@@ -166,10 +166,10 @@ this.legend_catapult_boulder_skill <- this.inherit("scripts/skills/skill", {
 
 
 
-	function isUsable()
-	{
-		return !this.Tactical.isActive() || !this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions());
-	}
+//	function isUsable()
+//	{
+//		return !this.Tactical.isActive() || !this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions());
+//	}
 
 	function onUpdate( _properties )
 	{

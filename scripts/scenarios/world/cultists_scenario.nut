@@ -6,7 +6,7 @@ this.cultists_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 		this.m.Name = "Davkul Cultists";
 		this.m.Description = "[p=c][img]gfx/ui/events/event_140.png[/img][/p][p]Davkul awaits. You lead a small flock devoted to the elder god, and it\'s time to spread the word. Find more followers, acquire riches, and please Davkul with sacrifices.\n\n[color=#bcad8c]Cultists:[/color] Start with a group of four cultists with poor equipment. More cultists may flock to you for free.\n[color=#bcad8c]Sacrifices:[/color] Davkul will occasionally demand sacrifices from you, but also bestow boons upon those loyal to him.\n[color=#c90000]Let the blood flow:[/color] Cult events happen twice as often, cultist have whip skills[/p]";
 		this.m.Difficulty = 2;
-		this.m.Order = 7;
+		this.m.Order = 9;
 	}
 
 	function isValid()
@@ -152,6 +152,18 @@ this.cultists_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 			this.Music.setTrackList(this.Const.Music.CivilianTracks, this.Const.Music.CrossFadeTime);
 			this.World.Events.fire("event.cultists_scenario_intro");
 		}, null);
+		if(this.Const.LegendMod.Configs.LegendCampUnlockEnabled())
+		{
+			this.World.Tags.set("HasLegendCampGathering", true);
+			this.World.Tags.set("HasLegendCampBarber", true);
+			this.World.Tags.set("HasLegendCampCrafting", true);
+			this.World.Tags.set("HasLegendCampFletching", true);
+			this.World.Tags.set("HasLegendCampHealing", true);
+			this.World.Tags.set("HasLegendCampHunting", true);
+			this.World.Tags.set("HasLegendCampScouting", true);
+			this.World.Tags.set("HasLegendCampScraping", true);
+			this.World.Tags.set("HasLegendCampTraining", true);			
+		}
 	}
 
 	function onUpdateDraftList( _list )
