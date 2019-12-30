@@ -301,7 +301,7 @@ this.bandit_leader <- this.inherit("scripts/entity/tactical/human", {
 		{
 			if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
 			{
-				this.m.Items.equip(this.new("scripts/items/" + this.Const.Items.LegendNamedArmors[this.Math.rand(0, this.Const.Items.NamedArmors.len() - 1)]));
+				this.m.Items.equip(this.new("scripts/items/" + this.Const.Items.LegendNamedArmors[this.Math.rand(0, this.Const.Items.LegendNamedArmors.len() - 1)]));
 			}
 			else
 			{
