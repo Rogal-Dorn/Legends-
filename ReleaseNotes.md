@@ -2260,6 +2260,7 @@ Undead:
 *Zombies XP rate increased from 10% to 25% normal rate 
 *Zombies gain +20% hitpoints 
 *Legion gains two new recruitment events, one near a mass grave and another near a buried castle. 
+*Legion will no longer get events about food variety, people getting fat, or fat getting fit, no complaining about walking, no injuries from walking and no sickness
 
 Jugglers:
 *Jugglers can start with staves, chains and two handed flails, in addition to their usual throwing weapons.
@@ -2272,11 +2273,14 @@ Jugglers:
 Other changes:
 Healing tent heal rate halved 
 Hunting tent rate halved 
+Fixes error applying and removing armor upgrades for stollwurm, lindwurm and light padding (Salty)
+Fixes error with bandit leaders trying to get named weapons (Wuxiang and Mwah)
 Drums of War raised to +4 fatigue to everyone in 3 tiles  
 Drums of Life raised to +3 health to everyone in 3 tiles 
-Unarmed mastery removes the melee skill reduction on hand to hand 
+Unarmed mastery removes the melee skill reduction on hand to hand fighting
 Stollwurm gets muscularity 
 Inventor no longer has the catapult skill 
 Mail shirt fatigue shifted 
 Bandit raiders get slightly less armor 
 Item scaling adjusted so that 10,000 crowns is equal to 1 recruit 
+Added Orc named Axe (Salty) and Named Flail (Karl)
