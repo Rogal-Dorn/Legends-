@@ -60,18 +60,20 @@ this.legion_origin_mass_grave_event <- this.inherit("scripts/events/event", {
 		}
 
 		local locations = this.World.EntityManager.getLocations();
-
+		local nearSite = false; 
 		foreach( v in locations )
 		{
-			if (v.getTypeID() == "location.undead_mass_grave")
+			if (v.getTypeID() == "location.undead_mass_grave" && v.getTile().getDistanceTo(currentTile) < 5)
 			{
-				if (v.getTile().getDistanceTo(currentTile) > 5)
-				{
-					return;
-				}
+				nearSite = true;
+				break;
 			}
 		}
 
+		if (!nearSite)
+		{
+		 return;
+		}
 
 		this.m.Score = 75;
 	}

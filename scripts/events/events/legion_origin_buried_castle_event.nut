@@ -59,19 +59,22 @@ this.legion_origin_buried_castle_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
-		local locations = this.World.EntityManager.getLocations();
 
+		local locations = this.World.EntityManager.getLocations();
+		local nearSite = false; 
 		foreach( v in locations )
 		{
-			if (v.getTypeID() == "location.undead_buried_castle")
+			if (v.getTypeID() == "location.undead_buried_castle" && v.getTile().getDistanceTo(currentTile) < 5)
 			{
-				if (v.getTile().getDistanceTo(currentTile) > 5)
-				{
-					return;
-				}
+				nearSite = true;
+				break;
 			}
 		}
 
+		if (!nearSite)
+		{
+		 return;
+		}
 
 		this.m.Score = 75;
 	}
