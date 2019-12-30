@@ -2245,19 +2245,21 @@ tweaks peasant armors
 *Updated world icon to legionaire instead of gladiator  
 *Fixes fleshless injury errors 
 
-13.0.0.28 - All the Options 
+13.0.0.28 - Scaling Options 
 New Menu Options:
-*Item scaling - split from legendary, controls if your equipped items contribute to difficulty. rate doubled 
+*Item scaling - split from legendary, controls if your equipped items contribute to difficulty. 
 *Location scaling - split from legendary, controls if enemies are stronger further from civilisation
 *Camp Unlock - Allows bypassing the camp unlock process and ambition
 *Recruit scaling - split from legendary. controls if recruits scale up as you advance 
-* Scenario select screen made alphabetical
+*Scenario select screen made alphabetical
+*Start option tooltips updated 
 
 Undead:
 *Skeletons XP gain rate increased from 10% to 33% normal rate
 *Fixed Skeleton HP to be 50% as per tooltip, was at 60% 
 *Zombies XP rate increased from 10% to 25% normal rate 
 *Zombies gain +20% hitpoints 
+*Legion gains two new recruitment events, one near a mass grave and another near a buried castle. 
 
 Jugglers:
 *Jugglers can start with staves, chains and two handed flails, in addition to their usual throwing weapons.
@@ -2273,5 +2275,8 @@ Hunting tent rate halved
 Drums of War raised to +4 fatigue to everyone in 3 tiles  
 Drums of Life raised to +3 health to everyone in 3 tiles 
 Unarmed mastery removes the melee skill reduction on hand to hand 
-
-
+Stollwurm gets muscularity 
+Inventor no longer has the catapult skill 
+Mail shirt fatigue shifted 
+Bandit raiders get slightly less armor 
+Item scaling adjusted so that 10,000 crowns is equal to 1 recruit 
