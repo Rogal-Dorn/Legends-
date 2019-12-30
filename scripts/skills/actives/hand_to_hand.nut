@@ -204,7 +204,9 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 			}
 			_properties.DamageRegularMin += this.Math.floor(damageMin);
 			_properties.DamageRegularMax += this.Math.floor(damageMax);
-			_properties.MeleeSkill -= 10;
+			_properties.MeleeSkill += = _properties.IsSpecializedInFists ? 10 : -10;;
+
+
 			this.m.DirectDamageMult = _properties.IsSpecializedInFists ? 0.5 : 0.1;
 		}
 	}
