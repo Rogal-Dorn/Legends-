@@ -248,6 +248,11 @@ this.march_wear_and_tear_event <- this.inherit("scripts/events/event", {
 
 	function onUpdateScore()
 	{
+		if (this.World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
+		{
+			return;
+		}
+
 		if (!this.Const.DLC.Unhold)
 		{
 			return;

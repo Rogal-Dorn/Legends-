@@ -40,6 +40,11 @@ this.glutton_gets_fat_event <- this.inherit("scripts/events/event", {
 
 	function onUpdateScore()
 	{
+			if (this.World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
+		{
+			return;
+		}
+
 		if (this.World.Assets.getFood() < 100)
 		{
 			return;

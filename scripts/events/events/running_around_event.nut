@@ -47,6 +47,13 @@ this.running_around_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
+		
+		if (this.World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
+		{
+			return;
+		}
+
+
 		local brothers = this.World.getPlayerRoster().getAll();
 		this.m.Dude = brothers[this.Math.rand(0, brothers.len() - 1)];
 		this.m.Score = 5;
