@@ -251,6 +251,7 @@ this.ai_engage_melee <- this.inherit("scripts/ai/tactical/behavior", {
 
 			local potentialTiles = this.queryDestinationsInMeleeRange(targetTile, this.getProperties().EngageRangeMin, this.getProperties().EngageRangeMax);
 
+			//for every tile within melee range of our user
 			foreach( tile in potentialTiles )
 			{
 				if (this.isAllottedTimeReached(time))
@@ -273,6 +274,7 @@ this.ai_engage_melee <- this.inherit("scripts/ai/tactical/behavior", {
 				local scoreMult = 1.0;
 				local isSkillUsable = false;
 
+				//if target in range of current weapon != 0
 				if (AlreadyEngagedWithNum != 0)
 				{
 					if (tile.Level < myTile.Level || tile.IsBadTerrain && !myTile.IsBadTerrain)
@@ -280,13 +282,36 @@ this.ai_engage_melee <- this.inherit("scripts/ai/tactical/behavior", {
 						continue;
 					}
 
+					// tile distance > 4
 					/*for( ; tile.getDistanceTo(myTile) > 4;  )
 					{
+					}*/
+
+					//my thought is the 4 is the max range for melee weapon (4 for whip), but if we're holdin throwing weapons
+					//then we couldve shot from further, so it would break because we cant hit anything anyways even though we threw stuff?
+					//very uncertain 
+					//thinking this is a check if someones out of normal range
+					if (tile.getDistanceTo(myTile) > 4)
+					{ 
+						break;
 					}
 
-					for( ; zocs > inZonesOfControl;  )
+					//zocs = tile -> zone of control other than allied faction
+						//how many zones of control the enemy unit is in (including their own allies)
+					//inZonesOfControl = myTile.getZoneOfControlCountOtherThan(_entity.getAlliedFactions());
+						//izoc = tile -> how many enemy zones of control the unit is currently in
+					/*for( ; zocs > inZonesOfControl;  )
 					{
 					}*/
+
+					// zocs > inZonesOfControl asks if >
+						//IF Enemy being targeted has more of its allies 
+						//is greater than
+						//The amount of enemy zones of control the unit thinking about hitting has 
+					if (zocs > inZonesOfControl) 
+					{
+						continue;
+					}
 
 					if (tile.Level <= myTile.Level && tile.IsBadTerrain == myTile.IsBadTerrain && (this.m.Skill == null || !this.m.Skill.isDisengagement()))
 					{
