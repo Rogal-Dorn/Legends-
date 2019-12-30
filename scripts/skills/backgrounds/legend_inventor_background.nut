@@ -138,7 +138,6 @@ this.legend_inventor_background <- this.inherit("scripts/skills/backgrounds/char
 		this.character_background.onAdded();
 		local actor = this.getContainer().getActor();
 		actor.setTitle(this.Const.Strings.InventorTitles[this.Math.rand(0, this.Const.Strings.InventorTitles.len() - 1)]);
-		this.m.Container.add(this.new("scripts/skills/actives/legend_use_catapult_skill"));
 	}
 
 	function onAddEquipment()

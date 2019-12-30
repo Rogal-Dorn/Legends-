@@ -2117,7 +2117,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Your opponents will be brutal. This is where legends are forged.\n\nEach enemy gains a series of new perks. Zombies with nine lives, battleforged orcs, nimble lindwurms."
+					text = "Your opponents will be brutal. This is where legends are forged.\n\n Every enemy gains a series of new perks. Zombies with poisonous bites, battleforged orcs, overwhelming barbarians, crippling goblins, underdog backstabber thugs, fearsome vampires, muscular stollwurms"
 				}
 			];
 
@@ -4306,7 +4306,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Maximum number of Factions. Depending on map size, this will try to add the number of factions on the slider."
+					text = "Maximum number of Factions to try and generate. Depending on map size, this may not add all the factions on the slider."
 				}
 			];
 
@@ -4355,12 +4355,12 @@ this.tooltip_events <- {
 					{
 						id = 1,
 						type = "title",
-						text = "Give each recruit a unique perk tree"
+						text = "Recruits have unique perk trees"
 					},
 					{
 						id = 2,
 						type = "description",
-						text = "If enabled, all recruits for hire will have a unique perk tree including new Legends perks. These perk trees are half determined by background, and half randomly chosen from perk groups."
+						text = "If enabled, all recruits for hire will have a unique perk tree including new Legends perks. \n\n Detail: Dynamic perk trees are half determined by background, and half randomly chosen from perk groups. Perk groups align around a theme, and you can see hints about the perks of potential recruits in their background description. Recruits will also have their stats and talents modifed to align with their new perks"
 					}
 				];
 		case "mapconfig.legendgenderequality":
@@ -4368,12 +4368,12 @@ this.tooltip_events <- {
 					{
 						id = 1,
 						type = "title",
-						text = "Allow nearly anyone to be female"
+						text = "Women can do anything"
 					},
 					{
 						id = 2,
 						type = "description",
-						text = "If enabled, all commanders and many backgrounds will have a chance of being any gender. If disabled there will still be females, but in positions more reflective of historical discrimination."
+						text = "If enabled, all commanders and most backgrounds will have a chance of being any gender. \n\n Detail: If disabled there will still be females, but more rarely and in positions more reflective of historical discrimination."
 					}
 				];
 		case "mapconfig.legendmagic":
@@ -4381,12 +4381,12 @@ this.tooltip_events <- {
 				{
 					id = 1,
 					type = "title",
-					text = "Allow Vala, Runestones and Magic Scenarios"
+					text = "Runestones and Mysticism"
 				},
 				{
 					id = 2,
 					type = "description",
-					text = "If enabled, low magic is allowed in the world, this makes it possible to find vala and rune stones. If disabled, vala will not appear, runes stones will be 10x rarer, and magic commanders have to get by without magic."
+					text = "If enabled, low magic is allowed in the world, this makes it possible to find rare wise women and rune stones. \n\n Detail: If disabled, vala will not appear, runes stones will be 10x rarer. Seer, vala and warlock will lose their mystical perks"
 				}
 			];
 		case "mapconfig.legendarmor":
@@ -4394,12 +4394,12 @@ this.tooltip_events <- {
 				{
 					id = 1,
 					type = "title",
-					text = "Allow armors to be split into layers"
+					text = "Armors are split into layers"
 				},
 				{
 					id = 2,
 					type = "description",
-					text = "If enabled, armor is replaced with a layering system that allows armor to be compiled together from different layers. Base cloth, chain, plate, tabard, cloak, attachment and finally a rune layer."
+					text = "If enabled, armor is arranged in layers, hundreds of pieces combine into millions of visual combinations. \n\n Detail: Armor is made up of a base cloth layer, chain, plate, tabard, cloak, attachment and finally a rune layer. Each layer can be upgraded individually, allowing flexible armor builds and a e s t h e t i c "
 				}
 			];
 		case "mapconfig.legenddebug":
@@ -4420,12 +4420,12 @@ this.tooltip_events <- {
 					{
 						id = 1,
 						type = "title",
-						text = "Include your equipped items in difficulty calculations"
+						text = "Gear included in difficulty calculations"
 					},
 					{
 						id = 2,
 						type = "description",
-						text = "If enabled, the value of your equipped items will increase the combat difficulty. Only effects mainhand, offhand, body and head. This is in addition to other difficulty settings."
+						text = "If enabled, the value of your equipped items will increase the combat difficulty. \n\n Detail: 10,000 crowns worth of gear is equal to a new recruit. Only effects mainhand, offhand, body and head. \n\n This is in addition to other difficulty settings."
 					}
 				];
 		case "mapconfig.legendlocationscaling":
@@ -4433,12 +4433,12 @@ this.tooltip_events <- {
 					{
 						id = 1,
 						type = "title",
-						text = "Allow remote areas to be more dangerous"
+						text = "Remote areas are more dangerous"
 					},
 					{
 						id = 2,
 						type = "description",
-						text = "If enabled, enemies will be stronger the further they spawn from civilisation. This is in addition to other difficulty settings."
+						text = "If enabled, enemies will be stronger the further they spawn from civilisation. \n\n Detail: Begins at 14 tiles from the nearest town, enemies spawned at 28 tiles will be twice as strong. \n\n This is in addition to other difficulty settings."
 					}
 				];
 		case "mapconfig.legendcampunlock":
@@ -4451,7 +4451,7 @@ this.tooltip_events <- {
 					{
 						id = 2,
 						type = "description",
-						text = "If disabled, you will gradually unlock camping activities by visiting towns. Useful for first playthroughs."
+						text = "If disabled, you will gradually unlock camping activities by visiting towns. Useful for first playthroughs. \n\n Detail: skips the camp unlock events and ambition, you still need to buy upgrades. "
 					}
 				];
 		case "mapconfig.legendrecruitscaling":
@@ -4464,7 +4464,7 @@ this.tooltip_events <- {
 					{
 						id = 2,
 						type = "description",
-						text = "If enabled, new recruits will gain levels based on the levels in your party, your renown in the world, and your moral reputation."
+						text = "If enabled, new recruits will gain levels based on the levels in your party and your renown in the world. \n\n  Details: The maximum level of recruits is increased by half the average level of mercs in your company, averaged with your reputation divided by 1,000. \n\n For example: if your company were all level 10, and your renown was 10,000, new recruits could gain up to 5 levels. \n\n This in addition to normal recruit level variance. "
 					}
 				];
 		case "camp.commander":

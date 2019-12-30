@@ -1093,7 +1093,7 @@ NewCampaignMenuModule.prototype.buildConfigPage = function () {
 	row.append(control);
 	this.mLegendCampUnlockCheckbox = $('<input type="checkbox" id="cb-legendcampunlock"/>');
 	control.append(this.mLegendCampUnlockCheckbox);
-	this.mLegendCampUnlockCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendcampunlock">Camp Unlocked</label>');
+	this.mLegendCampUnlockCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendcampunlock">Skip Camp Tutorial</label>');
 	control.append(this.mLegendCampUnlockCheckboxLabel);
 	this.mLegendCampUnlockCheckbox.iCheck({
 		checkboxClass: 'icheckbox_flat-orange',
