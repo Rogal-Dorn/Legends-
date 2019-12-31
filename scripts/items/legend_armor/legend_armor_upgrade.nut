@@ -39,13 +39,16 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 	function getAmountColor()
 	{
 		if (this.Math.floor(this.m.Condition / (this.m.ConditionMax * 1.0) * (this.Const.Items.ConditionColor.len() - 1)) > 4)
+		{
 			return 4;
+		}
+
 		return this.Const.Items.ConditionColor[this.Math.max(0, this.Math.floor(this.m.Condition / (this.m.ConditionMax * 1.0) * (this.Const.Items.ConditionColor.len() - 1)))];
 	}
 
 	function getValue()
 	{
-		return this.Math.floor(this.m.Value * ((1.0 * this.m.Condition) / (1.0 * this.m.ConditionMax)));
+		return this.Math.floor(this.m.Value * (1.0 * this.m.Condition / (1.0 * this.m.ConditionMax)));
 	}
 
 	function getType()
@@ -136,7 +139,6 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 			type = "text",
 			text = "Right-click or drag onto an armor carried by the currently selected character in order to attach the armor upgrade."
 		});
-
 		result.push({
 			id = 4,
 			type = "progressbar",
@@ -155,7 +157,15 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 				icon = "ui/icons/fatigue.png",
 				text = "Maximum Fatigue [color=" + this.Const.UI.Color.NegativeValue + "]" + this.getStaminaModifier() + "[/color]"
 			});
-		}
+		} else if (this.getStaminaModifier() > 0){
+			result.push({
+				id = 5,
+				type = "text",
+				icon = "ui/icons/fatigue.png",
+				text = "Maximum Fatigue [color=" + this.Const.UI.Color.PositiveValue + "] +" + this.getStaminaModifier() + "[/color]"
+			});
+		} 
+
 		return result;
 	}
 
@@ -175,10 +185,10 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 		this.Sound.play(this.m.ImpactSound[0], this.Const.Sound.Volume.Inventory);
 	}
 
-
 	function setCondition( _a )
 	{
 		local delta = 0;
+
 		if (_a > this.m.ConditionMax)
 		{
 			this.m.Condition = this.m.ConditionMax;
@@ -191,7 +201,7 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 
 		if (this.m.Armor == null)
 		{
-			return delta
+			return delta;
 		}
 
 		if (this.m.Armor.getContainer() != null && this.m.Armor.isEquipped())
@@ -200,14 +210,14 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 			this.updateAppearance(app);
 		}
 
-		return delta
+		return delta;
 	}
 
 	function updateAppearance( _app )
 	{
-
 		local frontSprite = "";
 		local backSprite = "";
+
 		if (this.m.Condition / this.m.ConditionMax <= this.Const.Combat.ShowDamagedArmorThreshold)
 		{
 			frontSprite = this.m.SpriteDamagedFront != null ? this.m.SpriteDamagedFront : this.m.SpriteFront != null ? this.m.SpriteFront : "";
@@ -221,33 +231,37 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 
 		if (_app == null)
 		{
-			return
+			return;
 		}
 
 		switch(this.m.Type)
 		{
-			case this.Const.Items.ArmorUpgrades.Chain:
-				_app.ArmorLayerChain = backSprite;
-				_app.CorpseArmorLayerChain =  this.m.SpriteCorpseBack != null ? this.m.SpriteCorpseBack : "";
-				break;
-			case this.Const.Items.ArmorUpgrades.Plate:
-				_app.ArmorLayerPlate = backSprite;
-				_app.CorpseArmorLayerPlate =  this.m.SpriteCorpseBack != null ? this.m.SpriteCorpseBack : "";
-				break;
-			case this.Const.Items.ArmorUpgrades.Tabbard:
-				_app.ArmorLayerTabbard= backSprite;
-				_app.CorpseArmorLayerTabbard =  this.m.SpriteCorpseBack != null ? this.m.SpriteCorpseBack : "";
-				break;
-			case this.Const.Items.ArmorUpgrades.Cloak:
-				_app.ArmorLayerCloak= backSprite;
-				_app.CorpseArmorLayerCloak =  this.m.SpriteCorpseBack != null ? this.m.SpriteCorpseBack : "";
-				break;
-			case this.Const.Items.ArmorUpgrades.Attachment:
-				_app.ArmorUpgradeFront = frontSprite
-				_app.ArmorUpgradeBack = this.m.SpriteBack != null ? this.m.SpriteBack : "";
-				_app.CorpseArmorUpgradeFront = backSprite
-				_app.CorpseArmorUpgradeBack = this.m.SpriteCorpseBack ? this.m.SpriteCorpseBack : "";
-				break;
+		case this.Const.Items.ArmorUpgrades.Chain:
+			_app.ArmorLayerChain = backSprite;
+			_app.CorpseArmorLayerChain = this.m.SpriteCorpseBack != null ? this.m.SpriteCorpseBack : "";
+			break;
+
+		case this.Const.Items.ArmorUpgrades.Plate:
+			_app.ArmorLayerPlate = backSprite;
+			_app.CorpseArmorLayerPlate = this.m.SpriteCorpseBack != null ? this.m.SpriteCorpseBack : "";
+			break;
+
+		case this.Const.Items.ArmorUpgrades.Tabbard:
+			_app.ArmorLayerTabbard = backSprite;
+			_app.CorpseArmorLayerTabbard = this.m.SpriteCorpseBack != null ? this.m.SpriteCorpseBack : "";
+			break;
+
+		case this.Const.Items.ArmorUpgrades.Cloak:
+			_app.ArmorLayerCloak = backSprite;
+			_app.CorpseArmorLayerCloak = this.m.SpriteCorpseBack != null ? this.m.SpriteCorpseBack : "";
+			break;
+
+		case this.Const.Items.ArmorUpgrades.Attachment:
+			_app.ArmorUpgradeFront = frontSprite;
+			_app.ArmorUpgradeBack = this.m.SpriteBack != null ? this.m.SpriteBack : "";
+			_app.CorpseArmorUpgradeFront = backSprite;
+			_app.CorpseArmorUpgradeBack = this.m.SpriteCorpseBack ? this.m.SpriteCorpseBack : "";
+			break;
 		}
 	}
 
@@ -255,41 +269,46 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 	{
 	}
 
-	function onRemoved(_app)
+	function onRemoved( _app )
 	{
-
 		this.Sound.play("sounds/inventory/armor_upgrade_use_01.wav", this.Const.Sound.Volume.Inventory);
 		this.m.Armor = null;
+
 		if (_app == null)
 		{
-			return
+			return;
 		}
 
 		switch(this.m.Type)
 		{
-			case this.Const.Items.ArmorUpgrades.Chain:
-				_app.ArmorLayerChain = ""
-				_app.CorpseArmorLayerChain =  ""
-				break;
-			case this.Const.Items.ArmorUpgrades.Plate:
-				_app.ArmorLayerPlate = ""
-				_app.CorpseArmorLayerPlate =  ""
-				break;
-			case this.Const.Items.ArmorUpgrades.Tabbard:
-				_app.ArmorLayerTabbard = ""
-				_app.CorpseArmorLayerTabbard = ""
-				break;
-			case this.Const.Items.ArmorUpgrades.Cloak:
-				_app.ArmorLayerCloak = ""
-				_app.CorpseArmorLayerCloak = ""
-				break;
-			case this.Const.Items.ArmorUpgrades.Attachment:
-				_app.ArmorUpgradeFront = ""
-				_app.ArmorUpgradeBack = ""
-				_app.CorpseArmorUpgradeFront = ""
-				_app.CorpseArmorUpgradeBack = ""
-				break;
+		case this.Const.Items.ArmorUpgrades.Chain:
+			_app.ArmorLayerChain = "";
+			_app.CorpseArmorLayerChain = "";
+			break;
+
+		case this.Const.Items.ArmorUpgrades.Plate:
+			_app.ArmorLayerPlate = "";
+			_app.CorpseArmorLayerPlate = "";
+			break;
+
+		case this.Const.Items.ArmorUpgrades.Tabbard:
+			_app.ArmorLayerTabbard = "";
+			_app.CorpseArmorLayerTabbard = "";
+			break;
+
+		case this.Const.Items.ArmorUpgrades.Cloak:
+			_app.ArmorLayerCloak = "";
+			_app.CorpseArmorLayerCloak = "";
+			break;
+
+		case this.Const.Items.ArmorUpgrades.Attachment:
+			_app.ArmorUpgradeFront = "";
+			_app.ArmorUpgradeBack = "";
+			_app.CorpseArmorUpgradeFront = "";
+			_app.CorpseArmorUpgradeBack = "";
+			break;
 		}
+
 		return this.m.IsDestroyedOnRemove;
 	}
 
@@ -308,6 +327,7 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 		}
 
 		local success = armor.setUpgrade(this);
+
 		if (success)
 		{
 			this.Sound.play("sounds/inventory/armor_upgrade_use_01.wav", this.Const.Sound.Volume.Inventory);
@@ -318,15 +338,13 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 
 	function onDamageReceived( _damage, _fatalityType, _attacker )
 	{
-		//Destroyed, but damage left over
-		if (_damage >= this.m.Condition) 
+		if (_damage >= this.m.Condition)
 		{
 			local leftoverDamage = _damage - this.m.Condition;
 			this.m.Condition = 0.0;
 			return leftoverDamage;
 		}
 
-		//Took all of the damage
 		this.m.Condition = this.Math.max(0, this.m.Condition - _damage) * 1.0;
 		return 0.0;
 	}

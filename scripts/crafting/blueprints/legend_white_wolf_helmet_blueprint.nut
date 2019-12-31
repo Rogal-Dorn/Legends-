@@ -9,7 +9,7 @@ this.legend_white_wolf_helmet_blueprint <- this.inherit("scripts/crafting/bluepr
 		local ingredients = [
 			{
 				Script = "scripts/items/misc/legend_white_wolf_pelt_item",
-				Num = 1
+				Num = 2
 			},
 			{
 				Script = "scripts/items/helmets/bascinet_with_mail",

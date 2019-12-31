@@ -2245,17 +2245,45 @@ tweaks peasant armors
 *Updated world icon to legionaire instead of gladiator  
 *Fixes fleshless injury errors 
 
-13.0.0.28 - Options 
+13.0.0.28 - Scaling Options 
 New Menu Options:
-*Item scaling - split from legendary, controls if your equipped items contribute to difficulty. rate doubled 
+*Item scaling - split from legendary, controls if your equipped items contribute to difficulty. 
 *Location scaling - split from legendary, controls if enemies are stronger further from civilisation
 *Camp Unlock - Allows bypassing the camp unlock process and ambition
 *Recruit scaling - split from legendary. controls if recruits scale up as you advance 
-Scenario select screen made alphabetical
+*Scenario select screen made alphabetical
+*Start option tooltips updated 
 
-Fixes Drums of Life/War tooltips still saying +1 vs +2 (Mwah)
-Fixes bandit leader sometimes screwing up when being made a miniboss (Mwah)
-Possibly fixes AI file to not freeze (Mwah)
+Undead:
+*Skeletons XP gain rate increased from 10% to 33% normal rate
+*Fixed Skeleton HP to be 50% as per tooltip, was at 60% 
+*Zombies XP rate increased from 10% to 25% normal rate 
+*Zombies gain +20% hitpoints 
+*Legion gains two new recruitment events, one near a mass grave and another near a buried castle. 
+*Legion will no longer get events about food variety, people getting fat, or fat getting fit, no complaining about walking, no injuries from walking and no sickness
+
+Jugglers:
+*Jugglers can start with staves, chains and two handed flails, in addition to their usual throwing weapons.
+*Can also start with additional throwing weapons in their bag 
+*Gain skills for maces and staves, added to their skills for throwing and flails.
+*Can spawn with noble tunics, leather jackets and a small chance for noble jackets 
+*Gain 5 melee skill  
+*Lose tenacious and trained, gain fit and calm 
+
+Other changes:
+Healing tent heal rate halved 
+Hunting tent rate halved 
+Fixes error applying and removing armor upgrades for stollwurm, lindwurm and light padding (Salty)
+Fixes error with bandit leaders trying to get named weapons (Wuxiang and Mwah)
+Drums of War raised to +4 fatigue to everyone in 3 tiles  
+Drums of Life raised to +3 health to everyone in 3 tiles 
+Unarmed mastery removes the melee skill reduction on hand to hand fighting
+Stollwurm gets muscularity 
+Inventor no longer has the catapult skill 
+Mail shirt fatigue shifted 
+Bandit raiders get slightly less armor 
+Item scaling adjusted so that 10,000 crowns is equal to 1 recruit 
+Added Orc named Axe (Salty) and Named Flail (Karl)
 
 13.0.0.29
 Fixes drums of life/war tooltips on perk tree && on skill (Mwah)
@@ -2265,3 +2293,6 @@ Fixes nets not being able to reach 4 ammo even with both net perks (Mwah)
 Fixes nets dropping on the ground immediately after use, regardless of the ammo (Mwah)
 Fixes nets not getting 4 range hen having mastery (Mwah)
 Fixes too much about nets but they should work properly now (Mwah)
+Fixes Legion recruits not getting the right skills  (Wuxiang) 
+White wolf helm and mantle fear reduced, cost of the helm increased to two pelts. 
+
