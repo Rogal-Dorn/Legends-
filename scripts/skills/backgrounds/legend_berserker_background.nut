@@ -207,8 +207,8 @@ this.legend_berserker_background <- this.inherit("scripts/skills/backgrounds/cha
 			{
 				id = 15,
 				type = "text",
-				icon = "ui/icons/xp_received.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-15%[/color] Experience Gain"
+				icon = "ui/icons/regular_damage.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] Damage when unarmed"
 			}
 		];
 	}
