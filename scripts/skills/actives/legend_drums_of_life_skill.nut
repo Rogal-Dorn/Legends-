@@ -4,7 +4,7 @@ this.legend_drums_of_life_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_drums_of_life";
 		this.m.Name = "Drums of Life";
-		this.m.Description = "Push allies on with your music, restoring the health of all allies within 3 tiles by 2 hp. Must be holding a musical instrument to use.";
+		this.m.Description = "Push allies on with your music, restoring the health of all allies within 3 tiles by 3 hp. Must be holding a musical instrument to use.";
 		this.m.Icon = "ui/perks/drums_of_life_square.png";
 		this.m.IconDisabled = "ui/perks/drums_of_life_square_bw.png";
 		this.m.Overlay = "active_163";
