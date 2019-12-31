@@ -2295,4 +2295,5 @@ Fixes nets not getting 4 range hen having mastery (Mwah)
 Fixes too much about nets but they should work properly now (Mwah)
 Fixes Legion recruits not getting the right skills  (Wuxiang) 
 White wolf helm and mantle fear reduced, cost of the helm increased to two pelts. 
-
+Fixes catapults not dying properly (Mwah)
+Fixes origin mass grave event currentTile error (Mwah)
