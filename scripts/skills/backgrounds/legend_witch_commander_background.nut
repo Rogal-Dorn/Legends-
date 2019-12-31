@@ -318,11 +318,11 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_teacher"));
 		//this.m.Container.add(this.new("scripts/skills/perks/perk_student"));
 
-		if (this.Const.LegendMod.Configs.LegendMagicEnabled())
-		{
-	
-			this.m.Container.add(this.new("scripts/skills/perks/perk_legend_magic_missile"));
-		}
+		//if (this.Const.LegendMod.Configs.LegendMagicEnabled())
+		//{
+		//
+		//	this.m.Container.add(this.new("scripts/skills/perks/perk_legend_magic_missile"));
+		//}
 
 		local actor = this.getContainer().getActor();
 		if (this.m.IsFemaleBackground == true)
