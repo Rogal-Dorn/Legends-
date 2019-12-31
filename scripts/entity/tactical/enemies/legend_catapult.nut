@@ -75,6 +75,7 @@ this.legend_catapult <- this.inherit("scripts/entity/tactical/human", {
 	{
 		if (_tile != null)
 		{
+			local flip = this.Math.rand(0, 100) < 50;
 			this.m.IsCorpseFlipped = flip;
 			local decal;
 			local appearance = this.getItems().getAppearance();

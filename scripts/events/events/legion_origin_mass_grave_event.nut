@@ -61,6 +61,7 @@ this.legion_origin_mass_grave_event <- this.inherit("scripts/events/event", {
 
 		local locations = this.World.EntityManager.getLocations();
 		local nearSite = false; 
+		local currentTile = this.World.State.getPlayer().getTile();
 		foreach( v in locations )
 		{
 			if (v.getTypeID() == "location.undead_mass_grave" && v.getTile().getDistanceTo(currentTile) < 5)
