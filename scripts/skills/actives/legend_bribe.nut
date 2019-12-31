@@ -62,7 +62,7 @@ this.legend_bribe <- this.inherit("scripts/skills/skill", {
 
 		local target = _targetTile.getEntity();
 		local xp = target.getXPValue();
-		this.m.Cost = this.Math.pow(xp, 1.3);
+		this.m.Cost = this.Math.floor(this.Math.pow(xp, 1.3));
 		local money = this.World.Assets.getMoney();
 		this.m.Money = money;
 		if (!target.getTags().has("human"))
@@ -81,7 +81,7 @@ this.legend_bribe <- this.inherit("scripts/skills/skill", {
 	{
 		local target = _targetTile.getEntity();
 		local xp = target.getXPValue();
-		local cost = this.Math.pow(xp, 1.3) * -1;
+		local cost = this.Math.floor(this.Math.pow(xp, 1.3) * -1);
 		this.World.Assets.addMoney(cost);
 		target.setMoraleState(this.Const.MoraleState.Fleeing);
 		return true;

@@ -83,6 +83,7 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 	function onAfterUpdate( _properties )
 	{
 		this.m.FatigueCostMult = _properties.IsSpecializedInThrowing ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
+		this.m.MaxRange = _properties.IsSpecializedInThrowing ? 4 : 3;
 	}
 
 	function getAmmo()
@@ -142,7 +143,9 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 			}
 
 			//_user.getItems().unequip(_user.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand));
-			_user.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand).drop(); //drop instead of destroy
+			if (this.getAmmo() <= 0) {
+				_user.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand).drop(); //drop instead of destroy
+			}
 			targetEntity.getSkills().add(this.new("scripts/skills/effects/net_effect"));
 			local breakFree = this.new("scripts/skills/actives/break_free_skill");
 			breakFree.m.Icon = "skills/active_74.png";

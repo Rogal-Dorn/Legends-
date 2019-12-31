@@ -1,5 +1,8 @@
 this.throwing_net <- this.inherit("scripts/items/weapons/weapon", {
-	m = {},
+	m = {
+		BaseAmmoMax = 1,
+		BaseRangeMax = 3
+	},
 	function create()
 	{
 		this.weapon.create();
@@ -119,20 +122,36 @@ this.throwing_net <- this.inherit("scripts/items/weapons/weapon", {
 		return result;
 	}
 
+	function onUnEquip() 
+	{
+		this.m.AmmoMax = this.m.BaseAmmoMax;
+		this.m.RangeMax = this.m.BaseRangeMax;
+		this.weapon.onUnEquip();
+	}
+
 	function onEquip()
 	{
 		this.weapon.onEquip();
 		this.addSkill(this.new("scripts/skills/actives/throw_net"));
 
-		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_net_repair"))
-		{
-		this.m.AmmoMax = 2;
-		}
+		this.m.AmmoMax = this.m.BaseAmmoMax;
 
 		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_net_casting"))
 		{
-		this.m.RangeMax = 4;
+			this.m.RangeMax = 4;
 		}
+
+		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_mastery_nets"))
+		{
+			this.m.AmmoMax = 2;
+		}
+
+		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_net_repair"))
+		{
+			this.m.AmmoMax *= 2;
+		}
+
+		
 		
 	}
 
