@@ -206,7 +206,7 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 				text = this.getDescription()
 			},
 			{
-				id = 15,
+				id = 12,
 				type = "text",
 				icon = "ui/icons/regular_damage.png",
 				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] Damage when unarmed"
