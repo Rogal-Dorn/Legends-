@@ -35,7 +35,7 @@ this.legend_white_wolf_pelt_upgrade <- this.inherit("scripts/items/armor_upgrade
 			id = 15,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Reduces the Resolve of any opponent engaged in melee by [color=" + this.Const.UI.Color.NegativeValue + "]-20[/color]"
+			text = "Reduces the Resolve of any opponent engaged in melee by [color=" + this.Const.UI.Color.NegativeValue + "]-15[/color]"
 		});
 		return result;
 	}
@@ -46,7 +46,7 @@ this.legend_white_wolf_pelt_upgrade <- this.inherit("scripts/items/armor_upgrade
 			id = 15,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Reduces the Resolve of any opponent engaged in melee by [color=" + this.Const.UI.Color.NegativeValue + "]-20[/color]"
+			text = "Reduces the Resolve of any opponent engaged in melee by [color=" + this.Const.UI.Color.NegativeValue + "]-15[/color]"
 		});
 	}
 

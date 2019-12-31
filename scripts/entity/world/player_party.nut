@@ -114,7 +114,7 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 				}
 
 				local gearvalue = mainhandvalue + offhandvalue + bodyvalue + headvalue;
-				this.logInfo("Gear power " + gearvalue);
+				this.logInfo("Adding gear strength of " + gearvalue);
 				this.m.Strength += gearvalue ;
 			}
 
