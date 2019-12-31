@@ -122,6 +122,12 @@ this.sickness_event <- this.inherit("scripts/events/event", {
 
 	function onUpdateScore()
 	{
+
+		if (this.World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
+		{
+			return;
+		}
+
 		local currentTile = this.World.State.getPlayer().getTile();
 
 		if (currentTile.Type != this.Const.World.TerrainType.Swamp && currentTile.Type != this.Const.World.TerrainType.Snow && currentTile.Type != this.Const.World.TerrainType.SnowyForest)

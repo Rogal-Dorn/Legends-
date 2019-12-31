@@ -332,10 +332,10 @@ this.bandit_raider <- this.inherit("scripts/entity/tactical/human", {
 			local cloths = [
 				[0, ""],
 				[0, "cloth/legend_gambeson_rare_color"],
-				[7, "cloth/legend_gambeson_plain"],
-				[3, "cloth/legend_gambeson_common_color"],
+				[4, "cloth/legend_gambeson_plain"],
+				[1, "cloth/legend_gambeson_common_color"],
 				[0, "cloth/legend_gambeson_wolf"],
-				[90, "cloth/legend_padded_surcoat"],
+				[85, "cloth/legend_padded_surcoat"],
 				[0, "cloth/legend_robes"],
 				[0, "cloth/legend_apron_butcher"],
 				[0, "cloth/legend_robes_nun"],
@@ -344,7 +344,7 @@ this.bandit_raider <- this.inherit("scripts/entity/tactical/human", {
 				[0, "cloth/legend_sackcloth"],
 				[0, "cloth/legend_sackcloth_patched"],
 				[0, "cloth/legend_sackcloth_tattered"],
-				[5, "cloth/legend_thick_tunic"],
+				[10, "cloth/legend_thick_tunic"],
 				[0, "cloth/legend_tunic"],
 				[0, "cloth/legend_tunic_noble"]
 			];
@@ -353,10 +353,10 @@ this.bandit_raider <- this.inherit("scripts/entity/tactical/human", {
 			if (armor != null)
 			{
 				local chains = [
-					[1, ""],
-					[9, "chain/legend_armor_mail_shirt"],
+					[10, ""],
+					[10, "chain/legend_armor_mail_shirt"],
 					[0, "chain/legend_armor_mail_shirt_simple"],
-					[90, "chain/legend_armor_rusty_mail_shirt"],
+					[80, "chain/legend_armor_rusty_mail_shirt"],
 					[0, "chain/legend_armor_ancient_double_mail"],
 					[0, "chain/legend_armor_ancient_mail"],
 					[0, "chain/legend_armor_basic_mail"],
@@ -364,8 +364,8 @@ this.bandit_raider <- this.inherit("scripts/entity/tactical/human", {
 					[0, "chain/legend_armor_hauberk_full"],
 					[0, "chain/legend_armor_hauberk_sleevless"],
 					[0, "chain/legend_armor_reinforced_mail"],
-					[5, "chain/legend_armor_reinforced_mail_shirt"],
-					[5, "chain/legend_armor_reinforced_rotten_mail_shirt"],
+					[0, "chain/legend_armor_reinforced_mail_shirt"],
+					[0, "chain/legend_armor_reinforced_rotten_mail_shirt"],
 					[0, "chain/legend_armor_reinforced_worn_mail"],
 					[0, "chain/legend_armor_reinforced_worn_mail_shirt"],
 					[1, "chain/legend_armor_short_mail"]
@@ -378,13 +378,13 @@ this.bandit_raider <- this.inherit("scripts/entity/tactical/human", {
 				}
 
 				local plates = [
-					[30, ""],
-					[10, "plate/legend_armor_leather_brigandine"],
+					[10, ""],
+					[0, "plate/legend_armor_leather_brigandine"],
 					[0, "plate/legend_armor_leather_brigandine_hardened"],
 					[0, "plate/legend_armor_leather_brigandine_hardened_full"],
-					[10, "plate/legend_armor_leather_jacket"],
-					[10, "plate/legend_armor_leather_jacket_simple"],
-					[10, "plate/legend_armor_leather_lamellar"],
+					[40, "plate/legend_armor_leather_jacket"],
+					[20, "plate/legend_armor_leather_jacket_simple"],
+					[20, "plate/legend_armor_leather_lamellar"],
 					[0, "plate/legend_armor_leather_lamellar_harness_heavy"],
 					[0, "plate/legend_armor_leather_lamellar_harness_reinforced"],
 					[0, "plate/legend_armor_leather_lamellar_heavy"],

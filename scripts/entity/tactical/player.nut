@@ -1402,11 +1402,15 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			_xp = _xp * this.Const.Combat.GlobalXPVeteranLevelMult;
 		}
 
-		if (this.getTags().has("PlayerSkeleton") || this.getTags().has("PlayerZombie"))
+		if (this.getTags().has("PlayerSkeleton"))
 		{
-			_xp = _xp * 0.1;
+			_xp = _xp * 0.33;
 		}
 
+		if (this.getTags().has("PlayerZombie"))
+		{
+			_xp = _xp * 0.25;
+		}
 	//	if (("State" in this.World) && this.World.State != null && this.World.getPlayerRoster().getSize() < 3)
 	//	{
 	//		_xp = _xp * (1.0 - (3 - this.World.getPlayerRoster().getSize()) * 0.15);

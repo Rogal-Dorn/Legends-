@@ -169,6 +169,14 @@ this.have_all_camp_activities_ambition <- this.inherit("scripts/ambitions/ambiti
 
 	function onUpdateScore()
 	{
+
+
+		if (this.World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
+		{
+			this.m.IsDone = true;
+			return;
+		}
+
 		if (this.hasAllProvisions())
 		{
 			this.m.IsDone = true;

@@ -95,26 +95,26 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 
 				if (mainhand != null)
 				{
-					mainhandvalue += (mainhand.getSellPrice())  / 2000;
+					mainhandvalue += (mainhand.getSellPrice())  / 1000;
 				}
 
 				if (offhand != null)
 				{
-					offhandvalue += (offhand.getSellPrice()) / 2000;
+					offhandvalue += (offhand.getSellPrice()) / 1000;
 				}
 
 				if (body != null)
 				{
-					bodyvalue += (body.getSellPrice()) / 2000;
+					bodyvalue += (body.getSellPrice()) / 1000;
 				}
 
 				if (head != null)
 				{
-					headvalue += (head.getSellPrice()) / 2000;
+					headvalue += (head.getSellPrice()) / 1000;
 				}
 
 				local gearvalue = mainhandvalue + offhandvalue + bodyvalue + headvalue;
-				this.logInfo("Gear power " + gearvalue);
+				this.logInfo("Adding gear strength of " + gearvalue);
 				this.m.Strength += gearvalue ;
 			}
 
