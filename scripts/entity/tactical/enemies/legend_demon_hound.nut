@@ -55,6 +55,15 @@ this.legend_demon_hound <- this.inherit("scripts/entity/tactical/actor", {
 			return;
 		}
 
+		
+		
+		local BodyOrHeadShot = _hitInfo.BodyPart;
+		local SkillID = _skill.getID();
+		//Don't teleport if it was a headshot from split man attack, because we have to wait for body shot to teleport, otherwise it doesn't matter. 
+		if (SkillID == "actives.split_man" && BodyOrHeadShot == this.Const.BodyPart.Head) {
+			return;
+		}
+
 		local result = {
 			TargetTile = this.getTile(),
 			Destinations = []
