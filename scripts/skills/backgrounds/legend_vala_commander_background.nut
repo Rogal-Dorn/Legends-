@@ -203,7 +203,7 @@ this.legend_vala_commander_background <- this.inherit("scripts/skills/background
 		actor.setTitle("the Vala");
 		//this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
 		this.m.Container.add(this.new("scripts/skills/perks/legend_vala_information"));
-		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_1"));
+		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_1"));
 	}
 
 	function onAddEquipment()

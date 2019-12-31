@@ -310,8 +310,8 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 	function onAdded()
 	{
 		this.character_background.onAdded();
-		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_daze"));
-		this.m.Container.add(this.new("scripts/skills/perks/perk_student"));
+		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_daze"));
+		//this.m.Container.add(this.new("scripts/skills/perks/perk_student"));
 		this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
 		if (this.Const.LegendMod.Configs.LegendMagicEnabled())
 		{
