@@ -41,6 +41,8 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 		bros[0].getBackground().m.RawDescription = "{%name% grew up in the rangers, taught the ways of the forest by his father. Running through the woods his whole life has made him particularly good at tracking enemies}";
 		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
 		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_pathfinder"));
+		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_footwork"));
+		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_roster_2"));
 		bros[0].getTags().set("IsPlayerCharacter", true);
 		bros[0].setPlaceInFormation(3);
 		bros[0].setVeteranPerks(2);	
