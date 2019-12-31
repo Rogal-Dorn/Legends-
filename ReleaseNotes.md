@@ -2298,4 +2298,6 @@ White wolf helm and mantle fear reduced, cost of the helm increased to two pelts
 Fixes catapults not dying properly (Mwah)
 Fixes origin mass grave event currentTile error (Mwah)
 Should fix noble slingers not shooting their rocks (Mwah)
-Fixes hollenhounds teleporting before taking the second part of damage from split_man
+Fixes hollenhounds teleporting before taking the second part of damage from split_man (Mwah)
+Fixes recruit scaling only happening on legendary and not when config is checked (Mwah)
+Changes to how recruit scaling is handled (Mwah)
