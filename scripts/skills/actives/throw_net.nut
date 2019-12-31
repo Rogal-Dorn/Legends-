@@ -143,9 +143,10 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 			}
 
 			//_user.getItems().unequip(_user.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand));
-			if (this.getAmmo() <= 0) {
-				_user.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand).drop(); //drop instead of destroy
-			}
+			//Drop commented out by Mwah, why would we want this anyways?
+			//if (this.getAmmo() <= 0) {
+			//	_user.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand).drop(); //drop instead of destroy
+			//} 
 			targetEntity.getSkills().add(this.new("scripts/skills/effects/net_effect"));
 			local breakFree = this.new("scripts/skills/actives/break_free_skill");
 			breakFree.m.Icon = "skills/active_74.png";

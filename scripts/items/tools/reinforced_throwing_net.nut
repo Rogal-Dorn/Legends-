@@ -123,23 +123,34 @@ this.reinforced_throwing_net <- this.inherit("scripts/items/weapons/weapon", {
 		this.Sound.play("sounds/cloth_01.wav", this.Const.Sound.Volume.Inventory);
 	}
 
+	function onUnEquip() 
+	{
+		this.m.AmmoMax = this.m.BaseAmmoMax;
+		this.m.RangeMax = this.m.BaseRangeMax;
+		this.weapon.onUnEquip();
+	}
+
 	function onEquip()
 	{
 		this.weapon.onEquip();
-		local skill = this.new("scripts/skills/actives/throw_net");
-		skill.setReinforced(true);
-		this.addSkill(skill);
+		this.addSkill(this.new("scripts/skills/actives/throw_net"));
 
-		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_net_repair"))
-		{
-		this.m.AmmoMax = 2;
-		}
+		this.m.AmmoMax = this.m.BaseAmmoMax;
 
 		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_net_casting"))
 		{
-		this.m.RangeMax = 4;
+			this.m.RangeMax = 4;
 		}
-	}
+
+		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_mastery_nets"))
+		{
+			this.m.AmmoMax = 2;
+		}
+
+		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_net_repair"))
+		{
+			this.m.AmmoMax *= 2;
+		}
 
 	function isAmountShown()
 	{
