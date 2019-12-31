@@ -2297,3 +2297,4 @@ Fixes Legion recruits not getting the right skills  (Wuxiang)
 White wolf helm and mantle fear reduced, cost of the helm increased to two pelts. 
 Fixes catapults not dying properly (Mwah)
 Fixes origin mass grave event currentTile error (Mwah)
+Should fix noble slingers not shooting their rocks (Mwah)
