@@ -61,24 +61,6 @@ this.sellsword_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.Modifiers.Repair = this.Const.LegendMod.ResourceModifiers.Repair[1];
 		this.m.Modifiers.Salvage = this.Const.LegendMod.ResourceModifiers.Salvage[1];
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[2];
-		if (this.World.Assets.getMoralReputation() < 60 && this.World.Assets.getMoralReputation() > 40) //checks if the player is neutral
-		{
-				local roster = this.World.getPlayerRoster().getAll();
-				local levels = 0;
-				local count = 0;
-				foreach( i, bro in roster )
-					{
-					local brolevel = bro.getLevel();
-					levels += brolevel;
-					count += 1;
-					}
-				local avgLevel = this.Math.floor(levels / count);					// gets the average of player levels
-				local busRep = this.World.Assets.getBusinessReputation();			//checks how reliable the player is
-				local repPoints = this.Math.floor(busRep / 1000);					// turns that rep into points
-				local repLevelAvg =  this.Math.floor((avgLevel + repPoints) / 4);	// Averages levels and points and
-				local broLevel = this.Math.rand(1, repLevelAvg);					// level is randomly chosen up to our score
-				this.m.Level += broLevel;										
-		}
 		this.m.PerkTreeDynamicMins.Defense = 3;
 		this.m.PerkTreeDynamicMins.Enemy = 2;
 		this.m.PerkTreeDynamic = {
@@ -507,6 +489,16 @@ this.sellsword_background <- this.inherit("scripts/skills/backgrounds/character_
 			items.equip(this.new("scripts/items/helmets/hood"));
 		}
 	}
-
+	function setAdditionalRecruitmentLevels()
+	{
+		if(this.World.Assets.getMoralReputation() < 60 && this.World.Assets.getMoralReputation > 40)  //checks if the player is chivalrous
+		{
+			this.character_background.setAdditionalRecruitmentLevels();	
+		}
+		else 
+		{
+			return 0;
+		}
+	}
 });
 

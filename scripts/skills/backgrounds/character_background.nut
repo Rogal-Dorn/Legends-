@@ -1015,11 +1015,37 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 
 	function onAddLegendEquipment()
 	{
-
 	}
 
 	function onSetAppearance()
 	{
+	}
+
+	//this may want to be set to no automatic recruitment levels, or only half, etc. At the moment this allows every background unless overwritten in their own background file
+	function setAdditionalRecruitmentLevels()
+	{
+		if(this.Const.LegendMod.Configs.LegendRecruitScalingEnabled())
+		{
+			local roster = this.World.getPlayerRoster().getAll();
+			local levels = 0;
+			local count = 0;
+			foreach( i, bro in roster )
+				{
+					local brolevel = bro.getLevel();
+					levels += brolevel;
+					count += 1;
+				}
+			local avgLevel = this.Math.floor(levels / count);
+			local busRep = this.World.Assets.getBusinessReputation();
+			local repPoints = this.Math.floor(busRep / 1000);
+			local repLevelAvg =  this.Math.floor((avgLevel + repPoints) / 4);
+			local broLevel = this.Math.rand(1, repLevelAvg);
+			return broLevel - 1;
+		}
+		else 
+		{
+			return 0;
+		}
 	}
 
 	function onAdded()
@@ -1037,26 +1063,8 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 				actor.setTitle(this.m.Titles[this.Math.rand(0, this.m.Titles.len() - 1)]);
 			}
 
-			if(this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
-			{
-				local roster = this.World.getPlayerRoster().getAll();
-				local levels = 0;
-				local count = 0;
-				foreach( i, bro in roster )
-					{
-					local brolevel = bro.getLevel();
-					levels += brolevel;
-					count += 1;
-					}
-				local avgLevel = this.Math.floor(levels / count);
-				local busRep = this.World.Assets.getBusinessReputation();
-				local repPoints = this.Math.floor(busRep / 1000);
-				local repLevelAvg =  this.Math.floor((avgLevel + repPoints) / 4);
-				local broLevel = this.Math.rand(1, repLevelAvg);
-				this.m.Level += broLevel -1;
-
-			}
-
+			this.m.Level += actor.m.Background.setAdditionalRecruitmentLevels();
+			
 			if (this.m.Level != 1)
 			{
 				actor.m.PerkPoints = this.m.Level - 1;
@@ -1064,6 +1072,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 				actor.m.Level = this.m.Level;
 				actor.m.XP = this.Const.LevelXP[this.m.Level - 1];
 			}
+
 		}
 	}
 
