@@ -82,8 +82,9 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 
 	function onAfterUpdate( _properties )
 	{
-		this.m.FatigueCostMult = _properties.IsSpecializedInThrowing ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
-		this.m.MaxRange = _properties.IsSpecializedInThrowing ? 4 : 3;
+		//These are intended to be two different specializations, one is in throwing the net itself one is just nets
+		this.m.FatigueCostMult = _properties.IsSpecializedInNets ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
+		this.m.MaxRange = _properties.IsSpecializedInNetCasting ? 4 : 3;
 	}
 
 	function getAmmo()

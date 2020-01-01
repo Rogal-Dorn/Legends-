@@ -13,6 +13,9 @@ this.perk_legend_net_casting <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = false;
 	}
 
-
+	function onUpdate( _properties )
+	{
+		_properties.IsSpecializedInNetCasting = true;
+	}
 
 });
