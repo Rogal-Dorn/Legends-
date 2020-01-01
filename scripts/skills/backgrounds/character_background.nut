@@ -30,7 +30,8 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		IsRangerRecruitBackground = false,
 		IsCrusaderRecruitBackground = false,
 		IsOutlawBackground = false,
-		Alignment = this.Const.LegendMod.Alignment.Neutral,
+		AlignmentMin = this.Const.LegendMod.Alignment.NeutralMin,
+		AlignmentMax = this.Const.LegendMod.Alignment.NeutralMax,
 		IsStabled = false,
 		Modifiers = {
 			Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[0],
@@ -1028,33 +1029,35 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		{
 			//When we do alignment checks if our reputation isn't beating the required morality, then we return 0
 			local actor = this.getContainer.getActor();
-			local broAlignment = actor.m.Alignment;
+			local broAlignmentMin = actor.m.AlignmentMin;
+			local broAlignmentMax = actor.m.AlignmentMax;
 
 			local currentReputation = this.World.Assets.getMoralReputation();
 
-			if ( broAlignment == this.Const.LegendMod.Alignment.Neutral ) 
+			//Take care of cases where we have Saintly or Deaded as a Max or Min, meaning we only have to check a > or < respectively
+			if ( broAlignmentMax == this.Const.LegendMod.Alignment.Saintly )
 			{
-				if ( !( currentReputation > 40 && currentReputation < 60 ) )
+				//If it's dreaded it always gets level up so just skip, otherwise check if our currentRep is > min required
+				if ( !( broAlignmentMin == this.Const.LegendMod.Alignment.Dreaded ) )
 				{
-					return 0;
+					if ( !( currentReputation > (broAlignmentMin * 10) + 1 ) ) 
+					{
+						return 0;
+					}
 				}
 			}
-			if ( broAlignment < this.Const.LegendMod.Alignment.Neutral )
+			else if ( broAlignmentMin == this.Const.LegendMod.Alignment.Dreaded )
 			{
-				//0 thru 3 for possible evil alignments
-				if ( !( currentReputation <= (broAlignment + 1) * 10 ) )
+				//Check if rep is < max rep
+				if ( !( currentReputation <= (broAlignmentMax + 1) * 10) )
 				{
 					return 0;
 				}
+
 			}
-			if ( broAlignment > this.Const.LegendMod.Alignment.Neutral )
+			else ( !( currentReputation > (broAlignmentMin * 10) + 1 ) && !( currentReputation <= (broAlignmentMax + 1) * 10) )
 			{
-				//5 thru 8 for possible good alignments
-				//ex `Alignment.Kind = 5`, need > (60)
-				if ( !( currentReputation > (broAlignment + 1) * 10 ) )
-				{
-					return 0;
-				}
+				return 0;
 			}
 
 			local roster = this.World.getPlayerRoster().getAll();
