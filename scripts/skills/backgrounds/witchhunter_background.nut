@@ -279,5 +279,6 @@ this.witchhunter_background <- this.inherit("scripts/skills/backgrounds/characte
 		this.character_background.onUpdate(_properties);
 		_properties.MoraleCheckBravery[1] += 20;
 	}
+
 });
 

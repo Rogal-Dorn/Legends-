@@ -71,7 +71,7 @@ this.legend_cat_item <- this.inherit("scripts/items/accessory/accessory", {
 		this.m.IsDroppedAsLoot = true;
 		this.m.ShowOnCharacter = false;
 		this.m.IsChangeableInBattle = false;
-		this.m.Value = 200;
+		this.m.Value = 100;
 	}
 
 	function playInventorySound( _eventType )
