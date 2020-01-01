@@ -2304,3 +2304,6 @@ Fixes recruit scaling only happening on legendary and not when config is checked
 Changes to how recruit scaling is handled (Mwah)
 Fixes Alcohol Brewing perk screwing up when taken (Mwah)
 Pacifist actually lowers bro level in calculations (Mwah)
+
+13.0.0.29b
+Fixes lots of character background screw ups (Mwah) (Also caused by him)

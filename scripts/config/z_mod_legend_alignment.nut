@@ -8,7 +8,7 @@ gt.Const.LegendMod.Alignment <- {
     NeutralMax = 5,
     Kind = 6,
     Good = 7,
-    Chilvalrous = 8,
+    Chivalrous = 8,
     Saintly = 9
 }
 

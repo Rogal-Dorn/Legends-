@@ -48,7 +48,7 @@ this.legend_nun_background <- this.inherit("scripts/skills/backgrounds/character
 		this.m.IsEducatedBackground = true;
 		this.m.IsCrusaderRecruitBackground = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Notorious;
-		this.m.AligmnentMax = this.Const.LegendMod.Ailgnment.Saintly;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[2];
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[3];
 		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[3];
