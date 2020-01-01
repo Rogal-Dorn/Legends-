@@ -72,7 +72,7 @@ this.thief_background <- this.inherit("scripts/skills/backgrounds/character_back
 		this.m.IsLowborn = true;
 		this.m.IsOutlawBackground = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Cruel;
-		this.m.AligmnentMax = this.Const.LegendMod.Ailgnment.Notorious;
+		this.m.AligmnentMax = this.Const.LegendMod.Alignment.Notorious;
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[1];
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[2];

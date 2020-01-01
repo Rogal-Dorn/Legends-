@@ -40,7 +40,7 @@ this.vagabond_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.IsLowborn = true;
 		this.m.IsOutlawBackground = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Cruel;
-		this.m.AligmnentMax = this.Const.LegendMod.Ailgnment.NeutralMin; //Bottom half of neutral for slightly neutral evil
+		this.m.AligmnentMax = this.Const.LegendMod.Alignment.NeutralMin; //Bottom half of neutral for slightly neutral evil
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[1];
 		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[1];
