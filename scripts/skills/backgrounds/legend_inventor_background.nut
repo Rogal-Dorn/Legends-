@@ -9,8 +9,8 @@ this.legend_inventor_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.BackgroundDescription = "Inventors are trenchant problem solvers, fueled by a burning passion for knowledge.";
 		this.m.GoodEnding = null;
 		this.m.BadEnding = null;
-		this.m.HiringCost = 120;
-		this.m.DailyCost = 12;
+		this.m.HiringCost = 1250;
+		this.m.DailyCost = 25;
 		this.m.Excluded = [
 			"trait.asthmatic",
 			"trait.clumsy",
@@ -223,5 +223,6 @@ this.legend_inventor_background <- this.inherit("scripts/skills/backgrounds/char
 	{
 		this.character_background.onUpdate(_properties);
 		_properties.XPGainMult *= 1.2;
+		this.m.Container.add(this.new("scripts/skills/actives/legend_use_catapult_skill"));
 	}
 });

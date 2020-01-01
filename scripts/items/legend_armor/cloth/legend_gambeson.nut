@@ -40,10 +40,10 @@ this.legend_gambeson <- this.inherit("scripts/items/legend_armor/legend_armor", 
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.InventorySound = this.Const.Sound.ClothEquip;
-		this.m.Value = 100;
-		this.m.Condition = 50;
-		this.m.ConditionMax = 50;
-		this.m.StaminaModifier = -4;
+		this.m.Value = 250;
+		this.m.Condition = 65;
+		this.m.ConditionMax = 65;
+		this.m.StaminaModifier = -6;
 	}
 
 	function updateVariant()

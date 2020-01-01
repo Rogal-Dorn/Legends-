@@ -3,10 +3,10 @@ this.legends_seer_scenario <- this.inherit("scripts/scenarios/world/starting_sce
 	function create()
 	{
 		this.m.ID = "scenario.legends_seer";
-		this.m.Name = "Solo Seer (Legends)";
+		this.m.Name = "Seer";
 		this.m.Description = "[p=c][img]gfx/ui/events/event_120.png[/img][/p][p]After studying alchemy and mystic secrets for years, you have set out to confront the evils of the world \n\n[color=#bcad8c]Bookworm:[/color] Educated people want to work for you, the uneducated find you boring to be around.\n[color=#bcad8c]Teacher[/color] Anyone you fight with gains the Student perk.\n[color=#bcad8c]Avatar:[/color] If your seer dies, the campaign ends.[/p]";
 		this.m.Difficulty = 3;
-		this.m.Order = 18;
+		this.m.Order = 22;
 		this.m.IsFixedLook = true;
 	}
 
@@ -24,6 +24,13 @@ this.legends_seer_scenario <- this.inherit("scripts/scenarios/world/starting_sce
 			"legend_witch_commander_background"
 		]);
 		bro.getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
+		bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_daze"));
+		bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_roster_1"));
+		bro.getSkills().add(this.new("scripts/skills/perks/perk_student"));
+		if (this.Const.LegendMod.Configs.LegendMagicEnabled())
+		{	
+			bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_magic_missile"));
+		}		
 		bro.setPlaceInFormation(4);
 		bro.setVeteranPerks(2);	
 		bro.getTags().set("IsPlayerCharacter", true);
@@ -90,6 +97,19 @@ this.legends_seer_scenario <- this.inherit("scripts/scenarios/world/starting_sce
 			], this.Const.Music.CrossFadeTime);
 			this.World.Events.fire("event.legend_seer_scenario_intro");
 		}, null);
+
+		if(this.Const.LegendMod.Configs.LegendCampUnlockEnabled())
+		{
+			this.World.Tags.set("HasLegendCampGathering", true);
+			this.World.Tags.set("HasLegendCampBarber", true);
+			this.World.Tags.set("HasLegendCampCrafting", true);
+			this.World.Tags.set("HasLegendCampFletching", true);
+			this.World.Tags.set("HasLegendCampHealing", true);
+			this.World.Tags.set("HasLegendCampHunting", true);
+			this.World.Tags.set("HasLegendCampScouting", true);
+			this.World.Tags.set("HasLegendCampScraping", true);
+			this.World.Tags.set("HasLegendCampTraining", true);			
+		}
 	}
 
 	function onInit()

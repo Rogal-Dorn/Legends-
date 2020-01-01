@@ -1,8 +1,8 @@
-this.perk_legend_horse_flying_charge <- this.inherit("scripts/skills/skill", {
+this.perk_legend_horse_flying_change <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{
-		this.m.ID = "perk.legend_horse_flying_charge";
+		this.m.ID = "perk.legend_horse_flying_change";
 		this.m.Name = this.Const.Strings.PerkName.LegendHorseFlyingChange;
 		this.m.Description = this.Const.Strings.PerkDescription.LegendHorseFlyingChange;
 		this.m.Icon = "ui/perks/clarity_circle.png";

@@ -103,6 +103,7 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.PerkDefs.LegendMarkTarget,
 				this.Const.Perks.PerkDefs.LegendBackToBasics,
 				this.Const.Perks.PerkDefs.LegendAlert,
+				this.Const.Perks.PerkDefs.LegendSummonHound
 				this.Const.Perks.PerkDefs.LegendRoster2
 			],
 			[
@@ -127,6 +128,7 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.PerkDefs.DoubleStrike,
 				this.Const.Perks.PerkDefs.LegendAmmoBinding,
 				this.Const.Perks.PerkDefs.DevastatingStrikes,
+				this.Const.Perks.PerkDefs.LegendSummonFalcon
 				this.Const.Perks.PerkDefs.LegendRoster3
 			],
 			[
@@ -149,6 +151,7 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.PerkDefs.LegendLithe,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyOrk,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyGoblin,
+				this.Const.Perks.PerkDefs.LegendSummonWolf,
 				this.Const.Perks.PerkDefs.LegendRoster5
 			],
 			[
@@ -177,6 +180,7 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.PerkDefs.LegendHidden,
 				this.Const.Perks.PerkDefs.LegendFreedomOfMovement,
 				this.Const.Perks.PerkDefs.LegendBigGameHunter,
+				this.Const.Perks.PerkDefs.LegendSummonBear,
 				this.Const.Perks.PerkDefs.LegendRoster7
 			],
 			[],
@@ -252,11 +256,11 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 	function onAdded()
 	{
 		this.character_background.onAdded();
-		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_2"));
-		this.m.Container.add(this.new("scripts/skills/perks/perk_pathfinder"));
-		this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
+		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_2"));
+		//this.m.Container.add(this.new("scripts/skills/perks/perk_pathfinder"));
+		this.m.Container.add(this.new("scripts/skills/traits/athletic_trait"));
 		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_guide_steps"));
-		this.m.Container.add(this.new("scripts/skills/perks/perk_footwork"));
+		//this.m.Container.add(this.new("scripts/skills/perks/perk_footwork"));
 
 		local actor = this.getContainer().getActor();
 
@@ -276,7 +280,7 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 		local talents = this.getContainer().getActor().getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.RangedSkill] = 3;
-		talents[this.Const.Attributes.Fatigue] = 2;
+		talents[this.Const.Attributes.Fatigue] = 3;
 		this.getContainer().getActor().fillTalentValues(2, true);
 		local items = this.getContainer().getActor().getItems();
 
@@ -321,7 +325,7 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 		local talents = this.getContainer().getActor().getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.RangedSkill] = 3;
-		talents[this.Const.Attributes.Fatigue] = 2;
+		talents[this.Const.Attributes.Fatigue] = 3;
 		this.getContainer().getActor().fillTalentValues(2, true);
 		local items = this.getContainer().getActor().getItems();
 

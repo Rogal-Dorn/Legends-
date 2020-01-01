@@ -6,6 +6,8 @@
  <sprite id="figure_player_berserker" offsetY="20" ic="FF334959" width="68" height="106" img="world_entity\party\figure_player_berserker.png" left="-18" right="24" top="-39" bottom="9" />
   <sprite id="figure_player_crusader" offsetY="20" ic="FF334959" width="68" height="106" img="world_entity\party\figure_player_crusader.png" left="-18" right="24" top="-39" bottom="9" />
   <sprite id="figure_player_ranger" offsetY="20" ic="FF334959" width="68" height="106" img="world_entity\party\figure_player_ranger.png" left="-18" right="24" top="-39" bottom="9" />
+  <sprite id="figure_player_beggar" offsetY="20" ic="FF334959" width="68" height="106" img="world_entity\party\figure_player_beggar.png" left="-18" right="24" top="-39" bottom="9" />
+   <sprite id="figure_player_legion" offsetY="20" ic="FF334959" width="68" height="106" img="world_entity\party\figure_player_legion.png" left="-18" right="24" top="-39" bottom="9" />
   <sprite id="figure_player_noble" offsetY="20" ic="FF334959" width="68" height="106" img="world_entity\party\figure_player_noble.png" left="-18" right="24" top="-39" bottom="9" />
   <sprite id="figure_player_seer" offsetY="20" ic="FF334959" width="68" height="106" img="world_entity\party\figure_player_seer.png" left="-18" right="24" top="-39" bottom="9" />
   <sprite id="figure_player_warlock" offsetY="20" ic="FF334959" width="68" height="106" img="world_entity\party\figure_player_warlock.png" left="-18" right="24" top="-39" bottom="9" />

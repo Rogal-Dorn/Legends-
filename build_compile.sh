@@ -28,13 +28,25 @@ while read -r line; do
         echo "skipping $line"
     elif [ "$line" == "scripts/entity/tactical/tactical_entity_manager.nut" ]; then
         echo "skipping $line"
+    elif [ "$line" == "scripts/ai/tactical/behaviors/ai_attack_bow.nut" ]; then
+        echo "skipping $line"
+    elif [ "$line" == "scripts/ai/tactical/behaviors/ai_attack_crush_armor.nut" ]; then
+        echo "skipping $line"
+    elif [ "$line" == "scripts/ai/tactical/behaviors/ai_attack_decapitate.nut" ]; then
+        echo "skipping $line"
     elif [ "$line" == "scripts/ai/tactical/behaviors/ai_attack_default.nut" ]; then
         echo "skipping $line"
     elif [ "$line" == "scripts/ai/tactical/behaviors/ai_attack_knock_out.nut" ]; then
         echo "skipping $line"
+    elif [ "$line" == "scripts/ai/tactical/behaviors/ai_attack_lash.nut" ]; then
+        echo "skipping $line"
+    elif [ "$line" == "scripts/ai/tactical/behaviors/ai_attack_swallow+whole.nut" ]; then
+        echo "skipping $line"
     elif [ "$line" == "scripts/ai/tactical/behaviors/ai_hook.nut" ]; then
         echo "skipping $line"
     elif [ "$line" == "scripts/ai/tactical/behaviors/ai_charm.nut" ]; then
+        echo "skipping $line"
+    elif [ "$line" == "scripts/contracts/contracts/barbarian_king_contract" ]; then
         echo "skipping $line"
     elif [ "$line" == "scripts/factions/faction_action.nut" ]; then
         echo "skipping $line"

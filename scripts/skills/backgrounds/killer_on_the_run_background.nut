@@ -64,6 +64,8 @@ this.killer_on_the_run_background <- this.inherit("scripts/skills/backgrounds/ch
 
 		this.m.IsCombatBackground = true;
 		this.m.IsOutlawBackground = true;
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Notorious;
 		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[1];
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[2];
 		this.m.PerkTreeDynamic = {
@@ -326,6 +328,5 @@ this.killer_on_the_run_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.character_background.onUpdate(_properties);
 		_properties.HitChance[this.Const.BodyPart.Head] += 10;
 	}
-
 });
 

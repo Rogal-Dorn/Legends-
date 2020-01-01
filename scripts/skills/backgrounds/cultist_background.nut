@@ -72,6 +72,8 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		}
 
 		this.m.IsOutlawBackground = true;
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Merciless;
 		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[2];
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[1];
 		this.m.Modifiers.MedConsumption = this.Const.LegendMod.ResourceModifiers.MedConsumption[1];
@@ -212,7 +214,7 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 	{
 		local items = this.getContainer().getActor().getItems();
 		local r;
-		r = this.Math.rand(0, 3);
+		r = this.Math.rand(0, 8);
 
 		if (r == 0)
 		{
@@ -240,6 +242,10 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			{
 			items.equip(this.new("scripts/items/weapons/legend_cat_o_nine_tails"));
 			}
+		}
+		else if (r >= 5)
+		{
+		 items.equip(this.new("scripts/items/weapons/legend_cat_o_nine_tails"));
 		}
 
 		r = this.Math.rand(0, 3);
@@ -317,7 +323,7 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			[0, "cloth/legend_gambeson_plain"],
 			[0, "cloth/legend_gambeson_wolf"],
 			[0, "cloth/legend_padded_surcoat"],
-			[3, "cloth/legend_robes"],
+			[1, "cloth/legend_robes"],
 			[0, "cloth/legend_apron_butcher"],
 			[0, "cloth/legend_robes_nun"],
 			[0, "cloth/legend_apron_smith"],

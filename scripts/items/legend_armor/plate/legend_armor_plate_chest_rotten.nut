@@ -16,10 +16,10 @@ this.legend_armor_plate_chest_rotten <- this.inherit("scripts/items/legend_armor
 		this.m.SpriteBack = "bust_legend_plate_chest_rotten";
 		this.m.SpriteDamagedBack = "bust_legend_plate_chest_rotten_damaged";
 		this.m.SpriteCorpseBack = "bust_legend_plate_chest_rotten_dead";
-		this.m.Value = 3700;
-		this.m.Condition = 115;
-		this.m.ConditionMax = 115;
-		this.m.StaminaModifier = -13;
+		this.m.Value = 1250;
+		this.m.Condition = 125;
+		this.m.ConditionMax = 125;
+		this.m.StaminaModifier = -21;
         this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
 	}
 

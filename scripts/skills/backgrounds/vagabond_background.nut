@@ -39,6 +39,8 @@ this.vagabond_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.Body = "bust_naked_body_00";
 		this.m.IsLowborn = true;
 		this.m.IsOutlawBackground = true;
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Cruel;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.NeutralMin; //Bottom half of neutral for slightly neutral evil
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[1];
 		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[1];
@@ -283,6 +285,5 @@ this.vagabond_background <- this.inherit("scripts/skills/backgrounds/character_b
 			items.equip(this.new("scripts/items/helmets/straw_hat"));
 		}
 	}
-
 });
 

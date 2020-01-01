@@ -19,8 +19,10 @@ this.legend_double_mail_upgrade <- this.inherit("scripts/items/legend_armor/lege
 		this.m.SpriteCorpseFront = null;
 		this.m.SpriteCorpseBack = "upgrade_19_back_dead";
 		this.m.Value = 200;
+		this.m.Condition = 20;
+		this.m.ConditionMax = 20;
 		this.m.ConditionModifier = 20;
-		this.m.StaminaModifier = 2;
+		this.m.StaminaModifier = -2;
 	}
 
 	function getTooltip()

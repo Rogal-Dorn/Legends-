@@ -23,16 +23,42 @@ this.legend_berserker_rage_effect <- this.inherit("scripts/skills/skill", {
 	}
 	function getTooltip()
 	{
-		local ret = this.getDefaultTooltip();
-		ret.extend([
+		return [
 			{
-				id = 6,
+				id = 1,
+				type = "title",
+				text = this.getName()
+			},
+			{
+				id = 2,
+				type = "description",
+				text = this.getDescription()
+			},
+			{
+				id = 10,
 				type = "text",
-				icon = "ui/icons/vision.png",
-				text = "You currently have [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.RageStacks + "[/color] rage stacks"
+				icon = "ui/icons/regular_damage.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.RageStacks + "[/color] Damage"
+			},
+			{
+				id = 11,
+				type = "text",
+				icon = "ui/icons/melee_defense.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]-" + this.Math.maxf(0.3, 1.0 - 0.02 * this.m.RageStacks) + "%[/color] Damage Reduction"
+			},
+			{
+				id = 12,
+				type = "text",
+				icon = "ui/icons/bravery.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.RageStacks + "[/color] Bravery"
+			},
+			{
+				id = 13,
+				type = "text",
+				icon = "ui/icons/initiative.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]-" + this.m.RageStacks + "[/color] Initiative"
 			}
-		]);
-		return ret;
+		];
 	}
 	function getDescription()
 	{

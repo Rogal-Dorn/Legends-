@@ -205,10 +205,10 @@ this.legend_berserker_background <- this.inherit("scripts/skills/backgrounds/cha
 				text = this.getDescription()
 			},
 			{
-				id = 15,
+				id = 12,
 				type = "text",
-				icon = "ui/icons/xp_received.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-15%[/color] Experience Gain"
+				icon = "ui/icons/regular_damage.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] Damage when unarmed"
 			}
 		];
 	}
@@ -313,7 +313,7 @@ this.legend_berserker_background <- this.inherit("scripts/skills/backgrounds/cha
 		local actor = this.getContainer().getActor();
 		actor.setTitle("The Berserker");
 		this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
-		this.m.Container.add(this.new("scripts/skills/perks/perk_berserk"));
+		//this.m.Container.add(this.new("scripts/skills/perks/perk_berserk"));
 
 	}
 

@@ -37,7 +37,7 @@ this.legend_necro_background <- this.inherit("scripts/skills/backgrounds/charact
 			"trait.loyal",
 			"trait.quick",
 			"trait.swift",
-			"trait.suser_footing",
+			"trait.sure_footing",
 			"trait.tough",
 			"trait.disloyal",
 			"trait.loyal"
@@ -204,7 +204,7 @@ this.legend_necro_background <- this.inherit("scripts/skills/backgrounds/charact
 	function onAdded()
 	{
 		this.character_background.onAdded();
-		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_siphon"));
+		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_siphon"));
 	}
 
 	function onAddEquipment()

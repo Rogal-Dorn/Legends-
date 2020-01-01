@@ -279,10 +279,10 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 		this.character_background.onAdded();
 		local actor = this.getContainer().getActor();
 		actor.setTitle("the Crusader");
-		this.m.Container.add(this.new("scripts/skills/perks/perk_rebound"));
+		//this.m.Container.add(this.new("scripts/skills/perks/perk_rebound"));
 		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_strict_sermons"));
-		this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
-		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_1"));
+		this.m.Container.add(this.new("scripts/skills/traits/fearless_trait"));
+		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_1"));
 
 		if (this.m.IsFemaleBackground == true)
 		{
@@ -299,7 +299,7 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 		local talents = this.getContainer().getActor().getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.MeleeDefense] = 3;
-		talents[this.Const.Attributes.MeleeSkill] = 2;
+		talents[this.Const.Attributes.MeleeSkill] = 3;
 		this.getContainer().getActor().fillTalentValues(2, true);
 		local items = this.getContainer().getActor().getItems();
 		local stash = this.World.Assets.getStash()
@@ -319,7 +319,7 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 		local talents = this.getContainer().getActor().getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.MeleeDefense] = 3;
-		talents[this.Const.Attributes.MeleeSkill] = 2;
+		talents[this.Const.Attributes.MeleeSkill] = 3;
 		this.getContainer().getActor().fillTalentValues(2, true);
 		local items = this.getContainer().getActor().getItems();
 		local stash = this.World.Assets.getStash()

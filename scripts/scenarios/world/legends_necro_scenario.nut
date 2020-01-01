@@ -3,10 +3,10 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	function create()
 	{
 		this.m.ID = "scenario.legends_necro";
-		this.m.Name = "Warlock (Legends)";
+		this.m.Name = "Warlock";
 		this.m.Description = "[p=c][img]gfx/ui/events/event_46.png[/img][/p][p] Death is no barrier, others flee from its yawning abyss, but you embrace the other side. \n\n[color=#bcad8c]Necromancy:[/color] Start with undead companions and a scythe that summons the dead\n[color=#bcad8c]Gruesome harvest:[/color] Collect human corpses to fashion new minions, maintain them with medical supplies\n[color=#bcad8c]Blood magic:[/color]Drain blood, feast on corpses and use your own blood in rituals\n[color=#bcad8c]Avatar:[/color]When the warlock dies, the spells fade and the game ends[/p]";
 		this.m.Difficulty = 2;
-		this.m.Order = 13;
+		this.m.Order = 25;
 	}
 
 	function isValid()
@@ -39,6 +39,12 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		]);
 		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
 		bros[0].getSkills().add(this.new("scripts/skills/traits/cultist_fanatic_trait"));
+		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_roster_1"));
+		if (this.Const.LegendMod.Configs.LegendMagicEnabled())
+		{
+			bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_brink_of_death"));
+			bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_siphon"));
+		}
 		bros[0].getTags().set("IsPlayerCharacter", true);
 		bros[0].setPlaceInFormation(2);
 		bros[0].setVeteranPerks(2);	
@@ -48,7 +54,8 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
         bros[1].getTags().add("skeleton");
         bros[1].setStartValuesEx(this.Const.CharacterBackgroundsAnimated);
 		bros[1].getBackground().m.RawDescription = "You found %name% starved to death on the road, you tease him endlessly about being skin and bones. You enjoy the ribbing, but he does not find it humerous.";
-        bros[1].getSkills().add(this.new("scripts/skills/special/legend_animated_player_properties"));
+        bros[1].getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));
+		bros[1].getSkills().add(this.new("scripts/skills/racial/skeleton_racial"));
 		bros[1].setVeteranPerks(3);	
 		bros[2].setPlaceInFormation(4);
         bros[2].getTags().add("PlayerZombie");
@@ -56,7 +63,8 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
         bros[2].getTags().add("zombie_minion");
         bros[2].setStartValuesEx(this.Const.CharacterBackgroundsAnimated);
 		bros[2].getBackground().m.RawDescription = "You can not remember much about who %name% was in life, it is probably for the best that he can\'t either. All that matters is he is yours now.";
-        bros[2].getSkills().add(this.new("scripts/skills/special/legend_animated_player_properties"));
+        bros[2].getSkills().add(this.new("scripts/skills/injury_permanent/legend_rotten_flesh"));
+		bros[2].getSkills().add(this.new("scripts/skills/actives/zombie_bite"));
 		bros[2].setVeteranPerks(3);	
 		this.World.Assets.addMoralReputation(-100);
 		this.World.Assets.m.Money = this.World.Assets.m.Money / 2;
@@ -124,6 +132,19 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			this.Music.setTrackList(this.Const.Music.CivilianTracks, this.Const.Music.CrossFadeTime);
 			this.World.Events.fire("event.legend_necro_scenario_intro");
 		}, null);
+
+				if(this.Const.LegendMod.Configs.LegendCampUnlockEnabled())
+				{
+					this.World.Tags.set("HasLegendCampGathering", true);
+					this.World.Tags.set("HasLegendCampBarber", true);
+					this.World.Tags.set("HasLegendCampCrafting", true);
+					this.World.Tags.set("HasLegendCampFletching", true);
+					this.World.Tags.set("HasLegendCampHealing", true);
+					this.World.Tags.set("HasLegendCampHunting", true);
+					this.World.Tags.set("HasLegendCampScouting", true);
+					this.World.Tags.set("HasLegendCampScraping", true);
+					this.World.Tags.set("HasLegendCampTraining", true);			
+				}
 	}
 	
 	function onInit()

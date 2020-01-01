@@ -28,16 +28,22 @@ this.legend_tunic <- this.inherit("scripts/items/legend_armor/legend_armor", {
 					23,
 					24,
 					25,
-					26
+					26,
+					29,
+					30,
+					31,
+					32,
+					33,
+					34
 				]
 		this.m.Variant = variants[this.Math.rand(1, variants.len() - 1)];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.InventorySound = this.Const.Sound.ClothEquip;
-		this.m.Value = 45;
+		this.m.Value = 40;
 		this.m.Condition = 20;
 		this.m.ConditionMax = 20;
-		this.m.StaminaModifier = 0;
+		this.m.StaminaModifier = -1;
 	}
 
 	function updateVariant()

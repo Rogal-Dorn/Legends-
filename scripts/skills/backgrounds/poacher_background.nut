@@ -51,6 +51,8 @@ this.poacher_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.IsLowborn = true;
 		this.m.IsOutlawBackground = true;
 		this.m.IsRangerRecruitBackground = true;
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Notorious;
 		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[1];
 		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[2];
 		this.m.Modifiers.Fletching = this.Const.LegendMod.ResourceModifiers.Fletching[1];
@@ -392,6 +394,5 @@ this.poacher_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			items.equip(this.new("scripts/items/helmets/hood"));
 		}
 	}
-
 });
 

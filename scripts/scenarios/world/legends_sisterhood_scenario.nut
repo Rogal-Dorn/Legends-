@@ -3,10 +3,10 @@ this.legends_sisterhood_scenario <- this.inherit("scripts/scenarios/world/starti
 	function create()
 	{
 		this.m.ID = "scenario.legends_sisterhood";
-		this.m.Name = "The Sisterhood (Legends)";
+		this.m.Name = "Sisterhood";
 		this.m.Description = "[p=c][img]gfx/ui/events/event_91.png[/img][/p][p]Born into a world dominated by kings and bishops, you have studied the old ways of the wise women. Now you lead a band of powerful women shaping their own destinies. \n\n[color=#bcad8c]Sisterhood:[/color] You can only hire women, and each gains the Hold Out perk\n[color=#bcad8c]Threads of fate:[/color] Your chants and trances alter the minds of your allies and enemies .\n[color=#bcad8c]Rune stones:[/color] You can craft powerful items imbued with ancient runes\n[color=#bcad8c]Avatar:[/color] If you die, it is game over[/p]";
 		this.m.Difficulty = 2;
-		this.m.Order = 15;
+		this.m.Order = 23;
 		this.m.IsFixedLook = true;
 	}
 
@@ -52,6 +52,7 @@ this.legends_sisterhood_scenario <- this.inherit("scripts/scenarios/world/starti
 			"legend_vala_commander_background"
 		]);
 		bros[4].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
+		bros[4].getSkills().add(this.new("scripts/skills/perks/perk_legend_roster_1"));
 		bros[4].getTags().set("IsPlayerCharacter", true);
 		bros[4].setPlaceInFormation(13);
 		bros[4].setVeteranPerks(2);	
@@ -125,6 +126,18 @@ this.legends_sisterhood_scenario <- this.inherit("scripts/scenarios/world/starti
 			this.Music.setTrackList(this.Const.Music.CivilianTracks, this.Const.Music.CrossFadeTime);
 			this.World.Events.fire("event.legend_sisterhood_scenario_intro");
 		}, null);
+			if(this.Const.LegendMod.Configs.LegendCampUnlockEnabled())
+			{
+				this.World.Tags.set("HasLegendCampGathering", true);
+				this.World.Tags.set("HasLegendCampBarber", true);
+				this.World.Tags.set("HasLegendCampCrafting", true);
+				this.World.Tags.set("HasLegendCampFletching", true);
+				this.World.Tags.set("HasLegendCampHealing", true);
+				this.World.Tags.set("HasLegendCampHunting", true);
+				this.World.Tags.set("HasLegendCampScouting", true);
+				this.World.Tags.set("HasLegendCampScraping", true);
+				this.World.Tags.set("HasLegendCampTraining", true);			
+			}
 	}
 
 	function onInit()

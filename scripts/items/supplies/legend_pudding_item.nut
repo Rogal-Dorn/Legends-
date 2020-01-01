@@ -7,8 +7,8 @@ this.legend_pudding_item <- this.inherit("scripts/items/supplies/food_item", {
 		this.m.Name = "Pudding";
 		this.m.Description = "Provisions. A huge pudding made from fresh ingredients.";
 		this.m.Icon = "supplies/legend_pudding.png";
-		this.m.Value = 70;
-		this.m.GoodForDays = 6;
+		this.m.Value = 200;
+		this.m.GoodForDays = 7;
 	}
 
 	function getBuyPrice()

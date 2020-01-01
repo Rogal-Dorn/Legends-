@@ -11,7 +11,7 @@ this.legend_peasant_miner <- this.inherit("scripts/entity/tactical/human", {
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
 		this.getTags().add("peasant");
-		this.m.AIAgent = this.new("scripts/ai/tactical/agents/militia_melee_agent");
+		this.m.AIAgent = this.new("scripts/ai/tactical/agents/military_melee_agent");
 		this.m.AIAgent.setActor(this);
 		if (this.Math.rand(1, 100) <= 10)
 		{
@@ -32,7 +32,7 @@ this.legend_peasant_miner <- this.inherit("scripts/entity/tactical/human", {
 		dirt.Visible = true;
 		dirt.Alpha = this.Math.rand(0, 255);
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_pickaxe_skill"));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_mastery_pickaxe_damage"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_pickaxe_damage"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_sundering_strikes"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_mastery_hammer"));
 		this.getSprite("socket").setBrush("bust_base_militia");
@@ -40,7 +40,10 @@ this.legend_peasant_miner <- this.inherit("scripts/entity/tactical/human", {
 			{
 			this.m.Hitpoints = b.Hitpoints * 1.5;
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_flow"));
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_onslaught"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_stalwart"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_indomitable"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_recovery"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
 			}
 	}
@@ -100,11 +103,11 @@ this.legend_peasant_miner <- this.inherit("scripts/entity/tactical/human", {
 				}
 
 				local plates = [
-					[10, ""],
+					[0, ""],
 					[0, "plate/legend_armor_leather_brigandine"],
 					[0, "plate/legend_armor_leather_brigandine_hardened"],
 					[0, "plate/legend_armor_leather_brigandine_hardened_full"],
-					[1, "plate/legend_armor_leather_jacket"],
+					[2, "plate/legend_armor_leather_jacket"],
 					[1, "plate/legend_armor_leather_jacket_simple"],
 					[0, "plate/legend_armor_leather_lamellar"],
 					[0, "plate/legend_armor_leather_lamellar_harness_heavy"],
@@ -142,7 +145,7 @@ this.legend_peasant_miner <- this.inherit("scripts/entity/tactical/human", {
 		}
 		else
 		{
-			r = this.Math.rand(1, 10);
+			local r = this.Math.rand(1, 10);
 
 			if (r == 1)
 			{

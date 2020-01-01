@@ -12,7 +12,7 @@ this.assassin_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.GoodEnding = "";
 		this.m.BadEnding = "";
 		this.m.HiringCost = 10000;
-		this.m.DailyCost = 20;
+		this.m.DailyCost = 40;
 		this.m.Excluded = [
 			"trait.weasel",
 			"trait.teamplayer",
@@ -257,7 +257,7 @@ this.assassin_background <- this.inherit("scripts/skills/backgrounds/character_b
 	{
 		this.character_background.onAdded();
 		local actor = this.getContainer().getActor();
-		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_hidden"));
+		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_hidden"));
 		this.m.Container.add(this.new("scripts/skills/traits/quick_trait"));
 		this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
 

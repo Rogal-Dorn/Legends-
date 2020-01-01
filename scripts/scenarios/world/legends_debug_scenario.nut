@@ -3,8 +3,8 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	function create()
 	{
 		this.m.ID = "scenario.legends_debug_party";
-		this.m.Name = "Debug (Legends)";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_80.png[/img][/p][p]Debug mode for legends dev";
+		this.m.Name = "(Developer Debug)";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_80.png[/img][/p][p]Debug mode for legends developers";
 		this.m.Difficulty = 2;
 		this.m.Order = 99;
 	}
@@ -35,20 +35,20 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			bro.setVeteranPerks(2);
 		}
 
-		// local horsesize = 10
-		// for( local i = 0; i < horsesize; i = ++i )
-		// {
-		// 	local broLevel = broLevelMax
-		// 	local broPerks = broLevel - 1;
-		// 	local bro;
-		// 	bro = roster.create("scripts/entity/tactical/player");
-		// 	bro.m.HireTime = this.Time.getVirtualTimeF();
-		// 	bro.setStartValuesEx(this.Const.HorseBackgrounds);
-		// 	bro.m.Level = broLevel;
-		// 	bro.m.LevelUps = broPerks;
-		// 	bro.m.PerkPoints = broPerks;
-		// 	bro.setVeteranPerks(2);
-		// }
+		 local horsesize = 10
+		 for( local i = 0; i < horsesize; i = ++i )
+		 {
+		 	local broLevel = broLevelMax
+		 	local broPerks = broLevel - 1;
+		 	local bro;
+		 	bro = roster.create("scripts/entity/tactical/player");
+		 	bro.m.HireTime = this.Time.getVirtualTimeF();
+		 	bro.setStartValuesEx(this.Const.HorseBackgrounds);
+		 	bro.m.Level = broLevel;
+		 	bro.m.LevelUps = broPerks;
+		 	bro.m.PerkPoints = broPerks;
+		 	bro.setVeteranPerks(2);
+		 }
 
 
 
@@ -59,7 +59,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		this.World.Assets.m.Food = 200;
 		this.World.Assets.m.BusinessReputation = 1000;
 		this.World.Assets.getStash().setResizable(true);
-		this.World.Assets.getStash().resize(300);
+		this.World.Assets.getStash().resize(400);
 
 		this.World.Assets.getStash().add(this.new("scripts/items/weapons/heavy_crossbow"));
 
@@ -78,6 +78,10 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			["legend_sackcloth",1,1],
 			["legend_sackcloth",4,12],
 			["legend_tunic_noble",6,6],
+			["legend_thick_tunic",1,24],
+			["legend_dark_tunic",1,2],
+			["legend_ancient_cloth",1,4],
+			["legend_ancient_cloth_restored",1,5],
 			["legend_tunic",1,28],
 		];
 
@@ -118,6 +122,13 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			this.World.Assets.getStash().add(cha);
 		}
 
+		for( local i = 1; i < 11; i = ++i )
+		{
+			local item = this.new("scripts/items/legend_armor/chain/legend_armor_rusty_mail_shirt")
+			item.setVariant(i);
+			this.World.Assets.getStash().add(item);
+		}
+
 		local plate = [
 			"legend_armor_leather_brigandine",
 			"legend_armor_leather_brigandine_hardened",
@@ -156,7 +167,9 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"legend_rugged_scale_armor",
 			"legend_scrap_metal_armor",
 			"legend_thick_furs_armor",
-			"legend_thick_plated_barbarian_armor"
+			"legend_thick_plated_barbarian_armor",
+			"legend_armor_plate_full_greaves",
+			"legend_armor_plate_full_greaves_painted"
 		];
 
 		foreach(p in plate)
@@ -164,6 +177,20 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			this.logInfo("Adding " + p);
 			local pla = this.new("scripts/items/legend_armor/plate/" + p);
 			this.World.Assets.getStash().add(pla);
+		}
+
+		for( local i = 1; i < 6; i = ++i )
+		{
+			local item = this.new("scripts/items/legend_armor/plate/legend_armor_leather_noble")
+			item.setVariant(i);
+			this.World.Assets.getStash().add(item);
+		}
+
+		for( local i = 1; i < 9; i = ++i )
+		{
+			local item = this.new("scripts/items/legend_armor/plate/legend_armor_leather_riveted")
+			item.setVariant(i);
+			this.World.Assets.getStash().add(item);
 		}
 
 		for( local i = 101; i < 113; i = ++i )
@@ -196,6 +223,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			}
 		}
 
+
 		local cloaks = [
 			"legend_armor_hexe_leader_cloak_upgrade",
 			"legend_armor_redback_cloak_upgrade"
@@ -207,6 +235,16 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			local pla = this.new("scripts/items/legend_armor/cloak/" + p);
 			this.World.Assets.getStash().add(pla);
 		}
+
+
+
+			local item = this.new("scripts/items/legend_armor/cloak/legend_armor_cloak_common")
+			this.World.Assets.getStash().add(item);
+			local item = this.new("scripts/items/legend_armor/cloak/legend_armor_cloak_heavy")
+			this.World.Assets.getStash().add(item);
+			local item = this.new("scripts/items/legend_armor/cloak/legend_armor_cloak_noble")
+			this.World.Assets.getStash().add(item);
+
 
 		local fixed = [
 			"legend_armor_crusader",
@@ -306,6 +344,34 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			local pla = this.new("scripts/items/legend_armor/runes/" + p);
 			this.World.Assets.getStash().add(pla);
 		}
+
+		this.logInfo("Adding halberd");
+		local item = this.new("scripts/items/weapons/legend_halberd")
+		this.World.Assets.getStash().add(item);
+		this.logInfo("Adding military voulge");
+		local item = this.new("scripts/items/weapons/legend_military_voulge")
+		this.World.Assets.getStash().add(item);
+		this.logInfo("ranged flail");
+		local item = this.new("scripts/items/weapons/legend_ranged_flail")
+		this.World.Assets.getStash().add(item);
+		this.logInfo("Adding ranged wooden flail");
+		local item = this.new("scripts/items/weapons/legend_ranged_wooden_flail")
+		this.World.Assets.getStash().add(item);
+		this.logInfo("Adding voulge");
+		local item = this.new("scripts/items/weapons/legend_voulge")
+		this.World.Assets.getStash().add(item);
+		this.logInfo("Adding named voulge");
+		local item = this.new("scripts/items/weapons/named/legend_named_voulge")
+		this.World.Assets.getStash().add(item);
+		this.logInfo("Adding named halberd");
+		local item = this.new("scripts/items/weapons/named/legend_named_halberd")
+		this.World.Assets.getStash().add(item);
+		this.logInfo("Adding named lute");
+		local item = this.new("scripts/items/weapons/named/named_lute")
+		this.World.Assets.getStash().add(item);
+		this.logInfo("Adding named flail");
+		local item = this.new("scripts/items/weapons/named/legend_named_flail")
+		this.World.Assets.getStash().add(item);
 	}
 
 
