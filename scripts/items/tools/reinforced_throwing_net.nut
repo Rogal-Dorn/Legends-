@@ -1,5 +1,8 @@
 this.reinforced_throwing_net <- this.inherit("scripts/items/weapons/weapon", {
-	m = {},
+	m = {
+		BaseAmmoMax = 1,
+		BaseRangeMax = 3
+	},
 	function create()
 	{
 		this.weapon.create();

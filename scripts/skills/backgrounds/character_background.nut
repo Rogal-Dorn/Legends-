@@ -30,7 +30,8 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		IsRangerRecruitBackground = false,
 		IsCrusaderRecruitBackground = false,
 		IsOutlawBackground = false,
-		Alignment = this.Const.LegendMod.Alignment.Neutral,
+		AlignmentMin = this.Const.LegendMod.Alignment.Dreaded,	
+		AlignmentMax = this.Const.LegendMod.Alignment.Saintly,
 		IsStabled = false,
 		Modifiers = {
 			Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[0],
@@ -1022,41 +1023,8 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 	{
 	}
 
-	function setAdditionalRecruitmentLevels()
+	function calculateAdditionalRecruitmentLevels()
 	{
-		if(this.Const.LegendMod.Configs.LegendRecruitScalingEnabled())
-		{
-			//When we do alignment checks if our reputation isn't beating the required morality, then we return 0
-			local actor = this.getContainer.getActor();
-			local broAlignment = actor.m.Alignment;
-
-			local currentReputation = this.World.Assets.getMoralReputation();
-
-			if ( broAlignment == this.Const.LegendMod.Alignment.Neutral ) 
-			{
-				if ( !( currentReputation > 40 && currentReputation < 60 ) )
-				{
-					return 0;
-				}
-			}
-			if ( broAlignment < this.Const.LegendMod.Alignment.Neutral )
-			{
-				//0 thru 3 for possible evil alignments
-				if ( !( currentReputation <= (broAlignment + 1) * 10 ) )
-				{
-					return 0;
-				}
-			}
-			if ( broAlignment > this.Const.LegendMod.Alignment.Neutral )
-			{
-				//5 thru 8 for possible good alignments
-				//ex `Alignment.Kind = 5`, need > (60)
-				if ( !( currentReputation > (broAlignment + 1) * 10 ) )
-				{
-					return 0;
-				}
-			}
-
 			local roster = this.World.getPlayerRoster().getAll();
 			local levels = 0;
 			local count = 0;
@@ -1072,6 +1040,46 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			local repLevelAvg =  this.Math.floor((avgLevel + repPoints) / 4);
 			local broLevel = this.Math.rand(1, repLevelAvg);
 			return broLevel - 1;
+	}
+
+	function calculateAdditionalReputationLevels()
+	{
+		if(this.Const.LegendMod.Configs.LegendRecruitScalingEnabled())
+		{
+			//When we do alignment checks if our reputation isn't beating the required morality, then we return 0
+			local actor = this.getContainer.getActor();
+			local broAlignmentMin = actor.m.AlignmentMin;
+			local broAlignmentMax = actor.m.AlignmentMax;
+
+			local currentReputation = this.World.Assets.getMoralReputation();
+
+			//Take care of cases where we have Saintly or Deaded as a Max or Min, meaning we only have to check a > or < respectively
+			if ( broAlignmentMax == this.Const.LegendMod.Alignment.Saintly )
+			{
+				//If it's dreaded it always gets level up so just skip, otherwise check if our currentRep is > min required
+				if ( !( broAlignmentMin == this.Const.LegendMod.Alignment.Dreaded ) )
+				{
+					if ( !( currentReputation > (broAlignmentMin * 10) + 1 ) ) 
+					{
+						return 0;
+					}
+				}
+			}
+			else if ( broAlignmentMin == this.Const.LegendMod.Alignment.Dreaded )
+			{
+				//Check if rep is < max rep
+				if ( !( currentReputation <= (broAlignmentMax + 1) * 10) )
+				{
+					return 0;
+				}
+
+			}
+			else ( !( currentReputation > (broAlignmentMin * 10) + 1 ) && !( currentReputation <= (broAlignmentMax + 1) * 10) )
+			{
+				return 0;
+			}
+
+			return this.calculateAdditionalRecruitmentLevels();
 		}
 		else 
 		{
@@ -1094,7 +1102,9 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 				actor.setTitle(this.m.Titles[this.Math.rand(0, this.m.Titles.len() - 1)]);
 			}
 
-			this.m.Level += actor.m.Background.setAdditionalRecruitmentLevels();
+			//get normal recruitment levels and then possibly get extra moral reputation levels
+			this.m.Level += actor.m.Background.calculateAdditionalRecruitmentLevels();
+			this.m.Level += actor.m.Background.calculateAdditionalReputationLevels();
 			
 			if (this.m.Level != 1)
 			{

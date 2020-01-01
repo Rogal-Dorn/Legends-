@@ -3,12 +3,13 @@ gt.Const.LegendMod.Alignment <- {
     Dreaded = 0,
     Cruel = 1,
     Merciless = 2,
-    Notorious = 3,
-    Neutral = 4,
-    Kind = 5,
-    Good = 6,
-    Chilvalrous = 7,
-    Saintly = 8
+    Notorious = 3,  
+    NeutralMin = 4,
+    NeutralMax = 5,
+    Kind = 6,
+    Good = 7,
+    Chilvalrous = 8,
+    Saintly = 9
 }
 
 /*
