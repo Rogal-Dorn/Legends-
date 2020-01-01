@@ -12,7 +12,7 @@ this.assassin_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.GoodEnding = "";
 		this.m.BadEnding = "";
 		this.m.HiringCost = 10000;
-		this.m.DailyCost = 20;
+		this.m.DailyCost = 40;
 		this.m.Excluded = [
 			"trait.weasel",
 			"trait.teamplayer",
