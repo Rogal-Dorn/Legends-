@@ -414,12 +414,14 @@ gt.Const.Perks.HoundmasterClassTree <- {
 		"training dogs"
 	],
 	Tree = [
-		[gt.Const.Perks.PerkDefs.LegendDogBreeder],
+		[],
 		[],
 		[gt.Const.Perks.PerkDefs.LegendDogWhisperer],
 		[],
-		[],
-		[gt.Const.Perks.PerkDefs.LegendPackleader],
+		[gt.Const.Perks.PerkDefs.LegendDogBreeder],
+		[
+		//gt.Const.Perks.PerkDefs.LegendPackleader
+		],
 		[]
 	]
 };

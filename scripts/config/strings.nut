@@ -1599,7 +1599,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendSpecialistSickleSkill = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+12[/color] melee skill and [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] armor piercing while using a Sickle or Notched Blade. 25% of this skill applies to one handed swords \n[color=#0b0084]From the Sickle perk group[/color] ",
 	LegendSpecialistSlingDamage = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+4-12[/color] damage while using a sling or sling staff. \n[color=#0b0084]From the Sling perk group[/color]. ",
 	LegendSpecialistSlingSkill = "Gain[color=" + this.Const.UI.Color.PositiveValue + "]+12[/color] ranged skill and [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] armor damage while using a sling or sling staff. \n[color=#0b0084]From the Sling perk group[/color].",
-	LegendBigGameHunter = "When targeting an enemy with more health than you, gain damage equal to their current hitpoints divided by your current hitpoints",
+	LegendBigGameHunter = "When targeting an enemy with more health than you, gain damage equal to their current hitpoints divided by your maximum hitpoints",
 	LegendSecondWind = "Fully refreshes your fatigue when falling below 50% health. \n[color=#0b0084]From the Large perk group[/color]",
 	LegendMarkTarget = "Mark a target, reducing their ranged defense by [color=" + this.Const.UI.Color.PositiveValue + "]-20[/color] for 3 turns. ",
 	LegendFieldTriage = "Spend medicine to heal a unit on the battlefield, at a rate of 1 medicine for every 2 health. Heals up to 20 health per use  \n[color=#0b0084]From the Healing perk group[/color]",

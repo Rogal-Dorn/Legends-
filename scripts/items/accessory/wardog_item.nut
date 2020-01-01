@@ -13,13 +13,17 @@ this.wardog_item <- this.inherit("scripts/items/accessory/accessory", {
 	},
 	function isAllowedInBag()
 	{
-		return false;
-		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_packleader"))
+		
+		if (this.getContainer() != null)
 		{
-		return true;
-		}
-		  
+			if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_packleader"))
+			{
+			return true;
+			}
+		}		
+		return false;
 	}
+	
 
 	function getScript()
 	{
@@ -74,13 +78,32 @@ this.wardog_item <- this.inherit("scripts/items/accessory/accessory", {
 		this.m.Name = this.Const.Strings.WardogNames[this.Math.rand(0, this.Const.Strings.WardogNames.len() - 1)] + " the Wardog";
 		this.m.Description = "A strong and loyal dog bred for war. Can be unleashed in battle for scouting, tracking or running down routing enemies.";
 		this.m.SlotType = this.Const.ItemSlot.Accessory;
+		this.m.IsAllowedInBag = false;
 		this.m.IsDroppedAsLoot = true;
 		this.m.ShowOnCharacter = false;
 		this.m.IsChangeableInBattle = false;
 		this.m.Value = 200;
-		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_packleader"))
+		local roster = this.World.getPlayerRoster().getAll();
+        foreach( bro in roster )
+        {
+            if (bro.getSkills().hasSkill("perk.legend_packleader"))
+            {
+			this.m.IsAllowedInBag = true;
+			this.m.IsChangeableInBattle = true;
+            }
+		}
+
+	}
+
+	function onUpdateProperties( _properties )
+	{
+		if (this.getContainer() != null)
 		{
-		this.m.IsChangeableInBattle = true;
+			if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_packleader"))
+			{
+			this.m.IsAllowedInBag = true;
+			this.m.IsChangeableInBattle = true;
+			}
 		}
 
 	}
@@ -116,6 +139,11 @@ this.wardog_item <- this.inherit("scripts/items/accessory/accessory", {
 		unleash.setItem(this);
 		this.m.Skill = this.WeakTableRef(unleash);
 		this.addSkill(unleash);
+	}
+
+	function onPutIntoBag()
+	{
+		this.onEquip();
 	}
 
 	function onCombatFinished()

@@ -13,11 +13,14 @@ this.warhound_item <- this.inherit("scripts/items/accessory/accessory", {
 	},
 	function isAllowedInBag()
 	{
-		return false;
-		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_packleader"))
+		if (this.getContainer() != null)
 		{
-		return true;
-		}
+			if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_packleader"))
+			{
+			return true;
+			}
+		}		
+		return false;
 	}
 
 	function getScript()
@@ -77,12 +80,28 @@ this.warhound_item <- this.inherit("scripts/items/accessory/accessory", {
 		this.m.ShowOnCharacter = false;
 		this.m.IsChangeableInBattle = false;
 		this.m.Value = 250;
-		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_packleader"))
-		{
-		this.m.IsChangeableInBattle = true;
+        foreach( bro in roster )
+        {
+            if (bro.getSkills().hasSkill("perk.legend_packleader"))
+            {
+			this.m.IsAllowedInBag = true;
+			this.m.IsChangeableInBattle = true;
+            }
 		}
 	}
 
+	function onUpdateProperties( _properties )
+	{
+		if (this.getContainer() != null)
+		{
+			if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_packleader"))
+			{
+			this.m.IsAllowedInBag = true;
+			this.m.IsChangeableInBattle = true;
+			}
+		}
+
+	}
 	function playInventorySound( _eventType )
 	{
 		this.Sound.play("sounds/inventory/wardog_inventory_0" + this.Math.rand(1, 3) + ".wav", this.Const.Sound.Volume.Inventory);
