@@ -8,15 +8,13 @@ this.legend_armor_hexe_leader_cloak_upgrade <- this.inherit("scripts/items/legen
 		this.m.Name = "Hexe Coven Leader Spider Silk Cloak";
 		this.m.Description = "This flowing cloak is made from spider web, and offers excellent protection against ranged attacks.";
 		this.m.ArmorDescription = "A cloak of spider silk offers extra protection";
-		local variant = "05"
-		this.m.SpriteBack = "cloak_" + variant + "";
-		this.m.SpriteDamagedBack = "cloak_" + variant + "_damaged";
-		this.m.SpriteCorpseBack = "cloak_" + variant + "_destroyed";
-		this.m.Icon = "legend_armor/cloak/cloak_" + variant + ".png";
+		this.m.SpriteBack = "cloak_spider";
+		this.m.SpriteDamagedBack = "cloak_spider_damaged";
+		this.m.SpriteCorpseBack = "cloak_spider_destroyed";
+		this.m.Icon = "legend_armor/cloak/cloak_spider.png";
 		this.m.IconLarge = this.m.Icon;
-		this.m.OverlayIcon = "legend_armor/cloak/icon_cloak_" + variant + ".png";
-		this.m.OverlayIconLarge = "legend_armor/cloak/inventory_cloak_"  + variant + ".png";
-
+		this.m.OverlayIcon = "legend_armor/cloak/icon_cloak_spider.png";
+		this.m.OverlayIconLarge = "legend_armor/cloak/inventory_cloak_spider.png";
 		this.m.Value = 12000;
 	}
 
