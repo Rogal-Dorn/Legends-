@@ -1389,7 +1389,10 @@ gt.Const.Strings.PerkName <- {
 	LegendPacifist = "Pacifist",
 	LegendMagicMissile = "Magic Missile",
 	LegendHorseMovement = "Horse Movement",
-	LegendCampCook = "Camp Cooking"
+	LegendCampCook = "Camp Cooking",
+	LegendPackleader = "Pack Leader",
+	LegendDogWhisperer = "Dog Whisperer",
+	LegendDogBreeder = "Dog Breeder"
 };
 gt.Const.Strings.PerkDescription <- {
 	Relentless = "Don\'t slow down! At all times your Initiative is reduced only by [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] of your accumulated Fatigue, instead of all of it. \n[color=#0b0084]From the Fit perk group[/color]",
@@ -1709,6 +1712,9 @@ gt.Const.Strings.PerkDescription <- {
 	LegendMagicMissile = "Release a controlled forceful bolt, leaping towards a foe. Damage based on current initiave, accuracy based on ranged attack skill.",
 	LegendHorseMovement = "Move like a horse, quickly across flat terrain, but slowly through bogs and mountains",
 	LegendCampCook = "There is a fine art to cooking, skills and ingredients that are not obvious but unlock a world of flavor or preserve food for longer. Unlocks food crafting in the crafting tent. Allows the creation of porridge, puddings, pies, meat curing, fruit drying and ration making."
+	LegendPackleader = "Dogs can instinctively identify a pack leader, knowledge of their habits allows you to become the leader of their pack. Unlocks the ability to store aditional dog items in your bags and use them in battle.",
+	LegendDogWhisperer = "You have a way with dogs, the bond you form with them imbues each dog with more confidence and strength, knowing that you are there gives them strength. Grants each dog you unleash the perks Colossus, Fortified Mind and Underdog.",
+	LegendDogBreeder = "Intimate knowledge of dog care and conditions required for breeding allows you to successfully breed dogs. Unlocks a recipe in the crafting tent for breeding dogs."
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

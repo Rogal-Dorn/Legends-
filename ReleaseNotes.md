@@ -2285,7 +2285,7 @@ Bandit raiders get slightly less armor
 Item scaling adjusted so that 10,000 crowns is equal to 1 recruit 
 Added Orc named Axe (Salty) and Named Flail (Karl)
 
-13.0.0.29 bugfixes from .28 
+13.0.0.29 bugfixes
 
 Militia can now get aprons as previously intended (Mwah)
 Bribe skill should properly round down to avoid weird gold fractions (Mwah)
@@ -2305,7 +2305,7 @@ Changes to how recruit scaling is handled (Mwah)
 Fixes Alcohol Brewing perk screwing up when taken (Mwah)
 Pacifist actually lowers bro level in calculations (Mwah)
 
-13.0.0.29b
+13.0.0.29a Trading 
 Fixes errors in previous build (Mwah mah mia!) (Also caused by him)
 
 Trader scenario changes:
@@ -2323,3 +2323,11 @@ Donkeys gain a number of perks, Bags and Belts, Alert, Relentless, Peaceful, Pac
 Hedgeknights regain indestructible, martyr and trained, also swap hammer for flail. 
 Hedgeknights, Squires, Assassins, barbarians, bastards, adventurous nobles, and wildlings have their hiring costs increased due to having great stats due to dynamic perks.  full balance to come, these were just big outliers 
 Stables no longer generate 
+
+13.0.0.29c Hound masters 
+Fixes error from the new contract 
+Hound masters:
+New Perk - Dog Breeder - Unlocks the ability to breed dogs in the crafting tent. Requires 2 dogs and 2 fresh meat and some gold to make 3 dogs. 
+New Perk - Dog Whisperer - Any dog you unleash gains Colossus, Fortified Mind and Underdog 
+New Perk - Pack Leader - Unlocks the ability to hold dog items in your bags and use them in battle. 
+

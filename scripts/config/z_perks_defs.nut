@@ -2714,6 +2714,33 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/cooking_circle.png",
 		IconDisabled = "ui/perks/cooking_circle_bw.png",
 		Const = "LegendCampCook"
+	},
+	{
+		ID = "perk.legend_packleader",
+		Script = "scripts/skills/perks/perk_legend_packleader",
+		Name = this.Const.Strings.PerkName.LegendPackleader,
+		Tooltip = this.Const.Strings.PerkDescription.LegendPackleader,
+		Icon = "ui/perks/perk_dog.png",
+		IconDisabled = "ui/perks/perk_dog_bw.png",
+		Const = "LegendPackleader"
+	},
+	{
+		ID = "perk.legend_dogwhisperer",
+		Script = "scripts/skills/perks/perk_legend_dogwhisperer",
+		Name = this.Const.Strings.PerkName.LegendDogWhisperer,
+		Tooltip = this.Const.Strings.PerkDescription.LegendDogWhisperer,
+		Icon = "ui/perks/perk_hound.png",
+		IconDisabled = "ui/perks/perk_hound_bw.png",
+		Const = "LegendDogWhisperer"
+	},
+	{
+		ID = "perk.legend_dogbreeder",
+		Script = "scripts/skills/perks/perk_legend_dogbreeder",
+		Name = this.Const.Strings.PerkName.LegendDogBreeder,
+		Tooltip = this.Const.Strings.PerkDescription.LegendDogBreeder,
+		Icon = "ui/perks/perk_dogs.png",
+		IconDisabled = "ui/perks/perk_dogs_bw.png",
+		Const = "LegendDogBreeder"
 	}
 ];
 gt.Const.Perks.PerkDefs <- {};

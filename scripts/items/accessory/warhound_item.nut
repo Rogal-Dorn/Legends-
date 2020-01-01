@@ -14,6 +14,10 @@ this.warhound_item <- this.inherit("scripts/items/accessory/accessory", {
 	function isAllowedInBag()
 	{
 		return false;
+		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_packleader"))
+		{
+		return true;
+		}
 	}
 
 	function getScript()
@@ -73,6 +77,10 @@ this.warhound_item <- this.inherit("scripts/items/accessory/accessory", {
 		this.m.ShowOnCharacter = false;
 		this.m.IsChangeableInBattle = false;
 		this.m.Value = 250;
+		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_packleader"))
+		{
+		this.m.IsChangeableInBattle = true;
+		}
 	}
 
 	function playInventorySound( _eventType )
@@ -128,7 +136,12 @@ this.warhound_item <- this.inherit("scripts/items/accessory/accessory", {
 			entity.setVariant(this.getVariant());
 			this.setEntity(entity);
 			entity.setFaction(this.Const.Faction.PlayerAnimals);
-
+			if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_dogwhisperer"))
+				{
+				entity.getSkills().add(this.new("scripts/skills/perks/perk_fortified_mind"));
+				entity.getSkills().add(this.new("scripts/skills/perks/perk_colossus"));
+				entity.getSkills().add(this.new("scripts/skills/perks/perk_underdog"));
+				}
 			if (this.m.ArmorScript != null)
 			{
 				local item = this.new(this.m.ArmorScript);

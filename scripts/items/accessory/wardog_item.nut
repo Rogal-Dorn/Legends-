@@ -14,6 +14,11 @@ this.wardog_item <- this.inherit("scripts/items/accessory/accessory", {
 	function isAllowedInBag()
 	{
 		return false;
+		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_packleader"))
+		{
+		return true;
+		}
+		  
 	}
 
 	function getScript()
@@ -73,6 +78,11 @@ this.wardog_item <- this.inherit("scripts/items/accessory/accessory", {
 		this.m.ShowOnCharacter = false;
 		this.m.IsChangeableInBattle = false;
 		this.m.Value = 200;
+		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_packleader"))
+		{
+		this.m.IsChangeableInBattle = true;
+		}
+
 	}
 
 	function playInventorySound( _eventType )
@@ -121,6 +131,14 @@ this.wardog_item <- this.inherit("scripts/items/accessory/accessory", {
 			entity.setItem(this);
 			entity.setName(this.getName());
 			entity.setVariant(this.getVariant());
+				if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_dogwhisperer"))
+				{
+				entity.getSkills().add(this.new("scripts/skills/perks/perk_fortified_mind"));
+				entity.getSkills().add(this.new("scripts/skills/perks/perk_colossus"));
+				entity.getSkills().add(this.new("scripts/skills/perks/perk_underdog"));
+				}
+			
+
 			this.setEntity(entity);
 			entity.setFaction(this.Const.Faction.PlayerAnimals);
 
