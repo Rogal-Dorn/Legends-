@@ -173,7 +173,16 @@ this.swordmaster <- this.inherit("scripts/entity/tactical/human", {
 					{
 						armor.setUpgrade(plate)
 					}
-
+					local upgrades = [
+						[20, ""],
+						[5, "cloak/legend_cloak"],
+						[1, "cloak/legend_cloak_rich"]
+					];
+					local upgrade = this.Const.World.Common.pickLegendArmor(upgrades)
+					if (upgrade != null)
+					{
+						armor.setUpgrade(upgrade)
+					}
 					this.m.Items.equip(armor);
 				}
 			}

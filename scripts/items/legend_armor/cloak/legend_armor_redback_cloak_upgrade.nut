@@ -4,20 +4,17 @@ this.legend_armor_redback_cloak_upgrade <- this.inherit("scripts/items/legend_ar
 	{
 		this.legend_armor_upgrade.create();
 		this.m.ID = "legend_armor_upgrade.legend_redback_cloak";
-		this.m.Type = this.Const.Items.ArmorUpgrades.Attachment;
+		this.m.Type = this.Const.Items.ArmorUpgrades.Cloak;
 		this.m.Name = "Redback Spider Silk Cloak";
 		this.m.Description = "This flowing cloack is made from spider web, and offers excellent protection against ranged attacks.";
 		this.m.ArmorDescription = "A cloak of spider silk offers extra protection";
-		this.m.Icon = "armor_upgrades/upgrade_cloak_black.png";
+		this.m.SpriteBack = "cloak_spider";
+		this.m.SpriteDamagedBack = "cloak_spider_damaged";
+		this.m.SpriteCorpseBack = "cloak_spider_destroyed";
+		this.m.Icon = "legend_armor/cloak/cloak_spider.png";
 		this.m.IconLarge = this.m.Icon;
-		this.m.OverlayIcon = "armor_upgrades/icon_upgrade_cloak_black.png";
-		this.m.OverlayIconLarge = "armor_upgrades/inventory_upgrade_cloak_black.png";
-		this.m.SpriteFront = null;
-		this.m.SpriteBack = "cloak_black";
-		this.m.SpriteDamagedFront = null;
-		this.m.SpriteDamagedBack = "cloak_black_damaged";
-		this.m.SpriteCorpseFront = null;
-		this.m.SpriteCorpseBack = "cloak_black_dead";
+		this.m.OverlayIcon = "legend_armor/cloak/icon_cloak_spider.png";
+		this.m.OverlayIconLarge = "legend_armor/cloak/inventory_cloak_spider.png";
 		this.m.Value = 12000;
 	}
 

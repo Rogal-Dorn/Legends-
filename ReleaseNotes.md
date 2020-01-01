@@ -1736,7 +1736,7 @@ https://drive.google.com/open?id=1PDhZG8zWlnRbcqUcfkS_hRw6nT5NYsn1
 https://drive.google.com/open?id=1WMxpxCXbba7f00vqMXhM_IYmrVU7H47P
 
 
-13.0.0.10 New Perks
+13.0.0.10 (!!! Experimental !!! please don't upgrade existing campaigns without first backing them up)
 - Fixed black monolith battle not loading.
 - Fixed Piercing bolt perk.
 - Fixed lute being double grippable.
@@ -1754,7 +1754,6 @@ https://drive.google.com/open?id=1WMxpxCXbba7f00vqMXhM_IYmrVU7H47P
  * After (Easy 120, Noraml 90, Hard 60, Legendary 30) days, Bandit Leaders and Bandit Warlords will increase ALL of their stats every 15 days and Bandit Veterans will increase MS, RS, HP every 15 days - until your company perishes!
 - Vampire Lords now have bloodbath and slaughter perks.
 
-
 - New Mid tier peasant enemies:
  - Peasant Butcher - Applies bleed and deals extra damage to bleeding targets
  - Peasant Blacksmith - deals estra damage to armor 
@@ -1764,7 +1763,6 @@ https://drive.google.com/open?id=1WMxpxCXbba7f00vqMXhM_IYmrVU7H47P
  - Peasant Poacher - ranged unit with increased accuracy 
 
 Perks:
-
 - Cultists:	
 * Flesh Mortification - damage increased by 5-10% of your resolve while using cat'o'nine tails. Half this effect applies to other whips
 * Scourging - melee skill increased by 10% of your resolve while using cat'o'nine tails. Half this effect applies to other whips

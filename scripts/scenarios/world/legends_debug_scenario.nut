@@ -61,6 +61,8 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		this.World.Assets.getStash().setResizable(true);
 		this.World.Assets.getStash().resize(300);
 
+		this.World.Assets.getStash().add(this.new("scripts/items/weapons/heavy_crossbow"));
+
 		local armors = [
 			["legend_gambeson", 0, 39],
 			["legend_padded_surcoat", 40, 64],
@@ -178,11 +180,32 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			this.World.Assets.getStash().add(item);
 		}
 
-		for( local i = 1; i < 8; i = ++i )
+		local cloakV = [
+			["legend_armor_cloak", 1, 7],
+			["legend_armor_cloak_rich",1, 5]
+		];
+
+		foreach(a in cloakV)
 		{
-			local item = this.new("scripts/items/legend_armor/cloak/legend_armor_cloak")
-			item.setVariant(i);
-			this.World.Assets.getStash().add(item);
+			for( local i = a[1]; i < a[2] + 1; i = ++i )
+			{
+				this.logInfo("Adding " + a[0]);
+				local item = this.new("scripts/items/legend_armor/cloak/" + a[0])
+				item.setVariant(i);
+				this.World.Assets.getStash().add(item);
+			}
+		}
+
+		local cloaks = [
+			"legend_armor_hexe_leader_cloak_upgrade",
+			"legend_armor_redback_cloak_upgrade"
+		];
+
+		foreach(p in cloaks)
+		{
+			this.logInfo("Adding " + p);
+			local pla = this.new("scripts/items/legend_armor/cloak/" + p);
+			this.World.Assets.getStash().add(pla);
 		}
 
 		local fixed = [
@@ -245,8 +268,6 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 		local upgrades = [
 			"legend_additional_padding_upgrade",
-			"legend_armor_hexe_leader_cloak_upgrade",
-			"legend_armor_redback_cloak_upgrade",
 			"legend_armor_stollwurm_scales_upgrade",
 			"legend_armor_white_wolf_pelt_upgrade",
 			"legend_barbarian_horn_upgrade",
@@ -373,6 +394,16 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			], this.Const.Music.CrossFadeTime);
 			this.World.Events.fire("event.legend_random_party_scenario_intro");
 		}, null);
+	}
+
+	function onBuildPerkTree( _tree)
+	{
+		if  (_tree == null)
+		{
+			return;
+		}
+
+		_tree.addPerk(this.Const.Perks.PerkDefs.LegendPiercingShot);
 	}
 });
 
