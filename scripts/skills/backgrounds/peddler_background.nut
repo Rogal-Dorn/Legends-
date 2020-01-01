@@ -60,8 +60,8 @@ this.peddler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.StavesTree,
-				this.Const.Perks.SlingsTree,
 				this.Const.Perks.DaggerTree,
+				this.Const.Perks.CrossbowTree,
 				this.Const.Perks.MaceTree
 
 			],

@@ -4,7 +4,7 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 	{
 		this.m.ID = "scenario.trader";
 		this.m.Name = "Trading Caravan";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_41.png[/img][/p][p]You\'re running a small trading caravan and have most of your crowns invested into trading goods. But the roads have become dangerous - brigands and greenskins lay in ambush, and there\'s rumors of even worse things out there.\n\n[color=#bcad8c]Caravan:[/color] Start with a trader and a donkey.\n[color=#bcad8c]Trader:[/color] Get 10% better prices for buying and selling.\n[color=#bcad8c]Not a Warrior:[/color] Start with no renown, and gain renown at half the normal rate.\n[color=#bcad8c]Bribery:[/color] Pay off human enemies instead of fighting them[/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_41.png[/img][/p][p]You\'re running a small trading caravan and have most of your crowns invested into trading goods. But the roads have become dangerous - brigands and greenskins lay in ambush, and there\'s rumors of even worse things out there.\n\n[color=#bcad8c]Caravan:[/color] Start with a peddler and a caravan hand.\n[color=#bcad8c]Trader:[/color] Get better prices for buying and selling.\n[color=#bcad8c]Not a Warrior:[/color] Start with no renown, and gain renown at half the normal rate.\n[color=#bcad8c]Bribery:[/color] Pay off human enemies instead of fighting them[/p]";
 		this.m.Difficulty = 2;
 		this.m.Order = 24;
 	}
@@ -19,7 +19,7 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 		local roster = this.World.getPlayerRoster();
 		local names = [];
 
-		for( local i = 0; i < 2; i = ++i )
+		for( local i = 0; i < 3; i = ++i )
 		{
 			local bro;
 			bro = roster.create("scripts/entity/tactical/player");
@@ -36,23 +36,29 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 
 		local bros = roster.getAll();
 		bros[0].setStartValuesEx([
-			"legend_donkey"
+			"peddler_background"
 		]);
-		bros[0].setPlaceInFormation(3);
+		bros[0].setPlaceInFormation(4);
 		bros[0].setVeteranPerks(2);
-		bros[1].setStartValuesEx([
-			"legend_trader_commander_background"
-		]);
-		bros[1].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
-		bros[1].getSkills().add(this.new("scripts/skills/perks/perk_legend_bribe"));
-		bros[1].getSkills().add(this.new("scripts/skills/perks/perk_legend_roster_2"));
-		bros[1].getSkills().add(this.new("scripts/skills/perks/perk_legend_roster_4"));
-		bros[1].getTags().set("IsPlayerCharacter", true);
-		bros[1].setPlaceInFormation(4);
-		bros[1].setVeteranPerks(2);
 		local items = bros[1].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
+		items.equip(this.new("scripts/items/weapons/legend_staff"));
+
+		bros[1].setStartValuesEx([
+			"caravan_hand_background"
+		]);
+		bros[1].setPlaceInFormation(5);
+		bros[1].setVeteranPerks(2);
+		bros[1].getBackground().m.RawDescription = "You found %name% being thrown out of a pub and at first glance was little more than a drunken miscreant. But you watched as he fought off three would-be muggers. They managed to take his boots in the end, sure, but they couldn\'t truly defeat his spirit. Impressed, you took him on as a caravan hand.";
+		local talents = bros[2].getTalents();
+		talents.resize(this.Const.Attributes.COUNT, 0);
+		talents[this.Const.Attributes.MeleeSkill] = 2;
+		talents[this.Const.Attributes.MeleeDefense] = 1;
+		talents[this.Const.Attributes.Hitpoints] = 1;
+		local items = bros[2].getItems();
+		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.equip(this.new("scripts/items/weapons/scimitar"));
+
 		this.World.Assets.m.BusinessReputation = 0;
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/bread_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/mead_item"));
