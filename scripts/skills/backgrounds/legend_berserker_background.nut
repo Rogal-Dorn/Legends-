@@ -313,7 +313,7 @@ this.legend_berserker_background <- this.inherit("scripts/skills/backgrounds/cha
 		local actor = this.getContainer().getActor();
 		actor.setTitle("The Berserker");
 		this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
-		this.m.Container.add(this.new("scripts/skills/perks/perk_berserk"));
+		//this.m.Container.add(this.new("scripts/skills/perks/perk_berserk"));
 
 	}
 

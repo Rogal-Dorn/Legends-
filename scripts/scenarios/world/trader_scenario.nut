@@ -44,6 +44,9 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 			"legend_trader_commander_background"
 		]);
 		bros[1].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
+		bros[1].getSkills().add(this.new("scripts/skills/perks/perk_legend_bribe"));
+		bros[1].getSkills().add(this.new("scripts/skills/perks/perk_legend_roster_2"));
+		bros[1].getSkills().add(this.new("scripts/skills/perks/perk_legend_roster_4"));
 		bros[1].getTags().set("IsPlayerCharacter", true);
 		bros[1].setPlaceInFormation(4);
 		bros[1].setVeteranPerks(2);
