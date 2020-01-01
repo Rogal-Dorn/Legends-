@@ -40,7 +40,7 @@ while read -r line; do
         echo "skipping $line"
     elif [ "$line" == "scripts/ai/tactical/behaviors/ai_attack_lash.nut" ]; then
         echo "skipping $line"
-    elif [ "$line" == "scripts/ai/tactical/behaviors/ai_attack_swallow+whole.nut" ]; then
+    elif [ "$line" == "scripts/ai/tactical/behaviors/ai_attack_swallow_whole.nut" ]; then
         echo "skipping $line"
     elif [ "$line" == "scripts/ai/tactical/behaviors/ai_hook.nut" ]; then
         echo "skipping $line"
@@ -51,7 +51,7 @@ while read -r line; do
     elif [ "$line" == "scripts/factions/faction_action.nut" ]; then
         echo "skipping $line"
     elif [ "$line" == "scripts/skills/racial/alp_racial.nut" ]; then
-        echo "skipping $line"             
+        echo "skipping $line"
     else
         echo "$line"
         path=$( echo ${line%/*} )
