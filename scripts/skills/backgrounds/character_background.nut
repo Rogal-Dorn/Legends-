@@ -30,8 +30,8 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		IsRangerRecruitBackground = false,
 		IsCrusaderRecruitBackground = false,
 		IsOutlawBackground = false,
-		AlignmentMin = this.Const.LegendMod.Alignment.NeutralMin,
-		AlignmentMax = this.Const.LegendMod.Alignment.NeutralMax,
+		AlignmentMin = this.Const.LegendMod.Alignment.Dreaded,	
+		AlignmentMax = this.Const.LegendMod.Alignment.Saintly,
 		IsStabled = false,
 		Modifiers = {
 			Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[0],
