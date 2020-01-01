@@ -2285,8 +2285,8 @@ Bandit raiders get slightly less armor
 Item scaling adjusted so that 10,000 crowns is equal to 1 recruit 
 Added Orc named Axe (Salty) and Named Flail (Karl)
 
-13.0.0.29
-Fixes drums of life/war tooltips on perk tree && on skill (Mwah)
+13.0.0.29 bugfixes
+
 Militia can now get aprons as previously intended (Mwah)
 Bribe skill should properly round down to avoid weird gold fractions (Mwah)
 Fixes nets not being able to reach 4 ammo even with both net perks (Mwah)
@@ -2305,5 +2305,29 @@ Changes to how recruit scaling is handled (Mwah)
 Fixes Alcohol Brewing perk screwing up when taken (Mwah)
 Pacifist actually lowers bro level in calculations (Mwah)
 
-13.0.0.29b
-Fixes lots of character background screw ups (Mwah) (Also caused by him)
+13.0.0.29a Trading 
+Fixes errors in previous build (Mwah mah mia!) (Also caused by him)
+
+Trader scenario changes:
+*No longer a Trader player character, instead has 1 peddler and 1 caravan hand who regains vanilla talent stars and scimitar. 
+*All non combat backgrounds they hire are granted the Pacifist perk so they are content in reserve and contribute less to scaling
+*Combat backgrounds are not given pacifist, but charge twice as much to defend you. 
+*Peddlers and Donkeys cost 10% less to hire. 
+*They begin with twice the money of other scenarios 
+
+New Contract - Coin Delivery (experimental).  Deliver a large amount of crowns and gain half the ammount on completion. 
+Pacifists now dislike being in more than 1/3 fights. 
+Fixes pacifist scaling not applying correctly 
+Base Cost of hiring peddler increased from 60 to 600, their daily wage also doubles. They gain Crossbow skills instead of Slings 
+Donkeys gain a number of perks, Bags and Belts, Alert, Relentless, Peaceful, Pacifist and Blend In. Skills reordered to allow full peaceful builds or full combat builds. 
+Hedgeknights regain indestructible, martyr and trained, also swap hammer for flail. 
+Hedgeknights, Squires, Assassins, barbarians, bastards, adventurous nobles, and wildlings have their hiring costs increased due to having great stats due to dynamic perks.  full balance to come, these were just big outliers 
+Stables no longer generate 
+
+13.0.0.29c Hound masters 
+Fixes error from the new contract 
+Hound masters:
+New Perk - Dog Breeder - Unlocks the ability to breed dogs in the crafting tent. Requires 2 dogs and 2 fresh meat and some gold to make 3 dogs. 
+New Perk - Dog Whisperer - Any dog you unleash gains Colossus, Fortified Mind and Underdog 
+New Perk - Pack Leader - Unlocks the ability to hold dog items in your bags and use them in battle. 
+

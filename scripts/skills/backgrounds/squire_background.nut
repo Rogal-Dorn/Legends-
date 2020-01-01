@@ -9,8 +9,8 @@ this.squire_background <- this.inherit("scripts/skills/backgrounds/character_bac
 		this.m.BackgroundDescription = "Squires usually have received some training in warfare, and often have a high resolve to excel in what they do.";
 		this.m.GoodEnding = "%name% the squire eventually left the %companyname%. You\'ve heard that he\'s since been knighted. No doubt he is sitting happy as a plum wherever he is.";
 		this.m.BadEnding = "The squire, %name%, eventually departed the %companyname%. He intended to return home and become knighted, fulfilling his lifelong dream. Cruel politics got in the way and not only was he not knighted, he was stripped of his squire duties. Word has it he hanged himself from a barn\'s rafters.";
-		this.m.HiringCost = 160;
-		this.m.DailyCost = 20;
+		this.m.HiringCost = 320;
+		this.m.DailyCost = 30;
 		this.m.Excluded = [
 			"trait.weasel",
 			"trait.fear_undead",

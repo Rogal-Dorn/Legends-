@@ -236,12 +236,12 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		local mod = this.getModifiers();
 		local adjectives = [
 			 bro.getName() + " learned a new move",
-			 bro.getName() + " finally nails the fancy parry he\'s been practicing",
+			 bro.getName() + " finally nails the fancy parry they have been been practicing",
 			 bro.getName() + " invents an overly showy move",
 			 bro.getName() + " finds a stance that feels more natural"
 			 bro.getName() + " learns how to adjust the new armor so it fits better",
 			 bro.getName() + " has perfected a new skill in practice",
-			 bro.getName() + " had his ego bruised and wants an outlet for his frustration",
+			 bro.getName() + " had their ego bruised and wants an outlet for frustration",
 			 bro.getName() + " left the training dummy as nothing more than a pile of splinters",
 			 bro.getName() + " has practiced a skill so much it has become second nature",
 			 bro.getName() + " feels more comfortable with their weapon",

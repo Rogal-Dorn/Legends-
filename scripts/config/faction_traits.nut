@@ -74,6 +74,7 @@ gt.Const.FactionTrait <- {
 			"scripts/factions/contracts/investigate_cemetery_action",
 			"scripts/factions/contracts/roaming_beasts_action",
 			"scripts/factions/contracts/item_delivery_action",
+			"scripts/factions/contracts/money_delivery_action",
 			"scripts/factions/contracts/escort_caravan_action",
 			"scripts/factions/contracts/return_item_action",
 			"scripts/factions/contracts/defend_settlement_bandits_action",
