@@ -249,10 +249,10 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 	{
 		this.character_background.onAdded();
 		local actor = this.getContainer().getActor();
-		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_2"));
-		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_4"));
-		this.m.Container.add(this.new("scripts/skills/perks/perk_rally_the_troops"));
-		this.m.Container.add(this.new("scripts/skills/perks/perk_fortified_mind"));
+		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_2"));
+		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_4"));
+		//this.m.Container.add(this.new("scripts/skills/perks/perk_rally_the_troops"));
+		//this.m.Container.add(this.new("scripts/skills/perks/perk_fortified_mind"));
 		this.m.Container.add(this.new("scripts/skills/traits/determined_trait"));
 
 		if (this.m.IsFemaleBackground == true)

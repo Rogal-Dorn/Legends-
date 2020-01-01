@@ -204,7 +204,7 @@ this.legend_necro_background <- this.inherit("scripts/skills/backgrounds/charact
 	function onAdded()
 	{
 		this.character_background.onAdded();
-		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_siphon"));
+		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_siphon"));
 	}
 
 	function onAddEquipment()

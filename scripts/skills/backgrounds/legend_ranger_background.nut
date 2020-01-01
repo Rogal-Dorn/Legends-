@@ -252,8 +252,8 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 	{
 		this.character_background.onAdded();
 		local actor = this.getContainer().getActor();
-		this.m.Container.add(this.new("scripts/skills/perks/perk_pathfinder"));
-		this.m.Container.add(this.new("scripts/skills/perks/perk_footwork"));
+		//this.m.Container.add(this.new("scripts/skills/perks/perk_pathfinder"));
+		//this.m.Container.add(this.new("scripts/skills/perks/perk_footwork"));
 		this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
 
 		if (this.m.IsFemaleBackground == true)
