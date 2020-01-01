@@ -24,6 +24,13 @@ this.legends_seer_scenario <- this.inherit("scripts/scenarios/world/starting_sce
 			"legend_witch_commander_background"
 		]);
 		bro.getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
+		bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_daze"));
+		bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_roster_1"));
+		bro.getSkills().add(this.new("scripts/skills/perks/perk_student"));
+		if (this.Const.LegendMod.Configs.LegendMagicEnabled())
+		{	
+			bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_magic_missile"));
+		}		
 		bro.setPlaceInFormation(4);
 		bro.setVeteranPerks(2);	
 		bro.getTags().set("IsPlayerCharacter", true);
