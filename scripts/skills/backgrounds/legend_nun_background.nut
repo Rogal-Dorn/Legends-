@@ -47,6 +47,7 @@ this.legend_nun_background <- this.inherit("scripts/skills/backgrounds/character
 		this.m.IsFemaleBackground = true;
 		this.m.IsEducatedBackground = true;
 		this.m.IsCrusaderRecruitBackground = true;
+		this.m.Alignment = this.Const.LegendMod.Alignment.Saintly;
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[2];
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[3];
 		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[3];
@@ -179,16 +180,5 @@ this.legend_nun_background <- this.inherit("scripts/skills/backgrounds/character
 		local armor = this.Const.World.Common.pickLegendArmor(cloths)
 		items.equip(armor)
 
-	}
-	function setAdditionalRecruitmentLevels()
-	{
-		if(this.World.Assets.getMoralReputation() > 90)  //checks if the player is chivalrous
-		{
-			this.character_background.setAdditionalRecruitmentLevels();	
-		}
-		else 
-		{
-			return 0;
-		}
 	}
 });

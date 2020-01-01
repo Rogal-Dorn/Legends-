@@ -40,6 +40,7 @@ this.witchhunter_background <- this.inherit("scripts/skills/backgrounds/characte
 		this.m.IsRangerRecruitBackground = true;
 		this.m.IsCrusaderRecruitBackground = true;
 		this.m.IsEducatedBackground = true;
+		this.m.Alignment = this.Const.LegendMod.Alignment.Saintly;
 		this.m.Modifiers.Crafting = this.Const.LegendMod.ResourceModifiers.Crafting[2];
 		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[1];
 		this.m.Modifiers.Fletching = this.Const.LegendMod.ResourceModifiers.Fletching[1];
@@ -280,7 +281,7 @@ this.witchhunter_background <- this.inherit("scripts/skills/backgrounds/characte
 
 	function setAdditionalRecruitmentLevels()
 	{
-		if(this.World.Assets.getMoralReputation() > 90 )  //checks if the player is chivalrous
+		if(	() > 90 )  //checks if the player is chivalrous
 		{
 			this.character_background.setAdditionalRecruitmentLevels();	
 		}

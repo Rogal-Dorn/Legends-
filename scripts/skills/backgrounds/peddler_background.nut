@@ -51,6 +51,7 @@ this.peddler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			}
 		}
 		this.m.IsLowborn = true;
+		this.m.Alignment = this.Const.LegendMod.Alignment.Neutral;
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[1];
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[1];
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[2];
@@ -212,17 +213,6 @@ this.peddler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		if (r == 0)
 		{
 			items.equip(this.new("scripts/items/helmets/feathered_hat"));
-		}
-	}
-	function setAdditionalRecruitmentLevels()
-	{
-		if(this.World.Assets.getMoralReputation() < 60 && this.World.Assets.getMoralReputation() > 40)  //checks if the player is chivalrous
-		{
-			this.character_background.setAdditionalRecruitmentLevels();	
-		}
-		else 
-		{
-			return 0;
 		}
 	}
 });

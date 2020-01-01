@@ -64,6 +64,7 @@ this.killer_on_the_run_background <- this.inherit("scripts/skills/backgrounds/ch
 
 		this.m.IsCombatBackground = true;
 		this.m.IsOutlawBackground = true;
+		this.m.Alignment = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[1];
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[2];
 		this.m.PerkTreeDynamic = {
@@ -325,17 +326,6 @@ this.killer_on_the_run_background <- this.inherit("scripts/skills/backgrounds/ch
 	{
 		this.character_background.onUpdate(_properties);
 		_properties.HitChance[this.Const.BodyPart.Head] += 10;
-	}
-	function setAdditionalRecruitmentLevels()
-	{
-		if(this.World.Assets.getMoralReputation() < 10)  //checks if the player is chivalrous
-		{
-			this.character_background.setAdditionalRecruitmentLevels();	
-		}
-		else 
-		{
-			return 0;
-		}
 	}
 });
 

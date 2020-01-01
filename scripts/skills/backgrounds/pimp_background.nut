@@ -36,6 +36,7 @@ this.pimp_background <- this.inherit("scripts/skills/backgrounds/character_backg
 		this.m.Beards = this.Const.Beards.Tidy;
 		this.m.Body = "bust_naked_body_02";
 		this.m.IsOutlawBackground = true;
+		this.m.Alignment = this.Const.LegendMod.Alignment.Notorious;
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[2];
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[1];
@@ -141,18 +142,5 @@ this.pimp_background <- this.inherit("scripts/skills/backgrounds/character_backg
 		items.equip(this.new("scripts/items/legend_armor/cloth/legend_tunic_noble"));
 		items.equip(this.new("scripts/items/helmets/feathered_hat"));
 	}
-
-	function setAdditionalRecruitmentLevels()
-	{
-		if(this.World.Assets.getMoralReputation() < 40)  //checks if the player is chivalrous
-		{
-			this.character_background.setAdditionalRecruitmentLevels();	
-		}
-		else 
-		{
-			return 0;
-		}
-	}
-
 });
 

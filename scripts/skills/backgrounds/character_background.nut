@@ -30,6 +30,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		IsRangerRecruitBackground = false,
 		IsCrusaderRecruitBackground = false,
 		IsOutlawBackground = false,
+		Alignment = this.Const.LegendMod.Alignment.Neutral,
 		IsStabled = false,
 		Modifiers = {
 			Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[0],
@@ -1021,11 +1022,41 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 	{
 	}
 
-	//this may want to be set to no automatic recruitment levels, or only half, etc. At the moment this allows every background unless overwritten in their own background file
 	function setAdditionalRecruitmentLevels()
 	{
 		if(this.Const.LegendMod.Configs.LegendRecruitScalingEnabled())
 		{
+			//When we do alignment checks if our reputation isn't beating the required morality, then we return 0
+			local actor = this.getContainer.getActor();
+			local broAlignment = actor.m.Alignment;
+
+			local currentReputation = this.World.Assets.getMoralReputation();
+
+			if ( broAlignment == this.Const.LegendMod.Alignment.Neutral ) 
+			{
+				if ( !( currentReputation > 40 && currentReputation < 60 ) )
+				{
+					return 0;
+				}
+			}
+			if ( broAlignment < this.Const.LegendMod.Alignment.Neutral )
+			{
+				//0 thru 3 for possible evil alignments
+				if ( !( currentReputation <= (broAlignment + 1) * 10 ) )
+				{
+					return 0;
+				}
+			}
+			if ( broAlignment > this.Const.LegendMod.Alignment.Neutral )
+			{
+				//5 thru 8 for possible good alignments
+				//ex `Alignment.Kind = 5`, need > (60)
+				if ( !( currentReputation > (broAlignment + 1) * 10 ) )
+				{
+					return 0;
+				}
+			}
+
 			local roster = this.World.getPlayerRoster().getAll();
 			local levels = 0;
 			local count = 0;
