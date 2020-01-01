@@ -167,8 +167,6 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 		if (bro.getBackground().isCombatBackground())
 		{
 			bro.worsenMood(1.0, "Unhappy they will need to do all the fighting");	
-			bro.m.HiringCost = this.Math.floor(bro.m.HiringCost  * 2);
-			bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 2);
 		}
 		else if (!bro.getBackground().isCombatBackground())
 		{
@@ -176,12 +174,32 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 		    bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_pacifist"));
 		}
 
-		if (bro.getBackground().getID() == "background.peddler" || bro.getBackground().getID() == "background.legend_donkey" )
-		{
-				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.9);
-				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.9);		 
-		}
 
+	}
+
+	function onUpdateHiringRoster( _roster )
+	{
+		local bros = _roster.getAll();
+
+		foreach( i, bro in bros )
+		{
+		
+			if (bro.getBackground().isCombatBackground())
+			{
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost  * 2);
+				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 2);
+			}
+			else if (!bro.getBackground().isCombatBackground())
+			{
+				bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_pacifist"));
+			}
+
+			if (bro.getBackground().getID() == "background.peddler" || bro.getBackground().getID() == "background.legend_donkey" )
+			{
+					bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.9);
+					bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.9);		 
+			}
+		}
 	}
 
 	function onUpdateDraftList( _list )
