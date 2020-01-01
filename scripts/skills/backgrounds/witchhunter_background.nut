@@ -279,16 +279,6 @@ this.witchhunter_background <- this.inherit("scripts/skills/backgrounds/characte
 		_properties.MoraleCheckBravery[1] += 20;
 	}
 
-	function setAdditionalRecruitmentLevels()
-	{
-		if(	() > 90 )  //checks if the player is chivalrous
-		{
-			this.character_background.setAdditionalRecruitmentLevels();	
-		}
-		else 
-		{
-			return 0;
-		}
-	}
+
 });
 
