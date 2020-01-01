@@ -72,7 +72,8 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		}
 
 		this.m.IsOutlawBackground = true;
-		this.m.Alignment = this.Const.LegendMod.Alignment.Cruel;
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
+		this.m.AligmnentMax = this.Const.LegendMod.Ailgnment.Merciless;
 		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[2];
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[1];
 		this.m.Modifiers.MedConsumption = this.Const.LegendMod.ResourceModifiers.MedConsumption[1];
