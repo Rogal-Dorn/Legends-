@@ -50,7 +50,7 @@ this.raider_background <- this.inherit("scripts/skills/backgrounds/character_bac
 		this.m.IsCombatBackground = true;
 		this.m.IsOutlawBackground = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
-		this.m.AligmnentMax = this.Const.LegendMod.Ailgnment.Merciless;
+		this.m.AligmnentMax = this.Const.LegendMod.Alignment.Merciless;
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[1];
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[1];

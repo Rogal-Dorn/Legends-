@@ -34,7 +34,7 @@ this.flagellant_background <- this.inherit("scripts/skills/backgrounds/character
 		this.m.IsOffendedByViolence = true;
 		this.m.IsCrusaderRecruitBackground = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Good;
-		this.m.AligmnentMax = this.Const.LegendMod.Ailgnment.Saintly;
+		this.m.AligmnentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[1];
 		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[1];
 		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[1];
