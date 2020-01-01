@@ -64,7 +64,8 @@ this.killer_on_the_run_background <- this.inherit("scripts/skills/backgrounds/ch
 
 		this.m.IsCombatBackground = true;
 		this.m.IsOutlawBackground = true;
-		this.m.Alignment = this.Const.LegendMod.Alignment.Dreaded;
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
+		this.m.AligmnentMax = this.Const.LegendMod.Ailgnment.Notorious;
 		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[1];
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[2];
 		this.m.PerkTreeDynamic = {

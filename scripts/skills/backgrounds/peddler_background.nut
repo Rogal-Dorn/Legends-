@@ -51,7 +51,8 @@ this.peddler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			}
 		}
 		this.m.IsLowborn = true;
-		this.m.Alignment = this.Const.LegendMod.Alignment.Neutral;
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
+		this.m.AligmnentMax = this.Const.LegendMod.Ailgnment.Kind;
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[1];
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[1];
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[2];

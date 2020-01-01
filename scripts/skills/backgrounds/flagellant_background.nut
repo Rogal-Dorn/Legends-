@@ -33,7 +33,8 @@ this.flagellant_background <- this.inherit("scripts/skills/backgrounds/character
 		this.m.Body = "bust_naked_body_00";
 		this.m.IsOffendedByViolence = true;
 		this.m.IsCrusaderRecruitBackground = true;
-		this.m.Alignment = this.Const.LegendMod.Alignment.Saintly;
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Good;
+		this.m.AligmnentMax = this.Const.LegendMod.Ailgnment.Saintly;
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[1];
 		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[1];
 		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[1];
