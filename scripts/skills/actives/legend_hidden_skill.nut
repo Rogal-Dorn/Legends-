@@ -20,7 +20,7 @@ this.legend_hidden_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
 		this.m.IsWeaponSkill = false;
-		this.m.ActionPointCost = 5;
+		this.m.ActionPointCost = 8;
 		this.m.FatigueCost = 30;
 		this.m.MinRange = 0;
 		this.m.MaxRange = 0;
@@ -102,11 +102,11 @@ this.legend_hidden_skill <- this.inherit("scripts/skills/skill", {
 	{
 		if (_user.getTile().IsVisibleForPlayer)
 			{
-				if (this.Const.Tactical.DarkflightStartParticles.len() != 0)
+				if (this.Const.Tactical.HideParticles.len() != 0)
 				{
-					for( local i = 0; i < this.Const.Tactical.SmokeParticles.len(); i = ++i )
+					for( local i = 0; i < this.Const.Tactical.HideParticles.len(); i = ++i )
 					{
-						this.Tactical.spawnParticleEffect(false, this.Const.Tactical.SmokeParticles[i].Brushes, _user.getTile(), this.Const.Tactical.smokeParticles[i].Delay, this.Const.Tactical.smokeParticles[i].Quantity, this.Const.Tactical.SmokeParticles[i].LifeTimeQuantity, this.Const.Tactical.SmokeParticles[i].SpawnRate, this.Const.Tactical.SmokeParticles[i].Stages);
+						this.Tactical.spawnParticleEffect(false, this.Const.Tactical.HideParticles[i].Brushes, _user.getTile(), this.Const.Tactical.HideParticles[i].Delay, this.Const.Tactical.HideParticles[i].Quantity, this.Const.Tactical.HideParticles[i].LifeTimeQuantity, this.Const.Tactical.HideParticles[i].SpawnRate, this.Const.Tactical.HideParticles[i].Stages);
 					}
 				}
 			}

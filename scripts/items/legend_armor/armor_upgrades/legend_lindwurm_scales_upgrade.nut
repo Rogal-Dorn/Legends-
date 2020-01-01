@@ -19,8 +19,10 @@ this.legend_lindwurm_scales_upgrade <- this.inherit("scripts/items/legend_armor/
 		this.m.SpriteCorpseFront = null;
 		this.m.SpriteCorpseBack = "upgrade_04_back_dead";
 		this.m.Value = 800;
+		this.m.Condition = 40;
+		this.m.ConditionMax = 40;
 		this.m.ConditionModifier = 40;
-		this.m.StaminaModifier = 2;
+		this.m.StaminaModifier = -2;
 	}
 
 	function getTooltip()
@@ -90,15 +92,16 @@ this.legend_lindwurm_scales_upgrade <- this.inherit("scripts/items/legend_armor/
 		}
 	}
 
-	function onRemoved()
+	function onRemoved(_app)
 	{
-		this.legend_armor_upgrade.onRemoved();
+		
 		local c = this.m.Armor.getContainer();
 
 		if (c != null && c.getActor() != null && !c.getActor().isNull())
 		{
 			c.getActor().getTags().remove("body_immune_to_acid");
 		}
+		this.legend_armor_upgrade.onRemoved(_app);
 	}
 
 });

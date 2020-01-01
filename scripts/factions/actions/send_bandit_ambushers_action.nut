@@ -91,6 +91,15 @@ this.send_bandit_ambushers_action <- this.inherit("scripts/factions/faction_acti
 		local settlement = this.pickWeightedRandom(settlements);
 		settlement.setLastSpawnTimeToNow();
 		local mult = this.World.FactionManager.isCivilWar() ? 1.1 : 1.0;
+		if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+			{
+			local mult = this.World.FactionManager.isCivilWar() ? 1.2 : 1.0;
+			}
+		local distanceToNextSettlement = this.getDistanceToSettlements(settlement.getTile());
+		if (this.Const.LegendMod.Configs.LegendLocationScalingEnabled() && distanceToNextSettlement > 14)
+			{
+			 mult *= distanceToNextSettlement / 14;
+			}
 		local party = this.getFaction().spawnEntity(settlement.getTile(), "Brigands", false, this.Const.World.Spawn.BanditRaiders, this.Math.rand(75, 120) * this.getReputationToDifficultyMult() * mult);
 		party.getSprite("banner").setBrush(settlement.getBanner());
 		party.setDescription("A rough and tough band of brigands preying on the weak.");

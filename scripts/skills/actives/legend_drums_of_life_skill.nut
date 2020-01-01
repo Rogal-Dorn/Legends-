@@ -4,9 +4,9 @@ this.legend_drums_of_life_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_drums_of_life";
 		this.m.Name = "Drums of Life";
-		this.m.Description = "Push allies on with your music, restoring the health of all allies by 1. Must be holding a musical instrument to use.";
+		this.m.Description = "Push allies on with your music, restoring the health of all allies within 3 tiles by 3 hp. Must be holding a musical instrument to use.";
 		this.m.Icon = "ui/perks/drums_of_life_square.png";
-		this.m.IconDisabled = "skills/drums_of_life_square_bw.png";
+		this.m.IconDisabled = "ui/perks/drums_of_life_square_bw.png";
 		this.m.Overlay = "active_163";
 		this.m.SoundOnUse = [
 			"sounds/enemies/dlc4/wardrums_01.wav",
@@ -53,6 +53,11 @@ function getTooltip()
 			}
 
 			if (a.getFatigue() == 0)
+			{
+				continue;
+			}
+
+			if (myTile.getDistanceTo(a.getTile()) > 3)
 			{
 				continue;
 			}

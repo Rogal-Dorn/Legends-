@@ -150,7 +150,7 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 					this.Const.Perks.PerkDefs.LegendFreedomOfMovement,
 					this.Const.Perks.PerkDefs.PerfectFocus,
 					this.Const.Perks.PerkDefs.LegendSleep,
-					this.Const.Perks.PerkDefs.LegendTeacher,
+					//this.Const.Perks.PerkDefs.LegendTeacher,
 					this.Const.Perks.PerkDefs.LegendFieldTriage,
 					this.Const.Perks.PerkDefs.LegendFirefield,
 					this.Const.Perks.PerkDefs.LegendRoster6
@@ -232,7 +232,7 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 					this.Const.Perks.PerkDefs.LegendFavouredEnemyHexen,
 					this.Const.Perks.PerkDefs.PerfectFocus,
 					this.Const.Perks.PerkDefs.LegendSleep,
-					this.Const.Perks.PerkDefs.LegendTeacher,
+					//this.Const.Perks.PerkDefs.LegendTeacher,
 					this.Const.Perks.PerkDefs.LegendFieldTriage,
 					this.Const.Perks.PerkDefs.LegendTeleport,
 					this.Const.Perks.PerkDefs.LegendFirefield,
@@ -312,16 +312,17 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 	function onAdded()
 	{
 		this.character_background.onAdded();
-		this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
-		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_daze"));
-		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_1"));
-		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_teacher"));
-		this.m.Container.add(this.new("scripts/skills/perks/perk_student"));
+		this.m.Container.add(this.new("scripts/skills/traits/bright_trait"));
+		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_daze"));
+		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_1"));
+		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_teacher"));
+		//this.m.Container.add(this.new("scripts/skills/perks/perk_student"));
 
-		if (this.Const.LegendMod.Configs.LegendMagicEnabled())
-		{
-			this.m.Container.add(this.new("scripts/skills/actives/legend_magic_missile"));
-		}
+		//if (this.Const.LegendMod.Configs.LegendMagicEnabled())
+		//{
+		//
+		//	this.m.Container.add(this.new("scripts/skills/perks/perk_legend_magic_missile"));
+		//}
 
 		local actor = this.getContainer().getActor();
 		if (this.m.IsFemaleBackground == true)
@@ -338,7 +339,7 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 	{
 		local talents = this.getContainer().getActor().getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
-		talents[this.Const.Attributes.Initiative] = 2;
+		talents[this.Const.Attributes.Initiative] = 3;
 		talents[this.Const.Attributes.Fatigue] = 3;
 		this.getContainer().getActor().fillTalentValues(2, true);
 		local items = this.getContainer().getActor().getItems();
@@ -356,7 +357,7 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 	{
 		local talents = this.getContainer().getActor().getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
-		talents[this.Const.Attributes.Initiative] = 2;
+		talents[this.Const.Attributes.Initiative] = 3;
 		talents[this.Const.Attributes.Fatigue] = 3;
 		this.getContainer().getActor().fillTalentValues(2, true);
 		local items = this.getContainer().getActor().getItems();

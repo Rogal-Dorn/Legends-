@@ -61,6 +61,8 @@ var NewLegendCampaignMenuModule = function()
 
 	this.mIronmanCheckbox = null;
 	this.mIronmanCheckboxLabel = null;
+	this.mAutosaveCheckbox = null;
+	this.mAutosaveCheckboxLabel = null;
 	this.mCompanyName = null;
 
 	this.mEvilRandomCheckbox = null;
@@ -681,6 +683,22 @@ NewLegendCampaignMenuModule.prototype.createDIV = function (_parentDiv)
 			radioClass: 'iradio_flat-orange',
 			increaseArea: '30%'
 		});
+
+		var row = $('<div class="row" />');
+		rightColumn.append(row);
+		var title = $('<div class="title title-font-big font-color-title">Autosave</div>');
+		row.append(title);
+		var autosaveControl = $('<div class="control autosave-control"/>');
+		row.append(autosaveControl);
+		this.mAutosaveCheckbox = $('<input type="checkbox" id="cb-autosave"/>');
+		autosaveControl.append(this.mAutosaveCheckbox);
+		this.mAutosaveCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-autosave">Autosave</label>');
+		autosaveControl.append(this.mAutosaveCheckboxLabel);
+		this.mAutosaveCheckbox.iCheck({
+			checkboxClass: 'icheckbox_flat-orange',
+			radioClass: 'iradio_flat-orange',
+			increaseArea: '30%'
+		});
 	}
 
 	this.mMapPanel = $('<div class="display-none"/>');
@@ -1015,6 +1033,9 @@ NewLegendCampaignMenuModule.prototype.bindTooltips = function ()
 
 	this.mIronmanCheckboxLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.Ironman });
 	this.mIronmanCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.Ironman });
+	
+	this.mAutosaveCheckboxLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.Autosave });
+	this.mAutosaveCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.Autosave });
 
 	this.mEconomicDifficultyEasyLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.EconomicDifficultyEasy });
 	this.mEconomicDifficultyEasyCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.EconomicDifficultyEasy });
@@ -1136,6 +1157,10 @@ NewLegendCampaignMenuModule.prototype.unbindTooltips = function ()
 	this.mIronmanCheckboxLabel.unbindTooltip();
 	this.mIronmanCheckbox.unbindTooltip();
 
+	this.mAutosaveCheckboxLabel.unbindTooltip();
+	this.mAutosaveCheckbox.unbindTooltip();
+
+	
 	this.mEvilRandomLabel.unbindTooltip();
 	this.mEvilRandomCheckbox.unbindTooltip();
 
@@ -1553,7 +1578,8 @@ NewLegendCampaignMenuModule.prototype.collectSettings = function()
 	settings.push(this.mMapOptions.MountainsMult.Value);
 	settings.push(this.mDebugCheckbox.is(':checked'));	
 	var selectedEntry = this.mListScrollContainer.find('.is-selected:first');
-	settings.push(selectedEntry.data('campaign').banner);	
+	settings.push(selectedEntry.data('campaign').banner);
+	settings.push(this.mAutosaveCheckbox.is(':checked'));
 	return settings;
 
 }

@@ -28,11 +28,19 @@ this.defend_barbarians_action <- this.inherit("scripts/factions/faction_action",
 				continue;
 			}
 
+			local mult = 0.66;
+			local distanceToNextSettlement = this.getDistanceToSettlements(s.getTile());
+			if (this.Const.LegendMod.Configs.LegendLocationScalingEnabled() && distanceToNextSettlement > 14)
+			{
+				mult *= distanceToNextSettlement / 14.0;
+			}
+
 			local entities = this.World.getAllEntitiesAtPos(s.getPos(), 400.0);
 
 			foreach( e in entities )
 			{
-				if (e.isParty() && e.isAttackable() && e.isAttackableByAI() && !s.isAlliedWith(e) && e.getStrength() < s.getResources() * 0.66)
+
+				if (e.isParty() && e.isAttackable() && e.isAttackableByAI() && !s.isAlliedWith(e) && e.getStrength() < s.getResources() * mult)
 				{
 					if (e.getFaction() == beastFaction && this.Math.rand(1, 100) > 10)
 					{
@@ -79,7 +87,13 @@ this.defend_barbarians_action <- this.inherit("scripts/factions/faction_action",
 
 		for( local i = 0; i != spawnpoints.len(); i = ++i )
 		{
-			local party = this.getFaction().spawnEntity(spawnpoints[i], "Barbarians", false, this.Const.World.Spawn.Barbarians, this.m.Settlement.getResources() * 0.66);
+			local mult = 0.66;
+			local distanceToNextSettlement = this.getDistanceToSettlements(this.m.Settlement.getTile());
+			if (this.Const.LegendMod.Configs.LegendLocationScalingEnabled() && distanceToNextSettlement > 14)
+			{
+				mult *= distanceToNextSettlement / 14.0;
+			}
+			local party = this.getFaction().spawnEntity(spawnpoints[i], "Barbarians", false, this.Const.World.Spawn.Barbarians, this.m.Settlement.getResources() * mult);
 			party.getSprite("banner").setBrush(this.m.Settlement.getBanner());
 			party.setDescription("A warband of barbarian tribals.");
 

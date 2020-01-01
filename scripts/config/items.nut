@@ -100,16 +100,24 @@ gt.Const.Items.LegendNamedArmors <- [
 	"legend_armor/named/legend_golden_scale_armor",
 	"legend_armor/named/legend_green_coat_of_plates_armor",
 	"legend_armor/named/legend_heraldic_mail_armor",
-	"legend_armor/named/legend_named_sellswords_armor"
+//	"legend_armor/named/legend_named_sellswords_armor"
 ];
+
+gt.Const.Items.LegendNamedArmorLayers <- [
+	"legend_armor/plate/legend_armor_plate_full_greaves_painted"
+];
+
 gt.Const.Items.NamedHelmets <- [
 	"helmets/named/golden_feathers_helmet",
 	"helmets/named/heraldic_mail_helmet",
 	"helmets/named/nasal_feather_helmet",
 	"helmets/named/sallet_green_helmet",
 	"helmets/named/wolf_helmet",
-	"helmets/named/lindwurm_helmet"
+	"helmets/named/legend_frogmouth_helm_crested_painted",
+	"helmets/named/legend_frogmouth_helm_decorated"
 ];
+
+
 gt.Const.Items.NamedShields <- [
 	"shields/named/named_dragon_shield",
 	"shields/named/named_full_metal_heater_shield",
@@ -131,6 +139,8 @@ gt.Const.Items.NamedOrcShields <- [
 ];
 gt.Const.Items.NamedOrcWeapons <- [
 	"weapons/named/named_orc_axe",
+	"weapons/named/named_orc_axe_2h",
+	"weapons/named/named_orc_flail_2h",
 	"weapons/named/named_orc_cleaver"
 ];
 gt.Const.Items.NamedGoblinWeapons <- [
@@ -158,7 +168,10 @@ gt.Const.Items.NamedMeleeWeapons <- [
 	"weapons/named/legend_named_bastardsword",
 	"weapons/named/legend_named_estoc",
 	"weapons/named/legend_named_glaive",
-	"weapons/named/legend_named_swordstaff"
+	"weapons/named/legend_named_swordstaff",
+	"weapons/named/legend_named_halberd",
+	"weapons/named/legend_named_voulge",
+	"weapons/named/legend_named_flail"
 ];
 gt.Const.Items.NamedRangedWeapons <- [
 	"weapons/named/named_crossbow",
@@ -187,7 +200,6 @@ gt.Const.Items.NamedUndeadWeapons <- [
 	"weapons/named/named_khopesh",
 	"weapons/named/named_legend_great_khopesh"
 ];
-
 gt.Const.Items.ArmorUpgrades <- {
 	Chain = 0,
 	Plate = 1,
@@ -197,3 +209,4 @@ gt.Const.Items.ArmorUpgrades <- {
 	Rune = 5
 	COUNT = 6
 }
+

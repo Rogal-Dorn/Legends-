@@ -12,7 +12,8 @@ this.pessimist_trait <- this.inherit("scripts/skills/traits/character_trait", {
 			"trait.irrational",
 			"trait.cocky",
 			"trait.determined",
-			"trait.survivor"
+			"trait.survivor",
+			"trait.irrational"
 		];
 	}
 

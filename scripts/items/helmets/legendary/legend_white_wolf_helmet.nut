@@ -35,7 +35,7 @@ this.legend_white_wolf_helmet <- this.inherit("scripts/items/helmets/named/named
 			id = 15,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Reduces the Resolve of any opponent engaged in melee by [color=" + this.Const.UI.Color.NegativeValue + "]-20[/color]"
+			text = "Reduces the Resolve of any opponent engaged in melee by [color=" + this.Const.UI.Color.NegativeValue + "]-10[/color]"
 		});
 		return result;
 	}
@@ -43,7 +43,7 @@ this.legend_white_wolf_helmet <- this.inherit("scripts/items/helmets/named/named
 	function onUpdateProperties( _properties )
 	{
 		this.named_helmet.onUpdateProperties(_properties);
-		_properties.Threat += 15;
+		_properties.Threat += 10;
 	}
 });
 

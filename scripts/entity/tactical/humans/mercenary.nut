@@ -44,7 +44,14 @@ this.mercenary <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.add(this.new("scripts/skills/actives/recover_skill"));
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 			{
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_colossus"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_rebound"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_stalwart"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_clarity"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_footwork"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_underdog"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_steadfast"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_berserk"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_steel_brow"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
 			}

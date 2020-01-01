@@ -3,8 +3,8 @@ this.zombie_bite <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.ID = "actives.zombie_bite";
-		this.m.Name = "Bite";
-		this.m.Description = "";
+		this.m.Name = "Wiederganger Bite";
+		this.m.Description = "A vicious bite with a 15% increased chance to hit the head. Infects on legendary difficulty";
 		this.m.KilledString = "Bitten";
 		this.m.Icon = "skills/active_24.png";
 		this.m.IconDisabled = "skills/active_24_sw.png";
@@ -35,10 +35,19 @@ this.zombie_bite <- this.inherit("scripts/skills/skill", {
 	{
 		if (this.isUsable())
 		{
-			_properties.DamageRegularMin = 15;
-			_properties.DamageRegularMax = 35;
-			_properties.DamageArmorMult = 0.5;
-			_properties.HitChance[this.Const.BodyPart.Head] += 15;
+			if ( _properties.DamageRegularMin < 15)
+				{
+					_properties.DamageRegularMin = 15;
+				}
+			if ( _properties.DamageRegularMin < 15)
+				{
+				_properties.DamageRegularMax = 35;
+				}
+
+		if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+				{
+				_properties.HitChance[this.Const.BodyPart.Head] += 15;
+				}
 		}
 	}
 

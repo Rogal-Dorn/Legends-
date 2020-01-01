@@ -1124,6 +1124,18 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 				this.World.FactionManager.makeRandomNoblesUnfriendlyToPlayer();
 				this.logInfo("Unlocking scouting");
 				this.World.Tags.set("HasLegendCampScouting", true);
+				if(this.Const.LegendMod.Configs.LegendCampUnlockEnabled())
+				{
+					this.World.Tags.set("HasLegendCampGathering", true);
+					this.World.Tags.set("HasLegendCampBarber", true);
+					this.World.Tags.set("HasLegendCampCrafting", true);
+					this.World.Tags.set("HasLegendCampFletching", true);
+					this.World.Tags.set("HasLegendCampHealing", true);
+					this.World.Tags.set("HasLegendCampHunting", true);
+					this.World.Tags.set("HasLegendCampScouting", true);
+					this.World.Tags.set("HasLegendCampScraping", true);
+					this.World.Tags.set("HasLegendCampTraining", true);			
+				}
 
 			}
 
@@ -1156,6 +1168,18 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 				this.World.Tags.set("HasLegendCampScraping", true);
 				this.logInfo("Unlocking training");
 				this.World.Tags.set("HasLegendCampTraining", true);
+				if(this.Const.LegendMod.Configs.LegendCampUnlockEnabled())
+				{
+					this.World.Tags.set("HasLegendCampGathering", true);
+					this.World.Tags.set("HasLegendCampBarber", true);
+					this.World.Tags.set("HasLegendCampCrafting", true);
+					this.World.Tags.set("HasLegendCampFletching", true);
+					this.World.Tags.set("HasLegendCampHealing", true);
+					this.World.Tags.set("HasLegendCampHunting", true);
+					this.World.Tags.set("HasLegendCampScouting", true);
+					this.World.Tags.set("HasLegendCampScraping", true);
+					this.World.Tags.set("HasLegendCampTraining", true);			
+				}
 			}
 
 		});
@@ -1190,6 +1214,18 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 				this.World.Tags.set("HasLegendCampHunting", true);
 				this.logInfo("Unlocking scouting");
 				this.World.Tags.set("HasLegendCampScouting", true);
+				if(this.Const.LegendMod.Configs.LegendCampUnlockEnabled())
+				{
+					this.World.Tags.set("HasLegendCampGathering", true);
+					this.World.Tags.set("HasLegendCampBarber", true);
+					this.World.Tags.set("HasLegendCampCrafting", true);
+					this.World.Tags.set("HasLegendCampFletching", true);
+					this.World.Tags.set("HasLegendCampHealing", true);
+					this.World.Tags.set("HasLegendCampHunting", true);
+					this.World.Tags.set("HasLegendCampScouting", true);
+					this.World.Tags.set("HasLegendCampScraping", true);
+					this.World.Tags.set("HasLegendCampTraining", true);			
+				}
 			}
 
 		});
@@ -1222,6 +1258,18 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 				this.World.FactionManager.makeZombiesFriendlyToPlayer();
 				this.logInfo("Unlocking gathering");
 				this.World.Tags.set("HasLegendCampGathering", true);
+				if(this.Const.LegendMod.Configs.LegendCampUnlockEnabled())
+				{
+					this.World.Tags.set("HasLegendCampGathering", true);
+					this.World.Tags.set("HasLegendCampBarber", true);
+					this.World.Tags.set("HasLegendCampCrafting", true);
+					this.World.Tags.set("HasLegendCampFletching", true);
+					this.World.Tags.set("HasLegendCampHealing", true);
+					this.World.Tags.set("HasLegendCampHunting", true);
+					this.World.Tags.set("HasLegendCampScouting", true);
+					this.World.Tags.set("HasLegendCampScraping", true);
+					this.World.Tags.set("HasLegendCampTraining", true);			
+				}
 			}
 
 		});
@@ -1250,6 +1298,18 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 				this.Music.setTrackList(this.Const.Music.VictoryTracks, this.Const.Music.CrossFadeTime);
 				this.logInfo("Unlocking gathering");
 				this.World.Tags.set("HasLegendCampGathering", true);
+				if(this.Const.LegendMod.Configs.LegendCampUnlockEnabled())
+				{
+					this.World.Tags.set("HasLegendCampGathering", true);
+					this.World.Tags.set("HasLegendCampBarber", true);
+					this.World.Tags.set("HasLegendCampCrafting", true);
+					this.World.Tags.set("HasLegendCampFletching", true);
+					this.World.Tags.set("HasLegendCampHealing", true);
+					this.World.Tags.set("HasLegendCampHunting", true);
+					this.World.Tags.set("HasLegendCampScouting", true);
+					this.World.Tags.set("HasLegendCampScraping", true);
+					this.World.Tags.set("HasLegendCampTraining", true);			
+				}
 			}
 
 		});
@@ -1283,6 +1343,18 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 				this.World.Tags.set("HasLegendCampGathering", true);
 				this.logInfo("Unlocking training");
 				this.World.Tags.set("HasLegendCampTraining", true);
+				if(this.Const.LegendMod.Configs.LegendCampUnlockEnabled())
+				{
+					this.World.Tags.set("HasLegendCampGathering", true);
+					this.World.Tags.set("HasLegendCampBarber", true);
+					this.World.Tags.set("HasLegendCampCrafting", true);
+					this.World.Tags.set("HasLegendCampFletching", true);
+					this.World.Tags.set("HasLegendCampHealing", true);
+					this.World.Tags.set("HasLegendCampHunting", true);
+					this.World.Tags.set("HasLegendCampScouting", true);
+					this.World.Tags.set("HasLegendCampScraping", true);
+					this.World.Tags.set("HasLegendCampTraining", true);			
+				}
 			}
 
 		});
@@ -1311,6 +1383,18 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 			function start()
 			{
 				this.Music.setTrackList(this.Const.Music.VictoryTracks, this.Const.Music.CrossFadeTime);
+				if(this.Const.LegendMod.Configs.LegendCampUnlockEnabled())
+				{
+					this.World.Tags.set("HasLegendCampGathering", true);
+					this.World.Tags.set("HasLegendCampBarber", true);
+					this.World.Tags.set("HasLegendCampCrafting", true);
+					this.World.Tags.set("HasLegendCampFletching", true);
+					this.World.Tags.set("HasLegendCampHealing", true);
+					this.World.Tags.set("HasLegendCampHunting", true);
+					this.World.Tags.set("HasLegendCampScouting", true);
+					this.World.Tags.set("HasLegendCampScraping", true);
+					this.World.Tags.set("HasLegendCampTraining", true);			
+				}
 			}
 
 		});
@@ -1345,6 +1429,19 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 				this.World.Tags.set("HasLegendCampScouting", true);
 				this.logInfo("Unlocking gathering");
 				this.World.Tags.set("HasLegendCampGathering", true);
+
+				if(this.Const.LegendMod.Configs.LegendCampUnlockEnabled())
+				{
+					this.World.Tags.set("HasLegendCampGathering", true);
+					this.World.Tags.set("HasLegendCampBarber", true);
+					this.World.Tags.set("HasLegendCampCrafting", true);
+					this.World.Tags.set("HasLegendCampFletching", true);
+					this.World.Tags.set("HasLegendCampHealing", true);
+					this.World.Tags.set("HasLegendCampHunting", true);
+					this.World.Tags.set("HasLegendCampScouting", true);
+					this.World.Tags.set("HasLegendCampScraping", true);
+					this.World.Tags.set("HasLegendCampTraining", true);			
+				}
 			}
 
 		});
@@ -1392,6 +1489,19 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 				this.World.Tags.set("HasLegendCampScraping", true);
 				this.World.Tags.set("HasLegendCampTraining", true);
 				
+				if(this.Const.LegendMod.Configs.LegendCampUnlockEnabled())
+				{
+					this.World.Tags.set("HasLegendCampGathering", true);
+					this.World.Tags.set("HasLegendCampBarber", true);
+					this.World.Tags.set("HasLegendCampCrafting", true);
+					this.World.Tags.set("HasLegendCampFletching", true);
+					this.World.Tags.set("HasLegendCampHealing", true);
+					this.World.Tags.set("HasLegendCampHunting", true);
+					this.World.Tags.set("HasLegendCampScouting", true);
+					this.World.Tags.set("HasLegendCampScraping", true);
+					this.World.Tags.set("HasLegendCampTraining", true);			
+				}
+
 			}
 
 		});
@@ -1419,6 +1529,18 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 			function start()
 			{
 				this.Music.setTrackList(this.Const.Music.VictoryTracks, this.Const.Music.CrossFadeTime);
+					if(this.Const.LegendMod.Configs.LegendCampUnlockEnabled())
+				{
+					this.World.Tags.set("HasLegendCampGathering", true);
+					this.World.Tags.set("HasLegendCampBarber", true);
+					this.World.Tags.set("HasLegendCampCrafting", true);
+					this.World.Tags.set("HasLegendCampFletching", true);
+					this.World.Tags.set("HasLegendCampHealing", true);
+					this.World.Tags.set("HasLegendCampHunting", true);
+					this.World.Tags.set("HasLegendCampScouting", true);
+					this.World.Tags.set("HasLegendCampScraping", true);
+					this.World.Tags.set("HasLegendCampTraining", true);			
+				}
 			}
 
 		});
@@ -1445,6 +1567,18 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 			function start()
 			{
 				this.Music.setTrackList(this.Const.Music.VictoryTracks, this.Const.Music.CrossFadeTime);
+				if(this.Const.LegendMod.Configs.LegendCampUnlockEnabled())
+				{
+					this.World.Tags.set("HasLegendCampGathering", true);
+					this.World.Tags.set("HasLegendCampBarber", true);
+					this.World.Tags.set("HasLegendCampCrafting", true);
+					this.World.Tags.set("HasLegendCampFletching", true);
+					this.World.Tags.set("HasLegendCampHealing", true);
+					this.World.Tags.set("HasLegendCampHunting", true);
+					this.World.Tags.set("HasLegendCampScouting", true);
+					this.World.Tags.set("HasLegendCampScraping", true);
+					this.World.Tags.set("HasLegendCampTraining", true);			
+				}
 			}
 
 		});
@@ -1473,6 +1607,18 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 			function start()
 			{
 				this.Music.setTrackList(this.Const.Music.VictoryTracks, this.Const.Music.CrossFadeTime);
+				if(this.Const.LegendMod.Configs.LegendCampUnlockEnabled())
+				{
+					this.World.Tags.set("HasLegendCampGathering", true);
+					this.World.Tags.set("HasLegendCampBarber", true);
+					this.World.Tags.set("HasLegendCampCrafting", true);
+					this.World.Tags.set("HasLegendCampFletching", true);
+					this.World.Tags.set("HasLegendCampHealing", true);
+					this.World.Tags.set("HasLegendCampHunting", true);
+					this.World.Tags.set("HasLegendCampScouting", true);
+					this.World.Tags.set("HasLegendCampScraping", true);
+					this.World.Tags.set("HasLegendCampTraining", true);			
+				}
 			}
 		});
 		this.m.Screens.push({
@@ -1498,6 +1644,18 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 			function start()
 			{
 				this.Music.setTrackList(this.Const.Music.VictoryTracks, this.Const.Music.CrossFadeTime);
+				if(this.Const.LegendMod.Configs.LegendCampUnlockEnabled())
+				{
+					this.World.Tags.set("HasLegendCampGathering", true);
+					this.World.Tags.set("HasLegendCampBarber", true);
+					this.World.Tags.set("HasLegendCampCrafting", true);
+					this.World.Tags.set("HasLegendCampFletching", true);
+					this.World.Tags.set("HasLegendCampHealing", true);
+					this.World.Tags.set("HasLegendCampHunting", true);
+					this.World.Tags.set("HasLegendCampScouting", true);
+					this.World.Tags.set("HasLegendCampScraping", true);
+					this.World.Tags.set("HasLegendCampTraining", true);			
+				}
 			}
 
 		});
@@ -1522,6 +1680,18 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 			function start()
 			{
 				this.Music.setTrackList(this.Const.Music.VictoryTracks, this.Const.Music.CrossFadeTime);
+				if(this.Const.LegendMod.Configs.LegendCampUnlockEnabled())
+				{
+					this.World.Tags.set("HasLegendCampGathering", true);
+					this.World.Tags.set("HasLegendCampBarber", true);
+					this.World.Tags.set("HasLegendCampCrafting", true);
+					this.World.Tags.set("HasLegendCampFletching", true);
+					this.World.Tags.set("HasLegendCampHealing", true);
+					this.World.Tags.set("HasLegendCampHunting", true);
+					this.World.Tags.set("HasLegendCampScouting", true);
+					this.World.Tags.set("HasLegendCampScraping", true);
+					this.World.Tags.set("HasLegendCampTraining", true);			
+				}
 			}
 
 		});

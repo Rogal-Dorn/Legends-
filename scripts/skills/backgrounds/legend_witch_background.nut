@@ -41,7 +41,7 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 			"trait.loyal",
 			"trait.quick",
 			"trait.swift",
-			"trait.suser_footing",
+			"trait.sure_footing",
 			"trait.tough",
 			"trait.disloyal",
 			"trait.loyal"
@@ -310,12 +310,12 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 	function onAdded()
 	{
 		this.character_background.onAdded();
-		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_daze"));
-		this.m.Container.add(this.new("scripts/skills/perks/perk_student"));
+		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_daze"));
+		//this.m.Container.add(this.new("scripts/skills/perks/perk_student"));
 		this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
 		if (this.Const.LegendMod.Configs.LegendMagicEnabled())
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/legend_magic_missile"));
+			this.m.Container.add(this.new("scripts/skills/perks/perk_legend_magic_missile"));
 		}
 
 		local actor = this.getContainer().getActor();

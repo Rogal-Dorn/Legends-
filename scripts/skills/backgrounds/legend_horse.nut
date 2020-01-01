@@ -7,7 +7,7 @@ this.legend_horse <- this.inherit("scripts/skills/backgrounds/character_backgrou
 		this.character_background.create();
 		this.m.ID = "background.legend_horse";
 		this.m.Name = "Horse";
-		this.m.Icon = "ui/backgrounds/donkey.png";
+		this.m.Icon = "ui/backgrounds/legend_donkey.png";
 		this.m.BackgroundDescription = "Horses are used to long and exhausting travels.";
 		this.m.GoodEnding = "%name% the horse was retired to a lovely paddock and spent the days eating and carousing with other horses.";
 		this.m.BadEnding = "%name% the horse was sold to a trader, their caravan was attacked by orcs and the remains of %name% were never found";
@@ -19,7 +19,7 @@ this.legend_horse <- this.inherit("scripts/skills/backgrounds/character_backgrou
 			"trait.bright",
 			"trait.asthmatic"
 		];
-		this.m.Variant = this.Math.rand(0, 7)
+		this.m.Variant = this.Math.rand(1, 7)
 		this.m.Faces = this.Const.Faces.Horse;
 		this.m.Hairs = this.Const.Hair.None;
 		this.m.HairColors = this.Const.HairColors.None;
@@ -58,7 +58,7 @@ this.legend_horse <- this.inherit("scripts/skills/backgrounds/character_backgrou
 				this.Const.Perks.PerkDefs.Steadfast,
 				this.Const.Perks.PerkDefs.Recover,
 				this.Const.Perks.PerkDefs.Adrenalin,
-				this.Const.Perks.PerkDefs.LegendLongeing
+				this.Const.Perks.PerkDefs.LegendHorseLongeing
 			],
 			[
 				this.Const.Perks.PerkDefs.Dodge,
@@ -91,9 +91,9 @@ this.legend_horse <- this.inherit("scripts/skills/backgrounds/character_backgrou
 				this.Const.Perks.PerkDefs.LoneWolf,
 				this.Const.Perks.PerkDefs.Underdog,
 				this.Const.Perks.PerkDefs.Footwork,
-				this.Const.Perks.PerkDefs.LegendLegControl
-				this.Const.Perks.PerkDefs.LegendLeadChange,
-				this.Const.Perks.PerkDefs.LegendParthianShot
+				this.Const.Perks.PerkDefs.LegendHorseLegControl
+				this.Const.Perks.PerkDefs.LegendHorseLeadChange,
+				this.Const.Perks.PerkDefs.LegendHorseParthianShot
 			],
 			[
 				this.Const.Perks.PerkDefs.Nimble,
@@ -101,8 +101,8 @@ this.legend_horse <- this.inherit("scripts/skills/backgrounds/character_backgrou
 				this.Const.Perks.PerkDefs.Rebound,
 				this.Const.Perks.PerkDefs.Rotation,
 				this.Const.Perks.PerkDefs.LegendMuscularity,
-				this.Const.Perks.PerkDefs.LegendPiaffe,
-				this.Const.Perks.PerkDefs.LegendTempiChange,
+				this.Const.Perks.PerkDefs.LegendHorsePiaffe,
+				this.Const.Perks.PerkDefs.LegendHorseTempiChange,
 			],
 			[
 				this.Const.Perks.PerkDefs.Stalwart,
@@ -110,9 +110,9 @@ this.legend_horse <- this.inherit("scripts/skills/backgrounds/character_backgrou
 				this.Const.Perks.PerkDefs.LegendAmmoBundles,
 				this.Const.Perks.PerkDefs.LegendMedIngredients,
 				this.Const.Perks.PerkDefs.LegendToolsSpares,
-				this.Const.Perks.PerkDefs.LegendFlyingChange,
+				this.Const.Perks.PerkDefs.LegendHorseFlyingChange,
 				this.Const.Perks.PerkDefs.LegendHorsePirouette,
-				this.Const.Perks.PerkDefs.LegendPassage
+				this.Const.Perks.PerkDefs.LegendHorsePassage
 			],
 			[],
 			[],
@@ -210,9 +210,8 @@ this.legend_horse <- this.inherit("scripts/skills/backgrounds/character_backgrou
 	function onAdded()
 	{
 		this.character_background.onAdded();
-		this.m.Container.add(this.new("scripts/skills/injury_permanent/legend_donkey_injury"));
-		this.m.Container.add(this.new("scripts/skills/actives/legend_donkey_kick"));
-		this.m.Container.add(this.new("scripts/skills/traits/legend_appetite_donkey"));
+		this.m.Container.add(this.new("scripts/skills/actives/legend_horse_kick"));
+		this.m.Container.add(this.new("scripts/skills/traits/legend_horse_trait"));
 	}
 
 

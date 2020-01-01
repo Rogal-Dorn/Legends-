@@ -388,6 +388,14 @@ gt.Const.World.Spawn.Troops <- {
 		Row = -1,
 		Script = "scripts/entity/tactical/enemies/lindwurm"
 	},
+	LegendBear = {
+		ID = this.Const.EntityType.LegendBear,
+		Variant = 0,
+		Strength = 30,
+		Cost = 30,
+		Row = -1,
+		Script = "scripts/entity/tactical/enemies/legend_bear"
+	},
 	Unhold = {
 		ID = this.Const.EntityType.Unhold,
 		Variant = 0,
@@ -816,6 +824,14 @@ gt.Const.World.Spawn.Troops <- {
 		NameList = this.Const.Strings.BanditLeaderNames,
 		TitleList = null
 	},	
+	BanditOutrider = {
+		ID = this.Const.EntityType.BanditOutrider,
+		Variant = 0,
+		Strength = 40,
+		Cost = 45,
+		Row = 0,
+		Script = "scripts/entity/tactical/enemies/legend_bandit_outrider"
+	},	
 	Warhound = {
 		ID = this.Const.EntityType.Warhound,
 		Variant = 0,
@@ -1087,6 +1103,54 @@ gt.Const.World.Spawn.Troops <- {
 		Cost = 25,
 		Row = -1,
 		Script = "scripts/entity/tactical/humans/legend_peasant_witchhunter"
+	},
+	LegendHalberdier = {
+		ID = this.Const.EntityType.LegendHalberdier,
+		Variant = 0,
+		Strength = 35,
+		Cost = 35,
+		Row = 0,
+		Script = "scripts/entity/tactical/humans/legend_noble_halberdier"
+	},
+	LegendSlinger = {
+		ID = this.Const.EntityType.LegendSlinger,
+		Variant = 0,
+		Strength = 35,
+		Cost = 35,
+		Row = 0,
+		Script = "scripts/entity/tactical/humans/legend_noble_slinger"
+	},
+	LegendFencer = {
+		ID = this.Const.EntityType.LegendFencer,
+		Variant = 0,
+		Strength = 35,
+		Cost = 35,
+		Row = 0,
+		Script = "scripts/entity/tactical/humans/legend_noble_fencer"
+	},
+	LegendCatapult = {
+		ID = this.Const.EntityType.LegendCatapult,
+		Variant = 0,
+		Strength = 60,
+		Cost = 60,
+		Row = 2,
+		Script = "scripts/entity/tactical/enemies/legend_catapult"
+	},
+	LegendHorse = {
+		ID = this.Const.EntityType.LegendHorse,
+		Variant = 0,
+		Strength = 20,
+		Cost = 20,
+		Row = 2,
+		Script = "scripts/entity/tactical/enemies/legend_catapult"
+	},
+	SkeletonGladiator = {
+		ID = this.Const.EntityType.SkeletonGladiator,
+		Variant = 0,
+		Strength = 40,
+		Cost = 40,
+		Row = 2,
+		Script = "scripts/entity/tactical/enemies/legend_skeleton_gladiator"
 	}
 };
 

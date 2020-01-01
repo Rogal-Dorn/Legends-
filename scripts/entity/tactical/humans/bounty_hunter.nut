@@ -46,6 +46,14 @@ this.bounty_hunter <- this.inherit("scripts/entity/tactical/human", {
 		 if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 			{
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_pathfinder"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_trophy_hunter"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_big_game_hunter"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_head_hunter"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_back_to_basics"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_push_the_advantage"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_mastery_nets"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_onslaught"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_backstabber"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
 			}

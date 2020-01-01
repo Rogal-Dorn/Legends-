@@ -13,10 +13,10 @@ gt.Const.Perks.BeastClassTree <- {
 	Tree = [
 		[],
 		[],
-		[],
+		[gt.Const.Perks.PerkDefs.LegendNetCasting],
 		[gt.Const.Perks.PerkDefs.LegendMasteryNets],
 		[gt.Const.Perks.PerkDefs.LegendEscapeArtist],
-		[],
+		[gt.Const.Perks.PerkDefs.LegendNetRepair],
 		[]
 	]
 };
@@ -44,10 +44,10 @@ gt.Const.Perks.HealerClassTree <- {
 	],
 	Tree = [
 		[],
-		[],
+		[gt.Const.Perks.PerkDefs.LegendMedIngredients],
 		[],
 		[gt.Const.Perks.PerkDefs.LegendSpecBandage],
-		[gt.Const.Perks.PerkDefs.LegendMedIngredients],
+		[],
 		[],
 		[gt.Const.Perks.PerkDefs.LegendFieldTriage]
 	]
@@ -75,11 +75,11 @@ gt.Const.Perks.ChefClassTree <- {
 		"cooking"
 	],
 	Tree = [
-		[],
 		[gt.Const.Perks.PerkDefs.LegendMealPreperation],
-		[],
-		[],
+		[gt.Const.Perks.PerkDefs.LegendCampCook],
 		[gt.Const.Perks.PerkDefs.LegendAlcoholBrewing],
+		[],
+		[],
 		[],
 		[gt.Const.Perks.PerkDefs.LegendFieldTreats]
 	]
@@ -92,10 +92,10 @@ gt.Const.Perks.RepairClassTree <- {
 	],
 	Tree = [
 		[],
-		[],
 		[gt.Const.Perks.PerkDefs.LegendToolsDrawers],
-		[],
 		[gt.Const.Perks.PerkDefs.LegendToolsSpares],
+		[],
+		[],
 		[],
 		[gt.Const.Perks.PerkDefs.LegendFieldRepairs]
 	]
@@ -113,7 +113,10 @@ gt.Const.Perks.BarterClassTree <- {
 		[],
 		[],
 		[gt.Const.Perks.PerkDefs.LegendBarterTrustworthy],
-		[gt.Const.Perks.PerkDefs.LegendBribe]
+		[
+		gt.Const.Perks.PerkDefs.LegendBribe,
+		gt.Const.Perks.PerkDefs.LegendDangerPay
+		]
 	]
 };
 
@@ -368,13 +371,60 @@ gt.Const.Perks.InventorClassTree <- {
 		[],
 		[],
 		[],
-		[],
-		[gt.Const.Perks.PerkDefs.LegendInventorAnatomy]
+		[gt.Const.Perks.PerkDefs.LegendInventorAnatomy],
+		[gt.Const.Perks.PerkDefs.LegendSummonCatapult]
 	]
 };
 
+gt.Const.Perks.ValaSpiritClassTree <- {
+	ID = "ValaSpiritClassTree",
+	Descriptions = [
+		"spirits"
+	],
+	Tree = [
+		[gt.Const.Perks.PerkDefs.LegendValaWarden],
+		[],
+		[gt.Const.Perks.PerkDefs.LegendValaPremonition],
+		[],
+		[],
+		[gt.Const.Perks.PerkDefs.LegendValaSpiritualBond],
+		[]
+	]
+};
 
+gt.Const.Perks.RangerHuntClassTree <- {
+	ID = "RangerHuntClassTree",
+	Descriptions = [
+		"spirits"
+	],
+	Tree = [
+		[gt.Const.Perks.PerkDefs.LegendMarkTarget],
+		[],
+		[],
+		[],
+		[],
+		[gt.Const.Perks.PerkDefs.LegendFavouredEnemyArcher],
+		[gt.Const.Perks.PerkDefs.LegendBigGameHunter]
+	]
+};
 
+gt.Const.Perks.HoundmasterClassTree <- {
+	ID = "HoundmasterClassTree",
+	Descriptions = [
+		"training dogs"
+	],
+	Tree = [
+		[],
+		[],
+		[gt.Const.Perks.PerkDefs.LegendDogWhisperer],
+		[],
+		[gt.Const.Perks.PerkDefs.LegendDogBreeder],
+		[
+		//gt.Const.Perks.PerkDefs.LegendPackleader
+		],
+		[]
+	]
+};
 
 gt.Const.Perks.ClassTrees <- {
 	Tree = [
@@ -394,6 +444,7 @@ gt.Const.Perks.ClassTrees <- {
 		gt.Const.Perks.ShortbowClassTree,
 		gt.Const.Perks.WoodaxeClassTree,
 		gt.Const.Perks.SickleClassTree,
+		gt.Const.Perks.HoundmasterClassTree,
 		gt.Const.Perks.NinetailsClassTree
 	],
 	function getRandom(_exclude) 

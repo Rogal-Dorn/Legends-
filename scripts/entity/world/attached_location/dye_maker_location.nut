@@ -77,6 +77,14 @@ this.dye_maker_location <- this.inherit("scripts/entity/world/attached_location"
 				});
 			}
 		}
+		else if (_id == "building.armorsmith")
+		{
+			_list.push({
+				R = 50,
+				P = 1.0,
+				S = "legend_armor/cloak/legend_armor_cloak_noble"
+			});
+		}
 		else if (_id == "building.specialized_trader")
 		{
 		}

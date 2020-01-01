@@ -3,7 +3,7 @@ this.ai_attack_crush_armor <- this.inherit("scripts/ai/tactical/behavior", {
 		TargetTile = null,
 		PossibleSkills = [
 			"actives.crush_armor",
-			"actives.demolish_armor"
+			"actives.demolish_armor",
 		],
 		Skill = null
 	},

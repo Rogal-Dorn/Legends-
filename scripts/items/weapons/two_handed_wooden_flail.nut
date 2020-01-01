@@ -4,7 +4,7 @@ this.two_handed_wooden_flail <- this.inherit("scripts/items/weapons/weapon", {
 	{
 		this.weapon.create();
 		this.m.ID = "weapon.two_handed_wooden_flail";
-		this.m.Name = "Two-handed Wooden Flail";
+		this.m.Name = "Two-handed Heavy Flail";
 		this.m.Description = "A heavy two-handed wooden flail that can strike over or around shield cover.";
 		this.m.Categories = "Flail, Two-Handed";
 		this.m.IconLarge = "weapons/melee/flail_two_handed_01.png";

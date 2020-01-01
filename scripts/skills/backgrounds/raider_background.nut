@@ -49,6 +49,8 @@ this.raider_background <- this.inherit("scripts/skills/backgrounds/character_bac
 		this.m.Level = this.Math.rand(2, 4);
 		this.m.IsCombatBackground = true;
 		this.m.IsOutlawBackground = true;
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Merciless;
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[1];
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[1];
@@ -374,7 +376,5 @@ this.raider_background <- this.inherit("scripts/skills/backgrounds/character_bac
 			items.equip(this.new("scripts/items/helmets/nasal_helmet_with_rusty_mail"));
 		}
 	}
-
-
 });
 

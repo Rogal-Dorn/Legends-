@@ -59,7 +59,7 @@ this.skeleton_light <- this.inherit("scripts/entity/tactical/skeleton", {
 		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
 		{
 			local cloths = [
-				[3, ""],
+				[25, ""],
 				[0, "cloth/legend_gambeson"],
 				[0, "cloth/legend_gambeson_plain"],
 				[0, "cloth/legend_gambeson_wolf"],
@@ -69,8 +69,9 @@ this.skeleton_light <- this.inherit("scripts/entity/tactical/skeleton", {
 				[0, "cloth/legend_robes_nun"],
 				[0, "cloth/legend_apron_smith"],
 				[0, "cloth/legend_robes_wizard"],
-				[1, "cloth/legend_sackcloth"],
-				[1, "cloth/legend_sackcloth_patched"],
+				[30, "cloth/legend_ancient_cloth"],
+				[3, "cloth/legend_sackcloth"],
+				[2, "cloth/legend_sackcloth_patched"],
 				[1, "cloth/legend_sackcloth_tattered"],
 				[0, "cloth/legend_tunic"],
 				[0, "cloth/legend_tunic_noble"]
@@ -122,6 +123,7 @@ this.skeleton_light <- this.inherit("scripts/entity/tactical/skeleton", {
 					[0, "plate/legend_armor_leather_riveted_light"],
 					[0, "plate/legend_armor_leather_scale"],
 					[0, "plate/legend_armor_plate_ancient_chest"],
+					[0, "plate/legend_armor_plate_ancient_gladiator"],
 					[0, "plate/legend_armor_plate_ancient_harness"],
 					[0, "plate/legend_armor_plate_ancient_mail"],
 					[0, "plate/legend_armor_plate_ancient_scale"],

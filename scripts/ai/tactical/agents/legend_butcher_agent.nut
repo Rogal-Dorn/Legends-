@@ -33,7 +33,6 @@ this.legend_butcher_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_split"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_crush_armor"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_decapitate"));
-		this.addBehavior(this.new("scripts/ai/tactical/behaviors/legend_ai_attack_prepare_bleed"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_knock_out"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_lash"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_defend_spearwall"));

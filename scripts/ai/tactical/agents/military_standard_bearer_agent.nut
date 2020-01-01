@@ -31,6 +31,7 @@ this.military_standard_bearer_agent <- this.inherit("scripts/ai/tactical/agent",
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_recover"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_default"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_rally"));
+		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_boost_stamina"));
 	}
 
 	function onUpdate()

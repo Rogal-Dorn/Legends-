@@ -4,7 +4,8 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		NumBros = 0,
 		Points = 0,
 		FoodAmount = 0,
-		Craft = 0
+		Craft = 0,
+		Value = 0
 	},
     function create()
     {
@@ -73,7 +74,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 				id = 5,
 				type = "text",
 				icon = "ui/buttons/asset_food_up.png",
-				text = "Successful hunt will take approxiamtely [color=" + this.Const.UI.Color.PositiveValue + "]" + this.Math.floor(55.0 / mod.Craft) + "[/color] hours."
+				text = "Successful hunt will take approxiamtely [color=" + this.Const.UI.Color.PositiveValue + "]" + this.Math.floor(100.0 / mod.Craft) + "[/color] hours."
 			}
 		];
 		local id = 6;
@@ -83,7 +84,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 				id = id,
 				type = "hint",
 				icon = "ui/icons/special.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + (bro[0] / 55.0) * 100.0 + "%[/color] " + bro[1] + " (" + bro[2] + ")"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + (bro[0] / 100.0) * 100.0 + "%[/color] " + bro[1] + " (" + bro[2] + ")"
 			})
 			++id;
 		}
@@ -138,7 +139,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
             }
 
 		
-			if (bro.getBackground().getSkills().hasskill("perk.legend_meal_preperation"))
+			if (bro.getSkills().hasSkill("perk.legend_meal_preperation"))
 			{
                chefLevel += bro.getLevel()
             }
@@ -160,7 +161,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
                 continue
             }
 
-			if (bro.getBackground().getSkills().hasskill("perk.legend_alcohol_brewer"))
+			if (bro.getSkills().hasSkill("perk.legend_alcohol_brewer"))
 			{
                brewerLevel += bro.getLevel()
             }
@@ -226,7 +227,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		local secondary = [];
 		if (r == 1 || r == 2)
 		{
-			item = this.new("scripts/items/supplies/fresh_meat_item");
+			item = this.new("scripts/items/supplies/legend_fresh_meat_item");
 			secondary = [
 				"scripts/items/misc/adrenaline_gland_item",
 				"scripts/items/misc/poison_gland_item",
@@ -247,7 +248,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		}
 		else if (r == 4)
 		{
-			item = this.new("scripts/items/supplies/fresh_fruit_item");
+			item = this.new("scripts/items/supplies/legend_fresh_fruit_item");
 				secondary = [
 				"scripts/items/supplies/dried_fruit_item"
 	
@@ -297,13 +298,16 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 				"scripts/items/supplies/preserved_mead_item"
 			]);
 		}
-
-		if (this.m.Points < item.m.Value)
+		if (item.getValue() != null)
 		{
-			return this.getUpdateText();
+			if (this.m.Points < item.getValue())
+			{
+				return this.getUpdateText();
+			}
+			this.m.Points -= item.getValue();
 		}
 
-		this.m.Points -= item.m.Value;
+	
 		item.randomizeAmount();
 		this.m.FoodAmount += item.getAmount();
 		item.randomizeBestBefore();

@@ -17,10 +17,10 @@ this.legend_thick_plated_barbarian_armor <- this.inherit("scripts/items/legend_a
 		this.m.OverlayIcon = "legend_armor/plate/icon_legend_thick_plated_barbarian_armor.png";
 		this.m.OverlayIconLarge = "legend_armor/plate/inventory_legend_thick_plated_barbarian_armor.png";
 		this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
-		this.m.Value = 4600;
-		this.m.Condition = 195;
-		this.m.ConditionMax = 195;
-		this.m.StaminaModifier = -25;
+		this.m.Value = 1250;
+		this.m.Condition = 155;
+		this.m.ConditionMax = 155;
+		this.m.StaminaModifier = -32;
 	}
 
 });

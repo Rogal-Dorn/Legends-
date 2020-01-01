@@ -48,15 +48,13 @@ this.perk_legend_lacerate <- this.inherit("scripts/skills/skill", {
 			return false;
 		}
 
-		if (!_targetEntity.getSkills().hasSkill("effects.legend_grazed_effect"))
-		{
-			_targetEntity.getSkills().add(this.new("scripts/skills/effects/legend_grazed_effect"));
+		_targetEntity.getSkills().add(this.new("scripts/skills/effects/legend_grazed_effect"));
 
-			if (!user.isHiddenToPlayer() && _targetEntity.getTile().IsVisibleForPlayer)
-			{
-				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(user) + " lacerated " + this.Const.UI.getColorizedEntityName(_targetEntity) + " leaving them grazed");
-			}
+		if (!user.isHiddenToPlayer() && _targetEntity.getTile().IsVisibleForPlayer)
+		{
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(user) + " lacerated " + this.Const.UI.getColorizedEntityName(_targetEntity) + " leaving them grazed");
 		}
+	
 
 		return true;
 		

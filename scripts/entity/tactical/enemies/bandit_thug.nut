@@ -55,8 +55,10 @@ this.bandit_thug <- this.inherit("scripts/entity/tactical/human", {
 
 		if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 			{
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_relentless"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_dodge"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_backstabber"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_underdog"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
 
 			}
@@ -253,18 +255,20 @@ this.bandit_thug <- this.inherit("scripts/entity/tactical/human", {
 			local cloths = [
 				[0, ""],
 				[0, "cloth/legend_gambeson"],
-				[1, "cloth/legend_gambeson_plain"],
+				[0, "cloth/legend_gambeson_plain"],
 				[0, "cloth/legend_gambeson_wolf"],
-				[1, "cloth/legend_padded_surcoat"],
-				[1, "cloth/legend_robes"],
+				[0, "cloth/legend_padded_surcoat"],
+				[0, "cloth/legend_robes"],
 				[0, "cloth/legend_apron_butcher"],
 				[0, "cloth/legend_robes_nun"],
 				[0, "cloth/legend_apron_smith"],
 				[0, "cloth/legend_robes_wizard"],
-				[1, "cloth/legend_sackcloth"],
-				[1, "cloth/legend_sackcloth_patched"],
-				[1, "cloth/legend_sackcloth_tattered"],
-				[1, "cloth/legend_tunic"],
+				[0, "cloth/legend_sackcloth"],
+				[10, "cloth/legend_apron"],
+				[0, "cloth/legend_sackcloth_patched"],
+				[0, "cloth/legend_sackcloth_tattered"],
+				[30, "cloth/legend_thick_tunic"],
+				[30, "cloth/legend_tunic"],
 				[0, "cloth/legend_tunic_noble"]
 			];
 			local armor = this.Const.World.Common.pickLegendArmor(cloths)
@@ -297,19 +301,19 @@ this.bandit_thug <- this.inherit("scripts/entity/tactical/human", {
 				}
 
 				local plates = [
-					[3, ""],
+					[50, ""],
 					[0, "plate/legend_armor_leather_brigandine"],
 					[0, "plate/legend_armor_leather_brigandine_hardened"],
 					[0, "plate/legend_armor_leather_brigandine_hardened_full"],
-					[1, "plate/legend_armor_leather_jacket"],
-					[1, "plate/legend_armor_leather_jacket_simple"],
+					[10, "plate/legend_armor_leather_jacket"],
+					[39, "plate/legend_armor_leather_jacket_simple"],
 					[0, "plate/legend_armor_leather_lamellar"],
 					[0, "plate/legend_armor_leather_lamellar_harness_heavy"],
 					[0, "plate/legend_armor_leather_lamellar_harness_reinforced"],
 					[0, "plate/legend_armor_leather_lamellar_heavy"],
 					[0, "plate/legend_armor_leather_lamellar_reinforced"],
 					[0, "plate/legend_armor_leather_noble"],
-					[0, "plate/legend_armor_leather_padded"],
+					[1, "plate/legend_armor_leather_padded"],
 					[0, "plate/legend_armor_leather_riveted"],
 					[0, "plate/legend_armor_leather_riveted_light"],
 					[0, "plate/legend_armor_leather_scale"],

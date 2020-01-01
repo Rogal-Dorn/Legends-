@@ -10,7 +10,7 @@ this.settlement_modifiers <- {
 	MedicalRarityMult = 1.0,
 	MineralRarityMult = 1.0,
 	BuildingRarityMult = 1.0,
-	RecruitsMult = 1.0,
+	RecruitsMult = 1.25,
 	StablesMult = 1.0,
 	function reset()
 	{
@@ -25,8 +25,13 @@ this.settlement_modifiers <- {
 		this.MedicalRarityMult = 1.0;
 		this.MineralRarityMult = 1.0;
 		this.BuildingRarityMult = 1.0;
-		this.RecruitsMult = 1.0;
+		this.RecruitsMult = 1.25;
 		this.StablesMult = 1.0;
+
+		if (this.RecruitsMult != 1.25)
+		{
+		this.RecruitsMult = 1.25;
+		}
 	}
 
 	function create()

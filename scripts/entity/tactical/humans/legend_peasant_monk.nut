@@ -40,7 +40,10 @@ this.legend_peasant_monk <- this.inherit("scripts/entity/tactical/human", {
 			if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 			{
 			this.m.Hitpoints = b.Hitpoints * 1.5;
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_inspire"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_hold_out"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_fortified_mind"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_onslaught"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
 			}
 	}
@@ -109,12 +112,12 @@ this.legend_peasant_monk <- this.inherit("scripts/entity/tactical/human", {
 				}
 
 				local plates = [
-					[0, ""],
+					[1, ""],
 					[0, "plate/legend_armor_leather_brigandine"],
 					[0, "plate/legend_armor_leather_brigandine_hardened"],
 					[0, "plate/legend_armor_leather_brigandine_hardened_full"],
-					[0, "plate/legend_armor_leather_jacket"],
-					[0, "plate/legend_armor_leather_jacket_simple"],
+					[1, "plate/legend_armor_leather_jacket"],
+					[2, "plate/legend_armor_leather_jacket_simple"],
 					[0, "plate/legend_armor_leather_lamellar"],
 					[0, "plate/legend_armor_leather_lamellar_harness_heavy"],
 					[0, "plate/legend_armor_leather_lamellar_harness_reinforced"],

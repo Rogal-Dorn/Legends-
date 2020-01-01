@@ -28,16 +28,16 @@ gt.Const.World.Spawn.Noble <- {
 	],
 	Troops = [
 		{
-			Weight = 43,
+			Weight = 44,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Footman,
-					Cost = 20
+					Cost = 15
 				}
 			]
 		},
 		{
-			Weight = 22,
+			Weight = 21,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Billman,
@@ -59,36 +59,79 @@ gt.Const.World.Spawn.Noble <- {
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Greatsword,
-					Cost = 25
+					Cost = 30
 				}
 			]
 		},
 		{
 			Weight = 3,
+			MinR = 0.85 * 300,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Sergeant,
-					Cost = 25,
+					Cost = 40,
 					Roll = true
 				}
 			]
 		},
 		{
 			Weight = 3,
+			MinR = 0.85 * 400,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Knight,
-					Cost = 35,
+					Cost = 80,
 					Roll = true
 				}
 			]
 		},
 		{
 			Weight = 6,
+			MinR = 0.85 * 200,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.ArmoredWardog,
 					Cost = 8
+				}
+			]
+		},
+		{
+			Weight = 3,
+			MinR = 0.85 * 500,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendHalberdier,
+					Cost = 60
+				}
+			]
+		},
+		{
+			Weight = 3,
+			MinR = 0.85 * 600,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendFencer,
+					Cost = 60
+				}
+			]
+		},
+		{
+			Weight = 3,
+			MinR = 0.85 * 700,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendSlinger,
+					Cost = 60
+				}
+			]
+		},
+		{
+			Weight = 1,
+			MinR = 0.85 * 900,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendCatapult,
+					Cost = 60
 				}
 			]
 		}
@@ -116,7 +159,7 @@ gt.Const.World.Spawn.NobleCaravan <-
 	],
 	Troops = [
 		{
-			Weight = 65,
+			Weight = 62,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Footman,
@@ -153,11 +196,42 @@ gt.Const.World.Spawn.NobleCaravan <-
 		},
 		{
 			Weight = 2,
+			MinR = 0.85 * 300,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Sergeant,
-					Cost = 25,
+					Cost = 40,
 					Roll = true
+				}
+			]
+		},
+		{
+			Weight = 1,
+			MinR = 0.85 * 500,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendHalberdier,
+					Cost = 60
+				}
+			]
+		},
+		{
+			Weight = 1,
+			MinR = 0.85 * 600,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendFencer,
+					Cost = 60
+				}
+			]
+		},
+		{
+			Weight = 1,
+			MinR = 0.85 * 700,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendSlinger,
+					Cost = 60
 				}
 			]
 		}

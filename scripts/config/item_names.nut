@@ -410,6 +410,27 @@ gt.Const.Strings.MaceNames <- [
 	"Clobber",
 	"Knocker"
 ];
+gt.Const.Strings.LuteNames <- [
+	"Basher",
+	"Smasher",
+	"Gittern",
+	"Vielle",
+	"Grater",
+	"Axe",
+	"Banger",
+	"Paddle",
+	"Flat Top",
+	"Twiddle",
+	"Plank",
+	"Oud",
+	"Pipa",
+	"Citole",
+	"Mandore",
+	"Gambus",
+	"Mandoline",
+	"Bouzuki",
+	"Pandura"
+];
 gt.Const.Strings.HammerNames <- [
 	"Hammer",
 	"Sledge",
@@ -630,7 +651,8 @@ gt.Const.Strings.RandomWeaponPrefix <- [
 	"Gruesome",
 	"Grisly",
 	"Magnificent",
-	"Exquisite"
+	"Exquisite",
+	"Brutal"
 ];
 gt.Const.Strings.RandomArmorPrefix <- [
 	"Captain\'s",

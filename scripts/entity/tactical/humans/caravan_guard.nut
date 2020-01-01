@@ -37,6 +37,18 @@ this.caravan_guard <- this.inherit("scripts/entity/tactical/human", {
 		this.getSprite("dirt").Visible = true;
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_shield_expert"));
 		this.m.Skills.add(this.new("scripts/skills/actives/recover_skill"));
+		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+			{
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_shield_skill"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_shield_push"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_shield_bash"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_hold_out"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_underdog"));
+			this.m.Skills.add(this.new("scripts/skills/actives/rotation"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_alert"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_cripping_strikes"));
+			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
+			}
 	}
 
 	function assignRandomEquipment()
@@ -91,7 +103,7 @@ this.caravan_guard <- this.inherit("scripts/entity/tactical/human", {
 				[0, "cloth/legend_gambeson"],
 				[0, "cloth/legend_gambeson_plain"],
 				[0, "cloth/legend_gambeson_wolf"],
-				[0, "cloth/legend_padded_surcoat"],
+				[2, "cloth/legend_padded_surcoat"],
 				[0, "cloth/legend_robes"],
 				[0, "cloth/legend_apron_butcher"],
 				[0, "cloth/legend_robes_nun"],

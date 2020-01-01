@@ -69,10 +69,10 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 
 	function getRate()
 	{
-		local heal = 2.00;
+		local heal = 1.00;
 		if (this.getUpgraded())
 		{
-			heal = 3.0;
+			heal = 2.0;
 		}
 		local points =  this.Const.World.Assets.HitpointsPerHour * heal;
 		return points + points * this.m.Rate;
@@ -394,7 +394,10 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 			{
 				r.setTreated(true);
 				r.setQueue(0);
+				if (r.getContainer().getActor() != null)
+				{
 				r.getContainer().getActor().updateInjuryVisuals();
+				}
 				this.m.InjuriesHealed.push(r);
 				this.m.Queue[i] = null;
 			}

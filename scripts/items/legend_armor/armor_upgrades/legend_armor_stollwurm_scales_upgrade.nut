@@ -19,6 +19,8 @@ this.legend_armor_stollwurm_scales_upgrade <- this.inherit("scripts/items/legend
 		this.m.SpriteCorpseFront = null;
 		this.m.SpriteCorpseBack = "upgrade_stollwurm_back_dead";
 		this.m.Value = 3200;
+		this.m.Condition = 80;
+		this.m.ConditionMax = 80;
 		this.m.ConditionModifier = 80;
 		this.m.StaminaModifier = -4;
 	}
@@ -97,15 +99,16 @@ this.legend_armor_stollwurm_scales_upgrade <- this.inherit("scripts/items/legend
 		}
 	}
 
-	function onRemoved()
+	function onRemoved( _app )
 	{
-		this.legend_armor_upgrade.onRemoved();
 		local c = this.m.Armor.getContainer();
-
 		if (c != null && c.getActor() != null && !c.getActor().isNull())
 		{
 			c.getActor().getTags().remove("body_immune_to_acid");
 		}
+		this.legend_armor_upgrade.onRemoved(_app);
+
+		
 	}
 
 });

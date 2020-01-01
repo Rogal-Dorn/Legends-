@@ -95,7 +95,12 @@ this.new_campaign_menu_module <- this.inherit("scripts/ui/screens/ui_module", {
 			LegendGenderEquality = _settings[25],
 			LegendMagic = _settings[26],
 			LegendArmor = _settings[27],
-			Debug = _settings[28]
+			Debug = _settings[28],
+			Autosave = _settings[29],
+			LegendItemScaling = _settings[30],
+			LegendLocationScaling = _settings[31],
+			LegendCampUnlock = _settings[32],
+			LegendRecruitScaling = _settings[33]
 		};
 
 		// local settings = {

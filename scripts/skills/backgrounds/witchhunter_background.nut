@@ -40,6 +40,8 @@ this.witchhunter_background <- this.inherit("scripts/skills/backgrounds/characte
 		this.m.IsRangerRecruitBackground = true;
 		this.m.IsCrusaderRecruitBackground = true;
 		this.m.IsEducatedBackground = true;
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.Modifiers.Crafting = this.Const.LegendMod.ResourceModifiers.Crafting[2];
 		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[1];
 		this.m.Modifiers.Fletching = this.Const.LegendMod.ResourceModifiers.Fletching[1];
@@ -63,7 +65,7 @@ this.witchhunter_background <- this.inherit("scripts/skills/backgrounds/characte
 				0.0, //highlands
 				0.0, //stepps
 				0.0 //ocean
-			]
+			];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.CrossbowTree,

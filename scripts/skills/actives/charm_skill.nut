@@ -90,6 +90,11 @@ this.charm_skill <- this.inherit("scripts/skills/skill", {
 			return false;
 		}
 
+		if (_target.getSkills().hasSkill("trait.player"))
+		{
+			return false;
+		}
+
 		return true;
 	}
 
@@ -123,6 +128,7 @@ this.charm_skill <- this.inherit("scripts/skills/skill", {
 
 				return false;
 			}
+
 
 			if (target.checkMorale(0, -35 + bonus, this.Const.MoraleCheckType.MentalAttack))
 			{

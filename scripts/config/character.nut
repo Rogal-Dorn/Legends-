@@ -726,6 +726,17 @@ gt.Const.SameMovementAPCost <- [
 	2,
 	2
 ];
+gt.Const.CatapultMovementAPCost <- [
+	0,
+	10,
+	10,
+	10,
+	10,
+	10,
+	10,
+	10,
+	10
+];
 gt.Const.NoMovementFatigueCost <- [
 	0,
 	0,
@@ -791,6 +802,17 @@ gt.Const.LegendFlightMovementFatigueCost <- [
 	2,
 	2,
 	2
+];
+gt.Const.CatapultMovementFatigueCost <- [
+	0,
+	4,
+	8,
+	12,
+	12,
+	16,
+	28,
+	24,
+	24
 ];
 
 gt.Const.SkillCounter <- 0;
@@ -969,6 +991,7 @@ gt.Const.CharacterProperties <- {
 	IsSpecializedInShields = false,
 	IsSpecializedInShieldPush = false,
 	IsSpecializedInNets = false,
+	IsSpecializedInNetCasting = false,
 	IsSpecializedInFists = false,
 	IsSpecializedInSlings = false,
 	IsSpecializedInStaves = false,

@@ -37,7 +37,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 			"trait.loyal",
 			"trait.quick",
 			"trait.swift",
-			"trait.suser_footing",
+			"trait.sure_footing",
 			"trait.tough",
 			"trait.disloyal"
 		];
@@ -75,6 +75,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 					this.Const.Perks.PerkDefs.LegendWither,
 					this.Const.Perks.PerkDefs.LegendSpawnZombieLow,
 					this.Const.Perks.PerkDefs.LegendSpawnSkeletonLow,
+					this.Const.Perks.PerkDefs.LegendSpecialistNinetailsSkill,
 					this.Const.Perks.PerkDefs.LegendSpecialistScytheSkill
 				],
 				[
@@ -83,8 +84,9 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 					this.Const.Perks.PerkDefs.Gifted,
 					this.Const.Perks.PerkDefs.LegendTrueBeliever,
 					this.Const.Perks.PerkDefs.LegendRust,
-					this.Const.Perks.PerkDefs.LegendBloodbath,
 					this.Const.Perks.PerkDefs.LegendMedPackages,
+					this.Const.Perks.PerkDefs.LegendPrepareBleed,
+					this.Const.Perks.PerkDefs.LegendPrepareGraze,
 					this.Const.Perks.PerkDefs.LegendRoster1
 				],
 				[
@@ -93,8 +95,10 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 					this.Const.Perks.PerkDefs.LegendFavouredEnemyCaravan,
 					this.Const.Perks.PerkDefs.Lookout,
 					this.Const.Perks.PerkDefs.LegendExtendendAura,
+					this.Const.Perks.PerkDefs.LegendSpecialistNinetailsDamage,
 					this.Const.Perks.PerkDefs.LegendSpecialistScytheDamage,
 					this.Const.Perks.PerkDefs.LegendSpecStaffSkill,
+					this.Const.Perks.PerkDefs.LegendBloodbath,
 					this.Const.Perks.PerkDefs.LegendRoster2
 				],
 				[
@@ -104,6 +108,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 					this.Const.Perks.PerkDefs.LegendMasteryStaves,
 					this.Const.Perks.PerkDefs.SpecThrowing,
 					this.Const.Perks.PerkDefs.LegendSpecPoison,
+					this.Const.Perks.PerkDefs.LegendLacerate,
 					this.Const.Perks.PerkDefs.LegendSpawnZombieMed,
 					this.Const.Perks.PerkDefs.LegendSpawnSkeletonMed
 				],
@@ -116,6 +121,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 					this.Const.Perks.PerkDefs.LegendReclamation,
 					this.Const.Perks.PerkDefs.LegendMedIngredients,
 					this.Const.Perks.PerkDefs.LegendConservation,
+					this.Const.Perks.PerkDefs.LegendSlaughter,
 					this.Const.Perks.PerkDefs.LegendRoster3
 				],
 				[
@@ -158,6 +164,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 					this.Const.Perks.PerkDefs.LegendWither,
 					this.Const.Perks.PerkDefs.LegendSpawnZombieLow,
 					this.Const.Perks.PerkDefs.LegendSpawnSkeletonLow,
+					this.Const.Perks.PerkDefs.LegendSpecialistNinetailsSkill,
 					this.Const.Perks.PerkDefs.LegendSpecialistScytheSkill
 				],
 				[
@@ -166,8 +173,10 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 					this.Const.Perks.PerkDefs.Gifted,
 					this.Const.Perks.PerkDefs.LegendTrueBeliever,
 					this.Const.Perks.PerkDefs.LegendRust,
-					this.Const.Perks.PerkDefs.LegendBloodbath,
+					this.Const.Perks.PerkDefs.LegendPrepareBleed,
+					this.Const.Perks.PerkDefs.LegendPrepareGraze,
 					this.Const.Perks.PerkDefs.LegendMedPackages,
+					this.Const.Perks.PerkDefs.LegendPrepareBleed,
 					this.Const.Perks.PerkDefs.LegendRoster1
 				],
 				[
@@ -177,8 +186,10 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 					this.Const.Perks.PerkDefs.Lookout,
 					this.Const.Perks.PerkDefs.LegendDeathtouch,
 					this.Const.Perks.PerkDefs.LegendExtendendAura,
+					this.Const.Perks.PerkDefs.LegendSpecialistNinetailsDamage,
 					this.Const.Perks.PerkDefs.LegendSpecialistScytheDamage,
 					this.Const.Perks.PerkDefs.LegendSpecStaffSkill,
+					this.Const.Perks.PerkDefs.LegendBloodbath,
 					this.Const.Perks.PerkDefs.LegendRoster2
 				],
 				[
@@ -189,6 +200,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 					this.Const.Perks.PerkDefs.SpecThrowing,
 					this.Const.Perks.PerkDefs.LegendSpecPoison,
 					this.Const.Perks.PerkDefs.LegendSpawnZombieMed,
+					this.Const.Perks.PerkDefs.LegendLacerate,
 					this.Const.Perks.PerkDefs.LegendSpawnSkeletonMed
 				],
 				[
@@ -200,6 +212,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 					this.Const.Perks.PerkDefs.LegendReclamation,
 					this.Const.Perks.PerkDefs.LegendMedIngredients,
 					this.Const.Perks.PerkDefs.LegendConservation,
+					this.Const.Perks.PerkDefs.LegendSlaughter,			
 					this.Const.Perks.PerkDefs.LegendRoster3
 				],
 				[
@@ -298,21 +311,21 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 	function onAdded()
 	{
 		this.character_background.onAdded();
-		if (this.Const.LegendMod.Configs.LegendMagicEnabled())
-		{
-			this.m.Container.add(this.new("scripts/skills/perks/perk_legend_siphon"));
-		}
+		//if (this.Const.LegendMod.Configs.LegendMagicEnabled())
+		//{
+		//	this.m.Container.add(this.new("scripts/skills/perks/perk_legend_siphon"));
+		//}
 		
-		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_1"));
-		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_brink_of_death"));
-		this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
+		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_1"));
+		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_brink_of_death"));
+		this.m.Container.add(this.new("scripts/skills/traits/survivor_trait"));
 	}
 
 	function onAddEquipment()
 	{
 		local talents = this.getContainer().getActor().getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
-		talents[this.Const.Attributes.Fatigue] = 2;
+		talents[this.Const.Attributes.Fatigue] = 3;
 		talents[this.Const.Attributes.Hitpoints] = 3;
 		this.getContainer().getActor().fillTalentValues(2, true);
 		local items = this.getContainer().getActor().getItems();
@@ -331,13 +344,13 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 	{
 		local talents = this.getContainer().getActor().getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
-		talents[this.Const.Attributes.Fatigue] = 2;
+		talents[this.Const.Attributes.Fatigue] = 3;
 		talents[this.Const.Attributes.Hitpoints] = 3;
 		this.getContainer().getActor().fillTalentValues(2, true);
 		local items = this.getContainer().getActor().getItems();
 
 		items.equip(this.new("scripts/items/helmets/dark_cowl"));
-		items.equip(this.new("scripts/items/legend_armor/cloth/legend_tunic"));
+		items.equip(this.new("scripts/items/legend_armor/cloth/legend_dark_tunic"));
 		items.equip(this.new("scripts/items/weapons/legend_grisly_scythe"));
 		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");

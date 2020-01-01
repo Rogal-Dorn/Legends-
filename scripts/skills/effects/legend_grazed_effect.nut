@@ -20,7 +20,7 @@ this.legend_grazed_effect <- this.inherit("scripts/skills/skill", {
 		this.m.Name = "Bleeding from grazes";
 		this.m.KilledString = "Bled to death";
 		this.m.Icon = "skills/graze_circle.png";
-		this.m.IconMini = "status_effect_01_mini";
+		this.m.IconMini = "mini_graze_circle";
 		this.m.Overlay = "graze";
 		this.m.Type = this.Const.SkillType.StatusEffect | this.Const.SkillType.DamageOverTime;
 		this.m.IsActive = false;

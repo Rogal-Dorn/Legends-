@@ -71,7 +71,7 @@ this.uproot_skill <- this.inherit("scripts/skills/skill", {
 			this.Tactical.spawnParticleEffect(false, this.Const.Tactical.DustParticles[i].Brushes, _targetTile, this.Const.Tactical.DustParticles[i].Delay, this.Const.Tactical.DustParticles[i].Quantity * 0.5, this.Const.Tactical.DustParticles[i].LifeTimeQuantity * 0.5, this.Const.Tactical.DustParticles[i].SpawnRate, this.Const.Tactical.DustParticles[i].Stages, this.createVec(0, -30));
 		}
 
-		if (_targetTile.IsOccupiedByActor && _targetTile.getEntity().isAttackable() && !(_targetTile.getEntity().getType() == this.Const.EntityType.Schrat || _targetTile.getEntity().getType() == this.Const.EntityType.SchratSmall))
+		if (_targetTile.IsOccupiedByActor && _targetTile.getEntity().isAttackable() && !(_targetTile.getEntity().getType() == this.Const.EntityType.Schrat || _targetTile.getEntity().getType() == this.Const.EntityType.SchratSmall || _targetTile.getEntity().getType() == this.Const.EntityType.LegendGreenwoodSchrat || _targetTile.getEntity().getType() == this.Const.EntityType.LegendGreenwoodSchratSmall))
 		{
 			if (_targetTile.getEntity().m.IsShakingOnHit)
 			{
@@ -107,7 +107,7 @@ this.uproot_skill <- this.inherit("scripts/skills/skill", {
 				}
 			}.bindenv(this), null);
 
-			if (forwardTile.IsOccupiedByActor && forwardTile.getEntity().isAttackable() && this.Math.abs(forwardTile.Level - myTile.Level) <= 1 && !(forwardTile.getEntity().getType() == this.Const.EntityType.Schrat || forwardTile.getEntity().getType() == this.Const.EntityType.SchratSmall))
+			if (forwardTile.IsOccupiedByActor && forwardTile.getEntity().isAttackable() && this.Math.abs(forwardTile.Level - myTile.Level) <= 1 && !(forwardTile.getEntity().getType() == this.Const.EntityType.Schrat || forwardTile.getEntity().getType() == this.Const.EntityType.SchratSmall || _targetTile.getEntity().getType() == this.Const.EntityType.LegendGreenwoodSchrat || _targetTile.getEntity().getType() == this.Const.EntityType.LegendGreenwoodSchratSmall ))
 			{
 				this.Time.scheduleEvent(this.TimeUnit.Virtual, 400, function ( _tag )
 				{
@@ -137,7 +137,7 @@ this.uproot_skill <- this.inherit("scripts/skills/skill", {
 					}
 				}.bindenv(this), null);
 
-				if (furtherForwardTile.IsOccupiedByActor && furtherForwardTile.getEntity().isAttackable() && !(furtherForwardTile.getEntity().getType() == this.Const.EntityType.Schrat || furtherForwardTile.getEntity().getType() == this.Const.EntityType.SchratSmall))
+				if (furtherForwardTile.IsOccupiedByActor && furtherForwardTile.getEntity().isAttackable() && !(furtherForwardTile.getEntity().getType() == this.Const.EntityType.Schrat || furtherForwardTile.getEntity().getType() == this.Const.EntityType.SchratSmall || _targetTile.getEntity().getType() == this.Const.EntityType.LegendGreenwoodSchrat || _targetTile.getEntity().getType() == this.Const.EntityType.LegendGreenwoodSchratSmall ))
 				{
 					this.Time.scheduleEvent(this.TimeUnit.Virtual, 600, function ( _tag )
 					{

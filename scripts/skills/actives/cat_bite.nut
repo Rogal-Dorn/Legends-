@@ -3,7 +3,7 @@ this.cat_bite <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.ID = "actives.cat_bite";
-		this.m.Name = "Bite";
+		this.m.Name = "Cat Bite";
 		this.m.Description = "";
 		this.m.KilledString = "Mangled";
 		this.m.Icon = "skills/cat_bite.png";
@@ -33,8 +33,8 @@ this.cat_bite <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		_properties.DamageRegularMin += 15;
-		_properties.DamageRegularMax += 35;
+		_properties.DamageRegularMin += 20;
+		_properties.DamageRegularMax += 40;
 		_properties.DamageArmorMult *= 0.4;
 	}
 

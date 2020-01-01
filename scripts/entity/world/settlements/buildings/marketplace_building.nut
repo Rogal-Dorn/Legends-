@@ -266,12 +266,17 @@ this.marketplace_building <- this.inherit("scripts/entity/world/settlements/buil
 				S = "helmets/hood"
 			},
 			{
-				R = 90,
+				R = 80,
 				P = 1.0,
 				S = "weapons/legend_drum"
 			},
 			{
-				R = 90,
+				R = 80,
+				P = 1.0,
+				S = "weapons/legend_cat_o_nine_tails"
+			},
+			{
+				R = 80,
 				P = 1.0,
 				S = "weapons/lute"
 			},
@@ -686,12 +691,12 @@ this.marketplace_building <- this.inherit("scripts/entity/world/settlements/buil
 
 		local armorsL = [
 		   [15, 1.0, "cloth/legend_tunic"],
+		   [40, 1.0, "cloth/legend_thick_tunic"],
 		   [15, 1.0, "cloth/legend_robes"],
            [10, 1.0, "cloth/legend_sackcloth"],
            [10, 1.0, "cloth/legend_sackcloth_patched"],
            [10, 1.0, "cloth/legend_sackcloth_tattered"],
-		   [75, 1.0, "cloak/legend_armor_cloak"],
-		   [75, 1.0, "tabard/legend_armor_tabard"]
+		   [40, 1.0, "cloak/legend_armor_cloak_common"]
 		]
 
 		foreach( a in armorsL)

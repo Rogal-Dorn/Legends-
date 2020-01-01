@@ -161,7 +161,7 @@ gt.Const.Difficulty <- {
 	BuyPriceMult = [
 		0.95,
 		1.0,
-		1.05
+		1.05,
 		1.1
 	],
 	SellPriceMult = [
@@ -356,6 +356,14 @@ gt.Const.EntityType <- {
 	LegendPeasantMiner = 107,
 	LegendPeasantSquire = 108,
 	LegendPeasantWitchHunter = 109,
+	LegendHalberdier = 110,
+	LegendSlinger = 111,
+	LegendFencer = 112,
+	BanditOutrider = 113,
+	LegendBear = 114,
+	LegendCatapult = 115,
+    LegendHorse = 116,
+	SkeletonGladiator = 117
 	function convertOldToNew( _id )
 	{
 		switch(_id)
@@ -599,7 +607,7 @@ gt.Const.EntityIcon <- [
 	"wildman_06_orientation",
 	"dog_02_orientation",
 	"thing_orientation",
-	"wildman_06_orientation"
+	"wildman_06_orientation",
 	"rabble_orientation",
 	"cat_orientation",
 	"orc_elite_orientation",
@@ -617,6 +625,8 @@ gt.Const.EntityIcon <- [
 	"banshee_orientation_2",
 	"hollenhound_orientation",
 	"vampire_lord_orientation",
+	"banditveteran_orientation",
+	"banditwarlord_orientation",
 	"butcher_orientation",
 	"blacksmith_orientation",
 	"monk_orientation",
@@ -626,6 +636,14 @@ gt.Const.EntityIcon <- [
 	"woodcutter_orientation",
 	"miner_orientation",
 	"squire_orientation",
-	"witchhunter_orientation"
+	"witchhunter_orientation",
+	"halberdier_orientation",
+	"slinger_orientation",
+	"fencer_orientation",
+	"banditoutrider_orientation",
+	"bear_orientation",
+	"catapult_01_orientation",
+	"horse_orientation",
+	"gladiator_orientation"
 ];
 

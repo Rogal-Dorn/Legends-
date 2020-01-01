@@ -58,22 +58,66 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 				skeletonSummonLevel = 2;
 			}
 
+			local brolevel = bro.getLevel();
+
+			if (bro.getSkills().hasSkill("perk.legend_pacifist"))
+			{
+				brolevel = brolevel / 2;
+			}
+
 			if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Easy)
 			{
-				this.m.Strength +=  3 + ((bro.getLevel() / 4) + (bro.getLevel() - 1)) * 1.5;
+				this.m.Strength +=  3 + ((brolevel / 4) + (brolevel - 1)) * 1.5;
 			}
 			else if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Normal)
 			{
-				this.m.Strength +=  10 + ((bro.getLevel() / 2) + (bro.getLevel() - 1)) * 2;
+				this.m.Strength +=  10 + ((brolevel / 2) + (brolevel - 1)) * 2;
 			}
 			else if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Hard)
 			{
-				this.m.Strength +=  6 + (i / 2) + ((bro.getLevel() / 2) + (pow(bro.getLevel(),1.2)));
+				this.m.Strength +=  6 + (i / 2) + ((brolevel / 2) + (pow(brolevel,1.2)));
 			}
-			else if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+			else if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary )
 			{
-				this.m.Strength +=  6 + i + pow(bro.getLevel(),1.25);
+				this.m.Strength +=  i + (brolevel + (pow(brolevel,1.2)));
 			}
+
+			if (this.Const.LegendMod.Configs.LegendItemScalingEnabled())
+			{
+				local mainhand = bro.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+				local offhand = bro.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
+				local body = bro.getItems().getItemAtSlot(this.Const.ItemSlot.Body);
+				local head = bro.getItems().getItemAtSlot(this.Const.ItemSlot.Head);
+				local mainhandvalue = 0;
+				local offhandvalue = 0;
+				local bodyvalue = 0;
+				local headvalue = 0;
+
+				if (mainhand != null)
+				{
+					mainhandvalue += (mainhand.getSellPrice())  / 1000;
+				}
+
+				if (offhand != null)
+				{
+					offhandvalue += (offhand.getSellPrice()) / 1000;
+				}
+
+				if (body != null)
+				{
+					bodyvalue += (body.getSellPrice()) / 1000;
+				}
+
+				if (head != null)
+				{
+					headvalue += (head.getSellPrice()) / 1000;
+				}
+
+				local gearvalue = mainhandvalue + offhandvalue + bodyvalue + headvalue;
+				this.logInfo("Adding gear strength of " + gearvalue);
+				this.m.Strength += gearvalue ;
+			}
+
 		}
 
 		if  (zombieSummonLevel == 0 && skeletonSummonLevel == 0)
@@ -81,6 +125,25 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 			return
 		}
 
+	//  Scaling based on money and stash - was controversial 
+	//	if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+	//	{
+	//		local items = this.World.Assets.getStash().getItems();
+	//		
+	//		local itemsvalue = 0; 
+	//		foreach( item in items )
+	//		{
+	//			if (item != null)
+	//			{
+	//				itemsvalue += item.getSellPrice();
+	//			}
+	//		}
+	//		this.m.Strength += itemsvalue / 1000;
+	//		this.logInfo("Item power " + itemsvalue);
+	//		local cashvalue = this.World.Assets.getMoney();
+	//		this.logInfo("Gear power " + cashvalue);
+	//		this.m.Strength += cashvalue / 750;
+	//	}
 
 		//When playing a warlock build, we need to account for the summons he can add
 		local stash = this.World.Assets.getStash().getItems();
@@ -295,6 +358,12 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 					break;
 				case 110:
 					image = "figure_player_assassin";
+					break;
+				case 111:
+					image = "figure_player_beggar";
+					break;
+				case 112:
+					image = "figure_player_legion";
 					break;
 			}
 		}

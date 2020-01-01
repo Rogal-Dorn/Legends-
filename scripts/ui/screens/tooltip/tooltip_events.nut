@@ -1063,7 +1063,7 @@ this.tooltip_events <- {
 					{
 						id = 2,
 						type = "description",
-						text = "The amount of coin your mercenary company has. Used to pay every man daily at noon, as well as to hire new people and purchase equipment.\n\nYou currently don\'t pay anyone."
+						text = "The amount of coin your mercenary company has. Used to pay every mercenary daily at noon, as well as to hire new people and purchase equipment.\n\nYou currently don\'t pay anyone."
 					}
 				];
 			}
@@ -1078,7 +1078,7 @@ this.tooltip_events <- {
 					{
 						id = 2,
 						type = "description",
-						text = "The amount of coin your mercenary company has. Used to pay every man daily at noon, as well as to hire new people and purchase equipment.\n\nYou pay out [color=" + this.Const.UI.Color.NegativeValue + "]" + dailyMoney + "[/color] crowns per day. Your [color=" + this.Const.UI.Color.PositiveValue + "]" + money + "[/color] crowns will last you for [color=" + this.Const.UI.Color.PositiveValue + "]" + time + "[/color] more days."
+						text = "The amount of coin your mercenary company has. Used to pay every mercenary daily at noon, as well as to hire new people and purchase equipment.\n\nYou pay out [color=" + this.Const.UI.Color.NegativeValue + "]" + dailyMoney + "[/color] crowns per day. Your [color=" + this.Const.UI.Color.PositiveValue + "]" + money + "[/color] crowns will last you for [color=" + this.Const.UI.Color.PositiveValue + "]" + time + "[/color] more days."
 					}
 				];
 			}
@@ -1093,7 +1093,7 @@ this.tooltip_events <- {
 					{
 						id = 2,
 						type = "description",
-						text = "The amount of coin your mercenary company has. Used to pay every man daily, as well as to hire new men and purchase equipment.\n\nYou pay out [color=" + this.Const.UI.Color.PositiveValue + "]" + dailyMoney + "[/color] crowns per day.\n\n[color=" + this.Const.UI.Color.NegativeValue + "]You have no more crowns to pay your men with! Earn some crowns fast or let some people go before they desert you one by one.[/color]"
+						text = "The amount of coin your mercenary company has. Used to pay every mercenary daily, as well as to hire new people and purchase equipment.\n\nYou pay out [color=" + this.Const.UI.Color.PositiveValue + "]" + dailyMoney + "[/color] crowns per day.\n\n[color=" + this.Const.UI.Color.NegativeValue + "]You have no more crowns to pay your men with! Earn some crowns fast or let some people go before they desert you one by one.[/color]"
 					}
 				];
 			}
@@ -1141,7 +1141,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "The hiring fee will be paid immediately on hiring a man for signing up and proving you can back up your words with coin."
+					text = "The hiring fee will be paid immediately on hiring a mercenary for signing up and proving you can back up your words with coin."
 				}
 			];
 
@@ -1169,7 +1169,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "This fee will be paid immediately on giving this recruit a proper inspection to reveal his character traits, if any."
+					text = "This fee will be paid immediately on giving this recruit a proper inspection to reveal their character traits, if any."
 				}
 			];
 
@@ -1211,7 +1211,7 @@ this.tooltip_events <- {
 					{
 						id = 2,
 						type = "description",
-						text = "The total amount of provisions you carry. The average man requires 2 provisions per day and more on difficult terrain. Your men will eat the provisions closest to expiring first. Running out of provisions will lower morale and will eventually lead to your people deserting you before dying of starvation.\n\nYou use [color=" + this.Const.UI.Color.PositiveValue + "]" + dailyFood + "[/color] provisions per day. Your [color=" + this.Const.UI.Color.PositiveValue + "]" + food + "[/color] provisions will last you for [color=" + this.Const.UI.Color.PositiveValue + "]" + time + "[/color] more days at most. Keep in mind that individual provisions will eventually turn bad!"
+						text = "The total amount of provisions you carry. The average mercenary requires 2 provisions per day, more on difficult terrain or when in reserve. Your mercenaries will eat the provisions closest to expiring first. Running out of provisions will lower morale and will eventually lead to your people deserting you before dying of starvation.\n\nYou use [color=" + this.Const.UI.Color.PositiveValue + "]" + dailyFood + "[/color] provisions per day. Your [color=" + this.Const.UI.Color.PositiveValue + "]" + food + "[/color] provisions will last you for [color=" + this.Const.UI.Color.PositiveValue + "]" + time + "[/color] more days at most. Keep in mind that individual provisions will eventually turn bad!"
 					}
 				];
 			}
@@ -1226,7 +1226,7 @@ this.tooltip_events <- {
 					{
 						id = 2,
 						type = "description",
-						text = "The total amount of provisions you carry. The average man requires 2 provisions per day and more on difficult terrain. Your men will eat the provisions closest to expiring first. Running out of provisions will lower morale and will eventually lead to your people deserting you before dying of starvation.\n\nYou use [color=" + this.Const.UI.Color.PositiveValue + "]" + dailyFood + "[/color] provisions per day.\n\n[color=" + this.Const.UI.Color.NegativeValue + "]You are almost out of provisions to feed your men! Buy new provisions as fast as possible or your men will desert you one by one before they starve![/color]"
+						text = "The total amount of provisions you carry. The average mercenary requires 2 provisions per day and more on difficult terrain. Your mercenaries will eat the provisions closest to expiring first. Running out of provisions will lower morale and will eventually lead to your people deserting you before dying of starvation.\n\nYou use [color=" + this.Const.UI.Color.PositiveValue + "]" + dailyFood + "[/color] provisions per day.\n\n[color=" + this.Const.UI.Color.NegativeValue + "]You are almost out of provisions to feed your company! Buy new provisions as fast as possible or your mercenaries will desert you one by one before they starve![/color]"
 					}
 				];
 			}
@@ -1241,7 +1241,7 @@ this.tooltip_events <- {
 					{
 						id = 2,
 						type = "description",
-						text = "The total amount of provisions you carry. The average man requires 2 provisions per day and more on difficult terrain. Your men will eat the provisions closest to expiring first. Running out of provisions will lower morale and will eventually lead to your people deserting you before dying of starvation.\n\nYou use [color=" + this.Const.UI.Color.PositiveValue + "]" + dailyFood + "[/color] provisions per day.\n\n[color=" + this.Const.UI.Color.NegativeValue + "]You have no more provisions to feed your men! Buy new provisions as fast as possible or your men will desert you one by one before they starve![/color]"
+						text = "The total amount of provisions you carry. The average mercenary requires 2 provisions per day, more on difficult terrain or when in reserve. Your mercenaries will eat the provisions closest to expiring first. Running out of provisions will lower morale and will eventually lead to your people deserting you before dying of starvation.\n\nYou use [color=" + this.Const.UI.Color.PositiveValue + "]" + dailyFood + "[/color] provisions per day.\n\n[color=" + this.Const.UI.Color.NegativeValue + "]You have no more provisions to feed your company! Buy new provisions as fast as possible or your mercenaries will desert you one by one before they starve![/color]"
 					}
 				];
 			}
@@ -1282,7 +1282,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "The amount of provisions a man requires each day. Running out of provisions will lower morale and will eventually lead to your men deserting you before dying of starvation."
+					text = "The amount of provisions a mercenary requires each day. Running out of provisions will lower morale and will eventually lead to your people deserting you before dying of starvation."
 				}
 			];
 
@@ -1716,7 +1716,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Fatigue is gained for every action, like moving or using skills, and when being hit in combat or dodging in melee. It is reduced at a fixed rate of 15 each turn or as much as necessary for a character to start every turn with 15 less than his maximum fatigue. If a character accumulates too much fatigue they may need to rest a turn (i.e. do nothing) before being able to use more specialized skills again."
+					text = "Fatigue is gained for every action, like moving or using skills, and when being hit in combat or dodging in melee. It is reduced at a fixed rate of 15 each turn or as much as necessary for a character to start every turn with 15 less than their maximum fatigue. If a character accumulates too much fatigue they may need to rest a turn (i.e. do nothing) before being able to use more specialized skills again."
 				}
 			];
 
@@ -2117,7 +2117,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Your opponents will be brutal. This is where legends are forged.\n\nEach enemy gains a series of new perks. Zombies with nine lives, battleforged orcs, nimble lindwurms."
+					text = "Your opponents will be brutal. This is where legends are forged.\n\n Every enemy gains a series of new perks. Zombies with poisonous bites, battleforged orcs, overwhelming barbarians, crippling goblins, underdog backstabber thugs, fearsome vampires, muscular stollwurms"
 				}
 			];
 
@@ -2257,6 +2257,20 @@ this.tooltip_events <- {
 					id = 2,
 					type = "description",
 					text = "Not recommended in Legends Beta. Ironman mode disables manual saving. Only a single save will exist for the company, and the game is automatically saved during the game and on exiting it. Losing the whole company means losing the save. Not recommended in while Legends is in Beta due to possible save corruptions.\n\nNote that on weaker computers autosaves may result in the game pausing for a few seconds. "
+				}
+			];
+
+		case "menu-screen.new-campaign.Autosave":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Autosave"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Only disable for the most masochistic playthroughs. No save will exist for the company, the game will not be automatically saved during the game or when exiting it. \n\n Harder than ironman, there can be no alt f4, the entire run must happen in one sitting. "
 				}
 			];
 
@@ -2858,7 +2872,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "This character just leveled up! Find him in your roster, accessible on the worldmap, to raise his attributes and select a perk."
+					text = "This character just leveled up! Find them in your roster, accessible on the worldmap, to raise their attributes and select a perk."
 				}
 			];
 			return result;
@@ -2925,7 +2939,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "The number of experience points gained during the battle from fighting and killing opponents. Gaining enough experience points will allow this man to level up, increase attributes and gain new perks."
+					text = "The number of experience points gained during the battle from fighting and killing opponents. Gaining enough experience points will allow this mercenary to level up, increase attributes and gain new perks."
 				}
 			];
 
@@ -3033,7 +3047,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Characters gain experience as they or their allies slay enemies in battles. If a character has accumulated sufficient experience, he\'ll level up and be able to increase his attributes and pick a perk that grants a unique bonus.\n\nBeyond the 11th character level, characters are veterans and will no longer gain perk points, but can still continue to improve."
+					text = "Characters gain experience as they or their allies slay enemies in battles. If a character has accumulated sufficient experience, they\'ll level up and be able to increase attributes and pick a perk that grants a unique bonus.\n\nBeyond the 11th character level, main characters gain a perk every two levels, and supporting characters gain a perk every five levels."
 				}
 			];
 
@@ -3047,7 +3061,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "The character\'s level measures experience in battle. Characters rise in levels as they gain experience and are able to increase their attributes and gain perks that make them better at the mercenary profession.\n\nBeyond the 11th character level, characters are veterans and will no longer gain perk points, but can still continue to improve."
+					text = "The character\'s level measures experience in battle. Characters rise in levels as they gain experience and are able to increase their attributes and gain perks that make them better at the mercenary profession.\n\nBeyond the 11th character level, main characters gain a perk every two levels, and supporting characters gain a perk every five levels."
 				}
 			];
 
@@ -3061,7 +3075,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "This character has leveled up. Increase his attributes and select a perk!"
+					text = "This character has leveled up. Increase their attributes and select a perk!"
 				}
 			];
 			return result;
@@ -3070,7 +3084,7 @@ this.tooltip_events <- {
 			local text = "This character is currently in the fighting line. Click to toggle character into reserves status."
 			if (entity.isInReserves())
 			{
-				text = "This character is currently in reserves. Click to toggle character into the fighting line. While in reserves, character will only participate in combat if company is under attack."
+				text = "This character is currently in reserves. Click to toggle character into the fighting line. While in reserves, character will eat and drink more supplies, and only participate in combat if company is under attack."
 			}
 
 			return [
@@ -3460,7 +3474,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Make or break camp. While encamped, time will go faster and your men will heal and repair their equipment at a faster rate. However, you\'re also more vulnerable to being caught in a surprise attack."
+					text = "Make or break camp. While encamped, time will go faster and your mercenaries will heal and repair their equipment at a faster rate. You\'ll also be able to make use of any camp tents you have unlocked. However, you\'re also more vulnerable to being caught in a surprise attack."
 				}
 			];
 
@@ -3672,7 +3686,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Hire new men for your mercenary company. The quality and quantity of volunteers depends on the size and type of settlement, as well as your reputation here. Every few days, new people will arrive, and others will travel on."
+					text = "Hire new mercenaries for your company. The quality and quantity of volunteers depends on the size and type of settlement, as well as your reputation here. Every few days, new people will arrive, and others will travel on."
 				}
 			];
 
@@ -3714,7 +3728,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "A meeting point for those of the fighting profession. Have your men train with and learn from experienced fighters here, so you can mold them faster into hardened mercenaries."
+					text = "A meeting point for those of the fighting profession. Have your mercenaries train with and learn from experienced fighters here, so you can mold them faster into hardened mercenaries."
 				}
 			];
 
@@ -3728,7 +3742,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "For the right price, a taxidermist can create useful items from all kinds of trophies you bring him."
+					text = "For the right price, a taxidermist can create useful items from all kinds of trophies you bring them."
 				}
 			];
 
@@ -3756,7 +3770,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Customize the appearance of your men at the barber. Have their hair cut and their beards trimmed or buy dubious potions to lose weight."
+					text = "Customize the appearance of your mercenaries at the barber. Have their hair cut and their beards trimmed or buy dubious potions to change their appearance."
 				}
 			];
 
@@ -3868,7 +3882,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Hire the selected recruit and have him join your roster."
+					text = "Hire the selected recruit and have them join your roster."
 				}
 			];
 
@@ -3882,7 +3896,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Give the selected recruit a proper tryout to reveal his hidden character traits, if any."
+					text = "Give the selected recruit a proper tryout to reveal their hidden character traits, if any."
 				}
 			];
 
@@ -4009,7 +4023,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Have your man participate in a sparring fight with experienced opponents and various fighting styles. The bruises collected and lessons learned will result in [color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color] Experience Gain for the next battle."
+					text = "Have your mercenary participate in a sparring fight with experienced opponents and various fighting styles. The bruises collected and lessons learned will result in [color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color] Experience Gain for the next battle."
 				}
 			];
 
@@ -4023,7 +4037,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Have your man learn valuable lessons and insights from a true veteran of the trade. The knowledge imparted will result in [color=" + this.Const.UI.Color.PositiveValue + "]+35%[/color] Experience Gain for the duration of three battles."
+					text = "Have your mercenary learn valuable lessons and insights from a true veteran of the trade. The knowledge imparted will result in [color=" + this.Const.UI.Color.PositiveValue + "]+35%[/color] Experience Gain for the duration of three battles."
 				}
 			];
 
@@ -4037,7 +4051,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Have your man undergo a rigorous training regimen to shape him into a skilled fighter. The blood and sweat spent today will benefit him in the long run with [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] Experience Gain for the duration of five battles."
+					text = "Have your mercenary undergo a rigorous training regimen to shape them into a skilled fighter. The blood and sweat spent today will benefit your mercenary in the long run with [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] Experience Gain for the duration of five battles."
 				}
 			];
 
@@ -4104,7 +4118,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "The free Lindwurm DLC adds a challenging new beast, a new player banner, as well as a new famed armor, helmet and shield."
+					text = "The free Lindwurm DLC adds a challenging new beast, a new player banner, as well as a new famed armor, helmet and shield. "
 				}
 			];
 
@@ -4114,7 +4128,7 @@ this.tooltip_events <- {
 			}
 			else
 			{
-				ret[1].text += "\n\n[color=" + this.Const.UI.Color.NegativeValue + "]This DLC is missing. It\'s available for free on Steam and GOG![/color]";
+				ret[1].text += "\n\n[color=" + this.Const.UI.Color.NegativeValue + "]This DLC is missing. It\'s available for free on Steam and GOG! [/color] Parts of Legends will not work without this DLC";
 			}
 
 			ret.push({
@@ -4135,7 +4149,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "The Beasts & Exploration DLC adds a variety of new beasts roaming the wilds, a new crafting system to create items from trophies, legendary locations with unique rewards to discover, many new contracts and events, a new system of armor attachments, new weapons, armor and usable items, and more."
+					text = "The Beasts & Exploration DLC adds a variety of new beasts roaming the wilds, a new crafting system to create items from trophies, legendary locations with unique rewards to discover, many new contracts and events, a new system of armor attachments, new weapons, armor and usable items, and more. Legends will not work without this DLC"
 				}
 			];
 
@@ -4145,7 +4159,7 @@ this.tooltip_events <- {
 			}
 			else
 			{
-				ret[1].text += "\n\n[color=" + this.Const.UI.Color.NegativeValue + "]This DLC is missing. It\'s available for purchase on Steam and GOG![/color]";
+				ret[1].text += "\n\n[color=" + this.Const.UI.Color.NegativeValue + "]This DLC is missing. It\'s available for purchase on Steam and GOG! [/color] Legends will not work without this DLC";
 			}
 
 			ret.push({
@@ -4208,7 +4222,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Impacts how connected the water masses are. Default is 4. Small value results in patchy water arund corners of map. larger numbers can create a single large island given a low enough land mass ratio."
+					text = "Impacts how connected the water masses are. Default is 4. Small value results in patchy water around corners of map. larger numbers can create a single large island given a low enough land mass ratio."
 				}
 			];
 
@@ -4292,7 +4306,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Maximum number of Factions. Depending on map size, this will try to add the number of factions on the slider."
+					text = "Maximum number of Factions to try and generate. Depending on map size, this may not add all the factions on the slider."
 				}
 			];
 
@@ -4301,12 +4315,12 @@ this.tooltip_events <- {
 				{
 					id = 1,
 					type = "title",
-					text = "Settlement Visibility"
+					text = "Hide settlements you have not visited"
 				},
 				{
 					id = 2,
 					type = "description",
-					text = "If enabled, all settlements will be hidden at campaign start, giving a small scale start. For the true explorer experience!"
+					text = "If enabled, all settlements will be hidden at campaign start, giving a small scale start. For the true role playing explorer experience!"
 				}
 			];
 		case "mapconfig.stackcitadels":
@@ -4314,7 +4328,7 @@ this.tooltip_events <- {
 				{
 					id = 1,
 					type = "title",
-					text = "Decked Out Citadels"
+					text = "Gaurantee Citadels Have Everything"
 				},
 				{
 					id = 2,
@@ -4327,12 +4341,12 @@ this.tooltip_events <- {
 				{
 					id = 1,
 					type = "title",
-					text = "All Trade Locations"
+					text = "Guarantee All Trade Locations"
 				},
 				{
 					id = 2,
 					type = "description",
-					text = "If enabled, guarentees at least one of each trade location building on the map."
+					text = "If enabled, ensures there is at least one of each trade location building on the map."
 				}
 			];
 
@@ -4341,12 +4355,12 @@ this.tooltip_events <- {
 					{
 						id = 1,
 						type = "title",
-						text = "Dynamic Perk Trees"
+						text = "Recruits have unique perk trees"
 					},
 					{
 						id = 2,
 						type = "description",
-						text = "If enabled, all recruits for hire will have a unique perk tree including new Legends perks. These perk trees are half determined by background, and half randomly chosen from perk groups."
+						text = "If enabled, all recruits for hire will have a unique perk tree including new Legends perks. \n\n Detail: Dynamic perk trees are half determined by background, and half randomly chosen from perk groups. Perk groups align around a theme, and you can see hints about the perks of potential recruits in their background description. Recruits will also have their stats and talents modifed to align with their new perks"
 					}
 				];
 		case "mapconfig.legendgenderequality":
@@ -4354,12 +4368,12 @@ this.tooltip_events <- {
 					{
 						id = 1,
 						type = "title",
-						text = "Battle Sisters"
+						text = "Women can do anything"
 					},
 					{
 						id = 2,
 						type = "description",
-						text = "If enabled, all commanders and many backgrounds will have a chance of being any gender. If disabled there will still be females, but in positions more reflective of historical discrimination."
+						text = "If enabled, all commanders and most backgrounds will have a chance of being any gender. \n\n Detail: If disabled there will still be females, but more rarely and in positions more reflective of historical discrimination."
 					}
 				];
 		case "mapconfig.legendmagic":
@@ -4367,12 +4381,12 @@ this.tooltip_events <- {
 				{
 					id = 1,
 					type = "title",
-					text = "Magic"
+					text = "Runestones and Mysticism"
 				},
 				{
 					id = 2,
 					type = "description",
-					text = "If enabled, low magic is allowed in the world, for most starts this just makes it possible to find vala and rune stones. If disabled, vala will not appear, runes stones will be 10x rarer, and magic commanders have low magic."
+					text = "If enabled, low magic is allowed in the world, this makes it possible to find rare wise women and rune stones. \n\n Detail: If disabled, vala will not appear, runes stones will be 10x rarer. Seer, vala and warlock will lose their mystical perks"
 				}
 			];
 		case "mapconfig.legendarmor":
@@ -4380,12 +4394,12 @@ this.tooltip_events <- {
 				{
 					id = 1,
 					type = "title",
-					text = "Armor layer system"
+					text = "Armors are split into layers"
 				},
 				{
 					id = 2,
 					type = "description",
-					text = "If enabled, armor is replaced with a layering system that allows armor to be compiled together from different layers. Base cloth, chain, plate, tabard, cloak, attachment and finally a rune layer."
+					text = "If enabled, armor is arranged in layers, hundreds of pieces combine into millions of visual combinations. \n\n Detail: Armor is made up of a base cloth layer, chain, plate, tabard, cloak, attachment and finally a rune layer. Each layer can be upgraded individually, allowing flexible armor builds and a e s t h e t i c "
 				}
 			];
 		case "mapconfig.legenddebug":
@@ -4393,7 +4407,7 @@ this.tooltip_events <- {
 				{
 					id = 1,
 					type = "title",
-					text = "Debug"
+					text = "Debug Map"
 				},
 				{
 					id = 2,
@@ -4401,6 +4415,58 @@ this.tooltip_events <- {
 					text = "If enabled, the map will start completely revealed and all enemies and camps will be visible."
 				}
 			];
+		case "mapconfig.legenditemscaling":
+			return [
+					{
+						id = 1,
+						type = "title",
+						text = "Gear included in difficulty calculations"
+					},
+					{
+						id = 2,
+						type = "description",
+						text = "If enabled, the value of your equipped items will increase the combat difficulty. \n\n Detail: 10,000 crowns worth of gear is equal to a new recruit. Only effects mainhand, offhand, body and head. \n\n This is in addition to other difficulty settings."
+					}
+				];
+		case "mapconfig.legendlocationscaling":
+			return [
+					{
+						id = 1,
+						type = "title",
+						text = "Remote areas are more dangerous"
+					},
+					{
+						id = 2,
+						type = "description",
+						text = "If enabled, enemies will be stronger the further they spawn from civilisation. \n\n Detail: Begins at 14 tiles from the nearest town, enemies spawned at 28 tiles will be twice as strong. \n\n This is in addition to other difficulty settings."
+					}
+				];
+		case "mapconfig.legendcampunlock":
+			return [
+					{
+						id = 1,
+						type = "title",
+						text = "Start with all camp activities enabled"
+					},
+					{
+						id = 2,
+						type = "description",
+						text = "If disabled, you will gradually unlock camping activities by visiting towns. Useful for first playthroughs. \n\n Detail: skips the camp unlock events and ambition, you still need to buy upgrades. "
+					}
+				];
+		case "mapconfig.legendrecruitscaling":
+			return [
+					{
+						id = 1,
+						type = "title",
+						text = "Recruits improve with you"
+					},
+					{
+						id = 2,
+						type = "description",
+						text = "If enabled, new recruits will gain levels based on the levels in your party and your renown in the world. \n\n  Details: The maximum level of recruits is increased by half the average level of mercs in your company, averaged with your reputation divided by 1,000. \n\n For example: if your company were all level 10, and your renown was 10,000, new recruits could gain up to 5 levels. \n\n This in addition to normal recruit level variance. "
+					}
+				];
 		case "camp.commander":
 		case "camp.rest":
 		case "camp.repair":

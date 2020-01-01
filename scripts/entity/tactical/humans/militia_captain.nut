@@ -41,9 +41,15 @@ this.militia_captain <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.add(this.new("scripts/skills/actives/recover_skill"));
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 			{
-			this.m.Hitpoints = b.Hitpoints * 2;
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_composure"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));
+			this.m.Skills.add(this.new("scripts/skills/actives/rotation"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_shield_skill"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_shield_push"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_smashing_shields"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_back_to_basics"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_shield_bash"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_full_force"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
 			}
 
@@ -128,12 +134,12 @@ this.militia_captain <- this.inherit("scripts/entity/tactical/human", {
 			{
 				local chains = [
 					[0, ""],
-					[1, "chain/legend_armor_mail_shirt"],
-					[1, "chain/legend_armor_mail_shirt_simple"],
-					[0, "chain/legend_armor_rusty_mail_shirt"],
+					[2, "chain/legend_armor_mail_shirt"],
+					[0, "chain/legend_armor_mail_shirt_simple"],
+					[1, "chain/legend_armor_rusty_mail_shirt"],
 					[0, "chain/legend_armor_ancient_double_mail"],
 					[0, "chain/legend_armor_ancient_mail"],
-					[1, "chain/legend_armor_basic_mail"],
+					[0, "chain/legend_armor_basic_mail"],
 					[0, "chain/legend_armor_hauberk"],
 					[0, "chain/legend_armor_hauberk_full"],
 					[0, "chain/legend_armor_hauberk_sleevless"],
@@ -142,7 +148,7 @@ this.militia_captain <- this.inherit("scripts/entity/tactical/human", {
 					[0, "chain/legend_armor_reinforced_rotten_mail_shirt"],
 					[0, "chain/legend_armor_reinforced_worn_mail"],
 					[0, "chain/legend_armor_reinforced_worn_mail_shirt"],
-					[0, "chain/legend_armor_short_mail"]
+					[1, "chain/legend_armor_short_mail"]
 				]
 
 				local chain = this.Const.World.Common.pickLegendArmor(chains)
@@ -153,21 +159,21 @@ this.militia_captain <- this.inherit("scripts/entity/tactical/human", {
 
 				local plates = [
 					[0, ""],
-					[0, "plate/legend_armor_leather_brigandine"],
+					[2, "plate/legend_armor_leather_brigandine"],
 					[0, "plate/legend_armor_leather_brigandine_hardened"],
 					[0, "plate/legend_armor_leather_brigandine_hardened_full"],
 					[0, "plate/legend_armor_leather_jacket"],
 					[0, "plate/legend_armor_leather_jacket_simple"],
-					[0, "plate/legend_armor_leather_lamellar"],
+					[2, "plate/legend_armor_leather_lamellar"],
 					[0, "plate/legend_armor_leather_lamellar_harness_heavy"],
-					[0, "plate/legend_armor_leather_lamellar_harness_reinforced"],
+					[1, "plate/legend_armor_leather_lamellar_harness_reinforced"],
 					[0, "plate/legend_armor_leather_lamellar_heavy"],
 					[0, "plate/legend_armor_leather_lamellar_reinforced"],
 					[0, "plate/legend_armor_leather_noble"],
 					[1, "plate/legend_armor_leather_padded"],
 					[0, "plate/legend_armor_leather_riveted"],
 					[0, "plate/legend_armor_leather_riveted_light"],
-					[0, "plate/legend_armor_leather_scale"],
+					[4, "plate/legend_armor_leather_scale"],
 					[0, "plate/legend_armor_plate_ancient_chest"],
 					[0, "plate/legend_armor_plate_ancient_harness"],
 					[0, "plate/legend_armor_plate_ancient_mail"],

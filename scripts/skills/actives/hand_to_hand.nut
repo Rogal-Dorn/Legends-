@@ -31,7 +31,7 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 		this.m.InjuriesOnHead = this.Const.Injury.BluntHead;
 		this.m.DirectDamageMult = 0.1;
 		this.m.ActionPointCost = 4;
-		this.m.FatigueCost = 20;
+		this.m.FatigueCost = 10;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 1;
 	}
@@ -173,11 +173,23 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 				damageMax += avgMax;
 			}
 
-			if (this.getContainer().hasSkill("background.brawler") || this.getContainer().hasSkill("background.legend_commander_berserker" || this.getContainer().hasSkill("background.legend_berserker")) )
+
+			if (damageMin > 50)
 			{
-				damageMin = damageMin * 1.25;
-				damageMax = damageMax * 1.25;
+			local minMod = (damageMin - 50);
+			local minFalloff = this.Math.pow(minMod, 0.5);
+			damageMin = 50 + minFalloff;
 			}
+
+			if (damageMax > 50)
+			{
+			local maxMod = (damageMax - 50);
+			local maxFalloff = this.Math.pow(maxMod, 0.5);
+			damageMax = 50 + maxFalloff;
+			}
+
+			
+
 
 			if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_muscularity"))
 			{
@@ -185,9 +197,16 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 				damageMax += muscularity;
 			}
 
+			if (this.getContainer().hasSkill("background.brawler") || this.getContainer().hasSkill("background.legend_commander_berserker" || this.getContainer().hasSkill("background.legend_berserker")) )
+			{
+				damageMin = damageMin * 1.25;
+				damageMax = damageMax * 1.25;
+			}
 			_properties.DamageRegularMin += this.Math.floor(damageMin);
 			_properties.DamageRegularMax += this.Math.floor(damageMax);
-			_properties.MeleeSkill -= 10;
+			_properties.MeleeSkill += _properties.IsSpecializedInFists ? 10 : -10;
+
+
 			this.m.DirectDamageMult = _properties.IsSpecializedInFists ? 0.5 : 0.1;
 		}
 	}

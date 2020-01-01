@@ -83,7 +83,8 @@ this.new_legend_campaign_menu_module <- this.inherit("scripts/ui/screens/ui_modu
 			SwampsMult = _settings[19] / 100.0 ,
 			MountainsMult = _settings[20] / 100.0,
 			Debug = _settings[21],
-			Campaign = _settings[22]
+			Campaign = _settings[22],
+			Autosave = _settings[23]
 		};
 
 		if (this.m.OnStartButtonPressedListener != null)

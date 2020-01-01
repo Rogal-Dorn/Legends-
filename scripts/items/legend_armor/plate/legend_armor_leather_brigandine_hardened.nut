@@ -16,10 +16,10 @@ this.legend_armor_leather_brigandine_hardened <- this.inherit("scripts/items/leg
 		this.m.SpriteBack = "bust_legend_leather_brigandine_hardened";
 		this.m.SpriteDamagedBack = "bust_legend_leather_brigandine_hardened_damaged";
 		this.m.SpriteCorpseBack = "bust_legend_leather_brigandine_hardened_dead";
-		this.m.Value = 2800;
+		this.m.Value = 1750;
 		this.m.Condition = 125;
 		this.m.ConditionMax = 125;
-		this.m.StaminaModifier = -13;
+		this.m.StaminaModifier = -17;
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
 	}
 

@@ -84,7 +84,22 @@ this.send_orc_marauders_action <- this.inherit("scripts/factions/faction_action"
 		local settlement = this.pickWeightedRandom(settlements);
 		settlement.setLastSpawnTimeToNow();
 		local mult = this.World.FactionManager.isGreenskinInvasion() ? 1.1 : 1.0;
-		local party = this.getFaction().spawnEntity(settlement.getTile(), "Orc Marauders", false, this.Const.World.Spawn.OrcRaiders, this.Math.rand(75, 120) * this.getReputationToDifficultyLightMult() * mult);
+		if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+			{
+			local mult = this.World.FactionManager.isGreenskinInvasion() ? 1.2 : 1.0;
+			}
+		local rand = this.Math.rand(75, 120);
+	//	local nearestOrcs = this.getNearestLocationTo(origin, this.World.FactionManager.getFactionOfType(this.Const.FactionType.Orcs).getSettlements());
+	//		if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary && nearestOrcs > 28)
+	//		{
+	//			rand *= nearestOrcs / 28.0;
+	//		}
+		local distanceToNextSettlement = this.getDistanceToSettlements(settlement.getTile());
+			if (this.Const.LegendMod.Configs.LegendLocationScalingEnabled() && distanceToNextSettlement > 14)
+			{
+				rand *= distanceToNextSettlement / 14.0;
+			}
+		local party = this.getFaction().spawnEntity(settlement.getTile(), "Orc Marauders", false, this.Const.World.Spawn.OrcRaiders, rand * this.getReputationToDifficultyLightMult() * mult);
 		party.getSprite("banner").setBrush(settlement.getBanner());
 		party.setDescription("A band of menacing orcs, greenskinned and towering any man.");
 		party.getLoot().ArmorParts = this.Math.rand(0, 15);

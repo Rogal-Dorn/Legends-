@@ -119,8 +119,8 @@ this.bandit_raider_low <- this.inherit("scripts/entity/tactical/enemies/bandit_r
 		{
 			local cloths = [
 				[0, ""],
-				[1, "cloth/legend_gambeson"],
-				[0, "cloth/legend_gambeson_plain"],
+				[0, "cloth/legend_gambeson"],
+				[3, "cloth/legend_gambeson_plain"],
 				[0, "cloth/legend_gambeson_wolf"],
 				[1, "cloth/legend_padded_surcoat"],
 				[0, "cloth/legend_robes"],
@@ -140,12 +140,12 @@ this.bandit_raider_low <- this.inherit("scripts/entity/tactical/enemies/bandit_r
 			{
 				local chains = [
 					[0, ""],
-					[1, "chain/legend_armor_mail_shirt"],
+					[0, "chain/legend_armor_mail_shirt"],
 					[1, "chain/legend_armor_mail_shirt_simple"],
 					[1, "chain/legend_armor_rusty_mail_shirt"],
 					[0, "chain/legend_armor_ancient_double_mail"],
 					[0, "chain/legend_armor_ancient_mail"],
-					[1, "chain/legend_armor_basic_mail"],
+					[0, "chain/legend_armor_basic_mail"],
 					[0, "chain/legend_armor_hauberk"],
 					[0, "chain/legend_armor_hauberk_full"],
 					[0, "chain/legend_armor_hauberk_sleevless"],

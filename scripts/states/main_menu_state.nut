@@ -213,6 +213,10 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_demon_hound"));
 					break;
 
+				case 40:
+					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_wall_battle"));
+					break;
+
 				default:
 					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_combat_basics"));
 					break;
@@ -572,6 +576,11 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 				id = 3,
 				name = "A Walk in the Woods",
 				description = "[p=c][img]gfx/ui/events/event_127.png[/img][/p]\n[p=c]A possible late game encounter in enemy composition and equipment available. Difficult.[/p]"
+			},
+			{
+				id = 40,
+				name = "Camp battle (Experiment)",
+				description = "[p=c][img]gfx/ui/events/event_05.png[/img][/p]\n[p=c]Taking the fight to an enemy may come with disadvantages, trial of wall combat[/p]"
 			}
 		];
 

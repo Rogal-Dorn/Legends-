@@ -40,7 +40,8 @@ this.legend_peasant_poacher <- this.inherit("scripts/entity/tactical/human", {
 			{
 			this.m.Hitpoints = b.Hitpoints * 1.5;
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_overwhelm"));
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_ballistics"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_crippling_strikes"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
 			}
 	}

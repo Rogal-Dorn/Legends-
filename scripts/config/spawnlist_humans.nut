@@ -44,11 +44,48 @@ gt.Const.World.Spawn.Peasants <-
 	MinR = 30,
 	Troops = [
 		{
-			Weight = 100,
+			Weight = 90,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Peasant,
 					Cost = 5
+				}
+			]
+		}
+	{
+			Weight = 10,
+			MinR = 0.50 * 160,
+			Types =
+			[
+				{
+					Type = this.Const.World.Spawn.Troops.LegendPeasantButcher,
+					Cost = 15,
+					Roll = true
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendPeasantMinstrel,
+					Cost = 15,
+					Roll = true
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendPeasantWoodsman,
+					Cost = 15,
+					Roll = true
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendPeasantMiner,
+					Cost = 15,
+					Roll = true
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendPeasantMonk,
+					Cost = 20,
+					Roll = true
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendPeasantFarmhand,
+					Cost = 15,
+					Roll = true
 				}
 			]
 		}
@@ -151,7 +188,7 @@ gt.Const.World.Spawn.PeasantsArmed <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendPeasantSquire,
-					Cost = 30
+					Cost = 20
 				}
 			]
 		},
@@ -313,11 +350,48 @@ gt.Const.World.Spawn.Militia <-
 			]
 		},
 		{
-			Weight = 10,
+			Weight = 9,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.MilitiaCaptain,
 					Cost = 20
+				}
+			]
+		}
+		{
+			Weight = 1,
+			MinR = 0.50 * 585,
+			Types =
+			[
+				{
+					Type = this.Const.World.Spawn.Troops.LegendPeasantButcher,
+					Cost = 15,
+					Roll = true
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendPeasantMinstrel,
+					Cost = 15,
+					Roll = true
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendPeasantWoodsman,
+					Cost = 15,
+					Roll = true
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendPeasantMiner,
+					Cost = 15,
+					Roll = true
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendPeasantMonk,
+					Cost = 20,
+					Roll = true
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendPeasantFarmhand,
+					Cost = 15,
+					Roll = true
 				}
 			]
 		}

@@ -32,6 +32,15 @@ this.militia_ranged <- this.inherit("scripts/entity/tactical/human", {
 		this.getSprite("accessory_special").setBrush("bust_militia_band_01");
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_bullseye"));
 		this.m.Skills.add(this.new("scripts/skills/actives/recover_skill"));
+			if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+			{
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_shortbow_skill"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_shortbow_damage"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_crippling_strikes"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_lone_wolf"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_pathfinder"));
+			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
+			}
 	}
 
 	function assignRandomEquipment()

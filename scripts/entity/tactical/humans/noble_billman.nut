@@ -43,7 +43,10 @@ this.noble_billman <- this.inherit("scripts/entity/tactical/human", {
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 			{
 			this.m.Hitpoints = b.Hitpoints * 2;
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_coup_de_grace"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_feint"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_back_to_basics"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_full_force"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_berserk"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
 			}
