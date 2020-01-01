@@ -2321,5 +2321,5 @@ Fixes pacifist scaling not applying correctly
 Base Cost of hiring peddler increased from 60 to 600, their daily wage also doubles. They gain Crossbow skills instead of Slings 
 Donkeys gain a number of perks, Bags and Belts, Alert, Relentless, Peaceful, Pacifist and Blend In. Skills reordered to allow full peaceful builds or full combat builds. 
 Hedgeknights regain indestructible, martyr and trained, also swap hammer for flail. 
-Hedgeknights, Squires, Assassins, barbarians, bastards, adventurous nobles, and wildlings have their hiring costs increased due to having great stats due to dynamic perks.  
+Hedgeknights, Squires, Assassins, barbarians, bastards, adventurous nobles, and wildlings have their hiring costs increased due to having great stats due to dynamic perks.  full balance to come, these were just big outliers 
 Stables no longer generate 
