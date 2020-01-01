@@ -71,6 +71,7 @@ this.thief_background <- this.inherit("scripts/skills/backgrounds/character_back
 
 		this.m.IsLowborn = true;
 		this.m.IsOutlawBackground = true;
+		this.m.Alignment = this.Const.LegendMod.Alignment.Cruel;
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[1];
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[2];
@@ -333,17 +334,6 @@ this.thief_background <- this.inherit("scripts/skills/backgrounds/character_back
 		else if (r == 1)
 		{
 			items.equip(this.new("scripts/items/helmets/headscarf"));
-		}
-	}
-	function setAdditionalRecruitmentLevels()
-	{
-		if(this.World.Assets.getMoralReputation() < 20)  //checks if the player is chivalrous
-		{
-			this.character_background.setAdditionalRecruitmentLevels();	
-		}
-		else 
-		{
-			return 0;
 		}
 	}
 });

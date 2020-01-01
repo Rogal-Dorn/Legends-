@@ -39,6 +39,7 @@ this.vagabond_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.Body = "bust_naked_body_00";
 		this.m.IsLowborn = true;
 		this.m.IsOutlawBackground = true;
+		this.m.Alignment = this.Const.LegendMod.Alignment.Cruel;
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[1];
 		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[1];
@@ -281,17 +282,6 @@ this.vagabond_background <- this.inherit("scripts/skills/backgrounds/character_b
 		else if (r == 1)
 		{
 			items.equip(this.new("scripts/items/helmets/straw_hat"));
-		}
-	}
-	function setAdditionalRecruitmentLevels()
-	{
-		if(this.World.Assets.getMoralReputation() < 20 )  //checks if the player is chivalrous
-		{
-			this.character_background.setAdditionalRecruitmentLevels();	
-		}
-		else 
-		{
-			return 0;
 		}
 	}
 });

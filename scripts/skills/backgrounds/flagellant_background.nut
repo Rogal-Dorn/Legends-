@@ -33,6 +33,7 @@ this.flagellant_background <- this.inherit("scripts/skills/backgrounds/character
 		this.m.Body = "bust_naked_body_00";
 		this.m.IsOffendedByViolence = true;
 		this.m.IsCrusaderRecruitBackground = true;
+		this.m.Alignment = this.Const.LegendMod.Alignment.Saintly;
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[1];
 		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[1];
 		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[1];
@@ -276,18 +277,6 @@ this.flagellant_background <- this.inherit("scripts/skills/backgrounds/character
 		if (r == 0)
 		{
 			items.equip(this.new("scripts/items/helmets/hood"));
-		}
-	}
-
-	function setAdditionalRecruitmentLevels()
-	{
-		if(this.World.Assets.getMoralReputation() > 90)  //checks if the player is chivalrous
-		{
-			this.character_background.setAdditionalRecruitmentLevels();	
-		}
-		else 
-		{
-			return 0;
 		}
 	}
 });

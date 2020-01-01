@@ -59,6 +59,7 @@ this.squire_background <- this.inherit("scripts/skills/backgrounds/character_bac
 		this.m.IsRangerRecruitBackground = true;
 		this.m.IsCrusaderRecruitBackground = true;
 		this.m.IsEducatedBackground = true;
+		this.m.Alignment = this.Const.LegendMod.Alignment.Chivalrous;
 		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[1];
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[1];
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
@@ -373,17 +374,6 @@ this.squire_background <- this.inherit("scripts/skills/backgrounds/character_bac
 		else if (r == 3)
 		{
 			items.equip(this.new("scripts/items/helmets/open_leather_cap"));
-		}
-	}
-	function setAdditionalRecruitmentLevels()
-	{
-		if(this.World.Assets.getMoralReputation() > 80)  //checks if the player is chivalrous
-		{
-			this.character_background.setAdditionalRecruitmentLevels();	
-		}
-		else 
-		{
-			return 0;
 		}
 	}
 });

@@ -51,6 +51,7 @@ this.poacher_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.IsLowborn = true;
 		this.m.IsOutlawBackground = true;
 		this.m.IsRangerRecruitBackground = true;
+		this.m.Alignment = this.Const.LegendMod.Alignment.Cruel;
 		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[1];
 		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[2];
 		this.m.Modifiers.Fletching = this.Const.LegendMod.ResourceModifiers.Fletching[1];
@@ -390,18 +391,6 @@ this.poacher_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		if (r == 0)
 		{
 			items.equip(this.new("scripts/items/helmets/hood"));
-		}
-	}
-
-	function setAdditionalRecruitmentLevels()
-	{
-		if(this.World.Assets.getMoralReputation() < 20 )  //checks if the player is chivalrous
-		{
-			this.character_background.setAdditionalRecruitmentLevels();	
-		}
-		else 
-		{
-			return 0;
 		}
 	}
 });

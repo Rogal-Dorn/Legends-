@@ -72,6 +72,7 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		}
 
 		this.m.IsOutlawBackground = true;
+		this.m.Alignment = this.Const.LegendMod.Alignment.Cruel;
 		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[2];
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[1];
 		this.m.Modifiers.MedConsumption = this.Const.LegendMod.ResourceModifiers.MedConsumption[1];
@@ -350,18 +351,5 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			items.equip(this.new("scripts/items/helmets/hood"));
 		}
 	}
-
-	function setAdditionalRecruitmentLevels()
-	{
-		if(this.World.Assets.getMoralReputation() < 20)  //checks if the player is chivalrous
-		{
-			this.character_background.setAdditionalRecruitmentLevels();	
-		}
-		else 
-		{
-			return 0;
-		}
-	}
-
 });
 
