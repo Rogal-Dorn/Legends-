@@ -181,6 +181,16 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		return this.m.Modifiers;
 	}
 
+	function getAlignmentMin()
+	{
+		return this.m.AlignmentMin;
+	}
+
+	function getAlignmentMax()
+	{
+		return this.m.AlignmentMax;
+	}
+
 	function create()
 	{
 		this.m.Type = this.Const.SkillType.Background | this.Const.SkillType.Trait;
@@ -1047,9 +1057,9 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		if(this.Const.LegendMod.Configs.LegendRecruitScalingEnabled())
 		{
 			//When we do alignment checks if our reputation isn't beating the required morality, then we return 0
-			local actor = this.getContainer.getActor();
-			local broAlignmentMin = actor.m.AlignmentMin;
-			local broAlignmentMax = actor.m.AlignmentMax;
+			local actor = this.getContainer().getActor();
+			local broAlignmentMin = actor.m.Background.getAlignmentMin();
+			local broAlignmentMax = actor.m.Background.getAlignmentMax();
 
 			local currentReputation = this.World.Assets.getMoralReputation();
 
