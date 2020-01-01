@@ -2303,3 +2303,4 @@ Fixes hollenhounds teleporting before taking the second part of damage from spli
 Fixes recruit scaling only happening on legendary and not when config is checked (Mwah)
 Changes to how recruit scaling is handled (Mwah)
 Fixes Alcohol Brewing perk screwing up when taken (Mwah)
+Pacifist actually lowers bro level in calculations (Mwah)

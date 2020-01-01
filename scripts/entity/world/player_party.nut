@@ -62,24 +62,24 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 
 			if (bro.getSkills().hasSkill("perk.perk.legend_pacifist"))
 			{
-			brolevel = brolevel / 2;
+				brolevel = brolevel / 2;
 			}
 
 			if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Easy)
 			{
-				this.m.Strength +=  3 + ((bro.getLevel() / 4) + (bro.getLevel() - 1)) * 1.5;
+				this.m.Strength +=  3 + ((brolevel / 4) + (brolevel - 1)) * 1.5;
 			}
 			else if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Normal)
 			{
-				this.m.Strength +=  10 + ((bro.getLevel() / 2) + (bro.getLevel() - 1)) * 2;
+				this.m.Strength +=  10 + ((brolevel / 2) + (brolevel - 1)) * 2;
 			}
 			else if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Hard)
 			{
-				this.m.Strength +=  6 + (i / 2) + ((bro.getLevel() / 2) + (pow(bro.getLevel(),1.2)));
+				this.m.Strength +=  6 + (i / 2) + ((brolevel / 2) + (pow(brolevel,1.2)));
 			}
 			else if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary )
 			{
-				this.m.Strength +=  i + (bro.getLevel() + (pow(bro.getLevel(),1.2)));
+				this.m.Strength +=  i + (brolevel + (pow(brolevel,1.2)));
 			}
 
 			if (this.Const.LegendMod.Configs.LegendItemScalingEnabled())
