@@ -2285,8 +2285,8 @@ Bandit raiders get slightly less armor
 Item scaling adjusted so that 10,000 crowns is equal to 1 recruit 
 Added Orc named Axe (Salty) and Named Flail (Karl)
 
-13.0.0.29
-Fixes drums of life/war tooltips on perk tree && on skill (Mwah)
+13.0.0.29 bugfixes from .28 
+
 Militia can now get aprons as previously intended (Mwah)
 Bribe skill should properly round down to avoid weird gold fractions (Mwah)
 Fixes nets not being able to reach 4 ammo even with both net perks (Mwah)
