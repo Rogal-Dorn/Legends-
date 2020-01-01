@@ -135,7 +135,7 @@ this.deliver_money_contract <- this.inherit("scripts/contracts/contract", {
 			function start()
 			{
 				this.Contract.m.BulletpointsObjectives = [
-					"Deliver coins to %recipient% in %objective% about %days% to the %direction% by road"
+					"Deliver coins to %recipient% in %objective% about %days% to the %direction% by road. Do not spend it on the way."
 				];
 
 				if (this.Math.rand(1, 100) <= this.Const.Contracts.Settings.IntroChance)
