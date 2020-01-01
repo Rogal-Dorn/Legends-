@@ -39,6 +39,12 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		]);
 		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
 		bros[0].getSkills().add(this.new("scripts/skills/traits/cultist_fanatic_trait"));
+		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_roster_1"));
+		if (this.Const.LegendMod.Configs.LegendMagicEnabled())
+		{
+			bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_brink_of_death"));
+			bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_siphon"));
+		}
 		bros[0].getTags().set("IsPlayerCharacter", true);
 		bros[0].setPlaceInFormation(2);
 		bros[0].setVeteranPerks(2);	

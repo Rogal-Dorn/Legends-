@@ -257,7 +257,7 @@ this.assassin_background <- this.inherit("scripts/skills/backgrounds/character_b
 	{
 		this.character_background.onAdded();
 		local actor = this.getContainer().getActor();
-		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_hidden"));
+		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_hidden"));
 		this.m.Container.add(this.new("scripts/skills/traits/quick_trait"));
 		this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
 

@@ -52,6 +52,7 @@ this.legends_sisterhood_scenario <- this.inherit("scripts/scenarios/world/starti
 			"legend_vala_commander_background"
 		]);
 		bros[4].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
+		bros[4].getSkills().add(this.new("scripts/skills/perks/perk_legend_roster_1"));
 		bros[4].getTags().set("IsPlayerCharacter", true);
 		bros[4].setPlaceInFormation(13);
 		bros[4].setVeteranPerks(2);	
