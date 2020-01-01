@@ -2306,4 +2306,18 @@ Fixes Alcohol Brewing perk screwing up when taken (Mwah)
 Pacifist actually lowers bro level in calculations (Mwah)
 
 13.0.0.29b
-Fixes lots of character background screw ups (Mwah) (Also caused by him)
+Fixes errors in previous build (Mwah mah mia!) (Also caused by him)
+
+Trader scenario changes:
+*No longer a Trader player character, instead has 1 peddler and 1 caravan hand who regains vanilla talent stars and scimitar. 
+*All non combat backgrounds they hire are granted the Pacifist perk so they are content in reserve and contribute less to scaling
+*Combat backgrounds are not given pacifist, but charge twice as much to defend you. 
+*Peddlers and Donkeys cost 10% less to hire. 
+*They begin with twice the money of other scenarios 
+
+New Contract - Coin Delivery (experimental).  Deliver a large amount of crowns and gain half the ammount on completion. 
+Pacifists now dislike being in more than 1/3 fights. 
+Fixes pacifist scaling not applying correctly 
+Base Cost of hiring peddler increased from 60 to 600, their daily wage also doubles. They gain Crossbow skills instead of Slings 
+Donkeys gain a number of perks, Bags and Belts, Alert, Relentless, Peaceful, Pacifist and Blend In. Skills reordered to allow full peaceful builds or full combat builds. 
+ 
