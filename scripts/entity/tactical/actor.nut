@@ -28,6 +28,9 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 		AttackedCount = [],
 		BloodiedCount = 0,
 		RiposteSkillCounter = 0,
+		FlatOnKillOtherActorModifier = 0,           // These two variables only affect onOtherActorDeath
+		PercentOnKillOtherActorModifier = 1.0,      // To properly make it harder for enemies to pass resolve check ->
+                                                    // FlatOnKill should be negative, PercentOnKill should be between 0 and 1 non-inclusive
 		ActionPointCosts = this.Const.DefaultMovementAPCost,
 		FatigueCosts = this.Const.DefaultMovementFatigueCost,
 		LevelActionPointCost = this.Const.Movement.LevelDifferenceActionPointCost,
@@ -521,6 +524,26 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 	function setTitle( _value )
 	{
 		this.m.Title = _value;
+	}
+
+	function getPercentOnKillOtherActorModifier()
+	{
+		return this.m.PercentOnKillOtherActorModifier;
+	}
+
+	function setPercentOnKillOtherActorModifier( _value )
+	{
+		this.m.PercentOnKillOtherActorModifier = _value;
+	}
+
+	function getFlatOnKillOtherActorModifier()
+	{
+		return this.m.FlatOnKillOtherActorModifier;
+	}
+
+	function setFlatOnKillOtherActorModifier( _value )
+	{
+		this.m.FlatOnKillOtherActorModifier = _value;
 	}
 
 	function isTurnDone()
@@ -1726,7 +1749,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 
 		if (_victim.getFaction() == this.getFaction() && _victim.getCurrentProperties().TargetAttractionMult > 0.5 && this.getCurrentProperties().IsAffectedByDyingAllies)
 		{
-			local difficulty = this.Const.Morale.AllyKilledBaseDifficulty - _victim.getXPValue() * this.Const.Morale.AllyKilledXPMult + this.Math.pow(_victim.getTile().getDistanceTo(this.getTile()), this.Const.Morale.AllyKilledDistancePow);
+			local difficulty = this.Math.floor((this.Const.Morale.AllyKilledBaseDifficulty - _victim.getXPValue() * this.Const.Morale.AllyKilledXPMult + this.Math.pow(_victim.getTile().getDistanceTo(this.getTile()), this.Const.Morale.AllyKilledDistancePow)) * _killer.getPercentOnKillOtherActorModifier()) + _killer.getFlatOnKillOtherActorModifier();
 			this.checkMorale(-1, difficulty, this.Const.MoraleCheckType.Default, "", true);
 		}
 		else if (this.getAlliedFactions().find(_victim.getFaction()) == null)
