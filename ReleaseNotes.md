@@ -2334,4 +2334,5 @@ New Perk - Pack Leader - Unlocks the ability to hold dog items in your bags and 
 13.0.0.30
 Should fix Legendary armors not getting Rune slots (Mwah)
 Changes how we handle resolve checks on character deaths [Same as before but now can have extra modifiers] (Mwah)
-Should fix the catapult skill showing up without actually having a catapult available
+Should fix the catapult skill showing up without actually having a catapult available (Mwah)
+Fixes named pole/ranged-flails not having 2 range attacks like intended (Mwah)
