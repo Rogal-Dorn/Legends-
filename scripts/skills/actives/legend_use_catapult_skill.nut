@@ -159,6 +159,10 @@ this.legend_use_catapult_skill <- this.inherit("scripts/skills/skill", {
 			{
 				return false;
 			}
+			else
+			{
+				return true;
+			}
 		}
 
 		return this.skill.isHidden();
