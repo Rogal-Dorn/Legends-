@@ -531,9 +531,9 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 		return this.m.PercentOnKillOtherActorModifier;
 	}
 
-	function setPercentOnKillOtherActorModifier( _value )
+	function modifyPercentOnKillOtherActorModifier( _value )
 	{
-		this.m.PercentOnKillOtherActorModifier = _value;
+		this.m.PercentOnKillOtherActorModifier *= _value;
 	}
 
 	function getFlatOnKillOtherActorModifier()
@@ -541,9 +541,9 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 		return this.m.FlatOnKillOtherActorModifier;
 	}
 
-	function setFlatOnKillOtherActorModifier( _value )
+	function modifyFlatOnKillOtherActorModifier( _value )
 	{
-		this.m.FlatOnKillOtherActorModifier = _value;
+		this.m.FlatOnKillOtherActorModifier += _value;
 	}
 
 	function isTurnDone()
