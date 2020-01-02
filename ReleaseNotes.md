@@ -2331,3 +2331,5 @@ New Perk - Dog Breeder - Unlocks the ability to breed dogs in the crafting tent.
 New Perk - Dog Whisperer - Any dog you unleash gains Colossus, Fortified Mind and Underdog 
 New Perk - Pack Leader - Unlocks the ability to hold dog items in your bags and use them in battle. 
 
+13.0.0.30
+Should fix Legendary armors not getting Rune slots (Mwah)
