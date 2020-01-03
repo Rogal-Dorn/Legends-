@@ -369,5 +369,12 @@ this.legends_risen_legion <- this.inherit("scripts/scenarios/world/starting_scen
 
 	}
 
+	//most likely should be moved elsewhere, but as of now this is probably the best place to put it
+	function onCombatFinished()
+	{
+		this.World.FactionManager.makeUndeadFriendlyToPlayer();
+		this.World.FactionManager.makeNoblesUnfriendlyToPlayer();
+	}
+
 });
 
