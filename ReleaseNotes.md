@@ -2341,3 +2341,4 @@ Famed voulge gets min/max (1/2 tile) range indicator, like other reach weapons (
 Origin Buried Castle Event fix (Mwah)
 Fixes warhound_item error (Mwah)
 Fixes bear not getting berserk perk and screwing it up [Not the ranger bear] (Mwah)
+Fixes bear sometimes having null item drop (Mwah)

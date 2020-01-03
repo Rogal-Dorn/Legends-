@@ -173,8 +173,10 @@ this.legend_bear <- this.inherit("scripts/entity/tactical/actor", {
 					loot = this.new("scripts/items/misc/furs_item");
 				}
 
-
-				loot.drop(_tile);
+				if (loot != null)
+				{
+					loot.drop(_tile);
+				}
 			}
 
 			if (this.Math.rand(1, 100) <= 66)
