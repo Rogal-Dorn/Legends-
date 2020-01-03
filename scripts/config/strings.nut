@@ -1389,7 +1389,10 @@ gt.Const.Strings.PerkName <- {
 	LegendPacifist = "Pacifist",
 	LegendMagicMissile = "Magic Missile",
 	LegendHorseMovement = "Horse Movement",
-	LegendCampCook = "Camp Cooking"
+	LegendCampCook = "Camp Cooking",
+	LegendPackleader = "Pack Leader",
+	LegendDogWhisperer = "Dog Whisperer",
+	LegendDogBreeder = "Dog Breeder"
 };
 gt.Const.Strings.PerkDescription <- {
 	Relentless = "Don\'t slow down! At all times your Initiative is reduced only by [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] of your accumulated Fatigue, instead of all of it. \n[color=#0b0084]From the Fit perk group[/color]",
@@ -1596,7 +1599,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendSpecialistSickleSkill = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+12[/color] melee skill and [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] armor piercing while using a Sickle or Notched Blade. 25% of this skill applies to one handed swords \n[color=#0b0084]From the Sickle perk group[/color] ",
 	LegendSpecialistSlingDamage = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+4-12[/color] damage while using a sling or sling staff. \n[color=#0b0084]From the Sling perk group[/color]. ",
 	LegendSpecialistSlingSkill = "Gain[color=" + this.Const.UI.Color.PositiveValue + "]+12[/color] ranged skill and [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] armor damage while using a sling or sling staff. \n[color=#0b0084]From the Sling perk group[/color].",
-	LegendBigGameHunter = "When targeting an enemy with more health than you, gain damage equal to their current hitpoints divided by your current hitpoints",
+	LegendBigGameHunter = "When targeting an enemy with more health than you, gain damage equal to their current hitpoints divided by your maximum hitpoints",
 	LegendSecondWind = "Fully refreshes your fatigue when falling below 50% health. \n[color=#0b0084]From the Large perk group[/color]",
 	LegendMarkTarget = "Mark a target, reducing their ranged defense by [color=" + this.Const.UI.Color.PositiveValue + "]-20[/color] for 3 turns. ",
 	LegendFieldTriage = "Spend medicine to heal a unit on the battlefield, at a rate of 1 medicine for every 2 health. Heals up to 20 health per use  \n[color=#0b0084]From the Healing perk group[/color]",
@@ -1705,10 +1708,13 @@ gt.Const.Strings.PerkDescription <- {
 	LegendSummonCatapult = "Put to use your skill in the creation and maintenance of seige weapons. Unlocks crafting Catapults in the crafting tent",
 	LegendNetRepair = "Many years spent repearing and packing nets allows you to carry and repair more nets. Doubles the ammunition of nets and reinforced nets. ",
 	LegendNetCasting = "Learning the ways of the cast takes practice, holding the net in the right position and twisting at the hips allows you to cover a greater distance with each cast. Increases the range of nets and reinforced nets to 4.",
-	LegendPacifist = "Fighting is a brutal thuggish pastime, most folk prefer a life without frequent bouts of ultraviolence.  Since this character is not threatening, they only count for half a person when determining difficulty. They become content with being in reserve, and will grow unhappy if they are placed in more than half your comapany battles. ",
+	LegendPacifist = "Fighting is a brutal thuggish pastime, most folk prefer a life without frequent bouts of ultraviolence.  Since this character is not threatening, they only count for half a person when determining difficulty. They become content with being in reserve, and will grow unhappy if they are placed in more than a third of your company battles since hiring them. ",
 	LegendMagicMissile = "Release a controlled forceful bolt, leaping towards a foe. Damage based on current initiave, accuracy based on ranged attack skill.",
 	LegendHorseMovement = "Move like a horse, quickly across flat terrain, but slowly through bogs and mountains",
 	LegendCampCook = "There is a fine art to cooking, skills and ingredients that are not obvious but unlock a world of flavor or preserve food for longer. Unlocks food crafting in the crafting tent. Allows the creation of porridge, puddings, pies, meat curing, fruit drying and ration making."
+	LegendPackleader = "Dogs can instinctively identify a pack leader, knowledge of their habits allows you to become the leader of their pack. Unlocks the ability to store aditional dog items in your bags and use them in battle.",
+	LegendDogWhisperer = "You have a way with dogs, the bond you form with them imbues each dog with more confidence and strength, knowing that you are there gives them strength. Grants each dog you unleash the perks Colossus, Fortified Mind and Underdog.",
+	LegendDogBreeder = "Intimate knowledge of dog care and conditions required for breeding allows you to successfully breed dogs. Unlocks a recipe in the crafting tent for breeding dogs."
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

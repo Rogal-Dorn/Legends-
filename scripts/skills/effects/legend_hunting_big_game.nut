@@ -26,7 +26,7 @@ this.legend_hunting_big_game <- this.inherit("scripts/skills/skill", {
 	
 		local actor = this.getContainer().getActor();
 		local targetHP = _targetEntity.getHitpoints()
-		local ourHP =  actor.getHitpoints();
+		local ourHP =  actor.getHitpointsMax();
 		local HPratio = targetHP / ourHP;
 		local ratiopercent = HPratio / 100;
 		local bonus = ratiopercent + 1;

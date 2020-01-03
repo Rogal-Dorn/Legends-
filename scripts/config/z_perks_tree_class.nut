@@ -408,6 +408,23 @@ gt.Const.Perks.RangerHuntClassTree <- {
 	]
 };
 
+gt.Const.Perks.HoundmasterClassTree <- {
+	ID = "HoundmasterClassTree",
+	Descriptions = [
+		"training dogs"
+	],
+	Tree = [
+		[],
+		[],
+		[gt.Const.Perks.PerkDefs.LegendDogWhisperer],
+		[],
+		[gt.Const.Perks.PerkDefs.LegendDogBreeder],
+		[
+		//gt.Const.Perks.PerkDefs.LegendPackleader
+		],
+		[]
+	]
+};
 
 gt.Const.Perks.ClassTrees <- {
 	Tree = [
@@ -427,6 +444,7 @@ gt.Const.Perks.ClassTrees <- {
 		gt.Const.Perks.ShortbowClassTree,
 		gt.Const.Perks.WoodaxeClassTree,
 		gt.Const.Perks.SickleClassTree,
+		gt.Const.Perks.HoundmasterClassTree,
 		gt.Const.Perks.NinetailsClassTree
 	],
 	function getRandom(_exclude) 

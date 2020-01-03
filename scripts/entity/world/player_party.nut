@@ -60,7 +60,7 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 
 			local brolevel = bro.getLevel();
 
-			if (bro.getSkills().hasSkill("perk.perk.legend_pacifist"))
+			if (bro.getSkills().hasSkill("perk.legend_pacifist"))
 			{
 				brolevel = brolevel / 2;
 			}
