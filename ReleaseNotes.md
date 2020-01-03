@@ -2344,3 +2344,4 @@ Fixes bear not getting berserk perk and screwing it up [Not the ranger bear] (Mw
 Fixes bear sometimes having null item drop (Mwah)
 Should fix reinforced throwing net not re-ammoing (Mwah)
 Makes sure sisterood always has ladies even when gender equalty is set on (Mwah)
+Risen legion auto-sets hostile & friendly to nobles & undead after every battle (Mwah)
