@@ -299,6 +299,10 @@ this.legends_risen_legion <- this.inherit("scripts/scenarios/world/starting_scen
 
 		}
 
+		//this.m.StaticRelationsToFaction.resize(this.Const.FactionType.len());
+		this.m.StaticRelationsToFaction[this.Const.FactionType.NobleHouse] = true;
+		this.m.StaticRelationsToFaction[this.Const.FactionType.Undead] = true;
+
 		this.World.State.m.Player = this.World.spawnEntity("scripts/entity/world/player_party", randomVillageTile.Coords.X, randomVillageTile.Coords.Y);
 		this.World.Assets.updateLook(112);
 		this.World.getCamera().setPos(this.World.State.m.Player.getPos());
@@ -368,13 +372,5 @@ this.legends_risen_legion <- this.inherit("scripts/scenarios/world/starting_scen
 		}
 
 	}
-
-	//most likely should be moved elsewhere, but as of now this is probably the best place to put it
-	function onCombatFinished()
-	{
-		this.World.FactionManager.makeUndeadFriendlyToPlayer();
-		this.World.FactionManager.makeNoblesUnfriendlyToPlayer();
-	}
-
 });
 
