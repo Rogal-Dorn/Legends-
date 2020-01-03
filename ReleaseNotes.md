@@ -2338,3 +2338,4 @@ Should fix the catapult skill showing up without actually having a catapult avai
 Fixes named pole/ranged-flails not having 2 range attacks like intended (Mwah)
 Updates scenario menu texts to not have weird spaces and missing periods (Mwah)
 Famed voulge gets min/max (1/2 tile) range indicator, like other reach weapons (Mwah)
+Origin Buried Castle Event fix (Mwah)
