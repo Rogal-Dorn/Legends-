@@ -2352,3 +2352,4 @@ Fixes perks not applying as follows: (Mwah)
     Swordmaster : Composure (Legendary only)
     Noble Greatsword : Forceful Swing
 Fixes catapult not dying properly due to dropping wrong item (Mwah)
+Updates net mastery perk description (Mwah)
