@@ -2346,3 +2346,9 @@ Should fix reinforced throwing net not re-ammoing (Mwah)
 Makes sure sisterood always has ladies even when gender equalty is set on (Mwah)
 Risen legion now stays permanently hostile to noble houses and friendly to undead (Mwah)
 Small change to background handling of normalization of relations (Mwah)
+Fixes perks not applying as follows: (Mwah)
+    Alp : Push the Advantage
+    Peasant Woodsman & Miners : Recover
+    Swordmaster : Composure (Legendary only)
+    Noble Greatsword : Forceful Swing
+Fixes catapult not dying properly due to dropping wrong item (Mwah)
