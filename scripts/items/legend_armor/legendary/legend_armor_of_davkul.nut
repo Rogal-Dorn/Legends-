@@ -24,7 +24,8 @@ this.legend_armor_of_davkul <- this.inherit("scripts/items/legend_armor/legend_a
 		this.m.StaminaModifier = -18;
 		this.m.ItemType = this.m.ItemType | this.Const.Items.ItemType.Legendary;
 		this.blockUpgrades();
-		this.m.Blocked[ this.Const.Items.ArmorUpgrades.Attachment] = false
+		this.m.Blocked[this.Const.Items.ArmorUpgrades.Attachment] = false;
+		this.m.Blocked[this.Const.Items.ArmorUpgrades.Rune] = false;
 	}
 
 	function getTooltip()
