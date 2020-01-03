@@ -80,12 +80,14 @@ this.warhound_item <- this.inherit("scripts/items/accessory/accessory", {
 		this.m.ShowOnCharacter = false;
 		this.m.IsChangeableInBattle = false;
 		this.m.Value = 250;
+
+		local roster = this.World.getPlayerRoster().getAll();
         foreach( bro in roster )
         {
             if (bro.getSkills().hasSkill("perk.legend_packleader"))
             {
-			this.m.IsAllowedInBag = true;
-			this.m.IsChangeableInBattle = true;
+				this.m.IsAllowedInBag = true;
+				this.m.IsChangeableInBattle = true;
             }
 		}
 	}
