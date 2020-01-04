@@ -32,7 +32,7 @@ this.legend_peasant_minstrel <- this.inherit("scripts/entity/tactical/human", {
 		dirt.Visible = true;
 		dirt.Alpha = this.Math.rand(0, 255);
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_lute_skill"));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_mastery_lute_damage"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_lute_damage"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_entice"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_daze"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_drums_of_life"));
@@ -54,7 +54,7 @@ this.legend_peasant_minstrel <- this.inherit("scripts/entity/tactical/human", {
 		r = this.Math.rand(1, 100);
 		if (r == 1)
 		{
-		this.m.Items.equip(this.new("scripts/items/weapons/named_lute"));
+		this.m.Items.equip(this.new("scripts/items/weapons/named/named_lute"));
 		}
 		else
 		{
