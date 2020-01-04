@@ -2344,4 +2344,12 @@ Fixes bear not getting berserk perk and screwing it up [Not the ranger bear] (Mw
 Fixes bear sometimes having null item drop (Mwah)
 Should fix reinforced throwing net not re-ammoing (Mwah)
 Makes sure sisterood always has ladies even when gender equalty is set on (Mwah)
-Risen legion auto-sets hostile & friendly to nobles & undead after every battle (Mwah)
+Risen legion now stays permanently hostile to noble houses and friendly to undead (Mwah)
+Small change to background handling of normalization of relations (Mwah)
+Fixes perks not applying as follows: (Mwah)
+    Alp : Push the Advantage
+    Peasant Woodsman & Miners : Recover
+    Swordmaster : Composure (Legendary only)
+    Noble Greatsword : Forceful Swing
+Fixes catapult not dying properly due to dropping wrong item (Mwah)
+Updates net mastery perk description (Mwah)
