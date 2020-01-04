@@ -5,9 +5,12 @@ this.starting_scenario <- {
 		Description = "",
 		Difficulty = 1,
 		Order = 0,
-		IsFixedLook = false
-	},
-	function isFixedLook()
+		IsFixedLook = false,
+		StaticRelationsToFaction = array(this.Const.FactionType.len(), false) 	//Something defined here won't have relations normalized over time in faction_manager
+										//I think this would be better if we instead automatically set the size to be
+	}									//equal to length of factiontypes and then we can skip if len() > 0 in 
+										//faction_manager's update()
+	function isFixedLook()				//Useful for when you set the relations and want them to be permanent e.g. legion scenario
 	{
 		return this.m.IsFixedLook;
 	}
@@ -59,6 +62,11 @@ this.starting_scenario <- {
 		return this.m.Order;
 	}
 
+	function getStaticRelations()
+	{
+		return this.m.StaticRelationsToFaction;
+	}
+
 	function isValid()
 	{
 		return true;
@@ -74,6 +82,7 @@ this.starting_scenario <- {
 
 	function onInit()
 	{
+		this.m.StaticRelationsToFaction.resize(this.Const.FactionType.len());
 		//local roster = this.World.getPlayerRoster().getAll();
 		//foreach (bro in roster)
 		//{
