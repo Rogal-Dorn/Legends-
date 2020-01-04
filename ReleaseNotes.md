@@ -2353,3 +2353,4 @@ Fixes perks not applying as follows: (Mwah)
     Noble Greatsword : Forceful Swing
 Fixes catapult not dying properly due to dropping wrong item (Mwah)
 Updates net mastery perk description (Mwah)
+Fixes miniboss hedge knights when they spawn with legend armor (Mwah)
