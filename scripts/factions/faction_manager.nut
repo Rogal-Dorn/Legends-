@@ -163,12 +163,16 @@ this.faction_manager <- {
 		if (this.m.LastRelationUpdateDay != this.World.getTime().Days)
 		{
 			this.m.LastRelationUpdateDay = this.World.getTime().Days;
+			local StaticRelations = this.World.Assets.getOrigin().getStaticRelations();
 
 			foreach( f in this.m.Factions )
 			{
 				if (f != null)
 				{
-					f.normalizeRelation();
+					if ( !(StaticRelations[f.getType()]) ) 		//init to false automatically so should
+					{											//normalize relations unless we set in scenario init
+						f.normalizeRelation();
+					}
 				}
 			}
 		}

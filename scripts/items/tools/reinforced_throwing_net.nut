@@ -12,7 +12,7 @@ this.reinforced_throwing_net <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.IconLarge = "tools/inventory_throwing_net_02.png";
 		this.m.Icon = "tools/throwing_net_02_70x70.png";
 		this.m.SlotType = this.Const.ItemSlot.Offhand;
-		this.m.ItemType = this.Const.Items.ItemType.Tool | this.Const.Items.ItemType.Defensive;
+		this.m.ItemType = this.Const.Items.ItemType.Ammo | this.Const.Items.ItemType.Tool | this.Const.Items.ItemType.Defensive;
 		this.m.AddGenericSkill = true;
 		this.m.ShowArmamentIcon = true;
 		this.m.ArmamentIcon = "icon_throwing_net_02";
