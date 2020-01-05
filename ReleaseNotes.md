@@ -1635,7 +1635,6 @@ https://drive.google.com/open?id=1EewK6n_eTIOibjsigK91Gbq7GEm83J_V
 - Fixes crash with loading orc camps.
 
   13.0.0.1 Test 3 Dynamic Spawns + New Enemies
-
 - Fixes crash with skin flayer weapon.
 - Redback poison now displays damage correctly in Legendary difficulty
 - Repair tent calculations simplified, now adding bros is always beneficial
@@ -2325,11 +2324,13 @@ Hedgeknights, Squires, Assassins, barbarians, bastards, adventurous nobles, and 
 Stables no longer generate 
 
 13.0.0.29c Hound masters 
-Fixes error from the new contract 
+Fixes error from the coin delivery contract 
+Fixes background costs and perks not being applied in the trader start 
 Hound masters:
-New Perk - Dog Breeder - Unlocks the ability to breed dogs in the crafting tent. Requires 2 dogs and 2 fresh meat and some gold to make 3 dogs. 
-New Perk - Dog Whisperer - Any dog you unleash gains Colossus, Fortified Mind and Underdog 
-New Perk - Pack Leader - Unlocks the ability to hold dog items in your bags and use them in battle. 
+*New Perk - Dog Breeder - Unlocks the ability to breed dogs in the crafting tent. Requires 2 dogs and 2 fresh meat and some gold to make 3 dogs. 
+*New Perk - Dog Whisperer - Any dog you unleash gains Colossus, Fortified Mind and Underdog 
+Big game hunter uses your max health instead of your current health, still uses enemy's current health. 
+Fixes durability on white wolf pelt upgrade 
 
 13.0.0.30
 Should fix Legendary armors not getting Rune slots (Mwah)
@@ -2357,3 +2358,6 @@ Fixes miniboss hedge knights when they spawn with legend armor (Mwah)
 Fixes Peasant Minstrel not spawning with golden lute because of crash (Mwah is crying he lost his)
 Fixes undead army action screwing up (Mwah)
 Named warbrand now has great slash just like normal warbrand (Mwah)
+Fixes error with some undead armies not setting out to raid attached locations, because they couldn't find where they were coming from 
+Big game hunter goes back to using current health. 
+Resizes frogmouth helms to not be so oversized 
