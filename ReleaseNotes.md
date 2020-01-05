@@ -2364,4 +2364,5 @@ Big game hunter goes back to using current health.
 Resizes frogmouth helms to not be so oversized.
 Fixes apothecary levels check for camp gathering.
 Adds a new Crusader themed tabard (from Balzaphon).
-
+Workshop building now [shouldn't] throw errors when stuff is null (Mwah)
+Fixes lacerate not being given (Mwah)
