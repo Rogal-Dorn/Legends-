@@ -2362,3 +2362,5 @@ Fixes error with some undead armies not setting out to raid attached locations, 
 Big game hunter goes back to using current health. 
 Resizes frogmouth helms to not be so oversized.
 Fixes apothecary levels check for camp gathering.
+Workshop building now [shouldn't] throw errors when stuff is null (Mwah)
+Fixes lacerate not being given (Mwah)
