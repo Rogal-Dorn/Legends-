@@ -2366,3 +2366,5 @@ Fixes apothecary levels check for camp gathering.
 Adds a new Crusader themed tabard (from Balzaphon).
 Workshop building now [shouldn't] throw errors when stuff is null (Mwah)
 Fixes lacerate not being given (Mwah)
+
+https://drive.google.com/open?id=1m64jzGnlDHpROKUe_XqoWTL1c8N_WcZl
