@@ -591,12 +591,10 @@ this.legend_demon_hound <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_pathfinder"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_anticipation"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_fearsome"));
-		//this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
-		// if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
-		// {
-		// 	this.m.Skills.add(this.new("scripts/skills/perks/perk_fearsome"));
-		// 	this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
-		// }
+		 if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+		 {
+		 	this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
+		 }
 
 	}
 

@@ -47,6 +47,13 @@ this.zombie_knight <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 		 if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 			{
 			this.m.Hitpoints = b.Hitpoints * 1.5;
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_backstabber"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_last_stand"));
+
+			if(!this.m.IsResurrected)
+				{
+				this.m.Skills.add(this.new("scripts/skills/perks/perk_nine_lives"));
+				}
 			}
 		this.m.CurrentProperties = clone b;
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_fearsome"));
