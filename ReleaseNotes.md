@@ -2332,9 +2332,33 @@ Hound masters:
 Big game hunter uses your max health instead of your current health, still uses enemy's current health. 
 Fixes durability on white wolf pelt upgrade 
 
-
-13.0.0.30 
-
+13.0.0.30
+Should fix Legendary armors not getting Rune slots (Mwah)
+Changes how we handle resolve checks on character deaths [Same as before but now can have extra modifiers] (Mwah)
+Should fix the catapult skill showing up without actually having a catapult available (Mwah)
+Fixes named pole/ranged-flails not having 2 range attacks like intended (Mwah)
+Updates scenario menu texts to not have weird spaces and missing periods (Mwah)
+Famed voulge gets min/max (1/2 tile) range indicator, like other reach weapons (Mwah)
+Origin Buried Castle Event fix (Mwah)
+Fixes warhound_item error (Mwah)
+Fixes bear not getting berserk perk and screwing it up [Not the ranger bear] (Mwah)
+Fixes bear sometimes having null item drop (Mwah)
+Should fix reinforced throwing net not re-ammoing (Mwah)
+Makes sure sisterood always has ladies even when gender equalty is set on (Mwah)
+Risen legion now stays permanently hostile to noble houses and friendly to undead (Mwah)
+Small change to background handling of normalization of relations (Mwah)
+Fixes perks not applying as follows: (Mwah)
+    Alp : Push the Advantage
+    Peasant Woodsman & Miners : Recover
+    Swordmaster : Composure (Legendary only)
+    Noble Greatsword : Forceful Swing
+Fixes catapult not dying properly due to dropping wrong item (Mwah)
+Updates net mastery perk description (Mwah)
+Fixes miniboss hedge knights when they spawn with legend armor (Mwah)
+Fixes Peasant Minstrel not spawning with golden lute because of crash (Mwah is crying he lost his)
+Fixes undead army action screwing up (Mwah)
+Named warbrand now has great slash just like normal warbrand (Mwah)
 Fixes error with some undead armies not setting out to raid attached locations, because they couldn't find where they were coming from 
 Big game hunter goes back to using current health. 
-Resizes frogmouth helms to not be so oversized 
+Resizes frogmouth helms to not be so oversized.
+Fixes apothecary levels check for camp gathering.

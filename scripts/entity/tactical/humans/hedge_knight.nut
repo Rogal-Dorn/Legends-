@@ -271,9 +271,9 @@ this.hedge_knight <- this.inherit("scripts/entity/tactical/human", {
 			"armor/named/green_coat_of_plates_armor"
 		];
 		local legend_armor = [
-			"armor/named/legend_brown_coat_of_plates_armor",
-			"armor/named/legend_golden_scale_armor",
-			"armor/named/legend_green_coat_of_plates_armor"
+			"legend_armor/named/legend_brown_coat_of_plates_armor",
+			"legend_armor/named/legend_golden_scale_armor",
+			"legend_armor/named/legend_green_coat_of_plates_armor"
 		];
 		local r = this.Math.rand(1, 3);
 
