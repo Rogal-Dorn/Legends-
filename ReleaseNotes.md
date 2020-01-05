@@ -2360,4 +2360,5 @@ Fixes undead army action screwing up (Mwah)
 Named warbrand now has great slash just like normal warbrand (Mwah)
 Fixes error with some undead armies not setting out to raid attached locations, because they couldn't find where they were coming from 
 Big game hunter goes back to using current health. 
-Resizes frogmouth helms to not be so oversized 
+Resizes frogmouth helms to not be so oversized.
+Fixes apothecary levels check for camp gathering.
