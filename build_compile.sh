@@ -62,6 +62,7 @@ done <<< "$FILES"
 
 mkdir -p "brushes"
 cd ../bin
+ echo "Building brushes..."
 ./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/entity_blood.brush ../battlebrothers/unpacked/entity_blood
 ./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/legend_characters.brush ../battlebrothers/unpacked/legend_characters
 ./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/legend_enemies.brush ../battlebrothers/unpacked/legend_enemies
@@ -70,7 +71,11 @@ cd ../bin
 ./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/legend_world.brush ../battlebrothers/unpacked/legend_world
 ./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/legends_ui.brush ../battlebrothers/unpacked/legends_ui
 ./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/legend_horses.brush ../battlebrothers/unpacked/legend_horses
+ echo "Building Legend Armor metadata.xml..."
+python ../battlebrothers/unpacked/make_legend_armor.py
+ echo "Building Legend Armor brush..."
 ./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/legend_armor.brush ../battlebrothers/unpacked/legend_armor
+ echo "Compiling all nut files..."
 ./masscompile.bat "c:\Steam\steamapps\common\Battle Brothers\data\scripts"
 cd ../battlebrothers
 

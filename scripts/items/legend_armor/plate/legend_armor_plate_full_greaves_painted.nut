@@ -7,6 +7,14 @@ this.legend_armor_plate_full_greaves_painted <- this.inherit("scripts/items/lege
 		this.m.Type = this.Const.Items.ArmorUpgrades.Plate
 		this.m.ID = "legend_armor_plate_full_greaves_painted";
 		this.m.Name = "Full Coat of Painted Heavy Plate Armor";
+		this.m.NameList = [
+			"Ward",
+			"Death",
+			"Barrier",
+			"Plate Armor",
+			"Dark Plated Armor",
+			"Life Stealer"
+		];
 		this.m.Description = "A full set of painted solid plated steel with greaves.";
 		this.m.ArmorDescription = "A masterfully crafted full set of painted solid plated steel with greaves.";
 		this.m.Icon = "legend_armor/plate/legend_plate_full_greaves_painted.png";
@@ -16,12 +24,20 @@ this.legend_armor_plate_full_greaves_painted <- this.inherit("scripts/items/lege
 		this.m.SpriteBack = "bust_legend_plate_full_greaves_painted";
 		this.m.SpriteDamagedBack = "bust_legend_plate_full_greaves_painted_damaged";
 		this.m.SpriteCorpseBack = "bust_legend_plate_full_greaves_painted_dead";
-		this.m.Value = 8000;
+		this.m.Value = 10000;
 		this.m.Condition = 200;
 		this.m.ConditionMax = 200;
 		this.m.StaminaModifier = -32;
 		this.randomizeValues();
 	}
+
+	function randomizeValues()
+	{
+		this.m.StaminaModifier = this.Math.rand(28, 32) * -1;
+		this.m.Condition = this.Math.rand(200, 240);
+		this.m.ConditionMax = this.m.Condition;
+	}
+
 
 });
 

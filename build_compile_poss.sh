@@ -70,6 +70,7 @@ cd ../bin
 ./bbrusher.exe pack --gfxPath "../Repo/" ../Repo/brushes/legend_world.brush ../Repo/unpacked/legend_world
 ./bbrusher.exe pack --gfxPath "../Repo/" ../Repo/brushes/legends_ui.brush ../Repo/unpacked/legends_ui
 ./bbrusher.exe pack --gfxPath "../Repo/" ../Repo/brushes/legend_horses.brush ../Repo/unpacked/legend_horses
+python ../Repo/unpacked/make_legend_armor.py
 ./bbrusher.exe pack --gfxPath "../Repo/" ../Repo/brushes/legend_armor.brush ../Repo/unpacked/legend_armor
 ./bbrusher.exe pack --gfxPath "../Repo/" ../Repo/brushes/legend_objects.brush ../Repo/unpacked/legend_objects
 ./masscompile.bat "c:\Steam\steamapps\common\Battle Brothers\data\scripts"
