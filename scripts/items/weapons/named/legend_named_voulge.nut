@@ -21,6 +21,8 @@ this.legend_named_voulge <- this.inherit("scripts/items/weapons/named/named_weap
 		this.m.ConditionMax = 80.0;
 		this.m.StaminaModifier = -14;
 		this.m.Value = 3500;
+		this.m.RangeMin = 1;
+		this.m.RangeMax = 2;
 		this.m.RegularDamage = 80;
 		this.m.RegularDamageMax = 100;
 		this.m.ArmorDamageMult = 0.9;

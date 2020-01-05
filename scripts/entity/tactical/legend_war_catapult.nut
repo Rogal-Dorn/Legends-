@@ -54,7 +54,7 @@ this.legend_war_catapult <- this.inherit("scripts/entity/tactical/actor", {
 
 			for( local i = 0; i < n; i = ++i )
 			{
-				local loot = this.new("scripts/items/misc/quality_wood_item");
+				local loot = this.new("scripts/items/trade/quality_wood_item");
 
 				loot.drop(_tile);
 			}

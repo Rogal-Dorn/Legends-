@@ -47,7 +47,7 @@ this.noble_greatsword <- this.inherit("scripts/entity/tactical/human", {
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 			{
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_underdog"));
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_forceful_swing"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_forceful_swing"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_feint"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_back_to_basics"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_bloody_harvest"));
