@@ -2332,7 +2332,8 @@ Hound masters:
 Big game hunter uses your max health instead of your current health, still uses enemy's current health.
 Fixes durability on white wolf pelt upgrade
 
-13.0.0.30
+13.0.0.30 Named Armor Layors
+Adds Named variants of various armor layers (cloth, chain, plate, tabard, and cloaks) (This is still WIP - more named variants are in the works)
 Should fix Legendary armors not getting Rune slots (Mwah)
 Changes how we handle resolve checks on character deaths [Same as before but now can have extra modifiers] (Mwah)
 Should fix the catapult skill showing up without actually having a catapult available (Mwah)
@@ -2363,3 +2364,4 @@ Big game hunter goes back to using current health.
 Resizes frogmouth helms to not be so oversized.
 Fixes apothecary levels check for camp gathering.
 Adds a new Crusader themed tabard (from Balzaphon).
+
