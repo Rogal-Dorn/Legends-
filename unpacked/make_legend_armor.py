@@ -81,7 +81,7 @@ layers = [
     {"name": "bust_legend_scale", "layer": "plate"},
 
     {"name": "legend_tabard",  "layer": "tabard", "min": 1, "max": 20},
-    {"name": "legend_tabard",  "layer": "tabard", "min": 101, "max": 112},
+    {"name": "legend_tabard",  "layer": "tabard", "min": 101, "max": 113},
     {"name": "legend_tabard_named", "layer": "tabard", "min": 1, "max": 1},
 
     {"name": "cloak",  "layer": "cloak", "min": 1, "max": 35},
