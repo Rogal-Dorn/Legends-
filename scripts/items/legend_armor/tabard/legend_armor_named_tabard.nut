@@ -48,22 +48,24 @@ this.legend_armor_named_tabard <- this.inherit("scripts/items/legend_armor/legen
 	function getTooltip()
 	{
 		local result = this.legend_named_armor_upgrade.getTooltip();
+		local val =  this.m.BraveryMult * 100.0 - 100;
 		result.push({
 			id = 15,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Increase the Resolve of the wearer by [color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.BraveryMult * 100.0 - 100 +"[/color]"
+			text = "Increase the Resolve of the wearer by [color=" + this.Const.UI.Color.PositiveValue + "]+" + val +"[/color]"
 		});
 		return result;
 	}
 
 	function onArmorTooltip( _result )
 	{
+		local val =  this.m.BraveryMult * 100.0 - 100;
 		_result.push({
 			id = 15,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Increase the Resolve of the wearer by [color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.BraveryMult * 100.0 - 100 +"[/color]"
+			text = "Increase the Resolve of the wearer by [color=" + this.Const.UI.Color.PositiveValue + "]+" + val +"[/color]"
 		});
 	}
 
