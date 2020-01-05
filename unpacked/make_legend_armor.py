@@ -173,10 +173,12 @@ def main():
                 if "base" in d:
                     srcF = os.path.join(os.path.dirname(os.path.abspath(__file__)), "dead_arrows.png")
                     destF = os.path.join(os.path.dirname(os.path.abspath(__file__)), "legend_armor", opts["arrow_path"])
-                    copyfile(srcF, destF)
+                    if not os.path.exists(destF)
+                        copyfile(srcF, destF)
                     srcF = os.path.join(os.path.dirname(os.path.abspath(__file__)), "dead_javelin.png")
                     destF = os.path.join(os.path.dirname(os.path.abspath(__file__)), "legend_armor", opts["javelin_path"])
-                    copyfile(srcF, destF)
+                    if not os.path.exists(destF)
+                        copyfile(srcF, destF)
 
     F.write(helmets)
 
