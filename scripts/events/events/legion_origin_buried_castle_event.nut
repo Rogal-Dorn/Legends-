@@ -48,6 +48,8 @@ this.legion_origin_buried_castle_event <- this.inherit("scripts/events/event", {
 	function onUpdateScore()
 	{
 
+		local currentTile = this.World.State.getPlayer().getTile();
+
 
 		if (this.World.Assets.getOrigin().getID() != "scenario.legend_risen_legion")
 		{

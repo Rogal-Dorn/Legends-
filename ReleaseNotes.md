@@ -1635,7 +1635,6 @@ https://drive.google.com/open?id=1EewK6n_eTIOibjsigK91Gbq7GEm83J_V
 - Fixes crash with loading orc camps.
 
   13.0.0.1 Test 3 Dynamic Spawns + New Enemies
-
 - Fixes crash with skin flayer weapon.
 - Redback poison now displays damage correctly in Legendary difficulty
 - Repair tent calculations simplified, now adding bros is always beneficial
@@ -2311,22 +2310,55 @@ Fixes errors in previous build (Mwah mah mia!) (Also caused by him)
 Trader scenario changes:
 *No longer a Trader player character, instead has 1 peddler and 1 caravan hand who regains vanilla talent stars and scimitar.
 *All non combat backgrounds they hire are granted the Pacifist perk so they are content in reserve and contribute less to scaling
-*Combat backgrounds are not given pacifist, but charge twice as much to defend you.
-*Peddlers and Donkeys cost 10% less to hire.
-*They begin with twice the money of other scenarios
+*Combat backgrounds are not given pacifist, but charge twice as much to defend you. 
+*Peddlers and Donkeys cost 10% less to hire. 
+*They begin with twice the money of other scenarios 
 
-New Contract - Coin Delivery (experimental).  Deliver a large amount of crowns and gain half the ammount on completion.
-Pacifists now dislike being in more than 1/3 fights.
-Fixes pacifist scaling not applying correctly
-Base Cost of hiring peddler increased from 60 to 600, their daily wage also doubles. They gain Crossbow skills instead of Slings
-Donkeys gain a number of perks, Bags and Belts, Alert, Relentless, Peaceful, Pacifist and Blend In. Skills reordered to allow full peaceful builds or full combat builds.
-Hedgeknights regain indestructible, martyr and trained, also swap hammer for flail.
-Hedgeknights, Squires, Assassins, barbarians, bastards, adventurous nobles, and wildlings have their hiring costs increased due to having great stats due to dynamic perks.  full balance to come, these were just big outliers
-Stables no longer generate
+New Contract - Coin Delivery (experimental).  Deliver a large amount of crowns and gain half the ammount on completion. 
+Pacifists now dislike being in more than 1/3 fights. 
+Fixes pacifist scaling not applying correctly 
+Base Cost of hiring peddler increased from 60 to 600, their daily wage also doubles. They gain Crossbow skills instead of Slings 
+Donkeys gain a number of perks, Bags and Belts, Alert, Relentless, Peaceful, Pacifist and Blend In. Skills reordered to allow full peaceful builds or full combat builds. 
+Hedgeknights regain indestructible, martyr and trained, also swap hammer for flail. 
+Hedgeknights, Squires, Assassins, barbarians, bastards, adventurous nobles, and wildlings have their hiring costs increased due to having great stats due to dynamic perks.  full balance to come, these were just big outliers 
+Stables no longer generate 
 
-13.0.0.29c Hound masters
-Fixes error from the new contract
+13.0.0.29c Hound masters 
+Fixes error from the coin delivery contract 
+Fixes background costs and perks not being applied in the trader start 
 Hound masters:
-New Perk - Dog Breeder - Unlocks the ability to breed dogs in the crafting tent. Requires 2 dogs and 2 fresh meat and some gold to make 3 dogs.
-New Perk - Dog Whisperer - Any dog you unleash gains Colossus, Fortified Mind and Underdog
-New Perk - Pack Leader - Unlocks the ability to hold dog items in your bags and use them in battle.
+*New Perk - Dog Breeder - Unlocks the ability to breed dogs in the crafting tent. Requires 2 dogs and 2 fresh meat and some gold to make 3 dogs. 
+*New Perk - Dog Whisperer - Any dog you unleash gains Colossus, Fortified Mind and Underdog 
+Big game hunter uses your max health instead of your current health, still uses enemy's current health. 
+Fixes durability on white wolf pelt upgrade 
+
+13.0.0.30
+Should fix Legendary armors not getting Rune slots (Mwah)
+Changes how we handle resolve checks on character deaths [Same as before but now can have extra modifiers] (Mwah)
+Should fix the catapult skill showing up without actually having a catapult available (Mwah)
+Fixes named pole/ranged-flails not having 2 range attacks like intended (Mwah)
+Updates scenario menu texts to not have weird spaces and missing periods (Mwah)
+Famed voulge gets min/max (1/2 tile) range indicator, like other reach weapons (Mwah)
+Origin Buried Castle Event fix (Mwah)
+Fixes warhound_item error (Mwah)
+Fixes bear not getting berserk perk and screwing it up [Not the ranger bear] (Mwah)
+Fixes bear sometimes having null item drop (Mwah)
+Should fix reinforced throwing net not re-ammoing (Mwah)
+Makes sure sisterood always has ladies even when gender equalty is set on (Mwah)
+Risen legion now stays permanently hostile to noble houses and friendly to undead (Mwah)
+Small change to background handling of normalization of relations (Mwah)
+Fixes perks not applying as follows: (Mwah)
+    Alp : Push the Advantage
+    Peasant Woodsman & Miners : Recover
+    Swordmaster : Composure (Legendary only)
+    Noble Greatsword : Forceful Swing
+Fixes catapult not dying properly due to dropping wrong item (Mwah)
+Updates net mastery perk description (Mwah)
+Fixes miniboss hedge knights when they spawn with legend armor (Mwah)
+Fixes Peasant Minstrel not spawning with golden lute because of crash (Mwah is crying he lost his)
+Fixes undead army action screwing up (Mwah)
+Named warbrand now has great slash just like normal warbrand (Mwah)
+Fixes error with some undead armies not setting out to raid attached locations, because they couldn't find where they were coming from 
+Big game hunter goes back to using current health. 
+Resizes frogmouth helms to not be so oversized.
+Fixes apothecary levels check for camp gathering.
