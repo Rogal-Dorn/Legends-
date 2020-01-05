@@ -2600,7 +2600,7 @@ gt.Const.Perks.PerkDefObjects <- [
 	},
 	{
 		ID = "perk.legend_lacerate",
-		Script = "scripts/skills/perks/perk_lacerate",
+		Script = "scripts/skills/perks/perk_legend_lacerate",
 		Name = this.Const.Strings.PerkName.LegendLacerate,
 		Tooltip = this.Const.Strings.PerkDescription.LegendLacerate,
 		Icon = "ui/perks/bleed_circle.png",
