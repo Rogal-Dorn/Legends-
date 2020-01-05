@@ -8,7 +8,8 @@ this.legend_armor_tabard <- this.inherit("scripts/items/legend_armor/legend_armo
 		this.m.Name = "Tabard";
 		this.m.Description = "A flowing cloth covering for armor, to show your allegiance. Offers minimal protection and small boost to moral.";
 		this.m.ArmorDescription = "Has a flowing cloth tabard";
-		this.m.Variant = this.Math.rand(101, 113);
+		this.m.Variants = [101,102,103,104,105,106,107,108,109,110,111,112,113];
+		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.Value = 200;
 		this.m.Condition = 5;

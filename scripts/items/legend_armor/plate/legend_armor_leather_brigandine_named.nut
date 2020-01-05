@@ -24,7 +24,8 @@ this.legend_armor_leather_brigandine_named <- this.inherit("scripts/items/legend
 		this.m.Description = "A rare thick leather brigandine studded with steel rivets for added protection. A piece of true craftsmanship!";
 		this.m.ArmorDescription = "Includes rare leather brigandine armor.";
 		this.m.Value = 5500;
-		this.m.Variant = this.Math.rand(1, 5);
+		this.m.Variants = [1,2,3,4,5];
+		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.Condition = 85;
 		this.m.ConditionMax = 85;

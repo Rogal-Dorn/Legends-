@@ -4,7 +4,7 @@ this.legend_gambeson_common_color <- this.inherit("scripts/items/legend_armor/cl
 	{
 		this.legend_gambeson.create();
 		this.m.ID = "legend.armor.body.gambeson_common_color.cloth";
-        local variants = [
+		this.m.Variants = [
             0,
 			1,
 			3,
@@ -30,9 +30,8 @@ this.legend_gambeson_common_color <- this.inherit("scripts/items/legend_armor/cl
 			68,
 			69,
 			70
-
         ]
-		this.m.Variant = variants[this.Math.rand(1, variants.len() - 1)];
+		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 
 	}

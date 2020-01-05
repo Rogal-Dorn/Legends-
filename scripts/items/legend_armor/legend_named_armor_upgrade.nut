@@ -50,7 +50,7 @@ this.legend_named_armor_upgrade <- this.inherit("scripts/items/legend_armor/lege
 
 	function onEquip()
 	{
-		this.legend_armor.onEquip();
+		this.legend_armor_upgrade.onEquip();
 
 		if (this.m.Name.len() == 0)
 		{

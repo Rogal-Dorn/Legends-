@@ -16,7 +16,8 @@ this.legend_armor_leather_lamellar_heavy_named <- this.inherit("scripts/items/le
 			"Splendor",
 			"Golden Lamellar"
 		];
-		this.m.Variant = this.Math.rand(1, 1);
+		this.m.Variants = [1];
+		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.Value = 8500;
 		this.m.Condition = 135;

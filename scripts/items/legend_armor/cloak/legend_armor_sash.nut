@@ -8,7 +8,8 @@ this.legend_armor_sash <- this.inherit("scripts/items/legend_armor/legend_armor_
 		this.m.Name = "Sash";
 		this.m.Description = "Sash.";
 		this.m.ArmorDescription = "Has a flowing cloth sash";
-		this.m.Variant = this.Math.rand(1, 1);
+		this.m.Variants = [1];
+		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.Value = 150;
 		this.m.Condition = 3;

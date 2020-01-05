@@ -8,7 +8,7 @@ this.legend_sackcloth <- this.inherit("scripts/items/legend_armor/legend_armor",
 		this.m.Description = "Better than running naked.";
 		this.m.IsDroppedAsLoot = true;
 		this.m.ShowOnCharacter = true;
-        local variants = [
+        this.m.Variants = [
             1,
 			4,
 			5,
@@ -20,7 +20,7 @@ this.legend_sackcloth <- this.inherit("scripts/items/legend_armor/legend_armor",
 			11,
 			12
         ]
-		this.m.Variant = variants[this.Math.rand(1, variants.len() - 1)];
+		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.InventorySound = this.Const.Sound.ClothEquip;
