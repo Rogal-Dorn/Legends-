@@ -34,3 +34,8 @@ linear contour, range 50%
 
 
 Named item glow a64235
+outer glow
+mode screen
+opacity 35%
+size 10
+linear
