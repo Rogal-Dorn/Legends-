@@ -2364,3 +2364,6 @@ Resizes frogmouth helms to not be so oversized.
 Fixes apothecary levels check for camp gathering.
 Workshop building now [shouldn't] throw errors when stuff is null (Mwah)
 Fixes lacerate not being given (Mwah)
+
+13.0.0.30b
+fixes catapult skill one last time (Mwah)
