@@ -20,7 +20,8 @@ this.legend_armor_leather_jacket_named <- this.inherit("scripts/items/legend_arm
             "Toadskin",
 			"Ogreskin"
 		];
-		this.m.Variant = this.Math.rand(1, 2);
+		this.m.Variants = [1,2];
+		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.Value = 2000;
 		this.m.Condition = 35;

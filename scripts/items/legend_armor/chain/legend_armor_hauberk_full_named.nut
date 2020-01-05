@@ -22,7 +22,8 @@ this.legend_armor_hauberk_full_named <- this.inherit("scripts/items/legend_armor
 		];
 		this.m.Description = "Truly fit for a knight, this mail hauberk is made from the highest quality materials and boasts precious decorations and ornaments.";
 		this.m.ArmorDescription = "Includes a mail hauberk made from the highest quality materials and boasts precious decorations and ornaments.";
-		this.m.Variant = this.Math.rand(1, 1);
+		this.m.Variants = [1];
+		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.Value = 4500;
 		this.m.Condition = 115;
@@ -45,10 +46,10 @@ this.legend_armor_hauberk_full_named <- this.inherit("scripts/items/legend_armor
 		this.m.SpriteBack = "bust_legend_hauberk_full_named_" + variant ;
 		this.m.SpriteDamagedBack = "bust_legend_hauberk_full_named_" + variant + "_damaged";
 		this.m.SpriteCorpseBack = "bust_legend_hauberk_full_named_" + variant + "_dead";
-		this.m.Icon = "legend_armor/plate/legend_hauberk_full_named_" + variant + ".png";
+		this.m.Icon = "legend_armor/chain/legend_hauberk_full_named_" + variant + ".png";
 		this.m.IconLarge = this.m.Icon;
-		this.m.OverlayIcon = "legend_armor/plate/icon_legend_hauberk_full_named_" + variant + ".png";
-		this.m.OverlayIconLarge = "legend_armor/plate/inventory_legend_hauberk_full_named_"  + variant + ".png";
+		this.m.OverlayIcon = "legend_armor/chain/icon_legend_hauberk_full_named_" + variant + ".png";
+		this.m.OverlayIconLarge = "legend_armor/chain/inventory_legend_hauberk_full_named_"  + variant + ".png";
 	}
 });
 

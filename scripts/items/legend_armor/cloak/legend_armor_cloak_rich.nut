@@ -18,7 +18,8 @@ this.legend_armor_cloak_rich <- this.inherit("scripts/items/legend_armor/legend_
 		];
 		this.m.Description = "A silk embroidered cloak made with the finest clothes. Those who wear it feel as if a king";
 		this.m.ArmorDescription = "Has a flowing embroidered cloak";
-		this.m.Variant = this.Math.rand(1, 5);
+		this.m.Variants = [1,2,3,4,5];
+		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.Value = 6500;
 		this.m.Condition = 5;
@@ -31,7 +32,7 @@ this.legend_armor_cloak_rich <- this.inherit("scripts/items/legend_armor/legend_
 	{
 		this.m.Condition = this.Math.floor(this.m.Condition * this.Math.rand(110, 125) * 0.01) * 1.0;
 		this.m.ConditionMax = this.m.Condition;
-		this.m.BraveryMult = this.Math.rand(105, 115) * 0.01
+		this.m.BraveryMult = this.Math.floor(this.Math.rand(105, 115) * 0.01)
 	}
 
 	function updateVariant()
@@ -53,7 +54,7 @@ this.legend_armor_cloak_rich <- this.inherit("scripts/items/legend_armor/legend_
 			id = 15,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Increase the Resolve of the wearer by [color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.BraveryMult * 100.0 - 100 +"[/color]"
+			text = "Increase the Resolve of the wearer by [color=" + this.Const.UI.Color.PositiveValue + "]+" + (this.m.BraveryMult * 100.0 - 100) + "%[/color]"
 		});
 		return result;
 	}
@@ -64,7 +65,7 @@ this.legend_armor_cloak_rich <- this.inherit("scripts/items/legend_armor/legend_
 			id = 15,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Increase the Resolve of the wearer by [color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.BraveryMult * 100.0 - 100 +"[/color]"
+			text = "Increase the Resolve of the wearer by [color=" + this.Const.UI.Color.PositiveValue + "]+" + (this.m.BraveryMult * 100.0 - 100) +"%[/color]"
 		});
 	}
 

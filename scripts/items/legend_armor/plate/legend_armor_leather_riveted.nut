@@ -8,7 +8,8 @@ this.legend_armor_leather_riveted <- this.inherit("scripts/items/legend_armor/le
 		this.m.Name = "Sellsword\'s Leather Armor";
 		this.m.Description = "A long leather armor coat reinforced with metal plates.";
 		this.m.ArmorDescription = "Includes a long leather coat reinforced with metal plates that offers good protection but is very fatiguing to wear.";
-		this.m.Variant = this.Math.rand(1, 9);
+		this.m.Variants = [1,2,3,4,5,6,7,8,9];
+		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.Value = 1100;
 		this.m.Condition = 95;

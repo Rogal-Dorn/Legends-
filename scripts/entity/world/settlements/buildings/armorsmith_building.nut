@@ -675,7 +675,7 @@ this.armorsmith_building <- this.inherit("scripts/entity/world/settlements/build
            [70, 1.0, "plate/legend_armor_scale_coat"],
            [75, 1.0, "plate/legend_armor_plate_full"],
 		   [75, 1.0, "plate/legend_armor_plate_full_greaves"],
-		   [65, 1.0, "cloak/legend_armor_cloak"],
+		   [65, 1.0, "cloak/legend_armor_cloak_common"],
 		   [95, 2.0, "cloak/legend_armor_cloak_rich"],
 		   [85, 1.0, "cloak/legend_armor_cloak_noble"],
 		   [50, 1.0, "cloak/legend_armor_cloak_heavy"],

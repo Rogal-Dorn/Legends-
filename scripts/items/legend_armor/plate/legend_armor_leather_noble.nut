@@ -10,7 +10,8 @@ this.legend_armor_leather_noble <- this.inherit("scripts/items/legend_armor/lege
 		this.m.Name = "Noble Leather Armor";
 		this.m.Description = "A truly masterfully crafted set of leather armor. Very light and flexible to reduce encumberance while still offering good protection.";
 		this.m.ArmorDescription = "Includes masterfully crafted leather armor.";
-		this.m.Variant = this.Math.rand(1, 6);
+		this.m.Variants = [1,2,3,4,5,6]
+		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.Value = 1500;
 		this.m.Condition = 80;

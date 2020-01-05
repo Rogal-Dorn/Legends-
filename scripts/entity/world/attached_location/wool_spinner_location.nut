@@ -99,7 +99,7 @@ this.wool_spinner_location <- this.inherit("scripts/entity/world/attached_locati
 			_list.push({
 				R = 50,
 				P = 1.0,
-				S = "legend_armor/cloak/legend_armor_cloak"
+				S = "legend_armor/cloak/legend_armor_cloak_common"
 			});
 			_list.push({
 				R = 95,

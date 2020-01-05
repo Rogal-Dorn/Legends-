@@ -1,35 +1,36 @@
 Brush checklist
 
-Make the brush ID the same as the filename, so its easy to look up without checking the XML 
+Make the brush ID the same as the filename, so its easy to look up without checking the XML
 
 
 **Item checklist**
-brush main 
+brush main
 brush damaged
 brush destroyed
-Inventory full 
-Inventory icon 
-A runed version of all of the above  
+Inventory full
+Inventory icon
+A runed version of all of the above
 
 **body checklist**
-Without these it throws errors 
-Brush body 
+Without these it throws errors
+Brush body
 Brush dead
 Brush injured
 Brush arrow
-Brush javelin 
-ideally all the tattoos and dirt layers 
+Brush javelin
+ideally all the tattoos and dirt layers
 
 **How to Rune**
-Apply layer style: 
+Apply layer style:
 outer glow
 mode screen
 red 101
 green 11
 blue 165
-opactity 50% 
+opactity 50%
 spread 2 pixels
 size 4 pixels
-linear contour, range 50% 
+linear contour, range 50%
 
 
+Named item glow a64235

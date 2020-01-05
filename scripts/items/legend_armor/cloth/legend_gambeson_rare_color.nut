@@ -4,7 +4,7 @@ this.legend_gambeson_rare_color <- this.inherit("scripts/items/legend_armor/clot
 	{
 		this.legend_gambeson.create();
 		this.m.ID = "legend.armor.body.gambeson_rare_color.cloth";
-        local variants = [
+        this.m.Variants = [
             2,
 			4,
 			5,
@@ -51,8 +51,8 @@ this.legend_gambeson_rare_color <- this.inherit("scripts/items/legend_armor/clot
 			62,
 			63,
 			64
-        ]
-		this.m.Variant = variants[this.Math.rand(1, variants.len() - 1)];
+        ];
+		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.Value = 650;
 		this.m.Condition = 62;

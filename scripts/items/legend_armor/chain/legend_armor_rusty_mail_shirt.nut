@@ -8,7 +8,8 @@ this.legend_armor_rusty_mail_shirt <- this.inherit("scripts/items/legend_armor/l
 		this.m.Name = "Patched Mail Shirt";
 		this.m.Description = "This light mail shirt has seen better times but still grants decent protection.";
 		this.m.ArmorDescription = "Includes a rusty and patched mail shirt that offers decent protection.";
-		this.m.Variant = this.Math.rand(1, 11);
+		this.m.Variants = [1,2,3,4,5,6,7,8,9,10,11];
+		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.Value = 250;
 		this.m.Condition = 40;
@@ -23,8 +24,8 @@ this.legend_armor_rusty_mail_shirt <- this.inherit("scripts/items/legend_armor/l
 		this.m.SpriteBack = "bust_legend_rusty_mail_shirt_" + variant;
 		this.m.SpriteDamagedBack = "bust_legend_rusty_mail_shirt_" + variant + "_damaged";
 		this.m.SpriteCorpseBack = "bust_legend_rusty_mail_shirt_" + variant + "_dead";
-		this.m.IconLarge = "legend_armor/chain/inventory_legend_rusty_mail_shirt_" + variant + ".png";
-		this.m.Icon = "legend_armor/chain/icon_legend_rusty_mail_shirt_" + variant + ".png";
+		this.m.Icon = "legend_armor/chain/legend_rusty_mail_shirt_" + variant + ".png";
+		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "legend_armor/chain/icon_legend_rusty_mail_shirt_" + variant + ".png";
 		this.m.OverlayIconLarge = "legend_armor/chain/inventory_legend_rusty_mail_shirt_" + variant + ".png";
 
