@@ -342,6 +342,11 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
             return this.getUpdateText();
         }
 
+        if (this.m.Salvage == null) //has a chance to error without reallye ffecting anything if u do salvage.len and its null
+        {
+            return this.getUpdateText();
+        }
+
         if (this.m.Salvage.len() == 0)
         {
             return this.getUpdateText();
