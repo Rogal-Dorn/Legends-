@@ -1,16 +1,35 @@
-this.legend_armor_named_tabard <- this.inherit("scripts/items/legend_armor/tabard/legend_armor_tabard", {
-	m = {},
+this.legend_armor_named_tabard <- this.inherit("scripts/items/legend_armor/legend_named_armor_upgrade", {
+	m = {
+		BraveryMult = 1.05
+	},
 	function create()
 	{
-		this.legend_armor_tabard.create();
+		this.legend_named_armor_upgrade.create();
 		this.m.Type = this.Const.Items.ArmorUpgrades.Tabbard
 		this.m.ID = "legend_armor.named_tabard";
+		this.m.Name = "";
+		this.m.NameList = [
+			"Kingly",
+			"Splendor",
+			"Pageantry",
+			"Swank",
+			"Noble",
+			"Undead"
+		];
 		this.m.Variant = this.Math.rand(1, 1);
 		this.updateVariant();
-		this.m.Value = 2000;
+		this.m.Value = 5500;
 		this.m.Condition = 5;
 		this.m.ConditionMax = 5;
 		this.m.StaminaModifier = -1;
+		this.randomizeValues()
+	}
+
+	function randomizeValues()
+	{
+		this.m.Condition = this.Math.floor(this.m.Condition * this.Math.rand(110, 125) * 0.01) * 1.0;
+		this.m.ConditionMax = this.m.Condition;
+		this.m.BraveryMult = this.Math.rand(105, 115) * 0.01
 	}
 
 	function updateVariant()
@@ -27,12 +46,12 @@ this.legend_armor_named_tabard <- this.inherit("scripts/items/legend_armor/tabar
 
 	function getTooltip()
 	{
-		local result = this.legend_armor_tabard.getTooltip();
+		local result = this.legend_named_armor_upgrade.getTooltip();
 		result.push({
 			id = 15,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Increase the Resolve of the wearer by [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color]"
+			text = "Increase the Resolve of the wearer by [color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.BraveryMult * 100.0 - 100 +"[/color]"
 		});
 		return result;
 	}
@@ -43,13 +62,25 @@ this.legend_armor_named_tabard <- this.inherit("scripts/items/legend_armor/tabar
 			id = 15,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Increase the Resolve of the wearer by [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color]"
+			text = "Increase the Resolve of the wearer by [color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.BraveryMult * 100.0 - 100 +"[/color]"
 		});
 	}
 
 	function onUpdateProperties( _properties )
 	{
-		_properties.BraveryMult *= 1.10;
+		_properties.BraveryMult *= this.m.BraveryMult;
+	}
+
+	function onSerialize( _out )
+	{
+		_out.writeF32(this.m.BraveryMult);
+		this.legend_named_armor_upgrade.onSerialize(_out);
+	}
+
+	function onDeserialize( _in )
+	{
+		this.m.BraveryMult = _in.readF32();
+		this.legend_named_armor_upgrade.onDeserialize(_in);
 	}
 
 });

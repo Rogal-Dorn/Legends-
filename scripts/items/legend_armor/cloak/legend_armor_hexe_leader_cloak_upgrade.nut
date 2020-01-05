@@ -10,7 +10,7 @@ this.legend_armor_hexe_leader_cloak_upgrade <- this.inherit("scripts/items/legen
 		this.m.ArmorDescription = "A cloak of spider silk offers extra protection";
 		this.m.SpriteBack = "cloak_spider";
 		this.m.SpriteDamagedBack = "cloak_spider_damaged";
-		this.m.SpriteCorpseBack = "cloak_spider_destroyed";
+		this.m.SpriteCorpseBack = "cloak_spider_dead";
 		this.m.Icon = "legend_armor/cloak/cloak_spider.png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "legend_armor/cloak/icon_cloak_spider.png";
