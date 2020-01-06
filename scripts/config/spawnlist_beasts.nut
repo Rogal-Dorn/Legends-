@@ -53,7 +53,7 @@ gt.Const.World.Spawn.Direwolves <-
 		},
 		{
 			Weight = 5,
-			MinR = 0.85 * 800,
+			MinR = 0.85 * 1600,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
@@ -100,7 +100,7 @@ gt.Const.World.Spawn.Ghouls <-
 		},
 		{
 			Weight = 1,
-			MinR = 0.85 * 535,
+			MinR = 0.85 * 1000,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendSkinGhoulLOW,
@@ -136,7 +136,7 @@ gt.Const.World.Spawn.Lindwurm <-
 		},
 		{
 			Weight = 10,
-			MinR = 1.0 * 800,
+			MinR = 1.0 * 1600,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendStollwurm,
@@ -168,7 +168,7 @@ gt.Const.World.Spawn.Unhold <-
 		},
 		{
 			Weight = 10,
-			MinR = 1.0 * 500,
+			MinR = 1.0 * 1000,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
@@ -200,7 +200,7 @@ gt.Const.World.Spawn.UnholdFrost <-
 		},
 		{
 			Weight = 10,
-			MinR = 1.0 * 550,
+			MinR = 1.0 * 1100,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
@@ -232,7 +232,7 @@ gt.Const.World.Spawn.UnholdBog <-
 		},
 		{
 			Weight = 10,
-			MinR = 1.0 * 500,
+			MinR = 1.0 * 1000,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
@@ -264,7 +264,7 @@ gt.Const.World.Spawn.Spiders <-
 		},
 		{
 			Weight = 10,
-			MinR = 1.0 * 384,
+			MinR = 1.0 * 800,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
@@ -305,7 +305,7 @@ gt.Const.World.Spawn.Alps <-
 		},
 		{
 			Weight = 5,
-			MinR = 1.0 * 800,
+			MinR = 1.0 * 1800,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
@@ -337,7 +337,7 @@ gt.Const.World.Spawn.Schrats <-
 		},
 		{
 			Weight = 10,
-			MinR = 1.0 * 800,
+			MinR = 1.0 * 1600,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
@@ -500,7 +500,7 @@ gt.Const.World.Spawn.HexenAndMore <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
-					MinR = 1.0 * 500,
+					MinR = 1.0 * 1000,
 					Cost = 400,
 					MinGuards = 2,
 					MaxGuards = 3,
@@ -657,7 +657,7 @@ gt.Const.World.Spawn.HexenAndNoSpiders <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
-					MinR = 1.0 * 500,
+					MinR = 1.0 * 1000,
 					Cost = 200,
 					MinGuards = 2,
 					MaxGuards = 3,
@@ -832,7 +832,7 @@ gt.Const.World.Spawn.LegendHexeLeader <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
-					MinR = 1.0 * 500,
+					MinR = 1.0 * 1000,
 					Cost = 300,
 					MinGuards = 2,
 					MaxGuards = 3,
