@@ -1721,7 +1721,6 @@ gt.Const.Strings.PerkDescription <- {
 	LegendDogHandling = "Your way with animals extends so far as turning those dogs that would do you harm. By spending one item of food you can make a dog flee from battle. The food item is chosen at random and the perk does not work if you have less than 25 food.",
 	LegendHeightenedReflexes = "You have trained in avoiding arrows, this skill translates well into dodging blades. Gain half of your ranged defence as melee defence, with a minimum bonus of 5.",
 	LegendWindReader = "You have learned to read the wind, estimating the path of arrows in uncertain conditions. This is very helpful for dodging arrows, but can also be applied to shooting them as well.  Gain half of your ranged defence as ranged skill, with a minimum bonus of 5. "
-};
 
 };
 gt.Const.Strings.Tooltip <- {
