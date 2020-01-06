@@ -2387,5 +2387,6 @@ Field Treats now uses a random food item, rather than 20 meds.
 Hedge Knights and swordmasters now appear later in bandit parties 
 Updates two of the new male heads to look better (Von Krolock) 
 Fixes named gambeson, heavy lamellar and scale coat (Spuds)
-Legendary beasts and necrosavants spawn later 
+Legendary beasts, necrosavants, barbarian champions and master archers spawn much later  
+Higher level goblins, barbarians and bandits spawn slightly later 
 20 new tips of the day added to explain background abilities 
