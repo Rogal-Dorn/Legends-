@@ -6,7 +6,7 @@ this.legend_gambeson_named <- this.inherit("scripts/items/legend_armor/cloth/leg
 		this.m.ID = "legend.armor.body.gambeson.cloth.named";
 		this.m.Name = "";
 		this.m.Description = "A master crafted heavy padded tunic that offers excellent protection.";
-        this.m.NameList = [
+		this.m.NameList = [
 			"Heraldic Gambeson",
 			"Splendor",
 			"Grandiosity",
@@ -18,7 +18,9 @@ this.legend_gambeson_named <- this.inherit("scripts/items/legend_armor/cloth/leg
 		];
 		this.m.IsDroppedAsLoot = true;
 		this.m.ShowOnCharacter = true;
-		this.m.Variants = [1];
+		this.m.Variants = [
+			1
+		];
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
@@ -27,11 +29,12 @@ this.legend_gambeson_named <- this.inherit("scripts/items/legend_armor/cloth/leg
 		this.m.Condition = 65;
 		this.m.ConditionMax = 65;
 		this.m.StaminaModifier = -6;
+		this.randomizeValues();
 	}
 
 	function randomizeValues()
 	{
-		this.m.StaminaModifier = this.Math.rand(4, 6) * -1
+		this.m.StaminaModifier = this.Math.rand(4, 6) * -1;
 		this.m.Condition = this.Math.floor(this.m.Condition * this.Math.rand(110, 125) * 0.01) * 1.0;
 		this.m.ConditionMax = this.m.Condition;
 	}

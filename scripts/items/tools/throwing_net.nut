@@ -8,7 +8,7 @@ this.throwing_net <- this.inherit("scripts/items/weapons/weapon", {
 		this.weapon.create();
 		this.m.ID = "tool.throwing_net";
 		this.m.Name = "Throwing Net";
-		this.m.Description = "A net used to throw over a target in order to hamper their ability to move and defend themself effectively.";
+		this.m.Description = "A net used to throw over a target in order to hamper their ability to move and defend themself effectively. Can be reloaded with 50 ammunition.";
 		this.m.IconLarge = "tools/inventory_throwing_net.png";
 		this.m.Icon = "tools/throwing_net_70x70.png";
 		this.m.SlotType = this.Const.ItemSlot.Offhand;
@@ -19,7 +19,7 @@ this.throwing_net <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Value = 400;
 		this.m.Ammo = 1;
 		this.m.AmmoMax = 1;
-		this.m.AmmoCost = 6;
+		this.m.AmmoCost = 50;
 		this.m.RangeMax = 3;
 		this.m.StaminaModifier = -2;
 		this.m.IsDroppedAsLoot = true;

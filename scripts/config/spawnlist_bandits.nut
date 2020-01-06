@@ -27,7 +27,7 @@ gt.Const.World.Spawn.BanditRoamers <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRabble,
-					MaxR = 0.25 * 220,
+					MaxR = 0.25 * 420,
 					Cost = 5
 				},
 				{
@@ -36,11 +36,18 @@ gt.Const.World.Spawn.BanditRoamers <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRaiderLOW,
+					MinR = 200,
 					Cost = 16
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRaider,
+					MinR = 400,
 					Cost = 20
+				},
+				{
+					MinR = 800,
+					Type = this.Const.World.Spawn.Troops.BanditVeteran,
+					Cost = 30
 				}
 			]
 		},
@@ -63,14 +70,14 @@ gt.Const.World.Spawn.BanditRoamers <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.BanditMarksman,
-					MinR = 110,
+					MinR = 400,
 					Cost = 15
 				}
 			]
 		},
 		{
 			Weight = 10,
-			MinR = 0.50 * 585,
+			MinR = 0.50 * 385,
 			Types =
 			[
 				{
@@ -126,7 +133,7 @@ gt.Const.World.Spawn.BanditScouts <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRabble,
-					MaxR = 0.25 * 170,
+					MaxR = 0.25 * 340,
 					Cost = 5
 				},
 				{
@@ -134,15 +141,17 @@ gt.Const.World.Spawn.BanditScouts <-
 					Cost = 8
 				},
 				{
+					MinR = 200,
 					Type = this.Const.World.Spawn.Troops.BanditRaiderLOW,
 					Cost = 16
 				},
 				{
+					MinR = 400,
 					Type = this.Const.World.Spawn.Troops.BanditRaider,
 					Cost = 20
 				},
 				{
-					MinR = 250,
+					MinR = 800,
 					Type = this.Const.World.Spawn.Troops.BanditVeteran,
 					Cost = 30
 				}
@@ -167,11 +176,11 @@ gt.Const.World.Spawn.BanditScouts <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.BanditMarksman,
-					MinR = 115,
+					MinR = 400,
 					Cost = 15
 				},
 				{
-					MinR = 250,
+					MinR = 800,
 					Type = this.Const.World.Spawn.Troops.MasterArcher,
 					Cost = 40,
 					Roll = true
@@ -244,16 +253,17 @@ gt.Const.World.Spawn.BanditRaiders <-
 					Cost = 8
 				},
 				{
+					MinR = 200,
 					Type = this.Const.World.Spawn.Troops.BanditRaiderLOW,
 					Cost = 16
 				},
 				{
-					MinR = 200,
+					MinR = 400,
 					Type = this.Const.World.Spawn.Troops.BanditRaider,
 					Cost = 20
 				},
 				{
-					MinR = 600,
+					MinR = 800,
 					Type = this.Const.World.Spawn.Troops.BanditVeteran,
 					Cost = 30
 				}
@@ -268,13 +278,13 @@ gt.Const.World.Spawn.BanditRaiders <-
 					Cost = 8
 				},
 				{
-					MinR = 200,
+					MinR = 400,
 					Type = this.Const.World.Spawn.Troops.BanditMarksman,
 					MinR = 125,
 					Cost = 15
 				},
 				{
-					MinR = 0.75 * 600,
+					MinR = 800,
 					Type = this.Const.World.Spawn.Troops.MasterArcher,
 					Cost = 40,
 					Roll = true
@@ -301,7 +311,7 @@ gt.Const.World.Spawn.BanditRaiders <-
 					Roll = true
 				},
 				{
-					MinR = 900,
+					MinR = 1200,
 					Type = this.Const.World.Spawn.Troops.BanditWarlord,
 					Cost = 80,
 					Roll = true
@@ -310,7 +320,7 @@ gt.Const.World.Spawn.BanditRaiders <-
 		},
 		{
 			Weight = 1,
-			MinR = 800,
+			MinR = 1200,
 			Types =
 			[
 				{
@@ -322,7 +332,7 @@ gt.Const.World.Spawn.BanditRaiders <-
 		},
 		{
 			Weight = 1,
-			MinR = 700,
+			MinR = 800,
 			Types =
 			[
 				{
@@ -402,12 +412,12 @@ gt.Const.World.Spawn.BanditDefenders <-
 					Cost = 16
 				},
 				{
-					MinR = 200,
+					MinR = 400,
 					Type = this.Const.World.Spawn.Troops.BanditRaider,
 					Cost = 20
 				},
 				{
-					MinR = 750,
+					MinR = 800,
 					Type = this.Const.World.Spawn.Troops.BanditVeteran,
 					Cost = 30
 				}
@@ -423,11 +433,11 @@ gt.Const.World.Spawn.BanditDefenders <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.BanditMarksman,
-					MinR = 200,
+					MinR = 400,
 					Cost = 15
 				},
 				{
-					MinR = 600,
+					MinR = 800,
 					Type = this.Const.World.Spawn.Troops.MasterArcher,
 					Cost = 40,
 					Roll = true
@@ -455,7 +465,7 @@ gt.Const.World.Spawn.BanditDefenders <-
 					Roll = true
 				},
 				{
-					MinR = 900,
+					MinR = 1200,
 					Type = this.Const.World.Spawn.Troops.BanditWarlord,
 					Cost = 50,
 					Roll = true
@@ -502,7 +512,7 @@ gt.Const.World.Spawn.BanditDefenders <-
 
 		{
 			Weight = 1,
-			MinR = 700,
+			MinR = 1200,
 			Types =
 			[
 				{
@@ -514,7 +524,7 @@ gt.Const.World.Spawn.BanditDefenders <-
 		},
 		{
 			Weight = 1,
-			MinR = 600,
+			MinR = 800,
 			Types =
 			[
 				{
@@ -543,7 +553,7 @@ gt.Const.World.Spawn.BanditBoss <-
 			Roll = true
 		},
 		{
-			MinR = 900,
+			MinR = 1200,
 			Weight = 1,
 			Type = this.Const.World.Spawn.Troops.BanditWarlord,
 			Cost = 50,
@@ -566,12 +576,12 @@ gt.Const.World.Spawn.BanditBoss <-
 					Cost = 16
 				},
 				{
-					MinR = 200,
+					MinR = 400,
 					Type = this.Const.World.Spawn.Troops.BanditRaider,
 					Cost = 20
 				},
 				{
-					MinR = 500,
+					MinR = 800,
 					Type = this.Const.World.Spawn.Troops.BanditVeteran,
 					Cost = 30
 				}
@@ -586,12 +596,12 @@ gt.Const.World.Spawn.BanditBoss <-
 					Cost = 8
 				},
 				{
-					MinR = 200,
+					MinR = 400,
 					Type = this.Const.World.Spawn.Troops.BanditMarksman,
 					Cost = 15
 				},
 				{
-					MinR = 500,
+					MinR = 1000,
 					Type = this.Const.World.Spawn.Troops.MasterArcher,
 					Cost = 40,
 					Roll = true
@@ -617,7 +627,7 @@ gt.Const.World.Spawn.BanditBoss <-
 					Roll = true
 				},
 				{
-					MinR = 900,
+					MinR = 1200,
 					Type = this.Const.World.Spawn.Troops.BanditWarlord,
 					Cost = 50,
 					Roll = true
@@ -629,7 +639,7 @@ gt.Const.World.Spawn.BanditBoss <-
 			Types =
 			[
 				{
-					MinR = 700,
+					MinR = 1200,
 					Type = this.Const.World.Spawn.Troops.HedgeKnight,
 					Cost = 40,
 					Roll = true
@@ -641,7 +651,7 @@ gt.Const.World.Spawn.BanditBoss <-
 			Types =
 			[
 				{
-					MinR = 600,
+					MinR = 800,
 					Type = this.Const.World.Spawn.Troops.Swordmaster,
 					Cost = 40,
 					Roll = true

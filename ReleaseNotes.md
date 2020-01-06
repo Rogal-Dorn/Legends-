@@ -2373,7 +2373,19 @@ https://drive.google.com/open?id=1m64jzGnlDHpROKUe_XqoWTL1c8N_WcZl
 Fix compatiblity issue with v29 (you can now load v29 saves into 30)
 fixes catapult skill that is causing crashes (Mwah)
 
-13.0.0.30c
+13.0.0.31
 Fixes recover skill being disabled when activating but not using another skill.
 Adds a new option that counts deaths by bleeding as kills for the person who dealt the cut.
+New perk - Dog Handling - spend a random food item to make an enemy dog flee. Given to houndmasters 
+New Perk - Heightened Reflexes - gain half your ranged defense as melee defense. Added to crossbow tree 
+New Perk - Wind Reader - gain half your ranged defense as ranged skill. Added to bow tree 
+Throwing net ammo cost raised from 6 to 50, to bring usage costs closer to vanilla 
+Reinforced ammo cost raised from 9 to 90, still much cheaper than vanilla. 
+Field Treats now uses a random food item, rather than 20 meds. 
+Hedge Knights and swordmasters now appear later in bandit parties 
+Updates two of the new male heads to look better (Von Krolock) 
+Fixes named gambeson, heavy lamellar and scale coat (Spuds)
+Legendary beasts, necrosavants, barbarian champions and master archers spawn much later  
+Higher level goblins, barbarians and bandits spawn slightly later 
+20 new tips of the day added to explain background abilities 
 Fixes hexe leader cloak blueprint.
