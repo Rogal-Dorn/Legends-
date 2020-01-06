@@ -2368,3 +2368,6 @@ Workshop building now [shouldn't] throw errors when stuff is null (Mwah)
 Fixes lacerate not being given (Mwah)
 
 https://drive.google.com/open?id=1m64jzGnlDHpROKUe_XqoWTL1c8N_WcZl
+
+13.0.0.30b
+fixes catapult skill that is causing crashes (Mwah)
