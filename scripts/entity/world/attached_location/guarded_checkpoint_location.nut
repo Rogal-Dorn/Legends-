@@ -159,11 +159,6 @@ this.guarded_checkpoint_location <- this.inherit("scripts/entity/world/attached_
 			}
 
 			_list.push({
-				R = 30,
-				P = 1.0,
-				S = "armor/leather_tunic"
-			});
-			_list.push({
 				R = 10,
 				P = 1.0,
 				S = "helmets/aketon_cap"

@@ -343,7 +343,7 @@ this.hedge_knight_background <- this.inherit("scripts/skills/backgrounds/charact
 				[1, "chain/legend_armor_short_mail"]
 			]
 			local chain = this.Const.World.Common.pickLegendArmor(chains)
-			if (chain != null && r > 1)
+			if (chain != null)
 			{
 				armor.setUpgrade(chain)
 			}
@@ -381,7 +381,7 @@ this.hedge_knight_background <- this.inherit("scripts/skills/backgrounds/charact
 				[0, "plate/legend_armor_scale_shirt"]
 			]
 			local plate = this.Const.World.Common.pickLegendArmor(plates)
-			if (plate != null && r > 2)
+			if (plate != null)
 			{
 				armor.setUpgrade(plate)
 			}

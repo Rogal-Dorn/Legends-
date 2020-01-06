@@ -114,7 +114,6 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 				}
 
 				local gearvalue = mainhandvalue + offhandvalue + bodyvalue + headvalue;
-				this.logInfo("Adding gear strength of " + gearvalue);
 				this.m.Strength += gearvalue ;
 			}
 
@@ -234,18 +233,16 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 	{
 		local smoke = this.Const.World.CampSmokeParticles;
 
-		for( local i = 0; i < smoke.len(); i = i )
+		for( local i = 0; i < smoke.len(); i = ++i )
 		{
 			this.World.spawnParticleEffect(smoke[i].Brushes, smoke[i].Delay, smoke[i].Quantity, smoke[i].LifeTime, smoke[i].SpawnRate, smoke[i].Stages, this.createVec(this.getPos().X, this.getPos().Y - 30), -200 + this.Const.World.ZLevel.Particles, true);
-			i = ++i;
 		}
 
 		local fire = this.Const.World.CampFireParticles;
 
-		for( local i = 0; i < fire.len(); i = i )
+		for( local i = 0; i < fire.len(); i = ++i )
 		{
 			this.World.spawnParticleEffect(fire[i].Brushes, fire[i].Delay, fire[i].Quantity, fire[i].LifeTime, fire[i].SpawnRate, fire[i].Stages, this.createVec(this.getPos().X, this.getPos().Y - 30), -200 + this.Const.World.ZLevel.Particles - 3, true);
-			i = ++i;
 		}
 	}
 

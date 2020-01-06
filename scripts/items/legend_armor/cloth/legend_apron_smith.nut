@@ -6,7 +6,8 @@ this.legend_apron_smith <- this.inherit("scripts/items/legend_armor/cloth/legend
 		this.m.ID = "legend.armor.body.legend_blacksmith_apron";
 		this.m.Name = "Blacksmith Apron";
 		this.m.Description = "A leather apron usually worn by a blacksmith";
-		this.m.Variant = this.Math.rand(1,4);
+		this.m.Variants = [1,2,3,4];
+		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.Value = 80;
 		this.m.Condition = 40;

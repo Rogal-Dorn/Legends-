@@ -1,6 +1,7 @@
 this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 	m = {
 		Upgrades = null,
+		Variants = [],
 		Blocked = []
 	},
 	function create()
@@ -9,22 +10,18 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		this.m.SlotType = this.Const.ItemSlot.Body;
 		this.m.Upgrades = [];
 
-		for( local i = 0; i < this.Const.Items.ArmorUpgrades.COUNT; i = i )
+		for( local i = 0; i < this.Const.Items.ArmorUpgrades.COUNT; i = ++i )
 		{
 			this.m.Upgrades.push(null);
 			this.m.Blocked.push(false);
-			i = ++i;
-			i = i;
 		}
 	}
 
 	function blockUpgrades()
 	{
-		for( local i = 0; i < this.Const.Items.ArmorUpgrades.COUNT; i = i )
+		for( local i = 0; i < this.Const.Items.ArmorUpgrades.COUNT; i = ++i )
 		{
 			this.m.Blocked[i] = true;
-			i = ++i;
-			i = i;
 		}
 	}
 
@@ -643,7 +640,7 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 	{
 		local totalDamage = _damage;
 
-		for( local i = this.Const.Items.ArmorUpgrades.COUNT - 1; i >= 0; i = i )
+		for( local i = this.Const.Items.ArmorUpgrades.COUNT - 1; i >= 0; i = --i )
 		{
 			local u = this.m.Upgrades[i];
 
@@ -654,9 +651,6 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 			{
 				totalDamage = u.onDamageReceived(totalDamage, _fatalityType, _attacker);
 			}
-
-			i = --i;
-			i = i;
 		}
 
 		this.updateAppearance();
@@ -811,7 +805,7 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		this.armor.onSerialize(_out);
 		_out.writeU8(this.m.Upgrades.len());
 
-		for( local i = 0; i != this.m.Upgrades.len(); i = i )
+		for( local i = 0; i != this.m.Upgrades.len(); i = ++i )
 		{
 			local item = this.m.Upgrades[i];
 
@@ -825,9 +819,6 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 				_out.writeI32(item.ClassNameHash);
 				item.onSerialize(_out);
 			}
-
-			i = ++i;
-			i = i;
 		}
 	}
 
@@ -837,24 +828,21 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		local count = _in.readU8();
 		this.m.Upgrades = [];
 
-		for( local i = 0; i < count; i = i )
+		for( local i = 0; i < count; i = ++i )
 		{
 			this.m.Upgrades.push(null);
 			local hasItem = _in.readBool();
 
 			if (!hasItem)
 			{
-			}
-			else
-			{
-				local item = this.new(this.IO.scriptFilenameByHash(_in.readI32()));
-				item.onDeserialize(_in);
-				this.m.Upgrades[i] = item;
-				this.m.Upgrades[i].setArmor(this);
+				continue
 			}
 
-			i = ++i;
-			i = i;
+			local item = this.new(this.IO.scriptFilenameByHash(_in.readI32()));
+			item.onDeserialize(_in);
+			this.m.Upgrades[i] = item;
+			this.m.Upgrades[i].setArmor(this);
+
 		}
 	}
 
