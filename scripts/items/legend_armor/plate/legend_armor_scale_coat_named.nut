@@ -3,9 +3,9 @@ this.legend_armor_scale_coat_named <- this.inherit("scripts/items/legend_armor/l
 	function create()
 	{
 		this.legend_named_armor_upgrade.create();
-		this.m.Type = this.Const.Items.ArmorUpgrades.Plate
+		this.m.Type = this.Const.Items.ArmorUpgrades.Plate;
 		this.m.ID = "legend_armor.scale_coat_named";
-        this.m.Name = "";
+		this.m.Name = "";
 		this.m.Description = "A scale armor made of small, interlocking metal scales. The style and craftsmanship hint at the armor coming from a far-away region.";
 		this.m.ArmorDescription = "Includes a scale armor made of small, interlocking metal scales. The style and craftsmanship hint at the armor coming from a far-away region.";
 		this.m.NameList = [
@@ -20,14 +20,17 @@ this.legend_armor_scale_coat_named <- this.inherit("scripts/items/legend_armor/l
 			"Golden Armor",
 			"Golden Reminder"
 		];
-		this.m.Variants = [1];
+		this.m.Variants = [
+			1
+		];
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.Value = 10000;
 		this.m.Condition = 180;
 		this.m.ConditionMax = 180;
 		this.m.StaminaModifier = -24;
-        this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
+		this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
+		this.randomizeValues();
 	}
 
 	function randomizeValues()
@@ -40,13 +43,13 @@ this.legend_armor_scale_coat_named <- this.inherit("scripts/items/legend_armor/l
 	function updateVariant()
 	{
 		local variant = this.m.Variant < 10 ? "0" + this.m.Variant : this.m.Variant;
-		this.m.SpriteBack = "bust_legend_scale_coat_named_" + variant ;
+		this.m.SpriteBack = "bust_legend_scale_coat_named_" + variant;
 		this.m.SpriteDamagedBack = "bust_legend_scale_coat_named_" + variant + "_damaged";
 		this.m.SpriteCorpseBack = "bust_legend_scale_coat_named_" + variant + "_dead";
 		this.m.Icon = "legend_armor/plate/legend_scale_coat_named_" + variant + ".png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "legend_armor/plate/icon_legend_scale_coat_named_" + variant + ".png";
-		this.m.OverlayIconLarge = "legend_armor/plate/inventory_legend_scale_coat_named_"  + variant + ".png";
+		this.m.OverlayIconLarge = "legend_armor/plate/inventory_legend_scale_coat_named_" + variant + ".png";
 	}
 
 });
