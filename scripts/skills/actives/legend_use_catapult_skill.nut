@@ -143,31 +143,31 @@ this.legend_use_catapult_skill <- this.inherit("scripts/skills/skill", {
 			{
 				if (!myTile.hasNextTile(i))
 				{
+					continue;
 				}
-				else
-				{
-					local tile = myTile.getNextTile(i);
+				
+				local tile = myTile.getNextTile(i);
 
-					if (this.Math.abs(tile.Level - myTile.Level) <= 1 && tile.IsOccupiedByActor && actor.isAlliedWith(tile.getEntity()) && tile.getEntity().getType() == this.Const.EntityType.LegendCatapult)
-					{
-						hasTarget = true;
-						break;
-					}
+				if (this.Math.abs(tile.Level - myTile.Level) <= 1 && tile.IsOccupiedByActor && actor.isAlliedWith(tile.getEntity()) && tile.getEntity().getType() == this.Const.EntityType.LegendCatapult)
+				{
+					hasTarget = true;
+					break;
 				}
+				
 			}
 
 			if (hasTarget)
 			{
-				this.m.isHidden = true;
+				this.m.IsHidden = true;
 			}
 			else
 			{
-				this.m.isHidden = false;
+				this.m.IsHidden = false;
 			}
 		}
 		else
 		{
-			this.m.isHidden = true;
+			this.m.IsHidden = true;
 		}
 
 		return this.skill.isHidden();
