@@ -2372,3 +2372,6 @@ https://drive.google.com/open?id=1m64jzGnlDHpROKUe_XqoWTL1c8N_WcZl
 13.0.0.30b
 Fix compatiblity issue with v29 (you can now load v29 saves into 30)
 fixes catapult skill that is causing crashes (Mwah)
+
+13.0.0.30c
+Hopefully fixes Catapult Skill for the last time (Mwah)
