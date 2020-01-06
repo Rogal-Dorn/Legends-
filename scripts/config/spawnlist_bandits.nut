@@ -301,7 +301,7 @@ gt.Const.World.Spawn.BanditRaiders <-
 					Roll = true
 				},
 				{
-					MinR = 900,
+					MinR = 1200,
 					Type = this.Const.World.Spawn.Troops.BanditWarlord,
 					Cost = 80,
 					Roll = true
@@ -310,7 +310,7 @@ gt.Const.World.Spawn.BanditRaiders <-
 		},
 		{
 			Weight = 1,
-			MinR = 800,
+			MinR = 1200,
 			Types =
 			[
 				{
@@ -322,7 +322,7 @@ gt.Const.World.Spawn.BanditRaiders <-
 		},
 		{
 			Weight = 1,
-			MinR = 700,
+			MinR = 800,
 			Types =
 			[
 				{
@@ -502,7 +502,7 @@ gt.Const.World.Spawn.BanditDefenders <-
 
 		{
 			Weight = 1,
-			MinR = 700,
+			MinR = 1200,
 			Types =
 			[
 				{
@@ -514,7 +514,7 @@ gt.Const.World.Spawn.BanditDefenders <-
 		},
 		{
 			Weight = 1,
-			MinR = 600,
+			MinR = 800,
 			Types =
 			[
 				{
@@ -629,7 +629,7 @@ gt.Const.World.Spawn.BanditBoss <-
 			Types =
 			[
 				{
-					MinR = 700,
+					MinR = 1200,
 					Type = this.Const.World.Spawn.Troops.HedgeKnight,
 					Cost = 40,
 					Roll = true
@@ -641,7 +641,7 @@ gt.Const.World.Spawn.BanditBoss <-
 			Types =
 			[
 				{
-					MinR = 600,
+					MinR = 800,
 					Type = this.Const.World.Spawn.Troops.Swordmaster,
 					Cost = 40,
 					Roll = true

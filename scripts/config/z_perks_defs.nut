@@ -2741,6 +2741,33 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/perk_dogs.png",
 		IconDisabled = "ui/perks/perk_dogs_bw.png",
 		Const = "LegendDogBreeder"
+	},
+	{
+		ID = "perk.legend_doghandling",
+		Script = "scripts/skills/perks/perk_legend_doghandling",
+		Name = this.Const.Strings.PerkName.LegendDogHandling,
+		Tooltip = this.Const.Strings.PerkDescription.LegendDogHandling,
+		Icon = "ui/perks/dog_handling.png",
+		IconDisabled = "ui/perks/dog_handling_bw.png",
+		Const = "LegendDogHandling"
+	},
+	{
+		ID = "perk.legend_heightened_reflexes",
+		Script = "scripts/skills/perks/perk_legend_heightened_reflexes",
+		Name = this.Const.Strings.PerkName.LegendHeightenedReflexes,
+		Tooltip = this.Const.Strings.PerkDescription.LegendHeightenedReflexes,
+		Icon = "ui/perks/heightened_reflexes.png",
+		IconDisabled = "ui/perks/heightened_reflexes_bw.png",
+		Const = "LegendHeightenedReflexes"
+	},
+	{
+		ID = "perk.legend_wind_reader",
+		Script = "scripts/skills/perks/perk_legend_wind_reader",
+		Name = this.Const.Strings.PerkName.LegendWindReader,
+		Tooltip = this.Const.Strings.PerkDescription.LegendWindReader,
+		Icon = "ui/perks/wind_reader.png",
+		IconDisabled = "ui/perks/wind_reader_bw.png",
+		Const = "LegendWindReader"
 	}
 ];
 gt.Const.Perks.PerkDefs <- {};

@@ -1392,7 +1392,10 @@ gt.Const.Strings.PerkName <- {
 	LegendCampCook = "Camp Cooking",
 	LegendPackleader = "Pack Leader",
 	LegendDogWhisperer = "Dog Whisperer",
-	LegendDogBreeder = "Dog Breeder"
+	LegendDogBreeder = "Dog Breeder",
+	LegendDogHandling = "Dog Handling",
+	LegendHeightenedReflexes = "Heightened Reflexes",
+	LegendWindReader = "Wind Reader"
 };
 gt.Const.Strings.PerkDescription <- {
 	Relentless = "Don\'t slow down! At all times your Initiative is reduced only by [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] of your accumulated Fatigue, instead of all of it. \n[color=#0b0084]From the Fit perk group[/color]",
@@ -1617,7 +1620,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendTeleport = "Step through the world, disapearing from one place and reappearing in another place immediately.",
 	LegendSpecialistShieldSkill = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] Melee Defense while using a shield. \n[color=#0b0084]From the Shield perk group[/color]",
 	LegendSpecialistShieldPush = "The skill \'Knock Back\' costs [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color] less fatigue and action points. \n[color=#0b0084]From the Shield perk group[/color]",
-	LegendMasteryNets = "Use advanced net throwing techniques to reduce the fatigue cost by [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color], increases the maximum net ammo to [color=" + this.Const.UI.Color.PositiveValue + "]2[/color] and reduce AP cost to [color=" + this.Const.UI.Color.PositiveValue + "]3[/color]. \n[color=#0b0084]From the Nets perk group[/color]",
+	LegendMasteryNets = "Use advanced net throwing techniques to reduce the fatigue cost by [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color] and reduce AP cost to [color=" + this.Const.UI.Color.PositiveValue + "]3[/color]. \n[color=#0b0084]From the Nets perk group[/color]",
 	LegendSpecialistScytheSkill = "Practicing with the unweildy scythe has taught you how to twist your torso to produce repeatable smooth strokes. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+15[/color] melee skill while weilding a scythe",
 	LegendSpecialistScytheDamage = "There is a trick to sharpening the blades of scythes, and shifting the position of the handles turns it from a farming tool into a weapon. Mastering these tricks increases the damage output of scythes by [color=" + this.Const.UI.Color.PositiveValue + "]+10-15[/color]",
 	LegendMasterySlings = "Master the difficult angles and timings of slinging rocks from afar. \n\n Accuracy with slings is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] and maximum firing range with slings is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color]. \n[color=#0b0084]From the Sling perk group[/color]",
@@ -1714,7 +1717,12 @@ gt.Const.Strings.PerkDescription <- {
 	LegendCampCook = "There is a fine art to cooking, skills and ingredients that are not obvious but unlock a world of flavor or preserve food for longer. Unlocks food crafting in the crafting tent. Allows the creation of porridge, puddings, pies, meat curing, fruit drying and ration making."
 	LegendPackleader = "Dogs can instinctively identify a pack leader, knowledge of their habits allows you to become the leader of their pack. Unlocks the ability to store aditional dog items in your bags and use them in battle.",
 	LegendDogWhisperer = "You have a way with dogs, the bond you form with them imbues each dog with more confidence and strength, knowing that you are there gives them strength. Grants each dog you unleash the perks Colossus, Fortified Mind and Underdog.",
-	LegendDogBreeder = "Intimate knowledge of dog care and conditions required for breeding allows you to successfully breed dogs. Unlocks a recipe in the crafting tent for breeding dogs."
+	LegendDogBreeder = "Intimate knowledge of dog care and conditions required for breeding allows you to successfully breed dogs. Unlocks a recipe in the crafting tent for breeding dogs.",
+	LegendDogHandling = "Your way with animals extends so far as turning those dogs that would do you harm. By spending one item of food you can make a dog flee from battle. The food item is chosen at random and the perk does not work if you have less than 25 food.",
+	LegendHeightenedReflexes = "You have trained in avoiding arrows, this skill translates well into dodging blades. Gain half of your ranged defence as melee defence, with a minimum bonus of 5.",
+	LegendWindReader = "You have learned to read the wind, estimating the path of arrows in uncertain conditions. This is very helpful for dodging arrows, but can also be applied to shooting them as well.  Gain half of your ranged defence as ranged skill, with a minimum bonus of 5. "
+};
+
 };
 gt.Const.Strings.Tooltip <- {
 	World = {
