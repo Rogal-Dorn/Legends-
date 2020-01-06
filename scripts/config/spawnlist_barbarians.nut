@@ -22,7 +22,7 @@ gt.Const.World.Spawn.Barbarians <-
 	MaxR = 880,
 	Fixed = [
 		{
-			MinR = 150,
+			MinR = 300,
 			MinCount = 1,
 			MaxCount = 2,
 			Weight = 70 //percentage chance after min count is met
@@ -39,12 +39,12 @@ gt.Const.World.Spawn.Barbarians <-
 					Cost = 12
 				},
 				{
-					MinR = 200,
+					MinR = 400,
 					Type = this.Const.World.Spawn.Troops.BarbarianMarauder,
 					Cost = 25
 				},
 				{
-					MinR = 600,
+					MinR = 1000,
 					Type = this.Const.World.Spawn.Troops.BarbarianChampion,
 					Cost = 40
 				}
@@ -61,7 +61,7 @@ gt.Const.World.Spawn.Barbarians <-
 		},
 		{
 			Weight = 10,
-			MinR = 0.4 * 880,
+			MinR = 800,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.BarbarianBeastmaster,
