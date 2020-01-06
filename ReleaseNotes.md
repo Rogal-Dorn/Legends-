@@ -2389,3 +2389,4 @@ Legendary beasts, necrosavants, barbarian champions and master archers spawn muc
 Higher level goblins, barbarians and bandits spawn slightly later 
 20 new tips of the day added to explain background abilities 
 Fixes hexe leader cloak blueprint.
+Fixes Catapult Skill (Mwah).

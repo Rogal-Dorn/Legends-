@@ -158,11 +158,11 @@ this.legend_use_catapult_skill <- this.inherit("scripts/skills/skill", {
 
 			if (hasTarget)
 			{
-				this.m.IsHidden = true;
+				this.m.IsHidden = false;
 			}
 			else
 			{
-				this.m.IsHidden = false;
+				this.m.IsHidden = true;
 			}
 		}
 		else
