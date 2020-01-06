@@ -2,7 +2,8 @@ this.bleeding_effect <- this.inherit("scripts/skills/skill", {
 	m = {
 		TurnsLeft = 2,
 		Damage = 5,
-		LastRoundApplied = 0
+		LastRoundApplied = 0,
+		Actor = null
 	},
 	function getDamage()
 	{
@@ -12,6 +13,11 @@ this.bleeding_effect <- this.inherit("scripts/skills/skill", {
 	function setDamage( _d )
 	{
 		this.m.Damage = _d;
+	}
+
+	function setActor( _a )
+	{
+		this.m.Actor = this.WeakTableRef(_a);
 	}
 
 	function create()
@@ -45,7 +51,14 @@ this.bleeding_effect <- this.inherit("scripts/skills/skill", {
 			hitInfo.BodyPart = this.Const.BodyPart.Body;
 			hitInfo.BodyDamageMult = 1.0;
 			hitInfo.FatalityChanceMult = 0.0;
-			this.getContainer().getActor().onDamageReceived(this.getContainer().getActor(), this, hitInfo);
+			if (this.Const.LegendMod.Configs.LegendBleedKillerEnabled())
+			{
+				this.getContainer().getActor().onDamageReceived(this.m.Actor, this, hitInfo);
+			}
+			else
+			{
+				this.getContainer().getActor().onDamageReceived(this.getContainer().getActor(), this, hitInfo);
+			}
 
 			if (--this.m.TurnsLeft <= 0)
 			{

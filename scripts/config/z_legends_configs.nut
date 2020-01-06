@@ -12,7 +12,8 @@ gt.Const.LegendMod.Configs <- {
 	IsItemScaling = false,
 	IsLocationScaling = false,
 	IsCampUnlock = false,
-	IsRecruitScaling = false
+	IsRecruitScaling = false,
+    IsBleedKiller = false
 
     Update = function (_settings)
     {
@@ -23,6 +24,7 @@ gt.Const.LegendMod.Configs <- {
 		this.IsLocationScaling = _settings.LegendLocationScaling;
 		this.IsCampUnlock = _settings.LegendCampUnlock;
 		this.IsRecruitScaling = _settings.LegendRecruitScaling;
+        this.IsBleedKiller = _settings.LegendBleedKiller;
     }
 
     LegendArmorsEnabled = function ()
@@ -60,6 +62,11 @@ gt.Const.LegendMod.Configs <- {
         return this.IsRecruitScaling
     }
 
+    LegendBleedKillerEnabled = function ()
+    {
+        return this.IsBleedKiller
+    }
+
     onSerialize = function (_out)
     {
         _out.writeBool(this.IsArmor);
@@ -69,6 +76,7 @@ gt.Const.LegendMod.Configs <- {
 		_out.writeBool(this.IsLocationScaling);
 		_out.writeBool(this.IsCampUnlock);
 		_out.writeBool(this.IsRecruitScaling);
+        _out.writeBool(this.IsBleedKiller);
     }
 
     onDeserialize = function (_in)
@@ -80,6 +88,11 @@ gt.Const.LegendMod.Configs <- {
         this.IsLocationScaling = _in.readBool();
         this.IsCampUnlock = _in.readBool();
         this.IsRecruitScaling = _in.readBool();
+        if (_in.getMetaData().getVersion() >= 63)
+		{
+			this.IsBleedKiller = _in.readBool();
+		}
+        
     }
 }
 
