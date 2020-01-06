@@ -2376,3 +2376,4 @@ fixes catapult skill that is causing crashes (Mwah)
 13.0.0.30c
 Fixes recover skill being disabled when activating but not using another skill.
 Adds a new option that counts deaths by bleeding as kills for the person who dealt the cut.
+Fixes hexe leader cloak blueprint.
