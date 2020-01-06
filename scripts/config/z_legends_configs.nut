@@ -76,14 +76,10 @@ gt.Const.LegendMod.Configs <- {
 		this.IsArmor = _in.readBool();
 		this.IsMagic = _in.readBool();
 		this.IsGender = _in.readBool();
-		if (_in.getMetaData().getVersion() >= 62)
-        {
-			this.IsItemScaling = _in.readBool();
-			this.IsLocationScaling = _in.readBool();
-			this.IsCampUnlock = _in.readBool();
-			this.IsRecruitScaling = _in.readBool();
-        }
-
+        this.IsItemScaling = _in.readBool();
+        this.IsLocationScaling = _in.readBool();
+        this.IsCampUnlock = _in.readBool();
+        this.IsRecruitScaling = _in.readBool();
     }
 }
 
