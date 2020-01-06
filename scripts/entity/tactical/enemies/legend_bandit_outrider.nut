@@ -175,24 +175,21 @@ this.legend_bandit_outrider <- this.inherit("scripts/entity/tactical/human", {
 		{
 			local changed = false;
 
-			for( local i = 0; i != 6; i = i )
+			for( local i = 0; i != 6; i = ++i )
 			{
 				if (!this.m.Info.Tile.hasNextTile(i))
 				{
+					continue;
 				}
-				else
+
+				local tile = this.m.Info.Tile.getNextTile(i);
+
+				if (tile.IsEmpty && this.Math.abs(tile.Level - this.m.Info.Tile.Level) <= 1)
 				{
-					local tile = this.m.Info.Tile.getNextTile(i);
-
-					if (tile.IsEmpty && this.Math.abs(tile.Level - this.m.Info.Tile.Level) <= 1)
-					{
-						this.m.Info.Tile = tile;
-						changed = true;
-						break;
-					}
+					this.m.Info.Tile = tile;
+					changed = true;
+					break;
 				}
-
-				i = ++i;
 			}
 
 			if (!changed)

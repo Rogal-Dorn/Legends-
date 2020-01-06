@@ -29,7 +29,7 @@ this.legend_redback_cloak_blueprint <- this.inherit("scripts/crafting/blueprint"
 
 		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
 		{
-			_stash.add(this.new("scripts/items/legend_armor/armor_upgrades/legend_armor_redback_cloak_upgrade"));
+			_stash.add(this.new("scripts/items/legend_armor/cloak/legend_armor_redback_cloak_upgrade"));
 		}
 		else
 		{

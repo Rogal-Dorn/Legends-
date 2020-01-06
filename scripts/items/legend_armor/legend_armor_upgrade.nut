@@ -15,7 +15,8 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 		Type = -1,
 		ImpactSound = this.Const.Sound.ArmorLeatherImpact,
 		InventorySound = this.Const.Sound.ArmorLeatherImpact,
-		IsDestroyedOnRemove = false
+		IsDestroyedOnRemove = false,
+		Variants = [],
 	},
 	function create()
 	{
