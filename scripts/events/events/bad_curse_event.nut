@@ -260,7 +260,7 @@ this.bad_curse_event <- this.inherit("scripts/events/event", {
 			{
 				candidates_monk.push(bro);
 			}
-			else if (bro.getBackground().getID() == "background.sorcerer" || bro.getBackground().getID() == "background.legend_necro_background" || bro.getBackground().getID() == "background.legend_necro_commander_background" || bro.getBackground().getID() == "background.legend_witch_background" || bro.getBackground().getID() == "background.legend_witch_commander_background")
+			else if (bro.getBackground().getID() == "background.sorcerer" || bro.getBackground().getID() == "background.legend_necro" || bro.getBackground().getID() == "background.legend_necro_commander" || bro.getBackground().getID() == "background.legend_witch" || bro.getBackground().getID() == "background.legend_witch_commander")
 			{
 				candidates_sorcerer.push(bro);
 			}
