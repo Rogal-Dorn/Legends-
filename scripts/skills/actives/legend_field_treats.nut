@@ -96,7 +96,16 @@ this.legend_field_treats <- this.inherit("scripts/skills/skill", {
 		local food = this.World.Assets.getFood();
 		local a = _targetTile.getEntity();
 		a.changeMorale(this.Const.MoraleState.Steady, "status_effect_56");
-		this.World.Assets.addMedicine(-20);
+		local food = this.World.Assets.getFoodItems();
+
+		for( local i = 0; i < 2; i = ++i )
+		{
+			local idx = this.Math.rand(0, food.len() - 1);
+			local item = food[idx];
+			this.World.Assets.getStash().remove(item);
+			food.remove(idx);
+		}
+		this.World.Assets.updateFood();
 		return true;
 	}
 

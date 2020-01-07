@@ -174,7 +174,7 @@ gt.Const.Perks.CrossbowTree <- {
 		[],
 		[],
 		[gt.Const.Perks.PerkDefs.SpecCrossbow],
-		[],
+		[gt.Const.Perks.PerkDefs.LegendHeightenedReflexes],
 		[gt.Const.Perks.PerkDefs.Ballistics],
 		[gt.Const.Perks.PerkDefs.LegendPiercingShot]
 	]
@@ -190,7 +190,7 @@ gt.Const.Perks.BowTree <- {
 		[gt.Const.Perks.PerkDefs.Bullseye],
 		[],
 		[gt.Const.Perks.PerkDefs.SpecBow],
-		[],
+		[gt.Const.Perks.PerkDefs.LegendWindReader],
 		[gt.Const.Perks.PerkDefs.Overwhelm],
 		[]
 	]

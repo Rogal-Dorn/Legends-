@@ -32,7 +32,7 @@ this.legend_armor_cloak_rich <- this.inherit("scripts/items/legend_armor/legend_
 	{
 		this.m.Condition = this.Math.floor(this.m.Condition * this.Math.rand(110, 125) * 0.01) * 1.0;
 		this.m.ConditionMax = this.m.Condition;
-		this.m.BraveryMult = this.Math.floor(this.Math.rand(105, 115) * 0.01)
+		this.m.BraveryMult = this.Math.rand(105, 115) * 0.01;
 	}
 
 	function updateVariant()
@@ -50,22 +50,24 @@ this.legend_armor_cloak_rich <- this.inherit("scripts/items/legend_armor/legend_
 	function getTooltip()
 	{
 		local result = this.legend_named_armor_upgrade.getTooltip();
+		local val = this.Math.floor(this.m.BraveryMult * 100.0 - 100);
 		result.push({
 			id = 15,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Increase the Resolve of the wearer by [color=" + this.Const.UI.Color.PositiveValue + "]+" + (this.m.BraveryMult * 100.0 - 100) + "%[/color]"
+			text = "Increase the Resolve of the wearer by [color=" + this.Const.UI.Color.PositiveValue + "]+" + val + "%[/color]"
 		});
 		return result;
 	}
 
 	function onArmorTooltip( _result )
 	{
+		local val = this.Math.floor(this.m.BraveryMult * 100.0 - 100);
 		_result.push({
 			id = 15,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Increase the Resolve of the wearer by [color=" + this.Const.UI.Color.PositiveValue + "]+" + (this.m.BraveryMult * 100.0 - 100) +"%[/color]"
+			text = "Increase the Resolve of the wearer by [color=" + this.Const.UI.Color.PositiveValue + "]+" + val +"%[/color]"
 		});
 	}
 

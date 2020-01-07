@@ -61,14 +61,6 @@ this.recover_skill <- this.inherit("scripts/skills/skill", {
 		this.m.AP = 0;
 	}
 	
-	function onAnySkillUsed( _skill, _targetEntity, _properties )
-	{
-		if (_skill != this)
-		{
-			this.m.CanRecover = false;
-		}
-	}
-	
 	function isUsable()
 	{
 		return this.skill.isUsable() && this.m.CanRecover;
