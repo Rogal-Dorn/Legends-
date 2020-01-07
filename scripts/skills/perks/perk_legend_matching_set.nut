@@ -63,10 +63,10 @@ this.perk_legend_matching_set <- this.inherit("scripts/skills/skill", {
 
 		if ((body + head) <= 400 )
 		{
-		local diff = this.Math.abs(body - head);
-		local diffadj = this.math.floor(diff / 10);
-		local bonus = this.Math.max(1, (5 - diffadj));
-		_properties.FatigueRecoveryRate += bonus;
+			local diff = this.Math.abs(body - head);
+			local diffadj = this.Math.floor(diff / 10);
+			local bonus = this.Math.max(1, (5 - diffadj));
+			_properties.FatigueRecoveryRate += bonus;
 		}
 	}
 

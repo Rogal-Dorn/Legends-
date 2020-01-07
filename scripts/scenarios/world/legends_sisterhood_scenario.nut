@@ -33,25 +33,21 @@ this.legends_sisterhood_scenario <- this.inherit("scripts/scenarios/world/starti
 		]);
 		bros[0].setPlaceInFormation(3);
 		bros[0].setVeteranPerks(2);	
-		bros[0].setGender(1);
 		bros[1].setStartValuesEx([
 			"wildwoman_background"
 		]);
 		bros[1].setPlaceInFormation(4);
 		bros[1].setVeteranPerks(2);	
-		bros[1].setGender(1);
 		bros[2].setStartValuesEx([
 			"female_thief_background"
 		]);
 		bros[2].setPlaceInFormation(5);
 		bros[2].setVeteranPerks(2);	
-		bros[2].setGender(1);
 		bros[3].setStartValuesEx([
 			"female_bowyer_background"
 		]);
 		bros[3].setPlaceInFormation(12);
 		bros[3].setVeteranPerks(2);	
-		bros[3].setGender(1);
 		bros[4].setStartValuesEx([
 			"legend_vala_commander_background"
 		]);
@@ -60,13 +56,11 @@ this.legends_sisterhood_scenario <- this.inherit("scripts/scenarios/world/starti
 		bros[4].getTags().set("IsPlayerCharacter", true);
 		bros[4].setPlaceInFormation(13);
 		bros[4].setVeteranPerks(2);	
-		bros[4].setGender(1);
 		bros[5].setStartValuesEx([
 			"female_adventurous_noble_background"
 		]);
 		bros[5].setPlaceInFormation(14);
 		bros[5].setVeteranPerks(2);	
-		bros[5].setGender(1);
 		this.World.Tags.set("HasLegendCampGathering", true);
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/bread_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/mead_item"));
