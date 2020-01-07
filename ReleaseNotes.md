@@ -2405,3 +2405,8 @@ Puncture no longer has a -15 chance to hit modifier. The modifer is now equal to
   
 Fixes fights freezing when fighting bandit leaders, bandit warlords, knights, militia captains and swordmasters, due to their fancy cloaks not loading 
 Fixes layer alignment issues on nun's robes and leather jackets in the inventory
+Fixes cloaks and food being craftable without materials 
+Huge quivers don't show up unless their is a fletchers hut attached location
+Huge quivers can now be crafted using a rock unhold hide, if you have a fletcher in your party 
+
+ 
