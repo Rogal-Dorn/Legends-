@@ -46,7 +46,7 @@ this.puncture <- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/hitchance.png",
-				text = "Has [color=" + this.Const.UI.Color.NegativeValue + "]-15%[/color] chance to hit"
+				text = "Chance to hit is increased or decreased based on the targets fatigue level. A target that is more fatigued will be easier to puncture."
 			},
 			{
 				id = 8,
@@ -69,6 +69,10 @@ this.puncture <- this.inherit("scripts/skills/skill", {
 
 	function getHitChance(_targetEntity)
 	{
+		if (_targetEntity == null)
+		{
+			return 0;
+		}
 		local targetFat = _targetEntity.getFatigue();
 		local targetFatMax = _targetEntity.getFatigueMax();
 		local fatPercent = targetFatMax / 100;
