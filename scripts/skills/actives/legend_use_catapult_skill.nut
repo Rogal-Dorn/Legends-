@@ -52,7 +52,7 @@ this.legend_use_catapult_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsShowingProjectile = true;
 		this.m.IsWeaponSkill = true;
 		this.m.IsDoingForwardMove = false;
-		this.m.IsHidden = false;
+		this.m.IsHidden = true;
 		this.m.InjuriesOnBody = this.Const.Injury.BluntBody;
 		this.m.InjuriesOnHead = this.Const.Injury.BluntHead;
 		this.m.DirectDamageMult = 0.35;
@@ -182,13 +182,11 @@ this.legend_use_catapult_skill <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		if ( !( this.m.IsHidden) ) {
 			_properties.DamageRegularMin += 100;
 			_properties.DamageRegularMax += 200;
 			_properties.DamageArmorMult *= 1.5;
 			this.m.ChanceDecapitate = 50;
 			this.m.ChanceDisembowel = 50;
-		}
 	}
 
 	function onAfterUpdate( _properties )
