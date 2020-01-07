@@ -16,16 +16,9 @@ this.perk_legend_summon_bear <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
-		if (!this.m.Container.hasSkill("actives.legend_unleash_bear"))
-		{
-			this.m.Container.add(this.new("scripts/skills/actives/legend_unleash_bear"));
-		}
+		this.World.Assets.getStash().add(this.new("scripts/items/accessory/legend_warbear_item"));
 	}
 
-	function onRemoved()
-	{
-		this.m.Container.removeByID("actives.legend_unleash_bear");
-	}
 
 
 });
