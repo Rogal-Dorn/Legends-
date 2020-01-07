@@ -35,7 +35,7 @@ this.female_adventurous_noble_background <- this.inherit("scripts/skills/backgro
 		this.m.Body = "bust_naked_body_03";
 		this.m.IsFemaleBackground = true;
 
-		if (this.Const.LegendMod.Configs.LegendGenderEnabled())
+		if (this.Const.LegendMod.Configs.LegendGenderEnabled() && this.World.Assets.getOrigin().getID() != "scenario.legends_sisterhood")
 		{
 			local r = this.Math.rand(0, 1);
 			if (r == 0)
