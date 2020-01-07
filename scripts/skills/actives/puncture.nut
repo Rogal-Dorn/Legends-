@@ -46,7 +46,7 @@ this.puncture <- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/hitchance.png",
-				text = "Chance to hit is increased or decreased based on the targets fatigue level. A target that is more fatigued will be easier to puncture."
+				text = "Fatigue level of target reduces any hit chance penality. A completely exhausted target will have no to-hit penality applied, while a fresh target has full penalities applied. Dagger mastery reduces any penalities to hit by half."
 			},
 			{
 				id = 8,
@@ -73,18 +73,7 @@ this.puncture <- this.inherit("scripts/skills/skill", {
 		{
 			return 0;
 		}
-		local targetFat = _targetEntity.getFatigue();
-		local targetFatMax = _targetEntity.getFatigueMax();
-		local fatPercent = targetFatMax / 100;
-		local currentFatPercent = this.Math.floor(targetFat/fatPercent);
-
-	//	local targetArmor = _targetEntity.getArmor(this.Const.BodyPart.Body)
-	//	local targetArmorMax = _targetEntity.getArmorMax(this.Const.BodyPart.Body)
-	//	local armorPercent = targetArmorMax  / 100;
-	//	local currentArmorPercent = this.math.floor(targetArmor/armorPercent);
-	//	local average = (currentArmorPercent + currentFatPercent) / 2;
-		return currentFatPercent;
-
+		return _targetEntity.getFatiguePct();
 	}
 
 	function onAfterUpdate( _properties )
@@ -105,7 +94,11 @@ this.puncture <- this.inherit("scripts/skills/skill", {
 	{
 		if (_skill == this)
 		{
-			local bonus = this.getHitChance(_targetEntity);
+			local bonus = (1.0 - this.getHitChance(_targetEntity)) * _properties.MeleeSkill;
+			if (_properties.IsSpecializedInDaggers)
+			{
+				bonus = this.Math.floor(bonus / 2.0)
+			}
 			_properties.MeleeSkill -= bonus;
 			_properties.DamageArmorMult *= 0.0;
 			_properties.IsIgnoringArmorOnAttack = true;

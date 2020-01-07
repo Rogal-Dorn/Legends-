@@ -2414,6 +2414,9 @@ Huge quivers can now be crafted using a rock unhold hide, if you have a fletcher
 Pies, Pudding, Porridge and Rations can now be equipped and eaten in battle to restore health and fatigue.
 
 
-13.0.0.32
+13.0.0.31b
 Fixes crash with Unhold fling skill.
 Fixes crash with Unhold sweep skill.
+Fixes errors with reload save from sisterhood scenario.
+Fixes puncture hit chance. Hitchance will increase now as target gets fatigued. A 100% fatigued enemy will have 0 penality. 0% Fatigued enemy will have 100% penaly. Puncture hitchance penality is now reduced by 50% with Dagger mastery.
+
