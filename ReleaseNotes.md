@@ -2415,5 +2415,5 @@ Pies, Pudding, Porridge and Rations can now be equipped and eaten in battle to r
 
 
 13.0.0.32
-Fixes crash with Unhold fling skill
-Fixes crash with Unhold sweep skill
+Fixes crash with Unhold fling skill.
+Fixes crash with Unhold sweep skill.
