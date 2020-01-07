@@ -43,7 +43,7 @@ this.legend_dog_handling <- this.inherit("scripts/skills/skill", {
 			ret.push({
 				id = 8,
 				type = "text",
-				icon = "ui/icons/asset_money.png",
+				icon = "ui/icons/asset_food.png",
 				text = "This will cost a piece of food out of " + this.World.Assets.getFood() +" total"
 			});
 
