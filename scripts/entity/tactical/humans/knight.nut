@@ -324,8 +324,8 @@ this.knight <- this.inherit("scripts/entity/tactical/human", {
 				local item = this.new("scripts/items/" + legend_armor[this.Math.rand(0, armor.len() - 1)]);
 				local upgrades = [
 					[10, ""],
-					[5, "cloak/legend_cloak"],
-					[1, "cloak/legend_cloak_rich"]
+					[5, "cloak/legend_armor_cloak"],
+					[1, "cloak/legend_armor_cloak_rich"]
 				];
 				local upgrade = this.Const.World.Common.pickLegendArmor(upgrades)
 				if (upgrade != null)
