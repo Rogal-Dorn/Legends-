@@ -30,7 +30,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		IsRangerRecruitBackground = false,
 		IsCrusaderRecruitBackground = false,
 		IsOutlawBackground = false,
-		AlignmentMin = this.Const.LegendMod.Alignment.Dreaded,	
+		AlignmentMin = this.Const.LegendMod.Alignment.Dreaded,
 		AlignmentMax = this.Const.LegendMod.Alignment.Saintly,
 		IsStabled = false,
 		Modifiers = {
@@ -531,7 +531,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		else if (_tag == "skeleton")
 		{
 			a = {
-				Hitpoints = [   
+				Hitpoints = [
 					50,
 					60
 				],
@@ -1069,7 +1069,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 				//If it's dreaded it always gets level up so just skip, otherwise check if our currentRep is > min required
 				if ( !( broAlignmentMin == this.Const.LegendMod.Alignment.Dreaded ) )
 				{
-					if ( !( currentReputation > (broAlignmentMin * 10) + 1 ) ) 
+					if ( !( currentReputation > (broAlignmentMin * 10) + 1 ) )
 					{
 						return 0;
 					}
@@ -1091,7 +1091,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 
 			return this.calculateAdditionalRecruitmentLevels();
 		}
-		else 
+		else
 		{
 			return 0;
 		}
@@ -1115,7 +1115,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			//get normal recruitment levels and then possibly get extra moral reputation levels
 			this.m.Level += actor.m.Background.calculateAdditionalRecruitmentLevels();
 			this.m.Level += actor.m.Background.calculateAdditionalReputationLevels();
-			
+
 			if (this.m.Level != 1)
 			{
 				actor.m.PerkPoints = this.m.Level - 1;
@@ -1171,6 +1171,12 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		return c;
 	}
 
+	//0 = Male, 1 = Female, -1 = Either
+	function setGender(_gender)
+	{
+
+	}
+
 	function onSerialize( _out )
 	{
 		this.skill.onSerialize(_out);
@@ -1220,6 +1226,18 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		if (_in.getMetaData().getVersion() >= 61)
 		{
 			this.m.IsFemaleBackground = _in.readBool();
+		}
+
+		if (_in.getMetaData().getVersion() >= 64)
+		{
+			if (this.m.IsFemaleBackground)
+			{
+				this.setGender(1);
+			}
+			else
+			{
+				this.setGender(0);
+			}
 		}
 
 		if (_in.getMetaData().getVersion() >= 57)

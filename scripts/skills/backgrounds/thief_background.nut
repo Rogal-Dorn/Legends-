@@ -52,23 +52,6 @@ this.thief_background <- this.inherit("scripts/skills/backgrounds/character_back
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Body = "bust_naked_body_00";
 
-		if (this.Const.LegendMod.Configs.LegendGenderEnabled())
-		{
-			local r = this.Math.rand(0, 1);
-			if (r == 0)
-			{
-				this.m.Faces = this.Const.Faces.PrettyFemale;
-				this.m.Hairs = this.Const.Hair.AllFemale;
-				this.m.HairColors = this.Const.HairColors.Young;
-				this.m.Beards = null;
-				this.m.BeardChance = 0;
-				this.m.Body = "bust_naked_body_03";
-				this.m.IsFemaleBackground = true;
-				this.m.GoodEnding = "%name% the pickpocket retired from fighting and disappeared off the map. You haven\'t heard word of the woman since, but there are rumors that a certain nobleman had his pockets completely drained in broad daylight during a public address.";
-				this.m.BadEnding = "%name% the thief read the lines being drawn in the sands and retired from the %companyname% while she still could. She took what money she had made and threw together a crew of thieves and brigands. Last you heard, she pulled off a perfect theft only for one of her partners to stab her in the back and take off with all the goods.";
-			}
-		}
-
 		this.m.IsLowborn = true;
 		this.m.IsOutlawBackground = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Cruel;
@@ -97,6 +80,35 @@ this.thief_background <- this.inherit("scripts/skills/backgrounds/character_back
 			],
 			Class = [this.Const.Perks.KnifeClassTree]
 		}
+	}
+
+	//Default Male
+	function setGender(_gender = -1)
+	{
+		local r = _gender;
+		if (_gender == -1)
+		{
+			r = 0;
+			if (this.Const.LegendMod.Configs.LegendGenderEnabled())
+			{
+				r = this.Math.rand(0, 1);
+			}
+		}
+
+		if (r != 1)
+		{
+			return
+		}
+		this.m.Faces = this.Const.Faces.PrettyFemale;
+		this.m.Hairs = this.Const.Hair.AllFemale;
+		this.m.HairColors = this.Const.HairColors.Young;
+		this.m.Beards = null;
+		this.m.BeardChance = 0;
+		this.m.Body = "bust_naked_body_03";
+		this.m.IsFemaleBackground = true;
+		this.m.GoodEnding = "%name% the pickpocket retired from fighting and disappeared off the map. You haven\'t heard word of the woman since, but there are rumors that a certain nobleman had his pockets completely drained in broad daylight during a public address.";
+		this.m.BadEnding = "%name% the thief read the lines being drawn in the sands and retired from the %companyname% while she still could. She took what money she had made and threw together a crew of thieves and brigands. Last you heard, she pulled off a perfect theft only for one of her partners to stab her in the back and take off with all the goods.";
+
 	}
 
 	function getTooltip()

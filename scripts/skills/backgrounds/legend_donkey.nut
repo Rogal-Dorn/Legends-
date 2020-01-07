@@ -25,16 +25,6 @@ this.legend_donkey <- this.inherit("scripts/skills/backgrounds/character_backgro
 		this.m.HairColors = this.Const.HairColors.None;
 		this.m.Body = "bust_naked_body_05";
 
-		local r = this.Math.rand(0, 1);
-		if (r == 0)
-		{
-			this.m.IsFemaleBackground = true;
-		}
-		else
-		{
-			this.m.IsFemaleBackground = false;
-		}
-
 		this.m.IsLowborn = true;
 		this.m.IsUntalented = true;
 		this.m.IsStabled = true;
@@ -118,6 +108,27 @@ this.legend_donkey <- this.inherit("scripts/skills/backgrounds/character_backgro
 			[],
 			[]
 		];
+	}
+
+	//Default Male
+	function setGender(_gender = -1)
+	{
+		local r = _gender;
+		if (_gender == -1)
+		{
+			r = 0;
+			if (this.Const.LegendMod.Configs.LegendGenderEnabled())
+			{
+				r = this.Math.rand(0, 1);
+			}
+		}
+
+		if (r != 1)
+		{
+			return
+		}
+
+		this.m.IsFemaleBackground = true;
 	}
 
 	function getTooltip()

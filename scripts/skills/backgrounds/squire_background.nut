@@ -37,24 +37,6 @@ this.squire_background <- this.inherit("scripts/skills/backgrounds/character_bac
 		this.m.Beards = this.Const.Beards.Tidy;
 		this.m.Body = "bust_naked_body_01";
 
-		local chance = 10;
-		if (this.Const.LegendMod.Configs.LegendGenderEnabled())
-		{
-			chance = 50;
-		}
-
-		if (this.Math.rand(1, 100) <= chance)
-		{
-			this.m.Faces = this.Const.Faces.PrettyFemale;
-			this.m.Beards = null;
-			this.m.Hairs = this.Const.Hair.AllFemale;
-			this.m.BeardChance = 0;
-			this.m.Body = "bust_naked_body_03";
-			this.m.IsFemaleBackground = true;
-			this.m.GoodEnding = "%name% the squire eventually left the %companyname%. You\'ve heard that she\'s since been knighted. No doubt she is sitting happy as a plum wherever she is.";
-			this.m.BadEnding = "The squire, %name%, eventually departed the %companyname%. She intended to return home and become knighted, fulfilling her lifelong dream. Cruel politics got in the way and not only was she not knighted, she was stripped of her squire duties. Word has it she hanged herself from a barn\'s rafters.";
-		}
-
 		this.m.IsCombatBackground = true;
 		this.m.IsRangerRecruitBackground = true;
 		this.m.IsCrusaderRecruitBackground = true;
@@ -87,6 +69,34 @@ this.squire_background <- this.inherit("scripts/skills/backgrounds/character_bac
 			Enemy = [],
 			Class = []
 		}
+	}
+
+	//Default Male
+	function setGender(_gender = -1)
+	{
+		local r = _gender;
+		if (_gender == -1)
+		{
+			r = 0;
+			if (this.Const.LegendMod.Configs.LegendGenderEnabled())
+			{
+				r = this.Math.rand(0, 1);
+			}
+		}
+
+		if (r != 1)
+		{
+			return
+		}
+		this.m.Faces = this.Const.Faces.PrettyFemale;
+		this.m.Beards = null;
+		this.m.Hairs = this.Const.Hair.AllFemale;
+		this.m.BeardChance = 0;
+		this.m.Body = "bust_naked_body_03";
+		this.m.IsFemaleBackground = true;
+		this.m.GoodEnding = "%name% the squire eventually left the %companyname%. You\'ve heard that she\'s since been knighted. No doubt she is sitting happy as a plum wherever she is.";
+		this.m.BadEnding = "The squire, %name%, eventually departed the %companyname%. She intended to return home and become knighted, fulfilling her lifelong dream. Cruel politics got in the way and not only was she not knighted, she was stripped of her squire duties. Word has it she hanged herself from a barn\'s rafters.";
+
 	}
 
 	function getTooltip()

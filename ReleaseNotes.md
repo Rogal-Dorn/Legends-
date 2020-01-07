@@ -2376,16 +2376,16 @@ fixes catapult skill that is causing crashes (Mwah)
 13.0.0.31
 Fixes recover skill being disabled when activating but not using another skill.
 Adds a new option that counts deaths by bleeding as kills for the person who dealt the cut.
-New perk - Dog Handling - spend a random food item to make an enemy dog flee. Given to houndmasters 
-New Perk - Heightened Reflexes - gain half your ranged defense as melee defense. Added to crossbow tree 
-New Perk - Wind Reader - gain half your ranged defense as ranged skill. Added to bow tree 
-Field Treats now uses a random food item, rather than 20 meds. 
-Hedge Knights and swordmasters now appear later in bandit parties 
-Updates two of the new male heads to look better (Von Krolock) 
+New perk - Dog Handling - spend a random food item to make an enemy dog flee. Given to houndmasters
+New Perk - Heightened Reflexes - gain half your ranged defense as melee defense. Added to crossbow tree
+New Perk - Wind Reader - gain half your ranged defense as ranged skill. Added to bow tree
+Field Treats now uses a random food item, rather than 20 meds.
+Hedge Knights and swordmasters now appear later in bandit parties
+Updates two of the new male heads to look better (Von Krolock)
 Fixes named gambeson, heavy lamellar and scale coat (Spuds)
-Legendary beasts, necrosavants, barbarian champions and master archers spawn much later  
-Higher level goblins, barbarians and bandits spawn slightly later 
-20 new tips of the day added to explain background abilities 
+Legendary beasts, necrosavants, barbarian champions and master archers spawn much later
+Higher level goblins, barbarians and bandits spawn slightly later
+20 new tips of the day added to explain background abilities
 Fixes hexe leader cloak blueprint.
 Fixes Catapult Skill (Mwah).
 Fixes Lacerate perk not working with prepare graze and prepare bleed.
@@ -2395,21 +2395,28 @@ Fixes error in bad curse event.
 Fixes salavage camp using more tools as people are added.
 
 Net Balancing:
-Nets cost 150 again, take 75 ammunition to repair 
-Reinforced nets cost 400 again, cost 150 ammunition to repair 
-Net ammunition is no longer increased by perks 
-Net Repair perk now unlocks an expensive net crafting recipe 
+Nets cost 150 again, take 75 ammunition to repair
+Reinforced nets cost 400 again, cost 150 ammunition to repair
+Net ammunition is no longer increased by perks
+Net Repair perk now unlocks an expensive net crafting recipe
 
-Smackdown is now an active instead of a passive. You prepare your next attack to push back. Does nothing if the attack misses or does too little damage. No random element and no imapct from health or fatigue 
-Fixes second wind to correctly halve your fatigue when used. Only triggers once per battle 
-Matching set allows up to 400 combined armor, but uses current armor. 
-Summon Bear perk now adds a pet bear to your stash when taken 
-Puncture no longer has a -15 chance to hit modifier. The modifer is now equal to their remaining fatigue %.  Fresh targets are much harder to dagger down. 
-  
-Fixes fights freezing when fighting bandit leaders, bandit warlords, knights, militia captains and swordmasters, due to their fancy cloaks not loading 
+Smackdown is now an active instead of a passive. You prepare your next attack to push back. Does nothing if the attack misses or does too little damage. No random element and no imapct from health or fatigue
+Fixes second wind to correctly halve your fatigue when used. Only triggers once per battle
+Matching set allows up to 400 combined armor, but uses current armor.
+Summon Bear perk now adds a pet bear to your stash when taken
+Puncture no longer has a -15 chance to hit modifier. The modifer is now equal to their remaining fatigue %.  Fresh targets are much harder to dagger down.
+
+Fixes fights freezing when fighting bandit leaders, bandit warlords, knights, militia captains and swordmasters, due to their fancy cloaks not loading
 Fixes layer alignment issues on nun's robes and leather jackets in the inventory
-Fixes cloaks and food being craftable without materials 
+Fixes cloaks and food being craftable without materials
 Huge quivers don't show up unless their is a fletchers hut attached location
-Huge quivers can now be crafted using a rock unhold hide, if you have a fletcher in your party 
-Pies, Pudding, Porridge and Rations can now be equipped and eaten in battle to restore health and fatigue. 
+Huge quivers can now be crafted using a rock unhold hide, if you have a fletcher in your party
+Pies, Pudding, Porridge and Rations can now be equipped and eaten in battle to restore health and fatigue.
+
+
+13.0.0.31b
+Fixes crash with Unhold fling skill.
+Fixes crash with Unhold sweep skill.
+Fixes errors with reload save from sisterhood scenario.
+Fixes puncture hit chance. Hitchance will increase now as target gets fatigued. A 100% fatigued enemy will have 0 penality. 0% Fatigued enemy will have 100% penaly. Puncture hitchance penality is now reduced by 50% with Dagger mastery.
 
