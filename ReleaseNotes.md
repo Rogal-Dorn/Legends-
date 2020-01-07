@@ -2419,4 +2419,6 @@ Fixes crash with Unhold fling skill.
 Fixes crash with Unhold sweep skill.
 Fixes errors with reload save from sisterhood scenario.
 Fixes puncture hit chance. Hitchance will increase now as target gets fatigued. A 100% fatigued enemy will have 0 penality. 0% Fatigued enemy will have 100% penaly. Puncture hitchance penality is now reduced by 50% with Dagger mastery.
-
+Fixes white wolf not getting Battle Flow on legendary 
+Fixes crash from some named items not having an owner to be named after 
+Fixes second wind crash 
