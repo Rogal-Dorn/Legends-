@@ -116,6 +116,11 @@ this.fling_back_skill <- this.inherit("scripts/skills/skill", {
 		local _user = _tag.User;
 		local _targetTile = _tag.TargetTile;
 		local target = _targetTile.getEntity();
+		if (target == null)
+		{
+			return false;
+		}
+
 		local flingToTile = this.findTileToKnockBackTo(_user.getTile(), _targetTile);
 
 		if (flingToTile == null)
