@@ -32,23 +32,6 @@ this.legend_ironmonger_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Body = "bust_naked_body_01";
 
-		if (this.Const.LegendMod.Configs.LegendGenderEnabled())
-		{
-			local r = this.Math.rand(0, 1);
-			if (r == 0)
-			{
-				this.m.Faces = this.Const.Faces.AllFemale;
-				this.m.Hairs = this.Const.Hair.AllFemale;
-				this.m.HairColors = this.Const.HairColors.All;
-				this.m.Beards = null;
-				this.m.BeardChance = 0;
-				this.m.Body = "bust_naked_body_03";
-				this.m.IsFemaleBackground = true;
-				this.m.GoodEnding = "A more reliable sellsword than most, %name%\'s background as an ironmonger helped her to keep the %companyname%\'s equipment functioning. Having saved more than enough crowns, %name% retired and returned to blacksmithing, learning from a true master and becoming a paragon of the craft. Last you heard of her she was living in luxury, making custom weapons and armor for nobles.";
-				this.m.BadEnding = "%name% the ironmonger stayed with the %companyname% for some time after your departure, but after a particularly nasty stretch of bad luck she saw the rot for what it was and jumped ship. Bad luck seemed to follow her, however, and she never managed to settle down. She burned through her leftover crowns in a few years. She died in poverty one winter, freezing overnight.";
-			}
-		}
-
 		this.m.IsCrusaderRecruitBackground = true;
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[3];
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[2];
@@ -77,6 +60,35 @@ this.legend_ironmonger_background <- this.inherit("scripts/skills/backgrounds/ch
 					this.Const.Perks.RepairClassTree
 					]
 		}
+	}
+
+	//Default Male
+	function setGender(_gender = -1)
+	{
+		local r = _gender;
+		if (_gender == -1)
+		{
+			r = 0;
+			if (this.Const.LegendMod.Configs.LegendGenderEnabled())
+			{
+				r = this.Math.rand(0, 1);
+			}
+		}
+
+		if (r != 1)
+		{
+			return
+		}
+		this.m.Faces = this.Const.Faces.AllFemale;
+		this.m.Hairs = this.Const.Hair.AllFemale;
+		this.m.HairColors = this.Const.HairColors.All;
+		this.m.Beards = null;
+		this.m.BeardChance = 0;
+		this.m.Body = "bust_naked_body_03";
+		this.m.IsFemaleBackground = true;
+		this.m.GoodEnding = "A more reliable sellsword than most, %name%\'s background as an ironmonger helped her to keep the %companyname%\'s equipment functioning. Having saved more than enough crowns, %name% retired and returned to blacksmithing, learning from a true master and becoming a paragon of the craft. Last you heard of her she was living in luxury, making custom weapons and armor for nobles.";
+		this.m.BadEnding = "%name% the ironmonger stayed with the %companyname% for some time after your departure, but after a particularly nasty stretch of bad luck she saw the rot for what it was and jumped ship. Bad luck seemed to follow her, however, and she never managed to settle down. She burned through her leftover crowns in a few years. She died in poverty one winter, freezing overnight.";
+
 	}
 
 	function getTooltip()

@@ -35,24 +35,6 @@ this.sellsword_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Body = "bust_naked_body_01";
 
-		if (this.Const.LegendMod.Configs.LegendGenderEnabled())
-		{
-			local r = this.Math.rand(0, 1);
-			if (r == 0)
-			{
-				this.m.Faces = this.Const.Faces.AllFemale;
-				this.m.Hairs = this.Const.Hair.AllFemale;
-				this.m.HairColors = this.Const.HairColors.Young;
-				this.m.Beards = null;
-				this.m.BeardChance = 1;
-				this.m.Body = "bust_naked_body_03";
-				this.m.IsFemaleBackground = true;
-				this.m.BackgroundDescription = "Sellswords are expensive, but a life of warfare has forged them into skilled fighters.";
-				this.m.GoodEnding = "%name% the sellsword left the %companyname% and started her own mercenary company. As far as you know, it\'s a very successful venture and she often buddies up with the mercenaries of the %companyname% to work together.";
-				this.m.BadEnding = "%name% left the %companyname% and started her own competing company. The two companies clashed on opposite sides of a battle between nobles. The sellsword died when a mercenary from the %companyname% stove her head in with a hedge knight\'s helmet.";
-			}
-		}
-
 		this.m.Level = this.Math.rand(2, 4);
 		this.m.IsCombatBackground = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
@@ -87,6 +69,36 @@ this.sellsword_background <- this.inherit("scripts/skills/backgrounds/character_
 			],
 			Class = []
 		}
+	}
+
+	//Default Male
+	function setGender(_gender = -1)
+	{
+		local r = _gender;
+		if (_gender == -1)
+		{
+			r = 0;
+			if (this.Const.LegendMod.Configs.LegendGenderEnabled())
+			{
+				r = this.Math.rand(0, 1);
+			}
+		}
+
+		if (r != 1)
+		{
+			return
+		}
+		this.m.Faces = this.Const.Faces.AllFemale;
+		this.m.Hairs = this.Const.Hair.AllFemale;
+		this.m.HairColors = this.Const.HairColors.Young;
+		this.m.Beards = null;
+		this.m.BeardChance = 1;
+		this.m.Body = "bust_naked_body_03";
+		this.m.IsFemaleBackground = true;
+		this.m.BackgroundDescription = "Sellswords are expensive, but a life of warfare has forged them into skilled fighters.";
+		this.m.GoodEnding = "%name% the sellsword left the %companyname% and started her own mercenary company. As far as you know, it\'s a very successful venture and she often buddies up with the mercenaries of the %companyname% to work together.";
+		this.m.BadEnding = "%name% left the %companyname% and started her own competing company. The two companies clashed on opposite sides of a battle between nobles. The sellsword died when a mercenary from the %companyname% stove her head in with a hedge knight\'s helmet.";
+
 	}
 
 	function getTooltip()

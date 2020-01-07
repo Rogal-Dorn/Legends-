@@ -86,6 +86,25 @@ this.female_farmhand_background <- this.inherit("scripts/skills/backgrounds/char
 		}
 	}
 
+	//Default Female
+	function setGender(_gender = -1)
+	{
+		local r = _gender;
+		if (_gender == -1)
+		{
+			r = 1;
+			if (this.Const.LegendMod.Configs.LegendGenderEnabled())
+			{
+				r = this.Math.rand(0, 1);
+			}
+		}
+
+		if (r == 0)
+		{
+			return
+		}
+	}
+
 	function getTooltip()
 	{
 		return [
