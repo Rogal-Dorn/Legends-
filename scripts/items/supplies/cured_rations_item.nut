@@ -1,14 +1,16 @@
-this.cured_rations_item <- this.inherit("scripts/items/supplies/food_item", {
+this.cured_rations_item <- this.inherit("scripts/items/supplies/legend_usable_food", {
 	m = {},
 	function create()
 	{
-		this.food_item.create();
+		this.legend_usable_food.create();
 		this.m.ID = "supplies.cured_rations";
 		this.m.Name = "Masterfully Cured Rations";
-		this.m.Description = "Provisions. These rations consist of assorted, well cured meats and vegetables that are sealed in small boxes. The ideal provision to take with you on long journeys and expeditions.";
+		this.m.Description = "Provisions. These rations consist of assorted, well cured meats and vegetables that are sealed in small boxes. The ideal provision to take with you on long journeys and expeditions. Can be eaten in battle to restore health.";
 		this.m.Icon = "supplies/inventory_provisions_16.png";
 		this.m.Value = 300;
 		this.m.GoodForDays = 16;
+		this.m.IsAllowedInBag = true;
+		this.m.IsDroppedAsLoot = true;
 	}
 
 	function getBuyPrice()
@@ -43,5 +45,17 @@ this.cured_rations_item <- this.inherit("scripts/items/supplies/food_item", {
 		return this.item.getSellPrice();
 	}
 
+	function onPutIntoBag()
+	{
+		this.onEquip();
+	}
+
+	function onEquip()
+	{
+		this.legend_usable_food.onEquip();
+		local skill = this.new("scripts/skills/actives/legend_eat_porridge_skill");
+		skill.setItem(this);
+		this.addSkill(skill);
+	}
 });
 
