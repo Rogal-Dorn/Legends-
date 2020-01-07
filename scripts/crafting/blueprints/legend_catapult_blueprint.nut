@@ -23,7 +23,7 @@ this.legend_catapult_blueprint <- this.inherit("scripts/crafting/blueprint", {
 		this.init(ingredients);
 	}
 
-	function isCraftable()
+	function requirementsMet()
 	{
 		local roster = this.World.getPlayerRoster().getAll();
         foreach( bro in roster )

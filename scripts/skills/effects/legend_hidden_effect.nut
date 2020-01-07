@@ -1,5 +1,7 @@
 this.legend_hidden_effect <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+	TurnsLeft = 3
+	},
 	function create()
 	{
 		this.m.ID = "effect.legend_hidden";
@@ -107,6 +109,8 @@ this.legend_hidden_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("hair").Saturation = 0.75;
 		actor.getSprite("beard").setBrightness(0.75);
 		actor.getSprite("beard").Saturation = 0.75;
+
+		this.m.TurnsLeft = 3;
 	}
 
 	function onRemoved()
@@ -151,8 +155,14 @@ this.legend_hidden_effect <- this.inherit("scripts/skills/skill", {
 			_properties.DamageRegularMax *= 2;
 		}
 
-
 	}
 
+	function onTurnEnd()
+	{
+		if (--this.m.TurnsLeft <= 0)
+		{
+			this.removeSelf();
+		}
+	}
 });
 

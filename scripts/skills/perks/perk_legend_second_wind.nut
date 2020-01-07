@@ -18,12 +18,14 @@ this.perk_legend_second_wind <- this.inherit("scripts/skills/skill", {
 	{
 		local actor = this.getContainer().getActor();
 		local maxHP = actor.getHitpointsMax();
-		local percentHP = maxHP / 100;
 		local currentHP = actor.getHitpoints();
-		local ratio = currentHP / percentHP;
-		if (ratio < 0.5)
+		if (!actor.getSkills.hasSkill("effects.legend_second_wind"))
 		{
-			actor.setFatigue(actor.getFatigueMax());
+			if (currentHP < (maxHP / 2))
+			{
+				actor.setFatigue(actor.getFatigue() - 0.5 * actor.getFatigue() );
+				actor.getSkills().add(this.new("scripts/skills/effects/legend_second_wind_effect"));
+			}
 		}
 	}
 
