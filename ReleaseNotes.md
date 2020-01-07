@@ -2396,3 +2396,12 @@ Nets cost 150 again, take 75 ammunition to repair
 Reinforced nets cost 400 again, cost 150 ammunition to repair 
 Net ammunition is no longer increased by perks 
 Net Repair perk now unlocks an expensive net crafting recipe 
+
+Smackdown is now an active instead of a passive. You prepare your next attack to push back. Does nothing if the attack misses or does too little damage. No random element and no imapct from health or fatigue 
+Fixes second wind to correctly halve your fatigue when used. Only triggers once per battle 
+Matching set allows up to 400 combined armor, but uses current armor. 
+Summon Bear perk now adds a pet bear to your stash when taken 
+Puncture no longer has a -15 chance to hit modifier. The modifer is now equal to their remaining fatigue %.  Fresh targets are much harder to dagger down. 
+  
+
+
