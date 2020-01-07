@@ -2408,5 +2408,6 @@ Fixes layer alignment issues on nun's robes and leather jackets in the inventory
 Fixes cloaks and food being craftable without materials 
 Huge quivers don't show up unless their is a fletchers hut attached location
 Huge quivers can now be crafted using a rock unhold hide, if you have a fletcher in your party 
+Pies, Pudding, Porridge and Rations can now be equipped and eaten in battle to restore health and fatigue. 
 
  
