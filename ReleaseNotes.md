@@ -2394,6 +2394,7 @@ Fixes Lacerate perk not working with prepare graze and prepare bleed.
 Sisterhood start now has all females.
 Named and runed halo glows added to the paperdoll and inventory armor sets.
 Fixes error in bad curse event.
+Fixes salavage camp using more tools as people are added.
 
 Net Balancing:
 Nets cost 150 again, take 75 ammunition to repair 
