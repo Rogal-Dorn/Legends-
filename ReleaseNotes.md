@@ -2379,8 +2379,6 @@ Adds a new option that counts deaths by bleeding as kills for the person who dea
 New perk - Dog Handling - spend a random food item to make an enemy dog flee. Given to houndmasters 
 New Perk - Heightened Reflexes - gain half your ranged defense as melee defense. Added to crossbow tree 
 New Perk - Wind Reader - gain half your ranged defense as ranged skill. Added to bow tree 
-Throwing net ammo cost raised from 6 to 50, to bring usage costs closer to vanilla 
-Reinforced ammo cost raised from 9 to 90, still much cheaper than vanilla. 
 Field Treats now uses a random food item, rather than 20 meds. 
 Hedge Knights and swordmasters now appear later in bandit parties 
 Updates two of the new male heads to look better (Von Krolock) 
