@@ -69,17 +69,17 @@ this.puncture <- this.inherit("scripts/skills/skill", {
 
 	function getHitChance(_targetEntity)
 	{
-	local targetFat = _targetEntity.getFatigue();
-	local targetFatMax = _targetEntity.getFatigueMax();
-	local fatPercent = targetFatMax / 100;
-	local currentFatPercent = this.math.floor(targetFat/fatPercent);
+		local targetFat = _targetEntity.getFatigue();
+		local targetFatMax = _targetEntity.getFatigueMax();
+		local fatPercent = targetFatMax / 100;
+		local currentFatPercent = this.Math.floor(targetFat/fatPercent);
 
-//	local targetArmor = _targetEntity.getArmor(this.Const.BodyPart.Body)
-//	local targetArmorMax = _targetEntity.getArmorMax(this.Const.BodyPart.Body)
-//	local armorPercent = targetArmorMax  / 100;
-//	local currentArmorPercent = this.math.floor(targetArmor/armorPercent);
-//	local average = (currentArmorPercent + currentFatPercent) / 2;
-	return currentFatPercent;
+	//	local targetArmor = _targetEntity.getArmor(this.Const.BodyPart.Body)
+	//	local targetArmorMax = _targetEntity.getArmorMax(this.Const.BodyPart.Body)
+	//	local armorPercent = targetArmorMax  / 100;
+	//	local currentArmorPercent = this.math.floor(targetArmor/armorPercent);
+	//	local average = (currentArmorPercent + currentFatPercent) / 2;
+		return currentFatPercent;
 
 	}
 
