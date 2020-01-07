@@ -2403,6 +2403,5 @@ Matching set allows up to 400 combined armor, but uses current armor.
 Summon Bear perk now adds a pet bear to your stash when taken 
 Puncture no longer has a -15 chance to hit modifier. The modifer is now equal to their remaining fatigue %.  Fresh targets are much harder to dagger down. 
   
-
 Fixes fights freezing when fighting bandit leaders, bandit warlords, knights, militia captains and swordmasters, due to their fancy cloaks not loading 
-
+Fixes layer alignment issues on nun's robes and leather jackets in the inventory
