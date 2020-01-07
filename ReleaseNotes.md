@@ -2390,3 +2390,9 @@ Fixes named gambeson, heavy lamellar and scale coat (Spuds)
 Legendary beasts, necrosavants, barbarian champions and master archers spawn much later  
 Higher level goblins, barbarians and bandits spawn slightly later 
 20 new tips of the day added to explain background abilities 
+
+Net Balancing:
+Nets cost 150 again, take 75 ammunition to repair 
+Reinforced nets cost 400 again, cost 150 ammunition to repair 
+Net ammunition is no longer increased by perks 
+Net Repair perk now unlocks an expensive net crafting recipe 

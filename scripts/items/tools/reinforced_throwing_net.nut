@@ -16,10 +16,10 @@ this.reinforced_throwing_net <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.AddGenericSkill = true;
 		this.m.ShowArmamentIcon = true;
 		this.m.ArmamentIcon = "icon_throwing_net_02";
-		this.m.Value = 1200;
+		this.m.Value = 400;
 		this.m.Ammo = 1;
 		this.m.AmmoMax = 1;
-		this.m.AmmoCost = 90;
+		this.m.AmmoCost = 150;
 		this.m.RangeMax = 3;
 		this.m.StaminaModifier = -2;
 		this.m.IsDroppedAsLoot = true;
@@ -145,15 +145,6 @@ this.reinforced_throwing_net <- this.inherit("scripts/items/weapons/weapon", {
 			this.m.RangeMax = 4;
 		}
 
-		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_mastery_nets"))
-		{
-			this.m.AmmoMax = 2;
-		}
-
-		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_net_repair"))
-		{
-			this.m.AmmoMax *= 2;
-		}
 	}
 
 	function isAmountShown()
