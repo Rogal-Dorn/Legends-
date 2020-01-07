@@ -59,21 +59,6 @@ this.legend_berserker_background <- this.inherit("scripts/skills/backgrounds/cha
 		this.m.BeardChance = 100;
 		this.m.Body = "bust_naked_body_01";
 
-		if (this.Const.LegendMod.Configs.LegendGenderEnabled())
-		{
-			local r = this.Math.rand(0, 1);
-			if (r == 0)
-			{
-				this.m.Faces = this.Const.Faces.AllFemale;
-				this.m.Hairs = this.Const.Hair.AllFemale;
-				this.m.HairColors = this.Const.HairColors.Young;
-				this.m.Beards = null;
-				this.m.BeardChance = 0;
-				this.m.Body = "bust_naked_body_03";
-				this.m.IsFemaleBackground = true;
-			}
-		}
-
 		this.m.Level = 1;
 		this.m.IsCombatBackground = true;
 		this.m.IsLowborn = true;
@@ -190,6 +175,32 @@ this.legend_berserker_background <- this.inherit("scripts/skills/backgrounds/cha
 		];
 	}
 
+	//Default Male
+	function setGender(_gender = -1)
+	{
+		local r = _gender;
+		if (_gender == -1)
+		{
+			r = 0;
+			if (this.Const.LegendMod.Configs.LegendGenderEnabled())
+			{
+				r = this.Math.rand(0, 1);
+			}
+		}
+
+		if (r != 1)
+		{
+			return
+		}
+		this.m.Faces = this.Const.Faces.AllFemale;
+		this.m.Hairs = this.Const.Hair.AllFemale;
+		this.m.HairColors = this.Const.HairColors.Young;
+		this.m.Beards = null;
+		this.m.BeardChance = 0;
+		this.m.Body = "bust_naked_body_03";
+		this.m.IsFemaleBackground = true;
+
+	}
 
 	function getTooltip()
 	{
