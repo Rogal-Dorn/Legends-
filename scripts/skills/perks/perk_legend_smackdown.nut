@@ -25,6 +25,18 @@ this.perk_legend_smackdown <- this.inherit("scripts/skills/skill", {
 		];
 	}
 
+	function onAdded()
+	{
+		if (!this.m.Container.hasSkill("actives.legend_prepare_knockdown_skill"))
+		{
+			this.m.Container.add(this.new("scripts/skills/actives/legend_prepare_knockback_skill"));
+		}
+	}
+		function onRemoved()
+	{
+		this.m.Container.removeByID("actives.legend_prepare_knockdown_skill");
+	}
+
 	function findTileToKnockBackTo( _userTile, _targetTile )
 	{
 
@@ -91,17 +103,8 @@ this.perk_legend_smackdown <- this.inherit("scripts/skills/skill", {
 		}
 
 		local user = _skill.getContainer().getActor();
-		local ourHP =  user.getHitpoints();
-		local targetHP = _targetEntity.getHitpoints()
-		local ourFat =  user.getFatigue();
-		local targetFat = _targetEntity.getFatigue()
 
-		if (ourHP <= targetHP)
-		{
-			return false;
-		}
-
-		if (ourFat > targetFat)
+		if (!user.getSkills().hasSkill("effects.legend_knockback_prepared"))
 		{
 			return false;
 		}
@@ -111,11 +114,7 @@ this.perk_legend_smackdown <- this.inherit("scripts/skills/skill", {
 			return false;
 		}
 		
-		local randomchance = this.Math.rand(1, 100);
-			if (randomchance > 25)
-			{
-			return false;
-			}
+		
 
 		local knockToTile = this.findTileToKnockBackTo(user.getTile(), _targetEntity.getTile());
 

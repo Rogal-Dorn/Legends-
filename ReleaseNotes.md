@@ -2390,3 +2390,27 @@ Higher level goblins, barbarians and bandits spawn slightly later
 20 new tips of the day added to explain background abilities 
 Fixes hexe leader cloak blueprint.
 Fixes Catapult Skill (Mwah).
+Fixes Lacerate perk not working with prepare graze and prepare bleed.
+Sisterhood start now has all females.
+Named and runed halo glows added to the paperdoll and inventory armor sets.
+Fixes error in bad curse event.
+
+Net Balancing:
+Nets cost 150 again, take 75 ammunition to repair 
+Reinforced nets cost 400 again, cost 150 ammunition to repair 
+Net ammunition is no longer increased by perks 
+Net Repair perk now unlocks an expensive net crafting recipe 
+
+Smackdown is now an active instead of a passive. You prepare your next attack to push back. Does nothing if the attack misses or does too little damage. No random element and no imapct from health or fatigue 
+Fixes second wind to correctly halve your fatigue when used. Only triggers once per battle 
+Matching set allows up to 400 combined armor, but uses current armor. 
+Summon Bear perk now adds a pet bear to your stash when taken 
+Puncture no longer has a -15 chance to hit modifier. The modifer is now equal to their remaining fatigue %.  Fresh targets are much harder to dagger down. 
+  
+Fixes fights freezing when fighting bandit leaders, bandit warlords, knights, militia captains and swordmasters, due to their fancy cloaks not loading 
+Fixes layer alignment issues on nun's robes and leather jackets in the inventory
+Fixes cloaks and food being craftable without materials 
+Huge quivers don't show up unless their is a fletchers hut attached location
+Huge quivers can now be crafted using a rock unhold hide, if you have a fletcher in your party 
+Pies, Pudding, Porridge and Rations can now be equipped and eaten in battle to restore health and fatigue. 
+

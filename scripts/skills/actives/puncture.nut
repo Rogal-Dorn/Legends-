@@ -67,6 +67,22 @@ this.puncture <- this.inherit("scripts/skills/skill", {
 		return (missinghand == null || newhand != null) && main != null && off == null && main.isDoubleGrippable();
 	}
 
+	function getHitChance(_targetEntity)
+	{
+	local targetFat = _targetEntity.getFatigue();
+	local targetFatMax = _targetEntity.getFatigueMax();
+	local fatPercent = targetFatMax / 100;
+	local currentFatPercent = this.math.floor(targetFat/fatPercent);
+
+//	local targetArmor = _targetEntity.getArmor(this.Const.BodyPart.Body)
+//	local targetArmorMax = _targetEntity.getArmorMax(this.Const.BodyPart.Body)
+//	local armorPercent = targetArmorMax  / 100;
+//	local currentArmorPercent = this.math.floor(targetArmor/armorPercent);
+//	local average = (currentArmorPercent + currentFatPercent) / 2;
+	return currentFatPercent;
+
+	}
+
 	function onAfterUpdate( _properties )
 	{
 		if (_properties.IsSpecializedInDaggers)
@@ -85,7 +101,8 @@ this.puncture <- this.inherit("scripts/skills/skill", {
 	{
 		if (_skill == this)
 		{
-			_properties.MeleeSkill -= 15;
+			local bonus = this.getHitChance(_targetEntity);
+			_properties.MeleeSkill -= bonus;
 			_properties.DamageArmorMult *= 0.0;
 			_properties.IsIgnoringArmorOnAttack = true;
 			_properties.HitChanceMult[this.Const.BodyPart.Head] = 0.0;
