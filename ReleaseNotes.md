@@ -2422,3 +2422,5 @@ Fixes puncture hit chance. Hitchance will increase now as target gets fatigued. 
 
 13.0.0.32(?) Mabye 13.0.0.31b sry i don't know
 Fixes lacerate perk (thank you MrBrewed)
+Fixes named armor sometimes screwing up fights 
+Fixes second wind perk

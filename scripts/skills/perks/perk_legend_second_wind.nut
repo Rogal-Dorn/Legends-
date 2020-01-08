@@ -19,7 +19,7 @@ this.perk_legend_second_wind <- this.inherit("scripts/skills/skill", {
 		local actor = this.getContainer().getActor();
 		local maxHP = actor.getHitpointsMax();
 		local currentHP = actor.getHitpoints();
-		if (!actor.getSkills.hasSkill("effects.legend_second_wind"))
+		if (!actor.getSkills().hasSkill("effects.legend_second_wind"))
 		{
 			if (currentHP < (maxHP / 2))
 			{
