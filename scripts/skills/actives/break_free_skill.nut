@@ -47,7 +47,7 @@ this.break_free_skill <- this.inherit("scripts/skills/skill", {
 		local chance = this.Math.min(100, this.getContainer().getActor().getCurrentProperties().getMeleeSkill() - 10 + this.m.ChanceBonus);
 		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_escape_artist"))
 		{
-			chance = 99;
+			chance = this.Math.max(99, chance);
 		} 
 		return [
 			{
@@ -104,7 +104,7 @@ this.break_free_skill <- this.inherit("scripts/skills/skill", {
 		local toHit = this.Math.min(100, skill - 10 + this.m.ChanceBonus);
 		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_escape_artist"))
 		{
-		toHit = 99;
+			toHit = this.Math.max(99, toHit);
 		}
 		local rolled = this.Math.rand(1, 100);
 		this.Tactical.EventLog.log_newline();
