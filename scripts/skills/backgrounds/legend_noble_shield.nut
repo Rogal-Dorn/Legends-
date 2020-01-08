@@ -47,23 +47,6 @@ this.legend_noble_shield <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Body = "bust_naked_body_01";
-		
-		if (this.Const.LegendMod.Configs.LegendGenderEnabled())
-		{
-			local r = this.Math.rand(0, 1);
-			if (r == 0)
-			{
-				this.m.Faces = this.Const.Faces.AllFemale;
-				this.m.Hairs = this.Const.Hair.AllFemale;
-				this.m.HairColors = this.Const.HairColors.Young;
-				this.m.Beards = null;
-				this.m.BeardChance = 0;
-				this.m.Body = "bust_naked_body_03";
-				this.m.IsFemaleBackground = true;
-				this.m.GoodEnding = "Supporting your cause from the start, %name% was with you in retirement, leaving the company not long after you did. Though she was a lowly peasant, she proved herself in battle after battle and slowly became as trusted and valued a friend as one can have in a mercenary company.";
-				this.m.BadEnding = "A supporter of your cause from the start, %name% was as loyal as she was talented. She stayed with the company for a time before eventually leaving to forge out a path for himself. The other day, you received a letter from the mercenary stating that she had started her own company and was in dire need of help. Unfortunately, the message was dated to nearly a full year ago. When you investigated the existence of her company, you learned that it had been completely annihilated in a battle between nobles.";
-			}
-		}
 
 		this.m.IsCombatBackground = true;
 		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[1];
@@ -94,6 +77,35 @@ this.legend_noble_shield <- this.inherit("scripts/skills/backgrounds/character_b
 			Enemy = [],
 			Class = []
 		}
+	}
+
+	//Default Male
+	function setGender(_gender = -1)
+	{
+		local r = _gender;
+		if (_gender == -1)
+		{
+			r = 0;
+			if (this.Const.LegendMod.Configs.LegendGenderEnabled())
+			{
+				r = this.Math.rand(0, 1);
+			}
+		}
+
+		if (r != 1)
+		{
+			return
+		}
+		this.m.Faces = this.Const.Faces.AllFemale;
+		this.m.Hairs = this.Const.Hair.AllFemale;
+		this.m.HairColors = this.Const.HairColors.Young;
+		this.m.Beards = null;
+		this.m.BeardChance = 0;
+		this.m.Body = "bust_naked_body_03";
+		this.m.IsFemaleBackground = true;
+		this.m.GoodEnding = "Supporting your cause from the start, %name% was with you in retirement, leaving the company not long after you did. Though she was a lowly peasant, she proved herself in battle after battle and slowly became as trusted and valued a friend as one can have in a mercenary company.";
+		this.m.BadEnding = "A supporter of your cause from the start, %name% was as loyal as she was talented. She stayed with the company for a time before eventually leaving to forge out a path for himself. The other day, you received a letter from the mercenary stating that she had started her own company and was in dire need of help. Unfortunately, the message was dated to nearly a full year ago. When you investigated the existence of her company, you learned that it had been completely annihilated in a battle between nobles.";
+
 	}
 
 	function getTooltip()
@@ -185,7 +197,7 @@ this.legend_noble_shield <- this.inherit("scripts/skills/backgrounds/character_b
 		else
 		{
 			actor.setName(this.Const.Strings.CharacterNames[this.Math.rand(0, this.Const.Strings.CharacterNames.len() - 1)]);
-		}		
+		}
 	}
 
 	function onAddEquipment()

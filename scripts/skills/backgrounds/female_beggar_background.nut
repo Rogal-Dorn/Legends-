@@ -48,24 +48,6 @@ this.female_beggar_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.Body = "bust_naked_body_03";
 		this.m.IsFemaleBackground = true;
 
-		if (this.Const.LegendMod.Configs.LegendGenderEnabled())
-		{
-			local r = this.Math.rand(0, 1);
-			if (r == 0)
-			{
-				this.m.IsFemaleBackground = false;
-				this.m.Faces = this.Const.Faces.AllMale;
-				this.m.Hairs = this.Const.Hair.TidyMale;
-				this.m.HairColors = this.Const.HairColors.Old;
-				this.m.Beards = this.Const.Beards.All;
-				this.m.Body = "bust_naked_body_01";
-				this.m.Name = "Widower";
-				this.m.BackgroundDescription = "Widowers who are too old or poor to find another wife have few ties, mercenary work is a last resort of the hopeless.";
-				this.m.GoodEnding = "Having enough of all the fighting, %name% the once-beggar retired from the %companyname%. You know the man made a pretty crown in his time with the mercenary company, yet the other day you saw him out begging again. You asked if he\'d wasted all his money and he laughed. He said he\'d purchased land and was doing just fine. Then he held out his little tin and asked for a crown. You gave him two.";
-				this.m.BadEnding = "The fighting life is a rough one, and %name% the once-beggar saw fit to retire from it before it became a deadly one. Unfortunately, he went back to beggaring. Word has it that a nobleman cleaned a city of riff-raff and sent them marching north despite it being winter. Cold and hungry, %name% died on the side of a road, a tin cup frozen to his finger.";
-			}
-		}
-
 		this.m.IsLowborn = true;
 		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[1];
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[2];
@@ -88,6 +70,36 @@ this.female_beggar_background <- this.inherit("scripts/skills/backgrounds/charac
 			Enemy = [],
 			Class = []
 		}
+	}
+
+	//Default Female
+	function setGender(_gender = -1)
+	{
+		local r = _gender;
+		if (_gender == -1)
+		{
+			r = 1;
+			if (this.Const.LegendMod.Configs.LegendGenderEnabled())
+			{
+				r = this.Math.rand(0, 1);
+			}
+		}
+
+		if (r == 1)
+		{
+			return;
+		}
+		this.m.IsFemaleBackground = false;
+		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Hairs = this.Const.Hair.TidyMale;
+		this.m.HairColors = this.Const.HairColors.Old;
+		this.m.Beards = this.Const.Beards.All;
+		this.m.Body = "bust_naked_body_01";
+		this.m.Name = "Widower";
+		this.m.BackgroundDescription = "Widowers who are too old or poor to find another wife have few ties, mercenary work is a last resort of the hopeless.";
+		this.m.GoodEnding = "Having enough of all the fighting, %name% the once-beggar retired from the %companyname%. You know the man made a pretty crown in his time with the mercenary company, yet the other day you saw him out begging again. You asked if he\'d wasted all his money and he laughed. He said he\'d purchased land and was doing just fine. Then he held out his little tin and asked for a crown. You gave him two.";
+		this.m.BadEnding = "The fighting life is a rough one, and %name% the once-beggar saw fit to retire from it before it became a deadly one. Unfortunately, he went back to beggaring. Word has it that a nobleman cleaned a city of riff-raff and sent them marching north despite it being winter. Cold and hungry, %name% died on the side of a road, a tin cup frozen to his finger.";
+
 	}
 
 	function getTooltip()

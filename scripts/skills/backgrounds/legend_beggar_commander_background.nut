@@ -52,24 +52,6 @@ this.legend_beggar_commander_background <- this.inherit("scripts/skills/backgrou
 		this.m.Beards = this.Const.Beards.Untidy;
 		this.m.Body = "bust_naked_body_00";
 
-		local r = this.Math.rand(0, 9);
-		if (this.Const.LegendMod.Configs.LegendGenderEnabled())
-		{
-			r = this.Math.rand(0, 1);
-		}
-		if (r == 0)
-		{
-			this.m.Faces = this.Const.Faces.AllFemale;
-			this.m.Hairs = this.Const.Hair.UntidyMale;
-			this.m.HairColors = this.Const.HairColors.All;
-			this.m.Beards = null;
-			this.m.BeardChance = 0;
-			this.m.Body = "bust_naked_body_03";
-			this.m.IsFemaleBackground = true;
-			this.m.GoodEnding = "Having enough of all the fighting, %name% the once-beggar retired from the %companyname%. You know the woman made a pretty crown in her time with the mercenary company, yet the other day you saw her out begging again. You asked if she\'d wasted all her money and she laughed. She said she\'d purchased land and was doing just fine. Then she held out his little tin and asked for a crown. You gave her two.";
-			this.m.BadEnding = "The fighting life is a rough one, and %name% the once-beggar saw fit to retire from it before it became a deadly one. Unfortunately, she went back to beggaring. Word has it that a nobleman cleaned a city of riff-raff and sent them marching north despite it being winter. Cold and hungry, %name% died on the side of a road, a tin cup frozen to her finger.";
-		}
-
 		this.m.IsLowborn = true;
 		this.m.Level = 1;
 
@@ -133,6 +115,35 @@ this.legend_beggar_commander_background <- this.inherit("scripts/skills/backgrou
 			[],
 			[]
 		];
+	}
+
+	//Default Male
+	function setGender(_gender = -1)
+	{
+		local r = _gender;
+		if (_gender == -1)
+		{
+			r = this.Math.rand(0, 9);
+			if (this.Const.LegendMod.Configs.LegendGenderEnabled())
+			{
+				r = this.Math.rand(0, 1);
+			}
+		}
+
+		if (r != 1)
+		{
+			return;
+		}
+		this.m.Faces = this.Const.Faces.AllFemale;
+		this.m.Hairs = this.Const.Hair.UntidyMale;
+		this.m.HairColors = this.Const.HairColors.All;
+		this.m.Beards = null;
+		this.m.BeardChance = 0;
+		this.m.Body = "bust_naked_body_03";
+		this.m.IsFemaleBackground = true;
+		this.m.GoodEnding = "Having enough of all the fighting, %name% the once-beggar retired from the %companyname%. You know the woman made a pretty crown in her time with the mercenary company, yet the other day you saw her out begging again. You asked if she\'d wasted all her money and she laughed. She said she\'d purchased land and was doing just fine. Then she held out his little tin and asked for a crown. You gave her two.";
+		this.m.BadEnding = "The fighting life is a rough one, and %name% the once-beggar saw fit to retire from it before it became a deadly one. Unfortunately, she went back to beggaring. Word has it that a nobleman cleaned a city of riff-raff and sent them marching north despite it being winter. Cold and hungry, %name% died on the side of a road, a tin cup frozen to her finger.";
+
 	}
 
 	function getTooltip()

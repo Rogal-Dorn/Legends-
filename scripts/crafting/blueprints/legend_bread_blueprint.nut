@@ -15,7 +15,7 @@ this.legend_bread_blueprint <- this.inherit("scripts/crafting/blueprint", {
 		this.init(ingredients);
 	}
 
-	function isCraftable()
+	function requirementsMet()
 	{
 		local roster = this.World.getPlayerRoster().getAll();
         foreach( bro in roster )

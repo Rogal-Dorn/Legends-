@@ -1,14 +1,16 @@
-this.legend_pudding_item <- this.inherit("scripts/items/supplies/food_item", {
+this.legend_pudding_item <- this.inherit("scripts/items/supplies/legend_usable_food", {
 	m = {},
 	function create()
 	{
-		this.food_item.create();
+		this.legend_usable_food.create();
 		this.m.ID = "supplies.legend_pudding";
 		this.m.Name = "Pudding";
-		this.m.Description = "Provisions. A huge pudding made from fresh ingredients.";
+		this.m.Description = "Provisions. A huge pudding made from fresh ingredients. Can be eaten in battle to restore fatigue";
 		this.m.Icon = "supplies/legend_pudding.png";
 		this.m.Value = 200;
 		this.m.GoodForDays = 7;
+		this.m.IsAllowedInBag = true;
+		this.m.IsDroppedAsLoot = true;
 	}
 
 	function getBuyPrice()
@@ -41,6 +43,19 @@ this.legend_pudding_item <- this.inherit("scripts/items/supplies/food_item", {
 		}
 
 		return this.item.getSellPrice();
+	}
+
+	function onPutIntoBag()
+	{
+		this.onEquip();
+	}
+
+	function onEquip()
+	{
+		this.legend_usable_food.onEquip();
+		local skill = this.new("scripts/skills/actives/legend_eat_pudding_skill");
+		skill.setItem(this);
+		this.addSkill(skill);
 	}
 
 });
