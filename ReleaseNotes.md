@@ -2420,3 +2420,5 @@ Fixes crash with Unhold sweep skill.
 Fixes errors with reload save from sisterhood scenario.
 Fixes puncture hit chance. Hitchance will increase now as target gets fatigued. A 100% fatigued enemy will have 0 penality. 0% Fatigued enemy will have 100% penaly. Puncture hitchance penality is now reduced by 50% with Dagger mastery.
 
+13.0.0.32(?) Mabye 13.0.0.31b sry i don't know
+Fixes lacerate perk (thank you MrBrewed)

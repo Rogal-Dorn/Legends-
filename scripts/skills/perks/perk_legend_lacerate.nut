@@ -26,7 +26,7 @@ this.perk_legend_lacerate <- this.inherit("scripts/skills/skill", {
 			return false;
 		}
 		
-		if (_targetEntity.getCurrentProperties().IsImmuneToBleed)
+		if (_targetEntity.getCurrentProperties().IsImmuneToBleeding)
 		{
 			return false;
 		}
