@@ -47,26 +47,6 @@ this.gambler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Body = "bust_naked_body_02";
 
-		local r = this.Math.rand(0, 9);
-		if (this.Const.LegendMod.Configs.LegendGenderEnabled())
-		{
-			r = this.Math.rand(0, 1);
-		}
-
-		if (r == 0)
-		{
-			this.m.Name = "Adventurous Lady";
-			this.m.Faces = this.Const.Faces.AllFemale;
-			this.m.Hairs = this.Const.Hair.AllFemale;
-			this.m.HairColors = this.Const.HairColors.Young;
-			this.m.Beards = null;
-			this.m.BeardChance = 0;
-			this.m.Body = "bust_naked_body_03";
-			this.m.IsFemaleBackground = true;
-			this.m.GoodEnding = "It was perhaps a risk to take a gambler like %name% into your ranks. Now, many days later it\'s obvious you made the right choice. Last you heard, she was still with the company and uses her earnings to enrich her habits. Rumor has it that, through all her winnings, she\'s secretly become one of the richest women in all the land. You think it\'s a bunch of hogwash, but a surprising number of mayors have become suddenly lax on gaming...";
-			this.m.BadEnding = "%name% the gambler retired from the declining company and returned to her gambling ways. She quickly acquired great debts she could not pay. You saw her begging on a street corner with one of her hands missing and gaps in her teeth. You dropped a few crowns into her tin and said a few words, but she did not recognize you.";
-		}
-
 		this.m.IsOutlawBackground = true;
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[1];
 		this.m.PerkTreeDynamic = {
@@ -87,6 +67,36 @@ this.gambler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			Enemy = [],
 			Class = [this.Const.Perks.FistsClassTree]
 		}
+	}
+
+	//Default Male
+	function setGender(_gender = -1)
+	{
+		local r = _gender;
+		if (_gender == -1)
+		{
+			r = this.Math.rand(0, 9);
+			if (this.Const.LegendMod.Configs.LegendGenderEnabled())
+			{
+				r = this.Math.rand(0, 1);
+			}
+		}
+
+		if (r != 1)
+		{
+			return;
+		}
+		this.m.Name = "Adventurous Lady";
+		this.m.Faces = this.Const.Faces.AllFemale;
+		this.m.Hairs = this.Const.Hair.AllFemale;
+		this.m.HairColors = this.Const.HairColors.Young;
+		this.m.Beards = null;
+		this.m.BeardChance = 0;
+		this.m.Body = "bust_naked_body_03";
+		this.m.IsFemaleBackground = true;
+		this.m.GoodEnding = "It was perhaps a risk to take a gambler like %name% into your ranks. Now, many days later it\'s obvious you made the right choice. Last you heard, she was still with the company and uses her earnings to enrich her habits. Rumor has it that, through all her winnings, she\'s secretly become one of the richest women in all the land. You think it\'s a bunch of hogwash, but a surprising number of mayors have become suddenly lax on gaming...";
+		this.m.BadEnding = "%name% the gambler retired from the declining company and returned to her gambling ways. She quickly acquired great debts she could not pay. You saw her begging on a street corner with one of her hands missing and gaps in her teeth. You dropped a few crowns into her tin and said a few words, but she did not recognize you.";
+
 	}
 
 	function getTooltip()

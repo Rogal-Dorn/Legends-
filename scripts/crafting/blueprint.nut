@@ -79,6 +79,12 @@ this.blueprint <- {
 		this.onReset();
 	}
 
+	function requirementsMet()
+	{
+		return true;
+	}
+
+
 	function isCraftable()
 	{
 		local items = this.World.Assets.getStash().getItems();
@@ -106,7 +112,13 @@ this.blueprint <- {
 			}
 		}
 
+		if (!this.requirementsMet())
+		{
+		return false;
+		}
+
 		return true;
+
 	}
 
 	function isQualified()

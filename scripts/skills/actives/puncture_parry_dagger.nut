@@ -46,7 +46,7 @@ this.puncture_parry_dagger <- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/hitchance.png",
-				text = "Has [color=" + this.Const.UI.Color.NegativeValue + "]-15%[/color] chance to hit"
+				text = "Fatigue level of target reduces any hit chance penality. A completely exhausted target will have no to-hit penality applied, while a fresh target has full penalities applied. Dagger mastery reduces any penalities to hit by half."
 			},
 			{
 				id = 8,
@@ -82,13 +82,27 @@ this.puncture_parry_dagger <- this.inherit("scripts/skills/skill", {
 		return this.attackEntity(_user, _targetTile.getEntity());
 	}
 
+	function getHitChance(_targetEntity)
+	{
+		if (_targetEntity == null)
+		{
+			return 0;
+		}
+		return _targetEntity.getFatiguePct();
+	}
+
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
 		if (_skill == this)
 		{
+			local bonus = (1.0 - this.getHitChance(_targetEntity)) * _properties.MeleeSkill;
+			if (_properties.IsSpecializedInDaggers)
+			{
+				bonus = this.Math.floor(bonus / 2.0)
+			}
+			_properties.MeleeSkill -= bonus;
 			_properties.DamageRegularMin = 20;
-			_properties.DamageRegularMax = 40;	
-			_properties.MeleeSkill -= 15;
+			_properties.DamageRegularMax = 40;
 			_properties.DamageArmorMult *= 0.0;
 			_properties.IsIgnoringArmorOnAttack = true;
 			_properties.HitChanceMult[this.Const.BodyPart.Head] = 0.0;

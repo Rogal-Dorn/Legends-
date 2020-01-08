@@ -22,8 +22,8 @@ this.perk_legend_matching_set <- this.inherit("scripts/skills/skill", {
 	function getTooltip()
 	{
 		local actor = this.getContainer().getActor();
-		local body = actor.getArmorMax(this.Const.BodyPart.Body);
-		local head = actor.getArmorMax(this.Const.BodyPart.Head);
+		local body = actor.getArmor(this.Const.BodyPart.Body);
+		local head = actor.getArmor(this.Const.BodyPart.Head);
 
 		local bonus = 0;
 		if ((body + head) <= 350 )
@@ -58,15 +58,15 @@ this.perk_legend_matching_set <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		local actor = this.getContainer().getActor();
-		local body = actor.getArmorMax(this.Const.BodyPart.Body);
-		local head = actor.getArmorMax(this.Const.BodyPart.Head);
+		local body = actor.getArmor(this.Const.BodyPart.Body);
+		local head = actor.getArmor(this.Const.BodyPart.Head);
 
-		if ((body + head) <= 350 )
+		if ((body + head) <= 400 )
 		{
-		local diff = this.Math.abs(body - head);
-		local diffadj = diff / 10;
-		local bonus = this.Math.max(1, (5 - diffadj));
-		_properties.FatigueRecoveryRate += bonus;
+			local diff = this.Math.abs(body - head);
+			local diffadj = this.Math.floor(diff / 10);
+			local bonus = this.Math.max(1, (5 - diffadj));
+			_properties.FatigueRecoveryRate += bonus;
 		}
 	}
 
