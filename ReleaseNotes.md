@@ -2424,3 +2424,5 @@ Fixes puncture hit chance. Hitchance will increase now as target gets fatigued. 
 Fixes lacerate perk (thank you MrBrewed)
 Fixes named armor sometimes screwing up fights 
 Fixes second wind perk
+Should fix Bear agent
+Should fix restored ancient helm crafting recipe
