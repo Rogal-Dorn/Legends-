@@ -2447,3 +2447,4 @@ Fixes second wind crash
 
 
  Resolves crash on leaving camp after healing an injury without an icon 
+Catapults no longer spawn, inventor can no longer build catapults and inventors no longer have crazy damage. 
