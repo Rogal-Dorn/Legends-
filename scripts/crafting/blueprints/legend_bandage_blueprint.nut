@@ -4,7 +4,7 @@ this.legend_bandage_blueprint <- this.inherit("scripts/crafting/blueprint", {
 	{
 		this.blueprint.create();
 		this.m.ID = "blueprint.legend_bandage_blueprint";
-		this.m.PreviewCraftable = this.new("scripts/items/accessory/bandage");
+		this.m.PreviewCraftable = this.new("scripts/items/accessory/bandage_item");
 		this.m.Cost = 10;
 		local ingredients = [
 			{
@@ -34,14 +34,14 @@ this.legend_bandage_blueprint <- this.inherit("scripts/crafting/blueprint", {
 
 	function onCraft( _stash )
 	{
-		_stash.add(this.new("scripts/items/accessory/bandage"));
-		_stash.add(this.new("scripts/items/accessory/bandage"));
-		_stash.add(this.new("scripts/items/accessory/bandage"));
-		_stash.add(this.new("scripts/items/accessory/bandage"));
-		_stash.add(this.new("scripts/items/accessory/bandage"));
-		_stash.add(this.new("scripts/items/accessory/bandage"));
-		_stash.add(this.new("scripts/items/accessory/bandage"));
-		_stash.add(this.new("scripts/items/accessory/bandage"));
+		_stash.add(this.new("scripts/items/accessory/bandage_item"));
+		_stash.add(this.new("scripts/items/accessory/bandage_item"));
+		_stash.add(this.new("scripts/items/accessory/bandage_item"));
+		_stash.add(this.new("scripts/items/accessory/bandage_item"));
+		_stash.add(this.new("scripts/items/accessory/bandage_item"));
+		_stash.add(this.new("scripts/items/accessory/bandage_item"));
+		_stash.add(this.new("scripts/items/accessory/bandage_item"));
+		_stash.add(this.new("scripts/items/accessory/bandage_item"));
 	}
 
 });

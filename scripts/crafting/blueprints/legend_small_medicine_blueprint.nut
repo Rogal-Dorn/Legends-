@@ -8,7 +8,7 @@ this.legend_bandage_blueprint <- this.inherit("scripts/crafting/blueprint", {
 		this.m.Cost = 10;
 		local ingredients = [
 			{
-				Script = "scripts/items/accessory/bandage",
+				Script = "scripts/items/accessory/bandage_item",
 				Num = 1
 			},
 			{
