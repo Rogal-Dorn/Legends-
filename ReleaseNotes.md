@@ -2414,15 +2414,7 @@ Huge quivers can now be crafted using a rock unhold hide, if you have a fletcher
 Pies, Pudding, Porridge and Rations can now be equipped and eaten in battle to restore health and fatigue.
 
 
-13.0.0.31b
-Fixes crash with Unhold fling skill.
-Fixes crash with Unhold sweep skill.
-Fixes errors with reload save from sisterhood scenario.
-Fixes puncture hit chance. Hitchance will increase now as target gets fatigued. A 100% fatigued enemy will have 0 penality. 0% Fatigued enemy will have 100% penaly. Puncture hitchance penality is now reduced by 50% with Dagger mastery.
-Fixes white wolf not getting Battle Flow on legendary 
-Fixes crash from some named items not having an owner to be named after 
-Fixes second wind crash 
-
+13.0.0.32
 **Camouflage:**
 *Fixes Camouflage going permanent under some circumstances
 *Camoflage now makes your character invisible instead of darkened 
@@ -2445,13 +2437,23 @@ Fixes second wind crash
 * Bandage recipe - one cloth roll and one roots and berries, for eight bandages 
 * Small medicine recipe - one bandage and one roots and berries, for 20 medicine 
 
-
- Resolves crash on leaving camp after healing an injury without an icon 
+**Fixes**
+Resolves crash on leaving camp after healing an injury without an icon 
 Catapults no longer spawn, inventor can no longer build catapults and inventors no longer have crazy damage. 
-
 Fixes lacerate perk (Mwah MrBrewed)
 Fixes named armor sometimes screwing up fights (Mwah)
 Fixes second wind perk (Mwah)
 Should fix Bear agent (Mwah)
 Should fix restored ancient helm crafting recipe  (Mwah)
 Fixes the one single plate armor that doesn't set its armor type (Mwah)
+Freedom of movement correctly reduces damage instead of increasing it (salty) 
+great slash tooltip updated (salty) 
+Runes are no longer destroyed when you scrap a runed item (salty) 
+Fixes crash with Unhold fling skill.(wuxiang)
+Fixes crash with Unhold sweep skill.(wuxiang)
+Fixes errors with reload save from sisterhood scenario.(wuxiang)
+Fixes puncture hit chance. Hitchance will increase now as target gets fatigued. A 100% fatigued enemy will have 0 penality. 0% Fatigued enemy will have 100% penaly. Puncture hitchance penality is now reduced by 50% with Dagger mastery. (wuxiang)
+Fixes Sisterhood starting with men (wuxiang)
+Fixes white wolf not getting Battle Flow on legendary 
+Fixes crash from some named items not having an owner to be named after 
+Fixes second wind crash  (wuxiang)
