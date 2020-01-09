@@ -2457,3 +2457,7 @@ Fixes Sisterhood starting with men (wuxiang)
 Fixes white wolf not getting Battle Flow on legendary 
 Fixes crash from some named items not having an owner to be named after 
 Fixes second wind crash  (wuxiang)
+
+13.0.0.32b
+**Fixes**
+Should fix bleed effect properly killing things and giving kill credit now 
