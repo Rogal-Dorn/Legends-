@@ -2426,3 +2426,4 @@ Fixes named armor sometimes screwing up fights
 Fixes second wind perk
 Should fix Bear agent
 Should fix restored ancient helm crafting recipe
+Fixes the one single plate armor that doesn't set its armor type 

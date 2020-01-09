@@ -3,6 +3,7 @@ this.legend_armor_leather_jacket_named <- this.inherit("scripts/items/legend_arm
 	function create()
 	{
 		this.legend_named_armor_upgrade.create();
+		this.m.Type = this.Const.Items.ArmorUpgrades.Plate
 		this.m.ID = "legend_armor.body.leather_jacket_named";
         this.m.Description = "A well-crafted and hardened leather armor. Light to wear but very sturdy.";
 		this.m.ArmorDescription = "Includes a well-crafted and hardened leather armor. Light to wear but very sturdy.";
