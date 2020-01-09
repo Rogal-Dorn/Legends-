@@ -108,6 +108,7 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		this.World.Assets.getStash().add(this.new("scripts/items/misc/witch_hair_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/misc/werewolf_pelt_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/misc/werewolf_pelt_item"));
+		this.World.Assets.getStash().add(this.new("scripts/items/tools/legend_broken_throwing_net"));
 		this.World.Assets.m.Money = this.Math.round(this.World.Assets.m.Money * 0.75);
 	}
 
