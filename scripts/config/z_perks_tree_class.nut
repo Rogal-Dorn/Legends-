@@ -372,7 +372,7 @@ gt.Const.Perks.InventorClassTree <- {
 		[],
 		[],
 		[gt.Const.Perks.PerkDefs.LegendInventorAnatomy],
-		[gt.Const.Perks.PerkDefs.LegendSummonCatapult]
+		[]
 	]
 };
 

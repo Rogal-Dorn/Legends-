@@ -54,7 +54,7 @@ this.legend_named_armor_upgrade <- this.inherit("scripts/items/legend_armor/lege
 
 		if (this.m.Name.len() == 0)
 		{
-			if (this.Math.rand(1, 100) <= 25)
+			if ((this.Math.rand(1, 100) <= 25) && (this.getArmor().getContainer().getActor() != null))
 			{
 				this.setName(this.getArmor().getContainer().getActor().getName() + "\'s ");
 			}
