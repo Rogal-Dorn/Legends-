@@ -159,7 +159,8 @@ this.legend_hidden_effect <- this.inherit("scripts/skills/skill", {
 
 	function onTurnEnd()
 	{
-		if (--this.m.TurnsLeft <= 0)
+		this.m.TurnsLeft = this.m.TurnsLeft - 1;
+		if (this.m.TurnsLeft <= 0)
 		{
 			this.removeSelf();
 		}
