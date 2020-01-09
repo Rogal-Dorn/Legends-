@@ -223,6 +223,5 @@ this.legend_inventor_background <- this.inherit("scripts/skills/backgrounds/char
 	{
 		this.character_background.onUpdate(_properties);
 		_properties.XPGainMult *= 1.2;
-		this.m.Container.add(this.new("scripts/skills/actives/legend_use_catapult_skill"));
 	}
 });
