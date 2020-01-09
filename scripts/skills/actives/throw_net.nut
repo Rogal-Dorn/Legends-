@@ -41,7 +41,7 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 		this.m.FatigueCost = 25;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 3;
-		this.m.MaxLevelDifference = 2;
+		this.m.MaxLevelDifference = 1;
 	}
 
 	function getTooltip()
@@ -55,64 +55,12 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 				text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]" + this.getMaxRange() + "[/color] tiles"
 			}
 		]);
-		
-		local ammo = this.getAmmo();
-
-		if (ammo > 0)
-		{
-			ret.push({
-				id = 8,
-				type = "text",
-				icon = "ui/icons/ranged_skill.png",
-				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]" + ammo + "[/color] throwing net left"
-			});
-		}
-		else
-		{
-			ret.push({
-				id = 8,
-				type = "text",
-				icon = "ui/tooltips/warning.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]No throwing net left[/color]"
-			});
-		}
-
 		return ret;
 	}
 
 	function onAfterUpdate( _properties )
 	{
-		//These are intended to be two different specializations, one is in throwing the net itself one is just nets
-		this.m.FatigueCostMult = _properties.IsSpecializedInNets ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
-		this.m.MaxRange = _properties.IsSpecializedInNetCasting ? 4 : 3;
-	}
-
-	function getAmmo()
-	{
-		local item = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
-
-		if (item == null)
-		{
-			return 0;
-		}
-
-		return item.getAmmo();
-	}
-
-	function consumeAmmo()
-	{
-		local item = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
-
-		if (item != null)
-		{
-			item.consumeAmmo();
-		}
-	}
-
-
-	function isUsable()
-	{
-		return !this.Tactical.isActive() || this.skill.isUsable() && this.getAmmo() > 0;
+		this.m.FatigueCostMult = _properties.IsSpecializedInThrowing ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )
@@ -132,48 +80,74 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
-		this.consumeAmmo();
-		
 		local targetEntity = _targetTile.getEntity();
-		
-		if (!targetEntity.getCurrentProperties().IsImmuneToRoot)
+		local r = this.Math.rand(1,100);
+		local ourSkill = _user.getCurrentProperties().getRangedSkill();
+		local theirSkill = targetEntity.getCurrentProperties().getRangedDefense();
+
+		if (r < (ourSkill - theirSkill))
 		{
-			if (this.m.SoundOnHit.len() != 0)
+			if (!targetEntity.getCurrentProperties().IsImmuneToRoot)
 			{
-				this.Sound.play(this.m.SoundOnHit[this.Math.rand(0, this.m.SoundOnHit.len() - 1)], this.Const.Sound.Volume.Skill, targetEntity.getPos());
-			}
+				if (this.m.SoundOnHit.len() != 0)
+				{
+					this.Sound.play(this.m.SoundOnHit[this.Math.rand(0, this.m.SoundOnHit.len() - 1)], this.Const.Sound.Volume.Skill, targetEntity.getPos());
+				}
 
-			//_user.getItems().unequip(_user.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand));
-			//Drop commented out by Mwah, why would we want this anyways?
-			//if (this.getAmmo() <= 0) {
-			//	_user.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand).drop(); //drop instead of destroy
-			//} 
-			targetEntity.getSkills().add(this.new("scripts/skills/effects/net_effect"));
-			local breakFree = this.new("scripts/skills/actives/break_free_skill");
-			breakFree.m.Icon = "skills/active_74.png";
-			breakFree.m.IconDisabled = "skills/active_74_sw.png";
-			breakFree.m.Overlay = "active_74";
-			breakFree.m.SoundOnUse = this.m.SoundOnHitHitpoints;
+				_user.getItems().unequip(_user.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand));
+					//local chance = this.Math.rand(1,100);
+					//	if (chance > 50)
+					//	{
+						this.World.Assets.getStash().add(this.new("scripts/items/tools/legend_broken_throwing_net"));
+					//	}
 
-			if (this.m.IsReinforced)
-			{
-				breakFree.setDecal("net_destroyed_02");
-				breakFree.setChanceBonus(-15);
+
+				targetEntity.getSkills().add(this.new("scripts/skills/effects/net_effect"));
+				local breakFree = this.new("scripts/skills/actives/break_free_skill");
+				breakFree.m.Icon = "skills/active_74.png";
+				breakFree.m.IconDisabled = "skills/active_74_sw.png";
+				breakFree.m.Overlay = "active_74";
+				breakFree.m.SoundOnUse = this.m.SoundOnHitHitpoints;
+
+				if (this.m.IsReinforced)
+				{
+					breakFree.setDecal("net_destroyed_02");
+					breakFree.setChanceBonus(-15);
+				}
+				else
+				{
+					breakFree.setDecal("net_destroyed");
+					breakFree.setChanceBonus(0);
+				}
+
+				targetEntity.getSkills().add(breakFree);
+				local effect = this.Tactical.spawnSpriteEffect(this.m.IsReinforced ? "bust_net_02" : "bust_net", this.createColor("#ffffff"), _targetTile, 0, 10, 1.0, targetEntity.getSprite("status_rooted").Scale, 100, 100, 0);
+				local flip = !targetEntity.isAlliedWithPlayer();
+				effect.setHorizontalFlipping(flip);
+				this.Time.scheduleEvent(this.TimeUnit.Real, 200, this.onNetSpawn.bindenv(this), {
+					TargetEntity = targetEntity,
+					IsReinforced = this.m.IsReinforced
+				});
 			}
 			else
 			{
-				breakFree.setDecal("net_destroyed");
-				breakFree.setChanceBonus(0);
-			}
+				if (this.m.SoundOnMiss.len() != 0)
+				{
+					this.Sound.play(this.m.SoundOnMiss[this.Math.rand(0, this.m.SoundOnMiss.len() - 1)], this.Const.Sound.Volume.Skill, targetEntity.getPos());
+				}
 
-			targetEntity.getSkills().add(breakFree);
-			local effect = this.Tactical.spawnSpriteEffect(this.m.IsReinforced ? "bust_net_02" : "bust_net", this.createColor("#ffffff"), _targetTile, 0, 10, 1.0, targetEntity.getSprite("status_rooted").Scale, 100, 100, 0);
-			local flip = !targetEntity.isAlliedWithPlayer();
-			effect.setHorizontalFlipping(flip);
-			this.Time.scheduleEvent(this.TimeUnit.Real, 200, this.onNetSpawn.bindenv(this), {
-				TargetEntity = targetEntity,
-				IsReinforced = this.m.IsReinforced
-			});
+				_user.getItems().unequip(_user.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand));
+				if (this.m.IsReinforced)
+				{
+				this.World.Assets.getStash().add(this.new("scripts/items/tools/reinforced_throwing_net"));
+				}
+				else
+				{
+				this.World.Assets.getStash().add(this.new("scripts/items/tools/throwing_net"));
+				}
+
+				return false;
+			}	
 		}
 		else
 		{
@@ -183,17 +157,20 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 			}
 
 			_user.getItems().unequip(_user.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand));
+				if (this.m.IsReinforced)
+				{
+				this.World.Assets.getStash().add(this.new("scripts/items/tools/reinforced_throwing_net"));
+				}
+				else
+				{
+				this.World.Assets.getStash().add(this.new("scripts/items/tools/throwing_net"));
+				}
+
 			return false;
-		}
+		}	
+
 	}
-	function onAfterUpdate( _properties )
-	{
-		if (_properties.IsSpecializedInNets)
-		{
-			this.m.FatigueCostMult = this.Const.Combat.WeaponSpecFatigueMult;
-			this.m.ActionPointCost = 3;
-		}
-	}
+
 	function onNetSpawn( _data )
 	{
 		local rooted = _data.TargetEntity.getSprite("status_rooted");
