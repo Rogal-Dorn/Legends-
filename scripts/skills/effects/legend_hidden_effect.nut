@@ -157,6 +157,11 @@ this.legend_hidden_effect <- this.inherit("scripts/skills/skill", {
 
 	}
 
+	function onRemoved()
+	{
+		this.getContainer().getActor().setHidden(false);
+	}
+
 	function onTurnEnd()
 	{
 		this.m.TurnsLeft = this.m.TurnsLeft - 1;
