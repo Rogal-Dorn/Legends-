@@ -114,7 +114,7 @@ this.rupture <- this.inherit("scripts/skills/skill", {
 			if (!target.getCurrentProperties().IsImmuneToBleeding && hp - target.getHitpoints() >= this.Const.Combat.MinDamageToApplyBleeding)
 			{
 				local effect = this.new("scripts/skills/effects/bleeding_effect")
-				effect.setActor(_user);
+				effect.setActor(this.getContainer().getActor());
 				target.getSkills().add(effect);
 				this.Sound.play(this.m.BleedingSounds[this.Math.rand(0, this.m.BleedingSounds.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
 			}
