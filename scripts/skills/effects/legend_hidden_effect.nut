@@ -99,66 +99,27 @@ this.legend_hidden_effect <- this.inherit("scripts/skills/skill", {
 					}
 				}
 			}
-		actor.getSprite("armor").Saturation -= 0.25;
 		actor.getSprite("armor").Alpha = 10;
-		actor.getSprite("helmet").Saturation -= 0.25;
 		actor.getSprite("helmet").Alpha = 10;
-		actor.getSprite("shield_icon").Saturation -= 0.25;
 		actor.getSprite("shield_icon").Alpha = 10;
-		actor.getSprite("armor_layer_chain").Saturation -= 0.25;
 		actor.getSprite("armor_layer_chain").Alpha = 10;
-		actor.getSprite("armor_layer_plate").Saturation -= 0.25;
 		actor.getSprite("armor_layer_plate").Alpha = 10;
-		actor.getSprite("armor_layer_tabbard").Saturation -= 0.25;
 		actor.getSprite("armor_layer_tabbard").Alpha = 10;
-		actor.getSprite("armor_layer_cloak").Saturation -= 0.25;
 		actor.getSprite("armor_layer_tabbard").Alpha = 10;
-		actor.getSprite("head").Saturation -= 0.25;
 		actor.getSprite("head").Alpha = 10;
-		actor.getSprite("body").Saturation -= 0.25;
 		actor.getSprite("body").Alpha = 10;
-		actor.getSprite("hair").Saturation -= 0.25;
 		actor.getSprite("hair").Alpha = 10;
-		actor.getSprite("beard").Saturation -= 0.25;
 		actor.getSprite("beard").Alpha = 10;
-		actor.getSprite("tattoo_head").Saturation -= 0.25;
 		actor.getSprite("tattoo_head").Alpha = 10;
-		actor.getSprite("tattoo_body").Saturation -= 0.25;
 		actor.getSprite("tattoo_body").Alpha = 10;
-		actor.getSprite("quiver").Saturation -= 0.25;
 		actor.getSprite("quiver").Alpha = 10;
-		actor.getSprite("arms_icon").Saturation -= 0.25;
 		actor.getSprite("arms_icon").Alpha = 10;
-		if (actor.getSprite("dirt").HasBrush)
-		{
-		actor.getSprite("dirt").Saturation -= 0.25;
 		actor.getSprite("dirt").Alpha = 10;
-		}
-		if (actor.getSprite("accessory").HasBrush)
-		{
-		actor.getSprite("accessory").Saturation -= 0.25;
 		actor.getSprite("accessory").Alpha = 10;
-		}
-		if (actor.getSprite("surcoat").HasBrush)
-		{
-		actor.getSprite("surcoat").Saturation -= 0.25;
 		actor.getSprite("surcoat").Alpha = 10;
-		}
-		if (actor.getSprite("armor_upgrade_back").HasBrush)
-		{
-		actor.getSprite("armor_upgrade_back").Saturation -= 0.25;
 		actor.getSprite("armor_upgrade_back").Alpha = 10;
-		}
-		if (actor.getSprite("armor_upgrade_front").HasBrush)
-		{
-		actor.getSprite("armor_upgrade_front").Saturation -= 0.25;
 		actor.getSprite("armor_upgrade_front").Alpha = 10;
-		}
-		if (actor.getSprite("socket").HasBrush)
-		{
-		actor.getSprite("socket").Saturation -= 0.25;
 		actor.getSprite("socket").Alpha = 10;
-		}
 		this.m.TurnsLeft = 3;
 
 		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_untouchable"))

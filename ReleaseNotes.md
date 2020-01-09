@@ -2423,12 +2423,27 @@ Fixes white wolf not getting Battle Flow on legendary
 Fixes crash from some named items not having an owner to be named after 
 Fixes second wind crash 
 
-Fixes Camouflage going permanent under some circumstances
-Camoflage now makes your character invisible instead of darkened 
-Fixes Camouflage making characters completely shadowed
-Fixes Camouflage not effecting weapons, accessories, upgrades and surcoats
-Updates Camouflage tooltip to reflect the three turn limit
-Untouchable perk now extends your camouflage by one turn 
+**Camouflage:**
+*Fixes Camouflage going permanent under some circumstances
+*Camoflage now makes your character invisible instead of darkened 
+*Fixes Camouflage making characters completely shadowed
+*Fixes Camouflage not effecting weapons, accessories, upgrades and surcoats
+*Updates Camouflage tooltip to reflect the three turn limit
+*Untouchable perk now extends your camouflage by one turn 
+
+**Nets:**
+* Nets no longer have ammunition 
+* Throwing a net has a chance to miss based on ranged attack 
+* If you miss, you'll get your net back at the end of the fight
+* If you hit, you have a 50% chance of getting back a broken net 
+* If you have the net repair perk, you can repair the net in the crafting tent with a broken net and a cloth roll 
+* The repair perk still also lets you craft a brand new net for two cloth rolls 
+
+**Healer perks**
+* Med packages perk now gives 30 medicine storage instead of 10 
+* Med Ingredients perk no gives 10 medicine storage instead of 20, it now unlocks two recipes 
+* Bandage recipe - one cloth roll and one roots and berries, for eight bandages 
+* Small medicine recipe - one bandage and one roots and berries, for 20 medicine 
 
 
- 
+ Resolves crash on leaving camp after healing an injury without an icon 
