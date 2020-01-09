@@ -2422,3 +2422,13 @@ Fixes puncture hit chance. Hitchance will increase now as target gets fatigued. 
 Fixes white wolf not getting Battle Flow on legendary 
 Fixes crash from some named items not having an owner to be named after 
 Fixes second wind crash 
+
+Fixes Camouflage going permanent under some circumstances
+Camoflage now makes your character invisible instead of darkened 
+Fixes Camouflage making characters completely shadowed
+Fixes Camouflage not effecting weapons, accessories, upgrades and surcoats
+Updates Camouflage tooltip to reflect the three turn limit
+Untouchable perk now extends your camouflage by one turn 
+
+
+ 
