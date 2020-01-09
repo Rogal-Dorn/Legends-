@@ -2448,3 +2448,10 @@ Fixes second wind crash
 
  Resolves crash on leaving camp after healing an injury without an icon 
 Catapults no longer spawn, inventor can no longer build catapults and inventors no longer have crazy damage. 
+
+Fixes lacerate perk (Mwah MrBrewed)
+Fixes named armor sometimes screwing up fights (Mwah)
+Fixes second wind perk (Mwah)
+Should fix Bear agent (Mwah)
+Should fix restored ancient helm crafting recipe  (Mwah)
+Fixes the one single plate armor that doesn't set its armor type (Mwah)

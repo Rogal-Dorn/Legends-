@@ -28,9 +28,6 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 		AttackedCount = [],
 		BloodiedCount = 0,
 		RiposteSkillCounter = 0,
-		FlatOnKillOtherActorModifier = 0,           // These two variables only affect onOtherActorDeath
-		PercentOnKillOtherActorModifier = 1.0,      // To properly make it harder for enemies to pass resolve check ->
-                                                    // FlatOnKill should be negative, PercentOnKill should be between 0 and 1 non-inclusive
 		ActionPointCosts = this.Const.DefaultMovementAPCost,
 		FatigueCosts = this.Const.DefaultMovementFatigueCost,
 		LevelActionPointCost = this.Const.Movement.LevelDifferenceActionPointCost,
@@ -524,26 +521,6 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 	function setTitle( _value )
 	{
 		this.m.Title = _value;
-	}
-
-	function getPercentOnKillOtherActorModifier()
-	{
-		return this.m.PercentOnKillOtherActorModifier;
-	}
-
-	function modifyPercentOnKillOtherActorModifier( _value )
-	{
-		this.m.PercentOnKillOtherActorModifier *= _value;
-	}
-
-	function getFlatOnKillOtherActorModifier()
-	{
-		return this.m.FlatOnKillOtherActorModifier;
-	}
-
-	function modifyFlatOnKillOtherActorModifier( _value )
-	{
-		this.m.FlatOnKillOtherActorModifier += _value;
 	}
 
 	function isTurnDone()
