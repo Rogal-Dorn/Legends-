@@ -52,13 +52,13 @@ this.legend_great_slash <- this.inherit("scripts/skills/skill", {
 			}
 		]);
 
-		if (!this.getContainer().getActor().getCurrentProperties().IsSpecializedInGreatSwords)
+		if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInGreatSwords)
 		{
 			ret.push({
 				id = 6,
 				type = "text",
 				icon = "ui/icons/hitchance.png",
-				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] damage due to greatsword specialisation"
+				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] chance to hit from greatsword specialisation"
 			});
 		}
 
