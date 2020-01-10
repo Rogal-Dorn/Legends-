@@ -2462,3 +2462,4 @@ Fixes second wind crash  (wuxiang)
 **Fixes**
 Should fix bleed effect properly killing things and giving kill credit now (Rule & Mwah)
 Fixes ranged lash skill (Mwah)
+Fixes large mountains fort causing errors on game creation (Mwah)
