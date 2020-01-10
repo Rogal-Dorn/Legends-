@@ -166,9 +166,7 @@ this.large_mountains_fort <- this.inherit("scripts/entity/world/settlement", {
 			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/workshop_location", ALL, [], 0, false, true, true);
 
 			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/goat_herd_location", ALL, [], 0, false, true, true);
-			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/wheat_fields_location", [
-				this.Const.World.TerrainType.Plains
-			], 0, 0, true, true);
+			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/wheat_fields_location", [this.Const.World.TerrainType.Plains], [], 0, false, true, true);
 			return;
 		}
 
