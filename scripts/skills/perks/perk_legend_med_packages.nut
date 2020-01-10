@@ -1,6 +1,6 @@
 this.perk_legend_med_packages <- this.inherit("scripts/skills/skill", {
 	m = {
-		Amount = 10
+		Amount = 30
 	},
 	function create()
 	{

@@ -59,7 +59,7 @@ this.perk_legend_freedom_of_movement <- this.inherit("scripts/skills/skill", {
 		{
 			local diff = enemyFatiguePercentCurrent - ourFatiguePercentCurrent;
 			local diffPoint = diff / 100;
-			bonus = 1 + diffPoint;
+			bonus = 1 - diffPoint;
 		}
 		_properties.DamageReceivedRegularMult *= bonus;
 	}
