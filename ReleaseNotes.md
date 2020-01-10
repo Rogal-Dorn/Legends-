@@ -2470,3 +2470,4 @@ Fixes ranged lash skill (Mwah)
 Fixes large mountains fort causing errors on game creation (Mwah)
 Fixes greenskin contract stuff (Mwah)
 Fixes small medicine blueprint not initializing (Mwah)
+Rally can remove Sleeping effect now.
