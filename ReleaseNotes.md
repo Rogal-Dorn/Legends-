@@ -2431,13 +2431,21 @@ Pies, Pudding, Porridge and Rations can now be equipped and eaten in battle to r
 * If you have the net repair perk, you can repair the net in the crafting tent with a broken net and a cloth roll 
 * The repair perk still also lets you craft a brand new net for two cloth rolls 
 
-**Healer perks**
+**Healers**
 * Med packages perk now gives 30 medicine storage instead of 10 
 * Med Ingredients perk no gives 10 medicine storage instead of 20, it now unlocks two recipes 
 * Bandage recipe - one cloth roll and one roots and berries, for eight bandages 
 * Small medicine recipe - one bandage and one roots and berries, for 20 medicine 
 
 **Fixes**
+Fixes puncture hit chance. Hitchance will increase now as target gets fatigued. A 100% fatigued enemy will have 0 penality. 0% Fatigued enemy will have 100% penaly. Puncture hitchance penality is now reduced by 50% with Dagger mastery. (wuxiang)
+Fixes Sisterhood starting with men (wuxiang)
+Fixes white wolf not getting Battle Flow on legendary 
+Fixes crash from some named items not having an owner to be named after 
+Fixes second wind crash  (wuxiang)
+Fixes crash with Unhold fling skill.(wuxiang)
+Fixes crash with Unhold sweep skill.(wuxiang)
+Fixes errors with reload save from sisterhood scenario.(wuxiang)
 Resolves crash on leaving camp after healing an injury without an icon 
 Catapults no longer spawn, inventor can no longer build catapults and inventors no longer have crazy damage. 
 Fixes lacerate perk (Mwah MrBrewed)
@@ -2449,11 +2457,10 @@ Fixes the one single plate armor that doesn't set its armor type (Mwah)
 Freedom of movement correctly reduces damage instead of increasing it (salty) 
 great slash tooltip updated (salty) 
 Runes are no longer destroyed when you scrap a runed item (salty) 
-Fixes crash with Unhold fling skill.(wuxiang)
-Fixes crash with Unhold sweep skill.(wuxiang)
-Fixes errors with reload save from sisterhood scenario.(wuxiang)
-Fixes puncture hit chance. Hitchance will increase now as target gets fatigued. A 100% fatigued enemy will have 0 penality. 0% Fatigued enemy will have 100% penaly. Puncture hitchance penality is now reduced by 50% with Dagger mastery. (wuxiang)
-Fixes Sisterhood starting with men (wuxiang)
-Fixes white wolf not getting Battle Flow on legendary 
-Fixes crash from some named items not having an owner to be named after 
-Fixes second wind crash  (wuxiang)
+
+13.0.0.32c
+Net casting now doubles the chance of nets hitting
+Reinforced nets always give back a broken net  
+* one cloth roll crafts into two nets 
+* two broken nets craft into one net 
+New perk icons for escape artist, net casting and net repair 
