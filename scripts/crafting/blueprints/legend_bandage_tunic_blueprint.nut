@@ -1,4 +1,4 @@
-this.legend_bandage_blueprint <- this.inherit("scripts/crafting/blueprint", {
+this.legend_bandage_tunic_blueprint <- this.inherit("scripts/crafting/blueprint", {
 	m = {},
 	function create()
 	{
@@ -42,4 +42,5 @@ this.legend_bandage_blueprint <- this.inherit("scripts/crafting/blueprint", {
 	}
 
 });
+
 
