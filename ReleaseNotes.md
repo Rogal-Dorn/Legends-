@@ -2460,8 +2460,13 @@ Fixes second wind crash  (wuxiang)
 
 13.0.0.33
 **Blueprints:**
-*Adds a new campaign option to unlock all crafting recipies.
-*Adds UI filters for taxidermist and camp crafting recipe list.
+Adds a new campaign option to unlock all crafting recipies.
+Adds UI filters for taxidermist and camp crafting recipe list.
 
 **Fixes**
-*Update redback dagger puncture to work with new puncture mechanics.
+Update redback dagger puncture to work with new puncture mechanics.
+Should fix bleed effect properly killing things and giving kill credit now (Rule & Mwah)
+Fixes ranged lash skill (Mwah)
+Fixes large mountains fort causing errors on game creation (Mwah)
+Fixes greenskin contract stuff (Mwah)
+Fixes small medicine blueprint not initializing (Mwah)
