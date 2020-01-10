@@ -2420,3 +2420,7 @@ Fixes crash with Unhold sweep skill.
 Fixes errors with reload save from sisterhood scenario.
 Fixes puncture hit chance. Hitchance will increase now as target gets fatigued. A 100% fatigued enemy will have 0 penality. 0% Fatigued enemy will have 100% penaly. Puncture hitchance penality is now reduced by 50% with Dagger mastery.
 
+
+*Adds a new campaign option to unlock all crafting recipies.
+*Adds filters for taxidermist and camp crafting recipe list.
+*Update redback dagger puncture to work with new puncture mechanics.

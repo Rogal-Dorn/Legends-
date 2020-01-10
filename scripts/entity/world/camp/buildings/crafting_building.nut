@@ -152,7 +152,17 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 
 	function isHidden()
 	{
-		return !this.World.Tags.get("HasLegendCampCrafting") || !this.Const.DLC.Unhold
+		if ( !this.Const.DLC.Unhold)
+		{
+			return true;
+		}
+
+		if (this.Const.LegendMod.Configs.LegendCampUnlockEnabled())
+		{
+			return false;
+		}
+		
+		return !this.World.Tags.get("HasLegendCampCrafting")
 	}	
 
 	function getUpgraded()

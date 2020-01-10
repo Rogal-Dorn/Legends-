@@ -4,6 +4,7 @@ this.paint_white_green_yellow_blueprint_dye <- this.inherit("scripts/crafting/bl
 	{
 		this.blueprint.create();
 		this.m.ID = "blueprint.paint_white_green_yellow_dye";
+		this.m.Type = this.Const.Items.ItemType.Misc;
 		this.m.PreviewCraftable = this.new("scripts/items/misc/paint_white_green_yellow_item");
 		this.m.Cost = 50;
 		local ingredients = [

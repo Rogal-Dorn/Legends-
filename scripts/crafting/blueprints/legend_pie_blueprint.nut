@@ -4,6 +4,7 @@ this.legend_pie_blueprint <- this.inherit("scripts/crafting/blueprint", {
 	{
 		this.blueprint.create();
 		this.m.ID = "blueprint.legend_pie";
+		this.m.Type = this.Const.Items.ItemType.Food;
 		this.m.PreviewCraftable = this.new("scripts/items/supplies/legend_pie_item");
 		this.m.Cost = 10;
 		local ingredients = [

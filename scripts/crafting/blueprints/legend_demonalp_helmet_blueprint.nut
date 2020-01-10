@@ -4,6 +4,7 @@ this.legend_demonalp_helmet_blueprint <- this.inherit("scripts/crafting/blueprin
 	{
 		this.blueprint.create();
 		this.m.ID = "blueprint.legend_demonalp_helmet";
+		this.m.Type = this.Const.Items.ItemType.Armor;
 		this.m.PreviewCraftable = this.new("scripts/items/helmets/legendary/legend_demonalp_helmet");
 		this.m.Cost = 2500;
 		local ingredients = [

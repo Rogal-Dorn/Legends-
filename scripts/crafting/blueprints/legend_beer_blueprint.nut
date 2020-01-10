@@ -4,6 +4,7 @@ this.legend_beer_blueprint <- this.inherit("scripts/crafting/blueprint", {
 	{
 		this.blueprint.create();
 		this.m.ID = "blueprint.legend_beer";
+		this.m.Type = this.Const.Items.ItemType.Food;
 		this.m.PreviewCraftable = this.new("scripts/items/supplies/beer_item");
 		this.m.Cost = 10;
 		local ingredients = [
@@ -13,20 +14,15 @@ this.legend_beer_blueprint <- this.inherit("scripts/crafting/blueprint", {
 			}
 		];
 		this.init(ingredients);
+		local skills = [
+			{
+				Scripts = ["scripts/skills/perks/perk_legend_potion_brewer",
+						   "scripts/skills/perks/perk_legend_alcohol_brewing"]
+			}
+		]
+		this.initSkills(skills);		
 	}
 
-	function requirementsMet()
-	{
-		local roster = this.World.getPlayerRoster().getAll();
-        foreach( bro in roster )
-        {
-            if (bro.getSkills().hasSkill("perk.legend_potion_brewer") || bro.getSkills().hasSkill("perk.legend_alcohol_brewing") )
-            {
-                return true
-            }
-		}
-		return false;
-	}
 
 	function onCraft( _stash )
 	{
