@@ -11,7 +11,7 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.throw_net";
 		this.m.Name = "Throw Net";
-		this.m.Description = "Throw a net on your target in order to prevent them from moving or defending themself effectively. Will always hit if the enemy isn\'t immune.";
+		this.m.Description = "Throw a net on your target in order to prevent them from moving or defending themself effectively. Ranged Skill needed to hit, you can recover your net at the end of battle.";
 		this.m.Icon = "skills/active_73.png";
 		this.m.IconDisabled = "skills/active_73_sw.png";
 		this.m.Overlay = "active_73";
@@ -82,6 +82,10 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 	{
 		local targetEntity = _targetTile.getEntity();
 		local r = this.Math.rand(1,100);
+		if (_user.getSkills().hasSkill("perk.legend_net_casting"));
+		{
+		 r = this.Math.rand(1,50);
+		}
 		local ourSkill = _user.getCurrentProperties().getRangedSkill();
 		local theirSkill = targetEntity.getCurrentProperties().getRangedDefense();
 
@@ -95,12 +99,6 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 				}
 
 				_user.getItems().unequip(_user.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand));
-					//local chance = this.Math.rand(1,100);
-					//	if (chance > 50)
-					//	{
-						this.World.Assets.getStash().add(this.new("scripts/items/tools/legend_broken_throwing_net"));
-					//	}
-
 
 				targetEntity.getSkills().add(this.new("scripts/skills/effects/net_effect"));
 				local breakFree = this.new("scripts/skills/actives/break_free_skill");
@@ -113,11 +111,17 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 				{
 					breakFree.setDecal("net_destroyed_02");
 					breakFree.setChanceBonus(-15);
+					this.World.Assets.getStash().add(this.new("scripts/items/tools/legend_broken_throwing_net"));	
 				}
 				else
 				{
 					breakFree.setDecal("net_destroyed");
 					breakFree.setChanceBonus(0);
+					local chance = this.Math.rand(1,100);
+					if (chance > 50)
+					{
+						this.World.Assets.getStash().add(this.new("scripts/items/tools/legend_broken_throwing_net"));
+					}
 				}
 
 				targetEntity.getSkills().add(breakFree);
