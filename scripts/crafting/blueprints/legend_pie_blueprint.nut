@@ -26,19 +26,13 @@ this.legend_pie_blueprint <- this.inherit("scripts/crafting/blueprint", {
 			}
 		];
 		this.init(ingredients);
-	}
+		local skills = [
+			{
+				Scripts = ["scripts/skills/perks/perk_legend_camp_cook"]
+			}
+		]
+		this.initSkills(skills);		
 
-	function isCraftable()
-	{
-		local roster = this.World.getPlayerRoster().getAll();
-        foreach( bro in roster )
-        {
-            if (bro.getSkills().hasSkill("perk.legend_camp_cook"))
-            {
-                return true
-            }
-		}
-		return false;
 	}
 
 	function onCraft( _stash )

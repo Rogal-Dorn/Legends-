@@ -14,19 +14,12 @@ this.legend_net_blueprint <- this.inherit("scripts/crafting/blueprint", {
 			}
 		];
 		this.init(ingredients);
-	}
-
-	function isCraftable()
-	{
-		local roster = this.World.getPlayerRoster().getAll();
-        foreach( bro in roster )
-        {
-            if (bro.getSkills().hasSkill("perk.legend_net_repair") )
-            {
-                return true
-            }
-		}
-		return false;
+		local skills = [
+			{
+				Scripts = ["scripts/skills/perks/perk_legend_net_repair"]
+			}
+		]
+		this.initSkills(skills);			
 	}
 
 	function onCraft( _stash )
