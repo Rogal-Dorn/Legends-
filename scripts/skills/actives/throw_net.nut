@@ -11,7 +11,7 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.throw_net";
 		this.m.Name = "Throw Net";
-		this.m.Description = "Throw a net on your target in order to prevent them from moving or defending themself effectively. Will always hit if the enemy isn\'t immune.";
+		this.m.Description = "Throw a net on your target in order to prevent them from moving or defending themself effectively. Ranged Skill needed to hit, you can recover your net at the end of battle.";
 		this.m.Icon = "skills/active_73.png";
 		this.m.IconDisabled = "skills/active_73_sw.png";
 		this.m.Overlay = "active_73";
