@@ -4,6 +4,7 @@ this.legend_redback_cloak_blueprint <- this.inherit("scripts/crafting/blueprint"
 	{
 		this.blueprint.create();
 		this.m.ID = "blueprint.legend_redback_cloak";
+		this.m.Type = this.Const.Items.ItemType.Armor;
 		this.m.PreviewCraftable = this.new("scripts/items/armor_upgrades/legend_redback_cloak_upgrade");
 		this.m.Cost = 2500;
 		local ingredients = [

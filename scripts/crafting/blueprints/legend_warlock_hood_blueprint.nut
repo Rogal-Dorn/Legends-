@@ -4,6 +4,7 @@ this.legend_warlock_hood_blueprint <- this.inherit("scripts/crafting/blueprint",
 	{
 		this.blueprint.create();
 		this.m.ID = "blueprint.legend_warlock_hood";
+		this.m.Type = this.Const.Items.ItemType.Armor;
 		this.m.PreviewCraftable = this.new("scripts/items/helmets/named/legend_named_warlock_hood");
 		this.m.Cost = 200;
 		local ingredients = [

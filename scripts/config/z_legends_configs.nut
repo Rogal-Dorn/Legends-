@@ -13,7 +13,8 @@ gt.Const.LegendMod.Configs <- {
 	IsLocationScaling = false,
 	IsCampUnlock = false,
 	IsRecruitScaling = false,
-    IsBleedKiller = false
+    IsBleedKiller = false,
+    IsBlueprintsVisible = false
 
     Update = function (_settings)
     {
@@ -25,6 +26,7 @@ gt.Const.LegendMod.Configs <- {
 		this.IsCampUnlock = _settings.LegendCampUnlock;
 		this.IsRecruitScaling = _settings.LegendRecruitScaling;
         this.IsBleedKiller = _settings.LegendBleedKiller;
+        this.IsBlueprintsVisible = _settings.LegendAllBlueprints;
     }
 
     LegendArmorsEnabled = function ()
@@ -67,6 +69,11 @@ gt.Const.LegendMod.Configs <- {
         return this.IsBleedKiller
     }
 
+    LegendAllBlueprintsEnabled = function ()
+    {
+        return this.IsBlueprintsVisible
+    }
+
     onSerialize = function (_out)
     {
         _out.writeBool(this.IsArmor);
@@ -77,6 +84,7 @@ gt.Const.LegendMod.Configs <- {
 		_out.writeBool(this.IsCampUnlock);
 		_out.writeBool(this.IsRecruitScaling);
         _out.writeBool(this.IsBleedKiller);
+        _out.writeBool(this.IsBlueprintsVisible);
     }
 
     onDeserialize = function (_in)
@@ -92,6 +100,12 @@ gt.Const.LegendMod.Configs <- {
 		{
 			this.IsBleedKiller = _in.readBool();
 		}
+
+        if (_in.getMetaData().getVersion() >= 65)
+		{
+			this.IsBlueprintsVisible = _in.readBool();
+		}
+
         
     }
 }

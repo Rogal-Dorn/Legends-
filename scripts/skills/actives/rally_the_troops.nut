@@ -103,7 +103,7 @@ this.rally_the_troops <- this.inherit("scripts/skills/skill", {
 			if (a.getFaction() == _user.getFaction() && !a.getSkills().hasSkill("effects.rallied"))
 			{
 				this.logInfo("attempting to rally");
-				if (a.getSkills().hasSkill("effects.charmed") || a.getSkills().hasSkill("effects.legend_intensely_charmed") )
+				if (a.getSkills().hasSkill("effects.charmed") || a.getSkills().hasSkill("effects.legend_intensely_charmed") || a.getSkills().hasSkill("effects.sleeping"))
 				{
 					local rand = this.Math.rand(1, 100);
 					if( bravery > rand )

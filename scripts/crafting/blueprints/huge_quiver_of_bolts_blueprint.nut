@@ -4,6 +4,7 @@ this.huge_quiver_of_bolts_blueprint <- this.inherit("scripts/crafting/blueprint"
 	{
 		this.blueprint.create();
 		this.m.ID = "blueprint.huge_quiver_of_bolts";
+		this.m.Type = this.Const.Items.ItemType.Accessory;
 		this.m.PreviewCraftable = this.new("scripts/items/ammo/huge_quiver_of_bolts");
 		this.m.Cost = 3000;
 		local ingredients = [
@@ -13,19 +14,13 @@ this.huge_quiver_of_bolts_blueprint <- this.inherit("scripts/crafting/blueprint"
 			}
 		];
 		this.init(ingredients);
-	}
-
-	function requirementsMet()
-	{
-		local roster = this.World.getPlayerRoster().getAll();
-        foreach( bro in roster )
-        {
-            if (bro.getSkills().hasSkill("background.female_bowyer") )
-            {
-                return true
-            }
-		}
-		return false;
+		local skills = [
+			{
+				Scripts = ["scripts/skills/backgrounds/female_bowyer_background",
+							"scripts/skills/backgrounds/bowyer_background"]
+			}
+		]
+		this.initSkills(skills);	
 	}
 
 	function onCraft( _stash )

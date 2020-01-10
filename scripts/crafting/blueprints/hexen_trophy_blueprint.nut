@@ -4,6 +4,7 @@ this.hexen_trophy_blueprint <- this.inherit("scripts/crafting/blueprint", {
 	{
 		this.blueprint.create();
 		this.m.ID = "blueprint.hexen_trophy";
+		this.m.Type = this.Const.Items.ItemType.Accessory;
 		this.m.PreviewCraftable = this.new("scripts/items/accessory/hexen_trophy_item");
 		this.m.Cost = 350;
 		local ingredients = [

@@ -2458,7 +2458,30 @@ Freedom of movement correctly reduces damage instead of increasing it (salty)
 great slash tooltip updated (salty) 
 Runes are no longer destroyed when you scrap a runed item (salty) 
 
-13.0.0.32c
+
+Fixes crash with Unhold fling skill.(wuxiang)
+Fixes crash with Unhold sweep skill.(wuxiang)
+Fixes errors with reload save from sisterhood scenario.(wuxiang)
+Fixes puncture hit chance. Hitchance will increase now as target gets fatigued. A 100% fatigued enemy will have 0 penality. 0% Fatigued enemy will have 100% penaly. Puncture hitchance penality is now reduced by 50% with Dagger mastery. (wuxiang)
+Fixes Sisterhood starting with men (wuxiang)
+Fixes white wolf not getting Battle Flow on legendary 
+Fixes crash from some named items not having an owner to be named after 
+Fixes second wind crash  (wuxiang)
+
+13.0.0.33
+**Blueprints:**
+Adds a new campaign option to unlock all crafting recipies.
+Adds UI filters for taxidermist and camp crafting recipe list.
+
+**Fixes**
+Update redback dagger puncture to work with new puncture mechanics.
+Should fix bleed effect properly killing things and giving kill credit now (Rule & Mwah)
+Fixes ranged lash skill (Mwah)
+Fixes large mountains fort causing errors on game creation (Mwah)
+Fixes greenskin contract stuff (Mwah)
+Fixes small medicine blueprint not initializing (Mwah)
+Rally can remove Sleeping effect now.
+
 Net casting now doubles the chance of nets hitting
 Reinforced nets always give back a broken net  
 * one cloth roll crafts into two nets 

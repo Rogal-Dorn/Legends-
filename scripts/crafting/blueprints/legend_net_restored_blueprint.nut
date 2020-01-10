@@ -4,6 +4,7 @@ this.legend_net_restored_blueprint <- this.inherit("scripts/crafting/blueprint",
 	{
 		this.blueprint.create();
 		this.m.ID = "blueprint.legend_net_restore_blueprint";
+		this.m.Type = this.Const.Items.ItemType.Weapon;
 		this.m.PreviewCraftable = this.new("scripts/items/tools/throwing_net");
 		this.m.Cost = 10;
 		local ingredients = [
@@ -13,19 +14,13 @@ this.legend_net_restored_blueprint <- this.inherit("scripts/crafting/blueprint",
 			}
 		];
 		this.init(ingredients);
-	}
+		local skills = [
+			{
+				Scripts = ["scripts/skills/perks/perk_legend_net_repair"]
+			}
+		]
+		this.initSkills(skills);			
 
-	function isCraftable()
-	{
-		local roster = this.World.getPlayerRoster().getAll();
-        foreach( bro in roster )
-        {
-            if (bro.getSkills().hasSkill("perk.legend_net_repair") )
-            {
-                return true
-            }
-		}
-		return false;
 	}
 
 	function onCraft( _stash )
