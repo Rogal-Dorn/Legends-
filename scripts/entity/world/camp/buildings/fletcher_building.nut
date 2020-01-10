@@ -95,6 +95,12 @@ this.fletcher_building <- this.inherit("scripts/entity/world/camp/camp_building"
 
 	function isHidden()
 	{
+		
+		if (this.Const.LegendMod.Configs.LegendCampUnlockEnabled())
+		{
+			return false;
+		}
+		
 		return !this.World.Tags.get("HasLegendCampFletching")
 	}	
 

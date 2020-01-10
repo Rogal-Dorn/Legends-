@@ -81,18 +81,6 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		this.World.getCamera().setPos(this.World.State.m.Player.getPos());
 		local f = randomVillage.getFactionOfType(this.Const.FactionType.NobleHouse);
 		f.addPlayerRelation(-100.0, "You picked the wrong faction");
-		if(this.Const.LegendMod.Configs.LegendCampUnlockEnabled())
-		{
-			this.World.Tags.set("HasLegendCampGathering", true);
-			this.World.Tags.set("HasLegendCampBarber", true);
-			this.World.Tags.set("HasLegendCampCrafting", true);
-			this.World.Tags.set("HasLegendCampFletching", true);
-			this.World.Tags.set("HasLegendCampHealing", true);
-			this.World.Tags.set("HasLegendCampHunting", true);
-			this.World.Tags.set("HasLegendCampScouting", true);
-			this.World.Tags.set("HasLegendCampScraping", true);
-			this.World.Tags.set("HasLegendCampTraining", true);			
-		}
 		local names = [];
 
 		for( local i = 0; i < 6; i = ++i )

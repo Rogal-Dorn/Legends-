@@ -243,6 +243,8 @@ var NewCampaignMenuModule = function () {
 	this.mLegendRecruitScalingCheckboxLabel = null;
 	this.mLegendBleedKillerCheckbox = null;
 	this.mLegendBleedKillerCheckboxLabel = null;
+	this.mLegendAllBlueprintsCheckbox = null;
+	this.mLegendAllBlueprintsCheckboxLabel = null;
 	// generics
 	this.mIsVisible = false;
 };
@@ -1134,6 +1136,22 @@ NewCampaignMenuModule.prototype.buildConfigPage = function () {
 	});
 	this.mLegendBleedKillerCheckbox.iCheck('check');
 
+	var row = $('<div class="row"></div>');
+	rightColumn.append(row);
+	var control = $('<div class="control"/>');
+	row.append(control);
+	this.mLegendAllBlueprintsCheckbox = $('<input type="checkbox" id="cb-legendallblueprints"/>');
+	control.append(this.mLegendAllBlueprintsCheckbox);
+	this.mLegendAllBlueprintsCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendallblueprints">All Crafting Recipies Unlocked</label>');
+	control.append(this.mLegendAllBlueprintsCheckboxLabel);
+	this.mLegendAllBlueprintsCheckbox.iCheck({
+		checkboxClass: 'icheckbox_flat-orange',
+		radioClass: 'iradio_flat-orange',
+		increaseArea: '30%'
+	});
+	this.mLegendAllBlueprintsCheckbox.iCheck('check');
+
+
 };
 
 NewCampaignMenuModule.prototype.updateMapConfig = function () {
@@ -1582,6 +1600,14 @@ NewCampaignMenuModule.prototype.bindTooltips = function () {
 		elementId: 'mapconfig.legendbleedkiller'
 	});
 	
+	this.mLegendAllBlueprintsCheckbox.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.legendallblueprints'
+	});
+	this.mLegendAllBlueprintsCheckboxLabel.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.legendallblueprints'
+	});	
 
 };
 
@@ -1720,6 +1746,9 @@ NewCampaignMenuModule.prototype.unbindTooltips = function () {
 
 	this.mLegendBleedKillerCheckbox.unbindTooltip();
 	this.mLegendBleedKillerCheckboxLabel.unbindTooltip();
+	
+	this.mLegendAllBlueprintsCheckbox.unbindTooltip();
+	this.mLegendAllBlueprintsCheckboxLabel.unbindTooltip();	
 	
 };
 
@@ -2054,6 +2083,7 @@ NewCampaignMenuModule.prototype.collectSettings = function () {
 	settings.push(this.mLegendCampUnlockCheckbox.is(":checked"));
 	settings.push(this.mLegendRecruitScalingCheckbox.is(":checked"));
 	settings.push(this.mLegendBleedKillerCheckbox.is(":checked"));
+	settings.push(this.mLegendAllBlueprintsCheckbox.is(":checked"));
 	return settings;
 }
 

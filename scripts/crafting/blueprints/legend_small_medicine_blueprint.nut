@@ -1,9 +1,10 @@
-this.legend_bandage_blueprint <- this.inherit("scripts/crafting/blueprint", {
+this.legend_small_medicine_blueprint <- this.inherit("scripts/crafting/blueprint", {
 	m = {},
 	function create()
 	{
 		this.blueprint.create();
-		this.m.ID = "blueprint.legend_bandage_blueprint";
+		this.m.ID = "blueprint.legend_small_medicine_blueprint";
+		this.m.Type = this.Const.Items.ItemType.Accessory;
 		this.m.PreviewCraftable = this.new("scripts/items/supplies/medicine_small_item");
 		this.m.Cost = 10;
 		local ingredients = [
@@ -17,19 +18,12 @@ this.legend_bandage_blueprint <- this.inherit("scripts/crafting/blueprint", {
 			}
 		];
 		this.init(ingredients);
-	}
-
-	function isCraftable()
-	{
-		local roster = this.World.getPlayerRoster().getAll();
-        foreach( bro in roster )
-        {
-            if (bro.getSkills().hasSkill("perk.legend_med_ingredients") )
-            {
-                return true
-            }
-		}
-		return false;
+		local skills = [
+			{
+				Scripts = ["scripts/skills/perks/perk_legend_med_ingredients"]
+			}
+		]
+		this.initSkills(skills);
 	}
 
 	function onCraft( _stash )

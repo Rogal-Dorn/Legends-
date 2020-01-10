@@ -4,6 +4,7 @@ this.legend_stollwurm_scales_upgrade_blueprint <- this.inherit("scripts/crafting
 	{
 		this.blueprint.create();
 		this.m.ID = "blueprint.legend_stollwurm_scales_upgrade";
+		this.m.Type = this.Const.Items.ItemType.Armor;
 		this.m.PreviewCraftable = this.new("scripts/items/armor_upgrades/legend_stollwurm_scales_upgrade");
 		this.m.Cost = 700;
 		local ingredients = [

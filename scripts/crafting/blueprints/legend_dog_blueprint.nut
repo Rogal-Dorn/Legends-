@@ -4,6 +4,7 @@ this.legend_dog_blueprint <- this.inherit("scripts/crafting/blueprint", {
 	{
 		this.blueprint.create();
 		this.m.ID = "blueprint.legend_dog";
+		this.m.Type = this.Const.Items.ItemType.Accessory;
 		this.m.PreviewCraftable = this.new("scripts/items/accessory/wardog_item");
 		this.m.Cost = 120;
 		local ingredients = [
@@ -21,19 +22,12 @@ this.legend_dog_blueprint <- this.inherit("scripts/crafting/blueprint", {
 			}
 		];
 		this.init(ingredients);
-	}
-
-	function requirementsMet()
-	{
-		local roster = this.World.getPlayerRoster().getAll();
-        foreach( bro in roster )
-        {
-            if (bro.getSkills().hasSkill("perk.legend_dogbreeder"))
-            {
-                return true
-            }
-		}
-		return false;
+		local skills = [
+			{
+				Scripts = ["scripts/skills/perks/perk_legend_dogbreeder"]
+			}
+		]
+		this.initSkills(skills);			
 	}
 
 	function onCraft( _stash )
