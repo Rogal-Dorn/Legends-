@@ -24,7 +24,7 @@ this.legend_restored_ancient_helm <- this.inherit("scripts/crafting/blueprint", 
 	function onCraft( _stash )
 	{
 
-		item = this.new("scripts/items/helmets/ancient/legend_ancient_legionary_helmet_restored");
+		local item = this.new("scripts/items/helmets/ancient/legend_ancient_legionary_helmet_restored");
 
 
 		item.m.Name = "";
