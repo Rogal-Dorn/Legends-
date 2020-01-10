@@ -17,7 +17,7 @@ this.bleeding_effect <- this.inherit("scripts/skills/skill", {
 
 	function setActor( _a )
 	{
-		this.m.Actor = this.WeakTableRef(_a);
+		this.m.Actor = _a;
 	}
 
 	function create()
