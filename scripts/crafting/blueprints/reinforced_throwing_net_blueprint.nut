@@ -4,6 +4,7 @@ this.reinforced_throwing_net_blueprint <- this.inherit("scripts/crafting/bluepri
 	{
 		this.blueprint.create();
 		this.m.ID = "blueprint.reinforced_net";
+		this.m.Type = this.Const.Items.ItemType.Weapon;
 		this.m.PreviewCraftable = this.new("scripts/items/tools/reinforced_throwing_net");
 		this.m.Cost = 50;
 		local ingredients = [

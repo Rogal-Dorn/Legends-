@@ -4,6 +4,7 @@ this.lindwurm_scales_upgrade_blueprint <- this.inherit("scripts/crafting/bluepri
 	{
 		this.blueprint.create();
 		this.m.ID = "blueprint.lindwurm_scales_upgrade";
+		this.m.Type = this.Const.Items.ItemType.Armor;
 		this.m.PreviewCraftable = this.new("scripts/items/armor_upgrades/lindwurm_scales_upgrade");
 		this.m.Cost = 350;
 		local ingredients = [

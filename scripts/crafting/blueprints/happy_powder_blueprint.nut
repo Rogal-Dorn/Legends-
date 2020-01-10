@@ -4,6 +4,7 @@ this.happy_powder_blueprint <- this.inherit("scripts/crafting/blueprint", {
 	{
 		this.blueprint.create();
 		this.m.ID = "blueprint.happy_powder";
+		this.m.Type = this.Const.Items.ItemType.Usable
 		this.m.PreviewCraftable = this.new("scripts/items/misc/happy_powder_item");
 		this.m.Cost = 100;
 		local ingredients = [

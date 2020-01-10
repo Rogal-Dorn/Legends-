@@ -50,7 +50,6 @@ this.legend_female_beggar_commander_background <- this.inherit("scripts/skills/b
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
-		this.m.Beards = 0;
 		this.m.Body = "bust_naked_body_03";
 
 		this.m.IsFemaleBackground = true;

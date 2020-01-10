@@ -4,6 +4,7 @@ this.potion_of_oblivion_blueprint <- this.inherit("scripts/crafting/blueprint", 
 	{
 		this.blueprint.create();
 		this.m.ID = "blueprint.potion_of_oblivion";
+		this.m.Type = this.Const.Items.ItemType.Usable;
 		this.m.PreviewCraftable = this.new("scripts/items/misc/potion_of_oblivion_item");
 		this.m.Cost = 5000;
 		local ingredients = [

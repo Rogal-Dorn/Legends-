@@ -4,6 +4,7 @@ this.unhold_fur_upgrade_blueprint <- this.inherit("scripts/crafting/blueprint", 
 	{
 		this.blueprint.create();
 		this.m.ID = "blueprint.unhold_fur_upgrade";
+		this.m.Type = this.Const.Items.ItemType.Armor;
 		this.m.PreviewCraftable = this.new("scripts/items/armor_upgrades/unhold_fur_upgrade");
 		this.m.Cost = 500;
 		local ingredients = [

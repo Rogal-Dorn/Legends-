@@ -4,6 +4,7 @@ this.legend_pack_large_blueprint <- this.inherit("scripts/crafting/blueprint", {
 	{
 		this.blueprint.create();
 		this.m.ID = "blueprint.legend_pack_large";
+		this.m.Type = this.Const.Items.ItemType.Accessory;
 		this.m.PreviewCraftable = this.new("scripts/items/accessory/legend_pack_large");
 		this.m.Cost = 500;
 		local ingredients = [

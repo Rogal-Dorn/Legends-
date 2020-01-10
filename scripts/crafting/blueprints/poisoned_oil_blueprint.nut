@@ -4,6 +4,7 @@ this.poisoned_oil_blueprint <- this.inherit("scripts/crafting/blueprint", {
 	{
 		this.blueprint.create();
 		this.m.ID = "blueprint.poisoned_oil";
+		this.m.Type = this.Const.Items.ItemType.Usable;
 		this.m.PreviewCraftable = this.new("scripts/items/accessory/spider_poison_item");
 		this.m.Cost = 75;
 		local ingredients = [

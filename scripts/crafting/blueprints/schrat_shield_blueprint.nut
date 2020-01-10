@@ -4,6 +4,7 @@ this.schrat_shield_blueprint <- this.inherit("scripts/crafting/blueprint", {
 	{
 		this.blueprint.create();
 		this.m.ID = "blueprint.schrat_shield";
+		this.m.Type = this.Const.Items.ItemType.Shield;
 		this.m.PreviewCraftable = this.new("scripts/items/shields/special/craftable_schrat_shield");
 		this.m.Cost = 450;
 		local ingredients = [
