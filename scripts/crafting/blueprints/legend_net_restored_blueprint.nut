@@ -8,12 +8,8 @@ this.legend_net_restored_blueprint <- this.inherit("scripts/crafting/blueprint",
 		this.m.Cost = 10;
 		local ingredients = [
 			{
-				Script = "scripts/items/trade/cloth_rolls_item",
-				Num = 1
-			},
-			{
 				Script = "scripts/items/tools/legend_broken_throwing_net",
-				Num = 1
+				Num = 2
 			}
 		];
 		this.init(ingredients);

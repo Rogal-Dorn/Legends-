@@ -2342,8 +2342,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Script = "scripts/skills/perks/perk_legend_escape_artist",
 		Name = this.Const.Strings.PerkName.LegendEscapeArtist,
 		Tooltip = this.Const.Strings.PerkDescription.LegendEscapeArtist,
-		Icon = "ui/perks/net_perk.png",
-		IconDisabled = "ui/perks/net_perk_bw.png",
+		Icon = "ui/perks/net_escape.png",
+		IconDisabled = "ui/perks/net_escape_bw.png",
 		Const = "LegendEscapeArtist"
 	},
 	{
@@ -2666,8 +2666,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Script = "scripts/skills/perks/perk_legend_net_repair",
 		Name = this.Const.Strings.PerkName.LegendNetRepair,
 		Tooltip = this.Const.Strings.PerkDescription.LegendNetRepair,
-		Icon = "ui/perks/net_perk.png",
-		IconDisabled = "ui/perks/net_perk_bw.png",
+		Icon = "ui/perks/net_repair.png",
+		IconDisabled = "ui/perks/net_repair_bw.png",
 		Const = "LegendNetRepair"
 	},
 	{
@@ -2675,8 +2675,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Script = "scripts/skills/perks/perk_legend_net_casting",
 		Name = this.Const.Strings.PerkName.LegendNetCasting,
 		Tooltip = this.Const.Strings.PerkDescription.LegendNetCasting,
-		Icon = "ui/perks/net_perk.png",
-		IconDisabled = "ui/perks/net_perk_bw.png",
+		Icon = "ui/perks/net_casting.png",
+		IconDisabled = "ui/perks/net_casting_bw.png",
 		Const = "LegendNetCasting"
 	},
 	{
