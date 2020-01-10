@@ -3,9 +3,9 @@ this.legend_bandage_tunic_blueprint <- this.inherit("scripts/crafting/blueprint"
 	function create()
 	{
 		this.blueprint.create();
-		this.m.ID = "blueprint.legend_bandage_blueprint";
+		this.m.ID = "blueprint.legend_bandage_tunic_blueprint";
 		this.m.Type = this.Const.Items.ItemType.Accessory;
-		this.m.PreviewCraftable = this.new("");
+		this.m.PreviewCraftable = this.new("scripts/items/accessory/bandage_item");
 		this.m.Cost = 10;
 		local ingredients = [
 			{
