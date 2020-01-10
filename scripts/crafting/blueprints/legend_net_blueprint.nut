@@ -10,7 +10,7 @@ this.legend_net_blueprint <- this.inherit("scripts/crafting/blueprint", {
 		local ingredients = [
 			{
 				Script = "scripts/items/trade/cloth_rolls_item",
-				Num = 2
+				Num = 1
 			}
 		];
 		this.init(ingredients);
@@ -24,6 +24,7 @@ this.legend_net_blueprint <- this.inherit("scripts/crafting/blueprint", {
 
 	function onCraft( _stash )
 	{
+		_stash.add(this.new("scripts/items/tools/throwing_net"));
 		_stash.add(this.new("scripts/items/tools/throwing_net"));
 	}
 

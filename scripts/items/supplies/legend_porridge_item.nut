@@ -8,6 +8,7 @@ this.legend_porridge_item <- this.inherit("scripts/items/supplies/legend_usable_
 		this.m.Description = "Provisions. A staple meal that can be made from whatever ingredients are to hand. Can be eaten in battle to restore health.";
 		this.m.Icon = "supplies/legend_porridge.png";
 		this.m.Value = 180;
+		this.m.Amount = 40.0;
 		this.m.GoodForDays = 10;
 		this.m.IsAllowedInBag = true;
 		this.m.IsDroppedAsLoot = true;

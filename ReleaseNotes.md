@@ -2431,13 +2431,21 @@ Pies, Pudding, Porridge and Rations can now be equipped and eaten in battle to r
 * If you have the net repair perk, you can repair the net in the crafting tent with a broken net and a cloth roll 
 * The repair perk still also lets you craft a brand new net for two cloth rolls 
 
-**Healer perks**
+**Healers**
 * Med packages perk now gives 30 medicine storage instead of 10 
 * Med Ingredients perk no gives 10 medicine storage instead of 20, it now unlocks two recipes 
 * Bandage recipe - one cloth roll and one roots and berries, for eight bandages 
 * Small medicine recipe - one bandage and one roots and berries, for 20 medicine 
 
 **Fixes**
+Fixes puncture hit chance. Hitchance will increase now as target gets fatigued. A 100% fatigued enemy will have 0 penality. 0% Fatigued enemy will have 100% penaly. Puncture hitchance penality is now reduced by 50% with Dagger mastery. (wuxiang)
+Fixes Sisterhood starting with men (wuxiang)
+Fixes white wolf not getting Battle Flow on legendary 
+Fixes crash from some named items not having an owner to be named after 
+Fixes second wind crash  (wuxiang)
+Fixes crash with Unhold fling skill.(wuxiang)
+Fixes crash with Unhold sweep skill.(wuxiang)
+Fixes errors with reload save from sisterhood scenario.(wuxiang)
 Resolves crash on leaving camp after healing an injury without an icon 
 Catapults no longer spawn, inventor can no longer build catapults and inventors no longer have crazy damage. 
 Fixes lacerate perk (Mwah MrBrewed)
@@ -2449,6 +2457,8 @@ Fixes the one single plate armor that doesn't set its armor type (Mwah)
 Freedom of movement correctly reduces damage instead of increasing it (salty) 
 great slash tooltip updated (salty) 
 Runes are no longer destroyed when you scrap a runed item (salty) 
+
+
 Fixes crash with Unhold fling skill.(wuxiang)
 Fixes crash with Unhold sweep skill.(wuxiang)
 Fixes errors with reload save from sisterhood scenario.(wuxiang)
@@ -2458,10 +2468,23 @@ Fixes white wolf not getting Battle Flow on legendary
 Fixes crash from some named items not having an owner to be named after 
 Fixes second wind crash  (wuxiang)
 
-13.0.0.33
+13.0.0.33 Blueprints and Booze 
 **Blueprints:**
-Adds a new campaign option to unlock all crafting recipies.
+Adds a new campaign option to reveal all crafting recipies.
 Adds UI filters for taxidermist and camp crafting recipe list.
+
+**Alcohol** 
+Mead, Wine and Beer are now all drinkable in battle 
+* Mead Warmth - gives +3% resolve and attacks, -6% defenses -12% initiative for 9 turns. 10% chance of hangover
+* Wine Tipsy - gives +6% resolve and attacks, -12% defenses and -24% initiative for 6 turns. 20% chance of hangover
+* Beer Buzz - gives +9% resolve and attacks, -18% defenses and -36% initiative for 3 turns. 30% chance of hangover 
+Drinking gets progressively worse
+*One drink applies one of these effects. 
+*Two drinks and im drunk. 
+*Three drunks and I'm sick 
+*Fouor drinkies concussesed  
+*How many have i had now? Five? My insides hurt. 
+*More drink, me not count good now. 
 
 **Fixes**
 Update redback dagger puncture to work with new puncture mechanics.
@@ -2471,3 +2494,15 @@ Fixes large mountains fort causing errors on game creation (Mwah)
 Fixes greenskin contract stuff (Mwah)
 Fixes small medicine blueprint not initializing (Mwah)
 Rally can remove Sleeping effect now.
+
+**Nets**
+Net casting now doubles the chance of nets hitting
+Reinforced nets always give back a broken net  
+* one cloth roll crafts into two nets 
+* two broken nets craft into one net 
+New perk icons for escape artist, net casting and net repair 
+
+Wind Reader Now only turns a third of your ranged defense into ranged skill. Minimum dropped to 3 from 5 
+Heightened Reflexes now turns half your Ranged Defense into Initiative instead of Melee Defense. Minimum dropped to 3 from 5
+Close combat archer now uses your ranged defense as your percentage damage boost on ranged attacks when enemies are within two tiles 
+Medical Ingredients Perk allows you to craft a bandage out of a linen tunic and roots and berries 
