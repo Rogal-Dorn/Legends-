@@ -190,18 +190,6 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 			], this.Const.Music.CrossFadeTime);
 			this.World.Events.fire("event.legend_berserker_scenario_intro");
 		}, null);
-			if(this.Const.LegendMod.Configs.LegendCampUnlockEnabled())
-			{
-				this.World.Tags.set("HasLegendCampGathering", true);
-				this.World.Tags.set("HasLegendCampBarber", true);
-				this.World.Tags.set("HasLegendCampCrafting", true);
-				this.World.Tags.set("HasLegendCampFletching", true);
-				this.World.Tags.set("HasLegendCampHealing", true);
-				this.World.Tags.set("HasLegendCampHunting", true);
-				this.World.Tags.set("HasLegendCampScouting", true);
-				this.World.Tags.set("HasLegendCampScraping", true);
-				this.World.Tags.set("HasLegendCampTraining", true);			
-			}
 	}
 
 	function onInit()

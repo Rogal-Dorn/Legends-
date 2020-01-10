@@ -4,6 +4,7 @@ this.legend_catapult_blueprint <- this.inherit("scripts/crafting/blueprint", {
 	{
 		this.blueprint.create();
 		this.m.ID = "blueprint.legend_catapult_blueprint";
+		this.m.Type = this.Const.Items.ItemType.Weapon;
 		this.m.PreviewCraftable = this.new("scripts/items/accessory/legend_catapult_item");
 		this.m.Cost = 1000;
 		local ingredients = [
@@ -21,19 +22,12 @@ this.legend_catapult_blueprint <- this.inherit("scripts/crafting/blueprint", {
 			}
 		];
 		this.init(ingredients);
-	}
-
-	function requirementsMet()
-	{
-		local roster = this.World.getPlayerRoster().getAll();
-        foreach( bro in roster )
-        {
-            if (bro.getSkills().hasSkill("perk.legend_summon_catapult") )
-            {
-                return true
-            }
-		}
-		return false;
+		local skills = [
+			{
+				Scripts = ["scripts/skills/perks/perk_legend_summon_catapult"]
+			}
+		]
+		this.initSkills(skills);		
 	}
 
 	function onCraft( _stash )
