@@ -2487,3 +2487,10 @@ Reinforced nets always give back a broken net
 * one cloth roll crafts into two nets 
 * two broken nets craft into one net 
 New perk icons for escape artist, net casting and net repair 
+
+Wind Reader Now only turns a third of your ranged defense into ranged skill. Minimum dropped to 3 from 5 
+Heightened Reflexes now turns half your Ranged Defense into Initiative instead of Melee Defense. Minimum dropped to 3 from 5
+Close combat archer now uses your ranged defense as your percentage damage boost on ranged attacks when enemies are within two tiles 
+Medical Ingredients Perk allows you to craft a bandage out of a linen tunic and roots and berries 
+
+ 

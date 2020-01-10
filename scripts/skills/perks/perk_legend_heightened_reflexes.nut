@@ -17,19 +17,19 @@ this.perk_legend_heightened_reflexes <- this.inherit("scripts/skills/skill", {
 	{
 		if (this.getContainer() == null)
 		{
-			return 5;
+			return 3;
 		}
 
 		local actor = this.getContainer().getActor();
 
 		if (actor == null)
 		{
-			return 5;
+			return 3;
 		}
 
 		local rdef = actor.getCurrentProperties().getRangedDefense()
 		local bonus = rdef / 2;
-		return this.Math.max(5, this.Math.floor(bonus));
+		return this.Math.max(3, this.Math.floor(bonus));
 	}
 
 	function getTooltip()
@@ -41,7 +41,7 @@ this.perk_legend_heightened_reflexes <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "You are gaining [color=" + this.Const.UI.Color.PositiveValue + "]" + bonus + "[/color] melee defense due to heightened reflexes"
+				text = "You are gaining [color=" + this.Const.UI.Color.PositiveValue + "]" + bonus + "[/color] initiative due to heightened reflexes"
 			});
 	
 
@@ -51,7 +51,7 @@ this.perk_legend_heightened_reflexes <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		local bonus = this.getBonus();
-		_properties.MeleeDefense += bonus;
+		_properties.Initiative += bonus;
 
 	}
 	

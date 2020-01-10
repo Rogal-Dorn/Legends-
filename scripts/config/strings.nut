@@ -1431,7 +1431,7 @@ gt.Const.Strings.PerkDescription <- {
 	TrophyHunter = "Each fight tells a story, with glory and strength growing in their end. Gain [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] permanent hitpoint for every opponent slain.",
 	Bruiser = "Intense weight training has led your attacks to inflict more damage against armor. Effectiveness vs. Armor is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] for any weapon used.",
 	Crusher = "Put full force in your every blow! Shield damage is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color] when using the Split Shield skill.",
-	CloseCombatArcher = "If you can see the white in your enemy\'s eyes, aim for it! Damage is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] when using a ranged weapon (including throwing weapons) against a target 2 or less tiles away. \n[color=#0b0084]From the Throwing perk group[/color]",
+	CloseCombatArcher = "If you can see the white in your enemy\'s eyes, aim for it! Damage is increased by a percentage equal to your Ranged Defense when using a ranged weapon (including throwing weapons) against a target 2 or less tiles away. \n[color=#0b0084]From the Throwing perk group[/color]",
 	Bullseye = "Nailed it! The penalty to hitchance when shooting at a target you have no clear line of fire to is reduced from [color=" + this.Const.UI.Color.NegativeValue + "]75%[/color] to [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] for ranged weapons.  \n[color=#0b0084]From the Bow perk group[/color]",
 	Ballistics = "The range penalty to hitchance is reduced by [color=" + this.Const.UI.Color.NegativeValue + "]-1[/color] per tile. \n[color=#0b0084]From the Crossbow perk group[/color]",
 	Berserk = "RAAARGH! Once per turn, upon killing an enemy, [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] Action Points are immediately regained. Characters can not regain more than their maximum Action Points and no more than 4 for a single attack. \n[color=#0b0084]From the Vicious perk group[/color]",
@@ -1719,8 +1719,8 @@ gt.Const.Strings.PerkDescription <- {
 	LegendDogWhisperer = "You have a way with dogs, the bond you form with them imbues each dog with more confidence and strength, knowing that you are there gives them strength. Grants each dog you unleash the perks Colossus, Fortified Mind and Underdog.",
 	LegendDogBreeder = "Intimate knowledge of dog care and conditions required for breeding allows you to successfully breed dogs. Unlocks a recipe in the crafting tent for breeding dogs.",
 	LegendDogHandling = "Your way with animals extends so far as turning those dogs that would do you harm. By spending one item of food you can make a dog flee from battle. The food item is chosen at random and the perk does not work if you have less than 25 food.",
-	LegendHeightenedReflexes = "You have trained in avoiding arrows, this skill translates well into dodging blades. Gain half of your ranged defence as melee defence, with a minimum bonus of 5.",
-	LegendWindReader = "You have learned to read the wind, estimating the path of arrows in uncertain conditions. This is very helpful for dodging arrows, but can also be applied to shooting them as well.  Gain half of your ranged defence as ranged skill, with a minimum bonus of 5. "
+	LegendHeightenedReflexes = "You have trained in avoiding arrows, this skill translates well into dodging blades. Gain half of your Ranged Defence as Initiative, with a minimum bonus of 3.",
+	LegendWindReader = "You have learned to read the wind, estimating the path of arrows in uncertain conditions. This is very helpful for dodging arrows, but can also be applied to shooting them as well.  Gain a third of your Ranged Defence as Ranged Skill, with a minimum bonus of 3. "
 
 };
 gt.Const.Strings.Tooltip <- {
