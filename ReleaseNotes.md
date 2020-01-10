@@ -2460,4 +2460,5 @@ Fixes second wind crash  (wuxiang)
 
 13.0.0.32b
 **Fixes**
-Should fix bleed effect properly killing things and giving kill credit now 
+Should fix bleed effect properly killing things and giving kill credit now (Rule & Mwah)
+Fixes ranged lash skill (Mwah)

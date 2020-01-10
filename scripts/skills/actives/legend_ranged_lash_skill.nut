@@ -1,4 +1,4 @@
-this.ranged_ranged_lash_skill <- this.inherit("scripts/skills/skill", {
+this.legend_ranged_lash_skill <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{
