@@ -1,4 +1,4 @@
-this.mead_item <- this.inherit("scripts/items/supplies/food_item", {
+this.mead_item <- this.inherit("scripts/items/supplies/legend_usable_food", {
 	m = {},
 	function create()
 	{
@@ -43,5 +43,17 @@ this.mead_item <- this.inherit("scripts/items/supplies/food_item", {
 		return this.item.getSellPrice();
 	}
 
+	function onPutIntoBag()
+	{
+		this.onEquip();
+	}
+
+	function onEquip()
+	{
+		this.legend_usable_food.onEquip();
+		local skill = this.new("scripts/skills/actives/legend_drink_mead_skill");
+		skill.setItem(this);
+		this.addSkill(skill);
+	}
 });
 

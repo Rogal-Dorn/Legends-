@@ -1,11 +1,11 @@
-this.beer_item <- this.inherit("scripts/items/supplies/food_item", {
+this.beer_item <- this.inherit("scripts/items/supplies/legend_usable_food", {
 	m = {},
 	function create()
 	{
 		this.food_item.create();
 		this.m.ID = "supplies.beer";
 		this.m.Name = "Beer";
-		this.m.Description = "Provisions. This fermented hop or barley drink is more durable and safer to drink than plain water.";
+		this.m.Description = "Provisions. This fermented hop or barley drink is more durable and safer to drink than plain water.  Can either be consumed as provisions or drunk in battle";
 		this.m.Icon = "supplies/inventory_provisions_14.png";
 		this.m.Value = 120;
 		this.m.GoodForDays = 10;
@@ -43,5 +43,17 @@ this.beer_item <- this.inherit("scripts/items/supplies/food_item", {
 		return this.item.getSellPrice();
 	}
 
+	function onPutIntoBag()
+	{
+		this.onEquip();
+	}
+
+	function onEquip()
+	{
+		this.legend_usable_food.onEquip();
+		local skill = this.new("scripts/skills/actives/legend_drink_beer_skill");
+		skill.setItem(this);
+		this.addSkill(skill);
+	}
 });
 
