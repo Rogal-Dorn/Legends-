@@ -2506,3 +2506,11 @@ Wind Reader Now only turns a third of your ranged defense into ranged skill. Min
 Heightened Reflexes now turns half your Ranged Defense into Initiative instead of Melee Defense. Minimum dropped to 3 from 5
 Close combat archer now uses your ranged defense as your percentage damage boost on ranged attacks when enemies are within two tiles 
 Medical Ingredients Perk allows you to craft a bandage out of a linen tunic and roots and berries 
+
+13.0.0.34
+**Fixes**
+Peasant Blacksmiths and Poachers get specialist masteries properly now (Mwah)
+Peasant Witchhunter gets shortsword properly now (Mwah)
+Sickle damage & Skill perks now correctly locate "shortsword" and not "short sword" (Mwah)
+Bleeding fix again but for the rune (Mwah)
+Orc Behemoth and Elites now get second wind properly (Mwah)
