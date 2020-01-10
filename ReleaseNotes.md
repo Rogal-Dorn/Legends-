@@ -2468,10 +2468,23 @@ Fixes white wolf not getting Battle Flow on legendary
 Fixes crash from some named items not having an owner to be named after 
 Fixes second wind crash  (wuxiang)
 
-13.0.0.33
+13.0.0.33 Blueprints and Booze 
 **Blueprints:**
-Adds a new campaign option to unlock all crafting recipies.
+Adds a new campaign option to reveal all crafting recipies.
 Adds UI filters for taxidermist and camp crafting recipe list.
+
+**Alcohol** 
+Mead, Wine and Beer are now all drinkable in battle 
+* Mead Warmth - gives +3% resolve and attacks, -6% defenses -12% initiative for 9 turns. 10% chance of hangover
+* Wine Tipsy - gives +6% resolve and attacks, -12% defenses and -24% initiative for 6 turns. 20% chance of hangover
+* Beer Buzz - gives +9% resolve and attacks, -18% defenses and -36% initiative for 3 turns. 30% chance of hangover 
+Drinking gets progressively worse
+*One drink applies one of these effects. 
+*Two drinks and im drunk. 
+*Three drunks and I'm sick 
+*Fouor drinkies concussesed  
+*How many have i had now? Five? My insides hurt. 
+*More drink, me not count good now. 
 
 **Fixes**
 Update redback dagger puncture to work with new puncture mechanics.
@@ -2482,6 +2495,7 @@ Fixes greenskin contract stuff (Mwah)
 Fixes small medicine blueprint not initializing (Mwah)
 Rally can remove Sleeping effect now.
 
+**Nets**
 Net casting now doubles the chance of nets hitting
 Reinforced nets always give back a broken net  
 * one cloth roll crafts into two nets 
@@ -2492,5 +2506,3 @@ Wind Reader Now only turns a third of your ranged defense into ranged skill. Min
 Heightened Reflexes now turns half your Ranged Defense into Initiative instead of Melee Defense. Minimum dropped to 3 from 5
 Close combat archer now uses your ranged defense as your percentage damage boost on ranged attacks when enemies are within two tiles 
 Medical Ingredients Perk allows you to craft a bandage out of a linen tunic and roots and berries 
-
- 
