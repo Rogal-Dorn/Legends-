@@ -40,6 +40,16 @@ var WorldTownScreenTaxidermistDialogModule = function(_parent)
 
     // selected entry
     this.mSelectedEntry = null;
+
+    
+    // buttons
+    this.mFilterPanel = null;
+    this.mFilterAllButton = null;
+    this.mFilterWeaponsButton = null;
+    this.mFilterArmorButton = null;
+    this.mFilterMiscButton = null;
+    this.mFilterUsableButton = null;
+    
 };
 
 
@@ -92,6 +102,72 @@ WorldTownScreenTaxidermistDialogModule.prototype.createDIV = function (_parentDi
 	// left column
     var column = $('<div class="column is-left"/>');
     content.append(column);
+
+    // sort
+    this.mFilterPanel = $('<div class="filter-panel"/>');
+    column.append(this.mFilterPanel);
+
+    var layout = $('<div class="l-button is-all-filter"/>');
+    this.mFilterPanel.append(layout);
+    this.mFilterAllButton = layout.createImageButton(Path.GFX + Asset.BUTTON_ALL_FILTER, function ()
+    {
+        self.mFilterAllButton.addClass('is-active');
+        self.mFilterWeaponsButton.removeClass('is-active');
+        self.mFilterArmorButton.removeClass('is-active');
+        self.mFilterMiscButton.removeClass('is-active');
+        self.mFilterUsableButton.removeClass('is-active');
+        self.notifyBackendFilterAllButtonClicked();
+    }, '', 3);
+    this.mFilterAllButton.addClass('is-active');
+
+    var layout = $('<div class="l-button is-weapons-filter"/>');
+    this.mFilterPanel.append(layout);
+    this.mFilterWeaponsButton = layout.createImageButton(Path.GFX + Asset.BUTTON_WEAPONS_FILTER, function ()
+    {
+        self.mFilterAllButton.removeClass('is-active');
+        self.mFilterWeaponsButton.addClass('is-active');
+        self.mFilterArmorButton.removeClass('is-active');
+        self.mFilterMiscButton.removeClass('is-active');
+        self.mFilterUsableButton.removeClass('is-active');
+        self.notifyBackendFilterWeaponsButtonClicked();
+    }, '', 3);
+
+    var layout = $('<div class="l-button is-armor-filter"/>');
+    this.mFilterPanel.append(layout);
+    this.mFilterArmorButton = layout.createImageButton(Path.GFX + Asset.BUTTON_ARMOR_FILTER, function ()
+    {
+        self.mFilterAllButton.removeClass('is-active');
+        self.mFilterWeaponsButton.removeClass('is-active');
+        self.mFilterArmorButton.addClass('is-active');
+        self.mFilterMiscButton.removeClass('is-active');
+        self.mFilterUsableButton.removeClass('is-active');
+        self.notifyBackendFilterArmorButtonClicked();
+    }, '', 3);
+
+    var layout = $('<div class="l-button is-misc-filter"/>');
+    this.mFilterPanel.append(layout);
+    this.mFilterMiscButton = layout.createImageButton(Path.GFX + Asset.BUTTON_MISC_FILTER, function ()
+    {
+        self.mFilterAllButton.removeClass('is-active');
+        self.mFilterWeaponsButton.removeClass('is-active');
+        self.mFilterArmorButton.removeClass('is-active');
+        self.mFilterMiscButton.addClass('is-active');
+        self.mFilterUsableButton.removeClass('is-active');
+        self.notifyBackendFilterMiscButtonClicked();
+    }, '', 3);
+
+    var layout = $('<div class="l-button is-usable-filter"/>');
+    this.mFilterPanel.append(layout);
+    this.mFilterUsableButton = layout.createImageButton(Path.GFX + Asset.BUTTON_USABLE_FILTER, function ()
+    {
+        self.mFilterAllButton.removeClass('is-active');
+        self.mFilterWeaponsButton.removeClass('is-active');
+        self.mFilterArmorButton.removeClass('is-active');
+        self.mFilterMiscButton.removeClass('is-active');
+        self.mFilterUsableButton.addClass('is-active');
+        self.notifyBackendFilterUsableButtonClicked();
+    }, '', 3);
+
     var listContainerLayout = $('<div class="l-list-container"/>');
     column.append(listContainerLayout);
     this.mListContainer = listContainerLayout.createList(8.85);
@@ -230,6 +306,11 @@ WorldTownScreenTaxidermistDialogModule.prototype.destroyDIV = function ()
 
 	this.mSelectedEntry = null;
 
+    
+    this.mFilterPanel.empty();
+    this.mFilterPanel.remove();
+    this.mFilterPanel = null;
+
     this.mListScrollContainer.empty();
     this.mListScrollContainer = null;
     this.mListContainer.destroyList();
@@ -310,8 +391,17 @@ WorldTownScreenTaxidermistDialogModule.prototype.addListEntry = function (_data)
         var iconContainer = $('<div class="icons-container"/>');
         row.append(iconContainer);
 
-        var icon = $('<img src="' + Path.ITEMS + _data.Ingredients[i].ImagePath + '"/>');
-        icon.bindTooltip({ contentType: 'ui-item', itemId: _data.Ingredients[i].InstanceID, entityId: _data.ID, itemOwner: 'blueprint' });
+        var icon;
+        if (_data.Ingredients[i].IsSkill === 1)
+        {
+            icon = $('<img src="' + Path.GFX + _data.Ingredients[i].ImagePath + '"/>');
+            icon.bindTooltip({ contentType: 'ui-item', itemId: _data.Ingredients[i].InstanceID, entityId: _data.ID, itemOwner: 'blueprintskill' });
+        }
+        else 
+        {
+            icon = $('<img src="' + Path.ITEMS + _data.Ingredients[i].ImagePath + '"/>');
+            icon.bindTooltip({ contentType: 'ui-item', itemId: _data.Ingredients[i].InstanceID, entityId: _data.ID, itemOwner: 'blueprint' });
+        }
         iconContainer.append(icon);
 
         if(_data.Ingredients[i].IsMissing)
@@ -370,8 +460,18 @@ WorldTownScreenTaxidermistDialogModule.prototype.updateDetailsPanel = function(_
             var iconContainer = $('<div class="icons-container"/>');
             this.mDetailsPanel.Components.append(iconContainer);
 
-            var icon = $('<img src="' + Path.ITEMS + data.Ingredients[i].ImagePath + '"/>');
-            icon.bindTooltip({ contentType: 'ui-item', itemId: data.Ingredients[i].InstanceID, entityId: data.ID, itemOwner: 'blueprint' });
+            var icon;
+            if (data.Ingredients[i].IsSkill === 1)
+            {
+                icon = $('<img src="' + Path.GFX + data.Ingredients[i].ImagePath + '"/>');
+                icon.bindTooltip({ contentType: 'ui-item', itemId: data.Ingredients[i].InstanceID, entityId: data.ID, itemOwner: 'blueprintskill' });
+            }
+            else 
+            {
+                icon = $('<img src="' + Path.ITEMS + data.Ingredients[i].ImagePath + '"/>');
+                icon.bindTooltip({ contentType: 'ui-item', itemId: data.Ingredients[i].InstanceID, entityId: data.ID, itemOwner: 'blueprint' });
+            }
+            
             iconContainer.append(icon);
 
             if(data.Ingredients[i].IsMissing)
@@ -415,6 +515,12 @@ WorldTownScreenTaxidermistDialogModule.prototype.bindTooltips = function ()
     this.mAssets.bindTooltips();
     this.mDetailsPanel.CraftButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.WorldTownScreen.TaxiDermistDialogModule.CraftButton });
     this.mLeaveButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.WorldTownScreen.HireDialogModule.LeaveButton });
+    this.mFilterAllButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterScreen.RightPanelHeaderModule.FilterAllButton });
+    this.mFilterWeaponsButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterScreen.RightPanelHeaderModule.FilterWeaponsButton });
+    this.mFilterArmorButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterScreen.RightPanelHeaderModule.FilterArmorButton });
+    this.mFilterMiscButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterScreen.RightPanelHeaderModule.FilterMiscButton });
+    this.mFilterUsableButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterScreen.RightPanelHeaderModule.FilterUsableButton });
+
 };
 
 WorldTownScreenTaxidermistDialogModule.prototype.unbindTooltips = function ()
@@ -422,6 +528,11 @@ WorldTownScreenTaxidermistDialogModule.prototype.unbindTooltips = function ()
 	this.mAssets.unbindTooltips();
     this.mDetailsPanel.CraftButton.unbindTooltip();
     this.mLeaveButton.unbindTooltip();
+    this.mFilterAllButton.unbindTooltip();
+    this.mFilterWeaponsButton.unbindTooltip();
+    this.mFilterArmorButton.unbindTooltip();
+    this.mFilterMiscButton.unbindTooltip();
+    this.mFilterUsableButton.unbindTooltip();    
 };
 
 
@@ -632,4 +743,28 @@ WorldTownScreenTaxidermistDialogModule.prototype.notifyBackendBrothersButtonPres
 WorldTownScreenTaxidermistDialogModule.prototype.notifyBackendCraft = function (_blueprintID, _callback)
 {
     SQ.call(this.mSQHandle, 'onCraft', _blueprintID, _callback);
+};
+
+WorldTownScreenTaxidermistDialogModule.prototype.notifyBackendFilterAllButtonClicked = function ()
+{
+	SQ.call(this.mSQHandle, 'onFilterAll');
+};
+
+WorldTownScreenTaxidermistDialogModule.prototype.notifyBackendFilterWeaponsButtonClicked = function ()
+{
+	SQ.call(this.mSQHandle, 'onFilterWeapons');
+};
+
+WorldTownScreenTaxidermistDialogModule.prototype.notifyBackendFilterArmorButtonClicked = function ()
+{
+	SQ.call(this.mSQHandle, 'onFilterArmor');
+};
+
+WorldTownScreenTaxidermistDialogModule.prototype.notifyBackendFilterMiscButtonClicked = function ()
+{
+	SQ.call(this.mSQHandle, 'onFilterMisc');
+};
+
+WorldTownScreenTaxidermistDialogModule.prototype.notifyBackendFilterUsableButtonClicked = function () {
+    SQ.call(this.mSQHandle, 'onFilterUsable');
 };

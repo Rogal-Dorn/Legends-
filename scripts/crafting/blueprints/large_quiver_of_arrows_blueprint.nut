@@ -4,6 +4,7 @@ this.large_quiver_of_arrows_blueprint <- this.inherit("scripts/crafting/blueprin
 	{
 		this.blueprint.create();
 		this.m.ID = "blueprint.large_quiver_of_arrows";
+		this.m.Type = this.Const.Items.ItemType.Accessory;
 		this.m.PreviewCraftable = this.new("scripts/items/ammo/large_quiver_of_arrows");
 		this.m.Cost = 350;
 		local ingredients = [

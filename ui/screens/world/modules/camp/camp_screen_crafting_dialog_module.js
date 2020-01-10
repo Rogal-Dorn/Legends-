@@ -44,6 +44,15 @@ var CampScreenCraftingDialogModule = function(_parent)
 
     // selected entry
     this.mSelectedEntry = null;
+
+    // buttons
+    this.mFilterPanel = null;
+    this.mFilterAllButton = null;
+    this.mFilterWeaponsButton = null;
+    this.mFilterArmorButton = null;
+    this.mFilterMiscButton = null;
+    this.mFilterUsableButton = null;
+    
 };
 
 
@@ -102,6 +111,73 @@ CampScreenCraftingDialogModule.prototype.createDIV = function (_parentDiv)
 	// left column
     var column = $('<div class="column is-left"/>');
     content.append(column);
+
+    // sort
+    this.mFilterPanel = $('<div class="filter-panel"/>');
+    column.append(this.mFilterPanel);
+
+    var layout = $('<div class="l-button is-all-filter"/>');
+    this.mFilterPanel.append(layout);
+    this.mFilterAllButton = layout.createImageButton(Path.GFX + Asset.BUTTON_ALL_FILTER, function ()
+    {
+        self.mFilterAllButton.addClass('is-active');
+        self.mFilterWeaponsButton.removeClass('is-active');
+        self.mFilterArmorButton.removeClass('is-active');
+        self.mFilterMiscButton.removeClass('is-active');
+        self.mFilterUsableButton.removeClass('is-active');
+        self.notifyBackendFilterAllButtonClicked();
+    }, '', 3);
+    this.mFilterAllButton.addClass('is-active');
+
+    var layout = $('<div class="l-button is-weapons-filter"/>');
+    this.mFilterPanel.append(layout);
+    this.mFilterWeaponsButton = layout.createImageButton(Path.GFX + Asset.BUTTON_WEAPONS_FILTER, function ()
+    {
+        self.mFilterAllButton.removeClass('is-active');
+        self.mFilterWeaponsButton.addClass('is-active');
+        self.mFilterArmorButton.removeClass('is-active');
+        self.mFilterMiscButton.removeClass('is-active');
+        self.mFilterUsableButton.removeClass('is-active');
+        self.notifyBackendFilterWeaponsButtonClicked();
+    }, '', 3);
+
+    var layout = $('<div class="l-button is-armor-filter"/>');
+    this.mFilterPanel.append(layout);
+    this.mFilterArmorButton = layout.createImageButton(Path.GFX + Asset.BUTTON_ARMOR_FILTER, function ()
+    {
+        self.mFilterAllButton.removeClass('is-active');
+        self.mFilterWeaponsButton.removeClass('is-active');
+        self.mFilterArmorButton.addClass('is-active');
+        self.mFilterMiscButton.removeClass('is-active');
+        self.mFilterUsableButton.removeClass('is-active');
+        self.notifyBackendFilterArmorButtonClicked();
+    }, '', 3);
+
+    var layout = $('<div class="l-button is-misc-filter"/>');
+    this.mFilterPanel.append(layout);
+    this.mFilterMiscButton = layout.createImageButton(Path.GFX + Asset.BUTTON_MISC_FILTER, function ()
+    {
+        self.mFilterAllButton.removeClass('is-active');
+        self.mFilterWeaponsButton.removeClass('is-active');
+        self.mFilterArmorButton.removeClass('is-active');
+        self.mFilterMiscButton.addClass('is-active');
+        self.mFilterUsableButton.removeClass('is-active');
+        self.notifyBackendFilterMiscButtonClicked();
+    }, '', 3);
+
+    var layout = $('<div class="l-button is-usable-filter"/>');
+    this.mFilterPanel.append(layout);
+    this.mFilterUsableButton = layout.createImageButton(Path.GFX + Asset.BUTTON_USABLE_FILTER, function ()
+    {
+        self.mFilterAllButton.removeClass('is-active');
+        self.mFilterWeaponsButton.removeClass('is-active');
+        self.mFilterArmorButton.removeClass('is-active');
+        self.mFilterMiscButton.removeClass('is-active');
+        self.mFilterUsableButton.addClass('is-active');
+        self.notifyBackendFilterUsableButtonClicked();
+    }, '', 3);
+
+
     var listContainerLayout = $('<div class="l-list-container"/>');
     column.append(listContainerLayout);
     this.mListContainer = listContainerLayout.createList(8.85);
@@ -187,6 +263,10 @@ CampScreenCraftingDialogModule.prototype.destroyDIV = function ()
     this.mBrothersAsset = null;
 
 	this.mSelectedEntry = null;
+
+    this.mFilterPanel.empty();
+    this.mFilterPanel.remove();
+    this.mFilterPanel = null;
 
     this.mListScrollContainer.empty();
     this.mListScrollContainer = null;
@@ -447,9 +527,17 @@ CampScreenCraftingDialogModule.prototype.addListEntry = function (_data)
     {
         var iconContainer = $('<div class="icons-container"/>');
         row.append(iconContainer);
-
-        var icon = $('<img src="' + Path.ITEMS + _data.Ingredients[i].ImagePath + '"/>');
-        icon.bindTooltip({ contentType: 'ui-item', itemId: _data.Ingredients[i].InstanceID, entityId: _data.ID, itemOwner: 'blueprint' });
+        var icon;
+        if (_data.Ingredients[i].IsSkill === 1)
+        {
+            icon = $('<img src="' + Path.GFX + _data.Ingredients[i].ImagePath + '"/>');
+            icon.bindTooltip({ contentType: 'ui-item', itemId: _data.Ingredients[i].InstanceID, entityId: _data.ID, itemOwner: 'blueprintskill' });
+        }
+        else 
+        {
+            icon = $('<img src="' + Path.ITEMS + _data.Ingredients[i].ImagePath + '"/>');
+            icon.bindTooltip({ contentType: 'ui-item', itemId: _data.Ingredients[i].InstanceID, entityId: _data.ID, itemOwner: 'blueprint' });
+        }
         iconContainer.append(icon);
 
         if(_data.Ingredients[i].IsMissing)
@@ -528,9 +616,17 @@ CampScreenCraftingDialogModule.prototype.updateDetailsPanel = function(_element)
         {
             var iconContainer = $('<div class="icons-container"/>');
             this.mDetailsPanel.Components.append(iconContainer);
-
-            var icon = $('<img src="' + Path.ITEMS + data.Ingredients[i].ImagePath + '"/>');
-            icon.bindTooltip({ contentType: 'ui-item', itemId: data.Ingredients[i].InstanceID, entityId: data.ID, itemOwner: 'blueprint' });
+            var icon;
+            if (data.Ingredients[i].IsSkill === 1)
+            {
+                icon = $('<img src="' + Path.GFX + data.Ingredients[i].ImagePath + '"/>');
+                icon.bindTooltip({ contentType: 'ui-item', itemId: data.Ingredients[i].InstanceID, entityId: data.ID, itemOwner: 'blueprintskill' });
+            }
+            else 
+            {
+                icon = $('<img src="' + Path.ITEMS + data.Ingredients[i].ImagePath + '"/>');
+                icon.bindTooltip({ contentType: 'ui-item', itemId: data.Ingredients[i].InstanceID, entityId: data.ID, itemOwner: 'blueprint' });
+            }
             iconContainer.append(icon);
 
             if(data.Ingredients[i].IsMissing)
@@ -566,6 +662,12 @@ CampScreenCraftingDialogModule.prototype.bindTooltips = function ()
     this.mBrothersAsset.bindTooltip({ contentType: 'ui-element', elementId: 'crafting.Bros' });    
     this.mDetailsPanel.CraftButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.WorldTownScreen.TaxiDermistDialogModule.CraftButton });
     this.mLeaveButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.WorldTownScreen.HireDialogModule.LeaveButton });
+    this.mFilterAllButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterScreen.RightPanelHeaderModule.FilterAllButton });
+    this.mFilterWeaponsButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterScreen.RightPanelHeaderModule.FilterWeaponsButton });
+    this.mFilterArmorButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterScreen.RightPanelHeaderModule.FilterArmorButton });
+    this.mFilterMiscButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterScreen.RightPanelHeaderModule.FilterMiscButton });
+    this.mFilterUsableButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterScreen.RightPanelHeaderModule.FilterUsableButton });
+
 };
 
 CampScreenCraftingDialogModule.prototype.unbindTooltips = function ()
@@ -574,6 +676,11 @@ CampScreenCraftingDialogModule.prototype.unbindTooltips = function ()
     this.mBrothersAsset.unbindTooltip();
     this.mDetailsPanel.CraftButton.unbindTooltip();
     this.mLeaveButton.unbindTooltip();
+    this.mFilterAllButton.unbindTooltip();
+    this.mFilterWeaponsButton.unbindTooltip();
+    this.mFilterArmorButton.unbindTooltip();
+    this.mFilterMiscButton.unbindTooltip();
+    this.mFilterUsableButton.unbindTooltip();
 };
 
 
@@ -913,4 +1020,29 @@ CampScreenCraftingDialogModule.prototype.notifyBackendRemove = function (_index,
 CampScreenCraftingDialogModule.prototype.notifyBackendCraft = function (_blueprintID, _callback)
 {
     SQ.call(this.mSQHandle, 'onAdd', _blueprintID, _callback);
+};
+
+
+CampScreenCraftingDialogModule.prototype.notifyBackendFilterAllButtonClicked = function ()
+{
+	SQ.call(this.mSQHandle, 'onFilterAll');
+};
+
+CampScreenCraftingDialogModule.prototype.notifyBackendFilterWeaponsButtonClicked = function ()
+{
+	SQ.call(this.mSQHandle, 'onFilterWeapons');
+};
+
+CampScreenCraftingDialogModule.prototype.notifyBackendFilterArmorButtonClicked = function ()
+{
+	SQ.call(this.mSQHandle, 'onFilterArmor');
+};
+
+CampScreenCraftingDialogModule.prototype.notifyBackendFilterMiscButtonClicked = function ()
+{
+	SQ.call(this.mSQHandle, 'onFilterMisc');
+};
+
+CampScreenCraftingDialogModule.prototype.notifyBackendFilterUsableButtonClicked = function () {
+    SQ.call(this.mSQHandle, 'onFilterUsable');
 };

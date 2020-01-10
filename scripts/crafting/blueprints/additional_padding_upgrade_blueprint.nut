@@ -4,6 +4,7 @@ this.additional_padding_upgrade_blueprint <- this.inherit("scripts/crafting/blue
 	{
 		this.blueprint.create();
 		this.m.ID = "blueprint.additional_padding_upgrade";
+		this.m.Type = this.Const.Items.ItemType.Armor;
 		this.m.PreviewCraftable = this.new("scripts/items/armor_upgrades/additional_padding_upgrade");
 		this.m.Cost = 400;
 		local ingredients = [

@@ -4,6 +4,7 @@ this.alp_trophy_blueprint <- this.inherit("scripts/crafting/blueprint", {
 	{
 		this.blueprint.create();
 		this.m.ID = "blueprint.alp_trophy";
+		this.m.Type = this.Const.Items.ItemType.Accessory;
 		this.m.PreviewCraftable = this.new("scripts/items/accessory/alp_trophy_item");
 		this.m.Cost = 300;
 		local ingredients = [

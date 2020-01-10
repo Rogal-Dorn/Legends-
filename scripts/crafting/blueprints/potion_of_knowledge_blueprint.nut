@@ -4,6 +4,7 @@ this.potion_of_knowledge_blueprint <- this.inherit("scripts/crafting/blueprint",
 	{
 		this.blueprint.create();
 		this.m.ID = "blueprint.potion_of_knowledge";
+		this.m.Type = this.Const.Items.ItemType.Usable;
 		this.m.PreviewCraftable = this.new("scripts/items/misc/potion_of_knowledge_item");
 		this.m.Cost = 300;
 		local ingredients = [

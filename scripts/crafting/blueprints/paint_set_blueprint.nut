@@ -4,6 +4,7 @@ this.paint_set_blueprint <- this.inherit("scripts/crafting/blueprint", {
 	{
 		this.blueprint.create();
 		this.m.ID = "blueprint.paint_set";
+		this.m.Type = this.Const.Items.ItemType.Misc;
 		this.m.PreviewCraftable = this.new("scripts/items/misc/paint_set_item");
 		this.m.Cost = 50;
 		local ingredients = [

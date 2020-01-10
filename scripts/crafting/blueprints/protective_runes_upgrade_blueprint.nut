@@ -4,6 +4,7 @@ this.protective_runes_upgrade_blueprint <- this.inherit("scripts/crafting/bluepr
 	{
 		this.blueprint.create();
 		this.m.ID = "blueprint.protective_runes_upgrade";
+		this.m.Type = this.Const.Items.ItemType.Armor;
 		this.m.PreviewCraftable = this.new("scripts/items/armor_upgrades/protective_runes_upgrade");
 		this.m.Cost = 500;
 		local ingredients = [
