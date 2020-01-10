@@ -17,19 +17,12 @@ this.legend_bandage_blueprint <- this.inherit("scripts/crafting/blueprint", {
 			}
 		];
 		this.init(ingredients);
-	}
-
-	function isCraftable()
-	{
-		local roster = this.World.getPlayerRoster().getAll();
-        foreach( bro in roster )
-        {
-            if (bro.getSkills().hasSkill("perk.legend_med_ingredients") )
-            {
-                return true
-            }
-		}
-		return false;
+		local skills = [
+			{
+				Scripts = ["scripts/skills/perks/perk_legend_med_ingredients"]
+			}
+		]
+		this.initSkills(skills);
 	}
 
 	function onCraft( _stash )
