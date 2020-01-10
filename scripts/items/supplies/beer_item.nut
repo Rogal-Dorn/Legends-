@@ -2,7 +2,7 @@ this.beer_item <- this.inherit("scripts/items/supplies/legend_usable_food", {
 	m = {},
 	function create()
 	{
-		this.food_item.create();
+		this.legend_usable_food.create();
 		this.m.ID = "supplies.beer";
 		this.m.Name = "Beer";
 		this.m.Description = "Provisions. This fermented hop or barley drink is more durable and safer to drink than plain water.  Can either be consumed as provisions or drunk in battle";

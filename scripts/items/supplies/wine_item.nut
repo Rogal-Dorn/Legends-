@@ -2,7 +2,7 @@ this.wine_item <- this.inherit("scripts/items/supplies/legend_usable_food", {
 	m = {},
 	function create()
 	{
-		this.food_item.create();
+		this.legend_usable_food.create();
 		this.m.ID = "supplies.wine";
 		this.m.Name = "Wine";
 		this.m.Description = "Provisions. Wine made from squashed and fermented grapes. Both elaborate to produce and expensive to buy.";
