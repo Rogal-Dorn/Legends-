@@ -4,7 +4,7 @@ this.legend_noble_2h <- this.inherit("scripts/skills/backgrounds/character_backg
 	{
 		this.character_background.create();
 		this.m.ID = "background.legend_noble_2h";
-		this.m.Name = "Noble House Warrior";
+		this.m.Name = "Warrior";
 		this.m.Icon = "ui/traits/trait_icon_32.png";
 		this.m.HiringCost = 200;
 		this.m.DailyCost = 18;
@@ -213,7 +213,7 @@ this.legend_noble_2h <- this.inherit("scripts/skills/backgrounds/character_backg
 
 		if (r == 0)
 		{
-			items.equip(this.new("scripts/items/weapons/woodcutters_axe"));
+			items.equip(this.new("scripts/items/weapons/legend_infantry_axe"));
 		}
 
 		r = this.Math.rand(0, 2);
@@ -260,7 +260,7 @@ this.legend_noble_2h <- this.inherit("scripts/skills/backgrounds/character_backg
 			[0, "cloth/legend_gambeson"],
 			[0, "cloth/legend_gambeson_plain"],
 			[0, "cloth/legend_gambeson_wolf"],
-			[0, "cloth/legend_padded_surcoat"],
+			[1, "cloth/legend_padded_surcoat"],
 			[0, "cloth/legend_robes"],
 			[0, "cloth/legend_apron_butcher"],
 			[0, "cloth/legend_robes_nun"],
@@ -269,8 +269,9 @@ this.legend_noble_2h <- this.inherit("scripts/skills/backgrounds/character_backg
 			[0, "cloth/legend_sackcloth"],
 			[0, "cloth/legend_sackcloth_patched"],
 			[0, "cloth/legend_sackcloth_tattered"],
-			[1, "cloth/legend_tunic"],
-			[1, "cloth/legend_tunic_noble"]
+			[0, "cloth/legend_tunic"],
+			[2, "cloth/legend_thick_tunic"],
+			[0, "cloth/legend_tunic_noble"]
 		];
 		local armor = this.Const.World.Common.pickLegendArmor(cloths)
 
@@ -302,7 +303,7 @@ this.legend_noble_2h <- this.inherit("scripts/skills/backgrounds/character_backg
 			}
 
 			local plates = [
-                [2, ""],
+                [0, ""],
 				[0, "plate/legend_armor_leather_brigandine"],
 				[0, "plate/legend_armor_leather_brigandine_hardened"],
 				[0, "plate/legend_armor_leather_brigandine_hardened_full"],
@@ -338,7 +339,7 @@ this.legend_noble_2h <- this.inherit("scripts/skills/backgrounds/character_backg
 			{
 				armor.setUpgrade(plate)
 			}
-
+			armor.setUpgrade("tabard/legend_armor_tabard")
 			items.equip(armor);
 		}
 
@@ -346,11 +347,11 @@ this.legend_noble_2h <- this.inherit("scripts/skills/backgrounds/character_backg
 
 		if (r == 0)
 		{
-			items.equip(this.new("scripts/items/helmets/hood"));
+			items.equip(this.new("scripts/items/helmets/aketon_cap"));
 		}
 		else if (r == 1)
 		{
-			items.equip(this.new("scripts/items/helmets/headscarf"));
+			items.equip(this.new("scripts/items/helmets/open_leather_cap"));
 		}
 	}
 
