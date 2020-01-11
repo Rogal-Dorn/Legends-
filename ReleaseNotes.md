@@ -2566,3 +2566,12 @@ Halved cooldown on legion recruits
 Hexe leader cloak buffed to +15% resolve
 Fixed crashes from wind reader 
 
+13.0.0.34b
+Fixed crash when actor dies from other effects.
+Fixed crash when bleeding is applied to taste the pain perk.
+Rework on Eat Rations Action:
+    Progression: satiatied -> Stuffed -> OverAte (become sick) -> Become McFatty (gain fat trait)
+    Heal and Fatigue reduction for 10 turns. Each turn rate equals total rations amount / 10.
+    Each progression adds that amounts rations to the total amount and resets the turn clock to 10 turns.
+    Once in Stuffed state, Rate effect is doubled.
+Fixed incorrect plate_cuirass durability.
