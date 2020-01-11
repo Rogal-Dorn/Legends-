@@ -236,6 +236,7 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 			items.equip(this.new("scripts/items/helmets/open_leather_cap"));
 		}
 		items.equip(this.new("scripts/items/weapons/light_crossbow"));
+		items.equip(this.new("scripts/items/ammo/quiver_of_bolts"));
 		items.addToBag(this.new("scripts/items/weapons/knife"));
 		r = this.Math.rand(0, 1);
 

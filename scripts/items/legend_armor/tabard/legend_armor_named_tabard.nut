@@ -1,6 +1,6 @@
 this.legend_armor_named_tabard <- this.inherit("scripts/items/legend_armor/legend_named_armor_upgrade", {
 	m = {
-		BraveryMult = 1.05
+		BraveryMult = 1.03
 	},
 	function create()
 	{
@@ -20,17 +20,17 @@ this.legend_armor_named_tabard <- this.inherit("scripts/items/legend_armor/legen
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.Value = 5500;
-		this.m.Condition = 5;
-		this.m.ConditionMax = 5;
+		this.m.Condition = 10;
+		this.m.ConditionMax = 10;
 		this.m.StaminaModifier = -1;
 		this.randomizeValues()
 	}
 
 	function randomizeValues()
 	{
-		this.m.Condition = this.Math.floor(this.m.Condition * this.Math.rand(110, 125) * 0.01) * 1.0;
+		this.m.Condition = this.Math.floor(this.m.Condition * this.Math.rand(110, 120) * 0.01) * 1.0;
 		this.m.ConditionMax = this.m.Condition;
-		this.m.BraveryMult = this.Math.rand(105, 115) * 0.01
+		this.m.BraveryMult = this.Math.rand(103, 108) * 0.01
 	}
 
 	function updateVariant()
