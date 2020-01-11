@@ -16,8 +16,8 @@ this.legend_armor_redback_cloak_upgrade <- this.inherit("scripts/items/legend_ar
 		this.m.OverlayIcon = "legend_armor/cloak/icon_cloak_spider.png";
 		this.m.OverlayIconLarge = "legend_armor/cloak/inventory_cloak_spider.png";
 		this.m.Value = 7500;
-		this.m.Condition = 10;
-		this.m.ConditionMax = 10;
+		this.m.Condition = 25;
+		this.m.ConditionMax = 25;
 		this.m.StaminaModifier = -1;
 	}
 
