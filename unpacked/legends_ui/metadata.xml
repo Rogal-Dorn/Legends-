@@ -63,6 +63,7 @@
 <sprite id="falcon_circle" ic="FF23165B" img="skills\falcon_circle.png" />
 <sprite id="bear_circle" ic="FF23165B" img="skills\bear_circle.png" />
 <sprite id="catapult_circle" ic="FF23165B" img="skills\catapult_circle.png" />
+<sprite id="food_circle" ic="FF23165B" img="skills\food_circle.png" />
 
 <sprite id="mini_safegaurd_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_safegaurd_circle.png" />
 <sprite id="mini_shimmering_visage_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_shimmering_visage_circle.png" />
@@ -116,5 +117,6 @@
 <sprite id="demon_hound_bite" ic="FF23165B" img="skills\demon_hound_bite.png" />
 <sprite id="mini_graze_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_graze_circle.png" />
 <sprite id="mini_bleed_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_bleed_circle.png" />
+<sprite id="mini_food_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_food_circle.png" />
 
 </brush>
