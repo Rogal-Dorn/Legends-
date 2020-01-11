@@ -2535,11 +2535,16 @@ Most armor durability has been reduced by about 20%, for top roll named items th
 Attachment 80 > 40  
 Chain 140 > 110
 Cloak 30 > 15 
-Cloth 110 > 75 
+Cloth 110 > 70 
 Plate 240 > 170 
 Tabard 5 > 5 
-Total 605 > 415 
+Total 605 > 410 
 This will be felt across all armors and all human enemies. 
+Prices significantly increased for high tier attachments, chain and cloaks
+Hexe leader cloak resolve increase reduced from 25% to 10%, gained the same stats as a noble cloak 
+Redback cloak damage reduction reduced from 50% to 25%, gained the same stats as a noble cloak 
+
+
 
 **Fixes**
 Peasant Blacksmiths and Poachers get specialist masteries properly now (Mwah)

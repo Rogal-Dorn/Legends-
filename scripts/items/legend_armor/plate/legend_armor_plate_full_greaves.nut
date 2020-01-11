@@ -16,7 +16,7 @@ this.legend_armor_plate_full_greaves <- this.inherit("scripts/items/legend_armor
 		this.m.SpriteBack = "bust_legend_plate_full_greaves";
 		this.m.SpriteDamagedBack = "bust_legend_plate_full_greaves_damaged";
 		this.m.SpriteCorpseBack = "bust_legend_plate_full_greaves_dead";
-		this.m.Value = 7000;
+		this.m.Value = 10000;
 		this.m.Condition = 160;
 		this.m.ConditionMax = 160;
 		this.m.StaminaModifier = -30;

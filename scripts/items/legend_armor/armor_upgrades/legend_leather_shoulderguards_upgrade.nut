@@ -32,7 +32,7 @@ this.legend_leather_shoulderguards_upgrade <- this.inherit("scripts/items/legend
 			id = 14,
 			type = "text",
 			icon = "ui/icons/armor_body.png",
-			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Durability"
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] Durability"
 		});
 		return result;
 	}

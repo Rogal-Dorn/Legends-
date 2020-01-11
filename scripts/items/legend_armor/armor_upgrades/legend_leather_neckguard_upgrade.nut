@@ -32,7 +32,7 @@ this.legend_leather_neckguard_upgrade <- this.inherit("scripts/items/legend_armo
 			id = 14,
 			type = "text",
 			icon = "ui/icons/armor_body.png",
-			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Durability"
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+8[/color] Durability"
 		});
 		return result;
 	}

@@ -32,13 +32,13 @@ this.legend_armor_white_wolf_pelt_upgrade <- this.inherit("scripts/items/legend_
 			id = 14,
 			type = "text",
 			icon = "ui/icons/armor_body.png",
-			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+30[/color] Durability"
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+20[/color] Durability"
 		});
 		result.push({
 			id = 15,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Reduces the Resolve of any opponent engaged in melee by [color=" + this.Const.UI.Color.NegativeValue + "]-20[/color]"
+			text = "Reduces the Resolve of any opponent engaged in melee by [color=" + this.Const.UI.Color.NegativeValue + "]-10[/color]"
 		});
 		return result;
 	}
