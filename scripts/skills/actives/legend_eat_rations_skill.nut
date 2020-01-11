@@ -1,17 +1,23 @@
 this.legend_eat_rations_skill <- this.inherit("scripts/skills/skill", {
 	m = {
-		Item = null
+		Item = null,
+		Amount = 0
 	},
 	function setItem( _i )
 	{
 		this.m.Item = this.WeakTableRef(_i);
 	}
 
+	function setAmount( _a )
+	{
+		this.m.Amount = _a;
+	}
+
 	function create()
 	{
 		this.m.ID = "actives.legend_eat_rations";
-		this.m.Name = "Eat or Give Rations";
-		this.m.Description = "Give to an adjacent ally or eat rations that slowly heal. Can not be used while engaged in melee, and anyone receiving the item needs to have a free bag slot.";
+		this.m.Name = "Eat or Give Food";
+		this.m.Description = "Give to an adjacent ally or eat food that slowly heals. Can not be used while engaged in melee, and anyone receiving the item needs to have a free bag slot.";
 		this.m.Icon = "skills/rations_square.png";
 		this.m.IconDisabled = "skills/rations_square_bw.png";
 		this.m.Overlay = "active_144";
@@ -34,6 +40,7 @@ this.legend_eat_rations_skill <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
+		local amount = this.m.Amount / 10;
 		local ret = [
 			{
 				id = 1,
@@ -53,8 +60,14 @@ this.legend_eat_rations_skill <- this.inherit("scripts/skills/skill", {
 			{
 				id = 11,
 				type = "text",
-				icon = "ui/icons/initiative.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Health "
+				icon = "ui/icons/health.png",
+				text = "Restores [color=" + this.Const.UI.Color.PositiveValue + "]" + amount + "[/color] Health per turn for ten turns"
+			},
+			{
+				id = 11,
+				type = "text",
+				icon = "ui/icons/fatigue.png",
+				text = "Fatigues by [color=" + this.Const.UI.Color.NegativeValue + "]" + amount + "[/color] per turn for ten turns"
 			}
 		];
 
@@ -70,6 +83,7 @@ this.legend_eat_rations_skill <- this.inherit("scripts/skills/skill", {
 
 		return ret;
 	}
+
 
 	function getCursorForTile( _tile )
 	{
@@ -114,13 +128,16 @@ this.legend_eat_rations_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local user = _targetTile.getEntity();
 
-		if (_user.getID() == user.getID())
+		if (_user.getID() == user.getID() && !user.getSkills().hasSkill("effects.legend_satiated_effect"))
 		{
-			user.getSkills().add(this.new("scripts/skills/effects/legend_rations_effect"));
-
+			local skill = this.new("scripts/skills/effects/legend_rations_effect");
+			skill.setAmount(this.m.Amount);
+			user.getSkills().add(skill);
+			local skill = this.new("scripts/skills/effects/legend_satiated_effect");
+			user.getSkills().add(skill);
 			if (!user.isHiddenToPlayer())
 			{
-				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(user) + " eats rations");
+				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(user) + " eats food");
 			}
 
 			if (this.m.Item != null && !this.m.Item.isNull())
@@ -130,11 +147,63 @@ this.legend_eat_rations_skill <- this.inherit("scripts/skills/skill", {
 
 			this.Const.Tactical.Common.checkDrugEffect(user);
 		}
+		else if (user.getSkills().hasSkill("effects.legend_satiated_effect"))
+		{
+			user.getSkills().add(this.new("scripts/skills/effects/legend_stuffed_effect"));
+			if (!user.isHiddenToPlayer())
+			{
+				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(user) + " eats food");
+			}
+
+			if (this.m.Item != null && !this.m.Item.isNull())
+			{
+				this.m.Item.removeSelf();
+			}
+		}
+		else if (user.getSkills().hasSkill("effects.legend_stuffed_effect"))
+		{
+			user.getSkills().add(this.new("scripts/skills/effects/legend_stuffed_effect"));
+			if (!user.isHiddenToPlayer())
+			{
+				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(user) + " eats food");
+			}
+
+			if (this.m.Item != null && !this.m.Item.isNull())
+			{
+				this.m.Item.removeSelf();
+			}
+		}
+		else if (user.getSkills().hasSkill("effects.legend_stuffed_effect"))
+		{
+			user.getSkills().add(this.new("scripts/skills/injury/sickness_injury"));
+			if (!user.isHiddenToPlayer())
+			{
+				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(user) + " eats food");
+			}
+
+			if (this.m.Item != null && !this.m.Item.isNull())
+			{
+				this.m.Item.removeSelf();
+			}
+		}
+		else if (user.getSkills().hasSkill("effects.legend_stuffed_effect") && user.getSkills().hasSkill("injury.sickness"))
+		{
+			user.getSkills().add(this.new("scripts/skills/traits/fat_trait"));
+			if (!user.isHiddenToPlayer())
+			{
+				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(user) + " eats food");
+			}
+
+			if (this.m.Item != null && !this.m.Item.isNull())
+			{
+				this.m.Item.removeSelf();
+			}
+		}
 		else
 		{
 			if (!_user.isHiddenToPlayer())
 			{
-				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " gives rations to " + this.Const.UI.getColorizedEntityName(user));
+				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " gives food to " + this.Const.UI.getColorizedEntityName(user));
 			}
 
 			this.spawnIcon("status_effect_93", _targetTile);

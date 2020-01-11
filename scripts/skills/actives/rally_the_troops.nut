@@ -114,9 +114,10 @@ this.rally_the_troops <- this.inherit("scripts/skills/skill", {
 						a.getSkills().removeByID("effects.legend_intensely_charmed");
 						}
 				}
-			//	if ( a.getMoraleState() >= this.Const.MoraleState.Steady;  )
-			//	{
-			//	}
+				if ( a.getMoraleState() >= this.Const.MoraleState.Steady )
+				{
+				return false;
+				}
 				  this.logInfo("finding rally difficulty");
 				local difficulty = bravery;
 					this.logInfo("getting distance");

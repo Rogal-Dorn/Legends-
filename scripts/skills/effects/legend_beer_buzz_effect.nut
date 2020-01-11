@@ -1,6 +1,6 @@
 this.legend_beer_buzz_effect <- this.inherit("scripts/skills/skill", {
 	m = {
-		TurnsLeft = 3
+		TurnsLeft = 6
 	},
 	function create()
 	{
@@ -37,37 +37,37 @@ this.legend_beer_buzz_effect <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/bravery.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+9%[/color] Resolve"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+3%[/color] Resolve"
 			},
 			{
 				id = 11,
 				type = "text",
 				icon = "ui/icons/melee_skill.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+9%[/color] Melee Skill"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+3%[/color] Melee Skill"
 			},
 			{
 				id = 11,
 				type = "text",
 				icon = "ui/icons/ranged_skill.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+9%[/color] Ranged Skill"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+3%[/color] Ranged Skill"
 			},
 			{
 				id = 11,
 				type = "text",
 				icon = "ui/icons/melee_defense.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-18%[/color] Melee Defense"
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-6%[/color] Melee Defense"
 			},
 			{
 				id = 11,
 				type = "text",
 				icon = "ui/icons/ranged_defense.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-18%[/color] Ranged Defense"
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-6%[/color] Ranged Defense"
 			},
 			{
 				id = 11,
 				type = "text",
 				icon = "ui/icons/ranged_defense.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-36%[/color] Initiative"
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-12%[/color] Initiative"
 			}
 		];
 		return ret;
@@ -75,18 +75,18 @@ this.legend_beer_buzz_effect <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		_properties.BraveryMult *= 1.09;
-		_properties.MeleeSkillMult *= 1.09;
-		_properties.RangedSkillMult *= 1.09;
-		_properties.MeleeDefenseMult *= 0.82;
-		_properties.RangedDefenseMult *= 0.82;
-		_properties.InitiativeMult *= 0.64;
+		_properties.BraveryMult *= 1.03;
+		_properties.MeleeSkillMult *= 1.03;
+		_properties.RangedSkillMult *= 1.03;
+		_properties.MeleeDefenseMult *= 0.94;
+		_properties.RangedDefenseMult *= 0.94;
+		_properties.InitiativeMult *= 0.88;
 
 	}
 
 	function onAdded()
 	{
-		this.m.TurnsLeft = 3;
+		this.m.TurnsLeft = 6;
 	}
 
 	function onTurnEnd()
@@ -99,7 +99,12 @@ this.legend_beer_buzz_effect <- this.inherit("scripts/skills/skill", {
 
 	function onRemoved()
 	{
-		if (this.Math.rand(1, 100) <= 30)
+		local actor = this.getContainer().getActor();
+		if (this.Math.rand(1, 100) <= 10 && !actor.getSkills().hasSkill("trait.drunkard"))
+		{
+			this.getContainer().add(this.new("scripts/skills/effects_world/hangover_effect"));
+		}
+		else if (this.Math.rand(1, 100) <= 5 && actor.getSkills().hasSkill("trait.drunkard"))
 		{
 			this.getContainer().add(this.new("scripts/skills/effects_world/hangover_effect"));
 		}

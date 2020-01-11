@@ -19,10 +19,10 @@ this.legend_armor_white_wolf_pelt_upgrade <- this.inherit("scripts/items/legend_
 		this.m.SpriteCorpseFront = "upgrade_white_wolf_front_dead";
 		this.m.SpriteCorpseBack = "upgrade_white_wolf_back_dead";
 		this.m.Value = 6000;
-		this.m.Condition = 30;
-		this.m.ConditionMax = 30;
-		this.m.ConditionModifier = 30;
-		this.m.StaminaModifier = 0;
+		this.m.Condition = 20;
+		this.m.ConditionMax = 20;
+		this.m.ConditionModifier = 20;
+		this.m.StaminaModifier = -1;
 	}
 
 	function getTooltip()
@@ -32,13 +32,13 @@ this.legend_armor_white_wolf_pelt_upgrade <- this.inherit("scripts/items/legend_
 			id = 14,
 			type = "text",
 			icon = "ui/icons/armor_body.png",
-			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+30[/color] Durability"
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+20[/color] Durability"
 		});
 		result.push({
 			id = 15,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Reduces the Resolve of any opponent engaged in melee by [color=" + this.Const.UI.Color.NegativeValue + "]-20[/color]"
+			text = "Reduces the Resolve of any opponent engaged in melee by [color=" + this.Const.UI.Color.NegativeValue + "]-10[/color]"
 		});
 		return result;
 	}
@@ -56,7 +56,7 @@ this.legend_armor_white_wolf_pelt_upgrade <- this.inherit("scripts/items/legend_
 	function onUpdateProperties( _properties )
 	{
 		this.legend_armor_upgrade.onUpdateProperties(_properties);
-		_properties.Threat += 15;
+		_properties.Threat += 10;
 	}
 
 });

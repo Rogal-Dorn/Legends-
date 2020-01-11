@@ -301,6 +301,21 @@ this.marketplace_building <- this.inherit("scripts/entity/world/settlements/buil
 				S = "supplies/ground_grains_item"
 			},
 			{
+				R = 40,
+				P = 1.0,
+				S = "supplies/legend_fresh_fruit_item"
+			},
+			{
+				R = 20,
+				P = 1.0,
+				S = "supplies/legend_fresh_meat_item"
+			},
+			{
+				R = 30,
+				P = 1.0,
+				S = "supplies/roots_and_berries_item"
+			},
+			{
 				R = 10,
 				P = 1.0,
 				S = "supplies/medicine_item"
@@ -563,7 +578,7 @@ this.marketplace_building <- this.inherit("scripts/entity/world/settlements/buil
 				S = "weapons/militia_spear"
 			},
 			{
-				R = 40,
+				R = 50,
 				P = 1.0,
 				S = "weapons/legend_militia_glaive"
 			},
@@ -648,6 +663,21 @@ this.marketplace_building <- this.inherit("scripts/entity/world/settlements/buil
 				S = "supplies/ground_grains_item"
 			},
 			{
+				R = 50,
+				P = 1.0,
+				S = "supplies/legend_fresh_fruit_item"
+			},
+			{
+				R = 30,
+				P = 1.0,
+				S = "supplies/legend_fresh_meat_item"
+			},
+			{
+				R = 40,
+				P = 1.0,
+				S = "supplies/roots_and_berries_item"
+			},
+			{
 				R = 10,
 				P = 1.0,
 				S = "supplies/medicine_item"
@@ -677,10 +707,20 @@ this.marketplace_building <- this.inherit("scripts/entity/world/settlements/buil
 				P = 1.0,
 				S = "supplies/armor_parts_item"
 			},
-				{
-				R = 50,
+			{
+				R = 40,
 				P = 1.0,
 				S = "supplies/armor_parts_small_item"
+			},
+			{
+				R = 90,
+				P = 1.5,
+				S = "trade/cloth_rolls_item"
+			},
+			{
+				R = 95,
+				P = 1.5,
+				S = "trade/salt_item"
 			},
 			{
 				R = 10,

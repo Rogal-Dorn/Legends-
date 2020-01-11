@@ -1,14 +1,15 @@
-this.smoked_ham_item <- this.inherit("scripts/items/supplies/food_item", {
+this.smoked_ham_item <- this.inherit("scripts/items/supplies/legend_usable_food", {
 	m = {},
 	function create()
 	{
-		this.food_item.create();
+		this.legend_usable_food.create();
 		this.m.ID = "supplies.smoked_ham";
 		this.m.Name = "Smoked Ham";
 		this.m.Description = "Provisions. There are many ways to preserve food. This piece of ham has been treated in a smoking hut.";
 		this.m.Icon = "supplies/inventory_provisions_11.png";
 		this.m.Value = 90;
-		this.m.GoodForDays = 12;
+		this.m.Amount = 30.0;
+		this.m.GoodForDays = 7;
 	}
 
 	function getBuyPrice()
@@ -43,5 +44,18 @@ this.smoked_ham_item <- this.inherit("scripts/items/supplies/food_item", {
 		return this.item.getSellPrice();
 	}
 
+	function onPutIntoBag()
+	{
+		this.onEquip();
+	}
+
+	function onEquip()
+	{
+		this.legend_usable_food.onEquip();
+		local skill = this.new("scripts/skills/actives/legend_eat_rations_skill");
+		skill.setItem(this);
+		skill.setAmount(this.m.Amount);
+		this.addSkill(skill);
+	}
 });
 

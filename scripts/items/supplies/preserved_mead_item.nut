@@ -1,14 +1,15 @@
-this.preserved_mead_item <- this.inherit("scripts/items/supplies/food_item", {
+this.preserved_mead_item <- this.inherit("scripts/items/supplies/legend_usable_food", {
 	m = {},
 	function create()
 	{
-		this.food_item.create();
+		this.legend_usable_food.create();
 		this.m.ID = "supplies.preserved_mead";
 		this.m.Name = "Preserved Mead";
 		this.m.Description = "Provisions. This ashen liquid has small sparkles of silver swirrling about. The taste is off, but it hardly ever spoils.";
 		this.m.Icon = "supplies/inventory_provisions_18.png";
 		this.m.Value = 120;
-		this.m.GoodForDays = 15;
+		this.m.Amount = 20.0;
+		this.m.GoodForDays = 25;
 	}
 
 	function getBuyPrice()
@@ -42,6 +43,17 @@ this.preserved_mead_item <- this.inherit("scripts/items/supplies/food_item", {
 
 		return this.item.getSellPrice();
 	}
+	function onPutIntoBag()
+	{
+		this.onEquip();
+	}
 
+	function onEquip()
+	{
+		this.legend_usable_food.onEquip();
+		local skill = this.new("scripts/skills/actives/legend_drink_mead_skill");
+		skill.setItem(this);
+		this.addSkill(skill);
+	}
 });
 

@@ -20,7 +20,7 @@ this.legend_light_padding_replacement_upgrade <- this.inherit("scripts/items/leg
 		this.m.SpriteDamagedBack = "upgrade_05_back_damaged";
 		this.m.SpriteCorpseFront = null;
 		this.m.SpriteCorpseBack = "upgrade_05_back_dead";
-		this.m.Value = 650;
+		this.m.Value = 5000;
 	}
 
 	function getTooltip()
