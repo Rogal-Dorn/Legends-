@@ -17,8 +17,8 @@ this.legend_armor_plate_ancient_chest <- this.inherit("scripts/items/legend_armo
 		this.m.SpriteDamagedBack = "bust_legend_plate_ancient_chest_damaged";
 		this.m.SpriteCorpseBack = "bust_legend_plate_ancient_chest_dead";
 		this.m.Value = 800;
-		this.m.Condition = 110;
-		this.m.ConditionMax = 110;
+		this.m.Condition = 90;
+		this.m.ConditionMax = 90;
 		this.m.StaminaModifier = -19;
         this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
 	}

@@ -1,13 +1,14 @@
-this.legend_yummy_sausages <- this.inherit("scripts/items/supplies/food_item", {
+this.legend_yummy_sausages <- this.inherit("scripts/items/supplies/legend_usable_food", {
 	m = {},
 	function create()
 	{
-		this.food_item.create();
+		this.legend_usable_food.create();
 		this.m.ID = "supplies.legend_yummy_sausages";
 		this.m.Name = "Yummy Sausages";
 		this.m.Description = "Provisions. These sausages sure look yummy!";
 		this.m.Icon = "supplies/legend_yummy_sausages.png";
-		this.m.Value = 5;
+		this.m.Value = 50;
+		this.m.Amount = 30.0;
 		this.m.GoodForDays = 8;
 		this.m.IsUndesirable = false;
 	}
@@ -40,5 +41,19 @@ this.legend_yummy_sausages <- this.inherit("scripts/items/supplies/food_item", {
 		}
 
 		return this.item.getSellPrice();
+	}
+
+	function onPutIntoBag()
+	{
+		this.onEquip();
+	}
+
+	function onEquip()
+	{
+		this.legend_usable_food.onEquip();
+		local skill = this.new("scripts/skills/actives/legend_eat_rations_skill");
+		skill.setItem(this);
+		skill.setAmount(this.m.Amount);
+		this.addSkill(skill);
 	}
 });

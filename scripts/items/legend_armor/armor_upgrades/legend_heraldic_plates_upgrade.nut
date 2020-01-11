@@ -10,11 +10,11 @@ this.legend_heraldic_plates_upgrade <- this.inherit("scripts/items/legend_armor/
 		this.m.ArmorDescription = "Large protective plates have been fixed at the shoulders of this armor.";
 		this.m.Variant = this.Math.rand(14, 18);
 		this.updateVariant();
-		this.m.Value = 500;
-		this.m.Condition = 40;
-		this.m.ConditionMax = 40;
-		this.m.ConditionModifier = 40;
-		this.m.StaminaModifier = -4;
+		this.m.Value = 2700;
+		this.m.Condition = 30;
+		this.m.ConditionMax = 30;
+		this.m.ConditionModifier = 30;
+		this.m.StaminaModifier = -3;
 	}
 
 	function updateVariant()
@@ -45,13 +45,13 @@ this.legend_heraldic_plates_upgrade <- this.inherit("scripts/items/legend_armor/
 			id = 14,
 			type = "text",
 			icon = "ui/icons/armor_body.png",
-			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+40[/color] Durability"
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+30[/color] Durability"
 		});
 		result.push({
 			id = 14,
 			type = "text",
 			icon = "ui/icons/fatigue.png",
-			text = "[color=" + this.Const.UI.Color.NegativeValue + "]-4[/color] Maximum Fatigue"
+			text = "[color=" + this.Const.UI.Color.NegativeValue + "]-3[/color] Maximum Fatigue"
 		});
 		return result;
 	}

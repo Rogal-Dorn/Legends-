@@ -18,11 +18,11 @@ this.legend_joint_cover_upgrade <- this.inherit("scripts/items/legend_armor/lege
 		this.m.SpriteDamagedBack = "upgrade_10_back_damaged";
 		this.m.SpriteCorpseFront = null;
 		this.m.SpriteCorpseBack = "upgrade_10_back_dead";
-		this.m.Value = 300;
-		this.m.Condition = 40;
-		this.m.ConditionMax = 40;
-		this.m.ConditionModifier = 30;
-		this.m.StaminaModifier = -3;
+		this.m.Value = 900;
+		this.m.Condition = 20;
+		this.m.ConditionMax = 20;
+		this.m.ConditionModifier = 20;
+		this.m.StaminaModifier = -2;
 	}
 
 	function getTooltip()
@@ -32,13 +32,13 @@ this.legend_joint_cover_upgrade <- this.inherit("scripts/items/legend_armor/lege
 			id = 14,
 			type = "text",
 			icon = "ui/icons/armor_body.png",
-			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+30[/color] Durability"
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+20[/color] Durability"
 		});
 		result.push({
 			id = 14,
 			type = "text",
 			icon = "ui/icons/fatigue.png",
-			text = "[color=" + this.Const.UI.Color.NegativeValue + "]-3[/color] Maximum Fatigue"
+			text = "[color=" + this.Const.UI.Color.NegativeValue + "]-2[/color] Maximum Fatigue"
 		});
 		return result;
 	}

@@ -16,10 +16,10 @@ this.legend_armor_plate_full <- this.inherit("scripts/items/legend_armor/legend_
 		this.m.SpriteBack = "bust_legend_plate_full";
 		this.m.SpriteDamagedBack = "bust_legend_plate_full_damaged";
 		this.m.SpriteCorpseBack = "bust_legend_plate_full_dead";
-		this.m.Value = 6000;
-		this.m.Condition = 190;
-		this.m.ConditionMax = 190;
-		this.m.StaminaModifier = -28;
+		this.m.Value = 7500;
+		this.m.Condition = 165;
+		this.m.ConditionMax = 165;
+		this.m.StaminaModifier = -27;
 	}
 
 });
