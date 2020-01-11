@@ -2575,3 +2575,8 @@ Rework on Eat Rations Action:
     Each progression adds that amounts rations to the total amount and resets the turn clock to 10 turns.
     Once in Stuffed state, Rate effect is doubled.
 Fixed incorrect plate_cuirass durability.
+Fixes reload crossbow bolt errors.
+
+**New KeyBinding: Toggle Reserve Status**
+While in character screen, press "S" to toggle reserve status
+PSA:  the "A" and "D" keys on the character screen cycle through the bros. 
