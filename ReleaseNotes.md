@@ -2514,3 +2514,5 @@ Peasant Witchhunter gets shortsword properly now (Mwah)
 Sickle damage & Skill perks now correctly locate "shortsword" and not "short sword" (Mwah)
 Bleeding fix again but for the rune (Mwah)
 Orc Behemoth and Elites now get second wind properly (Mwah)
+Fixes nacho swallowing crashes.
+Fixes correct brush for hexe and demon banshee trophies.
