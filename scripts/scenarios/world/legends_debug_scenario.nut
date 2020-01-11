@@ -4,7 +4,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	{
 		this.m.ID = "scenario.legends_debug_party";
 		this.m.Name = "(Developer Debug)";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_80.png[/img][/p][p]Debug mode for legends developers";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_80.png[/img][/p]Debug mode for legends developers";
 		this.m.Difficulty = 2;
 		this.m.Order = 99;
 	}
@@ -60,6 +60,21 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		this.World.Assets.m.BusinessReputation = 1000;
 		this.World.Assets.getStash().setResizable(true);
 		this.World.Assets.getStash().resize(600);
+
+
+		local stashitems = [
+			"accessory/bandage_item",
+			"supplies/roots_and_berries_item",
+			"supplies/legend_fresh_fruit_item",
+			"supplies/legend_cooking_spices_item",
+			"supplies/ground_grains_item"
+		]
+
+		foreach (si in stashitems)
+		{
+			local pla = this.new("scripts/items/" + si);
+			this.World.Assets.getStash().add(pla);
+		}
 
 		local armors = [
 			"cloth/legend_tunic_noble",
@@ -355,6 +370,10 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		}
 
 		_tree.addPerk(this.Const.Perks.PerkDefs.LegendPiercingShot);
+		_tree.addPerk(this.Const.Perks.PerkDefs.LegendMedIngredients);
+		_tree.addPerk(this.Const.Perks.PerkDefs.LegendCampCook);
+
 	}
+
 });
 
