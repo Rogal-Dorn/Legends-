@@ -252,7 +252,7 @@ this.legend_noble_2h <- this.inherit("scripts/skills/backgrounds/character_backg
 
 		if (r == 0)
 		{
-			items.equip(this.new("scripts/items/weapons/woodcutters_axe"));
+			items.equip(this.new("scripts/items/weapons/legend_infantry_axe"));
 		}
 
 		local cloths = [
@@ -307,7 +307,7 @@ this.legend_noble_2h <- this.inherit("scripts/skills/backgrounds/character_backg
 				[0, "plate/legend_armor_leather_brigandine"],
 				[0, "plate/legend_armor_leather_brigandine_hardened"],
 				[0, "plate/legend_armor_leather_brigandine_hardened_full"],
-				[1, "plate/legend_armor_leather_jacket"],
+				[2, "plate/legend_armor_leather_jacket"],
 				[1, "plate/legend_armor_leather_jacket_simple"],
 				[0, "plate/legend_armor_leather_lamellar"],
 				[0, "plate/legend_armor_leather_lamellar_harness_heavy"],
@@ -315,7 +315,7 @@ this.legend_noble_2h <- this.inherit("scripts/skills/backgrounds/character_backg
 				[0, "plate/legend_armor_leather_lamellar_heavy"],
 				[0, "plate/legend_armor_leather_lamellar_reinforced"],
 				[0, "plate/legend_armor_leather_noble"],
-				[0, "plate/legend_armor_leather_padded"],
+				[1, "plate/legend_armor_leather_padded"],
 				[0, "plate/legend_armor_leather_riveted"],
 				[0, "plate/legend_armor_leather_riveted_light"],
 				[0, "plate/legend_armor_leather_scale"],
@@ -339,7 +339,17 @@ this.legend_noble_2h <- this.inherit("scripts/skills/backgrounds/character_backg
 			{
 				armor.setUpgrade(plate)
 			}
-			armor.setUpgrade("tabard/legend_armor_tabard")
+
+			local tabards = [
+                [0, ""],
+				[1, "tabard/legend_armor_tabard"]
+			]
+			local tabard = this.Const.World.Common.pickLegendArmor(tabards)
+			if (tabard != null)
+			{
+				armor.setUpgrade(tabard)
+			}
+
 			items.equip(armor);
 		}
 
