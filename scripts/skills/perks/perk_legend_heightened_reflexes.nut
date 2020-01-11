@@ -27,8 +27,8 @@ this.perk_legend_heightened_reflexes <- this.inherit("scripts/skills/skill", {
 			return 3;
 		}
 
-		local rdef = actor.getCurrentProperties().getRangedDefense()
-		local bonus = rdef / 2;
+		local rdef = actor.getRangedDefense()
+		local bonus = rdef * 0.3;
 		return this.Math.max(3, this.Math.floor(bonus));
 	}
 
@@ -52,7 +52,6 @@ this.perk_legend_heightened_reflexes <- this.inherit("scripts/skills/skill", {
 	{
 		local bonus = this.getBonus();
 		_properties.Initiative += bonus;
-
 	}
 	
 
