@@ -1,13 +1,14 @@
-this.dried_fish_item <- this.inherit("scripts/items/supplies/food_item", {
+this.dried_fish_item <- this.inherit("scripts/items/supplies/legend_usable_food", {
 	m = {},
 	function create()
 	{
-		this.food_item.create();
+		this.legend_usable_food.create();
 		this.m.ID = "supplies.dried_fish";
 		this.m.Name = "Dried Fish";
 		this.m.Description = "Provisions. Fish is a common and filling food in coastal regions. It is dried to preserve it.";
 		this.m.Icon = "supplies/inventory_provisions_06.png";
 		this.m.Value = 70;
+		this.m.Amount = 20.0;
 		this.m.GoodForDays = 8;
 	}
 
@@ -42,6 +43,18 @@ this.dried_fish_item <- this.inherit("scripts/items/supplies/food_item", {
 
 		return this.item.getSellPrice();
 	}
+	function onPutIntoBag()
+	{
+		this.onEquip();
+	}
 
+	function onEquip()
+	{
+		this.legend_usable_food.onEquip();
+		local skill = this.new("scripts/skills/actives/legend_eat_rations_skill");
+		skill.setItem(this);
+		skill.setAmount(this.m.Amount);
+		this.addSkill(skill);
+	}
 });
 

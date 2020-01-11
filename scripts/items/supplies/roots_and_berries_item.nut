@@ -1,13 +1,14 @@
-this.roots_and_berries_item <- this.inherit("scripts/items/supplies/food_item", {
+this.roots_and_berries_item <- this.inherit("scripts/items/supplies/legend_usable_food", {
 	m = {},
 	function create()
 	{
-		this.food_item.create();
+		this.legend_usable_food.create();
 		this.m.ID = "supplies.roots_and_berries";
 		this.m.Name = "Roots and Berries";
 		this.m.Description = "Provisions. Dried roots and berries are not the most exciting of rations but easy to come by and durable.";
 		this.m.Icon = "supplies/inventory_provisions_04.png";
 		this.m.Value = 60;
+		this.m.Amount = 15.0;
 		this.m.GoodForDays = 8;
 	}
 
@@ -43,5 +44,18 @@ this.roots_and_berries_item <- this.inherit("scripts/items/supplies/food_item", 
 		return this.item.getSellPrice();
 	}
 
+	function onPutIntoBag()
+	{
+		this.onEquip();
+	}
+
+	function onEquip()
+	{
+		this.legend_usable_food.onEquip();
+		local skill = this.new("scripts/skills/actives/legend_eat_rations_skill");
+		skill.setItem(this);
+		skill.setAmount(this.m.Amount);
+		this.addSkill(skill);
+	}
 });
 

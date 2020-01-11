@@ -8,7 +8,8 @@ this.wine_item <- this.inherit("scripts/items/supplies/legend_usable_food", {
 		this.m.Description = "Provisions. Wine made from squashed and fermented grapes. Both elaborate to produce and expensive to buy.";
 		this.m.Icon = "supplies/inventory_provisions_13.png";
 		this.m.Value = 140;
-		this.m.GoodForDays = 10;
+		this.m.Amount = 35.0;
+		this.m.GoodForDays = 11;
 	}
 
 	function getBuyPrice()

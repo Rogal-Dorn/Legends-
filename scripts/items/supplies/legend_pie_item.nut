@@ -8,8 +8,8 @@ this.legend_pie_item <- this.inherit("scripts/items/supplies/legend_usable_food"
 		this.m.Description = "A large pie made from freshly sourced ingredients, can either be consumed as provisions or used in battle to restore fatigue";
 		this.m.Icon = "supplies/legend_pie.png";
 		this.m.Value = 250;
-		this.m.GoodForDays = 8;
-		this.m.Amount = 50.0;
+		this.m.GoodForDays = 11;
+		this.m.Amount = 40.0;
 		this.m.IsAllowedInBag = true;
 		this.m.IsDroppedAsLoot = true;
 		this.m.SlotType = this.Const.ItemSlot.Bag;
