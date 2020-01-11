@@ -16,7 +16,7 @@ this.legend_bandage_tunic_blueprint <- this.inherit("scripts/crafting/blueprint"
 		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
 		{
 			ingredients.push({
-				Script = "scripts/items/legend_armor/legend_armor/legend_tunic",
+				Script = "scripts/items/legend_armor/legend_armor/cloth/legend_tunic",
 				Num = 1
 			})
 		}
