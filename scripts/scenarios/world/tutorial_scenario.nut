@@ -112,19 +112,6 @@ this.tutorial_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 			this.Music.setTrackList(this.Const.Music.CivilianTracks, this.Const.Music.CrossFadeTime);
 			this.World.Contracts.update(true);
 		}, null);
-
-		if(this.Const.LegendMod.Configs.LegendCampUnlockEnabled())
-		{
-			this.World.Tags.set("HasLegendCampGathering", true);
-			this.World.Tags.set("HasLegendCampBarber", true);
-			this.World.Tags.set("HasLegendCampCrafting", true);
-			this.World.Tags.set("HasLegendCampFletching", true);
-			this.World.Tags.set("HasLegendCampHealing", true);
-			this.World.Tags.set("HasLegendCampHunting", true);
-			this.World.Tags.set("HasLegendCampScouting", true);
-			this.World.Tags.set("HasLegendCampScraping", true);
-			this.World.Tags.set("HasLegendCampTraining", true);			
-		}
 	}
 
 });

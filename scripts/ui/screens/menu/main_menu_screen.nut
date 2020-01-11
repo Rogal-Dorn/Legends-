@@ -138,7 +138,7 @@ this.main_menu_screen <- {
 		}
 
 		this.m.JSHandle.asyncCall("setDLC", dlc);
-		this.m.JSHandle.asyncCall("setMOTD", "Welcome to Legends Beta.\n\n To report bugs, share strategies and ideas, or try out new test builds, join us on discord.gg/ZfCHGuC");
+		this.m.JSHandle.asyncCall("setMOTD", "Welcome to Legends Beta. \n\n To report bugs, share strategies and ideas, or try out new test builds, join us on https://discord.gg/ZfCHGuC");
 	}
 
 	function destroy()

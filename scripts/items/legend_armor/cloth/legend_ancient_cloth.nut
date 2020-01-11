@@ -8,7 +8,8 @@ this.legend_ancient_cloth <- this.inherit("scripts/items/legend_armor/legend_arm
 		this.m.Description = "An ancient cloth wrap, heavy and offering little protection";
 		this.m.IsDroppedAsLoot = true;
 		this.m.ShowOnCharacter = true;
-		this.m.Variant = this.Math.rand(1, 4);
+		this.m.Variants = [1,2,3,4];
+		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.InventorySound = this.Const.Sound.ClothEquip;

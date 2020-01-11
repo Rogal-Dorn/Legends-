@@ -52,7 +52,7 @@ this.legend_peasant_witchhunter <- this.inherit("scripts/entity/tactical/human",
 
 		this.m.Items.equip(this.new("scripts/items/weapons/light_crossbow"));
 		this.m.Items.equip(this.new("scripts/items/ammo/quiver_of_bolts"));
-		this.m.Items.equip(this.new("scripts/items/weapon/short_sword"));
+		this.m.Items.equip(this.new("scripts/items/weapon/shortsword"));
 
 		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
 		{

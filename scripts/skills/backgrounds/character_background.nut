@@ -30,6 +30,8 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		IsRangerRecruitBackground = false,
 		IsCrusaderRecruitBackground = false,
 		IsOutlawBackground = false,
+		AlignmentMin = this.Const.LegendMod.Alignment.Dreaded,
+		AlignmentMax = this.Const.LegendMod.Alignment.Saintly,
 		IsStabled = false,
 		Modifiers = {
 			Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[0],
@@ -177,6 +179,16 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 	function getModifiers()
 	{
 		return this.m.Modifiers;
+	}
+
+	function getAlignmentMin()
+	{
+		return this.m.AlignmentMin;
+	}
+
+	function getAlignmentMax()
+	{
+		return this.m.AlignmentMax;
 	}
 
 	function create()
@@ -519,7 +531,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		else if (_tag == "skeleton")
 		{
 			a = {
-				Hitpoints = [   
+				Hitpoints = [
 					50,
 					60
 				],
@@ -1015,11 +1027,74 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 
 	function onAddLegendEquipment()
 	{
-
 	}
 
 	function onSetAppearance()
 	{
+	}
+
+	function calculateAdditionalRecruitmentLevels()
+	{
+			local roster = this.World.getPlayerRoster().getAll();
+			local levels = 0;
+			local count = 0;
+			foreach( i, bro in roster )
+				{
+					local brolevel = bro.getLevel();
+					levels += brolevel;
+					count += 1;
+				}
+			local avgLevel = this.Math.floor(levels / count);
+			local busRep = this.World.Assets.getBusinessReputation();
+			local repPoints = this.Math.floor(busRep / 1000);
+			local repLevelAvg =  this.Math.floor((avgLevel + repPoints) / 4);
+			local broLevel = this.Math.rand(1, repLevelAvg);
+			return broLevel - 1;
+	}
+
+	function calculateAdditionalReputationLevels()
+	{
+		if(this.Const.LegendMod.Configs.LegendRecruitScalingEnabled())
+		{
+			//When we do alignment checks if our reputation isn't beating the required morality, then we return 0
+			local actor = this.getContainer().getActor();
+			local broAlignmentMin = actor.m.Background.getAlignmentMin();
+			local broAlignmentMax = actor.m.Background.getAlignmentMax();
+
+			local currentReputation = this.World.Assets.getMoralReputation();
+
+			//Take care of cases where we have Saintly or Deaded as a Max or Min, meaning we only have to check a > or < respectively
+			if ( broAlignmentMax == this.Const.LegendMod.Alignment.Saintly )
+			{
+				//If it's dreaded it always gets level up so just skip, otherwise check if our currentRep is > min required
+				if ( !( broAlignmentMin == this.Const.LegendMod.Alignment.Dreaded ) )
+				{
+					if ( !( currentReputation > (broAlignmentMin * 10) + 1 ) )
+					{
+						return 0;
+					}
+				}
+			}
+			else if ( broAlignmentMin == this.Const.LegendMod.Alignment.Dreaded )
+			{
+				//Check if rep is < max rep
+				if ( !( currentReputation <= (broAlignmentMax + 1) * 10) )
+				{
+					return 0;
+				}
+
+			}
+			else ( !( currentReputation > (broAlignmentMin * 10) + 1 ) && !( currentReputation <= (broAlignmentMax + 1) * 10) )
+			{
+				return 0;
+			}
+
+			return this.calculateAdditionalRecruitmentLevels();
+		}
+		else
+		{
+			return 0;
+		}
 	}
 
 	function onAdded()
@@ -1037,25 +1112,9 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 				actor.setTitle(this.m.Titles[this.Math.rand(0, this.m.Titles.len() - 1)]);
 			}
 
-			if(this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
-			{
-				local roster = this.World.getPlayerRoster().getAll();
-				local levels = 0;
-				local count = 0;
-				foreach( i, bro in roster )
-					{
-					local brolevel = bro.getLevel();
-					levels += brolevel;
-					count += 1;
-					}
-				local avgLevel = this.Math.floor(levels / count);
-				local busRep = this.World.Assets.getBusinessReputation();
-				local repPoints = this.Math.floor(busRep / 1000);
-				local repLevelAvg =  this.Math.floor((avgLevel + repPoints) / 4);
-				local broLevel = this.Math.rand(1, repLevelAvg);
-				this.m.Level += broLevel -1;
-
-			}
+			//get normal recruitment levels and then possibly get extra moral reputation levels
+			this.m.Level += actor.m.Background.calculateAdditionalRecruitmentLevels();
+			this.m.Level += actor.m.Background.calculateAdditionalReputationLevels();
 
 			if (this.m.Level != 1)
 			{
@@ -1064,6 +1123,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 				actor.m.Level = this.m.Level;
 				actor.m.XP = this.Const.LevelXP[this.m.Level - 1];
 			}
+
 		}
 	}
 
@@ -1109,6 +1169,12 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			]
 		};
 		return c;
+	}
+
+	//0 = Male, 1 = Female, -1 = Either
+	function setGender(_gender)
+	{
+
 	}
 
 	function onSerialize( _out )
@@ -1160,6 +1226,18 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		if (_in.getMetaData().getVersion() >= 61)
 		{
 			this.m.IsFemaleBackground = _in.readBool();
+		}
+
+		if (_in.getMetaData().getVersion() >= 64)
+		{
+			if (this.m.IsFemaleBackground)
+			{
+				this.setGender(1);
+			}
+			else
+			{
+				this.setGender(0);
+			}
 		}
 
 		if (_in.getMetaData().getVersion() >= 57)

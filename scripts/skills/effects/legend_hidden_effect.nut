@@ -1,5 +1,7 @@
 this.legend_hidden_effect <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+	TurnsLeft = 3
+	},
 	function create()
 	{
 		this.m.ID = "effect.legend_hidden";
@@ -84,75 +86,126 @@ this.legend_hidden_effect <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
+
+
 		local actor = this.getContainer().getActor();
-		actor.getSprite("armor").Saturation = 0.75;
-		actor.getSprite("armor").setBrightness(0.75);
-		actor.getSprite("helmet").Saturation = 0.75;
-		actor.getSprite("helmet").setBrightness(0.75);
-		actor.getSprite("shield_icon").Saturation = 0.75;
-		actor.getSprite("shield_icon").setBrightness(0.75);
-		actor.getSprite("armor_layer_chain").setBrightness(0.75);
-		actor.getSprite("armor_layer_chain").Saturation = 0.75;
-		actor.getSprite("armor_layer_plate").setBrightness(0.75);
-		actor.getSprite("armor_layer_plate").Saturation = 0.75;
-		actor.getSprite("armor_layer_tabbard").setBrightness(0.75);
-		actor.getSprite("armor_layer_tabbard").Saturation = 0.75;
-		actor.getSprite("armor_layer_cloak").setBrightness(0.75);
-		actor.getSprite("armor_layer_cloak").Saturation = 0.75;
-		actor.getSprite("head").setBrightness(0.75);
-		actor.getSprite("head").Saturation = 0.75;
-		actor.getSprite("body").setBrightness(0.75);
-		actor.getSprite("body").Saturation = 0.75;
-		actor.getSprite("hair").setBrightness(0.75);
-		actor.getSprite("hair").Saturation = 0.75;
-		actor.getSprite("beard").setBrightness(0.75);
-		actor.getSprite("beard").Saturation = 0.75;
+			if (actor.getTile().IsVisibleForPlayer)
+			{
+				if (this.Const.Tactical.HideParticles.len() != 0)
+				{
+					for( local i = 0; i < this.Const.Tactical.HideParticles.len(); i = ++i )
+					{
+						this.Tactical.spawnParticleEffect(false, this.Const.Tactical.HideParticles[i].Brushes, actor.getTile(), this.Const.Tactical.HideParticles[i].Delay, this.Const.Tactical.HideParticles[i].Quantity, this.Const.Tactical.HideParticles[i].LifeTimeQuantity, this.Const.Tactical.HideParticles[i].SpawnRate, this.Const.Tactical.HideParticles[i].Stages);
+					}
+				}
+			}
+		actor.getSprite("armor").Alpha = 10;
+		actor.getSprite("helmet").Alpha = 10;
+		actor.getSprite("shield_icon").Alpha = 10;
+		actor.getSprite("armor_layer_chain").Alpha = 10;
+		actor.getSprite("armor_layer_plate").Alpha = 10;
+		actor.getSprite("armor_layer_tabbard").Alpha = 10;
+		actor.getSprite("armor_layer_tabbard").Alpha = 10;
+		actor.getSprite("head").Alpha = 10;
+		actor.getSprite("body").Alpha = 10;
+		actor.getSprite("hair").Alpha = 10;
+		actor.getSprite("beard").Alpha = 10;
+		actor.getSprite("tattoo_head").Alpha = 10;
+		actor.getSprite("tattoo_body").Alpha = 10;
+		actor.getSprite("quiver").Alpha = 10;
+		actor.getSprite("arms_icon").Alpha = 10;
+		actor.getSprite("dirt").Alpha = 10;
+		actor.getSprite("accessory").Alpha = 10;
+		actor.getSprite("surcoat").Alpha = 10;
+		actor.getSprite("armor_upgrade_back").Alpha = 10;
+		actor.getSprite("armor_upgrade_front").Alpha = 10;
+		actor.getSprite("socket").Alpha = 10;
+		this.m.TurnsLeft = 3;
+
+		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_untouchable"))
+		{
+		this.m.TurnsLeft = 4;
+		}
 	}
 
 	function onRemoved()
-	{
+	{	
+		this.getContainer().getActor().setHidden(false);
 		local actor = this.getContainer().getActor();
-		actor.getSprite("armor").Saturation = 1.25;
-		actor.getSprite("armor").setBrightness(1.25);
-		actor.getSprite("helmet").Saturation = 1.25;
-		actor.getSprite("helmet").setBrightness(1.25);
-		actor.getSprite("shield_icon").Saturation = 1.25;
-		actor.getSprite("shield_icon").setBrightness(1.25);
-		actor.getSprite("armor_layer_chain").setBrightness(1.25);
-		actor.getSprite("armor_layer_chain").Saturation = 1.25;
-		actor.getSprite("armor_layer_plate").setBrightness(1.25);
-		actor.getSprite("armor_layer_plate").Saturation = 1.25;
-		actor.getSprite("armor_layer_tabbard").setBrightness(1.25);
-		actor.getSprite("armor_layer_tabbard").Saturation = 1.25;
-		actor.getSprite("armor_layer_cloak").setBrightness(1.25);
-		actor.getSprite("armor_layer_cloak").Saturation = 1.25;
-		actor.getSprite("head").setBrightness(1.25);
-		actor.getSprite("head").Saturation = 1.25;
-		actor.getSprite("body").setBrightness(1.25);
-		actor.getSprite("body").Saturation = 1.25;
-		actor.getSprite("hair").setBrightness(1.25);
-		actor.getSprite("hair").Saturation = 1.25;
-		actor.getSprite("beard").setBrightness(1.25);
-		actor.getSprite("beard").Saturation = 1.25;
+		actor.getSprite("armor").Alpha = 255;
+		actor.getSprite("helmet").Alpha = 255;
+		actor.getSprite("shield_icon").Alpha = 255;
+		actor.getSprite("armor_layer_chain").Alpha = 255;
+		actor.getSprite("armor_layer_plate").Alpha = 255;
+		actor.getSprite("armor_layer_tabbard").Alpha = 255;
+		actor.getSprite("armor_layer_cloak").Alpha = 255;
+		actor.getSprite("head").Alpha = 255;
+		actor.getSprite("body").Alpha = 255;
+		actor.getSprite("hair").Alpha = 255;
+		actor.getSprite("beard").Alpha = 255;
+		actor.getSprite("tattoo_head").Alpha = 255;
+		actor.getSprite("tattoo_body").Alpha = 255;
+		actor.getSprite("quiver").Alpha = 255;
+		actor.getSprite("arms_icon").Alpha = 255;
+		actor.getSprite("dirt").Alpha = 255;
+		actor.getSprite("accessory").Alpha = 255;
+		actor.getSprite("surcoat").Alpha = 255;
+		actor.getSprite("armor_upgrade_back").Alpha = 255;		
+		actor.getSprite("armor_upgrade_front").Alpha = 255;
+		actor.getSprite("socket").Alpha = 255;
+		local actor = this.getContainer().getActor();
+			if (actor.getTile().IsVisibleForPlayer)
+			{
+				if (this.Const.Tactical.HideParticles.len() != 0)
+				{
+					for( local i = 0; i < this.Const.Tactical.HideParticles.len(); i = ++i )
+					{
+						this.Tactical.spawnParticleEffect(false, this.Const.Tactical.HideParticles[i].Brushes, actor.getTile(), this.Const.Tactical.HideParticles[i].Delay, this.Const.Tactical.HideParticles[i].Quantity, this.Const.Tactical.HideParticles[i].LifeTimeQuantity, this.Const.Tactical.HideParticles[i].SpawnRate, this.Const.Tactical.HideParticles[i].Stages);
+					}
+				}
+			}
 	}
 
 	function onUpdate( _properties )
 	{
-		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_untouchable"))
-		{
-			_properties.RangedDefense += 40;
-			_properties.MeleeDefense += 40;
-		}
-
-
-		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_assassinate"))
+		local actor = this.getContainer().getActor();
+		if (actor.getSkills().hasSkill("perk.legend_assassinate"))
 		{
 			_properties.DamageRegularMin *= 2;
 			_properties.DamageRegularMax *= 2;
 		}
 
+		actor.getSprite("armor").Alpha = 10;
+		actor.getSprite("helmet").Alpha = 10;
+		actor.getSprite("shield_icon").Alpha = 10;
+		actor.getSprite("armor_layer_chain").Alpha = 10;
+		actor.getSprite("armor_layer_plate").Alpha = 10;
+		actor.getSprite("armor_layer_tabbard").Alpha = 10;
+		actor.getSprite("armor_layer_tabbard").Alpha = 10;
+		actor.getSprite("head").Alpha = 10;
+		actor.getSprite("body").Alpha = 10;
+		actor.getSprite("hair").Alpha = 10;
+		actor.getSprite("beard").Alpha = 10;
+		actor.getSprite("tattoo_head").Alpha = 10;
+		actor.getSprite("tattoo_body").Alpha = 10;
+		actor.getSprite("quiver").Alpha = 10;
+		actor.getSprite("arms_icon").Alpha = 10;
+		actor.getSprite("dirt").Alpha = 10;
+		actor.getSprite("accessory").Alpha = 10;
+		actor.getSprite("surcoat").Alpha = 10;
+		actor.getSprite("armor_upgrade_back").Alpha = 10;
+		actor.getSprite("armor_upgrade_front").Alpha = 10;
+		actor.getSprite("socket").Alpha = 10;
 
 	}
 
+	function onTurnEnd()
+	{
+		if (--this.m.TurnsLeft <= 0)
+		{
+			this.getContainer().getActor().setHidden(false);
+			this.removeSelf();
+		}
+	}
 });
 

@@ -4,6 +4,7 @@ this.legend_demon_banshee_trophy_blueprint <- this.inherit("scripts/crafting/blu
 	{
 		this.blueprint.create();
 		this.m.ID = "blueprint.legend_demon_banshee_trophy";
+		this.m.Type = this.Const.Items.ItemType.Accessory;
 		this.m.PreviewCraftable = this.new("scripts/items/accessory/legend_demon_banshee_trophy_item");
 		this.m.Cost = 1000;
 		local ingredients = [

@@ -35,8 +35,8 @@ this.legion_origin_mass_grave_event <- this.inherit("scripts/events/event", {
 				_event.m.Dude.getTags().add("PlayerSkeleton");
 				_event.m.Dude.getTags().add("undead");
 				_event.m.Dude.getTags().add("skeleton");
-				_event.m.Dude.add(this.new("scripts/skills/racial/skeleton_racial"));
-				_event.m.Dude.add(this.new("scripts/skills/injury_permanent/legend_fleshless"));
+			    _event.m.Dude.getSkills().add(this.new("scripts/skills/racial/skeleton_racial"));
+				_event.m.Dude.getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));
 				_event.m.Dude.setStartValuesEx(this.Const.CharacterBackgroundsAnimated);
 				this.Characters.push(_event.m.Dude.getImagePath());
 
@@ -60,18 +60,21 @@ this.legion_origin_mass_grave_event <- this.inherit("scripts/events/event", {
 		}
 
 		local locations = this.World.EntityManager.getLocations();
-
+		local nearSite = false; 
+		local currentTile = this.World.State.getPlayer().getTile();
 		foreach( v in locations )
 		{
-			if (v.getTypeID() == "location.undead_mass_grave")
+			if (v.getTypeID() == "location.undead_mass_grave" && v.getTile().getDistanceTo(currentTile) < 5)
 			{
-				if (v.getTile().getDistanceTo(currentTile) > 5)
-				{
-					return;
-				}
+				nearSite = true;
+				break;
 			}
 		}
 
+		if (!nearSite)
+		{
+		 return;
+		}
 
 		this.m.Score = 75;
 	}

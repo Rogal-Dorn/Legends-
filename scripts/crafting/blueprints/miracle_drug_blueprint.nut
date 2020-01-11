@@ -4,6 +4,7 @@ this.miracle_drug_blueprint <- this.inherit("scripts/crafting/blueprint", {
 	{
 		this.blueprint.create();
 		this.m.ID = "blueprint.miracle_drug";
+		this.m.Type = this.Const.Items.ItemType.Usable;
 		this.m.PreviewCraftable = this.new("scripts/items/misc/miracle_drug_item");
 		this.m.Cost = 250;
 		local ingredients = [

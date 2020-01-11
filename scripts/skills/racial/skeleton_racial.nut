@@ -73,7 +73,8 @@ this.skeleton_racial <- this.inherit("scripts/skills/skill", {
 				local bleed = _targetEntity.getSkills().getSkillByID("effects.bleeding_effect");
 				if (bleed == null)
 				{
-						_targetEntity.getSkills().add(effect);
+					effect.setActor(this.getContainer().getActor());
+					_targetEntity.getSkills().add(effect);
 				}
 				else
 				{

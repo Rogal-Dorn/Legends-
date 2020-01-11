@@ -12,7 +12,9 @@ gt.Const.LegendMod.Configs <- {
 	IsItemScaling = false,
 	IsLocationScaling = false,
 	IsCampUnlock = false,
-	IsRecruitScaling = false
+	IsRecruitScaling = false,
+    IsBleedKiller = false,
+    IsBlueprintsVisible = false
 
     Update = function (_settings)
     {
@@ -23,6 +25,8 @@ gt.Const.LegendMod.Configs <- {
 		this.IsLocationScaling = _settings.LegendLocationScaling;
 		this.IsCampUnlock = _settings.LegendCampUnlock;
 		this.IsRecruitScaling = _settings.LegendRecruitScaling;
+        this.IsBleedKiller = _settings.LegendBleedKiller;
+        this.IsBlueprintsVisible = _settings.LegendAllBlueprints;
     }
 
     LegendArmorsEnabled = function ()
@@ -60,6 +64,16 @@ gt.Const.LegendMod.Configs <- {
         return this.IsRecruitScaling
     }
 
+    LegendBleedKillerEnabled = function ()
+    {
+        return this.IsBleedKiller
+    }
+
+    LegendAllBlueprintsEnabled = function ()
+    {
+        return this.IsBlueprintsVisible
+    }
+
     onSerialize = function (_out)
     {
         _out.writeBool(this.IsArmor);
@@ -69,6 +83,8 @@ gt.Const.LegendMod.Configs <- {
 		_out.writeBool(this.IsLocationScaling);
 		_out.writeBool(this.IsCampUnlock);
 		_out.writeBool(this.IsRecruitScaling);
+        _out.writeBool(this.IsBleedKiller);
+        _out.writeBool(this.IsBlueprintsVisible);
     }
 
     onDeserialize = function (_in)
@@ -76,10 +92,21 @@ gt.Const.LegendMod.Configs <- {
 		this.IsArmor = _in.readBool();
 		this.IsMagic = _in.readBool();
 		this.IsGender = _in.readBool();
-		this.IsItemScaling = _in.readBool();
-		this.IsLocationScaling = _in.readBool();
-		this.IsCampUnlock = _in.readBool();
-		this.IsRecruitScaling = _in.readBool();
+        this.IsItemScaling = _in.readBool();
+        this.IsLocationScaling = _in.readBool();
+        this.IsCampUnlock = _in.readBool();
+        this.IsRecruitScaling = _in.readBool();
+        if (_in.getMetaData().getVersion() >= 63)
+		{
+			this.IsBleedKiller = _in.readBool();
+		}
+
+        if (_in.getMetaData().getVersion() >= 65)
+		{
+			this.IsBlueprintsVisible = _in.readBool();
+		}
+
+        
     }
 }
 

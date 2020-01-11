@@ -1452,6 +1452,9 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 		this.World.Assets.getOrigin().onUpdateStablesList(draftList);
 
+		//TODO this currently being used to disable any horses from being added to the game.
+		draftList = ["legend_donkey"];
+
 		while (maxRecruits > current.len())
 		{
 			local bro = roster.create("scripts/entity/tactical/player");
@@ -2045,6 +2048,11 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 	function onLeave()
 	{
+		if (this.Const.LegendMod.Configs.LegendCampUnlockEnabled())
+		{
+			return;
+		}
+		
 		local eventID = "";
 		if (!this.World.Tags.get("HasLegendCampTraining") && this.hasBuilding("building.training_hall"))
 		{

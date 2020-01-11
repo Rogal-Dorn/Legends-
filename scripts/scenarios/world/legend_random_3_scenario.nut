@@ -4,7 +4,7 @@ this.legend_random_3_scenario <- this.inherit("scripts/scenarios/world/starting_
 	{
 		this.m.ID = "scenario.legend_random_3";
 		this.m.Name = "Random Trio";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_80.png[/img][/p][p]Having fled a raid, three fellows decide to forge out a new path.\n[color=#bcad8c]Random Backgrounds:[/color] The backgrounds are different each time you start\n[color=#bcad8c]Random equipment:[/color]The equipment you begin with is different each time\n[color=#bcad8c]Random perks:[/color]The abilities of your mercenaries will be different each time[/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_80.png[/img][/p][p]Having fled a raid, three fellows decide to forge out a new path.\n\n[color=#bcad8c]Random Backgrounds:[/color] The backgrounds are different each time you start.\n[color=#bcad8c]Random equipment:[/color] The equipment you begin with is different each time.\n[color=#bcad8c]Random perks:[/color] The abilities of your mercenaries will be different each time.[/p]";
 		this.m.Difficulty = 2;
 		this.m.Order = 19;
 	}
@@ -120,18 +120,6 @@ this.legend_random_3_scenario <- this.inherit("scripts/scenarios/world/starting_
 			], this.Const.Music.CrossFadeTime);
 			this.World.Events.fire("event.legend_random_3_scenario_intro");
 		}, null);
-		if(this.Const.LegendMod.Configs.LegendCampUnlockEnabled())
-		{
-			this.World.Tags.set("HasLegendCampGathering", true);
-			this.World.Tags.set("HasLegendCampBarber", true);
-			this.World.Tags.set("HasLegendCampCrafting", true);
-			this.World.Tags.set("HasLegendCampFletching", true);
-			this.World.Tags.set("HasLegendCampHealing", true);
-			this.World.Tags.set("HasLegendCampHunting", true);
-			this.World.Tags.set("HasLegendCampScouting", true);
-			this.World.Tags.set("HasLegendCampScraping", true);
-			this.World.Tags.set("HasLegendCampTraining", true);			
-		}
 	}
 
 

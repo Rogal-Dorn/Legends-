@@ -198,11 +198,16 @@ this.sweep_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local _targetTile = _tag.TargetTile;
 		local _user = _tag.User;
+		local target = _targetTile.getEntity()
+		if (target == null)
+		{
+			return false;
+		}
 		this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectSwing);
 		local ret = false;
 		local ownTile = _user.getTile();
 		local dir = ownTile.getDirectionTo(_targetTile);
-		ret = this.attackEntity(_user, _targetTile.getEntity());
+		ret = this.attackEntity(_user, target);
 
 		if (!_user.isAlive() || _user.isDying())
 		{

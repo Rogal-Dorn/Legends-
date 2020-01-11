@@ -1,6 +1,7 @@
 this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 	m = {
 		Upgrades = null,
+		Variants = [],
 		Blocked = []
 	},
 	function create()
@@ -9,22 +10,18 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		this.m.SlotType = this.Const.ItemSlot.Body;
 		this.m.Upgrades = [];
 
-		for( local i = 0; i < this.Const.Items.ArmorUpgrades.COUNT; i = i )
+		for( local i = 0; i < this.Const.Items.ArmorUpgrades.COUNT; i = ++i )
 		{
 			this.m.Upgrades.push(null);
 			this.m.Blocked.push(false);
-			i = ++i;
-			i = i;
 		}
 	}
 
 	function blockUpgrades()
 	{
-		for( local i = 0; i < this.Const.Items.ArmorUpgrades.COUNT; i = i )
+		for( local i = 0; i < this.Const.Items.ArmorUpgrades.COUNT; i = ++i )
 		{
 			this.m.Blocked[i] = true;
-			i = ++i;
-			i = i;
 		}
 	}
 
@@ -169,9 +166,120 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		return slots;
 	}
 
+	function getIconLargeOverlayNamed()
+	{
+		if (this.isItemType(this.Const.Items.ItemType.Named))
+		{
+			return "legend_armor/inventory_named_armor.png";
+		}
+
+		if (this.isItemType(this.Const.Items.ItemType.Legendary))
+		{
+			return "legend_armor/inventory_named_armor.png";
+		}
+
+		foreach( u in this.m.Upgrades )
+		{
+			if (u == null)
+			{
+				continue;
+			}
+
+			if (u.isItemType(this.Const.Items.ItemType.Named)) 
+			{
+				return "legend_armor/inventory_named_armor.png";
+			}
+
+			if (u.isItemType(this.Const.Items.ItemType.Legendary)) 
+			{
+				return "legend_armor/inventory_named_armor.png";
+			}
+		}
+
+		return ""
+	}
+
+	function getIconLargeOverlayRuned()
+	{
+		local rune = this.getUpgrade(this.Const.Items.ArmorUpgrades.Rune)
+		if (rune == null)
+		{
+			return ""
+		}
+
+		return "legend_armor/inventory_runed_armor.png";
+	}
+
+	function getIconNamed()
+	{
+		if (this.isItemType(this.Const.Items.ItemType.Named))
+		{
+			return "";
+		}
+
+		if (this.isItemType(this.Const.Items.ItemType.Legendary))
+		{
+			return "";
+		}
+
+		foreach( u in this.m.Upgrades )
+		{
+			if (u == null)
+			{
+				continue;
+			}
+
+			if (u.isItemType(this.Const.Items.ItemType.Named)) 
+			{
+				return "legend_armor/named_armor.png";
+			}
+
+			if (u.isItemType(this.Const.Items.ItemType.Legendary)) 
+			{
+				return "legend_armor/named_armor.png";
+			}
+		}
+
+		return "";
+	}
+
+	function getIconRuned()
+	{
+		if (this.isItemType(this.Const.Items.ItemType.Named))
+		{
+			return "";
+		}
+
+		if (this.isItemType(this.Const.Items.ItemType.Legendary))
+		{
+			return "";
+		}
+
+		local rune = this.getUpgrade(this.Const.Items.ArmorUpgrades.Rune)
+		if (rune == null)
+		{
+			return ""
+		}
+
+		return "legend_armor/runed_armor.png";
+	}
+
 	function getIconOverlay()
 	{
 		local L = [];
+
+		local named = this.getIconNamed()
+		local runed = this.getIconRuned()
+
+		if (named != "" && runed != "")
+		{
+			L.push(runed);
+		} 
+
+		if (named != "" || runed != "")
+		{
+			L.push(this.m.Icon);
+		}
 
 		foreach( u in this.m.Upgrades )
 		{
@@ -193,9 +301,58 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		return L;
 	}
 
+	function getIcon()
+	{
+		local named = this.getIconNamed();
+		local runed = this.getIconRuned();
+
+		if (named != "")
+		{
+			return named;
+		}
+
+		if (runed != "")
+		{
+			return runed;
+		}
+
+		return this.m.Icon;
+	}
+
+	function getIconLarge()
+	{
+		local named = this.getIconLargeOverlayNamed();
+		local runed = this.getIconLargeOverlayRuned();
+
+		if (named != "")
+		{
+			return named;
+		}
+
+		if (runed != "")
+		{
+			return runed;
+		}
+
+		return this.m.IconLarge != "" ? this.m.IconLarge : null;
+	}
+
 	function getIconLargeOverlay()
 	{
 		local L = [];
+
+		local named = this.getIconLargeOverlayNamed()
+		local runed = this.getIconLargeOverlayRuned()
+
+		if (named != "" && runed != "")
+		{
+			L.push(runed);
+		} 
+
+		if (named != "" || runed != "")
+		{
+			L.push(this.m.IconLarge);
+		}
 
 		foreach( u in this.m.Upgrades )
 		{
@@ -367,23 +524,13 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 			text = this.getValueString()
 		});
 
-		if (this.getIconLarge() != null)
-		{
-			result.push({
-				id = 3,
-				type = "image",
-				image = this.getIconLarge(),
-				isLarge = true
-			});
-		}
-		else
-		{
-			result.push({
-				id = 3,
-				type = "image",
-				image = this.getIcon()
-			});
-		}
+		result.push({
+			id = 3,
+			type = "image",
+			image = this.m.IconLarge != "" ? this.m.IconLarge : this.m.Icon,
+			isLarge = this.m.IconLarge != "" ? true : false
+		});
+		
 
 		foreach( u in this.m.Upgrades )
 		{
@@ -489,6 +636,25 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		if (isLucky)
 		{
 			return true;
+		}
+
+		foreach( u in this.m.Upgrades )
+		{
+			if (u == null)
+			{
+				continue;
+			}
+
+			if (u.isItemType(this.Const.Items.ItemType.Named)) 
+			{
+				return true;
+			}
+
+			if (u.isItemType(this.Const.Items.ItemType.Legendary)) 
+			{
+				return true;
+			}
+
 		}
 
 		return false;
@@ -643,7 +809,7 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 	{
 		local totalDamage = _damage;
 
-		for( local i = this.Const.Items.ArmorUpgrades.COUNT - 1; i >= 0; i = i )
+		for( local i = this.Const.Items.ArmorUpgrades.COUNT - 1; i >= 0; i = --i )
 		{
 			local u = this.m.Upgrades[i];
 
@@ -654,9 +820,6 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 			{
 				totalDamage = u.onDamageReceived(totalDamage, _fatalityType, _attacker);
 			}
-
-			i = --i;
-			i = i;
 		}
 
 		this.updateAppearance();
@@ -811,7 +974,7 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		this.armor.onSerialize(_out);
 		_out.writeU8(this.m.Upgrades.len());
 
-		for( local i = 0; i != this.m.Upgrades.len(); i = i )
+		for( local i = 0; i != this.m.Upgrades.len(); i = ++i )
 		{
 			local item = this.m.Upgrades[i];
 
@@ -825,9 +988,6 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 				_out.writeI32(item.ClassNameHash);
 				item.onSerialize(_out);
 			}
-
-			i = ++i;
-			i = i;
 		}
 	}
 
@@ -837,24 +997,21 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		local count = _in.readU8();
 		this.m.Upgrades = [];
 
-		for( local i = 0; i < count; i = i )
+		for( local i = 0; i < count; i = ++i )
 		{
 			this.m.Upgrades.push(null);
 			local hasItem = _in.readBool();
 
 			if (!hasItem)
 			{
-			}
-			else
-			{
-				local item = this.new(this.IO.scriptFilenameByHash(_in.readI32()));
-				item.onDeserialize(_in);
-				this.m.Upgrades[i] = item;
-				this.m.Upgrades[i].setArmor(this);
+				continue
 			}
 
-			i = ++i;
-			i = i;
+			local item = this.new(this.IO.scriptFilenameByHash(_in.readI32()));
+			item.onDeserialize(_in);
+			this.m.Upgrades[i] = item;
+			this.m.Upgrades[i].setArmor(this);
+
 		}
 	}
 

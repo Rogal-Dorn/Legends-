@@ -321,7 +321,18 @@ this.knight <- this.inherit("scripts/entity/tactical/human", {
 		{
 			if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
 			{
-				this.m.Items.equip(this.new("scripts/items/" + legend_armor[this.Math.rand(0, armor.len() - 1)]));
+				local item = this.new("scripts/items/" + legend_armor[this.Math.rand(0, armor.len() - 1)]);
+				local upgrades = [
+					[10, ""],
+					[5, "cloak/legend_armor_cloak"],
+					[1, "cloak/legend_armor_cloak_rich"]
+				];
+				local upgrade = this.Const.World.Common.pickLegendArmor(upgrades)
+				if (upgrade != null)
+				{
+					item.setUpgrade(upgrade)
+				}
+				this.m.Items.equip(item)
 			}
 			else
 			{
@@ -330,6 +341,8 @@ this.knight <- this.inherit("scripts/entity/tactical/human", {
 		}
 				local helm = this.new("scripts/items/helmets/named/legend_frogmouth_helm_crested_painted");
 				this.m.Items.equip(helm);
+
+
 
 		this.m.Skills.add(this.new("scripts/skills/actives/indomitable"));
 		return true;

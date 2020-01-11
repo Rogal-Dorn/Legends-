@@ -1031,7 +1031,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				local skill = this.new("scripts/skills/injury_permanent/legend_fleshless");
 				this.m.Skills.add(skill);
 				this.m.Skills.add(this.new("scripts/skills/racial/skeleton_racial"));
-				
+
 			}
 			else
 			{
@@ -2011,7 +2011,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.fillAttributeLevelUpValues(this.Const.XP.MaxLevelWithPerkpoints - 1);
 	}
 
-	function setStartValuesEx( _backgrounds, _addTraits = true )
+	function setStartValuesEx( _backgrounds, _addTraits = true, _gender = -1 )
 	{
 		if (this.isSomethingToSee() && this.World.getTime().Days >= 7)
 		{
@@ -2020,6 +2020,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 		local bground = "scripts/skills/backgrounds/" + _backgrounds[this.Math.rand(0, _backgrounds.len() - 1)]
 		local background = this.new("scripts/skills/backgrounds/" + _backgrounds[this.Math.rand(0, _backgrounds.len() - 1)]);
+		background.setGender(_gender);
 		this.m.Skills.add(background);
 		this.m.Background = background;
 
@@ -2132,37 +2133,37 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		{
 			return;
 		}
-		
+
 		local attributes = [];
 		local weights = [];
 		local totalWeight = 0;
-		
+
 		for (local i = 0; i < this.m.StarWeights.len(); i = ++i)
 		{
 			if (this.m.Talents[i] != 0 )
 			{
 				continue;
 			}
-	
+
 			if (this.getBackground() != null && this.getBackground().getExcludedTalents().find(i) != null)
 			{
 				continue;
 			}
-	
+
 			if (this.getTags().has("PlayerZombie") && (i == this.Const.Attributes.Bravery || i == this.Const.Attributes.Fatigue || i == this.Const.Attributes.Initiative))
 			{
 				continue;
 			}
-	
+
 			if (this.getTags().has("PlayerSkeleton") && (i == this.Const.Attributes.Bravery || i == this.Const.Attributes.Fatigue || i == this.Const.Attributes.Hitpoints))
 			{
 				continue;
 			}
-			attributes.push(i);						
+			attributes.push(i);
 			weights.push(this.m.StarWeights[i]);
 			totalWeight += this.m.StarWeights[i];
 		}
-		
+
 		for( local done = 0; done < _num; done = ++done)
 		{
 			local weight = this.Math.rand(0, totalWeight);

@@ -4,7 +4,7 @@ this.legend_random_party_scenario <- this.inherit("scripts/scenarios/world/start
 	{
 		this.m.ID = "scenario.legend_random_party";
 		this.m.Name = "Random Party";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_80.png[/img][/p][p]A wild new adventure each time, 1-6 party members randomly chosen from all backgrounds. \n[color=#bcad8c]Random Backgrounds:[/color] The backgrounds are different each time you start\n[color=#bcad8c]Random equipment:[/color]The equipment you begin with is different each time\n[color=#bcad8c]Random perks:[/color]The abilities of your mercenaries will be different each time\n[color=#bcad8c]Random supplies:[/color]randomly get 3 times less to 3 times more money, tools, meds and ammo [/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_80.png[/img][/p][p]A wild new adventure each time, 1-6 party members randomly chosen from all backgrounds.\n\n[color=#bcad8c]Random Backgrounds:[/color] The backgrounds are different each time you start.\n[color=#bcad8c]Random equipment:[/color] The equipment you begin with is different each time.\n[color=#bcad8c]Random perks:[/color] The abilities of your mercenaries will be different each time.\n[color=#bcad8c]Random supplies:[/color] Randomly get 3 times less to 3 times more money, tools, meds and ammo.[/p]";
 		this.m.Difficulty = 2;
 		this.m.Order = 17;
 	}
@@ -158,18 +158,6 @@ this.legend_random_party_scenario <- this.inherit("scripts/scenarios/world/start
 			this.World.Events.fire("event.legend_random_party_scenario_intro");
 		}, null);
 
-		if(this.Const.LegendMod.Configs.LegendCampUnlockEnabled())
-		{
-			this.World.Tags.set("HasLegendCampGathering", true);
-			this.World.Tags.set("HasLegendCampBarber", true);
-			this.World.Tags.set("HasLegendCampCrafting", true);
-			this.World.Tags.set("HasLegendCampFletching", true);
-			this.World.Tags.set("HasLegendCampHealing", true);
-			this.World.Tags.set("HasLegendCampHunting", true);
-			this.World.Tags.set("HasLegendCampScouting", true);
-			this.World.Tags.set("HasLegendCampScraping", true);
-			this.World.Tags.set("HasLegendCampTraining", true);			
-		}
 	}
 
 

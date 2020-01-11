@@ -178,7 +178,7 @@ this.militia <- this.inherit("scripts/entity/tactical/human", {
 		}
 		else
 		{
-			r = this.Math.rand(1, 6);
+			r = this.Math.rand(1, 7);
 
 			if (r == 1)
 			{

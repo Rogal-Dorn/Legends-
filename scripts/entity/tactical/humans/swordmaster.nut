@@ -46,7 +46,7 @@ this.swordmaster <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_head_hunter"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_return_favor"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_composure"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_composure"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
 			}
 
@@ -177,7 +177,16 @@ this.swordmaster <- this.inherit("scripts/entity/tactical/human", {
 					{
 						armor.setUpgrade(plate)
 					}
-
+					local upgrades = [
+						[20, ""],
+						[5, "cloak/legend_armor_cloak"],
+						[1, "cloak/legend_armor_cloak_rich"]
+					];
+					local upgrade = this.Const.World.Common.pickLegendArmor(upgrades)
+					if (upgrade != null)
+					{
+						armor.setUpgrade(upgrade)
+					}
 					this.m.Items.equip(armor);
 				}
 			}

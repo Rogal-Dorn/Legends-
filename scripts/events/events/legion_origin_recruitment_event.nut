@@ -35,8 +35,8 @@ this.legion_origin_recruitment_event <- this.inherit("scripts/events/event", {
 				_event.m.Dude.getTags().add("PlayerSkeleton");
 				_event.m.Dude.getTags().add("undead");
 				_event.m.Dude.getTags().add("skeleton");
-				_event.m.Dude.add(this.new("scripts/skills/racial/skeleton_racial"));
-				_event.m.Dude.add(this.new("scripts/skills/injury_permanent/legend_fleshless"));
+				_event.m.Dude.getSkills().add(this.new("scripts/skills/racial/skeleton_racial"));
+				_event.m.Dude.getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));
 				_event.m.Dude.setStartValuesEx(this.Const.CharacterBackgroundsAnimated);
 				this.Characters.push(_event.m.Dude.getImagePath());
 

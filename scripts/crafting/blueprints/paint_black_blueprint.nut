@@ -4,6 +4,7 @@ this.paint_black_blueprint <- this.inherit("scripts/crafting/blueprint", {
 	{
 		this.blueprint.create();
 		this.m.ID = "blueprint.paint_black";
+		this.m.Type = this.Const.Items.ItemType.Misc;
 		this.m.PreviewCraftable = this.new("scripts/items/misc/paint_black_item");
 		this.m.Cost = 25;
 		local ingredients = [

@@ -4,6 +4,7 @@ this.fermented_unhold_heart_blueprint <- this.inherit("scripts/crafting/blueprin
 	{
 		this.blueprint.create();
 		this.m.ID = "blueprint.fermented_unhold_heart";
+		this.m.Type = this.Const.Items.ItemType.Food;
 		this.m.PreviewCraftable = this.new("scripts/items/supplies/fermented_unhold_heart_item");
 		this.m.Cost = 40;
 		local ingredients = [

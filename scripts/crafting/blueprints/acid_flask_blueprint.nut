@@ -4,6 +4,7 @@ this.acid_flask_blueprint <- this.inherit("scripts/crafting/blueprint", {
 	{
 		this.blueprint.create();
 		this.m.ID = "blueprint.acid_flask";
+		this.m.Type = this.Const.Items.ItemType.Usable
 		this.m.PreviewCraftable = this.new("scripts/items/tools/acid_flask_item");
 		this.m.Cost = 50;
 		local ingredients = [

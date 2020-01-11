@@ -2342,8 +2342,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Script = "scripts/skills/perks/perk_legend_escape_artist",
 		Name = this.Const.Strings.PerkName.LegendEscapeArtist,
 		Tooltip = this.Const.Strings.PerkDescription.LegendEscapeArtist,
-		Icon = "ui/perks/net_perk.png",
-		IconDisabled = "ui/perks/net_perk_bw.png",
+		Icon = "ui/perks/net_escape.png",
+		IconDisabled = "ui/perks/net_escape_bw.png",
 		Const = "LegendEscapeArtist"
 	},
 	{
@@ -2600,7 +2600,7 @@ gt.Const.Perks.PerkDefObjects <- [
 	},
 	{
 		ID = "perk.legend_lacerate",
-		Script = "scripts/skills/perks/perk_lacerate",
+		Script = "scripts/skills/perks/perk_legend_lacerate",
 		Name = this.Const.Strings.PerkName.LegendLacerate,
 		Tooltip = this.Const.Strings.PerkDescription.LegendLacerate,
 		Icon = "ui/perks/bleed_circle.png",
@@ -2666,8 +2666,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Script = "scripts/skills/perks/perk_legend_net_repair",
 		Name = this.Const.Strings.PerkName.LegendNetRepair,
 		Tooltip = this.Const.Strings.PerkDescription.LegendNetRepair,
-		Icon = "ui/perks/net_perk.png",
-		IconDisabled = "ui/perks/net_perk_bw.png",
+		Icon = "ui/perks/net_repair.png",
+		IconDisabled = "ui/perks/net_repair_bw.png",
 		Const = "LegendNetRepair"
 	},
 	{
@@ -2675,8 +2675,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Script = "scripts/skills/perks/perk_legend_net_casting",
 		Name = this.Const.Strings.PerkName.LegendNetCasting,
 		Tooltip = this.Const.Strings.PerkDescription.LegendNetCasting,
-		Icon = "ui/perks/net_perk.png",
-		IconDisabled = "ui/perks/net_perk_bw.png",
+		Icon = "ui/perks/net_casting.png",
+		IconDisabled = "ui/perks/net_casting_bw.png",
 		Const = "LegendNetCasting"
 	},
 	{
@@ -2714,6 +2714,60 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/cooking_circle.png",
 		IconDisabled = "ui/perks/cooking_circle_bw.png",
 		Const = "LegendCampCook"
+	},
+	{
+		ID = "perk.legend_packleader",
+		Script = "scripts/skills/perks/perk_legend_packleader",
+		Name = this.Const.Strings.PerkName.LegendPackleader,
+		Tooltip = this.Const.Strings.PerkDescription.LegendPackleader,
+		Icon = "ui/perks/perk_dog.png",
+		IconDisabled = "ui/perks/perk_dog_bw.png",
+		Const = "LegendPackleader"
+	},
+	{
+		ID = "perk.legend_dogwhisperer",
+		Script = "scripts/skills/perks/perk_legend_dogwhisperer",
+		Name = this.Const.Strings.PerkName.LegendDogWhisperer,
+		Tooltip = this.Const.Strings.PerkDescription.LegendDogWhisperer,
+		Icon = "ui/perks/perk_hound.png",
+		IconDisabled = "ui/perks/perk_hound_bw.png",
+		Const = "LegendDogWhisperer"
+	},
+	{
+		ID = "perk.legend_dogbreeder",
+		Script = "scripts/skills/perks/perk_legend_dogbreeder",
+		Name = this.Const.Strings.PerkName.LegendDogBreeder,
+		Tooltip = this.Const.Strings.PerkDescription.LegendDogBreeder,
+		Icon = "ui/perks/perk_dogs.png",
+		IconDisabled = "ui/perks/perk_dogs_bw.png",
+		Const = "LegendDogBreeder"
+	},
+	{
+		ID = "perk.legend_doghandling",
+		Script = "scripts/skills/perks/perk_legend_doghandling",
+		Name = this.Const.Strings.PerkName.LegendDogHandling,
+		Tooltip = this.Const.Strings.PerkDescription.LegendDogHandling,
+		Icon = "ui/perks/dog_handling.png",
+		IconDisabled = "ui/perks/dog_handling_bw.png",
+		Const = "LegendDogHandling"
+	},
+	{
+		ID = "perk.legend_heightened_reflexes",
+		Script = "scripts/skills/perks/perk_legend_heightened_reflexes",
+		Name = this.Const.Strings.PerkName.LegendHeightenedReflexes,
+		Tooltip = this.Const.Strings.PerkDescription.LegendHeightenedReflexes,
+		Icon = "ui/perks/heightened_reflexes.png",
+		IconDisabled = "ui/perks/heightened_reflexes_bw.png",
+		Const = "LegendHeightenedReflexes"
+	},
+	{
+		ID = "perk.legend_wind_reader",
+		Script = "scripts/skills/perks/perk_legend_wind_reader",
+		Name = this.Const.Strings.PerkName.LegendWindReader,
+		Tooltip = this.Const.Strings.PerkDescription.LegendWindReader,
+		Icon = "ui/perks/wind_reader.png",
+		IconDisabled = "ui/perks/wind_reader_bw.png",
+		Const = "LegendWindReader"
 	}
 ];
 gt.Const.Perks.PerkDefs <- {};

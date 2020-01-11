@@ -2,7 +2,8 @@ this.legend_RSW_bleeding_effect <- this.inherit("scripts/skills/skill", {
 	m = {
 		TurnsLeft = 2,
 		Damage = 5,
-		LastRoundApplied = 0
+		LastRoundApplied = 0,
+		Actor = null
 	},
 	function setStats(_s1, _s2)
 	{
@@ -14,6 +15,11 @@ this.legend_RSW_bleeding_effect <- this.inherit("scripts/skills/skill", {
 		return this.m.Damage;
 	}
 
+	function setActor( _a )
+	{
+		this.m.Actor = _a;
+	}
+	
 	function create()
 	{
 		this.m.ID = "effects.legend_RSW_bleeding_effect";
@@ -44,7 +50,14 @@ this.legend_RSW_bleeding_effect <- this.inherit("scripts/skills/skill", {
 			hitInfo.BodyPart = this.Const.BodyPart.Body;
 			hitInfo.BodyDamageMult = 1.0;
 			hitInfo.FatalityChanceMult = 0.0;
-			this.getContainer().getActor().onDamageReceived(this.getContainer().getActor(), this, hitInfo);
+			if (this.Const.LegendMod.Configs.LegendBleedKillerEnabled())
+			{
+				this.getContainer().getActor().onDamageReceived(this.m.Actor, this, hitInfo);
+			}
+			else
+			{
+				this.getContainer().getActor().onDamageReceived(this.getContainer().getActor(), this, hitInfo);
+			}
 
 			if (--this.m.TurnsLeft <= 0)
 			{

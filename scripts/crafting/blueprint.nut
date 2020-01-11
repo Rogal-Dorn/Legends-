@@ -3,10 +3,12 @@ this.blueprint <- {
 		ID = "",
 		PreviewCraftable = null,
 		PreviewComponents = [],
+		PreviewSkills = [],
 		Sounds = this.Const.Sound.CraftingGeneral,
 		Cost = 0,
 		TimesCrafted = 0,
-		Enchanter = false
+		Enchanter = false,
+		Type = this.Const.Items.ItemType.None
 	},
 	function isValid()
 	{
@@ -16,6 +18,11 @@ this.blueprint <- {
 	function getID()
 	{
 		return this.m.ID;
+	}
+
+	function getItemType()
+	{
+		return this.m.Type;
 	}
 
 	function getName()
@@ -58,6 +65,21 @@ this.blueprint <- {
 		return this.m.PreviewComponents[_idx].Instance.getTooltip();
 	}
 
+	function getTooltipForSkill( _idx )
+	{
+		foreach (c in this.m.PreviewSkills)
+		{
+			foreach (s in c.Instances)
+			{
+				if (s.getID() == _idx)
+				{
+					return s.getTooltip();
+				}
+			}
+		}
+		return null;
+	}
+
 	function create()
 	{
 	}
@@ -74,10 +96,42 @@ this.blueprint <- {
 		}
 	}
 
+	function initSkills( _skills )
+	{
+		foreach( i in _skills )
+		{
+			local C = []
+			foreach ( s in i.Scripts )
+			{
+				C.push(this.new(s));
+			}
+			this.m.PreviewSkills.push({
+				Instances = C
+			});
+		}
+	}
+
 	function reset()
 	{
 		this.onReset();
 	}
+
+	function requirementsMet( _ids )
+	{
+		local roster = this.World.getPlayerRoster().getAll();
+        foreach( bro in roster )
+        {
+			foreach ( id in _ids)
+			{
+				if (bro.getSkills().hasSkill(id))
+				{
+					return true
+				}
+			}
+		}
+		return false;
+	}
+
 
 	function isCraftable()
 	{
@@ -106,7 +160,20 @@ this.blueprint <- {
 			}
 		}
 
+		foreach( c in this.m.PreviewSkills )
+		{
+			local ids = [];
+			foreach (s in c.Instances) {
+				ids.push(s.getID());
+			}
+			if (!this.requirementsMet(ids))
+			{
+				return false;
+			}
+		}
+
 		return true;
+
 	}
 
 	function isQualified()
@@ -114,6 +181,11 @@ this.blueprint <- {
 		if (this.m.Enchanter)
 		{
 			return false
+		}
+
+		if (this.Const.LegendMod.Configs.LegendAllBlueprintsEnabled())
+		{
+			return true;
 		}
 
 		if (this.m.TimesCrafted >= 1)
@@ -136,7 +208,6 @@ this.blueprint <- {
 
 	function getUIData()
 	{
-		local items = this.World.Assets.getStash().getItems();
 		local ret = {
 			ID = this.getID(),
 			Name = this.getName(),
@@ -145,7 +216,8 @@ this.blueprint <- {
 			LargeImagePath = this.getIconLarge() != null ? this.getIconLarge() : this.getIcon(),
 			Ingredients = this.getIngredients(),
 			Cost = this.getCost(),
-			IsCraftable = this.isCraftable()
+			IsCraftable = this.isCraftable(),
+			Type = this.getItemType()
 		};
 		return ret;
 	}
@@ -154,6 +226,19 @@ this.blueprint <- {
 	{
 		local ret = [];
 		local items = this.World.Assets.getStash().getItems();
+
+		foreach(c in this.m.PreviewSkills )
+		{
+			foreach (s in c.Instances)
+			{
+				ret.push({
+					InstanceID = s.getID(),
+					ImagePath = s.getIconColored(),
+					IsMissing = !this.requirementsMet(s.getID()),
+					IsSkill = 1
+				});
+			}
+		}
 
 		foreach( i, c in this.m.PreviewComponents )
 		{
@@ -177,7 +262,8 @@ this.blueprint <- {
 				ret.push({
 					InstanceID = i,
 					ImagePath = c.Instance.getIcon(),
-					IsMissing = j > num
+					IsMissing = j > num,
+					IsSkill = 0
 				});
 			}
 		}

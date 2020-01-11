@@ -116,7 +116,7 @@ gt.Const.World.Spawn.Noble <- {
 			]
 		},
 		{
-			Weight = 3,
+			Weight = 4,
 			MinR = 0.85 * 700,
 			Types = [
 				{
@@ -125,16 +125,6 @@ gt.Const.World.Spawn.Noble <- {
 				}
 			]
 		},
-		{
-			Weight = 1,
-			MinR = 0.85 * 900,
-			Types = [
-				{
-					Type = this.Const.World.Spawn.Troops.LegendCatapult,
-					Cost = 60
-				}
-			]
-		}
 	]
 }
 

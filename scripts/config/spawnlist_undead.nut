@@ -50,19 +50,19 @@ gt.Const.World.Spawn.UndeadArmy <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.SkeletonHeavyPolearm,
-					MinR = 400,
+					MinR = 800,
 					Cost = 35
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.SkeletonGladiator,
-					MinR = 600,
+					MinR = 1200,
 					Cost = 40
 				},
 			]
 		},
 		{
 			Weight = 3,
-			MinR = 0.75 * 625,
+			MinR = 0.75 * 1200,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.SkeletonPriest,
@@ -85,7 +85,7 @@ gt.Const.World.Spawn.UndeadArmy <-
 		},
 		{
 			Weight = 5
-			MinR = 0.20 * 625,
+			MinR = 0.20 * 800,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.VampireLOW,
@@ -93,12 +93,12 @@ gt.Const.World.Spawn.UndeadArmy <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.Vampire,
-					MinR = 200,
+					MinR = 400,
 					Cost = 50
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendVampireLord,
-					MinR = 800,
+					MinR = 1200,
 					Cost = 70
 				}
 			]
@@ -109,7 +109,7 @@ gt.Const.World.Spawn.UndeadArmy <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendDemonHound,
-					MinR = 400,
+					MinR = 800,
 					Cost = 40
 				}
 			]
@@ -138,13 +138,13 @@ gt.Const.World.Spawn.Vampires <-
 				{
 					Type = this.Const.World.Spawn.Troops.Vampire,
 					Cost = 40
-					MinR = 200,
+					MinR = 400,
 				}
 			]
 		},
 		{
 			Weight = 10,
-			MinR = 800,
+			MinR = 1200,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendVampireLord,
@@ -194,11 +194,11 @@ gt.Const.World.Spawn.VampiresAndSkeletons <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.Vampire,
-					MinR = 200,
+					MinR = 400,
 					Cost = 40
 				},
 				{
-					MinR = 800,
+					MinR = 1200,
 					Type = this.Const.World.Spawn.Troops.LegendVampireLord,
 					Cost = 70
 				}
@@ -209,7 +209,7 @@ gt.Const.World.Spawn.VampiresAndSkeletons <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendDemonHound,
-					MinR = 400,
+					MinR = 800,
 					Cost = 40
 				}
 			]

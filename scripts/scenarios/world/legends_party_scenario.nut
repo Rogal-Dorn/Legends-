@@ -4,7 +4,7 @@ this.legends_party_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	{
 		this.m.ID = "scenario.legends_party";
 		this.m.Name = "Adventuring Party";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_134.png[/img][/p][p]After an unlikely meeting in a tavern, an unlikely group of strangers have formed an adventuring party. They have set out in search of both dragons and dungeons.\n\n[color=#bcad8c]A party of overpowered adventurers, each with their own skills[/color][/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_134.png[/img][/p][p]After an unlikely meeting in a tavern, an unlikely group of strangers have formed an adventuring party. They have set out in search of both dragons and dungeons.\n\n[color=#bcad8c]A party of overpowered adventurers, each with their own skills.[/color][/p]";
 		this.m.Difficulty = 1;
 		this.m.Order = 2;
 	}
@@ -141,19 +141,6 @@ this.legends_party_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			this.Music.setTrackList(this.Const.Music.IntroTracks, this.Const.Music.CrossFadeTime);
 			this.World.Events.fire("event.legend_party_scenario_intro");
 		}, null);
-
-		if(this.Const.LegendMod.Configs.LegendCampUnlockEnabled())
-		{
-			this.World.Tags.set("HasLegendCampGathering", true);
-			this.World.Tags.set("HasLegendCampBarber", true);
-			this.World.Tags.set("HasLegendCampCrafting", true);
-			this.World.Tags.set("HasLegendCampFletching", true);
-			this.World.Tags.set("HasLegendCampHealing", true);
-			this.World.Tags.set("HasLegendCampHunting", true);
-			this.World.Tags.set("HasLegendCampScouting", true);
-			this.World.Tags.set("HasLegendCampScraping", true);
-			this.World.Tags.set("HasLegendCampTraining", true);			
-		}
 	}
 
 });

@@ -151,6 +151,12 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
 
 	function isHidden()
 	{
+        
+		if (this.Const.LegendMod.Configs.LegendCampUnlockEnabled())
+		{
+			return false;
+		}
+		
 		return !this.World.Tags.get("HasLegendCampScraping")
 	}
 
@@ -251,7 +257,7 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
         local ret = this.camp_building.getModifiers();
         if (this.getUpgraded())
         {
-            ret.Consumption = 1.0 / 20.0
+            ret.Consumption = 1.0 / 10.0
         }
         return ret;
     }
@@ -338,6 +344,11 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
     function update ()
     {
         if (this.World.Assets.getArmorPartsF() >= this.World.Assets.getMaxArmorParts())
+        {
+            return this.getUpdateText();
+        }
+
+        if (this.m.Salvage == null) //has a chance to error without reallye ffecting anything if u do salvage.len and its null
         {
             return this.getUpdateText();
         }

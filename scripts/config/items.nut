@@ -93,6 +93,7 @@ gt.Const.Items.NamedArmors <- [
 	"armor/named/heraldic_mail_armor",
 	"armor/named/named_sellswords_armor"
 ];
+
 gt.Const.Items.LegendNamedArmors <- [
 	"legend_armor/named/legend_black_leather_armor",
 	"legend_armor/named/legend_blue_studded_mail_armor",
@@ -103,9 +104,25 @@ gt.Const.Items.LegendNamedArmors <- [
 //	"legend_armor/named/legend_named_sellswords_armor"
 ];
 
-gt.Const.Items.LegendNamedArmorLayers <- [
-	"legend_armor/plate/legend_armor_plate_full_greaves_painted"
+gt.Const.Items.LegendNamedClothLayers <- [
+	"legend_armor/cloth/legend_gambeson_named"
 ];
+
+gt.Const.Items.LegendNamedPlateLayers <- [
+	"legend_armor/plate/legend_armor_plate_full_greaves_painted",
+	"legend_armor/plate/legend_armor_leather_jacket_named",
+	"legend_armor/plate/legend_armor_leather_lamellar_heavy_named",
+	"legend_armor/plate/legend_armor_leather_brigandine_named",
+	"legend_armor/plate/legend_armor_scale_coat_named"
+];
+
+gt.Const.Items.LegendNamedChainLayers <- [
+	"legend_armor/chain/legend_armor_hauberk_full_named",
+];
+
+gt.Const.Items.LegendNamedArmorLayers <- []
+gt.Const.Items.LegendNamedArmorLayers.extend(this.Const.Items.LegendNamedChainLayers)
+gt.Const.Items.LegendNamedArmorLayers.extend(this.Const.Items.LegendNamedPlateLayers)
 
 gt.Const.Items.NamedHelmets <- [
 	"helmets/named/golden_feathers_helmet",
@@ -139,6 +156,8 @@ gt.Const.Items.NamedOrcShields <- [
 ];
 gt.Const.Items.NamedOrcWeapons <- [
 	"weapons/named/named_orc_axe",
+	"weapons/named/named_orc_axe_2h",
+	"weapons/named/named_orc_flail_2h",
 	"weapons/named/named_orc_cleaver"
 ];
 gt.Const.Items.NamedGoblinWeapons <- [
@@ -163,6 +182,7 @@ gt.Const.Items.NamedMeleeWeapons <- [
 	"weapons/named/named_warbrand",
 	"weapons/named/named_warhammer",
 	"weapons/named/named_pike",
+	"weapons/named/named_fencing_sword",
 	"weapons/named/legend_named_bastardsword",
 	"weapons/named/legend_named_estoc",
 	"weapons/named/legend_named_glaive",

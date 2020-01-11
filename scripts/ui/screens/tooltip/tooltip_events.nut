@@ -818,6 +818,9 @@ this.tooltip_events <- {
 		case "blueprint":
 			return this.World.Crafting.getBlueprint(_entityId).getTooltipForComponent(_itemId);
 
+		case "blueprintskill":
+			return this.World.Crafting.getBlueprint(_entityId).getTooltipForSkill(_itemId);
+
 		case "world-town-screen-shop-dialog-module.stash":
 			local result = this.Stash.getItemByInstanceID(_itemId);
 
@@ -4467,6 +4470,32 @@ this.tooltip_events <- {
 						text = "If enabled, new recruits will gain levels based on the levels in your party and your renown in the world. \n\n  Details: The maximum level of recruits is increased by half the average level of mercs in your company, averaged with your reputation divided by 1,000. \n\n For example: if your company were all level 10, and your renown was 10,000, new recruits could gain up to 5 levels. \n\n This in addition to normal recruit level variance. "
 					}
 				];
+		case "mapconfig.legendbleedkiller":
+			return [
+					{
+						id = 1,
+						type = "title",
+						text = "Who dealt the bleed gets the kill"
+					},
+					{
+						id = 2,
+						type = "description",
+						text = "If enabled, kills by bleeding out are granted to the actor who caused the bleed."
+					}
+				];		
+		case "mapconfig.legendallblueprints":
+			return [
+					{
+						id = 1,
+						type = "title",
+						text = "Unlock all crafting recipies"
+					},
+					{
+						id = 2,
+						type = "description",
+						text = "If enabled, all crafting recipies will be visible at the taxidermist and camp crafting. If disabled, vanilla behavior of having to discover the ingredients first will be enforced."
+					}
+				];							
 		case "camp.commander":
 		case "camp.rest":
 		case "camp.repair":

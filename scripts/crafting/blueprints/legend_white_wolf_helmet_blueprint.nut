@@ -4,12 +4,13 @@ this.legend_white_wolf_helmet_blueprint <- this.inherit("scripts/crafting/bluepr
 	{
 		this.blueprint.create();
 		this.m.ID = "blueprint.legend_white_wolf_helmet";
+		this.m.Type = this.Const.Items.ItemType.Helmet;
 		this.m.PreviewCraftable = this.new("scripts/items/helmets/legendary/legend_white_wolf_helmet");
 		this.m.Cost = 2500;
 		local ingredients = [
 			{
 				Script = "scripts/items/misc/legend_white_wolf_pelt_item",
-				Num = 1
+				Num = 2
 			},
 			{
 				Script = "scripts/items/helmets/bascinet_with_mail",

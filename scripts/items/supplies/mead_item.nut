@@ -1,8 +1,8 @@
-this.mead_item <- this.inherit("scripts/items/supplies/food_item", {
+this.mead_item <- this.inherit("scripts/items/supplies/legend_usable_food", {
 	m = {},
 	function create()
 	{
-		this.food_item.create();
+		this.legend_usable_food.create();
 		this.m.ID = "supplies.mead";
 		this.m.Name = "Mead";
 		this.m.Description = "Provisions. An alcoholic beverage made from honey. Both durable and tasty while also being much safer to drink than unpurified water.";
@@ -43,5 +43,17 @@ this.mead_item <- this.inherit("scripts/items/supplies/food_item", {
 		return this.item.getSellPrice();
 	}
 
+	function onPutIntoBag()
+	{
+		this.onEquip();
+	}
+
+	function onEquip()
+	{
+		this.legend_usable_food.onEquip();
+		local skill = this.new("scripts/skills/actives/legend_drink_mead_skill");
+		skill.setItem(this);
+		this.addSkill(skill);
+	}
 });
 

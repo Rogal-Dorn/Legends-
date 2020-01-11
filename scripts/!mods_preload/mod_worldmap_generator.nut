@@ -394,11 +394,11 @@
 				}
 			}
 		}
-
+		
 		if (this.Const.World.Buildings.Stables < 2)
 		{
 			local candidates = [];
-
+	
 			foreach( s in settlements )
 			{
 				if (s.isMilitary() && s.hasFreeBuildingSlot() && !s.hasBuilding("building.stables"))
@@ -406,14 +406,14 @@
 					candidates.push(s);
 				}
 			}
-
+	
 			for( local i = this.Const.World.Buildings.Stables; i <= 2; i = ++i )
 			{
 				local r = this.Math.rand(0, candidates.len() - 1);
 				local s = candidates[r];
 				candidates.remove(r);
 				s.addBuilding(this.new("scripts/entity/world/settlements/buildings/stables_building"));
-
+	
 				if (candidates.len() == 0)
 				{
 					break;

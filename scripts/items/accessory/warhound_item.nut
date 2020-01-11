@@ -13,6 +13,13 @@ this.warhound_item <- this.inherit("scripts/items/accessory/accessory", {
 	},
 	function isAllowedInBag()
 	{
+		if (this.getContainer() != null)
+		{
+			if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_packleader"))
+			{
+			return true;
+			}
+		}		
 		return false;
 	}
 
@@ -73,8 +80,30 @@ this.warhound_item <- this.inherit("scripts/items/accessory/accessory", {
 		this.m.ShowOnCharacter = false;
 		this.m.IsChangeableInBattle = false;
 		this.m.Value = 250;
+
+		local roster = this.World.getPlayerRoster().getAll();
+        foreach( bro in roster )
+        {
+            if (bro.getSkills().hasSkill("perk.legend_packleader"))
+            {
+				this.m.IsAllowedInBag = true;
+				this.m.IsChangeableInBattle = true;
+            }
+		}
 	}
 
+	function onUpdateProperties( _properties )
+	{
+		if (this.getContainer() != null)
+		{
+			if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_packleader"))
+			{
+			this.m.IsAllowedInBag = true;
+			this.m.IsChangeableInBattle = true;
+			}
+		}
+
+	}
 	function playInventorySound( _eventType )
 	{
 		this.Sound.play("sounds/inventory/wardog_inventory_0" + this.Math.rand(1, 3) + ".wav", this.Const.Sound.Volume.Inventory);
@@ -128,7 +157,12 @@ this.warhound_item <- this.inherit("scripts/items/accessory/accessory", {
 			entity.setVariant(this.getVariant());
 			this.setEntity(entity);
 			entity.setFaction(this.Const.Faction.PlayerAnimals);
-
+			if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_dogwhisperer"))
+				{
+				entity.getSkills().add(this.new("scripts/skills/perks/perk_fortified_mind"));
+				entity.getSkills().add(this.new("scripts/skills/perks/perk_colossus"));
+				entity.getSkills().add(this.new("scripts/skills/perks/perk_underdog"));
+				}
 			if (this.m.ArmorScript != null)
 			{
 				local item = this.new(this.m.ArmorScript);

@@ -4,7 +4,7 @@ this.legends_beggar_scenario <- this.inherit("scripts/scenarios/world/starting_s
 	{
 		this.m.ID = "scenario.legends_beggar";
 		this.m.Name = "Beggar Challenge";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_70.png[/img][/p][p]A lowly unskilled beggar, you witnessed something in an alley and now a noble house wants you dead. This is a challenge run only. \n\n[color=#bcad8c]Knows too much:[/color] All noble houses hate you.\n[color=#bcad8c]Avatar[/color]:  If the beggar dies, the campaign ends.\n[color=#bcad8c]Dirty Peasant[/color]: Can never hire anyone that isn\'t a lowborn peasant.[/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_70.png[/img][/p][p]A lowly unskilled beggar, you witnessed something in an alley and now a noble house wants you dead. This is a challenge run only. \n\n[color=#bcad8c]Knows Too Much:[/color] All noble houses hate you.\n[color=#bcad8c]Avatar[/color]:  If the beggar dies, the campaign ends.\n[color=#bcad8c]Dirty Peasant[/color]: Can never hire anyone that isn\'t a lowborn peasant.[/p]";
 		this.m.Difficulty = 3;
 		this.m.Order = 6;
 	}
@@ -129,19 +129,6 @@ this.legends_beggar_scenario <- this.inherit("scripts/scenarios/world/starting_s
 			], this.Const.Music.CrossFadeTime);
 			this.World.Events.fire("event.legend_beggar_scenario_intro");
 		}, null);
-
-			if(this.Const.LegendMod.Configs.LegendCampUnlockEnabled())
-			{
-				this.World.Tags.set("HasLegendCampGathering", true);
-				this.World.Tags.set("HasLegendCampBarber", true);
-				this.World.Tags.set("HasLegendCampCrafting", true);
-				this.World.Tags.set("HasLegendCampFletching", true);
-				this.World.Tags.set("HasLegendCampHealing", true);
-				this.World.Tags.set("HasLegendCampHunting", true);
-				this.World.Tags.set("HasLegendCampScouting", true);
-				this.World.Tags.set("HasLegendCampScraping", true);
-				this.World.Tags.set("HasLegendCampTraining", true);			
-			}
 
 	}
 

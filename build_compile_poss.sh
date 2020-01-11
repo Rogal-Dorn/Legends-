@@ -40,7 +40,7 @@ while read -r line; do
         echo "skipping $line"
     elif [ "$line" == "scripts/ai/tactical/behaviors/ai_attack_lash.nut" ]; then
         echo "skipping $line"
-    elif [ "$line" == "scripts/ai/tactical/behaviors/ai_attack_swallow+whole.nut" ]; then
+    elif [ "$line" == "scripts/ai/tactical/behaviors/ai_attack_swallow_whole.nut" ]; then
         echo "skipping $line"
     elif [ "$line" == "scripts/ai/tactical/behaviors/ai_hook.nut" ]; then
         echo "skipping $line"
@@ -51,7 +51,7 @@ while read -r line; do
     elif [ "$line" == "scripts/factions/faction_action.nut" ]; then
         echo "skipping $line"
     elif [ "$line" == "scripts/skills/racial/alp_racial.nut" ]; then
-        echo "skipping $line"             
+        echo "skipping $line"
     else
         echo "$line"
         path=$( echo ${line%/*} )
@@ -70,6 +70,7 @@ cd ../bin
 ./bbrusher.exe pack --gfxPath "../Repo/" ../Repo/brushes/legend_world.brush ../Repo/unpacked/legend_world
 ./bbrusher.exe pack --gfxPath "../Repo/" ../Repo/brushes/legends_ui.brush ../Repo/unpacked/legends_ui
 ./bbrusher.exe pack --gfxPath "../Repo/" ../Repo/brushes/legend_horses.brush ../Repo/unpacked/legend_horses
+python ../Repo/unpacked/make_legend_armor.py
 ./bbrusher.exe pack --gfxPath "../Repo/" ../Repo/brushes/legend_armor.brush ../Repo/unpacked/legend_armor
 ./bbrusher.exe pack --gfxPath "../Repo/" ../Repo/brushes/legend_objects.brush ../Repo/unpacked/legend_objects
 ./masscompile.bat "c:\Steam\steamapps\common\Battle Brothers\data\scripts"

@@ -163,6 +163,12 @@ this.unleash_wardog <- this.inherit("scripts/skills/skill", {
 		entity.setName(this.m.Item.getName());
 		entity.setVariant(this.m.Item.getVariant());
 		this.m.Item.setEntity(entity);
+				if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_dogwhisperer"))
+				{
+				entity.getSkills().add(this.new("scripts/skills/perks/perk_fortified_mind"));
+				entity.getSkills().add(this.new("scripts/skills/perks/perk_colossus"));
+				entity.getSkills().add(this.new("scripts/skills/perks/perk_underdog"));
+				}
 
 		if (this.m.Item.getArmorScript() != null)
 		{

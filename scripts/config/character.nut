@@ -991,6 +991,7 @@ gt.Const.CharacterProperties <- {
 	IsSpecializedInShields = false,
 	IsSpecializedInShieldPush = false,
 	IsSpecializedInNets = false,
+	IsSpecializedInNetCasting = false,
 	IsSpecializedInFists = false,
 	IsSpecializedInSlings = false,
 	IsSpecializedInStaves = false,

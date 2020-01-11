@@ -4,4 +4,5 @@
 	o.m.PossibleSkills.push("actives.legend_aimed_rock");
 	o.m.PossibleSkills.push("actives.legend_magic_missile");
 	o.m.PossibleSkills.push("actives.legend_catapult_boulder");
+	o.m.PossibleSkills.push("actives.legend_sling_heavy_stone");
 });

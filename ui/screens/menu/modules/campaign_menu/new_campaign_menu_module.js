@@ -241,6 +241,10 @@ var NewCampaignMenuModule = function () {
 	this.mLegendCampUnlockCheckboxLabel = null;
 	this.mLegendRecruitScalingCheckbox = null;
 	this.mLegendRecruitScalingCheckboxLabel = null;
+	this.mLegendBleedKillerCheckbox = null;
+	this.mLegendBleedKillerCheckboxLabel = null;
+	this.mLegendAllBlueprintsCheckbox = null;
+	this.mLegendAllBlueprintsCheckboxLabel = null;
 	// generics
 	this.mIsVisible = false;
 };
@@ -1117,6 +1121,37 @@ NewCampaignMenuModule.prototype.buildConfigPage = function () {
 	});
 	this.mLegendRecruitScalingCheckbox.iCheck('check');
 
+	var row = $('<div class="row"></div>');
+	leftColumn.append(row);
+	var control = $('<div class="control"/>');
+	row.append(control);
+	this.mLegendBleedKillerCheckbox = $('<input type="checkbox" id="cb-legendbleedkiller"/>');
+	control.append(this.mLegendBleedKillerCheckbox);
+	this.mLegendBleedKillerCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendbleedkiller">Bleeds Count As Kills</label>');
+	control.append(this.mLegendBleedKillerCheckboxLabel);
+	this.mLegendBleedKillerCheckbox.iCheck({
+		checkboxClass: 'icheckbox_flat-orange',
+		radioClass: 'iradio_flat-orange',
+		increaseArea: '30%'
+	});
+	this.mLegendBleedKillerCheckbox.iCheck('check');
+
+	var row = $('<div class="row"></div>');
+	rightColumn.append(row);
+	var control = $('<div class="control"/>');
+	row.append(control);
+	this.mLegendAllBlueprintsCheckbox = $('<input type="checkbox" id="cb-legendallblueprints"/>');
+	control.append(this.mLegendAllBlueprintsCheckbox);
+	this.mLegendAllBlueprintsCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendallblueprints">All Crafting Recipies Unlocked</label>');
+	control.append(this.mLegendAllBlueprintsCheckboxLabel);
+	this.mLegendAllBlueprintsCheckbox.iCheck({
+		checkboxClass: 'icheckbox_flat-orange',
+		radioClass: 'iradio_flat-orange',
+		increaseArea: '30%'
+	});
+	this.mLegendAllBlueprintsCheckbox.iCheck('check');
+
+
 };
 
 NewCampaignMenuModule.prototype.updateMapConfig = function () {
@@ -1556,6 +1591,24 @@ NewCampaignMenuModule.prototype.bindTooltips = function () {
 		elementId: 'mapconfig.legendrecruitscaling'
 	});
 
+	this.mLegendBleedKillerCheckbox.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.legendbleedkiller'
+	});
+	this.mLegendBleedKillerCheckboxLabel.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.legendbleedkiller'
+	});
+	
+	this.mLegendAllBlueprintsCheckbox.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.legendallblueprints'
+	});
+	this.mLegendAllBlueprintsCheckboxLabel.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.legendallblueprints'
+	});	
+
 };
 
 NewCampaignMenuModule.prototype.unbindTooltips = function () {
@@ -1690,6 +1743,13 @@ NewCampaignMenuModule.prototype.unbindTooltips = function () {
 
 	this.mLegendRecruitScalingCheckbox.unbindTooltip();
 	this.mLegendRecruitScalingCheckboxLabel.unbindTooltip();
+
+	this.mLegendBleedKillerCheckbox.unbindTooltip();
+	this.mLegendBleedKillerCheckboxLabel.unbindTooltip();
+	
+	this.mLegendAllBlueprintsCheckbox.unbindTooltip();
+	this.mLegendAllBlueprintsCheckboxLabel.unbindTooltip();	
+	
 };
 
 
@@ -2022,6 +2082,8 @@ NewCampaignMenuModule.prototype.collectSettings = function () {
 	settings.push(this.mLegendLocationScalingCheckbox.is(":checked"));
 	settings.push(this.mLegendCampUnlockCheckbox.is(":checked"));
 	settings.push(this.mLegendRecruitScalingCheckbox.is(":checked"));
+	settings.push(this.mLegendBleedKillerCheckbox.is(":checked"));
+	settings.push(this.mLegendAllBlueprintsCheckbox.is(":checked"));
 	return settings;
 }
 
