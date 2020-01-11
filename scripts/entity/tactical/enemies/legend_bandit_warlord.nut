@@ -189,11 +189,7 @@ this.legend_bandit_warlord <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.Math.rand(1, 100) > 50)
 		{
-			if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
-			{
-				this.m.Items.equip(this.new("scripts/items/" + this.Const.Items.LegendNamedArmors[this.Math.rand(0, this.Const.Items.LegendNamedArmors.len() - 1)]));
-			}
-			else
+			if (!this.Const.LegendMod.Configs.LegendArmorsEnabled())
 			{
 				this.m.Items.equip(this.new("scripts/items/" + this.Const.Items.NamedArmors[this.Math.rand(0, this.Const.Items.NamedArmors.len() - 1)]));
 			}
@@ -227,6 +223,10 @@ this.legend_bandit_warlord <- this.inherit("scripts/entity/tactical/human", {
 					[
 						60,
 						"cloth/legend_gambeson_rare_color"
+					],
+					[
+						10,
+						"cloth/legend_gambeson_named"
 					],
 					[
 						20,
@@ -317,6 +317,10 @@ this.legend_bandit_warlord <- this.inherit("scripts/entity/tactical/human", {
 						[
 							1,
 							"chain/legend_armor_hauberk_full"
+						],
+						[
+							1,
+							"chain/legend_armor_hauberk_full_named"
 						],
 						[
 							0,
@@ -474,7 +478,12 @@ this.legend_bandit_warlord <- this.inherit("scripts/entity/tactical/human", {
 						[
 							1,
 							"plate/legend_armor_scale_shirt"
-						]
+						],
+						[1, "plate/legend_armor_plate_full_greaves_painted"],
+						[1, "plate/legend_armor_leather_jacket_named"],
+						[1, "plate/legend_armor_leather_lamellar_heavy_named"],
+						[1, "plate/legend_armor_leather_brigandine_named"],
+						[1, "plate/legend_armor_scale_coat_named"]
 					];
 					local plate = this.Const.World.Common.pickLegendArmor(plates);
 
@@ -483,6 +492,16 @@ this.legend_bandit_warlord <- this.inherit("scripts/entity/tactical/human", {
 						armor.setUpgrade(plate);
 					}
 
+					local upgrades = [
+						[0, ""],
+						[1, "cloak/legend_armor_cloak"],
+						[1, "cloak/legend_armor_cloak_rich"]
+					];
+					local upgrade = this.Const.World.Common.pickLegendArmor(upgrades)
+					if (upgrade != null)
+					{
+						armor.setUpgrade(upgrade)
+					}
 					this.m.Items.equip(armor);
 				}
 			}

@@ -21,13 +21,12 @@ this.perk_legend_lacerate <- this.inherit("scripts/skills/skill", {
 
 	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
-		this.m.TilesUsed = [];
 		if (!_targetEntity.isAlive() || _targetEntity.isDying())
 		{
 			return false;
 		}
 		
-		if (_targetEntity.getCurrentProperties().IsImmuneToBleed)
+		if (_targetEntity.getCurrentProperties().IsImmuneToBleeding)
 		{
 			return false;
 		}

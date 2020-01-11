@@ -57,23 +57,6 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 		this.m.Beards = this.Const.Beards.Tidy;
 		this.m.Body = "bust_naked_body_02";
 
-		local r = this.Math.rand(0, 9);
-		if (this.Const.LegendMod.Configs.LegendGenderEnabled())
-		{
-			r = this.Math.rand(0, 1);
-		}
-
-		if (r == 0)
-		{
-			this.m.Faces = this.Const.Faces.PrettyFemale;
-			this.m.Hairs = this.Const.Hair.AllFemale;
-			this.m.HairColors = this.Const.HairColors.All;
-			this.m.Beards = null;
-			this.m.BeardChance = 0;
-			this.m.Body = "bust_naked_body_03";
-			this.m.IsFemaleBackground = true;
-		}
-
 		this.m.Level = 3;
 		this.m.IsOutlawBackground = true;
 		this.m.IsUntalented = true;
@@ -188,6 +171,32 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 		];
 	}
 
+	//Default Male
+	function setGender(_gender = -1)
+	{
+		local r = _gender;
+		if (_gender == -1)
+		{
+			r = this.Math.rand(0, 9);
+			if (this.Const.LegendMod.Configs.LegendGenderEnabled())
+			{
+				r = this.Math.rand(0, 1);
+			}
+		}
+
+		if (r != 1)
+		{
+			return;
+		}
+		this.m.Faces = this.Const.Faces.PrettyFemale;
+		this.m.Hairs = this.Const.Hair.AllFemale;
+		this.m.HairColors = this.Const.HairColors.All;
+		this.m.Beards = null;
+		this.m.BeardChance = 0;
+		this.m.Body = "bust_naked_body_03";
+		this.m.IsFemaleBackground = true;
+	}
+
 	function getTooltip()
 	{
 		return [
@@ -294,7 +303,7 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 	{
 		this.character_background.onAdded();
 		local actor = this.getContainer().getActor();
-		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_hidden"));
+		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_hidden"));
 		this.m.Container.add(this.new("scripts/skills/traits/quick_trait"));
 		//this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
 	}

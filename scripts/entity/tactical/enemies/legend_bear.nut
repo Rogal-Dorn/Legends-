@@ -35,7 +35,7 @@ this.legend_bear <- this.inherit("scripts/entity/tactical/actor", {
 		];
 		this.m.SoundPitch = this.Math.rand(0.9, 1.1);
 		this.m.SoundVolumeOverall = 1.25;
-		this.m.AIAgent = this.new("scripts/ai/tactical/agents/unhold_agent");
+		this.m.AIAgent = this.new("scripts/ai/tactical/agents/bear_agent");
 		this.m.AIAgent.setActor(this);
 	}
 
@@ -173,8 +173,10 @@ this.legend_bear <- this.inherit("scripts/entity/tactical/actor", {
 					loot = this.new("scripts/items/misc/furs_item");
 				}
 
-
-				loot.drop(_tile);
+				if (loot != null)
+				{
+					loot.drop(_tile);
+				}
 			}
 
 			if (this.Math.rand(1, 100) <= 66)
@@ -235,7 +237,7 @@ this.legend_bear <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_battering_ram"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_stalwart"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_hold_out"));
-		this.m.Skills.add(this.new("scripts/skills/perks/berserk"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_berserk"));
 		this.m.Skills.add(this.new("scripts/skills/actives/legend_grapple"));
 		this.m.Skills.add(this.new("scripts/skills/actives/legend_bear_bite"));
 		this.m.Skills.add(this.new("scripts/skills/actives/legend_bear_claws"));

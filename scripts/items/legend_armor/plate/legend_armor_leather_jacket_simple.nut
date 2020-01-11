@@ -8,7 +8,8 @@ this.legend_armor_leather_jacket_simple <- this.inherit("scripts/items/legend_ar
 		this.m.Name = "Simple Leather Jacket";
 		this.m.Description = "A simple leather jacket for minimal protection."
 		this.m.ArmorDescription = "Includes a simple leather jacket for added protection.";
-		this.m.Variant = this.Math.rand(1, 6);
+		this.m.Variants = [1,2,3,4,5,6];
+		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.Value = 30;
 		this.m.Condition = 10;

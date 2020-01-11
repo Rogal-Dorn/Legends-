@@ -4,7 +4,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	{
 		this.m.ID = "scenario.legends_noble";
 		this.m.Name = "Noble";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_96.png[/img][/p][p]Born to a noble family, you were born to rule. With your trusted men at your side, it is time to conquer the world, as is your birthright.\n\n[color=#bcad8c]Usurper:[/color] Start as a noble, with your retainers a noble house that wants to hunt you down.\n[color=#bcad8c]Highborn:[/color]Noble and military recruits support your cause and will cost 10% less, anyone else will cost 10% more.\n[color=#bcad8c]Trained leader:[/color]Your studies at the academy gave tactical and campaign skills, everyone begins with quick hands\n[color=#bcad8c]Avatar:[/color] if your character dies, it is game over[/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_96.png[/img][/p][p]Born to a noble family, you were born to rule. With your trusted men at your side, it is time to conquer the world, as is your birthright.\n\n[color=#bcad8c]Usurper:[/color] Start as a noble, with your retainers a noble house that wants to hunt you down.\n[color=#bcad8c]Highborn:[/color] Noble and military recruits support your cause and will cost 10% less, anyone else will cost 10% more.\n[color=#bcad8c]Trained leader:[/color] Your studies at the academy gave tactical and campaign skills, everyone begins with quick hands.\n[color=#bcad8c]Avatar:[/color] if your character dies, it is game over.[/p]";
 		this.m.Difficulty = 2;
 		this.m.Order = 14;
 	}
@@ -81,18 +81,6 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		this.World.getCamera().setPos(this.World.State.m.Player.getPos());
 		local f = randomVillage.getFactionOfType(this.Const.FactionType.NobleHouse);
 		f.addPlayerRelation(-100.0, "You picked the wrong faction");
-		if(this.Const.LegendMod.Configs.LegendCampUnlockEnabled())
-		{
-			this.World.Tags.set("HasLegendCampGathering", true);
-			this.World.Tags.set("HasLegendCampBarber", true);
-			this.World.Tags.set("HasLegendCampCrafting", true);
-			this.World.Tags.set("HasLegendCampFletching", true);
-			this.World.Tags.set("HasLegendCampHealing", true);
-			this.World.Tags.set("HasLegendCampHunting", true);
-			this.World.Tags.set("HasLegendCampScouting", true);
-			this.World.Tags.set("HasLegendCampScraping", true);
-			this.World.Tags.set("HasLegendCampTraining", true);			
-		}
 		local names = [];
 
 		for( local i = 0; i < 6; i = ++i )
@@ -127,6 +115,9 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[0].setPlaceInFormation(14);
 		bros[0].setVeteranPerks(2);
 		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_quick_hands"));
+		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_roster_2"));
+		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_roster_4"));
+		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_rally_the_troops"));
 		bros[1].setStartValuesEx([
 		"legend_noble_shield"
 		]);

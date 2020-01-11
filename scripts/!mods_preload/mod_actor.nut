@@ -7,7 +7,56 @@
         o.m.DeathBloodAmount = 1.5;
         o.m.BloodPoolScale = 1.25;
 		o.m.RiderID <- "";
+		o.m.FlatOnKillOtherActorModifier <- 0;
+		o.m.PercentOnKillOtherActorModifier <- 1.0;
     }
+
+	o.onOtherActorDeath <- function ( _killer, _victim, _skill )
+	{
+		if (!this.m.IsAlive || this.m.IsDying)
+		{
+			return;
+		}
+
+		if (_victim.getXPValue() == 0)
+		{
+			return;
+		}
+
+		if (_victim.getFaction() == this.getFaction() && _victim.getCurrentProperties().TargetAttractionMult > 0.5 && this.getCurrentProperties().IsAffectedByDyingAllies)
+		{
+			local difficulty = this.Math.floor((this.Const.Morale.AllyKilledBaseDifficulty - _victim.getXPValue() * this.Const.Morale.AllyKilledXPMult + this.Math.pow(_victim.getTile().getDistanceTo(this.getTile()), this.Const.Morale.AllyKilledDistancePow)) * _killer.getPercentOnKillOtherActorModifier()) + _killer.getFlatOnKillOtherActorModifier();
+			this.checkMorale(-1, difficulty, this.Const.MoraleCheckType.Default, "", true);
+		}
+		else if (this.getAlliedFactions().find(_victim.getFaction()) == null)
+		{
+			local difficulty = this.Const.Morale.EnemyKilledBaseDifficulty + _victim.getXPValue() * this.Const.Morale.EnemyKilledXPMult - this.Math.pow(_victim.getTile().getDistanceTo(this.getTile()), this.Const.Morale.EnemyKilledDistancePow);
+
+			if (_killer != null && _killer.isAlive() && _killer.getID() == this.getID())
+			{
+				difficulty = difficulty + this.Const.Morale.EnemyKilledSelfBonus;
+			}
+
+			this.checkMorale(1, difficulty);
+		}
+	}
+
+	o.getPercentOnKillOtherActorModifier <- function ()
+	{
+		return this.m.PercentOnKillOtherActorModifier;
+	}
+	o.modifyPercentOnKillOtherActorModifier <- function ( _value ) 
+	{
+		this.m.PercentOnKillOtherActorModifier *= _value;
+	}
+	o.getFlatOnKillOtherActorModifier <- function ()
+	{
+		return this.m.FlatOnKillOtherActorModifier;
+	}
+	o.modifyFlatOnKillOtherActorModifier <- function ( _value )
+	{
+		this.m.FlatOnKillOtherActorModifier += _value;
+	}
 
 	o.isStabled <- function ()
 	{
@@ -441,6 +490,8 @@
 			this.m.RiderID = _in.readString();
 		}
 	}
+
+
 
     // local onResurrected = o.onResurrected;
     // o.onResurrected = function ( _info )

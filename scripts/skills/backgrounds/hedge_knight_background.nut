@@ -9,8 +9,8 @@ this.hedge_knight_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.BackgroundDescription = "Hedge Knights are competitive individuals that excel in fighting man against man with brute strength and heavy armor, but less so in cooperating with others or in swiftness.";
 		this.m.GoodEnding = "A man like %name% would always find a way. The hedge knight eventually, if not inevitably, left the company and set out on his own. Unlike many other brothers, he did not spend his crowns on land or ladders with which to climb the noble life. Instead, he bought himself the finest war horses and the talents of armorers. The behemoth of a man rode from one jousting tournament to the next, winning them all with ease. He\'s still at it to this day, and you think he won\'t stop until he\'s dead. The hedge knight simply knows no other life.";
 		this.m.BadEnding = "%name% the hedge knight eventually left the company. He traveled the lands, returning to his favorite past time of jousting, which was really a cover for his real favorite past time of lancing men off horses in a shower of splinters and glory. At some point, he was ordered to \'throw\' a match against a pitiful and gangly prince to earn the nobleman some prestige. Instead, the hedge knight drove his lance through the man\'s skull. Furious, the lord of the land ordered the hedge knight killed. They say over a hundred soldiers took to his home and only half returned alive.";
-		this.m.HiringCost = 250;
-		this.m.DailyCost = 35;
+		this.m.HiringCost = 500;
+		this.m.DailyCost = 50;
 		this.m.Excluded = [
 			"trait.weasel",
 			"trait.teamplayer",
@@ -89,7 +89,7 @@ this.hedge_knight_background <- this.inherit("scripts/skills/backgrounds/charact
 				this.Const.Perks.PolearmTree,
 				this.Const.Perks.AxeTree,
 				this.Const.Perks.MaceTree,
-				this.Const.Perks.HammerTree,
+				this.Const.Perks.FlailTree,
 				this.Const.Perks.CrossbowTree
 			],
 			Defense = [
@@ -99,6 +99,9 @@ this.hedge_knight_background <- this.inherit("scripts/skills/backgrounds/charact
 				this.Const.Perks.TrainedTree,
 				this.Const.Perks.ViciousTree,
 				this.Const.Perks.LargeTree,
+				this.Const.Perks.IndestructibleTree,
+				this.Const.Perks.MartyrTree,
+				this.Const.Perks.TrainedTree,
 				this.Const.Perks.FitTree
 			],
 			Enemy = [this.Const.Perks.SwordmastersTree],
@@ -340,7 +343,7 @@ this.hedge_knight_background <- this.inherit("scripts/skills/backgrounds/charact
 				[1, "chain/legend_armor_short_mail"]
 			]
 			local chain = this.Const.World.Common.pickLegendArmor(chains)
-			if (chain != null && r > 1)
+			if (chain != null)
 			{
 				armor.setUpgrade(chain)
 			}
@@ -378,7 +381,7 @@ this.hedge_knight_background <- this.inherit("scripts/skills/backgrounds/charact
 				[0, "plate/legend_armor_scale_shirt"]
 			]
 			local plate = this.Const.World.Common.pickLegendArmor(plates)
-			if (plate != null && r > 2)
+			if (plate != null)
 			{
 				armor.setUpgrade(plate)
 			}

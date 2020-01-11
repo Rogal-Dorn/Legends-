@@ -4,7 +4,7 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 	{
 		this.m.ID = "scenario.legends_crusader";
 		this.m.Name = "Crusader";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_35.png[/img][/p][p]Sent on a holy quest to rid the world of undead, you walk a righteous path alone. \n\n[color=#bcad8c]Pure of heart:[/color] Can not recruit outlaw backgrounds, pious backgrounds will cost less\n[color=#bcad8c]Strict Sermons[/color] Anyone you fight with gains Fortified Mind.\n[color=#bcad8c]Avatar:[/color] If your crusader dies, the campaign ends.[/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_35.png[/img][/p][p]Sent on a holy quest to rid the world of undead, you walk a righteous path alone. \n\n[color=#bcad8c]Pure of heart:[/color] Can not recruit outlaw backgrounds, pious backgrounds will cost less\n[color=#bcad8c]Strict Sermons:[/color] Anyone you fight with gains Fortified Mind.\n[color=#bcad8c]Avatar:[/color] If your crusader dies, the campaign ends.[/p]";
 		this.m.Difficulty = 3;
 		this.m.Order = 8;
 		this.m.IsFixedLook = true;
@@ -25,6 +25,8 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 		]);
 		bro.getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
 		bro.getSkills().add(this.new("scripts/skills/perks/perk_fortified_mind"));
+		bro.getSkills().add(this.new("scripts/skills/perks/perk_rebound"));
+		bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_roster_1"));
 		bro.setPlaceInFormation(4);
 		bro.setVeteranPerks(2);
 		bro.getTags().set("IsPlayerCharacter", true);
@@ -97,18 +99,6 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 			this.World.Events.fire("event.legend_crusader_scenario_intro");
 		}, null);
 
-			if(this.Const.LegendMod.Configs.LegendCampUnlockEnabled())
-			{
-				this.World.Tags.set("HasLegendCampGathering", true);
-				this.World.Tags.set("HasLegendCampBarber", true);
-				this.World.Tags.set("HasLegendCampCrafting", true);
-				this.World.Tags.set("HasLegendCampFletching", true);
-				this.World.Tags.set("HasLegendCampHealing", true);
-				this.World.Tags.set("HasLegendCampHunting", true);
-				this.World.Tags.set("HasLegendCampScouting", true);
-				this.World.Tags.set("HasLegendCampScraping", true);
-				this.World.Tags.set("HasLegendCampTraining", true);			
-			}
 	}
 
 	function onInit()

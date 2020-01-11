@@ -35,50 +35,15 @@ this.sellsword_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Body = "bust_naked_body_01";
 
-		if (this.Const.LegendMod.Configs.LegendGenderEnabled())
-		{
-			local r = this.Math.rand(0, 1);
-			if (r == 0)
-			{
-				this.m.Faces = this.Const.Faces.AllFemale;
-				this.m.Hairs = this.Const.Hair.AllFemale;
-				this.m.HairColors = this.Const.HairColors.Young;
-				this.m.Beards = null;
-				this.m.BeardChance = 1;
-				this.m.Body = "bust_naked_body_03";
-				this.m.IsFemaleBackground = true;
-				this.m.BackgroundDescription = "Sellswords are expensive, but a life of warfare has forged them into skilled fighters.";
-				this.m.GoodEnding = "%name% the sellsword left the %companyname% and started her own mercenary company. As far as you know, it\'s a very successful venture and she often buddies up with the mercenaries of the %companyname% to work together.";
-				this.m.BadEnding = "%name% left the %companyname% and started her own competing company. The two companies clashed on opposite sides of a battle between nobles. The sellsword died when a mercenary from the %companyname% stove her head in with a hedge knight\'s helmet.";
-			}
-		}
-
 		this.m.Level = this.Math.rand(2, 4);
 		this.m.IsCombatBackground = true;
-
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Chivalrous;
 		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[1];
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[1];
 		this.m.Modifiers.Repair = this.Const.LegendMod.ResourceModifiers.Repair[1];
 		this.m.Modifiers.Salvage = this.Const.LegendMod.ResourceModifiers.Salvage[1];
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[2];
-		if (this.World.Assets.getMoralReputation() < 60 && this.World.Assets.getMoralReputation() > 40) //checks if the player is neutral
-		{
-				local roster = this.World.getPlayerRoster().getAll();
-				local levels = 0;
-				local count = 0;
-				foreach( i, bro in roster )
-					{
-					local brolevel = bro.getLevel();
-					levels += brolevel;
-					count += 1;
-					}
-				local avgLevel = this.Math.floor(levels / count);					// gets the average of player levels
-				local busRep = this.World.Assets.getBusinessReputation();			//checks how reliable the player is
-				local repPoints = this.Math.floor(busRep / 1000);					// turns that rep into points
-				local repLevelAvg =  this.Math.floor((avgLevel + repPoints) / 4);	// Averages levels and points and
-				local broLevel = this.Math.rand(1, repLevelAvg);					// level is randomly chosen up to our score
-				this.m.Level += broLevel;										
-		}
 		this.m.PerkTreeDynamicMins.Defense = 3;
 		this.m.PerkTreeDynamicMins.Enemy = 2;
 		this.m.PerkTreeDynamic = {
@@ -104,6 +69,36 @@ this.sellsword_background <- this.inherit("scripts/skills/backgrounds/character_
 			],
 			Class = []
 		}
+	}
+
+	//Default Male
+	function setGender(_gender = -1)
+	{
+		local r = _gender;
+		if (_gender == -1)
+		{
+			r = 0;
+			if (this.Const.LegendMod.Configs.LegendGenderEnabled())
+			{
+				r = this.Math.rand(0, 1);
+			}
+		}
+
+		if (r != 1)
+		{
+			return
+		}
+		this.m.Faces = this.Const.Faces.AllFemale;
+		this.m.Hairs = this.Const.Hair.AllFemale;
+		this.m.HairColors = this.Const.HairColors.Young;
+		this.m.Beards = null;
+		this.m.BeardChance = 1;
+		this.m.Body = "bust_naked_body_03";
+		this.m.IsFemaleBackground = true;
+		this.m.BackgroundDescription = "Sellswords are expensive, but a life of warfare has forged them into skilled fighters.";
+		this.m.GoodEnding = "%name% the sellsword left the %companyname% and started her own mercenary company. As far as you know, it\'s a very successful venture and she often buddies up with the mercenaries of the %companyname% to work together.";
+		this.m.BadEnding = "%name% left the %companyname% and started her own competing company. The two companies clashed on opposite sides of a battle between nobles. The sellsword died when a mercenary from the %companyname% stove her head in with a hedge knight\'s helmet.";
+
 	}
 
 	function getTooltip()
@@ -507,6 +502,5 @@ this.sellsword_background <- this.inherit("scripts/skills/backgrounds/character_
 			items.equip(this.new("scripts/items/helmets/hood"));
 		}
 	}
-
 });
 

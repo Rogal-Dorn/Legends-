@@ -4,6 +4,7 @@ this.legend_stollwurm_helmet_blueprint <- this.inherit("scripts/crafting/bluepri
 	{
 		this.blueprint.create();
 		this.m.ID = "blueprint.legend_stollwurm_helmet";
+		this.m.Type = this.Const.Items.ItemType.Helmet;
 		this.m.PreviewCraftable = this.new("scripts/items/helmets/legendary/legend_stollwurm_helmet");
 		this.m.Cost = 2500;
 		local ingredients = [

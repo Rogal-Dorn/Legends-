@@ -2,7 +2,8 @@
 this.camp_crafting_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 	m = {
 		Title = "Crafting",
-		Description = "While encamped, craft all manner of useful items."
+		Description = "While encamped, craft all manner of useful items.",
+		InventoryFilter = this.Const.Items.ItemFilter.All
 	},
 	function create()
 	{
@@ -27,7 +28,7 @@ this.camp_crafting_dialog_module <- this.inherit("scripts/ui/screens/ui_module",
 			Title = this.m.Title,
 			SubTitle = this.m.Description,
 			Assets = this.assetsInformation(),
-			Blueprints = this.World.Crafting.getQualifiedBlueprintsForUI(),
+			Blueprints = this.World.Crafting.getQualifiedBlueprintsForUI(this.m.InventoryFilter),
 			Queue = this.getTent().getQueue()
 		};
 		return result;
@@ -87,6 +88,59 @@ this.camp_crafting_dialog_module <- this.inherit("scripts/ui/screens/ui_module",
 	function onBrothersButtonPressed()
 	{
 		this.m.Parent.onCommanderButtonPressed();
+	}
+
+	function loadBlueprints()
+	{
+		local result = {
+			Blueprints = this.World.Crafting.getQualifiedBlueprintsForUI(this.m.InventoryFilter),
+		};
+		this.m.JSHandle.asyncCall("loadFromData", result);
+	}
+
+	function onFilterAll()
+	{
+		if (this.m.InventoryFilter != this.Const.Items.ItemFilter.All)
+		{
+			this.m.InventoryFilter = this.Const.Items.ItemFilter.All;
+			this.loadBlueprints();
+		}
+	}
+
+	function onFilterWeapons()
+	{
+		if (this.m.InventoryFilter != this.Const.Items.ItemFilter.Weapons)
+		{
+			this.m.InventoryFilter = this.Const.Items.ItemFilter.Weapons;
+			this.loadBlueprints();
+		}
+	}
+
+	function onFilterArmor()
+	{
+		if (this.m.InventoryFilter != this.Const.Items.ItemFilter.Armor)
+		{
+			this.m.InventoryFilter = this.Const.Items.ItemFilter.Armor;
+			this.loadBlueprints();
+		}
+	}
+
+	function onFilterMisc()
+	{
+		if (this.m.InventoryFilter != this.Const.Items.ItemFilter.Misc)
+		{
+			this.m.InventoryFilter = this.Const.Items.ItemFilter.Misc;
+			this.loadBlueprints();
+		}
+	}
+
+	function onFilterUsable()
+	{
+		if (this.m.InventoryFilter != this.Const.Items.ItemFilter.Usable)
+		{
+			this.m.InventoryFilter = this.Const.Items.ItemFilter.Usable;
+			this.loadBlueprints();
+		}
 	}
 
 

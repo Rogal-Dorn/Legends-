@@ -10,8 +10,8 @@ this.peddler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.BackgroundDescription = "Peddlers are not used to hard physical labor or warfare, but they do excel at haggling for good prices.";
 		this.m.GoodEnding = "A lover of the sale, %name% the peddler couldn\'t stay fighting for long. They eventually left the %companyname% to go out and start their own business. Recently, you got word that they were selling trinkets with the company\'s sigil on them. You specifically told them to do whatever they wanted except just this one thing, but apparently your warning merely fostered the idea. When you went to tell them to stop, they slammed a crown-bulging satchel on a rather ornate table, saying it was your \'cut.\' They sell those trinkets to this day.";
 		this.m.BadEnding = "With hard times hitting the %companyname%, many brothers saw fit to return to their old lives. %name% the peddler was no different. Last you heard they got the tar beaten out of them trying to sell stolen wares that \'fell off the wagon\' to the very merchant which they originally belonged.";
-		this.m.HiringCost = 60;
-		this.m.DailyCost = 6;
+		this.m.HiringCost = 600;
+		this.m.DailyCost = 12;
 		this.m.Excluded = [
 			"trait.huge",
 			"trait.fear_undead",
@@ -36,48 +36,18 @@ this.peddler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Beards = this.Const.Beards.Tidy;
 		this.m.Body = "bust_naked_body_02";
 
-		if (this.Const.LegendMod.Configs.LegendGenderEnabled())
-		{
-			local r = this.Math.rand(0, 1);
-			if (r == 0)
-			{
-				this.m.Faces = this.Const.Faces.AllFemale;
-				this.m.Hairs = this.Const.Hair.AllFemale;
-				this.m.HairColors = this.Const.HairColors.Young;
-				this.m.Beards = null;
-				this.m.BeardChance = 0;
-				this.m.Body = "bust_naked_body_03";
-				this.m.IsFemaleBackground = true;
-			}
-		}
 		this.m.IsLowborn = true;
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Kind;
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[1];
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[1];
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[2];
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[3];
-		if (this.World.Assets.getMoralReputation() < 60 && this.World.Assets.getMoralReputation() > 40) //checks if the player is neutral
-		{
-				local roster = this.World.getPlayerRoster().getAll();
-				local levels = 0;
-				local count = 0;
-				foreach( i, bro in roster )
-					{
-					local brolevel = bro.getLevel();
-					levels += brolevel;
-					count += 1;
-					}
-				local avgLevel = this.Math.floor(levels / count);					// gets the average of player levels
-				local busRep = this.World.Assets.getBusinessReputation();			//checks how reliable the player is
-				local repPoints = this.Math.floor(busRep / 1000);					// turns that rep into points
-				local repLevelAvg =  this.Math.floor((avgLevel + repPoints) / 4);	// Averages levels and points and
-				local broLevel = this.Math.rand(1, repLevelAvg);					// level is randomly chosen up to our score
-				this.m.Level += broLevel;										
-		}
 		this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.StavesTree,
-				this.Const.Perks.SlingsTree,
 				this.Const.Perks.DaggerTree,
+				this.Const.Perks.CrossbowTree,
 				this.Const.Perks.MaceTree
 
 			],
@@ -93,6 +63,33 @@ this.peddler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			Enemy = [this.Const.Perks.BanditTree],
 			Class = [this.Const.Perks.BarterClassTree]
 		}
+	}
+
+	//Default Male
+	function setGender(_gender = -1)
+	{
+		local r = _gender;
+		if (_gender == -1)
+		{
+			r = 0;
+			if (this.Const.LegendMod.Configs.LegendGenderEnabled())
+			{
+				r = this.Math.rand(0, 1);
+			}
+		}
+
+		if (r != 1)
+		{
+			return
+		}
+		this.m.Faces = this.Const.Faces.AllFemale;
+		this.m.Hairs = this.Const.Hair.AllFemale;
+		this.m.HairColors = this.Const.HairColors.Young;
+		this.m.Beards = null;
+		this.m.BeardChance = 0;
+		this.m.Body = "bust_naked_body_03";
+		this.m.IsFemaleBackground = true;
+
 	}
 
 	function getTooltip()
@@ -232,6 +229,5 @@ this.peddler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			items.equip(this.new("scripts/items/helmets/feathered_hat"));
 		}
 	}
-
 });
 

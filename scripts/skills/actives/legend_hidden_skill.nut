@@ -100,7 +100,10 @@ this.legend_hidden_skill <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
-		if (_user.getTile().IsVisibleForPlayer)
+
+			_user.setHidden(true);
+		this.m.Container.add(this.new("scripts/skills/effects/legend_hidden_effect"));
+			if (_user.getTile().IsVisibleForPlayer)
 			{
 				if (this.Const.Tactical.HideParticles.len() != 0)
 				{
@@ -110,9 +113,6 @@ this.legend_hidden_skill <- this.inherit("scripts/skills/skill", {
 					}
 				}
 			}
-
-		this.m.Container.add(this.new("scripts/skills/effects/legend_hidden_effect"));
-		_user.setHidden(true);
 
 		if (!_user.isHiddenToPlayer())
 		{

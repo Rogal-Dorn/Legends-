@@ -4,6 +4,7 @@ this.legend_cured_rations_blueprint <- this.inherit("scripts/crafting/blueprint"
 	{
 		this.blueprint.create();
 		this.m.ID = "blueprint.legend_cured_rations";
+		this.m.Type = this.Const.Items.ItemType.Food;
 		this.m.PreviewCraftable = this.new("scripts/items/supplies/cured_rations_item");
 		this.m.Cost = 10;
 		local ingredients = [
@@ -21,19 +22,13 @@ this.legend_cured_rations_blueprint <- this.inherit("scripts/crafting/blueprint"
 			}
 		];
 		this.init(ingredients);
-	}
+		local skills = [
+			{
+				Scripts = ["scripts/skills/perks/perk_legend_camp_cook"]
+			}
+		]
+		this.initSkills(skills);		
 
-	function isCraftable()
-	{
-		local roster = this.World.getPlayerRoster().getAll();
-        foreach( bro in roster )
-        {
-            if (bro.getSkills().hasSkill("perk.legend_camp_cook"))
-            {
-                return true
-            }
-		}
-		return false;
 	}
 
 	function onCraft( _stash )

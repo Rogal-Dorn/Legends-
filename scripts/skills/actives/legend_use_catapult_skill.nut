@@ -52,6 +52,7 @@ this.legend_use_catapult_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsShowingProjectile = true;
 		this.m.IsWeaponSkill = true;
 		this.m.IsDoingForwardMove = false;
+		this.m.IsHidden = true;
 		this.m.InjuriesOnBody = this.Const.Injury.BluntBody;
 		this.m.InjuriesOnHead = this.Const.Injury.BluntHead;
 		this.m.DirectDamageMult = 0.35;
@@ -142,23 +143,31 @@ this.legend_use_catapult_skill <- this.inherit("scripts/skills/skill", {
 			{
 				if (!myTile.hasNextTile(i))
 				{
+					continue;
 				}
-				else
-				{
-					local tile = myTile.getNextTile(i);
+				
+				local tile = myTile.getNextTile(i);
 
-					if (this.Math.abs(tile.Level - myTile.Level) <= 1 && tile.IsOccupiedByActor && actor.isAlliedWith(tile.getEntity()) && tile.getEntity().getType() == this.Const.EntityType.LegendCatapult)
-					{
-						hasTarget = true;
-						break;
-					}
+				if (this.Math.abs(tile.Level - myTile.Level) <= 1 && tile.IsOccupiedByActor && actor.isAlliedWith(tile.getEntity()) && tile.getEntity().getType() == this.Const.EntityType.LegendCatapult)
+				{
+					hasTarget = true;
+					break;
 				}
+				
 			}
 
 			if (hasTarget)
 			{
-				return false;
+				this.m.IsHidden = false;
 			}
+			else
+			{
+				this.m.IsHidden = true;
+			}
+		}
+		else
+		{
+			this.m.IsHidden = true;
 		}
 
 		return this.skill.isHidden();
@@ -173,11 +182,11 @@ this.legend_use_catapult_skill <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		_properties.DamageRegularMin += 100;
-		_properties.DamageRegularMax += 200;
-		_properties.DamageArmorMult *= 1.5;
-		this.m.ChanceDecapitate = 50;
-		this.m.ChanceDisembowel = 50;
+			_properties.DamageRegularMin += 100;
+			_properties.DamageRegularMax += 200;
+			_properties.DamageArmorMult *= 1.5;
+			this.m.ChanceDecapitate = 50;
+			this.m.ChanceDisembowel = 50;
 	}
 
 	function onAfterUpdate( _properties )

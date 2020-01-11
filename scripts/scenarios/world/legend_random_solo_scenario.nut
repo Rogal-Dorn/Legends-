@@ -4,7 +4,7 @@ this.legend_random_solo_scenario<- this.inherit("scripts/scenarios/world/startin
 	{
 		this.m.ID = "scenario.legend_random_solo";
 		this.m.Name = "Random Solo";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_35.png[/img][/p][p]Striking out on your own, who knows what the world has in store? \n[color=#bcad8c]Random Backgrounds:[/color] Your background will be different each time you start\n[color=#bcad8c]Random equipment:[/color]The equipment you begin with is different each time\n[color=#bcad8c]Avatar:[/color]If you die, its game over[/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_35.png[/img][/p][p]Striking out on your own, who knows what the world has in store?\n\n[color=#bcad8c]Random Backgrounds:[/color] Your background will be different each time you start.\n[color=#bcad8c]Random equipment:[/color] The equipment you begin with is different each time.\n[color=#bcad8c]Avatar:[/color] If you die, its game over.[/p]";
 		this.m.Difficulty = 3;
 		this.m.Order = 18;
 		this.m.IsFixedLook = true;
@@ -96,19 +96,6 @@ this.legend_random_solo_scenario<- this.inherit("scripts/scenarios/world/startin
 			], this.Const.Music.CrossFadeTime);
 			this.World.Events.fire("event.legend_random_solo_scenario_intro");
 		}, null);
-
-		if(this.Const.LegendMod.Configs.LegendCampUnlockEnabled())
-		{
-			this.World.Tags.set("HasLegendCampGathering", true);
-			this.World.Tags.set("HasLegendCampBarber", true);
-			this.World.Tags.set("HasLegendCampCrafting", true);
-			this.World.Tags.set("HasLegendCampFletching", true);
-			this.World.Tags.set("HasLegendCampHealing", true);
-			this.World.Tags.set("HasLegendCampHunting", true);
-			this.World.Tags.set("HasLegendCampScouting", true);
-			this.World.Tags.set("HasLegendCampScraping", true);
-			this.World.Tags.set("HasLegendCampTraining", true);			
-		}
 	}
 
 	function onInit()

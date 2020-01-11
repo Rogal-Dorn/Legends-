@@ -61,21 +61,6 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.Body = "bust_naked_body_03";
 		this.m.IsFemaleBackground = true;
 
-
-		if (this.Const.LegendMod.Configs.LegendGenderEnabled())
-		{
-			local r = this.Math.rand(0, 1);
-			if (r == 0)
-			{
-				this.m.Faces = this.Const.Faces.AllMale;
-				this.m.Hairs = this.Const.Hair.CommonMale;
-				this.m.HairColors = this.Const.HairColors.All;
-				this.m.Beards = this.Const.Beards.All;
-				this.m.Body = "bust_naked_body_01";
-				this.m.IsFemaleBackground = false;
-			}
-		}
-
 		this.m.IsEducatedBackground = true;
 		this.m.IsUntalented = true;
 		this.m.Level = 1;
@@ -239,6 +224,32 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 		}
 	}
 
+	//Default feMale
+	function setGender(_gender = -1)
+	{
+		local r = _gender;
+		if (_gender == -1)
+		{
+			r = 1;
+			if (this.Const.LegendMod.Configs.LegendGenderEnabled())
+			{
+				r = this.Math.rand(0, 1);
+			}
+		}
+
+		if (r != 0)
+		{
+			return;
+		}
+
+		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Hairs = this.Const.Hair.CommonMale;
+		this.m.HairColors = this.Const.HairColors.All;
+		this.m.Beards = this.Const.Beards.All;
+		this.m.Body = "bust_naked_body_01";
+		this.m.IsFemaleBackground = false;
+	}
+
 	function getTooltip()
 	{
 		return [
@@ -310,8 +321,8 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 	function onAdded()
 	{
 		this.character_background.onAdded();
-		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_daze"));
-		this.m.Container.add(this.new("scripts/skills/perks/perk_student"));
+		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_daze"));
+		//this.m.Container.add(this.new("scripts/skills/perks/perk_student"));
 		this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
 		if (this.Const.LegendMod.Configs.LegendMagicEnabled())
 		{

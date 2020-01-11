@@ -42,7 +42,7 @@ this.legend_peasant_woodsman <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_killing_frenzy"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_bloody_harvest"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_forceful_swing"));
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_recovery"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_recover"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_footwork"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
 			}

@@ -45,25 +45,6 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.Beards = this.Const.Beards.Untidy;
 		this.m.Body = "bust_naked_body_01";
 
-		if (this.Const.LegendMod.Configs.LegendGenderEnabled())
-		{
-			local r;
-			r = this.Math.rand(0, 1);
-
-			if (r == 0)
-			{
-				this.m.Faces = this.Const.Faces.PrettyFemale;
-				this.m.Hairs = this.Const.Hair.AllFemale;
-				this.m.HairColors = this.Const.HairColors.Young;
-				this.m.Beards = null;
-				this.m.BeardChance = 0;
-				this.m.Body = "bust_naked_body_03";
-				this.m.IsFemaleBackground = true;
-				this.m.GoodEnding = "While the %companyname% continued on with great success, %name% the ranger eventually saw fit to leave it all behind. She returned to the forests and fields, hunting deer and small game. She rarely showed the grim reality of hunting humans, but you have to imagine she\'d just rather stop doing it. As far as you know, she\'s doing well for herself these days. She purchased a bit of land and helps guide nobles on pricy hunting trips.";
-				this.m.BadEnding = "With the decline of the %companyname% readily obvious, %name% the ranger departed from the company and returned to game hunting. Unfortunately, a hunting trip with a nobleman went awry when the lord was gored through both cheeks by a boar. The hunter, feeling he\'d be blamed, shot by the nobleman and his guard and fled through the forests on her own. She has not been seen since.";
-			}
-		}
-
 		this.m.Level = 1;
 		this.m.IsCombatBackground = true;
 		this.m.IsUntalented = true;
@@ -186,6 +167,35 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 		];
 	}
 
+	//Default Male
+	function setGender(_gender = -1)
+	{
+		local r = _gender;
+		if (_gender == -1)
+		{
+			r = 0;
+			if (this.Const.LegendMod.Configs.LegendGenderEnabled())
+			{
+				r = this.Math.rand(0, 1);
+			}
+		}
+
+		if (r != 1)
+		{
+			return
+		}
+		this.m.Faces = this.Const.Faces.PrettyFemale;
+		this.m.Hairs = this.Const.Hair.AllFemale;
+		this.m.HairColors = this.Const.HairColors.Young;
+		this.m.Beards = null;
+		this.m.BeardChance = 0;
+		this.m.Body = "bust_naked_body_03";
+		this.m.IsFemaleBackground = true;
+		this.m.GoodEnding = "While the %companyname% continued on with great success, %name% the ranger eventually saw fit to leave it all behind. She returned to the forests and fields, hunting deer and small game. She rarely showed the grim reality of hunting humans, but you have to imagine she\'d just rather stop doing it. As far as you know, she\'s doing well for herself these days. She purchased a bit of land and helps guide nobles on pricy hunting trips.";
+		this.m.BadEnding = "With the decline of the %companyname% readily obvious, %name% the ranger departed from the company and returned to game hunting. Unfortunately, a hunting trip with a nobleman went awry when the lord was gored through both cheeks by a boar. The hunter, feeling he\'d be blamed, shot by the nobleman and his guard and fled through the forests on her own. She has not been seen since.";
+
+	}
+
 	function getTooltip()
 	{
 		return [
@@ -252,8 +262,8 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 	{
 		this.character_background.onAdded();
 		local actor = this.getContainer().getActor();
-		this.m.Container.add(this.new("scripts/skills/perks/perk_pathfinder"));
-		this.m.Container.add(this.new("scripts/skills/perks/perk_footwork"));
+		//this.m.Container.add(this.new("scripts/skills/perks/perk_pathfinder"));
+		//this.m.Container.add(this.new("scripts/skills/perks/perk_footwork"));
 		this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
 
 		if (this.m.IsFemaleBackground == true)

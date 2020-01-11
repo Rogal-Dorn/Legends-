@@ -4,7 +4,7 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 	{
 		this.m.ID = "scenario.deserters";
 		this.m.Name = "Deserters";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_88.png[/img][/p][p]For too long have you been dragged from one bloody battle to another at the whim of lords sitting in high towers. Last night, you absconded from camp together with three others. You\'re dressed like soldiers still, but you\'re deserters, and the noose will be your end if you stay here for too long.\n[color=#bcad8c]Deserters:[/color] Start with three deserters and decent armor, but lower funds, you can only be joined by outlaws or combat backgrounds, and a noble house that wants to hunt you down.\n[color=#bcad8c]First to Run:[/color] Your men always are first to act in the very first round of combat.\n[color=#c90000]Like minded:[/color] Increased chance of finding craven dastards, deserters and the disowned. [/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_88.png[/img][/p][p]For too long have you been dragged from one bloody battle to another at the whim of lords sitting in high towers. Last night, you absconded from camp together with three others. You\'re dressed like soldiers still, but you\'re deserters, and the noose will be your end if you stay here for too long.\n[color=#bcad8c]Deserters:[/color] Start with three deserters and decent armor, but lower funds, you can only be joined by outlaws or combat backgrounds, and a noble house that wants to hunt you down.\n[color=#bcad8c]First to Run:[/color] Your men always are first to act in the very first round of combat.\n[color=#c90000]Like Minded:[/color] Increased chance of finding craven dastards, deserters and the disowned. [/p]";
 		this.m.Difficulty = 2;
 		this.m.Order = 10;
 	}
@@ -142,18 +142,6 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		this.World.Assets.updateLook(12);
 		this.World.getCamera().setPos(this.World.State.m.Player.getPos());
 		local f = randomVillage.getFactionOfType(this.Const.FactionType.NobleHouse);
-			if(this.Const.LegendMod.Configs.LegendCampUnlockEnabled())
-			{
-				this.World.Tags.set("HasLegendCampGathering", true);
-				this.World.Tags.set("HasLegendCampBarber", true);
-				this.World.Tags.set("HasLegendCampCrafting", true);
-				this.World.Tags.set("HasLegendCampFletching", true);
-				this.World.Tags.set("HasLegendCampHealing", true);
-				this.World.Tags.set("HasLegendCampHunting", true);
-				this.World.Tags.set("HasLegendCampScouting", true);
-				this.World.Tags.set("HasLegendCampScraping", true);
-				this.World.Tags.set("HasLegendCampTraining", true);			
-			}
 
 		f.addPlayerRelation(-200.0, "You and your men deserted");
 		local names = [];

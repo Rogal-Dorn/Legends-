@@ -43,24 +43,6 @@ this.female_butcher_background <- this.inherit("scripts/skills/backgrounds/chara
 		this.m.Body = "bust_naked_body_03";
 		this.m.IsFemaleBackground = true;
 
-		local r = this.Math.rand(0, 3);
-		if (this.Const.LegendMod.Configs.LegendGenderEnabled())
-		{
-			r = this.Math.rand(0, 1);
-		}
-
-		if (r == 0)
-		{
-			this.m.Faces = this.Const.Faces.AllMale;
-			this.m.Hairs = this.Const.Hair.CommonMale;
-			this.m.HairColors = this.Const.HairColors.All;
-			this.m.Beards = this.Const.Beards.Untidy;
-			this.m.Body = "bust_naked_body_00";
-			this.m.IsFemaleBackground = false;
-			this.m.GoodEnding = "Mercenary work is a bloody business, which is probably why a fishmonger like %name% felt right at home in it. While an outstanding fighter, you hear that he still has problems with the war dogs in the party and has been repeatedly caught trying to slaughter them. Eventually, if not desperately, the company gave the man an adorable puppy to raise as his own. From what you know of, the little runt\'s glowy doe eyes converted the dog hater into a lover. Now he goes into an insatiable bloodlust whenever a wardog is harmed and his little mongrel grew up to be the fiercest beast in the company!";
-			this.m.BadEnding = "%name% the fishmonger eventually left the declining company. He joined up with another outfit, but was caught slaughtering one of their war dogs. Apparently, he had been feeding the mercenaries dogmeat from all their mongrels that had gone \'missing\'. They did not take this news kindly, stripped the butcher, and fed him to the beasts.";
-		}
-
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[1];
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[1];
 		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[2];
@@ -87,6 +69,34 @@ this.female_butcher_background <- this.inherit("scripts/skills/backgrounds/chara
 				this.Const.Perks.ChefClassTree
 			]
 		}
+	}
+
+	//Default Female
+	function setGender(_gender = -1)
+	{
+		local r = _gender;
+		if (_gender == -1)
+		{
+			r = this.Math.rand(0, 3);
+			if (this.Const.LegendMod.Configs.LegendGenderEnabled())
+			{
+				r = this.Math.rand(0, 1);
+			}
+		}
+
+		if (r != 0)
+		{
+			return;
+		}
+					this.m.Faces = this.Const.Faces.AllMale;
+			this.m.Hairs = this.Const.Hair.CommonMale;
+			this.m.HairColors = this.Const.HairColors.All;
+			this.m.Beards = this.Const.Beards.Untidy;
+			this.m.Body = "bust_naked_body_00";
+			this.m.IsFemaleBackground = false;
+			this.m.GoodEnding = "Mercenary work is a bloody business, which is probably why a fishmonger like %name% felt right at home in it. While an outstanding fighter, you hear that he still has problems with the war dogs in the party and has been repeatedly caught trying to slaughter them. Eventually, if not desperately, the company gave the man an adorable puppy to raise as his own. From what you know of, the little runt\'s glowy doe eyes converted the dog hater into a lover. Now he goes into an insatiable bloodlust whenever a wardog is harmed and his little mongrel grew up to be the fiercest beast in the company!";
+			this.m.BadEnding = "%name% the fishmonger eventually left the declining company. He joined up with another outfit, but was caught slaughtering one of their war dogs. Apparently, he had been feeding the mercenaries dogmeat from all their mongrels that had gone \'missing\'. They did not take this news kindly, stripped the butcher, and fed him to the beasts.";
+
 	}
 
 	function getTooltip()

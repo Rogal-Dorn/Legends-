@@ -59,21 +59,6 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 		this.m.BeardChance = 100;
 		this.m.Body = "bust_naked_body_04";
 
-		if (this.Const.LegendMod.Configs.LegendGenderEnabled())
-		{
-			local r = this.Math.rand(0, 1);
-			if (r == 0)
-			{
-				this.m.Faces = this.Const.Faces.PrettyFemale;
-				this.m.Hairs = this.Const.Hair.AllFemale;
-				this.m.HairColors = this.Const.HairColors.Young;
-				this.m.Beards = null;
-				this.m.BeardChance = 0;
-				this.m.Body = "bust_naked_body_03";
-				this.m.IsFemaleBackground = true;
-			}
-		}
-
 		this.m.Level = 3;
 		this.m.IsCombatBackground = true;
 		this.m.IsLowborn = true;
@@ -192,6 +177,32 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 		];
 	}
 
+	//Default Male
+	function setGender(_gender = -1)
+	{
+		local r = _gender;
+		if (_gender == -1)
+		{
+			r = 0;
+			if (this.Const.LegendMod.Configs.LegendGenderEnabled())
+			{
+				r = this.Math.rand(0, 1);
+			}
+		}
+
+		if (r != 1)
+		{
+			return
+		}
+		this.m.Faces = this.Const.Faces.PrettyFemale;
+		this.m.Hairs = this.Const.Hair.AllFemale;
+		this.m.HairColors = this.Const.HairColors.Young;
+		this.m.Beards = null;
+		this.m.BeardChance = 0;
+		this.m.Body = "bust_naked_body_03";
+		this.m.IsFemaleBackground = true;
+	}
+
 	function getTooltip()
 	{
 		return [
@@ -206,10 +217,10 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 				text = this.getDescription()
 			},
 			{
-				id = 15,
+				id = 12,
 				type = "text",
-				icon = "ui/icons/xp_received.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-15%[/color] Experience Gain"
+				icon = "ui/icons/regular_damage.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] Damage when unarmed"
 			}
 		];
 	}
@@ -315,7 +326,7 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 		this.character_background.onAdded();
 		local actor = this.getContainer().getActor();
 		actor.setTitle("The Berserker");
-		this.m.Container.add(this.new("scripts/skills/perks/perk_berserk"));
+		//this.m.Container.add(this.new("scripts/skills/perks/perk_berserk"));
 		this.m.Container.add(this.new("scripts/skills/traits/deathwish_trait"));
 		//this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
 	}

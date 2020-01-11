@@ -27,53 +27,17 @@ this.poacher_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Untidy;
 		this.m.Body = "bust_naked_body_00";
-		
-		if (this.Const.LegendMod.Configs.LegendGenderEnabled())
-		{
-			local r;
-			r = this.Math.rand(0, 1);
-
-			if (r == 0)
-			{
-				this.m.Faces = this.Const.Faces.PrettyFemale;
-				this.m.Hairs = this.Const.Hair.AllFemale;
-				this.m.HairColors = this.Const.HairColors.Young;
-				this.m.Beards = null;
-				this.m.BeardChance = 0;
-				this.m.Body = "bust_naked_body_03";
-				this.m.IsFemaleBackground = true;
-				this.m.GoodEnding = "%name%, former poacher, eventually saved enough money to leave the %companyname%. You learned she found a bit of mountain land and works it for a local nobleman. Ironically, her job is to hunt down poachers.";
-				this.m.BadEnding = "No longer seeing the point in risking her life for so few crowns, %name% the former poacher put down the sellsword\'s life and returned to unlawfully hunting deer in the woods. A nobleman once offered you a good satchel of crowns to specifically hunt the woman down. You declined the offer, but the writing was on the wall: her days are numbered.";
-			}
-		}
-
 
 		this.m.IsLowborn = true;
 		this.m.IsOutlawBackground = true;
 		this.m.IsRangerRecruitBackground = true;
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Notorious;
 		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[1];
 		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[2];
 		this.m.Modifiers.Fletching = this.Const.LegendMod.ResourceModifiers.Fletching[1];
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[2];
 		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[2];
-		if (this.World.Assets.getMoralReputation() < 20) //checks if the player is chivalrous
-		{
-				local roster = this.World.getPlayerRoster().getAll();
-				local levels = 0;
-				local count = 0;
-				foreach( i, bro in roster )
-					{
-					local brolevel = bro.getLevel();
-					levels += brolevel;
-					count += 1;
-					}
-				local avgLevel = this.Math.floor(levels / count);					// gets the average of player levels
-				local busRep = this.World.Assets.getBusinessReputation();			//checks how reliable the player is
-				local repPoints = this.Math.floor(busRep / 1000);					// turns that rep into points
-				local repLevelAvg =  this.Math.floor((avgLevel + repPoints) / 4);	// Averages levels and points and
-				local broLevel = this.Math.rand(1, repLevelAvg);					// level is randomly chosen up to our score
-				this.m.Level += broLevel;										
-		}	
 		this.m.Modifiers.Terrain = [
 				0.0, // ?
 				0.0, //ocean
@@ -115,6 +79,35 @@ this.poacher_background <- this.inherit("scripts/skills/backgrounds/character_ba
 					],
 			Class = [this.Const.Perks.ShortbowClassTree]
 		}
+	}
+
+	//Default Male
+	function setGender(_gender = -1)
+	{
+		local r = _gender;
+		if (_gender == -1)
+		{
+			r = 0;
+			if (this.Const.LegendMod.Configs.LegendGenderEnabled())
+			{
+				r = this.Math.rand(0, 1);
+			}
+		}
+
+		if (r != 1)
+		{
+			return
+		}
+		this.m.Faces = this.Const.Faces.PrettyFemale;
+		this.m.Hairs = this.Const.Hair.AllFemale;
+		this.m.HairColors = this.Const.HairColors.Young;
+		this.m.Beards = null;
+		this.m.BeardChance = 0;
+		this.m.Body = "bust_naked_body_03";
+		this.m.IsFemaleBackground = true;
+		this.m.GoodEnding = "%name%, former poacher, eventually saved enough money to leave the %companyname%. You learned she found a bit of mountain land and works it for a local nobleman. Ironically, her job is to hunt down poachers.";
+		this.m.BadEnding = "No longer seeing the point in risking her life for so few crowns, %name% the former poacher put down the sellsword\'s life and returned to unlawfully hunting deer in the woods. A nobleman once offered you a good satchel of crowns to specifically hunt the woman down. You declined the offer, but the writing was on the wall: her days are numbered.";
+
 	}
 
 	function getTooltip()
@@ -410,6 +403,5 @@ this.poacher_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			items.equip(this.new("scripts/items/helmets/hood"));
 		}
 	}
-
 });
 

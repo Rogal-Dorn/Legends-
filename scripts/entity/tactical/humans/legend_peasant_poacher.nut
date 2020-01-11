@@ -32,7 +32,7 @@ this.legend_peasant_poacher <- this.inherit("scripts/entity/tactical/human", {
 		dirt.Visible = true;
 		dirt.Alpha = this.Math.rand(0, 255);
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_shortbow_skill"));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_mastery_shortbow_damage"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_shortbow_damage"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_bullseye"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_mastery_bow"));
 		this.getSprite("socket").setBrush("bust_base_militia");

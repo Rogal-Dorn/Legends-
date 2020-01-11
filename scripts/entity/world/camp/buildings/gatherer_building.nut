@@ -67,6 +67,12 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 
 	function isHidden()
 	{
+		
+		if (this.Const.LegendMod.Configs.LegendCampUnlockEnabled())
+		{
+			return false;
+		}
+		
 		return !this.World.Tags.get("HasLegendCampGathering")
 	}	
 
@@ -230,7 +236,7 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		local apothecarylevels = this.getApothecaryLevel();
 
 		// set it to something that wont break if none are present 
-		if (apothecarylevels = null)
+		if (apothecarylevels == null)
 		{
 		apothecarylevels = 0;
 		}

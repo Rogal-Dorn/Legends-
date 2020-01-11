@@ -25,16 +25,6 @@ this.legend_donkey <- this.inherit("scripts/skills/backgrounds/character_backgro
 		this.m.HairColors = this.Const.HairColors.None;
 		this.m.Body = "bust_naked_body_05";
 
-		local r = this.Math.rand(0, 1);
-		if (r == 0)
-		{
-			this.m.IsFemaleBackground = true;
-		}
-		else
-		{
-			this.m.IsFemaleBackground = false;
-		}
-
 		this.m.IsLowborn = true;
 		this.m.IsUntalented = true;
 		this.m.IsStabled = true;
@@ -67,17 +57,21 @@ this.legend_donkey <- this.inherit("scripts/skills/backgrounds/character_backgro
 				this.Const.Perks.PerkDefs.NineLives,
 				this.Const.Perks.PerkDefs.Pathfinder,
 				this.Const.Perks.PerkDefs.Steadfast,
+				this.Const.Perks.PerkDefs.BagsAndBelts,
 				this.Const.Perks.PerkDefs.Recover
 			],
 			[
 				this.Const.Perks.PerkDefs.Dodge,
 				this.Const.Perks.PerkDefs.HoldOut,
 				this.Const.Perks.PerkDefs.LegendComposure,
+				this.Const.Perks.PerkDefs.LegendAlert,
+				this.Const.Perks.PerkDefs.Relentless,
 				this.Const.Perks.PerkDefs.SteelBrow
 			],
 			[
 				this.Const.Perks.PerkDefs.Anticipation,
 				this.Const.Perks.PerkDefs.Rotation,
+				this.Const.Perks.PerkDefs.LegendPeaceful,
 				this.Const.Perks.PerkDefs.Taunt,
 				this.Const.Perks.PerkDefs.Sprint
 			],
@@ -91,18 +85,20 @@ this.legend_donkey <- this.inherit("scripts/skills/backgrounds/character_backgro
 			[
 				this.Const.Perks.PerkDefs.LoneWolf,
 				this.Const.Perks.PerkDefs.Footwork,
-				this.Const.Perks.PerkDefs.LegendBattleheart
+				this.Const.Perks.PerkDefs.LastStand,
+				this.Const.Perks.PerkDefs.LegendBlendIn,
+				this.Const.Perks.PerkDefs.Underdog
 			],
 			[
 				this.Const.Perks.PerkDefs.Nimble,
-				this.Const.Perks.PerkDefs.LastStand,
 				this.Const.Perks.PerkDefs.Rebound,
+				this.Const.Perks.PerkDefs.LegendPacifist,
+				this.Const.Perks.PerkDefs.LegendSkillfulStacking
 				this.Const.Perks.PerkDefs.LegendMuscularity
 			],
 			[
 				this.Const.Perks.PerkDefs.Fearsome,
 				this.Const.Perks.PerkDefs.Stalwart,
-				this.Const.Perks.PerkDefs.LegendSkillfulStacking
 				this.Const.Perks.PerkDefs.LegendAmmoBundles,
 				this.Const.Perks.PerkDefs.LegendMedIngredients,
 				this.Const.Perks.PerkDefs.LegendToolsSpares
@@ -112,6 +108,27 @@ this.legend_donkey <- this.inherit("scripts/skills/backgrounds/character_backgro
 			[],
 			[]
 		];
+	}
+
+	//Default Male
+	function setGender(_gender = -1)
+	{
+		local r = _gender;
+		if (_gender == -1)
+		{
+			r = 0;
+			if (this.Const.LegendMod.Configs.LegendGenderEnabled())
+			{
+				r = this.Math.rand(0, 1);
+			}
+		}
+
+		if (r != 1)
+		{
+			return
+		}
+
+		this.m.IsFemaleBackground = true;
 	}
 
 	function getTooltip()

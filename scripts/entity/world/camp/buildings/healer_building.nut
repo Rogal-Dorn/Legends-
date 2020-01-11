@@ -265,11 +265,14 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 
 		foreach (b in this.m.InjuriesHealed)
 		{
-			res.push({
-		 		id = id,
-		 		icon = "" + b.getIcon(),
-		 		text = b.getName()
-			})
+			if (b.getIcon() != null && b.getName() != null)
+			{
+				res.push({
+		 			id = id,
+		 			icon = "" + b.getIcon(),
+		 			text = b.getName()
+				})
+			}
 			++id;
 		}
         

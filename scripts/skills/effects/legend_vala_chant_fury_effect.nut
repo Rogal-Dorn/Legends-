@@ -178,7 +178,8 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/effects/legen
 				local attackinfo = {
 					User = this.getContainer().getActor(),
 					Skill = payback,
-					TargetTile = _attacker.getTile()
+					TargetTile = _attacker.getTile(),
+					Container = this.getContainer()
 				};
 				this.Time.scheduleEvent(this.TimeUnit.Virtual, this.Const.Combat.RiposteDelay, this.onPerformPaypack, attackinfo);
 			}
@@ -187,7 +188,7 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/effects/legen
 
 	function onPerformPaypack(_attackinfo)
 	{
-		_attackinfo.Skill.getContainer().setBusy(false);
+		_attackinfo.Container.setBusy(false);
 
 		if (_attackinfo.User.isAlive() && _attackinfo.TargetTile.getEntity().isAlive())
 		{

@@ -35,7 +35,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			bro.setVeteranPerks(2);
 		}
 
-		 local horsesize = 10
+		 local horsesize = 0
 		 for( local i = 0; i < horsesize; i = ++i )
 		 {
 		 	local broLevel = broLevelMax
@@ -59,297 +59,204 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		this.World.Assets.m.Food = 200;
 		this.World.Assets.m.BusinessReputation = 1000;
 		this.World.Assets.getStash().setResizable(true);
-		this.World.Assets.getStash().resize(400);
+		this.World.Assets.getStash().resize(600);
 
 		local armors = [
-			["legend_gambeson", 0, 39],
-			["legend_padded_surcoat", 40, 64],
-			["legend_apron",1,10],
-			["legend_robes",1,2],
-			["legend_robes",11,18],
-			["legend_robes_nun",6,7],
-			["legend_robes_wizard",3,3],
-			["legend_sackcloth_patched",3,3],
-			["legend_sackcloth_patched",19,25],
-			["legend_sackcloth_tattered",2,2],
-			["legend_sackcloth_tattered",13,18],
-			["legend_sackcloth",1,1],
-			["legend_sackcloth",4,12],
-			["legend_tunic_noble",6,6],
-			["legend_thick_tunic",1,24],
-			["legend_dark_tunic",1,2],
-			["legend_ancient_cloth",1,4],
-			["legend_ancient_cloth_restored",1,5],
-			["legend_tunic",1,28],
+			"cloth/legend_tunic_noble",
+			"cloth/legend_tunic",
+			"cloth/legend_thick_tunic",
+			"cloth/legend_sackcloth_tattered",
+			"cloth/legend_sackcloth_patched",
+			"cloth/legend_sackcloth",
+			"cloth/legend_robes_wizard",
+			"cloth/legend_robes_nun",
+			"cloth/legend_robes_herbalist",
+			"cloth/legend_robes",
+			"cloth/legend_padded_surcoat",
+			"cloth/legend_gambeson_wolf",
+			"cloth/legend_gambeson_rare_color",
+			"cloth/legend_gambeson_plain",
+			"cloth/legend_gambeson_named",
+			"cloth/legend_gambeson_common_color",
+			"cloth/legend_gambeson",
+			"cloth/legend_dark_tunic",
+			"cloth/legend_apron_taxidermist",
+			"cloth/legend_apron_smith",
+			"cloth/legend_apron_butcher",
+			"cloth/legend_apron",
+			"cloth/legend_ancient_cloth_restored",
+			"cloth/legend_ancient_cloth"
+
+			"chain/legend_armor_ancient_double_mail",
+			"chain/legend_armor_ancient_mail",
+			"chain/legend_armor_basic_mail",
+			"chain/legend_armor_hauberk",
+			"chain/legend_armor_hauberk_full",
+			"chain/legend_armor_hauberk_full_named",
+			"chain/legend_armor_hauberk_sleevless",
+			"chain/legend_armor_mail_shirt",
+			"chain/legend_armor_mail_shirt_simple",
+			"chain/legend_armor_reinforced_mail",
+			"chain/legend_armor_reinforced_mail_shirt",
+			"chain/legend_armor_reinforced_rotten_mail_shirt",
+			"chain/legend_armor_reinforced_worn_mail",
+			"chain/legend_armor_reinforced_worn_mail_shirt",
+			"chain/legend_armor_rusty_mail_shirt",
+			"chain/legend_armor_short_mail",
+
+			"plate/legend_animal_hide_armor",
+			"plate/legend_armor_leather_brigandine",
+			"plate/legend_armor_leather_brigandine_hardened",
+			"plate/legend_armor_leather_brigandine_hardened_full",
+			"plate/legend_armor_leather_brigandine_named",
+			"plate/legend_armor_leather_jacket",
+			"plate/legend_armor_leather_jacket_named",
+			"plate/legend_armor_leather_jacket_simple",
+			"plate/legend_armor_leather_lamellar",
+			"plate/legend_armor_leather_lamellar_harness_heavy",
+			"plate/legend_armor_leather_lamellar_harness_reinforced",
+			"plate/legend_armor_leather_lamellar_heavy",
+			"plate/legend_armor_leather_lamellar_heavy_named",
+			"plate/legend_armor_leather_lamellar_reinforced",
+			"plate/legend_armor_leather_noble",
+			"plate/legend_armor_leather_padded",
+			"plate/legend_armor_leather_riveted",
+			"plate/legend_armor_leather_riveted_light",
+			"plate/legend_armor_leather_scale",
+			"plate/legend_armor_plate_ancient_chest",
+			"plate/legend_armor_plate_ancient_chest_restored",
+			"plate/legend_armor_plate_ancient_gladiator",
+			"plate/legend_armor_plate_ancient_harness",
+			"plate/legend_armor_plate_ancient_mail",
+			"plate/legend_armor_plate_ancient_scale",
+			"plate/legend_armor_plate_ancient_scale_coat",
+			"plate/legend_armor_plate_ancient_scale_harness",
+			"plate/legend_armor_plate_chest",
+			"plate/legend_armor_plate_chest_rotten",
+			"plate/legend_armor_plate_cuirass",
+			"plate/legend_armor_plate_full",
+			"plate/legend_armor_plate_full_greaves",
+			"plate/legend_armor_plate_full_greaves_painted",
+			"plate/legend_armor_scale",
+			"plate/legend_armor_scale_coat",
+			"plate/legend_armor_scale_coat_named",
+			"plate/legend_armor_scale_coat_rotten",
+			"plate/legend_armor_scale_shirt",
+			"plate/legend_heavy_iron_armor",
+			"plate/legend_hide_and_bone_armor",
+			"plate/legend_reinforced_animal_hide_armor",
+			"plate/legend_rugged_scale_armor",
+			"plate/legend_scrap_metal_armor",
+			"plate/legend_thick_furs_armor",
+			"plate/legend_thick_plated_barbarian_armor",
+
+			"tabard/legend_armor_named_tabard",
+			"tabard/legend_armor_noble_tabard",
+			"tabard/legend_armor_tabard",
+
+			"cloak/legend_armor_cloak_common",
+			"cloak/legend_armor_cloak_heavy",
+			"cloak/legend_armor_cloak_noble",
+			"cloak/legend_armor_cloak_rich",
+			"cloak/legend_armor_hexe_leader_cloak_upgrade",
+			"cloak/legend_armor_redback_cloak_upgrade",
+			"cloak/legend_armor_sash",
+
+			"armor_upgrades/legend_additional_padding_upgrade",
+			"armor_upgrades/legend_armor_stollwurm_scales_upgrade",
+			"armor_upgrades/legend_armor_white_wolf_pelt_upgrade",
+			"armor_upgrades/legend_barbarian_horn_upgrade",
+			"armor_upgrades/legend_bone_platings_upgrade",
+			"armor_upgrades/legend_direwolf_pelt_upgrade",
+			"armor_upgrades/legend_double_mail_upgrade",
+			"armor_upgrades/legend_heraldic_plates_upgrade",
+			"armor_upgrades/legend_horn_plate_upgrade",
+			"armor_upgrades/legend_joint_cover_upgrade",
+			"armor_upgrades/legend_leather_neckguard_upgrade",
+			"armor_upgrades/legend_leather_shoulderguards_upgrade",
+			"armor_upgrades/legend_light_padding_replacement_upgrade",
+			"armor_upgrades/legend_lindwurm_scales_upgrade",
+			"armor_upgrades/legend_mail_patch_upgrade",
+			"armor_upgrades/legend_metal_pauldrons_upgrade",
+			"armor_upgrades/legend_metal_plating_upgrade",
+			"armor_upgrades/legend_protective_runes_upgrade",
+			"armor_upgrades/legend_unhold_fur_upgrade",
+
+			"runes/legend_rune_endurance",
+			"runes/legend_rune_resilience",
+			"runes/legend_rune_safety",
+
+			"armor/legend_armor_crusader",
+			"armor/legend_armor_rabble_fur",
+			"armor/legend_armor_ranger",
+			"armor/legend_armor_robes_cultist",
+			"armor/legend_armor_seer_robes",
+			"armor/legend_armor_vala_cloak",
+			"armor/legend_armor_vala_dress",
+			"armor/legend_armor_warlock_cloak",
+			"armor/legend_armor_werewolf_mail",
+
+			"legendary/legend_armor_mountain",
+			"legendary/legend_armor_of_davkul",
+			"legendary/legend_armor_skin",
+			"legendary/legend_emperors_armor",
+			"legendary/legend_emperors_armor_fake",
+			"legendary/legend_ijirok_armor",
+
+			"named/legend_armor_named_warlock_cloak",
+			"named/legend_black_leather_armor",
+			"named/legend_blue_studded_mail_armor",
+			"named/legend_brown_coat_of_plates_armor",
+			"named/legend_golden_scale_armor",
+			"named/legend_green_coat_of_plates_armor",
+			"named/legend_heraldic_mail_armor",
+			"named/legend_lindwurm_armor",
+			"named/legend_named_bronze_armor",
+			"named/legend_named_golden_lamellar_armor",
+			"named/legend_named_noble_mail_armor",
+			"named/legend_named_plated_fur_armor",
+			"named/legend_named_sellswords_armor",
+			"named/legend_named_skull_and_chain_armor"
+
 		];
 
 		foreach(a in armors)
 		{
-			for( local i = a[1]; i < a[2] + 1; i = ++i )
+			local item = this.new("scripts/items/legend_armor/" + a);
+			if (item.m.Variants.len() == 0)
 			{
-				this.logInfo("Adding " + a[0]);
-				local item = this.new("scripts/items/legend_armor/cloth/" + a[0])
-				item.setVariant(i);
+				this.logInfo("Adding " + a);
 				this.World.Assets.getStash().add(item);
+				continue;
 			}
 
+			for( local i = 0; i < item.m.Variants.len(); i = ++i )
+			{
+				this.logInfo("Adding " + a + " :: " + i);
+				local vitem =  this.new("scripts/items/legend_armor/" + a);
+				vitem.setVariant(item.m.Variants[i]);
+				this.World.Assets.getStash().add(vitem);
+			}
 		}
 
-		local chain = [
-			"legend_armor_ancient_double_mail",
-			"legend_armor_ancient_mail",
-			"legend_armor_basic_mail",
-			"legend_armor_hauberk_full",
-			"legend_armor_hauberk_sleevless",
-			"legend_armor_hauberk",
-			"legend_armor_mail_shirt_simple",
-			"legend_armor_mail_shirt",
-			"legend_armor_reinforced_mail_shirt",
-			"legend_armor_reinforced_mail",
-			"legend_armor_reinforced_rotten_mail_shirt",
-			"legend_armor_reinforced_worn_mail_shirt",
-			"legend_armor_reinforced_worn_mail",
-			"legend_armor_rusty_mail_shirt",
-			"legend_armor_short_mail"
-		];
+		local weapons = [
+			"legend_halberd",
+			"legend_military_voulge",
+			"legend_ranged_flail",
+			"legend_ranged_wooden_flail",
+			"legend_voulge",
+			"named/legend_named_voulge",
+			"named/legend_named_halberd",
+			"named/named_lute",
+			"named/legend_named_flail"
+		]
 
-		foreach(c in chain)
+		foreach(w in weapons)
 		{
-			this.logInfo("Adding " + c);
-			local cha = this.new("scripts/items/legend_armor/chain/" + c);
-			this.World.Assets.getStash().add(cha);
-		}
-
-		for( local i = 1; i < 11; i = ++i )
-		{
-			local item = this.new("scripts/items/legend_armor/chain/legend_armor_rusty_mail_shirt")
-			item.setVariant(i);
-			this.World.Assets.getStash().add(item);
-		}
-
-		local plate = [
-			"legend_armor_leather_brigandine",
-			"legend_armor_leather_brigandine_hardened",
-			"legend_armor_leather_brigandine_hardened_full",
-			"legend_armor_leather_jacket",
-			"legend_armor_leather_jacket_simple",
-			"legend_armor_leather_lamellar",
-			"legend_armor_leather_lamellar_harness_heavy",
-			"legend_armor_leather_lamellar_harness_reinforced",
-			"legend_armor_leather_lamellar_heavy",
-			"legend_armor_leather_lamellar_reinforced",
-			"legend_armor_leather_noble",
-			"legend_armor_leather_padded",
-			"legend_armor_leather_riveted",
-			"legend_armor_leather_riveted_light",
-			"legend_armor_leather_scale",
-			"legend_armor_plate_ancient_chest",
-			"legend_armor_plate_ancient_harness",
-			"legend_armor_plate_ancient_mail",
-			"legend_armor_plate_ancient_scale",
-			"legend_armor_plate_ancient_scale_coat",
-			"legend_armor_plate_ancient_scale_harness",
-			"legend_armor_plate_chest",
-			"legend_armor_plate_chest_rotten",
-			"legend_armor_plate_cuirass",
-			"legend_armor_plate_full",
-			"legend_armor_scale",
-			"legend_armor_scale_coat",
-			"legend_armor_scale_coat_rotten",
-			"legend_armor_scale_shirt",
-			"legend_animal_hide_armor",
-			"legend_armor_scale_shirt",
-			"legend_heavy_iron_armor",
-			"legend_hide_and_bone_armor",
-			"legend_reinforced_animal_hide_armor",
-			"legend_rugged_scale_armor",
-			"legend_scrap_metal_armor",
-			"legend_thick_furs_armor",
-			"legend_thick_plated_barbarian_armor",
-			"legend_armor_plate_full_greaves",
-			"legend_armor_plate_full_greaves_painted"
-		];
-
-		foreach(p in plate)
-		{
-			this.logInfo("Adding " + p);
-			local pla = this.new("scripts/items/legend_armor/plate/" + p);
+			this.logInfo("Adding " + w);
+			local pla = this.new("scripts/items/weapons/" + w);
 			this.World.Assets.getStash().add(pla);
 		}
-
-		for( local i = 1; i < 6; i = ++i )
-		{
-			local item = this.new("scripts/items/legend_armor/plate/legend_armor_leather_noble")
-			item.setVariant(i);
-			this.World.Assets.getStash().add(item);
-		}
-
-		for( local i = 1; i < 9; i = ++i )
-		{
-			local item = this.new("scripts/items/legend_armor/plate/legend_armor_leather_riveted")
-			item.setVariant(i);
-			this.World.Assets.getStash().add(item);
-		}
-
-		for( local i = 101; i < 113; i = ++i )
-		{
-			local item = this.new("scripts/items/legend_armor/tabard/legend_armor_tabard")
-			item.setVariant(i);
-			this.World.Assets.getStash().add(item);
-		}
-
-		for( local i = 1; i < 11; i = ++i )
-		{
-			local item = this.new("scripts/items/legend_armor/tabard/legend_armor_noble_tabard")
-			item.setVariant(i);
-			this.World.Assets.getStash().add(item);
-		}
-
-		for( local i = 1; i < 35; i = ++i )
-		{
-			local item = this.new("scripts/items/legend_armor/cloak/legend_armor_cloak")
-			item.setVariant(i);
-			this.World.Assets.getStash().add(item);
-		}
-
-
-		
-			local item = this.new("scripts/items/legend_armor/cloak/legend_armor_cloak_common")
-			this.World.Assets.getStash().add(item);
-			local item = this.new("scripts/items/legend_armor/cloak/legend_armor_cloak_heavy")
-			this.World.Assets.getStash().add(item);
-			local item = this.new("scripts/items/legend_armor/cloak/legend_armor_cloak_noble")
-			this.World.Assets.getStash().add(item);
-
-
-		local fixed = [
-			"legend_armor_crusader",
-			"legend_armor_rabble_fur",
-			"legend_armor_ranger",
-			"legend_armor_seer_robes",
-			"legend_armor_vala_cloak",
-			"legend_armor_vala_dress",
-			"legend_armor_warlock_cloak",
-			"legend_armor_werewolf_mail"
-		];
-
-		foreach(p in fixed)
-		{
-			this.logInfo("Adding " + p);
-			local pla = this.new("scripts/items/legend_armor/armor/" + p);
-			this.World.Assets.getStash().add(pla);
-		}
-
-		local named = [
-			"legend_armor_named_warlock_cloak",
-			"legend_black_leather_armor",
-			"legend_blue_studded_mail_armor",
-			"legend_brown_coat_of_plates_armor",
-			"legend_golden_scale_armor",
-			"legend_green_coat_of_plates_armor",
-			"legend_heraldic_mail_armor",
-			"legend_lindwurm_armor",
-			"legend_named_bronze_armor",
-			"legend_named_golden_lamellar_armor",
-			"legend_named_noble_mail_armor",
-			"legend_named_plated_fur_armor",
-			"legend_named_sellswords_armor",
-			"legend_named_skull_and_chain_armor"
-		];
-
-		foreach(p in named)
-		{
-			this.logInfo("Adding " + p);
-			local pla = this.new("scripts/items/legend_armor/named/" + p);
-			this.World.Assets.getStash().add(pla);
-		}
-
-		local legendary = [
-			"legend_armor_mountain",
-			"legend_armor_of_davkul",
-			"legend_armor_skin",
-			"legend_emperors_armor",
-			"legend_emperors_armor_fake",
-			"legend_ijirok_armor"
-		];
-
-		foreach(p in legendary)
-		{
-			this.logInfo("Adding " + p);
-			local pla = this.new("scripts/items/legend_armor/legendary/" + p);
-			this.World.Assets.getStash().add(pla);
-		}
-
-		local upgrades = [
-			"legend_additional_padding_upgrade",
-			"legend_armor_hexe_leader_cloak_upgrade",
-			"legend_armor_redback_cloak_upgrade",
-			"legend_armor_stollwurm_scales_upgrade",
-			"legend_armor_white_wolf_pelt_upgrade",
-			"legend_barbarian_horn_upgrade",
-			"legend_bone_platings_upgrade",
-			"legend_direwolf_pelt_upgrade",
-			"legend_double_mail_upgrade",
-			"legend_heraldic_plates_upgrade",
-			"legend_horn_plate_upgrade",
-			"legend_joint_cover_upgrade",
-			"legend_leather_neckguard_upgrade",
-			"legend_leather_shoulderguards_upgrade",
-			"legend_light_padding_replacement_upgrade",
-			"legend_lindwurm_scales_upgrade",
-			"legend_mail_patch_upgrade",
-			"legend_metal_pauldrons_upgrade",
-			"legend_metal_plating_upgrade",
-			"legend_unhold_fur_upgrade"
-		];
-
-		foreach(p in upgrades)
-		{
-			this.logInfo("Adding " + p);
-			local pla = this.new("scripts/items/legend_armor/armor_upgrades/" + p);
-			this.World.Assets.getStash().add(pla);
-		}
-
-		local runes = [
-			"legend_rune_safety",
-			"legend_rune_endurance",
-			"legend_rune_resilience"
-		];
-
-		foreach(p in runes)
-		{
-			this.logInfo("Adding " + p);
-			local pla = this.new("scripts/items/legend_armor/runes/" + p);
-			this.World.Assets.getStash().add(pla);
-		}
-
-		this.logInfo("Adding halberd");
-		local item = this.new("scripts/items/weapons/legend_halberd")
-		this.World.Assets.getStash().add(item);
-		this.logInfo("Adding military voulge");
-		local item = this.new("scripts/items/weapons/legend_military_voulge")
-		this.World.Assets.getStash().add(item);
-		this.logInfo("ranged flail");
-		local item = this.new("scripts/items/weapons/legend_ranged_flail")
-		this.World.Assets.getStash().add(item);
-		this.logInfo("Adding ranged wooden flail");
-		local item = this.new("scripts/items/weapons/legend_ranged_wooden_flail")
-		this.World.Assets.getStash().add(item);
-		this.logInfo("Adding voulge");
-		local item = this.new("scripts/items/weapons/legend_voulge")
-		this.World.Assets.getStash().add(item);
-		this.logInfo("Adding named voulge");
-		local item = this.new("scripts/items/weapons/named/legend_named_voulge")
-		this.World.Assets.getStash().add(item);
-		this.logInfo("Adding named halberd");
-		local item = this.new("scripts/items/weapons/named/legend_named_halberd")
-		this.World.Assets.getStash().add(item);
-		this.logInfo("Adding named lute");
-		local item = this.new("scripts/items/weapons/named/named_lute")
-		this.World.Assets.getStash().add(item);
-		this.logInfo("Adding named flail");
-		local item = this.new("scripts/items/weapons/named/legend_named_flail")
-		this.World.Assets.getStash().add(item);
 	}
 
 
@@ -438,6 +345,16 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			], this.Const.Music.CrossFadeTime);
 			this.World.Events.fire("event.legend_random_party_scenario_intro");
 		}, null);
+	}
+
+	function onBuildPerkTree( _tree)
+	{
+		if  (_tree == null)
+		{
+			return;
+		}
+
+		_tree.addPerk(this.Const.Perks.PerkDefs.LegendPiercingShot);
 	}
 });
 
