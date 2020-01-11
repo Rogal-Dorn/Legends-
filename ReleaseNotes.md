@@ -2506,3 +2506,12 @@ Wind Reader Now only turns a third of your ranged defense into ranged skill. Min
 Heightened Reflexes now turns half your Ranged Defense into Initiative instead of Melee Defense. Minimum dropped to 3 from 5
 Close combat archer now uses your ranged defense as your percentage damage boost on ranged attacks when enemies are within two tiles 
 Medical Ingredients Perk allows you to craft a bandage out of a linen tunic and roots and berries 
+
+13.0.0.34 
+
+Noble start:
+Warrior can get padded surcoat or thick tunic instead of a tunic, and an aketon cap and infanty axe. 
+Slinger is now Arbelester, starts with light crossbow, hunters hat, higher ranged and melee abilities than a hunter, but lower health, fatigue and initiative 
+Soldier is now a Footman, starts with a wooden shield, thick tunic, aketon cap and a chance for a leather jacket 
+All of them start with a tabard 
+
