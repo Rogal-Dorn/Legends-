@@ -85,16 +85,6 @@ this.charm_skill <- this.inherit("scripts/skills/skill", {
 			return false;
 		}
 
-		if (_target.getSkills().hasSkill("trait.loyal"))
-		{
-			return false;
-		}
-
-		if (_target.getSkills().hasSkill("trait.player"))
-		{
-			return false;
-		}
-
 		return true;
 	}
 
@@ -119,7 +109,7 @@ this.charm_skill <- this.inherit("scripts/skills/skill", {
 		{
 			local bonus = _targetTile.getDistanceTo(_user.getTile()) == 1 ? -5 : 0;
 
-			if (target.getSkills().hasSkill("background.eunuch"))
+			if (target.getSkills().hasSkill("background.eunuch") || target.getSkills().hasSkill("trait.player") || target.getSkills().hasSkill("trait.loyal"))
 			{
 				if (!_user.isHiddenToPlayer() && !target.isHiddenToPlayer())
 				{

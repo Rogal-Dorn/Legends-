@@ -608,7 +608,7 @@ this.free_greenskin_prisoners_contract <- this.inherit("scripts/contracts/contra
 			function start()
 			{
 				local item;
-				local r = this.Math.rand(1, 10);
+				local r = this.Math.rand(1, 12);
 
 				if (r == 1)
 				{
@@ -644,11 +644,19 @@ this.free_greenskin_prisoners_contract <- this.inherit("scripts/contracts/contra
 				}
 				else if (r == 9)
 				{
-					item = this.new("scripts/items/weapons/greenskins/named_orc_cleaver");
+					item = this.new("scripts/items/weapons/named/named_orc_cleaver");
 				}
 				else if (r == 10)
 				{
-					item = this.new("scripts/items/weapons/greenskins/named_orc_axe");
+					item = this.new("scripts/items/weapons/named/named_orc_axe");
+				}
+				else if (r == 9)
+				{
+					item = this.new("scripts/items/weapons/named/named_orc_axe_2h");
+				}
+				else if (r == 10)
+				{
+					item = this.new("scripts/items/weapons/named/named_orc_flail_2h");
 				}
 
 				this.World.Assets.getStash().add(item);
