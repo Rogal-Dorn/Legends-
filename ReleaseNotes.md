@@ -2519,8 +2519,9 @@ All foods can be added to bags and eaten in combat:
 * If you eat again when satiated, you become stuffed. This gives you 1 health per turn at a cost of 4 fatigue per turn 
 * If you eat again when stuffed, you gain the sickness injury 
 * If you eat again when sick and stuffed, you gain the fat trait 
-* Items added to your bags won't be by the company, so you can now control what gets eaten 
-* Pies and Puddings provide a bonus againt moral checks, and a small happiness bonus 
+* Items added to your bags won't be eaten by the company, so you can now control what gets eaten 
+* Puddings provide a large bonus againt morale checks, and a small happiness bonus 
+* Pies and provide a small bonus against morale checks, a small happiness bonus and a fatigue bonus 
 * Beer and Mead switch strengths, with beer being weak effect for a long time and mead being a strong effect for a short time. 
 
 **Noble start:**
@@ -2528,6 +2529,17 @@ Warrior can get padded surcoat or thick tunic instead of a tunic, and an aketon 
 Slinger is now Arbelester, starts with light crossbow, hunters hat, higher ranged and melee abilities than a hunter, but lower health, fatigue and initiative 
 Soldier is now a Footman, starts with a wooden shield, thick tunic, aketon cap and a chance for a leather jacket 
 All of them start with a tabard 
+
+**Named armor balance**
+Most armor durability has been reduced by about 20%, for top roll named items the reductions are:
+Attachment 80 > 40  
+Chain 140 > 110
+Cloak 30 > 15 
+Cloth 110 > 75 
+Plate 240 > 170 
+Tabard 5 > 5 
+Total 605 > 415 
+This will be felt across all armors and all human enemies. 
 
 **Fixes**
 Peasant Blacksmiths and Poachers get specialist masteries properly now (Mwah)

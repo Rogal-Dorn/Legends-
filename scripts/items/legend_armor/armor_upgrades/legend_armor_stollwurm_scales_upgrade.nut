@@ -18,11 +18,11 @@ this.legend_armor_stollwurm_scales_upgrade <- this.inherit("scripts/items/legend
 		this.m.SpriteDamagedBack = "upgrade_stollwurm_back_damaged";
 		this.m.SpriteCorpseFront = null;
 		this.m.SpriteCorpseBack = "upgrade_stollwurm_back_dead";
-		this.m.Value = 3200;
-		this.m.Condition = 80;
-		this.m.ConditionMax = 80;
-		this.m.ConditionModifier = 80;
-		this.m.StaminaModifier = -4;
+		this.m.Value = 6000;
+		this.m.Condition = 40;
+		this.m.ConditionMax = 40;
+		this.m.ConditionModifier = 40;
+		this.m.StaminaModifier = -2;
 	}
 
 	function getTooltip()

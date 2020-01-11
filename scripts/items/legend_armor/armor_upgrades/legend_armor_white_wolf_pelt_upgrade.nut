@@ -19,10 +19,10 @@ this.legend_armor_white_wolf_pelt_upgrade <- this.inherit("scripts/items/legend_
 		this.m.SpriteCorpseFront = "upgrade_white_wolf_front_dead";
 		this.m.SpriteCorpseBack = "upgrade_white_wolf_back_dead";
 		this.m.Value = 6000;
-		this.m.Condition = 30;
-		this.m.ConditionMax = 30;
-		this.m.ConditionModifier = 30;
-		this.m.StaminaModifier = 0;
+		this.m.Condition = 20;
+		this.m.ConditionMax = 20;
+		this.m.ConditionModifier = 20;
+		this.m.StaminaModifier = -1;
 	}
 
 	function getTooltip()
@@ -56,7 +56,7 @@ this.legend_armor_white_wolf_pelt_upgrade <- this.inherit("scripts/items/legend_
 	function onUpdateProperties( _properties )
 	{
 		this.legend_armor_upgrade.onUpdateProperties(_properties);
-		_properties.Threat += 15;
+		_properties.Threat += 10;
 	}
 
 });

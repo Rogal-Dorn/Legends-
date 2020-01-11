@@ -35,7 +35,7 @@ this.legend_gambeson_named <- this.inherit("scripts/items/legend_armor/cloth/leg
 	function randomizeValues()
 	{
 		this.m.StaminaModifier = this.Math.rand(4, 6) * -1;
-		this.m.Condition = this.Math.floor(this.m.Condition * this.Math.rand(110, 125) * 0.01) * 1.0;
+		this.m.Condition = this.Math.floor(this.m.Condition * this.Math.rand(65, 75) * 0.01) * 1.0;
 		this.m.ConditionMax = this.m.Condition;
 	}
 
