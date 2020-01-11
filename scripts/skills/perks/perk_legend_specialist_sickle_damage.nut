@@ -24,7 +24,7 @@ this.perk_legend_specialist_sickle_damage <- this.inherit("scripts/skills/skill"
 			_properties.DamageRegularMin += 4;
 			_properties.DamageRegularMax += 12;
 			}
-			if(item.getID() == "weapon.arming_sword" || item.getID() == "weapon.noble_sword" || item.getID() == "weapon.short_sword" || item.getID() == "weapon.scimitar" || item.getID() == "weapon.falchion" || item.getID() == "weapon.shamshir" || item.getID() == "weapon.goblin_falchion" || item.getID() == "weapon.broken_ancient_sword" ||  item.getID() == "weapon.named_sword" || item.getID() == "weapon.ancient_sword" || item.getID() == "weapon.fencing_sword" || item.getID() == "weapon.legend_skin_flayer")
+			if(item.getID() == "weapon.arming_sword" || item.getID() == "weapon.noble_sword" || item.getID() == "weapon.shortsword" || item.getID() == "weapon.scimitar" || item.getID() == "weapon.falchion" || item.getID() == "weapon.shamshir" || item.getID() == "weapon.goblin_falchion" || item.getID() == "weapon.broken_ancient_sword" ||  item.getID() == "weapon.named_sword" || item.getID() == "weapon.ancient_sword" || item.getID() == "weapon.fencing_sword" || item.getID() == "weapon.legend_skin_flayer")
 			{
 			_properties.DamageRegularMin += 1;
 			_properties.DamageRegularMax += 3;

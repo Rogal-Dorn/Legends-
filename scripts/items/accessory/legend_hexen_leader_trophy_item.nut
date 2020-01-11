@@ -11,7 +11,7 @@ this.legend_hexen_leader_trophy_item <- this.inherit("scripts/items/accessory/ac
 		this.m.ShowOnCharacter = true;
 		this.m.IconLarge = "";
 		this.m.Icon = "accessory/hexe_leader_trophy.png";
-		this.m.Sprite = "hexe_trophy";
+		this.m.Sprite = "hexe_leader_trophy";
 		this.m.Value = 2500;
 	}
 

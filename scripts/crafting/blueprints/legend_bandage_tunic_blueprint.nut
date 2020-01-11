@@ -1,11 +1,11 @@
-this.legend_bandage_blueprint <- this.inherit("scripts/crafting/blueprint", {
+this.legend_bandage_tunic_blueprint <- this.inherit("scripts/crafting/blueprint", {
 	m = {},
 	function create()
 	{
 		this.blueprint.create();
-		this.m.ID = "blueprint.legend_bandage_blueprint";
+		this.m.ID = "blueprint.legend_bandage_tunic_blueprint";
 		this.m.Type = this.Const.Items.ItemType.Accessory;
-		this.m.PreviewCraftable = this.new("");
+		this.m.PreviewCraftable = this.new("scripts/items/accessory/bandage_item");
 		this.m.Cost = 10;
 		local ingredients = [
 			{
@@ -16,7 +16,7 @@ this.legend_bandage_blueprint <- this.inherit("scripts/crafting/blueprint", {
 		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
 		{
 			ingredients.push({
-				Script = "scripts/items/legend_armor/legend_armor/legend_tunic",
+				Script = "scripts/items/legend_armor/legend_armor/cloth/legend_tunic",
 				Num = 1
 			})
 		}
@@ -42,4 +42,5 @@ this.legend_bandage_blueprint <- this.inherit("scripts/crafting/blueprint", {
 	}
 
 });
+
 
