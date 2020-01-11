@@ -2516,3 +2516,8 @@ Bleeding fix again but for the rune (Mwah)
 Orc Behemoth and Elites now get second wind properly (Mwah)
 Fixes nacho swallowing crashes.
 Fixes correct brush for hexe and demon banshee trophies.
+Change white wolf pelt back to attachement layer.
+Improve GUI scroll speeds.
+Fixes the stash sort for armor layors.
+
+

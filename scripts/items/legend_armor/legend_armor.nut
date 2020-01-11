@@ -2,7 +2,8 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 	m = {
 		Upgrades = null,
 		Variants = [],
-		Blocked = []
+		Blocked = [],
+		Type = -1
 	},
 	function create()
 	{
