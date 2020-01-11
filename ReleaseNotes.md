@@ -2576,6 +2576,8 @@ Rework on Eat Rations Action:
     Once in Stuffed state, Rate effect is doubled.
 Fixed incorrect plate_cuirass durability.
 Fixes reload crossbow bolt errors.
+Fixes bad blueprint causing crafting screens to not work.
+Fixes Runed player banners.
 
 **New KeyBinding: Toggle Reserve Status**
 While in character screen, press "S" to toggle reserve status
