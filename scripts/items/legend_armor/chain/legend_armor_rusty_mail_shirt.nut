@@ -12,8 +12,8 @@ this.legend_armor_rusty_mail_shirt <- this.inherit("scripts/items/legend_armor/l
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.Value = 250;
-		this.m.Condition = 40;
-		this.m.ConditionMax = 40;
+		this.m.Condition = 35;
+		this.m.ConditionMax = 35;
 		this.m.StaminaModifier = -5;
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 	}

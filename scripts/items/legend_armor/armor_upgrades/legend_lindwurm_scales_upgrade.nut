@@ -18,11 +18,11 @@ this.legend_lindwurm_scales_upgrade <- this.inherit("scripts/items/legend_armor/
 		this.m.SpriteDamagedBack = "upgrade_04_back_damaged";
 		this.m.SpriteCorpseFront = null;
 		this.m.SpriteCorpseBack = "upgrade_04_back_dead";
-		this.m.Value = 800;
-		this.m.Condition = 40;
-		this.m.ConditionMax = 40;
-		this.m.ConditionModifier = 40;
-		this.m.StaminaModifier = -2;
+		this.m.Value = 1800;
+		this.m.Condition = 20;
+		this.m.ConditionMax = 20;
+		this.m.ConditionModifier = 20;
+		this.m.StaminaModifier = -1;
 	}
 
 	function getTooltip()

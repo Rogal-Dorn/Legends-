@@ -35,8 +35,8 @@ this.legend_armor_scale_coat_named <- this.inherit("scripts/items/legend_armor/l
 
 	function randomizeValues()
 	{
-		this.m.StaminaModifier = this.Math.rand(19, 24) * -1;
-		this.m.Condition = this.Math.rand(180, 230);
+		this.m.StaminaModifier = this.Math.rand(22, 24) * -1;
+		this.m.Condition = this.Math.rand(145, 155);
 		this.m.ConditionMax = this.m.Condition;
 	}
 
