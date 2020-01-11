@@ -2555,11 +2555,14 @@ Orc Behemoth and Elites now get second wind properly (Mwah)
 Orc Warlords Champions will now  arm themselves with their named 2h Axes & Flails (Salty)
 The "Freeing Orc Prisoners" contract can now correctly award named orc named items. Addded the named 2h weapons here aswell. (Salty)
 Fixed the Hexes Charm skill to not work on Player Characters or those with the Loyal trait. (Salty)
-
 Fixes nacho swallowing crashes.
 Fixes correct brush for hexe and demon banshee trophies.
 Change white wolf pelt back to attachement layer.
 Improve GUI scroll speeds.
 Fixes the stash sort for armor layors.
 
+13.0.0.34a
+Halved cooldown on legion recruits 
+Hexe leader cloak buffed to +15% resolve
+Fixed crashes from wind reader 
 

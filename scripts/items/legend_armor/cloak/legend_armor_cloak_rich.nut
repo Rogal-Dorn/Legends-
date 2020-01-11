@@ -30,9 +30,9 @@ this.legend_armor_cloak_rich <- this.inherit("scripts/items/legend_armor/legend_
 
 	function randomizeValues()
 	{
-		this.m.Condition = this.Math.floor(this.m.Condition * this.Math.rand(110, 125) * 0.01) * 1.0;
+		this.m.Condition = this.Math.floor(this.m.Condition * this.Math.rand(15, 20) * 0.01) * 1.0;
 		this.m.ConditionMax = this.m.Condition;
-		this.m.BraveryMult = this.Math.rand(105, 115) * 0.01;
+		this.m.BraveryMult = this.Math.rand(103, 18) * 0.01;
 	}
 
 	function updateVariant()

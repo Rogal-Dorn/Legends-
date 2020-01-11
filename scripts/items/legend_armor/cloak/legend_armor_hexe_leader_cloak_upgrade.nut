@@ -28,7 +28,7 @@ this.legend_armor_hexe_leader_cloak_upgrade <- this.inherit("scripts/items/legen
 			id = 7,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Reduces any ranged damage to the body by [color=" + this.Const.UI.Color.NegativeValue + "]-10%[/color] and increases resolve by [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color]"
+			text = "Reduces any ranged damage to the body by [color=" + this.Const.UI.Color.NegativeValue + "]-10%[/color] and increases resolve by [color=" + this.Const.UI.Color.PositiveValue + "]+15%[/color]"
 		});
 		return result;
 	}
@@ -45,7 +45,7 @@ this.legend_armor_hexe_leader_cloak_upgrade <- this.inherit("scripts/items/legen
 
 	function onUpdateProperties( _properties )
 	{
-		_properties.BraveryMult *= 1.1;
+		_properties.BraveryMult *= 1.15;
 	}
 
 	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
