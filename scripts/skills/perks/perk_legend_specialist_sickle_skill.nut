@@ -24,7 +24,7 @@ this.perk_legend_specialist_sickle_skill <- this.inherit("scripts/skills/skill",
 			_properties.MeleeSkill += 12;
 			_properties.DamageDirectMult += 0.25;
 			}
-			if(item.getID() == "weapon.arming_sword" || item.getID() == "weapon.noble_sword" || item.getID() == "weapon.short_sword" || item.getID() == "weapon.scimitar" || item.getID() == "weapon.falchion" || item.getID() == "weapon.shamshir" || item.getID() == "weapon.goblin_falchion" || item.getID() == "weapon.broken_ancient_sword" ||  item.getID() == "weapon.named_sword" || item.getID() == "weapon.ancient_sword" || item.getID() == "weapon.fencing_sword" || item.getID() == "weapon.legend_skin_flayer")
+			if(item.getID() == "weapon.arming_sword" || item.getID() == "weapon.noble_sword" || item.getID() == "weapon.shortsword" || item.getID() == "weapon.scimitar" || item.getID() == "weapon.falchion" || item.getID() == "weapon.shamshir" || item.getID() == "weapon.goblin_falchion" || item.getID() == "weapon.broken_ancient_sword" ||  item.getID() == "weapon.named_sword" || item.getID() == "weapon.ancient_sword" || item.getID() == "weapon.fencing_sword" || item.getID() == "weapon.legend_skin_flayer")
 			{
 			_properties.MeleeSkill += 3;
 			_properties.DamageDirectMult += 0.08;

@@ -260,7 +260,7 @@ this.legend_orc_elite <- this.inherit("scripts/entity/tactical/actor", {
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_last_stand"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_underdog"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_full_force"));
-			this.m.Skills.add(this.new("scripts/skills/traits/perk_legend_second_wind"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_second_wind"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
 		}
 
@@ -392,7 +392,7 @@ this.legend_orc_elite <- this.inherit("scripts/entity/tactical/actor", {
 		{
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_last_stand"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_underdog"));
-			this.m.Skills.add(this.new("scripts/skills/traits/perk_legend_second_wind"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_second_wind"));
 		}
 
 		return true;

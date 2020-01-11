@@ -224,14 +224,6 @@ this.stash_container <- {
 					index = i
 				};
 			}
-
-			if (this.m.Items[i] != null && this.m.Items[i].getOldInstanceID() == _instanceID)
-			{
-				return {
-					item = this.m.Items[i],
-					index = i
-				};
-			}
 		}
 
 		return null;
@@ -467,7 +459,6 @@ this.stash_container <- {
 	function onSerialize( _out )
 	{
 		_out.writeU16(this.m.Items.len());
-		_out.writeU16(this.m.Capacity);
 
 		for( local i = 0; i != this.m.Items.len(); i = ++i )
 		{
@@ -482,7 +473,6 @@ this.stash_container <- {
 				_out.writeBool(true);
 				_out.writeI32(item.ClassNameHash);
 				item.onSerialize(_out);
-		
 			}
 		}
 	}
@@ -491,20 +481,12 @@ this.stash_container <- {
 	{
 		this.clear();
 		local numItems = _in.readU16();
-		if (_in.getMetaData().getVersion() >= 52)
-		{
-			this.m.Capacity = _in.readU16();
-		}		
 
 		if (this.m.Items.len() < numItems)
 		{
 			this.m.Items.resize(numItems);
-			if (this.m.Capacity == 0)
-			{
-				this.m.Capacity = numItems;
-			}
 		}
-		
+
 		for( local i = 0; i < numItems; i = ++i )
 		{
 			local hasItem = _in.readBool();
@@ -519,4 +501,3 @@ this.stash_container <- {
 	}
 
 };
-
