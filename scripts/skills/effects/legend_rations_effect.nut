@@ -6,7 +6,27 @@ this.legend_rations_effect <- this.inherit("scripts/skills/skill", {
 
 	function setAmount( _a )
 	{
-	this.m.Amount = _a;
+		this.m.Amount = _a;
+	}
+
+	function addAmount ( _a)
+	{
+		//Subtract how much we've ate.
+		this.m.Amount = this.Math.max(0, this.m.Amount - (10 - this.m.TurnsLeft)) + _a;
+	}
+
+	function getTurnsLeft()
+	{
+		return this.m.TurnsLeft;
+	}
+
+	function resetTurns()
+	{
+		this.m.TurnsLeft = 10;
+	}
+
+	function getAmount() {
+		return this.m.Amount;
 	}
 
 	function create()
@@ -29,12 +49,29 @@ this.legend_rations_effect <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		local rate = this.Math.floor(this.m.Amount / 10);
+		local rate = this.Math.max(1, this.Math.floor(this.m.Amount / 10));
+		local title = this.getName();
+		local actor = this.getContainer().getActor()
+		if (actor != null)
+		{
+			local stuffed = actor.getSkills().getSkillByID("effects.legend_stuffed_effect");
+			if (stuffed != null)
+			{
+				title = "Stuffed";
+				rate *= 2;
+				local sick = actor.getSkills().getSkillByID("injury.sickness");
+				if (sick != null)
+				{
+					title = "Overate";
+				}
+			}
+		}
+
 		local ret = [
 			{
 				id = 1,
 				type = "title",
-				text = this.getName()
+				text = title
 			},
 			{
 				id = 2,
@@ -60,7 +97,7 @@ this.legend_rations_effect <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		local rate = this.Math.floor(this.m.Amount / 10);
+		local rate = this.Math.max(1, this.Math.floor(this.m.Amount / 10));
 		local actor = this.getContainer().getActor();
 		actor.setHitpoints(this.Math.min(actor.getHitpointsMax(), actor.getHitpoints() + rate));
 		_properties.FatigueRecoveryRate -= rate;

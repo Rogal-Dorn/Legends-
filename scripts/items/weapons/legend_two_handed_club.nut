@@ -26,7 +26,8 @@ this.legend_two_handed_club <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RegularDamage = 35;
 		this.m.RegularDamageMax = 60;
 		this.m.ArmorDamageMult = 1.0;
-		this.m.DirectDamageMult = 0.45;
+		this.m.DirectDamageMult = 0.5;
+		this.m.DirectDamageAdd = -0.05;
 		this.m.ChanceToHitHead = 0;
 	}
 

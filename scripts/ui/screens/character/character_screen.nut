@@ -116,6 +116,12 @@ this.character_screen <- {
 		this.m.JSDataSourceHandle.asyncCall("switchToPreviousBrother", null);
 	}
 
+	function toggleBrotherReserves()
+	{
+		this.Tooltip.hide();
+		this.m.JSDataSourceHandle.asyncCall("toggleBrotherReserves", null);
+	}
+
 	function loadPerksTrees()
 	{
 		if (this.m.JSDataSourceHandle != null)

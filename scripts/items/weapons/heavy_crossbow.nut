@@ -64,10 +64,6 @@ this.heavy_crossbow <- this.inherit("scripts/items/weapons/weapon", {
 		return result;
 	}
 
-	function onCombatFinished()
-	{
-		this.setLoaded(true);
-	}
 
 	function onEquip()
 	{
@@ -84,7 +80,7 @@ this.heavy_crossbow <- this.inherit("scripts/items/weapons/weapon", {
 	function onCombatFinished()
 	{
 		this.weapon.onCombatFinished();
-		this.m.IsLoaded = true;
+		this.setLoaded(true);
 	}
 
 });

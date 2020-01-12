@@ -27,7 +27,8 @@ this.legend_staff <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RegularDamage = 20;
 		this.m.RegularDamageMax = 30;
 		this.m.ArmorDamageMult = 0.3;
-		this.m.DirectDamageMult = 0.3;
+		this.m.DirectDamageMult = 0.4;
+		this.m.DirectDamageAdd = -0.1;
 	}
 
 	function onEquip()
@@ -35,8 +36,8 @@ this.legend_staff <- this.inherit("scripts/items/weapons/weapon", {
 		this.weapon.onEquip();
 		local s = this.new("scripts/skills/actives/legend_staff_bash");
 		this.addSkill(s);
-
 		this.addSkill(this.new("scripts/skills/actives/legend_staff_knock_out"));
 	}
 
 });
+

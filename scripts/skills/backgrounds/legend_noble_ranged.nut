@@ -225,8 +225,18 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 	{
 		local items = this.getContainer().getActor().getItems();
 		local r;
-		items.equip(this.new("scripts/items/helmets/hunters_hat"));
+		r = this.Math.rand(0, 1);
+
+		if (r == 0)
+		{
+			items.equip(this.new("scripts/items/helmets/aketon_cap"));
+		}
+		else if (r == 1)
+		{
+			items.equip(this.new("scripts/items/helmets/open_leather_cap"));
+		}
 		items.equip(this.new("scripts/items/weapons/light_crossbow"));
+		items.equip(this.new("scripts/items/ammo/quiver_of_bolts"));
 		items.addToBag(this.new("scripts/items/weapons/knife"));
 		r = this.Math.rand(0, 1);
 
@@ -235,7 +245,7 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 			[0, "cloth/legend_gambeson"],
 			[0, "cloth/legend_gambeson_plain"],
 			[0, "cloth/legend_gambeson_wolf"],
-			[0, "cloth/legend_padded_surcoat"],
+			[1, "cloth/legend_padded_surcoat"],
 			[0, "cloth/legend_robes"],
 			[0, "cloth/legend_apron_butcher"],
 			[0, "cloth/legend_robes_nun"],
@@ -245,10 +255,18 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 			[0, "cloth/legend_sackcloth_patched"],
 			[0, "cloth/legend_sackcloth_tattered"],
 			[1, "cloth/legend_tunic"],
-			[1, "cloth/legend_tunic_noble"]
+			[0, "cloth/legend_tunic_noble"]
 		];
 		local armor = this.Const.World.Common.pickLegendArmor(cloths)
-		armor.setUpgrade("tabard/legend_armor_tabard")
+			local tabards = [
+                [0, ""],
+				[1, "tabard/legend_armor_tabard"]
+			]
+			local tabard = this.Const.World.Common.pickLegendArmor(tabards)
+			if (tabard != null)
+			{
+				armor.setUpgrade(tabard)
+			}
 		items.equip(armor)
 	}
 });

@@ -2552,11 +2552,42 @@ Peasant Witchhunter gets shortsword properly now (Mwah)
 Sickle damage & Skill perks now correctly locate "shortsword" and not "short sword" (Mwah)
 Bleeding fix again but for the rune (Mwah)
 Orc Behemoth and Elites now get second wind properly (Mwah)
+Orc Warlords Champions will now  arm themselves with their named 2h Axes & Flails (Salty)
+The "Freeing Orc Prisoners" contract can now correctly award named orc named items. Addded the named 2h weapons here aswell. (Salty)
+Fixed the Hexes Charm skill to not work on Player Characters or those with the Loyal trait. (Salty)
 Fixes nacho swallowing crashes.
 Fixes correct brush for hexe and demon banshee trophies.
 Change white wolf pelt back to attachement layer.
 Improve GUI scroll speeds.
 Fixes the stash sort for armor layors.
 
+13.0.0.34a
+Halved cooldown on legion recruits 
+Hexe leader cloak buffed to +15% resolve
+Fixed crashes from wind reader 
 
+13.0.0.34b
+Fixed crash when actor dies from other effects.
+Fixed crash when bleeding is applied to taste the pain perk.
+Rework on Eat Rations Action:
+    Progression: satiatied -> Stuffed -> OverAte (become sick) -> Become McFatty (gain fat trait)
+    Heal and Fatigue reduction for 10 turns. Each turn rate equals total rations amount / 10.
+    Each progression adds that amounts rations to the total amount and resets the turn clock to 10 turns.
+    Once in Stuffed state, Rate effect is doubled.
+Fixed incorrect plate_cuirass durability.
+Fixes reload crossbow bolt errors.
+Fixes bad blueprint causing crafting screens to not work.
+Fixes Runed player banners.
 
+**New KeyBinding: Toggle Reserve Status**
+While in character screen, press "S" to toggle reserve status
+PSA:  the "A" and "D" keys on the character screen cycle through the bros. 
+
+https://drive.google.com/open?id=19eUTQMARiH3mRLl5e97g6NPAWPacFjvm
+
+13.0.0 RC 1
+*Fixed save/reload exploit to make contracts easier.
+You can no longer sleep Geist, Winselmutters, or Hollenhunds with the Sleep skill. Ghosts never sleep (Mwah)
+Updates armor pen values for legend staffs and peasant tier weapons.
+Adds armor layer version of heraldic armor.
+Disabled catapult blueprint

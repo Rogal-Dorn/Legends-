@@ -27,7 +27,8 @@ this.legend_mystic_staff <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RegularDamage = 40;
 		this.m.RegularDamageMax = 50;
 		this.m.ArmorDamageMult = 0.3;
-		this.m.DirectDamageMult = 0.3;
+		this.m.DirectDamageMult = 0.4;
+		this.m.DirectDamageAdd = -0.1;
 	}
 
 	function onEquip()
@@ -37,7 +38,6 @@ this.legend_mystic_staff <- this.inherit("scripts/items/weapons/weapon", {
 		s.m.Icon = "skills/staff_bash_mystic.png";
 		s.m.IconDisabled = "skills/staff_bash_mystic_bw.png";
 		this.addSkill(s);
-
 		local t = this.new("scripts/skills/actives/legend_staff_knock_out");
 		t.m.Icon = "skills/staff_knock_out_mystic.png";
 		t.m.IconDisabled = "skills/staff_knock_out_mystic_bw.png";
@@ -45,3 +45,4 @@ this.legend_mystic_staff <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

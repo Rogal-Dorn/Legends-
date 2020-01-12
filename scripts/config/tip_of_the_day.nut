@@ -141,6 +141,7 @@ gt.Const.TipOfTheDay <- [
 	"Do the job. Survive. Get paid.",
 	"If a character waits their turn, their position in the turn order of the next round is determined with a penalty of 25% to Initiative.",
 	"A 95% chance to hit is also a 5% chance to miss."
+	"In the Inventory/Character Screen page, \'A\' key selects previous bro, \'D\' key selects next bro, \'S\' key toggles reserve status."
 ];
 gt.Const.LoadingScreens <- [
 	"ui/screens/loading_screen_01.jpg",

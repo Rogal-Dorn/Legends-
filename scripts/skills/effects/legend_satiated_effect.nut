@@ -6,10 +6,10 @@ this.legend_satiated_effect <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "effects.legend_satiated_effect";
 		this.m.Name = "Satiated";
-		this.m.Icon = "ui/perks/food56.png";
-		this.m.IconMini = "mini_food_circle";
-		this.m.Overlay = "food_circle";
-		this.m.Type = this.Const.SkillType.StatusEffect;
+		this.m.Icon = "s";
+		this.m.IconMini = "";
+		this.m.Overlay = "";
+		this.m.Type = this.Const.SkillType.DrugEffect;
 		this.m.IsActive = false;
 		this.m.IsRemovedAfterBattle = true;
 	}

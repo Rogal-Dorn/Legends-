@@ -61,13 +61,20 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		this.World.Assets.getStash().setResizable(true);
 		this.World.Assets.getStash().resize(600);
 
+		local banner = this.new("scripts/items/tools/player_banner");
+		banner.setVariant(2);
+		this.World.Assets.getStash().add(banner);
+		local rune =  this.new("scripts/items/rune_sigils/legend_vala_inscription_token");
+		rune.setRuneVariant(5);
+		rune.updateRuneSigilToken();
+		this.World.Assets.getStash().add(rune);
 
 		local stashitems = [
 			"accessory/bandage_item",
 			"supplies/roots_and_berries_item",
 			"supplies/legend_fresh_fruit_item",
 			"supplies/legend_cooking_spices_item",
-			"supplies/ground_grains_item"
+			"supplies/ground_grains_item",
 		]
 
 		foreach (si in stashitems)
@@ -272,6 +279,14 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			local pla = this.new("scripts/items/weapons/" + w);
 			this.World.Assets.getStash().add(pla);
 		}
+
+		for (local i = 1; i < 10; i = ++i)
+		{
+			local item = this.new("scripts/items/legend_armor/armor/legend_armor_heraldic");
+			item.setupArmor(i);
+			this.World.Assets.getStash().add(item);
+		}
+
 	}
 
 
