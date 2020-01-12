@@ -35,5 +35,10 @@ this.legend_catapult_blueprint <- this.inherit("scripts/crafting/blueprint", {
 		_stash.add(this.new("scripts/items/accessory/legend_catapult_item"));
 	}
 
+	function isValid()
+	{
+		return false;
+	}	
+
 });
 
