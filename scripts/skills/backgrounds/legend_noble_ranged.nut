@@ -4,7 +4,7 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 	{
 		this.character_background.create();
 		this.m.ID = "background.legend_noble_ranged";
-		this.m.Name = "Noble House Slinger";
+		this.m.Name = "Arbalester";
 		this.m.Icon = "ui/traits/trait_icon_32.png";
 		this.m.HiringCost = 150;
 		this.m.DailyCost = 16;
@@ -62,7 +62,7 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[1];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.SlingsTree,
+				this.Const.Perks.CrossbowTree,
 				this.Const.Perks.ThrowingTree,
 				this.Const.Perks.DaggerTree,
 				this.Const.Perks.BowTree
@@ -148,8 +148,8 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 	{
 		local c = {
 			Hitpoints = [
-				-5,
-				-10
+				-10,
+				-5
 			],
 			Bravery = [
 				5,
@@ -160,24 +160,24 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 				0
 			],
 			MeleeSkill = [
-				3,
-				6
+				0,
+				3
 			],
 			RangedSkill = [
-				17,
-				11
+				23,
+				20
 			],
 			MeleeDefense = [
 				0,
 				4
 			],
 			RangedDefense = [
-				0,
-				3
+				3,
+				6
 			],
 			Initiative = [
-				5,
-				5
+				0,
+				0
 			]
 		};
 		return c;
@@ -206,6 +206,7 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 	{
 		local items = this.getContainer().getActor().getItems();
 		local r;
+		items.equip(this.new("scripts/items/helmets/hunters_hat"));
 		items.equip(this.new("scripts/items/weapons/legend_sling"));
 		items.addToBag(this.new("scripts/items/weapons/legend_shiv"));
 		r = this.Math.rand(0, 1);
@@ -224,8 +225,19 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 	{
 		local items = this.getContainer().getActor().getItems();
 		local r;
-		items.equip(this.new("scripts/items/weapons/legend_sling"));
-		items.addToBag(this.new("scripts/items/weapons/legend_shiv"));
+		r = this.Math.rand(0, 1);
+
+		if (r == 0)
+		{
+			items.equip(this.new("scripts/items/helmets/aketon_cap"));
+		}
+		else if (r == 1)
+		{
+			items.equip(this.new("scripts/items/helmets/open_leather_cap"));
+		}
+		items.equip(this.new("scripts/items/weapons/light_crossbow"));
+		items.equip(this.new("scripts/items/ammo/quiver_of_bolts"));
+		items.addToBag(this.new("scripts/items/weapons/knife"));
 		r = this.Math.rand(0, 1);
 
 		local cloths = [
@@ -233,7 +245,7 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 			[0, "cloth/legend_gambeson"],
 			[0, "cloth/legend_gambeson_plain"],
 			[0, "cloth/legend_gambeson_wolf"],
-			[0, "cloth/legend_padded_surcoat"],
+			[1, "cloth/legend_padded_surcoat"],
 			[0, "cloth/legend_robes"],
 			[0, "cloth/legend_apron_butcher"],
 			[0, "cloth/legend_robes_nun"],
@@ -243,9 +255,18 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 			[0, "cloth/legend_sackcloth_patched"],
 			[0, "cloth/legend_sackcloth_tattered"],
 			[1, "cloth/legend_tunic"],
-			[1, "cloth/legend_tunic_noble"]
+			[0, "cloth/legend_tunic_noble"]
 		];
 		local armor = this.Const.World.Common.pickLegendArmor(cloths)
+			local tabards = [
+                [0, ""],
+				[1, "tabard/legend_armor_tabard"]
+			]
+			local tabard = this.Const.World.Common.pickLegendArmor(tabards)
+			if (tabard != null)
+			{
+				armor.setUpgrade(tabard)
+			}
 		items.equip(armor)
 	}
 });

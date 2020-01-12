@@ -25,17 +25,17 @@ this.legend_gambeson_named <- this.inherit("scripts/items/legend_armor/cloth/leg
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.InventorySound = this.Const.Sound.ClothEquip;
-		this.m.Value = 2500;
-		this.m.Condition = 65;
-		this.m.ConditionMax = 65;
+		this.m.Value = 5000;
+		this.m.Condition = 60;
+		this.m.ConditionMax = 60;
 		this.m.StaminaModifier = -6;
 		this.randomizeValues();
 	}
 
 	function randomizeValues()
 	{
-		this.m.StaminaModifier = this.Math.rand(4, 6) * -1;
-		this.m.Condition = this.Math.floor(this.m.Condition * this.Math.rand(110, 125) * 0.01) * 1.0;
+		this.m.StaminaModifier = this.Math.rand(3, 6) * -1;
+		this.m.Condition = this.Math.floor(this.m.Condition * this.Math.rand(61, 80) * 0.01) * 1.0;
 		this.m.ConditionMax = this.m.Condition;
 	}
 

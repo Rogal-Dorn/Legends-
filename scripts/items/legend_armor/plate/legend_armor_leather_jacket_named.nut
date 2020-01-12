@@ -25,8 +25,8 @@ this.legend_armor_leather_jacket_named <- this.inherit("scripts/items/legend_arm
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.Value = 2000;
-		this.m.Condition = 35;
-		this.m.ConditionMax = 35;
+		this.m.Condition = 20;
+		this.m.ConditionMax = 20;
 		this.m.StaminaModifier = -3;
 		this.randomizeValues();
 	}
@@ -34,7 +34,7 @@ this.legend_armor_leather_jacket_named <- this.inherit("scripts/items/legend_arm
 	function randomizeValues()
 	{
 		this.m.StaminaModifier = this.Math.rand(1, 3) * -1;
-		this.m.Condition = this.Math.rand(30, 40);
+		this.m.Condition = this.Math.rand(20, 40);
 		this.m.ConditionMax = this.m.Condition;
 	}
 
