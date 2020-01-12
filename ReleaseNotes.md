@@ -2587,7 +2587,5 @@ https://drive.google.com/open?id=19eUTQMARiH3mRLl5e97g6NPAWPacFjvm
 
 13.0.0 RC 1
 *Fixed save/reload exploit to make contracts easier.
-
-13.0.0.35
-**Fixes**
 You can no longer sleep Geist, Winselmutters, or Hollenhunds with the Sleep skill. Ghosts never sleep (Mwah)
+
