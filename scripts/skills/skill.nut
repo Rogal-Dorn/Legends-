@@ -1415,6 +1415,11 @@ this.skill <- {
 		{
 			r = this.Math.rand(1, 100);
 			isHit = r <= toHit;
+			if(!isHit) {
+				this.Tactical.EventLog.logEx(this.Const.UI.getColorizedEntityName(targetEntity) + " got lucky.");
+			} else {
+				this.Tactical.EventLog.logEx(this.Const.UI.getColorizedEntityName(targetEntity) + " wasn't lucky enough.");
+			}
 		}
 
 		if (isHit)
