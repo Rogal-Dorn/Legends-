@@ -23,7 +23,8 @@ this.legend_sickle <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RegularDamage = 15;
 		this.m.RegularDamageMax = 20;
 		this.m.ArmorDamageMult = 0.5;
-		this.m.DirectDamageMult = 0.15;
+		this.m.DirectDamageMult = 0.2;
+		this.m.DirectDamageMult = -0.05;
 	}
 
 	function onEquip()
@@ -38,3 +39,4 @@ this.legend_sickle <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+
