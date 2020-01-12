@@ -21,7 +21,7 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 	function create()
 	{
 		this.m.SlotType = this.Const.ItemSlot.None;
-		this.m.ItemType = this.Const.Items.ItemType.Usable;
+		this.m.ItemType = this.Const.Items.ItemType.Armor;
 		this.m.IsDroppedAsLoot = true;
 		this.m.IsAllowedInBag = false;
 		this.m.IsUsable = true;

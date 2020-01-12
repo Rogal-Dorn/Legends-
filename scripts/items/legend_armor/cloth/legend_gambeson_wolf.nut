@@ -12,8 +12,8 @@ this.legend_gambeson_wolf <- this.inherit("scripts/items/legend_armor/legend_arm
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.InventorySound = this.Const.Sound.ClothEquip;
 		this.m.Value = 500;
-		this.m.Condition = 80;
-		this.m.ConditionMax = 80;
+		this.m.Condition = 65;
+		this.m.ConditionMax = 65;
 		this.m.StaminaModifier = -9;
 	}
 
