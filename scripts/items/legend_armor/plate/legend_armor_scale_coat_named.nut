@@ -25,18 +25,18 @@ this.legend_armor_scale_coat_named <- this.inherit("scripts/items/legend_armor/l
 		];
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
-		this.m.Value = 10000;
-		this.m.Condition = 180;
-		this.m.ConditionMax = 180;
-		this.m.StaminaModifier = -24;
+		this.m.Value = 15000;
+		this.m.Condition = 160;
+		this.m.ConditionMax = 160;
+		this.m.StaminaModifier = -22;
 		this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
 		this.randomizeValues();
 	}
 
 	function randomizeValues()
 	{
-		this.m.StaminaModifier = this.Math.rand(19, 24) * -1;
-		this.m.Condition = this.Math.rand(180, 230);
+		this.m.StaminaModifier = this.Math.rand(20, 22) * -1;
+		this.m.Condition = this.Math.rand(160, 180);
 		this.m.ConditionMax = this.m.Condition;
 	}
 
