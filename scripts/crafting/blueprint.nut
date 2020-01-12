@@ -259,6 +259,11 @@ this.blueprint <- {
 		foreach( i, c in this.m.PreviewComponents )
 		{
 			local num = 0;
+			if (c.Instance == null)
+			{
+				this.logInfo("ERROR, blueprint instance is null. iteration = " + i)
+				continue;
+			}
 			if (c.Instance.getID() in itemsMap)
 			{
 				num = itemsMap[c.Instance.getID()];
