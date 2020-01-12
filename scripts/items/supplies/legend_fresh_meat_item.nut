@@ -1,14 +1,15 @@
-this.legend_fresh_meat_item <- this.inherit("scripts/items/supplies/food_item", {
+this.legend_fresh_meat_item <- this.inherit("scripts/items/supplies/legend_usable_food", {
 	m = {},
 	function create()
 	{
-		this.food_item.create();
+		this.legend_usable_food.create();
 		this.m.ID = "supplies.legend_fresh_meat";
 		this.m.Name = "Fresh Meat";
 		this.m.Description = "Provisions. Freshly caught and butchered, this meat tastes good but will not last long without curing.";
 		this.m.Icon = "supplies/legend_fresh_game.png";
+		this.m.Amount = 15.0;
 		this.m.Value = 30;
-		this.m.GoodForDays = 3;
+		this.m.GoodForDays = 2;
 		this.m.IsUndesirable = false;
 	}
 
@@ -42,5 +43,18 @@ this.legend_fresh_meat_item <- this.inherit("scripts/items/supplies/food_item", 
 		return this.item.getSellPrice();
 	}
 
+	function onPutIntoBag()
+	{
+		this.onEquip();
+	}
+
+	function onEquip()
+	{
+		this.legend_usable_food.onEquip();
+		local skill = this.new("scripts/skills/actives/legend_eat_rations_skill");
+		skill.setItem(this);
+		skill.setAmount(this.m.Amount);
+		this.addSkill(skill);
+	}
 });
 

@@ -8,7 +8,8 @@ this.strange_meat_item <- this.inherit("scripts/items/supplies/food_item", {
 		this.m.Description = "Provisions. Meat of indefinable origin. Eating this may seem risky, but is preferable to starving.";
 		this.m.Icon = "supplies/inventory_provisions_15.png";
 		this.m.Value = 20;
-		this.m.GoodForDays = 3;
+		this.m.Amount = 15.0;
+		this.m.GoodForDays = 2;
 		this.m.IsUndesirable = true;
 	}
 

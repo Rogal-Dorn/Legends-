@@ -8,6 +8,7 @@ this.legend_cooking_spices_item <- this.inherit("scripts/items/supplies/food_ite
 		this.m.Description = "Combining salts, dried herbs and roots provides spices perfect for cooking.";
 		this.m.Icon = "supplies/legend_cooking_spices.png";
 		this.m.Value = 50;
+		this.m.Amount = 2.0;
 		this.m.GoodForDays = 30;
 	}
 

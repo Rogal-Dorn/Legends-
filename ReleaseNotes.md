@@ -2507,13 +2507,56 @@ Heightened Reflexes now turns half your Ranged Defense into Initiative instead o
 Close combat archer now uses your ranged defense as your percentage damage boost on ranged attacks when enemies are within two tiles 
 Medical Ingredients Perk allows you to craft a bandage out of a linen tunic and roots and berries 
 
-13.0.0.34
+
+13.0.0.34 Nom Noms 
+
+**Food** 
+Stack sizes for all foods have been rebalanced, basic foods provide less, cooked foods provide more
+All foods can be added to bags and eaten in combat:
+* Provides the remaining stack size as health, over ten turns, 
+* Costs the remaining stack size in fatigue, over ten turns 
+* Will make you satiated for the rest of the combat 
+* If you eat again when satiated, you become stuffed. This gives you 1 health per turn at a cost of 4 fatigue per turn 
+* If you eat again when stuffed, you gain the sickness injury 
+* If you eat again when sick and stuffed, you gain the fat trait 
+* Items added to your bags won't be eaten by the company, so you can now control what gets eaten 
+* Puddings provide a large bonus againt morale checks, and a small happiness bonus 
+* Pies and provide a small bonus against morale checks, a small happiness bonus and a fatigue bonus 
+* Beer and Mead switch strengths, with beer being weak effect for a long time and mead being a strong effect for a short time. 
+
+**Noble start:**
+Warrior can get padded surcoat or thick tunic instead of a tunic, and an aketon cap and infanty axe. 
+Slinger is now Arbelester, starts with light crossbow, hunters hat, higher ranged and melee abilities than a hunter, but lower health, fatigue and initiative 
+Soldier is now a Footman, starts with a wooden shield, thick tunic, aketon cap and a chance for a leather jacket 
+All of them start with a tabard 
+
+**Named armor balance**
+Most armor durability has been reduced by about 20%, for top roll named items the reductions are:
+Attachment 80 > 40  
+Chain 140 > 110
+Cloak 30 > 15 
+Cloth 110 > 70 
+Plate 240 > 170 
+Tabard 5 > 5 
+Total 605 > 410 
+This will be felt across all armors and all human enemies. 
+Prices significantly increased for high tier attachments, chain and cloaks
+Hexe leader cloak resolve increase reduced from 25% to 10%, gained the same stats as a noble cloak 
+Redback cloak damage reduction reduced from 50% to 25%, gained the same stats as a noble cloak 
+
+
+
 **Fixes**
 Peasant Blacksmiths and Poachers get specialist masteries properly now (Mwah)
 Peasant Witchhunter gets shortsword properly now (Mwah)
 Sickle damage & Skill perks now correctly locate "shortsword" and not "short sword" (Mwah)
 Bleeding fix again but for the rune (Mwah)
 Orc Behemoth and Elites now get second wind properly (Mwah)
-Orc Warlords Champions will now  arm themselves with their named 2h Axes & Flails (Salty)
-The "Freeing Orc Prisoners" contract can now correctly award named orc named items. Addded the named 2h weapons here aswell. (Salty)
-Fixed the Hexes Charm skill to not work on Player Characters or those with the Loyal trait. They are now with the enuchs (Salty)
+Fixes nacho swallowing crashes.
+Fixes correct brush for hexe and demon banshee trophies.
+Change white wolf pelt back to attachement layer.
+Improve GUI scroll speeds.
+Fixes the stash sort for armor layors.
+
+
+

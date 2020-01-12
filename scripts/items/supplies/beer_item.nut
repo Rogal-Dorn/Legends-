@@ -8,6 +8,7 @@ this.beer_item <- this.inherit("scripts/items/supplies/legend_usable_food", {
 		this.m.Description = "Provisions. This fermented hop or barley drink is more durable and safer to drink than plain water.  Can either be consumed as provisions or drunk in battle";
 		this.m.Icon = "supplies/inventory_provisions_14.png";
 		this.m.Value = 120;
+		this.m.Amount = 35.0;
 		this.m.GoodForDays = 10;
 	}
 

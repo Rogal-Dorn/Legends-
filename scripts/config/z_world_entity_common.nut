@@ -516,7 +516,7 @@ gt.Const.World.Common.dynamicSelectTroop <- function (_list, _resources, _scale,
 
 gt.Const.World.Common.buildDynamicTroopList <- function( _template, _resources)
 {
-	this.logInfo("*DynamicTroopList : template = " + _template.Name + " : resources = " + _resources)
+	//this.logInfo("*DynamicTroopList : template = " + _template.Name + " : resources = " + _resources)
 	local credits = _resources;
 	if ("MinR" in _template)
 	{

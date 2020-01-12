@@ -18,11 +18,11 @@ this.legend_armor_stollwurm_scales_upgrade <- this.inherit("scripts/items/legend
 		this.m.SpriteDamagedBack = "upgrade_stollwurm_back_damaged";
 		this.m.SpriteCorpseFront = null;
 		this.m.SpriteCorpseBack = "upgrade_stollwurm_back_dead";
-		this.m.Value = 3200;
-		this.m.Condition = 80;
-		this.m.ConditionMax = 80;
-		this.m.ConditionModifier = 80;
-		this.m.StaminaModifier = -4;
+		this.m.Value = 6000;
+		this.m.Condition = 40;
+		this.m.ConditionMax = 40;
+		this.m.ConditionModifier = 40;
+		this.m.StaminaModifier = -2;
 	}
 
 	function getTooltip()
@@ -32,13 +32,13 @@ this.legend_armor_stollwurm_scales_upgrade <- this.inherit("scripts/items/legend
 			id = 13,
 			type = "text",
 			icon = "ui/icons/armor_body.png",
-			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+80[/color] Durability"
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+40[/color] Durability"
 		});
 		result.push({
 			id = 14,
 			type = "text",
 			icon = "ui/icons/fatigue.png",
-			text = "[color=" + this.Const.UI.Color.NegativeValue + "]+4[/color] Maximum Fatigue"
+			text = "[color=" + this.Const.UI.Color.NegativeValue + "]-2[/color] Maximum Fatigue"
 		});
 		result.push({
 			id = 15,

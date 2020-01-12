@@ -15,7 +15,10 @@ this.legend_armor_redback_cloak_upgrade <- this.inherit("scripts/items/legend_ar
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "legend_armor/cloak/icon_cloak_spider.png";
 		this.m.OverlayIconLarge = "legend_armor/cloak/inventory_cloak_spider.png";
-		this.m.Value = 12000;
+		this.m.Value = 7500;
+		this.m.Condition = 10;
+		this.m.ConditionMax = 10;
+		this.m.StaminaModifier = -1;
 	}
 
 	function getTooltip()
@@ -25,7 +28,7 @@ this.legend_armor_redback_cloak_upgrade <- this.inherit("scripts/items/legend_ar
 			id = 7,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Reduces any ranged damage to the body by [color=" + this.Const.UI.Color.NegativeValue + "]-50%[/color]"
+			text = "Reduces any ranged damage to the body by [color=" + this.Const.UI.Color.NegativeValue + "]-25%[/color]"
 		});
 		return result;
 	}
@@ -36,7 +39,7 @@ this.legend_armor_redback_cloak_upgrade <- this.inherit("scripts/items/legend_ar
 			id = 7,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Reduces any ranged damage to the body by [color=" + this.Const.UI.Color.NegativeValue + "]-50%[/color]"
+			text = "Reduces any ranged damage to the body by [color=" + this.Const.UI.Color.NegativeValue + "]-25%[/color]"
 		});
 	}
 
@@ -44,7 +47,7 @@ this.legend_armor_redback_cloak_upgrade <- this.inherit("scripts/items/legend_ar
 	{
 		if (_hitInfo.BodyPart == this.Const.BodyPart.Body)
 		{
-			_properties.DamageReceivedRangedMult *= 0.5;
+			_properties.DamageReceivedRangedMult *= 0.75;
 		}
 	}
 

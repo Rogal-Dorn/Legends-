@@ -148,6 +148,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[5].setPlaceInFormation(15);
 		bros[5].setVeteranPerks(2);
 		bros[5].getSkills().add(this.new("scripts/skills/perks/perk_quick_hands"));
+		this.World.Assets.getStash().add(this.new("scripts/items/supplies/cured_rations_item"));
 
 		this.Time.scheduleEvent(this.TimeUnit.Real, 1000, function ( _tag )
 		{

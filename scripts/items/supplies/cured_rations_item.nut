@@ -9,7 +9,7 @@ this.cured_rations_item <- this.inherit("scripts/items/supplies/legend_usable_fo
 		this.m.Icon = "supplies/inventory_provisions_16.png";
 		this.m.Value = 300;
 		this.m.Amount = 50.0;
-		this.m.GoodForDays = 16;
+		this.m.GoodForDays = 14;
 		this.m.IsAllowedInBag = true;
 		this.m.IsDroppedAsLoot = true;
 	}
@@ -54,8 +54,9 @@ this.cured_rations_item <- this.inherit("scripts/items/supplies/legend_usable_fo
 	function onEquip()
 	{
 		this.legend_usable_food.onEquip();
-		local skill = this.new("scripts/skills/actives/legend_eat_porridge_skill");
+		local skill = this.new("scripts/skills/actives/legend_eat_rations_skill");
 		skill.setItem(this);
+		skill.setAmount(this.m.Amount);
 		this.addSkill(skill);
 	}
 });
