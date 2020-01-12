@@ -7,8 +7,8 @@ this.legend_great_khopesh <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Name = "Khopesh";
 		this.m.Description = "A giant ancient curved sword on a long handle with strange ornamentations. Its shape makes it particularly effective against armor.";
 		this.m.Categories = "Cleaver, Two-Handed";
-		this.m.IconLarge = "weapons/melee/legend_great_kopesh.png";
-		this.m.Icon = "weapons/melee/legend_great_kopesh_70x70.png";
+		this.m.IconLarge = "weapons/melee/legend_great_khopesh.png";
+		this.m.Icon = "weapons/melee/legend_great_khopesh_70x70.png";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;
