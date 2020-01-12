@@ -27,7 +27,7 @@ this.perk_legend_wind_reader <- this.inherit("scripts/skills/skill", {
 			return 3;
 		}
 
-		local rdef = actor.getCurrentProperties().getRangedDefense()
+		local rdef = actor.getBaseProperties().RangedDefense;
 		local bonus = rdef / 3;
 		return this.Math.max(3, this.Math.floor(bonus));
 	}

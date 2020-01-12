@@ -573,6 +573,15 @@ CharacterScreenDatasource.prototype.switchToNextBrother = function(_withoutNotif
 	}
 };
 
+
+CharacterScreenDatasource.prototype.toggleBrotherReserves = function(_withoutNotify)
+{
+    if (this.mBrothersList == null || this.mIsPopupOpen)
+        return;
+
+    this.notifyBackendToggleReservesCharacter();
+};
+
 CharacterScreenDatasource.prototype.selectedBrotherById = function(_brotherId, _withoutNotify)
 {
 	if (this.mSelectedBrotherIndex !== null && this.mBrothersList !== null)
