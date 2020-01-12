@@ -26,8 +26,8 @@ this.named_orc_heavy_shield <- this.inherit("scripts/items/shields/named/named_s
 		this.m.Sprite = "shield_orc_02_named_0" + this.m.Variant;
 		this.m.SpriteDamaged = "shield_orc_02_named_0" + this.m.Variant + "_damaged";
 		this.m.ShieldDecal = "shield_orc_02_named_0" + this.m.Variant + "_destroyed";
-		this.m.IconLarge = "shields/orciron_shield_named_0" + this.m.Variant + "_140x70.png";
-		this.m.Icon = "shields/orciron_shield_named_0" + this.m.Variant + "_70x70.png";
+		this.m.IconLarge = "shields/orc_iron_shield_named_0" + this.m.Variant + "_140x70.png";
+		this.m.Icon = "shields/orc_iron_shield_named_0" + this.m.Variant + "_70x70.png";
 	}
 
 	function onEquip()
