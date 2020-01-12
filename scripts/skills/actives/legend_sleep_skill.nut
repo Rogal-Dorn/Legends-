@@ -61,6 +61,12 @@ this.legend_sleep_skill <- this.inherit("scripts/skills/skill", {
 			return false;
 		}
 
+		local EntityType = _targetTile.getEntity().getType();
+		if (EntityType == this.Const.EntityType.LegendBanshee || EntityType == this.Const.EntityType.Ghost || EntityType == this.Const.EntityType.LegendDemonHound)
+		{
+			return false
+		}
+
 		return true;
 	}
 
