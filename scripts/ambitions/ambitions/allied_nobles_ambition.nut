@@ -114,8 +114,17 @@ this.allied_nobles_ambition <- this.inherit("scripts/ambitions/ambition", {
 			icon = "ui/items/" + item.getIcon(),
 			text = "You gain " + this.Const.Strings.getArticle(item.getName()) + item.getName()
 		});
-		item = this.new("scripts/items/armor/special/heraldic_armor");
-		item.setFaction(banner);
+
+		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		{
+			item = this.new("scripts/items/legend_armor/armor/legend_armor_heraldic");
+			item.setupArmor(banner);
+		}
+		else
+		{
+			item = this.new("scripts/items/armor/special/heraldic_armor");
+			item.setFaction(banner);
+		}
 		stash.add(item);
 		this.m.SuccessList.push({
 			id = 10,
