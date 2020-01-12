@@ -210,6 +210,7 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 
 	function getStrength()
 	{
+		this.updateStrength();
 		return this.m.Strength;
 	}
 
