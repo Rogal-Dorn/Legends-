@@ -71,11 +71,6 @@ this.named_crossbow <- this.inherit("scripts/items/weapons/named/named_weapon", 
 		return result;
 	}
 
-	function onCombatFinished()
-	{
-		this.setLoaded(true);
-	}
-
 	function onEquip()
 	{
 		this.named_weapon.onEquip();
@@ -90,8 +85,8 @@ this.named_crossbow <- this.inherit("scripts/items/weapons/named/named_weapon", 
 
 	function onCombatFinished()
 	{
-		this.weapon.onCombatFinished();
-		this.m.IsLoaded = true;
+		this.named_weapon.onCombatFinished();
+		this.setLoaded(true);
 	}
 
 });

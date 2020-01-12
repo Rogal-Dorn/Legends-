@@ -1,11 +1,18 @@
 this.legend_pie_effect <- this.inherit("scripts/skills/skill", {
 	m = {
-		TurnsLeft = 5
+		TurnsLeft = 5,
+		Amount = 0
 	},
+
+	function setAmount( _a )
+	{
+	this.m.Amount = _a;
+	}
+
 	function create()
 	{
 		this.m.ID = "effects.legend_pie_effect";
-		this.m.Name = "Pie";
+		this.m.Name = "Satiated";
 		this.m.Icon = "skills/status_effect_61.png";
 		this.m.IconMini = "status_effect_61_mini";
 		this.m.Overlay = "status_effect_61";
@@ -17,11 +24,12 @@ this.legend_pie_effect <- this.inherit("scripts/skills/skill", {
 
 	function getDescription()
 	{
-		return "Thanks to eating a delicious pie, this character regains fatigue for [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.TurnsLeft + "[/color] turn(s).";
+		return "Thanks to eating pie, this character regains Health and Fatigue for [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.TurnsLeft + "[/color] turn(s). ";
 	}
 
 	function getTooltip()
 	{
+		local rate = this.Math.floor(this.m.Amount / 20);
 		local ret = [
 			{
 				id = 1,
@@ -36,21 +44,39 @@ this.legend_pie_effect <- this.inherit("scripts/skills/skill", {
 			{
 				id = 11,
 				type = "text",
+				icon = "ui/icons/health.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "] +" + rate + "[/color] Healing per turn"
+			},
+			{
+				id = 11,
+				type = "text",
 				icon = "ui/icons/fatigue.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+4[/color] Fatigue Recovery per turn"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "] +" + rate + "[/color] Fatigue Recovery per turn"
+			},
+			{
+				id = 11,
+				type = "text",
+				icon = "ui/icons/bravery.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "] +10 [/color] to morale checks"
 			}
 		];
 		return ret;
 	}
 
+
 	function onUpdate( _properties )
 	{
-			_properties.FatigueRecoveryRate += 4;
+		local rate = this.Math.floor(this.m.Amount / 20);
+		local actor = this.getContainer().getActor();
+		actor.setHitpoints(this.Math.min(actor.getHitpointsMax(), actor.getHitpoints() + rate));
+		_properties.MoraleCheckBravery[1] += 10;
+		_properties.FatigueRecoveryRate += rate;
 	}
 
 	function onAdded()
 	{
 		this.m.TurnsLeft = 5;
+		actor.improveMood(0.2, "Ate pudding");
 	}
 
 	function onTurnEnd()

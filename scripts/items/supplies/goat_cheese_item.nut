@@ -1,8 +1,8 @@
-this.goat_cheese_item <- this.inherit("scripts/items/supplies/food_item", {
+this.goat_cheese_item <- this.inherit("scripts/items/supplies/legend_usable_food", {
 	m = {},
 	function create()
 	{
-		this.food_item.create();
+		this.legend_usable_food.create();
 		this.m.ID = "supplies.goat_cheese";
 		this.m.Name = "Goat Cheese";
 		this.m.Description = "Provisions. Goat cheese is a tasty and rich food that is common and popular especially in the colder regions of the north.";

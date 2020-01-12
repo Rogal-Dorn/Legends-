@@ -70,7 +70,7 @@ this.player_banner <- this.inherit("scripts/items/weapons/weapon", {
 
 		if (this.isRuned())
 		{
-			prefix = "player_runed_banner_";
+			prefix = "runed_player_banner_";
 		}
 
 		if (actor.hasSprite("background"))

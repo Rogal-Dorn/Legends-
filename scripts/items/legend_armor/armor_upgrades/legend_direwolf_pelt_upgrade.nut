@@ -19,9 +19,9 @@ this.legend_direwolf_pelt_upgrade <- this.inherit("scripts/items/legend_armor/le
 		this.m.SpriteCorpseFront = "upgrade_01_front_dead";
 		this.m.SpriteCorpseBack = "upgrade_01_back_dead";
 		this.m.Value = 600;
-		this.m.Condition = 15;
-		this.m.ConditionMax = 15;
-		this.m.ConditionModifier = 15;
+		this.m.Condition = 10;
+		this.m.ConditionMax = 10;
+		this.m.ConditionModifier = 10;
 		this.m.StaminaModifier = 0;
 	}
 
@@ -32,7 +32,7 @@ this.legend_direwolf_pelt_upgrade <- this.inherit("scripts/items/legend_armor/le
 			id = 14,
 			type = "text",
 			icon = "ui/icons/armor_body.png",
-			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+15[/color] Durability"
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Durability"
 		});
 		result.push({
 			id = 15,

@@ -18,10 +18,10 @@ this.legend_leather_neckguard_upgrade <- this.inherit("scripts/items/legend_armo
 		this.m.SpriteDamagedBack = "upgrade_13_back_damaged";
 		this.m.SpriteCorpseFront = null;
 		this.m.SpriteCorpseBack = "upgrade_13_back_dead";
-		this.m.Value = 100;
-		this.m.Condition = 10;
-		this.m.ConditionMax = 10;
-		this.m.ConditionModifier = 10;
+		this.m.Value = 150;
+		this.m.Condition = 8;
+		this.m.ConditionMax = 8;
+		this.m.ConditionModifier = 8;
 		this.m.StaminaModifier = 0;
 	}
 
@@ -32,7 +32,7 @@ this.legend_leather_neckguard_upgrade <- this.inherit("scripts/items/legend_armo
 			id = 14,
 			type = "text",
 			icon = "ui/icons/armor_body.png",
-			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Durability"
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+8[/color] Durability"
 		});
 		return result;
 	}

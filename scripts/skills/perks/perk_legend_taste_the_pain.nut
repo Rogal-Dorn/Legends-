@@ -30,6 +30,11 @@ this.perk_legend_taste_the_pain <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
+		if (this.Tactical.TurnSequenceBar.getActiveEntity() == null)
+		{
+			return;
+		}
+
 		if (this.Tactical.TurnSequenceBar.getActiveEntity().getID() != _attacker.getID())
 		{
 			return;
