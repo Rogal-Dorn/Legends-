@@ -2582,3 +2582,8 @@ Fixes Runed player banners.
 **New KeyBinding: Toggle Reserve Status**
 While in character screen, press "S" to toggle reserve status
 PSA:  the "A" and "D" keys on the character screen cycle through the bros. 
+
+https://drive.google.com/open?id=19eUTQMARiH3mRLl5e97g6NPAWPacFjvm
+
+13.0.0 RC 1
+*Fixed save/reload exploit to make contracts easier.
