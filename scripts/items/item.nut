@@ -38,7 +38,8 @@ this.item <- {
 		RuneVariant = 0,
 		RuneBonus1 = 0,
 		RuneBonus2 = 0,
-		IsToBeSalvaged = false
+		IsToBeSalvaged = false,
+		Type = -1
 	},
 
 	function setContainer( _c )
@@ -132,6 +133,11 @@ this.item <- {
 	{
 		return this.m.ItemType;
 	}
+	
+	function getType()
+	{
+		return this.m.Type;
+	}	
 
 	function hasProperty( _t )
 	{

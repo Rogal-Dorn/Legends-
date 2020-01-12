@@ -17,8 +17,8 @@ this.legend_armor_plate_ancient_scale_harness <- this.inherit("scripts/items/leg
 		this.m.SpriteDamagedBack = "bust_legend_plate_ancient_scale_harness_damaged";
 		this.m.SpriteCorpseBack = "bust_legend_plate_ancient_scale_harness_dead";
 		this.m.Value = 650;
-		this.m.Condition = 80;
-		this.m.ConditionMax = 80;
+		this.m.Condition = 75;
+		this.m.ConditionMax = 75;
 		this.m.StaminaModifier = -14;
         this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
 	}

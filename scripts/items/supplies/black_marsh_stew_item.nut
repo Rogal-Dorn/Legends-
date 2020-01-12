@@ -7,6 +7,7 @@ this.black_marsh_stew_item <- this.inherit("scripts/items/supplies/food_item", {
 		this.m.Name = "Black Marsh Stew";
 		this.m.Description = "Provisions. Black as the marshes it hails from, this ghastly stew is far from delicious but takes ages to spoil. Possibly because it already is spoiled to begin with.";
 		this.m.Icon = "supplies/inventory_provisions_17.png";
+		this.m.Amount = 30.0;
 		this.m.Value = 85;
 		this.m.GoodForDays = 12;
 	}

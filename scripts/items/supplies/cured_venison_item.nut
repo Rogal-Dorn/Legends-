@@ -1,14 +1,15 @@
-this.cured_venison_item <- this.inherit("scripts/items/supplies/food_item", {
+this.cured_venison_item <- this.inherit("scripts/items/supplies/legend_usable_food", {
 	m = {},
 	function create()
 	{
-		this.food_item.create();
+		this.legend_usable_food.create();
 		this.m.ID = "supplies.cured_venison";
 		this.m.Name = "Cured Venison";
 		this.m.Description = "Provisions. A cured chunk of venison preserved by salt. Fine food for a travelling sellsword.";
 		this.m.Icon = "supplies/inventory_provisions_10.png";
 		this.m.Value = 100;
-		this.m.GoodForDays = 12;
+		this.m.Amount = 30.0;
+		this.m.GoodForDays = 8;
 	}
 
 	function getBuyPrice()
@@ -43,5 +44,18 @@ this.cured_venison_item <- this.inherit("scripts/items/supplies/food_item", {
 		return this.item.getSellPrice();
 	}
 
+	function onPutIntoBag()
+	{
+		this.onEquip();
+	}
+
+	function onEquip()
+	{
+		this.legend_usable_food.onEquip();
+		local skill = this.new("scripts/skills/actives/legend_eat_rations_skill");
+		skill.setItem(this);
+		skill.setAmount(this.m.Amount);
+		this.addSkill(skill);
+	}
 });
 

@@ -18,8 +18,8 @@ this.legend_scrap_metal_armor <- this.inherit("scripts/items/legend_armor/legend
 		this.m.OverlayIconLarge = "legend_armor/plate/inventory_legend_scrap_metal_armor.png";
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.Value = 450;
-		this.m.Condition = 75;
-		this.m.ConditionMax = 75;
+		this.m.Condition = 60;
+		this.m.ConditionMax = 60;
 		this.m.StaminaModifier = -10;
 	}
 

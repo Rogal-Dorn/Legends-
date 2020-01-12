@@ -27,8 +27,8 @@ this.legend_armor_leather_brigandine_named <- this.inherit("scripts/items/legend
 		this.m.Variants = [1,2,3,4,5];
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
-		this.m.Condition = 85;
-		this.m.ConditionMax = 85;
+		this.m.Condition = 70;
+		this.m.ConditionMax = 70;
 		this.m.StaminaModifier = -6;
 		this.randomizeValues();
 	}
@@ -36,7 +36,7 @@ this.legend_armor_leather_brigandine_named <- this.inherit("scripts/items/legend
 	function randomizeValues()
 	{
 		this.m.StaminaModifier = this.Math.rand(6, 9) * -1;
-		this.m.Condition = this.Math.rand(85, 105);
+		this.m.Condition = this.Math.rand(70, 85);
 		this.m.ConditionMax = this.m.Condition;
 	}
 

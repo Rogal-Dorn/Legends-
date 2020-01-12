@@ -4,7 +4,7 @@ this.legend_hexe_leader_cloak_upgrade <- this.inherit("scripts/items/armor_upgra
 	{
 		this.armor_upgrade.create();
 		this.m.ID = "armor_upgrade.legend_hexe_leader_cloak";
-		this.m.Name = "Hexe Coven Leader Spider Silk Cloak";
+		this.m.Name = "Hexen Redback Silk Cloak";
 		this.m.Description = "This flowing cloak is made from spider web, and offers excellent protection against ranged attacks.";
 		this.m.ArmorDescription = "A cloak of spider silk offers extra protection";
 		this.m.Icon = "armor_upgrades/upgrade_cloak_purple.png";

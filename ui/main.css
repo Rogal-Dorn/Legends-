@@ -29,5 +29,7 @@ body
 
 	overflow: hidden;
 
+	scroll-behavior: smooth;
+
     /*border   : 1px red solid;*/
 }

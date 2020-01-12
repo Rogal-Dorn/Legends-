@@ -135,23 +135,27 @@ this.blueprint <- {
 
 	function isCraftable()
 	{
-		local items = this.World.Assets.getStash().getItems();
+		local itemsMap = {}
+		foreach( item in this.World.Assets.getStash().getItems())
+		{
+			if (item == null)
+			{
+				continue;
+			}
+
+			if (!(item.getID() in itemsMap))
+			{
+				itemsMap[item.getID()] <- 0;
+			}
+			itemsMap[item.getID()] = itemsMap[item.getID()] + 1
+		}
 
 		foreach( c in this.m.PreviewComponents )
 		{
 			local num = 0;
-
-			foreach( item in items )
+			if (c.Instance.getID() in itemsMap)
 			{
-				if (item != null && item.getID() == c.Instance.getID())
-				{
-					num = ++num;
-
-					if (num >= c.Num)
-					{
-						break;
-					}
-				}
+				num = itemsMap[c.Instance.getID()];
 			}
 
 			if (num < c.Num)
@@ -173,7 +177,6 @@ this.blueprint <- {
 		}
 
 		return true;
-
 	}
 
 	function isQualified()
@@ -225,7 +228,20 @@ this.blueprint <- {
 	function getIngredients()
 	{
 		local ret = [];
-		local items = this.World.Assets.getStash().getItems();
+		local itemsMap = {}
+		foreach( item in this.World.Assets.getStash().getItems())
+		{
+			if (item == null)
+			{
+				continue;
+			}
+
+			if (!(item.getID() in itemsMap))
+			{
+				itemsMap[item.getID()] <- 0;
+			}
+			itemsMap[item.getID()] = itemsMap[item.getID()] + 1
+		}
 
 		foreach(c in this.m.PreviewSkills )
 		{
@@ -234,7 +250,7 @@ this.blueprint <- {
 				ret.push({
 					InstanceID = s.getID(),
 					ImagePath = s.getIconColored(),
-					IsMissing = !this.requirementsMet(s.getID()),
+					IsMissing = !this.requirementsMet([s.getID()]),
 					IsSkill = 1
 				});
 			}
@@ -243,20 +259,10 @@ this.blueprint <- {
 		foreach( i, c in this.m.PreviewComponents )
 		{
 			local num = 0;
-
-			foreach( item in items )
+			if (c.Instance.getID() in itemsMap)
 			{
-				if (item != null && item.getID() == c.Instance.getID())
-				{
-					num = ++num;
-
-					if (num >= c.Num)
-					{
-						break;
-					}
-				}
+				num = itemsMap[c.Instance.getID()];
 			}
-
 			for( local j = 1; j <= c.Num; j = ++j )
 			{
 				ret.push({
