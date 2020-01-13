@@ -2576,12 +2576,31 @@ Rework on Eat Rations Action:
     Once in Stuffed state, Rate effect is doubled.
 Fixed incorrect plate_cuirass durability.
 Fixes reload crossbow bolt errors.
+Fixes bad blueprint causing crafting screens to not work.
+Fixes Runed player banners.
 
 **New KeyBinding: Toggle Reserve Status**
 While in character screen, press "S" to toggle reserve status
 PSA:  the "A" and "D" keys on the character screen cycle through the bros. 
 
-13.0.0.34c
+
+
+=======
+https://drive.google.com/open?id=19eUTQMARiH3mRLl5e97g6NPAWPacFjvm
+
+13.0.0 RC 2
+*Fixed save/reload exploit to make contracts easier.
+You can no longer sleep Geist, Winselmutters, or Hollenhunds with the Sleep skill. Ghosts never sleep (Mwah)
+Updates armor pen values for legend staffs and peasant tier weapons.
+Adds armor layer version of heraldic armor.
+Disabled catapult blueprint.
+Fixes invisible runed versions of orc shields and weapons.
+Fixes values on named gambeson.
+Catch and print errors with invalid blueprint.
+Fixes crash when apply poision effects a second time.
+
+
+13.0.0. RC 3
 
 Nets now drop at your feet if they miss, so you can pick them up and throw again 
 Daze no longer autohits. Now rolls your ranged attack against an enemy's resolve. Chance doubled if you have the Taunt perk. Does not work if target is immune to stun 
@@ -2590,5 +2609,4 @@ Minstrels gain ranged defense, skill and resolve at the cost of their melee skil
 Troubadours gain the same, with less hp and melee defense, and more initaitve and fatigue 
 Values corrected for leather scale, light scale, scale and lamelar harness  
 Nicer terrain for the new tactical battles 
-
 

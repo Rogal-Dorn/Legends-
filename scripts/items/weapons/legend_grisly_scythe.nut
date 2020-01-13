@@ -5,7 +5,7 @@ this.legend_grisly_scythe <- this.inherit("scripts/items/weapons/weapon", {
 		this.weapon.create();
 		this.m.ID = "weapon.legend_grisly_scythe";
 		this.m.Name = "Grisly Scythe";
-		this.m.Description = "While looking like a regular agricultural tool from a distance, this scythe has an otherworldy aura that draws you in. Resurrects humans it kills, if they aren't too damaged.";
+		this.m.Description = "While looking like a regular agricultural tool from a distance, this scythe has an otherworldy aura that draws you in. Resurrects humans it kills, if they aren\'t too damaged.";
 		this.m.Categories = "Cleaver, Two-Handed";
 		this.m.IconLarge = "weapons/melee/legend_scythe_02.png";
 		this.m.Icon = "weapons/melee/legend_scythe_02_70x70.png";
@@ -25,7 +25,8 @@ this.legend_grisly_scythe <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RegularDamage = 25;
 		this.m.RegularDamageMax = 35;
 		this.m.ArmorDamageMult = 0.5;
-		this.m.DirectDamageMult = 0.5;
+		this.m.DirectDamageMult = 0.25;
+		this.m.DirectDamageAdd = 0.25;
 	}
 
 	function onEquip()
@@ -35,8 +36,6 @@ this.legend_grisly_scythe <- this.inherit("scripts/items/weapons/weapon", {
 		cleave.m.FatigueCost = 15;
 		this.addSkill(cleave);
 		this.addSkill(this.new("scripts/skills/actives/reap_skill"));
-		//this.addSkill(this.new("scripts/skills/actives/legend_drain"));
-
 	}
 
 	function onDamageDealt( _target, _skill, _hitInfo )
@@ -66,3 +65,4 @@ this.legend_grisly_scythe <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+
