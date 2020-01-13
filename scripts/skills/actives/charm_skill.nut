@@ -84,6 +84,11 @@ this.charm_skill <- this.inherit("scripts/skills/skill", {
 		{
 			return false;
 		}
+		
+		if (_target.getSkills().hasSkill("effects.legend_intensely_charmed"))
+		{
+			return false;
+		}
 
 		return true;
 	}

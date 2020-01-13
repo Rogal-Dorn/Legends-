@@ -55,6 +55,7 @@ this.bone_platings_upgrade <- this.inherit("scripts/items/armor_upgrades/armor_u
 		{
 			this.m.IsUsed = true;
 			_properties.DamageReceivedTotalMult = 0.0;
+			this.Tactical.EventLog.logEx("Damage absorbed by Bone Plating");
 		}
 	}
 

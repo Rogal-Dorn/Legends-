@@ -76,7 +76,7 @@ this.legend_prepare_bleed_skill <- this.inherit("scripts/skills/skill", {
 
 		if (poison != null)
 		{
-			poison.reset();
+			poison.resetTime();
 		}
 		else
 		{

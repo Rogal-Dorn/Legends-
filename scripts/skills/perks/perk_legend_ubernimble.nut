@@ -27,8 +27,10 @@ this.perk_legend_ubernimble <- this.inherit("scripts/skills/skill", {
 	{
 		local fm = this.Math.round(this.getChance() * 100);
 		local tooltip = this.skill.getTooltip();
+		local  bodyitem = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Body);
+		local  headitem = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Head);
 
-		if (fm < 100)
+		if (bodyitem != null || headitem != null)
 		{
 			tooltip.push({
 				id = 6,
@@ -43,7 +45,7 @@ this.perk_legend_ubernimble <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]This character\'s body and head armor are too heavy as to gain any benefit from being nimble[/color]"
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]This character isn\'t nude.[/color]"
 			});
 		}
 
@@ -52,10 +54,7 @@ this.perk_legend_ubernimble <- this.inherit("scripts/skills/skill", {
 
 	function getChance()
 	{		
-		local fat = 1;
-		fat = this.Math.min(0, fat);
-		local ret = this.Math.minf(1.0, 1.0 - 0.5 + this.Math.pow(this.Math.abs(fat), 1.2) * 0.01);
-		return ret;
+		return 0.5;
 	}
 
 	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )

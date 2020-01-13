@@ -42,12 +42,15 @@ this.killing_frenzy_effect <- this.inherit("scripts/skills/skill", {
 		];
 	}
 
-	function reset()
+	function resetTime()
 	{
 		if (this.m.TurnsLeft != 2)
 		{
 			this.m.TurnsLeft = 2;
-			this.spawnIcon("perk_36", this.getContainer().getActor().getTile());
+			if (this.getContainer().getActor().isPlacedOnMap())
+			{
+				this.spawnIcon("perk_36", this._targetEntity.getTile());
+			}
 		}
 	}
 

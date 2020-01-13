@@ -21,7 +21,7 @@ this.perk_killing_frenzy <- this.inherit("scripts/skills/skill", {
 
 			if (effect != null)
 			{
-				effect.reset();
+				effect.resetTime();
 			}
 			else
 			{
