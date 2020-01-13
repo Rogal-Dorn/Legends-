@@ -2590,4 +2590,7 @@ https://drive.google.com/open?id=19eUTQMARiH3mRLl5e97g6NPAWPacFjvm
 You can no longer sleep Geist, Winselmutters, or Hollenhunds with the Sleep skill. Ghosts never sleep (Mwah)
 Updates armor pen values for legend staffs and peasant tier weapons.
 Adds armor layer version of heraldic armor.
-Disabled catapult blueprint
+Disabled catapult blueprint.
+Fixes invisible runed versions of orc shields and weapons.
+Fixes values on named gambeson.
+
