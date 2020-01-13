@@ -2591,3 +2591,4 @@ https://drive.google.com/open?id=19eUTQMARiH3mRLl5e97g6NPAWPacFjvm
 13.0.0.35
 **Fixes**
 You can no longer sleep Geist, Winselmutters, or Hollenhunds with the Sleep skill. Ghosts never sleep (Mwah)
+Prepare bleed fix when you use it twice (Mwah)
