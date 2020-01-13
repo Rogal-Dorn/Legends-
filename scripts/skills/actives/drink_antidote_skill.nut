@@ -131,12 +131,7 @@ this.drink_antidote_skill <- this.inherit("scripts/skills/skill", {
 				return true;
 			}
 
-				if (target.getSkills().hasSkill("effects.spider_poison"))
-			{
-				return true;
-			}
-
-				if (target.getSkills().hasSkill("effects.legend_redback_spider_poison"))
+			if (target.getSkills().hasSkill("effects.legend_redback_spider_poison"))
 			{
 				return true;
 			}

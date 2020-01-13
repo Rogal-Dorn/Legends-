@@ -16,9 +16,9 @@ this.legend_armor_leather_riveted_light <- this.inherit("scripts/items/legend_ar
 		this.m.SpriteDamagedBack = "bust_legend_leather_riveted_light_damaged";
 		this.m.SpriteCorpseBack = "bust_legend_leather_riveted_light_dead";
 		this.m.Value = 2250;
-		this.m.Condition = 110;
-		this.m.ConditionMax = 110;
-		this.m.StaminaModifier = -19;
+		this.m.Condition = 95;
+		this.m.ConditionMax = 95;
+		this.m.StaminaModifier = -13;
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 	}
 

@@ -152,7 +152,8 @@ this.barbarian_marauder <- this.inherit("scripts/entity/tactical/human", {
 		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
 		{
 			local cloths = [
-				[1, "cloth/legend_sackcloth"]
+				[1, "cloth/legend_sackcloth"],
+				[1, "cloth/legend_sackcloth_patched"]
 			];
 			local armor = this.Const.World.Common.pickLegendArmor(cloths)
 

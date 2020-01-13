@@ -15,7 +15,7 @@ this.scenario_banshee <- this.inherit("scripts/scenarios/tactical/scenario_templ
 
 	function initMap()
 	{
-		local testMap = this.MapGen.get("tactical.combat_basics");
+		local testMap = this.MapGen.get("tactical.quarry");
 		local minX = testMap.getMinX();
 		local minY = testMap.getMinY();
 		this.Tactical.resizeScene(minX, minY);

@@ -11,7 +11,7 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.throw_net";
 		this.m.Name = "Throw Net";
-		this.m.Description = "Throw a net on your target in order to prevent them from moving or defending themself effectively. Ranged Skill needed to hit, you can recover your net at the end of battle.";
+		this.m.Description = "Throw a net on your target in order to prevent them from moving or defending themself effectively. Ranged Skill needed to hit, you can pick up your net if you miss.";
 		this.m.Icon = "skills/active_73.png";
 		this.m.IconDisabled = "skills/active_73_sw.png";
 		this.m.Overlay = "active_73";
@@ -97,7 +97,7 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 				{
 					this.Sound.play(this.m.SoundOnHit[this.Math.rand(0, this.m.SoundOnHit.len() - 1)], this.Const.Sound.Volume.Skill, targetEntity.getPos());
 				}
-
+				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " throws a net and hits " + this.Const.UI.getColorizedEntityName(targetEntity));
 				_user.getItems().unequip(_user.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand));
 
 				targetEntity.getSkills().add(this.new("scripts/skills/effects/net_effect"));
@@ -139,16 +139,8 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 				{
 					this.Sound.play(this.m.SoundOnMiss[this.Math.rand(0, this.m.SoundOnMiss.len() - 1)], this.Const.Sound.Volume.Skill, targetEntity.getPos());
 				}
-
-				_user.getItems().unequip(_user.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand));
-				if (this.m.IsReinforced)
-				{
-				this.World.Assets.getStash().add(this.new("scripts/items/tools/reinforced_throwing_net"));
-				}
-				else
-				{
-				this.World.Assets.getStash().add(this.new("scripts/items/tools/throwing_net"));
-				}
+				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " throws a net at an immune " + this.Const.UI.getColorizedEntityName(targetEntity)  + ", the net falls to the ground ");
+				_user.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand).drop(); //drop instead of destroy
 
 				return false;
 			}	
@@ -159,16 +151,8 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 			{
 				this.Sound.play(this.m.SoundOnMiss[this.Math.rand(0, this.m.SoundOnMiss.len() - 1)], this.Const.Sound.Volume.Skill, targetEntity.getPos());
 			}
-
-			_user.getItems().unequip(_user.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand));
-				if (this.m.IsReinforced)
-				{
-				this.World.Assets.getStash().add(this.new("scripts/items/tools/reinforced_throwing_net"));
-				}
-				else
-				{
-				this.World.Assets.getStash().add(this.new("scripts/items/tools/throwing_net"));
-				}
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " throws a net and misses " + this.Const.UI.getColorizedEntityName(targetEntity) + ", the net falls to the ground ");
+			 _user.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand).drop(); //drop instead of destroy
 
 			return false;
 		}	

@@ -91,35 +91,35 @@ this.female_minstrel_background <- this.inherit("scripts/skills/backgrounds/char
 	{
 		local c = {
 			Hitpoints = [
-				-10,
-				-5
+				-15,
+				-15
 			],
 			Bravery = [
-				5,
-				10
+				10,
+				15
 			],
 			Stamina = [
 				-5,
 				 0
 			],
 			MeleeSkill = [
-				0,
-				0
+				-5,
+				-5
 			],
 			RangedSkill = [
-				0,
-				0
+				10,
+				5
 			],
 			MeleeDefense = [
-				0,
-				0
+				-10,
+				-10
 			],
 			RangedDefense = [
-				0,
-				0
+				5,
+				10
 			],
 			Initiative = [
-				0,
+				5,
 				5
 			]
 		};

@@ -15,7 +15,7 @@ this.scenario_vampire_lord <- this.inherit("scripts/scenarios/tactical/scenario_
 
 	function initMap()
 	{
-		local testMap = this.MapGen.get("tactical.combat_basics");
+		local testMap = this.MapGen.get("tactical.swamp");
 		local minX = testMap.getMinX();
 		local minY = testMap.getMinY();
 		this.Tactical.resizeScene(minX, minY);

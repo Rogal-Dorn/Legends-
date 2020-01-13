@@ -2583,11 +2583,42 @@ Fixes Runed player banners.
 While in character screen, press "S" to toggle reserve status
 PSA:  the "A" and "D" keys on the character screen cycle through the bros. 
 
+
+
+=======
 https://drive.google.com/open?id=19eUTQMARiH3mRLl5e97g6NPAWPacFjvm
 
-13.0.0 RC 1
+13.0.0 RC 2
 *Fixed save/reload exploit to make contracts easier.
 You can no longer sleep Geist, Winselmutters, or Hollenhunds with the Sleep skill. Ghosts never sleep (Mwah)
 Updates armor pen values for legend staffs and peasant tier weapons.
 Adds armor layer version of heraldic armor.
-Disabled catapult blueprint
+Disabled catapult blueprint.
+Fixes invisible runed versions of orc shields and weapons.
+Fixes values on named gambeson.
+Catch and print errors with invalid blueprint.
+Fixes crash when apply poision effects a second time.
+
+
+13.0.0. RC 3
+
+Nets now drop at your feet if they miss, so you can pick them up and throw again 
+Daze no longer autohits. Now rolls your ranged attack against an enemy's resolve. Chance doubled if you have the Taunt perk. Does not work if target is immune to stun 
+Daze and net can both reach 100% chance to hit if you have enough skill, instead of the usual 95% limit. 
+Minstrels gain ranged defense, skill and resolve at the cost of their melee skill, defense  and hitpoints
+Troubadours gain the same, with less hp and melee defense, and more initaitve and fatigue 
+Values corrected for leather scale, light scale, scale and lamelar harness  
+Nicer terrain for the new tactical battles 
+
+**Armor balance**
+*Tightened tollerances on armor variance from the normalised fatigue to durability ratio. There are still outliers, just not as extreme 
+*Strong cloth layers have more fatigue 
+*Midrange plate armors have their fatigue costs lowered  
+*Top range plate armors have more durability 
+*Top tier barbarian armors are much stronger
+*Top tier zombie armors are stronger 
+*Named items can not achieve such extreme durability to weight ratios 
+*Cloaks weigh more
+*Scale armors re-ordered so that metal scales are more effective than leather scales 
+Barbarian champions have a chain and dark tunic layer to bring their total armor closer to vanilla 
+
