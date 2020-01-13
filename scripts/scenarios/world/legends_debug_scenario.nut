@@ -279,6 +279,14 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			local pla = this.new("scripts/items/weapons/" + w);
 			this.World.Assets.getStash().add(pla);
 		}
+
+		for (local i = 1; i < 10; i = ++i)
+		{
+			local item = this.new("scripts/items/legend_armor/armor/legend_armor_heraldic");
+			item.setupArmor(i);
+			this.World.Assets.getStash().add(item);
+		}
+
 	}
 
 

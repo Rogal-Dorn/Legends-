@@ -2585,10 +2585,21 @@ PSA:  the "A" and "D" keys on the character screen cycle through the bros.
 
 https://drive.google.com/open?id=19eUTQMARiH3mRLl5e97g6NPAWPacFjvm
 
-13.0.0 RC 1
+13.0.0 RC 2
 *Fixed save/reload exploit to make contracts easier.
+You can no longer sleep Geist, Winselmutters, or Hollenhunds with the Sleep skill. Ghosts never sleep (Mwah)
+Updates armor pen values for legend staffs and peasant tier weapons.
+Adds armor layer version of heraldic armor.
+Disabled catapult blueprint.
+Fixes invisible runed versions of orc shields and weapons.
+Fixes values on named gambeson.
+Catch and print errors with invalid blueprint.
+Fixes crash when apply poision effects a second time.
 
+<<<<<<< HEAD
 13.0.0.35
 **Fixes**
 You can no longer sleep Geist, Winselmutters, or Hollenhunds with the Sleep skill. Ghosts never sleep (Mwah)
 Prepare bleed fix when you use it twice (Mwah)
+=======
+>>>>>>> remotes/origin/LegendsModv13

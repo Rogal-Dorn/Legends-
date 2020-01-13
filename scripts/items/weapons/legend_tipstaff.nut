@@ -27,7 +27,8 @@ this.legend_tipstaff <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RegularDamage = 30;
 		this.m.RegularDamageMax = 40;
 		this.m.ArmorDamageMult = 0.3;
-		this.m.DirectDamageMult = 0.3;
+		this.m.DirectDamageMult = 0.4;
+		this.m.DirectDamageAdd = -0.1;
 	}
 
 	function onEquip()
@@ -37,7 +38,6 @@ this.legend_tipstaff <- this.inherit("scripts/items/weapons/weapon", {
 		s.m.Icon = "skills/staff_bash_tip.png";
 		s.m.IconDisabled = "skills/staff_bash_tip_bw.png";
 		this.addSkill(s);
-
 		local t = this.new("scripts/skills/actives/legend_staff_knock_out");
 		t.m.Icon = "skills/staff_knock_out_tip.png";
 		t.m.IconDisabled = "skills/staff_knock_out_tip_bw.png";
@@ -45,3 +45,4 @@ this.legend_tipstaff <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

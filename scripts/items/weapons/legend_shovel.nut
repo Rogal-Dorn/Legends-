@@ -7,7 +7,7 @@ this.legend_shovel <- this.inherit("scripts/items/weapons/weapon", {
 		this.weapon.create();
 		this.m.ID = "weapon.legend_shovel";
 		this.m.Name = "Shovel";
-		this.m.Description = "A tool meant for digging holes, not maiming men. A shovel's wide blade lends accuracy when aiming for the head, but almost anything else would be better.";
+		this.m.Description = "A tool meant for digging holes, not maiming men. A shovel\'s wide blade lends accuracy when aiming for the head, but almost anything else would be better.";
 		this.m.Categories = "Mace, Two-Handed";
 		this.m.IconLarge = "weapons/melee/legend_shovel_01.png";
 		this.m.Icon = "weapons/melee/legend_shovel_01_70x70.png";
@@ -26,7 +26,8 @@ this.legend_shovel <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RegularDamage = 20;
 		this.m.RegularDamageMax = 30;
 		this.m.ArmorDamageMult = 0.45;
-		this.m.DirectDamageMult = 0.15;
+		this.m.DirectDamageMult = 0.4;
+		this.m.DirectDamageAdd = -0.2;
 		this.m.ChanceToHitHead = 10;
 	}
 
@@ -46,3 +47,4 @@ this.legend_shovel <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+
