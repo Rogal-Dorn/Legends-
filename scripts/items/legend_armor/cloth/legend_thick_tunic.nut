@@ -16,7 +16,7 @@ this.legend_thick_tunic <- this.inherit("scripts/items/legend_armor/legend_armor
 		this.m.Value = 70;
 		this.m.Condition = 35;
 		this.m.ConditionMax = 35;
-		this.m.StaminaModifier = -2;
+		this.m.StaminaModifier = -3;
 	}
 
 	function updateVariant()

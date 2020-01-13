@@ -35,8 +35,8 @@ this.legend_armor_hauberk_full_named <- this.inherit("scripts/items/legend_armor
 
 	function randomizeValues()
 	{
-		this.m.StaminaModifier = this.Math.rand(12, 15) * -1;
-		this.m.Condition = this.Math.rand(120, 130);
+		this.m.StaminaModifier = this.Math.rand(14, 17) * -1;
+		this.m.Condition = this.Math.rand(121, 130);
 		this.m.ConditionMax = this.m.Condition;
 	}
 

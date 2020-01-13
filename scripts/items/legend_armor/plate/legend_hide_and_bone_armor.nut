@@ -17,10 +17,10 @@ this.legend_hide_and_bone_armor <- this.inherit("scripts/items/legend_armor/lege
 		this.m.OverlayIcon = "legend_armor/plate/icon_legend_hide_and_bone_armor.png";
 		this.m.OverlayIconLarge = "legend_armor/plate/inventory_legend_hide_and_bone_armor.png";
 		this.m.ImpactSound = this.Const.Sound.ArmorBoneImpact;
-		this.m.Value = 500;
-		this.m.Condition = 60;
-		this.m.ConditionMax = 60;
-		this.m.StaminaModifier = -19;
+		this.m.Value = 750;
+		this.m.Condition = 85;
+		this.m.ConditionMax = 85;
+		this.m.StaminaModifier = -12;
 	}
 
 });

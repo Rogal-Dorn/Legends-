@@ -19,7 +19,7 @@ this.legend_dark_tunic <- this.inherit("scripts/items/legend_armor/legend_armor"
 		this.m.Value = 60;
 		this.m.Condition = 40;
 		this.m.ConditionMax = 40;
-		this.m.StaminaModifier = -3;
+		this.m.StaminaModifier = -4;
 	}
 
 	function updateVariant()
