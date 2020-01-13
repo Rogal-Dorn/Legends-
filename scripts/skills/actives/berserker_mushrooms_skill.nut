@@ -138,7 +138,7 @@ this.berserker_mushrooms_skill <- this.inherit("scripts/skills/skill", {
 
 			if (shrooms != null)
 			{
-				shrooms.reset();
+				shrooms.resetTime();
 			}
 			else
 			{

@@ -2594,4 +2594,5 @@ Disabled catapult blueprint.
 Fixes invisible runed versions of orc shields and weapons.
 Fixes values on named gambeson.
 Catch and print errors with invalid blueprint.
+Fixes crash when apply poision effects a second time.
 
