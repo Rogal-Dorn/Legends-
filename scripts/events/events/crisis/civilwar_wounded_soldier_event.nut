@@ -130,8 +130,17 @@ this.civilwar_wounded_soldier_event <- this.inherit("scripts/events/event", {
 
 		if (r == 1)
 		{
-			item = this.new("scripts/items/armor/special/heraldic_armor");
-			item.setFaction(banner);
+
+			if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+			{
+				item = this.new("scripts/items/legend_armor/armor/legend_armor_heraldic");
+				item.setupArmor(banner);
+			}
+			else
+			{
+				item = this.new("scripts/items/armor/special/heraldic_armor");
+				item.setFaction(banner);
+			}
 		}
 		else if (r == 2)
 		{

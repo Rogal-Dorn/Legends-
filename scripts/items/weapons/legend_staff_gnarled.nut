@@ -27,7 +27,8 @@ this.legend_staff_gnarled <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RegularDamage = 40;
 		this.m.RegularDamageMax = 60;
 		this.m.ArmorDamageMult = 0.3;
-		this.m.DirectDamageMult = 0.3;
+		this.m.DirectDamageMult = 0.4;
+		this.m.DirectDamageAdd = -0.1;
 	}
 
 	function onEquip()
@@ -38,13 +39,12 @@ this.legend_staff_gnarled <- this.inherit("scripts/items/weapons/weapon", {
 		s.m.Icon = "skills/staff_bash_gnarled.png";
 		s.m.IconDisabled = "skills/staff_bash_gnarled_bw.png";
 		this.addSkill(s);
-
 		local t = this.new("scripts/skills/actives/legend_staff_knock_out");
 		t.m.Icon = "skills/staff_knock_out_gnarled.png";
 		t.m.IconDisabled = "skills/staff_knock_out_gnarled_bw.png";
 		this.addSkill(t);
-
 		this.addSkill(this.new("scripts/skills/actives/legend_hex_skill"));
 	}
 
 });
+

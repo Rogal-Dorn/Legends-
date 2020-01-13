@@ -19,14 +19,15 @@ this.legend_hoe <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ShowArmamentIcon = true;
 		this.m.ArmamentIcon = "icon_legend_hoe_01";
 		this.m.Value = 55;
-		this.m.ShieldDamage = 20
+		this.m.ShieldDamage = 20;
 		this.m.Condition = 30.0;
 		this.m.ConditionMax = 30.0;
 		this.m.StaminaModifier = -4;
 		this.m.RegularDamage = 15;
 		this.m.RegularDamageMax = 20;
 		this.m.ArmorDamageMult = 0.6;
-		this.m.DirectDamageMult = 0.25;
+		this.m.DirectDamageMult = 0.3;
+		this.m.DirectDamageAdd = -0.05;
 	}
 
 	function onEquip()
@@ -39,3 +40,4 @@ this.legend_hoe <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

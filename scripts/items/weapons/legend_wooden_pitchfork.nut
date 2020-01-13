@@ -5,7 +5,7 @@ this.legend_wooden_pitchfork <- this.inherit("scripts/items/weapons/weapon", {
 		this.weapon.create();
 		this.m.ID = "weapon.legend_wooden_pitchfork";
 		this.m.Name = "Wooden pitchfork";
-		this.m.Description = "An irregular pitchfork carved from a single tree branch. As an improvised weapon it can be used to keep an opponent at bay, but it won't inflict the deadliest of injuries and will perform poorly against armor. Liable to snap at any moment.";
+		this.m.Description = "An irregular pitchfork carved from a single tree branch. As an improvised weapon it can be used to keep an opponent at bay, but it won\'t inflict the deadliest of injuries and will perform poorly against armor. Liable to snap at any moment.";
 		this.m.Categories = "Polearm, Two-Handed";
 		this.m.IconLarge = "weapons/melee/legend_wooden_pitchfork_01.png";
 		this.m.Icon = "weapons/melee/legend_wooden_pitchfork_01_70x70.png";
@@ -27,7 +27,8 @@ this.legend_wooden_pitchfork <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RegularDamage = 10;
 		this.m.RegularDamageMax = 30;
 		this.m.ArmorDamageMult = 0.2;
-		this.m.DirectDamageMult = 0.2;
+		this.m.DirectDamageMult = 0.3;
+		this.m.DirectDamageAdd = -0.1;
 	}
 
 	function onEquip()
@@ -46,3 +47,4 @@ this.legend_wooden_pitchfork <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

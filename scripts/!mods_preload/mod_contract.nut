@@ -173,7 +173,6 @@
 
 	o.getReputationToDifficultyMult = function()
 	{
-		this.World.State.getPlayer().updateStrength()
 		local s = this.Math.maxf(0.75, 0.94 * this.Math.pow(0.01 * this.World.State.getPlayer().getStrength(), 0.94));
 		local d = this.Math.minf(5.0, s);
 		return d * this.Const.Difficulty.EnemyMult[this.World.Assets.getCombatDifficulty()];

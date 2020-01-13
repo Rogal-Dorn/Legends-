@@ -593,8 +593,13 @@ this.weapon <- this.inherit("scripts/items/item", {
 	function updateRuneSigil()
 	{
 		this.item.updateRuneSigil();
+		if (this.m.ArmamentIcon.find("runed_") != null)
+		{
+			return; 
+		}
 		this.m.ArmamentIcon = "runed_" + this.m.ArmamentIcon;
 	}
+
 
 	function onSerialize( _out )
 	{
