@@ -2580,3 +2580,15 @@ Fixes reload crossbow bolt errors.
 **New KeyBinding: Toggle Reserve Status**
 While in character screen, press "S" to toggle reserve status
 PSA:  the "A" and "D" keys on the character screen cycle through the bros. 
+
+13.0.0.34c
+
+Nets now drop at your feet if they miss, so you can pick them up and throw again 
+Daze no longer autohits. Now rolls your ranged attack against an enemy's resolve. Chance doubled if you have the Taunt perk. Does not work if target is immune to stun 
+Daze and net can both reach 100% chance to hit if you have enough skill, instead of the usual 95% limit. 
+Minstrels gain ranged defense, skill and resolve at the cost of their melee skill, defense  and hitpoints
+Troubadours gain the same, with less hp and melee defense, and more initaitve and fatigue 
+Values corrected for leather scale, light scale, scale and lamelar harness  
+Nicer terrain for the new tactical battles 
+
+
