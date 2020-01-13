@@ -114,12 +114,23 @@ this.barbarian_champion <- this.inherit("scripts/entity/tactical/human", {
 			if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
 			{
 				local cloths = [
-					[1, "cloth/legend_sackcloth"]
+					[1, "cloth/legend_dark_tunic"]
 				];
 				local armor = this.Const.World.Common.pickLegendArmor(cloths)
 
+
 				if (armor != null)
 				{
+					local chains = [
+						[1, "chain/legend_armor_rusty_mail_shirt"]
+					]
+					local chain = this.Const.World.Common.pickLegendArmor(chains)
+					if (chain != null)
+					{
+						armor.setUpgrade(chain)
+					}
+
+
 					local plates = [
 						[0, ""],
 						[0, "plate/legend_animal_hide_armor"],

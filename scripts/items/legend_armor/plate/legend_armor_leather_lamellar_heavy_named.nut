@@ -30,7 +30,7 @@ this.legend_armor_leather_lamellar_heavy_named <- this.inherit("scripts/items/le
 
 	function randomizeValues()
 	{
-		this.m.StaminaModifier = this.Math.rand(20, 24) * -1;
+		this.m.StaminaModifier = this.Math.rand(23, 25) * -1;
 		this.m.Condition = this.Math.rand(145, 155);
 		this.m.ConditionMax = this.m.Condition;
 	}

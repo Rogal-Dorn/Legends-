@@ -18,7 +18,7 @@ this.legend_armor_redback_cloak_upgrade <- this.inherit("scripts/items/legend_ar
 		this.m.Value = 7500;
 		this.m.Condition = 25;
 		this.m.ConditionMax = 25;
-		this.m.StaminaModifier = -1;
+		this.m.StaminaModifier = -2;
 	}
 
 	function getTooltip()

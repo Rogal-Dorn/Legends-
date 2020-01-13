@@ -19,7 +19,7 @@ this.legend_armor_leather_brigandine_hardened <- this.inherit("scripts/items/leg
 		this.m.Value = 1750;
 		this.m.Condition = 100;
 		this.m.ConditionMax = 100;
-		this.m.StaminaModifier = -17;
+		this.m.StaminaModifier = -15;
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
 	}
 

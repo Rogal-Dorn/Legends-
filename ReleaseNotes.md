@@ -2610,3 +2610,15 @@ Troubadours gain the same, with less hp and melee defense, and more initaitve an
 Values corrected for leather scale, light scale, scale and lamelar harness  
 Nicer terrain for the new tactical battles 
 
+**Armor balance**
+*Tightened tollerances on armor variance from the normalised fatigue to durability ratio. There are still outliers, just not as extreme 
+*Strong cloth layers have more fatigue 
+*Midrange plate armors have their fatigue costs lowered  
+*Top range plate armors have more durability 
+*Top tier barbarian armors are much stronger
+*Top tier zombie armors are stronger 
+*Named items can not achieve such extreme durability to weight ratios 
+*Cloaks weigh more
+*Scale armors re-ordered so that metal scales are more effective than leather scales 
+Barbarian champions have a chain and dark tunic layer to bring their total armor closer to vanilla 
+

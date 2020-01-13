@@ -22,7 +22,7 @@ this.legend_ancient_cloth_restored <- this.inherit("scripts/items/legend_armor/l
 		this.m.Value = 40;
 		this.m.Condition = 35;
 		this.m.ConditionMax = 35;
-		this.m.StaminaModifier = -3;
+		this.m.StaminaModifier = -4;
 	}
 
 	function updateVariant()

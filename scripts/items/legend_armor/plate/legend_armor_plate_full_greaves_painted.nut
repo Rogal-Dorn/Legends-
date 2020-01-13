@@ -25,16 +25,16 @@ this.legend_armor_plate_full_greaves_painted <- this.inherit("scripts/items/lege
 		this.m.SpriteDamagedBack = "bust_legend_plate_full_greaves_painted_damaged";
 		this.m.SpriteCorpseBack = "bust_legend_plate_full_greaves_painted_dead";
 		this.m.Value = 20000;
-		this.m.Condition = 170;
-		this.m.ConditionMax = 170;
+		this.m.Condition = 190;
+		this.m.ConditionMax = 190;
 		this.m.StaminaModifier = -30;
 		this.randomizeValues();
 	}
 
 	function randomizeValues()
 	{
-		this.m.StaminaModifier = this.Math.rand(26, 30) * -1;
-		this.m.Condition = this.Math.rand(170, 190);
+		this.m.StaminaModifier = this.Math.rand(28, 30) * -1;
+		this.m.Condition = this.Math.rand(190, 200);
 		this.m.ConditionMax = this.m.Condition;
 	}
 
