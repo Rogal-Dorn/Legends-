@@ -90,6 +90,7 @@ this.blueprint <- {
 		{
 			local c = this.new(i.Script);
 			this.m.PreviewComponents.push({
+				Name = i.Script,
 				Num = i.Num,
 				Instance = c
 			});
@@ -261,7 +262,12 @@ this.blueprint <- {
 			local num = 0;
 			if (c.Instance == null)
 			{
-				this.logInfo("ERROR, blueprint instance is null. iteration = " + i)
+				local name = "";
+				if (c.Name != null)
+				{
+					name = c.Name;
+				}
+				this.logInfo("ERROR, blueprint instance is null. item name = " + name)
 				continue;
 			}
 			if (c.Instance.getID() in itemsMap)
