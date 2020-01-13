@@ -42,7 +42,7 @@ this.legend_gambeson <- this.inherit("scripts/items/legend_armor/legend_armor", 
 		this.m.Value = 250;
 		this.m.Condition = 60;
 		this.m.ConditionMax = 60;
-		this.m.StaminaModifier = -6;
+		this.m.StaminaModifier = -8;
 	}
 
 	function updateVariant()

@@ -16,7 +16,7 @@ this.legend_apron <- this.inherit("scripts/items/legend_armor/legend_armor", {
 		this.m.Value = 55;
 		this.m.Condition = 30;
 		this.m.ConditionMax = 30;
-		this.m.StaminaModifier = -2;
+		this.m.StaminaModifier = -3;
 	}
 
 	function updateVariant()

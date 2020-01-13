@@ -19,7 +19,7 @@ this.legend_armor_leather_lamellar_reinforced <- this.inherit("scripts/items/leg
 		this.m.Value = 1000;
 		this.m.Condition = 85;
 		this.m.ConditionMax = 85;
-		this.m.StaminaModifier = -14;
+		this.m.StaminaModifier = -12;
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
 	}
 

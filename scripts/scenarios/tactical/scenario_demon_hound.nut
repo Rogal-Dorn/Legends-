@@ -15,7 +15,7 @@ this.scenario_demon_hound <- this.inherit("scripts/scenarios/tactical/scenario_t
 
 	function initMap()
 	{
-		local testMap = this.MapGen.get("tactical.combat_basics");
+		local testMap = this.MapGen.get("tactical.tundra");
 		local minX = testMap.getMinX();
 		local minY = testMap.getMinY();
 		this.Tactical.resizeScene(minX, minY);

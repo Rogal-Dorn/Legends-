@@ -24,7 +24,7 @@ this.legend_armor_cloak_rich <- this.inherit("scripts/items/legend_armor/legend_
 		this.m.Value = 25000;
 		this.m.Condition = 25;
 		this.m.ConditionMax = 25;
-		this.m.StaminaModifier = -1;
+		this.m.StaminaModifier = -3;
 		this.randomizeValues()
 	}
 

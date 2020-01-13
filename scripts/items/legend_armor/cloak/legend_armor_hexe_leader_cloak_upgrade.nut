@@ -18,7 +18,7 @@ this.legend_armor_hexe_leader_cloak_upgrade <- this.inherit("scripts/items/legen
 		this.m.Value = 12000;
 		this.m.Condition = 25;
 		this.m.ConditionMax = 25;
-		this.m.StaminaModifier = -1;
+		this.m.StaminaModifier = -2;
 	}
 
 	function getTooltip()
