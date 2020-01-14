@@ -11,8 +11,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 	function isValid()
 	{
-		return true;
-		return this.Const.DLC.Wildmen;
+		return this.Const.LegendMod.DebugMode;
 	}
 
 	function onSpawnAssets()
