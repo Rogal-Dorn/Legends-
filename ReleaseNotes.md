@@ -2596,10 +2596,5 @@ Fixes values on named gambeson.
 Catch and print errors with invalid blueprint.
 Fixes crash when apply poision effects a second time.
 
-<<<<<<< HEAD
-13.0.0.35
-**Fixes**
-You can no longer sleep Geist, Winselmutters, or Hollenhunds with the Sleep skill. Ghosts never sleep (Mwah)
-Prepare bleed fix when you use it twice (Mwah)
-=======
->>>>>>> remotes/origin/LegendsModv13
+13.0.0 RC 4
+Rally fix (Mwah)

@@ -116,7 +116,7 @@ this.rally_the_troops <- this.inherit("scripts/skills/skill", {
 				}
 				if ( a.getMoraleState() >= this.Const.MoraleState.Steady )
 				{
-				return false;
+					continue;
 				}
 				  this.logInfo("finding rally difficulty");
 				local difficulty = bravery;
