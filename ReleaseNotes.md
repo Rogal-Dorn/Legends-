@@ -2596,5 +2596,6 @@ Fixes values on named gambeson.
 Catch and print errors with invalid blueprint.
 Fixes crash when apply poision effects a second time.
 
-13.0.0 RC 4
+13.0.0 RC 4 (?)
 Rally fix (Mwah)
+Changes some spawnlists to remove the legendary animals and adds them into their own spawnlist to contain their locations, etc
