@@ -2622,3 +2622,15 @@ Nicer terrain for the new tactical battles
 *Scale armors re-ordered so that metal scales are more effective than leather scales 
 Barbarian champions have a chain and dark tunic layer to bring their total armor closer to vanilla 
 
+
+13.2.1 
+Scale coat fatigue reduced from 25 to 22 
+named leather jacket fatigue range from 3-5 to 2-4
+Mail shirt fatigue from -6 to -7 
+Legion:
+* Legion scenario overview updated
+* During the undead crisis you can no longer recruit a crusader, but when you find an old man, he turns out to be a skeleton warlock
+* Legion can now recruit outside the Black Monolith, or attack it to gain the emporers countenance 
+* Frequency of recruitment on the road decreased, but frequency at buried castles and mass graves increased
+* Skeletons no longer take flesh wounds in combat
+* Prevents some fights vs undead that can cause a crash 

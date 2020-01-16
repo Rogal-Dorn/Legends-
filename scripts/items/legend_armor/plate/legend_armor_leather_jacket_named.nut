@@ -33,7 +33,7 @@ this.legend_armor_leather_jacket_named <- this.inherit("scripts/items/legend_arm
 
 	function randomizeValues()
 	{
-		this.m.StaminaModifier = this.Math.rand(3, 5) * -1;
+		this.m.StaminaModifier = this.Math.rand(2, 4) * -1;
 		this.m.Condition = this.Math.rand(30, 40);
 		this.m.ConditionMax = this.m.Condition;
 	}
