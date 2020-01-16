@@ -105,6 +105,14 @@ this.runaway_laborers_event <- this.inherit("scripts/events/event", {
 			{
 				local roster = this.World.getTemporaryRoster();
 				_event.m.Dude = roster.create("scripts/entity/tactical/player");
+					if (this.World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
+							{
+							_event.m.Dude.getTags().add("PlayerSkeleton");
+							_event.m.Dude.getTags().add("undead");
+							_event.m.Dude.getTags().add("skeleton");
+							_event.m.Dude.getSkills().add(this.new("scripts/skills/racial/skeleton_racial"));
+							_event.m.Dude.getSkills().getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));	
+							}
 				_event.m.Dude.setStartValuesEx(this.Const.CharacterLaborerBackgrounds);
 				this.Characters.push(_event.m.Dude.getImagePath());
 			}

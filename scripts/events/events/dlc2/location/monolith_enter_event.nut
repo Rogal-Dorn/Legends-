@@ -17,7 +17,9 @@ this.monolith_enter_event <- this.inherit("scripts/events/event", {
 					Text = "Go in.",
 					function getResult( _event )
 					{
+	
 						return "B";
+
 					}
 
 				},
@@ -54,7 +56,14 @@ this.monolith_enter_event <- this.inherit("scripts/events/event", {
 						if (this.World.State.getLastLocation() != null)
 						{
 							this.World.State.getLastLocation().setAttackable(true);
+							if (this.World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
+							{
+							this.World.State.getLastLocation().setFaction(this.World.FactionManager.getFactionOfType(this.Const.FactionType.Bandits).getID());
+							}
+							else
+							{
 							this.World.State.getLastLocation().setFaction(this.World.FactionManager.getFactionOfType(this.Const.FactionType.Undead).getID());
+							}
 						}
 
 						this.World.Events.showCombatDialog(true, true, true);
@@ -68,6 +77,7 @@ this.monolith_enter_event <- this.inherit("scripts/events/event", {
 			}
 
 		});
+
 	}
 
 	function onUpdateScore()
