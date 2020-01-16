@@ -2626,3 +2626,5 @@ Barbarian champions have a chain and dark tunic layer to bring their total armor
 13.2.0
 *Fixes Rally Perk not rallying the troops
 *Fixes runed verisons of tower shields not showing.
+*Fixes crashed taxidermist/crafting tent.
+

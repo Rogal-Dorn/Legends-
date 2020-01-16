@@ -13,24 +13,21 @@ this.legend_skin_armor_blueprint <- this.inherit("scripts/crafting/blueprint", {
 				Num = 6
 			}
 		];
-		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
-		{
-			ingredients.push({
-				Script = "scripts/items/legend_armor/cloth/legend_gambeson",
-				Num = 1
-			})
-			ingredients.push({
-				Script = "scripts/items/legend_armor/chain/legend_armor_hauberk",
-				Num = 1
-			})
-		}
-		else
-		{
-			ingredients.push({
-				Script = "scripts/items/armor/mail_hauberk",
-				Num = 1
-			})
-		}
+		ingredients.push({
+			Script = "scripts/items/legend_armor/cloth/legend_gambeson",
+			Num = 1,
+			LegendsArmor = true
+		})
+		ingredients.push({
+			Script = "scripts/items/legend_armor/chain/legend_armor_hauberk",
+			Num = 1,
+			LegendsArmor = true
+		})
+		ingredients.push({
+			Script = "scripts/items/armor/mail_hauberk",
+			Num = 1,
+			LegendsArmor = false
+		})
 		this.init(ingredients);
 	}
 

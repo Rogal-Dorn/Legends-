@@ -11,22 +11,18 @@ this.legend_bandage_tunic_blueprint <- this.inherit("scripts/crafting/blueprint"
 			{
 				Script = "scripts/items/supplies/roots_and_berries_item",
 				Num = 1
+			},
+			{
+				Script = "scripts/items/armor/linen_tunic",
+				Num = 1,
+				LegendsArmor = false
+			},
+			{
+				Script = "scripts/items/legend_armor/cloth/legend_tunic",
+				Num = 1,
+				LegendsArmor = true
 			}
 		];
-		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
-		{
-			ingredients.push({
-				Script = "scripts/items/legend_armor/cloth/legend_tunic",
-				Num = 1
-			})
-		}
-		else
-		{
-			ingredients.push({
-				Script = "scripts/items/armor/linen_tunic",
-				Num = 1
-			})
-		}
 		this.init(ingredients);
 		local skills = [
 			{
