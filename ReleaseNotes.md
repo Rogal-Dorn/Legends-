@@ -2627,4 +2627,5 @@ Barbarian champions have a chain and dark tunic layer to bring their total armor
 *Fixes Rally Perk not rallying the troops
 *Fixes runed verisons of tower shields not showing.
 *Fixes crashed taxidermist/crafting tent.
-
+*Fixes Named cloak durability being too low.
+*Fixes crash when nacho swallows bro who has caused a bleed on someone (and bleed kills option is enabled).
