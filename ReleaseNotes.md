@@ -2623,10 +2623,11 @@ Nicer terrain for the new tactical battles
 Barbarian champions have a chain and dark tunic layer to bring their total armor closer to vanilla 
 
 
-13.2.1 
-Scale coat fatigue reduced from 25 to 22 
-named leather jacket fatigue range from 3-5 to 2-4
-Mail shirt fatigue from -6 to -7 
+13.2.0 
+*Fixes Rally Perk not rallying the troops
+*Fixes runed verisons of ancient tower shields not showing.
+*Fixes crashed taxidermist/crafting tent.
+
 **Legion:**
 * Legion scenario overview and intro text updated
 * During the undead crisis you can no longer recruit a crusader, but when you find an old man, he turns out to be a skeleton warlock
@@ -2640,4 +2641,8 @@ Mail shirt fatigue from -6 to -7
 Improves graphics for several towershields, so they are darker and grittier. 
 Improves graphics for a few armors with layered armors off 
 Fixed up some stray pixels on shivs 
+Scale coat fatigue reduced from 25 to 22 
+named leather jacket fatigue range from 3-5 to 2-4
+Mail shirt fatigue from -6 to -7 
+
 
