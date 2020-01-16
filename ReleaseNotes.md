@@ -2627,6 +2627,7 @@ Barbarian champions have a chain and dark tunic layer to bring their total armor
 *Fixes Rally Perk not rallying the troops
 *Fixes runed verisons of ancient tower shields not showing.
 *Fixes crashed taxidermist/crafting tent.
+*Fixes Barbarian thralls not spawning 
 
 **Legion:**
 * Legion scenario overview and intro text updated
@@ -2637,7 +2638,7 @@ Barbarian champions have a chain and dark tunic layer to bring their total armor
 * Prevents some fights vs undead that can cause a crash 
 * Recruits from events will now be skeletons, this includes deserter, wildling, cannibal, vala, apprentice, melon thief, pimp, laborers, cultist, vagabond, kings guard, ranger, noble and burned witch. 
 * Fixes starting skeletons not resurrecting after battles
-* Spear speciailisation effect Ancient Spears as well as Militia spears 
+* Spear specialisation effect Ancient Spears as well as Militia spears 
 Improves graphics for several towershields, so they are darker and grittier. 
 Improves graphics for a few armors with layered armors off 
 Fixed up some stray pixels on shivs 
