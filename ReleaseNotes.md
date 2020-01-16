@@ -2635,4 +2635,4 @@ Mail shirt fatigue from -6 to -7
 * Skeletons no longer take flesh wounds in combat
 * Prevents some fights vs undead that can cause a crash 
 * Recruits from events will now be skeletons, this includes deserter, wildling, cannibal, vala, apprentice, melon thief, pimp, laborers, cultist, vagabond, kings guard, ranger, noble and burned witch. 
-
+* Fixes starting skeletons not resurrecting after battles 

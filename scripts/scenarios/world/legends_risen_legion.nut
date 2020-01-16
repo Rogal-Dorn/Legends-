@@ -34,7 +34,7 @@ this.legends_risen_legion <- this.inherit("scripts/scenarios/world/starting_scen
 			bro.getTags().add("PlayerSkeleton");
 			bro.getTags().add("undead");
 			bro.getTags().add("skeleton");
-	
+			bro.getSkills().add(this.new("scripts/skills/traits/legend_deathly_spectre_trait"));
 			bro.getSkills().add(this.new("scripts/skills/racial/skeleton_racial"));
 			bro.getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));
 			local items = bro.getItems();
