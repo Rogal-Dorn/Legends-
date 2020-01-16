@@ -2623,9 +2623,29 @@ Nicer terrain for the new tactical battles
 Barbarian champions have a chain and dark tunic layer to bring their total armor closer to vanilla 
 
 
-13.2.0
-*Fixes Rally Perk not rallying the troops
-*Fixes runed verisons of tower shields not showing.
-*Fixes crashed taxidermist/crafting tent.
-*Fixes Named cloak durability being too low.
-*Fixes crash when nacho swallows bro who has caused a bleed on someone (and bleed kills option is enabled).
+13.2.0 
+Fixes Rally Perk not rallying the troops
+Fixes runed verisons of ancient tower shields not showing.
+Fixes crashed taxidermist/crafting tent.
+Fixes Named cloak durability being too low.
+Fixes crash when nacho swallows bro who has caused a bleed on someone (and bleed kills option is enabled).
+Fixes Barbarian thralls not spawning 
+Improves graphics for several towershields, so they are darker and grittier. 
+Improves graphics for a few armors with layered armors off 
+Fixed up some stray pixels on shivs 
+Scale coat fatigue reduced from 25 to 22 
+named leather jacket fatigue range from 3-5 to 2-4
+Mail shirt fatigue from -6 to -7 
+
+**Legion:**
+* Legion scenario overview and intro text updated
+* During the undead crisis you can no longer recruit a crusader, but when you find an old man, he turns out to be a skeleton warlock
+* Legion can now recruit outside the Black Monolith, or attack it to gain the emporers countenance 
+* Frequency of recruitment on the road decreased, but frequency at buried castles and mass graves increased
+* Skeletons no longer take temporary flesh wounds in combat
+* Prevents some fights vs undead that can cause a crash 
+* Recruits from events will now be skeletons, this includes deserter, wildling, cannibal, vala, apprentice, melon thief, pimp, laborers, cultist, vagabond, kings guard, ranger, noble and burned witch. 
+* Fixes starting skeletons not resurrecting after battles
+* Spear specialisation effect Ancient Spears as well as Militia spears 
+
+

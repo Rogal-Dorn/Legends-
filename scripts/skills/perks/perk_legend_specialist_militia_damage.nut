@@ -17,18 +17,32 @@ this.perk_legend_specialist_militia_damage <- this.inherit("scripts/skills/skill
 	{
 		local actor = this.getContainer().getActor();
 		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		if (item != null)
+		if (item == null)
 		{
-			if(item.getID() == "weapon.militia_spear" || item.getID() == "weapon.legend_wooden_spear")
-			{
-			_properties.DamageRegularMin += 4;
-			_properties.DamageRegularMax += 12;
-			}
-			if(item.getID() == "weapon.goblin_spear" || item.getID() == "weapon.fighting_spear" || item.getID() == "weapon.ancient_spear" || item.getID() == "weapon.named_spear" || item.getID() == "weapon.boar_spear" || item.getID() == "weapon.named_goblin_spear" || item.getID() == "weapon.throwing_spear" || item.getID() == "weapon.legend_glaive" || item.getID() == "weapon.legend_named_glaive" || item.getID() == "weapon.legend_militia_glaive" || item.getID() == "weapon.legend_battle_glaive")
-			{
-			_properties.DamageRegularMin += 1;
-			_properties.DamageRegularMax += 3;
-			}
+			return;
+		}
+
+		switch (item.getID())
+		{
+			case "weapon.militia_spear":
+			case "weapon.legend_wooden_spear":
+			case "weapon.ancient_spear":
+				_properties.DamageRegularMin += 4;
+				_properties.DamageRegularMax += 12;
+				break;
+			case "weapon.goblin_spear":
+			case "weapon.fighting_spear":
+			case "weapon.named_spear":
+			case "weapon.boar_spear":
+			case "weapon.named_goblin_spear":
+			case "weapon.throwing_spear":
+			case "weapon.legend_glaive":
+			case "weapon.legend_named_glaive":
+			case "weapon.legend_militia_glaive":
+			case "weapon.legend_battle_glaive":
+				_properties.DamageRegularMin += 1;
+				_properties.DamageRegularMax += 3;
+				break;
 		}
 	}
 
