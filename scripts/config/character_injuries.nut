@@ -569,34 +569,10 @@ gt.Const.Injury.SkeletonBody <- [
 		Script = "injury_permanent/maimed_foot_injury"
 	},
 	{
-		ID = "injury.broken_elbow_joint",
-		Script = "injury_permanent/broken_elbow_joint_injury"
-	},
-	{
 		ID = "injury.smashed_hand",
 		Threshold = 0.5,
 		Script = "injury/smashed_hand_injury"
 	},
-	{
-		ID = "injury.broken_knee",
-		Threshold = 0.5,
-		Script = "injury_permanent/broken_knee_injury"
-	},
-	{
-		ID = "injury.broken_elbow_joint",
-		Threshold = 0.5,
-		Script = "injury_permanent/broken_elbow_joint_injury"
-	},
-	{
-		ID = "injury.missing_hand",
-		Threshold = 0.5,
-		Script = "injury_permanent/missing_hand_injury"
-	},
-	{
-		ID = "injury.missing_finger",
-		Threshold = 0.5,
-		Script = "injury_permanent/missing_finger_injury"
-	}
 ];
 
 gt.Const.Injury.FeedDog <- [
