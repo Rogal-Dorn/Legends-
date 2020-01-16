@@ -2622,3 +2622,7 @@ Nicer terrain for the new tactical battles
 *Scale armors re-ordered so that metal scales are more effective than leather scales 
 Barbarian champions have a chain and dark tunic layer to bring their total armor closer to vanilla 
 
+
+13.2.0
+*Fixes Rally Perk not rallying the troops
+*Fixes runed verisons of tower shields not showing.
