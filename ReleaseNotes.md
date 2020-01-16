@@ -2632,7 +2632,12 @@ Mail shirt fatigue from -6 to -7
 * During the undead crisis you can no longer recruit a crusader, but when you find an old man, he turns out to be a skeleton warlock
 * Legion can now recruit outside the Black Monolith, or attack it to gain the emporers countenance 
 * Frequency of recruitment on the road decreased, but frequency at buried castles and mass graves increased
-* Skeletons no longer take flesh wounds in combat
+* Skeletons no longer take temporary flesh wounds in combat
 * Prevents some fights vs undead that can cause a crash 
 * Recruits from events will now be skeletons, this includes deserter, wildling, cannibal, vala, apprentice, melon thief, pimp, laborers, cultist, vagabond, kings guard, ranger, noble and burned witch. 
-* Fixes starting skeletons not resurrecting after battles 
+* Fixes starting skeletons not resurrecting after battles
+* Spear speciailisation effect Ancient Spears as well as Militia spears 
+Improves graphics for several towershields, so they are darker and grittier. 
+Improves graphics for a few armors with layered armors off 
+Fixed up some stray pixels on shivs 
+
