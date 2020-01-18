@@ -2648,6 +2648,11 @@ Mail shirt fatigue from -6 to -7
 
 13.2.1
 
+**Unarmed**
+New Perk - Choke - Like a cross between hand to hand and puncture. Available when unarmed, deals damaged based on hp and init. hit chance based on targets fatigue. Gains to hit bonuses against disabled targets. Added to Unarmed tree 
+Grapple buffed to applying -20 fatigue reduction and -50% max fatigue for 3 turns. Can only be used while unarmed  
+Fixed kick gaining a to hit bonus from shield mastery instead of unarmed mastery
+
 Necrosavant lords can now be necrosavant ladies 
 Bandit poachers spawn less frequently and in lower numbers 
 Puncture now gains +10% chance to hit if the target is dazed or parried, +25% if stunned or netted and +50% if grappled or sleeping. These stack with themselves and dagger mastery. 
@@ -2662,12 +2667,8 @@ Legion recruitment uses correct picture and text fixed
 Tooltip fixed on nudist perk 
 Peasant flail ingame image fixed 
 Skeleton Gladiators no longer flee battle 
-
-**Unarmed**
-New Perk - Choke - Like a cross between hand to hand and puncture. Available when unarmed, deals damaged based on hp and init. hit chance based on targets fatigue. Gains to hit bonuses against disabled targets. Added to Unarmed tree 
-Grapple buffed to applying -20 fatigue reduction and -50% max fatigue for 3 turns. Can only be used while unarmed  
-Fixed kick gaining a to hit bonus from shield mastery instead of unarmed mastery
-
+Summoned Zombies no longer get 3AP 
+Blonde berserker beard is closer in colour to other beards 
 
 
 

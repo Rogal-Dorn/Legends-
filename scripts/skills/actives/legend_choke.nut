@@ -272,10 +272,6 @@ this.legend_choke <- this.inherit("scripts/skills/skill", {
 			_properties.IsIgnoringArmorOnAttack = true;
 			_properties.HitChanceMult[this.Const.BodyPart.Head] = 0.0;
 
-			if (this.canDoubleGrip())
-			{
-				_properties.DamageTotalMult /= 1.25;
-			}
 		}
 	}
 
