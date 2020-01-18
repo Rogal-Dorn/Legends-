@@ -202,9 +202,9 @@ this.undead_necrosavant_event <- this.inherit("scripts/events/event", {
 				_event.m.Warlock.getTags().add("PlayerSkeleton");
 				_event.m.Warlock.getTags().add("undead");
 				_event.m.Warlock.getTags().add("skeleton");
+				_event.m.Warlock.setStartValuesEx(["legend_necro_background"]);
 				_event.m.Warlock.getSkills().add(this.new("scripts/skills/racial/skeleton_racial"));
 				_event.m.Warlock.getSkills().getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));
-				_event.m.Warlock.setStartValuesEx(["legend_necro_background"]);
 				this.Characters.push(_event.m.Warlock.getImagePath());
 			}
 

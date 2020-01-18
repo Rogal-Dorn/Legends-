@@ -69,16 +69,22 @@ this.deserter_in_forest_event <- this.inherit("scripts/events/event", {
 				local roster = this.World.getTemporaryRoster();
 				_event.m.Dude = roster.create("scripts/entity/tactical/player");
 					if (this.World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
-							{
-							_event.m.Dude.getTags().add("PlayerSkeleton");
-							_event.m.Dude.getTags().add("undead");
-							_event.m.Dude.getTags().add("skeleton");
-							_event.m.Dude.getSkills().add(this.new("scripts/skills/racial/skeleton_racial"));
-							_event.m.Dude.getSkills().getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));	
-							}
-				_event.m.Dude.setStartValuesEx([
-					"deserter_background"
-				]);
+						{
+						_event.m.Cannibal.getTags().add("PlayerSkeleton");
+						_event.m.Cannibal.getTags().add("undead");
+						_event.m.Cannibal.getTags().add("skeleton");
+						_event.m.Cannibal.setStartValuesEx([
+							"legend_cannibal_background"
+						]);
+						_event.m.Cannibal.getSkills().add(this.new("scripts/skills/racial/skeleton_racial"));
+						_event.m.Cannibal.getSkills().getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));	
+						}
+					else
+					{
+						_event.m.Cannibal.setStartValuesEx([
+						"deserter_background"
+						]);
+					}
 				_event.m.Dude.getBackground().m.RawDescription = "You found %name% the deserter being chased through the forest. Though bounty hunters were hot on the trail, you elected to defend the fugitive and for that swore an oath to you.";
 				_event.m.Dude.getBackground().buildDescription(true);
 				this.Characters.push(_event.m.Dude.getImagePath());
