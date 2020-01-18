@@ -2650,15 +2650,23 @@ Mail shirt fatigue from -6 to -7
 
 Necrosavant lords can now be necrosavant ladies 
 Bandit poachers spawn less frequently and in lower numbers 
-Fixes crash when a bleeding bachzerer dies while having swallowed the person who caused the bleed, and bleed attributes option is turned on 
+Puncture now gains +10% chance to hit if the target is dazed or parried, +25% if stunned or netted and +50% if grappled or sleeping. These stack with themselves and dagger mastery. 
+Fixes crash when a bleeding nachzerer dies while having swallowed the person who caused the bleed, and bleed kills tracking option is turned on 
 Log shows more detail around rotations to help us diagnose rotation crashes 
+Fixes white wolf not attacking 
 Fixes crash from a named cloth not having an owner 
 Spelling errors fixed 
 Heightened reflexes correctly applies 50% instead of 30% 
 Cooking spices can now be bought in market places
 Legion recruitment uses correct picture and text fixed 
 Tooltip fixed on nudist perk 
-peasant flail ingame image fixed 
+Peasant flail ingame image fixed 
+Skeleton Gladiators no longer flee battle 
+
+**Unarmed**
+New Perk - Choke - Like a cross between hand to hand and puncture. Available when unarmed, deals damaged based on hp and init. hit chance based on targets fatigue. Gains to hit bonuses against disabled targets. Added to Unarmed tree 
+Grapple buffed to applying -20 fatigue reduction and -50% max fatigue for 3 turns. Can only be used while unarmed  
+Fixed kick gaining a to hit bonus from shield mastery instead of unarmed mastery
 
 
 

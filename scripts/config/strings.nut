@@ -1395,7 +1395,8 @@ gt.Const.Strings.PerkName <- {
 	LegendDogBreeder = "Dog Breeder",
 	LegendDogHandling = "Dog Handling",
 	LegendHeightenedReflexes = "Heightened Reflexes",
-	LegendWindReader = "Wind Reader"
+	LegendWindReader = "Wind Reader",
+	LegendChoke = "Choke"
 };
 gt.Const.Strings.PerkDescription <- {
 	Relentless = "Don\'t slow down! At all times your Initiative is reduced only by [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] of your accumulated Fatigue, instead of all of it. \n[color=#0b0084]From the Fit perk group[/color]",
@@ -1720,8 +1721,8 @@ gt.Const.Strings.PerkDescription <- {
 	LegendDogBreeder = "Intimate knowledge of dog care and conditions required for breeding allows you to successfully breed dogs. Unlocks a recipe in the crafting tent for breeding dogs.",
 	LegendDogHandling = "Your way with animals extends so far as turning those dogs that would do you harm. By spending one item of food you can make a dog flee from battle. The food item is chosen at random and the perk does not work if you have less than 25 food.",
 	LegendHeightenedReflexes = "You have trained in avoiding arrows, this skill translates well into dodging blades. Gain half of your Ranged Defence as Initiative, with a minimum bonus of 3.",
-	LegendWindReader = "You have learned to read the wind, estimating the path of arrows in uncertain conditions. This is very helpful for dodging arrows, but can also be applied to shooting them as well.  Gain a third of your Ranged Defence as Ranged Skill, with a minimum bonus of 3. "
-
+	LegendWindReader = "You have learned to read the wind, estimating the path of arrows in uncertain conditions. This is very helpful for dodging arrows, but can also be applied to shooting them as well.  Gain a third of your Ranged Defence as Ranged Skill, with a minimum bonus of 3. ",
+	LegendChoke = "Once an opponent is in a weakened state, it may be easier to choke them out than to fight through their armor. Unlocks the Choke ability which becomes available with no weapons equipped. Hit chance determined by your targets fatigue, 0% if they are fresh and 100% if they are exhausted. If your target is dazed or parried hitchance is increaded by +10%.  If they are stunned or netted you gain +25%. If they are grappled or sleeping you gain +50%. Dagger mastery doubles your chance to hit. These bonuses stack up to 100%. "
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

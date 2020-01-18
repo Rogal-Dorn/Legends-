@@ -64,7 +64,7 @@ gt.Const.Perks.FistsClassTree <- {
 		[gt.Const.Perks.PerkDefs.LegendGrapple],
 		[gt.Const.Perks.PerkDefs.LegendSpecFists],
 		[],
-		[],
+		[gt.Const.Perks.PerkDefs.LegendChoke],
 		[]
 	]
 };
