@@ -2646,4 +2646,14 @@ Scale coat fatigue reduced from 25 to 22
 named leather jacket fatigue range from 3-5 to 2-4
 Mail shirt fatigue from -6 to -7 
 
+13.2.1
+
+Bandit poachers spawn less frequently and in lower numbers 
+Fixes crash from a named cloth not having an owner 
+Spelling errors fixed 
+Heightened reflexes correctly applies 50% instead of 30% 
+Cooking spices can now be bought in market places
+
+
+
 
