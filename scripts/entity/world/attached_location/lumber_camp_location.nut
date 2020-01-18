@@ -132,12 +132,7 @@ this.lumber_camp_location <- this.inherit("scripts/entity/world/attached_locatio
 				S = "weapons/hatchet"
 			});
 			_list.push({
-				R = 30,
-				P = 1.0,
-				S = "weapons/legend_saw"
-			});
-			_list.push({
-				R = 30,
+				R = 15,
 				P = 1.0,
 				S = "weapons/legend_saw"
 			});
@@ -147,9 +142,19 @@ this.lumber_camp_location <- this.inherit("scripts/entity/world/attached_locatio
 				S = "weapons/hand_axe"
 			});
 			_list.push({
+				R = 30,
+				P = 1.0,
+				S = "weapons/legend_infantry_axe"
+			});
+			_list.push({
 				R = 50,
 				P = 1.0,
 				S = "weapons/hooked_blade"
+			});
+			_list.push({
+				R = 10,
+				P = 1.0,
+				S = "weapons/legend_wooden_stake"
 			});
 			_list.push({
 				R = 0,
@@ -178,6 +183,11 @@ this.lumber_camp_location <- this.inherit("scripts/entity/world/attached_locatio
 				R = 20,
 				P = 1.0,
 				S = "weapons/hooked_blade"
+			});
+			_list.push({
+				R = 50,
+				P = 1.0,
+				S = "weapons/throwing_axe"
 			});
 		}
 		else if (_id == "building.specialized_trader")

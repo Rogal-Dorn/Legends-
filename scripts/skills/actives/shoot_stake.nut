@@ -177,6 +177,11 @@ this.shoot_stake <- this.inherit("scripts/skills/skill", {
 		local skillToAdd = this.new("scripts/skills/actives/reload_bolt");
 		skillToAdd.setItem(this.getItem());
 		this.getContainer().add(skillToAdd);
+		if (target.getType() == this.Const.EntityType.Vampire || target.getType() == this.Const.EntityType.LegendVampireLord)
+		{
+		_properties.DamageRegularMin += 80
+		_properties.DamageRegularMax +=	85
+		}
 		return ret;
 	}
 
