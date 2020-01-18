@@ -108,18 +108,26 @@ this.legend_vampire_lord <- this.inherit("scripts/entity/tactical/actor", {
 		local bodyBrush = this.getSprite("body").getBrush().Name;
 		local headBrush = this.getSprite("head").getBrush().Name;
 
-		if (p <= 0.33)
+		if (p <= 0.25)
 		{
 			this.getSprite("body").setBrush("bust_vampire_lord_body_03");
 			this.getSprite("body_injury").setBrush("bust_skeleton_body_03_injured");
 			this.getSprite("head").setBrush("bust_vampire_lord_head_03");
 			this.getSprite("injury").setBrush("bust_skeleton_head_03_injured");
 		}
-		else if (p <= 0.66)
+		else if (p <= 0.50)
 		{
 			this.getSprite("body").setBrush("bust_vampire_lord_body_02");
 			this.getSprite("body_injury").setBrush("bust_skeleton_body_04_injured");
 			this.getSprite("head").setBrush("bust_vampire_lord_head_02");
+			this.getSprite("injury").setBrush("bust_skeleton_head_04_injured");
+		}
+		else if (p <= 0.75)
+		{
+			this.getSprite("body").setBrush("bust_vampire_lady_body_01");
+			this.getSprite("body_injury").setBrush("bust_skeleton_body_04_injured");
+			this.getSprite("head").setBrush("bust_vampire_lord_head_01");
+			this.getSprite("hair").setBrush("hair_black_25");
 			this.getSprite("injury").setBrush("bust_skeleton_head_04_injured");
 		}
 		else
