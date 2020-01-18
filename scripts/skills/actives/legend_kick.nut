@@ -276,7 +276,7 @@ this.legend_kick <- this.inherit("scripts/skills/skill", {
 		{
 			_properties.MeleeSkill += 25;
 
-			if (_properties.IsSpecializedInShields)
+			if (_properties.IsSpecializedInFists)
 			{
 				_properties.MeleeSkill += 15;
 			}

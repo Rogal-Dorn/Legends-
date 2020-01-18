@@ -1,6 +1,6 @@
 this.legend_grappled_effect <- this.inherit("scripts/skills/skill", {
 	m = {
-		TurnsLeft = 2
+		TurnsLeft = 3
 	},
 	function create()
 	{
@@ -86,7 +86,7 @@ this.legend_grappled_effect <- this.inherit("scripts/skills/skill", {
 		_properties.StaminaMult *= 0.5;
 		_properties.FatigueRecoveryRate -= 20;
 
-		if (actor.hasSprite("status_stunned") && !this.getContainer().hasSkill("effects.stunned"))
+		if (!actor.hasSprite("status_stunned") && !this.getContainer().hasSkill("effects.stunned"))
 		{
 			actor.getSprite("status_stunned").setBrush("bust_dazed");
 			actor.getSprite("status_stunned").Visible = true;
