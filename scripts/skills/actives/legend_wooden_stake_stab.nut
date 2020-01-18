@@ -51,14 +51,21 @@ this.legend_wooden_stake_stab <- this.inherit("scripts/skills/skill", {
 		}
 	}
 
+
+	function onAnySkillUsed( _skill, _targetEntity, _properties )
+	{
+		if (_skill == this)
+		{
+			if (_targetEntity.getType() == this.Const.EntityType.Vampire || _targetEntity.getType() == this.Const.EntityType.LegendVampireLord)
+			{
+			_properties.DamageRegularMin += 80;
+			_properties.DamageRegularMax += 85;
+			}
+		}
+	}
+
 	function onUse( _user, _targetTile )
 	{
-		local target = _targetTile.getEntity();
-		if (target.getType() == this.Const.EntityType.Vampire || target.getType() == this.Const.EntityType.LegendVampireLord)
-		{
-		_properties.DamageRegularMin += 80
-		_properties.DamageRegularMax +=	85
-		}
 		return this.attackEntity(_user, _targetTile.getEntity());
 	}
 
