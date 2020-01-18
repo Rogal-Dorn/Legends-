@@ -2646,14 +2646,17 @@ Scale coat fatigue reduced from 25 to 22
 named leather jacket fatigue range from 3-5 to 2-4
 Mail shirt fatigue from -6 to -7 
 
-13.2.1
+13.2.1 ** just fixes**
 
-**Unarmed**
-New Perk - Choke - Like a cross between hand to hand and puncture. Available when unarmed, deals damaged based on hp and init. hit chance based on targets fatigue. Gains to hit bonuses against disabled targets. Added to Unarmed tree 
-Grapple buffed to applying -20 fatigue reduction and -50% max fatigue for 3 turns. Can only be used while unarmed  
-Fixed kick gaining a to hit bonus from shield mastery instead of unarmed mastery
+**Necrosavant Hunter** 
+Necrosavant lords have 25% chance to be Ladies, when this happens they gain terrifying visage.
+New Weapon - Wooden stake, very cheap, 5 durability, does 10-15 damage, but against necrosavants it does 90-100 damage. Counts as a dagger 
+Goblin impaler's Shoot Stake ability also does bonus damage against necrosavants. 
+Witch Hunters now spawn with a wooden stake instead of a dagger, the lose polearm mastery and gain dagger mastery. 
+Wooden Stakes can be found in towns with a trapper or lumber camp.  
 
-Necrosavant lords can now be necrosavant ladies 
+
+**Fixes**
 Bandit poachers spawn less frequently and in lower numbers 
 Puncture now gains +10% chance to hit if the target is dazed or parried, +25% if stunned or netted and +50% if grappled or sleeping. These stack with themselves and dagger mastery. 
 Fixes crash when a bleeding nachzerer dies while having swallowed the person who caused the bleed, and bleed kills tracking option is turned on 
@@ -2669,7 +2672,13 @@ Peasant flail ingame image fixed
 Skeleton Gladiators no longer flee battle 
 Summoned Zombies no longer get 3AP 
 Blonde berserker beard is closer in colour to other beards 
-
+Reduces hunting speed in camp 
+New Perk - Choke - Like a cross between hand to hand and puncture. Available when unarmed, deals damaged based on hp and init. hit chance based on targets fatigue. Gains to hit bonuses against disabled targets. Added to Unarmed tree 
+Grapple buffed to applying -20 fatigue reduction and -50% max fatigue for 3 turns. Can only be used while unarmed  
+Fixed kick gaining a to hit bonus from shield mastery instead of unarmed mastery
+Should fix crash when a person affected by a vala chant gets eaten by a nacho 
+Sling staves use staff bash. 
+Infantry axe can be found in towns with a fortified outpost or lumber camp 
 
 
 
