@@ -2648,11 +2648,19 @@ Mail shirt fatigue from -6 to -7
 
 13.2.1
 
+Necrosavant lords can now be necrosavant ladies 
 Bandit poachers spawn less frequently and in lower numbers 
+Fixes crash when a bleeding bachzerer dies while having swallowed the person who caused the bleed, and bleed attributes option is turned on 
+Log shows more detail around rotations to help us diagnose rotation crashes 
 Fixes crash from a named cloth not having an owner 
 Spelling errors fixed 
 Heightened reflexes correctly applies 50% instead of 30% 
 Cooking spices can now be bought in market places
+Legion recruitment uses correct picture and text fixed 
+Tooltip fixed on nudist perk 
+peasant flail ingame image fixed 
+
+
 
 
 
