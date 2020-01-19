@@ -116,9 +116,24 @@ this.supposed_witch_event <- this.inherit("scripts/events/event", {
 				
 				local roster = this.World.getTemporaryRoster();
 				_event.m.Dude = roster.create("scripts/entity/tactical/player");
-				_event.m.Dude.setStartValuesEx(
-					this.Const.CharacterFemaleBackgrounds
-				);
+					if (this.World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
+						{
+						_event.m.Cannibal.getTags().add("PlayerSkeleton");
+						_event.m.Cannibal.getTags().add("undead");
+						_event.m.Cannibal.getTags().add("skeleton");
+							_event.m.Dude.setStartValuesEx(
+								this.Const.CharacterFemaleBackgrounds
+							);
+						_event.m.Cannibal.getSkills().add(this.new("scripts/skills/racial/skeleton_racial"));
+						_event.m.Cannibal.getSkills().getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));	
+						}
+					else
+					{
+						_event.m.Dude.setStartValuesEx(
+							this.Const.CharacterFemaleBackgrounds
+						);
+					}
+
 				_event.m.Dude.setTitle("the Roasted");
 				_event.m.Dude.getBackground().m.RawDescription = "While visiting the local village you found %name% tied to a stake and set her free, now she fights with you and for her freedom";
 				_event.m.Dude.getBackground().buildDescription(true);

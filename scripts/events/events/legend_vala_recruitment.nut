@@ -36,9 +36,26 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
+						if (this.World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
+							{
+								return "E";
+							}
 				local roster = this.World.getTemporaryRoster();
 				_event.m.Vala = roster.create("scripts/entity/tactical/player");
-				_event.m.Vala.setStartValuesEx(["legend_vala_background"]);
+					if (this.World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
+						{
+						_event.m.Cannibal.getTags().add("PlayerSkeleton");
+						_event.m.Cannibal.getTags().add("undead");
+						_event.m.Cannibal.getTags().add("skeleton");
+						_event.m.Vala.setStartValuesEx(["legend_vala_background"]);
+						_event.m.Cannibal.getSkills().add(this.new("scripts/skills/racial/skeleton_racial"));
+						_event.m.Cannibal.getSkills().getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));	
+						}
+					else
+					{
+					_event.m.Vala.setStartValuesEx(["legend_vala_background"]);
+					}
+	
 				this.Characters.push(_event.m.Vala.getImagePath());
 			}
 		});

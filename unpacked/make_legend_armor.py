@@ -168,7 +168,9 @@ def main():
                     javelin_path=os.path.join("entity", "legend_armor", d["layer"], name + "_dead_javelin.png")
                 )
                 s = Template(t)
-                F.write(s.substitute(opts))
+                text = s.substitute(opts)
+                text.replace("/", "\\")
+                F.write(text)
 
                 if "base" in d:
                     srcF = os.path.join(os.path.dirname(os.path.abspath(__file__)), "dead_arrows.png")

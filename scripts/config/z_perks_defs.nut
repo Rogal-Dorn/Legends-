@@ -2768,6 +2768,15 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/wind_reader.png",
 		IconDisabled = "ui/perks/wind_reader_bw.png",
 		Const = "LegendWindReader"
+	},
+	{
+		ID = "perk.legend_choke",
+		Script = "scripts/skills/perks/perk_legend_choke",
+		Name = this.Const.Strings.PerkName.LegendChoke,
+		Tooltip = this.Const.Strings.PerkDescription.LegendChoke,
+		Icon = "ui/perks/choke_circle.png",
+		IconDisabled = "ui/perks/choke_circle_bw.png",
+		Const = "LegendChoke"
 	}
 ];
 gt.Const.Perks.PerkDefs <- {};

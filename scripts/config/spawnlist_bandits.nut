@@ -61,22 +61,22 @@ gt.Const.World.Spawn.BanditRoamers <-
 			]
 		},
 		{
-			Weight = 25,
+			Weight = 20,
 			Types =
 			[
 				{
 					Type = this.Const.World.Spawn.Troops.BanditMarksmanLOW,
-					Cost = 8
+					Cost = 12
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.BanditMarksman,
 					MinR = 400,
-					Cost = 15
+					Cost = 18
 				}
 			]
 		},
 		{
-			Weight = 10,
+			Weight = 15,
 			MinR = 0.50 * 385,
 			Types =
 			[
@@ -270,18 +270,18 @@ gt.Const.World.Spawn.BanditRaiders <-
 			]				
 		},
 		{
-			Weight = 24,
+			Weight = 20,
 			Types =
 			[
 				{
 					Type = this.Const.World.Spawn.Troops.BanditMarksmanLOW,
-					Cost = 8
+					Cost = 12
 				},
 				{
 					MinR = 400,
 					Type = this.Const.World.Spawn.Troops.BanditMarksman,
 					MinR = 125,
-					Cost = 15
+					Cost = 18
 				},
 				{
 					MinR = 800,
@@ -343,8 +343,8 @@ gt.Const.World.Spawn.BanditRaiders <-
 			]
 		},
 		{
-			Weight = 10,
-			MinR = 0.50 * 585,
+			Weight = 14,
+			MinR = 0.50 * 200,
 			Types =
 			[
 				{
@@ -424,17 +424,17 @@ gt.Const.World.Spawn.BanditDefenders <-
 			]
 		},
 		{
-			Weight = 22,
+			Weight = 20,
 			Types =
 			[
 				{
 					Type = this.Const.World.Spawn.Troops.BanditMarksmanLOW,
-					Cost = 8
+					Cost = 12
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.BanditMarksman,
 					MinR = 400,
-					Cost = 15
+					Cost = 18
 				},
 				{
 					MinR = 800,
@@ -473,8 +473,8 @@ gt.Const.World.Spawn.BanditDefenders <-
 			]
 		},
 		{
-			Weight = 10,
-			MinR = 0.50 * 585,
+			Weight = 12,
+			MinR = 0.50 * 285,
 			Types =
 			[
 				{
@@ -565,7 +565,7 @@ gt.Const.World.Spawn.BanditBoss <-
 	Troops =
 	[
 		{
-			Weight = 63,
+			Weight = 65,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.BanditThug,
@@ -588,7 +588,7 @@ gt.Const.World.Spawn.BanditBoss <-
 			]
 		},
 		{
-			Weight = 22,
+			Weight = 20,
 			Types =
 			[
 				{

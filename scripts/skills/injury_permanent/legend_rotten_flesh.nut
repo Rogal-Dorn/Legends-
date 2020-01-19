@@ -75,7 +75,6 @@ this.legend_rotten_flesh <- this.inherit("scripts/skills/injury_permanent/perman
 		_properties.MovementFatigueCostMult = 0.1;
 		_properties.DailyWageMult = 0;
 		_properties.DailyFood = 0;
-		_properties.ActionPoints -= 3;
 	}
 
 	function onApplyAppearance()

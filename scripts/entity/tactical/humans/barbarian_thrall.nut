@@ -119,7 +119,7 @@ this.barbarian_thrall <- this.inherit("scripts/entity/tactical/human", {
 		{
 			local cloths = [
 				[1, ""],
-				[6, "cloth/legend_sackcloth_patched"]
+				[6, "cloth/legend_sackcloth_patched"],
 				[3, "cloth/legend_sackcloth"]
 			];
 			local armor = this.Const.World.Common.pickLegendArmor(cloths)

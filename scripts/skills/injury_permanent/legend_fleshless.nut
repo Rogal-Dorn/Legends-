@@ -26,31 +26,37 @@ this.legend_fleshless <- this.inherit("scripts/skills/injury_permanent/permanent
 				id = 7,
 				type = "text",
 				icon = "ui/icons/damage_received.png",
-				text = "Immune to Bleeding, poison and fresh injuries"
+				text = "Has no flesh. Immune to Bleeding, poison and fresh injuries. "
 			},
 			{
 				id = 7,
 				type = "text",
 				icon = "ui/icons/days_wounded.png",
-				text = "50% less hitpoints. Heals at 10% normal rate. Requires no food."
+				text = "Has no blood. 50% less hitpoints. Heals at 10% normal rate. Requires no food."
 			},
 			{
 				id = 7,
 				type = "text",
 				icon = "ui/icons/fatigue.png",
-				text = "Effected by fatigue at 10% normal rate"
+				text = "Has no lungs. Effected by fatigue at 10% normal rate."
+			},
+			{
+				id = 7,
+				type = "text",
+				icon = "ui/icons/fatigue.png",
+				text = "Has no brain. XP gain reduced to 33% of normal rate, free upkeep."
 			},
 			{
 				id = 7,
 				type = "text",
 				icon = "ui/icons/morale.png",
-				text = "Not affected by morale, or allies fleeing or dying"
+				text = "Has no heart. Not affected by morale, or allies fleeing or dying."
 			},
 			{
 				id = 7,
 				type = "text",
 				icon = "ui/icons/vision.png",
-				text = "Not affected by night"
+				text = "Has no eyes, Not affected by night."
 			}
 		];
 		this.addTooltipHint(ret);
