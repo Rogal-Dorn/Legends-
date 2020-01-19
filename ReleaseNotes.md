@@ -2678,7 +2678,7 @@ Skeleton Gladiators no longer flee battle
 Summoned Zombies no longer get 3AP 
 Blonde berserker beard is closer in colour to other beards 
 Reduces hunting speed in camp 
-Sling staves use staff bash. 
+Sling staves use staff bash, and color updated for bonus to hit per tile. 
 Infantry axe can be found in towns with a fortified outpost or lumber camp 
 
 
