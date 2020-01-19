@@ -2622,3 +2622,65 @@ Nicer terrain for the new tactical battles
 *Scale armors re-ordered so that metal scales are more effective than leather scales 
 Barbarian champions have a chain and dark tunic layer to bring their total armor closer to vanilla 
 
+
+13.2.0 
+*Fixes Rally Perk not rallying the troops
+*Fixes runed verisons of ancient tower shields not showing.
+*Fixes crashed taxidermist/crafting tent.
+*Fixes Barbarian thralls not spawning 
+
+**Legion:**
+* Legion scenario overview and intro text updated
+* During the undead crisis you can no longer recruit a crusader, but when you find an old man, he turns out to be a skeleton warlock
+* Legion can now recruit outside the Black Monolith, or attack it to gain the emporers countenance 
+* Frequency of recruitment on the road decreased, but frequency at buried castles and mass graves increased
+* Skeletons no longer take temporary flesh wounds in combat
+* Prevents some fights vs undead that can cause a crash 
+* Recruits from events will now be skeletons, this includes deserter, wildling, cannibal, vala, apprentice, melon thief, pimp, laborers, cultist, vagabond, kings guard, ranger, noble and burned witch. 
+* Fixes starting skeletons not resurrecting after battles
+* Spear specialisation effect Ancient Spears as well as Militia spears 
+Improves graphics for several towershields, so they are darker and grittier. 
+Improves graphics for a few armors with layered armors off 
+Fixed up some stray pixels on shivs 
+Scale coat fatigue reduced from 25 to 22 
+named leather jacket fatigue range from 3-5 to 2-4
+Mail shirt fatigue from -6 to -7 
+
+13.2.1 **Punching Vampires**
+
+**Necrosavant Hunter** 
+Necrosavant lords have 25% chance to be Ladies, when this happens they gain terrifying visage.
+New Weapon - Wooden stake, very cheap, 5 durability, does 10-15 damage, but against necrosavants it does 90-100 damage. Counts as a dagger 
+Dagger mastery reduces the fatigue and action points of using a wooden stake 
+Goblin impaler crossbow's "Shoot Stake" ability also does bonus damage against necrosavants. 
+Witch Hunters now spawn with a wooden stake instead of a dagger, the lose polearm mastery and gain dagger mastery. 
+Wooden Stakes can be found in towns with a trapper or lumber camp.  
+
+**Unarmed**
+New Perk - Choke - Like a cross between hand to hand and puncture. Available when unarmed, deals damaged based on hp and init. hit chance based on targets fatigue. Gains to hit bonuses against disabled targets. Added to Unarmed tree 
+Grapple buffed to applying -20 fatigue reduction and -50% max fatigue for 3 turns. Can only be used while unarmed  
+Fixed kick gaining a to hit bonus from shield mastery instead of unarmed mastery
+
+**Fixes**
+Bandit poachers spawn less frequently and in lower numbers 
+Puncture now gains +10% chance to hit if the target is dazed or parried, +25% if stunned or netted and +50% if grappled or sleeping. These stack with themselves and dagger mastery. 
+Fixes crash when a bleeding nachzerer dies while having swallowed the person who caused the bleed, and bleed kills tracking option is turned on 
+Should fix another crash when a person affected by a vala chant gets eaten by a nacho 
+Log shows more detail around rotations to help us diagnose rotation crashes 
+Fixes white wolf not attacking 
+Fixes crash from a named cloth not having an owner 
+Heightened reflexes correctly applies 50% instead of 30% 
+Cooking spices can now be bought in market places
+Legion recruitment uses correct picture and text fixed 
+Tooltip fixed on nudist perk 
+Peasant flail ingame image fixed 
+Skeleton Gladiators no longer flee battle 
+Summoned Zombies no longer get 3AP 
+Blonde berserker beard is closer in colour to other beards 
+Reduces hunting speed in camp 
+Sling staves use staff bash. 
+Infantry axe can be found in towns with a fortified outpost or lumber camp 
+
+
+
+

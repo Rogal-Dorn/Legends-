@@ -69,9 +69,9 @@ this.witchhunter_background <- this.inherit("scripts/skills/backgrounds/characte
 		this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.CrossbowTree,
-				this.Const.Perks.PolearmTree,
+				this.Const.Perks.CleaverTree,
 				this.Const.Perks.SwordTree,
-				this.Const.Perks.CleaverTree
+				this.Const.Perks.DaggerTree
 			],
 			Defense = [
 				this.Const.Perks.MediumArmorTree
@@ -221,7 +221,7 @@ this.witchhunter_background <- this.inherit("scripts/skills/backgrounds/characte
 
 		if (r == 0)
 		{
-			items.addToBag(this.new("scripts/items/weapons/knife"));
+			items.addToBag(this.new("scripts/items/weapons/legend_wooden_stake"));
 		}
 
 		r = this.Math.rand(0, 0);
