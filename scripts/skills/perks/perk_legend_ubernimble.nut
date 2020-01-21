@@ -30,7 +30,7 @@ this.perk_legend_ubernimble <- this.inherit("scripts/skills/skill", {
 		local  bodyitem = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Body);
 		local  headitem = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Head);
 
-		if (bodyitem == null || headitem == null)
+		if (bodyitem == null && headitem == null)
 		{
 			tooltip.push({
 				id = 6,
