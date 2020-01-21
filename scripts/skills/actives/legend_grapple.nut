@@ -96,7 +96,7 @@ this.legend_grapple<- this.inherit("scripts/skills/skill", {
 		{
 			local target = _targetTile.getEntity();
 
-			if ((_user.getCurrentProperties().IsSpecializedInFists || this.Math.rand(1, 100) <= this.m.StunChance) && !target.getCurrentProperties().IsImmuneToStun && !target.getSkills().hasSkill("effects.legend_grappled"))
+			if ((_user.getCurrentProperties().IsSpecializedInFists || this.Math.rand(1, 100) <= this.m.StunChance) && !target.getCurrentProperties().IsImmuneToKnockBackAndGrab && !target.getSkills().hasSkill("effects.legend_grappled"))
 			{
 				target.getSkills().add(this.new("scripts/skills/effects/legend_grappled_effect"));
 				if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
