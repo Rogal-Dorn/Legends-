@@ -32,6 +32,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		IsOutlawBackground = false,
 		AlignmentMin = this.Const.LegendMod.Alignment.Dreaded,
 		AlignmentMax = this.Const.LegendMod.Alignment.Saintly,
+		RandomAlignment = null,
 		IsStabled = false,
 		Modifiers = {
 			Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[0],
@@ -196,6 +197,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		this.m.Type = this.Const.SkillType.Background | this.Const.SkillType.Trait;
 		this.m.Order = this.Const.SkillOrder.Background;
 		this.m.DailyCostMult = this.Math.rand(90, 110) * 0.01;
+		this.setRandomAlignment();
 	}
 
 	function isHidden()
@@ -1169,6 +1171,11 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			]
 		};
 		return c;
+	}
+
+	function setRandomAlignment()
+	{
+		this.m.RandomAlignment = this.Math.rand(this.m.AlignmentMin, this.m.AlignmentMax);
 	}
 
 	//0 = Male, 1 = Female, -1 = Either
