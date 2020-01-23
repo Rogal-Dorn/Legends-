@@ -43,7 +43,9 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		CampHealing = 0,
 		LastCampTime = 0,
 		InReserves = false,
-		StarWeights = [50,50,50,50,50,50,50,50]
+		StarWeights = [50,50,50,50,50,50,50,50],
+		Alignment = null,
+		IsAlignmentAssigned = false
 	},
 	function setName( _value )
 	{
@@ -2123,6 +2125,43 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			this.fillTalentValues(3);
 			this.fillAttributeLevelUpValues(this.Const.XP.MaxLevelWithPerkpoints - 1);
 		}
+
+		this.setAlignment( null, background );
+	}
+
+	function setAlignment ( custom = null, background = null )
+	{
+		if ( background == null ) 
+		{
+			background = this.getBackground();
+		}
+		if ( this.m.IsAlignmentAssigned )
+		{
+			this.m.Skills.removeByID("trait.legend_alignment_0" + this.m.Alignment);	
+		}
+		if ( custom != null )
+		{
+			if ( custom > this.Const.LegendMod.Alignment.Saintly )
+			{
+				this.m.Alignment = this.Const.LegendMod.Alignment.Saintly;
+			}
+			else if ( custom < this.Const.LegendMod.Alignment.Dreaded ) 
+			{
+				this.m.Alignment = this.Const.LegendMod.Alignment.Dreaded;
+			}
+			else 
+			{
+				this.m.Alignment = custom;
+			}
+		}
+		else
+		{
+			this.m.Alignment = this.Math.rand(background.getAlignmentMin(), background.getAlignmentMax());
+		}
+		
+		this.m.IsAlignmentAssigned = true;
+
+		this.m.Skills.add(this.new("scripts/skills/traits/legend_alignment_0" + this.m.Alignment));
 	}
 
 	function fillTalentValues( _num, _force = false )
