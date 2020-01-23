@@ -2260,6 +2260,16 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		}
 	}
 	
+	function getActiveRelationshipWith( _actor )
+	{
+		foreach ( relation in this.m.ActiveRelationships ) 
+		{
+			if ( relation.ActorRef == _actor ) //may need ot be weaktableref depends on what the caller is calling in with i really dont know its hard to test for me
+			{
+				return relation.RelationNum;
+			}
+		}
+	}
 
 	function getActiveRelationshipsTraitText()
 	{
