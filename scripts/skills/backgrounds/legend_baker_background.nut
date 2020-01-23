@@ -38,6 +38,8 @@ this.legend_baker_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Body = "bust_naked_body_02";
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Notorious;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[1];
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[1];
 		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[1];
