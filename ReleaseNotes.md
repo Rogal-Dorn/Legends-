@@ -2597,5 +2597,6 @@ Catch and print errors with invalid blueprint.
 Fixes crash when apply poision effects a second time.
 
 13.0.0 RC 4 (?)
-Rally fix (Mwah)
 Changes some spawnlists to remove the legendary animals and adds them into their own spawnlist to contain their locations, etc
+Adds in most backgrounds' morality alignments. If u notice some that seem weird please post. Very possible I forgot some (Mwah)
+Adds in relationship status. Right now it's just a number & not much else
