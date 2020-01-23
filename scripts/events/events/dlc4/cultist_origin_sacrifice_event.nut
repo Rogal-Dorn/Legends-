@@ -69,6 +69,7 @@ this.cultist_origin_sacrifice_event <- this.inherit("scripts/events/event", {
 					text = _event.m.Sacrifice.getName() + " has died"
 				});
 				_event.m.Sacrifice.getItems().transferToStash(this.World.Assets.getStash());
+				_event.m.Sacrifice.removeActiveRelationship();
 				this.World.getPlayerRoster().remove(_event.m.Sacrifice);
 				local brothers = this.World.getPlayerRoster().getAll();
 				local hasProphet = false;

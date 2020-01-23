@@ -128,6 +128,7 @@ this.killer_vs_others_event <- this.inherit("scripts/events/event", {
 					text = _event.m.Killer.getName() + " has died"
 				});
 				_event.m.Killer.getItems().transferToStash(this.World.Assets.getStash());
+				_event.m.Killer.removeActiveRelationship();
 				this.World.Statistics.addFallen(_event.m.Killer, "Hanged for attempted murder");				
 				this.World.getPlayerRoster().remove(_event.m.Killer);
 				_event.m.OtherGuy1.improveMood(2.0, "Got satisfaction with " + _event.m.Killer.getNameOnly() + "\'s hanging");
@@ -219,6 +220,7 @@ this.killer_vs_others_event <- this.inherit("scripts/events/event", {
 					text = _event.m.Killer.getName() + " has died"
 				});
 				_event.m.Killer.getItems().transferToStash(this.World.Assets.getStash());
+				_event.m.Killer.removeActiveRelationship();
 				this.World.Statistics.addFallen(_event.m.Killer, "Murdered by his fellow comrades");				
 				this.World.getPlayerRoster().remove(_event.m.Killer);
 				local brothers = this.World.getPlayerRoster().getAll();

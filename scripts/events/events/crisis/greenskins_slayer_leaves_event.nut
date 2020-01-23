@@ -18,6 +18,7 @@ this.greenskins_slayer_leaves_event <- this.inherit("scripts/events/event", {
 					function getResult( _event )
 					{
 						_event.m.Dude.getItems().transferToStash(this.World.Assets.getStash());
+						_event.m.dude.removeActiveRelationship();
 						this.World.getPlayerRoster().remove(_event.m.Dude);
 						_event.m.Dude = null;
 						return 0;

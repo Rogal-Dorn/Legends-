@@ -886,7 +886,11 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 		foreach ( b in this.World.getPlayerRoster().getAll() )
 		{
-			this.createActiveRelationship(b, this.Math.rand(-20, 20));
+			this.changeActiveRelationship(b, this.Math.rand(-20, 20));
+		}
+		foreach ( other in this.World.getPlayerRoster().getAll() )
+		{
+			other.changeActiveRelationship(this, this.Math.rand(-20, 20));
 		}
 	}
 
@@ -1246,6 +1250,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 					decal.setBrush(appearance.CorpseArmorUpgradeFront);
 				}
 			}
+			this.removeActiveRelationship();
 		}
 
 		if (_tile != null)
@@ -2006,7 +2011,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		b.RangedDefense = 10;
 		b.Initiative = 115;
 		this.setName(this.Const.Tactical.Common.getRandomPlayerName());
-		local background = this.new("scripts/skills/backgrounds/" + this.Const.CharacterFemaleBackgrounds[this.Math.rand(0, this.Const.CharacterFemaleBackgrounds.len() - 1)]);
+		local background = this.new("scripts/skills/backgrounds/" + this.Const.CharacterFemaleBifackgrounds[this.Math.rand(0, this.Const.CharacterFemaleBackgrounds.len() - 1)]);
 		background.setScenarioOnly(true);
 		this.m.Skills.add(background);
 		background.buildDescription();
@@ -2166,6 +2171,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		
 		this.m.IsAlignmentAssigned = true;
 
+		this.m.Skills.add(this.new("scripts/skills/traits/legend_frenemies"));
 		this.m.Skills.add(this.new("scripts/skills/traits/legend_alignment_0" + this.m.Alignment));
 	}
 
@@ -2173,6 +2179,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	{
 		if ( !( this.hasActiveRelationshipWith(_actor) ) )
 		{
+			this.logInfo(this.getName() + "has no relationship with " + _actor.getName());
 			this.createActiveRelationship(_actor);
 		}
 		foreach ( relation in this.m.ActiveRelationships )
@@ -2188,11 +2195,11 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	{
 		foreach ( relation in this.m.ActiveRelationships )
 		{
-			if ( relation == null ) //only is ever null if we nulled out the actor because the previous actor there died and hasnt been re-assigned to new active relationship
+			if ( relation.ActorRef == -1 ) //only is ever null if we nulled out the actor because the previous actor there died and hasnt been re-assigned to new active relationship
 			{
 				continue;
 			}
-			if ( relation.ActorRef == this.WeakTableRef(_actor) )
+			if ( relation.ActorRef == _actor )
 			{
 				return true;
 			}
@@ -2202,27 +2209,29 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 	function createActiveRelationship( _actor )
 	{
-		if ( _actor = this )
+
+		if ( _actor == this )
 		{
 			return;
 		}
-		local newRelationship = [
-			{
-				ActorRef = this.WeakTableRef(_actor),
-				RelationNum = 0
-			}
-		];
-		
+
+		local newRelationship = {};
+		newRelationship.ActorRef <- _actor;
+		newRelationship.RelationNum <- 0;
+
+
 		if ( this.m.ActiveRelationships.len() == 0 )
 		{
 			this.m.ActiveRelationships.append(newRelationship);
+			return;
 		}	
 
 		foreach ( relation in this.m.ActiveRelationships )
 		{
-			if ( relation == null )
+			if ( relation.ActorRef == -1 )
 			{
-				relation = newRelationship;
+				relation.ActorRef = newRelationship.ActorRef;
+				relation.RelationNum = newRelationship.RelationNum;
 				return;
 			}
 		}
@@ -2233,24 +2242,41 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 
 	//slow as shit way of doing this, is there a better way? should only happen on death of the brother dying though so maybe not too bad?
-	function removeActiveRelationship( )
+	function removeActiveRelationship()
 	{
+
 		local brothers = this.World.getPlayerRoster().getAll();
-		local wtr = this.WeakTableRef(this);
 		foreach ( b in brothers )
 		{
-			if ( b.hasActiveRelationshipWith(this) )
+			foreach ( relation in b.getActiveRelationships() )
 			{
-				foreach ( relation in b.getActiveRelationships() )
+
+				if ( relation.ActorRef == this.WeakTableRef(this) );
 				{
-					if ( relation.ActorRef == wtr )
-					{
-						relation = null;
-						return; //can just return after we find the actor, worst case this is 26*26 go thrus so its really fucking bad? is there a faster way?
-					}
+					relation.ActorRef <- -1;
+					relation.RelationNum <- 0;
+					break;
 				}
 			}
 		}
+	}
+	
+
+	function getActiveRelationshipsTraitText()
+	{
+		local returnString = "";
+		foreach ( relation in this.m.ActiveRelationships )
+		{
+			if ( relation.ActorRef != -1 )
+			{
+				returnString += "Relationship to " + relation.ActorRef.getName() + ": " + relation.RelationNum + "\n";
+			}
+		}
+		if (returnString == "")
+		{
+			returnString = this.getNameOnly() + " has no current relationships.";
+		}
+		return returnString;
 	}
 
 	function getActiveRelationships()
