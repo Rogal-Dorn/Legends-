@@ -2179,7 +2179,6 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	{
 		if ( !( this.hasActiveRelationshipWith(_actor) ) )
 		{
-			this.logInfo(this.getName() + "has no relationship with " + _actor.getName());
 			this.createActiveRelationship(_actor);
 		}
 		foreach ( relation in this.m.ActiveRelationships )
