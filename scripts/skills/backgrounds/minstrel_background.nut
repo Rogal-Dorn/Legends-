@@ -41,6 +41,8 @@ this.minstrel_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.Tidy;
 		this.m.Body = "bust_naked_body_00";
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Notorious;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.IsCrusaderRecruitBackground = true;
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[1];
 		this.m.PerkTreeDynamic = {

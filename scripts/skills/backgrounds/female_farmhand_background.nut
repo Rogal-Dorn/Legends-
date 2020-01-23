@@ -26,7 +26,8 @@ this.female_farmhand_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.Body = "bust_naked_body_03";
 		this.m.IsLowborn = true;
 		this.m.IsFemaleBackground = true;
-
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.NeutralMax;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		if (this.Const.LegendMod.Configs.LegendGenderEnabled())
 		{
 			local r = this.Math.rand(0, 1);

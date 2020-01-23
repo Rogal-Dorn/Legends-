@@ -29,7 +29,8 @@ this.militia_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Level = this.Math.rand(1, 2);
 		this.m.IsCombatBackground = true;
 		this.m.IsLowborn = true;
-
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.NeutralMax;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[1];
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[1];
 		this.m.PerkTreeDynamic = {
