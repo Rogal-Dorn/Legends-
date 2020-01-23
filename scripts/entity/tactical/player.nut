@@ -45,7 +45,8 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		InReserves = false,
 		StarWeights = [50,50,50,50,50,50,50,50],
 		Alignment = null,
-		IsAlignmentAssigned = false
+		IsAlignmentAssigned = false,
+		ActiveRelationships = []
 	},
 	function setName( _value )
 	{
@@ -883,6 +884,10 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 		this.World.Assets.getOrigin().onHiredByScenario(this);
 
+		foreach ( b in this.World.getPlayerRoster().getAll() )
+		{
+			this.createActiveRelationship(b, this.Math.rand(-20, 20));
+		}
 	}
 
 	function onCombatStart()
@@ -2162,6 +2167,95 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.m.IsAlignmentAssigned = true;
 
 		this.m.Skills.add(this.new("scripts/skills/traits/legend_alignment_0" + this.m.Alignment));
+	}
+
+	function changeActiveRelationship( _actor, _amount )
+	{
+		if ( !( this.hasActiveRelationshipWith(_actor) ) )
+		{
+			this.createActiveRelationship(_actor);
+		}
+		foreach ( relation in this.m.ActiveRelationships )
+		{
+			if ( relation.ActorRef == _actor )
+			{
+				relation.RelationNum += _amount;
+			}
+		}
+	}
+
+	function hasActiveRelationshipWith( _actor )
+	{
+		foreach ( relation in this.m.ActiveRelationships )
+		{
+			if ( relation == null ) //only is ever null if we nulled out the actor because the previous actor there died and hasnt been re-assigned to new active relationship
+			{
+				continue;
+			}
+			if ( relation.ActorRef == this.WeakTableRef(_actor) )
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+
+	function createActiveRelationship( _actor )
+	{
+		if ( _actor = this )
+		{
+			return;
+		}
+		local newRelationship = [
+			{
+				ActorRef = this.WeakTableRef(_actor),
+				RelationNum = 0
+			}
+		];
+		
+		if ( this.m.ActiveRelationships.len() == 0 )
+		{
+			this.m.ActiveRelationships.append(newRelationship);
+		}	
+
+		foreach ( relation in this.m.ActiveRelationships )
+		{
+			if ( relation == null )
+			{
+				relation = newRelationship;
+				return;
+			}
+		}
+
+		this.m.ActiveRelationships.append(newRelationship); //if we got to this line it means we didnt have any nulls which means no one died previously so have to add new
+
+	}
+
+
+	//slow as shit way of doing this, is there a better way? should only happen on death of the brother dying though so maybe not too bad?
+	function removeActiveRelationship( )
+	{
+		local brothers = this.World.getPlayerRoster().getAll();
+		local wtr = this.WeakTableRef(this);
+		foreach ( b in brothers )
+		{
+			if ( b.hasActiveRelationshipWith(this) )
+			{
+				foreach ( relation in b.getActiveRelationships() )
+				{
+					if ( relation.ActorRef == wtr )
+					{
+						relation = null;
+						return; //can just return after we find the actor, worst case this is 26*26 go thrus so its really fucking bad? is there a faster way?
+					}
+				}
+			}
+		}
+	}
+
+	function getActiveRelationships()
+	{
+		return this.m.ActiveRelationships;
 	}
 
 	function fillTalentValues( _num, _force = false )
