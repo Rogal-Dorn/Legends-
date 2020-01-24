@@ -42,8 +42,8 @@ this.legend_redback_spider_bite_skill <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		_properties.DamageRegularMin += 20;
-		_properties.DamageRegularMax += 40;
+		_properties.DamageRegularMin += 30;
+		_properties.DamageRegularMax += 50;
 		_properties.DamageArmorMult *= 0.8;
 	}
 
