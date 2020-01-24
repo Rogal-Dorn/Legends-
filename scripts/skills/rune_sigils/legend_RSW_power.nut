@@ -20,5 +20,6 @@ this.legend_RSW_power <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 		_properties.DamageTotalMult *= (1.0 + ((this.getItem().getRuneBonus1() * 1.0) / 100.0));
+		_properties.DamageRegularMax += this.getItem().getRuneBonus2() ;
 	}
 });
