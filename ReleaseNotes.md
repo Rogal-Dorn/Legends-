@@ -2682,5 +2682,11 @@ Sling staves use staff bash.
 Infantry axe can be found in towns with a fortified outpost or lumber camp 
 
 
+13.2.2
 
+Hunting speed buffed by 50% 
+Camouflage extended by 1 turn to match tooltip
+Untouchable extends camouflage by 2 turns 
+Puncture fixed 
+Barter nerfed and impact on settlements fixed (Needs testing and applying in other areas ) 
 
