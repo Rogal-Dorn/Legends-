@@ -37,7 +37,8 @@ this.legend_rune <- this.inherit("scripts/crafting/blueprint", {
 		{
 			case 1:
 				max1 = this.isUpgraded() ? 9 : 6;
-				return "This item has the power of the rune sigil of Power:\n[color=" + this.Const.UI.Color.PositiveValue + "]+3% to +" + max1 + "%[/color] Damage inflicted.";
+				max2 = this.isUpgraded() ? 9 : 6;
+				return "This item has the power of the rune sigil of Power:\n[color=" + this.Const.UI.Color.PositiveValue + "]+3% to +" + max1 + "%[/color] total damage inflicted and [color=" + this.Const.UI.Color.PositiveValue + "]+3 to +" + max2 + "%[/color] maximum damage.";
 				break;
 
 			case 2:

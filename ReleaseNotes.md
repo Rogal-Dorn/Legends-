@@ -2684,7 +2684,7 @@ Sling staves use staff bash.
 Infantry axe can be found in towns with a fortified outpost or lumber camp 
 
 
-13.2.2
+13.2.2 Stealthy trades 
 
 **Barter rework trial:**
 Barter falloff removed, it was giving incorrect and confusing values 
@@ -2735,3 +2735,9 @@ Tabards are craftable if you have a tailor or seamstress
 Cloaks now require dye to craft in addtion to cloth 
 Fixed gambesons appearing as padded surcoats, more gambeson variants show up more regularly. 
 Fixes error when the legion strips the flesh off new recruits 
+
+13.2.3
+
+Fixes tabard blueprint error causing some items to become uncraftable  
+Power rune now rolls two independent values, total damage and max damage 
+Fixes food not healing 
