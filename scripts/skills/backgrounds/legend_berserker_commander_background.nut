@@ -159,6 +159,7 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 				this.Const.Perks.PerkDefs.ReturnFavor,
 				this.Const.Perks.PerkDefs.LastStand,
 				this.Const.Perks.PerkDefs.Rebound,
+				this.Const.Perks.PerkDefs.LegendChoke,
 				this.Const.Perks.PerkDefs.LegendMuscularity,
 				this.Const.Perks.PerkDefs.LegendForwardPush
 			],
