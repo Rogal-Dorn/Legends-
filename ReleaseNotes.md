@@ -2693,6 +2693,12 @@ All barter values significantly reduced
 Peddlers hiring costs significantly increased. 
 Peddler stats significantly reduced. 
 
+**Camouflage**
+Camouflage extended by 1 turn to match tooltip, fatigue cost increased to 40. 
+Enemies are 50% less likely to target you with ranged attacks while camouflaged. 
+Untouchable extends camouflage by 2 turns 
+Blend in buffed to make enemies 66% less likely to attack you. 
+
 **Rune nerf**
 All runes roll values reduced by 25%-33% typically dropping the max roll from 12 to 9 
 New weapon rune added - Unbreaking. restores 2-9 durability on kill. Only available from killing Demon Alps 
@@ -2711,8 +2717,8 @@ Warbear stats buffed: 2x health, +40 melee skill and melee defense, +40 resolve,
 White wolf event restricted to ranger, still possible to recruit with others through the quest 
 Lithe fatigue limit increased to 40 
 Hunting speed buffed by 50% 
-Camouflage extended by 1 turn to match tooltip
-Untouchable extends camouflage by 2 turns 
+Named cloaks are less common on enemies, with more heavy and noble cloaks instead. 
+
 
 **Fixes**
 Puncture hopefully fixed 
@@ -2725,3 +2731,4 @@ Towershields can now spawn in all 37 banner variants
 Tabards are craftable if you have a tailor or seamstress
 Cloaks now require dye to craft in addtion to cloth 
 Fixed gambesons appearing as padded surcoats, more gambeson variants show up more regularly. 
+Fixes error when the legion strips the flesh off new recruits 

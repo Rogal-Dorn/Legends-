@@ -174,6 +174,7 @@ this.legend_hidden_effect <- this.inherit("scripts/skills/skill", {
 			_properties.DamageRegularMin *= 2;
 			_properties.DamageRegularMax *= 2;
 		}
+		_properties.TargetAttractionMult *= 0.5;
 
 		actor.getSprite("armor").Alpha = 10;
 		actor.getSprite("helmet").Alpha = 10;
