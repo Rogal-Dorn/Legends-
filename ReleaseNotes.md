@@ -2707,6 +2707,7 @@ Demon alps are guaranteed to drop an unbreaking rune, even with magic turned off
 **Changes**
 Greenwood Schrat guaranteed to drop ancient greenwood 
 Greenwood shield buffed to 72 based durability, it is now a named item with randomised stats
+Redback spider bites buffed by 10 damage 
 Legendary beasts spawn much later and in lower numbers 
 Noble gains Mind Over Body 
 Noble starting units all have tabards and shields painted to match the town you're fleeing 
@@ -2718,6 +2719,8 @@ White wolf event restricted to ranger, still possible to recruit with others thr
 Lithe fatigue limit increased to 40 
 Hunting speed buffed by 50% 
 Named cloaks are less common on enemies, with more heavy and noble cloaks instead. 
+Sling staves gain the lower bonus from staff spins 
+Grapple now requires the offhand free instead of the mainhand 
 
 
 **Fixes**
