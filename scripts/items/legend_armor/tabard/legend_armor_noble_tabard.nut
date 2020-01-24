@@ -1,5 +1,7 @@
 this.legend_armor_noble_tabard <- this.inherit("scripts/items/legend_armor/tabard/legend_armor_tabard", {
-	m = {},
+	m = {
+		Variant = 1
+		},
 	function create()
 	{
 		this.legend_armor_tabard.create();
@@ -13,5 +15,12 @@ this.legend_armor_noble_tabard <- this.inherit("scripts/items/legend_armor/tabar
 		this.m.ConditionMax = 10;
 		this.m.StaminaModifier = -1;
 	}
+
+	function setFaction( _f )
+	{
+		this.m.Variant = _f;
+		this.updateVariant();
+	}
+
 });
 

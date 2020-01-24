@@ -1,6 +1,6 @@
 this.legend_hidden_effect <- this.inherit("scripts/skills/skill", {
 	m = {
-	TurnsLeft = 3
+	TurnsLeft = 4
 	},
 	function create()
 	{
@@ -120,11 +120,11 @@ this.legend_hidden_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("armor_upgrade_back").Alpha = 10;
 		actor.getSprite("armor_upgrade_front").Alpha = 10;
 		actor.getSprite("socket").Alpha = 10;
-		this.m.TurnsLeft = 3;
+		this.m.TurnsLeft = 4;
 
 		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_untouchable"))
 		{
-		this.m.TurnsLeft = 4;
+		this.m.TurnsLeft = 6;
 		}
 	}
 
@@ -174,6 +174,7 @@ this.legend_hidden_effect <- this.inherit("scripts/skills/skill", {
 			_properties.DamageRegularMin *= 2;
 			_properties.DamageRegularMax *= 2;
 		}
+		_properties.TargetAttractionMult *= 0.5;
 
 		actor.getSprite("armor").Alpha = 10;
 		actor.getSprite("helmet").Alpha = 10;

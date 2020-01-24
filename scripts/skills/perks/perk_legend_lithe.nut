@@ -66,8 +66,8 @@ this.perk_legend_lithe <- this.inherit("scripts/skills/skill", {
 			fat = fat + head.getStaminaModifier();
 		}
 
-		fat = this.Math.min(0, fat + 30);
-		local ret = this.Math.minf(1.0, 1.0 - 0.3 + this.Math.pow(this.Math.abs(fat), 1.1) * 0.01);
+		fat = this.Math.min(0, fat + 40);
+		local ret = this.Math.minf(1.0, 1.0 - 0.3 + this.Math.pow(this.Math.abs(fat), 1.11) * 0.01);
 		return ret;
 	}
 

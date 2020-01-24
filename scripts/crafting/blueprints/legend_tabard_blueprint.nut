@@ -5,7 +5,7 @@ this.legend_cloak_common_blueprint <- this.inherit("scripts/crafting/blueprint",
 		this.blueprint.create();
 		this.m.ID = "blueprint.legend_cloak_common_blueprint";
 		this.m.Type = this.Const.Items.ItemType.Armor;
-		this.m.PreviewCraftable = this.new("scripts/items/legend_armor/cloak/legend_armor_cloak_common");
+		this.m.PreviewCraftable = this.new("scripts/items/legend_armor/tabard/legend_armor_tabard");
 		this.m.Cost = 10;
 		local ingredients = [
 			{
@@ -29,7 +29,7 @@ this.legend_cloak_common_blueprint <- this.inherit("scripts/crafting/blueprint",
 
 	function onCraft( _stash )
 	{
-		_stash.add(this.new("scripts/items/legend_armor/cloak/legend_armor_cloak_common"));
+		_stash.add(this.new("scripts/items/legend_armor/tabard/legend_armor_tabard"));
 	}
 
 });
