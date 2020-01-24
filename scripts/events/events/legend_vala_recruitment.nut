@@ -48,8 +48,6 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 						_event.m.Cannibal.getTags().add("undead");
 						_event.m.Cannibal.getTags().add("skeleton");
 						_event.m.Vala.setStartValuesEx(["legend_vala_background"]);
-						_event.m.Cannibal.getSkills().add(this.new("scripts/skills/racial/skeleton_racial"));
-						_event.m.Cannibal.getSkills().getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));	
 						}
 					else
 					{
