@@ -53,7 +53,7 @@ gt.Const.World.Spawn.Direwolves <-
 		},
 		{
 			Weight = 5,
-			MinR = 0.85 * 1600,
+			MinR = 0.85 * 3200,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
@@ -136,7 +136,7 @@ gt.Const.World.Spawn.Lindwurm <-
 		},
 		{
 			Weight = 10,
-			MinR = 1.0 * 1600,
+			MinR = 1.0 * 3200,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendStollwurm,
@@ -168,7 +168,7 @@ gt.Const.World.Spawn.Unhold <-
 		},
 		{
 			Weight = 10,
-			MinR = 1.0 * 1000,
+			MinR = 1.0 * 2800,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
@@ -200,7 +200,7 @@ gt.Const.World.Spawn.UnholdFrost <-
 		},
 		{
 			Weight = 10,
-			MinR = 1.0 * 1100,
+			MinR = 1.0 * 2800,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
@@ -232,7 +232,7 @@ gt.Const.World.Spawn.UnholdBog <-
 		},
 		{
 			Weight = 10,
-			MinR = 1.0 * 1000,
+			MinR = 1.0 * 2800,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
@@ -264,7 +264,7 @@ gt.Const.World.Spawn.Spiders <-
 		},
 		{
 			Weight = 10,
-			MinR = 1.0 * 800,
+			MinR = 1.0 * 2000,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
@@ -305,11 +305,11 @@ gt.Const.World.Spawn.Alps <-
 		},
 		{
 			Weight = 5,
-			MinR = 1.0 * 1800,
+			MinR = 1.0 * 4000,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
-					Cost = 400
+					Cost = 800
 				}
 			]
 		}
@@ -337,11 +337,11 @@ gt.Const.World.Spawn.Schrats <-
 		},
 		{
 			Weight = 10,
-			MinR = 1.0 * 1600,
+			MinR = 1.0 * 3200,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
-					Cost = 280
+					Cost = 400
 				}
 			]
 		}
@@ -657,7 +657,7 @@ gt.Const.World.Spawn.HexenAndNoSpiders <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
-					MinR = 1.0 * 1000,
+					MinR = 1.0 * 3000,
 					Cost = 200,
 					MinGuards = 2,
 					MaxGuards = 3,
@@ -665,14 +665,14 @@ gt.Const.World.Spawn.HexenAndNoSpiders <-
 					Guards = [
 						{
 							Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolfBodyguard,
-							Cost = 75,
+							Cost = 250,
 							function Weight(scale) {
 								return 50;
 							}
 						},
 						{
 							Type = this.Const.World.Spawn.Troops.LegendRedbackSpiderBodyguard,
-							Cost = 50,
+							Cost = 200,
 							function Weight(scale) {
 								return 50;
 							}
@@ -705,7 +705,7 @@ gt.Const.World.Spawn.LegendHexeLeader <-
 			Guards = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendRedbackSpiderBodyguard,
-					Cost = 20,
+					Cost = 200,
 					function Weight(scale) {
 						return 50;
 					}
@@ -727,7 +727,7 @@ gt.Const.World.Spawn.LegendHexeLeader <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
-					Cost = 75
+					Cost = 200
 				}
 			]
 		},
@@ -740,7 +740,7 @@ gt.Const.World.Spawn.LegendHexeLeader <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-					Cost = 100
+					Cost = 200
 				}
 			]
 		},
@@ -787,7 +787,7 @@ gt.Const.World.Spawn.LegendHexeLeader <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
-					Cost = 180
+					Cost = 400
 				}
 			]
 		},
@@ -800,7 +800,7 @@ gt.Const.World.Spawn.LegendHexeLeader <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
-					Cost = 210
+					Cost = 400
 				},
 			]
 		},
@@ -832,7 +832,7 @@ gt.Const.World.Spawn.LegendHexeLeader <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
-					MinR = 1.0 * 1000,
+					MinR = 1.0 * 2000,
 					Cost = 300,
 					MinGuards = 2,
 					MaxGuards = 3,
@@ -840,14 +840,14 @@ gt.Const.World.Spawn.LegendHexeLeader <-
 					Guards = [
 						{
 							Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolfBodyguard,
-							Cost = 150,
+							Cost = 200,
 							function Weight(scale) {
 								return 50;
 							}
 						},
 						{
 							Type = this.Const.World.Spawn.Troops.LegendRedbackSpiderBodyguard,
-							Cost = 180,
+							Cost = 200,
 							function Weight(scale) {
 								return 50;
 							}

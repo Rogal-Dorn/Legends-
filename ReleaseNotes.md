@@ -2686,23 +2686,22 @@ Infantry axe can be found in towns with a fortified outpost or lumber camp
 
 13.2.2
 
-Barter falloff removed, they were giving incorrect and confusing values 
+**Barter rework trial:**
+Barter falloff removed, it was giving incorrect and confusing values 
+What you see on the tooltip is now exactly what you get. 
 All barter values significantly reduced 
+Peddlers hiring costs significantly increased. 
+Peddler stats significantly reduced. 
 
-Hunting speed buffed by 50% 
-Camouflage extended by 1 turn to match tooltip
-Untouchable extends camouflage by 2 turns 
-Puncture fixed 
+**Rune nerf**
+All runes roll values reduced by 25%-33% typically dropping the max roll from 12 to 9 
+New weapon rune added - Unbreaking. restores 2-9 durability on kill. Only available from killing Demon Alps 
+Demon alps are guaranteed to drop an unbreaking rune, even with magic turned off. 
 
-Fix for another aspect of the nacho bleeding bug 
-More logging to help us diagnose the rotation bug 
-fixes weird durability values on rich cloaks 
-Fix for demon hound aura bug 
-Fixes missing inventory images for runed towershields
-Towershields can now spawn in all 37 banner variants  
-Tabards are craftable if you have a tailor or seamstress
-Cloaks now require dye to craft in addtion to cloth 
-
+**Changes**
+Greenwood Schrat guaranteed to drop ancient greenwood 
+Greenwood shield buffed to 72 based durability, it is now a named item with randomised stats
+Legendary beasts spawn much later and in lower numbers 
 Noble gains Mind Over Body 
 Noble starting units all have tabards and shields painted to match the town you're fleeing 
 Berserker and Assassin gain Choke 
@@ -2711,3 +2710,18 @@ Recruited rangers gain animal summoning
 Warbear stats buffed: 2x health, +40 melee skill and melee defense, +40 resolve, +100 stamina 
 White wolf event restricted to ranger, still possible to recruit with others through the quest 
 Lithe fatigue limit increased to 40 
+Hunting speed buffed by 50% 
+Camouflage extended by 1 turn to match tooltip
+Untouchable extends camouflage by 2 turns 
+
+**Fixes**
+Puncture hopefully fixed 
+Fix for another aspect of the nacho bleeding bug 
+More logging to help us diagnose the rotation bug 
+fixes weird durability values on rich cloaks 
+Fix for demon hound aura bug 
+Fixes missing inventory images for runed towershields
+Towershields can now spawn in all 37 banner variants  
+Tabards are craftable if you have a tailor or seamstress
+Cloaks now require dye to craft in addtion to cloth 
+Fixed gambesons appearing as padded surcoats, more gambeson variants show up more regularly. 
