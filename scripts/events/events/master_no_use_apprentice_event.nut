@@ -48,8 +48,6 @@ this.master_no_use_apprentice_event <- this.inherit("scripts/events/event", {
 						_event.m.Dude.setStartValuesEx([
 							"apprentice_background"
 						]);
-						_event.m.Cannibal.getSkills().add(this.new("scripts/skills/racial/skeleton_racial"));
-						_event.m.Cannibal.getSkills().getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));	
 						}
 					else
 					{

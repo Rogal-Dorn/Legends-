@@ -11,7 +11,7 @@ this.legend_grapple<- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_grapple";
 		this.m.Name = "Grapple";
-		this.m.Description = "Grab hold and restrain a target, heavily fatiguing them. Grappled targets can not keep up their Shieldwall, Spearwall or similar defensive skills.";
+		this.m.Description = "Grab hold and restrain a target, heavily fatiguing them. Grappled targets can not keep up their Shieldwall, Spearwall or similar defensive skills. Offhand must be free to use.";
 		this.m.Icon = "skills/grapple_square.png";
 		this.m.IconDisabled = "skills/grapple_square_bw.png";
 		this.m.Overlay = "active_32";
@@ -112,8 +112,8 @@ this.legend_grapple<- this.inherit("scripts/skills/skill", {
 
 	function isUsable()
 	{
-		local mainhand = this.m.Container.getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		return (mainhand == null || this.getContainer().hasSkill("effects.disarmed")) && this.skill.isUsable();
+		local offhand = this.m.Container.getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
+		return (offhand == null || this.getContainer().hasSkill("effects.disarmed")) && this.skill.isUsable();
 	}
 
 	function isHidden()
@@ -126,7 +126,7 @@ this.legend_grapple<- this.inherit("scripts/skills/skill", {
 	{
 		if (_skill == this)
 		{
-			_properties.DamageTotalMult *= 0.3;
+			_properties.DamageTotalMult *= 0.2;
 			_properties.FatigueDealtPerHitMult += 8.0;
 		}
 	}

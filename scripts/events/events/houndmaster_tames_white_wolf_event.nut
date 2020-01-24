@@ -97,6 +97,12 @@ this.houndmaster_tames_white_wolf_event <- this.inherit("scripts/events/event", 
 
 	function onUpdateScore()
 	{
+
+		if (this.World.Assets.getOrigin().getID() != "scenario.legends_rangers")
+		{
+			return;
+		}
+
 		local currentTile = this.World.State.getPlayer().getTile();
 
 		if (currentTile.Type != this.Const.World.TerrainType.Snow || currentTile.Type != this.Const.World.TerrainType.SnowyForest)
@@ -114,7 +120,7 @@ this.houndmaster_tames_white_wolf_event <- this.inherit("scripts/events/event", 
 
 		foreach( bro in brothers )
 		{
-			if (bro.getLevel() >= 5 && bro.getBackground().getID() == "background.houndmaster")
+			if (bro.getLevel() >= 5 && bro.getBackground().getID() == "background.legend_commander_ranger")
 			{
 				candidates.push(bro);
 			}

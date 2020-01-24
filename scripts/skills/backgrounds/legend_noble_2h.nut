@@ -340,15 +340,7 @@ this.legend_noble_2h <- this.inherit("scripts/skills/backgrounds/character_backg
 				armor.setUpgrade(plate)
 			}
 
-			local tabards = [
-                [0, ""],
-				[1, "tabard/legend_armor_tabard"]
-			]
-			local tabard = this.Const.World.Common.pickLegendArmor(tabards)
-			if (tabard != null)
-			{
-				armor.setUpgrade(tabard)
-			}
+
 
 			items.equip(armor);
 		}

@@ -2624,10 +2624,18 @@ Barbarian champions have a chain and dark tunic layer to bring their total armor
 
 
 13.2.0 
-*Fixes Rally Perk not rallying the troops
-*Fixes runed verisons of ancient tower shields not showing.
-*Fixes crashed taxidermist/crafting tent.
-*Fixes Barbarian thralls not spawning 
+Fixes Rally Perk not rallying the troops
+Fixes runed verisons of ancient tower shields not showing.
+Fixes crashed taxidermist/crafting tent.
+Fixes Named cloak durability being too low.
+Fixes crash when nacho swallows bro who has caused a bleed on someone (and bleed kills option is enabled).
+Fixes Barbarian thralls not spawning 
+Improves graphics for several towershields, so they are darker and grittier. 
+Improves graphics for a few armors with layered armors off 
+Fixed up some stray pixels on shivs 
+Scale coat fatigue reduced from 25 to 22 
+named leather jacket fatigue range from 3-5 to 2-4
+Mail shirt fatigue from -6 to -7 
 
 **Legion:**
 * Legion scenario overview and intro text updated
@@ -2639,12 +2647,6 @@ Barbarian champions have a chain and dark tunic layer to bring their total armor
 * Recruits from events will now be skeletons, this includes deserter, wildling, cannibal, vala, apprentice, melon thief, pimp, laborers, cultist, vagabond, kings guard, ranger, noble and burned witch. 
 * Fixes starting skeletons not resurrecting after battles
 * Spear specialisation effect Ancient Spears as well as Militia spears 
-Improves graphics for several towershields, so they are darker and grittier. 
-Improves graphics for a few armors with layered armors off 
-Fixed up some stray pixels on shivs 
-Scale coat fatigue reduced from 25 to 22 
-named leather jacket fatigue range from 3-5 to 2-4
-Mail shirt fatigue from -6 to -7 
 
 13.2.1 **Punching Vampires**
 
@@ -2682,5 +2684,54 @@ Sling staves use staff bash, and color updated for bonus to hit per tile.
 Infantry axe can be found in towns with a fortified outpost or lumber camp 
 
 
+13.2.2
+
+**Barter rework trial:**
+Barter falloff removed, it was giving incorrect and confusing values 
+What you see on the tooltip is now exactly what you get. 
+All barter values significantly reduced 
+Peddlers hiring costs significantly increased. 
+Peddler stats significantly reduced. 
+
+**Camouflage**
+Camouflage extended by 1 turn to match tooltip, fatigue cost increased to 40. 
+Enemies are 50% less likely to target you with ranged attacks while camouflaged. 
+Untouchable extends camouflage by 2 turns 
+Blend in buffed to make enemies 66% less likely to attack you. 
+
+**Rune nerf**
+All runes roll values reduced by 25%-33% typically dropping the max roll from 12 to 9 
+New weapon rune added - Unbreaking. restores 2-9 durability on kill. Only available from killing Demon Alps 
+Demon alps are guaranteed to drop an unbreaking rune, even with magic turned off. 
+
+**Changes**
+Greenwood Schrat guaranteed to drop ancient greenwood 
+Greenwood shield buffed to 72 based durability, it is now a named item with randomised stats
+Redback spider bites buffed by 10 damage 
+Legendary beasts spawn much later and in lower numbers 
+Noble gains Mind Over Body 
+Noble starting units all have tabards and shields painted to match the town you're fleeing 
+Berserker and Assassin gain Choke 
+Ranger gains Heightened Reflexes and Wind Reader 
+Recruited rangers gain animal summoning 
+Warbear stats buffed: 2x health, +40 melee skill and melee defense, +40 resolve, +100 stamina 
+White wolf event restricted to ranger, still possible to recruit with others through the quest 
+Lithe fatigue limit increased to 40 
+Hunting speed buffed by 50% 
+Named cloaks are less common on enemies, with more heavy and noble cloaks instead. 
+Sling staves gain the lower bonus from staff spins 
+Grapple now requires the offhand free instead of the mainhand 
 
 
+**Fixes**
+Puncture hopefully fixed 
+Fix for another aspect of the nacho bleeding bug 
+More logging to help us diagnose the rotation bug 
+fixes weird durability values on rich cloaks 
+Fix for demon hound aura bug 
+Fixes missing inventory images for runed towershields
+Towershields can now spawn in all 37 banner variants  
+Tabards are craftable if you have a tailor or seamstress
+Cloaks now require dye to craft in addtion to cloth 
+Fixed gambesons appearing as padded surcoats, more gambeson variants show up more regularly. 
+Fixes error when the legion strips the flesh off new recruits 

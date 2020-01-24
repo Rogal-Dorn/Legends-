@@ -628,8 +628,9 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 	function getBuyPriceMult()
 	{
 		local p = this.getPriceMult() * this.World.Assets.getBuyPriceMult();
+		this.logInfo("Starting value of " + p + " for buy multiplier");
 		local r = this.World.FactionManager.getFaction(this.m.Factions[0]).getPlayerRelation();
-
+		this.logInfo("Player has " + r + " faction relation");
 		if (r < 50)
 		{
 			p = p + (50.0 - r) * 0.006;
@@ -640,27 +641,39 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		}
 
 		local barterMult = 0.0;
+		local broCount = 0;
 		foreach (bro in this.World.getPlayerRoster().getAll())
 		{
+			broCount++; 
 			barterMult += bro.getBarterModifier();
+			this.logInfo("Adding " + bro.getBarterModifier() + " barter from bro" + broCount);
+			this.logInfo("Total is now " + barterMult + " barter.");
 		}
-		barterMult = this.Math.pow(barterMult, 0.5);
-		if ((this.m.Modifiers.BuyPriceMult - barterMult) > 0.01)
+
+		this.logInfo("After averaging all bros the total is " + barterMult);
+		if (this.World.Assets.getOrigin().getID() == "scenario.trader")
+				{
+				barterMult = barterMult * 1.1;
+				}
+		this.logInfo("Trader modifier applied, resulting in " + barterMult + " barter.");
+
+		if ((this.m.Modifiers.BuyPriceMult - barterMult) >= 0.01)
 		{
 		p = p * (this.m.Modifiers.BuyPriceMult - barterMult);
+		this.logInfo("Barter applied to buy price, resulting in " + p + " buy price multiplier");
 		}
-		if ((this.m.Modifiers.BuyPriceMult - barterMult) <= 0.01)
-		{
-		p = 0.01;
-		}
+
+		this.logInfo("final buy price is " + p + " multiplier");
 		return p;
 	}
 
 	function getSellPriceMult()
 	{
+		
 		local p = this.getPriceMult() * this.World.Assets.getSellPriceMult();
+			this.logInfo("Starting value of " + p + " for sell multiplier");
 		local r = this.World.FactionManager.getFaction(this.m.Factions[0]).getPlayerRelation();
-
+			this.logInfo("Starting value of " + r + " for faction relation");
 		if (r < 50)
 		{
 			p = p - (50.0 - r) * 0.006;
@@ -669,14 +682,29 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		{
 			p = p + (r - 50.0) * 0.003;
 		}
-
+			this.logInfo("Relation adjusted value of " + p + " sell multiplier");
+		local broCount = 0;
 		local barterMult = 0.0;
 		foreach (bro in this.World.getPlayerRoster().getAll())
 		{
+			broCount++; 
 			barterMult += bro.getBarterModifier();
+			this.logInfo("Adding " + bro.getBarterModifier() + " barter from bro" + broCount);
+			this.logInfo("Total is now " + barterMult + " barter.");
 		}
-		barterMult = this.Math.pow(barterMult, 0.5);
+		barterMult = barterMult / broCount;
+		this.logInfo("After averaging all bros the total is " + barterMult);
+	
+		if (this.World.Assets.getOrigin().getID() == "scenario.trader")
+				{
+				barterMult = barterMult * 1.1;
+				}
+		this.logInfo("Trader modifier applied, resulting in " + barterMult + " barter.");
+
 		p = p * (this.m.Modifiers.SellPriceMult + barterMult);
+		this.logInfo("Barter applied to sell price, resulting in " + p + " sell price multiplier");
+
+		this.logInfo("final buy price is " + p + " multiplier");
 		return p;
 	}
 

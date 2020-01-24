@@ -85,25 +85,49 @@ this.puncture_parry_dagger <- this.inherit("scripts/skills/skill", {
 	function getHitChance(_targetEntity)
 	{
 		if (_targetEntity == null)
-		{
-			return 0;
-		}
-		local chance = _targetEntity.getFatiguePct();
-		return (chance / 2);
+			{
+				return 0;
+			}
+			local mod = 0;
+			if (_targetEntity.getSkills().hasSkill("effects.legend_dazed"))
+			{
+			mod += 0.1;
+			}
+			if (_targetEntity.getSkills().hasSkill("effects.legend_parried"))
+			{
+			mod += 0.1;
+			}
+			if (_targetEntity.getSkills().hasSkill("effects.legend_grappled"))
+			{
+			mod += 0.5;
+			}
+			if (_targetEntity.getSkills().hasSkill("effects.stunned"))
+			{
+			mod += 0.25;
+			}
+			if (_targetEntity.getSkills().hasSkill("effects.sleeping"))
+			{
+			mod += 0.5;
+			}
+			if (_targetEntity.getSkills().hasSkill("effects.net"))
+			{
+			mod += 0.25;
+			}
+			local chance = _targetEntity.getFatiguePct();
+			return (chance + mod);
 	}
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
 		if (_skill == this)
 		{
-			local bonus = (1.0 - this.getHitChance(_targetEntity)) * _properties.MeleeSkill;
+			local chance = this.getHitChance(_targetEntity)
 			if (_properties.IsSpecializedInDaggers)
 			{
-				bonus = this.Math.floor(bonus / 2.0)
+				chance = this.Math.floor(chance * 1.5)
 			}
-			_properties.MeleeSkill -= bonus;
-			_properties.DamageRegularMin = 20;
-			_properties.DamageRegularMax = 40;
+			local bonus = chance * _properties.MeleeSkill;
+			_properties.MeleeSkill = bonus;
 			_properties.DamageArmorMult *= 0.0;
 			_properties.IsIgnoringArmorOnAttack = true;
 			_properties.HitChanceMult[this.Const.BodyPart.Head] = 0.0;

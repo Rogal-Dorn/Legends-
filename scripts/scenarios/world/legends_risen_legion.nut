@@ -349,6 +349,12 @@ this.legends_risen_legion <- this.inherit("scripts/scenarios/world/starting_scen
 	function onHiredByScenario( bro )
 	{
 		bro.getSkills().add(this.new("scripts/skills/traits/legend_deathly_spectre_trait"));
+
+		if (!bro.getSkills().hasSkill("racial.skeleton") && bro.getTags().has("skeleton"))
+		{
+		bro.getSkills().add(this.new("scripts/skills/racial/skeleton_racial"));
+		bro.getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));
+		}
 		local r = this.Math.rand(0, 2);
 		if (bro.getBackground().isOutlawBackground())
 		{

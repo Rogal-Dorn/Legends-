@@ -95,11 +95,14 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 		local days = this.getDaysRequiredToTravel(distance, this.Const.World.MovementSettings.Speed, false);
 				local barterMult = 0.0;
 		foreach (bro in this.World.getPlayerRoster().getAll())
-		{
-			barterMult += bro.getBarterModifier();
-		}
-		local bartermod = 10 * barterMult;
-		local modrate = this.Math.pow(bartermod, 0.5);
+			{
+				barterMult += bro.getBarterModifier();
+			}
+		if (this.World.Assets.getOrigin().getID() == "scenario.trader")
+			{
+			barterMult = barterMult * 1.1;
+			}
+		local modrate = barterMult;
 		
 
 		if (days >= 2 || distance >= 40)
@@ -111,9 +114,9 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 			this.m.DifficultyMult = this.Math.rand(70, 85) * 0.01;
 		}
 
-		this.m.Payment.Pool = this.Math.max(75, distance * (1.5 + modrate) * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentLightMult());
+		this.m.Payment.Pool = this.Math.max(75, distance * (1.0 + modrate) * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentLightMult());
 	//	local modBonus = distance * modrate * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentLightMult();
-	//	this.Contract.m.BulletpointsObjectives.push("You gain + " modBonus " crowns due to your bartering skills");
+	//    this.Contract.m.BulletpointsObjectives.push("You gain + " modrate " crowns due to your bartering skills");
 
 		if (this.Math.rand(1, 100) <= 33)
 		{
