@@ -2686,12 +2686,28 @@ Infantry axe can be found in towns with a fortified outpost or lumber camp
 
 13.2.2
 
+Barter falloff removed, they were giving incorrect and confusing values 
+All barter values significantly reduced 
+
 Hunting speed buffed by 50% 
 Camouflage extended by 1 turn to match tooltip
 Untouchable extends camouflage by 2 turns 
 Puncture fixed 
-Barter nerfed and impact on settlements fixed (Needs testing and applying in other areas ) 
+
 Fix for another aspect of the nacho bleeding bug 
 More logging to help us diagnose the rotation bug 
 fixes weird durability values on rich cloaks 
 Fix for demon hound aura bug 
+Fixes missing inventory images for runed towershields
+Towershields can now spawn in all 37 banner variants  
+Tabards are craftable if you have a tailor or seamstress
+Cloaks now require dye to craft in addtion to cloth 
+
+Noble gains Mind Over Body 
+Noble starting units all have tabards and shields painted to match the town you're fleeing 
+Berserker and Assassin gain Choke 
+Ranger gains Heightened Reflexes and Wind Reader 
+Recruited rangers gain animal summoning 
+Warbear stats buffed: 2x health, +40 melee skill and melee defense, +40 resolve, +100 stamina 
+White wolf event restricted to ranger, still possible to recruit with others through the quest 
+Lithe fatigue limit increased to 40 

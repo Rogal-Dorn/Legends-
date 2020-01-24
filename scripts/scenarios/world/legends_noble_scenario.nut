@@ -81,6 +81,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		this.World.getCamera().setPos(this.World.State.m.Player.getPos());
 		local f = randomVillage.getFactionOfType(this.Const.FactionType.NobleHouse);
 		f.addPlayerRelation(-100.0, "You picked the wrong faction");
+		local banner = f.getBanner();
 		local names = [];
 
 		for( local i = 0; i < 6; i = ++i )
@@ -112,7 +113,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		]);
 		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
 		bros[0].getTags().set("IsPlayerCharacter", true);
-		bros[0].setPlaceInFormation(14);
+		bros[0].setPlaceInFormation(13);
 		bros[0].setVeteranPerks(2);
 		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_quick_hands"));
 		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_roster_2"));
@@ -121,34 +122,88 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[1].setStartValuesEx([
 		"legend_noble_shield"
 		]);
+		local items = bros[3].getItems();
+		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Offhand));
+		local r = this.Math.rand(1, 2);
+		local shield;
+
+		if (r == 1)
+		{
+			shield = this.new("scripts/items/shields/faction_kite_shield");
+		}
+		else if (r == 2)
+		{
+			shield = this.new("scripts/items/shields/faction_heater_shield");
+		}
+		shield.setFaction(banner);
+		items.equip(shield);
 		bros[1].setPlaceInFormation(3);
 		bros[1].setVeteranPerks(2);
 		bros[1].getSkills().add(this.new("scripts/skills/perks/perk_quick_hands"));
 		bros[2].setStartValuesEx([
 		"legend_noble_2h"
 		]);
+
 		bros[2].setPlaceInFormation(4);
 		bros[2].setVeteranPerks(2);
 		bros[2].getSkills().add(this.new("scripts/skills/perks/perk_quick_hands"));
 		bros[3].setStartValuesEx([
 		"legend_noble_shield"
 		]);
+		local items = bros[3].getItems();
+		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Offhand));
+		r = this.Math.rand(1, 2);
+		local shield;
+
+		if (r == 1)
+		{
+			shield = this.new("scripts/items/shields/faction_kite_shield");
+		}
+		else if (r == 2)
+		{
+			shield = this.new("scripts/items/shields/faction_heater_shield");
+		}
+		shield.setFaction(banner);
+		items.equip(shield);
 		bros[3].setPlaceInFormation(5);
 		bros[3].setVeteranPerks(2);
 		bros[3].getSkills().add(this.new("scripts/skills/perks/perk_quick_hands"));
 		bros[4].setStartValuesEx([
 		"legend_noble_ranged"
 		]);
-		bros[4].setPlaceInFormation(13);
+		bros[4].setPlaceInFormation(12);
 		bros[4].setVeteranPerks(2);
 		bros[4].getSkills().add(this.new("scripts/skills/perks/perk_quick_hands"));
 		bros[5].setStartValuesEx([
 		"legend_noble_ranged"
 		]);
-		bros[5].setPlaceInFormation(15);
+		bros[5].setPlaceInFormation(14);
 		bros[5].setVeteranPerks(2);
 		bros[5].getSkills().add(this.new("scripts/skills/perks/perk_quick_hands"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/cured_rations_item"));
+		
+		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		{
+			
+			local brothers = this.World.getPlayerRoster().getAll();
+			
+			foreach( bro in brothers )
+			{
+				local items = bro.getItems();
+				local armor = items.getItemAtSlot(this.Const.ItemSlot.Body)
+				local tabards = [
+						[0, ""],
+						[1, "tabard/legend_armor_noble_tabard"]
+					]
+					local tabard = this.Const.World.Common.pickLegendArmor(tabards)
+					if (tabard != null && armor != null)
+					{
+						tabard.setFaction(banner);
+						armor.setUpgrade(tabard)
+					}
+			}
+		}
+
 
 		this.Time.scheduleEvent(this.TimeUnit.Real, 1000, function ( _tag )
 		{

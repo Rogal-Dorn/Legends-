@@ -645,7 +645,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		foreach (bro in this.World.getPlayerRoster().getAll())
 		{
 			broCount++; 
-			barterMult += bro.getBarterModifier() / broCount;
+			barterMult += bro.getBarterModifier();
 			this.logInfo("Adding " + bro.getBarterModifier() + " barter from bro" + broCount);
 			this.logInfo("Total is now " + barterMult + " barter.");
 		}
