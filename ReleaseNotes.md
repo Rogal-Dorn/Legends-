@@ -2691,4 +2691,7 @@ Camouflage extended by 1 turn to match tooltip
 Untouchable extends camouflage by 2 turns 
 Puncture fixed 
 Barter nerfed and impact on settlements fixed (Needs testing and applying in other areas ) 
-
+Fix for another aspect of the nacho bleeding bug 
+More logging to help us diagnose the rotation bug 
+fixes weird durability values on rich cloaks 
+Fix for demon hound aura bug 
