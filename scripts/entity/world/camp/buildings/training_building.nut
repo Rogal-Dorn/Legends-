@@ -255,7 +255,7 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		];
 		local text = "After practicing ";
 		local M = [
-			"Short Gaurd ",
+			"Short Guard ",
 			"Upper Snake Guard ",
 			"Bastard Cross ",
 			"The Middle Iron Door ",
