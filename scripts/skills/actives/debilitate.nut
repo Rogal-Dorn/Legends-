@@ -23,7 +23,7 @@ this.debilitate <- this.inherit("scripts/skills/skill", {
 
 	function getDescription()
 	{
-		return "Prepare your next attack to debilitate a target for one turn, reducing their ability to inflict damage by [color=" + this.Const.UI.Color.NegativeValue + "]-50%[/color]. Missing the target will waste the effect.";
+		return "Prepare your next attack to debilitate a target for three turns, reducing their ability to inflict damage by [color=" + this.Const.UI.Color.NegativeValue + "]-50%[/color]. Missing the target will waste the effect.";
 	}
 
 	function getTooltip()

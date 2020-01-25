@@ -173,7 +173,7 @@ this.swordmaster <- this.inherit("scripts/entity/tactical/human", {
 						[1, "plate/legend_armor_scale_shirt"]
 					]
 					local plate = this.Const.World.Common.pickLegendArmor(plates)
-					if (plate != null)
+					if (plate != null && (armor.getStaminaModifier() + plate.getStaminaModifier()) < 20)
 					{
 						armor.setUpgrade(plate)
 					}
