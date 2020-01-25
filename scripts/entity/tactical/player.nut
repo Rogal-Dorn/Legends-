@@ -2557,7 +2557,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		{
 			if (bro.getSkills().hasSkill("perk.legend_barter_greed"))
 			{
-			mod -= mod / 2);
+			mod -= (mod / 2);
 			}
 		}
 
