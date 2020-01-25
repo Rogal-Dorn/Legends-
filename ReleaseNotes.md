@@ -2736,8 +2736,9 @@ Cloaks now require dye to craft in addtion to cloth
 Fixed gambesons appearing as padded surcoats, more gambeson variants show up more regularly. 
 Fixes error when the legion strips the flesh off new recruits 
 
-13.2.3
+13.2.3 - Greedy Quartermaster 
 
+**Peddler rework:**
 New Perk - Greed - gain 7.5% barter bonus, but halve the barter bonus from all other sources in your company. Added to Barter group
 New Perk - Paymaster - reduce the upkeep of every mercenary in your company by your barter bonus. Added to Barter group
 New Perk - Quartermaster - reduce the food usage of every mercenary in your company by 1. Only once per company.  Added to Chef group
@@ -2745,16 +2746,20 @@ Barter perk tree rearranged, Danger Pay moved to t6 to make way for greed.
 Peddler daily cost reduced from 50 to 25 
 Peddler stats: hp and rskill raised 5 points on average, defenses raised ten points 
 Peddlers can spawn with a light crossbow 
+
+**Changes**
+Power rune now rolls two independent values, total damage and max damage 
+Lithe now uses the same falloff as Nimble and will not stack with Battleforged
 Cultists stats: greater variability for all stats, -5 min and +5 max to all stats. To reflect varied histories.
 Chain buffed: durability 32 to 48, fatigue -6 to -12 damage 5-30 to 15-45. To makes its interesting playstyle more useful. 
 Noble troops wear their appropriate noble tabard 
 Peasant farmhands can get leather jackets 
 XP increased for bandit veterans, bandit lords, orc elites, orc warlords, knights and swordmasters 
-Lithe now uses the same falloff as Nimble and will not stack with Battleforged 
+
+**Fixes** 
 Fixes tabard blueprint error causing some items to become uncraftable  
-Power rune now rolls two independent values, total damage and max damage 
 Fixes food not healing 
 Updates many perk tooltips to show the perk group. 
-Disabled armor upgrade ambition if legends armor enabled, until we can fix it 
+Fixes ambition errors by disabling armor upgrade ambition if legends armor enabled, until we can fix it. 
 Choke and Grapple can both be used with either hand free 
 
