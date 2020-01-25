@@ -2738,6 +2738,13 @@ Fixes error when the legion strips the flesh off new recruits
 
 13.2.3
 
+New Perk - Greed - gain 7.5% barter bonus, but halve the barter bonus from all other sources in your company. Added to Barter group
+New Perk - Paymaster - reduce the upkeep of every mercenary in your company by your barter bonus. Added to Barter group
+New Perk - Quartermaster - reduce the food usage of every mercenary in your company by 1. Only once per company.  Added to Chef group
+Barter perk tree rearranged, Danger Pay moved to t6 to make way for greed. 
+
+Lithe now uses the same falloff as Nimble and will not stack with Battleforged 
 Fixes tabard blueprint error causing some items to become uncraftable  
 Power rune now rolls two independent values, total damage and max damage 
 Fixes food not healing 
+Updates many perk tooltips to show the perk group. 
