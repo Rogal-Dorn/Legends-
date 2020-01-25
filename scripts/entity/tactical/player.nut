@@ -142,22 +142,36 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 	function getDailyCost()
 	{
+		local barterMult = 1;
+			foreach (bro in this.World.getPlayerRoster().getAll())
+			{
+				if (bro.getSkills().hasSkill("perk.legend_barter_paymaster"))
+				{
+				barterMult -= bro.getBarterModifier();
+				}
+			}
+		local costAdj = this.Math.max(0, this.m.CurrentProperties.DailyWageMult * barterMult);
+
 		return this.Math.max(0, this.m.CurrentProperties.DailyWage * this.m.CurrentProperties.DailyWageMult);
 	}
 
 	function getDailyFood()
 	{
-		local food = this.Math.maxf(0.0, this.m.CurrentProperties.DailyFood);
-		if (this.isInReserves())
+		local foodMult = 0;
+		foreach (bro in this.World.getPlayerRoster().getAll())
 		{
-			food = food * 2;
-
-			if (this.m.Skills.hasSkill("perk.legend_peaceful"))
+			if (bro.getSkills().hasSkill("perk.legend_quartermaster"))
 			{
-			food = food / 2;
+			foodMult = 1;
 			}
-
 		}
+
+		local food = this.Math.maxf(0.0, this.m.CurrentProperties.DailyFood);
+		if (this.isInReserves() && !this.m.Skills.hasSkill("perk.legend_peaceful"))
+		{
+			food *= 2;
+		}
+		food -= foodMult;
 		return food;
 	}
 
@@ -2521,11 +2535,14 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 	function getBarterModifier()
 	{
+
 		local mod = this.getBackground().getModifiers().Barter;
+
 		local skills =
 		[
 			"perk.legend_barter_trustworthy",
-			"perk.legend_barter_convincing"
+			"perk.legend_barter_convincing",
+			"perk.legend_barter_greed"
 		];
 		foreach (s in skills)
 		{
@@ -2535,6 +2552,15 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				mod += skill.getModifier();
 			}
 		}
+
+		foreach (bro in this.World.getPlayerRoster().getAll())
+		{
+			if (bro.getSkills().hasSkill("perk.legend_barter_greed"))
+			{
+			mod -= mod / 2);
+			}
+		}
+
 		return mod;
 	}
 

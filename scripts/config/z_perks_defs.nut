@@ -2777,6 +2777,33 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/choke_circle.png",
 		IconDisabled = "ui/perks/choke_circle_bw.png",
 		Const = "LegendChoke"
+	},
+	{
+		ID = "perk.legend_barter_paymaster",
+		Script = "scripts/skills/perks/perk_legend_barter_paymaster",
+		Name = this.Const.Strings.PerkName.LegendPaymaster,
+		Tooltip = this.Const.Strings.PerkDescription.LegendPaymaster,
+		Icon = "ui/perks/coins_circle.png",
+		IconDisabled = "ui/perks/coins_circle_bw.png",
+		Const = "LegendPaymaster"
+	},
+	{
+		ID = "perk.legend_quartermaster",
+		Script = "scripts/skills/perks/perk_legend_quartermaster",
+		Name = this.Const.Strings.PerkName.LegendQuartermaster,
+		Tooltip = this.Const.Strings.PerkDescription.LegendQuartermaster,
+		Icon = "ui/perks/food56.png",
+		IconDisabled = "ui/perks/food56_bw.png",
+		Const = "LegendQuartermaster"
+	},
+	{
+		ID = "perk.legend_barter_greed",
+		Script = "scripts/skills/perks/perk_legend_barter_greed",
+		Name = this.Const.Strings.PerkName.LegendBarterGreed,
+		Tooltip = this.Const.Strings.PerkDescription.LegendBarterGreed,
+		Icon = "ui/perks/gold56.png",
+		IconDisabled = "ui/perks/gold56_bw.png",
+		Const = "LegendBarterGreed"
 	}
 ];
 gt.Const.Perks.PerkDefs <- {};

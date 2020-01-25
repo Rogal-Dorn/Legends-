@@ -80,7 +80,7 @@ gt.Const.Perks.ChefClassTree <- {
 		[gt.Const.Perks.PerkDefs.LegendAlcoholBrewing],
 		[],
 		[],
-		[],
+		[gt.Const.Perks.PerkDefs.LegendQuartermaster],
 		[gt.Const.Perks.PerkDefs.LegendFieldTreats]
 	]
 };
@@ -111,11 +111,14 @@ gt.Const.Perks.BarterClassTree <- {
 		[],
 		[gt.Const.Perks.PerkDefs.LegendBarterConvincing],
 		[],
-		[],
-		[gt.Const.Perks.PerkDefs.LegendBarterTrustworthy],
+		[gt.Const.Perks.PerkDefs.LegendBarterTrustworthy,],
+		[
+		gt.Const.Perks.PerkDefs.LegendBarterDangerPay,
+		gt.Const.Perks.PerkDefs.LegendPaymaster
+		],
 		[
 		gt.Const.Perks.PerkDefs.LegendBribe,
-		gt.Const.Perks.PerkDefs.LegendDangerPay
+		gt.Const.Perks.PerkDefs.LegendBarterGreed
 		]
 	]
 };
