@@ -257,7 +257,7 @@ gt.Const.Tactical.Actor.MercenaryRanged <- {
 	FatigueRecoveryRate = 20
 };
 gt.Const.Tactical.Actor.Swordmaster <- {
-	XP = 400,
+	XP = 500,
 	ActionPoints = 9,
 	Hitpoints = 70,
 	Bravery = 90,

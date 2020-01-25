@@ -71,7 +71,7 @@ gt.Const.Tactical.Actor.OrcWarrior <- {
 	DamageTotalMult = 1.25
 };
 gt.Const.Tactical.Actor.LegendOrcElite <- {
-	XP = 600,
+	XP = 800,
 	ActionPoints = 8,
 	Hitpoints = 300,
 	Bravery = 90,
@@ -111,7 +111,7 @@ gt.Const.Tactical.Actor.LegendOrcBehemoth <- {
 	DamageTotalMult = 1.5
 };
 gt.Const.Tactical.Actor.OrcWarlord <- {
-	XP = 500,
+	XP = 600,
 	ActionPoints = 8,
 	Hitpoints = 300,
 	Bravery = 90,

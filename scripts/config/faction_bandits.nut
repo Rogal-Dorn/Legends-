@@ -183,7 +183,7 @@ gt.Const.Tactical.Actor.BanditLeader <- {
 };
 
 gt.Const.Tactical.Actor.BanditVeteran <- {
-	XP = 400,
+	XP = 600,
 	ActionPoints = 9,
 	Hitpoints = 100,
 	Bravery = 65,
@@ -202,7 +202,7 @@ gt.Const.Tactical.Actor.BanditVeteran <- {
 	FatigueRecoveryRate = 20
 };
 gt.Const.Tactical.Actor.BanditWarlord <- {
-	XP = 600,
+	XP = 800,
 	ActionPoints = 9,
 	Hitpoints = 200,
 	Bravery = 140,

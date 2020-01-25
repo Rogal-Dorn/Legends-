@@ -2742,9 +2742,18 @@ New Perk - Greed - gain 7.5% barter bonus, but halve the barter bonus from all o
 New Perk - Paymaster - reduce the upkeep of every mercenary in your company by your barter bonus. Added to Barter group
 New Perk - Quartermaster - reduce the food usage of every mercenary in your company by 1. Only once per company.  Added to Chef group
 Barter perk tree rearranged, Danger Pay moved to t6 to make way for greed. 
-
+Peddler daily cost reduced from 50 to 25 
+Peddler stats: hp and rskill raised 5 points on average, defenses raised ten points 
+Cultists stats: greater variability for all stats, -5 min and +5 max to all stats. To increase build variety in cultist runs 
+Chain buffed: durability 32 to 48, fatigue -6 to -12 damage 5-30 to 15-45. To makes its interesting playstyle more useful. 
+ Noble troops wear their appropriate noble tabard 
+Peasant farmhands can get leather jackets 
+XP increased for bandit veterans, bandit lords, orc elites, orc warlords, knights and swordmasters 
 Lithe now uses the same falloff as Nimble and will not stack with Battleforged 
 Fixes tabard blueprint error causing some items to become uncraftable  
 Power rune now rolls two independent values, total damage and max damage 
 Fixes food not healing 
 Updates many perk tooltips to show the perk group. 
+
+
+
