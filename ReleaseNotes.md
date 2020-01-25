@@ -2649,3 +2649,6 @@ Mail shirt fatigue from -6 to -7
 * Spear specialisation effect Ancient Spears as well as Militia spears 
 
 
+13.3
+
+* Fixed a bug preventing spider bodyguards from contributing to the perk "Favoured Enemy: Spider" progression
