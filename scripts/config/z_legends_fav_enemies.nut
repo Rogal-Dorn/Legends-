@@ -201,7 +201,7 @@ gt.Const.LegendMod.GetFavoriteEnemyValue <- function ( _type )
 		case "this.Const.EntityType.Spider":
 		value = 8; 
 		break;
-		case "this.Const.EntityType.SpiderBodygaurd":
+		case "this.Const.EntityType.SpiderBodyguard":
 		value = 8; 
 		break;
 		case "this.Const.EntityType.LegendRedbackSpider":
