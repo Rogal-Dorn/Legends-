@@ -113,7 +113,7 @@ gt.Const.Perks.BarterClassTree <- {
 		[],
 		[gt.Const.Perks.PerkDefs.LegendBarterTrustworthy,],
 		[
-		gt.Const.Perks.PerkDefs.LegendBarterDangerPay,
+		gt.Const.Perks.PerkDefs.LegendDangerPay,
 		gt.Const.Perks.PerkDefs.LegendPaymaster
 		],
 		[

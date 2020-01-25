@@ -46,6 +46,7 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
+		local ourskill = this.getContainer().getActor().getCurrentProperties().getRangedSkill();
 		local ret = this.getDefaultUtilityTooltip();
 		ret.extend([
 			{
@@ -53,6 +54,12 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 				type = "text",
 				icon = "ui/icons/vision.png",
 				text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]" + this.getMaxRange() + "[/color] tiles"
+			},
+			{
+				id = 6,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Hit chance may be inacurate. Hit chance determined by your ranged skill minus their ranged defense. Hitchance doubled by the Net Casting Perk."
 			}
 		]);
 		return ret;
@@ -109,9 +116,20 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 
 				if (this.m.IsReinforced)
 				{
+					local r = this.Math.rand(1,2)
 					breakFree.setDecal("net_destroyed_02");
 					breakFree.setChanceBonus(-15);
+					local r = this.Math.rand(1,2)
+					if (r == 1)
+					{
 					this.World.Assets.getStash().add(this.new("scripts/items/tools/legend_broken_throwing_net"));	
+					}
+					else
+					{
+					this.World.Assets.getStash().add(this.new("scripts/items/tools/reinforced_throwing_net"));
+					}
+
+
 				}
 				else
 				{

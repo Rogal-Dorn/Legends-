@@ -1398,7 +1398,8 @@ gt.Const.Strings.PerkName <- {
 	LegendWindReader = "Wind Reader",
 	LegendChoke = "Choke",
 	LegendPaymaster = "Paymaster",
-	LegendQuartermaster = "Quartermaster"
+	LegendQuartermaster = "Quartermaster",
+	LegendBarterGreed = "Greed"
 };
 gt.Const.Strings.PerkDescription <- {
 	Relentless = "Don\'t slow down! At all times your Initiative is reduced only by [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] of your accumulated Fatigue, instead of all of it. \n[color=#0b0084]From the Fit perk group[/color]",
@@ -1728,7 +1729,6 @@ gt.Const.Strings.PerkDescription <- {
 	LegendPaymaster = "Shifting numbers is a fine art, by negotiating pay terms and usuary it is possible to drive down mercenary pay. Lowers daily wages for all mercenaries in the company, by a percentage equal to your barter skill. [color=#0b0084]From the Barter perk group[/color] ",
 	LegendQuartermaster = "Meal planning and preperation is the key to avoiding wastage. By cooking bulk meals, using scraps and saving leftovers you can reduce save food for the company. Reduces food consumption by 1 for every mercenary. This perk is only counted once per company. [color=#0b0084]From the Chef perk group[/color]"
 	LegendBarterGreed = "Lust for gold and self interest can be a double edged sword, an immediate benefit in one place, may come at the expense of others. Gain 7.5% barter, but halve the barter bonus from all other sources. [color=#0b0084]From the Barter perk group[/color]"
-
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

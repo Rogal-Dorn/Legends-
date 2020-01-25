@@ -143,16 +143,18 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	function getDailyCost()
 	{
 		local barterMult = 1;
+		local paymasterCount = 0;
 			foreach (bro in this.World.getPlayerRoster().getAll())
 			{
-				if (bro.getSkills().hasSkill("perk.legend_barter_paymaster"))
+				if (bro.getSkills().hasSkill("perk.legend_barter_paymaster") && paymasterCount < 1)
 				{
 				barterMult -= bro.getBarterModifier();
+				paymasterCount++
 				}
 			}
 		local costAdj = this.Math.max(0, this.m.CurrentProperties.DailyWageMult * barterMult);
 
-		return this.Math.max(0, this.m.CurrentProperties.DailyWage * this.m.CurrentProperties.DailyWageMult);
+		return this.Math.max(0, this.m.CurrentProperties.DailyWage * costAdj);
 	}
 
 	function getDailyFood()
@@ -1054,7 +1056,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				this.getTags().add("zombie_minion");
 				local skill = this.new("scripts/skills/injury_permanent/legend_rotten_flesh");
 				this.m.Skills.add(skill);
-				this.m.Skills.add(this.new("scripts/skills/actives/zombie_bite"));
+				this.m.Skills.add(this.new("scripts/skills/perks/perk_zombie_bite"));
 				this.m.Skills.add(this.new("scripts/skills/perks/perk_nine_lives"));
 			}
 		}

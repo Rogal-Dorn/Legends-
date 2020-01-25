@@ -235,7 +235,7 @@ this.peddler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			items.equip(this.new("scripts/items/ammo/quiver_of_bolts));
 		}
 
-		items.equip(this.new("scripts/items/legend_armor/cloth/legend_tunic_noble"));
+		items.equip(this.new("scripts/items/legend_armor/cloth/legend_tunic"));
 
 		r = this.Math.rand(0, 3);
 

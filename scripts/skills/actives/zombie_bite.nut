@@ -69,5 +69,34 @@ this.zombie_bite <- this.inherit("scripts/skills/skill", {
 		}
 	}
 
+function onDamageDealt( _target, _skill, _hitInfo )
+	{
+		if (!target.getCurrentProperties().IsImmuneToPoison && "Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+		{
+			this.weapon.onDamageDealt(_target, _skill, _hitInfo);
+
+			if (!this.isKindOf(_target, "player") && !this.isKindOf(_target, "human"))
+			{
+				return;
+			}
+
+			if (_target.getHitpoints() > 0)
+			{
+				return;
+			}
+
+			if (_hitInfo.Tile.IsCorpseSpawned && _hitInfo.Tile.Properties.get("Corpse").IsResurrectable)
+			{
+				local corpse = _hitInfo.Tile.Properties.get("Corpse");
+				corpse.Faction = this.Const.Faction.PlayerAnimals;
+				corpse.Hitpoints = 1.0;
+				corpse.Items = _target.getItems();
+				corpse.IsConsumable = false;
+				corpse.IsResurrectable = false;
+				this.Time.scheduleEvent(this.TimeUnit.Rounds, this.Math.rand(1, 1), this.Tactical.Entities.resurrect, corpse);
+			}
+		}
+	}
+
 });
 
