@@ -2783,8 +2783,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Script = "scripts/skills/perks/perk_legend_barter_paymaster",
 		Name = this.Const.Strings.PerkName.LegendPaymaster,
 		Tooltip = this.Const.Strings.PerkDescription.LegendPaymaster,
-		Icon = "ui/perks/coins_circle.png",
-		IconDisabled = "ui/perks/coins_circle_bw.png",
+		Icon = "ui/perks/paymaster.png",
+		IconDisabled = "ui/perks/paymaster_bw.png",
 		Const = "LegendPaymaster"
 	},
 	{

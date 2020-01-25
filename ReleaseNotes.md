@@ -2774,4 +2774,5 @@ Hollenhound bones and banshee essence use the correct icons (Von Krolock)
 Necromancers drop layered armor if layered armor is turned on 
 Noble troops wear their appropriate noble tabard layer
 Zombie bite no longer disappears after saving and loading 
+Legendary gheists no longer teleport to their deaths 
 
