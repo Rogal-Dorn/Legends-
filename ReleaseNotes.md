@@ -2755,6 +2755,9 @@ Chain buffed: durability 32 to 48, fatigue -6 to -12 damage 5-30 to 15-45. To ma
 Noble troops wear their appropriate noble tabard 
 Peasant farmhands can get leather jackets 
 XP increased for bandit veterans, bandit lords, orc elites, orc warlords, knights and swordmasters 
+On legendary combat difficulty, zombie bite will resurrect felled enemies like a warlock scythe 
+Legion can now recruit high tier combat backgrounds once per week at the black monolith
+Reinforced nets have a 50% chance to be returned unbroken 
 
 **Fixes** 
 Fixes tabard blueprint error causing some items to become uncraftable  
@@ -2765,3 +2768,5 @@ Choke and Grapple can both be used with either hand free
 Fixed non-updated text on certain perks. Should now reflect current effect (Salty)
 Fixed Nudist to 40% HP damage, had read the math wrong before & set it to 50% (Salty)
 Added a weight check on swordsmasters armor, should no longer use too heavy armor. (Salty)
+Necromancers drop layered armor if layered armor is turned on 
+Zombie bite no longer disappears after saving and loading 
