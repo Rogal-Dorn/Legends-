@@ -886,11 +886,11 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 		foreach ( b in this.World.getPlayerRoster().getAll() )
 		{
-			this.changeActiveRelationship(b, this.Math.rand(-20, 20));
+			this.changeActiveRelationship(b, this.Math.rand(-2,2) );
 		}
 		foreach ( other in this.World.getPlayerRoster().getAll() )
 		{
-			other.changeActiveRelationship(this, this.Math.rand(-20, 20));
+			other.changeActiveRelationship(this, this.Math.rand(-2,2) );
 		}
 	}
 
@@ -2912,6 +2912,27 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		_out.writeF32(this.m.LastCampTime);
 		_out.writeBool(this.m.InReserves);
 
+		_out.writeU8(this.m.Alignment);
+		_out.writeBool(this.m.IsAlignmentAssigned);
+		
+		//keys are just string values
+		foreach (relation in this.m.ActiveRelationships)
+		{
+			foreach (key, value in relation)
+			{
+				_out.writeString(key);
+				if (key == "ActorRef")
+				{
+					_out.writeU32(value.getPlaceInFormation());
+				}
+				else
+				{
+					_out.writeI16(value);
+				}
+			}
+		}
+		//adds a string with STOP so we know when to stop reading in in onDeserialize(?) this should bechanged probably
+		_out.writeString("STOP");
 	}
 
 	function onDeserialize( _in )
@@ -3023,6 +3044,29 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		{
 			this.m.InReserves = _in.readBool();
 		}
+
+
+		if (_in.getMetaData().getVersion() >= 65) //THIS SHOULD BE CHANGED TO ACTUAL NUMBER WHEN IN RELEASE BUILD 
+			this.m.Alignment = _in.readU8();
+			this.m.IsAlignmentAssigned = _in.readBool();
+			
+			local keys = _in.readString(); //puts STOP if we had norelations etc
+			local i = -1;
+			while ( keys != "STOP" )
+			{
+
+				if ( keys == "ActorRef" ) //new actor's relation
+				{
+					i = i + 1;
+					this.m.ActiveRelationships.append({});
+					this.m.ActiveRelationships[i].ActorRef <- _in.readU32();
+				}
+				else
+				{
+					this.m.ActiveRelationships[i][keys] <- _in.readI16();
+				}
+				keys = _in.readString();
+			}	
 
 	}
 

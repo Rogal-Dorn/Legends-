@@ -1189,6 +1189,21 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.updateDayTime();
 		this.Music.setTrackList(this.World.FactionManager.isGreaterEvil() ? this.Const.Music.WorldmapTracksGreaterEvil : this.Const.Music.WorldmapTracks, this.Const.Music.CrossFadeTime);
 
+		local pTable = {};
+		local bros = this.World.getPlayerRoster().getAll();
+		foreach (bro in bros)
+		{
+			pTable[bro.getPlaceInFormation()] <- this.WeakTableRef(bro);
+			this.logInfo(pTable[bro.getPlaceInFormation()].getNameOnly());
+		}
+		foreach (bro in bros)
+		{
+			foreach (rel in bro.getActiveRelationships())
+			{
+				rel.ActorRef = pTable[rel.ActorRef];
+			}
+		}
+
 		this.setPause(true);
 	}
 
