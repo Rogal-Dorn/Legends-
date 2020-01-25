@@ -2770,6 +2770,7 @@ Fixed Nudist to 40% HP damage, had read the math wrong before & set it to 50% (S
 Added a weight check on swordsmasters armor, should no longer use too heavy armor. (Salty)
 Fixed a bug preventing spider bodyguards from contributing to the perk "Favoured Enemy: Spider" progression (Freykin and SilentSlave)
 Fixed several typos in descriptions (Freykin)
+Hollenhound bones and banshee essence use the correct icons (Von Krolock) 
 Necromancers drop layered armor if layered armor is turned on 
 Noble troops wear their appropriate noble tabard layer
 Zombie bite no longer disappears after saving and loading 
