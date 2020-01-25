@@ -2680,7 +2680,7 @@ Skeleton Gladiators no longer flee battle
 Summoned Zombies no longer get 3AP 
 Blonde berserker beard is closer in colour to other beards 
 Reduces hunting speed in camp 
-Sling staves use staff bash. 
+Sling staves use staff bash, and color updated for bonus to hit per tile. 
 Infantry axe can be found in towns with a fortified outpost or lumber camp 
 
 
@@ -2762,4 +2762,6 @@ Fixes food not healing
 Updates many perk tooltips to show the perk group. 
 Fixes ambition errors by disabling armor upgrade ambition if legends armor enabled, until we can fix it. 
 Choke and Grapple can both be used with either hand free 
-
+Fixed non-updated text on certain perks. Should now reflect current effect (Salty)
+Fixed Nudist to 40% HP damage, had read the math wrong before & set it to 50% (Salty)
+Added a weight check on swordsmasters armor, should no longer use too heavy armor. (Salty)
