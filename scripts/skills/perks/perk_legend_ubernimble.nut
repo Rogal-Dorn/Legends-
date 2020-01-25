@@ -54,7 +54,7 @@ this.perk_legend_ubernimble <- this.inherit("scripts/skills/skill", {
 
 	function getChance()
 	{		
-		return 0.5;
+		return 0.4;
 	}
 
 	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )

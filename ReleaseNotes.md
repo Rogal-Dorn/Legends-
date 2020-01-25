@@ -2735,3 +2735,12 @@ Tabards are craftable if you have a tailor or seamstress
 Cloaks now require dye to craft in addtion to cloth 
 Fixed gambesons appearing as padded surcoats, more gambeson variants show up more regularly. 
 Fixes error when the legion strips the flesh off new recruits 
+
+
+
+13.2.3
+
+**Fixes**
+Fixed non-updated text on certain perks. Should now reflect current effect (Salty)
+Fixed Nudist to 40% HP damage, had read the math wrong before & set it to 50% (Salty)
+Added a weight check on swordsmasters armor, should nolonger use too heavy armor. (Salty)
