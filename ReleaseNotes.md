@@ -2744,9 +2744,10 @@ New Perk - Quartermaster - reduce the food usage of every mercenary in your comp
 Barter perk tree rearranged, Danger Pay moved to t6 to make way for greed. 
 Peddler daily cost reduced from 50 to 25 
 Peddler stats: hp and rskill raised 5 points on average, defenses raised ten points 
-Cultists stats: greater variability for all stats, -5 min and +5 max to all stats. To increase build variety in cultist runs 
+Peddlers can spawn with a light crossbow 
+Cultists stats: greater variability for all stats, -5 min and +5 max to all stats. To reflect varied histories.
 Chain buffed: durability 32 to 48, fatigue -6 to -12 damage 5-30 to 15-45. To makes its interesting playstyle more useful. 
- Noble troops wear their appropriate noble tabard 
+Noble troops wear their appropriate noble tabard 
 Peasant farmhands can get leather jackets 
 XP increased for bandit veterans, bandit lords, orc elites, orc warlords, knights and swordmasters 
 Lithe now uses the same falloff as Nimble and will not stack with Battleforged 
@@ -2754,6 +2755,6 @@ Fixes tabard blueprint error causing some items to become uncraftable
 Power rune now rolls two independent values, total damage and max damage 
 Fixes food not healing 
 Updates many perk tooltips to show the perk group. 
-
-
+Disabled armor upgrade ambition if legends armor enabled, until we can fix it 
+Choke and Grapple can both be used with either hand free 
 
