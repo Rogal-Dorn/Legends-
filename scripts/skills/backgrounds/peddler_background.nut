@@ -11,7 +11,7 @@ this.peddler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.GoodEnding = "A lover of the sale, %name% the peddler couldn\'t stay fighting for long. They eventually left the %companyname% to go out and start their own business. Recently, you got word that they were selling trinkets with the company\'s sigil on them. You specifically told them to do whatever they wanted except just this one thing, but apparently your warning merely fostered the idea. When you went to tell them to stop, they slammed a crown-bulging satchel on a rather ornate table, saying it was your \'cut.\' They sell those trinkets to this day.";
 		this.m.BadEnding = "With hard times hitting the %companyname%, many brothers saw fit to return to their old lives. %name% the peddler was no different. Last you heard they got the tar beaten out of them trying to sell stolen wares that \'fell off the wagon\' to the very merchant which they originally belonged.";
 		this.m.HiringCost = 1000;
-		this.m.DailyCost = 20;
+		this.m.DailyCost = 25;
 		this.m.Excluded = [
 			"trait.huge",
 			"trait.fear_undead",
@@ -138,12 +138,12 @@ this.peddler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 				-0
 			],
 			MeleeDefense = [
-				-2,
-				-7
+				 2,
+				 7
 			],
 			RangedDefense = [
-				-2,
-				-7
+				 2,
+				 7
 			],
 			Initiative = [
 				0,
@@ -189,6 +189,14 @@ this.peddler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			items.equip(this.new("scripts/items/weapons/dagger"));
 		}
 
+		r = this.Math.rand(0, 2);
+
+		if (r == 0)
+		{
+			items.equip(this.new("scripts/items/weapons/light_crossbow));
+			items.equip(this.new("scripts/items/ammo/quiver_of_bolts));
+		}
+
 		r = this.Math.rand(0, 0);
 
 		if (r == 0)
@@ -219,8 +227,15 @@ this.peddler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			items.equip(this.new("scripts/items/weapons/dagger"));
 		}
 
+		r = this.Math.rand(0, 2);
 
-		items.equip(this.new("scripts/items/legend_armor/cloth/legend_tunic"));
+		if (r == 0)
+		{
+			items.equip(this.new("scripts/items/weapons/light_crossbow));
+			items.equip(this.new("scripts/items/ammo/quiver_of_bolts));
+		}
+
+		items.equip(this.new("scripts/items/legend_armor/cloth/legend_tunic_noble"));
 
 		r = this.Math.rand(0, 3);
 
