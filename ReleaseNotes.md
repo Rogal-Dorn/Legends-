@@ -2742,19 +2742,18 @@ Fixes error when the legion strips the flesh off new recruits
 **Peddler rework:**
 New Perk - Greed - gain 7.5% barter bonus, but halve the barter bonus from all other sources in your company. Added to Barter group
 New Perk - Paymaster - reduce the upkeep of every mercenary in your company by your barter bonus. Added to Barter group
-New Perk - Quartermaster - reduce the food usage of every mercenary in your company by 1. Only once per company.  Added to Chef group
 Barter perk tree rearranged, Danger Pay moved to t6 to make way for greed. 
 Peddler daily cost reduced from 50 to 25 
 Peddler stats: hp and rskill raised 5 points on average, defenses raised ten points 
 Peddlers can spawn with a light crossbow 
 
 **Changes**
+New Perk - Quartermaster - reduce the food usage of every mercenary in your company by 1. Only once per company.  Added to Chef group
 Power rune now rolls two independent values, total damage and max damage 
 Lithe now uses the same falloff as Nimble and will not stack with Battleforged
 Cultists stats: greater variability for all stats, -5 min and +5 max to all stats. To reflect varied histories.
-Chain buffed: durability 32 to 48, fatigue -6 to -12 damage 5-30 to 15-45. To makes its interesting playstyle more useful. 
-Noble troops wear their appropriate noble tabard 
-Peasant farmhands can get leather jackets 
+Chain buffed: durability 32 to 48, fatigue -6 to -12 damage 5-30 to 15-45. To makes its interesting playstyle more useful.  
+Peasant farmhands can get thicker leather jackets 
 XP increased for bandit veterans, bandit lords, orc elites, orc warlords, knights and swordmasters 
 On legendary combat difficulty, zombie bite will resurrect felled enemies like a warlock scythe 
 Legion can now recruit high tier combat backgrounds once per week at the black monolith
@@ -2769,8 +2768,9 @@ Choke and Grapple can both be used with either hand free
 Fixed non-updated text on certain perks. Should now reflect current effect (Salty)
 Fixed Nudist to 40% HP damage, had read the math wrong before & set it to 50% (Salty)
 Added a weight check on swordsmasters armor, should no longer use too heavy armor. (Salty)
-Fixed a bug preventing spider bodyguards from contributing to the perk "Favoured Enemy: Spider" progression (Freykin)
+Fixed a bug preventing spider bodyguards from contributing to the perk "Favoured Enemy: Spider" progression (Freykin and SilentSlave)
 Fixed several typos in descriptions (Freykin)
 Necromancers drop layered armor if layered armor is turned on 
+Noble troops wear their appropriate noble tabard layer
 Zombie bite no longer disappears after saving and loading 
 

@@ -231,8 +231,8 @@ this.peddler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 
 		if (r == 0)
 		{
-			items.equip(this.new("scripts/items/weapons/light_crossbow));
-			items.equip(this.new("scripts/items/ammo/quiver_of_bolts));
+			items.equip(this.new("scripts/items/weapons/light_crossbow"));
+			items.equip(this.new("scripts/items/ammo/quiver_of_bolts"));
 		}
 
 		items.equip(this.new("scripts/items/legend_armor/cloth/legend_tunic"));
