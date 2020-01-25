@@ -2652,3 +2652,4 @@ Mail shirt fatigue from -6 to -7
 13.3
 
 * Fixed a bug preventing spider bodyguards from contributing to the perk "Favoured Enemy: Spider" progression
+* Fixed several typos in descriptions
