@@ -1332,7 +1332,7 @@ gt.Const.Strings.PerkName <- {
 	LegendBlendIn = "Blend in",
 	LegendSpecStaffStun = "Staff Spins",
 	LegendSpecStaffSkill = "Staff Block",
-	LegendDrumsOfWar = "Drums of War",
+	LegendDrumsOfWar = "War Chant",
 	LegendSpecFists = "Unarmed Mastery",
 	LegendKick = "Kicking",
 	LegendGrapple = "Grappling",
@@ -1376,7 +1376,7 @@ gt.Const.Strings.PerkName <- {
 	LegendHorseCollection = "Collection",
 	LegendHorseFlyingChange = "Flying Change",
 	LegendHorsePassage = "Passage",
-	LegendDrumsOfLife = "Drums of Life",
+	LegendDrumsOfLife = "Song of Life",
 	LegendLacerate = "Lacerate",
 	LegendPeaceful = "Peaceful",
 	LegendSummonHound = "Summon Hound",
@@ -1726,7 +1726,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendHeightenedReflexes = "You have trained in avoiding arrows, this skill translates well into dodging blades. Gain half of your Ranged Defence as Initiative, with a minimum bonus of 3. [color=#0b0084]From the Crossbow perk group[/color]",
 	LegendWindReader = "You have learned to read the wind, estimating the path of arrows in uncertain conditions. This is very helpful for dodging arrows, but can also be applied to shooting them as well.  Gain a third of your Ranged Defence as Ranged Skill, with a minimum bonus of 3.  [color=#0b0084]From the Bow perk group[/color]",
 	LegendChoke = "Once an opponent is in a weakened state, it may be easier to choke them out than to fight through their armor. Unlocks the Choke ability which becomes available with no weapons equipped. Hit chance determined by your targets fatigue, 0% if they are fresh and 100% if they are exhausted. If your target is dazed or parried hitchance is increaded by +10%.  If they are stunned or netted you gain +25%. If they are grappled or sleeping you gain +50%. Dagger mastery doubles your chance to hit. These bonuses stack up to 100%. [color=#0b0084]From the Unarmed perk group[/color] "
-	LegendPaymaster = "Shifting numbers is a fine art, by negotiating pay terms and usuary it is possible to drive down mercenary pay. Lowers daily wages for all mercenaries in the company, by a percentage equal to your barter skill. [color=#0b0084]From the Barter perk group[/color] ",
+	LegendPaymaster = "Shifting numbers is a fine art, by negotiating pay terms and usuary it is possible to drive down mercenary pay. Lowers daily wages for all mercenaries in the company, by a percentage equal to your barter skill. This perk is only counted once per company. [color=#0b0084]From the Barter perk group[/color] ",
 	LegendQuartermaster = "Meal planning and preperation is the key to avoiding wastage. By cooking bulk meals, using scraps and saving leftovers you can reduce save food for the company. Reduces food consumption by 1 for every mercenary. This perk is only counted once per company. [color=#0b0084]From the Chef perk group[/color]"
 	LegendBarterGreed = "Lust for gold and self interest can be a double edged sword, an immediate benefit in one place, may come at the expense of others. Gain 7.5% barter, but halve the barter bonus from all other sources. [color=#0b0084]From the Barter perk group[/color]"
 };

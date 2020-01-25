@@ -142,19 +142,21 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 	function getDailyCost()
 	{
-		local barterMult = 1;
+		local wageMult = this.m.CurrentProperties.DailyWageMult;
 		local paymasterCount = 0;
+		local mod = 0.0;
 			foreach (bro in this.World.getPlayerRoster().getAll())
 			{
 				if (bro.getSkills().hasSkill("perk.legend_barter_paymaster") && paymasterCount < 1)
 				{
-				barterMult -= bro.getBarterModifier();
 				paymasterCount++
+				mod = bro.getBarterModifier();
+				wageMult -= mod;
+
 				}
 			}
-		local costAdj = this.Math.max(0, this.m.CurrentProperties.DailyWageMult * barterMult);
-
-		return this.Math.max(0, this.m.CurrentProperties.DailyWage * costAdj);
+		//local costAdj = this.Math.max(0, this.m.CurrentProperties.DailyWageMult * barterMult);
+		return this.Math.max(0, this.m.CurrentProperties.DailyWage * wageMult);
 	}
 
 	function getDailyFood()
