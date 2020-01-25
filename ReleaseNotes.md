@@ -2650,6 +2650,7 @@ Mail shirt fatigue from -6 to -7
 
 13.2.1 **Punching Vampires**
 
+<<<<<<< HEAD
 **Necrosavant Hunter** 
 Necrosavant lords have 25% chance to be Ladies, when this happens they gain terrifying visage.
 New Weapon - Wooden stake, very cheap, 5 durability, does 10-15 damage, but against necrosavants it does 90-100 damage. Counts as a dagger 
@@ -2768,5 +2769,8 @@ Choke and Grapple can both be used with either hand free
 Fixed non-updated text on certain perks. Should now reflect current effect (Salty)
 Fixed Nudist to 40% HP damage, had read the math wrong before & set it to 50% (Salty)
 Added a weight check on swordsmasters armor, should no longer use too heavy armor. (Salty)
+Fixed a bug preventing spider bodyguards from contributing to the perk "Favoured Enemy: Spider" progression (Freykin)
+Fixed several typos in descriptions (Freykin)
 Necromancers drop layered armor if layered armor is turned on 
 Zombie bite no longer disappears after saving and loading 
+
