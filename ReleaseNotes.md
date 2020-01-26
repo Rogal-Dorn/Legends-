@@ -2797,9 +2797,14 @@ Legendary gheists no longer teleport to their deaths
 * Disabled if you are: berserk, dazed, drunk, hungover, taunted, staggered, horrified, concussed or fleeing.
 * Doubled if you're under the effect of cognition enhancing potions: Iron Will, Lionheart, Cat, Hexen Ichor or Recovery Potions
 
+**Peaceful**
+Peaceful Now lets characters gain XP while in reserve
+This is in addition to making them content in reserve, and removing the additional food usage in reserve 
+
 **Pacifist**
 Every day at noon pacifists will reflect on their time with the company
 If they have killed more than once per week, their mood will worsen 
+This is in addition to making them content in reserve and only adding half scaling 
 
 **Trading Caravan**
 Cost of combat backgrounds reduced to 125% from 200% 
@@ -2811,11 +2816,12 @@ Cost of peddlers and donkeys reduced to 75% from 90%
 * only impacts your reputation with the town, doesn't spawn enemies 
 
 **Other changes**
+
 Several hundred new names and titles added for characters and enemies (Slick liquid)
 Goblin city will scale with time, after 400,300,200,100 days by difficulty, at a rate of +20% per hundred days 
 
 **Fixes**
-Mountain helm and armor gain named randomisation 
+Fixed Mountain helm and armor not having named randomisation 
 Fixes lag in marketplaces 
 Fixes crash from bleed inducers not knowing if they're on the map 
 Fixes peddlers getting ammo but not crossbows 

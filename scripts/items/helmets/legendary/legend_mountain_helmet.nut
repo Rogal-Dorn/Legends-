@@ -5,6 +5,14 @@ this.legend_mountain_helmet <- this.inherit("scripts/items/helmets/named/named_h
 		this.named_helmet.create();
 		this.m.ID = "armor.head.legend_mountain_helmet";
 		this.m.Name = "Helmet of the Mountain";
+		this.m.NameList = [
+			"Mountain\'s Head",
+			"Mountain Peak",
+			"Peak\'s Dome",
+			"Crest\'s Ward",
+			"Boulder Helmet",
+			"Mountain Mask"
+		];
 		this.m.Description = "A helmet crafted from the skin and skull of a mighty rock unhold, the beast may be dead, but it continues to mend itself even after death";
 		this.m.ShowOnCharacter = true;
 		this.m.IsDroppedAsLoot = true;
