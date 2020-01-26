@@ -1058,7 +1058,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				this.getTags().add("zombie_minion");
 				local skill = this.new("scripts/skills/injury_permanent/legend_rotten_flesh");
 				this.m.Skills.add(skill);
-				this.m.Skills.add(this.new("scripts/skills/perks/perk_zombie_bite"));
+				this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_zombie_bite"));
 				this.m.Skills.add(this.new("scripts/skills/perks/perk_nine_lives"));
 			}
 		}

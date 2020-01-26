@@ -1,8 +1,8 @@
-this.legend_armor_mountain <- this.inherit("scripts/items/legend_armor/legend_armor", {
+this.legend_armor_mountain <- this.inherit("scripts/items/legend_armor/named/legend_named_armor", {
 	m = {},
 	function create()
 	{
-		this.legend_armor.create();
+		this.legend_named_armor.create();
 		this.m.ID = "legend_armor.body.legend_mountain_armor";
 		this.m.Name = "Armor of the Mountain";
 		this.m.Description = "Armor crafted from the skin and bones of a mighty rock unhold, the beast may be dead, but it continues to mend itself even after death.";
@@ -22,6 +22,7 @@ this.legend_armor_mountain <- this.inherit("scripts/items/legend_armor/legend_ar
 		this.blockUpgrades();
 		this.m.Blocked[ this.Const.Items.ArmorUpgrades.Attachment] = false
 		this.m.Blocked[ this.Const.Items.ArmorUpgrades.Rune] = false
+		this.randomizeValues();
 	}
 
 	function getTooltip()
