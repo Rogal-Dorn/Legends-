@@ -770,7 +770,7 @@ this.asset_manager <- {
 				{
 					local hireTime = bro.getHireTime();
 					local currentTime =  this.World.getTime().Time;
-					local servedTime = currentTime - hireTime.;
+					local servedTime = currentTime - hireTime;
 					local servedDays = servedTime / this.World.getTime().SecondsPerDay;
 					if ((servedDays / 7) < bro.getLifetimeStats().Kills)
 						{
