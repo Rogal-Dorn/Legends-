@@ -766,6 +766,18 @@ this.asset_manager <- {
 					}
 				}
 
+				if (bro.getSkills().hasSkill("perk.legend_pacifist"))
+				{
+					local hireTime = bro.getHireTime();
+					local currentTime =  this.World.getTime().Time;
+					local servedTime = currentTime - hireTime.;
+					local servedDays = servedTime / this.World.getTime().SecondsPerDay;
+					if ((servedDays / 7) < bro.getLifetimeStats().Kills)
+						{
+							bro.worsenMood(this.Const.MoodChange.BattleWithoutMe, "Remembers being forced to kill against their wishes");
+						}
+				}
+
 				if (this.m.IsUsingProvisions && this.m.Food < bro.getDailyFood())
 				{
 					if (bro.getSkills().hasSkill("trait.spartan"))

@@ -2778,9 +2778,43 @@ Noble troops wear their appropriate noble tabard layer
 Zombie bite no longer disappears after saving and loading 
 Legendary gheists no longer teleport to their deaths 
 
-13.2.4
+13.2.4 Peace and Profit 
 
+**Mind over body:**
+* calculation changed to be more useful at lower resolve levels, but less useful at higher levels. 
+* Starts at 60 instead of 75, but the bonus has falloff. 
+* from  0% to 8%  at 70 resolve 
+* from  0% to 11% at 75
+* from  7% to 14% at 80 
+* from 17% to 19% at 90    
+* from 25% to 23% at 100 
+* from 40% to 31% at 125
+* from 50% to 37% at 150
+* from 60% to 40% at 200 
+
+**Clarity**
+* Now depends on your state of mind. 
+* Disabled if you are: berserk, dazed, drunk, hungover, taunted, staggered, horrified, concussed or fleeing.
+* Doubled if you're under the effect of cognition enhancing potions: Iron Will, Lionheart, Cat, Hexen Ichor or Recovery Potions
+
+**Pacifist**
+Every day at noon pacifists will reflect on their time with the company
+If they have killed more than once per week, their mood will worsen 
+
+**Trading Caravan**
+Cost of combat backgrounds reduced to 125% from 200% 
+Cost of peddlers and donkeys reduced to 75% from 90% 
+
+**Deliver Crowns contract**
+* has new image to make it clearer what job you're taking
+* allows you to spend up to your total pay for the job before punishing you. 
+* only impacts your reputation with the town, doesn't spawn enemies 
+
+**Other changes**
+Several hundred new names and titles added for characters and enemies (Slick liquid)
 Goblin city will scale with time, after 400,300,200,100 days by difficulty, at a rate of +20% per hundred days 
+
+**Fixes**
 Mountain helm and armor gain named randomisation 
 Fixes lag in marketplaces 
 Fixes crash from bleed inducers not knowing if they're on the map 
@@ -2788,3 +2822,4 @@ Fixes peddlers getting ammo but not crossbows
 Fixes error when necromancer armor didn't initiate 
 Fixes error when zombie bite wasn't being applied  
 Fixes error when a gatherer finds an antidote and crashes camp  
+Fixes incorrect camouflage tooltip 

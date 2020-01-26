@@ -52,10 +52,10 @@ this.bleeding_effect <- this.inherit("scripts/skills/skill", {
 		}
 
 		//If Swallowed and not on the map, can't be counted for bleed kills, it crashes the game
-		if (this.m.Actor.getSkills().hasSkill("effects.swallowed_whole"))
-		{
-			return this.getContainer().getActor();
-		}
+		//if (this.m.Actor.isPlacedOnMap())
+		// {
+		// 	return this.getContainer().getActor();
+		// }
 
 		if (this.m.Actor.getTags().get("Devoured") == true)
 		{
