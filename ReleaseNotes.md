@@ -2758,6 +2758,8 @@ XP increased for bandit veterans, bandit lords, orc elites, orc warlords, knight
 On legendary combat difficulty, zombie bite will resurrect felled enemies like a warlock scythe 
 Legion can now recruit high tier combat backgrounds once per week at the black monolith
 Reinforced nets have a 50% chance to be returned unbroken 
+Drums of war is now War Chant 
+Drums of life is now Song of Life 
 
 **Fixes** 
 Fixes tabard blueprint error causing some items to become uncraftable  
@@ -2776,3 +2778,13 @@ Noble troops wear their appropriate noble tabard layer
 Zombie bite no longer disappears after saving and loading 
 Legendary gheists no longer teleport to their deaths 
 
+13.2.4
+
+Goblin city will scale with time, after 400,300,200,100 days by difficulty, at a rate of +20% per hundred days 
+Mountain helm and armor gain named randomisation 
+Fixes lag in marketplaces 
+Fixes crash from bleed inducers not knowing if they're on the map 
+Fixes peddlers getting ammo but not crossbows 
+Fixes error when necromancer armor didn't initiate 
+Fixes error when zombie bite wasn't being applied  
+Fixes error when a gatherer finds an antidote and crashes camp  

@@ -253,7 +253,7 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 			secondary.extend([
 				"scripts/items/accessory/berserker_mushrooms_item",
 				"scripts/items/accessory/legend_apothecary_mushrooms_item",
-				"scripts/items/misc/antidote_item",
+				"scripts/items/accessory/antidote_item",
 				"scripts/items/accessory/poison_item",
 				"scripts/items/supplies/medicine_item"
 			])
