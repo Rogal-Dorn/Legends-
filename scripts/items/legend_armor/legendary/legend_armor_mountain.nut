@@ -5,6 +5,15 @@ this.legend_armor_mountain <- this.inherit("scripts/items/legend_armor/named/leg
 		this.legend_named_armor.create();
 		this.m.ID = "legend_armor.body.legend_mountain_armor";
 		this.m.Name = "Armor of the Mountain";
+		this.m.NameList = [
+			"Titan Coat",
+			"Mountain Hide",
+			"Giant\'s Coat",
+			"Earthquake Harness",
+			"Landslide Coat",
+			"Boulder Plates",
+			"Coat of the Mountain"
+		];
 		this.m.Description = "Armor crafted from the skin and bones of a mighty rock unhold, the beast may be dead, but it continues to mend itself even after death.";
 		this.m.SlotType = this.Const.ItemSlot.Body;
 		this.m.IsDroppedAsLoot = true;

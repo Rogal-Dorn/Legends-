@@ -1363,6 +1363,15 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				bro.addXP(this.Math.max(1, this.Math.floor(XPgroup / brothers.len())));
 			}
 		}
+
+		local roster = World.getPlayerRoster().getAll()
+		foreach(reserve in roster)
+		{
+			if (reserve.isInReserves() && reserve.isAlive() &&  reserve.getSkills().hasSkill("perk.legend_peaceful"))
+			{
+			this.addXP(XPgroup);
+			}
+		}
 	}
 
 	function setMoraleState( _m )

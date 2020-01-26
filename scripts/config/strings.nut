@@ -1707,7 +1707,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendHorsePassage = "Training the legs to raise higher and push harder can prepare horses for rough or muddy terrain. Decreases movement costs on rough terrain",
 	LegendDrumsOfLife = "Learn powerful rythms that drive your allies on. Unlocks the Drums of Life skill that restores [color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] health to every ally within three tiles. Can only be used with a Drum or Lute equipped. \n[color=#0b0084]From the Bard perk group[/color]",
 	LegendLacerate = "Lust for blood courses through your veins, each stroke rips and tears with a ferocity that intensifies as you bleed. Gain a chance to inflict bleeding with every strike, equal to your percentage of missing health.",
-	LegendPeaceful = "Not all folks are built for war, some find contentment in contemplation or practicing a trade. This character becomes content with being in reserve, consumes half rations while in reserve. [color=#0b0084]From the Calm perk group[/color]",
+	LegendPeaceful = "Not all folks are built for war, some find contentment in contemplation or practicing a trade. This character becomes content with being in reserve, consumes half rations while in reserve and gains XP while in reserve. [color=#0b0084]From the Calm perk group[/color]",
 	LegendSummonHound = "Forming close bonds with hounds grants to teh ability to call to them. Summon a loyal hound to your side in battle.",
 	LegendSummonWolf = "Cultivating a relationship with the wolves allows you to call them to your side. Summon a wolf to aid you in battle.",
 	LegendSummonFalcon = "Years spent feeding and caring for falcons has made them your friends. Summon a falcon to guide you in battle.",
