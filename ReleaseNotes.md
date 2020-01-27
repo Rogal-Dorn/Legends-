@@ -2829,3 +2829,18 @@ Fixes error when necromancer armor didn't initiate
 Fixes error when zombie bite wasn't being applied  
 Fixes error when a gatherer finds an antidote and crashes camp  
 Fixes incorrect camouflage tooltip 
+Fixes the ability to get so drunk it crashes the game 
+
+13.2.5
+
+Slingstaff 
+Carrying heavy stones around is not easy, and flinging them is tiring. 
+* fatigue modifier increased to -20 from -12, 
+* sling heavy stone fatigue cost increased from 25 to 50 
+* durability reduced from 100 to 40 to match staff
+* uses slingstaff bash instead of staff bash, AP increased from 4 to 6
+
+**Fixes**
+Fixes settlement's laggin due to excess greed 
+Fixes another bleed crash by making bleed attributions only apply to the player. 
+
