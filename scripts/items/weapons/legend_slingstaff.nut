@@ -21,9 +21,9 @@ this.legend_slingstaff <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RangeMin = 2;
 		this.m.RangeMax = 9;
 		this.m.RangeIdeal = 9;
-		this.m.StaminaModifier = -12;
-		this.m.Condition = 100.0;
-		this.m.ConditionMax = 100.0;
+		this.m.StaminaModifier = -20;
+		this.m.Condition = 40.0;
+		this.m.ConditionMax = 40.0;
 		this.m.RegularDamage = 45;
 		this.m.RegularDamageMax = 60;
 		this.m.ArmorDamageMult = 1.5;
@@ -36,7 +36,7 @@ this.legend_slingstaff <- this.inherit("scripts/items/weapons/weapon", {
 		this.weapon.onEquip();
 		local aimed_shot = this.new("scripts/skills/actives/legend_sling_heavy_stone_skill");
 		this.addSkill(aimed_shot);
-		this.addSkill(this.new("scripts/skills/actives/legend_staff_bash"));
+		this.addSkill(this.new("scripts/skills/actives/legend_slingstaff_bash"));
 	}
 
 });

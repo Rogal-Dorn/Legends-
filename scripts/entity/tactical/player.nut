@@ -2566,13 +2566,6 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			}
 		}
 
-		foreach (bro in this.World.getPlayerRoster().getAll())
-		{
-			if (bro.getSkills().hasSkill("perk.legend_barter_greed"))
-			{
-			mod -= (mod / 2);
-			}
-		}
 
 		return mod;
 	}

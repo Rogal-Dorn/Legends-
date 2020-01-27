@@ -56,7 +56,7 @@ this.legend_sling_heavy_stone_skill <- this.inherit("scripts/skills/skill", {
 		this.m.InjuriesOnHead = this.Const.Injury.BluntHead;
 		this.m.DirectDamageMult = 0.35;
 		this.m.ActionPointCost = 8;
-		this.m.FatigueCost = 25;
+		this.m.FatigueCost = 50;
 		this.m.MinRange = 3;
 		this.m.MaxRange = 9;
 		this.m.MaxLevelDifference = 8;

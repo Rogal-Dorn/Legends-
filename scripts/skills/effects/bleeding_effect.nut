@@ -51,16 +51,28 @@ this.bleeding_effect <- this.inherit("scripts/skills/skill", {
 			return this.getContainer().getActor();
 		}
 
-		//If Swallowed and not on the map, can't be counted for bleed kills, it crashes the game
-		//if (this.m.Actor.isPlacedOnMap())
-		// {
-		// 	return this.getContainer().getActor();
-		// }
-
-		if (this.m.Actor.getTags().get("Devoured") == true)
+		// Only players get credit for bleeds, to stop crashes 
+		if (this.m.Actor.getFaction() != this.Const.Faction.Player)
 		{
 			return this.getContainer().getActor();
 		}
+
+		// Must be alive to get the credit, to stop crashes 
+		if (!this.m.Actor.isAlive())
+		{
+			return this.getContainer().getActor();
+		}
+
+		// If Swallowed and not on the map, can't be counted for bleed kills, it crashes the game
+		 if (this.m.Actor.isPlacedOnMap())
+		 {
+		 	return this.getContainer().getActor();
+		 }
+
+         if (this.m.Actor.getTags().get("Devoured") == true)
+		 {
+		 	return this.getContainer().getActor();
+		 }
 
 		return this.m.Actor;
 	}
