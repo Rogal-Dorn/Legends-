@@ -1369,7 +1369,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		{
 			if (bro.isInReserves() && bro.getSkills().hasSkill("perk.legend_peaceful"))
 			{
-			this.addXP(this.Math.max(1, this.Math.floor(XPgroup / roster.len()));
+				bro.addXP(this.Math.max(1, this.Math.floor(XPgroup / brothers.len())));
 			}
 		}
 	}
