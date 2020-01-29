@@ -2841,6 +2841,6 @@ Carrying heavy stones around is not easy, and flinging them is tiring.
 * uses slingstaff bash instead of staff bash, AP increased from 4 to 6
 
 **Fixes**
-Fixes settlement's laggin due to excess greed 
+Fixes settlement's lagging due to excess greed 
 Fixes another bleed crash by making bleed attributions only apply to the player. 
 
