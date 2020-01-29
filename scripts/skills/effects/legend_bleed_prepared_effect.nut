@@ -75,7 +75,10 @@ this.legend_bleed_prepared_effect <- this.inherit("scripts/skills/skill", {
 			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_targetEntity) + " is bleeding");
 		}
 		local effect = this.new("scripts/skills/effects/bleeding_effect")
-		effect.setActor(this.getContainer().getActor());
+					if (this.getContainer().getActor().getFaction() == this.Const.Faction.Player )
+					{
+					effect.setActor(this.getContainer().getActor());
+					}
 		_targetEntity.getSkills().add(effect);
 	}
 
