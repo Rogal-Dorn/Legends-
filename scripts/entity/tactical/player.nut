@@ -46,7 +46,8 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		StarWeights = [50,50,50,50,50,50,50,50],
 		Alignment = null,
 		IsAlignmentAssigned = false,
-		ActiveRelationships = []
+		ActiveRelationships = array(27, null),
+		CompanyID = -1
 	},
 	function setName( _value )
 	{
@@ -883,6 +884,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		}
 
 		this.World.Assets.getOrigin().onHiredByScenario(this);
+		this.m.CompanyID = this.World.State.addNewID(this);
 
 		foreach ( b in this.World.getPlayerRoster().getAll() )
 		{
@@ -2175,24 +2177,44 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.add(this.new("scripts/skills/traits/legend_alignment_0" + this.m.Alignment));
 	}
 
+	function getCompanyID()
+	{
+		return this.m.CompanyID;
+	}
+	function setCompanyID( _num ) //used for scenario start only?
+	{
+		this.m.CompanyID = _num;
+	}
+
 	function changeActiveRelationship( _actor, _amount )
 	{
+		if ( _actor == this )
+		{
+			return;
+		}
 		if ( !( this.hasActiveRelationshipWith(_actor) ) )
 		{
+			
 			this.createActiveRelationship(_actor);
 		}
-		foreach ( relation in this.m.ActiveRelationships )
+		this.m.ActiveRelationships[_actor.getCompanyID()].RelationNum += _amount;
+		/*foreach ( relation in this.m.ActiveRelationships )
 		{
 			if ( relation.ActorRef == _actor )
 			{
 				relation.RelationNum += _amount;
 			}
-		}
+		}*/
 	}
 
 	function hasActiveRelationshipWith( _actor )
 	{
-		foreach ( relation in this.m.ActiveRelationships )
+		if ( this.m.ActiveRelationships[_actor.getCompanyID()] == null )
+		{
+			return false;
+		}
+		return true;
+		/*foreach ( relation in this.m.ActiveRelationships )
 		{
 			if ( relation.ActorRef == -1 ) //only is ever null if we nulled out the actor because the previous actor there died and hasnt been re-assigned to new active relationship
 			{
@@ -2203,7 +2225,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				return true;
 			}
 		}
-		return false;
+		return false;*/
 	}
 
 	function createActiveRelationship( _actor )
@@ -2215,11 +2237,10 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		}
 
 		local newRelationship = {};
-		newRelationship.ActorRef <- _actor;
 		newRelationship.RelationNum <- 0;
 
-
-		if ( this.m.ActiveRelationships.len() == 0 )
+		this.m.ActiveRelationships[_actor.getCompanyID()] = newRelationship;
+		/*if ( this.m.ActiveRelationships.len() == 0 )
 		{
 			this.m.ActiveRelationships.append(newRelationship);
 			return;
@@ -2235,10 +2256,14 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			}
 		}
 
-		this.m.ActiveRelationships.append(newRelationship); //if we got to this line it means we didnt have any nulls which means no one died previously so have to add new
+		this.m.ActiveRelationships.append(newRelationship); //if we got to this line it means we didnt have any nulls which means no one died previously so have to add new*/
 
 	}
 
+	function nullRelation( _id )
+	{
+		this.m.ActiveRelationships[_id] = null;
+	}
 
 	//slow as shit way of doing this, is there a better way? should only happen on death of the brother dying though so maybe not too bad?
 	function removeActiveRelationship()
@@ -2246,6 +2271,11 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 		local brothers = this.World.getPlayerRoster().getAll();
 		foreach ( b in brothers )
+		{
+			b.nullRelation(this.getCompanyID());
+		}
+		this.World.State.removeCompanyID(this.m.CompanyID);
+		/*foreach ( b in brothers )
 		{
 			foreach ( relation in b.getActiveRelationships() )
 			{
@@ -2257,28 +2287,29 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 					break;
 				}
 			}
-		}
+		}*/
 	}
 	
 	function getActiveRelationshipWith( _actor )
 	{
-		foreach ( relation in this.m.ActiveRelationships ) 
+		return this.m.ActiveRelationships[_actor.getCompanyID()];
+		/*foreach ( relation in this.m.ActiveRelationships ) 
 		{
 			if ( relation.ActorRef == _actor ) //may need ot be weaktableref depends on what the caller is calling in with i really dont know its hard to test for me
 			{
 				return relation.RelationNum;
 			}
-		}
+		}*/
 	}
 
 	function getActiveRelationshipsTraitText()
 	{
 		local returnString = "";
-		foreach ( relation in this.m.ActiveRelationships )
+		foreach ( index, relation in this.m.ActiveRelationships )
 		{
-			if ( relation.ActorRef != -1 )
+			if ( relation != null )
 			{
-				returnString += "Relationship to " + relation.ActorRef.getName() + ": " + relation.RelationNum + "\n";
+				returnString += "Relationship to " + this.World.State.getRefFromID(index).getNameOnly() + ": " + relation.RelationNum + "\n";
 			}
 		}
 		if (returnString == "")
@@ -2915,21 +2946,24 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		_out.writeU8(this.m.Alignment);
 		_out.writeBool(this.m.IsAlignmentAssigned);
 		
+		_out.writeU8(this.m.CompanyID);
+
 		//keys are just string values
-		foreach (relation in this.m.ActiveRelationships)
+		foreach (index, relation in this.m.ActiveRelationships)
 		{
-			foreach (key, value in relation)
+			if (relation != null)
+			{
+				_out.writeString("CharID");
+				_out.writeU16(index);
+
+				foreach (key, value in relation)
 			{
 				_out.writeString(key);
-				if (key == "ActorRef")
-				{
-					_out.writeU32(value.getPlaceInFormation());
-				}
-				else
-				{
-					_out.writeI16(value);
-				}
+				_out.writeI16(value);
 			}
+
+			}
+			
 		}
 		//adds a string with STOP so we know when to stop reading in in onDeserialize(?) this should bechanged probably
 		_out.writeString("STOP");
@@ -3049,17 +3083,18 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		if (_in.getMetaData().getVersion() >= 65) //THIS SHOULD BE CHANGED TO ACTUAL NUMBER WHEN IN RELEASE BUILD 
 			this.m.Alignment = _in.readU8();
 			this.m.IsAlignmentAssigned = _in.readBool();
+
+			this.m.CompanyID = _in.readU8();
 			
 			local keys = _in.readString(); //puts STOP if we had norelations etc
 			local i = -1;
 			while ( keys != "STOP" )
 			{
 
-				if ( keys == "ActorRef" ) //new actor's relation
+				if ( keys == "CharID" ) //new actor's relation
 				{
-					i = i + 1;
-					this.m.ActiveRelationships.append({});
-					this.m.ActiveRelationships[i].ActorRef <- _in.readU32();
+					i = _in.readU16();
+					this.m.ActiveRelationships[i] = {};
 				}
 				else
 				{
