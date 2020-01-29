@@ -39,7 +39,7 @@ this.perk_inspiring_presence <- this.inherit("scripts/skills/skill", {
 					ally.setMoraleState(this.Const.MoraleState.Wavering);
 					this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(ally) + " is wavering after being scared by a speech");
 				}
-				else if (r >= resolve / 3)
+				else if (r >= resolve_ally / 3)
 				{
 					ally.setMoraleState(this.Const.MoraleState.Confident);
 					this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(ally) + " is confident due to an inspiring speech");
