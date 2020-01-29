@@ -2843,4 +2843,8 @@ Carrying heavy stones around is not easy, and flinging them is tiring.
 **Fixes**
 Fixes settlement's lagging due to excess greed 
 Fixes another bleed crash by making bleed attributions only apply to the player. 
-
+Fixes backwards compatibility with nexus build due to mountain gear 
+Bleed no longer gets attributed unless the attacker is player controlled 
+Bleed doesn't check for devoured and placed on map unless the attribution is being set. 
+Fixes the broken rune errors 
+Fixes choke description 
