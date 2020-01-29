@@ -165,7 +165,10 @@ this.legend_bear_claws <- this.inherit("scripts/skills/skill", {
 				else if (!target.getCurrentProperties().IsImmuneToBleeding && hp - target.getHitpoints() >= this.Const.Combat.MinDamageToApplyBleeding)
 				{
 					local effect = this.new("scripts/skills/effects/bleeding_effect");
+					if (_user.getFaction() == this.Const.Faction.Player )
+					{
 					effect.setActor(this.getContainer().getActor());
+					}
 					effect.setDamage(5);
 					target.getSkills().add(effect);
 					this.Sound.play(this.m.SoundsA[this.Math.rand(0, this.m.SoundsA.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());

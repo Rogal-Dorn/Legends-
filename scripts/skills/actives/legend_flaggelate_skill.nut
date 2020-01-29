@@ -106,7 +106,7 @@ this.legend_flaggelate_skill <- this.inherit("scripts/skills/skill", {
 					this.Sound.play(this.m.SoundsB[this.Math.rand(0, this.m.SoundsB.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
 				}
 			}
-			else if (!target.getCurrentProperties().IsImmuneToBleeding && hp - target.getHitpoints() >= this.Const.Combat.MinDamageToApplyBleeding)
+			else if (!target.getCurrentProperties().IsImmuneToBleeding && hp - target.getHitpoints() >= this.Const.Combat.MinDamageToApplyBleeding && this.m.Actor.getFaction() == this.Const.Faction.Player )
 			{
 				local effect = this.new("scripts/skills/effects/bleeding_effect");
 				effect.setActor(this.getContainer().getActor());
