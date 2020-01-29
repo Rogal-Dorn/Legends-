@@ -1365,11 +1365,11 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		}
 
 		local roster = World.getPlayerRoster().getAll()
-		foreach(reserve in roster)
+		foreach(bro in roster)
 		{
-			if (reserve.isInReserves() && reserve.isAlive() &&  reserve.getSkills().hasSkill("perk.legend_peaceful"))
+			if (bro.isInReserves() && bro.getSkills().hasSkill("perk.legend_peaceful"))
 			{
-			this.addXP(XPgroup);
+			this.addXP(this.Math.max(1, this.Math.floor(XPgroup / roster.len()));
 			}
 		}
 	}
