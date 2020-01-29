@@ -25,6 +25,7 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			local bro;
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.m.HireTime = this.Time.getVirtualTimeF();
+			bro.m.CompanyID = i;
 			bro.improveMood(1.0, "Has slain a dangerous witch");
 			bro.worsenMood(3.0, "Lost most of the company in a betrayal");
 
