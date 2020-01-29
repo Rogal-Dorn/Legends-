@@ -2831,16 +2831,16 @@ Fixes error when a gatherer finds an antidote and crashes camp
 Fixes incorrect camouflage tooltip 
 Fixes the ability to get so drunk it crashes the game 
 
-13.2.5 slinging fixes 
+13.2.5 Fixer Uppers 
 
 Slingstaff 
 Carrying heavy stones around is not easy, and flinging them is tiring. 
 * fatigue modifier increased to -20 from -12, 
 * sling heavy stone fatigue cost increased from 25 to 50 
 * durability reduced from 100 to 40 to match staff
-* uses slingstaff bash instead of staff bash, AP increased from 4 to 6
+* uses slingstaff bash instead of staff bash, does half damage 
 
-Game text:  (slick liquid)
+**Game text:**  (slick liquid)
 *20 new ship names
 *36 new merc company names
 *33 new noble house names
@@ -2859,7 +2859,9 @@ Game text:  (slick liquid)
 *Changes**
 Enemies more likely to hit with puncture
 Slaughterer effectiveness reduced by 1/3rd 
-hammer and pickaxe get sundering strikes instead of bruiser 
+Hammer and pickaxe perk groups get sundering strikes instead of bruiser to avoid duplication 
+Dismissal now costs the same as a tryout 
+Reverts to vanilla crisis strength requirement, no longer begins at war. 
 
 **Fixes**
 Fixes settlement's lagging due to excess greed 
