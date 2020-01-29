@@ -128,8 +128,19 @@ this.town_hire_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 		{
 			local roster = this.World.getPlayerRoster();
 			local entities = roster.getAll();
+			local currentMoney = this.World.Assets.getMoney();
+			local tryoutCost = entry.getTryoutCost();
+
+			if (currentMoney < tryoutCost)
+			{
+				return {
+					Result = this.Const.UI.Error.NotEnoughMoney,
+					Assets = null
+				};
+			}				
 
 			this.World.getRoster(this.m.RosterID).remove(entry);
+			this.World.Assets.addMoney(-tryoutCost);
 
 			if (this.World.getRoster(this.m.RosterID).getSize() == 0)
 			{
