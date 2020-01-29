@@ -165,7 +165,7 @@ gt.Const.Perks.HammerClassTree <- {
 		[],
 		[gt.Const.Perks.PerkDefs.LegendSpecialistHammerDamage],
 		[],
-		[gt.Const.Perks.PerkDefs.Bruiser],
+		[gt.Const.Perks.PerkDefs.SunderingStrikes],
 		[],
 		[]
 	]
@@ -197,7 +197,7 @@ gt.Const.Perks.PickaxeClassTree <- {
 		[],
 		[gt.Const.Perks.PerkDefs.LegendSpecialistPickaxeDamage],
 		[],
-		[gt.Const.Perks.PerkDefs.Bruiser],
+		[gt.Const.Perks.PerkDefs.SunderingStrikes],
 		[],
 		[]
 	]

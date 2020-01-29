@@ -98,6 +98,10 @@ this.puncture <- this.inherit("scripts/skills/skill", {
 		{
 		mod += 0.25;
 		}
+        if (_targetEntity.getFaction() == this.Const.Faction.Player )
+		{
+			mod += 0.75;
+		}
 		local chance = _targetEntity.getFatiguePct();
 		return (chance + mod);
 	}

@@ -16,8 +16,8 @@ this.perk_slaughterer <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		local actor = this.getContainer().getActor();
-		_properties.FatalityChanceMult = 1000.0;
-		actor.modifyFlatOnKillOtherActorModifier(-15);
+		_properties.FatalityChanceMult = 100.0;
+		actor.modifyFlatOnKillOtherActorModifier(-10);
 	}
 
 

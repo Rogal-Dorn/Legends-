@@ -2831,7 +2831,7 @@ Fixes error when a gatherer finds an antidote and crashes camp
 Fixes incorrect camouflage tooltip 
 Fixes the ability to get so drunk it crashes the game 
 
-13.2.5
+13.2.5 slinging fixes 
 
 Slingstaff 
 Carrying heavy stones around is not easy, and flinging them is tiring. 
@@ -2840,6 +2840,27 @@ Carrying heavy stones around is not easy, and flinging them is tiring.
 * durability reduced from 100 to 40 to match staff
 * uses slingstaff bash instead of staff bash, AP increased from 4 to 6
 
+Game text:  (slick liquid)
+*20 new ship names
+*36 new merc company names
+*33 new noble house names
+*23 new names for oceans
+*35 new names for fields
+*20 new names for swamps
+*14 new names for hills
+*18 new names for woods
+*9 new names for frozen forests
+*2 new names for autumn forests
+*33 new names for mountains
+*23 new names for frozen wastelands
+*23 new names for barbarian lands
+*16 new names for scrublands
+
+*Changes**
+Enemies more likely to hit with puncture
+Slaughterer effectiveness reduced by 1/3rd 
+hammer and pickaxe get sundering strikes instead of bruiser 
+
 **Fixes**
 Fixes settlement's lagging due to excess greed 
 Fixes another bleed crash by making bleed attributions only apply to the player. 
@@ -2847,4 +2868,6 @@ Fixes backwards compatibility with nexus build due to mountain gear
 Bleed no longer gets attributed unless the attacker is player controlled 
 Bleed doesn't check for devoured and placed on map unless the attribution is being set. 
 Fixes the broken rune errors 
+Fixes banshees teleporting to their death 
 Fixes choke description 
+Fixes error in Lindwurm stats (wuxiang) 
