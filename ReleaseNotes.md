@@ -2831,7 +2831,7 @@ Fixes error when a gatherer finds an antidote and crashes camp
 Fixes incorrect camouflage tooltip 
 Fixes the ability to get so drunk it crashes the game 
 
-13.2.5 Fixer Uppers 
+13.2.5 Well Slung 
 
 Slingstaff 
 Carrying heavy stones around is not easy, and flinging them is tiring. 
@@ -2873,3 +2873,18 @@ Fixes the broken rune errors
 Fixes banshees teleporting to their death 
 Fixes choke description 
 Fixes error in Lindwurm stats (wuxiang) 
+
+13.2.5b Unslung hero 
+
+Reverts the slingstaff changes  
+fixes the bleed crashes  (wuxiang) 
+Puncture and choke reworked to have a higher lowest hit chance (wuxiang) 
+Noble leather durability buffed from 65 to 75 (wuxiang) 
+Named cloaks lowered from 25k to 10k (wuxiang) 
+Halberd condition increased from 72 to 85 (wuxiang) 
+Fixed smoked ham being uncookable (wuxiang) 
+
+
+
+
+ 
