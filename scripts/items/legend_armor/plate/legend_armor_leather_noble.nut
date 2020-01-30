@@ -14,8 +14,8 @@ this.legend_armor_leather_noble <- this.inherit("scripts/items/legend_armor/lege
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.Value = 1500;
-		this.m.Condition = 65;
-		this.m.ConditionMax = 65;
+		this.m.Condition = 75;
+		this.m.ConditionMax = 75;
 		this.m.StaminaModifier = -8;
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
 	}
