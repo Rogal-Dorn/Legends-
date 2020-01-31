@@ -53,7 +53,7 @@ this.legend_armor_named_tabard <- this.inherit("scripts/items/legend_armor/legen
 			id = 15,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Increase the Resolve of the wearer by [color=" + this.Const.UI.Color.PositiveValue + "]+" + val +"[/color]"
+			text = "Increase the Resolve of the wearer by [color=" + this.Const.UI.Color.PositiveValue + "]+" + val +"%[/color]"
 		});
 		return result;
 	}
@@ -65,7 +65,7 @@ this.legend_armor_named_tabard <- this.inherit("scripts/items/legend_armor/legen
 			id = 15,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Increase the Resolve of the wearer by [color=" + this.Const.UI.Color.PositiveValue + "]+" + val +"[/color]"
+			text = "Increase the Resolve of the wearer by [color=" + this.Const.UI.Color.PositiveValue + "]+" + val +"%[/color]"
 		});
 	}
 
