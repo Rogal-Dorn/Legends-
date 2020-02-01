@@ -2885,14 +2885,18 @@ Halberd condition increased from 72 to 85 (wuxiang)
 Fixed smoked ham being uncookable (wuxiang) 
 
 
-13.3.2  Go Slow 
+13.3.2  Slow and Soft  (experimental) 
 
 Reverts to vanilla AI timings, slowing down turn times. May fix:
 * invisible unholds
 * rotation crashes 
 * next turn order freezes 
-* Miscellaneous strange freezes 
+* Miscellaneous strange freezes
+
+Fatigue costs reduced across 24 plate armors  
 Adds back in brain damage allowing cultist conversion (salty)
 Freedom of movement tooltip updated (salty) 
 Fixes demon hound crash (wuxiang) 
+prepare bleed lasts slightly longer 
 Fixes double strike 
+Fixes lindwurm, mountain and skin armors requiring layered and non-layered components at the same time 
