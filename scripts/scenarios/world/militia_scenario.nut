@@ -138,6 +138,11 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		bros[11].getBackground().m.RawDescription = "%name% is, ostensibly, running away from his wife. You met her once and approve his escape plan entirely, and not just because it affords you another body on the front line.That wench is genuinely crazy.";
 		bros[11].improveMood(1.0, "Managed to get away from his wife");
 		bros[11].setVeteranPerks(3);	
+		foreach( bro in bros )
+		{
+			local val = this.World.State.addNewID(bro);
+			bro.m.CompanyID = val;
+		}
 		this.World.Assets.m.BusinessReputation = -100;
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));

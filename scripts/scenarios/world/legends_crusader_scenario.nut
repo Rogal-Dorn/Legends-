@@ -32,6 +32,9 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 		bro.getTags().set("IsPlayerCharacter", true);
 		bro.getSprite("miniboss").setBrush("bust_miniboss_lone_wolf");
 		bro.m.HireTime = this.Time.getVirtualTimeF();
+		local val = this.World.State.addNewID(bro);
+		bro.m.CompanyID = val;
+	
 		this.World.Assets.m.BusinessReputation = 100;
 		this.World.Assets.m.Ammo = 0;
 

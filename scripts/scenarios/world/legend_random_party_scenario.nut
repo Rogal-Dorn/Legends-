@@ -36,6 +36,11 @@ this.legend_random_party_scenario <- this.inherit("scripts/scenarios/world/start
 			bro.setVeteranPerks(2);
 		}
 
+		foreach( bro in bros )
+		{
+			local val = this.World.State.addNewID(bro);
+			bro.m.CompanyID = val;
+		}
 
 		local randomFood;
 		randomFood = this.Math.rand(0, 5);
