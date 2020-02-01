@@ -19,7 +19,7 @@ this.legend_armor_plate_ancient_scale <- this.inherit("scripts/items/legend_armo
 		this.m.Value = 1200;
 		this.m.Condition = 85;
 		this.m.ConditionMax = 85;
-		this.m.StaminaModifier = -16;
+		this.m.StaminaModifier = -13;
         this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
 	}
 

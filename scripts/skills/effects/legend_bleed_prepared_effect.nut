@@ -47,7 +47,7 @@ this.legend_bleed_prepared_effect <- this.inherit("scripts/skills/skill", {
 
 	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
-		--this.m.AttacksLeft;
+	
 
 		if (this.m.AttacksLeft <= 0)
 		{
@@ -80,6 +80,7 @@ this.legend_bleed_prepared_effect <- this.inherit("scripts/skills/skill", {
 					effect.setActor(this.getContainer().getActor());
 					}
 		_targetEntity.getSkills().add(effect);
+		--this.m.AttacksLeft;
 	}
 
 	function onTargetMissed( _skill, _targetEntity )
