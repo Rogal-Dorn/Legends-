@@ -2177,16 +2177,31 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.add(this.new("scripts/skills/traits/legend_alignment_0" + this.m.Alignment));
 	}
 
+
 	function getCompanyID()
 	{
 		return this.m.CompanyID;
 	}
-	function setCompanyID( _num ) //used for scenario start only?
+
+	//Only used occaisionally, shouldn't call this specifically 
+	//Probably would be unused function
+	//Check world_state::addNewID and in this_file::onHired to see how w add company IDs to brothers
+	function setCompanyID( _num )
 	{
 		this.m.CompanyID = _num;
 	}
 
-	function changeActiveRelationship( _actor, _amount )
+	//If we don't have an active relationship with the actor create one -> then change the Key by the amount
+	//Most of the time we just change the relation number as of now so defaulting to RelationNum
+	//otherwise if we want to change specific key by the amount do that here
+	//We use _set = false to just stack onto the old relationship modifier
+	//If it's true then we overwrite the old modifier
+	//i.e. if relnum = 10 and we do ( _actor, 15, true ) -> relNum trns into 15
+	//or we can do ( _actor, 5 ) -> relNum turns to 15 also
+	//To use non-numeric keys it's trcky but use the following
+	// bro.cAR(bro2, true, [anything for set], keyValue)
+	//	bro.cAR(bro2, false, [anything], keyVal)
+	function changeActiveRelationship( _actor, _amount, _key = "RelationNum", _set = false )
 	{
 		if ( _actor == this )
 		{
@@ -2197,16 +2212,30 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			
 			this.createActiveRelationship(_actor);
 		}
-		this.m.ActiveRelationships[_actor.getCompanyID()].RelationNum += _amount;
-		/*foreach ( relation in this.m.ActiveRelationships )
+		
+		local arrIndex = _actor.getCompanID();
+		local amtType = typeof _amount;
+		if (_set || (amtType != "integer" && amtType != "float"))
 		{
-			if ( relation.ActorRef == _actor )
+			this.m.ActiveRelationships[arrIndex][_key] <- _amount;
+		}
+		else
+		{
+			if (_key in this.m.ActiveRelationships[arrIndex])
 			{
-				relation.RelationNum += _amount;
+				this.m.ActiveRelationships[arrIndex][_key] += _amount;
 			}
-		}*/
+			else
+			{
+				this.m.ActiveRelationships[arrIndex][_key] <- _amount;
+			}
+		}
+		
+		
 	}
 
+	//If the array index isn't null anymore then we have a rel with
+	//It should only ever be null if the relationship was previously made null by removing	
 	function hasActiveRelationshipWith( _actor )
 	{
 		if ( this.m.ActiveRelationships[_actor.getCompanyID()] == null )
@@ -2214,20 +2243,10 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			return false;
 		}
 		return true;
-		/*foreach ( relation in this.m.ActiveRelationships )
-		{
-			if ( relation.ActorRef == -1 ) //only is ever null if we nulled out the actor because the previous actor there died and hasnt been re-assigned to new active relationship
-			{
-				continue;
-			}
-			if ( relation.ActorRef == _actor )
-			{
-				return true;
-			}
-		}
-		return false;*/
 	}
 
+	//Simple rewrite of old relationship
+	//Cant have relationship on self
 	function createActiveRelationship( _actor )
 	{
 
@@ -2240,32 +2259,21 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		newRelationship.RelationNum <- 0;
 
 		this.m.ActiveRelationships[_actor.getCompanyID()] = newRelationship;
-		/*if ( this.m.ActiveRelationships.len() == 0 )
-		{
-			this.m.ActiveRelationships.append(newRelationship);
-			return;
-		}	
-
-		foreach ( relation in this.m.ActiveRelationships )
-		{
-			if ( relation.ActorRef == -1 )
-			{
-				relation.ActorRef = newRelationship.ActorRef;
-				relation.RelationNum = newRelationship.RelationNum;
-				return;
-			}
-		}
-
-		this.m.ActiveRelationships.append(newRelationship); //if we got to this line it means we didnt have any nulls which means no one died previously so have to add new*/
 
 	}
 
+	//Quick null to relationship when the brother dies
+	//Can call with below in case needed
+	//	foreach (bro in roster)
+	//	{
+	//		bro.nullRelation( actorWhoDied );
+	//	}
 	function nullRelation( _id )
 	{
 		this.m.ActiveRelationships[_id] = null;
 	}
 
-	//slow as shit way of doing this, is there a better way? should only happen on death of the brother dying though so maybe not too bad?
+	//Quick loop thru all brothers and null's according to company ID
 	function removeActiveRelationship()
 	{
 
@@ -2275,33 +2283,23 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			b.nullRelation(this.getCompanyID());
 		}
 		this.World.State.removeCompanyID(this.m.CompanyID);
-		/*foreach ( b in brothers )
-		{
-			foreach ( relation in b.getActiveRelationships() )
-			{
-
-				if ( relation.ActorRef == this.WeakTableRef(this) );
-				{
-					relation.ActorRef <- -1;
-					relation.RelationNum <- 0;
-					break;
-				}
-			}
-		}*/
 	}
 	
+
+	//Call this function by doing
+	//		getARW( actor )
+	//Use by doing
+	//		local relTable = getARW ( actor )
+	//		if ( [key] in relTable ) -> do stuff
+	//			if ( FriendshipToNotHitBonus in relTable ) -> give bonus to not hit friend
 	function getActiveRelationshipWith( _actor )
 	{
 		return this.m.ActiveRelationships[_actor.getCompanyID()];
-		/*foreach ( relation in this.m.ActiveRelationships ) 
-		{
-			if ( relation.ActorRef == _actor ) //may need ot be weaktableref depends on what the caller is calling in with i really dont know its hard to test for me
-			{
-				return relation.RelationNum;
-			}
-		}*/
 	}
 
+	//Used by the trait to get just a list of the characters relations
+	//Currently returns just the RelNum integer but can be changed to 
+	//		return strings, i.e. "%actor% likes %other actor%"
 	function getActiveRelationshipsTraitText()
 	{
 		local returnString = "";
@@ -2319,6 +2317,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		return returnString;
 	}
 
+	//Returns the entire AR Array
 	function getActiveRelationships()
 	{
 		return this.m.ActiveRelationships;
@@ -2949,6 +2948,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		_out.writeU8(this.m.CompanyID);
 
 		//keys are just string values
+
 		foreach (index, relation in this.m.ActiveRelationships)
 		{
 			if (relation != null)
@@ -2958,8 +2958,8 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 				foreach (key, value in relation)
 			{
-				_out.writeString(key);
-				_out.writeI16(value);
+				_out.writeString(key);//IF WE ADD ANY NON-INT KEYS YOU HAVE TO CHECK HERE WHAT TKEY STRING IS USING
+				_out.writeI16(value);// if ( key == __ ) THEN _out.WriteVARTYPE
 			}
 
 			}
@@ -3080,6 +3080,8 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		}
 
 
+		//IF WE ADD ANY NON-INT KEYS YOU HAVE TO CHECK HERE WHAT TKEY STRING IS USING
+		// if ( keys == __ ) THEN _in.readVARTYPE
 		if (_in.getMetaData().getVersion() >= 65) //THIS SHOULD BE CHANGED TO ACTUAL NUMBER WHEN IN RELEASE BUILD 
 			this.m.Alignment = _in.readU8();
 			this.m.IsAlignmentAssigned = _in.readBool();
