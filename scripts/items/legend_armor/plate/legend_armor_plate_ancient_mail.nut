@@ -19,7 +19,7 @@ this.legend_armor_plate_ancient_mail <- this.inherit("scripts/items/legend_armor
 		this.m.Value = 300;
 		this.m.Condition = 45;
 		this.m.ConditionMax = 45;
-		this.m.StaminaModifier = -9;
+		this.m.StaminaModifier = -7;
         this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
 	}
 

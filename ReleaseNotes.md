@@ -2885,6 +2885,14 @@ Halberd condition increased from 72 to 85 (wuxiang)
 Fixed smoked ham being uncookable (wuxiang) 
 
 
+13.3.2  Go Slow 
 
-
- 
+Reverts to vanilla AI timings, slowing down turn times. May fix:
+* invisible unholds
+* rotation crashes 
+* next turn order freezes 
+* Miscellaneous strange freezes 
+Adds back in brain damage allowing cultist conversion (salty)
+Freedom of movement tooltip updated (salty) 
+Fixes demon hound crash (wuxiang) 
+Fixes double strike 

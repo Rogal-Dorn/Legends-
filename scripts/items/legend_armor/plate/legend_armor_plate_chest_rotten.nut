@@ -19,7 +19,7 @@ this.legend_armor_plate_chest_rotten <- this.inherit("scripts/items/legend_armor
 		this.m.Value = 1250;
 		this.m.Condition = 100;
 		this.m.ConditionMax = 100;
-		this.m.StaminaModifier = -22;
+		this.m.StaminaModifier = -16;
         this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
 	}
 

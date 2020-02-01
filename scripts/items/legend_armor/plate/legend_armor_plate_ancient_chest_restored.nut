@@ -19,7 +19,7 @@ this.legend_armor_plate_ancient_chest_restored <- this.inherit("scripts/items/le
 		this.m.Value = 1000;
 		this.m.Condition = 95;
 		this.m.ConditionMax = 95;
-		this.m.StaminaModifier = -16;
+		this.m.StaminaModifier = -13;
         this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
 	}
 
