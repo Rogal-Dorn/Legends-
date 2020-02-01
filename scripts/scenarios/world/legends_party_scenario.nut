@@ -146,6 +146,13 @@ this.legends_party_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			this.Music.setTrackList(this.Const.Music.IntroTracks, this.Const.Music.CrossFadeTime);
 			this.World.Events.fire("event.legend_party_scenario_intro");
 		}, null);
+foreach (b in this.World.getPlayerRoster().getAll())
+		{
+			foreach (add in this.World.getPlayerRoster().getAll())
+			{
+				b.changeActiveRelationship(add, this.Math.rand(0, 10));
+			}
+		}
 	}
 
 });

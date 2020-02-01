@@ -100,6 +100,13 @@ this.legends_seer_scenario <- this.inherit("scripts/scenarios/world/starting_sce
 			], this.Const.Music.CrossFadeTime);
 			this.World.Events.fire("event.legend_seer_scenario_intro");
 		}, null);
+foreach (b in this.World.getPlayerRoster().getAll())
+		{
+			foreach (add in this.World.getPlayerRoster().getAll())
+			{
+				b.changeActiveRelationship(add, this.Math.rand(0, 10));
+			}
+		}
 
 	}
 
