@@ -56,6 +56,8 @@ this.lone_wolf_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		items.equip(this.new("scripts/items/armor/sellsword_armor"));
 		items.equip(this.new("scripts/items/helmets/bascinet_with_mail"));
 		items.equip(this.new("scripts/items/weapons/longsword"));
+		local val = this.World.State.addNewID(bro);
+		bro.m.CompanyID = val;
 		this.World.Assets.m.BusinessReputation = 200;
 		this.World.Tags.set("HasLegendCampTraining", true);
 		//this.World.Assets.getStash().resize(this.Math.min(10, this.World.Assets.getStash().getCapacity() - 9));

@@ -222,6 +222,11 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Ammo));
 		items.equip(this.new("scripts/items/weapons/light_crossbow"));
 		items.equip(this.new("scripts/items/ammo/quiver_of_bolts"));
+		foreach( bro in bros )
+		{
+			local val = this.World.State.addNewID(bro);
+			bro.m.CompanyID = val;
+		}
 		this.World.Tags.set("HasLegendCampScouting", true);
 		this.Time.scheduleEvent(this.TimeUnit.Real, 1000, function ( _tag )
 		{

@@ -49,7 +49,11 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		 	bro.setVeteranPerks(2);
 		 }
 
-
+		foreach( bro in bros )
+		{
+			local val = this.World.State.addNewID(bro);
+			bro.m.CompanyID = val;
+		}
 
 		this.World.Assets.m.Money = 50000;
 		this.World.Assets.m.ArmorParts = 200;
