@@ -19,7 +19,7 @@ this.legend_armor_plate_ancient_gladiator <- this.inherit("scripts/items/legend_
 		this.m.Value = 190;
 		this.m.Condition = 35;
 		this.m.ConditionMax = 35;
-		this.m.StaminaModifier = -6;
+		this.m.StaminaModifier = -5;
         this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
 	}
 

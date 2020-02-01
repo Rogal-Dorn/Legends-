@@ -20,7 +20,7 @@ this.legend_thick_plated_barbarian_armor <- this.inherit("scripts/items/legend_a
 		this.m.Value = 1250;
 		this.m.Condition = 145;
 		this.m.ConditionMax = 145;
-		this.m.StaminaModifier = -30;
+		this.m.StaminaModifier = -24;
 	}
 
 });

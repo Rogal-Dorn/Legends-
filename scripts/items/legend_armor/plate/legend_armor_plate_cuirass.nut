@@ -19,7 +19,7 @@ this.legend_armor_plate_cuirass <- this.inherit("scripts/items/legend_armor/lege
 		this.m.Value = 5000;
 		this.m.Condition = 150;
 		this.m.ConditionMax = 150;
-		this.m.StaminaModifier = -24;
+		this.m.StaminaModifier = -22;
         this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
 	}
 
