@@ -124,6 +124,13 @@ this.lone_wolf_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 			], this.Const.Music.CrossFadeTime);
 			this.World.Events.fire("event.lone_wolf_scenario_intro");
 		}, null);
+foreach (b in this.World.getPlayerRoster().getAll())
+		{
+			foreach (add in this.World.getPlayerRoster().getAll())
+			{
+				b.changeActiveRelationship(add, this.Math.rand(0, 10));
+			}
+		}
 
 	}
 

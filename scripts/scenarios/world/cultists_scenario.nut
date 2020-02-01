@@ -159,7 +159,13 @@ this.cultists_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 			this.Music.setTrackList(this.Const.Music.CivilianTracks, this.Const.Music.CrossFadeTime);
 			this.World.Events.fire("event.cultists_scenario_intro");
 		}, null);
-
+		foreach (b in this.World.getPlayerRoster().getAll())
+		{
+			foreach (add in this.World.getPlayerRoster().getAll())
+			{
+				b.changeActiveRelationship(add, this.Math.rand(0, 10));
+			}
+		}
 	}
 
 	function onUpdateDraftList( _list )
