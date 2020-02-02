@@ -20,7 +20,7 @@ this.legend_reinforced_animal_hide_armor <- this.inherit("scripts/items/legend_a
 		this.m.Value = 350;
 		this.m.Condition = 55;
 		this.m.ConditionMax = 55;
-		this.m.StaminaModifier = -9;
+		this.m.StaminaModifier = -7;
 	}
 
 });

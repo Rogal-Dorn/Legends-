@@ -9,9 +9,9 @@ this.legend_robes_wizard <- this.inherit("scripts/items/legend_armor/cloth/legen
 		this.m.Variant = 3;
 		this.updateVariant();
 		this.m.Value = 500;
-		this.m.Condition = 35;
-		this.m.ConditionMax = 35;
-		this.m.StaminaModifier = -1;
+		this.m.Condition = 20;
+		this.m.ConditionMax = 20;
+		this.m.StaminaModifier = 2;
 	}
 
 });

@@ -25,9 +25,9 @@ this.legend_armor_leather_jacket_named <- this.inherit("scripts/items/legend_arm
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.Value = 2000;
-		this.m.Condition = 30;
-		this.m.ConditionMax = 30;
-		this.m.StaminaModifier = -3;
+		this.m.Condition = 45;
+		this.m.ConditionMax = 45;
+		this.m.StaminaModifier = -2;
 		this.randomizeValues();
 	}
 
