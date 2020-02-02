@@ -47,15 +47,17 @@ this.legend_daze <- this.inherit("scripts/skills/skill", {
 				type = "text",
 				icon = "ui/icons/special.png",
 				text = "Leave your opponent bewildered, halving their damage, fatigue and initiative"
-			},
+			}
+		)
+		ret.push(
 			{
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
 				text = "Uses Ranged skill to hit. Hit chance doubled if you also have the Taunt perk."
 			}
+		)
 			
-			)
 		return ret;
 	}
 
