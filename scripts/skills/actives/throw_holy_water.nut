@@ -53,13 +53,13 @@ this.throw_holy_water <- this.inherit("scripts/skills/skill", {
 			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]20[/color] damage to hitpoints for [color=" + this.Const.UI.Color.DamageValue + "]3[/color] turns, all of which ignores armor"
 		});
 		ret.push({
-			id = 6,
+			id = 7,
 			type = "text",
 			icon = "ui/icons/special.png",
 			text = "Has a [color=" + this.Const.UI.Color.DamageValue + "]33%[/color] chance to hit bystanders at the same or lower height level as well."
 		});
 		ret.push({
-			id = 6,
+			id = 8,
 			type = "text",
 			icon = "ui/icons/special.png",
 			text = "Only affects undead targets"

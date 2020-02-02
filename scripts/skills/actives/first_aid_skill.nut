@@ -58,7 +58,7 @@ this.first_aid_skill <- this.inherit("scripts/skills/skill", {
 				text = "Removes the Bleeding status effect"
 			},
 			{
-				id = 7,
+				id = 8,
 				type = "text",
 				icon = "ui/icons/special.png",
 				text = "Removes fresh Cut Artery, Cut Neck Vein and Grazed Neck injuries"
