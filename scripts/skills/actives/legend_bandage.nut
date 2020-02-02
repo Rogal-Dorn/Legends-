@@ -59,7 +59,7 @@ this.legend_bandage <- this.inherit("scripts/skills/skill", {
 				text = "Removes the Bleeding status effect"
 			},
 			{
-				id = 8,
+				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
 				text = "Removes fresh Cut Artery, Cut Neck Vein and Grazed Neck injuries"
