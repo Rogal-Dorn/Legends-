@@ -886,13 +886,15 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.World.Assets.getOrigin().onHiredByScenario(this);
 		this.m.CompanyID = this.World.State.addNewID(this);
 
-		foreach ( b in this.World.getPlayerRoster().getAll() )
+		foreach ( b in this.World.getPlayerRoster().getAll() ) //Set relations to others characters to this one
 		{
-			this.changeActiveRelationship(b, this.Math.rand(-2,2) );
+			local relMod = (( (this.m.Alignment > b.getAlignment()) ? (this.m.Alignment - b.getAlignment()) : (b.getAlignment() - this.m.Alignment) + 1) * -2) + 10;
+			this.changeActiveRelationship(b, this.Math.rand(-1, 1) + relMod);
 		}
-		foreach ( other in this.World.getPlayerRoster().getAll() )
+		foreach ( b in this.World.getPlayerRoster().getAll() ) //Relations to this character to others
 		{
-			other.changeActiveRelationship(this, this.Math.rand(-2,2) );
+			local relMod = (( (this.m.Alignment > b.getAlignment()) ? (this.m.Alignment - b.getAlignment()) : (b.getAlignment() - this.m.Alignment) + 1) * -2) + 10;
+			b.changeActiveRelationship(this, this.Math.rand(-1,1) + relMod);
 		}
 	}
 
@@ -2177,6 +2179,11 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.add(this.new("scripts/skills/traits/legend_alignment_0" + this.m.Alignment));
 	}
 
+
+	function getAlignment()
+	{
+		return this.m.Alignment;
+	}
 
 	function getCompanyID()
 	{
