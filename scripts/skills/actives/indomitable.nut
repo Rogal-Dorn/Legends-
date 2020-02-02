@@ -50,13 +50,13 @@ this.indomitable <- this.inherit("scripts/skills/skill", {
 				text = "Only receive [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] of any damage"
 			},
 			{
-				id = 7,
+				id = 6,
 				type = "text",
 				icon = "ui/icons/special.png",
 				text = "Become immune to being stunned"
 			},
 			{
-				id = 8,
+				id = 6,
 				type = "text",
 				icon = "ui/icons/special.png",
 				text = "Become immune to being knocked back or grabbed"

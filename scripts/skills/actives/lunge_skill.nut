@@ -55,13 +55,13 @@ this.lunge_skill <- this.inherit("scripts/skills/skill", {
 		local ret = this.getDefaultTooltip();
 		ret.extend([
 			{
-				id = 8,
+				id = 6,
 				type = "text",
 				icon = "ui/icons/special.png",
 				text = "Moves the user next to the target, ignoring Zone of Control"
 			},
 			{
-				id = 7,
+				id = 6,
 				type = "text",
 				icon = "ui/icons/special.png",
 				text = "Inflicts additional damage, the higher the user\'s current Initiative"

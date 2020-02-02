@@ -53,7 +53,7 @@ this.throw_acid_flask <- this.inherit("scripts/skills/skill", {
 			text = "Reduces the target\'s armor by [color=" + this.Const.UI.Color.DamageValue + "]20%[/color] each turn for 3 turns."
 		});
 		ret.push({
-			id = 7,
+			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
 			text = "Has a [color=" + this.Const.UI.Color.DamageValue + "]33%[/color] chance to hit bystanders at the same or lower height level as well."
