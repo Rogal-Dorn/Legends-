@@ -22,7 +22,7 @@ this.legend_armor_named_tabard <- this.inherit("scripts/items/legend_armor/legen
 		this.m.Value = 5500;
 		this.m.Condition = 10;
 		this.m.ConditionMax = 10;
-		this.m.StaminaModifier = -1;
+		this.m.StaminaModifier = 0;
 		this.randomizeValues()
 	}
 
