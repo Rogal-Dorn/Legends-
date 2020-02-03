@@ -103,6 +103,7 @@ gt.Const.LegendMod.FavoriteSwordmaster <- [
 	this.Const.EntityType.Swordmaster,
 	this.Const.EntityType.BanditLeader,
 	this.Const.EntityType.BarbarianChampion,
+	this.Const.EntityType.BanditWarlord,
 	this.Const.EntityType.Sergeant
 ];
 
@@ -131,7 +132,9 @@ gt.Const.LegendMod.FavoriteBandit <- [
 	this.Const.EntityType.BanditPoacher,
 	this.Const.EntityType.BanditMarksman,
 	this.Const.EntityType.BanditRaider,
-	this.Const.EntityType.BanditLeader
+	this.Const.EntityType.BanditVeteran,
+	this.Const.EntityType.BanditLeader,
+	this.Const.EntityType.BanditWarlord
 ];
 
 gt.Const.LegendMod.FavoriteCaravan <- [
