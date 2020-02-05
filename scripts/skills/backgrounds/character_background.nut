@@ -1202,7 +1202,54 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 				}
 			}
 		}
-
+		/*
+		Ammo = [8, 13, 21, 34, 55],
+	ArmorParts = [3, 5, 8, 13, 21, 34],
+	Meds = [5, 8, 13, 21, 34],
+	Stash = [3, 5, 8, 13, 21, 34],
+	Healing = [0.0, 0.10, 0.30. 0.50],
+	Injury = [0.0, 0.10, 0.30, 0.50],
+	Repair = [0.0, 0.10, 0.30, 0.50, 1.0],
+	Salvage = [0.0, 0.10, 0.30, 0.50],
+	Crafting = [0.0, 0.50, 0.75, 1.0],
+	Barter = [0.0, 0.005, 0.01, 0.02, 0.03],
+	ToolConsumption = [0.0, 0.05, 0.10, 0.20],
+	MedConsumption = [0.0, 0.05, 0.10, 0.20],
+	Hunting = [0.0, 0.1, 0.2, 0.3], // = BasePoints + BasePoints * Modifier
+	Fletching = [0.0, 0.1, 0.2, 0.3], // = BasePoints + BasePoints * Modifier
+	Scout = [0.0, 0.1, 0.2, 0.3], // = BasePoints + BasePoints * Modifier
+	Gather = [0.0, 0.30, 0.50, 1.0], // = BasePoints + BasePoints * Modifier
+	Training = [0.0, 0.1, 0.2, 0.3]
+		*/
+		
+		
+		// Save Camp/travel modifiers
+		//_out.writeU8(this.m.Modifiers.); Int
+		//_out.writeF32(this.m.Modifiers.); Decimal
+		_out.writeU8(this.m.Modifiers.Ammo);
+		_out.writeU8(this.m.Modifiers.ArmorParts);
+		_out.writeU8(this.m.Modifiers.Meds);
+		_out.writeU8(this.m.Modifiers.Stash);
+		
+		_out.writeF32(this.m.Modifiers.Healing);
+		_out.writeF32(this.m.Modifiers.Injury);
+		_out.writeF32(this.m.Modifiers.Repair);
+		_out.writeF32(this.m.Modifiers.Salvage);
+		_out.writeF32(this.m.Modifiers.Crafting);
+		_out.writeF32(this.m.Modifiers.Barter);
+		_out.writeF32(this.m.Modifiers.ToolConsumption);
+		_out.writeF32(this.m.Modifiers.MedConsumption);
+		_out.writeF32(this.m.Modifiers.Hunting);
+		_out.writeF32(this.m.Modifiers.Fletching);
+		_out.writeF32(this.m.Modifiers.Scout);
+		_out.writeF32(this.m.Modifiers.Gather);
+		_out.writeF32(this.m.Modifiers.Training);
+		_out.writeF32(this.m.Modifiers.Enchanting);
+		for( local i = 0; i < this.m.Modifiers.Terrain.len(); i = ++i )
+		{
+			_out.writeF32(this.m.Modifiers.Terrain[i]);
+		}
+		
 
 	}
 
@@ -1259,6 +1306,31 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		if (this.m.CustomPerkTree != null)
 		{
 			this.buildPerkTree();
+		}
+		
+		
+		this.m.Modifiers.Ammo = _in.readU8();
+		this.m.Modifiers.ArmorParts = _in.readU8();
+		this.m.Modifiers.Meds = _in.readU8();
+		this.m.Modifiers.Stash = _in.readU8();
+		
+		this.m.Modifiers.Healing = _in.readF32();
+		this.m.Modifiers.Injury = _in.readF32();
+		this.m.Modifiers.Repair = _in.readF32();
+		this.m.Modifiers.Salvage = _in.readF32();
+		this.m.Modifiers.Crafting = _in.readF32();
+		this.m.Modifiers.Barter = _in.readF32();
+		this.m.Modifiers.ToolConsumption = _in.readF32();
+		this.m.Modifiers.MedConsumption = _in.readF32();
+		this.m.Modifiers.Hunting = _in.readF32();
+		this.m.Modifiers.Fletching = _in.readF32();
+		this.m.Modifiers.Scout = _in.readF32();
+		this.m.Modifiers.Gather = _in.readF32();
+		this.m.Modifiers.Training = _in.readF32();
+		this.m.Modifiers.Enchanting = _in.readF32();
+		for( local i = 0; i < this.m.Modifiers.Terrain.len(); i = ++i )
+		{
+			this.m.Modifiers.Terrain[i] = _in.readF32();
 		}
 
 
