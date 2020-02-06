@@ -64,6 +64,7 @@ this.legend_daze <- this.inherit("scripts/skills/skill", {
 	function onUse( _user, _targetTile )
 	{
 		local targetEntity = _targetTile.getEntity();
+		local target = _targetTile.getEntity();
 		local r = this.Math.rand(1,100);
 		if (_user.getSkills().hasSkill("perk.taunt"));
 		{
@@ -76,7 +77,6 @@ this.legend_daze <- this.inherit("scripts/skills/skill", {
 		{
 			if (!targetEntity.getCurrentProperties().IsImmuneToStun)
 			{
-				local target = _targetTile.getEntity();
 				this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectBash);
 
 				if (target.isAlive())
