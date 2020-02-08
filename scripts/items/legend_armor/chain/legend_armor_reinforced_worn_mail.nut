@@ -3,7 +3,7 @@ this.legend_armor_reinforced_worn_mail <- this.inherit("scripts/items/legend_arm
 	function create()
 	{
 		this.legend_armor_upgrade.create();
-		this.m.Type = this.Const.Items.ArmorUpgrades.Chain
+		this.m.Type = this.Const.Items.ArmorUpgrades.Chain;
 		this.m.ID = "legend_armor.reinforced_worn_mail";
 		this.m.Name = "Reinforced Worn Mail";
 		this.m.Description = "A long and heavy reinforced chainmail that offers good protection but is very fatiguing to wear.";
@@ -15,10 +15,10 @@ this.legend_armor_reinforced_worn_mail <- this.inherit("scripts/items/legend_arm
 		this.m.SpriteBack = "bust_legend_reinforced_worn_mail";
 		this.m.SpriteDamagedBack = "bust_legend_reinforced_worn_mail_damaged";
 		this.m.SpriteCorpseBack = "bust_legend_reinforced_worn_mail_dead";
-		this.m.Value = 4000;
-		this.m.Condition = 90;
-		this.m.ConditionMax = 90;
-		this.m.StaminaModifier = -12;
+		this.m.Value = 1250;
+		this.m.Condition = 105;
+		this.m.ConditionMax = 105;
+		this.m.StaminaModifier = -17;
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 	}
 
