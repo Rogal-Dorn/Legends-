@@ -2957,6 +2957,8 @@ Dismissal only costs money on legendary economic difficulty
 Summon Bear is now Bear Taming - unlocks an event to tame bears in the woods
 Fletchers can no longer trigger the masterwork bow event
 Fletechers can now trigger an event to craft a Huge Quiver  
+Zombies lose Last Stand on legendary combat difficulty 
+Barbarians gain Last Stand on legendary combat difficulty 
 Bandit veterans always have hats 
 Miners give +33% XP and have -33 %HP 
 Fencers, bandit veterans and bandit warlords count for favourite enemy swordmaster 
