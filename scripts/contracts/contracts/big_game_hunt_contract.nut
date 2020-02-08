@@ -307,19 +307,19 @@ this.big_game_hunt_contract <- this.inherit("scripts/contracts/contract", {
 
 				if (this.Contract.m.Size == 0)
 				{
-					if (_actor.getType() == this.Const.EntityType.Ghoul || _actor.getType() == this.Const.EntityType.Direwolf || _actor.getType() == this.Const.EntityType.Spider)
+					if (_actor.getType() == this.Const.EntityType.Ghoul || _actor.getType() == this.Const.EntityType.Direwolf || _actor.getType() == this.Const.EntityType.Spider  || _actor.getType() == this.Const.EntityType.LegendSkinGhoul  || _actor.getType() == this.Const.EntityType.LegendWhiteDirewolf  || _actor.getType() == this.Const.EntityType.LegendRedbackSpider)
 					{
 						this.Flags.set("HeadsCollected", this.Flags.get("HeadsCollected") + 1);
 					}
 				}
 				else if (this.Contract.m.Size == 1)
 				{
-					if (_actor.getType() == this.Const.EntityType.Alp || _actor.getType() == this.Const.EntityType.Unhold || _actor.getType() == this.Const.EntityType.UnholdFrost || _actor.getType() == this.Const.EntityType.UnholdBog || _actor.getType() == this.Const.EntityType.Hexe)
+					if (_actor.getType() == this.Const.EntityType.Alp || _actor.getType() == this.Const.EntityType.Unhold || _actor.getType() == this.Const.EntityType.UnholdFrost || _actor.getType() == this.Const.EntityType.UnholdBog || _actor.getType() == this.Const.EntityType.Hexe  || _actor.getType() == this.Const.EntityType.LegendHexeLeader  || _actor.getType() == this.Const.EntityType.LegendRockUnhold  || _actor.getType() == this.Const.EntityType.LegendDemonAlp  || _actor.getType() == this.Const.EntityType.LegendDemonAlp)
 					{
 						this.Flags.set("HeadsCollected", this.Flags.get("HeadsCollected") + 1);
 					}
 				}
-				else if (_actor.getType() == this.Const.EntityType.Lindwurm && !this.isKindOf(_actor, "lindwurm_tail") || _actor.getType() == this.Const.EntityType.Schrat)
+				else if (_actor.getType() == this.Const.EntityType.Lindwurm && !this.isKindOf(_actor, "lindwurm_tail") || _actor.getType() == this.Const.EntityType.Schrat  || _actor.getType() == this.Const.EntityType.LegendGreenwoodSchrat  || _actor.getType() == this.Const.EntityType.LegendGreenwoodSchratSmall || _actor.getType() == this.Const.EntityType.LegendStollwurm )
 				{
 					this.Flags.set("HeadsCollected", this.Flags.get("HeadsCollected") + 1);
 				}

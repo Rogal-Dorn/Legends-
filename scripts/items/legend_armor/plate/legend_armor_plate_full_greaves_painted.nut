@@ -1,10 +1,9 @@
-
 this.legend_armor_plate_full_greaves_painted <- this.inherit("scripts/items/legend_armor/legend_named_armor_upgrade", {
 	m = {},
 	function create()
 	{
 		this.legend_named_armor_upgrade.create();
-		this.m.Type = this.Const.Items.ArmorUpgrades.Plate
+		this.m.Type = this.Const.Items.ArmorUpgrades.Plate;
 		this.m.ID = "legend_armor_plate_full_greaves_painted";
 		this.m.Name = "Full Coat of Painted Heavy Plate Armor";
 		this.m.NameList = [
@@ -24,20 +23,19 @@ this.legend_armor_plate_full_greaves_painted <- this.inherit("scripts/items/lege
 		this.m.SpriteBack = "bust_legend_plate_full_greaves_painted";
 		this.m.SpriteDamagedBack = "bust_legend_plate_full_greaves_painted_damaged";
 		this.m.SpriteCorpseBack = "bust_legend_plate_full_greaves_painted_dead";
-		this.m.Value = 20000;
-		this.m.Condition = 190;
-		this.m.ConditionMax = 190;
-		this.m.StaminaModifier = -30;
+		this.m.Value = 10000;
+		this.m.Condition = 170;
+		this.m.ConditionMax = 170;
+		this.m.StaminaModifier = -26;
 		this.randomizeValues();
 	}
 
 	function randomizeValues()
 	{
-		this.m.StaminaModifier = this.Math.rand(28, 30) * -1;
-		this.m.Condition = this.Math.rand(190, 200);
+		this.m.StaminaModifier = this.Math.rand(23, 25) * -1;
+		this.m.Condition = this.Math.rand(185, 225);
 		this.m.ConditionMax = this.m.Condition;
 	}
-
 
 });
 

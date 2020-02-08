@@ -20,7 +20,7 @@ this.return_favor <- this.inherit("scripts/skills/skill", {
 		this.m.IsTargeted = false;
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
-		this.m.ActionPointCost = 4;
+		this.m.ActionPointCost = 3;
 		this.m.FatigueCost = 30;
 		this.m.MinRange = 0;
 		this.m.MaxRange = 0;

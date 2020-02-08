@@ -219,10 +219,6 @@ this.bowyer_crafts_masterwork_event <- this.inherit("scripts/events/event", {
 			{
 				candidates.push(bro);
 			}
-			if (bro.getLevel() >= 6 && bro.getBackground().getID() == "background.female_bowyer")
-			{
-				candidates.push(bro);
-			}
 		}
 
 		if (candidates.len() == 0)

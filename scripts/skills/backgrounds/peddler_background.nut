@@ -188,10 +188,7 @@ this.peddler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		{
 			items.equip(this.new("scripts/items/weapons/dagger"));
 		}
-
-		r = this.Math.rand(0, 2);
-
-		if (r == 0)
+		else if (r == 2)
 		{
 			items.equip(this.new("scripts/items/weapons/light_crossbow"));
 			items.equip(this.new("scripts/items/ammo/quiver_of_bolts"));
@@ -226,10 +223,7 @@ this.peddler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		{
 			items.equip(this.new("scripts/items/weapons/dagger"));
 		}
-
-		r = this.Math.rand(0, 2);
-
-		if (r == 0)
+		else if (r == 2)
 		{
 			items.equip(this.new("scripts/items/weapons/light_crossbow"));
 			items.equip(this.new("scripts/items/ammo/quiver_of_bolts"));

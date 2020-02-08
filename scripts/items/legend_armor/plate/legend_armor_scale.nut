@@ -1,10 +1,9 @@
-
 this.legend_armor_scale <- this.inherit("scripts/items/legend_armor/legend_armor_upgrade", {
 	m = {},
 	function create()
 	{
 		this.legend_armor_upgrade.create();
-		this.m.Type = this.Const.Items.ArmorUpgrades.Plate
+		this.m.Type = this.Const.Items.ArmorUpgrades.Plate;
 		this.m.ID = "legend_armor.scale";
 		this.m.Name = "Scale Armor";
 		this.m.Description = "A body vest with overlapping scales.";
@@ -16,11 +15,11 @@ this.legend_armor_scale <- this.inherit("scripts/items/legend_armor/legend_armor
 		this.m.SpriteBack = "bust_legend_scale";
 		this.m.SpriteDamagedBack = "bust_legend_scale_damaged";
 		this.m.SpriteCorpseBack = "bust_legend_scale_dead";
-		this.m.Value = 3000;
-		this.m.Condition = 145;
-		this.m.ConditionMax = 145;
-		this.m.StaminaModifier = -20;
-        this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
+		this.m.Value = 2250;
+		this.m.Condition = 100;
+		this.m.ConditionMax = 100;
+		this.m.StaminaModifier = -12;
+		this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
 	}
 
 });

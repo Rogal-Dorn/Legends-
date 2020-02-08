@@ -47,8 +47,8 @@ this.legend_rune <- this.inherit("scripts/crafting/blueprint", {
 				break;
 
 			case 3:
-				max1 = this.isUpgraded() ? 9 : 6;
-				return "This item has the power of the rune sigil of Feeding:\n[color=" + this.Const.UI.Color.PositiveValue + "]3% to " + max1 + "%[/color] of inflicted health damage recovers fatigue.";
+				max1 = this.isUpgraded() ? 6 : 4;
+				return "This item has the power of the rune sigil of Feeding:\n[color=" + this.Const.UI.Color.PositiveValue + "]2% to " + max1 + "%[/color] of inflicted health damage recovers fatigue.";
 				break;
 
 			case 4:
@@ -72,7 +72,7 @@ this.legend_rune <- this.inherit("scripts/crafting/blueprint", {
 			case 11:
 				max1 = this.isUpgraded() ? 2 : 1;
 				max2 = this.isUpgraded() ? 9 : 6;
-				return "This item has the power of the rune sigil of Clarity:\n[color=" + this.Const.UI.Color.PositiveValue + "]+0 to +" + max1 + "[/color] Vision.\n[color=" + this.Const.UI.Color.PositiveValue + "]+3% to +" + max2 + "%[/color] Experience gain.";
+				return "This item has the power of the rune sigil of Clarity:\n[color=" + this.Const.UI.Color.PositiveValue + "]+1 to +" + max1 + "[/color] Vision.\n[color=" + this.Const.UI.Color.PositiveValue + "]+3% to +" + max2 + "%[/color] Experience gain.";
 				break;
 
 			case 12:

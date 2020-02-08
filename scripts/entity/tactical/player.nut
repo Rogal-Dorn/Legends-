@@ -1058,7 +1058,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				this.getTags().add("zombie_minion");
 				local skill = this.new("scripts/skills/injury_permanent/legend_rotten_flesh");
 				this.m.Skills.add(skill);
-				this.m.Skills.add(this.new("scripts/skills/perks/perk_zombie_bite"));
+				this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_zombie_bite"));
 				this.m.Skills.add(this.new("scripts/skills/perks/perk_nine_lives"));
 			}
 		}
@@ -1359,6 +1359,15 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		else
 		{
 			foreach( bro in brothers )
+			{
+				bro.addXP(this.Math.max(1, this.Math.floor(XPgroup / brothers.len())));
+			}
+		}
+
+		local roster = World.getPlayerRoster().getAll()
+		foreach(bro in roster)
+		{
+			if (bro.isInReserves() && bro.getSkills().hasSkill("perk.legend_peaceful"))
 			{
 				bro.addXP(this.Math.max(1, this.Math.floor(XPgroup / brothers.len())));
 			}
@@ -2557,13 +2566,6 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			}
 		}
 
-		foreach (bro in this.World.getPlayerRoster().getAll())
-		{
-			if (bro.getSkills().hasSkill("perk.legend_barter_greed"))
-			{
-			mod -= (mod / 2);
-			}
-		}
 
 		return mod;
 	}

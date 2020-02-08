@@ -38,23 +38,7 @@ this.legend_hidden_effect <- this.inherit("scripts/skills/skill", {
 		}
 
 
-		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_untouchable"))
-		{
-			ret.extend([
-						{
-					id = 13,
-					type = "text",
-					icon = "ui/icons/melee_defense.png",
-					text = "[color=" + this.Const.UI.Color.PositiveValue + "]+40[/color] Melee Defense from the Untouchable perk"
-				},
-				{
-					id = 14,
-					type = "text",
-					icon = "ui/icons/ranged_defense.png",
-					text = "[color=" + this.Const.UI.Color.PositiveValue + "]+40[/color] Ranged Defense from the Untouchable perk"
-				}
-			]);
-		}
+	
 
 		return ret;
 

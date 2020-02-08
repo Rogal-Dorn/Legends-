@@ -77,7 +77,7 @@ this.town_training_dialog_module <- this.inherit("scripts/ui/screens/ui_module",
 
 		return {
 			Title = "Training Hall",
-			SubTitle = "Have your men train for combat and learn from veterans",
+			SubTitle = "Have your company train for combat and learn from veterans",
 			Roster = roster,
 			Assets = this.m.Parent.queryAssetsInformation()
 		};
