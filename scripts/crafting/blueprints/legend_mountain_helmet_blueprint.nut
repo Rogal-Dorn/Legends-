@@ -5,7 +5,7 @@ this.legend_mountain_helmet_blueprint <- this.inherit("scripts/crafting/blueprin
 		this.blueprint.create();
 		this.m.ID = "blueprint.legend_mountain_helmet";
 		this.m.Type = this.Const.Items.ItemType.Helmet;
-		this.m.PreviewCraftable = this.new("scripts/items/helmets/legendary/legend_mountain_helmet");
+		this.m.PreviewCraftable = this.new("scripts/items/helmets/named/legend_mountain_helmet_named");
 		this.m.Cost = 2500;
 		local ingredients = [
 			{
@@ -36,7 +36,7 @@ this.legend_mountain_helmet_blueprint <- this.inherit("scripts/crafting/blueprin
 	
 	function onCraft( _stash )
 	{
-		_stash.add(this.new("scripts/items/helmets/legendary/legend_mountain_helmet"));
+		_stash.add(this.new("scripts/items/helmets/named/legend_mountain_helmet_named"));
 	}
 
 });

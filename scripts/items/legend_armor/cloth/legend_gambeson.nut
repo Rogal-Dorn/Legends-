@@ -9,12 +9,12 @@ this.legend_gambeson <- this.inherit("scripts/items/legend_armor/legend_armor", 
 		this.m.IsDroppedAsLoot = true;
 		this.m.ShowOnCharacter = true;
 		this.m.Variants = [
-            0,
+			0,
 			1,
 			3,
 			6,
 			7,
-            8,
+			8,
 			9,
 			10,
 			13,
@@ -44,14 +44,14 @@ this.legend_gambeson <- this.inherit("scripts/items/legend_armor/legend_armor", 
 			37,
 			38,
 			39
-        ]
+		];
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.InventorySound = this.Const.Sound.ClothEquip;
 		this.m.Value = 250;
-		this.m.Condition = 60;
-		this.m.ConditionMax = 60;
+		this.m.Condition = 65;
+		this.m.ConditionMax = 65;
 		this.m.StaminaModifier = -8;
 	}
 

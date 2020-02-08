@@ -33,6 +33,7 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.Excluded = [
 			"trait.brave",
 			"trait.athletic",
+			"trait.bloodthirsty",
 			"trait.brute",
 			"trait.dexterous",
 			"trait.eagleyes",

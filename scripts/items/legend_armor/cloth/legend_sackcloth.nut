@@ -8,8 +8,8 @@ this.legend_sackcloth <- this.inherit("scripts/items/legend_armor/legend_armor",
 		this.m.Description = "Better than running naked.";
 		this.m.IsDroppedAsLoot = true;
 		this.m.ShowOnCharacter = true;
-        this.m.Variants = [
-            1,
+		this.m.Variants = [
+			1,
 			4,
 			5,
 			6,
@@ -19,15 +19,15 @@ this.legend_sackcloth <- this.inherit("scripts/items/legend_armor/legend_armor",
 			10,
 			11,
 			12
-        ]
+		];
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.InventorySound = this.Const.Sound.ClothEquip;
-		this.m.Value = 20;
+		this.m.Value = 15;
 		this.m.Condition = 10;
 		this.m.ConditionMax = 10;
-		this.m.StaminaModifier = 0;
+		this.m.StaminaModifier = 1;
 	}
 
 	function updateVariant()

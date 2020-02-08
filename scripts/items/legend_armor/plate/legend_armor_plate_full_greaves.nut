@@ -1,10 +1,9 @@
-
 this.legend_armor_plate_full_greaves <- this.inherit("scripts/items/legend_armor/legend_armor_upgrade", {
 	m = {},
 	function create()
 	{
 		this.legend_armor_upgrade.create();
-		this.m.Type = this.Const.Items.ArmorUpgrades.Plate
+		this.m.Type = this.Const.Items.ArmorUpgrades.Plate;
 		this.m.ID = "legend_armor.plate_full_greaves";
 		this.m.Name = "Full Coat of Heavy Plate Armor";
 		this.m.Description = "A full set of solid plated steel with greaves.";
@@ -16,10 +15,10 @@ this.legend_armor_plate_full_greaves <- this.inherit("scripts/items/legend_armor
 		this.m.SpriteBack = "bust_legend_plate_full_greaves";
 		this.m.SpriteDamagedBack = "bust_legend_plate_full_greaves_damaged";
 		this.m.SpriteCorpseBack = "bust_legend_plate_full_greaves_dead";
-		this.m.Value = 10000;
-		this.m.Condition = 180;
-		this.m.ConditionMax = 180;
-		this.m.StaminaModifier = -28;
+		this.m.Value = 5000;
+		this.m.Condition = 170;
+		this.m.ConditionMax = 170;
+		this.m.StaminaModifier = -26;
 	}
 
 });

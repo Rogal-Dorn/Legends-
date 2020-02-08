@@ -32,7 +32,7 @@ this.legend_peasant_woodsman <- this.inherit("scripts/entity/tactical/human", {
 		dirt.Visible = true;
 		dirt.Alpha = this.Math.rand(0, 255);
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_woodaxe_skill"));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_mastery_woodaxe_damage"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_woodaxe_damage"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_smashing_shields"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_mastery_axe"));
 		this.getSprite("socket").setBrush("bust_base_militia");

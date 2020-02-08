@@ -3,7 +3,7 @@ this.legend_armor_leather_riveted_light <- this.inherit("scripts/items/legend_ar
 	function create()
 	{
 		this.legend_armor_upgrade.create();
-		this.m.Type = this.Const.Items.ArmorUpgrades.Plate
+		this.m.Type = this.Const.Items.ArmorUpgrades.Plate;
 		this.m.ID = "legend_armor.leather_riveted_light";
 		this.m.Name = "Footman\'s Leather Armor";
 		this.m.Description = "A light leather armor reinforced with metal rivets.";
@@ -15,10 +15,10 @@ this.legend_armor_leather_riveted_light <- this.inherit("scripts/items/legend_ar
 		this.m.SpriteBack = "bust_legend_leather_riveted_light";
 		this.m.SpriteDamagedBack = "bust_legend_leather_riveted_light_damaged";
 		this.m.SpriteCorpseBack = "bust_legend_leather_riveted_light_dead";
-		this.m.Value = 2250;
-		this.m.Condition = 95;
-		this.m.ConditionMax = 95;
-		this.m.StaminaModifier = -13;
+		this.m.Value = 700;
+		this.m.Condition = 80;
+		this.m.ConditionMax = 80;
+		this.m.StaminaModifier = -11;
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 	}
 

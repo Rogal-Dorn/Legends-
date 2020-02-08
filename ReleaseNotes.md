@@ -2758,6 +2758,8 @@ XP increased for bandit veterans, bandit lords, orc elites, orc warlords, knight
 On legendary combat difficulty, zombie bite will resurrect felled enemies like a warlock scythe 
 Legion can now recruit high tier combat backgrounds once per week at the black monolith
 Reinforced nets have a 50% chance to be returned unbroken 
+Drums of war is now War Chant 
+Drums of life is now Song of Life 
 
 **Fixes** 
 Fixes tabard blueprint error causing some items to become uncraftable  
@@ -2776,3 +2778,203 @@ Noble troops wear their appropriate noble tabard layer
 Zombie bite no longer disappears after saving and loading 
 Legendary gheists no longer teleport to their deaths 
 
+13.2.4 Peace and Profit 
+
+**Mind over body:**
+* calculation changed to be more useful at lower resolve levels, but less useful at higher levels. 
+* Starts at 60 instead of 75, but the bonus has falloff. 
+* from  0% to 8%  at 70 resolve 
+* from  0% to 11% at 75
+* from  7% to 14% at 80 
+* from 17% to 19% at 90    
+* from 25% to 23% at 100 
+* from 40% to 31% at 125
+* from 50% to 37% at 150
+* from 60% to 40% at 200 
+
+**Clarity**
+* Now depends on your state of mind. 
+* Disabled if you are: berserk, dazed, drunk, hungover, taunted, staggered, horrified, concussed or fleeing.
+* Doubled if you're under the effect of cognition enhancing potions: Iron Will, Lionheart, Cat, Hexen Ichor or Recovery Potions
+
+**Peaceful**
+Peaceful Now lets characters gain XP while in reserve
+This is in addition to making them content in reserve, and removing the additional food usage in reserve 
+
+**Pacifist**
+Every day at noon pacifists will reflect on their time with the company
+If they have killed more than once per week, their mood will worsen 
+This is in addition to making them content in reserve and only adding half scaling 
+
+**Trading Caravan**
+Cost of combat backgrounds reduced to 125% from 200% 
+Cost of peddlers and donkeys reduced to 75% from 90% 
+
+**Deliver Crowns contract**
+* has new image to make it clearer what job you're taking
+* allows you to spend up to your total pay for the job before punishing you. 
+* only impacts your reputation with the town, doesn't spawn enemies 
+
+**Other changes**
+
+Several hundred new names and titles added for characters and enemies (Slick liquid)
+Goblin city will scale with time, after 400,300,200,100 days by difficulty, at a rate of +20% per hundred days 
+
+**Fixes**
+Fixed Mountain helm and armor not having named randomisation 
+Fixes lag in marketplaces 
+Fixes crash from bleed inducers not knowing if they're on the map 
+Fixes peddlers getting ammo but not crossbows 
+Fixes error when necromancer armor didn't initiate 
+Fixes error when zombie bite wasn't being applied  
+Fixes error when a gatherer finds an antidote and crashes camp  
+Fixes incorrect camouflage tooltip 
+Fixes the ability to get so drunk it crashes the game 
+
+13.2.5 Well Slung 
+
+Slingstaff 
+Carrying heavy stones around is not easy, and flinging them is tiring. 
+* fatigue modifier increased to -20 from -12, 
+* sling heavy stone fatigue cost increased from 25 to 50 
+* durability reduced from 100 to 40 to match staff
+* uses slingstaff bash instead of staff bash, does half damage 
+
+**Game text:**  (slick liquid)
+*20 new ship names
+*36 new merc company names
+*33 new noble house names
+*23 new names for oceans
+*35 new names for fields
+*20 new names for swamps
+*14 new names for hills
+*18 new names for woods
+*9 new names for frozen forests
+*2 new names for autumn forests
+*33 new names for mountains
+*23 new names for frozen wastelands
+*23 new names for barbarian lands
+*16 new names for scrublands
+
+*Changes**
+Enemies more likely to hit with puncture
+Slaughterer effectiveness reduced by 1/3rd 
+Hammer and pickaxe perk groups get sundering strikes instead of bruiser to avoid duplication 
+Dismissal now costs the same as a tryout 
+Reverts to vanilla crisis strength requirement, no longer begins at war. 
+
+**Fixes**
+Fixes settlement's lagging due to excess greed 
+Fixes another bleed crash by making bleed attributions only apply to the player. 
+Fixes backwards compatibility with nexus build due to mountain gear 
+Bleed no longer gets attributed unless the attacker is player controlled 
+Bleed doesn't check for devoured and placed on map unless the attribution is being set. 
+Fixes the broken rune errors 
+Fixes banshees teleporting to their death 
+Fixes choke description 
+Fixes error in Lindwurm stats (wuxiang) 
+
+13.2.5b Unslung hero 
+
+Reverts the slingstaff changes  
+fixes the bleed crashes  (wuxiang) 
+Puncture and choke reworked to have a higher lowest hit chance (wuxiang) 
+Noble leather durability buffed from 65 to 75 (wuxiang) 
+Named cloaks lowered from 25k to 10k (wuxiang) 
+Halberd condition increased from 72 to 85 (wuxiang) 
+Fixed smoked ham being uncookable (wuxiang) 
+
+
+<<<<<<< HEAD
+
+=======
+13.3.2  Slow and steady (experimental) 
+
+Reverts to vanilla AI timings, slowing down turn times. May fix:
+* invisible unholds
+* rotation crashes 
+* next turn order freezes 
+* Miscellaneous strange freezes
+
+Fatigue costs reduced across 24 plate armors  
+Adds back in brain damage allowing cultist conversion (salty)
+Freedom of movement tooltip updated (salty) 
+Fixes demon hound crashs (wuxiang) 
+Fixes tabard tooltips (wuxiang) 
+Fixes decimal points in danger pay (wuxiang) 
+Wooden pitchfork gets +5 damage 
+prepare bleed lasts slightly longer 
+Fixes double strike 
+Fixes lindwurm, mountain and skin armors requiring layered and non-layered components at the same time 
+
+
+
+13.3.3  Fast Friends 
+
+**Faster**
+Includes Adam's Faster mod - resolves AI conflicts and duplication 
+Incorporates LeVilainJoueur's Invisible Unhold fix for Faster 
+
+**Community Armor rework** 
+Implements most of the changes from the popular BlueyD and Balzaphon submods 
+*Keep armor values in the vanilla ballpark until multi-unique combos are available
+* Different efficiency (armor:fatigue) ratios at different prices
+* Prices should generally go way down (too easy to farm money; layers not buyable right now)
+* Named layers should be worth wearing if found, and occasionally worth purchasing
+* Worn, rotten, or rusty gear should generally kind of suck compared to the base armor
+* Barbarian armor should be low cost and low effectiveness too
+* Ancient armor should be low efficiency and medium cost
+
+**Community Perk balance suggestions:**
+Implements many perk suggestions from ToxAsh, Belial, Balzphon and others.  
+* Back to basics - also increases camp training by 10% 
+* Crippling strikes - also grants 10% damage vs undead  
+* Executioner - also grants +10% damage to stunned, netted or sleeping enemies 
+* Muscularity - maximum of 50 damage 
+* Lone wolf - triggers at 2 tiles 
+* Lookout - also grants 10% to scouting in camp 
+* Onslaught - now gives 50% chance to apply new Effect Baffeled, which is a weaker daze 
+* Push the advantage - also applies to grappled, staggered, net and dazed 
+* Return favor - applied both stun and staggered, AP reduced to 3 
+* Efficient stacking - Grants 8 slots and +4% fatigue 
+* Skillful packing - grants 12 slots and +6% fatigue 
+* Spearwaller - also increases spearwall damage by 25% 
+* Net repairer - also grants +25% chance to hit with a net 
+* Freedom of movement - has a 5% minimum and 95% maximum damage reduction 
+* True believer - also grants optimist trait 
+* Last stand - grants 1 melee and ranged defense for every 2% below 66%HP 
+* Tools drawers - Now grants +10 tools and -4% tool consumption 
+* Spare tools -  Now grants +20 tools -6% tool consumption
+* Staff spins - now applies both stun and stagger 
+* Second wind - now also removes stun, stagger, daze, sleep and charm when it restores your fatigue 
+* Heightened reflexes - increased from 50% to 100% of ranged defense becomes iniative
+* Thrust master - also applies to prong and staff thrust, and reduces the range penalty from throwing spears 
+* Balance - Now grant up to 25% defense reroll chance 
+
+**Other changes**
+AI won't try to puncture enemies with full fatigue 
+Dismissal only costs money on legendary economic difficulty
+Summon Bear is now Bear Taming - unlocks an event to tame bears in the woods
+Fletchers can no longer trigger the masterwork bow event
+Fletechers can now trigger an event to craft a Huge Quiver  
+Zombies lose Last Stand on legendary combat difficulty 
+Barbarians gain Last Stand on legendary combat difficulty 
+Bandit veterans always have hats 
+Miners give +33% XP and have -33 %HP 
+Fencers, bandit veterans and bandit warlords count for favourite enemy swordmaster 
+Fencers, halberdiers and slingers count for favourite enemy noble 
+Slinger counts for favourite enemy archer 
+Bandit veteran and bandit warlord count for favourite enemy bandit 
+Butcher, blacksmith, monk, farmhand, minstrel, poacher, miner, squire and witch hunter count for favourite enemy caravan 
+Legendary creatures will contribute towards head count in Big Game Hunt contracts 
+
+
+**Fixes**
+Fixes error in cultist origin vs old gods event (wuxiang)
+Fixes errors in legendary armor bluprints (wuxiang)
+Cat uses cat names (wuxiang)
+Choke uses unarmed mastery instead of dagger mastery (wuxiang) 
+Fixes error stopping gather buildings giving the goodies (D00D's bro and wuxiang)
+Fixes naked fishwives and cannibals  (wuxiang) 
+Fixes danger pay decimal point issue (wuxiang) 
+Updates tabard tooltip  (wuxiang) 

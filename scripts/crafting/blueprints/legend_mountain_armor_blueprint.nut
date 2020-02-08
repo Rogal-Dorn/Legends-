@@ -22,26 +22,32 @@ this.legend_mountain_armor_blueprint <- this.inherit("scripts/crafting/blueprint
 				Num = 4
 			}
 		];
-		ingredients.push({
-			Script = "scripts/items/legend_armor/cloth/legend_gambeson",
-			Num = 1,
-			LegendsArmor = true
-		})
-		ingredients.push({
-			Script = "scripts/items/legend_armor/chain/legend_armor_hauberk",
-			Num = 1,
-			LegendsArmor = true
-		})
-		ingredients.push({
-			Script = "scripts/items/legend_armor/plate/legend_armor_plate_chest",
-			Num = 1,
-			LegendsArmor = true
-		})
-		ingredients.push({
-			Script = "scripts/items/armor/coat_of_plates",
-			Num = 1,
-			LegendsArmor = false
-		})
+		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		{
+			ingredients.push({
+				Script = "scripts/items/legend_armor/cloth/legend_gambeson",
+				Num = 1,
+				LegendsArmor = true
+			})
+			ingredients.push({
+				Script = "scripts/items/legend_armor/chain/legend_armor_hauberk",
+				Num = 1,
+				LegendsArmor = true
+			})
+			ingredients.push({
+				Script = "scripts/items/legend_armor/plate/legend_armor_plate_chest",
+				Num = 1,
+				LegendsArmor = true
+			})
+		}
+		if (!this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		{
+			ingredients.push({
+				Script = "scripts/items/armor/coat_of_plates",
+				Num = 1,
+				LegendsArmor = false
+			})
+		}
 		
 
 		this.init(ingredients);
