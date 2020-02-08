@@ -159,6 +159,11 @@ this.throw_spear_skill <- this.inherit("scripts/skills/skill", {
 			_properties.RangedSkill += 20;
 			_properties.HitChanceAdditionalWithEachTile -= 10;
 
+			if (_properties.IsSpecializedInSpearThrust )
+			{
+			_properties.HitChanceAdditionalWithEachTile += 10;
+			}
+
 			if (_targetEntity != null)
 			{
 				local shield = _targetEntity.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);

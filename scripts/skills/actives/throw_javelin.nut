@@ -175,6 +175,10 @@ this.throw_javelin <- this.inherit("scripts/skills/skill", {
 		{
 			_properties.RangedSkill += 20 + this.m.AdditionalAccuracy;
 			_properties.HitChanceAdditionalWithEachTile -= 10 + this.m.AdditionalHitChance;
+			if (_properties.IsSpecializedInSpearThrust )
+			{
+			_properties.HitChanceAdditionalWithEachTile += 10;
+			}
 		}
 	}
 

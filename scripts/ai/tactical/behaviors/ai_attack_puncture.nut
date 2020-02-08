@@ -107,6 +107,11 @@ this.ai_attack_puncture <- this.inherit("scripts/ai/tactical/behavior", {
 				continue;
 			}
 
+			if (target.getFatigue() >= (target.getFatigueMax() / 2))
+			{
+				continue;
+			}
+
 			local p = _entity.getCurrentProperties();
 			local armor = target.getArmor(this.Const.BodyPart.Body) * (p.getHitchance(this.Const.BodyPart.Body) / 100.0) + target.getArmor(this.Const.BodyPart.Head) * (p.getHitchance(this.Const.BodyPart.Head) / 100.0);
 

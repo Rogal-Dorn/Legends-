@@ -19,4 +19,15 @@ this.perk_legend_true_believer <- this.inherit("scripts/skills/skill", {
 		_properties.IsAffectedByDyingAllies = false;
 	}
 
+	function onAdded()
+	{
+		if (!this.m.Container.hasSkill("trait.optimist"))
+		{
+			this.m.Container.add(this.new("scripts/skills/traits/optimist_trait"));
+		}
+	}
+	function onRemoved()
+	{
+		this.m.Container.removeByID("trait.optimist");
+	}
 });
