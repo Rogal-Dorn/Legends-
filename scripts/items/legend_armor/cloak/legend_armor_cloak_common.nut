@@ -26,9 +26,9 @@ this.legend_armor_cloak_common <- this.inherit("scripts/items/legend_armor/cloak
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.Value = 100;
-		this.m.Condition = 10;
-		this.m.ConditionMax = 10;
-		this.m.StaminaModifier = -2;
+		this.m.Condition = 12;
+		this.m.ConditionMax = 12;
+		this.m.StaminaModifier = -3;
 	}
 
 });

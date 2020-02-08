@@ -20,7 +20,7 @@ this.legend_heavy_iron_armor <- this.inherit("scripts/items/legend_armor/legend_
 		this.m.Value = 1000;
 		this.m.Condition = 110;
 		this.m.ConditionMax = 110;
-		this.m.StaminaModifier = -24;
+		this.m.StaminaModifier = -17;
 
 	}
 

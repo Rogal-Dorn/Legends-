@@ -12,8 +12,8 @@ this.legend_armor_leather_jacket_simple <- this.inherit("scripts/items/legend_ar
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.Value = 30;
-		this.m.Condition = 10;
-		this.m.ConditionMax = 10;
+		this.m.Condition = 15;
+		this.m.ConditionMax = 15;
 		this.m.StaminaModifier = -1;
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
 	}

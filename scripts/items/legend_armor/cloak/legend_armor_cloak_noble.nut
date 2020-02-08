@@ -23,7 +23,7 @@ this.legend_armor_cloak_noble <- this.inherit("scripts/items/legend_armor/cloak/
 		this.m.Value = 5000;
 		this.m.Condition = 20;
 		this.m.ConditionMax = 20;
-		this.m.StaminaModifier = -1;
+		this.m.StaminaModifier = -2;
 	}
 });
 

@@ -2885,23 +2885,45 @@ Halberd condition increased from 72 to 85 (wuxiang)
 Fixed smoked ham being uncookable (wuxiang) 
 
 
+<<<<<<< HEAD
+
+=======
+13.3.2  Slow and steady (experimental) 
+
+Reverts to vanilla AI timings, slowing down turn times. May fix:
+* invisible unholds
+* rotation crashes 
+* next turn order freezes 
+* Miscellaneous strange freezes
+
+Fatigue costs reduced across 24 plate armors  
+Adds back in brain damage allowing cultist conversion (salty)
+Freedom of movement tooltip updated (salty) 
+Fixes demon hound crashs (wuxiang) 
+Fixes tabard tooltips (wuxiang) 
+Fixes decimal points in danger pay (wuxiang) 
+Wooden pitchfork gets +5 damage 
+prepare bleed lasts slightly longer 
+Fixes double strike 
+Fixes lindwurm, mountain and skin armors requiring layered and non-layered components at the same time 
+
+
+
 13.3.3 
 
-AI won't try to puncture enemies with full fatigue 
-Bandit veterans always have hats 
-Miners give +33% XP and have -33 %HP 
-Fencers, bandit veterans and bandit warlords count for favourite enemy swordmaster 
-Fencers, halberdiers and slingers count for favourite enemy noble 
-Slinger counts for favourite enemy archer 
-Bandit veteran and bandit warlord count for favourite enemy bandit 
-Butcher, blacksmith, monk, farmhand, minstrel, poacher, miner, squire and witch hunter count for favourite enemy caravan 
-Legendary creatures will contribute towards head count in Big Game Hunt contracts 
 
-**Perk balance changes:** 
-Back to basics - also increases camp training by 10% 
-Crippling strikes - also grants 10% damage vs undead  
-Executioner - also grants +10% damage to stunned, netted or sleeping enemies 
-Muscularity - maximum of 50 damage 
+**Community Armor rework** 
+Implements most of the changes from the popular BlueyD and Balzaphon submods 
+
+
+
+
+**Community Perk balance suggestions:**
+Implements most of the suggestions from ToxAsh, Belial and others.  
+* Back to basics - also increases camp training by 10% 
+* Crippling strikes - also grants 10% damage vs undead  
+* Executioner - also grants +10% damage to stunned, netted or sleeping enemies 
+* Muscularity - maximum of 50 damage 
 Lone wolf - triggers at 2 tiles 
 Lookout - also grants 10% to scouting in camp 
 Onslaught - now gives 50% chance to apply new Effect Baffeled, which is a weaker daze 
@@ -2922,3 +2944,23 @@ Heightened reflexes - increased from 50% to 100% of ranged defense becomes iniat
 thrust master - also applies to prong and staff thrust, and reduces the range penalty from throwing spears 
 
 
+**Other changes**
+AI sped back up for most actions except turn evaluation. 
+AI won't try to puncture enemies with full fatigue 
+Bandit veterans always have hats 
+Miners give +33% XP and have -33 %HP 
+Fencers, bandit veterans and bandit warlords count for favourite enemy swordmaster 
+Fencers, halberdiers and slingers count for favourite enemy noble 
+Slinger counts for favourite enemy archer 
+Bandit veteran and bandit warlord count for favourite enemy bandit 
+Butcher, blacksmith, monk, farmhand, minstrel, poacher, miner, squire and witch hunter count for favourite enemy caravan 
+Legendary creatures will contribute towards head count in Big Game Hunt contracts 
+
+
+
+Fixes error in cultist origin vs old gods event (wuxiang)
+Fixes errors in legendary armor bluprints (wuxiang)
+Cat uses cat names (wuxiang)
+Choke uses unarmed mastery instead of dagger mastery (wuxiang) 
+Fixes error stopping gather buildings giving the goodies (D00D's bro and wuxiang)
+Fixes naked fishwives and cannibals 

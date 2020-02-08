@@ -24,8 +24,8 @@ this.legend_wooden_pitchfork <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RangeMin = 1;
 		this.m.RangeMax = 2;
 		this.m.RangeIdeal = 2;
-		this.m.RegularDamage = 10;
-		this.m.RegularDamageMax = 30;
+		this.m.RegularDamage = 15;
+		this.m.RegularDamageMax = 35;
 		this.m.ArmorDamageMult = 0.2;
 		this.m.DirectDamageMult = 0.3;
 		this.m.DirectDamageAdd = -0.1;

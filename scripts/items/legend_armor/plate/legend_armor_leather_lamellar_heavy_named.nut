@@ -21,9 +21,9 @@ this.legend_armor_leather_lamellar_heavy_named <- this.inherit("scripts/items/le
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.Value = 8500;
-		this.m.Condition = 140;
-		this.m.ConditionMax = 140;
-		this.m.StaminaModifier = -25;
+		this.m.Condition = 165;
+		this.m.ConditionMax = 165;
+		this.m.StaminaModifier = -19;
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
 		this.randomizeValues();
 	}

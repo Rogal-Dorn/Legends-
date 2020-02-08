@@ -171,7 +171,8 @@ this.legend_piercing_bolt <- this.inherit("scripts/skills/skill", {
 	function onUse( _user, _targetTile )
 	{
 		this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectSplit);
-		local ret = this.attackEntity(_user, _targetTile.getEntity());
+		local target = _targetTile.getEntity();
+		local ret = this.attackEntity(_user, target);
 		this.getItem().setLoaded(false);
 		local skillToAdd = this.new("scripts/skills/actives/reload_bolt");
 		skillToAdd.setItem(this.getItem());
@@ -214,7 +215,7 @@ this.legend_piercing_bolt <- this.inherit("scripts/skills/skill", {
 		};
 
 		this.onScheduledTargetHit(info);
-		this.Tactical.EventLog.logEx(this.getName() + " pierces " + this.Const.UI.getColorizedEntityName(_targetTile.getEntity()) + " and hits " + this.Const.UI.getColorizedEntityName(_targetEntity));
+		this.Tactical.EventLog.logEx(this.getName() + " pierces " + this.Const.UI.getColorizedEntityName(target) + " and hits " + this.Const.UI.getColorizedEntityName(_targetEntity));
 		return ret
 	}
 

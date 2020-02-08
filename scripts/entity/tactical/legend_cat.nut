@@ -217,7 +217,7 @@ this.legend_cat <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_pathfinder"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_nine_lives"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_evasion"));
-		this.setName(this.Const.Strings.LegendCatNames[this.Math.rand(0, this.Const.Strings.KnightNames.len() - 1)]);
+		this.setName(this.Const.Strings.LegendCatNames[this.Math.rand(0, this.Const.Strings.LegendCatNames.len() - 1)]);
 
 	}
 

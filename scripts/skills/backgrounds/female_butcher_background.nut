@@ -209,7 +209,7 @@ this.female_butcher_background <- this.inherit("scripts/skills/backgrounds/chara
 		}
 	}
 
-	function onAddEquipment()
+	function onAddLegendEquipment()
 	{
 		local items = this.getContainer().getActor().getItems();
 		local r;
