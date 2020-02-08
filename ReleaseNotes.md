@@ -2947,11 +2947,12 @@ Staff spins - now applies both stun and stagger
 Second wind - now also removes stun, stagger, daze, sleep and charm when it restores your fatigue 
 Heightened reflexes - increased from 50% to 100% of ranged defense becomes iniative
 thrust master - also applies to prong and staff thrust, and reduces the range penalty from throwing spears 
-
+Balance - Now grant up to 25% defense reroll chance 
 
 **Other changes**
 AI sped back up for most actions except turn evaluation. 
 AI won't try to puncture enemies with full fatigue 
+Dismissal only costs money on legendary economic difficulty 
 Bandit veterans always have hats 
 Miners give +33% XP and have -33 %HP 
 Fencers, bandit veterans and bandit warlords count for favourite enemy swordmaster 

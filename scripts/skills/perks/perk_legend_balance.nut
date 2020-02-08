@@ -1,5 +1,7 @@
 this.perk_legend_balance <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		Charges = 1
+	},
 	function create()
 	{
 		this.m.ID = "perk.legend_balance";
@@ -30,7 +32,8 @@ this.perk_legend_balance <- this.inherit("scripts/skills/skill", {
 		local body = actor.getArmor(this.Const.BodyPart.Body);
 		local initiative = actor.getInitiative();
 		local diff = this.Math.abs(body - (2 * initiative));
-		return this.Math.max(5, this.Math.floor(40 - diff * 0.5));
+		local adjust = this.Math.floor(25 - diff * 0.5);
+		return this.Math.max(5, adjust)
 	}
 
 	function getTooltip()
@@ -44,7 +47,7 @@ this.perk_legend_balance <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "You are gaining [color=" + this.Const.UI.Color.PositiveValue + "]" + bonus + "[/color] defence and damage reduction due to increased balance"
+				text = "You gain [color=" + this.Const.UI.Color.PositiveValue + "]" + bonus + "%[/color] defense reroll chance due to Balance"
 			});
 		}
 		else
@@ -53,7 +56,7 @@ this.perk_legend_balance <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
-				text = "This character\'s initiative and armor are too far out of alignment to gain more than[color=" + this.Const.UI.Color.PositiveValue + "] 5[/color] defense from balance"
+				text = "This character\'s initiative and armor are too far out of alignment to give more than[color=" + this.Const.UI.Color.PositiveValue + "] 5%[/color] defense reroll chance due to Balance"
 			});
 		}
 
@@ -63,19 +66,9 @@ this.perk_legend_balance <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		local bonus = this.getBonus();
-		_properties.MeleeDefense += bonus;
-		_properties.RangedDefense += bonus;
+		_properties.RerollDefenseChance += bonus;
 	}
-	
-	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
-	{
-		if (_attacker != null && _attacker.getID() == this.getContainer().getActor().getID() || _skill != null && !_skill.isAttack())
-		{
-			return;
-		}
-		local bonus = this.getBonus();
-		_properties.DamageReceivedArmorMult *= 1.0 - (bonus * 0.01);
-	}
+
 
 });
 
