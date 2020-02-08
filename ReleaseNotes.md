@@ -2889,6 +2889,13 @@ Fixed smoked ham being uncookable (wuxiang)
 
 AI won't try to puncture enemies with full fatigue 
 Bandit veterans always have hats 
+Miners give +33% XP and have -33 %HP 
+Fencers, bandit veterans and bandit warlords count for favourite enemy swordmaster 
+Fencers, halberdiers and slingers count for favourite enemy noble 
+Slinger counts for favourite enemy archer 
+Bandit veteran and bandit warlord count for favourite enemy bandit 
+Butcher, blacksmith, monk, farmhand, minstrel, poacher, miner, squire and witch hunter count for favourite enemy caravan 
+Legendary creatures will contribute towards head count in Big Game Hunt contracts 
 
 **Perk balance changes:** 
 Back to basics - also increases camp training by 10% 
