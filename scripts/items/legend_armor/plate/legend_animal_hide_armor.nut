@@ -19,7 +19,7 @@ this.legend_animal_hide_armor <- this.inherit("scripts/items/legend_armor/legend
 		this.m.Value = 60;
 		this.m.Condition = 30;
 		this.m.ConditionMax = 30;
-		this.m.StaminaModifier = -5;
+		this.m.StaminaModifier = -3;
 	}
 
 });
