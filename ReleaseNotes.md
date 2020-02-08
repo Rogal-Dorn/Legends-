@@ -2909,48 +2909,49 @@ Fixes lindwurm, mountain and skin armors requiring layered and non-layered compo
 
 
 
-13.3.3  Friendly Neighbours 
+13.3.3  Fast Friends 
 
+**Faster**
+Includes Adam's Faster mod - resolves AI conflicts and duplication 
+Incorporates LeVilainJoueur's Invisible Unhold fix for Faster 
 
 **Community Armor rework** 
 Implements most of the changes from the popular BlueyD and Balzaphon submods 
 *Keep armor values in the vanilla ballpark until multi-unique combos are available
 * Different efficiency (armor:fatigue) ratios at different prices
-*Prices should generally go way down (too easy to farm money; layers not buyable right now)
+* Prices should generally go way down (too easy to farm money; layers not buyable right now)
 * Named layers should be worth wearing if found, and occasionally worth purchasing
 * Worn, rotten, or rusty gear should generally kind of suck compared to the base armor
 * Barbarian armor should be low cost and low effectiveness too
 * Ancient armor should be low efficiency and medium cost
 
-
 **Community Perk balance suggestions:**
-Implements most of the suggestions from ToxAsh, Belial and others.  
+Implements many perk suggestions from ToxAsh, Belial, Balzphon and others.  
 * Back to basics - also increases camp training by 10% 
 * Crippling strikes - also grants 10% damage vs undead  
 * Executioner - also grants +10% damage to stunned, netted or sleeping enemies 
 * Muscularity - maximum of 50 damage 
-Lone wolf - triggers at 2 tiles 
-Lookout - also grants 10% to scouting in camp 
-Onslaught - now gives 50% chance to apply new Effect Baffeled, which is a weaker daze 
-Push the advantage - also applies to grappled, staggered, net and dazed 
-Return favor - applied both stun and staggered, AP reduced to 3 
-Efficient stacking - Grants 8 slots and +4% fatigue 
-Skillful packing - grants 12 slots and +6% fatigue 
-Spearwaller - also increases spearwall damage by 25% 
-Net repairer - also grants +25% chance to hit with a net 
-Freedom of movement - has a 5% minimum and 95% maximum damage reduction 
-True believer - also grants optimist trait 
-Last stand - grants 1 melee and ranged defense for every 2% below 66%HP 
-Tools drawers - Now grants +10 tools and -4% tool consumption 
-Spare tools -  Now grants +20 tools -6% tool consumption
-Staff spins - now applies both stun and stagger 
-Second wind - now also removes stun, stagger, daze, sleep and charm when it restores your fatigue 
-Heightened reflexes - increased from 50% to 100% of ranged defense becomes iniative
-thrust master - also applies to prong and staff thrust, and reduces the range penalty from throwing spears 
-Balance - Now grant up to 25% defense reroll chance 
+* Lone wolf - triggers at 2 tiles 
+* Lookout - also grants 10% to scouting in camp 
+* Onslaught - now gives 50% chance to apply new Effect Baffeled, which is a weaker daze 
+* Push the advantage - also applies to grappled, staggered, net and dazed 
+* Return favor - applied both stun and staggered, AP reduced to 3 
+* Efficient stacking - Grants 8 slots and +4% fatigue 
+* Skillful packing - grants 12 slots and +6% fatigue 
+* Spearwaller - also increases spearwall damage by 25% 
+* Net repairer - also grants +25% chance to hit with a net 
+* Freedom of movement - has a 5% minimum and 95% maximum damage reduction 
+* True believer - also grants optimist trait 
+* Last stand - grants 1 melee and ranged defense for every 2% below 66%HP 
+* Tools drawers - Now grants +10 tools and -4% tool consumption 
+* Spare tools -  Now grants +20 tools -6% tool consumption
+* Staff spins - now applies both stun and stagger 
+* Second wind - now also removes stun, stagger, daze, sleep and charm when it restores your fatigue 
+* Heightened reflexes - increased from 50% to 100% of ranged defense becomes iniative
+* Thrust master - also applies to prong and staff thrust, and reduces the range penalty from throwing spears 
+* Balance - Now grant up to 25% defense reroll chance 
 
 **Other changes**
-AI sped back up for most actions except turn evaluation. 
 AI won't try to puncture enemies with full fatigue 
 Dismissal only costs money on legendary economic difficulty 
 Bandit veterans always have hats 
