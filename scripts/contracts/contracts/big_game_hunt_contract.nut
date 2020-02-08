@@ -319,7 +319,7 @@ this.big_game_hunt_contract <- this.inherit("scripts/contracts/contract", {
 						this.Flags.set("HeadsCollected", this.Flags.get("HeadsCollected") + 1);
 					}
 				}
-				else if (_actor.getType() == this.Const.EntityType.Lindwurm && !this.isKindOf(_actor, "lindwurm_tail") || _actor.getType() == this.Const.EntityType.Schrat  || _actor.getType() == this.Const.EntityType.LegendGreenwoodSchrat  || _actor.getType() == this.Const.EntityType.LegendGreenwoodSchratSmall || _actor.getType() == this.Const.EntityType.LegendStollwurm ))
+				else if (_actor.getType() == this.Const.EntityType.Lindwurm && !this.isKindOf(_actor, "lindwurm_tail") || _actor.getType() == this.Const.EntityType.Schrat  || _actor.getType() == this.Const.EntityType.LegendGreenwoodSchrat  || _actor.getType() == this.Const.EntityType.LegendGreenwoodSchratSmall || _actor.getType() == this.Const.EntityType.LegendStollwurm )
 				{
 					this.Flags.set("HeadsCollected", this.Flags.get("HeadsCollected") + 1);
 				}
