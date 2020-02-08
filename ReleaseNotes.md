@@ -2909,7 +2909,8 @@ Fixes lindwurm, mountain and skin armors requiring layered and non-layered compo
 
 
 
-13.3.3  Fast Friends 
+13.3.3  Fast Friends (experimental)
+Incorporates many community contributions
 
 **Faster**
 Includes Adam's Faster mod - resolves AI conflicts and duplication 
@@ -2925,7 +2926,7 @@ Implements most of the changes from the popular BlueyD and Balzaphon submods
 * Barbarian armor should be low cost and low effectiveness too
 * Ancient armor should be low efficiency and medium cost
 
-**Community Perk balance suggestions:**
+**Community Perk balance suggestions**
 Implements many perk suggestions from ToxAsh, Belial, Balzphon and others.  
 * Back to basics - also increases camp training by 10% 
 * Crippling strikes - also grants 10% damage vs undead  
@@ -2978,3 +2979,11 @@ Fixes error stopping gather buildings giving the goodies (D00D's bro and wuxiang
 Fixes naked fishwives and cannibals  (wuxiang) 
 Fixes danger pay decimal point issue (wuxiang) 
 Updates tabard tooltip  (wuxiang) 
+
+
+13.3.3b
+
+Fixes error in scout building leading to failed camp
+Fixes tooltip on Efficient Packing
+Buffs aprons and barbarian gear.
+Fixes double strike 
