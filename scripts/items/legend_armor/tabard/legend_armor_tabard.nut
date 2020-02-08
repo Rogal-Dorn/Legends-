@@ -14,7 +14,7 @@ this.legend_armor_tabard <- this.inherit("scripts/items/legend_armor/legend_armo
 		this.m.Value = 200;
 		this.m.Condition = 5;
 		this.m.ConditionMax = 5;
-		this.m.StaminaModifier = -2;
+		this.m.StaminaModifier = 0;
 	}
 
 	function updateVariant()

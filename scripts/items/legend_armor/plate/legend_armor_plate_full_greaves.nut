@@ -19,7 +19,7 @@ this.legend_armor_plate_full_greaves <- this.inherit("scripts/items/legend_armor
 		this.m.Value = 10000;
 		this.m.Condition = 180;
 		this.m.ConditionMax = 180;
-		this.m.StaminaModifier = -28;
+		this.m.StaminaModifier = -27;
 	}
 
 });

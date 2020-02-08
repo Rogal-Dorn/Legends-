@@ -19,7 +19,7 @@ this.legend_armor_plate_full <- this.inherit("scripts/items/legend_armor/legend_
 		this.m.Value = 7500;
 		this.m.Condition = 170;
 		this.m.ConditionMax = 170;
-		this.m.StaminaModifier = -27;
+		this.m.StaminaModifier = -25;
 	}
 
 });

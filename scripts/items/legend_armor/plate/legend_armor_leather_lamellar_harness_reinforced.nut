@@ -19,7 +19,7 @@ this.legend_armor_leather_lamellar_harness_reinforced <- this.inherit("scripts/i
 		this.m.Value = 3500;
 		this.m.Condition = 130;
 		this.m.ConditionMax = 130;
-		this.m.StaminaModifier = -20;
+		this.m.StaminaModifier = -18;
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
 	}
 

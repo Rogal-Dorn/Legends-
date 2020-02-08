@@ -26,9 +26,9 @@ this.legend_armor_hauberk_full_named <- this.inherit("scripts/items/legend_armor
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.Value = 15000;
-		this.m.Condition = 120;
-		this.m.ConditionMax = 120;
-		this.m.StaminaModifier = -15;
+		this.m.Condition = 135;
+		this.m.ConditionMax = 135;
+		this.m.StaminaModifier = -12;
 		this.randomizeValues();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 	}

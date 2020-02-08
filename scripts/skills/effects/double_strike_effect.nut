@@ -1,6 +1,6 @@
 this.double_strike_effect <- this.inherit("scripts/skills/skill", {
 	m = {
-		TimeAdded = 0
+		AttacksLeft = 1
 	},
 	function create()
 	{
@@ -19,23 +19,23 @@ this.double_strike_effect <- this.inherit("scripts/skills/skill", {
 		return "Having just landed a hit, this character is ready to perform a powerful followup strike! The next attack will inflict [color=" + this.Const.UI.Color.PositiveValue + "]+40%[/color] damage to a single target. If multiple targets are hit, only the first one will receive increased damage. If the attack misses, the effect is wasted.";
 	}
 
-	function onAdded()
-	{
-		this.m.TimeAdded = this.Time.getVirtualTimeF();
-	}
 
-	function onAnySkillUsed( _skill, _targetEntity, _properties )
+	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
 		if (_targetEntity == null)
 		{
 			return;
 		}
 
-		if (!this.m.IsGarbage && this.m.TimeAdded + 0.1 < this.Time.getVirtualTimeF() && !_targetEntity.isAlliedWith(this.getContainer().getActor()))
+		if (this.m.AttacksLeft <= 0)
 		{
-			_properties.DamageTotalMult *= 1.4;
 			this.removeSelf();
 		}
+
+			_properties.DamageTotalMult *= 1.4;
+
+		--this.m.AttacksLeft;
+
 	}
 
 });

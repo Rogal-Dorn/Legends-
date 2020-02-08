@@ -30,8 +30,8 @@ this.legend_armor_cloak_heavy <- this.inherit("scripts/items/legend_armor/cloak/
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.Value = 1000;
-		this.m.Condition = 20;
-		this.m.ConditionMax = 20;
+		this.m.Condition = 30;
+		this.m.ConditionMax = 30;
 		this.m.StaminaModifier = -4;
 	}
 

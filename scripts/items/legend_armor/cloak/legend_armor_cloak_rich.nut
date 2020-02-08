@@ -22,9 +22,9 @@ this.legend_armor_cloak_rich <- this.inherit("scripts/items/legend_armor/legend_
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.Value = 10000;
-		this.m.Condition = 25;
-		this.m.ConditionMax = 25;
-		this.m.StaminaModifier = -3;
+		this.m.Condition = 35;
+		this.m.ConditionMax = 35;
+		this.m.StaminaModifier = -2;
 		this.randomizeValues()
 	}
 

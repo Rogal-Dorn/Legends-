@@ -81,16 +81,17 @@ this.tail_slam_split_skill <- this.inherit("scripts/skills/skill", {
 	function onUse( _user, _targetTile )
 	{
 		this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectSplit);
-		local ret = this.attackEntity(_user, _targetTile.getEntity());
+		local target = _targetTile.getEntity();
+		local ret = this.attackEntity(_user, target);
 
 		if (!_user.isAlive() || _user.isDying())
 		{
 			return ret;
 		}
 
-		if (ret && _targetTile.IsOccupiedByActor && _targetTile.getEntity().isAlive() && !_targetTile.getEntity().isDying())
+		if (ret && _targetTile.IsOccupiedByActor && target.isAlive() && !target.isDying())
 		{
-			this.applyEffectToTarget(_user, _targetTile.getEntity(), _targetTile);
+			this.applyEffectToTarget(_user, target, _targetTile);
 		}
 
 		local ownTile = _user.getTile();
@@ -105,9 +106,9 @@ this.tail_slam_split_skill <- this.inherit("scripts/skills/skill", {
 				ret = this.attackEntity(_user, forwardTile.getEntity()) || ret;
 			}
 
-			if (ret && _targetTile.IsOccupiedByActor && _targetTile.getEntity().isAlive() && !_targetTile.getEntity().isDying())
+			if (ret && _targetTile.IsOccupiedByActor && target.isAlive() && !target.isDying())
 			{
-				this.applyEffectToTarget(_user, _targetTile.getEntity(), _targetTile);
+				this.applyEffectToTarget(_user, target, _targetTile);
 			}
 		}
 

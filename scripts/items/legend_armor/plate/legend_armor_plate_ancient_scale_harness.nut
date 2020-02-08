@@ -19,7 +19,7 @@ this.legend_armor_plate_ancient_scale_harness <- this.inherit("scripts/items/leg
 		this.m.Value = 650;
 		this.m.Condition = 75;
 		this.m.ConditionMax = 75;
-		this.m.StaminaModifier = -14;
+		this.m.StaminaModifier = -12;
         this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
 	}
 

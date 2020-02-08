@@ -19,7 +19,7 @@ this.legend_armor_scale_coat_rotten <- this.inherit("scripts/items/legend_armor/
 		this.m.Value = 1500;
 		this.m.Condition = 80;
 		this.m.ConditionMax = 80;
-		this.m.StaminaModifier = -13;
+		this.m.StaminaModifier = -12;
         this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
 	}
 

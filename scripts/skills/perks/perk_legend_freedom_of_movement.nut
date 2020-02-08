@@ -14,7 +14,7 @@ this.perk_legend_freedom_of_movement <- this.inherit("scripts/skills/skill", {
 
 	function getDescription()
 	{
-		return "Your light ";
+		return "You are moving with freedom ";
 	}
 
 	function getTooltip()
@@ -26,7 +26,7 @@ this.perk_legend_freedom_of_movement <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "When an enemy attacks you, subtract their fatigue as a percent from your fatigue as a percent. Gain that as damage reduction."
+				text = "When an enemy attacks you, subtract their fatigue as a percent from your fatigue as a percent. Gain that as hitpoint damage reduction."
 			});
 		}
 

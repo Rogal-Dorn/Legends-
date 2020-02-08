@@ -12,9 +12,9 @@ this.legend_armor_leather_riveted <- this.inherit("scripts/items/legend_armor/le
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.Value = 2500;
-		this.m.Condition = 105;
-		this.m.ConditionMax = 105;
-		this.m.StaminaModifier = -14;
+		this.m.Condition = 90;
+		this.m.ConditionMax = 90;
+		this.m.StaminaModifier = -12;
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 	}
 

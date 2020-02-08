@@ -19,7 +19,7 @@ this.legend_armor_scale_shirt <- this.inherit("scripts/items/legend_armor/legend
 		this.m.Value = 2000;
 		this.m.Condition = 115;
 		this.m.ConditionMax = 115;
-		this.m.StaminaModifier = -16;
+		this.m.StaminaModifier = -15;
         this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
 	}
 

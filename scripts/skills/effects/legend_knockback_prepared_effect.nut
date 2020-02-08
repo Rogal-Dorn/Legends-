@@ -39,7 +39,7 @@ this.legend_knockback_prepared_effect<- this.inherit("scripts/skills/skill", {
 	{
 		if (this.getContainer().getActor().isPlacedOnMap())
 		{
-			this.spawnIcon("status_effect_54", this._targetEntity.getTile());
+			this.spawnIcon("status_effect_54", this.getContainer().getActor().getTile());
 		}
 
 		this.m.AttacksLeft = 1;
