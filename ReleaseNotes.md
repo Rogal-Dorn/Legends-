@@ -2885,6 +2885,33 @@ Halberd condition increased from 72 to 85 (wuxiang)
 Fixed smoked ham being uncookable (wuxiang) 
 
 
+13.3.3 
+
+AI won't try to puncture enemies with full fatigue 
+Bandit veterans always have hats 
+
+**Perk balance changes:** 
+Back to basics - also increases camp training by 10% 
+Crippling strikes - also grants 10% damage vs undead  
+Executioner - also grants +10% damage to stunned, netted or sleeping enemies 
+Muscularity - maximum of 50 damage 
+Lone wolf - triggers at 2 tiles 
+Lookout - also grants 10% to scouting in camp 
+Onslaught - now gives 50% chance to apply new Effect Baffeled, which is a weaker daze 
+Push the advantage - also applies to grappled, staggered, net and dazed 
+Return favor - applied both stun and staggered, AP reduced to 3 
+Efficient stacking - Grants 8 slots and +4% fatigue 
+Skillful packing - grants 12 slots and +6% fatigue 
+Spearwaller - also increases spearwall damage by 25% 
+Net repairer - also grants +25% chance to hit with a net 
+Freedom of movement - has a 5% minimum and 95% maximum damage reduction 
+True believer - also grants optimist trait 
+Last stand - grants 1 melee and ranged defense for every 2% below 66%HP 
+Tools drawers - Now grants +10 tools and -4% tool consumption 
+Spare tools -  Now grants +20 tools -6% tool consumption
+Staff spins - now applies both stun and stagger 
+Second wind - now also removes stun, stagger, daze, sleep and charm when it restores your fatigue 
+Heightened reflexes - increased from 50% to 100% of ranged defense becomes iniative
+thrust master - also applies to prong and staff thrust, and reduces the range penalty from throwing spears 
 
 
- 

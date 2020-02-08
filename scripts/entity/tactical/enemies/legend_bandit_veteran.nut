@@ -499,9 +499,8 @@ this.legend_bandit_veteran <- this.inherit("scripts/entity/tactical/human", {
 		}
 
 
-		if (this.Math.rand(1, 100) <= 85)
-		{
-			local r = this.Math.rand(1, 5);
+
+			local r = this.Math.rand(1, 4);
 
 			if (r == 1)
 			{
@@ -509,21 +508,16 @@ this.legend_bandit_veteran <- this.inherit("scripts/entity/tactical/human", {
 			}
 			else if (r == 2)
 			{
-				this.m.Items.equip(this.new("scripts/items/helmets/dented_nasal_helmet"));
+				this.m.Items.equip(this.new("scripts/items/helmets/padded_nasal_helmet"));
 			}
 			else if (r == 3)
 			{
-				this.m.Items.equip(this.new("scripts/items/helmets/nasal_helmet_with_rusty_mail"));
+				this.m.Items.equip(this.new("scripts/items/helmets/nasal_helmet_with_mail"));
 			}
 			else if (r == 4)
 			{
-				this.m.Items.equip(this.new("scripts/items/helmets/rusty_mail_coif"));
+				this.m.Items.equip(this.new("scripts/items/helmets/mail_coif"));
 			}
-			else if (r == 5)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/headscarf"));
-			}
-		}
 	}
 
 });
