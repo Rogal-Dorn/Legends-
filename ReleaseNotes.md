@@ -2909,13 +2909,18 @@ Fixes lindwurm, mountain and skin armors requiring layered and non-layered compo
 
 
 
-13.3.3 
+13.3.3  Friendly Neighbours 
 
 
 **Community Armor rework** 
 Implements most of the changes from the popular BlueyD and Balzaphon submods 
-
-
+*Keep armor values in the vanilla ballpark until multi-unique combos are available
+* Different efficiency (armor:fatigue) ratios at different prices
+*Prices should generally go way down (too easy to farm money; layers not buyable right now)
+* Named layers should be worth wearing if found, and occasionally worth purchasing
+* Worn, rotten, or rusty gear should generally kind of suck compared to the base armor
+* Barbarian armor should be low cost and low effectiveness too
+* Ancient armor should be low efficiency and medium cost
 
 
 **Community Perk balance suggestions:**
@@ -2957,10 +2962,12 @@ Butcher, blacksmith, monk, farmhand, minstrel, poacher, miner, squire and witch 
 Legendary creatures will contribute towards head count in Big Game Hunt contracts 
 
 
-
+**Fixes**
 Fixes error in cultist origin vs old gods event (wuxiang)
 Fixes errors in legendary armor bluprints (wuxiang)
 Cat uses cat names (wuxiang)
 Choke uses unarmed mastery instead of dagger mastery (wuxiang) 
 Fixes error stopping gather buildings giving the goodies (D00D's bro and wuxiang)
-Fixes naked fishwives and cannibals 
+Fixes naked fishwives and cannibals  (wuxiang) 
+Fixes danger pay decimal point issue (wuxiang) 
+Updates tabard tooltip  (wuxiang) 
