@@ -298,16 +298,14 @@ this.ai_defend_rotation <- this.inherit("scripts/ai/tactical/behavior", {
 
 		if (this.Const.AI.VerboseMode)
 		{
-			this.logInfo("* " + _entity.getName() + ": Using Rotation! TargetTile = " + this.m.TargetTile);
+			this.logInfo("* " + _entity.getName() + ": Using Rotation!");
 		}
 
 		this.m.Skill.use(this.m.TargetTile);
 
-		this.logInfo("* " + _entity.getName() + ": Used Rotation!");
-		
 		if (!_entity.isHiddenToPlayer() || this.m.TargetTile.IsVisibleForPlayer)
 		{
-			this.getAgent().declareEvaluationDelay(1000);
+			this.getAgent().declareEvaluationDelay(2000);
 			this.getAgent().declareAction();
 		}
 
