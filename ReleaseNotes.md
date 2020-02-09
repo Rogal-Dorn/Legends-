@@ -2987,6 +2987,9 @@ Fixes double strike
 13.3.4  Faithful Shield  
 
 *Fixes crash from undead_frozen_pond_event
+*Fixes error with shoot stake skill.
+*Fixes an invalid injury on skeletons.
+*Fixes legend vala recruitment on legions origin start.
 
 **Faith**
 New Perk - Holy Flame - Choose a tile to bless for two turns. Allies ending their turn on this tile are Sanctified, becoming immune to injuries for two turns. Undead ending their turn on this tile become Consecrated, losing immunity to injuries and will not resurrect. Cultists ending their turn here will burn for 10-20 damage. 
