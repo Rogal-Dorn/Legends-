@@ -237,7 +237,7 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 				0
 			],
 			Stamina = [
-				10,
+				5,
 				10
 			],
 			MeleeSkill = [
@@ -245,20 +245,20 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 				5
 			],
 			RangedSkill = [
-				20,
+				15,
 				20
 			],
 			MeleeDefense = [
-				5,
-				5
+				-5,
+				0
 			],
 			RangedDefense = [
-				5,
+				0,
 				5
 			],
 			Initiative = [
-				0,
-				0
+				-5,
+				-5
 			]
 		};
 		return c;
