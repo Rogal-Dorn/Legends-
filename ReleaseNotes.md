@@ -2647,3 +2647,6 @@ named leather jacket fatigue range from 3-5 to 2-4
 Mail shirt fatigue from -6 to -7 
 
 
+14.0.0
+
+*Fixes crash from undead_frozen_pond_event

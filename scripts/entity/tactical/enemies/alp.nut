@@ -304,7 +304,6 @@ this.alp <- this.inherit("scripts/entity/tactical/actor", {
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_fortified_mind"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
 			}
-
 	}
 
 });
