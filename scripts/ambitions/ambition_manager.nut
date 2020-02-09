@@ -140,13 +140,15 @@ this.ambition_manager <- {
 
 		if (!this.isAvailable())
 		{
+			//this.logInfo("Ambition not available");
 			return;
 		}
 
 		if (this.m.ActiveAmbition != null)
 		{
-			if (this.m.ActiveAmbition.isSuccess() && this.World.Events.canFireEvent())
+			if (this.m.ActiveAmbition.isSuccess() && this.World.Events.canFireEvent(true)) //changed to true (ignores evaluating)
 			{
+				//this.logInfo("Ambition success");
 				if (this.World.Events.fire("event.ambition_fulfilled"))
 				{
 					this.m.ActiveAmbition.clear();
@@ -154,13 +156,14 @@ this.ambition_manager <- {
 					this.m.Selection = null;
 					this.m.Thread = null;
 					this.World.TopbarAmbitionModule.setText(null);
-					this.setDelay(24);
+					this.setDelay(0); //from 24
 					++this.m.Completed;
 					this.m.LastTime = this.Time.getVirtualTimeF();
 				}
 			}
 			else
 			{
+				//this.logInfo("Ambition no success");
 				this.m.LastTime = this.Time.getVirtualTimeF();
 			}
 		}
