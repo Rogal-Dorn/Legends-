@@ -219,8 +219,8 @@
 		}
 
 		if(this.m.IsLineVSLine && !this.Tactical.State.isScenarioMode())
-			{
-				local friendlyRanged = false, enemyRanged = false;
+		{
+			local friendlyRanged = false, enemyRanged = false;
 				for( local i = this.Const.Faction.Player; i != this.m.Instances.len(); i = ++i )
 					{
 					if(this.m.Instances[i].len() == 0) continue; // most factions are empty
@@ -239,10 +239,10 @@
 						}
 					}
 
-				if(friendlyRanged || enemyRanged)
+			if(friendlyRanged || enemyRanged)
+			{
+					for( local i = this.Const.Faction.Player; i != this.m.Instances.len(); i = ++i )
 					{
-						for( local i = this.Const.Faction.Player; i != this.m.Instances.len(); i = ++i )
-						{
 						if(this.m.Instances[i].len() == 0) continue; // most factions are empty
 						local faction = this.World.FactionManager.getFaction(i);
 						local factionType = faction != null ? faction.getType() : this.Const.FactionType.Player;
@@ -259,7 +259,7 @@
 								hasLeader = true; break; 
 								}
 							if(!hasLeader) continue;
-					  }
+							}
 
 					  local friendly = i == this.Const.Faction.Player || this.World.FactionManager.isAlliedWithPlayer(i);
 					  if(friendly ? enemyRanged : friendlyRanged)
@@ -296,7 +296,8 @@
 							}
 					  }
 				}
-
+			}
+		}
 
 		if (_properties.AfterDeploymentCallback != null)
 		{
