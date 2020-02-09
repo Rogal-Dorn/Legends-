@@ -3013,3 +3013,4 @@ Adds 16 colour variants for named leather armors
 Healer group given to Maid 
 Fixes warbear recruitment event showing up without a trainer, fixes text and adds event image 
 Firefield uses correct icon and sounds 
+buffs surcoats and nerfs barbarian gear slightly 
