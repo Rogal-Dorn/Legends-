@@ -231,36 +231,36 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 
 		local c = {
 			Hitpoints = [
+				-5,
+				-5
+			],
+			Bravery = [
 				0,
 				0
 			],
-			Bravery = [
-				5,
-				5
-			],
 			Stamina = [
-				20,
-				20
+				15,
+				15
 			],
 			MeleeSkill = [
 				0,
-				5
+				0
 			],
 			RangedSkill = [
-				25,
+				20,
 				25
 			],
 			MeleeDefense = [
-				0,
-				5
+				-5,
+				0
 			],
 			RangedDefense = [
-				10,
-				10
+				5,
+				5
 			],
 			Initiative = [
-				0,
-				0
+				-5,
+				-5
 			]
 		};
 		return c;

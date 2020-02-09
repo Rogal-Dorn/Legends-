@@ -18,9 +18,9 @@ this.legend_reinforced_animal_hide_armor <- this.inherit("scripts/items/legend_a
 		this.m.OverlayIconLarge = "legend_armor/plate/inventory_legend_reinforced_animal_hide_armor.png";
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.Value = 175;
-		this.m.Condition = 50;
-		this.m.ConditionMax = 50;
-		this.m.StaminaModifier = -8;
+		this.m.Condition = 55;
+		this.m.ConditionMax = 55;
+		this.m.StaminaModifier = -9;
 	}
 
 });

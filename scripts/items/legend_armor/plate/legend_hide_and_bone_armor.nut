@@ -20,7 +20,7 @@ this.legend_hide_and_bone_armor <- this.inherit("scripts/items/legend_armor/lege
 		this.m.Value = 350;
 		this.m.Condition = 80;
 		this.m.ConditionMax = 80;
-		this.m.StaminaModifier = -13;
+		this.m.StaminaModifier = -11;
 	}
 
 });

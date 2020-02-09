@@ -126,7 +126,7 @@ this.scout_building <- this.inherit("scripts/entity/world/camp/camp_building", {
             }
             local mod = this.m.BaseCraft + this.m.BaseCraft * bro.getBackground().getModifiers().Scout;
 			
-			if (bro.getSkills.hasSkill("perk.lookout"))
+			if (bro.getSkills().hasSkill("perk.lookout"))
             {
 			mod = mod * 1.1;
 			}

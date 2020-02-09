@@ -2909,7 +2909,8 @@ Fixes lindwurm, mountain and skin armors requiring layered and non-layered compo
 
 
 
-13.3.3  Fast Friends 
+13.3.3  Fast Friends (experimental)
+Incorporates many community contributions
 
 **Faster**
 Includes Adam's Faster mod - resolves AI conflicts and duplication 
@@ -2925,7 +2926,7 @@ Implements most of the changes from the popular BlueyD and Balzaphon submods
 * Barbarian armor should be low cost and low effectiveness too
 * Ancient armor should be low efficiency and medium cost
 
-**Community Perk balance suggestions:**
+**Community Perk balance suggestions**
 Implements many perk suggestions from ToxAsh, Belial, Balzphon and others.  
 * Back to basics - also increases camp training by 10% 
 * Crippling strikes - also grants 10% damage vs undead  
@@ -2978,3 +2979,40 @@ Fixes error stopping gather buildings giving the goodies (D00D's bro and wuxiang
 Fixes naked fishwives and cannibals  (wuxiang) 
 Fixes danger pay decimal point issue (wuxiang) 
 Updates tabard tooltip  (wuxiang) 
+
+
+13.3.3b
+
+Fixes error in scout building leading to failed camp
+Fixes tooltip on Efficient Packing
+Buffs aprons and barbarian gear.
+Fixes double strike 
+
+13.3.4  Faithful Shield  
+
+**Faith**
+New Perk - Holy Flame - Choose a tile to bless for two turns. Allies ending their turn on this tile are Sanctified, becoming immune to injuries for two turns. Undead ending their turn on this tile become Consecrated, losing immunity to injuries and will not resurrect. Cultists ending their turn here will burn for 10-20 damage. 
+New Perk - Prayer of Hope - Adjacent allies gain 10% of their resolve as hitpoints at the end of their turn. Adjacent undead begin Disintegrating at 10 damage per turn. Does not effect cultists. 
+New Perk - Prayer of Faith - Adjacent allies gain 10% of their resolve as melee and ranged defense. Adjacent undead become Baffled. Does not effect cultists.   
+Faith perk group given to: Monks, Nuns, Flagellants, Witchhunters and Crusaders
+Crusader origin has a higher chance to find monks, nuns, flagellants, witch hunters and crusader recruits. 
+
+**Shields Up!**
+Adam's Shield's up mod has been integrated as perks, this resolves mod conflicts. 
+Well trained human enemies will now begin the battle with their shields up.
+Changed perk - Born with a board - This character begins each fight by shield walling before the turn starts. 
+New Perk - Shields up - Everyone in your company begins each fight by shield walling if able. Only available on Noble commander
+
+**Noble**
+Changed perk - Holding the line - no longer effects ranged defense, only melee defense
+New perk - Incoming! - Provides +10 ranged defense to all allies within 4 tiles. Only available on Noble Commander 
+Noble origin has a chance to find other nobles willing to join the cause. 
+
+All commanders except vala have their stats nerfed by about 5 points across all skills. Each can still roll the same maximum in their key skills, but it will be rarer. 
+Adds 16 colour variants for named leather armors 
+Healer group given to Maid 
+Fixes warbear recruitment event showing up without a trainer, fixes text and adds event image 
+Firefield uses correct icon and sounds 
+buffs surcoats and nerfs barbarian gear slightly 
+Vengeance buffed to +30% damage 
+Fixes Smackdown not working when activated. renamed "Prepare to knock back" to "Wind Up".  
