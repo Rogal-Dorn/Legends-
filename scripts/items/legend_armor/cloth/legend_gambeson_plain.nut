@@ -10,15 +10,7 @@ this.legend_gambeson_plain <- this.inherit("scripts/items/legend_armor/cloth/leg
 			13,
 			14,
 			16,
-			34,
-			40,
-			59,
-			65,
-			66,
-			67,
-			68,
-			69,
-			70
+			34
         ];
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();

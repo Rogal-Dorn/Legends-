@@ -40,7 +40,7 @@ this.camp_barber_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 
 		return {
 			Title = "Barber",
-			SubTitle = "Customize the appearance of your men at the barber",
+			SubTitle = "Customize the appearance of your mercenaries at the barber",
 			Roster = roster,
 			Assets = this.m.Parent.queryAssetsInformation()
 		};

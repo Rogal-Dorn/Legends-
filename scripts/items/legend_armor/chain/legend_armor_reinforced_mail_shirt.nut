@@ -3,7 +3,7 @@ this.legend_armor_reinforced_mail_shirt <- this.inherit("scripts/items/legend_ar
 	function create()
 	{
 		this.legend_armor_upgrade.create();
-		this.m.Type = this.Const.Items.ArmorUpgrades.Chain
+		this.m.Type = this.Const.Items.ArmorUpgrades.Chain;
 		this.m.ID = "legend_armor.reinforced_mail_shirt";
 		this.m.Name = "Reinforced Mail Shirt";
 		this.m.Description = "A reinforced mail shirt with shoulder guards providing excellent protection against most weapons.";
@@ -15,7 +15,7 @@ this.legend_armor_reinforced_mail_shirt <- this.inherit("scripts/items/legend_ar
 		this.m.SpriteBack = "bust_legend_reinforced_mail_shirt";
 		this.m.SpriteDamagedBack = "bust_legend_reinforced_mail_shirt_damaged";
 		this.m.SpriteCorpseBack = "bust_legend_reinforced_mail_shirt_dead";
-		this.m.Value = 2000;
+		this.m.Value = 1000;
 		this.m.Condition = 80;
 		this.m.ConditionMax = 80;
 		this.m.StaminaModifier = -10;

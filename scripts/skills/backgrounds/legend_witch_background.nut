@@ -33,6 +33,7 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.Excluded = [
 			"trait.brave",
 			"trait.athletic",
+			"trait.bloodthirsty",
 			"trait.brute",
 			"trait.dexterous",
 			"trait.eagleyes",
@@ -283,36 +284,36 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 	{
 		local c = {
 			Hitpoints = [
-				-5,
-				-5
+				-15,
+				-10
 			],
 			Bravery = [
-				5,
-				5
+				0,
+				0
 			],
 			Stamina = [
-				15,
+				10,
 				15
 			],
 			MeleeSkill = [
-				-5,
-				-5
+				-10,
+				-10
 			],
 			RangedSkill = [
-				15,
+				10,
 				15
 			],
 			MeleeDefense = [
-				-5,
-				-5
+				-10,
+				-10
 			],
 			RangedDefense = [
-				-5,
-				-5
+				-10,
+				-10
 			],
 			Initiative = [
-				25,
-				25
+				15,
+				20
 			]
 		};
 		return c;

@@ -3,7 +3,7 @@ this.legend_armor_hauberk_full <- this.inherit("scripts/items/legend_armor/legen
 	function create()
 	{
 		this.legend_armor_upgrade.create();
-		this.m.Type = this.Const.Items.ArmorUpgrades.Chain
+		this.m.Type = this.Const.Items.ArmorUpgrades.Chain;
 		this.m.ID = "legend_armor.hauberk_full";
 		this.m.Name = "Full Hauberk";
 		this.m.Description = "A long and heavy chainmail that offers good protection but is very fatiguing to wear.";
@@ -15,10 +15,10 @@ this.legend_armor_hauberk_full <- this.inherit("scripts/items/legend_armor/legen
 		this.m.SpriteBack = "bust_legend_hauberk_full";
 		this.m.SpriteDamagedBack = "bust_legend_hauberk_full_damaged";
 		this.m.SpriteCorpseBack = "bust_legend_hauberk_full_dead";
-		this.m.Value = 5000;
-		this.m.Condition = 100;
-		this.m.ConditionMax = 100;
-		this.m.StaminaModifier = -13;
+		this.m.Value = 2500;
+		this.m.Condition = 115;
+		this.m.ConditionMax = 115;
+		this.m.StaminaModifier = -14;
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 	}
 

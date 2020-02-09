@@ -36,57 +36,64 @@ this.legend_rune <- this.inherit("scripts/crafting/blueprint", {
 		switch (this.m.Rune)
 		{
 			case 1:
-				max1 = this.isUpgraded() ? 12 : 9;
-				return "This item has the power of the rune sigil of Power:\n[color=" + this.Const.UI.Color.PositiveValue + "]+3% to +" + max1 + "%[/color] Damage inflicted.";
+				max1 = this.isUpgraded() ? 9 : 6;
+				max2 = this.isUpgraded() ? 9 : 6;
+				return "This item has the power of the rune sigil of Power:\n[color=" + this.Const.UI.Color.PositiveValue + "]+3% to +" + max1 + "%[/color] total damage inflicted and [color=" + this.Const.UI.Color.PositiveValue + "]+3 to +" + max2 + "%[/color] maximum damage.";
 				break;
 
 			case 2:
-				max1 = this.isUpgraded() ? 12 : 9;
+				max1 = this.isUpgraded() ? 9 : 6;
 				return "This item has the power of the rune sigil of Accuracy:\n[color=" + this.Const.UI.Color.PositiveValue + "]+3% to +" + max1 + "%[/color] Melee skill.\n" + "[color=" + this.Const.UI.Color.PositiveValue + "]+3% to +" + max1 + "%[/color] Ranged skill.";
 				break;
 
 			case 3:
-				max1 = this.isUpgraded() ? 12 : 9;
-				return "This item has the power of the rune sigil of Feeding:\n[color=" + this.Const.UI.Color.PositiveValue + "]3% to " + max1 + "%[/color] of inflicted health damage recovers fatigue.";
+				max1 = this.isUpgraded() ? 6 : 4;
+				return "This item has the power of the rune sigil of Feeding:\n[color=" + this.Const.UI.Color.PositiveValue + "]2% to " + max1 + "%[/color] of inflicted health damage recovers fatigue.";
 				break;
 
 			case 4:
 				max1 = this.isUpgraded() ? 3 : 2;
-				max2 = this.isUpgraded() ? 12 : 9;
+				max2 = this.isUpgraded() ? 9 : 6;
 				return "This item has the power of the rune sigil of Poison:\n[color=" + this.Const.UI.Color.PositiveValue + "]1 to " + max1 + "[/color] turn(s) of poison applied, with a strength of [color=" + this.Const.UI.Color.PositiveValue + "]3 to " + max2 + "[/color]. Lowers action points and initiative.";
 				break;
 
 			case 5:
-				max1 = this.isUpgraded() ? 12 : 9;
+				max1 = this.isUpgraded() ? 9 : 6;
 				max2 = this.isUpgraded() ? 3 : 2;
 				return "This item has the power of the rune sigil of Bleeding:\n[color=" + this.Const.UI.Color.PositiveValue + "]3 to " + max1 + "[/color] bleed damage every turn for [color=" + this.Const.UI.Color.PositiveValue + "]1 to " + max2 + "[/color] turn(s).";
 				break;
 
+			case 6:
+				max1 = this.isUpgraded() ? 3 : 2;
+				max2 = this.isUpgraded() ? 9 : 6;
+				return "This item has the power of the rune sigil of Unbreaking:\n[color=" + this.Const.UI.Color.PositiveValue + "]" + max1 + "[/color] to [color=" + this.Const.UI.Color.PositiveValue + "]" + max2 + "[/color] durability restored on every kill.";
+				break;
+
 			case 11:
 				max1 = this.isUpgraded() ? 2 : 1;
-				max2 = this.isUpgraded() ? 12 : 9;
-				return "This item has the power of the rune sigil of Clarity:\n[color=" + this.Const.UI.Color.PositiveValue + "]+0 to +" + max1 + "[/color] Vision.\n[color=" + this.Const.UI.Color.PositiveValue + "]+3% to +" + max2 + "%[/color] Experience gain.";
+				max2 = this.isUpgraded() ? 9 : 6;
+				return "This item has the power of the rune sigil of Clarity:\n[color=" + this.Const.UI.Color.PositiveValue + "]+1 to +" + max1 + "[/color] Vision.\n[color=" + this.Const.UI.Color.PositiveValue + "]+3% to +" + max2 + "%[/color] Experience gain.";
 				break;
 
 			case 12:
-				max1 = this.isUpgraded() ? 12 : 9;
+				max1 = this.isUpgraded() ? 9 : 6;
 				max2 = this.isUpgraded() ? 5 : 3;
 				return "This item has the power of the rune sigil of Bravery:\n[color=" + this.Const.UI.Color.PositiveValue + "]+3% to +" + max1 + "%[/color] Resolve.\n [color=" + this.Const.UI.Color.PositiveValue + "]+1 to +" + max2 + "[/color] Resolve at all morale checks.";
 				break;
 
 			case 13:
-				max1 = this.isUpgraded() ? 12 : 9;
+				max1 = this.isUpgraded() ? 9 : 6;
 				return "This item has the power of the rune sigil of Luck:\n[color=" + this.Const.UI.Color.PositiveValue + "]+3% to +" + max1 + "%[/color] chance to have any attacker require two successful attack rolls in order to hit.";
 				break;
 
 			case 21:
 				max1 = this.isUpgraded() ? 3 : 1;
-				max2 = this.isUpgraded() ? 12 : 9;
+				max2 = this.isUpgraded() ? 9 : 6;
 				return "This item has the power of the rune sigil of Endurance:\n[color=" + this.Const.UI.Color.PositiveValue + "]+0 to +" + max1 + "[/color] Fatigue recovery per turn.\n[color=" + this.Const.UI.Color.PositiveValue + "]-3% to -" + max2 + "%[/color] Fatigue cost and effects multiplier.";
 				break;
 
 			case 22:
-				max1 = this.isUpgraded() ? 12 : 9;
+				max1 = this.isUpgraded() ? 9 : 6;
 				return "This item has the power of the rune sigil of Safety:\n[color=" + this.Const.UI.Color.PositiveValue + "]+3% to +" + max1 + "%[/color] Hitpoints.\n[color=" + this.Const.UI.Color.PositiveValue + "]-3% to -" + max1 + "%[/color] Damage received.";
 				break;
 
@@ -95,12 +102,12 @@ this.legend_rune <- this.inherit("scripts/crafting/blueprint", {
 				break;
 
 			case 31:
-				max1 = this.isUpgraded() ? 12 : 9;
+				max1 = this.isUpgraded() ? 9 : 6;
 				return "This item has the power of the rune sigil of Defense:\n[color=" + this.Const.UI.Color.PositiveValue + "]+3% to +" + max1 + "%[/color] Melee defense.\n" + "[color=" + this.Const.UI.Color.PositiveValue + "]+3% to +" + max1 + "%[/color] Ranged defense.";
 				break;
 
 			case 32:
-				max1 = this.isUpgraded() ? 12 : 9;
+				max1 = this.isUpgraded() ? 9 : 6;
 				return "This item has the power of the rune sigil of Radiance:\n[color=" + this.Const.UI.Color.PositiveValue + "]-3% to -" + max1 + "%[/color] to all adjacent enemies\' Melee skill.\n" + "[color=" + this.Const.UI.Color.PositiveValue + "]-3% to -" + max1 + "%[/color] to all adjacent enemies\' Melee defense.";
 				break;
 

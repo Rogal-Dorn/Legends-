@@ -1,10 +1,9 @@
-
 this.legend_armor_scale_coat_rotten <- this.inherit("scripts/items/legend_armor/legend_armor_upgrade", {
 	m = {},
 	function create()
 	{
 		this.legend_armor_upgrade.create();
-		this.m.Type = this.Const.Items.ArmorUpgrades.Plate
+		this.m.Type = this.Const.Items.ArmorUpgrades.Plate;
 		this.m.ID = "legend_armor.scale_coat_rotten";
 		this.m.Name = "Decayed Coat of Scales";
 		this.m.Description = "This coat of scales is worn and parts have come lose or are missing. It still offers very good protection if you don\'t mind the smell.";
@@ -16,11 +15,11 @@ this.legend_armor_scale_coat_rotten <- this.inherit("scripts/items/legend_armor/
 		this.m.SpriteBack = "bust_legend_scale_coat_rotten";
 		this.m.SpriteDamagedBack = "bust_legend_scale_coat_rotten_damaged";
 		this.m.SpriteCorpseBack = "bust_legend_scale_coat_rotten_dead";
-		this.m.Value = 1500;
-		this.m.Condition = 80;
-		this.m.ConditionMax = 80;
-		this.m.StaminaModifier = -13;
-        this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
+		this.m.Value = 600;
+		this.m.Condition = 60;
+		this.m.ConditionMax = 60;
+		this.m.StaminaModifier = -9;
+		this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
 	}
 
 });

@@ -173,7 +173,7 @@ this.legend_kick <- this.inherit("scripts/skills/skill", {
 			this.Sound.play(this.m.SoundOnUse[this.Math.rand(0, this.m.SoundOnUse.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
 		}
 
-		if (this.Math.rand(1, 100) > this.getHitchance(_targetTile.getEntity()))
+		if (this.Math.rand(1, 100) > this.getHitchance(target))
 		{
 			target.onMissed(this.getContainer().getActor(), this);
 			return false;
@@ -276,7 +276,7 @@ this.legend_kick <- this.inherit("scripts/skills/skill", {
 		{
 			_properties.MeleeSkill += 25;
 
-			if (_properties.IsSpecializedInShields)
+			if (_properties.IsSpecializedInFists)
 			{
 				_properties.MeleeSkill += 15;
 			}

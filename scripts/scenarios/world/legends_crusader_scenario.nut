@@ -123,21 +123,6 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 		return false;
 	}
 
-	function onUpdateDraftList( _list )
-	{
-		if (_list.len() < 10)
-		{
-			_list.push("monk_background");
-		}
-
-		local r;
-		r = this.Math.rand(0, 999);
-		if (r == 0)
-		{
-			_list.push("legend_crusader_background");
-		}
-	}
-
 	function onHiredByScenario( bro )
 	{
 		if (bro.getBackground().isCrusaderRecruitBackground())
@@ -161,8 +146,8 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 		{
 			if (bro.getBackground().isCrusaderRecruitBackground())
 			{
-				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.9);
-				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.9);
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.75);
+				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.75);
 
 			}
 			else
@@ -191,6 +176,68 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 		}
 
 		_tree.addPerk(this.Const.Perks.PerkDefs.FortifiedMind);
+	}
+
+	function onUpdateDraftList( _list )
+	{
+		if (_list.len() < 5)
+		{
+			local r;
+			r = this.Math.rand(0, 3);
+			if (r == 0)
+			{
+			_list.push("flagellant_background");
+			}
+			r = this.Math.rand(0, 5);
+			if (r == 0)
+			{
+			_list.push("monk_background");
+			}
+			r = this.Math.rand(0, 7);
+			if (r == 0)
+			{
+			_list.push("legend_nun_background");
+			}
+			r = this.Math.rand(0, 9);
+			if (r == 0)
+			{
+				_list.push("witchhunter_background");
+			}
+			r = this.Math.rand(0, 999);
+			if (r == 0)
+			{
+				_list.push("legend_crusader_background");
+			}
+		}
+		if (_list.len() >= 5)
+		{
+			local r;
+			r = this.Math.rand(0, 6);
+			if (r == 0)
+			{
+				_list.push("flagellant_background");
+			}
+			r = this.Math.rand(0, 7);
+			if (r == 0)
+			{
+				_list.push("monk_background");
+			}
+			r = this.Math.rand(0, 5);
+			if (r == 0)
+			{
+				_list.push("legend_nun_background");
+			}
+			r = this.Math.rand(0, 9);
+			if (r == 0)
+			{
+				_list.push("witchhunter_background");
+			}
+			r = this.Math.rand(0, 99);
+			if (r == 0)
+			{
+				_list.push("legend_crusader_background");
+			}
+		}
 	}
 
 });

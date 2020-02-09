@@ -13,7 +13,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
         this.m.ID = this.Const.World.CampBuildings.Hunter;
         this.m.ModName = "Hunting";
         this.m.ModMod = 10.0;
-        this.m.BaseCraft = 4.0;		
+        this.m.BaseCraft = 1.5;		
         this.m.Slot = "hunt";
         this.m.Name = "Hunting";
         this.m.Description = "Send out a hunting party for food provisions"

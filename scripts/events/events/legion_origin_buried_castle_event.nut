@@ -71,11 +71,6 @@ this.legion_origin_buried_castle_event <- this.inherit("scripts/events/event", {
 				nearSite = true;
 				break;
 			}
-			if (v.getTypeID() == "location.black_monolith" && v.getTile().getDistanceTo(currentTile) < 5)
-			{
-				nearSite = true;
-				break;
-			}
 		}
 
 		if (!nearSite)
