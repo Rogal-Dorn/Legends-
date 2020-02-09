@@ -2997,5 +2997,6 @@ Faith perk group given to: Monks, Nuns, Flagellants, Witchhunters and Crusaders
 Crusader origin has a higher chance to find monks, nuns, flagellants, witch hunters and crusader recruits. 
 
 All commanders escept vala have their stats nerfed by about 5 points across all skills. Each can still roll the same maximum in their key skills, but it will be rarer. 
+Adds 16 colour variants for named leather armors 
 Healer group given to Maid 
 Fixes warbear recruitment event showing up without a trainer, fixes text and adds event image 
