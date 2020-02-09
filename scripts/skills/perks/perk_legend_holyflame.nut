@@ -17,7 +17,7 @@ this.perk_legend_holyflame <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.m.Container.hasSkill("actives.legend_holyflame"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/legend_holyflame_skill "));
+			this.m.Container.add(this.new("scripts/skills/actives/legend_holyflame_skill"));
 		}
 	}
 

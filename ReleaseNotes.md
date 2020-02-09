@@ -3014,3 +3014,5 @@ Healer group given to Maid
 Fixes warbear recruitment event showing up without a trainer, fixes text and adds event image 
 Firefield uses correct icon and sounds 
 buffs surcoats and nerfs barbarian gear slightly 
+Vengeance buffed to +30% damage 
+Fixes Smackdown not working when activated. renamed "Prepare to knock back" to "Wind Up".  

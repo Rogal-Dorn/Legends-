@@ -2829,7 +2829,7 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendHolyFlame,
 		Tooltip = this.Const.Strings.PerkDescription.LegendHolyFlame,
 		Icon = "ui/perks/holybluefire_circle.png",
-		IconDisabled = "ui/perks/holyfire_circle_bw_bw.png",
+		IconDisabled = "ui/perks/holyfire_circle_bw.png",
 		Const = "LegendHolyFlame"
 	},
 	{

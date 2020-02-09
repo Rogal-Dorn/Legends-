@@ -16,12 +16,6 @@ this.legend_holyflame_skill <- this.inherit("scripts/skills/skill", {
 			"sounds/combat/fire_05.wav",
 			"sounds/combat/fire_06.wav"
 		];
-		this.m.SoundOnHitHitpoints = [
-			"sounds/humans/0/human_light_01.wav",
-			"sounds/humans/0/human_light_02.wav",
-			"sounds/humans/0/human_light_03.wav",
-			"sounds/humans/0/human_light_04.wav"
-		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.OffensiveTargeted +10;
 		this.m.Delay = 0;
@@ -29,8 +23,8 @@ this.legend_holyflame_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsActive = true;
 		this.m.IsTargeted = true;
 		this.m.IsStacking = false;
-		this.m.IsAttack = true;
-		this.m.IsRanged = true;
+		this.m.IsAttack = false;
+		this.m.IsRanged = false;
 		this.m.IsIgnoredAsAOO = true;
 		this.m.IsShowingProjectile = false;
 		this.m.IsUsingHitchance = false;
