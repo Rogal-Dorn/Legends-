@@ -89,12 +89,8 @@ this.rotation <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
-		this.logInfo("**USING rotation skill")
 		local target = _targetTile.getEntity();
-		this.logInfo("**USING rotation skill target = " + target)
 		this.Tactical.getNavigator().switchEntities(_user, target, null, null, 1.0);
-		this.logInfo("**USING rotation skill :: switched entitites")
-
 		return true;
 	}
 
