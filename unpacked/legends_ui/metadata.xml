@@ -53,6 +53,7 @@
 <sprite id="drums_of_life_circle" ic="FF23165B" img="skills\drums_of_life_circle.png" />
 <sprite id="prayer_purple" ic="FF23165B" img="skills\prayer_purple.png" />
 <sprite id="prayer_green" ic="FF23165B" img="skills\prayer_green.png" />
+<sprite id="prayer_blue" ic="FF23165B" img="skills\prayer_green.png" />
 <sprite id="alcohol" ic="FF23165B" img="skills\alcohol.png" />
 <sprite id="graze" ic="FF23165B" img="skills\graze.png" />
 <sprite id="bleed" ic="FF23165B" img="skills\bleed.png" />
@@ -121,5 +122,7 @@
 <sprite id="mini_bleed_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_bleed_circle.png" />
 <sprite id="mini_food_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_food_circle.png" />
 <sprite id="mini_baffled_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_baffled_circle.png" />
+<sprite id="mini_prayer_green" offsetY="35" ic="FF344955" img="skills\mini\mini_prayer_green.png" />
+<sprite id="mini_prayer_purple" offsetY="35" ic="FF344955" img="skills\mini\mini_prayer_purple.png" />
 
 </brush>

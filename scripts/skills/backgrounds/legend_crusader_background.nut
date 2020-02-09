@@ -113,6 +113,7 @@ this.legend_crusader_background <- this.inherit("scripts/skills/backgrounds/char
 				this.Const.Perks.PerkDefs.ReturnFavor,
 				this.Const.Perks.PerkDefs.InspiringPresence,
 				this.Const.Perks.PerkDefs.LegendForcefulSwing,
+				this.Const.Perks.PerkDefs.LegendPrayerOfFaith,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyZombie,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemySkeleton,
 
@@ -120,10 +121,10 @@ this.legend_crusader_background <- this.inherit("scripts/skills/backgrounds/char
 			[
 				this.Const.Perks.PerkDefs.Berserk,
 				this.Const.Perks.PerkDefs.BattleForged,
-				this.Const.Perks.PerkDefs.BattleForged,
 				this.Const.Perks.PerkDefs.Nimble,
 				this.Const.Perks.PerkDefs.KillingFrenzy,
 				this.Const.Perks.PerkDefs.LastStand,
+				this.Const.Perks.PerkDefs.LegendPrayerOfLife,
 				this.Const.Perks.PerkDefs.SunderingStrikes
 			],
 			[
