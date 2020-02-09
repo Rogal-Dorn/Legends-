@@ -130,7 +130,7 @@ this.legend_cannibal_background <- this.inherit("scripts/skills/backgrounds/char
 		items.equip(this.new("scripts/items/weapons/butchers_cleaver"));
 	}
 
-	function onAddLegendaryEquipment()
+	function onAddLegendEquipment()
 	{
 		local items = this.getContainer().getActor().getItems();
 		local cloths = [

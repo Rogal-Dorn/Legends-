@@ -14,7 +14,7 @@ this.vengeance_effect <- this.inherit("scripts/skills/skill", {
 
 	function getDescription()
 	{
-		return "Having just received a blow, this character is determined to fight even harder! The next attack will inflict [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] damage to a single target. If multiple targets are hit, only the first one will receive increased damage. If the attack misses, the effect is wasted.";
+		return "Having just received a blow, this character is determined to fight even harder! The next attack will inflict [color=" + this.Const.UI.Color.PositiveValue + "]+30%[/color] damage to a single target. If multiple targets are hit, only the first one will receive increased damage. If the attack misses, the effect is wasted.";
 	}
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
@@ -26,7 +26,7 @@ this.vengeance_effect <- this.inherit("scripts/skills/skill", {
 
 		if (!this.m.IsGarbage && !_targetEntity.isAlliedWith(this.getContainer().getActor()))
 		{
-			_properties.DamageTotalMult *= 1.2;
+			_properties.DamageTotalMult *= 1.3;
 			this.removeSelf();
 		}
 	}

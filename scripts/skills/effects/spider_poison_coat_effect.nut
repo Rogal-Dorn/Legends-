@@ -39,7 +39,7 @@ this.spider_poison_coat_effect <- this.inherit("scripts/skills/skill", {
 	{
 		if (this.getContainer().getActor().isPlacedOnMap())
 		{
-			this.spawnIcon("status_effect_88", this._targetEntity.getTile());
+			this.spawnIcon("status_effect_88", this.getContainer().getActor().getTile());
 		}
 
 		this.m.AttacksLeft = 4;

@@ -50,6 +50,7 @@ this.legend_rations_effect <- this.inherit("scripts/skills/skill", {
 	function getTooltip()
 	{
 		local rate = this.Math.max(1, this.Math.floor(this.m.Amount / 10));
+		local turns = this.m.TurnsLeft;
 		local title = this.getName();
 		local actor = this.getContainer().getActor()
 		if (actor != null)
@@ -82,13 +83,13 @@ this.legend_rations_effect <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/health.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "] +" + rate + "[/color] Healing per turn"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "] +" + rate + "[/color] Healing per turn for " + turns + " turns "
 			},
 			{
 				id = 11,
 				type = "text",
 				icon = "ui/icons/fatigue.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "] -" + rate + "[/color] Fatigue Recovery per turn"
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "] -" + rate + "[/color] Fatigue Recovery per turn for " + turns + " turns"
 			}
 		];
 		return ret;
@@ -98,8 +99,6 @@ this.legend_rations_effect <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		local rate = this.Math.max(1, this.Math.floor(this.m.Amount / 10));
-		local actor = this.getContainer().getActor();
-		actor.setHitpoints(this.Math.min(actor.getHitpointsMax(), actor.getHitpoints() + rate));
 		_properties.FatigueRecoveryRate -= rate;
 	}
 
@@ -110,6 +109,10 @@ this.legend_rations_effect <- this.inherit("scripts/skills/skill", {
 
 	function onTurnEnd()
 	{
+		local rate = this.Math.max(1, this.Math.floor(this.m.Amount / 10));
+		local actor = this.getContainer().getActor();
+		actor.setHitpoints(this.Math.min(actor.getHitpointsMax(), actor.getHitpoints() + rate));
+
 		if (--this.m.TurnsLeft <= 0)
 		{
 			this.removeSelf();

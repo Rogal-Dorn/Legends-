@@ -1,6 +1,6 @@
 this.legend_sling_heavy_stone_skill <- this.inherit("scripts/skills/skill", {
 	m = {
-		AdditionalAccuracy = -30,
+		AdditionalAccuracy = -40,
 		AdditionalHitChance = 0
 	},
 	function create()
@@ -80,33 +80,12 @@ this.legend_sling_heavy_stone_skill <- this.inherit("scripts/skills/skill", {
 			}
 		]);
 
-		if (this.m.AdditionalAccuracy == 0)
-		{
-			ret.push({
+		ret.push({
 				id = 7,
 				type = "text",
 				icon = "ui/icons/hitchance.png",
-				text = "Has [color=" + this.Const.UI.Color.NegativeValue + "]" + (-10 + this.m.AdditionalHitChance) + "%[/color] chance to hit per tile of distance"
-			});
-		}
-		else if (this.m.AdditionalAccuracy > 0)
-		{
-			ret.push({
-				id = 7,
-				type = "text",
-				icon = "ui/icons/hitchance.png",
-				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]+" + (-10 + this.m.AdditionalAccuracy) + "%[/color] chance to hit, and [color=" + this.Const.UI.Color.NegativeValue + "]" + (-10 + this.m.AdditionalHitChance) + "%[/color] per tile of distance"
-			});
-		}
-		else
-		{
-			ret.push({
-				id = 7,
-				type = "text",
-				icon = "ui/icons/hitchance.png",
-				text = "Has [color=" + this.Const.UI.Color.NegativeValue + "]" + (-10 + this.m.AdditionalAccuracy) + "%[/color] chance to hit, and [color=" + this.Const.UI.Color.NegativeValue + "]" + (5 + this.m.AdditionalHitChance) + "%[/color] per tile of distance"
-			});
-		}
+				text = "Has [color=" + this.Const.UI.Color.NegativeValue + "]" + (-10 + this.m.AdditionalAccuracy) + "%[/color] chance to hit, and [color=" + this.Const.UI.Color.PositiveValue + "]+" + (5 + this.m.AdditionalHitChance) + "%[/color] per tile of distance"
+		});
 
 		ret.push({
 			id = 7,
@@ -177,8 +156,8 @@ this.legend_sling_heavy_stone_skill <- this.inherit("scripts/skills/skill", {
 	{
 		if (_skill == this)
 		{
-			_properties.RangedSkill += -10 + this.m.AdditionalAccuracy;
-			_properties.HitChanceAdditionalWithEachTile += 5 + this.m.AdditionalHitChance;
+			_properties.RangedSkill += -20 + this.m.AdditionalAccuracy;
+			_properties.HitChanceAdditionalWithEachTile += 3 + this.m.AdditionalHitChance;
 		}
 	}
 

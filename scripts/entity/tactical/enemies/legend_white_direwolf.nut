@@ -228,6 +228,7 @@ this.legend_white_direwolf <- this.inherit("scripts/entity/tactical/actor", {
 		this.getSprite("status_rooted").Scale = 0.54;
 		this.setSpriteOffset("status_rooted", this.createVec(0, 0));
 		this.m.Skills.add(this.new("scripts/skills/actives/legend_white_wolf_bite"));
+		this.m.Skills.add(this.new("scripts/skills/actives/werewolf_bite"));
 		this.m.Skills.add(this.new("scripts/skills/actives/rotation"));
 		this.m.Skills.add(this.new("scripts/skills/actives/footwork"));
 		this.m.Skills.add(this.new("scripts/skills/actives/recover_skill"));

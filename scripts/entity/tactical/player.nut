@@ -142,22 +142,40 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 	function getDailyCost()
 	{
-		return this.Math.max(0, this.m.CurrentProperties.DailyWage * this.m.CurrentProperties.DailyWageMult);
+		local wageMult = this.m.CurrentProperties.DailyWageMult;
+		local paymasterCount = 0;
+		local mod = 0.0;
+			foreach (bro in this.World.getPlayerRoster().getAll())
+			{
+				if (bro.getSkills().hasSkill("perk.legend_barter_paymaster") && paymasterCount < 1)
+				{
+				paymasterCount++
+				mod = bro.getBarterModifier();
+				wageMult -= mod;
+
+				}
+			}
+		//local costAdj = this.Math.max(0, this.m.CurrentProperties.DailyWageMult * barterMult);
+		return this.Math.max(0, this.m.CurrentProperties.DailyWage * wageMult);
 	}
 
 	function getDailyFood()
 	{
-		local food = this.Math.maxf(0.0, this.m.CurrentProperties.DailyFood);
-		if (this.isInReserves())
+		local foodMult = 0;
+		foreach (bro in this.World.getPlayerRoster().getAll())
 		{
-			food = food * 2;
-
-			if (this.m.Skills.hasSkill("perk.legend_peaceful"))
+			if (bro.getSkills().hasSkill("perk.legend_quartermaster"))
 			{
-			food = food / 2;
+			foodMult = 1;
 			}
-
 		}
+
+		local food = this.Math.maxf(0.0, this.m.CurrentProperties.DailyFood);
+		if (this.isInReserves() && !this.m.Skills.hasSkill("perk.legend_peaceful"))
+		{
+			food *= 2;
+		}
+		food -= foodMult;
 		return food;
 	}
 
@@ -1040,7 +1058,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				this.getTags().add("zombie_minion");
 				local skill = this.new("scripts/skills/injury_permanent/legend_rotten_flesh");
 				this.m.Skills.add(skill);
-				this.m.Skills.add(this.new("scripts/skills/actives/zombie_bite"));
+				this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_zombie_bite"));
 				this.m.Skills.add(this.new("scripts/skills/perks/perk_nine_lives"));
 			}
 		}
@@ -1341,6 +1359,15 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		else
 		{
 			foreach( bro in brothers )
+			{
+				bro.addXP(this.Math.max(1, this.Math.floor(XPgroup / brothers.len())));
+			}
+		}
+
+		local roster = World.getPlayerRoster().getAll()
+		foreach(bro in roster)
+		{
+			if (bro.isInReserves() && bro.getSkills().hasSkill("perk.legend_peaceful"))
 			{
 				bro.addXP(this.Math.max(1, this.Math.floor(XPgroup / brothers.len())));
 			}
@@ -2521,11 +2548,14 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 	function getBarterModifier()
 	{
+
 		local mod = this.getBackground().getModifiers().Barter;
+
 		local skills =
 		[
 			"perk.legend_barter_trustworthy",
-			"perk.legend_barter_convincing"
+			"perk.legend_barter_convincing",
+			"perk.legend_barter_greed"
 		];
 		foreach (s in skills)
 		{
@@ -2535,6 +2565,8 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				mod += skill.getModifier();
 			}
 		}
+
+
 		return mod;
 	}
 

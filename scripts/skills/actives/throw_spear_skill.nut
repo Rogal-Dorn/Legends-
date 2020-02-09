@@ -145,7 +145,7 @@ this.throw_spear_skill <- this.inherit("scripts/skills/skill", {
 		}
 		else
 		{
-			local ret = this.attackEntity(_user, _targetTile.getEntity());
+			local ret = this.attackEntity(_user, targetEntity);
 		}
 
 		_user.getItems().unequip(_user.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand));
@@ -158,6 +158,11 @@ this.throw_spear_skill <- this.inherit("scripts/skills/skill", {
 		{
 			_properties.RangedSkill += 20;
 			_properties.HitChanceAdditionalWithEachTile -= 10;
+
+			if (_properties.IsSpecializedInSpearThrust )
+			{
+			_properties.HitChanceAdditionalWithEachTile += 10;
+			}
 
 			if (_targetEntity != null)
 			{

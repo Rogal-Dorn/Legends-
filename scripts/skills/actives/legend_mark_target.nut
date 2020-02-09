@@ -32,6 +32,7 @@ this.legend_mark_target <- this.inherit("scripts/skills/skill", {
 		this.m.IsAttack = false;
 		this.m.ActionPointCost = 2;
 		this.m.FatigueCost = 10;
+		this.m.MaxLevelDifference = 6;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 9;
 	}
@@ -60,7 +61,7 @@ this.legend_mark_target <- this.inherit("scripts/skills/skill", {
 
 			if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
 			{
-				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " stupefied " + this.Const.UI.getColorizedEntityName(_targetTile.getEntity()) + " leaving them marked");
+				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " stupefied " + this.Const.UI.getColorizedEntityName(target) + " leaving them marked");
 			}
 		}
 	}

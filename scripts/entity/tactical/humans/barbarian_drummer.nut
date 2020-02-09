@@ -69,6 +69,7 @@ this.barbarian_drummer <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_balance"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_onslaught"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_backstabber"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_last_stand"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_mastery_fist"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
 			}

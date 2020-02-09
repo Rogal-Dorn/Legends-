@@ -158,12 +158,13 @@ this.throw_javelin <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
-		local ret = this.attackEntity(_user, _targetTile.getEntity());
+		local target = _targetTile.getEntity();
+		local ret = this.attackEntity(_user, target);
 		this.consumeAmmo();
 
 		if (!ret && this.m.SoundOnMissTarget.len() != 0)
 		{
-			this.Sound.play(this.m.SoundOnMissTarget[this.Math.rand(0, this.m.SoundOnMissTarget.len() - 1)], this.Const.Sound.Volume.Skill, _targetTile.getEntity().getPos());
+			this.Sound.play(this.m.SoundOnMissTarget[this.Math.rand(0, this.m.SoundOnMissTarget.len() - 1)], this.Const.Sound.Volume.Skill, target.getPos());
 		}
 
 		return ret;
@@ -175,6 +176,10 @@ this.throw_javelin <- this.inherit("scripts/skills/skill", {
 		{
 			_properties.RangedSkill += 20 + this.m.AdditionalAccuracy;
 			_properties.HitChanceAdditionalWithEachTile -= 10 + this.m.AdditionalHitChance;
+			if (_properties.IsSpecializedInSpearThrust )
+			{
+			_properties.HitChanceAdditionalWithEachTile += 10;
+			}
 		}
 	}
 

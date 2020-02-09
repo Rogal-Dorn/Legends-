@@ -64,7 +64,7 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
         bros[2].setStartValuesEx(this.Const.CharacterBackgroundsAnimated);
 		bros[2].getBackground().m.RawDescription = "You can not remember much about who %name% was in life, it is probably for the best that he can\'t either. All that matters is he is yours now.";
         bros[2].getSkills().add(this.new("scripts/skills/injury_permanent/legend_rotten_flesh"));
-		bros[2].getSkills().add(this.new("scripts/skills/actives/zombie_bite"));
+		bros[2].getSkills().add(this.new("scripts/skills/perks/perk_legend_zombie_bite"));
 		bros[2].setVeteranPerks(3);	
 		this.World.Assets.addMoralReputation(-100);
 		this.World.Assets.m.Money = this.World.Assets.m.Money / 2;

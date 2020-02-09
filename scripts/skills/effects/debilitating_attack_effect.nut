@@ -4,7 +4,7 @@ this.debilitating_attack_effect <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "effects.debilitating_attack";
 		this.m.Name = "Debilitating Attack";
-		this.m.Description = "This character has a debilitating attack prepared. Hitting a target will temporarily reduce their ability to inflict damage for one turn. Missing the attack will waste the effect.";
+		this.m.Description = "This character has a debilitating attack prepared. Hitting a target will temporarily reduce their ability to inflict damage for three turns. Missing the attack will waste the effect.";
 		this.m.Icon = "ui/perks/perk_34.png";
 		this.m.IconMini = "perk_34_mini";
 		this.m.SoundOnHit = [
@@ -34,7 +34,7 @@ this.debilitating_attack_effect <- this.inherit("scripts/skills/skill", {
 				id = 10,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-50%[/color] Damage inflicted by target hit for one turn"
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-50%[/color] Damage inflicted by target hit for three turns"
 			}
 		];
 	}

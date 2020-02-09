@@ -3,18 +3,32 @@ this.legend_armor_tabard <- this.inherit("scripts/items/legend_armor/legend_armo
 	function create()
 	{
 		this.legend_armor_upgrade.create();
-		this.m.Type = this.Const.Items.ArmorUpgrades.Tabbard
+		this.m.Type = this.Const.Items.ArmorUpgrades.Tabbard;
 		this.m.ID = "legend_armor.company_tabard";
 		this.m.Name = "Tabard";
 		this.m.Description = "A flowing cloth covering for armor, to show your allegiance. Offers minimal protection and small boost to moral.";
 		this.m.ArmorDescription = "Has a flowing cloth tabard";
-		this.m.Variants = [101,102,103,104,105,106,107,108,109,110,111,112,113];
+		this.m.Variants = [
+			101,
+			102,
+			103,
+			104,
+			105,
+			106,
+			107,
+			108,
+			109,
+			110,
+			111,
+			112,
+			113
+		];
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.Value = 200;
 		this.m.Condition = 5;
 		this.m.ConditionMax = 5;
-		this.m.StaminaModifier = -2;
+		this.m.StaminaModifier = 0;
 	}
 
 	function updateVariant()
@@ -26,7 +40,7 @@ this.legend_armor_tabard <- this.inherit("scripts/items/legend_armor/legend_armo
 		this.m.Icon = "legend_armor/tabard/tabard_" + variant + ".png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "legend_armor/tabard/icon_tabard_" + variant + ".png";
-		this.m.OverlayIconLarge = "legend_armor/tabard/inventory_tabard_"  + variant + ".png";
+		this.m.OverlayIconLarge = "legend_armor/tabard/inventory_tabard_" + variant + ".png";
 	}
 
 	function getTooltip()

@@ -351,7 +351,7 @@ this.legend_stollwurm <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Skills.add(this.new("scripts/skills/actives/legend_stollwurm_move_skill"));
 		 if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 			{
-			his.m.Hitpoints = b.Hitpoints * 1.5;
+			this.m.Hitpoints = b.Hitpoints * 1.5;
 			this.m.ActionPoints = b.ActionPoints + 5;
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_pathfinder"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_composure"));

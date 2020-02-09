@@ -257,7 +257,7 @@ gt.Const.Tactical.Actor.MercenaryRanged <- {
 	FatigueRecoveryRate = 20
 };
 gt.Const.Tactical.Actor.Swordmaster <- {
-	XP = 400,
+	XP = 500,
 	ActionPoints = 9,
 	Hitpoints = 70,
 	Bravery = 90,
@@ -511,9 +511,9 @@ gt.Const.Tactical.Actor.LegendPeasantWoodsman <- {
 };
 
 gt.Const.Tactical.Actor.LegendPeasantMiner <- {
-	XP = 75,
+	XP = 100,
 	ActionPoints = 9,
-	Hitpoints = 150,
+	Hitpoints = 100,
 	Bravery = 50,
 	Stamina = 100,
 	MeleeSkill = 60,

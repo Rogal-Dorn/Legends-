@@ -273,35 +273,35 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 	{
 		local c = {
 			Hitpoints = [
-				25,
+				20,
 				25
 			],
 			Bravery = [
-				5,
-				5
+				0,
+				0
 			],
 			Stamina = [
-				15,
-				15
+				10,
+				10
 			],
 			MeleeSkill = [
-				15,
-				15
+				10,
+				10
 			],
 			RangedSkill = [
 				0,
 				0
 			],
 			MeleeDefense = [
-				5,
-				5
-			],
-			RangedDefense = [
 				0,
 				0
 			],
+			RangedDefense = [
+				-5,
+				0
+			],
 			Initiative = [
-				15,
+				10,
 				15
 			]
 		};

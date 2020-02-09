@@ -165,6 +165,12 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
                 continue
             }
             local mod = this.m.BaseCraft + this.m.BaseCraft * bro.getBackground().getModifiers().Training;
+			
+			if (bro.getSkills().hasSkill("perk.legend_back_to_basics"))
+            {
+			mod = mod * 1.1;
+			}
+
             ++ret.Assigned
 			ret.Modifiers.push([mod, bro.getName(), bro.getBackground().getNameOnly()]);			
         }
@@ -255,7 +261,7 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		];
 		local text = "After practicing ";
 		local M = [
-			"Short Gaurd ",
+			"Short Guard ",
 			"Upper Snake Guard ",
 			"Bastard Cross ",
 			"The Middle Iron Door ",

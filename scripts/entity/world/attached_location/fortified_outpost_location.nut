@@ -315,6 +315,11 @@ this.fortified_outpost_location <- this.inherit("scripts/entity/world/attached_l
 				P = 1.0,
 				S = "weapons/military_pick"
 			});
+			_list.push({
+				R = 20,
+				P = 1.0,
+				S = "weapons/legend_infantry_axe"
+			});
 		}
 		else if (_id == "building.armorsmith")
 		{

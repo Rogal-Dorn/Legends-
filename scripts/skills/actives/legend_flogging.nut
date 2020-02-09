@@ -77,7 +77,7 @@ this.legend_flogging <- this.inherit("scripts/skills/skill", {
 
 		if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
 		{
-			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " flogged " + this.Const.UI.getColorizedEntityName(_targetTile.getEntity()) + " leaving them bleeding");
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " flogged " + this.Const.UI.getColorizedEntityName(target) + " leaving them bleeding");
 		}
 	}
 

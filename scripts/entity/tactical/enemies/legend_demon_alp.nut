@@ -227,19 +227,12 @@ this.legend_demon_alp <- this.inherit("scripts/entity/tactical/actor", {
 					}
 
 					loot.drop(_tile);
-					local chance = 10;
-					if (this.Const.LegendMod.Configs.LegendMagicEnabled())
-					{
-						chance = 100;
-					}
-					if (this.Math.rand(1, 100) <= chance)
-					{
-						local token = this.new("scripts/items/rune_sigils/legend_vala_inscription_token");
-						token.setRuneVariant(this.Math.rand(1, 3));
-						token.setRuneBonus(true);
-						token.updateRuneSigilToken();
-						token.drop(_tile);
-					}
+					local token = this.new("scripts/items/rune_sigils/legend_vala_inscription_token");
+					token.setRuneVariant(6);
+					token.setRuneBonus(true);
+					token.updateRuneSigilToken();
+					token.drop(_tile);
+
 				}
 			}
 		}

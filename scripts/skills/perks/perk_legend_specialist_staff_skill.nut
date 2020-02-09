@@ -26,7 +26,7 @@ this.perk_legend_specialist_staff_skill <- this.inherit("scripts/skills/skill", 
 			_properties.MeleeDefense += 12;
 		}
 
-		if (item.getID() == "weapon.legend_swordstaff" || item.getID() == "weapon.legend_named_swordstaff")
+		if (item.getID() == "weapon.legend_swordstaff" || item.getID() == "weapon.legend_named_swordstaff" || item.getID() == "weapon.legend_named_slingstaff")
 		{
 			_properties.MeleeDefense += 3;
 		}
