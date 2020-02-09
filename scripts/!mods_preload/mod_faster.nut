@@ -196,3 +196,32 @@
 		return true;
 	}
 });
+
+::mods_hookNewObject("ai/tactical/behaviors/ai_defend_rotation ", function(o) {
+	o.onExecute = function( _entity )
+	{
+		if (this.m.IsFirstExecuted)
+		{
+			this.getAgent().adjustCameraToTarget(this.m.TargetTile);
+			this.m.IsFirstExecuted = false;
+			return false;
+		}
+
+		if (this.Const.AI.VerboseMode)
+		{
+			this.logInfo("* " + _entity.getName() + ": Using Rotation!");
+		}
+
+		this.m.Skill.use(this.m.TargetTile);
+
+		if (!_entity.isHiddenToPlayer() || this.m.TargetTile.IsVisibleForPlayer)
+		{
+			this.getAgent().declareEvaluationDelay(2000);
+			this.getAgent().declareAction();
+		}
+
+		this.m.TargetTile = null;
+		this.m.Skill = null;
+		return true;
+	}
+});
