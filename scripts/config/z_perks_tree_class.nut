@@ -65,7 +65,7 @@ gt.Const.Perks.FaithClassTree <- {
 		[],
 		[gt.Const.Perks.PerkDefs.LegendPrayerOfFaith],
 		[gt.Const.Perks.PerkDefs.LegendPrayerOfLife],
-		[]
+		[gt.Const.Perks.PerkDefs.LegendHolyFlame]
 	]
 };
 

@@ -1706,7 +1706,10 @@ gt.Const.Strings.PerkName <- {
 	LegendQuartermaster = "Quartermaster",
 	LegendBarterGreed = "Greed",
 	LegendPrayerOfLife = "Prayer of Hope",
-	LegendPrayerOfFaith = "Prayer of Faith"
+	LegendPrayerOfFaith = "Prayer of Faith",
+	LegendHolyFlame = "Holy Flame",
+	LegendShieldsUp = "Shields Up!",
+	LegendIncoming = "Incoming!"
 };
 gt.Const.Strings.PerkDescription <- {
 	Relentless = "Don\'t slow down! At all times your Initiative is reduced only by [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] of your accumulated Fatigue, instead of all of it. \n[color=#0b0084]From the Fit perk group[/color]",
@@ -1783,7 +1786,7 @@ gt.Const.Strings.PerkDescription <- {
 	Recover = "Unlocks the \'Recover\' skill which allows for resting a turn in order to reduce accumulated Fatigue by [color=" + this.Const.UI.Color.NegativeValue + "]5.5% [/color]for each action point available. Recover can not be used if another skill is used. \n[color=#0b0084]From the Fit perk group[/color]",
 	FirstMove = "Always act first in the very first round of combat, before any of your opponents do.",
 	Backstabber = "Honor doesn\'t win you fights, stabbing the enemy where it hurts does. The bonus to hitchance in melee is doubled to [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] for each ally surrounding and distracting your target. \n[color=#0b0084]From the Dagger perk group[/color]",
-	LoneWolf = "I work best alone. With no ally within 3 tiles of distance, gain a [color=" + this.Const.UI.Color.PositiveValue + "]15%[/color] bonus to Melee Skill, Ranged Skill, Melee Defense, Ranged Defense, and Resolve. \n[color=#0b0084]From the Martyr perk group[/color]",
+	LoneWolf = "I work best alone. With no ally within 2 tiles of distance, gain a [color=" + this.Const.UI.Color.PositiveValue + "]15%[/color] bonus to Melee Skill, Ranged Skill, Melee Defense, Ranged Defense, and Resolve. \n[color=#0b0084]From the Martyr perk group[/color]",
 	ReachAdvantage = "Learn to use the superior reach of large weapons to keep the enemy from getting close enough to land a good hit.\n\nEach hit with a two-handed melee weapon adds a stack of Reach Advantage that increases your Melee Defense by [color=" + this.Const.UI.Color.PositiveValue + "]+5[/color], up to a maximum of 5 stacks, until this character\'s next turn. A single attack hitting multiple targets can add several stacks at once.\n\nIf you put away your weapon, you lose all stacks. \n[color=#0b0084]From the Polearm perk group[/color]",
 	Overwhelm = "Learn to take advantage of your high Initiative and prevent the enemy from attacking effectively by overwhelming them with your attacks!\n\nWith every attack, hit or miss, against an opponent that acts after you in the current round, inflict the \'Overwhelmed\' status effect which lowers both Melee Skill and Ranged Skill by [color=" + this.Const.UI.Color.NegativeValue + "]10%[/color] for one turn.\n\nThe effect stacks with each attack, and can be applied to multiple targets at once with a single attack. \n[color=#0b0084]From the Bow perk group[/color]",
 	SpecBow = "Master the art of archery and pelting your opponents with arrows from afar. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nView range and maximum firing range with bows is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color]. \n[color=#0b0084]From the Bow perk group[/color]",
@@ -1929,7 +1932,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendPiercingShot = "Launch a shot so powerful it can hit two targets in a straight line. \n[color=#0b0084]From the Crossbow perk group[/color]",
 	LegendLevitate = "Levitate a person above the ground, making movement across any terrain cost 1 AP and 2 Fatigue per tile",
 	LegendTeleport = "Step through the world, disapearing from one place and reappearing in another place immediately.",
-	LegendSpecialistShieldSkill = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] Melee Defense while using a shield. \n[color=#0b0084]From the Shield perk group[/color]",
+	LegendSpecialistShieldSkill = "Begin each battle with your shieldwall activated and gain [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] Ranged Defense while using a shield. \n[color=#0b0084]From the Shield perk group[/color]",
 	LegendSpecialistShieldPush = "The skill \'Knock Back\' costs [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color] less fatigue and action points. \n[color=#0b0084]From the Shield perk group[/color]",
 	LegendMasteryNets = "Use advanced net throwing techniques to reduce the fatigue cost by [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color] and reduce AP cost to [color=" + this.Const.UI.Color.PositiveValue + "]3[/color]. \n[color=#0b0084]From the Nets perk group[/color]",
 	LegendSpecialistScytheSkill = "Practicing with the unweildy scythe has taught you how to twist your torso to produce repeatable smooth strokes. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+15[/color] melee skill while weilding a scythe",
@@ -2037,7 +2040,10 @@ gt.Const.Strings.PerkDescription <- {
 	LegendQuartermaster = "Meal planning and preperation is the key to avoiding wastage. By cooking bulk meals, using scraps and saving leftovers you can reduce save food for the company. Reduces food consumption by 1 for every mercenary. This perk is only counted once per company. [color=#0b0084]From the Chef perk group[/color]"
 	LegendBarterGreed = "Lust for gold and self interest can be a double edged sword, an immediate benefit in one place, may come at the expense of others. Gain 7.5% barter, but halve the barter bonus from all other sources including your own. [color=#0b0084]From the Barter perk group[/color]",
 	LegendPrayerOfLife = "A prayer of hope and love restores wellbeing to your allies and tears at the undead. Adjacent allies gain [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] of their resolve as hitpoints at the end of their turn. Inflicts a disintegrating ailment on each adjacent undead. Does not work on cultists. [color=#0b0084]From the Faith perk group[/color] ",
-	LegendPrayerOfFaith = "A prayer of devotion grants strength to your allies and baffles the undead. Adjacent allies gain [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] of their resolve as Melee and Ranged Defense. Adjacent undead are Baffled. Does not work on cultists. [color=#0b0084]From the Faith perk group[/color] "
+	LegendPrayerOfFaith = "A prayer of devotion grants strength to your allies and baffles the undead. Adjacent allies gain [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] of their resolve as Melee and Ranged Defense. Adjacent undead are Baffled. Does not work on cultists. [color=#0b0084]From the Faith perk group[/color] ",
+	LegendHolyFlame = "Invokes a holy blessing that imbues a tile with the light of the old gods. Any of your mercenaries that enters the tile will become Sanctified, gaining immunity from injuries for two turns. Any undead unit that enters the tile will become Consecrated, becoming affected by injuries and unable to resurect for two turns.  [color=#0b0084]From the Faith perk group[/color] ",
+	LegendShieldsUp = "Drilling your troops in a shieldwall prepares their reaction time to avoid early deaths on the battlefield. Taking this perk ensures every mercenary with a shield will use shieldwall before the start of each battle. ",
+	LegendIncoming = "Providing advanced warning of an incoming volley can allow your troops to find cover or step aside. Grants [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] ranged defence to all allies within [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] tiles for one turn"
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

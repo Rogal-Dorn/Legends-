@@ -2822,6 +2822,33 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/prayer_purple.png",
 		IconDisabled = "ui/perks/prayer_purple_bw.png",
 		Const = "LegendPrayerOfFaith"
+	},
+	{
+		ID = "perk.legend_holyflame",
+		Script = "scripts/skills/perks/perk_legend_holyflame",
+		Name = this.Const.Strings.PerkName.LegendHolyFlame,
+		Tooltip = this.Const.Strings.PerkDescription.LegendHolyFlame,
+		Icon = "ui/perks/holybluefire_circle.png",
+		IconDisabled = "ui/perks/holyfire_circle_bw_bw.png",
+		Const = "LegendHolyFlame"
+	},
+	{
+		ID = "perk.legend_shields_up",
+		Script = "scripts/skills/perks/perk_legend_shields_up",
+		Name = this.Const.Strings.PerkName.LegendShieldsUp,
+		Tooltip = this.Const.Strings.PerkDescription.LegendShieldsUp,
+		Icon = "ui/perks/holdtheline_circle.png",
+		IconDisabled = "ui/perks/holdtheline_circle_bw.png",
+		Const = "LegendShieldsUp"
+	},
+	{
+		ID = "perk.legend_incoming",
+		Script = "scripts/skills/perks/perk_legend_incoming",
+		Name = this.Const.Strings.PerkName.LegendIncoming,
+		Tooltip = this.Const.Strings.PerkDescription.LegendIncoming,
+		Icon = "ui/perks/holdtheline_circle.png",
+		IconDisabled = "ui/perks/holdtheline_circle_bw.png",
+		Const = "LegendIncoming"
 	}
 ];
 gt.Const.Perks.PerkDefs <- {};

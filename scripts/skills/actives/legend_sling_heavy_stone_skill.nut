@@ -1,6 +1,6 @@
 this.legend_sling_heavy_stone_skill <- this.inherit("scripts/skills/skill", {
 	m = {
-		AdditionalAccuracy = -30,
+		AdditionalAccuracy = -40,
 		AdditionalHitChance = 0
 	},
 	function create()
@@ -156,8 +156,8 @@ this.legend_sling_heavy_stone_skill <- this.inherit("scripts/skills/skill", {
 	{
 		if (_skill == this)
 		{
-			_properties.RangedSkill += -10 + this.m.AdditionalAccuracy;
-			_properties.HitChanceAdditionalWithEachTile += 5 + this.m.AdditionalHitChance;
+			_properties.RangedSkill += -20 + this.m.AdditionalAccuracy;
+			_properties.HitChanceAdditionalWithEachTile += 3 + this.m.AdditionalHitChance;
 		}
 	}
 
