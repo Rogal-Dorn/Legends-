@@ -222,36 +222,36 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 	{
 		local c = {
 			Hitpoints = [
-				5,
-				5
+				0,
+				0
 			],
 			Bravery = [
-				25,
+				20,
 				25
 			],
 			Stamina = [
-				5,
-				5
+				0,
+				0
 			],
 			MeleeSkill = [
-				15,
-				15
-			],
-			RangedSkill = [
-				-5,
-				-5
-			],
-			MeleeDefense = [
 				10,
 				10
+			],
+			RangedSkill = [
+				-10,
+				-10
+			],
+			MeleeDefense = [
+				5,
+				5
 			],
 			RangedDefense = [
 				0,
 				0
 			],
 			Initiative = [
-				0,
-				0
+				-5,
+				-5
 			]
 		};
 		return c;

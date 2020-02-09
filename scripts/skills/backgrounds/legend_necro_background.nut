@@ -166,19 +166,19 @@ this.legend_necro_background <- this.inherit("scripts/skills/backgrounds/charact
 	{
 		local c = {
 			Hitpoints = [
-				20,
+				15,
 				20
 			],
 			Bravery = [
-				-5,
+				-10,
 				-5
 			],
 			Stamina = [
-				10,
-				10
+				5,
+				5
 			],
 			MeleeSkill = [
-				10,
+				5,
 				10
 			],
 			RangedSkill = [
@@ -186,16 +186,16 @@ this.legend_necro_background <- this.inherit("scripts/skills/backgrounds/charact
 				-5
 			],
 			MeleeDefense = [
-				0,
-				0
-			],
-			RangedDefense = [
 				-5,
 				-5
 			],
+			RangedDefense = [
+				-10,
+				-5
+			],
 			Initiative = [
-				15,
-				15
+				10,
+				10
 			]
 		};
 		return c;

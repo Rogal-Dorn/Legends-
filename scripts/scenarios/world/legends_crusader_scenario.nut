@@ -123,18 +123,6 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 		return false;
 	}
 
-	function onUpdateDraftList( _list )
-	{
-
-
-		local r;
-		r = this.Math.rand(0, 999);
-		if (r == 0)
-		{
-			_list.push("legend_crusader_background");
-		}
-	}
-
 	function onHiredByScenario( bro )
 	{
 		if (bro.getBackground().isCrusaderRecruitBackground())
