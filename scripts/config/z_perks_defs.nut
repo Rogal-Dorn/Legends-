@@ -2804,6 +2804,24 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/gold56.png",
 		IconDisabled = "ui/perks/gold56_bw.png",
 		Const = "LegendBarterGreed"
+	},
+	{
+		ID = "perk.legend_prayer_of_life",
+		Script = "scripts/skills/perks/perk_legend_prayer_of_life",
+		Name = this.Const.Strings.PerkName.LegendPrayerOfLife,
+		Tooltip = this.Const.Strings.PerkDescription.LegendPrayerOfLife,
+		Icon = "ui/perks/prayer_green.png",
+		IconDisabled = "ui/perks/prayer_green_bw.png",
+		Const = "LegendPrayerOfLife"
+	},
+	{
+		ID = "perk.legend_prayer_of_faith",
+		Script = "scripts/skills/perks/perk_legend_prayer_of_faith",
+		Name = this.Const.Strings.PerkName.LegendPrayerOfFaith,
+		Tooltip = this.Const.Strings.PerkDescription.LegendPrayerOfFaith,
+		Icon = "ui/perks/prayer_purple.png",
+		IconDisabled = "ui/perks/prayer_purple_bw.png",
+		Const = "LegendPrayerOfFaith"
 	}
 ];
 gt.Const.Perks.PerkDefs <- {};

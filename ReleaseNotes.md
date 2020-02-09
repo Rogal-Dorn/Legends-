@@ -2987,3 +2987,15 @@ Fixes error in scout building leading to failed camp
 Fixes tooltip on Efficient Packing
 Buffs aprons and barbarian gear.
 Fixes double strike 
+
+13.3.4  Faithful 
+
+**Faith**
+New Perk - Prayer of Hope - Adjacent allies gain 10% of their resolve as hitpoints at the end of their turn. Adjacent undead begin Disintegrating. Does not effect cultists. 
+New Perk - Prayer of Faith - Adjacent allies gain 10% of their resolve as melee and ranged defense. Adjacent undead become Baffled. Does not effect cultists.   
+Faith perk group given to: Monks, Nuns, Flagellants, Witchhunters and Crusaders
+Crusader origin has a higher chance to find monks, nuns, flagellants, witch hunters and crusader recruits. 
+
+
+Healer group given to Maid 
+Fixes warbear recruitment event showing up without a trainer, fixes text and adds event image 

@@ -1704,7 +1704,9 @@ gt.Const.Strings.PerkName <- {
 	LegendChoke = "Choke",
 	LegendPaymaster = "Paymaster",
 	LegendQuartermaster = "Quartermaster",
-	LegendBarterGreed = "Greed"
+	LegendBarterGreed = "Greed",
+	LegendPrayerOfLife = "Prayer of Hope",
+	LegendPrayerOfFaith = "Prayer of Faith"
 };
 gt.Const.Strings.PerkDescription <- {
 	Relentless = "Don\'t slow down! At all times your Initiative is reduced only by [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] of your accumulated Fatigue, instead of all of it. \n[color=#0b0084]From the Fit perk group[/color]",
@@ -2033,7 +2035,9 @@ gt.Const.Strings.PerkDescription <- {
 	LegendChoke = "Once an opponent is in a weakened state, it may be easier to choke them out than to fight through their armor. Unlocks the Choke ability which becomes available with no weapons equipped. Hit chance determined by your targets fatigue, 0% if they are fresh and 100% if they are exhausted. If your target is dazed or parried hitchance is increased by +10%.  If they are stunned or netted you gain +25%. If they are grappled or sleeping you gain +50%. Unarmed mastery doubles your chance to hit. These bonuses stack up to 100%. [color=#0b0084]From the Unarmed perk group[/color] "
 	LegendPaymaster = "Shifting numbers is a fine art, by negotiating pay terms and usuary it is possible to drive down mercenary pay. Lowers daily wages for all mercenaries in the company, by a percentage equal to your barter skill. This perk is only counted once per company. [color=#0b0084]From the Barter perk group[/color] ",
 	LegendQuartermaster = "Meal planning and preperation is the key to avoiding wastage. By cooking bulk meals, using scraps and saving leftovers you can reduce save food for the company. Reduces food consumption by 1 for every mercenary. This perk is only counted once per company. [color=#0b0084]From the Chef perk group[/color]"
-	LegendBarterGreed = "Lust for gold and self interest can be a double edged sword, an immediate benefit in one place, may come at the expense of others. Gain 7.5% barter, but halve the barter bonus from all other sources including your own. [color=#0b0084]From the Barter perk group[/color]"
+	LegendBarterGreed = "Lust for gold and self interest can be a double edged sword, an immediate benefit in one place, may come at the expense of others. Gain 7.5% barter, but halve the barter bonus from all other sources including your own. [color=#0b0084]From the Barter perk group[/color]",
+	LegendPrayerOfLife = "A prayer of hope and love restores wellbeing to your allies and tears at the undead. Adjacent allies gain [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] of their resolve as hitpoints at the end of their turn. Inflicts a disintegrating ailment on each adjacent undead. Does not work on cultists. [color=#0b0084]From the Faith perk group[/color] ",
+	LegendPrayerOfFaith = "A prayer of devotion grants strength to your allies and baffles the undead. Adjacent allies gain [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] of their resolve as Melee and Ranged Defense. Adjacent undead are Baffled. Does not work on cultists. [color=#0b0084]From the Faith perk group[/color] "
 };
 gt.Const.Strings.Tooltip <- {
 	World = {
