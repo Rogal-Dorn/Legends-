@@ -16,8 +16,8 @@ this.legend_armor_leather_lamellar <- this.inherit("scripts/items/legend_armor/l
 		this.m.SpriteDamagedBack = "bust_legend_leather_lamellar_damaged";
 		this.m.SpriteCorpseBack = "bust_legend_leather_lamellar_dead";
 		this.m.Value = 250;
-		this.m.Condition = 45;
-		this.m.ConditionMax = 45;
+		this.m.Condition = 50;
+		this.m.ConditionMax = 50;
 		this.m.StaminaModifier = -6;
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
 	}

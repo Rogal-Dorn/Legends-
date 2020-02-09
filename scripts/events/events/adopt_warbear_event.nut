@@ -10,7 +10,7 @@ this.adopt_warbear_event <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 50.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_27.png[/img]%houndmaster% taps you on the shoulder and points out fallen limbs and deep tracks that are typical of a bear's domain. The bear tamer asks your permission to set a trap to try and capture the beast?",
+			Text = "[img]gfx/ui/events/legend_bear.png[/img]%bearTamer% taps you on the shoulder and points out fallen limbs and deep tracks that are typical of a bear's domain. The bear tamer asks your permission to set a trap to try and capture the beast?",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -43,7 +43,7 @@ this.adopt_warbear_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
-				if (_event.m.Houndmaster != null)
+				if (_event.m.BearTamer != null)
 				{
 					this.Options.push({
 						Text = "%bearTamer%, you\'re trained to handle bears, right?",
@@ -122,7 +122,7 @@ this.adopt_warbear_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "G",
-			Text = "[img]gfx/ui/events/event_27.png[/img]You ask %bearTamer% the beartamer if they can try and \'woo\' this bear. The tamer nods and steps toward it. The wild beast\'s ears go from pinned to pointed. Crouched, the ranger  slowly edges toward the beast. Keeping a hand out with a piece of meat in the palm. Hunger overcomes heedfulness and the bear sniffs its way ever closer to the houndmaster\'s hand. The bear tongues it out of the ranger\'s palm and chows down. The bear trainer feeds another bite, scruffs the beast up and finds the sweet spot behind the ears. Looking back, %bearTamer% nods.%SPEECH_ON%Aye, it\'s an agreeable beast and will be easily trained.%SPEECH_OFF%That\'s great. You ask if it can fight. The ranger purses lips.%SPEECH_ON%A bear is akin to a human. If it can breathe, it can fight.%SPEECH_OFF%",
+			Text = "[img]gfx/ui/events/event_27.png[/img]You ask %bearTamer% the beartamer if they can try and \'woo\' this bear. The tamer nods and steps toward it. The wild beast\'s ears go from pinned to pointed. Crouched, the ranger  slowly edges toward the beast. Keeping a hand out with a piece of meat in the palm. Hunger overcomes heedfulness and the bear sniffs its way ever closer to the bear tamer\'s hand. The bear tongues it out of the ranger\'s palm and chows down. The bear trainer feeds another bite, scruffs the beast up and finds the sweet spot behind the ears. Looking back, %bearTamer% nods.%SPEECH_ON%Aye, it\'s an agreeable beast and will be easily trained.%SPEECH_OFF%That\'s great. You ask if it can fight. The ranger purses lips.%SPEECH_ON%A bear is akin to a human. If it can breathe, it can fight.%SPEECH_OFF%",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -138,7 +138,7 @@ this.adopt_warbear_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
-				this.Characters.push(_event.m.Houndmaster.getImagePath());
+				this.Characters.push(_event.m.BearTamer.getImagePath());
 				local item = this.new("scripts/items/accessory/legend_warbear_item");
 				this.World.Assets.getStash().add(item);
 				this.List.push({
@@ -181,17 +181,15 @@ this.adopt_warbear_event <- this.inherit("scripts/events/event", {
 				bearBros++
 			}
 		}
-
-		if (bearBros >= 1)
+		if (candidates.len() > 0)
 		{
-		return;
+			this.m.BearTamer = candidates[this.Math.rand(0, candidates.len() - 1)];
+			this.m.Score = this.m.BearTamer.getLevel() - 5;
 		}
-
-		this.m.Bro = brothers[this.Math.rand(0, brothers.len() - 1)];
 
 		if (candidates.len() != 0)
 		{
-			this.m.Houndmaster = candidates[this.Math.rand(0, candidates.len() - 1)];
+			this.m.BearTamer = candidates[this.Math.rand(0, candidates.len() - 1)];
 		}
 
 		this.m.Score = 5;
@@ -209,14 +207,14 @@ this.adopt_warbear_event <- this.inherit("scripts/events/event", {
 		]);
 		_vars.push([
 			"bearTamer",
-			this.m.Houndmaster != null ? this.m.Houndmaster.getName() : ""
+			this.m.BearTamer != null ? this.m.BearTamer.getName() : ""
 		]);
 	}
 
 	function onClear()
 	{
 		this.m.Bro = null;
-		this.m.Houndmaster = null;
+		this.m.BearTamer = null;
 	}
 
 });

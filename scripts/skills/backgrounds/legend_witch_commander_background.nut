@@ -285,35 +285,35 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 	{
 		local c = {
 			Hitpoints = [
-				-5,
-				-5
+				-10,
+				-10
 			],
 			Bravery = [
-				10,
-				10
+				5,
+				5
 			],
 			Stamina = [
-				20,
+				15,
 				20
 			],
 			MeleeSkill = [
-				0,
-				0
-			],
-			RangedSkill = [
-				20,
-				20
-			],
-			MeleeDefense = [
 				-5,
 				-5
 			],
+			RangedSkill = [
+				15,
+				20
+			],
+			MeleeDefense = [
+				-10,
+				-10
+			],
 			RangedDefense = [
-				0,
-				0
+				-5,
+				-5
 			],
 			Initiative = [
-				25,
+				20,
 				25
 			]
 		};

@@ -15,9 +15,9 @@ this.legend_apron_smith <- this.inherit("scripts/items/legend_armor/cloth/legend
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.Value = 70;
-		this.m.Condition = 50;
-		this.m.ConditionMax = 50;
-		this.m.StaminaModifier = -7;
+		this.m.Condition = 45;
+		this.m.ConditionMax = 45;
+		this.m.StaminaModifier = -4;
 	}
 
 });

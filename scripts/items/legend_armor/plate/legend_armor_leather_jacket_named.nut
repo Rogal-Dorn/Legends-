@@ -23,7 +23,21 @@ this.legend_armor_leather_jacket_named <- this.inherit("scripts/items/legend_arm
 		];
 		this.m.Variants = [
 			1,
-			2
+			2,
+			3,
+			4,
+			5,
+			6,
+			7,
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14,
+			15,
+			16
 		];
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
@@ -44,13 +58,13 @@ this.legend_armor_leather_jacket_named <- this.inherit("scripts/items/legend_arm
 	function updateVariant()
 	{
 		local variant = this.m.Variant < 10 ? "0" + this.m.Variant : this.m.Variant;
-		this.m.SpriteBack = "bust_legend_leather_jacket_named_" + variant;
-		this.m.SpriteDamagedBack = "bust_legend_leather_jacket_named_" + variant + "_damaged";
-		this.m.SpriteCorpseBack = "bust_legend_leather_jacket_named_" + variant + "_dead";
-		this.m.Icon = "legend_armor/plate/legend_leather_jacket_named_" + variant + ".png";
+		this.m.SpriteBack = "bust_legend_leather_jacket_named_02_" + variant;
+		this.m.SpriteDamagedBack = "bust_legend_leather_jacket_named_02_" + variant + "_damaged";
+		this.m.SpriteCorpseBack = "bust_legend_leather_jacket_named_02_" + variant + "_dead";
+		this.m.Icon = "legend_armor/plate/legend_leather_jacket_named_02_" + variant + ".png";
 		this.m.IconLarge = this.m.Icon;
-		this.m.OverlayIcon = "legend_armor/plate/icon_legend_leather_jacket_named_" + variant + ".png";
-		this.m.OverlayIconLarge = "legend_armor/plate/inventory_legend_leather_jacket_named_" + variant + ".png";
+		this.m.OverlayIcon = "legend_armor/plate/icon_legend_leather_jacket_named_02_" + variant + ".png";
+		this.m.OverlayIconLarge = "legend_armor/plate/inventory_legend_leather_jacket_named_02_" + variant + ".png";
 	}
 
 });

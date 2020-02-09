@@ -7,11 +7,14 @@ this.legend_firefield_skill <- this.inherit("scripts/skills/skill", {
 		this.m.Description = "Throw a pot releasing a field of fire that burns all beings";
 		this.m.Icon = "skills/fire_square.png";
 		this.m.IconDisabled = "skills/fire_square_bw.png";
-		this.m.Overlay = "active_100";
+		this.m.Overlay = "fire_circle";
 		this.m.SoundOnUse = [
-			"sounds/enemies/miasma_spell_01.wav",
-			"sounds/enemies/miasma_spell_02.wav",
-			"sounds/enemies/miasma_spell_03.wav"
+			"sounds/combat/fire_01.wav",
+			"sounds/combat/fire_02.wav",
+			"sounds/combat/fire_03.wav",
+			"sounds/combat/fire_04.wav",
+			"sounds/combat/fire_05.wav",
+			"sounds/combat/fire_06.wav"
 		];
 		this.m.SoundOnHitHitpoints = [
 			"sounds/humans/0/human_light_01.wav",
