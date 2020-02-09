@@ -50,6 +50,7 @@ this.legend_sanctified_effect <- this.inherit("scripts/skills/skill", {
 		this.spawnIcon("status_effect_65", this.getContainer().getActor().getTile());
 	}
 
+	function onTurnEnd()
 	{
 		if (--this.m.TurnsLeft <= 0)
 		{

@@ -283,7 +283,7 @@
 							{
 								foreach(e in this.m.Instances[i])
 			  						  {
-									  if(e.isArmedWithShield() e.getSkills().hasSkill("perk.legend_specialist_shield_skill"))
+									  if(e.isArmedWithShield() && e.getSkills().hasSkill("perk.legend_specialist_shield_skill"))
 											{
 											local skill = e.getSkills().getSkillByID("actives.shieldwall");
 											if (skill != null && skill.isUsable())
