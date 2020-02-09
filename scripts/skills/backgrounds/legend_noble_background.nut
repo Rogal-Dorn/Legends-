@@ -83,9 +83,13 @@ this.legend_noble_background <- this.inherit("scripts/skills/backgrounds/charact
 			[
 				this.Const.Perks.PerkDefs.SpecPolearm,
 				this.Const.Perks.PerkDefs.SpecSword,
+				this.Const.Perks.PerkDefs.SpecDagger,
+				this.Const.Perks.PerkDefs.SpecCrossbow,
+				this.Const.Perks.PerkDefs.SpecThrowing,
 				this.Const.Perks.PerkDefs.LegendSpecBandage,
 				this.Const.Perks.PerkDefs.LegendEfficientPacking,
-				this.Const.Perks.PerkDefs.LegendBarterConvincing
+				this.Const.Perks.PerkDefs.LegendBarterConvincing,
+				this.Const.Perks.PerkDefs.LegendShieldsUp,
 			],
 			[
 				this.Const.Perks.PerkDefs.ReachAdvantage,
@@ -94,7 +98,9 @@ this.legend_noble_background <- this.inherit("scripts/skills/backgrounds/charact
 				this.Const.Perks.PerkDefs.Footwork,
 				this.Const.Perks.PerkDefs.LegendLithe,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyBandit,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyBarbarian
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyBarbarian,
+				this.Const.Perks.PerkDefs.LegendIncoming,
+				this.Const.Perks.PerkDefs.LegendHoldTheLine
 			],
 			[
 				this.Const.Perks.PerkDefs.Berserk,
@@ -102,10 +108,9 @@ this.legend_noble_background <- this.inherit("scripts/skills/backgrounds/charact
 				this.Const.Perks.PerkDefs.HeadHunter,
 				this.Const.Perks.PerkDefs.BattleForged,
 				this.Const.Perks.PerkDefs.Nimble,
-				this.Const.Perks.PerkDefs.LegendHoldTheLine,
 				this.Const.Perks.PerkDefs.LegendMatchingSet,
-				this.Const.Perks.PerkDefs.LegendForwardPush,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyMercenary,
+				this.Const.Perks.PerkDefs.LegendForwardPush,
 				this.Const.Perks.PerkDefs.LegendCoordinatedVolleys
 			],
 			[

@@ -232,7 +232,7 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 			{
 				_list.push("witchhunter_background");
 			}
-			r = this.Math.rand(0, 999);
+			r = this.Math.rand(0, 99);
 			if (r == 0)
 			{
 				_list.push("legend_crusader_background");

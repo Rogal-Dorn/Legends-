@@ -17,7 +17,6 @@ this.legend_holding_the_line <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		_properties.MeleeDefense += 10;
-		_properties.RangedDefense += 10;
 	}
 
 
