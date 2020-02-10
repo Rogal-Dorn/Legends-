@@ -20,12 +20,12 @@ this.perk_last_stand <- this.inherit("scripts/skills/skill", {
 		local percentHP = maxHP / 100;
 		local currentHP = this.getContainer().getActor().getHitpoints();
 		local currentPercent = currentHP / percentHP;
-		local missingPercent = 100 - currentPercent;
+		local missingPercent = (100 - currentPercent) / 2;
 		local bonus = 0;
 		
-		if( missingPercent >= 50)
+		if( missingPercent >= 66)
 		{
-			bonus = this.Math.floor(missingPercent - 50);
+			bonus = this.Math.floor(missingPercent - 66);
 		}
 		
 		_properties.MeleeDefense += bonus;

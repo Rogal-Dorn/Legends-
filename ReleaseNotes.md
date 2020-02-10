@@ -2723,7 +2723,6 @@ Named cloaks are less common on enemies, with more heavy and noble cloaks instea
 Sling staves gain the lower bonus from staff spins 
 Grapple now requires the offhand free instead of the mainhand 
 
-
 **Fixes**
 Puncture hopefully fixed 
 Fix for another aspect of the nacho bleeding bug 
@@ -2885,6 +2884,137 @@ Halberd condition increased from 72 to 85 (wuxiang)
 Fixed smoked ham being uncookable (wuxiang) 
 
 
+13.3.2  Slow and steady (experimental) 
+
+Reverts to vanilla AI timings, slowing down turn times. May fix:
+* invisible unholds
+* rotation crashes 
+* next turn order freezes 
+* Miscellaneous strange freezes
+
+Fatigue costs reduced across 24 plate armors  
+Adds back in brain damage allowing cultist conversion (salty)
+Freedom of movement tooltip updated (salty) 
+Fixes demon hound crashs (wuxiang) 
+Fixes tabard tooltips (wuxiang) 
+Fixes decimal points in danger pay (wuxiang) 
+Wooden pitchfork gets +5 damage 
+prepare bleed lasts slightly longer 
+Fixes double strike 
+Fixes lindwurm, mountain and skin armors requiring layered and non-layered components at the same time 
 
 
- 
+
+13.3.3  Fast Friends (experimental)
+Incorporates many community contributions
+
+**Faster**
+Includes Adam's Faster mod - resolves AI conflicts and duplication 
+Incorporates LeVilainJoueur's Invisible Unhold fix for Faster 
+
+**Community Armor rework** 
+Implements most of the changes from the popular BlueyD and Balzaphon submods 
+*Keep armor values in the vanilla ballpark until multi-unique combos are available
+* Different efficiency (armor:fatigue) ratios at different prices
+* Prices should generally go way down (too easy to farm money; layers not buyable right now)
+* Named layers should be worth wearing if found, and occasionally worth purchasing
+* Worn, rotten, or rusty gear should generally kind of suck compared to the base armor
+* Barbarian armor should be low cost and low effectiveness too
+* Ancient armor should be low efficiency and medium cost
+
+**Community Perk balance suggestions**
+Implements many perk suggestions from ToxAsh, Belial, Balzphon and others.  
+* Back to basics - also increases camp training by 10% 
+* Crippling strikes - also grants 10% damage vs undead  
+* Executioner - also grants +10% damage to stunned, netted or sleeping enemies 
+* Muscularity - maximum of 50 damage 
+* Lone wolf - triggers at 2 tiles 
+* Lookout - also grants 10% to scouting in camp 
+* Onslaught - now gives 50% chance to apply new Effect Baffeled, which is a weaker daze 
+* Push the advantage - also applies to grappled, staggered, net and dazed 
+* Return favor - applied both stun and staggered, AP reduced to 3 
+* Efficient stacking - Grants 8 slots and +4% fatigue 
+* Skillful packing - grants 12 slots and +6% fatigue 
+* Spearwaller - also increases spearwall damage by 25% 
+* Net repairer - also grants +25% chance to hit with a net 
+* Freedom of movement - has a 5% minimum and 95% maximum damage reduction 
+* True believer - also grants optimist trait 
+* Last stand - grants 1 melee and ranged defense for every 2% below 66%HP 
+* Tools drawers - Now grants +10 tools and -4% tool consumption 
+* Spare tools -  Now grants +20 tools -6% tool consumption
+* Staff spins - now applies both stun and stagger 
+* Second wind - now also removes stun, stagger, daze, sleep and charm when it restores your fatigue 
+* Heightened reflexes - increased from 50% to 100% of ranged defense becomes iniative
+* Thrust master - also applies to prong and staff thrust, and reduces the range penalty from throwing spears 
+* Balance - Now grant up to 25% defense reroll chance 
+
+**Other changes**
+AI won't try to puncture enemies with full fatigue 
+Dismissal only costs money on legendary economic difficulty
+Summon Bear is now Bear Taming - unlocks an event to tame bears in the woods
+Fletchers can no longer trigger the masterwork bow event
+Fletechers can now trigger an event to craft a Huge Quiver  
+Zombies lose Last Stand on legendary combat difficulty 
+Barbarians gain Last Stand on legendary combat difficulty 
+Bandit veterans always have hats 
+Miners give +33% XP and have -33 %HP 
+Fencers, bandit veterans and bandit warlords count for favourite enemy swordmaster 
+Fencers, halberdiers and slingers count for favourite enemy noble 
+Slinger counts for favourite enemy archer 
+Bandit veteran and bandit warlord count for favourite enemy bandit 
+Butcher, blacksmith, monk, farmhand, minstrel, poacher, miner, squire and witch hunter count for favourite enemy caravan 
+Legendary creatures will contribute towards head count in Big Game Hunt contracts 
+
+
+**Fixes**
+Fixes error in cultist origin vs old gods event (wuxiang)
+Fixes errors in legendary armor bluprints (wuxiang)
+Cat uses cat names (wuxiang)
+Choke uses unarmed mastery instead of dagger mastery (wuxiang) 
+Fixes error stopping gather buildings giving the goodies (D00D's bro and wuxiang)
+Fixes naked fishwives and cannibals  (wuxiang) 
+Fixes danger pay decimal point issue (wuxiang) 
+Updates tabard tooltip  (wuxiang) 
+
+
+13.3.3b
+
+Fixes error in scout building leading to failed camp
+Fixes tooltip on Efficient Packing
+Buffs aprons and barbarian gear.
+Fixes double strike 
+
+13.3.4  Faithful Shield  
+
+*Fixes crash from undead_frozen_pond_event
+*Fixes error with shoot stake skill.
+*Fixes an invalid injury on skeletons.
+*Fixes legend vala recruitment on legions origin start.
+
+**Faith**
+New Perk - Holy Flame - Choose a tile to bless for two turns. Allies ending their turn on this tile are Sanctified, becoming immune to injuries for two turns. Undead ending their turn on this tile become Consecrated, losing immunity to injuries and will not resurrect. Cultists ending their turn here will burn for 10-20 damage. 
+New Perk - Prayer of Hope - Adjacent allies gain 10% of their resolve as hitpoints at the end of their turn. Adjacent undead begin Disintegrating at 10 damage per turn. Does not effect cultists. 
+New Perk - Prayer of Faith - Adjacent allies gain 10% of their resolve as melee and ranged defense. Adjacent undead become Baffled. Does not effect cultists.   
+Faith perk group given to: Monks, Nuns, Flagellants, Witchhunters and Crusaders
+Crusader origin has a higher chance to find monks, nuns, flagellants, witch hunters and crusader recruits. 
+
+**Shields Up!**
+Adam's Shield's up mod has been integrated as perks, this resolves mod conflicts. 
+Well trained human enemies will now begin the battle with their shields up.
+Changed perk - Born with a board - This character begins each fight by shield walling before the turn starts. 
+New Perk - Shields up - Everyone in your company begins each fight by shield walling if able. Only available on Noble commander
+
+**Noble**
+Changed perk - Holding the line - no longer effects ranged defense, only melee defense
+New perk - Incoming! - Provides +10 ranged defense to all allies within 4 tiles. Only available on Noble Commander 
+Noble origin has a chance to find other nobles willing to join the cause. 
+
+All commanders except vala have their stats nerfed by about 5 points across all skills. Each can still roll the same maximum in their key skills, but it will be rarer. 
+Adds 16 colour variants for named leather armors 
+Healer group given to Maid 
+Fixes warbear recruitment event showing up without a trainer, fixes text and adds event image 
+Firefield uses correct icon and sounds 
+buffs surcoats and nerfs barbarian gear slightly 
+Vengeance buffed to +30% damage 
+Fixes Smackdown not working when activated. renamed "Prepare to knock back" to "Wind Up".  
+

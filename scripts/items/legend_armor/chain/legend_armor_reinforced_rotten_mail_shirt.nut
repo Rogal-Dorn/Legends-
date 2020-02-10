@@ -3,7 +3,7 @@ this.legend_armor_reinforced_rotten_mail_shirt <- this.inherit("scripts/items/le
 	function create()
 	{
 		this.legend_armor_upgrade.create();
-		this.m.Type = this.Const.Items.ArmorUpgrades.Chain
+		this.m.Type = this.Const.Items.ArmorUpgrades.Chain;
 		this.m.ID = "legend_armor.reinforced_rotten_mail_shirt";
 		this.m.Name = "Rotten Reinforced Mail Shirt";
 		this.m.Description = "A reinforced mail shirt that is rotting at the seams.";
@@ -15,10 +15,10 @@ this.legend_armor_reinforced_rotten_mail_shirt <- this.inherit("scripts/items/le
 		this.m.SpriteBack = "bust_legend_reinforced_rotten_mail_shirt";
 		this.m.SpriteDamagedBack = "bust_legend_reinforced_rotten_mail_shirt_damaged";
 		this.m.SpriteCorpseBack = "bust_legend_reinforced_rotten_mail_shirt_dead";
-		this.m.Value = 1000;
-		this.m.Condition = 70;
-		this.m.ConditionMax = 70;
-		this.m.StaminaModifier = -10;
+		this.m.Value = 200;
+		this.m.Condition = 45;
+		this.m.ConditionMax = 45;
+		this.m.StaminaModifier = -7;
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 	}
 

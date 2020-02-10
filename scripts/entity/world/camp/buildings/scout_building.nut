@@ -109,6 +109,44 @@ this.scout_building <- this.inherit("scripts/entity/world/camp/camp_building", {
         this.m.NumBros = mod.Assigned;
     }
 
+    function getModifiers()
+    {
+        local ret = 
+        {
+            Craft = 0.0,
+            Assigned = 0,
+            Modifiers = []
+        }
+		local roster = this.World.getPlayerRoster().getAll();
+        foreach( bro in roster )
+        {
+            if (bro.getCampAssignment() != this.m.ID)
+            {
+                continue
+            }
+            local mod = this.m.BaseCraft + this.m.BaseCraft * bro.getBackground().getModifiers().Scout;
+			
+			if (bro.getSkills().hasSkill("perk.lookout"))
+            {
+			mod = mod * 1.1;
+			}
+
+            ++ret.Assigned
+			ret.Modifiers.push([mod, bro.getName(), bro.getBackground().getNameOnly()]);			
+        }
+
+        ret.Modifiers.sort(this.sortModifiers);
+        for (local i = 0; i < ret.Modifiers.len(); i = ++i)
+        {
+            ret.Modifiers[i][0] = ret.Modifiers[i][0] * this.Math.pow(i + 1, -0.5);
+			if (this.getUpgraded()) 
+			{  
+				ret.Modifiers[i][0] *= 1.15;
+			}
+            ret.Craft += ret.Modifiers[i][0];
+        }
+        return ret;
+    }
 
 	function getResults()
     {

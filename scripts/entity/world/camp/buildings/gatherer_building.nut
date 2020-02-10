@@ -171,7 +171,6 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 				case "background.legend_vala_commander":
 				case "background.legend_herbalist":
 					apothecaryLevel += bro.getLevel()
-					break;
 			}
 			
 		
@@ -242,12 +241,10 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		}
 
 		local brewerlevels = this.getBrewerLevel();
-		if (brewerlevels = null)
+		if (brewerlevels == null)
 		{
-		apothecarylevels = 0;
+			apothecarylevels = 0;
 		}
-
-
 		if (apothecarylevels >= 1 && apothecarylevels < 10)
 		{	
 			secondary.extend([

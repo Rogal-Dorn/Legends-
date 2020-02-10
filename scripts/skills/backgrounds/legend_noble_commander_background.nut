@@ -109,9 +109,13 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 			[
 				this.Const.Perks.PerkDefs.SpecPolearm,
 				this.Const.Perks.PerkDefs.SpecSword,
+				this.Const.Perks.PerkDefs.SpecDagger,
+				this.Const.Perks.PerkDefs.SpecCrossbow,
+				this.Const.Perks.PerkDefs.SpecThrowing,
 				this.Const.Perks.PerkDefs.LegendSpecBandage,
 				this.Const.Perks.PerkDefs.LegendEfficientPacking,
 				this.Const.Perks.PerkDefs.LegendBarterConvincing,
+				this.Const.Perks.PerkDefs.LegendShieldsUp,
 				this.Const.Perks.PerkDefs.LegendRoster4
 			],
 			[
@@ -122,6 +126,8 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.LegendLithe,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyBandit,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyBarbarian,
+				this.Const.Perks.PerkDefs.LegendIncoming,
+				this.Const.Perks.PerkDefs.LegendHoldTheLine,
 				this.Const.Perks.PerkDefs.LegendRoster5
 			],
 			[
@@ -130,10 +136,9 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.HeadHunter,
 				this.Const.Perks.PerkDefs.BattleForged,
 				this.Const.Perks.PerkDefs.Nimble,
-				this.Const.Perks.PerkDefs.LegendHoldTheLine,
 				this.Const.Perks.PerkDefs.LegendMatchingSet,
-				this.Const.Perks.PerkDefs.LegendForwardPush,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyMercenary,
+				this.Const.Perks.PerkDefs.LegendForwardPush,
 				this.Const.Perks.PerkDefs.LegendCoordinatedVolleys,
 				this.Const.Perks.PerkDefs.LegendRoster6
 			],
@@ -222,36 +227,36 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 	{
 		local c = {
 			Hitpoints = [
-				5,
-				5
+				0,
+				0
 			],
 			Bravery = [
-				25,
+				20,
 				25
 			],
 			Stamina = [
-				5,
-				5
+				0,
+				0
 			],
 			MeleeSkill = [
-				15,
-				15
-			],
-			RangedSkill = [
-				-5,
-				-5
-			],
-			MeleeDefense = [
 				10,
 				10
+			],
+			RangedSkill = [
+				-10,
+				-10
+			],
+			MeleeDefense = [
+				5,
+				5
 			],
 			RangedDefense = [
 				0,
 				0
 			],
 			Initiative = [
-				0,
-				0
+				-5,
+				-5
 			]
 		};
 		return c;
@@ -293,7 +298,7 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 		stash.removeByID("supplies.ground_grains");
 		stash.add(this.new("scripts/items/supplies/wine_item"));
 		stash.add(this.new("scripts/items/loot/signet_ring_item"));
-		items.equip(this.new("scripts/items/weapons/pike"));
+		items.equip(this.new("scripts/items/weapons/ancient/broken_bladed_pike"));
 
 	}
 
@@ -312,7 +317,7 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 		stash.removeByID("supplies.ground_grains");
 		stash.add(this.new("scripts/items/supplies/wine_item"));
 		stash.add(this.new("scripts/items/loot/signet_ring_item"));
-		items.equip(this.new("scripts/items/weapons/pike"));
+		items.equip(this.new("scripts/items/weapons/ancient/broken_bladed_pike"));
 
 
 		local cloths = [
