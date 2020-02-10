@@ -19,16 +19,15 @@ this.named_two_handed_flail <- this.inherit("scripts/items/weapons/named/named_w
 		this.m.ShowArmamentIcon = true;
 		this.m.Value = 2800;
 		this.m.ShieldDamage = 0;
-		this.m.RangeMin = 1;
-		this.m.RangeMax = 2;
-		this.m.RangeIdeal = 2;
 		this.m.Condition = 80.0;
 		this.m.ConditionMax = 80.0;
 		this.m.StaminaModifier = -16;
 		this.m.RegularDamage = 40;
 		this.m.RegularDamageMax = 80;
 		this.m.ArmorDamageMult = 1.1;
-		this.m.DirectDamageMult = 0.3;
+		this.m.DirectDamageMult = 0.3; 
+		//two_handed_flail has the next line exactly, maybe add here too(?)
+		//this.m.DirectDamageAdd = -0.2;
 		this.m.ChanceToHitHead = 15;
 		this.randomizeValues();
 	}

@@ -2991,6 +2991,7 @@ Fixes double strike
 *Fixes an invalid injury on skeletons.
 *Fixes legend vala recruitment on legions origin start.
 *Fixes Bandit Leaders (very rarely) spawning with named ranged weapons (mwah)
+*Fixes named 2h flails showing as ranged 2h flails (mwah)
 
 **Faith**
 New Perk - Holy Flame - Choose a tile to bless for two turns. Allies ending their turn on this tile are Sanctified, becoming immune to injuries for two turns. Undead ending their turn on this tile become Consecrated, losing immunity to injuries and will not resurrect. Cultists ending their turn here will burn for 10-20 damage. 
