@@ -864,6 +864,8 @@ this.asset_manager <- {
 
 			 }
 
+			 local perkMod = 1;
+
 			 foreach( bro in roster )
 			 {
 			 	if (this.m.ArmorParts == 0)
@@ -872,6 +874,20 @@ this.asset_manager <- {
 			 	}
 			 	local items = bro.getItems().getAllItems();
 			 	local updateBro = false;
+				
+						local skills =
+						[
+							"perk.legend_tools_spares",
+							"perk.legend_tools_drawers"
+						];
+						foreach (s in skills)
+						{
+							local skill = bro.getSkills().getSkillByID(s);
+							if (skill != null)
+							{
+								perkMod *= 1 - (skill.getModifier() / 100);
+							}
+						}
 
 			 	foreach( item in items )
 			 	{
@@ -879,7 +895,7 @@ this.asset_manager <- {
 			 		{
 			 			local d = this.Math.minf(this.Const.World.Assets.ArmorPerHour * this.Const.Difficulty.RepairMult[this.World.Assets.getEconomicDifficulty()], item.getRepairMax() - item.getRepair());
 			 			item.setArmor(item.getRepair() + d);
-			 			this.m.ArmorParts = this.Math.maxf(0, this.m.ArmorParts - d * this.Const.World.Assets.ArmorPartsPerArmor * this.Const.Difficulty.RepairMult[this.World.Assets.getEconomicDifficulty()]);
+			 			this.m.ArmorParts = this.Math.maxf(0, this.m.ArmorParts - d * this.Const.World.Assets.ArmorPartsPerArmor * perkMod * this.Const.Difficulty.RepairMult[this.World.Assets.getEconomicDifficulty()]);
 			 			updateBro = true;
 			 		}
 

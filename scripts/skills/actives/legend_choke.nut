@@ -133,7 +133,7 @@ this.legend_choke <- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/hitchance.png",
-				text = "Hit chance determined by your targets fatigue, 0% if they are fresh and 100% if they are exhausted. If your target is dazed or parried hitchance is increaded by +10%.  If they are stunned or netted you gain +25%. If they are grappled or sleeping you gain +50%. Dagger mastery doubles your chance to hit. These bonuses stack up to 100%.  "
+				text = "Hit chance determined by your targets fatigue, 0% if they are fresh and 100% if they are exhausted. If your target is dazed or parried hitchance is increaded by +10%.  If they are stunned or netted you gain +25%. If they are grappled or sleeping you gain +50%. Unarmed mastery doubles your chance to hit. These bonuses stack up to 100%.  "
 			},
 			{
 				id = 8,
@@ -195,7 +195,7 @@ this.legend_choke <- this.inherit("scripts/skills/skill", {
 
 	function onAfterUpdate( _properties )
 	{
-		if (_properties.IsSpecializedInDaggers)
+		if (_properties.IsSpecializedInFists)
 		{
 			this.m.FatigueCostMult = this.Const.Combat.WeaponSpecFatigueMult;
 			this.m.ActionPointCost = 3;

@@ -3,7 +3,7 @@ this.legend_armor_ancient_mail <- this.inherit("scripts/items/legend_armor/legen
 	function create()
 	{
 		this.legend_armor_upgrade.create();
-		this.m.Type = this.Const.Items.ArmorUpgrades.Chain
+		this.m.Type = this.Const.Items.ArmorUpgrades.Chain;
 		this.m.ID = "legend_armor.ancient_mail";
 		this.m.Name = "Ancient Mail";
 		this.m.Description = "An old and crusted heavy mail of ancient design. Some parts are missing, but it still offers decent protection.";
@@ -15,10 +15,10 @@ this.legend_armor_ancient_mail <- this.inherit("scripts/items/legend_armor/legen
 		this.m.SpriteBack = "bust_legend_ancient_mail";
 		this.m.SpriteDamagedBack = "bust_legend_ancient_mail_damaged";
 		this.m.SpriteCorpseBack = "bust_legend_ancient_mail_dead";
-		this.m.Value = 500;
-		this.m.Condition = 55;
-		this.m.ConditionMax = 55;
-		this.m.StaminaModifier = -8;
+		this.m.Value = 300;
+		this.m.Condition = 35;
+		this.m.ConditionMax = 35;
+		this.m.StaminaModifier = -6;
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 	}
 

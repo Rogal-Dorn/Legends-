@@ -53,6 +53,22 @@ gt.Const.Perks.HealerClassTree <- {
 	]
 };
 
+gt.Const.Perks.FaithClassTree <- {
+	ID = "FaithClassTree",
+	Descriptions = [
+		"faith"
+	],
+	Tree = [
+		[],
+		[],
+		[],
+		[],
+		[gt.Const.Perks.PerkDefs.LegendPrayerOfFaith],
+		[gt.Const.Perks.PerkDefs.LegendPrayerOfLife],
+		[gt.Const.Perks.PerkDefs.LegendHolyFlame]
+	]
+};
+
 gt.Const.Perks.FistsClassTree <- {
 	ID = "FistsClassTree",
 	Descriptions = [
@@ -434,6 +450,7 @@ gt.Const.Perks.ClassTrees <- {
 		gt.Const.Perks.BeastClassTree,
 		gt.Const.Perks.BardClassTree,
 		gt.Const.Perks.HealerClassTree,
+		gt.Const.Perks.FaithClassTree,
 		gt.Const.Perks.FistsClassTree,
 		gt.Const.Perks.ChefClassTree, 
 		gt.Const.Perks.RepairClassTree,

@@ -244,19 +244,19 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 	{
 		local c = {
 			Hitpoints = [
-				25,
+				20,
 				25
 			],
 			Bravery = [
-				15,
-				15
+				5,
+				10
 			],
 			Stamina = [
-				20,
+				15,
 				20
 			],
 			MeleeSkill = [
-				25,
+				20,
 				25
 			],
 			RangedSkill = [
@@ -264,16 +264,16 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 				0
 			],
 			MeleeDefense = [
-				0,
-				0
+				-5,
+				-5
 			],
 			RangedDefense = [
-				0,
-				0
+				-5,
+				-5
 			],
 			Initiative = [
-				0,
-				0
+				-5,
+				-5
 			]
 		};
 		return c;

@@ -136,6 +136,164 @@ gt.Const.World.FireParticles <- [
 		]
 	}
 ];
+
+gt.Const.World.HolyFlameParticles <- [
+	{
+		Delay = 0,
+		Quantity = 60,
+		LifeTime = 50000,
+		SpawnRate = 60,
+		Brushes = [
+			"effect_sanctify_01",
+			"effect_sanctify_02",
+			"effect_sanctify_03"
+		],
+		Stages = [
+			{
+				LifeTimeMin = 0.1,
+				LifeTimeMax = 0.1,
+				ColorMin = this.createColor("ffe7cf00"),
+				ColorMax = this.createColor("ffeacf00"),
+				ScaleMin = 0.3,
+				ScaleMax = 0.5,
+				RotationMin = 0,
+				RotationMax = 359,
+				VelocityMin = 60,
+				VelocityMax = 100,
+				DirectionMin = this.createVec(-0.4, 0.5),
+				DirectionMax = this.createVec(0.4, 0.5),
+				SpawnOffsetMin = this.createVec(-70, -30),
+				SpawnOffsetMax = this.createVec(70, 20),
+				ForceMin = this.createVec(0, 0),
+				ForceMax = this.createVec(0, 0)
+			},
+			{
+				LifeTimeMin = 0.2,
+				LifeTimeMax = 0.5,
+				ColorMin = this.createColor("ff813dff"),
+				ColorMax = this.createColor("fec19fff"),
+				ScaleMin = 0.6,
+				ScaleMax = 0.6,
+				RotationMin = 0,
+				RotationMax = 359,
+				VelocityMin = 60,
+				VelocityMax = 100,
+				DirectionMin = this.createVec(-0.4, 0.6),
+				DirectionMax = this.createVec(0.4, 0.6),
+				ForceMin = this.createVec(0, 0),
+				ForceMax = this.createVec(0, 0)
+			},
+			{
+				LifeTimeMin = 0.2,
+				LifeTimeMax = 0.5,
+				ColorMin = this.createColor("fc6a52f0"),
+				ColorMax = this.createColor("fcaa52f0"),
+				ScaleMin = 0.6,
+				ScaleMax = 0.6,
+				RotationMin = 0,
+				RotationMax = 359,
+				VelocityMin = 60,
+				VelocityMax = 100,
+				ForceMin = this.createVec(0, 0),
+				ForceMax = this.createVec(0, 0)
+			},
+			{
+				LifeTimeMin = 0.1,
+				LifeTimeMax = 0.3,
+				ColorMin = this.createColor("d8380000"),
+				ColorMax = this.createColor("d8380000"),
+				ScaleMin = 0.6,
+				ScaleMax = 0.6,
+				RotationMin = 0,
+				RotationMax = 359,
+				VelocityMin = 60,
+				VelocityMax = 100,
+				ForceMin = this.createVec(0, 0),
+				ForceMax = this.createVec(0, 0)
+			}
+		]
+	}
+];
+
+gt.Const.World.TransformParticles <- [
+	{
+		Delay = 0,
+		Quantity = 60,
+		LifeTime = 50000,
+		SpawnRate = 60,
+		Brushes = [
+			"effect_transform_01",
+			"effect_transform_02",
+			"effect_transform_03"
+		],
+		Stages = [
+			{
+				LifeTimeMin = 0.1,
+				LifeTimeMax = 0.1,
+				ColorMin = this.createColor("ffe7cf00"),
+				ColorMax = this.createColor("ffeacf00"),
+				ScaleMin = 0.3,
+				ScaleMax = 0.5,
+				RotationMin = 0,
+				RotationMax = 359,
+				VelocityMin = 60,
+				VelocityMax = 100,
+				DirectionMin = this.createVec(-0.4, 0.5),
+				DirectionMax = this.createVec(0.4, 0.5),
+				SpawnOffsetMin = this.createVec(-70, -30),
+				SpawnOffsetMax = this.createVec(70, 20),
+				ForceMin = this.createVec(0, 0),
+				ForceMax = this.createVec(0, 0)
+			},
+			{
+				LifeTimeMin = 0.2,
+				LifeTimeMax = 0.5,
+				ColorMin = this.createColor("ff813dff"),
+				ColorMax = this.createColor("fec19fff"),
+				ScaleMin = 0.6,
+				ScaleMax = 0.6,
+				RotationMin = 0,
+				RotationMax = 359,
+				VelocityMin = 60,
+				VelocityMax = 100,
+				DirectionMin = this.createVec(-0.4, 0.6),
+				DirectionMax = this.createVec(0.4, 0.6),
+				ForceMin = this.createVec(0, 0),
+				ForceMax = this.createVec(0, 0)
+			},
+			{
+				LifeTimeMin = 0.2,
+				LifeTimeMax = 0.5,
+				ColorMin = this.createColor("fc6a52f0"),
+				ColorMax = this.createColor("fcaa52f0"),
+				ScaleMin = 0.6,
+				ScaleMax = 0.6,
+				RotationMin = 0,
+				RotationMax = 359,
+				VelocityMin = 60,
+				VelocityMax = 100,
+				ForceMin = this.createVec(0, 0),
+				ForceMax = this.createVec(0, 0)
+			},
+			{
+				LifeTimeMin = 0.1,
+				LifeTimeMax = 0.3,
+				ColorMin = this.createColor("d8380000"),
+				ColorMax = this.createColor("d8380000"),
+				ScaleMin = 0.6,
+				ScaleMax = 0.6,
+				RotationMin = 0,
+				RotationMax = 359,
+				VelocityMin = 60,
+				VelocityMax = 100,
+				ForceMin = this.createVec(0, 0),
+				ForceMax = this.createVec(0, 0)
+			}
+		]
+	}
+];
+
+
 gt.Const.World.CampSmokeParticles <- [
 	{
 		Delay = 0,

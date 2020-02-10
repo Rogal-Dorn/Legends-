@@ -16,7 +16,29 @@ this.perk_crippling_strikes <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		_properties.ThresholdToInflictInjuryMult *= 0.66;
+
+	}
+
+	
+	function onAnySkillUsed( _skill, _targetEntity, _properties )
+	{
+		if (_targetEntity == null)
+		{
+			return;
+		}
+
+		if (!_targetEntity.getFaction())
+		{
+			return;
+		}
+
+		if (_targetEntity.getFaction() == this.Const.Faction.Undead ||  _targetEntity.getFaction() == this.Const.Faction.Zombies)
+		{
+			_properties.DamageTotalMult *= 1.1;
+		}
+
 	}
 
 });
 
+					

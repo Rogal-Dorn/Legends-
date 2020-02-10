@@ -63,7 +63,7 @@ this.legend_horrify <- this.inherit("scripts/skills/skill", {
 
 			if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
 			{
-				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " struck a blow that leaves " + this.Const.UI.getColorizedEntityName(_targetTile.getEntity()) + " horrified");
+				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " struck a blow that leaves " + this.Const.UI.getColorizedEntityName(target) + " horrified");
 			}
 		}
 	}

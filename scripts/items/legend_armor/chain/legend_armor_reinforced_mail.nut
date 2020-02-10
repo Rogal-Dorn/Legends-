@@ -3,7 +3,7 @@ this.legend_armor_reinforced_mail <- this.inherit("scripts/items/legend_armor/le
 	function create()
 	{
 		this.legend_armor_upgrade.create();
-		this.m.Type = this.Const.Items.ArmorUpgrades.Chain
+		this.m.Type = this.Const.Items.ArmorUpgrades.Chain;
 		this.m.ID = "legend_armor.reinforced_mail";
 		this.m.Name = "Reinforced Mail";
 		this.m.Description = "A long and heavy reinforced chainmail that offers good protection but is very fatiguing to wear.";
@@ -15,7 +15,7 @@ this.legend_armor_reinforced_mail <- this.inherit("scripts/items/legend_armor/le
 		this.m.SpriteBack = "bust_legend_reinforced_mail";
 		this.m.SpriteDamagedBack = "bust_legend_reinforced_mail_damaged";
 		this.m.SpriteCorpseBack = "bust_legend_reinforced_mail_dead";
-		this.m.Value = 7000;
+		this.m.Value = 1750;
 		this.m.Condition = 110;
 		this.m.ConditionMax = 110;
 		this.m.StaminaModifier = -15;

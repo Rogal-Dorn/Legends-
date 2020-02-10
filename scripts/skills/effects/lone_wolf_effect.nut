@@ -79,7 +79,7 @@ this.lone_wolf_effect <- this.inherit("scripts/skills/skill", {
 				continue;
 			}
 
-			if (ally.getTile().getDistanceTo(myTile) <= 3)
+			if (ally.getTile().getDistanceTo(myTile) <= 2)
 			{
 				isAlone = false;
 				break;

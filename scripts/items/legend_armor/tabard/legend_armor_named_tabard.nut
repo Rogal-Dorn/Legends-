@@ -5,7 +5,7 @@ this.legend_armor_named_tabard <- this.inherit("scripts/items/legend_armor/legen
 	function create()
 	{
 		this.legend_named_armor_upgrade.create();
-		this.m.Type = this.Const.Items.ArmorUpgrades.Tabbard
+		this.m.Type = this.Const.Items.ArmorUpgrades.Tabbard;
 		this.m.ID = "legend_armor.named_tabard";
 		this.m.Name = "";
 		this.m.NameList = [
@@ -16,21 +16,23 @@ this.legend_armor_named_tabard <- this.inherit("scripts/items/legend_armor/legen
 			"Noble",
 			"Undead"
 		];
-		this.m.Variants = [1];
+		this.m.Variants = [
+			1
+		];
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
-		this.m.Value = 5500;
+		this.m.Value = 6000;
 		this.m.Condition = 10;
 		this.m.ConditionMax = 10;
-		this.m.StaminaModifier = -1;
-		this.randomizeValues()
+		this.m.StaminaModifier = 0;
+		this.randomizeValues();
 	}
 
 	function randomizeValues()
 	{
-		this.m.Condition = this.Math.floor(this.m.Condition * this.Math.rand(110, 120) * 0.01) * 1.0;
+		this.m.Condition = this.Math.floor(this.m.Condition * this.Math.rand(110, 150) * 0.01) * 1.0;
 		this.m.ConditionMax = this.m.Condition;
-		this.m.BraveryMult = this.Math.rand(103, 108) * 0.01
+		this.m.BraveryMult = this.Math.rand(105, 110) * 0.01;
 	}
 
 	function updateVariant()
@@ -42,30 +44,30 @@ this.legend_armor_named_tabard <- this.inherit("scripts/items/legend_armor/legen
 		this.m.Icon = "legend_armor/tabard/tabard_named_" + variant + ".png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "legend_armor/tabard/icon_tabard_named_" + variant + ".png";
-		this.m.OverlayIconLarge = "legend_armor/tabard/inventory_tabard_named_"  + variant + ".png";
+		this.m.OverlayIconLarge = "legend_armor/tabard/inventory_tabard_named_" + variant + ".png";
 	}
 
 	function getTooltip()
 	{
 		local result = this.legend_named_armor_upgrade.getTooltip();
-		local val =  this.m.BraveryMult * 100.0 - 100;
+		local val = this.m.BraveryMult * 100.0 - 100;
 		result.push({
 			id = 15,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Increase the Resolve of the wearer by [color=" + this.Const.UI.Color.PositiveValue + "]+" + val +"[/color]"
+			text = "Increase the Resolve of the wearer by [color=" + this.Const.UI.Color.PositiveValue + "]+" + val + "%[/color]"
 		});
 		return result;
 	}
 
 	function onArmorTooltip( _result )
 	{
-		local val =  this.m.BraveryMult * 100.0 - 100;
+		local val = this.m.BraveryMult * 100.0 - 100;
 		_result.push({
 			id = 15,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Increase the Resolve of the wearer by [color=" + this.Const.UI.Color.PositiveValue + "]+" + val +"[/color]"
+			text = "Increase the Resolve of the wearer by [color=" + this.Const.UI.Color.PositiveValue + "]+" + val + "%[/color]"
 		});
 	}
 

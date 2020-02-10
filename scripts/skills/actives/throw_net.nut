@@ -91,7 +91,11 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 		local r = this.Math.rand(1,100);
 		if (_user.getSkills().hasSkill("perk.legend_net_casting"));
 		{
-		 r = this.Math.rand(1,50);
+		 r *= 0.5;
+		}
+		if (_user.getSkills().hasSkill("perk.legend_net_repair"));
+		{
+		 r *= 0.75;
 		}
 		local ourSkill = _user.getCurrentProperties().getRangedSkill();
 		local theirSkill = targetEntity.getCurrentProperties().getRangedDefense();

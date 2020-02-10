@@ -47,21 +47,24 @@ this.legend_daze <- this.inherit("scripts/skills/skill", {
 				type = "text",
 				icon = "ui/icons/special.png",
 				text = "Leave your opponent bewildered, halving their damage, fatigue and initiative"
-			},
+			}
+		)
+		ret.push(
 			{
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
 				text = "Uses Ranged skill to hit. Hit chance doubled if you also have the Taunt perk."
 			}
+		)
 			
-			)
 		return ret;
 	}
 
 	function onUse( _user, _targetTile )
 	{
 		local targetEntity = _targetTile.getEntity();
+		local target = _targetTile.getEntity();
 		local r = this.Math.rand(1,100);
 		if (_user.getSkills().hasSkill("perk.taunt"));
 		{
@@ -74,7 +77,6 @@ this.legend_daze <- this.inherit("scripts/skills/skill", {
 		{
 			if (!targetEntity.getCurrentProperties().IsImmuneToStun)
 			{
-				local target = _targetTile.getEntity();
 				this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectBash);
 
 				if (target.isAlive())
@@ -83,18 +85,18 @@ this.legend_daze <- this.inherit("scripts/skills/skill", {
 
 					if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
 					{
-						this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " stupefied " + this.Const.UI.getColorizedEntityName(_targetTile.getEntity()) + " leaving them dazed");
+						this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " stupefied " + this.Const.UI.getColorizedEntityName(target) + " leaving them dazed");
 					}
 				}
 			}
 			else
 			{
-			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " failed to stupefy an immune " + this.Const.UI.getColorizedEntityName(_targetTile.getEntity()));
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " failed to stupefy an immune " + this.Const.UI.getColorizedEntityName(target));
 			}
 		}
 		else
 		{
-		this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " failed to stupefy " + this.Const.UI.getColorizedEntityName(_targetTile.getEntity()));
+		this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " failed to stupefy " + this.Const.UI.getColorizedEntityName(target));
 		}
 
 	}

@@ -53,6 +53,7 @@
 <sprite id="drums_of_life_circle" ic="FF23165B" img="skills\drums_of_life_circle.png" />
 <sprite id="prayer_purple" ic="FF23165B" img="skills\prayer_purple.png" />
 <sprite id="prayer_green" ic="FF23165B" img="skills\prayer_green.png" />
+<sprite id="prayer_blue" ic="FF23165B" img="skills\prayer_green.png" />
 <sprite id="alcohol" ic="FF23165B" img="skills\alcohol.png" />
 <sprite id="graze" ic="FF23165B" img="skills\graze.png" />
 <sprite id="bleed" ic="FF23165B" img="skills\bleed.png" />
@@ -64,6 +65,10 @@
 <sprite id="bear_circle" ic="FF23165B" img="skills\bear_circle.png" />
 <sprite id="catapult_circle" ic="FF23165B" img="skills\catapult_circle.png" />
 <sprite id="food_circle" ic="FF23165B" img="skills\food_circle.png" />
+<sprite id="baffled_circle" ic="FF23165B" img="skills\baffled_circle.png" />
+<sprite id="fire_circle" ic="FF23165B" img="skills\fire_circle.png" />
+<sprite id="bluefire_circle" ic="FF23165B" img="skills\bluefire_circle.png" />
+<sprite id="incoming_circle" ic="FF23165B" img="skills\incoming_circle.png" />
 
 <sprite id="mini_safegaurd_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_safegaurd_circle.png" />
 <sprite id="mini_shimmering_visage_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_shimmering_visage_circle.png" />
@@ -118,5 +123,18 @@
 <sprite id="mini_graze_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_graze_circle.png" />
 <sprite id="mini_bleed_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_bleed_circle.png" />
 <sprite id="mini_food_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_food_circle.png" />
+<sprite id="mini_baffled_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_baffled_circle.png" />
+<sprite id="mini_prayer_green" offsetY="35" ic="FF344955" img="skills\mini\mini_prayer_green.png" />
+<sprite id="mini_prayer_purple" offsetY="35" ic="FF344955" img="skills\mini\mini_prayer_purple.png" />
+<sprite id="mini_fire_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_fire_circle.png" />
+<sprite id="mini_bluefire_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_bluefire_circle.png" />
+
+<sprite id="effect_sanctify_01" ic="FFEFEEEF" img="effects\effect_sanctify_01.png" left="-15" right="16" />
+<sprite id="effect_sanctify_02" ic="FFEFEEEF" img="effects\effect_sanctify_02.png" left="-15" right="16" />
+<sprite id="effect_sanctify_03" ic="FFEFEEEF" img="effects\effect_sanctify_03.png" left="-15" right="16" />
+
+<sprite id="effect_transform_01" width="80" height="80" img="effects\effect_transform_01.png" left="-39" right="37" top="-34" bottom="36" />
+<sprite id="effect_transform_02" width="80" height="80" img="effects\effect_transform_02.png" left="-39" right="37" top="-34" bottom="36" />
+<sprite id="effect_transform_03" width="80" height="80" img="effects\effect_transform_03.png" left="-39" right="37" top="-34" bottom="36" />
 
 </brush>
