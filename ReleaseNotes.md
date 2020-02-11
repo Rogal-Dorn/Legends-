@@ -2993,7 +2993,8 @@ Fixes double strike
 *Fixes Bandit Leaders (very rarely) spawning with named ranged weapons (mwah)
 *Fixes named 2h flails showing as ranged 2h flails (mwah)
 *Tones slaughterer down again (mwah (sorry about slaughterer))
-*Fixes double strike perk tree description
+*Fixes double strike perk tree description (mwah)
+*[Keyword] SHOULD Fix bleed in undead/skeleton fights (mwah)
 
 
 **Faith**
