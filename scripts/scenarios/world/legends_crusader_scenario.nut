@@ -27,6 +27,7 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 		bro.getSkills().add(this.new("scripts/skills/perks/perk_fortified_mind"));
 		bro.getSkills().add(this.new("scripts/skills/perks/perk_rebound"));
 		bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_roster_1"));
+		bro.m.PerkPointsSpent += 3;
 		bro.setPlaceInFormation(4);
 		bro.setVeteranPerks(2);
 		bro.getTags().set("IsPlayerCharacter", true);
@@ -135,6 +136,7 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 		}
 		bro.improveMood(0.5, "Learned a new skill");
 		bro.getSkills().add(this.new("scripts/skills/perks/perk_fortified_mind"));
+		bro.m.PerkPointsSpent += 1;
 	}
 
 	function onUpdateHiringRoster( _roster )
