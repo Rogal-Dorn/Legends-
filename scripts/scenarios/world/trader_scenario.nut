@@ -160,6 +160,7 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 		{
 			bro.improveMood(0.5, "Glad to be out of the fighting line");
 		    bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_pacifist"));
+		    bro.m.PerkPointsSpent += 1;
 		}
 
 
@@ -180,6 +181,7 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 			else if (!bro.getBackground().isCombatBackground())
 			{
 				bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_pacifist"));
+				bro.m.PerkPointsSpent += 1;
 			}
 
 			if (bro.getBackground().getID() == "background.peddler" || bro.getBackground().getID() == "background.legend_donkey" )
