@@ -70,7 +70,7 @@ function getTooltip()
 				}
 			}
 
-			if (target.getFaction() == this.Const.Faction.Undead ||  target.getFaction() == this.Const.Faction.Zombies)
+			if (a.getFaction() == this.Const.Faction.Undead ||  a.getFaction() == this.Const.Faction.Zombies)
 			{
 				a.getSkills().add(this.new("scripts/skills/effects/disintegrating_effect"));
 			}

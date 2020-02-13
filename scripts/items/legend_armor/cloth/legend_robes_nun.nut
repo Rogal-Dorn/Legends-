@@ -13,8 +13,8 @@ this.legend_robes_nun <- this.inherit("scripts/items/legend_armor/cloth/legend_r
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.Value = 25;
-		this.m.Condition = 20;
-		this.m.ConditionMax = 20;
+		this.m.Condition = 22;
+		this.m.ConditionMax = 22;
 		this.m.StaminaModifier = -1;
 	}
 
