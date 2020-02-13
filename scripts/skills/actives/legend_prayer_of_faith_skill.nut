@@ -58,8 +58,11 @@ function getTooltip()
 
 			if (myTile.getDistanceTo(a.getTile()) > 1)
 			{
+			
 				continue;
 			}
+
+
 
 			if (a.getFaction() == _user.getFaction())
 			{
@@ -69,7 +72,7 @@ function getTooltip()
 				}
 			}
 
-			if (target.getFaction() == this.Const.Faction.Undead ||  target.getFaction() == this.Const.Faction.Zombies)
+			if (a.getFaction() == this.Const.Faction.Undead ||  a.getFaction() == this.Const.Faction.Zombies)
 			{
 				a.getSkills().add(this.new("scripts/skills/effects/legend_baffled_effect"));
 			}

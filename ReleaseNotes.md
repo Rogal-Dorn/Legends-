@@ -2986,16 +2986,6 @@ Fixes double strike
 
 13.3.4  Faithful Shield  
 
-*Fixes crash from undead_frozen_pond_event
-*Fixes error with shoot stake skill.
-*Fixes an invalid injury on skeletons.
-*Fixes legend vala recruitment on legions origin start.
-*Fixes Bandit Leaders (very rarely) spawning with named ranged weapons (mwah)
-*Fixes named 2h flails showing as ranged 2h flails (mwah)
-*Tones slaughterer down again (mwah (sorry about slaughterer))
-*Fixes double strike perk tree description (mwah)
-*[Keyword] SHOULD Fix bleed in undead/skeleton fights (mwah)
-
 
 **Faith**
 New Perk - Holy Flame - Choose a tile to bless for two turns. Allies ending their turn on this tile are Sanctified, becoming immune to injuries for two turns. Undead ending their turn on this tile become Consecrated, losing immunity to injuries and will not resurrect. Cultists ending their turn here will burn for 10-20 damage. 
@@ -3015,13 +3005,25 @@ Changed perk - Holding the line - no longer effects ranged defense, only melee d
 New perk - Incoming! - Provides +10 ranged defense to all allies within 4 tiles. Only available on Noble Commander 
 Noble origin has a chance to find other nobles willing to join the cause. 
 
+**Other changes**
 All commanders except vala have their stats nerfed by about 5 points across all skills. Each can still roll the same maximum in their key skills, but it will be rarer. 
 Adds 16 colour variants for named leather armors 
+Vengeance buffed to +30% damage 
+Fixes Smackdown not working when a
 Healer group given to Maid 
+
 Fixes warbear recruitment event showing up without a trainer, fixes text and adds event image 
 Firefield uses correct icon and sounds 
-buffs surcoats and nerfs barbarian gear slightly 
-Vengeance buffed to +30% damage 
-Fixes Smackdown not working when activated. renamed "Prepare to knock back" to "Wind Up".  
-
+Buffs surcoats and nerfs barbarian gear slightly 
+Renamed "Prepare to knock back" to "Wind Up".  
+*Fixes crash from undead_frozen_pond_event
+*Fixes error with shoot stake skill.
+*Fixes an invalid injury on skeletons.
+*Fixes legend vala recruitment on legions origin start.
+*Fixes Bandit Leaders (very rarely) spawning with named ranged weapons (mwah)
+*Fixes named 2h flails showing as ranged 2h flails (mwah)
+*Tones slaughterer down again (mwah (sorry about slaughterer))
+*Fixes double strike perk tree description (mwah)
+*Fixes bleed in undead/skeleton fights (mwah)
+*Fixes Legion recruitment
 
