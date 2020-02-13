@@ -3011,6 +3011,9 @@ Adds 16 colour variants for named leather armors
 Vengeance buffed to +30% damage 
 Fixes Smackdown not working when a
 Healer group given to Maid 
+Slight changes to stats on aprons and robes 
+Adds a number of new Tip of the Day entries 
+True believe now also removes irrational and makes pessimists irrational 
 
 Fixes warbear recruitment event showing up without a trainer, fixes text and adds event image 
 Firefield uses correct icon and sounds 

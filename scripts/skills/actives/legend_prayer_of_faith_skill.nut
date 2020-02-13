@@ -51,17 +51,10 @@ function getTooltip()
 				continue;
 			}
 
-			if (a.getFatigue() == 0)
-			{
-				continue;
-			}
-
 			if (myTile.getDistanceTo(a.getTile()) > 1)
 			{
-			
 				continue;
 			}
-
 
 
 			if (a.getFaction() == _user.getFaction())
