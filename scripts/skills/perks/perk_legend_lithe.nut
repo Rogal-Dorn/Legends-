@@ -69,7 +69,7 @@ this.perk_legend_lithe <- this.inherit("scripts/skills/skill", {
 		fat = this.Math.min(0, fat + 30);
 		//30 here is what the bonus starts at. Graph of the function can be found here.
 		//http://fooplot.com/#W3sidHlwZSI6MCwiZXEiOiIzMC0oKG1heCgwLHgtMzApXjEuMSkpIiwiY29sb3IiOiIjMDAwMDAwIn0seyJ0eXBlIjoxMDAwLCJ3aW5kb3ciOlsiLTIyLjU3NjkyMzA3NjkyMzA3MyIsIjEwMi40MjMwNzY5MjMwNzY5MyIsIi0xNy4zMTI1IiwiMTA3LjY4NzUiXX1d
-		local ret = this.Math.floor(this.Math.max(0, 30 + this.Math.pow(this.Math.abs(fat), 1.1)));
+		local ret = this.Math.floor(this.Math.max(0, 30 - this.Math.pow(this.Math.abs(fat), 1.1)));
 		return ret;
 	}
 
