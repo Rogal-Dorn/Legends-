@@ -2990,6 +2990,12 @@ Fixes double strike
 *Fixes error with shoot stake skill.
 *Fixes an invalid injury on skeletons.
 *Fixes legend vala recruitment on legions origin start.
+*Fixes Bandit Leaders (very rarely) spawning with named ranged weapons (mwah)
+*Fixes named 2h flails showing as ranged 2h flails (mwah)
+*Tones slaughterer down again (mwah (sorry about slaughterer))
+*Fixes double strike perk tree description (mwah)
+*[Keyword] SHOULD Fix bleed in undead/skeleton fights (mwah)
+
 
 **Faith**
 New Perk - Holy Flame - Choose a tile to bless for two turns. Allies ending their turn on this tile are Sanctified, becoming immune to injuries for two turns. Undead ending their turn on this tile become Consecrated, losing immunity to injuries and will not resurrect. Cultists ending their turn here will burn for 10-20 damage. 
@@ -3017,4 +3023,5 @@ Firefield uses correct icon and sounds
 buffs surcoats and nerfs barbarian gear slightly 
 Vengeance buffed to +30% damage 
 Fixes Smackdown not working when activated. renamed "Prepare to knock back" to "Wind Up".  
+
 
