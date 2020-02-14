@@ -181,7 +181,6 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 			else if (!bro.getBackground().isCombatBackground())
 			{
 				bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_pacifist"));
-				bro.m.PerkPointsSpent += 1;
 			}
 
 			if (bro.getBackground().getID() == "background.peddler" || bro.getBackground().getID() == "background.legend_donkey" )
