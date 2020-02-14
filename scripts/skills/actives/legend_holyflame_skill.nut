@@ -39,7 +39,23 @@ this.legend_holyflame_skill <- this.inherit("scripts/skills/skill", {
 
 		function getTooltip()
 	{
-		local ret = this.getDefaultTooltip();
+		local ret = [
+			{
+				id = 1,
+				type = "title",
+				text = this.getName()
+			},
+			{
+				id = 2,
+				type = "description",
+				text = this.getDescription()
+			},
+			{
+				id = 3,
+				type = "text",
+				text = this.getCostString()
+			}
+		];
 		ret.extend([
 			{
 				id = 6,

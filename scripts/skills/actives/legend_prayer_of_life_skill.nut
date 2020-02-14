@@ -4,7 +4,7 @@ this.legend_prayer_of_life_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_prayer_of_life";
 		this.m.Name = "Prayer of Life";
-		this.m.Description = "Push allies on with your chant of holy scripture, restoring the health of all allies within 1 tile by 9 hp. ";
+		this.m.Description = "Push allies on with your chant of holy scripture, restoring the health of all allies within 1 tile by 10% of their resolve. ";
 		this.m.Icon = "skills/prayer_green_square.png";
 		this.m.IconDisabled = "skills/prayer_green_square_bw.png";
 		this.m.Overlay = "prayer_green";
@@ -28,9 +28,27 @@ this.legend_prayer_of_life_skill <- this.inherit("scripts/skills/skill", {
 		this.m.MaxRange = 1;
 	}
 
-function getTooltip()
+	function getTooltip()
 	{
-		local ret = this.getDefaultTooltip();
+		local value = this.Math.round(this.Math.minf(0.5, this.getContainer().getActor().getCurrentProperties().Bravery * 0.005) * 100);
+		local ret = [
+			{
+				id = 1,
+				type = "title",
+				text = this.getName()
+			},
+			{
+				id = 2,
+				type = "description",
+				text = this.getDescription()
+			},
+			{
+				id = 3,
+				type = "text",
+				text = this.getCostString()
+			}
+		];
+
 		return ret;
 	}
 	
