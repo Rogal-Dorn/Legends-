@@ -3039,3 +3039,8 @@ Crusader origin has a higher chance to find monks, nuns, flagellants, witch hunt
 *Fixes towns getting friendly with the legion 
 *Fixes Legion recruitment
 
+
+13.3.xx
+
+**Fixes**
+Peasant Squire gets "duelist" not "deulist" (mwah)

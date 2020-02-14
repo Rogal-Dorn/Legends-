@@ -33,7 +33,7 @@ this.legend_peasant_squire <- this.inherit("scripts/entity/tactical/human", {
 		dirt.Alpha = this.Math.rand(0, 255);
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_feint"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_recover"));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_deulist"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_duelist"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_back_to_basics"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_rotation"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_footwork"));
