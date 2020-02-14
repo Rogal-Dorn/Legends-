@@ -1369,7 +1369,7 @@ gt.Const.Tactical.HolyFlameParticles <- [
 		Delay = 0,
 		Quantity = 30,
 		LifeTimeQuantity = 0,
-		SpawnRate = 30,
+		SpawnRate = 10,
 		Brushes = [
 			"effect_sanctify_01",
 			"effect_sanctify_02",
@@ -1430,7 +1430,7 @@ gt.Const.Tactical.HolyFlameParticles <- [
 		Delay = 0,
 		Quantity = 30,
 		LifeTimeQuantity = 0,
-		SpawnRate = 30,
+		SpawnRate = 10,
 		Brushes = [
 			"effect_sanctify_01",
 			"effect_sanctify_02",

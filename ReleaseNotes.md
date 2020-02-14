@@ -2986,7 +2986,6 @@ Fixes double strike
 
 13.3.4  Faithful Shield  
 
-
 **Faith**
 New Perk - Holy Flame - Choose a tile to bless for two turns. Allies ending their turn on this tile are Sanctified, becoming immune to injuries for two turns. Undead ending their turn on this tile become Consecrated, losing immunity to injuries and will not resurrect. Cultists ending their turn here will burn for 10-20 damage. 
 New Perk - Prayer of Hope - Adjacent allies gain 10% of their resolve as hitpoints at the end of their turn. Adjacent undead begin Disintegrating at 10 damage per turn. Does not effect cultists. 
@@ -2995,34 +2994,42 @@ Faith perk group given to: Monks, Nuns, Flagellants, Witchhunters and Crusaders
 Crusader origin has a higher chance to find monks, nuns, flagellants, witch hunters and crusader recruits. 
 
 **Shields Up!**
-Adam's Shield's up mod has been integrated as perks, this resolves mod conflicts. 
-Well trained human enemies will now begin the battle with their shields up.
-Changed perk - Born with a board - This character begins each fight by shield walling before the turn starts. 
-New Perk - Shields up - Everyone in your company begins each fight by shield walling if able. Only available on Noble commander
+* Adam's Shield's up mod has been integrated as perks, this resolves mod conflicts. 
+* Well trained human enemies will now begin the battle with their shields up.
+* Changed perk - Born with a board - This character begins each fight by shield walling before the turn starts. 
+* New Perk - Shields up - Everyone in your company begins each fight by shield walling if able. Only available on Noble commander
 
 **Noble**
-Changed perk - Holding the line - no longer effects ranged defense, only melee defense
-New perk - Incoming! - Provides +10 ranged defense to all allies within 4 tiles. Only available on Noble Commander 
-Noble origin has a chance to find other nobles willing to join the cause. 
+* Changed perk - Holding the line - no longer effects ranged defense, only melee defense
+* New perk - Incoming! - Provides +10 ranged defense to all allies within 4 tiles. Only available on Noble Commander 
+* Noble origin has a chance to find other nobles willing to join the cause. 
 
 **Other changes**
-All commanders except vala have their stats nerfed by about 5 points across all skills. Each can still roll the same maximum in their key skills, but it will be rarer. 
-Adds 16 colour variants for named leather armors 
-Vengeance buffed to +30% damage 
-Fixes Smackdown not working when a
-Healer group given to Maid 
-Slight changes to stats on aprons and robes 
-Adds a number of new Tip of the Day entries 
-True believe now also removes irrational and makes pessimists irrational 
+* Warlocks and necromancers can spawn as females with new female necromancer heads (von Krolock)
+* All commanders except vala have their stats nerfed by about 5 points across all skills. Each can still roll the same maximum in their key skills, but it will be rarer. 
+* Adds 16 colour variants for named leather armors 
+* Adds 11 colour variants for named tabards 
+* Vengeance buffed to +30% damage 
+* Healer group given to Maid 
+* Slight changes to stats on aprons and robes 
+* True believer now also removes irrational and makes pessimists irrational 
+* reduces greater evil start to 110 strength so its more feasible for single characters 
+* New background icons for warlock, vala and cannibal (von Krolock) 
+* Adds a dozen new Tip of the Day entries 
 
-Fixes warbear recruitment event showing up without a trainer, fixes text and adds event image 
-Firefield uses correct icon and sounds 
 Buffs surcoats and nerfs barbarian gear slightly 
-Renamed "Prepare to knock back" to "Wind Up".  
-*Fixes crash from undead_frozen_pond_event
-*Fixes error with shoot stake skill.
-*Fixes an invalid injury on skeletons.
-*Fixes legend vala recruitment on legions origin start.
+Renamed "Prepare to knock back" to "Wind Up".
+
+**Fixes**  
+*Fixes warbear recruitment event showing up without a trainer, fixes text and adds event image 
+*Fixes Smackdown not working in some circumstances 
+*Fixes Firefield using correct icon and sounds 
+*Fixes stables icon being too big 
+*Fixes estocs going invisible when runed 
+*Fixes crash from undead_frozen_pond_event (salty)
+*Fixes error with shoot stake skill.  (salty)
+*Fixes an invalid injury on skeletons.(salty)
+*Fixes legend vala recruitment on legions origin start. (salty)
 *Fixes Bandit Leaders (very rarely) spawning with named ranged weapons (mwah)
 *Fixes named 2h flails showing as ranged 2h flails (mwah)
 *Tones slaughterer down again (mwah (sorry about slaughterer))
