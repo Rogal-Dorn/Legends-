@@ -4,7 +4,7 @@ this.legend_prayer_of_faith_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_prayer_of_faith";
 		this.m.Name = "Prayer of Faith";
-		this.m.Description = "Grant defense to your allies with your chant of holy scripture, granting +10% chance of defense reroll.";
+		this.m.Description = "Grant defense to your allies with your chant of holy scripture, granting +10% of their resolve as melee and ranged defense.";
 		this.m.Icon = "skills/prayer_purple_square.png";
 		this.m.IconDisabled = "skills/prayer_purple_square_bw.png";
 		this.m.Overlay = "prayer_purple";
@@ -28,9 +28,27 @@ this.legend_prayer_of_faith_skill <- this.inherit("scripts/skills/skill", {
 		this.m.MaxRange = 1;
 	}
 
-function getTooltip()
+	function getTooltip()
 	{
-		local ret = this.getDefaultTooltip();
+
+		local ret = [
+			{
+				id = 1,
+				type = "title",
+				text = this.getName()
+			},
+			{
+				id = 2,
+				type = "description",
+				text = this.getDescription()
+			},
+			{
+				id = 3,
+				type = "text",
+				text = this.getCostString()
+			}
+		];
+
 		return ret;
 	}
 	

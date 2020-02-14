@@ -3016,7 +3016,7 @@ Crusader origin has a higher chance to find monks, nuns, flagellants, witch hunt
 * True believer now also removes irrational and makes pessimists irrational 
 * reduces greater evil start to 110 strength so its more feasible for single characters 
 * New background icons for warlock, vala and cannibal (von Krolock) 
-* Adds a dozen new Tip of the Day entries 
+* Adds a dozen new Tip of the Day entries (Lemyfish, Starcatcher, Balzaphon, Larry Croft)
 
 **Fixes**  
 *Fixes warbear recruitment event showing up without a trainer, fixes text and adds event image 
