@@ -3018,16 +3018,17 @@ Crusader origin has a higher chance to find monks, nuns, flagellants, witch hunt
 * New background icons for warlock, vala and cannibal (von Krolock) 
 * Adds a dozen new Tip of the Day entries (Lemyfish, Starcatcher, Balzaphon, Larry Croft)
 
-**Fixes**  
+**Fixes** 
+*Fixes Rotation (Rule 303)
 *Fixes warbear recruitment event showing up without a trainer, fixes text and adds event image 
 *Fixes Smackdown not working in some circumstances
 *Fixes Firefield using correct icon and sounds 
 *Fixes stables icon being too big 
 *Fixes estocs going invisible when runed 
-*Fixes crash from undead_frozen_pond_event (salty)
-*Fixes error with shoot stake skill.  (salty)
-*Fixes an invalid injury on skeletons.(salty)
-*Fixes legend vala recruitment on legions origin start. (salty)
+*Fixes crash from undead_frozen_pond_event (Rule 303)
+*Fixes error with shoot stake skill.  (Rule 303)
+*Fixes an invalid injury on skeletons.(Rule 303)
+*Fixes legend vala recruitment on legions origin start. (Rule 303)
 *Fixes Bandit Leaders (very rarely) spawning with named ranged weapons (mwah)
 *Fixes named 2h flails showing as ranged 2h flails (mwah)
 *Tones slaughterer down again (mwah (sorry about slaughterer))
