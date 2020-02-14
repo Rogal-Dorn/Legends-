@@ -214,6 +214,16 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 		return delta;
 	}
 
+	function getRepair()
+	{
+		return this.Math.floor(this.getCondition());
+	}
+
+	function getRepairMax()
+	{
+		return this.Math.floor(this.getConditionMax());
+	}
+
 	function updateAppearance( _app )
 	{
 		local frontSprite = "";

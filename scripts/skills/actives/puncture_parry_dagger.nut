@@ -20,7 +20,7 @@ this.puncture_parry_dagger <- this.inherit("scripts/skills/skill", {
 			"sounds/combat/puncture_hit_03.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
-		this.m.Order = this.Const.SkillOrder.OffensiveTargeted;
+		this.m.Order = this.Const.SkillOrder.UtilityTargeted;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
 		this.m.IsTargeted = true;

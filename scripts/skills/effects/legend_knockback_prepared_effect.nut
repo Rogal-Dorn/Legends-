@@ -76,7 +76,7 @@ this.legend_knockback_prepared_effect<- this.inherit("scripts/skills/skill", {
 			this.Sound.play(this.m.SoundOnUse[this.Math.rand(0, this.m.SoundOnUse.len() - 1)], this.Const.Sound.Volume.Skill, user.getPos());
 		}
 
-		if (this.Math.rand(1, 100) > this.getHitchance(target))
+		if (this.Math.rand(1, 100) > _skill.getHitchance(target))
 		{
 			target.onMissed(this.getContainer().getActor(), this);
 			return false;

@@ -134,7 +134,7 @@
 
     o.resetPerks <- function ()
     {
-        local perks = this.m.PerkPointsSpent;
+        local perks = this.m.PerkPointsSpent + this.m.PerkPoints;
 		local hasStudent = false;
 		local hasGifted = false;
 
