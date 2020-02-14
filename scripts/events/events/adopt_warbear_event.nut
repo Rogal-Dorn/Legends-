@@ -181,18 +181,18 @@ this.adopt_warbear_event <- this.inherit("scripts/events/event", {
 				bearBros++
 			}
 		}
+		
+		this.m.Bro = brothers[this.Math.rand(0, brothers.len() - 1)];
+		
 		if (candidates.len() > 0)
 		{
 			this.m.BearTamer = candidates[this.Math.rand(0, candidates.len() - 1)];
 			this.m.Score = this.m.BearTamer.getLevel() - 5;
 		}
-
-		if (candidates.len() != 0)
+		else
 		{
-			this.m.BearTamer = candidates[this.Math.rand(0, candidates.len() - 1)];
+			return;
 		}
-
-		this.m.Score = 5;
 	}
 
 	function onPrepare()
