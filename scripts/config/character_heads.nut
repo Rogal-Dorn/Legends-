@@ -253,7 +253,17 @@ gt.Const.Faces.WildFemale <- [
 
 gt.Const.Faces.Necromancer <- [
 	"bust_head_necro_01",
+	"bust_head_necro_02",
+	"bust_head_necro_female_01",
+	"bust_head_necro_female_02"
+];
+gt.Const.Faces.NecromancerMale <- [
+	"bust_head_necro_01",
 	"bust_head_necro_02"
+];
+gt.Const.Faces.NecromancerFemale <- [
+	"bust_head_necro_female_01",
+	"bust_head_necro_female_02"
 ];
 gt.Const.Hair.BarberMale <- [
 	"",

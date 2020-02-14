@@ -1,7 +1,7 @@
 this.adopt_warbear_event <- this.inherit("scripts/events/event", {
 	m = {
 		Bro = null,
-		Houndmaster = null
+		BearTamer = null
 	},
 	function create()
 	{

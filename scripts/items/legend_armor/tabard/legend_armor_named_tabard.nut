@@ -10,14 +10,29 @@ this.legend_armor_named_tabard <- this.inherit("scripts/items/legend_armor/legen
 		this.m.Name = "";
 		this.m.NameList = [
 			"Kingly",
-			"Splendor",
+			"Splendorous",
 			"Pageantry",
-			"Swank",
+			"Swanky",
 			"Noble",
-			"Undead"
+			"Elegence",
+			"Oppulence",
+			"Excess",
+			"Resplendence",
+			"Glorious"
 		];
 		this.m.Variants = [
-			1
+			1,
+			2,
+			3,
+			4,
+			5,
+			6,
+			7,
+			8,
+			9,
+			10,
+			11,
+			12
 		];
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
@@ -50,7 +65,7 @@ this.legend_armor_named_tabard <- this.inherit("scripts/items/legend_armor/legen
 	function getTooltip()
 	{
 		local result = this.legend_named_armor_upgrade.getTooltip();
-		local val = this.m.BraveryMult * 100.0 - 100;
+		local val = this.Math.floor(this.m.BraveryMult * 100.0 - 100);
 		result.push({
 			id = 15,
 			type = "text",
@@ -62,7 +77,7 @@ this.legend_armor_named_tabard <- this.inherit("scripts/items/legend_armor/legen
 
 	function onArmorTooltip( _result )
 	{
-		local val = this.m.BraveryMult * 100.0 - 100;
+		local val = this.Math.floor(this.m.BraveryMult * 100.0 - 100);
 		_result.push({
 			id = 15,
 			type = "text",

@@ -4,7 +4,7 @@ this.legend_prayer_of_faith_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_prayer_of_faith";
 		this.m.Name = "Prayer of Faith";
-		this.m.Description = "Grant defense to your allies with your chant of holy scripture, granting +10% chance of defense reroll.";
+		this.m.Description = "Grant defense to your allies with your chant of holy scripture, granting +10% of their resolve as melee and ranged defense.";
 		this.m.Icon = "skills/prayer_purple_square.png";
 		this.m.IconDisabled = "skills/prayer_purple_square_bw.png";
 		this.m.Overlay = "prayer_purple";
@@ -28,9 +28,27 @@ this.legend_prayer_of_faith_skill <- this.inherit("scripts/skills/skill", {
 		this.m.MaxRange = 1;
 	}
 
-function getTooltip()
+	function getTooltip()
 	{
-		local ret = this.getDefaultTooltip();
+
+		local ret = [
+			{
+				id = 1,
+				type = "title",
+				text = this.getName()
+			},
+			{
+				id = 2,
+				type = "description",
+				text = this.getDescription()
+			},
+			{
+				id = 3,
+				type = "text",
+				text = this.getCostString()
+			}
+		];
+
 		return ret;
 	}
 	
@@ -51,15 +69,11 @@ function getTooltip()
 				continue;
 			}
 
-			if (a.getFatigue() == 0)
-			{
-				continue;
-			}
-
 			if (myTile.getDistanceTo(a.getTile()) > 1)
 			{
 				continue;
 			}
+
 
 			if (a.getFaction() == _user.getFaction())
 			{
@@ -69,7 +83,7 @@ function getTooltip()
 				}
 			}
 
-			if (target.getFaction() == this.Const.Faction.Undead ||  target.getFaction() == this.Const.Faction.Zombies)
+			if (a.getFaction() == this.Const.Faction.Undead ||  a.getFaction() == this.Const.Faction.Zombies)
 			{
 				a.getSkills().add(this.new("scripts/skills/effects/legend_baffled_effect"));
 			}

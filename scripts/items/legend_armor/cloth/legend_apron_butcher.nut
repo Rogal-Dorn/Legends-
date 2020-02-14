@@ -15,8 +15,8 @@ this.legend_apron_butcher <- this.inherit("scripts/items/legend_armor/cloth/lege
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.Value = 60;
-		this.m.Condition = 45;
-		this.m.ConditionMax = 45;
+		this.m.Condition = 40;
+		this.m.ConditionMax = 40;
 		this.m.StaminaModifier = -4;
 	}
 

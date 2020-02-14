@@ -2837,8 +2837,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Script = "scripts/skills/perks/perk_legend_shields_up",
 		Name = this.Const.Strings.PerkName.LegendShieldsUp,
 		Tooltip = this.Const.Strings.PerkDescription.LegendShieldsUp,
-		Icon = "ui/perks/holdtheline_circle.png",
-		IconDisabled = "ui/perks/holdtheline_circle_bw.png",
+		Icon = "ui/perks/shields_up.png",
+		IconDisabled = "ui/perks/shields_up_bw.png",
 		Const = "LegendShieldsUp"
 	},
 	{
@@ -2846,8 +2846,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Script = "scripts/skills/perks/perk_legend_incoming",
 		Name = this.Const.Strings.PerkName.LegendIncoming,
 		Tooltip = this.Const.Strings.PerkDescription.LegendIncoming,
-		Icon = "ui/perks/holdtheline_circle.png",
-		IconDisabled = "ui/perks/holdtheline_circle_bw.png",
+		Icon = "ui/perks/incoming_circle.png",
+		IconDisabled = "ui/perks/incoming_circle_bw.png",
 		Const = "LegendIncoming"
 	}
 ];
