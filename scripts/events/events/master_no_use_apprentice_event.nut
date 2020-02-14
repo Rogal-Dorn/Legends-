@@ -42,12 +42,14 @@ this.master_no_use_apprentice_event <- this.inherit("scripts/events/event", {
 				_event.m.Dude = roster.create("scripts/entity/tactical/player");
 					if (this.World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
 						{
-						_event.m.Cannibal.getTags().add("PlayerSkeleton");
-						_event.m.Cannibal.getTags().add("undead");
-						_event.m.Cannibal.getTags().add("skeleton");
+						_event.m.Dude.getTags().add("PlayerSkeleton");
+						_event.m.Dude.getTags().add("undead");
+						_event.m.Dude.getTags().add("skeleton");
 						_event.m.Dude.setStartValuesEx([
 							"apprentice_background"
 						]);
+						_event.m.Dude.getSkills().add(this.new("scripts/skills/racial/skeleton_racial"));
+						_event.m.Dude.getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));						
 						}
 					else
 					{

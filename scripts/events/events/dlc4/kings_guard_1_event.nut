@@ -42,7 +42,9 @@ this.kings_guard_1_event <- this.inherit("scripts/events/event", {
 							_event.m.Dude.getTags().add("skeleton");
 							_event.m.Dude.setStartValuesEx([
 								"cripple_background"
-							], false);	
+							], false);
+							_event.m.Dude.getSkills().add(this.new("scripts/skills/racial/skeleton_racial"));
+							_event.m.Dude.getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));								
 							}
 					else
 						{
