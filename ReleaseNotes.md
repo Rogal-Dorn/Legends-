@@ -3011,18 +3011,16 @@ Crusader origin has a higher chance to find monks, nuns, flagellants, witch hunt
 * Adds 11 colour variants for named tabards 
 * Vengeance buffed to +30% damage 
 * Healer group given to Maid 
-* Slight changes to stats on aprons and robes 
+* Nerfs aprons and barbarian gear  
+* Buffs surcoats and robes 
 * True believer now also removes irrational and makes pessimists irrational 
 * reduces greater evil start to 110 strength so its more feasible for single characters 
 * New background icons for warlock, vala and cannibal (von Krolock) 
 * Adds a dozen new Tip of the Day entries 
 
-Buffs surcoats and nerfs barbarian gear slightly 
-Renamed "Prepare to knock back" to "Wind Up".
-
 **Fixes**  
 *Fixes warbear recruitment event showing up without a trainer, fixes text and adds event image 
-*Fixes Smackdown not working in some circumstances 
+*Fixes Smackdown not working in some circumstances
 *Fixes Firefield using correct icon and sounds 
 *Fixes stables icon being too big 
 *Fixes estocs going invisible when runed 
@@ -3035,5 +3033,8 @@ Renamed "Prepare to knock back" to "Wind Up".
 *Tones slaughterer down again (mwah (sorry about slaughterer))
 *Fixes double strike perk tree description (mwah)
 *Fixes bleed in undead/skeleton fights (mwah)
+*Fixes incorrect MoB tooltip, it does stack with masteries 
+*Fixes skill order for parry puncture and engarde (BlueyD) 
+*Fixes towns getting friendly with the legion 
 *Fixes Legion recruitment
 

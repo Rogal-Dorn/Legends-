@@ -38,6 +38,15 @@ this.legion_origin_recruitment_event <- this.inherit("scripts/events/event", {
 				_event.m.Dude.setStartValuesEx(this.Const.CharacterBackgroundsAnimated);
 				this.Characters.push(_event.m.Dude.getImagePath());
 
+				local nobles = this.World.FactionManager.getFactionsOfType(this.Const.FactionType.NobleHouse);
+
+				foreach( n in nobles )
+				{
+
+					n.addPlayerRelation(-400.0, "You are the undead, to be despised");
+
+				}
+
 			}
 
 		});
