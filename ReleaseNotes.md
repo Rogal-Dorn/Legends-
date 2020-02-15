@@ -3048,3 +3048,14 @@ Push forward now grants a choice of melee or ranged attack
 Noble loses Incoming and Coordinated volleys 
 Ranger gains Incoming  
 Noble from event gains lithe, clarity and matching set 
+Fixes peasant squire not getting duelist  (mwah)
+Fixes instance with wooden stake crashing (wuxiang)
+Temp fix for hand to hand crash when punching donkeys  (wuxiang)
+fixes for more legion recruitment events (wuxiang)
+
+
+Test vala recruitment 
+test recruitable crusader 
+Test necromancer fight 
+
+
