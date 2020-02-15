@@ -1859,7 +1859,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendViolentDecomposition = "Corrupt the force sustaining one of your fashioned thralls, causing them to detonate destructively after the corruption has time to build. Affected dead explode at the end of their turn next round, dealing damage in a 1 tile radius. The less HP they have, the more damage the explosion inflicts. If they are killed before they explode, the effect no longer triggers. Only works on minions fashioned from corpses.",
 	LegendPossession = "Enter the mind of a thrall and lend your power for one turn, increasing thralls combat prowess.",
 	LegendSiphon = "Draw from the lifeforce of your victim and transfer up to 30% of their health to yourself. You may not drain more health than you are missing nor drain a victim to their death. Effectiveness drops off 5% for each tile away.",
-	LegendValaInscriptionMastery = "The Vala becomes a master at inscribing the intricate and subtle signs, allowing her to create the rune sigils at faster rate.",
+	LegendValaInscriptionMastery = "The Vala becomes a master at inscribing the intricate and subtle signs, allowing her to create the rune sigils at a faster rate.",
 	LegendValaInscribeWeapon = "Allows the Vala to inscribe rocks with weapon specific rune sigils while encamped to create powerful rune stones.\n\nPossibilities: accuracy, bleeding, feeding, poison, power.",
 	LegendValaInscribeHelmet = "Allows the Vala to inscribe rocks with helmet specific rune sigils while encamped to create powerful rune stones.\n\nPossibilities: bravery, clarity, luck.",
 	LegendValaInscribeArmor = "Allows the Vala to inscribe rocks with armor specific rune sigils while encamped to create powerful rune stones.\n\nPossibilities: endurance, resilience, safety.",
