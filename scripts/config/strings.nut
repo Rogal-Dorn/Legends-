@@ -1709,7 +1709,8 @@ gt.Const.Strings.PerkName <- {
 	LegendPrayerOfFaith = "Prayer of Faith",
 	LegendHolyFlame = "Holy Flame",
 	LegendShieldsUp = "Shields Up!",
-	LegendIncoming = "Incoming!"
+	LegendIncoming = "Incoming!",
+	LegendZombieBite = "Zombie bite"
 };
 gt.Const.Strings.PerkDescription <- {
 	Relentless = "Don\'t slow down! At all times your Initiative is reduced only by [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] of your accumulated Fatigue, instead of all of it. \n[color=#0b0084]From the Fit perk group[/color]",
@@ -1821,7 +1822,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendSprint = "For the remainder of this turn, the Action Point cost for movement is reduced by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color] for each tile, but the Fatigue cost is doubled.",
 	LegendRoster = "Increase roster size",
 	LegendSpecBandage = "Master the art of bandaging mid battle using any cloth available, this character no longer requires a bandage item to bandage allies, and can bandage while in a zone of control",
-	LegendHoldTheLine = "Direct your troops to stand their ground, granting [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] melee defence to all allies within [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] tiles for one turn",
+	LegendHoldTheLine = "Direct your troops to stand their ground, granting either [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] melee or ranged defence to all allies within [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] tiles for one turn",
 	LegendCoordinatedVolleys = "Direct your troops to time their shots, granting [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] ranged attack to all allies within [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] tiles for one turn",
 	LegendRaiseUndead = "Raise the dead, and turn them into your own personal army",
 	LegendRoster1 = "Direct your attention to guiding an apprentice into the mercenary world, increasing the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color]",
@@ -1832,7 +1833,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendRoster6 = "Manage the company logistics. Supply rationing, camp structure and waste disposal. Increases the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]6[/color]",
 	LegendRoster7 = "Implement platoon organisation techniques. Balancing interteam dynamics, clarifying role responsibilities, creating conflict resolution processes and creating strategic plans.  Increases the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]7[/color]",
 	LegendInsects = "Unleash a horde of insects on your enemy, halving their melee skill, melee defense, ranged skill, ranged defense and initiative",
-	LegendForwardPush = "Direct your troops to attack at once, granting [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] melee skill to all allies within [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] tiles for one turn",
+	LegendForwardPush = "Direct your troops to attack at once, granting either [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] melee or ranged skill to all allies within [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] tiles for one turn",
 	LegendChainLightning = "Unleash an arcing barrage that strikes an opponent and sending sparks on to another 3 enemies, dealing additional damage and ignoring armor. Requires a staff",
 	LegendComposure = "Train to keep your cool, under even the most challenging circumstances. Grants immunity to stun. \n[color=#0b0084]From the Composure perk group[/color]",
 	LegendNightvision = "Use your superior vision and training to spot targets in the gloom, and grant that vision to your allies",
@@ -2043,7 +2044,8 @@ gt.Const.Strings.PerkDescription <- {
 	LegendPrayerOfFaith = "A prayer of devotion grants strength to your allies and baffles the undead. Adjacent allies gain [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] of their resolve as Melee and Ranged Defense. Adjacent undead are Baffled. Does not work on cultists. [color=#0b0084]From the Faith perk group[/color] ",
 	LegendHolyFlame = "Invokes a holy blessing that imbues a tile with the light of the old gods. Any of your mercenaries that enters the tile will become Sanctified, gaining immunity from injuries for two turns. Any undead unit that enters the tile will become Consecrated, becoming affected by injuries and unable to resurect for two turns.  [color=#0b0084]From the Faith perk group[/color] ",
 	LegendShieldsUp = "Drilling your troops in a shieldwall prepares their reaction time to avoid early deaths on the battlefield. Taking this perk ensures every mercenary with a shield will use shieldwall before the start of each battle. ",
-	LegendIncoming = "Providing advanced warning of an incoming volley can allow your troops to find cover or step aside. Grants [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] ranged defence to all allies within [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] tiles for one turn"
+	LegendIncoming = "Providing advanced warning of an incoming volley can allow your troops to find cover or step aside. Grants [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] ranged defence to all allies within [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] tiles for one turn",
+	LegendZombieBite = "braaaains"
 };
 gt.Const.Strings.Tooltip <- {
 	World = {
