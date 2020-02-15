@@ -47,6 +47,8 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 					_event.m.Vala.getTags().add("skeleton");
 				}	
 				_event.m.Vala.setStartValuesEx(["legend_vala_background"]);
+				_event.m.Vala.getSkills().add(this.new("scripts/skills/racial/skeleton_racial"));
+				_event.m.Vala.getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));	
 			
 				this.Characters.push(_event.m.Vala.getImagePath());
 			}
