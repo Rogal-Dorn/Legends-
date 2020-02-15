@@ -3044,3 +3044,4 @@ Crusader origin has a higher chance to find monks, nuns, flagellants, witch hunt
 
 **Fixes**
 Peasant Squire gets "duelist" not "deulist" (mwah)
+Spelling errors (mwah)
