@@ -20,10 +20,15 @@ this.perk_legend_push_forward <- this.inherit("scripts/skills/skill", {
 		{
 			this.m.Container.add(this.new("scripts/skills/actives/legend_push_forward"));
 		}
+		if (!this.m.Container.hasSkill("actives.legend_coordinated_volleys"))
+		{
+			this.m.Container.add(this.new("scripts/skills/actives/legend_coordinated_volleys"));
+		}
 	}
 		function onRemoved()
 	{
 		this.m.Container.removeByID("actives.legend_push_forward");
+		this.m.Container.removeByID("actives.legend_coordinated_volleys");
 	}
 
 });

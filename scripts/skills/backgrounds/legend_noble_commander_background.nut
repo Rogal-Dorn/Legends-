@@ -126,7 +126,6 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.LegendLithe,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyBandit,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyBarbarian,
-				this.Const.Perks.PerkDefs.LegendIncoming,
 				this.Const.Perks.PerkDefs.LegendHoldTheLine,
 				this.Const.Perks.PerkDefs.LegendRoster5
 			],
@@ -139,7 +138,6 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.LegendMatchingSet,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyMercenary,
 				this.Const.Perks.PerkDefs.LegendForwardPush,
-				this.Const.Perks.PerkDefs.LegendCoordinatedVolleys,
 				this.Const.Perks.PerkDefs.LegendRoster6
 			],
 			[

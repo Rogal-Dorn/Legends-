@@ -91,18 +91,20 @@ this.legend_noble_event_background <- this.inherit("scripts/skills/backgrounds/c
 				this.Const.Perks.PerkDefs.Overwhelm,
 				this.Const.Perks.PerkDefs.Underdog,
 				this.Const.Perks.PerkDefs.Footwork,
+				this.Const.Perks.PerkDefs.LegendLithe,
+				this.Const.Perks.PerkDefs.LegendHoldTheLine,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyBandit,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyBarbarian
 			],
 			[
 				this.Const.Perks.PerkDefs.Berserk,
+				this.Const.Perks.PerkDefs.LegendClarity,
 				this.Const.Perks.PerkDefs.HeadHunter,
 				this.Const.Perks.PerkDefs.BattleForged,
 				this.Const.Perks.PerkDefs.Nimble,
-				this.Const.Perks.PerkDefs.LegendHoldTheLine,
 				this.Const.Perks.PerkDefs.LegendForwardPush,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyMercenary,
-				this.Const.Perks.PerkDefs.LegendCoordinatedVolleys
+				this.Const.Perks.PerkDefs.LegendMatchingSet,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyMercenary
 			],
 			[
 				this.Const.Perks.PerkDefs.Fearsome,

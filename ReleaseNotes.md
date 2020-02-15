@@ -3039,3 +3039,12 @@ Crusader origin has a higher chance to find monks, nuns, flagellants, witch hunt
 *Fixes towns getting friendly with the legion 
 *Fixes Legion recruitment
 
+13.3.4.2 
+
+Fixes invisible necromancers that can't be killed 
+Fixes zombie bit error on warlock start 
+Hold the Line now grants a choice of melee or ranged defenses 
+Push forward now grants a choice of melee or ranged attack 
+Noble loses Incoming and Coordinated volleys 
+Ranger gains Incoming  
+Noble from event gains lithe, clarity and matching set 
