@@ -50,7 +50,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 			"the Puppeteer"
 		];
 		this.m.Faces = this.Const.Faces.NecromancerMale;
-		this.m.Hairs = this.Const.Hair.NecromancerMale;
+		this.m.Hairs = this.Const.Hair.Necromancer;
 		this.m.HairColors = this.Const.HairColors.Zombie;
 		this.m.Beards = this.Const.Beards.Raider;
 		this.m.Body = "bust_naked_body_00";
