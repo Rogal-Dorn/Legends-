@@ -32,7 +32,7 @@
 
 			if (p.getSkills().hasSkill("perk.legend_shields_up"))
 			{
-			local hasSheildsUpPerk = true;
+				hasSheildsUpPerk = true;
 			}
 
 			if (_properties.IsPlayerInitiated && p.isInReserves() && all_players.len() > 1)
@@ -264,7 +264,7 @@
 					  local friendly = i == this.Const.Faction.Player || this.World.FactionManager.isAlliedWithPlayer(i);
 					  if(friendly ? enemyRanged : friendlyRanged)
 					  {
-							if (hasSheildsUpPerk = true)
+							if (hasSheildsUpPerk == true)
 							{
 								foreach(e in this.m.Instances[i])
 			  						  {
@@ -279,7 +279,7 @@
 											}
 			  						  }
 							}
-							else if (hasSheildsUpPerk = false)
+							else if (hasSheildsUpPerk == false)
 							{
 								foreach(e in this.m.Instances[i])
 			  						  {
