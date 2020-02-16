@@ -185,11 +185,13 @@ this.adopt_warbear_event <- this.inherit("scripts/events/event", {
 		{
 			this.m.BearTamer = candidates[this.Math.rand(0, candidates.len() - 1)];
 			this.m.Score = this.m.BearTamer.getLevel() - 5;
-		}
+		} 
 
 		if (candidates.len() != 0)
 		{
 			this.m.BearTamer = candidates[this.Math.rand(0, candidates.len() - 1)];
+		} else {
+			return;
 		}
 
 		this.m.Score = 5;
