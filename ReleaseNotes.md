@@ -3041,21 +3041,28 @@ Crusader origin has a higher chance to find monks, nuns, flagellants, witch hunt
 
 13.3.4.2 
 
-Fixes invisible necromancers that can't be killed 
-Fixes zombie bit error on warlock start 
-Hold the Line now grants a choice of melee or ranged defenses 
-Push forward now grants a choice of melee or ranged attack 
-Noble loses Incoming and Coordinated volleys 
-Ranger gains Incoming  
+**Music**
+New Perk - Cheer on spend 3AP to grant an ally 1AP. Each ally can only be Cheered on once per turn. Only usable with lute or drum equipped. Stacks with other things that effect AP. Given to bards and troubadours at level 1. 
+Song of Life and War chant ranged increased to 8 tiles. 
+Fixes bard skills not working with a named lute 
+
+**Crusader**
+Recruitable crusaders are now much cheaper to hire and spawn more often. They now spawn with shields, blunt one handed weapons, heavy layered armors, tabard and cloak all painted in crusader colours.
+  
+**Noble**
+Hold the Line now grants a choice of bonus melee or ranged defense skill
+Push forward now grants a choice of bonus melee or ranged attack 
+Noble loses Incoming and Coordinated volleys perks
 Noble from event gains lithe, clarity and matching set 
+
+Enemy noble footmen gain stalwart on legendary 
+Ranger gains Incoming to provide ranged defense to allies 
+Fixes zombie bit error on warlock start 
+Fixes invisible necromancers that can't be killed (wuxiang)
 Fixes peasant squire not getting duelist  (mwah)
 Fixes instance with wooden stake crashing (wuxiang)
 Temp fix for hand to hand crash when punching donkeys  (wuxiang)
 fixes for more legion recruitment events (wuxiang)
-
-
-Test vala recruitment 
-test recruitable crusader 
-Test necromancer fight 
-
+Fixes white border around shields up perk icon 
+Fixes over a dozen spelling errors in descriptions, events and tooltips 
 

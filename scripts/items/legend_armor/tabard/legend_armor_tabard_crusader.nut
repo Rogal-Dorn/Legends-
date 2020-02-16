@@ -1,33 +1,21 @@
-this.legend_armor_tabard <- this.inherit("scripts/items/legend_armor/legend_armor_upgrade", {
+this.legend_armor_tabard_crusader <- this.inherit("scripts/items/legend_armor/legend_armor_upgrade", {
 	m = {},
 	function create()
 	{
 		this.legend_armor_upgrade.create();
 		this.m.Type = this.Const.Items.ArmorUpgrades.Tabbard;
-		this.m.ID = "legend_armor.company_tabard";
-		this.m.Name = "Tabard";
-		this.m.Description = "A flowing cloth covering for armor, to show your allegiance. Offers minimal protection and small boost to morale.";
+		this.m.ID = "legend_armor.company_tabard_crusader";
+		this.m.Name = "Crusader Tabard";
+		this.m.Description = "A flowing cloth covering for armor, to show your faith. Offers minimal protection and small boost to morale.";
 		this.m.ArmorDescription = "Has a flowing cloth tabard";
 		this.m.Variants = [
-			101,
-			102,
-			103,
-			104,
-			105,
-			106,
-			107,
-			108,
-			109,
-			110,
-			111,
-			112,
 			113
 		];
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
-		this.m.Value = 200;
-		this.m.Condition = 5;
-		this.m.ConditionMax = 5;
+		this.m.Value = 500;
+		this.m.Condition = 8;
+		this.m.ConditionMax = 8;
 		this.m.StaminaModifier = 0;
 	}
 
@@ -76,7 +64,7 @@ this.legend_armor_tabard <- this.inherit("scripts/items/legend_armor/legend_armo
 
 	function onUpdateProperties( _properties )
 	{
-		_properties.Bravery += 2;
+		_properties.Bravery += 4;
 	}
 
 });

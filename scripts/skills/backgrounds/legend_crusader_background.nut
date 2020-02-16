@@ -6,7 +6,7 @@ this.legend_crusader_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.ID = "background.legend_crusader";
 		this.m.Name = "Holy Crusader";
 		this.m.Icon = "ui/backgrounds/crusader.png";
-		this.m.HiringCost = 20000;
+		this.m.HiringCost = 1000;
 		this.m.DailyCost = 20;
 		this.m.Excluded = [
 			"trait.weasel",
@@ -475,22 +475,20 @@ function onAddEquipment()
 			}
 			local tabards = [
 						[0, ""],
-						[1, "tabard/legend_armor_noble_tabard"]
+						[1, "tabard/legend_armor_tabard_crusader"]
 					]
 					local tabard = this.Const.World.Common.pickLegendArmor(tabards)
 			if (tabard != null && armor != null)
 			{
-				tabard.onPaintSpecificColor(113);
 				armor.setUpgrade(tabard)
 			}
 			local cloaks = [
 						[0, ""],
-						[1, "cloak/legend_armor_cloak_heavy"]
+						[1, "cloak/legend_armor_cloak_crusader"]
 					]
 					local cloak = this.Const.World.Common.pickLegendArmor(cloaks)
 			if (tabard != null && armor != null)
 			{
-				tabard.onPaintSpecificColor(36);
 				armor.setUpgrade(cloak)
 			}
 			items.equip(armor);
