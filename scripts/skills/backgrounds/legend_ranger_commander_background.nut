@@ -246,7 +246,7 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 			],
 			MeleeSkill = [
 				0,
-				0
+				5
 			],
 			RangedSkill = [
 				20,
