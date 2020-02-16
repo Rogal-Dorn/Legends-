@@ -30,14 +30,30 @@ this.legend_drums_of_war_skill <- this.inherit("scripts/skills/skill", {
 
 function getTooltip()
 	{
-		local ret = this.getDefaultTooltip();
+		local ret = [
+			{
+				id = 1,
+				type = "title",
+				text = this.getName()
+			},
+			{
+				id = 2,
+				type = "description",
+				text = this.getDescription()
+			},
+			{
+				id = 3,
+				type = "text",
+				text = this.getCostString()
+			}
+		];
 		return ret;
 	}
 	
 	function isUsable()
 	{
 		local mainhand = this.m.Container.getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		return (mainhand.getID() == "weapon.lute" || mainhand.getID() == "weapon.named_lute") || mainhand.getID() == "weapon.legend_drum") && this.skill.isUsable();
+		return (mainhand.getID() == "weapon.lute" || mainhand.getID() == "weapon.named_lute" || mainhand.getID() == "weapon.legend_drum") && this.skill.isUsable();
 	}
 
 	function onUse( _user, _targetTile )

@@ -3039,24 +3039,34 @@ Crusader origin has a higher chance to find monks, nuns, flagellants, witch hunt
 *Fixes towns getting friendly with the legion 
 *Fixes Legion recruitment
 
-13.3.4.2 
+13.3.4.2 Cheery Bash
 
-**Music**
-New Perk - Cheer on spend 3AP to grant an ally 1AP. Each ally can only be Cheered on once per turn. Only usable with lute or drum equipped. Stacks with other things that effect AP. Given to bards and troubadours at level 1. 
+
+**Bards**
+New Perk - Cheer On spend 3AP to grant an ally 1AP. Each ally can only be Cheered on once per turn. Only usable with lute or drum equipped. Stacks with other things that effect AP. Given to bards and troubadours at level 1. 
 Song of Life and War chant ranged increased to 8 tiles. 
 Fixes bard skills not working with a named lute 
 
-**Crusader**
-Recruitable crusaders are now much cheaper to hire and spawn more often. They now spawn with shields, blunt one handed weapons, heavy layered armors, tabard and cloak all painted in crusader colours.
-  
+**Shields**
+Shield Bash now gives -10% fatigue cost to Fortify and Buckler Bash in addition to knock back 
+Push It now gives -25% fatigue cost t0 Fortify and Buckler Bash in addition to knock back 
+Born with a Board added to the shield tree, lets you begin each combat by shieldwalling 
+
 **Noble**
+Noble's four tactical skills can now be gained from just two perks
 Hold the Line now grants a choice of bonus melee or ranged defense skill
 Push forward now grants a choice of bonus melee or ranged attack 
 Noble loses Incoming and Coordinated volleys perks
 Noble from event gains lithe, clarity and matching set 
 
+**Other Changes**
+Recruitable crusaders are now much cheaper to hire and spawn more often. They now spawn with shields, blunt one handed weapons, heavy layered armors, tabard and cloak all painted in crusader colours.
+Added a crusader cloak and crusader tabard for recruitable crusaders 
 Enemy noble footmen gain stalwart on legendary 
 Ranger gains Incoming to provide ranged defense to allies 
+Militia origin gives "hate nobles" trait to all recruits 
+
+**Fixes**
 Fixes zombie bit error on warlock start 
 Fixes invisible necromancers that can't be killed (wuxiang)
 Fixes peasant squire not getting duelist  (mwah)
@@ -3065,4 +3075,7 @@ Temp fix for hand to hand crash when punching donkeys  (wuxiang)
 fixes for more legion recruitment events (wuxiang)
 Fixes white border around shields up perk icon 
 Fixes over a dozen spelling errors in descriptions, events and tooltips 
+Fixes vala becoming undead outside legion runs (wuxiang)
 
+test minstrel
+test shield perks

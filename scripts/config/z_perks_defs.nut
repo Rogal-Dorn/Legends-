@@ -2861,12 +2861,12 @@ gt.Const.Perks.PerkDefObjects <- [
 	},
 	{
 		ID = "perk.perk_legend_cheer_on",
-		Script = "scripts/skills/perks/perk_legend_zombie_bite",
-		Name = this.Const.Strings.PerkName.LegendLegendCheerOn,
-		Tooltip = this.Const.Strings.PerkDescription.LegendLegendCheerOn,
-		Icon = "ui/perks/cheer_on_circle.png",
-		IconDisabled = "ui/perks/cheer_on_circle_bw.png",
-		Const = "LegendLegendCheerOn"
+		Script = "scripts/skills/perks/perk_legend_cheer_on",
+		Name = this.Const.Strings.PerkName.LegendCheerOn,
+		Tooltip = this.Const.Strings.PerkDescription.LegendCheerOn,
+		Icon = "ui/perks/cheered_on_circle.png",
+		IconDisabled = "ui/perks/cheered_on_circle_bw.png",
+		Const = "LegendCheerOn"
 	}
 ];
 gt.Const.Perks.PerkDefs <- {};

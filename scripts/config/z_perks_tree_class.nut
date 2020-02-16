@@ -27,7 +27,7 @@ gt.Const.Perks.BardClassTree <- {
 		"entertaining"
 	],
 	Tree = [
-		[],
+		[gt.Const.Perks.PerkDefs.LegendCheerOn],
 		[gt.Const.Perks.PerkDefs.LegendDaze],
 		[],
 		[gt.Const.Perks.PerkDefs.LegendEntice],
