@@ -36,6 +36,12 @@ this.legend_tower_shield <- this.inherit("scripts/items/shields/shield", {
 		this.addSkill(this.new("scripts/skills/actives/legend_safegaurd"));
 	}
 
+	function onPaintSpecificColor( _color )
+	{
+		this.setVariant( _color );
+		this.updateAppearance();
+	}
+
 	function onPaintInCompanyColors()
 	{
 		this.setVariant(this.World.Assets.getBannerID() + 11);

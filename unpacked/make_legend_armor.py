@@ -85,7 +85,7 @@ layers = [
     {"name": "legend_tabard",  "layer": "tabard", "min": 101, "max": 113},
     {"name": "legend_tabard_named", "layer": "tabard", "min": 1, "max": 12},
 
-    {"name": "cloak",  "layer": "cloak", "min": 1, "max": 35},
+    {"name": "cloak",  "layer": "cloak", "min": 1, "max": 36},
     {"name": "cloak_rich",  "layer": "cloak", "min": 1, "max": 5},
     {"name": "cloak_spider", "layer": "cloak"},
     {"name": "sash",  "layer": "cloak", "min": 1, "max": 1},
