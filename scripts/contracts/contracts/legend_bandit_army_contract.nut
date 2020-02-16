@@ -412,7 +412,7 @@ this.legend_bandit_army_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Screens.push({
 			ID = "AttackDest",
 			Title = "Before the attack...",
-			Text = "[img]gfx/ui/events/event_54.png[/img] At this point there is no negotieting with these outlaws.",
+			Text = "[img]gfx/ui/events/event_54.png[/img] At this point there is no negotiating with these outlaws.",
 			Image = "",
 			List = [],
 			Options = [
@@ -448,7 +448,7 @@ this.legend_bandit_army_contract <- this.inherit("scripts/contracts/contract", {
 
 				},
 				{
-					Text = "%shouter% knows how to bargin with these people...",
+					Text = "%shouter% knows how to bargain with these people...",
 					function getResult()
 					{
 						if (this.Math.rand(1, 100) <= 80)

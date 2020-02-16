@@ -2858,6 +2858,15 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/mold_carrion_circle.png",
 		IconDisabled = "ui/perks/mold_carrion_circle_bw.png",
 		Const = "LegendZombieBite"
+	},
+	{
+		ID = "perk.perk_legend_cheer_on",
+		Script = "scripts/skills/perks/perk_legend_zombie_bite",
+		Name = this.Const.Strings.PerkName.LegendLegendCheerOn,
+		Tooltip = this.Const.Strings.PerkDescription.LegendLegendCheerOn,
+		Icon = "ui/perks/cheer_on_circle.png",
+		IconDisabled = "ui/perks/cheer_on_circle_bw.png",
+		Const = "LegendLegendCheerOn"
 	}
 ];
 gt.Const.Perks.PerkDefs <- {};
