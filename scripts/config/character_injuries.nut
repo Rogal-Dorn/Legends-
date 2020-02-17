@@ -566,6 +566,7 @@ gt.Const.Injury.SkeletonBody <- [
 	},
 	{
 		ID = "injury.maimed_foot",
+		Threshold = 0.75,
 		Script = "injury_permanent/maimed_foot_injury"
 	},
 	{

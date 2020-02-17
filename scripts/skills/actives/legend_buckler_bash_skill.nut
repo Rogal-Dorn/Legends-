@@ -55,14 +55,23 @@ this.legend_buckler_bash_skill <- this.inherit("scripts/skills/skill", {
 			id = 7,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]100%[/color] chance to daze on a hit"
+			text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]100%[/color] chance to baffle on a hit"
 		});
 		return ret;
 	}
 
 	function onAfterUpdate( _properties )
 	{
-		this.m.FatigueCostMult = _properties.IsSpecializedInMaces ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
+		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_specialist_shield_push"))
+		{
+			this.m.FatigueCostMult = this.Const.Combat.WeaponSpecFatigueMult;
+			this.m.ActionPointCost = 3;
+		}
+
+		if (this.getContainer().getActor().getSkills().hasSkill("perk.shield_bash"))
+		{
+			this.m.FatigueCost *= 0.9;
+		}
 	}
 
 	function onUse( _user, _targetTile )
@@ -78,11 +87,11 @@ this.legend_buckler_bash_skill <- this.inherit("scripts/skills/skill", {
 
 		if (success && target.isAlive())
 		{
-			target.getSkills().add(this.new("scripts/skills/effects/dazed_effect"));
+			target.getSkills().add(this.new("scripts/skills/effects/legend_baffled_effect"));
 
 			if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
 			{
-				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " struck a blow that leaves " + this.Const.UI.getColorizedEntityName(target) + " dazed");
+				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " struck a blow that leaves " + this.Const.UI.getColorizedEntityName(target) + " baffled");
 			}
 		}
 

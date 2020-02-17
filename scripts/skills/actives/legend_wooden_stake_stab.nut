@@ -54,7 +54,7 @@ this.legend_wooden_stake_stab <- this.inherit("scripts/skills/skill", {
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
-		if (_skill == this)
+		if (_skill == this && _targetEntity != null)
 		{
 			if (_targetEntity.getType() == this.Const.EntityType.Vampire || _targetEntity.getType() == this.Const.EntityType.LegendVampireLord)
 			{

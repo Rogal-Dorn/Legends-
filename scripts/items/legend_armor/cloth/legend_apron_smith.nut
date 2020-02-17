@@ -17,7 +17,7 @@ this.legend_apron_smith <- this.inherit("scripts/items/legend_armor/cloth/legend
 		this.m.Value = 70;
 		this.m.Condition = 45;
 		this.m.ConditionMax = 45;
-		this.m.StaminaModifier = -4;
+		this.m.StaminaModifier = -5;
 	}
 
 });

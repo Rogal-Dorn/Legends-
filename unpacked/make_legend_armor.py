@@ -49,6 +49,7 @@ layers = [
     {"name": "bust_legend_leather_jacket", "layer": "plate", "min": 1, "max": 9},
     {"name": "bust_legend_leather_jacket_simple", "layer": "plate", "min": 1, "max": 6},
     {"name": "bust_legend_leather_jacket_named", "layer": "plate", "min": 1, "max": 2},
+	{"name": "bust_legend_leather_jacket_named_02", "layer": "plate", "min": 1, "max": 16},
     {"name": "bust_legend_leather_lamellar_harness_heavy", "layer": "plate"},
     {"name": "bust_legend_leather_lamellar_harness_reinforced", "layer": "plate"},
     {"name": "bust_legend_leather_lamellar_heavy", "layer": "plate"},
@@ -82,9 +83,9 @@ layers = [
 
     {"name": "legend_tabard",  "layer": "tabard", "min": 1, "max": 20},
     {"name": "legend_tabard",  "layer": "tabard", "min": 101, "max": 113},
-    {"name": "legend_tabard_named", "layer": "tabard", "min": 1, "max": 1},
+    {"name": "legend_tabard_named", "layer": "tabard", "min": 1, "max": 12},
 
-    {"name": "cloak",  "layer": "cloak", "min": 1, "max": 35},
+    {"name": "cloak",  "layer": "cloak", "min": 1, "max": 36},
     {"name": "cloak_rich",  "layer": "cloak", "min": 1, "max": 5},
     {"name": "cloak_spider", "layer": "cloak"},
     {"name": "sash",  "layer": "cloak", "min": 1, "max": 1},

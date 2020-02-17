@@ -10,6 +10,11 @@
 <sprite id="bust_head_berserker_01_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4F6C9D" width="131" height="125" img="entity\heads\bust_head_berserker_01_dead.png" left="-45" right="15" top="-56" bottom="0" />
 <sprite id="bust_head_berserker_02_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4F6C9D" width="131" height="125" img="entity\heads\bust_head_berserker_02_dead.png" left="-45" right="15" top="-56" bottom="0" />
 
+<sprite id="bust_head_necro_female_01" offsetY="35" ic="FF71819C" width="104" height="142" img="entity\heads\bust_head_necro_female_01.png" left="-21" right="29" top="-15" bottom="47" />
+<sprite id="bust_head_necro_female_01_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF5E6B8D" width="131" height="125" img="entity\heads\bust_head_necro_female_01_dead.png" left="-44" right="10" top="-57" bottom="-1" />
+<sprite id="bust_head_necro_female_02" offsetY="35" ic="FF6D7D98" width="104" height="142" img="entity\heads\bust_head_necro_female_02.png" left="-21" right="29" top="-15" bottom="47" />
+<sprite id="bust_head_necro_female_02_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF5A678A" width="131" height="125" img="entity\heads\bust_head_necro_female_02_dead.png" left="-44" right="10" top="-57" bottom="-1" />
+
 <sprite id="bust_head_donkey_01" offsetY="35" ic="FF5B7CAD" width="104" height="142" img="entity\heads\bust_head_donkey_01.png" left="-21" right="29" top="-21" bottom="47" />
 <sprite id="bust_head_donkey_01_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4F6C9D" width="131" height="125" img="entity\heads\bust_head_donkey_01_dead.png" left="-45" right="15" top="-56" bottom="0" />
 

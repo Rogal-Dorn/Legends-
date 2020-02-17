@@ -4,7 +4,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 	{
 		this.character_background.create();
 		this.m.ID = "background.legend_commander_necro";
-		this.m.Icon = "ui/backgrounds/warlock_02.png";
+		this.m.Icon = "ui/backgrounds/warlock_01.png";
 		local r = this.Math.rand(0, 3);
 
 		if (r == 0)
@@ -49,7 +49,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 			"The Corpse Dancer",
 			"the Puppeteer"
 		];
-		this.m.Faces = this.Const.Faces.Necromancer;
+		this.m.Faces = this.Const.Faces.NecromancerMale;
 		this.m.Hairs = this.Const.Hair.Necromancer;
 		this.m.HairColors = this.Const.HairColors.Zombie;
 		this.m.Beards = this.Const.Beards.Raider;
@@ -62,6 +62,9 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[2];
 		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[2];
 		this.m.Modifiers.MedConsumption = this.Const.LegendMod.ResourceModifiers.MedConsumption[3];
+
+
+
 
 		if (!this.Const.LegendMod.Configs.LegendMagicEnabled())
 		{
@@ -247,6 +250,30 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 		}
 	}
 
+	function setGender(_gender = -1)
+	{
+		local r = _gender;
+		if (_gender == -1)
+		{
+			r = 0;
+			if (this.Const.LegendMod.Configs.LegendGenderEnabled())
+			{
+				r = this.Math.rand(0, 1);
+			}
+		}
+
+		if (r != 1)
+		{
+			return
+		}
+		this.m.Faces = this.Const.Faces.NecromancerFemale;
+		this.m.Hairs = this.Const.Hair.AllFemale;
+		this.m.HairColors = this.Const.HairColors.Zombie;
+		this.m.Beards = null;
+		this.m.BeardChance = 0;
+		this.m.Body = "bust_naked_body_03";
+		this.m.IsFemaleBackground = true;
+	}
 	function getTooltip()
 	{
 		return [

@@ -1,4 +1,4 @@
-this.perk_incoming <- this.inherit("scripts/skills/skill", {
+this.perk_legend_incoming <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{

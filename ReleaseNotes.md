@@ -2723,7 +2723,6 @@ Named cloaks are less common on enemies, with more heavy and noble cloaks instea
 Sling staves gain the lower bonus from staff spins 
 Grapple now requires the offhand free instead of the mainhand 
 
-
 **Fixes**
 Puncture hopefully fixed 
 Fix for another aspect of the nacho bleeding bug 
@@ -2885,9 +2884,6 @@ Halberd condition increased from 72 to 85 (wuxiang)
 Fixed smoked ham being uncookable (wuxiang) 
 
 
-<<<<<<< HEAD
-
-=======
 13.3.2  Slow and steady (experimental) 
 
 Reverts to vanilla AI timings, slowing down turn times. May fix:
@@ -2998,21 +2994,93 @@ Faith perk group given to: Monks, Nuns, Flagellants, Witchhunters and Crusaders
 Crusader origin has a higher chance to find monks, nuns, flagellants, witch hunters and crusader recruits. 
 
 **Shields Up!**
-Adam's Shield's up mod has been integrated as perks, this resolves mod conflicts. 
-Well trained human enemies will now begin the battle with their shields up.
-Changed perk - Born with a board - This character begins each fight by shield walling before the turn starts. 
-New Perk - Shields up - Everyone in your company begins each fight by shield walling if able. Only available on Noble commander
+* Adam's Shield's up mod has been integrated as perks, this resolves mod conflicts. 
+* Well trained human enemies will now begin the battle with their shields up.
+* Changed perk - Born with a board - This character begins each fight by shield walling before the turn starts. 
+* New Perk - Shields up - Everyone in your company begins each fight by shield walling if able. Only available on Noble commander
 
 **Noble**
-Changed perk - Holding the line - no longer effects ranged defense, only melee defense
-New perk - Incoming! - Provides +10 ranged defense to all allies within 4 tiles. Only available on Noble Commander 
-Noble origin has a chance to find other nobles willing to join the cause. 
+* Changed perk - Holding the line - no longer effects ranged defense, only melee defense
+* New perk - Incoming! - Provides +10 ranged defense to all allies within 4 tiles. Only available on Noble Commander 
+* Noble origin has a chance to find other nobles willing to join the cause. 
 
-All commanders except vala have their stats nerfed by about 5 points across all skills. Each can still roll the same maximum in their key skills, but it will be rarer. 
-Adds 16 colour variants for named leather armors 
-Healer group given to Maid 
-Fixes warbear recruitment event showing up without a trainer, fixes text and adds event image 
-Firefield uses correct icon and sounds 
-buffs surcoats and nerfs barbarian gear slightly 
-Vengeance buffed to +30% damage 
-Fixes Smackdown not working when activated. renamed "Prepare to knock back" to "Wind Up".  
+**Other changes**
+* Warlocks and necromancers can spawn as females with new female necromancer heads (von Krolock)
+* All commanders except vala have their stats nerfed by about 5 points across all skills. Each can still roll the same maximum in their key skills, but it will be rarer. 
+* Adds 16 colour variants for named leather armors 
+* Adds 11 colour variants for named tabards 
+* Vengeance buffed to +30% damage 
+* Healer group given to Maid 
+* Nerfs aprons and barbarian gear  
+* Buffs surcoats and robes 
+* True believer now also removes irrational and makes pessimists irrational 
+* reduces greater evil start to 110 strength so its more feasible for single characters 
+* New background icons for warlock, vala and cannibal (von Krolock) 
+* Adds a dozen new Tip of the Day entries (Lemyfish, Starcatcher, Balzaphon, Larry Croft)
+
+**Fixes** 
+*Fixes Rotation (Rule 303)
+*Fixes warbear recruitment event showing up without a trainer, fixes text and adds event image 
+*Fixes Smackdown not working in some circumstances
+*Fixes Firefield using correct icon and sounds 
+*Fixes stables icon being too big 
+*Fixes estocs going invisible when runed 
+*Fixes crash from undead_frozen_pond_event (Rule 303)
+*Fixes error with shoot stake skill.  (Rule 303)
+*Fixes an invalid injury on skeletons.(Rule 303)
+*Fixes legend vala recruitment on legions origin start. (Rule 303)
+*Fixes Bandit Leaders (very rarely) spawning with named ranged weapons (mwah)
+*Fixes named 2h flails showing as ranged 2h flails (mwah)
+*Tones slaughterer down again (mwah (sorry about slaughterer))
+*Fixes double strike perk tree description (mwah)
+*Fixes bleed in undead/skeleton fights (mwah)
+*Fixes incorrect MoB tooltip, it does stack with masteries 
+*Fixes skill order for parry puncture and engarde (BlueyD) 
+*Fixes towns getting friendly with the legion 
+*Fixes Legion recruitment
+
+13.3.4.2 Cheery Bash
+
+
+**Bards**
+New Perk - Cheer On spend 3AP to grant an ally 1AP. Each ally can only be Cheered on once per turn. Only usable with lute or drum equipped. Stacks with other things that effect AP. Given to bards and troubadours at level 1. 
+Song of Life and War chant ranged increased to 8 tiles. 
+Fixes bard skills not working with a named lute 
+
+**Shields**
+Shield Bash now gives -10% fatigue cost to Fortify and Buckler Bash in addition to knock back 
+Push It now gives -25% fatigue cost t0 Fortify and Buckler Bash in addition to knock back 
+Born with a Board added to the shield tree, lets you begin each combat by shieldwalling 
+
+**Noble**
+Noble's four tactical skills can now be gained from just two perks
+Hold the Line now grants a choice of bonus melee or ranged defense skill
+Push forward now grants a choice of bonus melee or ranged attack 
+Noble loses Incoming and Coordinated volleys perks
+Noble from event gains lithe, clarity and matching set 
+
+**Other Changes**
+Recruitable crusaders are now much cheaper to hire and spawn more often. They now spawn with shields, blunt one handed weapons, heavy layered armors, tabard and cloak all painted in crusader colours.
+Added a crusader cloak and crusader tabard for recruitable crusaders 
+Enemy noble footmen gain stalwart on legendary 
+Ranger gains Incoming to provide ranged defense to allies 
+Militia origin gives "hate nobles" trait to all recruits 
+
+**Fixes**
+Fixes zombie bit error on warlock start 
+Fixes invisible necromancers that can't be killed (wuxiang)
+Fixes peasant squire not getting duelist  (mwah)
+Fixes instance with wooden stake crashing (wuxiang)
+Temp fix for hand to hand crash when punching donkeys  (wuxiang)
+fixes for more legion recruitment events (wuxiang)
+Fixes white border around shields up perk icon 
+Fixes over a dozen spelling errors in descriptions, events and tooltips 
+Fixes vala becoming undead outside legion runs (wuxiang)
+
+test minstrel
+test shield perks
+
+13.3.4.3
+
+Restoring Ancient Breastplate now works. (Salty)
+Fixed Balance's Perk desccription, it still gives armor dmg reduction (Salty)

@@ -69,12 +69,9 @@ this.barbarian_fury_skill <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
-		this.logInfo("* Using Fury Skill " + _user + " : " + _targetTile);
 		this.m.IsSpent = true;
 		local target = _targetTile.getEntity();
-		this.logInfo("* switchEntities start " + target);
 		this.Tactical.getNavigator().switchEntities(_user, target, null, null, 1.0);
-		this.logInfo("* switchEntities done ");
 		return true;
 	}
 

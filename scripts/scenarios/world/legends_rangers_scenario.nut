@@ -197,7 +197,6 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 		}
 		bro.improveMood(0.5, "Learned a new skill");
 		bro.getSkills().add(this.new("scripts/skills/perks/perk_pathfinder"));
-		bro.m.PerkPointsSpent += 1;
 	}
 
 	function onUpdateHiringRoster( _roster )

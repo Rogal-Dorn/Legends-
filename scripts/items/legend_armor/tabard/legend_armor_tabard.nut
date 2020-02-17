@@ -6,7 +6,7 @@ this.legend_armor_tabard <- this.inherit("scripts/items/legend_armor/legend_armo
 		this.m.Type = this.Const.Items.ArmorUpgrades.Tabbard;
 		this.m.ID = "legend_armor.company_tabard";
 		this.m.Name = "Tabard";
-		this.m.Description = "A flowing cloth covering for armor, to show your allegiance. Offers minimal protection and small boost to moral.";
+		this.m.Description = "A flowing cloth covering for armor, to show your allegiance. Offers minimal protection and small boost to morale.";
 		this.m.ArmorDescription = "Has a flowing cloth tabard";
 		this.m.Variants = [
 			101,
@@ -63,6 +63,15 @@ this.legend_armor_tabard <- this.inherit("scripts/items/legend_armor/legend_armo
 			icon = "ui/icons/special.png",
 			text = "Increase the Resolve of the wearer by [color=" + this.Const.UI.Color.PositiveValue + "]+2[/color]"
 		});
+	}
+
+	function onPaintSpecificColor( _color )
+	{
+		this.m.Variant =  _color;
+
+		local app = this.m.Armor.getContainer().getAppearance();
+		this.updateAppearance(app);
+
 	}
 
 	function onUpdateProperties( _properties )
