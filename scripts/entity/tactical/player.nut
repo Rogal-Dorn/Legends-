@@ -862,8 +862,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		{
 			return false;
 		}
-		//return this.getBackground().isStabled();
-		return false;
+		return this.getBackground().isStabled();
 	}
 
 	function create()
