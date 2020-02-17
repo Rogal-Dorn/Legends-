@@ -1,6 +1,7 @@
 this.legend_porridge_effect <- this.inherit("scripts/skills/skill", {
 	m = {
-		TurnsLeft = 15
+		TurnsLeft = 15,
+		Amount = 100
 	},
 	function create()
 	{
@@ -56,7 +57,7 @@ this.legend_porridge_effect <- this.inherit("scripts/skills/skill", {
 		local rate = this.Math.floor(this.m.Amount / 10);
 		local actor = this.getContainer().getActor();
 		actor.setHitpoints(this.Math.min(actor.getHitpointsMax(), actor.getHitpoints() + rate));
-		if (--this.m.TurnsLeft <= 0)
+		if (this.m.TurnsLeft <= 0)
 		{
 			this.removeSelf();
 		}
