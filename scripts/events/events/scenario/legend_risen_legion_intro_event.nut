@@ -13,7 +13,7 @@ this.legend_risen_legion_intro_event<- this.inherit("scripts/events/event", {
 			Characters = [],
 			Options = [
 				{
-					Text = "For the emporer!",
+					Text = "For the emperor!",
 					function getResult( _event )
 					{
 						return 0;

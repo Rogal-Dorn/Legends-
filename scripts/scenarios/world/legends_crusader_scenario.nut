@@ -136,7 +136,6 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 		}
 		bro.improveMood(0.5, "Learned a new skill");
 		bro.getSkills().add(this.new("scripts/skills/perks/perk_fortified_mind"));
-		bro.m.PerkPointsSpent += 1;
 	}
 
 	function onUpdateHiringRoster( _roster )
@@ -185,17 +184,17 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 		if (_list.len() < 5)
 		{
 			local r;
-			r = this.Math.rand(0, 3);
+			r = this.Math.rand(0, 2);
 			if (r == 0)
 			{
 			_list.push("flagellant_background");
 			}
-			r = this.Math.rand(0, 5);
+			r = this.Math.rand(0, 4);
 			if (r == 0)
 			{
 			_list.push("monk_background");
 			}
-			r = this.Math.rand(0, 7);
+			r = this.Math.rand(0, 6);
 			if (r == 0)
 			{
 			_list.push("legend_nun_background");
@@ -205,7 +204,7 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 			{
 				_list.push("witchhunter_background");
 			}
-			r = this.Math.rand(0, 999);
+			r = this.Math.rand(0, 49);
 			if (r == 0)
 			{
 				_list.push("legend_crusader_background");
@@ -214,27 +213,27 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 		if (_list.len() >= 5)
 		{
 			local r;
-			r = this.Math.rand(0, 6);
+			r = this.Math.rand(0, 5);
 			if (r == 0)
 			{
 				_list.push("flagellant_background");
 			}
-			r = this.Math.rand(0, 7);
+			r = this.Math.rand(0, 6);
 			if (r == 0)
 			{
 				_list.push("monk_background");
 			}
-			r = this.Math.rand(0, 5);
+			r = this.Math.rand(0, 4);
 			if (r == 0)
 			{
 				_list.push("legend_nun_background");
 			}
-			r = this.Math.rand(0, 9);
+			r = this.Math.rand(0, 5);
 			if (r == 0)
 			{
 				_list.push("witchhunter_background");
 			}
-			r = this.Math.rand(0, 99);
+			r = this.Math.rand(0, 19);
 			if (r == 0)
 			{
 				_list.push("legend_crusader_background");

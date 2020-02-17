@@ -10,14 +10,29 @@ this.legend_armor_named_tabard <- this.inherit("scripts/items/legend_armor/legen
 		this.m.Name = "";
 		this.m.NameList = [
 			"Kingly",
-			"Splendor",
+			"Splendorous",
 			"Pageantry",
-			"Swank",
+			"Swanky",
 			"Noble",
-			"Undead"
+			"Elegence",
+			"Oppulence",
+			"Excess",
+			"Resplendence",
+			"Glorious"
 		];
 		this.m.Variants = [
-			1
+			1,
+			2,
+			3,
+			4,
+			5,
+			6,
+			7,
+			8,
+			9,
+			10,
+			11,
+			12
 		];
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();

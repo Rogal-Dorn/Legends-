@@ -39,13 +39,29 @@ this.legend_holyflame_skill <- this.inherit("scripts/skills/skill", {
 
 		function getTooltip()
 	{
-		local ret = this.getDefaultTooltip();
+		local ret = [
+			{
+				id = 1,
+				type = "title",
+				text = this.getName()
+			},
+			{
+				id = 2,
+				type = "description",
+				text = this.getDescription()
+			},
+			{
+				id = 3,
+				type = "text",
+				text = this.getCostString()
+			}
+		];
 		ret.extend([
 			{
 				id = 6,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Applied hallowed ground, the holy shall be sanctified when entering, the damned shall be consecrated."
+				text = "Apply hallowed ground. Our allies shall be sanctified, becoming immune to injury. The undead shall be consecrated, able to gain injury and unable to resurrect."
 			}
 		]);
 		return ret;
@@ -75,7 +91,7 @@ this.legend_holyflame_skill <- this.inherit("scripts/skills/skill", {
 
 		local p = {
 			Type = "legend_holyflame",
-			Tooltip = "This is hallowed ground, the holy shall be sanctified here, the damned shall be consecrated.",
+			Tooltip = "This is hallowed ground. Our allies shall be sanctified, becoming immune to injury. The undead shall be consecrated, able to gain injury and unable to resurrect.",
 			IsAppliedAtRoundStart = false,
 			IsAppliedAtTurnEnd = true,
 			IsAppliedOnMovement = false,

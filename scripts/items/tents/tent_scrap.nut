@@ -5,7 +5,7 @@ this.tent_scrap <- this.inherit("scripts/items/trade/trading_good_item", {
 		this.trading_good_item.create();
 		this.m.ID = "tent.scrap_tent";
 		this.m.Name = "Scrap Tent";
-		this.m.Description = "One mercenary\'s trash is another treasure. This collection of spare parts will help you turn broken armor and weapons into usable armor scraps and tools. Having this in your stash upgrades your camp.";
+		this.m.Description = "One mercenary\'s trash is another\'s treasure. This collection of spare parts will help you turn broken armor and weapons into usable armor scraps and tools. Having this in your stash upgrades your camp.";
 		this.m.Icon = "tents/tent_scrap_70x70.png";
 		this.m.Value = 2000;
 	}
