@@ -60,7 +60,8 @@ this.pimp_background <- this.inherit("scripts/skills/backgrounds/character_backg
 					this.Const.Perks.NoblesTree,
 					this.Const.Perks.BanditTree
 					],
-			Class = [this.Const.Perks.FistsClassTree]
+			Class = [this.Const.Perks.FistsClassTree],
+			Magic = []
 		}
 	}
 

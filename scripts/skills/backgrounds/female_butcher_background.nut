@@ -68,7 +68,8 @@ this.female_butcher_background <- this.inherit("scripts/skills/backgrounds/chara
 			Class = [
 				this.Const.Perks.ButcherClassTree,
 				this.Const.Perks.ChefClassTree
-			]
+			],
+			Magic = []
 		}
 	}
 

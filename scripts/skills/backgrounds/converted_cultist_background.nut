@@ -51,7 +51,8 @@ this.converted_cultist_background <- this.inherit("scripts/skills/backgrounds/ch
 				this.Const.Perks.IndestructibleTree
 			],
 			Enemy = [],
-			Class = [this.Const.Perks.NinetailsClassTree]
+			Class = [this.Const.Perks.NinetailsClassTree],
+			Magic = []
 		}
 	}
 

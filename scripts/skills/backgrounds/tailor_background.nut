@@ -66,7 +66,8 @@ this.tailor_background <- this.inherit("scripts/skills/backgrounds/character_bac
 				this.Const.Perks.ViciousTree
 			],
 			Enemy = [],
-			Class = [this.Const.Perks.RepairClassTree]
+			Class = [this.Const.Perks.RepairClassTree],
+			Magic = []
 		}
 	}
 

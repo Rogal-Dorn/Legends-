@@ -86,7 +86,8 @@ this.mage_background <- this.inherit("scripts/skills/backgrounds/character_backg
 				this.Const.Perks.FitTree
 			],
 			Enemy = [],
-			Class = []
+			Class = [],
+			Magic = []
 		}
 	}
 

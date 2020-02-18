@@ -78,7 +78,8 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 				this.Const.Perks.ViciousTree
 			],
 			Enemy = [],
-			Class = []
+			Class = [],
+			Magic = []
 		}
 	}
 
