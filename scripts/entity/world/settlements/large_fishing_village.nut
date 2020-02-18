@@ -72,6 +72,10 @@ this.large_fishing_village <- this.inherit("scripts/entity/world/settlement", {
 			"swordmaster_background",
 			"legend_inventor_background"
 		];
+		if(this.Const.LegendMod.Configs.LegendMagicEnabled())
+		{
+			this.m.DraftList.push("legend_spiritualist_background");
+		}
 		this.m.UIDescription = "A large coastal city and trading hub";
 		this.m.Description = "A big harbor city relying on trade and fishing, and an important hub for travellers arriving or leaving by ship.";
 		this.m.UIBackgroundCenter = "ui/settlements/townhall_03";
