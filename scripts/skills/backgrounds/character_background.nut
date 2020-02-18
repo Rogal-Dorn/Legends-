@@ -1125,6 +1125,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			}
 
 		}
+
 	}
 
 	function onBuildDescription()

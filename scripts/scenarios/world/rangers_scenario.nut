@@ -83,6 +83,11 @@ this.rangers_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Ammo));
 		items.equip(this.new("scripts/items/weapons/legend_slingstaff"));
+		foreach( bro in bros )
+		{
+			local val = this.World.State.addNewID(bro);
+			bro.m.CompanyID = val;
+		}
 		this.World.Assets.m.BusinessReputation = 50;
 		//this.World.Assets.getStash().resize(this.Math.min(15, this.World.Assets.getStash().getCapacity() / 2));
 		this.World.Tags.set("HasLegendCampHunting", true);
@@ -162,6 +167,13 @@ this.rangers_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 			this.Music.setTrackList(this.Const.Music.IntroTracks, this.Const.Music.CrossFadeTime);
 			this.World.Events.fire("event.rangers_scenario_intro");
 		}, null);
+foreach (b in this.World.getPlayerRoster().getAll())
+		{
+			foreach (add in this.World.getPlayerRoster().getAll())
+			{
+				b.changeActiveRelationship(add, this.Math.rand(0, 10));
+			}
+		}
 
 	}
 

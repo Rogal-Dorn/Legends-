@@ -39,7 +39,7 @@ gt.Const.World.Spawn.Direwolves <-
 	MaxR = 535,
 	Troops = [
 		{
-			Weight = 95,
+			Weight = 100,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Direwolf,
@@ -48,16 +48,6 @@ gt.Const.World.Spawn.Direwolves <-
 				{
 					Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
 					Cost = 25
-				}
-			]
-		},
-		{
-			Weight = 5,
-			MinR = 0.85 * 3200,
-			Types = [
-				{
-					Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
-					Cost = 150
 				}
 			]
 		}
@@ -89,26 +79,12 @@ gt.Const.World.Spawn.Ghouls <-
 			]
 		},
 		{
-			Weight = 19,
+			Weight = 20,
 			MinR = 0.15 * 535,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.GhoulHIGH,
 					Cost = 30
-				}
-			]
-		},
-		{
-			Weight = 1,
-			MinR = 0.85 * 1000,
-			Types = [
-				{
-					Type = this.Const.World.Spawn.Troops.LegendSkinGhoulLOW,
-					Cost = 75
-				},
-				{
-					Type = this.Const.World.Spawn.Troops.LegendSkinGhoulMED,
-					Cost = 150
 				}
 			]
 		}
@@ -126,21 +102,11 @@ gt.Const.World.Spawn.Lindwurm <-
 	MaxR = 800,
 	Troops = [
 		{
-			Weight = 90,
+			Weight = 100,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Lindwurm,
 					Cost = 80
-				}
-			]
-		},
-		{
-			Weight = 10,
-			MinR = 1.0 * 3200,
-			Types = [
-				{
-					Type = this.Const.World.Spawn.Troops.LegendStollwurm,
-					Cost = 320
 				}
 			]
 		}
@@ -158,21 +124,11 @@ gt.Const.World.Spawn.Unhold <-
 	MaxR = 500,
 	Troops = [
 		{
-			Weight = 90,
+			Weight = 100,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Unhold,
 					Cost = 50
-				}
-			]
-		},
-		{
-			Weight = 10,
-			MinR = 1.0 * 2800,
-			Types = [
-				{
-					Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
-					Cost = 250
 				}
 			]
 		}
@@ -190,21 +146,11 @@ gt.Const.World.Spawn.UnholdFrost <-
 	MaxR = 550,
 	Troops = [
 		{
-			Weight = 90,
+			Weight = 100,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.UnholdFrost,
 					Cost = 60
-				}
-			]
-		},
-		{
-			Weight = 10,
-			MinR = 1.0 * 2800,
-			Types = [
-				{
-					Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
-					Cost = 250
 				}
 			]
 		}
@@ -222,21 +168,11 @@ gt.Const.World.Spawn.UnholdBog <-
 	MaxR = 500,
 	Troops = [
 		{
-			Weight = 90,
+			Weight = 100,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.UnholdBog,
 					Cost = 50
-				}
-			]
-		},
-		{
-			Weight = 10,
-			MinR = 1.0 * 2800,
-			Types = [
-				{
-					Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
-					Cost = 250
 				}
 			]
 		}
@@ -254,27 +190,18 @@ gt.Const.World.Spawn.Spiders <-
 	MaxR = 384,
 	Troops = [
 		{
-			Weight = 90,
+			Weight = 100,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Spider,
 					Cost = 12
 				}
 			]
-		},
-		{
-			Weight = 10,
-			MinR = 1.0 * 2000,
-			Types = [
-				{
-					Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-					Cost = 150
-				}
-			]
 		}
 	]
 }
 
+//Kept alps the same because they're cool already and I dunno what demon alps terrain would reall be
 gt.Const.World.Spawn.Alps <-
 {
 	Name = "Alps",
@@ -327,21 +254,11 @@ gt.Const.World.Spawn.Schrats <-
 	MaxR = 800,
 	Troops = [
 		{
-			Weight = 90,
+			Weight = 100,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Schrat,
 					Cost = 70
-				}
-			]
-		},
-		{
-			Weight = 10,
-			MinR = 1.0 * 3200,
-			Types = [
-				{
-					Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
-					Cost = 400
 				}
 			]
 		}
@@ -859,6 +776,7 @@ gt.Const.World.Spawn.LegendHexeLeader <-
 	]
 }
 
+//May need MinR && Legend Beast Cost Change
 gt.Const.World.Spawn.LegendRockUnhold <-
 {
 	Name = "LegendRockUnhold",
@@ -868,13 +786,20 @@ gt.Const.World.Spawn.LegendRockUnhold <-
 	VisionMult = 1.0,
 	Body = "figure_rock_unhold_01",
 	MaxR = 1000,
+	Fixed = [
+		{
+			Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
+			Cost = 180,
+            Weight = 0
+		}
+	],
 	Troops = [
 		{
 			Weight = 90,
 			Types = [
 				{
-					Type = this.Const.World.Spawn.Troops.UnholdFrost,
-					Cost = 60
+					Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
+					Cost = 180
 				}
 			]
 		},
@@ -882,14 +807,23 @@ gt.Const.World.Spawn.LegendRockUnhold <-
 			Weight = 10,
 			Types = [
 				{
-					Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
-					Cost = 180
+					Type = this.Const.World.Spawn.Troops.Unhold,
+					Cost = 60
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.UnholdBog,
+					Cost = 60
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.UnholdFrost,
+					Cost = 60
 				}
 			]
 		}
 	]
 }
 
+//May need MinR && Legend Beast Cost Change
 gt.Const.World.Spawn.LegendSkinGhouls <-
 {
 	Name = "LegendSkinGhouls",
@@ -925,6 +859,7 @@ gt.Const.World.Spawn.LegendSkinGhouls <-
 	]
 }
 
+//May need MinR && Legend Beast Cost Change
 gt.Const.World.Spawn.LegendWhiteDirewolf <-
 {
 	Name = "LegendWhiteDirewolf",
@@ -933,10 +868,26 @@ gt.Const.World.Spawn.LegendWhiteDirewolf <-
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
 	Body = "figure_white_direwolf_01",
-	MaxR = 1000,
+	MaxR = 1000, //this may need to be changed i have no idea if this is good or not
+	Fixed = [
+		{
+			Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+			Cost = 150,
+            Weight = 0
+		}
+	],
 	Troops = [
 		{
-			Weight = 90,
+			Weight = 90
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+					Cost = 150
+				}
+			]
+		},
+		{
+			Weight = 10
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Direwolf,
@@ -947,19 +898,11 @@ gt.Const.World.Spawn.LegendWhiteDirewolf <-
 					Cost = 25
 				}
 			]
-		},
-		{
-			Weight = 10,
-			Types = [
-				{
-					Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
-					Cost = 75
-				}
-			]
 		}
 	]
 }
 
+//May need MinR && Legend Beast Cost Change
 gt.Const.World.Spawn.LegendRedbackSpider <-
 {
 	Name = "LegendRedbackSpider",
@@ -969,37 +912,38 @@ gt.Const.World.Spawn.LegendRedbackSpider <-
 	VisionMult = 1.0,
 	Body = "figure_redback_spider_01",
 	MaxR = 500,
+	Fixed = [
+		{
+			Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+			Cost = 100,
+            Weight = 0
+		}
+	],
 	Troops = [
 		{
-			Weight = 85,
-			Types = [
-				{
-					Type = this.Const.World.Spawn.Troops.Spider,
-					Cost = 12
-				}
-			]
-		},
-		{
-			Weight = 5
-			Types = [
-				{
-					Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
-					Cost = 20
-				}
-			]
-		},
-		{
-			Weight = 10,
+			Weight = 90
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
 					Cost = 100
 				}
 			]
+		},
+		{
+			Weight = 10
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.Spider,
+					Cost = 12
+				}
+			]
 		}
 	]
 }
 
+//May need MinR && Legend Beast Cost Change
+//May want to be kept non-changed too
+//Probably won't add these to the beast_roamers_action.nut
 gt.Const.World.Spawn.LegendDemonAlp <-
 {
 	Name = "LegendDemonAlp",
@@ -1009,9 +953,16 @@ gt.Const.World.Spawn.LegendDemonAlp <-
 	VisionMult = 1.3,
 	Body = "figure_demonalp_01",
 	MaxR = 500,
+	Fixed = [
+		{
+			Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+			Cost = 105,
+            Weight = 0
+		}
+	],
 	Troops = [
 		{
-			Weight = 60,
+			Weight = 60
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Alp,
@@ -1020,7 +971,7 @@ gt.Const.World.Spawn.LegendDemonAlp <-
 			]
 		},
 		{
-			Weight = 40,
+			Weight = 40
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
@@ -1031,6 +982,7 @@ gt.Const.World.Spawn.LegendDemonAlp <-
 	]
 }
 
+//May need MinR && Legend Beast Cost Change
 gt.Const.World.Spawn.LegendStollwurm <-
 {
 	Name = "LegendStollwurm",
@@ -1040,9 +992,16 @@ gt.Const.World.Spawn.LegendStollwurm <-
 	VisionMult = 1.1,
 	Body = "figure_stollwurm_01",
 	MaxR = 500,
+	Fixed = [
+		{
+			Type = this.Const.World.Spawn.Troops.LegendStollwurm,
+			Cost = 270,
+            Weight = 0
+		}
+	],
 	Troops = [
 		{
-			Weight = 60,
+			Weight = 60
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Lindwurm,
@@ -1051,7 +1010,7 @@ gt.Const.World.Spawn.LegendStollwurm <-
 			]
 		},
 		{
-			Weight = 40,
+			Weight = 40
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendStollwurm,
@@ -1062,6 +1021,7 @@ gt.Const.World.Spawn.LegendStollwurm <-
 	]
 }
 
+//May need MinR && Legend Beast Cost Change
 gt.Const.World.Spawn.LegendGreenwoodSchrat <-
 {
 	Name = "LegendGreenwoodSchrat",
@@ -1071,9 +1031,16 @@ gt.Const.World.Spawn.LegendGreenwoodSchrat <-
 	VisionMult = 1.2,
 	Body = "figure_greenwood_schrat_01",
 	MaxR = 500,
+	Fixed = [
+		{
+			Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
+			Cost = 210,
+            Weight = 0
+		}
+	],
 	Troops = [
 		{
-			Weight = 60,
+			Weight = 60
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Schrat,
@@ -1082,7 +1049,7 @@ gt.Const.World.Spawn.LegendGreenwoodSchrat <-
 			]
 		},
 		{
-			Weight = 40,
+			Weight = 40
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,

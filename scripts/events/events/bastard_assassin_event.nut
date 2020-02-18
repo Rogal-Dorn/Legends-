@@ -125,7 +125,8 @@ this.bastard_assassin_event <- this.inherit("scripts/events/event", {
 						this.World.getTemporaryRoster().clear();
 						_event.m.Assassin.onHired();
 						_event.m.Bastard.getItems().transferToStash(this.World.Assets.getStash());
-						this.World.Statistics.addFallen(_event.m.Bastard, "Left to claim their birthright");						
+						this.World.Statistics.addFallen(_event.m.Bastard, "Left to claim their birthright");
+						_event.m.Bastard.removeActiveRelationship();					
 						this.World.getPlayerRoster().remove(_event.m.Bastard);
 						_event.m.Bastard = null;
 						return 0;

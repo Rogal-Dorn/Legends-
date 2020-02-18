@@ -48,6 +48,12 @@ this.early_access_scenario <- this.inherit("scripts/scenarios/world/starting_sce
 		bros[2].getBackground().m.RawDescription = "You crossed paths with %name% a number of times prior to his joining the company. First time you were both simple laborers. The second time you were sellswords. And now is the third go of it with him joining your company. If all goes well, he\'ll finally stick around this time and you\'ll both find the riches you seek.";
 		bros[2].setPlaceInFormation(5);
 		bros[2].setVeteranPerks(2);	
+
+		foreach( bro in bros )
+		{
+			local val = this.World.State.addNewID(bro);
+			bro.m.CompanyID = val;
+		}
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
 		this.World.Assets.m.Money = this.World.Assets.m.Money * 2;
@@ -110,7 +116,13 @@ this.early_access_scenario <- this.inherit("scripts/scenarios/world/starting_sce
 			this.Music.setTrackList(this.Const.Music.IntroTracks, this.Const.Music.CrossFadeTime);
 			this.World.Events.fire("event.early_access_scenario_intro");
 		}, null);
-
+		foreach (b in this.World.getPlayerRoster().getAll())
+		{
+			foreach (add in this.World.getPlayerRoster().getAll())
+			{
+				b.changeActiveRelationship(add, this.Math.rand(0, 10));
+			}
+		}
 	}
 
 });

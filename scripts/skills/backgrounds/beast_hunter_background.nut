@@ -44,7 +44,8 @@ this.beast_hunter_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.Beards = this.Const.Beards.Untidy;
 		this.m.Body = "bust_naked_body_01";
 		this.m.Level = this.Math.rand(2, 3);
-
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Good;
 		this.m.IsCombatBackground = true;
 		this.m.IsRangerRecruitBackground = true;
 		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[2];

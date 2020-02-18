@@ -198,7 +198,13 @@ this.legends_risen_legion <- this.inherit("scripts/scenarios/world/starting_scen
 						armor.setUpgrade(plate)
 					}
 				items.equip(armor);
+
+
+				local val = this.World.State.addNewID(bro);
+				bro.m.CompanyID = val;
 		}
+
+		
 
 			this.World.Assets.getStash().add(this.new("scripts/items/supplies/wine_item"));
 			this.World.Assets.getStash().add(this.new("scripts/items/tents/tent_train"));
@@ -313,6 +319,13 @@ this.legends_risen_legion <- this.inherit("scripts/scenarios/world/starting_scen
 			], this.Const.Music.CrossFadeTime);
 			this.World.Events.fire("event.legend_risen_legion_intro");
 		}, null);
+foreach (b in this.World.getPlayerRoster().getAll())
+		{
+			foreach (add in this.World.getPlayerRoster().getAll())
+			{
+				b.changeActiveRelationship(add, this.Math.rand(0, 10));
+			}
+		}
 				this.World.Tags.set("HasLegendCampGathering", true);
 				this.World.Tags.set("HasLegendCampCrafting", true);
 				this.World.Tags.set("HasLegendCampFletching", true);
