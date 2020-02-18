@@ -52,7 +52,11 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 		// bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_favoured_enemy_swordmaster"));
 		// bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_favoured_enemy_vampire"));
 		// bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_favoured_enemy_zombie"));
-		
+		foreach( bro in bros )
+		{
+			local val = this.World.State.addNewID(bro);
+			bro.m.CompanyID = val;
+		}
 		bros[0].getTags().set("IsPlayerCharacter", true);
 		bros[0].setVeteranPerks(2);	
 		this.World.Assets.m.Money = this.World.Assets.m.Money;
@@ -190,6 +194,13 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 			], this.Const.Music.CrossFadeTime);
 			this.World.Events.fire("event.legend_berserker_scenario_intro");
 		}, null);
+foreach (b in this.World.getPlayerRoster().getAll())
+		{
+			foreach (add in this.World.getPlayerRoster().getAll())
+			{
+				b.changeActiveRelationship(add, this.Math.rand(0, 10));
+			}
+		}
 	}
 
 	function onInit()
