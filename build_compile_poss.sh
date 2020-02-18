@@ -48,6 +48,8 @@ while read -r line; do
         echo "skipping $line"
     elif [ "$line" == "scripts/ai/tactical/behaviors/ai_charm.nut" ]; then
         echo "skipping $line"
+    elif [ "$line" == "scripts/ai/tactical/behaviors/ai_defend_rotation.nut" ]; then
+        echo "skipping $line"
     elif [ "$line" == "scripts/contracts/contracts/barbarian_king_contract" ]; then
         echo "skipping $line"
     elif [ "$line" == "scripts/factions/faction_action.nut" ]; then
