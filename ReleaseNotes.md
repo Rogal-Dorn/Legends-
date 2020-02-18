@@ -3121,7 +3121,5 @@ Non-commander berserker uses dynamic perks with a new berserker skill group - sp
 Non-commander noble uses dynamic perks with a new captain skill group 
 Historian and Retired soldier gain Noble's captain skill group 
 
-
 **Legendary beasts**
-Changes some spawnlists to remove the legendary animals and adds them into their own spawnlist to contain their locations, etc 
-(TODO add faction actions so these spawn ) 
+Legendary beasts are now in their own spawn groups, and tend to stay to one type of terrain 
