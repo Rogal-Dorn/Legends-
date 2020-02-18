@@ -67,7 +67,8 @@ this.female_tailor_background <- this.inherit("scripts/skills/backgrounds/charac
 				this.Const.Perks.CalmTree
 			],
 			Enemy = [],
-			Class = [this.Const.Perks.RepairClassTree]
+			Class = [this.Const.Perks.RepairClassTree],
+			Magic = []
 		}
 	}
 

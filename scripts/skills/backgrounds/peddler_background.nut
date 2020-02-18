@@ -60,7 +60,8 @@ this.peddler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 				this.Const.Perks.DeviousTree
 			],
 			Enemy = [this.Const.Perks.BanditTree],
-			Class = [this.Const.Perks.BarterClassTree]
+			Class = [this.Const.Perks.BarterClassTree],
+			Magic = []
 		}
 	}
 

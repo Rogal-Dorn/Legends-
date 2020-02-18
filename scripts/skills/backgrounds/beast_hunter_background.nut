@@ -99,7 +99,8 @@ this.beast_hunter_background <- this.inherit("scripts/skills/backgrounds/charact
 			],
 			Class = [
 				this.Const.Perks.BeastClassTree
-			]
+			],
+			Magic = []
 		}
 	}
 

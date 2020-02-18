@@ -66,7 +66,8 @@ this.butcher_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			Class = [
 				this.Const.Perks.ButcherClassTree,
 				this.Const.Perks.ChefClassTree
-			]
+			],
+			Magic = []
 		}
 	}
 	//Default Male

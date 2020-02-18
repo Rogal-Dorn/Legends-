@@ -282,6 +282,28 @@ gt.Const.Perks.GetDynamicPerkTree <- function (_mins, _map)
 		_localMap.Class.push(t);
 	}
 
+	//Add Magic
+	local count = _mins.Magic - _localMap.Magic.len();
+	for (local i = 0; i <= count; i = ++i)
+	{
+		local r = this.Math.rand(0, 100)
+		if (r > (_mins.MagicChance * 100.0))
+		{
+			continue
+		}
+		local _exclude = [];
+		foreach (tt in _localMap.Magic)
+		{
+			_exclude.push(tt.ID);
+		}		
+		local t = this.Const.Perks.MagicTrees.getRandom(_exclude)
+		if (this.Const.LegendMod.Configs.LegendMagicEnabled())
+		{
+		//this.logInfo("Adding Magic perk tree " + t.ID);
+		_localMap.Magic.push(t);
+		}
+	}
+
 	foreach (v in _localMap)
 	{
 		foreach(mT in v)

@@ -53,7 +53,8 @@ this.gravedigger_background <- this.inherit("scripts/skills/backgrounds/characte
 					this.Const.Perks.GhoulTree,
 					this.Const.Perks.ZombieTree
 					],
-			Class = [this.Const.Perks.ShovelClassTree]
+			Class = [this.Const.Perks.ShovelClassTree],
+			Magic = []
 		}
 	}
 

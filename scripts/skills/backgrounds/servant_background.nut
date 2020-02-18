@@ -72,7 +72,8 @@ this.servant_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			Class = [
 				this.Const.Perks.BarterClassTree,
 				this.Const.Perks.ChefClassTree
-			]
+			],
+			Magic = []
 		}
 	}
 

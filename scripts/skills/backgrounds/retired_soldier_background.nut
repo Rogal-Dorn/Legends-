@@ -74,7 +74,8 @@ this.retired_soldier_background <- this.inherit("scripts/skills/backgrounds/char
 				this.Const.Perks.BanditTree,
 				this.Const.Perks.BarbarianTree
 			],
-			Class = []
+			Class = [],
+			Magic = [this.Const.Perks.CaptainMagicTree]
 		}
 	}
 

@@ -215,7 +215,7 @@ gt.Const.Perks.CaptainMagicTree <- {
 		[],
 		[],
 		[],
-		[gt.Const.Perks.PerkDefs.LegendCoordinatedVolleys],
+		[],
 		[gt.Const.Perks.PerkDefs.LegendHoldTheLine],
 		[gt.Const.Perks.PerkDefs.LegendForwardPush]
 	]
@@ -233,7 +233,7 @@ gt.Const.Perks.IllusionistMagicTree <- {
 		[gt.Const.Perks.PerkDefs.LegendHorrify],
 		[],
 		[],
-		[gt.Const.Perks.PerkDefs.LegendScry]
+		[]
 	]
 };
 

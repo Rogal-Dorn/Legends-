@@ -217,6 +217,22 @@ gt.Const.CharacterFemaleBackgrounds <- [
 	"legend_nun_background"
 ];
 
+gt.Const.CharacterMagicBackgrounds <- [
+	"legend_ancient_summoner_background",
+	"legend_death_summoner_background",
+	"legend_diviner_background",
+	"legend_enchanter_background",
+	"legend_entrancer_background",
+	"legend_illusionist_background",
+	"legend_master_archer_background",
+	"legend_necrosavant_background",
+	"legend_runesmith_background",
+	"legend_spiritualist_background",
+	"legend_transmuter_background",
+	"legend_warlock_background"
+];
+
+
 gt.Const.CharacterBackgroundsRandom <- [
 	"adventurous_noble_background",
 	"apprentice_background",

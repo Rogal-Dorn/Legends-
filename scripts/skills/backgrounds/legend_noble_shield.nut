@@ -76,7 +76,8 @@ this.legend_noble_shield <- this.inherit("scripts/skills/backgrounds/character_b
 				this.Const.Perks.IndestructibleTree
 			],
 			Enemy = [],
-			Class = []
+			Class = [],
+			Magic = []
 		};
 	}
 

@@ -62,7 +62,8 @@ this.eunuch_background <- this.inherit("scripts/skills/backgrounds/character_bac
 				this.Const.Perks.MartyrTree
 			],
 			Enemy = [],
-			Class = [this.Const.Perks.BarterClassTree]
+			Class = [this.Const.Perks.BarterClassTree],
+			Magic = []
 		}
 
 	}
