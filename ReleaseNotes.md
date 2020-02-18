@@ -3077,3 +3077,14 @@ Fixes white border around shields up perk icon
 Fixes over a dozen spelling errors in descriptions, events and tooltips 
 Fixes vala becoming undead outside legion runs (wuxiang)
 
+
+13.3.4.3
+
+Padded surcoat from -5 55 to -6 55
+Cheer on fatigue cost reduced to 15 
+White wolf bite AP cost and fatigue cost increased, armor damage decreased. 
+Restoring Ancient Breastplate now works. (Salty)
+Fixed Balance's Perk desccription, it still gives armor dmg reduction (Salty)
+Adventurous nobles spawn again (wuxiang) 
+Porridge effect works correctly (wuxiang)
+Recruitable Crusader gets stars correctly (wuxiang)

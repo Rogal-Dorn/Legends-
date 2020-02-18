@@ -40,7 +40,7 @@ this.legend_white_wolf_bite <- this.inherit("scripts/skills/skill", {
 	{
 		_properties.DamageRegularMin += 45;
 		_properties.DamageRegularMax += 75;
-		_properties.DamageArmorMult *= 8.0;
+		_properties.DamageArmorMult *= 0.8;
 	}
 
 	function onUse( _user, _targetTile )
