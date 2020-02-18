@@ -42,7 +42,7 @@ this.legend_padded_surcoat <- this.inherit("scripts/items/legend_armor/legend_ar
 		this.m.Value = 150;
 		this.m.Condition = 55;
 		this.m.ConditionMax = 55;
-		this.m.StaminaModifier = -5;
+		this.m.StaminaModifier = -6;
 	}
 
 	function updateVariant()

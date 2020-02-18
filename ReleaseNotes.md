@@ -3077,5 +3077,3 @@ Fixes white border around shields up perk icon
 Fixes over a dozen spelling errors in descriptions, events and tooltips 
 Fixes vala becoming undead outside legion runs (wuxiang)
 
-test minstrel
-test shield perks
