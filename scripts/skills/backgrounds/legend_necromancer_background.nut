@@ -1,11 +1,11 @@
-this.legend_ancient_summoner_background <- this.inherit("scripts/skills/backgrounds/character_background", {
+this.legend_necromancer_background <- this.inherit("scripts/skills/backgrounds/character_background", {
 	m = {},
 	function create()
 	{
 		this.character_background.create();
-		this.m.ID = "background.legend_ancient_summoner";
-		this.m.Icon = "ui/backgrounds/background_skelemancer.png";
-		this.m.Name = "Skelemancer";
+		this.m.ID = "background.legend_necromancer";
+		this.m.Icon = "ui/backgrounds/background_necromancer_4.png";
+		this.m.Name = "Necromancer";
 		this.m.HiringCost = 2000;
 		this.m.DailyCost = 50;
 		this.m.Excluded = [
@@ -32,7 +32,7 @@ this.legend_ancient_summoner_background <- this.inherit("scripts/skills/backgrou
 			"The Corpse Dancer",
 			"the Puppeteer"
 		];
-		this.m.Faces = this.Const.Faces.Skeleton;
+		this.m.Faces = this.Const.Faces.Necromancer;
 		this.m.Hairs = this.Const.Hair.Vampire;
 		this.m.HairColors = this.Const.HairColors.Zombie;
 		this.m.Beards = this.Const.Beards.Raider;
@@ -63,7 +63,7 @@ this.legend_ancient_summoner_background <- this.inherit("scripts/skills/backgrou
 			],
 			Enemy = [],
 			Class = [],
-			Magic = [this.Const.Perks.SkeletonMagicTree]
+			Magic = [this.Const.Perks.BasicNecroMagicTree]
 		}
 	}
 
@@ -176,7 +176,7 @@ this.legend_ancient_summoner_background <- this.inherit("scripts/skills/backgrou
 		{
 			items.equip(this.new("scripts/items/helmets/witchhunter_hat"));
 		}
-		items.equip(this.new("scripts/items/legend_armor/cloth/legend_dark_tunic"));
+		items.equip(this.new("scripts/items/legend_armor/cloth/legend_tunic"));
 		items.equip(this.new("scripts/items/weapons/legend_grisly_scythe"));
 		local stash = this.World.Assets.getStash()
 	}
