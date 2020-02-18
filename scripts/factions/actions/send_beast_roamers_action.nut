@@ -667,7 +667,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 			this.m.Options.push(beast);
 			this.m.BeastsHigh.push(beast);
 			
-			//Skin ghoul : Set to Steppe && Plains
+			//Skin ghoul : Set to Swamp
 			beast = function ( _action, _nearTile = null )
 			{
 				if (this.World.getTime().Days < 25 && _nearTile == null)
@@ -679,7 +679,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 
 				for( local i = 0; i < this.Const.World.TerrainType.COUNT; i = ++i )
 				{
-					if (i == this.Const.World.TerrainType.Steppe || i == this.Const.World.TerrainType.Plains)
+					if (i == this.Const.World.TerrainType.Swamp)
 					{
 					}
 					else
