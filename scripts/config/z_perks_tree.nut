@@ -175,7 +175,8 @@ gt.Const.Perks.GetDynamicPerkTree <- function (_mins, _map)
 		Defense = [],
 		Traits = [],
 		Enemy = [],
-		Class = []
+		Class = [],
+		Magic = []
 	}
 
 	//Clone so we don't overwrite the default character background ones
@@ -198,6 +199,10 @@ gt.Const.Perks.GetDynamicPerkTree <- function (_mins, _map)
 	foreach (p in _map.Class)
 	{
 		_localMap.Class.push(p);
+	}
+	foreach (p in _map.Magic)
+	{
+		_localMap.Magic.push(p);
 	}
 
 	//Add weapons

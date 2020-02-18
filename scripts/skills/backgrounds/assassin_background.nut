@@ -92,7 +92,7 @@ this.assassin_background <- this.inherit("scripts/skills/backgrounds/character_b
 					this.Const.Perks.NoblesTree,
 					this.Const.Perks.MercenaryTree
 					],
-			Class = [FistsClassTree],
+			Class = [this.Const.Perks.FistsClassTree],
 			Magic = [this.Const.Perks.AssassinMagicTree]
 		}
 	}

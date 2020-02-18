@@ -137,7 +137,6 @@ this.rally_the_troops <- this.inherit("scripts/skills/skill", {
 					this.logInfo("moral check for the rest");
 					a.checkMorale(1, difficulty - distance, this.Const.MoraleCheckType.Default, "status_effect_56");
 				}
->>>>>>> origin/MwahChanges
 
 			if (a.getSkills().hasSkill("effects.rallied"))
 			{

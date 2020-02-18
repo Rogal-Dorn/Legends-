@@ -2247,7 +2247,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			this.createActiveRelationship(_actor);
 		}
 		
-		local arrIndex = _actor.getCompanID();
+		local arrIndex = _actor.getCompanyID();
 		local amtType = typeof _amount;
 		if (_set || (amtType != "integer" && amtType != "float"))
 		{
