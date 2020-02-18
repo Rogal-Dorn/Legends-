@@ -68,7 +68,7 @@ this.adventurous_noble_background <- this.inherit("scripts/skills/backgrounds/ch
 		local r = _gender;
 		if (_gender == -1)
 		{
-			_gender = 0;
+			r = 0;
 			if (this.Const.LegendMod.Configs.LegendGenderEnabled())
 			{
 				r = this.Math.rand(0, 1);

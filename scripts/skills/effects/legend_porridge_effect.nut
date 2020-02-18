@@ -1,6 +1,7 @@
 this.legend_porridge_effect <- this.inherit("scripts/skills/skill", {
 	m = {
-		TurnsLeft = 15
+		TurnsLeft = 15,
+		Amount = 100
 	},
 	function create()
 	{

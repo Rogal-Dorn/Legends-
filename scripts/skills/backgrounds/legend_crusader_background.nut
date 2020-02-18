@@ -232,6 +232,10 @@ this.legend_crusader_background <- this.inherit("scripts/skills/backgrounds/char
 
 function onAddEquipment()
 	{
+		local talents = this.getContainer().getActor().getTalents();
+		talents.resize(this.Const.Attributes.COUNT, 0);
+		talents[this.Const.Attributes.MeleeDefense] = 3;
+		this.getContainer().getActor().fillTalentValues(2, true);	
 		local items = this.getContainer().getActor().getItems();
 		local r;
 
@@ -323,11 +327,12 @@ function onAddEquipment()
 
 	function onAddLegendEquipment()
 	{
+		local talents = this.getContainer().getActor().getTalents();
+		talents.resize(this.Const.Attributes.COUNT, 0);
+		talents[this.Const.Attributes.MeleeDefense] = 3;
+		this.getContainer().getActor().fillTalentValues(2, true);		
 		local items = this.getContainer().getActor().getItems();
 		local r;
-
-
-
 		r = this.Math.rand(0, 4);
 		if (r <= 2)
 		{
