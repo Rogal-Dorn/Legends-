@@ -58,6 +58,13 @@ this.killer_vs_others_event <- this.inherit("scripts/events/event", {
 			{
 				this.Characters.push(_event.m.OtherGuy1.getImagePath());
 				this.Characters.push(_event.m.Killer.getImagePath());
+				
+				//set relations
+				local modifier1 = this.Math.rand(-10, -20);
+				_event.m.Killer.changeActiveRelationship( _event.m.OtherGuy1, modifier1 );
+				local modifier2 = this.Math.rand(-10, -20);
+				_event.m.OtherGuy1.changeActiveRelationship( _event.m.Killer, modifier2 );
+
 			}
 
 		});

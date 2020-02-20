@@ -60,6 +60,13 @@ this.monk_vs_monk_event <- this.inherit("scripts/events/event", {
 			{
 				this.Characters.push(_event.m.Monk1.getImagePath());
 				this.Characters.push(_event.m.Monk2.getImagePath());
+
+				//set relations
+				local modifier1 = this.Math.rand(5, 10);
+				_event.m.Monk1.changeActiveRelationship( _event.m.Monk2, modifier1 );
+				local modifier2 = this.Math.rand(5, 10);
+				_event.m.Monk2.changeActiveRelationship( _event.m.Monk1, modifier2 );
+
 				_event.m.Monk1.improveMood(1.0, "Had a stimulating discourse on religious matters");
 
 				if (_event.m.Monk1.getMoodState() >= this.Const.MoodState.Neutral)
@@ -104,6 +111,12 @@ this.monk_vs_monk_event <- this.inherit("scripts/events/event", {
 			{
 				this.Characters.push(_event.m.Monk1.getImagePath());
 				this.Characters.push(_event.m.Monk2.getImagePath());
+
+				local modifier1 = this.Math.rand(-5, -10);
+				_event.m.Monk1.changeActiveRelationship( _event.m.Monk2, modifier1 );
+				local modifier2 = this.Math.rand(-5, -10);
+				_event.m.Monk2.changeActiveRelationship( _event.m.Monk1, modifier2 );
+
 				_event.m.Monk1.getBaseProperties().Bravery += 1;
 				_event.m.Monk1.getSkills().update();
 				this.List.push({
@@ -118,7 +131,7 @@ this.monk_vs_monk_event <- this.inherit("scripts/events/event", {
 					icon = "ui/icons/bravery.png",
 					text = _event.m.Monk2.getName() + " gains [color=" + this.Const.UI.Color.PositiveEventValue + "]+1[/color] Resolve"
 				});
-				_event.m.Monk1.worsenMood(1.0, "Lost his composure and resorted to violence");
+				_event.m.Monk1.worsenMood(1.0, "Lost composure and resorted to violence");
 
 				if (_event.m.Monk1.getMoodState() < this.Const.MoodState.Neutral)
 				{
@@ -129,7 +142,7 @@ this.monk_vs_monk_event <- this.inherit("scripts/events/event", {
 					});
 				}
 
-				_event.m.Monk2.worsenMood(1.0, "Lost his composure and resorted to violence");
+				_event.m.Monk2.worsenMood(1.0, "Lost composure and resorted to violence");
 
 				if (_event.m.Monk2.getMoodState() < this.Const.MoodState.Neutral)
 				{
