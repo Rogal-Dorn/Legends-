@@ -3098,11 +3098,15 @@ Re-enables Horses (
 TODO add weapon skills) 
 
 **Relationships**
-Adds in most backgrounds' morality alignments. If u notice some that seem weird please post. Very possible I forgot some (Mwah)
-Adds in relationship status. Right now it's just a number & not much else
+Each mercenary now has relationships with each other mercenary 
+The alignment of each mercenary effects their relationships when they first meet 
 Adds relationship changes to 18 events 
-Adds moral changes to 16 events 
 
+**Morals**
+Adds in most backgrounds' morality alignments. If u notice some that seem weird please post. Very possible I forgot some (Mwah)
+Adds moral changes to 16 events 
+Mercenaries get unhappy if you're too immoral or moral for them 
+Higher level recruits are available if your moral stance align with theirs 
 
 **Magic**
 Adds 13 new magic backgrounds that spawn when magic is enabled. 
