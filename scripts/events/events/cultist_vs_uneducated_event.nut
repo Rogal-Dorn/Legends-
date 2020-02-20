@@ -57,6 +57,7 @@ this.cultist_vs_uneducated_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
+				this.World.Assets.addMoralReputation(-1);
 				this.Characters.push(_event.m.Cultist.getImagePath());
 				this.Characters.push(_event.m.Uneducated.getImagePath());
 				local background = this.new("scripts/skills/backgrounds/converted_cultist_background");
@@ -109,6 +110,7 @@ this.cultist_vs_uneducated_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
+				this.World.Assets.addMoralReputation(2);
 				this.Characters.push(_event.m.Cultist.getImagePath());
 				this.Characters.push(_event.m.Uneducated.getImagePath());
 				_event.m.Cultist.worsenMood(2.0, "Was denied the chance to convert " + _event.m.Uneducated.getName());

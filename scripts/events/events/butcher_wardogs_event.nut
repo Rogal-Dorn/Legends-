@@ -55,6 +55,7 @@ this.butcher_wardogs_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
+				this.World.Assets.addMoralReputation(-2);
 				this.Characters.push(_event.m.Butcher.getImagePath());
 				local numWardogsToSlaughter = 2;
 				local stash = this.World.Assets.getStash().getItems();
@@ -139,6 +140,7 @@ this.butcher_wardogs_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
+				this.World.Assets.addMoralReputation(1);
 				this.Characters.push(_event.m.Butcher.getImagePath());
 				_event.m.Butcher.worsenMood(1.0, "Was denied a request");
 				this.List.push({

@@ -28,6 +28,13 @@ this.messenger_vs_houndmaster_event <- this.inherit("scripts/events/event", {
 			{
 				this.Characters.push(_event.m.Messenger.getImagePath());
 				this.Characters.push(_event.m.Houndmaster.getImagePath());
+
+				//set relations
+				local modifier1 = this.Math.rand(10, 20);
+				_event.m.Messenger.changeActiveRelationship( _event.m.Houndmaster, modifier1 );
+				local modifier2 = this.Math.rand(10, 20);
+				_event.m.Houndmaster.changeActiveRelationship( _event.m.Messenger, modifier2 );
+
 				_event.m.Messenger.improveMood(1.0, "Bonded with " + _event.m.Houndmaster.getName());
 				this.List.push({
 					id = 10,

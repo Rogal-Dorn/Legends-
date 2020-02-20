@@ -86,6 +86,7 @@ this.killer_vs_others_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
+				this.World.Assets.addMoralReputation(1);
 				this.Characters.push(_event.m.OtherGuy1.getImagePath());
 				this.Characters.push(_event.m.Killer.getImagePath());
 				_event.m.Killer.addLightInjury();
@@ -128,6 +129,7 @@ this.killer_vs_others_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
+				this.World.Assets.addMoralReputation(-1);
 				this.Characters.push(_event.m.OtherGuy1.getImagePath());
 				this.List.push({
 					id = 13,
@@ -169,6 +171,7 @@ this.killer_vs_others_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
+				this.World.Assets.addMoralReputation(-1);
 				this.Characters.push(_event.m.OtherGuy1.getImagePath());
 				this.Characters.push(_event.m.Killer.getImagePath());
 				_event.m.OtherGuy1.worsenMood(4.0, "Angry about lack of justice under your command");
@@ -218,6 +221,7 @@ this.killer_vs_others_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
+				this.World.Assets.addMoralReputation(-2);
 				this.Characters.push(_event.m.OtherGuy1.getImagePath());
 				local dead = _event.m.Killer;
 				this.World.Statistics.addFallen(dead,  "Murdered by his fellow comrades");
@@ -276,6 +280,7 @@ this.killer_vs_others_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
+				this.World.Assets.addMoralReputation(-1);
 				this.Characters.push(_event.m.OtherGuy1.getImagePath());
 				this.Characters.push(_event.m.Killer.getImagePath());
 				local injury = _event.m.Killer.addInjury(this.Const.Injury.Brawl);

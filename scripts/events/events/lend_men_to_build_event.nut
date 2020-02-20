@@ -26,6 +26,7 @@ this.lend_men_to_build_event <- this.inherit("scripts/events/event", {
 					Text = "Alright, I can spare a hand or few.",
 					function getResult( _event )
 					{
+						this.World.Assets.addMoralReputation(1);
 						return this.Math.rand(1, 100) <= 50 ? "B" : "C";
 					}
 

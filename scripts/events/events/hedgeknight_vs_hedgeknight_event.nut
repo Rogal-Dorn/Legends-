@@ -89,7 +89,7 @@ this.hedgeknight_vs_hedgeknight_event <- this.inherit("scripts/events/event", {
 				{
 					Text = "Let\'s see who is strongest in battle.",
 					function getResult( _event )
-					{
+					{						
 						return this.Math.rand(1, _event.m.HedgeKnight1.getLevel() + _event.m.HedgeKnight2.getLevel()) <= _event.m.HedgeKnight1.getLevel() ? "F" : "G";
 					}
 
@@ -404,6 +404,7 @@ this.hedgeknight_vs_hedgeknight_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
+				this.World.Assets.addMoralReputation(-1);
 				this.Characters.push(_event.m.HedgeKnight1.getImagePath());
 				local dead = _event.m.HedgeKnight2;
 				this.World.Statistics.addFallen(dead, "Killed in a duel by " + _event.m.HedgeKnight1.getName());
@@ -465,6 +466,7 @@ this.hedgeknight_vs_hedgeknight_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
+				this.World.Assets.addMoralReputation(-1);
 				this.Characters.push(_event.m.HedgeKnight2.getImagePath());
 				local dead = _event.m.HedgeKnight1;
 				this.World.Statistics.addFallen(dead,  "Killed in a duel by " + _event.m.HedgeKnight2.getName());
@@ -526,6 +528,7 @@ this.hedgeknight_vs_hedgeknight_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
+				this.World.Assets.addMoralReputation(2);
 				this.Characters.push(_event.m.Monk.getImagePath());
 
 				//set relations

@@ -20,6 +20,7 @@ this.addict_steals_potion_event <- this.inherit("scripts/events/event", {
 					Text = "I just hope you\'ll heal in time.",
 					function getResult( _event )
 					{
+						this.World.Assets.addMoralReputation(1);
 						return 0;
 					}
 
@@ -36,6 +37,7 @@ this.addict_steals_potion_event <- this.inherit("scripts/events/event", {
 					Text = "Enough. I\'ll have this bloody demon whipped out of you!",
 					function getResult( _event )
 					{
+						this.World.Assets.addMoralReputation(-1);
 						return "B";
 					}
 

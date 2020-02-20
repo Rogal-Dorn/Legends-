@@ -70,6 +70,7 @@ this.hedge_knight_vs_refugee_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
+				this.World.Assets.addMoralReputation(1);
 				this.Characters.push(_event.m.HedgeKnight.getImagePath());
 				this.Characters.push(_event.m.Refugee.getImagePath());
 
@@ -119,6 +120,7 @@ this.hedge_knight_vs_refugee_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
+				this.World.Assets.addMoralReputation(-1);
 				this.Characters.push(_event.m.HedgeKnight.getImagePath());
 				this.Characters.push(_event.m.Refugee.getImagePath());
 
@@ -178,6 +180,7 @@ this.hedge_knight_vs_refugee_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
+				this.World.Assets.addMoralReputation(1);
 				this.Characters.push(_event.m.HedgeKnight.getImagePath());
 				this.Characters.push(_event.m.OtherGuy.getImagePath());
 
