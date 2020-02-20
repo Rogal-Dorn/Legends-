@@ -68,7 +68,7 @@ this.potion_of_oblivion_item <- this.inherit("scripts/items/item", {
 	function onUse( _actor, _item = null )
 	{
 		this.Sound.play("sounds/combat/drink_03.wav", this.Const.Sound.Volume.Inventory);
-		local perks = _actor.m.PerkPointsSpent + _actor.m.PerkPoints;
+		local perks = _actor.m.PerkPointsSpent;
 		local hasStudent = false;
 		local hasGifted = false;
 
