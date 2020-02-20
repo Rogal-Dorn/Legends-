@@ -25,6 +25,6 @@ gt.Const.Strings.MoralReputation <- [
 	"Kind", 61-70
 	"Good", 71-80
 	"Chivalrous", 81-90
-	"Saintly" 91-100
+	"Saintly", 91-100
 ]
 */

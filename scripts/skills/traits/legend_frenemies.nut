@@ -4,7 +4,7 @@ this.legend_frenemies <- this.inherit("scripts/skills/traits/character_trait", {
 	{
 		this.character_trait.create();
 		this.m.ID = "trait.frenemies";
-		this.m.Name = "Frenemies";
+		this.m.Name = "Relationships";
 		this.m.Icon = "ui/traits/trait_alignment_05.png";
 	}
 
@@ -22,6 +22,31 @@ this.legend_frenemies <- this.inherit("scripts/skills/traits/character_trait", {
 				text = this.getContainer().getActor().getActiveRelationshipsTraitText()
 			}
 		];
+	}
+
+	function getBonus( _bro )
+	{
+
+	}
+
+	function onUpdate( _properties )
+	{
+		local spot = this.getPlaceInFormation();
+		foreach ( b in this.World.getPlayerRoster().getAll() 
+		{
+			switch (b.getPlaceInFormation())
+			{
+				case spot - 1:
+				case spot + 1:
+				case spot + 7:
+				case spot + 8:
+				case spot - 6:
+				case spot - 7:				
+				this.getBonus( b )
+
+				break;
+			}
+		}
 	}
 
 });
