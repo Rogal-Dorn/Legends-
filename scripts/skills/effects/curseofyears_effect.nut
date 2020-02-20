@@ -1,6 +1,7 @@
 this.curseofyears_effect <- this.inherit("scripts/skills/skill", {
 	m = {
                 TurnsCurseofyears = 0,
+		LastRoundApplied = 0
 	},
 	function getTurnsCurseofyears()
 	{
@@ -67,8 +68,9 @@ this.curseofyears_effect <- this.inherit("scripts/skills/skill", {
 	{
 		for ( local i = 0; i < 99; i = ++i )
 		{
-                        if (this.Math.rand(1, 6) >= this.Math.max(2, 7 - this.getTurnsCurseofyears()))
+                        if (this.Math.rand(1, 6) >= this.Math.max(2, 7 - this.getTurnsCurseofyears()) && this.m.LastRoundApplied != this.Time.getRound())
                         {
+				this.m.LastRoundApplied = this.Time.getRound();
 				this.spawnIcon("status_effect_81", this.getContainer().getActor().getTile());
 				local hitInfo = clone this.Const.Tactical.HitInfo;
 				hitInfo.DamageRegular = this.getDamage();
@@ -100,7 +102,7 @@ this.curseofyears_effect <- this.inherit("scripts/skills/skill", {
 
 	function onBeforeActivation()
 	{
-		local BreakChance = this.Math.max(this.getTurnsCurseofyears(), 6);
+		local BreakChance = this.Math.max(this.getTurnsCurseofyears(), 7 - this.getTurnsCurseofyears());
 		local everyoneCurseofyears = true;
 		if (this.Math.rand(1, 9) > BreakChance)
 		{
@@ -145,7 +147,6 @@ this.curseofyears_effect <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		local actor = this.getContainer().getActor();
-
 		if (actor.hasSprite("status_stunned"))
 		{
 			actor.getSprite("status_stunned").setBrush("bust_nightmare");
