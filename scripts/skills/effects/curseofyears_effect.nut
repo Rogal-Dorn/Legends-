@@ -1,6 +1,6 @@
 this.curseofyears_effect <- this.inherit("scripts/skills/skill", {
 	m = {
-                TurnsCurseofyears = 0,
+		TurnsCurseofyears = 0,
 		LastRoundApplied = 0
 	},
 	function getTurnsCurseofyears()
@@ -33,11 +33,12 @@ this.curseofyears_effect <- this.inherit("scripts/skills/skill", {
 
 	function getDescription()
 	{
-		return "This character is consumed by unnatural nightmares and is unable to act. As the horrors eat away at his sanity, he\'ll take [color=" + this.Const.UI.Color.PositiveValue + "]" + this.getDamage() + "[/color] damage based on his resolve each turn. The character can be forcibly awoken from these nightmares by a nearby ally, but he won\'t wake up on his own.";
+		return "This character is aging rapidally, losing increasing hitpoints at the end of each turn. ";
 	}
 
 	function getTooltip()
 	{
+		local BodyDamageMult = 0.05 * this.getTurnsCurseofyears();
 		return [
 			{
 				id = 1,
@@ -50,10 +51,10 @@ this.curseofyears_effect <- this.inherit("scripts/skills/skill", {
 				text = this.getDescription()
 			},
 			{
-				id = 9,
+				id = 10,
 				type = "text",
-				icon = "ui/icons/initiative.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-50%[/color] Initiative"
+				icon = "ui/icons/health.png",
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-" + 5 * this.getTurnsCurseofyears() + "%[/color] Hitpoints at turn end"
 			}
 		];
 	}
@@ -66,10 +67,10 @@ this.curseofyears_effect <- this.inherit("scripts/skills/skill", {
 
 	function applyDamage()
 	{
-		for ( local i = 0; i < 99; i = ++i )
+		while (true)
 		{
-                        if (this.Math.rand(1, 6) >= this.Math.max(2, 7 - this.getTurnsCurseofyears()) && this.m.LastRoundApplied != this.Time.getRound())
-                        {
+			if (this.Math.rand(1, 6) >= this.Math.max(2, 7 - this.getTurnsCurseofyears()) && this.m.LastRoundApplied != this.Time.getRound())
+			{
 				this.m.LastRoundApplied = this.Time.getRound();
 				this.spawnIcon("status_effect_81", this.getContainer().getActor().getTile());
 				local hitInfo = clone this.Const.Tactical.HitInfo;
@@ -79,12 +80,11 @@ this.curseofyears_effect <- this.inherit("scripts/skills/skill", {
 				hitInfo.BodyDamageMult = 0.05 * this.getTurnsCurseofyears();
 				hitInfo.FatalityChanceMult = 0.0;
 				this.getContainer().getActor().onDamageReceived(this.getContainer().getActor(), this, hitInfo);				
-                        }
-
-                        else
-                        {
-                       		break;
-                        }
+			}
+            else
+			{
+				break;
+            }
 		}
 
 	}

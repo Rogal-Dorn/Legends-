@@ -4,7 +4,7 @@ this.curseofyears_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.curseofyears";
 		this.m.Name = "Curse of Years";
-		this.m.Description = "The Wizard spits out an ancient curse, causing his enemies to age at an incredible rate - their hair turning white and skin shrivelling up. ";
+		this.m.Description = "The Wizard spits out an ancient curse and his enemies age at an incredible rate. They feel their skin shrivelling, bodies decaying and their hair turns white. They collapse, unable to support themselves at withering age engulfs them.";
 		this.m.Icon = "skills/active_117.png";
 		this.m.IconDisabled = "skills/active_117_sw.png";
 		this.m.Overlay = "active_117";
