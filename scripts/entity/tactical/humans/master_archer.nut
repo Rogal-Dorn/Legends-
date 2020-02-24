@@ -247,7 +247,7 @@ this.master_archer <- this.inherit("scripts/entity/tactical/human", {
 		{
 			if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
 			{
-				this.m.Items.equip(this.new("scripts/items/" + armor[this.Math.rand(0, legend_armor.len() - 1)]));
+				this.m.Items.equip(this.new("scripts/items/" + legend_armor[this.Math.rand(0, legend_armor.len() - 1)]));
 			}
 			else
 			{
