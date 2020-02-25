@@ -291,7 +291,10 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/armor/mail_shirt"));
 		items.equip(this.new("scripts/items/helmets/greatsword_hat"));
-
+		local r = this.Math.rand(0, 1);
+		local r = this.Math.rand(0, 4);
+		local r = this.Math.rand(0, 0);
+		local r = this.Math.rand(0, 1);
 		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");
 		stash.removeByID("supplies.ground_grains");
