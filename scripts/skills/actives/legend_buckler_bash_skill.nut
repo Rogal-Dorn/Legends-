@@ -70,7 +70,7 @@ this.legend_buckler_bash_skill <- this.inherit("scripts/skills/skill", {
 
 		if (this.getContainer().getActor().getSkills().hasSkill("perk.shield_bash"))
 		{
-			this.m.FatigueCost *= 0.9;
+			this.m.FatigueCostMult *= 0.9;
 		}
 	}
 

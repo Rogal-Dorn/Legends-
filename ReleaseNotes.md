@@ -3084,3 +3084,7 @@ test shield perks
 
 Restoring Ancient Breastplate now works. (Salty)
 Fixed Balance's Perk desccription, it still gives armor dmg reduction (Salty)
+Offhand Puncture nolonger uses main hand dmg (Salty)
+Cultist Sacrifice now has 50% chance to rank up the cultist again (Salty)
+Buckler Bash should nolonger cost 1 fat with mastery (Salty)
+Fix for my Oblivion Potion fix, nolonger doubles perkpoins and gifted doesn't grant free points (Salty)

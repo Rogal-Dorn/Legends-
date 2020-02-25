@@ -102,8 +102,9 @@ this.cultist_origin_sacrifice_event <- this.inherit("scripts/events/event", {
 							});
 						}
 
-						for( ; this.Math.rand(1, 100) > 50;  )
+						if (this.Math.rand(1, 100) > 50)
 						{
+							continue;
 						}
 
 						local skills = bro.getSkills();
