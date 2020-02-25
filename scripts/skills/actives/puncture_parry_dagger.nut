@@ -126,6 +126,10 @@ this.puncture_parry_dagger <- this.inherit("scripts/skills/skill", {
 			{
 				chance += 15;
 			}
+			
+			_properties.DamageRegularMin = 20;
+			_properties.DamageRegularMax = 40;
+			
 			_properties.MeleeSkill += chance;
 			_properties.DamageArmorMult *= 0.0;
 			_properties.IsIgnoringArmorOnAttack = true;
