@@ -139,7 +139,7 @@ this.player_corpse_stub <- {
 
 		if (this.m.LifetimeStats.MostPowerfulVanquished != "")
 		{
-			text = text + (" The most powerful opponent he vanquished was " + this.m.LifetimeStats.MostPowerfulVanquished + ".");
+			text = text + (" The most powerful opponent they vanquished was " + this.m.LifetimeStats.MostPowerfulVanquished + ".");
 		}
 
 		tooltip.push({

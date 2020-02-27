@@ -3048,3 +3048,4 @@ Spelling errors (mwah)
 Master archer spawns with layered armor when u have layers on (Mwah)
 
 Rotting Flesh AP fix
+Gender neutralizes the "The most powerful opponent they vanquished was" text

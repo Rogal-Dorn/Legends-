@@ -631,7 +631,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 				if (this.m.LifetimeStats.MostPowerfulVanquished != "")
 				{
-					text = text + (" The most powerful opponent he vanquished was " + this.m.LifetimeStats.MostPowerfulVanquished + ".");
+					text = text + (" The most powerful opponent they vanquished was " + this.m.LifetimeStats.MostPowerfulVanquished + ".");
 				}
 			}
 
