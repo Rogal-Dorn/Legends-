@@ -27,19 +27,19 @@ this.legend_rotten_flesh <- this.inherit("scripts/skills/injury_permanent/perman
 				id = 7,
 				type = "text",
 				icon = "ui/icons/days_wounded.png",
-				text = "-3AP. Heals at 10% normal rate. Requires no food."
+				text = "-3 AP. Heals at 10% normal rate. Requires no food."
 			},
 			{
 				id = 7,
 				type = "text",
 				icon = "ui/icons/damage_received.png",
-				text = "Immune to Bleeding, poison and fresh injuries."
+				text = "Immune to bleeding, poison, and fresh injuries."
 			},
 			{
 				id = 7,
 				type = "text",
 				icon = "ui/icons/fatigue.png",
-				text = "Effected by fatigue and experience at 10% normal rate"
+				text = "Affected by fatigue and experience at 10% of the normal rate."
 			},
 			{
 				id = 7,
@@ -51,7 +51,7 @@ this.legend_rotten_flesh <- this.inherit("scripts/skills/injury_permanent/perman
 				id = 7,
 				type = "text",
 				icon = "ui/icons/vision.png",
-				text = "Not affected by night"
+				text = "Not affected by night."
 			}
 		];
 		this.addTooltipHint(ret);
@@ -69,6 +69,7 @@ this.legend_rotten_flesh <- this.inherit("scripts/skills/injury_permanent/perman
 		_properties.IsAffectedByFleeingAllies = false;
 		_properties.IsAffectedByDyingAllies = false;
 		_properties.IsAffectedByFreshInjuries = false;
+		_properties.ActionPoints -= 3;
 		_properties.MoraleEffectMult = 0.1;
 		_properties.FatigueEffectMult = 0.1;
 		_properties.HitpointsRecoveryRateMult = 0.1;
