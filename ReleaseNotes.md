@@ -3046,3 +3046,5 @@ Crusader origin has a higher chance to find monks, nuns, flagellants, witch hunt
 Peasant Squire gets "duelist" not "deulist" (mwah)
 Spelling errors (mwah)  
 Master archer spawns with layered armor when u have layers on (Mwah)
+
+Rotting Flesh AP fix
