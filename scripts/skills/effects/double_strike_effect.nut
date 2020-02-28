@@ -36,7 +36,7 @@ this.double_strike_effect <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
-		if (!this.m.IsGarbage && !_targetEntity.isAlliedWith(this.getContainer().getActor()))
+		if (!this.m.IsGarbage && this.m.TimeAdded + 0.1 < this.Time.getVirtualTimeF() && !_targetEntity.isAlliedWith(this.getContainer().getActor()))
 		{
 			this.removeSelf();
 		}
