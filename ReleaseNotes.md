@@ -3086,6 +3086,7 @@ Cheer on fatigue cost reduced to 15
 White wolf bite AP cost and fatigue cost increased, armor damage decreased. 
 Restoring Ancient Breastplate now works. (Salty)
 Fixed Balance's Perk desccription, it still gives armor dmg reduction (Salty)
+<<<<<<< HEAD
 Adventurous nobles spawn again (wuxiang) 
 Porridge effect works correctly (wuxiang)
 Recruitable Crusader gets stars correctly (wuxiang)
@@ -3152,3 +3153,11 @@ Vala no longer adds uncut gems when taking inscription perks
 Throw net now uses same attack calculation as throwing a javelin 
 
 Random solo party size raised to 27 
+
+
+
+Offhand Puncture nolonger uses main hand dmg (Salty)
+Cultist Sacrifice now has 50% chance to rank up the cultist again (Salty)
+Buckler Bash should nolonger cost 1 fat with mastery (Salty)
+Fix for my Oblivion Potion fix, nolonger doubles perkpoins and gifted doesn't grant free points (Salty)
+

@@ -776,7 +776,8 @@ gt.Const.Strings.WardogNames <- [
 	"Snapper",
 	"Catchaser",
 	"Quickpaw",
-	"Stormtail"
+	"Stormtail",
+	"Beagle"
 ];
 
 gt.Const.Strings.WarbearNames <- [
