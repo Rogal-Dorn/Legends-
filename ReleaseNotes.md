@@ -3101,6 +3101,15 @@ TODO add weapon skills)
 Each mercenary now has relationships with each other mercenary 
 The alignment of each mercenary effects their relationships when they first meet 
 Adds relationship changes to 18 events 
+-40 -5% fatigue 
+-30 -5  melee defense 
+-20 -5  ranged defense 
+-10 -5  morale 
++10 +5  morale 
++20 +5  ranged defense 
++30 +5  melee defense 
++40 +5% fatigue 
+
 
 **Morals**
 Adds in most backgrounds' morality alignments. If u notice some that seem weird please post. Very possible I forgot some (Mwah)
@@ -3130,3 +3139,16 @@ Historian and Retired soldier gain Noble's captain skill group
 
 **Legendary beasts**
 Legendary beasts are now in their own spawn groups, and tend to stay to one type of terrain 
+
+**Faith**
+New Origin - Inquisition, a Witch hunter is accompanied by a crusader, a flagellent and a monk on a holy quest. All recruits gain MoB. Holy recruits are cheaper and more plentiful, unholy recruits are more expensive. Begins with high Moral standing. 
+Holy flame now also applies burn, bleed and zombie poison to undead 
+Holy flame now also applies prayer of life and prayer of faith to allies 
+Holy flame now costs 7AP 
+
+Vala no longer adds uncut gems when taking inscription perks 
+
+
+Throw net now uses same attack calculation as throwing a javelin 
+
+Random solo party size raised to 27 
