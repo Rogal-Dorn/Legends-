@@ -32,7 +32,7 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 		this.m.IsTargeted = true;
 		this.m.IsStacking = false;
 		this.m.IsAttack = true;
-		this.m.IsRanged = false;
+		this.m.IsRanged = true;
 		this.m.IsIgnoredAsAOO = true;
 		this.m.IsShowingProjectile = false;
 		this.m.IsUsingHitchance = false;
@@ -46,8 +46,8 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		local ourskill = this.getContainer().getActor().getCurrentProperties().getRangedSkill();
-		local ret = this.getDefaultUtilityTooltip();
+
+		local ret = this.getDefaultTooltip();
 		ret.extend([
 			{
 				id = 6,
@@ -59,7 +59,7 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Hit chance may be inacurate. Hit chance determined by your ranged skill minus their ranged defense. Hitchance doubled by the Net Casting Perk."
+				text = "Hit chance may be inacurate. Hit chance determined by your ranged skill. Hitchance doubled by the Net Casting Perk."
 			}
 		]);
 		return ret;
@@ -87,6 +87,7 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
+		local target = _targetTile.getEntity();
 		local targetEntity = _targetTile.getEntity();
 		local r = this.Math.rand(1,100);
 		if (_user.getSkills().hasSkill("perk.legend_net_casting"));
@@ -97,11 +98,13 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 		{
 		 r *= 0.75;
 		}
-		local ourSkill = _user.getCurrentProperties().getRangedSkill();
-		local theirSkill = targetEntity.getCurrentProperties().getRangedDefense();
 
-		if (r < (ourSkill - theirSkill))
+		if (r > this.getHitchance(_targetTile.getEntity()))
 		{
+			target.onMissed(this.getContainer().getActor(), this);
+			return false;
+		}
+
 			if (!targetEntity.getCurrentProperties().IsImmuneToRoot)
 			{
 				if (this.m.SoundOnHit.len() != 0)
@@ -167,17 +170,7 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 				return false;
 			}	
 		}
-		else
-		{
-			if (this.m.SoundOnMiss.len() != 0)
-			{
-				this.Sound.play(this.m.SoundOnMiss[this.Math.rand(0, this.m.SoundOnMiss.len() - 1)], this.Const.Sound.Volume.Skill, targetEntity.getPos());
-			}
-			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " throws a net and misses " + this.Const.UI.getColorizedEntityName(targetEntity) + ", the net falls to the ground ");
-			 _user.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand).drop(); //drop instead of destroy
 
-			return false;
-		}	
 
 	}
 

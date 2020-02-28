@@ -191,6 +191,8 @@ gt.Const.Tactical.Common <- {
 			else
 			{
 				_entity.getSkills().add(this.new("scripts/skills/effects/legend_sanctified_effect"));
+				_entity.getSkills().add(this.new("scripts/skills/effects/legend_prayer_of_life_effect"));
+				_entity.getSkills().add(this.new("scripts/skills/effects/legend_prayer_of_faith_effect"));
 			}
 		}
 
@@ -200,10 +202,26 @@ gt.Const.Tactical.Common <- {
 			if (consecrate != null)
 			{
 				consecrate.onRefresh();
+				local hitInfo = clone this.Const.Tactical.HitInfo;
+				hitInfo.DamageRegular = this.Math.rand(10, 20);
+				hitInfo.DamageDirect = 1.0;
+				hitInfo.BodyPart = this.Const.BodyPart.Body;
+				hitInfo.BodyDamageMult = 1.0;
+				hitInfo.FatalityChanceMult = 0.0;
+				_tile.getEntity().onDamageReceived(_entity, null, hitInfo);		
 			}
 			else
 			{
 				_entity.getSkills().add(this.new("scripts/skills/effects/legend_consecrated_effect"));
+				_entity.getSkills().add(this.new("scripts/skills/effects/bleeding_effect"));
+				_entity.getSkills().add(this.new("scripts/skills/effects/zombie_poison_effect"));
+				local hitInfo = clone this.Const.Tactical.HitInfo;
+				hitInfo.DamageRegular = this.Math.rand(10, 20);
+				hitInfo.DamageDirect = 1.0;
+				hitInfo.BodyPart = this.Const.BodyPart.Body;
+				hitInfo.BodyDamageMult = 1.0;
+				hitInfo.FatalityChanceMult = 0.0;
+				_tile.getEntity().onDamageReceived(_entity, null, hitInfo);		
 			}
 
 		}

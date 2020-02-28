@@ -14,9 +14,4 @@ this.legend_vala_inscribe_weapon <- this.inherit("scripts/skills/skill", {
 		this.m.IsSerialized = true;
 	}
 
-	function onAdded()
-	{
-		local stash = this.World.Assets.getStash();
-		stash.add(this.new("scripts/items/trade/uncut_gems_item"));
-	}
 });
