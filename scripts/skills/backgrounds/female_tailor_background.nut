@@ -41,6 +41,8 @@ this.female_tailor_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
 		this.m.Body = "bust_naked_body_03";
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Good;
 		this.m.IsFemaleBackground = true;
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[1];
 		this.m.Modifiers.Repair = this.Const.LegendMod.ResourceModifiers.Repair[2];
@@ -65,7 +67,8 @@ this.female_tailor_background <- this.inherit("scripts/skills/backgrounds/charac
 				this.Const.Perks.CalmTree
 			],
 			Enemy = [],
-			Class = [this.Const.Perks.RepairClassTree]
+			Class = [this.Const.Perks.RepairClassTree],
+			Magic = []
 		}
 	}
 

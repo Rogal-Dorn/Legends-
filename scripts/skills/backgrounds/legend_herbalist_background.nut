@@ -43,7 +43,8 @@ this.legend_herbalist_background <- this.inherit("scripts/skills/backgrounds/cha
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Monk;
 		this.m.Body = "bust_naked_body_00";
-
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Kind;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.IsOffendedByViolence = true;
 		this.m.IsRangerRecruitBackground = true;
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[2];
@@ -95,7 +96,8 @@ this.legend_herbalist_background <- this.inherit("scripts/skills/backgrounds/cha
 			Class = [
 				this.Const.Perks.SickleClassTree,
 				this.Const.Perks.HealerClassTree
-			]
+			],
+			Magic = []
 		}
 	}
 

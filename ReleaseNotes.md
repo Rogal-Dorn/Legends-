@@ -2599,6 +2599,7 @@ Fixes values on named gambeson.
 Catch and print errors with invalid blueprint.
 Fixes crash when apply poision effects a second time.
 
+<<<<<<< HEAD
 
 13.0.0. RC 3
 
@@ -3088,3 +3089,37 @@ Fixed Balance's Perk desccription, it still gives armor dmg reduction (Salty)
 Adventurous nobles spawn again (wuxiang) 
 Porridge effect works correctly (wuxiang)
 Recruitable Crusader gets stars correctly (wuxiang)
+
+
+14.0.0.1  
+
+**Horses**
+Re-enables Horses (
+TODO add weapon skills) 
+
+**Relationships**
+Adds in most backgrounds' morality alignments. If u notice some that seem weird please post. Very possible I forgot some (Mwah)
+Adds in relationship status. Right now it's just a number & not much else
+
+**Magic**
+Adds 13 new magic backgrounds that spawn when magic is enabled. 
+Transmuter - has seer teleport and levitation  - spawns near workshops
+Spiritualist - has vala spirit skills - spawns near amber collectors 
+Runesmith - has vala rune skills - spawns near gem mines 
+Evoker - has seer damage spells   - spawns near blast furnaces
+Necrosavant - has warlock vampire skills - spawns near wineries 
+Master archer - has ranger attack skills - spawns near fortified outposts
+Illusionist - has seer debuff spells - spawns near herbalist groves 
+Entrancer - has vala trances  - spawns near gatherers huts 
+Enchanter - has vala chants - spawns near wool spinners 
+Diviner - has scry, entice and revolt - spawns near harbors 
+Weidermancer - has warlock zombie skills - spawns near peat pits 
+Skelemancer - has warlock skeleton skills - spawns near leather tanner
+Necromancer - has the necromancer's buggy raise dead skill 
+
+Non-commander berserker uses dynamic perks with a new berserker skill group - spawns near mushroom groves 
+Non-commander noble uses dynamic perks with a new captain skill group 
+Historian and Retired soldier gain Noble's captain skill group 
+
+**Legendary beasts**
+Legendary beasts are now in their own spawn groups, and tend to stay to one type of terrain 

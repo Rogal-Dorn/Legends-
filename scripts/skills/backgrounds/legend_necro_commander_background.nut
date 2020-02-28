@@ -346,6 +346,10 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_1"));
 		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_brink_of_death"));
 		this.m.Container.add(this.new("scripts/skills/traits/survivor_trait"));
+		if (this.Const.LegendMod.Configs.LegendMagicEnabled())
+		{
+			this.m.Container.add(this.new("scripts/skills/actives/curseofyears_skill"));
+		}		
 	}
 
 	function onAddEquipment()

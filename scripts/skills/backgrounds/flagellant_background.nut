@@ -58,7 +58,8 @@ this.flagellant_background <- this.inherit("scripts/skills/backgrounds/character
 			Class = [
 				this.Const.Perks.NinetailsClassTree,
 				this.Const.Perks.FaithClassTree
-			]
+			],
+			Magic = []
 		}
 	}
 
