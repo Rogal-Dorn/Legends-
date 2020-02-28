@@ -431,7 +431,7 @@ this.legend_bandit_army_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Screens.push({
 			ID = "Bribe",
 			Title = "As you approach...",
-			Text = "[img]gfx/ui/events/event_54.png[/img] As you approach bandit encampment you notice they do not seem like any raiders you\'ve encountered. You expected to be attacked instantly, but they hesitate. Some of outlaw scum, even though well equipped, do not seem eager for a fight. %shouter% notices some familiar faces ... trader folk from former dealings. Deals that are not exactly inside boundries of local law. Before any hostilities starts, %shouter% aproaches you with a risky idea, if you\'re willing to try.",
+			Text = "[img]gfx/ui/events/event_54.png[/img] As you approach bandit encampment you notice they do not seem like any raiders you\'ve encountered. You expected to be attacked instantly, but they hesitate. Some of outlaw scum, even though well equipped, do not seem eager for a fight. %shouter% notices some familiar faces, trader folk from former dealings. Deals that are not exactly inside boundries of local law. Before any hostilities starts, %shouter% aproaches you with a risky idea, if you\'re willing to try.",
 			Image = "",
 			List = [],
 			Characters = [],
