@@ -3151,7 +3151,7 @@ Vala no longer adds uncut gems when taking inscription perks
 
 
 Throw net now uses same attack calculation as throwing a javelin 
-
+Adds armor piercing and broad head arrows to fletchers 
 Random solo party size raised to 27 
 
 
