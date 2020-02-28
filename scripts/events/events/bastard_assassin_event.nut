@@ -219,6 +219,10 @@ this.bastard_assassin_event <- this.inherit("scripts/events/event", {
 						this.World.getPlayerRoster().add(_event.m.Assassin);
 						this.World.getTemporaryRoster().clear();
 						_event.m.Assassin.onHired();
+						local modifier1 = this.Math.rand(-1, -5);
+						_event.m.Assassin.changeActiveRelationship( _event.m.Bastard, modifier1 );
+						local modifier2 = this.Math.rand(-5, -10);
+						 _event.m.Bastard.changeActiveRelationship( _event.m.Assassin, modifier2 );
 						return 0;
 					}
 
@@ -332,7 +336,7 @@ this.bastard_assassin_event <- this.inherit("scripts/events/event", {
 						text = _event.m.Bastard.getName() + " is now loyal"
 					});
 				}
-
+				this.World.Assets.addMoralReputation(2);
 				_event.m.Bastard.improveMood(2.0, "You risked your life for him");
 
 				if (_event.m.Bastard.getMoodState() >= this.Const.MoodState.Neutral)

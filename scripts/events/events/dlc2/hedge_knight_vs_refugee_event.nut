@@ -70,8 +70,17 @@ this.hedge_knight_vs_refugee_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
+				this.World.Assets.addMoralReputation(1);
 				this.Characters.push(_event.m.HedgeKnight.getImagePath());
 				this.Characters.push(_event.m.Refugee.getImagePath());
+
+				
+				//set relations
+				local modifier1 = this.Math.rand(-5, -10);
+				_event.m.HedgeKnight.changeActiveRelationship( _event.m.Refugee, modifier1 );
+				local modifier2 = this.Math.rand(-5, -10);
+				_event.m.Refugee.changeActiveRelationship( _event.m.HedgeKnight, modifier2 );
+
 				local bravery = this.Math.rand(1, 3);
 				_event.m.Refugee.getBaseProperties().Bravery -= bravery;
 				_event.m.Refugee.getSkills().update();
@@ -111,8 +120,16 @@ this.hedge_knight_vs_refugee_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
+				this.World.Assets.addMoralReputation(-1);
 				this.Characters.push(_event.m.HedgeKnight.getImagePath());
 				this.Characters.push(_event.m.Refugee.getImagePath());
+
+				//set relations
+				local modifier1 = this.Math.rand(5, 10);
+				_event.m.HedgeKnight.changeActiveRelationship( _event.m.Refugee, modifier1 );
+				local modifier2 = this.Math.rand(5, 10);
+				_event.m.Refugee.changeActiveRelationship( _event.m.HedgeKnight, modifier2 );
+
 				local bravery = this.Math.rand(1, 3);
 				_event.m.Refugee.getBaseProperties().Bravery += bravery;
 				_event.m.Refugee.getSkills().update();
@@ -163,8 +180,24 @@ this.hedge_knight_vs_refugee_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
+				this.World.Assets.addMoralReputation(1);
 				this.Characters.push(_event.m.HedgeKnight.getImagePath());
 				this.Characters.push(_event.m.OtherGuy.getImagePath());
+
+				//set relations
+				local modifier1 = this.Math.rand(1, 5);
+				_event.m.HedgeKnight.changeActiveRelationship( _event.m.Refugee, modifier1 );
+				local modifier2 = this.Math.rand(1, 5);
+				_event.m.Refugee.changeActiveRelationship( _event.m.HedgeKnight, modifier2 );
+				local modifier3 = this.Math.rand(1, 5);
+				_event.m.HedgeKnight.changeActiveRelationship( _event.m.OtherGuy, modifier3 );
+				local modifier4 = this.Math.rand(1, 5);
+				_event.m.OtherGuy.changeActiveRelationship( _event.m.HedgeKnight, modifier4 );
+				local modifier5 = this.Math.rand(1, 5);
+				_event.m.OtherGuy.changeActiveRelationship( _event.m.Refugee, modifier5 );
+				local modifier6 = this.Math.rand(1, 5);
+				_event.m.Refugee.changeActiveRelationship( _event.m.OtherGuy, modifier6 );
+
 				local brothers = this.World.getPlayerRoster().getAll();
 
 				foreach( bro in brothers )

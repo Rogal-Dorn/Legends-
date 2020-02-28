@@ -64,7 +64,8 @@ this.wildman_testing_money_event <- this.inherit("scripts/events/event", {
 				}
 			],
 			function start( _event )
-			{
+			{	
+				this.World.Assets.addMoralReputation(-1);
 				this.Characters.push(_event.m.Wildman.getImagePath());
 				local money = 10 * _event.m.Wildman.getDaysWithCompany();
 				this.World.Assets.addMoney(money);
@@ -96,6 +97,7 @@ this.wildman_testing_money_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
+				this.World.Assets.addMoralReputation(-1);
 				this.Characters.push(_event.m.Wildman.getImagePath());
 				_event.m.Wildman.worsenMood(1.0, "Did a bad trade");
 

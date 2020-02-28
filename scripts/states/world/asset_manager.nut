@@ -749,6 +749,8 @@ this.asset_manager <- {
 				item.onNewDay();
 			}
 
+			local companyRep = this.World.Assets.getMoralReputation() / 10;
+
 			foreach( bro in roster )
 			{
 				bro.getSkills().onNewDay();
@@ -776,6 +778,45 @@ this.asset_manager <- {
 						{
 							bro.worsenMood(this.Const.MoodChange.BattleWithoutMe, "Remembers being forced to kill against their wishes");
 						}
+				}
+
+				// Check the company alignment against the mercenary alignment
+				if (bro.getAlignmentMin() > companyRep)
+				{
+				bro.worsenMood(this.Const.MoodChange.AmbitionFailed, "Thinks the company is too immoral");
+				}
+
+				if (bro.getAlignmentMax() < companyRep)
+				{
+				bro.worsenMood(this.Const.MoodChange.AmbitionFailed, "Thinks the company is too moral");
+				}
+
+				if (bro.getAlignment() == this.Math.Floor(companyRep))
+				{
+				bro.worsenMood(this.Const.MoodChange.AmbitionFulfilled, "Thinks the company is great");
+				}
+
+				// update the relationships between characters 
+				local relations = this.World.getPlayerRoster().getAll();
+				foreach ( relation in relations ) 
+				{
+					if (relation.getAlignment() == bro.getAlignment())
+					{
+					bro.changeActiveRelationship(relation, 2);
+					}
+					else if (relation.getAlignment() < bro.getAlignmentMin())
+					{
+					bro.changeActiveRelationship(relation, -1);
+					}
+					else if (relation.getAlignment() > bro.getAlignmentMax())
+					{
+					bro.changeActiveRelationship(relation, -1);;
+					}
+					else
+					{
+					bro.changeActiveRelationship(relation, this.Math.rand(-1,1));
+					}
+
 				}
 
 				if (this.m.IsUsingProvisions && this.m.Food < bro.getDailyFood())

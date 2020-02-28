@@ -90,6 +90,8 @@ this.cultist_origin_sacrifice_event <- this.inherit("scripts/events/event", {
 							continue;
 						}
 
+
+
 					if (bro.getBackground().getID() == "background.cultist" || bro.getBackground().getID() == "background.converted_cultist" || bro.getBackground().getID() == "background.legend_commander_necro" || bro.getBackground().getID() == "background.legend_necro" || bro.getBackground().getID() == "background.legend_vala" || bro.getBackground().getID() == "background.legend_vala_commander" || bro.getBackground().getID() == "background.legend_witch" || bro.getBackground().getID() == "background.legend_witch_commander" || bro.getBackground().getID() == "background.legend_cannibal" || bro.getBackground().getID() == "background.legend_donkey")
 					{
 						bro.improveMood(2.0, "Appeased Davkul");
@@ -103,8 +105,24 @@ this.cultist_origin_sacrifice_event <- this.inherit("scripts/events/event", {
 							});
 						}
 
-						for( ; this.Math.rand(1, 100) > 50;  )
+						//set relations
+						local relations = this.World.getPlayerRoster().getAll();
+						foreach( relation in relations )
 						{
+							if (relation.getBackground().getID() == "background.cultist")
+							{
+							local modifier1 = this.Math.rand(1, 5);
+							bro.changeActiveRelationship( relation, modifier1 );
+							local modifier2 = this.Math.rand(1, 5);
+							relation.changeActiveRelationship( bro, modifier2 );
+							}
+						}
+
+						for( ; this.Math.rand(1, 100) > 50;  )
+
+						if (this.Math.rand(1, 100) > 50)
+						{
+							continue;
 						}
 
 						local skills = bro.getSkills();

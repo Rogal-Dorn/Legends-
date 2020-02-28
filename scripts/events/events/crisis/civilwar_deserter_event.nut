@@ -82,6 +82,19 @@ this.civilwar_deserter_event <- this.inherit("scripts/events/event", {
 						this.World.getPlayerRoster().add(_event.m.Dude);
 						this.World.getTemporaryRoster().clear();
 						_event.m.Dude.onHired();
+
+						//set relations
+						local brothers = this.World.getPlayerRoster().getAll();
+						foreach( bro in brothers )
+						{
+							if (bro.getBackground().getID() == "background.deserter")
+							{
+								local modifier1 = this.Math.rand(5, 10);
+								bro.changeActiveRelationship( _event.m.Dude, modifier1 );
+								local modifier2 = this.Math.rand(5, 10);
+								_event.m.Dude.changeActiveRelationship( bro, modifier2 );
+							}
+						}
 						return 0;
 					}
 
@@ -118,6 +131,21 @@ this.civilwar_deserter_event <- this.inherit("scripts/events/event", {
 						this.World.getPlayerRoster().add(_event.m.Dude);
 						this.World.getTemporaryRoster().clear();
 						_event.m.Dude.onHired();
+					
+
+						//set relations
+						local brothers = this.World.getPlayerRoster().getAll();
+						foreach( bro in brothers )
+						{
+							if (bro.getBackground().getID() == "background.deserter")
+							{
+								local modifier1 = this.Math.rand(5, 10);
+								bro.changeActiveRelationship( _event.m.Dude, modifier1 );
+								local modifier2 = this.Math.rand(5, 10);
+								_event.m.Dude.changeActiveRelationship( bro, modifier2 );
+							}
+						}
+
 						return 0;
 					}
 

@@ -180,6 +180,16 @@ this.fletcher_building <- this.inherit("scripts/entity/world/settlements/buildin
 				R = 0,
 				P = 1.0,
 				S = "supplies/ammo_item"
+			},
+			{
+				R = 70,
+				P = 1.0,
+				S = "ammo/legend_armor_piercing_arrows"
+			},
+			{
+				R = 70,
+				P = 1.0,
+				S = "ammo/legend_broad_head_arrows"
 			}
 		];
 

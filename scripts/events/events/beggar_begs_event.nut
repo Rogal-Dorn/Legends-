@@ -57,6 +57,7 @@ this.beggar_begs_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				this.Characters.push(_event.m.Beggar.getImagePath());
+				this.World.Assets.addMoralReputation(-1);
 			}
 
 		});
@@ -71,7 +72,7 @@ this.beggar_begs_event <- this.inherit("scripts/events/event", {
 					Text = "Ok.",
 					function getResult( _event )
 					{
-						return 0;
+						return 0;		
 					}
 
 				}
@@ -86,7 +87,7 @@ this.beggar_begs_event <- this.inherit("scripts/events/event", {
 					text = "You spend [color=" + this.Const.UI.Color.NegativeEventValue + "]10[/color] Crowns"
 				});
 				_event.m.Beggar.improveMood(0.5, "Got a few extra crowns from you");
-
+				this.World.Assets.addMoralReputation(1);
 				if (_event.m.Beggar.getMoodState() >= this.Const.MoodState.Neutral)
 				{
 					this.List.push({

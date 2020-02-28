@@ -150,6 +150,7 @@ this.graverobber_heist_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
+				this.World.Assets.addMoralReputation(2);
 				this.Characters.push(_event.m.Graverobber.getImagePath());
 				_event.m.Graverobber.worsenMood(1.0, "Was forbidden to rob a grave");
 				this.List.push({
@@ -215,6 +216,7 @@ this.graverobber_heist_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
+				this.World.Assets.addMoralReputation(-2);
 				this.Characters.push(_event.m.Graverobber.getImagePath());
 			}
 
