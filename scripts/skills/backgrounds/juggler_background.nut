@@ -37,6 +37,8 @@ this.juggler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Body = "bust_naked_body_00";
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[1];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
@@ -56,7 +58,8 @@ this.juggler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 				this.Const.Perks.CalmTree
 			],
 			Enemy = [],
-			Class = []
+			Class = [],
+			Magic = []
 		}
 	}
 

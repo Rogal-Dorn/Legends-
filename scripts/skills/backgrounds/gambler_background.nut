@@ -46,7 +46,8 @@ this.gambler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Body = "bust_naked_body_02";
-
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.NeutralMin;
 		this.m.IsOutlawBackground = true;
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[1];
 		this.m.PerkTreeDynamic = {
@@ -65,7 +66,8 @@ this.gambler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 				this.Const.Perks.FastTree
 			],
 			Enemy = [],
-			Class = [this.Const.Perks.FistsClassTree]
+			Class = [this.Const.Perks.FistsClassTree],
+			Magic = []
 		}
 	}
 

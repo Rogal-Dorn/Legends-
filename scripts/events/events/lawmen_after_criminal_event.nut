@@ -104,6 +104,7 @@ this.lawmen_after_criminal_event <- this.inherit("scripts/events/event", {
 					text = _event.m.Criminal.getName() + " has left the company"
 				});
 				_event.m.Criminal.getItems().transferToStash(this.World.Assets.getStash());
+				_event.m.Criminal.removeActiveRelationship();
 				this.World.getPlayerRoster().remove(_event.m.Criminal);
 				this.World.Assets.addMoney(100);
 				this.List.push({

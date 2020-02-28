@@ -27,6 +27,8 @@ this.monk_turned_flagellant_background <- this.inherit("scripts/skills/backgroun
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Untidy;
 		this.m.IsOffendedByViolence = false;
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Good;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[1];
 		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[1];
 		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[1];
@@ -52,7 +54,8 @@ this.monk_turned_flagellant_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.HealerClassTree,
 				this.Const.Perks.NinetailsClassTree,
 				this.Const.Perks.FaithClassTree
-				]
+				],
+			Magic = []
 		}
 	}
 

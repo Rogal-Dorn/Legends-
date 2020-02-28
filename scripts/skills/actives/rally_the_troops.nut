@@ -104,6 +104,39 @@ this.rally_the_troops <- this.inherit("scripts/skills/skill", {
 			{
 				continue;
 			}
+				this.logInfo("attempting to rally");
+				if (a.getSkills().hasSkill("effects.charmed") || a.getSkills().hasSkill("effects.legend_intensely_charmed") || a.getSkills().hasSkill("effects.sleeping"))
+				{
+					local rand = this.Math.rand(1, 100);
+					if( bravery > rand )
+						{
+						this.logInfo("Removing charms");
+						a.getSkills().removeByID("effects.charmed");
+						a.getSkills().removeByID("effects.sleeping");
+						a.getSkills().removeByID("effects.legend_intensely_charmed");
+						}
+				}
+				if ( a.getMoraleState() >= this.Const.MoraleState.Steady )
+				{
+					continue;
+				}
+				  this.logInfo("finding rally difficulty");
+				local difficulty = bravery;
+					this.logInfo("getting distance");
+				local distance = a.getTile().getDistanceTo(myTile) * 10;
+					this.logInfo("getting morale state");
+				local morale = a.getMoraleState();
+
+				if (a.getMoraleState() == this.Const.MoraleState.Fleeing)
+				{
+					this.logInfo("Turning back the fleeing");
+					a.checkMorale(this.Const.MoraleState.Wavering - this.Const.MoraleState.Fleeing, difficulty, this.Const.MoraleCheckType.Default, "status_effect_56");
+				}
+				else
+				{
+					this.logInfo("moral check for the rest");
+					a.checkMorale(1, difficulty - distance, this.Const.MoraleCheckType.Default, "status_effect_56");
+				}
 
 			if (a.getSkills().hasSkill("effects.rallied"))
 			{

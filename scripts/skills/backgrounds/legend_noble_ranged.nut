@@ -48,7 +48,8 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Body = "bust_naked_body_01";
-
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Notorious;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.IsCombatBackground = true;
 		this.m.IsRangerRecruitBackground = true;
 		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[1];
@@ -77,7 +78,8 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 				this.Const.Perks.ViciousTree
 			],
 			Enemy = [],
-			Class = []
+			Class = [],
+			Magic = []
 		}
 	}
 

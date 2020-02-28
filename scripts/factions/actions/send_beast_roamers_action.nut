@@ -606,6 +606,342 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 			this.m.Options.push(beast);
 			this.m.BeastsHigh.push(beast);
 		}
+			//Legends roaming others here
+			//Programmer note:
+			/*
+				I have no idea if roam.setMaxRange means how far it can move outside of the tile it spawned or outside of the setTerrain tiles, i'm assuming spawned. Might want to look over that thanks
+				Things that might want to be changed also:
+					local tile = _action.getTileToSpawnLocation(...)
+					local party = _action.getFaction().spawnEntity(...)
+			*/
+			//Rock unhold : Set to mountains exclusively
+			beast = function ( _action, _nearTile = null )
+			{
+				if (this.World.getTime().Days < 25 && _nearTile == null)
+				{
+					return false;
+				}
+
+				local disallowedTerrain = [];
+
+				for( local i = 0; i < this.Const.World.TerrainType.COUNT; i = ++i )
+				{
+					if (i == this.Const.World.TerrainType.Mountains)
+					{
+					}
+					else
+					{
+						disallowedTerrain.push(i);
+					}
+				}
+
+				local tile = _action.getTileToSpawnLocation(10, disallowedTerrain, 18 - (_nearTile == null ? 0 : 10), 100, 1000, 3, 0, _nearTile);
+
+				if (tile == null)
+				{
+					return false;
+				}
+
+				if (_action.getDistanceToNextAlly(tile) <= distanceToNextAlly / (_nearTile == null ? 1 : 2))
+				{
+					return false;
+				}
+
+				local distanceToNextSettlement = _action.getDistanceToSettlements(tile);
+				if (this.Const.LegendMod.Configs.LegendLocationScalingEnabled())
+					{
+					 distanceToNextSettlement *= 2;
+					}
+				local party = _action.getFaction().spawnEntity(tile, "Rock Unhold", false, this.Const.World.Spawn.LegendRockUnhold, this.Math.rand(80, 120) * _action.getReputationToDifficultyMult() * this.Math.maxf(0.7, this.Math.minf(1.5, distanceToNextSettlement / 14.0)));
+				party.getSprite("banner").setBrush("banner_beasts_01");
+				party.setDescription("A Rock Unhold");
+				party.setSlowerAtNight(false);
+				party.setUsingGlobalVision(false);
+				party.setLooting(false);
+				local roam = this.new("scripts/ai/world/orders/roam_order");
+				roam.setNoTerrainAvailable();
+				roam.setTerrain(this.Const.World.TerrainType.Mountains, true);
+				party.getController().addOrder(roam);
+				return true;
+			};
+			this.m.Options.push(beast);
+			this.m.BeastsHigh.push(beast);
+			
+			//Skin ghoul : Set to Swamp
+			beast = function ( _action, _nearTile = null )
+			{
+				if (this.World.getTime().Days < 25 && _nearTile == null)
+				{
+					return false;
+				}
+
+				local disallowedTerrain = [];
+
+				for( local i = 0; i < this.Const.World.TerrainType.COUNT; i = ++i )
+				{
+					if (i == this.Const.World.TerrainType.Swamp)
+					{
+					}
+					else
+					{
+						disallowedTerrain.push(i);
+					}
+				}
+
+				local tile = _action.getTileToSpawnLocation(10, disallowedTerrain, 18 - (_nearTile == null ? 0 : 10), 100, 1000, 3, 0, _nearTile);
+
+				if (tile == null)
+				{
+					return false;
+				}
+
+				if (_action.getDistanceToNextAlly(tile) <= distanceToNextAlly / (_nearTile == null ? 1 : 2))
+				{
+					return false;
+				}
+
+				local distanceToNextSettlement = _action.getDistanceToSettlements(tile);
+				if (this.Const.LegendMod.Configs.LegendLocationScalingEnabled())
+					{
+					 distanceToNextSettlement *= 2;
+					}
+				local party = _action.getFaction().spawnEntity(tile, "Skin Ghoul", false, this.Const.World.Spawn.LegendSkinGhouls, this.Math.rand(80, 120) * _action.getReputationToDifficultyMult() * this.Math.maxf(0.7, this.Math.minf(1.5, distanceToNextSettlement / 14.0)));
+				party.getSprite("banner").setBrush("banner_beasts_01");
+				party.setDescription("A Skin Ghoul");
+				party.setSlowerAtNight(false);
+				party.setUsingGlobalVision(false);
+				party.setLooting(false);
+				local roam = this.new("scripts/ai/world/orders/roam_order");
+				roam.setNoTerrainAvailable();
+				roam.setTerrain(this.Const.World.TerrainType.Steppe, true);
+				roam.setTerrain(this.Const.World.TerrainType.Plains, true);
+				party.getController().addOrder(roam);
+				return true;
+			};
+			this.m.Options.push(beast);
+			this.m.BeastsHigh.push(beast);
+
+			//White wolf : Set to Snowy forest and snow
+			beast = function ( _action, _nearTile = null )
+			{
+				if (this.World.getTime().Days < 25 && _nearTile == null)
+				{
+					return false;
+				}
+
+				local disallowedTerrain = [];
+
+				for( local i = 0; i < this.Const.World.TerrainType.COUNT; i = ++i )
+				{
+					if (i == this.Const.World.TerrainType.SnowyForest || i == this.Const.World.TerrainType.Snow)
+					{
+					}
+					else
+					{
+						disallowedTerrain.push(i);
+					}
+				}
+
+				local tile = _action.getTileToSpawnLocation(10, disallowedTerrain, 18 - (_nearTile == null ? 0 : 10), 100, 1000, 3, 0, _nearTile);
+
+				if (tile == null)
+				{
+					return false;
+				}
+
+				if (_action.getDistanceToNextAlly(tile) <= distanceToNextAlly / (_nearTile == null ? 1 : 2))
+				{
+					return false;
+				}
+
+				local distanceToNextSettlement = _action.getDistanceToSettlements(tile);
+				if (this.Const.LegendMod.Configs.LegendLocationScalingEnabled())
+					{
+					 distanceToNextSettlement *= 2;
+					}
+				local party = _action.getFaction().spawnEntity(tile, "White Wolf", false, this.Const.World.Spawn.LegendWhiteDirewolf, this.Math.rand(80, 120) * _action.getReputationToDifficultyMult() * this.Math.maxf(0.7, this.Math.minf(1.5, distanceToNextSettlement / 14.0)));
+				party.getSprite("banner").setBrush("banner_beasts_01");
+				party.setDescription("A White Wolf");
+				party.setSlowerAtNight(false);
+				party.setUsingGlobalVision(false);
+				party.setLooting(false);
+				local roam = this.new("scripts/ai/world/orders/roam_order");
+				roam.setNoTerrainAvailable();
+				roam.setTerrain(this.Const.World.TerrainType.Snow, true);
+				roam.setTerrain(this.Const.World.TerrainType.SnowyForest, true);
+				party.getController().addOrder(roam);
+				return true;
+			};
+			this.m.Options.push(beast);
+			this.m.BeastsHigh.push(beast);
+
+			//Redback Spider : Set to forest, leaf forest, autumn forest only. May want to change
+			beast = function ( _action, _nearTile = null )
+			{
+				if (this.World.getTime().Days < 25 && _nearTile == null)
+				{
+					return false;
+				}
+
+				local disallowedTerrain = [];
+
+				for( local i = 0; i < this.Const.World.TerrainType.COUNT; i = ++i )
+				{
+					if (i == this.Const.World.TerrainType.LeaveForest || i == this.Const.World.TerrainType.AutumnForest || i == this.Const.World.TerrainType.Forest)
+					{
+					}
+					else
+					{
+						disallowedTerrain.push(i);
+					}
+				}
+
+				local tile = _action.getTileToSpawnLocation(10, disallowedTerrain, 18 - (_nearTile == null ? 0 : 10), 100, 1000, 3, 0, _nearTile);
+
+				if (tile == null)
+				{
+					return false;
+				}
+
+				if (_action.getDistanceToNextAlly(tile) <= distanceToNextAlly / (_nearTile == null ? 1 : 2))
+				{
+					return false;
+				}
+
+				local distanceToNextSettlement = _action.getDistanceToSettlements(tile);
+				if (this.Const.LegendMod.Configs.LegendLocationScalingEnabled())
+					{
+					 distanceToNextSettlement *= 2;
+					}
+				local party = _action.getFaction().spawnEntity(tile, "Redback Spider", false, this.Const.World.Spawn.LegendRedbackSpider, this.Math.rand(80, 120) * _action.getReputationToDifficultyMult() * this.Math.maxf(0.7, this.Math.minf(1.5, distanceToNextSettlement / 14.0)));
+				party.getSprite("banner").setBrush("banner_beasts_01");
+				party.setDescription("A Redback Spider");
+				party.setSlowerAtNight(false);
+				party.setUsingGlobalVision(false);
+				party.setLooting(false);
+				local roam = this.new("scripts/ai/world/orders/roam_order");
+				roam.setNoTerrainAvailable();
+				roam.setTerrain(this.Const.World.TerrainType.Forest, true);
+				roam.setTerrain(this.Const.World.TerrainType.LeaveForest, true);
+				roam.setTerrain(this.Const.World.TerrainType.AutumnForest, true);
+				party.getController().addOrder(roam);
+				return true;
+			};
+			this.m.Options.push(beast);
+			this.m.BeastsHigh.push(beast);
+
+			//Stollwurm : THese are set to only the hills tile, might want another one? dunno
+			beast = function ( _action, _nearTile = null )
+			{
+				if (this.World.getTime().Days < 25 && _nearTile == null)
+				{
+					return false;
+				}
+
+				local disallowedTerrain = [];
+
+				for( local i = 0; i < this.Const.World.TerrainType.COUNT; i = ++i )
+				{
+					if (i == this.Const.World.TerrainType.Hills)
+					{
+					}
+					else
+					{
+						disallowedTerrain.push(i);
+					}
+				}
+
+				local tile = _action.getTileToSpawnLocation(10, disallowedTerrain, 18 - (_nearTile == null ? 0 : 10), 100, 1000, 3, 0, _nearTile);
+
+				if (tile == null)
+				{
+					return false;
+				}
+
+				if (_action.getDistanceToNextAlly(tile) <= distanceToNextAlly / (_nearTile == null ? 1 : 2))
+				{
+					return false;
+				}
+
+				local distanceToNextSettlement = _action.getDistanceToSettlements(tile);
+				if (this.Const.LegendMod.Configs.LegendLocationScalingEnabled())
+					{
+					 distanceToNextSettlement *= 2;
+					}
+				local party = _action.getFaction().spawnEntity(tile, "Stollwurm", false, this.Const.World.Spawn.LegendStollwurm, this.Math.rand(80, 120) * _action.getReputationToDifficultyMult() * this.Math.maxf(0.7, this.Math.minf(1.5, distanceToNextSettlement / 14.0)));
+				party.getSprite("banner").setBrush("banner_beasts_01");
+				party.setDescription("A Stollwurm - a wingless bipedal dragon resembling a giant snake.");
+				party.setSlowerAtNight(false);
+				party.setUsingGlobalVision(false);
+				party.setLooting(false);
+				local roam = this.new("scripts/ai/world/orders/roam_order");
+				roam.setNoTerrainAvailable();
+				roam.setTerrain(this.Const.World.TerrainType.Hills, true);
+				party.getController().addOrder(roam);
+				return true;
+			};
+			this.m.Options.push(beast);
+			this.m.BeastsHigh.push(beast);
+
+			//Greenwood schrat [Unchanged possible locations from Normal Schrats. May want to change?]
+			beast = function ( _action, _nearTile = null )
+			{
+				if (this.World.getTime().Days < 25 && _nearTile == null)
+				{
+					return false;
+				}
+
+				local disallowedTerrain = [];
+
+				for( local i = 0; i < this.Const.World.TerrainType.COUNT; i = ++i )
+				{
+					if (i == this.Const.World.TerrainType.Forest || i == this.Const.World.TerrainType.LeaveForest || i == this.Const.World.TerrainType.AutumnForest)
+					{
+					}
+					else
+					{
+						disallowedTerrain.push(i);
+					}
+				}
+
+				local tile = _action.getTileToSpawnLocation(10, disallowedTerrain, 20 - (_nearTile == null ? 0 : 11), 100, 1000, 3, 0, _nearTile);
+
+				if (tile == null)
+				{
+					return false;
+				}
+
+				if (_action.getDistanceToNextAlly(tile) <= distanceToNextAlly / (_nearTile == null ? 1 : 2))
+				{
+					return false;
+				}
+
+				local distanceToNextSettlement = _action.getDistanceToSettlements(tile);
+				if (this.Const.LegendMod.Configs.LegendLocationScalingEnabled())
+					{
+					 distanceToNextSettlement *= 2;
+					}
+				local party = _action.getFaction().spawnEntity(tile, "Greenwood Schrats", false, this.Const.World.Spawn.LegendGreenwoodSchrat, this.Math.rand(80, 120) * _action.getReputationToDifficultyMult() * this.Math.maxf(0.7, this.Math.minf(1.5, distanceToNextSettlement / 14.0)));
+				party.getSprite("banner").setBrush("banner_beasts_01");
+				party.setDescription("A creature of bark and wood, blending between trees and shambling slowly, its roots digging through the soil.");
+				party.setSlowerAtNight(false);
+				party.setUsingGlobalVision(false);
+				party.setLooting(false);
+				local roam = this.new("scripts/ai/world/orders/roam_order");
+				roam.setNoTerrainAvailable();
+				roam.setTerrain(this.Const.World.TerrainType.Forest, true);
+				roam.setTerrain(this.Const.World.TerrainType.LeaveForest, true);
+				roam.setTerrain(this.Const.World.TerrainType.AutumnForest, true);
+				roam.setMinRange(1);
+				roam.setMaxRange(2);
+				party.getController().addOrder(roam);
+				return true;
+			};
+			this.m.Options.push(beast);
+			this.m.BeastsHigh.push(beast);
+			//Demon alps skipped and just kept in normal alp spawns, might want to be changed(?)
+
+		
 	}
 
 	function onUpdate( _faction )

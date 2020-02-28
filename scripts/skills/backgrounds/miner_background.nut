@@ -36,7 +36,8 @@ this.miner_background <- this.inherit("scripts/skills/backgrounds/character_back
 		this.m.Beards = this.Const.Beards.Untidy;
 		this.m.Body = "bust_naked_body_00";
 		this.m.IsLowborn = true;
-
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;	
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[2];
 		this.m.Modifiers.Salvage = this.Const.LegendMod.ResourceModifiers.Salvage[2];
 		this.m.Modifiers.ToolConsumption = this.Const.LegendMod.ResourceModifiers.ToolConsumption[1];
@@ -78,7 +79,8 @@ this.miner_background <- this.inherit("scripts/skills/backgrounds/character_back
 					this.Const.Perks.OrcTree,
 					this.Const.Perks.UnholdTree
 					],
-			Class = [this.Const.Perks.PickaxeClassTree]
+			Class = [this.Const.Perks.PickaxeClassTree],
+			Magic = []
 		}
 	}
 

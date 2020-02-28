@@ -265,6 +265,17 @@ gt.Const.Faces.NecromancerFemale <- [
 	"bust_head_necro_female_01",
 	"bust_head_necro_female_02"
 ];
+
+gt.Const.Faces.Vampire <- [
+	"bust_skeleton_head_04",
+	"bust_skeleton_head_03"
+];
+
+
+gt.Const.Faces.Skeleton <- [
+	"bust_skeleton_head"
+];
+
 gt.Const.Hair.BarberMale <- [
 	"",
 	"shaved",

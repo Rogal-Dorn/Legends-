@@ -28,6 +28,10 @@ this.wool_spinner_location <- this.inherit("scripts/entity/world/attached_locati
 		_list.push("female_tailor_background");
 		_list.push("tailor_background");
 		_list.push("shepherd_background");
+		if(this.Const.LegendMod.Configs.LegendMagicEnabled())
+		{
+			_list.push("legend_enchanter_background");
+		}
 	}
 
 	function onUpdateShopList( _id, _list )
