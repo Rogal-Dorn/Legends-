@@ -28,7 +28,15 @@
 			local difficulty = this.Const.Morale.AllyKilledBaseDifficulty - _victim.getXPValue() * this.Const.Morale.AllyKilledXPMult + this.Math.pow(_victim.getTile().getDistanceTo(this.getTile()), this.Const.Morale.AllyKilledDistancePow);
 			if (_killer != null)
 			{
-				difficulty = this.Math.floor((this.Const.Morale.AllyKilledBaseDifficulty - _victim.getXPValue() * this.Const.Morale.AllyKilledXPMult + this.Math.pow(_victim.getTile().getDistanceTo(this.getTile()), this.Const.Morale.AllyKilledDistancePow)) * _killer.getPercentOnKillOtherActorModifier()) + _killer.getFlatOnKillOtherActorModifier();
+				difficulty = this.Math.floor(
+					( this.Const.Morale.AllyKilledBaseDifficulty - 
+					_victim.getXPValue() * this.Const.Morale.AllyKilledXPMult + 
+					this.Math.pow(
+						_victim.getTile().getDistanceTo(this.getTile()), this.Const.Morale.AllyKilledDistancePow) 
+						) 
+					* _killer.getPercentOnKillOtherActorModifier() )
+					
+					 + _killer.getFlatOnKillOtherActorModifier();
 			}
 			this.checkMorale(-1, difficulty, this.Const.MoraleCheckType.Default, "", true);
 		}
@@ -51,7 +59,7 @@
 	}
 	o.modifyPercentOnKillOtherActorModifier <- function ( _value ) 
 	{
-		this.m.PercentOnKillOtherActorModifier *= _value;
+		this.m.PercentOnKillOtherActorModifier = _value;
 	}
 	o.getFlatOnKillOtherActorModifier <- function ()
 	{
@@ -59,7 +67,7 @@
 	}
 	o.modifyFlatOnKillOtherActorModifier <- function ( _value )
 	{
-		this.m.FlatOnKillOtherActorModifier += _value;
+		this.m.FlatOnKillOtherActorModifier = _value;
 	}
 
 	o.isStabled <- function ()
@@ -275,7 +283,7 @@
 		}
 	}
 
-
+		  //this.checkMorale(-1, difficulty, this.Const.MoraleCheckType.Default, "", true);
 	o.checkMorale = function( _change, _difficulty, _type = this.Const.MoraleCheckType.Default, _showIconBeforeMoraleIcon = "", _noNewLine = false )
 	{
 		if (!this.isAlive() || this.isDying())
@@ -365,7 +373,7 @@
 				return false;
 			}
 		}
-		else if (_change < 0)
+		else if (_change < 0) //this.checkMorale(-1, difficulty, this.Const.MoraleCheckType.Default, "", true);
 		{
 			if (this.Math.rand(1, 100) <= this.Math.minf(95, bravery + _difficulty - numOpponentsAdjacent * this.Const.Morale.OpponentsAdjacentMult + numAlliesAdjacent * this.Const.Morale.AlliesAdjacentMult - threatBonus))
 			{
