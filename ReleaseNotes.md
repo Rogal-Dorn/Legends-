@@ -3047,5 +3047,7 @@ Peasant Squire gets "duelist" not "deulist" (mwah)
 Spelling errors (mwah)  
 Master archer spawns with layered armor when u have layers on (Mwah)
 
-Rotting Flesh AP fix
-Gender neutralizes the "The most powerful opponent they vanquished was" text
+Rotting Flesh AP fix (mwah)
+Gender neutralizes the "The most powerful opponent they vanquished was" text (mwah)
+Slaughterer is actually fixed (mwah)
+Fishermen don't increase the cost of taking boats to different towns (mwah)
