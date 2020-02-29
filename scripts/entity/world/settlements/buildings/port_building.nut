@@ -247,7 +247,17 @@ this.port_building <- this.inherit("scripts/entity/world/settlements/buildings/b
 	{
 		local myTile = this.getSettlement().getTile();
 		local dist = _to.getTile().getDistanceTo(myTile);
-		local cost = dist * this.World.getPlayerRoster().getSize() * 0.5;
+
+		//Makes fishermen 0 cost towards the ship
+		local sizeWithoutFishermen = this.World.getPlayerRoster().getSize();
+		local roster = this.World.getPlayerRoster().getAll();
+		foreach (bro in roster)
+		{
+			if (bro.getBackground().getID() == "fisherman_background")
+			sizeWithoutFishermen -= 1;
+		}
+
+		local cost = dist * sizeWithoutFishermen * 0.5;
 		cost = this.Math.round(cost * 0.1);
 		cost = cost * 10.0;
 		return cost;
