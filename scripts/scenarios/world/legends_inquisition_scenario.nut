@@ -27,36 +27,36 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 		}
 
 		local bros = roster.getAll();
-		bros[0].getBackground().m.RawDescription = "{%name% lost everything to the undead filth, property, lives and loves. There is nothing left in their life but the quest to bring holy justice to the world and end the tide of darkness. What better way to find the undead than in the service of a witch hunter.}";
 		bros[0].setStartValuesEx([
 			"legend_crusader_background"
 		]);
+		bros[0].getBackground().m.RawDescription = "{%name% lost everything to the undead filth, property, lives and loves. There is nothing left in their life but the quest to bring holy justice to the world and end the tide of darkness. What better way to find the undead than in the service of a witch hunter.}";
 		bros[0].m.PerkPoints = 1;
 		bros[0].m.LevelUps = 1;
 		bros[0].m.Level = 2;
 		bros[0].setPlaceInFormation(3);
 		bros[0].setVeteranPerks(2);	
-		bros[1].getBackground().m.RawDescription = "{%name% has no greater joy than suffering in the name of the old gods. Pain and pleasure and intimately linked, just as creation and desctruction are intwined. Each lash of the whip is like the caress of an angel, and their belief is that in only through suffering can we find salvation. Few laymen understand this viewpoint, but it is respected by other servants of the old gods.}";
 		bros[1].setStartValuesEx([
 			"flagellant_background"
 		]);
+		bros[1].getBackground().m.RawDescription = "{%name% has no greater joy than suffering in the name of the old gods. Pain and pleasure and intimately linked, just as creation and desctruction are intwined. Each lash of the whip is like the caress of an angel, and their belief is that in only through suffering can we find salvation. Few laymen understand this viewpoint, but it is respected by other servants of the old gods.}";
 		bros[1].setPlaceInFormation(4);
 
 		bros[1].setVeteranPerks(2);	
-		bros[2].getBackground().m.RawDescription = "{%name% has seen well the damage magic can bring to the world. The witches who steal the minds of men, the nightmares that end lives, and the necromancers who bring them back again. Hunting these foul creatures is the duty of all who serve the good of the gods. If the war is to be won, %name% will need a witch hunter army.}";
 		bros[2].setStartValuesEx([
 			"witchhunter_background"
 		]);
+		bros[2].getBackground().m.RawDescription = "{%name% has seen well the damage magic can bring to the world. The witches who steal the minds of men, the nightmares that end lives, and the necromancers who bring them back again. Hunting these foul creatures is the duty of all who serve the good of the gods. If the war is to be won, %name% will need a witch hunter army.}";
 		bros[2].improveMood(1.0, "Recently purged the unworthy");
 		bros[2].setPlaceInFormation(12);
 		bros[2].m.PerkPoints = 2;
 		bros[2].m.LevelUps = 2;
 		bros[2].m.Level = 3;
 		bros[2].setVeteranPerks(2);	
-		bros[3].getBackground().m.RawDescription = "{%name% spent many years in a temple healing the sick, but it was clear the ills of the world must be sought out and healed at their source. While healing a witch hunter, %name% was convinced to join the hunt to heal the world.}";
 		bros[3].setStartValuesEx([
 			"monk_background"
 		]);
+		bros[3].getBackground().m.RawDescription = "{%name% spent many years in a temple healing the sick, but it was clear the ills of the world must be sought out and healed at their source. While healing a witch hunter, %name% was convinced to join the hunt to heal the world.}";
 		bros[3].setPlaceInFormation(13);
 		this.World.Assets.m.MoralReputation = 50;
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/legend_pudding_item"));
