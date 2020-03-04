@@ -26,6 +26,10 @@ this.amber_collector_location <- this.inherit("scripts/entity/world/attached_loc
 		_list.push("peddler_background");
 		_list.push("caravan_hand_background");
 		_list.push("thief_background");
+		if(this.Const.LegendMod.Configs.LegendMagicEnabled())
+		{
+			_list.push("legend_spiritualist_background");
+		}
 	}
 
 	function onUpdateShopList( _id, _list )

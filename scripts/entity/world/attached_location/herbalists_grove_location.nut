@@ -29,6 +29,11 @@ this.herbalists_grove_location <- this.inherit("scripts/entity/world/attached_lo
 		_list.push("legend_herbalist_background");
 		_list.push("legend_herbalist_background");
 		_list.push("legend_herbalist_background");
+
+		if(this.Const.LegendMod.Configs.LegendMagicEnabled())
+		{
+			_list.push("legend_illusionist_background");
+		}
 	}
 
 	function onUpdateShopList( _id, _list )

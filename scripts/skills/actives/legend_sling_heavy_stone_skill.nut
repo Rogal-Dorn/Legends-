@@ -84,7 +84,7 @@ this.legend_sling_heavy_stone_skill <- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/hitchance.png",
-				text = "Has [color=" + this.Const.UI.Color.NegativeValue + "]" + (-10 + this.m.AdditionalAccuracy) + "%[/color] chance to hit, and [color=" + this.Const.UI.Color.PositiveValue + "]+" + (5 + this.m.AdditionalHitChance) + "%[/color] per tile of distance"
+				text = "Has [color=" + this.Const.UI.Color.NegativeValue + "]" + (this.m.AdditionalAccuracy) + "%[/color] chance to hit, and [color=" + this.Const.UI.Color.PositiveValue + "]+" + (this.m.AdditionalHitChance) + "%[/color] per tile of distance"
 		});
 
 		ret.push({

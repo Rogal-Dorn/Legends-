@@ -21,6 +21,7 @@ this.sellsword_gets_better_deal_event <- this.inherit("scripts/events/event", {
 					function getResult( _event )
 					{
 						this.World.Statistics.addFallen(_event.m.Sellsword, "Got a better paying offer");
+						_event.m.Sellsword.removeActiveRelationship();
 						this.World.getPlayerRoster().remove(_event.m.Sellsword);
 						return 0;
 					}
@@ -96,6 +97,7 @@ this.sellsword_gets_better_deal_event <- this.inherit("scripts/events/event", {
 					text = _event.m.Sellsword.getName() + " leaves the " + this.World.Assets.getName()
 				});
 				_event.m.Sellsword.getItems().transferToStash(this.World.Assets.getStash());
+				_event.m.Sellsword.removeActiveRelationship();
 				this.World.Statistics.addFallen(_event.m.Sellsword, "Got a better paying offer");				
 				this.World.getPlayerRoster().remove(_event.m.Sellsword);
 			}

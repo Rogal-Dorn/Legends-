@@ -42,6 +42,8 @@ this.female_minstrel_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
 		this.m.Body = "bust_naked_body_03";
+				this.m.AlignmentMin = this.Const.LegendMod.Alignment.Notorious;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.IsFemaleBackground = true;
 		this.m.IsCrusaderRecruitBackground = true;
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[1];
@@ -62,7 +64,8 @@ this.female_minstrel_background <- this.inherit("scripts/skills/backgrounds/char
 				this.Const.Perks.FastTree
 			],
 			Enemy = [this.Const.Perks.NoblesTree],
-			Class = [this.Const.Perks.BardClassTree]
+			Class = [this.Const.Perks.BardClassTree],
+			Magic = []
 		}
 	}
 

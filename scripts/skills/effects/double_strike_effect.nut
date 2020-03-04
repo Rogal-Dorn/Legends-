@@ -24,6 +24,11 @@ this.double_strike_effect <- this.inherit("scripts/skills/skill", {
 		this.m.TimeAdded = this.Time.getVirtualTimeF();
 	}
 
+	function onUpdate( _properties )
+	{
+		_properties.DamageTotalMult *= 1.4;
+	}
+
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
 		if (_targetEntity == null)
@@ -33,7 +38,6 @@ this.double_strike_effect <- this.inherit("scripts/skills/skill", {
 
 		if (!this.m.IsGarbage && !_targetEntity.isAlliedWith(this.getContainer().getActor()))
 		{
-			_properties.DamageTotalMult *= 1.4;
 			this.removeSelf();
 		}
 	}

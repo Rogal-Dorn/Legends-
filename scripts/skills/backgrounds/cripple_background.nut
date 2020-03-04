@@ -42,6 +42,8 @@ this.cripple_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Untidy;
 		this.m.Body = "bust_naked_body_00";
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.NeutralMin;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.IsLowborn = true;
 		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[1];
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[2];
@@ -64,7 +66,8 @@ this.cripple_background <- this.inherit("scripts/skills/backgrounds/character_ba
 				this.Const.Perks.IndestructibleTree
 			],
 			Enemy = [],
-			Class = [this.Const.Perks.FistsClassTree]
+			Class = [this.Const.Perks.FistsClassTree],
+			Magic = []
 		}
 	}
 

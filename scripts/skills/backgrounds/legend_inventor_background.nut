@@ -36,6 +36,8 @@ this.legend_inventor_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.IsCrusaderRecruitBackground = true;
 		this.m.IsRangerRecruitBackground = true;
 		this.m.IsEducatedBackground = true;
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Notorious;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Chivalrous;
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[2];
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[2];
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[1];
@@ -63,7 +65,8 @@ this.legend_inventor_background <- this.inherit("scripts/skills/backgrounds/char
 			Class = [
 				this.Const.Perks.RepairClassTree,
 				this.Const.Perks.InventorClassTree
-			]
+			],
+			Magic = []
 		}
 	}
 

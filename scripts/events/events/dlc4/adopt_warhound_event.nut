@@ -163,8 +163,7 @@ this.adopt_warhound_event <- this.inherit("scripts/events/event", {
 		if (candidates.len() != 0)
 		{
 			this.m.Houndmaster = candidates[this.Math.rand(0, candidates.len() - 1)];
-		} else {
-			return;	
+
 		}
 
 		this.m.Score = 5;

@@ -42,7 +42,8 @@ this.killer_on_the_run_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Untidy;
 		this.m.Body = "bust_naked_body_00";
-
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Notorious;
 		this.m.IsCombatBackground = true;
 		this.m.IsOutlawBackground = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
@@ -69,7 +70,8 @@ this.killer_on_the_run_background <- this.inherit("scripts/skills/backgrounds/ch
 				this.Const.Perks.NoblesTree,
 				this.Const.Perks.MercenaryTree
 				],
-			Class = []
+			Class = [],
+			Magic = []
 		}
 	}
 

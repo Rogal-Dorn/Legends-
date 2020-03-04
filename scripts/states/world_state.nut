@@ -77,7 +77,8 @@ this.world_state <- this.inherit("scripts/states/state", {
 		Campaign = "",
 		CommanderDied = null,
 		LegendsMod = null,
-		Camp = null
+		Camp = null,
+		IDToRef = array(27, -1)
 	},
 
 	function getPlayer()
@@ -1188,6 +1189,12 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.setupWeather();
 		this.updateDayTime();
 		this.Music.setTrackList(this.World.FactionManager.isGreaterEvil() ? this.Const.Music.WorldmapTracksGreaterEvil : this.Const.Music.WorldmapTracks, this.Const.Music.CrossFadeTime);
+
+		local bros = this.World.getPlayerRoster().getAll();
+		foreach (bro in bros)
+		{
+			this.m.IDToRef[bro.getCompanyID()] = this.WeakTableRef(bro);
+		}
 
 		this.setPause(true);
 	}
@@ -3697,6 +3704,28 @@ this.world_state <- this.inherit("scripts/states/state", {
 		{
 			this.m.LastEnemyDiscoveredSoundTime = this.Time.getRealTimeF();
 			this.Sound.play(this.Const.Sound.EnemyDiscoveredOnWorldmap[this.Math.rand(0, this.Const.Sound.EnemyDiscoveredOnWorldmap.len() - 1)], this.Const.Sound.Volume.Inventory);
+		}
+	}
+
+	function getRefFromID( _id )
+	{
+		return this.m.IDToRef[_id];
+	}
+
+	function removeCompanyID( _id )
+	{
+		this.m.IDToRef[_id] = -1;
+	}
+
+	function addNewID( _actor ) //return the id we gave and also put wtr into id slot
+	{
+		for ( local i = 0; i < 27; i++ )
+		{
+			if (this.m.IDToRef[i] == -1)
+			{
+				this.m.IDToRef[i] = this.WeakTableRef(_actor);
+				return i;
+			}
 		}
 	}
 

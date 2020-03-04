@@ -78,7 +78,7 @@ this.lunge_skill <- this.inherit("scripts/skills/skill", {
 			});
 		}
 
-		if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInGreatSwords)
+		if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInSwords)
 		{
 			ret.push({
 				id = 6,
@@ -270,7 +270,7 @@ this.lunge_skill <- this.inherit("scripts/skills/skill", {
 			local s = this.Math.minf(2.0, 2.0 * (this.Math.max(0, a.getInitiative() + (_targetEntity != null ? this.getFatigueCost() : 0)) / 175.0));
 			_properties.DamageTotalMult *= s;
 
-			if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInGreatSwords)
+			if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInSwords)
 			{
 				_properties.MeleeSkill += 5;
 			}

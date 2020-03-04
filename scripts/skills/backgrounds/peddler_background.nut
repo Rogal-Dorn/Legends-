@@ -35,7 +35,6 @@ this.peddler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Tidy;
 		this.m.Body = "bust_naked_body_02";
-
 		this.m.IsLowborn = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Kind;
@@ -61,7 +60,8 @@ this.peddler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 				this.Const.Perks.DeviousTree
 			],
 			Enemy = [this.Const.Perks.BanditTree],
-			Class = [this.Const.Perks.BarterClassTree]
+			Class = [this.Const.Perks.BarterClassTree],
+			Magic = []
 		}
 	}
 

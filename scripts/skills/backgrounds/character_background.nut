@@ -79,7 +79,9 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			Enemy = 2,
 			EnemyChance = 0.1,
 			Class = 1,
-			ClassChance = 0.10
+			ClassChance = 0.10,
+			Magic = 1,
+			MagicChance = 0.10
 		},
 		PerkTreeDynamic = {
 			Weapon = [
@@ -95,7 +97,8 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 				this.Const.Perks.FastTree
 			],
 			Enemy = [],
-			Class = []
+			Class = [],
+			Magic = []
 		},
 		CustomPerkTree = null,
 		PerkTreeMap = null,
@@ -1125,6 +1128,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			}
 
 		}
+
 	}
 
 	function onBuildDescription()
