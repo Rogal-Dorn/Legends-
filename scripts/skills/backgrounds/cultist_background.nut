@@ -52,7 +52,8 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Untidy;
 		this.m.Body = "bust_naked_body_00";
-
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Merciless;
 		this.m.IsOutlawBackground = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Merciless;
@@ -75,7 +76,8 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 				this.Const.Perks.IndestructibleTree
 			],
 			Enemy = [],
-			Class = [this.Const.Perks.NinetailsClassTree]
+			Class = [this.Const.Perks.NinetailsClassTree],
+			Magic = []
 		}
 	}
 

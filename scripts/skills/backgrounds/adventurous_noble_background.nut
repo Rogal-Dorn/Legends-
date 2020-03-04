@@ -31,7 +31,8 @@ this.adventurous_noble_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Body = "bust_naked_body_01";
-
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.Level = this.Math.rand(1, 3);
 		this.m.IsCombatBackground = true;
 		this.m.IsNoble = true;
@@ -59,7 +60,8 @@ this.adventurous_noble_background <- this.inherit("scripts/skills/backgrounds/ch
 				this.Const.Perks.ViciousTree
 			],
 			Enemy = [],
-			Class = []
+			Class = [],
+			Magic = []
 		}
 	}
 
@@ -68,7 +70,7 @@ this.adventurous_noble_background <- this.inherit("scripts/skills/backgrounds/ch
 		local r = _gender;
 		if (_gender == -1)
 		{
-			_gender = 0;
+			r = 0;
 			if (this.Const.LegendMod.Configs.LegendGenderEnabled())
 			{
 				r = this.Math.rand(0, 1);
