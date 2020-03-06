@@ -3052,3 +3052,4 @@ Gender neutralizes the "The most powerful opponent they vanquished was" text (mw
 Slaughterer is actually fixed (mwah)
 Fishermen don't increase the cost of taking boats to different towns (mwah)
 Slingstaff now gets slingstaff bash, not staff bash :: Half dmg compared to staff bash & 13 Fat -> 25 Fat (mwah)
+Bandit Warlords can't get ranged fameds they won't use (mwah)
