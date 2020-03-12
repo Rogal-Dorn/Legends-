@@ -21,8 +21,8 @@ this.perk_legend_specialist_shovel_skill <- this.inherit("scripts/skills/skill",
 		{
 			if(item.getID() == "weapon.legend_shovel")
 			{
-			_properties.MeleeSkill += 12;
-			if (!actor.getSkills().hasSkill("actives.knock_out"))
+				_properties.MeleeSkill += 12;
+				if (!actor.getSkills().hasSkill("actives.knock_out"))
 				{
 					actor.getSkills().add(this.new("scripts/skills/actives/knock_out"));
 				}
@@ -31,7 +31,7 @@ this.perk_legend_specialist_shovel_skill <- this.inherit("scripts/skills/skill",
 			{
 				if(actor.getSkills().hasSkill("actives.knock_out"))
 				{
-					actor.getSkills().remove(this.new("scripts/skills/actives/knock_out"));
+					actor.getSkills().removeByID("actives.knock_out");
 				}
 			}
 			if(item.getID() == "weapon.two_handed_mace" || item.getID() == "weapon.two_handed_flanged_mace" || item.getID() == "weapon.named_two_handed_mace" || item.getID() == "weapon.named_two_handed_spiked_mace" || item.getID() == "weapon.goedendag" || item.getID() == "weapon.legend_military_goedendag" || item.getID() == "weapon.legend_two_handed_club" || item.getID() == "weapon.two_handed_spiked_mace")
