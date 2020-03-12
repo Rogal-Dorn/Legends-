@@ -3055,3 +3055,4 @@ Slingstaff now gets slingstaff bash, not staff bash :: Half dmg compared to staf
 Bandit Warlords can't get ranged fameds they won't use (mwah)
 Typo fixes (thank YOU, the user who reports them)
 Gatherer drops ironwill potion properly now (mwah)
+Bleed rune doesnt crash when person gets swallowed (mwah)
