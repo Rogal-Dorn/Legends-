@@ -3058,3 +3058,5 @@ Gatherer drops ironwill potion properly now (mwah)
 Bleed rune doesnt crash when person gets swallowed (mwah)
 Fixes lacerate calculation to activate (mwah)
 Fixes knock out staying after removing the shovel with the Gravesman perk (mwah)
+Updates PC Trait to mention that player character's can't be charmed (mwah)
+Hedge Knight Armor "fix" (mwah) //SHould be actually fixed rn itjust gives old legend_armor not new layered_armor 
