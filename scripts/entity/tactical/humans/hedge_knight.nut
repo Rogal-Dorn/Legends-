@@ -289,7 +289,8 @@ this.hedge_knight <- this.inherit("scripts/entity/tactical/human", {
 		{
 			if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
 			{
-				this.m.Items.equip(this.new("scripts/items/" + legend_armor[this.Math.rand(0, armor.len() - 1)]));
+				//This should be changed entirely from `legend_armor[]` to the way we add new random layers. I'm just not really sure all the possible layers that'd be good
+				this.m.Items.equip(this.new("scripts/items/" + legend_armor[this.Math.rand(0, legend_armor.len() - 1)]));
 			}
 			else
 			{
