@@ -59,10 +59,13 @@ this.cultist_origin_vs_uneducated_event <- this.inherit("scripts/events/event", 
 			{
 				this.Characters.push(_event.m.Cultist.getImagePath());
 				this.Characters.push(_event.m.Uneducated.getImagePath());
+				local oldModifiers = _event.m.Uneducated.getBackground().m.Modifiers;
+				
 				local background = this.new("scripts/skills/backgrounds/converted_cultist_background");
 				local oldPerkTree = _event.m.Uneducated.getBackground().m.CustomPerkTree;
 				_event.m.Uneducated.getSkills().removeByID(_event.m.Uneducated.getBackground().getID());
 				_event.m.Uneducated.getSkills().add(background);
+				background.m.Modifiers = oldModifiers;
 				background.buildDescription();
 				background.rebuildPerkTree(oldPerkTree);
 				_event.m.Uneducated.resetPerks();
@@ -152,9 +155,11 @@ this.cultist_origin_vs_uneducated_event <- this.inherit("scripts/events/event", 
 			{
 				cultist_candidates.push(bro);
 			}
-			else if (bro.getBackground().isLowborn() && !bro.getSkills().hasSkill("trait.bright") || !bro.getBackground().isNoble() && bro.getSkills().hasSkill("trait.dumb") || bro.getSkills().hasSkill("injury.brain_damage"))
-			{
+			else if ((bro.getBackground().isLowborn() && !bro.getSkills().hasSkill("trait.bright")) ||
+				(!bro.getBackground().isNoble() && (bro.getSkills().hasSkill("trait.dumb") || bro.getSkills().hasSkill("injury.brain_damage") ))) 
+			{ 
 				uneducated_candidates.push(bro);
+				//getFlags().set("IsSpecial", true);
 			}
 		}
 
