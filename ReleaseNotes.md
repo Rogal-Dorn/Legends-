@@ -3060,3 +3060,4 @@ Fixes lacerate calculation to activate (mwah)
 Fixes knock out staying after removing the shovel with the Gravesman perk (mwah)
 Updates PC Trait to mention that player character's can't be charmed (mwah)
 Hedge Knight Armor "fix" (mwah) //SHould be actually fixed rn itjust gives old legend_armor not new layered_armor 
+Scourging [Specialist Ninetails Skill] now correctly gives whips that aren't the Ninetails half the bonus instead of 2x the bonus (mwah)
