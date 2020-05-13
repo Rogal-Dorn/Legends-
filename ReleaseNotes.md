@@ -3088,10 +3088,23 @@ White wolf bite AP cost and fatigue cost increased, armor damage decreased.
 Restoring Ancient Breastplate now works. (Salty)
 Fixed Balance's Perk desccription, it still gives armor dmg reduction (Salty)
 <<<<<<< HEAD
+<<<<<<< HEAD
 Adventurous nobles spawn again (wuxiang) 
 Porridge effect works correctly (wuxiang)
 Recruitable Crusader gets stars correctly (wuxiang)
 
+=======
+Offhand Puncture nolonger uses main hand dmg (Salty)
+Cultist Sacrifice now has 50% chance to rank up the cultist again (Salty)
+Buckler Bash should nolonger cost 1 fat with mastery (Salty)
+Fix for my Oblivion Potion fix, nolonger doubles perkpoins and gifted doesn't grant free points (Salty)
+Adventurous nobles spawn again (wuxiang) 
+Porridge effect works correctly (wuxiang)
+Recruitable Crusader gets stars correctly (wuxiang)
+Removed incorect -10% to hit from Staffsling's Sling Stone that only was in the tooltip (Salty)
+Peasant Butcher now get's correct stats. Nolonger tries to be a normal peasant (Salty)
+Lunge now works off 1h Sword spec, error from when the perks were split. Thanks Vladonis (Salty)
+>>>>>>> origin/v14SaltyFixes
 
 14.0.0.1  
 
@@ -3186,4 +3199,5 @@ Fixes knock out staying after removing the shovel with the Gravesman perk (mwah)
 Updates PC Trait to mention that player character's can't be charmed (mwah)
 Hedge Knight Armor "fix" (mwah) //SHould be actually fixed rn itjust gives old legend_armor not new layered_armor 
 Ninetails Attack Accuracy & Damage perks now correctly gives whips that aren't the Ninetails half the bonus instead of 2x the bonus (mwah)
+
 
