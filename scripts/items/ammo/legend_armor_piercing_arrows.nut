@@ -103,6 +103,7 @@ this.legend_armor_piercing_arrows <- this.inherit("scripts/items/ammo/ammo", {
 				_properties.DamageDirectMult += 0.2;
 				_properties.RangedDamageMult *= 0.9;
 					break;
+		}
 
 	}
 });

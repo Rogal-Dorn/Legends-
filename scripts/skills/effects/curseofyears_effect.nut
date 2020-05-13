@@ -1,7 +1,6 @@
 this.curseofyears_effect <- this.inherit("scripts/skills/skill", {
 	m = {
-		TurnsCurseofyears = 0,
-		LastRoundApplied = 0
+                TurnsCurseofyears = 0
 	},
 	function getTurnsCurseofyears()
 	{
@@ -33,12 +32,11 @@ this.curseofyears_effect <- this.inherit("scripts/skills/skill", {
 
 	function getDescription()
 	{
-		return "This character is aging rapidally, losing increasing hitpoints at the end of each turn. ";
+		return "This character is consumed by unnatural nightmares and is unable to act. As the horrors eat away at his sanity, he\'ll take [color=" + this.Const.UI.Color.PositiveValue + "]" + this.getDamage() + "[/color] damage based on his resolve each turn. The character can be forcibly awoken from these nightmares by a nearby ally, but he won\'t wake up on his own.";
 	}
 
 	function getTooltip()
 	{
-		local BodyDamageMult = 0.05 * this.getTurnsCurseofyears();
 		return [
 			{
 				id = 1,
@@ -51,10 +49,10 @@ this.curseofyears_effect <- this.inherit("scripts/skills/skill", {
 				text = this.getDescription()
 			},
 			{
-				id = 10,
+				id = 9,
 				type = "text",
-				icon = "ui/icons/health.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-" + 5 * this.getTurnsCurseofyears() + "%[/color] Hitpoints at turn end"
+				icon = "ui/icons/initiative.png",
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]deid over time[/color] "
 			}
 		];
 	}
@@ -67,26 +65,26 @@ this.curseofyears_effect <- this.inherit("scripts/skills/skill", {
 
 	function applyDamage()
 	{
-		while (true)
+		local actor = this.getContainer().getActor();
+		for ( local i = 0; i < 99; i = ++i )
 		{
-			if (this.Math.rand(1, 6) >= this.Math.max(2, 7 - this.getTurnsCurseofyears()) && this.m.LastRoundApplied != this.Time.getRound())
-			{
-				this.m.LastRoundApplied = this.Time.getRound();
+                        if (actor.isAlive() && this.Math.rand(1, 6) >= this.Math.max(2, 7 - this.getTurnsCurseofyears()))
+                        {
 				this.spawnIcon("status_effect_81", this.getContainer().getActor().getTile());
 				local hitInfo = clone this.Const.Tactical.HitInfo;
 				hitInfo.DamageRegular = this.getDamage();
 				hitInfo.DamageDirect = 1.0;
 				hitInfo.BodyPart = this.Const.BodyPart.Body;
-				hitInfo.BodyDamageMult = 0.05 * this.getTurnsCurseofyears();
+				hitInfo.BodyDamageMult = 0.02 + this.getTurnsCurseofyears();
 				hitInfo.FatalityChanceMult = 0.0;
-				this.getContainer().getActor().onDamageReceived(this.getContainer().getActor(), this, hitInfo);				
-			}
-            else
-			{
-				break;
-            }
-		}
+				this.getContainer().getActor().onDamageReceived(this.getContainer().getActor(), this, hitInfo);	
+                        }
 
+                        else 
+                        {
+				break
+                        }
+		}
 	}
 
 	function onAdded()
@@ -102,7 +100,7 @@ this.curseofyears_effect <- this.inherit("scripts/skills/skill", {
 
 	function onBeforeActivation()
 	{
-		local BreakChance = this.Math.max(this.getTurnsCurseofyears(), 7 - this.getTurnsCurseofyears());
+		local BreakChance =  this.Math.max(6, 6);
 		local everyoneCurseofyears = true;
 		if (this.Math.rand(1, 9) > BreakChance)
 		{

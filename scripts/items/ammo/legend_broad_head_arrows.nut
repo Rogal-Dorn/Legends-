@@ -103,7 +103,7 @@ this.legend_broad_head_arrows <- this.inherit("scripts/items/ammo/ammo", {
 				_properties.DamageDirectMult -= 0.2;
 				_properties.RangedDamageMult *= 1.1;
 					break;
-
+		}
 	}
 });
 

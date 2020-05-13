@@ -3109,7 +3109,7 @@ Lunge now works off 1h Sword spec, error from when the perks were split. Thanks 
 14.0.0.1  
 
 **Horses**
-Re-enables Horses (
+Re-enables Horses 
 TODO add weapon skills) 
 
 **Relationships**
@@ -3124,7 +3124,6 @@ Adds relationship changes to 18 events
 +20 +5  ranged defense 
 +30 +5  melee defense 
 +40 +5% fatigue 
-
 
 **Morals**
 Adds in most backgrounds' morality alignments. If u notice some that seem weird please post. Very possible I forgot some (Mwah)
@@ -3161,28 +3160,25 @@ Holy flame now also applies burn, bleed and zombie poison to undead
 Holy flame now also applies prayer of life and prayer of faith to allies 
 Holy flame now costs 7AP 
 
-Vala no longer adds uncut gems when taking inscription perks 
 
 
+**Bug fixes and minor tunes**
+
+Offhand Puncture no longer uses main hand dmg (Salty)
+Cultist Sacrifice now has 50% chance to rank up the cultist again (Salty)
+Buckler Bash should no longer cost 1 fat with mastery (Salty)
+Fix for my Oblivion Potion fix, no longer doubles perkpoints and gifted doesn't grant free points (Salty)
 Throw net now uses same attack calculation as throwing a javelin 
 Adds armor piercing and broad head arrows to fletchers 
 Random solo party size raised to 27 
-
-
-
-Offhand Puncture nolonger uses main hand dmg (Salty)
-Cultist Sacrifice now has 50% chance to rank up the cultist again (Salty)
-Buckler Bash should nolonger cost 1 fat with mastery (Salty)
-Fix for my Oblivion Potion fix, nolonger doubles perkpoins and gifted doesn't grant free points (Salty)
-
-**Bug fixes and minor tunes**
-Adventruous nobles are correctly spawned
+Vala no longer adds uncut gems when taking inscription perks 
+Adventurous nobles are correctly spawned
 Fix incorrect perk trees of rangers
 True believer now changes pessimist and irrational to optimist.
-Fix double strike and vengence no effect problem
+Fix double strike and vengeance no effect problem
 Fix porridge not working properly
 Fix 0 cost damaged torso with layered armor turned off
-Peasant Squire gets "duelist" not "deulist" (mwah)
+Peasant Squire gets "duelist" not "duelist" (mwah)
 Spelling errors (mwah)  
 Master archer spawns with layered armor when u have layers on (Mwah)
 Rotting Flesh AP fix (mwah)
