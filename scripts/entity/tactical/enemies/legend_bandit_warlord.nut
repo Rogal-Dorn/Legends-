@@ -143,7 +143,7 @@ this.legend_bandit_warlord <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.Math.rand(1, 100) > 50)
 		{
-			this.m.Items.equip(this.new("scripts/items/" + this.Const.Items.NamedWeapons[this.Math.rand(0, this.Const.Items.NamedWeapons.len() - 1)]));
+			this.m.Items.equip(this.new("scripts/items/" + this.Const.Items.NamedMeleeWeapons[this.Math.rand(0, this.Const.Items.NamedMeleeWeapons.len() - 1)]));
 		}
 		else
 		{

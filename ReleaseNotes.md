@@ -3068,6 +3068,7 @@ Ranger gains Incoming to provide ranged defense to allies
 Militia origin gives "hate nobles" trait to all recruits 
 
 **Fixes**
+<<<<<<< HEAD
 Fixes zombie bit error on warlock start 
 Fixes invisible necromancers that can't be killed (wuxiang)
 Fixes peasant squire not getting duelist  (mwah)
@@ -3168,3 +3169,21 @@ True believer now changes pessimist and irrational to optimist.
 Fix double strike and vengence no effect problem
 Fix porridge not working properly
 Fix 0 cost damaged torso with layered armor turned off
+Peasant Squire gets "duelist" not "deulist" (mwah)
+Spelling errors (mwah)  
+Master archer spawns with layered armor when u have layers on (Mwah)
+Rotting Flesh AP fix (mwah)
+Gender neutralizes the "The most powerful opponent they vanquished was" text (mwah)
+Slaughterer is actually fixed (mwah)
+Fishermen don't increase the cost of taking boats to different towns (mwah)
+Slingstaff now gets slingstaff bash, not staff bash :: Half dmg compared to staff bash & 13 Fat -> 25 Fat (mwah)
+Bandit Warlords can't get ranged fameds they won't use (mwah)
+Typo fixes (thank YOU, the user who reports them)
+Gatherer drops ironwill potion properly now (mwah)
+Bleed rune doesnt crash when person gets swallowed (mwah)
+Fixes lacerate calculation to activate (mwah)
+Fixes knock out staying after removing the shovel with the Gravesman perk (mwah)
+Updates PC Trait to mention that player character's can't be charmed (mwah)
+Hedge Knight Armor "fix" (mwah) //SHould be actually fixed rn itjust gives old legend_armor not new layered_armor 
+Ninetails Attack Accuracy & Damage perks now correctly gives whips that aren't the Ninetails half the bonus instead of 2x the bonus (mwah)
+

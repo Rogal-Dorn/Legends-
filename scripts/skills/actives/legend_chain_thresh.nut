@@ -5,7 +5,7 @@ this.legend_chain_thresh <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.ID = "actives.legend_chain_thresh";
-		this.m.Name = "Chan Thresh";
+		this.m.Name = "Chain Thresh";
 		this.m.Description = "Threshing all the targets around you, foe and friend alike, with a reckless round swing. Not hard to evade because it is not aimed at anything. Has a chance to daze targets hit for one turn. Be careful around your own men unless you want to relieve your payroll!";
 		this.m.KilledString = "Threshed";
 		this.m.Icon = "skills/active_46.png";
