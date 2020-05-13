@@ -3161,3 +3161,10 @@ Cultist Sacrifice now has 50% chance to rank up the cultist again (Salty)
 Buckler Bash should nolonger cost 1 fat with mastery (Salty)
 Fix for my Oblivion Potion fix, nolonger doubles perkpoins and gifted doesn't grant free points (Salty)
 
+**Bug fixes and minor tunes**
+Adventruous nobles are correctly spawned
+Fix incorrect perk trees of rangers
+True believer now changes pessimist and irrational to optimist.
+Fix double strike and vengence no effect problem
+Fix porridge not working properly
+Fix 0 cost damaged torso with layered armor turned off
