@@ -23,7 +23,7 @@ this.legend_peasant_butcher <- this.inherit("scripts/entity/tactical/human", {
 	{
 		this.human.onInit();
 		local b = this.m.BaseProperties;
-		b.setValues(this.Const.Tactical.Actor.Peasant);
+		b.setValues(this.Const.Tactical.Actor.LegendPeasantButcher);
 		this.m.Hitpoints = b.Hitpoints;
 		this.m.ActionPoints = b.ActionPoints;
 		this.m.CurrentProperties = clone b;
