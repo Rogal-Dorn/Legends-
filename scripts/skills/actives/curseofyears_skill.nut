@@ -1,10 +1,12 @@
 this.curseofyears_skill <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		Cooldown = 0
+	},
 	function create()
 	{
 		this.m.ID = "actives.curseofyears";
 		this.m.Name = "Curse of Years";
-		this.m.Description = "The Wizard spits out an ancient curse and his enemies age at an incredible rate. They feel their skin shrivelling, bodies decaying and their hair turns white. They collapse, unable to support themselves at withering age engulfs them.";
+		this.m.Description = "The Wizard spits out an ancient curse, causing his enemies to age at an incredible rate - their hair turning white and skin shrivelling up. ";
 		this.m.Icon = "skills/active_117.png";
 		this.m.IconDisabled = "skills/active_117_sw.png";
 		this.m.Overlay = "active_117";
@@ -33,8 +35,7 @@ this.curseofyears_skill <- this.inherit("scripts/skills/skill", {
 		this.m.ActionPointCost = 6;
 		this.m.FatigueCost = 15;
 		this.m.MinRange = 1;
-		this.m.MaxRange = 8;
-		this.m.MaxLevelDifference = 4;
+		this.m.MaxRange = 6;
 	}
 
 	function getTooltip()
@@ -55,6 +56,24 @@ this.curseofyears_skill <- this.inherit("scripts/skills/skill", {
 				id = 3,
 				type = "text",
 				text = this.getCostString()
+			},
+			{
+				id = 6,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "The damage will etermine in the next turn ,has [color=" + this.Const.UI.Color.PositiveValue + "]17%[/color] suffers a Wound At the next phase has [color=" + this.Const.UI.Color.PositiveValue + "]33%[/color] and so on,to a maximun of [color=" + this.Const.UI.Color.PositiveValue + "]83%[/color] .No armour saves are allowed against Wounds caused by Curse of Years"
+			},
+			{
+				id = 6,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Before target Actvation,has [color=" + this.Const.UI.Color.DamageValue + "]30%[/color] chance break effect"
+			},
+			{
+				id = 6,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Skill has [color=" + this.Const.UI.Color.DamageValue + "]4[/color]  trun cooldwon"
 			}
 		];
 		return ret;
@@ -62,24 +81,21 @@ this.curseofyears_skill <- this.inherit("scripts/skills/skill", {
 
 	function isUsable()
 	{
-		if (!this.skill.isUsable())
-		{
-			return false;
-		}
+		return this.m.Cooldown == 0 && this.skill.isUsable();
 
 		local actor = this.getContainer().getActor();
 		local opponents = actor.getAIAgent().getKnownOpponents();
-		local nightmares = 0;
+		local curseofyears = 0;
 
 		foreach( o in opponents )
 		{
 			if (o.Actor.getSkills().hasSkill("effects.curseofyears"))
 			{
-				nightmares = ++nightmares;
+				curseofyears = ++curseofyears;
 			}
 		}
 
-		if (opponents.len() > 1 && opponents.len() - nightmares <= 1)
+		if (opponents.len() > 1 && opponents.len() - curseofyears <= 1)
 		{
 			return false;
 		}
@@ -108,6 +124,7 @@ this.curseofyears_skill <- this.inherit("scripts/skills/skill", {
 			TargetTile = _targetTile
 		};
 		this.Time.scheduleEvent(this.TimeUnit.Virtual, 500, this.onDelayedEffect.bindenv(this), tag);
+		this.m.Cooldown = this.Math.rand(4, 4);
 		return true;
 	}
 
@@ -124,6 +141,11 @@ this.curseofyears_skill <- this.inherit("scripts/skills/skill", {
 
 		target.getSkills().add(this.new("scripts/skills/effects/curseofyears_effect"));
 		_user.addStacks(5);
+	}
+
+	function onTurnStart()
+	{
+		this.m.Cooldown = this.Math.max(0, this.m.Cooldown - 1);
 	}
 
 });
