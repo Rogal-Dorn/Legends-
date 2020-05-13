@@ -267,7 +267,7 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		{	
 			secondary.extend([
 				"scripts/items/accessory/lionheart_potion_item",
-				"scripts/items/accessory/ironwill_potion_item",
+				"scripts/items/accessory/iron_will_potion_item",
 				"scripts/items/accessory/recovery_potion_item",
 				"scripts/items/accessory/cat_potion_item"
 			]);

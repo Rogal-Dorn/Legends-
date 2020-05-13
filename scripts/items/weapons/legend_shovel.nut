@@ -38,6 +38,11 @@ this.legend_shovel <- this.inherit("scripts/items/weapons/weapon", {
 		b.m.Icon = "skills/shovel_bash.png";
 		b.m.IconDisabled = "skills/shovel_bash_bw.png";
 		this.addSkill(b);
+
+		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_specialist_shovel_skill")) 
+		{
+			this.addSkill(this.new("scripts/skills/actives/knock_out"));
+		}
 	}
 
 	function onUpdateProperties( _properties )
