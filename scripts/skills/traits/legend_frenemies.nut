@@ -31,20 +31,24 @@ this.legend_frenemies <- this.inherit("scripts/skills/traits/character_trait", {
 
 	function onUpdate( _properties )
 	{
-		local spot = this.getPlaceInFormation();
-		foreach ( b in this.World.getPlayerRoster().getAll() 
-		{
-			switch (b.getPlaceInFormation())
-			{
-				case spot - 1:
-				case spot + 1:
-				case spot + 7:
-				case spot + 8:
-				case spot - 6:
-				case spot - 7:				
-				this.getBonus( b )
 
-				break;
+	if (this.getPlaceInFormation() != null)
+		{
+			local spot = this.getPlaceInFormation();
+			foreach ( b in this.World.getPlayerRoster().getAll() )
+			{
+				switch (b.getPlaceInFormation())
+				{
+					case spot - 1:
+					case spot + 1:
+					case spot + 7:
+					case spot + 8:
+					case spot - 6:
+					case spot - 7:				
+					this.getBonus( b )
+
+					break;
+				}
 			}
 		}
 	}

@@ -403,6 +403,7 @@ this.witchhunter_background <- this.inherit("scripts/skills/backgrounds/characte
 			items.equip(this.new("scripts/items/helmets/witchhunter_hat"));
 		}
 	}
+	}
 
 	function onUpdate( _properties )
 	{
