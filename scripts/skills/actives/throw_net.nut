@@ -171,7 +171,6 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 			}	
 		}
 
-
 	}
 
 	function onNetSpawn( _data )

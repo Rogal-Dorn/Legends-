@@ -3087,8 +3087,6 @@ Cheer on fatigue cost reduced to 15
 White wolf bite AP cost and fatigue cost increased, armor damage decreased. 
 Restoring Ancient Breastplate now works. (Salty)
 Fixed Balance's Perk desccription, it still gives armor dmg reduction (Salty)
-<<<<<<< HEAD
-<<<<<<< HEAD
 Adventurous nobles spawn again (wuxiang) 
 Porridge effect works correctly (wuxiang)
 Recruitable Crusader gets stars correctly (wuxiang)
@@ -3104,18 +3102,23 @@ Recruitable Crusader gets stars correctly (wuxiang)
 Removed incorect -10% to hit from Staffsling's Sling Stone that only was in the tooltip (Salty)
 Peasant Butcher now get's correct stats. Nolonger tries to be a normal peasant (Salty)
 Lunge now works off 1h Sword spec, error from when the perks were split. Thanks Vladonis (Salty)
->>>>>>> origin/v14SaltyFixes
 
-14.0.0.1  
 
-**Horses**
-Re-enables Horses 
-TODO add weapon skills) 
+14.0.0.1  Morals and Magic 
+
+
+**Morals**
+Your company has always had a moral alignment, now every recruit also has a moral alignment. 
+* Each background has a moral range they are comfortable with.  
+* Mercenaries get unhappy if you're too immoral or moral for them 
+* Higher level recruits are available if your moral stance align with theirs 
+* 16 more events now have moral changes, so your choices have more effect on your moral standing. 
 
 **Relationships**
 Each mercenary now has relationships with each other mercenary 
 The alignment of each mercenary effects their relationships when they first meet 
-Adds relationship changes to 18 events 
+These relationships can change during 18 events depending on your choices 
+Relationships range from -50 to +50, with each mercenary gaining or losing the following stats based on their relationships with their allies on each of the 6 surrounding tiles. 
 -40 -5% fatigue 
 -30 -5  melee defense 
 -20 -5  ranged defense 
@@ -3125,42 +3128,43 @@ Adds relationship changes to 18 events
 +30 +5  melee defense 
 +40 +5% fatigue 
 
-**Morals**
-Adds in most backgrounds' morality alignments. If u notice some that seem weird please post. Very possible I forgot some (Mwah)
-Adds moral changes to 16 events 
-Mercenaries get unhappy if you're too immoral or moral for them 
-Higher level recruits are available if your moral stance align with theirs 
 
 **Magic**
-Adds 13 new magic backgrounds that spawn when magic is enabled. 
-Transmuter - has seer teleport and levitation  - spawns near workshops
-Spiritualist - has vala spirit skills - spawns near amber collectors 
-Runesmith - has vala rune skills - spawns near gem mines 
-Evoker - has seer damage spells   - spawns near blast furnaces
-Necrosavant - has warlock vampire skills - spawns near wineries 
-Master archer - has ranger attack skills - spawns near fortified outposts
-Illusionist - has seer debuff spells - spawns near herbalist groves 
-Entrancer - has vala trances  - spawns near gatherers huts 
-Enchanter - has vala chants - spawns near wool spinners 
-Diviner - has scry, entice and revolt - spawns near harbors 
-Weidermancer - has warlock zombie skills - spawns near peat pits 
-Skelemancer - has warlock skeleton skills - spawns near leather tanner
-Necromancer - has the necromancer's buggy raise dead skill 
+Adds 12 new magic backgrounds that spawn when magic is enabled. 
+* Transmuter - has seer teleport and levitation  - spawns near workshops
+* Spiritualist - has vala spirit skills - spawns near amber collectors 
+* Runesmith - has vala rune skills - spawns near gem mines 
+* Evoker - has seer damage spells   - spawns near blast furnaces
+* Necrosavant - has warlock vampire skills - spawns near wineries 
+* Illusionist - has seer debuff spells - spawns near herbalist groves 
+* Entrancer - has vala trances  - spawns near gatherers huts 
+* Enchanter - has vala chants - spawns near wool spinners 
+* Diviner - has scry, entice and revolt - spawns near harbors 
+* Weidermancer - has warlock zombie skills - spawns near peat pits 
+* Skelemancer - has warlock skeleton skills - spawns near leather tanner
+* Necromancer - has the necromancer's buggy raise dead skill 
+Adds 10 wizard robe skins and 19 wizard hat skins
 
-Non-commander berserker uses dynamic perks with a new berserker skill group - spawns near mushroom groves 
-Non-commander noble uses dynamic perks with a new captain skill group 
-Historian and Retired soldier gain Noble's captain skill group 
+Other commander skills are also more widely available when magic is enabled 
+* Master archer - has ranger attack skills - spawns near fortified outposts
+* Non-commander berserker uses dynamic perks with a new berserker skill group - spawns near mushroom groves 
+* Non-commander noble uses dynamic perks with a new captain skill group 
+* Historian and Retired soldier gain Noble's captain skill group 
+
+**Horses**
+Re-enables Horses for testing, the weapon skills are still broken.
 
 **Legendary beasts**
-Legendary beasts are now in their own spawn groups, and tend to stay to one type of terrain 
+Legendary beasts are now in their own spawn groups, and tend to stay to one type of terrain.  This means rather than encountering stollwurms among every late game lindwurm group, you'll find them in their own packs in their own terrain. 
 
 **Faith**
-New Origin - Inquisition, a Witch hunter is accompanied by a crusader, a flagellent and a monk on a holy quest. All recruits gain MoB. Holy recruits are cheaper and more plentiful, unholy recruits are more expensive. Begins with high Moral standing. 
-Holy flame now also applies burn, bleed and zombie poison to undead 
-Holy flame now also applies prayer of life and prayer of faith to allies 
-Holy flame now costs 7AP 
-
-
+New Origin - Inquisition, a Witch hunter is accompanied by a crusader, a flagellant and a monk on a holy quest.
+* Begins with high Moral standing. 
+* Holy recruits are cheaper and more plentiful, unholy recruits are more expensive. 
+* All recruits gain Mind over Body.
+* Holy flame now also applies burn, bleed and zombie poison to undead 
+* Holy flame now also applies prayer of life and prayer of faith to allies 
+* Holy flame now costs 7AP 
 
 **Bug fixes and minor tunes**
 
