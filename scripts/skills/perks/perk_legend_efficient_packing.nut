@@ -32,7 +32,7 @@ this.perk_legend_efficient_packing <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		_properties.StaminaMult *= 1.04;
+		_properties.Stamina += 6;
 	}
 
 

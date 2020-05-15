@@ -32,7 +32,7 @@ this.perk_legend_skillful_stacking <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		_properties.StaminaMult *= 1.06;
+		_properties.Stamina += 9;
 	}
 
 });

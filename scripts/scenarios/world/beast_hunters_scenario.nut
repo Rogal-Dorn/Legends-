@@ -173,7 +173,7 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			this.Music.setTrackList(this.Const.Music.CivilianTracks, this.Const.Music.CrossFadeTime);
 			this.World.Events.fire("event.beast_hunters_scenario_intro");
 		}, null);
-		foreach (b in this.World.getPlayerRoster().getAll()) // I DO NOT KNOW A BETTER WAY OF DOING THIS OTHER THAN DOINGIT HERE ???
+		foreach (b in this.World.getPlayerRoster().getAll()) // todo: more efficient approach to this 
 		{
 			foreach (add in this.World.getPlayerRoster().getAll())
 			{

@@ -24,8 +24,9 @@ this.perk_legend_second_wind <- this.inherit("scripts/skills/skill", {
 			if (currentHP < (maxHP / 2))
 			{
 				actor.setFatigue(actor.getFatigue() - 0.5 * actor.getFatigue() );
+			
 				actor.getSkills().add(this.new("scripts/skills/effects/legend_second_wind_effect"));
-
+				actor.getSkills().add(this.new("scripts/skills/effects/recovery_potion_effect"));
 				if (this.m.Container.hasSkill("effects.stunned"))
 				{
 				this.m.Container.removeByID("effects.stunned");
