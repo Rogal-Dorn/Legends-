@@ -115,6 +115,7 @@ this.legend_spiritualist_background <- this.inherit("scripts/skills/backgrounds/
 			[0, "cloth/legend_robes_nun"],
 			[0, "cloth/legend_apron_smith"],
 			[0, "cloth/legend_robes_wizard"],
+			[1, "cloth/legend_robes_magic"],
 			[0, "cloth/legend_sackcloth"],
 			[0, "cloth/legend_sackcloth_patched"],
 			[0, "cloth/legend_sackcloth_tattered"],
@@ -139,7 +140,7 @@ this.legend_spiritualist_background <- this.inherit("scripts/skills/backgrounds/
 		{
 			armor.setUpgrade(plate)
 		}
-		items.equip(this.new("scripts/items/helmets/hood"));
+		items.equip(this.new("scripts/items/helmets/magician_hat"));
 
 	}
 });

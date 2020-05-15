@@ -14,12 +14,12 @@ this.vengeance_effect <- this.inherit("scripts/skills/skill", {
 
 	function getDescription()
 	{
-		return "Having just received a blow, this character is determined to fight even harder! The next attack will inflict [color=" + this.Const.UI.Color.PositiveValue + "]+30%[/color] damage to a single target. If multiple targets are hit, only the first one will receive increased damage. If the attack misses, the effect is wasted.";
+		return "Having just received a blow, this character is determined to fight even harder! The next attack will inflict double damage to a single target. If multiple targets are hit, only the first one will receive increased damage. If the attack misses, the effect is wasted.";
 	}
 	
 	function onUpdate( _properties )
 	{
-		_properties.DamageTotalMult *= 1.3;
+		_properties.DamageTotalMult *= 2.0;
 	}	
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )

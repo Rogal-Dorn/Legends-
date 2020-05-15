@@ -3143,7 +3143,7 @@ Adds 12 new magic backgrounds that spawn when magic is enabled.
 * Weidermancer - has warlock zombie skills - spawns near peat pits 
 * Skelemancer - has warlock skeleton skills - spawns near leather tanner
 * Necromancer - has the necromancer's buggy raise dead skill 
-Adds 10 wizard robe skins and 19 wizard hat skins
+Adds 10 wizard robe skins and 19 wizard hat skins, Gnarled staff buffed to t3 available near woodcutters huts. 
 
 Other commander skills are also more widely available when magic is enabled 
 * Master archer - has ranger attack skills - spawns near fortified outposts
@@ -3166,12 +3166,34 @@ New Origin - Inquisition, a Witch hunter is accompanied by a crusader, a flagell
 * Holy flame now also applies prayer of life and prayer of faith to allies 
 * Holy flame now costs 7AP 
 
+**Perk Changes**
+Spearwaller buffed to 50% fatigue reduction and 25% AP reduction 
+Return Favor buffed to 75% chance to apply 
+Bloodbath changed to bonus percent equal to percent of characters bleeding in combat 
+Smackdown also applies baffled 
+Smashing shields buffed to 100% shield damage 
+Staff block buffed to 16 melee and ranged defense, swordstaves gain 50% of the bonus 
+Feint now applies 'Parried' to an enemy, lowering their defenses by 10 
+Sprint cost to use reduce to 2 AP and 10 Fat, fatigue cost reduced to +50% per tile. 
+Perfect Focus reduced to +75% fatigue cost instead of double 
+True believer now also increases resolve by 5% for each fleeing character on the field 
+Blend in increased to 90% reduction in AI attraction 
+Evasion reduced to 2AP and 10 fat to use. 
+Second wind now also applies the recovery potion effect, granting +10 fatigue recovery for four turns. 
+Vengeance now doubles the damage of the next attack 
+Last stand now also grants immunity from the effects of fresh injuries when below 33% health 
+Efficient packing gives flat +6 fat, skillfull stacking gives a flat +9 fat, instead of percentage bonuses. 
+Resilient now also grants +6 hitpoints 
+
+**integrated noble helm and tabard crafting submod**
+thanks rue 
+
 **Bug fixes and minor tunes**
 
 Offhand Puncture no longer uses main hand dmg (Salty)
 Cultist Sacrifice now has 50% chance to rank up the cultist again (Salty)
 Buckler Bash should no longer cost 1 fat with mastery (Salty)
-Fix for my Oblivion Potion fix, no longer doubles perkpoints and gifted doesn't grant free points (Salty)
+Fix for Oblivion Potion fix, no longer doubles perkpoints and gifted doesn't grant free points (Salty)
 Throw net now uses same attack calculation as throwing a javelin 
 Adds armor piercing and broad head arrows to fletchers 
 Random solo party size raised to 27 

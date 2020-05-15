@@ -1,10 +1,10 @@
-this.legend_wizard_robes <- this.inherit("scripts/items/legend_armor/legend_armor", {
+this.legend_robes_magic <- this.inherit("scripts/items/legend_armor/legend_armor", {
 	m = {},
 	function create()
 	{
 		this.legend_armor.create();
-		this.m.ID = "legend.armor.body.wizard_robes";
-		this.m.Name = "Wizard\'s Robe";
+		this.m.ID = "legend.armor.body.magic_robes";
+		this.m.Name = "Magician\'s Robe";
 		this.m.Description = "A soft shiny robe worn by practictioners of the arcane arts";
 		this.m.IsDroppedAsLoot = true;
 		this.m.ShowOnCharacter = true;
@@ -25,10 +25,10 @@ this.legend_wizard_robes <- this.inherit("scripts/items/legend_armor/legend_armo
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.InventorySound = this.Const.Sound.ClothEquip;
-		this.m.Value = 250;
-		this.m.Condition = 35;
-		this.m.ConditionMax = 35;
-		this.m.StaminaModifier = -0;
+		this.m.Value = 1000;
+		this.m.Condition = 40;
+		this.m.ConditionMax = 40;
+		this.m.StaminaModifier = 1;
 	}
 
 	function updateVariant()

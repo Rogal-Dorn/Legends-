@@ -27,7 +27,14 @@ this.perk_last_stand <- this.inherit("scripts/skills/skill", {
 		{
 			bonus = this.Math.floor(missingPercent - 34) / 2;
 		}
-		
+
+		if( missingPercent >= 66)
+		{
+			_properties.IsAffectedByFreshInjuries = false;
+			_properties.IsAffectedByLosingHitpoints = false;
+		}
+	
+
 		_properties.MeleeDefense += bonus;
 		_properties.RangedDefense += bonus;
 	}
