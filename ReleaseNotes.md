@@ -3063,3 +3063,4 @@ Hedge Knight Armor "fix" (mwah) //SHould be actually fixed rn itjust gives old l
 Ninetails Attack Accuracy & Damage perks now correctly gives whips that aren't the Ninetails half the bonus instead of 2x the bonus (mwah)
 Revolt fix range tooltip (said 2 is 6) (mwah)
 Adds webbed to push the advantage perk because t probably should (mwah)
+fixes female sounds reverting to male sounds (mwah)

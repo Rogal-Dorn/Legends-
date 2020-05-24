@@ -2830,8 +2830,10 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Background.buildDescription(true);
 			if (this.m.Background.isFemaleBackground())
 			{
-				this.m.Gender = 1;
-				this.m.VoiceSet = this.Math.rand(0, this.Const.WomanSounds.len() - 1);
+				this.setGender(1);
+			} 
+			else {
+				this.setGender(0);
 			}
 		}
 
