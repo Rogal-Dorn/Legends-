@@ -3191,9 +3191,11 @@ thanks rue
 **Bug fixes and minor tunes**
 
 Offhand Puncture no longer uses main hand dmg (Salty)
-Cultist Sacrifice now has 50% chance to rank up the cultist again (Salty)
+Cultist Sacrifice now has 50% chance to rank up the cultist again, not 100% (Salty)
 Buckler Bash should no longer cost 1 fat with mastery (Salty)
 Fix for Oblivion Potion fix, no longer doubles perkpoints and gifted doesn't grant free points (Salty)
+Orc Behemoth now isn't puny anymore. Now correctly get's it's own stats. (Salty, tanks to Motanul)
+Matching set now correctly works up to combined armor, not 350 (Salty)
 Throw net now uses same attack calculation as throwing a javelin 
 Adds armor piercing and broad head arrows to fletchers 
 Random solo party size raised to 27 
