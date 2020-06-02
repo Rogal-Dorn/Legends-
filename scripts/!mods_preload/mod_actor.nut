@@ -350,6 +350,26 @@
 					if (tile.getEntity().isAlliedWith(this))
 					{
 						numAlliesAdjacent = ++numAlliesAdjacent;
+						
+						if (this.getFaction() == this.Const.Faction.Player && tile.getEntity().getFaction() == this.Const.Faction.Player && tile.getEntity().isAlive())
+						{
+							// local relTab = this.getActiveRelationshipWith(tile.getEntity());
+							local relTab = this.World.State.getRefFromID(this.getCompanyID()).getActiveRelationshipWith(tile.getEntity());
+							if (relTab == null) 
+							{
+								continue; //onyl continues if someone dies and we check morale off of that
+							}
+							local relNum = relTab.RelationNum;
+							if ( relNum <= -10 )
+							{
+								bravery -= 5;
+							}
+							if ( relNum > 10 )
+							{
+								bravery += 5;
+							}
+						}
+
 					}
 					else
 					{

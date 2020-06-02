@@ -3,8 +3,8 @@ this.morale_check <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "special.morale.check";
 		this.m.Name = "Morale Check";
-		this.m.Icon = "skills/status_effect_01.png";
-		this.m.IconMini = "status_effect_01";
+		this.m.Icon = "skills/status_effect_02.png";
+		this.m.IconMini = "status_effect_02_mini";
 		this.m.Type = this.Const.SkillType.Special | this.Const.SkillType.StatusEffect;
 		this.m.Order = this.Const.SkillOrder.Last;
 		this.m.IsActive = false;
@@ -215,8 +215,8 @@ this.morale_check <- this.inherit("scripts/skills/skill", {
 			break;
 
 		case this.Const.MoraleState.Wavering:
-			this.m.Icon = "skills/status_effect_01.png";
-			this.m.IconMini = "status_effect_01";
+			this.m.Icon = "skills/status_effect_02_c.png";
+			this.m.IconMini = "status_effect_02_c_mini";
 			_properties.BraveryMult *= 0.9;
 			_properties.MeleeSkillMult *= 0.9;
 			_properties.RangedSkillMult *= 0.9;
@@ -225,8 +225,8 @@ this.morale_check <- this.inherit("scripts/skills/skill", {
 			break;
 
 		case this.Const.MoraleState.Breaking:
-			this.m.Icon = "skills/status_effect_01.png";
-			this.m.IconMini = "status_effect_01";
+			this.m.Icon = "skills/status_effect_02_b.png";
+			this.m.IconMini = "status_effect_02_b_mini";
 			_properties.BraveryMult *= 0.8;
 			_properties.MeleeSkillMult *= 0.8;
 			_properties.RangedSkillMult *= 0.8;
@@ -235,8 +235,8 @@ this.morale_check <- this.inherit("scripts/skills/skill", {
 			break;
 
 		case this.Const.MoraleState.Fleeing:
-			this.m.Icon = "skills/status_effect_01.png";
-			this.m.IconMini = "status_effect_01";
+			this.m.Icon = "skills/status_effect_02_a.png";
+			this.m.IconMini = "status_effect_02_a_mini";
 			_properties.BraveryMult *= 0.7;
 			_properties.MeleeSkillMult *= 0.7;
 			_properties.RangedSkillMult *= 0.7;

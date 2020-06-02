@@ -19,6 +19,80 @@ this.relationship_check <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = true;
 	}
 
+	function getTooltip()
+	{
+		local actor = this.getContainer().getActor();
+		local targetTile = actor.getTile();
+		local returnString = "";
+
+			for (local i = 0; i != 6; ++i)
+			{
+				if (!targetTile.hasNextTile(i)) {}
+				else
+				{
+					local tile = targetTile.getNextTile(i);
+					if (tile.IsOccupiedByActor && tile.getEntity().getMoraleState() != this.Const.MoraleState.Fleeing)
+					{
+						
+						if (tile.getEntity().getFaction() == this.Const.Faction.Player)
+						{
+							local relTab = this.World.State.getRefFromID(actor.getCompanyID()).getActiveRelationshipWith(tile.getEntity());
+							local relNum = relTab.RelationNum;
+							returnString += tile.getEntity().getName() + " relation gives: "
+							if ( relNum <= -10 )
+							{
+								returnString += "-5 Resolve";
+							}
+							if ( relNum <= -20 )
+							{
+								returnString += ", -5 Ranged Defense";
+							}
+							if ( relNum <= -30 )
+							{
+								returnString += ", -5 Melee Defense";
+							}
+							if ( relNum > -10 && relNum <= 10)
+							{
+								returnString += "No Bonuses"
+							}
+							if ( relNum > 10 )
+							{
+								returnString += "+5 Resolve";
+							}
+							if ( relNum > 20 )
+							{
+								returnString += "+5 Ranged Defense";
+							}
+							if ( relNum > 30 )
+							{
+								returnString += "+5 Melee Defense";
+							}
+							returnString += ".\n";
+						}
+						
+					}
+				}
+			}
+
+			if (returnString == "") 
+			{
+				returnString = "No Bonuses"
+			}
+
+			return [
+			{
+				id = 1,
+				type = "title",
+				text = this.getName()
+			},
+			{
+				id = 2,
+				type = "description",
+				text = returnString
+			}
+		];
+	}
+
 	function resetModifiers() 
 	{
 		this.m.RCBravery = 0;
@@ -144,39 +218,39 @@ this.relationship_check <- this.inherit("scripts/skills/skill", {
 		this.applyModifiers();
 	}
 
-	function onCombatFinished()
-	{
-		this.m.IsHidden = true;
-		this.unApplyModifiers();
-	}
+	// function onCombatFinished()
+	// {
+	// 	// this.m.IsHidden = true;
+	// 	// this.unApplyModifiers();
+	// }
 
 	function onCombatStarted()
 	{
 		this.m.IsHidden = false;
-		local properties = this.getContainer().getActor().getBaseProperties();
+		// local properties = this.getContainer().getActor().getBaseProperties();
 
-		this.computeModifiers();
+		// this.computeModifiers();
 
-		properties.Bravery += this.m.RCBravery;
-		properties.StaminaMult *= this.m.RCStaminaMult;
-		properties.RangedDefense += this.m.RCRangedDefense;
-		properties.MeleeDefense += this.m.RCMeleeDefense;
+		// properties.Bravery += this.m.RCBravery;
+		// properties.StaminaMult *= this.m.RCStaminaMult;
+		// properties.RangedDefense += this.m.RCRangedDefense;
+		// properties.MeleeDefense += this.m.RCMeleeDefense;
 		
 
 	}
 
-	function onTurnStart()
-	{
-		this.doAllModifiers();
-	}
+	// function onTurnStart()
+	// {
+	// 	// this.doAllModifiers();
+	// }
 
-	function onUpdate( _properties )
-	{
-		if (("State" in this.Tactical) && this.Tactical.State != null)
-		{
-			this.doAllModifiers(_properties);
-		}
-	}
+	// function onUpdate( _properties )
+	// {
+	// 	// if (("State" in this.Tactical) && this.Tactical.State != null)
+	// 	// {
+	// 	// 	//this.doAllModifiers(_properties);
+	// 	// }
+	// }
 
 });
 
