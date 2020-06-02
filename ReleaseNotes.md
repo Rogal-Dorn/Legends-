@@ -3223,5 +3223,7 @@ Fixes knock out staying after removing the shovel with the Gravesman perk (mwah)
 Updates PC Trait to mention that player character's can't be charmed (mwah)
 Hedge Knight Armor "fix" (mwah) //SHould be actually fixed rn itjust gives old legend_armor not new layered_armor 
 Ninetails Attack Accuracy & Damage perks now correctly gives whips that aren't the Ninetails half the bonus instead of 2x the bonus (mwah)
-
+Revolt fix range tooltip (said 2 is 6) (mwah)
+Adds webbed to push the advantage perk because t probably should (mwah)
+fixes female sounds reverting to male sounds (mwah)
 
