@@ -83,6 +83,7 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 				this.Const.Perks.PerkDefs.Recover,
 				this.Const.Perks.PerkDefs.Pathfinder,
 				this.Const.Perks.PerkDefs.Lookout,
+				this.Const.Perks.PerkDefs.LegendSummonHound,
 				this.Const.Perks.PerkDefs.LegendMarkTarget,
 				this.Const.Perks.PerkDefs.LegendBackToBasics,
 				this.Const.Perks.PerkDefs.LegendAlert
@@ -107,6 +108,7 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 				this.Const.Perks.PerkDefs.Feint,
 				this.Const.Perks.PerkDefs.Relentless,
 				this.Const.Perks.PerkDefs.DoubleStrike,
+				this.Const.Perks.PerkDefs.LegendSummonFalcon,
 				this.Const.Perks.PerkDefs.LegendAmmoBinding,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyDirewolf,
 				this.Const.Perks.PerkDefs.DevastatingStrikes
@@ -117,6 +119,7 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 				this.Const.Perks.PerkDefs.SpecDagger,
 				this.Const.Perks.PerkDefs.SpecCrossbow,
 				this.Const.Perks.PerkDefs.SpecBow,
+				this.Const.Perks.PerkDefs.LegendMasterySlings,
 				this.Const.Perks.PerkDefs.LegendMasteryNets,
 				this.Const.Perks.PerkDefs.LegendSpecPoison,
 				this.Const.Perks.PerkDefs.SpecThrowing
@@ -127,6 +130,9 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 				this.Const.Perks.PerkDefs.Footwork,
 				this.Const.Perks.PerkDefs.CloseCombatArcher,
 				this.Const.Perks.PerkDefs.Ballistics,
+				this.Const.Perks.PerkDefs.LegendIncoming,
+				this.Const.Perks.PerkDefs.LegendSummonWolf,
+				this.Const.Perks.PerkDefs.LegendHeightenedReflexes,
 				this.Const.Perks.PerkDefs.LegendLithe,
 				this.Const.Perks.PerkDefs.LegendAmmoBundles,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyOrk,
@@ -137,7 +143,10 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 				this.Const.Perks.PerkDefs.HeadHunter,
 				this.Const.Perks.PerkDefs.Nimble,
 				this.Const.Perks.PerkDefs.Rebound,
-				this.Const.Perks.PerkDefs.LegendCascade,
+				this.Const.Perks.PerkDefs.LegendWindReader,
+				this.Const.Perks.PerkDefs.LegendCascade,	
+				this.Const.Perks.PerkDefs.LegendCoordinatedVolleys,
+				this.Const.Perks.PerkDefs.LegendSummonBear,
 				this.Const.Perks.PerkDefs.LegendPiercingShot,
 				this.Const.Perks.PerkDefs.LegendMatchingSet,
 				this.Const.Perks.PerkDefs.LegendSecondWind,
@@ -149,7 +158,6 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 				this.Const.Perks.PerkDefs.KillingFrenzy,
 				this.Const.Perks.PerkDefs.PerfectFocus,
 				this.Const.Perks.PerkDefs.BattleFlow,
-				this.Const.Perks.PerkDefs.LegendCoordinatedVolleys,
 				this.Const.Perks.PerkDefs.LegendEvasion,
 				this.Const.Perks.PerkDefs.LegendBalance,
 				this.Const.Perks.PerkDefs.LegendHidden,
@@ -231,7 +239,7 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 				0
 			],
 			Stamina = [
-				10,
+				5,
 				10
 			],
 			MeleeSkill = [
@@ -239,20 +247,20 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 				5
 			],
 			RangedSkill = [
-				20,
+				15,
 				20
 			],
 			MeleeDefense = [
-				5,
-				5
+				-5,
+				0
 			],
 			RangedDefense = [
-				5,
+				0,
 				5
 			],
 			Initiative = [
-				0,
-				0
+				-5,
+				-5
 			]
 		};
 		return c;

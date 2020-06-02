@@ -155,10 +155,10 @@ this.legend_chain_hook <- this.inherit("scripts/skills/skill", {
 
 		if (!_user.isHiddenToPlayer() && pullToTile.IsVisibleForPlayer)
 		{
-			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " hooks in " + this.Const.UI.getColorizedEntityName(_targetTile.getEntity()));
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " hooks in " + this.Const.UI.getColorizedEntityName(target));
 		}
 
-		local skills = _targetTile.getEntity().getSkills();
+		local skills = target.getSkills();
 		skills.removeByID("effects.shieldwall");
 		skills.removeByID("effects.spearwall");
 		skills.removeByID("effects.riposte");
@@ -174,7 +174,7 @@ this.legend_chain_hook <- this.inherit("scripts/skills/skill", {
 
 		if (damage == 0)
 		{
-			this.Tactical.getNavigator().teleport(_targetTile.getEntity(), pullToTile, null, null, true);
+			this.Tactical.getNavigator().teleport(target, pullToTile, null, null, true);
 		}
 		else
 		{
@@ -187,7 +187,7 @@ this.legend_chain_hook <- this.inherit("scripts/skills/skill", {
 			tag.HitInfo.DamageFatigue = this.Const.Combat.FatigueReceivedPerHit;
 			tag.HitInfo.DamageDirect = 1.0;
 			tag.HitInfo.BodyPart = this.Const.BodyPart.Body;
-			this.Tactical.getNavigator().teleport(_targetTile.getEntity(), pullToTile, this.onPulledDown, tag, true);
+			this.Tactical.getNavigator().teleport(target, pullToTile, this.onPulledDown, tag, true);
 		}
 
 		return true;

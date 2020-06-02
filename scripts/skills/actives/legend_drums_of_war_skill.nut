@@ -3,8 +3,8 @@ this.legend_drums_of_war_skill <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.ID = "actives.legend_drums_of_war";
-		this.m.Name = "Drums of War";
-		this.m.Description = "Push allies on with your music, lowering the fatigue of all allies within 3 tiles by 4 fatigue. Must be holding a musical instrument to use.";
+		this.m.Name = "War Chant";
+		this.m.Description = "Push allies on with your music, lowering the fatigue of all allies within 8 tiles by 4 fatigue. Must be holding a musical instrument to use.";
 		this.m.Icon = "skills/active_163.png";
 		this.m.IconDisabled = "skills/active_163.png";
 		this.m.Overlay = "active_163";
@@ -30,14 +30,30 @@ this.legend_drums_of_war_skill <- this.inherit("scripts/skills/skill", {
 
 function getTooltip()
 	{
-		local ret = this.getDefaultTooltip();
+		local ret = [
+			{
+				id = 1,
+				type = "title",
+				text = this.getName()
+			},
+			{
+				id = 2,
+				type = "description",
+				text = this.getDescription()
+			},
+			{
+				id = 3,
+				type = "text",
+				text = this.getCostString()
+			}
+		];
 		return ret;
 	}
 	
 	function isUsable()
 	{
 		local mainhand = this.m.Container.getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		return (mainhand.getID() == "weapon.lute" || mainhand.getID() == "weapon.legend_drum") && this.skill.isUsable();
+		return (mainhand.getID() == "weapon.lute" || mainhand.getID() == "weapon.named_lute" || mainhand.getID() == "weapon.legend_drum") && this.skill.isUsable();
 	}
 
 	function onUse( _user, _targetTile )
@@ -57,7 +73,7 @@ function getTooltip()
 				continue;
 			}
 
-			if (myTile.getDistanceTo(a.getTile()) > 3)
+			if (myTile.getDistanceTo(a.getTile()) > 8)
 			{
 				continue;
 			}

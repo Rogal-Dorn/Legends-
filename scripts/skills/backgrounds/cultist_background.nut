@@ -76,7 +76,8 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 				this.Const.Perks.IndestructibleTree
 			],
 			Enemy = [],
-			Class = [this.Const.Perks.NinetailsClassTree]
+			Class = [this.Const.Perks.NinetailsClassTree],
+			Magic = []
 		}
 	}
 
@@ -133,36 +134,36 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 	{
 		local c = {
 			Hitpoints = [
-				-5,
-				5
+				-10,
+				10
 			],
 			Bravery = [
-				15,
+				20,
 				10
 			],
 			Stamina = [
-				3,
-				3
+				-2,
+				8
 			],
 			MeleeSkill = [
-				0,
-				0
+				-5,
+				5
 			],
 			RangedSkill = [
-				0,
-				0
+				-5,
+				5
 			],
 			MeleeDefense = [
-				0,
-				0
+				-5,
+				5
 			],
 			RangedDefense = [
-				0,
-				0
+				-5,
+				5
 			],
 			Initiative = [
-				0,
-				0
+				-5,
+				5
 			]
 		};
 		return c;

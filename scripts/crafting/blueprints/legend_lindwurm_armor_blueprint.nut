@@ -12,19 +12,36 @@ this.legend_lindwurm_armor_blueprint <- this.inherit("scripts/crafting/blueprint
 				Script = "scripts/items/misc/lindwurm_scales_item",
 				Num = 4
 			},
-            {
-				Script = "scripts/items/legend_armor/cloth/legend_padded_surcoat",
-				Num = 1
-			},
-            {
-				Script = "scripts/items/legend_armor/chain/legend_armor_basic_mail",
-				Num = 1
-			},
-            {
-				Script = "scripts/items/legend_armor/plate/legend_armor_scale_coat",
-				Num = 1
-			}
 		];
+		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		{
+
+			ingredients.push({
+				Script = "scripts/items/legend_armor/cloth/legend_padded_surcoat",
+				Num = 1,
+				LegendsArmor = true
+			})
+			ingredients.push({
+				Script = "scripts/items/legend_armor/chain/legend_armor_basic_mail",
+				Num = 1,
+				LegendsArmor = true
+			})
+			ingredients.push({
+				Script = "scripts/items/legend_armor/plate/legend_armor_scale_coat",
+				Num = 1,
+				LegendsArmor = true
+			})
+		}
+
+		if (!this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		{
+			ingredients.push({
+				Script = "scripts/items/armor/coat_of_scales",
+				Num = 1,
+				LegendsArmor = false
+			})
+		}
+
 		this.init(ingredients);
 	}
 

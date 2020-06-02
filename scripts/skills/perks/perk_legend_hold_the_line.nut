@@ -20,10 +20,15 @@ this.perk_legend_hold_the_line <- this.inherit("scripts/skills/skill", {
 		{
 			this.m.Container.add(this.new("scripts/skills/actives/legend_hold_the_line"));
 		}
+		if (!this.m.Container.hasSkill("actives.legend_incoming"))
+		{
+			this.m.Container.add(this.new("scripts/skills/actives/legend_incoming"));
+		}
 	}
 		function onRemoved()
 	{
 		this.m.Container.removeByID("actives.legend_hold_the_line");
+		this.m.Container.removeByID("actives.legend_incoming");
 	}
 
 });

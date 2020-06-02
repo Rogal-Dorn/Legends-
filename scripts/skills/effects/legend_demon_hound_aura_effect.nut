@@ -40,13 +40,34 @@ this.legend_demon_hound_aura_effect <- this.inherit("scripts/skills/skill", {
 	function getPenalty( _properties )
 	{
 		local actor = this.getContainer().getActor();
-
+		
 		if (!actor.isPlacedOnMap() || ("State" in this.Tactical) && this.Tactical.State.isBattleEnded())
 		{
 			return 0;
 		}
-		local worstPenalty = 0;
+		
 		local myTile = actor.getTile();
+		if (myTile == null)
+		{
+			return 0;
+		}
+		
+		if (!("Entities" in this.Tactical))
+		{
+			return 0;
+		}
+		
+		if (this.Tactical.Entities == null)
+		{
+			return 0;
+		}
+		
+		if (!this.Tactical.isActive())
+		{
+			return 0;
+		}
+		
+		local worstPenalty = 0;
 		local targets = this.Tactical.Entities.getAllInstancesAsArray();
 
 		foreach(t in targets)

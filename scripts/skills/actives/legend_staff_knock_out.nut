@@ -104,6 +104,7 @@ this.legend_staff_knock_out <- this.inherit("scripts/skills/skill", {
 				if (_user.getCurrentProperties().IsSpecializedInStaffStun)
 				{
 				target.getSkills().add(this.new("scripts/skills/effects/stunned_effect"));
+				target.getSkills().add(this.new("scripts/skills/effects/staggered_effect"));
 				}
 
 

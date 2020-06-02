@@ -45,81 +45,31 @@ this.legend_noble_event_background <- this.inherit("scripts/skills/backgrounds/c
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[1];
 		this.m.Modifiers.ToolConsumption = this.Const.LegendMod.ResourceModifiers.ToolConsumption[1];
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[1];
-		this.m.CustomPerkTree = [
-			[
-				this.Const.Perks.PerkDefs.Adrenalin,
-				this.Const.Perks.PerkDefs.Backstabber,
-				this.Const.Perks.PerkDefs.CripplingStrikes,
-				this.Const.Perks.PerkDefs.Pathfinder,
-				this.Const.Perks.PerkDefs.NineLives,
-				this.Const.Perks.PerkDefs.Student,
-				this.Const.Perks.PerkDefs.Recover,
-				this.Const.Perks.PerkDefs.BagsAndBelts,
-				this.Const.Perks.PerkDefs.LegendBackToBasics
+		this.m.PerkTreeDynamic = {
+			Weapon = [
+				this.Const.Perks.DaggerTree,
+				this.Const.Perks.PolearmTree,
+				this.Const.Perks.SwordTree,
+				this.Const.Perks.CrossbowTree
 			],
-			[
-				this.Const.Perks.PerkDefs.CoupDeGrace,
-				this.Const.Perks.PerkDefs.Dodge,
-				this.Const.Perks.PerkDefs.HoldOut,
-				this.Const.Perks.PerkDefs.SteelBrow,
-				this.Const.Perks.PerkDefs.QuickHands,
-				this.Const.Perks.PerkDefs.FortifiedMind,
-				this.Const.Perks.PerkDefs.Gifted,
-				this.Const.Perks.PerkDefs.Sprint,
-				this.Const.Perks.PerkDefs.LegendComposure
+			Defense = [
+				this.Const.Perks.MediumArmorTree
 			],
-			[
-				this.Const.Perks.PerkDefs.Brawny,
-				this.Const.Perks.PerkDefs.Anticipation,
-				this.Const.Perks.PerkDefs.Rotation,
-				this.Const.Perks.PerkDefs.Taunt,
-				this.Const.Perks.PerkDefs.RallyTheTroops,
-				this.Const.Perks.PerkDefs.InspiringPresence,
-				this.Const.Perks.PerkDefs.LegendToolsDrawers,
-				this.Const.Perks.PerkDefs.LegendTrueBeliever,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyCaravan
+			Traits = [
+				this.Const.Perks.IntelligentTree,
+				this.Const.Perks.ViciousTree,
+				this.Const.Perks.CalmTree,
+				this.Const.Perks.TrainedTree,
+				this.Const.Perks.FitTree,
+				this.Const.Perks.InspirationalTree
 			],
-			[
-				this.Const.Perks.PerkDefs.SpecPolearm,
-				this.Const.Perks.PerkDefs.SpecSword,
-				this.Const.Perks.PerkDefs.LegendSpecBandage,
-				this.Const.Perks.PerkDefs.LegendEfficientPacking,
-				this.Const.Perks.PerkDefs.LegendBarterConvincing
+			Enemy = [
+				this.Const.Perks.OutlandersTree,
+				this.Const.Perks.NoblesTree,
 			],
-			[
-				this.Const.Perks.PerkDefs.ReachAdvantage,
-				this.Const.Perks.PerkDefs.Overwhelm,
-				this.Const.Perks.PerkDefs.Underdog,
-				this.Const.Perks.PerkDefs.Footwork,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyBandit,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyBarbarian
-			],
-			[
-				this.Const.Perks.PerkDefs.Berserk,
-				this.Const.Perks.PerkDefs.HeadHunter,
-				this.Const.Perks.PerkDefs.BattleForged,
-				this.Const.Perks.PerkDefs.Nimble,
-				this.Const.Perks.PerkDefs.LegendHoldTheLine,
-				this.Const.Perks.PerkDefs.LegendForwardPush,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyMercenary,
-				this.Const.Perks.PerkDefs.LegendCoordinatedVolleys
-			],
-			[
-				this.Const.Perks.PerkDefs.Fearsome,
-				this.Const.Perks.PerkDefs.KillingFrenzy,
-				this.Const.Perks.PerkDefs.Duelist,
-				this.Const.Perks.PerkDefs.Inspire,
-				this.Const.Perks.PerkDefs.LegendBribe,
-				this.Const.Perks.PerkDefs.LegendFieldTriage,
-				this.Const.Perks.PerkDefs.LegendRelax,
-				this.Const.Perks.PerkDefs.LegendFieldRepairs,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyNoble
-			],
-			[],
-			[],
-			[],
-			[]
-		];
+			Class = [],
+			Magic = [this.Const.Perks.CaptainMagicTree]
+		}
 	}
 
 	function getTooltip()

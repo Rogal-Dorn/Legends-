@@ -74,7 +74,8 @@ this.raider_background <- this.inherit("scripts/skills/backgrounds/character_bac
 				this.Const.Perks.CaravanTree,
 				this.Const.Perks.MercenaryTree,
 			],
-			Class = []
+			Class = [],
+			Magic = []
 		}
 	}
 

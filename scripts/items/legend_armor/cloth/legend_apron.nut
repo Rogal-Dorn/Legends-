@@ -8,12 +8,20 @@ this.legend_apron <- this.inherit("scripts/items/legend_armor/legend_armor", {
 		this.m.Description = "A leather apron worn by a craftsman";
 		this.m.IsDroppedAsLoot = true;
 		this.m.ShowOnCharacter = true;
-		this.m.Variants = [1,2,3,4,5,6,7];
+		this.m.Variants = [
+			1,
+			2,
+			3,
+			4,
+			5,
+			6,
+			7
+		];
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.InventorySound = this.Const.Sound.ClothEquip;
-		this.m.Value = 55;
+		this.m.Value = 50;
 		this.m.Condition = 30;
 		this.m.ConditionMax = 30;
 		this.m.StaminaModifier = -2;

@@ -25,6 +25,7 @@ this.legends_sisterhood_scenario <- this.inherit("scripts/scenarios/world/starti
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.getSkills().add(this.new("scripts/skills/perks/perk_hold_out"));
+			bro.m.PerkPointsSpent += 1;
 		}
 
 		local bros = roster.getAll();

@@ -3,7 +3,7 @@ this.legend_reinforced_animal_hide_armor <- this.inherit("scripts/items/legend_a
 	function create()
 	{
 		this.legend_armor_upgrade.create();
-        this.m.Type = this.Const.Items.ArmorUpgrades.Plate
+		this.m.Type = this.Const.Items.ArmorUpgrades.Plate;
 		this.m.ID = "legned_armor.body.reinforced_animal_hide_armor";
 		this.m.Name = "Reinforced Animal Hide Armor";
 		this.m.Description = "A reinforced animal hide armor fashioned from thick leather pieces with added mail and metal scales.";
@@ -17,7 +17,7 @@ this.legend_reinforced_animal_hide_armor <- this.inherit("scripts/items/legend_a
 		this.m.OverlayIcon = "legend_armor/plate/icon_legend_reinforced_animal_hide_armor.png";
 		this.m.OverlayIconLarge = "legend_armor/plate/inventory_legend_reinforced_animal_hide_armor.png";
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
-		this.m.Value = 350;
+		this.m.Value = 175;
 		this.m.Condition = 55;
 		this.m.ConditionMax = 55;
 		this.m.StaminaModifier = -9;

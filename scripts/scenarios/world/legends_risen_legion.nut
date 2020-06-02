@@ -4,7 +4,7 @@ this.legends_risen_legion <- this.inherit("scripts/scenarios/world/starting_scen
 	{
 		this.m.ID = "scenario.legend_risen_legion";
 		this.m.Name = "Legion";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_73.png[/img][/p]An ancient legion risen from the dead to reclaim the world.\n\n[color=#bcad8c]Dreaded:[/color] All towns will begin hostile to you.\n[color=#bcad8c]Beyond death:[/color] Every character in your party has a 66% chance to survive death\n[color=#bcad8c]Dead walking:[/color] You can not hire in towns, but you may find recruits by patrolling near ancient battle sites.\n";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_73.png[/img][/p]An ancient legion risen from the dead to reclaim the world.\n\n[color=#bcad8c]Dreaded:[/color] All towns will begin hostile to you.\n[color=#bcad8c]Beyond death:[/color] Every character in your party has a 66% chance to survive death\n[color=#bcad8c]Dead walking:[/color] You can not hire in towns, but you may find recruits by patrolling near mass graves and sunken castles.\n";
 		this.m.Difficulty = 3;
 		this.m.Order = 12;
 	}
@@ -34,7 +34,7 @@ this.legends_risen_legion <- this.inherit("scripts/scenarios/world/starting_scen
 			bro.getTags().add("PlayerSkeleton");
 			bro.getTags().add("undead");
 			bro.getTags().add("skeleton");
-	
+			bro.getSkills().add(this.new("scripts/skills/traits/legend_deathly_spectre_trait"));
 			bro.getSkills().add(this.new("scripts/skills/racial/skeleton_racial"));
 			bro.getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));
 			local items = bro.getItems();
@@ -362,6 +362,12 @@ foreach (b in this.World.getPlayerRoster().getAll())
 	function onHiredByScenario( bro )
 	{
 		bro.getSkills().add(this.new("scripts/skills/traits/legend_deathly_spectre_trait"));
+
+		if (!bro.getSkills().hasSkill("racial.skeleton") && bro.getTags().has("skeleton"))
+		{
+		bro.getSkills().add(this.new("scripts/skills/racial/skeleton_racial"));
+		bro.getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));
+		}
 		local r = this.Math.rand(0, 2);
 		if (bro.getBackground().isOutlawBackground())
 		{

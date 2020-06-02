@@ -1,6 +1,7 @@
 this.legend_vampire_lord <- this.inherit("scripts/entity/tactical/actor", {
 	m = {
-		WasInjured = false
+		WasInjured = false,
+		IsLady = false
 	},
 	function create()
 	{
@@ -104,6 +105,9 @@ this.legend_vampire_lord <- this.inherit("scripts/entity/tactical/actor", {
 
 	function onUpdateInjuryLayer()
 	{
+
+
+
 		local p = this.getHitpointsPct();
 		local bodyBrush = this.getSprite("body").getBrush().Name;
 		local headBrush = this.getSprite("head").getBrush().Name;
@@ -121,6 +125,14 @@ this.legend_vampire_lord <- this.inherit("scripts/entity/tactical/actor", {
 			this.getSprite("body_injury").setBrush("bust_skeleton_body_04_injured");
 			this.getSprite("head").setBrush("bust_vampire_lord_head_02");
 			this.getSprite("injury").setBrush("bust_skeleton_head_04_injured");
+		}
+		else if (this.m.IsLady == true)
+		{
+			this.getSprite("body").setBrush("bust_vampire_lady_body_01");
+			this.getSprite("body_injury").setBrush("bust_skeleton_body_05_injured");
+			this.getSprite("head").setBrush("bust_vampire_lady_head_01");
+			this.getSprite("injury").setBrush("bust_skeleton_head_05_injured");
+			this.getSprite("hair").setBrush("hair_black_25");		
 		}
 		else
 		{
@@ -184,7 +196,6 @@ this.legend_vampire_lord <- this.inherit("scripts/entity/tactical/actor", {
 		{
 			body_detail.setBrush("bust_skeleton_detail_03")
 		}
-
 		local head = this.addSprite("head");
 		head.setBrush("bust_vampire_lord_head_01");
 		head.Color = body.Color;
@@ -192,21 +203,27 @@ this.legend_vampire_lord <- this.inherit("scripts/entity/tactical/actor", {
 		this.addSprite("old_head");
 		local injury = this.addSprite("injury");
 		injury.setBrush("bust_skeleton_head_05_injured");
-
 		local beard = this.addSprite("beard");
 		beard.setBrightness(0.7);
 		beard.varyColor(0.02, 0.02, 0.02);
 		local hair = this.addSprite("hair");
 		hair.Color = beard.Color;
-
 		if (this.Math.rand(1, 100) <= 60)
 		{
 			hair.setBrush("bust_vampire_lord_hair_01")
 		}
-
 		this.setSpriteOffset("hair", this.createVec(0, -3));
 		this.addSprite("helmet");
 		this.addSprite("helmet_damage");
+
+		if (this.Math.rand(1, 100) <= 25)
+		{
+			this.getSprite("body").setBrush("bust_vampire_lady_body_01");
+			this.getSprite("head").setBrush("bust_vampire_lady_head_01");
+			this.getSprite("hair").setBrush("hair_black_25");
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_terrifying_visage"));
+			this.m.IsLady = true;
+		}
 
 
 		local body_blood = this.addSprite("body_blood");

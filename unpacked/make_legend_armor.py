@@ -24,7 +24,9 @@ layers = [
     {"name": "bust_legend_gambeson_wolf", "layer": "cloth", "base": True},
     {"name": "bust_ancient_cloth",  "layer": "cloth", "min": 1, "max": 4, "base": True},
     {"name": "bust_ancient_cloth_restored",  "layer": "cloth", "min": 1, "max": 5, "base": True},
-
+	{"name": "bust_peasant_dress",  "layer": "cloth", "min": 1, "max": 11, "base": True},
+	{"name": "bust_wizard_robe",  "layer": "cloth", "min": 1, "max": 11, "base": True},
+	
     {"name": "bust_legend_ancient_double_mail", "layer": "chain"},
     {"name": "bust_legend_ancient_mail", "layer": "chain"},
     {"name": "bust_legend_basic_mail", "layer": "chain"},
@@ -49,6 +51,7 @@ layers = [
     {"name": "bust_legend_leather_jacket", "layer": "plate", "min": 1, "max": 9},
     {"name": "bust_legend_leather_jacket_simple", "layer": "plate", "min": 1, "max": 6},
     {"name": "bust_legend_leather_jacket_named", "layer": "plate", "min": 1, "max": 2},
+	{"name": "bust_legend_leather_jacket_named_02", "layer": "plate", "min": 1, "max": 16},
     {"name": "bust_legend_leather_lamellar_harness_heavy", "layer": "plate"},
     {"name": "bust_legend_leather_lamellar_harness_reinforced", "layer": "plate"},
     {"name": "bust_legend_leather_lamellar_heavy", "layer": "plate"},
@@ -82,9 +85,9 @@ layers = [
 
     {"name": "legend_tabard",  "layer": "tabard", "min": 1, "max": 20},
     {"name": "legend_tabard",  "layer": "tabard", "min": 101, "max": 113},
-    {"name": "legend_tabard_named", "layer": "tabard", "min": 1, "max": 1},
+    {"name": "legend_tabard_named", "layer": "tabard", "min": 1, "max": 12},
 
-    {"name": "cloak",  "layer": "cloak", "min": 1, "max": 35},
+    {"name": "cloak",  "layer": "cloak", "min": 1, "max": 36},
     {"name": "cloak_rich",  "layer": "cloak", "min": 1, "max": 5},
     {"name": "cloak_spider", "layer": "cloak"},
     {"name": "sash",  "layer": "cloak", "min": 1, "max": 1},
@@ -133,6 +136,130 @@ helmets = r"""
 <sprite id="runed_legend_ancient_legionaire_restored_damaged" offsetY="35" ic="FF353857" width="184" height="222" img="entity\legend_helmets\runed_legend_ancient_legionaire_restored_damaged.png" left="-41" right="43" top="-29" bottom="105" />
 <sprite id="runed_legend_ancient_legionaire_restored_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF353957" width="191" height="185" img="entity\legend_helmets\runed_legend_ancient_legionaire_restored_dead.png" left="-88" right="22" top="-92" bottom="10" />
 
+<sprite id="wizard_cowl_02" offsetY="35" offsetY="35" ic="FF403F3F" width="104" height="142" img="entity\legend_helmets\wizard_cowl_02.png" left="-41" right="43" top="-28" bottom="106" />
+<sprite id="wizard_cowl_02_damaged" offsetY="35" ic="FF353857" width="184" height="222" img="entity\legend_helmets\wizard_cowl_02_damaged.png" left="-41" right="43" top="-29" bottom="105" />
+<sprite id="wizard_cowl_02_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF353957" width="191" height="185" img="entity\legend_helmets\wizard_cowl_02_dead.png" left="-88" right="22" top="-92" bottom="10" />
+<sprite id="runed_wizard_cowl_02" offsetY="35" ic="FF383D5F" width="184" height="222" img="entity\legend_helmets\runed_wizard_cowl_02.png" left="-41" right="43" top="-28" bottom="106" />
+<sprite id="runed_wizard_cowl_02_damaged" offsetY="35" ic="FF353857" width="184" height="222" img="entity\legend_helmets\runed_wizard_cowl_02_damaged.png" left="-41" right="43" top="-29" bottom="105" />
+<sprite id="runed_wizard_cowl_02_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF353957" width="191" height="185" img="entity\legend_helmets\runed_wizard_cowl_02_dead.png" left="-88" right="22" top="-92" bottom="10" />
+
+
+<sprite id="wizard_cowl_02" offsetY="35" ic="FF403F3F" width="104" height="142" img="entity\helmets\wizard_cowl_02.png" left="-39" right="45" top="-36" bottom="60" />
+<sprite id="wizard_cowl_02_damaged" offsetY="35" ic="FF41403F" width="104" height="142" img="entity\helmets\wizard_cowl_02_damaged.png" left="-37" right="45" top="-29" bottom="61" />
+<sprite id="wizard_cowl_02_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444343" width="131" height="125" img="entity\helmets\wizard_cowl_02_dead.png" left="-57" right="25" top="-63" bottom="3" />
+<sprite id="runed_wizard_cowl_02" offsetY="35" ic="FF403F3F" width="104" height="142" img="entity\helmets\runed_wizard_cowl_02.png" left="-39" right="45" top="-36" bottom="60" />
+<sprite id="runed_wizard_cowl_02_damaged" offsetY="35" ic="FF41403F" width="104" height="142" img="entity\helmets\runed_wizard_cowl_02_damaged.png" left="-37" right="45" top="-29" bottom="61" />
+<sprite id="runed_wizard_cowl_02_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444343" width="131" height="125" img="entity\helmets\runed_wizard_cowl_02_dead.png" left="-57" right="25" top="-63" bottom="3" />
+<sprite id="wizard_cowl_03" offsetY="35" ic="FF403F3F" width="104" height="142" img="entity\helmets\wizard_cowl_03.png" left="-39" right="45" top="-36" bottom="60" />
+<sprite id="wizard_cowl_03_damaged" offsetY="35" ic="FF41403F" width="104" height="142" img="entity\helmets\wizard_cowl_03_damaged.png" left="-37" right="45" top="-29" bottom="61" />
+<sprite id="wizard_cowl_03_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444343" width="131" height="125" img="entity\helmets\wizard_cowl_03_dead.png" left="-57" right="25" top="-63" bottom="3" />
+<sprite id="runed_wizard_cowl_03" offsetY="35" ic="FF403F3F" width="104" height="142" img="entity\helmets\runed_wizard_cowl_03.png" left="-39" right="45" top="-36" bottom="60" />
+<sprite id="runed_wizard_cowl_03_damaged" offsetY="35" ic="FF41403F" width="104" height="142" img="entity\helmets\runed_wizard_cowl_03_damaged.png" left="-37" right="45" top="-29" bottom="61" />
+<sprite id="runed_wizard_cowl_03_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444343" width="131" height="125" img="entity\helmets\runed_wizard_cowl_03_dead.png" left="-57" right="25" top="-63" bottom="3" />
+<sprite id="wizard_cowl_04" offsetY="35" ic="FF403F3F" width="104" height="142" img="entity\helmets\wizard_cowl_04.png" left="-39" right="45" top="-36" bottom="60" />
+<sprite id="wizard_cowl_04_damaged" offsetY="35" ic="FF41403F" width="104" height="142" img="entity\helmets\wizard_cowl_04_damaged.png" left="-37" right="45" top="-29" bottom="61" />
+<sprite id="wizard_cowl_04_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444343" width="131" height="125" img="entity\helmets\wizard_cowl_04_dead.png" left="-57" right="25" top="-63" bottom="3" />
+<sprite id="runed_wizard_cowl_04" offsetY="35" ic="FF403F3F" width="104" height="142" img="entity\helmets\runed_wizard_cowl_04.png" left="-39" right="45" top="-36" bottom="60" />
+<sprite id="runed_wizard_cowl_04_damaged" offsetY="35" ic="FF41403F" width="104" height="142" img="entity\helmets\runed_wizard_cowl_04_damaged.png" left="-37" right="45" top="-29" bottom="61" />
+<sprite id="runed_wizard_cowl_04_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444343" width="131" height="125" img="entity\helmets\runed_wizard_cowl_04_dead.png" left="-57" right="25" top="-63" bottom="3" />
+<sprite id="wizard_cowl_05" offsetY="35" ic="FF403F3F" width="104" height="142" img="entity\helmets\wizard_cowl_05.png" left="-39" right="45" top="-36" bottom="60" />
+<sprite id="wizard_cowl_05_damaged" offsetY="35" ic="FF41403F" width="104" height="142" img="entity\helmets\wizard_cowl_05_damaged.png" left="-37" right="45" top="-29" bottom="61" />
+<sprite id="wizard_cowl_05_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444343" width="131" height="125" img="entity\helmets\wizard_cowl_05_dead.png" left="-57" right="25" top="-63" bottom="3" />
+<sprite id="runed_wizard_cowl_05" offsetY="35" ic="FF403F3F" width="104" height="142" img="entity\helmets\runed_wizard_cowl_05.png" left="-39" right="45" top="-36" bottom="60" />
+<sprite id="runed_wizard_cowl_05_damaged" offsetY="35" ic="FF41403F" width="104" height="142" img="entity\helmets\runed_wizard_cowl_05_damaged.png" left="-37" right="45" top="-29" bottom="61" />
+<sprite id="runed_wizard_cowl_05_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444343" width="131" height="125" img="entity\helmets\runed_wizard_cowl_05_dead.png" left="-57" right="25" top="-63" bottom="3" />
+<sprite id="wizard_cowl_06" offsetY="35" ic="FF403F3F" width="104" height="142" img="entity\helmets\wizard_cowl_06.png" left="-39" right="45" top="-36" bottom="60" />
+<sprite id="wizard_cowl_06_damaged" offsetY="35" ic="FF41403F" width="104" height="142" img="entity\helmets\wizard_cowl_06_damaged.png" left="-37" right="45" top="-29" bottom="61" />
+<sprite id="wizard_cowl_06_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444343" width="131" height="125" img="entity\helmets\wizard_cowl_06_dead.png" left="-57" right="25" top="-63" bottom="3" />
+<sprite id="runed_wizard_cowl_06" offsetY="35" ic="FF403F3F" width="104" height="142" img="entity\helmets\runed_wizard_cowl_06.png" left="-39" right="45" top="-36" bottom="60" />
+<sprite id="runed_wizard_cowl_06_damaged" offsetY="35" ic="FF41403F" width="104" height="142" img="entity\helmets\runed_wizard_cowl_06_damaged.png" left="-37" right="45" top="-29" bottom="61" />
+<sprite id="runed_wizard_cowl_06_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444343" width="131" height="125" img="entity\helmets\runed_wizard_cowl_06_dead.png" left="-57" right="25" top="-63" bottom="3" />
+<sprite id="wizard_cowl_07" offsetY="35" ic="FF403F3F" width="104" height="142" img="entity\helmets\wizard_cowl_07.png" left="-39" right="45" top="-36" bottom="60" />
+<sprite id="wizard_cowl_07_damaged" offsetY="35" ic="FF41403F" width="104" height="142" img="entity\helmets\wizard_cowl_07_damaged.png" left="-37" right="45" top="-29" bottom="61" />
+<sprite id="wizard_cowl_07_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444343" width="131" height="125" img="entity\helmets\wizard_cowl_07_dead.png" left="-57" right="25" top="-63" bottom="3" />
+<sprite id="runed_wizard_cowl_07" offsetY="35" ic="FF403F3F" width="104" height="142" img="entity\helmets\runed_wizard_cowl_07.png" left="-39" right="45" top="-36" bottom="60" />
+<sprite id="runed_wizard_cowl_07_damaged" offsetY="35" ic="FF41403F" width="104" height="142" img="entity\helmets\runed_wizard_cowl_07_damaged.png" left="-37" right="45" top="-29" bottom="61" />
+<sprite id="runed_wizard_cowl_07_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444343" width="131" height="125" img="entity\helmets\runed_wizard_cowl_07_dead.png" left="-57" right="25" top="-63" bottom="3" />
+<sprite id="wizard_cowl_08" offsetY="35" ic="FF403F3F" width="104" height="142" img="entity\helmets\wizard_cowl_08.png" left="-39" right="45" top="-36" bottom="60" />
+<sprite id="wizard_cowl_08_damaged" offsetY="35" ic="FF41403F" width="104" height="142" img="entity\helmets\wizard_cowl_08_damaged.png" left="-37" right="45" top="-29" bottom="61" />
+<sprite id="wizard_cowl_08_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444343" width="131" height="125" img="entity\helmets\wizard_cowl_08_dead.png" left="-57" right="25" top="-63" bottom="3" />
+<sprite id="runed_wizard_cowl_08" offsetY="35" ic="FF403F3F" width="104" height="142" img="entity\helmets\runed_wizard_cowl_08.png" left="-39" right="45" top="-36" bottom="60" />
+<sprite id="runed_wizard_cowl_08_damaged" offsetY="35" ic="FF41403F" width="104" height="142" img="entity\helmets\runed_wizard_cowl_08_damaged.png" left="-37" right="45" top="-29" bottom="61" />
+<sprite id="runed_wizard_cowl_08_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444343" width="131" height="125" img="entity\helmets\runed_wizard_cowl_08_dead.png" left="-57" right="25" top="-63" bottom="3" />
+<sprite id="wizard_cowl_09" offsetY="35" ic="FF403F3F" width="104" height="142" img="entity\helmets\wizard_cowl_09.png" left="-39" right="45" top="-36" bottom="60" />
+<sprite id="wizard_cowl_09_damaged" offsetY="35" ic="FF41403F" width="104" height="142" img="entity\helmets\wizard_cowl_09_damaged.png" left="-37" right="45" top="-29" bottom="61" />
+<sprite id="wizard_cowl_09_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444343" width="131" height="125" img="entity\helmets\wizard_cowl_09_dead.png" left="-57" right="25" top="-63" bottom="3" />
+<sprite id="runed_wizard_cowl_09" offsetY="35" ic="FF403F3F" width="104" height="142" img="entity\helmets\runed_wizard_cowl_09.png" left="-39" right="45" top="-36" bottom="60" />
+<sprite id="runed_wizard_cowl_09_damaged" offsetY="35" ic="FF41403F" width="104" height="142" img="entity\helmets\runed_wizard_cowl_09_damaged.png" left="-37" right="45" top="-29" bottom="61" />
+<sprite id="runed_wizard_cowl_09_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444343" width="131" height="125" img="entity\helmets\runed_wizard_cowl_09_dead.png" left="-57" right="25" top="-63" bottom="3" />
+<sprite id="wizard_cowl_10" offsetY="35" ic="FF403F3F" width="104" height="142" img="entity\helmets\wizard_cowl_10.png" left="-39" right="45" top="-36" bottom="60" />
+<sprite id="wizard_cowl_10_damaged" offsetY="35" ic="FF41403F" width="104" height="142" img="entity\helmets\wizard_cowl_10_damaged.png" left="-37" right="45" top="-29" bottom="61" />
+<sprite id="wizard_cowl_10_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444343" width="131" height="125" img="entity\helmets\wizard_cowl_10_dead.png" left="-57" right="25" top="-63" bottom="3" />
+<sprite id="runed_wizard_cowl_10" offsetY="35" ic="FF403F3F" width="104" height="142" img="entity\helmets\runed_wizard_cowl_10.png" left="-39" right="45" top="-36" bottom="60" />
+<sprite id="runed_wizard_cowl_10_damaged" offsetY="35" ic="FF41403F" width="104" height="142" img="entity\helmets\runed_wizard_cowl_10_damaged.png" left="-37" right="45" top="-29" bottom="61" />
+<sprite id="runed_wizard_cowl_10_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444343" width="131" height="125" img="entity\helmets\runed_wizard_cowl_10_dead.png" left="-57" right="25" top="-63" bottom="3" />
+<sprite id="wizard_cowl_11" offsetY="35" ic="FF403F3F" width="104" height="142" img="entity\helmets\wizard_cowl_11.png" left="-39" right="45" top="-36" bottom="60" />
+<sprite id="wizard_cowl_11_damaged" offsetY="35" ic="FF41403F" width="104" height="142" img="entity\helmets\wizard_cowl_11_damaged.png" left="-37" right="45" top="-29" bottom="61" />
+<sprite id="wizard_cowl_11_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444343" width="131" height="125" img="entity\helmets\wizard_cowl_11_dead.png" left="-57" right="25" top="-63" bottom="3" />
+<sprite id="runed_wizard_cowl_11" offsetY="35" ic="FF403F3F" width="104" height="142" img="entity\helmets\runed_wizard_cowl_11.png" left="-39" right="45" top="-36" bottom="60" />
+<sprite id="runed_wizard_cowl_11_damaged" offsetY="35" ic="FF41403F" width="104" height="142" img="entity\helmets\runed_wizard_cowl_11_damaged.png" left="-37" right="45" top="-29" bottom="61" />
+<sprite id="runed_wizard_cowl_11_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444343" width="131" height="125" img="entity\helmets\runed_wizard_cowl_11_dead.png" left="-57" right="25" top="-63" bottom="3" />
+<sprite id="wizard_cowl_12" offsetY="35" ic="FF403F3F" width="104" height="142" img="entity\helmets\wizard_cowl_12.png" left="-39" right="45" top="-36" bottom="60" />
+<sprite id="wizard_cowl_12_damaged" offsetY="35" ic="FF41403F" width="104" height="142" img="entity\helmets\wizard_cowl_12_damaged.png" left="-37" right="45" top="-29" bottom="61" />
+<sprite id="wizard_cowl_12_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444343" width="131" height="125" img="entity\helmets\wizard_cowl_12_dead.png" left="-57" right="25" top="-63" bottom="3" />
+<sprite id="runed_wizard_cowl_12" offsetY="35" ic="FF403F3F" width="104" height="142" img="entity\helmets\runed_wizard_cowl_12.png" left="-39" right="45" top="-36" bottom="60" />
+<sprite id="runed_wizard_cowl_12_damaged" offsetY="35" ic="FF41403F" width="104" height="142" img="entity\helmets\runed_wizard_cowl_12_damaged.png" left="-37" right="45" top="-29" bottom="61" />
+<sprite id="runed_wizard_cowl_12_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444343" width="131" height="125" img="entity\helmets\runed_wizard_cowl_12_dead.png" left="-57" right="25" top="-63" bottom="3" />
+<sprite id="wizard_cowl_13" offsetY="35" ic="FF403F3F" width="104" height="142" img="entity\helmets\wizard_cowl_13.png" left="-39" right="45" top="-36" bottom="60" />
+<sprite id="wizard_cowl_13_damaged" offsetY="35" ic="FF41403F" width="104" height="142" img="entity\helmets\wizard_cowl_13_damaged.png" left="-37" right="45" top="-29" bottom="61" />
+<sprite id="wizard_cowl_13_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444343" width="131" height="125" img="entity\helmets\wizard_cowl_13_dead.png" left="-57" right="25" top="-63" bottom="3" />
+<sprite id="runed_wizard_cowl_13" offsetY="35" ic="FF403F3F" width="104" height="142" img="entity\helmets\runed_wizard_cowl_13.png" left="-39" right="45" top="-36" bottom="60" />
+<sprite id="runed_wizard_cowl_13_damaged" offsetY="35" ic="FF41403F" width="104" height="142" img="entity\helmets\runed_wizard_cowl_13_damaged.png" left="-37" right="45" top="-29" bottom="61" />
+<sprite id="runed_wizard_cowl_13_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444343" width="131" height="125" img="entity\helmets\runed_wizard_cowl_13_dead.png" left="-57" right="25" top="-63" bottom="3" />
+<sprite id="wizard_cowl_14" offsetY="35" ic="FF403F3F" width="104" height="142" img="entity\helmets\wizard_cowl_14.png" left="-39" right="45" top="-36" bottom="60" />
+<sprite id="wizard_cowl_14_damaged" offsetY="35" ic="FF41403F" width="104" height="142" img="entity\helmets\wizard_cowl_14_damaged.png" left="-37" right="45" top="-29" bottom="61" />
+<sprite id="wizard_cowl_14_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444343" width="131" height="125" img="entity\helmets\wizard_cowl_14_dead.png" left="-57" right="25" top="-63" bottom="3" />
+<sprite id="runed_wizard_cowl_14" offsetY="35" ic="FF403F3F" width="104" height="142" img="entity\helmets\runed_wizard_cowl_14.png" left="-39" right="45" top="-36" bottom="60" />
+<sprite id="runed_wizard_cowl_14_damaged" offsetY="35" ic="FF41403F" width="104" height="142" img="entity\helmets\runed_wizard_cowl_14_damaged.png" left="-37" right="45" top="-29" bottom="61" />
+<sprite id="runed_wizard_cowl_14_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444343" width="131" height="125" img="entity\helmets\runed_wizard_cowl_14_dead.png" left="-57" right="25" top="-63" bottom="3" />
+<sprite id="wizard_cowl_15" offsetY="35" ic="FF403F3F" width="104" height="142" img="entity\helmets\wizard_cowl_15.png" left="-39" right="45" top="-36" bottom="60" />
+<sprite id="wizard_cowl_15_damaged" offsetY="35" ic="FF41403F" width="104" height="142" img="entity\helmets\wizard_cowl_15_damaged.png" left="-37" right="45" top="-29" bottom="61" />
+<sprite id="wizard_cowl_15_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444343" width="131" height="125" img="entity\helmets\wizard_cowl_15_dead.png" left="-57" right="25" top="-63" bottom="3" />
+<sprite id="runed_wizard_cowl_15" offsetY="35" ic="FF403F3F" width="104" height="142" img="entity\helmets\runed_wizard_cowl_15.png" left="-39" right="45" top="-36" bottom="60" />
+<sprite id="runed_wizard_cowl_15_damaged" offsetY="35" ic="FF41403F" width="104" height="142" img="entity\helmets\runed_wizard_cowl_15_damaged.png" left="-37" right="45" top="-29" bottom="61" />
+<sprite id="runed_wizard_cowl_15_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444343" width="131" height="125" img="entity\helmets\runed_wizard_cowl_15_dead.png" left="-57" right="25" top="-63" bottom="3" />
+ <sprite id="wizard_cowl_16" offsetY="35" ic="FF403F3F" width="104" height="142" img="entity\helmets\wizard_cowl_16.png" left="-39" right="45" top="-36" bottom="60" />
+<sprite id="wizard_cowl_16_damaged" offsetY="35" ic="FF41403F" width="104" height="142" img="entity\helmets\wizard_cowl_16_damaged.png" left="-37" right="45" top="-29" bottom="61" />
+<sprite id="wizard_cowl_16_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444343" width="131" height="125" img="entity\helmets\wizard_cowl_16_dead.png" left="-57" right="25" top="-63" bottom="3" />
+<sprite id="runed_wizard_cowl_16" offsetY="35" ic="FF403F3F" width="104" height="142" img="entity\helmets\runed_wizard_cowl_16.png" left="-39" right="45" top="-36" bottom="60" />
+<sprite id="runed_wizard_cowl_16_damaged" offsetY="35" ic="FF41403F" width="104" height="142" img="entity\helmets\runed_wizard_cowl_16_damaged.png" left="-37" right="45" top="-29" bottom="61" />
+<sprite id="runed_wizard_cowl_16_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444343" width="131" height="125" img="entity\helmets\runed_wizard_cowl_16_dead.png" left="-57" right="25" top="-63" bottom="3" />
+ <sprite id="wizard_cowl_17" offsetY="35" ic="FF403F3F" width="104" height="142" img="entity\helmets\wizard_cowl_17.png" left="-39" right="45" top="-36" bottom="60" />
+<sprite id="wizard_cowl_17_damaged" offsetY="35" ic="FF41403F" width="104" height="142" img="entity\helmets\wizard_cowl_17_damaged.png" left="-37" right="45" top="-29" bottom="61" />
+<sprite id="wizard_cowl_17_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444343" width="131" height="125" img="entity\helmets\wizard_cowl_17_dead.png" left="-57" right="25" top="-63" bottom="3" />
+<sprite id="runed_wizard_cowl_17" offsetY="35" ic="FF403F3F" width="104" height="142" img="entity\helmets\runed_wizard_cowl_17.png" left="-39" right="45" top="-36" bottom="60" />
+<sprite id="runed_wizard_cowl_17_damaged" offsetY="35" ic="FF41403F" width="104" height="142" img="entity\helmets\runed_wizard_cowl_17_damaged.png" left="-37" right="45" top="-29" bottom="61" />
+<sprite id="runed_wizard_cowl_17_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444343" width="131" height="125" img="entity\helmets\runed_wizard_cowl_17_dead.png" left="-57" right="25" top="-63" bottom="3" />
+ <sprite id="wizard_cowl_18" offsetY="35" ic="FF403F3F" width="104" height="142" img="entity\helmets\wizard_cowl_18.png" left="-39" right="45" top="-36" bottom="60" />
+<sprite id="wizard_cowl_18_damaged" offsetY="35" ic="FF41403F" width="104" height="142" img="entity\helmets\wizard_cowl_18_damaged.png" left="-37" right="45" top="-29" bottom="61" />
+<sprite id="wizard_cowl_18_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444343" width="131" height="125" img="entity\helmets\wizard_cowl_18_dead.png" left="-57" right="25" top="-63" bottom="3" />
+<sprite id="runed_wizard_cowl_18" offsetY="35" ic="FF403F3F" width="104" height="142" img="entity\helmets\runed_wizard_cowl_18.png" left="-39" right="45" top="-36" bottom="60" />
+<sprite id="runed_wizard_cowl_18_damaged" offsetY="35" ic="FF41403F" width="104" height="142" img="entity\helmets\runed_wizard_cowl_18_damaged.png" left="-37" right="45" top="-29" bottom="61" />
+<sprite id="runed_wizard_cowl_18_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444343" width="131" height="125" img="entity\helmets\runed_wizard_cowl_18_dead.png" left="-57" right="25" top="-63" bottom="3" />
+ <sprite id="wizard_cowl_19" offsetY="35" ic="FF403F3F" width="104" height="142" img="entity\helmets\wizard_cowl_19.png" left="-39" right="45" top="-36" bottom="60" />
+<sprite id="wizard_cowl_19_damaged" offsetY="35" ic="FF41403F" width="104" height="142" img="entity\helmets\wizard_cowl_19_damaged.png" left="-37" right="45" top="-29" bottom="61" />
+<sprite id="wizard_cowl_19_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444343" width="131" height="125" img="entity\helmets\wizard_cowl_19_dead.png" left="-57" right="25" top="-63" bottom="3" />
+<sprite id="runed_wizard_cowl_19" offsetY="35" ic="FF403F3F" width="104" height="142" img="entity\helmets\runed_wizard_cowl_19.png" left="-39" right="45" top="-36" bottom="60" />
+<sprite id="runed_wizard_cowl_19_damaged" offsetY="35" ic="FF41403F" width="104" height="142" img="entity\helmets\runed_wizard_cowl_19_damaged.png" left="-37" right="45" top="-29" bottom="61" />
+<sprite id="runed_wizard_cowl_19_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444343" width="131" height="125" img="entity\helmets\runed_wizard_cowl_19_dead.png" left="-57" right="25" top="-63" bottom="3" />
+ <sprite id="wizard_cowl_20" offsetY="35" ic="FF403F3F" width="104" height="142" img="entity\helmets\wizard_cowl_20.png" left="-39" right="45" top="-36" bottom="60" />
+<sprite id="wizard_cowl_20_damaged" offsetY="35" ic="FF41403F" width="104" height="142" img="entity\helmets\wizard_cowl_20_damaged.png" left="-37" right="45" top="-29" bottom="61" />
+<sprite id="wizard_cowl_20_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444343" width="131" height="125" img="entity\helmets\wizard_cowl_20_dead.png" left="-57" right="25" top="-63" bottom="3" />
+<sprite id="runed_wizard_cowl_20" offsetY="35" ic="FF403F3F" width="104" height="142" img="entity\helmets\runed_wizard_cowl_20.png" left="-39" right="45" top="-36" bottom="60" />
+<sprite id="runed_wizard_cowl_20_damaged" offsetY="35" ic="FF41403F" width="104" height="142" img="entity\helmets\runed_wizard_cowl_20_damaged.png" left="-37" right="45" top="-29" bottom="61" />
+<sprite id="runed_wizard_cowl_20_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444343" width="131" height="125" img="entity\helmets\runed_wizard_cowl_20_dead.png" left="-57" right="25" top="-63" bottom="3" />
+ 
+
 """
 
 def main():
@@ -168,7 +295,9 @@ def main():
                     javelin_path=os.path.join("entity", "legend_armor", d["layer"], name + "_dead_javelin.png")
                 )
                 s = Template(t)
-                F.write(s.substitute(opts))
+                text = s.substitute(opts)
+                text.replace("/", "\\")
+                F.write(text)
 
                 if "base" in d:
                     srcF = os.path.join(os.path.dirname(os.path.abspath(__file__)), "dead_arrows.png")

@@ -52,7 +52,8 @@ this.militia_background <- this.inherit("scripts/skills/backgrounds/character_ba
 				this.Const.Perks.BanditTree,
 				this.Const.Perks.BarbarianTree
 			],
-			Class = [this.Const.Perks.MilitiaClassTree]
+			Class = [this.Const.Perks.MilitiaClassTree],
+			Magic = []
 		}
 	}
 

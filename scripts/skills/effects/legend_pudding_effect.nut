@@ -30,6 +30,7 @@ this.legend_pudding_effect <- this.inherit("scripts/skills/skill", {
 	function getTooltip()
 	{
 		local rate = this.Math.floor(this.m.Amount / 20);
+		local turns = this.m.TurnsLeft;
 
 		local ret = [
 			{
@@ -46,19 +47,19 @@ this.legend_pudding_effect <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/health.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "] +" + healrate + "[/color] Healing per turn"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "] +" + healrate + "[/color] Healing per turn for " + turns + " turns"
 			},
 			{
 				id = 11,
 				type = "text",
 				icon = "ui/icons/fatigue.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "] +" + rate + "[/color] Fatigue loss per turn"
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "] +" + rate + "[/color] Fatigue loss per turn for " + turns + " turns"
 			},
 			{
 				id = 11,
 				type = "text",
 				icon = "ui/icons/bravery.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "] + 20 [/color] to morale checks"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "] + 20 [/color] to morale checks for " + turns + " turns"
 			}
 		];
 		return ret;
@@ -68,8 +69,6 @@ this.legend_pudding_effect <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		local rate = this.Math.floor(this.m.Amount / 20);
-		local actor = this.getContainer().getActor();
-		actor.setHitpoints(this.Math.min(actor.getHitpointsMax(), actor.getHitpoints() + rate));
 		_properties.MoraleCheckBravery[1] += 20;
 		_properties.FatigueRecoveryRate -= rate;
 	}
@@ -83,6 +82,9 @@ this.legend_pudding_effect <- this.inherit("scripts/skills/skill", {
 
 	function onTurnEnd()
 	{
+		local rate = this.Math.floor(this.m.Amount / 20);
+		local actor = this.getContainer().getActor();
+		actor.setHitpoints(this.Math.min(actor.getHitpointsMax(), actor.getHitpoints() + rate));
 		if (--this.m.TurnsLeft <= 0)
 		{
 			this.removeSelf();

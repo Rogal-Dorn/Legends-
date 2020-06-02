@@ -19,7 +19,7 @@ this.perk_legend_specialist_shield_skill <- this.inherit("scripts/skills/skill",
 		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
 		if (item != null && item.isItemType(this.Const.Items.ItemType.Shield))
 		{
-			_properties.MeleeDefense += 10;
+			_properties.RangedDefense += 10;
 		}
 	}
 

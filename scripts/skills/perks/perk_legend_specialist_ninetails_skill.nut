@@ -27,7 +27,7 @@ this.perk_legend_specialist_ninetails_skill <- this.inherit("scripts/skills/skil
 			}
 			if(item.getID() == "weapon.battle_whip" || item.getID() == "weapon.thorned_whip" || item.getID() == "weapon.named_battle_whip" || item.getID() == "weapon.flail" || item.getID() == "weapon.two_handed_flail" || item.getID() == "weapon.two_handed_wooden_flail" || item.getID() == "weapon.legend_pole_flail" || item.getID() == "weapon.legend_ranged_reinforced_flail" || item.getID() == "weapon.legend_ranged_wooden_flail")
 			{
-				_properties.MeleeSkill += this.Math.floor(resolve * 0.2);
+				_properties.MeleeSkill += this.Math.floor(resolve * 0.05	);
 			}
 		}
 	}

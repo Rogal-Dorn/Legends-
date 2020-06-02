@@ -59,7 +59,8 @@ this.legend_ironmonger_background <- this.inherit("scripts/skills/backgrounds/ch
 			Class = [
 					this.Const.Perks.HammerClassTree,
 					this.Const.Perks.RepairClassTree
-					]
+					],
+			Magic = []
 		}
 	}
 

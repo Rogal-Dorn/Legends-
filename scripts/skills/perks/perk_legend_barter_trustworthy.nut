@@ -1,6 +1,6 @@
 this.perk_legend_barter_trustworthy <- this.inherit("scripts/skills/skill", {
 	m = {
-		Amount = 0.05
+		Amount = 0.02
 	},
 	function create()
 	{

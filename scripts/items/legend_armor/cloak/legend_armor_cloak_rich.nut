@@ -5,7 +5,7 @@ this.legend_armor_cloak_rich <- this.inherit("scripts/items/legend_armor/legend_
 	function create()
 	{
 		this.legend_named_armor_upgrade.create();
-		this.m.Type = this.Const.Items.ArmorUpgrades.Cloak
+		this.m.Type = this.Const.Items.ArmorUpgrades.Cloak;
 		this.m.ID = "legend_armor.cloak_rich";
 		this.m.Name = "";
 		this.m.NameList = [
@@ -18,21 +18,27 @@ this.legend_armor_cloak_rich <- this.inherit("scripts/items/legend_armor/legend_
 		];
 		this.m.Description = "A silk embroidered cloak made with the finest clothes. Those who wear it feel as if a king";
 		this.m.ArmorDescription = "Has a flowing embroidered cloak";
-		this.m.Variants = [1,2,3,4,5];
+		this.m.Variants = [
+			1,
+			2,
+			3,
+			4,
+			5
+		];
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
-		this.m.Value = 25000;
-		this.m.Condition = 25;
-		this.m.ConditionMax = 25;
-		this.m.StaminaModifier = -1;
-		this.randomizeValues()
+		this.m.Value = 10000;
+		this.m.Condition = 35;
+		this.m.ConditionMax = 35;
+		this.m.StaminaModifier = -2;
+		this.randomizeValues();
 	}
 
 	function randomizeValues()
 	{
-		this.m.Condition = this.Math.floor(this.m.Condition * this.Math.rand(25, 40) * 0.01) * 1.0;
+		this.m.Condition = this.Math.rand(30, 40);
 		this.m.ConditionMax = this.m.Condition;
-		this.m.BraveryMult = this.Math.rand(103, 108) * 0.01;
+		this.m.BraveryMult = this.Math.rand(104, 110) * 0.01;
 	}
 
 	function updateVariant()
@@ -44,7 +50,7 @@ this.legend_armor_cloak_rich <- this.inherit("scripts/items/legend_armor/legend_
 		this.m.Icon = "legend_armor/cloak/cloak_rich_" + variant + ".png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "legend_armor/cloak/icon_cloak_rich_" + variant + ".png";
-		this.m.OverlayIconLarge = "legend_armor/cloak/inventory_cloak_rich_"  + variant + ".png";
+		this.m.OverlayIconLarge = "legend_armor/cloak/inventory_cloak_rich_" + variant + ".png";
 	}
 
 	function getTooltip()
@@ -67,7 +73,7 @@ this.legend_armor_cloak_rich <- this.inherit("scripts/items/legend_armor/legend_
 			id = 15,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Increase the Resolve of the wearer by [color=" + this.Const.UI.Color.PositiveValue + "]+" + val +"%[/color]"
+			text = "Increase the Resolve of the wearer by [color=" + this.Const.UI.Color.PositiveValue + "]+" + val + "%[/color]"
 		});
 	}
 

@@ -82,7 +82,7 @@ this.legend_danger_pay <- this.inherit("scripts/skills/skill", {
 	{
 		local target = _targetTile.getEntity();
 		local wage = target.getBaseProperties().DailyWage;
-		local cost = this.Math.pow(wage, 1.3) -1;
+		local cost = this.Math.floor(this.Math.pow(wage, 1.3) - 1);
 		this.World.Assets.addMoney(cost);
 		target.setMoraleState(this.Const.MoraleState.Confident);
 		return true;

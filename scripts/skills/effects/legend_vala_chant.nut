@@ -106,9 +106,12 @@ this.legend_vala_chant <- this.inherit("scripts/skills/skill", {
 
 	function isInRange()
 	{
-		if (this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile()) <= this.m.Range)
+		if (this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile()) != null)
 		{
-			return true;
+			if (this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile()) <= this.m.Range)
+			{
+				return true;
+			}
 		}
 
 		return false;

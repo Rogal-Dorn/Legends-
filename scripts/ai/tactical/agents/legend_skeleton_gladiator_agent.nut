@@ -24,8 +24,6 @@ this.legend_skeleton_gladiator_agent <- this.inherit("scripts/ai/tactical/agent"
 
 	function onAddBehaviors()
 	{
-		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_flee"));
-		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_retreat"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_defend"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_defend_rotation"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_break_free"));

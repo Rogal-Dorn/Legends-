@@ -23,7 +23,7 @@ this.perfect_focus_effect <- this.inherit("scripts/skills/skill", {
 		if (!this.isGarbage())
 		{
 			_properties.IsSkillUseHalfCost = true;
-			_properties.FatigueEffectMult *= 2.0;
+			_properties.FatigueEffectMult *= 1.75;
 		}
 	}
 

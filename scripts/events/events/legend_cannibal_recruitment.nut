@@ -39,9 +39,23 @@ this.legend_cannibal_recruitment <- this.inherit("scripts/events/event", {
 			{
 				local roster = this.World.getTemporaryRoster();
 				_event.m.Cannibal = roster.create("scripts/entity/tactical/player");
-				_event.m.Cannibal.setStartValuesEx([
-					"legend_cannibal_background"
-				]);
+						if (this.World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
+							{
+							_event.m.Cannibal.getTags().add("PlayerSkeleton");
+							_event.m.Cannibal.getTags().add("undead");
+							_event.m.Cannibal.getTags().add("skeleton");
+							_event.m.Cannibal.setStartValuesEx([
+								"legend_cannibal_background"
+							]);
+							_event.m.Cannibal.getSkills().add(this.new("scripts/skills/racial/skeleton_racial"));
+							_event.m.Cannibal.getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));	
+							}
+						else
+						{
+							_event.m.Cannibal.setStartValuesEx([
+								"legend_cannibal_background"
+							]);
+						}
 				this.Characters.push(_event.m.Cannibal.getImagePath());
 			}
 
@@ -50,6 +64,11 @@ this.legend_cannibal_recruitment <- this.inherit("scripts/events/event", {
 
 	function onUpdateScore()
 	{
+		if (this.World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
+		{
+			return;
+		}
+
 		if (this.World.getPlayerRoster().getSize() >= this.World.Assets.getBrothersMax())
 		{
 			return;

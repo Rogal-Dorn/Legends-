@@ -17,6 +17,15 @@ this.perk_feint <- this.inherit("scripts/skills/skill", {
 	{
 		local actor = this.getContainer().getActor();
 		actor.setFatigue(this.Math.max(0, actor.getFatigue() - this.Math.floor(_skill.getFatigueCost() * 0.2)));
+		if (!_targetEntity.getSkills().hasSkill("effects.legend_parried"))
+		{
+			_targetEntity.getSkills().add(this.new("scripts/skills/effects/legend_parried_effect"));
+
+			if (!user.isHiddenToPlayer() && _targetEntity.getTile().IsVisibleForPlayer)
+			{
+				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(user) + " feinted " + this.Const.UI.getColorizedEntityName(_targetEntity) + " leaving them parried");
+			}
+		}
 	}
 
 

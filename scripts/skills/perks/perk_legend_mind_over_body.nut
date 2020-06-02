@@ -28,7 +28,7 @@ this.perk_legend_mind_over_body <- this.inherit("scripts/skills/skill", {
 		}
 
 		local resolve = actor.getCurrentProperties().getBravery();
-		local fraction = resolve / 75;
+		local fraction = resolve / 60;
 		local normal = this.Math.floor(fraction * 100);
 		local bonus = normal / 100;
 
@@ -38,6 +38,10 @@ this.perk_legend_mind_over_body <- this.inherit("scripts/skills/skill", {
 	function getTooltip()
 	{
 		local bonus = this.getBonus();
+		if (bonus > 1)
+		{
+		bonus = this.Math.pow(bonus, 0.5);
+		}
 		local reduction = this.Math.round((1 - 1 / bonus)*100);
 		local tooltip = this.skill.getTooltip();
 
@@ -68,6 +72,7 @@ this.perk_legend_mind_over_body <- this.inherit("scripts/skills/skill", {
 		local bonus = this.getBonus();
 		if (bonus > 1)
 		{
+		bonus = this.Math.pow(bonus, 0.5);
 		_properties.FatigueEffectMult *= 1.0 / bonus;
 		}
 	}

@@ -4,7 +4,7 @@ this.return_favor_effect <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "effects.return_favor";
 		this.m.Name = "Return Favor";
-		this.m.Description = "This character has assumed a defensive stance seeking to incapacitate anyone attacking him.";
+		this.m.Description = "This character has assumed a defensive stance seeking to incapacitate anyone attacking.";
 		this.m.Icon = "ui/perks/perk_31.png";
 		this.m.IconMini = "perk_31_mini";
 		this.m.Overlay = "perk_31";
@@ -30,7 +30,7 @@ this.return_favor_effect <- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] chance to stun any opponent missing with a melee attack (resistances and immunities still apply)."
+				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] chance to stun and stagger any opponent missing with a melee attack (resistances and immunities still apply)."
 			}
 		];
 	}
@@ -41,7 +41,7 @@ this.return_favor_effect <- this.inherit("scripts/skills/skill", {
 
 		if (!_skill.isRanged())
 		{
-			if (this.Math.rand(1, 100) <= 50 && !_attacker.getCurrentProperties().IsImmuneToStun && !_attacker.getSkills().hasSkill("effects.stunned"))
+			if (this.Math.rand(1, 100) <= 75 && !_attacker.getCurrentProperties().IsImmuneToStun && !_attacker.getSkills().hasSkill("effects.stunned"))
 			{
 				local d = _attacker.getTile().getDistanceTo(user.getTile());
 				local item = user.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
@@ -49,12 +49,13 @@ this.return_favor_effect <- this.inherit("scripts/skills/skill", {
 				if (d <= 1 || item != null && item.isItemType(this.Const.Items.ItemType.Weapon) && d <= item.getRangeMax())
 				{
 					local stunned_effect = this.new("scripts/skills/effects/stunned_effect");
+					local staggered_effect = this.new("scripts/skills/effects/staggered_effect");
 					stunned_effect.addTurns(1);
 					_attacker.getSkills().add(stunned_effect);
-
+					_attacker.getSkills().add(staggered_effect);
 					if (!user.isHiddenToPlayer() && !_attacker.isHiddenToPlayer())
 					{
-						this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(user) + " has stunned " + this.Const.UI.getColorizedEntityName(_attacker) + " for one turn");
+						this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(user) + " has stunned and staggered " + this.Const.UI.getColorizedEntityName(_attacker) + " for one turn");
 					}
 				}
 			}

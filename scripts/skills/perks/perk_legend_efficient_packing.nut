@@ -1,6 +1,6 @@
 this.perk_legend_efficient_packing <- this.inherit("scripts/skills/skill", {
 	m = {
-		StashSize = 5
+		StashSize = 8
 	},
 	function create()
 	{
@@ -29,5 +29,11 @@ this.perk_legend_efficient_packing <- this.inherit("scripts/skills/skill", {
 	{
 		return this.m.StashSize;
 	}
+
+	function onUpdate( _properties )
+	{
+		_properties.Stamina += 6;
+	}
+
 
 });

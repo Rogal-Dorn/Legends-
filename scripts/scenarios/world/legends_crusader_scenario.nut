@@ -27,6 +27,7 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 		bro.getSkills().add(this.new("scripts/skills/perks/perk_fortified_mind"));
 		bro.getSkills().add(this.new("scripts/skills/perks/perk_rebound"));
 		bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_roster_1"));
+		bro.m.PerkPointsSpent += 3;
 		bro.setPlaceInFormation(4);
 		bro.setVeteranPerks(2);
 		bro.getTags().set("IsPlayerCharacter", true);
@@ -133,21 +134,6 @@ foreach (b in this.World.getPlayerRoster().getAll())
 		return false;
 	}
 
-	function onUpdateDraftList( _list )
-	{
-		if (_list.len() < 10)
-		{
-			_list.push("monk_background");
-		}
-
-		local r;
-		r = this.Math.rand(0, 999);
-		if (r == 0)
-		{
-			_list.push("legend_crusader_background");
-		}
-	}
-
 	function onHiredByScenario( bro )
 	{
 		if (bro.getBackground().isCrusaderRecruitBackground())
@@ -171,8 +157,8 @@ foreach (b in this.World.getPlayerRoster().getAll())
 		{
 			if (bro.getBackground().isCrusaderRecruitBackground())
 			{
-				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.9);
-				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.9);
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.75);
+				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.75);
 
 			}
 			else
@@ -201,6 +187,68 @@ foreach (b in this.World.getPlayerRoster().getAll())
 		}
 
 		_tree.addPerk(this.Const.Perks.PerkDefs.FortifiedMind);
+	}
+
+	function onUpdateDraftList( _list )
+	{
+		if (_list.len() < 5)
+		{
+			local r;
+			r = this.Math.rand(0, 2);
+			if (r == 0)
+			{
+			_list.push("flagellant_background");
+			}
+			r = this.Math.rand(0, 4);
+			if (r == 0)
+			{
+			_list.push("monk_background");
+			}
+			r = this.Math.rand(0, 6);
+			if (r == 0)
+			{
+			_list.push("legend_nun_background");
+			}
+			r = this.Math.rand(0, 9);
+			if (r == 0)
+			{
+				_list.push("witchhunter_background");
+			}
+			r = this.Math.rand(0, 49);
+			if (r == 0)
+			{
+				_list.push("legend_crusader_background");
+			}
+		}
+		if (_list.len() >= 5)
+		{
+			local r;
+			r = this.Math.rand(0, 5);
+			if (r == 0)
+			{
+				_list.push("flagellant_background");
+			}
+			r = this.Math.rand(0, 6);
+			if (r == 0)
+			{
+				_list.push("monk_background");
+			}
+			r = this.Math.rand(0, 4);
+			if (r == 0)
+			{
+				_list.push("legend_nun_background");
+			}
+			r = this.Math.rand(0, 5);
+			if (r == 0)
+			{
+				_list.push("witchhunter_background");
+			}
+			r = this.Math.rand(0, 19);
+			if (r == 0)
+			{
+				_list.push("legend_crusader_background");
+			}
+		}
 	}
 
 });

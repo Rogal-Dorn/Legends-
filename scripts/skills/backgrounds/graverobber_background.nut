@@ -54,7 +54,8 @@ this.graverobber_background <- this.inherit("scripts/skills/backgrounds/characte
 				this.Const.Perks.GhoulTree,
 				this.Const.Perks.SkeletonTree
 			],
-			Class = [this.Const.Perks.ShovelClassTree]
+			Class = [this.Const.Perks.ShovelClassTree],
+			Magic = []
 		}
 	}
 
