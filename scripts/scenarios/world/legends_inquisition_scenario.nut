@@ -122,6 +122,14 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 			this.World.Events.fire("event.legend_inquisition_scenario_intro");
 		}, null);
 
+		foreach (b in this.World.getPlayerRoster().getAll()) // todo: more efficient approach to this 
+		{
+			foreach (add in this.World.getPlayerRoster().getAll())
+			{
+				b.changeActiveRelationship(add, this.Math.rand(0, 20));
+			}
+		}
+
 	}
 
 	function onInit()
