@@ -63,7 +63,7 @@ this.legend_diviner_background <- this.inherit("scripts/skills/backgrounds/chara
 			],
 			Traits = [
 				this.Const.Perks.IntelligentTree,
-				this.Const.Perks.DeviousTree,
+				this.Const.Perks.CalmTree,
 				this.Const.Perks.OrganisedTree,
 				this.Const.Perks.InspirationalTree
 			],
