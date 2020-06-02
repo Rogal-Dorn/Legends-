@@ -4,7 +4,7 @@ this.mood_check <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "special.mood_check";
 		this.m.Name = "Mood Check";
-		this.m.Icon = "skills/status_effect_02.png";
+		this.m.Icon = "skills/status_effect_01.png";
 		this.m.IconMini = "";
 		this.m.Type = this.Const.SkillType.Special | this.Const.SkillType.Trait;
 		this.m.Order = this.Const.SkillOrder.Trait + 600;
