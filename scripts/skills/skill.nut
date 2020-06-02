@@ -1686,11 +1686,25 @@ this.skill <- {
 
 		if (this.m.InjuriesOnBody != null && bodyPart == this.Const.BodyPart.Body)
 		{
-			injuries = this.m.InjuriesOnBody;
+		if (_info.TargetEntity.getTags().has("skeleton"))
+			{
+				injuries = this.Const.Injury.SkeletonBody;
+			}
+			else
+			{
+				injuries = this.m.InjuriesOnBody;
+			}
 		}
 		else if (this.m.InjuriesOnHead != null && bodyPart == this.Const.BodyPart.Head)
 		{
-			injuries = this.m.InjuriesOnHead;
+			if (_info.TargetEntity.getTags().has("skeleton"))
+			{
+				injuries = this.Const.Injury.SkeletonHead;
+			}
+			else
+			{
+				injuries = this.m.InjuriesOnHead;
+			}		
 		}
 
 		local hitInfo = clone this.Const.Tactical.HitInfo;

@@ -11,7 +11,7 @@ this.legend_grapple<- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_grapple";
 		this.m.Name = "Grapple";
-		this.m.Description = "Grab hold and restrain a target, heavily fatiguing them. Grappled targets can not keep up their Shieldwall, Spearwall or similar defensive skills.";
+		this.m.Description = "Grab hold and restrain a target, heavily fatiguing them. Grappled targets can not keep up their Shieldwall, Spearwall or similar defensive skills. Offhand must be free to use.";
 		this.m.Icon = "skills/grapple_square.png";
 		this.m.IconDisabled = "skills/grapple_square_bw.png";
 		this.m.Overlay = "active_32";
@@ -96,7 +96,7 @@ this.legend_grapple<- this.inherit("scripts/skills/skill", {
 		{
 			local target = _targetTile.getEntity();
 
-			if ((_user.getCurrentProperties().IsSpecializedInFists || this.Math.rand(1, 100) <= this.m.StunChance) && !target.getCurrentProperties().IsImmuneToStun && !target.getSkills().hasSkill("effects.legend_grappled"))
+			if ((_user.getCurrentProperties().IsSpecializedInFists || this.Math.rand(1, 100) <= this.m.StunChance) && !target.getCurrentProperties().IsImmuneToKnockBackAndGrab && !target.getSkills().hasSkill("effects.legend_grappled"))
 			{
 				target.getSkills().add(this.new("scripts/skills/effects/legend_grappled_effect"));
 				if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
@@ -110,11 +110,25 @@ this.legend_grapple<- this.inherit("scripts/skills/skill", {
 		return success;
 	}
 
+	function isUsable()
+	{
+		local mainhand = this.m.Container.getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		local offhand = this.m.Container.getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
+		return ((offhand == null || mainhand == null) || this.getContainer().hasSkill("effects.disarmed")) && this.skill.isUsable();
+	}
+
+	function isHidden()
+	{
+		local mainhand = this.m.Container.getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		local offhand = this.m.Container.getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
+		return mainhand != null && offhand != null && !this.getContainer().hasSkill("effects.disarmed") || this.skill.isHidden() || this.m.Container.getActor().isStabled();
+	}
+
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
 		if (_skill == this)
 		{
-			_properties.DamageTotalMult *= 0.3;
+			_properties.DamageTotalMult *= 0.2;
 			_properties.FatigueDealtPerHitMult += 8.0;
 		}
 	}

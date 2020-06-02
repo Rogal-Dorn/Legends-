@@ -2768,6 +2768,105 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/wind_reader.png",
 		IconDisabled = "ui/perks/wind_reader_bw.png",
 		Const = "LegendWindReader"
+	},
+	{
+		ID = "perk.legend_choke",
+		Script = "scripts/skills/perks/perk_legend_choke",
+		Name = this.Const.Strings.PerkName.LegendChoke,
+		Tooltip = this.Const.Strings.PerkDescription.LegendChoke,
+		Icon = "ui/perks/choke_circle.png",
+		IconDisabled = "ui/perks/choke_circle_bw.png",
+		Const = "LegendChoke"
+	},
+	{
+		ID = "perk.legend_barter_paymaster",
+		Script = "scripts/skills/perks/perk_legend_barter_paymaster",
+		Name = this.Const.Strings.PerkName.LegendPaymaster,
+		Tooltip = this.Const.Strings.PerkDescription.LegendPaymaster,
+		Icon = "ui/perks/paymaster.png",
+		IconDisabled = "ui/perks/paymaster_bw.png",
+		Const = "LegendPaymaster"
+	},
+	{
+		ID = "perk.legend_quartermaster",
+		Script = "scripts/skills/perks/perk_legend_quartermaster",
+		Name = this.Const.Strings.PerkName.LegendQuartermaster,
+		Tooltip = this.Const.Strings.PerkDescription.LegendQuartermaster,
+		Icon = "ui/perks/food56.png",
+		IconDisabled = "ui/perks/food56_bw.png",
+		Const = "LegendQuartermaster"
+	},
+	{
+		ID = "perk.legend_barter_greed",
+		Script = "scripts/skills/perks/perk_legend_barter_greed",
+		Name = this.Const.Strings.PerkName.LegendBarterGreed,
+		Tooltip = this.Const.Strings.PerkDescription.LegendBarterGreed,
+		Icon = "ui/perks/gold56.png",
+		IconDisabled = "ui/perks/gold56_bw.png",
+		Const = "LegendBarterGreed"
+	},
+	{
+		ID = "perk.legend_prayer_of_life",
+		Script = "scripts/skills/perks/perk_legend_prayer_of_life",
+		Name = this.Const.Strings.PerkName.LegendPrayerOfLife,
+		Tooltip = this.Const.Strings.PerkDescription.LegendPrayerOfLife,
+		Icon = "ui/perks/prayer_green.png",
+		IconDisabled = "ui/perks/prayer_green_bw.png",
+		Const = "LegendPrayerOfLife"
+	},
+	{
+		ID = "perk.legend_prayer_of_faith",
+		Script = "scripts/skills/perks/perk_legend_prayer_of_faith",
+		Name = this.Const.Strings.PerkName.LegendPrayerOfFaith,
+		Tooltip = this.Const.Strings.PerkDescription.LegendPrayerOfFaith,
+		Icon = "ui/perks/prayer_purple.png",
+		IconDisabled = "ui/perks/prayer_purple_bw.png",
+		Const = "LegendPrayerOfFaith"
+	},
+	{
+		ID = "perk.legend_holyflame",
+		Script = "scripts/skills/perks/perk_legend_holyflame",
+		Name = this.Const.Strings.PerkName.LegendHolyFlame,
+		Tooltip = this.Const.Strings.PerkDescription.LegendHolyFlame,
+		Icon = "ui/perks/holybluefire_circle.png",
+		IconDisabled = "ui/perks/holyfire_circle_bw.png",
+		Const = "LegendHolyFlame"
+	},
+	{
+		ID = "perk.legend_shields_up",
+		Script = "scripts/skills/perks/perk_legend_shields_up",
+		Name = this.Const.Strings.PerkName.LegendShieldsUp,
+		Tooltip = this.Const.Strings.PerkDescription.LegendShieldsUp,
+		Icon = "ui/perks/shields_up.png",
+		IconDisabled = "ui/perks/shields_up_bw.png",
+		Const = "LegendShieldsUp"
+	},
+	{
+		ID = "perk.legend_incoming",
+		Script = "scripts/skills/perks/perk_legend_incoming",
+		Name = this.Const.Strings.PerkName.LegendIncoming,
+		Tooltip = this.Const.Strings.PerkDescription.LegendIncoming,
+		Icon = "ui/perks/incoming_circle.png",
+		IconDisabled = "ui/perks/incoming_circle_bw.png",
+		Const = "LegendIncoming"
+	},
+	{
+		ID = "perk.perk_legend_zombie_bite",
+		Script = "scripts/skills/perks/perk_legend_zombie_bite",
+		Name = this.Const.Strings.PerkName.LegendZombieBite,
+		Tooltip = this.Const.Strings.PerkDescription.LegendZombieBite,
+		Icon = "ui/perks/mold_carrion_circle.png",
+		IconDisabled = "ui/perks/mold_carrion_circle_bw.png",
+		Const = "LegendZombieBite"
+	},
+	{
+		ID = "perk.perk_legend_cheer_on",
+		Script = "scripts/skills/perks/perk_legend_cheer_on",
+		Name = this.Const.Strings.PerkName.LegendCheerOn,
+		Tooltip = this.Const.Strings.PerkDescription.LegendCheerOn,
+		Icon = "ui/perks/cheered_on_circle.png",
+		IconDisabled = "ui/perks/cheered_on_circle_bw.png",
+		Const = "LegendCheerOn"
 	}
 ];
 gt.Const.Perks.PerkDefs <- {};

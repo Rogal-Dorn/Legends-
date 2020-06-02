@@ -50,6 +50,18 @@ this.deserter_in_forest_event <- this.inherit("scripts/events/event", {
 						this.World.getPlayerRoster().add(_event.m.Dude);
 						this.World.getTemporaryRoster().clear();
 						_event.m.Dude.onHired();
+						//set relations
+						local brothers = this.World.getPlayerRoster().getAll();
+						foreach( bro in brothers )
+						{
+							if (bro.getBackground().getID() == "background.deserter")
+							{
+								local modifier1 = this.Math.rand(5, 10);
+								bro.changeActiveRelationship( _event.m.Dude, modifier1 );
+								local modifier2 = this.Math.rand(5, 10);
+								_event.m.Dude.changeActiveRelationship( bro, modifier2 );
+							}
+						}
 						return 0;
 					}
 
@@ -68,9 +80,23 @@ this.deserter_in_forest_event <- this.inherit("scripts/events/event", {
 			{
 				local roster = this.World.getTemporaryRoster();
 				_event.m.Dude = roster.create("scripts/entity/tactical/player");
-				_event.m.Dude.setStartValuesEx([
-					"deserter_background"
-				]);
+					if (this.World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
+						{
+						_event.m.Dude.getTags().add("PlayerSkeleton");
+						_event.m.Dude.getTags().add("undead");
+						_event.m.Dude.getTags().add("skeleton");
+						_event.m.Dude.setStartValuesEx([
+							"legend_cannibal_background"
+						]);
+						_event.m.Dude.getSkills().add(this.new("scripts/skills/racial/skeleton_racial"));
+						_event.m.Dude.getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));						
+						}
+					else
+					{
+						_event.m.Dude.setStartValuesEx([
+						"deserter_background"
+						]);
+					}
 				_event.m.Dude.getBackground().m.RawDescription = "You found %name% the deserter being chased through the forest. Though bounty hunters were hot on the trail, you elected to defend the fugitive and for that swore an oath to you.";
 				_event.m.Dude.getBackground().buildDescription(true);
 				this.Characters.push(_event.m.Dude.getImagePath());

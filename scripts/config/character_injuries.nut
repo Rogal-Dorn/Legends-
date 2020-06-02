@@ -492,8 +492,90 @@ gt.Const.Injury.Knockout <- [
 		ID = "injury.grazed_eye_socket",
 		Threshold = 0.50000000,
 		Script = "injury/grazed_eye_socket_injury"
+	},
+
+];
+
+gt.Const.Injury.SkeletonHead <- [
+	{
+		ID = "injury.broken_nose",
+		Threshold = 0.25,
+		Script = "injury/broken_nose_injury"
+	},
+	{
+		ID = "injury.fractured_skull",
+		Threshold = 0.6,
+		Script = "injury/fractured_skull_injury"
+	},
+	{
+		ID = "injury.grazed_eye_socket",
+		Threshold = 0.5,
+		Script = "injury/grazed_eye_socket_injury"
+	},
+	{
+		ID = "injury.severe_concussion",
+		Threshold = 0.5,
+		Script = "injury/severe_concussion_injury"
 	}
 ];
+gt.Const.Injury.SkeletonBody <- [
+	{
+		ID = "injury.dislocated_shoulder",
+		Threshold = 0.50000000,
+		Script = "injury/dislocated_shoulder_injury"
+	},
+	{
+		ID = "injury.fractured_hand",
+		Threshold = 0.25000000,
+		Script = "injury/fractured_hand_injury"
+	},
+	{
+		ID = "injury.fractured_ribs",
+		Threshold = 0.25000000,
+		Script = "injury/fractured_ribs_injury"
+	},
+	{
+		ID = "injury.crushed_finger",
+		Threshold = 0.25,
+		Script = "injury/crushed_finger_injury"
+	},
+	{
+		ID = "injury.fractured_elbow",
+		Threshold = 0.25,
+		Script = "injury/fractured_elbow_injury"
+	},
+	{
+		ID = "injury.sprained_ankle",
+		Threshold = 0.25,
+		Script = "injury/sprained_ankle_injury"
+	},
+	{
+		ID = "injury.injured_knee_cap",
+		Threshold = 0.5,
+		Script = "injury/injured_knee_cap_injury"
+	},
+	{
+		ID = "injury.injured_shoulder",
+		Threshold = 0.25,
+		Script = "injury/injured_shoulder_injury"
+	},
+	{
+		ID = "injury.exposed_ribs",
+		Threshold = 0.35,
+		Script = "injury/exposed_ribs_injury"
+	},
+	{
+		ID = "injury.maimed_foot",
+		Threshold = 0.75,
+		Script = "injury_permanent/maimed_foot_injury"
+	},
+	{
+		ID = "injury.smashed_hand",
+		Threshold = 0.5,
+		Script = "injury/smashed_hand_injury"
+	},
+];
+
 gt.Const.Injury.FeedDog <- [
 	{
 		ID = "injury.split_hand",

@@ -3,7 +3,7 @@ this.legend_armor_reinforced_worn_mail_shirt <- this.inherit("scripts/items/lege
 	function create()
 	{
 		this.legend_armor_upgrade.create();
-		this.m.Type = this.Const.Items.ArmorUpgrades.Chain
+		this.m.Type = this.Const.Items.ArmorUpgrades.Chain;
 		this.m.ID = "legend_armor.reinforced_worn_mail_shirt";
 		this.m.Name = "Worn Reinforced Mail Shirt";
 		this.m.Description = "A reinforced mail shirt that lost some parts over the years.";
@@ -15,10 +15,10 @@ this.legend_armor_reinforced_worn_mail_shirt <- this.inherit("scripts/items/lege
 		this.m.SpriteBack = "bust_legend_reinforced_worn_mail_shirt";
 		this.m.SpriteDamagedBack = "bust_legend_reinforced_worn_mail_shirt_damaged";
 		this.m.SpriteCorpseBack = "bust_legend_reinforced_worn_mail_shirt_dead";
-		this.m.Value = 900;
-		this.m.Condition = 50;
-		this.m.ConditionMax = 50;
-		this.m.StaminaModifier = -8;
+		this.m.Value = 350;
+		this.m.Condition = 65;
+		this.m.ConditionMax = 65;
+		this.m.StaminaModifier = -11;
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 	}
 

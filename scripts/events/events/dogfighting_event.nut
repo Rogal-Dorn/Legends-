@@ -20,6 +20,7 @@ this.dogfighting_event <- this.inherit("scripts/events/event", {
 					Text = "Alright, but I\'m going with you.",
 					function getResult( _event )
 					{
+						this.World.Assets.addMoralReputation(-1);
 						return "B";
 					}
 
@@ -28,6 +29,7 @@ this.dogfighting_event <- this.inherit("scripts/events/event", {
 					Text = "That\'s not going to happen.",
 					function getResult( _event )
 					{
+						this.World.Assets.addMoralReputation(1);
 						return 0;
 					}
 

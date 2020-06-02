@@ -79,7 +79,8 @@ this.miner_background <- this.inherit("scripts/skills/backgrounds/character_back
 					this.Const.Perks.OrcTree,
 					this.Const.Perks.UnholdTree
 					],
-			Class = [this.Const.Perks.PickaxeClassTree]
+			Class = [this.Const.Perks.PickaxeClassTree],
+			Magic = []
 		}
 	}
 

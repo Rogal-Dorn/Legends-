@@ -101,7 +101,13 @@ this.legend_vala_background <- this.inherit("scripts/skills/backgrounds/characte
 				id = 2,
 				type = "description",
 				text = this.getDescription()
-			}
+			},
+			{
+				id = 13,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Most of the Vala\'s skills require her staff and scale in one way or another with the strength of her Resolve. Chants are sorcerous incantations delivered by song. These affect an area around the Vala and last until the start of her next turn. Trances are altered states entered into by the Vala. She will remain in these until her task is either completed or interrupted. Receiving damage of any kind, or becoming too fatigued to continue, will drop the Vala out of an active trance. "
+			}			
 		];
 	}
 
@@ -131,7 +137,7 @@ this.legend_vala_background <- this.inherit("scripts/skills/backgrounds/characte
 		local actor = this.getContainer().getActor();
 		actor.setName(this.Const.Strings.CharacterNamesFemaleNorse[this.Math.rand(0, this.Const.Strings.CharacterNamesFemaleNorse.len() - 1)]);
 		actor.setTitle("the Vala");
-		this.m.Container.add(this.new("scripts/skills/perks/legend_vala_information"));
+		//this.m.Container.add(this.new("scripts/skills/perks/legend_vala_information"));
 	}
 
 	function onAddEquipment()

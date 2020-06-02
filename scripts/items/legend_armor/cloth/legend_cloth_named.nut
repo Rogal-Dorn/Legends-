@@ -57,7 +57,7 @@ this.legend_cloth_named <- this.inherit("scripts/items/legend_armor/legend_armor
 
 		if (this.m.Name.len() == 0)
 		{
-			if (this.Math.rand(1, 100) <= 25)
+			if (this.Math.rand(1, 100) <= 25 && !this.getContainer().getActor() == null)
 			{
 				this.setName(this.getContainer().getActor().getName() + "\'s ");
 			}

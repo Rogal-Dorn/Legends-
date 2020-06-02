@@ -94,6 +94,11 @@ this.prong_skill <- this.inherit("scripts/skills/skill", {
 			{
 				this.m.HitChanceBonus = 10;
 			}
+
+			if (_properties.IsSpecializedInSpearThrust )
+			{
+			_properties.DamageTotalMult *= 1.15;
+			}
 		}
 	}
 

@@ -44,7 +44,33 @@ this.legend_redback_puncture <- this.inherit("scripts/skills/skill", {
 		{
 			return 0;
 		}
-		return _targetEntity.getFatiguePct();
+		local mod = 0;
+		if (_targetEntity.getSkills().hasSkill("effects.legend_dazed"))
+		{
+			mod += 10;
+		}
+		if (_targetEntity.getSkills().hasSkill("effects.legend_parried"))
+		{
+			mod += 10;
+		}
+		if (_targetEntity.getSkills().hasSkill("effects.legend_grappled"))
+		{
+			mod += 50;
+		}
+		if (_targetEntity.getSkills().hasSkill("effects.stunned"))
+		{
+			mod += 25;
+		}
+		if (_targetEntity.getSkills().hasSkill("effects.sleeping"))
+		{
+			mod += 50;
+		}
+		if (_targetEntity.getSkills().hasSkill("effects.net"))
+		{
+			mod += 25;
+		}
+		local chance = (1.0 - _targetEntity.getFatiguePct()) * 50;
+		return mod - this.Math.round(chance);
 	}
 
 	function getTooltip()
@@ -55,7 +81,7 @@ this.legend_redback_puncture <- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/hitchance.png",
-				text = "Fatigue level of target reduces any hit chance penality. A completely exhausted target will have no to-hit penality applied, while a fresh target has full penalities applied. Dagger mastery reduces any penalities to hit by half."
+				text = "Hit chance determined by your targets fatigue, 0% if they are fresh and 100% if they are exhausted. If your target is dazed or parried hitchance is increaded by +10%.  If they are stunned or netted you gain +25%. If they are grappled or sleeping you gain +50%. Dagger mastery doubles your chance to hit. These bonuses stack up to 100%.  "
 			},
 			{
 				id = 8,
@@ -136,14 +162,12 @@ this.legend_redback_puncture <- this.inherit("scripts/skills/skill", {
 		{
 			return
 		}
-
-		local bonus = (1.0 - this.getHitChance(_targetEntity)) * _properties.MeleeSkill;
+		local chance = this.getHitChance(_targetEntity)
 		if (_properties.IsSpecializedInDaggers)
 		{
-			bonus = this.Math.floor(bonus / 2.0)
+			chance += 15
 		}
-
-		_properties.MeleeSkill -= bonus;
+		_properties.MeleeSkill += chance;
 		_properties.DamageArmorMult *= 0.0;
 		_properties.IsIgnoringArmorOnAttack = true;
 		_properties.HitChanceMult[this.Const.BodyPart.Head] = 0.0;

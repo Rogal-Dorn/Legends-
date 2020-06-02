@@ -69,7 +69,8 @@ this.female_beggar_background <- this.inherit("scripts/skills/backgrounds/charac
 				this.Const.Perks.OrganisedTree
 			],
 			Enemy = [],
-			Class = []
+			Class = [],
+			Magic = []
 		}
 	}
 

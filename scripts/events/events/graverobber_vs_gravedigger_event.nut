@@ -29,6 +29,12 @@ this.graverobber_vs_gravedigger_event <- this.inherit("scripts/events/event", {
 				this.Characters.push(_event.m.Graverobber.getImagePath());
 				this.Characters.push(_event.m.Gravedigger.getImagePath());
 
+				//set relations
+				local modifier1 = this.Math.rand(-5, -10);
+				_event.m.Graverobber.changeActiveRelationship( _event.m.Gravedigger, modifier1 );
+				local modifier2 = this.Math.rand(-5, -10);
+				_event.m.Gravedigger.changeActiveRelationship( _event.m.Graverobber, modifier2 );
+
 				if (this.Math.rand(1, 100) <= 50)
 				{
 				}

@@ -253,8 +253,29 @@ gt.Const.Faces.WildFemale <- [
 
 gt.Const.Faces.Necromancer <- [
 	"bust_head_necro_01",
+	"bust_head_necro_02",
+	"bust_head_necro_female_01",
+	"bust_head_necro_female_02"
+];
+gt.Const.Faces.NecromancerMale <- [
+	"bust_head_necro_01",
 	"bust_head_necro_02"
 ];
+gt.Const.Faces.NecromancerFemale <- [
+	"bust_head_necro_female_01",
+	"bust_head_necro_female_02"
+];
+
+gt.Const.Faces.Vampire <- [
+	"bust_skeleton_head_04",
+	"bust_skeleton_head_03"
+];
+
+
+gt.Const.Faces.Skeleton <- [
+	"bust_skeleton_head"
+];
+
 gt.Const.Hair.BarberMale <- [
 	"",
 	"shaved",

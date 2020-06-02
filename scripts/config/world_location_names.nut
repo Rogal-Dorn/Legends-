@@ -62,7 +62,8 @@ gt.Const.World.LocationNames.CityWestern <- [
 	"Ulmen",
 	"Dornen",
 	"Karnstein",
-	"Wallstadt"
+	"Wallstadt",
+	"Beagleburg"
 ];
 gt.Const.World.LocationNames.GuardTower <- [
 	"Old Guard Tower",

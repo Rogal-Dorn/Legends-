@@ -305,7 +305,7 @@ this.ai_defend_rotation <- this.inherit("scripts/ai/tactical/behavior", {
 
 		if (!_entity.isHiddenToPlayer() || this.m.TargetTile.IsVisibleForPlayer)
 		{
-			this.getAgent().declareEvaluationDelay(1000);
+			this.getAgent().declareEvaluationDelay(2000);
 			this.getAgent().declareAction();
 		}
 

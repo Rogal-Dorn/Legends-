@@ -16,7 +16,7 @@ this.legend_ancient_cloth <- this.inherit("scripts/items/legend_armor/legend_arm
 		this.m.Value = 20;
 		this.m.Condition = 30;
 		this.m.ConditionMax = 30;
-		this.m.StaminaModifier = -3;
+		this.m.StaminaModifier = -5;
 	}
 
 	function updateVariant()

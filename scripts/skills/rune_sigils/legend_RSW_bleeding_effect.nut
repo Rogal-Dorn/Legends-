@@ -38,6 +38,42 @@ this.legend_RSW_bleeding_effect <- this.inherit("scripts/skills/skill", {
 		return "This character is bleeding profusely from a recently received wound and will lose [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.Damage + "[/color] hitpoints each turn for [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.TurnsLeft + "[/color] more turn(s).";
 	}
 
+	function getAttacker() 
+	{
+		if (!this.Const.LegendMod.Configs.LegendBleedKillerEnabled())
+		{
+			return this.getContainer().getActor();
+		}
+
+		if (this.m.Actor == null )
+		{
+			return this.getContainer().getActor();
+		}
+
+		if (this.m.Actor != this.getContainer().getActor())
+		{
+			// Must be alive to get the credit, to stop crashes 
+			if (!this.m.Actor.isAlive())
+			{
+				return this.getContainer().getActor();
+			}
+
+		
+			// If Swallowed and not on the map, can't be counted for bleed kills, it crashes the game
+			 if (this.m.Actor.isPlacedOnMap())
+			 {
+		 		return this.getContainer().getActor();
+			 }
+
+			 if (this.m.Actor.getTags().get("Devoured") == true)
+			 {
+		 		return this.getContainer().getActor();
+			 }
+		}
+
+		return this.m.Actor;
+	}
+
 	function applyDamage()
 	{
 		if (this.m.LastRoundApplied != this.Time.getRound())
@@ -50,14 +86,8 @@ this.legend_RSW_bleeding_effect <- this.inherit("scripts/skills/skill", {
 			hitInfo.BodyPart = this.Const.BodyPart.Body;
 			hitInfo.BodyDamageMult = 1.0;
 			hitInfo.FatalityChanceMult = 0.0;
-			if (this.Const.LegendMod.Configs.LegendBleedKillerEnabled())
-			{
-				this.getContainer().getActor().onDamageReceived(this.m.Actor, this, hitInfo);
-			}
-			else
-			{
-				this.getContainer().getActor().onDamageReceived(this.getContainer().getActor(), this, hitInfo);
-			}
+			this.getContainer().getActor().onDamageReceived(this.getAttacker(), this, hitInfo);
+
 
 			if (--this.m.TurnsLeft <= 0)
 			{

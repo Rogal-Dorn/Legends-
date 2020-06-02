@@ -78,7 +78,8 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 				this.Const.Perks.ViciousTree
 			],
 			Enemy = [],
-			Class = []
+			Class = [],
+			Magic = []
 		}
 	}
 
@@ -259,15 +260,7 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 			[0, "cloth/legend_tunic_noble"]
 		];
 		local armor = this.Const.World.Common.pickLegendArmor(cloths)
-			local tabards = [
-                [0, ""],
-				[1, "tabard/legend_armor_tabard"]
-			]
-			local tabard = this.Const.World.Common.pickLegendArmor(tabards)
-			if (tabard != null)
-			{
-				armor.setUpgrade(tabard)
-			}
+
 		items.equip(armor)
 	}
 });

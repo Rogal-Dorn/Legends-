@@ -161,7 +161,32 @@ this.legend_noble_slinger <- this.inherit("scripts/entity/tactical/human", {
 				{
 					armor.setUpgrade(plate)
 				}
+				local tabards = [
+					[0, ""],
+					[1, "tabard/legend_armor_noble_tabard"]
+				];
+				local tabard = this.Const.World.Common.pickLegendArmor(tabards)
+				// inits banner
+				local banner = 3;
+				if (!this.Tactical.State.isScenarioMode())
+				{
+					//asks the owner's faction what the banner is
+					banner = this.World.FactionManager.getFaction(this.getFaction()).getBanner();
+				}
+				else
+				{
+					// if we don't get an answer we use owners banner
+					banner = this.getFaction();
+				}
 
+				// checks that everything is there so if it rolls 0 above it won't crash
+				if (tabard != null && armor != null)
+				{
+					//tells the tabards what colour to use
+					tabard.setFaction(banner);
+					//tells the armor to use the tabard
+					armor.setUpgrade(tabard)
+				}
 				this.m.Items.equip(armor);
 			}
 		}

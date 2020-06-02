@@ -1,10 +1,9 @@
-
 this.legend_armor_plate_ancient_scale <- this.inherit("scripts/items/legend_armor/legend_armor_upgrade", {
 	m = {},
 	function create()
 	{
 		this.legend_armor_upgrade.create();
-		this.m.Type = this.Const.Items.ArmorUpgrades.Plate
+		this.m.Type = this.Const.Items.ArmorUpgrades.Plate;
 		this.m.ID = "legend_armor.plate_ancient_scale";
 		this.m.Name = "Ancient Plated Scale";
 		this.m.Description = "A heavy coat of scales, partly reinforced with a layer of plated metal on top. It\'s a massive armor of ancient origin that didn\'t age well.";
@@ -16,11 +15,11 @@ this.legend_armor_plate_ancient_scale <- this.inherit("scripts/items/legend_armo
 		this.m.SpriteBack = "bust_legend_plate_ancient_scale";
 		this.m.SpriteDamagedBack = "bust_legend_plate_ancient_scale_damaged";
 		this.m.SpriteCorpseBack = "bust_legend_plate_ancient_scale_dead";
-		this.m.Value = 1200;
-		this.m.Condition = 85;
-		this.m.ConditionMax = 85;
-		this.m.StaminaModifier = -16;
-        this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
+		this.m.Value = 1000;
+		this.m.Condition = 105;
+		this.m.ConditionMax = 105;
+		this.m.StaminaModifier = -17;
+		this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
 	}
 
 });

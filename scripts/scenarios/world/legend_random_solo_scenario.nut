@@ -114,7 +114,7 @@ foreach (b in this.World.getPlayerRoster().getAll())
 	function onInit()
 	{
 		this.starting_scenario.onInit();
-		this.World.Assets.m.BrothersMax = 18;
+		this.World.Assets.m.BrothersMax = 27;
 	}
 
 	function onCombatFinished()

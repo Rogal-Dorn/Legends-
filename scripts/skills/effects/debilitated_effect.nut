@@ -6,7 +6,7 @@ this.debilitated_effect <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "effects.debilitated";
 		this.m.Name = "Debilitated";
-		this.m.Description = "TODO";
+		this.m.Description = "This character has is debilitated";
 		this.m.Icon = "ui/perks/perk_34.png";
 		this.m.IconMini = "perk_34_mini";
 		this.m.Overlay = "perk_34";

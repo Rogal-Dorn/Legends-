@@ -89,11 +89,16 @@ this.blueprint <- {
 		foreach( i in _comps )
 		{
 			local c = this.new(i.Script);
-			this.m.PreviewComponents.push({
+			local pc = {
 				Name = i.Script,
 				Num = i.Num,
 				Instance = c
-			});
+			}
+			if ("LegendsArmor" in i)
+			{
+				pc.LegendsArmor <- i.LegendsArmor
+			}
+			this.m.PreviewComponents.push(pc);
 		}
 	}
 
@@ -153,6 +158,12 @@ this.blueprint <- {
 
 		foreach( c in this.m.PreviewComponents )
 		{
+
+			if ("LegendsArmor" in c && c.LegendsArmor && !this.Const.LegendMod.Configs.LegendArmorsEnabled())
+			{
+				continue;
+			}
+
 			local num = 0;
 			if (c.Instance.getID() in itemsMap)
 			{
@@ -270,10 +281,17 @@ this.blueprint <- {
 				this.logInfo("ERROR, blueprint instance is null. item name = " + name)
 				continue;
 			}
+
+			if ("LegendsArmor" in c && c.LegendsArmor && !this.Const.LegendMod.Configs.LegendArmorsEnabled())
+			{
+				continue;
+			}
+
 			if (c.Instance.getID() in itemsMap)
 			{
 				num = itemsMap[c.Instance.getID()];
 			}
+
 			for( local j = 1; j <= c.Num; j = ++j )
 			{
 				ret.push({
@@ -302,6 +320,11 @@ this.blueprint <- {
 
 		foreach( c in this.m.PreviewComponents )
 		{
+			if ("LegendsArmor" in c && c.LegendsArmor && !this.Const.LegendMod.Configs.LegendArmorsEnabled())
+			{
+				continue;
+			}
+
 			for( local j = 0; j < c.Num; j = ++j )
 			{
 				stash.removeByID(c.Instance.getID());
@@ -323,6 +346,11 @@ this.blueprint <- {
 
 		foreach( c in this.m.PreviewComponents )
 		{
+			if ("LegendsArmor" in c && c.LegendsArmor && !this.Const.LegendMod.Configs.LegendArmorsEnabled())
+			{
+				continue;
+			}
+
 			for( local j = 0; j < c.Num; j = ++j )
 			{
 				stash.removeByID(c.Instance.getID());

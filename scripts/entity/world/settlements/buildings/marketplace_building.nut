@@ -718,9 +718,9 @@ this.marketplace_building <- this.inherit("scripts/entity/world/settlements/buil
 				S = "trade/cloth_rolls_item"
 			},
 			{
-				R = 95,
-				P = 1.5,
-				S = "trade/salt_item"
+				R = 10,
+				P = 1.0,
+				S = "supplies/legend_cooking_spices_item"
 			},
 			{
 				R = 10,

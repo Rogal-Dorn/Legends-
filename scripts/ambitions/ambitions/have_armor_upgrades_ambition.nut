@@ -18,7 +18,10 @@ this.have_armor_upgrades_ambition <- this.inherit("scripts/ambitions/ambition", 
 		{
 			return;
 		}
-
+		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		{
+			return;
+		}
 		if (this.World.getTime().Days <= 20)
 		{
 			return;

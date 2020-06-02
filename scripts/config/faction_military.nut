@@ -125,7 +125,7 @@ gt.Const.Tactical.Actor.StandardBearer <- {
 	FatigueRecoveryRate = 20
 };
 gt.Const.Tactical.Actor.Knight <- {
-	XP = 450,
+	XP = 500,
 	ActionPoints = 9,
 	Hitpoints = 125,
 	Bravery = 90,

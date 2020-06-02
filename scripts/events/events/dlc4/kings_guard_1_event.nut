@@ -35,9 +35,23 @@ this.kings_guard_1_event <- this.inherit("scripts/events/event", {
 			{
 				local roster = this.World.getTemporaryRoster();
 				_event.m.Dude = roster.create("scripts/entity/tactical/player");
+					if (this.World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
+							{
+							_event.m.Dude.getTags().add("PlayerSkeleton");
+							_event.m.Dude.getTags().add("undead");
+							_event.m.Dude.getTags().add("skeleton");
+							_event.m.Dude.setStartValuesEx([
+								"cripple_background"
+							], false);
+							_event.m.Dude.getSkills().add(this.new("scripts/skills/racial/skeleton_racial"));
+							_event.m.Dude.getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));								
+							}
+					else
+						{
 				_event.m.Dude.setStartValuesEx([
 					"cripple_background"
 				], false);
+					}
 				_event.m.Dude.setTitle("");
 				_event.m.Dude.getBackground().m.RawDescription = "You found %name% frozen half to death in the north, claiming to have been a King\'s Guard once, but looking at the wretch now you see but a cripple.";
 				_event.m.Dude.getBackground().buildDescription(true);

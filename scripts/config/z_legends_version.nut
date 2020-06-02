@@ -1,6 +1,6 @@
 local gt = this.getroottable();
 
-gt.logInfo("Legends Mod Verison 0.13.0.34c")
+gt.logInfo("Legends Mod Verison 0.13.3.4.2")
 
 
 if (!("LegendMod" in gt.Const))
@@ -8,6 +8,7 @@ if (!("LegendMod" in gt.Const))
 	gt.Const.LegendMod <- {};
 }
 
-gt.Const.LegendMod.Version <- "Legends Beta 0.13.0.34c";
+gt.Const.LegendMod.Version <- "Legends Beta 0.13.3.4.2";
+
 
 

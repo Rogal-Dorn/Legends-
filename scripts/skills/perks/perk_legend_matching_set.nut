@@ -26,7 +26,7 @@ this.perk_legend_matching_set <- this.inherit("scripts/skills/skill", {
 		local head = actor.getArmor(this.Const.BodyPart.Head);
 
 		local bonus = 0;
-		if ((body + head) <= 350 )
+		if ((body + head) <= 400 )
 		{
 		local diff = this.Math.abs(body - head);
 		local diffadj = diff / 10;

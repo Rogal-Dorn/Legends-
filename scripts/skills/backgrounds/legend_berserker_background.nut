@@ -11,7 +11,7 @@ this.legend_berserker_background <- this.inherit("scripts/skills/backgrounds/cha
 		this.m.BackgroundDescription = "Berserkers are used to the hard life of the wild where only the strong prevail. They are less used to the life of cities, where the astute and deceitful rule.";
 		this.m.GoodEnding = "While the %companyname% visited a town for rest and recuperation, a local princess took a shine to %name% the wildman. He was \'purchased\' for a large sum of gold and given to the noblewoman. You went and visited the man recently. For dinner, he sat at a kingly table, grinning goofily and mimicking the nobles around him as best he could. His new and inexplicable wife adored him, and him her. When you said your goodbyes, he offered you a heavy golden crown off the top of his head. It weighed heavy with traditions and ancient histories. You said it\'d be best if he kept it. The wildman shrugged and walked off, spinning the circlet around a finger.";
 		this.m.BadEnding = "%name% the wildman stayed with the fragmenting %companyname% for a time and then, just like that, he was gone. The company went out looking for him in a forest, eventually finding some sort of crude note: an enormous pile of crowns next to a dirt-drawing of the %companyname% and some of its members, all of them being hugged by a big, literal stick figure with a goofy smile on its face. There was also an offering of a dead, half-eaten rabbit.";
-		this.m.HiringCost = 20000;
+		this.m.HiringCost = 2000;
 		this.m.DailyCost = 20;
 		this.m.Excluded = [
 			"trait.weasel",
@@ -87,92 +87,32 @@ this.legend_berserker_background <- this.inherit("scripts/skills/backgrounds/cha
 			0.0, //stepps
 			0.0 //ocean
 		];
-		this.m.CustomPerkTree = [
-			[
-				this.Const.Perks.PerkDefs.FastAdaption,
-				this.Const.Perks.PerkDefs.CripplingStrikes,
-				this.Const.Perks.PerkDefs.Colossus,
-				this.Const.Perks.PerkDefs.Adrenalin,
-				this.Const.Perks.PerkDefs.NineLives,
-				this.Const.Perks.PerkDefs.Pathfinder,
-				this.Const.Perks.PerkDefs.Steadfast,
-				this.Const.Perks.PerkDefs.Recover,
-				this.Const.Perks.PerkDefs.BloodyHarvest,
-				this.Const.Perks.PerkDefs.LegendBackToBasics,
-				this.Const.Perks.PerkDefs.LegendAlert
+		this.m.PerkTreeDynamic = {
+			Weapon = [
+				this.Const.Perks.MaceTree,
+				this.Const.Perks.AxeTree,
+				this.Const.Perks.ThrowingTree
 			],
-			[
-				this.Const.Perks.PerkDefs.CoupDeGrace,
-				this.Const.Perks.PerkDefs.Dodge,
-				this.Const.Perks.PerkDefs.HoldOut,
-				this.Const.Perks.PerkDefs.Relentless,
-				this.Const.Perks.PerkDefs.LegendComposure,
-				this.Const.Perks.PerkDefs.SteelBrow,
-				this.Const.Perks.PerkDefs.QuickHands,
-				this.Const.Perks.PerkDefs.DevastatingStrikes,
-				this.Const.Perks.PerkDefs.LegendSmackdown,
-				this.Const.Perks.PerkDefs.LegendOnslaught,
-				this.Const.Perks.PerkDefs.LegendKick
+			Defense = [
+				this.Const.Perks.LightArmorTree
 			],
-			[
-				this.Const.Perks.PerkDefs.Brawny,
-				this.Const.Perks.PerkDefs.Anticipation,
-				this.Const.Perks.PerkDefs.Rotation,
-				this.Const.Perks.PerkDefs.Taunt,
-				this.Const.Perks.PerkDefs.Feint,
-				this.Const.Perks.PerkDefs.Debilitate,
-				this.Const.Perks.PerkDefs.LegendTrueBeliever,
-				this.Const.Perks.PerkDefs.Sprint,
-				this.Const.Perks.PerkDefs.LegendGrapple,
-				this.Const.Perks.PerkDefs.LegendSecondWind
+			Traits = [
+				this.Const.Perks.SturdyTree,
+				this.Const.Perks.IndestructibleTree,
+				this.Const.Perks.LargeTree,
+				this.Const.Perks.FitTree
 			],
-			[
-				this.Const.Perks.PerkDefs.SpecMace,
-				this.Const.Perks.PerkDefs.SpecFlail,
-				this.Const.Perks.PerkDefs.SpecHammer,
-				this.Const.Perks.PerkDefs.SpecAxe,
-				this.Const.Perks.PerkDefs.SpecCleaver,
-				this.Const.Perks.PerkDefs.SpecSword,
-				this.Const.Perks.PerkDefs.LegendSpecFists,
-				this.Const.Perks.PerkDefs.LegendPoisonImmunity,
-				this.Const.Perks.PerkDefs.SpecThrowing
+			Enemy = [
+				this.Const.Perks.OrcTree,
+				this.Const.Perks.GoblinTree
 			],
-			[
-				this.Const.Perks.PerkDefs.LoneWolf,
-				this.Const.Perks.PerkDefs.Footwork,
-				this.Const.Perks.PerkDefs.Slaughterer,
-				this.Const.Perks.PerkDefs.Vengeance,
-				this.Const.Perks.PerkDefs.LegendBattleheart,
-				this.Const.Perks.PerkDefs.SunderingStrikes,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyOrk,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyGoblin,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyUnhold
-			],
-			[
-				// This hard crashes the game // this.Const.Perks.PerkDefs.Ironside,
-				this.Const.Perks.PerkDefs.Berserk,
-				this.Const.Perks.PerkDefs.Nimble,
-				this.Const.Perks.PerkDefs.ReturnFavor,
-				this.Const.Perks.PerkDefs.LastStand,
-				this.Const.Perks.PerkDefs.Rebound,
-				this.Const.Perks.PerkDefs.LegendMuscularity,
-				this.Const.Perks.PerkDefs.LegendForwardPush
-			],
-			[
-				this.Const.Perks.PerkDefs.Fearsome,
-				this.Const.Perks.PerkDefs.Duelist,
-				this.Const.Perks.PerkDefs.KillingFrenzy,
-				this.Const.Perks.PerkDefs.BattleFlow,
-				this.Const.Perks.PerkDefs.Stalwart,
-				this.Const.Perks.PerkDefs.LegendFreedomOfMovement,
-				this.Const.Perks.PerkDefs.LegendBerserkerRage,
-				this.Const.Perks.PerkDefs.LegendUberNimble
-			],
-			[],
-			[],
-			[],
-			[]
-		];
+			Class = [
+				this.Const.Perks.FistsClassTree
+				],
+			Magic = [
+				this.Const.Perks.BerserkerMagicTree
+			]
+		}
 	}
 
 	//Default Male
@@ -240,36 +180,36 @@ this.legend_berserker_background <- this.inherit("scripts/skills/backgrounds/cha
 	{
 		local c = {
 			Hitpoints = [
-				5,
-				5
+				15,
+				20
 			],
 			Bravery = [
-				10,
-				10
+				0,
+				5
 			],
 			Stamina = [
-				15,
+				10,
 				15
 			],
 			MeleeSkill = [
-				25,
-				25
+				15,
+				20
 			],
 			RangedSkill = [
 				-5,
 				-5
 			],
 			MeleeDefense = [
-				-5,
-				-5
+				-10,
+				-10
 			],
 			RangedDefense = [
-				-5,
-				-5
+				-10,
+				-10
 			],
 			Initiative = [
-				0,
-				0
+				-5,
+				-5
 			]
 		};
 		return c;

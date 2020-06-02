@@ -64,7 +64,8 @@ this.female_minstrel_background <- this.inherit("scripts/skills/backgrounds/char
 				this.Const.Perks.FastTree
 			],
 			Enemy = [this.Const.Perks.NoblesTree],
-			Class = [this.Const.Perks.BardClassTree]
+			Class = [this.Const.Perks.BardClassTree],
+			Magic = []
 		}
 	}
 
@@ -84,44 +85,44 @@ this.female_minstrel_background <- this.inherit("scripts/skills/backgrounds/char
 		];
 	}
 
-	// function onBuildDescription()
-	// {
-	// 	return "\"{I can swing a sword and cleave an axe, | One might ask of me a task, | Right with god, but in the left a flask,} {and I say, \'You question a woman who wears no mask?\'. | and so I have to move quick, but not quite fast.} {Stare down the stuffed bears I did, | Into my frayed pantaloons I bid, | Along the muddy roads my boots skid,} {and so of many things I am rid. | truth! My shameful talent is to - ferociously! - knit.} {So take me along your adventure, | Bring me with your men who clatter and clamber, | Hand me your shield and that thing shaped like a member,} {and let us go and bid fear a farewell to remember! | and let\'s - oh, ow! I have a splinter! | and may we come, one and all, to a healthy next-winter!}\". {The woman speaks gibberish. | It rhymes!}";
-	// }
+	function onBuildDescription()
+	{
+		return "\"{I can swing a sword and cleave an axe, | One might ask of me a task, | Right with god, but in the left a flask,} {and I say, \'You question a woman who wears no mask?\'. | and so I have to move quick, but not quite fast.} {Stare down the stuffed bears I did, | Into my frayed pantaloons I bid, | Along the muddy roads my boots skid,} {and so of many things I am rid. | truth! My shameful talent is to - ferociously! - knit.} {So take me along your adventure, | Bring me with your men who clatter and clamber, | Hand me your shield and that thing shaped like a member,} {and let us go and bid fear a farewell to remember! | and let\'s - oh, ow! I have a splinter! | and may we come, one and all, to a healthy next-winter!}\". {The woman speaks gibberish. | It rhymes!}";
+	}
 
 	function onChangeAttributes()
 	{
 		local c = {
 			Hitpoints = [
-				-10,
-				-5
+				-15,
+				-15
 			],
 			Bravery = [
-				5,
-				10
+				10,
+				15
 			],
 			Stamina = [
 				-5,
 				 0
 			],
 			MeleeSkill = [
-				0,
-				0
+				-5,
+				-5
 			],
 			RangedSkill = [
-				0,
-				0
+				10,
+				5
 			],
 			MeleeDefense = [
-				0,
-				0
+				-10,
+				-10
 			],
 			RangedDefense = [
-				0,
-				0
+				5,
+				10
 			],
 			Initiative = [
-				0,
+				5,
 				5
 			]
 		};

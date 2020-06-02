@@ -49,7 +49,7 @@ this.killing_frenzy_effect <- this.inherit("scripts/skills/skill", {
 			this.m.TurnsLeft = 2;
 			if (this.getContainer().getActor().isPlacedOnMap())
 			{
-				this.spawnIcon("perk_36", this._targetEntity.getTile());
+				this.spawnIcon("perk_36", this.getContainer().getActor().getTile());
 			}
 		}
 	}

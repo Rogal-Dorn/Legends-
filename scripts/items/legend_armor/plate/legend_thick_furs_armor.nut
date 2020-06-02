@@ -3,7 +3,7 @@ this.legend_thick_furs_armor <- this.inherit("scripts/items/legend_armor/legend_
 	function create()
 	{
 		this.legend_armor_upgrade.create();
-        this.m.Type = this.Const.Items.ArmorUpgrades.Plate
+		this.m.Type = this.Const.Items.ArmorUpgrades.Plate;
 		this.m.ID = "legend_armor.body.thick_furs";
 		this.m.Name = "Thick Furs";
 		this.m.Description = "Thick furs that are crudely dried and tied together to protect from both the cold and any incoming blows.";
@@ -17,10 +17,10 @@ this.legend_thick_furs_armor <- this.inherit("scripts/items/legend_armor/legend_
 		this.m.OverlayIcon = "legend_armor/plate/icon_legend_thick_furs_armor.png";
 		this.m.OverlayIconLarge = "legend_armor/plate/inventory_legend_thick_furs_armor.png";
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
-		this.m.Value = 65;
-		this.m.Condition = 15;
-		this.m.ConditionMax = 15;
-		this.m.StaminaModifier = -2;
+		this.m.Value = 15;
+		this.m.Condition = 10;
+		this.m.ConditionMax = 10;
+		this.m.StaminaModifier = -1;
 	}
 
 });

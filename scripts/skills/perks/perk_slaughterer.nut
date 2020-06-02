@@ -16,8 +16,9 @@ this.perk_slaughterer <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		local actor = this.getContainer().getActor();
-		_properties.FatalityChanceMult = 1000.0;
-		actor.modifyFlatOnKillOtherActorModifier(-15);
+		_properties.FatalityChanceMult = 100.0;
+		actor.modifyFlatOnKillOtherActorModifier(-2); //in reality this is just entirely fucked up and someone else should rreally have a serious look at it. My original idea was just lowering the difficulty would make it better but when u lower difficulty which is what this will inevitably do, in mod_actor::o.onOtherActorKilled or whatever, it ends up way lower than it should once that functino triggers the resolve checks bc of other multiplicative effects(?)
+		//I really think -2 or -1 is the best way to go, decimal numbers sorta fuck upunless u chnange the variable to a 0.0 instead of 0 in mod_actor also 
 	}
 
 

@@ -1,6 +1,6 @@
 this.legend_hidden_effect <- this.inherit("scripts/skills/skill", {
 	m = {
-	TurnsLeft = 3
+	TurnsLeft = 4
 	},
 	function create()
 	{
@@ -38,23 +38,7 @@ this.legend_hidden_effect <- this.inherit("scripts/skills/skill", {
 		}
 
 
-		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_untouchable"))
-		{
-			ret.extend([
-						{
-					id = 13,
-					type = "text",
-					icon = "ui/icons/melee_defense.png",
-					text = "[color=" + this.Const.UI.Color.PositiveValue + "]+40[/color] Melee Defense from the Untouchable perk"
-				},
-				{
-					id = 14,
-					type = "text",
-					icon = "ui/icons/ranged_defense.png",
-					text = "[color=" + this.Const.UI.Color.PositiveValue + "]+40[/color] Ranged Defense from the Untouchable perk"
-				}
-			]);
-		}
+	
 
 		return ret;
 
@@ -120,11 +104,11 @@ this.legend_hidden_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("armor_upgrade_back").Alpha = 10;
 		actor.getSprite("armor_upgrade_front").Alpha = 10;
 		actor.getSprite("socket").Alpha = 10;
-		this.m.TurnsLeft = 3;
+		this.m.TurnsLeft = 4;
 
 		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_untouchable"))
 		{
-		this.m.TurnsLeft = 4;
+		this.m.TurnsLeft = 6;
 		}
 	}
 
@@ -174,6 +158,7 @@ this.legend_hidden_effect <- this.inherit("scripts/skills/skill", {
 			_properties.DamageRegularMin *= 2;
 			_properties.DamageRegularMax *= 2;
 		}
+		_properties.TargetAttractionMult *= 0.5;
 
 		actor.getSprite("armor").Alpha = 10;
 		actor.getSprite("helmet").Alpha = 10;

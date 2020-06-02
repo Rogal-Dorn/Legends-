@@ -133,11 +133,9 @@ this.legend_greenwood_schrat <- this.inherit("scripts/entity/tactical/actor", {
 					local r = this.Math.rand(1, 100);
 					local loot;
 
-					if (r <= 50)
-					{
-						loot = this.new("scripts/items/misc/legend_ancient_green_wood_item");
-					}
-					else if (r <= 80)
+					loot = this.new("scripts/items/misc/legend_ancient_green_wood_item");
+
+					if (r <= 80)
 					{
 						loot = this.new("scripts/items/misc/glowing_resin_item");
 					}

@@ -195,9 +195,10 @@ this.militia_captain <- this.inherit("scripts/entity/tactical/human", {
 					armor.setUpgrade(plate)
 				}
 				local upgrades = [
-					[10, ""],
-					[5, "cloak/legend_armor_cloak"],
-					[1, "cloak/legend_armor_cloak_rich"]
+					[59, ""],
+					[20, "cloak/legend_armor_cloak"],
+					[20, "cloak/legend_armor_cloak_heavy"],
+					[1, "cloak/legend_armor_cloak_noble"]
 				];
 				local upgrade = this.Const.World.Common.pickLegendArmor(upgrades)
 				if (upgrade != null)

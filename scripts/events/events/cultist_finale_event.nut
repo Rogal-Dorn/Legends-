@@ -78,6 +78,7 @@ this.cultist_finale_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
+				this.World.Assets.addMoralReputation(-10);
 				this.Characters.push(_event.m.Sacrifice.getImagePath());
 				local dead = _event.m.Sacrifice;
 				this.World.Statistics.addFallen(dead, "Sacrificed to Davkul");

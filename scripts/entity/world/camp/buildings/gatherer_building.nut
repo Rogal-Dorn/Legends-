@@ -171,7 +171,6 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 				case "background.legend_vala_commander":
 				case "background.legend_herbalist":
 					apothecaryLevel += bro.getLevel()
-					break;
 			}
 			
 		
@@ -242,18 +241,16 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		}
 
 		local brewerlevels = this.getBrewerLevel();
-		if (brewerlevels = null)
+		if (brewerlevels == null)
 		{
-		apothecarylevels = 0;
+			apothecarylevels = 0;
 		}
-
-
 		if (apothecarylevels >= 1 && apothecarylevels < 10)
 		{	
 			secondary.extend([
 				"scripts/items/accessory/berserker_mushrooms_item",
 				"scripts/items/accessory/legend_apothecary_mushrooms_item",
-				"scripts/items/misc/antidote_item",
+				"scripts/items/accessory/antidote_item",
 				"scripts/items/accessory/poison_item",
 				"scripts/items/supplies/medicine_item"
 			])
@@ -270,7 +267,7 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		{	
 			secondary.extend([
 				"scripts/items/accessory/lionheart_potion_item",
-				"scripts/items/accessory/ironwill_potion_item",
+				"scripts/items/accessory/iron_will_potion_item",
 				"scripts/items/accessory/recovery_potion_item",
 				"scripts/items/accessory/cat_potion_item"
 			]);

@@ -100,8 +100,10 @@ this.rally_the_troops <- this.inherit("scripts/skills/skill", {
 				continue;
 			}
 
-			if (a.getFaction() == _user.getFaction() && !a.getSkills().hasSkill("effects.rallied"))
+			if (a.getFaction() != _user.getFaction())
 			{
+				continue;
+			}
 				this.logInfo("attempting to rally");
 				if (a.getSkills().hasSkill("effects.charmed") || a.getSkills().hasSkill("effects.legend_intensely_charmed") || a.getSkills().hasSkill("effects.sleeping"))
 				{
@@ -136,11 +138,44 @@ this.rally_the_troops <- this.inherit("scripts/skills/skill", {
 					a.checkMorale(1, difficulty - distance, this.Const.MoraleCheckType.Default, "status_effect_56");
 				}
 
-				if (morale != a.getMoraleState())
-				{
-				this.logInfo("Adding rally effect");
-					a.getSkills().add(this.new("scripts/skills/effects/rallied_effect"));
+			if (a.getSkills().hasSkill("effects.rallied"))
+			{
+				continue;
+			}
+
+
+			if (a.getSkills().hasSkill("effects.charmed") || a.getSkills().hasSkill("effects.legend_intensely_charmed") || a.getSkills().hasSkill("effects.sleeping"))
+			{
+				local rand = this.Math.rand(1, 100);
+				if( bravery > rand )
+				{						
+					a.getSkills().removeByID("effects.charmed");
+					a.getSkills().removeByID("effects.sleeping");
+					a.getSkills().removeByID("effects.legend_intensely_charmed");
 				}
+			}
+
+			if ( a.getMoraleState() >= this.Const.MoraleState.Steady )
+			{
+				continue;
+			}
+
+			local difficulty = bravery;
+			local distance = a.getTile().getDistanceTo(myTile) * 10;
+			local morale = a.getMoraleState();
+
+			if (a.getMoraleState() == this.Const.MoraleState.Fleeing)
+			{
+				a.checkMorale(this.Const.MoraleState.Wavering - this.Const.MoraleState.Fleeing, difficulty, this.Const.MoraleCheckType.Default, "status_effect_56");
+			}
+			else
+			{
+				a.checkMorale(1, difficulty - distance, this.Const.MoraleCheckType.Default, "status_effect_56");
+			}
+
+			if (morale != a.getMoraleState())
+			{
+				a.getSkills().add(this.new("scripts/skills/effects/rallied_effect"));
 			}
 		}
 

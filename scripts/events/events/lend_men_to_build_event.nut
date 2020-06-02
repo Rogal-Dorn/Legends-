@@ -26,6 +26,7 @@ this.lend_men_to_build_event <- this.inherit("scripts/events/event", {
 					Text = "Alright, I can spare a hand or few.",
 					function getResult( _event )
 					{
+						this.World.Assets.addMoralReputation(1);
 						return this.Math.rand(1, 100) <= 50 ? "B" : "C";
 					}
 
@@ -80,6 +81,19 @@ this.lend_men_to_build_event <- this.inherit("scripts/events/event", {
 								icon = effect.getIcon(),
 								text = bro.getName() + " is exhausted"
 							});
+						}
+
+						//set relations
+						local relations = this.World.getPlayerRoster().getAll();
+						foreach( relation in relations )
+						{
+							if (id == "background.daytaler" || id == "background.female_daytaler" || id == "background.mason" || id == "background.lumberjack" || id == "background.miller"|| id == "background.female_miller" || id == "background.farmhand" || id == "background.female_farmhand"  || id == "background.gravedigger")
+							{
+								local modifier1 = this.Math.rand(5, 10);
+								bro.changeActiveRelationship( relation, modifier1 );
+								local modifier2 = this.Math.rand(5, 10);
+								relation.changeActiveRelationship( bro, modifier2 );
+							}
 						}
 
 						if (this.Math.rand(1, 100) <= 50)

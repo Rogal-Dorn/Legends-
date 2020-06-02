@@ -52,7 +52,8 @@ this.bastard_background <- this.inherit("scripts/skills/backgrounds/character_ba
 				this.Const.Perks.LargeTree
 			],
 			Enemy = [],
-			Class = []
+			Class = [],
+			Magic = []
 		}
 	}
 

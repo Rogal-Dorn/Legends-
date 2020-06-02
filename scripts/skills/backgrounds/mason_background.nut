@@ -49,7 +49,8 @@ this.mason_background <- this.inherit("scripts/skills/backgrounds/character_back
 				this.Const.Perks.FitTree
 			],
 			Enemy = [],
-			Class = []
+			Class = [],
+			Magic = []
 		}
 	}
 

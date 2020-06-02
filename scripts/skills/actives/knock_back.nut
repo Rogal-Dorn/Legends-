@@ -264,7 +264,7 @@ this.knock_back <- this.inherit("scripts/skills/skill", {
 
 	function onAfterUpdate( _properties )
 	{
-		if ("IsSpecializedInShieldPush" in _properties && _properties.IsSpecializedInShieldPush)
+		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_specialist_shield_push"))
 		{
 			this.m.FatigueCostMult = this.Const.Combat.WeaponSpecFatigueMult;
 			this.m.ActionPointCost = 3;
@@ -272,7 +272,7 @@ this.knock_back <- this.inherit("scripts/skills/skill", {
 
 		if (this.getContainer().getActor().getSkills().hasSkill("perk.shield_bash"))
 		{
-			this.m.FatigueCost = 15;
+			this.m.FatigueCost *= 0.9;
 		}
 	}
 

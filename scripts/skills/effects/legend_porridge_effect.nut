@@ -1,6 +1,7 @@
 this.legend_porridge_effect <- this.inherit("scripts/skills/skill", {
 	m = {
-		TurnsLeft = 10
+		TurnsLeft = 15,
+		Amount = 100
 	},
 	function create()
 	{
@@ -17,11 +18,13 @@ this.legend_porridge_effect <- this.inherit("scripts/skills/skill", {
 
 	function getDescription()
 	{
-		return "Thanks to eating a porridge of dubious ingredients, this character regains health for [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.TurnsLeft + "[/color] turn(s).";
+		return "Thanks to eating a hearty porridge, this character regains health for [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.TurnsLeft + "[/color] turn(s).";
 	}
 
 	function getTooltip()
 	{
+		local rate = this.Math.floor(this.m.Amount / 10);
+		local turns = this.m.TurnsLeft;
 		local ret = [
 			{
 				id = 1,
@@ -37,25 +40,23 @@ this.legend_porridge_effect <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/health.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+2[/color] healing per turn"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + rate + "[/color] healing per turn for " + turns + " turns "
 			}
 		];
 		return ret;
 	}
 
-	function onUpdate( _properties )
-	{
-		local actor = this.getContainer().getActor();
-		actor.setHitpoints(this.Math.min(actor.getHitpointsMax(), actor.getHitpoints() + 2));
-	}
 
 	function onAdded()
 	{
-		this.m.TurnsLeft = 10;
+		this.m.TurnsLeft = 15;
 	}
 
 	function onTurnEnd()
 	{
+		local rate = this.Math.floor(this.m.Amount / 10);
+		local actor = this.getContainer().getActor();
+		actor.setHitpoints(this.Math.min(actor.getHitpointsMax(), actor.getHitpoints() + rate));
 		if (--this.m.TurnsLeft <= 0)
 		{
 			this.removeSelf();

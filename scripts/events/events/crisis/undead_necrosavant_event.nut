@@ -1,6 +1,7 @@
 this.undead_necrosavant_event <- this.inherit("scripts/events/event", {
 	m = {
-		Witchhunter = null
+		Witchhunter = null,
+		Warlock = null
 	},
 	function create()
 	{
@@ -29,6 +30,12 @@ this.undead_necrosavant_event <- this.inherit("scripts/events/event", {
 								return "D";
 							}
 						}
+
+						if (this.World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
+							{
+								return "E";
+							}
+
 						else if (this.Math.rand(1, 100) <= 50)
 						{
 							return "B";
@@ -162,6 +169,46 @@ this.undead_necrosavant_event <- this.inherit("scripts/events/event", {
 			}
 
 		});
+	this.m.Screens.push({
+			ID = "E",
+			Text = "[img]gfx/ui/events/event_76.png[/img]The figure rises and turns to you with a dark gaze of one who has lived for a thousand years.%SPEECH_ON%Ah, brothers, I have waited for you.%SPEECH_OFF%",
+			Image = "",
+			List = [],
+			Characters = [],
+			Options = [
+				{
+					Text = "Welcome to the %companyname%.",
+					function getResult( _event )
+					{
+						this.World.getPlayerRoster().add(_event.m.Warlock);
+						this.World.getTemporaryRoster().clear();
+						_event.m.Warlock.onHired();
+						return 0;
+					}
+				},
+				{
+					Text = "Too much flesh for us",
+					function getResult( _event )
+					{
+						this.World.getTemporaryRoster().clear();
+						return 0;
+					}
+				}
+			],
+			function start( _event )
+			{
+				local roster = this.World.getTemporaryRoster();
+				_event.m.Warlock = roster.create("scripts/entity/tactical/player");
+				_event.m.Warlock.getTags().add("PlayerSkeleton");
+				_event.m.Warlock.getTags().add("undead");
+				_event.m.Warlock.getTags().add("skeleton");
+				_event.m.Warlock.setStartValuesEx(["legend_necro_background"]);
+				_event.m.Warlock.getSkills().add(this.new("scripts/skills/racial/skeleton_racial"));
+				_event.m.Warlock.getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));				
+				this.Characters.push(_event.m.Warlock.getImagePath());
+			}
+
+		});
 	}
 
 	function onUpdateScore()
@@ -210,6 +257,7 @@ this.undead_necrosavant_event <- this.inherit("scripts/events/event", {
 	function onClear()
 	{
 		this.m.Witchhunter = null;
+		this.m.Warlock = null;
 	}
 
 });

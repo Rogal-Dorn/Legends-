@@ -165,6 +165,12 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
                 continue
             }
             local mod = this.m.BaseCraft + this.m.BaseCraft * bro.getBackground().getModifiers().Training;
+			
+			if (bro.getSkills().hasSkill("perk.legend_back_to_basics"))
+            {
+			mod = mod * 1.1;
+			}
+
             ++ret.Assigned
 			ret.Modifiers.push([mod, bro.getName(), bro.getBackground().getNameOnly()]);			
         }
@@ -244,7 +250,7 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
 			 bro.getName() + " learned a new move",
 			 bro.getName() + " finally nails the fancy parry they have been been practicing",
 			 bro.getName() + " invents an overly showy move",
-			 bro.getName() + " finds a stance that feels more natural"
+			 bro.getName() + " finds a stance that feels more natural",
 			 bro.getName() + " learns how to adjust the new armor so it fits better",
 			 bro.getName() + " has perfected a new skill in practice",
 			 bro.getName() + " had their ego bruised and wants an outlet for frustration",
@@ -255,7 +261,7 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		];
 		local text = "After practicing ";
 		local M = [
-			"Short Gaurd ",
+			"Short Guard ",
 			"Upper Snake Guard ",
 			"Bastard Cross ",
 			"The Middle Iron Door ",
@@ -270,7 +276,7 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
 			"The Thumb Scissor ", 
 			"jabs ",
 			"hand to hand combat "
-		]
+		];
 		foreach (m in M)
 		{
 			local text1 = text + m;
@@ -281,7 +287,7 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
 				"for several hours, ",
 				"until exhaustion, ",
 				"as long as possible, "
-			]
+			];
 			foreach (t in T)
 			{
 				local text2 = text1 + t + bro.getName() + " ";
@@ -292,7 +298,7 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
 					"is prepared for battle",
 					"is keen to try it out",
 					"is ready for a scrap"
-				]
+				];
 				foreach (a in A)
 				{
 					local text3 = text2 + a;
@@ -424,10 +430,24 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
 				training = true;
 				min = 1;
 				local mod = this.getModifiers();
-				if (this.Math.rand(1, 100) <= (this.m.Camp.getCampTimeHours() + mod.Craft * this.m.Camp.getCampTimeHours()))
+				local camphrs = this.m.Camp.getCampTimeHours();
+				while(camphrs > 0)
 				{
-					this.getBonus(bro);
-				}
+					local r = this.Math.rand(1, 100);
+					if (r <= camphrs + mod.Craft * camphrs)
+					{
+						this.getBonus(bro);
+						camphrs = camphrs - r;
+					}
+					else
+					{
+						break;
+					}
+				}				
+				//if (this.Math.rand(1, 100) <= (this.m.Camp.getCampTimeHours() + mod.Craft * this.m.Camp.getCampTimeHours()))
+				//{
+				//	this.getBonus(bro);
+				//}
 			}
 
 			//Only get injury if we were actually training

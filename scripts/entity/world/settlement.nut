@@ -629,7 +629,6 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 	{
 		local p = this.getPriceMult() * this.World.Assets.getBuyPriceMult();
 		local r = this.World.FactionManager.getFaction(this.m.Factions[0]).getPlayerRelation();
-
 		if (r < 50)
 		{
 			p = p + (50.0 - r) * 0.006;
@@ -640,27 +639,38 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		}
 
 		local barterMult = 0.0;
+		local greed = 1;
 		foreach (bro in this.World.getPlayerRoster().getAll())
 		{
 			barterMult += bro.getBarterModifier();
+
+			if (bro.getSkills().hasSkill("perk.legend_barter_greed"))
+			{
+			greed = 2;
+			}
 		}
-		barterMult = this.Math.pow(barterMult, 0.5);
-		if ((this.m.Modifiers.BuyPriceMult - barterMult) > 0.01)
+
+		barterMult = barterMult / greed;
+
+		if (this.World.Assets.getOrigin().getID() == "scenario.trader")
+				{
+				barterMult = barterMult * 1.1;
+				}
+
+		if ((this.m.Modifiers.BuyPriceMult - barterMult) >= 0.01)
 		{
 		p = p * (this.m.Modifiers.BuyPriceMult - barterMult);
 		}
-		if ((this.m.Modifiers.BuyPriceMult - barterMult) <= 0.01)
-		{
-		p = 0.01;
-		}
+
+		// this.logInfo("final buy price is " + p + " multiplier");
 		return p;
 	}
 
 	function getSellPriceMult()
 	{
+		
 		local p = this.getPriceMult() * this.World.Assets.getSellPriceMult();
 		local r = this.World.FactionManager.getFaction(this.m.Factions[0]).getPlayerRelation();
-
 		if (r < 50)
 		{
 			p = p - (50.0 - r) * 0.006;
@@ -669,14 +679,26 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		{
 			p = p + (r - 50.0) * 0.003;
 		}
-
 		local barterMult = 0.0;
+		local greed = 1;
 		foreach (bro in this.World.getPlayerRoster().getAll())
 		{
 			barterMult += bro.getBarterModifier();
+			if (bro.getSkills().hasSkill("perk.legend_barter_greed"))
+			{
+			greed = 2;
+			}
 		}
-		barterMult = this.Math.pow(barterMult, 0.5);
+
+		barterMult = barterMult / greed;
+
+		if (this.World.Assets.getOrigin().getID() == "scenario.trader")
+				{
+				barterMult = barterMult * 1.1;
+				}
+
 		p = p * (this.m.Modifiers.SellPriceMult + barterMult);
+
 		return p;
 	}
 
@@ -1453,7 +1475,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		this.World.Assets.getOrigin().onUpdateStablesList(draftList);
 
 		//TODO this currently being used to disable any horses from being added to the game.
-		draftList = ["legend_donkey"];
+		//draftList = ["legend_donkey"];
 
 		while (maxRecruits > current.len())
 		{

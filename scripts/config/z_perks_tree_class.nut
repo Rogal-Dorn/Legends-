@@ -27,7 +27,7 @@ gt.Const.Perks.BardClassTree <- {
 		"entertaining"
 	],
 	Tree = [
-		[],
+		[gt.Const.Perks.PerkDefs.LegendCheerOn],
 		[gt.Const.Perks.PerkDefs.LegendDaze],
 		[],
 		[gt.Const.Perks.PerkDefs.LegendEntice],
@@ -53,6 +53,22 @@ gt.Const.Perks.HealerClassTree <- {
 	]
 };
 
+gt.Const.Perks.FaithClassTree <- {
+	ID = "FaithClassTree",
+	Descriptions = [
+		"faith"
+	],
+	Tree = [
+		[],
+		[],
+		[],
+		[],
+		[gt.Const.Perks.PerkDefs.LegendPrayerOfFaith],
+		[gt.Const.Perks.PerkDefs.LegendPrayerOfLife],
+		[gt.Const.Perks.PerkDefs.LegendHolyFlame]
+	]
+};
+
 gt.Const.Perks.FistsClassTree <- {
 	ID = "FistsClassTree",
 	Descriptions = [
@@ -64,7 +80,7 @@ gt.Const.Perks.FistsClassTree <- {
 		[gt.Const.Perks.PerkDefs.LegendGrapple],
 		[gt.Const.Perks.PerkDefs.LegendSpecFists],
 		[],
-		[],
+		[gt.Const.Perks.PerkDefs.LegendChoke],
 		[]
 	]
 };
@@ -80,7 +96,7 @@ gt.Const.Perks.ChefClassTree <- {
 		[gt.Const.Perks.PerkDefs.LegendAlcoholBrewing],
 		[],
 		[],
-		[],
+		[gt.Const.Perks.PerkDefs.LegendQuartermaster],
 		[gt.Const.Perks.PerkDefs.LegendFieldTreats]
 	]
 };
@@ -111,11 +127,14 @@ gt.Const.Perks.BarterClassTree <- {
 		[],
 		[gt.Const.Perks.PerkDefs.LegendBarterConvincing],
 		[],
-		[],
-		[gt.Const.Perks.PerkDefs.LegendBarterTrustworthy],
+		[gt.Const.Perks.PerkDefs.LegendBarterTrustworthy,],
+		[
+		gt.Const.Perks.PerkDefs.LegendDangerPay,
+		gt.Const.Perks.PerkDefs.LegendPaymaster
+		],
 		[
 		gt.Const.Perks.PerkDefs.LegendBribe,
-		gt.Const.Perks.PerkDefs.LegendDangerPay
+		gt.Const.Perks.PerkDefs.LegendBarterGreed
 		]
 	]
 };
@@ -162,7 +181,7 @@ gt.Const.Perks.HammerClassTree <- {
 		[],
 		[gt.Const.Perks.PerkDefs.LegendSpecialistHammerDamage],
 		[],
-		[gt.Const.Perks.PerkDefs.Bruiser],
+		[gt.Const.Perks.PerkDefs.SunderingStrikes],
 		[],
 		[]
 	]
@@ -194,7 +213,7 @@ gt.Const.Perks.PickaxeClassTree <- {
 		[],
 		[gt.Const.Perks.PerkDefs.LegendSpecialistPickaxeDamage],
 		[],
-		[gt.Const.Perks.PerkDefs.Bruiser],
+		[gt.Const.Perks.PerkDefs.SunderingStrikes],
 		[],
 		[]
 	]
@@ -431,6 +450,7 @@ gt.Const.Perks.ClassTrees <- {
 		gt.Const.Perks.BeastClassTree,
 		gt.Const.Perks.BardClassTree,
 		gt.Const.Perks.HealerClassTree,
+		gt.Const.Perks.FaithClassTree,
 		gt.Const.Perks.FistsClassTree,
 		gt.Const.Perks.ChefClassTree, 
 		gt.Const.Perks.RepairClassTree,

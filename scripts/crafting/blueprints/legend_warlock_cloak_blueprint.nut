@@ -25,20 +25,16 @@ this.legend_warlock_cloak_blueprint <- this.inherit("scripts/crafting/blueprint"
 				Num = 1
 			}
 		];
-		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
-		{
-			ingredients.push({
-				Script = "scripts/items/legend_armor/cloth/legend_tunic",
-				Num = 1
-			})
-		}
-		else
-		{
-			ingredients.push({
-				Script = "scripts/items/armor/thick_dark_tunic",
-				Num = 1
-			})
-		}
+		ingredients.push({
+			Script = "scripts/items/legend_armor/cloth/legend_tunic",
+			Num = 1,
+			LegendsArmor = true
+		})
+		ingredients.push({
+			Script = "scripts/items/armor/thick_dark_tunic",
+			Num = 1,
+			LegendsArmor = true
+		})
 
 		this.init(ingredients);
 	}

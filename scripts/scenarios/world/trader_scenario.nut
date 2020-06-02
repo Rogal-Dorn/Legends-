@@ -4,7 +4,7 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 	{
 		this.m.ID = "scenario.trader";
 		this.m.Name = "Trading Caravan";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_41.png[/img][/p]You\'re running a small trading caravan and have most of your crowns invested into trading goods. But the roads have become dangerous - brigands and greenskins lay in ambush, and there\'s rumors of even worse things out there.\n\n [color=#bcad8c]Trader:[/color] Get better prices for buying and selling.\n[color=#bcad8c]Not a Warrior:[/color] Start with no renown, and gain renown at half the normal rate. Every non-combat recruit gains the Pacifist perk. \n[color=#bcad8c]Bribery:[/color] Pay off human enemies instead of fighting them. Combat backgrounds cost twice as much to hire.";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_41.png[/img][/p]You\'re running a small trading caravan and have most of your crowns invested into trading goods. But the roads have become dangerous - brigands and greenskins lay in ambush, and there\'s rumors of even worse things out there.\n\n [color=#bcad8c]Trader:[/color] Get better prices for buying and selling.\n[color=#bcad8c]Not a Warrior:[/color] Start with no renown, and gain renown at half the normal rate. Every non-combat recruit gains the Pacifist perk. \n[color=#bcad8c]Bribery:[/color] Pay off human enemies instead of fighting them. Combat backgrounds cost more to hire, peddlers and donkeys cost less.";
 		this.m.Difficulty = 2;
 		this.m.Order = 24;
 	}
@@ -171,6 +171,7 @@ foreach (b in this.World.getPlayerRoster().getAll())
 		{
 			bro.improveMood(0.5, "Glad to be out of the fighting line");
 		    bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_pacifist"));
+		    bro.m.PerkPointsSpent += 1;
 		}
 
 
@@ -185,8 +186,8 @@ foreach (b in this.World.getPlayerRoster().getAll())
 		
 			if (bro.getBackground().isCombatBackground())
 			{
-				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost  * 2);
-				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 2);
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.25);
+				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 1.25);
 			}
 			else if (!bro.getBackground().isCombatBackground())
 			{
@@ -195,8 +196,8 @@ foreach (b in this.World.getPlayerRoster().getAll())
 
 			if (bro.getBackground().getID() == "background.peddler" || bro.getBackground().getID() == "background.legend_donkey" )
 			{
-					bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.9);
-					bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.9);		 
+					bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.75);
+					bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.75);		 
 			}
 		}
 	}

@@ -212,6 +212,11 @@ this.troublemakers_bully_peasants_event <- this.inherit("scripts/events/event", 
 			{
 				this.Characters.push(_event.m.Troublemaker.getImagePath());
 				this.Characters.push(_event.m.Peacekeeper.getImagePath());
+				//set relations
+				local modifier1 = this.Math.rand(5, 10);
+				_event.m.Troublemaker.changeActiveRelationship( _event.m.Peacekeeper, modifier1 );
+				local modifier2 = this.Math.rand(5, 10);
+				_event.m.Peacekeeper.changeActiveRelationship( _event.m.Troublemaker, modifier2 );
 			}
 
 		});
@@ -235,6 +240,13 @@ this.troublemakers_bully_peasants_event <- this.inherit("scripts/events/event", 
 			{
 				this.Characters.push(_event.m.Troublemaker.getImagePath());
 				this.Characters.push(_event.m.Peacekeeper.getImagePath());
+
+				//set relations
+				local modifier1 = this.Math.rand(-5, -10);
+				_event.m.Troublemaker.changeActiveRelationship( _event.m.Peacekeeper, modifier1 );
+				local modifier2 = this.Math.rand(-5, -10);
+				_event.m.Peacekeeper.changeActiveRelationship( _event.m.Troublemaker, modifier2 );
+
 				local injury = _event.m.Peacekeeper.addInjury(this.Const.Injury.Knockout);
 				this.List.push({
 					id = 10,

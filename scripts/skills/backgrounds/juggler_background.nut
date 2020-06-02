@@ -58,7 +58,8 @@ this.juggler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 				this.Const.Perks.CalmTree
 			],
 			Enemy = [],
-			Class = []
+			Class = [],
+			Magic = []
 		}
 	}
 

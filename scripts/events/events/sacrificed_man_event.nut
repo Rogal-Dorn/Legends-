@@ -80,9 +80,24 @@ this.sacrificed_man_event <- this.inherit("scripts/events/event", {
 				this.Characters.push(_event.m.Cultist.getImagePath());
 				local roster = this.World.getTemporaryRoster();
 				_event.m.Dude = roster.create("scripts/entity/tactical/player");
-				_event.m.Dude.setStartValuesEx([
-					"cultist_background"
-				]);
+					if (this.World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
+						{
+						_event.m.Dude.getTags().add("PlayerSkeleton");
+						_event.m.Dude.getTags().add("undead");
+						_event.m.Dude.getTags().add("skeleton");
+						_event.m.Dude.setStartValuesEx([
+							"cultist_background"
+						]);
+						_event.m.Dude.getSkills().add(this.new("scripts/skills/racial/skeleton_racial"));
+						_event.m.Dude.getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));						
+						}
+					else
+					{
+						_event.m.Dude.setStartValuesEx([
+							"cultist_background"
+						]);
+					}
+
 				_event.m.Dude.setTitle("the Sacrifice");
 				_event.m.Dude.getBackground().m.RawDescription = "You found this man as a sacrifice, but he arose from his fate to be a servant of Davkul. He asked to fight for you, and you, for some reason, actually agreed.";
 				_event.m.Dude.getBackground().buildDescription(true);

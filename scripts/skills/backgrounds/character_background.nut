@@ -79,7 +79,9 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			Enemy = 2,
 			EnemyChance = 0.1,
 			Class = 1,
-			ClassChance = 0.10
+			ClassChance = 0.10,
+			Magic = 1,
+			MagicChance = 0.10
 		},
 		PerkTreeDynamic = {
 			Weapon = [
@@ -95,7 +97,8 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 				this.Const.Perks.FastTree
 			],
 			Enemy = [],
-			Class = []
+			Class = [],
+			Magic = []
 		},
 		CustomPerkTree = null,
 		PerkTreeMap = null,
@@ -658,14 +661,14 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		local MeleeDefense2 = this.Math.rand(a.MeleeDefense[0], a.MeleeDefense[1]);
 		local RangedDefense2 = this.Math.rand(a.RangedDefense[0], a.RangedDefense[1]);
 		local Initiative2 = this.Math.rand(a.Initiative[0], a.Initiative[1]);
-		local HitpointsAvg = this.Math.floor((Hitpoints1 + Hitpoints2) / 2);
-		local BraveryAvg  = this.Math.floor((Bravery1 + Bravery2) / 2);
-		local StaminaAvg  = this.Math.floor((Stamina1 + Stamina2) / 2);
-		local MeleeSkillAvg  = this.Math.floor((MeleeSkill1 + MeleeSkill2) / 2);
-		local RangedSkillAvg  = this.Math.floor((RangedSkill1 + RangedSkill2) / 2);
-		local MeleeDefenseAvg  = this.Math.floor((MeleeDefense1 + MeleeDefense2) / 2);
-		local RangedDefenseAvg  = this.Math.floor((RangedDefense1 + RangedDefense2) / 2);
-		local InitiativeAvg  = this.Math.floor((Initiative1 + Initiative2) / 2);
+		local HitpointsAvg = this.Math.round((Hitpoints1 + Hitpoints2) / 2);
+		local BraveryAvg  = this.Math.round((Bravery1 + Bravery2) / 2);
+		local StaminaAvg  = this.Math.round((Stamina1 + Stamina2) / 2);
+		local MeleeSkillAvg  = this.Math.round((MeleeSkill1 + MeleeSkill2) / 2);
+		local RangedSkillAvg  = this.Math.round((RangedSkill1 + RangedSkill2) / 2);
+		local MeleeDefenseAvg  = this.Math.round((MeleeDefense1 + MeleeDefense2) / 2);
+		local RangedDefenseAvg  = this.Math.round((RangedDefense1 + RangedDefense2) / 2);
+		local InitiativeAvg  = this.Math.round((Initiative1 + Initiative2) / 2);
 
 
 		b.Hitpoints = HitpointsAvg;

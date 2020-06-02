@@ -70,7 +70,8 @@ this.female_bowyer_background <- this.inherit("scripts/skills/backgrounds/charac
 				this.Const.Perks.AgileTree
 			],
 			Enemy = [],
-			Class = []
+			Class = [],
+			Magic = []
 		}
 	}
 

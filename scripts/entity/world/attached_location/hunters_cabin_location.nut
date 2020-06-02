@@ -36,9 +36,14 @@ this.hunters_cabin_location <- this.inherit("scripts/entity/world/attached_locat
 		if (_id == "building.marketplace")
 		{
 			_list.push({
-				R = 0,
+				R = 10,
 				P = 1.0,
 				S = "supplies/cured_venison_item"
+			});
+			_list.push({
+				R = 0,
+				P = 0.9,
+				S = "supplies/legend_fresh_meat_item"
 			});
 			_list.push({
 				R = 30,
@@ -51,9 +56,24 @@ this.hunters_cabin_location <- this.inherit("scripts/entity/world/attached_locat
 				S = "weapons/hunting_bow"
 			});
 			_list.push({
+				R = 90,
+				P = 1.0,
+				S = "weapons/war_bow"
+			});
+			_list.push({
+				R = 90,
+				P = 1.0,
+				S = "weapons/goblin_bow"
+			});
+			_list.push({
 				R = 10,
 				P = 1.0,
 				S = "helmets/hood"
+			});
+			_list.push({
+				R = 10,
+				P = 1.0,
+				S = "weapons/knife"
 			});
 			_list.push({
 				R = 80,

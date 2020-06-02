@@ -174,7 +174,6 @@ this.ghost <- this.inherit("scripts/entity/tactical/actor", {
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_anticipation"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_dodge"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_levitation"));
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_teleport"));
 			}
 
 	}

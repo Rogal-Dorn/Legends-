@@ -102,6 +102,9 @@ gt.Const.LegendMod.FavoriteSwordmaster <- [
 	this.Const.EntityType.Greatsword,
 	this.Const.EntityType.Swordmaster,
 	this.Const.EntityType.BanditLeader,
+	this.Const.EntityType.BanditVeteran,
+	this.Const.EntityType.BanditWarlord,
+	this.Const.EntityType.LegendFencer,
 	this.Const.EntityType.BarbarianChampion,
 	this.Const.EntityType.Sergeant
 ];
@@ -112,6 +115,7 @@ gt.Const.LegendMod.FavoriteArcher <- [
 	this.Const.EntityType.BanditPoacher,
 	this.Const.EntityType.MilitiaRanged,
 	this.Const.EntityType.Arbalester,
+	this.Const.EntityType.LegendSlinger,
 	this.Const.EntityType.GoblinAmbusher
 ];
 
@@ -131,11 +135,22 @@ gt.Const.LegendMod.FavoriteBandit <- [
 	this.Const.EntityType.BanditPoacher,
 	this.Const.EntityType.BanditMarksman,
 	this.Const.EntityType.BanditRaider,
+	this.Const.EntityType.BanditVeteran,
+	this.Const.EntityType.BanditWarlord,
 	this.Const.EntityType.BanditLeader
 ];
 
 gt.Const.LegendMod.FavoriteCaravan <- [
 	this.Const.EntityType.Peasant,
+	this.Const.EntityType.LegendPeasantButcher,
+	this.Const.EntityType.LegendPeasantBlacksmith,
+	this.Const.EntityType.LegendPeasantMonk,
+	this.Const.EntityType.LegendPeasantFarmhand,
+	this.Const.EntityType.LegendPeasantMinstrel,
+	this.Const.EntityType.LegendPeasantPoacher,
+	this.Const.EntityType.LegendPeasantMiner,
+	this.Const.EntityType.LegendPeasantSquire,
+	this.Const.EntityType.LegendPeasantWitchHunter,
 	this.Const.EntityType.CaravanHand,
 	this.Const.EntityType.CaravanGuard,
 	this.Const.EntityType.Militia,
@@ -152,6 +167,9 @@ gt.Const.LegendMod.FavoriteNoble <- [
 	this.Const.EntityType.Arbalester,
 	this.Const.EntityType.StandardBearer,
 	this.Const.EntityType.Sergeant,
+	this.Const.EntityType.LegendFencer,
+	this.Const.EntityType.LegendHalberdier,
+	this.Const.EntityType.LegendSlinger,
 	this.Const.EntityType.Knight
 ];
 
@@ -201,7 +219,7 @@ gt.Const.LegendMod.GetFavoriteEnemyValue <- function ( _type )
 		case "this.Const.EntityType.Spider":
 		value = 8; 
 		break;
-		case "this.Const.EntityType.SpiderBodygaurd":
+		case "this.Const.EntityType.SpiderBodyguard":
 		value = 8; 
 		break;
 		case "this.Const.EntityType.LegendRedbackSpider":

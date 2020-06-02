@@ -182,10 +182,23 @@ this.shoot_stake <- this.inherit("scripts/skills/skill", {
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
-		if (_skill == this)
+		if (_skill != this)
 		{
-			_properties.RangedSkill += 10 + this.m.AdditionalAccuracy;
-			_properties.HitChanceAdditionalWithEachTile -= 3 + this.m.AdditionalHitChance;
+			return;
+		}
+
+		if (_targetEntity == null)
+		{
+			return;
+		}
+
+		_properties.RangedSkill += 10 + this.m.AdditionalAccuracy;
+		_properties.HitChanceAdditionalWithEachTile -= 3 + this.m.AdditionalHitChance;
+
+		if (_targetEntity.getType() == this.Const.EntityType.Vampire || _targetEntity.getType() == this.Const.EntityType.LegendVampireLord)
+		{
+			_properties.DamageRegularMin += 80;
+			_properties.DamageRegularMax += 85;
 		}
 	}
 

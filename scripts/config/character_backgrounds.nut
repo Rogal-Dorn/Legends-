@@ -105,6 +105,29 @@ gt.Const.CharacterVeteranBackgrounds <- [
 	"bastard_background",
 	"raider_background"
 ];
+
+gt.Const.CharacterCombatBackgrounds <- [
+	"disowned_noble_background",
+	"female_disowned_noble_background",
+	"adventurous_noble_background",
+	"female_adventurous_noble_background",
+	"retired_soldier_background",
+	"swordmaster_background",
+	"sellsword_background",
+	"hedge_knight_background",
+	"militia_background",
+	"bastard_background",
+	"hunter_background",
+	"beast_hunter_background",
+	"legend_noble_ranged",
+	"legend_noble_2h",
+	"legend_noble_shield",
+	"assassin_background",
+	"brawler_background",
+	"legend_blacksmith_background",
+	"raider_background"
+];
+
 gt.Const.CharacterBackgroundsAnimated <- [
 	"adventurous_noble_background",
 	"apprentice_background",
@@ -193,6 +216,22 @@ gt.Const.CharacterFemaleBackgrounds <- [
 	"female_tailor_background",
 	"legend_nun_background"
 ];
+
+gt.Const.CharacterMagicBackgrounds <- [
+	"legend_ancient_summoner_background",
+	"legend_death_summoner_background",
+	"legend_diviner_background",
+	"legend_enchanter_background",
+	"legend_entrancer_background",
+	"legend_illusionist_background",
+	"legend_master_archer_background",
+	"legend_necrosavant_background",
+	"legend_runesmith_background",
+	"legend_spiritualist_background",
+	"legend_transmuter_background",
+	"legend_warlock_background"
+];
+
 
 gt.Const.CharacterBackgroundsRandom <- [
 	"adventurous_noble_background",

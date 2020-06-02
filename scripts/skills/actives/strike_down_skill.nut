@@ -102,7 +102,7 @@ this.strike_down_skill <- this.inherit("scripts/skills/skill", {
 
 				if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
 				{
-					this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " has stunned " + this.Const.UI.getColorizedEntityName(_targetTile.getEntity()) + " for two turns");
+					this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " has stunned " + this.Const.UI.getColorizedEntityName(target) + " for two turns");
 				}
 			}
 		}

@@ -33,6 +33,7 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 		this.m.DailyCost = 0;
 		this.m.Excluded = [
 			"trait.athletic",
+			"trait.bloodthirsty",
 			"trait.brute",
 			"trait.dexterous",
 			"trait.huge",
@@ -284,35 +285,35 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 	{
 		local c = {
 			Hitpoints = [
-				-5,
-				-5
+				-10,
+				-10
 			],
 			Bravery = [
-				10,
-				10
+				5,
+				5
 			],
 			Stamina = [
-				20,
+				15,
 				20
 			],
 			MeleeSkill = [
-				0,
-				0
-			],
-			RangedSkill = [
-				20,
-				20
-			],
-			MeleeDefense = [
 				-5,
 				-5
 			],
+			RangedSkill = [
+				15,
+				20
+			],
+			MeleeDefense = [
+				-10,
+				-10
+			],
 			RangedDefense = [
-				0,
-				0
+				-5,
+				-5
 			],
 			Initiative = [
-				25,
+				20,
 				25
 			]
 		};
@@ -371,8 +372,9 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 		talents[this.Const.Attributes.Fatigue] = 3;
 		this.getContainer().getActor().fillTalentValues(2, true);
 		local items = this.getContainer().getActor().getItems();
-		items.equip(this.new("scripts/items/legend_armor/armor/legend_armor_seer_robes"));
+		items.equip(this.new("scripts/items/legend_armor/cloth/legend_robes_magic"));
 		items.equip(this.new("scripts/items/helmets/legend_seer_hat"));
+		items.equip(this.new("scripts/items/helmets/magician_hat"));
 		items.equip(this.new("scripts/items/weapons/legend_mystic_staff"));
 		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");

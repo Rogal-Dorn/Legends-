@@ -208,6 +208,12 @@ this.pimp_vs_harlot_event <- this.inherit("scripts/events/event", {
 						this.World.getPlayerRoster().add(_event.m.Dude);
 						this.World.getTemporaryRoster().clear();
 						_event.m.Dude.onHired();
+						//set relations
+						local modifier1 = this.Math.rand(5, 10);
+						_event.m.Dude.changeActiveRelationship( _event.m.Monk, modifier1 );
+						local modifier2 = this.Math.rand(5, 10);
+						_event.m.Monk.changeActiveRelationship( _event.m.Dude, modifier2 );
+
 						_event.m.Dude = null;
 						return 0;
 					}
@@ -240,9 +246,25 @@ this.pimp_vs_harlot_event <- this.inherit("scripts/events/event", {
 				this.Characters.push(_event.m.Monk.getImagePath());
 				local roster = this.World.getTemporaryRoster();
 				_event.m.Dude = roster.create("scripts/entity/tactical/player");
-				_event.m.Dude.setStartValuesEx([
-					"pimp_background"
-				]);
+					if (this.World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
+						{
+						_event.m.Dude.getTags().add("PlayerSkeleton");
+						_event.m.Dude.getTags().add("undead");
+						_event.m.Dude.getTags().add("skeleton");
+							_event.m.Dude.setStartValuesEx([
+								"pimp_background"
+							]);
+						_event.m.Dude.getSkills().add(this.new("scripts/skills/racial/skeleton_racial"));
+						_event.m.Dude.getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));							
+						}
+					else
+					{
+	
+						_event.m.Dude.setStartValuesEx([
+							"pimp_background"
+						]);
+					}
+
 				_event.m.Dude.setTitle("the Pimp");
 				_event.m.Dude.getBackground().m.RawDescription = "While visiting " + _event.m.Town.getName() + ", you found %name% quarreling with his only harlot. " + _event.m.Monk.getName() + " persuaded him to join the company and you agreed to take him along. Hopefully, he\'s better fighting in the shield wall than he is wrangling whores.";
 				_event.m.Dude.getBackground().buildDescription(true);

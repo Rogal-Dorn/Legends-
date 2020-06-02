@@ -42,7 +42,7 @@ this.legend_revolt <- this.inherit("scripts/skills/skill", {
 			id = 7,
 			type = "text",
 			icon = "ui/icons/vision.png",
-			text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]2[/color] tiles"
+			text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]6[/color] tiles"
 		});
 		ret.push({
 			id = 7,
@@ -136,7 +136,7 @@ this.legend_revolt <- this.inherit("scripts/skills/skill", {
 	{
 		local target = _targetTile.getEntity();
 
-		if (this.Math.rand(1, 100) > this.getHitchance(_targetTile.getEntity()))
+		if (this.Math.rand(1, 100) > this.getHitchance(target))
 		{
 			if (this.m.SoundOnMiss.len() != 0)
 			{

@@ -117,6 +117,56 @@ this.lumber_camp_location <- this.inherit("scripts/entity/world/attached_locatio
 				S = "weapons/woodcutters_axe"
 			});
 			_list.push({
+				R = 90,
+				P = 1.0,
+				S = "weapons/legend_staff_vala"
+			});
+			_list.push({
+				R = 95,
+				P = 1.0,
+				S = "weapons/goblin_staff"
+			});
+			_list.push({
+				R = 85,
+				P = 1.0,
+				S = "weapons/legend_mystic_staff"
+			});
+			_list.push({
+				R = 10,
+				P = 1.0,
+				S = "weapons/legend_wooden_pitchfork"
+			});
+			_list.push({
+				R = 10,
+				P = 1.0,
+				S = "weapons/legend_wooden_spear"
+			});
+			_list.push({
+				R = 70,
+				P = 1.0,
+				S = "weapons/legend_ranged_wooden_flail"
+			});
+			_list.push({
+				R = 60,
+				P = 1.0,
+				S = "weapons/two_handed_wooden_hammer"
+			});
+			_list.push({
+				R = 50,
+				P = 1.0,
+				S = "weapons/two_handed_wooden_flail"
+			});
+			_list.push({
+				R = 20,
+				P = 1.0,
+				S = "weapons/legend_staff"
+			});
+			_list.push({
+				R = 95,
+				P = 1.0,
+				S = "weapons/legend_staff_gnarled"
+			});
+			_list.push({
 				R = 30,
 				P = 1.0,
 				S = "weapons/woodcutters_axe"
@@ -132,12 +182,7 @@ this.lumber_camp_location <- this.inherit("scripts/entity/world/attached_locatio
 				S = "weapons/hatchet"
 			});
 			_list.push({
-				R = 30,
-				P = 1.0,
-				S = "weapons/legend_saw"
-			});
-			_list.push({
-				R = 30,
+				R = 15,
 				P = 1.0,
 				S = "weapons/legend_saw"
 			});
@@ -147,9 +192,24 @@ this.lumber_camp_location <- this.inherit("scripts/entity/world/attached_locatio
 				S = "weapons/hand_axe"
 			});
 			_list.push({
+				R = 30,
+				P = 1.0,
+				S = "weapons/legend_infantry_axe"
+			});
+			_list.push({
 				R = 50,
 				P = 1.0,
 				S = "weapons/hooked_blade"
+			});
+			_list.push({
+				R = 5,
+				P = 1.0,
+				S = "weapons/legend_wooden_stake"
+			});
+			_list.push({
+				R = 1,
+				P = 1.0,
+				S = "weapons/wooden_stick"
 			});
 			_list.push({
 				R = 0,
@@ -178,6 +238,11 @@ this.lumber_camp_location <- this.inherit("scripts/entity/world/attached_locatio
 				R = 20,
 				P = 1.0,
 				S = "weapons/hooked_blade"
+			});
+			_list.push({
+				R = 50,
+				P = 1.0,
+				S = "weapons/throwing_axe"
 			});
 		}
 		else if (_id == "building.specialized_trader")

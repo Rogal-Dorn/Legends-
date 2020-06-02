@@ -122,6 +122,10 @@ this.fortified_outpost_location <- this.inherit("scripts/entity/world/attached_l
 		_list.push("deserter_background");
 		_list.push("sellsword_background");
 		_list.push("hedge_knight_background");
+		if(this.Const.LegendMod.Configs.LegendMagicEnabled())
+		{
+			_list.push("legend_master_archer_background");
+		}
 	}
 
 	function onUpdateShopList( _id, _list )
@@ -314,6 +318,11 @@ this.fortified_outpost_location <- this.inherit("scripts/entity/world/attached_l
 				R = 20,
 				P = 1.0,
 				S = "weapons/military_pick"
+			});
+			_list.push({
+				R = 20,
+				P = 1.0,
+				S = "weapons/legend_infantry_axe"
 			});
 		}
 		else if (_id == "building.armorsmith")

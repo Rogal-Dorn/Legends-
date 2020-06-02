@@ -57,6 +57,7 @@ this.cultist_vs_uneducated_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
+				this.World.Assets.addMoralReputation(-1);
 				this.Characters.push(_event.m.Cultist.getImagePath());
 				this.Characters.push(_event.m.Uneducated.getImagePath());
 				local background = this.new("scripts/skills/backgrounds/converted_cultist_background");
@@ -66,6 +67,13 @@ this.cultist_vs_uneducated_event <- this.inherit("scripts/events/event", {
 				background.buildDescription();
 				background.rebuildPerkTree(oldPerkTree);
 				_event.m.Uneducated.resetPerks();
+
+				//set relations
+				local modifier1 = this.Math.rand(10, 20);
+				_event.m.Uneducated.changeActiveRelationship( _event.m.Cultist, modifier1 );
+				local modifier2 = this.Math.rand(10, 20);
+				_event.m.Cultist.changeActiveRelationship( _event.m.Uneducated, modifier2 );
+
 				background.onSetAppearance();
 				this.List = [
 					{
@@ -102,6 +110,7 @@ this.cultist_vs_uneducated_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
+				this.World.Assets.addMoralReputation(2);
 				this.Characters.push(_event.m.Cultist.getImagePath());
 				this.Characters.push(_event.m.Uneducated.getImagePath());
 				_event.m.Cultist.worsenMood(2.0, "Was denied the chance to convert " + _event.m.Uneducated.getName());
@@ -147,7 +156,9 @@ this.cultist_vs_uneducated_event <- this.inherit("scripts/events/event", {
 			{
 				cultist_candidates.push(bro);
 			}
-			else if (bro.getBackground().isLowborn() && !bro.getSkills().hasSkill("trait.bright") || !bro.getBackground().isNoble() && bro.getSkills().hasSkill("trait.dumb") || !bro.getBackground().getID() == "background.legend_commander_berserker" || !bro.getBackground().getID() == "background.legend_berserker")
+			else if ((bro.getBackground().isLowborn() && !bro.getSkills().hasSkill("trait.bright")) || 
+				(!bro.getBackground().isNoble() && (bro.getSkills().hasSkill("trait.dumb") || bro.getSkills().hasSkill("injury.brain_damage"))) && 
+				(!bro.getBackground().getID() == "background.legend_commander_berserker" || !bro.getBackground().getID() == "background.legend_berserker") || !bro.getBackground().getID() == "background.legend_donkey")
 			{
 				uneducated_candidates.push(bro);
 			}

@@ -1,10 +1,11 @@
-this.legend_craftable_greenwood_schrat_shield <- this.inherit("scripts/items/shields/shield", {
+this.legend_craftable_greenwood_schrat_shield <- this.inherit("scripts/items/shields/named/named_shield", {
 	m = {},
 	function create()
 	{
-		this.shield.create();
+		this.named_shield.create();
 		this.m.ID = "shield.legend_craftable_greenwood_schrat";
 		this.m.Name = "Living Greenwood Tree Shield";
+		this.m.NameList = this.Const.Strings.ShieldNames;
 		this.m.Description = "This shield carved out of the remains of a living tree is lighter and sturdier than those made of common wood. At a glance, it almost looks as if its grotesque face is still moving.";
 		this.m.AddGenericSkill = true;
 		this.m.ShowOnCharacter = true;
@@ -14,8 +15,9 @@ this.legend_craftable_greenwood_schrat_shield <- this.inherit("scripts/items/shi
 		this.m.MeleeDefense = 30;
 		this.m.RangedDefense = 25;
 		this.m.StaminaModifier = -14;
-		this.m.Condition = 40;
-		this.m.ConditionMax = 40;
+		this.m.Condition = 72;
+		this.m.ConditionMax = 72;
+		this.randomizeValues();
 	}
 
 	function updateVariant()

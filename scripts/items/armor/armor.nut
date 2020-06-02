@@ -64,7 +64,7 @@ this.armor <- this.inherit("scripts/items/item", {
 
 	function getValue()
 	{
-		return this.Math.floor(this.m.Value * (this.m.Condition / this.m.ConditionMax) + (this.m.Upgrade != null ? this.m.Upgrade.getValue() : 0));
+		return this.Math.floor(this.m.Value * ((1.0 * this.m.Condition) / (1.0 * this.m.ConditionMax)) + (this.m.Upgrade != null ? this.m.Upgrade.getValue() : 0));
 	}
 
 	function setUpgrade( _upgrade )

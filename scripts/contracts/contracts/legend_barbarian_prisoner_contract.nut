@@ -112,9 +112,11 @@ this.legend_barbarian_prisoner_contract <- this.inherit("scripts/contracts/contr
 		{
 			barterMult = barterMult + bro.getBarterModifier();
 		}
-
-		local bartermod = 10 * barterMult;
-		local modrate = this.Math.pow(bartermod, 0.5);
+		if (this.World.Assets.getOrigin().getID() == "scenario.trader")
+		{
+		barterMult = barterMult * 1.1;
+		}
+		local modrate  =  barterMult;
 		this.m.DifficultyMult = this.Math.rand(145, 175) * 0.01;
 		this.m.Payment.Pool = this.Math.max(100, 3 * distance * (4 + modrate) * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult());
 		this.m.Payment.Completion = 0.75;

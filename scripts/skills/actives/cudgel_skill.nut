@@ -81,7 +81,7 @@ this.cudgel_skill <- this.inherit("scripts/skills/skill", {
 
 			if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
 			{
-				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " struck a blow that leaves " + this.Const.UI.getColorizedEntityName(_targetTile.getEntity()) + " dazed");
+				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " struck a blow that leaves " + this.Const.UI.getColorizedEntityName(target) + " dazed");
 			}
 		}
 

@@ -151,8 +151,7 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 		{
 			barterMult += bro.getBarterModifier();
 		}
-		local bartermod = 10 * barterMult;
-		local modrate = this.Math.pow(bartermod, 0.5);
+		local modrate = 10 * barterMult;
 
 		if (days >= 5)
 		{

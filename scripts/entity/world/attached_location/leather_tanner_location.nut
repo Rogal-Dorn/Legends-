@@ -23,6 +23,10 @@ this.leather_tanner_location <- this.inherit("scripts/entity/world/attached_loca
 		_list.push("retired_soldier_background");
 		_list.push("butcher_background");
 		_list.push("butcher_background");
+		if(this.Const.LegendMod.Configs.LegendMagicEnabled())
+		{
+			_list.push("legend_ancient_summoner_background");
+		}
 	}
 
 	function onUpdateShopList( _id, _list )
@@ -147,11 +151,11 @@ this.leather_tanner_location <- this.inherit("scripts/entity/world/attached_loca
 		if (_id == "building.marketplace")
 		{
 			local armorsL = [
-				[15, 1.0, "plate/legend_armor_leather_jacket"],
-				[15, 1.0, "plate/legend_armor_leather_jacket_simple"],
+				[10, 1.0, "plate/legend_armor_leather_jacket"],
+				[5, 1.0, "plate/legend_armor_leather_jacket_simple"],
 				[10, 1.0, "cloth/legend_apron_smith"],
-				[35, 1.0, "plate/legend_armor_leather_padded"],
-				[35, 1.0, "plate/legend_armor_leather_noble"],
+				[20, 1.0, "plate/legend_armor_leather_padded"],
+				[60, 1.0, "plate/legend_armor_leather_noble"],
 				[35, 1.0, "plate/legend_armor_leather_lamellar_harness_reinforced"],
 				[40, 1.0, "plate/legend_armor_leather_lamellar"],
 				[40, 1.0, "plate/legend_armor_leather_riveted"],

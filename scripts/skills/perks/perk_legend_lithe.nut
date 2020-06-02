@@ -14,36 +14,36 @@ this.perk_legend_lithe <- this.inherit("scripts/skills/skill", {
 
 	function isHidden()
 	{
-		local fm = this.Math.floor(this.getChance() * 100);
-		return fm >= 100;
+		local fm = this.getChance();
+		return fm <= 0;
 	}
 
 	function getDescription()
 	{
-		return "Lithe like a lizard! This character is able to partially evade or deflect attacks at the last moment, turning them into glancing hits. Does not work if you have nimble";
+		return "Lithe like a lizard! This character is able to partially evade or deflect attacks at the last moment, turning them into glancing hits. ";
 	}
 
 	function getTooltip()
 	{
-		local fm = this.Math.round(this.getChance() * 100);
+		local fm = this.getChance();
 		local tooltip = this.skill.getTooltip();
 
-		if (fm < 100)
+		if (fm > 0)
 		{
 			tooltip.push({
 				id = 6,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Only receive [color=" + this.Const.UI.Color.PositiveValue + "]" + fm + "%[/color] of any damage to hitpoints from attacks"
+				text = "Gain a [color=" + this.Const.UI.Color.PositiveValue + "]" + fm + "%[/color] chance of a defense reroll"
 			});
 		}
-		else
+		else //This part doesn't show up due to the "isHidden()" function further up. 
 		{
 			tooltip.push({
 				id = 6,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]This character\'s body and head armor are too heavy as to gain any benefit from being nimble[/color]"
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]This character\'s body and head armor are too heavy as to gain any benefit from being lithe[/color]"
 			});
 		}
 
@@ -65,9 +65,11 @@ this.perk_legend_lithe <- this.inherit("scripts/skills/skill", {
 		{
 			fat = fat + head.getStaminaModifier();
 		}
-
+		//30 here is max armor fat before dropoff starts
 		fat = this.Math.min(0, fat + 30);
-		local ret = this.Math.minf(1.0, 1.0 - 0.3 + this.Math.pow(this.Math.abs(fat), 1.1) * 0.01);
+		//30 here is what the bonus starts at. Graph of the function can be found here.
+		//http://fooplot.com/#W3sidHlwZSI6MCwiZXEiOiIzMC0oKG1heCgwLHgtMzApXjEuMSkpIiwiY29sb3IiOiIjMDAwMDAwIn0seyJ0eXBlIjoxMDAwLCJ3aW5kb3ciOlsiLTIyLjU3NjkyMzA3NjkyMzA3MyIsIjEwMi40MjMwNzY5MjMwNzY5MyIsIi0xNy4zMTI1IiwiMTA3LjY4NzUiXX1d
+		local ret = this.Math.floor(this.Math.max(0, 30 - this.Math.pow(this.Math.abs(fat), 1.1)));
 		return ret;
 	}
 
@@ -78,11 +80,8 @@ this.perk_legend_lithe <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 		local actor = this.getContainer().getActor();
-		if (!actor.getSkills().hasSkill("perk.nimble"))
-		{
 		local chance = this.getChance();
-		_properties.DamageReceivedRegularMult *= chance;
-		}
+		_properties.RerollDefenseChance += chance;
 	}
 
 });

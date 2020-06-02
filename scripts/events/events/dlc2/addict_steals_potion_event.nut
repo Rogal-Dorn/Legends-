@@ -20,6 +20,7 @@ this.addict_steals_potion_event <- this.inherit("scripts/events/event", {
 					Text = "I just hope you\'ll heal in time.",
 					function getResult( _event )
 					{
+						this.World.Assets.addMoralReputation(1);
 						return 0;
 					}
 
@@ -36,6 +37,7 @@ this.addict_steals_potion_event <- this.inherit("scripts/events/event", {
 					Text = "Enough. I\'ll have this bloody demon whipped out of you!",
 					function getResult( _event )
 					{
+						this.World.Assets.addMoralReputation(-1);
 						return "B";
 					}
 
@@ -108,6 +110,7 @@ this.addict_steals_potion_event <- this.inherit("scripts/events/event", {
 				});
 				local brothers = this.World.getPlayerRoster().getAll();
 
+				local modifier1;
 				foreach( bro in brothers )
 				{
 					if (bro.getID() == _event.m.Addict.getID())
@@ -121,6 +124,10 @@ this.addict_steals_potion_event <- this.inherit("scripts/events/event", {
 					}
 
 					bro.worsenMood(1.0, "Appalled by your order to have " + _event.m.Addict.getName() + " flogged");
+
+					modifier1 = this.Math.rand(5, 10);
+					bro.changeActiveRelationship( _event.m.Addict, modifier1 );
+					_event.m.Addict.changeActiveRelationship( bro, modifier1 );
 
 					if (bro.getMoodState() < this.Const.MoodState.Neutral)
 					{

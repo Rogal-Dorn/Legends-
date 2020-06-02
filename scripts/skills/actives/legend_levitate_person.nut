@@ -84,7 +84,7 @@ this.legend_levitate_person <- this.inherit("scripts/skills/skill", {
 
 		if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
 		{
-			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " levitated " + this.Const.UI.getColorizedEntityName(_targetTile.getEntity()) + " leaving them free to move");
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " levitated " + this.Const.UI.getColorizedEntityName(target) + " leaving them free to move");
 		}
 	}
 

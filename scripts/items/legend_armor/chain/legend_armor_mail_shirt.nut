@@ -3,7 +3,7 @@ this.legend_armor_mail_shirt <- this.inherit("scripts/items/legend_armor/legend_
 	function create()
 	{
 		this.legend_armor_upgrade.create();
-		this.m.Type = this.Const.Items.ArmorUpgrades.Chain
+		this.m.Type = this.Const.Items.ArmorUpgrades.Chain;
 		this.m.ID = "legend_armor.mail_shirt";
 		this.m.Name = "Basic Mail Shirt";
 		this.m.Description = "A basic mail shirt. Offers decent and affordable protection against slashing and piercing attacks.";
@@ -15,7 +15,7 @@ this.legend_armor_mail_shirt <- this.inherit("scripts/items/legend_armor/legend_
 		this.m.SpriteBack = "bust_legend_mail_shirt";
 		this.m.SpriteDamagedBack = "bust_legend_mail_shirt_damaged";
 		this.m.SpriteCorpseBack = "bust_legend_mail_shirt_dead";
-		this.m.Value = 400;
+		this.m.Value = 350;
 		this.m.Condition = 50;
 		this.m.ConditionMax = 50;
 		this.m.StaminaModifier = -6;

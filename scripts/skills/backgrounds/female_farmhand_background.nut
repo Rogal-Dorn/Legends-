@@ -83,7 +83,8 @@ this.female_farmhand_background <- this.inherit("scripts/skills/backgrounds/char
 				this.Const.Perks.SturdyTree
 			],
 			Enemy = [],
-			Class = [this.Const.Perks.PitchforkClassTree]
+			Class = [this.Const.Perks.PitchforkClassTree],
+			Magic = []
 		}
 	}
 

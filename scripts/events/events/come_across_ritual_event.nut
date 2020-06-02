@@ -186,6 +186,7 @@ this.come_across_ritual_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
+				this.World.Assets.addMoralReputation(-5);
 				this.Characters.push(_event.m.Cultist.getImagePath());
 				this.World.Assets.getStash().makeEmptySlots(1);
 				local item = this.new("scripts/items/helmets/legendary/mask_of_davkul");
@@ -230,6 +231,7 @@ this.come_across_ritual_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
+			this.World.Assets.addMoralReputation(1);
 			}
 
 		});
@@ -265,6 +267,7 @@ this.come_across_ritual_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
+			this.World.Assets.addMoralReputation(1);
 			}
 
 		});

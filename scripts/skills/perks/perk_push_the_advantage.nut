@@ -21,11 +21,14 @@ this.perk_push_the_advantage <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
-		if (_targetEntity.getSkills().hasSkill("effects.sleeping") || _targetEntity.getSkills().hasSkill("effects.stunned") && !_targetEntity.isAlliedWith(this.getContainer().getActor()))
+		if (!_targetEntity.isAlliedWith(this.getContainer().getActor()))
 		{
+			if(_targetEntity.getSkills().hasSkill("effects.sleeping") || _targetEntity.getSkills().hasSkill("effects.stunned")  || _targetEntity.getSkills().hasSkill("effects.dazed")  || _targetEntity.getSkills().hasSkill("effects.legend_dazed")  || _targetEntity.getSkills().hasSkill("effects.net")  || _targetEntity.getSkills().hasSkill("effects.legend_grappled")  || _targetEntity.getSkills().hasSkill("effects.staggered") || _targetEntity.getSkills().hasSkill("effects.web"))
+			{
 			_properties.MeleeSkill += 20;
 			_properties.RangedSkill += 20;
 			_properties.HitChance[this.Const.BodyPart.Head] += 20;
+			}
 		}
 	}
 

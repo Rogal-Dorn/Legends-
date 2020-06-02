@@ -119,6 +119,7 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.PerkDefs.SpecDagger,
 				this.Const.Perks.PerkDefs.SpecCrossbow,
 				this.Const.Perks.PerkDefs.SpecBow,
+				this.Const.Perks.PerkDefs.LegendMasterySlings,
 				this.Const.Perks.PerkDefs.LegendMasteryNets,
 				this.Const.Perks.PerkDefs.LegendSpecPoison,
 				this.Const.Perks.PerkDefs.SpecThrowing
@@ -129,6 +130,8 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.PerkDefs.Footwork,
 				this.Const.Perks.PerkDefs.CloseCombatArcher,
 				this.Const.Perks.PerkDefs.Ballistics,
+				this.Const.Perks.PerkDefs.LegendHeightenedReflexes,
+				this.Const.Perks.PerkDefs.LegendIncoming,
 				this.Const.Perks.PerkDefs.LegendAmmoBundles,
 				this.Const.Perks.PerkDefs.LegendLithe,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyOrk,
@@ -143,6 +146,7 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.PerkDefs.Rebound,
 				this.Const.Perks.PerkDefs.LegendCoordinatedVolleys,
 				this.Const.Perks.PerkDefs.LegendCascade,
+				this.Const.Perks.PerkDefs.LegendWindReader,
 				this.Const.Perks.PerkDefs.LegendMatchingSet,
 				this.Const.Perks.PerkDefs.LegendPiercingShot,
 				this.Const.Perks.PerkDefs.LegendSecondWind,
@@ -229,36 +233,36 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 
 		local c = {
 			Hitpoints = [
+				-5,
+				-5
+			],
+			Bravery = [
 				0,
 				0
 			],
-			Bravery = [
-				5,
-				5
-			],
 			Stamina = [
-				20,
-				20
+				15,
+				15
 			],
 			MeleeSkill = [
 				0,
 				5
 			],
 			RangedSkill = [
-				25,
+				20,
 				25
 			],
 			MeleeDefense = [
-				0,
-				5
+				-5,
+				0
 			],
 			RangedDefense = [
-				10,
-				10
+				5,
+				5
 			],
 			Initiative = [
-				0,
-				0
+				-5,
+				-5
 			]
 		};
 		return c;

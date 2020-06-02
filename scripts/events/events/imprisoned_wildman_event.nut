@@ -240,8 +240,30 @@ this.imprisoned_wildman_event <- this.inherit("scripts/events/event", {
 			{
 				local roster = this.World.getTemporaryRoster();
 				_event.m.Dude = roster.create("scripts/entity/tactical/player");
-				
-				
+					if (this.World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
+						{
+						_event.m.Dude.getTags().add("PlayerSkeleton");
+						_event.m.Dude.getTags().add("undead");
+						_event.m.Dude.getTags().add("skeleton");
+							local r;
+							r = this.Math.rand(0, 2);
+							if (r == 0)
+								{
+									_event.m.Dude.setStartValuesEx([
+									"wildwoman_background"
+									]);
+								}
+							else
+								{
+									_event.m.Dude.setStartValuesEx([
+										"wildman_background"
+									]);
+								}
+						_event.m.Dude.getSkills().add(this.new("scripts/skills/racial/skeleton_racial"));
+						_event.m.Dude.getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));								
+						}
+					else
+					{
 				local r;
 				r = this.Math.rand(0, 2);
 				if (r == 0)
@@ -256,6 +278,9 @@ this.imprisoned_wildman_event <- this.inherit("scripts/events/event", {
 							"wildman_background"
 						]);
 					}
+					}	
+				
+
 				_event.m.Dude.setTitle("the Animal");
 				_event.m.Dude.getBackground().m.RawDescription = "%name% was \'saved\' by you during a confrontation with an animal tamer-turned-enslaver. A sense of gratitude and debt overcomes any language barriers: the once imprisoned wildling serves the company loyally for the rescue.";
 				_event.m.Dude.getBackground().buildDescription(true);

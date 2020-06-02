@@ -21,7 +21,7 @@ this.legend_hidden_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsAttack = false;
 		this.m.IsWeaponSkill = false;
 		this.m.ActionPointCost = 8;
-		this.m.FatigueCost = 30;
+		this.m.FatigueCost = 40;
 		this.m.MinRange = 0;
 		this.m.MaxRange = 0;
 	}
