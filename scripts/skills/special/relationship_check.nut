@@ -1,9 +1,9 @@
 this.relationship_check <- this.inherit("scripts/skills/skill", {
 	m = {
-		RCMeleeDefense = 0,
-		RCRangedDefense = 0,
-		RCBravery = 0,
-		RCStaminaMult = 1.0
+		// RCMeleeDefense = 0,
+		// RCRangedDefense = 0,
+		// RCBravery = 0,
+		// RCStaminaMult = 1.0
 	},
 	function create()
 	{
@@ -93,130 +93,130 @@ this.relationship_check <- this.inherit("scripts/skills/skill", {
 		];
 	}
 
-	function resetModifiers() 
-	{
-		this.m.RCBravery = 0;
-		this.m.RCStaminaMult = 1.0;
-		this.m.RCRangedDefense = 0;
-		this.m.RCMeleeDefense = 0;
-	}
+	// function resetModifiers() 
+	// {
+	// 	this.m.RCBravery = 0;
+	// 	this.m.RCStaminaMult = 1.0;
+	// 	this.m.RCRangedDefense = 0;
+	// 	this.m.RCMeleeDefense = 0;
+	// }
 
-	function unApplyModifiers()
-	{
-		local properties = this.getContainer().getActor().getBaseProperties();
+	// function unApplyModifiers()
+	// {
+	// 	local properties = this.getContainer().getActor().getBaseProperties();
 
-		properties.Bravery -= this.m.RCBravery;
-		properties.StaminaMult /= this.m.RCStaminaMult;
-		properties.RangedDefense -= this.m.RCRangedDefense;
-		properties.MeleeDefense -= this.m.RCMeleeDefense;
-		this.resetModifiers();
-	}
+	// 	properties.Bravery -= this.m.RCBravery;
+	// 	properties.StaminaMult /= this.m.RCStaminaMult;
+	// 	properties.RangedDefense -= this.m.RCRangedDefense;
+	// 	properties.MeleeDefense -= this.m.RCMeleeDefense;
+	// 	this.resetModifiers();
+	// }
 
-	function applyModifiers()
-	{
-		local properties = this.getContainer().getActor().getBaseProperties();
+	// function applyModifiers()
+	// {
+	// 	local properties = this.getContainer().getActor().getBaseProperties();
 
-		properties.Bravery += this.m.RCBravery;
-		properties.StaminaMult *= this.m.RCStaminaMult;
-		properties.RangedDefense += this.m.RCRangedDefense;
-		properties.MeleeDefense += this.m.RCMeleeDefense;
-	}
+	// 	properties.Bravery += this.m.RCBravery;
+	// 	properties.StaminaMult *= this.m.RCStaminaMult;
+	// 	properties.RangedDefense += this.m.RCRangedDefense;
+	// 	properties.MeleeDefense += this.m.RCMeleeDefense;
+	// }
 
 	
 
-	function computeModifiers( _properties = null )
-	{
-		local actor = this.getContainer().getActor();
-		local myTile = actor.getTile();
-		local actors = this.Tactical.Entities.getInstancesOfFaction(actor.getFaction());
+	// function computeModifiers( _properties = null )
+	// {
+	// 	local actor = this.getContainer().getActor();
+	// 	local myTile = actor.getTile();
+	// 	local actors = this.Tactical.Entities.getInstancesOfFaction(actor.getFaction());
 		
-		local properties;
-		if ( _properties != null )
-			properties = _properties;
-		else
-			properties = this.getContainer().getActor().getBaseProperties();
+	// 	local properties;
+	// 	if ( _properties != null )
+	// 		properties = _properties;
+	// 	else
+	// 		properties = this.getContainer().getActor().getBaseProperties();
 
-		foreach( a in actors )
-		{
-			if (a.getID() == actor.getID())
-			{
-				continue;
-			}
+	// 	foreach( a in actors )
+	// 	{
+	// 		if (a.getID() == actor.getID())
+	// 		{
+	// 			continue;
+	// 		}
 
-			if (myTile.getDistanceTo(a.getTile()) > 1)
-			{
-				continue;
-			}
+	// 		if (myTile.getDistanceTo(a.getTile()) > 1)
+	// 		{
+	// 			continue;
+	// 		}
 
-			if (a.getFaction() != actor.getFaction())
-			{
-				continue;
-			}
+	// 		if (a.getFaction() != actor.getFaction())
+	// 		{
+	// 			continue;
+	// 		}
 
-			// local arrIndex = a.getCompanyID();
+	// 		// local arrIndex = a.getCompanyID();
 
-			local relation = actor.getActiveRelationshipWith(a).RelationNum;			
+	// 		local relation = actor.getActiveRelationshipWith(a).RelationNum;			
 
-			if (relation <= -40 )
-			{
-				this.m.RCStaminaMult *= 0.95;
-				this.m.RCBravery -= 5;
-				this.m.RCRangedDefense -= 5;
-				this.m.RCMeleeDefense -= 5;
-			}
-			else if (relation <= -30 )
-			{
-				this.m.RCBravery -= 5;
-				this.m.RCRangedDefense -= 5;
-				this.m.RCMeleeDefense -= 5;
-			}
-			else if (relation <= -20 )
-			{
-				this.m.RCBravery -= 5;
-				this.m.RCRangedDefense -= 5;
-			}
-			else if (relation <= -10 )
-			{
-				this.m.RCBravery -= 5;
-			}			
-			else if (relation <= 0 )
-			{
-			}	
-			else if (relation <= 10 )
-			{
-			}	
-			else if (relation <= 20 )
-			{
-				this.logInfo("giving " + actor.getName() + " +5 bravery with " + a.getName() + " " + relation);
-				this.m.RCBravery += 5;
-			}	
-			else if (relation <= 30 )
-			{
-				this.m.RCBravery += 5;
-				this.m.RCRangedDefense += 5;
-			}	
-			else if (relation <= 40 )
-			{
-				this.m.RCBravery += 5;
-				this.m.RCRangedDefense += 5;
-				this.m.RCMeleeDefense += 5;
-			}	
-			else if (relation <= 50 )
-			{
-				this.m.RCStaminaMult *= 1.05;
-				this.m.RCBravery += 5;
-				this.m.RCRangedDefense += 5;
-				this.m.RCMeleeDefense += 5;
-			}
-		}
-	}
+	// 		if (relation <= -40 )
+	// 		{
+	// 			this.m.RCStaminaMult *= 0.95;
+	// 			this.m.RCBravery -= 5;
+	// 			this.m.RCRangedDefense -= 5;
+	// 			this.m.RCMeleeDefense -= 5;
+	// 		}
+	// 		else if (relation <= -30 )
+	// 		{
+	// 			this.m.RCBravery -= 5;
+	// 			this.m.RCRangedDefense -= 5;
+	// 			this.m.RCMeleeDefense -= 5;
+	// 		}
+	// 		else if (relation <= -20 )
+	// 		{
+	// 			this.m.RCBravery -= 5;
+	// 			this.m.RCRangedDefense -= 5;
+	// 		}
+	// 		else if (relation <= -10 )
+	// 		{
+	// 			this.m.RCBravery -= 5;
+	// 		}			
+	// 		else if (relation <= 0 )
+	// 		{
+	// 		}	
+	// 		else if (relation <= 10 )
+	// 		{
+	// 		}	
+	// 		else if (relation <= 20 )
+	// 		{
+	// 			this.logInfo("giving " + actor.getName() + " +5 bravery with " + a.getName() + " " + relation);
+	// 			this.m.RCBravery += 5;
+	// 		}	
+	// 		else if (relation <= 30 )
+	// 		{
+	// 			this.m.RCBravery += 5;
+	// 			this.m.RCRangedDefense += 5;
+	// 		}	
+	// 		else if (relation <= 40 )
+	// 		{
+	// 			this.m.RCBravery += 5;
+	// 			this.m.RCRangedDefense += 5;
+	// 			this.m.RCMeleeDefense += 5;
+	// 		}	
+	// 		else if (relation <= 50 )
+	// 		{
+	// 			this.m.RCStaminaMult *= 1.05;
+	// 			this.m.RCBravery += 5;
+	// 			this.m.RCRangedDefense += 5;
+	// 			this.m.RCMeleeDefense += 5;
+	// 		}
+	// 	}
+	// }
 
-	function doAllModifiers( _properties = null )
-	{
-		this.unApplyModifiers();
-		this.computeModifiers( _properties );
-		this.applyModifiers();
-	}
+	// function doAllModifiers( _properties = null )
+	// {
+	// 	this.unApplyModifiers();
+	// 	this.computeModifiers( _properties );
+	// 	this.applyModifiers();
+	// }
 
 	// function onCombatFinished()
 	// {
