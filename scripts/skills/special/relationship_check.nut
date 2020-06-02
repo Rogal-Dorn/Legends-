@@ -39,9 +39,11 @@ this.relationship_check <- this.inherit("scripts/skills/skill", {
 				continue;
 			}
 
-			this.logInfo("checking relationship");
 
-			local relation = _user.getActiveRelationshipWith(a);
+
+			local arrIndex = a.getCompanyID();
+
+			local relation = actor.getActiveRelationshipWith(a).RelationNum;
 
 			if (relation <= -40 )
 			{
@@ -63,7 +65,7 @@ this.relationship_check <- this.inherit("scripts/skills/skill", {
 			}
 			else if (relation <= -10 )
 			{
-			_user.getBaseProperties().Bravery -= 5;
+			actor.getBaseProperties().Bravery -= 5;
 			}			
 			else if (relation <= 0 )
 			{
@@ -124,7 +126,7 @@ this.relationship_check <- this.inherit("scripts/skills/skill", {
 
 			this.logInfo("checking relationship");
 
-			local relation = _user.getActiveRelationshipWith(a);
+			local relation = actor.getActiveRelationshipWith(a);
 
 			if (relation <= -40 )
 			{
@@ -146,7 +148,7 @@ this.relationship_check <- this.inherit("scripts/skills/skill", {
 			}
 			else if (relation <= -10 )
 			{
-			_user.getBaseProperties().Bravery -= 5;
+			actor.getBaseProperties().Bravery -= 5;
 			}			
 			else if (relation <= 0 )
 			{
