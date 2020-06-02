@@ -1,26 +1,51 @@
 this.relationship_check <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		RCMeleeDefense = 0,
+		RCRangedDefense = 0,
+		RCBravery = 0,
+		RCStaminaMult = 1.0
+	},
 	function create()
 	{
 		this.m.ID = "special.relationship_check";
 		this.m.Name = "Relationship Check";
-		this.m.Icon = "skills/status_effect_02.png";
+		this.m.Icon = "skills/status_effect_01.png";
 		this.m.IconMini = "";
 		this.m.Type = this.Const.SkillType.Special | this.Const.SkillType.Trait;
 		this.m.Order = this.Const.SkillOrder.Trait + 600;
 		this.m.IsActive = false;
-		this.m.IsHidden = false;
+		this.m.IsHidden = true;
 		this.m.IsSerialized = false;
 		this.m.IsStacking = true;
 	}
 
+	function resetModifiers() 
+	{
+		this.m.RCBravery = 0;
+		this.m.RCStaminaMult = 1.0;
+		this.m.RCRangedDefense = 0;
+		this.m.RCMeleeDefense = 0;
+	}
+
+	function onCombatFinished()
+	{
+		this.m.IsHidden = true;
+		local properties = actor.getBaseProperties;
+
+		properties.Bravery -= this.m.RCBravery;
+		properties.StaminaMult /= this.m.RCStaminaMult;
+		properties.RangedDefense -= this.m.RCRangedDefense;
+		properties.MeleeDefense -= this.m.RCMeleeDefense;
+		this.resetModifiers;
+	}
 
 	function onCombatStarted()
 	{
-
-	local actor = this.getContainer().getActor();
+		this.m.IsHidden = false;
+		local actor = this.getContainer().getActor();
 		local myTile = actor.getTile();
 		local actors = this.Tactical.Entities.getInstancesOfFaction(actor.getFaction());
+		local properties = actor.getBaseProperties();
 
 		foreach( a in actors )
 		{
@@ -41,31 +66,32 @@ this.relationship_check <- this.inherit("scripts/skills/skill", {
 
 
 
-			local arrIndex = a.getCompanyID();
+			// local arrIndex = a.getCompanyID();
 
 			local relation = actor.getActiveRelationshipWith(a).RelationNum;
+			
 
 			if (relation <= -40 )
 			{
-			_properties.StaminaMult *= 0.95;
-			_properties.Bravery -= 5;
-			_properties.RangedDefense -= 5;
-			_properties.MeleeDefense -= 5;
+			this.m.RCStaminaMult *= 0.95;
+			this.m.RCBravery -= 5;
+			this.m.RCRangedDefense -= 5;
+			this.m.RCMeleeDefense -= 5;
 			}
 			else if (relation <= -30 )
 			{
-			_properties.Bravery -= 5;
-			_properties.RangedDefense -= 5;
-			_properties.MeleeDefense -= 5;
+			this.m.RCBravery -= 5;
+			this.m.RCRangedDefense -= 5;
+			this.m.RCMeleeDefense -= 5;
 			}
 			else if (relation <= -20 )
 			{
-			_properties.Bravery -= 5;
-			_properties.RangedDefense -= 5;
+			this.m.RCBravery -= 5;
+			this.m.RCRangedDefense -= 5;
 			}
 			else if (relation <= -10 )
 			{
-			actor.getBaseProperties().Bravery -= 5;
+			this.m.RCBravery -= 5;
 			}			
 			else if (relation <= 0 )
 			{
@@ -75,37 +101,51 @@ this.relationship_check <- this.inherit("scripts/skills/skill", {
 			}	
 			else if (relation <= 20 )
 			{
-			_properties.Bravery += 5;
+				this.logInfo("giving " + actor.getName() + " +5 bravery with " + a.getName() + " " + relation);
+			this.m.RCBravery += 5;
 			}	
 			else if (relation <= 30 )
 			{
-			_properties.RangedDefense += 5;
-			_properties.Bravery += 5;
+			this.m.RCBravery += 5;
+			this.m.RCRangedDefense += 5;
 			}	
 			else if (relation <= 40 )
 			{
-			_properties.MeleeDefense += 5;
-			_properties.RangedDefense += 5;
-			_properties.Bravery += 5;
+			this.m.RCBravery += 5;
+			this.m.RCRangedDefense += 5;
+			this.m.RCMeleeDefense += 5;
 			}	
 			else if (relation <= 50 )
 			{
-			_properties.MeleeDefense += 5;
-			_properties.RangedDefense += 5;
-			_properties.Bravery += 5;
-			_properties.StaminaMult *= 1.05;
+			this.m.RCStaminaMult *= 1.05;
+			this.m.RCBravery += 5;
+			this.m.RCRangedDefense += 5;
+			this.m.RCMeleeDefense += 5;
 			}
+
+			properties.Bravery += this.m.RCBravery;
+			properties.StaminaMult *= this.m.RCStaminaMult;
+			properties.RangedDefense += this.m.RCRangedDefense;
+			properties.MeleeDefense += this.m.RCMeleeDefense;
 		}
 
 	}
 
 
-	function onMove( _properties )
+	function onMovementCompleted( _tile )
 	{
 
 		local actor = this.getContainer().getActor();
 		local myTile = actor.getTile();
 		local actors = this.Tactical.Entities.getInstancesOfFaction(actor.getFaction());
+		local properties = actor.getBaseProperties();
+
+		properties.Bravery -= this.m.RCBravery;
+		properties.StaminaMult /= this.m.RCStaminaMult;
+		properties.RangedDefense -= this.m.RCRangedDefense;
+		properties.MeleeDefense -= this.m.RCMeleeDefense;
+		this.resetModifiers();
+
 
 		foreach( a in actors )
 		{
@@ -126,29 +166,29 @@ this.relationship_check <- this.inherit("scripts/skills/skill", {
 
 			this.logInfo("checking relationship");
 
-			local relation = actor.getActiveRelationshipWith(a);
+			local relation = actor.getActiveRelationshipWith(a).RelationNum;
 
 			if (relation <= -40 )
 			{
-			_properties.StaminaMult *= 0.95;
-			_properties.Bravery -= 5;
-			_properties.RangedDefense -= 5;
-			_properties.MeleeDefense -= 5;
+			this.m.RCStaminaMult *= 0.95;
+			this.m.RCBravery -= 5;
+			this.m.RCRangedDefense -= 5;
+			this.m.RCMeleeDefense -= 5;
 			}
 			else if (relation <= -30 )
 			{
-			_properties.Bravery -= 5;
-			_properties.RangedDefense -= 5;
-			_properties.MeleeDefense -= 5;
+			this.m.RCBravery -= 5;
+			this.m.RCRangedDefense -= 5;
+			this.m.RCMeleeDefense -= 5;
 			}
 			else if (relation <= -20 )
 			{
-			_properties.Bravery -= 5;
-			_properties.RangedDefense -= 5;
+			this.m.RCBravery -= 5;
+			this.m.RCRangedDefense -= 5;
 			}
 			else if (relation <= -10 )
 			{
-			actor.getBaseProperties().Bravery -= 5;
+			this.m.RCBravery -= 5;
 			}			
 			else if (relation <= 0 )
 			{
@@ -158,26 +198,32 @@ this.relationship_check <- this.inherit("scripts/skills/skill", {
 			}	
 			else if (relation <= 20 )
 			{
-			_properties.Bravery += 5;
+				this.logInfo("giving " + actor.getName() + " +5 bravery with " + a.getName() + " " + relation);
+			this.m.RCBravery += 5;
 			}	
 			else if (relation <= 30 )
 			{
-			_properties.RangedDefense += 5;
-			_properties.Bravery += 5;
+			this.m.RCBravery += 5;
+			this.m.RCRangedDefense += 5;
 			}	
 			else if (relation <= 40 )
 			{
-			_properties.MeleeDefense += 5;
-			_properties.RangedDefense += 5;
-			_properties.Bravery += 5;
+			this.m.RCBravery += 5;
+			this.m.RCRangedDefense += 5;
+			this.m.RCMeleeDefense += 5;
 			}	
 			else if (relation <= 50 )
 			{
-			_properties.MeleeDefense += 5;
-			_properties.RangedDefense += 5;
-			_properties.Bravery += 5;
-			_properties.StaminaMult *= 1.05;
+			this.m.RCStaminaMult *= 1.05;
+			this.m.RCBravery += 5;
+			this.m.RCRangedDefense += 5;
+			this.m.RCMeleeDefense += 5;
 			}
+
+			properties.Bravery += this.m.RCBravery;
+			properties.StaminaMult *= this.m.RCStaminaMult;
+			properties.RangedDefense += this.m.RCRangedDefense;
+			properties.MeleeDefense += this.m.RCMeleeDefense;
 		}
 
 	}
