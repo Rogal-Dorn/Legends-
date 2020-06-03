@@ -35,7 +35,7 @@ this.legend_noble_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.IsCombatBackground = true;
 		this.m.IsNoble = true;
 		this.m.IsUntalented = true;
-		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Notorious;
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[1];
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[1];

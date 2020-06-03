@@ -21,7 +21,8 @@ this.legend_spiritualist_background <- this.inherit("scripts/skills/backgrounds/
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Body = "bust_naked_body_00";
-
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Kind;
 		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[0];
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[0];
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[1];

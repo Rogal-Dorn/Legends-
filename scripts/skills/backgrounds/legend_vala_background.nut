@@ -26,6 +26,8 @@ this.legend_vala_background <- this.inherit("scripts/skills/backgrounds/characte
 		this.m.Faces = this.Const.Faces.AllFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.All;
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Chivalrous;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
 		this.m.Body = this.Const.Bodies.AllFemale[this.Math.rand(0, this.Const.Bodies.AllFemale.len() - 1)];
