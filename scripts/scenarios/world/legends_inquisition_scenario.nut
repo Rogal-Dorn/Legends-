@@ -4,7 +4,7 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 	{
 		this.m.ID = "scenario.legends_inquisition";
 		this.m.Name = "The Inquisition";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_40.png[/img][/p][p]There is a great evil in the world, the undead walk the earth and cultists hide in every town. The holy must purge the filth. \n\n[color=#bcad8c]Righteous Cause:[/color] Can not recruit outlaw backgrounds, the pious will flock to join your cause. \n[color=#bcad8c]Penitence:[/color] Anyone you hire gains the Mind over Body Perk.\n[color=#bcad8c]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_40.png[/img][/p]There is a great evil in the world, the undead walk the earth and cultists hide in every town. The holy must purge the filth. \n\n[color=#bcad8c]Righteous Cause:[/color] Can not recruit outlaw backgrounds; however, the pious will flock to join your cause. \n[color=#bcad8c]Penitence:[/color] Anyone you hire gains the Mind over Body perk.\n";
 		this.m.Difficulty = 2;
 		this.m.Order = 25;
 		this.m.IsFixedLook = true;
@@ -58,6 +58,11 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 		]);
 		bros[3].getBackground().m.RawDescription = "{%name% spent many years in a temple healing the sick, but it was clear the ills of the world must be sought out and healed at their source. While healing a witch hunter, %name% was convinced to join the hunt to heal the world.}";
 		bros[3].setPlaceInFormation(13);
+		foreach( bro in bros )
+		{
+			local val = this.World.State.addNewID(bro);
+			bro.m.CompanyID = val;
+		}
 		this.World.Assets.m.MoralReputation = 50;
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/legend_pudding_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));

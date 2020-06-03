@@ -1,5 +1,7 @@
 this.relation_neutral <- this.inherit("scripts/events/event", {
 	m = {
+		Merc1 = null,
+		Merc2 = null,
 		Noble = null,
 		Lowborn = null
 	},
