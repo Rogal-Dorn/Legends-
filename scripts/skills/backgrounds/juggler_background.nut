@@ -299,7 +299,7 @@ this.juggler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 	function onUpdate( _properties )
 	{
 		this.character_background.onUpdate(_properties);
-		_properties.HitChance[this.Const.BodyPart.Head] += 5;
+		_properties.HitChance[this.Const.BodyPart.Head] += 10;
 	}
 
 });
