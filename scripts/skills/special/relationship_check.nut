@@ -22,7 +22,8 @@ this.relationship_check <- this.inherit("scripts/skills/skill", {
 	function relationStringHelper( _name, _relTab )
 	{
 		local relNum = _relTab.RelationNum;
-		local returnString = _name + " relation gives: ";
+		local returnString = "";
+		returnString += _name + " relation gives: ";
 		if ( relNum <= -10 )
 		{
 			returnString += "-5 Resolve";
