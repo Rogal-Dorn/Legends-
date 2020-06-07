@@ -50,6 +50,8 @@ this.companion_ranged_background <- this.inherit("scripts/skills/backgrounds/cha
 		this.m.Body = "bust_naked_body_01";
 		this.m.IsUntalented = true;
 		this.m.IsCombatBackground = true;
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 	}
 
 	function getTooltip()
