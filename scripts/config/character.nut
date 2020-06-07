@@ -964,6 +964,7 @@ gt.Const.CharacterProperties <- {
 	IsSkillUseFree = false,
 	IsSkillUseHalfCost = false,
 	IsAffectedByNight = true,
+	IsAffectedByRain = true,
 	IsAffectedByInjuries = true,
 	IsAffectedByFreshInjuries = true,
 	IsAffectedByFleeingAllies = true,
