@@ -22,7 +22,7 @@ gt.Const.TipOfTheDay <- [
 	"Magic missile damage is based on your initiative",
 	"You don\'t have to be a hero, you\'re running a business.",
 	"Valas are mystic women capable of inscribing powerful runes on your gear.",
-	"You can save your formations in the formations tabe in your inventory, to prepare for different fights",
+	"You can save your formations in the formations tab in your inventory, to prepare for different fights",
 	"A missed ranged attack can hit nearby characters, especially if they are in the direct line of fire.",
 	"Slingstaffs have great armour penetration but poor accuracy",
 	"Bows perform better against unarmored targets.",
