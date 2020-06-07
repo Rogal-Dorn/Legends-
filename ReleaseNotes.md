@@ -3165,6 +3165,7 @@ New Origin - Inquisition, a Witch hunter is accompanied by a crusader, a flagell
 * Holy flame now also applies burn, bleed and zombie poison to undead 
 * Holy flame now also applies prayer of life and prayer of faith to allies 
 * Holy flame now costs 7AP 
+Witch hunter's hat now removes night penalties 
 
 **Perk Changes**
 Spearwaller buffed to 50% fatigue reduction and 25% AP reduction 
@@ -3189,7 +3190,7 @@ Resilient now also grants +6 hitpoints
 thanks rue 
 
 **Bug fixes and minor tunes**
-
+Rain now applies -1 vision and -10% to attack and defense, this can be migitated by wearing a heavy cloak. Rain does not effect ghosts, wurms, iijirock or kraken. 
 Offhand Puncture no longer uses main hand dmg (Salty)
 Cultist Sacrifice now has 50% chance to rank up the cultist again, not 100% (Salty)
 Buckler Bash should no longer cost 1 fat with mastery (Salty)
@@ -3221,9 +3222,12 @@ Bleed rune doesnt crash when person gets swallowed (mwah)
 Fixes lacerate calculation to activate (mwah)
 Fixes knock out staying after removing the shovel with the Gravesman perk (mwah)
 Updates PC Trait to mention that player character's can't be charmed (mwah)
-Hedge Knight Armor "fix" (mwah) //SHould be actually fixed rn itjust gives old legend_armor not new layered_armor 
+Hedge Knight Armor "fix" (mwah) //Should be actually fixed rn itjust gives old legend_armor not new layered_armor 
 Ninetails Attack Accuracy & Damage perks now correctly gives whips that aren't the Ninetails half the bonus instead of 2x the bonus (mwah)
 Revolt fix range tooltip (said 2 is 6) (mwah)
 Adds webbed to push the advantage perk because t probably should (mwah)
 fixes female sounds reverting to male sounds (mwah)
+whitewolves give 50% more xp 
+
+
 
