@@ -21,8 +21,6 @@ this.witchhunter_hat <- this.inherit("scripts/items/helmets/helmet", {
 		this.m.StaminaModifier = 0;
 	}
 
-});
-
 
 	function getTooltip()
 	{

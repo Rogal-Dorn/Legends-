@@ -3180,6 +3180,11 @@ New Origin - The Troupe. An illusionist accompanied by a troubadour, minstrel an
 juggler bonus to hit head raised to +10%
 juggler's hat grants +10% chance to hit the head 
 
+**Rain**
+Rain now applies -1 vision and -10% to attack and defense, 
+This can be migitated by wearing a heavy cloak. 
+Rain does not effect ghosts, wurms, iijirock or kraken. 
+
 
 **Perk Changes**
 Spearwaller buffed to 50% fatigue reduction and 25% AP reduction 
@@ -3204,7 +3209,6 @@ Resilient now also grants +6 hitpoints
 thanks rue 
 
 **Bug fixes and minor tunes**
-Rain now applies -1 vision and -10% to attack and defense, this can be migitated by wearing a heavy cloak. Rain does not effect ghosts, wurms, iijirock or kraken. 
 Offhand Puncture no longer uses main hand dmg (Salty)
 Cultist Sacrifice now has 50% chance to rank up the cultist again, not 100% (Salty)
 Buckler Bash should no longer cost 1 fat with mastery (Salty)

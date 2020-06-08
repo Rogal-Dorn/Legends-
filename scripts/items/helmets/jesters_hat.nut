@@ -11,13 +11,13 @@ this.jesters_hat <- this.inherit("scripts/items/helmets/helmet", {
 		this.m.HideHair = true;
 		this.m.HideBeard = false;
 		this.m.ReplaceSprite = true;
-		this.m.Variant = 86;
+		this.m.Variants = this.Math.rand(1,64);
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.JesterImpact;
 		this.m.InventorySound = this.Const.Sound.JesterImpact;
 		this.m.Value = 70;
-		this.m.Condition = 30;
-		this.m.ConditionMax = 30;
+		this.m.Condition = 35;
+		this.m.ConditionMax = 35;
 		this.m.StaminaModifier = 0;
 	}
 
@@ -29,7 +29,7 @@ this.jesters_hat <- this.inherit("scripts/items/helmets/helmet", {
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Grants the wearer a +20% chance to hit the head"
+			text = "Grants the wearer a +10% chance to hit the head"
 		});
 		return result;
 	}
@@ -37,4 +37,14 @@ this.jesters_hat <- this.inherit("scripts/items/helmets/helmet", {
 	function onUpdateProperties( _properties )
 	{
 		_properties.HitChance[this.Const.BodyPart.Head] += 10;
+	}
+
+	function updateVariant()
+	{
+		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
+		this.m.Sprite = "jester_hat_" + variant;
+		this.m.SpriteDamaged = "jester_hat_" + variant + "_damaged";
+		this.m.SpriteCorpse = "jester_hat_" + variant + "_dead";
+		this.m.IconLarge = "helmets/inventory_jester_hat__" + variant + ".png";
+		this.m.Icon = "helmets/cloth/inventory_jester_hat__" + variant + ".png";
 	}
