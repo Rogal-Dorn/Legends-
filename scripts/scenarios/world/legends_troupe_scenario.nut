@@ -117,7 +117,7 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		while (1);
 
 		this.World.State.m.Player = this.World.spawnEntity("scripts/entity/world/player_party", randomVillageTile.Coords.X, randomVillageTile.Coords.Y);
-		this.World.Assets.updateLook(113);
+		this.World.Assets.updateLook(114);
 		this.World.getCamera().setPos(this.World.State.m.Player.getPos());
 		this.Time.scheduleEvent(this.TimeUnit.Real, 1000, function ( _tag )
 		{
@@ -182,7 +182,8 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 
 	function onUpdateDraftList( _list )
 	{
-
+		if (_list.len() < 5)
+		{
 			local r;
 			r = this.Math.rand(0, 2);
 			if (r == 0)
