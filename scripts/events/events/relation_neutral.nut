@@ -177,10 +177,19 @@ this.relation_neutral <- this.inherit("scripts/events/event", {
 					Text = "This will build character",
 					function getResult( _event )
 					{
-						local modifier1 = this.Math.rand(10, 20);
-						_event.m.Merc1.changeActiveRelationship( _event.m.Merc2, modifier1 );
-						local modifier2 = this.Math.rand(10, 20);
-						 _event.m.Merc2.changeActiveRelationship( _event.m.Merc1, modifier2 );
+
+						local brothers = this.World.getPlayerRoster().getAll();
+						foreach( bro1 in brothers )
+						{
+							foreach( bro2 in brothers )
+							{
+							local modifier1 = this.Math.rand(-10, 10);
+							_event.m.Merc1.changeActiveRelationship( bro2, modifier1 );
+							local modifier2 = this.Math.rand(-10, 10);
+							 _event.m.Merc2.changeActiveRelationship( bro1, modifier2 );
+							}
+						}
+
 						return 0;
 					}
 
@@ -216,31 +225,33 @@ this.relation_neutral <- this.inherit("scripts/events/event", {
 
 		local merc1_candidates = [];
 
-		foreach( bro in brothers )
-		{
-			merc1_candidates.push(bro);
-		}
 
-		if (merc1_candidates.len() == 0)
-		{
-			return;
-		}
+
 
 		local merc2_candidates = [];
 
-		foreach( candidate in merc1_candidates )
+		foreach( bro1 in brothers )
 		{
-			foreach( bro in brothers )
+			foreach( bro2 in brothers )
 			{
-				local relation = candidate.getActiveRelationshipWith(bro).RelationNum;
-				 if(relation <10 && relation > -10)
+				local relation1 = bro1.getActiveRelationshipWith(bro2).RelationNum;
+					if(relation1 <10 && relation1 > -10)
 					{
-					merc2_candidates.push(bro);
+					local relation2 = bro2.getActiveRelationshipWith(bro1).RelationNum;
+					if (relation2 <10 && relation2 > -10)
+						{
+						merc1_candidates.push(bro1);
+						merc2_candidates.push(bro2);
+						}
 					}
 			}
 		}
 
 		if (merc2_candidates.len() == 0)
+		{
+			return;
+		}
+		if (merc1_candidates.len() == 0)
 		{
 			return;
 		}

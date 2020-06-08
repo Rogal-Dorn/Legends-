@@ -22,4 +22,19 @@ this.jesters_hat <- this.inherit("scripts/items/helmets/helmet", {
 	}
 
 });
+	function getTooltip()
+	{
+		local result = this.named_helmet.getTooltip();
+		result.push({
+			id = 6,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "Grants the wearer a +20% chance to hit the head"
+		});
+		return result;
+	}
 
+	function onUpdateProperties( _properties )
+	{
+		_properties.HitChance[this.Const.BodyPart.Head] += 10;
+	}

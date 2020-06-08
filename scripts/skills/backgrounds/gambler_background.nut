@@ -49,6 +49,7 @@ this.gambler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Cruel;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.NeutralMin;
 		this.m.IsOutlawBackground = true;
+		this.m.IsPerformingBackground = true;
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[1];
 		this.m.PerkTreeDynamic = {
 			Weapon = [

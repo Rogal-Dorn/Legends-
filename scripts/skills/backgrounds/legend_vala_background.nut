@@ -32,6 +32,7 @@ this.legend_vala_background <- this.inherit("scripts/skills/backgrounds/characte
 		this.m.BeardChance = 0;
 		this.m.Body = this.Const.Bodies.AllFemale[this.Math.rand(0, this.Const.Bodies.AllFemale.len() - 1)];
 		this.m.IsFemaleBackground = true;
+		this.m.IsPerformingBackground = true;
 		this.m.IsUntalented = true;
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[2];
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[3];

@@ -2867,6 +2867,33 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/cheered_on_circle.png",
 		IconDisabled = "ui/perks/cheered_on_circle_bw.png",
 		Const = "LegendCheerOn"
+	},
+	{
+		ID = "perk.perk_legend_leap",
+		Script = "scripts/skills/perks/perk_legend_leap",
+		Name = this.Const.Strings.PerkName.LegendLeap,
+		Tooltip = this.Const.Strings.PerkDescription.LegendLeap,
+		Icon = "ui/perks/leap_circle.png",
+		IconDisabled = "ui/perks/leap_circle_bw.png",
+		Const = "LegendLeap"
+	},
+	{
+		ID = "perk.perk_legend_tumble",
+		Script = "scripts/skills/perks/perk_legend_tumble",
+		Name = this.Const.Strings.PerkName.LegendTumble,
+		Tooltip = this.Const.Strings.PerkDescription.LegendTumble,
+		Icon = "ui/perks/tumble_circle.png",
+		IconDisabled = "ui/perks/tumble_circle_bw.png",
+		Const = "LegendTumble"
+	},
+	{
+		ID = "perk.perk_legend_hair_splitter",
+		Script = "scripts/skills/perks/perk_legend_hair_splitter",
+		Name = this.Const.Strings.PerkName.LegendHairSplitter,
+		Tooltip = this.Const.Strings.PerkDescription.LegendHairSplitter,
+		Icon = "ui/perks/hairsplit_circle.png",
+		IconDisabled = "ui/perks/hairsplit_circle_bw.png",
+		Const = "LegendHairSplitter"
 	}
 ];
 gt.Const.Perks.PerkDefs <- {};

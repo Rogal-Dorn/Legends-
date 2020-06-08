@@ -1711,7 +1711,9 @@ gt.Const.Strings.PerkName <- {
 	LegendShieldsUp = "Shields Up!",
 	LegendIncoming = "Incoming!",
 	LegendZombieBite = "Zombie bite",
-	LegendCheerOn = "Cheer On"
+	LegendCheerOn = "Cheer On",
+	LegendLeap = "Leap",
+	LegendTumble = "Tumble"
 };
 gt.Const.Strings.PerkDescription <- {
 	Relentless = "Don\'t slow down! At all times your Initiative is reduced only by [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] of your accumulated Fatigue, instead of all of it. \n[color=#0b0084]From the Fit perk group[/color]",
@@ -2047,7 +2049,10 @@ gt.Const.Strings.PerkDescription <- {
 	LegendShieldsUp = "Drilling your troops in a shieldwall prepares their reaction time to avoid early deaths on the battlefield. Taking this perk ensures every mercenary with a shield will use shieldwall before the start of each battle. ",
 	LegendIncoming = "Providing advanced warning of an incoming volley can allow your troops to find cover or step aside. Grants [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] ranged defence to all allies within [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] tiles for one turn",
 	LegendZombieBite = "braaaains",
-	LegendCheerOn = "Use your way with song to cheer on an ally. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] AP to an ally within three tiles. Can only be used with a Drum or Lute equipped. \n[color=#0b0084]From the Bard perk group[/color]"
+	LegendCheerOn = "Use your way with song to cheer on an ally. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] AP to an ally within three tiles. Can only be used with a Drum or Lute equipped. \n[color=#0b0084]From the Bard perk group[/color]",
+	LegendLeap = "Use your athletic skill to leap high and far, covering two tiles distance but at a great fatigue cost. Unlocks the \'Leap\' skill",
+	LegendTumble = "Make use of your acrobatic skill to improve your movements. Halves the fatigue and action point costs of Footwork, Leap and Lunge.",
+	LegendHairSplitter = "Years of practice throwing things at apples above heads have granted a magnetic attraction to the cranium. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+30%[/color] chance to hit the head"
 };
 gt.Const.Strings.Tooltip <- {
 	World = {
