@@ -63,7 +63,6 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 			local val = this.World.State.addNewID(bro);
 			bro.m.CompanyID = val;
 		}
-		this.World.Assets.m.MoralReputation = 50;
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/legend_pie_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/mead_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/weapons/legend_drum"));
