@@ -39,7 +39,7 @@ this.legend_illusionist_background <- this.inherit("scripts/skills/backgrounds/c
 		this.m.Beards = null;
 		this.m.Body = "bust_naked_body_03";
 		this.m.IsFemaleBackground = true;
-
+		this.m.IsPerformingBackground = true;
 		this.m.IsEducatedBackground = true;
 		this.m.IsUntalented = true;
 		this.m.Level = 1;

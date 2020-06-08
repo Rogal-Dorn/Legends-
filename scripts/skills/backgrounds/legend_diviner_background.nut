@@ -39,7 +39,7 @@ this.legend_diviner_background <- this.inherit("scripts/skills/backgrounds/chara
 		this.m.Beards = null;
 		this.m.Body = "bust_naked_body_03";
 		this.m.IsFemaleBackground = true;
-
+		this.m.IsPerformingBackground = true;
 		this.m.IsEducatedBackground = true;
 		this.m.IsUntalented = true;
 		this.m.Level = 1;
