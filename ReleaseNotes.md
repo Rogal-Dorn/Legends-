@@ -3157,7 +3157,7 @@ Re-enables Horses for testing, the weapon skills are still broken.
 **Legendary beasts**
 Legendary beasts are now in their own spawn groups, and tend to stay to one type of terrain.  This means rather than encountering stollwurms among every late game lindwurm group, you'll find them in their own packs in their own terrain. 
 
-**Faith**
+**The Inquisition**
 New Origin - Inquisition, a Witch hunter is accompanied by a crusader, a flagellant and a monk on a holy quest.
 * Begins with high Moral standing. 
 * Holy recruits are cheaper and more plentiful, unholy recruits are more expensive. 
@@ -3165,7 +3165,21 @@ New Origin - Inquisition, a Witch hunter is accompanied by a crusader, a flagell
 * Holy flame now also applies burn, bleed and zombie poison to undead 
 * Holy flame now also applies prayer of life and prayer of faith to allies 
 * Holy flame now costs 7AP 
-Witch hunter's hat now removes night penalties 
+* Witch hunter's hat now removes night penalties 
+
+**The Troupe**
+New Origin - The Troupe. An illusionist accompanied by a troubadour, minstrel and juggler. 
+* Busking - each member of the troupe generates 10 crowns per day 
+* Exposure - Performing artists are more likely to show up and are cheaper to hire 
+* Acrobatics - Grants the new Leap perk to all recruits
+
+ New Juggler class perk group 
+- Leap - allows jumping two tiles at a great fatigue cost
+- Tumble - halves the fatigue and AP cos of leap, footwork and lunge 
+- Hair splitter - grants +30% chance to hit the head 
+juggler bonus to hit head raised to +10%
+juggler's hat grants +10% chance to hit the head 
+
 
 **Perk Changes**
 Spearwaller buffed to 50% fatigue reduction and 25% AP reduction 
