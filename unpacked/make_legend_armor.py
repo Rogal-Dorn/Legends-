@@ -122,7 +122,6 @@ helmets = r"""
 <sprite id="runed_legend_frogmouth_04" offsetY="35" ic="FF383D5F" width="184" height="222" img="entity\legend_helmets\runed_legend_frogmouth_04.png" left="-41" right="43" top="-28" bottom="106" />
 <sprite id="runed_legend_frogmouth_04_damaged" offsetY="35" ic="FF353857" width="184" height="222" img="entity\legend_helmets\runed_legend_frogmouth_04_damaged.png" left="-41" right="43" top="-29" bottom="105" />
 <sprite id="runed_legend_frogmouth_04_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF353957" width="191" height="185" img="entity\legend_helmets\runed_legend_frogmouth_04_dead.png" left="-88" right="22" top="-92" bottom="10" />
-
 <sprite id="legend_ancient_gladiator" offsetY="35" ic="FF383D5F" width="184" height="222" img="entity\legend_helmets\legend_ancient_gladiator.png" left="-41" right="43" top="-28" bottom="106" />
 <sprite id="legend_ancient_gladiator_damaged" offsetY="35" ic="FF353857" width="184" height="222" img="entity\legend_helmets\legend_ancient_gladiator_damaged.png" left="-41" right="43" top="-29" bottom="105" />
 <sprite id="legend_ancient_gladiator_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF353957" width="191" height="185" img="entity\legend_helmets\legend_ancient_gladiator_dead.png" left="-88" right="22" top="-92" bottom="10" />
@@ -141,8 +140,6 @@ helmets = r"""
 <sprite id="runed_wizard_cowl_02" offsetY="35" ic="FF383D5F" width="184" height="222" img="entity\legend_helmets\runed_wizard_cowl_02.png" left="-41" right="43" top="-28" bottom="106" />
 <sprite id="runed_wizard_cowl_02_damaged" offsetY="35" ic="FF353857" width="184" height="222" img="entity\legend_helmets\runed_wizard_cowl_02_damaged.png" left="-41" right="43" top="-29" bottom="105" />
 <sprite id="runed_wizard_cowl_02_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF353957" width="191" height="185" img="entity\legend_helmets\runed_wizard_cowl_02_dead.png" left="-88" right="22" top="-92" bottom="10" />
-
-
 <sprite id="wizard_cowl_02" offsetY="35" ic="FF403F3F" width="104" height="142" img="entity\helmets\wizard_cowl_02.png" left="-39" right="45" top="-36" bottom="60" />
 <sprite id="wizard_cowl_02_damaged" offsetY="35" ic="FF41403F" width="104" height="142" img="entity\helmets\wizard_cowl_02_damaged.png" left="-37" right="45" top="-29" bottom="61" />
 <sprite id="wizard_cowl_02_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444343" width="131" height="125" img="entity\helmets\wizard_cowl_02_dead.png" left="-57" right="25" top="-63" bottom="3" />
@@ -257,7 +254,6 @@ helmets = r"""
 <sprite id="runed_wizard_cowl_20" offsetY="35" ic="FF403F3F" width="104" height="142" img="entity\helmets\runed_wizard_cowl_20.png" left="-39" right="45" top="-36" bottom="60" />
 <sprite id="runed_wizard_cowl_20_damaged" offsetY="35" ic="FF41403F" width="104" height="142" img="entity\helmets\runed_wizard_cowl_20_damaged.png" left="-37" right="45" top="-29" bottom="61" />
 <sprite id="runed_wizard_cowl_20_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444343" width="131" height="125" img="entity\helmets\runed_wizard_cowl_20_dead.png" left="-57" right="25" top="-63" bottom="3" />
- 
  <sprite id="jester_hat_01" offsetY="35" ic="FF5D5D5B" width="104" height="142" img="entity\legend_helmets\runed_jester_hat_01.png" left="-38" right="50" top="-14" bottom="70" />
  <sprite id="jester_hat_01_damaged" offsetY="35" ic="FF555552" width="104" height="142" img="entity\legend_helmets\runed_jester_hat_01_damaged.png" left="-38" right="50" top="-14" bottom="70" />
  <sprite id="jester_hat_01_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF585854" width="191" height="185" img="entity\legend_helmets\runed_jester_hat_01_86_dead.png" left="-70" right="20" top="-76" bottom="4" />
@@ -642,21 +638,18 @@ helmets = r"""
  <sprite id="runed_jester_hat_64" offsetY="35" ic="FF5D5D5B" width="104" height="142" img="entity\legend_helmets\runed_jester_hat_64.png" left="-38" right="50" top="-14" bottom="70" />
  <sprite id="runed_jester_hat_64_damaged" offsetY="35" ic="FF555552" width="104" height="142" img="entity\legend_helmets\runed_jester_hat_64_damaged.png" left="-38" right="50" top="-14" bottom="70" />
  <sprite id="runed_jester_hat_64_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF585854" width="191" height="185" img="entity\legend_helmets\runed_jester_hat_64_86_dead.png" left="-70" right="20" top="-76" bottom="4" />
-
   <sprite id="witchhunter_helm_01" offsetY="35" ic="FF19212F" width="104" height="142" img="entity\helmets\witchhunter_helm_01.png" left="-29" right="31" top="-32" bottom="50" />
   <sprite id="witchhunter_helm_01_damaged" offsetY="35" ic="FF1A212E" width="104" height="142" img="entity\helmets\witchhunter_helm_01_damaged.png" left="-29" right="31" top="-32" bottom="50" />
   <sprite id="witchhunter_helm_01_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF1A212E" width="131" height="125" img="entity\helmets\witchhunter_helm_01_dead.png" left="-49" right="25" top="-63" bottom="5" />
   <sprite id="runed_witchhunter_helm_01" offsetY="35" ic="FF19212F" width="104" height="142" img="entity\helmets\runed_witchhunter_helm_01.png" left="-29" right="31" top="-32" bottom="50" />
   <sprite id="runed_witchhunter_helm_01_damaged" offsetY="35" ic="FF1A212E" width="104" height="142" img="entity\helmets\runed_witchhunter_helm_01_damaged.png" left="-29" right="31" top="-32" bottom="50" />
   <sprite id="runed_witchhunter_helm_01_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF1A212E" width="131" height="125" img="entity\helmets\runed_witchhunter_helm_01_dead.png" left="-49" right="25" top="-63" bottom="5" />
- 
   <sprite id="witchhunter_helm_02" offsetY="35" ic="FF19212F" width="104" height="142" img="entity\helmets\witchhunter_helm_02.png" left="-29" right="31" top="-32" bottom="50" />
   <sprite id="witchhunter_helm_02_damaged" offsetY="35" ic="FF1A212E" width="104" height="142" img="entity\helmets\witchhunter_helm_02_damaged.png" left="-29" right="31" top="-32" bottom="50" />
   <sprite id="witchhunter_helm_02_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF1A212E" width="131" height="125" img="entity\helmets\witchhunter_helm_02_dead.png" left="-49" right="25" top="-63" bottom="5" />
   <sprite id="runed_witchhunter_helm_02" offsetY="35" ic="FF19212F" width="104" height="142" img="entity\helmets\runed_witchhunter_helm_02.png" left="-29" right="31" top="-32" bottom="50" />
   <sprite id="runed_witchhunter_helm_02_damaged" offsetY="35" ic="FF1A212E" width="104" height="142" img="entity\helmets\runed_witchhunter_helm_02_damaged.png" left="-29" right="31" top="-32" bottom="50" />
   <sprite id="runed_witchhunter_helm_02_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF1A212E" width="131" height="125" img="entity\helmets\runed_witchhunter_helm_02_dead.png" left="-49" right="25" top="-63" bottom="5" />
-  
   <sprite id="witchhunter_helm_03" offsetY="35" ic="FF19212F" width="104" height="142" img="entity\helmets\witchhunter_helm_03.png" left="-29" right="31" top="-32" bottom="50" />
   <sprite id="witchhunter_helm_03_damaged" offsetY="35" ic="FF1A212E" width="104" height="142" img="entity\helmets\witchhunter_helm_03_damaged.png" left="-29" right="31" top="-32" bottom="50" />
   <sprite id="witchhunter_helm_03_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF1A212E" width="131" height="125" img="entity\helmets\witchhunter_helm_03_dead.png" left="-49" right="25" top="-63" bottom="5" />
@@ -681,7 +674,6 @@ helmets = r"""
   <sprite id="runed_witchhunter_helm_06" offsetY="35" ic="FF19212F" width="104" height="142" img="entity\helmets\runed_witchhunter_helm_06.png" left="-29" right="31" top="-32" bottom="50" />
   <sprite id="runed_witchhunter_helm_06_damaged" offsetY="35" ic="FF1A212E" width="104" height="142" img="entity\helmets\runed_witchhunter_helm_06_damaged.png" left="-29" right="31" top="-32" bottom="50" />
   <sprite id="runed_witchhunter_helm_06_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF1A212E" width="131" height="125" img="entity\helmets\runed_witchhunter_helm_06_dead.png" left="-49" right="25" top="-63" bottom="5" />
- 
 
 """
 

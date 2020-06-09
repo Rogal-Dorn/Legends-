@@ -11,7 +11,8 @@ this.jesters_hat <- this.inherit("scripts/items/helmets/helmet", {
 		this.m.HideHair = true;
 		this.m.HideBeard = false;
 		this.m.ReplaceSprite = true;
-		this.m.Variants = this.Math.rand(1,64);
+		this.m.Variants = [1,2,3,4,5,6,7,8,9,10,11];
+		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.JesterImpact;
 		this.m.InventorySound = this.Const.Sound.JesterImpact;
@@ -21,10 +22,10 @@ this.jesters_hat <- this.inherit("scripts/items/helmets/helmet", {
 		this.m.StaminaModifier = 0;
 	}
 
-});
+
 	function getTooltip()
 	{
-		local result = this.named_helmet.getTooltip();
+		local result = this.helmet.getTooltip();
 		result.push({
 			id = 6,
 			type = "text",
@@ -45,6 +46,7 @@ this.jesters_hat <- this.inherit("scripts/items/helmets/helmet", {
 		this.m.Sprite = "jester_hat_" + variant;
 		this.m.SpriteDamaged = "jester_hat_" + variant + "_damaged";
 		this.m.SpriteCorpse = "jester_hat_" + variant + "_dead";
-		this.m.IconLarge = "helmets/inventory_jester_hat__" + variant + ".png";
-		this.m.Icon = "helmets/cloth/inventory_jester_hat__" + variant + ".png";
+		this.m.IconLarge = "";
+		this.m.Icon = "helmets/inventory_jester_hat_" + variant + ".png";
 	}
+});
