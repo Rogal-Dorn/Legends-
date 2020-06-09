@@ -164,7 +164,7 @@ this.female_servant_background <- this.inherit("scripts/skills/backgrounds/chara
 	function onAddLegendEquipment()
 	{
 		local items = this.getContainer().getActor().getItems();
-		items.equip(this.new("scripts/items/legend_armor/cloth/legend_tunic"));
+		items.equip(this.new("scripts/items/legend_armor/cloth/legend_peasant_dress"));
 	}
 
 });

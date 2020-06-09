@@ -36,6 +36,12 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		bros[0].m.Level = 2;
 		bros[0].setPlaceInFormation(3);
 		bros[0].setVeteranPerks(2);	
+		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_leap"));
+		local items = bros[0].getItems();
+		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
+		items.equip(this.new("scripts/items/helmets/jesters_hat"));
+		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
+		items.equip(this.new("scripts/items/weapons/legend_staff"));
 		bros[1].setStartValuesEx([
 			"female_minstrel_background"
 		]);
@@ -43,6 +49,12 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		bros[1].setPlaceInFormation(4);
 
 		bros[1].setVeteranPerks(2);	
+		bros[1].getSkills().add(this.new("scripts/skills/perks/perk_legend_leap"));
+		local items = bros[1].getItems();
+		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
+		items.equip(this.new("scripts/items/helmets/jesters_hat"));
+		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
+		items.equip(this.new("scripts/items/weapons/lute"));
 		bros[2].setStartValuesEx([
 			"minstrel_background"
 		]);
@@ -53,11 +65,23 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		bros[2].m.LevelUps = 2;
 		bros[2].m.Level = 3;
 		bros[2].setVeteranPerks(2);	
+		bros[2].getSkills().add(this.new("scripts/skills/perks/perk_legend_leap"));
+		local items = bros[2].getItems();
+		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
+		items.equip(this.new("scripts/items/helmets/named/jugglers_hat"));
+		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
+		items.equip(this.new("scripts/items/weapons/legend_drum"));
 		bros[3].setStartValuesEx([
 			"juggler_background"
 		]);
 		bros[3].getBackground().m.RawDescription = "{%name% was juggling and throwing knives in markets, and agreed to join the troupe to improve the show with the skills of others}";
 		bros[3].setPlaceInFormation(13);
+		bros[3].getSkills().add(this.new("scripts/skills/perks/perk_legend_leap"));
+		local items = bros[3].getItems();
+		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
+		items.equip(this.new("scripts/items/helmets/named/jugglers_hat"));
+		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
+		items.equip(this.new("scripts/items/weapons/legend_ranged_wooden_flail"));
 		foreach( bro in bros )
 		{
 			local val = this.World.State.addNewID(bro);
@@ -66,8 +90,7 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/legend_pie_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/mead_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/weapons/legend_drum"));
-		this.World.Assets.getStash().add(this.new("scripts/items/helmets/jesters_hat"));
-		this.World.Assets.getStash().add(this.new("scripts/items/helmets/throwing_axe"));
+		this.World.Assets.getStash().add(this.new("scripts/items/weapons/lute"));
 	}
 
 	function onSpawnPlayer()
