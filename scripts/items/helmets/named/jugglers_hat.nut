@@ -73,8 +73,8 @@ this.jugglers_hat <- this.inherit("scripts/items/helmets/named/named_helmet", {
 			62,
 			63,
 			64
-
 		];
+		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.JesterImpact;
 		this.m.InventorySound = this.Const.Sound.JesterImpact;
@@ -85,7 +85,7 @@ this.jugglers_hat <- this.inherit("scripts/items/helmets/named/named_helmet", {
 		this.randomizeValues();
 	}
 
-});
+
 	function getTooltip()
 	{
 		local result = this.named_helmet.getTooltip();
@@ -109,6 +109,7 @@ this.jugglers_hat <- this.inherit("scripts/items/helmets/named/named_helmet", {
 		this.m.Sprite = "jester_hat_" + variant;
 		this.m.SpriteDamaged = "jester_hat_" + variant + "_damaged";
 		this.m.SpriteCorpse = "jester_hat_" + variant + "_dead";
-		this.m.IconLarge = "helmets/inventory_jester_hat_" + variant + ".png";
+		this.m.IconLarge = "";
 		this.m.Icon = "helmets/inventory_jester_hat_" + variant + ".png";
 	}
+});

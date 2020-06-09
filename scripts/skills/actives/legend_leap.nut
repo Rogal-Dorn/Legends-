@@ -5,8 +5,8 @@ this.legend_leap <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "actives.legend_leap";
 		this.m.Name = "Leap";
 		this.m.Description = "Learning to jump extended distances allows escape from usually impossible situations";
-		this.m.Icon = "skills/levitate_square.png";
-		this.m.IconDisabled = "skills/levitate_square_bw.png";
+		this.m.Icon = "skills/leap_square.png";
+		this.m.IconDisabled = "skills/leap_square_bw.png";
 		this.m.Overlay = "horse_pirouette";
 		this.m.SoundOnUse = [
 			"sounds/combat/jump_01.wav"

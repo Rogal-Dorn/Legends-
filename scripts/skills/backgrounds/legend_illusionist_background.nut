@@ -172,13 +172,6 @@ this.legend_illusionist_background <- this.inherit("scripts/skills/backgrounds/c
 	function onAdded()
 	{
 		this.character_background.onAdded();
-		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_daze"));
-		//this.m.Container.add(this.new("scripts/skills/perks/perk_student"));
-		this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
-		if (this.Const.LegendMod.Configs.LegendMagicEnabled())
-		{
-			this.m.Container.add(this.new("scripts/skills/perks/perk_legend_magic_missile"));
-		}
 
 		local actor = this.getContainer().getActor();
 		if (this.m.IsFemaleBackground == true)

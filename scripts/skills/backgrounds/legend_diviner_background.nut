@@ -172,9 +172,6 @@ this.legend_diviner_background <- this.inherit("scripts/skills/backgrounds/chara
 	function onAdded()
 	{
 		this.character_background.onAdded();
-		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_daze"));
-		//this.m.Container.add(this.new("scripts/skills/perks/perk_student"));
-		this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
 
 		local actor = this.getContainer().getActor();
 		if (this.m.IsFemaleBackground == true)
