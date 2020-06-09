@@ -3209,6 +3209,7 @@ Resilient now also grants +6 hitpoints
 thanks rue 
 
 **Bug fixes and minor tunes**
+You can now camp during caravan contracts 
 Offhand Puncture no longer uses main hand dmg (Salty)
 Cultist Sacrifice now has 50% chance to rank up the cultist again, not 100% (Salty)
 Buckler Bash should no longer cost 1 fat with mastery (Salty)
@@ -3246,6 +3247,7 @@ Revolt fix range tooltip (said 2 is 6) (mwah)
 Adds webbed to push the advantage perk because t probably should (mwah)
 fixes female sounds reverting to male sounds (mwah)
 whitewolves give 50% more xp 
+female peasants can now wear layered peasant dress in 11 colours, these dresses can be bought near dye makers 
 
 
 
