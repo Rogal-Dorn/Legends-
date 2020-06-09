@@ -168,7 +168,8 @@ this.female_daytaler_background <- this.inherit("scripts/skills/backgrounds/char
 			[0, "cloth/legend_sackcloth_patched"],
 			[0, "cloth/legend_sackcloth_tattered"],
 			[1, "cloth/legend_tunic"],
-			[0, "cloth/legend_tunic_noble"]
+			[0, "cloth/legend_tunic_noble"],
+			[1, "cloth/legend_peasant_dress"]
 		];
 		local armor = this.Const.World.Common.pickLegendArmor(cloths)
 		items.equip(armor)

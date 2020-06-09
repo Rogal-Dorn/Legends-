@@ -5,20 +5,35 @@ this.witchhunter_helm <- this.inherit("scripts/items/helmets/named/named_helmet"
 		this.named_helmet.create();
 		this.m.ID = "armor.head.witchhunter_helm";
 		this.m.Name = "Witchhunter\'s Helm";
+		this.m.NameList = [
+			"Hunter\'s Mask",
+			"Hag Bane",
+			"Witch\'s Doom",
+			"Hag\'s End",
+			"Curse Lifter",
+			"Jinx Helm"
+		];
 		this.m.Description = "A metal helm covered with a distinctive tough leather hat of a witch hunter.";
 		this.m.ShowOnCharacter = true;
 		this.m.IsDroppedAsLoot = true;
 		this.m.HideHair = true;
 		this.m.HideBeard = false;
 		this.m.ReplaceSprite = true;
-		this.m.Variants = this.Math.rand(1,6);
+		this.m.Variants = [
+			1,
+			2,
+			3,
+			4,
+			5,
+			6
+		];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.InventorySound = this.Const.Sound.ClothEquip;
 		this.m.Value = 2000;
 		this.m.Condition = 140;
 		this.m.ConditionMax = 140;
-		this.m.StaminaModifier = 0;
+		this.m.StaminaModifier = -2;
 		this.randomizeValues();
 	}
 

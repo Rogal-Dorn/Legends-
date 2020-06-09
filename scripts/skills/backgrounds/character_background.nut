@@ -155,6 +155,11 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		return this.m.IsCrusaderRecruitBackground;
 	}
 
+	function isPerformingBackground()
+	{
+		return this.m.IsPerformningBackground;
+	}
+
 	function isEducatedBackground()
 	{
 		return this.m.IsEducatedBackground;
