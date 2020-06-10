@@ -147,7 +147,7 @@ this.female_tailor_background <- this.inherit("scripts/skills/backgrounds/charac
 	function onAddLegendEquipment()
 	{
 		local items = this.getContainer().getActor().getItems();
-		items.equip(this.new("scripts/items/legend_armor/cloth/legend_tunic"));
+		items.equip(this.new("scripts/items/legend_armor/cloth/legend_peasant_dress"));
 
 		local r = this.Math.rand(0, 1);
 

@@ -57,7 +57,7 @@ this.hedge_knight_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Body = "bust_naked_body_01";
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Cruel;
-		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Good;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Chivalrous;
 		if (this.Const.LegendMod.Configs.LegendGenderEnabled())
 		{
 			local r = this.Math.rand(0, 1);

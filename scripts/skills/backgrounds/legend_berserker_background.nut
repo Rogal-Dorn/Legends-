@@ -58,12 +58,15 @@ this.legend_berserker_background <- this.inherit("scripts/skills/backgrounds/cha
 		this.m.Beards = this.Const.Beards.Wild;
 		this.m.BeardChance = 100;
 		this.m.Body = "bust_naked_body_01";
-
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Cruel;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.NeutralMax;
 		this.m.Level = 1;
 		this.m.IsCombatBackground = true;
 		this.m.IsLowborn = true;
 		this.m.IsOutlawBackground = true;
 		this.m.IsUntalented = true;
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Cruel;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Good;
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
 		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[2];
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[2];

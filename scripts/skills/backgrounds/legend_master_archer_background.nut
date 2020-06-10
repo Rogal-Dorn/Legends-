@@ -45,6 +45,8 @@ this.legend_master_archer_background <- this.inherit("scripts/skills/backgrounds
 		this.m.Level = this.Math.rand(1, 2);
 		this.m.IsCombatBackground = true;
 		this.m.IsRangerRecruitBackground = true;
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Cruel;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Chivalrous;
 		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[2];
 		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[3];
 		this.m.Modifiers.Fletching = this.Const.LegendMod.ResourceModifiers.Fletching[3];
