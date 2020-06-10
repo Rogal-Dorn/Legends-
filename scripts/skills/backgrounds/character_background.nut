@@ -29,6 +29,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		IsFemaleBackground = false,
 		IsRangerRecruitBackground = false,
 		IsCrusaderRecruitBackground = false,
+		IsPerformingBackground = false,
 		IsOutlawBackground = false,
 		AlignmentMin = this.Const.LegendMod.Alignment.Dreaded,
 		AlignmentMax = this.Const.LegendMod.Alignment.Saintly,
@@ -152,6 +153,11 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 	function isCrusaderRecruitBackground()
 	{
 		return this.m.IsCrusaderRecruitBackground;
+	}
+
+	function isPerformingBackground()
+	{
+		return this.m.IsPerformningBackground;
 	}
 
 	function isEducatedBackground()

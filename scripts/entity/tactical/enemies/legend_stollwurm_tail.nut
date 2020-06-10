@@ -509,7 +509,7 @@ this.legend_stollwurm_tail <- this.inherit("scripts/entity/tactical/actor", {
 		b.IsImmuneToStun = true;
 		b.IsMovable = false;
 		b.IsImmuneToDisarm = true;
-
+		b.IsAffectedByRain = false;
 		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 180)
 		{
 			b.MeleeSkill += 10;

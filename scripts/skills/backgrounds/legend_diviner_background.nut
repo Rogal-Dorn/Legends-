@@ -39,11 +39,12 @@ this.legend_diviner_background <- this.inherit("scripts/skills/backgrounds/chara
 		this.m.Beards = null;
 		this.m.Body = "bust_naked_body_03";
 		this.m.IsFemaleBackground = true;
-
+		this.m.IsPerformingBackground = true;
 		this.m.IsEducatedBackground = true;
 		this.m.IsUntalented = true;
 		this.m.Level = 1;
-
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Chivalrous;
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[3];
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[2];
@@ -171,9 +172,6 @@ this.legend_diviner_background <- this.inherit("scripts/skills/backgrounds/chara
 	function onAdded()
 	{
 		this.character_background.onAdded();
-		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_daze"));
-		//this.m.Container.add(this.new("scripts/skills/perks/perk_student"));
-		this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
 
 		local actor = this.getContainer().getActor();
 		if (this.m.IsFemaleBackground == true)

@@ -46,6 +46,9 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 		bros[2].setStartValuesEx([
 			"witchhunter_background"
 		]);
+		local items = bros[2].getItems();
+		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
+		items.equip(this.new("scripts/items/helmets/named/witchhunter_helm"));
 		bros[2].getBackground().m.RawDescription = "{%name% has seen well the damage magic can bring to the world. The witches who steal the minds of men, the nightmares that end lives, and the necromancers who bring them back again. Hunting these foul creatures is the duty of all who serve the good of the gods. If the war is to be won, %name% will need a witch hunter army.}";
 		bros[2].improveMood(1.0, "Recently purged the unworthy");
 		bros[2].setPlaceInFormation(12);
@@ -64,8 +67,8 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 			bro.m.CompanyID = val;
 		}
 		this.World.Assets.m.MoralReputation = 50;
-		this.World.Assets.getStash().add(this.new("scripts/items/supplies/legend_pudding_item"));
-		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
+		this.World.Assets.getStash().add(this.new("scripts/items/supplies/bread_item"));
+		this.World.Assets.getStash().add(this.new("scripts/items/supplies/wine_item"));
 
 
 	}

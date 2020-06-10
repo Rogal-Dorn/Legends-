@@ -49,6 +49,8 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.IsCombatBackground = true;
 		this.m.IsUntalented = true;
 		this.m.IsRangerRecruitBackground = true;
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[3];
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
 		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[2];

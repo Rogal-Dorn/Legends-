@@ -53,6 +53,9 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 		this.m.IsCombatBackground = true;
 		this.m.IsOffendedByViolence = true;
 		this.m.IsUntalented = true;
+
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Good;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[1];
 		this.m.Modifiers.Salvage = this.Const.LegendMod.ResourceModifiers.Salvage[1];
 		this.m.Modifiers.Repair = this.Const.LegendMod.ResourceModifiers.Repair[2];

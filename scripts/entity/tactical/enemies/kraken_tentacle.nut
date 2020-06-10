@@ -96,6 +96,7 @@ this.kraken_tentacle <- this.inherit("scripts/entity/tactical/actor", {
 		b.IsMovable = false;
 		b.IsAffectedByInjuries = false;
 		b.IsImmuneToDisarm = true;
+		b.IsAffectedByRain = false;
 		this.m.ActionPoints = b.ActionPoints;
 		this.m.Hitpoints = b.Hitpoints;
 		this.m.CurrentProperties = clone b;

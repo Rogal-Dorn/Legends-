@@ -25,12 +25,12 @@ this.legend_necrosavant_background <- this.inherit("scripts/skills/backgrounds/c
 			"trait.loyal"
 		];
 		this.m.Titles = [
-			"the Sickening",
-			"the Wretched",
-			"the Widow Taunter",
-			"the Fleshturner",
-			"The Corpse Dancer",
-			"the Puppeteer"
+			"the Brutal",
+			"the Gruesome",
+			"the Bloody",
+			"the Vile",
+			"The Leech",
+			"the Bat"
 		];
 		this.m.Faces = this.Const.Faces.Vampire;
 		this.m.Hairs = this.Const.Hair.Vampire;
@@ -40,6 +40,8 @@ this.legend_necrosavant_background <- this.inherit("scripts/skills/backgrounds/c
 		this.m.Level = 1;
 		this.m.IsUntalented = true;
 		this.m.IsOutlawBackground = true;
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Merciless;
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[3];
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[2];

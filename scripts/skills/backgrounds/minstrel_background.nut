@@ -44,6 +44,7 @@ this.minstrel_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Notorious;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.IsCrusaderRecruitBackground = true;
+		this.m.IsPerformingBackground = true;
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[1];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
@@ -104,8 +105,8 @@ this.minstrel_background <- this.inherit("scripts/skills/backgrounds/character_b
 				-10
 			],
 			MeleeSkill = [
-				-5,
-				-5
+				0,
+				0
 			],
 			RangedSkill = [
 				5,
@@ -120,7 +121,7 @@ this.minstrel_background <- this.inherit("scripts/skills/backgrounds/character_b
 				10
 			],
 			Initiative = [
-				0,
+				5,
 				5
 			]
 		};

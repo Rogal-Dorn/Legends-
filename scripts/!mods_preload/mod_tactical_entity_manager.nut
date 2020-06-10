@@ -375,6 +375,11 @@
 				e.getSkills().add(this.new("scripts/skills/special/night_effect"));
 			}
 
+			if (this.Tactical.getWeather().IsRaining && e.getBaseProperties().IsAffectedByRain)
+			{
+				e.getSkills().add(this.new("scripts/skills/special/legend_rain_effect"));
+			}
+
 			
 		}
 	}
