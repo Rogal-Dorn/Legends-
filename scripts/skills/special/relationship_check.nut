@@ -134,11 +134,11 @@ this.relationship_check <- this.inherit("scripts/skills/skill", {
 		}
 		else if (position <= 17) //check up and down (-+9)
 		{
-			if (position == 9) //don't check to left (-1)
+			if (position != 9) //don't check to left (-1)
 			{
 				returnString += checkPosition(roster, actor, position - 1);
 			}
-			if (position == 17) //don't check to right (+1)
+			if (position != 17) //don't check to right (+1)
 			{
 				returnString += checkPosition(roster, actor, position + 1);
 			}
@@ -147,11 +147,11 @@ this.relationship_check <- this.inherit("scripts/skills/skill", {
 		}	
 		else //position <= 26 : check only up (-9)
 		{
-			if (position == 18) //don't check left (-1)
+			if (position != 18) //don't check left (-1)
 			{
 				returnString += checkPosition(roster, actor, position - 1);
 			}
-			if (position == 26) //don't check right (+1)
+			if (position != 26) //don't check right (+1)
 			{
 				returnString += checkPosition(roster, actor, position + 1);
 			}
