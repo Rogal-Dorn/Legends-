@@ -34,6 +34,8 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		bros[0].m.Level = 3;
 		bros[0].setPlaceInFormation(3);
 		bros[0].setVeteranPerks(2);	
+		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_leap"));
+		bros[0].m.PerkPointsSpent += 1;
 		local items = bros[0].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
 		items.equip(this.new("scripts/items/helmets/jesters_hat"));
@@ -46,6 +48,8 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		bros[1].setPlaceInFormation(4);
 
 		bros[1].setVeteranPerks(2);	
+		bros[1].getSkills().add(this.new("scripts/skills/perks/perk_legend_leap"));
+		bros[1].m.PerkPointsSpent += 1;
 		local items = bros[1].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
 		items.equip(this.new("scripts/items/helmets/jesters_hat"));
@@ -61,6 +65,8 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		bros[2].m.LevelUps = 3;
 		bros[2].m.Level = 4;
 		bros[2].setVeteranPerks(2);	
+		bros[2].getSkills().add(this.new("scripts/skills/perks/perk_legend_leap"));
+		bros[2].m.PerkPointsSpent += 1;
 		local items = bros[2].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
 		items.equip(this.new("scripts/items/helmets/named/jugglers_hat"));
@@ -74,6 +80,8 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		bros[3].m.PerkPoints = 1;
 		bros[3].m.LevelUps = 1;
 		bros[3].m.Level = 2;
+		bros[3].getSkills().add(this.new("scripts/skills/perks/perk_legend_leap"));
+		bros[3].m.PerkPointsSpent += 1;
 		local items = bros[3].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
 		items.equip(this.new("scripts/items/helmets/named/jugglers_hat"));

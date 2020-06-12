@@ -3165,7 +3165,7 @@ New Origin - Inquisition, a veteran Witch hunter is accompanied by a crusader, a
 * Holy flame now also applies burn, bleed and zombie poison to undead 
 * Holy flame now also applies prayer of life and prayer of faith to allies 
 * Holy flame now costs 7AP 
-* There is now a higher tier witch hunter helm that grants immunity to the dark 
+* There is now a higher tier witch hunter helm that grants immunity to the dark (TODO currently a bit squashed )
 * Wooden stake and Spiked Impaler now do +100 damage to vampires, descriptions updated 
 * Penance now grants 50% of missing health as resolve while wearing cultist robes, sackloth, leather wraps or hide.
 * Penance and dedication descriptions rewritten to apply to both cultists and flagellants 
