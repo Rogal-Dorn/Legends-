@@ -36,12 +36,16 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 		bros[0].m.Level = 2;
 		bros[0].setPlaceInFormation(3);
 		bros[0].setVeteranPerks(2);	
+		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_mind_over_body"));
+		bros[0].m.PerkPointsSpent += 1;
 		bros[1].setStartValuesEx([
 			"flagellant_background"
 		]);
 		bros[1].getBackground().m.RawDescription = "{%name% has no greater joy than suffering in the name of the old gods. Pain and pleasure and intimately linked, just as creation and desctruction are intwined. Each lash of the whip is like the caress of an angel, and their belief is that in only through suffering can we find salvation. Few laymen understand this viewpoint, but it is respected by other servants of the old gods.}";
 		bros[1].setPlaceInFormation(4);
 		bros[1].setVeteranPerks(2);	
+		bros[1].getSkills().add(this.new("scripts/skills/perks/perk_legend_mind_over_body"));
+		bros[1].m.PerkPointsSpent += 1;
 		local items = bros[1].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
 		items.equip(this.new("scripts/items/helmets/barbarians/leather_helmet"));
@@ -54,7 +58,7 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 		]);
 		local items = bros[2].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
-		items.equip(this.new("scripts/items/helmets/named/witchhunter_helm"));
+	//	items.equip(this.new("scripts/items/helmets/named/witchhunter_helm"));
 		items.equip(this.new("scripts/items/weapons/greenskins/goblin_crossbow"));
 		bros[2].getBackground().m.RawDescription = "{%name% has seen well the damage magic can bring to the world. The witches who steal the minds of men, the nightmares that end lives, and the necromancers who bring them back again. Hunting these foul creatures is the duty of all who serve the good of the gods. If the war is to be won, %name% will need a witch hunter army.}";
 		bros[2].improveMood(1.0, "Recently purged the unworthy");
@@ -63,11 +67,15 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 		bros[2].m.LevelUps = 3;
 		bros[2].m.Level = 4;
 		bros[2].setVeteranPerks(2);	
+		bros[2].getSkills().add(this.new("scripts/skills/perks/perk_legend_mind_over_body"));
+		bros[2].m.PerkPointsSpent += 1;
 		bros[3].setStartValuesEx([
 			"legend_nun_background"
 		]);
 		bros[3].getBackground().m.RawDescription = "{%name% spent many years in a temple healing the sick, but it was clear the ills of the world must be sought out and healed at their source. While healing a witch hunter, %name% was convinced to join the hunt to heal the world.}";
 		bros[3].setPlaceInFormation(13);
+		bros[3].getSkills().add(this.new("scripts/skills/perks/perk_legend_mind_over_body"));
+		bros[3].m.PerkPointsSpent += 1;
 		local items = bros[3].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.equip(this.new("scripts/items/weapons/flail"));
