@@ -26,13 +26,19 @@ this.perk_legend_specialist_cult_armor <- this.inherit("scripts/skills/skill", {
 				case "armor.body.cultist_leather_robe":
 				case "armor.body.sackcloth":
 				case "armor.body.tattered_sackcloth":
-				case "armor.body.armor_of_davkul":
+				case "armor.body.armor_of_davkul":'
+				case "armor.body.reinforced_animal_hide_armor":
+				case "armor.body.hide_and_bone_armor":
+				case "armor.body.animal_hide_armor":
 				case "legend.armor.body.patched_sackcloth":
 				case "legend.armor.body.tattered_sackcloth":
 				case "legend.armor.body.sackcloth":
 				case "legend_armor.body.cultist_leather_robe":
 				case "legend.armor.body.monk_robes":
-					_properties.Bravery += this.Math.floor(healthMissing * 0.1);
+				case "legend_armor.body.animal_hide_armor":
+				case "legend_armor.body.legend_hide_and_bone_armor":
+				case "legend_armor.body.reinforced_animal_hide_armor":
+					_properties.Bravery += this.Math.floor(healthMissing * 0.5);
 					break;
 			}
 		}

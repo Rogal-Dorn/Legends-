@@ -3158,14 +3158,19 @@ Re-enables Horses for testing, the weapon skills are still broken.
 Legendary beasts are now in their own spawn groups, and tend to stay to one type of terrain.  This means rather than encountering stollwurms among every late game lindwurm group, you'll find them in their own packs in their own terrain. 
 
 **The Inquisition**
-New Origin - Inquisition, a Witch hunter is accompanied by a crusader, a flagellant and a monk on a holy quest.
+New Origin - Inquisition, a veteran Witch hunter is accompanied by a crusader, a flagellant and a battle nun on a holy quest.
 * Begins with high Moral standing. 
 * Holy recruits are cheaper and more plentiful, unholy recruits are more expensive. 
 * All recruits gain Mind over Body.
 * Holy flame now also applies burn, bleed and zombie poison to undead 
 * Holy flame now also applies prayer of life and prayer of faith to allies 
 * Holy flame now costs 7AP 
-* Witch hunter's hat now removes night penalties 
+* There is now a higher tier witch hunter helm that grants immunity to the dark 
+* Wooden stake and Spiked Impaler now do +100 damage to vampires, descriptions updated 
+* Penance now grants 50% of missing health as resolve while wearing cultist robes, sackloth, leather wraps or hide.
+* Penance and dedication descriptions rewritten to apply to both cultists and flagellants 
+* Flagellants no longer spawn with tunics, but can have hide armor 
+
 
 **The Troupe**
 New Origin - The Troupe. An illusionist accompanied by a troubadour, minstrel and juggler. 
@@ -3208,7 +3213,27 @@ Resilient now also grants +6 hitpoints
 **integrated noble helm and tabard crafting submod**
 thanks rue 
 
+**Situations**
+More situations now affect recruit pools 
+* archery contest has a chance for master archers with magic enabled 
+* beseiged, conquered, razed and raided all add beggars, widows, cripples and gravediggers 
+* disbanded troops now adds noble warriors, soldiers and arbelesters. If magic is enabled there are nobles, master archers and crusaders 
+* full nets adds fishermen and fishwives 
+* good harvest adds farmhands, millers, bakers and herbalists 
+* Hunting season adds hunters, poachers, taxidermists, butchers and houndmasters 
+* lost at sea adds widows and fishwives 
+* mine cave in and rich veins adds ironmongers and blacksmiths and miners 
+* mustering troops adds retired soldiers, cripples, deserters and widows 
+* preparing feasts adds butchers, servants, housemaids and enuchs 
+* rebuilding effort adds lumberjacks, masons and daytalers 
+* Safe roads adds caravan hands, donkeys, sellswords, peddlers, messengers, historians, vagabonds and adventurous nobles
+* seasonal fair adds jugglers, minstrels and troubadours 
+* sickness adds cripples, beggars, widows, nuns, monks and herbalists 
+* Witch burnings have a chance of widows, when there is magic enabled there can be evokers, spiritualists, diviners, nuns and entrancers
+
+
 **Bug fixes and minor tunes**
+Militia scenario has random backgrounds added to half the starting characters to increase replayability.
 You can now camp during caravan contracts 
 Offhand Puncture no longer uses main hand dmg (Salty)
 Cultist Sacrifice now has 50% chance to rank up the cultist again, not 100% (Salty)
@@ -3247,6 +3272,8 @@ Revolt fix range tooltip (said 2 is 6) (mwah)
 Adds webbed to push the advantage perk because t probably should (mwah)
 fixes female sounds reverting to male sounds (mwah)
 whitewolves give 50% more xp 
+fixed spelling errors in some layer IDs  
+Berserker intro event has better image 
 female peasants can now wear layered peasant dress in 11 colours, these dresses can be bought near dye makers 
 
 

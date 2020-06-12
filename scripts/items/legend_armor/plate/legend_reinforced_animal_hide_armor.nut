@@ -4,7 +4,7 @@ this.legend_reinforced_animal_hide_armor <- this.inherit("scripts/items/legend_a
 	{
 		this.legend_armor_upgrade.create();
 		this.m.Type = this.Const.Items.ArmorUpgrades.Plate;
-		this.m.ID = "legned_armor.body.reinforced_animal_hide_armor";
+		this.m.ID = "legend_armor.body.reinforced_animal_hide_armor";
 		this.m.Name = "Reinforced Animal Hide Armor";
 		this.m.Description = "A reinforced animal hide armor fashioned from thick leather pieces with added mail and metal scales.";
 		this.m.ArmorDescription = "Includes A reinforced animal hide armor fashioned from thick leather pieces with added mail and metal scales.";
