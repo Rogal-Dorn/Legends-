@@ -51,28 +51,12 @@ this.witchhunter_helm <- this.inherit("scripts/items/helmets/named/named_helmet"
 		return result;
 	}
 	
-function onEquip()
+	function onUpdateProperties( _properties )
 	{
-		this.named_helmet.onEquip();
-		local a = this.getContainer().getActor();
-		if (a == null)
-		{
-			return;
-		}
-		_properties.IsAffectedByNight = false,
+		this.named_helmet.onUpdateProperties(_properties);
+		_properties.IsAffectedByNight = false;
 	}
-	
 
-	function onUnequip()
-	{
-		local a = this.getContainer().getActor();
-		if (a == null)
-		{
-			return;
-		}
-		_properties.IsAffectedByNight = true,
-		this.named_helmet.onUnequip();
-	}
 
 
 		function updateVariant()
