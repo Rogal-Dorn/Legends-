@@ -26,7 +26,7 @@ this.perk_legend_specialist_cult_armor <- this.inherit("scripts/skills/skill", {
 				case "armor.body.cultist_leather_robe":
 				case "armor.body.sackcloth":
 				case "armor.body.tattered_sackcloth":
-				case "armor.body.armor_of_davkul":'
+				case "armor.body.armor_of_davkul":
 				case "armor.body.reinforced_animal_hide_armor":
 				case "armor.body.hide_and_bone_armor":
 				case "armor.body.animal_hide_armor":
