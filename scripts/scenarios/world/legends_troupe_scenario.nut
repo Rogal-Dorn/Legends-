@@ -152,7 +152,7 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 			this.Music.setTrackList([
 				"music/retirement_01.ogg"
 			], this.Const.Music.CrossFadeTime);
-			this.World.Events.fire("event.legend_inquisition_scenario_intro");
+			this.World.Events.fire("event.legend_troupe_scenario_intro");
 		}, null);
 
 		foreach (b in this.World.getPlayerRoster().getAll()) // todo: more efficient approach to this 
