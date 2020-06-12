@@ -100,5 +100,18 @@ this.rebuilding_effort_situation <- this.inherit("scripts/entity/world/settlemen
 		this.m.Target = _in.readString();
 	}
 
+
+	function onUpdateDraftList( _draftList )
+	{
+		_draftList.push("lumberjack_background");
+		_draftList.push("lumberjack_background");
+		_draftList.push("mason_background");
+		_draftList.push("mason_background");
+		_draftList.push("daytaler_background");
+		_draftList.push("daytaler_background");
+		_draftList.push("daytaler_background");
+		_draftList.push("daytaler_background");
+	}
+
 });
 

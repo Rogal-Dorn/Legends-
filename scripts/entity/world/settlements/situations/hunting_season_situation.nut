@@ -32,5 +32,21 @@ this.hunting_season_situation <- this.inherit("scripts/entity/world/settlements/
 		_modifiers.FoodPriceMult *= 0.5;
 	}
 
+	function onUpdateDraftList( _draftList )
+	{
+		_draftList.push("hunter_background");
+		_draftList.push("hunter_background");
+		_draftList.push("poacher_background");
+		_draftList.push("poacher_background");
+		_draftList.push("poacher_background");
+		_draftList.push("poacher_background");
+		_draftList.push("legend_taxidermist_background");
+		_draftList.push("legend_taxidermist_background");
+		_draftList.push("houndmaster_background");
+		_draftList.push("houndmaster_background");
+		_draftList.push("butcher_background");
+		_draftList.push("butcher_background");
+	}
+
 });
 

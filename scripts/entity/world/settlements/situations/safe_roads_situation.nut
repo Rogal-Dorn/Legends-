@@ -22,5 +22,31 @@ this.safe_roads_situation <- this.inherit("scripts/entity/world/settlements/situ
 		_modifiers.RarityMult *= 1.1;
 	}
 
+	function onUpdateDraftList( _draftList )
+	{
+		_draftList.push("caravan_hand_background");
+		_draftList.push("caravan_hand_background");
+		_draftList.push("caravan_hand_background");
+		_draftList.push("caravan_hand_background");
+		_draftList.push("sellsword_background");
+		_draftList.push("sellsword_background");
+		_draftList.push("vagabond_background");
+		_draftList.push("peddler_background");
+		_draftList.push("peddler_background");
+		_draftList.push("peddler_background");
+		_draftList.push("peddler_background");
+		_draftList.push("messenger_background");
+		_draftList.push("gambler_background");
+		_draftList.push("tailor_background");
+		_draftList.push("troubador_background");
+		_draftList.push("minstrel_background");
+		_draftList.push("historian_background");
+		_draftList.push("adventurous_noble_background");
+		_draftList.push("female_adventurous_noble_background");
+		_draftList.push("legend_donkey");
+		_draftList.push("female_thief_background");
+
+	}
+
 });
 

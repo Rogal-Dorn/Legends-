@@ -71,18 +71,37 @@ gt.Const.CharacterLaborerBackgrounds <- [
 	"refugee_background"
 ];
 gt.Const.CharacterVillageBackgrounds <- [
+	"beggar_background",
+	"female_beggar_background",
 	"farmhand_background",
 	"female_farmhand_background",
 	"daytaler_background",
 	"female_daytaler_background",
 	"gravedigger_background",
+	"graverobber_background",
+	"houndmaster_background",
 	"miner_background",
 	"tailor_background",
 	"female_tailor_background",
 	"female_miller_background",
 	"miller_background",
 	"lumberjack_background",
-	"refugee_background"
+	"refugee_background",
+	"butcher_background",
+	"female_butcher_background",
+	"rat_catcher_background",
+	"servant_background",
+	"female_servant_background",
+	"mason_background",
+	"female_servant_background",
+	"shepherd_background",
+	"brawler_background",
+	"theif_background",
+	"female_thief_background",
+	"militia_background",
+	"peddler_background",
+	"poacher_background",
+	"vagabond_background"
 ];
 gt.Const.CharacterThiefBackgrounds <- [
 	"thief_background",
@@ -217,6 +236,48 @@ gt.Const.CharacterFemaleBackgrounds <- [
 	"legend_nun_background"
 ];
 
+
+gt.Const.CharacterPartyBackgrounds <- [
+	"legend_diviner_background",
+	"legend_illusionist_background",
+	"legend_spiritualist_background",
+	"legend_entrancer_background",
+	"legend_death_summoner_background",
+	"legend_enchanter_background",
+	"legend_warlock_background",
+	"legend_witch_background",
+	"legend_runesmith_background",
+	"legend_transmuter_background",
+	"legend_necromancer_background",
+	"legend_ancient_summoner_background",
+	"legend_master_archer_background",
+	"legend_berserker_background",
+	"legend_necrosavant_background",
+	"legend_noble_event_background",
+	"legend_nun_background",
+	"legend_shieldmaiden_background",
+	"assassin_background",
+	"legend_crusader_background"
+	"legend_conjurer_background"
+];
+
+gt.Const.CharacterMagicBackgrounds <- [
+	"legend_diviner_background",
+	"legend_illusionist_background",
+	"legend_spiritualist_background",
+	"legend_entrancer_background",
+	"legend_death_summoner_background",
+	"legend_enchanter_background",
+	"legend_runesmith_background",
+	"legend_transmuter_background",
+	"legend_necromancer_background",
+	"legend_ancient_summoner_background",
+	"legend_necrosavant_background",
+	"legend_witch_background",
+	"legend_conjurer_background"
+	"legend_warlock_background"
+];
+
 gt.Const.CharacterMagicBackgrounds <- [
 	"legend_ancient_summoner_background",
 	"legend_death_summoner_background",
@@ -319,6 +380,21 @@ gt.Const.CharacterBackgroundsRandom <- [
 	"wildman_background",
 	"wildwoman_background",
 	"witchhunter_background"
+	"legend_diviner_background",
+	"legend_illusionist_background",
+	"legend_spiritualist_background",
+	"legend_entrancer_background",
+	"legend_death_summoner_background",
+	"legend_enchanter_background",
+	"legend_runesmith_background",
+	"legend_transmuter_background",
+	"legend_necromancer_background",
+	"legend_ancient_summoner_background",
+	"legend_master_archer_background",
+	"legend_berserker_background",
+	"legend_necrosavant_background",
+	"legend_noble_event_background",
+	"legend_conjurer_background"
 ];
 
 

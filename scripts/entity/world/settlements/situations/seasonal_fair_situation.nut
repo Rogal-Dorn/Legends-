@@ -44,6 +44,15 @@ this.seasonal_fair_situation <- this.inherit("scripts/entity/world/settlements/s
 		_draftList.push("peddler_background");
 		_draftList.push("peddler_background");
 		_draftList.push("peddler_background");
+		_draftList.push("juggler_background");
+		_draftList.push("juggler_background");
+		_draftList.push("juggler_background");
+		_draftList.push("minstrel_background");
+		_draftList.push("minstrel_background");
+		_draftList.push("minstrel_background");
+		_draftList.push("female_minstrel_background");
+		_draftList.push("female_minstrel_background");
+		_draftList.push("female_minstrel_background");
 	}
 
 });

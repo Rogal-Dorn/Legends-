@@ -27,9 +27,7 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		}
 
 		local bros = roster.getAll();
-		bros[0].setStartValuesEx([
-			"legend_illusionist_background"
-		]);
+		bros[0].setStartValuesEx(this.Const.CharacterMagicBackgrounds);
 		bros[0].getBackground().m.RawDescription = "{%name% learned how to entertain on the streets, using slight of hand and magic tricks to dupe unwitting punters out of their coin. Illusion is easier with a distraction, so the choice to join others was easy.}";
 		bros[0].m.PerkPoints = 1;
 		bros[0].m.LevelUps = 1;

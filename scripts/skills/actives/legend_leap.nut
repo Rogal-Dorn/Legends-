@@ -63,6 +63,19 @@ this.legend_leap <- this.inherit("scripts/skills/skill", {
 		return ret;
 	}
 
+	function isUsable()
+	{
+		if ( !this.getContainer().getActor().getCurrentProperties().IsRooted)
+		{
+
+			return true;
+
+		}
+		else
+		{
+			return false;
+		}
+	}
 
 	function onVerifyTarget( _originTile, _targetTile )
 	{
