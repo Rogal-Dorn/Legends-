@@ -25,6 +25,8 @@ this.female_daytaler_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.Body = "bust_naked_body_03";
 		this.m.IsLowborn = true;
 		this.m.IsFemaleBackground = true;
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Notorious;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Chivalrous;
 		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[1];
 		this.m.Modifiers.Salvage = this.Const.LegendMod.ResourceModifiers.Salvage[1];
 		this.m.Modifiers.Repair = this.Const.LegendMod.ResourceModifiers.Repair[1];
@@ -166,7 +168,8 @@ this.female_daytaler_background <- this.inherit("scripts/skills/backgrounds/char
 			[0, "cloth/legend_sackcloth_patched"],
 			[0, "cloth/legend_sackcloth_tattered"],
 			[1, "cloth/legend_tunic"],
-			[0, "cloth/legend_tunic_noble"]
+			[0, "cloth/legend_tunic_noble"],
+			[1, "cloth/legend_peasant_dress"]
 		];
 		local armor = this.Const.World.Common.pickLegendArmor(cloths)
 		items.equip(armor)

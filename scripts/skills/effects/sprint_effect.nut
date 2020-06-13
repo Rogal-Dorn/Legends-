@@ -4,7 +4,7 @@ this.sprint_effect <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "effects.sprint";
 		this.m.Name = "Sprinting";
-		this.m.Description = "You run like the wind, moving at great speed. Movement costs 1 less AP, at double fatigue costs.";
+		this.m.Description = "You run like the wind, moving at great speed. Movement costs 1 less AP, at 50% increased fatigue costs.";
 		this.m.Icon = "ui/perks/perk_sprint.png";
 		this.m.Overlay = "perk_37";
 		this.m.Type = this.Const.SkillType.StatusEffect;
@@ -17,7 +17,7 @@ this.sprint_effect <- this.inherit("scripts/skills/skill", {
 		if (!this.isGarbage())
 		{
 			_properties.MovementAPCostAdditional += -1;
-			_properties.MovementFatigueCostMult *= 2.0;
+			_properties.MovementFatigueCostMult *= 1.5;
 		}
 	}
 

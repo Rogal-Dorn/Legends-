@@ -7,7 +7,7 @@ this.legend_horse <- this.inherit("scripts/skills/backgrounds/character_backgrou
 		this.character_background.create();
 		this.m.ID = "background.legend_horse";
 		this.m.Name = "Horse";
-		this.m.Icon = "ui/backgrounds/legend_donkey.png";
+		this.m.Icon = "ui/backgrounds/donkey.png";
 		this.m.BackgroundDescription = "Horses are used to long and exhausting travels.";
 		this.m.GoodEnding = "%name% the horse was retired to a lovely paddock and spent the days eating and carousing with other horses.";
 		this.m.BadEnding = "%name% the horse was sold to a trader, their caravan was attacked by orcs and the remains of %name% were never found";
@@ -28,6 +28,8 @@ this.legend_horse <- this.inherit("scripts/skills/backgrounds/character_backgrou
 		this.m.IsLowborn = true;
 		this.m.IsUntalented = true;
 		this.m.IsStabled = true;
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[3];
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[4];
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[3];

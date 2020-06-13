@@ -43,7 +43,8 @@ this.legend_transmuter_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.m.IsEducatedBackground = true;
 		this.m.IsUntalented = true;
 		this.m.Level = 1;
-
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Chivalrous;
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[3];
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[2];
@@ -209,9 +210,9 @@ this.legend_transmuter_background <- this.inherit("scripts/skills/backgrounds/ch
 		talents[this.Const.Attributes.Fatigue] = 3;
 		this.getContainer().getActor().fillTalentValues(2, true);
 		local items = this.getContainer().getActor().getItems();
-		items.equip(this.new("scripts/items/legend_armor/armor/legend_armor_seer_robes"));
-		items.equip(this.new("scripts/items/weapons/legend_mystic_staff"));
-		items.equip(this.new("scripts/items/helmets/legend_seer_hat"));
+		items.equip(this.new("scripts/items/legend_armor/cloth/legend_robes_magic"));
+		items.equip(this.new("scripts/items/weapons/legend_staff_gnarled"));
+		items.equip(this.new("scripts/items/helmets/magician_hat"));
 		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");
 		stash.removeByID("supplies.ground_grains");

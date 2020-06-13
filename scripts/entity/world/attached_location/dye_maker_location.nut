@@ -77,6 +77,89 @@ this.dye_maker_location <- this.inherit("scripts/entity/world/attached_location"
 				});
 			}
 		}
+		else if (_id == "building.specialized_trader")
+		{
+		}
+	}
+
+	function onUpdateLegendShopList()
+	{
+		if (_id == "building.marketplace")
+		{
+			_list.push({
+				R = 0,
+				P = 1.0,
+				S = "trade/dies_item"
+			});
+		   _list.push({
+				R = 10,
+				P = 1.0,
+				S = "weapons/legend_wooden_pitchfork"
+			});
+		   _list.push({
+				R = 10,
+				P = 1.0,
+				S = "legend_armor/cloth/legend_peasant_dress"
+			});
+		 _list.push({
+				R = 30,
+				P = 1.0,
+				S = "helmets/jesters_hat"
+			});
+		 _list.push({
+				R = 50,
+				P = 1.0,
+				S = "helmets/named/jugglers_hat"
+			});
+		   _list.push({
+				R = 30,
+				P = 1.0,
+				S = "legend_armor/cloth/legend_gambeson_rare_colour"
+			});
+		   _list.push({
+				R = 50,
+				P = 1.0,
+				S = "legend_armor/cloth/legend_robes_magic"
+			});
+			_list.push({
+				R = 60,
+				P = 1.0,
+				S = "helmets/magician_hat"
+			});
+			if (this.Const.DLC.Unhold)
+			{
+				_list.push({
+					R = 30,
+					P = 1.0,
+					S = "misc/paint_set_item"
+				});
+				_list.push({
+					R = 50,
+					P = 1.0,
+					S = "misc/paint_black_item"
+				});
+				_list.push({
+					R = 50,
+					P = 1.0,
+					S = "misc/paint_red_item"
+				});
+				_list.push({
+					R = 50,
+					P = 1.0,
+					S = "misc/paint_orange_red_item"
+				});
+				_list.push({
+					R = 50,
+					P = 1.0,
+					S = "misc/paint_white_blue_item"
+				});
+				_list.push({
+					R = 50,
+					P = 1.0,
+					S = "misc/paint_white_green_yellow_item"
+				});
+			}
+		}
 		else if (_id == "building.armorsmith")
 		{
 			_list.push({

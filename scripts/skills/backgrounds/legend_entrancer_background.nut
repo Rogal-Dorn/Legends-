@@ -30,12 +30,15 @@ this.legend_entrancer_background <- this.inherit("scripts/skills/backgrounds/cha
 			"the Dreamer",
 			"the Haunted"
 		];
-		this.m.Faces = this.Const.Faces.SmartMale;
-		this.m.Hairs = this.Const.Hair.CommonMale;
+		this.m.Faces = this.Const.Faces.AllFemale;
+		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.All;
-		this.m.Beards = this.Const.Beards.All;
-		this.m.Body = "bust_naked_body_00";
-
+		this.m.Beards = null;
+		this.m.Body = this.Const.Bodies.AllFemale[this.Math.rand(0, this.Const.Bodies.AllFemale.len() - 1)];
+		this.m.IsFemaleBackground = true;
+		this.m.IsPerformingBackground = true;
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Good;
 		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[0];
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[0];
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[1];
@@ -124,11 +127,12 @@ this.legend_entrancer_background <- this.inherit("scripts/skills/backgrounds/cha
 			[0, "cloth/legend_gambeson_plain"],
 			[0, "cloth/legend_gambeson_wolf"],
 			[0, "cloth/legend_padded_surcoat"],
-			[1, "cloth/legend_robes_herbalist"],
+			[0, "cloth/legend_robes_herbalist"],
 			[0, "cloth/legend_apron_butcher"],
 			[0, "cloth/legend_robes_nun"],
 			[0, "cloth/legend_apron_smith"],
 			[0, "cloth/legend_robes_wizard"],
+			[1, "cloth/legend_robes_magic"],
 			[0, "cloth/legend_sackcloth"],
 			[0, "cloth/legend_sackcloth_patched"],
 			[0, "cloth/legend_sackcloth_tattered"],

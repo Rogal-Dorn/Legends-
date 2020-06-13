@@ -65,6 +65,12 @@ this.archery_contest_situation <- this.inherit("scripts/entity/world/settlements
 		_draftList.push("sellsword_background");
 		_draftList.push("sellsword_background");
 		_draftList.push("sellsword_background");
+				
+		if(this.Const.LegendMod.Configs.LegendMagicEnabled())
+		{
+		_draftList.push("legend_master_archer_background");
+		}
+
 
 		if (this.Const.DLC.Unhold)
 		{

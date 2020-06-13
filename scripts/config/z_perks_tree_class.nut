@@ -427,6 +427,22 @@ gt.Const.Perks.RangerHuntClassTree <- {
 	]
 };
 
+gt.Const.Perks.JugglerClassTree <- {
+	ID = "JugglerClassTree",
+	Descriptions = [
+		"acrobatics"
+	],
+	Tree = [
+		[],
+		[gt.Const.Perks.PerkDefs.LegendHairSplitter],
+		[],
+		[],
+		[gt.Const.Perks.PerkDefs.Footwork],
+		[gt.Const.Perks.PerkDefs.LegendLeap],
+		[gt.Const.Perks.PerkDefs.LegendTumble]
+	]
+};
+
 gt.Const.Perks.HoundmasterClassTree <- {
 	ID = "HoundmasterClassTree",
 	Descriptions = [

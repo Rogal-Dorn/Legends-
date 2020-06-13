@@ -32,5 +32,21 @@ this.preparing_feast_situation <- this.inherit("scripts/entity/world/settlements
 		_modifiers.FoodPriceMult *= 2.0;
 	}
 
+	function onUpdateDraftList( _draftList )
+	{
+		_draftList.push("butcher_background");
+		_draftList.push("butcher_background");
+		_draftList.push("female_butcher_background");
+		_draftList.push("female_butcher_background");
+		_draftList.push("servant_background");
+		_draftList.push("servant_background");
+		_draftList.push("servant_background");
+		_draftList.push("female_servant_background");
+		_draftList.push("female_servant_background");
+		_draftList.push("female_servant_background");
+		_draftList.push("eunuch_background");;
+
+	}
+
 });
 

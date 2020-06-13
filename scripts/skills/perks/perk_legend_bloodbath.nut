@@ -22,7 +22,7 @@ this.perk_legend_bloodbath <- this.inherit("scripts/skills/skill", {
 	function getTooltip()
 	{
 		local bleeders = this.getBleeders();
-		local bonus = bleeders * 5;
+		local bonus = bleeders * 100;
 		local tooltip = this.skill.getTooltip();
 
 		if (bleeders >= 1)
@@ -31,7 +31,7 @@ this.perk_legend_bloodbath <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "There are currently [color=" + this.Const.UI.Color.PositiveValue + "]" + bleeders + "[/color] characters bleeding, giving a bonus of [color=" + this.Const.UI.Color.PositiveValue + "]+" + bonus + "%[/color] to resolve and fatigue"
+				text = "There are currently [color=" + this.Const.UI.Color.PositiveValue + "]" + bleeders + "%[/color] of characters bleeding, giving a bonus of [color=" + this.Const.UI.Color.PositiveValue + "]+" + bonus + "%[/color] to resolve and fatigue"
 			});
 		}
 		return tooltip;
@@ -52,8 +52,9 @@ this.perk_legend_bloodbath <- this.inherit("scripts/skills/skill", {
 		{
 			return 0;
 		}
-
+		local count = 0;
 		local bleeders = 0;
+	
 		local actors = this.Tactical.Entities.getAllInstancesAsArray();
 
 		foreach( a in actors )
@@ -63,14 +64,15 @@ this.perk_legend_bloodbath <- this.inherit("scripts/skills/skill", {
 				bleeders += 1;
 
 			}
+			count += 1;
 		}
-		return bleeders;
+		local ratio = count / bleeders;
+		return ratio;
 	}
 
 	function onUpdate( _properties )
 	{
-		local bleeders = this.getBleeders();
-		local bonus = 0.05 * bleeders;
+		local bonus = this.getBleeders();
 		_properties.BraveryMult += bonus;
 		_properties.StaminaMult += bonus;
 	}

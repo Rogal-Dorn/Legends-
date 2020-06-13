@@ -21,5 +21,43 @@ this.witchhunter_hat <- this.inherit("scripts/items/helmets/helmet", {
 		this.m.StaminaModifier = 0;
 	}
 
-});
 
+
+	
+	function getTooltip()
+	{
+		local result = this.named_helmet.getTooltip();
+		result.push({
+			id = 6,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "Wearer is not affected by night penalties"
+		});
+		return result;
+	}
+	
+function onEquip()
+	{
+		this.named_helmet.onEquip();
+		local a = this.getContainer().getActor();
+		if (a == null)
+		{
+			return;
+		}
+		a.CurrentProperties.IsAffectedByNight = false;
+	}
+	
+
+	function onUnequip()
+	{
+		local a = this.getContainer().getActor();
+		if (a == null)
+		{
+			return;
+		}
+		a.CurrentProperties.IsAffectedByNight = true;
+		this.named_helmet.onUnequip();
+	}
+
+
+});

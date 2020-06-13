@@ -126,6 +126,16 @@ this.wheat_fields_location <- this.inherit("scripts/entity/world/attached_locati
 				S = "supplies/bread_item"
 			});
 			_list.push({
+				R = 1,
+				P = 1.0,
+				S = "supplies/ground_grains_item"
+			});
+			_list.push({
+				R = 5,
+				P = 1.0,
+				S = "supplies/legend_porridge_item"
+			});
+			_list.push({
 				R = 10,
 				P = 1.0,
 				S = "helmets/straw_hat"

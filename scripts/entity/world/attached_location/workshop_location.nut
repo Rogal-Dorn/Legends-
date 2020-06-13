@@ -104,6 +104,9 @@ this.workshop_location <- this.inherit("scripts/entity/world/attached_location",
 		}
 		_list.push("legend_ironmonger_background");
 		_list.push("legend_ironmonger_background");
+		_list.push("legend_ironmonger_background");
+		_list.push("legend_ironmonger_background");
+		_list.push("legend_blacksmith_background");
 		_list.push("legend_blacksmith_background");
 		_list.push("apprentice_background");
 		_list.push("caravan_hand_background");

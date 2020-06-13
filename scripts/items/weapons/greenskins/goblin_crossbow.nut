@@ -17,7 +17,7 @@ this.goblin_crossbow <- this.inherit("scripts/items/weapons/weapon", {
 		this.weapon.create();
 		this.m.ID = "weapon.goblin_crossbow";
 		this.m.Name = "Spiked Impaler";
-		this.m.Description = "A large and heavy crossbow with menacing spikes in front. More like a minitature ballista, it shoots stakes with enough force to knock back a target hit.";
+		this.m.Description = "A large and heavy crossbow with menacing spikes in front. More like a minitature ballista, it shoots stakes with enough force to knock back a target hit. Deals +100 damage to vampires.";
 		this.m.Categories = "Crossbow, Two-Handed";
 		this.m.IconLarge = "weapons/ranged/crossbow_goblin_01.png";
 		this.m.Icon = "weapons/ranged/crossbow_goblin_01_70x70.png";

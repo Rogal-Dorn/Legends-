@@ -4,7 +4,7 @@ this.legend_hide_and_bone_armor <- this.inherit("scripts/items/legend_armor/lege
 	{
 		this.legend_armor_upgrade.create();
 		this.m.Type = this.Const.Items.ArmorUpgrades.Plate;
-		this.m.ID = "legend_ armor.body.hide_and_bone_armor";
+		this.m.ID = "legend_armor.body.hide_and_bone_armor";
 		this.m.Name = "Hide and Bone Armor";
 		this.m.Description = "Hide and bone are common materials in the northern regions. This armor is using both for decent protection.";
 		this.m.ArmorDescription = "Includes hide and bone armor that is decent protection.";

@@ -354,7 +354,7 @@ gt.Const.Tactical.Actor.LegendSkinGhoul <- {
 	]
 };
 gt.Const.Tactical.Actor.LegendWhiteDirewolf <- {
-	XP = 600,
+	XP = 900,
 	ActionPoints = 16,
 	Hitpoints = 400,
 	Bravery = 150,
@@ -373,7 +373,7 @@ gt.Const.Tactical.Actor.LegendWhiteDirewolf <- {
 	]
 };
 gt.Const.Tactical.Actor.LegendWhiteWarwolf <- {
-	XP = 400,
+	XP = 600,
 	ActionPoints = 12,
 	Hitpoints = 200,
 	Bravery = 100,
