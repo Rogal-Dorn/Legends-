@@ -274,7 +274,7 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 				this.Contract.spawnCaravan();
 				this.Contract.setScreen("Overview");
 				this.World.Contracts.setActiveContract(this.Contract);
-				this.World.State.setCampingAllowed(false);
+				this.World.State.setCampingAllowed(true);
 			}
 
 		});
@@ -316,7 +316,7 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 					this.Contract.m.IsEscortUpdated = true;
 				}
 
-				this.World.State.setCampingAllowed(false);
+				this.World.State.setCampingAllowed(true);
 				this.World.State.getPlayer().setPos(this.Contract.m.Caravan.getPos());
 				this.World.State.getPlayer().setVisible(false);
 				this.World.Assets.setUseProvisions(false);

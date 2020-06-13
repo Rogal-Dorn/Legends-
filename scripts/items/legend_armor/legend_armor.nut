@@ -416,6 +416,11 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 			return false;
 		}
 
+		if (_upgrade == null)
+		{
+			return true;
+		}
+
 		if (_upgrade != null && this.m.Blocked[_upgrade.getType()])
 		{
 			return false;
@@ -441,10 +446,7 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 
 		this.m.Upgrades[_upgrade.getType()] = _upgrade;
 
-		if (_upgrade == null)
-		{
-			return true;
-		}
+		
 
 		this.m.Upgrades[_upgrade.getType()].setArmor(this);
 		this.m.Upgrades[_upgrade.getType()].onAdded();

@@ -218,5 +218,15 @@
   <sprite id="legend_catapult_dead_arrows" offsetY="30" f="6402" ic="FF444B4F" width="169" height="139" img="entity\catapult_dead_arrows.png" left="-19" right="53" top="-19" bottom="37" />
   <sprite id="legend_catapult_dead_javelin" offsetY="30" f="6402" ic="FF141B29" width="169" height="139" img="entity\catapult_dead_javelin.png" left="-14" right="78" top="-2" bottom="54" />
  
-  
+   <sprite id="bust_kobold_01" offsetY="35" ic="FF3C5049" width="153" height="121" img="entity\goblins\bust_kobold_01.png" left="-33" right="35" top="-46" bottom="20" />
+   <sprite id="bust_kobold_02" offsetY="35" ic="FF3C5049" width="153" height="121" img="entity\goblins\bust_kobold_02.png" left="-33" right="35" top="-46" bottom="20" />
+   <sprite id="bust_kobold_03" offsetY="35" ic="FF3C5049" width="153" height="121" img="entity\goblins\bust_kobold_03.png" left="-33" right="35" top="-46" bottom="20" />
+   <sprite id="bust_kobold_04" offsetY="35" ic="FF3C5049" width="153" height="121" img="entity\goblins\bust_kobold_04.png" left="-33" right="35" top="-46" bottom="20" />
+   <sprite id="bust_kobold_05" offsetY="35" ic="FF3C5049" width="153" height="121" img="entity\goblins\bust_kobold_05.png" left="-33" right="35" top="-46" bottom="20" />
+   <sprite id="head_kobold_01" offsetY="35" ic="FF3C5049" width="153" height="121" img="entity\goblins\head_kobold_01.png" left="-33" right="35" top="-46" bottom="20" />
+   <sprite id="head_kobold_02" offsetY="35" ic="FF3C5049" width="153" height="121" img="entity\goblins\head_kobold_02.png" left="-33" right="35" top="-46" bottom="20" />
+   <sprite id="head_kobold_03" offsetY="35" ic="FF3C5049" width="153" height="121" img="entity\goblins\head_kobold_03.png" left="-33" right="35" top="-46" bottom="20" />
+   <sprite id="head_kobold_04" offsetY="35" ic="FF3C5049" width="153" height="121" img="entity\goblins\head_kobold_04.png" left="-33" right="35" top="-46" bottom="20" />  
+   <sprite id="head_kobold_05" offsetY="35" ic="FF3C5049" width="153" height="121" img="entity\goblins\head_kobold_05.png" left="-33" right="35" top="-46" bottom="20" />  
+   
 </brush>

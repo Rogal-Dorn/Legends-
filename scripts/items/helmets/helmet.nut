@@ -17,6 +17,7 @@ this.helmet <- this.inherit("scripts/items/item", {
 		Armor = 0.0,
 		ArmorMax = 0.0,
 		StaminaModifier = 0,
+		Variants = [],
 		Vision = 0
 	},
 	function getCondition()

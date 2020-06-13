@@ -274,6 +274,7 @@ this.kraken <- this.inherit("scripts/entity/tactical/actor", {
 		b.IsAffectedByInjuries = false;
 		b.IsRooted = true;
 		b.IsImmuneToDisarm = true;
+		b.IsAffectedByRain = false;
 		this.m.ActionPoints = b.ActionPoints;
 		this.m.Hitpoints = b.Hitpoints;
 		this.m.CurrentProperties = clone b;

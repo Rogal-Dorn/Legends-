@@ -1273,6 +1273,45 @@ this.skill <- {
 		toHit = toHit + skill;
 		toHit = toHit - defense;
 
+		//harder to hit = lower toHit, easier to hit = higher toHit
+		if ( _targetEntity.getFaction() == this.Const.Faction.Player)
+		{
+			local targetTile = _targetEntity.getTile();
+
+			for (local i = 0; i != 6; ++i)
+			{
+				if (!targetTile.hasNextTile(i)) {}
+				else
+				{
+					local tile = targetTile.getNextTile(i);
+					if (tile.IsOccupiedByActor && tile.getEntity().getMoraleState() != this.Const.MoraleState.Fleeing)
+					{
+						
+						if (tile.getEntity().getFaction() == this.Const.Faction.Player)
+						{
+							// local relTab = _targetEntity.getTile().getEntity().getActiveRelationshipWith(tile.getEntity());
+							// local relNum = relTab.RelationNum;
+							local relTab = this.World.State.getRefFromID(_targetEntity.getCompanyID()).getActiveRelationshipWith(tile.getEntity());
+							local relNum = relTab.RelationNum;
+							this.logInfo("RelNum: " + relNum);
+							if ( relNum <= (this.m.IsRanged ? -20 : -30) )
+							{
+								toHit += 5;
+								this.logInfo("tohit went up by 5");
+							}
+							if ( relNum > (this.m.IsRanged ? 10 : 20) )
+							{
+								toHit -= 5;
+								this.logInfo("ToHit went down by 5");
+							}
+						}
+						
+					}
+				}
+			}
+
+		}
+
 		if (this.m.IsRanged)
 		{
 			toHit = toHit + (distanceToTarget - 1) * properties.HitChanceAdditionalWithEachTile * properties.HitChanceWithEachTileMult;

@@ -278,6 +278,16 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		return this.m.MoodChanges;
 	}
 
+	function getAlignmentMin()
+	{
+		return this.m.Background.getAlignmentMin();
+	}
+	
+	function getAlignmentMax()
+	{
+		return this.m.Background.getAlignmentMax();
+	}
+
 	function improveMood( _a = 1.0, _reason = "" )
 	{
 		this.m.Mood = this.Math.minf(this.m.Mood + _a, this.Const.MoodState.len() - 0.05);
@@ -3061,8 +3071,10 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Background.buildDescription(true);
 			if (this.m.Background.isFemaleBackground())
 			{
-				this.m.Gender = 1;
-				this.m.VoiceSet = this.Math.rand(0, this.Const.WomanSounds.len() - 1);
+				this.setGender(1);
+			} 
+			else {
+				this.setGender(0);
 			}
 		}
 

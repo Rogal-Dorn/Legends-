@@ -735,6 +735,8 @@ this.asset_manager <- {
 				this.addMoney(30);
 			}
 
+
+
 			local mood = 0;
 			local roster = this.World.getPlayerRoster().getAll();
 
@@ -755,6 +757,12 @@ this.asset_manager <- {
 			{
 				bro.getSkills().onNewDay();
 				bro.updateInjuryVisuals();
+
+				if (this.World.Assets.getOrigin().getID() == "scenario.legends_troupe")
+				{
+					this.addMoney(10);
+				}
+
 
 				if (bro.getDailyCost() > 0 && this.m.Money < bro.getDailyCost())
 				{
