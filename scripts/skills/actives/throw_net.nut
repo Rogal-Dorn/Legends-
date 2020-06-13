@@ -85,6 +85,18 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 		return true;
 	}
 
+	function onNetSpawn( _data )
+	{
+		local rooted = _data.TargetEntity.getSprite("status_rooted");
+		rooted.setBrush(_data.IsReinforced ? "bust_net_02" : "bust_net");
+		rooted.Visible = true;
+		local rooted_back = _data.TargetEntity.getSprite("status_rooted_back");
+		rooted_back.setBrush(_data.IsReinforced ? "bust_net_back_02" : "bust_net_back");
+		rooted_back.Visible = true;
+		_data.TargetEntity.setDirty(true);
+	}
+
+
 	function onUse( _user, _targetTile )
 	{
 		local target = _targetTile.getEntity();
@@ -104,7 +116,8 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 			target.onMissed(this.getContainer().getActor(), this);
 			return false;
 		}
-
+		else
+		{
 			if (!targetEntity.getCurrentProperties().IsImmuneToRoot)
 			{
 				if (this.m.SoundOnHit.len() != 0)
@@ -170,19 +183,7 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 				return false;
 			}	
 		}
-
+	
 	}
-
-	function onNetSpawn( _data )
-	{
-		local rooted = _data.TargetEntity.getSprite("status_rooted");
-		rooted.setBrush(_data.IsReinforced ? "bust_net_02" : "bust_net");
-		rooted.Visible = true;
-		local rooted_back = _data.TargetEntity.getSprite("status_rooted_back");
-		rooted_back.setBrush(_data.IsReinforced ? "bust_net_back_02" : "bust_net_back");
-		rooted_back.Visible = true;
-		_data.TargetEntity.setDirty(true);
-	}
-
 });
 
