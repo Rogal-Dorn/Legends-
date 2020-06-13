@@ -153,6 +153,7 @@ this.legend_banshee <- this.inherit("scripts/entity/tactical/actor", {
 		b.IsIgnoringArmorOnAttack = true;
 		b.IsAffectedByNight = false;
 		b.IsAffectedByInjuries = false;
+		b.IsAffectedByRain = false;
 
 		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 140)
 		{

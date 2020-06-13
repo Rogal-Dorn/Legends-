@@ -163,7 +163,7 @@ this.cultists_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 		{
 			foreach (add in this.World.getPlayerRoster().getAll())
 			{
-				b.changeActiveRelationship(add, this.Math.rand(0, 10));
+				b.changeActiveRelationship(add, this.Math.rand(-30, 30));
 			}
 		}
 	}

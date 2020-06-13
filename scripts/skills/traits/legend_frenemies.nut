@@ -5,7 +5,7 @@ this.legend_frenemies <- this.inherit("scripts/skills/traits/character_trait", {
 		this.character_trait.create();
 		this.m.ID = "trait.frenemies";
 		this.m.Name = "Relationships";
-		this.m.Icon = "ui/traits/trait_alignment_05.png";
+		this.m.Icon = "ui/traits/trait_relationships.png";
 	}
 
 	function getTooltip()
@@ -32,9 +32,9 @@ this.legend_frenemies <- this.inherit("scripts/skills/traits/character_trait", {
 	function onUpdate( _properties )
 	{
 
-	if (this.getPlaceInFormation() != null)
+	if (this.getContainer().getActor().getPlaceInFormation())
 		{
-			local spot = this.getPlaceInFormation();
+			local spot = this.getContainer().getActor().getPlaceInFormation();
 			foreach ( b in this.World.getPlayerRoster().getAll() )
 			{
 				switch (b.getPlaceInFormation())

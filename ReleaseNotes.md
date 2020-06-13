@@ -3143,7 +3143,7 @@ Adds 12 new magic backgrounds that spawn when magic is enabled.
 * Weidermancer - has warlock zombie skills - spawns near peat pits 
 * Skelemancer - has warlock skeleton skills - spawns near leather tanner
 * Necromancer - has the necromancer's buggy raise dead skill 
-Adds 10 wizard robe skins and 19 wizard hat skins
+Adds 10 wizard robe skins and 19 wizard hat skins, Gnarled staff buffed to t3 available near woodcutters huts. 
 
 Other commander skills are also more widely available when magic is enabled 
 * Master archer - has ranger attack skills - spawns near fortified outposts
@@ -3157,21 +3157,90 @@ Re-enables Horses for testing, the weapon skills are still broken.
 **Legendary beasts**
 Legendary beasts are now in their own spawn groups, and tend to stay to one type of terrain.  This means rather than encountering stollwurms among every late game lindwurm group, you'll find them in their own packs in their own terrain. 
 
-**Faith**
-New Origin - Inquisition, a Witch hunter is accompanied by a crusader, a flagellant and a monk on a holy quest.
+**The Inquisition**
+New Origin - Inquisition, a veteran Witch hunter is accompanied by a crusader, a flagellant and a battle nun on a holy quest.
 * Begins with high Moral standing. 
 * Holy recruits are cheaper and more plentiful, unholy recruits are more expensive. 
 * All recruits gain Mind over Body.
 * Holy flame now also applies burn, bleed and zombie poison to undead 
 * Holy flame now also applies prayer of life and prayer of faith to allies 
 * Holy flame now costs 7AP 
+* There is now a higher tier witch hunter helm that grants immunity to the dark (TODO currently a bit squashed )
+* Wooden stake and Spiked Impaler now do +100 damage to vampires, descriptions updated 
+* Penance now grants 50% of missing health as resolve while wearing cultist robes, sackloth, leather wraps or hide.
+* Penance and dedication descriptions rewritten to apply to both cultists and flagellants 
+* Flagellants no longer spawn with tunics, but can have hide armor 
+
+
+**The Troupe**
+New Origin - The Troupe. An illusionist accompanied by a troubadour, minstrel and juggler. 
+* Busking - each member of the troupe generates 10 crowns per day 
+* Exposure - Performing artists are more likely to show up and are cheaper to hire 
+* Acrobatics - Grants the new Leap perk to all recruits
+
+ New Juggler class perk group 
+- Leap - allows jumping two tiles at a great fatigue cost
+- Tumble - halves the fatigue and AP cos of leap, footwork and lunge 
+- Hair splitter - grants +30% chance to hit the head 
+juggler bonus to hit head raised to +10%
+juggler's hat grants +10% chance to hit the head 
+
+**Rain**
+Rain now applies -1 vision and -10% to attack and defense, 
+This can be migitated by wearing a heavy cloak. 
+Rain does not effect ghosts, wurms, iijirock or kraken. 
+
+
+**Perk Changes**
+Spearwaller buffed to 50% fatigue reduction and 25% AP reduction 
+Return Favor buffed to 75% chance to apply 
+Bloodbath changed to bonus percent equal to percent of characters bleeding in combat 
+Smackdown also applies baffled 
+Smashing shields buffed to 100% shield damage 
+Staff block buffed to 16 melee and ranged defense, swordstaves gain 50% of the bonus 
+Feint now applies 'Parried' to an enemy, lowering their defenses by 10 
+Sprint cost to use reduce to 2 AP and 10 Fat, fatigue cost reduced to +50% per tile. 
+Perfect Focus reduced to +75% fatigue cost instead of double 
+True believer now also increases resolve by 5% for each fleeing character on the field 
+Blend in increased to 90% reduction in AI attraction 
+Evasion reduced to 2AP and 10 fat to use. 
+Second wind now also applies the recovery potion effect, granting +10 fatigue recovery for four turns. 
+Vengeance now doubles the damage of the next attack 
+Last stand now also grants immunity from the effects of fresh injuries when below 33% health 
+Efficient packing gives flat +6 fat, skillfull stacking gives a flat +9 fat, instead of percentage bonuses. 
+Resilient now also grants +6 hitpoints 
+
+**integrated noble helm and tabard crafting submod**
+thanks rue 
+
+**Situations**
+More situations now affect recruit pools 
+* archery contest has a chance for master archers with magic enabled 
+* beseiged, conquered, razed and raided all add beggars, widows, cripples and gravediggers 
+* disbanded troops now adds noble warriors, soldiers and arbelesters. If magic is enabled there are nobles, master archers and crusaders 
+* full nets adds fishermen and fishwives 
+* good harvest adds farmhands, millers, bakers and herbalists 
+* Hunting season adds hunters, poachers, taxidermists, butchers and houndmasters 
+* lost at sea adds widows and fishwives 
+* mine cave in and rich veins adds ironmongers and blacksmiths and miners 
+* mustering troops adds retired soldiers, cripples, deserters and widows 
+* preparing feasts adds butchers, servants, housemaids and enuchs 
+* rebuilding effort adds lumberjacks, masons and daytalers 
+* Safe roads adds caravan hands, donkeys, sellswords, peddlers, messengers, historians, vagabonds and adventurous nobles
+* seasonal fair adds jugglers, minstrels and troubadours 
+* sickness adds cripples, beggars, widows, nuns, monks and herbalists 
+* Witch burnings have a chance of widows, when there is magic enabled there can be evokers, spiritualists, diviners, nuns and entrancers
+
 
 **Bug fixes and minor tunes**
-
+Militia scenario has random backgrounds added to half the starting characters to increase replayability.
+You can now camp during caravan contracts 
 Offhand Puncture no longer uses main hand dmg (Salty)
-Cultist Sacrifice now has 50% chance to rank up the cultist again (Salty)
+Cultist Sacrifice now has 50% chance to rank up the cultist again, not 100% (Salty)
 Buckler Bash should no longer cost 1 fat with mastery (Salty)
-Fix for my Oblivion Potion fix, no longer doubles perkpoints and gifted doesn't grant free points (Salty)
+Fix for Oblivion Potion fix, no longer doubles perkpoints and gifted doesn't grant free points (Salty)
+Orc Behemoth now isn't puny anymore. Now correctly get's it's own stats. (Salty, tanks to Motanul)
+Matching set now correctly works up to combined armor, not 350 (Salty)
 Throw net now uses same attack calculation as throwing a javelin 
 Adds armor piercing and broad head arrows to fletchers 
 Random solo party size raised to 27 
@@ -3197,7 +3266,15 @@ Bleed rune doesnt crash when person gets swallowed (mwah)
 Fixes lacerate calculation to activate (mwah)
 Fixes knock out staying after removing the shovel with the Gravesman perk (mwah)
 Updates PC Trait to mention that player character's can't be charmed (mwah)
-Hedge Knight Armor "fix" (mwah) //SHould be actually fixed rn itjust gives old legend_armor not new layered_armor 
+Hedge Knight Armor "fix" (mwah) //Should be actually fixed rn itjust gives old legend_armor not new layered_armor 
 Ninetails Attack Accuracy & Damage perks now correctly gives whips that aren't the Ninetails half the bonus instead of 2x the bonus (mwah)
+Revolt fix range tooltip (said 2 is 6) (mwah)
+Adds webbed to push the advantage perk because t probably should (mwah)
+fixes female sounds reverting to male sounds (mwah)
+whitewolves give 50% more xp 
+fixed spelling errors in some layer IDs  
+Berserker intro event has better image 
+female peasants can now wear layered peasant dress in 11 colours, these dresses can be bought near dye makers 
+
 
 
