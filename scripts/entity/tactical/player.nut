@@ -278,6 +278,16 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		return this.m.MoodChanges;
 	}
 
+	function getAlignmentMin()
+	{
+		return this.m.Background.getAlignmentMin();
+	}
+	
+	function getAlignmentMax()
+	{
+		return this.m.Background.getAlignmentMax();
+	}
+
 	function improveMood( _a = 1.0, _reason = "" )
 	{
 		this.m.Mood = this.Math.minf(this.m.Mood + _a, this.Const.MoodState.len() - 0.05);
