@@ -33,6 +33,7 @@ this.eunuch_background <- this.inherit("scripts/skills/backgrounds/character_bac
 		this.m.IsOffendedByViolence = true;
 		this.m.IsCrusaderRecruitBackground = true;
 		this.m.IsEducatedBackground = true;
+		this.m.IsPerformingBackground = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Good;
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[1];

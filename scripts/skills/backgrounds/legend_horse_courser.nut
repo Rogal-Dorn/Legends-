@@ -21,6 +21,8 @@ this.legend_horse_courser <- this.inherit("scripts/skills/backgrounds/legend_hor
 			"trait.clumsy",
 			"trait.asthmatic"
 		];
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Chivalrous;
 		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[2];
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[3];
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[2];
