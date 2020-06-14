@@ -3297,13 +3297,13 @@ fixes some features of the previous build not being present in the reverted vers
 
 fixes payday not working 
 fixes a couple of problems with magic perk trees causing towns to be unenterable 
+named shields can be salvaged once destroyed. 
+named shields max stats increased significantly 
 Jesters hat, Juggler's hat, Witchunter hat and witchunter helm all have their armor values fixed 
 Rain reduced to only applying -1 vision. Cloaks no longer protect from this 
 hunters hat has +1 vision and +5 durability 
 Chain lighting costs -20 fatigue and -1AP when it is raining 
 Coin delivery quest only shows up above 80 moral reputation 
-named shields can be salvaged once destroyed. 
-named shields max stats increased significantly 
 fixes world icon for inquisition 
 necrosavant background beard fix
 fixes witchhunter hat onequip
