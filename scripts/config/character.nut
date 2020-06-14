@@ -970,6 +970,7 @@ gt.Const.CharacterProperties <- {
 	IsAffectedByFleeingAllies = true,
 	IsAffectedByDyingAllies = true,
 	IsAffectedByLosingHitpoints = true,
+	IsBeastform = false,
 	SurvivesAsUndead = false,
 	IsStealthed = false,
 	IsFleetfooted = false,
