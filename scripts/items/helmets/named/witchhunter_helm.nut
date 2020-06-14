@@ -53,7 +53,16 @@ this.witchhunter_helm <- this.inherit("scripts/items/helmets/named/named_helmet"
 	
 	function onUpdateProperties( _properties )
 	{
-		this.named_helmet.onUpdateProperties(_properties);
+		local staminaMult = 1.0;
+
+		if (this.getContainer().getActor().getSkills().hasSkill("perk.brawny"))
+		{
+			staminaMult = 0.75;
+		}
+		_properties.Armor[this.Const.BodyPart.Head] += this.m.Condition;
+		_properties.ArmorMax[this.Const.BodyPart.Head] += this.m.ConditionMax;
+		_properties.Stamina += this.Math.ceil(this.m.StaminaModifier * staminaMult);
+		_properties.Vision += this.m.Vision;
 		_properties.IsAffectedByNight = false;
 	}
 

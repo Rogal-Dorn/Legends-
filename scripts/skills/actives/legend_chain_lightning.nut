@@ -13,7 +13,7 @@ this.legend_chain_lightning <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_chain_lightning";
 		this.m.Name = "Chain Lightning";
-		this.m.Description = "Unleash an arcing barrage that strikes an opponent, sending sparks from opponent to opponent.";
+		this.m.Description = "Unleash an arcing barrage that strikes an opponent, sending sparks from opponent to opponent. Fatigue and action costs reduced while it is raining. ";
 		this.m.KilledString = "Electrocuted";
 		this.m.Icon = "skills/lightning_square.png";
 		this.m.IconDisabled = "skills/lightning_square_bw.png";
@@ -118,6 +118,29 @@ this.legend_chain_lightning <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.FatigueCostMult = _properties.IsSpecializedInStaves ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
 		this.m.ActionPointCost = _properties.IsSpecializedInStaves ? 5 : 6;
+
+
+	function getTooltip()
+	{
+		local result = this.named_helmet.getTooltip();
+		result.push({
+			id = 6,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "Wearer is not affected by rain penalties"
+		});
+		return result;
+	}
+
+	function onUpdateProperties( _properties )
+	{
+
+		if (_properties.getSkills().hasSkill("special.legend_rain");)
+		{
+		this.m.FatigueCost -= 20;
+		this.m.ActionPointCost -= 1;
+		}
+
 	}
 
 	function onUse( _user, _targetTile )
