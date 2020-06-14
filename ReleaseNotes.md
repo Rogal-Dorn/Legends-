@@ -3293,26 +3293,34 @@ fixes unfinished event randomly firing and freezing events
 fixes some features of the previous build not being present in the reverted version 
 
 
-14.0.0.7 bugfixes 
+14.0.0.7 Druidic shield 
 
-fixes payday not working 
-fixes a couple of problems with magic perk trees causing towns to be unenterable 
-fixes towns with hunters cabins not being enterable sometimes 
-berserker commander can now transform into a bear. So can some barbarians 
+Adds Druid Scenario 
+* Loner: Only hires wildlings, herbalists and practitioners of wild magic 
+* Wild form: All recruits gain the Wolf Form and Bear Form abilities 
+* Avatar:  when your druid dies its game over 
+* adds the druidic arts magic school, with wild forms, healing and roots 
+* druids can be found near gatheres hut with magic enabled 
+
+Rain reduced to only applying -1 vision. Cloaks no longer protect from this 
+Chain lighting costs -20 fatigue and -1AP when it is raining 
+Roots costs -10 fatigue and -1ap when its raining 
+berserker commander can now transform into a bear. 
+Some barbarian enemies can ocassionally adopt bear form
 named shields can be salvaged once destroyed. 
 named shields max stats increased significantly 
 Jesters hat, Juggler's hat, Witchunter hat and witchunter helm all have their armor values fixed 
-Rain reduced to only applying -1 vision. Cloaks no longer protect from this 
 hunters hat has +1 vision and +5 durability 
-Chain lighting costs -20 fatigue and -1AP when it is raining 
 Coin delivery quest only shows up above 80 moral reputation 
+Undead legion can now gain undead spellcasters from the black monolith 
+fixes payday not working 
+fixes a couple of problems with magic perk trees causing towns to be unenterable 
+fixes towns with hunters cabins not being enterable sometimes 
 fixes world icon for inquisition 
 necrosavant background beard fix
 fixes witchhunter hat onequip
 necrosavant background beard fix
 icon fix for terrifying visage
 leather jacket named inventory icon fix
-
-Undead legion can now gain undead spellcasters from the black monolith 
 ratcatchers can now be known as "the beagle"
 

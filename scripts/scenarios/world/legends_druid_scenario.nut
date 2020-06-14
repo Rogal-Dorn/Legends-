@@ -38,7 +38,7 @@ this.legends_druid_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[0].setStartValuesEx([
 			"legend_druid_commander_background"
 		]);
-		bros[0].getBackground().m.RawDescription = "{%name% has only ever known the wild woods, the worlds of men are strange and disgusting}";
+		bros[0].getBackground().m.RawDescription = "%name% has only ever known the wild woods, the worlds of men are strange and disgusting";
 		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
 		bro.getSkills().add(this.new("scripts/skills/perks/perk_bearform"));
 		bro.getSkills().add(this.new("scripts/skills/perks/perk_wolfform"));
