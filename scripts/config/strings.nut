@@ -1714,7 +1714,8 @@ gt.Const.Strings.PerkName <- {
 	LegendCheerOn = "Cheer On",
 	LegendLeap = "Leap",
 	LegendTumble = "Tumble",
-	LegendHairSplitter = "Hair Splitter"
+	LegendHairSplitter = "Hair Splitter",
+	LegendBearform = "Bearform"
 };
 gt.Const.Strings.PerkDescription <- {
 	Relentless = "Don\'t slow down! At all times your Initiative is reduced only by [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] of your accumulated Fatigue, instead of all of it. \n[color=#0b0084]From the Fit perk group[/color]",
@@ -2053,7 +2054,8 @@ gt.Const.Strings.PerkDescription <- {
 	LegendCheerOn = "Use your way with song to cheer on an ally. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] AP to an ally within three tiles. Can only be used with a Drum or Lute equipped. \n[color=#0b0084]From the Bard perk group[/color]",
 	LegendLeap = "Use your athletic skill to leap high and far, covering two tiles distance but at a great fatigue cost. Unlocks the \'Leap\' skill",
 	LegendTumble = "Make use of your acrobatic skill to improve your movements. Halves the fatigue and action point costs of Footwork, Leap and Lunge.",
-	LegendHairSplitter = "Years of practice throwing things at apples above heads have granted a magnetic attraction to the cranium. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+30%[/color] chance to hit the head"
+	LegendHairSplitter = "Years of practice throwing things at apples above heads have granted a magnetic attraction to the cranium. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+30%[/color] chance to hit the head",
+	LegendBearform = "Transform into a powerful bear"
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

@@ -799,7 +799,7 @@ this.asset_manager <- {
 				bro.worsenMood(this.Const.MoodChange.AmbitionFailed, "Thinks the company is too moral");
 				}
 
-				if (bro.getAlignment() == this.Math.Floor(companyRep))
+				if (bro.getAlignment() == this.Math.floor(companyRep))
 				{
 				bro.worsenMood(this.Const.MoodChange.AmbitionFulfilled, "Thinks the company is great");
 				}

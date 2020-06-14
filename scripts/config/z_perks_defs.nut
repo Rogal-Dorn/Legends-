@@ -2894,6 +2894,15 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/hairsplit_circle.png",
 		IconDisabled = "ui/perks/hairsplit_circle_bw.png",
 		Const = "LegendHairSplitter"
+	},
+	{
+		ID = "perk.perk_legend_bearform",
+		Script = "scripts/skills/perks/perk_legend_bearformr",
+		Name = this.Const.Strings.PerkName.LegendBearform,
+		Tooltip = this.Const.Strings.PerkDescription.LegendBearform,
+		Icon = "ui/perks/evasion_circle.png",
+		IconDisabled = "ui/perks/evasion_circle_bw.png",
+		Const = "LegendBearform"
 	}
 ];
 gt.Const.Perks.PerkDefs <- {};
