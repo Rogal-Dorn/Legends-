@@ -264,11 +264,27 @@ gt.Const.Perks.ConjurationMagicTree <- {
 	Tree = [
 		[gt.Const.Perks.PerkDefs.LegendSummonCat],
 		[gt.Const.Perks.PerkDefs.LegendSummonHound],
-		[],
 		[gt.Const.Perks.PerkDefs.LegendSummonFalcon],
+		[],
 		[gt.Const.Perks.PerkDefs.LegendSummonWolf],
 		[],
 		[gt.Const.Perks.PerkDefs.LegendSummonBear]
+	]
+};
+
+gt.Const.Perks.DruidMagicTree <- {
+	ID = "DruidMagicTree",
+	Descriptions = [
+		"druidic arts"
+	],
+	Tree = [
+		[gt.Const.Perks.PerkDefs.LegendRoots],
+		[],
+		[gt.Const.Perks.PerkDefs.LegendWolfform],
+		[],
+		[gt.Const.Perks.PerkDefs.LegendPrayerOfLife],
+		[gt.Const.Perks.PerkDefs.LegendDrumsOfLife],
+		[gt.Const.Perks.PerkDefs.LegendBearform]
 	]
 };
 
@@ -334,6 +350,7 @@ gt.Const.Perks.MagicTrees <- {
 		gt.Const.Perks.ZombieMagicTree,
 		gt.Const.Perks.SkeletonMagicTree,
 		gt.Const.Perks.BerserkerMagicTree,
+		gt.Const.Perks.DruidMagicTree,
 		gt.Const.Perks.CaptainMagicTree,
 		gt.Const.Perks.IllusionistMagicTree,
 		gt.Const.Perks.DivinationMagicTree,

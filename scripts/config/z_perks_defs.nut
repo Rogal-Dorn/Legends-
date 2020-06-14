@@ -2912,6 +2912,15 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/roots_circle.png",
 		IconDisabled = "ui/perks/roots_circle_bw.png",
 		Const = "LegendRoots"
+	},
+	{
+		ID = "perk.legend_wolfform",
+		Script = "scripts/skills/perks/perk_legend_wolfform",
+		Name = this.Const.Strings.PerkName.LegendWolfform,
+		Tooltip = this.Const.Strings.PerkDescription.LegendWolfform,
+		Icon = "ui/perks/wolf_circle.png",
+		IconDisabled = "ui/perks/wolf_circle_bw.png",
+		Const = "LegendWolfform"
 	}
 ];
 gt.Const.Perks.PerkDefs <- {};

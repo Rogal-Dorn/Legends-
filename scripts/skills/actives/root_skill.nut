@@ -4,7 +4,7 @@ this.root_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.root";
 		this.m.Name = "Root";
-		this.m.Description = "";
+		this.m.Description = "Unleash roots from the ground to ensnare your foes. Fatigue and AP costs reduced while raining and with staff mastery. ";
 		this.m.Icon = "skills/roots_square.png";
 		this.m.IconDisabled = "skills/roots_square_bw.png";
 		this.m.Overlay = "active_70";
@@ -57,6 +57,19 @@ this.root_skill <- this.inherit("scripts/skills/skill", {
 		}
 
 		return true;
+	}
+
+	function onAfterUpdate( _properties )
+	{
+		this.m.FatigueCostMult = _properties.IsSpecializedInStaves ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
+		this.m.ActionPointCost = _properties.IsSpecializedInStaves ? 5 : 6;
+
+        if (this.getContainer().hasSkill("special.legend_rain"))
+        {
+        this.m.FatigueCost -= 10;
+        this.m.ActionPointCost -= 1;
+        }
+
 	}
 
 	function onUse( _user, _targetTile )

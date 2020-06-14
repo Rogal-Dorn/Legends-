@@ -3297,6 +3297,7 @@ fixes some features of the previous build not being present in the reverted vers
 
 fixes payday not working 
 fixes a couple of problems with magic perk trees causing towns to be unenterable 
+fixes towns with hunters cabins not being enterable sometimes 
 berserker commander can now transform into a bear. So can some barbarians 
 named shields can be salvaged once destroyed. 
 named shields max stats increased significantly 
@@ -3311,6 +3312,7 @@ fixes witchhunter hat onequip
 necrosavant background beard fix
 icon fix for terrifying visage
 leather jacket named inventory icon fix
+
 Undead legion can now gain undead spellcasters from the black monolith 
 ratcatchers can now be known as "the beagle"
 

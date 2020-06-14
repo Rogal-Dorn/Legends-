@@ -33,6 +33,7 @@ this.herbalists_grove_location <- this.inherit("scripts/entity/world/attached_lo
 		if(this.Const.LegendMod.Configs.LegendMagicEnabled())
 		{
 			_list.push("legend_illusionist_background");
+			_list.push("legend_druid_background");
 		}
 	}
 
