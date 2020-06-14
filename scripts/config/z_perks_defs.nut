@@ -2860,7 +2860,7 @@ gt.Const.Perks.PerkDefObjects <- [
 		Const = "LegendZombieBite"
 	},
 	{
-		ID = "perk.perk_legend_cheer_on",
+		ID = "perk.legend_cheer_on",
 		Script = "scripts/skills/perks/perk_legend_cheer_on",
 		Name = this.Const.Strings.PerkName.LegendCheerOn,
 		Tooltip = this.Const.Strings.PerkDescription.LegendCheerOn,
@@ -2869,7 +2869,7 @@ gt.Const.Perks.PerkDefObjects <- [
 		Const = "LegendCheerOn"
 	},
 	{
-		ID = "perk.perk_legend_leap",
+		ID = "perk.legend_leap",
 		Script = "scripts/skills/perks/perk_legend_leap",
 		Name = this.Const.Strings.PerkName.LegendLeap,
 		Tooltip = this.Const.Strings.PerkDescription.LegendLeap,
@@ -2887,7 +2887,7 @@ gt.Const.Perks.PerkDefObjects <- [
 		Const = "LegendTumble"
 	},
 	{
-		ID = "perk.perk_legend_hair_splitter",
+		ID = "perk.legend_hair_splitter",
 		Script = "scripts/skills/perks/perk_legend_hair_splitter",
 		Name = this.Const.Strings.PerkName.LegendHairSplitter,
 		Tooltip = this.Const.Strings.PerkDescription.LegendHairSplitter,
@@ -2896,12 +2896,12 @@ gt.Const.Perks.PerkDefObjects <- [
 		Const = "LegendHairSplitter"
 	},
 	{
-		ID = "perk.perk_legend_bearform",
-		Script = "scripts/skills/perks/perk_legend_bearformr",
+		ID = "perk.legend_bearform",
+		Script = "scripts/skills/perks/perk_legend_bearform",
 		Name = this.Const.Strings.PerkName.LegendBearform,
 		Tooltip = this.Const.Strings.PerkDescription.LegendBearform,
-		Icon = "ui/perks/evasion_circle.png",
-		IconDisabled = "ui/perks/evasion_circle_bw.png",
+		Icon = "ui/perks/bear_circle.png",
+		IconDisabled = "ui/perks/bear_circle_bw.png",
 		Const = "LegendBearform"
 	}
 ];

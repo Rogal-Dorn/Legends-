@@ -830,6 +830,7 @@ gt.Const.Strings.RatcatcherTitles <- [
 	"the Ratcatcher",
 	"the Tepid",
 	"the Trapper",
+	"the Beagle",
 	"the Scabby"
 ];
 gt.Const.Strings.BastardTitles <- [

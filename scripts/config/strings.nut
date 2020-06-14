@@ -2055,7 +2055,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendLeap = "Use your athletic skill to leap high and far, covering two tiles distance but at a great fatigue cost. Unlocks the \'Leap\' skill",
 	LegendTumble = "Make use of your acrobatic skill to improve your movements. Halves the fatigue and action point costs of Footwork, Leap and Lunge.",
 	LegendHairSplitter = "Years of practice throwing things at apples above heads have granted a magnetic attraction to the cranium. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+30%[/color] chance to hit the head",
-	LegendBearform = "Transform into a powerful bear"
+	LegendBearform = "Transform into a powerful bear, doubles your hitpoints. Requires free hands"
 };
 gt.Const.Strings.Tooltip <- {
 	World = {
