@@ -135,7 +135,7 @@ this.legend_chain_lightning <- this.inherit("scripts/skills/skill", {
 	function onUpdateProperties( _properties )
 	{
 
-		if (_properties.getSkills().hasSkill("special.legend_rain"))
+		if (this.getContainer().hasSkill("special.legend_rain"))
 		{
 		this.m.FatigueCost -= 20;
 		this.m.ActionPointCost -= 1;
