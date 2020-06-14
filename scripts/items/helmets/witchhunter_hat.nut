@@ -38,7 +38,7 @@ this.witchhunter_hat <- this.inherit("scripts/items/helmets/helmet", {
 	
 function onEquip()
 	{
-		this.named_helmet.onEquip();
+		this.helmet.onEquip();
 		local a = this.getContainer().getActor();
 		if (a == null)
 		{
