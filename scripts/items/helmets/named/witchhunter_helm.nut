@@ -50,11 +50,14 @@ this.witchhunter_helm <- this.inherit("scripts/items/helmets/named/named_helmet"
 		});
 		return result;
 	}
-
+	
 	function onUpdateProperties( _properties )
 	{
-		_properties.getSkills().removeByID("special.night");
+		this.named_helmet.onUpdateProperties(_properties);
+		_properties.IsAffectedByNight = false;
 	}
+
+
 
 		function updateVariant()
 	{

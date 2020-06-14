@@ -54,6 +54,7 @@ this.legend_enchanter_background <- this.inherit("scripts/skills/backgrounds/cha
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[0];
 		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[0];
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[2];
+		this.m.Modifiers.Enchanting = 1.0;
 		this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.DaggerTree,
