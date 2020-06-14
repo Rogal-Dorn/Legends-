@@ -328,7 +328,6 @@ gt.Const.Perks.MagicTrees <- {
 		gt.Const.Perks.BasicNecroMagicTree,
 		gt.Const.Perks.WarlockMagicTree,
 		gt.Const.Perks.VampireMagicTree,
-		gt.Const.Perks.BasicNecroMagicTree,
 		gt.Const.Perks.ZombieMagicTree,
 		gt.Const.Perks.SkeletonMagicTree,
 		gt.Const.Perks.BerserkerMagicTree,
