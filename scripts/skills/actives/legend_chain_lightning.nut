@@ -120,17 +120,6 @@ this.legend_chain_lightning <- this.inherit("scripts/skills/skill", {
 		this.m.ActionPointCost = _properties.IsSpecializedInStaves ? 5 : 6;
 
 
-	function getTooltip()
-	{
-		local result = this.named_helmet.getTooltip();
-		result.push({
-			id = 6,
-			type = "text",
-			icon = "ui/icons/special.png",
-			text = "Wearer is not affected by rain penalties"
-		});
-		return result;
-	}
 
 	function onUpdateProperties( _properties )
 	{
