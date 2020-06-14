@@ -3280,6 +3280,22 @@ female peasants can now wear layered peasant dress in 11 colours, these dresses 
 
 
 
-14.0.0.2
+14.0.0.6a bugfixes 
+
+fixes towns freezing when spawning people with nets 
+Fixes blast furnaces trying to spawn something that doesn't exist
+fixes juggler hats having no values 
+fixes troupe intro 
+fixes inquisition not starting with perks
 Fixes alignmentMin/Max calls not returning values
-Throw net fix
+Lowers the chance of random backgrounds having magic skills from 10% to 0.2% 
+fixes unfinished event randomly firing and freezing events 
+fixes some features of the previous build not being present in the reverted version 
+
+
+14.0.0.6b bugfixes 
+
+Jesters hat, Juggler's hat, Witchunter hat and witchunter helm all have their armor values fixed 
+Rain reduced to only applying -1 vision. Cloaks no longer protect from this 
+Chain lighting costs -20 fatigue and -1AP when it is raining 
+Coin delivery quest only shows up above 80 moral reputation 
