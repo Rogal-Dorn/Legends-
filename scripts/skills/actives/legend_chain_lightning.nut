@@ -13,7 +13,8 @@ this.legend_chain_lightning <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_chain_lightning";
 		this.m.Name = "Chain Lightning";
-        this.m.Description = "Unleash an arcing barrage that strikes an opponent, sending sparks from opponent to opponent. Fatigue and action costs reduced while it is raining. ";		this.m.KilledString = "Electrocuted";
+        this.m.Description = "Unleash an arcing barrage that strikes an opponent, sending sparks from opponent to opponent. Fatigue and action costs reduced while it is raining, and from staff mastery. ";
+		this.m.KilledString = "Electrocuted";
 		this.m.Icon = "skills/lightning_square.png";
 		this.m.IconDisabled = "skills/lightning_square_bw.png";
 		this.m.Overlay = "lightning_square";
