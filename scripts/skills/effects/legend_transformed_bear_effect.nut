@@ -65,7 +65,6 @@ this.legend_transformed_bear_effect <- this.inherit("scripts/skills/skill", {
 
 		this.m.Body = actor.getSprite("body").getBrush().Name;
 		this.m.Head = actor.getSprite("head").getBrush().Name;
-		this.m.Injury = actor.getSprite("injury").getBrush().Name;
 
 		actor.getSprite("body").setBrush("bear_01");
 		actor.getSprite("head").setBrush("bear_head_01");
@@ -100,18 +99,18 @@ this.legend_transformed_bear_effect <- this.inherit("scripts/skills/skill", {
 
 		actor.getSkills().addSkill(this.new("scripts/skills/actives/legend_bear_claws"));
 		actor.getSkills().addSkill(this.new("scripts/skills/actives/legend_bear_bite"));
-		actor.setHitpoints(this.Math.floor(actor.getHitpoints() * 4));
+		actor.setHitpoints(this.Math.floor(actor.getHitpoints() * 2));
 	}
 
 	function onRemoved()
 	{	
 
-		actor.getSprite("body").setBrush(this.m.Body);
-		actor.getSprite("head").setBrush(this.m.Head);
-		actor.getSprite("injury").setBrush(this.m.Injury);
+
 
 
 		local actor = this.getContainer().getActor();
+		actor.getSprite("body").setBrush(this.m.Body);
+		actor.getSprite("head").setBrush(this.m.Head);
 		actor.getSprite("armor").Alpha = 255;
 		actor.getSprite("helmet").Alpha = 255;
 		actor.getSprite("shield_icon").Alpha = 255;
@@ -155,7 +154,6 @@ this.legend_transformed_bear_effect <- this.inherit("scripts/skills/skill", {
 
 		actor.getSprite("body").setBrush("bear_01");
 		actor.getSprite("head").setBrush("bear_head_01");
-		actor.getSprite("injury").setBrush("bear_01_injured");
 
 		actor.getSprite("armor").Alpha = 10;
 		actor.getSprite("helmet").Alpha = 10;
@@ -164,8 +162,6 @@ this.legend_transformed_bear_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("armor_layer_plate").Alpha = 10;
 		actor.getSprite("armor_layer_tabbard").Alpha = 10;
 		actor.getSprite("armor_layer_tabbard").Alpha = 10;
-		actor.getSprite("head").Alpha = 10;
-		actor.getSprite("body").Alpha = 10;
 		actor.getSprite("hair").Alpha = 10;
 		actor.getSprite("beard").Alpha = 10;
 		actor.getSprite("tattoo_head").Alpha = 10;
@@ -179,7 +175,7 @@ this.legend_transformed_bear_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("armor_upgrade_front").Alpha = 10;
 		actor.getSprite("socket").Alpha = 10;
 
-		_properties.HitpointsMult *= 4;
+		_properties.HitpointsMult *= 2;
 
 	}
 

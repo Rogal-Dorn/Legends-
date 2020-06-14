@@ -3297,6 +3297,7 @@ fixes some features of the previous build not being present in the reverted vers
 
 fixes payday not working 
 fixes a couple of problems with magic perk trees causing towns to be unenterable 
+berserker can now transform into a bear. So can some barbarians 
 named shields can be salvaged once destroyed. 
 named shields max stats increased significantly 
 Jesters hat, Juggler's hat, Witchunter hat and witchunter helm all have their armor values fixed 
@@ -3310,4 +3311,5 @@ fixes witchhunter hat onequip
 necrosavant background beard fix
 icon fix for terrifying visage
 leather jacket named inventory iconfix
+ratcatchers can now be known as "the beagle"
 
