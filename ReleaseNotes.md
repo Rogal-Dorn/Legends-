@@ -3286,3 +3286,4 @@ Throw net fix
 
 fixes a couple problems with magic perk trees
 fixes witchhunter hat onequip
+necrosavant background beard fix
