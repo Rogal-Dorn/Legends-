@@ -3310,6 +3310,7 @@ necrosavant background beard fix
 fixes witchhunter hat onequip
 necrosavant background beard fix
 icon fix for terrifying visage
-leather jacket named inventory iconfix
+leather jacket named inventory icon fix
+Undead legion can now gain undead spellcasters from the black monolith 
 ratcatchers can now be known as "the beagle"
 
