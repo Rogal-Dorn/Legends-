@@ -100,7 +100,7 @@ this.legend_transformed_bear_effect <- this.inherit("scripts/skills/skill", {
 
 		actor.getSkills().addSkill(this.new("scripts/skills/actives/legend_bear_claws"));
 		actor.getSkills().addSkill(this.new("scripts/skills/actives/legend_bear_bite"));
-
+		actor.setHitpoints(this.Math.floor(actor.getHitpoints() * 4));
 	}
 
 	function onRemoved()
@@ -178,6 +178,8 @@ this.legend_transformed_bear_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("armor_upgrade_back").Alpha = 10;
 		actor.getSprite("armor_upgrade_front").Alpha = 10;
 		actor.getSprite("socket").Alpha = 10;
+
+		_properties.HitpointsMult *= 4;
 
 	}
 
