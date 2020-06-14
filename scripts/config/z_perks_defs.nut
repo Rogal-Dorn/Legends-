@@ -2271,7 +2271,7 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendTerrifyingVisage,
 		Tooltip = this.Const.Strings.PerkDescription.LegendTerrifyingVisage,
 		Icon = "ui/perks/perk_21.png",
-		IconDisabled = "ui/perks/perk_21_bw.png",
+		IconDisabled = "ui/perks/perk_21_sw.png",
 		Const = "LegendTerrifyingVisage"
 	},
 	{
