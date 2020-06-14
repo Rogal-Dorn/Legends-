@@ -38,6 +38,7 @@ this.witchhunter_hat <- this.inherit("scripts/items/helmets/helmet", {
 	
 	function onUpdateProperties( _properties )
 	{
+
 		local staminaMult = 1.0;
 
 		if (this.getContainer().getActor().getSkills().hasSkill("perk.brawny"))

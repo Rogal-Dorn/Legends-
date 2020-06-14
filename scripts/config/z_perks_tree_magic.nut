@@ -217,7 +217,7 @@ gt.Const.Perks.CaptainMagicTree <- {
 		[gt.Const.Perks.PerkDefs.LegendShieldsUp],
 		[gt.Const.Perks.PerkDefs.LegendHoldTheLine],
 		[gt.Const.Perks.PerkDefs.LegendForwardPush],
-		[gt.Const.Perks.PerkDefs.LegendInspire]
+		[gt.Const.Perks.PerkDefs.Inspire]
 	]
 };
 

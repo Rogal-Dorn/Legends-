@@ -3299,3 +3299,6 @@ Jesters hat, Juggler's hat, Witchunter hat and witchunter helm all have their ar
 Rain reduced to only applying -1 vision. Cloaks no longer protect from this 
 Chain lighting costs -20 fatigue and -1AP when it is raining 
 Coin delivery quest only shows up above 80 moral reputation 
+fixes a couple problems with magic perk trees causing towns to be unenterable 
+necrosavant background beard fix
+
