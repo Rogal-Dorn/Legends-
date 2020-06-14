@@ -1,6 +1,6 @@
 this.legend_transformed_bear_effect <- this.inherit("scripts/skills/skill", {
 	m = {
-	TurnsLeft = 4,
+	TurnsLeft = 5,
 	Body = "",
 	Head = "",
 	Injury = ""
@@ -10,7 +10,7 @@ this.legend_transformed_bear_effect <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "effect.legend_transformed_bear";
 		this.m.Name = "Bear Form";
 		this.m.Description = "This character is currently a bear";
-		this.m.Icon = "skills/status_effect_08.png";
+		this.m.Icon = "ui/perks/bear_circle.png";
 		this.m.IconMini = "status_effect_08_mini";
 		this.m.Type = this.Const.SkillType.Terrain | this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
@@ -27,15 +27,9 @@ this.legend_transformed_bear_effect <- this.inherit("scripts/skills/skill", {
 				{
 					id = 11,
 					type = "text",
-					icon = "ui/icons/regular_damage.png",
-					text = "[color=" + this.Const.UI.Color.PositiveValue + "]+100%[/color] Minimum Damage from the Assassinate perk"
-				},
-				{
-					id = 12,
-					type = "text",
-					icon = "ui/icons/regular_damage.png",
-					text = "[color=" + this.Const.UI.Color.PositiveValue + "]+100%[/color] Maximum Damage from the Assassinate perk"
-				},
+					icon = "ui/icons/health.png",
+					text = "[color=" + this.Const.UI.Color.PositiveValue + "]+100%[/color] hitpoints"
+				}
 			]);
 		}
 
@@ -62,6 +56,9 @@ this.legend_transformed_bear_effect <- this.inherit("scripts/skills/skill", {
 					}
 				}
 			}
+		local items = actor.getItems();
+		items.getData()[this.Const.ItemSlot.Offhand][0] = -1;
+		items.getData()[this.Const.ItemSlot.Mainhand][0] = -1;
 
 		this.m.Body = actor.getSprite("body").getBrush().Name;
 		this.m.Head = actor.getSprite("head").getBrush().Name;
@@ -90,7 +87,7 @@ this.legend_transformed_bear_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("armor_upgrade_back").Alpha = 10;
 		actor.getSprite("armor_upgrade_front").Alpha = 10;
 		actor.getSprite("socket").Alpha = 10;
-		this.m.TurnsLeft = 4;
+		this.m.TurnsLeft = 5;
 
 		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_untouchable"))
 		{
@@ -145,7 +142,9 @@ this.legend_transformed_bear_effect <- this.inherit("scripts/skills/skill", {
 
 		actor.getSkills().removeByID("actives.legend_bear_claws");
 		actor.getSkills().removeByID("actives.legend_bear_bite");
-
+		local items = actor.getItems();
+		items.getData()[this.Const.ItemSlot.Offhand][0] = null;
+		items.getData()[this.Const.ItemSlot.Mainhand][0] = null;
 	}
 
 	function onUpdate( _properties )
@@ -183,7 +182,6 @@ this.legend_transformed_bear_effect <- this.inherit("scripts/skills/skill", {
 	{
 		if (--this.m.TurnsLeft <= 0)
 		{
-			this.getContainer().getActor().setHidden(false);
 			this.removeSelf();
 		}
 	}
