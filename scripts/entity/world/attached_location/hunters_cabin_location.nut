@@ -63,7 +63,7 @@ this.hunters_cabin_location <- this.inherit("scripts/entity/world/attached_locat
 			_list.push({
 				R = 90,
 				P = 1.0,
-				S = "weapons/goblin_bow"
+				S = "weapons/greenskins/goblin_bow"
 			});
 			_list.push({
 				R = 10,
