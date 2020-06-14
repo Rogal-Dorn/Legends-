@@ -145,7 +145,7 @@ this.legend_transformed_bear_effect <- this.inherit("scripts/skills/skill", {
 
 
 		actor.getSkills().removeByID("actives.legend_bear_claws");
-		actor.getSkills().removeByID("actives.legend_bear_bite"));
+		actor.getSkills().removeByID("actives.legend_bear_bite");
 
 	}
 
