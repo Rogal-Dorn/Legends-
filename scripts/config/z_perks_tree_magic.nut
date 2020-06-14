@@ -198,10 +198,13 @@ gt.Const.Perks.BerserkerMagicTree <- {
 		[gt.Const.Perks.PerkDefs.Colossus],
 		[gt.Const.Perks.PerkDefs.DevastatingStrikes],
 		[gt.Const.Perks.PerkDefs.Brawny],
+		[gt.Const.Perks.PerkDefs.LegendBearform],
 		[gt.Const.Perks.PerkDefs.LegendMuscularity],
-		[gt.Const.Perks.PerkDefs.LegendUberNimble],
 		[gt.Const.Perks.PerkDefs.Berserk],
-		[gt.Const.Perks.PerkDefs.LegendBerserkerRage]
+		[
+		gt.Const.Perks.PerkDefs.LegendBerserkerRage,
+		gt.Const.Perks.PerkDefs.LegendUberNimble
+		]
 	]
 };
 
@@ -280,7 +283,7 @@ gt.Const.Perks.TransmutationMagicTree <- {
 		[gt.Const.Perks.PerkDefs.LegendLevitate],
 		[],
 		[gt.Const.Perks.PerkDefs.LegendPotionBrewer],
-		[],
+		[gt.Const.Perks.PerkDefs.LegendRoots],
 		[gt.Const.Perks.PerkDefs.LegendTeleport]
 	]
 };

@@ -5,8 +5,8 @@ this.root_skill <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "actives.root";
 		this.m.Name = "Root";
 		this.m.Description = "";
-		this.m.Icon = "skills/active_70.png";
-		this.m.IconDisabled = "skills/active_70_sw.png";
+		this.m.Icon = "skills/roots_square.png";
+		this.m.IconDisabled = "skills/roots_square_bw.png";
 		this.m.Overlay = "active_70";
 		this.m.SoundOnUse = [
 			"sounds/enemies/goblin_roots_01.wav",

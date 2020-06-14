@@ -1715,7 +1715,8 @@ gt.Const.Strings.PerkName <- {
 	LegendLeap = "Leap",
 	LegendTumble = "Tumble",
 	LegendHairSplitter = "Hair Splitter",
-	LegendBearform = "Bearform"
+	LegendBearform = "Bearform",
+	LegendRoots = "Roots"
 };
 gt.Const.Strings.PerkDescription <- {
 	Relentless = "Don\'t slow down! At all times your Initiative is reduced only by [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] of your accumulated Fatigue, instead of all of it. \n[color=#0b0084]From the Fit perk group[/color]",
@@ -2055,7 +2056,8 @@ gt.Const.Strings.PerkDescription <- {
 	LegendLeap = "Use your athletic skill to leap high and far, covering two tiles distance but at a great fatigue cost. Unlocks the \'Leap\' skill",
 	LegendTumble = "Make use of your acrobatic skill to improve your movements. Halves the fatigue and action point costs of Footwork, Leap and Lunge.",
 	LegendHairSplitter = "Years of practice throwing things at apples above heads have granted a magnetic attraction to the cranium. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+30%[/color] chance to hit the head",
-	LegendBearform = "Transform into a powerful bear, doubles your hitpoints. Requires free hands"
+	LegendBearform = "Transform into a powerful bear, doubles your hitpoints. Requires free hands",
+	LegendRoots = "Summon roots and vines to entangle your enemies"
 };
 gt.Const.Strings.Tooltip <- {
 	World = {
