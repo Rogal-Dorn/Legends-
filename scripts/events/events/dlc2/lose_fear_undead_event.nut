@@ -46,7 +46,7 @@ this.lose_fear_undead_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
-		if (this.World.Statistics.get().LastCombatFaction != this.World.FactionManager.getFactionOfType(this.Const.FactionType.Undead) && this.World.Statistics.get().LastCombatFaction != this.World.FactionManager.getFactionOfType(this.Const.FactionType.Zombies))
+		if (this.World.Statistics.get().LastCombatFaction != this.World.FactionManager.getFactionOfType(this.Const.FactionType.Undead).getID() && this.World.Statistics.get().LastCombatFaction != this.World.FactionManager.getFactionOfType(this.Const.FactionType.Zombies).getID())
 		{
 			return;
 		}
