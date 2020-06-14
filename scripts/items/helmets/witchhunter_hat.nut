@@ -44,7 +44,7 @@ function onEquip()
 		{
 			return;
 		}
-		a.CurrentProperties.IsAffectedByNight = false;
+		a.m.CurrentProperties.IsAffectedByNight = false;
 	}
 	
 
@@ -55,7 +55,7 @@ function onEquip()
 		{
 			return;
 		}
-		a.CurrentProperties.IsAffectedByNight = true;
+		a.m.CurrentProperties.IsAffectedByNight = true;
 		this.named_helmet.onUnequip();
 	}
 
