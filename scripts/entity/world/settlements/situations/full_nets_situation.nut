@@ -32,5 +32,19 @@ this.full_nets_situation <- this.inherit("scripts/entity/world/settlements/situa
 		_modifiers.FoodPriceMult *= 0.5;
 	}
 
+	function onUpdateDraftList( _draftList )
+	{
+		_draftList.push("fisherman_background");
+		_draftList.push("fisherman_background");
+		_draftList.push("fisherman_background");
+		_draftList.push("fisherman_background");
+		_draftList.push("fisherman_background");
+		_draftList.push("fisherman_background");
+		_draftList.push("female_butcher_background");
+		_draftList.push("female_butcher_background");
+		_draftList.push("female_butcher_background");
+
+	}
+
 });
 

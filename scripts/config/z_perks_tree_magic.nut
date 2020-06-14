@@ -195,12 +195,12 @@ gt.Const.Perks.BerserkerMagicTree <- {
 		"berserking"
 	],
 	Tree = [
-		[],
-		[],
-		[],
-		[],
-		[gt.Const.Perks.PerkDefs.Berserk],
+		[gt.Const.Perks.PerkDefs.Colossus],
+		[gt.Const.Perks.PerkDefs.DevastatingStrikes],
+		[gt.Const.Perks.PerkDefs.Brawny],
+		[gt.Const.Perks.PerkDefs.LegendMuscularity],
 		[gt.Const.Perks.PerkDefs.LegendUberNimble],
+		[gt.Const.Perks.PerkDefs.Berserk],
 		[gt.Const.Perks.PerkDefs.LegendBerserkerRage]
 	]
 };
@@ -211,13 +211,13 @@ gt.Const.Perks.CaptainMagicTree <- {
 		"leading"
 	],
 	Tree = [
-		[],
-		[],
-		[],
-		[],
-		[],
+		[gt.Const.Perks.PerkDefs.LegendBackToBasics],
+		[gt.Const.Perks.PerkDefs.LegendComposure],
+		[gt.Const.Perks.PerkDefs.InspiringPresence],
+		[gt.Const.Perks.PerkDefs.LegendShieldsUp],
 		[gt.Const.Perks.PerkDefs.LegendHoldTheLine],
-		[gt.Const.Perks.PerkDefs.LegendForwardPush]
+		[gt.Const.Perks.PerkDefs.LegendForwardPush],
+		[gt.Const.Perks.PerkDefs.LegendInspire]
 	]
 };
 
@@ -227,13 +227,13 @@ gt.Const.Perks.IllusionistMagicTree <- {
 		"illusion"
 	],
 	Tree = [
+		[gt.Const.Perks.PerkDefs.LegendSummonCat],
 		[gt.Const.Perks.PerkDefs.LegendDaze],
-		[gt.Const.Perks.PerkDefs.LegendStunned],
 		[],
 		[gt.Const.Perks.PerkDefs.LegendHorrify],
+		[gt.Const.Perks.PerkDefs.LegendTerrifyingVisage],
 		[],
-		[],
-		[]
+		[gt.Const.Perks.PerkDefs.LegendStunned]
 	]
 };
 
@@ -243,9 +243,9 @@ gt.Const.Perks.DivinationMagicTree <- {
 		"divination"
 	],
 	Tree = [
-		[],
-		[],
 		[gt.Const.Perks.PerkDefs.LegendPush],
+		[],
+		[],
 		[gt.Const.Perks.PerkDefs.LegendEntice],
 		[],
 		[],
@@ -260,12 +260,12 @@ gt.Const.Perks.ConjurationMagicTree <- {
 	],
 	Tree = [
 		[gt.Const.Perks.PerkDefs.LegendSummonCat],
+		[gt.Const.Perks.PerkDefs.LegendSummonHound],
 		[],
+		[gt.Const.Perks.PerkDefs.LegendSummonFalcon],
+		[gt.Const.Perks.PerkDefs.LegendSummonWolf],
 		[],
-		[],
-		[],
-		[],
-		[]
+		[gt.Const.Perks.PerkDefs.LegendSummonBear]
 	]
 };
 
@@ -276,11 +276,11 @@ gt.Const.Perks.TransmutationMagicTree <- {
 	],
 	Tree = [
 		[],
-		[],
-		[],
-		[],
-		[],
+		[gt.Const.Perks.PerkDefs.LegendGatherer],
 		[gt.Const.Perks.PerkDefs.LegendLevitate],
+		[],
+		[gt.Const.Perks.PerkDefs.LegendPotionBrewer],
+		[],
 		[gt.Const.Perks.PerkDefs.LegendTeleport]
 	]
 };
@@ -295,8 +295,8 @@ gt.Const.Perks.EvocationMagicTree <- {
 		[],
 		[],
 		[],
-		[],
 		[gt.Const.Perks.PerkDefs.LegendChainLightning],
+		[],
 		[gt.Const.Perks.PerkDefs.LegendFirefield]
 	]
 };
