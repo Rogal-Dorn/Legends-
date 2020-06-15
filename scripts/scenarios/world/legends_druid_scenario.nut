@@ -63,11 +63,9 @@ this.legends_druid_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	//	bros[2].getBackground().m.RawDescription = "{%name% was woodsman, captured by the rangers for destroying a sacred grove. He recognised their cause as just and joined on the spot, he is deeply commited and driven}";
 	//	bros[2].setPlaceInFormation(5);
 	//	bros[2].setVeteranPerks(2);	
-		this.World.Assets.m.BusinessReputation = 50;
-		this.World.Assets.getStash().add(this.new("scripts/items/supplies/cured_venison_item"));
-		this.World.Assets.getStash().add(this.new("scripts/items/trade/furs_item"));
-		this.World.Assets.m.ArmorParts = this.World.Assets.m.ArmorParts / 2;
-		this.World.Assets.m.Ammo = this.World.Assets.m.Ammo * 2;
+		this.World.Assets.getStash().add(this.new("scripts/items/supplies/legend_fresh_fruit_item"));
+		this.World.Assets.getStash().add(this.new("scripts/items/supplies/roots_and_berries_item"));
+		this.World.Assets.getStash().add(this.new("scripts/items/accessory/legend_apothecary_mushrooms_item"));
 	}
 
 	function onSpawnPlayer()
@@ -132,15 +130,13 @@ this.legends_druid_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 
 		this.World.State.m.Player = this.World.spawnEntity("scripts/entity/world/player_party", spawnTile.Coords.X, spawnTile.Coords.Y);
-		this.World.Assets.updateLook(103);
-		//this.World.State.m.Player.getSprite("body").setBrush("figure_player_ranger");
+		this.World.Assets.updateLook(115);
+		//this.World.State.m.Player.getSprite("body").setBrush("figure_player_druid");
 		this.World.getCamera().setPos(this.World.State.m.Player.getPos());
-		local f = nearestVillage.getFactionOfType(this.Const.FactionType.NobleHouse);
-		f.addPlayerRelation(-20.0, "Heard rumors of you poaching in their woods");
 		this.Time.scheduleEvent(this.TimeUnit.Real, 1000, function ( _tag )
 		{
 			this.Music.setTrackList(this.Const.Music.IntroTracks, this.Const.Music.CrossFadeTime);
-			this.World.Events.fire("event.legend_ranger_scenario_intro");
+			this.World.Events.fire("event.legend_druid_scenario_intro");
 		}, null);
 foreach (b in this.World.getPlayerRoster().getAll())
 		{

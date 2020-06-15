@@ -92,8 +92,15 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 		this.m.TurnsLeft = 8;
 		}
 
-		actor.getSkills().addSkill(this.new("scripts/skills/actives/werewolf_claws"));
-		actor.getSkills().addSkill(this.new("scripts/skills/actives/werewolf_bite"));
+		if (!this.m.Container.hasSkill("actives.werewolf_claws"))
+		{
+			this.m.Container.add(this.new("scripts/skills/actives/werewolf_claws"));
+		}
+		if (!this.m.Container.hasSkill("actives.werewolf_bite"))
+		{
+			this.m.Container.add(this.new("scripts/skills/actives/werewolf_bite"));
+		}
+
 		_properties.MovementAPCostAdditional += -1;
 		_properties.MovementFatigueCostMult *= 0.5;
 	}
@@ -173,8 +180,15 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("armor_upgrade_front").Alpha = 10;
 		actor.getSprite("socket").Alpha = 10;
 
-		actor.getSkills().addSkill(this.new("scripts/skills/actives/werewolf_claws"));
-		actor.getSkills().addSkill(this.new("scripts/skills/actives/werewolf_bite"));
+
+		if (!this.m.Container.hasSkill("actives.werewolf_claws"))
+		{
+			this.m.Container.add(this.new("scripts/skills/actives/werewolf_claws"));
+		}
+		if (!this.m.Container.hasSkill("actives.werewolf_bite"))
+		{
+			this.m.Container.add(this.new("scripts/skills/actives/werewolf_bite"));
+		}
 		_properties.MovementAPCostAdditional += -1;
 		_properties.MovementFatigueCostMult *= 0.5;
 

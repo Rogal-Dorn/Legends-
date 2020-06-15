@@ -3293,19 +3293,30 @@ fixes unfinished event randomly firing and freezing events
 fixes some features of the previous build not being present in the reverted version 
 
 
-14.0.0.7 Druidic shield 
+14.0.0.7 Druidic Dance
 
-Adds Druid Scenario 
-* Druids have the new druidic arts magic school, with wild forms, healing and roots 
-* Wild form: All recruits gain the Wolf Form and Bear Form abilities 
+Druids
+* Druids have a new druidic magic school:
+** Wolf Form - transform into a wolf with increased movement, wolf claws and wolf bite 
+** Bear form - transform into a bear with increased health, bear claws and bear bite
+** Schrat Form - transform into a shcrat with a regrowing shield, spawning saplings and uproot
+** True form - extend the length of your transformations 
+** Summon Storm - The first cast calls down soft rain, boosting your ranged defense. The second cast creates a heavier storm and boosts your resolve. 
+** Call Lightning - Requires rain to cast, grants a 10% chance to unleash lightning on each unit within 4 tiles. 
+** Roots - the same spell as goblin shamans 
+** They also gain healing prayer and song of life, which can now work with empty hands. 
+* druids gain all the tame x events 
+* druids can be found near gatherers hut with magic enabled 
+ 
+ The druid scenario
+* Wild form: All recruits gain either the Wolf Form, Bear Form or Schrat Form abilities 
 * Loner: Only hires wildlings, herbalists, barbarians, conjurers, druids, diviners, enchanters, herbalists, houndmasters and vala. 
 * Avatar:  when your druid dies its game over 
-* 
-* druids can be found near gatheres hut with magic enabled 
 
-Some barbarian enemies can ocassionally adopt wild forms 
+Bearserkers and Wolfserkers 
+**Some barbarian enemies can ocassionally adopt wild forms** 
 
-Rain reduced to only applying -1 vision. Cloaks no longer protect from this 
+Rain effect reduced to -1 vision -10 ranged skill and +10 ranged defense 
 Chain lighting costs -20 fatigue and -1AP when it is raining 
 Roots costs -10 fatigue and -1ap when its raining 
 berserker commander can now transform into a bear. 
@@ -3313,10 +3324,12 @@ named shields can be salvaged once destroyed.
 named shields max stats increased significantly 
 Jesters hat, Juggler's hat, Witchunter hat and witchunter helm all have their armor values fixed 
 Padded jesters hat and Death jesters hat added, can be bought in armorsmiths near dyers huts or wool spinners 
-Named Runic Sickle added, can be bought from weaponsmiths near gatherers, heerbalist groves and mushroom groves.  
-hunters hat has +1 vision and +5 durability 
+Named Runic Sickle added, can be bought from weaponsmiths near gatherers, heerbalist groves and mushroom groves.  Gains full effect from sickle skills 
+Hunters hat has +1 vision and +5 durability 
+Legends Ranger scenario can get the hunting food event 
 Coin delivery quest only shows up above 80 moral reputation 
 Undead legion can now gain undead spellcasters from the black monolith 
+Drums of life can be used with empty hands 
 fixes payday not working 
 fixes a couple of problems with magic perk trees causing towns to be unenterable 
 fixes towns with hunters cabins not being enterable sometimes 

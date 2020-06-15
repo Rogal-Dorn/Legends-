@@ -33,7 +33,18 @@ this.legend_rain_effect <- this.inherit("scripts/skills/skill", {
 			icon = "ui/icons/vision.png",
 			text = "[color=" + this.Const.UI.Color.NegativeValue + "]-1[/color] Vision"
 		});
-
+		ret.push({
+			id = 12,
+			type = "text",
+			icon = "ui/icons/ranged_skill.png",
+			text = "[color=" + this.Const.UI.Color.NegativeValue + "]-10%[/color] Ranged Skill"
+		});
+		ret.push({
+			id = 12,
+			type = "text",
+			icon = "ui/icons/ranged_defense.png",
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] Ranged Defense"
+		});
 		return ret;
 	}
 
@@ -43,6 +54,8 @@ this.legend_rain_effect <- this.inherit("scripts/skills/skill", {
 		if (_properties.IsAffectedByRain)
 		{
 			_properties.Vision -= 1;
+			_properties.RangedSkillMult *= 0.9;
+			_properties.RangedDefense *= 1.1;
 		}
 	}
 

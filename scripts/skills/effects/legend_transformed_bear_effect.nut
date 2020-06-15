@@ -91,11 +91,19 @@ this.legend_transformed_bear_effect <- this.inherit("scripts/skills/skill", {
 
 		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_untouchable"))
 		{
-		this.m.TurnsLeft = 6;
+		this.m.TurnsLeft = 8;
 		}
 
-		actor.getSkills().addSkill(this.new("scripts/skills/actives/legend_bear_claws"));
-		actor.getSkills().addSkill(this.new("scripts/skills/actives/legend_bear_bite"));
+		if (!this.m.Container.hasSkill("actives.legend_bear_claws"))
+		{
+			this.m.Container.add(this.new("scripts/skills/actives/legend_bear_claws"));
+		}
+
+		if (!this.m.Container.hasSkill("actives.legend_bear_bite"))
+		{
+			this.m.Container.add(this.new("scripts/skills/actives/legend_bear_bite"));
+		}
+
 		actor.setHitpoints(this.Math.floor(actor.getHitpoints() * 2));
 	}
 
@@ -173,7 +181,15 @@ this.legend_transformed_bear_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("armor_upgrade_back").Alpha = 10;
 		actor.getSprite("armor_upgrade_front").Alpha = 10;
 		actor.getSprite("socket").Alpha = 10;
+		if (!this.m.Container.hasSkill("actives.legend_bear_claws"))
+		{
+			this.m.Container.add(this.new("scripts/skills/actives/legend_bear_claws"));
+		}
 
+		if (!this.m.Container.hasSkill("actives.legend_bear_bite"))
+		{
+			this.m.Container.add(this.new("scripts/skills/actives/legend_bear_bite"));
+		}
 		_properties.HitpointsMult *= 2;
 
 	}
