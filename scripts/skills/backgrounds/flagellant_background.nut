@@ -286,7 +286,7 @@ this.flagellant_background <- this.inherit("scripts/skills/backgrounds/character
 		}
 
 		local cloths = [
-            [1, ""],
+            [0, ""],
 			[0, "cloth/legend_gambeson"],
 			[0, "cloth/legend_gambeson_plain"],
 			[0, "cloth/legend_gambeson_wolf"],
@@ -343,7 +343,7 @@ this.flagellant_background <- this.inherit("scripts/skills/backgrounds/character
 				armor.setUpgrade(plate)
 			}
 		items.equip(armor)
-
+		local r;
 		r = this.Math.rand(0, 4);
 
 		if (r == 0)

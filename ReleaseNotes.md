@@ -3280,12 +3280,79 @@ female peasants can now wear layered peasant dress in 11 colours, these dresses 
 
 
 
-14.0.0.2
-Fixes alignmentMin/Max calls not returning values
-Throw net fix
+14.0.0.6a bugfixes 
 
-fixes a couple problems with magic perk trees
+fixes towns freezing when spawning people with nets 
+Fixes blast furnaces trying to spawn something that doesn't exist
+fixes juggler hats having no values 
+fixes troupe intro 
+fixes inquisition not starting with perks
+Fixes alignmentMin/Max calls not returning values
+Lowers the chance of random backgrounds having magic skills from 10% to 0.2% 
+fixes unfinished event randomly firing and freezing events 
+fixes some features of the previous build not being present in the reverted version 
+
+
+14.0.0.7 Dancing Druids 
+
+**Druids**
+* There is a new druidic magic school:
+** Wolf Form - transform into a wolf with increased movement, wolf claws and wolf bite 
+** Bear form - transform into a bear with increased health, bear claws and bear bite
+** Schrat Form - transform into a shcrat with a regrowing shield, spawning saplings and uproot
+** True form - extend the length of your transformations 
+** Summon Storm - The first cast calls down soft rain, boosting your ranged defense. The second cast creates a heavier storm and boosts your resolve. 
+** Call Lightning - Requires rain to cast, grants a 10% chance to unleash lightning on each unit within 4 tiles. 
+** Roots - the same spell as goblin shamans 
+** They also gain healing prayer and song of life, which can now work with empty hands. 
+* druids gain all the tame x events 
+* druids can be found near gatherers hut with magic enabled 
+* Named Runic Sickle added, can be bought from weaponsmiths near gatherers, heerbalist groves and mushroom groves.  Gains full effect from sickle skills 
+ Rain effect reduced to -1 vision -10 ranged skill and +10 ranged defense 
+Chain lighting costs -20 fatigue and -1AP when it is raining 
+Roots costs -10 fatigue and -1ap when its raining 
+ 
+ **The druid scenario**
+* Wild form: All recruits gain either the Wolf Form, Bear Form or Schrat Form abilities 
+* Loner: Only hires wildlings, herbalists, barbarians, conjurers, druids, diviners, enchanters, herbalists, houndmasters and vala. 
+* Avatar:  when your druid dies its game over 
+
+**Bearserkers and Wolfserkers **
+Some barbarian enemies can ocassionally adopt wild forms
+berserker commander can transform into a bear. 
+
+**Changes**
+named shields can be salvaged once destroyed. 
+named shields max stats increased significantly 
+Padded jesters hat and Death jesters hat added, can be bought in armorsmiths near dyers huts or wool spinners 
+Hunters hat has +1 vision and +5 durability 
+Legends Ranger scenario can get the hunting food event 
+Coin delivery quest only shows up above 80 moral reputation 
+necrosavants no longer spawn at wineries
+Undead legion can now gain undead spellcasters and necrosavants from the black monolith 
+
+**Fixes**
+fixes payday not working 
+fixes a couple of problems with magic perk trees causing towns to be unenterable 
+fixes towns with hunters cabins not being enterable sometimes 
+Jesters hat, Juggler's hat, Witchunter hat and witchunter helm all have their armor values fixed 
+fixes world icon for inquisition 
+necrosavant background beard fix
 fixes witchhunter hat onequip
 necrosavant background beard fix
 icon fix for terrifying visage
-leather jacket named inventory iconfix
+leather jacket named inventory icon fix
+ratcatchers can now be known as "the beagle"
+
+14.0.0.7e
+
+fixes crash entering schrat mode
+fixes summon storm crash 
+fixes town not enterable from druid spelling defence like an aussie 
+fixes town not enterable due to apocethary mushrooms in the mushroom grove 
+fixes town not enterable as druid
+fixes recruitment as druid  
+fixes town not enterable due to inventor not knowing their class 
+
+
+
