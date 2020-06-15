@@ -13,7 +13,7 @@ this.legend_chain_lightning <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_chain_lightning";
 		this.m.Name = "Chain Lightning";
-		this.m.Description = "Unleash an arcing barrage that strikes an opponent, sending sparks from opponent to opponent.";
+        this.m.Description = "Unleash an arcing barrage that strikes an opponent, sending sparks from opponent to opponent. Fatigue and action costs reduced while it is raining, and from staff mastery. ";
 		this.m.KilledString = "Electrocuted";
 		this.m.Icon = "skills/lightning_square.png";
 		this.m.IconDisabled = "skills/lightning_square_bw.png";
@@ -31,7 +31,7 @@ this.legend_chain_lightning <- this.inherit("scripts/skills/skill", {
 			"sounds/combat/electricity_04.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
-		this.m.Order = this.Const.SkillOrder.OffensiveTargeted +1;
+		this.m.Order = this.Const.SkillOrder.OffensiveTargeted + 1;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
 		this.m.IsTargeted = true;
@@ -80,10 +80,11 @@ this.legend_chain_lightning <- this.inherit("scripts/skills/skill", {
 
 	function isUsable()
 	{
-		if (!this.getContainer().getActor().isArmedWithMagicStaff()) 
+		if (!this.getContainer().getActor().isArmedWithMagicStaff())
 		{
-			return false
+			return false;
 		}
+
 		return !this.Tactical.isActive() || this.skill.isUsable() && !this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions());
 	}
 
@@ -91,9 +92,10 @@ this.legend_chain_lightning <- this.inherit("scripts/skills/skill", {
 	{
 		this.Time.scheduleEvent(this.TimeUnit.Virtual, _delay, function ( _data )
 		{
-			for( local i = 0; i < this.Const.Tactical.LightningParticles.len(); i = ++i )
+			for( local i = 0; i < this.Const.Tactical.LightningParticles.len(); i = i )
 			{
 				this.Tactical.spawnParticleEffect(true, this.Const.Tactical.LightningParticles[i].Brushes, _data.TargetTile, this.Const.Tactical.LightningParticles[i].Delay, this.Const.Tactical.LightningParticles[i].Quantity, this.Const.Tactical.LightningParticles[i].LifeTimeQuantity, this.Const.Tactical.LightningParticles[i].SpawnRate, this.Const.Tactical.LightningParticles[i].Stages);
+				i = ++i;
 			}
 		}, _data);
 
@@ -118,6 +120,13 @@ this.legend_chain_lightning <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.FatigueCostMult = _properties.IsSpecializedInStaves ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
 		this.m.ActionPointCost = _properties.IsSpecializedInStaves ? 5 : 6;
+
+        if (this.getContainer().hasSkill("special.legend_rain"))
+        {
+        this.m.FatigueCost -= 20;
+        this.m.ActionPointCost -= 1;
+        }
+
 	}
 
 	function onUse( _user, _targetTile )
@@ -155,7 +164,7 @@ this.legend_chain_lightning <- this.inherit("scripts/skills/skill", {
 			potentialTargets = [];
 			potentialTiles = [];
 
-			for( local i = 0; i < 6; i = ++i )
+			for( local i = 0; i < 6; i = i )
 			{
 				if (!targetTile.hasNextTile(i))
 				{
@@ -177,6 +186,8 @@ this.legend_chain_lightning <- this.inherit("scripts/skills/skill", {
 						potentialTargets.push(tile);
 					}
 				}
+
+				i = ++i;
 			}
 
 			if (potentialTargets.len() != 0)
@@ -201,7 +212,7 @@ this.legend_chain_lightning <- this.inherit("scripts/skills/skill", {
 			potentialTargets = [];
 			potentialTiles = [];
 
-			for( local i = 0; i < 6; i = ++i )
+			for( local i = 0; i < 6; i = i )
 			{
 				if (!targetTile.hasNextTile(i))
 				{
@@ -223,6 +234,8 @@ this.legend_chain_lightning <- this.inherit("scripts/skills/skill", {
 						potentialTargets.push(tile);
 					}
 				}
+
+				i = ++i;
 			}
 
 			if (potentialTargets.len() != 0)
@@ -249,5 +262,5 @@ this.legend_chain_lightning <- this.inherit("scripts/skills/skill", {
 		return success;
 	}
 
-
 });
+
