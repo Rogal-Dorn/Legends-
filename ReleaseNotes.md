@@ -3239,8 +3239,10 @@ Offhand Puncture no longer uses main hand dmg (Salty)
 Cultist Sacrifice now has 50% chance to rank up the cultist again, not 100% (Salty)
 Buckler Bash should no longer cost 1 fat with mastery (Salty)
 Fix for Oblivion Potion fix, no longer doubles perkpoints and gifted doesn't grant free points (Salty)
-Orc Behemoth now isn't puny anymore. Now correctly get's it's own stats. (Salty, tanks to Motanul)
+Orc Behemoth now isn't puny anymore. Now correctly get's it's own stats. (Salty, thanks to Motanul)
+Berserker mapicon is now fixed to the unique icon (Salty, thanks to Leonion)
 Matching set now correctly works up to combined armor, not 350 (Salty)
+Entice should now remove the skill correctly when the perk is removed (Salty)
 Throw net now uses same attack calculation as throwing a javelin 
 Adds armor piercing and broad head arrows to fletchers 
 Random solo party size raised to 27 
@@ -3277,4 +3279,65 @@ Berserker intro event has better image
 female peasants can now wear layered peasant dress in 11 colours, these dresses can be bought near dye makers 
 
 
+
+14.0.0.6a bugfixes 
+
+fixes towns freezing when spawning people with nets 
+Fixes blast furnaces trying to spawn something that doesn't exist
+fixes juggler hats having no values 
+fixes troupe intro 
+fixes inquisition not starting with perks
+Fixes alignmentMin/Max calls not returning values
+Lowers the chance of random backgrounds having magic skills from 10% to 0.2% 
+fixes unfinished event randomly firing and freezing events 
+fixes some features of the previous build not being present in the reverted version 
+
+
+14.0.0.7 Druidic Dance
+
+Druids
+* Druids have a new druidic magic school:
+** Wolf Form - transform into a wolf with increased movement, wolf claws and wolf bite 
+** Bear form - transform into a bear with increased health, bear claws and bear bite
+** Schrat Form - transform into a shcrat with a regrowing shield, spawning saplings and uproot
+** True form - extend the length of your transformations 
+** Summon Storm - The first cast calls down soft rain, boosting your ranged defense. The second cast creates a heavier storm and boosts your resolve. 
+** Call Lightning - Requires rain to cast, grants a 10% chance to unleash lightning on each unit within 4 tiles. 
+** Roots - the same spell as goblin shamans 
+** They also gain healing prayer and song of life, which can now work with empty hands. 
+* druids gain all the tame x events 
+* druids can be found near gatherers hut with magic enabled 
+ 
+ The druid scenario
+* Wild form: All recruits gain either the Wolf Form, Bear Form or Schrat Form abilities 
+* Loner: Only hires wildlings, herbalists, barbarians, conjurers, druids, diviners, enchanters, herbalists, houndmasters and vala. 
+* Avatar:  when your druid dies its game over 
+
+Bearserkers and Wolfserkers 
+**Some barbarian enemies can ocassionally adopt wild forms** 
+
+Rain effect reduced to -1 vision -10 ranged skill and +10 ranged defense 
+Chain lighting costs -20 fatigue and -1AP when it is raining 
+Roots costs -10 fatigue and -1ap when its raining 
+berserker commander can now transform into a bear. 
+named shields can be salvaged once destroyed. 
+named shields max stats increased significantly 
+Jesters hat, Juggler's hat, Witchunter hat and witchunter helm all have their armor values fixed 
+Padded jesters hat and Death jesters hat added, can be bought in armorsmiths near dyers huts or wool spinners 
+Named Runic Sickle added, can be bought from weaponsmiths near gatherers, heerbalist groves and mushroom groves.  Gains full effect from sickle skills 
+Hunters hat has +1 vision and +5 durability 
+Legends Ranger scenario can get the hunting food event 
+Coin delivery quest only shows up above 80 moral reputation 
+Undead legion can now gain undead spellcasters from the black monolith 
+Drums of life can be used with empty hands 
+fixes payday not working 
+fixes a couple of problems with magic perk trees causing towns to be unenterable 
+fixes towns with hunters cabins not being enterable sometimes 
+fixes world icon for inquisition 
+necrosavant background beard fix
+fixes witchhunter hat onequip
+necrosavant background beard fix
+icon fix for terrifying visage
+leather jacket named inventory icon fix
+ratcatchers can now be known as "the beagle"
 

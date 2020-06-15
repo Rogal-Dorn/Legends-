@@ -41,12 +41,12 @@ this.hate_greenskins_event <- this.inherit("scripts/events/event", {
 
 	function onUpdateScore()
 	{
-		if (!this.Const.DLC.Unhold)
+if (!this.Const.DLC.Unhold)
 		{
 			return;
 		}
 
-		if (this.Time.getVirtualTimeF() - this.World.Events.getLastBattleTime() > 5.0)
+		if (this.Time.getVirtualTimeF() - this.World.Events.getLastBattleTime() > 30.0) //from 5
 		{
 			return;
 		}
@@ -64,7 +64,7 @@ this.hate_greenskins_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
-		if (this.World.Statistics.get().LastCombatFaction != this.World.FactionManager.getFactionOfType(this.Const.FactionType.Orcs) && this.World.Statistics.get().LastCombatFaction != this.World.FactionManager.getFactionOfType(this.Const.FactionType.Goblins))
+		if (this.World.Statistics.get().LastCombatFaction != this.World.FactionManager.getFactionOfType(this.Const.FactionType.Orcs).getID() && this.World.Statistics.get().LastCombatFaction != this.World.FactionManager.getFactionOfType(this.Const.FactionType.Goblins).getID())
 		{
 			return;
 		}

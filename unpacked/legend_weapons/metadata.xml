@@ -632,5 +632,9 @@
    <sprite id="runed_icon_wooden_stake_01" offsetY="35" ic="FF6B6B74" width="75" height="75" img="icons\runed_icon_wooden_stake_01.png" left="-6" right="30" top="-55" bottom="-15" />
    <sprite id="runed_icon_wooden_stake_01_bloodied" offsetY="35" ic="FF6B6B74" width="75" height="75" img="icons\runed_icon_wooden_stake_01_bloodied.png" left="-6" right="30" top="-55" bottom="-15" />
 
- 
+  <sprite id="icon_legend_sickle_02" offsetY="35" ic="FF484F57" width="104" height="142" img="icons\icon_legend_sickle_02.png" left="0" right="48" top="-56" bottom="8" />
+  <sprite id="icon_legend_sickle_02_bloodied" offsetY="35" ic="FF3B4153" width="104" height="142" img="icons\icon_legend_sickle_02_bloodied.png" left="0" right="48" top="-56" bottom="8" />
+ <sprite id="runed_icon_legend_sickle_02" offsetY="35" ic="FF484F57" width="104" height="142" img="icons\runed_icon_legend_sickle_02.png" left="0" right="48" top="-56" bottom="8" />
+  <sprite id="runed_icon_legend_sickle_02_bloodied" offsetY="35" ic="FF3B4153" width="104" height="142" img="icons\runed_icon_legend_sickle_02_bloodied.png" left="0" right="48" top="-56" bottom="8" />
+  
  </brush>

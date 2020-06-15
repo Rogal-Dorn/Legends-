@@ -4,10 +4,10 @@ this.uproot_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.uproot";
 		this.m.Name = "Uproot";
-		this.m.Description = "";
+		this.m.Description = "Send out roots to stab and crush your enemies";
 		this.m.KilledString = "Crushed";
 		this.m.Icon = "skills/active_122.png";
-		this.m.IconDisabled = "skills/active_122.png";
+		this.m.IconDisabled = "skills/active_122_bw.png";
 		this.m.Overlay = "active_122";
 		this.m.SoundOnUse = [
 			"sounds/enemies/dlc2/schrat_uproot_01.wav",

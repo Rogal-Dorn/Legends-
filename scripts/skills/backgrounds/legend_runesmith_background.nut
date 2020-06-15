@@ -101,7 +101,7 @@ this.legend_runesmith_background <- this.inherit("scripts/skills/backgrounds/cha
 	items.equip(this.new("scripts/items/legend_armor/cloth/legend_apron_smith"));
 		local plates = [
 			[0, ""],
-			[1, "plate/legend_leather_jacket"],
+			[1, "plate/legend_armor_leather_jacket"],
 
 		]
 		local plate = this.Const.World.Common.pickLegendArmor(plates)

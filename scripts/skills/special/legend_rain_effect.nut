@@ -42,35 +42,20 @@ this.legend_rain_effect <- this.inherit("scripts/skills/skill", {
 		ret.push({
 			id = 12,
 			type = "text",
-			icon = "ui/icons/melee_skill.png",
-			text = "[color=" + this.Const.UI.Color.NegativeValue + "]-10%[/color] Melee Skill"
-		});
-		ret.push({
-			id = 13,
-			type = "text",
 			icon = "ui/icons/ranged_defense.png",
-			text = "[color=" + this.Const.UI.Color.NegativeValue + "]-10%[/color] Ranged Defense"
-		});
-		ret.push({
-			id = 13,
-			type = "text",
-			icon = "ui/icons/melee_defense.png",
-			text = "[color=" + this.Const.UI.Color.NegativeValue + "]-10%[/color] Melee defense"
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] Ranged Defense"
 		});
 		return ret;
 	}
 
 	function onUpdate( _properties )
 	{
-		this.m.IsHidden = !_properties.IsAffectedByNight;
 
-		if (_properties.IsAffectedByNight)
+		if (_properties.IsAffectedByRain)
 		{
 			_properties.Vision -= 1;
 			_properties.RangedSkillMult *= 0.9;
-			_properties.RangedSkillMult *= 0.9;
-			_properties.RangedDefense *= 0.9;
-			_properties.MeleeDefense *= 0.9;
+			_properties.RangedDefense *= 1.1;
 		}
 	}
 

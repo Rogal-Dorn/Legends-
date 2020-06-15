@@ -42,6 +42,7 @@ this.legend_conjurer_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.IsPerformingBackground = true;
 		this.m.IsEducatedBackground = true;
 		this.m.IsUntalented = true;
+		this.m.IsDruidRecruitBackground = true;
 		this.m.Level = 1;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Chivalrous;

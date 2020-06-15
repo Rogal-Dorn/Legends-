@@ -5,7 +5,7 @@ this.hunters_hat <- this.inherit("scripts/items/helmets/helmet", {
 		this.helmet.create();
 		this.m.ID = "armor.head.hunters_hat";
 		this.m.Name = "Hunter\'s Hat";
-		this.m.Description = "A thick felt hat decorated with feathers as a hunter\'s trophy.";
+		this.m.Description = "A thick felt hat decorated with feathers as a hunter\'s trophy. Vision increased +1.";
 		this.m.ShowOnCharacter = true;
 		this.m.IsDroppedAsLoot = true;
 		this.m.HideHair = true;
@@ -16,9 +16,10 @@ this.hunters_hat <- this.inherit("scripts/items/helmets/helmet", {
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.InventorySound = this.Const.Sound.ClothEquip;
 		this.m.Value = 70;
-		this.m.Condition = 30;
-		this.m.ConditionMax = 30;
+		this.m.Condition = 35;
+		this.m.ConditionMax = 35;
 		this.m.StaminaModifier = 0;
+		this.m.Vision = 1;
 	}
 
 });

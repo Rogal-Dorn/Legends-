@@ -4,9 +4,10 @@ this.legend_bear_bite <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_bear_bite";
 		this.m.Name = "Bear Bite";
-		this.m.Description = "";
+		this.m.Description = "Tear into an opponent with your teeth";
 		this.m.KilledString = "Ripped to shreds";
 		this.m.Icon = "skills/active_71.png";
+		this.m.IconDisabled = "skills/active_71_bw.png";
 		this.m.Overlay = "active_71";
 		this.m.SoundOnUse = [
 			"sounds/enemies/bear_attack1.wav",

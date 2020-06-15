@@ -6,7 +6,7 @@ this.werewolf_claws <- this.inherit("scripts/skills/skill", {
 		this.m.Name = "Direwolf Claws";
 		this.m.Description = "Long and sharp claws that can tear flesh with ease.";
 		this.m.Icon = "skills/active_21.png";
-		this.m.IconDisabled = "skills/active_21_sw.png";
+		this.m.IconDisabled = "skills/active_21_bw.png";
 		this.m.Overlay = "active_21";
 		this.m.SoundOnUse = [
 			"sounds/enemies/werewolf_claw_01.wav",
