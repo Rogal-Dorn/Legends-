@@ -343,7 +343,7 @@ this.flagellant_background <- this.inherit("scripts/skills/backgrounds/character
 				armor.setUpgrade(plate)
 			}
 		items.equip(armor)
-
+		local r;
 		r = this.Math.rand(0, 4);
 
 		if (r == 0)
