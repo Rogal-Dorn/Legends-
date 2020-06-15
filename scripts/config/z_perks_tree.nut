@@ -253,7 +253,7 @@ gt.Const.Perks.GetDynamicPerkTree <- function (_mins, _map)
 	local count = _mins.Enemy - _localMap.Enemy.len();
 	for (local i = 0; i <= count; i = ++i)
 	{
-		local r = this.Math.rand(0, 100)
+		local r = this.Math.rand(0, 100);
 		if (r > (_mins.EnemyChance * 100.0))
 		{
 			continue
@@ -272,7 +272,7 @@ gt.Const.Perks.GetDynamicPerkTree <- function (_mins, _map)
 	local count = _mins.Class - _localMap.Class.len();
 	for (local i = 0; i <= count; i = ++i)
 	{
-		local r = this.Math.rand(0, 100)
+		local r = this.Math.rand(0, 100);
 		if (r > (_mins.ClassChance * 100.0))
 		{
 			continue

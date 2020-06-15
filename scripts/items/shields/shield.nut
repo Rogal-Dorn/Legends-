@@ -266,6 +266,8 @@ this.shield <- this.inherit("scripts/items/item", {
 			local actor = this.getContainer().getActor();
 			this.m.Container.unequip(this);
 			this.m.Condition = Condition;
+			// logDebug("[DEBUG] Salvage Named Items : " + this.getName());
+			if (this.isItemType(this.Const.Items.ItemType.Legendary) || this.isItemType(this.Const.Items.ItemType.Named)) this.drop(actor.getTile());
 		}
 		else
 		{

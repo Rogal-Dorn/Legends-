@@ -26,7 +26,7 @@ this.witchhunter_hat <- this.inherit("scripts/items/helmets/helmet", {
 	
 	function getTooltip()
 	{
-		local result = this.named_helmet.getTooltip();
+		local result = this.helmet.getTooltip();
 		result.push({
 			id = 6,
 			type = "text",
@@ -36,27 +36,20 @@ this.witchhunter_hat <- this.inherit("scripts/items/helmets/helmet", {
 		return result;
 	}
 	
-function onEquip()
+	function onUpdateProperties( _properties )
 	{
-		this.helmet.onEquip();
-		local a = this.getContainer().getActor();
-		if (a == null)
-		{
-			return;
-		}
-		a.m.CurrentProperties.IsAffectedByNight = false;
-	}
-	
 
-	function onUnequip()
-	{
-		local a = this.getContainer().getActor();
-		if (a == null)
+		local staminaMult = 1.0;
+
+		if (this.getContainer().getActor().getSkills().hasSkill("perk.brawny"))
 		{
-			return;
+			staminaMult = 0.75;
 		}
-		a.m.CurrentProperties.IsAffectedByNight = true;
-		this.named_helmet.onUnequip();
+		_properties.Armor[this.Const.BodyPart.Head] += this.m.Condition;
+		_properties.ArmorMax[this.Const.BodyPart.Head] += this.m.ConditionMax;
+		_properties.Stamina += this.Math.ceil(this.m.StaminaModifier * staminaMult);
+		_properties.Vision += this.m.Vision;
+		_properties.IsAffectedByNight = false;
 	}
 
 

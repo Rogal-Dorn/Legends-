@@ -1714,7 +1714,14 @@ gt.Const.Strings.PerkName <- {
 	LegendCheerOn = "Cheer On",
 	LegendLeap = "Leap",
 	LegendTumble = "Tumble",
-	LegendHairSplitter = "Hair Splitter"
+	LegendHairSplitter = "Hair Splitter",
+	LegendBearform = "Bear Form",
+	LegendRoots = "Roots",
+	LegendWolfform = "Wolf Form",
+	LegendTreeform = "Tree Form",
+	LegendTrueForm = "True Form",
+	LegendSummonStorm = "Summon Storm",
+	LegendCallLightning = "Call Lightning"
 };
 gt.Const.Strings.PerkDescription <- {
 	Relentless = "Don\'t slow down! At all times your Initiative is reduced only by [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] of your accumulated Fatigue, instead of all of it. \n[color=#0b0084]From the Fit perk group[/color]",
@@ -2020,7 +2027,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendHorseCollection = "By training the horse\'s posture, advanced movements become easier to perform and less draining. Increases fatigue by 25%",
 	LegendHorseFlyingChange = "Changing lead legs at high speeds is an advanced move that can allow horses to cover much larger distances. Gain 1 action point",
 	LegendHorsePassage = "Training the legs to raise higher and push harder can prepare horses for rough or muddy terrain. Decreases movement costs on rough terrain",
-	LegendDrumsOfLife = "Learn powerful rythms that drive your allies on. Unlocks the Drums of Life skill that restores [color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] health to every ally within three tiles. Can only be used with a Drum or Lute equipped. \n[color=#0b0084]From the Bard perk group[/color]",
+	LegendDrumsOfLife = "Learn powerful rythms that drive your allies on. Unlocks the Drums of Life skill that restores [color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] health to every ally within three tiles. Can only be used with hands empty, or with a Drum or Lute equipped. \n[color=#0b0084]From the Bard perk group[/color]",
 	LegendLacerate = "Lust for blood courses through your veins, each stroke rips and tears with a ferocity that intensifies as you bleed. Gain a chance to inflict bleeding with every strike, equal to your percentage of missing health.",
 	LegendPeaceful = "Not all folks are built for war, some find contentment in contemplation or practicing a trade. This character becomes content with being in reserve, consumes half rations while in reserve. [color=#0b0084]From the Calm perk group[/color]",
 	LegendSummonHound = "Forming close bonds with hounds grants to the ability to call to them. Summon a loyal hound to your side in battle.",
@@ -2053,7 +2060,14 @@ gt.Const.Strings.PerkDescription <- {
 	LegendCheerOn = "Use your way with song to cheer on an ally. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] AP to an ally within three tiles. Can only be used with a Drum or Lute equipped. \n[color=#0b0084]From the Bard perk group[/color]",
 	LegendLeap = "Use your athletic skill to leap high and far, covering two tiles distance but at a great fatigue cost. Unlocks the \'Leap\' skill",
 	LegendTumble = "Make use of your acrobatic skill to improve your movements. Halves the fatigue and action point costs of Footwork, Leap and Lunge.",
-	LegendHairSplitter = "Years of practice throwing things at apples above heads have granted a magnetic attraction to the cranium. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+30%[/color] chance to hit the head"
+	LegendHairSplitter = "Years of practice throwing things at apples above heads have granted a magnetic attraction to the cranium. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+30%[/color] chance to hit the head",
+	LegendBearform = "Transform into a powerful bear, doubles your hitpoints. Requires free hands",
+	LegendRoots = "Summon roots and vines to entangle your enemies",
+	LegendWolfform = "Transform into a nimble wolf, decreasing movement costs. Requires free hands",
+	LegendTreeform = "Transform into a deadly schrat, gaining scrat defenses and attacks. Requires free hands",
+	LegendTrueForm = "Increases the length of your transformations to 8 turns",
+	LegendSummonStorm = "Control the elements, calling down the rain. The first cast brings on light rain, the second cast brings a heavy storm and the thrill of being in the heart of the storm boosts your resolve. Must have empty hands",
+	LegendCallLightning = "Call down lightning upon your enemies. Grants a 10% chance to unleash lightning on each unit withing 4 tiles. Must have empty hands and it must be raining."
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

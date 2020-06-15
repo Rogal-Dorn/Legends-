@@ -6,9 +6,9 @@ this.grow_shield_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.grow_shield";
 		this.m.Name = "Grow Shield";
-		this.m.Description = "";
+		this.m.Description = "Regrow your bark, producing a protective shield";
 		this.m.Icon = "skills/active_121.png";
-		this.m.IconDisabled = "skills/active_121.png";
+		this.m.IconDisabled = "skills/active_121_bw.png";
 		this.m.Overlay = "active_121";
 		this.m.SoundOnUse = [
 			"sounds/enemies/dlc2/schrat_regrowth_01.wav",

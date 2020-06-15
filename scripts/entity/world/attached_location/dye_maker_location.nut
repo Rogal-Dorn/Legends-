@@ -42,6 +42,16 @@ this.dye_maker_location <- this.inherit("scripts/entity/world/attached_location"
 				P = 1.0,
 				S = "weapons/legend_wooden_pitchfork"
 			});
+			_list.push({
+				R = 30,
+				P = 1.0,
+				S = "helmets/jesters_hat"
+			});
+			_list.push({
+				R = 30,
+				P = 1.0,
+				S = "helmets/jesters_hat"
+			});	
 
 			if (this.Const.DLC.Unhold)
 			{
@@ -80,6 +90,24 @@ this.dye_maker_location <- this.inherit("scripts/entity/world/attached_location"
 		else if (_id == "building.specialized_trader")
 		{
 		}
+		else if (_id == "building.armorsmith")
+		{
+			_list.push({
+				R = 0,
+				P = 1.0,
+				S = "helmets/named/jugglers_hat"
+			});
+			_list.push({
+				R = 30,
+				P = 1.0,
+				S = "helmets/named/jugglers_padded_hat"
+			});
+			_list.push({
+				R = 50,
+				P = 1.0,
+				S = "helmets/named/death_jesters_helm"
+			});
+		}
 	}
 
 	function onUpdateLegendShopList()
@@ -105,6 +133,46 @@ this.dye_maker_location <- this.inherit("scripts/entity/world/attached_location"
 				R = 30,
 				P = 1.0,
 				S = "helmets/jesters_hat"
+			});
+		_list.push({
+				R = 10,
+				P = 1.0,
+				S = "legend_armor/cloth/legend_legend_tunic"
+			});
+			_list.push({
+				R = 30,
+				P = 1.0,
+				S = "legend_armor/cloth/legend_robes_herbalist"
+			});
+			_list.push({
+				R = 20,
+				P = 1.0,
+				S = "legend_armor/cloth/legend_robes"
+			});
+			_list.push({
+				R = 20,
+				P = 1.0,
+				S = "legend_armor/cloth/legend_thick_tunic"
+			});
+			_list.push({
+				R = 40,
+				P = 1.0,
+				S = "legend_armor/cloth/legend_robes_nun"
+			});
+			_list.push({
+				R = 70,
+				P = 1.0,
+				S = "legend_armor/cloth/legend_robes_magic"
+			});
+			_list.push({
+				R = 40,
+				P = 1.0,
+				S = "legend_armor/cloth/legend_tunic_noble"
+			});
+			_list.push({
+				R = 30,
+				P = 1.0,
+				S = "legend_armor/cloth/legend_gambeson_rare_color"
 			});
 		 _list.push({
 				R = 50,
@@ -163,10 +231,36 @@ this.dye_maker_location <- this.inherit("scripts/entity/world/attached_location"
 		else if (_id == "building.armorsmith")
 		{
 			_list.push({
-				R = 50,
+				R = 30,
 				P = 1.0,
 				S = "legend_armor/cloak/legend_armor_cloak_noble"
 			});
+			_list.push({
+				R = 50,
+				P = 1.0,
+				S = "legend_armor/cloak/legend_armor_cloak_crusader"
+			});
+			_list.push({
+				R = 30,
+				P = 1.0,
+				S = "legend_armor/plate/legend_armor_leather_noble"
+			});
+			_list.push({
+				R = 0,
+				P = 1.0,
+				S = "helmets/named/jugglers_hat"
+			});
+			_list.push({
+				R = 30,
+				P = 1.0,
+				S = "helmets/named/jugglers_padded_hat"
+			});
+			_list.push({
+				R = 50,
+				P = 1.0,
+				S = "helmets/named/death_jesters_helm"
+			});
+
 		}
 		else if (_id == "building.specialized_trader")
 		{

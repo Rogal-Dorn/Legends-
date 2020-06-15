@@ -198,10 +198,13 @@ gt.Const.Perks.BerserkerMagicTree <- {
 		[gt.Const.Perks.PerkDefs.Colossus],
 		[gt.Const.Perks.PerkDefs.DevastatingStrikes],
 		[gt.Const.Perks.PerkDefs.Brawny],
+		[gt.Const.Perks.PerkDefs.LegendBearform],
 		[gt.Const.Perks.PerkDefs.LegendMuscularity],
-		[gt.Const.Perks.PerkDefs.LegendUberNimble],
 		[gt.Const.Perks.PerkDefs.Berserk],
-		[gt.Const.Perks.PerkDefs.LegendBerserkerRage]
+		[
+		gt.Const.Perks.PerkDefs.LegendBerserkerRage,
+		gt.Const.Perks.PerkDefs.LegendUberNimble
+		]
 	]
 };
 
@@ -261,11 +264,34 @@ gt.Const.Perks.ConjurationMagicTree <- {
 	Tree = [
 		[gt.Const.Perks.PerkDefs.LegendSummonCat],
 		[gt.Const.Perks.PerkDefs.LegendSummonHound],
-		[],
 		[gt.Const.Perks.PerkDefs.LegendSummonFalcon],
+		[],
 		[gt.Const.Perks.PerkDefs.LegendSummonWolf],
 		[],
 		[gt.Const.Perks.PerkDefs.LegendSummonBear]
+	]
+};
+
+gt.Const.Perks.DruidMagicTree <- {
+	ID = "DruidMagicTree",
+	Descriptions = [
+		"druidic arts"
+	],
+	Tree = [
+		[gt.Const.Perks.PerkDefs.LegendRoots],
+		[],
+		[gt.Const.Perks.PerkDefs.LegendPrayerOfLife],
+		[
+		gt.Const.Perks.PerkDefs.LegendTreeform,
+		gt.Const.Perks.PerkDefs.LegendBearform,
+		gt.Const.Perks.PerkDefs.LegendWolfform
+		],
+		[gt.Const.Perks.PerkDefs.LegendSummonStorm],
+		[gt.Const.Perks.PerkDefs.LegendDrumsOfLife],
+		[
+		gt.Const.Perks.PerkDefs.LegendCallLightning,
+		gt.Const.Perks.PerkDefs.LegendTrueForm
+		]
 	]
 };
 
@@ -280,7 +306,7 @@ gt.Const.Perks.TransmutationMagicTree <- {
 		[gt.Const.Perks.PerkDefs.LegendLevitate],
 		[],
 		[gt.Const.Perks.PerkDefs.LegendPotionBrewer],
-		[],
+		[gt.Const.Perks.PerkDefs.LegendRoots],
 		[gt.Const.Perks.PerkDefs.LegendTeleport]
 	]
 };
@@ -328,10 +354,10 @@ gt.Const.Perks.MagicTrees <- {
 		gt.Const.Perks.BasicNecroMagicTree,
 		gt.Const.Perks.WarlockMagicTree,
 		gt.Const.Perks.VampireMagicTree,
-		gt.Const.Perks.BasicNecroMagicTree,
 		gt.Const.Perks.ZombieMagicTree,
 		gt.Const.Perks.SkeletonMagicTree,
 		gt.Const.Perks.BerserkerMagicTree,
+		gt.Const.Perks.DruidMagicTree,
 		gt.Const.Perks.CaptainMagicTree,
 		gt.Const.Perks.IllusionistMagicTree,
 		gt.Const.Perks.DivinationMagicTree,

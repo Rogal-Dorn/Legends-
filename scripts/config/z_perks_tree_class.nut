@@ -313,119 +313,7 @@ gt.Const.Perks.NinetailsClassTree <- {
 		[gt.Const.Perks.PerkDefs.LegendSpecCultArmor],
 		[gt.Const.Perks.PerkDefs.LegendLacerate]
 	]
-};
-
-gt.Const.Perks.ValaChantClassTree <- {
-	ID = "ValaChantClassTree",
-	Descriptions = [
-		"chants"
-	],
-	Tree = [
-		[],
-		[],
-		[gt.Const.Perks.PerkDefs.LegendValaChantSenses],
-		[gt.Const.Perks.PerkDefs.LegendValaChantMastery],
-		[gt.Const.Perks.PerkDefs.LegendValaChantDisharmony],
-		[],
-		[gt.Const.Perks.PerkDefs.LegendValaChantDisharmony]
-	]
-};
-
-gt.Const.Perks.ValaTranceClassTree <- {
-	ID = "ValaTranceClassTree",
-	Descriptions = [
-		"trances"
-	],
-	Tree = [
-		[],
-		[gt.Const.Perks.PerkDefs.LegendValaTranceMalevolent],
-		[],
-		[gt.Const.Perks.PerkDefs.LegendValaTranceMastery],
-		[],
-		[gt.Const.Perks.PerkDefs.LegendValaThreads],
-		[]
-	]
-};
-
-gt.Const.Perks.ValaRuneClassTree <- {
-	ID = "ValaRuneClassTree",
-	Descriptions = [
-		"runes"
-	],
-	Tree = [
-		[gt.Const.Perks.PerkDefs.LegendValaInscribeShield],
-		[],
-		[gt.Const.Perks.PerkDefs.LegendValaInscribeHelmet],
-		[gt.Const.Perks.PerkDefs.LegendValaInscriptionMastery],
-		[gt.Const.Perks.PerkDefs.LegendValaInscribeArmor],
-		[],
-		[gt.Const.Perks.PerkDefs.LegendValaInscribeWeapon]
-	]
-};
-
-gt.Const.Perks.ValaSpiritClassTree <- {
-	ID = "ValaSpiritClassTree",
-	Descriptions = [
-		"spirits"
-	],
-	Tree = [
-		[gt.Const.Perks.PerkDefs.LegendValaWarden],
-		[],
-		[gt.Const.Perks.PerkDefs.LegendValaPremonition],
-		[],
-		[],
-		[gt.Const.Perks.PerkDefs.LegendValaSpiritualBond],
-		[]
-	]
-};
-
-gt.Const.Perks.InventorClassTree <- {
-	ID = "InventorClassTree",
-	Descriptions = [
-		"inventor"
-	],
-	Tree = [
-		[],
-		[],
-		[],
-		[],
-		[],
-		[gt.Const.Perks.PerkDefs.LegendInventorAnatomy],
-		[]
-	]
-};
-
-gt.Const.Perks.ValaSpiritClassTree <- {
-	ID = "ValaSpiritClassTree",
-	Descriptions = [
-		"spirits"
-	],
-	Tree = [
-		[gt.Const.Perks.PerkDefs.LegendValaWarden],
-		[],
-		[gt.Const.Perks.PerkDefs.LegendValaPremonition],
-		[],
-		[],
-		[gt.Const.Perks.PerkDefs.LegendValaSpiritualBond],
-		[]
-	]
-};
-
-gt.Const.Perks.RangerHuntClassTree <- {
-	ID = "RangerHuntClassTree",
-	Descriptions = [
-		"spirits"
-	],
-	Tree = [
-		[gt.Const.Perks.PerkDefs.LegendMarkTarget],
-		[],
-		[],
-		[],
-		[],
-		[gt.Const.Perks.PerkDefs.LegendFavouredEnemyArcher],
-		[gt.Const.Perks.PerkDefs.LegendBigGameHunter]
-	]
-};
+}
 
 gt.Const.Perks.JugglerClassTree <- {
 	ID = "JugglerClassTree",
@@ -480,8 +368,9 @@ gt.Const.Perks.ClassTrees <- {
 		gt.Const.Perks.ShortbowClassTree,
 		gt.Const.Perks.WoodaxeClassTree,
 		gt.Const.Perks.SickleClassTree,
-		gt.Const.Perks.HoundmasterClassTree,
-		gt.Const.Perks.NinetailsClassTree
+		gt.Const.Perks.NinetailsClassTree,
+		gt.Const.Perks.JugglerClassTree,
+		gt.Const.Perks.HoundmasterClassTree
 	],
 	function getRandom(_exclude) 
 	{

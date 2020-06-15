@@ -32,7 +32,8 @@ this.herbalists_grove_location <- this.inherit("scripts/entity/world/attached_lo
 
 		if(this.Const.LegendMod.Configs.LegendMagicEnabled())
 		{
-			_list.push("legend_illusionist_background");
+		
+			_list.push("legend_druid_background");
 		}
 	}
 
@@ -86,6 +87,11 @@ this.herbalists_grove_location <- this.inherit("scripts/entity/world/attached_lo
 		}
 		else if (_id == "building.weaponsmith")
 		{
+			_list.push({
+				R = 0,
+				P = 1.0,
+				S = "weapons/named/legend_named_sickle"
+			});
 		}
 		else if (_id == "building.armorsmith")
 		{

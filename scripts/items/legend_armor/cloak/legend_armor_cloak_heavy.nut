@@ -35,23 +35,7 @@ this.legend_armor_cloak_heavy <- this.inherit("scripts/items/legend_armor/cloak/
 		this.m.StaminaModifier = -4;
 	}
 
-	function getTooltip()
-	{
-		local result = this.named_helmet.getTooltip();
-		result.push({
-			id = 6,
-			type = "text",
-			icon = "ui/icons/special.png",
-			text = "Wearer is not affected by rain penalties"
-		});
-		return result;
-	}
 
-	function onUpdateProperties( _properties )
-	{
-		_properties.Bravery += this.m.Bravery;
-		_properties.getSkills().removeByID("special.legend_rain");
-	}
 
 });
 

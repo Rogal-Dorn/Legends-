@@ -28,6 +28,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		IsLowborn = false,
 		IsFemaleBackground = false,
 		IsRangerRecruitBackground = false,
+		isDruidRecruitBackground = false,
 		IsCrusaderRecruitBackground = false,
 		IsPerformingBackground = false,
 		IsOutlawBackground = false,
