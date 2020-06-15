@@ -1717,7 +1717,7 @@ gt.Const.Strings.PerkName <- {
 	LegendHairSplitter = "Hair Splitter",
 	LegendBearform = "Bear Form",
 	LegendRoots = "Roots",
-	LegendBearform = "Wolf Form"
+	LegendWolfform = "Wolf Form"
 };
 gt.Const.Strings.PerkDescription <- {
 	Relentless = "Don\'t slow down! At all times your Initiative is reduced only by [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] of your accumulated Fatigue, instead of all of it. \n[color=#0b0084]From the Fit perk group[/color]",

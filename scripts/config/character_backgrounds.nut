@@ -124,7 +124,6 @@ gt.Const.CharacterVeteranBackgrounds <- [
 	"bastard_background",
 	"raider_background"
 ];
-
 gt.Const.CharacterCombatBackgrounds <- [
 	"disowned_noble_background",
 	"female_disowned_noble_background",
@@ -146,7 +145,6 @@ gt.Const.CharacterCombatBackgrounds <- [
 	"legend_blacksmith_background",
 	"raider_background"
 ];
-
 gt.Const.CharacterUndeadBackgrounds <- [
 	"disowned_noble_background",
 	"female_disowned_noble_background",
@@ -175,7 +173,6 @@ gt.Const.CharacterUndeadBackgrounds <- [
 	"legend_entrancer_background",
 	"legend_necrosavant_background"
 ];
-
 gt.Const.CharacterBackgroundsAnimated <- [
 	"adventurous_noble_background",
 	"apprentice_background",
@@ -246,7 +243,6 @@ gt.Const.CharacterBackgroundsAnimated <- [
 	"wildman_background",
 	"witchhunter_background"
 ];
-
 gt.Const.CharacterFemaleBackgrounds <- [
 	"legend_shieldmaiden_background",
 	"female_thief_background",
@@ -264,8 +260,6 @@ gt.Const.CharacterFemaleBackgrounds <- [
 	"female_tailor_background",
 	"legend_nun_background"
 ];
-
-
 gt.Const.CharacterPartyBackgrounds <- [
 	"legend_diviner_background",
 	"legend_illusionist_background",
@@ -286,10 +280,9 @@ gt.Const.CharacterPartyBackgrounds <- [
 	"legend_nun_background",
 	"legend_shieldmaiden_background",
 	"assassin_background",
-	"legend_crusader_background"
+	"legend_crusader_background",
 	"legend_conjurer_background"
 ];
-
 gt.Const.CharacterMagicBackgrounds <- [
 	"legend_diviner_background",
 	"legend_illusionist_background",
@@ -303,10 +296,9 @@ gt.Const.CharacterMagicBackgrounds <- [
 	"legend_ancient_summoner_background",
 	"legend_necrosavant_background",
 	"legend_witch_background",
-	"legend_conjurer_background"
+	"legend_conjurer_background",
 	"legend_warlock_background"
 ];
-
 gt.Const.CharacterMagicBackgrounds <- [
 	"legend_ancient_summoner_background",
 	"legend_death_summoner_background",
@@ -321,8 +313,6 @@ gt.Const.CharacterMagicBackgrounds <- [
 	"legend_transmuter_background",
 	"legend_warlock_background"
 ];
-
-
 gt.Const.CharacterBackgroundsRandom <- [
 	"adventurous_noble_background",
 	"apprentice_background",
@@ -408,7 +398,7 @@ gt.Const.CharacterBackgroundsRandom <- [
 	"vagabond_background",
 	"wildman_background",
 	"wildwoman_background",
-	"witchhunter_background"
+	"witchhunter_background",
 	"legend_diviner_background",
 	"legend_illusionist_background",
 	"legend_spiritualist_background",
@@ -425,10 +415,9 @@ gt.Const.CharacterBackgroundsRandom <- [
 	"legend_noble_event_background",
 	"legend_conjurer_background"
 ];
-
-
 gt.Const.HorseBackgrounds <- [
 	"legend_horse_destrier",
 	"legend_horse_rouncey",
 	"legend_horse_courser"
-]
+];
+
