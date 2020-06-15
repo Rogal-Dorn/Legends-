@@ -66,7 +66,9 @@ this.legend_transformed_bear_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("body").setBrush("bear_01");
 		actor.getSprite("head").setBrush("bear_head_01");
 		actor.getSprite("injury").setBrush("bear_01_injured");
-
+		actor.getSprite("body").setHorizontalFlipping(1);
+		actor.getSprite("head").setHorizontalFlipping(1);
+		actor.getSprite("injury").setHorizontalFlipping(1);
 
 		actor.getSprite("armor").Alpha = 10;
 		actor.getSprite("helmet").Alpha = 10;
