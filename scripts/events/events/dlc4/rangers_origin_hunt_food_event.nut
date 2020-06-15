@@ -150,7 +150,7 @@ this.rangers_origin_hunt_food_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
-		if (this.World.Assets.getOrigin().getID() != "scenario.rangers")
+		if (this.World.Assets.getOrigin().getID() != "scenario.rangers" && this.World.Assets.getOrigin().getID() != "scenario.legends_rangers")
 		{
 			return;
 		}

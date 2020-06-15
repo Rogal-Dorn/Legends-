@@ -98,7 +98,7 @@ this.houndmaster_tames_white_wolf_event <- this.inherit("scripts/events/event", 
 	function onUpdateScore()
 	{
 
-		if (this.World.Assets.getOrigin().getID() != "scenario.legends_rangers")
+		if (this.World.Assets.getOrigin().getID() != "scenario.legends_rangers" && this.World.Assets.getOrigin().getID() != "scenario.rangers" && this.World.Assets.getOrigin().getID() != "scenario.legends_druid")
 		{
 			return;
 		}
@@ -120,7 +120,7 @@ this.houndmaster_tames_white_wolf_event <- this.inherit("scripts/events/event", 
 
 		foreach( bro in brothers )
 		{
-			if (bro.getLevel() >= 5 && bro.getBackground().getID() == "background.legend_commander_ranger")
+			if (bro.getLevel() >= 5 && bro.getBackground().getID() == "background.legend_commander_ranger" || bro.getBackground().getID() == "background.legend_commander_druid")
 			{
 				candidates.push(bro);
 			}

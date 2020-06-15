@@ -2939,6 +2939,24 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/true_form_circle.png",
 		IconDisabled = "ui/perks/true_form_circle_bw.png",
 		Const = "LegendTrueForm"
+	},
+	{
+		ID = "perk.legend_summon_storm",
+		Script = "scripts/skills/perks/perk_legend_summon_storm",
+		Name = this.Const.Strings.PerkName.LegendSummonStorm,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSummonStorm,
+		Icon = "ui/perks/rain_circle.png",
+		IconDisabled = "ui/perks/rain_circle_bw.png",
+		Const = "LegendSummonStorm"
+	},
+	{
+		ID = "perk.legend_call_lightning",
+		Script = "scripts/skills/perks/perk_legend_call_lightning",
+		Name = this.Const.Strings.PerkName.LegendCallLightning,
+		Tooltip = this.Const.Strings.PerkDescription.LegendCallLightning,
+		Icon = "ui/perks/storm_circle.png",
+		IconDisabled = "ui/perks/storm_circle_bw.png",
+		Const = "LegendCallLightning"
 	}
 ];
 gt.Const.Perks.PerkDefs <- {};

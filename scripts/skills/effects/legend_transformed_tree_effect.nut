@@ -92,9 +92,21 @@ this.legend_transformed_tree_effect <- this.inherit("scripts/skills/skill", {
 		this.m.TurnsLeft = 8;
 		}
 
-		actor.getSkills().addSkill(this.new("scripts/skills/racial/schrat_racial"));
-		actor.getSkills().addSkill(this.new("scripts/skills/actives/uproot_skill"));
-		actor.getSkills().addSkill(this.new("scripts/skills/actives/grow_shield_skill"));
+		if (!this.m.Container.hasSkill("racial.schrat"))
+		{
+			this.m.Container.add(this.new("scripts/skills/racial/schrat_racial"));
+		}
+
+		if (!this.m.Container.hasSkill("actives.uproot"))
+		{
+			this.m.Container.add(this.new("scripts/skills/actives/uproot_skill"));
+		}
+
+		if (!this.m.Container.hasSkill("actives.grow_shield"))
+		{
+			this.m.Container.add(this.new("scripts/skills/actives/grow_shield_skilll"));
+		}
+
 
 	}
 
@@ -174,9 +186,20 @@ this.legend_transformed_tree_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("armor_upgrade_front").Alpha = 10;
 		actor.getSprite("socket").Alpha = 10;
 
-		actor.getSkills().addSkill(this.new("scripts/skills/racial/schrat_racial"));
-		actor.getSkills().addSkill(this.new("scripts/skills/actives/uproot_skill"));
-		actor.getSkills().addSkill(this.new("scripts/skills/actives/grow_shield_skill"));
+		if (!this.m.Container.hasSkill("racial.schrat"))
+		{
+			this.m.Container.add(this.new("scripts/skills/racial/schrat_racial"));
+		}
+
+		if (!this.m.Container.hasSkill("actives.uproot"))
+		{
+			this.m.Container.add(this.new("scripts/skills/actives/uproot_skill"));
+		}
+
+		if (!this.m.Container.hasSkill("actives.grow_shield"))
+		{
+			this.m.Container.add(this.new("scripts/skills/actives/grow_shield_skilll"));
+		}
 
 	}
 

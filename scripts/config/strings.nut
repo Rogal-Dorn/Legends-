@@ -1719,7 +1719,9 @@ gt.Const.Strings.PerkName <- {
 	LegendRoots = "Roots",
 	LegendWolfform = "Wolf Form",
 	LegendTreeform = "Tree Form",
-	LegendTrueForm = "True Form"
+	LegendTrueForm = "True Form",
+	LegendSummonStorm = "Summon Storm",
+	LegendCallLightning = "Call Lightning"
 };
 gt.Const.Strings.PerkDescription <- {
 	Relentless = "Don\'t slow down! At all times your Initiative is reduced only by [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] of your accumulated Fatigue, instead of all of it. \n[color=#0b0084]From the Fit perk group[/color]",
@@ -2063,7 +2065,9 @@ gt.Const.Strings.PerkDescription <- {
 	LegendRoots = "Summon roots and vines to entangle your enemies",
 	LegendWolfform = "Transform into a nimble wolf, decreasing movement costs. Requires free hands",
 	LegendTreeform = "Transform into a deadly schrat, gaining scrat defenses and attacks. Requires free hands",
-	LegendTrueForm = "Increases the length of your transformations to 8 turns"
+	LegendTrueForm = "Increases the length of your transformations to 8 turns",
+	LegendSummonStorm = "Control the elements, calling down the rain. The first cast brings on light rain, the second cast brings a heavy storm and the thrill of being in the heart of the storm boosts your resolve. Must have empty hands",
+	LegendCallLightning = "Call down lightning upon your enemies. Grants a 10% chance to unleash lightning on each unit withing 4 tiles. Must have empty hands and it must be raining."
 };
 gt.Const.Strings.Tooltip <- {
 	World = {
