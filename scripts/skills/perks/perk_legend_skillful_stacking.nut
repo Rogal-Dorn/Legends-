@@ -1,6 +1,6 @@
 this.perk_legend_skillful_stacking <- this.inherit("scripts/skills/skill", {
 	m = {
-		StashSize = 10
+		StashSize = 12
 	},
 	function create()
 	{
@@ -29,5 +29,10 @@ this.perk_legend_skillful_stacking <- this.inherit("scripts/skills/skill", {
 	{
 		return this.m.StashSize;
 	}
-	
+
+	function onUpdate( _properties )
+	{
+		_properties.Stamina += 9;
+	}
+
 });

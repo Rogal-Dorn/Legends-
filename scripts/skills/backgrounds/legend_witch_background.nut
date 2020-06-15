@@ -4,35 +4,14 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 	{
 		this.character_background.create();
 		this.m.ID = "background.legend_witch";
-		this.m.Icon = "ui/backgrounds/seer_02.png";
-		local r = this.Math.rand(0, 4);
-
-		if (r == 0)
-		{
-			this.m.Name = "Conjourer";
-		}
-		else if (r == 1)
-		{
-			this.m.Name = "Witch";
-		}
-		else if (r == 2)
-		{
-			this.m.Name = "Wise Woman";
-		}
-		else if (r == 3)
-		{
-			this.m.Name = "Soothsayer";
-		}
-		else if (r == 4)
-		{
-			this.m.Name = "Seer";
-		}
-
-		this.m.HiringCost = 20000;
-		this.m.DailyCost = 20;
+		this.m.Icon = "ui/backgrounds/background_wizard_4.png";
+		this.m.Name = "Evoker";
+		this.m.HiringCost = 4000;
+		this.m.DailyCost = 40;
 		this.m.Excluded = [
 			"trait.brave",
 			"trait.athletic",
+			"trait.bloodthirsty",
 			"trait.brute",
 			"trait.dexterous",
 			"trait.eagleyes",
@@ -64,163 +43,33 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.IsEducatedBackground = true;
 		this.m.IsUntalented = true;
 		this.m.Level = 1;
-
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Good;
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[3];
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[2];
 		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[2];
 		this.m.Modifiers.MedConsumption = this.Const.LegendMod.ResourceModifiers.MedConsumption[3];
 
-		if (!this.Const.LegendMod.Configs.LegendMagicEnabled())
-		{
-			this.m.CustomPerkTree = [
-				[
-					this.Const.Perks.PerkDefs.FastAdaption,
-					this.Const.Perks.PerkDefs.CripplingStrikes,
-					this.Const.Perks.PerkDefs.BagsAndBelts,
-					this.Const.Perks.PerkDefs.NineLives,
-					this.Const.Perks.PerkDefs.LegendAlert,
-					this.Const.Perks.PerkDefs.Student,
-					this.Const.Perks.PerkDefs.Recover,
-					this.Const.Perks.PerkDefs.LegendDaze,
-				],
-				[
-					this.Const.Perks.PerkDefs.CoupDeGrace,
-					this.Const.Perks.PerkDefs.Bullseye,
-					this.Const.Perks.PerkDefs.Dodge,
-					this.Const.Perks.PerkDefs.FortifiedMind,
-					this.Const.Perks.PerkDefs.HoldOut,
-					this.Const.Perks.PerkDefs.Gifted,
-					this.Const.Perks.PerkDefs.LegendStunned,
-				],
-				[
-					this.Const.Perks.PerkDefs.Backstabber,
-					this.Const.Perks.PerkDefs.Anticipation,
-					this.Const.Perks.PerkDefs.Rotation,
-					this.Const.Perks.PerkDefs.RallyTheTroops,
-					this.Const.Perks.PerkDefs.Taunt,
-					this.Const.Perks.PerkDefs.LegendHorrify,
-					this.Const.Perks.PerkDefs.LegendSpecStaffSkill,
-
-				],
-				[
-					this.Const.Perks.PerkDefs.SpecDagger,
-					this.Const.Perks.PerkDefs.SpecThrowing,
-					this.Const.Perks.PerkDefs.LegendMasteryStaves,
-					this.Const.Perks.PerkDefs.LegendEntice,
-					this.Const.Perks.PerkDefs.LegendSpecBandage,
-					this.Const.Perks.PerkDefs.LegendPush,
-				],
-				[
-					this.Const.Perks.PerkDefs.LoneWolf,
-					this.Const.Perks.PerkDefs.Overwhelm,
-					this.Const.Perks.PerkDefs.Footwork,
-					this.Const.Perks.PerkDefs.LegendAlert,
-					this.Const.Perks.PerkDefs.LegendMedIngredients
-					this.Const.Perks.PerkDefs.LegendSpecStaffStun,
-				],
-				[
-					this.Const.Perks.PerkDefs.Nimble,
-					this.Const.Perks.PerkDefs.LegendRelax,
-					this.Const.Perks.PerkDefs.Rebound,
-					this.Const.Perks.PerkDefs.LegendClarity,
-					this.Const.Perks.PerkDefs.LegendMindOverBody,
-					this.Const.Perks.PerkDefs.Ballistics,
-					this.Const.Perks.PerkDefs.LegendDrumsOfWar,
-					this.Const.Perks.PerkDefs.LegendScry
-				],
-				[
-					this.Const.Perks.PerkDefs.BattleFlow,
-					this.Const.Perks.PerkDefs.LegendFavouredEnemyHexen,
-					this.Const.Perks.PerkDefs.LegendFreedomOfMovement,
-					this.Const.Perks.PerkDefs.PerfectFocus,
-					this.Const.Perks.PerkDefs.LegendSleep,
-					this.Const.Perks.PerkDefs.LegendTeacher,
-					this.Const.Perks.PerkDefs.LegendFieldTriage,
-					this.Const.Perks.PerkDefs.LegendFirefield,
-				],
-				[],
-				[],
-				[],
-				[]
-			];
-
-		}
-		else
-		{
-			this.m.CustomPerkTree = [
-				[
-					this.Const.Perks.PerkDefs.FastAdaption,
-					this.Const.Perks.PerkDefs.CripplingStrikes,
-					this.Const.Perks.PerkDefs.BagsAndBelts,
-					this.Const.Perks.PerkDefs.NineLives,
-					this.Const.Perks.PerkDefs.Student,
-					this.Const.Perks.PerkDefs.Recover,
-					this.Const.Perks.PerkDefs.LegendSummonCat,
-					this.Const.Perks.PerkDefs.LegendDaze,
-				],
-				[
-					this.Const.Perks.PerkDefs.CoupDeGrace,
-					this.Const.Perks.PerkDefs.Bullseye,
-					this.Const.Perks.PerkDefs.Dodge,
-					this.Const.Perks.PerkDefs.FortifiedMind,
-					this.Const.Perks.PerkDefs.HoldOut,
-					this.Const.Perks.PerkDefs.Gifted,
-					this.Const.Perks.PerkDefs.LegendStunned,
-				],
-				[
-					this.Const.Perks.PerkDefs.Backstabber,
-					this.Const.Perks.PerkDefs.Anticipation,
-					this.Const.Perks.PerkDefs.Rotation,
-					this.Const.Perks.PerkDefs.RallyTheTroops,
-					this.Const.Perks.PerkDefs.Taunt,
-					this.Const.Perks.PerkDefs.LegendHorrify,
-					this.Const.Perks.PerkDefs.LegendSpecStaffSkill,
-
-				],
-				[
-					this.Const.Perks.PerkDefs.SpecDagger,
-					this.Const.Perks.PerkDefs.SpecThrowing,
-					this.Const.Perks.PerkDefs.LegendMasteryStaves,
-					this.Const.Perks.PerkDefs.LegendEntice,
-					this.Const.Perks.PerkDefs.LegendSpecBandage,
-					this.Const.Perks.PerkDefs.LegendPush,
-				],
-				[
-					this.Const.Perks.PerkDefs.LoneWolf,
-					this.Const.Perks.PerkDefs.Overwhelm,
-					this.Const.Perks.PerkDefs.Footwork,
-					this.Const.Perks.PerkDefs.LegendAlert,
-					this.Const.Perks.PerkDefs.LegendChainLightning,
-					this.Const.Perks.PerkDefs.LegendMedIngredients
-					this.Const.Perks.PerkDefs.LegendSpecStaffStun,
-				],
-				[
-					this.Const.Perks.PerkDefs.Nimble,
-					this.Const.Perks.PerkDefs.LegendRelax,
-					this.Const.Perks.PerkDefs.Rebound,
-					this.Const.Perks.PerkDefs.LegendClarity,
-					this.Const.Perks.PerkDefs.Ballistics,
-					this.Const.Perks.PerkDefs.LegendMindOverBody,
-					this.Const.Perks.PerkDefs.LegendDrumsOfWar,
-					this.Const.Perks.PerkDefs.LegendLevitate,
-					this.Const.Perks.PerkDefs.LegendScry
-				],
-				[
-					this.Const.Perks.PerkDefs.BattleFlow,
-					this.Const.Perks.PerkDefs.LegendFavouredEnemyHexen,
-					this.Const.Perks.PerkDefs.PerfectFocus,
-					this.Const.Perks.PerkDefs.LegendSleep,
-					this.Const.Perks.PerkDefs.LegendTeacher,
-					this.Const.Perks.PerkDefs.LegendFieldTriage,
-					this.Const.Perks.PerkDefs.LegendTeleport,
-					this.Const.Perks.PerkDefs.LegendFirefield
-				],
-				[],
-				[],
-				[],
-				[]
-			];
+				this.m.PerkTreeDynamic = {
+			Weapon = [
+				this.Const.Perks.DaggerTree,
+				this.Const.Perks.StavesTree,
+				this.Const.Perks.ThrowingTree,
+				this.Const.Perks.CrossbowTree
+			],
+			Defense = [
+				this.Const.Perks.LightArmorTree
+			],
+			Traits = [
+				this.Const.Perks.IntelligentTree,
+				this.Const.Perks.CalmTree,
+				this.Const.Perks.OrganisedTree,
+				this.Const.Perks.InspirationalTree
+			],
+			Enemy = [],
+			Class = [],
+			Magic = [this.Const.Perks.EvocationMagicTree]
 		}
 	}
 
@@ -283,36 +132,36 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 	{
 		local c = {
 			Hitpoints = [
-				-5,
-				-5
+				-15,
+				-10
 			],
 			Bravery = [
-				5,
-				5
+				0,
+				0
 			],
 			Stamina = [
-				15,
+				10,
 				15
 			],
 			MeleeSkill = [
-				-5,
-				-5
+				-10,
+				-10
 			],
 			RangedSkill = [
-				15,
+				10,
 				15
 			],
 			MeleeDefense = [
-				-5,
-				-5
+				-10,
+				-10
 			],
 			RangedDefense = [
-				-5,
-				-5
+				-10,
+				-10
 			],
 			Initiative = [
-				25,
-				25
+				15,
+				20
 			]
 		};
 		return c;

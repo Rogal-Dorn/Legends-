@@ -53,6 +53,8 @@ this.female_thief_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
 		this.m.Body = "bust_naked_body_03";
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.NeutralMin;
 		this.m.IsFemaleBackground = true;
 		this.m.IsLowborn = true;
 		this.m.IsOutlawBackground = true;
@@ -79,7 +81,8 @@ this.female_thief_background <- this.inherit("scripts/skills/backgrounds/charact
 				this.Const.Perks.NoblesTree,
 				this.Const.Perks.MercenaryTree
 				],
-			Class = [this.Const.Perks.KnifeClassTree]
+			Class = [this.Const.Perks.KnifeClassTree],
+			Magic = []
 		}
 	}
 

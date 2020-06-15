@@ -48,6 +48,8 @@ this.legend_noble_shield <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Body = "bust_naked_body_01";
 		this.m.IsCombatBackground = true;
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[1];
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[1];
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[1];
@@ -74,7 +76,8 @@ this.legend_noble_shield <- this.inherit("scripts/skills/backgrounds/character_b
 				this.Const.Perks.IndestructibleTree
 			],
 			Enemy = [],
-			Class = []
+			Class = [],
+			Magic = []
 		};
 	}
 

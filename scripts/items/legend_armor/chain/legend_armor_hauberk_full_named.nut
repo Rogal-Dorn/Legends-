@@ -3,7 +3,7 @@ this.legend_armor_hauberk_full_named <- this.inherit("scripts/items/legend_armor
 	function create()
 	{
 		this.legend_named_armor_upgrade.create();
-		this.m.Type = this.Const.Items.ArmorUpgrades.Chain
+		this.m.Type = this.Const.Items.ArmorUpgrades.Chain;
 		this.m.ID = "legend_armor.hauberk_full_named";
 		this.m.Name = "";
 		this.m.NameList = [
@@ -22,10 +22,12 @@ this.legend_armor_hauberk_full_named <- this.inherit("scripts/items/legend_armor
 		];
 		this.m.Description = "Truly fit for a knight, this mail hauberk is made from the highest quality materials and boasts precious decorations and ornaments.";
 		this.m.ArmorDescription = "Includes a mail hauberk made from the highest quality materials and boasts precious decorations and ornaments.";
-		this.m.Variants = [1];
+		this.m.Variants = [
+			1
+		];
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
-		this.m.Value = 15000;
+		this.m.Value = 5000;
 		this.m.Condition = 120;
 		this.m.ConditionMax = 120;
 		this.m.StaminaModifier = -15;
@@ -35,21 +37,22 @@ this.legend_armor_hauberk_full_named <- this.inherit("scripts/items/legend_armor
 
 	function randomizeValues()
 	{
-		this.m.StaminaModifier = this.Math.rand(14, 17) * -1;
-		this.m.Condition = this.Math.rand(121, 130);
+		this.m.StaminaModifier = this.Math.rand(9, 13) * -1;
+		this.m.Condition = this.Math.rand(125, 150);
 		this.m.ConditionMax = this.m.Condition;
 	}
 
 	function updateVariant()
 	{
 		local variant = this.m.Variant < 10 ? "0" + this.m.Variant : this.m.Variant;
-		this.m.SpriteBack = "bust_legend_hauberk_full_named_" + variant ;
+		this.m.SpriteBack = "bust_legend_hauberk_full_named_" + variant;
 		this.m.SpriteDamagedBack = "bust_legend_hauberk_full_named_" + variant + "_damaged";
 		this.m.SpriteCorpseBack = "bust_legend_hauberk_full_named_" + variant + "_dead";
 		this.m.Icon = "legend_armor/chain/legend_hauberk_full_named_" + variant + ".png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "legend_armor/chain/icon_legend_hauberk_full_named_" + variant + ".png";
-		this.m.OverlayIconLarge = "legend_armor/chain/inventory_legend_hauberk_full_named_"  + variant + ".png";
+		this.m.OverlayIconLarge = "legend_armor/chain/inventory_legend_hauberk_full_named_" + variant + ".png";
 	}
+
 });
 

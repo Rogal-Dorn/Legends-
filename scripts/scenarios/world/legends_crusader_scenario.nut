@@ -27,11 +27,15 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 		bro.getSkills().add(this.new("scripts/skills/perks/perk_fortified_mind"));
 		bro.getSkills().add(this.new("scripts/skills/perks/perk_rebound"));
 		bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_roster_1"));
+		bro.m.PerkPointsSpent += 3;
 		bro.setPlaceInFormation(4);
 		bro.setVeteranPerks(2);
 		bro.getTags().set("IsPlayerCharacter", true);
 		bro.getSprite("miniboss").setBrush("bust_miniboss_lone_wolf");
 		bro.m.HireTime = this.Time.getVirtualTimeF();
+		local val = this.World.State.addNewID(bro);
+		bro.m.CompanyID = val;
+	
 		this.World.Assets.m.BusinessReputation = 100;
 		this.World.Assets.m.Ammo = 0;
 
@@ -98,6 +102,13 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 			], this.Const.Music.CrossFadeTime);
 			this.World.Events.fire("event.legend_crusader_scenario_intro");
 		}, null);
+foreach (b in this.World.getPlayerRoster().getAll())
+		{
+			foreach (add in this.World.getPlayerRoster().getAll())
+			{
+				b.changeActiveRelationship(add, this.Math.rand(0, 10));
+			}
+		}
 
 	}
 
@@ -123,21 +134,6 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 		return false;
 	}
 
-	function onUpdateDraftList( _list )
-	{
-		if (_list.len() < 10)
-		{
-			_list.push("monk_background");
-		}
-
-		local r;
-		r = this.Math.rand(0, 999);
-		if (r == 0)
-		{
-			_list.push("legend_crusader_background");
-		}
-	}
-
 	function onHiredByScenario( bro )
 	{
 		if (bro.getBackground().isCrusaderRecruitBackground())
@@ -161,8 +157,8 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 		{
 			if (bro.getBackground().isCrusaderRecruitBackground())
 			{
-				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.9);
-				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.9);
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.75);
+				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.75);
 
 			}
 			else
@@ -191,6 +187,68 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 		}
 
 		_tree.addPerk(this.Const.Perks.PerkDefs.FortifiedMind);
+	}
+
+	function onUpdateDraftList( _list )
+	{
+		if (_list.len() < 5)
+		{
+			local r;
+			r = this.Math.rand(0, 2);
+			if (r == 0)
+			{
+			_list.push("flagellant_background");
+			}
+			r = this.Math.rand(0, 4);
+			if (r == 0)
+			{
+			_list.push("monk_background");
+			}
+			r = this.Math.rand(0, 6);
+			if (r == 0)
+			{
+			_list.push("legend_nun_background");
+			}
+			r = this.Math.rand(0, 9);
+			if (r == 0)
+			{
+				_list.push("witchhunter_background");
+			}
+			r = this.Math.rand(0, 49);
+			if (r == 0)
+			{
+				_list.push("legend_crusader_background");
+			}
+		}
+		if (_list.len() >= 5)
+		{
+			local r;
+			r = this.Math.rand(0, 5);
+			if (r == 0)
+			{
+				_list.push("flagellant_background");
+			}
+			r = this.Math.rand(0, 6);
+			if (r == 0)
+			{
+				_list.push("monk_background");
+			}
+			r = this.Math.rand(0, 4);
+			if (r == 0)
+			{
+				_list.push("legend_nun_background");
+			}
+			r = this.Math.rand(0, 5);
+			if (r == 0)
+			{
+				_list.push("witchhunter_background");
+			}
+			r = this.Math.rand(0, 19);
+			if (r == 0)
+			{
+				_list.push("legend_crusader_background");
+			}
+		}
 	}
 
 });

@@ -56,7 +56,8 @@ this.hedge_knight_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Body = "bust_naked_body_01";
-
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Cruel;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Chivalrous;
 		if (this.Const.LegendMod.Configs.LegendGenderEnabled())
 		{
 			local r = this.Math.rand(0, 1);
@@ -105,7 +106,8 @@ this.hedge_knight_background <- this.inherit("scripts/skills/backgrounds/charact
 				this.Const.Perks.FitTree
 			],
 			Enemy = [this.Const.Perks.SwordmastersTree],
-			Class = []
+			Class = [],
+			Magic = []
 		}
 	}
 

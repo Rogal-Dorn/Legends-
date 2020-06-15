@@ -135,6 +135,11 @@ this.perk_legend_smackdown <- this.inherit("scripts/skills/skill", {
 		skills.removeByID("effects.spearwall");
 		skills.removeByID("effects.riposte");
 
+		if (!_targetEntity.hasSkill("effects.legend_baffled"))
+		{
+			_targetEntity.add(this.new("scripts/skills/effects/legend_baffled_effect"));
+		}
+
 		_targetEntity.setCurrentMovementType(this.Const.Tactical.MovementType.Involuntary);
 		local damage = this.Math.max(0, this.Math.abs(knockToTile.Level - _targetEntity.getTile().Level) - 1) * this.Const.Combat.FallingDamage;
 		if (damage == 0)

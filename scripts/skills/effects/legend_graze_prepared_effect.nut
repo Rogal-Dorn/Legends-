@@ -6,8 +6,8 @@ this.legend_graze_prepared_effect<- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "effects.legend_graze_prepared";
 		this.m.Name = "Prepared to inflict a slow bleed";
-		this.m.Icon = "skills/status_effect_66.png";
-		this.m.IconMini = "status_effect_66_mini";
+		this.m.Icon = "skills/graze_circle.png";
+		this.m.IconMini = "graze_circle_mini";
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
 		this.m.IsStacking = false;
@@ -39,7 +39,7 @@ this.legend_graze_prepared_effect<- this.inherit("scripts/skills/skill", {
 	{
 		if (this.getContainer().getActor().isPlacedOnMap())
 		{
-			this.spawnIcon("status_effect_54", this._targetEntity.getTile());
+			this.spawnIcon("graze", this.getContainer().getActor().getTile());
 		}
 
 		this.m.AttacksLeft = 1;

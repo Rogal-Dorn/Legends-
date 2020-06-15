@@ -36,13 +36,21 @@ this.perk_legend_lacerate <- this.inherit("scripts/skills/skill", {
 			return false;
 		}
 
-		local user = _skill.getContainer().getActor();
-		local ourHP =  user.getHitpoints();
-		local ourMaxHP =  user.getHitpointsMax();
-		local PercentHP = ourMaxHP / 100;
-		local chance = ourHP / PercentHP;
+		// local user = _skill.getContainer().getActor();
+		// local ourHP =  user.getHitpoints();		//75
+		// local ourMaxHP =  user.getHitpointsMax();//100
+		// local PercentHP = ourMaxHP / 100;		// (100/100) = 1
+		// local chance = ourHP / PercentHP;		// 75/1
 
-		if ( this.Math.rand(1, 100) < chance)
+		local user = _skill.getContainer().getActor();
+		local currentHP = user.getHitpoints(); //75
+		local maxHP = user.getHitpointsMax();  //100
+		local missingHP = maxHP - currentHP;   //missing 25
+		local percentMissingHP = this.Math.round(missingHP / maxHP); // (25/100) = .25
+		local chance = percentMissingHP * 100; //.25 * 100 = 25 chance
+
+
+		if (this.Math.rand(1, 100) > chance)
 		{
 			return false;
 		}

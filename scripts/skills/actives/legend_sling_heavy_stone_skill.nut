@@ -1,13 +1,13 @@
 this.legend_sling_heavy_stone_skill <- this.inherit("scripts/skills/skill", {
 	m = {
-		AdditionalAccuracy = -30,
+		AdditionalAccuracy = -40,
 		AdditionalHitChance = 0
 	},
 	function create()
 	{
 		this.m.ID = "actives.legend_sling_heavy_stone";
 		this.m.Name = "Sling Heavy Stone";
-		this.m.Description = "Hurl a stone towards a target with your sling. Hard to aim and very unweildy, but stones are everywhere so you never run out of ammunition. Can not be used while engaged in melee.";
+		this.m.Description = "Hurl a stone towards a target with your sling. Hard to aim and very unwieldy, but stones are everywhere so you never run out of ammunition. Can not be used while engaged in melee.";
 		this.m.KilledString = "Stoned";
 		this.m.Icon = "skills/active_12.png";
 		this.m.IconDisabled = "skills/active_12_sw.png";
@@ -84,7 +84,7 @@ this.legend_sling_heavy_stone_skill <- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/hitchance.png",
-				text = "Has [color=" + this.Const.UI.Color.NegativeValue + "]" + (-10 + this.m.AdditionalAccuracy) + "%[/color] chance to hit, and [color=" + this.Const.UI.Color.PositiveValue + "]+" + (5 + this.m.AdditionalHitChance) + "%[/color] per tile of distance"
+				text = "Has [color=" + this.Const.UI.Color.NegativeValue + "]" + (this.m.AdditionalAccuracy) + "%[/color] chance to hit, and [color=" + this.Const.UI.Color.PositiveValue + "]+" + (this.m.AdditionalHitChance) + "%[/color] per tile of distance"
 		});
 
 		ret.push({
@@ -156,8 +156,8 @@ this.legend_sling_heavy_stone_skill <- this.inherit("scripts/skills/skill", {
 	{
 		if (_skill == this)
 		{
-			_properties.RangedSkill += -10 + this.m.AdditionalAccuracy;
-			_properties.HitChanceAdditionalWithEachTile += 5 + this.m.AdditionalHitChance;
+			_properties.RangedSkill += -20 + this.m.AdditionalAccuracy;
+			_properties.HitChanceAdditionalWithEachTile += 3 + this.m.AdditionalHitChance;
 		}
 	}
 

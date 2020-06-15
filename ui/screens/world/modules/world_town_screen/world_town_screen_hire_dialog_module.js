@@ -590,7 +590,8 @@ WorldTownScreenHireDialogModule.prototype.updateDetailsPanel = function(_element
             this.mDetailsPanel.TryoutButton.removeClass('display-block').addClass('display-none');
             this.dismissButtonLayout.show();
             this.mDetailsPanel.DismissButton.removeClass('display-none').addClass('display-block');
-            this.mDetailsPanel.TryoutCostsContainer.removeClass('display-block').addClass('display-none');
+            //this.mDetailsPanel.TryoutCostsContainer.removeClass('display-block').addClass('display-none');
+			this.mDetailsPanel.TryoutCostsContainer.addClass('display-block').removeClass('display-none');
             this.mDetailsPanel.DismissButton.bindTooltip({ contentType: 'ui-element', elementId: "world-town-screen.hire-dialog-module.DismissButton" });
         }
         else

@@ -35,7 +35,6 @@ this.peddler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Tidy;
 		this.m.Body = "bust_naked_body_02";
-
 		this.m.IsLowborn = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Kind;
@@ -61,7 +60,8 @@ this.peddler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 				this.Const.Perks.DeviousTree
 			],
 			Enemy = [this.Const.Perks.BanditTree],
-			Class = [this.Const.Perks.BarterClassTree]
+			Class = [this.Const.Perks.BarterClassTree],
+			Magic = []
 		}
 	}
 
@@ -188,10 +188,7 @@ this.peddler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		{
 			items.equip(this.new("scripts/items/weapons/dagger"));
 		}
-
-		r = this.Math.rand(0, 2);
-
-		if (r == 0)
+		else if (r == 2)
 		{
 			items.equip(this.new("scripts/items/weapons/light_crossbow"));
 			items.equip(this.new("scripts/items/ammo/quiver_of_bolts"));
@@ -226,10 +223,7 @@ this.peddler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		{
 			items.equip(this.new("scripts/items/weapons/dagger"));
 		}
-
-		r = this.Math.rand(0, 2);
-
-		if (r == 0)
+		else if (r == 2)
 		{
 			items.equip(this.new("scripts/items/weapons/light_crossbow"));
 			items.equip(this.new("scripts/items/ammo/quiver_of_bolts"));

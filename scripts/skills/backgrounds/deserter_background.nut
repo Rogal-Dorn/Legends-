@@ -42,7 +42,8 @@ this.deserter_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Body = "bust_naked_body_00";
-
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Good;
 		this.m.Level = this.Math.rand(1, 2);
 		this.m.IsCombatBackground = true;
 		this.m.IsLowborn = true;
@@ -70,7 +71,8 @@ this.deserter_background <- this.inherit("scripts/skills/backgrounds/character_b
 					this.Const.Perks.BanditTree,
 					this.Const.Perks.NoblesTree
 					],
-			Class = []
+			Class = [],
+			Magic = []
 		}
 	}
 

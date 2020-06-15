@@ -63,7 +63,8 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 		this.m.IsCombatBackground = true;
 		this.m.IsLowborn = true;
 		this.m.IsUntalented = true;
-
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Cruel;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.NeutralMax;
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[2];
 		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[2];
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[2];
@@ -99,6 +100,7 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 				this.Const.Perks.PerkDefs.Recover,
 				this.Const.Perks.PerkDefs.BloodyHarvest,
 				this.Const.Perks.PerkDefs.LegendBackToBasics,
+				this.Const.Perks.PerkDefs.LegendBearform,
 				this.Const.Perks.PerkDefs.LegendAlert
 			],
 			[
@@ -244,19 +246,19 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 	{
 		local c = {
 			Hitpoints = [
-				25,
+				20,
 				25
 			],
 			Bravery = [
-				15,
-				15
+				5,
+				10
 			],
 			Stamina = [
-				20,
+				15,
 				20
 			],
 			MeleeSkill = [
-				25,
+				20,
 				25
 			],
 			RangedSkill = [
@@ -264,16 +266,16 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 				0
 			],
 			MeleeDefense = [
-				0,
-				0
+				-5,
+				-5
 			],
 			RangedDefense = [
-				0,
-				0
+				-5,
+				-5
 			],
 			Initiative = [
-				0,
-				0
+				-5,
+				-5
 			]
 		};
 		return c;

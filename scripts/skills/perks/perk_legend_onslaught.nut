@@ -54,18 +54,18 @@ this.perk_legend_onslaught <- this.inherit("scripts/skills/skill", {
 		}
 
 
-		if ( this.Math.rand(1, 100) > 25)
+		if ( this.Math.rand(1, 100) > 50)
 		{
 			return false;
 		}
 		
 		if (!_targetEntity.getSkills().hasSkill("effects.stunned"))
 		{
-			_targetEntity.getSkills().add(this.new("scripts/skills/effects/legend_dazed_effect"));
+			_targetEntity.getSkills().add(this.new("scripts/skills/effects/legend_baffled_effect"));
 
 			if (!user.isHiddenToPlayer() && _targetEntity.getTile().IsVisibleForPlayer)
 			{
-				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(user) + " battered " + this.Const.UI.getColorizedEntityName(_targetEntity) + " leaving them dazed");
+				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(user) + " battered " + this.Const.UI.getColorizedEntityName(_targetEntity) + " leaving them baffled");
 			}
 		}
 

@@ -19,12 +19,12 @@ this.legend_robes <- this.inherit("scripts/items/legend_armor/legend_armor", {
 			16,
 			17,
 			18
-		]
+		];
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.InventorySound = this.Const.Sound.ClothEquip;
-		this.m.Value = 35;
+		this.m.Value = 25;
 		this.m.Condition = 25;
 		this.m.ConditionMax = 25;
 		this.m.StaminaModifier = -2;

@@ -48,6 +48,8 @@ this.retired_soldier_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.IsCombatBackground = true;
 		this.m.IsRangerRecruitBackground = true;
 		this.m.IsCrusaderRecruitBackground = true;
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Cruel;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Chivalrous;
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[1];
 		this.m.Modifiers.Repair = this.Const.LegendMod.ResourceModifiers.Repair[2];
 		this.m.Modifiers.Salvage = this.Const.LegendMod.ResourceModifiers.Salvage[1];
@@ -74,7 +76,8 @@ this.retired_soldier_background <- this.inherit("scripts/skills/backgrounds/char
 				this.Const.Perks.BanditTree,
 				this.Const.Perks.BarbarianTree
 			],
-			Class = []
+			Class = [],
+			Magic = [this.Const.Perks.CaptainMagicTree]
 		}
 	}
 

@@ -21,6 +21,16 @@ this.money_delivery_action <- this.inherit("scripts/factions/faction_action", {
 			return;
 		}
 
+		if (this.World.Assets.getMoralReputation() <= 80)
+		{
+			return;
+		}
+
+		if (this.Math.rand(1, 100) > 20)
+		{
+			return;
+		}
+
 		local settlements = this.World.EntityManager.getSettlements();
 		local mySettlement = _faction.getSettlements()[0];
 		local candidates = 0;

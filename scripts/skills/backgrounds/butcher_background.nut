@@ -40,7 +40,8 @@ this.butcher_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Body = "bust_naked_body_02";
-
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.NeutralMax;
 		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[1];
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[1];
 		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[2];
@@ -65,7 +66,8 @@ this.butcher_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			Class = [
 				this.Const.Perks.ButcherClassTree,
 				this.Const.Perks.ChefClassTree
-			]
+			],
+			Magic = []
 		}
 	}
 	//Default Male

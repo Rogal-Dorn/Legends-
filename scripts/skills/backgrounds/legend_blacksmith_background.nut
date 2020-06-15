@@ -34,6 +34,8 @@ this.legend_blacksmith_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.m.Body = "bust_naked_body_01";
 		this.m.IsRangerRecruitBackground = true;
 		this.m.IsCrusaderRecruitBackground = true;
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[3];
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[1];
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[2];
@@ -59,7 +61,8 @@ this.legend_blacksmith_background <- this.inherit("scripts/skills/backgrounds/ch
 				this.Const.Perks.FitTree
 			],
 			Enemy = [],
-			Class = [this.Const.Perks.RepairClassTree]
+			Class = [this.Const.Perks.RepairClassTree],
+			Magic = []
 		}
 	}
 
@@ -87,7 +90,7 @@ this.legend_blacksmith_background <- this.inherit("scripts/skills/backgrounds/ch
 
 	function onBuildDescription()
 	{
-		return "{Most every town has a resident blacksmith, | The local blacksmith is always an important person in the village, | Key to the success of any town is the skills of its resident blacksmith,}{needed to repair tools of every kind and the equipment of the local militia. | vital to the maintenance of sword and plow alike.| relied upon by the whole village for tools of every sort, from horseshoes to axes.}{%name%, learning from his father, was the resident blacksmith of %townname%. | Understanding this, %name% took up an apprenticeship in %randomtown% and, once having mastered the craft, settled down as the blacksmith of %townname%. | The son of one such blacksmith, %name% was forced into the profession by his overzealous father, though he cared little for it. | Hastily trained during a greenskin incursion, %name% eventually settled down as one such blacksmith, in %townname%. | %name% was one such blacksmith.}{Unfortunately, %name%’s wife was killed in a freak accident. Unable to remain in %townname% any longer, %name% sold all he had and left, wandering aimlessly. Eventually he found himself in the company of sellswords, where his strong arms and hammer accustomed hands drew great interest. | Feeling his years wear away, %name% was overcome by restlessness, and he decided to set out as a mercenary, where his strong arms could be of different use. | After many years %name% was nearly killed by greenskin raiders, escaping only by blind chance. Thoroughly shaken, %name% quit his village, determined to learn all he could of warlore and battlecraft so that greenskins would never menace him again.}";
+		return "{Most every town has a resident blacksmith, | The local blacksmith is always an important person in the village, | Key to the success of any town is the skills of its resident blacksmith, }{needed to repair tools of every kind and the equipment of the local militia. | vital to the maintenance of sword and plow alike. | relied upon by the whole village for tools of every sort, from horseshoes to axes.}{%name%, learning from his father, was the resident blacksmith of %townname%. | Understanding this, %name% took up an apprenticeship in %randomtown% and, once having mastered the craft, settled down as the blacksmith of %townname%. | The son of one such blacksmith, %name% was forced into the profession by his overzealous father, though he cared little for it. | Hastily trained during a greenskin incursion, %name% eventually settled down as one such blacksmith, in %townname%. | %name% was one such blacksmith.}{Unfortunately, %name%’s wife was killed in a freak accident. Unable to remain in %townname% any longer, %name% sold all he had and left, wandering aimlessly. Eventually he found himself in the company of sellswords, where his strong arms and hammer accustomed hands drew great interest. | Feeling his years wear away, %name% was overcome by restlessness, and he decided to set out as a mercenary, where his strong arms could be of different use. | After many years %name% was nearly killed by greenskin raiders, escaping only by blind chance. Thoroughly shaken, %name% quit his village, determined to learn all he could of warlore and battlecraft so that greenskins would never menace him again.}";
 	}
 
 	function onChangeAttributes()

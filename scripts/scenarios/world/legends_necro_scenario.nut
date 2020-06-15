@@ -6,7 +6,7 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		this.m.Name = "Warlock";
 		this.m.Description = "[p=c][img]gfx/ui/events/event_46.png[/img][/p][p] Death is no barrier, others flee from its yawning abyss, but you embrace the other side. \n\n[color=#bcad8c]Necromancy:[/color] Start with undead companions and a scythe that summons the dead.\n[color=#bcad8c]Gruesome harvest:[/color] Collect human corpses to fashion new minions, maintain them with medical supplies\n[color=#bcad8c]Blood magic:[/color] Drain blood, feast on corpses and use your own blood in rituals.\n[color=#bcad8c]Avatar:[/color] When the warlock dies, the spells fade and the game ends.[/p]";
 		this.m.Difficulty = 2;
-		this.m.Order = 25;
+		this.m.Order = 26;
 	}
 
 	function isValid()
@@ -64,8 +64,13 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
         bros[2].setStartValuesEx(this.Const.CharacterBackgroundsAnimated);
 		bros[2].getBackground().m.RawDescription = "You can not remember much about who %name% was in life, it is probably for the best that he can\'t either. All that matters is he is yours now.";
         bros[2].getSkills().add(this.new("scripts/skills/injury_permanent/legend_rotten_flesh"));
-		bros[2].getSkills().add(this.new("scripts/skills/perks/perk_zombie_bite"));
+		bros[2].getSkills().add(this.new("scripts/skills/perks/perk_legend_zombie_bite"));
 		bros[2].setVeteranPerks(3);	
+		foreach( bro in bros )
+		{
+			local val = this.World.State.addNewID(bro);
+			bro.m.CompanyID = val;
+		}
 		this.World.Assets.addMoralReputation(-100);
 		this.World.Assets.m.Money = this.World.Assets.m.Money / 2;
 	}
@@ -132,6 +137,13 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			this.Music.setTrackList(this.Const.Music.CivilianTracks, this.Const.Music.CrossFadeTime);
 			this.World.Events.fire("event.legend_necro_scenario_intro");
 		}, null);
+foreach (b in this.World.getPlayerRoster().getAll())
+		{
+			foreach (add in this.World.getPlayerRoster().getAll())
+			{
+				b.changeActiveRelationship(add, this.Math.rand(0, 10));
+			}
+		}
 
 	}
 	

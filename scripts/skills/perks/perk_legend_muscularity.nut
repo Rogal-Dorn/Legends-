@@ -17,7 +17,7 @@ this.perk_legend_muscularity <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 			local bodyHealth = this.getContainer().getActor().getHitpoints();
-			_properties.DamageRegularMax += this.Math.floor(bodyHealth * 0.1);
+			_properties.DamageRegularMax += this.Math.min(50, this.Math.floor(bodyHealth * 0.1));
 		
 	}
 

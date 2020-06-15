@@ -1,10 +1,9 @@
-
 this.legend_armor_plate_ancient_scale_coat <- this.inherit("scripts/items/legend_armor/legend_armor_upgrade", {
 	m = {},
 	function create()
 	{
 		this.legend_armor_upgrade.create();
-		this.m.Type = this.Const.Items.ArmorUpgrades.Plate
+		this.m.Type = this.Const.Items.ArmorUpgrades.Plate;
 		this.m.ID = "legend_armor.plate_ancient_scale_coat";
 		this.m.Name = "Ancient Scale Coat";
 		this.m.Description = "A heavy and tarnished scale coat of ancient design that belongs into a collection, not on the battlefield.";
@@ -16,11 +15,11 @@ this.legend_armor_plate_ancient_scale_coat <- this.inherit("scripts/items/legend
 		this.m.SpriteBack = "bust_legend_plate_ancient_scale_coat";
 		this.m.SpriteDamagedBack = "bust_legend_plate_ancient_scale_coat_damaged";
 		this.m.SpriteCorpseBack = "bust_legend_plate_ancient_scale_coat_dead";
-		this.m.Value = 2500;
-		this.m.Condition = 130;
-		this.m.ConditionMax = 130;
-		this.m.StaminaModifier = -26;
-        this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
+		this.m.Value = 2000;
+		this.m.Condition = 140;
+		this.m.ConditionMax = 140;
+		this.m.StaminaModifier = -24;
+		this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
 	}
 
 });

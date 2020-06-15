@@ -4,7 +4,7 @@ this.legend_wooden_stake_stab <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_wooden_stake_stab";
 		this.m.Name = "Stab with Wooden Stake";
-		this.m.Description = "A quick and fast stab with the wooden shaft.";
+		this.m.Description = "A quick and fast stab with the wooden shaft. Deals +100 damage to vampires";
 		this.m.KilledString = "Staked";
 		this.m.Icon = "skills/wooden_stake_square.png";
 		this.m.IconDisabled = "skills/wooden_stake_square_bw.png";
@@ -54,12 +54,12 @@ this.legend_wooden_stake_stab <- this.inherit("scripts/skills/skill", {
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
-		if (_skill == this)
+		if (_skill == this && _targetEntity != null)
 		{
 			if (_targetEntity.getType() == this.Const.EntityType.Vampire || _targetEntity.getType() == this.Const.EntityType.LegendVampireLord)
 			{
-			_properties.DamageRegularMin += 80;
-			_properties.DamageRegularMax += 85;
+			_properties.DamageRegularMin += 100;
+			_properties.DamageRegularMax += 105;
 			}
 		}
 	}
