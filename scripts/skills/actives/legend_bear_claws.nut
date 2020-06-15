@@ -17,8 +17,8 @@ this.legend_bear_claws <- this.inherit("scripts/skills/skill", {
 		this.m.Name = "Bear Claws";
 		this.m.Description = "Very long and sharp claws that can tear flesh across multiple opponents and leave them bleeding";
 		this.m.KilledString = "Ripped to shreds";
-		this.m.Icon = "skills/bear_square.png";
-		this.m.IconDisabled = "skills/bear_square_bw.png";
+		this.m.Icon = "skills/active_21.png";
+		this.m.IconDisabled = "skills/active_21_bw.png";
 		this.m.Overlay = "active_21";
 		this.m.SoundOnUse = [
 			"sounds/enemies/ghoul_claws_01.wav",

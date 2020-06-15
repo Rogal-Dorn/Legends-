@@ -57,7 +57,6 @@ this.legend_transformed_tree_effect <- this.inherit("scripts/skills/skill", {
 				}
 			}
 		local items = actor.getItems();
-		items.getData()[this.Const.ItemSlot.Offhand][0] = -1;
 		items.getData()[this.Const.ItemSlot.Mainhand][0] = -1;
 
 		this.m.Body = actor.getSprite("body").getBrush().Name;
@@ -155,7 +154,6 @@ this.legend_transformed_tree_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSkills().removeByID("actives.grow_shield");
 		actor.getSkills().removeByID("racial.schrat");
 		local items = actor.getItems();
-		items.getData()[this.Const.ItemSlot.Offhand][0] = null;
 		items.getData()[this.Const.ItemSlot.Mainhand][0] = null;
 	}
 

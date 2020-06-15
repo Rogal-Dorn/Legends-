@@ -42,6 +42,9 @@ this.legends_druid_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
 		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_bearform"));
 		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_wolfform"));
+		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_treeform"));
+		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_summon_storm"));
+		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_call_lightning"));
 		bros[0].getTags().set("IsPlayerCharacter", true);
 		bros[0].setPlaceInFormation(3);
 		bros[0].setVeteranPerks(2);	
@@ -179,8 +182,21 @@ foreach (b in this.World.getPlayerRoster().getAll())
 	{
 
 		bro.improveMood(0.5, "Learned a new skill");
+		local r = this.Math.rand(1, 3);
+		if (r == 1)
+		{
 		bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_bearform"));
+		}
+
+		else if (r == 2)
+		{
 		bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_wolfform"));
+		}
+
+		else if (r == 3)
+		{
+		bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_treeform"));
+		}
 	}
 
 	function onUpdateHiringRoster( _roster )
