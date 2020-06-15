@@ -186,10 +186,10 @@ foreach (b in this.World.getPlayerRoster().getAll())
 	function onUpdateHiringRoster( _roster )
 	{
 		local bros = _roster.getAll();
-
+		local garbage = [];
 		foreach( i, bro in bros )
 		{
-			if (bro.getBackground().isDruidRecruitBackground())
+			if (bro.getBackground().getID() == "background.wildman" || bro.getBackground().getID() == "background.wildwoman" || bro.getBackground().getID() == "background.legend_herbalist"  || bro.getBackground().getID() == "background.legend_druid"  || bro.getBackground().getID() == "background.houndmaster"  || bro.getBackground().getID() == "background.legend_conjurer"  || bro.getBackground().getID() == "background.legend_enchanter"  || bro.getBackground().getID() == "background.legend_runesmith"  || bro.getBackground().getID() == "background.legend_entrancer"  || bro.getBackground().getID() == "background.legend_donkey"  || bro.getBackground().getID() == "background.legend_spiritualist")
 			{
 				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.9);
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.9);	

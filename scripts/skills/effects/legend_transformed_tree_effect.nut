@@ -103,7 +103,7 @@ this.legend_transformed_tree_effect <- this.inherit("scripts/skills/skill", {
 
 		if (!this.m.Container.hasSkill("actives.grow_shield"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/grow_shield_skilll"));
+			this.m.Container.add(this.new("scripts/skills/actives/grow_shield_skill"));
 		}
 
 
@@ -196,9 +196,9 @@ this.legend_transformed_tree_effect <- this.inherit("scripts/skills/skill", {
 
 		if (!this.m.Container.hasSkill("actives.grow_shield"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/grow_shield_skilll"));
+			this.m.Container.add(this.new("scripts/skills/actives/grow_shield_skill"));
 		}
-
+		_properties.MovementAPCostAdditional += 1;
 	}
 
 	function onTurnEnd()

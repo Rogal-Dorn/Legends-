@@ -3293,7 +3293,7 @@ fixes unfinished event randomly firing and freezing events
 fixes some features of the previous build not being present in the reverted version 
 
 
-14.0.0.7 Druidic Dance
+14.0.0.7 Dancing Druids 
 
 **Druids**
 * There is a new druidic magic school:
@@ -3343,4 +3343,16 @@ necrosavant background beard fix
 icon fix for terrifying visage
 leather jacket named inventory icon fix
 ratcatchers can now be known as "the beagle"
+
+14.0.0.7e
+
+fixes crash entering schrat mode
+fixes summon storm crash 
+fixes town not enterable from druid spelling defence like an aussie 
+fixes town not enterable due to apocethary mushrooms in the mushroom grove 
+fixes town not enterable as druid
+fixes recruitment as druid  
+fixes town not enterable due to inventor not knowing their class 
+
+
 

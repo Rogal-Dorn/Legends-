@@ -286,7 +286,7 @@ this.flagellant_background <- this.inherit("scripts/skills/backgrounds/character
 		}
 
 		local cloths = [
-            [1, ""],
+            [0, ""],
 			[0, "cloth/legend_gambeson"],
 			[0, "cloth/legend_gambeson_plain"],
 			[0, "cloth/legend_gambeson_wolf"],
