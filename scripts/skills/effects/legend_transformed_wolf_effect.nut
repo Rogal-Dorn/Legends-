@@ -63,8 +63,8 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 		this.m.Body = actor.getSprite("body").getBrush().Name;
 		this.m.Head = actor.getSprite("head").getBrush().Name;
 
-		actor.getSprite("body").setBrush("bust_wolf_01");
-		actor.getSprite("head").setBrush("bust_wolf_01_head");
+		actor.getSprite("body").setBrush("bust_direwolf_0" + this.Math.rand(1, 3));
+		actor.getSprite("head").setBrush("bust_direwolf_0" + this.Math.rand(1, 3) + "_head");
 
 		actor.getSprite("armor").Alpha = 10;
 		actor.getSprite("helmet").Alpha = 10;
@@ -146,8 +146,8 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 			}
 
 
-		actor.getSkills().removeByID("actives.legend_bear_claws");
-		actor.getSkills().removeByID("actives.legend_bear_bite");
+		actor.getSkills().removeByID("actives.werewolf_claws");
+		actor.getSkills().removeByID("actives.werewolf_bite");
 		local items = actor.getItems();
 		items.getData()[this.Const.ItemSlot.Offhand][0] = null;
 		items.getData()[this.Const.ItemSlot.Mainhand][0] = null;
