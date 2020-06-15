@@ -2926,7 +2926,7 @@ gt.Const.Perks.PerkDefObjects <- [
 		ID = "perk.legend_treeform",
 		Script = "scripts/skills/perks/perk_legend_treeform",
 		Name = this.Const.Strings.PerkName.LegendTreeform,
-		Tooltip = this.Const.Strings.PerkDescription.LegendTreefform,
+		Tooltip = this.Const.Strings.PerkDescription.LegendTreeform,
 		Icon = "ui/perks/tree_circle.png",
 		IconDisabled = "ui/perks/tree_circle_bw.png",
 		Const = "LegendTreeform"

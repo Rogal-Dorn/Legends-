@@ -41,10 +41,6 @@ this.legends_druid_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[0].getBackground().m.RawDescription = "%name% has only ever known the wild woods, the worlds of men are strange and disgusting";
 		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
 		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_bearform"));
-		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_wolfform"));
-		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_treeform"));
-		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_summon_storm"));
-		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_call_lightning"));
 		bros[0].getTags().set("IsPlayerCharacter", true);
 		bros[0].setPlaceInFormation(3);
 		bros[0].setVeteranPerks(2);	
@@ -54,18 +50,6 @@ this.legends_druid_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			local val = this.World.State.addNewID(bro);
 			bro.m.CompanyID = val;
 		}
-	//	bros[1].setStartValuesEx([
-	//		"legend_ranger_background"
-	//	]);
-	//	bros[1].getBackground().m.RawDescription = "{%name% grew up in the rangers, taught the ways of the forest by his father. Running through the woods his whole life has made him particularly good at tracking enemies}";
-	//	bros[1].setPlaceInFormation(4);
-	//	bros[1].setVeteranPerks(2);	
-	//	bros[2].setStartValuesEx([
-	//		"legend_ranger_background"
-	//	]);
-	//	bros[2].getBackground().m.RawDescription = "{%name% was woodsman, captured by the rangers for destroying a sacred grove. He recognised their cause as just and joined on the spot, he is deeply commited and driven}";
-	//	bros[2].setPlaceInFormation(5);
-	//	bros[2].setVeteranPerks(2);	
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/legend_fresh_fruit_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/roots_and_berries_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/accessory/legend_apothecary_mushrooms_item"));
@@ -205,9 +189,14 @@ foreach (b in this.World.getPlayerRoster().getAll())
 
 		foreach( i, bro in bros )
 		{
-			if (!bro.getBackground().isDruidRecruitBackground())
+			if (bro.getBackground().isDruidRecruitBackground())
 			{
-				garbage.push(bro);
+				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.9);
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.9);	
+			}
+			else
+			{
+			garbage.push(bro);
 			}
 		}
 
@@ -219,11 +208,31 @@ foreach (b in this.World.getPlayerRoster().getAll())
 
 	function onBuildPerkTree( _tree)
 	{
+
 		if  (_tree == null)
 		{
 			return;
 		}
-		_tree.addPerk(this.Const.Perks.PerkDefs.Pathfinder);
+		local r = this.Math.rand(0, 5);
+		if (r <= 2)
+		{
+		_tree.addPerk(this.Const.Perks.PerkDefs.LegendWolfform);
+		}
+		else if (r == 3)
+		{
+		_tree.addPerk(this.Const.Perks.PerkDefs.LegendBearform);
+		}
+		else if (r == 4)
+		{
+		_tree.addPerk(this.Const.Perks.PerkDefs.LegendBearform);
+		}
+		else if (r == 5)
+		{
+		_tree.addPerk(this.Const.Perks.PerkDefs.LegendTreeform);
+		}
+
+
+		
 	}
 
 });
