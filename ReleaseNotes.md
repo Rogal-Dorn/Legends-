@@ -3362,3 +3362,4 @@ fixes people getting mad when they claim they're enjoying the company
 adds some extra moral reputation to crusader start
 fixes bug with characters that join you in a fight (e.g. protect the noble's son contract)
 fixes druid recruit background tag
+random party background and id assignment fixes
