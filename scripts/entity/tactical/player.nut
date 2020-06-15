@@ -2339,6 +2339,11 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	//			if ( FriendshipToNotHitBonus in relTable ) -> give bonus to not hit friend
 	function getActiveRelationshipWith( _actor )
 	{
+		if ( _actor.getCompanyID() == -1 )
+		{
+			this.logInfo("Error: Company ID Initialized to -1 on character. Could be a temporary unit such as the Noble's Son");
+			return null;
+		}
 		return this.m.ActiveRelationships[_actor.getCompanyID()];
 	}
 
