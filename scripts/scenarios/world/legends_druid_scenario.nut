@@ -40,8 +40,8 @@ this.legends_druid_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		]);
 		bros[0].getBackground().m.RawDescription = "%name% has only ever known the wild woods, the worlds of men are strange and disgusting";
 		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
-		bro.getSkills().add(this.new("scripts/skills/perks/perk_bearform"));
-		bro.getSkills().add(this.new("scripts/skills/perks/perk_wolfform"));
+		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_bearform"));
+		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_wolfform"));
 		bros[0].getTags().set("IsPlayerCharacter", true);
 		bros[0].setPlaceInFormation(3);
 		bros[0].setVeteranPerks(2);	
@@ -155,8 +155,8 @@ foreach (b in this.World.getPlayerRoster().getAll())
 	{
 		this.starting_scenario.onInit();
 		this.World.State.getPlayer().m.BaseMovementSpeed = 111;
-		this.World.Assets.m.BrothersMax = 3;
-		this.World.Tags.set("IsLegendsHunter", true);
+		this.World.Assets.m.BrothersMax = 27;
+		this.World.Tags.set("IsLegendsDruid", true);
 	}
 
 	function onCombatFinished()
@@ -183,8 +183,8 @@ foreach (b in this.World.getPlayerRoster().getAll())
 	{
 
 		bro.improveMood(0.5, "Learned a new skill");
-		bro.getSkills().add(this.new("scripts/skills/perks/perk_bearform"));
-		bro.getSkills().add(this.new("scripts/skills/perks/perk_wolfform"));
+		bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_bearform"));
+		bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_wolfform"));
 	}
 
 	function onUpdateHiringRoster( _roster )
@@ -193,10 +193,15 @@ foreach (b in this.World.getPlayerRoster().getAll())
 
 		foreach( i, bro in bros )
 		{
-			if (bro.getBackground().getBackground().getID() != "background.legend_vala" && bro.getBackground().getBackground().getID() != "background.legend_druid" && bro.getBackground().getBackground().getID() != "background.legend_herbalist"  && bro.getBackground().getBackground().getID() != "background.legend_ranger"  && bro.getBackground().getBackground().getID() != "background.wildman" && bro.getBackground().getBackground().getID() != "background.wildwoman"  && bro.getBackground().getBackground().getID() != "background.legend_donkey"  && bro.getBackground().getBackground().getID() != "background.legend_enchanter"  && bro.getBackground().getBackground().getID() != "background.legend_entrancer"   && bro.getBackground().getBackground().getID() != "background.legend_conjurer")
+			if (!bro.getBackground().isDruidRecruitBackground())
 			{
 				garbage.push(bro);
 			}
+		}
+
+		foreach( g in garbage )
+		{
+			_roster.remove(g);
 		}
 	}
 

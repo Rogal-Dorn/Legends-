@@ -173,6 +173,8 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("armor_upgrade_front").Alpha = 10;
 		actor.getSprite("socket").Alpha = 10;
 
+		actor.getSkills().addSkill(this.new("scripts/skills/actives/werewolf_claws"));
+		actor.getSkills().addSkill(this.new("scripts/skills/actives/werewolf_bite"));
 		_properties.MovementAPCostAdditional += -1;
 		_properties.MovementFatigueCostMult *= 0.5;
 

@@ -7,8 +7,8 @@ this.legend_transform_into_wolf <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "actives.legend_transform_into_wolf";
 		this.m.Name = "Transform into Wolf";
 		this.m.Description = "Enables the character to turn into a wolf, requires free hands";
-		this.m.Icon = "skills/wolf_square.png";
-		this.m.IconDisabled = "skills/wolf_square_bw.png";
+		this.m.Icon = "skills/wolf2_square.png";
+		this.m.IconDisabled = "skills/wolf2_square_bw.png";
 		this.m.Overlay = "active_12";
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.NonTargeted;
