@@ -1717,7 +1717,9 @@ gt.Const.Strings.PerkName <- {
 	LegendHairSplitter = "Hair Splitter",
 	LegendBearform = "Bear Form",
 	LegendRoots = "Roots",
-	LegendWolfform = "Wolf Form"
+	LegendWolfform = "Wolf Form",
+	LegendTreeform = "Tree Form",
+	LegendTrueForm = "True Form"
 };
 gt.Const.Strings.PerkDescription <- {
 	Relentless = "Don\'t slow down! At all times your Initiative is reduced only by [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] of your accumulated Fatigue, instead of all of it. \n[color=#0b0084]From the Fit perk group[/color]",
@@ -2059,7 +2061,9 @@ gt.Const.Strings.PerkDescription <- {
 	LegendHairSplitter = "Years of practice throwing things at apples above heads have granted a magnetic attraction to the cranium. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+30%[/color] chance to hit the head",
 	LegendBearform = "Transform into a powerful bear, doubles your hitpoints. Requires free hands",
 	LegendRoots = "Summon roots and vines to entangle your enemies",
-	LegendWolfform = "Transform into a nimble wolf, decreasing movement costs. Requires free hands"
+	LegendWolfform = "Transform into a nimble wolf, decreasing movement costs. Requires free hands",
+	LegendTreeform = "Transform into a deadly schrat, gaining scrat defenses and attacks. Requires free hands",
+	LegendTrueForm = "Increases the length of your transformations to 8 turns"
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

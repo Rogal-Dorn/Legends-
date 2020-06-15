@@ -3296,20 +3296,24 @@ fixes some features of the previous build not being present in the reverted vers
 14.0.0.7 Druidic shield 
 
 Adds Druid Scenario 
-* Loner: Only hires wildlings, herbalists and practitioners of wild magic 
+* Druids have the new druidic arts magic school, with wild forms, healing and roots 
 * Wild form: All recruits gain the Wolf Form and Bear Form abilities 
+* Loner: Only hires wildlings, herbalists, barbarians, conjurers, druids, diviners, enchanters, herbalists, houndmasters and vala. 
 * Avatar:  when your druid dies its game over 
-* adds the druidic arts magic school, with wild forms, healing and roots 
+* 
 * druids can be found near gatheres hut with magic enabled 
+
+Some barbarian enemies can ocassionally adopt wild forms 
 
 Rain reduced to only applying -1 vision. Cloaks no longer protect from this 
 Chain lighting costs -20 fatigue and -1AP when it is raining 
 Roots costs -10 fatigue and -1ap when its raining 
 berserker commander can now transform into a bear. 
-Some barbarian enemies can ocassionally adopt bear form
 named shields can be salvaged once destroyed. 
 named shields max stats increased significantly 
 Jesters hat, Juggler's hat, Witchunter hat and witchunter helm all have their armor values fixed 
+Padded jesters hat and Death jesters hat added, can be bought in armorsmiths near dyers huts or wool spinners 
+Named Runic Sickle added, can be bought from weaponsmiths near gatherers, heerbalist groves and mushroom groves.  
 hunters hat has +1 vision and +5 durability 
 Coin delivery quest only shows up above 80 moral reputation 
 Undead legion can now gain undead spellcasters from the black monolith 

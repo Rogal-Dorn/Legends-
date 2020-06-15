@@ -2900,8 +2900,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Script = "scripts/skills/perks/perk_legend_bearform",
 		Name = this.Const.Strings.PerkName.LegendBearform,
 		Tooltip = this.Const.Strings.PerkDescription.LegendBearform,
-		Icon = "ui/perks/bear_circle.png",
-		IconDisabled = "ui/perks/bear_circle_bw.png",
+		Icon = "ui/perks/bear2_circle.png",
+		IconDisabled = "ui/perks/bear2_circle_bw.png",
 		Const = "LegendBearform"
 	},
 	{
@@ -2918,9 +2918,27 @@ gt.Const.Perks.PerkDefObjects <- [
 		Script = "scripts/skills/perks/perk_legend_wolfform",
 		Name = this.Const.Strings.PerkName.LegendWolfform,
 		Tooltip = this.Const.Strings.PerkDescription.LegendWolfform,
-		Icon = "ui/perks/wolf_circle.png",
-		IconDisabled = "ui/perks/wolf_circle_bw.png",
+		Icon = "ui/perks/wolf2_circle.png",
+		IconDisabled = "ui/perks/wolf2_circle_bw.png",
 		Const = "LegendWolfform"
+	},
+	{
+		ID = "perk.legend_treeform",
+		Script = "scripts/skills/perks/perk_legend_treeform",
+		Name = this.Const.Strings.PerkName.LegendTreeform,
+		Tooltip = this.Const.Strings.PerkDescription.LegendTreefform,
+		Icon = "ui/perks/tree_circle.png",
+		IconDisabled = "ui/perks/tree_circle_bw.png",
+		Const = "LegendTreeform"
+	},
+	{
+		ID = "perk.legend_true_form",
+		Script = "scripts/skills/perks/perk_legend_true_form",
+		Name = this.Const.Strings.PerkName.LegendTrueForm,
+		Tooltip = this.Const.Strings.PerkDescription.LegendTrueForm,
+		Icon = "ui/perks/true_form_circle.png",
+		IconDisabled = "ui/perks/true_form_circle_bw.png",
+		Const = "LegendTrueForm"
 	}
 ];
 gt.Const.Perks.PerkDefs <- {};
