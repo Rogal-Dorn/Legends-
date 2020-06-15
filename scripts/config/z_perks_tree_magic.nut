@@ -282,9 +282,15 @@ gt.Const.Perks.DruidMagicTree <- {
 		[gt.Const.Perks.PerkDefs.LegendWolfform],
 		[gt.Const.Perks.PerkDefs.LegendPrayerOfLife],
 		[gt.Const.Perks.PerkDefs.LegendBearform],
-		[gt.Const.Perks.PerkDefs.LegendTrueForm],
-		[gt.Const.Perks.PerkDefs.LegendDrumsOfLife],
-		[gt.Const.Perks.PerkDefs.LegendTreeform]
+		[gt.Const.Perks.PerkDefs.LegendSummonStorm],
+		[
+		gt.Const.Perks.PerkDefs.LegendTreeform,
+		gt.Const.Perks.PerkDefs.LegendDrumsOfLife
+		],
+		[
+		gt.Const.Perks.PerkDefs.LegendCallLightning,
+		gt.Const.Perks.PerkDefs.LegendTrueForm
+		]
 	]
 };
 

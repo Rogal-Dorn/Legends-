@@ -368,6 +368,7 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 					break;
 				case 114:
 					image = "figure_player_troupe";
+					break;
 				case 115:
 					image = "figure_player_druid";
 					break;

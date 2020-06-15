@@ -198,32 +198,33 @@ this.legend_call_lightning <- this.inherit("scripts/skills/skill", {
 				i = ++i;
 			}
 
-			if (potentialTargets.len() != 0)
-			{
-				target = potentialTargets[this.Math.rand(0, potentialTargets.len() - 1)].getEntity();
-				selectedTargets.push(target.getID());
-				targetTile = target.getTile();
-			}
-			else
-			{
-				target = null;
-				targetTile = potentialTiles[this.Math.rand(0, potentialTiles.len() - 1)];
-			}
+				if (potentialTargets.len() != 0)
+				{
+					target = potentialTargets[this.Math.rand(0, potentialTargets.len() - 1)].getEntity();
+					selectedTargets.push(target.getID());
+					targetTile = target.getTile();
+				}
+				else
+				{
+					target = null;
+					targetTile = potentialTiles[this.Math.rand(0, potentialTiles.len() - 1)];
+				}
 
-			local data = {
-				Skill = this,
-				User = _user,
-				TargetTile = targetTile,
-				Target = target
-			};
+				local data = {
+					Skill = this,
+					User = _user,
+					TargetTile = targetTile,
+					Target = target
+				};
 			this.applyEffect(data, 550);
 		}
 
 		return success;
+		}
 
 	}
 
-	function applyEffect( _data, _delay )
+function applyEffect( _data, _delay )
 	{
 		this.Time.scheduleEvent(this.TimeUnit.Virtual, _delay, function ( _data )
 		{
