@@ -16,7 +16,7 @@ this.perk_legend_blend_in <- this.inherit("scripts/skills/skill", {
 
 	function onUpdated( _properties )
 	{
-		_properties.TargetAttractionMult *= 0.33;
+		_properties.TargetAttractionMult *= 0.1;
 	}
 
 });

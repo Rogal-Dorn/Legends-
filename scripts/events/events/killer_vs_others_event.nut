@@ -58,6 +58,13 @@ this.killer_vs_others_event <- this.inherit("scripts/events/event", {
 			{
 				this.Characters.push(_event.m.OtherGuy1.getImagePath());
 				this.Characters.push(_event.m.Killer.getImagePath());
+				
+				//set relations
+				local modifier1 = this.Math.rand(-10, -20);
+				_event.m.Killer.changeActiveRelationship( _event.m.OtherGuy1, modifier1 );
+				local modifier2 = this.Math.rand(-10, -20);
+				_event.m.OtherGuy1.changeActiveRelationship( _event.m.Killer, modifier2 );
+
 			}
 
 		});
@@ -79,6 +86,7 @@ this.killer_vs_others_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
+				this.World.Assets.addMoralReputation(1);
 				this.Characters.push(_event.m.OtherGuy1.getImagePath());
 				this.Characters.push(_event.m.Killer.getImagePath());
 				_event.m.Killer.addLightInjury();
@@ -121,6 +129,7 @@ this.killer_vs_others_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
+				this.World.Assets.addMoralReputation(-1);
 				this.Characters.push(_event.m.OtherGuy1.getImagePath());
 				this.List.push({
 					id = 13,
@@ -128,6 +137,7 @@ this.killer_vs_others_event <- this.inherit("scripts/events/event", {
 					text = _event.m.Killer.getName() + " has died"
 				});
 				_event.m.Killer.getItems().transferToStash(this.World.Assets.getStash());
+				_event.m.Killer.removeActiveRelationship();
 				this.World.Statistics.addFallen(_event.m.Killer, "Hanged for attempted murder");				
 				this.World.getPlayerRoster().remove(_event.m.Killer);
 				_event.m.OtherGuy1.improveMood(2.0, "Got satisfaction with " + _event.m.Killer.getNameOnly() + "\'s hanging");
@@ -161,6 +171,7 @@ this.killer_vs_others_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
+				this.World.Assets.addMoralReputation(-1);
 				this.Characters.push(_event.m.OtherGuy1.getImagePath());
 				this.Characters.push(_event.m.Killer.getImagePath());
 				_event.m.OtherGuy1.worsenMood(4.0, "Angry about lack of justice under your command");
@@ -210,6 +221,7 @@ this.killer_vs_others_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
+				this.World.Assets.addMoralReputation(-2);
 				this.Characters.push(_event.m.OtherGuy1.getImagePath());
 				local dead = _event.m.Killer;
 				this.World.Statistics.addFallen(dead,  "Murdered by his fellow comrades");
@@ -219,6 +231,7 @@ this.killer_vs_others_event <- this.inherit("scripts/events/event", {
 					text = _event.m.Killer.getName() + " has died"
 				});
 				_event.m.Killer.getItems().transferToStash(this.World.Assets.getStash());
+				_event.m.Killer.removeActiveRelationship();
 				this.World.Statistics.addFallen(_event.m.Killer, "Murdered by his fellow comrades");				
 				this.World.getPlayerRoster().remove(_event.m.Killer);
 				local brothers = this.World.getPlayerRoster().getAll();
@@ -267,6 +280,7 @@ this.killer_vs_others_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
+				this.World.Assets.addMoralReputation(-1);
 				this.Characters.push(_event.m.OtherGuy1.getImagePath());
 				this.Characters.push(_event.m.Killer.getImagePath());
 				local injury = _event.m.Killer.addInjury(this.Const.Injury.Brawl);

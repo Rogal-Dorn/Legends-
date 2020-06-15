@@ -15,6 +15,30 @@ this.goblin_city_location <- this.inherit("scripts/entity/world/location", {
 		this.m.IsDespawningDefenders = false;
 		this.m.VisibilityMult = 0.8;
 		this.m.Resources = 500;
+
+		local dateToSkip = 0;
+		switch (this.World.Assets.getCombatDifficulty())
+		{
+			case this.Const.Difficulty.Easy:
+				dateToSkip = 400;
+				break;
+			case this.Const.Difficulty.Normal:
+				dateToSkip = 300
+				break;
+			case this.Const.Difficulty.Hard:
+				dateToSkip = 200
+				break;
+			case this.Const.Difficulty.Legendary:
+				dateToSkip = 100
+				break;
+		}
+
+		if (this.World.getTime().Days >= dateToSkip)
+		{
+			local bonus = this.Math.min(1, this.Math.floor(this.World.getTime().Days - dateToSkip));
+			this.m.Resources += bonus;
+		}
+
 	}
 
 	function onSpawned()
@@ -82,8 +106,33 @@ this.goblin_city_location <- this.inherit("scripts/entity/world/location", {
 	function onBeforeCombatStarted()
 	{
 		this.location.onBeforeCombatStarted();
+		local dateToSkip = 0;
+		local toSpawn = 47;
+		switch (this.World.Assets.getCombatDifficulty())
+		{
+			case this.Const.Difficulty.Easy:
+				dateToSkip = 400;
+				break;
+			case this.Const.Difficulty.Normal:
+				dateToSkip = 300
+				break;
+			case this.Const.Difficulty.Hard:
+				dateToSkip = 200
+				break;
+			case this.Const.Difficulty.Legendary:
+				dateToSkip = 100
+				break;
+		}
 
-		for( local added = 0; this.m.Troops.len() < 47;  )
+		if (this.World.getTime().Days >= dateToSkip)
+		{
+			local bonus = this.Math.min(1, this.Math.floor((this.World.getTime().Days - dateToSkip) / 20));
+			toSpawn += bonus;
+		}
+
+
+
+		for( local added = 0; this.m.Troops.len() < toSpawn;  )
 		{
 			local r = this.Math.rand(1, 3);
 

@@ -511,9 +511,9 @@ gt.Const.Tactical.Actor.LegendPeasantWoodsman <- {
 };
 
 gt.Const.Tactical.Actor.LegendPeasantMiner <- {
-	XP = 75,
+	XP = 100,
 	ActionPoints = 9,
-	Hitpoints = 150,
+	Hitpoints = 100,
 	Bravery = 50,
 	Stamina = 100,
 	MeleeSkill = 60,

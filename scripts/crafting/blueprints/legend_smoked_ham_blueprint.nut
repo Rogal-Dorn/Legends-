@@ -3,7 +3,7 @@ this.legend_smoked_ham_blueprint <- this.inherit("scripts/crafting/blueprint", {
 	function create()
 	{
 		this.blueprint.create();
-		this.m.ID = "blueprint.legend_cured_vension";
+		this.m.ID = "blueprint.legend_smoked_ham";
 		this.m.Type = this.Const.Items.ItemType.Food;
 		this.m.PreviewCraftable = this.new("scripts/items/supplies/smoked_ham_item");
 		this.m.Cost = 10;

@@ -240,6 +240,12 @@ this.harbor_location <- this.inherit("scripts/entity/world/attached_location", {
 			return;
 		}
 		_list.push("female_butcher_background");
+
+		if(this.Const.LegendMod.Configs.LegendMagicEnabled())
+		{
+			_list.push("legend_diviner_background");
+		}
+
 	}
 
 	function onUpdateShopList( _id, _list )

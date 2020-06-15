@@ -25,7 +25,7 @@ this.legend_armor_scale_coat_named <- this.inherit("scripts/items/legend_armor/l
 		];
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
-		this.m.Value = 15000;
+		this.m.Value = 5000;
 		this.m.Condition = 160;
 		this.m.ConditionMax = 160;
 		this.m.StaminaModifier = -22;
@@ -35,8 +35,8 @@ this.legend_armor_scale_coat_named <- this.inherit("scripts/items/legend_armor/l
 
 	function randomizeValues()
 	{
-		this.m.StaminaModifier = this.Math.rand(20, 22) * -1;
-		this.m.Condition = this.Math.rand(160, 180);
+		this.m.StaminaModifier = this.Math.rand(10, 14) * -1;
+		this.m.Condition = this.Math.rand(130, 160);
 		this.m.ConditionMax = this.m.Condition;
 	}
 

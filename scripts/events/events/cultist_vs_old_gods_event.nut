@@ -143,7 +143,7 @@ this.cultist_vs_old_gods_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.cultist" || bro.getBackground().getID() == "background.converted_cultist")
+			if (bro.getBackground().isCultist())
 			{
 				cultist_candidates.push(bro);
 			}

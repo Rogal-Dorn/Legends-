@@ -15,7 +15,10 @@
   <sprite id="figure_player_party" offsetY="20" ic="FF334959" width="68" height="106" img="world_entity\party\figure_player_party.png" left="-18" right="24" top="-39" bottom="9" />
   <sprite id="figure_player_vala" offsetY="20" ic="FF334959" width="68" height="106" img="world_entity\party\figure_player_vala.png" left="-18" right="24" top="-39" bottom="9" />
  <sprite id="figure_player_assassin" offsetY="20" ic="FF334959" width="68" height="106" img="world_entity\party\figure_player_assassin.png" left="-18" right="24" top="-39" bottom="9" />
-  <sprite id="Battlesite_Bandits_Bandits" ic="FF293742" img="world_entity\location\Battlesite_Bandits_Bandits.png" />
+ <sprite id="figure_player_inquisition" offsetY="20" ic="FF334959" width="68" height="106" img="world_entity\party\figure_player_inquisition.png" left="-18" right="24" top="-39" bottom="9" />
+ <sprite id="figure_player_druid" offsetY="20" ic="FF334959" width="68" height="106" img="world_entity\party\figure_player_druid.png" left="-18" right="24" top="-39" bottom="9" />
+  <sprite id="figure_player_troupe" offsetY="20" ic="FF334959" width="68" height="106" img="world_entity\party\figure_player_troupe.png" left="-18" right="24" top="-39" bottom="9" />
+ <sprite id="Battlesite_Bandits_Bandits" ic="FF293742" img="world_entity\location\Battlesite_Bandits_Bandits.png" />
   <sprite id="Battlesite_Bandits_Beasts" ic="FF293742" img="world_entity\location\Battlesite_Bandits_Beasts.png" />
   <sprite id="Battlesite_Bandits_Beasts2" ic="FF293742" img="world_entity\location\Battlesite_Bandits_Beasts2.png" />
    <sprite id="Battlesite_Bandits_Goblins" ic="FF293742" img="world_entity\location\Battlesite_Bandits_Goblins.png" />

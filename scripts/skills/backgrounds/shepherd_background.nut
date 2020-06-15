@@ -46,6 +46,8 @@ this.shepherd_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.IsOffendedByViolence = true;
 		this.m.IsLowborn = true;
 		this.m.IsCrusaderRecruitBackground = true;
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Notorious;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[1];
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[2];
 		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[1];
@@ -66,7 +68,8 @@ this.shepherd_background <- this.inherit("scripts/skills/backgrounds/character_b
 				this.Const.Perks.AgileTree
 			],
 			Enemy = [this.Const.Perks.DirewolfTree],
-			Class = []
+			Class = [],
+			Magic = []
 		}
 	}
 

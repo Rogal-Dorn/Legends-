@@ -27,8 +27,8 @@ this.legend_white_wolf_bite <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsAttack = true;
 		this.m.DirectDamageMult = 0.5;
-		this.m.ActionPointCost = 3;
-		this.m.FatigueCost = 6;
+		this.m.ActionPointCost = 6;
+		this.m.FatigueCost = 20;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 1;
 		this.m.ChanceDecapitate = 0;
@@ -40,7 +40,7 @@ this.legend_white_wolf_bite <- this.inherit("scripts/skills/skill", {
 	{
 		_properties.DamageRegularMin += 45;
 		_properties.DamageRegularMax += 75;
-		_properties.DamageArmorMult *= 1.0;
+		_properties.DamageArmorMult *= 0.8;
 	}
 
 	function onUse( _user, _targetTile )

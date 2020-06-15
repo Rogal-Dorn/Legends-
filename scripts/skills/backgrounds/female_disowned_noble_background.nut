@@ -28,6 +28,8 @@ this.female_disowned_noble_background <- this.inherit("scripts/skills/background
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
 		this.m.Body = "bust_naked_body_03";
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Good;
 		this.m.Level = this.Math.rand(1, 3);
 		this.m.IsCombatBackground = true;
 		this.m.IsNoble = true;
@@ -58,7 +60,8 @@ this.female_disowned_noble_background <- this.inherit("scripts/skills/background
 			Enemy = [
 				this.Const.Perks.ArchersTree
 				],
-			Class = []
+			Class = [],
+			Magic = []
 		}
 	}
 

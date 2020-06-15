@@ -136,7 +136,7 @@ this.repel <- this.inherit("scripts/skills/skill", {
 	{
 		local target = _targetTile.getEntity();
 
-		if (this.Math.rand(1, 100) > this.getHitchance(_targetTile.getEntity()))
+		if (this.Math.rand(1, 100) > this.getHitchance(target))
 		{
 			if (this.m.SoundOnMiss.len() != 0)
 			{

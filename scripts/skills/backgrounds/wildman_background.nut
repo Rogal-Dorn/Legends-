@@ -59,6 +59,9 @@ this.wildman_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Level = this.Math.rand(1, 2);
 		this.m.IsCombatBackground = true;
 		this.m.IsOutlawBackground = true;
+		this.m.IsDruidRecruitBackground = true;
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Good;
 		this.m.Modifiers.MedConsumption = this.Const.LegendMod.ResourceModifiers.MedConsumption[1];
 		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[2];
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[1];
@@ -102,7 +105,8 @@ this.wildman_background <- this.inherit("scripts/skills/backgrounds/character_ba
 				this.Const.Perks.OrcTree,
 				this.Const.Perks.GoblinTree
 			],
-			Class = [this.Const.Perks.FistsClassTree]
+			Class = [this.Const.Perks.FistsClassTree],
+			Magic = []
 		}
 	}
 

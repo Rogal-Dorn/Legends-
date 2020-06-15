@@ -20,6 +20,7 @@ this.perk_inspiring_presence <- this.inherit("scripts/skills/skill", {
 		this.skill.onCombatStarted();
 		local allies = this.Tactical.Entities.getInstancesOfFaction(this.getContainer().getActor().getFaction());
 		local ownID = this.getContainer().getActor().getID();
+		local resolve = this.getContainer().getActor().getCurrentProperties().getBravery();
 
 		foreach( ally in allies )
 		{
@@ -28,21 +29,21 @@ this.perk_inspiring_presence <- this.inherit("scripts/skills/skill", {
 				continue;
 			}
 
-			if (ally.getMoraleState() != this.Const.MoraleState.Ignore)
+			if (ally.getMoraleState() != this.Const.MoraleState.Ignore && ally.getMoraleState() != this.Const.MoraleState.Confident)
 			{
-				local resolve = ally.getCurrentProperties().getBravery();
+				local resolve_ally = ally.getCurrentProperties().getBravery();
 				local waverchance = (250 - resolve) / 100
-				local r = this.Math.rand(1, 100);
-				if (r >= resolve / 3)
-				{
-				ally.setMoraleState(this.Const.MoraleState.Confident);
-				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(ally) + " is confident due to an inspiring speech");
-				}
+				local r = this.Math.rand(1, resolve);
 				if (r <= waverchance)
 				{
-				ally.setMoraleState(this.Const.MoraleState.Wavering);
-				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(ally) + " is wavering after being scared by a speech");
+					ally.setMoraleState(this.Const.MoraleState.Wavering);
+					this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(ally) + " is wavering after being scared by a speech");
 				}
+				else if (r >= resolve_ally / 3)
+				{
+					ally.setMoraleState(this.Const.MoraleState.Confident);
+					this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(ally) + " is confident due to an inspiring speech");
+				}				
 				else
 				{
 				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(ally) + " was not paying attention to a speech");

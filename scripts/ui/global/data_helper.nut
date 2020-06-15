@@ -282,6 +282,62 @@ this.data_helper <- {
 			result.ground.push(null);
 		}
 
+		if (("State" in this.Tactical) && this.Tactical.State != null)
+		{
+			if ( _entity.getFaction() == this.Const.Faction.Player)
+			{
+				local targetTile = _entity.getTile();
+
+				for (local i = 0; i != 6; ++i)
+				{
+					if (!targetTile.hasNextTile(i)) {}
+					else
+					{
+						local tile = targetTile.getNextTile(i);
+						if (tile.IsOccupiedByActor && tile.getEntity().getMoraleState() != this.Const.MoraleState.Fleeing)
+						{
+							
+							if (tile.getEntity().getFaction() == this.Const.Faction.Player)
+							{
+								// local relTab = _targetEntity.getTile().getEntity().getActiveRelationshipWith(tile.getEntity());
+								// local relNum = relTab.RelationNum;
+								local relTab = this.World.State.getRefFromID(_entity.getCompanyID()).getActiveRelationshipWith(tile.getEntity());
+								local relNum = relTab.RelationNum;
+
+								if ( relNum <= -10 )
+								{
+									result.stats.bravery -= 5;
+								}
+								if ( relNum <= -20 )
+								{
+									result.stats.rangeDefense -= 5;
+								}
+								if ( relNum <= -30 )
+								{
+									result.stats.meleeDefense -= 5;
+								}
+								
+								if ( relNum > 10 )
+								{
+									result.stats.bravery += 5;
+								}
+								if ( relNum > 20 )
+								{
+									result.stats.rangeDefense += 5;
+								}
+								if ( relNum > 30 )
+								{
+									result.stats.meleeDefense += 5;
+								}
+								
+							}
+							
+						}
+					}
+				}
+			}
+		}
+
 		return result;
 	}
 

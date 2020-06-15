@@ -20,7 +20,7 @@ this.puncture_parry_dagger <- this.inherit("scripts/skills/skill", {
 			"sounds/combat/puncture_hit_03.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
-		this.m.Order = this.Const.SkillOrder.OffensiveTargeted;
+		this.m.Order = this.Const.SkillOrder.UtilityTargeted;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
 		this.m.IsTargeted = true;
@@ -85,36 +85,36 @@ this.puncture_parry_dagger <- this.inherit("scripts/skills/skill", {
 	function getHitChance(_targetEntity)
 	{
 		if (_targetEntity == null)
-			{
-				return 0;
-			}
-			local mod = 0;
-			if (_targetEntity.getSkills().hasSkill("effects.legend_dazed"))
-			{
-			mod += 0.1;
-			}
-			if (_targetEntity.getSkills().hasSkill("effects.legend_parried"))
-			{
-			mod += 0.1;
-			}
-			if (_targetEntity.getSkills().hasSkill("effects.legend_grappled"))
-			{
-			mod += 0.5;
-			}
-			if (_targetEntity.getSkills().hasSkill("effects.stunned"))
-			{
-			mod += 0.25;
-			}
-			if (_targetEntity.getSkills().hasSkill("effects.sleeping"))
-			{
-			mod += 0.5;
-			}
-			if (_targetEntity.getSkills().hasSkill("effects.net"))
-			{
-			mod += 0.25;
-			}
-			local chance = _targetEntity.getFatiguePct();
-			return (chance + mod);
+		{
+			return 0;
+		}
+		local mod = 0;
+		if (_targetEntity.getSkills().hasSkill("effects.legend_dazed"))
+		{
+		mod += 10;
+		}
+		if (_targetEntity.getSkills().hasSkill("effects.legend_parried"))
+		{
+		mod += 10;
+		}
+		if (_targetEntity.getSkills().hasSkill("effects.legend_grappled"))
+		{
+		mod += 50;
+		}
+		if (_targetEntity.getSkills().hasSkill("effects.stunned"))
+		{
+		mod += 25;
+		}
+		if (_targetEntity.getSkills().hasSkill("effects.sleeping"))
+		{
+		mod += 50;
+		}
+		if (_targetEntity.getSkills().hasSkill("effects.net"))
+		{
+		mod += 25;
+		}
+		local chance = (1.0 - _targetEntity.getFatiguePct()) * 50;
+		return mod - this.Math.round(chance);
 	}
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
@@ -124,10 +124,13 @@ this.puncture_parry_dagger <- this.inherit("scripts/skills/skill", {
 			local chance = this.getHitChance(_targetEntity)
 			if (_properties.IsSpecializedInDaggers)
 			{
-				chance = this.Math.floor(chance * 1.5)
+				chance += 15;
 			}
-			local bonus = chance * _properties.MeleeSkill;
-			_properties.MeleeSkill = bonus;
+			
+			_properties.DamageRegularMin = 20;
+			_properties.DamageRegularMax = 40;
+			
+			_properties.MeleeSkill += chance;
 			_properties.DamageArmorMult *= 0.0;
 			_properties.IsIgnoringArmorOnAttack = true;
 			_properties.HitChanceMult[this.Const.BodyPart.Head] = 0.0;

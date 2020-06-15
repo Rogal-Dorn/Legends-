@@ -49,6 +49,8 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.IsCombatBackground = true;
 		this.m.IsUntalented = true;
 		this.m.IsRangerRecruitBackground = true;
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[3];
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
 		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[2];
@@ -119,6 +121,7 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 				this.Const.Perks.PerkDefs.SpecDagger,
 				this.Const.Perks.PerkDefs.SpecCrossbow,
 				this.Const.Perks.PerkDefs.SpecBow,
+				this.Const.Perks.PerkDefs.LegendMasterySlings,
 				this.Const.Perks.PerkDefs.LegendMasteryNets,
 				this.Const.Perks.PerkDefs.LegendSpecPoison,
 				this.Const.Perks.PerkDefs.SpecThrowing
@@ -129,6 +132,7 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 				this.Const.Perks.PerkDefs.Footwork,
 				this.Const.Perks.PerkDefs.CloseCombatArcher,
 				this.Const.Perks.PerkDefs.Ballistics,
+				this.Const.Perks.PerkDefs.LegendIncoming,
 				this.Const.Perks.PerkDefs.LegendSummonWolf,
 				this.Const.Perks.PerkDefs.LegendHeightenedReflexes,
 				this.Const.Perks.PerkDefs.LegendLithe,
@@ -142,7 +146,8 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 				this.Const.Perks.PerkDefs.Nimble,
 				this.Const.Perks.PerkDefs.Rebound,
 				this.Const.Perks.PerkDefs.LegendWindReader,
-				this.Const.Perks.PerkDefs.LegendCascade,
+				this.Const.Perks.PerkDefs.LegendCascade,	
+				this.Const.Perks.PerkDefs.LegendCoordinatedVolleys,
 				this.Const.Perks.PerkDefs.LegendSummonBear,
 				this.Const.Perks.PerkDefs.LegendPiercingShot,
 				this.Const.Perks.PerkDefs.LegendMatchingSet,
@@ -155,7 +160,6 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 				this.Const.Perks.PerkDefs.KillingFrenzy,
 				this.Const.Perks.PerkDefs.PerfectFocus,
 				this.Const.Perks.PerkDefs.BattleFlow,
-				this.Const.Perks.PerkDefs.LegendCoordinatedVolleys,
 				this.Const.Perks.PerkDefs.LegendEvasion,
 				this.Const.Perks.PerkDefs.LegendBalance,
 				this.Const.Perks.PerkDefs.LegendHidden,
@@ -237,7 +241,7 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 				0
 			],
 			Stamina = [
-				10,
+				5,
 				10
 			],
 			MeleeSkill = [
@@ -245,20 +249,20 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 				5
 			],
 			RangedSkill = [
-				20,
+				15,
 				20
 			],
 			MeleeDefense = [
-				5,
-				5
+				-5,
+				0
 			],
 			RangedDefense = [
-				5,
+				0,
 				5
 			],
 			Initiative = [
-				0,
-				0
+				-5,
+				-5
 			]
 		};
 		return c;

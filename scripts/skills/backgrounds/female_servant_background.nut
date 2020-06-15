@@ -41,7 +41,8 @@ this.female_servant_background <- this.inherit("scripts/skills/backgrounds/chara
 		this.m.Body = "bust_naked_body_03";
 		this.m.IsOffendedByViolence = true;
 		this.m.IsFemaleBackground = true;
-
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.NeutralMin;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Good;
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[1];
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[2];
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[1];
@@ -71,8 +72,10 @@ this.female_servant_background <- this.inherit("scripts/skills/backgrounds/chara
 			],
 			Enemy = [],
 			Class = [
-				this.Const.Perks.ChefClassTree
-			]
+				this.Const.Perks.ChefClassTree,
+				this.Const.Perks.HealerClassTree
+			],
+			Magic = []
 		}
 	}
 
@@ -161,7 +164,7 @@ this.female_servant_background <- this.inherit("scripts/skills/backgrounds/chara
 	function onAddLegendEquipment()
 	{
 		local items = this.getContainer().getActor().getItems();
-		items.equip(this.new("scripts/items/legend_armor/cloth/legend_tunic"));
+		items.equip(this.new("scripts/items/legend_armor/cloth/legend_peasant_dress"));
 	}
 
 });

@@ -95,7 +95,9 @@ this.potion_of_oblivion_item <- this.inherit("scripts/items/item", {
 		if (hasGifted)
 		{
 			_actor.m.PerkPointsSpent += 1;
-			_actor.getSkills().add(this.new("scripts/skills/perks/perk_gifted"));
+			local GiftedPerk = this.new("scripts/skills/perks/perk_gifted");
+			GiftedPerk.m.IsApplied = true;
+			_actor.getSkills().add(GiftedPerk);
 		}
 
 		this.Const.Tactical.Common.checkDrugEffect(_actor);

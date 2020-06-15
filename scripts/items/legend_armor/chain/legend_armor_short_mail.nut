@@ -3,7 +3,7 @@ this.legend_armor_short_mail <- this.inherit("scripts/items/legend_armor/legend_
 	function create()
 	{
 		this.legend_armor_upgrade.create();
-		this.m.Type = this.Const.Items.ArmorUpgrades.Chain
+		this.m.Type = this.Const.Items.ArmorUpgrades.Chain;
 		this.m.ID = "legend_armor.short_mail";
 		this.m.Name = "Light Mail";
 		this.m.Description = "A shorter and lighter chainmail that offers good protection and is fatiguing to wear.";
@@ -15,9 +15,9 @@ this.legend_armor_short_mail <- this.inherit("scripts/items/legend_armor/legend_
 		this.m.SpriteBack = "bust_legend_short_mail";
 		this.m.SpriteDamagedBack = "bust_legend_short_mail_damaged";
 		this.m.SpriteCorpseBack = "bust_legend_short_mail_dead";
-		this.m.Value = 600;
-		this.m.Condition = 70;
-		this.m.ConditionMax = 70;
+		this.m.Value = 500;
+		this.m.Condition = 60;
+		this.m.ConditionMax = 60;
 		this.m.StaminaModifier = -8;
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 	}

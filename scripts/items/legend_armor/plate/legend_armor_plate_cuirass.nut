@@ -1,10 +1,9 @@
-
 this.legend_armor_plate_cuirass <- this.inherit("scripts/items/legend_armor/legend_armor_upgrade", {
 	m = {},
 	function create()
 	{
 		this.legend_armor_upgrade.create();
-		this.m.Type = this.Const.Items.ArmorUpgrades.Plate
+		this.m.Type = this.Const.Items.ArmorUpgrades.Plate;
 		this.m.ID = "legend_armor.plate_cuirass";
 		this.m.Name = "Plate Cuirass Armor";
 		this.m.Description = "A body vest of solid plated steel.";
@@ -16,11 +15,11 @@ this.legend_armor_plate_cuirass <- this.inherit("scripts/items/legend_armor/lege
 		this.m.SpriteBack = "bust_legend_plate_cuirass";
 		this.m.SpriteDamagedBack = "bust_legend_plate_cuirass_damaged";
 		this.m.SpriteCorpseBack = "bust_legend_plate_cuirass_dead";
-		this.m.Value = 5000;
+		this.m.Value = 3500;
 		this.m.Condition = 150;
 		this.m.ConditionMax = 150;
-		this.m.StaminaModifier = -24;
-        this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
+		this.m.StaminaModifier = -21;
+		this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
 	}
 
 });

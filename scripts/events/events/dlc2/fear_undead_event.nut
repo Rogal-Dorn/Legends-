@@ -40,7 +40,7 @@ this.fear_undead_event <- this.inherit("scripts/events/event", {
 
 	function onUpdateScore()
 	{
-		if (!this.Const.DLC.Unhold)
+	if (!this.Const.DLC.Unhold)
 		{
 			return;
 		}
@@ -58,7 +58,7 @@ this.fear_undead_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
-		if (this.World.Statistics.get().LastCombatFaction != this.World.FactionManager.getFactionOfType(this.Const.FactionType.Undead) && this.World.Statistics.get().LastCombatFaction != this.World.FactionManager.getFactionOfType(this.Const.FactionType.Zombies))
+		if (this.World.Statistics.get().LastCombatFaction != this.World.FactionManager.getFactionOfType(this.Const.FactionType.Undead).getID() && this.World.Statistics.get().LastCombatFaction != this.World.FactionManager.getFactionOfType(this.Const.FactionType.Zombies).getID())
 		{
 			return;
 		}
@@ -74,7 +74,7 @@ this.fear_undead_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.companion" || bro.getBackground().getID() == "background.crusader" || bro.getBackground().getID() == "background.gravedigger" || bro.getBackground().getID() == "background.graverobber" || bro.getBackground().getID() == "background.wildman" || bro.getBackground().getID() == "background.wildwoman"  || bro.getBackground().getID() == "background.wildman")
+			if (bro.getBackground().getID() == "background.companion" || bro.getBackground().getID() == "background.crusader" || bro.getBackground().getID() == "background.gravedigger" || bro.getBackground().getID() == "background.graverobber" || bro.getBackground().getID() == "background.wildman")
 			{
 				continue;
 			}

@@ -275,27 +275,7 @@ this.hedge_knight <- this.inherit("scripts/entity/tactical/human", {
 			"legend_armor/named/legend_golden_scale_armor",
 			"legend_armor/named/legend_green_coat_of_plates_armor"
 		];
-		local r = this.Math.rand(1, 3);
 
-		if (r == 1)
-		{
-			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
-		}
-		else if (r == 2)
-		{
-			this.m.Items.equip(this.new("scripts/items/" + shields[this.Math.rand(0, shields.len() - 1)]));
-		}
-		else
-		{
-			if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
-			{
-				this.m.Items.equip(this.new("scripts/items/" + legend_armor[this.Math.rand(0, armor.len() - 1)]));
-			}
-			else
-			{
-				this.m.Items.equip(this.new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]));
-			}
-		}
 
 		this.m.Skills.add(this.new("scripts/skills/actives/indomitable"));
 		return true;

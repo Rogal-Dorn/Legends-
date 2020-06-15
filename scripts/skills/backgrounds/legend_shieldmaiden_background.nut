@@ -34,6 +34,8 @@ this.legend_shieldmaiden_background <- this.inherit("scripts/skills/backgrounds/
 		this.m.IsCombatBackground = true;
 		this.m.IsFemaleBackground = true;
 		this.m.IsCrusaderRecruitBackground = true;
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.NeutralMax;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.Modifiers.Repair = this.Const.LegendMod.ResourceModifiers.Repair[2];
 		this.m.Modifiers.Salvage = this.Const.LegendMod.ResourceModifiers.Salvage[1];
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[2];
@@ -57,7 +59,8 @@ this.legend_shieldmaiden_background <- this.inherit("scripts/skills/backgrounds/
 				this.Const.Perks.FastTree
 			],
 			Enemy = [this.Const.Perks.BarbarianTree],
-			Class = []
+			Class = [],
+			Magic = []
 		}
 	}
 

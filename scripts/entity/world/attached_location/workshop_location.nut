@@ -104,12 +104,19 @@ this.workshop_location <- this.inherit("scripts/entity/world/attached_location",
 		}
 		_list.push("legend_ironmonger_background");
 		_list.push("legend_ironmonger_background");
+		_list.push("legend_ironmonger_background");
+		_list.push("legend_ironmonger_background");
+		_list.push("legend_blacksmith_background");
 		_list.push("legend_blacksmith_background");
 		_list.push("apprentice_background");
 		_list.push("caravan_hand_background");
 		_list.push("peddler_background");
 		_list.push("female_daytaler_background");
 		_list.push("daytaler_background");
+		if(this.Const.LegendMod.Configs.LegendMagicEnabled())
+		{
+			_list.push("legend_transmuter_background");
+		}
 	}
 
 	function onUpdateShopList( _id, _list )

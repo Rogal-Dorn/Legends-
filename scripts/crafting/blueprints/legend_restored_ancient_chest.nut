@@ -24,10 +24,10 @@ this.legend_restored_ancient_chest <- this.inherit("scripts/crafting/blueprint",
 	function onCraft( _stash )
 	{
 
-		item = this.new("scripts/items/legend_armor/plate/legend_armor_plate_ancient_chest_restored");
+		local item = this.new("scripts/items/legend_armor/plate/legend_armor_plate_ancient_chest_restored");
 
 
-		item.m.Name = "";
+		item.m.Name = ""; //?
 		_stash.add(item);
 	}
 

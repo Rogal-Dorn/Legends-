@@ -74,7 +74,8 @@ this.necromancer <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Items.equip(this.new("scripts/items/weapons/scramasax"));
 		}
 
-if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		local armor;
+		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
 		{
 			local cloths = [
 				[0, ""],
@@ -161,6 +162,7 @@ if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
 				{
 					armor.setUpgrade(plate)
 				}
+				this.m.Items.equip(armor);
 			}
 		}
 		else

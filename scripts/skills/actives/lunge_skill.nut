@@ -78,7 +78,7 @@ this.lunge_skill <- this.inherit("scripts/skills/skill", {
 			});
 		}
 
-		if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInGreatSwords)
+		if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInSwords)
 		{
 			ret.push({
 				id = 6,
@@ -139,6 +139,8 @@ this.lunge_skill <- this.inherit("scripts/skills/skill", {
 	function onAfterUpdate( _properties )
 	{
 		this.m.FatigueCostMult = _properties.IsSpecializedInSwords ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
+		this.m.FatigueCostMult = _properties.IsFleetfooted ? 0.5 : 1.0;
+		this.m.ActionPointCost = _properties.IsFleetfooted ? 0.5 : 1.0;
 	}
 
 	function onUse( _user, _targetTile )
@@ -270,7 +272,7 @@ this.lunge_skill <- this.inherit("scripts/skills/skill", {
 			local s = this.Math.minf(2.0, 2.0 * (this.Math.max(0, a.getInitiative() + (_targetEntity != null ? this.getFatigueCost() : 0)) / 175.0));
 			_properties.DamageTotalMult *= s;
 
-			if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInGreatSwords)
+			if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInSwords)
 			{
 				_properties.MeleeSkill += 5;
 			}

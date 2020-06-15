@@ -191,16 +191,17 @@ this.tail_slam_skill <- this.inherit("scripts/skills/skill", {
 		local ret = false;
 		local ownTile = _user.getTile();
 		local dir = ownTile.getDirectionTo(_targetTile);
-		ret = this.attackEntity(_user, _targetTile.getEntity());
+		local target = _targetTile.getEntity();
+		ret = this.attackEntity(_user, target);
 
 		if (!_user.isAlive() || _user.isDying())
 		{
 			return ret;
 		}
 
-		if (ret && _targetTile.IsOccupiedByActor && _targetTile.getEntity().isAlive() && !_targetTile.getEntity().isDying())
+		if (ret && _targetTile.IsOccupiedByActor && target.isAlive() && !target.isDying())
 		{
-			this.applyEffectToTarget(_user, _targetTile.getEntity(), _targetTile);
+			this.applyEffectToTarget(_user, target, _targetTile);
 		}
 
 		local nextDir = dir - 1 >= 0 ? dir - 1 : this.Const.Direction.COUNT - 1;

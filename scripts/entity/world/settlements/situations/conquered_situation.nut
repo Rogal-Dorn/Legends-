@@ -23,5 +23,24 @@ this.conquered_situation <- this.inherit("scripts/entity/world/settlements/situa
 		_modifiers.FoodRarityMult *= 0.9;
 	}
 
+	function onUpdateDraftList( _draftList )
+	{
+		_draftList.push("female_beggar_background");
+		_draftList.push("female_beggar_background");
+		_draftList.push("female_beggar_background");
+		_draftList.push("refugee_background");
+		_draftList.push("refugee_background");
+		_draftList.push("cripple_background");
+		_draftList.push("cripple_background");
+		_draftList.push("vagabond_background");
+		_draftList.push("gravedigger_background");
+		_draftList.push("gravedigger_background");
+		_draftList.push("beggar_background");
+		_draftList.push("beggar_background");
+		_draftList.push("beggar_background");
+		_draftList.push("female_thief_background");
+
+	}
+
 });
 

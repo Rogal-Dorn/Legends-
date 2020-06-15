@@ -69,6 +69,11 @@ this.legend_staff_thrust <- this.inherit("scripts/skills/skill", {
 			_properties.MeleeSkill += 20;
 
 		}
+
+        if (_properties.IsSpecializedInSpearThrust )
+        {
+        _properties.DamageTotalMult *= 1.15;
+        }
 	}
 
 });

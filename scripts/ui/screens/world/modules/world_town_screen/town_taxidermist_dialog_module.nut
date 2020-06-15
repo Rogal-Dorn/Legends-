@@ -26,7 +26,7 @@ this.town_taxidermist_dialog_module <- this.inherit("scripts/ui/screens/ui_modul
 	{
 		return {
 			Title = "Taxidermist",
-			SubTitle = "A taxidermist can create useful items from all kinds of beast trophies that you bring him",
+			SubTitle = "A taxidermist can create useful items from all kinds of beast trophies that you bring",
 			Blueprints = this.World.Crafting.getQualifiedBlueprintsForUI(this.m.InventoryFilter),
 			Assets = this.m.Parent.queryAssetsInformation()
 		};

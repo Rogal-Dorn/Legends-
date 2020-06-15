@@ -28,11 +28,14 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		IsLowborn = false,
 		IsFemaleBackground = false,
 		IsRangerRecruitBackground = false,
+		IsDruidRecruitBackground = false,
 		IsCrusaderRecruitBackground = false,
+		IsPerformingBackground = false,
 		IsOutlawBackground = false,
 		AlignmentMin = this.Const.LegendMod.Alignment.Dreaded,
 		AlignmentMax = this.Const.LegendMod.Alignment.Saintly,
 		IsStabled = false,
+		IsConverted = false,
 		Modifiers = {
 			Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[0],
 			ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[0],
@@ -79,7 +82,9 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			Enemy = 2,
 			EnemyChance = 0.1,
 			Class = 1,
-			ClassChance = 0.10
+			ClassChance = 0.10,
+			Magic = 1,
+			MagicChance = 0.002
 		},
 		PerkTreeDynamic = {
 			Weapon = [
@@ -95,7 +100,8 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 				this.Const.Perks.FastTree
 			],
 			Enemy = [],
-			Class = []
+			Class = [],
+			Magic = []
 		},
 		CustomPerkTree = null,
 		PerkTreeMap = null,
@@ -151,6 +157,11 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		return this.m.IsCrusaderRecruitBackground;
 	}
 
+	function isPerformingBackground()
+	{
+		return this.m.IsPerformingBackground;
+	}
+
 	function isEducatedBackground()
 	{
 		return this.m.IsEducatedBackground;
@@ -159,6 +170,11 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 	function isOutlawBackground()
 	{
 		return this.m.IsOutlawBackground;
+	}
+	
+	function isCultist()
+	{
+		return this.m.IsConverted;
 	}
 
 	function getExcludedTalents()
@@ -197,6 +213,15 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		this.m.Order = this.Const.SkillOrder.Background;
 		this.m.DailyCostMult = this.Math.rand(90, 110) * 0.01;
 	}
+	
+	// This is used to overwrite the general skill "getIconColored()" so that converted cultists always have their background icon show as converted.
+	function getIconColored()
+	{
+		if(this.m.IsConverted) {
+			return "ui/backgrounds/background_34.png";	
+		}
+		return this.m.Icon;
+	}
 
 	function isHidden()
 	{
@@ -205,6 +230,9 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 
 	function getName()
 	{
+		if(this.m.IsConverted) {
+			return "Background: Cultist " + this.m.Name;
+		}
 		return "Background: " + this.m.Name;
 	}
 
@@ -658,14 +686,14 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		local MeleeDefense2 = this.Math.rand(a.MeleeDefense[0], a.MeleeDefense[1]);
 		local RangedDefense2 = this.Math.rand(a.RangedDefense[0], a.RangedDefense[1]);
 		local Initiative2 = this.Math.rand(a.Initiative[0], a.Initiative[1]);
-		local HitpointsAvg = this.Math.floor((Hitpoints1 + Hitpoints2) / 2);
-		local BraveryAvg  = this.Math.floor((Bravery1 + Bravery2) / 2);
-		local StaminaAvg  = this.Math.floor((Stamina1 + Stamina2) / 2);
-		local MeleeSkillAvg  = this.Math.floor((MeleeSkill1 + MeleeSkill2) / 2);
-		local RangedSkillAvg  = this.Math.floor((RangedSkill1 + RangedSkill2) / 2);
-		local MeleeDefenseAvg  = this.Math.floor((MeleeDefense1 + MeleeDefense2) / 2);
-		local RangedDefenseAvg  = this.Math.floor((RangedDefense1 + RangedDefense2) / 2);
-		local InitiativeAvg  = this.Math.floor((Initiative1 + Initiative2) / 2);
+		local HitpointsAvg = this.Math.round((Hitpoints1 + Hitpoints2) / 2);
+		local BraveryAvg  = this.Math.round((Bravery1 + Bravery2) / 2);
+		local StaminaAvg  = this.Math.round((Stamina1 + Stamina2) / 2);
+		local MeleeSkillAvg  = this.Math.round((MeleeSkill1 + MeleeSkill2) / 2);
+		local RangedSkillAvg  = this.Math.round((RangedSkill1 + RangedSkill2) / 2);
+		local MeleeDefenseAvg  = this.Math.round((MeleeDefense1 + MeleeDefense2) / 2);
+		local RangedDefenseAvg  = this.Math.round((RangedDefense1 + RangedDefense2) / 2);
+		local InitiativeAvg  = this.Math.round((Initiative1 + Initiative2) / 2);
 
 
 		b.Hitpoints = HitpointsAvg;
@@ -1125,6 +1153,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			}
 
 		}
+
 	}
 
 	function onBuildDescription()
@@ -1186,6 +1215,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		_out.writeBool(this.m.IsNew);
 		_out.writeF32(this.m.DailyCostMult);
 		_out.writeBool(this.m.IsFemaleBackground);
+		_out.writeBool(this.m.IsConverted);
 		if (this.m.CustomPerkTree == null)
 		{
 			_out.writeU8(0);
@@ -1222,7 +1252,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 	Training = [0.0, 0.1, 0.2, 0.3]
 		*/
 		
-		
+		/*
 		// Save Camp/travel modifiers
 		//_out.writeU8(this.m.Modifiers.); Int
 		//_out.writeF32(this.m.Modifiers.); Decimal
@@ -1248,7 +1278,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		for( local i = 0; i < this.m.Modifiers.Terrain.len(); i = ++i )
 		{
 			_out.writeF32(this.m.Modifiers.Terrain[i]);
-		}
+		}*/
 		
 
 	}
@@ -1286,6 +1316,12 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 				this.setGender(0);
 			}
 		}
+		
+		// Not sure what number this should be set to
+		if (_in.getMetaData().getVersion() >= 64)
+		{
+			this.m.IsConverted = _in.readBool();
+		}
 
 		if (_in.getMetaData().getVersion() >= 57)
 		{
@@ -1308,7 +1344,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			this.buildPerkTree();
 		}
 		
-		
+		/*
 		this.m.Modifiers.Ammo = _in.readU8();
 		this.m.Modifiers.ArmorParts = _in.readU8();
 		this.m.Modifiers.Meds = _in.readU8();
@@ -1331,7 +1367,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		for( local i = 0; i < this.m.Modifiers.Terrain.len(); i = ++i )
 		{
 			this.m.Modifiers.Terrain[i] = _in.readF32();
-		}
+		}*/
 
 
 	}

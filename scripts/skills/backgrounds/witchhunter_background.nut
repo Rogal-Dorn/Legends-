@@ -88,7 +88,10 @@ this.witchhunter_background <- this.inherit("scripts/skills/backgrounds/characte
 				this.Const.Perks.HexenTree,
 				this.Const.Perks.AlpTree
 			],
-			Class = []
+			Class = [
+				this.Const.Perks.FaithClassTree
+			],
+			Magic = []
 		}
 	}
 
@@ -117,6 +120,33 @@ this.witchhunter_background <- this.inherit("scripts/skills/backgrounds/characte
 	function onBuildDescription()
 	{
 		return "{%name% appeared one day in %townname%, some say upon request {of the local council | of a local priest}. | %name% has a reputation of showing up where things out of the ordinary happen and being out and about at the darkest part of the night. | Being a quiet and grim man, %name% has the tendency to make other people feel uncomfortable around him, even afraid. | The name of %name% is known in many a village, for he has travelled the land to wherever his talents are needed the most.} {A Witchhunter he calls himself. With his assortment of exotic tools he has a great deal of experience in getting people to confess in agony their sinful liaisons with demons and devils under terrible torture. | He refers to himself as a Witchhunter, but only superstitious fools would believe this and fall for his preposterous tales. | A Witchhunter he calls himself, and he claims to have seen horrors from beyond that would drive a lesser man insane. | After his arrival in %townname%, rumors spread that he was on the hunt for devil worshippers and creatures of the night, but no one knew what the real purpose of his visit was. | In %townname% he killed an elderly woman and was thrown into the dungeon. As it turned out, the woman was responsible for the abduction and death of 3 infants, and so he was set free again. | For nights on end he sat in %townname%\'s pub, silently studying every patron like a bird of prey circling above, his crossbow never far away. It didn\'t sit well with the residents  but they didn\'t dare approach him.} {By now most of the local folks want %name% to be gone rather sooner than later and would happily see him join a travelling mercenary company. | It seems that whatever his mission was is now accomplished and so %name% offers his service as a mercenary. | It is somewhat obvious that %name% is not easily scared and he also knows how to handle a crossbow. Nobody was therefore surprised as he approached a mercenary company that was hiring. | Now, a mercenary company would be just the tool he needed to fulfill his personal quest against the evil from the world beyond. | Most people would be glad to get rid of him.}";
+	}
+
+	function setGender(_gender = -1)
+	{
+		local r = _gender;
+		if (_gender == -1)
+		{
+			r = this.Math.rand(0, 9);
+			if (this.Const.LegendMod.Configs.LegendGenderEnabled())
+			{
+				r = this.Math.rand(0, 1);
+			}
+		}
+
+		if (r != 1)
+		{
+			return;
+		}
+
+		this.m.Faces = this.Const.Faces.OldFemale;
+		this.m.Hairs = this.Const.Hair.AllFemale;
+		this.m.HairColors = this.Const.HairColors.Old;
+		this.m.Beards = null;
+		this.m.BeardChance = 0;
+		this.m.Body = "bust_naked_body_03";
+		this.m.IsFemaleBackground = true;
+
 	}
 
 	function onSetAppearance()
@@ -257,13 +287,113 @@ this.witchhunter_background <- this.inherit("scripts/skills/backgrounds/characte
 		items.equip(this.new("scripts/items/ammo/quiver_of_bolts"));
 		r = this.Math.rand(0, 2);
 
-		if (r == 0)
+
+		items.addToBag(this.new("scripts/items/weapons/legend_wooden_stake"));
+
+
+
+	local cloths = [
+            [0, ""],
+			[0, "cloth/legend_gambeson"],
+			[0, "cloth/legend_gambeson_plain"],
+			[0, "cloth/legend_gambeson_wolf"],
+			[0, "cloth/legend_padded_surcoat"],
+			[0, "cloth/legend_robes"],
+			[0, "cloth/legend_apron_butcher"],
+			[0, "cloth/legend_robes_nun"],
+			[0, "cloth/legend_apron_smith"],
+			[0, "cloth/legend_robes_wizard"],
+			[0, "cloth/legend_sackcloth"],
+			[0, "cloth/legend_sackcloth_patched"],
+			[0, "cloth/legend_sackcloth_tattered"],
+			[0, "cloth/legend_tunic"],
+			[1, "cloth/legend_dark_tunic"],
+			[0, "cloth/legend_tunic_noble"]
+		];
+		local armor = this.Const.World.Common.pickLegendArmor(cloths)
+
+		if (armor != null)
 		{
-			items.addToBag(this.new("scripts/items/weapons/knife"));
-		}
+			local chains = [
+                [7, ""],
+                [1, "chain/legend_armor_mail_shirt"],
+				[0, "chain/legend_armor_mail_shirt_simple"],
+				[1, "chain/legend_armor_rusty_mail_shirt"],
+				[0, "chain/legend_armor_ancient_double_mail"],
+				[0, "chain/legend_armor_ancient_mail"],
+				[1, "chain/legend_armor_basic_mail"],
+				[0, "chain/legend_armor_hauberk"],
+				[0, "chain/legend_armor_hauberk_full"],
+				[0, "chain/legend_armor_hauberk_sleevless"],
+				[0, "chain/legend_armor_reinforced_mail"],
+				[0, "chain/legend_armor_reinforced_mail_shirt"],
+				[0, "chain/legend_armor_reinforced_rotten_mail_shirt"],
+				[0, "chain/legend_armor_reinforced_worn_mail"],
+				[0, "chain/legend_armor_reinforced_worn_mail_shirt"],
+				[0, "chain/legend_armor_short_mail"]
+			]
+			local chain = this.Const.World.Common.pickLegendArmor(chains)
+			if (chain != null)
+			{
+				armor.setUpgrade(chain)
+			}
 
-
-		items.equip(this.new("scripts/items/legend_armor/cloth/legend_padded_surcoat"));
+			local plates = [
+                [3, ""],
+				[1, "plate/legend_armor_leather_brigandine"],
+				[0, "plate/legend_armor_leather_brigandine_hardened"],
+				[0, "plate/legend_armor_leather_brigandine_hardened_full"],
+				[1, "plate/legend_armor_leather_jacket"],
+				[1, "plate/legend_armor_leather_jacket_simple"],
+				[0, "plate/legend_armor_leather_lamellar"],
+				[0, "plate/legend_armor_leather_lamellar_harness_heavy"],
+				[0, "plate/legend_armor_leather_lamellar_harness_reinforced"],
+				[0, "plate/legend_armor_leather_lamellar_heavy"],
+				[0, "plate/legend_armor_leather_lamellar_reinforced"],
+				[0, "plate/legend_armor_leather_noble"],
+				[0, "plate/legend_armor_leather_padded"],
+				[0, "plate/legend_armor_leather_riveted"],
+				[0, "plate/legend_armor_leather_riveted_light"],
+				[0, "plate/legend_armor_leather_scale"],
+				[0, "plate/legend_armor_plate_ancient_chest"],
+				[0, "plate/legend_armor_plate_ancient_harness"],
+				[0, "plate/legend_armor_plate_ancient_mail"],
+				[0, "plate/legend_armor_plate_ancient_scale"],
+				[0, "plate/legend_armor_plate_ancient_scale_coat"],
+				[0, "plate/legend_armor_plate_ancient_scale_harness"],
+				[0, "plate/legend_armor_plate_chest"],
+				[1, "plate/legend_armor_plate_chest_rotten"],
+				[0, "plate/legend_armor_plate_cuirass"],
+				[0, "plate/legend_armor_plate_full"],
+				[0, "plate/legend_armor_scale"],
+				[0, "plate/legend_armor_scale_coat"],
+				[0, "plate/legend_armor_scale_coat_rotten"],
+				[0, "plate/legend_armor_scale_shirt"]
+			]
+			local plate = this.Const.World.Common.pickLegendArmor(plates)
+			if (plate != null)
+			{
+				armor.setUpgrade(plate)
+			}
+			local tabards = [
+						[2, ""],
+						[1, "tabard/legend_armor_tabard_crusader"]
+					]
+					local tabard = this.Const.World.Common.pickLegendArmor(tabards)
+			if (tabard != null && armor != null)
+			{
+				armor.setUpgrade(tabard)
+			}
+			local cloaks = [
+						[2, ""],
+						[1, "cloak/legend_armor_cloak_crusader"]
+					]
+					local cloak = this.Const.World.Common.pickLegendArmor(cloaks)
+			if (tabard != null && armor != null)
+			{
+				armor.setUpgrade(cloak)
+			}
+			items.equip(armor);
 
 
 		r = this.Math.rand(0, 0);
@@ -272,6 +402,7 @@ this.witchhunter_background <- this.inherit("scripts/skills/backgrounds/characte
 		{
 			items.equip(this.new("scripts/items/helmets/witchhunter_hat"));
 		}
+	}
 	}
 
 	function onUpdate( _properties )

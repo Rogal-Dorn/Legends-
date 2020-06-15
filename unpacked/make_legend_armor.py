@@ -24,7 +24,9 @@ layers = [
     {"name": "bust_legend_gambeson_wolf", "layer": "cloth", "base": True},
     {"name": "bust_ancient_cloth",  "layer": "cloth", "min": 1, "max": 4, "base": True},
     {"name": "bust_ancient_cloth_restored",  "layer": "cloth", "min": 1, "max": 5, "base": True},
-
+	{"name": "bust_peasant_dress",  "layer": "cloth", "min": 1, "max": 11, "base": True},
+	{"name": "bust_wizard_robe",  "layer": "cloth", "min": 1, "max": 11, "base": True},
+	
     {"name": "bust_legend_ancient_double_mail", "layer": "chain"},
     {"name": "bust_legend_ancient_mail", "layer": "chain"},
     {"name": "bust_legend_basic_mail", "layer": "chain"},
@@ -49,6 +51,7 @@ layers = [
     {"name": "bust_legend_leather_jacket", "layer": "plate", "min": 1, "max": 9},
     {"name": "bust_legend_leather_jacket_simple", "layer": "plate", "min": 1, "max": 6},
     {"name": "bust_legend_leather_jacket_named", "layer": "plate", "min": 1, "max": 2},
+	{"name": "bust_legend_leather_jacket_named_02", "layer": "plate", "min": 1, "max": 16},
     {"name": "bust_legend_leather_lamellar_harness_heavy", "layer": "plate"},
     {"name": "bust_legend_leather_lamellar_harness_reinforced", "layer": "plate"},
     {"name": "bust_legend_leather_lamellar_heavy", "layer": "plate"},
@@ -82,9 +85,9 @@ layers = [
 
     {"name": "legend_tabard",  "layer": "tabard", "min": 1, "max": 20},
     {"name": "legend_tabard",  "layer": "tabard", "min": 101, "max": 113},
-    {"name": "legend_tabard_named", "layer": "tabard", "min": 1, "max": 1},
+    {"name": "legend_tabard_named", "layer": "tabard", "min": 1, "max": 12},
 
-    {"name": "cloak",  "layer": "cloak", "min": 1, "max": 35},
+    {"name": "cloak",  "layer": "cloak", "min": 1, "max": 36},
     {"name": "cloak_rich",  "layer": "cloak", "min": 1, "max": 5},
     {"name": "cloak_spider", "layer": "cloak"},
     {"name": "sash",  "layer": "cloak", "min": 1, "max": 1},
@@ -94,44 +97,6 @@ layers = [
 
 
 helmets = r"""
-
-<sprite id="legend_frogmouth_01" offsetY="35" ic="FF383D5F" width="184" height="222" img="entity\legend_helmets\legend_frogmouth_01.png" left="-41" right="43" top="-28" bottom="106" />
-<sprite id="legend_frogmouth_01_damaged" offsetY="35" ic="FF353857" width="184" height="222" img="entity\legend_helmets\legend_frogmouth_01_damaged.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="legend_frogmouth_01_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF353957" width="191" height="185" img="entity\legend_helmets\legend_frogmouth_01_dead.png" left="-88" right="22" top="-92" bottom="10" />
-<sprite id="runed_legend_frogmouth_01" offsetY="35" ic="FF383D5F" width="184" height="222" img="entity\legend_helmets\runed_legend_frogmouth_01.png" left="-41" right="43" top="-28" bottom="106" />
-<sprite id="runed_legend_frogmouth_01_damaged" offsetY="35" ic="FF353857" width="184" height="222" img="entity\legend_helmets\runed_legend_frogmouth_01_damaged.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="runed_legend_frogmouth_01_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF353957" width="191" height="185" img="entity\legend_helmets\runed_legend_frogmouth_01_dead.png" left="-88" right="22" top="-92" bottom="10" />
-<sprite id="legend_frogmouth_02" offsetY="35" ic="FF383D5F" width="184" height="222" img="entity\legend_helmets\legend_frogmouth_02.png" left="-41" right="43" top="-28" bottom="106" />
-<sprite id="legend_frogmouth_02_damaged" offsetY="35" ic="FF353857" width="184" height="222" img="entity\legend_helmets\legend_frogmouth_02_damaged.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="legend_frogmouth_02_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF353957" width="191" height="185" img="entity\legend_helmets\legend_frogmouth_02_dead.png" left="-88" right="22" top="-92" bottom="10" />
-<sprite id="runed_legend_frogmouth_02" offsetY="35" ic="FF383D5F" width="184" height="222" img="entity\legend_helmets\runed_legend_frogmouth_02.png" left="-41" right="43" top="-28" bottom="106" />
-<sprite id="runed_legend_frogmouth_02_damaged" offsetY="35" ic="FF353857" width="184" height="222" img="entity\legend_helmets\runed_legend_frogmouth_02_damaged.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="runed_legend_frogmouth_02_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF353957" width="191" height="185" img="entity\legend_helmets\runed_legend_frogmouth_02_dead.png" left="-88" right="22" top="-92" bottom="10" />
-<sprite id="legend_frogmouth_03" offsetY="35" ic="FF383D5F" width="184" height="222" img="entity\legend_helmets\legend_frogmouth_03.png" left="-41" right="43" top="-28" bottom="106" />
-<sprite id="legend_frogmouth_03_damaged" offsetY="35" ic="FF353857" width="184" height="222" img="entity\legend_helmets\legend_frogmouth_03_damaged.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="legend_frogmouth_03_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF353957" width="191" height="185" img="entity\legend_helmets\legend_frogmouth_03_dead.png" left="-88" right="22" top="-92" bottom="10" />
-<sprite id="runed_legend_frogmouth_03" offsetY="35" ic="FF383D5F" width="184" height="222" img="entity\legend_helmets\runed_legend_frogmouth_03.png" left="-41" right="43" top="-28" bottom="106" />
-<sprite id="runed_legend_frogmouth_03_damaged" offsetY="35" ic="FF353857" width="184" height="222" img="entity\legend_helmets\runed_legend_frogmouth_03_damaged.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="runed_legend_frogmouth_03_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF353957" width="191" height="185" img="entity\legend_helmets\runed_legend_frogmouth_03_dead.png" left="-88" right="22" top="-92" bottom="10" />
-<sprite id="legend_frogmouth_04" offsetY="35" ic="FF383D5F" width="184" height="222" img="entity\legend_helmets\legend_frogmouth_04.png" left="-41" right="43" top="-28" bottom="106" />
-<sprite id="legend_frogmouth_04_damaged" offsetY="35" ic="FF353857" width="184" height="222" img="entity\legend_helmets\legend_frogmouth_04_damaged.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="legend_frogmouth_04_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF353957" width="191" height="185" img="entity\legend_helmets\legend_frogmouth_04_dead.png" left="-88" right="22" top="-92" bottom="10" />
-<sprite id="runed_legend_frogmouth_04" offsetY="35" ic="FF383D5F" width="184" height="222" img="entity\legend_helmets\runed_legend_frogmouth_04.png" left="-41" right="43" top="-28" bottom="106" />
-<sprite id="runed_legend_frogmouth_04_damaged" offsetY="35" ic="FF353857" width="184" height="222" img="entity\legend_helmets\runed_legend_frogmouth_04_damaged.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="runed_legend_frogmouth_04_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF353957" width="191" height="185" img="entity\legend_helmets\runed_legend_frogmouth_04_dead.png" left="-88" right="22" top="-92" bottom="10" />
-
-<sprite id="legend_ancient_gladiator" offsetY="35" ic="FF383D5F" width="184" height="222" img="entity\legend_helmets\legend_ancient_gladiator.png" left="-41" right="43" top="-28" bottom="106" />
-<sprite id="legend_ancient_gladiator_damaged" offsetY="35" ic="FF353857" width="184" height="222" img="entity\legend_helmets\legend_ancient_gladiator_damaged.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="legend_ancient_gladiator_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF353957" width="191" height="185" img="entity\legend_helmets\legend_ancient_gladiator_dead.png" left="-88" right="22" top="-92" bottom="10" />
-<sprite id="runed_legend_ancient_gladiator" offsetY="35" ic="FF383D5F" width="184" height="222" img="entity\legend_helmets\runed_legend_ancient_gladiator.png" left="-41" right="43" top="-28" bottom="106" />
-<sprite id="runed_legend_ancient_gladiator_damaged" offsetY="35" ic="FF353857" width="184" height="222" img="entity\legend_helmets\runed_legend_ancient_gladiator_damaged.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="runed_legend_ancient_gladiator_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF353957" width="191" height="185" img="entity\legend_helmets\runed_legend_ancient_gladiator_dead.png" left="-88" right="22" top="-92" bottom="10" />
-<sprite id="legend_ancient_legionaire_restored" offsetY="35" ic="FF383D5F" width="184" height="222" img="entity\legend_helmets\legend_ancient_legionaire_restored.png" left="-41" right="43" top="-28" bottom="106" />
-<sprite id="legend_ancient_legionaire_restored_damaged" offsetY="35" ic="FF353857" width="184" height="222" img="entity\legend_helmets\legend_ancient_legionaire_restored_damaged.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="legend_ancient_legionaire_restored_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF353957" width="191" height="185" img="entity\legend_helmets\legend_ancient_legionaire_restored_dead.png" left="-88" right="22" top="-92" bottom="10" />
-<sprite id="runed_legend_ancient_legionaire_restored" offsetY="35" ic="FF383D5F" width="184" height="222" img="entity\legend_helmets\runed_legend_ancient_legionaire_restored.png" left="-41" right="43" top="-28" bottom="106" />
-<sprite id="runed_legend_ancient_legionaire_restored_damaged" offsetY="35" ic="FF353857" width="184" height="222" img="entity\legend_helmets\runed_legend_ancient_legionaire_restored_damaged.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="runed_legend_ancient_legionaire_restored_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF353957" width="191" height="185" img="entity\legend_helmets\runed_legend_ancient_legionaire_restored_dead.png" left="-88" right="22" top="-92" bottom="10" />
 
 """
 

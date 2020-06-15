@@ -5,7 +5,7 @@ this.schrat_shield <- this.inherit("scripts/items/shields/shield", {
 		this.shield.create();
 		this.m.ID = "shield.schrat";
 		this.m.Name = "Schrat\'s Shield";
-		this.m.Description = "";
+		this.m.Description = "The hardened bark from a schrat";
 		this.m.AddGenericSkill = true;
 		this.m.ShowOnCharacter = true;
 		this.m.IsDroppedAsLoot = false;

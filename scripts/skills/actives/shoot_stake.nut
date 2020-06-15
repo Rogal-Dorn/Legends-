@@ -12,7 +12,7 @@ this.shoot_stake <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.shoot_stake";
 		this.m.Name = "Shoot Heavy Bolt";
-		this.m.Description = "A quick pull of the trigger to loose a heavy bolt. Must be reloaded after each shot to be able to fire again.";
+		this.m.Description = "A quick pull of the trigger to loose a heavy bolt. Must be reloaded after each shot to be able to fire again. Knocks targets back. Deals +100 damage to vampires";
 		this.m.KilledString = "Shot";
 		this.m.Icon = "skills/active_81.png";
 		this.m.IconDisabled = "skills/active_81_sw.png";
@@ -182,15 +182,23 @@ this.shoot_stake <- this.inherit("scripts/skills/skill", {
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
-		if (_skill == this)
+		if (_skill != this)
 		{
-			_properties.RangedSkill += 10 + this.m.AdditionalAccuracy;
-			_properties.HitChanceAdditionalWithEachTile -= 3 + this.m.AdditionalHitChance;
-			if (_targetEntity.getType() == this.Const.EntityType.Vampire || _targetEntity.getType() == this.Const.EntityType.LegendVampireLord)
-			{
-			_properties.DamageRegularMin += 80;
-			_properties.DamageRegularMax += 85;
-			}
+			return;
+		}
+
+		if (_targetEntity == null)
+		{
+			return;
+		}
+
+		_properties.RangedSkill += 10 + this.m.AdditionalAccuracy;
+		_properties.HitChanceAdditionalWithEachTile -= 3 + this.m.AdditionalHitChance;
+
+		if (_targetEntity.getType() == this.Const.EntityType.Vampire || _targetEntity.getType() == this.Const.EntityType.LegendVampireLord)
+		{
+			_properties.DamageRegularMin += 100;
+			_properties.DamageRegularMax += 105;
 		}
 	}
 

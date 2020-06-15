@@ -26,11 +26,13 @@ this.legends_assassin_scenario <- this.inherit("scripts/scenarios/world/starting
 		bro.getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
 		bro.getSkills().add(this.new("scripts/skills/perks/perk_backstabber"));
 		bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_hidden"));
+		bro.m.PerkPointsSpent += 2;
 		bro.setPlaceInFormation(4);
 		bro.setVeteranPerks(2);
 		bro.getTags().set("IsPlayerCharacter", true);
 		bro.getSprite("miniboss").setBrush("bust_miniboss_lone_wolf");
-
+		local val = this.World.State.addNewID(bro);
+		bro.m.CompanyID = val;
 		this.World.Assets.m.Money = 1.5 * this.World.Assets.m.Money;
 		this.World.Assets.m.Ammo = this.World.Assets.m.Ammo;
 	}
@@ -96,6 +98,13 @@ this.legends_assassin_scenario <- this.inherit("scripts/scenarios/world/starting
 			this.Music.setTrackList(this.Const.Music.IntroTracks, this.Const.Music.CrossFadeTime);
 			this.World.Events.fire("event.legend_assassin_scenario_intro");
 		}, null);
+foreach (b in this.World.getPlayerRoster().getAll())
+		{
+			foreach (add in this.World.getPlayerRoster().getAll())
+			{
+				b.changeActiveRelationship(add, this.Math.rand(0, 10));
+			}
+		}
 
 	}
 

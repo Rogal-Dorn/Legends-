@@ -118,7 +118,7 @@ this.legend_drink_wine_skill <- this.inherit("scripts/skills/skill", {
 			}
 			if (user.getSkills().hasSkill("injury.severe_concussion") && user.getSkills().hasSkill("injury.sickness"))
 			{
-			user.getSkills().add(this.new("scripts/skills/injury_permanent/weakend_heart_injury"));
+			user.getSkills().add(this.new("scripts/skills/injury_permanent/weakened_heart_injury"));
 			}
 			if (user.getSkills().hasSkill("injury.sickness"))
 			{

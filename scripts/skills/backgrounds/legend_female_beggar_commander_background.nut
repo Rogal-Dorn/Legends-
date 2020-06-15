@@ -196,11 +196,11 @@ this.legend_female_beggar_commander_background <- this.inherit("scripts/skills/b
 		dirt.Visible = true;
 	}
 
-	function onAdded()
+	/*function onAdded()
 	{
 		this.character_background.onAdded();
 		//this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
-	}
+	}*/
 
 	function onAddEquipment()
 	{

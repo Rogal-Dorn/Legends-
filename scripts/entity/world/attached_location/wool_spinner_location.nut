@@ -28,6 +28,10 @@ this.wool_spinner_location <- this.inherit("scripts/entity/world/attached_locati
 		_list.push("female_tailor_background");
 		_list.push("tailor_background");
 		_list.push("shepherd_background");
+		if(this.Const.LegendMod.Configs.LegendMagicEnabled())
+		{
+			_list.push("legend_enchanter_background");
+		}
 	}
 
 	function onUpdateShopList( _id, _list )
@@ -89,12 +93,57 @@ this.wool_spinner_location <- this.inherit("scripts/entity/world/attached_locati
 			_list.push({
 				R = 10,
 				P = 1.0,
-				S = "legend_armor/cloth/legend_tunic"
+				S = "legend_armor/cloth/legend_legend_tunic"
 			});
 			_list.push({
 				R = 10,
 				P = 1.0,
-				S = "legend_armor/cloth/legend_tunic"
+				S = "legend_armor/cloth/legend_legend_tunic"
+			});
+			_list.push({
+				R = 10,
+				P = 1.0,
+				S = "legend_armor/cloth/legend_peasant_dress"
+			});
+			_list.push({
+				R = 10,
+				P = 1.0,
+				S = "legend_armor/cloth/legend_robes"
+			});
+			_list.push({
+				R = 10,
+				P = 1.0,
+				S = "legend_armor/cloth/legend_ancient_cloth_restored"
+			});
+			_list.push({
+				R = 20,
+				P = 1.0,
+				S = "legend_armor/cloth/legend_thick_tunic"
+			});
+			_list.push({
+				R = 20,
+				P = 1.0,
+				S = "legend_armor/cloth/legend_robes_herbalist"
+			});
+			_list.push({
+				R = 40,
+				P = 1.0,
+				S = "legend_armor/cloth/legend_robes_nun"
+			});
+			_list.push({
+				R = 30,
+				P = 1.0,
+				S = "legend_armor/cloth/legend_gambeson"
+			});
+			_list.push({
+				R = 80,
+				P = 1.0,
+				S = "legend_armor/cloth/legend_gambeson_rare_color"
+			});
+			_list.push({
+				R = 90,
+				P = 1.0,
+				S = "legend_armor/cloth/legend_robes_magic"
 			});
 			_list.push({
 				R = 50,
@@ -165,6 +214,34 @@ this.wool_spinner_location <- this.inherit("scripts/entity/world/attached_locati
 		}
 		else if (_id == "building.specialized_trader")
 		{
+		}
+		else if (_id == "building.armorsmith")
+		{
+			_list.push({
+				R = 30,
+				P = 1.0,
+				S = "legend_armor/cloak/legend_armor_cloak_noble"
+			});
+			_list.push({
+				R = 50,
+				P = 1.0,
+				S = "legend_armor/cloak/legend_armor_cloak_crusader"
+			});
+			_list.push({
+				R = 50,
+				P = 1.0,
+				S = "helmets/named/jugglers_padded_hat"
+			});
+			_list.push({
+				R = 30,
+				P = 1.0,
+				S = "helmets/named/witchhunters_helm"
+			});
+			_list.push({
+				R = 95,
+				P = 1.0,
+				S = "helmets/named/death_jesters_helm"
+			});
 		}
 	}
 

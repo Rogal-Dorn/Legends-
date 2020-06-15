@@ -2599,6 +2599,7 @@ Fixes values on named gambeson.
 Catch and print errors with invalid blueprint.
 Fixes crash when apply poision effects a second time.
 
+<<<<<<< HEAD
 
 13.0.0. RC 3
 
@@ -2723,7 +2724,6 @@ Named cloaks are less common on enemies, with more heavy and noble cloaks instea
 Sling staves gain the lower bonus from staff spins 
 Grapple now requires the offhand free instead of the mainhand 
 
-
 **Fixes**
 Puncture hopefully fixed 
 Fix for another aspect of the nacho bleeding bug 
@@ -2758,6 +2758,8 @@ XP increased for bandit veterans, bandit lords, orc elites, orc warlords, knight
 On legendary combat difficulty, zombie bite will resurrect felled enemies like a warlock scythe 
 Legion can now recruit high tier combat backgrounds once per week at the black monolith
 Reinforced nets have a 50% chance to be returned unbroken 
+Drums of war is now War Chant 
+Drums of life is now Song of Life 
 
 **Fixes** 
 Fixes tabard blueprint error causing some items to become uncraftable  
@@ -2775,4 +2777,587 @@ Necromancers drop layered armor if layered armor is turned on
 Noble troops wear their appropriate noble tabard layer
 Zombie bite no longer disappears after saving and loading 
 Legendary gheists no longer teleport to their deaths 
+
+13.2.4 Peace and Profit 
+
+**Mind over body:**
+* calculation changed to be more useful at lower resolve levels, but less useful at higher levels. 
+* Starts at 60 instead of 75, but the bonus has falloff. 
+* from  0% to 8%  at 70 resolve 
+* from  0% to 11% at 75
+* from  7% to 14% at 80 
+* from 17% to 19% at 90    
+* from 25% to 23% at 100 
+* from 40% to 31% at 125
+* from 50% to 37% at 150
+* from 60% to 40% at 200 
+
+**Clarity**
+* Now depends on your state of mind. 
+* Disabled if you are: berserk, dazed, drunk, hungover, taunted, staggered, horrified, concussed or fleeing.
+* Doubled if you're under the effect of cognition enhancing potions: Iron Will, Lionheart, Cat, Hexen Ichor or Recovery Potions
+
+**Peaceful**
+Peaceful Now lets characters gain XP while in reserve
+This is in addition to making them content in reserve, and removing the additional food usage in reserve 
+
+**Pacifist**
+Every day at noon pacifists will reflect on their time with the company
+If they have killed more than once per week, their mood will worsen 
+This is in addition to making them content in reserve and only adding half scaling 
+
+**Trading Caravan**
+Cost of combat backgrounds reduced to 125% from 200% 
+Cost of peddlers and donkeys reduced to 75% from 90% 
+
+**Deliver Crowns contract**
+* has new image to make it clearer what job you're taking
+* allows you to spend up to your total pay for the job before punishing you. 
+* only impacts your reputation with the town, doesn't spawn enemies 
+
+**Other changes**
+
+Several hundred new names and titles added for characters and enemies (Slick liquid)
+Goblin city will scale with time, after 400,300,200,100 days by difficulty, at a rate of +20% per hundred days 
+
+**Fixes**
+Fixed Mountain helm and armor not having named randomisation 
+Fixes lag in marketplaces 
+Fixes crash from bleed inducers not knowing if they're on the map 
+Fixes peddlers getting ammo but not crossbows 
+Fixes error when necromancer armor didn't initiate 
+Fixes error when zombie bite wasn't being applied  
+Fixes error when a gatherer finds an antidote and crashes camp  
+Fixes incorrect camouflage tooltip 
+Fixes the ability to get so drunk it crashes the game 
+
+13.2.5 Well Slung 
+
+Slingstaff 
+Carrying heavy stones around is not easy, and flinging them is tiring. 
+* fatigue modifier increased to -20 from -12, 
+* sling heavy stone fatigue cost increased from 25 to 50 
+* durability reduced from 100 to 40 to match staff
+* uses slingstaff bash instead of staff bash, does half damage 
+
+**Game text:**  (slick liquid)
+*20 new ship names
+*36 new merc company names
+*33 new noble house names
+*23 new names for oceans
+*35 new names for fields
+*20 new names for swamps
+*14 new names for hills
+*18 new names for woods
+*9 new names for frozen forests
+*2 new names for autumn forests
+*33 new names for mountains
+*23 new names for frozen wastelands
+*23 new names for barbarian lands
+*16 new names for scrublands
+
+*Changes**
+Enemies more likely to hit with puncture
+Slaughterer effectiveness reduced by 1/3rd 
+Hammer and pickaxe perk groups get sundering strikes instead of bruiser to avoid duplication 
+Dismissal now costs the same as a tryout 
+Reverts to vanilla crisis strength requirement, no longer begins at war. 
+
+**Fixes**
+Fixes settlement's lagging due to excess greed 
+Fixes another bleed crash by making bleed attributions only apply to the player. 
+Fixes backwards compatibility with nexus build due to mountain gear 
+Bleed no longer gets attributed unless the attacker is player controlled 
+Bleed doesn't check for devoured and placed on map unless the attribution is being set. 
+Fixes the broken rune errors 
+Fixes banshees teleporting to their death 
+Fixes choke description 
+Fixes error in Lindwurm stats (wuxiang) 
+
+13.2.5b Unslung hero 
+
+Reverts the slingstaff changes  
+fixes the bleed crashes  (wuxiang) 
+Puncture and choke reworked to have a higher lowest hit chance (wuxiang) 
+Noble leather durability buffed from 65 to 75 (wuxiang) 
+Named cloaks lowered from 25k to 10k (wuxiang) 
+Halberd condition increased from 72 to 85 (wuxiang) 
+Fixed smoked ham being uncookable (wuxiang) 
+
+
+13.3.2  Slow and steady (experimental) 
+
+Reverts to vanilla AI timings, slowing down turn times. May fix:
+* invisible unholds
+* rotation crashes 
+* next turn order freezes 
+* Miscellaneous strange freezes
+
+Fatigue costs reduced across 24 plate armors  
+Adds back in brain damage allowing cultist conversion (salty)
+Freedom of movement tooltip updated (salty) 
+Fixes demon hound crashs (wuxiang) 
+Fixes tabard tooltips (wuxiang) 
+Fixes decimal points in danger pay (wuxiang) 
+Wooden pitchfork gets +5 damage 
+prepare bleed lasts slightly longer 
+Fixes double strike 
+Fixes lindwurm, mountain and skin armors requiring layered and non-layered components at the same time 
+
+
+
+13.3.3  Fast Friends (experimental)
+Incorporates many community contributions
+
+**Faster**
+Includes Adam's Faster mod - resolves AI conflicts and duplication 
+Incorporates LeVilainJoueur's Invisible Unhold fix for Faster 
+
+**Community Armor rework** 
+Implements most of the changes from the popular BlueyD and Balzaphon submods 
+*Keep armor values in the vanilla ballpark until multi-unique combos are available
+* Different efficiency (armor:fatigue) ratios at different prices
+* Prices should generally go way down (too easy to farm money; layers not buyable right now)
+* Named layers should be worth wearing if found, and occasionally worth purchasing
+* Worn, rotten, or rusty gear should generally kind of suck compared to the base armor
+* Barbarian armor should be low cost and low effectiveness too
+* Ancient armor should be low efficiency and medium cost
+
+**Community Perk balance suggestions**
+Implements many perk suggestions from ToxAsh, Belial, Balzphon and others.  
+* Back to basics - also increases camp training by 10% 
+* Crippling strikes - also grants 10% damage vs undead  
+* Executioner - also grants +10% damage to stunned, netted or sleeping enemies 
+* Muscularity - maximum of 50 damage 
+* Lone wolf - triggers at 2 tiles 
+* Lookout - also grants 10% to scouting in camp 
+* Onslaught - now gives 50% chance to apply new Effect Baffeled, which is a weaker daze 
+* Push the advantage - also applies to grappled, staggered, net and dazed 
+* Return favor - applied both stun and staggered, AP reduced to 3 
+* Efficient stacking - Grants 8 slots and +4% fatigue 
+* Skillful packing - grants 12 slots and +6% fatigue 
+* Spearwaller - also increases spearwall damage by 25% 
+* Net repairer - also grants +25% chance to hit with a net 
+* Freedom of movement - has a 5% minimum and 95% maximum damage reduction 
+* True believer - also grants optimist trait 
+* Last stand - grants 1 melee and ranged defense for every 2% below 66%HP 
+* Tools drawers - Now grants +10 tools and -4% tool consumption 
+* Spare tools -  Now grants +20 tools -6% tool consumption
+* Staff spins - now applies both stun and stagger 
+* Second wind - now also removes stun, stagger, daze, sleep and charm when it restores your fatigue 
+* Heightened reflexes - increased from 50% to 100% of ranged defense becomes iniative
+* Thrust master - also applies to prong and staff thrust, and reduces the range penalty from throwing spears 
+* Balance - Now grant up to 25% defense reroll chance 
+
+**Other changes**
+AI won't try to puncture enemies with full fatigue 
+Dismissal only costs money on legendary economic difficulty
+Summon Bear is now Bear Taming - unlocks an event to tame bears in the woods
+Fletchers can no longer trigger the masterwork bow event
+Fletechers can now trigger an event to craft a Huge Quiver  
+Zombies lose Last Stand on legendary combat difficulty 
+Barbarians gain Last Stand on legendary combat difficulty 
+Bandit veterans always have hats 
+Miners give +33% XP and have -33 %HP 
+Fencers, bandit veterans and bandit warlords count for favourite enemy swordmaster 
+Fencers, halberdiers and slingers count for favourite enemy noble 
+Slinger counts for favourite enemy archer 
+Bandit veteran and bandit warlord count for favourite enemy bandit 
+Butcher, blacksmith, monk, farmhand, minstrel, poacher, miner, squire and witch hunter count for favourite enemy caravan 
+Legendary creatures will contribute towards head count in Big Game Hunt contracts 
+
+
+**Fixes**
+Fixes error in cultist origin vs old gods event (wuxiang)
+Fixes errors in legendary armor bluprints (wuxiang)
+Cat uses cat names (wuxiang)
+Choke uses unarmed mastery instead of dagger mastery (wuxiang) 
+Fixes error stopping gather buildings giving the goodies (D00D's bro and wuxiang)
+Fixes naked fishwives and cannibals  (wuxiang) 
+Fixes danger pay decimal point issue (wuxiang) 
+Updates tabard tooltip  (wuxiang) 
+
+
+13.3.3b
+
+Fixes error in scout building leading to failed camp
+Fixes tooltip on Efficient Packing
+Buffs aprons and barbarian gear.
+Fixes double strike 
+
+13.3.4  Faithful Shield  
+
+**Faith**
+New Perk - Holy Flame - Choose a tile to bless for two turns. Allies ending their turn on this tile are Sanctified, becoming immune to injuries for two turns. Undead ending their turn on this tile become Consecrated, losing immunity to injuries and will not resurrect. Cultists ending their turn here will burn for 10-20 damage. 
+New Perk - Prayer of Hope - Adjacent allies gain 10% of their resolve as hitpoints at the end of their turn. Adjacent undead begin Disintegrating at 10 damage per turn. Does not effect cultists. 
+New Perk - Prayer of Faith - Adjacent allies gain 10% of their resolve as melee and ranged defense. Adjacent undead become Baffled. Does not effect cultists.   
+Faith perk group given to: Monks, Nuns, Flagellants, Witchhunters and Crusaders
+Crusader origin has a higher chance to find monks, nuns, flagellants, witch hunters and crusader recruits. 
+
+**Shields Up!**
+* Adam's Shield's up mod has been integrated as perks, this resolves mod conflicts. 
+* Well trained human enemies will now begin the battle with their shields up.
+* Changed perk - Born with a board - This character begins each fight by shield walling before the turn starts. 
+* New Perk - Shields up - Everyone in your company begins each fight by shield walling if able. Only available on Noble commander
+
+**Noble**
+* Changed perk - Holding the line - no longer effects ranged defense, only melee defense
+* New perk - Incoming! - Provides +10 ranged defense to all allies within 4 tiles. Only available on Noble Commander 
+* Noble origin has a chance to find other nobles willing to join the cause. 
+
+**Other changes**
+* Warlocks and necromancers can spawn as females with new female necromancer heads (von Krolock)
+* All commanders except vala have their stats nerfed by about 5 points across all skills. Each can still roll the same maximum in their key skills, but it will be rarer. 
+* Adds 16 colour variants for named leather armors 
+* Adds 11 colour variants for named tabards 
+* Vengeance buffed to +30% damage 
+* Healer group given to Maid 
+* Nerfs aprons and barbarian gear  
+* Buffs surcoats and robes 
+* True believer now also removes irrational and makes pessimists irrational 
+* reduces greater evil start to 110 strength so its more feasible for single characters 
+* New background icons for warlock, vala and cannibal (von Krolock) 
+* Adds a dozen new Tip of the Day entries (Lemyfish, Starcatcher, Balzaphon, Larry Croft)
+
+**Fixes** 
+*Fixes Rotation (Rule 303)
+*Fixes warbear recruitment event showing up without a trainer, fixes text and adds event image 
+*Fixes Smackdown not working in some circumstances
+*Fixes Firefield using correct icon and sounds 
+*Fixes stables icon being too big 
+*Fixes estocs going invisible when runed 
+*Fixes crash from undead_frozen_pond_event (Rule 303)
+*Fixes error with shoot stake skill.  (Rule 303)
+*Fixes an invalid injury on skeletons.(Rule 303)
+*Fixes legend vala recruitment on legions origin start. (Rule 303)
+*Fixes Bandit Leaders (very rarely) spawning with named ranged weapons (mwah)
+*Fixes named 2h flails showing as ranged 2h flails (mwah)
+*Tones slaughterer down again (mwah (sorry about slaughterer))
+*Fixes double strike perk tree description (mwah)
+*Fixes bleed in undead/skeleton fights (mwah)
+*Fixes incorrect MoB tooltip, it does stack with masteries 
+*Fixes skill order for parry puncture and engarde (BlueyD) 
+*Fixes towns getting friendly with the legion 
+*Fixes Legion recruitment
+
+13.3.4.2 Cheery Bash
+
+
+**Bards**
+New Perk - Cheer On spend 3AP to grant an ally 1AP. Each ally can only be Cheered on once per turn. Only usable with lute or drum equipped. Stacks with other things that effect AP. Given to bards and troubadours at level 1. 
+Song of Life and War chant ranged increased to 8 tiles. 
+Fixes bard skills not working with a named lute 
+
+**Shields**
+Shield Bash now gives -10% fatigue cost to Fortify and Buckler Bash in addition to knock back 
+Push It now gives -25% fatigue cost t0 Fortify and Buckler Bash in addition to knock back 
+Born with a Board added to the shield tree, lets you begin each combat by shieldwalling 
+
+**Noble**
+Noble's four tactical skills can now be gained from just two perks
+Hold the Line now grants a choice of bonus melee or ranged defense skill
+Push forward now grants a choice of bonus melee or ranged attack 
+Noble loses Incoming and Coordinated volleys perks
+Noble from event gains lithe, clarity and matching set 
+
+**Other Changes**
+Recruitable crusaders are now much cheaper to hire and spawn more often. They now spawn with shields, blunt one handed weapons, heavy layered armors, tabard and cloak all painted in crusader colours.
+Added a crusader cloak and crusader tabard for recruitable crusaders 
+Enemy noble footmen gain stalwart on legendary 
+Ranger gains Incoming to provide ranged defense to allies 
+Militia origin gives "hate nobles" trait to all recruits 
+
+**Fixes**
+<<<<<<< HEAD
+Fixes zombie bit error on warlock start 
+Fixes invisible necromancers that can't be killed (wuxiang)
+Fixes peasant squire not getting duelist  (mwah)
+Fixes instance with wooden stake crashing (wuxiang)
+Temp fix for hand to hand crash when punching donkeys  (wuxiang)
+fixes for more legion recruitment events (wuxiang)
+Fixes white border around shields up perk icon 
+Fixes over a dozen spelling errors in descriptions, events and tooltips 
+Fixes vala becoming undead outside legion runs (wuxiang)
+
+
+13.3.4.3
+
+Padded surcoat from -5 55 to -6 55
+Cheer on fatigue cost reduced to 15 
+White wolf bite AP cost and fatigue cost increased, armor damage decreased. 
+Restoring Ancient Breastplate now works. (Salty)
+Fixed Balance's Perk desccription, it still gives armor dmg reduction (Salty)
+Adventurous nobles spawn again (wuxiang) 
+Porridge effect works correctly (wuxiang)
+Recruitable Crusader gets stars correctly (wuxiang)
+
+=======
+Offhand Puncture nolonger uses main hand dmg (Salty)
+Cultist Sacrifice now has 50% chance to rank up the cultist again (Salty)
+Buckler Bash should nolonger cost 1 fat with mastery (Salty)
+Fix for my Oblivion Potion fix, nolonger doubles perkpoins and gifted doesn't grant free points (Salty)
+Adventurous nobles spawn again (wuxiang) 
+Porridge effect works correctly (wuxiang)
+Recruitable Crusader gets stars correctly (wuxiang)
+Removed incorect -10% to hit from Staffsling's Sling Stone that only was in the tooltip (Salty)
+Peasant Butcher now get's correct stats. Nolonger tries to be a normal peasant (Salty)
+Lunge now works off 1h Sword spec, error from when the perks were split. Thanks Vladonis (Salty)
+
+
+14.0.0.1  Morals and Magic 
+
+
+**Morals**
+Your company has always had a moral alignment, now every recruit also has a moral alignment. 
+* Each background has a moral range they are comfortable with.  
+* Mercenaries get unhappy if you're too immoral or moral for them 
+* Higher level recruits are available if your moral stance align with theirs 
+* 16 more events now have moral changes, so your choices have more effect on your moral standing. 
+
+**Relationships**
+Each mercenary now has relationships with each other mercenary 
+The alignment of each mercenary effects their relationships when they first meet 
+These relationships can change during 18 events depending on your choices 
+Relationships range from -50 to +50, with each mercenary gaining or losing the following stats based on their relationships with their allies on each of the 6 surrounding tiles. 
+-40 -5% fatigue 
+-30 -5  melee defense 
+-20 -5  ranged defense 
+-10 -5  morale 
++10 +5  morale 
++20 +5  ranged defense 
++30 +5  melee defense 
++40 +5% fatigue 
+
+
+**Magic**
+Adds 12 new magic backgrounds that spawn when magic is enabled. 
+* Transmuter - has seer teleport and levitation  - spawns near workshops
+* Spiritualist - has vala spirit skills - spawns near amber collectors 
+* Runesmith - has vala rune skills - spawns near gem mines 
+* Evoker - has seer damage spells   - spawns near blast furnaces
+* Necrosavant - has warlock vampire skills - spawns near wineries 
+* Illusionist - has seer debuff spells - spawns near herbalist groves 
+* Entrancer - has vala trances  - spawns near gatherers huts 
+* Enchanter - has vala chants - spawns near wool spinners 
+* Diviner - has scry, entice and revolt - spawns near harbors 
+* Weidermancer - has warlock zombie skills - spawns near peat pits 
+* Skelemancer - has warlock skeleton skills - spawns near leather tanner
+* Necromancer - has the necromancer's buggy raise dead skill 
+Adds 10 wizard robe skins and 19 wizard hat skins, Gnarled staff buffed to t3 available near woodcutters huts. 
+
+Other commander skills are also more widely available when magic is enabled 
+* Master archer - has ranger attack skills - spawns near fortified outposts
+* Non-commander berserker uses dynamic perks with a new berserker skill group - spawns near mushroom groves 
+* Non-commander noble uses dynamic perks with a new captain skill group 
+* Historian and Retired soldier gain Noble's captain skill group 
+
+**Horses**
+Re-enables Horses for testing, the weapon skills are still broken.
+
+**Legendary beasts**
+Legendary beasts are now in their own spawn groups, and tend to stay to one type of terrain.  This means rather than encountering stollwurms among every late game lindwurm group, you'll find them in their own packs in their own terrain. 
+
+**The Inquisition**
+New Origin - Inquisition, a veteran Witch hunter is accompanied by a crusader, a flagellant and a battle nun on a holy quest.
+* Begins with high Moral standing. 
+* Holy recruits are cheaper and more plentiful, unholy recruits are more expensive. 
+* All recruits gain Mind over Body.
+* Holy flame now also applies burn, bleed and zombie poison to undead 
+* Holy flame now also applies prayer of life and prayer of faith to allies 
+* Holy flame now costs 7AP 
+* There is now a higher tier witch hunter helm that grants immunity to the dark (TODO currently a bit squashed )
+* Wooden stake and Spiked Impaler now do +100 damage to vampires, descriptions updated 
+* Penance now grants 50% of missing health as resolve while wearing cultist robes, sackloth, leather wraps or hide.
+* Penance and dedication descriptions rewritten to apply to both cultists and flagellants 
+* Flagellants no longer spawn with tunics, but can have hide armor 
+
+
+**The Troupe**
+New Origin - The Troupe. An illusionist accompanied by a troubadour, minstrel and juggler. 
+* Busking - each member of the troupe generates 10 crowns per day 
+* Exposure - Performing artists are more likely to show up and are cheaper to hire 
+* Acrobatics - Grants the new Leap perk to all recruits
+
+ New Juggler class perk group 
+- Leap - allows jumping two tiles at a great fatigue cost
+- Tumble - halves the fatigue and AP cos of leap, footwork and lunge 
+- Hair splitter - grants +30% chance to hit the head 
+juggler bonus to hit head raised to +10%
+juggler's hat grants +10% chance to hit the head 
+
+**Rain**
+Rain now applies -1 vision and -10% to attack and defense, 
+This can be migitated by wearing a heavy cloak. 
+Rain does not effect ghosts, wurms, iijirock or kraken. 
+
+
+**Perk Changes**
+Spearwaller buffed to 50% fatigue reduction and 25% AP reduction 
+Return Favor buffed to 75% chance to apply 
+Bloodbath changed to bonus percent equal to percent of characters bleeding in combat 
+Smackdown also applies baffled 
+Smashing shields buffed to 100% shield damage 
+Staff block buffed to 16 melee and ranged defense, swordstaves gain 50% of the bonus 
+Feint now applies 'Parried' to an enemy, lowering their defenses by 10 
+Sprint cost to use reduce to 2 AP and 10 Fat, fatigue cost reduced to +50% per tile. 
+Perfect Focus reduced to +75% fatigue cost instead of double 
+True believer now also increases resolve by 5% for each fleeing character on the field 
+Blend in increased to 90% reduction in AI attraction 
+Evasion reduced to 2AP and 10 fat to use. 
+Second wind now also applies the recovery potion effect, granting +10 fatigue recovery for four turns. 
+Vengeance now doubles the damage of the next attack 
+Last stand now also grants immunity from the effects of fresh injuries when below 33% health 
+Efficient packing gives flat +6 fat, skillfull stacking gives a flat +9 fat, instead of percentage bonuses. 
+Resilient now also grants +6 hitpoints 
+
+**integrated noble helm and tabard crafting submod**
+thanks rue 
+
+**Situations**
+More situations now affect recruit pools 
+* archery contest has a chance for master archers with magic enabled 
+* beseiged, conquered, razed and raided all add beggars, widows, cripples and gravediggers 
+* disbanded troops now adds noble warriors, soldiers and arbelesters. If magic is enabled there are nobles, master archers and crusaders 
+* full nets adds fishermen and fishwives 
+* good harvest adds farmhands, millers, bakers and herbalists 
+* Hunting season adds hunters, poachers, taxidermists, butchers and houndmasters 
+* lost at sea adds widows and fishwives 
+* mine cave in and rich veins adds ironmongers and blacksmiths and miners 
+* mustering troops adds retired soldiers, cripples, deserters and widows 
+* preparing feasts adds butchers, servants, housemaids and enuchs 
+* rebuilding effort adds lumberjacks, masons and daytalers 
+* Safe roads adds caravan hands, donkeys, sellswords, peddlers, messengers, historians, vagabonds and adventurous nobles
+* seasonal fair adds jugglers, minstrels and troubadours 
+* sickness adds cripples, beggars, widows, nuns, monks and herbalists 
+* Witch burnings have a chance of widows, when there is magic enabled there can be evokers, spiritualists, diviners, nuns and entrancers
+
+
+**Bug fixes and minor tunes**
+Militia scenario has random backgrounds added to half the starting characters to increase replayability.
+You can now camp during caravan contracts 
+Offhand Puncture no longer uses main hand dmg (Salty)
+Cultist Sacrifice now has 50% chance to rank up the cultist again, not 100% (Salty)
+Buckler Bash should no longer cost 1 fat with mastery (Salty)
+Fix for Oblivion Potion fix, no longer doubles perkpoints and gifted doesn't grant free points (Salty)
+Orc Behemoth now isn't puny anymore. Now correctly get's it's own stats. (Salty, thanks to Motanul)
+Berserker mapicon is now fixed to the unique icon (Salty, thanks to Leonion)
+Matching set now correctly works up to combined armor, not 350 (Salty)
+Entice should now remove the skill correctly when the perk is removed (Salty)
+Throw net now uses same attack calculation as throwing a javelin 
+Adds armor piercing and broad head arrows to fletchers 
+Random solo party size raised to 27 
+Vala no longer adds uncut gems when taking inscription perks 
+Adventurous nobles are correctly spawned
+Fix incorrect perk trees of rangers
+True believer now changes pessimist and irrational to optimist.
+Fix double strike and vengeance no effect problem
+Fix porridge not working properly
+Fix 0 cost damaged torso with layered armor turned off
+Peasant Squire gets "duelist" not "duelist" (mwah)
+Spelling errors (mwah)  
+Master archer spawns with layered armor when u have layers on (Mwah)
+Rotting Flesh AP fix (mwah)
+Gender neutralizes the "The most powerful opponent they vanquished was" text (mwah)
+Slaughterer is actually fixed (mwah)
+Fishermen don't increase the cost of taking boats to different towns (mwah)
+Slingstaff now gets slingstaff bash, not staff bash :: Half dmg compared to staff bash & 13 Fat -> 25 Fat (mwah)
+Bandit Warlords can't get ranged fameds they won't use (mwah)
+Typo fixes (thank YOU, the user who reports them)
+Gatherer drops ironwill potion properly now (mwah)
+Bleed rune doesnt crash when person gets swallowed (mwah)
+Fixes lacerate calculation to activate (mwah)
+Fixes knock out staying after removing the shovel with the Gravesman perk (mwah)
+Updates PC Trait to mention that player character's can't be charmed (mwah)
+Hedge Knight Armor "fix" (mwah) //Should be actually fixed rn itjust gives old legend_armor not new layered_armor 
+Ninetails Attack Accuracy & Damage perks now correctly gives whips that aren't the Ninetails half the bonus instead of 2x the bonus (mwah)
+Revolt fix range tooltip (said 2 is 6) (mwah)
+Adds webbed to push the advantage perk because t probably should (mwah)
+fixes female sounds reverting to male sounds (mwah)
+whitewolves give 50% more xp 
+fixed spelling errors in some layer IDs  
+Berserker intro event has better image 
+female peasants can now wear layered peasant dress in 11 colours, these dresses can be bought near dye makers 
+
+
+
+14.0.0.6a bugfixes 
+
+fixes towns freezing when spawning people with nets 
+Fixes blast furnaces trying to spawn something that doesn't exist
+fixes juggler hats having no values 
+fixes troupe intro 
+fixes inquisition not starting with perks
+Fixes alignmentMin/Max calls not returning values
+Lowers the chance of random backgrounds having magic skills from 10% to 0.2% 
+fixes unfinished event randomly firing and freezing events 
+fixes some features of the previous build not being present in the reverted version 
+
+
+14.0.0.7 Dancing Druids 
+
+**Druids**
+* There is a new druidic magic school:
+** Wolf Form - transform into a wolf with increased movement, wolf claws and wolf bite 
+** Bear form - transform into a bear with increased health, bear claws and bear bite
+** Schrat Form - transform into a shcrat with a regrowing shield, spawning saplings and uproot
+** True form - extend the length of your transformations 
+** Summon Storm - The first cast calls down soft rain, boosting your ranged defense. The second cast creates a heavier storm and boosts your resolve. 
+** Call Lightning - Requires rain to cast, grants a 10% chance to unleash lightning on each unit within 4 tiles. 
+** Roots - the same spell as goblin shamans 
+** They also gain healing prayer and song of life, which can now work with empty hands. 
+* druids gain all the tame x events 
+* druids can be found near gatherers hut with magic enabled 
+* Named Runic Sickle added, can be bought from weaponsmiths near gatherers, heerbalist groves and mushroom groves.  Gains full effect from sickle skills 
+ Rain effect reduced to -1 vision -10 ranged skill and +10 ranged defense 
+Chain lighting costs -20 fatigue and -1AP when it is raining 
+Roots costs -10 fatigue and -1ap when its raining 
+ 
+ **The druid scenario**
+* Wild form: All recruits gain either the Wolf Form, Bear Form or Schrat Form abilities 
+* Loner: Only hires wildlings, herbalists, barbarians, conjurers, druids, diviners, enchanters, herbalists, houndmasters and vala. 
+* Avatar:  when your druid dies its game over 
+
+**Bearserkers and Wolfserkers **
+Some barbarian enemies can ocassionally adopt wild forms
+berserker commander can transform into a bear. 
+
+**Changes**
+named shields can be salvaged once destroyed. 
+named shields max stats increased significantly 
+Padded jesters hat and Death jesters hat added, can be bought in armorsmiths near dyers huts or wool spinners 
+Hunters hat has +1 vision and +5 durability 
+Legends Ranger scenario can get the hunting food event 
+Coin delivery quest only shows up above 80 moral reputation 
+necrosavants no longer spawn at wineries
+Undead legion can now gain undead spellcasters and necrosavants from the black monolith 
+
+**Fixes**
+fixes payday not working 
+fixes a couple of problems with magic perk trees causing towns to be unenterable 
+fixes towns with hunters cabins not being enterable sometimes 
+Jesters hat, Juggler's hat, Witchunter hat and witchunter helm all have their armor values fixed 
+fixes world icon for inquisition 
+necrosavant background beard fix
+fixes witchhunter hat onequip
+necrosavant background beard fix
+icon fix for terrifying visage
+leather jacket named inventory icon fix
+ratcatchers can now be known as "the beagle"
+
+14.0.0.7e
+
+fixes crash entering schrat mode
+fixes summon storm crash 
+fixes town not enterable from druid spelling defence like an aussie 
+fixes town not enterable due to apocethary mushrooms in the mushroom grove 
+fixes town not enterable as druid
+fixes recruitment as druid  
+fixes town not enterable due to inventor not knowing their class 
+
+14.0.0.Cultists
+
+Converting a cultist now doesn't "change" their background. The converts get both their old events and all converted cultist events. 
+They keep their camp modifiers, and when I'm done they'll get the cultist perkgroup added to their tree(the perkpoitns won't be reset) (Salty)
+
+
 

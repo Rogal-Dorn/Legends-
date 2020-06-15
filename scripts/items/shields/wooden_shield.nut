@@ -35,6 +35,12 @@ this.wooden_shield <- this.inherit("scripts/items/shields/shield", {
 		this.addSkill(this.new("scripts/skills/actives/knock_back"));
 	}
 
+	function onPaintSpecificColor( _color )
+	{
+		this.setVariant( _color );
+		this.updateAppearance();
+	}
+
 	function onPaintInCompanyColors()
 	{
 		this.logInfo("banner id: " + this.World.Assets.getBanner().slice(this.World.Assets.getBanner().find("_") + 1).tointeger());

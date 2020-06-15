@@ -2271,7 +2271,7 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendTerrifyingVisage,
 		Tooltip = this.Const.Strings.PerkDescription.LegendTerrifyingVisage,
 		Icon = "ui/perks/perk_21.png",
-		IconDisabled = "ui/perks/perk_21_bw.png",
+		IconDisabled = "ui/perks/perk_21_sw.png",
 		Const = "LegendTerrifyingVisage"
 	},
 	{
@@ -2804,6 +2804,159 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/gold56.png",
 		IconDisabled = "ui/perks/gold56_bw.png",
 		Const = "LegendBarterGreed"
+	},
+	{
+		ID = "perk.legend_prayer_of_life",
+		Script = "scripts/skills/perks/perk_legend_prayer_of_life",
+		Name = this.Const.Strings.PerkName.LegendPrayerOfLife,
+		Tooltip = this.Const.Strings.PerkDescription.LegendPrayerOfLife,
+		Icon = "ui/perks/prayer_green.png",
+		IconDisabled = "ui/perks/prayer_green_bw.png",
+		Const = "LegendPrayerOfLife"
+	},
+	{
+		ID = "perk.legend_prayer_of_faith",
+		Script = "scripts/skills/perks/perk_legend_prayer_of_faith",
+		Name = this.Const.Strings.PerkName.LegendPrayerOfFaith,
+		Tooltip = this.Const.Strings.PerkDescription.LegendPrayerOfFaith,
+		Icon = "ui/perks/prayer_purple.png",
+		IconDisabled = "ui/perks/prayer_purple_bw.png",
+		Const = "LegendPrayerOfFaith"
+	},
+	{
+		ID = "perk.legend_holyflame",
+		Script = "scripts/skills/perks/perk_legend_holyflame",
+		Name = this.Const.Strings.PerkName.LegendHolyFlame,
+		Tooltip = this.Const.Strings.PerkDescription.LegendHolyFlame,
+		Icon = "ui/perks/holybluefire_circle.png",
+		IconDisabled = "ui/perks/holyfire_circle_bw.png",
+		Const = "LegendHolyFlame"
+	},
+	{
+		ID = "perk.legend_shields_up",
+		Script = "scripts/skills/perks/perk_legend_shields_up",
+		Name = this.Const.Strings.PerkName.LegendShieldsUp,
+		Tooltip = this.Const.Strings.PerkDescription.LegendShieldsUp,
+		Icon = "ui/perks/shields_up.png",
+		IconDisabled = "ui/perks/shields_up_bw.png",
+		Const = "LegendShieldsUp"
+	},
+	{
+		ID = "perk.legend_incoming",
+		Script = "scripts/skills/perks/perk_legend_incoming",
+		Name = this.Const.Strings.PerkName.LegendIncoming,
+		Tooltip = this.Const.Strings.PerkDescription.LegendIncoming,
+		Icon = "ui/perks/incoming_circle.png",
+		IconDisabled = "ui/perks/incoming_circle_bw.png",
+		Const = "LegendIncoming"
+	},
+	{
+		ID = "perk.perk_legend_zombie_bite",
+		Script = "scripts/skills/perks/perk_legend_zombie_bite",
+		Name = this.Const.Strings.PerkName.LegendZombieBite,
+		Tooltip = this.Const.Strings.PerkDescription.LegendZombieBite,
+		Icon = "ui/perks/mold_carrion_circle.png",
+		IconDisabled = "ui/perks/mold_carrion_circle_bw.png",
+		Const = "LegendZombieBite"
+	},
+	{
+		ID = "perk.legend_cheer_on",
+		Script = "scripts/skills/perks/perk_legend_cheer_on",
+		Name = this.Const.Strings.PerkName.LegendCheerOn,
+		Tooltip = this.Const.Strings.PerkDescription.LegendCheerOn,
+		Icon = "ui/perks/cheered_on_circle.png",
+		IconDisabled = "ui/perks/cheered_on_circle_bw.png",
+		Const = "LegendCheerOn"
+	},
+	{
+		ID = "perk.legend_leap",
+		Script = "scripts/skills/perks/perk_legend_leap",
+		Name = this.Const.Strings.PerkName.LegendLeap,
+		Tooltip = this.Const.Strings.PerkDescription.LegendLeap,
+		Icon = "ui/perks/leap_circle.png",
+		IconDisabled = "ui/perks/leap_circle_bw.png",
+		Const = "LegendLeap"
+	},
+	{
+		ID = "perk.perk_legend_tumble",
+		Script = "scripts/skills/perks/perk_legend_tumble",
+		Name = this.Const.Strings.PerkName.LegendTumble,
+		Tooltip = this.Const.Strings.PerkDescription.LegendTumble,
+		Icon = "ui/perks/tumble_circle.png",
+		IconDisabled = "ui/perks/tumble_circle_bw.png",
+		Const = "LegendTumble"
+	},
+	{
+		ID = "perk.legend_hair_splitter",
+		Script = "scripts/skills/perks/perk_legend_hair_splitter",
+		Name = this.Const.Strings.PerkName.LegendHairSplitter,
+		Tooltip = this.Const.Strings.PerkDescription.LegendHairSplitter,
+		Icon = "ui/perks/hairsplit_circle.png",
+		IconDisabled = "ui/perks/hairsplit_circle_bw.png",
+		Const = "LegendHairSplitter"
+	},
+	{
+		ID = "perk.legend_bearform",
+		Script = "scripts/skills/perks/perk_legend_bearform",
+		Name = this.Const.Strings.PerkName.LegendBearform,
+		Tooltip = this.Const.Strings.PerkDescription.LegendBearform,
+		Icon = "ui/perks/bear2_circle.png",
+		IconDisabled = "ui/perks/bear2_circle_bw.png",
+		Const = "LegendBearform"
+	},
+	{
+		ID = "perk.legend_roots",
+		Script = "scripts/skills/perks/perk_legend_roots",
+		Name = this.Const.Strings.PerkName.LegendRoots,
+		Tooltip = this.Const.Strings.PerkDescription.LegendRoots,
+		Icon = "ui/perks/roots_circle.png",
+		IconDisabled = "ui/perks/roots_circle_bw.png",
+		Const = "LegendRoots"
+	},
+	{
+		ID = "perk.legend_wolfform",
+		Script = "scripts/skills/perks/perk_legend_wolfform",
+		Name = this.Const.Strings.PerkName.LegendWolfform,
+		Tooltip = this.Const.Strings.PerkDescription.LegendWolfform,
+		Icon = "ui/perks/wolf2_circle.png",
+		IconDisabled = "ui/perks/wolf2_circle_bw.png",
+		Const = "LegendWolfform"
+	},
+	{
+		ID = "perk.legend_treeform",
+		Script = "scripts/skills/perks/perk_legend_treeform",
+		Name = this.Const.Strings.PerkName.LegendTreeform,
+		Tooltip = this.Const.Strings.PerkDescription.LegendTreeform,
+		Icon = "ui/perks/tree_circle.png",
+		IconDisabled = "ui/perks/tree_circle_bw.png",
+		Const = "LegendTreeform"
+	},
+	{
+		ID = "perk.legend_true_form",
+		Script = "scripts/skills/perks/perk_legend_true_form",
+		Name = this.Const.Strings.PerkName.LegendTrueForm,
+		Tooltip = this.Const.Strings.PerkDescription.LegendTrueForm,
+		Icon = "ui/perks/true_form_circle.png",
+		IconDisabled = "ui/perks/true_form_circle_bw.png",
+		Const = "LegendTrueForm"
+	},
+	{
+		ID = "perk.legend_summon_storm",
+		Script = "scripts/skills/perks/perk_legend_summon_storm",
+		Name = this.Const.Strings.PerkName.LegendSummonStorm,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSummonStorm,
+		Icon = "ui/perks/rain_circle.png",
+		IconDisabled = "ui/perks/rain_circle_bw.png",
+		Const = "LegendSummonStorm"
+	},
+	{
+		ID = "perk.legend_call_lightning",
+		Script = "scripts/skills/perks/perk_legend_call_lightning",
+		Name = this.Const.Strings.PerkName.LegendCallLightning,
+		Tooltip = this.Const.Strings.PerkDescription.LegendCallLightning,
+		Icon = "ui/perks/storm_circle.png",
+		IconDisabled = "ui/perks/storm_circle_bw.png",
+		Const = "LegendCallLightning"
 	}
 ];
 gt.Const.Perks.PerkDefs <- {};

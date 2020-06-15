@@ -46,7 +46,7 @@ this.hate_undead_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
-		if (this.Time.getVirtualTimeF() - this.World.Events.getLastBattleTime() > 5.0)
+		if (this.Time.getVirtualTimeF() - this.World.Events.getLastBattleTime() > 30.0) //from 5
 		{
 			return;
 		}
@@ -64,7 +64,7 @@ this.hate_undead_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
-		if (this.World.Statistics.get().LastCombatFaction != this.World.FactionManager.getFactionOfType(this.Const.FactionType.Undead) && this.World.Statistics.get().LastCombatFaction != this.World.FactionManager.getFactionOfType(this.Const.FactionType.Zombies))
+		if (this.World.Statistics.get().LastCombatFaction != this.World.FactionManager.getFactionOfType(this.Const.FactionType.Undead).getID() && this.World.Statistics.get().LastCombatFaction != this.World.FactionManager.getFactionOfType(this.Const.FactionType.Zombies).getID())
 		{
 			return;
 		}

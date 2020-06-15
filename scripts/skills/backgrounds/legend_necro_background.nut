@@ -7,22 +7,9 @@ this.legend_necro_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.Icon = "ui/backgrounds/warlock_02.png";
 		local r = this.Math.rand(0, 3);
 
-		if (r == 0)
-		{
-			this.m.Name = "Medium";
-		}
-		else if (r == 1)
-		{
-			this.m.Name = "Seance";
-		}
-		else if (r == 2)
-		{
-			this.m.Name = "Sorcerer";
-		}
-		else if (r == 3)
-		{
-			this.m.Name = "Warlock";
-		}
+
+		this.m.Name = "Warlock";
+
 
 		this.m.HiringCost = 20000;
 		this.m.DailyCost = 50;
@@ -51,13 +38,15 @@ this.legend_necro_background <- this.inherit("scripts/skills/backgrounds/charact
 			"the Puppeteer"
 		];
 		this.m.Faces = this.Const.Faces.Necromancer;
-		this.m.Hairs = this.Const.Hair.Necromancer;
+		this.m.Hairs = this.Const.Hair.Vampire;
 		this.m.HairColors = this.Const.HairColors.Zombie;
 		this.m.Beards = this.Const.Beards.Raider;
 		this.m.Body = "bust_naked_body_00";
 		this.m.Level = 1;
 		this.m.IsUntalented = true;
 		this.m.IsOutlawBackground = true;
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Merciless;
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[3];
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[2];
@@ -166,19 +155,19 @@ this.legend_necro_background <- this.inherit("scripts/skills/backgrounds/charact
 	{
 		local c = {
 			Hitpoints = [
-				20,
+				15,
 				20
 			],
 			Bravery = [
-				-5,
+				-10,
 				-5
 			],
 			Stamina = [
-				10,
-				10
+				5,
+				5
 			],
 			MeleeSkill = [
-				10,
+				5,
 				10
 			],
 			RangedSkill = [
@@ -186,16 +175,16 @@ this.legend_necro_background <- this.inherit("scripts/skills/backgrounds/charact
 				-5
 			],
 			MeleeDefense = [
-				0,
-				0
-			],
-			RangedDefense = [
 				-5,
 				-5
 			],
+			RangedDefense = [
+				-10,
+				-5
+			],
 			Initiative = [
-				15,
-				15
+				10,
+				10
 			]
 		};
 		return c;

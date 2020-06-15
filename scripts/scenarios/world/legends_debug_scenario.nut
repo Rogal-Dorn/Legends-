@@ -17,8 +17,8 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	function onSpawnAssets()
 	{
 		local roster = this.World.getPlayerRoster();
-		local partysize = 12
-		local broLevelMax = 11
+		local partysize = 6;
+		local broLevelMax = 11;
 
 		for( local i = 0; i < partysize; i = ++i )
 		{
@@ -34,7 +34,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			bro.setVeteranPerks(2);
 		}
 
-		 local horsesize = 0
+		 local horsesize = 6;
 		 for( local i = 0; i < horsesize; i = ++i )
 		 {
 		 	local broLevel = broLevelMax
@@ -49,7 +49,13 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		 	bro.setVeteranPerks(2);
 		 }
 
+		local bros = roster.getAll();
 
+		foreach( bro in bros )
+		{
+			local val = this.World.State.addNewID(bro);
+			bro.m.CompanyID = val;
+		}
 
 		this.World.Assets.m.Money = 50000;
 		this.World.Assets.m.ArmorParts = 200;
@@ -374,6 +380,13 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			], this.Const.Music.CrossFadeTime);
 			this.World.Events.fire("event.legend_random_party_scenario_intro");
 		}, null);
+foreach (b in this.World.getPlayerRoster().getAll())
+		{
+			foreach (add in this.World.getPlayerRoster().getAll())
+			{
+				b.changeActiveRelationship(add, this.Math.rand(0, 10));
+			}
+		}
 	}
 
 	function onBuildPerkTree( _tree)

@@ -27,7 +27,7 @@ gt.Const.Perks.BardClassTree <- {
 		"entertaining"
 	],
 	Tree = [
-		[],
+		[gt.Const.Perks.PerkDefs.LegendCheerOn],
 		[gt.Const.Perks.PerkDefs.LegendDaze],
 		[],
 		[gt.Const.Perks.PerkDefs.LegendEntice],
@@ -50,6 +50,22 @@ gt.Const.Perks.HealerClassTree <- {
 		[],
 		[],
 		[gt.Const.Perks.PerkDefs.LegendFieldTriage]
+	]
+};
+
+gt.Const.Perks.FaithClassTree <- {
+	ID = "FaithClassTree",
+	Descriptions = [
+		"faith"
+	],
+	Tree = [
+		[],
+		[],
+		[],
+		[],
+		[gt.Const.Perks.PerkDefs.LegendPrayerOfFaith],
+		[gt.Const.Perks.PerkDefs.LegendPrayerOfLife],
+		[gt.Const.Perks.PerkDefs.LegendHolyFlame]
 	]
 };
 
@@ -165,7 +181,7 @@ gt.Const.Perks.HammerClassTree <- {
 		[],
 		[gt.Const.Perks.PerkDefs.LegendSpecialistHammerDamage],
 		[],
-		[gt.Const.Perks.PerkDefs.Bruiser],
+		[gt.Const.Perks.PerkDefs.SunderingStrikes],
 		[],
 		[]
 	]
@@ -197,7 +213,7 @@ gt.Const.Perks.PickaxeClassTree <- {
 		[],
 		[gt.Const.Perks.PerkDefs.LegendSpecialistPickaxeDamage],
 		[],
-		[gt.Const.Perks.PerkDefs.Bruiser],
+		[gt.Const.Perks.PerkDefs.SunderingStrikes],
 		[],
 		[]
 	]
@@ -297,117 +313,21 @@ gt.Const.Perks.NinetailsClassTree <- {
 		[gt.Const.Perks.PerkDefs.LegendSpecCultArmor],
 		[gt.Const.Perks.PerkDefs.LegendLacerate]
 	]
-};
+}
 
-gt.Const.Perks.ValaChantClassTree <- {
-	ID = "ValaChantClassTree",
+gt.Const.Perks.JugglerClassTree <- {
+	ID = "JugglerClassTree",
 	Descriptions = [
-		"chants"
+		"acrobatics"
 	],
 	Tree = [
 		[],
-		[],
-		[gt.Const.Perks.PerkDefs.LegendValaChantSenses],
-		[gt.Const.Perks.PerkDefs.LegendValaChantMastery],
-		[gt.Const.Perks.PerkDefs.LegendValaChantDisharmony],
-		[],
-		[gt.Const.Perks.PerkDefs.LegendValaChantDisharmony]
-	]
-};
-
-gt.Const.Perks.ValaTranceClassTree <- {
-	ID = "ValaTranceClassTree",
-	Descriptions = [
-		"trances"
-	],
-	Tree = [
-		[],
-		[gt.Const.Perks.PerkDefs.LegendValaTranceMalevolent],
-		[],
-		[gt.Const.Perks.PerkDefs.LegendValaTranceMastery],
-		[],
-		[gt.Const.Perks.PerkDefs.LegendValaThreads],
-		[]
-	]
-};
-
-gt.Const.Perks.ValaRuneClassTree <- {
-	ID = "ValaRuneClassTree",
-	Descriptions = [
-		"runes"
-	],
-	Tree = [
-		[gt.Const.Perks.PerkDefs.LegendValaInscribeShield],
-		[],
-		[gt.Const.Perks.PerkDefs.LegendValaInscribeHelmet],
-		[gt.Const.Perks.PerkDefs.LegendValaInscriptionMastery],
-		[gt.Const.Perks.PerkDefs.LegendValaInscribeArmor],
-		[],
-		[gt.Const.Perks.PerkDefs.LegendValaInscribeWeapon]
-	]
-};
-
-gt.Const.Perks.ValaSpiritClassTree <- {
-	ID = "ValaSpiritClassTree",
-	Descriptions = [
-		"spirits"
-	],
-	Tree = [
-		[gt.Const.Perks.PerkDefs.LegendValaWarden],
-		[],
-		[gt.Const.Perks.PerkDefs.LegendValaPremonition],
+		[gt.Const.Perks.PerkDefs.LegendHairSplitter],
 		[],
 		[],
-		[gt.Const.Perks.PerkDefs.LegendValaSpiritualBond],
-		[]
-	]
-};
-
-gt.Const.Perks.InventorClassTree <- {
-	ID = "InventorClassTree",
-	Descriptions = [
-		"inventor"
-	],
-	Tree = [
-		[],
-		[],
-		[],
-		[],
-		[],
-		[gt.Const.Perks.PerkDefs.LegendInventorAnatomy],
-		[]
-	]
-};
-
-gt.Const.Perks.ValaSpiritClassTree <- {
-	ID = "ValaSpiritClassTree",
-	Descriptions = [
-		"spirits"
-	],
-	Tree = [
-		[gt.Const.Perks.PerkDefs.LegendValaWarden],
-		[],
-		[gt.Const.Perks.PerkDefs.LegendValaPremonition],
-		[],
-		[],
-		[gt.Const.Perks.PerkDefs.LegendValaSpiritualBond],
-		[]
-	]
-};
-
-gt.Const.Perks.RangerHuntClassTree <- {
-	ID = "RangerHuntClassTree",
-	Descriptions = [
-		"spirits"
-	],
-	Tree = [
-		[gt.Const.Perks.PerkDefs.LegendMarkTarget],
-		[],
-		[],
-		[],
-		[],
-		[gt.Const.Perks.PerkDefs.LegendFavouredEnemyArcher],
-		[gt.Const.Perks.PerkDefs.LegendBigGameHunter]
+		[gt.Const.Perks.PerkDefs.Footwork],
+		[gt.Const.Perks.PerkDefs.LegendLeap],
+		[gt.Const.Perks.PerkDefs.LegendTumble]
 	]
 };
 
@@ -434,6 +354,7 @@ gt.Const.Perks.ClassTrees <- {
 		gt.Const.Perks.BeastClassTree,
 		gt.Const.Perks.BardClassTree,
 		gt.Const.Perks.HealerClassTree,
+		gt.Const.Perks.FaithClassTree,
 		gt.Const.Perks.FistsClassTree,
 		gt.Const.Perks.ChefClassTree, 
 		gt.Const.Perks.RepairClassTree,
@@ -447,8 +368,9 @@ gt.Const.Perks.ClassTrees <- {
 		gt.Const.Perks.ShortbowClassTree,
 		gt.Const.Perks.WoodaxeClassTree,
 		gt.Const.Perks.SickleClassTree,
-		gt.Const.Perks.HoundmasterClassTree,
-		gt.Const.Perks.NinetailsClassTree
+		gt.Const.Perks.NinetailsClassTree,
+		gt.Const.Perks.JugglerClassTree,
+		gt.Const.Perks.HoundmasterClassTree
 	],
 	function getRandom(_exclude) 
 	{

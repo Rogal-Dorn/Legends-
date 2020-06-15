@@ -25,6 +25,10 @@ this.winery_location <- this.inherit("scripts/entity/world/attached_location", {
 		_list.push("monk_background");
 		_list.push("brawler_background");
 		_list.push("caravan_hand_background");
+		if(this.Const.LegendMod.Configs.LegendMagicEnabled())
+		{
+			_list.push("legend_illusionist_background");
+		}
 	}
 
 	function onUpdateShopList( _id, _list )

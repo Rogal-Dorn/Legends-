@@ -5,7 +5,7 @@ this.legend_cannibal_background <- this.inherit("scripts/skills/backgrounds/char
 		this.character_background.create();
 		this.m.ID = "background.legend_cannibal";
 		this.m.Name = "Cannibal";
-		this.m.Icon = "ui/backgrounds/legend_cannibal.png";
+		this.m.Icon = "ui/backgrounds/cannibal.png";
 		this.m.BackgroundDescription = "Cannibals have a thing for human flesh.";
 		this.m.GoodEnding = null;
 		this.m.BadEnding = null;
@@ -23,6 +23,8 @@ this.legend_cannibal_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.Hairs = this.Const.Hair.AllMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Cruel;
 		this.m.IsOutlawBackground = true;
 		this.m.Body = this.Const.Bodies.AllMale[this.Math.rand(0, this.Const.Bodies.AllMale.len() - 1)];
 		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[1];
@@ -45,7 +47,8 @@ this.legend_cannibal_background <- this.inherit("scripts/skills/backgrounds/char
 			Class = [
 				this.Const.Perks.ButcherClassTree,
 				this.Const.Perks.ChefClassTree
-			]
+			],
+			Magic = []
 		}
 	}
 
@@ -130,7 +133,7 @@ this.legend_cannibal_background <- this.inherit("scripts/skills/backgrounds/char
 		items.equip(this.new("scripts/items/weapons/butchers_cleaver"));
 	}
 
-	function onAddLegendaryEquipment()
+	function onAddLegendEquipment()
 	{
 		local items = this.getContainer().getActor().getItems();
 		local cloths = [

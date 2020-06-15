@@ -709,6 +709,10 @@ this.item <- {
 				this.addSkill(this.new("scripts/skills/rune_sigils/legend_RSW_bleeding"));
 				break;
 
+			case 6:
+				this.addSkill(this.new("scripts/skills/rune_sigils/legend_RSW_unbreaking"));
+				break;
+
 			case 11:
 				this.addSkill(this.new("scripts/skills/rune_sigils/legend_RSH_clarity"));
 				break;
@@ -770,6 +774,10 @@ this.item <- {
 				return "This item has the power of the rune sigil of Bleeding:\n[color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.RuneBonus1 + "[/color] bleed damage every turn for [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.RuneBonus2 + "[/color] turn(s).";
 				break;
 
+			case 6:
+				return "This item has the power of the rune sigil of Unbreaking:\n[color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.RuneBonus1 + "[/color] to [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.RuneBonus2 + "[/color] durability restored on every kill.";
+				break;
+
 			case 11:
 				return "This item has the power of the rune sigil of Clarity:\n[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.RuneBonus1 + "[/color] Vision.\n[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.RuneBonus2 + "%[/color] Experience gain.";
 				break;
@@ -817,35 +825,37 @@ this.item <- {
 			case 1:
 				if (_bonus)
 				{
-					bonus = this.Math.rand(3, 12)
+					bonus = this.Math.rand(3, 9)
+					bonus2 = this.Math.rand(3, 9)
 				}
 				else
 				{
-					bonus = this.Math.rand(3, 9)
+					bonus = this.Math.rand(3, 6)
+					bonus2 = this.Math.rand(3, 6)
 				}
 				break;
 
 			case 2:
 				if (_bonus)
 				{
-					bonus = this.Math.rand(3, 12)
-					bonus2 = this.Math.rand(3, 12)
+					bonus = this.Math.rand(3, 9)
+					bonus2 = this.Math.rand(3, 9)
 				}
 				else
 				{
-					bonus = this.Math.rand(3, 9)
-					bonus2 = this.Math.rand(3, 9)
+					bonus = this.Math.rand(3, 6)
+					bonus2 = this.Math.rand(3, 6)
 				}
 				break;
 
 			case 3:
 				if (_bonus)
 				{
-					bonus = this.Math.rand(3, 12)
+					bonus = this.Math.rand(2, 6)
 				}
 				else
 				{
-					bonus = this.Math.rand(3, 9)
+					bonus = this.Math.rand(2, 4)
 				}
 				break;
 
@@ -853,7 +863,7 @@ this.item <- {
 				if (_bonus)
 				{
 					bonus = this.Math.rand(1, 3)
-					bonus2 = this.Math.rand(3, 12)
+					bonus2 = this.Math.rand(3, 9)
 				}
 				else
 				{
@@ -865,12 +875,25 @@ this.item <- {
 			case 5:
 				if (_bonus)
 				{
-					bonus = this.Math.rand(3, 12)
+					bonus = this.Math.rand(3, 9)
 					bonus2 = this.Math.rand(1, 3)
 				}
 				else
 				{
+					bonus = this.Math.rand(3, 6)
+					bonus2 = this.Math.rand(1, 2)
+				}
+				break;
+
+			case 6:
+				if (_bonus)
+				{
 					bonus = this.Math.rand(3, 9)
+					bonus2 = this.Math.rand(1, 3)
+				}
+				else
+				{
+					bonus = this.Math.rand(3, 6)
 					bonus2 = this.Math.rand(1, 2)
 				}
 				break;
@@ -879,24 +902,24 @@ this.item <- {
 				if (_bonus)
 				{
 					bonus = this.Math.rand(0, 2)
-					bonus2 = this.Math.rand(3, 12)
+					bonus2 = this.Math.rand(3, 9)
 				}
 				else
 				{
 					bonus = this.Math.rand(0, 1)
-					bonus2 = this.Math.rand(3, 9)
+					bonus2 = this.Math.rand(3, 6)
 				}
 				break;
 
 			case 12:
 				if (_bonus)
 				{
-					bonus = this.Math.rand(3, 12)
+					bonus = this.Math.rand(3, 9)
 					bonus2 = this.Math.rand(1, 5)
 				}
 				else
 				{
-					bonus = this.Math.rand(3, 9)
+					bonus = this.Math.rand(3, 6)
 					bonus2 = this.Math.rand(1, 3)
 				}
 				break;
@@ -904,11 +927,11 @@ this.item <- {
 			case 13:
 				if (_bonus)
 				{
-					bonus = this.Math.rand(3, 12)
+					bonus = this.Math.rand(3, 9)
 				}
 				else
 				{
-					bonus = this.Math.rand(3, 9)
+					bonus = this.Math.rand(3, 6)
 				}
 				break;
 
@@ -916,25 +939,25 @@ this.item <- {
 				if (_bonus)
 				{
 					bonus = this.Math.rand(0, 3)
-					bonus2 = this.Math.rand(3, 12)
+					bonus2 = this.Math.rand(3, 9)
 				}
 				else
 				{
 					bonus = this.Math.rand(0, 1)
-					bonus2 = this.Math.rand(3, 9)
+					bonus2 = this.Math.rand(3, 6)
 				}
 				break;
 
 			case 22:
 				if (_bonus)
 				{
-					bonus = this.Math.rand(3, 12)
-					bonus2 = this.Math.rand(3, 12)
+					bonus = this.Math.rand(3, 9)
+					bonus2 = this.Math.rand(3, 9)
 				}
 				else
 				{
-					bonus = this.Math.rand(3, 9)
-					bonus2 = this.Math.rand(3, 9)
+					bonus = this.Math.rand(3, 6)
+					bonus2 = this.Math.rand(3, 6)
 				}
 				break;
 
@@ -944,8 +967,8 @@ this.item <- {
 			case 31:
 				if (_bonus)
 				{
-					bonus = this.Math.rand(3, 12)
-					bonus2 = this.Math.rand(3, 12)
+					bonus = this.Math.rand(3, 9)
+					bonus2 = this.Math.rand(3, 9)
 				}
 				else
 				{
@@ -1008,6 +1031,13 @@ this.item <- {
 
 			case 5:
 				this.m.Name = "Weapon Rune Sigil: Bleeding";
+				this.m.Description = "An inscribed rock that can be attached to a character\'s weapon.";
+				this.m.Icon = "rune_sigils/rune_stone_1.png";
+				this.m.IconLarge = "rune_sigils/rune_stone_1.png";
+				break;
+
+			case 6:
+				this.m.Name = "Weapon Rune Sigil: Unbreaking";
 				this.m.Description = "An inscribed rock that can be attached to a character\'s weapon.";
 				this.m.Icon = "rune_sigils/rune_stone_1.png";
 				this.m.IconLarge = "rune_sigils/rune_stone_1.png";

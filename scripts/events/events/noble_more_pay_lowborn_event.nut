@@ -44,6 +44,11 @@ this.noble_more_pay_lowborn_event <- this.inherit("scripts/events/event", {
 			{
 				this.Characters.push(_event.m.Noble.getImagePath());
 				this.Characters.push(_event.m.Lowborn.getImagePath());
+				//set relations
+				local modifier1 = this.Math.rand(-1, -5);
+				_event.m.Noble.changeActiveRelationship( _event.m.Lowborn, modifier1 );
+				local modifier2 = this.Math.rand(-1, -5);
+				_event.m.Lowborn.changeActiveRelationship( _event.m.Noble, modifier2 );
 			}
 
 		});

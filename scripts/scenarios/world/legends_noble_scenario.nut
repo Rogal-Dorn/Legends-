@@ -4,7 +4,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	{
 		this.m.ID = "scenario.legends_noble";
 		this.m.Name = "Noble";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_96.png[/img][/p][p]Born to a noble family, you were born to rule. With your trusted men at your side, it is time to conquer the world, as is your birthright.\n\n[color=#bcad8c]Usurper:[/color] Start as a noble, with your retainers a noble house that wants to hunt you down.\n[color=#bcad8c]Highborn:[/color] Noble and military recruits support your cause and will cost 10% less, anyone else will cost 10% more.\n[color=#bcad8c]Trained leader:[/color] Your studies at the academy gave tactical and campaign skills, everyone begins with quick hands.\n[color=#bcad8c]Avatar:[/color] if your character dies, it is game over.[/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_96.png[/img][/p][p]Born to a noble family, you were born to rule. With your trusted men at your side, it is time to conquer the world, as is your birthright.\n\n[color=#bcad8c]Usurper:[/color] Start as a noble, with your retainers a noble house that wants to hunt you down.\n[color=#bcad8c]Highborn:[/color] Noble and military recruits support your cause and will cost 10% less, anyone else will cost 10% more.\n[color=#bcad8c]Trained leader:[/color] Your studies at the academy gave tactical and campaign skills, everyone begins with Rotation.\n[color=#bcad8c]Avatar:[/color] if your character dies, it is game over.[/p]";
 		this.m.Difficulty = 2;
 		this.m.Order = 14;
 	}
@@ -115,7 +115,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[0].getTags().set("IsPlayerCharacter", true);
 		bros[0].setPlaceInFormation(13);
 		bros[0].setVeteranPerks(2);
-		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_quick_hands"));
+		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_rotation"));
 		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_roster_2"));
 		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_roster_4"));
 		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_rally_the_troops"));
@@ -139,14 +139,14 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		items.equip(shield);
 		bros[1].setPlaceInFormation(3);
 		bros[1].setVeteranPerks(2);
-		bros[1].getSkills().add(this.new("scripts/skills/perks/perk_quick_hands"));
+		bros[1].getSkills().add(this.new("scripts/skills/perks/perk_rotation"));
 		bros[2].setStartValuesEx([
 		"legend_noble_2h"
 		]);
 
 		bros[2].setPlaceInFormation(4);
 		bros[2].setVeteranPerks(2);
-		bros[2].getSkills().add(this.new("scripts/skills/perks/perk_quick_hands"));
+		bros[2].getSkills().add(this.new("scripts/skills/perks/perk_rotation"));
 		bros[3].setStartValuesEx([
 		"legend_noble_shield"
 		]);
@@ -167,19 +167,25 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		items.equip(shield);
 		bros[3].setPlaceInFormation(5);
 		bros[3].setVeteranPerks(2);
-		bros[3].getSkills().add(this.new("scripts/skills/perks/perk_quick_hands"));
+		bros[3].getSkills().add(this.new("scripts/skills/perks/perk_rotation"));
 		bros[4].setStartValuesEx([
 		"legend_noble_ranged"
 		]);
 		bros[4].setPlaceInFormation(12);
 		bros[4].setVeteranPerks(2);
-		bros[4].getSkills().add(this.new("scripts/skills/perks/perk_quick_hands"));
+		bros[4].getSkills().add(this.new("scripts/skills/perks/perk_rotation"));
 		bros[5].setStartValuesEx([
 		"legend_noble_ranged"
 		]);
 		bros[5].setPlaceInFormation(14);
 		bros[5].setVeteranPerks(2);
-		bros[5].getSkills().add(this.new("scripts/skills/perks/perk_quick_hands"));
+
+		bros[5].getSkills().add(this.new("scripts/skills/perks/perk_rotation"));
+		foreach( bro in bros )
+		{
+			local val = this.World.State.addNewID(bro);
+			bro.m.CompanyID = val;
+		}
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/cured_rations_item"));
 		
 		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
@@ -212,6 +218,13 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			], this.Const.Music.CrossFadeTime);
 			this.World.Events.fire("event.legend_noble_scenario_intro");
 		}, null);
+foreach (b in this.World.getPlayerRoster().getAll())
+		{
+			foreach (add in this.World.getPlayerRoster().getAll())
+			{
+				b.changeActiveRelationship(add, this.Math.rand(0, 10));
+			}
+		}
 	}
 	function onCombatFinished()
 	{
@@ -239,14 +252,14 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	{
 		if (bro.getBackground().isNoble() || bro.getBackground().isCombatBackground())
 		{
-			bro.improveMood(0.5, "Supports your cause as a usurper");
+			bro.improveMood(0.5, "Supports your cause as a usurper, will cost less to maintain.");
 		}
 		else if (!bro.getBackground().isNoble() && !bro.getBackground().isCombatBackground())
 		{
-			bro.worsenMood(1.0, "Feels uncomfortable serving a usurper");
+			bro.worsenMood(1.0, "Feels uncomfortable serving a usurper, will cost more to maintain.");
 		}
 		bro.improveMood(0.5, "Learned a new skill");
-		bro.getSkills().add(this.new("scripts/skills/perks/perk_quick_hands"));
+		bro.getSkills().add(this.new("scripts/skills/perks/perk_rotation"));
 	}
 
 	function onUpdateHiringRoster( _roster )
@@ -258,12 +271,12 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			if (bro.getBackground().isNoble() || bro.getBackground().isCombatBackground())
 			{
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.9);
-				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.9);
+				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.75);
 			}
 			else if (!bro.getBackground().isNoble() && !bro.getBackground().isCombatBackground())
 			{
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost  * 1.25);
-				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 1.5);
+				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 1.25);
 
 			}
 		}
@@ -289,6 +302,11 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		{
 			_list.push("legend_noble_ranged");
 		}
+		r = this.Math.rand(0, 99);
+		if (r == 0)
+		{
+			_list.push("legend_noble_background");
+		}
 	}
 
 	function onBuildPerkTree( _tree)
@@ -298,7 +316,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			return;
 		}
 
-		_tree.addPerk(this.Const.Perks.PerkDefs.QuickHands)
+		_tree.addPerk(this.Const.Perks.PerkDefs.Rotation)
 	}
 
 

@@ -32,7 +32,7 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 		this.m.IsTargeted = true;
 		this.m.IsStacking = false;
 		this.m.IsAttack = true;
-		this.m.IsRanged = false;
+		this.m.IsRanged = true;
 		this.m.IsIgnoredAsAOO = true;
 		this.m.IsShowingProjectile = false;
 		this.m.IsUsingHitchance = false;
@@ -46,8 +46,7 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		local ourskill = this.getContainer().getActor().getCurrentProperties().getRangedSkill();
-		local ret = this.getDefaultUtilityTooltip();
+		local ret = this.getDefaultTooltip();
 		ret.extend([
 			{
 				id = 6,
@@ -59,7 +58,7 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Hit chance may be inacurate. Hit chance determined by your ranged skill minus their ranged defense. Hitchance doubled by the Net Casting Perk."
+				text = "Hit chance may be inacurate. Hit chance determined by your ranged skill. Hitchance doubled by the Net Casting Perk."
 			}
 		]);
 		return ret;
@@ -85,98 +84,6 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 		return true;
 	}
 
-	function onUse( _user, _targetTile )
-	{
-		local targetEntity = _targetTile.getEntity();
-		local r = this.Math.rand(1,100);
-		if (_user.getSkills().hasSkill("perk.legend_net_casting"));
-		{
-		 r = this.Math.rand(1,50);
-		}
-		local ourSkill = _user.getCurrentProperties().getRangedSkill();
-		local theirSkill = targetEntity.getCurrentProperties().getRangedDefense();
-
-		if (r < (ourSkill - theirSkill))
-		{
-			if (!targetEntity.getCurrentProperties().IsImmuneToRoot)
-			{
-				if (this.m.SoundOnHit.len() != 0)
-				{
-					this.Sound.play(this.m.SoundOnHit[this.Math.rand(0, this.m.SoundOnHit.len() - 1)], this.Const.Sound.Volume.Skill, targetEntity.getPos());
-				}
-				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " throws a net and hits " + this.Const.UI.getColorizedEntityName(targetEntity));
-				_user.getItems().unequip(_user.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand));
-
-				targetEntity.getSkills().add(this.new("scripts/skills/effects/net_effect"));
-				local breakFree = this.new("scripts/skills/actives/break_free_skill");
-				breakFree.m.Icon = "skills/active_74.png";
-				breakFree.m.IconDisabled = "skills/active_74_sw.png";
-				breakFree.m.Overlay = "active_74";
-				breakFree.m.SoundOnUse = this.m.SoundOnHitHitpoints;
-
-				if (this.m.IsReinforced)
-				{
-					local r = this.Math.rand(1,2)
-					breakFree.setDecal("net_destroyed_02");
-					breakFree.setChanceBonus(-15);
-					local r = this.Math.rand(1,2)
-					if (r == 1)
-					{
-					this.World.Assets.getStash().add(this.new("scripts/items/tools/legend_broken_throwing_net"));	
-					}
-					else
-					{
-					this.World.Assets.getStash().add(this.new("scripts/items/tools/reinforced_throwing_net"));
-					}
-
-
-				}
-				else
-				{
-					breakFree.setDecal("net_destroyed");
-					breakFree.setChanceBonus(0);
-					local chance = this.Math.rand(1,100);
-					if (chance > 50)
-					{
-						this.World.Assets.getStash().add(this.new("scripts/items/tools/legend_broken_throwing_net"));
-					}
-				}
-
-				targetEntity.getSkills().add(breakFree);
-				local effect = this.Tactical.spawnSpriteEffect(this.m.IsReinforced ? "bust_net_02" : "bust_net", this.createColor("#ffffff"), _targetTile, 0, 10, 1.0, targetEntity.getSprite("status_rooted").Scale, 100, 100, 0);
-				local flip = !targetEntity.isAlliedWithPlayer();
-				effect.setHorizontalFlipping(flip);
-				this.Time.scheduleEvent(this.TimeUnit.Real, 200, this.onNetSpawn.bindenv(this), {
-					TargetEntity = targetEntity,
-					IsReinforced = this.m.IsReinforced
-				});
-			}
-			else
-			{
-				if (this.m.SoundOnMiss.len() != 0)
-				{
-					this.Sound.play(this.m.SoundOnMiss[this.Math.rand(0, this.m.SoundOnMiss.len() - 1)], this.Const.Sound.Volume.Skill, targetEntity.getPos());
-				}
-				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " throws a net at an immune " + this.Const.UI.getColorizedEntityName(targetEntity)  + ", the net falls to the ground ");
-				_user.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand).drop(); //drop instead of destroy
-
-				return false;
-			}	
-		}
-		else
-		{
-			if (this.m.SoundOnMiss.len() != 0)
-			{
-				this.Sound.play(this.m.SoundOnMiss[this.Math.rand(0, this.m.SoundOnMiss.len() - 1)], this.Const.Sound.Volume.Skill, targetEntity.getPos());
-			}
-			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " throws a net and misses " + this.Const.UI.getColorizedEntityName(targetEntity) + ", the net falls to the ground ");
-			 _user.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand).drop(); //drop instead of destroy
-
-			return false;
-		}	
-
-	}
-
 	function onNetSpawn( _data )
 	{
 		local rooted = _data.TargetEntity.getSprite("status_rooted");
@@ -186,6 +93,95 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 		rooted_back.setBrush(_data.IsReinforced ? "bust_net_back_02" : "bust_net_back");
 		rooted_back.Visible = true;
 		_data.TargetEntity.setDirty(true);
+	}
+
+	function onUse( _user, _targetTile )
+	{
+		local target = _targetTile.getEntity();
+		local targetEntity = _targetTile.getEntity();
+		local r = this.Math.rand(1, 100);
+
+		if (_user.getSkills().hasSkill("perk.legend_net_casting"))
+		{
+		}
+
+		r = r * 0.5;
+
+		if (_user.getSkills().hasSkill("perk.legend_net_repair"))
+		{
+		}
+
+		r = r * 0.75;
+
+		if (r > this.getHitchance(_targetTile.getEntity()))
+		{
+			target.onMissed(this.getContainer().getActor(), this);
+			return false;
+		}
+		else if (!targetEntity.getCurrentProperties().IsImmuneToRoot)
+		{
+			if (this.m.SoundOnHit.len() != 0)
+			{
+				this.Sound.play(this.m.SoundOnHit[this.Math.rand(0, this.m.SoundOnHit.len() - 1)], this.Const.Sound.Volume.Skill, targetEntity.getPos());
+			}
+
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " throws a net and hits " + this.Const.UI.getColorizedEntityName(targetEntity));
+			_user.getItems().unequip(_user.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand));
+			targetEntity.getSkills().add(this.new("scripts/skills/effects/net_effect"));
+			local breakFree = this.new("scripts/skills/actives/break_free_skill");
+			breakFree.m.Icon = "skills/active_74.png";
+			breakFree.m.IconDisabled = "skills/active_74_sw.png";
+			breakFree.m.Overlay = "active_74";
+			breakFree.m.SoundOnUse = this.m.SoundOnHitHitpoints;
+
+			if (this.m.IsReinforced)
+			{
+				local r = this.Math.rand(1, 2);
+				breakFree.setDecal("net_destroyed_02");
+				breakFree.setChanceBonus(-15);
+				local r = this.Math.rand(1, 2);
+
+				if (r == 1)
+				{
+					this.World.Assets.getStash().add(this.new("scripts/items/tools/legend_broken_throwing_net"));
+				}
+				else
+				{
+					this.World.Assets.getStash().add(this.new("scripts/items/tools/reinforced_throwing_net"));
+				}
+			}
+			else
+			{
+				breakFree.setDecal("net_destroyed");
+				breakFree.setChanceBonus(0);
+				local chance = this.Math.rand(1, 100);
+
+				if (chance > 50)
+				{
+					this.World.Assets.getStash().add(this.new("scripts/items/tools/legend_broken_throwing_net"));
+				}
+			}
+
+			targetEntity.getSkills().add(breakFree);
+			local effect = this.Tactical.spawnSpriteEffect(this.m.IsReinforced ? "bust_net_02" : "bust_net", this.createColor("#ffffff"), _targetTile, 0, 10, 1.0, targetEntity.getSprite("status_rooted").Scale, 100, 100, 0);
+			local flip = !targetEntity.isAlliedWithPlayer();
+			effect.setHorizontalFlipping(flip);
+			this.Time.scheduleEvent(this.TimeUnit.Real, 200, this.onNetSpawn.bindenv(this), {
+				TargetEntity = targetEntity,
+				IsReinforced = this.m.IsReinforced
+			});
+		}
+		else
+		{
+			if (this.m.SoundOnMiss.len() != 0)
+			{
+				this.Sound.play(this.m.SoundOnMiss[this.Math.rand(0, this.m.SoundOnMiss.len() - 1)], this.Const.Sound.Volume.Skill, targetEntity.getPos());
+			}
+
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " throws a net at an immune " + this.Const.UI.getColorizedEntityName(targetEntity) + ", the net falls to the ground ");
+			_user.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand).drop();
+			return false;
+		}
 	}
 
 });

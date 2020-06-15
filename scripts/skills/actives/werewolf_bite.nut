@@ -4,9 +4,10 @@ this.werewolf_bite <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.werewolf_bite";
 		this.m.Name = "Direwolf Bite";
-		this.m.Description = "";
+		this.m.Description = "Tear an enemy assunder with your teeth";
 		this.m.KilledString = "Ripped to shreds";
 		this.m.Icon = "skills/active_71.png";
+		this.m.IconDisabled = "skills/active_71_bw.png";
 		this.m.Overlay = "active_71";
 		this.m.SoundOnUse = [
 			"sounds/enemies/wolf_bite_01.wav",

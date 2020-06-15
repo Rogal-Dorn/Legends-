@@ -43,7 +43,11 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		CampHealing = 0,
 		LastCampTime = 0,
 		InReserves = false,
-		StarWeights = [50,50,50,50,50,50,50,50]
+		StarWeights = [50,50,50,50,50,50,50,50],
+		Alignment = null,
+		IsAlignmentAssigned = false,
+		ActiveRelationships = array(27, null),
+		CompanyID = -1
 	},
 	function setName( _value )
 	{
@@ -272,6 +276,16 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	function getMoodChanges()
 	{
 		return this.m.MoodChanges;
+	}
+
+	function getAlignmentMin()
+	{
+		return this.m.Background.getAlignmentMin();
+	}
+	
+	function getAlignmentMax()
+	{
+		return this.m.Background.getAlignmentMax();
 	}
 
 	function improveMood( _a = 1.0, _reason = "" )
@@ -898,7 +912,18 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		}
 
 		this.World.Assets.getOrigin().onHiredByScenario(this);
+		this.m.CompanyID = this.World.State.addNewID(this);
 
+		foreach ( b in this.World.getPlayerRoster().getAll() ) //Set relations to others characters to this one
+		{
+			local relMod = (( (this.m.Alignment > b.getAlignment()) ? (this.m.Alignment - b.getAlignment()) : (b.getAlignment() - this.m.Alignment) + 1) * -2) + 10;
+			this.changeActiveRelationship(b, this.Math.rand(-1, 1) + relMod);
+		}
+		foreach ( b in this.World.getPlayerRoster().getAll() ) //Relations to this character to others
+		{
+			local relMod = (( (this.m.Alignment > b.getAlignment()) ? (this.m.Alignment - b.getAlignment()) : (b.getAlignment() - this.m.Alignment) + 1) * -2) + 10;
+			b.changeActiveRelationship(this, this.Math.rand(-1,1) + relMod);
+		}
 	}
 
 	function onCombatStart()
@@ -1058,7 +1083,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				this.getTags().add("zombie_minion");
 				local skill = this.new("scripts/skills/injury_permanent/legend_rotten_flesh");
 				this.m.Skills.add(skill);
-				this.m.Skills.add(this.new("scripts/skills/perks/perk_zombie_bite"));
+				this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_zombie_bite"));
 				this.m.Skills.add(this.new("scripts/skills/perks/perk_nine_lives"));
 			}
 		}
@@ -1257,6 +1282,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 					decal.setBrush(appearance.CorpseArmorUpgradeFront);
 				}
 			}
+			this.removeActiveRelationship();
 		}
 
 		if (_tile != null)
@@ -1332,6 +1358,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.add(this.new("scripts/skills/actives/break_ally_free_skill"));
 		this.m.Skills.add(this.new("scripts/skills/effects/realm_of_nightmares_effect"));
 		this.m.Skills.add(this.new("scripts/skills/special/legend_horserider_skill"));
+		this.m.Skills.add(this.new("scripts/skills/special/relationship_check"));
 
 		if (this.Const.DLC.Unhold)
 		{
@@ -1359,6 +1386,15 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		else
 		{
 			foreach( bro in brothers )
+			{
+				bro.addXP(this.Math.max(1, this.Math.floor(XPgroup / brothers.len())));
+			}
+		}
+
+		local roster = World.getPlayerRoster().getAll()
+		foreach(bro in roster)
+		{
+			if (bro.isInReserves() && bro.getSkills().hasSkill("perk.legend_peaceful"))
 			{
 				bro.addXP(this.Math.max(1, this.Math.floor(XPgroup / brothers.len())));
 			}
@@ -2017,7 +2053,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		b.RangedDefense = 10;
 		b.Initiative = 115;
 		this.setName(this.Const.Tactical.Common.getRandomPlayerName());
-		local background = this.new("scripts/skills/backgrounds/" + this.Const.CharacterFemaleBackgrounds[this.Math.rand(0, this.Const.CharacterFemaleBackgrounds.len() - 1)]);
+		local background = this.new("scripts/skills/backgrounds/" + this.Const.CharacterFemaleBifackgrounds[this.Math.rand(0, this.Const.CharacterFemaleBackgrounds.len() - 1)]);
 		background.setScenarioOnly(true);
 		this.m.Skills.add(background);
 		background.buildDescription();
@@ -2141,6 +2177,195 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			this.fillTalentValues(3);
 			this.fillAttributeLevelUpValues(this.Const.XP.MaxLevelWithPerkpoints - 1);
 		}
+
+		this.setAlignment( null, background );
+	}
+
+	function setAlignment ( custom = null, background = null )
+	{
+		if ( background == null ) 
+		{
+			background = this.getBackground();
+		}
+		if ( this.m.IsAlignmentAssigned )
+		{
+			this.m.Skills.removeByID("trait.legend_alignment_0" + this.m.Alignment);	
+		}
+		if ( custom != null )
+		{
+			if ( custom > this.Const.LegendMod.Alignment.Saintly )
+			{
+				this.m.Alignment = this.Const.LegendMod.Alignment.Saintly;
+			}
+			else if ( custom < this.Const.LegendMod.Alignment.Dreaded ) 
+			{
+				this.m.Alignment = this.Const.LegendMod.Alignment.Dreaded;
+			}
+			else 
+			{
+				this.m.Alignment = custom;
+			}
+		}
+		else
+		{
+			this.m.Alignment = this.Math.rand(background.getAlignmentMin(), background.getAlignmentMax());
+		}
+		
+		this.m.IsAlignmentAssigned = true;
+
+		this.m.Skills.add(this.new("scripts/skills/traits/legend_frenemies"));
+		this.m.Skills.add(this.new("scripts/skills/traits/legend_alignment_0" + this.m.Alignment));
+	}
+
+
+	function getAlignment()
+	{
+		return this.m.Alignment;
+	}
+
+	function getCompanyID()
+	{
+		return this.m.CompanyID;
+	}
+
+	//Only used occaisionally, shouldn't call this specifically 
+	//Probably would be unused function
+	//Check world_state::addNewID and in this_file::onHired to see how w add company IDs to brothers
+	function setCompanyID( _num )
+	{
+		this.m.CompanyID = _num;
+	}
+
+	//If we don't have an active relationship with the actor create one -> then change the Key by the amount
+	//Most of the time we just change the relation number as of now so defaulting to RelationNum
+	//otherwise if we want to change specific key by the amount do that here
+	//We use _set = false to just stack onto the old relationship modifier
+	//If it's true then we overwrite the old modifier
+	//i.e. if relnum = 10 and we do ( _actor, 15, true ) -> relNum trns into 15
+	//or we can do ( _actor, 5 ) -> relNum turns to 15 also
+	//To use non-numeric keys it's trcky but use the following
+	// bro.cAR(bro2, true, [anything for set], keyValue)
+	//	bro.cAR(bro2, false, [anything], keyVal)
+	function changeActiveRelationship( _actor, _amount, _key = "RelationNum", _set = false )
+	{
+		if ( _actor == this )
+		{
+			return;
+		}
+		if ( !( this.hasActiveRelationshipWith(_actor) ) )
+		{
+			
+			this.createActiveRelationship(_actor);
+		}
+		
+		local arrIndex = _actor.getCompanyID();
+		local amtType = typeof _amount;
+		if (_set || (amtType != "integer" && amtType != "float"))
+		{
+			this.m.ActiveRelationships[arrIndex][_key] <- _amount;
+		}
+		else
+		{
+			if (_key in this.m.ActiveRelationships[arrIndex])
+			{
+				this.m.ActiveRelationships[arrIndex][_key] += _amount;
+			}
+			else
+			{
+				this.m.ActiveRelationships[arrIndex][_key] <- _amount;
+			}
+		}
+		
+		
+	}
+
+	//If the array index isn't null anymore then we have a rel with
+	//It should only ever be null if the relationship was previously made null by removing	
+	function hasActiveRelationshipWith( _actor )
+	{
+		if ( this.m.ActiveRelationships[_actor.getCompanyID()] == null )
+		{
+			return false;
+		}
+		return true;
+	}
+
+	//Simple rewrite of old relationship
+	//Cant have relationship on self
+	function createActiveRelationship( _actor )
+	{
+
+		if ( _actor == this )
+		{
+			return;
+		}
+
+		local newRelationship = {};
+		newRelationship.RelationNum <- 0;
+
+		this.m.ActiveRelationships[_actor.getCompanyID()] = newRelationship;
+
+	}
+
+	//Quick null to relationship when the brother dies
+	//Can call with below in case needed
+	//	foreach (bro in roster)
+	//	{
+	//		bro.nullRelation( actorWhoDied );
+	//	}
+	function nullRelation( _id )
+	{
+		this.m.ActiveRelationships[_id] = null;
+	}
+
+	//Quick loop thru all brothers and null's according to company ID
+	function removeActiveRelationship()
+	{
+
+		local brothers = this.World.getPlayerRoster().getAll();
+		foreach ( b in brothers )
+		{
+			b.nullRelation(this.getCompanyID());
+		}
+		this.World.State.removeCompanyID(this.m.CompanyID);
+	}
+	
+
+	//Call this function by doing
+	//		getARW( actor )
+	//Use by doing
+	//		local relTable = getARW ( actor )
+	//		if ( [key] in relTable ) -> do stuff
+	//			if ( FriendshipToNotHitBonus in relTable ) -> give bonus to not hit friend
+	function getActiveRelationshipWith( _actor )
+	{
+		return this.m.ActiveRelationships[_actor.getCompanyID()];
+	}
+
+	//Used by the trait to get just a list of the characters relations
+	//Currently returns just the RelNum integer but can be changed to 
+	//		return strings, i.e. "%actor% likes %other actor%"
+	function getActiveRelationshipsTraitText()
+	{
+		local returnString = "";
+		foreach ( index, relation in this.m.ActiveRelationships )
+		{
+			if ( relation != null )
+			{
+				returnString += "Relationship to " + this.World.State.getRefFromID(index).getNameOnly() + ": " + relation.RelationNum + "\n";
+			}
+		}
+		if (returnString == "")
+		{
+			returnString = this.getNameOnly() + " has no current relationships.";
+		}
+		return returnString;
+	}
+
+	//Returns the entire AR Array
+	function getActiveRelationships()
+	{
+		return this.m.ActiveRelationships;
 	}
 
 	function fillTalentValues( _num, _force = false )
@@ -2557,13 +2782,6 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			}
 		}
 
-		foreach (bro in this.World.getPlayerRoster().getAll())
-		{
-			if (bro.getSkills().hasSkill("perk.legend_barter_greed"))
-			{
-			mod -= (mod / 2);
-			}
-		}
 
 		return mod;
 	}
@@ -2774,6 +2992,31 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		_out.writeF32(this.m.LastCampTime);
 		_out.writeBool(this.m.InReserves);
 
+		_out.writeU8(this.m.Alignment);
+		_out.writeBool(this.m.IsAlignmentAssigned);
+		
+		_out.writeU8(this.m.CompanyID);
+
+		//keys are just string values
+
+		foreach (index, relation in this.m.ActiveRelationships)
+		{
+			if (relation != null)
+			{
+				_out.writeString("CharID");
+				_out.writeU16(index);
+
+				foreach (key, value in relation)
+			{
+				_out.writeString(key);//IF WE ADD ANY NON-INT KEYS YOU HAVE TO CHECK HERE WHAT TKEY STRING IS USING
+				_out.writeI16(value);// if ( key == __ ) THEN _out.WriteVARTYPE
+			}
+
+			}
+			
+		}
+		//adds a string with STOP so we know when to stop reading in in onDeserialize(?) this should bechanged probably
+		_out.writeString("STOP");
 	}
 
 	function onDeserialize( _in )
@@ -2828,8 +3071,10 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Background.buildDescription(true);
 			if (this.m.Background.isFemaleBackground())
 			{
-				this.m.Gender = 1;
-				this.m.VoiceSet = this.Math.rand(0, this.Const.WomanSounds.len() - 1);
+				this.setGender(1);
+			} 
+			else {
+				this.setGender(0);
 			}
 		}
 
@@ -2885,6 +3130,32 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		{
 			this.m.InReserves = _in.readBool();
 		}
+
+
+		//IF WE ADD ANY NON-INT KEYS YOU HAVE TO CHECK HERE WHAT TKEY STRING IS USING
+		// if ( keys == __ ) THEN _in.readVARTYPE
+		if (_in.getMetaData().getVersion() >= 65) //THIS SHOULD BE CHANGED TO ACTUAL NUMBER WHEN IN RELEASE BUILD 
+			this.m.Alignment = _in.readU8();
+			this.m.IsAlignmentAssigned = _in.readBool();
+
+			this.m.CompanyID = _in.readU8();
+			
+			local keys = _in.readString(); //puts STOP if we had norelations etc
+			local i = -1;
+			while ( keys != "STOP" )
+			{
+
+				if ( keys == "CharID" ) //new actor's relation
+				{
+					i = _in.readU16();
+					this.m.ActiveRelationships[i] = {};
+				}
+				else
+				{
+					this.m.ActiveRelationships[i][keys] <- _in.readI16();
+				}
+				keys = _in.readString();
+			}	
 
 	}
 

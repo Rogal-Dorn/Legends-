@@ -118,12 +118,14 @@ this.supposed_witch_event <- this.inherit("scripts/events/event", {
 				_event.m.Dude = roster.create("scripts/entity/tactical/player");
 					if (this.World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
 						{
-						_event.m.Cannibal.getTags().add("PlayerSkeleton");
-						_event.m.Cannibal.getTags().add("undead");
-						_event.m.Cannibal.getTags().add("skeleton");
+						_event.m.Dude.getTags().add("PlayerSkeleton");
+						_event.m.Dude.getTags().add("undead");
+						_event.m.Dude.getTags().add("skeleton");
 							_event.m.Dude.setStartValuesEx(
 								this.Const.CharacterFemaleBackgrounds
 							);
+						_event.m.Dude.getSkills().add(this.new("scripts/skills/racial/skeleton_racial"));
+						_event.m.Dude.getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));							
 						}
 					else
 					{
@@ -384,7 +386,7 @@ this.supposed_witch_event <- this.inherit("scripts/events/event", {
 
 				foreach( bro in brothers )
 				{
-					if (bro.getID() != _event.m.Cultist.getID() && (bro.getBackground().getID() == "background.cultist" || bro.getBackground().getID() == "background.converted_cultist"))
+					if (bro.getID() != _event.m.Cultist.getID() && bro.getBackground().isCultist())
 					{
 						bro.improveMood(1.0, "Witnessed Davkul\'s power");
 
@@ -450,7 +452,7 @@ this.supposed_witch_event <- this.inherit("scripts/events/event", {
 			{
 				candidate_monk.push(bro);
 			}
-			else if (bro.getBackground().getID() == "background.cultist" || bro.getBackground().getID() == "background.converted_cultist")
+			else if (bro.getBackground().isCultist())
 			{
 				candidate_cultist.push(bro);
 			}

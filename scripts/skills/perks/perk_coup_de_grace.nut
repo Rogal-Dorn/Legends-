@@ -24,6 +24,10 @@ this.perk_coup_de_grace <- this.inherit("scripts/skills/skill", {
 		{
 			_properties.DamageTotalMult *= 1.2;
 		}
+		if (_targetEntity.getSkills().hasSkill("effects.stunned") || _targetEntity.getSkills().hasSkill("effects.net") || _targetEntity.getSkills().hasSkill("effects.sleeping"))
+		{
+			_properties.DamageTotalMult *= 1.1;
+		}
 	}
 
 });

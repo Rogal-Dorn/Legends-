@@ -21,7 +21,7 @@ this.legend_fortify_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
 		this.m.ActionPointCost = 4;
-		this.m.FatigueCost = 20;
+		this.m.FatigueCost = 30;
 		this.m.MinRange = 0;
 		this.m.MaxRange = 0;
 	}
@@ -97,6 +97,20 @@ this.legend_fortify_skill <- this.inherit("scripts/skills/skill", {
 	function onVerifyTarget( _originTile, _targetTile )
 	{
 		return true;
+	}
+
+	function onAfterUpdate( _properties )
+	{
+		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_specialist_shield_push"))
+		{
+			this.m.FatigueCostMult = this.Const.Combat.WeaponSpecFatigueMult;
+			this.m.ActionPointCost = 3;
+		}
+
+		if (this.getContainer().getActor().getSkills().hasSkill("perk.shield_bash"))
+		{
+			this.m.FatigueCost *= 0.9;
+		}
 	}
 
 	function onUse( _user, _targetTile )

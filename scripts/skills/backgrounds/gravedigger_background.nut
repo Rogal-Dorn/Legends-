@@ -30,6 +30,8 @@ this.gravedigger_background <- this.inherit("scripts/skills/backgrounds/characte
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Body = "bust_naked_body_00";
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Good;
 		this.m.IsLowborn = true;
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
 		this.m.PerkTreeDynamic = {
@@ -51,7 +53,8 @@ this.gravedigger_background <- this.inherit("scripts/skills/backgrounds/characte
 					this.Const.Perks.GhoulTree,
 					this.Const.Perks.ZombieTree
 					],
-			Class = [this.Const.Perks.ShovelClassTree]
+			Class = [this.Const.Perks.ShovelClassTree],
+			Magic = []
 		}
 	}
 

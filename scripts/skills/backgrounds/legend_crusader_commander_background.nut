@@ -53,6 +53,9 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 		this.m.IsCombatBackground = true;
 		this.m.IsOffendedByViolence = true;
 		this.m.IsUntalented = true;
+
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Good;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[1];
 		this.m.Modifiers.Salvage = this.Const.LegendMod.ResourceModifiers.Salvage[1];
 		this.m.Modifiers.Repair = this.Const.LegendMod.ResourceModifiers.Repair[2];
@@ -78,6 +81,7 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 				this.Const.Perks.PerkDefs.CoupDeGrace,
 				this.Const.Perks.PerkDefs.Dodge,
 				this.Const.Perks.PerkDefs.HoldOut,
+				this.Const.Perks.PerkDefs.RallyTheTroops,
 				this.Const.Perks.PerkDefs.FortifiedMind,
 				this.Const.Perks.PerkDefs.BloodyHarvest,
 				this.Const.Perks.PerkDefs.SteelBrow,
@@ -90,14 +94,14 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 			],
 			[
 				this.Const.Perks.PerkDefs.Brawny,
-				this.Const.Perks.PerkDefs.Rotation,
-				this.Const.Perks.PerkDefs.RallyTheTroops,
+				this.Const.Perks.PerkDefs.Rotation,	
 				this.Const.Perks.PerkDefs.Taunt,
 				this.Const.Perks.PerkDefs.Feint,
 				this.Const.Perks.PerkDefs.Relentless,
 				this.Const.Perks.PerkDefs.Rebound,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyZombie,
 				this.Const.Perks.PerkDefs.LegendToolsDrawers,
-				this.Const.Perks.PerkDefs.LegendSpecialistShieldPush
+				this.Const.Perks.PerkDefs.LegendSpecialistShieldPush,
 				this.Const.Perks.PerkDefs.LegendSecondWind,
 				this.Const.Perks.PerkDefs.LegendRoster3
 			],
@@ -110,6 +114,7 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 				this.Const.Perks.PerkDefs.SpecPolearm,
 				this.Const.Perks.PerkDefs.SpecAxe,
 				this.Const.Perks.PerkDefs.SpecThrowing,
+				this.Const.Perks.PerkDefs.SpecCrossbow,
 				this.Const.Perks.PerkDefs.ShieldExpert,
 				this.Const.Perks.PerkDefs.LegendRoster4
 
@@ -122,10 +127,10 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 				this.Const.Perks.PerkDefs.LegendForcefulSwing,
 				this.Const.Perks.PerkDefs.FullForce,
 				this.Const.Perks.PerkDefs.ReturnFavor,
-				this.Const.Perks.PerkDefs.LegendToolsSpares,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyZombie,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyGhoul,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemySkeleton,
+				this.Const.Perks.PerkDefs.LegendSpecialistShieldSkill,
+				this.Const.Perks.PerkDefs.LegendToolsSpares,
+				this.Const.Perks.PerkDefs.LegendPrayerOfFaith,
 				this.Const.Perks.PerkDefs.LegendRoster5
 			],
 			[
@@ -135,6 +140,8 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 				this.Const.Perks.PerkDefs.KillingFrenzy,
 				this.Const.Perks.PerkDefs.LastStand,
 				this.Const.Perks.PerkDefs.SunderingStrikes,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyGhoul,
+				this.Const.Perks.PerkDefs.LegendPrayerOfLife,
 				this.Const.Perks.PerkDefs.InspiringPresence,
 				this.Const.Perks.PerkDefs.LegendRoster6
 			],
@@ -145,10 +152,10 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 				this.Const.Perks.PerkDefs.Stalwart,
 				this.Const.Perks.PerkDefs.BattleFlow,
 				//this.Const.Perks.PerkDefs.LegendStrictSermons,
-				this.Const.Perks.PerkDefs.LegendFieldRepairs,
-				this.Const.Perks.PerkDefs.LegendHoldTheLine,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyHexen,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyVampire,
+				this.Const.Perks.PerkDefs.LegendFieldRepairs,
+				this.Const.Perks.PerkDefs.LegendHolyFlame,
 				this.Const.Perks.PerkDefs.PerfectFocus
 			],
 			[],
@@ -249,36 +256,36 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 	{
 		local c = {
 			Hitpoints = [
+				5,
+				5
+			],
+			Bravery = [
 				10,
 				10
 			],
-			Bravery = [
-				15,
-				15
-			],
 			Stamina = [
-				15,
-				15
+				10,
+				10
 			],
 			MeleeSkill = [
-				15,
-				15
+				10,
+				10
 			],
 			RangedSkill = [
-				-5,
-				-5
+				-10,
+				-10
 			],
 			MeleeDefense = [
-				20,
+				15,
 				20
 			],
 			RangedDefense = [
-				 5,
-				 5
+				 0,
+				 0
 			],
 			Initiative = [
-				-5,
-				-5
+				-10,
+				-10
 			]
 		};
 		return c;

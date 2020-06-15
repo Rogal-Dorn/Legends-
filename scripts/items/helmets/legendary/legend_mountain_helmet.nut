@@ -2,7 +2,7 @@ this.legend_mountain_helmet <- this.inherit("scripts/items/helmets/helmet", {
 	m = {},
 	function create()
 	{
-		this.helmet.create();
+		  this.helmet.create();
 		this.m.ID = "armor.head.legend_mountain_helmet";
 		this.m.Name = "Helmet of the Mountain";
 		this.m.Description = "A helmet crafted from the skin and skull of a mighty rock unhold, the beast may be dead, but it continues to mend itself even after death";
@@ -22,6 +22,7 @@ this.legend_mountain_helmet <- this.inherit("scripts/items/helmets/helmet", {
 		this.m.ConditionMax = 300.0;
 		this.m.StaminaModifier = -24;
 		this.m.ItemType = this.m.ItemType | this.Const.Items.ItemType.Legendary;
+
 	}
 
 	function getTooltip()

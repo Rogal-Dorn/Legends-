@@ -735,6 +735,8 @@ this.asset_manager <- {
 				this.addMoney(30);
 			}
 
+
+
 			local mood = 0;
 			local roster = this.World.getPlayerRoster().getAll();
 
@@ -749,10 +751,18 @@ this.asset_manager <- {
 				item.onNewDay();
 			}
 
+			local companyRep = this.World.Assets.getMoralReputation() / 10;
+
 			foreach( bro in roster )
 			{
 				bro.getSkills().onNewDay();
 				bro.updateInjuryVisuals();
+
+				if (this.World.Assets.getOrigin().getID() == "scenario.legends_troupe")
+				{
+					this.addMoney(10);
+				}
+
 
 				if (bro.getDailyCost() > 0 && this.m.Money < bro.getDailyCost())
 				{
@@ -764,6 +774,57 @@ this.asset_manager <- {
 					{
 						bro.worsenMood(this.Const.MoodChange.NotPaid, "Did not get paid");
 					}
+				}
+
+				if (bro.getSkills().hasSkill("perk.legend_pacifist"))
+				{
+					local hireTime = bro.getHireTime();
+					local currentTime =  this.World.getTime().Time;
+					local servedTime = currentTime - hireTime;
+					local servedDays = servedTime / this.World.getTime().SecondsPerDay;
+					if ((servedDays / 7) < bro.getLifetimeStats().Kills)
+						{
+							bro.worsenMood(this.Const.MoodChange.BattleWithoutMe, "Remembers being forced to kill against their wishes");
+						}
+				}
+
+				// Check the company alignment against the mercenary alignment
+				if (bro.getAlignmentMin() > companyRep)
+				{
+				bro.worsenMood(this.Const.MoodChange.AmbitionFailed, "Thinks the company is too immoral");
+				}
+
+				if (bro.getAlignmentMax() < companyRep)
+				{
+				bro.worsenMood(this.Const.MoodChange.AmbitionFailed, "Thinks the company is too moral");
+				}
+
+				if (bro.getAlignment() == this.Math.floor(companyRep))
+				{
+				bro.worsenMood(this.Const.MoodChange.AmbitionFulfilled, "Thinks the company is great");
+				}
+
+				// update the relationships between characters 
+				local relations = this.World.getPlayerRoster().getAll();
+				foreach ( relation in relations ) 
+				{
+					if (relation.getAlignment() == bro.getAlignment())
+					{
+					bro.changeActiveRelationship(relation, 2);
+					}
+					else if (relation.getAlignment() < bro.getAlignmentMin())
+					{
+					bro.changeActiveRelationship(relation, -1);
+					}
+					else if (relation.getAlignment() > bro.getAlignmentMax())
+					{
+					bro.changeActiveRelationship(relation, -1);;
+					}
+					else
+					{
+					bro.changeActiveRelationship(relation, this.Math.rand(-1,1));
+					}
+
 				}
 
 				if (this.m.IsUsingProvisions && this.m.Food < bro.getDailyFood())
@@ -852,6 +913,8 @@ this.asset_manager <- {
 
 			 }
 
+			 local perkMod = 1;
+
 			 foreach( bro in roster )
 			 {
 			 	if (this.m.ArmorParts == 0)
@@ -860,6 +923,20 @@ this.asset_manager <- {
 			 	}
 			 	local items = bro.getItems().getAllItems();
 			 	local updateBro = false;
+				
+						local skills =
+						[
+							"perk.legend_tools_spares",
+							"perk.legend_tools_drawers"
+						];
+						foreach (s in skills)
+						{
+							local skill = bro.getSkills().getSkillByID(s);
+							if (skill != null)
+							{
+								perkMod *= 1 - (skill.getModifier() / 100);
+							}
+						}
 
 			 	foreach( item in items )
 			 	{
@@ -867,7 +944,7 @@ this.asset_manager <- {
 			 		{
 			 			local d = this.Math.minf(this.Const.World.Assets.ArmorPerHour * this.Const.Difficulty.RepairMult[this.World.Assets.getEconomicDifficulty()], item.getRepairMax() - item.getRepair());
 			 			item.setArmor(item.getRepair() + d);
-			 			this.m.ArmorParts = this.Math.maxf(0, this.m.ArmorParts - d * this.Const.World.Assets.ArmorPartsPerArmor * this.Const.Difficulty.RepairMult[this.World.Assets.getEconomicDifficulty()]);
+			 			this.m.ArmorParts = this.Math.maxf(0, this.m.ArmorParts - d * this.Const.World.Assets.ArmorPartsPerArmor * perkMod * this.Const.Difficulty.RepairMult[this.World.Assets.getEconomicDifficulty()]);
 			 			updateBro = true;
 			 		}
 

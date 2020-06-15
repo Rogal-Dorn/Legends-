@@ -153,6 +153,7 @@ this.legend_banshee <- this.inherit("scripts/entity/tactical/actor", {
 		b.IsIgnoringArmorOnAttack = true;
 		b.IsAffectedByNight = false;
 		b.IsAffectedByInjuries = false;
+		b.IsAffectedByRain = false;
 
 		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 140)
 		{
@@ -200,7 +201,6 @@ this.legend_banshee <- this.inherit("scripts/entity/tactical/actor", {
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_fearsome"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_dodge"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_levitation"));
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_teleport"));
 			this.m.Skills.add(this.new("scripts/skills/actives/nightmare_touch_skill"));
 			this.m.Skills.add(this.new("scripts/skills/actives/nightmare_touch_zoc_skill"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_footwork"));

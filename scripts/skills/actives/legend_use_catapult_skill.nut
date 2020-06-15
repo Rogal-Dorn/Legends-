@@ -7,7 +7,7 @@ this.legend_use_catapult_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_use_catapult";
 		this.m.Name = "Catapult Boulder";
-		this.m.Description = "Hurl a boulder towards a target with your catapult. Hard to aim and very unweildy, but boulders are everywhere so you never run out of ammunition. Can not be used while engaged in melee.";
+		this.m.Description = "Hurl a boulder towards a target with your catapult. Hard to aim and very unwieldy, but boulders are everywhere so you never run out of ammunition. Can not be used while engaged in melee.";
 		this.m.KilledString = "Crushed";
 		this.m.Icon = "skills/active_12.png";
 		this.m.IconDisabled = "skills/active_12_sw.png";

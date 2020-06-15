@@ -122,6 +122,10 @@ this.fortified_outpost_location <- this.inherit("scripts/entity/world/attached_l
 		_list.push("deserter_background");
 		_list.push("sellsword_background");
 		_list.push("hedge_knight_background");
+		if(this.Const.LegendMod.Configs.LegendMagicEnabled())
+		{
+			_list.push("legend_master_archer_background");
+		}
 	}
 
 	function onUpdateShopList( _id, _list )

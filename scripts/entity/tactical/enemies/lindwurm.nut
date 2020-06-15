@@ -271,6 +271,7 @@ this.lindwurm <- this.inherit("scripts/entity/tactical/actor", {
 		b.IsImmuneToStun = true;
 		b.IsMovable = false;
 		b.IsImmuneToDisarm = true;
+		b.IsAffectedByRain = false;
 
 		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 170)
 		{
@@ -320,7 +321,7 @@ this.lindwurm <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_underdog"));
 		 if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 			{
-			his.m.Hitpoints = b.Hitpoints * 1.5;
+			this.m.Hitpoints = b.Hitpoints * 1.5;
 			this.m.ActionPoints = b.ActionPoints + 5;
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_pathfinder"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_composure"));

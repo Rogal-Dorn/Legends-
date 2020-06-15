@@ -46,7 +46,7 @@ this.puncture <- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/hitchance.png",
-				text = "Hit chance determined by your targets fatigue, 0% if they are fresh and 100% if they are exhausted. If your target is dazed or parried hitchance is increaded by +10%.  If they are stunned or netted you gain +25%. If they are grappled or sleeping you gain +50%. Dagger mastery doubles your chance to hit. These bonuses stack up to 100%.  "
+				text = "Hit chance determined by your targets fatigue, 0% if they are fresh and 100% if they are exhausted. If your target is dazed or parried hitchance is increased by +10%.  If they are stunned or netted you gain +25%. If they are grappled or sleeping you gain +50%. Dagger mastery doubles your chance to hit. These bonuses stack up to 100%.  "
 			},
 			{
 				id = 8,
@@ -76,30 +76,30 @@ this.puncture <- this.inherit("scripts/skills/skill", {
 		local mod = 0;
 		if (_targetEntity.getSkills().hasSkill("effects.legend_dazed"))
 		{
-		mod += 0.1;
+		mod += 10;
 		}
 		if (_targetEntity.getSkills().hasSkill("effects.legend_parried"))
 		{
-		mod += 0.1;
+		mod += 10;
 		}
 		if (_targetEntity.getSkills().hasSkill("effects.legend_grappled"))
 		{
-		mod += 0.5;
+		mod += 50;
 		}
 		if (_targetEntity.getSkills().hasSkill("effects.stunned"))
 		{
-		mod += 0.25;
+		mod += 25;
 		}
 		if (_targetEntity.getSkills().hasSkill("effects.sleeping"))
 		{
-		mod += 0.5;
+		mod += 50;
 		}
 		if (_targetEntity.getSkills().hasSkill("effects.net"))
 		{
-		mod += 0.25;
+		mod += 25;
 		}
-		local chance = _targetEntity.getFatiguePct();
-		return (chance + mod);
+		local chance = (1.0 - _targetEntity.getFatiguePct()) * 50;
+		return mod - this.Math.round(chance);
 	}
 
 	function onAfterUpdate( _properties )
@@ -123,10 +123,9 @@ this.puncture <- this.inherit("scripts/skills/skill", {
 			local chance = this.getHitChance(_targetEntity)
 			if (_properties.IsSpecializedInDaggers)
 			{
-				chance = this.Math.floor(chance * 1.5)
+				chance += 15;
 			}
-			local bonus = chance * _properties.MeleeSkill;
-			_properties.MeleeSkill = bonus;
+			_properties.MeleeSkill += chance;
 			_properties.DamageArmorMult *= 0.0;
 			_properties.IsIgnoringArmorOnAttack = true;
 			_properties.HitChanceMult[this.Const.BodyPart.Head] = 0.0;

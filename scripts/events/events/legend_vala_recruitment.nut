@@ -22,6 +22,7 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 						this.World.getPlayerRoster().add(_event.m.Vala);
 						this.World.getTemporaryRoster().clear();
 						_event.m.Vala.onHired();
+						_event.m.Vala = null;
 						return 0;
 					}
 				},
@@ -30,30 +31,27 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 					function getResult( _event )
 					{
 						this.World.getTemporaryRoster().clear();
+						_event.m.Vala = null;
 						return 0;
 					}
 				}
 			],
 			function start( _event )
 			{
-						if (this.World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
-							{
-								return "E";
-							}
 				local roster = this.World.getTemporaryRoster();
 				_event.m.Vala = roster.create("scripts/entity/tactical/player");
-					if (this.World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
-						{
-						_event.m.Cannibal.getTags().add("PlayerSkeleton");
-						_event.m.Cannibal.getTags().add("undead");
-						_event.m.Cannibal.getTags().add("skeleton");
-						_event.m.Vala.setStartValuesEx(["legend_vala_background"]);
-						}
-					else
-					{
-					_event.m.Vala.setStartValuesEx(["legend_vala_background"]);
-					}
-	
+				if (this.World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
+				{
+					_event.m.Vala.getTags().add("PlayerSkeleton");
+					_event.m.Vala.getTags().add("undead");
+					_event.m.Vala.getTags().add("skeleton");
+				}	
+				_event.m.Vala.setStartValuesEx(["legend_vala_background"]);
+				if (this.World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
+				{				
+					_event.m.Vala.getSkills().add(this.new("scripts/skills/racial/skeleton_racial"));
+					_event.m.Vala.getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));	
+				}			
 				this.Characters.push(_event.m.Vala.getImagePath());
 			}
 		});
@@ -63,6 +61,11 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 	{
 
 		if (this.World.getPlayerRoster().getSize() >= this.World.Assets.getBrothersMax())
+		{
+			return;
+		}
+
+		if (this.World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
 		{
 			return;
 		}

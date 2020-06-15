@@ -1,10 +1,9 @@
-
 this.legend_armor_plate_ancient_chest <- this.inherit("scripts/items/legend_armor/legend_armor_upgrade", {
 	m = {},
 	function create()
 	{
 		this.legend_armor_upgrade.create();
-		this.m.Type = this.Const.Items.ArmorUpgrades.Plate
+		this.m.Type = this.Const.Items.ArmorUpgrades.Plate;
 		this.m.ID = "legend_armor.plate_ancient_chest";
 		this.m.Name = "Ancient Breastplate";
 		this.m.Description = "A tarnished thick breastplate of ancient origin.";
@@ -16,11 +15,11 @@ this.legend_armor_plate_ancient_chest <- this.inherit("scripts/items/legend_armo
 		this.m.SpriteBack = "bust_legend_plate_ancient_chest";
 		this.m.SpriteDamagedBack = "bust_legend_plate_ancient_chest_damaged";
 		this.m.SpriteCorpseBack = "bust_legend_plate_ancient_chest_dead";
-		this.m.Value = 800;
-		this.m.Condition = 90;
-		this.m.ConditionMax = 90;
-		this.m.StaminaModifier = -19;
-        this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
+		this.m.Value = 750;
+		this.m.Condition = 105;
+		this.m.ConditionMax = 105;
+		this.m.StaminaModifier = -18;
+		this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
 	}
 
 });

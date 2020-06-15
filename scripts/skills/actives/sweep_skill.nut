@@ -198,7 +198,7 @@ this.sweep_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local _targetTile = _tag.TargetTile;
 		local _user = _tag.User;
-		local target = _targetTile.getEntity()
+		local target = _targetTile.getEntity();
 		if (target == null)
 		{
 			return false;
@@ -214,9 +214,9 @@ this.sweep_skill <- this.inherit("scripts/skills/skill", {
 			return ret;
 		}
 
-		if (ret && _targetTile.IsOccupiedByActor && _targetTile.getEntity().isAlive() && !_targetTile.getEntity().isDying())
+		if (ret && _targetTile.IsOccupiedByActor && target.isAlive() && !target.isDying())
 		{
-			this.applyEffectToTarget(_user, _targetTile.getEntity(), _targetTile);
+			this.applyEffectToTarget(_user, target, _targetTile);
 		}
 
 		local nextDir = dir - 1 >= 0 ? dir - 1 : this.Const.Direction.COUNT - 1;

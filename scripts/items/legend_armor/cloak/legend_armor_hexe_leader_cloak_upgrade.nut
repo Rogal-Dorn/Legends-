@@ -16,9 +16,9 @@ this.legend_armor_hexe_leader_cloak_upgrade <- this.inherit("scripts/items/legen
 		this.m.OverlayIcon = "legend_armor/cloak/icon_cloak_spider.png";
 		this.m.OverlayIconLarge = "legend_armor/cloak/inventory_cloak_spider.png";
 		this.m.Value = 12000;
-		this.m.Condition = 25;
-		this.m.ConditionMax = 25;
-		this.m.StaminaModifier = -2;
+		this.m.Condition = 20;
+		this.m.ConditionMax = 20;
+		this.m.StaminaModifier = 0;
 	}
 
 	function getTooltip()
@@ -39,7 +39,7 @@ this.legend_armor_hexe_leader_cloak_upgrade <- this.inherit("scripts/items/legen
 			id = 7,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Reduces any ranged damage to the body by [color=" + this.Const.UI.Color.NegativeValue + "]-10%[/color] and increases resolve by [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color]"
+			text = "Reduces any ranged damage to the body by [color=" + this.Const.UI.Color.NegativeValue + "]-10%[/color] and increases resolve by [color=" + this.Const.UI.Color.PositiveValue + "]+15%[/color]"
 		});
 	}
 

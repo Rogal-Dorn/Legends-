@@ -22,7 +22,13 @@ this.gatherers_hut_location <- this.inherit("scripts/entity/world/attached_locat
 			return;
 		}
 		_list.push("legend_herbalist_background");
+		_list.push("legend_herbalist_background");
 		_list.push("daytaler_background");
+		_list.push("daytaler_background");
+		if(this.Const.LegendMod.Configs.LegendMagicEnabled())
+		{
+			_list.push("legend_entrancer_background");
+		}
 	}
 
 	function onUpdateShopList( _id, _list )
@@ -35,12 +41,22 @@ this.gatherers_hut_location <- this.inherit("scripts/entity/world/attached_locat
 				S = "supplies/roots_and_berries_item"
 			});
 			_list.push({
+				R = 5,
+				P = 1.0,
+				S = "supplies/legend_cooking_spices_item"
+			});
+			_list.push({
+				R = 30,
+				P = 1.0,
+				S = "supplies/legend_pudding_item"
+			});
+			_list.push({
 				R = 20,
 				P = 1.0,
 				S = "weapons/bludgeon"
 			});
 			_list.push({
-				R = 20,
+				R = 10,
 				P = 1.0,
 				S = "weapons/legend_sickle"
 			});
@@ -63,6 +79,14 @@ this.gatherers_hut_location <- this.inherit("scripts/entity/world/attached_locat
 				R = 20,
 				P = 1.0,
 				S = "supplies/medicine_item"
+			});
+		}
+		if (_id == "building.weaponsmith")
+		{
+			_list.push({
+				R = 0,
+				P = 1.0,
+				S = "weapons/named/legend_named_sickle"
 			});
 		}
 	}

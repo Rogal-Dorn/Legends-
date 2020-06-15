@@ -56,7 +56,7 @@ this.legend_wither <- this.inherit("scripts/skills/skill", {
 		target.getSkills().add(this.new("scripts/skills/effects/debilitated_effect"));
 		if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
 		{
-			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " has left " + this.Const.UI.getColorizedEntityName(_targetTile.getEntity()) + " withered");
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " has left " + this.Const.UI.getColorizedEntityName(target) + " withered");
 		}
 	}
 

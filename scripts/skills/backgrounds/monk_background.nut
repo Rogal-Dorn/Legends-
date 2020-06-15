@@ -71,10 +71,14 @@ this.monk_background <- this.inherit("scripts/skills/backgrounds/character_backg
 				this.Const.Perks.InspirationalTree
 			],
 			Enemy = [
-					this.Const.Perks.ZombieTree,
-					this.Const.Perks.VampireTree
+				this.Const.Perks.ZombieTree,
+				this.Const.Perks.VampireTree
 					],
-			Class = [this.Const.Perks.HealerClassTree]
+			Class = [
+				this.Const.Perks.HealerClassTree,
+				this.Const.Perks.FaithClassTree
+					],
+			Magic = []
 		}
 	}
 

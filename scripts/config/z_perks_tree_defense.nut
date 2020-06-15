@@ -15,7 +15,7 @@ gt.Const.Perks.ShieldTree <- {
 		[gt.Const.Perks.PerkDefs.ShieldBash],
 		[gt.Const.Perks.PerkDefs.LegendSpecialistShieldPush],
 		[gt.Const.Perks.PerkDefs.ShieldExpert],
-		[],
+		[gt.Const.Perks.PerkDefs.LegendSpecialistShieldSkill],
 		[],
 		[]
 	]

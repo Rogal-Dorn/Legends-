@@ -133,7 +133,7 @@ this.legend_choke <- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/hitchance.png",
-				text = "Hit chance determined by your targets fatigue, 0% if they are fresh and 100% if they are exhausted. If your target is dazed or parried hitchance is increaded by +10%.  If they are stunned or netted you gain +25%. If they are grappled or sleeping you gain +50%. Dagger mastery doubles your chance to hit. These bonuses stack up to 100%.  "
+				text = "Hit chance determined by your targets fatigue, 0% if they are fresh and 100% if they are exhausted. If your target is dazed or parried hitchance is increaded by +10%.  If they are stunned or netted you gain +25%. If they are grappled or sleeping you gain +50%. Unarmed mastery doubles your chance to hit. These bonuses stack up to 100%.  "
 			},
 			{
 				id = 8,
@@ -164,38 +164,38 @@ this.legend_choke <- this.inherit("scripts/skills/skill", {
 		{
 			return 0;
 		}
-		local mod = 1;
+		local mod = 0;
 		if (_targetEntity.getSkills().hasSkill("effects.legend_dazed"))
 		{
-		mod -= 0.1;
+		mod += 10;
 		}
 		if (_targetEntity.getSkills().hasSkill("effects.legend_parried"))
 		{
-		mod -= 0.1;
+		mod += 10;
 		}
 		if (_targetEntity.getSkills().hasSkill("effects.legend_grappled"))
 		{
-		mod -= 0.5;
+		mod += 50;
 		}
 		if (_targetEntity.getSkills().hasSkill("effects.stunned"))
 		{
-		mod -= 0.25;
+		mod += 25;
 		}
 		if (_targetEntity.getSkills().hasSkill("effects.sleeping"))
 		{
-		mod -= 0.5;
+		mod += 50;
 		}
 		if (_targetEntity.getSkills().hasSkill("effects.net"))
 		{
-		mod -= 0.25;
+		mod += 25;
 		}
-		local chance = _targetEntity.getFatiguePct();
-		return (chance * this.Math.min(1,mod));
+		local chance = (1.0 - _targetEntity.getFatiguePct()) * 50;
+		return mod - this.Math.round(chance);
 	}
 
 	function onAfterUpdate( _properties )
 	{
-		if (_properties.IsSpecializedInDaggers)
+		if (_properties.IsSpecializedInFists)
 		{
 			this.m.FatigueCostMult = this.Const.Combat.WeaponSpecFatigueMult;
 			this.m.ActionPointCost = 3;
@@ -244,9 +244,6 @@ this.legend_choke <- this.inherit("scripts/skills/skill", {
 			damageMax = 50 + maxFalloff;
 			}
 
-			
-
-
 			if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_muscularity"))
 			{
 				local muscularity = this.Math.floor(bodyHealth * 0.1);
@@ -264,12 +261,12 @@ this.legend_choke <- this.inherit("scripts/skills/skill", {
 
 
 			this.m.DirectDamageMult = _properties.IsSpecializedInFists ? 0.5 : 0.1;
-			local bonus = (1.0 - this.getHitChance(_targetEntity)) * _properties.MeleeSkill;
-			if (_properties.IsSpecializedInDaggers)
+			local chance = this.getHitChance(_targetEntity);
+			if (_properties.IsSpecializedInFists)
 			{
-				bonus = this.Math.floor(bonus / 2.0)
+				chance += 15;
 			}
-			_properties.MeleeSkill -= bonus;
+			_properties.MeleeSkill += chance;
 			_properties.DamageArmorMult *= 0.0;
 			_properties.IsIgnoringArmorOnAttack = true;
 			_properties.HitChanceMult[this.Const.BodyPart.Head] = 0.0;

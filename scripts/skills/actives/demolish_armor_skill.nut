@@ -4,7 +4,7 @@ this.demolish_armor_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.demolish_armor";
 		this.m.Name = "Demolish Armor";
-		this.m.Description = "Using the weapon to batter, deform, rip and otherwise render the target\'s armor unusable with great effect. Although the impact will be felt through the thickest of armor, it won\'t inflict the most injury to the wearer.";
+		this.m.Description = "Using the weapon to batter, deform, rip and otherwise render the target\'s armor unusable with great effect. Although the impact will be felt through the thickest of armor, it won\'t greatly injure the wearer.";
 		this.m.Icon = "skills/active_137.png";
 		this.m.IconDisabled = "skills/active_137_sw.png";
 		this.m.Overlay = "active_137";
