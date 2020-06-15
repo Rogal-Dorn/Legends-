@@ -7,8 +7,8 @@ this.legend_summon_storm <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "actives.legend_summon_storm";
 		this.m.Name = "Summon Storm";
 		this.m.Description = "Summons rain to dampen the battlefield";
-		this.m.Icon = "skills/bear2_square.png";
-		this.m.IconDisabled = "skills/bear2_square_bw.png";
+		this.m.Icon = "skills/rain_square.png";
+		this.m.IconDisabled = "skills/rain_square_bw.png";
 		this.m.Overlay = "active_12";
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.NonTargeted;
