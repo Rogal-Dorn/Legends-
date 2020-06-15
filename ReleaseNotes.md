@@ -3355,4 +3355,8 @@ fixes recruitment as druid
 fixes town not enterable due to inventor not knowing their class 
 
 
+14.0.0.7g
 
+should fix armorsmith crashes, and potential crashes with dye maker and marketplace buildings
+fixes people getting mad when they claim they're enjoying the company
+adds some extra moral reputation to crusader start
