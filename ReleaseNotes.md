@@ -3364,3 +3364,4 @@ fixes bug with characters that join you in a fight (e.g. protect the noble's son
 fixes druid recruit background tag
 random party background and id assignment fixes
 druid forms arent backwards anymore
+slingstaff bash crash fix
