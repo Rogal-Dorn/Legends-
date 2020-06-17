@@ -3393,4 +3393,7 @@ Kvothe's Training Grounds submod
 * ranged and melee will only get relevant stats 
 * after gaining all 15 stats you unlock a perk point and a trait 
 * higher level recruits may have a couple more stats  
- 
+
+
+ **Fixes**
+ Bloodbath no longer has division by zero, now correctly returns the ratio, and has an updated wording of the skill description (Salty)
