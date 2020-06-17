@@ -13,7 +13,11 @@ this.fear_undead_trait <- this.inherit("scripts/skills/traits/character_trait", 
 			"trait.determined",
 			"trait.cocky",
 			"trait.bloodthirsty",
-			"trait.hate_undead"
+			"trait.hate_undead",
+			"trait.aggressive",
+			"trait.pragmatic",
+			"trait.ambitious",
+			"trait.natural"
 		];
 	}
 

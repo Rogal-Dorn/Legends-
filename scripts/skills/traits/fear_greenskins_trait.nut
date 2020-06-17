@@ -13,7 +13,11 @@ this.fear_greenskins_trait <- this.inherit("scripts/skills/traits/character_trai
 			"trait.determined",
 			"trait.cocky",
 			"trait.bloodthirsty",
-			"trait.hate_greenskins"
+			"trait.hate_greenskins",
+			"trait.aggressive",
+			"trait.pragmatic",
+			"trait.ambitious",
+			"trait.natural"
 		];
 	}
 

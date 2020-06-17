@@ -243,6 +243,46 @@ gt.Const.CharacterTraits <- [
 	[
 		"trait.steady_hands",
 		"scripts/skills/traits/steady_hands_trait"
+	],
+	[
+		"trait.slack",
+		"scripts/skills/traits/slack_trait"
+	],
+	[
+		"trait.frail",
+		"scripts/skills/traits/frail_trait"
+	],
+	[
+		"trait.natural",
+		"scripts/skills/traits/natural_trait"
+	],
+	[
+		"trait.predictable",
+		"scripts/skills/traits/unpredictable_trait"
+	],
+	[
+		"trait.predictable",
+		"scripts/skills/traits/predictable_trait"
+	],
+	[
+		"trait.pragmatic",
+		"scripts/skills/traits/pragmatic_trait"
+	],
+	[
+		"trait.light",
+		"scripts/skills/traits/light_trait"
+	],
+	[
+		"trait.heavy",
+		"scripts/skills/traits/heavy_trait"
+	],
+	[
+		"trait.firm",
+		"scripts/skills/traits/firm_trait"
+	],
+	[
+		"trait.ambitious",
+		"scripts/skills/traits/ambitious_trait"
 	]
 ];
 

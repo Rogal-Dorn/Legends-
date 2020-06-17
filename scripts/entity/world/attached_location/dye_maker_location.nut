@@ -182,7 +182,7 @@ this.dye_maker_location <- this.inherit("scripts/entity/world/attached_location"
 		   _list.push({
 				R = 30,
 				P = 1.0,
-				S = "legend_armor/cloth/legend_gambeson_rare_colour"
+				S = "legend_armor/cloth/legend_gambeson_rare_color"
 			});
 		   _list.push({
 				R = 50,

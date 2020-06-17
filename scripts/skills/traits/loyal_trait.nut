@@ -16,7 +16,8 @@ this.loyal_trait <- this.inherit("scripts/skills/traits/character_trait", {
 			"trait.disloyal",
 			"trait.craven",
 			"trait.fainthearted",
-			"trait.dastard"
+			"trait.dastard",
+			"trait.slack"
 		];
 	}
 
