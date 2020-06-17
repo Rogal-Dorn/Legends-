@@ -3372,3 +3372,4 @@ bloodbath no longer can divine by 0
 perks tree tentative fix
 druid effect forms no longer keep the druid swapped after ending battle
 hair splitter no longer calls character_background for no reason
+magic backgrounds except for witch no longer pretend they're cooks and come with free stew
