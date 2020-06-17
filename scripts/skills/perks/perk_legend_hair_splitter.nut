@@ -16,7 +16,7 @@ this.perk_legend_hair_splitter <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		this.character_background.onUpdate(_properties);
+		// this.character_background.onUpdate(_properties); //(i dont think this should be here at all? leaving it in case it should be something else?)
 		_properties.HitChance[this.Const.BodyPart.Head] += 30;
 	}
 
