@@ -278,5 +278,93 @@ this.legend_female_inventor_commander_background <- this.inherit("scripts/skills
 		_properties.XPGainMult *= 1.2;
 	}
 
+	function onCombatStarted()
+	{
+		local actor = this.getContainer().getActor();
+
+		if (actor.getTags().has("IsPlayerCharacter"))
+		{
+			actor.m.Sound[this.Const.Sound.ActorEvent.NoDamageReceived] = [
+				"sounds/humans/f2_little_damage_taken_1.wav",
+				"sounds/humans/f2_little_damage_taken_2.wav",
+				"sounds/humans/f2_little_damage_taken_3.wav",
+				"sounds/humans/f2_little_damage_taken_4.wav",
+				"sounds/humans/f2_little_damage_taken_5.wav"
+			];
+			actor.m.Sound[this.Const.Sound.ActorEvent.DamageReceived] = [
+				"sounds/humans/f2_damage_taken_1.wav",
+				"sounds/humans/f2_damage_taken_2.wav",
+				"sounds/humans/f2_damage_taken_3.wav",
+				"sounds/humans/f2_damage_taken_4.wav",
+				"sounds/humans/f2_damage_taken_5.wav"
+			];
+			actor.m.Sound[this.Const.Sound.ActorEvent.Death] = [
+				"sounds/humans/f2_death_1.wav",
+				"sounds/humans/f2_death_1.wav"
+			];
+			actor.m.Sound[this.Const.Sound.ActorEvent.Fatigue] = [
+				"sounds/humans/f2_fatigue_1.wav",
+				"sounds/humans/f2_fatigue_2.wav",
+				"sounds/humans/f2_fatigue_3.wav",
+				"sounds/humans/f2_fatigue_4.wav"
+			];
+			actor.m.Sound[this.Const.Sound.ActorEvent.Flee] = [
+				"sounds/humans/f2_move_5.wav",
+				"sounds/humans/f2_fatigue_3.wav",
+				"sounds/humans/f2_fatigue_4.wav"
+			];
+			actor.m.Sound[this.Const.Sound.ActorEvent.Idle] = [
+				"sounds/humans/f2_idle_1.wav",
+				"sounds/humans/f2_idle_2.wav"
+			];
+			actor.m.Sound[this.Const.Sound.ActorEvent.Move] = [
+				"sounds/humans/f2_move_1.wav",
+				"sounds/humans/f2_move_2.wav",
+				"sounds/humans/f2_move_3.wav",
+				"sounds/humans/f2_move_4.wav",
+				"sounds/humans/f2_move_5.wav",
+				"sounds/humans/f2_move_6.wav"
+			];
+		}
+		else
+		{
+			actor.m.Sound[this.Const.Sound.ActorEvent.NoDamageReceived] = [
+				"sounds/humans/legends/woman_light_01.wav",
+				"sounds/humans/legends/woman_light_02.wav",
+				"sounds/humans/legends/woman_light_03.wav",
+				"sounds/humans/legends/woman_light_04.wav",
+				"sounds/humans/legends/woman_light_05.wav"
+			];
+			actor.m.Sound[this.Const.Sound.ActorEvent.DamageReceived] = [
+				"sounds/humans/legends/woman_injury_01.wav",
+				"sounds/humans/legends/woman_injury_02.wav",
+				"sounds/humans/legends/woman_injury_03.wav"
+			];
+			actor.m.Sound[this.Const.Sound.ActorEvent.Death] = [
+				"sounds/humans/legends/woman_death_01.wav",
+				"sounds/humans/legends/woman_death_02.wav",
+				"sounds/humans/legends/woman_death_03.wav"
+			];
+			actor.m.Sound[this.Const.Sound.ActorEvent.Fatigue] = [
+				"sounds/humans/legends/woman_fatigue_01.wav",
+				"sounds/humans/legends/woman_fatigue_02.wav",
+				"sounds/humans/legends/woman_fatigue_03.wav",
+				"sounds/humans/legends/woman_fatigue_04.wav",
+				"sounds/humans/legends/woman_fatigue_05.wav",
+				"sounds/humans/legends/woman_fatigue_06.wav",
+				"sounds/humans/legends/woman_fatigue_07.wav"
+			];
+			actor.m.Sound[this.Const.Sound.ActorEvent.Flee] = [
+				"sounds/humans/legends/woman_flee_01.wav",
+				"sounds/humans/legends/woman_flee_02.wav",
+				"sounds/humans/legends/woman_flee_03.wav",
+				"sounds/humans/legends/woman_flee_04.wav",
+				"sounds/humans/legends/woman_flee_05.wav",
+				"sounds/humans/legends/woman_flee_06.wav"
+			];
+			actor.m.SoundPitch = this.Math.rand(105, 115) * 0.01;
+		}
+	}
+
 });
 

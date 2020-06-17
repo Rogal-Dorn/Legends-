@@ -14,7 +14,8 @@ this.gluttonous_trait <- this.inherit("scripts/skills/traits/character_trait", {
 			"trait.athletic",
 			"trait.iron_lungs",
 			"trait.spartan",
-			"trait.fragile"
+			"trait.fragile",
+			"trait.light"
 		];
 	}
 

@@ -18,7 +18,9 @@ this.strong_trait <- this.inherit("scripts/skills/traits/character_trait", {
 			"trait.tiny",
 			"trait.fragile",
 			"trait.fat",
-			"trait.ailing"
+			"trait.ailing",
+			"trait.light",
+			"trait.frail"
 		];
 	}
 

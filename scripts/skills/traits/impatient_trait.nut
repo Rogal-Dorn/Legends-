@@ -15,7 +15,9 @@ this.impatient_trait <- this.inherit("scripts/skills/traits/character_trait", {
 		this.m.Excluded = [
 			"trait.hesitant",
 			"trait.clubfooted",
-			"trait.teamplayer"
+			"trait.teamplayer",
+			"trait.sureshot",
+			"trait.slack"
 		];
 	}
 

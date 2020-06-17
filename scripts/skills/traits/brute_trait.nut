@@ -16,7 +16,9 @@ this.brute_trait <- this.inherit("scripts/skills/traits/character_trait", {
 			"trait.tiny",
 			"trait.fragile",
 			"trait.insecure",
-			"trait.hesitant"
+			"trait.hesitant",
+			"trait.light",
+			"trait.frail"
 		];
 	}
 

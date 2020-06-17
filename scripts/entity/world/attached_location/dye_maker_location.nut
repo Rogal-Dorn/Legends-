@@ -110,7 +110,7 @@ this.dye_maker_location <- this.inherit("scripts/entity/world/attached_location"
 		}
 	}
 
-	function onUpdateLegendShopList()
+	function onUpdateLegendShopList(_id = null, _list = null )
 	{
 		if (_id == "building.marketplace")
 		{
@@ -137,7 +137,7 @@ this.dye_maker_location <- this.inherit("scripts/entity/world/attached_location"
 		_list.push({
 				R = 10,
 				P = 1.0,
-				S = "legend_armor/cloth/legend_legend_tunic"
+				S = "legend_armor/cloth/legend_tunic"
 			});
 			_list.push({
 				R = 30,
@@ -182,7 +182,7 @@ this.dye_maker_location <- this.inherit("scripts/entity/world/attached_location"
 		   _list.push({
 				R = 30,
 				P = 1.0,
-				S = "legend_armor/cloth/legend_gambeson_rare_colour"
+				S = "legend_armor/cloth/legend_gambeson_rare_color"
 			});
 		   _list.push({
 				R = 50,
