@@ -35,6 +35,18 @@ this.legend_bear_bite <- this.inherit("scripts/skills/skill", {
 		this.m.ChanceSmash = 0;
 	}
 
+	function getTooltip()
+	{
+		local ret = this.getDefaultTooltip();
+		ret.push({
+			id = 8,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "nom nom nom"
+		});
+		return ret;
+	}
+
 	function onUpdate( _properties )
 	{
 		_properties.DamageRegularMin += 30;

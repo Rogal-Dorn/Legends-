@@ -64,6 +64,8 @@ this.legend_transformed_tree_effect <- this.inherit("scripts/skills/skill", {
 
 		actor.getSprite("body").setBrush("bust_schrat_body_01");
 		actor.getSprite("head").setBrush("bust_schrat_head_01");
+		actor.getSprite("body").setHorizontalFlipping(1);
+		actor.getSprite("head").setHorizontalFlipping(1);
 
 		actor.getSprite("armor").Alpha = 10;
 		actor.getSprite("helmet").Alpha = 10;
@@ -103,7 +105,7 @@ this.legend_transformed_tree_effect <- this.inherit("scripts/skills/skill", {
 
 		if (!this.m.Container.hasSkill("actives.grow_shield"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/grow_shield_skilll"));
+			this.m.Container.add(this.new("scripts/skills/actives/grow_shield_skill"));
 		}
 
 
@@ -196,9 +198,9 @@ this.legend_transformed_tree_effect <- this.inherit("scripts/skills/skill", {
 
 		if (!this.m.Container.hasSkill("actives.grow_shield"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/grow_shield_skilll"));
+			this.m.Container.add(this.new("scripts/skills/actives/grow_shield_skill"));
 		}
-
+		_properties.MovementAPCostAdditional += 1;
 	}
 
 	function onTurnEnd()

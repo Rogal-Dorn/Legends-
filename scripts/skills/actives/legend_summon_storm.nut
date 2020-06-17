@@ -68,12 +68,9 @@ this.legend_summon_storm <- this.inherit("scripts/skills/skill", {
 		{
 		this.m.Container.add(this.new("scripts/skills/effects/lionheart_potion_effect"));
 		}
-		if (this.World.getTime().IsDaytime)
-			{
-				weather.setAmbientLightingColor(this.createColor(this.Const.Tactical.AmbientLightingColor.Storm));
-				weather.setAmbientLightingSaturation(this.Const.Tactical.AmbientLightingSaturation.Storm);
-			}
 
+		weather.setAmbientLightingColor(this.createColor(this.Const.Tactical.AmbientLightingColor.Storm));
+		weather.setAmbientLightingSaturation(this.Const.Tactical.AmbientLightingSaturation.Storm);
 		local clouds = weather.createCloudSettings();
 		clouds.Type = this.getconsttable().CloudType.StaticFog;
 		clouds.MinClouds = 12;
@@ -98,12 +95,8 @@ this.legend_summon_storm <- this.inherit("scripts/skills/skill", {
 		}
 		else
 		{
-
-		if (this.World.getTime().IsDaytime && time != this.Const.World.TimeOfDay.Dusk && time != this.Const.World.TimeOfDay.Dawn && time != this.Const.World.TimeOfDay.Morning)
-			{
-				weather.setAmbientLightingColor(this.createColor(this.Const.Tactical.AmbientLightingColor.LightRain));
-				weather.setAmbientLightingSaturation(this.Const.Tactical.AmbientLightingSaturation.LightRain);
-			}
+		weather.setAmbientLightingColor(this.createColor(this.Const.Tactical.AmbientLightingColor.LightRain));
+		weather.setAmbientLightingSaturation(this.Const.Tactical.AmbientLightingSaturation.LightRain);
 		rain.MinDrops = 20;
 		rain.MaxDrops = 60;
 		rain.NumSplats = 30;
