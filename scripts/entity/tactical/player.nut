@@ -929,6 +929,19 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
             local relMod = (( (this.m.Alignment > b.getAlignment()) ? (this.m.Alignment - b.getAlignment()) : (b.getAlignment() - this.m.Alignment) + 1) * -2) + 10;
             b.changeActiveRelationship(this, this.Math.rand(-1,1) + relMod);
         }
+
+		if (this.getSkills().hasSkill("trait.intensive_training_trait") && this.getLevel() > 1 )
+		{
+			if ( this.getBackground().getNameOnly()=="Donkey" ) 
+			{
+				return;
+			}
+			local inTraining = this.getSkills().getSkillByID("trait.intensive_training_trait");
+			
+			local addSkills = this.Math.rand(0, this.getLevel()+2);
+			addSkills = this.Math.min(addSkills, inTraining.getMaxSkillsCanBeAdded() - 1);
+			inTraining.addRandomSkills(this, addSkills);
+		}
 	}
 
 	function onCombatStart()
