@@ -24,14 +24,30 @@ this.perk_legend_bloodbath <- this.inherit("scripts/skills/skill", {
 		local bleeders = this.getBleeders();
 		local bonus = bleeders * 100;
 		local tooltip = this.skill.getTooltip();
-
-		if (bleeders >= 1)
+		// Just some different wordings depending on the amount of characters bleeding
+		if (bleeders > 0.8)
 		{
 			tooltip.push({
 				id = 6,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "There are currently [color=" + this.Const.UI.Color.PositiveValue + "]" + bleeders + "%[/color] of characters bleeding, giving a bonus of [color=" + this.Const.UI.Color.PositiveValue + "]+" + bonus + "%[/color] to resolve and fatigue"
+				text = "There are a lot of characters bleeding, giving a bonus of [color=" + this.Const.UI.Color.PositiveValue + "]+" + bonus + "%[/color] to resolve and fatigue"
+			});
+		} else if (bleeders > 0.5)
+		{
+			tooltip.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "There are some characters bleeding, giving a bonus of [color=" + this.Const.UI.Color.PositiveValue + "]+" + bonus + "%[/color] to resolve and fatigue"
+			});
+		} else if (bleeders > 0.3)
+		{
+			tooltip.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "There are a few characters bleeding, giving a bonus of [color=" + this.Const.UI.Color.PositiveValue + "]+" + bonus + "%[/color] to resolve and fatigue"
 			});
 		}
 		return tooltip;
@@ -66,7 +82,8 @@ this.perk_legend_bloodbath <- this.inherit("scripts/skills/skill", {
 			}
 			count += 1;
 		}
-		local ratio = count / bleeders;
+		// Just so we don't get division by 0
+		local ratio = bleeders / this.Math.maxf(count, 1);
 		return ratio;
 	}
 
