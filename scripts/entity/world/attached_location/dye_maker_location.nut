@@ -110,7 +110,7 @@ this.dye_maker_location <- this.inherit("scripts/entity/world/attached_location"
 		}
 	}
 
-	function onUpdateLegendShopList()
+	function onUpdateLegendShopList(_id = null, _list = null )
 	{
 		if (_id == "building.marketplace")
 		{

@@ -2339,6 +2339,11 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	//			if ( FriendshipToNotHitBonus in relTable ) -> give bonus to not hit friend
 	function getActiveRelationshipWith( _actor )
 	{
+		if ( ! (_actor.getCompanyID() in this.m.ActiveRelationships) )
+		{
+			this.logInfo("Error: Attempted to grab active relationship from something that didn't exist. Returning null");
+			return null;
+		}
 		return this.m.ActiveRelationships[_actor.getCompanyID()];
 	}
 

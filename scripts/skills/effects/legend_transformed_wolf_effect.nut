@@ -65,6 +65,9 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 
 		actor.getSprite("body").setBrush("bust_direwolf_0" + this.Math.rand(1, 3));
 		actor.getSprite("head").setBrush("bust_direwolf_0" + this.Math.rand(1, 3) + "_head");
+		actor.getSprite("body").setHorizontalFlipping(1);
+		actor.getSprite("head").setHorizontalFlipping(1);
+
 
 		actor.getSprite("armor").Alpha = 10;
 		actor.getSprite("helmet").Alpha = 10;

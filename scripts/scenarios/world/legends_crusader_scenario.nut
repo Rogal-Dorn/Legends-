@@ -36,6 +36,7 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 		local val = this.World.State.addNewID(bro);
 		bro.m.CompanyID = val;
 	
+		this.World.Assets.addMoralReputation(20);
 		this.World.Assets.m.BusinessReputation = 100;
 		this.World.Assets.m.Ammo = 0;
 

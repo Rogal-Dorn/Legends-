@@ -57,7 +57,7 @@ this.legend_slingstaff_bash <- this.inherit("scripts/skills/skill", {
 
 	}
 
-	function onAnySkillUsed ( _skill)
+	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
 		if (_skill == this)
 		{

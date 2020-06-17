@@ -36,7 +36,7 @@ this.legend_random_party_scenario <- this.inherit("scripts/scenarios/world/start
 			bro.setVeteranPerks(2);
 		}
 
-		foreach( bro in bros )
+		foreach( bro in this.World.getPlayerRoster().getAll() )
 		{
 			local val = this.World.State.addNewID(bro);
 			bro.m.CompanyID = val;
