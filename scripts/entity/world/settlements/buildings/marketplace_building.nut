@@ -564,7 +564,7 @@ this.marketplace_building <- this.inherit("scripts/entity/world/settlements/buil
 		this.fillStash(list, this.m.Stash, 1.0, true);
 	}
 
-	function onUpdateLegendShopList()
+	function onUpdateLegendShopList( _id = null, _list = null )
 	{
 		local list = [
 			{

@@ -801,7 +801,7 @@ this.asset_manager <- {
 
 				if (bro.getAlignment() == this.Math.floor(companyRep))
 				{
-				bro.worsenMood(this.Const.MoodChange.AmbitionFulfilled, "Thinks the company is great");
+				bro.improveMood(this.Const.MoodChange.AmbitionFulfilled, "Thinks the company is great");
 				}
 
 				// update the relationships between characters 

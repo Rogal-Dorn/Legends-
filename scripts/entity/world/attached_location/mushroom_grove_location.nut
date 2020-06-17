@@ -129,11 +129,6 @@ this.mushroom_grove_location <- this.inherit("scripts/entity/world/attached_loca
 				P = 1.0,
 				S = "accessory/berserker_mushrooms_item"
 			});
-			list.push({
-				R = 50,
-				P = 1.0,
-				S = "accessory/legend_apothecary_mushrooms_item"
-			});
 
 		if (this.Const.DLC.Wildmen)
 		{

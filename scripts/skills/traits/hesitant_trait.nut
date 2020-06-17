@@ -18,7 +18,12 @@ this.hesitant_trait <- this.inherit("scripts/skills/traits/character_trait", {
 			"trait.quick",
 			"trait.brute",
 			"trait.bloodthirsty",
-			"trait.impatient"
+			"trait.impatient",
+			"trait.light",
+			"trait.aggressive",
+			"trait.ambitious",
+			"trait.unpredictable",
+			"trait.natural"
 		];
 	}
 

@@ -15,7 +15,8 @@ this.bright_trait <- this.inherit("scripts/skills/traits/character_trait", {
 			"the Wise"
 		];
 		this.m.Excluded = [
-			"trait.dumb"
+			"trait.dumb",
+			"trait.predictable"
 		];
 	}
 

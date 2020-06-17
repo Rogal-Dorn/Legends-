@@ -277,7 +277,7 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 	{
 		local talents = this.getContainer().getActor().getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
-		talents[this.Const.Attributes.MeleeDefence] = 3;
+		talents[this.Const.Attributes.MeleeSkill] = 3;
 		talents[this.Const.Attributes.Hitpoints] = 3;
 		this.getContainer().getActor().fillTalentValues(2, true);
 		local items = this.getContainer().getActor().getItems();

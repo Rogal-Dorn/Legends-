@@ -301,6 +301,10 @@ this.data_helper <- {
 							{
 								// local relTab = _targetEntity.getTile().getEntity().getActiveRelationshipWith(tile.getEntity());
 								// local relNum = relTab.RelationNum;
+								if (tile.getEntity().getCompanyID() == -1)
+								{
+									continue;
+								}
 								local relTab = this.World.State.getRefFromID(_entity.getCompanyID()).getActiveRelationshipWith(tile.getEntity());
 								local relNum = relTab.RelationNum;
 

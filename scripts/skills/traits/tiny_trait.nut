@@ -18,7 +18,8 @@ this.tiny_trait <- this.inherit("scripts/skills/traits/character_trait", {
 			"trait.tough",
 			"trait.pugilist",
 			"trait.brute",
-			"trait.iron_jaw"
+			"trait.iron_jaw",
+			"trait.heavy"
 		];
 	}
 

@@ -17,7 +17,9 @@ this.iron_jaw_trait <- this.inherit("scripts/skills/traits/character_trait", {
 			"trait.fainthearted",
 			"trait.bleeder",
 			"trait.tiny",
-			"trait.ailing"
+			"trait.ailing",
+			"trait.light",
+			"trait.frail"
 		];
 	}
 
