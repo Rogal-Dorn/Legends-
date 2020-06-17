@@ -3365,3 +3365,10 @@ fixes druid recruit background tag
 random party background and id assignment fixes
 druid forms arent backwards anymore
 slingstaff bash crash fix
+
+14.0.0.7h
+
+bloodbath no longer can divine by 0
+perks tree tentative fix
+druid effect forms no longer keep the druid swapped after ending battle
+hair splitter no longer calls character_background for no reason

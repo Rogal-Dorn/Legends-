@@ -66,8 +66,8 @@ this.perk_legend_bloodbath <- this.inherit("scripts/skills/skill", {
 			}
 			count += 1;
 		}
-		local ratio = count / bleeders;
-		return ratio;
+		
+		return (bleeders == 0) ? 0 : count / bleeders;
 	}
 
 	function onUpdate( _properties )
