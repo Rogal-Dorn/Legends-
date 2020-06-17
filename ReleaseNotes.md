@@ -3360,4 +3360,37 @@ Converting a cultist now doesn't "change" their background. The converts get bot
 They keep their camp modifiers, and when I'm done they'll get the cultist perkgroup added to their tree(the perkpoitns won't be reset) (Salty)
 
 
+14.0.0.7g
 
+should fix armorsmith crashes, and potential crashes with dye maker and marketplace buildings
+fixes people getting mad when they claim they're enjoying the company
+adds some extra moral reputation to crusader start
+fixes bug with characters that join you in a fight (e.g. protect the noble's son contract)
+fixes druid recruit background tag
+random party background and id assignment fixes
+druid forms arent backwards anymore
+slingstaff bash crash fix
+
+14.0.0.8
+
+Kvothe's More Traits submod 
+* Aggressive: +5 matk - 5 mdef 
+* Ambitious: +5% xp +3 bravery +3 initiative 
+* Firm +5% melee damage 
+* Frail -5% xp -3 hp - 3 stamina 
+* Heavy +10% melee damage  - 20 initiative
+* Light -10% melee damage +20 initiative
+* Natural +5%xp +3 hp +3 stamina 
+* Pragmatic -10% chance to hit the head +5 melee skill 
+* Predicatable -5 chance to hit the head -5 initiative  
+* Slack -5% xp gain -3 bravery -3 initative 
+* Sureshot +5 ranged skill 
+* Unpreditable +5% chance to hit the head +5 initiative 
+ 
+Kvothe's Training Grounds submod 
+* Fixes some bugs with legends 
+* gain up to 15 permanent stats from training 
+* ranged and melee will only get relevant stats 
+* after gaining all 15 stats you unlock a perk point and a trait 
+* higher level recruits may have a couple more stats  
+ 
