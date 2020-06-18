@@ -354,6 +354,10 @@
 						if (this.getFaction() == this.Const.Faction.Player && tile.getEntity().getFaction() == this.Const.Faction.Player && tile.getEntity().isAlive())
 						{
 							// local relTab = this.getActiveRelationshipWith(tile.getEntity());
+							if (this.getCompanyID() == -1)
+							{
+								continue;	
+							}
 							local relTab = this.World.State.getRefFromID(this.getCompanyID()).getActiveRelationshipWith(tile.getEntity());
 							if (relTab == null) 
 							{
