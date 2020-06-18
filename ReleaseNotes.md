@@ -3376,3 +3376,4 @@ magic backgrounds except for witch no longer pretend they're cooks and come with
 avatars no longer get mad at company being too immoral or moral
 witchhunter helm no longer has spelling error
 fixes relationsnhip crash with companion pets (warhounds, small schrats from druid, etc)
+fixes schrat racial being assigned to player faction and thus trying to give it exp
