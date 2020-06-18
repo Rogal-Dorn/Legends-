@@ -708,6 +708,11 @@
 		return null;
 	}
 
+	o.getCompanyID() <- function()
+	{
+		return -1;
+	}
+
 	local szFn = o.onSerialize
 	o.onSerialize = function( _out )
 	{
@@ -724,6 +729,7 @@
 			this.m.RiderID = _in.readString();
 		}
 	}
+
 
 
 

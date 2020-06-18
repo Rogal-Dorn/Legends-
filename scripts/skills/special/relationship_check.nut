@@ -73,6 +73,10 @@ this.relationship_check <- this.inherit("scripts/skills/skill", {
 						
 						if (tile.getEntity().getFaction() == this.Const.Faction.Player)
 						{
+							if (tile.getEntity().getCompanyID() == -1)
+							{
+								continue;
+							}
 							local relTab = this.World.State.getRefFromID(actor.getCompanyID()).getActiveRelationshipWith(tile.getEntity());
 							//local relNum = relTab.RelationNum;
 							returnString += relationStringHelper(tile.getEntity().getName(), relTab);

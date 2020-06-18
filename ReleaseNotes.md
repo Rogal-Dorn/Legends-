@@ -3375,3 +3375,4 @@ hair splitter no longer calls character_background for no reason
 magic backgrounds except for witch no longer pretend they're cooks and come with free stew
 avatars no longer get mad at company being too immoral or moral
 witchhunter helm no longer has spelling error
+fixes relationsnhip crash with companion pets (warhounds, small schrats from druid, etc)
