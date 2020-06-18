@@ -235,7 +235,7 @@ this.legend_horserider <- this.inherit("scripts/skills/backgrounds/character_bac
 	{
 		this.character_background.onAdded();
 		this.m.Container.add(this.new("scripts/skills/actives/legend_horse_kick"));
-		this.m.Container.add(this.new("scripts/skills/traits/legend_horse_trait"));
+		//this.m.Container.add(this.new("scripts/skills/traits/legend_horse_trait")); //commenting this lets our player horserider use items lol
 	}
 
 

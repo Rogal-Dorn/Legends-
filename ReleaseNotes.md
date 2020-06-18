@@ -3377,3 +3377,5 @@ avatars no longer get mad at company being too immoral or moral
 witchhunter helm no longer has spelling error
 fixes relationsnhip crash with companion pets (warhounds, small schrats from druid, etc)
 fixes schrat racial being assigned to player faction and thus trying to give it exp
+RIDER SKILLS WORK ON THE HORSES NOW!!!
+fixes item spawn sometimes crashing in luber camp
