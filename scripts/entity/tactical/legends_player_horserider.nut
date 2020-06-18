@@ -202,10 +202,17 @@ this.legends_player_horserider <- this.inherit("scripts/entity/tactical/player",
 			this.getSkills().add(this.new("scripts/skills/perks/perk_legend_horse_movement"));
 		}
 
-
-
-
-
+		local items = this.m.Rider.getItems();
+		if (items != null) {
+			if (items.getItemAtSlot(this.Const.ItemSlot.Mainhand) != null)
+			{
+				local item = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
+				local itemID = item.getID();
+				local pathNum = this.Const.Items.FullItemListIDs.find(itemID);
+				local pathToAdd = "scripts/items/" + this.Const.Items.FullItemList[pathNum];
+				this.m.Items.equip(this.new(pathToAdd));
+			}
+		}
 
 		background.buildDescription();
 		local c = this.m.CurrentProperties;
