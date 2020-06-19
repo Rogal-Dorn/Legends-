@@ -3379,3 +3379,4 @@ fixes relationsnhip crash with companion pets (warhounds, small schrats from dru
 fixes schrat racial being assigned to player faction and thus trying to give it exp
 RIDER SKILLS WORK ON THE HORSES NOW!!!
 fixes item spawn sometimes crashing in luber camp
+true believer now correctly gives optimist trait
