@@ -61,7 +61,7 @@ this.kobold <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.Flee] = 1.0;
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.DamageReceived] = 0.5;
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.Idle] = 1.25;
-		this.m.SoundPitch = this.Math.rand(95, 110) * 0.01;
+		this.m.SoundPitch = this.Math.rand(150, 160) * 0.01;
 		this.m.Tags.add("goblin");
 	}
 
@@ -74,7 +74,7 @@ this.kobold <- this.inherit("scripts/entity/tactical/actor", {
 			this.m.IsCorpseFlipped = flip;
 			local decal;
 			local skin = this.getSprite("body");
-			decal = _tile.spawnDetail("bust_goblin_body_dead", this.Const.Tactical.DetailFlag.Corpse, flip);
+			decal = _tile.spawnDetail(this.getSprite("body").getBrush().Name + "_dead", this.Const.Tactical.DetailFlag.Corpse, flip);
 			decal.Color = skin.Color;
 			decal.Saturation = skin.Saturation;
 			decal.setBrightness(0.9);
@@ -175,22 +175,20 @@ this.kobold <- this.inherit("scripts/entity/tactical/actor", {
 		this.addSprite("socket").setBrush("bust_base_goblins");
 		local quiver = this.addSprite("quiver");
 		quiver.Visible = false;
+		local variant = this.Math.rand(1,5);
 		local body = this.addSprite("body");
-		body.setBrush("bust_kobold_01");
+		body.setBrush("bust_kobold_0" + variant);
 		body.varySaturation(0.1);
 		body.varyColor(0.07, 0.07, 0.09);
 		local injury_body = this.addSprite("injury_body");
 		injury_body.Visible = false;
-		injury_body.setBrush("bust_goblin_01_body_injured");
-		this.addSprite("armor");
+		injury_body.setBrush("bust_kobold_0" + variant + "_damaged");
 		local head = this.addSprite("head");
 		head.Saturation = body.Saturation;
 		head.Color = body.Color;
 		local injury = this.addSprite("injury");
 		injury.Visible = false;
 		injury.setBrush("bust_goblin_01_head_injured");
-		this.addSprite("helmet");
-		this.addSprite("helmet_damage");
 		local body_blood = this.addSprite("body_blood");
 		body_blood.Visible = false;
 		this.m.Skills.add(this.new("scripts/skills/effects/captain_effect"));
