@@ -1,0 +1,59 @@
+this.legend_blowgun <- this.inherit("scripts/items/weapons/weapon", {
+	m = {},
+
+	function create()
+	{
+		this.weapon.create();
+		this.m.ID = "weapon.legend_blowgun";
+		this.m.Name = "Blowgun";
+		this.m.Description = "A flimsy blowgun for shooting toxic substances";
+		this.m.Categories = "Crossbow, One-Handed";
+		this.m.IconLarge = "weapons/ranged/blowgun_01.png";
+		this.m.Icon = "weapons/ranged/blowgun_01_70x70.png";
+		this.m.SlotType = this.Const.ItemSlot.Mainhand;
+		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
+		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon | this.Const.Items.ItemType.Defensive;
+		this.m.EquipSound = this.Const.Sound.ArmorLeatherImpact;
+		this.m.AddGenericSkill = true;
+		this.m.ShowQuiver = true;
+		this.m.ShowArmamentIcon = true;
+		this.m.ArmamentIcon = "icon_blowgun_01";
+		this.m.Value = 30;
+		this.m.RangeMin = 1;
+		this.m.RangeMax = 5;
+		this.m.RangeIdeal = 5;
+		this.m.StaminaModifier = -6;
+		this.m.Condition = 20.0;
+		this.m.ConditionMax = 20.0;
+		this.m.RegularDamage = 10;
+		this.m.RegularDamageMax = 25;
+		this.m.ArmorDamageMult = 0.2;
+		this.m.DirectDamageMult = 0.1;
+	}
+
+	function getAmmoID()
+	{
+		return "ammo.bolts";
+	}
+
+	function getTooltip()
+	{
+		local result = this.weapon.getTooltip();
+
+		return result;
+	}
+
+	function onEquip()
+	{
+		this.weapon.onEquip();
+		this.addSkill(this.new("scripts/skills/actives/legend_shoot_dart"));
+
+	}
+
+	function onCombatFinished()
+	{
+		this.weapon.onCombatFinished();
+	}
+
+});
+
