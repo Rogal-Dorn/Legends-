@@ -25,11 +25,12 @@ this.legends_player_horserider <- this.inherit("scripts/entity/tactical/player",
 
 	function getItems()
 	{
-		if (this.m.Rider == null)
-		{
-			return this.m.Items
-		}
-		return this.m.Rider.getItems()
+		// if (this.m.Rider == null)
+		// {
+		// 	return this.m.Items
+		// }
+		// return this.m.Rider.getItems()
+		return this.m.Items;
 	}
 
 	function onCombatStart()
@@ -202,10 +203,71 @@ this.legends_player_horserider <- this.inherit("scripts/entity/tactical/player",
 			this.getSkills().add(this.new("scripts/skills/perks/perk_legend_horse_movement"));
 		}
 
+		// this.m.Items.m.Items[this.Const.ItemSlot.Ammo] = this.m.Rider.getItems().getItemAtSlot(this.Const.ItemSlot.Ammo); //ammo apparently all has the exact same ID for some reason so this is probably an alright fix
+		this.m.Items.equip(this.new("scripts/items/ammo/large_quiver_of_arrows"));
 
-
-
-
+		local items = this.m.Rider.getItems();
+		if (items != null) {
+			if (items.getItemAtSlot(this.Const.ItemSlot.Mainhand) != null)
+			{
+				local item = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
+				local itemID = item.getID();
+				local pathNum = this.Const.Items.FullItemListIDs.find(itemID);
+				local pathToAdd = "scripts/items/" + this.Const.Items.FullItemList[pathNum];
+				this.m.Items.equip(this.new(pathToAdd));
+				if (item.isRuned())
+				{
+					local runeVariant = item.getRuneVariant();
+					local runeToken = this.new("scripts/items/rune_sigils/legend_vala_inscription_token");
+					runeToken.setRuneVariant(runeVariant);
+					runeToken.onUse(this);
+				}
+			}
+			if (items.getItemAtSlot(this.Const.ItemSlot.Offhand) != null)
+			{
+				local item = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
+				local itemID = item.getID();
+				local pathNum = this.Const.Items.FullItemListIDs.find(itemID);
+				local pathToAdd = "scripts/items/" + this.Const.Items.FullItemList[pathNum];
+				this.m.Items.equip(this.new(pathToAdd));
+				if (item.isRuned())
+				{
+					local runeVariant = item.getRuneVariant();
+					local runeToken = this.new("scripts/items/rune_sigils/legend_vala_inscription_token");
+					runeToken.setRuneVariant(runeVariant);
+					runeToken.onUse(this);
+				}
+			}
+			if (items.getItemAtSlot(this.Const.ItemSlot.Accessory) != null)
+			{
+				local item = items.getItemAtSlot(this.Const.ItemSlot.Accessory);
+				local itemID = item.getID();
+				local pathNum = this.Const.Items.FullItemListIDs.find(itemID);
+				local pathToAdd = "scripts/items/" + this.Const.Items.FullItemList[pathNum];
+				this.m.Items.equip(this.new(pathToAdd));
+				if (item.isRuned())
+				{
+					local runeVariant = item.getRuneVariant();
+					local runeToken = this.new("scripts/items/rune_sigils/legend_vala_inscription_token");
+					runeToken.setRuneVariant(runeVariant);
+					runeToken.onUse(this);
+				}
+			}
+			foreach (item in items.getAllItemsAtSlot(this.Const.ItemSlot.Bag))
+			{
+				local itemID = item.getID();
+				local pathNum = this.Const.Items.FullItemListIDs.find(itemID);
+				local pathToAdd = "scripts/items/" + this.Const.Items.FullItemList[pathNum];
+				this.m.Items.equip(this.new(pathToAdd));
+				if (item.isRuned())
+				{
+					local runeVariant = item.getRuneVariant();
+					local runeToken = this.new("scripts/items/rune_sigils/legend_vala_inscription_token");
+					runeToken.setRuneVariant(runeVariant);
+					runeToken.onUse(this);
+				}
+			}
+		}
 
 		background.buildDescription();
 		local c = this.m.CurrentProperties;

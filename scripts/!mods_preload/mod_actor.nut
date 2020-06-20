@@ -354,6 +354,10 @@
 						if (this.getFaction() == this.Const.Faction.Player && tile.getEntity().getFaction() == this.Const.Faction.Player && tile.getEntity().isAlive())
 						{
 							// local relTab = this.getActiveRelationshipWith(tile.getEntity());
+							if (this.getCompanyID() == -1)
+							{
+								continue;	
+							}
 							local relTab = this.World.State.getRefFromID(this.getCompanyID()).getActiveRelationshipWith(tile.getEntity());
 							if (relTab == null) 
 							{
@@ -708,6 +712,11 @@
 		return null;
 	}
 
+	o.getCompanyID() <- function()
+	{
+		return -1;
+	}
+
 	local szFn = o.onSerialize
 	o.onSerialize = function( _out )
 	{
@@ -724,6 +733,7 @@
 			this.m.RiderID = _in.readString();
 		}
 	}
+
 
 
 

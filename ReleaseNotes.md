@@ -3389,5 +3389,17 @@ Kvothe's Training Grounds submod
 * after gaining all 15 stats you unlock a perk point and a trait 
 * higher level recruits may have a couple more stats  
 
+RIDER SKILLS WORK ON THE HORSES NOW!!!
+bloodbath no longer can divine by 0
+perks tree tentative fix
+druid effect forms no longer keep the druid swapped after ending battle
+hair splitter no longer calls character_background for no reason
+magic backgrounds except for witch no longer pretend they're cooks and come with free stew
+avatars no longer get mad at company being too immoral or moral
+witchhunter helm no longer has spelling error
+fixes relationsnhip crash with companion pets (warhounds, small schrats from druid, etc)
+fixes schrat racial being assigned to player faction and thus trying to give it exp
+fixes item spawn sometimes crashing in luber camp
+true believer now correctly gives optimist trait
 fixes wolf form crash 
- 
+
