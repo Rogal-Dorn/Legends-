@@ -104,8 +104,6 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 			this.m.Container.add(this.new("scripts/skills/actives/werewolf_bite"));
 		}
 
-		_properties.MovementAPCostAdditional += -1;
-		_properties.MovementFatigueCostMult *= 0.5;
 	}
 
 	function onRemoved()
