@@ -124,7 +124,7 @@ this.lumber_camp_location <- this.inherit("scripts/entity/world/attached_locatio
 			_list.push({
 				R = 95,
 				P = 1.0,
-				S = "weapons/goblin_staff"
+				S = "weapons/greenskins/goblin_staff"
 			});
 			_list.push({
 				R = 85,

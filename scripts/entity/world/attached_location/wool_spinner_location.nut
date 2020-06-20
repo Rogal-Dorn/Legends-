@@ -230,7 +230,7 @@ this.wool_spinner_location <- this.inherit("scripts/entity/world/attached_locati
 			_list.push({
 				R = 30,
 				P = 1.0,
-				S = "helmets/named/witchhunters_helm"
+				S = "helmets/named/witchhunter_helm"
 			});
 			_list.push({
 				R = 95,

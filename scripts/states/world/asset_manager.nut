@@ -789,19 +789,20 @@ this.asset_manager <- {
 				}
 
 				// Check the company alignment against the mercenary alignment
-				if (bro.getAlignmentMin() > companyRep)
-				{
-				bro.worsenMood(this.Const.MoodChange.AmbitionFailed, "Thinks the company is too immoral");
-				}
+				if ( !bro.getSkills().hasSkill("trait.player") ) { //cant be too imoral or moral if u are the company
+					if (bro.getAlignmentMin() > companyRep)
+					{
+						bro.worsenMood(this.Const.MoodChange.AmbitionFailed, "Thinks the company is too immoral");
+					}
 
-				if (bro.getAlignmentMax() < companyRep)
-				{
-				bro.worsenMood(this.Const.MoodChange.AmbitionFailed, "Thinks the company is too moral");
+					if (bro.getAlignmentMax() < companyRep)
+					{
+						bro.worsenMood(this.Const.MoodChange.AmbitionFailed, "Thinks the company is too moral");
+					}
 				}
-
 				if (bro.getAlignment() == this.Math.floor(companyRep))
 				{
-				bro.improveMood(this.Const.MoodChange.AmbitionFulfilled, "Thinks the company is great");
+					bro.improveMood(this.Const.MoodChange.AmbitionFulfilled, "Thinks the company is great");
 				}
 
 				// update the relationships between characters 
@@ -810,19 +811,19 @@ this.asset_manager <- {
 				{
 					if (relation.getAlignment() == bro.getAlignment())
 					{
-					bro.changeActiveRelationship(relation, 2);
+						bro.changeActiveRelationship(relation, 2);
 					}
 					else if (relation.getAlignment() < bro.getAlignmentMin())
 					{
-					bro.changeActiveRelationship(relation, -1);
+						bro.changeActiveRelationship(relation, -1);
 					}
 					else if (relation.getAlignment() > bro.getAlignmentMax())
 					{
-					bro.changeActiveRelationship(relation, -1);;
+						bro.changeActiveRelationship(relation, -1);;
 					}
 					else
 					{
-					bro.changeActiveRelationship(relation, this.Math.rand(-1,1));
+						bro.changeActiveRelationship(relation, this.Math.rand(-1,1));
 					}
 
 				}
