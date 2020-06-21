@@ -3380,3 +3380,4 @@ fixes schrat racial being assigned to player faction and thus trying to give it 
 RIDER SKILLS WORK ON THE HORSES NOW!!!
 fixes item spawn sometimes crashing in luber camp
 true believer now correctly gives optimist trait
+sets moral reputation of the party equal to the avg of the startinbrothers alignments
