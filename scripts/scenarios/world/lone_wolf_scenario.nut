@@ -67,7 +67,7 @@ this.lone_wolf_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		this.World.Assets.m.Medicine = this.World.Assets.m.Medicine / 3;
 		this.World.Assets.m.Ammo = 0;
 		local avgAlignment = 0;
-		foreach (bro in this.world.getPlayerRoster().getAll())
+		foreach (bro in this.World.getPlayerRoster().getAll())
 		{
 			if (bro.getAlignment() <= this.Const.LegendMod.Alignment.NeutralMin)
 			{

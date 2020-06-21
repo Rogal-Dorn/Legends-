@@ -77,7 +77,7 @@ this.legends_party_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			bro.m.CompanyID = val;
 		}
 		local avgAlignment = 0;
-		foreach (bro in this.world.getPlayerRoster().getAll())
+		foreach (bro in this.World.getPlayerRoster().getAll())
 		{
 			if (bro.getAlignment() <= this.Const.LegendMod.Alignment.NeutralMin)
 			{

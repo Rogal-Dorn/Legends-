@@ -43,7 +43,7 @@ this.legends_seer_scenario <- this.inherit("scripts/scenarios/world/starting_sce
 		bro.m.HireTime = this.Time.getVirtualTimeF();
 
 		local avgAlignment = 0;
-		foreach (bro in this.world.getPlayerRoster().getAll())
+		foreach (bro in this.World.getPlayerRoster().getAll())
 		{
 			if (bro.getAlignment() <= this.Const.LegendMod.Alignment.NeutralMin)
 			{
