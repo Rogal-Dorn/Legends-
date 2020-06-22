@@ -199,7 +199,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 				avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMax);
 			}
 		}
-		avgAlignment *= 10;
+		avgAlignment *= (10 / this.World.getPlayerRoster().getSize());
 		this.World.Assets.addMoralReputation(avgAlignment);
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/cured_rations_item"));
 		

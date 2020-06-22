@@ -48,7 +48,7 @@ this.legends_assassin_scenario <- this.inherit("scripts/scenarios/world/starting
 				avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMax);
 			}
 		}
-		avgAlignment *= 10;
+		avgAlignment *= (10 / this.World.getPlayerRoster().getSize());
 		this.World.Assets.addMoralReputation(avgAlignment);
 	}
 
