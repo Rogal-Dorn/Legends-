@@ -54,7 +54,7 @@ this.legend_random_party_scenario <- this.inherit("scripts/scenarios/world/start
 				avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMax);
 			}
 		}
-		avgAlignment *= 10;
+		avgAlignment *= (10 / this.World.getPlayerRoster().getSize());
 		this.World.Assets.addMoralReputation(avgAlignment);
 
 		local randomFood;

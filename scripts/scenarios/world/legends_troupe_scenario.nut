@@ -104,7 +104,7 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 				avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMax);
 			}
 		}
-		avgAlignment *= 10;
+		avgAlignment *= (10 / this.World.getPlayerRoster().getSize());
 		this.World.Assets.addMoralReputation(avgAlignment);
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/legend_pie_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/mead_item"));

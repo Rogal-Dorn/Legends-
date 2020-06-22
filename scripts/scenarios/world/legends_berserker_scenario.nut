@@ -71,7 +71,7 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 				avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMax);
 			}
 		}
-		avgAlignment *= 10;
+		avgAlignment *= (10 / this.World.getPlayerRoster().getSize());
 		this.World.Assets.addMoralReputation(avgAlignment);
 		bros[0].getTags().set("IsPlayerCharacter", true);
 		bros[0].setVeteranPerks(2);	

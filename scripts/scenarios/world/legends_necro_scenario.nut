@@ -83,7 +83,7 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 				avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMax);
 			}
 		}
-		avgAlignment *= 10;
+		avgAlignment *= (10 / this.World.getPlayerRoster().getSize());
 		this.World.Assets.addMoralReputation(avgAlignment);
 
 		this.World.Assets.m.Money = this.World.Assets.m.Money / 2;

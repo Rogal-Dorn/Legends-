@@ -101,7 +101,7 @@ this.rangers_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 				avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMax);
 			}
 		}
-		avgAlignment *= 10;
+		avgAlignment *= (10 / this.World.getPlayerRoster().getSize());
 		this.World.Assets.addMoralReputation(avgAlignment);
 		//this.World.Assets.getStash().resize(this.Math.min(15, this.World.Assets.getStash().getCapacity() / 2));
 		this.World.Tags.set("HasLegendCampHunting", true);

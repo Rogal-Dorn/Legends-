@@ -64,7 +64,7 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 				avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMax);
 			}
 		}
-		avgAlignment *= 10;
+		avgAlignment *= (10 / this.World.getPlayerRoster().getSize());
 		this.World.Assets.addMoralReputation(avgAlignment);
 	//	bros[1].setStartValuesEx([
 	//		"legend_ranger_background"
