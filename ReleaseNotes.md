@@ -3402,4 +3402,10 @@ fixes schrat racial being assigned to player faction and thus trying to give it 
 fixes item spawn sometimes crashing in luber camp
 true believer now correctly gives optimist trait
 fixes wolf form crash 
+feint error fixed
+runesmith armor gen fixed
+sets moral reputation of the party equal to the avg of the startinbrothers alignments
+Starting resource capacity increased on all economic difficulties. Easy is now much easier. 
+Starting resources increased for lower economic difficulties. higher remain challenging. 
+Backgrounds that grant resources storage will now grant more for Ammo, armor parts and meds respectively.   
 
