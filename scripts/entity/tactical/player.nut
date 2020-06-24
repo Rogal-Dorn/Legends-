@@ -2266,6 +2266,152 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
         return this.m.CompanyID;
     }
 
+	//Only used occaisionally, shouldn't call this specifically 
+	//Probably would be unused function
+	//Check world_state::addNewID and in this_file::onHired to see how w add company IDs to brothers
+	function setCompanyID( _num )
+	{
+		this.m.CompanyID = _num;
+	}
+	//If we don't have an active relationship with the actor create one -> then change the Key by the amount
+	//Most of the time we just change the relation number as of now so defaulting to RelationNum
+	//otherwise if we want to change specific key by the amount do that here
+	//We use _set = false to just stack onto the old relationship modifier
+	//If it's true then we overwrite the old modifier
+	//i.e. if relnum = 10 and we do ( _actor, 15, true ) -> relNum trns into 15
+	//or we can do ( _actor, 5 ) -> relNum turns to 15 also
+	//To use non-numeric keys it's trcky but use the following
+	// bro.cAR(bro2, true, [anything for set], keyValue)
+	//	bro.cAR(bro2, false, [anything], keyVal)
+	function changeActiveRelationship( _actor, _amount, _key = "RelationNum", _set = false )
+	{
+		if ( _actor == this )
+		{
+			return;
+		}
+		if ( !( this.hasActiveRelationshipWith(_actor) ) )
+		{
+			
+			this.createActiveRelationship(_actor);
+		}
+		
+		local arrIndex = _actor.getCompanyID();
+		local amtType = typeof _amount;
+		if (_set || (amtType != "integer" && amtType != "float"))
+		{
+			this.m.ActiveRelationships[arrIndex][_key] <- _amount;
+		}
+		else
+		{
+			if (_key in this.m.ActiveRelationships[arrIndex])
+			{
+				this.m.ActiveRelationships[arrIndex][_key] += _amount;
+			}
+			else
+			{
+				this.m.ActiveRelationships[arrIndex][_key] <- _amount;
+			}
+		}
+		
+		
+	}
+
+	//If the array index isn't null anymore then we have a rel with
+	//It should only ever be null if the relationship was previously made null by removing	
+	function hasActiveRelationshipWith( _actor )
+	{
+		if ( this.m.ActiveRelationships[_actor.getCompanyID()] == null )
+		{
+			return false;
+		}
+		return true;
+	}
+
+	//Simple rewrite of old relationship
+	//Cant have relationship on self
+	function createActiveRelationship( _actor )
+	{
+
+		if ( _actor == this )
+		{
+			return;
+		}
+
+		local newRelationship = {};
+		newRelationship.RelationNum <- 0;
+
+		this.m.ActiveRelationships[_actor.getCompanyID()] = newRelationship;
+
+	}
+
+	//Quick null to relationship when the brother dies
+	//Can call with below in case needed
+	//	foreach (bro in roster)
+	//	{
+	//		bro.nullRelation( actorWhoDied );
+	//	}
+	function nullRelation( _id )
+	{
+		this.m.ActiveRelationships[_id] = null;
+	}
+
+	//Quick loop thru all brothers and null's according to company ID
+	function removeActiveRelationship()
+	{
+
+		local brothers = this.World.getPlayerRoster().getAll();
+		foreach ( b in brothers )
+		{
+			b.nullRelation(this.getCompanyID());
+		}
+		this.World.State.removeCompanyID(this.m.CompanyID);
+	}
+	
+
+	//Call this function by doing
+	//		getARW( actor )
+	//Use by doing
+	//		local relTable = getARW ( actor )
+	//		if ( [key] in relTable ) -> do stuff
+	//			if ( FriendshipToNotHitBonus in relTable ) -> give bonus to not hit friend
+	function getActiveRelationshipWith( _actor )
+	{
+		if ( ! (_actor.getCompanyID() in this.m.ActiveRelationships) )
+		{
+			this.logInfo("Error: Attempted to grab active relationship from something that didn't exist. Returning null");
+			return null;
+		}
+		return this.m.ActiveRelationships[_actor.getCompanyID()];
+	}
+
+	//Used by the trait to get just a list of the characters relations
+	//Currently returns just the RelNum integer but can be changed to 
+	//		return strings, i.e. "%actor% likes %other actor%"
+	function getActiveRelationshipsTraitText()
+	{
+		local returnString = "";
+		foreach ( index, relation in this.m.ActiveRelationships )
+		{
+			if ( relation != null )
+			{
+				returnString += "Relationship to " + this.World.State.getRefFromID(index).getNameOnly() + ": " + relation.RelationNum + "\n";
+			}
+		}
+		if (returnString == "")
+		{
+			returnString = this.getNameOnly() + " has no current relationships.";
+		}
+		return returnString;
+	}
+
+	//Returns the entire AR Array
+	function getActiveRelationships()
+	{
+		return this.m.ActiveRelationships;
+	}
+
+
+
 	function fillTalentValues( _num, _force = false )
 	{
 		this.m.Talents.resize(this.Const.Attributes.COUNT, 0);
@@ -2928,6 +3074,33 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		_out.writeString(this.m.CampAssignment);
 		_out.writeF32(this.m.LastCampTime);
 		_out.writeBool(this.m.InReserves);
+
+		_out.writeU8(this.m.Alignment);
+		_out.writeBool(this.m.IsAlignmentAssigned);
+		
+		_out.writeU8(this.m.CompanyID);
+
+		//keys are just string values
+
+		foreach (index, relation in this.m.ActiveRelationships)
+		{
+			if (relation != null)
+			{
+				_out.writeString("CharID");
+				_out.writeU16(index);
+
+				foreach (key, value in relation)
+			{
+				_out.writeString(key);//IF WE ADD ANY NON-INT KEYS YOU HAVE TO CHECK HERE WHAT TKEY STRING IS USING
+				_out.writeI16(value);// if ( key == __ ) THEN _out.WriteVARTYPE
+			}
+
+			}
+			
+		}
+		//adds a string with STOP so we know when to stop reading in in onDeserialize(?) this should bechanged probably
+		_out.writeString("STOP");
+
 	}
 
 	function onDeserialize( _in )
@@ -3046,6 +3219,32 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		{
 			this.m.InReserves = _in.readBool();
 		}
+
+		//IF WE ADD ANY NON-INT KEYS YOU HAVE TO CHECK HERE WHAT TKEY STRING IS USING
+		// if ( keys == __ ) THEN _in.readVARTYPE
+		if (_in.getMetaData().getVersion() >= 65) //THIS SHOULD BE CHANGED TO ACTUAL NUMBER WHEN IN RELEASE BUILD 
+			this.m.Alignment = _in.readU8();
+			this.m.IsAlignmentAssigned = _in.readBool();
+
+			this.m.CompanyID = _in.readU8();
+			
+			local keys = _in.readString(); //puts STOP if we had norelations etc
+			local i = -1;
+			while ( keys != "STOP" )
+			{
+
+				if ( keys == "CharID" ) //new actor's relation
+				{
+					i = _in.readU16();
+					this.m.ActiveRelationships[i] = {};
+				}
+				else
+				{
+					this.m.ActiveRelationships[i][keys] <- _in.readI16();
+				}
+				keys = _in.readString();
+			}	
+
 	}
 
 });
