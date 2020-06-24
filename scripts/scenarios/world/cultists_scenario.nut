@@ -87,13 +87,27 @@ this.cultists_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 			bro.m.CompanyID = val;
 		}
 
+		local avgAlignment = 0;
+		foreach (bro in this.World.getPlayerRoster().getAll())
+		{
+			if (bro.getAlignment() <= this.Const.LegendMod.Alignment.NeutralMin)
+			{
+				avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMin);
+			}
+			else if (bro.getAlignment() >= this.Const.LegendMod.Alignment.NeutralMax)
+			{
+				avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMax);
+			}
+		}
+		avgAlignment *= (10 / this.World.getPlayerRoster().getSize());
+		this.World.Assets.addMoralReputation(avgAlignment);
+
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
 		items.equip(this.new("scripts/items/weapons/legend_cat_o_nine_tails"));
 		items.equip(this.new("scripts/items/helmets/cultist_hood"));
 		items.equip(this.new("scripts/items/armor/leather_wraps"));
-		this.World.Assets.addMoralReputation(-10);
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
 		this.World.Assets.m.Money = this.World.Assets.m.Money + 400;
 	}
