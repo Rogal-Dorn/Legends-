@@ -98,7 +98,7 @@ this.legend_runesmith_background <- this.inherit("scripts/skills/backgrounds/cha
 	function onAddLegendEquipment()
 	{
 	local items = this.getContainer().getActor().getItems();
-	items.equip(this.new("scripts/items/legend_armor/cloth/legend_apron_smith"));
+	local armor = this.new("scripts/items/legend_armor/cloth/legend_apron_smith");
 		local plates = [
 			[0, ""],
 			[1, "plate/legend_armor_leather_jacket"],
@@ -109,6 +109,7 @@ this.legend_runesmith_background <- this.inherit("scripts/skills/backgrounds/cha
 		{
 			armor.setUpgrade(plate)
 		}
+		items.equip(armor);
 		items.equip(this.new("scripts/items/helmets/hood"));
 
 	}
