@@ -15,7 +15,7 @@ this.kobold_fighter <- this.inherit("scripts/entity/tactical/kobold", {
 	{
 		this.goblin.onInit();
 		local b = this.m.BaseProperties;
-		b.setValues(this.Const.Tactical.Actor.KoboldFighter;
+		b.setValues(this.Const.Tactical.Actor.KoboldFighter);
 		b.DamageDirectMult = 1.4;
 		b.TargetAttractionMult = 1.1;
 		this.m.ActionPoints = b.ActionPoints;

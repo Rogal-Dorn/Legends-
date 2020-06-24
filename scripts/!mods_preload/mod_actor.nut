@@ -712,7 +712,7 @@
 		return null;
 	}
 
-	o.getCompanyID() <- function()
+	o.getCompanyID <- function()
 	{
 		return -1;
 	}
