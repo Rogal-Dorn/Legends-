@@ -158,6 +158,11 @@ this.religious_peasants_event <- this.inherit("scripts/events/event", {
 			{
 				this.Characters.push(_event.m.Monk.getImagePath());
 				this.World.Assets.addMoralReputation(1);
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation increases slightly"
+					});
 				this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnContractSuccess);
 				this.List.insert(0, {
 					id = 10,

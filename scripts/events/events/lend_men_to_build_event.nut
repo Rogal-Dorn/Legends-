@@ -65,7 +65,11 @@ this.lend_men_to_build_event <- this.inherit("scripts/events/event", {
 					}
 				];
 				local brothers = this.World.getPlayerRoster().getAll();
-
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation increases slightly"
+					});
 				foreach( bro in brothers )
 				{
 					local id = bro.getBackground().getID();
@@ -93,6 +97,13 @@ this.lend_men_to_build_event <- this.inherit("scripts/events/event", {
 								bro.changeActiveRelationship( relation, modifier1 );
 								local modifier2 = this.Math.rand(5, 10);
 								relation.changeActiveRelationship( bro, modifier2 );
+								this.List.push({
+									id = 10,
+									icon = "ui/icons/relation.png",
+									text = bro.getName() + " and " + relation.getName() + " grow closer"
+								});
+
+
 							}
 						}
 
@@ -140,6 +151,11 @@ this.lend_men_to_build_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation increases slightly"
+					});
 			}
 
 		});

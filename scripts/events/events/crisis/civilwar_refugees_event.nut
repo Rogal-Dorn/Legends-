@@ -99,6 +99,11 @@ this.civilwar_refugees_event <- this.inherit("scripts/events/event", {
 						text = _event.m.InjuredDude.getName() + " suffers " + injury.getNameOnly()
 					}
 				];
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation decreases"
+					});
 				_event.addLoot(this.List);
 			}
 
@@ -122,6 +127,11 @@ this.civilwar_refugees_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				_event.addLoot(this.List);
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation decreases"
+					});
 			}
 
 		});
@@ -144,6 +154,11 @@ this.civilwar_refugees_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				this.World.Assets.addMoralReputation(3);
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation increases"
+					});
 				local food = this.World.Assets.getFoodItems();
 
 				for( local i = 0; i < 2; i = ++i )
@@ -182,6 +197,11 @@ this.civilwar_refugees_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				this.World.Assets.addMoralReputation(3);
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation increases"
+					});
 				this.Characters.push(_event.m.RefugeeDude.getImagePath());
 				local food = this.World.Assets.getFoodItems();
 				local item = food[this.Math.rand(0, food.len() - 1)];

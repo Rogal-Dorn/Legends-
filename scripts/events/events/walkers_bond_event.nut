@@ -35,6 +35,13 @@ this.walkers_bond_event <- this.inherit("scripts/events/event", {
 				local modifier2 = this.Math.rand(5, 10);
 				_event.m.Walker2.changeActiveRelationship( _event.m.Walker1, modifier2 );
 
+				this.List.push({
+					id = 10,
+					icon = "ui/icons/relation.png",
+					text = _event.m.Walker1.getName() + " and " + _event.m.Walker2.getName() + " grow closer"
+				});
+
+
 				_event.m.Walker1.improveMood(1.0, "Bonded with " + _event.m.Walker2.getName());
 				_event.m.Walker2.improveMood(1.0, "Bonded with " + _event.m.Walker1.getName());
 

@@ -3405,9 +3405,17 @@ true believer now correctly gives optimist trait
 fixes wolf form crash 
 feint error fixed
 runesmith armor gen fixed
-sets moral reputation of the party equal to the avg of the starting brothers alignments
 Master archers gauranteed ranged stars, cost increased. 
 Starting resource capacity increased on all economic difficulties. Easy is now much easier. 
 Starting resources increased for lower economic difficulties. higher remain challenging. 
-Backgrounds that grant resources storage will now grant more for Ammo, armor parts and meds respectively.   
+Backgrounds that grant resources storage will now grant more for Ammo, armor parts and meds respectively. 
+sets moral reputation of the party equal to the avg of the starting brothers alignments
+  
 
+14.0.0.8a  Relatively Moral 
+
+Relationship changes during events now show up in the results screens for 57 events and 11 contracts 
+Mercenaries moral check shifted to roughly weekly from daily. 
+Mercenaries have a chance of changing their morals rather than becoming unhappy. 
+
+ 

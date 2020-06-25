@@ -72,7 +72,11 @@ this.civilwar_savagery_event <- this.inherit("scripts/events/event", {
 					text = "The company gained renown"
 				});
 				local brothers = this.World.getPlayerRoster().getAll();
-
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation increases greatly"
+					});
 				foreach( bro in brothers )
 				{
 					if (bro.getBackground().isOffendedByViolence() && this.Math.rand(1, 100) <= 75)
@@ -111,6 +115,11 @@ this.civilwar_savagery_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				this.Banner = _event.m.NobleHouse.getUIBannerSmall();
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation increases"
+					});
 				_event.m.NobleHouse.addPlayerRelation(this.Const.World.Assets.RelationOffense, "Attacked some of their men");
 				this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnContractSuccess);
 				this.List.insert(0, {

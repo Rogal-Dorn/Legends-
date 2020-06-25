@@ -532,7 +532,7 @@ this.raid_caravan_contract <- this.inherit("scripts/contracts/contract", {
 			List = [],
 			Options = [
 				{
-					Text = "We\'re paid to leave no one alive, so that\'s what we\'ll do.",
+					Text = "We\'re paid to leave no one alive, so that\'s what we\'ll do. (Decrease Morals)",
 					function getResult()
 					{
 						this.World.Assets.addMoralReputation(-5);
@@ -541,7 +541,7 @@ this.raid_caravan_contract <- this.inherit("scripts/contracts/contract", {
 
 				},
 				{
-					Text = "To hell with it - let them leave.",
+					Text = "To hell with it - let them leave. (Increase Morals)",
 					function getResult()
 					{
 						this.World.Assets.addMoralReputation(2);

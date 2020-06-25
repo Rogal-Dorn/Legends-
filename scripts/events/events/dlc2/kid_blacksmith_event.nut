@@ -123,8 +123,14 @@ this.kid_blacksmith_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				this.Characters.push(_event.m.Other.getImagePath());
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation increases slightly"
+					});
 				local stash = this.World.Assets.getStash().getItems();
 				local items = 0;
+
 
 				foreach( item in stash )
 				{
@@ -168,7 +174,11 @@ this.kid_blacksmith_event <- this.inherit("scripts/events/event", {
 			{
 				this.Characters.push(_event.m.Other.getImagePath());
 				_event.m.Other.worsenMood(1.5, "Accidentally crippled a little boy");
-
+								this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation decreases slightly"
+					});
 				if (_event.m.Other.getMoodState() < this.Const.MoodState.Neutral)
 				{
 					this.List.push({
@@ -241,7 +251,11 @@ this.kid_blacksmith_event <- this.inherit("scripts/events/event", {
 			{
 				this.Characters.push(_event.m.Apprentice.getImagePath());
 				_event.m.Apprentice.improveMood(1.0, "Brought his blacksmithing skills to bear");
-
+								this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation increases slightly"
+					});
 				if (_event.m.Apprentice.getMoodState() > this.Const.MoodState.Neutral)
 				{
 					this.List.push({

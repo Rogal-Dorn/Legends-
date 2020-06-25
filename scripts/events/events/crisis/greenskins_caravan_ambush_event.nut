@@ -93,6 +93,11 @@ this.greenskins_caravan_ambush_event <- this.inherit("scripts/events/event", {
 					text = "The company gained renown"
 				});
 				this.World.Assets.addMoralReputation(3);
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation increases"
+					});
 				local food = this.new("scripts/items/supplies/bread_item");
 				this.World.Assets.getStash().add(food);
 				this.List.push({
@@ -152,6 +157,11 @@ this.greenskins_caravan_ambush_event <- this.inherit("scripts/events/event", {
 			{
 				this.World.FactionManager.addGreaterEvilStrength(this.Const.Factions.GreaterEvilStrengthOnPartyDestroyed);
 				this.World.Assets.addMoralReputation(-2);
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation decreases"
+					});
 				local food = this.new("scripts/items/supplies/bread_item");
 				this.World.Assets.getStash().add(food);
 				this.List.push({

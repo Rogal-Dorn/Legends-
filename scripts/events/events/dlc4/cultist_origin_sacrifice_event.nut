@@ -115,6 +115,13 @@ this.cultist_origin_sacrifice_event <- this.inherit("scripts/events/event", {
 							bro.changeActiveRelationship( relation, modifier1 );
 							local modifier2 = this.Math.rand(1, 5);
 							relation.changeActiveRelationship( bro, modifier2 );
+							this.List.push({
+								id = 11,
+								icon = "ui/icons/relation.png",
+								text = relation.getName() + " and " + bro.getName() + " grow closer"
+							});
+
+
 							}
 						}
 

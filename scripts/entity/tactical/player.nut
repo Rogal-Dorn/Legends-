@@ -285,11 +285,21 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
     {
         return this.m.Background.getAlignmentMin();
     }
-    
+
+	function SetAlignmentMin( _f )
+	{
+		this.m.Background.setAlignmentMin( _f);
+	}
+	
     function getAlignmentMax()
     {
         return this.m.Background.getAlignmentMax();
     }
+
+	function SetAlignmentMax( _f )
+	{
+		this.m.Background.setAlignmentMax( _f);
+	}
 
 
 	function improveMood( _a = 1.0, _reason = "" )

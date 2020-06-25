@@ -789,20 +789,48 @@ this.asset_manager <- {
 				}
 
 				// Check the company alignment against the mercenary alignment
-				if ( !bro.getSkills().hasSkill("trait.player") ) { //cant be too imoral or moral if u are the company
-					if (bro.getAlignmentMin() > companyRep)
+				if ( !bro.getSkills().hasSkill("trait.player") ) { //cant be too immoral or moral if u are the company
+
+				
+					if (bro.getAlignmentMin() > companyRep )
 					{
+						local r = this.Math.rand(1, 14)
+						if (r <= 2)
+						{
 						bro.worsenMood(this.Const.MoodChange.AmbitionFailed, "Thinks the company is too immoral");
+						}
+						if (r == 3)
+						{		
+							if (bro.getAlignmentMin() > 0)
+							{
+							bro.setAlignmentMin(bro.getAlignmentMin() - 1);
+							}
+						}
 					}
 
 					if (bro.getAlignmentMax() < companyRep)
 					{
+						local r = this.Math.rand(1, 14)
+						if (r <= 2)
+						{
 						bro.worsenMood(this.Const.MoodChange.AmbitionFailed, "Thinks the company is too moral");
+						}
+						if (r == 3)
+						{		
+							if (bro.getAlignmentMax() < 9)
+							{
+							bro.setAlignmentMax(bro.getAlignmentMax() + 1);
+							}
+						}
 					}
 				}
 				if (bro.getAlignment() == this.Math.floor(companyRep))
 				{
+					local r = this.Math.rand(1, 7)
+					if (r <= 1)
+					{
 					bro.improveMood(this.Const.MoodChange.AmbitionFulfilled, "Thinks the company is great");
+					}
 				}
 
 				// update the relationships between characters 

@@ -62,6 +62,11 @@ this.runaway_laborers_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				this.World.Assets.addMoralReputation(-1);
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation decreases slightly"
+					});
 				this.World.Assets.addMoney(50);
 				this.List = [
 					{
@@ -120,6 +125,11 @@ this.runaway_laborers_event <- this.inherit("scripts/events/event", {
 					}
 		
 				this.Characters.push(_event.m.Dude.getImagePath());
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation increases slightly"
+					});
 			}
 
 		});
@@ -140,6 +150,11 @@ this.runaway_laborers_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation increases slightly"
+					});
 			}
 
 		});
@@ -160,6 +175,11 @@ this.runaway_laborers_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation increases slightly"
+					});
 			}
 
 		});

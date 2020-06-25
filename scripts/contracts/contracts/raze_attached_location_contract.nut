@@ -367,7 +367,7 @@ this.raze_attached_location_contract <- this.inherit("scripts/contracts/contract
 			List = [],
 			Options = [
 				{
-					Text = "We\'re done here.",
+					Text = "We\'re done here. (Decrease Morals)",
 					function getResult()
 					{
 						this.World.Assets.addMoralReputation(-5);

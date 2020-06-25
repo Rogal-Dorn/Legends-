@@ -213,7 +213,11 @@ this.pimp_vs_harlot_event <- this.inherit("scripts/events/event", {
 						_event.m.Dude.changeActiveRelationship( _event.m.Monk, modifier1 );
 						local modifier2 = this.Math.rand(5, 10);
 						_event.m.Monk.changeActiveRelationship( _event.m.Dude, modifier2 );
-
+						this.List.push({
+							id = 10,
+							icon = "ui/icons/relation.png",
+							text = _event.m.Dude.getName() + " and " + _event.m.Monk.getName() + " grow closer"
+						});
 						_event.m.Dude = null;
 						return 0;
 					}

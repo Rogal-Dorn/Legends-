@@ -76,7 +76,11 @@ this.fell_down_well_event <- this.inherit("scripts/events/event", {
 			{
 				this.Characters.push(_event.m.Other.getImagePath());
 				_event.m.Other.improveMood(2.0, "Got some loving");
-
+								this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation increases"
+					});
 				if (_event.m.Other.getMoodState() >= this.Const.MoodState.Neutral)
 				{
 					this.List.push({
@@ -107,6 +111,11 @@ this.fell_down_well_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
+							this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation increases slightly"
+					});
 			}
 
 		});
@@ -131,7 +140,11 @@ this.fell_down_well_event <- this.inherit("scripts/events/event", {
 			{
 				this.Characters.push(_event.m.Strong.getImagePath());
 				_event.m.Strong.improveMood(2.0, "Got some loving");
-
+								this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation increases"
+					});
 				if (_event.m.Strong.getMoodState() >= this.Const.MoodState.Neutral)
 				{
 					this.List.push({

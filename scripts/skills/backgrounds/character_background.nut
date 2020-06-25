@@ -196,9 +196,19 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		return this.m.AlignmentMin;
 	}
 
+	function SetAlignmentMin( _f )
+	{
+		this.m.AlignmentMin = _f;
+	}
+
 	function getAlignmentMax()
 	{
 		return this.m.AlignmentMax;
+	}
+
+	function SetAlignmentMax( _f )
+	{
+		this.m.AlignmentMax = _f;
 	}
 
 	function create()

@@ -35,6 +35,12 @@ this.messenger_vs_houndmaster_event <- this.inherit("scripts/events/event", {
 				local modifier2 = this.Math.rand(10, 20);
 				_event.m.Houndmaster.changeActiveRelationship( _event.m.Messenger, modifier2 );
 
+				this.List.push({
+					id = 10,
+					icon = "ui/icons/relation.png",
+					text = _event.m.Houndmaster.getName() + " and " + _event.m.Messenger.getName() + " grow closer"
+				});
+
 				_event.m.Messenger.improveMood(1.0, "Bonded with " + _event.m.Houndmaster.getName());
 				this.List.push({
 					id = 10,
