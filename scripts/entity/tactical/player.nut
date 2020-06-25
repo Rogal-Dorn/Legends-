@@ -156,10 +156,11 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			{
 				paymasterCount++;
 				mod = bro.getBarterModifier();
-				wageMult = wageMult - mod;
-			}
-		}
+				wageMult -= mod;
 
+				}
+			}
+		//local costAdj = this.Math.max(0, this.m.CurrentProperties.DailyWageMult * barterMult);
 		return this.Math.max(0, this.m.CurrentProperties.DailyWage * wageMult);
 	}
 
@@ -179,10 +180,9 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.isInReserves() && !this.m.Skills.hasSkill("perk.legend_peaceful"))
 		{
-			food = food * 2;
+			food *= 2;
 		}
-
-		food = food - foodMult;
+		food -= foodMult;
 		return food;
 	}
 
@@ -281,20 +281,20 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		return this.m.MoodChanges;
 	}
 
-    function getAlignmentMin()
-    {
-        return this.m.Background.getAlignmentMin();
-    }
+	function getAlignmentMin()
+	{
+	        return this.m.Background.getAlignmentMin();
+	}
 
 	function SetAlignmentMin( _f )
 	{
 		this.m.Background.setAlignmentMin( _f);
 	}
 	
-    function getAlignmentMax()
-    {
-        return this.m.Background.getAlignmentMax();
-    }
+	function getAlignmentMax()
+	{
+	        return this.m.Background.getAlignmentMax();
+	}
 
 	function SetAlignmentMax( _f )
 	{
@@ -1314,6 +1314,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 					decal.setBrush(appearance.CorpseArmorUpgradeFront);
 				}
 			}
+			this.removeActiveRelationship();
 		}
 
 		if (_tile != null)
@@ -1390,7 +1391,8 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.add(this.new("scripts/skills/actives/break_ally_free_skill"));
 		this.m.Skills.add(this.new("scripts/skills/effects/realm_of_nightmares_effect"));
 		this.m.Skills.add(this.new("scripts/skills/special/legend_horserider_skill"));
-        this.m.Skills.add(this.new("scripts/skills/special/relationship_check"));
+		// this.m.Skills.add(this.new("scripts/skills/special/relationship_check"));
+
 		if (this.Const.DLC.Unhold)
 		{
 			this.m.Skills.add(this.new("scripts/skills/actives/wake_ally_skill"));
@@ -1497,6 +1499,10 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		{
 			_xp = _xp * 0.25;
 		}
+	//	if (("State" in this.World) && this.World.State != null && this.World.getPlayerRoster().getSize() < 3)
+	//	{
+	//		_xp = _xp * (1.0 - (3 - this.World.getPlayerRoster().getSize()) * 0.15);
+	//	}
 
 		if (this.m.XP + _xp * this.m.CurrentProperties.XPGainMult >= this.Const.LevelXP[this.Const.LevelXP.len() - 1])
 		{
@@ -2183,8 +2189,6 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 						break;
 					}
 				}
-
-				i = ++i;
 			}
 
 			for( local i = 1; i < traits.len(); i = ++i )
@@ -2195,8 +2199,6 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				{
 					traits[i].addTitle();
 				}
-
-				i = ++i;
 			}
 		}
 
@@ -2229,41 +2231,41 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
         this.setAlignment( null, background );
 	}
 
-    function setAlignment ( custom = null, background = null )
-    {
-        if ( background == null ) 
-        {
-            background = this.getBackground();
-        }
-        if ( this.m.IsAlignmentAssigned )
-        {
-            this.m.Skills.removeByID("trait.legend_alignment_0" + this.m.Alignment);    
-        }
-        if ( custom != null )
-        {
-            if ( custom > this.Const.LegendMod.Alignment.Saintly )
-            {
-                this.m.Alignment = this.Const.LegendMod.Alignment.Saintly;
-            }
-            else if ( custom < this.Const.LegendMod.Alignment.Dreaded ) 
-            {
-                this.m.Alignment = this.Const.LegendMod.Alignment.Dreaded;
-            }
-            else 
-            {
-                this.m.Alignment = custom;
-            }
-        }
-        else
-        {
-            this.m.Alignment = this.Math.rand(background.getAlignmentMin(), background.getAlignmentMax());
-        }
-        
-        this.m.IsAlignmentAssigned = true;
+	function setAlignment ( custom = null, background = null )
+	{
+		if ( background == null ) 
+		{
+			background = this.getBackground();
+		}
+		if ( this.m.IsAlignmentAssigned )
+		{
+			this.m.Skills.removeByID("trait.legend_alignment");	
+		}
+		if ( custom != null )
+		{
+			if ( custom > this.Const.LegendMod.Alignment.Saintly )
+			{
+				this.m.Alignment = this.Const.LegendMod.Alignment.Saintly;
+			}
+			else if ( custom < this.Const.LegendMod.Alignment.Dreaded ) 
+			{
+				this.m.Alignment = this.Const.LegendMod.Alignment.Dreaded;
+			}
+			else 
+			{
+				this.m.Alignment = custom;
+			}
+		}
+		else
+		{
+			this.m.Alignment = this.Math.rand(background.getAlignmentMin(), background.getAlignmentMax());
+		}
+		
+		this.m.IsAlignmentAssigned = true;
 
-        this.m.Skills.add(this.new("scripts/skills/traits/legend_frenemies"));
-        this.m.Skills.add(this.new("scripts/skills/traits/legend_alignment_0" + this.m.Alignment));
-    }
+		this.m.Skills.add(this.new("scripts/skills/traits/legend_frenemies"));
+		this.m.Skills.add(this.new("scripts/skills/traits/legend_alignment"));
+	}
 
 
     function getAlignment()
@@ -2435,27 +2437,29 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		local weights = [];
 		local totalWeight = 0;
 
-		for( local i = 0; i < this.m.StarWeights.len(); i = ++i )
+		for (local i = 0; i < this.m.StarWeights.len(); i = ++i)
 		{
-			if (this.m.Talents[i] != 0)
+			if (this.m.Talents[i] != 0 )
 			{
+				continue;
 			}
-			else if (this.getBackground() != null && this.getBackground().getExcludedTalents().find(i) != null)
+
+			if (this.getBackground() != null && this.getBackground().getExcludedTalents().find(i) != null)
 			{
+				continue;
 			}
-			else if (this.getTags().has("PlayerZombie") && (i == this.Const.Attributes.Bravery || i == this.Const.Attributes.Fatigue || i == this.Const.Attributes.Initiative))
+
+			if (this.getTags().has("PlayerZombie") && (i == this.Const.Attributes.Bravery || i == this.Const.Attributes.Fatigue || i == this.Const.Attributes.Initiative))
 			{
+				continue;
 			}
 			else if (this.getTags().has("PlayerSkeleton") && (i == this.Const.Attributes.Bravery || i == this.Const.Attributes.Fatigue || i == this.Const.Attributes.Hitpoints))
 			{
+				continue;
 			}
-			else
-			{
-				attributes.push(i);
-				weights.push(this.m.StarWeights[i]);
-				totalWeight = totalWeight + this.m.StarWeights[i];
-			}
-
+			attributes.push(i);
+			weights.push(this.m.StarWeights[i]);
+			totalWeight += this.m.StarWeights[i];
 		}
 
 		for( local done = 0; done < _num; done = ++done )
@@ -2542,8 +2546,6 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			for( local i = 0; i != this.Const.Attributes.COUNT; i = ++i )
 			{
 				this.m.Attributes[i].push(1);
-				i = ++i;
-
 			}
 		}
 
@@ -2707,10 +2709,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	{
 		if (_i == this.m.Formations.getCurrentIndex())
 		{
-			return [
-				[],
-				[]
-			];
+			return [[], []];
 		}
 
 		this.m.Formations.setFormation(_i);
@@ -2728,8 +2727,9 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				this.logInfo("setFormation::Items; could not find item for " + itemId);
 				continue;
 			}
+			eTransfer.push(item)
 
-			eTransfer.push(item);
+			//this.m.Items.equip(item);
 		}
 
 		local bags = this.m.Formations.getBags();
@@ -2746,11 +2746,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 			bTransfer.push(item);
 		}
-
-		return [
-			eTransfer,
-			bTransfer
-		];
+		return [eTransfer, bTransfer]
 	}
 
 	function getStashModifier()
@@ -2763,7 +2759,8 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			broStash = broStash + item.getStashModifier();
 		}
 
-		local skills = [
+		local skills =
+		[
 			"perk.legend_skillful_stacking",
 			"perk.legend_efficient_packing"
 		];
@@ -2771,10 +2768,9 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		foreach( s in skills )
 		{
 			local skill = this.getSkills().getSkillByID(s);
-
 			if (skill != null)
 			{
-				broStash = broStash + skill.getModifier();
+				broStash += skill.getModifier();
 			}
 		}
 
@@ -2816,7 +2812,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 			if (skill != null)
 			{
-				mod = mod + skill.getModifier();
+				mod += skill.getModifier();
 			}
 		}
 
@@ -2924,12 +2920,11 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			{
 				this.m.VoiceSet = this.Math.rand(0, this.Const.WomanSounds.len() - 1);
 			}
-
-			volume = volume * this.Const.WomanSounds[this.m.VoiceSet].Volume;
+			volume *= this.Const.WomanSounds[this.m.VoiceSet].Volume
 		}
 		else
 		{
-			volume = volume * this.Const.HumanSounds[this.m.VoiceSet].Volume;
+			volume *= this.Const.HumanSounds[this.m.VoiceSet].Volume
 		}
 
 		this.Sound.play(this.m.Sound[_type][this.Math.rand(0, this.m.Sound[_type].len() - 1)], volume, this.getPos(), _pitch);
