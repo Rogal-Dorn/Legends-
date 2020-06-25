@@ -3385,3 +3385,4 @@ feint error fixed
 runesmith armor gen fixed
 
 cleans up the alignment system visuals 
+fixes relation giving weird crash on killing enemy
