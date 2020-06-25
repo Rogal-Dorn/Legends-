@@ -1296,6 +1296,10 @@ this.skill <- {
 								continue;
 							}
 							local relTab = this.World.State.getRefFromID(_targetEntity.getCompanyID()).getActiveRelationshipWith(tile.getEntity());
+							if (relTab == null)
+							{
+								continue;
+							}
 							local relNum = relTab.RelationNum;
 							this.logInfo("RelNum: " + relNum);
 							if ( relNum <= (this.m.IsRanged ? -20 : -30) )
