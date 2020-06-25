@@ -3417,5 +3417,4 @@ sets moral reputation of the party equal to the avg of the starting brothers ali
 Relationship changes during events now show up in the results screens for 57 events and 11 contracts 
 Mercenaries moral check shifted to roughly weekly from daily. 
 Mercenaries have a chance of changing their morals rather than becoming unhappy. 
-
- 
+cleans up the alignment system visuals 
