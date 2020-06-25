@@ -3383,3 +3383,5 @@ true believer now correctly gives optimist trait
 sets moral reputation of the party equal to the avg of the startinbrothers alignments
 feint error fixed
 runesmith armor gen fixed
+
+cleans up the alignment system visuals 
