@@ -10,7 +10,8 @@ this.legend_alignment <- this.inherit("scripts/skills/traits/character_trait", {
 
     function onUpdate( _properties  )
     {
-        this.m.Icon = "ui/traits/trait_alignment_0" + this.getContainer().getActor().getAlignment() + ".png";
+		if (this.getContainer().getActor().getAlignment() != null)
+        	this.m.Icon = "ui/traits/trait_alignment_0" + this.getContainer().getActor().getAlignment() + ".png";
     }
 
 	function getTooltip()
