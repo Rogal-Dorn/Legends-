@@ -35,16 +35,39 @@ this.legend_bear_bite <- this.inherit("scripts/skills/skill", {
 		this.m.ChanceSmash = 0;
 	}
 
+
 	function getTooltip()
 	{
-		local ret = this.getDefaultTooltip();
-		ret.push({
-			id = 8,
-			type = "text",
-			icon = "ui/icons/special.png",
-			text = "nom nom nom"
-		});
-		return ret;
+		local p = this.getContainer().getActor().getCurrentProperties();
+		return [
+			{
+				id = 1,
+				type = "title",
+				text = this.getName()
+			},
+			{
+				id = 2,
+				type = "description",
+				text = this.getDescription()
+			},
+			{
+				id = 3,
+				type = "text",
+				text = this.getCostString()
+			},
+			{
+				id = 4,
+				type = "text",
+				icon = "/ui/icons/health.png",
+				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + p.DamageRegularMin + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + p.DamageRegularMax + "[/color] damage"
+			},
+			{
+				id = 8,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "nom nom nom"
+			}
+		];
 	}
 
 	function onUpdate( _properties )
