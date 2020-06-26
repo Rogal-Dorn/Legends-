@@ -3386,3 +3386,7 @@ runesmith armor gen fixed
 
 cleans up the alignment system visuals 
 fixes relation giving weird crash on killing enemy
+training building bug
+apothecary mushroom icon fix
+warlock icon fix
+change hand to hand to not show up when transformed

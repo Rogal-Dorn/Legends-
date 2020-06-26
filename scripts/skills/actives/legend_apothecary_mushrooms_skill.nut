@@ -12,8 +12,8 @@ this.legend_apothecary_mushrooms_skill <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "actives.legend_apothecary_mushrooms";
 		this.m.Name = "Eat or Give Strange Mushrooms";
 		this.m.Description = "Give to an adjacent ally or eat yourself strange mushrooms to enter a state of trance-like state with otherworldy dodging and no sense of pain. May result in sickness. The effect will slowly wear off over 4 turns. Can not be used while engaged in melee, and anyone receiving the item needs to have a free bag slot.";
-		this.m.Icon = "skills/mushroom_square.png";
-		this.m.IconDisabled = "skills/mushroom_square_sw.png";
+		this.m.Icon = "skills/active_98.png";
+		this.m.IconDisabled = "skills/active_98_sw.png";
 		this.m.Overlay = "active_98";
 		this.m.SoundOnUse = [
 			"sounds/combat/eat_01.wav"
