@@ -790,14 +790,16 @@ this.asset_manager <- {
 
 				// Check the company alignment against the mercenary alignment
 				if ( !bro.getSkills().hasSkill("trait.player") ) { //cant be too imoral or moral if u are the company
-					if (bro.getAlignmentMin() > companyRep)
-					{
-						bro.worsenMood(this.Const.MoodChange.AmbitionFailed, "Thinks the company is too immoral");
-					}
+					if ( this.Math.rand(1,5) <= 2 ) {
+						if (bro.getAlignmentMin() > companyRep)
+						{
+							bro.worsenMood(this.Const.MoodChange.AmbitionFailed, "Thinks the company is too immoral");
+						}
 
-					if (bro.getAlignmentMax() < companyRep)
-					{
-						bro.worsenMood(this.Const.MoodChange.AmbitionFailed, "Thinks the company is too moral");
+						if (bro.getAlignmentMax()+1 < companyRep)
+						{
+							bro.worsenMood(this.Const.MoodChange.AmbitionFailed, "Thinks the company is too moral");
+						}
 					}
 				}
 				if (bro.getAlignment() == this.Math.floor(companyRep))

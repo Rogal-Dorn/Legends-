@@ -1291,7 +1291,7 @@ this.skill <- {
 						{
 							// local relTab = _targetEntity.getTile().getEntity().getActiveRelationshipWith(tile.getEntity());
 							// local relNum = relTab.RelationNum;
-							if (tile.getEntity().getCompanyID() == -1)
+							if (tile.getEntity().getCompanyID() == -1 || _targetEntity.getCompanyID() == -1)
 							{
 								continue;
 							}
