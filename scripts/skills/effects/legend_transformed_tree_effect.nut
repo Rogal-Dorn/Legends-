@@ -163,6 +163,11 @@ this.legend_transformed_tree_effect <- this.inherit("scripts/skills/skill", {
 		items.getData()[this.Const.ItemSlot.Mainhand][0] = null;
 	}
 
+	function onCombatFinished()
+	{
+		this.getContainer().getActor().getItems().getData()[this.Const.ItemSlot.Offhand] = null; //unequips the shield @ end of combat, can add to onRemoved() to also do it when the timer runs out on the effect
+	}
+
 	function onUpdate( _properties )
 	{
 		local actor = this.getContainer().getActor();

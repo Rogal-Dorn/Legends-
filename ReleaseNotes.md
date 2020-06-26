@@ -3390,3 +3390,5 @@ training building bug
 apothecary mushroom icon fix
 warlock icon fix
 change hand to hand to not show up when transformed
+shield doesnt carry over from combat now from schrat transform
+shield isnt invis on inventory when u play as a schrat
