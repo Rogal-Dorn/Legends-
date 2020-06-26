@@ -3395,3 +3395,4 @@ shield isnt invis on inventory when u play as a schrat
 *maybe* fixes index not existing in Attributes array, mwah can't reproduce it so please note if it still happens
 tooltips added for: schrat druid grow shield and uproot; bear druid bite; wolf druid bite
 bear druid now gives skills on transform rather than after a turn
+fixes index 255 crash when u have someone like the noble's son and try to open inventory with him in tactical battle

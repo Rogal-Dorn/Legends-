@@ -284,7 +284,7 @@ this.data_helper <- {
 
 		if (("State" in this.Tactical) && this.Tactical.State != null)
 		{
-			if ( _entity.getFaction() == this.Const.Faction.Player)
+			if ( _entity.getFaction() == this.Const.Faction.Player && !_entity.isGuest())
 			{
 				local targetTile = _entity.getTile();
 

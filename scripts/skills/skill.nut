@@ -1274,7 +1274,7 @@ this.skill <- {
 		toHit = toHit - defense;
 
 		//harder to hit = lower toHit, easier to hit = higher toHit
-		if ( _targetEntity.getFaction() == this.Const.Faction.Player)
+		if ( _targetEntity.getFaction() == this.Const.Faction.Player && !_targetEntity.isGuest())
 		{
 			local targetTile = _targetEntity.getTile();
 
@@ -1291,15 +1291,11 @@ this.skill <- {
 						{
 							// local relTab = _targetEntity.getTile().getEntity().getActiveRelationshipWith(tile.getEntity());
 							// local relNum = relTab.RelationNum;
-							if (tile.getEntity().getCompanyID() == -1 || _targetEntity.getCompanyID() == -1)
+							if (tile.getEntity().getCompanyID() == -1)
 							{
 								continue;
 							}
 							local relTab = this.World.State.getRefFromID(_targetEntity.getCompanyID()).getActiveRelationshipWith(tile.getEntity());
-							if (relTab == null)
-							{
-								continue;
-							}
 							local relNum = relTab.RelationNum;
 							this.logInfo("RelNum: " + relNum);
 							if ( relNum <= (this.m.IsRanged ? -20 : -30) )
