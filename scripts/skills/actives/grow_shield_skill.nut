@@ -28,6 +28,36 @@ this.grow_shield_skill <- this.inherit("scripts/skills/skill", {
 		this.m.MinRange = 0;
 		this.m.MaxRange = 0;
 	}
+	
+	function getTooltip()
+	{
+		local p = this.getContainer().getActor().getCurrentProperties();
+		return [
+			{
+				id = 1,
+				type = "title",
+				text = this.getName()
+			},
+			{
+				id = 2,
+				type = "description",
+				text = this.getDescription()
+			},
+			{
+				id = 3,
+				type = "text",
+				text = this.getCostString()
+			},
+			{
+				id = 4,
+				type = "text",
+				icon = "/ui/icons/melee_defense.png",
+				text = "Grants a 
+				[color=" + this.Const.UI.Color.PositiveValue + "]" + "+20" + "[/color] Melee and Ranged Defense shield, with
+				[color=" + this.Const.UI.Color.PositiveValue + "]" + " 32" + "[/color] durability"
+			}
+		];
+	}
 
 	function isUsable()
 	{
