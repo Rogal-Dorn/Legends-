@@ -3415,10 +3415,11 @@ sets moral reputation of the party equal to the avg of the starting brothers ali
 14.0.0.8a  Relatively Moral 
 
 Relationships are now a start option
-Relationship changes during events now show up in the results screens for 57 events and 11 contracts 
-Mercenaries moral check shifted to roughly weekly from daily. 
+Moral check shifted to roughly weekly from daily. 
 Mercenaries have a chance of changing their morals rather than becoming unhappy. 
-cleans up the alignment system visuals 
+Cleans up the alignment system visuals, less icons and more information in tooltips  
+Relationship and moral changes can now show up in the results screens 
+Relationship visuals added to 57 events and 11 contracts 
 fixes relation giving weird crash on killing enemy
 fixes training building bug
 apothecary mushroom icon fix
