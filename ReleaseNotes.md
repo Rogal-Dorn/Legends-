@@ -3398,3 +3398,4 @@ bear druid now gives skills on transform rather than after a turn
 fixes index 255 crash when u have someone like the noble's son and try to open inventory with him in tactical battle
 optionalrelationship stuff
 should fix summon storm not actually causing rain debuffs
+icy cave now scans for everyone not in reserves rather than everyone not in the last row (vanilla reserves)
