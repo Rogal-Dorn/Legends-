@@ -1276,7 +1276,7 @@ this.skill <- {
 		if (this.Const.LegendMod.Configs.RelationshipsEnabled())
 		{
 		//harder to hit = lower toHit, easier to hit = higher toHit
-			if ( _targetEntity.getFaction() == this.Const.Faction.Player && !_targetEntity.isGuest())
+			if ( _targetEntity.getFaction() == this.Const.Faction.Player && !_targetEntity.isGuest() && _targetEntity.getCompanyID() != -1)
 			{
 				local targetTile = _targetEntity.getTile();
 
@@ -1298,6 +1298,10 @@ this.skill <- {
 									continue;
 								}
 								local relTab = this.World.State.getRefFromID(_targetEntity.getCompanyID()).getActiveRelationshipWith(tile.getEntity());
+								if (relTab == null)
+								{
+									continue;
+								}
 								local relNum = relTab.RelationNum;
 								this.logInfo("RelNum: " + relNum);
 								if ( relNum <= (this.m.IsRanged ? -20 : -30) )
