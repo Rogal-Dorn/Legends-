@@ -57,8 +57,8 @@ this.legend_transformed_bear_effect <- this.inherit("scripts/skills/skill", {
 				}
 			}
 		local items = actor.getItems();
-		items.getData()[this.Const.ItemSlot.Offhand][0] = -1;
-		items.getData()[this.Const.ItemSlot.Mainhand][0] = -1;
+		items.getData()[this.Const.ItemSlot.Offhand][0] = null;
+		items.getData()[this.Const.ItemSlot.Mainhand][0] = null;
 
 		this.m.Body = actor.getSprite("body").getBrush().Name;
 		this.m.Head = actor.getSprite("head").getBrush().Name;
