@@ -351,26 +351,29 @@
 					{
 						numAlliesAdjacent = ++numAlliesAdjacent;
 						
-						if (this.getFaction() == this.Const.Faction.Player && tile.getEntity().getFaction() == this.Const.Faction.Player && tile.getEntity().isAlive())
+						if (this.Const.LegendMod.Configs.RelationshipsEnabled())
 						{
-							// local relTab = this.getActiveRelationshipWith(tile.getEntity());
-							if (this.getCompanyID() == -1)
+							if (this.getFaction() == this.Const.Faction.Player && tile.getEntity().getFaction() == this.Const.Faction.Player && tile.getEntity().isAlive())
 							{
-								continue;	
-							}
-							local relTab = this.World.State.getRefFromID(this.getCompanyID()).getActiveRelationshipWith(tile.getEntity());
-							if (relTab == null) 
-							{
-								continue; //onyl continues if someone dies and we check morale off of that
-							}
-							local relNum = relTab.RelationNum;
-							if ( relNum <= -10 )
-							{
-								bravery -= 5;
-							}
-							if ( relNum > 10 )
-							{
-								bravery += 5;
+								// local relTab = this.getActiveRelationshipWith(tile.getEntity());
+								if (this.getCompanyID() == -1)
+								{
+									continue;		
+								}
+								local relTab = this.World.State.getRefFromID(this.getCompanyID()).getActiveRelationshipWith(tile.getEntity());
+								if (relTab == null) 
+								{
+									continue; //onyl continues if someone dies and we check morale off of that
+								}
+								local relNum = relTab.RelationNum;
+								if ( relNum <= -10 )
+								{
+									bravery -= 5;
+								}
+								if ( relNum > 10 )
+								{
+									bravery += 5;
+								}
 							}
 						}
 

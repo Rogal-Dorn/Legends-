@@ -16,6 +16,9 @@ this.legend_alignment <- this.inherit("scripts/skills/traits/character_trait", {
 
 	function getTooltip()
 	{
+		local alignment = this.getContainer().getActor().getAlignment();
+		local alignmin = this.getContainer().getActor().getAlignmentMin();
+		local alignmax = this.getContainer().getActor().getAlignmentMax()
         return [
 			{
 				id = 1,
@@ -30,9 +33,9 @@ this.legend_alignment <- this.inherit("scripts/skills/traits/character_trait", {
 			{
 				id = 3,
 				type = "text",
-				text = "Alignment: " + this.Const.LegendMod.AlignmentNames[this.getContainer().getActor().getAlignment()] +
-                "\nMinimum Happy Alignment: " + this.Const.LegendMod.AlignmentNames[this.getContainer().getActor().getAlignmentMin()] + 
-                "\nMaximum Happy Alignment: " + this.Const.LegendMod.AlignmentNames[this.getContainer().getActor().getAlignmentMax()]
+				text = "Alignment: " + this.Const.LegendMod.AlignmentNames[alignment] + " (" + alignment + ")" +
+                "\nMinimum Happy Alignment: " + this.Const.LegendMod.AlignmentNames[alignmin] + " (" + alignmin + ")" +
+                "\nMaximum Happy Alignment: " + this.Const.LegendMod.AlignmentNames[alignmax] + " (" + alignmax + ")"
 			}
 		];
 	}

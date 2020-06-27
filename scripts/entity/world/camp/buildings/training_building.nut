@@ -266,7 +266,7 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		local inTraining = bro.getSkills().getSkillByID("trait.intensive_training_trait");
 		local effect = this.new("scripts/skills/effects_world/new_trained_effect");
 		effect.m.Duration = 1;
-		effect.m.XPGainMult = 1.2 + inTraining.getBonusXP();
+		effect.m.XPGainMult = 1.2 + (inTraining == null ? 0 : inTraining.getBonusXP());
 		effect.m.Icon = "skills/status_effect_75.png";
 		bro.getSkills().add(effect);
 		local mod = this.getModifiers();

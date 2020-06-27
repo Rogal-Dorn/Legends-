@@ -788,16 +788,18 @@ this.asset_manager <- {
 						}
 				}
 
-				// Check the company alignment against the mercenary alignment
+				if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+				{
+					// Check the company alignment against the mercenary alignment
 				if ( !bro.getSkills().hasSkill("trait.player") ) { //cant be too immoral or moral if u are the company
-
+					
 				
-					if (bro.getAlignmentMin() > companyRep )
+					if (bro.getAlignmentMin() > companyRep)
 					{
-						local r = this.Math.rand(1, 14)
+					local r = this.Math.rand(1, 14)
 						if (r <= 2)
 						{
-						bro.worsenMood(this.Const.MoodChange.AmbitionFailed, "Thinks the company is too immoral");
+								bro.worsenMood(this.Const.MoodChange.AmbitionFailed, "Thinks the company is too immoral");
 						}
 						if (r == 3)
 						{		
@@ -806,54 +808,54 @@ this.asset_manager <- {
 							bro.setAlignmentMin(bro.getAlignmentMin() - 1);
 							}
 						}
-					}
-
-					if (bro.getAlignmentMax() < companyRep)
-					{
-						local r = this.Math.rand(1, 14)
-						if (r <= 2)
+						if (bro.getAlignmentMax()+1 < companyRep)
 						{
-						bro.worsenMood(this.Const.MoodChange.AmbitionFailed, "Thinks the company is too moral");
-						}
-						if (r == 3)
-						{		
-							if (bro.getAlignmentMax() < 9)
+						local r = this.Math.rand(1, 14)
+							if (r <= 2)
 							{
-							bro.setAlignmentMax(bro.getAlignmentMax() + 1);
+								bro.worsenMood(this.Const.MoodChange.AmbitionFailed, "Thinks the company is too moral");
+							}
+							if (r == 3)
+							{		
+								if (bro.getAlignmentMax() < 9)
+								{
+								bro.setAlignmentMax(bro.getAlignmentMax() + 1);
+								}
 							}
 						}
 					}
-				}
-				if (bro.getAlignment() == this.Math.floor(companyRep))
-				{
+					if (bro.getAlignment() == this.Math.floor(companyRep))
+					{
 					local r = this.Math.rand(1, 7)
 					if (r <= 1)
 					{
-					bro.improveMood(this.Const.MoodChange.AmbitionFulfilled, "Thinks the company is great");
+						bro.improveMood(this.Const.MoodChange.AmbitionFulfilled, "Thinks the company is great");
 					}
-				}
+					}
+					
 
-				// update the relationships between characters 
-				local relations = this.World.getPlayerRoster().getAll();
-				foreach ( relation in relations ) 
-				{
-					if (relation.getAlignment() == bro.getAlignment())
+					// update the relationships between characters 
+					local relations = this.World.getPlayerRoster().getAll();
+					foreach ( relation in relations ) 
 					{
-						bro.changeActiveRelationship(relation, 2);
-					}
-					else if (relation.getAlignment() < bro.getAlignmentMin())
-					{
-						bro.changeActiveRelationship(relation, -1);
-					}
-					else if (relation.getAlignment() > bro.getAlignmentMax())
-					{
-						bro.changeActiveRelationship(relation, -1);;
-					}
-					else
-					{
-						bro.changeActiveRelationship(relation, this.Math.rand(-1,1));
-					}
+						if (relation.getAlignment() == bro.getAlignment())
+						{
+							bro.changeActiveRelationship(relation, 2);
+						}
+						else if (relation.getAlignment() < bro.getAlignmentMin())
+						{
+							bro.changeActiveRelationship(relation, -1);
+						}
+						else if (relation.getAlignment() > bro.getAlignmentMax())
+						{
+							bro.changeActiveRelationship(relation, -1);;
+						}
+						else
+						{
+							bro.changeActiveRelationship(relation, this.Math.rand(-1,1));
+						}
 
+					}
 				}
 
 				if (this.m.IsUsingProvisions && this.m.Food < bro.getDailyFood())

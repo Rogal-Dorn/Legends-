@@ -156,20 +156,23 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		this.World.Assets.m.ArmorParts = this.World.Assets.m.ArmorParts / 2;
 		this.World.Assets.m.Medicine = this.World.Assets.m.Medicine / 2;
 		this.World.Assets.m.Ammo = this.World.Assets.m.Ammo / 2;
-		local avgAlignment = 0;
-		foreach (bro in this.World.getPlayerRoster().getAll())
-		{
-			if (bro.getAlignment() <= this.Const.LegendMod.Alignment.NeutralMin)
-			{
-				avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMin);
-			}
-			else if (bro.getAlignment() >= this.Const.LegendMod.Alignment.NeutralMax)
-			{
-				avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMax);
-			}
-		}
-		avgAlignment *= (10 / this.World.getPlayerRoster().getSize());
-		this.World.Assets.addMoralReputation(avgAlignment);
+		if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+{
+    local avgAlignment = 0;
+    foreach (bro in this.World.getPlayerRoster().getAll())
+    {
+        if (bro.getAlignment() <= this.Const.LegendMod.Alignment.NeutralMin)
+        {
+            avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMin);
+        }
+        else if (bro.getAlignment() >= this.Const.LegendMod.Alignment.NeutralMax)
+        {
+            avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMax);
+        }
+    }
+    avgAlignment *= (10 / this.World.getPlayerRoster().getSize());
+    this.World.Assets.addMoralReputation(avgAlignment);
+}
 	}
 
 	function onSpawnPlayer()

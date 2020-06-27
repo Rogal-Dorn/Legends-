@@ -23,9 +23,11 @@ this.schrat_shield <- this.inherit("scripts/items/shields/shield", {
 	{
 		this.m.Sprite = "bust_schrat_shield_0" + this.m.Variant;
 		this.m.SpriteDamaged = "bust_schrat_shield_0" + this.m.Variant + "_damaged";
-		this.m.ShieldDecal = "";
-		this.m.IconLarge = "";
-		this.m.Icon = "";
+
+		//3 below only mtter for inventory looks when u transform, doesn't affect actual schrats only druids
+		this.m.ShieldDecal = "shield_heartwood_destroyed";
+		this.m.IconLarge = "shields/inventory_heartwood_shield.png";
+		this.m.Icon = "shields/icon_heartwood_shield.png";
 	}
 
 });

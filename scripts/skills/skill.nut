@@ -1273,47 +1273,50 @@ this.skill <- {
 		toHit = toHit + skill;
 		toHit = toHit - defense;
 
-		//harder to hit = lower toHit, easier to hit = higher toHit
-		if ( _targetEntity.getFaction() == this.Const.Faction.Player)
+		if (this.Const.LegendMod.Configs.RelationshipsEnabled())
 		{
-			local targetTile = _targetEntity.getTile();
-
-			for (local i = 0; i != 6; ++i)
+		//harder to hit = lower toHit, easier to hit = higher toHit
+			if ( _targetEntity.getFaction() == this.Const.Faction.Player && !_targetEntity.isGuest())
 			{
-				if (!targetTile.hasNextTile(i)) {}
-				else
+				local targetTile = _targetEntity.getTile();
+
+				for (local i = 0; i != 6; ++i)
 				{
-					local tile = targetTile.getNextTile(i);
-					if (tile.IsOccupiedByActor && tile.getEntity().getMoraleState() != this.Const.MoraleState.Fleeing)
+					if (!targetTile.hasNextTile(i)) {}
+					else
 					{
-						
-						if (tile.getEntity().getFaction() == this.Const.Faction.Player)
+						local tile = targetTile.getNextTile(i);
+						if (tile.IsOccupiedByActor && tile.getEntity().getMoraleState() != this.Const.MoraleState.Fleeing)
 						{
-							// local relTab = _targetEntity.getTile().getEntity().getActiveRelationshipWith(tile.getEntity());
-							// local relNum = relTab.RelationNum;
-							if (tile.getEntity().getCompanyID() == -1)
+							
+							if (tile.getEntity().getFaction() == this.Const.Faction.Player)
 							{
-								continue;
+								// local relTab = _targetEntity.getTile().getEntity().getActiveRelationshipWith(tile.getEntity());
+								// local relNum = relTab.RelationNum;
+								if (tile.getEntity().getCompanyID() == -1)
+								{
+									continue;
+								}
+								local relTab = this.World.State.getRefFromID(_targetEntity.getCompanyID()).getActiveRelationshipWith(tile.getEntity());
+								local relNum = relTab.RelationNum;
+								this.logInfo("RelNum: " + relNum);
+								if ( relNum <= (this.m.IsRanged ? -20 : -30) )
+								{
+									toHit += 5;
+									this.logInfo("tohit went up by 5");
+								}
+								if ( relNum > (this.m.IsRanged ? 10 : 20) )
+								{
+									toHit -= 5;
+									this.logInfo("ToHit went down by 5");
+								}
 							}
-							local relTab = this.World.State.getRefFromID(_targetEntity.getCompanyID()).getActiveRelationshipWith(tile.getEntity());
-							local relNum = relTab.RelationNum;
-							this.logInfo("RelNum: " + relNum);
-							if ( relNum <= (this.m.IsRanged ? -20 : -30) )
-							{
-								toHit += 5;
-								this.logInfo("tohit went up by 5");
-							}
-							if ( relNum > (this.m.IsRanged ? 10 : 20) )
-							{
-								toHit -= 5;
-								this.logInfo("ToHit went down by 5");
-							}
+							
 						}
-						
 					}
 				}
-			}
 
+			}
 		}
 
 		if (this.m.IsRanged)
