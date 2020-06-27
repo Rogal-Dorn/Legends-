@@ -792,7 +792,7 @@ this.asset_manager <- {
 				{
 					// Check the company alignment against the mercenary alignment
 				if ( !bro.getSkills().hasSkill("trait.player") ) { //cant be too immoral or moral if u are the company
-					
+					{
 				
 					if (bro.getAlignmentMin() > companyRep)
 					{
