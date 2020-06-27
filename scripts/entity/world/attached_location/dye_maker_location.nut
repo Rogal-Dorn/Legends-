@@ -137,7 +137,7 @@ this.dye_maker_location <- this.inherit("scripts/entity/world/attached_location"
 		_list.push({
 				R = 10,
 				P = 1.0,
-				S = "legend_armor/cloth/legend_legend_tunic"
+				S = "legend_armor/cloth/legend_tunic"
 			});
 			_list.push({
 				R = 30,

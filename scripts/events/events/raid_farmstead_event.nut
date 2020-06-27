@@ -106,6 +106,11 @@ this.raid_farmstead_event <- this.inherit("scripts/events/event", {
 					text = "You gain " + food.getName()
 				});
 				this.World.Assets.updateFood();
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation decreases slightly"
+					});
 			}
 
 		});
@@ -157,6 +162,11 @@ this.raid_farmstead_event <- this.inherit("scripts/events/event", {
 					text = "You gain " + food.getName()
 				});
 				this.World.Assets.updateFood();
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation decreases"
+					});
 			}
 
 		});
@@ -219,7 +229,11 @@ this.raid_farmstead_event <- this.inherit("scripts/events/event", {
 						text = "You gain a " + pitchfork.getName()
 					});
 				}
-
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation decreases greatly"
+					});
 				local brothers = this.World.getPlayerRoster().getAll();
 
 				foreach( bro in brothers )

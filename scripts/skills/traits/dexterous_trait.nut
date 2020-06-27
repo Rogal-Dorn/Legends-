@@ -8,7 +8,8 @@ this.dexterous_trait <- this.inherit("scripts/skills/traits/character_trait", {
 		this.m.Icon = "ui/traits/trait_icon_34.png";
 		this.m.Description = "A dexterous character has an easier time hitting his opponent in melee.";
 		this.m.Excluded = [
-			"trait.clumsy"
+			"trait.clumsy",
+			"trait.predictable"
 		];
 	}
 

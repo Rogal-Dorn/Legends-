@@ -287,6 +287,12 @@ this.hedgeknight_vs_hedgeknight_event <- this.inherit("scripts/events/event", {
 				local modifier2 = this.Math.rand(-1, -5);
 				_event.m.HedgeKnight2.changeActiveRelationship( _event.m.HedgeKnight1, modifier2 );
 
+				this.List.push({
+					id = 10,
+					icon = "ui/icons/relation.png",
+					text = _event.m.HedgeKnight1.getName() + " and " + _event.m.HedgeKnight2.getName() + " grow distant"
+				});
+
 				this.World.Assets.addMoney(-2000);
 				this.List = [
 					{
@@ -349,6 +355,11 @@ this.hedgeknight_vs_hedgeknight_event <- this.inherit("scripts/events/event", {
 				local modifier2 = this.Math.rand(-1, -5);
 				_event.m.HedgeKnight2.changeActiveRelationship( _event.m.HedgeKnight1, modifier2 );
 
+				this.List.push({
+					id = 10,
+					icon = "ui/icons/relation.png",
+					text = _event.m.HedgeKnight1.getName() + " and " + _event.m.HedgeKnight2.getName() + " grow distant"
+				});
 
 				local brothers = this.World.getPlayerRoster().getAll();
 
@@ -445,6 +456,11 @@ this.hedgeknight_vs_hedgeknight_event <- this.inherit("scripts/events/event", {
 				}
 
 				_event.m.HedgeKnight1.getSkills().update();
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation decreases slightly"
+					});
 			}
 
 		});
@@ -507,6 +523,11 @@ this.hedgeknight_vs_hedgeknight_event <- this.inherit("scripts/events/event", {
 				}
 
 				_event.m.HedgeKnight2.getSkills().update();
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation decreases slightly"
+					});
 			}
 
 		});
@@ -539,19 +560,37 @@ this.hedgeknight_vs_hedgeknight_event <- this.inherit("scripts/events/event", {
 				_event.m.HedgeKnight2.changeActiveRelationship( _event.m.Monk, modifier2 );
 				_event.m.HedgeKnight2.changeActiveRelationship( _event.m.HedgeKnight1, modifier2 );
 
+
+				this.List.push({
+					id = 10,
+					icon = "ui/icons/relation.png",
+					text = _event.m.HedgeKnight1.getName() + " and " + _event.m.Monk.getName() + " grow closer"
+				});
+
+				this.List.push({
+					id = 10,
+					icon = "ui/icons/relation.png",
+					text = _event.m.HedgeKnight2.getName() + " and " + _event.m.Monk.getName() + " grow closer"
+				});
+
 				if (!_event.m.Monk.getTags().has("resolve_via_hedgeknight"))
 				{
 					_event.m.Monk.getTags().add("resolve_via_hedgeknight");
-					_event.m.Monk.getBaseProperties().Bravery += 2;
+					_event.m.Monk.getBaseProperties().Bravery += 3;
 					_event.m.Monk.getSkills().update();
 					this.List = [
 						{
 							id = 16,
 							icon = "ui/icons/bravery.png",
-							text = _event.m.Monk.getName() + " gains [color=" + this.Const.UI.Color.PositiveEventValue + "]+2[/color] Resolve"
+							text = _event.m.Monk.getName() + " gains [color=" + this.Const.UI.Color.PositiveEventValue + "]+3[/color] Resolve"
 						}
 					];
 				}
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation increases"
+					});
 			}
 
 		});

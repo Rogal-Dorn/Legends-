@@ -104,8 +104,6 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 			this.m.Container.add(this.new("scripts/skills/actives/werewolf_bite"));
 		}
 
-		_properties.MovementAPCostAdditional += -1;
-		_properties.MovementFatigueCostMult *= 0.5;
 	}
 
 	function onRemoved()
@@ -139,7 +137,6 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("body").setHorizontalFlipping(0);
 		actor.getSprite("head").setHorizontalFlipping(0);
 		actor.getSprite("injury").setHorizontalFlipping(0);
-		// local actor = this.getContainer().getActor(); //assigning twice lol
 			if (actor.getTile().IsVisibleForPlayer)
 			{
 				if (this.Const.Tactical.HideParticles.len() != 0)

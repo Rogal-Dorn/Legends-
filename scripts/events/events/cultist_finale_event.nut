@@ -87,6 +87,11 @@ this.cultist_finale_event <- this.inherit("scripts/events/event", {
 					icon = "ui/icons/kills.png",
 					text = _event.m.Sacrifice.getName() + " has died"
 				});
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation decreases greatly"
+					});
 				_event.m.Sacrifice.getItems().transferToStash(this.World.Assets.getStash());
 				_event.m.Sacrifice.removeActiveRelationship();
 				this.World.getPlayerRoster().remove(_event.m.Sacrifice);

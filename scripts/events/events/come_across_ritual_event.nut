@@ -187,6 +187,11 @@ this.come_across_ritual_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				this.World.Assets.addMoralReputation(-5);
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation decreases greatly"
+					});
 				this.Characters.push(_event.m.Cultist.getImagePath());
 				this.World.Assets.getStash().makeEmptySlots(1);
 				local item = this.new("scripts/items/helmets/legendary/mask_of_davkul");
@@ -232,6 +237,11 @@ this.come_across_ritual_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 			this.World.Assets.addMoralReputation(1);
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation increases slightly"
+					});
 			}
 
 		});
@@ -268,6 +278,11 @@ this.come_across_ritual_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 			this.World.Assets.addMoralReputation(1);
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation increases slightly"
+					});
 			}
 
 		});

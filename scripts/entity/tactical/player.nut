@@ -3245,7 +3245,6 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		{
 			this.m.InReserves = _in.readBool();
 		}
-
 		//IF WE ADD ANY NON-INT KEYS YOU HAVE TO CHECK HERE WHAT TKEY STRING IS USING
 		// if ( keys == __ ) THEN _in.readVARTYPE
 		if (this.Const.LegendMod.Configs.RelationshipsEnabled())

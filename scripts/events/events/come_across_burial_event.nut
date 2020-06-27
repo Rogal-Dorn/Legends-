@@ -90,6 +90,11 @@ this.come_across_burial_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				this.World.Assets.addMoralReputation(-1);
+					this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation decreases slightly"
+					});
 			}
 
 		});
@@ -112,6 +117,11 @@ this.come_across_burial_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				this.World.Assets.addMoralReputation(-3);
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation decreases"
+					});
 				local item = this.new("scripts/items/weapons/longsword");
 				item.setCondition(27.0);
 				this.World.Assets.getStash().add(item);
@@ -142,6 +152,11 @@ this.come_across_burial_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				this.World.Assets.addMoralReputation(5);
+				this.List.push({
+					id = 10,
+					icon = "ui/icons/asset_moral_reputation.png",
+					text = "The company\'s moral reputation increases greatly"
+				});
 			}
 
 		});

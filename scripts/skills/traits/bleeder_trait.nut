@@ -10,7 +10,8 @@ this.bleeder_trait <- this.inherit("scripts/skills/traits/character_trait", {
 		this.m.Excluded = [
 			"trait.tough",
 			"trait.iron_jaw",
-			"trait.survivor"
+			"trait.survivor",
+			"trait.firm"
 		];
 	}
 

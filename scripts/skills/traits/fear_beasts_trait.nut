@@ -13,7 +13,11 @@ this.fear_beasts_trait <- this.inherit("scripts/skills/traits/character_trait", 
 			"trait.determined",
 			"trait.cocky",
 			"trait.bloodthirsty",
-			"trait.hate_beasts"
+			"trait.hate_beasts",
+			"trait.aggressive",
+			"trait.pragmatic",
+			"trait.ambitious",
+			"trait.natural"
 		];
 	}
 

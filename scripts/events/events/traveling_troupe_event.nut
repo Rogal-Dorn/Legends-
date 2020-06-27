@@ -182,6 +182,12 @@ this.traveling_troupe_event <- this.inherit("scripts/events/event", {
 					icon = "ui/icons/asset_money.png",
 					text = "You gain [color=" + this.Const.UI.Color.PositiveEventValue + "]" + item + "[/color] Crowns"
 				});
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation decreases"
+					});
+
 				local brothers = this.World.getPlayerRoster().getAll();
 
 				foreach( bro in brothers )

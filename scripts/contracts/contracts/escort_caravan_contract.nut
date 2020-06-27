@@ -742,7 +742,7 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 			List = [],
 			Options = [
 				{
-					Text = "Those should be worth a pretty crown.",
+					Text = "Those should be worth a pretty crown. (Decrease morals)",
 					function getResult()
 					{
 						this.Flags.set("IsValuableCargo", false);
@@ -809,7 +809,7 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 			List = [],
 			Options = [
 				{
-					Text = "I see my pocket filled with crowns already!",
+					Text = "I see my pocket filled with crowns already! (Decrease morals)",
 					function getResult()
 					{
 						this.Flags.set("IsPrisoner", false);

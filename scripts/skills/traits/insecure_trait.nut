@@ -17,7 +17,11 @@ this.insecure_trait <- this.inherit("scripts/skills/traits/character_trait", {
 			"trait.sure_footing",
 			"trait.cocky",
 			"trait.brute",
-			"trait.bloodthirsty"
+			"trait.bloodthirsty",
+			"trait.aggressive",
+			"trait.pragmatic",
+			"trait.ambitious",
+			"trait.natural"
 		];
 	}
 

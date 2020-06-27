@@ -58,7 +58,7 @@ this.childrens_crusade_event <- this.inherit("scripts/events/event", {
 
 				});
 				this.Options.push({
-					Text = "Good luck, I guess.",
+					Text = "Good luck, I guess. (Decrease Morals)",
 					function getResult( _event )
 					{
 						this.World.Assets.addMoralReputation(-1);
@@ -71,7 +71,7 @@ this.childrens_crusade_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "B",
-			Text = "[img]gfx/ui/events/event_97.png[/img]You tell the kids to go home to their parents. The leader laughs and the others follow suit, like little \'uns easily impressed by their big brother. He shakes his head.%SPEECH_ON%Why do you think we\'ve come this far? Our parents know right where we are, and they know where we are is truthfully right. The old gods need to be known throughout the land! Now, make way!%SPEECH_OFF%The kids press forth. A little banner flaps past you and there is much clinking and clanking of their little weapons, mostly bottles and sling shots and tableware.\n\n No doubt they are marching toward certain doom. Raiders and vagabonds are sure to prey upon them, like hawks upon lemmings, and slaves don\'t mind making ostensibly orphaned children \'disappear.\' Were they to get further than those threats, the northern wastes will provide for them a frozen coffin to die in.",
+			Text = "[img]gfx/ui/events/event_97.png[/img]You tell the kids to go home to their parents. The leader laughs and the others follow suit, like little \'uns easily impressed by their big brother. He shakes his head.%SPEECH_ON%Why do you think we\'ve come this far? Our parents know right where we are, and they know where we are is truthfully right. The old gods need to be known throughout the land! Now, make way!%SPEECH_OFF%The kids press forth. A little banner flaps past you and there is much clinking and clanking of their little weapons, mostly bottles and sling shots and tableware.\n\n No doubt they are marching toward certain doom. Raiders and vagabonds are sure to prey upon them, like hawks upon lemmings, and slaves don\'t mind making ostensibly orphaned children \'disappear.\' Were they to get further than those threats, the northern wastes will provide for them a frozen coffin to die in. \n\n [img]gfx/ui/icons/asset_moral_reputation.png[/img] The company\'s Moral reputation increases slightly",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -111,6 +111,12 @@ this.childrens_crusade_event <- this.inherit("scripts/events/event", {
 			{
 				this.Characters.push(_event.m.Monk.getImagePath());
 				this.World.Assets.addMoralReputation(2);
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation increases"
+					});
+
 				local resolve = this.Math.rand(1, 2);
 				_event.m.Monk.getBaseProperties().Bravery += resolve;
 				_event.m.Monk.getSkills().update();
@@ -189,6 +195,11 @@ this.childrens_crusade_event <- this.inherit("scripts/events/event", {
 						text = _event.m.Traveller.getName() + this.Const.MoodStateEvent[_event.m.Traveller.getMoodState()]
 					});
 				}
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation increases"
+					});
 
 				local brothers = this.World.getPlayerRoster().getAll();
 
@@ -230,6 +241,11 @@ this.childrens_crusade_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				this.World.Assets.addMoralReputation(-4);
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation decreases greatly"
+					});
 				local item = this.new("scripts/items/loot/silverware_item");
 				this.World.Assets.getStash().add(item);
 				this.List.push({

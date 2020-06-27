@@ -22,7 +22,11 @@ this.fainthearted_trait <- this.inherit("scripts/skills/traits/character_trait",
 			"trait.iron_jaw",
 			"trait.hate_greenskins",
 			"trait.hate_undead",
-			"trait.hate_beasts"
+			"trait.hate_beasts",
+			"trait.aggressive",
+			"trait.pragmatic",
+			"trait.ambitious",
+			"trait.natural"
 		];
 	}
 

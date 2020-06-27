@@ -13,7 +13,10 @@ this.quick_trait <- this.inherit("scripts/skills/traits/character_trait", {
 		this.m.Excluded = [
 			"trait.huge",
 			"trait.hesitant",
-			"trait.clubfooted"
+			"trait.clubfooted",
+			"trait.slack",
+			"trait.heavy",
+			"trait.frail"
 		];
 	}
 

@@ -16,7 +16,9 @@ this.dumb_trait <- this.inherit("scripts/skills/traits/character_trait", {
 			"trait.bright",
 			"trait.aspiring",
 			"trait.sophisticated",
-			"trait.teamplayer"
+			"trait.teamplayer",
+			"trait.unpredictable",
+			"trait.natural"
 		];
 	}
 

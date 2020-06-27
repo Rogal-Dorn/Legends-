@@ -160,6 +160,7 @@ this.creepy_guy_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
+
 				this.Characters.push(_event.m.Thief.getImagePath());
 				this.World.Assets.addMoney(500);
 				this.List = [
@@ -187,6 +188,11 @@ this.creepy_guy_event <- this.inherit("scripts/events/event", {
 						text = _event.m.Thief.getName() + this.Const.MoodStateEvent[_event.m.Thief.getMoodState()]
 					});
 				}
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation increases slightly"
+					});
 			}
 
 		});
