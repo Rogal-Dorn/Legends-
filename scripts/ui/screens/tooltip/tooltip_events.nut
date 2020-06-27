@@ -4495,7 +4495,20 @@ this.tooltip_events <- {
 						type = "description",
 						text = "If enabled, all crafting recipies will be visible at the taxidermist and camp crafting. If disabled, vanilla behavior of having to discover the ingredients first will be enforced."
 					}
-				];							
+				];		
+		case "mapconfig.legendrelationship":
+			return [
+					{
+						id = 1,
+						type = "title",
+						text = "Mercenaries develop relationships"
+					},
+					{
+						id = 2,
+						type = "description",
+						text = "If enabled, mercenaries will gradually form friendships based on morality and experiences. Affects combat, events and contracts. "
+					}
+				];
 		case "camp.commander":
 		case "camp.rest":
 		case "camp.repair":
