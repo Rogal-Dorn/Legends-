@@ -245,6 +245,8 @@ var NewCampaignMenuModule = function () {
 	this.mLegendBleedKillerCheckboxLabel = null;
 	this.mLegendAllBlueprintsCheckbox = null;
 	this.mLegendAllBlueprintsCheckboxLabel = null;
+	this.mLegendRelationshipCheckbox = null;
+	this.mLegendRelationshipCheckboxLabel = null;
 	// generics
 	this.mIsVisible = false;
 };
@@ -1151,6 +1153,20 @@ NewCampaignMenuModule.prototype.buildConfigPage = function () {
 	});
 	this.mLegendAllBlueprintsCheckbox.iCheck('check');
 
+	var row = $('<div class="row"></div>');
+	leftColumn.append(row);
+	var control = $('<div class="control"/>');
+	row.append(control);
+	this.mLegendRelationshipCheckbox = $('<input type="checkbox" id="cb-legendrelationship"/>');
+	control.append(this.mLegendRelationshipCheckbox);
+	this.mLegendRelationshipCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendrelationship">Relationships</label>');
+	control.append(this.mLegendRelationshipCheckboxLabel);
+	this.mLegendRelationshipCheckbox.iCheck({
+		checkboxClass: 'icheckbox_flat-orange',
+		radioClass: 'iradio_flat-orange',
+		increaseArea: '30%'
+	});
+	this.mLegendRelationshipCheckbox.iCheck('check');
 
 };
 
@@ -2084,6 +2100,7 @@ NewCampaignMenuModule.prototype.collectSettings = function () {
 	settings.push(this.mLegendRecruitScalingCheckbox.is(":checked"));
 	settings.push(this.mLegendBleedKillerCheckbox.is(":checked"));
 	settings.push(this.mLegendAllBlueprintsCheckbox.is(":checked"));
+	settings.push(this.mLegendRelationshipCheckbox.is(":checked"));
 	return settings;
 }
 
