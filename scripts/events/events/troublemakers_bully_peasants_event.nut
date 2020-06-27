@@ -56,6 +56,12 @@ this.troublemakers_bully_peasants_event <- this.inherit("scripts/events/event", 
 				}
 
 				this.World.Assets.addMoralReputation(-1);
+
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation decreases slightly"
+					});
 				local f = _event.m.Town.getFactionOfType(this.Const.FactionType.Settlement);
 				f.addPlayerRelation(this.Const.World.Assets.RelationCivilianContractFail, "One of your company caused havoc in town");
 				this.Characters.push(_event.m.Troublemaker.getImagePath());
@@ -82,6 +88,12 @@ this.troublemakers_bully_peasants_event <- this.inherit("scripts/events/event", 
 			{
 				this.Characters.push(_event.m.Troublemaker.getImagePath());
 				this.World.Assets.addMoralReputation(-3);
+
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation decreases"
+					});
 				local f = _event.m.Town.getFactionOfType(this.Const.FactionType.Settlement);
 				f.addPlayerRelation(this.Const.World.Assets.RelationCivilianContractFail, "One of your company caused havoc in town");
 				_event.m.Troublemaker.improveMood(1.0, "Bullied the peasantfolk");
@@ -149,6 +161,13 @@ this.troublemakers_bully_peasants_event <- this.inherit("scripts/events/event", 
 			{
 				this.Characters.push(_event.m.Troublemaker.getImagePath());
 				this.World.Assets.addMoralReputation(-5);
+
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation decreases greatly"
+					});
+
 				local f = _event.m.Town.getFactionOfType(this.Const.FactionType.Settlement);
 				f.addPlayerRelation(this.Const.World.Assets.RelationAttacked, "You pillaged the town");
 				local money = this.Math.rand(100, 500);
@@ -217,6 +236,16 @@ this.troublemakers_bully_peasants_event <- this.inherit("scripts/events/event", 
 				_event.m.Troublemaker.changeActiveRelationship( _event.m.Peacekeeper, modifier1 );
 				local modifier2 = this.Math.rand(5, 10);
 				_event.m.Peacekeeper.changeActiveRelationship( _event.m.Troublemaker, modifier2 );
+				
+				if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+				{
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/relation.png",
+						text = _event.m.Troublemaker.getName() + " and " + _event.m.Peacekeeper.getName() + " grow closer"
+					});
+				}
+
 			}
 
 		});
@@ -246,6 +275,12 @@ this.troublemakers_bully_peasants_event <- this.inherit("scripts/events/event", 
 				_event.m.Troublemaker.changeActiveRelationship( _event.m.Peacekeeper, modifier1 );
 				local modifier2 = this.Math.rand(-5, -10);
 				_event.m.Peacekeeper.changeActiveRelationship( _event.m.Troublemaker, modifier2 );
+
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/relation.png",
+						text = _event.m.Troublemaker.getName() + " and " + _event.m.Peacekeeper.getName() + " grow distant"
+					});
 
 				local injury = _event.m.Peacekeeper.addInjury(this.Const.Injury.Knockout);
 				this.List.push({

@@ -8,52 +8,52 @@ if (!("LegendMod" in gt.Const))
 gt.Const.LegendMod.MaxResources <- [
 	{
 		Food = 300,
-		Ammo = 30,
-		Medicine = 20,
-		ArmorParts = 20,
-		Stash = 60
+		Ammo = 500,
+		Medicine = 200,
+		ArmorParts = 200,
+		Stash = 80
 	},
 	{
 		Food = 250,
-		Ammo = 20,
-		Medicine = 10,
-		ArmorParts = 10,
-		Stash = 30
+		Ammo = 250,
+		Medicine = 100,
+		ArmorParts = 100,
+		Stash = 50
 	},
 	{
 		Food = 200,
-		Ammo = 10,
-		Medicine = 5,
-		ArmorParts = 5,
-		Stash = 15
+		Ammo = 100,
+		Medicine = 50,
+		ArmorParts = 50,
+		Stash = 25
 	},
 	{
 		Food = 50,
-		Ammo =  0,
-		Medicine = 0,
-		ArmorParts = 0,
-		Stash = 5
+		Ammo =  50,
+		Medicine = 25,
+		ArmorParts = 25,
+		Stash = 10
 	}
 ]
 
 gt.Const.LegendMod.StartResources <- [
 	{
-		Money = 750,
-		Ammo = 15,
-		Medicine = 10,
-		ArmorParts = 10
+		Money = 2000,
+		Ammo = 100,
+		Medicine = 50,
+		ArmorParts = 50
+	},
+	{
+		Money = 1000,
+		Ammo = 50,
+		Medicine = 25,
+		ArmorParts = 25
 	},
 	{
 		Money = 500,
-		Ammo = 10,
-		Medicine = 5,
-		ArmorParts = 5
-	},
-	{
-		Money = 250,
-		Ammo = 0,
-		Medicine = 0,
-		ArmorParts = 0
+		Ammo = 25,
+		Medicine = 10,
+		ArmorParts = 10
 	},
 	{
 		Money = 0,
@@ -64,9 +64,9 @@ gt.Const.LegendMod.StartResources <- [
 ]
 
 gt.Const.LegendMod.ResourceModifiers <- {
-	Ammo = [8, 13, 21, 34, 55],
-	ArmorParts = [3, 5, 8, 13, 21, 34],
-	Meds = [5, 8, 13, 21, 34],
+	Ammo = [13, 21, 34, 55, 89],
+	ArmorParts = [5, 8, 13, 21, 34, 55],
+	Meds = [8, 13, 21, 34, 55],
 	Stash = [3, 5, 8, 13, 21, 34],
 	Healing = [0.0, 0.10, 0.30. 0.50],
 	Injury = [0.0, 0.10, 0.30, 0.50],

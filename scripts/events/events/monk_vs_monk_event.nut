@@ -11,7 +11,7 @@ this.monk_vs_monk_event <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 60.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_05.png[/img] Ah, the campfire is brimming with talk and chatter. The men are enjoying some beer and food when rather suddenly the shouts of two in particular get everyone else to quiet down, not because they yell louder than the rest, but because it\'s rather out of character for the both of them: the holy folk %monk1% and %monk2% are screaming-deep in a theological debate.\n\nYou\'ve not the education to understand the intricacies nor complexities of what they are arguing, but you do understand that getting into another person\'s face and pointing furiously, or at a holy book, is probably asking for trouble one way or another.",
+			Text = "[img]gfx/ui/events/event_05.png[/img] Ah, the campfire is brimming with talk and chatter. The mercenaries are enjoying some beer and food when rather suddenly the shouts of two in particular get everyone else to quiet down, not because they yell louder than the rest, but because it\'s rather out of character for the both of them: the holy folk %monk1% and %monk2% are screaming-deep in a theological debate.\n\nYou\'ve not the education to understand the intricacies nor complexities of what they are arguing, but you do understand that getting into another person\'s face and pointing furiously, or at a holy book, is probably asking for trouble one way or another.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -66,6 +66,15 @@ this.monk_vs_monk_event <- this.inherit("scripts/events/event", {
 				_event.m.Monk1.changeActiveRelationship( _event.m.Monk2, modifier1 );
 				local modifier2 = this.Math.rand(5, 10);
 				_event.m.Monk2.changeActiveRelationship( _event.m.Monk1, modifier2 );
+				
+				if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+				{
+				this.List.push({
+					id = 10,
+					icon = "ui/icons/relation.png",
+					text = _event.m.Monk1.getName() + " and " + _event.m.Monk2.getName() + " grow closer"
+				});
+				}
 
 				_event.m.Monk1.improveMood(1.0, "Had a stimulating discourse on religious matters");
 
@@ -116,6 +125,12 @@ this.monk_vs_monk_event <- this.inherit("scripts/events/event", {
 				_event.m.Monk1.changeActiveRelationship( _event.m.Monk2, modifier1 );
 				local modifier2 = this.Math.rand(-5, -10);
 				_event.m.Monk2.changeActiveRelationship( _event.m.Monk1, modifier2 );
+
+				this.List.push({
+					id = 10,
+					icon = "ui/icons/relation.png",
+					text = _event.m.Monk1.getName() + " and " + _event.m.Monk2.getName() + " grow distant"
+				});
 
 				_event.m.Monk1.getBaseProperties().Bravery += 1;
 				_event.m.Monk1.getSkills().update();

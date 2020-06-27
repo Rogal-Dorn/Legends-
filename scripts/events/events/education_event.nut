@@ -65,6 +65,14 @@ this.education_event <- this.inherit("scripts/events/event", {
 				_event.m.Scholar.changeActiveRelationship( _event.m.DumbGuy, modifier2 );
 
 				_event.m.Scholar.worsenMood(2.0, "Failed to teach " + _event.m.DumbGuy.getName() + " anything");
+				if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+				{
+					this.List.push({
+						id = 11,
+						icon = "ui/icons/relation.png",
+						text = _event.m.Scholar.getName() + " and " + _event.m.DumbGuy.getName() + " grow distant"
+					});
+				}
 
 				if (_event.m.Scholar.getMoodState() < this.Const.MoodState.Neutral)
 				{
@@ -107,6 +115,14 @@ this.education_event <- this.inherit("scripts/events/event", {
 				_event.m.DumbGuy.changeActiveRelationship( _event.m.Scholar, modifier1 );
 				local modifier2 = this.Math.rand(5, 10);
 				_event.m.Scholar.changeActiveRelationship( _event.m.DumbGuy, modifier2 );
+				if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+				{
+					this.List.push({
+						id = 10,
+						icon = "ui/icons/relation.png",
+						text = _event.m.DumbGuy.getName() + " and " + _event.m.Scholar.getName() + " grow closer"
+					});
+				}
 
 				this.List.push({
 					id = 10,

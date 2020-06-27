@@ -338,6 +338,11 @@ this.bastard_assassin_event <- this.inherit("scripts/events/event", {
 				}
 				this.World.Assets.addMoralReputation(2);
 				_event.m.Bastard.improveMood(2.0, "You risked your life for him");
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation increases slightly"
+					});
 
 				if (_event.m.Bastard.getMoodState() >= this.Const.MoodState.Neutral)
 				{

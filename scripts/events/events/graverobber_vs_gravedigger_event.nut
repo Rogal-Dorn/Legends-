@@ -34,6 +34,14 @@ this.graverobber_vs_gravedigger_event <- this.inherit("scripts/events/event", {
 				_event.m.Graverobber.changeActiveRelationship( _event.m.Gravedigger, modifier1 );
 				local modifier2 = this.Math.rand(-5, -10);
 				_event.m.Gravedigger.changeActiveRelationship( _event.m.Graverobber, modifier2 );
+				if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+				{
+				this.List.push({
+					id = 10,
+					icon = "ui/icons/relation.png",
+					text = _event.m.Gravedigger.getName() + " and " + _event.m.Graverobber.getName() + " grow distant"
+				});
+				}
 
 				if (this.Math.rand(1, 100) <= 50)
 				{

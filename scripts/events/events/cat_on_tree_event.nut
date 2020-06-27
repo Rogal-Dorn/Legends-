@@ -86,6 +86,11 @@ this.cat_on_tree_event <- this.inherit("scripts/events/event", {
 					icon = "ui/icons/ranged_skill.png",
 					text = _event.m.Archer.getName() + " gains [color=" + this.Const.UI.Color.PositiveEventValue + "]+1[/color] Ranged Skill"
 				});
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation increases slightly"
+					});
 			}
 
 		});
@@ -119,6 +124,11 @@ this.cat_on_tree_event <- this.inherit("scripts/events/event", {
 						text = _event.m.Archer.getName() + this.Const.MoodStateEvent[_event.m.Archer.getMoodState()]
 					});
 				}
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation increases slightly"
+					});
 			}
 
 		});
@@ -141,6 +151,11 @@ this.cat_on_tree_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation increases slightly"
+					});
 				this.Characters.push(_event.m.Ratcatcher.getImagePath());
 				_event.m.Ratcatcher.getBaseProperties().Initiative += 2;
 				_event.m.Ratcatcher.getSkills().update();

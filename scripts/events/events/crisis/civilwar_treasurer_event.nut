@@ -65,6 +65,11 @@ this.civilwar_treasurer_event <- this.inherit("scripts/events/event", {
 				this.Banner = _event.m.NobleHouse.getUIBannerSmall();
 				_event.m.NobleHouse.addPlayerRelation(this.Const.World.Assets.RelationNobleContractFail, "You threatened one of their treasurers");
 				this.World.Assets.addMoralReputation(1);
+					this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation increases slightly"
+					});
 				local food = this.new("scripts/items/supplies/ground_grains_item");
 				this.World.Assets.getStash().add(food);
 				this.World.Assets.updateFood();

@@ -62,6 +62,11 @@ this.broken_cart_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				this.List = _event.giveStuff(1);
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation increases"
+					});
 			}
 
 		});
@@ -94,6 +99,11 @@ this.broken_cart_event <- this.inherit("scripts/events/event", {
 					}
 				];
 				this.List.extend(_event.giveStuff(1));
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation increases"
+					});
 			}
 
 		});
@@ -115,7 +125,12 @@ this.broken_cart_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
-				this.List = _event.giveStuff(3);
+			this.List = _event.giveStuff(3);
+				this.List.push({
+					id = 10,
+					icon = "ui/icons/asset_moral_reputation.png",
+					text = "The company\'s moral reputation decreases"
+				});
 			}
 
 		});

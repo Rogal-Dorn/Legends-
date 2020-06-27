@@ -198,7 +198,7 @@ this.legend_conjurer_background <- this.inherit("scripts/skills/backgrounds/char
 		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");
 		stash.removeByID("supplies.ground_grains");
-		stash.add(this.new("scripts/items/supplies/black_marsh_stew_item"));
+		// stash.add(this.new("scripts/items/supplies/black_marsh_stew_item"));
 	}
 
 	function onAddLegendEquipment()
@@ -214,7 +214,7 @@ this.legend_conjurer_background <- this.inherit("scripts/skills/backgrounds/char
 		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");
 		stash.removeByID("supplies.ground_grains");
-		stash.add(this.new("scripts/items/supplies/black_marsh_stew_item"));
+		// stash.add(this.new("scripts/items/supplies/black_marsh_stew_item"));
 	}
 
 });

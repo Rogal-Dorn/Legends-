@@ -76,7 +76,7 @@ this.schrat_racial <- this.inherit("scripts/skills/skill", {
 			{
 				local spawnTile = candidates[this.Math.rand(0, candidates.len() - 1)];
 				local sapling = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/schrat_small", spawnTile.Coords);
-				sapling.setFaction(actor.getFaction());
+				sapling.setFaction( (actor.getFaction() == this.Const.Faction.Player ? this.Const.Faction.PlayerAnimals : actor.getFaction()) );
 				sapling.riseFromGround();
 			}
 		}

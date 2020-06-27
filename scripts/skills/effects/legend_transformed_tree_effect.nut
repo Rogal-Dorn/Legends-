@@ -139,7 +139,10 @@ this.legend_transformed_tree_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("armor_upgrade_back").Alpha = 255;		
 		actor.getSprite("armor_upgrade_front").Alpha = 255;
 		actor.getSprite("socket").Alpha = 255;
-		local actor = this.getContainer().getActor();
+		actor.getSprite("body").setHorizontalFlipping(0);
+		actor.getSprite("head").setHorizontalFlipping(0);
+		actor.getSprite("injury").setHorizontalFlipping(0);
+	
 			if (actor.getTile().IsVisibleForPlayer)
 			{
 				if (this.Const.Tactical.HideParticles.len() != 0)
@@ -157,6 +160,11 @@ this.legend_transformed_tree_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSkills().removeByID("racial.schrat");
 		local items = actor.getItems();
 		items.getData()[this.Const.ItemSlot.Mainhand][0] = null;
+	}
+
+	function onCombatFinished()
+	{
+		this.getContainer().getActor().getItems().getData()[this.Const.ItemSlot.Offhand] = null; //unequips the shield @ end of combat, can add to onRemoved() to also do it when the timer runs out on the effect
 	}
 
 	function onUpdate( _properties )

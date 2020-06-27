@@ -101,6 +101,11 @@ this.undead_plague_or_infected_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				this.World.Assets.addMoralReputation(3);
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation increases"
+					});
 				local food = this.World.Assets.getFoodItems();
 
 				for( local i = 0; i < 2; i = ++i )

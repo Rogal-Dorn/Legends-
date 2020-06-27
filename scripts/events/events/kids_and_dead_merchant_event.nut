@@ -66,6 +66,12 @@ this.kids_and_dead_merchant_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
+
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation decreases slightly"
+					});
 				local item = this.new("scripts/items/loot/signet_ring_item");
 				this.World.Assets.getStash().add(item);
 				this.List.push({

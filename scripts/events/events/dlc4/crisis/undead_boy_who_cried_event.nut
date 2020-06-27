@@ -56,6 +56,11 @@ this.undead_boy_who_cried_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				this.World.Assets.addMoralReputation(1);
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation increases slightly"
+					});
 			}
 
 		});
@@ -108,6 +113,11 @@ this.undead_boy_who_cried_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				this.World.Assets.addMoralReputation(1);
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation increases slightly"
+					});
 				local item = this.new("scripts/items/supplies/roots_and_berries_item");
 				this.World.Assets.getStash().add(item);
 				this.List.push({
@@ -194,6 +204,11 @@ this.undead_boy_who_cried_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				this.World.Assets.addMoralReputation(1);
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation increases slightly"
+					});
 				this.World.Assets.addMoney(25);
 				this.List.push({
 					id = 10,

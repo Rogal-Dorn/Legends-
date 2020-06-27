@@ -180,31 +180,42 @@ gt.Const.Perks.GetDynamicPerkTree <- function (_mins, _map)
 	}
 
 	//Clone so we don't overwrite the default character background ones
-	foreach (p in _map.Weapon)
-	{
-		_localMap.Weapon.push(p);
+	if ("Weapon" in _map) {
+		foreach (p in _map.Weapon)
+		{
+			_localMap.Weapon.push(p);
+		}
 	}
-	foreach (p in _map.Defense)
-	{
-		_localMap.Defense.push(p);
+	if ("Defense" in _map) {
+		foreach (p in _map.Defense)
+		{
+			_localMap.Defense.push(p);
+		}
 	}
-	foreach (p in _map.Traits)
-	{
-		_localMap.Traits.push(p);
+	if ("Traits" in _map) {
+		foreach (p in _map.Traits)
+		{
+			_localMap.Traits.push(p);
+		}
 	}
-	foreach (p in _map.Enemy)
-	{
-		_localMap.Enemy.push(p);
+	if ("Enemy" in _map) {
+		foreach (p in _map.Enemy)
+		{
+			_localMap.Enemy.push(p);
+		}
 	}
-	foreach (p in _map.Class)
-	{
-		_localMap.Class.push(p);
+	if ("Class" in _map) {
+		foreach (p in _map.Class)
+		{
+			_localMap.Class.push(p);
+		}
 	}
-	foreach (p in _map.Magic)
-	{
-		_localMap.Magic.push(p);
+	if ("Magic" in _map) {
+		foreach (p in _map.Magic)
+		{
+			_localMap.Magic.push(p);
+		}
 	}
-
 	//Add weapons
 	//this.logInfo("*BUILDING WEAPON TREE. NUM START =  " + _map.Weapon.len() + " : MIN = " + _mins.Weapon);
 	local count = _mins.Weapon - _localMap.Weapon.len();
