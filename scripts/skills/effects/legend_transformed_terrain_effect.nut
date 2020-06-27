@@ -1,4 +1,4 @@
-this.legend_transformed_tree_effect <- this.inherit("scripts/skills/skill", {
+this.legend_transformed_terrain_effect <- this.inherit("scripts/skills/skill", {
 	m = {
 	TurnsLeft = 5,
 	Body = "",
@@ -7,10 +7,10 @@ this.legend_transformed_tree_effect <- this.inherit("scripts/skills/skill", {
 	},
 	function create()
 	{
-		this.m.ID = "effect.legend_transformed_tree";
-		this.m.Name = "Tree Form";
-		this.m.Description = "This character is currently a schrat";
-		this.m.Icon = "ui/perks/tree_circle.png";
+		this.m.ID = "effect.legend_transformed_terrain";
+		this.m.Name = "Cunning Disguise";
+		this.m.Description = "This character is currently disguised as terrain";
+		this.m.Icon = "ui/perks/bear_circle.png";
 		this.m.IconMini = "status_effect_08_mini";
 		this.m.Type = this.Const.SkillType.Terrain | this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
@@ -27,8 +27,8 @@ this.legend_transformed_tree_effect <- this.inherit("scripts/skills/skill", {
 				{
 					id = 11,
 					type = "text",
-					icon = "ui/icons/special.png",
-					text = " Can regenerate shield"
+					icon = "ui/icons/health.png",
+					text = "[color=" + this.Const.UI.Color.PositiveValue + "]+100%[/color] hitpoints"
 				}
 			]);
 		}
@@ -57,16 +57,16 @@ this.legend_transformed_tree_effect <- this.inherit("scripts/skills/skill", {
 				}
 			}
 		local items = actor.getItems();
+		items.getData()[this.Const.ItemSlot.Offhand][0] = -1;
 		items.getData()[this.Const.ItemSlot.Mainhand][0] = -1;
-
 		this.m.Body = actor.getSprite("body").getBrush().Name;
 		this.m.Head = actor.getSprite("head").getBrush().Name;
-
-		actor.getSprite("body").setBrush("bust_schrat_body_01");
-		actor.getSprite("head").setBrush("bust_schrat_head_01");
+		actor.getSprite("body").setBrush("brush_01");
+		actor.getSprite("head").Alpha = 10;
+		actor.getSprite("injury").Alpha = 10;
 		actor.getSprite("body").setHorizontalFlipping(1);
 		actor.getSprite("head").setHorizontalFlipping(1);
-
+		actor.getSprite("injury").setHorizontalFlipping(1);
 		actor.getSprite("armor").Alpha = 10;
 		actor.getSprite("helmet").Alpha = 10;
 		actor.getSprite("shield_icon").Alpha = 10;
@@ -90,36 +90,20 @@ this.legend_transformed_tree_effect <- this.inherit("scripts/skills/skill", {
 
 		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_true_form"))
 		{
-		this.m.TurnsLeft = 8;
-		}
-
-		if (!this.m.Container.hasSkill("racial.schrat"))
-		{
-			this.m.Container.add(this.new("scripts/skills/racial/schrat_racial"));
-		}
-
-		if (!this.m.Container.hasSkill("actives.uproot"))
-		{
-			this.m.Container.add(this.new("scripts/skills/actives/uproot_skill"));
-		}
-
-		if (!this.m.Container.hasSkill("actives.grow_shield"))
-		{
-			this.m.Container.add(this.new("scripts/skills/actives/grow_shield_skill"));
+			this.m.TurnsLeft = 8;
 		}
 
 
+		
 	}
 
 	function onRemoved()
 	{	
 
 
-
-
 		local actor = this.getContainer().getActor();
 		actor.getSprite("body").setBrush(this.m.Body);
-		actor.getSprite("head").setBrush(this.m.Head);
+		actor.getSprite("head").Alpha = 255;
 		actor.getSprite("armor").Alpha = 255;
 		actor.getSprite("helmet").Alpha = 255;
 		actor.getSprite("shield_icon").Alpha = 255;
@@ -142,7 +126,6 @@ this.legend_transformed_tree_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("body").setHorizontalFlipping(0);
 		actor.getSprite("head").setHorizontalFlipping(0);
 		actor.getSprite("injury").setHorizontalFlipping(0);
-	
 			if (actor.getTile().IsVisibleForPlayer)
 			{
 				if (this.Const.Tactical.HideParticles.len() != 0)
@@ -155,25 +138,27 @@ this.legend_transformed_tree_effect <- this.inherit("scripts/skills/skill", {
 			}
 
 
-		actor.getSkills().removeByID("actives.uproot");
-		actor.getSkills().removeByID("actives.grow_shield");
-		actor.getSkills().removeByID("racial.schrat");
-		local items = actor.getItems();
-		items.getData()[this.Const.ItemSlot.Mainhand][0] = null;
-	}
 
-	function onCombatFinished()
-	{
-		this.getContainer().getActor().getItems().getData()[this.Const.ItemSlot.Offhand] = null; //unequips the shield @ end of combat, can add to onRemoved() to also do it when the timer runs out on the effect
+		local items = actor.getItems();
+		items.getData()[this.Const.ItemSlot.Offhand][0] = null;
+		items.getData()[this.Const.ItemSlot.Mainhand][0] = null;
 	}
 
 	function onUpdate( _properties )
 	{
+
+		local actor = this.getContainer().getActor();
+		if (actor.getSkills().hasSkill("perk.legend_assassinate"))
+		{
+			_properties.DamageRegularMin *= 2;
+			_properties.DamageRegularMax *= 2;
+		}
+		_properties.TargetAttractionMult *= 0.5;
+
 		local actor = this.getContainer().getActor();
 
-		actor.getSprite("body").setBrush("bust_schrat_body_01");
-		actor.getSprite("head").setBrush("bust_schrat_head_01");
-
+		actor.getSprite("body").setBrush("brush_01");
+		actor.getSprite("head").Alpha = 10;
 		actor.getSprite("armor").Alpha = 10;
 		actor.getSprite("helmet").Alpha = 10;
 		actor.getSprite("shield_icon").Alpha = 10;
@@ -194,21 +179,6 @@ this.legend_transformed_tree_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("armor_upgrade_front").Alpha = 10;
 		actor.getSprite("socket").Alpha = 10;
 
-		if (!this.m.Container.hasSkill("racial.schrat"))
-		{
-			this.m.Container.add(this.new("scripts/skills/racial/schrat_racial"));
-		}
-
-		if (!this.m.Container.hasSkill("actives.uproot"))
-		{
-			this.m.Container.add(this.new("scripts/skills/actives/uproot_skill"));
-		}
-
-		if (!this.m.Container.hasSkill("actives.grow_shield"))
-		{
-			this.m.Container.add(this.new("scripts/skills/actives/grow_shield_skill"));
-		}
-		_properties.MovementAPCostAdditional += 1;
 	}
 
 	function onTurnEnd()

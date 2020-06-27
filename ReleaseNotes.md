@@ -3366,9 +3366,10 @@ random party background and id assignment fixes
 druid forms arent backwards anymore
 slingstaff bash crash fix
 
-14.0.0.8
+14.0.0.8 Trained Traitors 
 
 Kvothe's More Traits submod 
+Adds a few low relatively low impact traits in line with existing traits. 
 * Aggressive: +5 matk - 5 mdef 
 * Ambitious: +5% xp +3 bravery +3 initiative 
 * Firm +5% melee damage 
@@ -3383,9 +3384,53 @@ Kvothe's More Traits submod
 * Unpreditable +5% chance to hit the head +5 initiative 
  
 Kvothe's Training Grounds submod 
-* Fixes some bugs with legends 
 * gain up to 15 permanent stats from training 
 * ranged and melee will only get relevant stats 
 * after gaining all 15 stats you unlock a perk point and a trait 
-* higher level recruits may have a couple more stats  
- 
+* higher level recruits may have a couple more stats 
+* Fixes some training bugs with legends  
+
+RIDER SKILLS WORK ON THE HORSES NOW!!!
+bloodbath no longer can divine by 0
+perks tree class error, tentative fix
+druid effect forms no longer keep the druid swapped after ending battle
+hair splitter no longer calls character_background for no reason
+magic backgrounds except for witch no longer pretend they're cooks and come with free stew
+avatars no longer get mad at company being too immoral or moral
+witchhunter helm no longer has spelling error
+fixes relationnship crash with companion pets (warhounds, small schrats from druid, etc)
+fixes schrat racial being assigned to player faction and thus trying to give it exp
+fixes item spawn sometimes crashing in luber camp
+true believer now correctly gives optimist trait
+fixes wolf form crash 
+feint error fixed
+runesmith armor gen fixed
+Master archers gauranteed ranged stars, cost increased. 
+Starting resource capacity increased on all economic difficulties. Easy is now much easier. 
+Starting resources increased for lower economic difficulties. higher remain challenging. 
+Backgrounds that grant resources storage will now grant more for Ammo, armor parts and meds respectively. 
+sets moral reputation of the party equal to the avg of the starting brothers alignments
+  
+
+14.0.0.8a  Relatively Moral 
+
+Relationships are now a start option
+Moral check shifted to roughly weekly from daily. 
+Mercenaries have a chance of changing their morals rather than becoming unhappy. 
+Cleans up the alignment system visuals, less icons and more information in tooltips  
+Relationship and moral changes can now show up in the results screens 
+Relationship visuals added to 57 events and 11 contracts 
+fixes relation giving weird crash on killing enemy
+fixes training building bug
+apothecary mushroom icon fix
+warlock icon fix
+change hand to hand to not show up when transformed
+shield doesnt carry over from combat now from schrat transform
+shield isnt invis on inventory when u play as a schrat
+*maybe* fixes index not existing in Attributes array, mwah can't reproduce it so please note if it still happens
+tooltips added for: schrat druid grow shield and uproot; bear druid bite; wolf druid bite
+bear druid now gives skills on transform rather than after a turn
+fixes index 255 crash when u have someone like the noble's son and try to open inventory with him in tactical battle
+should fix summon storm not actually causing rain debuffs
+icy cave now scans for everyone not in reserves rather than everyone not in the last row (vanilla reserves)
+

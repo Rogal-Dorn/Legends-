@@ -47,6 +47,23 @@ this.tutorial_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 			local val = this.World.State.addNewID(bro);
 			bro.m.CompanyID = val;
 		}
+		if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+{
+    local avgAlignment = 0;
+    foreach (bro in this.World.getPlayerRoster().getAll())
+    {
+        if (bro.getAlignment() <= this.Const.LegendMod.Alignment.NeutralMin)
+        {
+            avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMin);
+        }
+        else if (bro.getAlignment() >= this.Const.LegendMod.Alignment.NeutralMax)
+        {
+            avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMax);
+        }
+    }
+    avgAlignment *= (10 / this.World.getPlayerRoster().getSize());
+    this.World.Assets.addMoralReputation(avgAlignment);
+}
 		this.World.Assets.m.BusinessReputation = 100;
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
