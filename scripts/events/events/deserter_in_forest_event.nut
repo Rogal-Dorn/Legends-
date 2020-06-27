@@ -100,22 +100,26 @@ this.deserter_in_forest_event <- this.inherit("scripts/events/event", {
 				_event.m.Dude.getBackground().m.RawDescription = "You found %name% the deserter being chased through the forest. Though bounty hunters were hot on the trail, you elected to defend the fugitive and for that swore an oath to you.";
 				_event.m.Dude.getBackground().buildDescription(true);
 				this.Characters.push(_event.m.Dude.getImagePath());
-                local brocount = 0;
-                    foreach( bro in brothers )
-                    {
-                        if (bro.getBackground().getID() == "background.deserter")
-                        {
-                        ++brocount;
-                        }
-                    }
-                if (brocount >= 2)
-                {
-                this.List.push({
-                    id = 10,
-                    icon = "ui/icons/relation.png",
-                    text = "The deserters grow closer"
-                });
-                }
+				
+				if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+				{
+					local brocount = 0;
+						foreach( bro in brothers )
+						{
+							if (bro.getBackground().getID() == "background.deserter")
+							{
+							++brocount;
+							}
+						}
+					if (brocount >= 2)
+					{
+					this.List.push({
+						id = 10,
+						icon = "ui/icons/relation.png",
+						text = "The deserters grow closer"
+					});
+					}
+				}
 
 			}
 

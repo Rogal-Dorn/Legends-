@@ -87,12 +87,14 @@ this.cultist_vs_uneducated_event <- this.inherit("scripts/events/event", {
 					}
 				];
 
-				this.List.push({
-					id = 11,
-					icon = "ui/icons/relation.png",
-					text = _event.m.Cultist.getName() + " and " + _event.m.Uneducated.getName() + " grow closer"
-				});
-
+				if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+				{
+					this.List.push({
+						id = 11,
+						icon = "ui/icons/relation.png",
+						text = _event.m.Cultist.getName() + " and " + _event.m.Uneducated.getName() + " grow closer"
+					});
+				}
 				_event.m.Cultist.getBaseProperties().Bravery += 2;
 				_event.m.Cultist.getSkills().update();
 				this.List.push({
