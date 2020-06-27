@@ -3418,3 +3418,16 @@ Relationship changes during events now show up in the results screens for 57 eve
 Mercenaries moral check shifted to roughly weekly from daily. 
 Mercenaries have a chance of changing their morals rather than becoming unhappy. 
 cleans up the alignment system visuals 
+fixes relation giving weird crash on killing enemy
+fixes training building bug
+apothecary mushroom icon fix
+warlock icon fix
+change hand to hand to not show up when transformed
+shield doesnt carry over from combat now from schrat transform
+shield isnt invis on inventory when u play as a schrat
+*maybe* fixes index not existing in Attributes array, mwah can't reproduce it so please note if it still happens
+tooltips added for: schrat druid grow shield and uproot; bear druid bite; wolf druid bite
+bear druid now gives skills on transform rather than after a turn
+fixes index 255 crash when u have someone like the noble's son and try to open inventory with him in tactical battle
+optionalrelationship stuff
+
