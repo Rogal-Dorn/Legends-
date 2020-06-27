@@ -114,7 +114,11 @@ gt.Const.LegendMod.Configs <- {
 			this.IsBlueprintsVisible = _in.readBool();
 		}
 
-        if (_in.getMetaData().getVersion() >= 65) 
+        if (_in.getMetaData().getVersion() == 65)
+        {
+            this.IsRelationship = true;
+        }
+        else if (_in.getMetaData().getVersion() >= 66)
         {
             this.IsRelationship = _in.readBool();
         }

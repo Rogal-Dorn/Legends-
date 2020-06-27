@@ -3434,3 +3434,7 @@ fixes index 255 crash when u have someone like the noble's son and try to open i
 should fix summon storm not actually causing rain debuffs
 icy cave now scans for everyone not in reserves rather than everyone not in the last row (vanilla reserves)
 
+
+14.0.0.9b
+fixes loading saves from earlier in 14.0.0.X
+fixes item error when you end combat with a transformed schrat 

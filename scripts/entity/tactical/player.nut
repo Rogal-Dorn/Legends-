@@ -3100,9 +3100,12 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		_out.writeF32(this.m.LastCampTime);
 		_out.writeBool(this.m.InReserves);
 
-		_out.writeU8(this.m.Alignment);
-		_out.writeBool(this.m.IsAlignmentAssigned);
-		
+		_out.writeBool( this.Const.LegendMod.Configs.RelationshipsEnabled() );
+		if ( this.Const.LegendMod.Configs.RelationshipsEnabled() )
+		{
+			_out.writeU8(this.m.Alignment);
+			_out.writeBool(this.m.IsAlignmentAssigned);
+		}
 		_out.writeU8(this.m.CompanyID);
 
 		//keys are just string values
@@ -3247,16 +3250,19 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		}
 		//IF WE ADD ANY NON-INT KEYS YOU HAVE TO CHECK HERE WHAT TKEY STRING IS USING
 		// if ( keys == __ ) THEN _in.readVARTYPE
-		if (this.Const.LegendMod.Configs.RelationshipsEnabled())
-		{
-			if (_in.getMetaData().getVersion() >= 65) //THIS SHOULD BE CHANGED TO ACTUAL NUMBER WHEN IN RELEASE BUILD 
-			{	
-				
+		if (_in.getMetaData().getVersion() >= 65) //THIS SHOULD BE CHANGED TO ACTUAL NUMBER WHEN IN RELEASE BUILD 
+		{	
+			
+			local relEnabled = (_in.getMetaData().getVersion() == 65 ? true : _in.readBool());
+
+			if (relEnabled)
+			{		
 				this.m.Alignment = _in.readU8();
 				this.m.IsAlignmentAssigned = _in.readBool();
-
-				this.m.CompanyID = _in.readU8();
-				
+			}
+			this.m.CompanyID = _in.readU8();
+			if (relEnabled)
+			{		
 				local keys = _in.readString(); //puts STOP if we had norelations etc
 				local i = -1;
 				while ( keys != "STOP" )
@@ -3275,6 +3281,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				}	
 			}
 		}
+		
 	}
 
 });
