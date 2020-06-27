@@ -929,16 +929,19 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.World.Assets.getOrigin().onHiredByScenario(this);
         this.m.CompanyID = this.World.State.addNewID(this);
 
-        foreach ( b in this.World.getPlayerRoster().getAll() ) //Set relations to others characters to this one
-        {
-            local relMod = (( (this.m.Alignment > b.getAlignment()) ? (this.m.Alignment - b.getAlignment()) : (b.getAlignment() - this.m.Alignment) + 1) * -2) + 10;
-            this.changeActiveRelationship(b, this.Math.rand(-1, 1) + relMod);
-        }
-        foreach ( b in this.World.getPlayerRoster().getAll() ) //Relations to this character to others
-        {
-            local relMod = (( (this.m.Alignment > b.getAlignment()) ? (this.m.Alignment - b.getAlignment()) : (b.getAlignment() - this.m.Alignment) + 1) * -2) + 10;
-            b.changeActiveRelationship(this, this.Math.rand(-1,1) + relMod);
-        }
+		if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+		{
+			foreach ( b in this.World.getPlayerRoster().getAll() ) //Set relations to others characters to this one
+			{
+				local relMod = (( (this.m.Alignment > b.getAlignment()) ? (this.m.Alignment - b.getAlignment()) : (b.getAlignment() - this.m.Alignment) + 1) * -2) + 10;
+				this.changeActiveRelationship(b, this.Math.rand(-1, 1) + relMod);
+			}
+			foreach ( b in this.World.getPlayerRoster().getAll() ) //Relations to this character to others
+			{
+				local relMod = (( (this.m.Alignment > b.getAlignment()) ? (this.m.Alignment - b.getAlignment()) : (b.getAlignment() - this.m.Alignment) + 1) * -2) + 10;
+				b.changeActiveRelationship(this, this.Math.rand(-1,1) + relMod);
+			}
+		}
 
 		if (this.getSkills().hasSkill("trait.intensive_training_trait") && this.getLevel() > 1 )
 		{
@@ -2228,9 +2231,13 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			this.fillAttributeLevelUpValues(this.Const.XP.MaxLevelWithPerkpoints - 1);
 		}
 
-        this.setAlignment( null, background );
+		if ( this.Const.LegendMod.Configs.RelationshipsEnabled() )
+		{
+        	this.setAlignment( null, background );
+		}
 	}
 
+	//Grants the frenemies & alignment skills
 	function setAlignment ( custom = null, background = null )
 	{
 		if ( background == null ) 
@@ -2297,6 +2304,10 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	//	bro.cAR(bro2, false, [anything], keyVal)
 	function changeActiveRelationship( _actor, _amount, _key = "RelationNum", _set = false )
 	{
+		if ( !this.Const.LegendMod.Configs.RelationshipsEnabled() )
+		{
+			return;
+		}
 		if ( _actor == this )
 		{
 			return;
@@ -3095,26 +3106,27 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		_out.writeU8(this.m.CompanyID);
 
 		//keys are just string values
-
-		foreach (index, relation in this.m.ActiveRelationships)
+		if (this.Const.LegendMod.Configs.RelationshipsEnabled())
 		{
-			if (relation != null)
+			foreach (index, relation in this.m.ActiveRelationships)
 			{
-				_out.writeString("CharID");
-				_out.writeU16(index);
+				if (relation != null)
+				{
+					_out.writeString("CharID");
+					_out.writeU16(index);
 
-				foreach (key, value in relation)
-			{
-				_out.writeString(key);//IF WE ADD ANY NON-INT KEYS YOU HAVE TO CHECK HERE WHAT TKEY STRING IS USING
-				_out.writeI16(value);// if ( key == __ ) THEN _out.WriteVARTYPE
-			}
+					foreach (key, value in relation)
+				{
+					_out.writeString(key);//IF WE ADD ANY NON-INT KEYS YOU HAVE TO CHECK HERE WHAT TKEY STRING IS USING
+					_out.writeI16(value);// if ( key == __ ) THEN _out.WriteVARTYPE
+				}
 
+				}
+				
 			}
-			
+			//adds a string with STOP so we know when to stop reading in in onDeserialize(?) this should bechanged probably
+			_out.writeString("STOP");
 		}
-		//adds a string with STOP so we know when to stop reading in in onDeserialize(?) this should bechanged probably
-		_out.writeString("STOP");
-
 	}
 
 	function onDeserialize( _in )
@@ -3236,29 +3248,34 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 		//IF WE ADD ANY NON-INT KEYS YOU HAVE TO CHECK HERE WHAT TKEY STRING IS USING
 		// if ( keys == __ ) THEN _in.readVARTYPE
-		if (_in.getMetaData().getVersion() >= 65) //THIS SHOULD BE CHANGED TO ACTUAL NUMBER WHEN IN RELEASE BUILD 
-			this.m.Alignment = _in.readU8();
-			this.m.IsAlignmentAssigned = _in.readBool();
+		if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+		{
+			if (_in.getMetaData().getVersion() >= 65) //THIS SHOULD BE CHANGED TO ACTUAL NUMBER WHEN IN RELEASE BUILD 
+			{	
+				
+				this.m.Alignment = _in.readU8();
+				this.m.IsAlignmentAssigned = _in.readBool();
 
-			this.m.CompanyID = _in.readU8();
-			
-			local keys = _in.readString(); //puts STOP if we had norelations etc
-			local i = -1;
-			while ( keys != "STOP" )
-			{
-
-				if ( keys == "CharID" ) //new actor's relation
+				this.m.CompanyID = _in.readU8();
+				
+				local keys = _in.readString(); //puts STOP if we had norelations etc
+				local i = -1;
+				while ( keys != "STOP" )
 				{
-					i = _in.readU16();
-					this.m.ActiveRelationships[i] = {};
-				}
-				else
-				{
-					this.m.ActiveRelationships[i][keys] <- _in.readI16();
-				}
-				keys = _in.readString();
-			}	
 
+					if ( keys == "CharID" ) //new actor's relation
+					{
+						i = _in.readU16();
+						this.m.ActiveRelationships[i] = {};
+					}
+					else
+					{
+						this.m.ActiveRelationships[i][keys] <- _in.readI16();
+					}
+					keys = _in.readString();
+				}	
+			}
+		}
 	}
 
 });
