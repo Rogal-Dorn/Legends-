@@ -3414,6 +3414,7 @@ sets moral reputation of the party equal to the avg of the starting brothers ali
 
 14.0.0.8a  Relatively Moral 
 
+Relationships are now a start option
 Relationship changes during events now show up in the results screens for 57 events and 11 contracts 
 Mercenaries moral check shifted to roughly weekly from daily. 
 Mercenaries have a chance of changing their morals rather than becoming unhappy. 
@@ -3429,5 +3430,6 @@ shield isnt invis on inventory when u play as a schrat
 tooltips added for: schrat druid grow shield and uproot; bear druid bite; wolf druid bite
 bear druid now gives skills on transform rather than after a turn
 fixes index 255 crash when u have someone like the noble's son and try to open inventory with him in tactical battle
-optionalrelationship stuff
+should fix summon storm not actually causing rain debuffs
+icy cave now scans for everyone not in reserves rather than everyone not in the last row (vanilla reserves)
 

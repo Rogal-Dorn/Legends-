@@ -23,7 +23,7 @@ this.icy_cave_enter_event <- this.inherit("scripts/events/event", {
 
 				foreach( bro in raw_roster )
 				{
-					if (bro.getPlaceInFormation() <= 17)
+					if (!bro.isInReserves())
 					{
 						roster.push(bro);
 					}
