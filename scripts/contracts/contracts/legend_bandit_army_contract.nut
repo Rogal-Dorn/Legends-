@@ -666,7 +666,7 @@ this.legend_bandit_army_contract <- this.inherit("scripts/contracts/contract", {
 			List = [],
 			Options = [
 				{
-					Text = "We are not like that",
+					Text = "We are not like that (Increase Morals)",
 					function getResult()
 					{
 						this.World.Assets.addMoralReputation(5);
@@ -674,7 +674,7 @@ this.legend_bandit_army_contract <- this.inherit("scripts/contracts/contract", {
 					}								
 				},
 				{
-					Text = "Good idea",
+					Text = "Good idea (Decrease Morals)",
 					function getResult()
 					{
 						this.World.Assets.addMoralReputation(-5);

@@ -443,7 +443,7 @@ this.legend_barbarian_prisoner_contract <- this.inherit("scripts/contracts/contr
 			List = [],
 			Options = [
 				{
-					Text = "No. Execution is only solution to the crimes of this savage!",
+					Text = "No. Execution is only solution to the crimes of this savage! (Increase Morals)",
 					function getResult()
 					{
 						this.World.Assets.addMoralReputation(5);
@@ -452,7 +452,7 @@ this.legend_barbarian_prisoner_contract <- this.inherit("scripts/contracts/contr
 
 				},
 				{
-					Text = "Good idea. Let\'s talk with the prisoner",
+					Text = "Good idea. Let\'s talk with the prisoner (Decrease Morals)",
 					function getResult()
 					{
 						this.World.Assets.addMoralReputation(-3);
@@ -471,7 +471,7 @@ this.legend_barbarian_prisoner_contract <- this.inherit("scripts/contracts/contr
 			List = [],
 			Options = [
 				{
-					Text = "Back to the cage!",
+					Text = "Back to the cage! (Increase Morals)",
 					function getResult()
 					{
 						this.World.Assets.addMoralReputation(2);
@@ -480,7 +480,7 @@ this.legend_barbarian_prisoner_contract <- this.inherit("scripts/contracts/contr
 
 				},
 				{
-					Text = "Fine we will kill them.",
+					Text = "Fine we will kill them. (Decrease Morals)",
 					function getResult()
 					{
 						this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnContractFail);

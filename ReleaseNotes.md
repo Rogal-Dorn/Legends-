@@ -3366,27 +3366,61 @@ random party background and id assignment fixes
 druid forms arent backwards anymore
 slingstaff bash crash fix
 
-14.0.0.7h
+14.0.0.8 Trained Traitors 
 
+Kvothe's More Traits submod 
+Adds a few low relatively low impact traits in line with existing traits. 
+* Aggressive: +5 matk - 5 mdef 
+* Ambitious: +5% xp +3 bravery +3 initiative 
+* Firm +5% melee damage 
+* Frail -5% xp -3 hp - 3 stamina 
+* Heavy +10% melee damage  - 20 initiative
+* Light -10% melee damage +20 initiative
+* Natural +5%xp +3 hp +3 stamina 
+* Pragmatic -10% chance to hit the head +5 melee skill 
+* Predicatable -5 chance to hit the head -5 initiative  
+* Slack -5% xp gain -3 bravery -3 initative 
+* Sureshot +5 ranged skill 
+* Unpreditable +5% chance to hit the head +5 initiative 
+ 
+Kvothe's Training Grounds submod 
+* gain up to 15 permanent stats from training 
+* ranged and melee will only get relevant stats 
+* after gaining all 15 stats you unlock a perk point and a trait 
+* higher level recruits may have a couple more stats 
+* Fixes some training bugs with legends  
+
+RIDER SKILLS WORK ON THE HORSES NOW!!!
 bloodbath no longer can divine by 0
-perks tree tentative fix
+perks tree class error, tentative fix
 druid effect forms no longer keep the druid swapped after ending battle
 hair splitter no longer calls character_background for no reason
 magic backgrounds except for witch no longer pretend they're cooks and come with free stew
 avatars no longer get mad at company being too immoral or moral
 witchhunter helm no longer has spelling error
-fixes relationsnhip crash with companion pets (warhounds, small schrats from druid, etc)
+fixes relationnship crash with companion pets (warhounds, small schrats from druid, etc)
 fixes schrat racial being assigned to player faction and thus trying to give it exp
-RIDER SKILLS WORK ON THE HORSES NOW!!!
 fixes item spawn sometimes crashing in luber camp
 true believer now correctly gives optimist trait
-sets moral reputation of the party equal to the avg of the startinbrothers alignments
+fixes wolf form crash 
 feint error fixed
 runesmith armor gen fixed
+Master archers gauranteed ranged stars, cost increased. 
+Starting resource capacity increased on all economic difficulties. Easy is now much easier. 
+Starting resources increased for lower economic difficulties. higher remain challenging. 
+Backgrounds that grant resources storage will now grant more for Ammo, armor parts and meds respectively. 
+sets moral reputation of the party equal to the avg of the starting brothers alignments
+  
 
+14.0.0.8a  Relatively Moral 
+
+Relationships are now a start option
+Relationship changes during events now show up in the results screens for 57 events and 11 contracts 
+Mercenaries moral check shifted to roughly weekly from daily. 
+Mercenaries have a chance of changing their morals rather than becoming unhappy. 
 cleans up the alignment system visuals 
 fixes relation giving weird crash on killing enemy
-training building bug
+fixes training building bug
 apothecary mushroom icon fix
 warlock icon fix
 change hand to hand to not show up when transformed
@@ -3396,6 +3430,6 @@ shield isnt invis on inventory when u play as a schrat
 tooltips added for: schrat druid grow shield and uproot; bear druid bite; wolf druid bite
 bear druid now gives skills on transform rather than after a turn
 fixes index 255 crash when u have someone like the noble's son and try to open inventory with him in tactical battle
-optionalrelationship stuff
 should fix summon storm not actually causing rain debuffs
 icy cave now scans for everyone not in reserves rather than everyone not in the last row (vanilla reserves)
+

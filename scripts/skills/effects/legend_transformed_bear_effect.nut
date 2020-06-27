@@ -129,8 +129,6 @@ this.legend_transformed_bear_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("body").setHorizontalFlipping(0);
 		actor.getSprite("head").setHorizontalFlipping(0);
 		actor.getSprite("injury").setHorizontalFlipping(0);
-		
-		// local actor = this.getContainer().getActor(); //assigning twice?
 			if (actor.getTile().IsVisibleForPlayer)
 			{
 				if (this.Const.Tactical.HideParticles.len() != 0)
