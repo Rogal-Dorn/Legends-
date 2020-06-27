@@ -76,7 +76,7 @@ gt.Const.LegendMod.Configs <- {
         return this.IsBlueprintsVisible
     }
 
-    LegendRelationshipsEnabled = function ()
+    RelationshipsEnabled = function ()
     {
         return this.IsRelationship
     }
