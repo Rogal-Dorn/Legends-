@@ -57,7 +57,8 @@ this.legend_transformed_tree_effect <- this.inherit("scripts/skills/skill", {
 				}
 			}
 		local items = actor.getItems();
-		items.getData()[this.Const.ItemSlot.Mainhand][0] = -1;
+		items.getData()[this.Const.ItemSlot.Offhand][0] = null;
+		items.getData()[this.Const.ItemSlot.Mainhand][0] = null;
 
 		this.m.Body = actor.getSprite("body").getBrush().Name;
 		this.m.Head = actor.getSprite("head").getBrush().Name;
@@ -159,12 +160,8 @@ this.legend_transformed_tree_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSkills().removeByID("actives.grow_shield");
 		actor.getSkills().removeByID("racial.schrat");
 		local items = actor.getItems();
+		items.getData()[this.Const.ItemSlot.Offhand][0] = null;
 		items.getData()[this.Const.ItemSlot.Mainhand][0] = null;
-	}
-
-	function onCombatFinished()
-	{
-		this.getContainer().getActor().getItems().getData()[this.Const.ItemSlot.Offhand] = null; //unequips the shield @ end of combat, can add to onRemoved() to also do it when the timer runs out on the effect
 	}
 
 	function onUpdate( _properties )
