@@ -374,7 +374,7 @@ this.free_greenskin_prisoners_contract <- this.inherit("scripts/contracts/contra
 						{
 							local tile = this.Contract.getTileToSpawnLocation(playerTile, 10, 15);
 							local party = this.World.FactionManager.getFaction(camp.getFaction()).spawnEntity(tile, "Greenskin Horde", false, this.Const.World.Spawn.GreenskinHorde, 120 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
-							party.getSprite("banner").setBrush(camp.getBanner());
+							party.getSprite("banner").setBrush("banner_orcs_04");
 							party.setDescription("A horde of greenskins marching to war.");
 							this.Contract.m.UnitsSpawned.push(party);
 							party.getLoot().ArmorParts = this.Math.rand(0, 25);
