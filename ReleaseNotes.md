@@ -3412,28 +3412,44 @@ Backgrounds that grant resources storage will now grant more for Ammo, armor par
 sets moral reputation of the party equal to the avg of the starting brothers alignments
   
 
-14.0.0.8a  Relatively Moral 
+14.0.0.9  Relatively Moral 
 
+
+**Morality**
 Relationships are now a start option
-Relationship changes during events now show up in the results screens for 57 events and 11 contracts 
-Mercenaries moral check shifted to roughly weekly from daily. 
-Mercenaries have a chance of changing their morals rather than becoming unhappy. 
-cleans up the alignment system visuals 
-fixes relation giving weird crash on killing enemy
-fixes training building bug
-apothecary mushroom icon fix
-warlock icon fix
-change hand to hand to not show up when transformed
+Mercenaries check the company morality less frequently, decreased from daily to roughly weekly 
+Mercenaries have a chance of changing their morals rather than just becoming unhappy with the company. 
+Interface simplified:
+* Less morality and relationship icons, with more information in tooltips  
+* Morality and relationship changes now show up in the results screens for 57 events and 11 contracts 
+
+**Druid fixes**
+bear druid now gives skills on transform rather than after a turn
+fixes hand to hand showing up when transformed
+fixes summon storm not actually causing rain debuffs
 shield doesnt carry over from combat now from schrat transform
 shield isnt invis on inventory when u play as a schrat
+apothecary mushroom icon fix
+
+**Fixes**
+fixes relation giving weird crash on killing enemy
+fixes training building bug
+warlock icon fix
 *maybe* fixes index not existing in Attributes array, mwah can't reproduce it so please note if it still happens
 tooltips added for: schrat druid grow shield and uproot; bear druid bite; wolf druid bite
-bear druid now gives skills on transform rather than after a turn
 fixes index 255 crash when u have someone like the noble's son and try to open inventory with him in tactical battle
-should fix summon storm not actually causing rain debuffs
 icy cave now scans for everyone not in reserves rather than everyone not in the last row (vanilla reserves)
+Fixes random errors from incorrect syntax on players 
 
 
-14.0.0.9b
-fixes loading saves from earlier in 14.0.0.X
-fixes item error when you end combat with a transformed schrat 
+14.0.0.9 a
+
+Now loads previous saves 
+Transform now affects weapons correctly 
+fixes relTab error
+fixes company ID -1 error 
+fixes the 'unpredictable' error introduced in the new traits 
+fixes banner issue in the free greenskin prisoners contract 
+fixes warlock cloak blueprint 
+fixes potion of obvlision perk issue 
+fixes female backgrounds losing their sounds 
