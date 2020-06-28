@@ -71,12 +71,15 @@ this.butcher_gives_pointers_event <- this.inherit("scripts/events/event", {
 				//It changes how the Butcher views the Flagellant
 				local modifier = this.Math.rand(1, 5);
 				_event.m.Butcher.changeActiveRelationship( _event.m.Flagellant, modifier );
-				this.List.push({
-					id = 10,
-					icon = "ui/icons/relation.png",
-					text = _event.m.Butcher.getName() + " and " + _event.m.Flagellant.getName() + " grow closer"
-				});
 
+				if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+				{
+					this.List.push({
+						id = 10,
+						icon = "ui/icons/relation.png",
+						text = _event.m.Butcher.getName() + " and " + _event.m.Flagellant.getName() + " grow closer"
+					});
+				}
 
 				//You can instead set a flat modifier also like so
 				//This changes how the Flagellant sees the butcher

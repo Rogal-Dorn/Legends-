@@ -105,23 +105,28 @@ this.cultist_origin_sacrifice_event <- this.inherit("scripts/events/event", {
 							});
 						}
 
+						
+
 						//set relations
-						local relations = this.World.getPlayerRoster().getAll();
-						foreach( relation in relations )
+						if (this.Const.LegendMod.Configs.RelationshipsEnabled())
 						{
-							if (relation.getBackground().getID() == "background.cultist")
+						local relations = this.World.getPlayerRoster().getAll();
+							foreach( relation in relations )
 							{
-							local modifier1 = this.Math.rand(1, 5);
-							bro.changeActiveRelationship( relation, modifier1 );
-							local modifier2 = this.Math.rand(1, 5);
-							relation.changeActiveRelationship( bro, modifier2 );
-							this.List.push({
-								id = 11,
-								icon = "ui/icons/relation.png",
-								text = relation.getName() + " and " + bro.getName() + " grow closer"
-							});
+								if (relation.getBackground().getID() == "background.cultist")
+								{
+								local modifier1 = this.Math.rand(1, 5);
+								bro.changeActiveRelationship( relation, modifier1 );
+								local modifier2 = this.Math.rand(1, 5);
+								relation.changeActiveRelationship( bro, modifier2 );
+								this.List.push({
+									id = 11,
+									icon = "ui/icons/relation.png",
+									text = relation.getName() + " and " + bro.getName() + " grow closer"
+								});
 
 
+								}
 							}
 						}
 

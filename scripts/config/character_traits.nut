@@ -257,7 +257,7 @@ gt.Const.CharacterTraits <- [
 		"scripts/skills/traits/natural_trait"
 	],
 	[
-		"trait.predictable",
+		"trait.unpredictable",
 		"scripts/skills/traits/unpredictable_trait"
 	],
 	[

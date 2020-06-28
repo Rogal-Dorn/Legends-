@@ -88,22 +88,26 @@ this.lend_men_to_build_event <- this.inherit("scripts/events/event", {
 						}
 
 						//set relations
-						local relations = this.World.getPlayerRoster().getAll();
-						foreach( relation in relations )
+						if (this.Const.LegendMod.Configs.RelationshipsEnabled())
 						{
-							if (id == "background.daytaler" || id == "background.female_daytaler" || id == "background.mason" || id == "background.lumberjack" || id == "background.miller"|| id == "background.female_miller" || id == "background.farmhand" || id == "background.female_farmhand"  || id == "background.gravedigger")
+
+							local relations = this.World.getPlayerRoster().getAll();
+							foreach( relation in relations )
 							{
-								local modifier1 = this.Math.rand(5, 10);
-								bro.changeActiveRelationship( relation, modifier1 );
-								local modifier2 = this.Math.rand(5, 10);
-								relation.changeActiveRelationship( bro, modifier2 );
-								this.List.push({
-									id = 10,
-									icon = "ui/icons/relation.png",
-									text = bro.getName() + " and " + relation.getName() + " grow closer"
-								});
+								if (id == "background.daytaler" || id == "background.female_daytaler" || id == "background.mason" || id == "background.lumberjack" || id == "background.miller"|| id == "background.female_miller" || id == "background.farmhand" || id == "background.female_farmhand"  || id == "background.gravedigger")
+								{
+									local modifier1 = this.Math.rand(5, 10);
+									bro.changeActiveRelationship( relation, modifier1 );
+									local modifier2 = this.Math.rand(5, 10);
+									relation.changeActiveRelationship( bro, modifier2 );
+									this.List.push({
+										id = 10,
+										icon = "ui/icons/relation.png",
+										text = bro.getName() + " and " + relation.getName() + " grow closer"
+									});
 
 
+								}
 							}
 						}
 
