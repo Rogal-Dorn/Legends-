@@ -3453,3 +3453,8 @@ fixes banner issue in the free greenskin prisoners contract
 fixes warlock cloak blueprint 
 fixes potion of obvlision perk issue 
 fixes female backgrounds losing their sounds 
+
+14.0.
+
+**Fixes**
+Rolling a thief background on peasant militia no longer freezes scenario start
