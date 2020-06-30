@@ -290,7 +290,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	{
 		this.m.Background.setAlignmentMin( _f);
 	}
-	
+
 	function getAlignmentMax()
 	{
 	        return this.m.Background.getAlignmentMax();
@@ -945,12 +945,12 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.getSkills().hasSkill("trait.intensive_training_trait") && this.getLevel() > 1 )
 		{
-			if ( this.getBackground().getNameOnly()=="Donkey" ) 
+			if ( this.getBackground().getNameOnly()=="Donkey" )
 			{
 				return;
 			}
 			local inTraining = this.getSkills().getSkillByID("trait.intensive_training_trait");
-			
+
 			local addSkills = this.Math.rand(0, this.getLevel()+2);
 			addSkills = this.Math.min(addSkills, inTraining.getMaxSkillsCanBeAdded() - 1);
 			inTraining.addRandomSkills(this, addSkills);
@@ -1188,7 +1188,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				for( local i = 0; i != this.Const.CorpsePart.len(); i = ++i )
 				{
 					stub.addSprite("stuff_" + i).setBrush(this.Const.CorpsePart[i]);
-	
+
 				}
 			}
 			else
@@ -1546,7 +1546,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		{
 			++this.m.PerkPoints;
 		}
-		
+
 		//++this.m.PerkPoints //// DEBUG, UNCOMMENT FOR UNLIMITED UNLOCKS
 
 		return true;
@@ -2240,13 +2240,13 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	//Grants the frenemies & alignment skills
 	function setAlignment ( custom = null, background = null )
 	{
-		if ( background == null ) 
+		if ( background == null )
 		{
 			background = this.getBackground();
 		}
 		if ( this.m.IsAlignmentAssigned )
 		{
-			this.m.Skills.removeByID("trait.legend_alignment");	
+			this.m.Skills.removeByID("trait.legend_alignment");
 		}
 		if ( custom != null )
 		{
@@ -2254,11 +2254,11 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			{
 				this.m.Alignment = this.Const.LegendMod.Alignment.Saintly;
 			}
-			else if ( custom < this.Const.LegendMod.Alignment.Dreaded ) 
+			else if ( custom < this.Const.LegendMod.Alignment.Dreaded )
 			{
 				this.m.Alignment = this.Const.LegendMod.Alignment.Dreaded;
 			}
-			else 
+			else
 			{
 				this.m.Alignment = custom;
 			}
@@ -2267,7 +2267,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		{
 			this.m.Alignment = this.Math.rand(background.getAlignmentMin(), background.getAlignmentMax());
 		}
-		
+
 		this.m.IsAlignmentAssigned = true;
 
 		this.m.Skills.add(this.new("scripts/skills/traits/legend_frenemies"));
@@ -2285,7 +2285,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
         return this.m.CompanyID;
     }
 
-	//Only used occaisionally, shouldn't call this specifically 
+	//Only used occaisionally, shouldn't call this specifically
 	//Probably would be unused function
 	//Check world_state::addNewID and in this_file::onHired to see how w add company IDs to brothers
 	function setCompanyID( _num )
@@ -2314,10 +2314,10 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		}
 		if ( !( this.hasActiveRelationshipWith(_actor) ) )
 		{
-			
+
 			this.createActiveRelationship(_actor);
 		}
-		
+
 		local arrIndex = _actor.getCompanyID();
 		local amtType = typeof _amount;
 		if (_set || (amtType != "integer" && amtType != "float"))
@@ -2335,12 +2335,12 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				this.m.ActiveRelationships[arrIndex][_key] <- _amount;
 			}
 		}
-		
-		
+
+
 	}
 
 	//If the array index isn't null anymore then we have a rel with
-	//It should only ever be null if the relationship was previously made null by removing	
+	//It should only ever be null if the relationship was previously made null by removing
 	function hasActiveRelationshipWith( _actor )
 	{
 		if ( this.m.ActiveRelationships[_actor.getCompanyID()] == null )
@@ -2389,7 +2389,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		}
 		this.World.State.removeCompanyID(this.m.CompanyID);
 	}
-	
+
 
 	//Call this function by doing
 	//		getARW( actor )
@@ -2408,7 +2408,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	}
 
 	//Used by the trait to get just a list of the characters relations
-	//Currently returns just the RelNum integer but can be changed to 
+	//Currently returns just the RelNum integer but can be changed to
 	//		return strings, i.e. "%actor% likes %other actor%"
 	function getActiveRelationshipsTraitText()
 	{
@@ -2560,11 +2560,10 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				this.m.Attributes[i] = [];
 			}
 		}
-		
-		if (this.m.Attributes[0].len() == 0)
+
+		for( local i = 0; i != this.Const.Attributes.COUNT; i = ++i )
 		{
-			for( local i = 0; i != this.Const.Attributes.COUNT; i = ++i )
-			{
+			if (this.m.Attributes[i].len() == 0) {
 				this.m.Attributes[i].push(1);
 			}
 		}
@@ -3125,7 +3124,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				}
 
 				}
-				
+
 			}
 			//adds a string with STOP so we know when to stop reading in in onDeserialize(?) this should bechanged probably
 			_out.writeString("STOP");
@@ -3250,19 +3249,19 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		}
 		//IF WE ADD ANY NON-INT KEYS YOU HAVE TO CHECK HERE WHAT TKEY STRING IS USING
 		// if ( keys == __ ) THEN _in.readVARTYPE
-		if (_in.getMetaData().getVersion() >= 65) //THIS SHOULD BE CHANGED TO ACTUAL NUMBER WHEN IN RELEASE BUILD 
-		{	
-			
+		if (_in.getMetaData().getVersion() >= 65) //THIS SHOULD BE CHANGED TO ACTUAL NUMBER WHEN IN RELEASE BUILD
+		{
+
 			local relEnabled = (_in.getMetaData().getVersion() == 65 ? true : _in.readBool());
 
 			if (relEnabled)
-			{		
+			{
 				this.m.Alignment = _in.readU8();
 				this.m.IsAlignmentAssigned = _in.readBool();
 			}
 			this.m.CompanyID = _in.readU8();
 			if (relEnabled)
-			{		
+			{
 				local keys = _in.readString(); //puts STOP if we had norelations etc
 				local i = -1;
 				while ( keys != "STOP" )
@@ -3278,10 +3277,10 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 						this.m.ActiveRelationships[i][keys] <- _in.readI16();
 					}
 					keys = _in.readString();
-				}	
+				}
 			}
 		}
-		
+
 	}
 
 });
