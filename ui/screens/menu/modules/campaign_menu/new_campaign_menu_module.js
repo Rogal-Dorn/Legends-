@@ -1154,7 +1154,7 @@ NewCampaignMenuModule.prototype.buildConfigPage = function () {
 	this.mLegendAllBlueprintsCheckbox.iCheck('check');
 
 	var row = $('<div class="row"></div>');
-	leftColumn.append(row);
+	rightColumn.append(row);
 	var control = $('<div class="control"/>');
 	row.append(control);
 	this.mLegendRelationshipCheckbox = $('<input type="checkbox" id="cb-legendrelationship"/>');
@@ -1625,6 +1625,14 @@ NewCampaignMenuModule.prototype.bindTooltips = function () {
 		elementId: 'mapconfig.legendallblueprints'
 	});	
 
+	this.mLegendRelationshipCheckbox.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.legendallblueprints'
+	});
+	this.mLegendRelationshipCheckboxLabel.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.legendrelationship'
+	});
 };
 
 NewCampaignMenuModule.prototype.unbindTooltips = function () {
@@ -1765,7 +1773,9 @@ NewCampaignMenuModule.prototype.unbindTooltips = function () {
 	
 	this.mLegendAllBlueprintsCheckbox.unbindTooltip();
 	this.mLegendAllBlueprintsCheckboxLabel.unbindTooltip();	
-	
+
+	this.mLegendRelationshipCheckbox.unbindTooltip();
+	this.mLegendRelationshipCheckboxLabel.unbindTooltip();	
 };
 
 
