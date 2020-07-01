@@ -3458,3 +3458,5 @@ fixes female backgrounds losing their sounds
 
 **Fixes**
 Rolling a thief background on peasant militia no longer freezes scenario start
+Summon storm crash fix
+Transformed effects being removed @ end of combat no longer crashes
