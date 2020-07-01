@@ -137,6 +137,7 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("body").setHorizontalFlipping(0);
 		actor.getSprite("head").setHorizontalFlipping(0);
 		actor.getSprite("injury").setHorizontalFlipping(0);
+		if (("State" in this.Tactical) && this.Tactical.State != null) {
 			if (actor.getTile().IsVisibleForPlayer)
 			{
 				if (this.Const.Tactical.HideParticles.len() != 0)
@@ -147,7 +148,7 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 					}
 				}
 			}
-
+		}
 
 		actor.getSkills().removeByID("actives.werewolf_claws");
 		actor.getSkills().removeByID("actives.werewolf_bite");

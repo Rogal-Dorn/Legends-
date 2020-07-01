@@ -102,8 +102,6 @@ this.legend_transformed_bear_effect <- this.inherit("scripts/skills/skill", {
 
 	function onRemoved()
 	{	
-
-
 		local actor = this.getContainer().getActor();
 		actor.getSprite("body").setBrush(this.m.Body);
 		actor.getSprite("head").setBrush(this.m.Head);
@@ -129,6 +127,9 @@ this.legend_transformed_bear_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("body").setHorizontalFlipping(0);
 		actor.getSprite("head").setHorizontalFlipping(0);
 		actor.getSprite("injury").setHorizontalFlipping(0);
+
+		if (("State" in this.Tactical) && this.Tactical.State != null)
+		{
 			if (actor.getTile().IsVisibleForPlayer)
 			{
 				if (this.Const.Tactical.HideParticles.len() != 0)
@@ -139,7 +140,7 @@ this.legend_transformed_bear_effect <- this.inherit("scripts/skills/skill", {
 					}
 				}
 			}
-
+		}
 
 		actor.getSkills().removeByID("actives.legend_bear_claws");
 		actor.getSkills().removeByID("actives.legend_bear_bite");

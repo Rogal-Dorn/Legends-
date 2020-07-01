@@ -1,6 +1,14 @@
 this.legend_summon_storm <- this.inherit("scripts/skills/skill", {
 	m = {
-		IsSpent = false
+		IsSpent = false,
+		SoundOnLightning = [
+			"sounds/combat/dlc2/legendary_lightning_01.wav",
+			"sounds/combat/dlc2/legendary_lightning_02.wav",
+			"sounds/combat/electricity_01.wav",
+			"sounds/combat/electricity_02.wav",
+			"sounds/combat/electricity_03.wav",
+			"sounds/combat/electricity_04.wav"
+		]
 	},
 	function create()
 	{
