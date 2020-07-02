@@ -3453,3 +3453,11 @@ fixes banner issue in the free greenskin prisoners contract
 fixes warlock cloak blueprint 
 fixes potion of obvlision perk issue 
 fixes female backgrounds losing their sounds 
+
+14.0.0.10
+
+**Harvesting skills**
+Early game weapon perks now also unlock harvesting during battle
+* Woodsman's Cuts lets you chop down trees. If you're holding a woodaxe there is a 1/4 chance of getting wood  
+* Harvest Twist lets you chop down bushes  If you're holding a sickle there is a 1/2 chance of getting berries 
+* Ore Hunter lets you chop down rocks. If you're holding a pickaxe there is a 1/2 chance of getting uncut gems  

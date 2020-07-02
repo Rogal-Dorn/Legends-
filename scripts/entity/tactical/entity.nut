@@ -5,6 +5,9 @@ this.entity <- {
 		IsAlive = true,
 		IsDirty = false,
 		IsAttackable = false,
+		IsRock = false,
+		IsTree = false,
+		IsBush = false,
 		IsSummoned = false,
 		IsHidden = false
 	},
@@ -55,6 +58,21 @@ this.entity <- {
 	function isAttackable()
 	{
 		return this.m.IsAttackable;
+	}
+
+	function isTree()
+	{
+		return this.m.IsTree;
+	}
+
+	function isRock()
+	{
+		return this.m.IsRock;
+	}
+
+	function isBush()
+	{
+		return this.m.IsBush;
 	}
 
 	function setIsAlive( _f )
