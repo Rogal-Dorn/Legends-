@@ -488,7 +488,7 @@ gt.Const.Strings.MercenaryCompanyNames <- [
 	"The Red Regiment",
 	"The Invincibles",
 	"Order of the Fist"
-	
+
 ];
 gt.Const.Strings.NobleHouseNames <- [
 	"Grimmund",
@@ -1077,7 +1077,7 @@ gt.Const.Strings.TerrainRegionNames <- [
 		"Verdantwood",
 		"Hissing Forests",
 		"The Eagledown Wood",
-		"Wise Spruce Woods"			
+		"Wise Spruce Woods"
 	],
 	[
 		"Red Worm Woods",
@@ -1187,7 +1187,7 @@ gt.Const.Strings.TerrainRegionNames <- [
 		"Devil\'s Claws",
 		"Kilgore Range",
 		"Cloudmaker"
-		
+
 	],
 	[],
 	[],
@@ -1983,7 +1983,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendBlendIn = "Hold yourself in a way that makes you seem more trouble than its worth, lean into trees, place objects between you and an enemy, and hide behind allies. Makes enemies [color=" + this.Const.UI.Color.PositiveValue + "]90%[/color] less likely to attack you instead of an ally. \n[color=#0b0084]From the Devious perk group[/color]",
 	LegendSpecStaffStun = "Master the movements required to spin your staff in a great flourish that lands with additional force. Any strike with a staff that would normally daze, also stuns and staggers. \n[color=#0b0084]From the Staff perk group[/color]",
 	LegendSpecStaffSkill = "Twist and thrust with your staff to deflect blows and intercept strikes. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+16[/color] melee and ranged defense while wielding a staff. 50% of this bonus is applied to Swordstaves. \n[color=#0b0084]From the Staff perk group[/color]",
-	LegendDrumsOfWar = "Learn powerful rythms that drive your allies on. Unlocks the Drums of War skill that restores [color=" + this.Const.UI.Color.PositiveValue + "]+4[/color] fatigue to every ally within three tiles. Can only be used with a Drum or Lute equipped. \n[color=#0b0084]From the Bard perk group[/color]",
+	LegendDrumsOfWar = "Learn powerful rythms that drive your allies on. Unlocks the Drums of War skill that restores [color=" + this.Const.UI.Color.PositiveValue + "]+4[/color] fatigue to every ally within eight tiles. Can only be used with a Drum or Lute equipped. \n[color=#0b0084]From the Bard perk group[/color]",
 	LegendSpecFists = "Master the martial arts of unarmed combat. Reduces the fatigue cost of Hand to Hand, Kick and Grapple. Increases armor penetration and increases chance to hit for Hand to Hand, adds damage to Kick. \n[color=#0b0084]From the Unarmed perk group[/color]",
 	LegendKick = "Put all your force into a lunging kick, pushing your opponent away and inflicting fatigue. Grants the \'Kick\' ability. Targets will take damage if falling off an edge.  A successful kick cancels Shieldwall, Spearwall and Riposte. \n[color=#0b0084]From the Unarmed perk group[/color] ",
 	LegendGrapple = "Grab your opponent and manhandle them to the ground, inflicting fatigue and grappling them for two turns. Grants the \'Grapple\' ability, which can only be used with your offhand free. \n[color=#0b0084]From the Unarmed perk group[/color]",
@@ -2027,7 +2027,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendHorseCollection = "By training the horse\'s posture, advanced movements become easier to perform and less draining. Increases fatigue by 25%",
 	LegendHorseFlyingChange = "Changing lead legs at high speeds is an advanced move that can allow horses to cover much larger distances. Gain 1 action point",
 	LegendHorsePassage = "Training the legs to raise higher and push harder can prepare horses for rough or muddy terrain. Decreases movement costs on rough terrain",
-	LegendDrumsOfLife = "Learn powerful rythms that drive your allies on. Unlocks the Drums of Life skill that restores [color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] health to every ally within three tiles. Can only be used with hands empty, or with a Drum or Lute equipped. \n[color=#0b0084]From the Bard perk group[/color]",
+	LegendDrumsOfLife = "Learn powerful rythms that drive your allies on. Unlocks the Drums of Life skill that restores [color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] health to every ally within eight tiles. Can only be used with hands empty, or with a Drum or Lute equipped. \n[color=#0b0084]From the Bard perk group[/color]",
 	LegendLacerate = "Lust for blood courses through your veins, each stroke rips and tears with a ferocity that intensifies as you bleed. Gain a chance to inflict bleeding with every strike, equal to your percentage of missing health.",
 	LegendPeaceful = "Not all folks are built for war, some find contentment in contemplation or practicing a trade. This character becomes content with being in reserve, consumes half rations while in reserve. [color=#0b0084]From the Calm perk group[/color]",
 	LegendSummonHound = "Forming close bonds with hounds grants to the ability to call to them. Summon a loyal hound to your side in battle.",
