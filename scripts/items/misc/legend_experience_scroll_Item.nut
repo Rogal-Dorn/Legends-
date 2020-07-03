@@ -77,6 +77,7 @@ this.legend_experience_scroll_item <- this.inherit("scripts/items/item", {
             effect.m.Duration = 3;
             effect.m.XPGainMult = 1.5;
             effect.m.Icon = "skills/experience_scroll_effect.png"; //todo icon
+            _actor.getSkills().add(effect);
         }
 
 		this.Sound.play("sounds/scribble.wav", this.Const.Sound.Volume.Inventory);
