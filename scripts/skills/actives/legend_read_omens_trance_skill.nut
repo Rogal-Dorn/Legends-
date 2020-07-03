@@ -10,9 +10,9 @@ this.legend_read_omens_trance_skill <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "actives.legend_read_omens_trance";
 		this.m.Name = "Read Omens (Trance)";
 		this.m.Description = "Toggle Read Omens Trance On (Lucky Effect on all characters until cancelled)";
-		this.m.Icon = "skills/active_104.png"; //todo: change icons, better description, sound on use
-		this.m.IconDisabled = "skills/active_104_sw.png";
-		this.m.Overlay = "active_104";
+		this.m.Icon = "skills/omen_active.png"; //todo: change icons, better description, sound on use
+		this.m.IconDisabled = "skills/omen_active_sw.png";
+		this.m.Overlay = "omen_active";
 		this.m.SoundOnUse = [
 			"sounds/combat/hawk_01.wav",
 			"sounds/combat/hawk_02.wav"
