@@ -113,10 +113,7 @@ this.workshop_location <- this.inherit("scripts/entity/world/attached_location",
 		_list.push("peddler_background");
 		_list.push("female_daytaler_background");
 		_list.push("daytaler_background");
-		if(this.Const.LegendMod.Configs.LegendMagicEnabled())
-		{
-			_list.push("legend_transmuter_background");
-		}
+
 	}
 
 	function onUpdateShopList( _id, _list )

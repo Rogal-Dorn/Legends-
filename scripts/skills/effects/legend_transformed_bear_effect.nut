@@ -175,7 +175,7 @@ this.legend_transformed_bear_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("armor_upgrade_front").Alpha = 10;
 		actor.getSprite("socket").Alpha = 10;
 
-		_properties.HitpointsMult *= 2;
+		_properties.HitpointsMult *= 1.5;
 
 	}
 
