@@ -3456,7 +3456,16 @@ fixes female backgrounds losing their sounds
 
 14.0.
 
+**Magic**
+Adds the following spells:
+
+  Wrapped up nicely in the Astrology Group we have:
+    Read Omens (Trance): The future has been foretold with this in-combat trance. Toggles on/off to provide the equivalent of a lucky trait (+10% reroll bonus)
+    Distant Visions: A new dawn, a new day, a new vision. Chance on every new day to view a town's buildings (if previously unvisited), and its current events
+    Scry (Trance): Gives your brother a birds eye view, provides a 12 tile sight-range at the beginning of every turn similar to the usable hawk item.
+
 **Fixes**
 Rolling a thief background on peasant militia no longer freezes scenario start
 Summon storm crash fix
 Transformed effects being removed @ end of combat no longer crashes
+Named sickle now properly works with perks 
