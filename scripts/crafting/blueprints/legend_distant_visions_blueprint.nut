@@ -6,15 +6,15 @@ this.legend_distant_visions_blueprint <- this.inherit("scripts/crafting/blueprin
 		this.m.ID = "blueprint.legend_distant_visions_blueprint";
 		this.m.Type = this.Const.Items.ItemType.Accessory;
 		this.m.PreviewCraftable = this.new("scripts/items/accessory/distant_visions_item");
-		this.m.Cost = 7500;
+		this.m.Cost = 3000;
 		local ingredients = [
 			{
 				Script = "scripts/items/trade/cloth_rolls_item",
-				Num = 6
+				Num = 2
 			},
 			{
 				Script = "scripts/items/trade/dies_item",
-				Num = 3
+				Num = 1
 			}
 		];
 		this.init(ingredients);
@@ -28,11 +28,7 @@ this.legend_distant_visions_blueprint <- this.inherit("scripts/crafting/blueprin
 
 	function onCraft( _stash )
 	{
-
-        foreach( town in this.World.EntityManager.getSettlements() )
-        {
-		    town.setVisited(true);
-        }
+		this.World.State.setDistantVisionBonus(true);
 	}
 
 });

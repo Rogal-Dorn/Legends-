@@ -78,7 +78,8 @@ this.world_state <- this.inherit("scripts/states/state", {
 		CommanderDied = null,
 		LegendsMod = null,
 		Camp = null,
-		IDToRef = array(27, -1)
+		IDToRef = array(27, -1),
+		DistantVisionBonus = false
 	},
 
 	function getPlayer()
@@ -3727,6 +3728,16 @@ this.world_state <- this.inherit("scripts/states/state", {
 				return i;
 			}
 		}
+	}
+
+	function setDistantVisionBonus( _bonus )
+	{
+		this.m.DistantVisionBonus = _bonus;
+	}
+
+	function getDistantVisionBonus()
+	{
+		return this.m.DistantVisionBonus;
 	}
 
 	function onBeforeSerialize( _out )

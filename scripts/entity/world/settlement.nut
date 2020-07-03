@@ -256,7 +256,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			}
 		];
 
-		if (this.m.IsVisited)
+		if (this.m.IsVisited || this.World.State.getDistantVisionBonus())
 		{
 			foreach( b in this.m.Buildings )
 			{
@@ -291,6 +291,18 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 				icon = f.getUIBanner(),
 				text = "Relations: " + f.getPlayerRelationAsText()
 			});
+		}
+
+		if (this.World.State.getDistantVisionBonus())
+		{
+			foreach( s in this.m.Situations )
+			{
+				ret.push({
+					id = 6,
+					type = "text",
+					text = "Has current event: " + s.getName()
+				});
+			}
 		}
 
 		return ret;
