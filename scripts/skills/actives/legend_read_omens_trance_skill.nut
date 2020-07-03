@@ -2,7 +2,6 @@ this.legend_read_omens_trance_skill <- this.inherit("scripts/skills/skill", {
 	m = {
         IsInTrance = false,
         IsSameTurn = false,
-		CancelAtEnd = false,
 		BaseFatigueCost = 50,
 		BaseAPCost = 5
     },
@@ -65,23 +64,16 @@ this.legend_read_omens_trance_skill <- this.inherit("scripts/skills/skill", {
 		return this.skill.isUsable() && !this.m.IsSameTurn;
 	}
 
-	// function onUpdate( _properties )
-	// {
-	// 	if (this.m.IsInTrance)
-	// 	{
-	// 		this.Tactical.queryTilesInRange( this.getContainer().getActor().getTile(), 1, 12, false, [], this.onQueryTile, this.getContainer().getActor().getFaction());
-	// 	}
-	// }
-
-	function onTurnEnd()
+	function onUpdate( _properties )
 	{
-		if (this.m.CancelAtEnd)
+		if (_properties.IsStunned)
 		{
-			foreach( bro in this.World.getPlayerRoster().getAll() )
-            {
-                bro.getSkills().removeByID("effects.legend_read_omens");
-            }
-			this.m.CancelAtEnd = false;
+			if (this.m.IsInTrance)
+			{
+				this.swapOff();
+				this.removeAll();
+				this.m.IsSameTurn = false;
+			}
 		}
 	}
 
@@ -99,25 +91,43 @@ this.legend_read_omens_trance_skill <- this.inherit("scripts/skills/skill", {
 	{
         if (this.m.IsInTrance)
         {
-            this.m.Description = "Toggle Read Omens Trance On (Lucky Effect on all characters until cancelled)";
-			this.m.FatigueCost = this.m.BaseFatigueCost;
-			this.m.ActionPointCost = this.m.BaseAPCost;	
-			this.m.CancelAtEnd = true;
+           this.swapOff();
         }
         else
         {
-            this.m.Description = "Toggle Read Omens Trance Off (Removes at turn end)"
-			foreach( bro in this.World.getPlayerRoster().getAll() )
-            {
-                bro.getSkills().add(this.new("scripts/skills/effects/legend_read_omens_effect"));
-            }
-			this.getContainer().getActor().setActionPoints(0);
-			this.m.FatigueCost = 0;
-			this.m.ActionPointCost = 0;
-			this.m.IsSameTurn = true;
+            this.swapOn();
         }
         this.m.IsInTrance = !this.m.IsInTrance;
 		return true;
+	}
+
+	function removeAll()
+	{
+		foreach( bro in this.World.getPlayerRoster().getAll() )
+		{
+			bro.getSkills().removeByID("effects.legend_read_omens");
+		}
+	}
+
+	function swapOff()
+	{
+		this.m.Description = "Toggle Read Omens Trance On (Lucky Effect on all characters until cancelled)";
+		this.m.FatigueCost = this.m.BaseFatigueCost;
+		this.m.ActionPointCost = this.m.BaseAPCost;	
+		this.removeAll();
+	}
+
+	function swapOn()
+	{
+		this.m.Description = "Toggle Read Omens Trance Off (Removes at turn end)"
+		foreach( bro in this.World.getPlayerRoster().getAll() )
+		{
+			bro.getSkills().add(this.new("scripts/skills/effects/legend_read_omens_effect"));
+		}
+		this.getContainer().getActor().setActionPoints(0);
+		this.m.FatigueCost = 0;
+		this.m.ActionPointCost = 0;
+		this.m.IsSameTurn = true;
 	}
 
 	function onQueryTile( _tile, _tag )
