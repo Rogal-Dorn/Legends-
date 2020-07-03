@@ -94,7 +94,7 @@ this.legend_scry_trance_skill <- this.inherit("scripts/skills/skill", {
         }
         else
         {
-            this.swapOn( _user );
+            this.swapOn();
         }
         this.m.IsInTrance = !this.m.IsInTrance;
 		return true;
@@ -107,10 +107,9 @@ this.legend_scry_trance_skill <- this.inherit("scripts/skills/skill", {
 		this.m.ActionPointCost = this.m.BaseAPCost;	
 	}
 
-	function swapOn( _user )
+	function swapOn()
 	{
 		this.m.Description = "Toggle Scry Trance Off"
-		this.Tactical.queryTilesInRange(_user.getTile(), 1, 12, false, [], this.onQueryTile, _user.getFaction());
 		this.getContainer().getActor().setActionPoints(0);
 		this.m.FatigueCost = 0;
 		this.m.ActionPointCost = 0;
