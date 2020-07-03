@@ -79,7 +79,7 @@ this.legend_read_omens_trance_skill <- this.inherit("scripts/skills/skill", {
 		{
 			foreach( bro in this.World.getPlayerRoster().getAll() )
             {
-                bro.getSkills().removeByID("effect.legend_read_omens");
+                bro.getSkills().removeByID("effects.legend_read_omens");
             }
 			this.m.CancelAtEnd = false;
 		}
@@ -106,10 +106,10 @@ this.legend_read_omens_trance_skill <- this.inherit("scripts/skills/skill", {
         }
         else
         {
-            this.m.Description = "Toggle Read Omens Trance Off"
+            this.m.Description = "Toggle Read Omens Trance Off (Removes at turn end)"
 			foreach( bro in this.World.getPlayerRoster().getAll() )
             {
-                bro.getSkills().addSkill(this.new("scripts/skills/effects/legend_read_omens_effect"));
+                bro.getSkills().add(this.new("scripts/skills/effects/legend_read_omens_effect"));
             }
 			this.getContainer().getActor().setActionPoints(0);
 			this.m.FatigueCost = 0;

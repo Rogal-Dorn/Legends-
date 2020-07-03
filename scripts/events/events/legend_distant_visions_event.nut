@@ -9,7 +9,7 @@ this.legend_distant_visions_event <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 9999.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "This event is currently missing flavor text. Your brother " + Bro.getName() + " has granted you 1 use of Distant Visions. The next town you hover your mouse over will display the current town events in the tooltip, regardless if you\'ve visited the town or not.",
+			Text = "This event is currently missing flavor text. Your brother %bro% has granted you 1 use of Distant Visions. The next town you hover your mouse over will display the current town events in the tooltip, regardless if you\'ve visited the town or not.",
 			Image = "",
 			List = [],
 			Options = [
@@ -36,7 +36,7 @@ this.legend_distant_visions_event <- this.inherit("scripts/events/event", {
 
 	function onPrepare()
 	{
-        Characters = [];
+        local Characters = [];
         foreach(bro in brothers)
         {
             if (bro.getSkills().hasSkill("perk.legend_distant_visions"))
@@ -52,6 +52,10 @@ this.legend_distant_visions_event <- this.inherit("scripts/events/event", {
 
 	function onPrepareVariables( _vars )
 	{
+		_vars.push([
+			"bro",
+			this.m.Bro.getName()
+		]);
 	}
 
 	function onClear()
