@@ -3455,8 +3455,8 @@ fixes potion of obvlision perk issue
 fixes female backgrounds losing their sounds 
 
 14.0.0.10 Toned down druids
-magic classes no longer reliably spawn near attached locations. 
-Runesmiths vampires, zombiemancer, skelemancer, druid and evoker spell groups removed from random pool
+Magic classes no longer reliably spawn near attached locations. 
+Runesmiths, vampires, zombiemancer, skelemancer, druid and evoker spell groups removed from random pool
 slingstaff nerfed to 35-45 damage. Still wrecks armor, just doesn't instagib 
 Druid commander perk tree reworked to no longer be random 
 Druid no longer gives transformations to hires, but can find other druids for hire 
@@ -3464,5 +3464,7 @@ Druid loses houndmaster skills
 Bear Form has 150% hp rather than 200%, this also lowers the damage of the claw attack 
 Berserker no longer has Bear Form 
 
+*fixes*
+footwork and lunge AP costs fixed (thanks motanul)
 
 
