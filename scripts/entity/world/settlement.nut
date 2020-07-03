@@ -303,6 +303,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 					text = "Has current event: " + s.getName()
 				});
 			}
+			this.World.State.setDistantVisionBonus(false);
 		}
 
 		return ret;
