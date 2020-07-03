@@ -23,6 +23,10 @@ this.disbanded_troops_situation <- this.inherit("scripts/entity/world/settlement
 
 	function onAdded( _settlement )
 	{
+		if(this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+		{
+			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * 0.035);
+		}
 		_settlement.resetShop();
 		_settlement.resetRoster(true);
 	}

@@ -293,6 +293,14 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			});
 		}
 
+		if (this.Const.LegendMod.DebugMode)
+		{
+			ret.push({
+				id = 6,
+				type = "hint",
+				text = "Resources: " + this.getResources()
+			});
+		}
 		return ret;
 	}
 
@@ -592,10 +600,10 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 	function addImportedProduce( _p )
 	{
-		if (this.m.ProduceImported.len() >= 6)
-		{
-			this.m.ProduceImported.remove(0);
-		}
+		// if (this.m.ProduceImported.len() >= 6)
+		// {
+		// 	this.m.ProduceImported.remove(0);
+		// }
 
 		this.m.ProduceImported.push(_p);
 	}
@@ -668,7 +676,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 	function getSellPriceMult()
 	{
-		
+
 		local p = this.getPriceMult() * this.World.Assets.getSellPriceMult();
 		local r = this.World.FactionManager.getFaction(this.m.Factions[0]).getPlayerRelation();
 		if (r < 50)
@@ -850,6 +858,28 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		return _instanceID;
 	}
 
+	function resolveSituationByInstance( _instanceID )
+	{
+		foreach( i, e in this.m.Situations )
+		{
+			if (e.getInstanceID() == _instanceID)
+			{
+				e.onResolved(this);
+				this.m.Situations.remove(i);
+				this.m.Modifiers.reset();
+
+				foreach( s in this.m.Situations )
+				{
+					s.onUpdate(this.m.Modifiers);
+				}
+
+				return 0;
+			}
+		}
+
+		return _instanceID;
+	}
+
 	function updateSituations()
 	{
 		local garbage = [];
@@ -947,7 +977,12 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		}
 	}
 
-	function buildAttachedLocation( _num, _script, _terrain, _nearbyTerrain, _additionalDistance = 0, _mustBeNearRoad = false, _clearTile = true, _force = false )
+	function buildNewLocation()
+	{
+		return null;
+	}
+
+	function buildAttachedLocation( _num, _script, _terrain, _nearbyTerrain, _additionalDistance = 0, _mustBeNearRoad = false, _clearTile = true, _force = false)
 	{
 		_num = this.Math.min(_num, this.m.AttachedLocationsMax - this.m.AttachedLocations.len());
 
@@ -958,7 +993,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 		local tries = 0;
 		local myTile = this.getTile();
-
+		local entity;
 		while (_num > 0 && tries++ < 1000)
 		{
 			local x = this.Math.rand(myTile.SquareCoords.X - 2 - _additionalDistance, myTile.SquareCoords.X + 2 + _additionalDistance);
@@ -1070,7 +1105,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 				tile.clear(this.Const.World.DetailType.NotCompatibleWithRoad);
 			}
 
-			local entity = this.World.spawnLocation(_script, tile.Coords);
+			entity = this.World.spawnLocation(_script, tile.Coords);
 			entity.setSettlement(this);
 
 			if (entity.onBuild())
@@ -1092,6 +1127,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		}
 
 		this.updateProduce();
+		return entity;
 	}
 
 	function hasAttachedLocation( _id )
@@ -2074,7 +2110,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		{
 			return;
 		}
-		
+
 		local eventID = "";
 		if (!this.World.Tags.get("HasLegendCampTraining") && this.hasBuilding("building.training_hall"))
 		{
@@ -2129,6 +2165,40 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		}
 
 		this.unregisterThinker();
+	}
+
+	function canBuildLocation()
+	{
+		if (this.m.AttachedLocations.len() >= this.m.AttachedLocationsMax)
+		{
+			return false;
+		}
+
+		local minResources = 50;
+		if (this.isMilitary())
+		{
+			minResources += 50;
+		}
+		switch (this.m.Size)
+		{
+			case 1:
+				minResources += 100;
+				break;
+			case 2:
+				minResources += 150;
+				break;
+			case 3:
+				minResources += 200;
+				break;
+		}
+
+		if (this.getResources() < minResources)
+		{
+			return false;
+		}
+
+		return true;
+
 	}
 
 	function onSerialize( _out )

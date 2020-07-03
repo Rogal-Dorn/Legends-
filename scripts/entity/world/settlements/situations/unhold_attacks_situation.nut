@@ -10,6 +10,21 @@ this.unhold_attacks_situation <- this.inherit("scripts/entity/world/settlements/
 		this.m.IsStacking = false;
 	}
 
+	function onAdded( _settlement )
+	{
+		_settlement.resetRoster(true);
+		if(this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+		{
+			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.025);
+		}
+	}
+
+	function onResolved( _settlement )
+	{
+		_settlement.setResources(_settlement.getResources() + _settlement.getResources() * 0.05);
+	}
+
+
 	function getAddedString( _s )
 	{
 		return _s + " has " + this.m.Name;

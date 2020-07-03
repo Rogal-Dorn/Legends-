@@ -247,6 +247,8 @@ var NewCampaignMenuModule = function () {
 	this.mLegendAllBlueprintsCheckboxLabel = null;
 	this.mLegendRelationshipCheckbox = null;
 	this.mLegendRelationshipCheckboxLabel = null;
+	this.mLegendWorldEconomyCheckbox = null;
+	this.mLegendWorldEconomyCheckboxLabel = null;
 	// generics
 	this.mIsVisible = false;
 };
@@ -1168,6 +1170,21 @@ NewCampaignMenuModule.prototype.buildConfigPage = function () {
 	});
 	this.mLegendRelationshipCheckbox.iCheck('check');
 
+	var row = $('<div class="row"></div>');
+	rightColumn.append(row);
+	var control = $('<div class="control"/>');
+	row.append(control);
+	this.mLegendWorldEconomyCheckbox = $('<input type="checkbox" id="cb-legendworldeconomy"/>');
+	control.append(this.mLegendWorldEconomyCheckbox);
+	this.mLegendWorldEconomyCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendworldeconomy">World Economy</label>');
+	control.append(this.mLegendWorldEconomyCheckboxLabel);
+	this.mLegendWorldEconomyCheckbox.iCheck({
+		checkboxClass: 'icheckbox_flat-orange',
+		radioClass: 'iradio_flat-orange',
+		increaseArea: '30%'
+	});
+	this.mLegendWorldEconomyCheckbox.iCheck('check');
+
 };
 
 NewCampaignMenuModule.prototype.updateMapConfig = function () {
@@ -1615,7 +1632,7 @@ NewCampaignMenuModule.prototype.bindTooltips = function () {
 		contentType: 'ui-element',
 		elementId: 'mapconfig.legendbleedkiller'
 	});
-	
+
 	this.mLegendAllBlueprintsCheckbox.bindTooltip({
 		contentType: 'ui-element',
 		elementId: 'mapconfig.legendallblueprints'
@@ -1623,15 +1640,24 @@ NewCampaignMenuModule.prototype.bindTooltips = function () {
 	this.mLegendAllBlueprintsCheckboxLabel.bindTooltip({
 		contentType: 'ui-element',
 		elementId: 'mapconfig.legendallblueprints'
-	});	
+	});
 
 	this.mLegendRelationshipCheckbox.bindTooltip({
 		contentType: 'ui-element',
-		elementId: 'mapconfig.legendallblueprints'
+		elementId: 'mapconfig.legendrelationship'
 	});
 	this.mLegendRelationshipCheckboxLabel.bindTooltip({
 		contentType: 'ui-element',
 		elementId: 'mapconfig.legendrelationship'
+	});
+
+	this.mLegendWorldEconomyCheckbox.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.legendworldeconomy'
+	});
+	this.mLegendWorldEconomyCheckboxLabel.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.legendworldeconomy'
 	});
 };
 
@@ -1770,12 +1796,12 @@ NewCampaignMenuModule.prototype.unbindTooltips = function () {
 
 	this.mLegendBleedKillerCheckbox.unbindTooltip();
 	this.mLegendBleedKillerCheckboxLabel.unbindTooltip();
-	
+
 	this.mLegendAllBlueprintsCheckbox.unbindTooltip();
-	this.mLegendAllBlueprintsCheckboxLabel.unbindTooltip();	
+	this.mLegendAllBlueprintsCheckboxLabel.unbindTooltip();
 
 	this.mLegendRelationshipCheckbox.unbindTooltip();
-	this.mLegendRelationshipCheckboxLabel.unbindTooltip();	
+	this.mLegendRelationshipCheckboxLabel.unbindTooltip();
 };
 
 
@@ -2111,6 +2137,8 @@ NewCampaignMenuModule.prototype.collectSettings = function () {
 	settings.push(this.mLegendBleedKillerCheckbox.is(":checked"));
 	settings.push(this.mLegendAllBlueprintsCheckbox.is(":checked"));
 	settings.push(this.mLegendRelationshipCheckbox.is(":checked"));
+	settings.push(this.mLegendWorldEconomyCheckbox.is(":checked"));
+
 	return settings;
 }
 

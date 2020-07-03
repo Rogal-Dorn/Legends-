@@ -340,6 +340,16 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 				{
 					if (this.Flags.get("IsCaravanHalfDestroyed"))
 					{
+						if(this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+						{
+							this.m.Caravan.setResources(this.Math.round(this.m.Caravan.getResources() / 2));
+							local L = this.m.Caravan.getInventory();
+							this.m.Caravan.clearInventory();
+							for (local i = 0; i < (L.len() - 1) / 2; i = ++i)
+							{
+								this.m.Caravan.addToInventory(L[i]);
+							}
+						}
 						this.Contract.setScreen("Success2");
 					}
 					else
@@ -1083,9 +1093,79 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 
 		if (this.m.Home.getProduce().len() != 0)
 		{
-			for( local j = 0; j != 3; j = ++j )
+			local produce = 3
+			local L = this.m.Home.getProduce();
+
+			if(this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
 			{
-				party.addToInventory(this.m.Home.getProduce()[this.Math.rand(0, this.m.Home.getProduce().len() - 1)]);
+				local min = 1;
+				switch (this.m.Settlement.getSize()) {
+					case 1:
+						min = 1;
+						break;
+					case 2:
+						min = 3;
+						break;
+					case 3:
+						min = 5;
+						break;
+				}
+
+				local scale = 0.0;
+				switch (this.getDifficulty())
+				{
+					case 1:
+						scale = 0.01;
+						break;
+					case 2:
+						scale = 0.025;
+						break;
+					case 3:
+						scale = 0.05;
+						break;
+					case 4:
+						scale = 0.10;
+				}
+
+				local resources = this.Math.max(min, this.Math.round(scale * this.m.Start.getResources()));
+				this.m.Start.setResources(this.m.Start.getResources() - resources);
+				party.setResources(resources);
+
+				produce = this.Math.max(min, min + this.Math.round(scale * this.m.Home.getResources()));
+				local items = [
+					[1, "supplies/bread_item"],
+					[1, "supplies/roots_and_berries_item"],
+					[1, "supplies/dried_fruits_item"],
+					[1, "supplies/ground_grains_item"],
+					[1, "supplies/bread_item"],
+					[1, "supplies/dried_fish_item"],
+					[1, "supplies/beer_item"],
+					[1, "supplies/bread_item"],
+					[1, "supplies/goat_cheese_item"],
+					[1, "supplies/legend_cooking_spices_item"],
+					[1, "supplies/legend_fresh_fruit_item"],
+					[1, "supplies/legend_fresh_meat_item"],
+					[1, "supplies/legend_pie_item"],
+					[1, "supplies/legend_porridge_item"],
+					[1, "supplies/legend_pudding_item"],
+					[1, "supplies/mead_item"],
+					[1, "supplies/medicine_item"],
+					[1, "supplies/pickled_mushrooms_item"],
+					[1, "supplies/preserved_mead_item"],
+					[1, "supplies/smoked_ham_item"],
+					[1, "supplies/wine_item"]
+				]
+
+				foreach (item in L)
+				{
+					items.push([5, item]);
+				}
+				L = items;
+			}
+
+			for( local j = 0; j < produce; j = ++j )
+			{
+				party.addToInventory(L[this.Math.rand(0, L.len() - 1)]);
 			}
 		}
 

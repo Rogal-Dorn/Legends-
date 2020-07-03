@@ -7,7 +7,6 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 		DefenderSpawnList = null,
 		DefenderSpawnDay = 0,
 		RoamerSpawnList = null,
-		Resources = 0,
 		LastSpawnTime = -1000.0,
 		Loot = null,
 		NamedWeaponsList = null,
@@ -82,11 +81,6 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 		return this.m.Description;
 	}
 
-	function getResources()
-	{
-		return this.m.Resources;
-	}
-
 	function getLoot()
 	{
 		return this.m.Loot;
@@ -124,11 +118,6 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 	function setDefenderSpawnList( _l )
 	{
 		this.m.DefenderSpawnList = _l;
-	}
-
-	function setResources( _r )
-	{
-		this.m.Resources = _r;
 	}
 
 	function setActive( _f )
@@ -679,7 +668,6 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 		this.world_entity.onSerialize(_out);
 		_out.writeU32(this.m.DefenderSpawnDay);
 		_out.writeF32(this.m.LastSpawnTime);
-		_out.writeU16(this.m.Resources);
 		_out.writeString(this.m.Banner);
 		_out.writeBool(this.m.IsVisited);
 		this.m.Loot.onSerialize(_out);
@@ -690,7 +678,10 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 		this.world_entity.onDeserialize(_in);
 		this.m.DefenderSpawnDay = _in.readU32();
 		this.m.LastSpawnTime = _in.readF32();
-		this.m.Resources = _in.readU16();
+		if (_in.getMetaData().getVersion() < 67)
+		{
+			this.m.Resources = _in.readU16();
+		}
 		this.m.Banner = _in.readString();
 		this.m.IsVisited = _in.readBool();
 		this.m.Loot.onDeserialize(_in);

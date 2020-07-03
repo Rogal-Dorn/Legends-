@@ -620,7 +620,7 @@ gt.Const.World.Common.pickItem <- function (_list)
 		{
 			return null;
 		}
-		return this.new(t[1]);
+		return t[1];
 	}
 	return null;
 }

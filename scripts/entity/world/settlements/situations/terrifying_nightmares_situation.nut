@@ -9,6 +9,21 @@ this.terrifying_nightmares_situation <- this.inherit("scripts/entity/world/settl
 		this.m.Icon = "ui/settlement_status/settlement_effect_25.png";
 	}
 
+	function onAdded( _settlement )
+	{
+		_settlement.resetRoster(true);
+		if(this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+		{
+			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.025);
+		}
+	}
+
+	function onResolved( _settlement )
+	{
+		_settlement.setResources(_settlement.getResources() + _settlement.getResources() * 0.05);
+	}
+
+
 	function getAddedString( _s )
 	{
 		return _s + " suffers from " + this.m.Name;

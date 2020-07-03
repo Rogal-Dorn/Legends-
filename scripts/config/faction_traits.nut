@@ -53,6 +53,7 @@ gt.Const.FactionTrait <- {
 			"scripts/factions/actions/receive_ship_action",
 			"scripts/factions/actions/burn_location_action",
 			"scripts/factions/actions/rebuild_location_action",
+			"scripts/factions/actions/legend_build_location_action",
 			"scripts/factions/actions/send_supplies_action",
 			"scripts/factions/actions/add_random_situation_action",
 			"scripts/factions/actions/send_military_army_action",
@@ -105,6 +106,7 @@ gt.Const.FactionTrait <- {
 			"scripts/factions/actions/receive_ship_action",
 			"scripts/factions/actions/burn_location_action",
 			"scripts/factions/actions/rebuild_location_action",
+			"scripts/factions/actions/legend_build_location_action",
 			"scripts/factions/actions/add_random_situation_action"
 		],
 		[

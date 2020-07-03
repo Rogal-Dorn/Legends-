@@ -39,7 +39,8 @@ gt.Const.World.AI <- {
 			AttackZone = 17,
 			Patrol = 18,
 			Sleep = 19,
-			COUNT = 20
+			Dock = 20,
+			COUNT = 21
 		},
 		Name = [
 			"Idle",
@@ -61,7 +62,8 @@ gt.Const.World.AI <- {
 			"Mercenary",
 			"AttackZone",
 			"Patrol",
-			"Sleep"
+			"Sleep",
+			"Dock"
 		],
 		Score = {
 			Zero = 0,

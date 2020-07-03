@@ -19,6 +19,18 @@ this.disappearing_villagers_situation <- this.inherit("scripts/entity/world/sett
 		return _s + " no longer has " + this.m.Name;
 	}
 
+	function onAdded( _settlement )
+	{
+		if(this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+		{
+			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.02);
+		}
+	}
+
+	function onResolved( _settlement )
+	{
+		_settlement.setResources(_settlement.getResources() + _settlement.getResources() * 0.02);
+	}
 	function onUpdate( _modifiers )
 	{
 		_modifiers.BuyPriceMult *= 1.25;

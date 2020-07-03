@@ -3460,3 +3460,8 @@ fixes no names for orc behemoth champions
 fixes perk tooltip for drums of war and drums of life (incorrectly displayed range)
 fixes pimp_vs_harlot event not working with reltionships enabled
 
+*Adds new World Economy Option
+- Caravans, Peasants, Refugees, Supply Runs now all carry a "Resource" value from the departure settlement to the destination settlment (departure settlement decreases by that value and if caravan reaches destination, it will increase by that amount).
+- Caravans, Supply Runs now all carry supplies as well as trade goods (Peasants and Refugees carry supplies only). Number of items is based on percentage of the Resource value at the departure settlemnet.
+-Ships now sail into settlments that have Docks and bring Resources, trade good and supplies. Quantity they bring in is determined by size of settlement.
+-Settlements will use Resources to build new Locations (Via a new Build Situation)

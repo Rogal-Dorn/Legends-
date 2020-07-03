@@ -7,7 +7,8 @@ this.attached_location <- this.inherit("scripts/entity/world/location", {
 		IsActive = true,
 		IsMilitary = false,
 		IsConnected = true,
-		IsUsable = true
+		IsUsable = true,
+		IsNew = false
 	},
 	function getTypeID()
 	{
@@ -21,7 +22,12 @@ this.attached_location <- this.inherit("scripts/entity/world/location", {
 
 	function isActive()
 	{
-		return this.m.IsActive;
+		return this.m.IsActive && !this.m.IsNew;
+	}
+
+	function isNew()
+	{
+		return this.m.IsNew;
 	}
 
 	function isMilitary()
@@ -87,13 +93,27 @@ this.attached_location <- this.inherit("scripts/entity/world/location", {
 		}
 
 		this.m.IsActive = _a;
-		this.getSprite("body").setBrush(_a ? this.m.Sprite : this.m.SpriteDestroyed);
-		this.getSprite("lighting").Visible = _a;
-
 		if (this.m.Settlement != null && !this.m.Settlement.isNull() && this.m.Settlement.isAlive())
 		{
 			this.m.Settlement.onAttachedLocationsChanged();
 		}
+		this.updateSprites();
+	}
+
+	function setNew( _a )
+	{
+		this.m.IsNew = _a;
+	}
+
+	function updateSprites()
+	{
+		this.getSprite("body").setBrush(_a ? this.m.Sprite : this.getDestroyedSprite());
+		this.getSprite("lighting").Visible = _a;
+	}
+
+	function getDestroyedSprite()
+	{
+		return this.m.IsNew ? this.m.Sprite + "_building" : this.SpriteDestroyed;
 	}
 
 	function updateLighting()
@@ -206,6 +226,7 @@ this.attached_location <- this.inherit("scripts/entity/world/location", {
 		}
 
 		_out.writeBool(this.m.IsActive);
+		_out.writeBool(this.m.IsNew);
 	}
 
 	function onDeserialize( _in )
@@ -224,7 +245,12 @@ this.attached_location <- this.inherit("scripts/entity/world/location", {
 			}
 		}
 
-		this.setActive(_in.readBool());
+		local active = _in.readBool();
+		if (_in.getMetaData().getVersion() >= 67)
+		{
+			this.m.IsNew = _in.readBool();
+		}
+		this.setActive(active);
 		this.setAttackable(false);
 		this.getSprite("lighting").Color = this.createColor("ffffff00");
 	}

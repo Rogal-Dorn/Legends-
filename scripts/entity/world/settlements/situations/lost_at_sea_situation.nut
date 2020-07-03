@@ -23,6 +23,10 @@ this.lost_at_sea_situation <- this.inherit("scripts/entity/world/settlements/sit
 
 	function onAdded( _settlement )
 	{
+		if(this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+		{
+			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.05);
+		}
 		_settlement.resetShop();
 		_settlement.resetRoster(true);
 	}
