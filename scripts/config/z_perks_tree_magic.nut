@@ -396,7 +396,8 @@ gt.Const.Perks.MagicTrees <- {
 		gt.Const.Perks.TransmutationMagicTree,
 		gt.Const.Perks.EvocationMagicTree,
 		gt.Const.Perks.AssassinMagicTree,
-		gt.Const.Perks.AstrologyMagicTree
+		gt.Const.Perks.AstrologyMagicTree,
+		gt.Const.Perks.PhilosophyMagicTree
 	],
 	function getRandom(_exclude) 
 	{
