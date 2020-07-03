@@ -1724,7 +1724,7 @@ gt.Const.Strings.PerkName <- {
 	LegendCallLightning = "Call Lightning",
 	LegendScryTrance = "Scry Area (Trance)",
 	LegendReadOmensTrance = "Read Omens (Trance)",
-	LegendDistantVisionsIngredients = "Distant Visions"
+	LegendDistantVisions = "Distant Visions"
 };
 gt.Const.Strings.PerkDescription <- {
 	Relentless = "Don\'t slow down! At all times your Initiative is reduced only by [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] of your accumulated Fatigue, instead of all of it. \n[color=#0b0084]From the Fit perk group[/color]",
@@ -2073,7 +2073,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendCallLightning = "Call down lightning upon your enemies. Grants a 10% chance to unleash lightning on each unit withing 4 tiles. Must have empty hands and it must be raining.",
 	LegendScryTrance = "Scries an area of 12 tiles around the user. The user will be unable to move or act during the trance until cancelled. Minimum of 1 turn channel.",
 	LegendReadOmensTrance = "The user enters a trance, telling all allies of their future. Grants [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] chance to have any attacker require two successful attack rolls in order to hit",
-	LegendDistantVisionsIngredients = "Allows the distant visions ritual in the crafting tent, which visits every town on the map in exchange for a particularly long ritual."
+	LegendDistantVisions = "Allows the user to have distant visions of towns. This perk provides a chance when the user is in reserves to see a specific town's current events and buildings."
 };
 gt.Const.Strings.Tooltip <- {
 	World = {
