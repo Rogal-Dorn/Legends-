@@ -64,13 +64,17 @@ this.legend_scry_trance_skill <- this.inherit("scripts/skills/skill", {
 		return this.skill.isUsable() && !this.m.IsSameTurn;
 	}
 
-	// function onUpdate( _properties )
-	// {
-	// 	if (this.m.IsInTrance)
-	// 	{
-	// 		this.Tactical.queryTilesInRange( this.getContainer().getActor().getTile(), 1, 12, false, [], this.onQueryTile, this.getContainer().getActor().getFaction());
-	// 	}
-	// }
+	function onUpdate( _properties )
+	{
+		if (_properties.IsStunned)
+		{
+			if (this.m.IsInTrance)
+			{
+				this.swapOff();
+				this.m.IsSameTurn = false;
+			}
+		}
+	}
 
 	function onTurnStart()
 	{
@@ -86,21 +90,31 @@ this.legend_scry_trance_skill <- this.inherit("scripts/skills/skill", {
 	{
         if (this.m.IsInTrance)
         {
-            this.m.Description = "Toggle Scry Trance On (12 Tile Scry until cancelled)";
-			this.m.FatigueCost = this.m.BaseFatigueCost;
-			this.m.ActionPointCost = this.m.BaseAPCost;	
+            this.swapOff();
         }
         else
         {
-            this.m.Description = "Toggle Scry Trance Off"
-			this.Tactical.queryTilesInRange(_user.getTile(), 1, 12, false, [], this.onQueryTile, _user.getFaction());
-			this.getContainer().getActor().setActionPoints(0);
-			this.m.FatigueCost = 0;
-			this.m.ActionPointCost = 0;
-			this.m.IsSameTurn = true;
+            this.swapOn( _user );
         }
         this.m.IsInTrance = !this.m.IsInTrance;
 		return true;
+	}
+
+	function swapOff()
+	{
+		this.m.Description = "Toggle Scry Trance On (12 Tile Scry until cancelled)";
+		this.m.FatigueCost = this.m.BaseFatigueCost;
+		this.m.ActionPointCost = this.m.BaseAPCost;	
+	}
+
+	function swapOn( _user )
+	{
+		this.m.Description = "Toggle Scry Trance Off"
+		this.Tactical.queryTilesInRange(_user.getTile(), 1, 12, false, [], this.onQueryTile, _user.getFaction());
+		this.getContainer().getActor().setActionPoints(0);
+		this.m.FatigueCost = 0;
+		this.m.ActionPointCost = 0;
+		this.m.IsSameTurn = true;
 	}
 
 	function onQueryTile( _tile, _tag )
