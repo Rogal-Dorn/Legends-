@@ -5,9 +5,9 @@ this.perk_legend_distant_visions <- this.inherit("scripts/skills/skill", {
 	},
 	function create()
 	{
-		this.m.ID = "perk.legend_distant_visions";
-		this.m.Name = this.Const.Strings.PerkName.LegendDistantVisionsIngredients;
-		this.m.Description = this.Const.Strings.PerkDescription.LegendDistantVisionsIngredients;
+		this.m.ID = "perk.legend_distant_visions";	
+		this.m.Name = this.Const.Strings.PerkName.LegendDistantVisions
+		this.m.Description = this.Const.Strings.PerkDescription.LegendDistantVisions;
 		this.m.Icon = "ui/perks/MaxMedsT2.png"; //todo: icon
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.Perk;
@@ -18,8 +18,11 @@ this.perk_legend_distant_visions <- this.inherit("scripts/skills/skill", {
 
 	function onNewDay()
 	{
-		
-		if ( this.Math.rand(1,100) <= this.m.BaseChance + this.m.DaysNotProcced*.25 )
+		if (!this.getContainer().getActor().isInReserves())
+		{
+			return;
+		}
+		if ( this.Math.rand(1,100) <= this.m.BaseChance + (this.m.DaysNotProcced/4) )
 		{
 			if ( this.World.State.getDistantVisionBonus() ) //just on the off chance 2 different brothers would proc it in the same newDay(), this wouldn't pop 2 events
 			{
