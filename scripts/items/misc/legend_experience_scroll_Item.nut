@@ -74,6 +74,7 @@ this.legend_experience_scroll_item <- this.inherit("scripts/items/item", {
         else
         {
             local effect = this.new("scripts/skills/effects_world/new_trained_effect");
+            effect.m.Description = "Flavor text here"; //todo flavor text
             effect.m.Duration = 3;
             effect.m.XPGainMult = 1.5;
             effect.m.Icon = "skills/experience_scroll_effect.png"; //todo icon
