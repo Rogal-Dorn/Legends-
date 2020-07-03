@@ -2993,6 +2993,15 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/scroll_circle.png",
 		IconDisabled = "ui/perks/scroll_circle_bw.png",
 		Const = "LegendPerkScrollIngredients"
+	},
+	{
+		ID = "perk.legend_scholar",
+		Script = "scripts/skills/perks/perk_legend_scholar",
+		Name = this.Const.Strings.PerkName.LegendScholar,
+		Tooltip = this.Const.Strings.PerkDescription.LegendScholar,
+		Icon = "ui/perks/scholar_circle.png",
+		IconDisabled = "ui/perks/scholar_circle_bw.png",
+		Const = "LegendScholar"
 	}
 ];
 gt.Const.Perks.PerkDefs <- {};
