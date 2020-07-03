@@ -2957,6 +2957,42 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/storm_circle.png",
 		IconDisabled = "ui/perks/storm_circle_bw.png",
 		Const = "LegendCallLightning"
+	},
+	{
+		ID = "perk.legend_scry_trance",
+		Script = "scripts/skills/perks/perk_legend_scry_trance",
+		Name = this.Const.Strings.PerkName.LegendScryTrance,
+		Tooltip = this.Const.Strings.PerkDescription.LegendScryTrance,
+		Icon = "ui/perks/storm_circle.png",
+		IconDisabled = "ui/perks/storm_circle_bw.png",
+		Const = "LegendScryTrance"
+	},
+	{
+		ID = "perk.legend_read_omens_trance",
+		Script = "scripts/skills/perks/perk_legend_read_omens_trance",
+		Name = this.Const.Strings.PerkName.LegendReadOmensTrance,
+		Tooltip = this.Const.Strings.PerkDescription.LegendReadOmensTrance,
+		Icon = "ui/perks/storm_circle.png",
+		IconDisabled = "ui/perks/storm_circle_bw.png",
+		Const = "LegendReadOmensTrance"
+	},
+	{
+		ID = "perk.legend_distant_visions",
+		Script = "scripts/skills/perks/perk_legend_distant_visions",
+		Name = this.Const.Strings.PerkName.LegendDistantVisions,
+		Tooltip = this.Const.Strings.PerkDescription.LegendDistantVisions,
+		Icon = "ui/perks/storm_circle.png",
+		IconDisabled = "ui/perks/storm_circle_bw.png",
+		Const = "LegendDistantVisions"
+	},
+	{
+		ID = "perk.legend_perk_scroll_ingredients",
+		Script = "scripts/skills/perks/perk_legend_perk_scroll_ingredients",
+		Name = this.Const.Strings.PerkName.LegendPerkScrollIngredients,
+		Tooltip = this.Const.Strings.PerkDescription.LegendPerkScrollIngredients,
+		Icon = "ui/perks/MaxMedsT2.png",
+		IconDisabled = "ui/perks/MaxMedsT2_bw.png",
+		Const = "LegendPerkScrollIngredients"
 	}
 ];
 gt.Const.Perks.PerkDefs <- {};

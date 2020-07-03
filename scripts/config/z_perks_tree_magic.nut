@@ -343,6 +343,37 @@ gt.Const.Perks.AssassinMagicTree <- {
 	]
 };
 
+gt.Const.Perks.AstrologyMagicTree <- {
+	ID = "AstrologyMagicTree",
+	Descriptions = [
+		"astrology"
+	],
+	Tree = [
+		[],
+		[gt.Const.Perks.PerkDefs.LegendScryTrance],
+		[],
+		[],
+		[gt.Const.Perks.PerkDefs.LegendReadOmensTrance],
+		[gt.Const.Perks.PerkDefs.LegendDistantVisions],
+		[]
+	]
+}
+
+gt.Const.Perks.PhilosophyMagicTree <- {
+	ID = "PhilosophyMagicTree",
+	Descriptions = [
+		"philosophy"
+	],
+	Tree = [
+		[],
+		[],
+		[],
+		[],
+		[],
+		[gt.Const.Perks.PerkDefs.LegendPerkScrollIngredients]
+	]
+}
+
 gt.Const.Perks.MagicTrees <- {
 	Tree = [
 		gt.Const.Perks.ValaChantMagicTree,
@@ -364,7 +395,8 @@ gt.Const.Perks.MagicTrees <- {
 		gt.Const.Perks.ConjurationMagicTree,
 		gt.Const.Perks.TransmutationMagicTree,
 		gt.Const.Perks.EvocationMagicTree,
-		gt.Const.Perks.AssassinMagicTree
+		gt.Const.Perks.AssassinMagicTree,
+		gt.Const.Perks.AstrologyMagicTree
 	],
 	function getRandom(_exclude) 
 	{

@@ -6,7 +6,7 @@ this.perk_legend_distant_visions <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.ID = "perk.legend_distant_visions";	
-		this.m.Name = this.Const.Strings.PerkName.LegendDistantVisions
+		this.m.Name = this.Const.Strings.PerkName.LegendDistantVisions;
 		this.m.Description = this.Const.Strings.PerkDescription.LegendDistantVisions;
 		this.m.Icon = "ui/perks/MaxMedsT2.png"; //todo: icon
 		this.m.Type = this.Const.SkillType.Perk;
