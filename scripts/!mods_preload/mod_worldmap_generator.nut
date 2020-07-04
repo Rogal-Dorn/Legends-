@@ -266,6 +266,7 @@
 				}
 			}
 
+
 			while (num > 0)
 			{
 				local r = this.Math.rand(1, 10);
