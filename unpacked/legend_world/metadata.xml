@@ -61,6 +61,197 @@
 	<sprite id="figure_greenwood_schrat_01" offsetY="20" ic="FF213A56" width="68" height="106" img="world_entity\party\figure_greenwood_schrat_01.png" top="-43" bottom="23" />
 	<sprite id="figure_stollwurm_01" offsetY="20" ic="FF295956" width="68" height="106" img="world_entity\party\figure_stollwurm_01.png" left="-24" right="22" top="-43" bottom="21" />
 	<sprite id="figure_white_direwolf_01" offsetY="20" ic="FF232832" width="68" height="106" img="world_entity\party\figure_white_direwolf_01.png" left="-22" right="26" top="-46" bottom="0" />
-	<sprite id="figure_skin_ghoul_01" offsetY="20" ic="FF33383C" width="68" height="106" img="world_entity\party\figure_skin_ghoul_01.png" left="-17" right="21" top="-41" bottom="1" /> 
- <sprite id="figure_skin_ghoul_02" offsetY="20" ic="FF33383C" width="68" height="106" img="world_entity\party\figure_skin_ghoul_02.png" left="-17" right="21" top="-41" bottom="1" /> 
+	<sprite id="figure_skin_ghoul_01" offsetY="20" ic="FF33383C" width="68" height="106" img="world_entity\party\figure_skin_ghoul_01.png" left="-17" right="21" top="-41" bottom="1" />
+ <sprite id="figure_skin_ghoul_02" offsetY="20" ic="FF33383C" width="68" height="106" img="world_entity\party\figure_skin_ghoul_02.png" left="-17" right="21" top="-41" bottom="1" />
+
+  <sprite id="legend_world_amber_collector_01_upgrade" ic="FF556A6F" width="239" height="145" img="world_settlement\amber_collector_01_upgrade.png" left="-118" right="116" top="-73" bottom="63" />
+  <sprite id="legend_world_bee_keeper_01_upgrade" ic="FF324B54" width="214" height="125" img="world_settlement\bee_keeper_01_upgrade.png" left="-107" right="85" />
+  <sprite id="legend_world_blast_furnace_01_upgrade" ic="FF28383E" img="world_settlement\blast_furnace_01_upgrade.png" left="-96" right="97" />
+  <sprite id="legend_world_brewery_01_upgrade" ic="FF2A3B44" width="251" height="159" img="world_settlement\brewery_01_upgrade.png" left="-125" right="126" top="-80" bottom="78" />
+  <sprite id="legend_world_copper_vein_01_upgrade" ic="FF283A45" width="220" height="142" img="world_settlement\copper_vein_01_upgrade.png" top="-59" bottom="69" />
+  <sprite id="legend_world_dye_maker_01_upgrade" ic="FF2F4851" width="212" height="131" img="world_settlement\dye_maker_01_upgrade.png" left="-104" right="106" />
+  <sprite id="legend_world_fishing_huts_01_upgrade" ic="FF314953" width="242" height="155" img="world_settlement\fishing_huts_01_upgrade.png" left="-121" right="109" />
+  <sprite id="legend_world_fletchers_hut_01_upgrade" ic="FF324A54" width="196" height="149" img="world_settlement\fletchers_hut_01_upgrade.png" left="-98" right="88" />
+  <sprite id="legend_world_fortified_outpost_01_upgrade" ic="FF283944" img="world_settlement\fortified_outpost_01_upgrade.png" left="-122" right="123" />
+  <sprite id="legend_world_gatherers_hut_01_upgrade" ic="FF24353E" width="215" height="142" img="world_settlement\gatherers_hut_01_upgrade.png" left="-106" right="108" />
+  <sprite id="legend_world_gem_mine_01_upgrade" ic="FF2B373C" width="267" height="146" img="world_settlement\gem_mine_01_upgrade.png" left="-133" right="134" top="-73" bottom="67" />
+  <sprite id="legend_world_goat_herd_01_upgrade" ic="FF28363B" img="world_settlement\goat_herd_01_upgrade.png" left="-130" right="131" />
+  <sprite id="legend_world_gold_mine_01_upgrade" ic="FF293840" width="249" height="152" img="world_settlement\gold_mine_01_upgrade.png" left="-124" right="125" top="-76" bottom="64" />
+  <sprite id="legend_world_herbalists_grove_01_upgrade" ic="FF304B4E" width="220" height="168" img="world_settlement\herbalists_grove_01_upgrade.png" left="-104" right="110" top="-75" bottom="81" />
+  <sprite id="legend_world_hunter_01_upgrade" ic="FF203039" width="254" height="164" img="world_settlement\hunter_01_upgrade.png" left="-127" right="107" top="-64" bottom="76" />
+  <sprite id="legend_world_iron_mine_01_upgrade" ic="FF243341" img="world_settlement\iron_mine_01_upgrade.png" />
+  <sprite id="legend_world_leather_tanner_01_upgrade" ic="FF23333E" width="256" height="150" img="world_settlement\leather_tanner_01_upgrade.png" left="-104" right="112" top="-76" bottom="73" />
+  <sprite id="legend_world_lumber_camp_01_upgrade" ic="FF283B42" img="world_settlement\lumber_camp_01_upgrade.png" />
+  <sprite id="legend_world_militia_trainingcamp_01_upgrade" ic="FF3A505C" img="world_settlement\militia_trainingcamp_01_upgrade.png" />
+  <sprite id="legend_world_mushroom_grove_01_upgrade" ic="FF37474B" img="world_settlement\mushroom_grove_01_upgrade.png" left="-97" right="98" />
+  <sprite id="legend_world_orchard_01_upgrade" ic="FF264142" width="221" height="167" img="world_settlement\orchard_01_upgrade.png" left="-110" right="111" />
+  <sprite id="legend_world_ore_smelters_01_upgrade" ic="FF28373C" img="world_settlement\ore_smelters_01_upgrade.png" left="-107" right="108" />
+  <sprite id="legend_world_peat_pit_01_upgrade" ic="FF23343A" width="236" height="167" img="world_settlement\peat_pit_01_upgrade.png" top="-84" bottom="82" />
+  <sprite id="legend_world_pig_farm_01_upgrade" ic="FF324A54" width="254" height="178" img="world_settlement\pig_farm_01_upgrade.png" left="-118" right="88" />
+  <sprite id="legend_world_salt_mine_01_upgrade" ic="FF394750" width="239" height="148" img="world_settlement\salt_mine_01_upgrade.png" left="-119" right="120" top="-74" bottom="64" />
+  <sprite id="legend_world_stone_watchtower_01_upgrade" ic="FF233036" width="260" height="188" img="world_settlement\stone_watchtower_01_upgrade.png" left="-111" right="107" top="-84" bottom="94" />
+  <sprite id="legend_world_trapper_01_upgrade" ic="FF203039" width="216" height="142" img="world_settlement\trapper_01_upgrade.png" left="-106" right="102" top="-65" bottom="71" />
+  <sprite id="legend_world_wheat_farm_01_upgrade" ic="FF314B58" img="world_settlement\wheat_farm_01_upgrade.png" />
+  <sprite id="legend_world_winery_01_upgrade" ic="FF263D3D" img="world_settlement\winery_01_upgrade.png" />
+  <sprite id="legend_world_wooden_watchtower_01_upgrade" ic="FF212E36" width="203" height="176" img="world_settlement\wooden_watchtower_01_upgrade.png" left="-100" right="92" top="-77" bottom="85" />
+  <sprite id="legend_world_wool_spinner_01_upgrade" ic="FF324A54" width="240" height="150" img="world_settlement\wool_spinner_01_upgrade.png" left="-101" right="85" />
+  <sprite id="legend_world_workshop_01_upgrade" ic="FF28373D" img="world_settlement\workshop_01_upgrade.png" />
+  <sprite id="legend_world_houses_01_01_upgrade" offsetY="-4" ic="FF2C434C" width="292" height="183" img="world_settlement\houses_01_01_upgrade.png" left="-146" right="138" />
+  <sprite id="legend_world_houses_01_02_upgrade" offsetY="-4" ic="FF2B414A" img="world_settlement\houses_01_02_upgrade.png" />
+  <sprite id="legend_world_houses_02_01_upgrade" offsetY="-4" ic="FF344C56" width="260" height="167" img="world_settlement\houses_02_01_upgrade.png" left="-128" right="131" />
+  <sprite id="legend_world_houses_02_02_upgrade" offsetY="-4" ic="FF395460" width="275" height="168" img="world_settlement\houses_02_02_upgrade.png" left="-136" right="138" />
+  <sprite id="legend_world_houses_03_01_upgrade" offsetY="-4" ic="FF2D3C4A" width="282" height="180" img="world_settlement\houses_03_01_upgrade.png" top="-90" bottom="74" />
+  <sprite id="legend_world_houses_03_02_upgrade" offsetY="-4" ic="FF2F3F4E" width="249" height="176" img="world_settlement\houses_03_02_upgrade.png" left="-124" right="125" top="-88" bottom="78" />
+  <sprite id="legend_world_stronghold_02_upgrade" offsetY="15" ic="FF353E41" width="255" height="224" img="world_settlement\stronghold_02_upgrade.png" left="-127" right="128" top="-106" bottom="112" />
+  <sprite id="legend_world_stronghold_03_upgrade" offsetY="15" ic="FF313A3F" img="world_settlement\stronghold_03_upgrade.png" />
+  <sprite id="legend_world_townhall_01_upgrade" offsetY="5" ic="FF35505D" img="world_settlement\townhall_01_upgrade.png" />
+  <sprite id="legend_world_townhall_02_upgrade" offsetY="5" ic="FF2E4350" width="241" height="208" img="world_settlement\townhall_02_upgrade.png" left="-111" right="121" top="-100" bottom="104" />
+  <sprite id="legend_world_townhall_03_upgrade" offsetY="5" ic="FF2C3946" width="294" height="249" img="world_settlement\townhall_03_upgrade.png" left="-133" right="147" top="-114" bottom="112" />
+  <sprite id="legend_world_stronghold_01_upgrade" offsetY="10" ic="FF2C363B" img="world_settlement\stronghold_01_upgrade.png" />
+  <sprite id="legend_world_harbor_s_upgrade" offsetY="-15" ic="FF21313E" width="193" height="121" img="world_settlement\harbor_n_upgrade.png" left="-96" right="97" top="-61" bottom="55" />
+  <sprite id="legend_world_harbor_sw_upgrade" offsetX="15" offsetY="5" ic="FF23333F" width="201" height="137" img="world_settlement\harbor_ne_upgrade.png" left="-100" right="101" top="-69" bottom="55" />
+  <sprite id="legend_world_harbor_se_upgrade" offsetX="-10" offsetY="5" ic="FF22323E" width="199" height="133" img="world_settlement\harbor_nw_upgrade.png" left="-99" right="100" top="-67" bottom="61" />
+  <sprite id="legend_world_harbor_n_upgrade" offsetY="-19" ic="FF233442" width="198" height="126" img="world_settlement\harbor_s_upgrade.png" left="-99" right="93" />
+  <sprite id="legend_world_harbor_nw_upgrade" offsetX="15" offsetY="-10" ic="FF23333F" width="194" height="139" img="world_settlement\harbor_se_upgrade.png" top="-70" bottom="68" />
+  <sprite id="legend_world_harbor_ne_upgrade" offsetX="-5" offsetY="-9" ic="FF23333F" width="202" height="149" img="world_settlement\harbor_sw_upgrade.png" />
+
+  <sprite id="legend_world_bee_keeper_01" ic="FF2D4752" width="214" height="125" img="world_settlement\bee_keeper_01.png" left="-103" right="99" top="-56" bottom="60" />
+  <sprite id="legend_world_copper_vein_01" ic="FF293B46" width="220" height="142" img="world_settlement\copper_vein_01.png" top="-59" bottom="69" />
+  <sprite id="legend_world_goat_herd_01" ic="FF35414A" width="261" height="153" img="world_settlement\goat_herd_01.png" left="-125" right="131" top="-74" bottom="72" />
+  <sprite id="legend_world_houses_01_01" offsetY="-4" b7="0" ic="FF334E58" img="world_settlement\houses_01_01.png" />
+  <sprite id="legend_world_houses_01_02" offsetY="-4" b7="0" ic="FF2C424C" img="world_settlement\houses_01_02.png" />
+  <sprite id="legend_world_houses_02_01" offsetY="-4" b7="0" ic="FF344C56" img="world_settlement\houses_02_01.png" />
+  <sprite id="legend_world_houses_02_02" offsetY="-4" b7="0" ic="FF38545F" img="world_settlement\houses_02_02.png" left="-137" right="138" />
+  <sprite id="legend_world_houses_03_01" offsetY="-4" b7="0" ic="FF334454" img="world_settlement\houses_03_01.png" />
+  <sprite id="legend_world_houses_03_02" offsetY="-4" b7="0" ic="FF354759" width="249" height="176" img="world_settlement\houses_03_02.png" left="-124" right="125" top="-88" bottom="78" />
+  <sprite id="legend_world_hunter_01" ic="FF263746" width="254" height="164" img="world_settlement\hunter_01.png" left="-112" right="114" top="-74" bottom="82" />
+  <sprite id="legend_world_mushroom_grove_01" ic="FF425256" img="world_settlement\mushroom_grove_01.png" left="-97" right="98" />
+  <sprite id="legend_world_orchard_01" ic="FF2B4A49" width="221" height="167" img="world_settlement\orchard_01.png" left="-110" right="111" />
+  <sprite id="legend_world_peat_pit_01" ic="FF25373D" img="world_settlement\peat_pit_01.png" />
+  <sprite id="legend_world_pig_farm_01" ic="FF3B5867" width="254" height="178" img="world_settlement\pig_farm_01.png" left="-113" right="127" />
+  <sprite id="legend_world_stronghold_01" offsetY="10" ic="FF313B3F" img="world_settlement\stronghold_01.png" />
+  <sprite id="legend_world_stronghold_02" offsetY="15" ic="FF374145" width="255" height="224" img="world_settlement\stronghold_02.png" left="-127" right="128" top="-106" bottom="112" />
+  <sprite id="legend_world_stronghold_03" offsetY="15" ic="FF353F46" width="294" height="246" img="world_settlement\stronghold_03.png" top="-121" bottom="123" />
+  <sprite id="legend_world_townhall_01" offsetY="5" ic="FF3B5967" img="world_settlement\townhall_01.png" />
+  <sprite id="legend_world_townhall_02" offsetY="5" ic="FF354E5C" width="241" height="208" img="world_settlement\townhall_02.png" left="-120" right="121" top="-100" bottom="104" />
+  <sprite id="legend_world_townhall_03" offsetY="5" ic="FF313E4F" width="294" height="249" img="world_settlement\townhall_03.png" left="-133" right="147" top="-114" bottom="112" />
+  <sprite id="legend_world_wheat_farm_01" offsetY="-4" ic="FF3F667C" img="world_settlement\wheat_farm_01.png" />
+  <sprite id="legend_world_brewery_01" ic="FF2D424E" img="world_settlement\brewery_01.png" left="-125" right="126" />
+  <sprite id="legend_world_dye_maker_01" ic="FF2C4457" width="212" height="131" img="world_settlement\dye_maker_01.png" left="-102" right="106" top="-66" bottom="62" />
+  <sprite id="legend_world_fishing_huts_01" offsetY="-4" ic="FF304955" width="242" height="155" img="world_settlement\fishing_huts_01.png" left="-121" right="109" top="-64" bottom="76" />
+  <sprite id="legend_world_gem_mine_01" ic="FF2D3A41" width="267" height="146" img="world_settlement\gem_mine_01.png" left="-133" right="134" top="-73" bottom="67" />
+  <sprite id="legend_world_gold_mine_01" ic="FF2F3D47" width="249" height="152" img="world_settlement\gold_mine_01.png" left="-124" right="125" top="-76" bottom="64" />
+  <sprite id="legend_world_lumber_camp_01" ic="FF314851" width="254" height="136" img="world_settlement\lumber_camp_01.png" top="-68" bottom="62" />
+  <sprite id="legend_world_winery_01" ic="FF2C4A46" img="world_settlement\winery_01.png" />
+  <sprite id="legend_world_wool_spinner_01" ic="FF3A5761" width="240" height="150" img="world_settlement\wool_spinner_01.png" top="-61" bottom="71" />
+  <sprite id="legend_world_amber_collector_01" ic="FF556A70" width="239" height="145" img="world_settlement\amber_collector_01.png" left="-118" right="116" top="-73" bottom="63" />
+  <sprite id="legend_world_blast_furnace_01" ic="FF2B363F" width="193" height="150" img="world_settlement\blast_furnace_01.png" left="-95" right="93" top="-69" bottom="75" />
+  <sprite id="legend_world_fletchers_hut_01" ic="FF3B5761" width="196" height="149" img="world_settlement\fletchers_hut_01.png" left="-98" right="92" />
+  <sprite id="legend_world_herbalists_grove_01" ic="FF325053" width="220" height="168" img="world_settlement\herbalists_grove_01.png" left="-104" right="110" top="-75" bottom="81" />
+  <sprite id="legend_world_iron_mine_01" ic="FF27374D" img="world_settlement\iron_mine_01.png" />
+  <sprite id="legend_world_ore_smelters_01" ic="FF33444E" img="world_settlement\ore_smelters_01.png" left="-107" right="108" />
+  <sprite id="legend_world_salt_mine_01" ic="FF47565E" width="239" height="148" img="world_settlement\salt_mine_01.png" left="-119" right="120" top="-74" bottom="64" />
+  <sprite id="legend_world_stone_watchtower_01" ic="FF293742" width="260" height="188" img="world_settlement\stone_watchtower_01.png" left="-111" right="107" top="-84" bottom="94" />
+  <sprite id="legend_world_trapper_01" ic="FF293A47" width="216" height="142" img="world_settlement\trapper_01.png" left="-106" right="108" />
+  <sprite id="legend_world_wooden_watchtower_01" ic="FF23343F" width="203" height="176" img="world_settlement\wooden_watchtower_01.png" left="-100" right="92" top="-77" bottom="85" />
+  <sprite id="legend_world_workshop_01" ic="FF26353F" width="226" height="140" img="world_settlement\workshop_01.png" left="-107" right="113" />
+  <sprite id="legend_world_gatherers_hut_01" ic="FF2B3F4A" width="215" height="142" img="world_settlement\gatherers_hut_01.png" left="-106" right="108" />
+  <sprite id="legend_world_fortified_outpost_01" ic="FF344957" width="245" height="190" img="world_settlement\fortified_outpost_01.png" />
+  <sprite id="legend_world_leather_tanner_01" ic="FF243542" width="256" height="150" img="world_settlement\leather_tanner_01.png" left="-101" right="115" />
+  <sprite id="legend_world_militia_trainingcamp_01" ic="FF46606E" img="world_settlement\militia_trainingcamp_01.png" />
+  <sprite id="legend_world_harbor_s" offsetY="-15" ic="FF233441" img="world_settlement\harbor_n.png" left="-96" right="97" />
+  <sprite id="legend_world_harbor_sw" offsetX="15" offsetY="5" ic="FF253643" img="world_settlement\harbor_ne.png" left="-100" right="101" />
+  <sprite id="legend_world_harbor_se" offsetX="-10" offsetY="5" ic="FF253643" img="world_settlement\harbor_nw.png" left="-99" right="100" />
+  <sprite id="legend_world_harbor_n" offsetY="-20" ic="FF253745" img="world_settlement\harbor_s.png" />
+  <sprite id="legend_world_harbor_nw" offsetX="15" offsetY="-10" ic="FF243643" width="194" height="139" img="world_settlement\harbor_se.png" top="-70" bottom="68" />
+  <sprite id="legend_world_harbor_ne" offsetX="-5" offsetY="-10" ic="FF243642" img="world_settlement\harbor_sw.png" />
+  <sprite id="legend_world_ship_01" ic="FF2E404E" img="world_settlement\ship_01.png" />
+  <sprite id="legend_world_ship_02" ic="FF324553" img="world_settlement\ship_02.png" />
+  <sprite id="legend_world_wheat_field_01" ic="FF4D88A7" img="world_settlement\wheat_field_01.png" />
+  <sprite id="legend_world_wheat_field_02" ic="FF4D88A7" width="148" height="90" img="world_settlement\wheat_field_02.png" top="-39" bottom="45" />
+  <sprite id="legend_world_orchard_detail_01" ic="FF2E544F" img="world_settlement\orchard_detail_01.png" left="-32" right="33" />
+  <sprite id="legend_world_orchard_detail_02" ic="FF2D514D" img="world_settlement\orchard_detail_02.png" />
+  <sprite id="legend_world_brewery_detail_01" ic="FF2B5545" img="world_settlement\brewery_detail_01.png" left="-93" right="94" />
+  <sprite id="legend_world_brewery_detail_02" ic="FF2B5445" img="world_settlement\brewery_detail_02.png" />
+  <sprite id="legend_world_winery_detail_01" ic="FF2A5443" width="128" height="111" img="world_settlement\winery_detail_01.png" left="-62" right="64" />
+  <sprite id="legend_world_winery_detail_02" ic="FF295240" width="112" height="89" img="world_settlement\winery_detail_02.png" top="-45" bottom="41" />
+  <sprite id="legend_world_amber_collector_01_ruins" ic="FF556A6F" width="239" height="145" img="world_settlement\amber_collector_01_ruins.png" left="-118" right="116" top="-73" bottom="63" />
+  <sprite id="legend_world_bee_keeper_01_ruins" ic="FF324B54" width="214" height="125" img="world_settlement\bee_keeper_01_ruins.png" left="-107" right="85" />
+  <sprite id="legend_world_blast_furnace_01_ruins" ic="FF28383E" img="world_settlement\blast_furnace_01_ruins.png" left="-96" right="97" />
+  <sprite id="legend_world_brewery_01_ruins" ic="FF2A3B44" width="251" height="159" img="world_settlement\brewery_01_ruins.png" left="-125" right="126" top="-80" bottom="78" />
+  <sprite id="legend_world_copper_vein_01_ruins" ic="FF283A45" width="220" height="142" img="world_settlement\copper_vein_01_ruins.png" top="-59" bottom="69" />
+  <sprite id="legend_world_dye_maker_01_ruins" ic="FF2F4851" width="212" height="131" img="world_settlement\dye_maker_01_ruins.png" left="-104" right="106" />
+  <sprite id="legend_world_fishing_huts_01_ruins" ic="FF314953" width="242" height="155" img="world_settlement\fishing_huts_01_ruins.png" left="-121" right="109" />
+  <sprite id="legend_world_fletchers_hut_01_ruins" ic="FF324A54" width="196" height="149" img="world_settlement\fletchers_hut_01_ruins.png" left="-98" right="88" />
+  <sprite id="legend_world_fortified_outpost_01_ruins" ic="FF283944" img="world_settlement\fortified_outpost_01_ruins.png" left="-122" right="123" />
+  <sprite id="legend_world_gatherers_hut_01_ruins" ic="FF24353E" width="215" height="142" img="world_settlement\gatherers_hut_01_ruins.png" left="-106" right="108" />
+  <sprite id="legend_world_gem_mine_01_ruins" ic="FF2B373C" width="267" height="146" img="world_settlement\gem_mine_01_ruins.png" left="-133" right="134" top="-73" bottom="67" />
+  <sprite id="legend_world_goat_herd_01_ruins" ic="FF28363B" img="world_settlement\goat_herd_01_ruins.png" left="-130" right="131" />
+  <sprite id="legend_world_gold_mine_01_ruins" ic="FF293840" width="249" height="152" img="world_settlement\gold_mine_01_ruins.png" left="-124" right="125" top="-76" bottom="64" />
+  <sprite id="legend_world_herbalists_grove_01_ruins" ic="FF304B4E" width="220" height="168" img="world_settlement\herbalists_grove_01_ruins.png" left="-104" right="110" top="-75" bottom="81" />
+  <sprite id="legend_world_hunter_01_ruins" ic="FF203039" width="254" height="164" img="world_settlement\hunter_01_ruins.png" left="-127" right="107" top="-64" bottom="76" />
+  <sprite id="legend_world_iron_mine_01_ruins" ic="FF243341" img="world_settlement\iron_mine_01_ruins.png" />
+  <sprite id="legend_world_leather_tanner_01_ruins" ic="FF23333E" width="256" height="150" img="world_settlement\leather_tanner_01_ruins.png" left="-104" right="112" top="-76" bottom="73" />
+  <sprite id="legend_world_lumber_camp_01_ruins" ic="FF283B42" img="world_settlement\lumber_camp_01_ruins.png" />
+  <sprite id="legend_world_militia_trainingcamp_01_ruins" ic="FF3A505C" img="world_settlement\militia_trainingcamp_01_ruins.png" />
+  <sprite id="legend_world_mushroom_grove_01_ruins" ic="FF37474B" img="world_settlement\mushroom_grove_01_ruins.png" left="-97" right="98" />
+  <sprite id="legend_world_orchard_01_ruins" ic="FF264142" width="221" height="167" img="world_settlement\orchard_01_ruins.png" left="-110" right="111" />
+  <sprite id="legend_world_ore_smelters_01_ruins" ic="FF28373C" img="world_settlement\ore_smelters_01_ruins.png" left="-107" right="108" />
+  <sprite id="legend_world_peat_pit_01_ruins" ic="FF23343A" width="236" height="167" img="world_settlement\peat_pit_01_ruins.png" top="-84" bottom="82" />
+  <sprite id="legend_world_pig_farm_01_ruins" ic="FF324A54" width="254" height="178" img="world_settlement\pig_farm_01_ruins.png" left="-118" right="88" />
+  <sprite id="legend_world_salt_mine_01_ruins" ic="FF394750" width="239" height="148" img="world_settlement\salt_mine_01_ruins.png" left="-119" right="120" top="-74" bottom="64" />
+  <sprite id="legend_world_stone_watchtower_01_ruins" ic="FF233036" width="260" height="188" img="world_settlement\stone_watchtower_01_ruins.png" left="-111" right="107" top="-84" bottom="94" />
+  <sprite id="legend_world_trapper_01_ruins" ic="FF203039" width="216" height="142" img="world_settlement\trapper_01_ruins.png" left="-106" right="102" top="-65" bottom="71" />
+  <sprite id="legend_world_wheat_farm_01_ruins" ic="FF314B58" img="world_settlement\wheat_farm_01_ruins.png" />
+  <sprite id="legend_world_winery_01_ruins" ic="FF263D3D" img="world_settlement\winery_01_ruins.png" />
+  <sprite id="legend_world_wooden_watchtower_01_ruins" ic="FF212E36" width="203" height="176" img="world_settlement\wooden_watchtower_01_ruins.png" left="-100" right="92" top="-77" bottom="85" />
+  <sprite id="legend_world_wool_spinner_01_ruins" ic="FF324A54" width="240" height="150" img="world_settlement\wool_spinner_01_ruins.png" left="-101" right="85" />
+  <sprite id="legend_world_workshop_01_ruins" ic="FF28373D" img="world_settlement\workshop_01_ruins.png" />
+  <sprite id="legend_world_stone_watchtower_01_light" ic="FF55CBE6" width="260" height="188" img="world_settlement\stone_watchtower_01_light.png" left="-107" right="57" top="-43" bottom="71" />
+  <sprite id="legend_world_wooden_watchtower_01_light" ic="FF5FC6F0" width="203" height="176" img="world_settlement\wooden_watchtower_01_light.png" left="-37" right="31" top="-20" bottom="52" />
+  <sprite id="legend_world_stronghold_01_light" offsetY="10" ic="FF6AF7EE" width="252" height="199" img="world_settlement\stronghold_01_light.png" left="-104" right="112" top="-60" bottom="84" />
+  <sprite id="legend_world_stronghold_02_light" offsetY="15" ic="FF61D3EF" width="255" height="224" img="world_settlement\stronghold_02_light.png" left="-123" right="121" top="-91" bottom="105" />
+  <sprite id="legend_world_stronghold_03_light" offsetY="15" ic="FF2E4B61" width="294" height="246" img="world_settlement\stronghold_03_light.png" top="-92" bottom="86" />
+  <sprite id="legend_world_townhall_01_light" offsetY="5" ic="FF67DCEA" width="244" height="171" img="world_settlement\townhall_01_light.png" left="-91" right="105" top="-63" bottom="53" />
+  <sprite id="legend_world_townhall_02_light" offsetY="5" ic="FF5BD2EE" width="241" height="208" img="world_settlement\townhall_02_light.png" left="-105" right="109" top="-54" bottom="52" />
+  <sprite id="legend_world_townhall_03_light" offsetY="5" ic="FF54C6E3" width="294" height="249" img="world_settlement\townhall_03_light.png" left="-110" right="144" top="-108" bottom="60" />
+  <sprite id="legend_world_houses_01_01_light" offsetY="-4" b7="0" ic="FF86CFE4" width="292" height="183" img="world_settlement\houses_01_01_light.png" left="-108" right="118" top="-72" bottom="46" />
+  <sprite id="legend_world_houses_01_02_light" offsetY="-4" b7="0" ic="FF5FBED9" width="234" height="170" img="world_settlement\houses_01_02_light.png" left="-83" right="101" top="-81" bottom="59" />
+  <sprite id="legend_world_houses_02_01_light" offsetY="-4" b7="0" ic="FF5EE1EA" width="260" height="167" img="world_settlement\houses_02_01_light.png" left="-112" right="102" top="-60" bottom="58" />
+  <sprite id="legend_world_houses_02_02_light" offsetY="-4" b7="0" ic="FF6BD8E9" width="275" height="168" img="world_settlement\houses_02_02_light.png" left="-102" right="90" top="-72" bottom="78" />
+  <sprite id="legend_world_houses_03_01_light" offsetY="-4" b7="0" ic="FF51F3F7" width="282" height="180" img="world_settlement\houses_03_01_light.png" left="-95" right="105" top="-64" bottom="54" />
+  <sprite id="legend_world_houses_03_02_light" offsetY="-4" b7="0" ic="FF63FCFF" width="249" height="176" img="world_settlement\houses_03_02_light.png" left="-123" right="115" />
+  <sprite id="legend_world_fortified_outpost_01_light" ic="FF3D6B87" width="245" height="190" img="world_settlement\fortified_outpost_01_light.png" top="-95" bottom="93" />
+  <sprite id="legend_world_militia_trainingcamp_01_light" ic="FF315369" width="220" height="146" img="world_settlement\militia_trainingcamp_01_light.png" top="-72" bottom="70" />
+  <sprite id="legend_world_houses_01_01_ruins" offsetY="-4" ic="FF2C434C" width="292" height="183" img="world_settlement\houses_01_01_ruins.png" left="-146" right="138" />
+  <sprite id="legend_world_houses_01_02_ruins" offsetY="-4" ic="FF2B414A" img="world_settlement\houses_01_02_ruins.png" />
+  <sprite id="legend_world_houses_02_01_ruins" offsetY="-4" ic="FF344C56" width="260" height="167" img="world_settlement\houses_02_01_ruins.png" left="-128" right="131" />
+  <sprite id="legend_world_houses_02_02_ruins" offsetY="-4" ic="FF395460" width="275" height="168" img="world_settlement\houses_02_02_ruins.png" left="-136" right="138" />
+  <sprite id="legend_world_houses_03_01_ruins" offsetY="-4" ic="FF2D3C4A" width="282" height="180" img="world_settlement\houses_03_01_ruins.png" top="-90" bottom="74" />
+  <sprite id="legend_world_houses_03_02_ruins" offsetY="-4" ic="FF2F3F4E" width="249" height="176" img="world_settlement\houses_03_02_ruins.png" left="-124" right="125" top="-88" bottom="78" />
+  <sprite id="legend_world_stronghold_02_ruins" offsetY="15" ic="FF353E41" width="255" height="224" img="world_settlement\stronghold_02_ruins.png" left="-127" right="128" top="-106" bottom="112" />
+  <sprite id="legend_world_stronghold_02_undead" offsetY="15" ic="FF363B3D" width="255" height="224" img="world_settlement\stronghold_02_undead.png" left="-127" right="128" top="-106" bottom="112" />
+  <sprite id="legend_world_stronghold_02_undead_lights" offsetY="15" ic="FF8CAD4E" width="255" height="224" img="world_settlement\stronghold_02_undead_lights.png" left="-51" right="67" top="-20" bottom="86" />
+  <sprite id="legend_world_stronghold_03_ruins" offsetY="15" ic="FF313A3F" img="world_settlement\stronghold_03_ruins.png" />
+  <sprite id="legend_world_stronghold_03_undead" offsetY="18" ic="FF303639" width="294" height="246" img="world_settlement\stronghold_03_undead.png" top="-124" bottom="121" />
+  <sprite id="legend_world_stronghold_03_undead_lights" offsetY="18" ic="FF829F47" width="294" height="246" img="world_settlement\stronghold_03_undead_lights.png" left="-94" right="80" top="-75" bottom="91" />
+  <sprite id="legend_world_townhall_01_ruins" offsetY="5" ic="FF35505D" img="world_settlement\townhall_01_ruins.png" />
+  <sprite id="legend_world_townhall_01_undead" offsetY="5" ic="FF374952" width="244" height="171" img="world_settlement\townhall_01_undead.png" left="-122" right="118" />
+  <sprite id="legend_world_townhall_01_undead_lights" offsetY="5" ic="FF5F8594" width="244" height="171" img="world_settlement\townhall_01_undead_lights.png" left="-65" right="59" top="-46" bottom="32" />
+  <sprite id="legend_world_townhall_02_ruins" offsetY="5" ic="FF2E4350" width="241" height="208" img="world_settlement\townhall_02_ruins.png" left="-111" right="121" top="-100" bottom="104" />
+  <sprite id="legend_world_townhall_02_undead" offsetY="5" ic="FF33424A" width="241" height="208" img="world_settlement\townhall_02_undead.png" left="-110" right="116" top="-100" bottom="104" />
+  <sprite id="legend_world_townhall_02_undead_lights" offsetY="5" ic="FF8BAB4C" width="241" height="208" img="world_settlement\townhall_02_undead_lights.png" left="-87" right="117" top="-59" bottom="49" />
+  <sprite id="legend_world_townhall_03_ruins" offsetY="5" ic="FF2C3946" width="294" height="249" img="world_settlement\townhall_03_ruins.png" left="-133" right="147" top="-114" bottom="112" />
+  <sprite id="legend_world_townhall_03_undead" offsetY="5" ic="FF30363C" width="294" height="249" img="world_settlement\townhall_03_undead.png" left="-133" right="147" top="-114" bottom="112" />
+  <sprite id="legend_world_townhall_03_undead_lights" offsetY="5" ic="FF8FB04D" width="294" height="249" img="world_settlement\townhall_03_undead_lights.png" left="-134" right="76" top="-43" bottom="85" />
+  <sprite id="legend_world_stronghold_01_ruins" offsetY="10" ic="FF2C363B" img="world_settlement\stronghold_01_ruins.png" />
+  <sprite id="legend_world_stronghold_01_undead" offsetY="10" ic="FF2D3235" img="world_settlement\stronghold_01_undead.png" />
+  <sprite id="legend_world_stronghold_01_undead_lights" offsetY="10" width="252" height="199" img="world_settlement\stronghold_01_undead_lights.png" top="-53" bottom="75" />
+  <sprite id="legend_world_harbor_s_ruins" offsetY="-15" ic="FF21313E" width="193" height="121" img="world_settlement\harbor_n_ruins.png" left="-96" right="97" top="-61" bottom="55" />
+  <sprite id="legend_world_harbor_sw_ruins" offsetX="15" offsetY="5" ic="FF23333F" width="201" height="137" img="world_settlement\harbor_ne_ruins.png" left="-100" right="101" top="-69" bottom="55" />
+  <sprite id="legend_world_harbor_se_ruins" offsetX="-10" offsetY="5" ic="FF22323E" width="199" height="133" img="world_settlement\harbor_nw_ruins.png" left="-99" right="100" top="-67" bottom="61" />
+  <sprite id="legend_world_harbor_n_ruins" offsetY="-19" ic="FF233442" width="198" height="126" img="world_settlement\harbor_s_ruins.png" left="-99" right="93" />
+  <sprite id="legend_world_harbor_nw_ruins" offsetX="15" offsetY="-10" ic="FF23333F" width="194" height="139" img="world_settlement\harbor_se_ruins.png" top="-70" bottom="68" />
+  <sprite id="legend_world_harbor_ne_ruins" offsetX="-5" offsetY="-9" ic="FF23333F" width="202" height="149" img="world_settlement\harbor_sw_ruins.png" />
+
  </brush>
