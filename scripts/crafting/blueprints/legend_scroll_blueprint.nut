@@ -41,7 +41,7 @@ this.legend_scroll_blueprint <- this.inherit("scripts/crafting/blueprint", {
 				item.m.Name = "Random Perk Scroll";
 				break;
 			case 2:
-				item.m.Description = "Use the scroll on a character to increase experience gains by +50% for the next 3 battles";
+				item.m.Description = "Use the scroll on a character to increase experience gains by +50% for the next 3 battles. This will override any other current trained effects.";
 				item.m.Name = "Battle Scroll";
 				break;
 			case 3:

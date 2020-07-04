@@ -88,7 +88,12 @@ this.legend_scroll_item <- this.inherit("scripts/items/item", {
 					} while ( _actor.getSkills().hasSkill( pT[r][r2].ID ) ) 	
 					_actor.getSkills().add(this.new( pT[r][r2].Script ));
 					break;
+
 				case 2:
+					if (_actor.getSkills().hasSkill("effects.trained"))
+					{
+						_actor.getSkills().removeByID("effects.trained"));
+					}
 					local effect = this.new("scripts/skills/effects_world/new_trained_effect");
 					effect.m.Description = "Flavor text here"; //todo flavor text
 					effect.m.Duration = 3;
@@ -100,7 +105,7 @@ this.legend_scroll_item <- this.inherit("scripts/items/item", {
         }
 		if (  effect != null )
         {
-			effet.m.Smart = true;	
+			effect.m.Smart = true;	
         }
 		else {
 			_actor.getSkills().add(this.new("scripts/skills/effects/legend_scroll_effect"));
