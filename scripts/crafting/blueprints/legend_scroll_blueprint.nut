@@ -34,7 +34,7 @@ this.legend_scroll_blueprint <- this.inherit("scripts/crafting/blueprint", {
 	{
 		local item = this.new("scripts/items/misc/legend_scroll_item");
 		local r = this.Math.rand(1, 2);
-
+		item.m.Selection = r;
 		switch(r) {
 			case 1:
 				item.m.Description = "Use the scroll on a character to grant them 1 free perk from their own tree";
