@@ -1,90 +1,43 @@
-this.legend_perk_scroll_item <- this.inherit("scripts/items/item", {
+this.legend_ancient_scroll_item <- this.inherit("scripts/items/trade/trading_good_item", {
 	m = {},
 	function create()
 	{
-		this.m.ID = "misc.legend_perk_scroll";
-		this.m.Name = "Random Perk Scroll";
-		this.m.Description = "A scroll with secrets held by the creator.";
-		this.m.Icon = "consumables/paint_red.png"; //todo icon
-		this.m.SlotType = this.Const.ItemSlot.None;
-		this.m.ItemType = this.Const.Items.ItemType.Usable;
-		this.m.IsDroppedAsLoot = true;
-		this.m.IsAllowedInBag = false;
-		this.m.IsUsable = true;
-		this.m.Value = 1000;
+		this.trading_good_item.create();
+		this.m.ID = "misc.ancient_scroll";
+		this.m.Name = "Ancient Scroll";
+		this.m.Description = "A torn-up scroll with knowledge unseen for centuries. It can be translated by a character with the interpretation perk in the crafting tent. Highly valuable to some historians, although it is useless to many.";
+		this.m.Icon = "trade/inventory_trade_06.png"; //todo ancient scroll icon
+		this.m.Value = 50;
 	}
 
-	function getTooltip()
+	function getBuyPrice()
 	{
-		local result = [
-			{
-				id = 1,
-				type = "title",
-				text = this.getName()
-			},
-			{
-				id = 2,
-				type = "description",
-				text = this.getDescription()
-			}
-		];
-		result.push({
-			id = 66,
-			type = "text",
-			text = this.getValueString()
-		});
-
-		if (this.getIconLarge() != null)
+		if (this.m.IsSold)
 		{
-			result.push({
-				id = 3,
-				type = "image",
-				image = this.getIconLarge(),
-				isLarge = true
-			});
-		}
-		else
-		{
-			result.push({
-				id = 3,
-				type = "image",
-				image = this.getIcon()
-			});
+			return this.getSellPrice();
 		}
 
-		result.push({
-			id = 65,
-			type = "text",
-			text = "Right-click to use on a character to grant them a random perk from their own perk tree. May be used up to 1 time"
-		});
-		return result;
+		if (("State" in this.World) && this.World.State != null && this.World.State.getCurrentTown() != null)
+		{
+			return this.Math.max(this.getSellPrice(), this.Math.ceil(this.getValue() * this.getPriceMult() * this.World.State.getCurrentTown().getBuyPriceMult() * this.Const.World.Assets.BaseBuyPrice ));
+		}
+
+		return this.item.getBuyPrice();
 	}
 
-	function playInventorySound( _eventType )
+	function getSellPrice()
 	{
-		this.Sound.play("sounds/scribble.wav", this.Const.Sound.Volume.Inventory);
-	}
+		if (this.m.IsBought)
+		{
+			return this.getBuyPrice();
+		}
 
-	function onUse( _actor, _item = null )
-	{
-		if ( _actor.getSkills().hasSkill("effects.perk_scroll") )
-        {
-            return false;
-        }
-        else
-        {
-            local pT = _actor.getBackground().getPerkTree();
-            
-			do {
-				local r = this.Math.rand(0, pT.len()-1);
-       	     	local r2 = this.Math.rand(0, pT[r].len()-1);
-			} while ( _actor.getSkills().hasSkill( pT[r][r2].ID ) ) 	
-            _actor.getSkills().add(this.new( pT[r][r2].Script ));
-            _actor.getSkills().add(this.new("scripts/skills/effects/legend_perk_scroll_effect"));
-        }
+		if (("State" in this.World) && this.World.State != null && this.World.State.getCurrentTown() != null)
+		{
+			return this.Math.floor(this.getValue() * this.World.State.getCurrentTown().getSellPriceMult() *  this.Const.World.Assets.BaseSellPrice);
+		}
 
-		this.Sound.play("sounds/scribble.wav", this.Const.Sound.Volume.Inventory);
-		return true;
+		return this.item.getSellPrice();
 	}
 
 });
