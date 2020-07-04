@@ -370,7 +370,7 @@ gt.Const.Perks.PhilosophyMagicTree <- {
 		[],
 		[],
 		[gt.Const.Perks.PerkDefs.LegendScholar],
-		[gt.Const.Perks.PerkDefs.LegendPerkScrollIngredients]
+		[gt.Const.Perks.PerkDefs.LegendScrollIngredients]
 	]
 }
 

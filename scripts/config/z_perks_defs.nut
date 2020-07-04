@@ -2986,13 +2986,13 @@ gt.Const.Perks.PerkDefObjects <- [
 		Const = "LegendDistantVisions"
 	},
 	{
-		ID = "perk.legend_perk_scroll_ingredients",
-		Script = "scripts/skills/perks/perk_legend_perk_scroll_ingredients",
-		Name = this.Const.Strings.PerkName.LegendPerkScrollIngredients,
-		Tooltip = this.Const.Strings.PerkDescription.LegendPerkScrollIngredients,
+		ID = "perk.legend_scroll_ingredients",
+		Script = "scripts/skills/perks/perk_legend_scroll_ingredients",
+		Name = this.Const.Strings.PerkName.LegendScrollIngredients,
+		Tooltip = this.Const.Strings.PerkDescription.LegendScrollIngredients,
 		Icon = "ui/perks/scroll_circle.png",
 		IconDisabled = "ui/perks/scroll_circle_bw.png",
-		Const = "LegendPerkScrollIngredients"
+		Const = "LegendScrollIngredients"
 	},
 	{
 		ID = "perk.legend_scholar",
