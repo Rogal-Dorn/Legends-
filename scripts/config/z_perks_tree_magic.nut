@@ -374,6 +374,21 @@ gt.Const.Perks.PhilosophyMagicTree <- {
 	]
 }
 
+gt.Const.Perks.AlchemyMagicTree <- {
+	ID = "AlchemyMagicTree"
+	Descriptions = [
+		"alchemy"
+	],
+	Tree = [
+		[],
+		[],
+		[],
+		[gt.Const.Perks.PerkDefs.LegendCitrinitas],
+		[],
+		[]
+	]
+}
+
 gt.Const.Perks.MagicTrees <- {
 	Tree = [
 		gt.Const.Perks.ValaChantMagicTree,
