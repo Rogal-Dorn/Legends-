@@ -77,7 +77,7 @@ this.vampire <- this.inherit("scripts/entity/tactical/actor", {
 				{
 					local r = this.Math.rand(1, 100);
 					local loot;
-					if (r <= 5)
+					if (r <= 3)
 					{
 						loot = this.new("scripts/items/trade/legend_ancient_scroll_item");
 						loot.drop(_tile);
