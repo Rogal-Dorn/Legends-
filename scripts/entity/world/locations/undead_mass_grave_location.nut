@@ -33,7 +33,8 @@ this.undead_mass_grave_location <- this.inherit("scripts/entity/world/location",
 			"loot/silver_bowl_item",
 			"loot/signet_ring_item",
 			"loot/golden_chalice_item",
-			"loot/ancient_gold_coins_item"
+			"loot/ancient_gold_coins_item",
+			"trade/legend_ancient_scroll_item"
 		];
 
 		if (this.Const.DLC.Unhold)
