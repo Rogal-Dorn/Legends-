@@ -616,10 +616,6 @@ gt.Const.World.Common.pickItem <- function (_list)
 		{
 			continue;
 		}
-		if (t[1] == "")
-		{
-			return null;
-		}
 		return t[1];
 	}
 	return null;

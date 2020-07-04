@@ -44,64 +44,68 @@ foreach(s in gt.Const.World.Settlements.Master)
 	s.Percentage <- s.Amount / total;
 }
 
-gt.Const.World.Settlements.LegendsMaster <- [
+
+gt.Const.World.Settlements.LegendsWorldMaster <- [
 	{
 		Ratio = 0.30,
-		List = [
+		Types = this.Const.World.Settlements.Legends_villages_coast,
+		Sizes = [
 			{
 				Ratio = 5,
 				MinAmount = 1,
-				List = this.Const.World.Settlements.Villages_small_coast
+				Size = 1
 			},
 			{
-				Ratio = 3
+				Ratio = 3,
 				MinAmount = 1,
-				List = this.Const.World.Settlements.Villages_medium_coast
+				Size = 2
 			},
 			{
-				Ratio = 2
+				Ratio = 2,
 				MinAmount = 1,
-				List = this.Const.World.Settlements.Villages_large_coast
+				Size = 3
 			}
 		]
 	},
 	{
 		Ratio = 0.45,
-		List = [
+		Types = Const.World.Settlements.Legends_villages,
+		Sizes = [
 			{
 				Ratio = 5,
 				MinAmount = 1,
-				List = this.Const.World.Settlements.Villages_small
+				Size = 1
 			},
 			{
 				Ratio = 3,
 				MinAmount = 1,
-				List = this.Const.World.Settlements.Villages_medium
+				Size = 2,
 			},
 			{
 				Ratio = 2,
 				MinAmount = 2,
-				List = this.Const.World.Settlements.Villages_large
+				Size = 3
 			}
 		]
 	},
 	{
 		Ratio = 0.25,
-		List = [
+		Types = Const.World.Settlements.Legends_fortifications,
+		Sizes = [
 			{
 				Ratio = 5,
 				MinAmount = 1,
-				List = this.Const.World.Settlements.Fortifications_small
+				Size = 1
 			},
 			{
 				Ratio = 3,
 				MinAmount = 1,
-				List = this.Const.World.Settlements.Fortifications_medium
+				Size = 2
 			},
 			{
 				Ratio = 2,
 				MinAmount = 2,
-				List = this.Const.World.Settlements.Fortifications_large
+				Size = 3
 			}
 		]
 	}

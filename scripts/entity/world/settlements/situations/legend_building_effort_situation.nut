@@ -37,9 +37,10 @@ this.legend_building_effort_situation <- this.inherit("scripts/entity/world/sett
 
 	function onAdded( _settlement )
 	{
+		this.logInfo("***ADDED LEGEND BUILDIG EFFORT SITUATION TO " + _settlement.getName());
 		_settlement.resetShop();
 
-		a = _settlement.buildNewLocation();
+		local a = _settlement.buildNewLocation();
 
 		if (a == null)
 		{

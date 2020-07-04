@@ -10,6 +10,25 @@ this.attached_location <- this.inherit("scripts/entity/world/location", {
 		IsUsable = true,
 		IsNew = false
 	},
+
+	function getSpriteName()
+	{
+		if (this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+		{
+			return "legend_" + this.m.Sprite;
+		}
+		return this.m.Sprite;
+	}
+
+	function getSpriteDestroyedName()
+	{
+		if (this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+		{
+			return "legend_" + this.m.SpriteDestroyed;
+		}
+		return this.m.SpriteDestroyed;
+	}
+
 	function getTypeID()
 	{
 		return this.m.ID;
@@ -65,6 +84,10 @@ this.attached_location <- this.inherit("scripts/entity/world/location", {
 
 	function getName()
 	{
+		if (this.m.IsNew) {
+			return "New " + this.world_entity.getName() + " Construction";
+		}
+
 		return this.m.IsActive ? this.world_entity.getName() : "Ruins";
 	}
 
@@ -107,13 +130,21 @@ this.attached_location <- this.inherit("scripts/entity/world/location", {
 
 	function updateSprites()
 	{
-		this.getSprite("body").setBrush(_a ? this.m.Sprite : this.getDestroyedSprite());
-		this.getSprite("lighting").Visible = _a;
+		local s = this.getSprite("body")
+		if (s != null)
+		{
+			s.setBrush(this.m.IsActive ? this.getSpriteName() : this.getDestroyedSprite());
+		}
+		s = this.getSprite("lighting")
+		if (s != null)
+		{
+			s.Visible = this.m.IsActive || this.m.IsNew;
+		}
 	}
 
 	function getDestroyedSprite()
 	{
-		return this.m.IsNew ? this.m.Sprite + "_building" : this.SpriteDestroyed;
+		return this.m.IsNew ? this.getSpriteName() + "_upgrade" : this.getSpriteDestroyedName();
 	}
 
 	function updateLighting()
@@ -200,7 +231,7 @@ this.attached_location <- this.inherit("scripts/entity/world/location", {
 		this.setDiscovered(true);
 		this.setShowName(false);
 		local body = this.addSprite("body");
-		body.setBrush(this.m.Sprite);
+		body.setBrush(this.getSpriteName());
 		local lighting = this.addSprite("lighting");
 		this.setSpriteColorization("lighting", false);
 		lighting.Alpha = 0;
