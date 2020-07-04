@@ -3002,6 +3002,15 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/scholar_circle.png",
 		IconDisabled = "ui/perks/scholar_circle_bw.png",
 		Const = "LegendScholar"
+	},
+	{
+		ID = "perk.legend_citrinitas",
+		Script = "scripts/skills/perks/perk_legend_citrinitas",
+		Name = this.Const.Strings.PerkName.LegendCitrinitas,
+		Tooltip = this.Const.Strings.PerkName.LegendCitrinitas,
+		Icon = "ui/perks/citrinitas_circle.png",
+		IconDisabled = "ui/perks/citrinitas_circle_bw.png",
+		Const = "LegendCitrinitas"
 	}
 ];
 gt.Const.Perks.PerkDefs <- {};
