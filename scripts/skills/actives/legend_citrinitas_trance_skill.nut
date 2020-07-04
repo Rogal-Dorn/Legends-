@@ -37,11 +37,11 @@ this.legend_citrinitas_trance_skill <- this.inherit("scripts/skills/actives/lege
 
 			if (a.getFaction() == _user.getFaction())
 			{
-                a.getSkills().add(this.new("scripts/skills/effects/legend_drums_of_life_effect"));
+                // a.getSkills().add(this.new("scripts/skills/effects/legend_drums_of_life_effect"));
 				a.getSkills().add(this.new("scripts/skills/effects/legend_drums_of_war_effect"));
 			}
 		}
-        this.getContainer().add(this.new("scripts/skills/effects/legend_drums_of_life_effect"));
+        // this.getContainer().add(this.new("scripts/skills/effects/legend_drums_of_life_effect"));
 		this.getContainer().add(this.new("scripts/skills/effects/legend_drums_of_war_effect"));
     }
 
