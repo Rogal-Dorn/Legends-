@@ -7,7 +7,7 @@ this.legend_trance_abstract <- this.inherit("scripts/skills/skill", {
         ToggleOnDescription = "",
         ToggleOffDescription = ""
     },
-    function create() //trance abstract for trances which are wrapped into 1 active
+    function create() //this trance abstract is for trances which are wrapped into 1 active, ee read omens or scry trances
     {   
         this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.NonTargeted + 5;
