@@ -12,9 +12,9 @@ this.legend_scry_trance_skill <- this.inherit("scripts/skills/actives/legend_tra
 			"sounds/combat/hawk_01.wav",
 			"sounds/combat/hawk_02.wav"
 		];
-		
-		this.m.Description = "Toggle Scry Trance On (12 Tile Scry until cancelled)";
-		this.m.ToggleOnDescription = "Toggle Scry Trance On (12 tile hawk-scry until cancelled)";
+
+		this.m.Description = "Toggle Scry Trance On (12 Tile Scry at the beginning of turn until cancelled)";
+		this.m.ToggleOnDescription = this.m.Description;
 		this.m.ToggleOffDescription = "Toggle Scry Trance Off";
 	}
 
