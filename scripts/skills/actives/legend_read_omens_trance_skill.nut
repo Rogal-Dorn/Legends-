@@ -14,7 +14,7 @@ this.legend_read_omens_trance_skill <- this.inherit("scripts/skills/actives/lege
 		];
 
 		this.m.Description = "Toggle Read Omens On (+10% reroll on hit";
-		this.m.ToggleOnDescription = "ToggleRead Omens On (+10% reroll on hit";
+		this.m.ToggleOnDescription = this.m.Description;
 		this.m.ToggleOffDescription = "Toggle Read Omens Off";
 	}
 
