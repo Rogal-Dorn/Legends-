@@ -44,8 +44,70 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		ConnectedToByRoads = [],
 		IsCoastal = false,
 		IsMilitary = false,
-		IsActive = true
+		IsActive = true,
+		IsUpgrading = false
 	},
+
+	function setUpgrading (_v)
+	{
+		this.m.IsUpgrading = _v;
+	}
+
+	function isUpgrading()
+	{
+		return this.m.IsUpgrading;
+	}
+
+	function setSize(_v)
+	{
+		this.m.Size = _v;
+		if (this.m.Name == "")
+		{
+			this.m.Name = this.getRandomName(this.m.Names[_v - 1]);
+			if (this.hasLabel("name"))
+			{
+				this.getLabel("name").Text = this.m.Name;
+			}
+		}
+	}
+
+	function changeSize(_v)
+	{
+		this.setSize(this.Math.min(3, _v));
+		this.setUpgrading(false);
+		this.setActive(true, false, true);
+	}
+
+	function getDraftList()
+	{
+		return this.m.DraftList;
+	}
+
+	function getStablesList()
+	{
+		return this.m.StablesList;
+	}
+
+	function getHousesMin()
+	{
+		return this.m.HousesMin;
+	}
+
+	function getHousesMax()
+	{
+		return this.m.HousesMax;
+	}
+
+	function getHousesType()
+	{
+		return this.m.HousesType;
+	}
+
+	function getAttachedLocationsMax()
+	{
+		return this.m.AttachedLocationsMax;
+	}
+
 	function getAttachedLocations()
 	{
 		return this.m.AttachedLocations;
@@ -254,7 +316,17 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 				type = "description",
 				text = this.getDescription()
 			}
-		];
+		]
+
+		if (this.m.IsVisited && this.isUpgrading())
+		{
+			ret.push({
+				id = 3,
+				type = "description",
+				icon = "ui/icons/special.png",
+				text = "Is currently being upgraded"
+			});
+		}
 
 		if (this.m.IsVisited)
 		{
@@ -293,13 +365,69 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			});
 		}
 
+		if (this.Const.LegendMod.DebugMode)
+		{
+			ret.push({
+				id = 6,
+				type = "hint",
+				text = "Resources: " + this.getResources()
+			});
+		}
+
+		if (this.m.IsVisited && this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+		{
+			ret.push({
+				id = 6,
+				type = "hint",
+				text = "Wealth " + this.getWealth() + " %"
+			});
+		}
+
 		return ret;
+	}
+
+	function getWealth()
+	{
+		local baseLevel = 0.0;
+
+		if (this.isMilitary())
+		{
+			baseLevel += 50.0;
+		}
+		switch (this.getSize())
+		{
+			case 1:
+				baseLevel += 100.0;
+				break;
+			case 2:
+				baseLevel += 150.0;
+				break;
+			case 3:
+				baseLevel += 200.0;
+				break;
+		}
+		return this.Math.round(100.0 * ((1.0 * this.getResources()) / baseLevel));
 	}
 
 	function getImagePath()
 	{
 		return this.m.UISprite;
 	}
+
+	function getSpriteName()
+	{
+		local s = this.m.Sprite;
+		if (this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+		{
+			s = "legend_" + this.m.Sprite;
+		}
+		if (this.isUpgrading())
+		{
+			s += "_upgrade"
+		}
+		return s
+	}
+
 
 	function getUIContractInformation()
 	{
@@ -346,23 +474,73 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		return result;
 	}
 
+	function getUIDescription()
+	{
+		return this.m.UIDescription;
+	}
+
+	function getUIBackground()
+	{
+		return this.m.UIBackground;
+	}
+
+	function getUIBackgroundCenter()
+	{
+		return this.m.UIBackgroundCenter;
+	}
+
+	function getUIBackgroundLeft()
+	{
+		return this.m.UIBackgroundLeft;
+	}
+
+	function getUIBackgroundRight()
+	{
+		return this.m.UIBackgroundRight;
+	}
+
+	function getUIRamp()
+	{
+		return this.m.UIRamp;
+	}
+
+	function getUIRampPathway()
+	{
+		return this.m.UIRampPathway;
+	}
+
+	function getUIMood()
+	{
+		return this.m.UIMood;
+	}
+
+	function getUIForeground()
+	{
+		return this.m.UIForeground;
+	}
+
+	function getLighting()
+	{
+		return this.m.Lighting
+	}
+
 	function getUIInformation()
 	{
 		local night = !this.World.getTime().IsDaytime;
 		local water = this.m.IsCoastal ? "ui/settlements/water_01" : null;
 		local result = {
 			Title = this.getName(),
-			SubTitle = this.m.UIDescription,
+			SubTitle = this.getUIDescription(),
 			Assets = this.UIDataHelper.convertAssetsInformationToUIData(),
 			HeaderImagePath = null,
-			Background = this.m.UIBackground + (night ? "_night" : "") + ".jpg",
-			BackgroundCenter = this.m.UIBackgroundCenter + (night ? "_night" : "") + ".png",
-			BackgroundLeft = this.m.UIBackgroundLeft + (night ? "_night" : "") + ".png",
-			BackgroundRight = this.m.UIBackgroundRight + (night ? "_night" : "") + ".png",
-			Ramp = this.m.UIRamp + (night ? "_night" : "") + ".png",
-			RampPathway = this.m.UIRampPathway != null ? this.m.UIRampPathway + (night ? "_night" : "") + ".png" : null,
-			Mood = this.m.UIMood + ".png",
-			Foreground = this.m.UIForeground != null ? this.m.UIForeground + (night ? "_night" : "") + ".png" : null,
+			Background = this.getUIBackground() + (night ? "_night" : "") + ".jpg",
+			BackgroundCenter = this.getUIBackgroundCenter() + (night ? "_night" : "") + ".png",
+			BackgroundLeft = this.getUIBackgroundLeft() + (night ? "_night" : "") + ".png",
+			BackgroundRight = this.getUIBackgroundRight() + (night ? "_night" : "") + ".png",
+			Ramp = this.getUIRamp() + (night ? "_night" : "") + ".png",
+			RampPathway = this.getUIRampPathway() != null ? this.getUIRampPathway() + (night ? "_night" : "") + ".png" : null,
+			Mood = this.getUIMood() + ".png",
+			Foreground = this.getUIForeground() != null ? this.getUIForeground() + (night ? "_night" : "") + ".png" : null,
 			Water = water != null ? water + (night ? "_night" : "") + ".png" : null,
 			Slots = [],
 			Situations = [],
@@ -447,14 +625,14 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		local night = !this.World.getTime().IsDaytime;
 		local water = this.m.IsCoastal ? "ui/settlements/water_01" : null;
 		local result = {
-			Background = this.m.UIBackground + (night ? "_night" : "") + ".jpg",
-			BackgroundCenter = this.m.UIBackgroundCenter + (night ? "_night" : "") + ".png",
-			BackgroundLeft = this.m.UIBackgroundLeft + (night ? "_night" : "") + ".png",
-			BackgroundRight = this.m.UIBackgroundRight + (night ? "_night" : "") + ".png",
-			Ramp = this.m.UIRamp + (night ? "_night" : "") + ".png",
-			RampPathway = this.m.UIRampPathway != null ? this.m.UIRampPathway + (night ? "_night" : "") + ".png" : null,
-			Mood = this.m.UIMood + ".png",
-			Foreground = this.m.UIForeground != null ? this.m.UIForeground + (night ? "_night" : "") + ".png" : null,
+			Background = this.getUIBackground() + (night ? "_night" : "") + ".jpg",
+			BackgroundCenter = this.getUIBackgroundCenter() + (night ? "_night" : "") + ".png",
+			BackgroundLeft = this.getUIBackgroundLeft() + (night ? "_night" : "") + ".png",
+			BackgroundRight = this.getUIBackgroundRight() + (night ? "_night" : "") + ".png",
+			Ramp = this.getUIRamp() + (night ? "_night" : "") + ".png",
+			RampPathway = this.getUIRampPathway() != null ? this.getUIRampPathway() + (night ? "_night" : "") + ".png" : null,
+			Mood = this.getUIMood() + ".png",
+			Foreground = this.getUIForeground() != null ? this.getUIForeground() + (night ? "_night" : "") + ".png" : null,
 			Water = water != null ? water + (night ? "_night" : "") + ".png" : null,
 			Slots = []
 		};
@@ -592,10 +770,10 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 	function addImportedProduce( _p )
 	{
-		if (this.m.ProduceImported.len() >= 6)
-		{
-			this.m.ProduceImported.remove(0);
-		}
+		// if (this.m.ProduceImported.len() >= 6)
+		// {
+		// 	this.m.ProduceImported.remove(0);
+		// }
 
 		this.m.ProduceImported.push(_p);
 	}
@@ -668,7 +846,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 	function getSellPriceMult()
 	{
-		
+
 		local p = this.getPriceMult() * this.World.Assets.getSellPriceMult();
 		local r = this.World.FactionManager.getFaction(this.m.Factions[0]).getPlayerRelation();
 		if (r < 50)
@@ -850,6 +1028,28 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		return _instanceID;
 	}
 
+	function resolveSituationByInstance( _instanceID )
+	{
+		foreach( i, e in this.m.Situations )
+		{
+			if (e.getInstanceID() == _instanceID)
+			{
+				e.onResolved(this);
+				this.m.Situations.remove(i);
+				this.m.Modifiers.reset();
+
+				foreach( s in this.m.Situations )
+				{
+					s.onUpdate(this.m.Modifiers);
+				}
+
+				return 0;
+			}
+		}
+
+		return _instanceID;
+	}
+
 	function updateSituations()
 	{
 		local garbage = [];
@@ -947,9 +1147,14 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		}
 	}
 
-	function buildAttachedLocation( _num, _script, _terrain, _nearbyTerrain, _additionalDistance = 0, _mustBeNearRoad = false, _clearTile = true, _force = false )
+	function buildNewLocation()
 	{
-		_num = this.Math.min(_num, this.m.AttachedLocationsMax - this.m.AttachedLocations.len());
+		return null;
+	}
+
+	function buildAttachedLocation( _num, _script, _terrain, _nearbyTerrain, _additionalDistance = 0, _mustBeNearRoad = false, _clearTile = true, _force = false)
+	{
+		_num = this.Math.min(_num, this.getAttachedLocationsMax() - this.m.AttachedLocations.len());
 
 		if (_num <= 0 && !_force)
 		{
@@ -958,7 +1163,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 		local tries = 0;
 		local myTile = this.getTile();
-
+		local entity;
 		while (_num > 0 && tries++ < 1000)
 		{
 			local x = this.Math.rand(myTile.SquareCoords.X - 2 - _additionalDistance, myTile.SquareCoords.X + 2 + _additionalDistance);
@@ -1070,7 +1275,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 				tile.clear(this.Const.World.DetailType.NotCompatibleWithRoad);
 			}
 
-			local entity = this.World.spawnLocation(_script, tile.Coords);
+			entity = this.World.spawnLocation(_script, tile.Coords);
 			entity.setSettlement(this);
 
 			if (entity.onBuild())
@@ -1092,6 +1297,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		}
 
 		this.updateProduce();
+		return entity;
 	}
 
 	function hasAttachedLocation( _id )
@@ -1176,7 +1382,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			this.m.Resources += 50;
 		}
 
-		if (this.m.HousesMax > 0)
+		if (this.getHousesMax() > 0)
 		{
 			local tile = this.getTile();
 			local candidates = [];
@@ -1205,7 +1411,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 				}
 			}
 
-			local houses = this.Math.min(this.Math.rand(this.m.HousesMin, this.m.HousesMax), candidates.len() + poorCandidates.len());
+			local houses = this.Math.min(this.Math.rand(this.getHousesMin(), this.getHousesMax()), candidates.len() + poorCandidates.len());
 
 			for( local c; houses != 0; houses = --houses )
 			{
@@ -1219,7 +1425,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 				});
 				c[i].clear();
 				c[i].IsOccupied = true;
-				local d = c[i].spawnDetail("world_houses_0" + this.m.HousesType + "_0" + v, this.Const.World.ZLevel.Object - 3, this.Const.World.DetailType.Houses);
+				local d = c[i].spawnDetail("world_houses_0" + this.getHousesType() + "_0" + v, this.Const.World.ZLevel.Object - 3, this.Const.World.DetailType.Houses);
 				d.Scale = 0.85;
 				c.remove(i);
 			}
@@ -1330,7 +1536,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 		local maxRecruits = this.Math.rand(rosterMin, rosterMax);
 		local draftList;
-		draftList = clone this.m.DraftList;
+		draftList = clone this.getDraftList();
 
 		foreach( loc in this.m.AttachedLocations )
 		{
@@ -1452,7 +1658,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 		local maxRecruits = this.Math.rand(rosterMin, rosterMax);
 		local draftList;
-		draftList = clone this.m.StablesList;
+		draftList = clone this.getStablesList();
 
 		foreach( loc in this.m.AttachedLocations )
 		{
@@ -1740,9 +1946,9 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		return ret;
 	}
 
-	function setActive( _a, _burn = true )
+	function setActive( _a, _burn = true, _force = false )
 	{
-		if (_a == this.m.IsActive)
+		if (_a == this.m.IsActive && _force == false)
 		{
 			return;
 		}
@@ -1753,13 +1959,13 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		{
 			this.getSprite("location_banner").Visible = true;
 			this.getLabel("name").Visible = true;
-			this.getSprite("body").setBrush(this.m.Sprite);
+			this.getSprite("body").setBrush(this.getSpriteName());
 
 			foreach( h in this.m.HousesTiles )
 			{
 				local tile = this.World.getTileSquare(h.X, h.Y);
 				tile.clear(this.Const.World.DetailType.Houses);
-				local d = tile.spawnDetail("world_houses_0" + this.m.HousesType + "_0" + h.V, this.Const.World.ZLevel.Object - 3, this.Const.World.DetailType.Houses);
+				local d = tile.spawnDetail("world_houses_0" + this.getHousesType() + "_0" + h.V, this.Const.World.ZLevel.Object - 3, this.Const.World.DetailType.Houses);
 				d.Scale = 0.85;
 			}
 		}
@@ -1768,7 +1974,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			this.World.getRoster(this.getID()).clear();
 			this.getSprite("location_banner").Visible = false;
 			this.getLabel("name").Visible = false;
-			this.getSprite("body").setBrush(this.m.Sprite + "_ruins");
+			this.getSprite("body").setBrush(this.getSpriteName() + "_ruins");
 			this.getSprite("lighting").Alpha = 0;
 
 			if (_burn)
@@ -1780,7 +1986,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			{
 				local tile = this.World.getTileSquare(h.X, h.Y);
 				tile.clear(this.Const.World.DetailType.Houses | this.Const.World.DetailType.Lighting);
-				local d = tile.spawnDetail("world_houses_0" + this.m.HousesType + "_0" + h.V + "_ruins", this.Const.World.ZLevel.Object - 3, this.Const.World.DetailType.Houses);
+				local d = tile.spawnDetail("world_houses_0" + this.getHousesType() + "_0" + h.V + "_ruins", this.Const.World.ZLevel.Object - 3, this.Const.World.DetailType.Houses);
 				d.Scale = 0.85;
 				this.spawnFireAndSmoke(tile.Pos);
 			}
@@ -1800,7 +2006,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 	function destroy()
 	{
 		this.setActive(false);
-		this.getTile().spawnDetail(this.m.Sprite + "_ruins", this.Const.World.ZLevel.Object - 3, 0);
+		this.getTile().spawnDetail(this.getSpriteName() + "_ruins", this.Const.World.ZLevel.Object - 3, 0);
 		this.die();
 	}
 
@@ -1832,7 +2038,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 				foreach( h in this.m.HousesTiles )
 				{
 					local tile = this.World.getTileSquare(h.X, h.Y);
-					local d = tile.spawnDetail("world_houses_0" + this.m.HousesType + "_0" + h.V + "_light", this.Const.World.ZLevel.Object - 4, this.Const.World.DetailType.Lighting, false, insideScreen);
+					local d = tile.spawnDetail("world_houses_0" + this.getHousesType() + "_0" + h.V + "_light", this.Const.World.ZLevel.Object - 4, this.Const.World.DetailType.Lighting, false, insideScreen);
 					d.IgnoreAmbientColor = true;
 					d.Scale = 0.85;
 				}
@@ -2050,18 +2256,18 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 		this.m.UIBackground = this.Const.World.TerrainSettlementImages[highest].Background;
 		this.m.UIRamp = this.Const.World.TerrainSettlementImages[highest].Ramp;
-		this.m.UIForeground = this.m.HousesMax < 5 ? this.Const.World.TerrainSettlementImages[highest].Foreground : "ui/settlements/foreground_04";
+		this.m.UIForeground = this.getHousesMax() < 5 ? this.Const.World.TerrainSettlementImages[highest].Foreground : "ui/settlements/foreground_04";
 		this.m.UIMood = this.Const.World.TerrainSettlementImages[highest].Mood;
 		this.World.createRoster(this.getID());
 		this.registerThinker();
 		local body = this.addSprite("body");
-		body.setBrush(this.m.Sprite);
+		body.setBrush(this.getSpriteName());
 		local light = this.addSprite("lighting");
 		this.setSpriteColorization("lighting", false);
 
-		if (this.m.Lighting != "")
+		if (this.getLighting() != "")
 		{
-			light.setBrush(this.m.Lighting);
+			light.setBrush(this.getLighting());
 		}
 
 		light.IgnoreAmbientColor = true;
@@ -2074,7 +2280,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		{
 			return;
 		}
-		
+
 		local eventID = "";
 		if (!this.World.Tags.get("HasLegendCampTraining") && this.hasBuilding("building.training_hall"))
 		{
@@ -2131,9 +2337,104 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		this.unregisterThinker();
 	}
 
+	function canUpgrade()
+	{
+		if (this.m.Size >= 3)
+		{
+			return false;
+		}
+
+		if (this.isUpgrading())
+		{
+			return false;
+		}
+
+		foreach( a in this.getAttachedLocations() )
+		{
+			if (a.isBuilding())
+			{
+				return false;
+			}
+		}
+
+		local minResources = 50;
+		if (this.isMilitary())
+		{
+			minResources += 50;
+		}
+		switch (this.m.Size)
+		{
+			case 1:
+				minResources += 100;
+				break;
+			case 2:
+				minResources += 150;
+				break;
+			case 3:
+				minResources += 200;
+				break;
+		}
+
+		if (this.getResources() < minResources)
+		{
+			return false;
+		}
+
+		return true;
+	}
+
+	function canBuildLocation()
+	{
+
+		if (this.isUpgrading())
+		{
+			return false;
+		}
+
+		if (this.m.AttachedLocations.len() >= this.getAttachedLocationsMax())
+		{
+			return false;
+		}
+
+		foreach( a in this.getAttachedLocations() )
+		{
+			if (a.isBuilding())
+			{
+				return false;
+			}
+		}
+
+		local minResources = 50;
+		if (this.isMilitary())
+		{
+			minResources += 50;
+		}
+		switch (this.m.Size)
+		{
+			case 1:
+				minResources += 100;
+				break;
+			case 2:
+				minResources += 150;
+				break;
+			case 3:
+				minResources += 200;
+				break;
+		}
+
+		if (this.getResources() < minResources)
+		{
+			return false;
+		}
+
+		return true;
+	}
+
 	function onSerialize( _out )
 	{
 		this.location.onSerialize(_out);
+		_out.writeU8(this.m.Size);
+		_out.writeBool(this.m.IsUpgrading);
 		_out.writeBool(this.m.IsActive);
 		_out.writeBool(this.m.IsCoastal);
 		_out.writeF32(this.m.LastShopUpdate);
@@ -2206,11 +2507,17 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			_out.writeI16(this.m.HousesTiles[i].Y);
 			_out.writeU8(this.m.HousesTiles[i].V);
 		}
+
 	}
 
 	function onDeserialize( _in )
 	{
 		this.location.onDeserialize(_in);
+		if (_in.getMetaData().getVersion() >= 67)
+		{
+			this.m.Size = _in.readU8();
+			this.m.IsUpgrading = _in.readBool();
+		}
 		this.m.IsActive = _in.readBool();
 		this.m.IsCoastal = _in.readBool();
 		this.m.LastShopUpdate = _in.readF32();

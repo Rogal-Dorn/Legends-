@@ -99,6 +99,7 @@ this.medium_steppe_village <- this.inherit("scripts/entity/world/settlement", {
 		this.m.AttachedLocationsMax = 4;
 	}
 
+
 	function onBuild( _settings )
 	{
 		this.addBuilding(this.new("scripts/entity/world/settlements/buildings/crowd_building"), 5);

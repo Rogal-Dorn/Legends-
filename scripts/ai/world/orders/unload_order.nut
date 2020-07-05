@@ -14,12 +14,13 @@ this.unload_order <- this.inherit("scripts/ai/world/world_behavior", {
 		{
 			if (settlement.isLocation() && settlement.isEnterable())
 			{
+				settlement.setResources(settlement.getResource() + _entity.getResources());
+
 				foreach( item in _entity.getInventory() )
 				{
 					settlement.addImportedProduce(item);
-					_entity.clearInventory();
 				}
-
+				_entity.clearInventory();
 				break;
 			}
 		}

@@ -23,10 +23,7 @@ this.leather_tanner_location <- this.inherit("scripts/entity/world/attached_loca
 		_list.push("retired_soldier_background");
 		_list.push("butcher_background");
 		_list.push("butcher_background");
-		if(this.Const.LegendMod.Configs.LegendMagicEnabled())
-		{
-			_list.push("legend_ancient_summoner_background");
-		}
+
 	}
 
 	function onUpdateShopList( _id, _list )

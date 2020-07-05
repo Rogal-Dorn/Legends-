@@ -210,6 +210,21 @@ this.party <- this.inherit("scripts/entity/world/world_entity", {
 			});
 		}
 
+
+		if (this.Const.LegendMod.DebugMode)
+		{
+			ret.push({
+				id = 6,
+				type = "hint",
+				text = "Resources: " + this.getResources()
+			});
+			ret.push({
+				id = 6,
+				type = "hint",
+				text = "Goods: " + this.getInventory().len()
+			});
+		}
+
 		return ret;
 	}
 
@@ -307,13 +322,13 @@ this.party <- this.inherit("scripts/entity/world/world_entity", {
 
 			local myTile = this.getTile();
 			local speed = this.m.BaseMovementSpeed;
-			
+
 			local terrainTable = this.Const.World.TerrainTypeSpeedMult;
 			if (this.getFaction() == this.Const.Faction.Player)
 			{
 				local tTable = [];
 				tTable.resize(terrainTable.len(), 0);
-				for (local i=0; i < terrainTable.len() ; ++i) 
+				for (local i=0; i < terrainTable.len() ; ++i)
 				{
 					tTable[i] += this.Const.World.TerrainTypeSpeedMult[i];
 				}
@@ -325,7 +340,7 @@ this.party <- this.inherit("scripts/entity/world/world_entity", {
 					{
 						continue
 					}
-					for (local i=0; i < broTable.len() ; ++i) 
+					for (local i=0; i < broTable.len() ; ++i)
 					{
 						tTable[i] += broTable[i];
 					}

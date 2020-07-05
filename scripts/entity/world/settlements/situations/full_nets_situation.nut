@@ -23,6 +23,10 @@ this.full_nets_situation <- this.inherit("scripts/entity/world/settlements/situa
 
 	function onAdded( _settlement )
 	{
+		if(this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+		{
+			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * 0.1);
+		}
 		_settlement.resetShop();
 	}
 

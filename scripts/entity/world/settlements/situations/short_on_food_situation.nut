@@ -22,6 +22,10 @@ this.short_on_food_situation <- this.inherit("scripts/entity/world/settlements/s
 
 	function onAdded( _settlement )
 	{
+		if(this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+		{
+			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.05);
+		}
 		_settlement.resetShop();
 	}
 

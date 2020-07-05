@@ -138,7 +138,7 @@ this.large_forest_fort <- this.inherit("scripts/entity/world/settlement", {
 			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/lumber_camp_location", ALL, [], 1, false, true);
 			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/wheat_fields_location", [
 				this.Const.World.TerrainType.Plains
-			], 0, false, true, true);
+			], [], 0, false, true, true);
 			return;
 		}
 
