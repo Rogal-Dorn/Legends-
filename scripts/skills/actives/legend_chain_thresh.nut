@@ -111,13 +111,13 @@ this.legend_chain_thresh <- this.inherit("scripts/skills/skill", {
 
 					if (_user.isAlive() && !_user.isDying())
 					{
-						if (success && tile.IsOccupiedByActor && this.Math.rand(1, 100) <= this.m.StunChance && !tile.getEntity().getCurrentProperties().IsImmuneToStun && !tile.getEntity().getSkills().hasSkill("effects.dazed"))
+						if (success && tile.IsOccupiedByActor && this.Math.rand(1, 100) <= this.m.StunChance && !tile.getEntity().getCurrentProperties().IsImmuneToBleeding && !tile.getEntity().getSkills().hasSkill("effects.legend_grazed_effect"))
 						{
-							tile.getEntity().getSkills().add(this.new("scripts/skills/effects/dazed_effect"));
+							tile.getEntity().getSkills().add(this.new("scripts/skills/effects/legend_grazed_effect"));
 
 							if (!_user.isHiddenToPlayer() && tile.IsVisibleForPlayer)
 							{
-								this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " has dazed " + this.Const.UI.getColorizedEntityName(tile.getEntity()) + " for one turn");
+								this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " has grazed " + this.Const.UI.getColorizedEntityName(tile.getEntity()));
 							}
 						}
 					}
