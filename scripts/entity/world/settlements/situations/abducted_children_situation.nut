@@ -30,7 +30,10 @@ this.abducted_children_situation <- this.inherit("scripts/entity/world/settlemen
 
 	function onResolved( _settlement )
 	{
-		_settlement.setResources(_settlement.getResources() + _settlement.getResources() * 0.015);
+		if(this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+		{
+			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * 0.03);
+		}
 	}
 
 	function onUpdate( _modifiers )

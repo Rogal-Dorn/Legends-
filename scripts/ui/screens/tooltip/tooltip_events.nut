@@ -4488,12 +4488,12 @@ this.tooltip_events <- {
 					{
 						id = 1,
 						type = "title",
-						text = "Unlock all crafting recipies"
+						text = "Unlock all crafting recipes"
 					},
 					{
 						id = 2,
 						type = "description",
-						text = "If enabled, all crafting recipies will be visible at the taxidermist and camp crafting. If disabled, vanilla behavior of having to discover the ingredients first will be enforced."
+						text = "If enabled, all crafting recipes will be visible at the taxidermist and camp crafting. If disabled, vanilla behavior of having to discover the ingredients first will be enforced."
 					}
 				];
 		case "mapconfig.legendrelationship":

@@ -36,6 +36,7 @@ this.rebuild_location_action <- this.inherit("scripts/factions/faction_action", 
 
 		local playerTile = this.World.State.getPlayer().getTile();
 		local numInactive = 0;
+		local nogo = false
 
 		foreach( a in this.m.Settlement.getAttachedLocations() )
 		{
@@ -44,7 +45,18 @@ this.rebuild_location_action <- this.inherit("scripts/factions/faction_action", 
 				continue;
 			}
 
+			if (a.isBuilding())
+			{
+				nogo = true;
+				break;
+			}
+
 			numInactive = ++numInactive;
+		}
+
+		if (nogo)
+		{
+			return;
 		}
 
 		if (numInactive == 0)

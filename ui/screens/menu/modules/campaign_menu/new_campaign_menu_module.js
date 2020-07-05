@@ -1146,7 +1146,7 @@ NewCampaignMenuModule.prototype.buildConfigPage = function () {
 	row.append(control);
 	this.mLegendAllBlueprintsCheckbox = $('<input type="checkbox" id="cb-legendallblueprints"/>');
 	control.append(this.mLegendAllBlueprintsCheckbox);
-	this.mLegendAllBlueprintsCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendallblueprints">All Crafting Recipies Unlocked</label>');
+	this.mLegendAllBlueprintsCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendallblueprints">All Crafting Recipes Unlocked</label>');
 	control.append(this.mLegendAllBlueprintsCheckboxLabel);
 	this.mLegendAllBlueprintsCheckbox.iCheck({
 		checkboxClass: 'icheckbox_flat-orange',

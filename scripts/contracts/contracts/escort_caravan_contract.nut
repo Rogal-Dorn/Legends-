@@ -967,6 +967,14 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 						}
 						this.World.FactionManager.getFaction(this.Contract.getFaction()).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractSuccess, "Protected a caravan as promised");
 						this.World.Contracts.finishActiveContract();
+
+						local origin = this.Contract.getOrigin();
+						if (origin != null)
+						{
+							local v = this.Contract.m.Caravan.getResources() + this.Contract.m.Caravan.getResources() * 0.10;
+							origin.setResources(origin.getResources() + v)
+						}
+
 						return 0;
 					}
 
@@ -1004,6 +1012,16 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 						this.World.Assets.addMoney(money);
 						this.World.FactionManager.getFaction(this.Contract.getFaction()).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractPoor, "Protected a caravan, albeit poorly");
 						this.World.Contracts.finishActiveContract();
+
+						//Using this as a economy rewward for taking deliver contract missions - it'll increase the orgin resources by 10% if contract successfull
+						//Think of it as establishing a trade route?
+						local origin = this.Contract.getOrigin();
+						if (origin != null)
+						{
+							local v = this.Contract.m.Caravan.getResources() + this.Contract.m.Caravan.getResources() * 0.10;
+							origin.setResources(origin.getResources() + v)
+						}
+
 						return 0;
 					}
 

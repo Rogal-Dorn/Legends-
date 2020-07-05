@@ -63,7 +63,11 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		this.m.Size = _v;
 		if (this.m.Name == "")
 		{
-			this.m.Name = this.getRandomName(this.m.Names[_v - 1])
+			this.m.Name = this.getRandomName(this.m.Names[_v - 1]);
+			if (this.hasLabel("name"))
+			{
+				this.getLabel("name").Text = this.m.Name;
+			}
 		}
 	}
 
@@ -312,7 +316,17 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 				type = "description",
 				text = this.getDescription()
 			}
-		];
+		]
+
+		if (this.m.IsVisited && this.isUpgrading())
+		{
+			ret.push({
+				id = 3,
+				type = "description",
+				icon = "ui/icons/special.png",
+				text = "Is currently being upgraded"
+			});
+		}
 
 		if (this.m.IsVisited)
 		{
@@ -359,7 +373,40 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 				text = "Resources: " + this.getResources()
 			});
 		}
+
+		if (this.m.IsVisited && this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+		{
+			ret.push({
+				id = 6,
+				type = "hint",
+				text = "Wealth " + this.getWealth() + " %"
+			});
+		}
+
 		return ret;
+	}
+
+	function getWealth()
+	{
+		local baseLevel = 0;
+
+		if (this.isMilitary())
+		{
+			baseLevel += 50;
+		}
+		switch (this.getSize())
+		{
+			case 1:
+				baseLevel += 100;
+				break;
+			case 2:
+				baseLevel += 150;
+				break;
+			case 3:
+				baseLevel += 200;
+				break;
+		}
+		return this.Math.round(100 * (this.getResources() / baseLevel));
 	}
 
 	function getImagePath()
@@ -369,12 +416,16 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 	function getSpriteName()
 	{
+		local s = this.m.Sprite;
 		if (this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
 		{
-			local s = "legend_" + this.m.Sprite;
-			return s;
+			s = "legend_" + this.m.Sprite;
 		}
-		return this.m.Sprite;
+		if (this.isUpgrading())
+		{
+			s += "_upgrade"
+		}
+		return s
 	}
 
 
@@ -475,7 +526,6 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 	function getUIInformation()
 	{
-		this.logInfo("***SETTLEMENT UI INFO FOR :: " + this.getName());
 		local night = !this.World.getTime().IsDaytime;
 		local water = this.m.IsCoastal ? "ui/settlements/water_01" : null;
 		local result = {
@@ -2335,7 +2385,6 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 	function canBuildLocation()
 	{
-		return true;
 
 		if (this.isUpgrading())
 		{
@@ -2345,6 +2394,14 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		if (this.m.AttachedLocations.len() >= this.getAttachedLocationsMax())
 		{
 			return false;
+		}
+
+		foreach( a in this.getAttachedLocations() )
+		{
+			if (a.isBuilding())
+			{
+				return false;
+			}
 		}
 
 		local minResources = 50;
@@ -2371,12 +2428,13 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		}
 
 		return true;
-
 	}
 
 	function onSerialize( _out )
 	{
 		this.location.onSerialize(_out);
+		_out.writeU8(this.m.Size);
+		_out.writeBool(this.m.IsUpgrading);
 		_out.writeBool(this.m.IsActive);
 		_out.writeBool(this.m.IsCoastal);
 		_out.writeF32(this.m.LastShopUpdate);
@@ -2450,12 +2508,16 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			_out.writeU8(this.m.HousesTiles[i].V);
 		}
 
-		_out.writeU8(this.m.Size);
 	}
 
 	function onDeserialize( _in )
 	{
 		this.location.onDeserialize(_in);
+		if (_in.getMetaData().getVersion() >= 67)
+		{
+			this.m.Size = _in.readU8();
+			this.m.IsUpgrading = _in.readBool();
+		}
 		this.m.IsActive = _in.readBool();
 		this.m.IsCoastal = _in.readBool();
 		this.m.LastShopUpdate = _in.readF32();
@@ -2548,11 +2610,6 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 				Y = y,
 				V = v
 			});
-		}
-
-		if (_in.getMetaData().getVersion() >= 67)
-		{
-			this.m.Size = _in.readU8();
 		}
 	}
 

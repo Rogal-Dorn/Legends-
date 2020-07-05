@@ -39,7 +39,7 @@ this.legends_fort <- this.inherit("scripts/entity/world/settlement", {
 			case 3:
 				return "ui/settlements/ramp_01_cobblestone";
 			default:
-				return null;
+				return "";
 		}
 	}
 

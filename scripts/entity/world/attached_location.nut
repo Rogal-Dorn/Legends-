@@ -18,22 +18,32 @@ this.attached_location <- this.inherit("scripts/entity/world/location", {
 			return "";
 		}
 
+		local s = this.m.Sprite;
 		if (this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
 		{
-			local s= "legend_" + this.m.Sprite;
-			return s;
+			s = "legend_" + this.m.Sprite;
 		}
-		return this.m.Sprite;
+		return s
 	}
 
 	function getSpriteDestroyedName()
 	{
-		if (this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+		if (this.m.IsNew)
 		{
-			local s = "legend_" + this.m.SpriteDestroyed;
+			//This is normally gated around our WorldEconomy config, but when reloading a saved game,
+			//the sprites on the UI are loaded before the config, so we'll get the wrong sprite
+			//to show -- hackish, but we know that IsNew is only used by the WorldEconomy so
+			//we can assume it is enabled here.
+			local s= "legend_" + this.m.Sprite + "_upgrade";
 			return s;
 		}
-		return this.m.SpriteDestroyed;
+
+		local s = this.m.SpriteDestroyed;
+		if (this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+		{
+			s = "legend_" + this.m.SpriteDestroyed;
+		}
+		return s;
 	}
 
 	function getTypeID()
@@ -106,7 +116,7 @@ this.attached_location <- this.inherit("scripts/entity/world/location", {
 
 	function getDescription()
 	{
-		if (this.m.IsActive)
+		if (this.m.IsActive || this.m.IsNew)
 		{
 			return this.world_entity.getDescription();
 		}
@@ -116,9 +126,9 @@ this.attached_location <- this.inherit("scripts/entity/world/location", {
 		}
 	}
 
-	function setActive( _a )
+	function setActive( _a, _force = false)
 	{
-		if (_a == this.m.IsActive)
+		if (_a == this.m.IsActive && _force == false)
 		{
 			return;
 		}
@@ -141,27 +151,13 @@ this.attached_location <- this.inherit("scripts/entity/world/location", {
 		local s = this.getSprite("body")
 		if (s != null)
 		{
-			s.setBrush(this.m.IsActive ? this.getSpriteName() : this.getDestroyedSprite());
+			s.setBrush(this.m.IsActive ? this.getSpriteName() : this.getSpriteDestroyedName());
 		}
 		s = this.getSprite("lighting")
 		if (s != null)
 		{
 			s.Visible = this.m.IsActive || this.m.IsNew;
 		}
-	}
-
-	function getDestroyedSprite()
-	{
-		if (this.m.IsNew)
-		{
-			//This is normally gated around our WorldEconomy config, but when reloading a saved game,
-			//the sprites on the UI are loaded before the config, so we'll get the wrong sprite
-			//to show -- hackish, but we know that IsNew is only used by the WorldEconomy so
-			//we can assume it is enabled here.
-			local s= "legend_" + this.m.Sprite + "_upgrade";
-			return ;
-		}
-		return this.getSpriteDestroyedName();
 	}
 
 	function updateLighting()
@@ -298,7 +294,7 @@ this.attached_location <- this.inherit("scripts/entity/world/location", {
 		{
 			this.m.IsNew = _in.readBool();
 		}
-		this.setActive(active);
+		this.setActive(active, true);
 		this.setAttackable(false);
 		this.getSprite("lighting").Color = this.createColor("ffffff00");
 	}

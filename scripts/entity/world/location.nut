@@ -527,7 +527,11 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 		this.world_entity.onDiscovered();
 		this.getTile().clearAllBut(this.Const.World.DetailType.Road | this.Const.World.DetailType.Shore);
 		this.getLabel("name").Visible = this.Const.World.AI.VisualizeNameOfLocations && this.m.IsShowingLabel;
-		this.World.Ambitions.onLocationDiscovered(this);
+
+		//Settlement built a new location - don't fire discovered code - this will crash the game
+		if (!"IsNew" in this) {
+			this.World.Ambitions.onLocationDiscovered(this);
+		}
 
 		if (this.m.OnDiscovered != null)
 		{

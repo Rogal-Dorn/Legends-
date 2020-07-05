@@ -31,7 +31,10 @@ this.greenskins_situation <- this.inherit("scripts/entity/world/settlements/situ
 
 	function onResolved( _settlement )
 	{
-		_settlement.setResources(_settlement.getResources() + _settlement.getResources() * 0.20);
+		if(this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+		{
+			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * 0.50);
+		}
 	}
 
 	function onUpdate( _modifiers )

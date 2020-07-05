@@ -20,7 +20,10 @@ this.terrified_villagers_situation <- this.inherit("scripts/entity/world/settlem
 
 	function onResolved( _settlement )
 	{
-		_settlement.setResources(_settlement.getResources() + _settlement.getResources() * 0.05);
+		if(this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+		{
+			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * 0.05);
+		}
 	}
 
 
