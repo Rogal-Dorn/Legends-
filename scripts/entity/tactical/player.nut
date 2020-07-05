@@ -2375,6 +2375,10 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	//	}
 	function nullRelation( _id )
 	{
+		if (_id == -1)
+		{
+			return;
+		}
 		this.m.ActiveRelationships[_id] = null;
 	}
 
