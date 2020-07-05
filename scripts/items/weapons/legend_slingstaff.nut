@@ -24,8 +24,8 @@ this.legend_slingstaff <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.StaminaModifier = -12;
 		this.m.Condition = 100.0;
 		this.m.ConditionMax = 100.0;
-		this.m.RegularDamage = 45;
-		this.m.RegularDamageMax = 60;
+		this.m.RegularDamage = 35;
+		this.m.RegularDamageMax = 45;
 		this.m.ArmorDamageMult = 1.5;
 		this.m.DirectDamageMult = 0.35;
 		this.m.DirectDamageAdd = 0.45;

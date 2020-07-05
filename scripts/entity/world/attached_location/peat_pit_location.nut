@@ -26,10 +26,7 @@ this.peat_pit_location <- this.inherit("scripts/entity/world/attached_location",
 		_list.push("daytaler_background");
 		_list.push("female_daytaler_background");
 		_list.push("peddler_background");
-		if(this.Const.LegendMod.Configs.LegendMagicEnabled())
-		{
-			_list.push("legend_death_summoner_background");
-		}
+
 	}
 
 	function onUpdateShopList( _id, _list )

@@ -116,7 +116,6 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 					this.Const.Perks.PerkDefs.LoneWolf,
 					this.Const.Perks.PerkDefs.Overwhelm,
 					this.Const.Perks.PerkDefs.Footwork,
-					this.Const.Perks.PerkDefs.LegendAlert,
 					this.Const.Perks.PerkDefs.LegendMedIngredients
 					this.Const.Perks.PerkDefs.LegendSpecStaffStun,
 					this.Const.Perks.PerkDefs.LegendRoster5

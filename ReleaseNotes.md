@@ -3454,17 +3454,30 @@ fixes warlock cloak blueprint
 fixes potion of obvlision perk issue
 fixes female backgrounds losing their sounds
 
-
 14.0.0.10 Let it Grow! Let it Grow!
 
-*Adds a new World Economy Option
+* Adds a new World Economy Option
 - All settlements now have a "Wealth" value.
 - As raiders raid, goblins terrorize, trade caravans trade, peasants and refugees flee from one settlement to another, etc.. A Settlements value will grow and shrink as the time passes.
 - Once a settlements wealth has sufficiently increased, it can now build and add new settlement locations.
 - If wealth is high enough, a settlement can even upgrade itself to the next level.
 - Taking and successfully completeing contracts will directly increase a settlements wealth.
 
+* Toned down druids
+Magic classes no longer reliably spawn near attached locations.
+Runesmiths, vampires, zombiemancer, skelemancer, druid and evoker spell groups removed from random pool
+slingstaff nerfed to 35-45 damage. Still wrecks armor, just doesn't instagib
+Druid commander perk tree reworked to no longer be random
+Druid no longer gives transformations to hires, but can find other druids for hire
+Druid loses houndmaster skills
+Bear Form has 150% hp rather than 200%, this also lowers the damage of the claw attack
+Berserker no longer has Bear Form
+Favoured enemy skills spawn in smaller amounts
+Messengers are better at walking in all terrain
+
 **Fixes**
+footwork and lunge AP costs fixed (thanks motanul)
 fixes no names for orc behemoth champions
 fixes perk tooltip for drums of war and drums of life (incorrectly displayed range)
 fixes pimp_vs_harlot event not working with reltionships enabled
+Chain thresh now correctly applies bleed instead of daze
