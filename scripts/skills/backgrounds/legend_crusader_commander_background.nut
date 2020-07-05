@@ -280,8 +280,8 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 				20
 			],
 			RangedDefense = [
-				 0,
-				 0
+				0,
+				0
 			],
 			Initiative = [
 				-10,
