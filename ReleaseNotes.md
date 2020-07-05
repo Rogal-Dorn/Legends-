@@ -3468,5 +3468,5 @@ Messengers are better at walking in all terrain
 
 *fixes*
 footwork and lunge AP costs fixed (thanks motanul)
-
+Chain thresh now correctly applies bleed instead of daze 
 
