@@ -968,12 +968,16 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 						this.World.FactionManager.getFaction(this.Contract.getFaction()).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractSuccess, "Protected a caravan as promised");
 						this.World.Contracts.finishActiveContract();
 
-						local origin = this.Contract.getOrigin();
-						if (origin != null)
+						if(this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
 						{
-							local v = this.Contract.m.Caravan.getResources() + this.Contract.m.Caravan.getResources() * 0.10;
-							origin.setResources(origin.getResources() + v)
+							local origin = this.Contract.getOrigin();
+							if (origin != null)
+							{
+								local v = this.Contract.m.Caravan.getResources() + this.Contract.m.Caravan.getResources() * 0.10;
+								origin.setResources(origin.getResources() + v)
+							}
 						}
+
 
 						return 0;
 					}
@@ -1117,7 +1121,7 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 			if(this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
 			{
 				local min = 1;
-				switch (this.m.Settlement.getSize()) {
+				switch (this.m.Home.getSize()) {
 					case 1:
 						min = 1;
 						break;
@@ -1145,8 +1149,8 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 						scale = 0.10;
 				}
 
-				local resources = this.Math.max(min, this.Math.round(scale * this.m.Start.getResources()));
-				this.m.Start.setResources(this.m.Start.getResources() - resources);
+				local resources = this.Math.max(min, this.Math.round(scale * this.m.Home.getResources()));
+				this.m.Home.setResources(this.m.Home.getResources() - resources);
 				party.setResources(resources);
 
 				produce = this.Math.max(min, min + this.Math.round(scale * this.m.Home.getResources()));

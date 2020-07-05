@@ -388,25 +388,25 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 	function getWealth()
 	{
-		local baseLevel = 0;
+		local baseLevel = 0.0;
 
 		if (this.isMilitary())
 		{
-			baseLevel += 50;
+			baseLevel += 50.0;
 		}
 		switch (this.getSize())
 		{
 			case 1:
-				baseLevel += 100;
+				baseLevel += 100.0;
 				break;
 			case 2:
-				baseLevel += 150;
+				baseLevel += 150.0;
 				break;
 			case 3:
-				baseLevel += 200;
+				baseLevel += 200.0;
 				break;
 		}
-		return this.Math.round(100 * (this.getResources() / baseLevel));
+		return this.Math.round(100.0 * ((1.0 * this.getResources()) / baseLevel));
 	}
 
 	function getImagePath()
