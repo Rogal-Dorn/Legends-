@@ -1,4 +1,4 @@
-this.large_forest_fort <- this.inherit("scripts/entity/world/settlements/legends_fort", {
+this.legends_forest_fort <- this.inherit("scripts/entity/world/settlements/legends_fort", {
 	m = {},
 	function create()
 	{

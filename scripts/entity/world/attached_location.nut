@@ -13,9 +13,15 @@ this.attached_location <- this.inherit("scripts/entity/world/location", {
 
 	function getSpriteName()
 	{
+		if (this.m.Sprite == "")
+		{
+			return "";
+		}
+
 		if (this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
 		{
-			return "legend_" + this.m.Sprite;
+			local s= "legend_" + this.m.Sprite;
+			return s;
 		}
 		return this.m.Sprite;
 	}
@@ -24,7 +30,8 @@ this.attached_location <- this.inherit("scripts/entity/world/location", {
 	{
 		if (this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
 		{
-			return "legend_" + this.m.SpriteDestroyed;
+			local s = "legend_" + this.m.SpriteDestroyed;
+			return s;
 		}
 		return this.m.SpriteDestroyed;
 	}
@@ -44,7 +51,7 @@ this.attached_location <- this.inherit("scripts/entity/world/location", {
 		return this.m.IsActive && !this.m.IsNew;
 	}
 
-	function isNew()
+	function isBuilding()
 	{
 		return this.m.IsNew;
 	}
@@ -85,7 +92,8 @@ this.attached_location <- this.inherit("scripts/entity/world/location", {
 	function getName()
 	{
 		if (this.m.IsNew) {
-			return "New " + this.world_entity.getName() + " Construction";
+			local s = "New " + this.world_entity.getName() + " Construction";
+			return s;
 		}
 
 		return this.m.IsActive ? this.world_entity.getName() : "Ruins";
@@ -144,7 +152,16 @@ this.attached_location <- this.inherit("scripts/entity/world/location", {
 
 	function getDestroyedSprite()
 	{
-		return this.m.IsNew ? this.getSpriteName() + "_upgrade" : this.getSpriteDestroyedName();
+		if (this.m.IsNew)
+		{
+			//This is normally gated around our WorldEconomy config, but when reloading a saved game,
+			//the sprites on the UI are loaded before the config, so we'll get the wrong sprite
+			//to show -- hackish, but we know that IsNew is only used by the WorldEconomy so
+			//we can assume it is enabled here.
+			local s= "legend_" + this.m.Sprite + "_upgrade";
+			return ;
+		}
+		return this.getSpriteDestroyedName();
 	}
 
 	function updateLighting()

@@ -12,17 +12,20 @@ this.legends_village <- this.inherit("scripts/entity/world/settlement", {
 
 	function getUIBackgroundCenter()
 	{
-		return  "ui/settlements/townhall_0" + this.m.Size;
+		local s = "ui/settlements/townhall_0" + this.m.Size;
+		return s;
 	}
 
 	function getUIBackgroundLeft()
 	{
-		return "ui/settlements/bg_houses_0" + this.m.Size + "_left";
+		local s = "ui/settlements/bg_houses_0" + this.m.Size + "_left";
+		return s;
 	}
 
 	function getUIBackgroundRight()
 	{
-		return "ui/settlements/bg_houses_0" + this.m.Size + "_right";
+		local s =  "ui/settlements/bg_houses_0" + this.m.Size + "_right";
+		return s;
 	}
 
 	function getUIRampPathway()
@@ -47,7 +50,8 @@ this.legends_village <- this.inherit("scripts/entity/world/settlement", {
 		{
 			prefix ="legend_";
 		}
-		return prefix + "world_townhall_0" + this.m.Size + "_light";
+		local s = prefix + "world_townhall_0" + this.m.Size + "_light";
+		return s;
 	}
 
 	function getSpriteName()
@@ -57,13 +61,22 @@ this.legends_village <- this.inherit("scripts/entity/world/settlement", {
 		{
 			prefix ="legend_";
 		}
-		return prefix + "world_townhall_0" + this.m.Size;
+
+		local s = prefix + "world_townhall_0" + this.m.Size;
+
+		if (this.isUpgrading())
+		{
+			s += "_upgrade";
+		}
+
+		return s;
 	}
 
 	//UISprite
 	function getImagePath()
 	{
-		return "ui/settlement_sprites/townhall_0" + this.m.Size + ".png"
+		local s = "ui/settlement_sprites/townhall_0" + this.m.Size + ".png"
+		return s;
 	}
 
 	function getHousesMin()
@@ -141,11 +154,11 @@ this.legends_village <- this.inherit("scripts/entity/world/settlement", {
 		switch (this.m.Size)
 		{
 			case 1:
-				return this.buildOne(_settings);
+				return this.onBuildOne(_settings);
 			case 2:
-				return this.buildTwo(_settings);
+				return this.onBuildTwo(_settings);
 			case 3:
-				return this.buildThree(_settings);
+				return this.onBuildThree(_settings);
 		}
 	}
 

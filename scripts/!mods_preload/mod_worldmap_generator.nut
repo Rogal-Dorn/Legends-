@@ -266,12 +266,11 @@
 				}
 			}
 
-
 			while (num > 0)
 			{
 				local r = this.Math.rand(1, 10);
 				local total = 0;
-				foreach (s in list.Types)
+				foreach (s in list.Sizes)
 				{
 					total += s.Ratio;
 					if (r > total)

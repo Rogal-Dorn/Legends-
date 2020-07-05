@@ -1,4 +1,4 @@
-this.legends_coast_fort <- this.inherit("scripts/entity/world/settlement", {
+this.legends_fort <- this.inherit("scripts/entity/world/settlement", {
 	m = {
 		Names = [],
 		DraftLists = [],
@@ -12,17 +12,20 @@ this.legends_coast_fort <- this.inherit("scripts/entity/world/settlement", {
 
 	function getUIBackgroundCenter()
 	{
-		return  "ui/settlements/stronghold_0" + this.m.Size;
+		local s = "ui/settlements/stronghold_0" + this.m.Size;
+		return s;
 	}
 
 	function getUIBackgroundLeft()
 	{
-		return "ui/settlements/bg_houses_0" + this.m.Size + "_left";
+		local s = "ui/settlements/bg_houses_0" + this.m.Size + "_left";
+		return s;
 	}
 
 	function getUIBackgroundRight()
 	{
-		return "ui/settlements/bg_houses_0" + this.m.Size + "_right";
+		local s = "ui/settlements/bg_houses_0" + this.m.Size + "_right";
+		return s;
 	}
 
 	function getUIRampPathway()
@@ -47,7 +50,8 @@ this.legends_coast_fort <- this.inherit("scripts/entity/world/settlement", {
 		{
 			prefix ="legend_";
 		}
-		return prefix + "world_stronghold_0" + this.m.Size + "_light";
+		local s = prefix + "world_stronghold_0" + this.m.Size + "_light";
+		return s;
 	}
 
 	function getSpriteName()
@@ -57,13 +61,20 @@ this.legends_coast_fort <- this.inherit("scripts/entity/world/settlement", {
 		{
 			prefix ="legend_";
 		}
-		return prefix + "world_stronghold_0" + this.m.Size;
+		local s = prefix + "world_stronghold_0" + this.m.Size;
+
+		if (this.isUpgrading())
+		{
+			s += "_upgrade";
+		}
+		return s;
 	}
 
 	//UISprite
 	function getImagePath()
 	{
-		return "ui/settlement_sprites/stronghold_0" + this.m.Size + ".png"
+		local s = "ui/settlement_sprites/stronghold_0" + this.m.Size + ".png";
+		return s;
 	}
 
 	function getHousesMin()

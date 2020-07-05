@@ -263,7 +263,6 @@ this.legends_mountains_fort <- this.inherit("scripts/entity/world/settlements/le
 		this.m.Rumors = this.Const.Strings.RumorsMiningSettlement;
 	}
 
-
 	function getDescription()
 	{
 		switch (this.m.Size)

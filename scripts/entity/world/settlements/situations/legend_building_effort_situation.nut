@@ -37,7 +37,6 @@ this.legend_building_effort_situation <- this.inherit("scripts/entity/world/sett
 
 	function onAdded( _settlement )
 	{
-		this.logInfo("***ADDED LEGEND BUILDIG EFFORT SITUATION TO " + _settlement.getName());
 		_settlement.resetShop();
 
 		local a = _settlement.buildNewLocation();
@@ -64,11 +63,12 @@ this.legend_building_effort_situation <- this.inherit("scripts/entity/world/sett
 	{
 		foreach( a in _settlement.getAttachedLocations() )
 		{
-			if (!a.isNew())
+			if (!a.isBuilding())
 			{
 				continue;
 			}
 
+			_settlement.setResources(_settlement.getResources() - 50);
 			a.setNew(false);
 			a.setActive(true);
 			break;
@@ -87,7 +87,6 @@ this.legend_building_effort_situation <- this.inherit("scripts/entity/world/sett
 		this.m.Target = _in.readString();
 	}
 
-
 	function onUpdateDraftList( _draftList )
 	{
 		_draftList.push("lumberjack_background");
@@ -98,6 +97,12 @@ this.legend_building_effort_situation <- this.inherit("scripts/entity/world/sett
 		_draftList.push("daytaler_background");
 		_draftList.push("daytaler_background");
 		_draftList.push("daytaler_background");
+		_draftList.push("legend_blacksmith_background");
+		if (this.Const.LegendMod.Configs.LegendGenderEnabled())
+		{
+			_draftList.push("female_daytaler_background");
+		}
+
 	}
 
 });

@@ -222,11 +222,11 @@ this.harbor_location <- this.inherit("scripts/entity/world/attached_location", {
 
 			if (this.isActive())
 			{
-				this.getSprite("body").setBrush(this.m.Sprite);
+				this.getSprite("body").setBrush(this.getSpriteName());
 			}
 			else
 			{
-				this.getSprite("body").setBrush(this.m.SpriteDestroyed);
+				this.getSprite("body").setBrush(this.getSpriteDestroyedName());
 			}
 		}
 

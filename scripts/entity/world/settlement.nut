@@ -44,8 +44,19 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		ConnectedToByRoads = [],
 		IsCoastal = false,
 		IsMilitary = false,
-		IsActive = true
+		IsActive = true,
+		IsUpgrading = false
 	},
+
+	function setUpgrading (_v)
+	{
+		this.m.IsUpgrading = _v;
+	}
+
+	function isUpgrading()
+	{
+		return this.m.IsUpgrading;
+	}
 
 	function setSize(_v)
 	{
@@ -58,8 +69,9 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 	function changeSize(_v)
 	{
-		this.setSize(_v)
-		this.setActive(true);
+		this.setSize(this.Math.min(3, _v));
+		this.setUpgrading(false);
+		this.setActive(true, false, true);
 	}
 
 	function getDraftList()
@@ -359,7 +371,8 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 	{
 		if (this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
 		{
-			return "legend_" + this.m.Sprite;
+			local s = "legend_" + this.m.Sprite;
+			return s;
 		}
 		return this.m.Sprite;
 	}
@@ -462,6 +475,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 	function getUIInformation()
 	{
+		this.logInfo("***SETTLEMENT UI INFO FOR :: " + this.getName());
 		local night = !this.World.getTime().IsDaytime;
 		local water = this.m.IsCoastal ? "ui/settlements/water_01" : null;
 		local result = {
@@ -1882,9 +1896,9 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		return ret;
 	}
 
-	function setActive( _a, _burn = true )
+	function setActive( _a, _burn = true, _force = false )
 	{
-		if (_a == this.m.IsActive)
+		if (_a == this.m.IsActive && _force == false)
 		{
 			return;
 		}
@@ -2273,9 +2287,60 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		this.unregisterThinker();
 	}
 
+	function canUpgrade()
+	{
+		if (this.m.Size >= 3)
+		{
+			return false;
+		}
+
+		if (this.isUpgrading())
+		{
+			return false;
+		}
+
+		foreach( a in this.getAttachedLocations() )
+		{
+			if (a.isBuilding())
+			{
+				return false;
+			}
+		}
+
+		local minResources = 50;
+		if (this.isMilitary())
+		{
+			minResources += 50;
+		}
+		switch (this.m.Size)
+		{
+			case 1:
+				minResources += 100;
+				break;
+			case 2:
+				minResources += 150;
+				break;
+			case 3:
+				minResources += 200;
+				break;
+		}
+
+		if (this.getResources() < minResources)
+		{
+			return false;
+		}
+
+		return true;
+	}
+
 	function canBuildLocation()
 	{
 		return true;
+
+		if (this.isUpgrading())
+		{
+			return false;
+		}
 
 		if (this.m.AttachedLocations.len() >= this.getAttachedLocationsMax())
 		{

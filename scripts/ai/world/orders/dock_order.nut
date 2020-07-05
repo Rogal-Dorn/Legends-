@@ -17,7 +17,6 @@ this.dock_order <- this.inherit("scripts/ai/world/world_behavior", {
 				continue;
 			}
 
-			this.logInfo("Undock location = " + loc.getName())
 
 			if (!loc.isUsable())
 			{
@@ -27,11 +26,9 @@ this.dock_order <- this.inherit("scripts/ai/world/world_behavior", {
 			local settlement = loc.getSettlement();
 			if (settlement == null)
 			{
-				this.logInfo("settlement is null??")
 				continue;
 			}
 
-			this.logInfo("Adding resources from dock order " + _entity.getResources())
 			settlement.setResources(settlement.getResources() + _entity.getResources());
 
 			foreach( item in _entity.getInventory() )
