@@ -296,15 +296,11 @@ gt.Const.Perks.DruidtransfmormTree <- {
 	Tree = [
 		[],
 		[],
-		],
-		[
-		gt.Const.Perks.PerkDefs.LegendWolfform
-		],
-		[gt.Const.Perks.PerkDefs.LegendBearform,],
-		[gt.Const.Perks.PerkDefs.LegendTreeform,],
-		[,
-		gt.Const.Perks.PerkDefs.LegendTrueForm
-		]
+		[],
+		[gt.Const.Perks.PerkDefs.LegendWolfform],
+		[gt.Const.Perks.PerkDefs.LegendBearform],
+		[gt.Const.Perks.PerkDefs.LegendTreeform],
+		[gt.Const.Perks.PerkDefs.LegendTrueForm]
 	]
 };
 
@@ -363,7 +359,7 @@ gt.Const.Perks.MagicTrees <- {
 		gt.Const.Perks.ValaTranceMagicTree,
 	//	gt.Const.Perks.HealerMagicTree,
 	//	gt.Const.Perks.ValaRuneMagicTree,
-		gt.Const.Perks.ValaSpiritMagicTree, 
+		gt.Const.Perks.ValaSpiritMagicTree,
 		gt.Const.Perks.RangerHuntMagicTree,
 		gt.Const.Perks.BasicNecroMagicTree,
 		gt.Const.Perks.WarlockMagicTree,
@@ -381,7 +377,7 @@ gt.Const.Perks.MagicTrees <- {
 	//	gt.Const.Perks.EvocationMagicTree,
 		gt.Const.Perks.AssassinMagicTree
 	],
-	function getRandom(_exclude) 
+	function getRandom(_exclude)
 	{
 		local L = [];
 		foreach (i, t in this.Tree)
@@ -395,5 +391,5 @@ gt.Const.Perks.MagicTrees <- {
 
 		local r = this.Math.rand(0, L.len() - 1)
 		return this.Tree[L[r]];;
-	}	
+	}
 };

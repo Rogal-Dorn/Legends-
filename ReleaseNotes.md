@@ -3454,9 +3454,10 @@ fixes warlock cloak blueprint
 fixes potion of obvlision perk issue
 fixes female backgrounds losing their sounds
 
+
 14.0.0.10 Let it Grow! Let it Grow!
 
-* Adds a new World Economy Option
+* Adds a new World Economy Option (*New campaign required*)
 - All settlements now have a "Wealth" value.
 - As raiders raid, goblins terrorize, trade caravans trade, peasants and refugees flee from one settlement to another, etc.. A Settlements value will grow and shrink as the time passes.
 - Once a settlements wealth has sufficiently increased, it can now build and add new settlement locations.
