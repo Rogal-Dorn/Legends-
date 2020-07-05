@@ -5,7 +5,7 @@ this.legend_build_location_action <- this.inherit("scripts/factions/faction_acti
 	function create()
 	{
 		this.m.ID = "legend_build_location_action";
-		this.m.Cooldown = this.World.getTime().SecondsPerDay * 1 // 14;
+		this.m.Cooldown = this.World.getTime().SecondsPerDay * 7;
 		this.m.IsSettlementsRequired = true;
 		this.faction_action.create();
 	}
@@ -21,11 +21,6 @@ this.legend_build_location_action <- this.inherit("scripts/factions/faction_acti
 		// 	return;
 		// }
 
-		// if (this.World.Contracts.getActiveContract() != null && this.World.Contracts.getActiveContract().getID() == "contract.raze_attached_location")
-		// {
-		// 	return;
-		// }
-
 		this.m.Settlement = _faction.getSettlements()[this.Math.rand(0, _faction.getSettlements().len() - 1)];
 
 		if (!this.m.Settlement.canBuildLocation())
@@ -33,37 +28,7 @@ this.legend_build_location_action <- this.inherit("scripts/factions/faction_acti
 			return;
 		}
 
-
-
-		// if (_faction.getType() == this.Const.FactionType.NobleHouse && !this.m.Settlement.isMilitary())
-		// {
-		// 	return;
-		// }
-
-		// if (this.m.Settlement.getTile().getDistanceTo(this.World.State.getPlayer().getTile()) <= 15)
-		// {
-		// 	return;
-		// }
-
-		// local playerTile = this.World.State.getPlayer().getTile();
-		// local numInactive = 0;
-
-		// foreach( a in this.m.Settlement.getAttachedLocations() )
-		// {
-		// 	if (a.isActive())
-		// 	{
-		// 		continue;
-		// 	}
-
-		// 	numInactive = ++numInactive;
-		// }
-
-		// if (numInactive == 0)
-		// {
-		// 	return;
-		// }
-
-		this.m.Score = 100; //TODO change back to 1
+		this.m.Score = 1;
 	}
 
 	function onClear()
@@ -74,15 +39,6 @@ this.legend_build_location_action <- this.inherit("scripts/factions/faction_acti
 	function onExecute( _faction )
 	{
 		this.m.Settlement.addSituation(this.new("scripts/entity/world/settlements/situations/legend_building_effort_situation"));
-		local cooldown = this.World.getTime().SecondsPerDay * this.Math.rand(10, 20);
-		cooldown = cooldown * (1.0 - 0.2 * (this.m.Settlement.getSize() - 1));
-
-		if (this.World.FactionManager.isCivilWar())
-		{
-			cooldown = cooldown * 0.9;
-		}
-
-		this.m.Cooldown = cooldown;
 	}
 
 });
