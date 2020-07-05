@@ -8,7 +8,7 @@ this.legend_upgrading_effort_situation <- this.inherit("scripts/entity/world/set
 		this.m.Description = "This settlement is in the process of upgrading, building materials are in high demand and low supply.";
 		this.m.Icon = "ui/settlement_status/settlement_effect_15.png";
 		this.m.IsStacking = false;
-		this.m.ValidDays = 1;
+		this.m.ValidDays = 10;
 	}
 
 	function getDescription()
@@ -23,7 +23,6 @@ this.legend_upgrading_effort_situation <- this.inherit("scripts/entity/world/set
 
 	function onAdded( _settlement )
 	{
-		this.logInfo("**** UPGRADING SETTLEMENT = " + _settlement.getName());
 		_settlement.resetShop();
 		_settlement.setUpgrading(true);
 	}

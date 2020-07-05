@@ -88,7 +88,6 @@ this.legends_coast_fort <- this.inherit("scripts/entity/world/settlements/legend
 			"Sielburg"
 			]
 		];
-		this.m.Name = ""
 		this.m.DraftLists = [
 			[
 			"fisherman_background",

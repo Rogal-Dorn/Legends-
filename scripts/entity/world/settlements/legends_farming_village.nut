@@ -419,7 +419,7 @@ this.legends_farming_village <- this.inherit("scripts/entity/world/settlements/l
 		}
 
 		local item = this.Const.World.Common.pickItem(items)
-		return this.buildAttachedLocation(item.Num, item.Script, item.Terrain, item.NearTerrain, item.Distance, item.Road, item.Clear, item.Force)
+		return this.buildAttachedLocation(1, item.Script, item.Terrain, item.NearTerrain, item.Distance, item.Road, item.Clear, item.Force)
 	}
 
 	function onBuildOne( _settings )
