@@ -1,5 +1,5 @@
 ::mods_hookNewObject("mapgen/templates/world/worldmap_generator", function(o) {
-    o.isWorldAcceptable = function (_rect) 
+    o.isWorldAcceptable = function (_rect)
 	{
 		local ocean = 0;
 		local nonOcean = 0;
@@ -88,7 +88,7 @@
         return true;
 	}
 
-	o.addSettlement <- function (_rect, isLeft, settlementList, settlementTiles) 
+	o.addSettlement <- function (_rect, isLeft, settlementList, settlementSize, settlementTiles)
 	{
 		local tries = 0;
 		while (tries++ < 9000)
@@ -107,7 +107,7 @@
 
 			y = this.Math.rand(6, _rect.H * 0.95);
 			local tile = this.World.getTileSquare(x, y);
-			
+
 			if (settlementTiles.find(tile.ID) != null)
 			{
 				continue;
@@ -239,6 +239,7 @@
 
 			tile.clear();
 			local entity = this.World.spawnLocation(stype.Script, tile.Coords);
+			entity.setSize(settlementSize);
 			settlementTiles.push(tile);
 			return settlementTiles;
 		}
@@ -252,15 +253,15 @@
 		local isLeft = this.Math.rand(0, 1);
 		local settlementTiles = [];
 
-		foreach( list in this.Const.World.Settlements.LegendsMaster )
+		foreach( list in this.Const.World.Settlements.LegendsWorldMaster )
 		{
 			local num = Math.ceil(_properties.NumSettlements * list.Ratio)
 			//Add at least one of each
-			foreach (s in list.List)
+			foreach (s in list.Sizes)
 			{
 				for (local i = 0; i < s.MinAmount; i = ++i)
 				{
-					settlementTiles = this.addSettlement(_rect, isLeft, s.List, settlementTiles);
+					settlementTiles = this.addSettlement(_rect, isLeft, list.Types, s.Size, settlementTiles);
 					num = --num;
 				}
 			}
@@ -269,14 +270,14 @@
 			{
 				local r = this.Math.rand(1, 10);
 				local total = 0;
-				foreach (s in list.List)
+				foreach (s in list.Sizes)
 				{
 					total += s.Ratio;
 					if (r > total)
 					{
 						continue;
 					}
-					settlementTiles = this.addSettlement(_rect, isLeft, s.List, settlementTiles);
+					settlementTiles = this.addSettlement(_rect, isLeft, list.Types, s.Size, settlementTiles);
 					break;
 				}
 				num = --num;
@@ -394,11 +395,11 @@
 				}
 			}
 		}
-		
+
 		if (this.Const.World.Buildings.Stables < 2)
 		{
 			local candidates = [];
-	
+
 			foreach( s in settlements )
 			{
 				if (s.isMilitary() && s.hasFreeBuildingSlot() && !s.hasBuilding("building.stables"))
@@ -406,14 +407,14 @@
 					candidates.push(s);
 				}
 			}
-	
+
 			for( local i = this.Const.World.Buildings.Stables; i <= 2; i = ++i )
 			{
 				local r = this.Math.rand(0, candidates.len() - 1);
 				local s = candidates[r];
 				candidates.remove(r);
 				s.addBuilding(this.new("scripts/entity/world/settlements/buildings/stables_building"));
-	
+
 				if (candidates.len() == 0)
 				{
 					break;
@@ -494,7 +495,7 @@
 			Amount = 0,
 			Script = "scripts/entity/world/attached_location/brewery_location"
 		};
-		locs["attached_location.dye_maker"] <- { 
+		locs["attached_location.dye_maker"] <- {
 			Amount = 0,
 			Script = "scripts/entity/world/attached_location/dye_maker_location"
 		};
@@ -565,7 +566,7 @@
 		locs["attached_location.trapper"] <- {
 			Amount = 0,
 			Script = "scripts/entity/world/attached_location/trapper_location"
-		};		
+		};
 		locs["attached_location.wheat_fields"] <- {
 			Amount = 0,
 			Script = "scripts/entity/world/attached_location/wheat_fields_location"
@@ -594,7 +595,7 @@
 				}
 			}
 		}
-		
+
 		foreach (k,v in locs)
 		{
 
