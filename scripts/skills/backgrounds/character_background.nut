@@ -78,7 +78,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			Weapon = 8,
 			Defense = 2,
 			Traits = 8,
-			Enemy = 2,
+			Enemy = 1,
 			EnemyChance = 0.1,
 			Class = 1,
 			ClassChance = 0.10,
