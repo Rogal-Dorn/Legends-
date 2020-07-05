@@ -3463,6 +3463,8 @@ Druid no longer gives transformations to hires, but can find other druids for hi
 Druid loses houndmaster skills 
 Bear Form has 150% hp rather than 200%, this also lowers the damage of the claw attack 
 Berserker no longer has Bear Form 
+Favoured enemy skills spawn in smaller amounts 
+Messengers are better at walking in all terrain 
 
 *fixes*
 footwork and lunge AP costs fixed (thanks motanul)
