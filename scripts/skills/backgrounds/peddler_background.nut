@@ -119,14 +119,14 @@ this.peddler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		local c = {
 			Hitpoints = [
 				-5,
-				-0
+				0
 			],
 			Bravery = [
 				0,
 				0
 			],
 			Stamina = [
-				0,
+				00,
 				0
 			],
 			MeleeSkill = [
@@ -135,15 +135,15 @@ this.peddler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			],
 			RangedSkill = [
 				-5,
-				-0
+				0
 			],
 			MeleeDefense = [
-				 2,
-				 7
+				2,
+				7
 			],
 			RangedDefense = [
-				 2,
-				 7
+				2,
+				7
 			],
 			Initiative = [
 				0,

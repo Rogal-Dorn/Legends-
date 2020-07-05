@@ -123,14 +123,38 @@ this.legend_vala_background <- this.inherit("scripts/skills/backgrounds/characte
 	function onChangeAttributes()
 	{
 		local c = {
-			Hitpoints = [-4, -6],
-			Bravery = [10, 15],
-			Stamina = [8, 12],
-			MeleeSkill = [-2, -3],
-			RangedSkill = [0, 0],
-			MeleeDefense = [0, 0],
-			RangedDefense = [0, 0],
-			Initiative = [6, 9]
+			Hitpoints = [
+				-4,
+				-6
+			],
+			Bravery = [
+				10,
+				15
+			],
+			Stamina = [
+				8,
+				12
+			],
+			MeleeSkill = [
+				-2,
+				-3
+			],
+			RangedSkill = [
+				0,
+				0
+			],
+			MeleeDefense = [
+				0,
+				0
+			],
+			RangedDefense = [
+				0,
+				0
+			],
+			Initiative = [
+				6,
+				9
+			]
 		};
 		return c;
 	}
