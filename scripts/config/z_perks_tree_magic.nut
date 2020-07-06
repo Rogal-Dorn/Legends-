@@ -288,7 +288,7 @@ gt.Const.Perks.DruidMagicTree <- {
 	]
 };
 
-gt.Const.Perks.DruidtransfmormTree <- {
+gt.Const.Perks.DruidTransformTree <- {
 	ID = "DruidTransformTree",
 	Descriptions = [
 		"druidic transformation"
