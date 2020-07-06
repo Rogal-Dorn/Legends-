@@ -1,7 +1,6 @@
 this.autumn_boulder2 <- this.inherit("scripts/entity/tactical/entity", {
 	m = {
-		IsRock = true,
-		IsAttackable = true
+		IsRock = true
 	},
 	function getName()
 	{

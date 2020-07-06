@@ -1,7 +1,6 @@
 this.autumn_brush <- this.inherit("scripts/entity/tactical/entity", {
 	m = {
-	IsBush  = true,
-	IsAttackable = true
+	IsBush  = true
 	},
 	function getName()
 	{
