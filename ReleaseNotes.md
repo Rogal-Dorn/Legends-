@@ -3491,9 +3491,9 @@ https://drive.google.com/file/d/1iT128cOZIx4qoLXVo9mW6CzcAeq6bT1y/view?usp=shari
 
 **Harvesting skills**
 Early game weapon perks now also unlock harvesting during battle
-* Woodsman's Cuts lets you chop down trees. If you're holding a woodaxe there is a 1/4 chance of getting wood
+* Woodsman's Cuts lets you chop down trees. If you're holding an axe there is a 1/4 chance of getting wood
 * Harvest Twist lets you chop down bushes  If you're holding a sickle there is a 1/2 chance of getting berries
-* Ore Hunter lets you chop down rocks. If you're holding a pickaxe there is a 1/2 chance of getting uncut gems
+* Ore Hunter lets you crush rocks. If you're holding a pickaxe or hammer there is a 1/10 chance of getting uncut gems
 
 *changes*
 * sisterhood intro text is no longer placeholder
