@@ -1,6 +1,6 @@
 this.brush_green <- this.inherit("scripts/entity/tactical/entity", {
 	m = {
-		IsBush = true
+		IsBush  = true
 	},
 	function getName()
 	{

@@ -1,6 +1,6 @@
 this.tundra_brush <- this.inherit("scripts/entity/tactical/entity", {
 	m = {
-		IsBush = true
+		IsBush  = true
 		},
 	function getName()
 	{

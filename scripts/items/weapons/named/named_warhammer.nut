@@ -39,6 +39,10 @@ this.named_warhammer <- this.inherit("scripts/items/weapons/named/named_weapon",
 		this.named_weapon.onEquip();
 		this.addSkill(this.new("scripts/skills/actives/hammer"));
 		this.addSkill(this.new("scripts/skills/actives/crush_armor"));
+				if (this.m.Container.getActor().getSkills().hasSkill("perk.legend_specialist_pickaxe_skill"))
+		{
+			this.addSkill(this.new("scripts/skills/actives/legend_harvest_rock"));
+		}
 	}
 
 });

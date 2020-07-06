@@ -848,52 +848,9 @@ this.skill <- {
 
 	function onVerifyTarget( _originTile, _targetTile )
 	{
-
-		local e =  _targetTile.getEntity()
-		//Restructured to make it easier to follow the logic.
-		//First we check if the spell is meant to target an actor
-		if (this.m.IsTargetingActor)
+		if (this.m.IsTargetingActor && (_targetTile.IsEmpty || !_targetTile.getEntity().isAttackable() || !_targetTile.getEntity().isAlive() || _targetTile.getEntity().isDying()))
 		{
-			//if the tile is empty, or the target is dead or dying we cant verify the target
-			if (_targetTile.IsEmpty)
-			{
-				return false;
-			}
-
-
-			if (!e.isAlive())
-			{
-				return false;
-			}
-
-			if ("isDying" in e && e.isDying())
-			{
-				return false;
-			}
-
-			//if the target isn't attackable we need to check if we are harvesting it
-			if (!e.isAttackable())
-			{
-				//if its a rock and we have the pickaxe skill, we can target it
-				if (e.isRock() this.m.Container.getActor().getSkills().hasSkill("perk.legend_specialist_pickaxe_skill"))
-				{
-					return true;
-				}
-				//if its a tree and we have the woodaxe skill, we can target it
-				if (e.isTree() && this.m.Container.getActor().getSkills().hasSkill("perk.legend_specialist_woodaxe_skill"))
-				{
-					return true;
-				}
-				//if its a nush and we have the sickle skill, we can target it
-				if (e.isBush() this.m.Container.getActor().getSkills().hasSkill("perk.legend_specialist_sickle_skill"))
-				{
-					return true;
-				}
-
-				return false;
-
-			}
-
+			return false;
 		}
 
 		if (this.m.IsAttack && this.m.IsTargetingActor && this.m.Container.getActor().isAlliedWith(e))
@@ -1276,72 +1233,62 @@ this.skill <- {
 
 	function attackEntity( _user, _targetEntity, _allowDiversion = true )
 	{
-
-		//First we check if its a harvestable item, cant harvest without a weapon
-		local item = _user.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		if (item != null)
+		if (_targetEntity.isRock())
 		{
-
-		//if its a rock and we have the pickaxe skill, we remove the rock, drop some gems and play a sound
-			if (_targetEntity.isRock() && _user.getSkills().hasSkill("perk.legend_specialist_pickaxe_skill"))
+			local r = this.Math.rand(0, 9);
+			if (r == 1)
 			{
-				_targetEntity.getTile().removeObject()
-				local r = this.Math.rand(0, 9);
-				if (r == 1)
-				{
-					local loot = this.new("scripts/items/trade/uncut_gems_item");
-					loot.drop(_targetEntity().getTile());
-				}
-				if (this.m.SoundOnHit.len() != 0)
-				{
-					this.Time.scheduleEvent(this.TimeUnit.Virtual, this.m.SoundOnHitDelay, this.onPlayHitSound.bindenv(this), {
-						Sound = this.m.SoundOnHit[this.Math.rand(0, this.m.SoundOnHit.len() - 1)],
-						Pos = _targetEntity.getPos()
-					});
-				}
-				return false;
+				local loot = this.new("scripts/items/trade/uncut_gems_item");
+				loot.drop(_targetEntity().getTile());
 			}
-
-		//if its a tree and we have the woodkaxe skill, we remove the tree, drop some wood and play a sound
-			if (_targetEntity.isTree() && _user.getSkills().hasSkill("perk.legend_specialist_woodaxe_skill"))
+			_targetEntity.getTile().removeObject()
+			if (this.m.SoundOnHit.len() != 0)
 			{
-				_targetEntity.getTile().removeObject()
-				local r = this.Math.rand(0, 4);
-				if (r == 1)
-				{
-					local loot = this.new("scripts/items/trade/legend_raw_wood_item");
-					loot.drop(_targetEntity.getTile());
-				}
-				if (this.m.SoundOnHit.len() != 0)
-				{
-					this.Time.scheduleEvent(this.TimeUnit.Virtual, this.m.SoundOnHitDelay, this.onPlayHitSound.bindenv(this), {
-						Sound = this.m.SoundOnHit[this.Math.rand(0, this.m.SoundOnHit.len() - 1)],
-						Pos = _targetEntity.getPos()
-					});
-				}
-				return false;
+				this.Time.scheduleEvent(this.TimeUnit.Virtual, this.m.SoundOnHitDelay, this.onPlayHitSound.bindenv(this), {
+					Sound = this.m.SoundOnHit[this.Math.rand(0, this.m.SoundOnHit.len() - 1)],
+					Pos = _targetEntity.getPos()
+				});
 			}
-		//if its a bush and we have the sickle skill, we remove the bush, drop some berries and play a sound
+			return true;
+		}
 
-			if (_targetEntity.isBush() && _user.getSkills().hasSkill("perk.legend_specialist_sickle_skill"))
+		if (_targetEntity.isTree())
+		{
+			local r = this.Math.rand(0, 4);
+			if (r == 1)
 			{
-				_targetEntity.getTile().removeObject()
-				local r = this.Math.rand(0, 2);
-				if (r == 1)
-				{
-					local loot = this.new("scripts/items/supplies/roots_and_berries_item");
-					loot.drop(_targetEntity.getTile());
-				}
-
-				if (this.m.SoundOnHit.len() != 0)
-				{
-					this.Time.scheduleEvent(this.TimeUnit.Virtual, this.m.SoundOnHitDelay, this.onPlayHitSound.bindenv(this), {
-						Sound = this.m.SoundOnHit[this.Math.rand(0, this.m.SoundOnHit.len() - 1)],
-						Pos = _targetEntity.getPos()
-					});
-				}
-				return false;
+				local loot = this.new("scripts/items/trade/legend_raw_wood_item");
+				loot.drop(_targetEntity.getTile());
 			}
+			_targetEntity.getTile().removeObject()
+			if (this.m.SoundOnHit.len() != 0)
+			{
+				this.Time.scheduleEvent(this.TimeUnit.Virtual, this.m.SoundOnHitDelay, this.onPlayHitSound.bindenv(this), {
+					Sound = this.m.SoundOnHit[this.Math.rand(0, this.m.SoundOnHit.len() - 1)],
+					Pos = _targetEntity.getPos()
+				});
+			}
+			return true;
+		}
+
+		if (_targetEntity.isBush())
+		{
+			local r = this.Math.rand(0, 2);
+			if (r == 1)
+			{
+				local loot = this.new("scripts/items/supplies/roots_and_berries_item");
+				loot.drop(_targetEntity.getTile());
+			}
+			_targetEntity.getTile().removeObject()
+
+			if (this.m.SoundOnHit.len() != 0)
+			{
+				this.Time.scheduleEvent(this.TimeUnit.Virtual, this.m.SoundOnHitDelay, this.onPlayHitSound.bindenv(this), {
+					Sound = this.m.SoundOnHit[this.Math.rand(0, this.m.SoundOnHit.len() - 1)],
+					Pos = _targetEntity.getPos()
+				});
+			}
+			return false;
 		}
 
 		//lets get on with the rest of the attack

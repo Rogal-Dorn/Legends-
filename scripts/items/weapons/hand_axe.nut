@@ -35,6 +35,10 @@ this.hand_axe <- this.inherit("scripts/items/weapons/weapon", {
 		local skillToAdd = this.new("scripts/skills/actives/split_shield");
 		skillToAdd.setApplyAxeMastery(true);
 		this.addSkill(skillToAdd);
+		if (this.m.Container.getActor().getSkills().hasSkill("perk.legend_specialist_woodaxe_skill"))
+		{
+			this.addSkill(this.new("scripts/skills/actives/legend_harvest_tree"));
+		}
 	}
 
 	function onUpdateProperties( _properties )

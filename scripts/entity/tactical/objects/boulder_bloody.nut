@@ -1,6 +1,7 @@
 this.boulder_bloody <- this.inherit("scripts/entity/tactical/entity", {
 	m = {
-		IsRock = true
+		IsRock = true,
+		IsAttackable = true
 	},
 	function getName()
 	{

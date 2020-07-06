@@ -1,6 +1,7 @@
 this.steppe_boulder3 <- this.inherit("scripts/entity/tactical/entity", {
 	m = {
-		IsRock = true
+		IsRock = true,
+		IsAttackable = true
 	},
 	function getName()
 	{

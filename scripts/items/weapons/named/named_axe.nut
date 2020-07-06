@@ -42,6 +42,10 @@ this.named_axe <- this.inherit("scripts/items/weapons/named/named_weapon", {
 		local skillToAdd = this.new("scripts/skills/actives/split_shield");
 		skillToAdd.setApplyAxeMastery(true);
 		this.addSkill(skillToAdd);
+		if (this.m.Container.getActor().getSkills().hasSkill("perk.legend_specialist_woodaxe_skill"))
+		{
+			this.addSkill(this.new("scripts/skills/actives/legend_harvest_tree"));
+		}
 	}
 
 });

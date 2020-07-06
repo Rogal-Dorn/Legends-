@@ -54,6 +54,7 @@ this.named_skullhammer <- this.inherit("scripts/items/weapons/named/named_weapon
 		local skill = this.new("scripts/skills/actives/split_shield");
 		skill.setFatigueCost(skill.getFatigueCostRaw() + 5);
 		this.addSkill(skill);
+
 	}
 
 });
