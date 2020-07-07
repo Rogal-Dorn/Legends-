@@ -69,13 +69,14 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 				this.getLabel("name").Text = this.m.Name;
 			}
 		}
+		this.updateSprites()
 	}
 
 	function changeSize(_v)
 	{
-		this.setSize(this.Math.min(3, _v));
 		this.setUpgrading(false);
-		this.setActive(true, false, true);
+		this.setSize(this.Math.min(3, _v));
+		//this.setActive(true, false, true);
 	}
 
 	function getDraftList()
@@ -1946,16 +1947,9 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		return ret;
 	}
 
-	function setActive( _a, _burn = true, _force = false )
+	function updateSprites(_burn = true)
 	{
-		if (_a == this.m.IsActive && _force == false)
-		{
-			return;
-		}
-
-		this.m.IsActive = _a;
-
-		if (_a)
+		if (this.m.IsActive)
 		{
 			this.getSprite("location_banner").Visible = true;
 			this.getLabel("name").Visible = true;
@@ -2001,6 +1995,17 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 				loc.setSettlement(null);
 			}
 		}
+	}
+
+	function setActive( _a, _burn = true)
+	{
+		if (_a == this.m.IsActive)
+		{
+			return;
+		}
+
+		this.m.IsActive = _a;
+		this.updateSprites(_burn)
 	}
 
 	function destroy()
@@ -2518,7 +2523,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			this.m.Size = _in.readU8();
 			this.m.IsUpgrading = _in.readBool();
 		}
-		this.m.IsActive = _in.readBool();
+		this.m.IsActive = _in.readBool()
 		this.m.IsCoastal = _in.readBool();
 		this.m.LastShopUpdate = _in.readF32();
 		this.m.LastRosterUpdate = _in.readF32();
@@ -2611,6 +2616,8 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 				V = v
 			});
 		}
+		this.updateSprites();
+
 	}
 
 });
