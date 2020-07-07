@@ -5,8 +5,8 @@ this.legend_scry_trance_skill <- this.inherit("scripts/skills/actives/legend_tra
 		this.legend_trance_abstract.create();
 		this.m.ID = "actives.legend_scry_trance";
 		this.m.Name = "Scry Area (Trance)";
-		this.m.Icon = "skills/active_104.png"; //todo: change icons, better description
-		this.m.IconDisabled = "skills/active_104_sw.png";
+		this.m.Icon = "skills/scry_skill.png";
+		this.m.IconDisabled = "skills/scry_skill_bw.png";
 		this.m.Overlay = "active_104";		
 		this.m.SoundOnUse = [
 			"sounds/combat/hawk_01.wav",

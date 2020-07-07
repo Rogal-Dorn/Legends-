@@ -4,9 +4,9 @@ this.legend_read_omens_effect <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "effects.legend_read_omens";
 		this.m.Name = "Omens Foretold";
-		this.m.Icon = "ui/perks/perk_37.png"; //todo: icons
-		this.m.IconMini = "perk_37_mini";
-		this.m.Overlay = "perk_37";
+		this.m.Icon = "ui/perks/omens_circle.png"; //todo: iconmini
+		this.m.IconMini = "omens_circle_mini";
+		this.m.Overlay = "omens_circle";
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
 		this.m.IsRemovedAfterBattle = true;

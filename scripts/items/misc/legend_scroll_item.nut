@@ -7,7 +7,7 @@ this.legend_scroll_item <- this.inherit("scripts/items/item", {
 		this.m.ID = "misc.legend_scroll";
 		this.m.Name = "Scroll";
 		this.m.Description = "A Scroll with description improperly set if you see this!";
-		this.m.Icon = "consumables/paint_red.png"; //todo icon
+		this.m.Icon = "trade/scroll.png"; //todo icon
 		this.m.SlotType = this.Const.ItemSlot.None;
 		this.m.ItemType = this.Const.Items.ItemType.Usable;
 		this.m.IsDroppedAsLoot = true;
@@ -95,11 +95,49 @@ this.legend_scroll_item <- this.inherit("scripts/items/item", {
 						_actor.getSkills().removeByID("effects.trained"));
 					}
 					local effect = this.new("scripts/skills/effects_world/new_trained_effect");
-					effect.m.Description = "Flavor text here"; //todo flavor text
+					effect.m.Description = "flavor text (: +50% exp for 3 battles"; //todo flavor text
 					effect.m.Duration = 3;
 					effect.m.XPGainMult = 1.5;
-					effect.m.Icon = "skills/experience_scroll_effect.png"; //todo icon
+					//effect.m.Icon = "skills/experience_scroll_effect.png"; //todo icon
 					_actor.getSkills().add(effect);
+					break;
+				case 3:
+					local pT = _actor.getBackground().getPerkTree();
+					local r = this.Math.rand(1, 100);
+					local t;
+					if (r <= 10)
+					{
+						t = gt.Const.Perks.MagicTrees;
+					}
+					else if (r <= 20)
+					{
+						t = gt.Const.Perks.EnemyTrees;
+					}
+					else if (r <= 30)
+					{
+						t = gt.Const.Perks.DefenseTrees;
+					}
+					else if (r <= 55)
+					{
+						t = gt.Const.Perks.ClassTrees;
+					}
+					else if (r <= 75)
+					{
+						t = gt.Const.Perks.TraitsTrees;
+					}
+					else if (r <= 100)
+					{
+						t = gt.Const.Perks.WeaponTrees;
+					}
+					local brk = false;
+					while (!brk)
+					{
+						local f = t.getRandom([]);
+						foreach(i, perkAdd in f)
+						{
+							brk = pT.addPerkBooleanFail( perkAdd, i + (i > 3 ? 1 : 0) );
+						}
+					}
 					break;
 			}
         }
