@@ -6,7 +6,7 @@ this.legend_ancient_scroll_item <- this.inherit("scripts/items/trade/trading_goo
 		this.m.ID = "misc.ancient_scroll";
 		this.m.Name = "Ancient Scroll";
 		this.m.Description = "A torn-up scroll with knowledge unseen for centuries. It can be translated by a character with the interpretation perk in the crafting tent. Highly valuable to some historians, although it is useless to many.";
-		this.m.Icon = "trade/inventory_trade_06.png"; //todo ancient scroll icon
+		this.m.Icon = "trade/scroll.png";
 		this.m.Value = 50;
 	}
 
@@ -50,7 +50,7 @@ this.legend_ancient_scroll_item <- this.inherit("scripts/items/trade/trading_goo
 		else
         {
 
-			local r = this.Math.rand(1, 2);
+			local r = this.Math.rand(1, 3);
 			switch(r)
 			{
 				case 1:
@@ -70,13 +70,50 @@ this.legend_ancient_scroll_item <- this.inherit("scripts/items/trade/trading_goo
 						_actor.getSkills().removeByID("effects.trained"));
 					}
 					local effect = this.new("scripts/skills/effects_world/new_trained_effect");
-					effect.m.Description = "Flavor text here"; //todo flavor text
+					effect.m.Description = "Trained effect (: +50% exp for 3 battles"; //todo flavor text
 					effect.m.Duration = 3;
 					effect.m.XPGainMult = 1.5;
-					effect.m.Icon = "skills/experience_scroll_effect.png"; //todo icon
+					//effect.m.Icon = "skills/experience_scroll_effect.png"; //todo icon
 					_actor.getSkills().add(effect);
 					break;
 				case 3:
+					local pT = _actor.getBackground().getPerkTree();
+					local r = this.Math.rand(1, 100);
+					local t;
+					if (r <= 10)
+					{
+						t = gt.Const.Perks.MagicTrees;
+					}
+					else if (r <= 20)
+					{
+						t = gt.Const.Perks.EnemyTrees;
+					}
+					else if (r <= 30)
+					{
+						t = gt.Const.Perks.DefenseTrees;
+					}
+					else if (r <= 55)
+					{
+						t = gt.Const.Perks.ClassTrees;
+					}
+					else if (r <= 75)
+					{
+						t = gt.Const.Perks.TraitsTrees;
+					}
+					else if (r <= 100)
+					{
+						t = gt.Const.Perks.WeaponTrees;
+					}
+					local brk = false;
+					while (!brk)
+					{
+						local f = t.getRandom([]);
+						foreach(i, perkAdd in f)
+						{
+							brk = pT.addPerkBooleanFail( perkAdd, i + (i > 3 ? 1 : 0) );
+						}
+					}
+					break;
 
 			}
         }

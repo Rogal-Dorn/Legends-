@@ -33,7 +33,7 @@ this.legend_scroll_blueprint <- this.inherit("scripts/crafting/blueprint", {
 	function onCraft( _stash )
 	{
 		local item = this.new("scripts/items/misc/legend_scroll_item");
-		local r = this.Math.rand(1, 2);
+		local r = this.Math.rand(1, 3);
 		item.m.Selection = r;
 		switch(r) {
 			case 1:
@@ -45,8 +45,8 @@ this.legend_scroll_blueprint <- this.inherit("scripts/crafting/blueprint", {
 				item.m.Name = "Battle Scroll";
 				break;
 			case 3:
-				item.m.Description = "";
-				item.m.Name = "";
+				item.m.Description = "Use the scroll to add a perk group to one character's tree";
+				item.m.Name = "Scroll of Technique";
 				break;
 			case 4:
 				item.m.Description = "";
