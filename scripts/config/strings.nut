@@ -1726,7 +1726,9 @@ gt.Const.Strings.PerkName <- {
 	LegendReadOmensTrance = "Read Omens (Trance)",
 	LegendDistantVisions = "Distant Visions",
 	LegendScrollIngredients = "Interpretation",
-	LegendCitrinitas = "Citrinitas (Trance)"
+	LegendCitrinitas = "Citrinitas (Trance)",
+	LegendAlbedo = "Albedo",
+	LegendNigredo = "Nigredo"
 };
 gt.Const.Strings.PerkDescription <- {
 	Relentless = "Don\'t slow down! At all times your Initiative is reduced only by [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] of your accumulated Fatigue, instead of all of it. \n[color=#0b0084]From the Fit perk group[/color]",
@@ -2077,7 +2079,9 @@ gt.Const.Strings.PerkDescription <- {
 	LegendReadOmensTrance = "The user enters a trance, telling all allies of their future. Grants [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] chance to have any attacker require two successful attack rolls in order to hit",
 	LegendDistantVisions = "Allows the user to have distant visions of towns. This perk provides a chance when the user is in reserves to see a specific town's current events and buildings.",
 	LegendScrollIngredients = "Allows the user to identify Ancient Scrolls. These tomes a specific effect whereas an Ancient Scroll gives any random effect.",
-	LegendCitrinitas = "Enter a trance, granting the banner effect, and drums of war effects to all brothers at the end of the user\'s turn"
+	LegendCitrinitas = "Enter a trance, granting the banner effect, and drums of war effects to all brothers at the end of the user\'s turn",
+	LegendAlbedo = "Restores up to 25 armor",
+	LegendNigredo = "It's just acid flask but with +1 range and cooler"
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

@@ -3011,7 +3011,25 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/citrinitas_circle.png",
 		IconDisabled = "ui/perks/citrinitas_circle_bw.png",
 		Const = "LegendCitrinitas"
-	}
+	},
+	{
+		ID = "perk.legend_albedo",
+		Script = "scripts/skills/perks/perk_legend_citrinitas",
+		Name = this.Const.Strings.PerkName.LegendAlbedo,
+		Tooltip = this.Const.Strings.PerkName.LegendAlbedo,
+		Icon = "ui/perks/albedo_circle.png",
+		IconDisabled = "ui/perks/albedo_circle_bw.png",
+		Const = "LegendAlbedo"
+	},
+	{
+		ID = "perk.legend_nigredo",
+		Script = "scripts/skills/perks/perk_legend_citrinitas",
+		Name = this.Const.Strings.PerkName.LegendNigredo,
+		Tooltip = this.Const.Strings.PerkName.LegendNigredo,
+		Icon = "ui/perks/nigredo_circle.png",
+		IconDisabled = "ui/perks/nigredo_circle_bw.png",
+		Const = "LegendNigredo"
+	},
 ];
 gt.Const.Perks.PerkDefs <- {};
 
