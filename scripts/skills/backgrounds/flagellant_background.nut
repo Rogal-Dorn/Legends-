@@ -297,14 +297,53 @@ this.flagellant_background <- this.inherit("scripts/skills/backgrounds/character
 			[0, "cloth/legend_apron_smith"],
 			[0, "cloth/legend_robes_wizard"],
 			[1, "cloth/legend_sackcloth"],
-			[0, "cloth/legend_sackcloth_patched"],
-			[0, "cloth/legend_sackcloth_tattered"],
-			[1, "cloth/legend_tunic"],
+			[1, "cloth/legend_sackcloth_patched"],
+			[1, "cloth/legend_sackcloth_tattered"],
+			[1, "cloth/legend_ancient_cloth"],
+			[1, "cloth/legend_ancient_cloth_restored"],
+			[0, "cloth/legend_tunic"],
 			[0, "cloth/legend_tunic_noble"]
 		];
 		local armor = this.Const.World.Common.pickLegendArmor(cloths)
+			local plates = [
+                [1, ""],
+				[1, "plate/legend_animal_hide_armor"],
+				[1, "plate/legend_hide_and_bone_armor"],
+				[0, "plate/legend_armor_leather_brigandine_hardened_full"],
+				[0, "plate/legend_armor_leather_jacket"],
+				[1, "plate/legend_armor_leather_jacket_simple"],
+				[0, "plate/legend_armor_leather_lamellar"],
+				[0, "plate/legend_armor_leather_lamellar_harness_heavy"],
+				[0, "plate/legend_armor_leather_lamellar_harness_reinforced"],
+				[0, "plate/legend_armor_leather_lamellar_heavy"],
+				[0, "plate/legend_armor_leather_lamellar_reinforced"],
+				[0, "plate/legend_armor_leather_noble"],
+				[0, "plate/legend_armor_leather_padded"],
+				[0, "plate/legend_armor_leather_riveted"],
+				[0, "plate/legend_armor_leather_riveted_light"],
+				[0, "plate/legend_armor_leather_scale"],
+				[0, "plate/legend_armor_plate_ancient_chest"],
+				[0, "plate/legend_armor_plate_ancient_harness"],
+				[0, "plate/legend_armor_plate_ancient_mail"],
+				[0, "plate/legend_armor_plate_ancient_scale"],
+				[0, "plate/legend_armor_plate_ancient_scale_coat"],
+				[0, "plate/legend_armor_plate_ancient_scale_harness"],
+				[0, "plate/legend_armor_plate_chest"],
+				[0, "plate/legend_armor_plate_chest_rotten"],
+				[0, "plate/legend_armor_plate_cuirass"],
+				[0, "plate/legend_armor_plate_full"],
+				[0, "plate/legend_armor_scale"],
+				[0, "plate/legend_armor_scale_coat"],
+				[0, "plate/legend_armor_scale_coat_rotten"],
+				[0, "plate/legend_armor_scale_shirt"]
+			]
+			local plate = this.Const.World.Common.pickLegendArmor(plates)
+			if (plate != null)
+			{
+				armor.setUpgrade(plate)
+			}
 		items.equip(armor)
-
+		local r;
 		r = this.Math.rand(0, 4);
 
 		if (r == 0)

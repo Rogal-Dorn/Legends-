@@ -77,7 +77,7 @@ this.legend_prayer_of_life_skill <- this.inherit("scripts/skills/skill", {
 			if (a.getFaction() == _user.getFaction())
 			{
 				
-				if (a.getBackground().getID() != "background.cultist" && a.getBackground().getID() != "background.converted_cultist")
+				if (!a.getBackground().isCultist())
 				{
 				a.getSkills().add(this.new("scripts/skills/effects/legend_prayer_of_life_effect"));
 				}

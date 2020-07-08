@@ -108,6 +108,12 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.IsFemaleBackground = true;
 
 	}
+	
+	// Should overwrite the "character_backgrounds" isCultist() check
+	function isCultist()
+	{
+		return true;
+	}
 
 	function getTooltip()
 	{

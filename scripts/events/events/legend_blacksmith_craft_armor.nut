@@ -73,7 +73,7 @@ this.legend_blacksmith_craft_armor <- this.inherit("scripts/events/event", {
 					Text = "A masterwork!",
 					function getResult( _event )
 					{
-						this.World.Assets.addMoralReputation(2);
+						
 						return 0;
 					}
 
@@ -113,6 +113,7 @@ this.legend_blacksmith_craft_armor <- this.inherit("scripts/events/event", {
 						text = _event.m.Blacksmith.getName() + this.Const.MoodStateEvent[_event.m.Blacksmith.getMoodState()]
 					});
 				}
+
 			}
 
 		});
@@ -162,7 +163,7 @@ this.legend_blacksmith_craft_armor <- this.inherit("scripts/events/event", {
 					Text = "A masterwork!",
 					function getResult( _event )
 					{
-						this.World.Assets.addMoralReputation(2);
+			
 						return 0;
 					}
 

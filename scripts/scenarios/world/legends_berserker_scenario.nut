@@ -33,7 +33,7 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 		]);
 		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
 		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_berserk"));
-
+		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_bearform"));
 		// bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_favoured_enemy_direwolf"));
 		// bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_favoured_enemy_ghoul"));
 		// bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_favoured_enemy_hexen"));
@@ -58,6 +58,24 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 			local val = this.World.State.addNewID(bro);
 			bro.m.CompanyID = val;
 		}
+
+		if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+{
+    local avgAlignment = 0;
+    foreach (bro in this.World.getPlayerRoster().getAll())
+    {
+        if (bro.getAlignment() <= this.Const.LegendMod.Alignment.NeutralMin)
+        {
+            avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMin);
+        }
+        else if (bro.getAlignment() >= this.Const.LegendMod.Alignment.NeutralMax)
+        {
+            avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMax);
+        }
+    }
+    avgAlignment *= (10 / this.World.getPlayerRoster().getSize());
+    this.World.Assets.addMoralReputation(avgAlignment);
+}
 		bros[0].getTags().set("IsPlayerCharacter", true);
 		bros[0].setVeteranPerks(2);	
 		this.World.Assets.m.Money = this.World.Assets.m.Money;

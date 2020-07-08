@@ -30,7 +30,7 @@ this.legend_apothecary_mushrooms_item <- this.inherit("scripts/items/accessory/a
 	function onEquip()
 	{
 		this.accessory.onEquip();
-		local skill = this.new("scripts/skills/actives/legend_apocathery_mushrooms_skill");
+		local skill = this.new("scripts/skills/actives/legend_apothecary_mushrooms_skill");
 		skill.setItem(this);
 		this.addSkill(skill);
 	}

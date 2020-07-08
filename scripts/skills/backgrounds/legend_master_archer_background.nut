@@ -9,8 +9,8 @@ this.legend_master_archer_background <- this.inherit("scripts/skills/backgrounds
 		this.m.BackgroundDescription = "Master Archers have spent years honing their craft, in hunting, in sport, in war. ";
 		this.m.GoodEnding = "While the %companyname% continued on with great success, %name% the hunter eventually saw fit to leave it all behind. They returned to the life of an archer, working for who ever paid the best. %name% rarely showed the grim reality of hunting humans, but you have to imagine they\'d just rather stop doing it. As far as you know, %name% is doing well these days. The archer purchased a bit of land and helps guide nobles on pricy hunting trips.";
 		this.m.BadEnding = "With the decline of the %companyname% readily obvious, %name% the master archer departed from the company and returned to archery contests. Unfortunately, a shoot off went awry while shooting apples off each other\'s heads. The master archer was the better shot, but being better does not help if you\'re dead.";
-		this.m.HiringCost = 1000;
-		this.m.DailyCost = 100;
+		this.m.HiringCost = 8000;
+		this.m.DailyCost = 120;
 		this.m.Excluded = [
 			"trait.weasel",
 			"trait.fear_undead",
@@ -42,12 +42,13 @@ this.legend_master_archer_background <- this.inherit("scripts/skills/backgrounds
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.Untidy;
 		this.m.Body = "bust_naked_body_01";
-		this.m.Level = this.Math.rand(1, 2);
+		this.m.Level = this.Math.rand(1, 4);
+		this.m.IsUntalented = true;
 		this.m.IsCombatBackground = true;
 		this.m.IsRangerRecruitBackground = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Cruel;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Chivalrous;
-		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[2];
+		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[3];
 		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[3];
 		this.m.Modifiers.Fletching = this.Const.LegendMod.ResourceModifiers.Fletching[3];
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[3];
@@ -155,6 +156,11 @@ this.legend_master_archer_background <- this.inherit("scripts/skills/backgrounds
 
 	function onAddEquipment()
 	{
+		local talents = this.getContainer().getActor().getTalents();
+		talents.resize(this.Const.Attributes.COUNT, 0);
+		talents[this.Const.Attributes.RangedSkill] = 3;
+		talents[this.Const.Attributes.Fatigue] = 3;
+		this.getContainer().getActor().fillTalentValues(2, true);
 		local items = this.getContainer().getActor().getItems();
 		local r;
 		items.equip(this.new("scripts/items/weapons/war_bow"));
@@ -195,6 +201,11 @@ this.legend_master_archer_background <- this.inherit("scripts/skills/backgrounds
 
 	function onAddLegendEquipment()
 	{
+		local talents = this.getContainer().getActor().getTalents();
+		talents.resize(this.Const.Attributes.COUNT, 0);
+		talents[this.Const.Attributes.RangedSkill] = 3;
+		talents[this.Const.Attributes.Fatigue] = 3;
+		this.getContainer().getActor().fillTalentValues(2, true);
 		local items = this.getContainer().getActor().getItems();
 		local r;
 		items.equip(this.new("scripts/items/weapons/war_bow"));

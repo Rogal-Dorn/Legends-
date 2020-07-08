@@ -49,7 +49,7 @@
 	{
 		return this.m.PercentOnKillOtherActorModifier;
 	}
-	o.modifyPercentOnKillOtherActorModifier <- function ( _value ) 
+	o.modifyPercentOnKillOtherActorModifier <- function ( _value )
 	{
 		this.m.PercentOnKillOtherActorModifier *= _value;
 	}
@@ -350,23 +350,38 @@
 					if (tile.getEntity().isAlliedWith(this))
 					{
 						numAlliesAdjacent = ++numAlliesAdjacent;
-						
-						if (this.getFaction() == this.Const.Faction.Player && tile.getEntity().getFaction() == this.Const.Faction.Player && tile.getEntity().isAlive())
+
+						if (this.Const.LegendMod.Configs.RelationshipsEnabled())
 						{
-							// local relTab = this.getActiveRelationshipWith(tile.getEntity());
-							local relTab = this.World.State.getRefFromID(this.getCompanyID()).getActiveRelationshipWith(tile.getEntity());
-							if (relTab == null) 
+							if (this.getFaction() == this.Const.Faction.Player && tile.getEntity().getFaction() == this.Const.Faction.Player && tile.getEntity().isAlive())
 							{
-								continue; //onyl continues if someone dies and we check morale off of that
-							}
-							local relNum = relTab.RelationNum;
-							if ( relNum <= -10 )
-							{
-								bravery -= 5;
-							}
-							if ( relNum > 10 )
-							{
-								bravery += 5;
+								// local relTab = this.getActiveRelationshipWith(tile.getEntity());
+								if (this.getCompanyID() == -1)
+								{
+									continue;
+								}
+
+								local relB = this.World.State.getRefFromID(this.getCompanyID())
+								if (relB == null)
+								{
+									continue;
+								}
+
+								local relTab = relB.getActiveRelationshipWith(tile.getEntity());
+								if (relTab == null)
+								{
+									continue; //onyl continues if someone dies and we check morale off of that
+								}
+
+								local relNum = relTab.RelationNum;
+								if ( relNum <= -10 )
+								{
+									bravery -= 5;
+								}
+								if ( relNum > 10 )
+								{
+									bravery += 5;
+								}
 							}
 						}
 
@@ -708,6 +723,11 @@
 		return null;
 	}
 
+	o.getCompanyID <- function()
+	{
+		return -1;
+	}
+
 	local szFn = o.onSerialize
 	o.onSerialize = function( _out )
 	{
@@ -724,6 +744,7 @@
 			this.m.RiderID = _in.readString();
 		}
 	}
+
 
 
 

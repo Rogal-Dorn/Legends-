@@ -46,9 +46,7 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		local items = bros[0].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.equip(this.new("scripts/items/weapons/pitchfork"));
-		bros[1].setStartValuesEx([
-			"farmhand_background"
-		]);
+		bros[1].setStartValuesEx(this.Const.CharacterVillageBackgrounds);
 		bros[1].getBackground().m.RawDescription = "%name% owned a farmstead that has long since gone underfoot of countless passing armies, including the very ones he has fought for. His \'allegiance\' to you is arguably the result of an empty belly more than anything.";
 		bros[1].worsenMood(0.5, "Was involved in a brawl");
 		bros[1].addLightInjury();
@@ -71,6 +69,7 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		bros[3].setStartValuesEx([
 			"vagabond_background",
 			"thief_background",
+			"female_thief_background",
 			"gambler_background"
 		]);
 		bros[3].getBackground().m.RawDescription = "You notice that %name% hides from certain noblemen. It is likely that he is a common criminal at large for some petty crime, but so long as he fights well it is no business to you.";
@@ -88,9 +87,7 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		bros[4].addLightInjury();
 		bros[4].setVeteranPerks(3);	
 		bros[4].getSkills().add(this.new("scripts/skills/traits/hate_nobles_trait"));
-		bros[5].setStartValuesEx([
-			"miller_background"
-		]);
+		bros[5].setStartValuesEx(this.Const.CharacterVillageBackgrounds);
 		bros[5].getBackground().m.RawDescription = "Seeking riches, %name% has come to the right place in your newfound mercenary band. Unfortunately, his background is in farming, milling, and laying stone, particularly none of which he was any good at.";
 		bros[5].improveMood(1.0, "Looks forward to becoming rich as a sellsword");
 		bros[5].setVeteranPerks(3);	
@@ -124,9 +121,7 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		local items = bros[8].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.equip(this.new("scripts/items/weapons/lute"));
-		bros[9].setStartValuesEx([
-			"daytaler_background"
-		]);
+		bros[9].setStartValuesEx(this.Const.CharacterVillageBackgrounds);
 		bros[9].getBackground().m.RawDescription = "Daytaler, laborer, caravan hand, sailor, militiaman, %name%\'s done a bit of it all. Hopefully this new foray into mercenary work will stick for him.";
 		bros[9].worsenMood(1.0, "Had his trusty scramasax stolen");
 		bros[9].setVeteranPerks(3);	
@@ -141,11 +136,7 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		bros[10].m.Level = 1;
 		bros[10].setVeteranPerks(3);	
 		bros[10].getSkills().add(this.new("scripts/skills/traits/hate_nobles_trait"));
-		bros[11].setStartValuesEx([
-			"butcher_background",
-			"tailor_background",
-			"shepherd_background"
-		]);
+		bros[11].setStartValuesEx(this.Const.CharacterVillageBackgrounds);
 		bros[11].getBackground().m.RawDescription = "%name% is, ostensibly, running away from his wife. You met her once and approve his escape plan entirely, and not just because it affords you another body on the front line.That wench is genuinely crazy.";
 		bros[11].improveMood(1.0, "Managed to get away from his wife");
 		bros[11].setVeteranPerks(3);	
@@ -165,6 +156,23 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		this.World.Assets.m.ArmorParts = this.World.Assets.m.ArmorParts / 2;
 		this.World.Assets.m.Medicine = this.World.Assets.m.Medicine / 2;
 		this.World.Assets.m.Ammo = this.World.Assets.m.Ammo / 2;
+		if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+{
+    local avgAlignment = 0;
+    foreach (bro in this.World.getPlayerRoster().getAll())
+    {
+        if (bro.getAlignment() <= this.Const.LegendMod.Alignment.NeutralMin)
+        {
+            avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMin);
+        }
+        else if (bro.getAlignment() >= this.Const.LegendMod.Alignment.NeutralMax)
+        {
+            avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMax);
+        }
+    }
+    avgAlignment *= (10 / this.World.getPlayerRoster().getSize());
+    this.World.Assets.addMoralReputation(avgAlignment);
+}
 	}
 
 	function onSpawnPlayer()

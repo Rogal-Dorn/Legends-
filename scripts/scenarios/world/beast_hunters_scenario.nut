@@ -20,7 +20,7 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		local roster = this.World.getPlayerRoster();
 		local names = [];
 
-		for( local i = 0; i < 3; i = ++i )
+		for( local i = 0; i < 3; i = i )
 		{
 			local bro;
 			bro = roster.create("scripts/entity/tactical/player");
@@ -34,6 +34,7 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			}
 
 			names.push(bro.getNameOnly());
+			i = ++i;
 		}
 
 		local bros = roster.getAll();
@@ -44,7 +45,7 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[0].setPlaceInFormation(3);
 		bros[0].addLightInjury();
 		bros[0].m.Talents = [];
-		bros[0].setVeteranPerks(2);	
+		bros[0].setVeteranPerks(2);
 		local talents = bros[0].getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.MeleeSkill] = 2;
@@ -62,7 +63,7 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[1].getBackground().m.RawDescription = "A young lad from the city, %name% got his start in beast slaying by rooting out the warrens of \'vicious rabbits\', as he puts it. You\'re not sure how true that is, but regardless he has proven himself on the field of battle more times than you can count.";
 		bros[1].setPlaceInFormation(4);
 		bros[1].addLightInjury();
-		bros[1].setVeteranPerks(2);	
+		bros[1].setVeteranPerks(2);
 		bros[1].m.Talents = [];
 		local talents = bros[1].getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
@@ -80,7 +81,7 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[2].getBackground().m.RawDescription = "Grizzled vets are a rarity in beast slaying, and %name% sure ain\'t one. Instead, he\'s an intelligent man who started his foray into monster hunting by reading books instead of training the sword. Still a good enough warrior at heart, it is his study and preparation that gives him the edge in battle.";
 		bros[2].setPlaceInFormation(5);
 		bros[2].addInjury(this.Const.Injury.Brawl);
-		bros[2].setVeteranPerks(2);	
+		bros[2].setVeteranPerks(2);
 		bros[2].m.Talents = [];
 		local talents = bros[2].getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
@@ -104,6 +105,24 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			bro.m.Level = 2;
 		}
 
+		if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+{
+    local avgAlignment = 0;
+    foreach (bro in this.World.getPlayerRoster().getAll())
+    {
+        if (bro.getAlignment() <= this.Const.LegendMod.Alignment.NeutralMin)
+        {
+            avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMin);
+        }
+        else if (bro.getAlignment() >= this.Const.LegendMod.Alignment.NeutralMax)
+        {
+            avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMax);
+        }
+    }
+    avgAlignment *= (10 / this.World.getPlayerRoster().getSize());
+    this.World.Assets.addMoralReputation(avgAlignment);
+}
+
 		this.World.Assets.m.BusinessReputation = 200;
 		this.World.Tags.set("HasLegendCampCrafting", true);
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
@@ -118,7 +137,7 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	{
 		local randomVillage;
 
-		for( local i = 0; i != this.World.EntityManager.getSettlements().len(); i = ++i )
+		for( local i = 0; i != this.World.EntityManager.getSettlements().len(); i = i )
 		{
 			randomVillage = this.World.EntityManager.getSettlements()[i];
 
@@ -126,6 +145,8 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			{
 				break;
 			}
+
+			i = ++i;
 		}
 
 		local randomVillageTile = randomVillage.getTile();
@@ -173,9 +194,10 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			this.Music.setTrackList(this.Const.Music.CivilianTracks, this.Const.Music.CrossFadeTime);
 			this.World.Events.fire("event.beast_hunters_scenario_intro");
 		}, null);
-		foreach (b in this.World.getPlayerRoster().getAll()) // todo: more efficient approach to this 
+
+		foreach( b in this.World.getPlayerRoster().getAll() )
 		{
-			foreach (add in this.World.getPlayerRoster().getAll())
+			foreach( add in this.World.getPlayerRoster().getAll() )
 			{
 				b.changeActiveRelationship(add, this.Math.rand(0, 10));
 			}
@@ -200,6 +222,7 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 		local r;
 		r = this.Math.rand(0, 1);
+
 		if (r == 0)
 		{
 			_list.push("beast_hunter_background");

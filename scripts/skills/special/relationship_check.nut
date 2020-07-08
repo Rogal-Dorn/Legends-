@@ -70,19 +70,39 @@ this.relationship_check <- this.inherit("scripts/skills/skill", {
 					local tile = targetTile.getNextTile(i);
 					if (tile.IsOccupiedByActor && tile.getEntity().getMoraleState() != this.Const.MoraleState.Fleeing)
 					{
-						
+
 						if (tile.getEntity().getFaction() == this.Const.Faction.Player)
 						{
-							local relTab = this.World.State.getRefFromID(actor.getCompanyID()).getActiveRelationshipWith(tile.getEntity());
-							//local relNum = relTab.RelationNum;
+							if (tile.getEntity().getCompanyID() == -1)
+							{
+								continue;
+							}
+
+							if (actor.getCompanyID() == -1)
+							{
+								continue;
+							}
+
+							local relB = this.World.State.getRefFromID(actor.getCompanyID());
+							if (relB == null)
+							{
+								continue
+							}
+
+							local relTab = relB.getActiveRelationshipWith(tile.getEntity());
+							if (relTab == null)
+							{
+								continue;
+							}
+
 							returnString += relationStringHelper(tile.getEntity().getName(), relTab);
 						}
-						
+
 					}
 				}
 			}
 
-			if (returnString == "") 
+			if (returnString == "")
 			{
 				returnString = "No Bonuses"
 			}
@@ -107,10 +127,26 @@ this.relationship_check <- this.inherit("scripts/skills/skill", {
 		{
 			if (bro.getPlaceInFormation() == _position)
 			{
-				return relationStringHelper(bro.getName(), this.World.State.getRefFromID(_actor.getCompanyID()).getActiveRelationshipWith(bro));
+				if (bro.getCompanyID() == -1)
+				{
+					return "";
+				}
+
+				local relB = this.World.State.getRefFromID(bro.getCompanyID());
+				if (relB == null)
+				{
+					return "";
+				}
+				local relTab = relB.getActiveRelationshipWith(tile.getEntity());
+				if (relTab == null)
+				{
+					return "";
+				}
+
+				return relationStringHelper(bro.getName(), relTab);
 			}
 		}
-		return ""; //Will get tooltip reading similar to NULL(0x000000) etc without this because it'll return null but it puts that into the retString 
+		return ""; //Will get tooltip reading similar to NULL(0x000000) etc without this because it'll return null but it puts that into the retString
 	}
 
 	function getNormalTooltip()
@@ -120,7 +156,7 @@ this.relationship_check <- this.inherit("scripts/skills/skill", {
 		local roster = this.World.getPlayerRoster().getAll();
 		local returnString = "";
 
-		if (position <= 8) //check only down (+9) 
+		if (position <= 8) //check only down (+9)
 		{
 			if (position != 0) //don't check to left (-1) if pos = 0
 			{
@@ -144,7 +180,7 @@ this.relationship_check <- this.inherit("scripts/skills/skill", {
 			}
 			returnString += checkPosition(roster, actor, position - 9);
 			returnString += checkPosition(roster, actor, position + 9);
-		}	
+		}
 		else //position <= 26 : check only up (-9)
 		{
 			if (position != 18) //don't check left (-1)
@@ -185,7 +221,7 @@ this.relationship_check <- this.inherit("scripts/skills/skill", {
 		}
 	}
 
-	// function resetModifiers() 
+	// function resetModifiers()
 	// {
 	// 	this.m.RCBravery = 0;
 	// 	this.m.RCStaminaMult = 1.0;
@@ -214,14 +250,14 @@ this.relationship_check <- this.inherit("scripts/skills/skill", {
 	// 	properties.MeleeDefense += this.m.RCMeleeDefense;
 	// }
 
-	
+
 
 	// function computeModifiers( _properties = null )
 	// {
 	// 	local actor = this.getContainer().getActor();
 	// 	local myTile = actor.getTile();
 	// 	local actors = this.Tactical.Entities.getInstancesOfFaction(actor.getFaction());
-		
+
 	// 	local properties;
 	// 	if ( _properties != null )
 	// 		properties = _properties;
@@ -247,7 +283,7 @@ this.relationship_check <- this.inherit("scripts/skills/skill", {
 
 	// 		// local arrIndex = a.getCompanyID();
 
-	// 		local relation = actor.getActiveRelationshipWith(a).RelationNum;			
+	// 		local relation = actor.getActiveRelationshipWith(a).RelationNum;
 
 	// 		if (relation <= -40 )
 	// 		{
@@ -270,29 +306,29 @@ this.relationship_check <- this.inherit("scripts/skills/skill", {
 	// 		else if (relation <= -10 )
 	// 		{
 	// 			this.m.RCBravery -= 5;
-	// 		}			
+	// 		}
 	// 		else if (relation <= 0 )
 	// 		{
-	// 		}	
+	// 		}
 	// 		else if (relation <= 10 )
 	// 		{
-	// 		}	
+	// 		}
 	// 		else if (relation <= 20 )
 	// 		{
 	// 			this.logInfo("giving " + actor.getName() + " +5 bravery with " + a.getName() + " " + relation);
 	// 			this.m.RCBravery += 5;
-	// 		}	
+	// 		}
 	// 		else if (relation <= 30 )
 	// 		{
 	// 			this.m.RCBravery += 5;
 	// 			this.m.RCRangedDefense += 5;
-	// 		}	
+	// 		}
 	// 		else if (relation <= 40 )
 	// 		{
 	// 			this.m.RCBravery += 5;
 	// 			this.m.RCRangedDefense += 5;
 	// 			this.m.RCMeleeDefense += 5;
-	// 		}	
+	// 		}
 	// 		else if (relation <= 50 )
 	// 		{
 	// 			this.m.RCStaminaMult *= 1.05;
@@ -327,7 +363,7 @@ this.relationship_check <- this.inherit("scripts/skills/skill", {
 	// 	// properties.StaminaMult *= this.m.RCStaminaMult;
 	// 	// properties.RangedDefense += this.m.RCRangedDefense;
 	// 	// properties.MeleeDefense += this.m.RCMeleeDefense;
-		
+
 
 	// }
 

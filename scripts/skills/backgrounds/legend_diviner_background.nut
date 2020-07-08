@@ -42,6 +42,7 @@ this.legend_diviner_background <- this.inherit("scripts/skills/backgrounds/chara
 		this.m.IsPerformingBackground = true;
 		this.m.IsEducatedBackground = true;
 		this.m.IsUntalented = true;
+		this.m.IsDruidRecruitBackground = true;
 		this.m.Level = 1;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Chivalrous;
@@ -197,7 +198,7 @@ this.legend_diviner_background <- this.inherit("scripts/skills/backgrounds/chara
 		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");
 		stash.removeByID("supplies.ground_grains");
-		stash.add(this.new("scripts/items/supplies/black_marsh_stew_item"));
+		// stash.add(this.new("scripts/items/supplies/black_marsh_stew_item"));
 	}
 
 	function onAddLegendEquipment()
@@ -213,7 +214,7 @@ this.legend_diviner_background <- this.inherit("scripts/skills/backgrounds/chara
 		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");
 		stash.removeByID("supplies.ground_grains");
-		stash.add(this.new("scripts/items/supplies/black_marsh_stew_item"));
+		// stash.add(this.new("scripts/items/supplies/black_marsh_stew_item"));
 	}
 
 });
