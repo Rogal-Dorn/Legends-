@@ -54,7 +54,7 @@ this.data_helper <- {
 		{
 			d = d + " Ironman";
 		}
-		
+
 		if (_meta.getInt("autosave") == 1)
 		{
 			d = d + " Autosave off";
@@ -298,7 +298,7 @@ this.data_helper <- {
 							local tile = targetTile.getNextTile(i);
 							if (tile.IsOccupiedByActor && tile.getEntity().getMoraleState() != this.Const.MoraleState.Fleeing)
 							{
-								
+
 								if (tile.getEntity().getFaction() == this.Const.Faction.Player)
 								{
 									// local relTab = _targetEntity.getTile().getEntity().getActiveRelationshipWith(tile.getEntity());
@@ -308,6 +308,10 @@ this.data_helper <- {
 										continue;
 									}
 									local relTab = this.World.State.getRefFromID(_entity.getCompanyID()).getActiveRelationshipWith(tile.getEntity());
+									if (relTab == null) {
+										continue;
+									}
+
 									local relNum = relTab.RelationNum;
 
 									if ( relNum <= -10 )
@@ -322,7 +326,7 @@ this.data_helper <- {
 									{
 										result.stats.meleeDefense -= 5;
 									}
-									
+
 									if ( relNum > 10 )
 									{
 										result.stats.bravery += 5;
@@ -335,9 +339,9 @@ this.data_helper <- {
 									{
 										result.stats.meleeDefense += 5;
 									}
-									
+
 								}
-								
+
 							}
 						}
 					}
