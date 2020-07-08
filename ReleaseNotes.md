@@ -3509,13 +3509,13 @@ Early game weapon perks now also unlock harvesting during battle
 14.0.0.12 Cult of personality
 
 **Cultist Conversion Changes**
-Converting a cultist now doesn't "change" their background. The converts get both their old events and all converted cultist events.
+Converting a cultist now doesn't "change" their background. The converts get both their old events and all converted cultist events. (Salty)
 Cultists keep their camp modifiers, and in future they'll get the cultist perkgroup added to their tree(the perkpoitns won't be reset) (Salty)
 
  **Fixes**
 Bloodbath no longer has division by zero, now correctly returns the ratio, and has an updated wording of the Skill description (Salty)
 Fixes bad hooked blade file
-Fixes null crash in relationship check
+Fixes crashes related to relationship checks
 Rolling a thief background on peasant militia no longer freezes scenario start
 Summon storm crash fix
 Transformed effects being removed @ end of combat no longer crashes
