@@ -49,8 +49,8 @@ this.legend_scroll_blueprint <- this.inherit("scripts/crafting/blueprint", {
 				item.m.Name = "Scroll of Technique";
 				break;
 			case 4:
-				item.m.Description = "";
-				item.m.Name = "";
+				item.m.Description = "Use the scroll to grant a character a max-stat roll similar to gifted";
+				item.m.Name = "Scroll of Natural Talent";
 				break;
 			
 		}

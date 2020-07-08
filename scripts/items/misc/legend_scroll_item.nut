@@ -162,6 +162,10 @@ this.legend_scroll_item <- this.inherit("scripts/items/item", {
 						}
 					}
 					break;
+				case 4: //adds a gifted level, copied from gifted perk so it's probably safe
+					_actor.m.LevelUps += 1;
+					_actor.fillAttributeLevelUpValues(1, true);
+					break;
 
 			}
         }
