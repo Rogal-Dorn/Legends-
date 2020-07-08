@@ -137,29 +137,12 @@ gt.Const.Perks.BuildCustomPerkTree <- function (_custom)
 		this.Tree[_row].push(perk);
 		this.Map[perk.ID] <- perk;
 	}
-	pT.addPerkBooleanFail <- function (_perk, _row=0) 
-	{
-		local perk = clone this.Const.Perks.PerkDefObjects[_perk];
-		//Dont add dupes
-		if (perk.ID in this.Map)
-		{
-			return false;
-		}
-		perk.Row <- _row;
-		perk.Unlocks <- _row;
-		for (local i = this.Tree.len(); i < _row + 1; i = ++i)
-		{
-			this.Tree.push([]);
-		}
-		this.Tree[_row].push(perk);
-		this.Map[perk.ID] <- perk;
-	}
 
 	for( local row = 0; row < _custom.len(); row = ++row )
 	{
 		for( local i = 0; i < _custom[row].len(); i = ++i )
 		{
-			pT	(_custom[row][i], row)
+			pT.addPerk(_custom[row][i], row)
 		}
 	}
 
