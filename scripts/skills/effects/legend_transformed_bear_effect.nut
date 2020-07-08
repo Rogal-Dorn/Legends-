@@ -57,8 +57,8 @@ this.legend_transformed_bear_effect <- this.inherit("scripts/skills/skill", {
 				}
 			}
 		local items = actor.getItems();
-		items.getData()[this.Const.ItemSlot.Offhand][0] = -1;
-		items.getData()[this.Const.ItemSlot.Mainhand][0] = -1;
+		items.getData()[this.Const.ItemSlot.Offhand][0] = null;
+		items.getData()[this.Const.ItemSlot.Mainhand][0] = null;
 
 		this.m.Body = actor.getSprite("body").getBrush().Name;
 		this.m.Head = actor.getSprite("head").getBrush().Name;
@@ -93,11 +93,11 @@ this.legend_transformed_bear_effect <- this.inherit("scripts/skills/skill", {
 
 		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_true_form"))
 		{
-		this.m.TurnsLeft = 8;
+			this.m.TurnsLeft = 8;
 		}
 
-
-		
+		this.m.Container.add(this.new("scripts/skills/actives/legend_bear_claws"));
+		this.m.Container.add(this.new("scripts/skills/actives/legend_bear_bite"));	
 	}
 
 	function onRemoved()
@@ -126,7 +126,9 @@ this.legend_transformed_bear_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("armor_upgrade_back").Alpha = 255;		
 		actor.getSprite("armor_upgrade_front").Alpha = 255;
 		actor.getSprite("socket").Alpha = 255;
-		local actor = this.getContainer().getActor();
+		actor.getSprite("body").setHorizontalFlipping(0);
+		actor.getSprite("head").setHorizontalFlipping(0);
+		actor.getSprite("injury").setHorizontalFlipping(0);
 			if (actor.getTile().IsVisibleForPlayer)
 			{
 				if (this.Const.Tactical.HideParticles.len() != 0)
@@ -173,19 +175,7 @@ this.legend_transformed_bear_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("armor_upgrade_front").Alpha = 10;
 		actor.getSprite("socket").Alpha = 10;
 
-		if (this.m.Container != null && this.m.Container.getActor() != null)
-		{
-			if (!this.m.Container.hasSkill("actives.legend_bear_claws"))
-			{
-				this.m.Container.add(this.new("scripts/skills/actives/legend_bear_claws"));
-			}
-
-			if (!this.m.Container.hasSkill("actives.legend_bear_bite"))
-			{
-				this.m.Container.add(this.new("scripts/skills/actives/legend_bear_bite"));
-			}
-		}
-		_properties.HitpointsMult *= 2;
+		_properties.HitpointsMult *= 1.5;
 
 	}
 

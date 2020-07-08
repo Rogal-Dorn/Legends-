@@ -4,7 +4,7 @@ this.legends_druid_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	{
 		this.m.ID = "scenario.legends_druid";
 		this.m.Name = "Druid";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_25.png[/img][/p][p]The druids of the wild woods are wary of humans, prefering the company of beasts \n\n[color=#bcad8c]Wildform:[/color]  All recruits gain Bear form and Wolf form.\n[color=#bcad8c]Solitary:[/color] The Druid hates nearly all humans except wildlings, herbalists and practictioners of wild magic \n[color=#bcad8c]Avatar:[/color] If your druid dies, its game over.[/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_25.png[/img][/p][p]The druids of the wild woods are wary of humans, prefering the company of beasts \n\n[color=#bcad8c]Wildform:[/color] Can take on the form of beasts in battle.\n[color=#bcad8c]Solitary:[/color] The Druid hates nearly all humans except wildlings, herbalists and practictioners of wild magic \n[color=#bcad8c]Avatar:[/color] If your druid dies, its game over.[/p]";
 		this.m.Difficulty = 3;
 		this.m.Order = 27;
 	}
@@ -50,6 +50,24 @@ this.legends_druid_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			local val = this.World.State.addNewID(bro);
 			bro.m.CompanyID = val;
 		}
+
+		if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+{
+    local avgAlignment = 0;
+    foreach (bro in this.World.getPlayerRoster().getAll())
+    {
+        if (bro.getAlignment() <= this.Const.LegendMod.Alignment.NeutralMin)
+        {
+            avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMin);
+        }
+        else if (bro.getAlignment() >= this.Const.LegendMod.Alignment.NeutralMax)
+        {
+            avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMax);
+        }
+    }
+    avgAlignment *= (10 / this.World.getPlayerRoster().getSize());
+    this.World.Assets.addMoralReputation(avgAlignment);
+}
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/legend_fresh_fruit_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/roots_and_berries_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/accessory/legend_apothecary_mushrooms_item"));
@@ -160,27 +178,19 @@ foreach (b in this.World.getPlayerRoster().getAll())
 	function onUpdateDraftList( _list )
 	{
 
+		local r;
+		r = this.Math.rand(0, 19);
+
+		if (r == 0)
+		{
+			_list.push("legend_druid_background");
+		}
 	}
 
 	function onHiredByScenario( bro )
 	{
 
-		bro.improveMood(0.5, "Learned a new skill");
-		local r = this.Math.rand(1, 3);
-		if (r == 1)
-		{
-		bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_bearform"));
-		}
 
-		else if (r == 2)
-		{
-		bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_wolfform"));
-		}
-
-		else if (r == 3)
-		{
-		bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_treeform"));
-		}
 	}
 
 	function onUpdateHiringRoster( _roster )
@@ -206,34 +216,7 @@ foreach (b in this.World.getPlayerRoster().getAll())
 		}
 	}
 
-	function onBuildPerkTree( _tree)
-	{
 
-		if  (_tree == null)
-		{
-			return;
-		}
-		local r = this.Math.rand(0, 5);
-		if (r <= 2)
-		{
-		_tree.addPerk(this.Const.Perks.PerkDefs.LegendWolfform);
-		}
-		else if (r == 3)
-		{
-		_tree.addPerk(this.Const.Perks.PerkDefs.LegendBearform);
-		}
-		else if (r == 4)
-		{
-		_tree.addPerk(this.Const.Perks.PerkDefs.LegendBearform);
-		}
-		else if (r == 5)
-		{
-		_tree.addPerk(this.Const.Perks.PerkDefs.LegendTreeform);
-		}
-
-
-		
-	}
 
 });
 

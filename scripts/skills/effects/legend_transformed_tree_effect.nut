@@ -57,7 +57,8 @@ this.legend_transformed_tree_effect <- this.inherit("scripts/skills/skill", {
 				}
 			}
 		local items = actor.getItems();
-		items.getData()[this.Const.ItemSlot.Mainhand][0] = -1;
+		items.getData()[this.Const.ItemSlot.Offhand][0] = null;
+		items.getData()[this.Const.ItemSlot.Mainhand][0] = null;
 
 		this.m.Body = actor.getSprite("body").getBrush().Name;
 		this.m.Head = actor.getSprite("head").getBrush().Name;
@@ -139,7 +140,10 @@ this.legend_transformed_tree_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("armor_upgrade_back").Alpha = 255;		
 		actor.getSprite("armor_upgrade_front").Alpha = 255;
 		actor.getSprite("socket").Alpha = 255;
-		local actor = this.getContainer().getActor();
+		actor.getSprite("body").setHorizontalFlipping(0);
+		actor.getSprite("head").setHorizontalFlipping(0);
+		actor.getSprite("injury").setHorizontalFlipping(0);
+	
 			if (actor.getTile().IsVisibleForPlayer)
 			{
 				if (this.Const.Tactical.HideParticles.len() != 0)
@@ -156,6 +160,7 @@ this.legend_transformed_tree_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSkills().removeByID("actives.grow_shield");
 		actor.getSkills().removeByID("racial.schrat");
 		local items = actor.getItems();
+		items.getData()[this.Const.ItemSlot.Offhand][0] = null;
 		items.getData()[this.Const.ItemSlot.Mainhand][0] = null;
 	}
 
