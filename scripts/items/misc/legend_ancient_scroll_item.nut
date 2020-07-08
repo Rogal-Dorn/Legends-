@@ -73,10 +73,10 @@ this.legend_ancient_scroll_item <- this.inherit("scripts/items/item", {
 		else
         {
 
-			local r = this.Math.rand(1, 3);
+			local r = this.Math.rand(1, 4);
 			switch(r)
 			{
-				case 1:
+				case 1: //Adds a random perk on the tree
 					local pT = _actor.getBackground().getPerkTree();
 					local r;
 					local r2;
@@ -87,7 +87,7 @@ this.legend_ancient_scroll_item <- this.inherit("scripts/items/item", {
 					_actor.getSkills().add(this.new( pT[r][r2].Script ));
 					break;
 
-				case 2:
+				case 2: //Adds +50% exp for 3 battle effect
 					if (_actor.getSkills().hasSkill("effects.trained"))
 					{
 						_actor.getSkills().removeByID("effects.trained");
@@ -99,7 +99,7 @@ this.legend_ancient_scroll_item <- this.inherit("scripts/items/item", {
 					//effect.m.Icon = "skills/experience_scroll_effect.png"; //todo icon
 					_actor.getSkills().add(effect);
 					break;
-				case 3:
+				case 3: //Adds a group to the perk tree that they don't already have
 					local pT = _actor.getBackground().getPerkTree();
 					local r = this.Math.rand(1, 100);
 					local t;
@@ -139,6 +139,10 @@ this.legend_ancient_scroll_item <- this.inherit("scripts/items/item", {
 							}
 						}
 					}
+					break;
+				case 4: //adds a gifted level, copied from gifted perk so it's probably safe
+					_actor.m.LevelUps += 1;
+					_actor.fillAttributeLevelUpValues(1, true);
 					break;
 
 			}
