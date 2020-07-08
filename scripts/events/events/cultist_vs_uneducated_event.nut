@@ -81,7 +81,7 @@ this.cultist_vs_uneducated_event <- this.inherit("scripts/events/event", {
 				this.List = [
 					{
 						id = 13,
-						icon = _event.m.Uneducated.getBackground().getIcon()),
+						icon = _event.m.Uneducated.getBackground().getIcon(),
 						text = _event.m.Uneducated.getName() + " has been converted to a Cultist"
 					}
 				];
