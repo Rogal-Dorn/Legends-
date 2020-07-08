@@ -67,10 +67,30 @@ this.legend_scroll_item <- this.inherit("scripts/items/item", {
 		this.Sound.play("sounds/scribble.wav", this.Const.Sound.Volume.Inventory);
 	}
 
+	function addPerkBooleanFail( _perk, _row, _actor )
+	{
+		local perk = clone this.Const.Perks.PerkDefObjects[_perk];
+		//Dont add dupes
+		if (perk.ID in _actor.getBackground().m.PerkTreeMap)
+		{
+			return false;
+		}
+		perk.Row <- _row;
+		perk.Unlocks <- _row;
+		for (local i = _actor.getBackground().getPerkTree().len(); i < _row + 1; i = ++i)
+		{
+			_actor.getBackground().getPerkTree().push([]);
+		}
+		_actor.getBackground().getPerkTree()[_row].push(perk);
+		_actor.getBackground().m.PerkTreeMap[perk.ID] <- perk;
+		return true;
+	}
+
 	function onUse( _actor, _item = null )
 	{
 		local effect = _actor.getSkills().getSkillByID("effects.scroll");
-		if (  effect != null && effect.m.Smart == true )
+		local smart = _actor.getSkills().getSkillByID("trait.bright");
+		if (  effect != null && ( (effect.m.Smart && smart != null) || smart == null ) )
         {
             return false;
         }
@@ -107,38 +127,42 @@ this.legend_scroll_item <- this.inherit("scripts/items/item", {
 					local t;
 					if (r <= 10)
 					{
-						t = gt.Const.Perks.MagicTrees;
+						t = this.Const.Perks.MagicTrees;
 					}
 					else if (r <= 20)
 					{
-						t = gt.Const.Perks.EnemyTrees;
-					}
+						t = this.Const.Perks.EnemyTrees;
+					}	
 					else if (r <= 30)
 					{
-						t = gt.Const.Perks.DefenseTrees;
+						t = this.Const.Perks.DefenseTrees;
 					}
 					else if (r <= 55)
 					{
-						t = gt.Const.Perks.ClassTrees;
+						t = this.Const.Perks.ClassTrees;
 					}
 					else if (r <= 75)
 					{
-						t = gt.Const.Perks.TraitsTrees;
+						t = this.Const.Perks.TraitsTrees;
 					}
 					else if (r <= 100)
 					{
-						t = gt.Const.Perks.WeaponTrees;
+						t = this.Const.Perks.WeaponTrees;
 					}
 					local brk = false;
 					while (!brk)
 					{
-						local f = t.getRandom([]);
-						foreach(i, perkAdd in f)
+						local f = t.getRandom([]).Tree;
+						foreach(index, arrAdd in f)
 						{
-							brk = pT.addPerkBooleanFail( perkAdd, i + (i > 3 ? 1 : 0) );
+							foreach (perkAdd in arrAdd)
+							{
+								brk = this.addPerkBooleanFail( perkAdd, index /*+ (index > 3 ? 1 : 0)*/, _actor );
+							}
 						}
 					}
 					break;
+
 			}
         }
 		if (  effect != null )

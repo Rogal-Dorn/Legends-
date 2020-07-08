@@ -1,12 +1,14 @@
-this.legend_ancient_scroll_item <- this.inherit("scripts/items/trade/trading_good_item", {
+this.legend_ancient_scroll_item <- this.inherit("scripts/items/item", {
 	m = {},
 	function create()
 	{
-		this.trading_good_item.create();
 		this.m.ID = "misc.ancient_scroll";
 		this.m.Name = "Ancient Scroll";
 		this.m.Description = "A torn-up scroll with knowledge unseen for centuries. It can be translated by a character with the interpretation perk in the crafting tent. Highly valuable to some historians, although it is useless to many.";
 		this.m.Icon = "trade/scroll.png";
+		this.m.SlotType = this.Const.ItemSlot.None;
+		this.m.ItemType = this.Const.Items.ItemType.Usable;
+		this.m.IsUsable = true;
 		this.m.Value = 50;
 	}
 
@@ -40,11 +42,32 @@ this.legend_ancient_scroll_item <- this.inherit("scripts/items/trade/trading_goo
 		return this.item.getSellPrice();
 	}
 
+	function addPerkBooleanFail( _perk, _row, _actor )
+	{
+		local perk = clone this.Const.Perks.PerkDefObjects[_perk];
+		//Dont add dupes
+		if (perk.ID in _actor.getBackground().m.PerkTreeMap)
+		{
+			return false;
+		}
+		perk.Row <- _row;
+		perk.Unlocks <- _row;
+		for (local i = _actor.getBackground().getPerkTree().len(); i < _row + 1; i = ++i)
+		{
+			_actor.getBackground().getPerkTree().push([]);
+		}
+		_actor.getBackground().getPerkTree()[_row].push(perk);
+		_actor.getBackground().m.PerkTreeMap[perk.ID] <- perk;
+		return true;
+	}
+
 	function onUse( _actor, _item = null )
 	{
 		local effect = _actor.getSkills().getSkillByID("effects.scroll");
-		if (  effect != null && effect.m.Smart == true )
+		local smart = _actor.getSkills().getSkillByID("trait.bright");
+		if (  effect != null && ( (effect.m.Smart && smart != null) || smart == null ) )
         {
+			this.logInfo("Failed to apply scroll: " + (effect == null ? " effect null" : " effect not null"));
             return false;
         }
 		else
@@ -67,7 +90,7 @@ this.legend_ancient_scroll_item <- this.inherit("scripts/items/trade/trading_goo
 				case 2:
 					if (_actor.getSkills().hasSkill("effects.trained"))
 					{
-						_actor.getSkills().removeByID("effects.trained"));
+						_actor.getSkills().removeByID("effects.trained");
 					}
 					local effect = this.new("scripts/skills/effects_world/new_trained_effect");
 					effect.m.Description = "Trained effect (: +50% exp for 3 battles"; //todo flavor text
@@ -82,35 +105,38 @@ this.legend_ancient_scroll_item <- this.inherit("scripts/items/trade/trading_goo
 					local t;
 					if (r <= 10)
 					{
-						t = gt.Const.Perks.MagicTrees;
+						t = this.Const.Perks.MagicTrees;
 					}
 					else if (r <= 20)
 					{
-						t = gt.Const.Perks.EnemyTrees;
+						t = this.Const.Perks.EnemyTrees;
 					}
 					else if (r <= 30)
 					{
-						t = gt.Const.Perks.DefenseTrees;
+						t = this.Const.Perks.DefenseTrees;
 					}
 					else if (r <= 55)
 					{
-						t = gt.Const.Perks.ClassTrees;
+						t = this.Const.Perks.ClassTrees;
 					}
 					else if (r <= 75)
 					{
-						t = gt.Const.Perks.TraitsTrees;
+						t = this.Const.Perks.TraitsTrees;
 					}
 					else if (r <= 100)
 					{
-						t = gt.Const.Perks.WeaponTrees;
+						t = this.Const.Perks.WeaponTrees;
 					}
 					local brk = false;
 					while (!brk)
 					{
-						local f = t.getRandom([]);
-						foreach(i, perkAdd in f)
+						local f = t.getRandom([]).Tree;
+						foreach(index, arrAdd in f)
 						{
-							brk = pT.addPerkBooleanFail( perkAdd, i + (i > 3 ? 1 : 0) );
+							foreach (perkAdd in arrAdd)
+							{
+								brk = this.addPerkBooleanFail( perkAdd, index /*+ (index > 3 ? 1 : 0)*/, _actor );
+							}
 						}
 					}
 					break;
