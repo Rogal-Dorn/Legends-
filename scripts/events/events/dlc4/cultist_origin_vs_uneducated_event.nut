@@ -63,9 +63,6 @@ this.cultist_origin_vs_uneducated_event <- this.inherit("scripts/events/event", 
 				_event.m.Uneducated.getBackground().m.RawDescription += _event.m.Cultist.getName() + " helped " + _event.m.Uneducated.getName() + " see the darkness.";
 				_event.m.Dude.getBackground().buildDescription(true);
 
-				// TODO: Add the cultist perkgroup to the convert.
-
-
 				//set relations
 				local modifier1 = this.Math.rand(10, 20);
 				_event.m.Uneducated.changeActiveRelationship( _event.m.Cultist, modifier1 );
@@ -156,10 +153,10 @@ this.cultist_origin_vs_uneducated_event <- this.inherit("scripts/events/event", 
 			if (bro.getBackground().isCultist())
 			{
 				cultist_candidates.push(bro);
-			}
-			else if ((bro.getBackground().isLowborn() && !bro.getSkills().hasSkill("trait.bright")) ||
-				(!bro.getBackground().isNoble() && (bro.getSkills().hasSkill("trait.dumb") || bro.getSkills().hasSkill("injury.brain_damage"))) &&
-				(!bro.getBackground().getID() == "background.legend_commander_berserker" || !bro.getBackground().getID() == "background.legend_berserker") || !bro.getBackground().getID() == "background.legend_donkey")
+			else if (((bro.getBackground().isLowborn() && !bro.getSkills().hasSkill("trait.bright")) ||
+					(!bro.getBackground().isNoble() && bro.getSkills().hasSkill("trait.dumb")) || 
+					bro.getSkills().hasSkill("injury.brain_damage"))) 
+					&& (!bro.getBackground().getID() == "background.legend_commander_berserker" || !bro.getBackground().getID() == "background.legend_berserker") || !bro.getBackground().getID() == "background.legend_donkey")
 			{
 				uneducated_candidates.push(bro);
 			}
