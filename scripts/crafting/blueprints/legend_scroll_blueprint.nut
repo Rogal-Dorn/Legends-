@@ -33,7 +33,7 @@ this.legend_scroll_blueprint <- this.inherit("scripts/crafting/blueprint", {
 	function onCraft( _stash )
 	{
 		local item = this.new("scripts/items/misc/legend_scroll_item");
-		local r = this.Math.rand(1, 3);
+		local r = this.Math.rand(1, 5);
 		item.m.Selection = r;
 		switch(r) {
 			case 1:
@@ -52,6 +52,9 @@ this.legend_scroll_blueprint <- this.inherit("scripts/crafting/blueprint", {
 				item.m.Description = "Use the scroll to grant a character a max-stat roll similar to gifted";
 				item.m.Name = "Scroll of Natural Talent";
 				break;
+			case 5:
+				item.m.Description = "After a bit of labor the scroll seems to just be gibberish, nothing meaningful could be translated";
+				item.m.Name = "Scroll of .Nut'in"
 			
 		}
 
