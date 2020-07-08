@@ -44,6 +44,6 @@ this.hooked_blade <- this.inherit("scripts/items/weapons/weapon", {
 		{
 			this.addSkill(this.new("scripts/skills/actives/legend_harvest_bush"));
 		}
-
+	}
 });
 
