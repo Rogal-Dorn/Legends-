@@ -9,7 +9,7 @@ this.legend_scroll_blueprint <- this.inherit("scripts/crafting/blueprint", {
 		this.m.Cost = 2000;
 		local ingredients = [
 			{
-				Script = "scripts/items/trade/legend_ancient_scroll_item",
+				Script = "scripts/items/misc/legend_ancient_scroll_item",
 				Num = 1
 			},
             {
