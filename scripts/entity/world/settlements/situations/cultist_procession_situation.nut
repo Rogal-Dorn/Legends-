@@ -60,6 +60,8 @@ this.cultist_procession_situation <- this.inherit("scripts/entity/world/settleme
 		_draftList.push("cultist_background");
 		_draftList.push("cultist_background");
 		_draftList.push("cultist_background");
+		_draftList.push("flagellant_background");
+		_draftList.push("butcher_background");
 	}
 
 });

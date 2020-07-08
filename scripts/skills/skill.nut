@@ -1163,7 +1163,7 @@ this.skill <- {
 
 	function getHitchance( _targetEntity )
 	{
-		if (!_targetEntity.isAttackable())
+		if (!_targetEntity.isAttackable() && !_targetEntity.isRock() && !_targetEntity.isTree() && !_targetEntity.isBush())
 		{
 			return 0;
 		}
@@ -1233,6 +1233,66 @@ this.skill <- {
 
 	function attackEntity( _user, _targetEntity, _allowDiversion = true )
 	{
+		if (_targetEntity.isRock())
+		{
+			local r = this.Math.rand(0, 9);
+			if (r == 1)
+			{
+				local loot = this.new("scripts/items/trade/uncut_gems_item");
+				loot.drop(_targetEntity().getTile());
+			}
+			_targetEntity.getTile().removeObject()
+			if (this.m.SoundOnHit.len() != 0)
+			{
+				this.Time.scheduleEvent(this.TimeUnit.Virtual, this.m.SoundOnHitDelay, this.onPlayHitSound.bindenv(this), {
+					Sound = this.m.SoundOnHit[this.Math.rand(0, this.m.SoundOnHit.len() - 1)],
+					Pos = _targetEntity.getPos()
+				});
+			}
+			return true;
+		}
+
+		if (_targetEntity.isTree())
+		{
+			local r = this.Math.rand(0, 4);
+			if (r == 1)
+			{
+				local loot = this.new("scripts/items/trade/legend_raw_wood_item");
+				loot.drop(_targetEntity.getTile());
+			}
+			_targetEntity.getTile().removeObject()
+			if (this.m.SoundOnHit.len() != 0)
+			{
+				this.Time.scheduleEvent(this.TimeUnit.Virtual, this.m.SoundOnHitDelay, this.onPlayHitSound.bindenv(this), {
+					Sound = this.m.SoundOnHit[this.Math.rand(0, this.m.SoundOnHit.len() - 1)],
+					Pos = _targetEntity.getPos()
+				});
+			}
+			return true;
+		}
+
+		if (_targetEntity.isBush())
+		{
+			local r = this.Math.rand(0, 2);
+			if (r == 1)
+			{
+				local loot = this.new("scripts/items/supplies/roots_and_berries_item");
+				loot.drop(_targetEntity.getTile());
+			}
+			_targetEntity.getTile().removeObject()
+
+			if (this.m.SoundOnHit.len() != 0)
+			{
+				this.Time.scheduleEvent(this.TimeUnit.Virtual, this.m.SoundOnHitDelay, this.onPlayHitSound.bindenv(this), {
+					Sound = this.m.SoundOnHit[this.Math.rand(0, this.m.SoundOnHit.len() - 1)],
+					Pos = _targetEntity.getPos()
+				});
+			}
+			return false;
+		}
+
+		//lets get on with the rest of the attack
+
 		local properties = this.m.Container.buildPropertiesForUse(this, _targetEntity);
 		local userTile = _user.getTile();
 		local astray = false;
@@ -1273,43 +1333,65 @@ this.skill <- {
 		toHit = toHit + skill;
 		toHit = toHit - defense;
 
-		//harder to hit = lower toHit, easier to hit = higher toHit
-		if ( _targetEntity.getFaction() == this.Const.Faction.Player)
+		if (this.Const.LegendMod.Configs.RelationshipsEnabled())
 		{
-			local targetTile = _targetEntity.getTile();
-
-			for (local i = 0; i != 6; ++i)
+		//harder to hit = lower toHit, easier to hit = higher toHit
+			if ( _targetEntity.getFaction() == this.Const.Faction.Player && !_targetEntity.isGuest() && _targetEntity.getCompanyID() != -1)
 			{
-				if (!targetTile.hasNextTile(i)) {}
-				else
+				local targetTile = _targetEntity.getTile();
+
+				for (local i = 0; i != 6; ++i)
 				{
-					local tile = targetTile.getNextTile(i);
-					if (tile.IsOccupiedByActor && tile.getEntity().getMoraleState() != this.Const.MoraleState.Fleeing)
+					if (!targetTile.hasNextTile(i)) {}
+					else
 					{
-						
-						if (tile.getEntity().getFaction() == this.Const.Faction.Player)
+						local tile = targetTile.getNextTile(i);
+						if (tile.IsOccupiedByActor && tile.getEntity().getMoraleState() != this.Const.MoraleState.Fleeing)
 						{
-							// local relTab = _targetEntity.getTile().getEntity().getActiveRelationshipWith(tile.getEntity());
-							// local relNum = relTab.RelationNum;
-							local relTab = this.World.State.getRefFromID(_targetEntity.getCompanyID()).getActiveRelationshipWith(tile.getEntity());
-							local relNum = relTab.RelationNum;
-							this.logInfo("RelNum: " + relNum);
-							if ( relNum <= (this.m.IsRanged ? -20 : -30) )
+
+							if (tile.getEntity().getFaction() == this.Const.Faction.Player)
 							{
-								toHit += 5;
-								this.logInfo("tohit went up by 5");
+								// local relTab = _targetEntity.getTile().getEntity().getActiveRelationshipWith(tile.getEntity());
+								// local relNum = relTab.RelationNum;
+								if (tile.getEntity().getCompanyID() == -1)
+								{
+									continue;
+								}
+
+								if (_targetEntity.getCompanyID() == -1)
+								{
+									continue;
+								}
+
+								local relB = this.World.State.getRefFromID(_targetEntity.getCompanyID());
+								if (relB == null)
+								{
+									continue
+								}
+								local relTab = relB.getActiveRelationshipWith(tile.getEntity());
+								if (relTab == null)
+								{
+									continue;
+								}
+								local relNum = relTab.RelationNum;
+								this.logInfo("RelNum: " + relNum);
+								if ( relNum <= (this.m.IsRanged ? -20 : -30) )
+								{
+									toHit += 5;
+									this.logInfo("tohit went up by 5");
+								}
+								if ( relNum > (this.m.IsRanged ? 10 : 20) )
+								{
+									toHit -= 5;
+									this.logInfo("ToHit went down by 5");
+								}
 							}
-							if ( relNum > (this.m.IsRanged ? 10 : 20) )
-							{
-								toHit -= 5;
-								this.logInfo("ToHit went down by 5");
-							}
+
 						}
-						
 					}
 				}
-			}
 
+			}
 		}
 
 		if (this.m.IsRanged)
@@ -1743,7 +1825,7 @@ this.skill <- {
 			else
 			{
 				injuries = this.m.InjuriesOnHead;
-			}		
+			}
 		}
 
 		local hitInfo = clone this.Const.Tactical.HitInfo;

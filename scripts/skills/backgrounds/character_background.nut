@@ -28,12 +28,14 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		IsLowborn = false,
 		IsFemaleBackground = false,
 		IsRangerRecruitBackground = false,
+		IsDruidRecruitBackground = false,
 		IsCrusaderRecruitBackground = false,
 		IsPerformingBackground = false,
 		IsOutlawBackground = false,
 		AlignmentMin = this.Const.LegendMod.Alignment.Dreaded,
 		AlignmentMax = this.Const.LegendMod.Alignment.Saintly,
 		IsStabled = false,
+		IsConverted = false,
 		Modifiers = {
 			Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[0],
 			ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[0],
@@ -77,12 +79,12 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			Weapon = 8,
 			Defense = 2,
 			Traits = 8,
-			Enemy = 2,
+			Enemy = 1,
 			EnemyChance = 0.1,
 			Class = 1,
 			ClassChance = 0.10,
 			Magic = 1,
-			MagicChance = 0.10
+			MagicChance = 0.002
 		},
 		PerkTreeDynamic = {
 			Weapon = [
@@ -157,7 +159,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 
 	function isPerformingBackground()
 	{
-		return this.m.IsPerformningBackground;
+		return this.m.IsPerformingBackground;
 	}
 
 	function isEducatedBackground()
@@ -168,6 +170,16 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 	function isOutlawBackground()
 	{
 		return this.m.IsOutlawBackground;
+	}
+
+	function isCultist()
+	{
+		return this.m.IsConverted;
+	}
+
+	function Convert()
+	{
+		this.m.IsConverted = true;
 	}
 
 	function getExcludedTalents()
@@ -195,9 +207,19 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		return this.m.AlignmentMin;
 	}
 
+	function SetAlignmentMin( _f )
+	{
+		this.m.AlignmentMin = _f;
+	}
+
 	function getAlignmentMax()
 	{
 		return this.m.AlignmentMax;
+	}
+
+	function SetAlignmentMax( _f )
+	{
+		this.m.AlignmentMax = _f;
 	}
 
 	function create()
@@ -207,6 +229,15 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		this.m.DailyCostMult = this.Math.rand(90, 110) * 0.01;
 	}
 
+	// This is used to overwrite the general skill "getIconColored()" so that converted cultists always have their background icon show as converted.
+	function getIconColored()
+	{
+		if(this.m.IsConverted) {
+			return "ui/backgrounds/background_34.png";
+		}
+		return this.m.Icon;
+	}
+
 	function isHidden()
 	{
 		return this.skill.isHidden() || this.m.IsScenarioOnly;
@@ -214,6 +245,9 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 
 	function getName()
 	{
+		if(this.m.IsConverted) {
+			return "Background: Cultist " + this.m.Name;
+		}
 		return "Background: " + this.m.Name;
 	}
 
@@ -1065,6 +1099,10 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 	{
 		if(this.Const.LegendMod.Configs.LegendRecruitScalingEnabled())
 		{
+			if (!this.Const.LegendMod.Configs.RelationshipsEnabled())
+			{
+				return this.calculateAdditionalRecruitmentLevels();
+			}
 			//When we do alignment checks if our reputation isn't beating the required morality, then we return 0
 			local actor = this.getContainer().getActor();
 			local broAlignmentMin = actor.m.Background.getAlignmentMin();
@@ -1142,6 +1180,51 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		return "";
 	}
 
+	function onCombatStarted()
+	{
+		local actor = this.getContainer().getActor();
+
+		if (this.m.IsFemaleBackground == true)
+		{
+			actor.m.Sound[this.Const.Sound.ActorEvent.NoDamageReceived] = [
+				"sounds/humans/legends/woman_light_01.wav",
+				"sounds/humans/legends/woman_light_02.wav",
+				"sounds/humans/legends/woman_light_03.wav",
+				"sounds/humans/legends/woman_light_04.wav",
+				"sounds/humans/legends/woman_light_05.wav"
+			];
+			actor.m.Sound[this.Const.Sound.ActorEvent.DamageReceived] = [
+				"sounds/humans/legends/woman_injury_01.wav",
+				"sounds/humans/legends/woman_injury_02.wav",
+				"sounds/humans/legends/woman_injury_03.wav"
+			];
+			actor.m.Sound[this.Const.Sound.ActorEvent.Death] = [
+				"sounds/humans/legends/woman_death_01.wav",
+				"sounds/humans/legends/woman_death_02.wav",
+				"sounds/humans/legends/woman_death_03.wav"
+			];
+			actor.m.Sound[this.Const.Sound.ActorEvent.Fatigue] = [
+				"sounds/humans/legends/woman_fatigue_01.wav",
+				"sounds/humans/legends/woman_fatigue_02.wav",
+				"sounds/humans/legends/woman_fatigue_03.wav",
+				"sounds/humans/legends/woman_fatigue_04.wav",
+				"sounds/humans/legends/woman_fatigue_05.wav",
+				"sounds/humans/legends/woman_fatigue_06.wav",
+				"sounds/humans/legends/woman_fatigue_07.wav"
+			];
+			actor.m.Sound[this.Const.Sound.ActorEvent.Flee] = [
+				"sounds/humans/legends/woman_flee_01.wav",
+				"sounds/humans/legends/woman_flee_02.wav",
+				"sounds/humans/legends/woman_flee_03.wav",
+				"sounds/humans/legends/woman_flee_04.wav",
+				"sounds/humans/legends/woman_flee_05.wav",
+				"sounds/humans/legends/woman_flee_06.wav"
+			];
+			actor.m.SoundPitch = this.Math.rand(105, 115) * 0.01;
+		}
+	}
+
+
 	function onChangeAttributes()
 	{
 		local c = {
@@ -1196,6 +1279,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		_out.writeBool(this.m.IsNew);
 		_out.writeF32(this.m.DailyCostMult);
 		_out.writeBool(this.m.IsFemaleBackground);
+		_out.writeBool(this.m.IsConverted);
 		if (this.m.CustomPerkTree == null)
 		{
 			_out.writeU8(0);
@@ -1212,8 +1296,6 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 				}
 			}
 		}
-
-
 	}
 
 	function onDeserialize( _in )
@@ -1250,6 +1332,12 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			}
 		}
 
+		// Not sure what number this should be set to
+		if (_in.getMetaData().getVersion() >= 68)
+		{
+			this.m.IsConverted = _in.readBool();
+		}
+
 		if (_in.getMetaData().getVersion() >= 57)
 		{
 			this.m.CustomPerkTree = [];
@@ -1270,7 +1358,6 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		{
 			this.buildPerkTree();
 		}
-
 
 	}
 

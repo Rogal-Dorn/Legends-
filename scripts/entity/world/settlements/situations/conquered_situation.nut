@@ -12,6 +12,10 @@ this.conquered_situation <- this.inherit("scripts/entity/world/settlements/situa
 
 	function onAdded( _settlement )
 	{
+		if(this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+		{
+			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.20);
+		}
 		_settlement.resetShop();
 	}
 
@@ -21,6 +25,25 @@ this.conquered_situation <- this.inherit("scripts/entity/world/settlements/situa
 		_modifiers.BuyPriceMult *= 1.1;
 		_modifiers.RarityMult *= 0.6;
 		_modifiers.FoodRarityMult *= 0.9;
+	}
+
+	function onUpdateDraftList( _draftList )
+	{
+		_draftList.push("female_beggar_background");
+		_draftList.push("female_beggar_background");
+		_draftList.push("female_beggar_background");
+		_draftList.push("refugee_background");
+		_draftList.push("refugee_background");
+		_draftList.push("cripple_background");
+		_draftList.push("cripple_background");
+		_draftList.push("vagabond_background");
+		_draftList.push("gravedigger_background");
+		_draftList.push("gravedigger_background");
+		_draftList.push("beggar_background");
+		_draftList.push("beggar_background");
+		_draftList.push("beggar_background");
+		_draftList.push("female_thief_background");
+
 	}
 
 });

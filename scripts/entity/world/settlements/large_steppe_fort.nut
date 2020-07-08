@@ -140,6 +140,7 @@ this.large_steppe_fort <- this.inherit("scripts/entity/world/settlement", {
 		this.m.AttachedLocationsMax = 5;
 	}
 
+
 	function onBuild( _settings )
 	{
 		this.addBuilding(this.new("scripts/entity/world/settlements/buildings/crowd_building"), 5);

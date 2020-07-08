@@ -385,7 +385,7 @@ CharacterScreenFormationsModule.prototype.createStableSlots = function (_parentD
             this.mSlots[i].data('stable', 1);
         } else {
             this.mSlots[i] = $('<div class="ui-control is-brother-slot is-rider-slot"/>');
-            //this.mSlots[i].drop("end", dropHandler);
+            this.mSlots[i].drop("end", dropHandler);
             this.mSlots[i].data('stable', 0);
         }
 

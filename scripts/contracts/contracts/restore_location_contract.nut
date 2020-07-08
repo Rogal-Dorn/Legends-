@@ -408,7 +408,7 @@ this.restore_location_contract <- this.inherit("scripts/contracts/contract", {
 			List = [],
 			Options = [
 				{
-					Text = "Get lost, you rabble!",
+					Text = "Get lost, you rabble! (Decrease Morals)",
 					function getResult()
 					{
 						this.World.Assets.addMoralReputation(-2);
@@ -427,7 +427,7 @@ this.restore_location_contract <- this.inherit("scripts/contracts/contract", {
 			List = [],
 			Options = [
 				{
-					Text = "We\'ll find work elsewhere...",
+					Text = "We\'ll find work elsewhere... (Increase Morals)",
 					function getResult()
 					{
 						this.World.Assets.addMoralReputation(2);

@@ -21,7 +21,11 @@ this.dastard_trait <- this.inherit("scripts/skills/traits/character_trait", {
 			"trait.optimist",
 			"trait.hate_greenskins",
 			"trait.hate_undead",
-			"trait.hate_beasts"
+			"trait.hate_beasts",
+			"trait.aggressive",
+			"trait.pragmatic",
+			"trait.ambitious",
+			"trait.natural"
 		];
 	}
 
@@ -61,11 +65,11 @@ this.dastard_trait <- this.inherit("scripts/skills/traits/character_trait", {
 	function onCombatStarted()
 	{
 		local actor = this.getContainer().getActor();
-		if (actor.getTags().has("PlayerZombie") || actor.getTags().has("PlayerSkeleton"))
+
+		if (actor.getMoodState() >= this.Const.MoodState.Disgruntled && actor.getMoraleState() > this.Const.MoraleState.Wavering)
 		{
-			return;
+			actor.setMoraleState(this.Const.MoraleState.Wavering);
 		}
-		actor.setMoraleState(this.Const.MoraleState.Wavering);
 	}
 
 });

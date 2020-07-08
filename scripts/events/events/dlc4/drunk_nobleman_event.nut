@@ -82,6 +82,11 @@ this.drunk_nobleman_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				this.World.Assets.addMoralReputation(-1);
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation decreases slightly"
+					});
 				local f = this.World.FactionManager.getFactionsOfType(this.Const.FactionType.NobleHouse);
 				f = f[this.Math.rand(0, f.len() - 1)];
 				f.addPlayerRelation(-15.0, "Rumored to have robbed a family member on the road");

@@ -114,13 +114,18 @@ this.situation <- {
 	function onUpdateStablesList ( _list )
 	{
 	}
-	
+
 	function onAdded( _settlement )
 	{
 	}
 
 	function onRemoved( _settlement )
 	{
+	}
+
+	function onResolved( _settlement )
+	{
+		return this.onRemoved(_settlement);
 	}
 
 	function onSerialize( _out )

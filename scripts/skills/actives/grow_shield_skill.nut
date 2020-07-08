@@ -6,9 +6,9 @@ this.grow_shield_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.grow_shield";
 		this.m.Name = "Grow Shield";
-		this.m.Description = "";
+		this.m.Description = "Regrow your bark, producing a protective shield";
 		this.m.Icon = "skills/active_121.png";
-		this.m.IconDisabled = "skills/active_121.png";
+		this.m.IconDisabled = "skills/active_121_bw.png";
 		this.m.Overlay = "active_121";
 		this.m.SoundOnUse = [
 			"sounds/enemies/dlc2/schrat_regrowth_01.wav",
@@ -27,6 +27,34 @@ this.grow_shield_skill <- this.inherit("scripts/skills/skill", {
 		this.m.FatigueCost = 50;
 		this.m.MinRange = 0;
 		this.m.MaxRange = 0;
+	}
+	
+	function getTooltip()
+	{
+		local p = this.getContainer().getActor().getCurrentProperties();
+		return [
+			{
+				id = 1,
+				type = "title",
+				text = this.getName()
+			},
+			{
+				id = 2,
+				type = "description",
+				text = this.getDescription()
+			},
+			{
+				id = 3,
+				type = "text",
+				text = this.getCostString()
+			},
+			{
+				id = 4,
+				type = "text",
+				icon = "/ui/icons/melee_defense.png",
+				text = "Grants a [color=" + this.Const.UI.Color.PositiveValue + "]" + "+20" + "[/color] Melee and Ranged Defense shield, with [color=" + this.Const.UI.Color.PositiveValue + "]" + "32" + "[/color] durability"
+			}
+		];
 	}
 
 	function isUsable()

@@ -91,6 +91,7 @@ this.small_coast_fort <- this.inherit("scripts/entity/world/settlement", {
 		this.m.AttachedLocationsMax = 3 + 1;
 	}
 
+
 	function onBuild( _settings )
 	{
 		this.addBuilding(this.new("scripts/entity/world/settlements/buildings/crowd_building"), 5);

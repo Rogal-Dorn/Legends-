@@ -54,7 +54,7 @@ this.data_helper <- {
 		{
 			d = d + " Ironman";
 		}
-		
+
 		if (_meta.getInt("autosave") == 1)
 		{
 			d = d + " Autosave off";
@@ -282,56 +282,79 @@ this.data_helper <- {
 			result.ground.push(null);
 		}
 
-		if (("State" in this.Tactical) && this.Tactical.State != null)
+		if (this.Const.LegendMod.Configs.RelationshipsEnabled())
 		{
-			if ( _entity.getFaction() == this.Const.Faction.Player)
+			if (("State" in this.Tactical) && this.Tactical.State != null)
 			{
-				local targetTile = _entity.getTile();
-
-				for (local i = 0; i != 6; ++i)
+				if ( _entity.getFaction() == this.Const.Faction.Player && !_entity.isGuest())
 				{
-					if (!targetTile.hasNextTile(i)) {}
-					else
-					{
-						local tile = targetTile.getNextTile(i);
-						if (tile.IsOccupiedByActor && tile.getEntity().getMoraleState() != this.Const.MoraleState.Fleeing)
-						{
-							
-							if (tile.getEntity().getFaction() == this.Const.Faction.Player)
-							{
-								// local relTab = _targetEntity.getTile().getEntity().getActiveRelationshipWith(tile.getEntity());
-								// local relNum = relTab.RelationNum;
-								local relTab = this.World.State.getRefFromID(_entity.getCompanyID()).getActiveRelationshipWith(tile.getEntity());
-								local relNum = relTab.RelationNum;
+					local targetTile = _entity.getTile();
 
-								if ( relNum <= -10 )
+					for (local i = 0; i != 6; ++i)
+					{
+						if (!targetTile.hasNextTile(i)) {}
+						else
+						{
+							local tile = targetTile.getNextTile(i);
+							if (tile.IsOccupiedByActor && tile.getEntity().getMoraleState() != this.Const.MoraleState.Fleeing)
+							{
+
+								if (tile.getEntity().getFaction() == this.Const.Faction.Player)
 								{
-									result.stats.bravery -= 5;
+									// local relTab = _targetEntity.getTile().getEntity().getActiveRelationshipWith(tile.getEntity());
+									// local relNum = relTab.RelationNum;
+									if (tile.getEntity().getCompanyID() == -1)
+									{
+										continue;
+									}
+
+									if (_entity.getCompanyID() == -1)
+									{
+										continue;
+									}
+
+									local relB = this.World.State.getRefFromID(_entity.getCompanyID());
+									if (relB == null)
+									{
+										continue;
+									}
+
+									local relTab = relB.getActiveRelationshipWith(tile.getEntity());
+									if (relTab == null) {
+										continue;
+									}
+
+									local relNum = relTab.RelationNum;
+
+									if ( relNum <= -10 )
+									{
+										result.stats.bravery -= 5;
+									}
+									if ( relNum <= -20 )
+									{
+										result.stats.rangeDefense -= 5;
+									}
+									if ( relNum <= -30 )
+									{
+										result.stats.meleeDefense -= 5;
+									}
+
+									if ( relNum > 10 )
+									{
+										result.stats.bravery += 5;
+									}
+									if ( relNum > 20 )
+									{
+										result.stats.rangeDefense += 5;
+									}
+									if ( relNum > 30 )
+									{
+										result.stats.meleeDefense += 5;
+									}
+
 								}
-								if ( relNum <= -20 )
-								{
-									result.stats.rangeDefense -= 5;
-								}
-								if ( relNum <= -30 )
-								{
-									result.stats.meleeDefense -= 5;
-								}
-								
-								if ( relNum > 10 )
-								{
-									result.stats.bravery += 5;
-								}
-								if ( relNum > 20 )
-								{
-									result.stats.rangeDefense += 5;
-								}
-								if ( relNum > 30 )
-								{
-									result.stats.meleeDefense += 5;
-								}
-								
+
 							}
-							
 						}
 					}
 				}

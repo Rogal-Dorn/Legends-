@@ -54,6 +54,11 @@ this.rebuilding_effort_situation <- this.inherit("scripts/entity/world/settlemen
 		{
 			this.m.Target = candidates[this.Math.rand(0, candidates.len() - 1)].getRealName();
 		}
+
+		if(this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+		{
+			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.05);
+		}
 	}
 
 	function onUpdate( _modifiers )
@@ -98,6 +103,19 @@ this.rebuilding_effort_situation <- this.inherit("scripts/entity/world/settlemen
 	{
 		this.situation.onDeserialize(_in);
 		this.m.Target = _in.readString();
+	}
+
+
+	function onUpdateDraftList( _draftList )
+	{
+		_draftList.push("lumberjack_background");
+		_draftList.push("lumberjack_background");
+		_draftList.push("mason_background");
+		_draftList.push("mason_background");
+		_draftList.push("daytaler_background");
+		_draftList.push("daytaler_background");
+		_draftList.push("daytaler_background");
+		_draftList.push("daytaler_background");
 	}
 
 });

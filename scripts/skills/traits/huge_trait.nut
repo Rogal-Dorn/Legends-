@@ -18,7 +18,9 @@ this.huge_trait <- this.inherit("scripts/skills/traits/character_trait", {
 		this.m.Excluded = [
 			"trait.tiny",
 			"trait.quick",
-			"trait.fragile"
+			"trait.fragile",
+			"trait.light",
+			"trait.frail"
 		];
 	}
 

@@ -28,7 +28,14 @@ this.hunters_cabin_location <- this.inherit("scripts/entity/world/attached_locat
 		_list.push("hunter_background");
 		_list.push("poacher_background");
 		_list.push("poacher_background");
+		_list.push("poacher_background");
+		_list.push("poacher_background");
 		_list.push("legend_taxidermist_background");
+
+		if(this.Const.LegendMod.Configs.LegendMagicEnabled())
+		{
+			_list.push("legend_master_archer_background");
+		}
 	}
 
 	function onUpdateShopList( _id, _list )
@@ -63,7 +70,7 @@ this.hunters_cabin_location <- this.inherit("scripts/entity/world/attached_locat
 			_list.push({
 				R = 90,
 				P = 1.0,
-				S = "weapons/goblin_bow"
+				S = "weapons/greenskins/goblin_bow"
 			});
 			_list.push({
 				R = 10,

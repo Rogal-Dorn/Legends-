@@ -20,7 +20,8 @@ this.ailing_trait <- this.inherit("scripts/skills/traits/character_trait", {
 			"trait.athletic",
 			"trait.iron_lungs",
 			"trait.lucky",
-			"trait.clubfooted"
+			"trait.clubfooted",
+			"trait.firm"
 		];
 	}
 

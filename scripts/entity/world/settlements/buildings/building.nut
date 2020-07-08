@@ -113,6 +113,10 @@ this.building <- {
 				if (p >= r)
 				{
 					local item = this.new("scripts/items/" + i.S);
+					if (item == null)
+					{
+						break;
+					}
 					local isFood = item.isItemType(this.Const.Items.ItemType.Food);
 					local isMedicine = item.getID() == "supplies.medicine";
 					local isMineral = item.getID() == "misc.uncut_gems" || item.getID() == "misc.copper_ingots";

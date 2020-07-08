@@ -23,6 +23,10 @@ this.full_nets_situation <- this.inherit("scripts/entity/world/settlements/situa
 
 	function onAdded( _settlement )
 	{
+		if(this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+		{
+			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * 0.1);
+		}
 		_settlement.resetShop();
 	}
 
@@ -30,6 +34,20 @@ this.full_nets_situation <- this.inherit("scripts/entity/world/settlements/situa
 	{
 		_modifiers.FoodRarityMult *= 2.0;
 		_modifiers.FoodPriceMult *= 0.5;
+	}
+
+	function onUpdateDraftList( _draftList )
+	{
+		_draftList.push("fisherman_background");
+		_draftList.push("fisherman_background");
+		_draftList.push("fisherman_background");
+		_draftList.push("fisherman_background");
+		_draftList.push("fisherman_background");
+		_draftList.push("fisherman_background");
+		_draftList.push("female_butcher_background");
+		_draftList.push("female_butcher_background");
+		_draftList.push("female_butcher_background");
+
 	}
 
 });

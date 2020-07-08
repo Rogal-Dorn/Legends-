@@ -112,6 +112,11 @@ this.supposed_witch_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				this.World.Assets.addMoralReputation(3);
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation increases"
+					});
 				local brothers = this.World.getPlayerRoster().getAll();
 				
 				local roster = this.World.getTemporaryRoster();
@@ -198,6 +203,11 @@ this.supposed_witch_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				this.World.Assets.addMoralReputation(3);
+					this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation increases"
+					});
 				local brothers = this.World.getPlayerRoster().getAll();
 
 				foreach( bro in brothers )
@@ -386,7 +396,7 @@ this.supposed_witch_event <- this.inherit("scripts/events/event", {
 
 				foreach( bro in brothers )
 				{
-					if (bro.getID() != _event.m.Cultist.getID() && (bro.getBackground().getID() == "background.cultist" || bro.getBackground().getID() == "background.converted_cultist"))
+					if (bro.getID() != _event.m.Cultist.getID() && bro.getBackground().isCultist())
 					{
 						bro.improveMood(1.0, "Witnessed Davkul\'s power");
 
@@ -452,7 +462,7 @@ this.supposed_witch_event <- this.inherit("scripts/events/event", {
 			{
 				candidate_monk.push(bro);
 			}
-			else if (bro.getBackground().getID() == "background.cultist" || bro.getBackground().getID() == "background.converted_cultist")
+			else if (bro.getBackground().isCultist())
 			{
 				candidate_cultist.push(bro);
 			}

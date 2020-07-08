@@ -23,6 +23,10 @@ this.good_harvest_situation <- this.inherit("scripts/entity/world/settlements/si
 
 	function onAdded( _settlement )
 	{
+		if(this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+		{
+			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * 0.1);
+		}
 		_settlement.resetShop();
 	}
 
@@ -30,6 +34,21 @@ this.good_harvest_situation <- this.inherit("scripts/entity/world/settlements/si
 	{
 		_modifiers.FoodRarityMult *= 2.0;
 		_modifiers.FoodPriceMult *= 0.5;
+	}
+
+	function onUpdateDraftList( _draftList )
+	{
+		_draftList.push("farmhand_background");
+		_draftList.push("farmhand_background");
+		_draftList.push("farmhand_background");
+		_draftList.push("farmhand_background");
+		_draftList.push("female_farmhand_background");
+		_draftList.push("female_farmhand_background");
+		_draftList.push("miller_background");
+		_draftList.push("miller_background");
+		_draftList.push("female_miller_background");
+		_draftList.push("female_miller_background");
+		_draftList.push("legend_herbalist_background");
 	}
 
 });

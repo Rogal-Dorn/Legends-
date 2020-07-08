@@ -182,6 +182,11 @@ this.greenskins_investigation_event <- this.inherit("scripts/events/event", {
 			{
 				this.Banner = _event.m.NobleHouse.getUIBannerSmall();
 				this.World.Assets.addMoralReputation(-1);
+					this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation decreases slightly"
+					});
 				local item = this.new("scripts/items/shields/faction_heater_shield");
 				item.setFaction(_event.m.NobleHouse.getBanner());
 				item.setVariant(2);

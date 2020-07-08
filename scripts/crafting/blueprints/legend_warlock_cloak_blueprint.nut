@@ -31,7 +31,7 @@ this.legend_warlock_cloak_blueprint <- this.inherit("scripts/crafting/blueprint"
 			LegendsArmor = true
 		})
 		ingredients.push({
-			Script = "scripts/items/armor/thick_dark_tunic",
+			Script = "scripts/items/legend_armor/cloth/legend_dark_tunic",
 			Num = 1,
 			LegendsArmor = true
 		})

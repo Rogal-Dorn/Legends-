@@ -14,7 +14,8 @@ this.swift_trait <- this.inherit("scripts/skills/traits/character_trait", {
 		this.m.Excluded = [
 			"trait.clumsy",
 			"trait.fat",
-			"trait.clubfooted"
+			"trait.clubfooted",
+			"trait.predictable"
 		];
 	}
 

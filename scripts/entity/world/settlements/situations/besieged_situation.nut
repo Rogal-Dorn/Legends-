@@ -22,6 +22,10 @@ this.besieged_situation <- this.inherit("scripts/entity/world/settlements/situat
 
 	function onAdded( _settlement )
 	{
+		if(this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+		{
+			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.50);
+		}
 		_settlement.resetShop();
 		_settlement.resetRoster(false);
 	}
@@ -33,6 +37,19 @@ this.besieged_situation <- this.inherit("scripts/entity/world/settlements/situat
 		_modifiers.FoodPriceMult *= 2.0;
 		_modifiers.RecruitsMult *= 0.5;
 		_modifiers.RarityMult *= 0.5;
+	}
+
+	function onUpdateDraftList( _draftList )
+	{
+		_draftList.push("female_beggar_background");
+		_draftList.push("female_beggar_background");
+		_draftList.push("cripple_background");
+		_draftList.push("cripple_background");
+		_draftList.push("gravedigger_background");
+		_draftList.push("beggar_background");
+		_draftList.push("beggar_background");
+		_draftList.push("deserter_background");
+		_draftList.push("militia_background");
 	}
 
 });

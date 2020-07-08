@@ -9,6 +9,24 @@ this.terrified_villagers_situation <- this.inherit("scripts/entity/world/settlem
 		this.m.Icon = "ui/settlement_status/settlement_effect_09.png";
 	}
 
+	function onAdded( _settlement )
+	{
+		_settlement.resetRoster(true);
+		if(this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+		{
+			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.025);
+		}
+	}
+
+	function onResolved( _settlement )
+	{
+		if(this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+		{
+			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * 0.05);
+		}
+	}
+
+
 	function onUpdate( _modifiers )
 	{
 		_modifiers.BuyPriceMult *= 1.25;

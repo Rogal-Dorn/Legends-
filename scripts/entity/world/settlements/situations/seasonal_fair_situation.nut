@@ -14,6 +14,10 @@ this.seasonal_fair_situation <- this.inherit("scripts/entity/world/settlements/s
 	function onAdded( _settlement )
 	{
 		_settlement.removeSituationByID("situation.ambushed_trade_routes");
+		if(this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+		{
+			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * 0.1);
+		}
 		_settlement.resetShop();
 	}
 
@@ -44,6 +48,15 @@ this.seasonal_fair_situation <- this.inherit("scripts/entity/world/settlements/s
 		_draftList.push("peddler_background");
 		_draftList.push("peddler_background");
 		_draftList.push("peddler_background");
+		_draftList.push("juggler_background");
+		_draftList.push("juggler_background");
+		_draftList.push("juggler_background");
+		_draftList.push("minstrel_background");
+		_draftList.push("minstrel_background");
+		_draftList.push("minstrel_background");
+		_draftList.push("female_minstrel_background");
+		_draftList.push("female_minstrel_background");
+		_draftList.push("female_minstrel_background");
 	}
 
 });

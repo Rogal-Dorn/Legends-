@@ -27,16 +27,15 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		}
 
 		local bros = roster.getAll();
-		bros[0].setStartValuesEx([
-			"legend_illusionist_background"
-		]);
+		bros[0].setStartValuesEx(this.Const.CharacterMagicBackgrounds);
 		bros[0].getBackground().m.RawDescription = "{%name% learned how to entertain on the streets, using slight of hand and magic tricks to dupe unwitting punters out of their coin. Illusion is easier with a distraction, so the choice to join others was easy.}";
-		bros[0].m.PerkPoints = 1;
-		bros[0].m.LevelUps = 1;
-		bros[0].m.Level = 2;
+		bros[0].m.PerkPoints = 2;
+		bros[0].m.LevelUps = 2;
+		bros[0].m.Level = 3;
 		bros[0].setPlaceInFormation(3);
 		bros[0].setVeteranPerks(2);	
 		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_leap"));
+		bros[0].m.PerkPointsSpent += 1;
 		local items = bros[0].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
 		items.equip(this.new("scripts/items/helmets/jesters_hat"));
@@ -50,9 +49,10 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 
 		bros[1].setVeteranPerks(2);	
 		bros[1].getSkills().add(this.new("scripts/skills/perks/perk_legend_leap"));
+		bros[1].m.PerkPointsSpent += 1;
 		local items = bros[1].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
-		items.equip(this.new("scripts/items/helmets/jesters_hat"));
+		items.equip(this.new("scripts/items/helmets/named/jugglers_hat"));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.equip(this.new("scripts/items/weapons/lute"));
 		bros[2].setStartValuesEx([
@@ -61,11 +61,12 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		bros[2].getBackground().m.RawDescription = "{%name% has been in the court of a local noble for years, but the same audience every night grows tiresome. It was time to find a band, hit the road and find some new audiences for their art.}";
 		bros[2].improveMood(1.0, "Got the band back together");
 		bros[2].setPlaceInFormation(12);
-		bros[2].m.PerkPoints = 2;
-		bros[2].m.LevelUps = 2;
-		bros[2].m.Level = 3;
+		bros[2].m.PerkPoints = 3;
+		bros[2].m.LevelUps = 3;
+		bros[2].m.Level = 4;
 		bros[2].setVeteranPerks(2);	
 		bros[2].getSkills().add(this.new("scripts/skills/perks/perk_legend_leap"));
+		bros[2].m.PerkPointsSpent += 1;
 		local items = bros[2].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
 		items.equip(this.new("scripts/items/helmets/named/jugglers_hat"));
@@ -76,10 +77,14 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		]);
 		bros[3].getBackground().m.RawDescription = "{%name% was juggling and throwing knives in markets, and agreed to join the troupe to improve the show with the skills of others}";
 		bros[3].setPlaceInFormation(13);
+		bros[3].m.PerkPoints = 1;
+		bros[3].m.LevelUps = 1;
+		bros[3].m.Level = 2;
 		bros[3].getSkills().add(this.new("scripts/skills/perks/perk_legend_leap"));
+		bros[3].m.PerkPointsSpent += 1;
 		local items = bros[3].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
-		items.equip(this.new("scripts/items/helmets/named/jugglers_hat"));
+		items.equip(this.new("scripts/items/helmets/named/jugglers_padded_hat"));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.equip(this.new("scripts/items/weapons/legend_ranged_wooden_flail"));
 		foreach( bro in bros )
@@ -87,6 +92,23 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 			local val = this.World.State.addNewID(bro);
 			bro.m.CompanyID = val;
 		}
+		if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+{
+    local avgAlignment = 0;
+    foreach (bro in this.World.getPlayerRoster().getAll())
+    {
+        if (bro.getAlignment() <= this.Const.LegendMod.Alignment.NeutralMin)
+        {
+            avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMin);
+        }
+        else if (bro.getAlignment() >= this.Const.LegendMod.Alignment.NeutralMax)
+        {
+            avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMax);
+        }
+    }
+    avgAlignment *= (10 / this.World.getPlayerRoster().getSize());
+    this.World.Assets.addMoralReputation(avgAlignment);
+}
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/legend_pie_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/mead_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/weapons/legend_drum"));
@@ -147,7 +169,7 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 			this.Music.setTrackList([
 				"music/retirement_01.ogg"
 			], this.Const.Music.CrossFadeTime);
-			this.World.Events.fire("event.legend_inquisition_scenario_intro");
+			this.World.Events.fire("event.legend_troupe_scenario_intro");
 		}, null);
 
 		foreach (b in this.World.getPlayerRoster().getAll()) // todo: more efficient approach to this 

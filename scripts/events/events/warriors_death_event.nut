@@ -155,6 +155,15 @@ this.warriors_death_event <- this.inherit("scripts/events/event", {
 						bro.changeActiveRelationship( relation, modifier1 );
 						local modifier2 = this.Math.rand(1, 5);
 						relation.changeActiveRelationship( bro, modifier2 );
+					
+					if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+					{
+					this.List.push({
+							id = 10,
+							icon = "ui/icons/relation.png",
+							text = relation.getName() + " and " + bro.getName() + " grow closer"
+						});
+					}
 
 					}
 
@@ -199,6 +208,12 @@ this.warriors_death_event <- this.inherit("scripts/events/event", {
 					local modifier2 = this.Math.rand(1, 5);
 					relation.changeActiveRelationship( _event.m.Gravedigger, modifier2 );
 
+						this.List.push({
+							id = 10,
+							icon = "ui/icons/relation.png",
+							text = relation.getName() + " and " + _event.m.Gravedigger.getName() + " grow closer"
+						});
+
 				}
 
 				local r;
@@ -224,6 +239,12 @@ this.warriors_death_event <- this.inherit("scripts/events/event", {
 						bro.changeActiveRelationship( relation, modifier1 );
 						local modifier2 = this.Math.rand(1, 5);
 						relation.changeActiveRelationship( bro, modifier2 );
+					
+						this.List.push({
+							id = 10,
+							icon = "ui/icons/relation.png",
+							text = relation.getName() + " and " + bro.getName() + " grow closer"
+						});
 
 					}
 					bro.improveMood(0.5, "Glad to see fallen comrades receive a fine farewell");

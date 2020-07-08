@@ -23,6 +23,10 @@ this.lost_at_sea_situation <- this.inherit("scripts/entity/world/settlements/sit
 
 	function onAdded( _settlement )
 	{
+		if(this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+		{
+			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.05);
+		}
 		_settlement.resetShop();
 		_settlement.resetRoster(true);
 	}
@@ -32,6 +36,17 @@ this.lost_at_sea_situation <- this.inherit("scripts/entity/world/settlements/sit
 		_modifiers.FoodRarityMult *= 0.5;
 		_modifiers.FoodPriceMult *= 2.0;
 		_modifiers.RecruitsMult *= 0.5;
+	}
+
+	function onUpdateDraftList( _draftList )
+	{
+		_draftList.push("female_beggar_background");
+		_draftList.push("female_beggar_background");
+		_draftList.push("female_beggar_background");
+		_draftList.push("female_butcher_background");
+		_draftList.push("female_butcher_background");
+		_draftList.push("female_butcher_background");
+
 	}
 
 });

@@ -518,7 +518,7 @@ this.armorsmith_building <- this.inherit("scripts/entity/world/settlements/build
 		this.fillStash(list, this.m.Stash, 1.25, false);
 	}
 
-	function onUpdateLegendShopList()
+	function onUpdateLegendShopList( _id = null, _list = null )
 	{
 		local list = [
 			{

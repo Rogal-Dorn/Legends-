@@ -23,6 +23,10 @@ this.disbanded_troops_situation <- this.inherit("scripts/entity/world/settlement
 
 	function onAdded( _settlement )
 	{
+		if(this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+		{
+			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * 0.035);
+		}
 		_settlement.resetShop();
 		_settlement.resetRoster(true);
 	}
@@ -73,6 +77,21 @@ this.disbanded_troops_situation <- this.inherit("scripts/entity/world/settlement
 		_draftList.push("hedge_knight_background");
 		_draftList.push("hedge_knight_background");
 		_draftList.push("hedge_knight_background");
+		_draftList.push("legend_noble_2h");
+		_draftList.push("legend_noble_2h");
+		_draftList.push("legend_noble_ranged");
+		_draftList.push("legend_noble_ranged");
+		_draftList.push("legend_noble_shield");
+		_draftList.push("legend_noble_shield");
+
+
+		if(this.Const.LegendMod.Configs.LegendMagicEnabled())
+		{
+		_draftList.push("legend_noble_event_background");
+		_draftList.push("legend_noble_event_background");
+		_draftList.push("legend_master_archer_background");
+		_draftList.push("legend_crusader_background");
+		}
 	}
 
 });

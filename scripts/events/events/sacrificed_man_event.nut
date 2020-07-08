@@ -236,7 +236,7 @@ this.sacrificed_man_event <- this.inherit("scripts/events/event", {
 				continue;
 			}
 
-			if (bro.getBackground().getID() == "background.cultist" || bro.getBackground().getID() == "background.converted_cultist")
+			if (bro.getBackground().isCultist())
 			{
 				candidates_cultist.push(bro);
 			}

@@ -7,8 +7,45 @@ this.attached_location <- this.inherit("scripts/entity/world/location", {
 		IsActive = true,
 		IsMilitary = false,
 		IsConnected = true,
-		IsUsable = true
+		IsUsable = true,
+		IsNew = false
 	},
+
+	function getSpriteName()
+	{
+		if (this.m.Sprite == "")
+		{
+			return "";
+		}
+
+		local s = this.m.Sprite;
+		if (this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+		{
+			s = "legend_" + this.m.Sprite;
+		}
+		return s
+	}
+
+	function getSpriteDestroyedName()
+	{
+		if (this.m.IsNew)
+		{
+			//This is normally gated around our WorldEconomy config, but when reloading a saved game,
+			//the sprites on the UI are loaded before the config, so we'll get the wrong sprite
+			//to show -- hackish, but we know that IsNew is only used by the WorldEconomy so
+			//we can assume it is enabled here.
+			local s= "legend_" + this.m.Sprite + "_upgrade";
+			return s;
+		}
+
+		local s = this.m.SpriteDestroyed;
+		if (this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+		{
+			s = "legend_" + this.m.SpriteDestroyed;
+		}
+		return s;
+	}
+
 	function getTypeID()
 	{
 		return this.m.ID;
@@ -21,7 +58,12 @@ this.attached_location <- this.inherit("scripts/entity/world/location", {
 
 	function isActive()
 	{
-		return this.m.IsActive;
+		return this.m.IsActive && !this.m.IsNew;
+	}
+
+	function isBuilding()
+	{
+		return this.m.IsNew;
 	}
 
 	function isMilitary()
@@ -59,6 +101,11 @@ this.attached_location <- this.inherit("scripts/entity/world/location", {
 
 	function getName()
 	{
+		if (this.m.IsNew) {
+			local s = "New " + this.world_entity.getName() + " Construction";
+			return s;
+		}
+
 		return this.m.IsActive ? this.world_entity.getName() : "Ruins";
 	}
 
@@ -69,7 +116,7 @@ this.attached_location <- this.inherit("scripts/entity/world/location", {
 
 	function getDescription()
 	{
-		if (this.m.IsActive)
+		if (this.m.IsActive || this.m.IsNew)
 		{
 			return this.world_entity.getDescription();
 		}
@@ -79,20 +126,37 @@ this.attached_location <- this.inherit("scripts/entity/world/location", {
 		}
 	}
 
-	function setActive( _a )
+	function setActive( _a, _force = false)
 	{
-		if (_a == this.m.IsActive)
+		if (_a == this.m.IsActive && _force == false)
 		{
 			return;
 		}
 
 		this.m.IsActive = _a;
-		this.getSprite("body").setBrush(_a ? this.m.Sprite : this.m.SpriteDestroyed);
-		this.getSprite("lighting").Visible = _a;
-
 		if (this.m.Settlement != null && !this.m.Settlement.isNull() && this.m.Settlement.isAlive())
 		{
 			this.m.Settlement.onAttachedLocationsChanged();
+		}
+		this.updateSprites();
+	}
+
+	function setNew( _a )
+	{
+		this.m.IsNew = _a;
+	}
+
+	function updateSprites()
+	{
+		local s = this.getSprite("body")
+		if (s != null)
+		{
+			s.setBrush(this.m.IsActive ? this.getSpriteName() : this.getSpriteDestroyedName());
+		}
+		s = this.getSprite("lighting")
+		if (s != null)
+		{
+			s.Visible = this.m.IsActive || this.m.IsNew;
 		}
 	}
 
@@ -180,7 +244,7 @@ this.attached_location <- this.inherit("scripts/entity/world/location", {
 		this.setDiscovered(true);
 		this.setShowName(false);
 		local body = this.addSprite("body");
-		body.setBrush(this.m.Sprite);
+		body.setBrush(this.getSpriteName());
 		local lighting = this.addSprite("lighting");
 		this.setSpriteColorization("lighting", false);
 		lighting.Alpha = 0;
@@ -206,6 +270,7 @@ this.attached_location <- this.inherit("scripts/entity/world/location", {
 		}
 
 		_out.writeBool(this.m.IsActive);
+		_out.writeBool(this.m.IsNew);
 	}
 
 	function onDeserialize( _in )
@@ -224,7 +289,12 @@ this.attached_location <- this.inherit("scripts/entity/world/location", {
 			}
 		}
 
-		this.setActive(_in.readBool());
+		local active = _in.readBool();
+		if (_in.getMetaData().getVersion() >= 67)
+		{
+			this.m.IsNew = _in.readBool();
+		}
+		this.setActive(active, true);
 		this.setAttackable(false);
 		this.getSprite("lighting").Color = this.createColor("ffffff00");
 	}

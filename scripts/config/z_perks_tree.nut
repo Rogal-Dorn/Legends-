@@ -180,31 +180,42 @@ gt.Const.Perks.GetDynamicPerkTree <- function (_mins, _map)
 	}
 
 	//Clone so we don't overwrite the default character background ones
-	foreach (p in _map.Weapon)
-	{
-		_localMap.Weapon.push(p);
+	if ("Weapon" in _map) {
+		foreach (p in _map.Weapon)
+		{
+			_localMap.Weapon.push(p);
+		}
 	}
-	foreach (p in _map.Defense)
-	{
-		_localMap.Defense.push(p);
+	if ("Defense" in _map) {
+		foreach (p in _map.Defense)
+		{
+			_localMap.Defense.push(p);
+		}
 	}
-	foreach (p in _map.Traits)
-	{
-		_localMap.Traits.push(p);
+	if ("Traits" in _map) {
+		foreach (p in _map.Traits)
+		{
+			_localMap.Traits.push(p);
+		}
 	}
-	foreach (p in _map.Enemy)
-	{
-		_localMap.Enemy.push(p);
+	if ("Enemy" in _map) {
+		foreach (p in _map.Enemy)
+		{
+			_localMap.Enemy.push(p);
+		}
 	}
-	foreach (p in _map.Class)
-	{
-		_localMap.Class.push(p);
+	if ("Class" in _map) {
+		foreach (p in _map.Class)
+		{
+			_localMap.Class.push(p);
+		}
 	}
-	foreach (p in _map.Magic)
-	{
-		_localMap.Magic.push(p);
+	if ("Magic" in _map) {
+		foreach (p in _map.Magic)
+		{
+			_localMap.Magic.push(p);
+		}
 	}
-
 	//Add weapons
 	//this.logInfo("*BUILDING WEAPON TREE. NUM START =  " + _map.Weapon.len() + " : MIN = " + _mins.Weapon);
 	local count = _mins.Weapon - _localMap.Weapon.len();
@@ -253,7 +264,7 @@ gt.Const.Perks.GetDynamicPerkTree <- function (_mins, _map)
 	local count = _mins.Enemy - _localMap.Enemy.len();
 	for (local i = 0; i <= count; i = ++i)
 	{
-		local r = this.Math.rand(0, 100)
+		local r = this.Math.rand(0, 100);
 		if (r > (_mins.EnemyChance * 100.0))
 		{
 			continue
@@ -272,7 +283,7 @@ gt.Const.Perks.GetDynamicPerkTree <- function (_mins, _map)
 	local count = _mins.Class - _localMap.Class.len();
 	for (local i = 0; i <= count; i = ++i)
 	{
-		local r = this.Math.rand(0, 100)
+		local r = this.Math.rand(0, 100);
 		if (r > (_mins.ClassChance * 100.0))
 		{
 			continue
@@ -291,7 +302,7 @@ gt.Const.Perks.GetDynamicPerkTree <- function (_mins, _map)
 	local count = _mins.Magic - _localMap.Magic.len();
 	for (local i = 0; i <= count; i = ++i)
 	{
-		local r = this.Math.rand(0, 100)
+		local r = this.Math.rand(0, 100);
 		if (r > (_mins.MagicChance * 100.0))
 		{
 			continue
@@ -301,7 +312,7 @@ gt.Const.Perks.GetDynamicPerkTree <- function (_mins, _map)
 		{
 			_exclude.push(tt.ID);
 		}		
-		local t = this.Const.Perks.MagicTrees.getRandom(_exclude)
+		local t = this.Const.Perks.MagicTrees.getRandom(_exclude);
 		if (this.Const.LegendMod.Configs.LegendMagicEnabled())
 		{
 		//this.logInfo("Adding Magic perk tree " + t.ID);

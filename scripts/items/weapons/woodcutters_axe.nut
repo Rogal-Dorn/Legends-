@@ -39,6 +39,11 @@ this.woodcutters_axe <- this.inherit("scripts/items/weapons/weapon", {
 		skillToAdd.setApplyAxeMastery(true);
 		skillToAdd.setFatigueCost(skillToAdd.getFatigueCostRaw() + 5);
 		this.addSkill(skillToAdd);
+
+		if (this.m.Container.getActor().getSkills().hasSkill("perk.legend_specialist_woodaxe_skill"))
+		{
+			this.addSkill(this.new("scripts/skills/actives/legend_harvest_tree"));
+		}
 	}
 
 });

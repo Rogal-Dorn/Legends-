@@ -273,6 +273,11 @@ this.thief_caught_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				this.World.Assets.addMoralReputation(-1);
+					this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation decreases slightly"
+					});
 				local brothers = this.World.getPlayerRoster().getAll();
 
 				foreach( bro in brothers )

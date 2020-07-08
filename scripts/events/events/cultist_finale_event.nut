@@ -87,6 +87,11 @@ this.cultist_finale_event <- this.inherit("scripts/events/event", {
 					icon = "ui/icons/kills.png",
 					text = _event.m.Sacrifice.getName() + " has died"
 				});
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation decreases greatly"
+					});
 				_event.m.Sacrifice.getItems().transferToStash(this.World.Assets.getStash());
 				_event.m.Sacrifice.removeActiveRelationship();
 				this.World.getPlayerRoster().remove(_event.m.Sacrifice);
@@ -111,7 +116,7 @@ this.cultist_finale_event <- this.inherit("scripts/events/event", {
 
 				foreach( bro in brothers )
 				{
-					if (bro.getBackground().getID() == "background.cultist" || bro.getBackground().getID() == "background.converted_cultist")
+					if (bro.getBackground().isCultist())
 					{
 						bro.improveMood(2.0, "Appeased Davkul");
 
@@ -164,7 +169,7 @@ this.cultist_finale_event <- this.inherit("scripts/events/event", {
 
 				foreach( bro in brothers )
 				{
-					if (bro.getBackground().getID() == "background.cultist" || bro.getBackground().getID() == "background.converted_cultist")
+					if (bro.getBackground().isCultist())
 					{
 						bro.worsenMood(2.0, "Was denied the chance to appease Davkul");
 
@@ -218,7 +223,7 @@ this.cultist_finale_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.cultist" || bro.getBackground().getID() == "background.converted_cultist")
+			if (bro.getBackground().isCultist())
 			{
 				cultist_candidates.push(bro);
 

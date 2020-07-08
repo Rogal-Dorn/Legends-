@@ -12,7 +12,8 @@ this.clumsy_trait <- this.inherit("scripts/skills/traits/character_trait", {
 			"trait.dexterous",
 			"trait.sure_footing",
 			"trait.swift",
-			"trait.lucky"
+			"trait.lucky",
+			"trait.aggressive"
 		];
 	}
 

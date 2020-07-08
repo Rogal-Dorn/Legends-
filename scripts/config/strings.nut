@@ -488,7 +488,7 @@ gt.Const.Strings.MercenaryCompanyNames <- [
 	"The Red Regiment",
 	"The Invincibles",
 	"Order of the Fist"
-	
+
 ];
 gt.Const.Strings.NobleHouseNames <- [
 	"Grimmund",
@@ -1077,7 +1077,7 @@ gt.Const.Strings.TerrainRegionNames <- [
 		"Verdantwood",
 		"Hissing Forests",
 		"The Eagledown Wood",
-		"Wise Spruce Woods"			
+		"Wise Spruce Woods"
 	],
 	[
 		"Red Worm Woods",
@@ -1187,7 +1187,7 @@ gt.Const.Strings.TerrainRegionNames <- [
 		"Devil\'s Claws",
 		"Kilgore Range",
 		"Cloudmaker"
-		
+
 	],
 	[],
 	[],
@@ -1714,7 +1714,14 @@ gt.Const.Strings.PerkName <- {
 	LegendCheerOn = "Cheer On",
 	LegendLeap = "Leap",
 	LegendTumble = "Tumble",
-	LegendHairSplitter = "Hair Splitter"
+	LegendHairSplitter = "Hair Splitter",
+	LegendBearform = "Bear Form",
+	LegendRoots = "Roots",
+	LegendWolfform = "Wolf Form",
+	LegendTreeform = "Tree Form",
+	LegendTrueForm = "True Form",
+	LegendSummonStorm = "Summon Storm",
+	LegendCallLightning = "Call Lightning"
 };
 gt.Const.Strings.PerkDescription <- {
 	Relentless = "Don\'t slow down! At all times your Initiative is reduced only by [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] of your accumulated Fatigue, instead of all of it. \n[color=#0b0084]From the Fit perk group[/color]",
@@ -1847,7 +1854,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendUberNimble = "Gain another stack of nimble when not wearing armour or helmet, real berserkers don\'t need pants",
 	LegendMuscularity = "Put your full weight into every blow and gain [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] of your current hitpoints as additional maximum damage, up to 50. \n[color=#0b0084]From the Large perk group[/color]",
 	LegendBattleheart = "Wade into the thick of battle, dodging blades from behind and above, aware of all around you at the heart of the battle. Being surrounded no longer effects this character\'s defences at all. Upgraded version of underdog, immune to Backstabber",
-	LegendTrueBeliever = "Lesser men may cower and flee, but you are unassuageable in your commitment. Allies fleeing or dying no longer lowers this character\'s morale. In fact, this character gains 5% resolve for every fleeing character on the field, friend or foe.  Also grants the Optimist trait. \n[color=#0b0084]From the Devious perk group[/color]",
+	LegendTrueBeliever = "Lesser men may cower and flee, but you are unassuageable in your commitment. Allies fleeing or dying no longer lowers this character\'s morale. This character gains 5% resolve for every fleeing character on the field, friend or foe.  Also grants the Optimist trait. \n[color=#0b0084]From the Devious perk group[/color]",
 	LegendPoisonImmunity = "With a well developed immune system and incredible fitness, a warrior\'s system can shrug off even powerful toxins. This character becomes immune to all poisons.",
 	LegendSummonCat = "Summon feline familiar to your aide. Don\'t worry, this particular cat has nine times a million lives.",
 	LegendSpawnZombieLow = "Raise a half-formed thrall from a pile of mismatched dead flesh. Though lacking in strength or bodily integrity, it shall obey. Requires a small flesh sacrifice to perform the ritual.",
@@ -1908,7 +1915,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendSpecialistMilitiaDamage = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+4-12[/color] damage while using a militia spear, ancient spear or wooden spear. Only 25% of this skill applies to other spears  \n[color=#0b0084]From the Militia perk group[/color]",
 	LegendSpecialistMilitiaSkill = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+12[/color] melee skill while using a militia spear, ancient spear or wooden spear. Only 25% of this skill applies to other spears  \n[color=#0b0084]From the Militia perk group[/color]",
 	LegendSpecialistPickaxeDamage = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]4-12[/color] damage while using a pickaxe. 25% of this perk applies to 2 handed hammers \n[color=#0b0084]From the Miner perk group[/color]",
-	LegendSpecialistPickaxeSkill = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]12[/color] melee skill while using a pickaxe. 25% of this perk applies to 2 handed hammers  \n[color=#0b0084]From the Miner perk group[/color]",
+	LegendSpecialistPickaxeSkill = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]12[/color] melee skill while using a pickaxe. 25% of this perk applies to 2 handed hammers. Allows Pickaxes and hammers to crush and harvest rocks in battle  \n[color=#0b0084]From the Miner perk group[/color]",
 	LegendSpecialistPitchforkDamage = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+4-12[/color] damage while using a Pitchfork, Wooden Pitchfork, Hoe, Scythe or Wooden Flail. 25% of this perk applies to other Polearms  \n[color=#0b0084]From the Farmer perk group[/color]",
 	LegendSpecialistPitchforkSkill = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]12[/color] melee skill and [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] armor damage while using a Pitchfork, Wooden Pitchfork, Hoe, Scythe or Wooden Flail. 25% of this perk applies to other Polearms  \n[color=#0b0084]From the Farmer perk group[/color]",
 	LegendSpecialistShortbowDamage = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+4-12[/color] damage while using a shortbow, wonky bow or goblin bow. Only 25% of this skill applies to other bows. \n[color=#0b0084]From the Shortbow perk group[/color]",
@@ -1916,9 +1923,9 @@ gt.Const.Strings.PerkDescription <- {
 	LegendSpecialistShovelDamage = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+4-12[/color] damage while using a shovel. 25% of this skill applies to two handed maces  \n[color=#0b0084]From the Gravedigger perk group[/color]",
 	LegendSpecialistShovelSkill = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]12[/color] melee skill and gain the \'Knock Out\' skill while using a shovel. 25% of this bonus melee skill applies to two handed maces \n[color=#0b0084]From the Gravedigger perk group[/color]",
 	LegendSpecialistWoodaxeDamage = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+4-12[/color] damage while using a Woodcutter\'s Axe or Saw. Only 25% of this skill applies to other axes  \n[color=#0b0084]From the Lumberjack perk group[/color]",
-	LegendSpecialistWoodaxeSkill = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+12[/color] melee skill while using a Woodcutter\'s Axe or Saw. Only 25% of this skill applies to other axes   \n[color=#0b0084]From the Lumberjack perk group[/color]",
+	LegendSpecialistWoodaxeSkill = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+12[/color] melee skill while using a Woodcutter\'s Axe or Saw. Only 25% of this skill applies to other axes. Allows Axes to cut down any tree and harvest it for wood during battle.   \n[color=#0b0084]From the Lumberjack perk group[/color]",
 	LegendSpecialistSickleDamage = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+4-12[/color] damage while using a Sickle on Notched Blade. 25% of this skill applies to one handed swords \n[color=#0b0084]From the Sickle perk group[/color]",
-	LegendSpecialistSickleSkill = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+12[/color] melee skill and [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] armor piercing while using a Sickle or Notched Blade. 25% of this skill applies to one handed swords \n[color=#0b0084]From the Sickle perk group[/color] ",
+	LegendSpecialistSickleSkill = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+12[/color] melee skill and [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] armor piercing while using a Sickle or Notched Blade. 25% of this skill applies to one handed swords. Allows Sickles and Notched Blades to cut down and harvest bushes during battles. \n[color=#0b0084]From the Sickle perk group[/color] ",
 	LegendSpecialistSlingDamage = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+4-12[/color] damage while using a sling or sling staff. \n[color=#0b0084]From the Sling perk group[/color]. ",
 	LegendSpecialistSlingSkill = "Gain[color=" + this.Const.UI.Color.PositiveValue + "]+12[/color] ranged skill and [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] armor damage while using a sling or sling staff. \n[color=#0b0084]From the Sling perk group[/color].",
 	LegendBigGameHunter = "When targeting an enemy with more health than you, gain damage equal to their current hitpoints divided by your current hitpoints",
@@ -1976,7 +1983,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendBlendIn = "Hold yourself in a way that makes you seem more trouble than its worth, lean into trees, place objects between you and an enemy, and hide behind allies. Makes enemies [color=" + this.Const.UI.Color.PositiveValue + "]90%[/color] less likely to attack you instead of an ally. \n[color=#0b0084]From the Devious perk group[/color]",
 	LegendSpecStaffStun = "Master the movements required to spin your staff in a great flourish that lands with additional force. Any strike with a staff that would normally daze, also stuns and staggers. \n[color=#0b0084]From the Staff perk group[/color]",
 	LegendSpecStaffSkill = "Twist and thrust with your staff to deflect blows and intercept strikes. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+16[/color] melee and ranged defense while wielding a staff. 50% of this bonus is applied to Swordstaves. \n[color=#0b0084]From the Staff perk group[/color]",
-	LegendDrumsOfWar = "Learn powerful rythms that drive your allies on. Unlocks the Drums of War skill that restores [color=" + this.Const.UI.Color.PositiveValue + "]+4[/color] fatigue to every ally within three tiles. Can only be used with a Drum or Lute equipped. \n[color=#0b0084]From the Bard perk group[/color]",
+	LegendDrumsOfWar = "Learn powerful rythms that drive your allies on. Unlocks the Drums of War skill that restores [color=" + this.Const.UI.Color.PositiveValue + "]+4[/color] fatigue to every ally within eight tiles. Can only be used with a Drum or Lute equipped. \n[color=#0b0084]From the Bard perk group[/color]",
 	LegendSpecFists = "Master the martial arts of unarmed combat. Reduces the fatigue cost of Hand to Hand, Kick and Grapple. Increases armor penetration and increases chance to hit for Hand to Hand, adds damage to Kick. \n[color=#0b0084]From the Unarmed perk group[/color]",
 	LegendKick = "Put all your force into a lunging kick, pushing your opponent away and inflicting fatigue. Grants the \'Kick\' ability. Targets will take damage if falling off an edge.  A successful kick cancels Shieldwall, Spearwall and Riposte. \n[color=#0b0084]From the Unarmed perk group[/color] ",
 	LegendGrapple = "Grab your opponent and manhandle them to the ground, inflicting fatigue and grappling them for two turns. Grants the \'Grapple\' ability, which can only be used with your offhand free. \n[color=#0b0084]From the Unarmed perk group[/color]",
@@ -1995,8 +2002,8 @@ gt.Const.Strings.PerkDescription <- {
 	LegendEscapeArtist = "Others see it as magic, but your deft hands know better. Grants a baseline 99% chance to break free from rooting effects, such as nets and webs. \n[color=#0b0084]From the Nets perk group[/color]",
 	LegendGatherer = "Knowledge of the landscape and vegetation provides a wealth of opportunities when gathering in camp. Apothecaries usualy gain their level as a percentage reduction in hours required to find special items. This skill doubles that bonus to twice their level. When the total bonus from all apothecaries is above 10%, they can also find mushrooms, poisons, antidotes and powders [color=#0b0084]From the Apocathery perk group[/color]",
 	LegendPotionBrewer = "Expertise in potions and tinctures allows the creation of potions while gathering in camp. This skill unlocks the chance to create lionheart, ironwill, recovery and cat potions while gathering. An apocethery or vala must gather the ingredients for the potion brewer. When the total level of all potion brewers gathering is above 20, they have a chance to create potions of knowledge and oblivion. Also unlocks alcohol crafting in the crafting tent. [color=#0b0084]From the Apocathery perk group[/color]",
-	LegendSpecCultHood = "In Davkul we find the truth of ourselves. We have no identity beyond his servitude, our glory is his glory. While your face is obscured by a cultist hood, gain [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] of your resolve as a bonus to melee and ranged defense. Also works with Cultist leather hood, leather helmet, decayed sack helm or mask of davkul",
-	LegendSpecCultArmor = "Pain is the embrace of Davkul, our bodies keep us from him. Only in suffering can we know truth.  Gain [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] of your missing health as resolve, while wearing cultist robes, sackcloth or leather wraps",
+	LegendSpecCultHood = "In Pain we find the truth of ourselves. We have no identity beyond servitude, our glory is agony. While your face is obscured by a cultist hood, gain [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] of your resolve as a bonus to melee and ranged defense. Also works with Cultist leather hood, leather helmet, decayed sack helm or mask of davkul",
+	LegendSpecCultArmor = "Pain is the embrace of God, our bodies keep us from bliss. Only in suffering can we know truth.  Gain [color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color] of your missing health as resolve, while wearing cultist robes, sackcloth, hide or leather wraps",
 	LegendPrepareBleed = "Time spent assessing an enemy, finding the arteries, will pay off in blood shed on the field. Grants the active skill Prepare to Bleed that primes your next strike to inflict intense but short lived bleeding.",
 	LegendPrepareGraze = "Long slow deep rending scratches can leave many bleeding grazes. Grants the active skill Prepare to Bleed that primes your next strike to inflict weak but long lasting bleeding.",
 	LegendSlaughter = "If it bleeds, we can kill it. An existing injury can open up avenues of attack for the final slaughter. Gain [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] damage when attacking a bleeding enemy.",
@@ -2020,7 +2027,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendHorseCollection = "By training the horse\'s posture, advanced movements become easier to perform and less draining. Increases fatigue by 25%",
 	LegendHorseFlyingChange = "Changing lead legs at high speeds is an advanced move that can allow horses to cover much larger distances. Gain 1 action point",
 	LegendHorsePassage = "Training the legs to raise higher and push harder can prepare horses for rough or muddy terrain. Decreases movement costs on rough terrain",
-	LegendDrumsOfLife = "Learn powerful rythms that drive your allies on. Unlocks the Drums of Life skill that restores [color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] health to every ally within three tiles. Can only be used with a Drum or Lute equipped. \n[color=#0b0084]From the Bard perk group[/color]",
+	LegendDrumsOfLife = "Learn powerful rythms that drive your allies on. Unlocks the Drums of Life skill that restores [color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] health to every ally within eight tiles. Can only be used with hands empty, or with a Drum or Lute equipped. \n[color=#0b0084]From the Bard perk group[/color]",
 	LegendLacerate = "Lust for blood courses through your veins, each stroke rips and tears with a ferocity that intensifies as you bleed. Gain a chance to inflict bleeding with every strike, equal to your percentage of missing health.",
 	LegendPeaceful = "Not all folks are built for war, some find contentment in contemplation or practicing a trade. This character becomes content with being in reserve, consumes half rations while in reserve. [color=#0b0084]From the Calm perk group[/color]",
 	LegendSummonHound = "Forming close bonds with hounds grants to the ability to call to them. Summon a loyal hound to your side in battle.",
@@ -2053,7 +2060,14 @@ gt.Const.Strings.PerkDescription <- {
 	LegendCheerOn = "Use your way with song to cheer on an ally. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] AP to an ally within three tiles. Can only be used with a Drum or Lute equipped. \n[color=#0b0084]From the Bard perk group[/color]",
 	LegendLeap = "Use your athletic skill to leap high and far, covering two tiles distance but at a great fatigue cost. Unlocks the \'Leap\' skill",
 	LegendTumble = "Make use of your acrobatic skill to improve your movements. Halves the fatigue and action point costs of Footwork, Leap and Lunge.",
-	LegendHairSplitter = "Years of practice throwing things at apples above heads have granted a magnetic attraction to the cranium. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+30%[/color] chance to hit the head"
+	LegendHairSplitter = "Years of practice throwing things at apples above heads have granted a magnetic attraction to the cranium. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+30%[/color] chance to hit the head",
+	LegendBearform = "Transform into a powerful bear, doubles your hitpoints. Requires free hands",
+	LegendRoots = "Summon roots and vines to entangle your enemies",
+	LegendWolfform = "Transform into a nimble wolf, decreasing movement costs. Requires free hands",
+	LegendTreeform = "Transform into a deadly schrat, gaining scrat defenses and attacks. Requires free hands",
+	LegendTrueForm = "Increases the length of your transformations to 8 turns",
+	LegendSummonStorm = "Control the elements, calling down the rain. The first cast brings on light rain, the second cast brings a heavy storm and the thrill of being in the heart of the storm boosts your resolve. Must have empty hands",
+	LegendCallLightning = "Call down lightning upon your enemies. Grants a 10% chance to unleash lightning on each unit withing 4 tiles. Must have empty hands and it must be raining."
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

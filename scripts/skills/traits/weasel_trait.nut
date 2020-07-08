@@ -25,7 +25,10 @@ this.weasel_trait <- this.inherit("scripts/skills/traits/character_trait", {
 			"trait.optimist",
 			"trait.hate_greenskins",
 			"trait.hate_undead",
-			"trait.hate_beasts"
+			"trait.hate_beasts",
+			"trait.aggressive",
+			"trait.ambitious",
+			"trait.natural"
 		];
 	}
 

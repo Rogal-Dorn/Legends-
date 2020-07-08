@@ -59,6 +59,11 @@ this.beat_up_old_man_event <- this.inherit("scripts/events/event", {
 					icon = "ui/items/" + item.getIcon(),
 					text = "You gain " + item.getName()
 				});
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation decreases slightly"
+					});
 				this.World.Assets.getStash().add(item);
 			}
 

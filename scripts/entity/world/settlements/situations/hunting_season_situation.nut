@@ -23,6 +23,10 @@ this.hunting_season_situation <- this.inherit("scripts/entity/world/settlements/
 
 	function onAdded( _settlement )
 	{
+		if(this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+		{
+			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * 0.02);
+		}
 		_settlement.resetShop();
 	}
 
@@ -30,6 +34,22 @@ this.hunting_season_situation <- this.inherit("scripts/entity/world/settlements/
 	{
 		_modifiers.FoodRarityMult *= 2.0;
 		_modifiers.FoodPriceMult *= 0.5;
+	}
+
+	function onUpdateDraftList( _draftList )
+	{
+		_draftList.push("hunter_background");
+		_draftList.push("hunter_background");
+		_draftList.push("poacher_background");
+		_draftList.push("poacher_background");
+		_draftList.push("poacher_background");
+		_draftList.push("poacher_background");
+		_draftList.push("legend_taxidermist_background");
+		_draftList.push("legend_taxidermist_background");
+		_draftList.push("houndmaster_background");
+		_draftList.push("houndmaster_background");
+		_draftList.push("butcher_background");
+		_draftList.push("butcher_background");
 	}
 
 });

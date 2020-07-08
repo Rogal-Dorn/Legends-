@@ -92,7 +92,7 @@ this.cultist_origin_sacrifice_event <- this.inherit("scripts/events/event", {
 
 
 
-					if (bro.getBackground().getID() == "background.cultist" || bro.getBackground().getID() == "background.converted_cultist" || bro.getBackground().getID() == "background.legend_commander_necro" || bro.getBackground().getID() == "background.legend_necro" || bro.getBackground().getID() == "background.legend_vala" || bro.getBackground().getID() == "background.legend_vala_commander" || bro.getBackground().getID() == "background.legend_witch" || bro.getBackground().getID() == "background.legend_witch_commander" || bro.getBackground().getID() == "background.legend_cannibal" || bro.getBackground().getID() == "background.legend_donkey")
+					if (bro.getBackground().isCultist() || bro.getBackground().getID() == "background.legend_commander_necro" || bro.getBackground().getID() == "background.legend_necro" || bro.getBackground().getID() == "background.legend_vala" || bro.getBackground().getID() == "background.legend_vala_commander" || bro.getBackground().getID() == "background.legend_witch" || bro.getBackground().getID() == "background.legend_witch_commander" || bro.getBackground().getID() == "background.legend_cannibal" || bro.getBackground().getID() == "background.legend_donkey")
 					{
 						bro.improveMood(2.0, "Appeased Davkul");
 
@@ -105,16 +105,28 @@ this.cultist_origin_sacrifice_event <- this.inherit("scripts/events/event", {
 							});
 						}
 
+
+
 						//set relations
-						local relations = this.World.getPlayerRoster().getAll();
-						foreach( relation in relations )
+						if (this.Const.LegendMod.Configs.RelationshipsEnabled())
 						{
-							if (relation.getBackground().getID() == "background.cultist")
+							local relations = this.World.getPlayerRoster().getAll();
+							foreach( relation in relations )
 							{
-							local modifier1 = this.Math.rand(1, 5);
-							bro.changeActiveRelationship( relation, modifier1 );
-							local modifier2 = this.Math.rand(1, 5);
-							relation.changeActiveRelationship( bro, modifier2 );
+								if (relation.getBackground().getID() == "background.cultist")
+								{
+								local modifier1 = this.Math.rand(1, 5);
+								bro.changeActiveRelationship( relation, modifier1 );
+								local modifier2 = this.Math.rand(1, 5);
+								relation.changeActiveRelationship( bro, modifier2 );
+								this.List.push({
+									id = 11,
+									icon = "ui/icons/relation.png",
+									text = relation.getName() + " and " + bro.getName() + " grow closer"
+								});
+
+
+								}
 							}
 						}
 

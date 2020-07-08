@@ -23,6 +23,10 @@ this.preparing_feast_situation <- this.inherit("scripts/entity/world/settlements
 
 	function onAdded( _settlement )
 	{
+		if(this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+		{
+			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.01);
+		}
 		_settlement.resetShop();
 	}
 
@@ -30,6 +34,22 @@ this.preparing_feast_situation <- this.inherit("scripts/entity/world/settlements
 	{
 		_modifiers.FoodRarityMult *= 0.25;
 		_modifiers.FoodPriceMult *= 2.0;
+	}
+
+	function onUpdateDraftList( _draftList )
+	{
+		_draftList.push("butcher_background");
+		_draftList.push("butcher_background");
+		_draftList.push("female_butcher_background");
+		_draftList.push("female_butcher_background");
+		_draftList.push("servant_background");
+		_draftList.push("servant_background");
+		_draftList.push("servant_background");
+		_draftList.push("female_servant_background");
+		_draftList.push("female_servant_background");
+		_draftList.push("female_servant_background");
+		_draftList.push("eunuch_background");;
+
 	}
 
 });

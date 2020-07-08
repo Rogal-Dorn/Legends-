@@ -4,10 +4,10 @@ this.uproot_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.uproot";
 		this.m.Name = "Uproot";
-		this.m.Description = "";
+		this.m.Description = "Send out roots to stab and crush your enemies";
 		this.m.KilledString = "Crushed";
 		this.m.Icon = "skills/active_122.png";
-		this.m.IconDisabled = "skills/active_122.png";
+		this.m.IconDisabled = "skills/active_122_bw.png";
 		this.m.Overlay = "active_122";
 		this.m.SoundOnUse = [
 			"sounds/enemies/dlc2/schrat_uproot_01.wav",
@@ -43,6 +43,40 @@ this.uproot_skill <- this.inherit("scripts/skills/skill", {
 		this.m.ChanceDecapitate = 0;
 		this.m.ChanceDisembowel = 25;
 		this.m.ChanceSmash = 25;
+	}
+
+	function getTooltip()
+	{
+		local p = this.getContainer().getActor().getCurrentProperties();
+		return [
+			{
+				id = 1,
+				type = "title",
+				text = this.getName()
+			},
+			{
+				id = 2,
+				type = "description",
+				text = this.getDescription()
+			},
+			{
+				id = 3,
+				type = "text",
+				text = this.getCostString()
+			},
+			{
+				id = 4,
+				type = "text",
+				icon = "/ui/icons/health.png",
+				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + p.DamageRegularMin + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + p.DamageRegularMax + "[/color] damage"
+			},
+			{
+				id = 5,
+				type = "text",
+				icon = "/ui/icons/special.png",
+				text = "Uproot can target the ground and hits up to 3 tiles in a line"
+			}
+		];
 	}
 
 	function applyEffectToTarget( _user, _target, _targetTile )

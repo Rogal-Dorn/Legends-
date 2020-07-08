@@ -60,10 +60,6 @@ this.blast_furnace_location <- this.inherit("scripts/entity/world/attached_locat
 		_list.push("squire_background");
 		_list.push("deserter_background");
 		_list.push("disowned_noble_background");
-		if(this.Const.LegendMod.Configs.LegendMagicEnabled())
-		{
-			_list.push("legend_evoker_background");
-		}
 	}
 
 	function onUpdateShopList( _id, _list )

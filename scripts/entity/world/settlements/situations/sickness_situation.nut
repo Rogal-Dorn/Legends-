@@ -22,6 +22,10 @@ this.sickness_situation <- this.inherit("scripts/entity/world/settlements/situat
 
 	function onAdded( _settlement )
 	{
+		if(this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+		{
+			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.05);
+		}
 		_settlement.resetShop();
 		_settlement.resetRoster(true);
 	}
@@ -31,6 +35,23 @@ this.sickness_situation <- this.inherit("scripts/entity/world/settlements/situat
 		_modifiers.FoodPriceMult *= 2.0;
 		_modifiers.MedicalPriceMult *= 3.0;
 		_modifiers.RecruitsMult *= 0.25;
+	}
+
+	function onUpdateDraftList( _draftList )
+	{
+		_draftList.push("cripple_background");
+		_draftList.push("cripple_background");
+		_draftList.push("beggar_background");
+		_draftList.push("beggar_background");
+		_draftList.push("female_beggar_background");
+		_draftList.push("legend_nun_background");
+		_draftList.push("legend_herbalist_background");
+		_draftList.push("monk_background");
+
+		if(this.Const.LegendMod.Configs.LegendMagicEnabled())
+		{
+		_draftList.push("legend_diviner_background");
+		}
 	}
 
 });

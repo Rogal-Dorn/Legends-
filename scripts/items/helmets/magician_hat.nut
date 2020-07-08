@@ -32,6 +32,7 @@ this.magician_hat <- this.inherit("scripts/items/helmets/helmet", {
 			19,
 			20
 		];
+		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.InventorySound = this.Const.Sound.ClothEquip;

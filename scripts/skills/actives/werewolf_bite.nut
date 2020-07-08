@@ -4,9 +4,10 @@ this.werewolf_bite <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.werewolf_bite";
 		this.m.Name = "Direwolf Bite";
-		this.m.Description = "";
+		this.m.Description = "Tear an enemy assunder with your teeth";
 		this.m.KilledString = "Ripped to shreds";
 		this.m.Icon = "skills/active_71.png";
+		this.m.IconDisabled = "skills/active_71_bw.png";
 		this.m.Overlay = "active_71";
 		this.m.SoundOnUse = [
 			"sounds/enemies/wolf_bite_01.wav",
@@ -34,6 +35,34 @@ this.werewolf_bite <- this.inherit("scripts/skills/skill", {
 		this.m.ChanceDecapitate = 0;
 		this.m.ChanceDisembowel = 33;
 		this.m.ChanceSmash = 0;
+	}
+
+	function getTooltip()
+	{
+		local p = this.getContainer().getActor().getCurrentProperties();
+		return [
+			{
+				id = 1,
+				type = "title",
+				text = this.getName()
+			},
+			{
+				id = 2,
+				type = "description",
+				text = this.getDescription()
+			},
+			{
+				id = 3,
+				type = "text",
+				text = this.getCostString()
+			},
+			{
+				id = 4,
+				type = "text",
+				icon = "/ui/icons/health.png",
+				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + p.DamageRegularMin + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + p.DamageRegularMax + "[/color] damage"
+			}
+		];
 	}
 
 	function onUpdate( _properties )

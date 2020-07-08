@@ -27,10 +27,7 @@ this.mushroom_grove_location <- this.inherit("scripts/entity/world/attached_loca
 		_list.push("flagellant_background");
 		_list.push("wildman_background");
 		_list.push("legend_herbalist_background");
-		if(this.Const.LegendMod.Configs.LegendMagicEnabled())
-		{
-			_list.push("legend_berserker_background");
-		}
+
 	}
 
 	function onUpdateShopList( _id, _list )
@@ -71,6 +68,11 @@ this.mushroom_grove_location <- this.inherit("scripts/entity/world/attached_loca
 				R = 50,
 				P = 1.0,
 				S = "accessory/berserker_mushrooms_item"
+			});			_
+			list.push({
+				R = 50,
+				P = 1.0,
+				S = "accessory/legend_apothecary_mushrooms_item"
 			});
 
 		if (this.Const.DLC.Wildmen)
@@ -134,6 +136,14 @@ this.mushroom_grove_location <- this.inherit("scripts/entity/world/attached_loca
 			});
 		}
 
+		}
+		if (_id == "building.weaponsmith")
+		{
+			_list.push({
+				R = 30,
+				P = 1.0,
+				S = "weapons/named/legend_named_sickle"
+			});
 		}
 	}
 });

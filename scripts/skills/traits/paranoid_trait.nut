@@ -17,7 +17,9 @@ this.paranoid_trait <- this.inherit("scripts/skills/traits/character_trait", {
 			"trait.brave",
 			"trait.determined",
 			"trait.cocky",
-			"trait.bloodthirsty"
+			"trait.bloodthirsty",
+			"trait.ambitious",
+			"trait.natural"
 		];
 	}
 

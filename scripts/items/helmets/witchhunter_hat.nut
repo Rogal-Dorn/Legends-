@@ -22,9 +22,11 @@ this.witchhunter_hat <- this.inherit("scripts/items/helmets/helmet", {
 	}
 
 
+
+	
 	function getTooltip()
 	{
-		local result = this.named_helmet.getTooltip();
+		local result = this.helmet.getTooltip();
 		result.push({
 			id = 6,
 			type = "text",
@@ -33,12 +35,22 @@ this.witchhunter_hat <- this.inherit("scripts/items/helmets/helmet", {
 		});
 		return result;
 	}
-
+	
 	function onUpdateProperties( _properties )
 	{
-		_properties.getSkills().removeByID("special.night");
-	}
 
+		local staminaMult = 1.0;
+
+		if (this.getContainer().getActor().getSkills().hasSkill("perk.brawny"))
+		{
+			staminaMult = 0.75;
+		}
+		_properties.Armor[this.Const.BodyPart.Head] += this.m.Condition;
+		_properties.ArmorMax[this.Const.BodyPart.Head] += this.m.ConditionMax;
+		_properties.Stamina += this.Math.ceil(this.m.StaminaModifier * staminaMult);
+		_properties.Vision += this.m.Vision;
+		_properties.IsAffectedByNight = false;
+	}
 
 
 });

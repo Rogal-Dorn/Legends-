@@ -58,7 +58,7 @@ this.fear_beasts_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
-		if (this.World.Statistics.get().LastCombatFaction != this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts))
+		if (this.World.Statistics.get().LastCombatFaction != this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID())
 		{
 			return;
 		}
@@ -74,7 +74,7 @@ this.fear_beasts_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.companion" || bro.getBackground().getID() == "background.beast_slayer" || bro.getBackground().getID() == "background.hunter" || bro.getBackground().getID() == "background.witchhunter" || bro.getBackground().getID() == "background.wildman" || bro.getBackground().getID() == "background.wildwoman")
+			if (bro.getBackground().getID() == "background.companion" || bro.getBackground().getID() == "background.beast_slayer" || bro.getBackground().getID() == "background.hunter" || bro.getBackground().getID() == "background.witchhunter" || bro.getBackground().getID() == "background.wildman")
 			{
 				continue;
 			}
