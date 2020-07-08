@@ -3513,3 +3513,5 @@ Cultists keep their camp modifiers, and in future they'll get the cultist perkgr
 
  **Fixes**
  Bloodbath no longer has division by zero, now correctly returns the ratio, and has an updated wording of the skill description (Salty)
+ Fixes bad hooked blade file
+ Fixes null crash in relationship check
