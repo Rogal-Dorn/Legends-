@@ -3482,3 +3482,10 @@ fixes no names for orc behemoth champions
 fixes perk tooltip for drums of war and drums of life (incorrectly displayed range)
 fixes pimp_vs_harlot event not working with reltionships enabled
 Chain thresh now correctly applies bleed instead of daze
+
+14.0.0.11
+
+Fixes typo in Druid tree
+Fixes later game lag issues from world economy.
+Fixes incorrect settlement images.
+

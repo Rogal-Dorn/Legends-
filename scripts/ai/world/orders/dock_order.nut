@@ -31,12 +31,19 @@ this.dock_order <- this.inherit("scripts/ai/world/world_behavior", {
 
 			settlement.setResources(settlement.getResources() + _entity.getResources());
 
-			foreach( item in _entity.getInventory() )
+			local inv = _entity.getInventory();
+			if (inv.len() == 0)
 			{
-				settlement.addImportedProduce(item);
+				_entity.clearInventory();
+				break;
 			}
-			_entity.clearInventory();
+
+			for (local i = 0; i < settlement.getSize(); i = ++i)
+			{
+				settlement.addImportedProduce(inv[this.Math.rand(0, inv.len() - 1)]);
+			}
 			break;
+
 		}
 
 		this.getController().popOrder();
