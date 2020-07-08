@@ -26,7 +26,7 @@ this.intensive_training_trait <- this.inherit("scripts/skills/traits/character_t
 		this.m.IsHidden = false;
 		this.m.IsSerialized = true;
 	}
-	
+
 	function addRandomSkills( _bro, _skillsNum )
 	{
 		for( local i = 0; i < _skillsNum; i++ )
@@ -80,29 +80,29 @@ this.intensive_training_trait <- this.inherit("scripts/skills/traits/character_t
 			}
 		}
 
-		_bro.getSkills().update();		
+		_bro.getSkills().update();
 	}
-	
+
 	function getBonusXP()
 	{
 		return this.m.BonusXP;
 	}
-	
+
 	function finishedTraining( _traitGained )
 	{
 		this.m.Description = "This character completed training and can't get skills from training. Training experience is slightly improved.";
 		this.m.TraitGained = _traitGained;
 		this.m.BonusXP = 0.05;
 	}
-	
+
 	function addHitpoint()
 	{
 		this.m.HitpointsAdded++;
-	}	
+	}
 	function addStamina()
 	{
 		this.m.StaminaAdded++;
-	}	
+	}
 	function addBrave()
 	{
 		this.m.BraveAdded++;
@@ -127,30 +127,30 @@ this.intensive_training_trait <- this.inherit("scripts/skills/traits/character_t
 	{
 		this.m.RdefAdded++;
 	}
-		
+
 	function getDescription()
 	{
 		return this.m.Description;
 	}
-	
+
 	function getStatsIncreased()
 	{
 		return this.m.HitpointsAdded + this.m.StaminaAdded + this.m.BraveAdded + this.m.IniAdded + this.m.MatkAdded + this.m.RatkAdded + this.m.MdefAdded + this.m.RdefAdded;
 	}
-	
+
 	function isMaxReached()
 	{
 		return this.getStatsIncreased() >= this.m.MaxSkillsCanBeAdded;
 	}
-	
+
 	function getMaxSkillsCanBeAdded()
 	{
 		return this.m.MaxSkillsCanBeAdded;
 	}
-	
+
 	function successfullyTrained( _bro )
 	{
-		
+
 	}
 
 	function getTooltip()
@@ -181,14 +181,14 @@ this.intensive_training_trait <- this.inherit("scripts/skills/traits/character_t
 				icon = "",
 				text = "Training results so far:"
 				});
-				
+
 			tooltip.push({
 				id = 6,
 				type = "text",
 				icon = "ui/icons/special.png",
 				text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + getStatsIncreased() + "[/color] skill points"
 				});
-				
+
 				if ( this.isMaxReached() )
 				{
 				tooltip.push({
@@ -211,13 +211,12 @@ this.intensive_training_trait <- this.inherit("scripts/skills/traits/character_t
 				id = 6,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
-				text = "This character didn't start training(only upgraded training grounds gives permanent skill increase)"
+				text = "This character has not started training (only upgraded training grounds gives permanent skill increase)"
 			});
 		}
-
 		return tooltip;
 	}
-	
+
 	function onSerialize( _out )
 	{
 		this.skill.onSerialize(_out);

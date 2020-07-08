@@ -853,7 +853,7 @@ this.skill <- {
 			return false;
 		}
 
-		if (this.m.IsAttack && this.m.IsTargetingActor && this.m.Container.getActor().isAlliedWith(e))
+		if (this.m.IsAttack && this.m.IsTargetingActor && this.m.Container.getActor().isAlliedWith(_targetTile.getEntity()))
 		{
 			return false;
 		}
