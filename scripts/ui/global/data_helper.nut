@@ -307,7 +307,19 @@ this.data_helper <- {
 									{
 										continue;
 									}
-									local relTab = this.World.State.getRefFromID(_entity.getCompanyID()).getActiveRelationshipWith(tile.getEntity());
+
+									if (_entity.getCompanyID() == -1)
+									{
+										continue;
+									}
+
+									local relB = this.World.State.getRefFromID(_entity.getCompanyID());
+									if (relB == null)
+									{
+										continue;
+									}
+
+									local relTab = relB.getActiveRelationshipWith(tile.getEntity());
 									if (relTab == null) {
 										continue;
 									}

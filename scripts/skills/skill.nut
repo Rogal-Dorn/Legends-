@@ -1357,7 +1357,18 @@ this.skill <- {
 								{
 									continue;
 								}
-								local relTab = this.World.State.getRefFromID(_targetEntity.getCompanyID()).getActiveRelationshipWith(tile.getEntity());
+
+								if (_targetEntity.getCompanyID() == -1)
+								{
+									continue;
+								}
+
+								local relB = this.World.State.getRefFromID(_targetEntity.getCompanyID());
+								if (relB == null)
+								{
+									continue
+								}
+								local relTab = relB.getActiveRelationshipWith(tile.getEntity());
 								if (relTab == null)
 								{
 									continue;

@@ -177,6 +177,11 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		return this.m.IsConverted;
 	}
 
+	function Convert()
+	{
+		this.m.IsConverted = true;
+	}
+
 	function getExcludedTalents()
 	{
 		return this.m.ExcludedTalents;
