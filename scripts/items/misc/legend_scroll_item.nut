@@ -57,7 +57,7 @@ this.legend_scroll_item <- this.inherit("scripts/items/item", {
 		result.push({
 			id = 65,
 			type = "text",
-			text = "Right-click to use on a character"
+			text = "Right-click to use on a character. Studying may lead to headaches and irritability. Who wants to study?"
 		});
 		return result;
 	}
@@ -166,6 +166,19 @@ this.legend_scroll_item <- this.inherit("scripts/items/item", {
 					_actor.m.LevelUps += 1;
 					_actor.fillAttributeLevelUpValues(1, true);
 					break;
+				case 5:
+					break;
+				local r = (this.Math.rand(1, 6))
+				if (r == 0)
+				{
+					if (!_actor.getSkills().hasSkill("effect.legend_headache"))
+					{
+						_actor.getSkills().add(this.new("scripts/skills/effects_world/legend_headache_effect"));
+					}
+					{
+						_actor.getSkills().add(this.new("scripts/skills/effects_world/legend_irritable_effect")); //dont have to wry about this stacking because u can aat max study twice
+					}
+				}
 
 			}
         }

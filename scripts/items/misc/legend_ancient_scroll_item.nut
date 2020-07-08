@@ -4,7 +4,7 @@ this.legend_ancient_scroll_item <- this.inherit("scripts/items/item", {
 	{
 		this.m.ID = "misc.ancient_scroll";
 		this.m.Name = "Ancient Scroll";
-		this.m.Description = "A torn-up scroll with knowledge unseen for centuries. It can be translated by a character with the interpretation perk in the crafting tent. Highly valuable to some historians, although it is useless to many.";
+		this.m.Description = "A torn-up scroll with knowledge unseen for centuries. It can be translated by a character with the interpretation perk in the crafting tent. Highly valuable to some historians, although it is useless to many. They can, however, be studied with effort and a high chance of headache.";
 		this.m.Icon = "trade/scroll.png";
 		this.m.SlotType = this.Const.ItemSlot.None;
 		this.m.ItemType = this.Const.Items.ItemType.Usable;
@@ -73,7 +73,7 @@ this.legend_ancient_scroll_item <- this.inherit("scripts/items/item", {
 		else
         {
 
-			local r = this.Math.rand(1, 4);
+			local r = this.Math.rand(1, 5);
 			switch(r)
 			{
 				case 1: //Adds a random perk on the tree
@@ -144,7 +144,19 @@ this.legend_ancient_scroll_item <- this.inherit("scripts/items/item", {
 					_actor.m.LevelUps += 1;
 					_actor.fillAttributeLevelUpValues(1, true);
 					break;
-
+				case 5:
+					break;
+			}
+			local r = (this.Math.rand(1, 4))
+			if (r == 0)
+			{
+				if (!_actor.getSkills().hasSkill("effect.legend_headache"))
+				{
+					_actor.getSkills().add(this.new("scripts/skills/effects_world/legend_headache_effect"));
+				}
+				{
+					_actor.getSkills().add(this.new("scripts/skills/effects_world/legend_irritable_effect")); //dont have to wry about this stacking because u can aat max study twice
+				}
 			}
         }
 
