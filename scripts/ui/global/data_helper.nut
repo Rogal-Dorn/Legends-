@@ -308,6 +308,10 @@ this.data_helper <- {
 										continue;
 									}
 									local relTab = this.World.State.getRefFromID(_entity.getCompanyID()).getActiveRelationshipWith(tile.getEntity());
+									if (relTab == null)
+									{
+										continue;
+									}
 									local relNum = relTab.RelationNum;
 
 									if ( relNum <= -10 )
