@@ -96,7 +96,7 @@ gt.Const.CharacterVillageBackgrounds <- [
 	"female_servant_background",
 	"shepherd_background",
 	"brawler_background",
-	"theif_background",
+	"thief_background",
 	"female_thief_background",
 	"militia_background",
 	"peddler_background",

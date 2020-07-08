@@ -32,20 +32,14 @@ this.legend_transformed_bear_effect <- this.inherit("scripts/skills/skill", {
 				}
 			]);
 		}
-
-
-	
-
 		return ret;
-
 	}
 
 
 	function onAdded()
 	{
-
-
 		local actor = this.getContainer().getActor();
+		if (("State" in this.Tactical) && this.Tactical.State != null) {
 			if (actor.getTile().IsVisibleForPlayer)
 			{
 				if (this.Const.Tactical.HideParticles.len() != 0)
@@ -56,6 +50,7 @@ this.legend_transformed_bear_effect <- this.inherit("scripts/skills/skill", {
 					}
 				}
 			}
+		}
 		local items = actor.getItems();
 		items.getData()[this.Const.ItemSlot.Offhand][0] = null;
 		items.getData()[this.Const.ItemSlot.Mainhand][0] = null;
@@ -97,11 +92,11 @@ this.legend_transformed_bear_effect <- this.inherit("scripts/skills/skill", {
 		}
 
 		this.m.Container.add(this.new("scripts/skills/actives/legend_bear_claws"));
-		this.m.Container.add(this.new("scripts/skills/actives/legend_bear_bite"));	
+		this.m.Container.add(this.new("scripts/skills/actives/legend_bear_bite"));
 	}
 
 	function onRemoved()
-	{	
+	{
 
 
 		local actor = this.getContainer().getActor();
@@ -123,12 +118,13 @@ this.legend_transformed_bear_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("dirt").Alpha = 255;
 		actor.getSprite("accessory").Alpha = 255;
 		actor.getSprite("surcoat").Alpha = 255;
-		actor.getSprite("armor_upgrade_back").Alpha = 255;		
+		actor.getSprite("armor_upgrade_back").Alpha = 255;
 		actor.getSprite("armor_upgrade_front").Alpha = 255;
 		actor.getSprite("socket").Alpha = 255;
 		actor.getSprite("body").setHorizontalFlipping(0);
 		actor.getSprite("head").setHorizontalFlipping(0);
 		actor.getSprite("injury").setHorizontalFlipping(0);
+		if (("State" in this.Tactical) && this.Tactical.State != null) {
 			if (actor.getTile().IsVisibleForPlayer)
 			{
 				if (this.Const.Tactical.HideParticles.len() != 0)
@@ -139,7 +135,7 @@ this.legend_transformed_bear_effect <- this.inherit("scripts/skills/skill", {
 					}
 				}
 			}
-
+		}
 
 		actor.getSkills().removeByID("actives.legend_bear_claws");
 		actor.getSkills().removeByID("actives.legend_bear_bite");
