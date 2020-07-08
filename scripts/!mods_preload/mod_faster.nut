@@ -225,3 +225,35 @@
 		return true;
 	}
 });
+
+//ALP FIX
+::mods_hookNewObject("ai/tactical/behaviors/ai_sleep", function(o) {
+	o.onExecute = function( _entity )
+	{
+		if (this.m.IsFirstExecuted)
+		{
+			this.getAgent().adjustCameraToTarget(this.m.TargetTile);
+			this.m.IsFirstExecuted = false;
+
+			if (this.m.TargetTile.IsVisibleForPlayer && _entity.isHiddenToPlayer())
+			{
+				_entity.setDiscovered(true);
+				_entity.getTile().addVisibilityForFaction(this.Const.Faction.Player);
+			}
+
+			return false;
+		}
+
+		this.m.Skill.use(this.m.TargetTile);
+
+		if (!_entity.isHiddenToPlayer())
+		{
+			this.getAgent().declareAction();
+			this.getAgent().declareEvaluationDelay(1600);
+		}
+
+		this.m.Skill = null;
+		this.m.TargetTile = null;
+		return true;
+	}
+});
