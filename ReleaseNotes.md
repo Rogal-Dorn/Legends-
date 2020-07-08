@@ -3455,6 +3455,7 @@ fixes potion of obvlision perk issue
 fixes female backgrounds losing their sounds
 
 
+
 14.0.0.10 Let it Grow! Let it Grow!
 
 * Adds a new World Economy Option (*New campaign required*)
@@ -3483,9 +3484,17 @@ fixes perk tooltip for drums of war and drums of life (incorrectly displayed ran
 fixes pimp_vs_harlot event not working with reltionships enabled
 Chain thresh now correctly applies bleed instead of daze
 
+https://drive.google.com/file/d/1iT128cOZIx4qoLXVo9mW6CzcAeq6bT1y/view?usp=sharing
+
 14.0.0.11
 
 Fixes typo in Druid tree
 Fixes later game lag issues from world economy.
 Fixes incorrect settlement images.
+Sisterhood intro text is no longer placeholder
 
+**Harvesting skills**
+Early game weapon perks now also unlock harvesting during battle
+* Woodsman's Cuts lets you chop down trees. If you're holding an axe there is a 1/4 chance of getting wood
+* Harvest Twist lets you chop down bushes  If you're holding a sickle there is a 1/2 chance of getting berries
+* Ore Hunter lets you crush rocks. If you're holding a pickaxe or hammer there is a 1/10 chance of getting uncut gems
