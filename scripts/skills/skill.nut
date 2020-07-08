@@ -853,7 +853,7 @@ this.skill <- {
 			return false;
 		}
 
-		if (this.m.IsAttack && this.m.IsTargetingActor && this.m.Container.getActor().isAlliedWith(_targetTile.getEntity()))
+		if (this.m.IsAttack && this.m.IsTargetingActor && this.m.Container.getActor().isAlliedWith(e))
 		{
 			return false;
 		}
@@ -1163,7 +1163,7 @@ this.skill <- {
 
 	function getHitchance( _targetEntity )
 	{
-		if (!_targetEntity.isAttackable())
+		if (!_targetEntity.isAttackable() && !_targetEntity.isRock() && !_targetEntity.isTree() && !_targetEntity.isBush())
 		{
 			return 0;
 		}
@@ -1233,6 +1233,66 @@ this.skill <- {
 
 	function attackEntity( _user, _targetEntity, _allowDiversion = true )
 	{
+		if (_targetEntity.isRock())
+		{
+			local r = this.Math.rand(0, 9);
+			if (r == 1)
+			{
+				local loot = this.new("scripts/items/trade/uncut_gems_item");
+				loot.drop(_targetEntity().getTile());
+			}
+			_targetEntity.getTile().removeObject()
+			if (this.m.SoundOnHit.len() != 0)
+			{
+				this.Time.scheduleEvent(this.TimeUnit.Virtual, this.m.SoundOnHitDelay, this.onPlayHitSound.bindenv(this), {
+					Sound = this.m.SoundOnHit[this.Math.rand(0, this.m.SoundOnHit.len() - 1)],
+					Pos = _targetEntity.getPos()
+				});
+			}
+			return true;
+		}
+
+		if (_targetEntity.isTree())
+		{
+			local r = this.Math.rand(0, 4);
+			if (r == 1)
+			{
+				local loot = this.new("scripts/items/trade/legend_raw_wood_item");
+				loot.drop(_targetEntity.getTile());
+			}
+			_targetEntity.getTile().removeObject()
+			if (this.m.SoundOnHit.len() != 0)
+			{
+				this.Time.scheduleEvent(this.TimeUnit.Virtual, this.m.SoundOnHitDelay, this.onPlayHitSound.bindenv(this), {
+					Sound = this.m.SoundOnHit[this.Math.rand(0, this.m.SoundOnHit.len() - 1)],
+					Pos = _targetEntity.getPos()
+				});
+			}
+			return true;
+		}
+
+		if (_targetEntity.isBush())
+		{
+			local r = this.Math.rand(0, 2);
+			if (r == 1)
+			{
+				local loot = this.new("scripts/items/supplies/roots_and_berries_item");
+				loot.drop(_targetEntity.getTile());
+			}
+			_targetEntity.getTile().removeObject()
+
+			if (this.m.SoundOnHit.len() != 0)
+			{
+				this.Time.scheduleEvent(this.TimeUnit.Virtual, this.m.SoundOnHitDelay, this.onPlayHitSound.bindenv(this), {
+					Sound = this.m.SoundOnHit[this.Math.rand(0, this.m.SoundOnHit.len() - 1)],
+					Pos = _targetEntity.getPos()
+				});
+			}
+			return false;
+		}
+
+		//lets get on with the rest of the attack
+
 		local properties = this.m.Container.buildPropertiesForUse(this, _targetEntity);
 		local userTile = _user.getTile();
 		local astray = false;
@@ -1288,7 +1348,7 @@ this.skill <- {
 						local tile = targetTile.getNextTile(i);
 						if (tile.IsOccupiedByActor && tile.getEntity().getMoraleState() != this.Const.MoraleState.Fleeing)
 						{
-							
+
 							if (tile.getEntity().getFaction() == this.Const.Faction.Player)
 							{
 								// local relTab = _targetEntity.getTile().getEntity().getActiveRelationshipWith(tile.getEntity());
@@ -1315,7 +1375,7 @@ this.skill <- {
 									this.logInfo("ToHit went down by 5");
 								}
 							}
-							
+
 						}
 					}
 				}
@@ -1754,7 +1814,7 @@ this.skill <- {
 			else
 			{
 				injuries = this.m.InjuriesOnHead;
-			}		
+			}
 		}
 
 		local hitInfo = clone this.Const.Tactical.HitInfo;
