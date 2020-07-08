@@ -80,7 +80,7 @@ this.legend_vampire_lord <- this.inherit("scripts/entity/tactical/actor", {
 					local loot;
 					if (r <= 10)
 					{
-						loot = this.new("scripts/items/trade/legend_ancient_scroll_item");
+						loot = this.new("scripts/items/misc/legend_ancient_scroll_item");
 						loot.drop(_tile);
 					}
 				}

@@ -36,7 +36,7 @@ this.undead_buried_castle_location <- this.inherit("scripts/entity/world/locatio
 			"loot/jeweled_crown_item",
 			"loot/ancient_gold_coins_item",
 			"loot/ornate_tome_item",
-			"trade/legend_ancient_scroll_item"
+			"misc/legend_ancient_scroll_item"
 		], _lootTable);
 	}
 

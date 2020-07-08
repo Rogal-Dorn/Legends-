@@ -151,7 +151,7 @@ this.undead_monolith_location <- this.inherit("scripts/entity/world/location", {
 			"loot/gemstones_item",
 			"loot/golden_chalice_item",
 			"loot/ancient_gold_coins_item",
-			"trade/legend_ancient_scroll_item"
+			"misc/legend_ancient_scroll_item"
 		], _lootTable);
 		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
 		{

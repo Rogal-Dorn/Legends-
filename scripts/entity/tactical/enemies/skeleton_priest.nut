@@ -57,7 +57,7 @@ this.skeleton_priest <- this.inherit("scripts/entity/tactical/skeleton", {
 					local loot;
 					if (r <= 5)
 					{
-						loot = this.new("scripts/items/trade/legend_ancient_scroll_item");
+						loot = this.new("scripts/items/misc/legend_ancient_scroll_item");
 						loot.drop(_tile);
 					}
 				}

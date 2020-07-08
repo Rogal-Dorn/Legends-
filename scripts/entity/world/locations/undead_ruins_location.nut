@@ -47,7 +47,7 @@ this.undead_ruins_location <- this.inherit("scripts/entity/world/location", {
 			"loot/ancient_gold_coins_item",
 			"loot/ornate_tome_item",
 			"loot/golden_chalice_item",
-			"trade/legend_ancient_scroll_item"
+			"misc/legend_ancient_scroll_item"
 		];
 
 		if (this.Const.DLC.Unhold)

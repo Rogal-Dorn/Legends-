@@ -49,7 +49,7 @@ this.undead_hideout_location <- this.inherit("scripts/entity/world/location", {
 			"loot/signet_ring_item",
 			"loot/signet_ring_item",
 			"loot/silverware_item",
-			"trade/legend_ancient_scroll_item"
+			"misc/legend_ancient_scroll_item"
 		], _lootTable);
 	}
 
