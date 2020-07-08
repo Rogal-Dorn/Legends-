@@ -288,7 +288,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 	function SetAlignmentMin( _f )
 	{
-		this.m.Background.setAlignmentMin( _f);
+		this.m.Background.SetAlignmentMin( _f);
 	}
 
 	function getAlignmentMax()
@@ -298,7 +298,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 	function SetAlignmentMax( _f )
 	{
-		this.m.Background.setAlignmentMax( _f);
+		this.m.Background.SetAlignmentMax( _f);
 	}
 
 
