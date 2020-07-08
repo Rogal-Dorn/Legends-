@@ -40,7 +40,10 @@ this.hooked_blade <- this.inherit("scripts/items/weapons/weapon", {
 		strike.m.Overlay = "active_93";
 		this.addSkill(strike);
 		this.addSkill(this.new("scripts/skills/actives/hook"));
-	}
+		if (this.m.Container.getActor().getSkills().hasSkill("perk.legend_specialist_sickle_skill"))
+		{
+			this.addSkill(this.new("scripts/skills/actives/legend_harvest_bush"));
+		}
 
 });
 

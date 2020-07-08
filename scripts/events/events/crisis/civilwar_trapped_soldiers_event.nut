@@ -72,6 +72,11 @@ this.civilwar_trapped_soldiers_event <- this.inherit("scripts/events/event", {
 				this.Banner = _event.m.NobleHouse.getUIBannerSmall();
 				_event.m.NobleHouse.addPlayerRelation(this.Const.World.Assets.RelationFavor, "Saved some of their men");
 				this.World.Assets.addMoralReputation(1);
+								this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation increases slightly"
+					});
 				_event.m.Town.getFactionOfType(this.Const.FactionType.Settlement).addPlayerRelation(this.Const.World.Assets.RelationMinorOffense);
 			}
 
@@ -97,6 +102,11 @@ this.civilwar_trapped_soldiers_event <- this.inherit("scripts/events/event", {
 				this.Banner = _event.m.NobleHouse.getUIBannerSmall();
 				_event.m.NobleHouse.addPlayerRelation(this.Const.World.Assets.RelationNobleContractSuccess, "Saved some of their men");
 				this.World.Assets.addMoralReputation(-2);
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation decreases"
+					});
 				_event.m.Town.getFactionOfType(this.Const.FactionType.Settlement).addPlayerRelation(this.Const.World.Assets.RelationOffense, "Killed some of their men");
 				local brothers = this.World.getPlayerRoster().getAll();
 				local candidates = [];
@@ -146,6 +156,11 @@ this.civilwar_trapped_soldiers_event <- this.inherit("scripts/events/event", {
 			{
 				this.Banner = _event.m.NobleHouse.getUIBannerSmall();
 				this.World.Assets.addMoralReputation(-1);
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation decreases slightly"
+					});
 			}
 
 		});

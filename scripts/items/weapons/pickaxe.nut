@@ -40,6 +40,10 @@ this.pickaxe <- this.inherit("scripts/items/weapons/weapon", {
 		crush.m.IconDisabled = "skills/active_59_sw.png";
 		crush.m.Overlay = "active_59";
 		this.addSkill(crush);
+		if (this.m.Container.getActor().getSkills().hasSkill("perk.legend_specialist_pickaxe_skill"))
+		{
+			this.addSkill(this.new("scripts/skills/actives/legend_harvest_rock"));
+		}
 	}
 
 	function onUpdateProperties( _properties )

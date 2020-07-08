@@ -125,6 +125,11 @@ this.wildman_causes_havoc_event <- this.inherit("scripts/events/event", {
 				}
 
 				this.World.FactionManager.getFaction(_event.m.Town.getFactions()[0]).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractFail, "You refused to pay for damages caused by one of your mercenaries");
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation decreases slightly"
+					});
 			}
 
 		});
@@ -163,6 +168,11 @@ this.wildman_causes_havoc_event <- this.inherit("scripts/events/event", {
 					icon = "ui/icons/asset_money.png",
 					text = "You spend [color=" + this.Const.UI.Color.NegativeEventValue + "]" + _event.m.Compensation + "[/color] Crowns"
 				});
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation increases"
+					});
 			}
 
 		});
@@ -330,6 +340,11 @@ this.wildman_causes_havoc_event <- this.inherit("scripts/events/event", {
 				{
 					this.Characters.push(_event.m.Wildman.getImagePath());
 				}
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation decreases"
+					});
 			}
 
 		});
@@ -423,6 +438,11 @@ this.wildman_causes_havoc_event <- this.inherit("scripts/events/event", {
 					icon = "ui/icons/asset_money.png",
 					text = "You spend [color=" + this.Const.UI.Color.NegativeEventValue + "]" + _event.m.Compensation + "[/color] Crowns"
 				});
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation increases"
+					});
 			}
 
 		});

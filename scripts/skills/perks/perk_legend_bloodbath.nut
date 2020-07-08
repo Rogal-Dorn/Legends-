@@ -63,28 +63,27 @@ this.perk_legend_bloodbath <- this.inherit("scripts/skills/skill", {
 		{
 			return 0;
 		}
-		
+
 		if (!this.Tactical.isActive())
 		{
 			return 0;
 		}
-		local count = 0;
-		local bleeders = 0;
-	
+		local count = 0.0;
+		local bleeders = 0.0;
+
 		local actors = this.Tactical.Entities.getAllInstancesAsArray();
 
 		foreach( a in actors )
 		{
 			if (a.getSkills().hasSkill("effects.bleeding") || a.getSkills().hasSkill("effects.legend_grazed_effect") )
 			{
-				bleeders += 1;
+				bleeders += 1.0;
 
 			}
-			count += 1;
+			count += 1.0;
 		}
-		// Just so we don't get division by 0
-		local ratio = bleeders / this.Math.maxf(count, 1);
-		return ratio;
+
+		return (count == 0) ? 0 : bleeders / count;
 	}
 
 	function onUpdate( _properties )

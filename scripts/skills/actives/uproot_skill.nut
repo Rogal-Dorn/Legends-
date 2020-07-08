@@ -45,6 +45,40 @@ this.uproot_skill <- this.inherit("scripts/skills/skill", {
 		this.m.ChanceSmash = 25;
 	}
 
+	function getTooltip()
+	{
+		local p = this.getContainer().getActor().getCurrentProperties();
+		return [
+			{
+				id = 1,
+				type = "title",
+				text = this.getName()
+			},
+			{
+				id = 2,
+				type = "description",
+				text = this.getDescription()
+			},
+			{
+				id = 3,
+				type = "text",
+				text = this.getCostString()
+			},
+			{
+				id = 4,
+				type = "text",
+				icon = "/ui/icons/health.png",
+				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + p.DamageRegularMin + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + p.DamageRegularMax + "[/color] damage"
+			},
+			{
+				id = 5,
+				type = "text",
+				icon = "/ui/icons/special.png",
+				text = "Uproot can target the ground and hits up to 3 tiles in a line"
+			}
+		];
+	}
+
 	function applyEffectToTarget( _user, _target, _targetTile )
 	{
 		if (_target.isNonCombatant())

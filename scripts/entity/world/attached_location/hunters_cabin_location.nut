@@ -35,8 +35,6 @@ this.hunters_cabin_location <- this.inherit("scripts/entity/world/attached_locat
 		if(this.Const.LegendMod.Configs.LegendMagicEnabled())
 		{
 			_list.push("legend_master_archer_background");
-			_list.push("legend_master_archer_background");
-			_list.push("legend_ranger_background");
 		}
 	}
 

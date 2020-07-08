@@ -25,10 +25,7 @@ this.gatherers_hut_location <- this.inherit("scripts/entity/world/attached_locat
 		_list.push("legend_herbalist_background");
 		_list.push("daytaler_background");
 		_list.push("daytaler_background");
-		if(this.Const.LegendMod.Configs.LegendMagicEnabled())
-		{
-			_list.push("legend_entrancer_background");
-		}
+
 	}
 
 	function onUpdateShopList( _id, _list )

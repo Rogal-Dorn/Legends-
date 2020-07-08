@@ -1,5 +1,7 @@
 this.tree_dead_steppe <- this.inherit("scripts/entity/tactical/entity", {
-	m = {},
+	m = {
+		IsTree = true
+		},
 	function getName()
 	{
 		return "Dead Tree";

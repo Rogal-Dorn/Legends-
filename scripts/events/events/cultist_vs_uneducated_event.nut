@@ -58,6 +58,11 @@ this.cultist_vs_uneducated_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				this.World.Assets.addMoralReputation(-1);
+					this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation decreases slightly"
+					});
 				this.Characters.push(_event.m.Cultist.getImagePath());
 				this.Characters.push(_event.m.Uneducated.getImagePath());
 				
@@ -72,7 +77,6 @@ this.cultist_vs_uneducated_event <- this.inherit("scripts/events/event", {
 				_event.m.Uneducated.changeActiveRelationship( _event.m.Cultist, modifier1 );
 				local modifier2 = this.Math.rand(10, 20);
 				_event.m.Cultist.changeActiveRelationship( _event.m.Uneducated, modifier2 );
-
 				background.onSetAppearance();
 				this.List = [
 					{
@@ -81,6 +85,15 @@ this.cultist_vs_uneducated_event <- this.inherit("scripts/events/event", {
 						text = _event.m.Uneducated.getName() + " has been converted to a Cultist"
 					}
 				];
+
+				if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+				{
+					this.List.push({
+						id = 11,
+						icon = "ui/icons/relation.png",
+						text = _event.m.Cultist.getName() + " and " + _event.m.Uneducated.getName() + " grow closer"
+					});
+				}
 				_event.m.Cultist.getBaseProperties().Bravery += 2;
 				_event.m.Cultist.getSkills().update();
 				this.List.push({
@@ -110,6 +123,11 @@ this.cultist_vs_uneducated_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				this.World.Assets.addMoralReputation(2);
+					this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation increases"
+					});
 				this.Characters.push(_event.m.Cultist.getImagePath());
 				this.Characters.push(_event.m.Uneducated.getImagePath());
 				_event.m.Cultist.worsenMood(2.0, "Was denied the chance to convert " + _event.m.Uneducated.getName());
@@ -122,6 +140,8 @@ this.cultist_vs_uneducated_event <- this.inherit("scripts/events/event", {
 						text = _event.m.Cultist.getName() + this.Const.MoodStateEvent[_event.m.Cultist.getMoodState()]
 					});
 				}
+
+
 			}
 
 		});

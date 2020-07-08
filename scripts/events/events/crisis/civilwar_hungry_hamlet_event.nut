@@ -72,6 +72,11 @@ this.civilwar_hungry_hamlet_event <- this.inherit("scripts/events/event", {
 					icon = "ui/icons/special.png",
 					text = "The company gained renown"
 				});
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation increases"
+					});
 			}
 
 		});
@@ -93,6 +98,11 @@ this.civilwar_hungry_hamlet_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				_event.distributeFood(this.List);
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation increases"
+					});
 			}
 
 		});
@@ -131,6 +141,11 @@ this.civilwar_hungry_hamlet_event <- this.inherit("scripts/events/event", {
 			{
 				this.Banner = _event.m.NobleHouse.getUIBannerSmall();
 				_event.distributeFood(this.List);
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation increases"
+					});
 			}
 
 		});
@@ -161,6 +176,11 @@ this.civilwar_hungry_hamlet_event <- this.inherit("scripts/events/event", {
 					icon = "ui/icons/special.png",
 					text = "The company gained renown"
 				});
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation increases"
+					});
 			}
 
 		});
@@ -199,6 +219,11 @@ this.civilwar_hungry_hamlet_event <- this.inherit("scripts/events/event", {
 					icon = injury.getIcon(),
 					text = bro.getName() + " suffers " + injury.getNameOnly()
 				});
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation increases"
+					});
 			}
 
 		});

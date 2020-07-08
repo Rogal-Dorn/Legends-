@@ -1,5 +1,7 @@
 this.autumn_tree1 <- this.inherit("scripts/entity/tactical/entity", {
-	m = {},
+	m = {
+	IsTree = true
+	},
 	function getName()
 	{
 		return "Tree";

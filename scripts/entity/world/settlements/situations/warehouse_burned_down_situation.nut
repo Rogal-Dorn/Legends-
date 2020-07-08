@@ -23,6 +23,10 @@ this.warehouse_burned_down_situation <- this.inherit("scripts/entity/world/settl
 
 	function onAdded( _settlement )
 	{
+		if(this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+		{
+			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.01);
+		}
 		_settlement.resetShop();
 	}
 

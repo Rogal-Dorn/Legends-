@@ -102,7 +102,9 @@ this.new_campaign_menu_module <- this.inherit("scripts/ui/screens/ui_module", {
 			LegendCampUnlock = _settings[32],
 			LegendRecruitScaling = _settings[33],
 			LegendBleedKiller = _settings[34],
-			LegendAllBlueprints = _settings[35]
+			LegendAllBlueprints = _settings[35],
+			LegendRelationship = _settings[36],
+			LegendWorldEconomy = _settings[37]
 		};
 
 		// local settings = {

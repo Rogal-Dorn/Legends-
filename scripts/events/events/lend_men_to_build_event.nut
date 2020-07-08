@@ -65,7 +65,11 @@ this.lend_men_to_build_event <- this.inherit("scripts/events/event", {
 					}
 				];
 				local brothers = this.World.getPlayerRoster().getAll();
-
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation increases slightly"
+					});
 				foreach( bro in brothers )
 				{
 					local id = bro.getBackground().getID();
@@ -84,15 +88,26 @@ this.lend_men_to_build_event <- this.inherit("scripts/events/event", {
 						}
 
 						//set relations
-						local relations = this.World.getPlayerRoster().getAll();
-						foreach( relation in relations )
+						if (this.Const.LegendMod.Configs.RelationshipsEnabled())
 						{
-							if (id == "background.daytaler" || id == "background.female_daytaler" || id == "background.mason" || id == "background.lumberjack" || id == "background.miller"|| id == "background.female_miller" || id == "background.farmhand" || id == "background.female_farmhand"  || id == "background.gravedigger")
+
+							local relations = this.World.getPlayerRoster().getAll();
+							foreach( relation in relations )
 							{
-								local modifier1 = this.Math.rand(5, 10);
-								bro.changeActiveRelationship( relation, modifier1 );
-								local modifier2 = this.Math.rand(5, 10);
-								relation.changeActiveRelationship( bro, modifier2 );
+								if (id == "background.daytaler" || id == "background.female_daytaler" || id == "background.mason" || id == "background.lumberjack" || id == "background.miller"|| id == "background.female_miller" || id == "background.farmhand" || id == "background.female_farmhand"  || id == "background.gravedigger")
+								{
+									local modifier1 = this.Math.rand(5, 10);
+									bro.changeActiveRelationship( relation, modifier1 );
+									local modifier2 = this.Math.rand(5, 10);
+									relation.changeActiveRelationship( bro, modifier2 );
+									this.List.push({
+										id = 10,
+										icon = "ui/icons/relation.png",
+										text = bro.getName() + " and " + relation.getName() + " grow closer"
+									});
+
+
+								}
 							}
 						}
 
@@ -140,6 +155,11 @@ this.lend_men_to_build_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation increases slightly"
+					});
 			}
 
 		});

@@ -213,7 +213,6 @@ this.pimp_vs_harlot_event <- this.inherit("scripts/events/event", {
 						_event.m.Dude.changeActiveRelationship( _event.m.Monk, modifier1 );
 						local modifier2 = this.Math.rand(5, 10);
 						_event.m.Monk.changeActiveRelationship( _event.m.Dude, modifier2 );
-
 						_event.m.Dude = null;
 						return 0;
 					}
@@ -255,11 +254,11 @@ this.pimp_vs_harlot_event <- this.inherit("scripts/events/event", {
 								"pimp_background"
 							]);
 						_event.m.Dude.getSkills().add(this.new("scripts/skills/racial/skeleton_racial"));
-						_event.m.Dude.getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));							
+						_event.m.Dude.getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));
 						}
 					else
 					{
-	
+
 						_event.m.Dude.setStartValuesEx([
 							"pimp_background"
 						]);

@@ -22,7 +22,12 @@ this.ambushed_trade_routes_situation <- this.inherit("scripts/entity/world/settl
 	function onAdded( _settlement )
 	{
 		_settlement.removeSituationByID("situation.safe_roads");
+		if(this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+		{
+			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.05);
+		}
 		_settlement.resetShop();
+
 	}
 
 	function onUpdate( _modifiers )

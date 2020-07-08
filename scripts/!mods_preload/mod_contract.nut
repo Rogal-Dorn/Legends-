@@ -312,34 +312,28 @@
 	{
 		if (("ShowDifficulty" in this.m.ActiveScreen) && this.m.ActiveScreen.ShowDifficulty)
 		{
-			if (this.m.DifficultyMult < 0.9)
+			switch ((this.getDifficulty()))
 			{
-				return {
-					Image = "ui/images/difficulty_easy.png",
-					IsProcedural = false
-				};
+				case 1:
+					return {
+						Image = "ui/images/difficulty_easy.png",
+						IsProcedural = false
+					};
+				case 2:
+					return {
+						Image = "ui/images/difficulty_medium.png",
+						IsProcedural = false
+					};
+				case 3:
+					return {
+						Image = "ui/images/difficulty_hard.png",
+						IsProcedural = false
+					};
 			}
-			else if (this.m.DifficultyMult >= 0.9 && this.m.DifficultyMult < 1.1)
-			{
-				return {
-					Image = "ui/images/difficulty_medium.png",
-					IsProcedural = false
-				};
-			}
-			else if (this.m.DifficultyMult >= 1.1 && this.m.DifficultyMult < 1.4 )
-			{
-				return {
-					Image = "ui/images/difficulty_hard.png",
-					IsProcedural = false
-				};
-			}
-			else
-			{
-				return {
-					Image = "ui/images/difficulty_legend.png",
-					IsProcedural = false
-				};
-			}
+			return {
+				Image = "ui/images/difficulty_legend.png",
+				IsProcedural = false
+			};
 		}
 		else
 		{
@@ -349,21 +343,72 @@
 
 	o.getUIDifficultySmall = function()
 	{
-		if (this.m.DifficultyMult < 0.9)
+		switch (this.getDifficulty())
 		{
-			return "ui/icons/difficulty_easy";
-		}
-		else if (this.m.DifficultyMult >= 0.9 && this.m.DifficultyMult < 1.1)
-		{
-			return "ui/icons/difficulty_medium";
-		}
-		else if (this.m.DifficultyMult >= 1.1 && this.m.DifficultyMult < 1.4)
-		{
-			return "ui/icons/difficulty_hard";
-		}
-		else
-		{
-			return "ui/icons/difficulty_legend";
+			case 1:
+				return "ui/icons/difficulty_easy";
+			case 2:
+				return "ui/icons/difficulty_medium";
+			case 3:
+				return "ui/icons/difficulty_hard";
+			default:
+				return  "ui/icons/difficulty_legend";
 		}
 	}
+
+	o.getDifficulty <- function ()
+	{
+		if (this.m.DifficultyMult < 0.9)
+		{
+			return 1;
+		}
+
+		if (this.m.DifficultyMult >= 0.9 && this.m.DifficultyMult < 1.1)
+		{
+			return 2;
+		}
+
+		if (this.m.DifficultyMult >= 1.1 && this.m.DifficultyMult < 1.4)
+		{
+			return 3;
+		}
+
+		return 4;
+	}
+
+
+	o.resolveSituation = function ( _situationInstance, _settlement, _list = null)
+	{
+		if (_situationInstance == 0 || _settlement == null || typeof _settlement == "instance" && _settlement.isNull())
+		{
+			return 0;
+		}
+
+		local s = _settlement.getSituationByInstance(_situationInstance);
+		local ret = _situationInstance;
+
+		if (s != null)
+		{
+			if(this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+			{
+				ret = _settlement.resolveSituationByInstance(_situationInstance);
+			}
+			else
+			{
+				ret = _settlement.removeSituationByInstance(_situationInstance);
+			}
+		}
+
+		if (_list != null && s != null && !_settlement.hasSituation(s.getID()))
+		{
+			_list.push({
+				id = 10,
+				icon = s.getIcon(),
+				text = s.getRemovedString(_settlement.getName())
+			});
+		}
+
+		return ret;
+	}
+
 });

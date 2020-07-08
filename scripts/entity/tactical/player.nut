@@ -156,10 +156,11 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			{
 				paymasterCount++;
 				mod = bro.getBarterModifier();
-				wageMult = wageMult - mod;
-			}
-		}
+				wageMult -= mod;
 
+				}
+			}
+		//local costAdj = this.Math.max(0, this.m.CurrentProperties.DailyWageMult * barterMult);
 		return this.Math.max(0, this.m.CurrentProperties.DailyWage * wageMult);
 	}
 
@@ -179,10 +180,9 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.isInReserves() && !this.m.Skills.hasSkill("perk.legend_peaceful"))
 		{
-			food = food * 2;
+			food *= 2;
 		}
-
-		food = food - foodMult;
+		food -= foodMult;
 		return food;
 	}
 
@@ -281,15 +281,25 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		return this.m.MoodChanges;
 	}
 
-    function getAlignmentMin()
-    {
-        return this.m.Background.getAlignmentMin();
-    }
-    
-    function getAlignmentMax()
-    {
-        return this.m.Background.getAlignmentMax();
-    }
+	function getAlignmentMin()
+	{
+	        return this.m.Background.getAlignmentMin();
+	}
+
+	function SetAlignmentMin( _f )
+	{
+		this.m.Background.setAlignmentMin( _f);
+	}
+
+	function getAlignmentMax()
+	{
+	        return this.m.Background.getAlignmentMax();
+	}
+
+	function SetAlignmentMax( _f )
+	{
+		this.m.Background.setAlignmentMax( _f);
+	}
 
 
 	function improveMood( _a = 1.0, _reason = "" )
@@ -919,25 +929,28 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.World.Assets.getOrigin().onHiredByScenario(this);
         this.m.CompanyID = this.World.State.addNewID(this);
 
-        foreach ( b in this.World.getPlayerRoster().getAll() ) //Set relations to others characters to this one
-        {
-            local relMod = (( (this.m.Alignment > b.getAlignment()) ? (this.m.Alignment - b.getAlignment()) : (b.getAlignment() - this.m.Alignment) + 1) * -2) + 10;
-            this.changeActiveRelationship(b, this.Math.rand(-1, 1) + relMod);
-        }
-        foreach ( b in this.World.getPlayerRoster().getAll() ) //Relations to this character to others
-        {
-            local relMod = (( (this.m.Alignment > b.getAlignment()) ? (this.m.Alignment - b.getAlignment()) : (b.getAlignment() - this.m.Alignment) + 1) * -2) + 10;
-            b.changeActiveRelationship(this, this.Math.rand(-1,1) + relMod);
-        }
+		if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+		{
+			foreach ( b in this.World.getPlayerRoster().getAll() ) //Set relations to others characters to this one
+			{
+				local relMod = (( (this.m.Alignment > b.getAlignment()) ? (this.m.Alignment - b.getAlignment()) : (b.getAlignment() - this.m.Alignment) + 1) * -2) + 10;
+				this.changeActiveRelationship(b, this.Math.rand(-1, 1) + relMod);
+			}
+			foreach ( b in this.World.getPlayerRoster().getAll() ) //Relations to this character to others
+			{
+				local relMod = (( (this.m.Alignment > b.getAlignment()) ? (this.m.Alignment - b.getAlignment()) : (b.getAlignment() - this.m.Alignment) + 1) * -2) + 10;
+				b.changeActiveRelationship(this, this.Math.rand(-1,1) + relMod);
+			}
+		}
 
 		if (this.getSkills().hasSkill("trait.intensive_training_trait") && this.getLevel() > 1 )
 		{
-			if ( this.getBackground().getNameOnly()=="Donkey" ) 
+			if ( this.getBackground().getNameOnly()=="Donkey" )
 			{
 				return;
 			}
 			local inTraining = this.getSkills().getSkillByID("trait.intensive_training_trait");
-			
+
 			local addSkills = this.Math.rand(0, this.getLevel()+2);
 			addSkills = this.Math.min(addSkills, inTraining.getMaxSkillsCanBeAdded() - 1);
 			inTraining.addRandomSkills(this, addSkills);
@@ -1175,7 +1188,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				for( local i = 0; i != this.Const.CorpsePart.len(); i = ++i )
 				{
 					stub.addSprite("stuff_" + i).setBrush(this.Const.CorpsePart[i]);
-	
+
 				}
 			}
 			else
@@ -1304,6 +1317,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 					decal.setBrush(appearance.CorpseArmorUpgradeFront);
 				}
 			}
+			this.removeActiveRelationship();
 		}
 
 		if (_tile != null)
@@ -1380,7 +1394,8 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.add(this.new("scripts/skills/actives/break_ally_free_skill"));
 		this.m.Skills.add(this.new("scripts/skills/effects/realm_of_nightmares_effect"));
 		this.m.Skills.add(this.new("scripts/skills/special/legend_horserider_skill"));
-        this.m.Skills.add(this.new("scripts/skills/special/relationship_check"));
+		// this.m.Skills.add(this.new("scripts/skills/special/relationship_check"));
+
 		if (this.Const.DLC.Unhold)
 		{
 			this.m.Skills.add(this.new("scripts/skills/actives/wake_ally_skill"));
@@ -1487,6 +1502,10 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		{
 			_xp = _xp * 0.25;
 		}
+	//	if (("State" in this.World) && this.World.State != null && this.World.getPlayerRoster().getSize() < 3)
+	//	{
+	//		_xp = _xp * (1.0 - (3 - this.World.getPlayerRoster().getSize()) * 0.15);
+	//	}
 
 		if (this.m.XP + _xp * this.m.CurrentProperties.XPGainMult >= this.Const.LevelXP[this.Const.LevelXP.len() - 1])
 		{
@@ -1527,7 +1546,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		{
 			++this.m.PerkPoints;
 		}
-		
+
 		//++this.m.PerkPoints //// DEBUG, UNCOMMENT FOR UNLIMITED UNLOCKS
 
 		return true;
@@ -2173,8 +2192,6 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 						break;
 					}
 				}
-
-				i = ++i;
 			}
 
 			for( local i = 1; i < traits.len(); i = ++i )
@@ -2185,8 +2202,6 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				{
 					traits[i].addTitle();
 				}
-
-				i = ++i;
 			}
 		}
 
@@ -2216,44 +2231,48 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			this.fillAttributeLevelUpValues(this.Const.XP.MaxLevelWithPerkpoints - 1);
 		}
 
-        this.setAlignment( null, background );
+		if ( this.Const.LegendMod.Configs.RelationshipsEnabled() )
+		{
+        	this.setAlignment( null, background );
+		}
 	}
 
-    function setAlignment ( custom = null, background = null )
-    {
-        if ( background == null ) 
-        {
-            background = this.getBackground();
-        }
-        if ( this.m.IsAlignmentAssigned )
-        {
-            this.m.Skills.removeByID("trait.legend_alignment_0" + this.m.Alignment);    
-        }
-        if ( custom != null )
-        {
-            if ( custom > this.Const.LegendMod.Alignment.Saintly )
-            {
-                this.m.Alignment = this.Const.LegendMod.Alignment.Saintly;
-            }
-            else if ( custom < this.Const.LegendMod.Alignment.Dreaded ) 
-            {
-                this.m.Alignment = this.Const.LegendMod.Alignment.Dreaded;
-            }
-            else 
-            {
-                this.m.Alignment = custom;
-            }
-        }
-        else
-        {
-            this.m.Alignment = this.Math.rand(background.getAlignmentMin(), background.getAlignmentMax());
-        }
-        
-        this.m.IsAlignmentAssigned = true;
+	//Grants the frenemies & alignment skills
+	function setAlignment ( custom = null, background = null )
+	{
+		if ( background == null )
+		{
+			background = this.getBackground();
+		}
+		if ( this.m.IsAlignmentAssigned )
+		{
+			this.m.Skills.removeByID("trait.legend_alignment");
+		}
+		if ( custom != null )
+		{
+			if ( custom > this.Const.LegendMod.Alignment.Saintly )
+			{
+				this.m.Alignment = this.Const.LegendMod.Alignment.Saintly;
+			}
+			else if ( custom < this.Const.LegendMod.Alignment.Dreaded )
+			{
+				this.m.Alignment = this.Const.LegendMod.Alignment.Dreaded;
+			}
+			else
+			{
+				this.m.Alignment = custom;
+			}
+		}
+		else
+		{
+			this.m.Alignment = this.Math.rand(background.getAlignmentMin(), background.getAlignmentMax());
+		}
 
-        this.m.Skills.add(this.new("scripts/skills/traits/legend_frenemies"));
-        this.m.Skills.add(this.new("scripts/skills/traits/legend_alignment_0" + this.m.Alignment));
-    }
+		this.m.IsAlignmentAssigned = true;
+
+		this.m.Skills.add(this.new("scripts/skills/traits/legend_frenemies"));
+		this.m.Skills.add(this.new("scripts/skills/traits/legend_alignment"));
+	}
 
 
     function getAlignment()
@@ -2265,6 +2284,160 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
     {
         return this.m.CompanyID;
     }
+
+	//Only used occaisionally, shouldn't call this specifically
+	//Probably would be unused function
+	//Check world_state::addNewID and in this_file::onHired to see how w add company IDs to brothers
+	function setCompanyID( _num )
+	{
+		this.m.CompanyID = _num;
+	}
+	//If we don't have an active relationship with the actor create one -> then change the Key by the amount
+	//Most of the time we just change the relation number as of now so defaulting to RelationNum
+	//otherwise if we want to change specific key by the amount do that here
+	//We use _set = false to just stack onto the old relationship modifier
+	//If it's true then we overwrite the old modifier
+	//i.e. if relnum = 10 and we do ( _actor, 15, true ) -> relNum trns into 15
+	//or we can do ( _actor, 5 ) -> relNum turns to 15 also
+	//To use non-numeric keys it's trcky but use the following
+	// bro.cAR(bro2, true, [anything for set], keyValue)
+	//	bro.cAR(bro2, false, [anything], keyVal)
+	function changeActiveRelationship( _actor, _amount, _key = "RelationNum", _set = false )
+	{
+		if ( !this.Const.LegendMod.Configs.RelationshipsEnabled() )
+		{
+			return;
+		}
+		if ( _actor == this )
+		{
+			return;
+		}
+		if ( !( this.hasActiveRelationshipWith(_actor) ) )
+		{
+
+			this.createActiveRelationship(_actor);
+		}
+
+		local arrIndex = _actor.getCompanyID();
+		local amtType = typeof _amount;
+		if (_set || (amtType != "integer" && amtType != "float"))
+		{
+			this.m.ActiveRelationships[arrIndex][_key] <- _amount;
+		}
+		else
+		{
+			if (_key in this.m.ActiveRelationships[arrIndex])
+			{
+				this.m.ActiveRelationships[arrIndex][_key] += _amount;
+			}
+			else
+			{
+				this.m.ActiveRelationships[arrIndex][_key] <- _amount;
+			}
+		}
+
+
+	}
+
+	//If the array index isn't null anymore then we have a rel with
+	//It should only ever be null if the relationship was previously made null by removing
+	function hasActiveRelationshipWith( _actor )
+	{
+		if ( this.m.ActiveRelationships[_actor.getCompanyID()] == null )
+		{
+			return false;
+		}
+		return true;
+	}
+
+	//Simple rewrite of old relationship
+	//Cant have relationship on self
+	function createActiveRelationship( _actor )
+	{
+
+		if ( _actor == this )
+		{
+			return;
+		}
+
+		local newRelationship = {};
+		newRelationship.RelationNum <- 0;
+
+		this.m.ActiveRelationships[_actor.getCompanyID()] = newRelationship;
+
+	}
+
+	//Quick null to relationship when the brother dies
+	//Can call with below in case needed
+	//	foreach (bro in roster)
+	//	{
+	//		bro.nullRelation( actorWhoDied );
+	//	}
+	function nullRelation( _id )
+	{
+		if (_id == -1)
+		{
+			return;
+		}
+		this.m.ActiveRelationships[_id] = null;
+	}
+
+	//Quick loop thru all brothers and null's according to company ID
+	function removeActiveRelationship()
+	{
+
+		local brothers = this.World.getPlayerRoster().getAll();
+		foreach ( b in brothers )
+		{
+			b.nullRelation(this.getCompanyID());
+		}
+		this.World.State.removeCompanyID(this.m.CompanyID);
+	}
+
+
+	//Call this function by doing
+	//		getARW( actor )
+	//Use by doing
+	//		local relTable = getARW ( actor )
+	//		if ( [key] in relTable ) -> do stuff
+	//			if ( FriendshipToNotHitBonus in relTable ) -> give bonus to not hit friend
+	function getActiveRelationshipWith( _actor )
+	{
+		if ( ! (_actor.getCompanyID() in this.m.ActiveRelationships) )
+		{
+			this.logInfo("Error: Attempted to grab active relationship from something that didn't exist. Returning null");
+			return null;
+		}
+		return this.m.ActiveRelationships[_actor.getCompanyID()];
+	}
+
+	//Used by the trait to get just a list of the characters relations
+	//Currently returns just the RelNum integer but can be changed to
+	//		return strings, i.e. "%actor% likes %other actor%"
+	function getActiveRelationshipsTraitText()
+	{
+		local returnString = "";
+		foreach ( index, relation in this.m.ActiveRelationships )
+		{
+			if ( relation != null )
+			{
+				returnString += "Relationship to " + this.World.State.getRefFromID(index).getNameOnly() + ": " + relation.RelationNum + "\n";
+			}
+		}
+		if (returnString == "")
+		{
+			returnString = this.getNameOnly() + " has no current relationships.";
+		}
+		return returnString;
+	}
+
+	//Returns the entire AR Array
+	function getActiveRelationships()
+	{
+		return this.m.ActiveRelationships;
+	}
+
+
 
 	function fillTalentValues( _num, _force = false )
 	{
@@ -2279,27 +2452,29 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		local weights = [];
 		local totalWeight = 0;
 
-		for( local i = 0; i < this.m.StarWeights.len(); i = ++i )
+		for (local i = 0; i < this.m.StarWeights.len(); i = ++i)
 		{
-			if (this.m.Talents[i] != 0)
+			if (this.m.Talents[i] != 0 )
 			{
+				continue;
 			}
-			else if (this.getBackground() != null && this.getBackground().getExcludedTalents().find(i) != null)
+
+			if (this.getBackground() != null && this.getBackground().getExcludedTalents().find(i) != null)
 			{
+				continue;
 			}
-			else if (this.getTags().has("PlayerZombie") && (i == this.Const.Attributes.Bravery || i == this.Const.Attributes.Fatigue || i == this.Const.Attributes.Initiative))
+
+			if (this.getTags().has("PlayerZombie") && (i == this.Const.Attributes.Bravery || i == this.Const.Attributes.Fatigue || i == this.Const.Attributes.Initiative))
 			{
+				continue;
 			}
 			else if (this.getTags().has("PlayerSkeleton") && (i == this.Const.Attributes.Bravery || i == this.Const.Attributes.Fatigue || i == this.Const.Attributes.Hitpoints))
 			{
+				continue;
 			}
-			else
-			{
-				attributes.push(i);
-				weights.push(this.m.StarWeights[i]);
-				totalWeight = totalWeight + this.m.StarWeights[i];
-			}
-
+			attributes.push(i);
+			weights.push(this.m.StarWeights[i]);
+			totalWeight += this.m.StarWeights[i];
 		}
 
 		for( local done = 0; done < _num; done = ++done )
@@ -2381,13 +2556,19 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	{
 		local b = this.getBaseProperties();
 
-		if (this.m.Attributes[0].len() == 0)
+		if (this.m.Attributes.len() == 0)
 		{
+			this.m.Attributes.resize(this.Const.Attributes.COUNT);
 			for( local i = 0; i != this.Const.Attributes.COUNT; i = ++i )
 			{
-				this.m.Attributes[i].push(1);
-				i = ++i;
+				this.m.Attributes[i] = [];
+			}
+		}
 
+		for( local i = 0; i != this.Const.Attributes.COUNT; i = ++i )
+		{
+			if (this.m.Attributes[i].len() == 0) {
+				this.m.Attributes[i].push(1);
 			}
 		}
 
@@ -2551,10 +2732,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	{
 		if (_i == this.m.Formations.getCurrentIndex())
 		{
-			return [
-				[],
-				[]
-			];
+			return [[], []];
 		}
 
 		this.m.Formations.setFormation(_i);
@@ -2572,8 +2750,9 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				this.logInfo("setFormation::Items; could not find item for " + itemId);
 				continue;
 			}
+			eTransfer.push(item)
 
-			eTransfer.push(item);
+			//this.m.Items.equip(item);
 		}
 
 		local bags = this.m.Formations.getBags();
@@ -2590,11 +2769,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 			bTransfer.push(item);
 		}
-
-		return [
-			eTransfer,
-			bTransfer
-		];
+		return [eTransfer, bTransfer]
 	}
 
 	function getStashModifier()
@@ -2607,7 +2782,8 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			broStash = broStash + item.getStashModifier();
 		}
 
-		local skills = [
+		local skills =
+		[
 			"perk.legend_skillful_stacking",
 			"perk.legend_efficient_packing"
 		];
@@ -2615,10 +2791,9 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		foreach( s in skills )
 		{
 			local skill = this.getSkills().getSkillByID(s);
-
 			if (skill != null)
 			{
-				broStash = broStash + skill.getModifier();
+				broStash += skill.getModifier();
 			}
 		}
 
@@ -2660,7 +2835,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 			if (skill != null)
 			{
-				mod = mod + skill.getModifier();
+				mod += skill.getModifier();
 			}
 		}
 
@@ -2768,12 +2943,11 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			{
 				this.m.VoiceSet = this.Math.rand(0, this.Const.WomanSounds.len() - 1);
 			}
-
-			volume = volume * this.Const.WomanSounds[this.m.VoiceSet].Volume;
+			volume *= this.Const.WomanSounds[this.m.VoiceSet].Volume
 		}
 		else
 		{
-			volume = volume * this.Const.HumanSounds[this.m.VoiceSet].Volume;
+			volume *= this.Const.HumanSounds[this.m.VoiceSet].Volume
 		}
 
 		this.Sound.play(this.m.Sound[_type][this.Math.rand(0, this.m.Sound[_type].len() - 1)], volume, this.getPos(), _pitch);
@@ -2928,6 +3102,37 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		_out.writeString(this.m.CampAssignment);
 		_out.writeF32(this.m.LastCampTime);
 		_out.writeBool(this.m.InReserves);
+
+		_out.writeBool( this.Const.LegendMod.Configs.RelationshipsEnabled() );
+		if ( this.Const.LegendMod.Configs.RelationshipsEnabled() )
+		{
+			_out.writeU8(this.m.Alignment);
+			_out.writeBool(this.m.IsAlignmentAssigned);
+		}
+		_out.writeU8(this.m.CompanyID);
+
+		//keys are just string values
+		if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+		{
+			foreach (index, relation in this.m.ActiveRelationships)
+			{
+				if (relation != null)
+				{
+					_out.writeString("CharID");
+					_out.writeU16(index);
+
+					foreach (key, value in relation)
+				{
+					_out.writeString(key);//IF WE ADD ANY NON-INT KEYS YOU HAVE TO CHECK HERE WHAT TKEY STRING IS USING
+					_out.writeI16(value);// if ( key == __ ) THEN _out.WriteVARTYPE
+				}
+
+				}
+
+			}
+			//adds a string with STOP so we know when to stop reading in in onDeserialize(?) this should bechanged probably
+			_out.writeString("STOP");
+		}
 	}
 
 	function onDeserialize( _in )
@@ -3046,6 +3251,40 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		{
 			this.m.InReserves = _in.readBool();
 		}
+		//IF WE ADD ANY NON-INT KEYS YOU HAVE TO CHECK HERE WHAT TKEY STRING IS USING
+		// if ( keys == __ ) THEN _in.readVARTYPE
+		if (_in.getMetaData().getVersion() >= 65) //THIS SHOULD BE CHANGED TO ACTUAL NUMBER WHEN IN RELEASE BUILD
+		{
+
+			local relEnabled = (_in.getMetaData().getVersion() == 65 ? true : _in.readBool());
+
+			if (relEnabled)
+			{
+				this.m.Alignment = _in.readU8();
+				this.m.IsAlignmentAssigned = _in.readBool();
+			}
+			this.m.CompanyID = _in.readU8();
+			if (relEnabled)
+			{
+				local keys = _in.readString(); //puts STOP if we had norelations etc
+				local i = -1;
+				while ( keys != "STOP" )
+				{
+
+					if ( keys == "CharID" ) //new actor's relation
+					{
+						i = _in.readU16();
+						this.m.ActiveRelationships[i] = {};
+					}
+					else
+					{
+						this.m.ActiveRelationships[i][keys] <- _in.readI16();
+					}
+					keys = _in.readString();
+				}
+			}
+		}
+
 	}
 
 });

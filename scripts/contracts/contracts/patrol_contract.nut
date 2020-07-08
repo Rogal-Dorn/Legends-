@@ -748,7 +748,7 @@ this.patrol_contract <- this.inherit("scripts/contracts/contract", {
 			ShowEmployer = false,
 			Options = [
 				{
-					Text = "Rest in peace.",
+					Text = "Rest in peace. (Decrease Morals)",
 					function getResult()
 					{
 						this.World.Assets.addMoralReputation(-1);

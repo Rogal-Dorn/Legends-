@@ -1496,7 +1496,7 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 			List = [],
 			Options = [
 				{
-					Text = "Enough death for one day.",
+					Text = "Enough death for one day. (Increase Morals)",
 					function getResult()
 					{
 						this.World.Assets.addMoralReputation(2);
@@ -1515,7 +1515,7 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 			List = [],
 			Options = [
 				{
-					Text = "On to more important things...",
+					Text = "On to more important things... (Decrease Morals)",
 					function getResult()
 					{
 						this.World.Assets.addMoralReputation(-2);
@@ -1556,6 +1556,12 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 					icon = "ui/icons/asset_money.png",
 					text = "You gain [color=" + this.Const.UI.Color.PositiveEventValue + "]250[/color] Crowns"
 				});
+				this.List.push({
+						id = 10,
+						icon = "ui/icons/asset_moral_reputation.png",
+						text = "The company\'s moral reputation decreases slightly"
+					});
+
 			}
 
 		});

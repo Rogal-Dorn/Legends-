@@ -12,6 +12,8 @@ gt.Const.LegendMod.Alignment <- {
     Saintly = 9
 }
 
+gt.Const.LegendMod.AlignmentNames <- ["Dreaded", "Cruel", "Merciless", "Notorious", "Neutral Grumpy", "Neutral Good", "Kind", "Good", "Chivalrous", "Saintly"];
+
 /*
     if this.m.Alignment < Neutral
 

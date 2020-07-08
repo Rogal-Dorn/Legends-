@@ -79,7 +79,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			Weapon = 8,
 			Defense = 2,
 			Traits = 8,
-			Enemy = 2,
+			Enemy = 1,
 			EnemyChance = 0.1,
 			Class = 1,
 			ClassChance = 0.10,
@@ -171,7 +171,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 	{
 		return this.m.IsOutlawBackground;
 	}
-	
+
 	function isCultist()
 	{
 		return this.m.IsConverted;
@@ -202,9 +202,19 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		return this.m.AlignmentMin;
 	}
 
+	function SetAlignmentMin( _f )
+	{
+		this.m.AlignmentMin = _f;
+	}
+
 	function getAlignmentMax()
 	{
 		return this.m.AlignmentMax;
+	}
+
+	function SetAlignmentMax( _f )
+	{
+		this.m.AlignmentMax = _f;
 	}
 
 	function create()
@@ -213,12 +223,12 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		this.m.Order = this.Const.SkillOrder.Background;
 		this.m.DailyCostMult = this.Math.rand(90, 110) * 0.01;
 	}
-	
+
 	// This is used to overwrite the general skill "getIconColored()" so that converted cultists always have their background icon show as converted.
 	function getIconColored()
 	{
 		if(this.m.IsConverted) {
-			return "ui/backgrounds/background_34.png";	
+			return "ui/backgrounds/background_34.png";
 		}
 		return this.m.Icon;
 	}
@@ -1084,6 +1094,10 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 	{
 		if(this.Const.LegendMod.Configs.LegendRecruitScalingEnabled())
 		{
+			if (!this.Const.LegendMod.Configs.RelationshipsEnabled())
+			{
+				return this.calculateAdditionalRecruitmentLevels();
+			}
 			//When we do alignment checks if our reputation isn't beating the required morality, then we return 0
 			local actor = this.getContainer().getActor();
 			local broAlignmentMin = actor.m.Background.getAlignmentMin();
@@ -1161,6 +1175,51 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		return "";
 	}
 
+	function onCombatStarted()
+	{
+		local actor = this.getContainer().getActor();
+
+		if (this.m.IsFemaleBackground == true)
+		{
+			actor.m.Sound[this.Const.Sound.ActorEvent.NoDamageReceived] = [
+				"sounds/humans/legends/woman_light_01.wav",
+				"sounds/humans/legends/woman_light_02.wav",
+				"sounds/humans/legends/woman_light_03.wav",
+				"sounds/humans/legends/woman_light_04.wav",
+				"sounds/humans/legends/woman_light_05.wav"
+			];
+			actor.m.Sound[this.Const.Sound.ActorEvent.DamageReceived] = [
+				"sounds/humans/legends/woman_injury_01.wav",
+				"sounds/humans/legends/woman_injury_02.wav",
+				"sounds/humans/legends/woman_injury_03.wav"
+			];
+			actor.m.Sound[this.Const.Sound.ActorEvent.Death] = [
+				"sounds/humans/legends/woman_death_01.wav",
+				"sounds/humans/legends/woman_death_02.wav",
+				"sounds/humans/legends/woman_death_03.wav"
+			];
+			actor.m.Sound[this.Const.Sound.ActorEvent.Fatigue] = [
+				"sounds/humans/legends/woman_fatigue_01.wav",
+				"sounds/humans/legends/woman_fatigue_02.wav",
+				"sounds/humans/legends/woman_fatigue_03.wav",
+				"sounds/humans/legends/woman_fatigue_04.wav",
+				"sounds/humans/legends/woman_fatigue_05.wav",
+				"sounds/humans/legends/woman_fatigue_06.wav",
+				"sounds/humans/legends/woman_fatigue_07.wav"
+			];
+			actor.m.Sound[this.Const.Sound.ActorEvent.Flee] = [
+				"sounds/humans/legends/woman_flee_01.wav",
+				"sounds/humans/legends/woman_flee_02.wav",
+				"sounds/humans/legends/woman_flee_03.wav",
+				"sounds/humans/legends/woman_flee_04.wav",
+				"sounds/humans/legends/woman_flee_05.wav",
+				"sounds/humans/legends/woman_flee_06.wav"
+			];
+			actor.m.SoundPitch = this.Math.rand(105, 115) * 0.01;
+		}
+	}
+
+
 	function onChangeAttributes()
 	{
 		local c = {
@@ -1232,55 +1291,6 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 				}
 			}
 		}
-		/*
-		Ammo = [8, 13, 21, 34, 55],
-	ArmorParts = [3, 5, 8, 13, 21, 34],
-	Meds = [5, 8, 13, 21, 34],
-	Stash = [3, 5, 8, 13, 21, 34],
-	Healing = [0.0, 0.10, 0.30. 0.50],
-	Injury = [0.0, 0.10, 0.30, 0.50],
-	Repair = [0.0, 0.10, 0.30, 0.50, 1.0],
-	Salvage = [0.0, 0.10, 0.30, 0.50],
-	Crafting = [0.0, 0.50, 0.75, 1.0],
-	Barter = [0.0, 0.005, 0.01, 0.02, 0.03],
-	ToolConsumption = [0.0, 0.05, 0.10, 0.20],
-	MedConsumption = [0.0, 0.05, 0.10, 0.20],
-	Hunting = [0.0, 0.1, 0.2, 0.3], // = BasePoints + BasePoints * Modifier
-	Fletching = [0.0, 0.1, 0.2, 0.3], // = BasePoints + BasePoints * Modifier
-	Scout = [0.0, 0.1, 0.2, 0.3], // = BasePoints + BasePoints * Modifier
-	Gather = [0.0, 0.30, 0.50, 1.0], // = BasePoints + BasePoints * Modifier
-	Training = [0.0, 0.1, 0.2, 0.3]
-		*/
-		
-		/*
-		// Save Camp/travel modifiers
-		//_out.writeU8(this.m.Modifiers.); Int
-		//_out.writeF32(this.m.Modifiers.); Decimal
-		_out.writeU8(this.m.Modifiers.Ammo);
-		_out.writeU8(this.m.Modifiers.ArmorParts);
-		_out.writeU8(this.m.Modifiers.Meds);
-		_out.writeU8(this.m.Modifiers.Stash);
-		
-		_out.writeF32(this.m.Modifiers.Healing);
-		_out.writeF32(this.m.Modifiers.Injury);
-		_out.writeF32(this.m.Modifiers.Repair);
-		_out.writeF32(this.m.Modifiers.Salvage);
-		_out.writeF32(this.m.Modifiers.Crafting);
-		_out.writeF32(this.m.Modifiers.Barter);
-		_out.writeF32(this.m.Modifiers.ToolConsumption);
-		_out.writeF32(this.m.Modifiers.MedConsumption);
-		_out.writeF32(this.m.Modifiers.Hunting);
-		_out.writeF32(this.m.Modifiers.Fletching);
-		_out.writeF32(this.m.Modifiers.Scout);
-		_out.writeF32(this.m.Modifiers.Gather);
-		_out.writeF32(this.m.Modifiers.Training);
-		_out.writeF32(this.m.Modifiers.Enchanting);
-		for( local i = 0; i < this.m.Modifiers.Terrain.len(); i = ++i )
-		{
-			_out.writeF32(this.m.Modifiers.Terrain[i]);
-		}*/
-		
-
 	}
 
 	function onDeserialize( _in )
@@ -1316,9 +1326,9 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 				this.setGender(0);
 			}
 		}
-		
+
 		// Not sure what number this should be set to
-		if (_in.getMetaData().getVersion() >= 64)
+		if (_in.getMetaData().getVersion() >= 68)
 		{
 			this.m.IsConverted = _in.readBool();
 		}
@@ -1343,32 +1353,6 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		{
 			this.buildPerkTree();
 		}
-		
-		/*
-		this.m.Modifiers.Ammo = _in.readU8();
-		this.m.Modifiers.ArmorParts = _in.readU8();
-		this.m.Modifiers.Meds = _in.readU8();
-		this.m.Modifiers.Stash = _in.readU8();
-		
-		this.m.Modifiers.Healing = _in.readF32();
-		this.m.Modifiers.Injury = _in.readF32();
-		this.m.Modifiers.Repair = _in.readF32();
-		this.m.Modifiers.Salvage = _in.readF32();
-		this.m.Modifiers.Crafting = _in.readF32();
-		this.m.Modifiers.Barter = _in.readF32();
-		this.m.Modifiers.ToolConsumption = _in.readF32();
-		this.m.Modifiers.MedConsumption = _in.readF32();
-		this.m.Modifiers.Hunting = _in.readF32();
-		this.m.Modifiers.Fletching = _in.readF32();
-		this.m.Modifiers.Scout = _in.readF32();
-		this.m.Modifiers.Gather = _in.readF32();
-		this.m.Modifiers.Training = _in.readF32();
-		this.m.Modifiers.Enchanting = _in.readF32();
-		for( local i = 0; i < this.m.Modifiers.Terrain.len(); i = ++i )
-		{
-			this.m.Modifiers.Terrain[i] = _in.readF32();
-		}*/
-
 
 	}
 

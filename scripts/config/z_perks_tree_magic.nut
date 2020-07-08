@@ -198,7 +198,7 @@ gt.Const.Perks.BerserkerMagicTree <- {
 		[gt.Const.Perks.PerkDefs.Colossus],
 		[gt.Const.Perks.PerkDefs.DevastatingStrikes],
 		[gt.Const.Perks.PerkDefs.Brawny],
-		[gt.Const.Perks.PerkDefs.LegendBearform],
+		[],
 		[gt.Const.Perks.PerkDefs.LegendMuscularity],
 		[gt.Const.Perks.PerkDefs.Berserk],
 		[
@@ -281,19 +281,29 @@ gt.Const.Perks.DruidMagicTree <- {
 		[gt.Const.Perks.PerkDefs.LegendRoots],
 		[],
 		[gt.Const.Perks.PerkDefs.LegendPrayerOfLife],
-		[
-		gt.Const.Perks.PerkDefs.LegendTreeform,
-		gt.Const.Perks.PerkDefs.LegendBearform,
-		gt.Const.Perks.PerkDefs.LegendWolfform
-		],
+		[],
 		[gt.Const.Perks.PerkDefs.LegendSummonStorm],
 		[gt.Const.Perks.PerkDefs.LegendDrumsOfLife],
-		[
-		gt.Const.Perks.PerkDefs.LegendCallLightning,
-		gt.Const.Perks.PerkDefs.LegendTrueForm
-		]
+		[]
 	]
 };
+
+gt.Const.Perks.DruidTransformTree <- {
+	ID = "DruidTransformTree",
+	Descriptions = [
+		"druidic transformation"
+	],
+	Tree = [
+		[],
+		[],
+		[],
+		[gt.Const.Perks.PerkDefs.LegendWolfform],
+		[gt.Const.Perks.PerkDefs.LegendBearform],
+		[gt.Const.Perks.PerkDefs.LegendTreeform],
+		[gt.Const.Perks.PerkDefs.LegendTrueForm]
+	]
+};
+
 
 gt.Const.Perks.TransmutationMagicTree <- {
 	ID = "TransmutationMagicTree",
@@ -348,25 +358,26 @@ gt.Const.Perks.MagicTrees <- {
 		gt.Const.Perks.ValaChantMagicTree,
 		gt.Const.Perks.ValaTranceMagicTree,
 	//	gt.Const.Perks.HealerMagicTree,
-		gt.Const.Perks.ValaRuneMagicTree,
-		gt.Const.Perks.ValaSpiritMagicTree, 
+	//	gt.Const.Perks.ValaRuneMagicTree,
+		gt.Const.Perks.ValaSpiritMagicTree,
 		gt.Const.Perks.RangerHuntMagicTree,
 		gt.Const.Perks.BasicNecroMagicTree,
 		gt.Const.Perks.WarlockMagicTree,
-		gt.Const.Perks.VampireMagicTree,
-		gt.Const.Perks.ZombieMagicTree,
-		gt.Const.Perks.SkeletonMagicTree,
+	//	gt.Const.Perks.VampireMagicTree,
+	//	gt.Const.Perks.ZombieMagicTree,
+	//	gt.Const.Perks.SkeletonMagicTree,
 		gt.Const.Perks.BerserkerMagicTree,
 		gt.Const.Perks.DruidMagicTree,
+	//	gt.Const.Perks.DruidTransformTree,
 		gt.Const.Perks.CaptainMagicTree,
 		gt.Const.Perks.IllusionistMagicTree,
 		gt.Const.Perks.DivinationMagicTree,
 		gt.Const.Perks.ConjurationMagicTree,
 		gt.Const.Perks.TransmutationMagicTree,
-		gt.Const.Perks.EvocationMagicTree,
+	//	gt.Const.Perks.EvocationMagicTree,
 		gt.Const.Perks.AssassinMagicTree
 	],
-	function getRandom(_exclude) 
+	function getRandom(_exclude)
 	{
 		local L = [];
 		foreach (i, t in this.Tree)
@@ -380,5 +391,5 @@ gt.Const.Perks.MagicTrees <- {
 
 		local r = this.Math.rand(0, L.len() - 1)
 		return this.Tree[L[r]];;
-	}	
+	}
 };

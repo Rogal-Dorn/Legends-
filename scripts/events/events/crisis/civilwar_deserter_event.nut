@@ -114,6 +114,29 @@ this.civilwar_deserter_event <- this.inherit("scripts/events/event", {
 				this.Banner = _event.m.NobleHouse.getUIBannerSmall();
 				_event.m.NobleHouse.addPlayerRelation(this.Const.World.Assets.RelationUnitKilled);
 				this.Characters.push(_event.m.Dude.getImagePath());
+
+
+				if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+				{
+					local brocount = 0;
+							foreach( bro in brothers )
+							{
+								if (bro.getBackground().getID() == "background.deserter")
+								{
+								++brocount;
+								}
+							}
+					if (brocount >= 2)
+					{
+
+					this.List.push({
+						id = 10,
+						icon = "ui/icons/relation.png",
+						text = "relations increased between deserters"
+					});
+					}
+				}
+
 			}
 
 		});

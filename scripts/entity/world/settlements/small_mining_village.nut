@@ -99,6 +99,7 @@ this.small_mining_village <- this.inherit("scripts/entity/world/settlement", {
 		}
 	}
 
+
 	function onBuild( _settings )
 	{
 		this.addBuilding(this.new("scripts/entity/world/settlements/buildings/crowd_building"), 5);
