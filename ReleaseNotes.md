@@ -3522,9 +3522,10 @@ Transformed effects being removed @ end of combat no longer crashes
 Named sickle now properly works with perks
 
 
-14.0.0.13 Let it shrink! Let it shrink!
-
+14.0.0.12a
 
 Adds a new lower tier bandit rabble poacher to the bandit spawnlists.
 Fixes harvest verfiy checks.
-Fixes having to requip weapons for the harvest perks
+Fixes having to requip weapons for the harvest perks.
+Tweaks the caravan inventory lists.
+
