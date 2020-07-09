@@ -3528,4 +3528,5 @@ Adds a new lower tier bandit rabble poacher to the bandit spawnlists.
 Fixes harvest verfiy checks.
 Fixes having to requip weapons for the harvest perks.
 Tweaks the caravan inventory lists.
+Significantly optimizes code to reduce game lag and settlement/market/inventory load times.
 

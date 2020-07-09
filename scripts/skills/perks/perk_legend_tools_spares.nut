@@ -20,4 +20,14 @@ this.perk_legend_tools_spares <- this.inherit("scripts/skills/skill", {
 		return this.m.Amount;
 	}
 
+	function onAdded()
+	{
+		this.World.State.getPlayer().calculateArmorPartsModifier();
+	}
+
+	function onRemoved()
+	{
+		this.World.State.getPlayer().calculateArmorPartsModifier();
+	}
+
 });

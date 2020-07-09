@@ -93,18 +93,8 @@ this.deliver_money_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Destination = this.WeakTableRef(candidates[this.Math.rand(0, candidates.len() - 1)]);
 		local distance = this.getDistanceOnRoads(this.m.Home.getTile(), this.m.Destination.getTile());
 		local days = this.getDaysRequiredToTravel(distance, this.Const.World.MovementSettings.Speed, false);
-		local barterMult = 0.0;
-		foreach (bro in this.World.getPlayerRoster().getAll())
-		{
-			barterMult += bro.getBarterModifier();
-		}
-		if (this.World.Assets.getOrigin().getID() == "scenario.trader")
-				{
-				barterMult = barterMult * 1.1;
-				}
-		local modrate = barterMult;
 
-		
+		local modrate = this.World.State.getPlayer().getBarterMult();
 
 		if (days >= 2 || distance >= 40)
 		{

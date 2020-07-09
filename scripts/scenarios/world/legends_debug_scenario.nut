@@ -7,6 +7,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		this.m.Description = "[p=c][img]gfx/ui/events/event_80.png[/img][/p]Debug mode for legends developers";
 		this.m.Difficulty = 2;
 		this.m.Order = 99;
+		this.m.StashModifier = 600;
 	}
 
 	function isValid()
@@ -63,8 +64,6 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		this.World.Assets.m.Ammo = 200;
 		this.World.Assets.m.Food = 200;
 		this.World.Assets.m.BusinessReputation = 1000;
-		this.World.Assets.getStash().setResizable(true);
-		this.World.Assets.getStash().resize(600);
 
 		local banner = this.new("scripts/items/tools/player_banner");
 		banner.setVariant(2);
