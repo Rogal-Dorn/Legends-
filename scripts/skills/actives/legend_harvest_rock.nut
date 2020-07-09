@@ -54,16 +54,12 @@ this.legend_harvest_rock <- this.inherit("scripts/skills/skill", {
 
 	function onVerifyTarget( _originTile, _targetTile )
 	{
-		if (!this.skill.onVerifyTarget(_originTile, _targetTile))
-		{
-			return false;
-		}
-
 		if (_targetTile.getEntity().isRock())
 		{
 			return true;
 		}
-		return false;
+
+		return this.skill.onVerifyTarget(_originTile, _targetTile)
 	}
 
 	function onAfterUpdate( _properties )

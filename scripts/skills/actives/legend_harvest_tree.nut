@@ -54,16 +54,12 @@ this.legend_harvest_tree <- this.inherit("scripts/skills/skill", {
 
 	function onVerifyTarget( _originTile, _targetTile )
 	{
-		if (!this.skill.onVerifyTarget(_originTile, _targetTile))
-		{
-			return false;
-		}
-
 		if (_targetTile.getEntity().isTree())
 		{
 			return true;
 		}
-		return false;
+
+		return this.skill.onVerifyTarget(_originTile, _targetTile)
 	}
 
 	function onAfterUpdate( _properties )
