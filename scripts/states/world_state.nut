@@ -3395,7 +3395,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 				this.toggleCharacterScreen();
 				break;
 
-			
+
 			case 29:
 				this.m.CharacterScreen.toggleBrotherReserves();
 				break;

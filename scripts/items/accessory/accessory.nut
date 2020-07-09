@@ -92,7 +92,7 @@ this.accessory <- this.inherit("scripts/items/item", {
 				icon = "ui/icons/fatigue.png",
 				text = "Maximum Fatigue [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.StaminaModifier + "[/color]"
 			});
-		} 
+		}
 		else if (this.m.StaminaModifier > 0)
 		{
 			result.push({
@@ -134,9 +134,10 @@ this.accessory <- this.inherit("scripts/items/item", {
 
 		if (this.m.StashModifier > 0)
 		{
-			this.Stash.resize(this.Stash.getCapacity() + this.getStashModifier())
+
+			this.World.State.getPlayer().calculateStashModifier()
 		}
-		
+
 	}
 
 	function onUnequip()
@@ -152,7 +153,7 @@ this.accessory <- this.inherit("scripts/items/item", {
 
 		if (this.m.StashModifier > 0)
 		{
-			this.Stash.resize(this.Stash.getCapacity() - this.getStashModifier())
+			this.World.State.getPlayer().calculateStashModifier()
 		}
 
 	}

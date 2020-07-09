@@ -146,43 +146,19 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 	function getDailyCost()
 	{
-		local wageMult = this.m.CurrentProperties.DailyWageMult;
-		local paymasterCount = 0;
-		local mod = 0.0;
-
-		foreach( bro in this.World.getPlayerRoster().getAll() )
-		{
-			if (bro.getSkills().hasSkill("perk.legend_barter_paymaster") && paymasterCount < 1)
-			{
-				paymasterCount++;
-				mod = bro.getBarterModifier();
-				wageMult -= mod;
-
-				}
-			}
+		local wageMult = this.m.CurrentProperties.DailyWageMult - this.World.State.getPlayer().getWageModifier();
 		//local costAdj = this.Math.max(0, this.m.CurrentProperties.DailyWageMult * barterMult);
 		return this.Math.max(0, this.m.CurrentProperties.DailyWage * wageMult);
 	}
 
 	function getDailyFood()
 	{
-		local foodMult = 0;
-
-		foreach( bro in this.World.getPlayerRoster().getAll() )
-		{
-			if (bro.getSkills().hasSkill("perk.legend_quartermaster"))
-			{
-				foodMult = 1;
-			}
-		}
-
 		local food = this.Math.maxf(0.0, this.m.CurrentProperties.DailyFood);
-
 		if (this.isInReserves() && !this.m.Skills.hasSkill("perk.legend_peaceful"))
 		{
 			food *= 2;
 		}
-		food -= foodMult;
+		food -= this.World.State.getPlayer().getFoodModifier();
 		return food;
 	}
 
@@ -2878,7 +2854,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 			if (skill != null)
 			{
-				mod = mod + skill.getModifier();
+				mod += skill.getModifier();
 			}
 		}
 

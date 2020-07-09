@@ -1,6 +1,13 @@
 this.player_party <- this.inherit("scripts/entity/world/party", {
 	m = {
-		LastFireTime = 0
+		LastFireTime = 0,
+		BarterMultiplier = 0.0,
+		WageMultiplier = 0.0,
+		FoodMultiplier = 0,
+		AmmoMultiplier = 0,
+		ArmorPartsMultiplier = 0,
+		MedsMultiplier = 0,
+		StashMultiplier = 0
 	},
 	function updateStrength()
 	{
@@ -15,8 +22,8 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 		{
 			this.m.Strength += 10.0 * (this.World.Assets.getBrothersScaleMin() - roster.len());
 		}
-		
-		
+
+
 		if (this.World.Assets.getOrigin() == null || this.World.Assets.getOrigin().getID() == "scenario.militia")
 		{
 			this.m.Strength * 0.8;
@@ -35,7 +42,7 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 			if (bro.getSkills().hasSkill("perk.legend_spawn_zombie_high"))
 			{
 				zombieSummonLevel = 7;
-			} 
+			}
 			else if (bro.getSkills().hasSkill("perk.legend_spawn_zombie_med"))
 			{
 				zombieSummonLevel = 5;
@@ -48,7 +55,7 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 			if (bro.getSkills().hasSkill("perk.legend_spawn_skeleton_high"))
 			{
 				skeletonSummonLevel = 7;
-			} 
+			}
 			else if (bro.getSkills().hasSkill("perk.legend_spawn_skeleton_med"))
 			{
 				skeletonSummonLevel = 5;
@@ -124,12 +131,12 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 			return
 		}
 
-	//  Scaling based on money and stash - was controversial 
+	//  Scaling based on money and stash - was controversial
 	//	if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 	//	{
 	//		local items = this.World.Assets.getStash().getItems();
-	//		
-	//		local itemsvalue = 0; 
+	//
+	//		local itemsvalue = 0;
 	//		foreach( item in items )
 	//		{
 	//			if (item != null)
@@ -146,7 +153,7 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 
 		//When playing a warlock build, we need to account for the summons he can add
 		local stash = this.World.Assets.getStash().getItems();
-	
+
 		local zCount = 0
 		local sCount = 0
 		foreach (item in stash)
@@ -164,7 +171,7 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 						continue
 					}
 					++zCount;
-					
+
 					break;
 				case "spawns.skeleton":
 					if (skeletonSummonLevel == 0)
@@ -377,13 +384,155 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 		else if ( _version > 9)
 		{
 			image = "figure_player_" + _version;
-		} 
+		}
 		else
 		{
 			image = "figure_player_01";
 		}
-		
+
 		this.getSprite("body").setBrush(image);
+	}
+
+	function getBarterMult()
+	{
+		return this.m.BarterMultiplier;
+	}
+
+	function getWageModifier()
+	{
+		return this.m.WageMultiplier;
+	}
+
+	function getFoodModifier()
+	{
+		return this.m.FoodMultiplier;
+	}
+
+	function getAmmoModifier()
+	{
+		return this.m.AmmoMultiplier;
+	}
+
+	function getArmorPartsModifier()
+	{
+		return this.m.ArmorPartsMultiplier;
+	}
+
+	function getMedModifier()
+	{
+		return this.m.MedsMultiplier;
+	}
+
+	function getStashModifier()
+	{
+		return this.m.StashMultiplier;
+	}
+
+	function calculateModifiers()
+	{
+		this.calculateBarterMult();
+		this.calculateWageModifier();
+		this.calculateFoodModifier();
+		this.calculateAmmoModifier();
+		this.calculateArmorPartsModifier();
+		this.calculateMedsModifier();
+		this.calculateStashModifier();
+	}
+
+
+	function calculateFoodModifier()
+	{
+		foreach( bro in this.World.getPlayerRoster().getAll() )
+		{
+			if (!bro.getSkills().hasSkill("perk.legend_quartermaster"))
+			{
+				continue;
+			}
+
+			this.m.FoodMultiplier = 1;
+			break;
+		}
+	}
+
+	function calculateWageModifier()
+	{
+		foreach( bro in this.World.getPlayerRoster().getAll() )
+		{
+			if (!bro.getSkills().hasSkill("perk.legend_barter_paymaster"))
+			{
+				continue;
+			}
+
+			this.m.WageMultiplier = bro.getBarterModifier();
+			break;
+		}
+	}
+
+	function calculateBarterMult()
+	{
+		local barterMult = 0.0;
+		local greed = 1;
+		foreach (bro in this.World.getPlayerRoster().getAll())
+		{
+			barterMult += bro.getBarterModifier();
+			if (bro.getSkills().hasSkill("perk.legend_barter_greed"))
+			{
+				greed = 2;
+			}
+		}
+
+		if (this.World.Assets.getOrigin().getID() == "scenario.trader")
+		{
+			barterMult = barterMult * 1.1;
+		}
+
+		this.m.BarterMultiplier = barterMult / greed;
+	}
+
+	function calculateAmmoModifier()
+	{
+		local s = 0;
+		foreach( bro in this.World.getPlayerRoster().getAll() )
+		{
+			s += bro.getAmmoModifier();
+		}
+		this.m.AmmoMultiplier = s;
+	}
+
+	function calculateArmorPartsModifier()
+	{
+		local s = 0;
+		foreach( bro in this.World.getPlayerRoster().getAll() )
+		{
+			s += bro.getArmorPartsModifier();
+		}
+		this.m.ArmorPartsMultiplier = s;
+	}
+
+	function calculateMedsModifier()
+	{
+		local s = 0;
+		foreach( bro in this.World.getPlayerRoster().getAll() )
+		{
+			s += bro.getMedsModifier();
+		}
+		this.m.MedsMultiplier = s;
+	}
+
+	function calculateStashModifier()
+	{
+		local s = this.Const.LegendMod.MaxResources[this.World.Assets.getEconomicDifficulty()].Stash
+		s += this.World.Assets.getOrigin().getStashModifier();
+
+		foreach( bro in this.World.getPlayerRoster().getAll())
+		{
+			s += bro.getStashModifier();
+		}
+
+		if (s != this.Stash.getCapacity())
+		{
+			this.Stash.resize(s);
+		}
 	}
 
 	function onInit()

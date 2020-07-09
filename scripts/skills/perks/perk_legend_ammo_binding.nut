@@ -20,4 +20,14 @@ this.perk_legend_ammo_binding <- this.inherit("scripts/skills/skill", {
 		return this.m.Ammo;
 	}
 
+	function onAdded()
+	{
+		this.World.State.getPlayer().calculateAmmoModifier();
+	}
+
+	function onRemoved()
+	{
+		this.World.State.getPlayer().calculateAmmoModifier();
+	}
+
 });

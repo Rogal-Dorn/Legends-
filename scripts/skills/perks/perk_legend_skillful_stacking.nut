@@ -17,12 +17,12 @@ this.perk_legend_skillful_stacking <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
-		this.Stash.resize(this.Stash.getCapacity() + this.m.StashSize)
+		this.World.State.getPlayer().calculateStashModifier();
 	}
-	
+
 	function onRemoved()
 	{
-		this.Stash.resize(this.Stash.getCapacity() - this.m.StashSize)
+		this.World.State.getPlayer().calculateStashModifier();
 	}
 
 	function getModifier()

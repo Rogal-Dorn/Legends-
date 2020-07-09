@@ -203,9 +203,9 @@ this.legend_usable_food <- this.inherit("scripts/items/item", {
 
 		if (this.m.StashModifier > 0)
 		{
-			this.Stash.resize(this.Stash.getCapacity() + this.getStashModifier())
+			this.World.State.getPlayer().calculateStashModifier();
 		}
-		
+
 	}
 
 	function onUnequip()
@@ -215,7 +215,7 @@ this.legend_usable_food <- this.inherit("scripts/items/item", {
 
 		if (this.m.StashModifier > 0)
 		{
-			this.Stash.resize(this.Stash.getCapacity() - this.getStashModifier())
+			this.World.State.getPlayer().calculateStashModifier();
 		}
 
 	}

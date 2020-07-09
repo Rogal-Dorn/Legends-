@@ -14,5 +14,15 @@ this.perk_legend_quartermaster <- this.inherit("scripts/skills/skill", {
 	}
 
 
+	function onAdded()
+	{
+		this.World.State.getPlayer().calculateFoodModifier();
+	}
+
+	function onRemoved()
+	{
+		this.World.State.getPlayer().calculateFoodModifier();
+	}
+
 
 });

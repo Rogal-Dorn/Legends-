@@ -146,12 +146,8 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Destination = this.WeakTableRef(candidates[this.Math.rand(0, candidates.len() - 1)]);
 		local distance = this.getDistanceOnRoads(this.m.Origin.getTile(), this.m.Destination.getTile());
 		local days = this.getDaysRequiredToTravel(distance, this.Const.World.MovementSettings.Speed * 0.6, true);
-		local barterMult = 0.0;
-		foreach (bro in this.World.getPlayerRoster().getAll())
-		{
-			barterMult += bro.getBarterModifier();
-		}
-		local modrate = 10 * barterMult;
+		local modrate = 10 * this.World.State.getPlayer().getBarterMult();
+
 
 		if (days >= 5)
 		{

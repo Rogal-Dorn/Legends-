@@ -193,13 +193,7 @@
 	o.getPaymentMult = function()
 	{
 		local repDiffMult = this.Math.pow(this.getReputationToDifficultyMult(), 0.5);
-
-		local roster = this.World.getPlayerRoster().getAll();
-		local broMult = 0.0;
-		foreach( bro in roster )
-		{
-			broMult += bro.getBarterModifier();
-		}
+		local broMult = this.World.State.getPlayer().getBarterMult();
 		return (this.m.PaymentMult + broMult) * (this.m.DifficultyMult * repDiffMult);
 	}
 

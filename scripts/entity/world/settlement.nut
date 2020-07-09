@@ -817,24 +817,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			p = p - (r - 50.0) * 0.003;
 		}
 
-		local barterMult = 0.0;
-		local greed = 1;
-		foreach (bro in this.World.getPlayerRoster().getAll())
-		{
-			barterMult += bro.getBarterModifier();
-
-			if (bro.getSkills().hasSkill("perk.legend_barter_greed"))
-			{
-			greed = 2;
-			}
-		}
-
-		barterMult = barterMult / greed;
-
-		if (this.World.Assets.getOrigin().getID() == "scenario.trader")
-				{
-				barterMult = barterMult * 1.1;
-				}
+		local barterMult = this.World.State.getPlayer().getBarterMult();
 
 		if ((this.m.Modifiers.BuyPriceMult - barterMult) >= 0.01)
 		{
@@ -858,23 +841,8 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		{
 			p = p + (r - 50.0) * 0.003;
 		}
-		local barterMult = 0.0;
-		local greed = 1;
-		foreach (bro in this.World.getPlayerRoster().getAll())
-		{
-			barterMult += bro.getBarterModifier();
-			if (bro.getSkills().hasSkill("perk.legend_barter_greed"))
-			{
-			greed = 2;
-			}
-		}
 
-		barterMult = barterMult / greed;
-
-		if (this.World.Assets.getOrigin().getID() == "scenario.trader")
-				{
-				barterMult = barterMult * 1.1;
-				}
+		local barterMult = this.World.State.getPlayer().getBarterMult();
 
 		p = p * (this.m.Modifiers.SellPriceMult + barterMult);
 

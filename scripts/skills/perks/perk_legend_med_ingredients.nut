@@ -20,4 +20,14 @@ this.perk_legend_med_ingredients <- this.inherit("scripts/skills/skill", {
 		return this.m.Amount;
 	}
 
+	function onAdded()
+	{
+		this.World.State.getPlayer().calculateMedsModifier();
+	}
+
+	function onRemoved()
+	{
+		this.World.State.getPlayer().calculateMedsModifier();
+	}
+
 });
