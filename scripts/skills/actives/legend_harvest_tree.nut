@@ -31,8 +31,8 @@ this.legend_harvest_tree <- this.inherit("scripts/skills/skill", {
 		this.m.InjuriesOnBody = this.Const.Injury.CuttingBody;
 		this.m.InjuriesOnHead = this.Const.Injury.CuttingHead;
 		this.m.DirectDamageMult = 0.3;
-		this.m.ActionPointCost = 4;
-		this.m.FatigueCost = 13;
+		this.m.ActionPointCost = 7;
+		this.m.FatigueCost = 30;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 1;
 		this.m.ChanceSmash = 0;
@@ -46,7 +46,7 @@ this.legend_harvest_tree <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Chop down any tree with a 25% percent chance to harvest as loot"
+				text = "Chop down any tree with a 25% percent chance to harvest wood"
 			}
 		]);
 		return ret;
@@ -70,12 +70,17 @@ this.legend_harvest_tree <- this.inherit("scripts/skills/skill", {
 
 	function onVerifyTarget( _originTile, _targetTile )
 	{
+		if (_targetTile.getEntity() == null)
+		{
+			return false;
+		}
+
 		if (_targetTile.getEntity().isTree())
 		{
 			return true;
 		}
 
-		return this.skill.onVerifyTarget(_originTile, _targetTile)
+		return false;
 	}
 
 	function onAfterUpdate( _properties )
