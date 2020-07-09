@@ -749,6 +749,14 @@ gt.Const.World.Spawn.Troops <- {
 		Row = 0,
 		Script = "scripts/entity/tactical/enemies/bandit_rabble"
 	},
+	BanditRabblePoacher = {
+		ID = this.Const.EntityType.BanditRabblePoacher,
+		Variant = 0,
+		Strength = 5,
+		Cost = 5,
+		Row = 0,
+		Script = "scripts/entity/tactical/enemies/bandit_rabble_poacher"
+	},
 	BanditThug = {
 		ID = this.Const.EntityType.BanditThug,
 		Variant = 0,

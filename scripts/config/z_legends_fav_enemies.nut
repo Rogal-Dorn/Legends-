@@ -112,6 +112,7 @@ gt.Const.LegendMod.FavoriteSwordmaster <- [
 gt.Const.LegendMod.FavoriteArcher <- [
 	this.Const.EntityType.MasterArcher,
 	this.Const.EntityType.BanditMarksman,
+	this.Const.EntityType.BanditRabblePoacher,
 	this.Const.EntityType.BanditPoacher,
 	this.Const.EntityType.MilitiaRanged,
 	this.Const.EntityType.Arbalester,
@@ -131,6 +132,7 @@ gt.Const.LegendMod.FavoriteBarbarian <- [
 
 gt.Const.LegendMod.FavoriteBandit <- [
 	this.Const.EntityType.BanditRabble,
+	this.Const.EntityType.BanditRabblePoacher,
 	this.Const.EntityType.BanditThug,
 	this.Const.EntityType.BanditPoacher,
 	this.Const.EntityType.BanditMarksman,
@@ -187,55 +189,55 @@ gt.Const.LegendMod.GetFavoriteEnemyValue <- function ( _type )
 		value = 3;
 		break;
 		case "this.Const.EntityType.LegendDemonAlp":
-		value = 0.3; 
+		value = 0.3;
 		break;
 		case "this.Const.EntityType.LegendGreenwoodSchrat":
 		value = 0.3;
 		break;
 		case "this.Const.EntityType.LegendGreenwoodSchratSmall":
-		value = 5; 
+		value = 5;
 		break;
 		case "this.Const.EntityType.Schrat":
-		value = 1; 
+		value = 1;
 		break;
 		case "this.Const.EntityType.LegendRockUnhold":
 		value = 0.5;
 		break;
 		case "this.Const.EntityType.Unhold":
-		value = 2; 
+		value = 2;
 		break;
 		case "this.Const.EntityType.UnholdBog":
-		value = 2; 
+		value = 2;
 		break;
 		case "this.Const.EntityType.UnholdFrost":
-		value = 2; 
+		value = 2;
 		break;
 		case "this.Const.EntityType.Hexe":
-		value = 2; 
+		value = 2;
 		break;
 		case "this.Const.EntityType.LegendHexeLeader":
-		value = 0.5; 
+		value = 0.5;
 		break;
 		case "this.Const.EntityType.Spider":
-		value = 8; 
+		value = 8;
 		break;
 		case "this.Const.EntityType.SpiderBodyguard":
-		value = 8; 
+		value = 8;
 		break;
 		case "this.Const.EntityType.LegendRedbackSpider":
-		value = 1; 
+		value = 1;
 		break;
 		case "this.Const.EntityType.Ghoul":
 		value = 6;
 		break;
 		case "this.Const.EntityType.LegendSkinGhoul":
-		value = 2; 
+		value = 2;
 		break;
 		case "this.Const.EntityType.Direwolf":
-		value = 6; 
+		value = 6;
 		break;
 		case "this.Const.EntityType.LegendWhiteDirewolf":
-		value = 0.5; 
+		value = 0.5;
 		break;
 		case "this.Const.EntityType.Vampire":
 		value = 2;
@@ -280,147 +282,149 @@ gt.Const.LegendMod.GetFavoriteEnemyValue <- function ( _type )
 		value = 3;
 		break;
 		case "this.Const.EntityType.GoblinWolfrider":
-		value = 5; 
+		value = 5;
 		break;
 		case "this.Const.EntityType.GoblinShaman":
-		value = 3; 
+		value = 3;
 		break;
 		case "this.Const.EntityType.GoblinLeader":
-		value = 3; 
+		value = 3;
 		break;
 		case "this.Const.EntityType.GoblinFighter":
-		value = 6; 
+		value = 6;
 		break;
 		case "this.Const.EntityType.GoblinAmbusher":
-		value = 5; 
+		value = 5;
 		break;
 		case "this.Const.EntityType.OrcYoung":
-		value = 6; 
+		value = 6;
 		break;
 		case "this.Const.EntityType.OrcBerserker":
-		value = 4; 
+		value = 4;
 		break;
 		case "this.Const.EntityType.OrcElite":
-		value = 2; 
+		value = 2;
 		break;
 		case "this.Const.EntityType.OrcWarlord":
-		value = 2; 
+		value = 2;
 		break;
 		case "this.Const.EntityType.OrcBehemoth":
 		value = 2;
 		break;
 		case "this.Const.EntityType.OrcWarrior":
-		value = 3; 
+		value = 3;
 		break;
 		case "this.Const.EntityType.Militia":
-		value = 10; 
+		value = 10;
 		break;
 		case "this.Const.EntityType.MilitiaArcher":
-		value = 8; 
+		value = 8;
 		break;
 		case "this.Const.EntityType.MilitiaCaptain":
-		value = 5; 
+		value = 5;
 		break;
 		case "this.Const.EntityType.MilitiaVeteran":
-		value = 7; 
+		value = 7;
 		break;
 		case "this.Const.EntityType.BountyHunter":
-		value = 5; 
+		value = 5;
 		break;
 		case "this.Const.EntityType.Peasant":
-		value = 25; 
+		value = 25;
 		break;
 		case "this.Const.EntityType.CaravanHand":
-		value = 10; 
+		value = 10;
 		break;
 		case "this.Const.EntityType.CaravanGaurd":
-		value = 7; 
+		value = 7;
 		break;
 		case "this.Const.EntityType.Wardog":
-		value = 12; 
+		value = 12;
 		break;
 		case "this.Const.EntityType.Mercenary":
-		value = 4; 
+		value = 4;
 		break;
 		case "this.Const.EntityType.HedgeKnight":
-		value = 2; 
+		value = 2;
 		break;
 		case "this.Const.EntityType.MasterArcher":
-		value = 2; 
+		value = 2;
 		break;
 		case "this.Const.EntityType.Footman":
-		value = 5; 
+		value = 5;
 		break;
 		case "this.Const.EntityType.Greatsword":
-		value = 4; 
+		value = 4;
 		break;
 		case "this.Const.EntityType.Swordmaster":
-		value = 2; 
+		value = 2;
 		break;
 		case "this.Const.EntityType.Billman":
-		value = 5; 
+		value = 5;
 		break;
 		case "this.Const.EntityType.Arbalester":
-		value = 5; 
+		value = 5;
 		break;
 		case "this.Const.EntityType.StandardBearer":
-		value = 4; 
+		value = 4;
 		break;
 		case "this.Const.EntityType.Sergeant":
-		value = 3; 
+		value = 3;
 		break;
 		case "this.Const.EntityType.Knight":
-		value = 2; 
+		value = 2;
 		break;
 		case "this.Const.EntityType.BanditRabble":
-		value = 30; 
+		value = 30;
+		case "this.Const.EntityType.BanditRabblePoacher":
+		value = 30;
 		break;
 		case "this.Const.EntityType.BanditThug":
-		value = 15; 
+		value = 15;
 		break;
 		case "this.Const.EntityType.BanditPoacher":
-		value = 12; 
+		value = 12;
 		break;
 		case "this.Const.EntityType.BanditMarksman":
-		value = 7; 
+		value = 7;
 		break;
 		case "this.Const.EntityType.BanditRaider":
-		value = 5; 
+		value = 5;
 		break;
 		case "this.Const.EntityType.BanditLeader":
-		value = 3; 
+		value = 3;
 		break;
 		case "this.Const.EntityType.Warhound":
-		value = 10; 
+		value = 10;
 		break;
 		case "this.Const.EntityType.BarbarianThrall":
-		value = 8; 
+		value = 8;
 		break;
 		case "this.Const.EntityType.BarbarianMarauder":
-		value = 4; 
+		value = 4;
 		break;
 		case "this.Const.EntityType.BarbarianChampion":
-		value = 3; 
+		value = 3;
 		break;
 		case "this.Const.EntityType.BarbarianChosen":
-		value = 2; 
+		value = 2;
 		break;
 		case "this.Const.EntityType.BarbarianDrummer":
-		value = 3; 
+		value = 3;
 		break;
 		case "this.Const.EntityType.BarbarianUnhold":
-		value = 2; 
+		value = 2;
 		break;
 		case "this.Const.EntityType.BarbarianUnholdFrost":
-		value = 2; 
+		value = 2;
 		break;
 		case "this.Const.EntityType.BarbarianBeastmaster":
-		value = 5; 
+		value = 5;
 		break;
 		default:
 		value = 10;
 	}
-	
+
 	return value
 }
 
@@ -532,12 +536,12 @@ gt.Const.LegendMod.GetFavEnemyBossChance <- function (_id)
 			}
 
 			local P = bro.getSkills().getSkillByID(perk)
-			
+
 			local stats = this.Const.LegendMod.GetFavoriteEnemyStats(bro, P.m.ValidTypes);
 			bonus += this.Math.floor((stats.Kills * 1.0) / 10.0)
 			break;
 		}
 	}
-	return bonus;	
+	return bonus;
 }
 

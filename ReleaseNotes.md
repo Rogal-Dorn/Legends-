@@ -3525,4 +3525,5 @@ Named sickle now properly works with perks
 14.0.0.13 Let it shrink! Let it shrink!
 
 
-Adds a new lower tier peasant archer to the bandit spawnlists. So Rabble should spawn with a peasant poacher instead of normal T1 poachers.
+Adds a new lower tier bandit rabble poacher to the bandit spawnlists.
+Fixes harvest verfiy checks.

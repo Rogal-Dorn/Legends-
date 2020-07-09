@@ -65,7 +65,7 @@ gt.Const.World.Spawn.BanditRoamers <-
 			Types =
 			[
 				{
-					Type = this.Const.World.Spawn.Troops.LegendPeasantPoacher,
+					Type = this.Const.World.Spawn.Troops.BanditRabblePoacher,
 					MaxR = 0.20 * 420,
 					Cost = 8
 				},
@@ -176,7 +176,7 @@ gt.Const.World.Spawn.BanditScouts <-
 			Types =
 			[
 				{
-					Type = this.Const.World.Spawn.Troops.LegendPeasantPoacher,
+					Type = this.Const.World.Spawn.Troops.BanditRabblePoacher,
 					MaxR = 0.20 * 340,
 					Cost = 8
 				},
@@ -284,7 +284,7 @@ gt.Const.World.Spawn.BanditRaiders <-
 			Types =
 			[
 				{
-					Type = this.Const.World.Spawn.Troops.LegendPeasantPoacher,
+					Type = this.Const.World.Spawn.Troops.BanditRabblePoacher,
 					MaxR = 0.15 * 600,
 					Cost = 8
 				},
@@ -443,7 +443,7 @@ gt.Const.World.Spawn.BanditDefenders <-
 			Types =
 			[
 				{
-					Type = this.Const.World.Spawn.Troops.LegendPeasantPoacher,
+					Type = this.Const.World.Spawn.Troops.BanditRabblePoacher,
 					MaxR = 0.15 * 585,
 					Cost = 8
 				},
