@@ -201,6 +201,11 @@ this.legend_usable_food <- this.inherit("scripts/items/item", {
 			this.addGenericItemSkill();
 		}
 
+			if (this.World.State.getPlayer() == null)
+			{
+				return;
+			}
+
 		if (this.m.StashModifier > 0)
 		{
 			this.World.State.getPlayer().calculateStashModifier();
@@ -212,6 +217,10 @@ this.legend_usable_food <- this.inherit("scripts/items/item", {
 	{
 		this.item.onUnequip();
 
+			if (this.World.State.getPlayer() == null)
+			{
+				return;
+			}
 
 		if (this.m.StashModifier > 0)
 		{

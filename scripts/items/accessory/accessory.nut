@@ -134,7 +134,10 @@ this.accessory <- this.inherit("scripts/items/item", {
 
 		if (this.m.StashModifier > 0)
 		{
-
+			if (this.World.State.getPlayer() == null)
+			{
+				return;
+			}
 			this.World.State.getPlayer().calculateStashModifier()
 		}
 
@@ -150,6 +153,11 @@ this.accessory <- this.inherit("scripts/items/item", {
 			app.Accessory = "";
 			this.getContainer().updateAppearance();
 		}
+
+			if (this.World.State.getPlayer() == null)
+			{
+				return;
+			}
 
 		if (this.m.StashModifier > 0)
 		{
