@@ -116,27 +116,25 @@ this.send_caravan_action <- this.inherit("scripts/factions/faction_action", {
 			for( local j = 0; j < r; j = ++j )
 			{
 				local items = [
-					[1, "supplies/bread_item"],
-					[1, "supplies/roots_and_berries_item"],
-					[1, "supplies/dried_fruits_item"],
-					[1, "supplies/ground_grains_item"],
-					[1, "supplies/bread_item"],
-					[1, "supplies/dried_fish_item"],
-					[1, "supplies/beer_item"],
-					[1, "supplies/bread_item"],
-					[1, "supplies/goat_cheese_item"],
+					[0, "supplies/bread_item"],
+					[0, "supplies/roots_and_berries_item"],
+					[0, "supplies/dried_fruits_item"],
+					[0, "supplies/ground_grains_item"],
+					[0, "supplies/dried_fish_item"],
+					[0, "supplies/beer_item"],
+					[0, "supplies/goat_cheese_item"],
 					[1, "supplies/legend_cooking_spices_item"],
 					[1, "supplies/legend_fresh_fruit_item"],
 					[1, "supplies/legend_fresh_meat_item"],
 					[1, "supplies/legend_pie_item"],
 					[1, "supplies/legend_porridge_item"],
 					[1, "supplies/legend_pudding_item"],
-					[1, "supplies/mead_item"],
-					[1, "supplies/medicine_item"],
-					[1, "supplies/pickled_mushrooms_item"],
-					[1, "supplies/preserved_mead_item"],
-					[1, "supplies/smoked_ham_item"],
-					[1, "supplies/wine_item"]
+					[0, "supplies/mead_item"],
+					[0, "supplies/medicine_item"],
+					[0, "supplies/pickled_mushrooms_item"],
+					[0, "supplies/preserved_mead_item"],
+					[0, "supplies/smoked_ham_item"],
+					[0, "supplies/wine_item"]
 				]
 
 				local item = this.Const.World.Common.pickItem(items)
