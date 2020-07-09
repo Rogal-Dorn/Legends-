@@ -60,18 +60,15 @@ this.cultist_origin_vs_uneducated_event <- this.inherit("scripts/events/event", 
 				this.Characters.push(_event.m.Cultist.getImagePath());
 				this.Characters.push(_event.m.Uneducated.getImagePath());
 				_event.m.Uneducated.getBackground().Convert();
-				_event.m.Uneducated.getBackground().m.RawDescription += _event.m.Cultist.getName() + " helped " + _event.m.Uneducated.getName() + " see the darkness.";
-				_event.m.Dude.getBackground().buildDescription(true);
-
-				// TODO: Add the cultist perkgroup to the convert.
-
+				_event.m.Uneducated.getBackground().m.RawDescription += " " + _event.m.Cultist.getName() + " helped " + _event.m.Uneducated.getName() + " see the darkness.";
+				_event.m.Uneducated.getBackground().buildDescription(true);
 
 				//set relations
 				local modifier1 = this.Math.rand(10, 20);
 				_event.m.Uneducated.changeActiveRelationship( _event.m.Cultist, modifier1 );
 				local modifier2 = this.Math.rand(10, 20);
 				_event.m.Cultist.changeActiveRelationship( _event.m.Uneducated, modifier2 );
-
+				background.onSetAppearance();
 				this.List = [
 					{
 						id = 13,
@@ -79,6 +76,14 @@ this.cultist_origin_vs_uneducated_event <- this.inherit("scripts/events/event", 
 						text = _event.m.Uneducated.getName() + " has been converted to a Cultist"
 					}
 				];
+				if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+				{
+					this.List.push({
+						id = 11,
+						icon = "ui/icons/relation.png",
+						text = _event.m.Cultist.getName() + " and " + _event.m.Uneducated.getName() + " grow closer"
+					});
+				}
 				_event.m.Cultist.getBaseProperties().Bravery += 2;
 				_event.m.Cultist.getSkills().update();
 				this.List.push({
@@ -158,11 +163,18 @@ this.cultist_origin_vs_uneducated_event <- this.inherit("scripts/events/event", 
 				cultist_candidates.push(bro);
 			}
 			else if ((bro.getBackground().isLowborn() && !bro.getSkills().hasSkill("trait.bright")) ||
-				(!bro.getBackground().isNoble() && (bro.getSkills().hasSkill("trait.dumb") || bro.getSkills().hasSkill("injury.brain_damage"))) &&
-				(!bro.getBackground().getID() == "background.legend_commander_berserker" || !bro.getBackground().getID() == "background.legend_berserker") || !bro.getBackground().getID() == "background.legend_donkey")
-			{
-				uneducated_candidates.push(bro);
-			}
+						(!bro.getBackground().isNoble() && bro.getSkills().hasSkill("trait.dumb"))	   ||
+						bro.getSkills().hasSkill("injury.brain_damage") )
+					{
+						//this.logInfo("1");
+						if(bro.getBackground().getID() != "background.legend_commander_berserker" && 
+						   bro.getBackground().getID() != "background.legend_berserker" &&
+						   bro.getBackground().getID() != "background.legend_donkey") 
+						{
+							//this.logInfo("2");
+							uneducated_candidates.push(bro);
+						}
+					}
 		}
 
 		if (cultist_candidates.len() == 0 || uneducated_candidates.len() == 0)

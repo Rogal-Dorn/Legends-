@@ -180,6 +180,17 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 	function Convert()
 	{
 		this.m.IsConverted = true;
+		local cultistGroup = [
+						[this.Const.Perks.PerkDefs.LegendSpecialistNinetailsSkill],
+						[this.Const.Perks.PerkDefs.LegendSpecCultHood],
+						[this.Const.Perks.PerkDefs.LegendSpecialistNinetailsDamage],
+						[],
+						[this.Const.Perks.PerkDefs.LegendPrepareGraze],
+						[this.Const.Perks.PerkDefs.LegendSpecCultArmor],
+						[this.Const.Perks.PerkDefs.LegendLacerate]
+					];
+		
+		this.addPerkGroup(cultistGroup);
 	}
 
 	function getExcludedTalents()
@@ -457,6 +468,36 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		}
 
 		return this.Const.Perks.findByBackground(_id, this.getID());
+	}
+	
+	function addPerkBooleanFail(_perk, _row = 0) {
+		local perk = clone this.Const.Perks.PerkDefObjects[_perk];
+        //Dont add dupes
+        if (perk.ID in this.m.PerkTreeMap)
+        {
+            return false;
+        }
+        
+        perk.Row <- _row;
+        perk.Unlocks <- _row;
+        for (local i = this.getPerkTree().len(); i < _row + 1; i = ++i)
+        {
+            this.getPerkTree().push([]);
+        }
+        this.getPerkTree()[_row].push(perk);
+        this.m.PerkTreeMap[perk.ID] <- perk;
+        return true;
+    
+	}
+	
+	function addPerkGroup(_Tree) {	
+		foreach(index, arrAdd in _Tree)
+		{
+			foreach (perkAdd in arrAdd)
+			{
+				this.addPerkBooleanFail(perkAdd, index);
+			}
+		}
 	}
 
 	function isStabled()
