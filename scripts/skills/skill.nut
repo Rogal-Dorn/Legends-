@@ -1241,7 +1241,7 @@ this.skill <- {
 				local loot = this.new("scripts/items/trade/uncut_gems_item");
 				loot.drop(_targetEntity().getTile());
 			}
-			_targetEntity.getTile().removeObject()
+			// _targetEntity.getTile().removeObject()
 			if (this.m.SoundOnHit.len() != 0)
 			{
 				this.Time.scheduleEvent(this.TimeUnit.Virtual, this.m.SoundOnHitDelay, this.onPlayHitSound.bindenv(this), {
@@ -1249,6 +1249,10 @@ this.skill <- {
 					Pos = _targetEntity.getPos()
 				});
 			}
+			local tile = _targetEntity.getTile();
+			local x = tile.X;
+			local y = tile.Y;
+			this.Tactical.getTile(x,y).removeObject();
 			return true;
 		}
 
@@ -1260,7 +1264,7 @@ this.skill <- {
 				local loot = this.new("scripts/items/trade/legend_raw_wood_item");
 				loot.drop(_targetEntity.getTile());
 			}
-			_targetEntity.getTile().removeObject()
+			
 			if (this.m.SoundOnHit.len() != 0)
 			{
 				this.Time.scheduleEvent(this.TimeUnit.Virtual, this.m.SoundOnHitDelay, this.onPlayHitSound.bindenv(this), {
@@ -1268,6 +1272,11 @@ this.skill <- {
 					Pos = _targetEntity.getPos()
 				});
 			}
+			local tile = _targetEntity.getTile();
+			local x = tile.X;
+			local y = tile.Y;
+			this.Tactical.getTile(x,y).removeObject();
+			// _targetEntity.getTile().removeObject();
 			return true;
 		}
 
@@ -1279,7 +1288,7 @@ this.skill <- {
 				local loot = this.new("scripts/items/supplies/roots_and_berries_item");
 				loot.drop(_targetEntity.getTile());
 			}
-			_targetEntity.getTile().removeObject()
+			// _targetEntity.getTile().removeObject()
 
 			if (this.m.SoundOnHit.len() != 0)
 			{
@@ -1288,6 +1297,10 @@ this.skill <- {
 					Pos = _targetEntity.getPos()
 				});
 			}
+			local tile = _targetEntity.getTile();
+			local x = tile.X;
+			local y = tile.Y;
+			this.Tactical.getTile(x,y).removeObject();
 			return false;
 		}
 
