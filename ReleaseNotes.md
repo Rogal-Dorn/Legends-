@@ -3527,3 +3527,4 @@ Named sickle now properly works with perks
 
 Adds a new lower tier bandit rabble poacher to the bandit spawnlists.
 Fixes harvest verfiy checks.
+Fixes having to requip weapons for the harvest perks
