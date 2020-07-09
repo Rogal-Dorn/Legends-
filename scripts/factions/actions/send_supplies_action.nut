@@ -115,9 +115,6 @@ this.send_supplies_action <- this.inherit("scripts/factions/faction_action", {
 			local r = this.Math.rand(3,6);
 			for( local j = 0; j < r; j = ++j )
 			{
-			local r = this.Math.rand(1,3);
-			for( local j = 0; j < r; j = ++j )
-			{
 				local items = [
 					[0, "supplies/bread_item"],
 					[0, "supplies/roots_and_berries_item"],
@@ -142,7 +139,6 @@ this.send_supplies_action <- this.inherit("scripts/factions/faction_action", {
 
 				local item = this.Const.World.Common.pickItem(items)
 				party.addToInventory(item);
-			}
 			}
 		}
 		else
