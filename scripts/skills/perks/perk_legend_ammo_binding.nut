@@ -22,11 +22,21 @@ this.perk_legend_ammo_binding <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
+					if (this.World.State.getPlayer() == null)
+			{
+				return;
+			}
+
 		this.World.State.getPlayer().calculateAmmoModifier();
 	}
 
 	function onRemoved()
 	{
+					if (this.World.State.getPlayer() == null)
+			{
+				return;
+			}
+
 		this.World.State.getPlayer().calculateAmmoModifier();
 	}
 
