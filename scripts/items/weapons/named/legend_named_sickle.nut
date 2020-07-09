@@ -33,10 +33,7 @@ this.legend_named_sickle <- this.inherit("scripts/items/weapons/named/named_weap
 		this.weapon.onEquip();
 		this.addSkill(this.new("scripts/skills/actives/slash"));
 		this.addSkill(this.new("scripts/skills/actives/hook"));
-		if (this.m.Container.getActor().getSkills().hasSkill("perk.legend_specialist_sickle_skill"))
-		{
-			this.addSkill(this.new("scripts/skills/actives/legend_harvest_bush"));
-		}
+		this.addSkill(this.new("scripts/skills/actives/legend_harvest_bush"));
 	}
 
 	function onUpdateProperties( _properties )

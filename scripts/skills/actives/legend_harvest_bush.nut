@@ -52,6 +52,22 @@ this.legend_harvest_bush <- this.inherit("scripts/skills/skill", {
 		return ret;
 	}
 
+	function isHidden()
+	{
+		local actor = this.getContainer().getActor();
+		if (actor == null)
+		{
+			return true;
+		}
+
+		if (!actor.getSkills().hasSkill("perk.legend_specialist_sickle_skill"))
+		{
+			return true;
+		}
+
+		return false;
+	}
+
 	function onVerifyTarget( _originTile, _targetTile )
 	{
 		if (_targetTile.getEntity().isBush())

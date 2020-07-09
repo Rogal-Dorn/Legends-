@@ -31,10 +31,7 @@ this.legend_sickle <- this.inherit("scripts/items/weapons/weapon", {
 	{
 		this.weapon.onEquip();
 		this.addSkill(this.new("scripts/skills/actives/slash"));
-		if (this.m.Container.getActor().getSkills().hasSkill("perk.legend_specialist_sickle_skill"))
-		{
-			this.addSkill(this.new("scripts/skills/actives/legend_harvest_bush"));
-		}
+		this.addSkill(this.new("scripts/skills/actives/legend_harvest_bush"));
 	}
 
 	function onUpdateProperties( _properties )
