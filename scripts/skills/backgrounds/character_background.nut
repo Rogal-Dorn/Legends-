@@ -181,13 +181,13 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.IsConverted = true;
 		local cultistGroup = [
-						[gt.Const.Perks.PerkDefs.LegendSpecialistNinetailsSkill],
-						[gt.Const.Perks.PerkDefs.LegendSpecCultHood],
-						[gt.Const.Perks.PerkDefs.LegendSpecialistNinetailsDamage],
+						[this.Const.Perks.PerkDefs.LegendSpecialistNinetailsSkill],
+						[this.Const.Perks.PerkDefs.LegendSpecCultHood],
+						[this.Const.Perks.PerkDefs.LegendSpecialistNinetailsDamage],
 						[],
-						[gt.Const.Perks.PerkDefs.LegendPrepareGraze],
-						[gt.Const.Perks.PerkDefs.LegendSpecCultArmor],
-						[gt.Const.Perks.PerkDefs.LegendLacerate]
+						[this.Const.Perks.PerkDefs.LegendPrepareGraze],
+						[this.Const.Perks.PerkDefs.LegendSpecCultArmor],
+						[this.Const.Perks.PerkDefs.LegendLacerate]
 					];
 		
 		this.addPerkGroup(cultistGroup);
