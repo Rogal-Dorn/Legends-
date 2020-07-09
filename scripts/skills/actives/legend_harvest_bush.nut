@@ -31,8 +31,8 @@ this.legend_harvest_bush <- this.inherit("scripts/skills/skill", {
 		this.m.InjuriesOnBody = this.Const.Injury.CuttingBody;
 		this.m.InjuriesOnHead = this.Const.Injury.CuttingHead;
 		this.m.DirectDamageMult = 0.3;
-		this.m.ActionPointCost = 4;
-		this.m.FatigueCost = 13;
+		this.m.ActionPointCost = 6;
+		this.m.FatigueCost = 15;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 1;
 		this.m.ChanceSmash = 0;
@@ -46,7 +46,7 @@ this.legend_harvest_bush <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Chop down any bush with a 50% percent chance to harvest fruit as loot"
+				text = "Chop down any bush with a 50% percent chance to harvest fruit"
 			}
 		]);
 		return ret;

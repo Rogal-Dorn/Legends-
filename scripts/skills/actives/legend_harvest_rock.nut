@@ -31,8 +31,8 @@ this.legend_harvest_rock <- this.inherit("scripts/skills/skill", {
 		this.m.InjuriesOnBody = this.Const.Injury.CuttingBody;
 		this.m.InjuriesOnHead = this.Const.Injury.CuttingHead;
 		this.m.DirectDamageMult = 0.3;
-		this.m.ActionPointCost = 4;
-		this.m.FatigueCost = 13;
+		this.m.ActionPointCost = 6;
+		this.m.FatigueCost = 25;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 1;
 		this.m.ChanceSmash = 0;
@@ -70,12 +70,17 @@ this.legend_harvest_rock <- this.inherit("scripts/skills/skill", {
 
 	function onVerifyTarget( _originTile, _targetTile )
 	{
+		if (_targetTile.getEntity() == null)
+		{
+			return false;
+		}
+
 		if (_targetTile.getEntity().isRock())
 		{
 			return true;
 		}
 
-		return this.skill.onVerifyTarget(_originTile, _targetTile)
+		return false;
 	}
 
 	function onAfterUpdate( _properties )
