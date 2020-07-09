@@ -3524,9 +3524,11 @@ Named sickle now properly works with perks
 
 14.0.0.12a
 
+Converted cultists now add the cult perk groups to their tree. (Salty)
 Adds a new lower tier bandit rabble poacher to the bandit spawnlists.
 Fixes harvest verfiy checks.
 Fixes having to requip weapons for the harvest perks.
+Update the Harvest perk AP and Fat costs
 Tweaks the caravan inventory lists.
 Significantly optimizes code to reduce game lag and settlement/market/inventory load times.
 
