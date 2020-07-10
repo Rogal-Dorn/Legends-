@@ -3533,3 +3533,13 @@ Tweaks the caravan inventory lists.
 Significantly optimizes code to reduce game lag and settlement/market/inventory load times.
 
 https://drive.google.com/file/d/17nn1W_c4Fn3BG6ptRyFBhaAsX5QB33jQ/view?usp=sharing
+
+14.0.0.12b Rabbled by Poachers
+
+Fixes the issues with the rabble poachers.
+Fixes issues with loading save game from 14.0.0.11/14.0.0.12
+Includes the global.nut fix from mwa
+Includes the z_mod_legends_12a_patch1
+
+(sorry folks!)
+
