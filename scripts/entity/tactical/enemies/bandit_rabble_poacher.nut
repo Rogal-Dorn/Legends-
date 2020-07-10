@@ -10,10 +10,13 @@ this.bandit_rabble_poacher <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Raider;
+		this.m.AIAgent = this.new("scripts/ai/tactical/agents/legend_bandit_rabble_agent");
+		this.m.AIAgent.setActor(this);
 		if (this.Math.rand(1, 100) <= 10)
 		{
 			this.setGender(1);
 		}
+
 	}
 
 	function onInit()
