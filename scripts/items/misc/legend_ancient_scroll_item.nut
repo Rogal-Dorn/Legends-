@@ -147,7 +147,7 @@ this.legend_ancient_scroll_item <- this.inherit("scripts/items/item", {
 				case 5:
 					break;
 			}
-			local r = (this.Math.rand(1, 4))
+			local r = (this.Math.rand(0, 4))
 			if (r == 0)
 			{
 				if (!_actor.getSkills().hasSkill("effect.legend_headache"))
