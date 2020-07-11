@@ -76,7 +76,6 @@ this.cultist_vs_uneducated_event <- this.inherit("scripts/events/event", {
 				_event.m.Uneducated.changeActiveRelationship( _event.m.Cultist, modifier1 );
 				local modifier2 = this.Math.rand(10, 20);
 				_event.m.Cultist.changeActiveRelationship( _event.m.Uneducated, modifier2 );
-				background.onSetAppearance();
 				this.List = [
 					{
 						id = 13,
