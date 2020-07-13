@@ -103,10 +103,10 @@ this.legend_astrologist_background <- this.inherit("scripts/skills/backgrounds/c
 
 	function onAddEquipment()
 	{
-		local talents = this.getContainer().getActor().getTalents();
-		talents.resize(this.Const.Attributes.COUNT, 0);
-		talents[this.Const.Attributes.Bravery] = 3;
-		this.getContainer().getActor().fillTalentValues(2, true);
+		// local talents = this.getContainer().getActor().getTalents();
+		// talents.resize(this.Const.Attributes.COUNT, 0);
+		// talents[this.Const.Attributes.Bravery] = 3;
+		// this.getContainer().getActor().fillTalentValues(2, true);
 		local items = this.getContainer().getActor().getItems();
 		local r;
 		r = this.Math.rand(0, 2);
@@ -126,10 +126,10 @@ this.legend_astrologist_background <- this.inherit("scripts/skills/backgrounds/c
 
 	function onAddLegendEquipment()
 	{
-		local talents = this.getContainer().getActor().getTalents();
-		talents.resize(this.Const.Attributes.COUNT, 0);
-		talents[this.Const.Attributes.Bravery] = 3;
-		this.getContainer().getActor().fillTalentValues(2, true);
+		// local talents = this.getContainer().getActor().getTalents();
+		// talents.resize(this.Const.Attributes.COUNT, 0);
+		// talents[this.Const.Attributes.Bravery] = 3;
+		// this.getContainer().getActor().fillTalentValues(2, true);
 		local items = this.getContainer().getActor().getItems();
 		local r;
 		r = this.Math.rand(0, 2);
