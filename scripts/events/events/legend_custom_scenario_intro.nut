@@ -22,6 +22,7 @@ this.legend_custom_scenario_intro <- this.inherit("scripts/events/event", {
 		this.m.Dude.m.CompanyID = this.World.State.addNewID(this.m.Dude);
 		//this.m.Dude.onHired();
 		this.m.PartySize += 1;
+		this.m.Traits = [];
 
 		// this.m.Dude = null;
 		// this.m.Traits = [];
@@ -39,6 +40,63 @@ this.legend_custom_scenario_intro <- this.inherit("scripts/events/event", {
 				icon = t.getIconColored(),
 				text = t.getName()
 			});
+		}
+		for( local i = 0; i < this.Const.Attributes.COUNT; i = ++i )
+		{
+			if (this.m.Dude.m.Talents[i] > 0)
+			{
+				local text = "";
+				local icon = "";
+				switch(i)
+				{
+				case 0:
+					text = "Hitpoints";
+					icon = "health";
+					break;
+
+				case 1:
+					text = "Resovle";
+					icon = "bravery";
+					break;
+
+				case 2:
+					text = "Fatigue";
+					icon = "fatigue";
+					break;
+
+				case 3:
+					text = "Initiative";
+					icon = "initiative";
+					break;
+
+				case 4:
+					text = "Melee Attack";
+					icon = "melee_skill";
+					break;
+
+				case 5:
+					text = "Range Attack";
+					icon = "ranged_skill";
+					break;
+
+				case 6:
+					text = "Melee Defense";
+					icon = "melee_defense";
+					break;
+
+				case 7:
+					text = "Range Defense";
+					icon = "ranged_defense";
+					break;
+				}
+
+				screen.List.push({
+					id = 11,
+					icon = "ui/icons/talent_" + this.m.Dude.m.Talents[i] + ".png",
+					text = text
+				});
+			}
+
 		}
 
 	}
@@ -269,35 +327,6 @@ this.legend_custom_scenario_intro <- this.inherit("scripts/events/event", {
 	function createTalentScreen()
 	{
 
-		// local screen = {
-		// 	ID = "BF",
-        // 	Text = "[img]gfx/ui/events/event_128.png[/img]Pick your heroes talents ",
-		// 	Image = "",
-		// 	Banner = "",
-		// 	List = [],
-		// 	Characters = [],
-		// 	Options = [
-		// 		{
-		// 			Text = "Continue adding traits",
-		// 			function getResult( _event ) {
-		// 				return _event.m.PreviousScreen;
-		// 			}
-		// 		},
-		// 		{
-		// 			Text = "Done",
-		// 			function getResult( _event )
-		// 			{
-		// 				return "F";
-		// 			}
-		// 		}
-		// 	],
-		// 	function start( _event )
-		// 	{
-		// 		_event.setBroScreen(this);
-		// 	}
-		// }
-		// this.m.Screens.push(screen);
-
 		local screen = {
 			ID = "C0",
         	Text = "[img]gfx/ui/events/event_128.png[/img]Pick your heroes talents ",
@@ -420,7 +449,7 @@ this.legend_custom_scenario_intro <- this.inherit("scripts/events/event", {
 
 		local screen = {
 			ID = "C1",
-        	Text = "[img]gfx/ui/events/event_128.png[/img]Pick your heroes talents stars ",
+        	Text = "[img]gfx/ui/events/event_128.png[/img]Pick your heroes talent stars ",
 			Image = "",
 			Banner = "",
 			List = [],
@@ -495,7 +524,6 @@ this.legend_custom_scenario_intro <- this.inherit("scripts/events/event", {
 
 						_event.m.Dude.fillAttributeLevelUpValues(this.Const.XP.MaxLevelWithPerkpoints - 1);
 						_event.m.Dude = null
-						_event.m.Traits = [];
 						return "A";
 					}
 				}
@@ -507,7 +535,6 @@ this.legend_custom_scenario_intro <- this.inherit("scripts/events/event", {
 
 						_event.m.Dude.fillAttributeLevelUpValues(this.Const.XP.MaxLevelWithPerkpoints - 1);
 						_event.m.Dude = null
-						_event.m.Traits = [];
 
 						//_event.m.StartBro.removeActiveRelationship();
 						 this.World.getPlayerRoster().remove(_event.m.StartBro)
