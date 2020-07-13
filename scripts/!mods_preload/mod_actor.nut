@@ -163,7 +163,7 @@
 			this.m.PerkPointsSpent += 1;
 			local GiftedPerk = this.new("scripts/skills/perks/perk_gifted");
 			GiftedPerk.m.IsApplied = true;
-			_actor.getSkills().add(GiftedPerk);
+			this.getSkills().add(GiftedPerk);
 		}
     }
 

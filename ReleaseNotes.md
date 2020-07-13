@@ -3543,3 +3543,6 @@ Includes the z_mod_legends_12a_patch1
 
 (sorry folks!)
 
+14.0.0.13
+
+Fixes an issue with converting cultists with gifted
