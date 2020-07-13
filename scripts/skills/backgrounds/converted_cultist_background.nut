@@ -37,7 +37,7 @@ this.converted_cultist_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Merciless;
 		this.m.PerkTreeDynamic = {
-			Weapon = [			
+			Weapon = [
 				this.Const.Perks.CleaverTree,
 				this.Const.Perks.FlailTree
 			],
