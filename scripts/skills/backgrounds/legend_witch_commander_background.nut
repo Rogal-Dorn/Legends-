@@ -3,6 +3,7 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 	function create()
 	{
 		this.character_background.create();
+		this.m.Name = "Evoker";
 		this.m.ID = "background.legend_commander_witch";
 		this.m.Icon = "ui/backgrounds/seer_02.png";
 		local r = this.Math.rand(0, 4);

@@ -111,21 +111,27 @@ this.legend_frenemies <- this.inherit("scripts/skills/traits/character_trait", {
 
 	function checkPosition ( _roster, _actor, _position )
 	{
+		if (_actor.getCompanyID() == -1)
+		{
+			return "";
+		}
+
 		foreach (bro in _roster)
 		{
 			if (bro.getPlaceInFormation() == _position)
 			{
+
 				if (bro.getCompanyID() == -1)
 				{
 					return "";
 				}
 
-				local relB = this.World.State.getRefFromID(bro.getCompanyID());
+				local relB = this.World.State.getRefFromID(_actor.getCompanyID());
 				if (relB == null)
 				{
 					return "";
 				}
-				local relTab = relB.getActiveRelationshipWith(tile.getEntity());
+				local relTab = relB.getActiveRelationshipWith(bro);
 				if (relTab == null)
 				{
 					return "";

@@ -6,7 +6,7 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 	{
 		this.character_background.create();
 		this.m.ID = "background.legend_commander_druid";
-		this.m.Name = "Druid";
+		this.m.Name = "Druid Commander";
 		this.m.Icon = "ui/backgrounds/druid_background.png";
 		this.m.BackgroundDescription = "Druids are from the wild lands, defenders of nature.";
 		// this.m.GoodEnding = "While the %companyname% visited a town for rest and recuperation, a local princess took a shine to %name% the wildman. He was \'purchased\' for a large sum of gold and given to the noblewoman. You went and visited the man recently. For dinner, he sat at a kingly table, grinning goofily and mimicking the nobles around him as best he could. His new and inexplicable wife adored him, and him her. When you said your goodbyes, he offered you a heavy golden crown off the top of his head. It weighed heavy with traditions and ancient histories. You said it\'d be best if he kept it. The wildman shrugged and walked off, spinning the circlet around a finger.";
@@ -154,7 +154,7 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.Nimble,
 				this.Const.Perks.PerkDefs.LegendMindOverBody,
 				this.Const.Perks.PerkDefs.LastStand,
-				this.Const.Perks.PerkDefs.Rebound,	
+				this.Const.Perks.PerkDefs.Rebound,
 				this.Const.Perks.PerkDefs.LegendInsects,
 				this.Const.Perks.PerkDefs.LegendMuscularity,
 				this.Const.Perks.PerkDefs.LegendDrumsOfLife,
