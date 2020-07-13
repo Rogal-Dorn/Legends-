@@ -1,355 +1,524 @@
 this.legend_custom_scenario_intro <- this.inherit("scripts/events/event", {
 	m = {
+		StartBro = null,
 		PartySize =  1,
 		Background = "beggar_background",
-		Dude = null
-
+		Traits = [],
+		PreviousScreen = "",
+		Dude = null,
+		Init = false,
+		Talent = -1
 	},
-	function create()
+
+	function addBro(_background)
 	{
-		this.m.ID = "event.legend_custom_scenario_intro";
-		this.m.IsSpecial = true;
-		this.m.Screens.push({
+		local roster = this.World.getTemporaryRoster();
+		this.m.Dude = roster.create("scripts/entity/tactical/player");
+		this.m.Dude.setStartValuesEx([_background], false);
+		this.m.Dude.m.Talents.resize(this.Const.Attributes.COUNT, 0);
+
+		this.World.getPlayerRoster().add(this.m.Dude);
+		this.World.getTemporaryRoster().clear();
+		this.m.Dude.m.CompanyID = this.World.State.addNewID(this.m.Dude);
+		//this.m.Dude.onHired();
+		this.m.PartySize += 1;
+
+		// this.m.Dude = null;
+		// this.m.Traits = [];
+	}
+
+	function setBroScreen(screen)
+	{
+		screen.Text = "[img]gfx/ui/events/event_25.png[/img] " + this.m.Dude.getName() + " : " + this.m.Dude.getBackground().getNameOnly();
+		screen.Characters=[this.m.Dude.getImagePath()];
+
+		foreach (t in this.m.Traits)
+		{
+			screen.List.push({
+				id = 10,
+				icon = t.getIconColored(),
+				text = t.getName()
+			});
+		}
+
+	}
+
+	function createHeroesScreen()
+	{
+		local scriptFiles = this.IO.enumerateFiles("scripts/skills/backgrounds/");
+		local blist = {
+			character_background = null,
+			legend_horse = null,
+			legend_horserider = null
+		}
+		//Build Hero selection ...
+		local screen = {
 			ID = "A",
-        	Text = "[img]gfx/ui/events/event_128.png[/img]Think back to your past. Where were your formative years spent? ",
+        	Text = "[img]gfx/ui/events/event_128.png[/img]Pick your companions background",
+			Image = "",
+			Banner = "",
+			List = [],
+			Characters = [],
+			Options = [
+			],
+			function start( _event )
+			{
+				// if (!_event.m.Init)
+				// {
+				// 	local bros = this.World.getPlayerRoster();
+				// 	foreach (bro in bros)
+				// 	{
+				// 		//bro.removeActiveRelationship();
+				// 		this.World.getPlayerRoster().remove(bro);
+				// 	}
+				// }
+				// _event.m.Init = true;
+			}
+		}
+
+		local count = 0;
+		local screenNum = 0;
+		foreach( scriptFile in scriptFiles )
+		{
+			local bground = this.new(scriptFile);
+
+			local sparts = split(scriptFile, "/");
+			local fname = sparts[sparts.len() - 1];
+
+			if (fname in blist) continue;
+
+			local opt = {
+				Text = bground.m.Name,
+				Background = fname,
+				function getResult( _event ) {
+					_event.addBro(this.Background)
+					//_event.m.Background = this.Background;
+					return "F"
+				}
+			}
+			screen.Options.push(opt);
+
+			if (count > 3) {
+				local nextScreen = "A" + screenNum;
+				local opt = {
+					Text = "More ...",
+					function getResult( _event ) {
+						return nextScreen;
+					}
+				}
+				screen.Options.push(opt);
+				this.m.Screens.push(screen);
+
+				screen = {
+					ID = nextScreen,
+        			Text = "[img]gfx/ui/events/event_128.png[/img]Pick your companions background",
+					Image = "",
+					Banner = "",
+					List = [],
+					Characters = [],
+					Options = [
+					],
+					function start( _event )
+					{
+					}
+				}
+				screenNum++;
+				count = 0;
+				continue
+			};
+
+			count++;
+		}
+
+		local opt = {
+			Text = "More ...",
+			function getResult( _event ) {
+				return "A";
+			}
+		}
+		screen.Options.push(opt);
+		this.m.Screens.push(screen);
+	}
+
+	function createTraitsScreen()
+	{
+
+		local screen = {
+			ID = "BF",
+        	Text = "[img]gfx/ui/events/event_128.png[/img]Pick your heroes traits ",
 			Image = "",
 			Banner = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "Fighting to survive",
-					function getResult( _event )
-					{
-						return "B";
+					Text = "Continue adding traits",
+					function getResult( _event ) {
+						return _event.m.PreviousScreen;
 					}
-
 				},
 				{
-					Text = "Scrounging for food",
+					Text = "Done",
 					function getResult( _event )
 					{
-						return "C";
+						return "F";
 					}
-
-				},
-				{
-					Text = "Studying books",
-					function getResult( _event )
-					{
-						return "D";
-					}
-
-				},
-								{
-					Text = "Studying books",
-					function getResult( _event )
-					{
-						return "D";
-					}
-
-				},
-								{
-					Text = "Studying books",
-					function getResult( _event )
-					{
-						return "D";
-					}
-
-				},
-								{
-					Text = "Studying books",
-					function getResult( _event )
-					{
-						return "D";
-					}
-
-				},
-
-				{
-					Text = "Learning a skill",
-					function getResult( _event )
-					{
-						return "E";
-					}
-
 				}
 			],
 			function start( _event )
 			{
+				_event.setBroScreen(this);
 			}
-		});
-		this.m.Screens.push({
-			ID = "B",
-			Text = "[img]gfx/ui/events/event_25.png[/img]The gnawing hunger in your belly drove you to hunt and kill. The path of a hunter was unavoidable, but each person finds their own meaning. What did you discover?",
+		}
+		this.m.Screens.push(screen);
+
+		local scriptFiles = this.IO.enumerateFiles("scripts/skills/traits/");
+		local blist = {
+			character_trait = null,
+			legend_horse_trait = null,
+			legend_frenemies = null,
+			legend_alignment = null,
+			intensive_training_trait = null,
+
+		}
+		//Build Traits selection ...
+		screen = {
+			ID = "B0",
+        	Text = "[img]gfx/ui/events/event_128.png[/img]Pick your heroes traits ",
 			Image = "",
+			Banner = "",
 			List = [],
 			Characters = [],
 			Options = [
-				{
-					Text = "War keeps you fed",
-					function getResult( _event )
-					{
-						return "F";
-						_event.m.Background = "legend_noble_ranged";
-					}
-
-				},
-				{
-					Text = "The forest is home",
-					function getResult( _event )
-					{
-						return "B1";
-					}
-
-				},
-				{
-					Text = "There is game in the city",
-					function getResult( _event )
-					{
-						return "F";
-						_event.m.Background = "ratcatcher_background";
-					}
-
-				},
-				{
-					Text = "Big enemies, big rewards",
-					function getResult( _event )
-					{
-						return "F";
-						_event.m.Background = "beast_hunter_background";
-					}
-
-				}
 			],
 			function start( _event )
 			{
+				_event.setBroScreen(this);
 			}
+		}
 
-		});
+		local count = 0;
+		local screenNum = 0;
+		foreach( scriptFile in scriptFiles )
+		{
+			local bground = this.new(scriptFile);
 
-	this.m.Screens.push({
-			ID = "B1",
-			Text = "[img]gfx/ui/events/event_25.png[/img]Deep in the forest you found what you sought.  What was your decision?",
+			local sparts = split(scriptFile, "/");
+			local fname = sparts[sparts.len() - 1];
+
+			if (fname in blist) continue;
+
+			local currScreen = "B" + screenNum;
+			local opt = {
+				Text = bground.m.Name,
+				Trait = scriptFile,
+				Screen = currScreen,
+				function getResult( _event ) {
+					local t = this.new(this.Trait);
+					_event.m.Dude.getSkills().add(t);
+					_event.m.Traits.push(t);
+					_event.m.PreviousScreen = this.Screen;
+					return "BF"
+				}
+			}
+			screen.Options.push(opt);
+
+			if (count > 3) {
+				screenNum++;
+				local nextScreen = "B" + screenNum;
+				local opt = {
+					Text = "More ...",
+					function getResult( _event ) {
+						return nextScreen;
+					}
+				}
+				screen.Options.push(opt);
+				this.m.Screens.push(screen);
+
+				screen = {
+					ID = nextScreen,
+					Text = "[img]gfx/ui/events/event_128.png[/img]Pick your heroes traits ",
+					Image = "",
+					Banner = "",
+					List = [],
+					Characters = [],
+					Options = [
+					],
+					function start( _event )
+					{
+						_event.setBroScreen(this);
+					}
+				}
+				count = 0;
+				continue
+			};
+
+			count++;
+		}
+
+		local opt = {
+			Text = "More ...",
+			function getResult( _event ) {
+				return "B0";
+			}
+		}
+		screen.Options.push(opt);
+		this.m.Screens.push(screen);
+	}
+
+	function createTalentScreen()
+	{
+
+		// local screen = {
+		// 	ID = "BF",
+        // 	Text = "[img]gfx/ui/events/event_128.png[/img]Pick your heroes talents ",
+		// 	Image = "",
+		// 	Banner = "",
+		// 	List = [],
+		// 	Characters = [],
+		// 	Options = [
+		// 		{
+		// 			Text = "Continue adding traits",
+		// 			function getResult( _event ) {
+		// 				return _event.m.PreviousScreen;
+		// 			}
+		// 		},
+		// 		{
+		// 			Text = "Done",
+		// 			function getResult( _event )
+		// 			{
+		// 				return "F";
+		// 			}
+		// 		}
+		// 	],
+		// 	function start( _event )
+		// 	{
+		// 		_event.setBroScreen(this);
+		// 	}
+		// }
+		// this.m.Screens.push(screen);
+
+		local screen = {
+			ID = "C0",
+        	Text = "[img]gfx/ui/events/event_128.png[/img]Pick your heroes talents ",
 			Image = "",
+			Banner = "",
 			List = [],
 			Characters = [],
 			Options = [
-				{
-					Text = "To protect the land from humans",
-					function getResult( _event )
-					{
-						return "F";
-						_event.m.Background = "legend_ranger_background";
+ 				{
+					Text = "Hitpoints",
+					function getResult( _event ) {
+						_event.m.Talent = this.Const.Attributes.Hitpoints;
+						_event.m.PreviousScreen = "C0";
+						return "C1";
 					}
-
+				},
+ 				{
+					Text = "Resolve",
+					function getResult( _event ) {
+						_event.m.Talent = this.Const.Attributes.Bravery;
+						_event.m.PreviousScreen = "C0";
+						return "C1";
+					}
+				},
+ 				{
+					Text = "Melee Attack",
+					function getResult( _event ) {
+						_event.m.Talent = this.Const.Attributes.MeleeSkill;
+						_event.m.PreviousScreen = "C0";
+						return "C1";
+					}
+				}
+ 				{
+					Text = "Melee Defense",
+					function getResult( _event ) {
+						_event.m.Talent = this.Const.Attributes.MeleeDefense;
+						_event.m.PreviousScreen = "C0";
+						return "C1";
+					}
+				},
+ 				{
+					Text = "More ...",
+					function getResult( _event ) {
+						return "C00";
+					}
 				},
 				{
-					Text = "To hunt big game",
-					function getResult( _event )
-					{
+					Text = "Done",
+					function getResult( _event ) {
 						return "F";
-						_event.m.Background = "hunter_background";
 					}
-
-				},
-				{
-					Text = "To hunt small game",
-					function getResult( _event )
-					{
-						return "F";
-						_event.m.Background = "poacher_backgroundd";
-					}
-
 				}
 			],
 			function start( _event )
 			{
+				_event.setBroScreen(this);
 			}
+		}
+		this.m.Screens.push(screen);
 
-		});
-		this.m.Screens.push({
-			ID = "C",
-			Text = "[img]gfx/ui/events/event_25.png[/img]The cruelty of the world was baked into you young. The path of a fighter was chosen for you, but each person finds their own meaning. What did you discover?",
+		local screen = {
+			ID = "C00",
+        	Text = "[img]gfx/ui/events/event_128.png[/img]Pick your heroes talents ",
 			Image = "",
+			Banner = "",
 			List = [],
 			Characters = [],
 			Options = [
-				{
-					Text = "Glory of war",
-					function getResult( _event )
-					{
-						return "F";
-						_event.m.Background = "retired_soldier_background";
+ 				{
+					Text = "Fatigue",
+					function getResult( _event ) {
+						_event.m.Talent = this.Const.Attributes.Fatigue;
+						_event.m.PreviousScreen = "C00";
+						return "C1";
 					}
-
 				},
 				{
-					Text = "Joy among suffering",
-					function getResult( _event )
-					{
-						return "F";
-						_event.m.Background = "raider_background";
+					Text = "Initiative",
+					function getResult( _event ) {
+						_event.m.Talent = this.Const.Attributes.Initiative;
+						_event.m.PreviousScreen = "C00";
+						return "C1";
 					}
-
+				},
+ 				{
+					Text = "Ranged Attack",
+					function getResult( _event ) {
+						_event.m.Talent = this.Const.Attributes.RangedSkill;
+						_event.m.PreviousScreen = "C00";
+						return "C1";
+					}
+				},
+ 				{
+					Text = "Ranged Defense",
+					function getResult( _event ) {
+						_event.m.Talent = this.Const.Attributes.RangedDefense;
+						_event.m.PreviousScreen = "C00";
+						return "C1";
+					}
+				},
+ 				{
+					Text = "More ...",
+					function getResult( _event ) {
+						return "C0";
+					}
 				},
 				{
-					Text = "Strength through adversity",
-					function getResult( _event )
-					{
+					Text = "Done",
+					function getResult( _event ) {
 						return "F";
-						_event.m.Background = "wildman_background";
 					}
-
-				},
-				{
-					Text = "Skill from practice",
-					function getResult( _event )
-					{
-						return "F";
-						_event.m.Background = "swordmaster_background";
-					}
-
 				}
 			],
 			function start( _event )
 			{
+				_event.setBroScreen(this);
 			}
+		}
+		this.m.Screens.push(screen);
 
-		});
-	this.m.Screens.push({
-			ID = "D",
-			Text = "[img]gfx/ui/events/event_25.png[/img]The love of knowledge consumed your youth. Teachers and books pass on thought, but each person finds their own meaning. What did you discover?",
+		local screen = {
+			ID = "C1",
+        	Text = "[img]gfx/ui/events/event_128.png[/img]Pick your heroes talents stars ",
 			Image = "",
+			Banner = "",
 			List = [],
 			Characters = [],
 			Options = [
-				{
-					Text = "Purity of Faith",
-					function getResult( _event )
-					{
-						return "F";
-						_event.m.Background = "monk_background";
+ 				{
+					Text = "1",
+					function getResult( _event ) {
+						_event.m.Dude.m.Talents[_event.m.Talent] = 1;
+						return _event.m.PreviousScreen;
 					}
-
 				},
-				{
-					Text = "Inevitability of Death",
-					function getResult( _event )
-					{
-						return "F";
-						_event.m.Background = "legend_necromancer_background";
+ 				{
+					Text = "2",
+					function getResult( _event ) {
+						_event.m.Dude.m.Talents[_event.m.Talent] = 2;
+						return _event.m.PreviousScreen;
 					}
-
 				},
-				{
-					Text = "The alure of power",
-					function getResult( _event )
-					{
-						return "F";
-						_event.m.Background = "legend_witch_background";
+ 				{
+					Text = "3",
+					function getResult( _event ) {
+						_event.m.Dude.m.Talents[_event.m.Talent] = 3;
+						return _event.m.PreviousScreen;
 					}
-
-				},
-				{
-					Text = "The wisdom of nature",
-					function getResult( _event )
-					{
-						return "F";
-						_event.m.Background = "legend_druid_background";
-					}
-
 				}
 			],
 			function start( _event )
 			{
+				_event.setBroScreen(this);
 			}
+		}
+		this.m.Screens.push(screen);
 
-		});
-		this.m.Screens.push({
-			ID = "E",
-			Text = "[img]gfx/ui/events/event_25.png[/img]Your work became your passion, driving you to produce. The craft may define the tools, but each person finds their own meaning. What did you discover?",
-			Image = "",
-			List = [],
-			Characters = [],
-			Options = [
-				{
-					Text = "The strength of iron",
-					function getResult( _event )
-					{
-						return "F";
-						_event.m.Background = "legend_blacksmith_background";
-					}
+	}
 
-				},
-				{
-					Text = "The beauty of song",
-					function getResult( _event )
-					{
-						return "F";
-						_event.m.Background = "minstrel_background";
-					}
+	function create()
+	{
+		this.m.ID = "event.legend_custom_scenario_intro";
+		this.m.IsSpecial = true;
+		this.createHeroesScreen();
+		this.createTraitsScreen();
+		this.createTalentScreen();
 
-				},
-				{
-					Text = "The pull of coin",
-					function getResult( _event )
-					{
-						return "F";
-						_event.m.Background = "legend_trader_background";
-					}
 
-				},
-				{
-					Text = "The power of a tool",
-					function getResult( _event )
-					{
-						return "F";
-						_event.m.Background = "apprentice_background";
-					}
-
-				}
-			],
-			function start( _event )
-			{
-			}
-
-		});
 		this.m.Screens.push({
 			ID = "F",
-			Text = "[img]gfx/ui/events/event_25.png[/img]Your work became your passion, driving you to produce. The craft may define the tools, but each person finds their own meaning. What did you discover?",
+			Text = "[img]gfx/ui/events/event_25.png[/img] ",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "That is all",
+					Text = "Add Traits",
 					function getResult( _event )
 					{
-						local roster = this.World.getTemporaryRoster();
-						_event.m.Dude = roster.create("scripts/entity/tactical/player");
-						_event.m.Dude.setStartValuesEx([_event.m.Background]);
-						this.World.getPlayerRoster().add(_event.m.Dude);
-						//item
-						_event.m.Dude.getSkills().add(this.new("scripts/skills/traits/hate_greenskins_trait"));
-						local necklace = this.new("scripts/items/accessory/special/slayer_necklace_item");
-						necklace.m.Name = _event.m.Dude.getNameOnly() + "\'s Necklace";
-						_event.m.Dude.getItems().equip(necklace);
+						return "B0";
+					}
+				},
+				{
+					Text = "Set Talent Stars",
+					function getResult( _event )
+					{
+						return "C0";
+					}
+				},
+				{
+					Text = "Add another companion",
+					function getResult( _event )
+					{
+						if (_event.m.Talent == -1) _event.m.Dude.fillTalentValues(3);
 
-						this.World.getTemporaryRoster().clear();
-						_event.m.Dude.onHired();
-						return 0;
+						_event.m.Dude.fillAttributeLevelUpValues(this.Const.XP.MaxLevelWithPerkpoints - 1);
+						_event.m.Dude = null
+						_event.m.Traits = [];
+						return "A";
+					}
+				}
+				{
+					Text = "Finished",
+					function getResult( _event )
+					{
+						if (_event.m.Talent == -1) _event.m.Dude.fillTalentValues(3);
 
-						foreach( bro in bros )
-						{
-							local val = this.World.State.addNewID(bro);
-							bro.m.CompanyID = val;
-						}
+						_event.m.Dude.fillAttributeLevelUpValues(this.Const.XP.MaxLevelWithPerkpoints - 1);
+						_event.m.Dude = null
+						_event.m.Traits = [];
+
+						//_event.m.StartBro.removeActiveRelationship();
+						 this.World.getPlayerRoster().remove(_event.m.StartBro)
+
+						 local bros = this.World.getPlayerRoster().getAll();
+
 
 						if (this.Const.LegendMod.Configs.RelationshipsEnabled())
 						{
-						local avgAlignment = 0;
-							foreach (bro in this.World.getPlayerRoster().getAll())
+							local avgAlignment = 0;
+							foreach (bro in bros)
 							{
 								if (bro.getAlignment() <= this.Const.LegendMod.Alignment.NeutralMin)
 								{
@@ -360,39 +529,17 @@ this.legend_custom_scenario_intro <- this.inherit("scripts/events/event", {
 									avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMax);
 								}
 							}
-						avgAlignment *= (10 / this.World.getPlayerRoster().getSize());
-						this.World.Assets.addMoralReputation(avgAlignment);
+							avgAlignment *= (10 / this.World.getPlayerRoster().getSize());
+							this.World.Assets.addMoralReputation(avgAlignment);
 						}
-					}
-				},
-				{
-					Text = "I have another companion",
-					function getResult( _event )
-					{
-					local roster = this.World.getTemporaryRoster();
-					_event.m.Dude = roster.create("scripts/entity/tactical/player");
-					_event.m.Dude.setStartValuesEx([_event.m.Background]);
-					this.World.getPlayerRoster().add(_event.m.Dude);
-					//item
-					_event.m.Dude.getSkills().add(this.new("scripts/skills/traits/hate_greenskins_trait"));
-					local necklace = this.new("scripts/items/accessory/special/slayer_necklace_item");
-					necklace.m.Name = _event.m.Dude.getNameOnly() + "\'s Necklace";
-					_event.m.Dude.getItems().equip(necklace);
 
-					this.World.getTemporaryRoster().clear();
-					_event.m.Dude.onHired();
-					_event.m.PartySize += 1;
-					_event.m.Dude = null;
-					return "A";
+						return 0;
 					}
-
 				}
 			],
 			function start( _event )
 			{
-
-
-
+				_event.setBroScreen(this);
 			}
 
 		});
@@ -405,7 +552,8 @@ this.legend_custom_scenario_intro <- this.inherit("scripts/events/event", {
 
 	function onPrepare()
 	{
-		this.m.Title = "The Outset";
+		this.m.Title = this.World.Assets.getName();
+		this.m.StartBro = this.World.getPlayerRoster().getAll()[0];
 	}
 
 	function onPrepareVariables( _vars )

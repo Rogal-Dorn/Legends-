@@ -2080,14 +2080,13 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.fillAttributeLevelUpValues(this.Const.XP.MaxLevelWithPerkpoints - 1);
 	}
 
-	function setStartValuesEx( _backgrounds, _addTraits = true, _gender = -1 )
+	function setStartValuesEx( _backgrounds, _addTraits = true, _gender = -1, _addEquipment = true )
 	{
 		if (this.isSomethingToSee() && this.World.getTime().Days >= 7)
 		{
 			_backgrounds = this.Const.CharacterPiracyBackgrounds;
 		}
 
-		local bground = "scripts/skills/backgrounds/" + _backgrounds[this.Math.rand(0, _backgrounds.len() - 1)];
 		local background = this.new("scripts/skills/backgrounds/" + _backgrounds[this.Math.rand(0, _backgrounds.len() - 1)]);
 		background.setGender(_gender);
 		this.m.Skills.add(background);
@@ -2181,7 +2180,10 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			}
 		}
 
-		background.addEquipment();
+		if (_addEquipment)
+		{
+			background.addEquipment();
+		}
 
 		if (this.getTags().has("PlayerZombie"))
 		{
@@ -2295,6 +2297,10 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		}
 
 		local arrIndex = _actor.getCompanyID();
+		if (arrIndex == -1)
+		{
+			return;
+		}
 		local amtType = typeof _amount;
 		if (_set || (amtType != "integer" && amtType != "float"))
 		{
@@ -2319,6 +2325,10 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	//It should only ever be null if the relationship was previously made null by removing
 	function hasActiveRelationshipWith( _actor )
 	{
+		if (_actor.getCompanyID() == -1)
+		{
+			return false;
+		}
 		if ( this.m.ActiveRelationships[_actor.getCompanyID()] == null )
 		{
 			return false;
@@ -2338,6 +2348,11 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 		local newRelationship = {};
 		newRelationship.RelationNum <- 0;
+
+		if (_actor.getCompanyID() == -1)
+		{
+			return;
+		}
 
 		this.m.ActiveRelationships[_actor.getCompanyID()] = newRelationship;
 
