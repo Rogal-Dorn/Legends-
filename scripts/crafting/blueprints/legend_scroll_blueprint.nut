@@ -7,6 +7,7 @@ this.legend_scroll_blueprint <- this.inherit("scripts/crafting/blueprint", {
 		this.m.Type = this.Const.Items.ItemType.Usable;
 		this.m.PreviewCraftable = this.new("scripts/items/misc/legend_scroll_item");
 		this.m.Cost = 2000;
+		// this.m.Cost = 10;
 		local ingredients = [
 			{
 				Script = "scripts/items/misc/legend_ancient_scroll_item",
@@ -55,6 +56,8 @@ this.legend_scroll_blueprint <- this.inherit("scripts/crafting/blueprint", {
 			case 5:
 				item.m.Description = "After a bit of labor the scroll seems to just be gibberish, nothing meaningful could be translated";
 				item.m.Name = "Scroll of .Nut'in"
+				item.m.Value = 0;
+				break;
 			
 		}
 
