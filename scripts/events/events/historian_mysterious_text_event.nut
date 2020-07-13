@@ -213,7 +213,7 @@ this.historian_mysterious_text_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getLevel() >= 3 && bro.getBackground().getID() == "background.historian")
+			if (bro.getLevel() >= 3 && (bro.getBackground().getID() == "background.historian" || bro.getSkills().hasSkill("perk.legend_scholar")))
 			{
 				candidates_historian.push(bro);
 			}

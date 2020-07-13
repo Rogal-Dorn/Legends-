@@ -233,6 +233,10 @@ this.monk_vs_monk_event <- this.inherit("scripts/events/event", {
 			{
 				monk_candidates.push(bro);
 			}
+			else if (bro.getSkills().hasSkill("perk.legend_scholar"))
+			{
+				monk_candidates.push(bro);
+			}
 			else
 			{
 				other_candidates.push(bro);

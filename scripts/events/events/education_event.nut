@@ -161,7 +161,7 @@ this.education_event <- this.inherit("scripts/events/event", {
 			{
 				dumb_candidates.push(bro);
 			}
-			else if ((bro.getBackground().getID() == "background.monk" || bro.getBackground().getID() == "background.historian" || bro.getBackground().getID() == "background.legend_nun" || bro.getBackground().getID() == "background.legend_inventor"  ||  bro.getBackground().getID() == "background.legend_witch" || bro.getBackground().getID() == "background.legend_commander_witch" ) && !bro.getSkills().hasSkill("trait.hesitant"))
+			else if ((bro.getBackground().getID() == "background.monk" || bro.getBackground().getID() == "background.historian" || bro.getBackground().getID() == "background.legend_nun" || bro.getBackground().getID() == "background.legend_inventor"  ||  bro.getBackground().getID() == "background.legend_witch" || bro.getBackground().getID() == "background.legend_commander_witch" ) && !bro.getSkills().hasSkill("trait.hesitant") || bro.getSkills().hasSkill("perk.legend_scholar"))
 			{
 				scholar_candidates.push(bro);
 			}
