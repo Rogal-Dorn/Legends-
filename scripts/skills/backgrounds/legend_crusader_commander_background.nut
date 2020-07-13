@@ -94,7 +94,7 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 			],
 			[
 				this.Const.Perks.PerkDefs.Brawny,
-				this.Const.Perks.PerkDefs.Rotation,	
+				this.Const.Perks.PerkDefs.Rotation,
 				this.Const.Perks.PerkDefs.Taunt,
 				this.Const.Perks.PerkDefs.Feint,
 				this.Const.Perks.PerkDefs.Relentless,

@@ -3,8 +3,8 @@ this.legends_custom_scenario <- this.inherit("scripts/scenarios/world/starting_s
 	function create()
 	{
 		this.m.ID = "scenario.legends_custom_party";
-		this.m.Name = "Custom Build";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_80.png[/img][/p]Pick your adventure";
+		this.m.Name = "Build your own ";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_80.png[/img][/p]Build and customize your company roster (Your very own pick and choose adventure!)";
 		this.m.Difficulty = 3;
 		this.m.Order = 99;
 	}
@@ -17,28 +17,9 @@ this.legends_custom_scenario <- this.inherit("scripts/scenarios/world/starting_s
 	function onSpawnAssets()
 	{
 		local roster = this.World.getPlayerRoster();
-
-		for( local i = 0; i < 1; i = ++i )
-		{
-			local bro;
-			bro = roster.create("scripts/entity/tactical/player");
-			bro.m.HireTime = this.Time.getVirtualTimeF();
-			bro.setStartValuesEx(this.Const.CharacterBackgroundsRandom);
-		}
-
-		local bros = roster.getAll();
-		bros[0].m.PerkPoints = 3;
-		bros[0].m.LevelUps = 3;
-		bros[0].m.Level = 4;
-		bros[0].setVeteranPerks(2);
-		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
-		bros[0].getTags().set("IsPlayerCharacter", true);
-
-		foreach( bro in bros )
-		{
-			local val = this.World.State.addNewID(bro);
-			bro.m.CompanyID = val;
-		}
+		local bro = roster.create("scripts/entity/tactical/player");
+		bro.m.HireTime = this.Time.getVirtualTimeF();
+		bro.setStartValuesEx(this.Const.CharacterBackgroundsRandom);
 
 		this.World.Assets.m.BusinessReputation = 100;
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/smoked_ham_item"));
