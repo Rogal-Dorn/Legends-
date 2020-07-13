@@ -297,7 +297,9 @@ gt.Const.CharacterMagicBackgrounds <- [
 	"legend_necrosavant_background",
 	"legend_witch_background",
 	"legend_conjurer_background",
-	"legend_warlock_background"
+	"legend_warlock_background",
+	"legend_philosopher_background",
+	"legend_astrologist_background"
 ];
 gt.Const.CharacterMagicBackgrounds <- [
 	"legend_ancient_summoner_background",
@@ -311,7 +313,9 @@ gt.Const.CharacterMagicBackgrounds <- [
 	"legend_runesmith_background",
 	"legend_spiritualist_background",
 	"legend_transmuter_background",
-	"legend_warlock_background"
+	"legend_warlock_background",
+	"legend_philosopher_background",
+	"legend_astrologist_background"
 ];
 gt.Const.CharacterBackgroundsRandom <- [
 	"adventurous_noble_background",
@@ -413,7 +417,9 @@ gt.Const.CharacterBackgroundsRandom <- [
 	"legend_berserker_background",
 	"legend_necrosavant_background",
 	"legend_noble_event_background",
-	"legend_conjurer_background"
+	"legend_conjurer_background",
+	"legend_philosopher_background",
+	"legend_astrologist_background"
 ];
 gt.Const.HorseBackgrounds <- [
 	"legend_horse_destrier",

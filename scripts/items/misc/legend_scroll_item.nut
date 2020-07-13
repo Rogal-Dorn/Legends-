@@ -1,6 +1,6 @@
 this.legend_scroll_item <- this.inherit("scripts/items/item", {
 	m = {
-		Selection = 0;
+		Selection = 0,
 	},
 	function create()
 	{
@@ -112,10 +112,10 @@ this.legend_scroll_item <- this.inherit("scripts/items/item", {
 				case 2:
 					if (_actor.getSkills().hasSkill("effects.trained"))
 					{
-						_actor.getSkills().removeByID("effects.trained"));
+						_actor.getSkills().removeByID("effects.trained");
 					}
 					local effect = this.new("scripts/skills/effects_world/new_trained_effect");
-					effect.m.Description = "flavor text (: +50% exp for 3 battles"; //todo flavor text
+					effect.m.Description = "flavor text :) +50% exp for 3 battles"; //todo flavor text
 					effect.m.Duration = 3;
 					effect.m.XPGainMult = 1.5;
 					//effect.m.Icon = "skills/experience_scroll_effect.png"; //todo icon
