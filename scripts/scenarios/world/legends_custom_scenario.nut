@@ -11,8 +11,9 @@ this.legends_custom_scenario <- this.inherit("scripts/scenarios/world/starting_s
 
 	function isValid()
 	{
-		return true;
+		return this.Const.LegendMod.DebugMode;
 	}
+
 
 	function onSpawnAssets()
 	{
