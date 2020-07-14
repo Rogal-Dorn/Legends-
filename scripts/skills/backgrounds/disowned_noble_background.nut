@@ -57,7 +57,9 @@ this.disowned_noble_background <- this.inherit("scripts/skills/backgrounds/chara
 			],
 			Enemy = [this.Const.Perks.NoblesTree],
 			Class = [],
-			Magic = []
+			Magic = [
+				//this.Const.Perks.AstrologyMagicTree
+			]
 		}
 	}
 
