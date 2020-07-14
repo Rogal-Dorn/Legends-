@@ -61,7 +61,9 @@ this.female_disowned_noble_background <- this.inherit("scripts/skills/background
 				this.Const.Perks.ArchersTree
 				],
 			Class = [],
-			Magic = []
+			Magic = [
+				//this.Const.Perks.AstrologyMagicTree
+			]
 		}
 	}
 
