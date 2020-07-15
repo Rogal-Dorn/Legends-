@@ -3566,12 +3566,6 @@ New perk group - Astrology
 *	Distant Visions: A new dawn, a new day, a new vision. Grants the character vision of distant events. Chance on every new day to view a town's buildings (if previously unvisited), and its current events
 *	Scry (Trance): Gives your company a birds eye view, provides a 12 tile sight-range at the beginning of every turn. Caster can't move while active 
 
-New perk group - Alchemy 
-*  Albedo - A concoction of secret materials that allows the user to restore up to 25 armor to a target
-*  Nigredo - An alchemical mixture of acidic vapours, encased in flasks that can be thrown at the enemy to disolves their armor
-* A powerful cocktail of ingredients provides a trance like state, granting the banner effect, and drums of war effects to everyone in the company at the end of the user's turn
-
-
 When magic is disabled:
 * Normal backgrounds no longer have a chance of having magic (only happened very rarely)
 * Magic classes are not recruitable at all 
@@ -3585,18 +3579,20 @@ When magic is enabled:
 * Warlock scenario recruitable ancient summoners, weirdemancers are more common and necrosavants can be recruited 
 * Berserker scenario recruitable berserkers are more common
 * Ranger scenario master archers are more common, can recruit rangers 
+* Sisterhood scenario, enchanters and entrancers are more common 
 * Favoured enemy skills are more common in beast hunter scenario 
 * Random favoured enemy skills are only twice as rare 
 * Random class skills are only twice as rare 
 
 
 **Changes:** 
-Inventors are now called Engineers, they gain philosophy and alchemy perk groups 
+Default start options changes. Magic, skip camp intro, all recipes, relationships and economy are all off by default now. 
+Inventors gain philosophy group
 Divination perk group no longer exists, perks merged into illusion perk group 
 Diviners use astrology per group 
 Historians gain philosophy and captain skills  
 Larger settlements have slightly bigger hiring pools 
-Recruitable druids can no longer transform 
+Recruitable druids can no longer transform
 
 **Fixes**
 Rolling a thief background on peasant militia no longer freezes scenario start

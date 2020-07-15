@@ -4,7 +4,7 @@ this.legend_inventor_background <- this.inherit("scripts/skills/backgrounds/char
 	{
 		this.character_background.create();
 		this.m.ID = "background.legend_inventor";
-		this.m.Name = "Engineer";
+		this.m.Name = "Inventor";
 		this.m.Icon = "ui/backgrounds/legend_inventor.png";
 		this.m.BackgroundDescription = "Inventors are trenchant problem solvers, fueled by a burning passion for knowledge.";
 		this.m.GoodEnding = null;
@@ -65,8 +65,7 @@ this.legend_inventor_background <- this.inherit("scripts/skills/backgrounds/char
 			Class = [this.Const.Perks.RepairClassTree],
 			Magic = [
 				this.Const.Perks.PhilosophyMagicTree,
-				this.Const.Perks.InventorMagicTree,
-				this.Const.Perks.AlchemyMagicTree
+				this.Const.Perks.InventorMagicTree
 			]
 		}
 	}
