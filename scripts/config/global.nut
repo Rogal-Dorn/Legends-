@@ -645,6 +645,7 @@ gt.Const.EntityIcon <- [
 	"bear_orientation",
 	"catapult_01_orientation",
 	"horse_orientation",
-	"gladiator_orientation"
+	"gladiator_orientation",
+	"poacher_orientation"
 ];
 

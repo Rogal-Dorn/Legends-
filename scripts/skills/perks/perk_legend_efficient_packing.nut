@@ -17,12 +17,20 @@ this.perk_legend_efficient_packing <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
-		this.Stash.resize(this.Stash.getCapacity() + this.m.StashSize)
+		if (this.World.State.getPlayer() == null)
+		{
+			return;
+		}
+		this.World.State.getPlayer().calculateStashModifier();
 	}
-	
+
 	function onRemoved()
 	{
-		this.Stash.resize(this.Stash.getCapacity() - this.m.StashSize)
+		if (this.World.State.getPlayer() == null)
+		{
+			return;
+		}
+		this.World.State.getPlayer().calculateStashModifier();
 	}
 
 	function getModifier()

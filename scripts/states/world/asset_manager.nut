@@ -138,16 +138,14 @@ this.asset_manager <- {
 	function getMaxAmmo()
 	{
 		local ammo = this.Const.LegendMod.MaxResources[this.m.EconomicDifficulty].Ammo;
-		foreach( bro in this.World.getPlayerRoster().getAll() )
-		{
-			ammo += bro.getAmmoModifier();
-		}
+		ammo += this.World.State.getPlayer().getAmmoModifier();
 		return ammo;
 	}
 
 	function getMaxArmorParts()
 	{
 		local parts = this.Const.LegendMod.MaxResources[this.m.EconomicDifficulty].ArmorParts;
+		parts += this.World.State.getPlayer().getArmorPartsModifier();
 		foreach( bro in this.World.getPlayerRoster().getAll() )
 		{
 			parts += bro.getArmorPartsModifier();
@@ -158,6 +156,7 @@ this.asset_manager <- {
 	function getMaxMedicine()
 	{
 		local meds = this.Const.LegendMod.MaxResources[this.m.EconomicDifficulty].Medicine;
+		meds += this.World.State.getPlayer().getMedModifier();
 		foreach( bro in this.World.getPlayerRoster().getAll() )
 		{
 			meds += bro.getMedsModifier();
@@ -911,20 +910,6 @@ this.asset_manager <- {
 			this.consumeFood();
 			local roster = this.World.getPlayerRoster().getAll();
 			local campMultiplier = this.isCamping() ? 2.0 : 1.0;
-
-			local stashSize = this.Const.LegendMod.MaxResources[this.m.EconomicDifficulty].Stash
-
-			foreach( bro in roster )
-			{
-				stashSize += bro.getStashModifier()
-
-			}
-
-
-			if (stashSize != this.m.Stash.getCapacity())
-			{
-				this.m.Stash.resize(stashSize);
-			}
 
 			foreach( bro in roster )
 			 {

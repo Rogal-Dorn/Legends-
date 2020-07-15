@@ -89,6 +89,7 @@ this.send_supplies_action <- this.inherit("scripts/factions/faction_action", {
 			}
 		}
 
+
 		party.getLoot().Money = this.Math.floor(this.Math.rand(0, 100) * r);
 		local r = this.Math.rand(1, 3);
 
@@ -112,9 +113,6 @@ this.send_supplies_action <- this.inherit("scripts/factions/faction_action", {
 			party.setResources(resources);
 
 			local r = this.Math.rand(3,6);
-			for( local j = 0; j < r; j = ++j )
-			{
-			local r = this.Math.rand(1,3);
 			for( local j = 0; j < r; j = ++j )
 			{
 				local items = [

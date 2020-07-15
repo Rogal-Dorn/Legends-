@@ -1264,7 +1264,6 @@ this.skill <- {
 				local loot = this.new("scripts/items/trade/legend_raw_wood_item");
 				loot.drop(_targetEntity.getTile());
 			}
-			
 			if (this.m.SoundOnHit.len() != 0)
 			{
 				this.Time.scheduleEvent(this.TimeUnit.Virtual, this.m.SoundOnHitDelay, this.onPlayHitSound.bindenv(this), {

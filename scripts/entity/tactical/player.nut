@@ -146,43 +146,19 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 	function getDailyCost()
 	{
-		local wageMult = this.m.CurrentProperties.DailyWageMult;
-		local paymasterCount = 0;
-		local mod = 0.0;
-
-		foreach( bro in this.World.getPlayerRoster().getAll() )
-		{
-			if (bro.getSkills().hasSkill("perk.legend_barter_paymaster") && paymasterCount < 1)
-			{
-				paymasterCount++;
-				mod = bro.getBarterModifier();
-				wageMult -= mod;
-
-				}
-			}
+		local wageMult = this.m.CurrentProperties.DailyWageMult - this.World.State.getPlayer().getWageModifier();
 		//local costAdj = this.Math.max(0, this.m.CurrentProperties.DailyWageMult * barterMult);
 		return this.Math.max(0, this.m.CurrentProperties.DailyWage * wageMult);
 	}
 
 	function getDailyFood()
 	{
-		local foodMult = 0;
-
-		foreach( bro in this.World.getPlayerRoster().getAll() )
-		{
-			if (bro.getSkills().hasSkill("perk.legend_quartermaster"))
-			{
-				foodMult = 1;
-			}
-		}
-
 		local food = this.Math.maxf(0.0, this.m.CurrentProperties.DailyFood);
-
 		if (this.isInReserves() && !this.m.Skills.hasSkill("perk.legend_peaceful"))
 		{
 			food *= 2;
 		}
-		food -= foodMult;
+		food -= this.World.State.getPlayer().getFoodModifier();
 		return food;
 	}
 
@@ -2104,14 +2080,13 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.fillAttributeLevelUpValues(this.Const.XP.MaxLevelWithPerkpoints - 1);
 	}
 
-	function setStartValuesEx( _backgrounds, _addTraits = true, _gender = -1 )
+	function setStartValuesEx( _backgrounds, _addTraits = true, _gender = -1, _addEquipment = true )
 	{
 		if (this.isSomethingToSee() && this.World.getTime().Days >= 7)
 		{
 			_backgrounds = this.Const.CharacterPiracyBackgrounds;
 		}
 
-		local bground = "scripts/skills/backgrounds/" + _backgrounds[this.Math.rand(0, _backgrounds.len() - 1)];
 		local background = this.new("scripts/skills/backgrounds/" + _backgrounds[this.Math.rand(0, _backgrounds.len() - 1)]);
 		background.setGender(_gender);
 		this.m.Skills.add(background);
@@ -2205,7 +2180,10 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			}
 		}
 
-		background.addEquipment();
+		if (_addEquipment)
+		{
+			background.addEquipment();
+		}
 
 		if (this.getTags().has("PlayerZombie"))
 		{
@@ -2319,6 +2297,10 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		}
 
 		local arrIndex = _actor.getCompanyID();
+		if (arrIndex == -1)
+		{
+			return;
+		}
 		local amtType = typeof _amount;
 		if (_set || (amtType != "integer" && amtType != "float"))
 		{
@@ -2343,6 +2325,10 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	//It should only ever be null if the relationship was previously made null by removing
 	function hasActiveRelationshipWith( _actor )
 	{
+		if (_actor.getCompanyID() == -1)
+		{
+			return false;
+		}
 		if ( this.m.ActiveRelationships[_actor.getCompanyID()] == null )
 		{
 			return false;
@@ -2362,6 +2348,11 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 		local newRelationship = {};
 		newRelationship.RelationNum <- 0;
+
+		if (_actor.getCompanyID() == -1)
+		{
+			return;
+		}
 
 		this.m.ActiveRelationships[_actor.getCompanyID()] = newRelationship;
 
@@ -2878,7 +2869,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 			if (skill != null)
 			{
-				mod = mod + skill.getModifier();
+				mod += skill.getModifier();
 			}
 		}
 

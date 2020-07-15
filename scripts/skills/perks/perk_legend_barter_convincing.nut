@@ -20,4 +20,24 @@ this.perk_legend_barter_convincing <- this.inherit("scripts/skills/skill", {
 		return this.m.Amount;
 	}
 
+	function onAdded()
+	{
+					if (this.World.State.getPlayer() == null)
+			{
+				return;
+			}
+
+		this.World.State.getPlayer().calculateBarterMult();
+	}
+
+	function onRemoved()
+	{
+					if (this.World.State.getPlayer() == null)
+			{
+				return;
+			}
+
+		this.World.State.getPlayer().calculateBarterMult();
+	}
+
 });

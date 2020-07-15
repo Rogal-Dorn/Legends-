@@ -106,17 +106,9 @@ this.legend_barbarian_prisoner_contract <- this.inherit("scripts/contracts/contr
 		this.m.Destination = this.WeakTableRef(candidates[this.Math.rand(0, candidates.len() - 1)]);
 		local distance = this.getDistanceOnRoads(this.m.Origin.getTile(), this.m.Destination.getTile());
 		local days = this.getDaysRequiredToTravel(distance, this.Const.World.MovementSettings.Speed * 0.6, true);
-		local barterMult = 0.0;
 
-		foreach( bro in this.World.getPlayerRoster().getAll() )
-		{
-			barterMult = barterMult + bro.getBarterModifier();
-		}
-		if (this.World.Assets.getOrigin().getID() == "scenario.trader")
-		{
-		barterMult = barterMult * 1.1;
-		}
-		local modrate  =  barterMult;
+		local modrate = this.World.State.getPlayer().getBarterMult();
+
 		this.m.DifficultyMult = this.Math.rand(145, 175) * 0.01;
 		this.m.Payment.Pool = this.Math.max(100, 3 * distance * (4 + modrate) * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult());
 		this.m.Payment.Completion = 0.75;
@@ -260,7 +252,7 @@ this.legend_barbarian_prisoner_contract <- this.inherit("scripts/contracts/contr
 				local r = this.Math.rand(1, 100);
 
 				if (this.Contract.m.BarbRetal == null || this.Contract.m.BarbRetal.isNull() || !this.Contract.m.BarbRetal.isAlive())
-				{				
+				{
 					if (!this.Flags.get("Intercepted") && r <= 60)
 					{
 						this.Contract.setScreen("TheBattle");
@@ -323,7 +315,7 @@ this.legend_barbarian_prisoner_contract <- this.inherit("scripts/contracts/contr
 				{
 					this.Contract.m.BarbCamp.getSprite("selection").Visible = true;
 					this.Contract.m.BarbCamp.setDiscovered(true);
-					this.World.uncoverFogOfWar(this.Contract.m.BarbCamp.getTile().Pos, 500.0);					
+					this.World.uncoverFogOfWar(this.Contract.m.BarbCamp.getTile().Pos, 500.0);
 				}
 
 				this.Contract.m.BulletpointsObjectives = [
@@ -496,7 +488,7 @@ this.legend_barbarian_prisoner_contract <- this.inherit("scripts/contracts/contr
 		this.m.Screens.push({
 			ID = "Failure1",
 			Title = "Retreat...",
-			Text = "[img]gfx/ui/events/event_60.png[/img] {The prison cart is opened. there is no sight of the prisoner anywhere. You failed.}",	
+			Text = "[img]gfx/ui/events/event_60.png[/img] {The prison cart is opened. there is no sight of the prisoner anywhere. You failed.}",
 			Image = "",
 			Characters = [],
 			List = [],
@@ -606,7 +598,7 @@ this.legend_barbarian_prisoner_contract <- this.inherit("scripts/contracts/contr
 						]);
 						this.Contract.m.Dude.setTitle("the Beast");
 						this.Contract.m.Dude.getBackground().m.RawDescription = "%name% was \'saved\' by you from execution. You decided that this killing machine is a worthy acquisition, ignoring the fact it is also the most wanted criminal in the north.";
-						this.Contract.m.Dude.getBackground().buildDescription(true);						
+						this.Contract.m.Dude.getBackground().buildDescription(true);
 					}
 					else
 					{
@@ -615,7 +607,7 @@ this.legend_barbarian_prisoner_contract <- this.inherit("scripts/contracts/contr
 						]);
 						this.Contract.m.Dude.setTitle("the Barbarian");
 						this.Contract.m.Dude.getBackground().m.RawDescription = "%name% was \'saved\' by you from a death sentence. Recruiting this savage barbarian has put you in bad terms with the nobles of the north.";
-						this.Contract.m.Dude.getBackground().buildDescription(true);					
+						this.Contract.m.Dude.getBackground().buildDescription(true);
 					}
 				}
 				else
@@ -625,7 +617,7 @@ this.legend_barbarian_prisoner_contract <- this.inherit("scripts/contracts/contr
 					]);
 					this.Contract.m.Dude.setTitle("the Barbarian");
 					this.Contract.m.Dude.getBackground().m.RawDescription = "%name% was \'saved\' by you from a death sentence. Recruiting this savage barbarian has put you in bad terms with the nobles of the north.";
-					this.Contract.m.Dude.getBackground().buildDescription(true);					
+					this.Contract.m.Dude.getBackground().buildDescription(true);
 				}
 
 
