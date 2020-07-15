@@ -343,10 +343,10 @@ gt.Const.Perks.AssassinMagicTree <- {
 	]
 };
 
-gt.Const.Perks.AstrologyMagicTree <- {
-	ID = "AstrologyMagicTree",
+gt.Const.Perks.PremonitionMagicTree <- {
+	ID = "PremonitionMagicTree",
 	Descriptions = [
-		"astrology"
+		"premonition"
 	],
 	Tree = [
 		[],
@@ -384,8 +384,10 @@ gt.Const.Perks.AlchemyMagicTree <- {
 		[],
 		[],
 		[gt.Const.Perks.PerkDefs.LegendCitrinitas],
-		[gt.Const.Perks.PerkDefs.LegendAlbedo,
-		gt.Const.Perks.PerkDefs.LegendNigredo],
+		[
+		gt.Const.Perks.PerkDefs.LegendAlbedo,
+		gt.Const.Perks.PerkDefs.LegendNigredo
+		],
 		[]
 	]
 }
@@ -412,8 +414,8 @@ gt.Const.Perks.MagicTrees <- {
 		gt.Const.Perks.TransmutationMagicTree,
 		gt.Const.Perks.EvocationMagicTree,
 		gt.Const.Perks.AssassinMagicTree,
-		gt.Const.Perks.AstrologyMagicTree,
-		//gt.Cosnt.Perks.AlchemyMagicTree
+		gt.Const.Perks.PremonitionMagicTree,
+		//gt.Const.Perks.AlchemyMagicTree
 		gt.Const.Perks.PhilosophyMagicTree,
 		
 	],

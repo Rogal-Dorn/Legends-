@@ -62,7 +62,8 @@ this.adventurous_noble_background <- this.inherit("scripts/skills/backgrounds/ch
 			Enemy = [],
 			Class = [],
 			Magic = [
-				//this.Const.Perks.AstrologyMagicTree
+				//this.Const.Perks.PremonitionMagicTree
+				this.Const.Perks.PhilosophyMagicTree
 			]
 		}
 	}
