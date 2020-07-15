@@ -34,10 +34,6 @@ this.hunters_cabin_location <- this.inherit("scripts/entity/world/attached_locat
 
 		if(this.Const.LegendMod.Configs.LegendMagicEnabled())
 		{
-			
-		}
-		if(this.Const.LegendMod.Configs.LegendMagicEnabled()
-		{
 			local r;
 
 			if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_rangers")

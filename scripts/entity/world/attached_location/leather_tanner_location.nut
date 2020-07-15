@@ -24,11 +24,11 @@ this.leather_tanner_location <- this.inherit("scripts/entity/world/attached_loca
 		_list.push("butcher_background");
 		_list.push("butcher_background");
 
-		if(this.Const.LegendMod.Configs.LegendMagicEnabled()
+		if(this.Const.LegendMod.Configs.LegendMagicEnabled())
 		{
 			local r;
 			if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_seer")
-			{	
+			{
 			r = this.Math.rand(0, 25);
 				if (r == 1)
 				{
