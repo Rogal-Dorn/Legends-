@@ -80,9 +80,31 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			Defense = 2,
 			Traits = 8,
 			Enemy = 1,
-			EnemyChance = 0.1,
+			EnemyChance = 0.01,
 			Class = 1,
-			ClassChance = 0.10,
+			ClassChance = 0.01,
+			Magic = 1,
+			MagicChance = 0
+		},
+		PerkTreeDynamicMinsMagic = {
+			Weapon = 8,
+			Defense = 2,
+			Traits = 8,
+			Enemy = 1,
+			EnemyChance = 0.01,
+			Class = 1,
+			ClassChance = 0.05,
+			Magic = 1,
+			MagicChance = 0.002
+		},
+		PerkTreeDynamicMinsBeast = {
+			Weapon = 8,
+			Defense = 2,
+			Traits = 8,
+			Enemy = 1,
+			EnemyChance = 0.05,
+			Class = 1,
+			ClassChance = 0.05,
 			Magic = 1,
 			MagicChance = 0.002
 		},
@@ -886,9 +908,21 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 
 		if (this.m.CustomPerkTree == null)
 		{
-			if (this.World.Assets.isLegendPerkTrees())
+			if (this.World.Assets.isLegendPerkTrees() && !this.Const.LegendMod.Configs.LegendMagicEnabled() && !this.World.Assets.getOrigin().getID() == "scenario.legends_seer"  && !this.World.Assets.getOrigin().getID() == "scenario.beast_hunters")
 			{
 				local result  = this.Const.Perks.GetDynamicPerkTree(this.m.PerkTreeDynamicMins, this.m.PerkTreeDynamic);
+				this.m.CustomPerkTree = result.Tree
+				a = result.Attributes;
+			}
+			else if (this.World.Assets.isLegendPerkTrees() && this.Const.LegendMod.Configs.LegendMagicEnabled() && this.World.Assets.getOrigin().getID() == "scenario.legends_seer")
+			{
+				local result  = this.Const.Perks.GetDynamicPerkTree(this.m.PerkTreeDynamicMinsMagic, this.m.PerkTreeDynamic);
+				this.m.CustomPerkTree = result.Tree
+				a = result.Attributes;
+			}
+			else if (this.World.Assets.isLegendPerkTrees() && this.World.Assets.getOrigin().getID() == "scenario.beast_hunters")
+			{
+				local result  = this.Const.Perks.GetDynamicPerkTree(this.m.PerkTreeDynamicMinsBeast, this.m.PerkTreeDynamic);
 				this.m.CustomPerkTree = result.Tree
 				a = result.Attributes;
 			}

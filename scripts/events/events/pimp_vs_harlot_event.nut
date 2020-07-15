@@ -321,6 +321,10 @@ this.pimp_vs_harlot_event <- this.inherit("scripts/events/event", {
 			{
 				candidate_monk.push(bro);
 			}
+			else if (bro.getSkills().hasSkill("perk.legend_scholar"))
+			{
+				candidate_monk.push(bro);
+			}
 			else if (bro.getBackground().getID() == "background.tailor" || bro.getBackground().getID() == "background.female_tailor")
 			{
 				candidate_tailor.push(bro);

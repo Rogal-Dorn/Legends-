@@ -2957,7 +2957,79 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/storm_circle.png",
 		IconDisabled = "ui/perks/storm_circle_bw.png",
 		Const = "LegendCallLightning"
-	}
+	},
+	{
+		ID = "perk.legend_scry_trance",
+		Script = "scripts/skills/perks/perk_legend_scry_trance",
+		Name = this.Const.Strings.PerkName.LegendScryTrance,
+		Tooltip = this.Const.Strings.PerkDescription.LegendScryTrance,
+		Icon = "ui/perks/scry_trance_circle.png",
+		IconDisabled = "ui/perks/scry_trance_circle_bw.png",
+		Const = "LegendScryTrance"
+	},
+	{
+		ID = "perk.legend_read_omens_trance",
+		Script = "scripts/skills/perks/perk_legend_read_omens_trance",
+		Name = this.Const.Strings.PerkName.LegendReadOmensTrance,
+		Tooltip = this.Const.Strings.PerkDescription.LegendReadOmensTrance,
+		Icon = "ui/perks/omens_circle.png",
+		IconDisabled = "ui/perks/omens_circle_bw.png",
+		Const = "LegendReadOmensTrance"
+	},
+	{
+		ID = "perk.legend_distant_visions",
+		Script = "scripts/skills/perks/perk_legend_distant_visions",
+		Name = this.Const.Strings.PerkName.LegendDistantVisions,
+		Tooltip = this.Const.Strings.PerkDescription.LegendDistantVisions,
+		Icon = "ui/perks/vision_circle.png",
+		IconDisabled = "ui/perks/vision_circle_bw.png",
+		Const = "LegendDistantVisions"
+	},
+	{
+		ID = "perk.legend_scroll_ingredients",
+		Script = "scripts/skills/perks/perk_legend_scroll_ingredients",
+		Name = this.Const.Strings.PerkName.LegendScrollIngredients,
+		Tooltip = this.Const.Strings.PerkDescription.LegendScrollIngredients,
+		Icon = "ui/perks/scroll_circle.png",
+		IconDisabled = "ui/perks/scroll_circle_bw.png",
+		Const = "LegendScrollIngredients"
+	},
+	{
+		ID = "perk.legend_scholar",
+		Script = "scripts/skills/perks/perk_legend_scholar",
+		Name = this.Const.Strings.PerkName.LegendScholar,
+		Tooltip = this.Const.Strings.PerkDescription.LegendScholar,
+		Icon = "ui/perks/scholar_circle.png",
+		IconDisabled = "ui/perks/scholar_circle_bw.png",
+		Const = "LegendScholar"
+	},
+	{
+		ID = "perk.legend_citrinitas",
+		Script = "scripts/skills/perks/perk_legend_citrinitas",
+		Name = this.Const.Strings.PerkName.LegendCitrinitas,
+		Tooltip = this.Const.Strings.PerkName.LegendCitrinitas,
+		Icon = "ui/perks/citrinitas_circle.png",
+		IconDisabled = "ui/perks/citrinitas_circle_bw.png",
+		Const = "LegendCitrinitas"
+	},
+	{
+		ID = "perk.legend_albedo",
+		Script = "scripts/skills/perks/perk_legend_citrinitas",
+		Name = this.Const.Strings.PerkName.LegendAlbedo,
+		Tooltip = this.Const.Strings.PerkName.LegendAlbedo,
+		Icon = "ui/perks/albedo_circle.png",
+		IconDisabled = "ui/perks/albedo_circle_bw.png",
+		Const = "LegendAlbedo"
+	},
+	{
+		ID = "perk.legend_nigredo",
+		Script = "scripts/skills/perks/perk_legend_citrinitas",
+		Name = this.Const.Strings.PerkName.LegendNigredo,
+		Tooltip = this.Const.Strings.PerkName.LegendNigredo,
+		Icon = "ui/perks/nigredo_circle.png",
+		IconDisabled = "ui/perks/nigredo_circle_bw.png",
+		Const = "LegendNigredo"
+	},
 ];
 gt.Const.Perks.PerkDefs <- {};
 

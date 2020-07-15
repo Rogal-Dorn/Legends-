@@ -48,6 +48,7 @@ this.undead_graveyard_location <- this.inherit("scripts/entity/world/location", 
 			"loot/silver_bowl_item",
 			"loot/signet_ring_item",
 			"loot/signet_ring_item"
+			//,"misc/legend_ancient_scroll_item" //dunno if an ancient scroll fits in just any old graveyard but maybe! 
 		], _lootTable);
 	}
 

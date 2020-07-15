@@ -297,9 +297,11 @@ gt.Const.CharacterMagicBackgrounds <- [
 	"legend_necrosavant_background",
 	"legend_witch_background",
 	"legend_conjurer_background",
+	// "legend_philosopher_background", //not using these from krolock's recommendation as to the original astro/philo intentions. will leave them as possible options should we ever decide to change it
+	// "legend_astrologist_background",
 	"legend_warlock_background"
 ];
-gt.Const.CharacterMagicBackgrounds <- [
+gt.Const.CharacterMagicBackgrounds <- [ 
 	"legend_ancient_summoner_background",
 	"legend_death_summoner_background",
 	"legend_diviner_background",
@@ -311,6 +313,8 @@ gt.Const.CharacterMagicBackgrounds <- [
 	"legend_runesmith_background",
 	"legend_spiritualist_background",
 	"legend_transmuter_background",
+	// "legend_philosopher_background",
+	// "legend_astrologist_background"
 	"legend_warlock_background"
 ];
 gt.Const.CharacterBackgroundsRandom <- [
@@ -413,6 +417,8 @@ gt.Const.CharacterBackgroundsRandom <- [
 	"legend_berserker_background",
 	"legend_necrosavant_background",
 	"legend_noble_event_background",
+	// "legend_philosopher_background",
+	// "legend_astrologist_background",
 	"legend_conjurer_background"
 ];
 gt.Const.HorseBackgrounds <- [

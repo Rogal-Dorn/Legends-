@@ -187,7 +187,30 @@ this.goblin_city_location <- this.inherit("scripts/entity/world/location", {
 			"loot/signet_ring_item",
 			"loot/goblin_carved_ivory_iconographs_item",
 			"loot/goblin_minted_coins_item",
-			"loot/goblin_rank_insignia_item"
+			"loot/goblin_rank_insignia_item",
+			"trade/salt_item",
+			"trade/dies_item",
+			"trade/amber_shards_item",
+			"loot/silverware_item",
+			"loot/silver_bowl_item",
+			"loot/ancient_gold_coins_item",
+			"loot/silver_bowl_item",
+			"loot/signet_ring_item",
+			"loot/goblin_carved_ivory_iconographs_item",
+			"loot/goblin_minted_coins_item",
+			"loot/goblin_rank_insignia_item",
+			"trade/salt_item",
+			"trade/dies_item",
+			"trade/amber_shards_item",
+			"loot/silverware_item",
+			"loot/silver_bowl_item",
+			"loot/ancient_gold_coins_item",
+			"loot/silver_bowl_item",
+			"loot/signet_ring_item",
+			"loot/goblin_carved_ivory_iconographs_item",
+			"loot/goblin_minted_coins_item",
+			"loot/goblin_rank_insignia_item",
+			"misc/legend_ancient_scroll_item"
 		], _lootTable);
 		_lootTable.push(this.new("scripts/items/helmets/legendary/emperors_countenance"));
 	}

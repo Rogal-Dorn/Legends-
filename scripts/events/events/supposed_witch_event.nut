@@ -462,6 +462,10 @@ this.supposed_witch_event <- this.inherit("scripts/events/event", {
 			{
 				candidate_monk.push(bro);
 			}
+			 else if (bro.getSkills().hasSkill("perk.legend_scholar")) //maybe add this here?
+			 {
+			 	candidate_monk.push(bro);
+			 }
 			else if (bro.getBackground().isCultist())
 			{
 				candidate_cultist.push(bro);

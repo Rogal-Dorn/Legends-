@@ -58,7 +58,7 @@ this.historian_records_adventures_event <- this.inherit("scripts/events/event", 
 
 		foreach( bro in brothers )
 		{
-			if (bro.getLevel() >= 9 && bro.getBackground().getID() == "background.historian")
+			if (bro.getLevel() >= 9 && (bro.getBackground().getID() == "background.historian" || bro.getSkills().hasSkill("perk.legend_scholar")))
 			{
 				candidates.push(bro);
 			}

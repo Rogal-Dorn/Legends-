@@ -329,7 +329,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			});
 		}
 
-		if (this.m.IsVisited)
+		if (this.m.IsVisited || this.World.State.getDistantVisionBonus())
 		{
 			foreach( b in this.m.Buildings )
 			{
@@ -364,6 +364,19 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 				icon = f.getUIBanner(),
 				text = "Relations: " + f.getPlayerRelationAsText()
 			});
+		}
+
+		if (this.World.State.getDistantVisionBonus())
+		{
+			foreach( s in this.m.Situations )
+			{
+				ret.push({
+					id = 6,
+					type = "text",
+					text = "Has current event: " + s.getName()
+				});
+			}
+			this.World.State.setDistantVisionBonus(false);
 		}
 
 		if (this.Const.LegendMod.DebugMode)
@@ -1467,8 +1480,8 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		local minRosterSizes = [
 			0,
 			3,
-			5,
-			7
+			6,
+			9
 		];
 		local rosterMin = minRosterSizes[this.m.Size];
 		local rosterMax = minRosterSizes[this.m.Size] + activeLocations;

@@ -353,29 +353,80 @@ gt.Const.Perks.AssassinMagicTree <- {
 	]
 };
 
+gt.Const.Perks.AstrologyMagicTree <- {
+	ID = "AstrologyMagicTree",
+	Descriptions = [
+		"astrology"
+	],
+	Tree = [
+		[],
+		[gt.Const.Perks.PerkDefs.LegendScryTrance],
+		[],
+		[],
+		[gt.Const.Perks.PerkDefs.LegendReadOmensTrance],
+		[gt.Const.Perks.PerkDefs.LegendDistantVisions],
+		[]
+	]
+}
+
+gt.Const.Perks.PhilosophyMagicTree <- {
+	ID = "PhilosophyMagicTree",
+	Descriptions = [
+		"philosophy"
+	],
+	Tree = [
+		[],
+		[],
+		[],
+		[],
+		[gt.Const.Perks.PerkDefs.LegendScholar],
+		[gt.Const.Perks.PerkDefs.LegendScrollIngredients]
+	]
+}
+
+gt.Const.Perks.AlchemyMagicTree <- {
+	ID = "AlchemyMagicTree"
+	Descriptions = [
+		"alchemy"
+	],
+	Tree = [
+		[],
+		[],
+		[],
+		[gt.Const.Perks.PerkDefs.LegendCitrinitas],
+		[gt.Const.Perks.PerkDefs.LegendAlbedo,
+		gt.Const.Perks.PerkDefs.LegendNigredo],
+		[]
+	]
+}
+
 gt.Const.Perks.MagicTrees <- {
 	Tree = [
 		gt.Const.Perks.ValaChantMagicTree,
 		gt.Const.Perks.ValaTranceMagicTree,
-	//	gt.Const.Perks.HealerMagicTree,
-	//	gt.Const.Perks.ValaRuneMagicTree,
+		gt.Const.Perks.HealerMagicTree,
+		gt.Const.Perks.ValaRuneMagicTree,
 		gt.Const.Perks.ValaSpiritMagicTree,
 		gt.Const.Perks.RangerHuntMagicTree,
 		gt.Const.Perks.BasicNecroMagicTree,
 		gt.Const.Perks.WarlockMagicTree,
-	//	gt.Const.Perks.VampireMagicTree,
-	//	gt.Const.Perks.ZombieMagicTree,
-	//	gt.Const.Perks.SkeletonMagicTree,
+		gt.Const.Perks.VampireMagicTree,
+		gt.Const.Perks.ZombieMagicTree,
+		gt.Const.Perks.SkeletonMagicTree,
 		gt.Const.Perks.BerserkerMagicTree,
 		gt.Const.Perks.DruidMagicTree,
-	//	gt.Const.Perks.DruidTransformTree,
+		gt.Const.Perks.DruidTransformTree,
 		gt.Const.Perks.CaptainMagicTree,
 		gt.Const.Perks.IllusionistMagicTree,
 		gt.Const.Perks.DivinationMagicTree,
 		gt.Const.Perks.ConjurationMagicTree,
 		gt.Const.Perks.TransmutationMagicTree,
-	//	gt.Const.Perks.EvocationMagicTree,
-		gt.Const.Perks.AssassinMagicTree
+		gt.Const.Perks.EvocationMagicTree,
+		gt.Const.Perks.AssassinMagicTree,
+		gt.Const.Perks.AstrologyMagicTree,
+		gt.Cosnt.Perks.AlchemyMagicTree
+		gt.Const.Perks.PhilosophyMagicTree,
+		
 	],
 	function getRandom(_exclude)
 	{

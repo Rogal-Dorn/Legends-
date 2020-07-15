@@ -192,7 +192,7 @@ this.graverobber_finds_item_event <- this.inherit("scripts/events/event", {
 			{
 				candidates_graverobber.push(bro);
 			}
-			else if (bro.getBackground().getID() == "background.historian")
+			else if (bro.getBackground().getID() == "background.historian" || bro.getSkills().hasSkill("perk.legend_scholar"))
 			{
 				candidates_historian.push(bro);
 			}

@@ -93,7 +93,8 @@ this.peacenik_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getLevel() >= 3 && bro.getBackground().getID() == "background.houndmaster")
+			if (bro.getLevel() >= 3 && (bro.getBackground().getID() == "background.houndmaster" 
+										|| bro.getSkills().hasSkill("perk.legend_scholar")) )
 			{
 				candidates.push(bro);
 			}

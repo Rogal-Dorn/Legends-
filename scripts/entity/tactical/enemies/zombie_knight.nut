@@ -69,6 +69,7 @@ this.zombie_knight <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 			this.updateAchievement("RestlessDead", 1, 1);
 		}
 
+		
 		this.zombie.onDeath(_killer, _skill, _tile, _fatalityType);
 	}
 

@@ -1723,7 +1723,15 @@ gt.Const.Strings.PerkName <- {
 	LegendTreeform = "Tree Form",
 	LegendTrueForm = "True Form",
 	LegendSummonStorm = "Summon Storm",
-	LegendCallLightning = "Call Lightning"
+	LegendCallLightning = "Call Lightning",
+	LegendScryTrance = "Scry Area (Trance)",
+	LegendReadOmensTrance = "Read Omens (Trance)",
+	LegendDistantVisions = "Distant Visions",
+	LegendScrollIngredients = "Interpretation",
+	LegendScholar = "Scholar",
+	LegendCitrinitas = "Citrinitas (Trance)",
+	LegendAlbedo = "Albedo",
+	LegendNigredo = "Nigredo"
 };
 gt.Const.Strings.PerkDescription <- {
 	Relentless = "Don\'t slow down! At all times your Initiative is reduced only by [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] of your accumulated Fatigue, instead of all of it. \n[color=#0b0084]From the Fit perk group[/color]",
@@ -2069,7 +2077,15 @@ gt.Const.Strings.PerkDescription <- {
 	LegendTreeform = "Transform into a deadly schrat, gaining scrat defenses and attacks. Requires free hands",
 	LegendTrueForm = "Increases the length of your transformations to 8 turns",
 	LegendSummonStorm = "Control the elements, calling down the rain. The first cast brings on light rain, the second cast brings a heavy storm and the thrill of being in the heart of the storm boosts your resolve. Must have empty hands",
-	LegendCallLightning = "Call down lightning upon your enemies. Grants a 10% chance to unleash lightning on each unit withing 4 tiles. Must have empty hands and it must be raining."
+	LegendCallLightning = "Call down lightning upon your enemies. Grants a 10% chance to unleash lightning on each unit withing 4 tiles. Must have empty hands and it must be raining.",
+	LegendScryTrance = "Scries an area of 12 tiles around the user. The user will be unable to move or act during the trance until cancelled. Minimum of 1 turn channel.",
+	LegendReadOmensTrance = "The user enters a trance, telling all allies of their future. Grants [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] chance to have any attacker require two successful attack rolls in order to hit",
+	LegendDistantVisions = "Allows the user to have distant visions of towns. This perk provides a chance when the user is in reserves to see a specific town's current events and buildings.",
+	LegendScrollIngredients = "Allows the user to identify Ancient Scrolls. These tomes a specific effect whereas an Ancient Scroll gives any random effect.",
+	LegendScholar = "Allows the user to be counted as educated for events, regardless if other conditions are met."
+	LegendCitrinitas = "A powerful cocktail of ingredients provides a trance like state, granting the banner effect, and drums of war effects to everyone in the company at the end of the user\'s turn",
+	LegendAlbedo = "A concoction of secret materials that allows the user to restore up to 25 armor to a target",
+	LegendNigredo = "An alchemical mixture of acidic vapours, encased in flasks that can be thrown at the enemy to disolves their armor"
 };
 gt.Const.Strings.Tooltip <- {
 	World = {
