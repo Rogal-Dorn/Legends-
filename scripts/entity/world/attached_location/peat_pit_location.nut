@@ -27,6 +27,30 @@ this.peat_pit_location <- this.inherit("scripts/entity/world/attached_location",
 		_list.push("female_daytaler_background");
 		_list.push("peddler_background");
 
+		if(this.Const.LegendMod.Configs.LegendMagicEnabled()
+		{
+			local r;
+			if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_seer")
+			{	
+			r = this.Math.rand(0, 25);
+				if (r == 1)
+				{
+			     _list.push("legend_death_summoner_background");
+				}
+			}
+			else if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_warlock")
+			{
+			 _list.push("legend_death_summoner_background");
+			}
+			else
+			{
+			r = this.Math.rand(0, 49);
+				if (r == 1)
+				{
+				  _list.push("legend_death_summoner_background");
+				}
+			}
+		}
 	}
 
 	function onUpdateShopList( _id, _list )

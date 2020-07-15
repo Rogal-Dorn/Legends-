@@ -3550,22 +3550,8 @@ Fixes an issue with converting cultists with gifted
 
 14.0.0.14
 
-**Loreful Magic**
-The power level of magic is reduced across the board, new more loreful magic added.   
-
-When magic is disabled:
-* Normal backgrounds no longer have a chance of having magic (only happened very rarely)
-* Favoured enemy skills are ten times rarer 
-* Class skills are ten times rarer 
-
-When magic is enabled: 
-* Normal backgrounds won't spawn with magic 
-* Magic backgrounds are rare 
-* favoured enemy skills are twice as rare 
-* class skills are twice as rare 
-
-When Seer scenario and magic is enabled normal backgrounds can spawn with magic and class skills are twice as common 
-When you're on the beast hunter scenario favoured enemy skills are five times more common 
+**Magic Scroll**
+The magic is less common and less powerful in most scenarios. 
 
 **Scrolls**
 * Ancient scrolls - wisdom from bygone eras, most who read them are left with a headache, can provide a random benefit. 10% chance to drop from Necrosavant Lords, 5% from ancient priests, 2% from necrosavants. May also be found in monoliths, sunken castles, necropolises and goblin cities. 
@@ -3585,11 +3571,32 @@ New perk group - Alchemy
 *  Nigredo - An alchemical mixture of acidic vapours, encased in flasks that can be thrown at the enemy to disolves their armor
 * A powerful cocktail of ingredients provides a trance like state, granting the banner effect, and drums of war effects to everyone in the company at the end of the user's turn
 
-Herbalists gain a new astrology perk group 
-Inventors are now called Engineers, they gain philosophy and alchemy perks 
-Historians gain philosophy and captain skills 
-Herbalists gain philosophy and astrology skills 
+
+When magic is disabled:
+* Normal backgrounds no longer have a chance of having magic (only happened very rarely)
+* Magic classes are not recruitable at all 
+* Random favoured enemy skills are ten times rarer 
+* Random skills from other classes are ten times rarer 
+
+When magic is enabled: 
+* Normal backgrounds won't spawn with magic 
+* Most magic backgrounds are recruitable again at the same locations, but 10 to 50 times rarer. 
+* Seer scenario magic recruits are twice as common and normal backgrounds can spawn with magic 
+* Warlock scenario recruitable ancient summoners, weirdemancers are more common and necrosavants can be recruited 
+* Berserker scenario recruitable berserkers are more common
+* Ranger scenario master archers are more common, can recruit rangers 
+* Favoured enemy skills are more common in beast hunter scenario 
+* Random favoured enemy skills are only twice as rare 
+* Random class skills are only twice as rare 
+
+
+**Changes:** 
+Inventors are now called Engineers, they gain philosophy and alchemy perk groups 
+Divination perk group no longer exists, perks merged into illusion perk group 
+Diviners use astrology per group 
+Historians gain philosophy and captain skills  
 Larger settlements have slightly bigger hiring pools 
+Recruitable druids can no longer transform 
 
 **Fixes**
 Rolling a thief background on peasant militia no longer freezes scenario start

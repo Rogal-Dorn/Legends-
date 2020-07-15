@@ -230,9 +230,9 @@ gt.Const.Perks.IllusionistMagicTree <- {
 		"illusion"
 	],
 	Tree = [
-		[gt.Const.Perks.PerkDefs.LegendSummonCat],
+		[gt.Const.Perks.PerkDefs.LegendPush],
 		[gt.Const.Perks.PerkDefs.LegendDaze],
-		[],
+		[gt.Const.Perks.PerkDefs.LegendEntice],
 		[gt.Const.Perks.PerkDefs.LegendHorrify],
 		[gt.Const.Perks.PerkDefs.LegendTerrifyingVisage],
 		[],
@@ -252,7 +252,7 @@ gt.Const.Perks.DivinationMagicTree <- {
 		[gt.Const.Perks.PerkDefs.LegendEntice],
 		[],
 		[],
-		[gt.Const.Perks.PerkDefs.LegendScry]
+		[]
 	]
 };
 
@@ -418,7 +418,6 @@ gt.Const.Perks.MagicTrees <- {
 		gt.Const.Perks.DruidTransformTree,
 		gt.Const.Perks.CaptainMagicTree,
 		gt.Const.Perks.IllusionistMagicTree,
-		gt.Const.Perks.DivinationMagicTree,
 		gt.Const.Perks.ConjurationMagicTree,
 		gt.Const.Perks.TransmutationMagicTree,
 		gt.Const.Perks.EvocationMagicTree,

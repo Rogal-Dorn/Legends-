@@ -114,6 +114,26 @@ this.workshop_location <- this.inherit("scripts/entity/world/attached_location",
 		_list.push("female_daytaler_background");
 		_list.push("daytaler_background");
 
+		if(this.Const.LegendMod.Configs.LegendMagicEnabled()
+		{
+			local r;
+			if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_seer")
+			{	
+			r = this.Math.rand(0, 5);
+				if (r == 1)
+				{
+				_list.push("legend_transmuter_background");
+				}
+			}
+			else
+			{
+			r = this.Math.rand(0, 9);
+				if (r == 1)
+				{
+				_list.push("legend_transmuter_background");
+				}
+			}
+		}
 	}
 
 	function onUpdateShopList( _id, _list )

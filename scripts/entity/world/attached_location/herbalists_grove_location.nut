@@ -30,10 +30,30 @@ this.herbalists_grove_location <- this.inherit("scripts/entity/world/attached_lo
 		_list.push("legend_herbalist_background");
 		_list.push("legend_herbalist_background");
 
-		if(this.Const.LegendMod.Configs.LegendMagicEnabled())
+		if(this.Const.LegendMod.Configs.LegendMagicEnabled()
 		{
+			local r;
+			if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_seer")
+			{	
+			r = this.Math.rand(0, 5);
+				if (r == 1)
+				{
+				_list.push("legend_druid_background");
+				}
+			}
+			else if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_druid")
+			{
 		
-			_list.push("legend_druid_background");
+				_list.push("legend_druid_background");
+			}
+			else
+			{
+			r = this.Math.rand(0, 9);
+				if (r == 1)
+				{
+				_list.push("legend_druid_background");
+				}
+			}
 		}
 	}
 
