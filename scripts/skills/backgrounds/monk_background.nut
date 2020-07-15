@@ -78,7 +78,8 @@ this.monk_background <- this.inherit("scripts/skills/backgrounds/character_backg
 				this.Const.Perks.HealerClassTree,
 				this.Const.Perks.FaithClassTree
 					],
-			Magic = []
+			Magic = [
+			]
 		}
 	}
 

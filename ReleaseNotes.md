@@ -3546,3 +3546,53 @@ Includes the z_mod_legends_12a_patch1
 14.0.0.13
 
 Fixes an issue with converting cultists with gifted
+
+
+14.0.0.14
+
+**Loreful Magic**
+The power level of magic is reduced across the board, new more loreful magic added.   
+
+When magic is disabled:
+* Normal backgrounds no longer have a chance of having magic (only happened very rarely)
+* Favoured enemy skills are ten times rarer 
+* Class skills are ten times rarer 
+
+When magic is enabled: 
+* Normal backgrounds won't spawn with magic 
+* Magic backgrounds are rare 
+* favoured enemy skills are twice as rare 
+* class skills are twice as rare 
+
+When Seer scenario and magic is enabled normal backgrounds can spawn with magic and class skills are twice as common 
+When you're on the beast hunter scenario favoured enemy skills are five times more common 
+
+**Scrolls**
+* Ancient scrolls - wisdom from bygone eras, most who read them are left with a headache, can provide a random benefit. 10% chance to drop from Necrosavant Lords, 5% from ancient priests, 2% from necrosavants. May also be found in monoliths, sunken castles, necropolises and goblin cities. 
+* Scrolls - Scrolls that provide a known benefit. Can grant a perk point, an xp bonus, a new perk group, or a stat roll.
+
+New perk group - Philosophy 
+* Scholar  - this mercenary spends time studying, grants the ability to take part in events as if a more learned background. it impacts: graverobber finds item, historian finds item, historian mysterious text, historian records adventures, how far is the sun, peacenik, pimp vs harlot, religious peasants, shady character offers map, supposed witch 
+* Interpretation - allows the character to translate ancient scrolls into identified scrolls in camp 
+
+New perk group - Astrology 
+*	Read Omens (Trance): The future has been foretold.  Provides a +10% reroll bonus to everyone on the field. caster can't move while active. 
+*	Distant Visions: A new dawn, a new day, a new vision. Grants the character vision of distant events. Chance on every new day to view a town's buildings (if previously unvisited), and its current events
+*	Scry (Trance): Gives your company a birds eye view, provides a 12 tile sight-range at the beginning of every turn. Caster can't move while active 
+
+New perk group - Alchemy 
+*  Albedo - A concoction of secret materials that allows the user to restore up to 25 armor to a target
+*  Nigredo - An alchemical mixture of acidic vapours, encased in flasks that can be thrown at the enemy to disolves their armor
+* A powerful cocktail of ingredients provides a trance like state, granting the banner effect, and drums of war effects to everyone in the company at the end of the user's turn
+
+Herbalists gain a new astrology perk group 
+Inventors are now called Engineers, they gain philosophy and alchemy perks 
+Historians gain philosophy and captain skills 
+Herbalists gain philosophy and astrology skills 
+Larger settlements have slightly bigger hiring pools 
+
+**Fixes**
+Rolling a thief background on peasant militia no longer freezes scenario start
+Summon storm crash fix
+Transformed effects being removed @ end of combat no longer crashes
+Named sickle now properly works with perks 

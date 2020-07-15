@@ -70,7 +70,10 @@ this.historian_background <- this.inherit("scripts/skills/backgrounds/character_
 			],
 			Enemy = [],
 			Class = [],
-			Magic = [this.Const.Perks.CaptainMagicTree]
+			Magic = [
+				this.Const.Perks.CaptainMagicTree, 
+				this.Const.Perks.PhilosophyMagicTree
+			]
 		}
 	}
 
