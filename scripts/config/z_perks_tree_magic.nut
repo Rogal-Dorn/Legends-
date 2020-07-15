@@ -404,7 +404,7 @@ gt.Const.Perks.MagicTrees <- {
 	Tree = [
 		gt.Const.Perks.ValaChantMagicTree,
 		gt.Const.Perks.ValaTranceMagicTree,
-		gt.Const.Perks.HealerMagicTree,
+		//gt.Const.Perks.HealerMagicTree,
 		gt.Const.Perks.ValaRuneMagicTree,
 		gt.Const.Perks.ValaSpiritMagicTree,
 		gt.Const.Perks.RangerHuntMagicTree,
@@ -423,9 +423,9 @@ gt.Const.Perks.MagicTrees <- {
 		gt.Const.Perks.EvocationMagicTree,
 		gt.Const.Perks.AssassinMagicTree,
 		gt.Const.Perks.AstrologyMagicTree,
-		gt.Cosnt.Perks.AlchemyMagicTree
+		gt.Const.Perks.AlchemyMagicTree
 		gt.Const.Perks.PhilosophyMagicTree,
-		
+
 	],
 	function getRandom(_exclude)
 	{
