@@ -2080,7 +2080,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendCallLightning = "Call down lightning upon your enemies. Grants a 10% chance to unleash lightning on each unit withing 4 tiles. Must have empty hands and it must be raining.",
 	LegendScryTrance = "Scries an area of 12 tiles around the user. The user will be unable to move or act during the trance until cancelled. Minimum of 1 turn channel.",
 	LegendReadOmensTrance = "The user enters a trance, telling all allies of their future. Grants [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] chance to have any attacker require two successful attack rolls in order to hit",
-	LegendDistantVisions = "Allows the user to have distant visions of towns. This perk provides a chance when the user is in reserves to see a specific town's current events and buildings.",
+	LegendDistantVisions = "This character spends a lot of time alone outside camp, staring into the distance and smoking strange bark. Allows the user to have distant visions of towns.  Each morning this characeter is in reserves grants you insight into a specific town's current events and buildings.",
 	LegendScrollIngredients = "Allows the user to identify Ancient Scrolls. These tomes a specific effect whereas an Ancient Scroll gives any random effect.",
 	LegendScholar = "Allows the user to be counted as educated for events, regardless if other conditions are met."
 	LegendCitrinitas = "A powerful cocktail of ingredients provides a trance like state, granting the banner effect, and drums of war effects to everyone in the company at the end of the user\'s turn",

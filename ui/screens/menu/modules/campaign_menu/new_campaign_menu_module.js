@@ -1048,7 +1048,6 @@ NewCampaignMenuModule.prototype.buildConfigPage = function () {
 		radioClass: 'iradio_flat-orange',
 		increaseArea: '30%'
 	});
-	this.mLegendMagicCheckbox.iCheck('check');
 
 	var row = $('<div class="row"></div>');
 	leftColumn.append(row);
@@ -1123,8 +1122,8 @@ NewCampaignMenuModule.prototype.buildConfigPage = function () {
 		radioClass: 'iradio_flat-orange',
 		increaseArea: '30%'
 	});
-	this.mLegendRecruitScalingCheckbox.iCheck('check');
-
+    this.mLegendRecruitScalingCheckbox.iCheck('check');
+	
 	var row = $('<div class="row"></div>');
 	leftColumn.append(row);
 	var control = $('<div class="control"/>');
@@ -1153,7 +1152,6 @@ NewCampaignMenuModule.prototype.buildConfigPage = function () {
 		radioClass: 'iradio_flat-orange',
 		increaseArea: '30%'
 	});
-	this.mLegendAllBlueprintsCheckbox.iCheck('check');
 
 	var row = $('<div class="row"></div>');
 	rightColumn.append(row);
@@ -1168,7 +1166,6 @@ NewCampaignMenuModule.prototype.buildConfigPage = function () {
 		radioClass: 'iradio_flat-orange',
 		increaseArea: '30%'
 	});
-	this.mLegendRelationshipCheckbox.iCheck('check');
 
 	var row = $('<div class="row"></div>');
 	rightColumn.append(row);
@@ -1183,7 +1180,7 @@ NewCampaignMenuModule.prototype.buildConfigPage = function () {
 		radioClass: 'iradio_flat-orange',
 		increaseArea: '30%'
 	});
-	this.mLegendWorldEconomyCheckbox.iCheck('check');
+
 
 };
 
