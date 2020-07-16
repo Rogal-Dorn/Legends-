@@ -1039,20 +1039,6 @@ NewCampaignMenuModule.prototype.buildConfigPage = function () {
 	leftColumn.append(row);
 	var control = $('<div class="control"/>');
 	row.append(control);
-	this.mLegendMagicCheckbox = $('<input type="checkbox" id="cb-legendmagic"/>');
-	control.append(this.mLegendMagicCheckbox);
-	this.mLegendMagicCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendmagic">Basic Magic</label>');
-	control.append(this.mLegendMagicCheckboxLabel);
-	this.mLegendMagicCheckbox.iCheck({
-		checkboxClass: 'icheckbox_flat-orange',
-		radioClass: 'iradio_flat-orange',
-		increaseArea: '30%'
-	});
-
-	var row = $('<div class="row"></div>');
-	leftColumn.append(row);
-	var control = $('<div class="control"/>');
-	row.append(control);
 	this.mLegendArmorCheckbox = $('<input type="checkbox" id="cb-legendarmor"/>');
 	control.append(this.mLegendArmorCheckbox);
 	this.mLegendArmorCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendarmor">Layered Armor</label>');
@@ -1123,7 +1109,7 @@ NewCampaignMenuModule.prototype.buildConfigPage = function () {
 		increaseArea: '30%'
 	});
     this.mLegendRecruitScalingCheckbox.iCheck('check');
-	
+
 	var row = $('<div class="row"></div>');
 	leftColumn.append(row);
 	var control = $('<div class="control"/>');
@@ -1138,6 +1124,20 @@ NewCampaignMenuModule.prototype.buildConfigPage = function () {
 		increaseArea: '30%'
 	});
 	this.mLegendBleedKillerCheckbox.iCheck('check');
+
+	var row = $('<div class="row"></div>');
+	rightColumn.append(row);
+	var control = $('<div class="control"/>');
+	row.append(control);
+	this.mLegendMagicCheckbox = $('<input type="checkbox" id="cb-legendmagic"/>');
+	control.append(this.mLegendMagicCheckbox);
+	this.mLegendMagicCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendmagic">Legend Magic</label>');
+	control.append(this.mLegendMagicCheckboxLabel);
+	this.mLegendMagicCheckbox.iCheck({
+		checkboxClass: 'icheckbox_flat-orange',
+		radioClass: 'iradio_flat-orange',
+		increaseArea: '30%'
+	});
 
 	var row = $('<div class="row"></div>');
 	rightColumn.append(row);

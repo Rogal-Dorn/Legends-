@@ -4389,7 +4389,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "If enabled, low magic is allowed in the world, this makes it possible to find rare wise women and rune stones. \n\n Detail: If disabled, vala will not appear, runes stones will be 10x rarer. Seer, vala and warlock will lose their mystical perks"
+					text = "If enabled, magic is allowed in the world, this makes it possible to find rare wise women, rune stones, magic backgrounds and magic perks. \n\n Detail: If disabled, vala will not appear, runes stones will be 10x rarer. Seer, vala and warlock will lose their mystical perks"
 				}
 			];
 		case "mapconfig.legendarmor":

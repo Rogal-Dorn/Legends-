@@ -3543,59 +3543,56 @@ Includes the z_mod_legends_12a_patch1
 
 (sorry folks!)
 
-14.0.0.13
 
-Fixes an issue with converting cultists with gifted
-
-
-14.0.0.14
+14.0.0.13 The Magic Kingdom
 
 **Magic Scroll**
-The magic is less common and less powerful in most scenarios. 
+The magic is less common and less powerful in most scenarios.
 
 **Scrolls**
-* Ancient scrolls - wisdom from bygone eras, most who read them are left with a headache, can provide a random benefit. 10% chance to drop from Necrosavant Lords, 5% from ancient priests, 2% from necrosavants. May also be found in monoliths, sunken castles, necropolises and goblin cities. 
+* Ancient scrolls - wisdom from bygone eras, most who read them are left with a headache, can provide a random benefit. 10% chance to drop from Necrosavant Lords, 5% from ancient priests, 2% from necrosavants. May also be found in monoliths, sunken castles, necropolises and goblin cities.
 * Scrolls - Scrolls that provide a known benefit. Can grant a perk point, an xp bonus, a new perk group, or a stat roll.
 
-New perk group - Philosophy 
-* Scholar  - this mercenary spends time studying, grants the ability to take part in events as if a more learned background. it impacts: graverobber finds item, historian finds item, historian mysterious text, historian records adventures, how far is the sun, peacenik, pimp vs harlot, religious peasants, shady character offers map, supposed witch 
-* Interpretation - allows the character to translate ancient scrolls into identified scrolls in camp 
+New perk group - Philosophy
+* Scholar  - this mercenary spends time studying, grants the ability to take part in events as if a more learned background. it impacts: graverobber finds item, historian finds item, historian mysterious text, historian records adventures, how far is the sun, peacenik, pimp vs harlot, religious peasants, shady character offers map, supposed witch
+* Interpretation - allows the character to translate ancient scrolls into identified scrolls in camp
 
-New perk group - Astrology 
-*	Read Omens (Trance): The future has been foretold.  Provides a +10% reroll bonus to everyone on the field. caster can't move while active. 
+New perk group - Astrology
+*	Read Omens (Trance): The future has been foretold.  Provides a +10% reroll bonus to everyone on the field. caster can't move while active.
 *	Distant Visions: A new dawn, a new day, a new vision. Grants the character vision of distant events. Chance on every new day to view a town's buildings (if previously unvisited), and its current events
-*	Scry (Trance): Gives your company a birds eye view, provides a 12 tile sight-range at the beginning of every turn. Caster can't move while active 
+*	Scry (Trance): Gives your company a birds eye view, provides a 12 tile sight-range at the beginning of every turn. Caster can't move while active
 
 When magic is disabled:
 * Normal backgrounds no longer have a chance of having magic (only happened very rarely)
-* Magic classes are not recruitable at all 
-* Random favoured enemy skills are ten times rarer 
-* Random skills from other classes are ten times rarer 
+* Magic classes are not recruitable at all
+* Random favoured enemy skills are ten times rarer
+* Random skills from other classes are ten times rarer
 
-When magic is enabled: 
-* Normal backgrounds won't spawn with magic 
-* Most magic backgrounds are recruitable again at the same locations, but 10 to 50 times rarer. 
-* Seer scenario magic recruits are twice as common and normal backgrounds can spawn with magic 
-* Warlock scenario recruitable ancient summoners, weirdemancers are more common and necrosavants can be recruited 
+When magic is enabled:
+* Normal backgrounds won't spawn with magic
+* Most magic backgrounds are recruitable again at the same locations, but 10 to 50 times rarer.
+* Seer scenario magic recruits are twice as common and normal backgrounds can spawn with magic
+* Warlock scenario recruitable ancient summoners, weirdemancers are more common and necrosavants can be recruited
 * Berserker scenario recruitable berserkers are more common
-* Ranger scenario master archers are more common, can recruit rangers 
-* Sisterhood scenario, enchanters and entrancers are more common 
-* Favoured enemy skills are more common in beast hunter scenario 
-* Random favoured enemy skills are only twice as rare 
-* Random class skills are only twice as rare 
+* Ranger scenario master archers are more common, can recruit rangers
+* Sisterhood scenario, enchanters and entrancers are more common
+* Favoured enemy skills are more common in beast hunter scenario
+* Random favoured enemy skills are only twice as rare
+* Random class skills are only twice as rare
 
 
-**Changes:** 
-Default start options changes. Magic, skip camp intro, all recipes, relationships and economy are all off by default now. 
+**Changes:**
+Default start options changes. Magic, skip camp intro, all recipes, relationships and economy are all off by default now.
 Inventors gain philosophy group
-Divination perk group no longer exists, perks merged into illusion perk group 
-Diviners use astrology per group 
-Historians gain philosophy and captain skills  
-Larger settlements have slightly bigger hiring pools 
+Divination perk group no longer exists, perks merged into illusion perk group
+Diviners use astrology per group
+Historians gain philosophy and captain skills
+Larger settlements have slightly bigger hiring pools
 Recruitable druids can no longer transform
 
 **Fixes**
 Rolling a thief background on peasant militia no longer freezes scenario start
 Summon storm crash fix
 Transformed effects being removed @ end of combat no longer crashes
-Named sickle now properly works with perks 
+Named sickle now properly works with perks
+Fixes an issue with converting cultists with gifted
