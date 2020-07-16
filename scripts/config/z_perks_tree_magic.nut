@@ -424,7 +424,7 @@ gt.Const.Perks.MagicTrees <- {
 		gt.Const.Perks.TransmutationMagicTree,
 		gt.Const.Perks.EvocationMagicTree,
 		gt.Const.Perks.AssassinMagicTree,
-		gt.Const.Perks.AstrologyMagicTree,
+		gt.Const.Perks.PremonitionMagicTree,
 		gt.Const.Perks.AlchemyMagicTree,
 		gt.Const.Perks.PhilosophyMagicTree
 
