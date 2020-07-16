@@ -1126,18 +1126,19 @@ NewCampaignMenuModule.prototype.buildConfigPage = function () {
 	this.mLegendBleedKillerCheckbox.iCheck('check');
 
 	var row = $('<div class="row"></div>');
-	rightColumn.append(row);
+	leftColumn.append(row);
 	var control = $('<div class="control"/>');
 	row.append(control);
-	this.mLegendMagicCheckbox = $('<input type="checkbox" id="cb-legendmagic"/>');
-	control.append(this.mLegendMagicCheckbox);
-	this.mLegendMagicCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendmagic">Legend Magic</label>');
-	control.append(this.mLegendMagicCheckboxLabel);
-	this.mLegendMagicCheckbox.iCheck({
+	this.mLegendWorldEconomyCheckbox = $('<input type="checkbox" id="cb-legendworldeconomy"/>');
+	control.append(this.mLegendWorldEconomyCheckbox);
+	this.mLegendWorldEconomyCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendworldeconomy">World Economy</label>');
+	control.append(this.mLegendWorldEconomyCheckboxLabel);
+	this.mLegendWorldEconomyCheckbox.iCheck({
 		checkboxClass: 'icheckbox_flat-orange',
 		radioClass: 'iradio_flat-orange',
 		increaseArea: '30%'
 	});
+	this.mLegendWorldEconomyCheckbox.iCheck('check');
 
 	var row = $('<div class="row"></div>');
 	rightColumn.append(row);
@@ -1157,11 +1158,11 @@ NewCampaignMenuModule.prototype.buildConfigPage = function () {
 	rightColumn.append(row);
 	var control = $('<div class="control"/>');
 	row.append(control);
-	this.mLegendRelationshipCheckbox = $('<input type="checkbox" id="cb-legendrelationship"/>');
-	control.append(this.mLegendRelationshipCheckbox);
-	this.mLegendRelationshipCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendrelationship">Relationships</label>');
-	control.append(this.mLegendRelationshipCheckboxLabel);
-	this.mLegendRelationshipCheckbox.iCheck({
+	this.mLegendMagicCheckbox = $('<input type="checkbox" id="cb-legendmagic"/>');
+	control.append(this.mLegendMagicCheckbox);
+	this.mLegendMagicCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendmagic">Legend Magic</label>');
+	control.append(this.mLegendMagicCheckboxLabel);
+	this.mLegendMagicCheckbox.iCheck({
 		checkboxClass: 'icheckbox_flat-orange',
 		radioClass: 'iradio_flat-orange',
 		increaseArea: '30%'
@@ -1171,16 +1172,15 @@ NewCampaignMenuModule.prototype.buildConfigPage = function () {
 	rightColumn.append(row);
 	var control = $('<div class="control"/>');
 	row.append(control);
-	this.mLegendWorldEconomyCheckbox = $('<input type="checkbox" id="cb-legendworldeconomy"/>');
-	control.append(this.mLegendWorldEconomyCheckbox);
-	this.mLegendWorldEconomyCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendworldeconomy">World Economy</label>');
-	control.append(this.mLegendWorldEconomyCheckboxLabel);
-	this.mLegendWorldEconomyCheckbox.iCheck({
+	this.mLegendRelationshipCheckbox = $('<input type="checkbox" id="cb-legendrelationship"/>');
+	control.append(this.mLegendRelationshipCheckbox);
+	this.mLegendRelationshipCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendrelationship">Relationships</label>');
+	control.append(this.mLegendRelationshipCheckboxLabel);
+	this.mLegendRelationshipCheckbox.iCheck({
 		checkboxClass: 'icheckbox_flat-orange',
 		radioClass: 'iradio_flat-orange',
 		increaseArea: '30%'
 	});
-
 
 };
 
