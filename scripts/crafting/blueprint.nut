@@ -282,9 +282,16 @@ this.blueprint <- {
 				continue;
 			}
 
-			if ("LegendsArmor" in c && c.LegendsArmor && !this.Const.LegendMod.Configs.LegendArmorsEnabled())
+			if ("LegendsArmor" in c)
 			{
-				continue;
+				if (c.LegendsArmor && !this.Const.LegendMod.Configs.LegendArmorsEnabled())
+				{
+					continue;
+				}
+				if (!c.LegendsArmor && this.Const.LegendMod.Configs.LegendArmorsEnabled())
+				{
+					continue;
+				}
 			}
 
 			if (c.Instance.getID() in itemsMap)
