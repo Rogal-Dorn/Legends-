@@ -34,20 +34,21 @@ this.winery_location <- this.inherit("scripts/entity/world/attached_location", {
 			r = this.Math.rand(0, 5);
 				if (r == 1)
 				{
-				_list.push("legend_illusionist_background");
+					_list.push("legend_illusionist_background");
 				}
-			}
-			else if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_warlock")
-			{
-				_list.push("legend_vampire_background");
 			}
 			else
 			{
-			r = this.Math.rand(0, 9);
+				r = this.Math.rand(0, 9);
 				if (r == 1)
 				{
-				_list.push("legend_illusionist_background");
+					_list.push("legend_illusionist_background");
 				}
+			}
+
+			if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_warlock")
+			{
+				_list.push("legend_vampire_background");
 			}
 		}
 	}

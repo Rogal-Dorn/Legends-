@@ -211,7 +211,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 						[this.Const.Perks.PerkDefs.LegendSpecCultArmor],
 						[this.Const.Perks.PerkDefs.LegendLacerate]
 					];
-		
+
 		this.addPerkGroup(cultistGroup);
 	}
 
@@ -491,7 +491,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 
 		return this.Const.Perks.findByBackground(_id, this.getID());
 	}
-	
+
 	function addPerkBooleanFail(_perk, _row = 0) {
 		local perk = clone this.Const.Perks.PerkDefObjects[_perk];
         //Dont add dupes
@@ -499,7 +499,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
         {
             return false;
         }
-        
+
         perk.Row <- _row;
         perk.Unlocks <- _row;
         for (local i = this.getPerkTree().len(); i < _row + 1; i = ++i)
@@ -509,10 +509,10 @@ this.character_background <- this.inherit("scripts/skills/skill", {
         this.getPerkTree()[_row].push(perk);
         this.m.PerkTreeMap[perk.ID] <- perk;
         return true;
-    
+
 	}
-	
-	function addPerkGroup(_Tree) {	
+
+	function addPerkGroup(_Tree) {
 		foreach(index, arrAdd in _Tree)
 		{
 			foreach (perkAdd in arrAdd)
@@ -908,21 +908,19 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 
 		if (this.m.CustomPerkTree == null)
 		{
-			if (this.World.Assets.isLegendPerkTrees() && !this.Const.LegendMod.Configs.LegendMagicEnabled() && !this.World.Assets.getOrigin().getID() == "scenario.legends_seer"  && !this.World.Assets.getOrigin().getID() == "scenario.beast_hunters")
+			if (this.World.Assets.isLegendPerkTrees())
 			{
-				local result  = this.Const.Perks.GetDynamicPerkTree(this.m.PerkTreeDynamicMins, this.m.PerkTreeDynamic);
-				this.m.CustomPerkTree = result.Tree
-				a = result.Attributes;
-			}
-			else if (this.World.Assets.isLegendPerkTrees() && this.Const.LegendMod.Configs.LegendMagicEnabled() && this.World.Assets.getOrigin().getID() == "scenario.legends_seer")
-			{
-				local result  = this.Const.Perks.GetDynamicPerkTree(this.m.PerkTreeDynamicMinsMagic, this.m.PerkTreeDynamic);
-				this.m.CustomPerkTree = result.Tree
-				a = result.Attributes;
-			}
-			else if (this.World.Assets.isLegendPerkTrees() && this.World.Assets.getOrigin().getID() == "scenario.beast_hunters")
-			{
-				local result  = this.Const.Perks.GetDynamicPerkTree(this.m.PerkTreeDynamicMinsBeast, this.m.PerkTreeDynamic);
+
+				local mins = this.m.PerkTreeDynamicMins;
+				if (this.World.Assets.getOrigin().getID() == "scenario.beast_hunters")
+				{
+					mins = this.m.PerkTreeDynamicMinsBeast;
+				}
+				else if (this.Const.LegendMod.Configs.LegendMagicEnabled())
+				{
+					mins = this.m.PerkTreeDynamicMinsMagic;
+				}
+				local result  = this.Const.Perks.GetDynamicPerkTree(mins, this.m.PerkTreeDynamic);
 				this.m.CustomPerkTree = result.Tree
 				a = result.Attributes;
 			}
