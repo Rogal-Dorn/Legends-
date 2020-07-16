@@ -3602,3 +3602,4 @@ Fixes an issue with converting cultists with gifted
 Fixes crash with curse of years skill
 Fixes crash with setting skeleton helmet that does not exist.
 Fixes issues with rabble poachers not using their ranged weapons.
+Fixes a crash on getting container from generic Item
