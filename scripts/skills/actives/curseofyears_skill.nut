@@ -140,7 +140,10 @@ this.curseofyears_skill <- this.inherit("scripts/skills/skill", {
 		}
 
 		target.getSkills().add(this.new("scripts/skills/effects/curseofyears_effect"));
-		_user.addStacks(5);
+		if ("addStacks" in _user)
+		{
+			_user.addStacks(5);
+		}
 	}
 
 	function onTurnStart()

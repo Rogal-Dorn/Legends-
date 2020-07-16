@@ -3546,6 +3546,8 @@ Includes the z_mod_legends_12a_patch1
 
 14.0.0.13 The Magic Kingdom
 
+*The new magic perks and scrolls are not fully tested - but there are major game issue that have been resolved that we wanted to get out asap
+
 **Magic Scroll**
 The magic is less common and less powerful in most scenarios.
 
@@ -3591,8 +3593,12 @@ Larger settlements have slightly bigger hiring pools
 Recruitable druids can no longer transform
 
 **Fixes**
+Fixes game stuttering and lag due to world economy! (This will fix old save games that had any lag/stuttering)
 Rolling a thief background on peasant militia no longer freezes scenario start
 Summon storm crash fix
 Transformed effects being removed @ end of combat no longer crashes
 Named sickle now properly works with perks
 Fixes an issue with converting cultists with gifted
+Fixes crash with curse of years skill
+Fixes crash with setting skeleton helmet that does not exist.
+Fixes issues with rabble poachers not using their ranged weapons.
