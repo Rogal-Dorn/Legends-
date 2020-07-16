@@ -65,9 +65,7 @@ this.apprentice_background <- this.inherit("scripts/skills/backgrounds/character
 			],
 			Enemy = [],
 			Class = [],
-			Magic = [
-				//this.Const.Perks.PremonitionMagicTree
-			]
+			Magic = []
 		}
 	}
 

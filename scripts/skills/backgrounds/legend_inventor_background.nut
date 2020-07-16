@@ -64,7 +64,7 @@ this.legend_inventor_background <- this.inherit("scripts/skills/backgrounds/char
 			Enemy = [],
 			Class = [this.Const.Perks.RepairClassTree],
 			Magic = [
-				//this.Const.Perks.PhilosophyMagicTree,
+				this.Const.Perks.PhilosophyMagicTree,
 				this.Const.Perks.InventorMagicTree
 			]
 		}

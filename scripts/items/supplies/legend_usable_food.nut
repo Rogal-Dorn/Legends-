@@ -201,21 +201,30 @@ this.legend_usable_food <- this.inherit("scripts/items/item", {
 			this.addGenericItemSkill();
 		}
 
+			if (this.World.State.getPlayer() == null)
+			{
+				return;
+			}
+
 		if (this.m.StashModifier > 0)
 		{
-			this.Stash.resize(this.Stash.getCapacity() + this.getStashModifier())
+			this.World.State.getPlayer().calculateStashModifier();
 		}
-		
+
 	}
 
 	function onUnequip()
 	{
 		this.item.onUnequip();
 
+			if (this.World.State.getPlayer() == null)
+			{
+				return;
+			}
 
 		if (this.m.StashModifier > 0)
 		{
-			this.Stash.resize(this.Stash.getCapacity() - this.getStashModifier())
+			this.World.State.getPlayer().calculateStashModifier();
 		}
 
 	}

@@ -56,7 +56,6 @@ this.monk_turned_flagellant_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.FaithClassTree
 				],
 			Magic = [
-				// this.Const.Perks.PhilosophyMagicTree
 			]
 		}
 	}

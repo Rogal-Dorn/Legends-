@@ -57,7 +57,6 @@ this.pacified_flagellant_background <- this.inherit("scripts/skills/backgrounds/
 				this.Const.Perks.FaithClassTree
 				],
 			Magic = [
-				// this.Const.Perks.PhilosophyMagicTree
 			]
 		}
 	}

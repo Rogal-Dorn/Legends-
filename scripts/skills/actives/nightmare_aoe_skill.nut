@@ -133,7 +133,10 @@ this.nightmare_aoe_skill <- this.inherit("scripts/skills/skill", {
 			}
 		}
 
-		_user.addStacks(stacks * 5);
+		if ("addStacks" in _user)
+		{
+			_user.addStacks(stacks * 5);
+		}
 		return true;
 	}
 
