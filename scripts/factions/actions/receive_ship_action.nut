@@ -39,6 +39,11 @@ this.receive_ship_action <- this.inherit("scripts/factions/faction_action", {
 		}
 
 		this.m.Settlement = settlements[this.Math.rand(0, settlements.len() - 1)];
+		if (this.m.Settlement.numShips() > 1)
+		{
+			return;
+		}
+
 		this.m.Score = 5;
 	}
 

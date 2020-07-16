@@ -3710,6 +3710,10 @@ this.world_state <- this.inherit("scripts/states/state", {
 
 	function getRefFromID( _id )
 	{
+		if (_id == -1) return null;
+
+		if (_id > this.m.IDToRef.len() - 1) return null;
+
 		return this.m.IDToRef[_id];
 	}
 

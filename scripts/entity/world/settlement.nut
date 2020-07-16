@@ -2416,6 +2416,25 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		return true;
 	}
 
+	function numShips()
+	{
+		local f = this.World.FactionManager.getFaction(this.m.Factions[0])
+		if (f == null)
+		{
+			return 0;
+		}
+		local num = 0;
+		foreach (u in f.getUnits())
+		{
+			if (u.m.Name != "Ship")
+			{
+				continue;
+			}
+			num++;
+		}
+		return num;
+	}
+
 	function onSerialize( _out )
 	{
 		this.location.onSerialize(_out);
