@@ -424,17 +424,10 @@ gt.Const.Perks.MagicTrees <- {
 		gt.Const.Perks.TransmutationMagicTree,
 		gt.Const.Perks.EvocationMagicTree,
 		gt.Const.Perks.AssassinMagicTree,
-<<<<<<< HEAD
-		gt.Const.Perks.PremonitionMagicTree,
-		//gt.Const.Perks.AlchemyMagicTree
-		gt.Const.Perks.PhilosophyMagicTree
-		
-=======
 		gt.Const.Perks.AstrologyMagicTree,
 		gt.Const.Perks.AlchemyMagicTree,
 		gt.Const.Perks.PhilosophyMagicTree
 
->>>>>>> origin/LegendsModv14
 	],
 	function getRandom(_exclude)
 	{
