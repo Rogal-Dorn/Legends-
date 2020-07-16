@@ -27,6 +27,7 @@ this.generic_item <- this.inherit("scripts/skills/skill", {
 		}
 	}
 
+
 	function onTurnStart()
 	{
 		if (this.m.Item != null && this.m.Item.getContainer() != null)
