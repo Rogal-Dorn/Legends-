@@ -1,6 +1,6 @@
 local gt = this.getroottable();
 gt.Const.Serialization <- {
-	Version = 66
+	Version = 69
 };
 gt.Const.DLC <- {
 	Mask = 0,
@@ -363,7 +363,8 @@ gt.Const.EntityType <- {
 	LegendBear = 114,
 	LegendCatapult = 115,
     LegendHorse = 116,
-	SkeletonGladiator = 117
+	SkeletonGladiator = 117,
+	BanditRabblePoacher = 118,
 	function convertOldToNew( _id )
 	{
 		switch(_id)
@@ -644,6 +645,7 @@ gt.Const.EntityIcon <- [
 	"bear_orientation",
 	"catapult_01_orientation",
 	"horse_orientation",
-	"gladiator_orientation"
+	"gladiator_orientation",
+	"poacher_orientation"
 ];
 

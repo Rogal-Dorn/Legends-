@@ -45,6 +45,7 @@ this.named_orc_axe <- this.inherit("scripts/items/weapons/named/named_weapon", {
 		skill = this.new("scripts/skills/actives/split_shield");
 		skill.setApplyAxeMastery(true);
 		this.addSkill(skill);
+		this.addSkill(this.new("scripts/skills/actives/legend_harvest_tree"));
 	}
 
 });

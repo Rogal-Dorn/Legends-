@@ -146,7 +146,7 @@ this.how_far_is_the_sun_event <- this.inherit("scripts/events/event", {
 
 				foreach( bro in brothers )
 				{
-					if (bro.getID() == _event.m.Monk.getID() || bro.getBackground().getID() == "background.cultist" || bro.getBackground().getID() == "background.legend_nun" || bro.getBackground().getID() == "background.converted_cultist" || bro.getBackground().getID() == "background.historian" || bro.getBackground().getID() == "background.legend_inventor" || bro.getBackground().getID() == "background.legend_witch" || bro.getBackground().getID() == "background.legend_witch_commander" || bro.getBackground().getID() == "background.legend_necro" || bro.getBackground().getID() == "background.legend_necro_commander")
+					if (bro.getID() == _event.m.Monk.getID() || bro.getBackground().isCultist() || bro.getBackground().getID() == "background.legend_nun" || bro.getBackground().getID() == "background.historian" || bro.getBackground().getID() == "background.legend_inventor" || bro.getBackground().getID() == "background.legend_witch" || bro.getBackground().getID() == "background.legend_witch_commander" || bro.getBackground().getID() == "background.legend_necro" || bro.getBackground().getID() == "background.legend_necro_commander")
 					{
 						continue;
 					}
@@ -204,7 +204,7 @@ this.how_far_is_the_sun_event <- this.inherit("scripts/events/event", {
 							});
 						}
 					}
-					else if (bro.getBackground().getID() == "background.cultist")
+					else if (bro.getBackground().isCultist())
 					{
 						bro.improveMood(0.5, "Relished " + _event.m.Cultist.getName() + "\'s speech about the dying sun");
 
@@ -306,7 +306,7 @@ this.how_far_is_the_sun_event <- this.inherit("scripts/events/event", {
 			{
 				candidate_monk.push(bro);
 			}
-			else if (bro.getBackground().getID() == "background.cultist" || bro.getBackground().getID() == "background.converted_cultist")
+			else if (bro.getBackground().isCultist())
 			{
 				candidate_cultist.push(bro);
 			}

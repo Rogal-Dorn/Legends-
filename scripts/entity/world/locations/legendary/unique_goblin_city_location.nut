@@ -150,7 +150,8 @@ this.unique_goblin_city_location <- this.inherit("scripts/entity/world/location"
 			"loot/silver_bowl_item",
 			"loot/ancient_gold_coins_item",
 			"loot/silver_bowl_item",
-			"loot/signet_ring_item"
+			"loot/signet_ring_item",
+			"misc/legend_ancient_scroll_item"
 		], _lootTable);
 		_lootTable.push(this.new("scripts/items/helmets/legendary/emperors_countenance"));
 	}

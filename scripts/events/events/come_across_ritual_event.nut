@@ -330,7 +330,7 @@ this.come_across_ritual_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getLevel() >= 11 && (bro.getBackground().getID() == "background.cultist" || bro.getBackground().getID() == "background.converted_cultist"))
+			if (bro.getLevel() >= 11 && bro.getBackground().isCultist())
 			{
 				candidates.push(bro);
 			}

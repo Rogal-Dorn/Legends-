@@ -27,10 +27,25 @@ this.mushroom_grove_location <- this.inherit("scripts/entity/world/attached_loca
 		_list.push("flagellant_background");
 		_list.push("wildman_background");
 		_list.push("legend_herbalist_background");
+
 		if(this.Const.LegendMod.Configs.LegendMagicEnabled())
 		{
-			_list.push("legend_berserker_background");
+			local r;
+			if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_berserker")
+			{
+
+				_list.push("legend_berserker_background");
+			}
+			else
+			{
+			r = this.Math.rand(0, 9);
+				if (r == 1)
+				{
+				_list.push("legend_berserker_background");
+				}
+			}
 		}
+
 	}
 
 	function onUpdateShopList( _id, _list )

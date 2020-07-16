@@ -42,20 +42,20 @@ this.messenger_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.Modifiers.Terrain = [
 				0.0, // ?
 				0.0, //ocean
-				0.05,//plains
-				0.01, //swamp
-				0.01, //hills
-				0.01, //forest
-				0.01, //forest
-				0.01, //forest_leaves
-				0.01, //autumn_forest
-				0.01, //mountains
+				0.1,//plains
+				0.03, //swamp
+				0.05, //hills
+				0.05, //forest
+				0.05, //forest
+				0.05, //forest_leaves
+				0.05, //autumn_forest
+				0.03, //mountains
 				0.0, // ?
-				0.05, //farmland
-				0.01, // snow
-				0.01, // badlands
-				0.01, //highlands
-				0.05, //stepps
+				0.1, //farmland
+				0.03, // snow
+				0.03, // badlands
+				0.07, //highlands
+				0.1, //stepps
 				0.0 //ocean
 			];
 		this.m.PerkTreeDynamic = {

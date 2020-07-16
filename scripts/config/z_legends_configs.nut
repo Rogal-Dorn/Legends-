@@ -15,7 +15,8 @@ gt.Const.LegendMod.Configs <- {
 	IsRecruitScaling = false,
     IsBleedKiller = false,
     IsBlueprintsVisible = false,
-    IsRelationship = false
+    IsRelationship = false,
+    IsWorldEconomy = false
 
     Update = function (_settings)
     {
@@ -29,6 +30,7 @@ gt.Const.LegendMod.Configs <- {
         this.IsBleedKiller = _settings.LegendBleedKiller;
         this.IsBlueprintsVisible = _settings.LegendAllBlueprints;
         this.IsRelationship = _settings.LegendRelationship;
+        this.IsWorldEconomy = _settings.LegendWorldEconomy;
     }
 
     LegendArmorsEnabled = function ()
@@ -81,6 +83,11 @@ gt.Const.LegendMod.Configs <- {
         return this.IsRelationship
     }
 
+    LegendWorldEconomyEnabled = function ()
+    {
+        return this.IsWorldEconomy
+    }
+
     onSerialize = function (_out)
     {
         _out.writeBool(this.IsArmor);
@@ -93,6 +100,7 @@ gt.Const.LegendMod.Configs <- {
         _out.writeBool(this.IsBleedKiller);
         _out.writeBool(this.IsBlueprintsVisible);
         _out.writeBool(this.IsRelationship);
+        _out.writeBool(this.IsWorldEconomy);
     }
 
     onDeserialize = function (_in)
@@ -123,7 +131,12 @@ gt.Const.LegendMod.Configs <- {
             this.IsRelationship = _in.readBool();
         }
 
-        
+        if (_in.getMetaData().getVersion() >= 67)
+        {
+            this.IsWorldEconomy = _in.readBool();
+        }
+
+
     }
 }
 

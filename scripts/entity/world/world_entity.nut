@@ -21,7 +21,8 @@ this.world_entity <- {
 		IsDroppingLoot = true,
 		IsUsingGlobalVision = true,
 		IsShowingStrength = true,
-		IsShowingName = true
+		IsShowingName = true,
+		Resources = 0,
 	},
 	function getName()
 	{
@@ -711,6 +712,16 @@ this.world_entity <- {
 		}
 	}
 
+	function getResources()
+	{
+		return this.m.Resources;
+	}
+
+	function setResources(_v)
+	{
+		this.m.Resources = this.Math.max(0, this.Math.round(_v));
+	}
+
 	function onSerialize( _out )
 	{
 		_out.writeString(this.m.Name);
@@ -746,6 +757,7 @@ this.world_entity <- {
 		_out.writeBool(this.m.IsShowingName);
 		_out.writeBool(this.m.IsLooting);
 		_out.writeBool(this.m.IsDroppingLoot);
+		_out.writeU16(this.m.Resources);
 		this.m.Tags.onSerialize(_out);
 		_out.writeBool(false);
 	}
@@ -826,6 +838,11 @@ this.world_entity <- {
 		this.m.IsShowingName = _in.readBool();
 		this.m.IsLooting = _in.readBool();
 		this.m.IsDroppingLoot = _in.readBool();
+
+		if (_in.getMetaData().getVersion() >= 67)
+		{
+			this.m.Resources = _in.readU16();
+		}
 
 		if (this.hasLabel("name"))
 		{

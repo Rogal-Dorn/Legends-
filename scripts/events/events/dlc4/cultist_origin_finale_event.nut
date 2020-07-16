@@ -110,7 +110,7 @@ this.cultist_origin_finale_event <- this.inherit("scripts/events/event", {
 
 				foreach( bro in brothers )
 				{
-					if (bro.getBackground().getID() == "background.cultist" || bro.getBackground().getID() == "background.converted_cultist")
+					if (bro.getBackground().isCultist())
 					{
 						bro.improveMood(2.0, "Appeased Davkul");
 
@@ -163,7 +163,7 @@ this.cultist_origin_finale_event <- this.inherit("scripts/events/event", {
 
 				foreach( bro in brothers )
 				{
-					if (bro.getBackground().getID() == "background.cultist" || bro.getBackground().getID() == "background.converted_cultist")
+					if (bro.getBackground().isCultist())
 					{
 						bro.worsenMood(2.0, "Was denied the chance to appease Davkul");
 
@@ -222,10 +222,10 @@ this.cultist_origin_finale_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.cultist" || bro.getBackground().getID() == "background.converted_cultist")
+			if (bro.getBackground().isCultist())
 			{
 				cultist_candidates.push(bro);
-
+				// This requires a Cultist, that isn't a convert.
 				if ((bestCultist == null || bro.getLevel() > bestCultist.getLevel()) && bro.getBackground().getID() == "background.cultist")
 				{
 					bestCultist = bro;

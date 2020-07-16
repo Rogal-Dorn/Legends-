@@ -146,12 +146,8 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Destination = this.WeakTableRef(candidates[this.Math.rand(0, candidates.len() - 1)]);
 		local distance = this.getDistanceOnRoads(this.m.Origin.getTile(), this.m.Destination.getTile());
 		local days = this.getDaysRequiredToTravel(distance, this.Const.World.MovementSettings.Speed * 0.6, true);
-		local barterMult = 0.0;
-		foreach (bro in this.World.getPlayerRoster().getAll())
-		{
-			barterMult += bro.getBarterModifier();
-		}
-		local modrate = 10 * barterMult;
+		local modrate = 10 * this.World.State.getPlayer().getBarterMult();
+
 
 		if (days >= 5)
 		{
@@ -340,6 +336,16 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 				{
 					if (this.Flags.get("IsCaravanHalfDestroyed"))
 					{
+						if(this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+						{
+							this.m.Caravan.setResources(this.Math.round(this.m.Caravan.getResources() / 2));
+							local L = this.m.Caravan.getInventory();
+							this.m.Caravan.clearInventory();
+							for (local i = 0; i < (L.len() - 1) / 2; i = ++i)
+							{
+								this.m.Caravan.addToInventory(L[i]);
+							}
+						}
 						this.Contract.setScreen("Success2");
 					}
 					else
@@ -957,6 +963,18 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 						}
 						this.World.FactionManager.getFaction(this.Contract.getFaction()).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractSuccess, "Protected a caravan as promised");
 						this.World.Contracts.finishActiveContract();
+
+						if(this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+						{
+							local origin = this.Contract.getOrigin();
+							if (origin != null)
+							{
+								local v = this.Contract.m.Caravan.getResources() + this.Contract.m.Caravan.getResources() * 0.10;
+								origin.setResources(origin.getResources() + v)
+							}
+						}
+
+
 						return 0;
 					}
 
@@ -994,6 +1012,16 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 						this.World.Assets.addMoney(money);
 						this.World.FactionManager.getFaction(this.Contract.getFaction()).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractPoor, "Protected a caravan, albeit poorly");
 						this.World.Contracts.finishActiveContract();
+
+						//Using this as a economy rewward for taking deliver contract missions - it'll increase the orgin resources by 10% if contract successfull
+						//Think of it as establishing a trade route?
+						local origin = this.Contract.getOrigin();
+						if (origin != null)
+						{
+							local v = this.Contract.m.Caravan.getResources() + this.Contract.m.Caravan.getResources() * 0.10;
+							origin.setResources(origin.getResources() + v)
+						}
+
 						return 0;
 					}
 
@@ -1083,9 +1111,79 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 
 		if (this.m.Home.getProduce().len() != 0)
 		{
-			for( local j = 0; j != 3; j = ++j )
+			local produce = 3
+			local L = this.m.Home.getProduce();
+
+			if(this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
 			{
-				party.addToInventory(this.m.Home.getProduce()[this.Math.rand(0, this.m.Home.getProduce().len() - 1)]);
+				local min = 1;
+				switch (this.m.Home.getSize()) {
+					case 1:
+						min = 1;
+						break;
+					case 2:
+						min = 3;
+						break;
+					case 3:
+						min = 5;
+						break;
+				}
+
+				local scale = 0.0;
+				switch (this.getDifficulty())
+				{
+					case 1:
+						scale = 0.01;
+						break;
+					case 2:
+						scale = 0.025;
+						break;
+					case 3:
+						scale = 0.05;
+						break;
+					case 4:
+						scale = 0.10;
+				}
+
+				local resources = this.Math.max(min, this.Math.round(scale * this.m.Home.getResources()));
+				this.m.Home.setResources(this.m.Home.getResources() - resources);
+				party.setResources(resources);
+
+				produce = this.Math.max(min, min + this.Math.round(scale * this.m.Home.getResources()));
+				local items = [
+					[1, "supplies/bread_item"],
+					[1, "supplies/roots_and_berries_item"],
+					[1, "supplies/dried_fruits_item"],
+					[1, "supplies/ground_grains_item"],
+					[1, "supplies/bread_item"],
+					[1, "supplies/dried_fish_item"],
+					[1, "supplies/beer_item"],
+					[1, "supplies/bread_item"],
+					[1, "supplies/goat_cheese_item"],
+					[1, "supplies/legend_cooking_spices_item"],
+					[1, "supplies/legend_fresh_fruit_item"],
+					[1, "supplies/legend_fresh_meat_item"],
+					[1, "supplies/legend_pie_item"],
+					[1, "supplies/legend_porridge_item"],
+					[1, "supplies/legend_pudding_item"],
+					[1, "supplies/mead_item"],
+					[1, "supplies/medicine_item"],
+					[1, "supplies/pickled_mushrooms_item"],
+					[1, "supplies/preserved_mead_item"],
+					[1, "supplies/smoked_ham_item"],
+					[1, "supplies/wine_item"]
+				]
+
+				foreach (item in L)
+				{
+					items.push([5, item]);
+				}
+				L = items;
+			}
+
+			for( local j = 0; j < produce; j = ++j )
+			{
+				party.addToInventory(L[this.Math.rand(0, L.len() - 1)]);
 			}
 		}
 

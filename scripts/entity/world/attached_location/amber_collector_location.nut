@@ -26,9 +26,33 @@ this.amber_collector_location <- this.inherit("scripts/entity/world/attached_loc
 		_list.push("peddler_background");
 		_list.push("caravan_hand_background");
 		_list.push("thief_background");
+		_list.push("peddler_background");
+		_list.push("caravan_hand_background");
+		_list.push("thief_background");
+
 		if(this.Const.LegendMod.Configs.LegendMagicEnabled())
 		{
-			_list.push("legend_spiritualist_background");
+			local r;
+			if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_seer")
+			{
+			r = this.Math.rand(0, 5);
+				if (r == 1)
+				{
+				_list.push("legend_spiritualist_background");
+				}
+			}
+			else if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_sisterhood")
+			{
+				_list.push("legend_spiritualist_background");
+			}
+			else
+			{
+			r = this.Math.rand(0, 9);
+				if (r == 1)
+				{
+				_list.push("legend_spiritualist_background");
+				}
+			}
 		}
 	}
 

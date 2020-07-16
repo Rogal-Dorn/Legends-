@@ -247,6 +247,8 @@ var NewCampaignMenuModule = function () {
 	this.mLegendAllBlueprintsCheckboxLabel = null;
 	this.mLegendRelationshipCheckbox = null;
 	this.mLegendRelationshipCheckboxLabel = null;
+	this.mLegendWorldEconomyCheckbox = null;
+	this.mLegendWorldEconomyCheckboxLabel = null;
 	// generics
 	this.mIsVisible = false;
 };
@@ -1037,21 +1039,6 @@ NewCampaignMenuModule.prototype.buildConfigPage = function () {
 	leftColumn.append(row);
 	var control = $('<div class="control"/>');
 	row.append(control);
-	this.mLegendMagicCheckbox = $('<input type="checkbox" id="cb-legendmagic"/>');
-	control.append(this.mLegendMagicCheckbox);
-	this.mLegendMagicCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendmagic">Basic Magic</label>');
-	control.append(this.mLegendMagicCheckboxLabel);
-	this.mLegendMagicCheckbox.iCheck({
-		checkboxClass: 'icheckbox_flat-orange',
-		radioClass: 'iradio_flat-orange',
-		increaseArea: '30%'
-	});
-	this.mLegendMagicCheckbox.iCheck('check');
-
-	var row = $('<div class="row"></div>');
-	leftColumn.append(row);
-	var control = $('<div class="control"/>');
-	row.append(control);
 	this.mLegendArmorCheckbox = $('<input type="checkbox" id="cb-legendarmor"/>');
 	control.append(this.mLegendArmorCheckbox);
 	this.mLegendArmorCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendarmor">Layered Armor</label>');
@@ -1121,7 +1108,7 @@ NewCampaignMenuModule.prototype.buildConfigPage = function () {
 		radioClass: 'iradio_flat-orange',
 		increaseArea: '30%'
 	});
-	this.mLegendRecruitScalingCheckbox.iCheck('check');
+    this.mLegendRecruitScalingCheckbox.iCheck('check');
 
 	var row = $('<div class="row"></div>');
 	leftColumn.append(row);
@@ -1139,22 +1126,50 @@ NewCampaignMenuModule.prototype.buildConfigPage = function () {
 	this.mLegendBleedKillerCheckbox.iCheck('check');
 
 	var row = $('<div class="row"></div>');
+	leftColumn.append(row);
+	var control = $('<div class="control"/>');
+	row.append(control);
+	this.mLegendWorldEconomyCheckbox = $('<input type="checkbox" id="cb-legendworldeconomy"/>');
+	control.append(this.mLegendWorldEconomyCheckbox);
+	this.mLegendWorldEconomyCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendworldeconomy">World Economy</label>');
+	control.append(this.mLegendWorldEconomyCheckboxLabel);
+	this.mLegendWorldEconomyCheckbox.iCheck({
+		checkboxClass: 'icheckbox_flat-orange',
+		radioClass: 'iradio_flat-orange',
+		increaseArea: '30%'
+	});
+	this.mLegendWorldEconomyCheckbox.iCheck('check');
+
+	var row = $('<div class="row"></div>');
 	rightColumn.append(row);
 	var control = $('<div class="control"/>');
 	row.append(control);
 	this.mLegendAllBlueprintsCheckbox = $('<input type="checkbox" id="cb-legendallblueprints"/>');
 	control.append(this.mLegendAllBlueprintsCheckbox);
-	this.mLegendAllBlueprintsCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendallblueprints">All Crafting Recipies Unlocked</label>');
+	this.mLegendAllBlueprintsCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendallblueprints">All Crafting Recipes Unlocked</label>');
 	control.append(this.mLegendAllBlueprintsCheckboxLabel);
 	this.mLegendAllBlueprintsCheckbox.iCheck({
 		checkboxClass: 'icheckbox_flat-orange',
 		radioClass: 'iradio_flat-orange',
 		increaseArea: '30%'
 	});
-	this.mLegendAllBlueprintsCheckbox.iCheck('check');
 
 	var row = $('<div class="row"></div>');
-	leftColumn.append(row);
+	rightColumn.append(row);
+	var control = $('<div class="control"/>');
+	row.append(control);
+	this.mLegendMagicCheckbox = $('<input type="checkbox" id="cb-legendmagic"/>');
+	control.append(this.mLegendMagicCheckbox);
+	this.mLegendMagicCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendmagic">Legend Magic</label>');
+	control.append(this.mLegendMagicCheckboxLabel);
+	this.mLegendMagicCheckbox.iCheck({
+		checkboxClass: 'icheckbox_flat-orange',
+		radioClass: 'iradio_flat-orange',
+		increaseArea: '30%'
+	});
+
+	var row = $('<div class="row"></div>');
+	rightColumn.append(row);
 	var control = $('<div class="control"/>');
 	row.append(control);
 	this.mLegendRelationshipCheckbox = $('<input type="checkbox" id="cb-legendrelationship"/>');
@@ -1166,7 +1181,6 @@ NewCampaignMenuModule.prototype.buildConfigPage = function () {
 		radioClass: 'iradio_flat-orange',
 		increaseArea: '30%'
 	});
-	this.mLegendRelationshipCheckbox.iCheck('check');
 
 };
 
@@ -1615,7 +1629,7 @@ NewCampaignMenuModule.prototype.bindTooltips = function () {
 		contentType: 'ui-element',
 		elementId: 'mapconfig.legendbleedkiller'
 	});
-	
+
 	this.mLegendAllBlueprintsCheckbox.bindTooltip({
 		contentType: 'ui-element',
 		elementId: 'mapconfig.legendallblueprints'
@@ -1623,8 +1637,25 @@ NewCampaignMenuModule.prototype.bindTooltips = function () {
 	this.mLegendAllBlueprintsCheckboxLabel.bindTooltip({
 		contentType: 'ui-element',
 		elementId: 'mapconfig.legendallblueprints'
-	});	
+	});
 
+	this.mLegendRelationshipCheckbox.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.legendrelationship'
+	});
+	this.mLegendRelationshipCheckboxLabel.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.legendrelationship'
+	});
+
+	this.mLegendWorldEconomyCheckbox.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.legendworldeconomy'
+	});
+	this.mLegendWorldEconomyCheckboxLabel.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.legendworldeconomy'
+	});
 };
 
 NewCampaignMenuModule.prototype.unbindTooltips = function () {
@@ -1762,10 +1793,12 @@ NewCampaignMenuModule.prototype.unbindTooltips = function () {
 
 	this.mLegendBleedKillerCheckbox.unbindTooltip();
 	this.mLegendBleedKillerCheckboxLabel.unbindTooltip();
-	
+
 	this.mLegendAllBlueprintsCheckbox.unbindTooltip();
-	this.mLegendAllBlueprintsCheckboxLabel.unbindTooltip();	
-	
+	this.mLegendAllBlueprintsCheckboxLabel.unbindTooltip();
+
+	this.mLegendRelationshipCheckbox.unbindTooltip();
+	this.mLegendRelationshipCheckboxLabel.unbindTooltip();
 };
 
 
@@ -2101,6 +2134,8 @@ NewCampaignMenuModule.prototype.collectSettings = function () {
 	settings.push(this.mLegendBleedKillerCheckbox.is(":checked"));
 	settings.push(this.mLegendAllBlueprintsCheckbox.is(":checked"));
 	settings.push(this.mLegendRelationshipCheckbox.is(":checked"));
+	settings.push(this.mLegendWorldEconomyCheckbox.is(":checked"));
+
 	return settings;
 }
 

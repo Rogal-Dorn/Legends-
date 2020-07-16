@@ -13,6 +13,10 @@ this.safe_roads_situation <- this.inherit("scripts/entity/world/settlements/situ
 	function onAdded( _settlement )
 	{
 		_settlement.removeSituationByID("situation.ambushed_trade_routes");
+		if(this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+		{
+			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * 0.1);
+		}
 		_settlement.resetShop();
 	}
 
@@ -38,7 +42,6 @@ this.safe_roads_situation <- this.inherit("scripts/entity/world/settlements/situ
 		_draftList.push("messenger_background");
 		_draftList.push("gambler_background");
 		_draftList.push("tailor_background");
-		_draftList.push("troubador_background");
 		_draftList.push("minstrel_background");
 		_draftList.push("historian_background");
 		_draftList.push("adventurous_noble_background");

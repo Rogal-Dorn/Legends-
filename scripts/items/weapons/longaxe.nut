@@ -45,6 +45,7 @@ this.longaxe <- this.inherit("scripts/items/weapons/weapon", {
 		split_shield.m.IconDisabled = "skills/active_67_sw.png";
 		split_shield.m.Overlay = "active_67";
 		this.addSkill(split_shield);
+		this.addSkill(this.new("scripts/skills/actives/legend_harvest_tree"));
 	}
 
 });

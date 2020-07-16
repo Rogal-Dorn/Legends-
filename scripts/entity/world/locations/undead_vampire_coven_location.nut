@@ -46,8 +46,7 @@ this.undead_vampire_coven_location <- this.inherit("scripts/entity/world/locatio
 			"loot/signet_ring_item",
 			"loot/golden_chalice_item",
 			"loot/ancient_gold_coins_item",
-			"loot/ornate_tome_item",
-			"misc/legend_ancient_scroll_item"
+			"loot/ornate_tome_item"
 		], _lootTable);
 	}
 

@@ -39,8 +39,7 @@ this.undead_crypt_location <- this.inherit("scripts/entity/world/location", {
 			"loot/signet_ring_item",
 			"loot/signet_ring_item",
 			"loot/ancient_gold_coins_item",
-			"loot/ornate_tome_item",
-			"misc/legend_ancient_scroll_item"
+			"loot/ornate_tome_item"
 		];
 
 		if (this.Const.DLC.Unhold)

@@ -222,11 +222,11 @@ this.harbor_location <- this.inherit("scripts/entity/world/attached_location", {
 
 			if (this.isActive())
 			{
-				this.getSprite("body").setBrush(this.m.Sprite);
+				this.getSprite("body").setBrush(this.getSpriteName());
 			}
 			else
 			{
-				this.getSprite("body").setBrush(this.m.SpriteDestroyed);
+				this.getSprite("body").setBrush(this.getSpriteDestroyedName());
 			}
 		}
 
@@ -240,10 +240,32 @@ this.harbor_location <- this.inherit("scripts/entity/world/attached_location", {
 			return;
 		}
 		_list.push("female_butcher_background");
+		_list.push("female_butcher_background");
+		_list.push("fisherman_background");
 
 		if(this.Const.LegendMod.Configs.LegendMagicEnabled())
 		{
-			_list.push("legend_diviner_background");
+			local r;
+			if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_seer")
+			{
+			r = this.Math.rand(0, 5);
+				if (r == 1)
+				{
+				_list.push("legend_diviner_background");
+				}
+			}
+			else if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_sisterhood")
+			{
+				_list.push("legend_diviner_background");
+			}
+			else
+			{
+			r = this.Math.rand(0, 9);
+				if (r == 1)
+				{
+				_list.push("legend_diviner_background");
+				}
+			}
 		}
 
 	}

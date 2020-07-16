@@ -41,6 +41,7 @@ this.two_handed_wooden_hammer <- this.inherit("scripts/items/weapons/weapon", {
 		skill = this.new("scripts/skills/actives/split_shield");
 		skill.setFatigueCost(skill.getFatigueCostRaw() + 5);
 		this.addSkill(skill);
+		this.addSkill(this.new("scripts/skills/actives/legend_harvest_rock"));
 	}
 
 });

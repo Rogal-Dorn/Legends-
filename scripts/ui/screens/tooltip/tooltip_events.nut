@@ -4389,7 +4389,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "If enabled, low magic is allowed in the world, this makes it possible to find rare wise women and rune stones. \n\n Detail: If disabled, vala will not appear, runes stones will be 10x rarer. Seer, vala and warlock will lose their mystical perks"
+					text = "If enabled, magic is allowed in the world, this makes it possible to find rare wise women, rune stones, magic backgrounds and magic perks. \n\n Detail: If disabled, vala will not appear, runes stones will be 10x rarer. Seer, vala and warlock will lose their mystical perks"
 				}
 			];
 		case "mapconfig.legendarmor":
@@ -4482,20 +4482,20 @@ this.tooltip_events <- {
 						type = "description",
 						text = "If enabled, kills by bleeding out are granted to the actor who caused the bleed."
 					}
-				];		
+				];
 		case "mapconfig.legendallblueprints":
 			return [
 					{
 						id = 1,
 						type = "title",
-						text = "Unlock all crafting recipies"
+						text = "Unlock all crafting recipes"
 					},
 					{
 						id = 2,
 						type = "description",
-						text = "If enabled, all crafting recipies will be visible at the taxidermist and camp crafting. If disabled, vanilla behavior of having to discover the ingredients first will be enforced."
+						text = "If enabled, all crafting recipes will be visible at the taxidermist and camp crafting. If disabled, vanilla behavior of having to discover the ingredients first will be enforced."
 					}
-				];		
+				];
 		case "mapconfig.legendrelationship":
 			return [
 					{
@@ -4507,6 +4507,19 @@ this.tooltip_events <- {
 						id = 2,
 						type = "description",
 						text = "If enabled, mercenaries will gradually form friendships based on morality and experiences. Affects combat, events and contracts. "
+					}
+				];
+		case "mapconfig.legendworldeconomy":
+			return [
+					{
+						id = 1,
+						type = "title",
+						text = "World Economy"
+					},
+					{
+						id = 2,
+						type = "description",
+						text = "If enabled, Settlements will actively trade items and resources and can grow or decline in value \n\n  Details: The value of a settlement is now a dynamic value that grows and declines with caravan arrivals and departures, contracts fullfilled or failed, good or bad settlement events. \n\n The value of the settlement determines how valuable the caravans it creates are, as well as the strength of local militia. \n\n Very prosperous settlements will continue to grow and potentialy add new locations."
 					}
 				];
 		case "camp.commander":

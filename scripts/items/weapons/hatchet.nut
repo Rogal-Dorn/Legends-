@@ -35,6 +35,7 @@ this.hatchet <- this.inherit("scripts/items/weapons/weapon", {
 		local skillToAdd = this.new("scripts/skills/actives/split_shield");
 		skillToAdd.setApplyAxeMastery(true);
 		this.addSkill(skillToAdd);
+this.addSkill(this.new("scripts/skills/actives/legend_harvest_tree"));
 	}
 
 	function onUpdateProperties( _properties )

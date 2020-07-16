@@ -45,6 +45,7 @@ this.named_two_handed_hammer <- this.inherit("scripts/items/weapons/named/named_
 		local skillToAdd = this.new("scripts/skills/actives/split_shield");
 		skillToAdd.setFatigueCost(skillToAdd.getFatigueCostRaw() + 5);
 		this.addSkill(skillToAdd);
+		this.addSkill(this.new("scripts/skills/actives/legend_harvest_rock"));
 	}
 
 });

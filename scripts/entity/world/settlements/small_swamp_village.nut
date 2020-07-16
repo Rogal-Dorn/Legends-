@@ -93,6 +93,7 @@ this.small_swamp_village <- this.inherit("scripts/entity/world/settlement", {
 		this.m.ProduceString = "mushrooms";
 	}
 
+
 	function onBuild( _settings )
 	{
 		this.addBuilding(this.new("scripts/entity/world/settlements/buildings/crowd_building"), 5);

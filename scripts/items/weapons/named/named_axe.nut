@@ -42,6 +42,7 @@ this.named_axe <- this.inherit("scripts/items/weapons/named/named_weapon", {
 		local skillToAdd = this.new("scripts/skills/actives/split_shield");
 		skillToAdd.setApplyAxeMastery(true);
 		this.addSkill(skillToAdd);
+		this.addSkill(this.new("scripts/skills/actives/legend_harvest_tree"));
 	}
 
 });

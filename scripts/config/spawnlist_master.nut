@@ -226,6 +226,7 @@ gt.Const.World.Spawn.Troops <- {
 		Strength = 80,
 		Cost = 80,
 		Row = 1,
+		NameList = this.Const.Strings.OrcWarlordNames,
 		Script = "scripts/entity/tactical/enemies/legend_orc_behemoth"
 	},
 	OrcWarrior = {
@@ -555,7 +556,7 @@ gt.Const.World.Spawn.Troops <- {
 		Cost = 10,
 		Row = -1,
 		Script = "scripts/entity/tactical/humans/peasant"
-	},	
+	},
 	PeasantArmed = {
 		ID = this.Const.EntityType.Peasant,
 		Variant = 0,
@@ -748,6 +749,14 @@ gt.Const.World.Spawn.Troops <- {
 		Row = 0,
 		Script = "scripts/entity/tactical/enemies/bandit_rabble"
 	},
+	BanditRabblePoacher = {
+		ID = this.Const.EntityType.BanditRabblePoacher,
+		Variant = 0,
+		Strength = 5,
+		Cost = 5,
+		Row = 0,
+		Script = "scripts/entity/tactical/enemies/bandit_rabble_poacher"
+	},
 	BanditThug = {
 		ID = this.Const.EntityType.BanditThug,
 		Variant = 0,
@@ -803,7 +812,7 @@ gt.Const.World.Spawn.Troops <- {
 		Cost = 35,
 		Row = 0,
 		Script = "scripts/entity/tactical/enemies/legend_bandit_veteran"
-	},	
+	},
 	BanditLeader = {
 		ID = this.Const.EntityType.BanditLeader,
 		Variant = 1,
@@ -823,7 +832,7 @@ gt.Const.World.Spawn.Troops <- {
 		Script = "scripts/entity/tactical/enemies/legend_bandit_warlord",
 		NameList = this.Const.Strings.BanditLeaderNames,
 		TitleList = null
-	},	
+	},
 	BanditOutrider = {
 		ID = this.Const.EntityType.BanditOutrider,
 		Variant = 0,
@@ -831,7 +840,7 @@ gt.Const.World.Spawn.Troops <- {
 		Cost = 45,
 		Row = 0,
 		Script = "scripts/entity/tactical/enemies/legend_bandit_outrider"
-	},	
+	},
 	Warhound = {
 		ID = this.Const.EntityType.Warhound,
 		Variant = 0,

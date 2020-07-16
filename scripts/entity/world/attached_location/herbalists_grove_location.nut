@@ -32,8 +32,28 @@ this.herbalists_grove_location <- this.inherit("scripts/entity/world/attached_lo
 
 		if(this.Const.LegendMod.Configs.LegendMagicEnabled())
 		{
-		
-			_list.push("legend_druid_background");
+			local r;
+			if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_seer")
+			{
+			r = this.Math.rand(0, 5);
+				if (r == 1)
+				{
+				_list.push("legend_druid_background");
+				}
+			}
+			else if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_druid")
+			{
+
+				_list.push("legend_druid_background");
+			}
+			else
+			{
+			r = this.Math.rand(0, 9);
+				if (r == 1)
+				{
+				_list.push("legend_druid_background");
+				}
+			}
 		}
 	}
 

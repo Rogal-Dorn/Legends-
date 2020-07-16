@@ -40,7 +40,7 @@ this.hooked_blade <- this.inherit("scripts/items/weapons/weapon", {
 		strike.m.Overlay = "active_93";
 		this.addSkill(strike);
 		this.addSkill(this.new("scripts/skills/actives/hook"));
+		this.addSkill(this.new("scripts/skills/actives/legend_harvest_bush"));
 	}
-
 });
 

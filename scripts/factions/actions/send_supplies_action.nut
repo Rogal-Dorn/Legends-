@@ -70,18 +70,25 @@ this.send_supplies_action <- this.inherit("scripts/factions/faction_action", {
 	function onExecute( _faction )
 	{
 		local r = this.Math.rand(100, 200) * 0.01;
-		local party = _faction.spawnEntity(this.m.Start.getTile(), "Supply Caravan", false, this.Const.World.Spawn.NobleCaravan, r * 100);
+		local party = _faction.spawnEntity(this.m.Start.getTile(), "Supply Caravan", false, this.Const.World.Spawn.NobleCaravan, r * 100 + this.Math.round(0.1 * this.m.Start.getResources()));
 		party.getSprite("base").Visible = false;
 		party.setMirrored(true);
 		party.setDescription("A caravan with armed escorts transporting provisions, supplies and equipment between settlements.");
 
 		if (this.m.Start.getProduce().len() != 0)
 		{
-			for( local j = 0; j != this.Math.round(2 * r); j = ++j )
+			local produce = 3
+			if(this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+			{
+				produce = this.Math.max(3, 3 + this.Math.round(0.05 * this.m.Start.getResources()));
+			}
+
+			for( local j = 0; j < produce; j = ++j )
 			{
 				party.addToInventory(this.m.Start.getProduce()[this.Math.rand(0, this.m.Start.getProduce().len() - 1)]);
 			}
 		}
+
 
 		party.getLoot().Money = this.Math.floor(this.Math.rand(0, 100) * r);
 		local r = this.Math.rand(1, 3);
@@ -99,23 +106,61 @@ this.send_supplies_action <- this.inherit("scripts/factions/faction_action", {
 			party.getLoot().Ammo = this.Math.rand(25 * r, 50 * r);
 		}
 
-		r = this.Math.rand(1, 4);
+		if(this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+		{
+			local resources = this.Math.max(1, this.Math.round(0.05 * this.m.Start.getResources()));
+			this.m.Start.setResources(this.m.Start.getResources() - resources);
+			party.setResources(resources);
 
-		if (r == 1)
-		{
-			party.addToInventory("supplies/bread_item");
+			local r = this.Math.rand(3,6);
+			for( local j = 0; j < r; j = ++j )
+			{
+				local items = [
+					[0, "supplies/bread_item"],
+					[0, "supplies/roots_and_berries_item"],
+					[0, "supplies/dried_fruits_item"],
+					[0, "supplies/ground_grains_item"],
+					[0, "supplies/dried_fish_item"],
+					[0, "supplies/beer_item"],
+					[0, "supplies/goat_cheese_item"],
+					[1, "supplies/legend_cooking_spices_item"],
+					[1, "supplies/legend_fresh_fruit_item"],
+					[1, "supplies/legend_fresh_meat_item"],
+					[1, "supplies/legend_pie_item"],
+					[1, "supplies/legend_porridge_item"],
+					[1, "supplies/legend_pudding_item"],
+					[0, "supplies/mead_item"],
+					[0, "supplies/medicine_item"],
+					[0, "supplies/pickled_mushrooms_item"],
+					[0, "supplies/preserved_mead_item"],
+					[0, "supplies/smoked_ham_item"],
+					[0, "supplies/wine_item"]
+				]
+
+				local item = this.Const.World.Common.pickItem(items)
+				party.addToInventory(item);
+			}
 		}
-		else if (r == 2)
+		else
 		{
-			party.addToInventory("supplies/roots_and_berries_item");
-		}
-		else if (r == 3)
-		{
-			party.addToInventory("supplies/dried_fruits_item");
-		}
-		else if (r == 4)
-		{
-			party.addToInventory("supplies/ground_grains_item");
+			local r = this.Math.rand(1, 4);
+
+			if (r == 1)
+			{
+				party.addToInventory("supplies/bread_item");
+			}
+			else if (r == 2)
+			{
+				party.addToInventory("supplies/roots_and_berries_item");
+			}
+			else if (r == 3)
+			{
+				party.addToInventory("supplies/dried_fruits_item");
+			}
+			else if (r == 4)
+			{
+				party.addToInventory("supplies/ground_grains_item");
+			}
 		}
 
 		local c = party.getController();
@@ -124,8 +169,11 @@ this.send_supplies_action <- this.inherit("scripts/factions/faction_action", {
 		local move = this.new("scripts/ai/world/orders/move_order");
 		move.setDestination(this.m.Dest.getTile());
 		move.setRoadsOnly(true);
+
+		local unload = this.new("scripts/ai/world/orders/unload_order");
 		local despawn = this.new("scripts/ai/world/orders/despawn_order");
 		c.addOrder(move);
+		c.addOrder(unload);
 		c.addOrder(despawn);
 	}
 

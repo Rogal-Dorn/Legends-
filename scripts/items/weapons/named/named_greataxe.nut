@@ -46,6 +46,7 @@ this.named_greataxe <- this.inherit("scripts/items/weapons/named/named_weapon", 
 		skillToAdd.setApplyAxeMastery(true);
 		skillToAdd.setFatigueCost(skillToAdd.getFatigueCostRaw() + 5);
 		this.addSkill(skillToAdd);
+		this.addSkill(this.new("scripts/skills/actives/legend_harvest_tree"));
 	}
 
 });

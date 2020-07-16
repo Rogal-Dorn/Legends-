@@ -23,10 +23,32 @@ this.leather_tanner_location <- this.inherit("scripts/entity/world/attached_loca
 		_list.push("retired_soldier_background");
 		_list.push("butcher_background");
 		_list.push("butcher_background");
+
 		if(this.Const.LegendMod.Configs.LegendMagicEnabled())
 		{
-			_list.push("legend_ancient_summoner_background");
+			local r;
+			if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_seer")
+			{
+			r = this.Math.rand(0, 25);
+				if (r == 1)
+				{
+				_list.push("legend_ancient_summoner_background");
+				}
+			}
+			else if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_warlock")
+			{
+				_list.push("legend_ancient_summoner_background");
+			}
+			else
+			{
+			r = this.Math.rand(0, 49);
+				if (r == 1)
+				{
+				_list.push("legend_ancient_summoner_background");
+				}
+			}
 		}
+
 	}
 
 	function onUpdateShopList( _id, _list )

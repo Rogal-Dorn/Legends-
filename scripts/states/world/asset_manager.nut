@@ -138,16 +138,14 @@ this.asset_manager <- {
 	function getMaxAmmo()
 	{
 		local ammo = this.Const.LegendMod.MaxResources[this.m.EconomicDifficulty].Ammo;
-		foreach( bro in this.World.getPlayerRoster().getAll() )
-		{
-			ammo += bro.getAmmoModifier();
-		}
+		ammo += this.World.State.getPlayer().getAmmoModifier();
 		return ammo;
 	}
 
 	function getMaxArmorParts()
 	{
 		local parts = this.Const.LegendMod.MaxResources[this.m.EconomicDifficulty].ArmorParts;
+		parts += this.World.State.getPlayer().getArmorPartsModifier();
 		foreach( bro in this.World.getPlayerRoster().getAll() )
 		{
 			parts += bro.getArmorPartsModifier();
@@ -158,6 +156,7 @@ this.asset_manager <- {
 	function getMaxMedicine()
 	{
 		local meds = this.Const.LegendMod.MaxResources[this.m.EconomicDifficulty].Medicine;
+		meds += this.World.State.getPlayer().getMedModifier();
 		foreach( bro in this.World.getPlayerRoster().getAll() )
 		{
 			meds += bro.getMedsModifier();
@@ -791,9 +790,9 @@ this.asset_manager <- {
 				if (this.Const.LegendMod.Configs.RelationshipsEnabled())
 				{
 				// Check the company alignment against the mercenary alignment
-					if ( !bro.getSkills().hasSkill("trait.player") ) 
+					if ( !bro.getSkills().hasSkill("trait.player") )
 					{ //cant be too immoral or moral if u are the company
-					
+
 						if (bro.getAlignmentMin() > companyRep)
 						{
 						local r = this.Math.rand(1, 14)
@@ -802,10 +801,10 @@ this.asset_manager <- {
 									bro.worsenMood(this.Const.MoodChange.AmbitionFailed, "Thinks the company is too immoral");
 							}
 							if (r == 3)
-							{		
+							{
 								if (bro.getAlignmentMin() > 0)
 								{
-								bro.setAlignmentMin(bro.getAlignmentMin() - 1);
+									bro.SetAlignmentMin(bro.getAlignmentMin() - 1);
 								}
 							}
 							if (bro.getAlignmentMax()+1 < companyRep)
@@ -816,10 +815,10 @@ this.asset_manager <- {
 									bro.worsenMood(this.Const.MoodChange.AmbitionFailed, "Thinks the company is too moral");
 								}
 								if (r == 3)
-								{		
+								{
 									if (bro.getAlignmentMax() < 9)
 									{
-									bro.setAlignmentMax(bro.getAlignmentMax() + 1);
+									bro.SetAlignmentMax(bro.getAlignmentMax() + 1);
 									}
 								}
 							}
@@ -832,11 +831,11 @@ this.asset_manager <- {
 								bro.improveMood(this.Const.MoodChange.AmbitionFulfilled, "Thinks the company is great");
 							}
 						}
-						
 
-						// update the relationships between characters 
+
+						// update the relationships between characters
 						local relations = this.World.getPlayerRoster().getAll();
-						foreach ( relation in relations ) 
+						foreach ( relation in relations )
 						{
 							if (relation.getAlignment() == bro.getAlignment())
 							{
@@ -855,7 +854,7 @@ this.asset_manager <- {
 								bro.changeActiveRelationship(relation, this.Math.rand(-1,1));
 							}
 
-						}	
+						}
 					}
 				}
 
@@ -912,20 +911,6 @@ this.asset_manager <- {
 			local roster = this.World.getPlayerRoster().getAll();
 			local campMultiplier = this.isCamping() ? 2.0 : 1.0;
 
-			local stashSize = this.Const.LegendMod.MaxResources[this.m.EconomicDifficulty].Stash
-
-			foreach( bro in roster )
-			{
-				stashSize += bro.getStashModifier()
-
-			}
-
-
-			if (stashSize != this.m.Stash.getCapacity())
-			{
-				this.m.Stash.resize(stashSize);
-			}
-
 			foreach( bro in roster )
 			 {
 			 	local d = bro.getHitpointsMax() - bro.getHitpoints();
@@ -955,7 +940,7 @@ this.asset_manager <- {
 			 	}
 			 	local items = bro.getItems().getAllItems();
 			 	local updateBro = false;
-				
+
 						local skills =
 						[
 							"perk.legend_tools_spares",

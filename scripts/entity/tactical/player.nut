@@ -146,43 +146,19 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 	function getDailyCost()
 	{
-		local wageMult = this.m.CurrentProperties.DailyWageMult;
-		local paymasterCount = 0;
-		local mod = 0.0;
-
-		foreach( bro in this.World.getPlayerRoster().getAll() )
-		{
-			if (bro.getSkills().hasSkill("perk.legend_barter_paymaster") && paymasterCount < 1)
-			{
-				paymasterCount++;
-				mod = bro.getBarterModifier();
-				wageMult -= mod;
-
-				}
-			}
+		local wageMult = this.m.CurrentProperties.DailyWageMult - this.World.State.getPlayer().getWageModifier();
 		//local costAdj = this.Math.max(0, this.m.CurrentProperties.DailyWageMult * barterMult);
 		return this.Math.max(0, this.m.CurrentProperties.DailyWage * wageMult);
 	}
 
 	function getDailyFood()
 	{
-		local foodMult = 0;
-
-		foreach( bro in this.World.getPlayerRoster().getAll() )
-		{
-			if (bro.getSkills().hasSkill("perk.legend_quartermaster"))
-			{
-				foodMult = 1;
-			}
-		}
-
 		local food = this.Math.maxf(0.0, this.m.CurrentProperties.DailyFood);
-
 		if (this.isInReserves() && !this.m.Skills.hasSkill("perk.legend_peaceful"))
 		{
 			food *= 2;
 		}
-		food -= foodMult;
+		food -= this.World.State.getPlayer().getFoodModifier();
 		return food;
 	}
 
@@ -288,9 +264,9 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 	function SetAlignmentMin( _f )
 	{
-		this.m.Background.setAlignmentMin( _f);
+		this.m.Background.SetAlignmentMin( _f);
 	}
-	
+
 	function getAlignmentMax()
 	{
 	        return this.m.Background.getAlignmentMax();
@@ -298,7 +274,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 	function SetAlignmentMax( _f )
 	{
-		this.m.Background.setAlignmentMax( _f);
+		this.m.Background.SetAlignmentMax( _f);
 	}
 
 
@@ -945,12 +921,12 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.getSkills().hasSkill("trait.intensive_training_trait") && this.getLevel() > 1 )
 		{
-			if ( this.getBackground().getNameOnly()=="Donkey" ) 
+			if ( this.getBackground().getNameOnly()=="Donkey" )
 			{
 				return;
 			}
 			local inTraining = this.getSkills().getSkillByID("trait.intensive_training_trait");
-			
+
 			local addSkills = this.Math.rand(0, this.getLevel()+2);
 			addSkills = this.Math.min(addSkills, inTraining.getMaxSkillsCanBeAdded() - 1);
 			inTraining.addRandomSkills(this, addSkills);
@@ -1188,7 +1164,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				for( local i = 0; i != this.Const.CorpsePart.len(); i = ++i )
 				{
 					stub.addSprite("stuff_" + i).setBrush(this.Const.CorpsePart[i]);
-	
+
 				}
 			}
 			else
@@ -1546,7 +1522,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		{
 			++this.m.PerkPoints;
 		}
-		
+
 		//++this.m.PerkPoints //// DEBUG, UNCOMMENT FOR UNLIMITED UNLOCKS
 
 		return true;
@@ -2104,14 +2080,13 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.fillAttributeLevelUpValues(this.Const.XP.MaxLevelWithPerkpoints - 1);
 	}
 
-	function setStartValuesEx( _backgrounds, _addTraits = true, _gender = -1 )
+	function setStartValuesEx( _backgrounds, _addTraits = true, _gender = -1, _addEquipment = true )
 	{
 		if (this.isSomethingToSee() && this.World.getTime().Days >= 7)
 		{
 			_backgrounds = this.Const.CharacterPiracyBackgrounds;
 		}
 
-		local bground = "scripts/skills/backgrounds/" + _backgrounds[this.Math.rand(0, _backgrounds.len() - 1)];
 		local background = this.new("scripts/skills/backgrounds/" + _backgrounds[this.Math.rand(0, _backgrounds.len() - 1)]);
 		background.setGender(_gender);
 		this.m.Skills.add(background);
@@ -2205,7 +2180,10 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			}
 		}
 
-		background.addEquipment();
+		if (_addEquipment)
+		{
+			background.addEquipment();
+		}
 
 		if (this.getTags().has("PlayerZombie"))
 		{
@@ -2240,13 +2218,13 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	//Grants the frenemies & alignment skills
 	function setAlignment ( custom = null, background = null )
 	{
-		if ( background == null ) 
+		if ( background == null )
 		{
 			background = this.getBackground();
 		}
 		if ( this.m.IsAlignmentAssigned )
 		{
-			this.m.Skills.removeByID("trait.legend_alignment");	
+			this.m.Skills.removeByID("trait.legend_alignment");
 		}
 		if ( custom != null )
 		{
@@ -2254,11 +2232,11 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			{
 				this.m.Alignment = this.Const.LegendMod.Alignment.Saintly;
 			}
-			else if ( custom < this.Const.LegendMod.Alignment.Dreaded ) 
+			else if ( custom < this.Const.LegendMod.Alignment.Dreaded )
 			{
 				this.m.Alignment = this.Const.LegendMod.Alignment.Dreaded;
 			}
-			else 
+			else
 			{
 				this.m.Alignment = custom;
 			}
@@ -2267,7 +2245,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		{
 			this.m.Alignment = this.Math.rand(background.getAlignmentMin(), background.getAlignmentMax());
 		}
-		
+
 		this.m.IsAlignmentAssigned = true;
 
 		this.m.Skills.add(this.new("scripts/skills/traits/legend_frenemies"));
@@ -2285,7 +2263,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
         return this.m.CompanyID;
     }
 
-	//Only used occaisionally, shouldn't call this specifically 
+	//Only used occaisionally, shouldn't call this specifically
 	//Probably would be unused function
 	//Check world_state::addNewID and in this_file::onHired to see how w add company IDs to brothers
 	function setCompanyID( _num )
@@ -2314,11 +2292,15 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		}
 		if ( !( this.hasActiveRelationshipWith(_actor) ) )
 		{
-			
+
 			this.createActiveRelationship(_actor);
 		}
-		
+
 		local arrIndex = _actor.getCompanyID();
+		if (arrIndex == -1)
+		{
+			return;
+		}
 		local amtType = typeof _amount;
 		if (_set || (amtType != "integer" && amtType != "float"))
 		{
@@ -2335,14 +2317,18 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				this.m.ActiveRelationships[arrIndex][_key] <- _amount;
 			}
 		}
-		
-		
+
+
 	}
 
 	//If the array index isn't null anymore then we have a rel with
-	//It should only ever be null if the relationship was previously made null by removing	
+	//It should only ever be null if the relationship was previously made null by removing
 	function hasActiveRelationshipWith( _actor )
 	{
+		if (_actor.getCompanyID() == -1)
+		{
+			return false;
+		}
 		if ( this.m.ActiveRelationships[_actor.getCompanyID()] == null )
 		{
 			return false;
@@ -2363,6 +2349,11 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		local newRelationship = {};
 		newRelationship.RelationNum <- 0;
 
+		if (_actor.getCompanyID() == -1)
+		{
+			return;
+		}
+
 		this.m.ActiveRelationships[_actor.getCompanyID()] = newRelationship;
 
 	}
@@ -2375,6 +2366,10 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	//	}
 	function nullRelation( _id )
 	{
+		if (_id == -1)
+		{
+			return;
+		}
 		this.m.ActiveRelationships[_id] = null;
 	}
 
@@ -2389,7 +2384,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		}
 		this.World.State.removeCompanyID(this.m.CompanyID);
 	}
-	
+
 
 	//Call this function by doing
 	//		getARW( actor )
@@ -2408,7 +2403,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	}
 
 	//Used by the trait to get just a list of the characters relations
-	//Currently returns just the RelNum integer but can be changed to 
+	//Currently returns just the RelNum integer but can be changed to
 	//		return strings, i.e. "%actor% likes %other actor%"
 	function getActiveRelationshipsTraitText()
 	{
@@ -2560,11 +2555,10 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				this.m.Attributes[i] = [];
 			}
 		}
-		
-		if (this.m.Attributes[0].len() == 0)
+
+		for( local i = 0; i != this.Const.Attributes.COUNT; i = ++i )
 		{
-			for( local i = 0; i != this.Const.Attributes.COUNT; i = ++i )
-			{
+			if (this.m.Attributes[i].len() == 0) {
 				this.m.Attributes[i].push(1);
 			}
 		}
@@ -2875,7 +2869,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 			if (skill != null)
 			{
-				mod = mod + skill.getModifier();
+				mod += skill.getModifier();
 			}
 		}
 
@@ -3125,7 +3119,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				}
 
 				}
-				
+
 			}
 			//adds a string with STOP so we know when to stop reading in in onDeserialize(?) this should bechanged probably
 			_out.writeString("STOP");
@@ -3250,19 +3244,19 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		}
 		//IF WE ADD ANY NON-INT KEYS YOU HAVE TO CHECK HERE WHAT TKEY STRING IS USING
 		// if ( keys == __ ) THEN _in.readVARTYPE
-		if (_in.getMetaData().getVersion() >= 65) //THIS SHOULD BE CHANGED TO ACTUAL NUMBER WHEN IN RELEASE BUILD 
-		{	
-			
+		if (_in.getMetaData().getVersion() >= 65) //THIS SHOULD BE CHANGED TO ACTUAL NUMBER WHEN IN RELEASE BUILD
+		{
+
 			local relEnabled = (_in.getMetaData().getVersion() == 65 ? true : _in.readBool());
 
 			if (relEnabled)
-			{		
+			{
 				this.m.Alignment = _in.readU8();
 				this.m.IsAlignmentAssigned = _in.readBool();
 			}
 			this.m.CompanyID = _in.readU8();
 			if (relEnabled)
-			{		
+			{
 				local keys = _in.readString(); //puts STOP if we had norelations etc
 				local i = -1;
 				while ( keys != "STOP" )
@@ -3278,10 +3272,10 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 						this.m.ActiveRelationships[i][keys] <- _in.readI16();
 					}
 					keys = _in.readString();
-				}	
+				}
 			}
 		}
-		
+
 	}
 
 });

@@ -1,5 +1,7 @@
 this.tree_trunk_forest_leaves <- this.inherit("scripts/entity/tactical/entity", {
-	m = {},
+	m = {
+		IsTree = true
+		},
 	function getName()
 	{
 		return this.Const.Strings.Tactical.EntityName.Tree;

@@ -55,6 +55,16 @@ this.undead_necropolis_location <- this.inherit("scripts/entity/world/location",
 			"loot/jeweled_crown_item",
 			"loot/ancient_gold_coins_item",
 			"loot/ornate_tome_item",
+			"loot/silverware_item",
+			"loot/silver_bowl_item",
+			"loot/signet_ring_item",
+			"loot/white_pearls_item",
+			"loot/golden_chalice_item",
+			"loot/gemstones_item",
+			"loot/ancient_gold_coins_item",
+			"loot/jeweled_crown_item",
+			"loot/ancient_gold_coins_item",
+			"loot/ornate_tome_item",
 			"misc/legend_ancient_scroll_item"
 		], _lootTable);
 	}

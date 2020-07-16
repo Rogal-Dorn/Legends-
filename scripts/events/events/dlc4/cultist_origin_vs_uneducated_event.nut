@@ -59,21 +59,30 @@ this.cultist_origin_vs_uneducated_event <- this.inherit("scripts/events/event", 
 			{
 				this.Characters.push(_event.m.Cultist.getImagePath());
 				this.Characters.push(_event.m.Uneducated.getImagePath());
-				local background = this.new("scripts/skills/backgrounds/converted_cultist_background");
-				local oldPerkTree = _event.m.Uneducated.getBackground().m.CustomPerkTree;
-				_event.m.Uneducated.getSkills().removeByID(_event.m.Uneducated.getBackground().getID());
-				_event.m.Uneducated.getSkills().add(background);
-				background.buildDescription();
-				background.rebuildPerkTree(oldPerkTree);
-				_event.m.Uneducated.resetPerks();
-				background.onSetAppearance();
+				_event.m.Uneducated.getBackground().Convert();
+				_event.m.Uneducated.getBackground().m.RawDescription += " " + _event.m.Cultist.getName() + " helped " + _event.m.Uneducated.getName() + " see the darkness.";
+				_event.m.Uneducated.getBackground().buildDescription(true);
+
+				//set relations
+				local modifier1 = this.Math.rand(10, 20);
+				_event.m.Uneducated.changeActiveRelationship( _event.m.Cultist, modifier1 );
+				local modifier2 = this.Math.rand(10, 20);
+				_event.m.Cultist.changeActiveRelationship( _event.m.Uneducated, modifier2 );
 				this.List = [
 					{
 						id = 13,
-						icon = background.getIcon(),
+						icon = _event.m.Uneducated.getBackground().getIcon(),
 						text = _event.m.Uneducated.getName() + " has been converted to a Cultist"
 					}
 				];
+				if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+				{
+					this.List.push({
+						id = 11,
+						icon = "ui/icons/relation.png",
+						text = _event.m.Cultist.getName() + " and " + _event.m.Uneducated.getName() + " grow closer"
+					});
+				}
 				_event.m.Cultist.getBaseProperties().Bravery += 2;
 				_event.m.Cultist.getSkills().update();
 				this.List.push({
@@ -148,16 +157,23 @@ this.cultist_origin_vs_uneducated_event <- this.inherit("scripts/events/event", 
 				continue;
 			}
 
-			if (bro.getBackground().getID() == "background.cultist" || bro.getBackground().getID() == "background.converted_cultist")
+			if (bro.getBackground().isCultist())
 			{
 				cultist_candidates.push(bro);
 			}
-			else if ((bro.getBackground().isLowborn() && !bro.getSkills().hasSkill("trait.bright")) || 
-				(!bro.getBackground().isNoble() && (bro.getSkills().hasSkill("trait.dumb") || bro.getSkills().hasSkill("injury.brain_damage"))) && 
-				(!bro.getBackground().getID() == "background.legend_commander_berserker" || !bro.getBackground().getID() == "background.legend_berserker") || !bro.getBackground().getID() == "background.legend_donkey")
-			{
-				uneducated_candidates.push(bro);
-			}
+			else if ((bro.getBackground().isLowborn() && !bro.getSkills().hasSkill("trait.bright")) ||
+						(!bro.getBackground().isNoble() && bro.getSkills().hasSkill("trait.dumb"))	   ||
+						bro.getSkills().hasSkill("injury.brain_damage") )
+					{
+						//this.logInfo("1");
+						if(bro.getBackground().getID() != "background.legend_commander_berserker" && 
+						   bro.getBackground().getID() != "background.legend_berserker" &&
+						   bro.getBackground().getID() != "background.legend_donkey") 
+						{
+							//this.logInfo("2");
+							uneducated_candidates.push(bro);
+						}
+					}
 		}
 
 		if (cultist_candidates.len() == 0 || uneducated_candidates.len() == 0)
@@ -168,6 +184,7 @@ this.cultist_origin_vs_uneducated_event <- this.inherit("scripts/events/event", 
 		this.m.Cultist = cultist_candidates[this.Math.rand(0, cultist_candidates.len() - 1)];
 		this.m.Uneducated = uneducated_candidates[this.Math.rand(0, uneducated_candidates.len() - 1)];
 		this.m.Score = cultist_candidates.len() * 7;
+		//this.m.Score = 9999;
 	}
 
 	function onPrepare()
@@ -191,6 +208,8 @@ this.cultist_origin_vs_uneducated_event <- this.inherit("scripts/events/event", 
 		this.m.Cultist = null;
 		this.m.Uneducated = null;
 	}
+
+
 
 });
 

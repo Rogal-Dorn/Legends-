@@ -141,7 +141,11 @@ this.skeleton <- this.inherit("scripts/entity/tactical/actor", {
 				if (appearance.HelmetCorpse != "")
 				{
 					local decal = _tile.spawnDetail(appearance.HelmetCorpse, this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-					decal.Scale = 0.9;
+					if (decal != null && decal.Scale != null)
+					{
+						decal.Scale = 0.9;
+					}
+
 				}
 			}
 			else if (_fatalityType == this.Const.FatalityType.Decapitated)

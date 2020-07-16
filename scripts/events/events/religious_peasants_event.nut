@@ -207,10 +207,7 @@ this.religious_peasants_event <- this.inherit("scripts/events/event", {
 			{
 				candidates.push(bro);
 			}
-			// else if (bro.getSkills().hasSkill("perk.legend_scholar"))
-			// {
-			// 	candidates.push(bro);
-			// }
+
 		}
 
 		if (candidates.len() != 0)

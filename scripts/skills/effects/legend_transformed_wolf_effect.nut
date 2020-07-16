@@ -34,7 +34,7 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 		}
 
 
-	
+
 
 		return ret;
 
@@ -107,7 +107,7 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 	function onRemoved()
-	{	
+	{
 
 
 
@@ -131,7 +131,7 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("dirt").Alpha = 255;
 		actor.getSprite("accessory").Alpha = 255;
 		actor.getSprite("surcoat").Alpha = 255;
-		actor.getSprite("armor_upgrade_back").Alpha = 255;		
+		actor.getSprite("armor_upgrade_back").Alpha = 255;
 		actor.getSprite("armor_upgrade_front").Alpha = 255;
 		actor.getSprite("socket").Alpha = 255;
 		actor.getSprite("body").setHorizontalFlipping(0);
@@ -149,6 +149,7 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 				}
 			}
 		}
+
 
 		actor.getSkills().removeByID("actives.werewolf_claws");
 		actor.getSkills().removeByID("actives.werewolf_bite");

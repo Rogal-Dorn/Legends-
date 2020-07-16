@@ -887,7 +887,14 @@ this.faction <- {
 		for( local i = 0; i != numUnits; i = ++i )
 		{
 			local unit = this.World.getEntityByID(_in.readI32());
+
+			if (_in.getMetaData().getVersion() == 68 && unit.m.Name == "Ship")
+			{
+				unit.fadeOutAndDie();
+				continue;
+			}
 			this.addUnit(unit);
+
 		}
 
 		this.m.LastActionTime = _in.readF32();

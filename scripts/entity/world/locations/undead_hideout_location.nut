@@ -48,8 +48,7 @@ this.undead_hideout_location <- this.inherit("scripts/entity/world/location", {
 		this.dropTreasure(1, [
 			"loot/signet_ring_item",
 			"loot/signet_ring_item",
-			"loot/silverware_item",
-			"misc/legend_ancient_scroll_item"
+			"loot/silverware_item"
 		], _lootTable);
 	}
 

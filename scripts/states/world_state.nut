@@ -3396,7 +3396,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 				this.toggleCharacterScreen();
 				break;
 
-			
+
 			case 29:
 				this.m.CharacterScreen.toggleBrotherReserves();
 				break;
@@ -3710,6 +3710,10 @@ this.world_state <- this.inherit("scripts/states/state", {
 
 	function getRefFromID( _id )
 	{
+		if (_id == -1) return null;
+
+		if (_id > this.m.IDToRef.len() - 1) return null;
+
 		return this.m.IDToRef[_id];
 	}
 
@@ -3763,7 +3767,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.m.LastTileHovered = null;
 		this.m.LastWorldSpeedMult = 1.0;
 		this.m.CustomZoom = 1.0;
-		this.m.Player = null;
+		this.m.Player = null
 		this.m.CombatStartTime = 0;
 		this.m.LastEnemyDiscoveredSoundTime = 0.0;
 		this.m.IsTriggeringContractUpdatesOnce = true;
@@ -3816,6 +3820,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 	function onDeserialize( _in )
 	{
 		this.Sound.stopAmbience();
+		this.logInfo("Deserializing Player party")
 		this.m.Player = this.World.getPlayerEntity();
 
 		if (_in.getMetaData().getVersion() >= 34)

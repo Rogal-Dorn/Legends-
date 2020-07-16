@@ -35,6 +35,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		AlignmentMin = this.Const.LegendMod.Alignment.Dreaded,
 		AlignmentMax = this.Const.LegendMod.Alignment.Saintly,
 		IsStabled = false,
+		IsConverted = false,
 		Modifiers = {
 			Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[0],
 			ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[0],
@@ -78,10 +79,32 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			Weapon = 8,
 			Defense = 2,
 			Traits = 8,
-			Enemy = 2,
-			EnemyChance = 0.1,
+			Enemy = 1,
+			EnemyChance = 0.01,
 			Class = 1,
-			ClassChance = 0.10,
+			ClassChance = 0.01,
+			Magic = 1,
+			MagicChance = 0
+		},
+		PerkTreeDynamicMinsMagic = {
+			Weapon = 8,
+			Defense = 2,
+			Traits = 8,
+			Enemy = 1,
+			EnemyChance = 0.01,
+			Class = 1,
+			ClassChance = 0.05,
+			Magic = 1,
+			MagicChance = 0.002
+		},
+		PerkTreeDynamicMinsBeast = {
+			Weapon = 8,
+			Defense = 2,
+			Traits = 8,
+			Enemy = 1,
+			EnemyChance = 0.05,
+			Class = 1,
+			ClassChance = 0.05,
 			Magic = 1,
 			MagicChance = 0.002
 		},
@@ -171,6 +194,27 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		return this.m.IsOutlawBackground;
 	}
 
+	function isCultist()
+	{
+		return this.m.IsConverted;
+	}
+
+	function Convert()
+	{
+		this.m.IsConverted = true;
+		local cultistGroup = [
+						[this.Const.Perks.PerkDefs.LegendSpecialistNinetailsSkill],
+						[this.Const.Perks.PerkDefs.LegendSpecCultHood],
+						[this.Const.Perks.PerkDefs.LegendSpecialistNinetailsDamage],
+						[],
+						[this.Const.Perks.PerkDefs.LegendPrepareGraze],
+						[this.Const.Perks.PerkDefs.LegendSpecCultArmor],
+						[this.Const.Perks.PerkDefs.LegendLacerate]
+					];
+		
+		this.addPerkGroup(cultistGroup);
+	}
+
 	function getExcludedTalents()
 	{
 		return this.m.ExcludedTalents;
@@ -218,6 +262,15 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		this.m.DailyCostMult = this.Math.rand(90, 110) * 0.01;
 	}
 
+	// This is used to overwrite the general skill "getIconColored()" so that converted cultists always have their background icon show as converted.
+	function getIconColored()
+	{
+		if(this.m.IsConverted) {
+			return "ui/backgrounds/background_34.png";
+		}
+		return this.m.Icon;
+	}
+
 	function isHidden()
 	{
 		return this.skill.isHidden() || this.m.IsScenarioOnly;
@@ -225,6 +278,9 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 
 	function getName()
 	{
+		if(this.m.IsConverted) {
+			return "Background: Cultist " + this.m.Name;
+		}
 		return "Background: " + this.m.Name;
 	}
 
@@ -434,6 +490,36 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		}
 
 		return this.Const.Perks.findByBackground(_id, this.getID());
+	}
+	
+	function addPerkBooleanFail(_perk, _row = 0) {
+		local perk = clone this.Const.Perks.PerkDefObjects[_perk];
+        //Dont add dupes
+        if (perk.ID in this.m.PerkTreeMap)
+        {
+            return false;
+        }
+        
+        perk.Row <- _row;
+        perk.Unlocks <- _row;
+        for (local i = this.getPerkTree().len(); i < _row + 1; i = ++i)
+        {
+            this.getPerkTree().push([]);
+        }
+        this.getPerkTree()[_row].push(perk);
+        this.m.PerkTreeMap[perk.ID] <- perk;
+        return true;
+    
+	}
+	
+	function addPerkGroup(_Tree) {	
+		foreach(index, arrAdd in _Tree)
+		{
+			foreach (perkAdd in arrAdd)
+			{
+				this.addPerkBooleanFail(perkAdd, index);
+			}
+		}
 	}
 
 	function isStabled()
@@ -822,9 +908,21 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 
 		if (this.m.CustomPerkTree == null)
 		{
-			if (this.World.Assets.isLegendPerkTrees())
+			if (this.World.Assets.isLegendPerkTrees() && !this.Const.LegendMod.Configs.LegendMagicEnabled() && !this.World.Assets.getOrigin().getID() == "scenario.legends_seer"  && !this.World.Assets.getOrigin().getID() == "scenario.beast_hunters")
 			{
 				local result  = this.Const.Perks.GetDynamicPerkTree(this.m.PerkTreeDynamicMins, this.m.PerkTreeDynamic);
+				this.m.CustomPerkTree = result.Tree
+				a = result.Attributes;
+			}
+			else if (this.World.Assets.isLegendPerkTrees() && this.Const.LegendMod.Configs.LegendMagicEnabled() && this.World.Assets.getOrigin().getID() == "scenario.legends_seer")
+			{
+				local result  = this.Const.Perks.GetDynamicPerkTree(this.m.PerkTreeDynamicMinsMagic, this.m.PerkTreeDynamic);
+				this.m.CustomPerkTree = result.Tree
+				a = result.Attributes;
+			}
+			else if (this.World.Assets.isLegendPerkTrees() && this.World.Assets.getOrigin().getID() == "scenario.beast_hunters")
+			{
+				local result  = this.Const.Perks.GetDynamicPerkTree(this.m.PerkTreeDynamicMinsBeast, this.m.PerkTreeDynamic);
 				this.m.CustomPerkTree = result.Tree
 				a = result.Attributes;
 			}
@@ -1256,6 +1354,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		_out.writeBool(this.m.IsNew);
 		_out.writeF32(this.m.DailyCostMult);
 		_out.writeBool(this.m.IsFemaleBackground);
+		_out.writeBool(this.m.IsConverted);
 		if (this.m.CustomPerkTree == null)
 		{
 			_out.writeU8(0);
@@ -1272,8 +1371,6 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 				}
 			}
 		}
-
-
 	}
 
 	function onDeserialize( _in )
@@ -1310,6 +1407,12 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			}
 		}
 
+		// Not sure what number this should be set to
+		if (_in.getMetaData().getVersion() >= 68)
+		{
+			this.m.IsConverted = _in.readBool();
+		}
+
 		if (_in.getMetaData().getVersion() >= 57)
 		{
 			this.m.CustomPerkTree = [];
@@ -1330,7 +1433,6 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		{
 			this.buildPerkTree();
 		}
-
 
 	}
 

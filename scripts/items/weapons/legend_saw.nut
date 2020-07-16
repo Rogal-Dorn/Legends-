@@ -38,6 +38,7 @@ this.legend_saw <- this.inherit("scripts/items/weapons/weapon", {
 		this.addSkill(cleave);
 		local decapitate = this.new("scripts/skills/actives/decapitate");
 		this.addSkill(decapitate);
+		this.addSkill(this.new("scripts/skills/actives/legend_harvest_tree"));
 	}
 
 });

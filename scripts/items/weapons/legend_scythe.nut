@@ -35,6 +35,7 @@ this.legend_scythe <- this.inherit("scripts/items/weapons/weapon", {
 		cleave.m.FatigueCost = 15;
 		this.addSkill(cleave);
 		this.addSkill(this.new("scripts/skills/actives/reap_skill"));
+		this.addSkill(this.new("scripts/skills/actives/legend_harvest_bush"));
 
 	}
 
