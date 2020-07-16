@@ -3603,3 +3603,5 @@ Fixes crash with curse of years skill
 Fixes crash with setting skeleton helmet that does not exist.
 Fixes issues with rabble poachers not using their ranged weapons.
 Fixes a crash on getting container from generic Item
+
+https://drive.google.com/file/d/1-1QxlII6-iw2vPHK0Zk2cVvlrJdYko0p/view?usp=sharing
