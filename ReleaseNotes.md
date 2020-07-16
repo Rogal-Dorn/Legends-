@@ -3584,7 +3584,7 @@ When magic is enabled:
 
 
 **Changes:**
-Default start options changes. Magic, skip camp intro, all recipes, relationships and economy are all off by default now.
+Default start options changes. Magic, all recipes, and relationships are all off by default now.
 Inventors gain philosophy group
 Divination perk group no longer exists, perks merged into illusion perk group
 Diviners use astrology per group
