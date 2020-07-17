@@ -17,7 +17,7 @@ gt.Const.Perks.ValaChantMagicTree <- {
 		[gt.Const.Perks.PerkDefs.LegendValaChantMastery],
 		[gt.Const.Perks.PerkDefs.LegendValaChantDisharmony],
 		[],
-		[gt.Const.Perks.PerkDefs.LegendValaChantDisharmony]
+		[]
 	]
 };
 
