@@ -13,7 +13,7 @@ this.herbal_cat_potion_blueprint <- this.inherit("scripts/crafting/blueprint", {
 				Num = 2
 			},
 			{
-				Script = "scripts/items/accessory/spider_silk_item",
+				Script = "scripts/items/accessory/berserker_mushrooms_item",
 				Num = 1
 			},
 			{
@@ -24,7 +24,7 @@ this.herbal_cat_potion_blueprint <- this.inherit("scripts/crafting/blueprint", {
 		this.init(ingredients);
 		local skills = [
 			{
-				Scripts = ["scripts/skills/perks/perk_legend_herbcraft"]
+				Scripts = ["scripts/skills/perks/perk_legend_potion_brewer"]
 			}
 		]
 		this.initSkills(skills);
