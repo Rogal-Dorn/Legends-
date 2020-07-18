@@ -1,21 +1,22 @@
-this.legend_armor_piercing_arrows <- this.inherit("scripts/items/ammo/ammo", {
+this.legend_large_broad_head_bolts <- this.inherit("scripts/items/ammo/ammo", {
 	m = {},
 	function create()
 	{
-		this.m.ID = "ammo.legend_armor_piercing_arrows";
-		this.m.Name = "Armor Piercing Arrows";
-		this.m.Description = "A quiver of arrows with piercing tips, designed for punching through thick armor. Is automatically refilled after each battle if you have enough ammunition. Grants +30% armor piercing and -10% damage while wielding a bow.";
-		this.m.Icon = "ammo/quiver_01_dark.png";
-		this.m.IconEmpty = "ammo/quiver_01_empty.png";
+		this.m.ID = "ammo.legend_broad_head_bolts";
+		this.m.Name = "Large Quiver of Broad Head Bolts";
+		this.m.Description = "A large quiver of bolts with broad tips, designed for tearing flesh, but easily stopped by armor. Is automatically refilled after each battle if you have enough global ammunition. Grants +10% damage but -30% armor piercing damage while wielding a crossbow.";
+		this.m.Icon = "ammo/quiver_04_light.png";
+		this.m.IconEmpty = "ammo/quiver_04_empty.png";
 		this.m.SlotType = this.Const.ItemSlot.Ammo;
 		this.m.ItemType = this.Const.Items.ItemType.Ammo;
-		this.m.AmmoType = this.Const.Items.AmmoType.Arrows;
+		this.m.AmmoType = this.Const.Items.AmmoType.Bolts;
 		this.m.ShowOnCharacter = true;
 		this.m.ShowQuiver = true;
 		this.m.Sprite = "bust_quiver_01";
-		this.m.Value = 350;
-		this.m.Ammo = 10;
-		this.m.AmmoMax = 10;
+		this.m.Value = 3500;
+		this.m.Ammo = 14;
+		this.m.AmmoMax = 14;
+		this.m.StaminaModifier = 2;
 		this.m.IsDroppedAsLoot = true;
 	}
 
@@ -64,7 +65,7 @@ this.legend_armor_piercing_arrows <- this.inherit("scripts/items/ammo/ammo", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/ranged_skill.png",
-				text = "Contains [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.Ammo + "[/color] arrows"
+				text = "Contains [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.Ammo + "[/color] bolts"
 			});
 		}
 		else
@@ -80,7 +81,7 @@ this.legend_armor_piercing_arrows <- this.inherit("scripts/items/ammo/ammo", {
 		return result;
 	}
 
-	function onUpdateProperties( _properties )
+function onUpdateProperties( _properties )
 	{
 		this.ammo.onUpdateProperties(_properties);
 		local actor = this.getContainer().getActor();
@@ -92,16 +93,13 @@ this.legend_armor_piercing_arrows <- this.inherit("scripts/items/ammo/ammo", {
 		
 		switch (item.getID())
 		{
-			case "weapon.wonky_bow":
-			case "weapon.war_bow":
-			case "weapon.hunting_bow":
-			case "weapon.masterwork_bow":
-			case "weapon.short_bow":	
-			case "weapon.goblin_bow":
-			case "weapon.goblin_heavy_bow":
-			case "weapon.named_goblin_heavy_bow":	
-				_properties.DamageDirectMult *= 1.3;
-				_properties.RangedDamageMult *= 0.9;
+			case "weapon.light_crossbow":
+			case "weapon.goblin_crossbow":
+			case "weapon.crossbow":
+			case "weapon.heavy_crossbow":
+			case "weapon.named_crossbow":	
+				_properties.DamageDirectMult *= 0.7;
+				_properties.RangedDamageMult *= 1.1;
 					break;
 		}
 

@@ -16,6 +16,7 @@ this.huge_quiver_of_arrows <- this.inherit("scripts/items/ammo/ammo", {
 		this.m.Value = 4000;
 		this.m.Ammo = 20;
 		this.m.AmmoMax = 20;
+		this.m.StaminaModifier = 4;
 		this.m.IsDroppedAsLoot = true;
 	}
 
