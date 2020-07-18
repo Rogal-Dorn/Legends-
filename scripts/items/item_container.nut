@@ -329,7 +329,7 @@ this.item_container <- {
 		return null;
 	}
 
-	function addToBag( _item, _slot = -1 )
+	function addToBag( _item, _slot = -1, _force = false)
 	{
 		if (_item.getCurrentSlotType() != this.Const.ItemSlot.None)
 		{
@@ -337,7 +337,7 @@ this.item_container <- {
 			return false;
 		}
 
-		if (!_item.isAllowedInBag())
+		if (!_force && !_item.isAllowedInBag(this.getActor()))
 		{
 			return false;
 		}
@@ -638,7 +638,7 @@ this.item_container <- {
 				if (this.m.Items[i][j] == null || this.m.Items[i][j] == -1)
 				{
 				}
-				else if (this.m.Items[i][j].isChangeableInBattle())
+				else if (this.m.Items[i][j].isChangeableInBattle(null))
 				{
 					if (IsDroppingLoot)
 					{
@@ -1053,7 +1053,7 @@ this.item_container <- {
 
 			if (slotType == this.Const.ItemSlot.Bag)
 			{
-				win = this.addToBag(item);
+				win = this.addToBag(item, -1, true);
 			}
 			else
 			{

@@ -133,11 +133,11 @@ this.item <- {
 	{
 		return this.m.ItemType;
 	}
-	
+
 	function getType()
 	{
 		return this.m.Type;
-	}	
+	}
 
 	function hasProperty( _t )
 	{
@@ -159,7 +159,7 @@ this.item <- {
 		return this.m.IsGarbage;
 	}
 
-	function isChangeableInBattle()
+	function isChangeableInBattle( _actor = null)
 	{
 		return this.m.SlotType >= 0 ? this.m.IsChangeableInBattle && this.Const.ItemSlotChangeableInBattle[this.m.SlotType] : false;
 	}
@@ -357,7 +357,7 @@ this.item <- {
 		return 0;
 	}
 
-	function isAllowedInBag()
+	function isAllowedInBag( _actor = null )
 	{
 		if (!this.m.IsAllowedInBag || this.m.SlotType == this.Const.ItemSlot.Body || this.m.SlotType == this.Const.ItemSlot.Head || this.m.SlotType == this.Const.ItemSlot.None)
 		{

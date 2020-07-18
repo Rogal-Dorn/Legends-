@@ -408,7 +408,7 @@ this.tooltip_events <- {
 
 		if (stashLocked == true && _ignoreStashLocked == false)
 		{
-			if (_item.isChangeableInBattle() == false)
+			if (_item.isChangeableInBattle(_entity) == false)
 			{
 				tooltip.push({
 					id = 1,
@@ -453,7 +453,7 @@ this.tooltip_events <- {
 			{
 				if (stashLocked == true)
 				{
-					if (_item.getSlotType() != this.Const.ItemSlot.Bag && (_entity.getItems().getItemAtSlot(_item.getSlotType()) == null || _entity.getItems().getItemAtSlot(_item.getSlotType()) == "-1" || _entity.getItems().getItemAtSlot(_item.getSlotType()).isAllowedInBag()))
+					if (_item.getSlotType() != this.Const.ItemSlot.Bag && (_entity.getItems().getItemAtSlot(_item.getSlotType()) == null || _entity.getItems().getItemAtSlot(_item.getSlotType()) == "-1" || _entity.getItems().getItemAtSlot(_item.getSlotType()).isAllowedInBag(_entity)))
 					{
 						tooltip.push({
 							id = 1,
@@ -478,7 +478,7 @@ this.tooltip_events <- {
 				}
 				else
 				{
-					if (_item.getSlotType() != this.Const.ItemSlot.Bag && (_entity.getItems().getItemAtSlot(_item.getSlotType()) == null || _entity.getItems().getItemAtSlot(_item.getSlotType()) == "-1" || _entity.getItems().getItemAtSlot(_item.getSlotType()).isAllowedInBag()))
+					if (_item.getSlotType() != this.Const.ItemSlot.Bag && (_entity.getItems().getItemAtSlot(_item.getSlotType()) == null || _entity.getItems().getItemAtSlot(_item.getSlotType()) == "-1" || _entity.getItems().getItemAtSlot(_item.getSlotType()).isAllowedInBag(_entity)))
 					{
 						tooltip.push({
 							id = 1,
@@ -498,7 +498,7 @@ this.tooltip_events <- {
 			}
 			else if (stashLocked == true)
 			{
-				if (_item.isChangeableInBattle() && _item.isAllowedInBag() && _entity.getItems().hasEmptySlot(this.Const.ItemSlot.Bag))
+				if (_item.isChangeableInBattle(_entity) && _item.isAllowedInBag(_entity) && _entity.getItems().hasEmptySlot(this.Const.ItemSlot.Bag))
 				{
 					tooltip.push({
 						id = 1,
@@ -521,7 +521,7 @@ this.tooltip_events <- {
 			}
 			else
 			{
-				if (_item.isChangeableInBattle() && _item.isAllowedInBag())
+				if (_item.isChangeableInBattle(_activeEntity) && _item.isAllowedInBag(_activeEntity))
 				{
 					tooltip.push({
 						id = 1,
@@ -543,7 +543,7 @@ this.tooltip_events <- {
 
 		case "ground":
 		case "character-screen-inventory-list-module.ground":
-			if (_item.isChangeableInBattle())
+			if (_item.isChangeableInBattle(_entity))
 			{
 				if (_item.getSlotType() != this.Const.ItemSlot.None)
 				{
@@ -559,7 +559,7 @@ this.tooltip_events <- {
 					});
 				}
 
-				if (_item.isAllowedInBag())
+				if (_item.isAllowedInBag(_entity))
 				{
 					tooltip.push({
 						id = 2,
@@ -595,7 +595,7 @@ this.tooltip_events <- {
 				});
 			}
 
-			if (_item.isChangeableInBattle() == true && _item.isAllowedInBag())
+			if (_item.isChangeableInBattle(_entity) == true && _item.isAllowedInBag(_entity))
 			{
 				tooltip.push({
 					id = 2,

@@ -3820,7 +3820,6 @@ this.world_state <- this.inherit("scripts/states/state", {
 	function onDeserialize( _in )
 	{
 		this.Sound.stopAmbience();
-		this.logInfo("Deserializing Player party")
 		this.m.Player = this.World.getPlayerEntity();
 
 		if (_in.getMetaData().getVersion() >= 34)

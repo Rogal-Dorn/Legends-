@@ -2,7 +2,6 @@ this.legend_custom_scenario_intro <- this.inherit("scripts/events/event", {
 	m = {
 		StartBro = null,
 		PartySize =  1,
-		Background = "beggar_background",
 		Traits = [],
 		PreviousScreen = "",
 		Dude = null,
