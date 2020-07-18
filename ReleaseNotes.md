@@ -3626,8 +3626,8 @@ Raw wood value dropped to 40 from 90, has a new image
 Sickle durability raised from 20 to 30, named sickle durability lowered from 75 to 50 
 
 Herbalists gain the Herbcraft perk 
-* Craft mushrooms, poison and antidotes from roots and berries 
-* Craft potions from poisons, antidotes and monster parts 
+* Craft delicious vegan treats like mushrooms, poison and antidotes from roots and berries 
+* Potion brewer perk can now craft potions from poisons, antidotes and sometimes monster parts 
 * Can create snake oil, cat potions, recovery potions, iron will potions, obvlion potions and happy powder 
 
 Lumberjacks gain the Woodworking perk 
@@ -3636,18 +3636,15 @@ Lumberjacks gain the Woodworking perk
 * crafted shields will come in your company colours. 
 * can also craft the shields of each noble house
 
-
 Bowyers and Fletchers can now craft quality wood into: 
 * Piercing arrows - gain 20% armor piercing damage and -10% damage 
-* broad arrows - gain 10% damage and -20% armor piercing damage  
-
+* Broad arrows - gain 10% damage and -20% armor piercing damage  
 
 Other Crafting changes: 
 All helms and armors require a blacksmith, including noble and legendary
 All cloaks and tabards requires a seamstress or tailor, including noble and legendary
 Warlock gear requires strange meat instead of corpses, costs more to craft and requires a seamstress or tailor 
-
-
+Alcohol is only crafted by alcohol brewers, not potion brewers 
 
 fixes recruits incorrectly rolling magic skills outside seer and warlock starts 
 Chant tree no longer has double disharmony 

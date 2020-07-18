@@ -36,7 +36,7 @@ this.herbal_oblivion_potion_blueprint <- this.inherit("scripts/crafting/blueprin
 		this.init(ingredients);
 		local skills = [
 			{
-				Scripts = ["scripts/skills/perks/perk_legend_herbcraft"]
+				Scripts = ["scripts/skills/perks/perk_legend_potion_brewer"]
 			}
 		]
 		this.initSkills(skills);
