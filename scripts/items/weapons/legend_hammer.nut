@@ -24,7 +24,7 @@ this.legend_hammer <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.StaminaModifier = -5;
 		this.m.RegularDamage = 15;
 		this.m.RegularDamageMax = 20;
-		this.m.ArmorDamageMult = 0.75;
+		this.m.ArmorDamageMult = 1.5;
 		this.m.DirectDamageMult = 0.4;
 	}
 

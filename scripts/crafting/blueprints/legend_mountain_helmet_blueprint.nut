@@ -26,6 +26,12 @@ this.legend_mountain_helmet_blueprint <- this.inherit("scripts/crafting/blueprin
 			}
 		];
 		this.init(ingredients);
+		local skills = [
+			{
+				Scripts = ["scripts/skills/backgrounds/legend_blacksmith_background"]
+			}
+		]
+		this.initSkills(skills);
 	}
 
 

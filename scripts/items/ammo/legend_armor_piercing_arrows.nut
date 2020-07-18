@@ -4,8 +4,8 @@ this.legend_armor_piercing_arrows <- this.inherit("scripts/items/ammo/ammo", {
 	{
 		this.m.ID = "ammo.legend_armor_piercing_arrows";
 		this.m.Name = "Armor Piercing Arrows";
-		this.m.Description = "A quiver of arrows, required to use bows of all kinds. Is automatically refilled after each battle if you have enough ammunition. Grants +20% armor piercing and -10% damage while wielding a bow.";
-		this.m.Icon = "ammo/quiver_dark.png";
+		this.m.Description = "A quiver of arrows with piercing tips, designed for punching through thick armor. Is automatically refilled after each battle if you have enough ammunition. Grants +30% armor piercing and -10% damage while wielding a bow.";
+		this.m.Icon = "ammo/quiver_01_dark.png";
 		this.m.IconEmpty = "ammo/quiver_01_empty.png";
 		this.m.SlotType = this.Const.ItemSlot.Ammo;
 		this.m.ItemType = this.Const.Items.ItemType.Ammo;
@@ -13,7 +13,7 @@ this.legend_armor_piercing_arrows <- this.inherit("scripts/items/ammo/ammo", {
 		this.m.ShowOnCharacter = true;
 		this.m.ShowQuiver = true;
 		this.m.Sprite = "bust_quiver_01";
-		this.m.Value = 100;
+		this.m.Value = 350;
 		this.m.Ammo = 10;
 		this.m.AmmoMax = 10;
 		this.m.IsDroppedAsLoot = true;
@@ -100,7 +100,7 @@ this.legend_armor_piercing_arrows <- this.inherit("scripts/items/ammo/ammo", {
 			case "weapon.goblin_bow":
 			case "weapon.goblin_heavy_bow":
 			case "weapon.named_goblin_heavy_bow":	
-				_properties.DamageDirectMult += 0.2;
+				_properties.DamageDirectMult *= 1.3;
 				_properties.RangedDamageMult *= 0.9;
 					break;
 		}

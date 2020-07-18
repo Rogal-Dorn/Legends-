@@ -185,6 +185,7 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 
 	}
 
+
 	function getBrewerLevel()
 	{
 		local roster = this.World.getPlayerRoster().getAll();
@@ -202,6 +203,50 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
             }
 
 			return brewerLevel;
+
+        }
+
+	}
+
+	function getWoodsmanLevel()
+	{
+		local roster = this.World.getPlayerRoster().getAll();
+		local woodsmanLevel = 0;
+        foreach( bro in roster )
+        {
+            if (bro.getCampAssignment() != this.m.ID)
+            {
+                continue
+            }
+
+			if (bro.getSkills().hasSkill("perk.legend_specialist_woodaxe_damage"))
+			{
+               brewerLevel += bro.getLevel()
+            }
+
+			return woodsmanLevel;
+
+        }
+
+	}
+
+	function getMinerLevel()
+	{
+		local roster = this.World.getPlayerRoster().getAll();
+		local minerLevel = 0;
+        foreach( bro in roster )
+        {
+            if (bro.getCampAssignment() != this.m.ID)
+            {
+                continue
+            }
+
+			if (bro.getSkills().hasSkill("perk.legend_specialist_pickaxe_damage"))
+			{
+               brewerLevel += bro.getLevel()
+            }
+
+			return minerLevel;
 
         }
 
@@ -227,7 +272,6 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 
 		local secondary = [
 			"scripts/items/supplies/roots_and_berries_item",
-			"scripts/items/misc/mysterious_herbs_item",
 			"scripts/items/supplies/medicine_small_item"
 		];
 
@@ -240,11 +284,67 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		apothecarylevels = 0;
 		}
 
+
+		//check for brewers
 		local brewerlevels = this.getBrewerLevel();
 		if (brewerlevels == null)
 		{
-			apothecarylevels = 0;
+			brewerlevels = 0;
 		}
+
+		//check for woodsmen
+		local woodsmanlevels = this.getWoodsmenLevel();
+
+		// set it to something that wont break if none are present 
+		if (woodsmanlevels == null)
+		{
+		woodsmanlevels = 0;
+		}
+
+		if (woodsmanlevels >= 1 && woodsmanlevels < 10)
+		{	
+			secondary.extend([
+				"scripts/items/trade/legend_raw_wood_item"
+			]);
+		}
+
+		if (woodsmanlevels >= 10)
+		{	
+			secondary.extend([
+				"scripts/items/trade/quality_wood_item"
+			]);
+		}
+
+		//check for miners
+		local minerlevels = this.getMinerLevel();
+
+		// set it to something that wont break if none are present 
+		if (minerlevels == null)
+		{
+		minerlevels = 0;
+		}
+
+		if (minerlevels >= 1 && minerlevels < 10)
+		{	
+			secondary.extend([
+				"scripts/items/trade/peat_bricks_item"
+			]);
+		}
+
+		if (minerlevels >= 5)
+		{	
+			secondary.extend([
+				"scripts/items/trade/peat_bricks_item"
+			]);
+		}
+
+		if (minerlevels >= 10)
+		{	
+			secondary.extend([
+				"scripts/items/trade/uncut_gems_item"
+			]);
+		}
+
 		if (apothecarylevels >= 1 && apothecarylevels < 10)
 		{	
 			secondary.extend([
@@ -252,6 +352,7 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 				"scripts/items/accessory/legend_apothecary_mushrooms_item",
 				"scripts/items/accessory/antidote_item",
 				"scripts/items/accessory/poison_item",
+				"scripts/items/misc/mysterious_herbs_item",
 				"scripts/items/supplies/medicine_item"
 			])
 		}
