@@ -28,7 +28,7 @@ local VanillaTree = [
 		gt.Const.Perks.PerkDefs.Gifted
 	],
 	[
-		gt.Const.Perks.PerkDefs.Backstabber,	
+		gt.Const.Perks.PerkDefs.Backstabber,
 		gt.Const.Perks.PerkDefs.Anticipation,
 		gt.Const.Perks.PerkDefs.ShieldExpert,
 		gt.Const.Perks.PerkDefs.Brawny,
@@ -74,12 +74,12 @@ local VanillaTree = [
 	[],
 	[],
 	[],
-	[]	
+	[]
 ];
 
 gt.Const.Perks.DefaultCustomPerkTree <- VanillaTree;
 
-gt.Const.Perks.BuildPerkTreeFromTemplate <- function (_custom) 
+gt.Const.Perks.BuildPerkTreeFromTemplate <- function (_custom)
 {
 	local tree = []
 	local treeMap = {}
@@ -114,13 +114,13 @@ gt.Const.Perks.BuildPerkTreeFromTemplate <- function (_custom)
 	}
 };
 
-gt.Const.Perks.BuildCustomPerkTree <- function (_custom) 
+gt.Const.Perks.BuildCustomPerkTree <- function (_custom)
 {
 	local pT = {
 		Tree = [],
 		Map = {}
 	}
-	pT.addPerk <- function (_perk, _row=0) 
+	pT.addPerk <- function (_perk, _row=0)
 	{
 		local perk = clone this.Const.Perks.PerkDefObjects[_perk];
 		//Dont add dupes
@@ -151,7 +151,7 @@ gt.Const.Perks.BuildCustomPerkTree <- function (_custom)
 
 
 gt.Const.Perks.GetDynamicPerkTree <- function (_mins, _map)
-{	
+{
 	// _mins = {
 	// 	WeaponTrees = 6,
 	// 	DefenseTrees = 2,
@@ -165,7 +165,7 @@ gt.Const.Perks.GetDynamicPerkTree <- function (_mins, _map)
 	// 	TraitsTrees = [],
 	// 	EnemyTrees = [],
 	// 	ClassTrees = []
-	// }	
+	// }
 	//this.logInfo("Getting dynamic perk tree")
 	local tree = [ [], [], [], [], [], [], [], [], [], [], [] ];
 	local attributes = this.Const.Perks.TraitsTrees.getBaseAttributes();
@@ -229,7 +229,7 @@ gt.Const.Perks.GetDynamicPerkTree <- function (_mins, _map)
 		local t = this.Const.Perks.WeaponTrees.getRandom(_exclude)
 		//this.logInfo("Adding weapon perk tree " + t.ID);
 		_localMap.Weapon.push(t);
-		
+
 	}
 
 	//Add Defense
@@ -292,7 +292,7 @@ gt.Const.Perks.GetDynamicPerkTree <- function (_mins, _map)
 		foreach (tt in _localMap.Class)
 		{
 			_exclude.push(tt.ID);
-		}		
+		}
 		local t = this.Const.Perks.ClassTrees.getRandom(_exclude)
 		//this.logInfo("Adding Class perk tree " + t.ID);
 		_localMap.Class.push(t);
@@ -311,7 +311,7 @@ gt.Const.Perks.GetDynamicPerkTree <- function (_mins, _map)
 		foreach (tt in _localMap.Magic)
 		{
 			_exclude.push(tt.ID);
-		}		
+		}
 		local t = this.Const.Perks.MagicTrees.getRandom(_exclude);
 		if (this.Const.LegendMod.Configs.LegendMagicEnabled())
 		{
@@ -382,7 +382,7 @@ gt.Const.Perks.isInTree <- function ( _tree, _perk)
 }
 
 gt.Const.Perks.MergeDynamicPerkTree <- function (_tree, _map)
-{	
+{
 	foreach (v in _map)
 	{
 		foreach(mT in v)

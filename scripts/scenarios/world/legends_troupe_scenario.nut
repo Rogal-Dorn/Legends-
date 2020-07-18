@@ -33,7 +33,7 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		bros[0].m.LevelUps = 2;
 		bros[0].m.Level = 3;
 		bros[0].setPlaceInFormation(3);
-		bros[0].setVeteranPerks(2);	
+		bros[0].setVeteranPerks(2);
 		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_leap"));
 		bros[0].m.PerkPointsSpent += 1;
 		local items = bros[0].getItems();
@@ -47,7 +47,7 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		bros[1].getBackground().m.RawDescription = "{%name% worked providing entertainment at inns around the country, but the bar fights and road bandits make it no life for a solo artist. Joining with others was for safety as much as the show.}";
 		bros[1].setPlaceInFormation(4);
 
-		bros[1].setVeteranPerks(2);	
+		bros[1].setVeteranPerks(2);
 		bros[1].getSkills().add(this.new("scripts/skills/perks/perk_legend_leap"));
 		bros[1].m.PerkPointsSpent += 1;
 		local items = bros[1].getItems();
@@ -64,7 +64,7 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		bros[2].m.PerkPoints = 3;
 		bros[2].m.LevelUps = 3;
 		bros[2].m.Level = 4;
-		bros[2].setVeteranPerks(2);	
+		bros[2].setVeteranPerks(2);
 		bros[2].getSkills().add(this.new("scripts/skills/perks/perk_legend_leap"));
 		bros[2].m.PerkPointsSpent += 1;
 		local items = bros[2].getItems();
@@ -172,7 +172,7 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 			this.World.Events.fire("event.legend_troupe_scenario_intro");
 		}, null);
 
-		foreach (b in this.World.getPlayerRoster().getAll()) // todo: more efficient approach to this 
+		foreach (b in this.World.getPlayerRoster().getAll()) // todo: more efficient approach to this
 		{
 			foreach (add in this.World.getPlayerRoster().getAll())
 			{
@@ -222,7 +222,7 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 			return;
 		}
 
-		_tree.addPerk(this.Const.Perks.PerkDefs.LegendLeap);
+		_tree[0].push(this.Const.Perks.PerkDefs.LegendLeap);
 	}
 
 	function onUpdateDraftList( _list )

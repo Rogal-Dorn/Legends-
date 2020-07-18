@@ -492,7 +492,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		return this.Const.Perks.findByBackground(_id, this.getID());
 	}
 
-	function addPerkBooleanFail(_perk, _row = 0) {
+	function addPerk(_perk, _row = 0) {
 		local perk = clone this.Const.Perks.PerkDefObjects[_perk];
         //Dont add dupes
         if (perk.ID in this.m.PerkTreeMap)
@@ -507,9 +507,9 @@ this.character_background <- this.inherit("scripts/skills/skill", {
             this.getPerkTree().push([]);
         }
         this.getPerkTree()[_row].push(perk);
+		this.m.CustomPerkTree[_row].push(_perk);
         this.m.PerkTreeMap[perk.ID] <- perk;
         return true;
-
 	}
 
 	function addPerkGroup(_Tree) {
@@ -928,19 +928,18 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			{
 				this.m.CustomPerkTree = this.Const.Perks.DefaultCustomPerkTree;
 			}
+
+			//When deserializing, the scenario isn't set yet, so it will be null - in this case, the sceario should
+			//already have added its perks so we should be ok. This will fail though loading an old save
+			//and we've added new perks to a scenario...
+			local origin = this.World.Assets.getOrigin()
+			if (origin != null)
+			{
+				this.World.Assets.getOrigin().onBuildPerkTree(this.m.CustomPerkTree);
+			}
 		}
 
 		local pT = this.Const.Perks.BuildCustomPerkTree(this.m.CustomPerkTree);
-
-		//When deserializing, the scenario isn't set yet, so it will be null - in this case, the sceario should
-		//already have added its perks so we should be ok. This will fail though loading an old save
-		//and we've added new perks to a scenario...
-		local origin = this.World.Assets.getOrigin()
-		if (origin != null)
-		{
-			this.World.Assets.getOrigin().onBuildPerkTree(pT);
-		}
-
 		this.m.PerkTree = pT.Tree;
 		this.m.PerkTreeMap = pT.Map;
 		return a

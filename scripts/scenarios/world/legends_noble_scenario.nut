@@ -205,12 +205,12 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
     this.World.Assets.addMoralReputation(avgAlignment);
 }
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/cured_rations_item"));
-		
+
 		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
 		{
-			
+
 			local brothers = this.World.getPlayerRoster().getAll();
-			
+
 			foreach( bro in brothers )
 			{
 				local items = bro.getItems();
@@ -334,7 +334,7 @@ foreach (b in this.World.getPlayerRoster().getAll())
 			return;
 		}
 
-		_tree.addPerk(this.Const.Perks.PerkDefs.Rotation)
+		_tree[0].push(this.Const.Perks.PerkDefs.Rotation)
 	}
 
 

@@ -67,25 +67,6 @@ this.legend_scroll_item <- this.inherit("scripts/items/item", {
 		this.Sound.play("sounds/scribble.wav", this.Const.Sound.Volume.Inventory);
 	}
 
-	function addPerkBooleanFail( _perk, _row, _actor )
-	{
-		local perk = clone this.Const.Perks.PerkDefObjects[_perk];
-		//Dont add dupes
-		if (perk.ID in _actor.getBackground().m.PerkTreeMap)
-		{
-			return false;
-		}
-		perk.Row <- _row;
-		perk.Unlocks <- _row;
-		for (local i = _actor.getBackground().getPerkTree().len(); i < _row + 1; i = ++i)
-		{
-			_actor.getBackground().getPerkTree().push([]);
-		}
-		_actor.getBackground().getPerkTree()[_row].push(perk);
-		_actor.getBackground().m.PerkTreeMap[perk.ID] <- perk;
-		return true;
-	}
-
 	function onUse( _actor, _item = null )
 	{
 		local effect = _actor.getSkills().getSkillByID("effects.scroll");
@@ -105,7 +86,7 @@ this.legend_scroll_item <- this.inherit("scripts/items/item", {
 					do {
 						r = this.Math.rand(0, pT.len()-1);
 						r2 = this.Math.rand(0, pT[r].len()-1);
-					} while ( _actor.getSkills().hasSkill( pT[r][r2].ID ) ) 	
+					} while ( _actor.getSkills().hasSkill( pT[r][r2].ID ) )
 					_actor.getSkills().add(this.new( pT[r][r2].Script ));
 					break;
 
@@ -132,7 +113,7 @@ this.legend_scroll_item <- this.inherit("scripts/items/item", {
 					else if (r <= 20)
 					{
 						t = this.Const.Perks.EnemyTrees;
-					}	
+					}
 					else if (r <= 30)
 					{
 						t = this.Const.Perks.DefenseTrees;
@@ -149,17 +130,14 @@ this.legend_scroll_item <- this.inherit("scripts/items/item", {
 					{
 						t = this.Const.Perks.WeaponTrees;
 					}
-					local brk = false;
-					while (!brk)
+
+					for (local i = 0; i < 100; i = ++i)
 					{
-						local f = t.getRandom([]).Tree;
-						foreach(index, arrAdd in f)
+						if (!_actor.getBackground().addPerk(t.getRandomPerk()))
 						{
-							foreach (perkAdd in arrAdd)
-							{
-								brk = this.addPerkBooleanFail( perkAdd, index /*+ (index > 3 ? 1 : 0)*/, _actor );
-							}
+							continue;
 						}
+						break;
 					}
 					break;
 				case 4: //adds a gifted level, copied from gifted perk so it's probably safe
@@ -184,7 +162,7 @@ this.legend_scroll_item <- this.inherit("scripts/items/item", {
         }
 		if (  effect != null )
         {
-			effect.m.Smart = true;	
+			effect.m.Smart = true;
         }
 		else {
 			_actor.getSkills().add(this.new("scripts/skills/effects/legend_scroll_effect"));

@@ -442,4 +442,21 @@ gt.Const.Perks.MagicTrees <- {
 		local r = this.Math.rand(0, L.len() - 1)
 		return this.Tree[L[r]];;
 	}
+
+
+	function getRandomPerk()
+	{
+		local tree = this.getRandom();
+		local L = [];
+		foreach (row in tree.Tree)
+		{
+			foreach (p in row)
+			{
+				L.push(p);
+			}
+		}
+
+		local r = this.Math.rand(0, L.len() - 1);
+		return L[r];
+	}
 };
