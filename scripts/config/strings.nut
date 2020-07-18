@@ -1731,7 +1731,10 @@ gt.Const.Strings.PerkName <- {
 	LegendScholar = "Scholar",
 	LegendCitrinitas = "Citrinitas (Trance)",
 	LegendAlbedo = "Albedo",
-	LegendNigredo = "Nigredo"
+	LegendNigredo = "Nigredo",
+	LegendHerbcraft = "Herbcraft",
+	LegendWoodworking = "Woodworking"
+
 };
 gt.Const.Strings.PerkDescription <- {
 	Relentless = "Don\'t slow down! At all times your Initiative is reduced only by [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] of your accumulated Fatigue, instead of all of it. \n[color=#0b0084]From the Fit perk group[/color]",
