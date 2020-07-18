@@ -46,7 +46,7 @@ this.legend_harvest_tree <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Chop down any tree with a 25% percent chance to harvest wood"
+				text = "Chop down any tree. The first strike will leave a pile of sticks. The second strike will clear the sticks. Causes significant wear and tear"
 			}
 		]);
 		return ret;
@@ -90,8 +90,12 @@ this.legend_harvest_tree <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
+		local item = _user.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		local condition = item.getCondition();
+		local damage = this.Math.random(4,8);
 		this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectChop);
 		return this.attackEntity(_user, _targetTile.getEntity());
+		item.setCondition(condition - damage);
 	}
 
 });
