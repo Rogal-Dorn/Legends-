@@ -407,7 +407,7 @@ gt.Const.Perks.MagicTrees <- {
 		gt.Const.Perks.ValaChantMagicTree,
 		gt.Const.Perks.ValaTranceMagicTree,
 		//gt.Const.Perks.HealerMagicTree,
-		gt.Const.Perks.ValaRuneMagicTree,
+		//gt.Const.Perks.ValaRuneMagicTree,
 		gt.Const.Perks.ValaSpiritMagicTree,
 		gt.Const.Perks.RangerHuntMagicTree,
 		gt.Const.Perks.BasicNecroMagicTree,

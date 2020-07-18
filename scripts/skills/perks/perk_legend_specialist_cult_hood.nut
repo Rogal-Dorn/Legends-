@@ -17,7 +17,7 @@ this.perk_legend_specialist_cult_hood <- this.inherit("scripts/skills/skill", {
 	{
 		local actor = this.getContainer().getActor();
 		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Head);
-		local resolve = actor.getBaseProperties().Bravery;
+		local resolve = actor.getCurrentProperties().Bravery;
 		if (item != null)
 		{
 			switch (item.getID())

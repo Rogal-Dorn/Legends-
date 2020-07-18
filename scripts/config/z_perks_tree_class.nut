@@ -277,7 +277,7 @@ gt.Const.Perks.WoodaxeClassTree <- {
 		[],
 		[gt.Const.Perks.PerkDefs.LegendSpecialistWoodaxeDamage],
 		[],
-		[],
+		[gt.Const.Perks.PerkDefs.LegendWoodworking],
 		[],
 		[]
 	]
@@ -294,7 +294,7 @@ gt.Const.Perks.SickleClassTree <- {
 		[gt.Const.Perks.PerkDefs.LegendSpecialistSickleDamage],
 		[],
 		[gt.Const.Perks.PerkDefs.LegendGatherer],
-		[],
+		[gt.Const.Perks.PerkDefs.LegendHerbcraft],
 		[gt.Const.Perks.PerkDefs.LegendPotionBrewer]
 	]
 };

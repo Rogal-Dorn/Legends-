@@ -113,6 +113,26 @@ this.fletchers_hut_location <- this.inherit("scripts/entity/world/attached_locat
 				P = 0.8,
 				S = "supplies/ammo_item"
 			});
+			_list.push({
+				R = 80,
+				P = 1.0,
+				S = "ammo/legend_armor_piercing_arrows"
+			});
+			_list.push({
+				R = 80,
+				P = 1.0,
+				S = "ammo/legend_armor_piercing_bolts"
+			});
+			_list.push({
+				R = 80,
+				P = 1.0,
+				S = "ammo/legend_broad_head_arrows"
+			});
+			_list.push({
+				R = 80,
+				P = 1.0,
+				S = "ammo/legend_broad_head_bolts"
+			});
 		}
 		else if (_id == "building.specialized_trader")
 		{
@@ -135,18 +155,43 @@ this.fletchers_hut_location <- this.inherit("scripts/entity/world/attached_locat
 				S = "weapons/light_crossbow"
 			});
 			_list.push({
-				R = 50,
+				R = 60,
 				P = 1.0,
 				S = "ammo/huge_quiver_of_arrows"
 			});
 			_list.push({
-				R = 50,
+				R = 60,
 				P = 1.0,
 				S = "ammo/huge_quiver_of_bolts"
 			});
+			_list.push({
+				R = 40,
+				P = 1.0,
+				S = "ammo/legend_large_armor_piercing_arrows"
+			});
+			_list.push({
+				R = 40,
+				P = 1.0,
+				S = "ammo/legend_large_armor_piercing_bolts"
+			});
+			_list.push({
+				R = 40,
+				P = 1.0,
+				S = "ammo/legend_large_broad_head_arrows"
+			});
+			_list.push({
+				R = 40,
+				P = 1.0,
+				S = "ammo/legend_large_broad_head_bolts"
+			});
 		}
-		else if (_id == "building.armorsmith")
+		else if (_id == "building.weaponsmith")
 		{
+			_list.push({
+				R = 50,
+				P = 1.0,
+				S = "weapons/war_bow"
+			});
 		}
 	}
 

@@ -216,6 +216,11 @@ this.lumber_camp_location <- this.inherit("scripts/entity/world/attached_locatio
 				P = 1.0,
 				S = "trade/quality_wood_item"
 			});
+			_list.push({
+				R = 80,
+				P = 1.0,
+				S = "trade/ancient_wood_item"
+			});
 		}
 		else if (_id == "building.weaponsmith")
 		{
@@ -244,6 +249,30 @@ this.lumber_camp_location <- this.inherit("scripts/entity/world/attached_locatio
 				P = 1.0,
 				S = "weapons/throwing_axe"
 			});
+			_list.push({
+				R = 50,
+				P = 1.0,
+				S = "weapons/legend_infantry_axe"
+			});
+		}
+		else if (_id == "building.fletcher")
+		{
+			_list.push({
+				R = 98,
+				P = 1.0,
+				S = "weapons/masterwork_bow"
+			});
+			_list.push({
+				R = 85,
+				P = 1.0,
+				S = "ammo/huge_quiver_of_arrows"
+			});
+			_list.push({
+				R = 85,
+				P = 1.0,
+				S = "ammo/huge_quiver_of_bolts"
+			});
+
 		}
 		else if (_id == "building.specialized_trader")
 		{

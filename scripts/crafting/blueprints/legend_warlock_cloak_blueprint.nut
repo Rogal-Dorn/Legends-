@@ -10,18 +10,18 @@ this.legend_warlock_cloak_blueprint <- this.inherit("scripts/crafting/blueprint"
 		{
 			this.m.PreviewCraftable = this.new("scripts/items/legend_armor/named/legend_armor_named_warlock_cloak");
 		}
-		this.m.Cost = 200;
+		this.m.Cost = 2000;
 		local ingredients = [
 			{
 				Script = "scripts/items/misc/witch_hair_item",
-				Num = 1
+				Num = 2
 			},
 			{
 				Script = "scripts/items/misc/parched_skin_item",
-				Num = 1
+				Num = 2
 			},
-			{
-				Script = "scripts/items/spawns/zombie_item",
+		{
+				Script = "scripts/items/supplies/strange_meat_item",
 				Num = 1
 			}
 		];
@@ -37,6 +37,13 @@ this.legend_warlock_cloak_blueprint <- this.inherit("scripts/crafting/blueprint"
 		})
 
 		this.init(ingredients);
+		local skills = [
+			{
+				Scripts = ["scripts/skills/backgrounds/female_tailor_background",
+							"scripts/skills/backgrounds/tailor_background"]
+			}
+		]
+		this.initSkills(skills);	
 	}
 
 	function isQualified()

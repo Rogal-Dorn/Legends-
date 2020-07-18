@@ -9,7 +9,7 @@ this.huge_quiver_of_arrows_blueprint <- this.inherit("scripts/crafting/blueprint
 		this.m.Cost = 3000;
 		local ingredients = [
 			{
-				Script = "scripts/items/misc/legend_rock_unhold_hide_item",
+				Script = "scripts/items/misc/legend_ancient_green_wood_item",
 				Num = 1
 			}
 		];

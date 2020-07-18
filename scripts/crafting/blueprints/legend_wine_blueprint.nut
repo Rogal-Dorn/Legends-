@@ -16,8 +16,7 @@ this.legend_wine_blueprint <- this.inherit("scripts/crafting/blueprint", {
 		this.init(ingredients);
 		local skills = [
 			{
-				Scripts = ["scripts/skills/perks/perk_legend_potion_brewer",
-						   "scripts/skills/perks/perk_legend_alcohol_brewing"]
+				Scripts = ["scripts/skills/perks/perk_legend_alcohol_brewing"]
 			}
 		]
 		this.initSkills(skills);		

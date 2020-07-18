@@ -298,11 +298,17 @@ gt.Const.Perks.GetDynamicPerkTree <- function (_mins, _map)
 		_localMap.Class.push(t);
 	}
 
-	if (this.World.Assets.getOrigin().getID() == "scenario.legends_seer" || this.World.Assets.getOrigin().getID() == "scenario.legends_warlock")
+	//Add Magic
+	local count = _mins.Magic - _localMap.Magic.len();
+	for (local i = 0; i <= count; i = ++i)
 	{
-		//Add Magic
-		local count = _mins.Magic - _localMap.Magic.len();
-		for (local i = 0; i <= count; i = ++i)
+		local r = this.Math.rand(0, 100);
+		if (r > (_mins.MagicChance * 100.0))
+		{
+			continue
+		}
+		local _exclude = [];
+		foreach (tt in _localMap.Magic)
 		{
 			_exclude.push(tt.ID);
 		}
@@ -313,6 +319,7 @@ gt.Const.Perks.GetDynamicPerkTree <- function (_mins, _map)
 		_localMap.Magic.push(t);
 		}
 	}
+
 	foreach (v in _localMap)
 	{
 		foreach(mT in v)

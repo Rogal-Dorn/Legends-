@@ -3030,6 +3030,24 @@ gt.Const.Perks.PerkDefObjects <- [
 		IconDisabled = "ui/perks/nigredo_circle_bw.png",
 		Const = "LegendNigredo"
 	},
+	{
+		ID = "perk.legend_herbcraft",
+		Script = "scripts/skills/perks/perk_legend_herbcraft",
+		Name = this.Const.Strings.PerkName.LegendHerbcraft,
+		Tooltip = this.Const.Strings.PerkName.LegendHerbcraft,
+		Icon = "ui/perks/herbcraft.png",
+		IconDisabled = "ui/perks/herbcraft_bw.png",
+		Const = "LegendHerbcraft"
+	},
+	{
+		ID = "perk.legend_woodworking",
+		Script = "scripts/skills/perks/perk_legend_woodworking",
+		Name = this.Const.Strings.PerkName.LegendWoodworking,
+		Tooltip = this.Const.Strings.PerkName.LegendWoodworking,
+		Icon = "ui/perks/woodworking.png",
+		IconDisabled = "ui/perks/woodworking_bw.png",
+		Const = "LegendWoodworking"
+	}
 ];
 gt.Const.Perks.PerkDefs <- {};
 

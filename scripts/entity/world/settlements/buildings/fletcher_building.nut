@@ -117,7 +117,7 @@ this.fletcher_building <- this.inherit("scripts/entity/world/settlements/buildin
 				S = "weapons/war_bow"
 			},
 			{
-				R = 20,
+				R = 70,
 				P = 1.0,
 				S = "weapons/legend_slingstaff"
 			},
@@ -182,14 +182,34 @@ this.fletcher_building <- this.inherit("scripts/entity/world/settlements/buildin
 				S = "supplies/ammo_item"
 			},
 			{
-				R = 70,
+				R = 40,
 				P = 1.0,
 				S = "ammo/legend_armor_piercing_arrows"
 			},
 			{
-				R = 70,
+				R = 40,
 				P = 1.0,
 				S = "ammo/legend_broad_head_arrows"
+			},
+			{
+				R = 40,
+				P = 1.0,
+				S = "ammo/legend_armor_piercing_bolts"
+			},
+			{
+				R = 40,
+				P = 1.0,
+				S = "ammo/legend_broad_head_bolts"
+			},
+			{
+				R = 70,
+				P = 1.0,
+				S = "ammo/large_quiver_of_bolts"
+			},
+			{
+				R = 70,
+				P = 1.0,
+				S = "ammo/large_quiver_of_arrows"
 			}
 		];
 

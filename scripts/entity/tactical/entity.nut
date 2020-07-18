@@ -7,6 +7,7 @@ this.entity <- {
 		IsAttackable = false,
 		IsRock = false,
 		IsTree = false,
+		IsSticks = false,
 		IsBush = false,
 		IsSummoned = false,
 		IsHidden = false
@@ -63,6 +64,16 @@ this.entity <- {
 	function isTree()
 	{
 		return this.m.IsTree;
+	}
+
+	function isSticks()
+	{
+		return this.m.IsSticks;
+	}
+
+	function isStump()
+	{
+		return this.m.IsStump;
 	}
 
 	function isRock()

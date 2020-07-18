@@ -234,6 +234,16 @@ this.militia_trainingcamp_location <- this.inherit("scripts/entity/world/attache
 		}
 		else if (_id == "building.weaponsmith")
 		{
+			_list.push({
+				R = 70,
+				P = 1.0,
+				S = "weapons/legend_infantry_axe"
+			});
+			_list.push({
+				R = 70,
+				P = 1.0,
+				S = "weapons/fighting_spear"
+			});
 		}
 		else if (_id == "building.armorsmith")
 		{
