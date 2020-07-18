@@ -1235,11 +1235,27 @@ this.skill <- {
 	{
 		if (_targetEntity.isRock())
 		{
-			local r = this.Math.rand(0, 9);
-			if (r == 1)
+			if (_user.getSkills().hasSkill("perk.legend_specialist_pickaxe_damage"))
 			{
-				local loot = this.new("scripts/items/trade/uncut_gems_item");
-				loot.drop(_targetEntity().getTile());
+				local r = this.Math.rand(0, 99);
+				if (r == 99)
+				{
+					local loot = this.new("scripts/items/trade/uncut_gems_item");
+					loot.drop(_targetEntity().getTile());
+				}
+
+				else if (r <= 5 )
+				{
+					local loot = this.new("scripts/items/trade/salt_item");
+					loot.drop(_targetEntity().getTile());
+				}
+
+				else if (r <= 15 && r > 5 )
+				{
+					local loot = this.new("scripts/items/trade/peat_bricks_item");
+					loot.drop(_targetEntity().getTile());
+				}
+
 			}
 			// _targetEntity.getTile().removeObject()
 			if (this.m.SoundOnHit.len() != 0)
@@ -1256,10 +1272,10 @@ this.skill <- {
 			return true;
 		}
 
-		if (_targetEntity.isTree())
+		if (_targetEntity.isSticks())
 		{
 			local r = this.Math.rand(0, 4);
-			if (r == 1)
+			if (r == 1 && _user.getSkills().hasSkill("perk.legend_specialist_woodaxe_damage"))
 			{
 				local loot = this.new("scripts/items/trade/legend_raw_wood_item");
 				loot.drop(_targetEntity.getTile());
@@ -1275,16 +1291,37 @@ this.skill <- {
 			local x = tile.X;
 			local y = tile.Y;
 			this.Tactical.getTile(x,y).removeObject();
-			// _targetEntity.getTile().removeObject();
 			return true;
 		}
 
-		if (_targetEntity.isBush())
+		if (_targetEntity.isTree())
 		{
-			local r = this.Math.rand(0, 2);
-			if (r == 1)
+			if (this.m.SoundOnHit.len() != 0)
+			{
+				this.Time.scheduleEvent(this.TimeUnit.Virtual, this.m.SoundOnHitDelay, this.onPlayHitSound.bindenv(this), {
+					Sound = this.m.SoundOnHit[this.Math.rand(0, this.m.SoundOnHit.len() - 1)],
+					Pos = _targetEntity.getPos()
+				});
+			}
+			local tile = _targetEntity.getTile();
+			local x = tile.X;
+			local y = tile.Y;
+			this.Tactical.getTile(x,y).removeObject();
+			this.Tactical.getTile(x,y).spawnObject(entity/tactical/objects/tree_sticks)
+			return true;
+		}
+
+		if (_targetEntity.isBush() )
+		{
+			local r = this.Math.rand(0, 99);
+			if (r <= 25 && _user.getSkills().hasSkill("perk.legend_specialist_sickle_damage"))
 			{
 				local loot = this.new("scripts/items/supplies/roots_and_berries_item");
+				loot.drop(_targetEntity.getTile());
+			}
+			if (r == 99 && _user.getSkills().hasSkill("perk.legend_specialist_sickle_damage"))
+			{
+				local loot = this.new("scripts/items/misc/mysterious_herbs_item");
 				loot.drop(_targetEntity.getTile());
 			}
 			// _targetEntity.getTile().removeObject()

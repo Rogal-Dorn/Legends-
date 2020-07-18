@@ -18,8 +18,8 @@ this.legend_named_sickle <- this.inherit("scripts/items/weapons/named/named_weap
 		this.m.ShowArmamentIcon = true;
 		this.m.ArmamentIcon = "icon_legend_sickle_01";
 		this.m.Value = 4500;
-		this.m.Condition = 75.0;
-		this.m.ConditionMax = 75.0;
+		this.m.Condition = 50.0;
+		this.m.ConditionMax = 50.0;
 		this.m.StaminaModifier = -9;
 		this.m.RegularDamage = 40;
 		this.m.RegularDamageMax = 55;

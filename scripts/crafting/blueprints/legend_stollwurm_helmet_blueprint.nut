@@ -18,6 +18,12 @@ this.legend_stollwurm_helmet_blueprint <- this.inherit("scripts/crafting/bluepri
 			}
 		];
 		this.init(ingredients);
+		local skills = [
+			{
+				Scripts = ["scripts/skills/backgrounds/legend_blacksmith_background"]
+			}
+		]
+		this.initSkills(skills);
 	}
 
 	function isQualified()

@@ -100,7 +100,7 @@ this.legend_armor_piercing_arrows <- this.inherit("scripts/items/ammo/ammo", {
 			case "weapon.goblin_bow":
 			case "weapon.goblin_heavy_bow":
 			case "weapon.named_goblin_heavy_bow":	
-				_properties.DamageDirectMult += 0.2;
+				_properties.DamageDirectMult *= 1.2;
 				_properties.RangedDamageMult *= 0.9;
 					break;
 		}

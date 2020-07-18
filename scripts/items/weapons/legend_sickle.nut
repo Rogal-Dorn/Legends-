@@ -17,8 +17,8 @@ this.legend_sickle <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ShowArmamentIcon = true;
 		this.m.ArmamentIcon = "icon_legend_sickle_01";
 		this.m.Value = 45;
-		this.m.Condition = 20.0;
-		this.m.ConditionMax = 20.0;
+		this.m.Condition = 30.0;
+		this.m.ConditionMax = 30.0;
 		this.m.StaminaModifier = -3;
 		this.m.RegularDamage = 15;
 		this.m.RegularDamageMax = 20;
