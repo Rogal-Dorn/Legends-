@@ -19,12 +19,12 @@ this.perk_legend_specialist_hammer_skill <- this.inherit("scripts/skills/skill",
 		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
 		if (item != null)
 		{
-			if(item.getID() == "weapon.legend_hammer")
+			if(item.getID() == "weapon.legend_hammer" || item.getID() == "weapon.legend_named_blacksmith_hammer")
 			{
 			_properties.MeleeSkill += 12;
 			_properties.DamageArmorMult += 0.4;
 			}
-			if(item.getID() == "weapon.warhammer" ||  item.getID() == "weapon.military_pick" ||  item.getID() == "weapon.axehammer" || item.getID() == "weapon.named_warhammer" ||  item.getID() == "weapon.pickaxe")
+			if(item.getID() == "weapon.warhammer" ||  item.getID() == "weapon.military_pick" ||  item.getID() == "weapon.axehammer" || item.getID() == "weapon.named_warhammer" ||  item.getID() == "weapon.pickaxe" )
 			{
 			_properties.MeleeSkill += 3;
 			_properties.DamageArmorMult += 0.1;

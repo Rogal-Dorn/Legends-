@@ -189,6 +189,8 @@ gt.Const.Items.NamedMeleeWeapons <- [
 	"weapons/named/legend_named_swordstaff",
 	"weapons/named/legend_named_halberd",
 	"weapons/named/legend_named_voulge",
+	"weapons/named/legend_named_blacksmith_hammer",
+	"weapons/named/legend_named_sickle",
 	"weapons/named/legend_named_flail"
 ];
 gt.Const.Items.NamedRangedWeapons <- [
