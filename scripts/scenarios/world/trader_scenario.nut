@@ -182,7 +182,7 @@ foreach (b in this.World.getPlayerRoster().getAll())
 	{
 		if (bro.getBackground().isCombatBackground())
 		{
-			bro.worsenMood(1.0, "Unhappy they will need to do all the fighting");	
+			bro.worsenMood(1.0, "Unhappy they will need to do all the fighting");
 		}
 		else if (!bro.getBackground().isCombatBackground())
 		{
@@ -200,7 +200,7 @@ foreach (b in this.World.getPlayerRoster().getAll())
 
 		foreach( i, bro in bros )
 		{
-		
+
 			if (bro.getBackground().isCombatBackground())
 			{
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.25);
@@ -214,7 +214,7 @@ foreach (b in this.World.getPlayerRoster().getAll())
 			if (bro.getBackground().getID() == "background.peddler" || bro.getBackground().getID() == "background.legend_donkey" )
 			{
 					bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.75);
-					bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.75);		 
+					bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.75);
 			}
 		}
 	}
@@ -245,7 +245,7 @@ foreach (b in this.World.getPlayerRoster().getAll())
 			return;
 		}
 
-		_tree.addPerk(this.Const.Perks.PerkDefs.LegendPacifist)
+		_tree[0].push(this.Const.Perks.PerkDefs.LegendPacifist)
 	}
 
 

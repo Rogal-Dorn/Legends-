@@ -77,7 +77,7 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
     this.World.Assets.addMoralReputation(avgAlignment);
 }
 		bros[0].getTags().set("IsPlayerCharacter", true);
-		bros[0].setVeteranPerks(2);	
+		bros[0].setVeteranPerks(2);
 		this.World.Assets.m.Money = this.World.Assets.m.Money;
 		this.World.Assets.m.Ammo = this.World.Assets.m.Ammo;
 	}
@@ -290,7 +290,7 @@ foreach (b in this.World.getPlayerRoster().getAll())
 		if (!bro.getBackground().isLowborn() && !bro.getBackground().isOutlawBackground())
 		{
 			bro.worsenMood(1.5, "Disturbed by your wild and erratic nature");
-		} 
+		}
 		else if (bro.getBackground().isCombatBackground() || bro.getBackground().isOutlawBackground())
 		{
 			bro.improveMood(1.0, "Excited by your lust for battle")
@@ -305,8 +305,8 @@ foreach (b in this.World.getPlayerRoster().getAll())
 		{
 			return;
 		}
-		
-		_tree.addPerk(this.Const.Perks.PerkDefs.Berserk)
+
+		_tree[0].push(this.Const.Perks.PerkDefs.Berserk)
 	}
 });
 

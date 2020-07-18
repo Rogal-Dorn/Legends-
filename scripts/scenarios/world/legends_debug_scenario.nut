@@ -395,9 +395,9 @@ foreach (b in this.World.getPlayerRoster().getAll())
 			return;
 		}
 
-		_tree.addPerk(this.Const.Perks.PerkDefs.LegendPiercingShot);
-		_tree.addPerk(this.Const.Perks.PerkDefs.LegendMedIngredients);
-		_tree.addPerk(this.Const.Perks.PerkDefs.LegendCampCook);
+		_tree[0].push(this.Const.Perks.PerkDefs.LegendPiercingShot);
+		_tree[0].push(this.Const.Perks.PerkDefs.LegendMedIngredients);
+		_tree[0].push(this.Const.Perks.PerkDefs.LegendCampCook);
 
 	}
 
