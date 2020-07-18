@@ -3612,3 +3612,9 @@ https://drive.google.com/file/d/1-1QxlII6-iw2vPHK0Zk2cVvlrJdYko0p/view?usp=shari
 Fixes armor 0/0 immortality.
 Fixes opening inventory screen in battles.
 Fixes no helmet brush issues.
+
+14.0.0.14
+
+fixes recruits incorrectly rolling magic skills outside seer and warlock starts 
+Chant tree no longer has double disharmony 
+Cultist perks now use current resolve instead of base resolve 
