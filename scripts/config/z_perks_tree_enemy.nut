@@ -450,13 +450,13 @@ gt.Const.Perks.EnemyTrees <- {
 		gt.Const.Perks.UnholdTree,
 		gt.Const.Perks.CaravanTree,
 		gt.Const.Perks.MercenaryTree,
-		gt.Const.Perks.NoblesTree, 
+		gt.Const.Perks.NoblesTree,
 		gt.Const.Perks.BanditTree,
 		gt.Const.Perks.BarbarianTree,
 		gt.Const.Perks.ArchersTree,
 		gt.Const.Perks.SwordmastersTree
 	],
-	function getRandom(_exclude) 
+	function getRandom(_exclude)
 	{
 		local L = [];
 		foreach (i, t in this.Tree)
@@ -470,5 +470,23 @@ gt.Const.Perks.EnemyTrees <- {
 
 		local r = this.Math.rand(0, L.len() - 1)
 		return this.Tree[L[r]];;
-	}	
+	}
+
+
+	function getRandomPerk()
+	{
+		local tree = this.getRandom();
+		local L = [];
+		foreach (row in tree.Tree)
+		{
+			foreach (p in row)
+			{
+				L.push(p);
+			}
+		}
+
+		local r = this.Math.rand(0, L.len() - 1);
+		return L[r];
+	}
+
 };

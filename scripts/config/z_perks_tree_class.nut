@@ -356,7 +356,7 @@ gt.Const.Perks.ClassTrees <- {
 		gt.Const.Perks.HealerClassTree,
 		gt.Const.Perks.FaithClassTree,
 		gt.Const.Perks.FistsClassTree,
-		gt.Const.Perks.ChefClassTree, 
+		gt.Const.Perks.ChefClassTree,
 		gt.Const.Perks.RepairClassTree,
 		gt.Const.Perks.BarterClassTree,
 		gt.Const.Perks.KnifeClassTree,
@@ -372,7 +372,7 @@ gt.Const.Perks.ClassTrees <- {
 		gt.Const.Perks.JugglerClassTree,
 		gt.Const.Perks.HoundmasterClassTree
 	],
-	function getRandom(_exclude) 
+	function getRandom(_exclude)
 	{
 		local L = [];
 		foreach (i, t in this.Tree)
@@ -386,5 +386,21 @@ gt.Const.Perks.ClassTrees <- {
 
 		local r = this.Math.rand(0, L.len() - 1)
 		return this.Tree[L[r]];;
-	}	
+	}
+
+	function getRandomPerk()
+	{
+		local tree = this.getRandom();
+		local L = [];
+		foreach (row in tree.Tree)
+		{
+			foreach (p in row)
+			{
+				L.push(p);
+			}
+		}
+
+		local r = this.Math.rand(0, L.len() - 1);
+		return L[r];
+	}
 };
