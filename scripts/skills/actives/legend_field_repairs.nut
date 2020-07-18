@@ -182,7 +182,7 @@ this.legend_field_repairs <- this.inherit("scripts/skills/skill", {
 			body.setArmor(this.Math.minf(maxBodyArmor, currentBodyArmor + maxBodyRepair))
 		}
 		local cost = (maxHeadRepair + maxBodyRepair) * -1.0
-		this.World.Assets.addArmorParts(cost / 5.0)
+		this.World.Assets.addArmorParts(cost / 10.0)
 	}
 
 });

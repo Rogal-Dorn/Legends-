@@ -19,7 +19,7 @@ this.perk_legend_specialist_hammer_damage <- this.inherit("scripts/skills/skill"
 		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
 		if (item != null)
 		{
-			if(item.getID() == "weapon.legend_hammer")
+			if(item.getID() == "weapon.legend_hammer" || item.getID() == "weapon.legend_named_blacksmith_hammer")
 			{
 			_properties.DamageRegularMin += 4;
 			_properties.DamageRegularMax += 12;

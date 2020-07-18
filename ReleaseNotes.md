@@ -3625,26 +3625,26 @@ Chopping down a tree spawns a pile of sticks that can be shot over, but not move
 First tier perks unlock the ability to chop items, third tier perks give the ability to harvest, and fifth tier perks give the ability to craft harvested items into things 
 Raw wood value dropped to 40 from 90, has a new image 
 Sickle durability raised from 20 to 30, named sickle durability lowered from 75 to 50 
-
+.
 **Herbalists** 
 gain the Herbcraft perk 
 * Craft delicious cruelty free vegan treatments like mushrooms, poison and antidotes from roots and berries 
 * Potion brewer perk can now craft potions from poisons, antidotes and sometimes monster parts 
 * Can create snake oil, cat potions, recovery potions, iron will potions, obvlion potions and happy powder 
-
+.
 **Lumberjacks**
  gain the Woodworking perk 
 * Craft 2 raw wood into 1 high quality wood
 * craft kite, heater and tower shields from high quality wood. 
 * crafted shields will come in your company colours. 
 * can also craft the shields of each noble house
-
+.
 **Bowyers and Fletchers : 
 can now craft quality wood and ancient wood into regular and large sizes of:
 * Piercing arrows - gain 30% armor piercing damage and -10% ranged damage 
 * Broad arrows - gain 10% ranged damage and -30% armor piercing damage  
 * These items can also be found at fletchers huts
-
+.
 **Changes**
 Crafting any helms or armor require a blacksmith, including noble and legendary
 Crafting any cloak or tabard requires a seamstress or tailor, including noble and legendary
@@ -3652,10 +3652,17 @@ Crafting warlock gear requires strange meat instead of corpses, costs more to cr
 Alcohol is only crafted by alcohol brewers, not potion brewers 
 Huge quivers now require ancient greenwood to craft 
 Cultist perks now use current resolve instead of base resolve 
-
+.
 ***Fixes**
 Fixes recruits incorrectly rolling magic skills outside seer and warlock starts 
 Chant tree no longer has double disharmony 
 Fixes perk that have been added from events/scenarios/etc.. not showing up in perk tree on reload of save.
 Fixes swordstaves disapearing in the inventory when runed 
 
+14.0.0.15
+
+Adds named blacksmiths hammer - very high damage to armor 
+blacksmiths hammer damage to armor buffed 
+Field Repairs skill buffed to 10 durability per tool 
+hedgeknight repair rate reduced 
+ 

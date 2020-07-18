@@ -637,4 +637,10 @@
  <sprite id="runed_icon_legend_sickle_02" offsetY="35" ic="FF484F57" width="104" height="142" img="icons\runed_icon_legend_sickle_02.png" left="0" right="48" top="-56" bottom="8" />
   <sprite id="runed_icon_legend_sickle_02_bloodied" offsetY="35" ic="FF3B4153" width="104" height="142" img="icons\runed_icon_legend_sickle_02_bloodied.png" left="0" right="48" top="-56" bottom="8" />
   
+  <sprite id="icon_legend_named_hammer_01" offsetY="35" ic="FF484F57" width="104" height="142" img="icons\icon_legend_named_hammer_01.png" left="0" right="48" top="-56" bottom="8" />
+  <sprite id="icon_legend_named_hammer_01_bloodied" offsetY="35" ic="FF3B4153" width="104" height="142" img="icons\icon_legend_named_hammer_01_bloodied.png" left="0" right="48" top="-56" bottom="8" />
+  <sprite id="runed_icon_legend_named_hammer_01" offsetY="35" ic="FF484F57" width="104" height="142" img="icons\runed_icon_legend_named_hammer_01.png" left="0" right="48" top="-56" bottom="8" />
+  <sprite id="runed_icon_legend_named_hammer_01_bloodied" offsetY="35" ic="FF3B4153" width="104" height="142" img="icons\runed_icon_legend_named_hammer_01_bloodied.png" left="0" right="48" top="-56" bottom="8" />
+
+  
  </brush>
