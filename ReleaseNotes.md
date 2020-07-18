@@ -3657,5 +3657,5 @@ Cultist perks now use current resolve instead of base resolve
 Fixes recruits incorrectly rolling magic skills outside seer and warlock starts 
 Chant tree no longer has double disharmony 
 Fixes perk that have been added from events/scenarios/etc.. not showing up in perk tree on reload of save.
-
+Fixes swordstaves disapearing in the inventory when runed 
 

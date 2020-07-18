@@ -277,7 +277,7 @@ gt.Const.Perks.WoodaxeClassTree <- {
 		[],
 		[gt.Const.Perks.PerkDefs.LegendSpecialistWoodaxeDamage],
 		[],
-		[gt.Const.Perks.PerkDefs.Legendwoodworking],
+		[gt.Const.Perks.PerkDefs.LegendWoodworking],
 		[],
 		[]
 	]

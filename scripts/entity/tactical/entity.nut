@@ -66,6 +66,11 @@ this.entity <- {
 		return this.m.IsTree;
 	}
 
+	function isSticks()
+	{
+		return this.m.IsSticks;
+	}
+
 	function isStump()
 	{
 		return this.m.IsStump;
