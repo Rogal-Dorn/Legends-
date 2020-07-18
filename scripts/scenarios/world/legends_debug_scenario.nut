@@ -18,7 +18,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	function onSpawnAssets()
 	{
 		local roster = this.World.getPlayerRoster();
-		local partysize = 6;
+		local partysize = 1;
 		local broLevelMax = 11;
 
 		for( local i = 0; i < partysize; i = ++i )
@@ -35,7 +35,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			bro.setVeteranPerks(2);
 		}
 
-		 local horsesize = 6;
+		 local horsesize = 0;
 		 for( local i = 0; i < horsesize; i = ++i )
 		 {
 		 	local broLevel = broLevelMax
@@ -75,6 +75,10 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 		local stashitems = [
 			"accessory/bandage_item",
+			"accessory/wardog_item",
+			"accessory/wardog_item",
+			"accessory/warhound_item",
+			"accessory/warhound_item",
 			"supplies/roots_and_berries_item",
 			"supplies/legend_fresh_fruit_item",
 			"supplies/legend_cooking_spices_item",
@@ -379,7 +383,8 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			], this.Const.Music.CrossFadeTime);
 			this.World.Events.fire("event.legend_random_party_scenario_intro");
 		}, null);
-foreach (b in this.World.getPlayerRoster().getAll())
+
+		foreach (b in this.World.getPlayerRoster().getAll())
 		{
 			foreach (add in this.World.getPlayerRoster().getAll())
 			{
@@ -390,14 +395,15 @@ foreach (b in this.World.getPlayerRoster().getAll())
 
 	function onBuildPerkTree( _tree)
 	{
-		if  (_tree == null)
+		if (_tree == null)
 		{
 			return;
 		}
 
-		_tree.addPerk(this.Const.Perks.PerkDefs.LegendPiercingShot);
-		_tree.addPerk(this.Const.Perks.PerkDefs.LegendMedIngredients);
-		_tree.addPerk(this.Const.Perks.PerkDefs.LegendCampCook);
+		//_tree.addPerk(this.Const.Perks.PerkDefs.LegendPiercingShot);
+		//_tree.addPerk(this.Const.Perks.PerkDefs.LegendMedIngredients);
+		//_tree.addPerk(this.Const.Perks.PerkDefs.LegendCampCook);
+		_tree.addTree(this.Const.Perks.HoundmasterClassTree.Tree);
 
 	}
 

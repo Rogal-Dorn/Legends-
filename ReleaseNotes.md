@@ -3607,8 +3607,16 @@ Fixes a crash on getting container from generic Item
 https://drive.google.com/file/d/1-1QxlII6-iw2vPHK0Zk2cVvlrJdYko0p/view?usp=sharing
 
 
-14.0.0.13a
+14.0.0.13c
 
-Fixes armor 0/0 immortality.
+Fixes armor 0/0 immortality no attack bug from 14.0.0.13 build
 Fixes opening inventory screen in battles.
 Fixes no helmet brush issues.
+
+https://drive.google.com/file/d/1Rn6GfVoiqv9TO77O7l_sNGJvXPLUtjTx/view?usp=sharing
+
+
+14.0.0.14
+
+**New Perks**
+LegendPackLeader : New perk for houndmasters that allow them to equip dogs in their belt slots. Houndmasters can swap dogs in belt to accesory slot to deploy multiple dogs during battles.
