@@ -7,8 +7,15 @@ this.ammo <- this.inherit("scripts/items/item", {
 		AmmoType = this.Const.Items.AmmoType.None,
 		Ammo = 0.0,
 		AmmoMax = 0.0,
-		AmmoCost = 1
+		AmmoCost = 1,
+		StaminaModifier = 0
 	},
+
+	function getStaminaModifier()
+	{
+		return this.m.StaminaModifier;
+	}
+
 	function getAmmo()
 	{
 		return this.m.Ammo;
@@ -124,6 +131,16 @@ this.ammo <- this.inherit("scripts/items/item", {
 	{
 		this.item.onDeserialize(_in);
 		this.m.Ammo = _in.readU16();
+	}
+
+	function onUpdateProperties( _properties )
+	{
+		if (this.m.Ammo == 0.0)
+		{
+			return;
+		}
+
+		_properties.Stamina += this.m.StaminaModifier;
 	}
 
 });

@@ -6,7 +6,7 @@ this.quiver_of_piercing_arrows_blueprint <- this.inherit("scripts/crafting/bluep
 		this.m.ID = "blueprint.quiver_of_piercing_arrows";
 		this.m.Type = this.Const.Items.ItemType.Accessory;
 		this.m.PreviewCraftable = this.new("scripts/items/ammo/legend_armor_piercing_arrows");
-		this.m.Cost = 500;
+		this.m.Cost = 130;
 		local ingredients = [
 			{
 				Script = "scripts/items/trade/quality_wood_item",

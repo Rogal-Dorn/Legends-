@@ -1,21 +1,22 @@
-this.legend_armor_piercing_arrows <- this.inherit("scripts/items/ammo/ammo", {
+this.legend_large_broad_head_arrows <- this.inherit("scripts/items/ammo/ammo", {
 	m = {},
 	function create()
 	{
-		this.m.ID = "ammo.legend_armor_piercing_arrows";
-		this.m.Name = "Armor Piercing Arrows";
-		this.m.Description = "A quiver of arrows with piercing tips, designed for punching through thick armor. Is automatically refilled after each battle if you have enough ammunition. Grants +30% armor piercing and -10% damage while wielding a bow.";
-		this.m.Icon = "ammo/quiver_01_dark.png";
-		this.m.IconEmpty = "ammo/quiver_01_empty.png";
+		this.m.ID = "ammo.legend_broad_head_arrows";
+		this.m.Name = "Large Quiver of Broad Head Arrows";
+		this.m.Description = "A large quiver of arrows with broad tips, designed for tearing flesh, but easily stopped by armor. Is automatically refilled after each battle if you have enough global ammunition. Grants +10% damage but -30% armor piercing damage while wielding a bow.";
+		this.m.Icon = "ammo/quiver_03_light.png";
+		this.m.IconEmpty = "ammo/quiver_03_empty.png";
 		this.m.SlotType = this.Const.ItemSlot.Ammo;
 		this.m.ItemType = this.Const.Items.ItemType.Ammo;
 		this.m.AmmoType = this.Const.Items.AmmoType.Arrows;
 		this.m.ShowOnCharacter = true;
 		this.m.ShowQuiver = true;
 		this.m.Sprite = "bust_quiver_01";
-		this.m.Value = 350;
-		this.m.Ammo = 10;
-		this.m.AmmoMax = 10;
+		this.m.Value = 3500;
+		this.m.Ammo = 14;
+		this.m.AmmoMax = 14;
+		this.m.StaminaModifier = 2;
 		this.m.IsDroppedAsLoot = true;
 	}
 
@@ -104,7 +105,6 @@ this.legend_armor_piercing_arrows <- this.inherit("scripts/items/ammo/ammo", {
 				_properties.RangedDamageMult *= 0.9;
 					break;
 		}
-
 	}
 });
 

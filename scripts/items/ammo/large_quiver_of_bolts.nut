@@ -16,6 +16,7 @@ this.large_quiver_of_bolts <- this.inherit("scripts/items/ammo/ammo", {
 		this.m.Value = 400;
 		this.m.Ammo = 14;
 		this.m.AmmoMax = 14;
+		this.m.StaminaModifier = 2;
 		this.m.IsDroppedAsLoot = true;
 	}
 
