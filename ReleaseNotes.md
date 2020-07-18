@@ -3666,3 +3666,7 @@ blacksmiths hammer damage to armor buffed
 Field Repairs skill buffed to 10 durability per tool 
 hedgeknight repair rate reduced 
  
+14.0.0.15b
+
+**Fixes**
+Fixes gatherer tent screwing up 
