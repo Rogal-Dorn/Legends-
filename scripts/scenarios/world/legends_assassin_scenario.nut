@@ -214,22 +214,22 @@ foreach (b in this.World.getPlayerRoster().getAll())
 			{
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost  * 0.9);
 				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.9);
-			}				
+			}
 		}
 	}
-	
+
 	function onHiredByScenario( bro )
 	{
 		if (!bro.getBackground().isLowborn() && !bro.getBackground().isOutlawBackground())
 		{
 			bro.worsenMood(1.0, "Is uncomfortable with joining an assassin");
-		} 
+		}
 		else if (bro.getBackground().isCombatBackground() && bro.getBackground().isOutlawBackground())
 		{
 			bro.improveMood(1.0, "Is excited at becoming part of outlaw company");
 		}
 		bro.improveMood(0.5, "Learned a new skill");
-		bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_hidden"));	
+		bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_hidden"));
 	}
 
 	function onBuildPerkTree( _tree )
@@ -239,8 +239,8 @@ foreach (b in this.World.getPlayerRoster().getAll())
 			return;
 		}
 
-		_tree.addPerk(this.Const.Perks.PerkDefs.LegendHidden);
-		_tree.addPerk(this.Const.Perks.PerkDefs.Backstabber);
+		_tree[0].push(this.Const.Perks.PerkDefs.LegendHidden);
+		_tree[0].push(this.Const.Perks.PerkDefs.Backstabber);
 	}
 
 });
