@@ -5,9 +5,7 @@ this.legend_kite_shield_blueprint <- this.inherit("scripts/crafting/blueprint", 
 		this.blueprint.create();
 		this.m.ID = "blueprint.legend_wood_blueprint";
 		this.m.Type = this.Const.Items.ItemType.Shield;
-		local item = this.new("scripts/items/shields/kite_shield");
-		item.onPaintInCompanyColors();
-		this.m.PreviewCraftable = item;
+		this.m.PreviewCraftable = this.new("scripts/items/shields/kite_shield")
 		this.m.Cost = 10;
 		local ingredients = [
 			{
