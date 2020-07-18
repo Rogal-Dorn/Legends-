@@ -66,7 +66,7 @@ gt.Const.Perks.LightArmorTree <- {
 		[],
 		[],
 		[gt.Const.Perks.PerkDefs.Nimble],
-		[gt.Const.Perks.PerkDefs.LegendFreedomOfMovement] 
+		[gt.Const.Perks.PerkDefs.LegendFreedomOfMovement]
 	]
 };
 
@@ -94,7 +94,7 @@ gt.Const.Perks.DefenseTrees <- {
 		gt.Const.Perks.LightArmorTree
 		//gt.Const.Perks.HelmetTree
 	],
-	function getRandom(_exclude) 
+	function getRandom(_exclude)
 	{
 		local L = [];
 		foreach (i, t in this.Tree)
@@ -108,5 +108,22 @@ gt.Const.Perks.DefenseTrees <- {
 
 		local r = this.Math.rand(0, L.len() - 1)
 		return this.Tree[L[r]];;
-	}	
+	}
+
+
+	function getRandomPerk()
+	{
+		local tree = this.getRandom();
+		local L = [];
+		foreach (row in tree.Tree)
+		{
+			foreach (p in row)
+			{
+				L.push(p);
+			}
+		}
+
+		local r = this.Math.rand(0, L.len() - 1);
+		return L[r];
+	}
 };

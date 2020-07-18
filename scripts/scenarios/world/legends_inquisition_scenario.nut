@@ -35,7 +35,7 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 		bros[0].m.LevelUps = 1;
 		bros[0].m.Level = 2;
 		bros[0].setPlaceInFormation(3);
-		bros[0].setVeteranPerks(2);	
+		bros[0].setVeteranPerks(2);
 		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_mind_over_body"));
 		bros[0].m.PerkPointsSpent += 1;
 		bros[1].setStartValuesEx([
@@ -43,7 +43,7 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 		]);
 		bros[1].getBackground().m.RawDescription = "{%name% has no greater joy than suffering in the name of the old gods. Pain and pleasure and intimately linked, just as creation and desctruction are intwined. Each lash of the whip is like the caress of an angel, and their belief is that in only through suffering can we find salvation. Few laymen understand this viewpoint, but it is respected by other servants of the old gods.}";
 		bros[1].setPlaceInFormation(4);
-		bros[1].setVeteranPerks(2);	
+		bros[1].setVeteranPerks(2);
 		bros[1].getSkills().add(this.new("scripts/skills/perks/perk_legend_mind_over_body"));
 		bros[1].m.PerkPointsSpent += 1;
 		local items = bros[1].getItems();
@@ -66,7 +66,7 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 		bros[2].m.PerkPoints = 3;
 		bros[2].m.LevelUps = 3;
 		bros[2].m.Level = 4;
-		bros[2].setVeteranPerks(2);	
+		bros[2].setVeteranPerks(2);
 		bros[2].getSkills().add(this.new("scripts/skills/perks/perk_legend_mind_over_body"));
 		bros[2].m.PerkPointsSpent += 1;
 		bros[3].setStartValuesEx([
@@ -273,7 +273,7 @@ local cloths = [
 			this.World.Events.fire("event.legend_inquisition_scenario_intro");
 		}, null);
 
-		foreach (b in this.World.getPlayerRoster().getAll()) // todo: more efficient approach to this 
+		foreach (b in this.World.getPlayerRoster().getAll()) // todo: more efficient approach to this
 		{
 			foreach (add in this.World.getPlayerRoster().getAll())
 			{
@@ -343,7 +343,7 @@ local cloths = [
 			return;
 		}
 
-		_tree.addPerk(this.Const.Perks.PerkDefs.LegendMindOverBody);
+		_tree[0].push(this.Const.Perks.PerkDefs.LegendMindOverBody);
 	}
 
 	function onUpdateDraftList( _list )

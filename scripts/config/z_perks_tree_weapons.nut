@@ -61,7 +61,7 @@ gt.Const.Perks.AxeTree <- {
 	],
 	Tree = [
 		[],
-		[gt.Const.Perks.PerkDefs.LegendSmashingShields], 
+		[gt.Const.Perks.PerkDefs.LegendSmashingShields],
 		[],
 		[gt.Const.Perks.PerkDefs.SpecAxe],
 		[],
@@ -76,7 +76,7 @@ gt.Const.Perks.CleaverTree <- {
 		"cleavers"
 	],
 	Tree = [
-		[], 
+		[],
 		[],
 		[],
 		[gt.Const.Perks.PerkDefs.SpecCleaver],
@@ -94,7 +94,7 @@ gt.Const.Perks.GreatSwordTree <- {
 	Tree = [
 		[],
 		[gt.Const.Perks.PerkDefs.BloodyHarvest],
-		[], 
+		[],
 		[gt.Const.Perks.PerkDefs.LegendSpecGreatSword],
 		[],
 		[gt.Const.Perks.PerkDefs.LegendForcefulSwing],
@@ -267,11 +267,11 @@ gt.Const.Perks.WeaponTrees <- {
 		gt.Const.Perks.FlailTree,
 		gt.Const.Perks.HammerTree,
 		gt.Const.Perks.AxeTree,
-		gt.Const.Perks.CleaverTree, 
+		gt.Const.Perks.CleaverTree,
 		gt.Const.Perks.GreatSwordTree,
 		gt.Const.Perks.SwordTree,
 		gt.Const.Perks.DaggerTree,
-		gt.Const.Perks.PolearmTree, 
+		gt.Const.Perks.PolearmTree,
 		gt.Const.Perks.SpearTree,
 		gt.Const.Perks.CrossbowTree,
 		gt.Const.Perks.BowTree,
@@ -279,7 +279,7 @@ gt.Const.Perks.WeaponTrees <- {
 		gt.Const.Perks.SlingsTree,
 		gt.Const.Perks.StavesTree
 	],
-	function getRandom(_exclude) 
+	function getRandom(_exclude)
 	{
 		local L = [];
 		foreach (i, t in this.Tree)
@@ -303,15 +303,15 @@ gt.Const.Perks.MeleeWeaponTrees <- {
 		gt.Const.Perks.FlailTree,
 		gt.Const.Perks.HammerTree,
 		gt.Const.Perks.AxeTree,
-		gt.Const.Perks.CleaverTree, 
+		gt.Const.Perks.CleaverTree,
 		gt.Const.Perks.GreatSwordTree,
 		gt.Const.Perks.SwordTree,
 		gt.Const.Perks.DaggerTree,
-		gt.Const.Perks.PolearmTree, 
+		gt.Const.Perks.PolearmTree,
 		gt.Const.Perks.SpearTree,
 		gt.Const.Perks.StavesTree
 	],
-	function getRandom(_exclude) 
+	function getRandom(_exclude)
 	{
 		local L = [];
 		foreach (i, t in this.Tree)
@@ -335,7 +335,7 @@ gt.Const.Perks.RangedWeaponTrees <- {
 		gt.Const.Perks.ThrowingTree,
 		gt.Const.Perks.SlingsTree
 	],
-	function getRandom(_exclude) 
+	function getRandom(_exclude)
 	{
 		local L = [];
 		foreach (i, t in this.Tree)
@@ -350,4 +350,21 @@ gt.Const.Perks.RangedWeaponTrees <- {
 		local r = this.Math.rand(0, L.len() - 1)
 		return this.Tree[L[r]];;
 	}
+
+	function getRandomPerk()
+	{
+		local tree = this.getRandom();
+		local L = [];
+		foreach (row in tree.Tree)
+		{
+			foreach (p in row)
+			{
+				L.push(p);
+			}
+		}
+
+		local r = this.Math.rand(0, L.len() - 1);
+		return L[r];
+	}
+
 };

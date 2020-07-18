@@ -3613,6 +3613,7 @@ Fixes armor 0/0 immortality.
 Fixes opening inventory screen in battles.
 Fixes no helmet brush issues.
 
+
 14.0.0.14 Crafty Harvest
 
 **Harvest skills rework:**
@@ -3655,3 +3656,6 @@ Cultist perks now use current resolve instead of base resolve
 ***Fixes**
 Fixes recruits incorrectly rolling magic skills outside seer and warlock starts 
 Chant tree no longer has double disharmony 
+Fixes perk that have been added from events/scenarios/etc.. not showing up in perk tree on reload of save.
+
+
