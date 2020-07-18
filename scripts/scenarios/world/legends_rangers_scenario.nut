@@ -45,7 +45,7 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_roster_2"));
 		bros[0].getTags().set("IsPlayerCharacter", true);
 		bros[0].setPlaceInFormation(3);
-		bros[0].setVeteranPerks(2);	
+		bros[0].setVeteranPerks(2);
 
 		foreach( bro in bros )
 		{
@@ -74,13 +74,13 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 	//	]);
 	//	bros[1].getBackground().m.RawDescription = "{%name% grew up in the rangers, taught the ways of the forest by his father. Running through the woods his whole life has made him particularly good at tracking enemies}";
 	//	bros[1].setPlaceInFormation(4);
-	//	bros[1].setVeteranPerks(2);	
+	//	bros[1].setVeteranPerks(2);
 	//	bros[2].setStartValuesEx([
 	//		"legend_ranger_background"
 	//	]);
 	//	bros[2].getBackground().m.RawDescription = "{%name% was woodsman, captured by the rangers for destroying a sacred grove. He recognised their cause as just and joined on the spot, he is deeply commited and driven}";
 	//	bros[2].setPlaceInFormation(5);
-	//	bros[2].setVeteranPerks(2);	
+	//	bros[2].setVeteranPerks(2);
 		this.World.Assets.m.BusinessReputation = 50;
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/cured_venison_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/trade/furs_item"));
@@ -191,7 +191,7 @@ foreach (b in this.World.getPlayerRoster().getAll())
 
 		return false;
 	}
-	
+
 	function onUpdateDraftList( _list )
 	{
 
@@ -254,7 +254,7 @@ foreach (b in this.World.getPlayerRoster().getAll())
 		{
 			return;
 		}
-		_tree.addPerk(this.Const.Perks.PerkDefs.Pathfinder);
+		_tree[0].push(this.Const.Perks.PerkDefs.Pathfinder);
 	}
 
 });

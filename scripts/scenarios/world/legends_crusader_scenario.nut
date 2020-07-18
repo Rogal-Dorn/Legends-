@@ -36,11 +36,11 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 		local val = this.World.State.addNewID(bro);
 		bro.m.CompanyID = val;
 
-		
+
 		local val = this.World.State.addNewID(bro);
 		bro.m.CompanyID = val;
-		
-		
+
+
 		if (this.Const.LegendMod.Configs.RelationshipsEnabled())
 {
     local avgAlignment = 0;
@@ -58,7 +58,7 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
     avgAlignment *= (10 / this.World.getPlayerRoster().getSize());
     this.World.Assets.addMoralReputation(avgAlignment);
 }
-	
+
 		this.World.Assets.addMoralReputation(20);
 		this.World.Assets.m.BusinessReputation = 100;
 		this.World.Assets.m.Ammo = 0;
@@ -210,7 +210,7 @@ foreach (b in this.World.getPlayerRoster().getAll())
 			return;
 		}
 
-		_tree.addPerk(this.Const.Perks.PerkDefs.FortifiedMind);
+		_tree[0].push(this.Const.Perks.PerkDefs.FortifiedMind);
 	}
 
 	function onUpdateDraftList( _list )

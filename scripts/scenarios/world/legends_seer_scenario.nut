@@ -29,12 +29,12 @@ this.legends_seer_scenario <- this.inherit("scripts/scenarios/world/starting_sce
 		bro.getSkills().add(this.new("scripts/skills/perks/perk_student"));
 		bro.m.PerkPointsSpent += 3;
 		if (this.Const.LegendMod.Configs.LegendMagicEnabled())
-		{	
+		{
 			bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_magic_missile"));
 			bro.m.PerkPointsSpent += 1;
-		}		
+		}
 		bro.setPlaceInFormation(4);
-		bro.setVeteranPerks(2);	
+		bro.setVeteranPerks(2);
 		bro.getTags().set("IsPlayerCharacter", true);
 		bro.getSprite("miniboss").setBrush("bust_miniboss_lone_wolf");
 		local val = this.World.State.addNewID(bro);
@@ -164,7 +164,7 @@ foreach (b in this.World.getPlayerRoster().getAll())
 	function onHiredByScenario( bro )
 	{
 		if (bro.getBackground().isEducatedBackground())
-		{				
+		{
 			bro.improveMood(1.0, "Excited to study from you");
 		}
 		else
@@ -197,7 +197,7 @@ foreach (b in this.World.getPlayerRoster().getAll())
 			if (bro.getBackground().isEducatedBackground() || bro.getSkills().hasSkill("trait.bright"))
 			{
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.9);
-				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.9);	
+				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.9);
 			}
 			else if (!bro.getBackground().isEducatedBackground() || bro.getSkills().hasSkill("trait.dumb"))
 			{
@@ -214,8 +214,8 @@ foreach (b in this.World.getPlayerRoster().getAll())
 		{
 			return;
 		}
-		
-		_tree.addPerk(this.Const.Perks.PerkDefs.Student);
+
+		_tree[0].push(this.Const.Perks.PerkDefs.Student);
 	}
 
 });
