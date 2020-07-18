@@ -1100,7 +1100,6 @@ this.character_screen <- {
 					data.inventory.equip(targetItems.secondItem);
 				}
 			}
-
 			return this.helper_convertErrorToUIData(this.Const.CharacterScreen.ErrorCode.FailedToRemoveItemFromSourceSlot);
 		}
 
@@ -1117,7 +1116,6 @@ this.character_screen <- {
 					data.inventory.equip(targetItems.secondItem);
 				}
 			}
-
 			return this.helper_convertErrorToUIData(this.Const.CharacterScreen.ErrorCode.FailedToEquipBagItem);
 		}
 
@@ -1143,7 +1141,6 @@ this.character_screen <- {
 					{
 						data.inventory.equip(targetItems.secondItem);
 					}
-
 					return this.helper_convertErrorToUIData(this.Const.CharacterScreen.ErrorCode.FailedToPutItemIntoBag);
 				}
 			}
@@ -1161,7 +1158,6 @@ this.character_screen <- {
 				{
 					data.inventory.equip(targetItems.secondItem);
 				}
-
 				return this.helper_convertErrorToUIData(this.Const.CharacterScreen.ErrorCode.FailedToPutItemIntoBag);
 			}
 		}
@@ -2070,6 +2066,7 @@ this.character_screen <- {
 
 	function helper_dropItemIntoStash( _data )
 	{
+
 		if (_data.targetItemIdx == null && _data.stash.hasEmptySlot() == false && !_data.stash.isResizable())
 		{
 			return this.helper_convertErrorToUIData(this.Const.CharacterScreen.ErrorCode.NotEnoughStashSpace);
@@ -2201,12 +2198,12 @@ this.character_screen <- {
 				return this.helper_convertErrorToUIData(this.Const.CharacterScreen.ErrorCode.NotEnoughActionPoints);
 			}
 
-			if (_items[0] != null && !_items[0].isChangeableInBattle())
+			if (_items[0] != null && !_items[0].isChangeableInBattle(_entity))
 			{
 				return this.helper_convertErrorToUIData(this.Const.CharacterScreen.ErrorCode.ItemIsNotChangableInBattle);
 			}
 		}
-		else if (_items[0] != null && !_items[0].isChangeableInBattle() && _putIntoBags == true)
+		else if (_items[0] != null && !_items[0].isChangeableInBattle(_entity) && _putIntoBags == true)
 		{
 			return this.helper_convertErrorToUIData(this.Const.CharacterScreen.ErrorCode.ItemIsNotChangableInBattle);
 		}

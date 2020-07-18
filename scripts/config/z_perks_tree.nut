@@ -138,6 +138,17 @@ gt.Const.Perks.BuildCustomPerkTree <- function (_custom)
 		this.Map[perk.ID] <- perk;
 	}
 
+	pT.addTree <- function (_tree)
+	{
+		foreach(i, row in _tree)
+		{
+			foreach (p in row)
+			{
+				this.addPerk(p, i);
+			}
+		}
+	}
+
 	for( local row = 0; row < _custom.len(); row = ++row )
 	{
 		for( local i = 0; i < _custom[row].len(); i = ++i )

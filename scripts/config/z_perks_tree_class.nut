@@ -342,9 +342,7 @@ gt.Const.Perks.HoundmasterClassTree <- {
 		[gt.Const.Perks.PerkDefs.LegendDogWhisperer],
 		[],
 		[gt.Const.Perks.PerkDefs.LegendDogBreeder],
-		[
-		//gt.Const.Perks.PerkDefs.LegendPackleader
-		],
+		[gt.Const.Perks.PerkDefs.LegendPackleader],
 		[gt.Const.Perks.PerkDefs.LegendDogHandling]
 	]
 };

@@ -943,8 +943,8 @@ this.data_helper <- {
 			result.isBlockingOffhand <- true;
 		}
 
-		result.isChangeableInBattle <- _item.isChangeableInBattle();
-		result.isAllowedInBag <- _item.isAllowedInBag();
+		result.isChangeableInBattle <- _item.isChangeableInBattle(null);
+		result.isAllowedInBag <- _item.isAllowedInBag(null);
 		result.isUsable <- _item.isUsable();
 		result.showAmount <- _item.isAmountShown();
 		result.amount <- _item.getAmountString();

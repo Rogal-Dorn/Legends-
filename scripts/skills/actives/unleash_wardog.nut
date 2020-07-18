@@ -68,7 +68,7 @@ this.unleash_wardog <- this.inherit("scripts/skills/skill", {
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
 		this.m.IsTargeted = true;
-		this.m.IsStacking = false;
+		this.m.IsStacking = true;
 		this.m.IsAttack = false;
 		this.m.IsTargetingActor = false;
 		this.m.ActionPointCost = 3;
@@ -136,6 +136,7 @@ this.unleash_wardog <- this.inherit("scripts/skills/skill", {
 
 	function isUsable()
 	{
+		//this.logInfo("**isUsable** " + this + " : " + this.m.Item + " : " + this.m.Item.m.Entity + " : " + this.m.Item.isUnleashed() + " : " + this.skill.isUsable())
 		if (this.m.Item.isUnleashed() || !this.skill.isUsable())
 		{
 			return false;
@@ -163,12 +164,12 @@ this.unleash_wardog <- this.inherit("scripts/skills/skill", {
 		entity.setName(this.m.Item.getName());
 		entity.setVariant(this.m.Item.getVariant());
 		this.m.Item.setEntity(entity);
-				if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_dogwhisperer"))
-				{
-				entity.getSkills().add(this.new("scripts/skills/perks/perk_fortified_mind"));
-				entity.getSkills().add(this.new("scripts/skills/perks/perk_colossus"));
-				entity.getSkills().add(this.new("scripts/skills/perks/perk_underdog"));
-				}
+		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_dogwhisperer"))
+		{
+			entity.getSkills().add(this.new("scripts/skills/perks/perk_fortified_mind"));
+			entity.getSkills().add(this.new("scripts/skills/perks/perk_colossus"));
+			entity.getSkills().add(this.new("scripts/skills/perks/perk_underdog"));
+		}
 
 		if (this.m.Item.getArmorScript() != null)
 		{
