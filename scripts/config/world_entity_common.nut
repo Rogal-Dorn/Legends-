@@ -51,7 +51,7 @@ gt.Const.World.Common <- {
 
 				if ("NameList" in _troop.Type)
 				{
-					troop.Name = this.generateName(_troop.Type.NameList) + (_troop.Type.TitleList != null ? " " + _troop.Type.TitleList[this.Math.rand(0, _troop.Type.TitleList.len() - 1)] : "");
+					troop.Name = this.generateName(_troop.Type.NameList) + ( (TitleList in troop.Type &&_troop.Type.TitleList != null) ? " " + _troop.Type.TitleList[this.Math.rand(0, _troop.Type.TitleList.len() - 1)] : "");
 				}
 			}
 		}
