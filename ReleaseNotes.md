@@ -3671,3 +3671,5 @@ hedgeknight repair rate reduced
 **Fixes**
 Fixes gatherer tent screwing up 
 Name sometimes not existing when creating a troop to esnd out
+Runesmith get to enchant things now for real
+1 random heater shield used to have 1 wood recipe now it has 2
