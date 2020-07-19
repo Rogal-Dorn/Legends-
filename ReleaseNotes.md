@@ -3670,3 +3670,4 @@ hedgeknight repair rate reduced
 
 **Fixes**
 Fixes gatherer tent screwing up 
+Name sometimes not existing when creating a troop to esnd out
