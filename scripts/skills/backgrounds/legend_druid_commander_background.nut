@@ -341,7 +341,7 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");
 		stash.removeByID("supplies.ground_grains");
-		stash.add(this.new("scripts/items/accessory/legend_apocathary_mushrooms_item"));
+		stash.add(this.new("scripts/items/accessory/legend_apothecary_mushrooms_item"));
 		stash.add(this.new("scripts/items/accessory/antidote_item"));
 		stash.add(this.new("scripts/items/accessory/legend_warbear_item"));
 		stash.add(this.new("scripts/items/supplies/roots_and_berries_item"));
