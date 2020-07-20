@@ -87,7 +87,7 @@ this.legend_transformed_tree_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("armor_upgrade_back").Alpha = 10;
 		actor.getSprite("armor_upgrade_front").Alpha = 10;
 		actor.getSprite("socket").Alpha = 10;
-		this.m.TurnsLeft = 2;
+		this.m.TurnsLeft = 5;
 
 		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_true_form"))
 		{
@@ -171,7 +171,7 @@ this.legend_transformed_tree_effect <- this.inherit("scripts/skills/skill", {
 		}
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Offhand));
 
-		
+
 	}
 
 	function onUpdate( _properties )

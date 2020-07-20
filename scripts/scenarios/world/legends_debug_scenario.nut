@@ -89,6 +89,11 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"supplies/legend_fresh_fruit_item",
 			"supplies/legend_cooking_spices_item",
 			"supplies/ground_grains_item",
+			"ammo/large_quiver_of_bolts",
+			"ammo/legend_large_broad_head_bolts",
+			"ammo/legend_large_broad_head_arrows",
+			"ammo/legend_large_armor_piercing_bolts",
+			"ammo/legend_large_armor_piercing_arrows"
 		]
 
 		foreach (si in stashitems)
@@ -284,7 +289,10 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"named/legend_named_voulge",
 			"named/legend_named_halberd",
 			"named/named_lute",
-			"named/legend_named_flail"
+			"named/legend_named_flail",
+			"named/legend_named_estoc",
+			"light_crossbow",
+			"war_bow"
 		]
 
 		foreach(w in weapons)
