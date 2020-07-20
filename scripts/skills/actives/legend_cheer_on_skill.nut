@@ -57,6 +57,10 @@ this.legend_cheer_on_skill <- this.inherit("scripts/skills/skill", {
 	function isUsable()
 	{
 		local mainhand = this.m.Container.getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		if (mainhand == null)
+		{
+			return false;
+		}
 		return (mainhand.getID() == "weapon.lute" || mainhand.getID() == "weapon.named_lute" || mainhand.getID() == "weapon.legend_drum") && this.skill.isUsable();
 	}
 
