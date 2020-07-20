@@ -3687,6 +3687,8 @@ Fixes missing images for transformed schrat
 Fixes Tree form crash at end of battles when shield is out.
 Return favor tooltip correctly states 75% chance on proc vs previous 50%
 Fixes new ammo types from not working
+Adds runed variants for tower shields and named estoc (Thank you Motanul_Negro)
+Fixes bug with legend_cheer_on that prevents switching from lute to other useable items
 
 **Sub Modders**
 in your scenario files, the onBuildPerkTree function signature has changed. You will need to update your mods/edits
