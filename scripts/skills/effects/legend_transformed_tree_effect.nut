@@ -87,7 +87,7 @@ this.legend_transformed_tree_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("armor_upgrade_back").Alpha = 10;
 		actor.getSprite("armor_upgrade_front").Alpha = 10;
 		actor.getSprite("socket").Alpha = 10;
-		this.m.TurnsLeft = 5;
+		this.m.TurnsLeft = 2;
 
 		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_true_form"))
 		{
@@ -158,8 +158,20 @@ this.legend_transformed_tree_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSkills().removeByID("actives.grow_shield");
 		actor.getSkills().removeByID("racial.schrat");
 		local items = actor.getItems();
-		items.getData()[this.Const.ItemSlot.Offhand][0] = null;
-		items.getData()[this.Const.ItemSlot.Mainhand][0] = null;
+
+		local generics = actor.getSkills().getAllSkillsByID("items.generic");
+		foreach ( s in generics )
+		{
+			local i = s.getItem();
+			if (i != null && i.getID() == "shield.schrat")
+			{
+				s.setItem(null);
+				break;
+			}
+		}
+		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Offhand));
+
+		
 	}
 
 	function onUpdate( _properties )
