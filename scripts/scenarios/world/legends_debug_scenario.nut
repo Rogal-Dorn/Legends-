@@ -12,7 +12,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 	function isValid()
 	{
-		return this.Const.LegendMod.DebugMode;
+		return true //this.Const.LegendMod.DebugMode;
 	}
 
 	function onSpawnAssets()
@@ -50,6 +50,8 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		 	bro.setVeteranPerks(2);
 		 }
 
+		this.World.Assets.getStash().resize(600);
+
 		local bros = roster.getAll();
 
 		foreach( bro in bros )
@@ -76,9 +78,13 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		local stashitems = [
 			"accessory/bandage_item",
 			"accessory/wardog_item",
-			"accessory/wardog_item",
+			"accessory/armored_wardog_item",
 			"accessory/warhound_item",
-			"accessory/warhound_item",
+			"accessory/armored_warhound_item",
+			"accessory/wolf_item",
+			"accessory/falcon_item",
+			"accessory/legend_white_wolf_item",
+			"accessory/legend_warbear_item",
 			"supplies/roots_and_berries_item",
 			"supplies/legend_fresh_fruit_item",
 			"supplies/legend_cooking_spices_item",
@@ -296,7 +302,6 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		}
 
 	}
-
 
 	function onSpawnPlayer()
 	{

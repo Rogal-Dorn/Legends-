@@ -728,6 +728,13 @@
 		return -1;
 	}
 
+	o.setTarget <- function (_entity)
+	{
+		if (this.m.AIAgent == null) return;
+
+		this.m.AIAgent.setPriorityTarget(_entity);
+	}
+
 	local szFn = o.onSerialize
 	o.onSerialize = function( _out )
 	{

@@ -1,4 +1,4 @@
-::mods_hookBaseClass("scripts/ai/tactical/behavior.nut", function(o) {
+::mods_hookBaseClass("scripts/ai/tactical/behavior", function(o) {
     while(!("IsShieldwallAvailable" in o.m)) o = o[o.SuperName]; // find the base class
 
     o.isRangedUnit = function( _entity)
@@ -19,5 +19,7 @@
 		}
 
 		return false;
+
 	}
+
 });
