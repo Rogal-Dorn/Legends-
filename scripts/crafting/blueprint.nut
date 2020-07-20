@@ -159,9 +159,16 @@ this.blueprint <- {
 		foreach( c in this.m.PreviewComponents )
 		{
 
-			if ("LegendsArmor" in c && c.LegendsArmor && !this.Const.LegendMod.Configs.LegendArmorsEnabled())
+			if ("LegendsArmor" in c)
 			{
-				continue;
+				if (c.LegendsArmor && !this.Const.LegendMod.Configs.LegendArmorsEnabled())
+				{
+					continue;
+				}
+				if (!c.LegendsArmor && this.Const.LegendMod.Configs.LegendArmorsEnabled())
+				{
+					continue;
+				}
 			}
 
 			local num = 0;
@@ -327,9 +334,16 @@ this.blueprint <- {
 
 		foreach( c in this.m.PreviewComponents )
 		{
-			if ("LegendsArmor" in c && c.LegendsArmor && !this.Const.LegendMod.Configs.LegendArmorsEnabled())
+			if ("LegendsArmor" in c)
 			{
-				continue;
+				if (c.LegendsArmor && !this.Const.LegendMod.Configs.LegendArmorsEnabled())
+				{
+					continue;
+				}
+				if (!c.LegendsArmor && this.Const.LegendMod.Configs.LegendArmorsEnabled())
+				{
+					continue;
+				}
 			}
 
 			for( local j = 0; j < c.Num; j = ++j )
@@ -353,9 +367,16 @@ this.blueprint <- {
 
 		foreach( c in this.m.PreviewComponents )
 		{
-			if ("LegendsArmor" in c && c.LegendsArmor && !this.Const.LegendMod.Configs.LegendArmorsEnabled())
+			if ("LegendsArmor" in c)
 			{
-				continue;
+				if (c.LegendsArmor && !this.Const.LegendMod.Configs.LegendArmorsEnabled())
+				{
+					continue;
+				}
+				if (!c.LegendsArmor && this.Const.LegendMod.Configs.LegendArmorsEnabled())
+				{
+					continue;
+				}
 			}
 
 			for( local j = 0; j < c.Num; j = ++j )

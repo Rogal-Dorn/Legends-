@@ -12,7 +12,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 	function isValid()
 	{
-		return true //this.Const.LegendMod.DebugMode;
+		return this.Const.LegendMod.DebugMode;
 	}
 
 	function onSpawnAssets()
@@ -28,7 +28,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			local bro;
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.m.HireTime = this.Time.getVirtualTimeF();
-			bro.setStartValuesEx(this.Const.CharacterBackgroundsRandom);
+			bro.setStartValuesEx(["legend_blacksmith_background"])//this.Const.CharacterBackgroundsRandom);
 			bro.m.Level = broLevel;
 			bro.m.LevelUps = broPerks;
 			bro.m.PerkPoints = broPerks;
@@ -299,6 +299,18 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			local item = this.new("scripts/items/legend_armor/armor/legend_armor_heraldic");
 			item.setupArmor(i);
 			this.World.Assets.getStash().add(item);
+		}
+
+
+		local shields = [
+			"legend_faction_tower_shield"
+		]
+
+		foreach(w in shields)
+		{
+			this.logInfo("Adding " + w);
+			local pla = this.new("scripts/items/shields/" + w);
+			this.World.Assets.getStash().add(pla);
 		}
 
 	}

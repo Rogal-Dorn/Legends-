@@ -218,7 +218,7 @@ gt.Const.World.Spawn.Troops <- {
 		Cost = 60,
 		Row = 1,
 		NameList = this.Const.Strings.OrcWarlordNames,
-		TitleList = TitleList = this.Const.Strings.GoblinTitles,
+		TitleList = this.Const.Strings.GoblinTitles,
 		Script = "scripts/entity/tactical/enemies/legend_orc_elite"
 	},
 	LegendOrcBehemoth = {
