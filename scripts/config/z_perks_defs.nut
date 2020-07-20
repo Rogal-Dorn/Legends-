@@ -2408,7 +2408,7 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/slaughter_circle.png",
 		IconDisabled = "ui/perks/slaughter_circle_bw.png",
 		Const = "LegendSlaughter"
-	},	
+	},
 	{
 		ID = "perk.legend_untouchable",
 		Script = "scripts/skills/perks/perk_legend_untouchable",
@@ -2417,7 +2417,7 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/untouchable_circle.png",
 		IconDisabled = "ui/perks/untouchable_circle_bw.png",
 		Const = "LegendUntouchable"
-	},	
+	},
 	{
 		ID = "perk.legend_assassinate",
 		Script = "scripts/skills/perks/perk_legend_assassinate",
@@ -2435,7 +2435,7 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/meal_prep_circle.png",
 		IconDisabled = "ui/perks/meal_prep_circle_bw.png",
 		Const = "LegendMealPreperation"
-	},	
+	},
 	{
 		ID = "perk.legend_alcohol_brewing",
 		Script = "scripts/skills/perks/perk_legend_alcohol_brewing",
@@ -2750,6 +2750,15 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/dog_handling.png",
 		IconDisabled = "ui/perks/dog_handling_bw.png",
 		Const = "LegendDogHandling"
+	},
+	{
+		ID = "perk.legend_dogmaster",
+		Script = "scripts/skills/perks/perk_legend_dogmaster",
+		Name = this.Const.Strings.PerkName.LegendDogMaster,
+		Tooltip = this.Const.Strings.PerkDescription.LegendDogMaster,
+		Icon = "ui/perks/dog_handling.png",
+		IconDisabled = "ui/perks/dog_handling_bw.png",
+		Const = "LegendDogMaster"
 	},
 	{
 		ID = "perk.legend_heightened_reflexes",

@@ -9,7 +9,7 @@ this.spawn_item <- this.inherit("scripts/items/item", {
 		DecayRate = 0.2
 	},
 
-	function isAllowedInBag()
+	function isAllowedInBag(_actor = null)
 	{
 		return false;
 	}
@@ -131,7 +131,7 @@ this.spawn_item <- this.inherit("scripts/items/item", {
 		{
 			return
 		}
-		
+
 		if (this.m.Entity.m.IsAlive)
 		{
 			this.setEntity(null);
@@ -150,10 +150,10 @@ this.spawn_item <- this.inherit("scripts/items/item", {
 		{
 			return;
 		}
-		
+
 		if (this.World.Assets.getMedicine() >= this.getMedicinePerDay()) {
 			this.World.Assets.addMedicine(-this.getMedicinePerDay());
-			if (this.m.Condition < this.m.ConditionMax) 
+			if (this.m.Condition < this.m.ConditionMax)
 			{
 				this.m.Condition = this.Math.min(this.m.ConditionMax, this.m.Condition += this.m.DecayRate);
 			}
@@ -162,11 +162,11 @@ this.spawn_item <- this.inherit("scripts/items/item", {
 			this.m.Condition = this.Math.min(0, this.m.Condition -= this.m.DecayRate);
 		}
 
-		if (this.m.Condition <= 0) 
+		if (this.m.Condition <= 0)
 		{
 			this.World.Assets.getStash().remove(this);
 		}
-		
+
 	}
 
 	function onSerialize( _out )

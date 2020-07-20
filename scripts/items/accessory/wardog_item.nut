@@ -47,11 +47,15 @@ this.wardog_item <- this.inherit("scripts/items/accessory/accessory_dog", {
 		unleash.setItem(this);
 		this.m.Skill = this.WeakTableRef(unleash);
 		this.addSkill(unleash);
+
+		// local attack = this.new("scripts/skills/actives/legend_doghandling_attack");
+		// attack.setItem(this);
+		// this.addSkill(attack);
 	}
+
 
 	function setEntity( _e )
 	{
-		this.logInfo("Setting Entity " + this + " : " + _e)
 		this.m.Entity = _e;
 
 		if (this.m.Entity != null)

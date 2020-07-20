@@ -3714,7 +3714,11 @@ this.world_state <- this.inherit("scripts/states/state", {
 
 		if (_id > this.m.IDToRef.len() - 1) return null;
 
-		return this.m.IDToRef[_id];
+		local val = this.m.IDToRef[_id];
+		if (val == -1) {
+			return null
+		}
+		return val;
 	}
 
 	function removeCompanyID( _id )

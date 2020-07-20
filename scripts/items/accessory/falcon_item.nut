@@ -2,7 +2,7 @@ this.falcon_item <- this.inherit("scripts/items/accessory/accessory", {
 	m = {
 		IsReleased = false
 	},
-	function isAllowedInBag()
+	function isAllowedInBag(_actor)
 	{
 		return false;
 	}

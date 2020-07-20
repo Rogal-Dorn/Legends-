@@ -13,7 +13,7 @@ this.legend_pack_small <- this.inherit("scripts/items/accessory/accessory", {
 		this.m.Icon = "accessory/legend_pack_small.png";
 		this.m.Sprite = "legend_pack_small";
 		this.m.StashModifier = 3;
-		this.m.StaminaModifier = -1;				
+		this.m.StaminaModifier = -1;
 		this.m.Value = 100;
 	}
 
@@ -22,7 +22,7 @@ this.legend_pack_small <- this.inherit("scripts/items/accessory/accessory", {
 		this.Sound.play("sounds/cloth_01.wav", this.Const.Sound.Volume.Inventory);
 	}
 
-	function isAllowedInBag()
+	function isAllowedInBag(_actor)
 	{
 		return false;
 	}

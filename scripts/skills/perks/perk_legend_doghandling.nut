@@ -14,16 +14,4 @@ this.perk_legend_doghandling <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = false;
 	}
 
-	function onAdded()
-	{
-		if (!this.m.Container.hasSkill("actives.legend_dog_handling"))
-		{
-			this.m.Container.add(this.new("scripts/skills/actives/legend_dog_handling"));
-		}
-	}
-		function onRemoved()
-	{
-		this.m.Container.removeByID("actives.legend_dog_handling");
-	}
-
 });

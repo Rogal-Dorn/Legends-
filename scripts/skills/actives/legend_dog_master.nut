@@ -1,11 +1,11 @@
-this.legend_dog_handling <- this.inherit("scripts/skills/skill", {
+this.legend_dog_master <- this.inherit("scripts/skills/skill", {
 	m = {
 	Food = 0
 	},
 	function create()
 	{
-		this.m.ID = "actives.legend_dog_handling";
-		this.m.Name = "Dog Handling";
+		this.m.ID = "actives.legend_dog_master";
+		this.m.Name = "Dog Master";
 		this.m.Description = "Use food to convince an enemy dog to flee the battle";
 		this.m.Icon = "skills/skill_dog_handling.png";
 		this.m.IconDisabled = "skills/skill_dog_handling_bw.png";
@@ -28,7 +28,8 @@ this.legend_dog_handling <- this.inherit("scripts/skills/skill", {
 		this.m.MaxLevelDifference = 4;
 	}
 
-	function getTooltip( )
+
+		function getTooltip( )
 	{
 		local ret = this.getDefaultTooltip();
 		ret.extend([

@@ -8,7 +8,7 @@ this.legend_catapult_item <- this.inherit("scripts/items/accessory/accessory", {
 				"sounds/enemies/unhold_idle_01.wav"
 		]
 	},
-	function isAllowedInBag()
+	function isAllowedInBag(_actor)
 	{
 		return false;
 	}

@@ -22,7 +22,7 @@ this.legend_pack_large <- this.inherit("scripts/items/accessory/accessory", {
 		this.Sound.play("sounds/cloth_01.wav", this.Const.Sound.Volume.Inventory);
 	}
 
-	function isAllowedInBag()
+	function isAllowedInBag(_actor)
 	{
 		return false;
 	}
