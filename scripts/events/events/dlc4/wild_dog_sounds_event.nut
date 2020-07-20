@@ -402,7 +402,7 @@ this.wild_dog_sounds_event <- this.inherit("scripts/events/event", {
 	{
 		_vars.push([
 			"hunter",
-			this.m.Hunter.getName()
+			this.m.Hunter ? this.m.Hunter.getName() : ""
 		]);
 		_vars.push([
 			"wildman",

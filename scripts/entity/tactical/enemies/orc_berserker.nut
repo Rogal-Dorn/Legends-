@@ -381,7 +381,7 @@ this.orc_berserker <- this.inherit("scripts/entity/tactical/actor", {
 
 	function assignRandomEquipment()
 	{
-		local r = this.Math.rand(1, 7);
+		local r = this.Math.rand(1, 8);
 
 		if (r == 1)
 		{
@@ -406,12 +406,12 @@ this.orc_berserker <- this.inherit("scripts/entity/tactical/actor", {
 		else if (r == 6)
 		{
 			this.m.Items.equip(this.new("scripts/items/weapons/greenskins/legend_man_mangler"));
-		}	
+		}
 		else if (r == 7)
 		{
 			this.m.Items.equip(this.new("scripts/items/weapons/greenskins/legend_bough"));
 		}
-			else if (r == 8)
+		else if (r == 8)
 		{
 			this.m.Items.equip(this.new("scripts/items/weapons/greenskins/legend_skullbreaker"));
 		}

@@ -3679,3 +3679,5 @@ Fixes gatherer tent not working
 Name sometimes not existing when creating a troop to send out
 Runesmith get to enchant things now for real
 1 random heater shield used to have 1 wood recipe now it has 2
+Orc berserker can now spawn with a skullbreaker weapon
+Fix wild dog sounds event throwing an error.
