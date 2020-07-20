@@ -4441,7 +4441,7 @@ this.tooltip_events <- {
 					{
 						id = 2,
 						type = "description",
-						text = "If enabled, enemies will be stronger the further they spawn from civilisation. \n\n Detail: Begins at 14 tiles from the nearest town, enemies spawned at 28 tiles will be twice as strong. \n\n This is in addition to other difficulty settings."
+						text = "If enabled, enemies will be stronger the further they spawn from civilization. \n\n Detail: Begins at 14 tiles from the nearest town, enemies spawned at 28 tiles will be twice as strong. \n\n This is in addition to other difficulty settings."
 					}
 				];
 		case "mapconfig.legendcampunlock":
