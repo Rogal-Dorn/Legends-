@@ -81,7 +81,7 @@ cd ../bin
 ./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/legend_horses.brush ../battlebrothers/unpacked/legend_horses
 ./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/legend_helments.brush ../battlebrothers/unpacked/legend_helmets
  echo "Building Legend Armor metadata.xml..."
-python ../battlebrothers/un packed/make_legend_armor.py
+python ../battlebrothers/unpacked/make_legend_armor.py
  echo "Building Legend Armor brush..."
 ./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/legend_armor.brush ../battlebrothers/unpacked/legend_armor
  echo "Compiling all nut files..."
