@@ -3684,3 +3684,7 @@ Fix wild dog sounds event throwing an error.
 Fixes invisible noble tower shields in inventory
 Fixes not being able to craft certain legends armors
 Fixes missing images for transformed schrat
+
+**Sub Modders**
+in your scenario files, the onBuildPerkTree function signature has changed. You will need to update your mods/edits
+Adding perks looks like this now '''_tree[0].push(this.Const.Perks.PerkDefs.LegendCampCook);'''
