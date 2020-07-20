@@ -26,8 +26,8 @@ this.legend_faction_tower_shield <- this.inherit("scripts/items/shields/shield",
 		this.m.Sprite = "towershield_noble_" + variant;
 		this.m.SpriteDamaged = "towershield_noble_" + variant + "_damaged";
 		this.m.ShieldDecal = "towershield_noble_" + variant + "_destroyed";
-		this.m.IconLarge = "shields/inventory_towershield_noble_" + variant + ".png";
-		this.m.Icon = "shields/icon_towershield_noble_" + variant + ".png";
+		this.m.IconLarge = "shields/inventory_faction_towershield_" + variant + ".png";
+		this.m.Icon = "shields/icon_faction_towershield_" + variant + ".png";
 	}
 
 	function onEquip()
