@@ -3660,6 +3660,7 @@ Fixes perk that have been added from events/scenarios/etc.. not showing up in pe
 Fixes swordstaves disapearing in the inventory when runed
 
 
+
 14.0.0.15 Who let the dogs out?
 
 **New Weapons**
@@ -3673,3 +3674,8 @@ Hedgeknight repair rate reduced
 **New Perks**
 LegendPackLeader : New perk for houndmasters that allows them to equip dogs in their belt slots. Houndmasters can swap dogs in belt to accesory slot to deploy multiple dogs during battles.
 
+**Fixes**
+Fixes gatherer tent not working
+Name sometimes not existing when creating a troop to send out
+Runesmith get to enchant things now for real
+1 random heater shield used to have 1 wood recipe now it has 2

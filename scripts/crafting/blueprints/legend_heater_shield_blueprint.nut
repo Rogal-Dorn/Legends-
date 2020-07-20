@@ -10,7 +10,7 @@ this.legend_heater_shield_blueprint <- this.inherit("scripts/crafting/blueprint"
 		local ingredients = [
 			{
 				Script = "scripts/items/trade/quality_wood_item",
-				Num = 1
+				Num = 2
 			}
 		];
 		this.init(ingredients);
