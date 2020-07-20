@@ -48,7 +48,7 @@ this.return_favor <- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Gain a [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] chance to stun any opponent missing this character with a melee attack (resistances and immunities still apply)."
+				text = "Gain a [color=" + this.Const.UI.Color.PositiveValue + "]75%[/color] chance to stun any opponent missing this character with a melee attack (resistances and immunities still apply)."
 			}
 		];
 		return ret;
