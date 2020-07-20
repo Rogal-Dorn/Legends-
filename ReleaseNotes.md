@@ -3675,3 +3675,4 @@ Runesmith get to enchant things now for real
 1 random heater shield used to have 1 wood recipe now it has 2
 return favor tooltip correctly states 75% chance on proc vs previous 50%
 orc berserkers can roll skullbreaker item now as intended before
+fixes crash on schrat turning back with a shield out  
