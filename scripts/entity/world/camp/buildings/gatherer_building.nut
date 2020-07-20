@@ -293,7 +293,7 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		}
 
 		//check for woodsmen
-		local woodsmanlevels = this.getWoodsmenLevel();
+		local woodsmanlevels = this.getWoodsmanLevel();
 
 		// set it to something that wont break if none are present 
 		if (woodsmanlevels == null)
