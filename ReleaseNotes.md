@@ -3673,3 +3673,4 @@ Fixes gatherer tent screwing up
 Name sometimes not existing when creating a troop to esnd out
 Runesmith get to enchant things now for real
 1 random heater shield used to have 1 wood recipe now it has 2
+return favor tooltip correctly states 75% chance on proc vs previous 50%
