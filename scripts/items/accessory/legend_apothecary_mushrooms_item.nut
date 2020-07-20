@@ -4,7 +4,7 @@ this.legend_apothecary_mushrooms_item <- this.inherit("scripts/items/accessory/a
 	{
 		this.accessory.create();
 		this.m.ID = "accessory.legend_apothecary_mushrooms";
-		this.m.Name = "Apocathery Mushrooms";
+		this.m.Name = "Apothecary Mushrooms";
 		this.m.Description = "Strange mushrooms that have anyone chewing them enter a trance-like state where they don\'t feel any pain and exhibit significantly decreased aggression. May result in sickness. Eat responsibly.";
 		this.m.SlotType = this.Const.ItemSlot.Bag;
 		this.m.IsAllowedInBag = true;
