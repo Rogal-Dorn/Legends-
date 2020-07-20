@@ -3683,3 +3683,4 @@ Orc berserker can now spawn with a skullbreaker weapon
 Fix wild dog sounds event throwing an error.
 Fixes invisible noble tower shields in inventory
 Fixes not being able to craft certain legends armors
+Fixes missing images for transformed schrat
