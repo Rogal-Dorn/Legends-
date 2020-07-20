@@ -218,6 +218,7 @@ gt.Const.World.Spawn.Troops <- {
 		Cost = 60,
 		Row = 1,
 		NameList = this.Const.Strings.OrcWarlordNames,
+		TitleList = TitleList = this.Const.Strings.GoblinTitles,
 		Script = "scripts/entity/tactical/enemies/legend_orc_elite"
 	},
 	LegendOrcBehemoth = {
@@ -227,6 +228,7 @@ gt.Const.World.Spawn.Troops <- {
 		Cost = 80,
 		Row = 1,
 		NameList = this.Const.Strings.OrcWarlordNames,
+		TitleList = this.Const.Strings.GoblinTitles,
 		Script = "scripts/entity/tactical/enemies/legend_orc_behemoth"
 	},
 	OrcWarrior = {
@@ -237,7 +239,7 @@ gt.Const.World.Spawn.Troops <- {
 		Row = 1,
 		Script = "scripts/entity/tactical/enemies/orc_warrior",
 		NameList = this.Const.Strings.OrcWarlordNames,
-		TitleList = null
+		TitleList = this.Const.Strings.GoblinTitles
 	},
 	OrcWarriorLOW = {
 		ID = this.Const.EntityType.OrcWarrior,
@@ -255,7 +257,7 @@ gt.Const.World.Spawn.Troops <- {
 		Row = 2,
 		Script = "scripts/entity/tactical/enemies/orc_warlord",
 		NameList = this.Const.Strings.OrcWarlordNames,
-		TitleList = null
+		TitleList = this.Const.Strings.GoblinTitles
 	},
 	GreenskinCatapult = {
 		ID = this.Const.EntityType.GreenskinCatapult,

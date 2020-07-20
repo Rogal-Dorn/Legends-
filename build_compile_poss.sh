@@ -58,6 +58,8 @@ while read -r line; do
         echo "skipping $line"
     elif [ "$line" == "scripts/events/events/dlc4/cultist_origin_vs_old_gods_event.nut" ]; then
         echo "skipping $line"
+    elif [ "$line" == "scripts/config/world_entity_common.nut" ]; then
+        echo "skipping $line"
     else
         echo "$line"
         path=$( echo ${line%/*} )
