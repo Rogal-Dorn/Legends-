@@ -112,7 +112,7 @@ this.skill_container <- {
 					skill.onRemoved();
 					skill.setContainer(null);
 					this.m.Skills.remove(i);
-					this.logDebug("Skill [" + skill.getName() + "] removed from [" + this.m.Actor.getName() + "].");
+					// this.logDebug("Skill [" + skill.getName() + "] removed from [" + this.m.Actor.getName() + "].");
 					isRemoved = true;
 					break;
 				}
@@ -194,7 +194,7 @@ this.skill_container <- {
 		{
 			this.m.Skills[i].onRemoved();
 			this.m.Skills[i].setContainer(null);
-			this.logDebug("Skill [" + this.m.Skills[i].getName() + "] removed from [" + this.m.Actor.getName() + "].");
+			// this.logDebug("Skill [" + this.m.Skills[i].getName() + "] removed from [" + this.m.Actor.getName() + "].");
 			this.m.Skills.remove(i);
 		}
 
