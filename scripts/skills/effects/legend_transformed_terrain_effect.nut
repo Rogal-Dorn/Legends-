@@ -34,7 +34,7 @@ this.legend_transformed_terrain_effect <- this.inherit("scripts/skills/skill", {
 		}
 
 
-	
+
 
 		return ret;
 
@@ -68,7 +68,10 @@ this.legend_transformed_terrain_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("head").setHorizontalFlipping(1);
 		actor.getSprite("injury").setHorizontalFlipping(1);
 		actor.getSprite("armor").Alpha = 10;
+		actor.getSprite("helmet_bottom").Alpha = 10;
 		actor.getSprite("helmet").Alpha = 10;
+		actor.getSprite("helmet_damage").Alpha = 10;
+		actor.getSprite("helmet_top").Alpha = 10;
 		actor.getSprite("shield_icon").Alpha = 10;
 		actor.getSprite("armor_layer_chain").Alpha = 10;
 		actor.getSprite("armor_layer_plate").Alpha = 10;
@@ -94,18 +97,21 @@ this.legend_transformed_terrain_effect <- this.inherit("scripts/skills/skill", {
 		}
 
 
-		
+
 	}
 
 	function onRemoved()
-	{	
+	{
 
 
 		local actor = this.getContainer().getActor();
 		actor.getSprite("body").setBrush(this.m.Body);
 		actor.getSprite("head").Alpha = 255;
 		actor.getSprite("armor").Alpha = 255;
+		actor.getSprite("helmet_bottom").Alpha = 255;
 		actor.getSprite("helmet").Alpha = 255;
+		actor.getSprite("helmet_damage").Alpha = 255;
+		actor.getSprite("helmet_top").Alpha = 255;
 		actor.getSprite("shield_icon").Alpha = 255;
 		actor.getSprite("armor_layer_chain").Alpha = 255;
 		actor.getSprite("armor_layer_plate").Alpha = 255;
@@ -120,7 +126,7 @@ this.legend_transformed_terrain_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("dirt").Alpha = 255;
 		actor.getSprite("accessory").Alpha = 255;
 		actor.getSprite("surcoat").Alpha = 255;
-		actor.getSprite("armor_upgrade_back").Alpha = 255;		
+		actor.getSprite("armor_upgrade_back").Alpha = 255;
 		actor.getSprite("armor_upgrade_front").Alpha = 255;
 		actor.getSprite("socket").Alpha = 255;
 		actor.getSprite("body").setHorizontalFlipping(0);

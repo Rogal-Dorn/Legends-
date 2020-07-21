@@ -52,6 +52,7 @@ var CharacterScreenPaperdollModule = function (_parent, _dataSource) {
   };
 
   this.mUpgradeButtons = [null, null, null, null, null, null];
+  this.mHelmetUpgradeButtons = [null, null, null];
 
   this.mRightEquipmentSlots = {
     Ammo: {
@@ -95,6 +96,41 @@ CharacterScreenPaperdollModule.prototype.createDIV = function (_parentDiv) {
   this.mContainer.append(middleEquipmentColumn);
   var middleEquipmentColumnLayout = $('<div class="l-equipment-column"/>');
   middleEquipmentColumn.append(middleEquipmentColumnLayout);
+
+
+  var layout = $('<div class="l-button h-remove1"/>');
+  middleEquipmentColumn.append(layout);
+
+  this.mHelmetUpgradeButtons[0] = layout.createTextButton(
+    "1",
+    function (_event) {
+      self.mDataSource.notifyBackendRemoveHelmetUpgrade(0);
+    },
+    "display-block",
+    11
+  );
+
+  var layout = $('<div class="l-button h-remove2"/>');
+  middleEquipmentColumn.append(layout);
+  this.mHelmetUpgradeButtons[1] = layout.createTextButton(
+    "2",
+    function (_event) {
+      self.mDataSource.notifyBackendRemoveHelmetUpgrade(1);
+    },
+    "display-block",
+    11
+  );
+
+  var layout = $('<div class="l-button h-remove3"/>');
+  middleEquipmentColumn.append(layout);
+  this.mHelmetUpgradeButtons[2] = layout.createTextButton(
+    "R",
+    function (_event) {
+      self.mDataSource.notifyBackendRemoveHelmetUpgrade(2);
+    },
+    "display-block",
+    11
+  );
 
   var layout = $('<div class="l-button remove1"/>');
   middleEquipmentColumn.append(layout);
@@ -1136,7 +1172,11 @@ CharacterScreenPaperdollModule.prototype.clearItems = function () {
 
   this.mUpgradeButtons.forEach(function (btn, index) {
     btn.unbindTooltip();
-  })
+  });
+
+  this.mHelmetUpgradeButtons.forEach(function (btn, index) {
+    btn.unbindTooltip();
+  });
 
 };
 
@@ -1406,14 +1446,44 @@ CharacterScreenPaperdollModule.prototype.assignEquipment = function (
     );
   }
 
+
+  var _upgrades = [0,0,0];
   if (CharacterScreenIdentifier.ItemSlot.Head in _data) {
     this.assignItemToSlot(
       this.mMiddleEquipmentSlots.Head,
       _brotherId,
       _data[CharacterScreenIdentifier.ItemSlot.Head]
     );
+
+    _upgrades = _data[CharacterScreenIdentifier.ItemSlot.Head]["upgrades"]
   }
 
+  this.mHelmetUpgradeButtons.forEach(function (btn, index) {
+    var enabled = false;
+    var text = "X";
+    if (_upgrades !== undefined && _upgrades !== '' && _upgrades.length > 0) {
+      var tLabel = index + 1;
+      switch (_upgrades[index]) {
+        case 0:
+          text = "" + tLabel;
+          break;
+        case 1:
+          text = "" + tLabel;
+          enabled = self.mDataSource.isTacticalMode() === true ? false : true;
+          break;
+      }
+    }
+    btn.changeButtonText(text);
+    btn.enableButton(enabled);
+    btn.bindTooltip({
+      contentType: 'ui-item',
+      entityId: _brotherId,
+      itemId: index,
+      itemOwner: 'paperdoll.remove-armor-layer'
+    });
+  });
+
+  _upgrades = [];
   if (CharacterScreenIdentifier.ItemSlot.Body in _data) {
     this.assignItemToSlot(
       this.mMiddleEquipmentSlots.Body,
@@ -1422,36 +1492,37 @@ CharacterScreenPaperdollModule.prototype.assignEquipment = function (
     );
 
     //Setup the armor layers enable buttons
-    var _upgrades = _data[CharacterScreenIdentifier.ItemSlot.Body]["upgrades"]
-    this.mUpgradeButtons.forEach(function (btn, index) {
-      var enabled = false;
-      var text = "X";
-      if (_upgrades !== undefined && _upgrades !== '' && _upgrades.length > 0) {
-        var tLabel = index + 1;
-        if (tLabel === 6) {
-          tLabel = "R";
-        }
-        switch (_upgrades[index]) {
-          case 0:
-            text = "" + tLabel;
-            break;
-          case 1:
-            text = "" + tLabel;
-            enabled = self.mDataSource.isTacticalMode() === true ? false : true;
-            break;
-        }
-      }
-      btn.changeButtonText(text);
-      btn.enableButton(enabled);
-      btn.bindTooltip({
-        contentType: 'ui-item',
-        entityId: _brotherId,
-        itemId: index,
-        itemOwner: 'paperdoll.remove-armor-layer'
-      });
-    });
-
+    _upgrades = _data[CharacterScreenIdentifier.ItemSlot.Body]["upgrades"]
   }
+
+  this.mUpgradeButtons.forEach(function (btn, index) {
+    var enabled = false;
+    var text = "X";
+    if (_upgrades !== undefined && _upgrades !== '' && _upgrades.length > 0) {
+      var tLabel = index + 1;
+      if (tLabel === 6) {
+        tLabel = "R";
+      }
+      switch (_upgrades[index]) {
+        case 0:
+          text = "" + tLabel;
+          break;
+        case 1:
+          text = "" + tLabel;
+          enabled = self.mDataSource.isTacticalMode() === true ? false : true;
+          break;
+      }
+    }
+    btn.changeButtonText(text);
+    btn.enableButton(enabled);
+    btn.bindTooltip({
+      contentType: 'ui-item',
+      entityId: _brotherId,
+      itemId: index,
+      itemOwner: 'paperdoll.remove-armor-layer'
+    });
+  });
+
 
   if (CharacterScreenIdentifier.ItemSlot.Accessory in _data) {
     this.assignItemToSlot(

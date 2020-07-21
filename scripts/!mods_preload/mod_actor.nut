@@ -427,6 +427,36 @@
 	{
 		oacFn(_appearance, _setDirty);
 
+		if (this.hasSprite("helmet_bottom"))
+		{
+			if (_appearance.HelmetLayerBottom.len() != 0 && !this.m.IsHidingHelmet)
+			{
+				local helmet = this.getSprite("helmet_bottom");
+				helmet.setBrush(_appearance.HelmetLayerBottom);
+				helmet.Color = _appearance.HelmetColor;
+				helmet.Visible = true;
+			}
+			else
+			{
+				this.getSprite("helmet_bottom").Visible = false;
+			}
+		}
+
+		if (this.hasSprite("helmet_top"))
+		{
+			if (_appearance.HelmetLayerTop.len() != 0 && !this.m.IsHidingHelmet)
+			{
+				local helmet = this.getSprite("helmet_top");
+				helmet.setBrush(_appearance.HelmetLayerTop);
+				helmet.Color = _appearance.HelmetColor;
+				helmet.Visible = true;
+			}
+			else
+			{
+				this.getSprite("helmet_top").Visible = false;
+			}
+		}
+
 		if (this.hasSprite("armor_layer_chain"))
 		{
 				if (_appearance.ArmorLayerChain.len() != 0)
@@ -482,6 +512,8 @@
 				this.getSprite("armor_layer_cloak").Visible = false;
 			}
 		}
+
+
 	}
 
 	o.kill <- function (_killer = null, _skill = null, _fatalityType = this.Const.FatalityType.None, _silent = false)
@@ -693,15 +725,15 @@
 	}
 
 
-	o.removeArmorUpgrade <- function ( _slot)
+	o.removeArmorUpgrade <- function ( _slot, _item)
 	{
-		local armor = this.getItems().getItemAtSlot(this.Const.ItemSlot.Body);
+		local armor = this.getItems().getItemAtSlot(_slot);
 		if (armor == null)
 		{
 			return null;
 		}
 
-		return armor.removeUpgrade( _slot );
+		return armor.removeUpgrade( _item );
 	}
 
 	o.setRiderID <- function ( _id)

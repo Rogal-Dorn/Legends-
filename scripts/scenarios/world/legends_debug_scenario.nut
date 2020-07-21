@@ -12,7 +12,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 	function isValid()
 	{
-		return this.Const.LegendMod.DebugMode;
+		return true //this.Const.LegendMod.DebugMode;
 	}
 
 	function onSpawnAssets()
@@ -319,6 +319,32 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			this.logInfo("Adding " + w);
 			local pla = this.new("scripts/items/shields/" + w);
 			this.World.Assets.getStash().add(pla);
+		}
+
+		local helmets = [
+			"middle/legend_aketon_cap",
+			"bottom/legend_mail_coif",
+			"top/legend_mouth_piece"
+		]
+
+		foreach(h in helmets)
+		{
+			local item = this.new("scripts/items/legend_helmets/" + h);
+
+			if (item.m.Variants.len() == 0)
+			{
+				this.logInfo("Adding " + h);
+				this.World.Assets.getStash().add(item);
+				continue;
+			}
+
+			for( local i = 0; i < item.m.Variants.len(); i = ++i )
+			{
+				this.logInfo("Adding " + h + " :: " + i);
+				local vitem =  this.new("scripts/items/legend_helmets/" + h);
+				vitem.setVariant(item.m.Variants[i]);
+				this.World.Assets.getStash().add(vitem);
+			}
 		}
 
 	}

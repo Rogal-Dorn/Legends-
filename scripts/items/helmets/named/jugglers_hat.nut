@@ -100,7 +100,7 @@ this.jugglers_hat <- this.inherit("scripts/items/helmets/named/named_helmet", {
 
 	function onUpdateProperties( _properties )
 	{
-		
+
 		local staminaMult = 1.0;
 
 		if (this.getContainer().getActor().getSkills().hasSkill("perk.brawny"))
@@ -111,7 +111,7 @@ this.jugglers_hat <- this.inherit("scripts/items/helmets/named/named_helmet", {
 		_properties.Armor[this.Const.BodyPart.Head] += this.m.Condition;
 		_properties.ArmorMax[this.Const.BodyPart.Head] += this.m.ConditionMax;
 		_properties.Stamina += this.Math.ceil(this.m.StaminaModifier * staminaMult);
-		_properties.Vision += this.m.Vision;
+		_properties.Vision += this.getVision();
 	}
 
 	function updateVariant()
