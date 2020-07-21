@@ -59,8 +59,10 @@ this.bandit_rabble_poacher <- this.inherit("scripts/entity/tactical/human", {
 		}
 
 		this.getSprite("armor").Saturation = 0.8;
+		this.getSprite("helmet_bottom").Saturation = 0.8;
 		this.getSprite("helmet").Saturation = 0.8;
 		this.getSprite("helmet_damage").Saturation = 0.8;
+		this.getSprite("helmet_top").Saturation = 0.8;
 		this.getSprite("shield_icon").Saturation = 0.8;
 		this.getSprite("shield_icon").setBrightness(0.9);
 

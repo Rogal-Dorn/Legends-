@@ -103,8 +103,11 @@ this.legend_zombie <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 			hair.setBrush("hair_" + hairColor + "_" + this.Const.Hair.Zombie[this.Math.rand(0, this.Const.Hair.Zombie.len() - 1)]);
 		}
 
+		this.addSprite("helmet_bottom").setHorizontalFlipping(true);
 		this.addSprite("helmet").setHorizontalFlipping(true);
 		this.addSprite("helmet_damage").setHorizontalFlipping(true);
+		this.addSprite("helmet_top").setHorizontalFlipping(true);
+
 		local beard_top = this.addSprite("beard_top");
 		beard_top.setHorizontalFlipping(true);
 

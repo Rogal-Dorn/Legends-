@@ -186,12 +186,12 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 				continue;
 			}
 
-			if (u.isItemType(this.Const.Items.ItemType.Named)) 
+			if (u.isItemType(this.Const.Items.ItemType.Named))
 			{
 				return "legend_armor/inventory_named_armor.png";
 			}
 
-			if (u.isItemType(this.Const.Items.ItemType.Legendary)) 
+			if (u.isItemType(this.Const.Items.ItemType.Legendary))
 			{
 				return "legend_armor/inventory_named_armor.png";
 			}
@@ -230,12 +230,12 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 				continue;
 			}
 
-			if (u.isItemType(this.Const.Items.ItemType.Named)) 
+			if (u.isItemType(this.Const.Items.ItemType.Named))
 			{
 				return "legend_armor/named_armor.png";
 			}
 
-			if (u.isItemType(this.Const.Items.ItemType.Legendary)) 
+			if (u.isItemType(this.Const.Items.ItemType.Legendary))
 			{
 				return "legend_armor/named_armor.png";
 			}
@@ -275,7 +275,7 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		if (named != "" && runed != "")
 		{
 			L.push(runed);
-		} 
+		}
 
 		if (named != "" || runed != "")
 		{
@@ -348,7 +348,7 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		if (named != "" && runed != "")
 		{
 			L.push(runed);
-		} 
+		}
 
 		if (named != "" || runed != "")
 		{
@@ -445,9 +445,6 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		}
 
 		this.m.Upgrades[_upgrade.getType()] = _upgrade;
-
-		
-
 		this.m.Upgrades[_upgrade.getType()].setArmor(this);
 		this.m.Upgrades[_upgrade.getType()].onAdded();
 		this.updateAppearance();
@@ -533,7 +530,7 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 			image = this.m.IconLarge != "" ? this.m.IconLarge : this.m.Icon,
 			isLarge = this.m.IconLarge != "" ? true : false
 		});
-		
+
 
 		foreach( u in this.m.Upgrades )
 		{
@@ -648,12 +645,12 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 				continue;
 			}
 
-			if (u.isItemType(this.Const.Items.ItemType.Named)) 
+			if (u.isItemType(this.Const.Items.ItemType.Named))
 			{
 				return true;
 			}
 
-			if (u.isItemType(this.Const.Items.ItemType.Legendary)) 
+			if (u.isItemType(this.Const.Items.ItemType.Legendary))
 			{
 				return true;
 			}
@@ -938,39 +935,39 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		}
 	}
 
-	function getBuyPrice()
-	{
-		local basePrice = this.armor.getBuyPrice();
+	// function getBuyPrice()
+	// {
+	// 	local basePrice = this.armor.getBuyPrice();
 
-		foreach( u in this.m.Upgrades )
-		{
-			if (u == null)
-			{
-				continue;
-			}
+	// 	foreach( u in this.m.Upgrades )
+	// 	{
+	// 		if (u == null)
+	// 		{
+	// 			continue;
+	// 		}
 
-			basePrice = basePrice + u.getBuyPrice();
-		}
+	// 		basePrice = basePrice + u.getBuyPrice();
+	// 	}
 
-		return basePrice;
-	}
+	// 	return basePrice;
+	// }
 
-	function getSellPrice()
-	{
-		local basePrice = this.armor.getSellPrice();
+	// function getSellPrice()
+	// {
+	// 	local basePrice = this.armor.getSellPrice();
 
-		foreach( u in this.m.Upgrades )
-		{
-			if (u == null)
-			{
-				continue;
-			}
+	// 	foreach( u in this.m.Upgrades )
+	// 	{
+	// 		if (u == null)
+	// 		{
+	// 			continue;
+	// 		}
 
-			basePrice = basePrice + u.getSellPrice();
-		}
+	// 		basePrice = basePrice + u.getSellPrice();
+	// 	}
 
-		return basePrice;
-	}
+	// 	return basePrice;
+	// }
 
 	function onSerialize( _out )
 	{

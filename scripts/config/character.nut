@@ -164,8 +164,10 @@ gt.Const.ShakeCharacterLayers <- [
 		"head",
 		"head_skin",
 		"injury",
+		"helmet_bottom",
 		"helmet",
 		"helmet_damage",
+		"helmet_top",
 		"dirt",
 		"tattoo_head",
 		"hair"
@@ -186,8 +188,10 @@ gt.Const.ShakeCharacterLayers <- [
 		"head",
 		"head_skin",
 		"injury",
+		"helmet_bottom",
 		"helmet",
 		"helmet_damage",
+		"helmet_top",
 		"dirt",
 		"tattoo_head",
 		"hair"

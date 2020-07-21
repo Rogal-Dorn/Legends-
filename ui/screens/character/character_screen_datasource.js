@@ -1936,6 +1936,48 @@ CharacterScreenDatasource.prototype.notifyBackendRemoveArmorUpgrade = function (
     });
 };
 
+CharacterScreenDatasource.prototype.notifyBackendRemoveHelmetUpgrade = function (_slot)
+{
+    var self = this;
+    var activeCharacterID = this.mBrothersList[this.mSelectedBrotherIndex]['id'];
+    SQ.call(this.mSQHandle, 'onRemoveHelmetUpgrade', [_slot, activeCharacterID], function (data) {
+
+        if (data === null) { return; }
+        if ('stashSpaceUsed' in data)
+            self.mStashSpaceUsed = data.stashSpaceUsed;
+
+        if ('stashSpaceMax' in data)
+            self.mStashSpaceMax = data.stashSpaceMax;
+
+        self.mInventoryModule.updateSlotsLabel();
+
+        if (CharacterScreenIdentifier.QueryResult.Stash in data)
+        {
+            var stashData = data[CharacterScreenIdentifier.QueryResult.Stash];
+            if (stashData !== null && jQuery.isArray(stashData))
+            {
+                self.updateStash(stashData);
+            }
+            else
+            {
+                console.error('ERROR: Failed to equip inventory item. Invalid stash data result.');
+            }
+        }
+
+        if (CharacterScreenIdentifier.QueryResult.Brother in data)
+        {
+            var brotherData = data[CharacterScreenIdentifier.QueryResult.Brother];
+            if (CharacterScreenIdentifier.Entity.Id in brotherData)
+            {
+                self.updateBrother(brotherData);
+            }
+            else
+            {
+                console.error('ERROR: Failed to equip inventory item. Invalid brother data result.');
+            }
+        }
+    });
+};
 CharacterScreenDatasource.prototype.notifyBackendAssignRider = function (_rider, _horse, _callback)
 {
     SQ.call(this.mSQHandle, 'onAssignRider', [ _rider, _horse ], _callback);

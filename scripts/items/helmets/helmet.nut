@@ -36,6 +36,11 @@ this.helmet <- this.inherit("scripts/items/item", {
 		this.updateAppearance();
 	}
 
+	function getVision()
+	{
+		return this.m.Vision;
+	}
+
 	function getArmor()
 	{
 		return this.Math.floor(this.m.Condition);
@@ -353,7 +358,7 @@ this.helmet <- this.inherit("scripts/items/item", {
 		_properties.Armor[this.Const.BodyPart.Head] += this.m.Condition;
 		_properties.ArmorMax[this.Const.BodyPart.Head] += this.m.ConditionMax;
 		_properties.Stamina += this.Math.ceil(this.m.StaminaModifier * staminaMult);
-		_properties.Vision += this.m.Vision;
+		_properties.Vision += this.getVision();
 	}
 
 	function onSerialize( _out )

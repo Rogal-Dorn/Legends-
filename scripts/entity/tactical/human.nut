@@ -482,6 +482,8 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 		this.getSprite("hair").setHorizontalFlipping(flip);
 		this.getSprite("helmet").setHorizontalFlipping(flip);
 		this.getSprite("helmet_damage").setHorizontalFlipping(flip);
+		this.getSprite("helmet_bottom").setHorizontalFlipping(flip);
+		this.getSprite("helmet_top").setHorizontalFlipping(flip);
 		this.getSprite("beard_top").setHorizontalFlipping(flip);
 		this.getSprite("body_blood").setHorizontalFlipping(flip);
 		this.getSprite("accessory").setHorizontalFlipping(flip);
@@ -563,8 +565,10 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 		this.addSprite("hair");
 		this.addSprite("permanent_injury_4");
 		this.addSprite("permanent_injury_1");
+		this.addSprite("helmet_bottom");
 		this.addSprite("helmet");
 		this.addSprite("helmet_damage");
+		this.addSprite("helmet_top");
 		this.addSprite("accessory");
 		this.addSprite("accessory_special");
 		this.addSprite("beard_top");

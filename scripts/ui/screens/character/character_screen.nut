@@ -404,7 +404,7 @@ this.character_screen <- {
 			this.m.PerkTreesLoaded = true;
 			result.perkTrees <- this.onQueryPerkTrees();
 		}
-		//this.logDebug("Generating stash list info :" + result.stashSpaceUsed + " : " + result.stashSpaceMax)
+		this.logDebug("Generating stash list info :" + result.stashSpaceUsed + " : " + result.stashSpaceMax)
 
 		return result;
 	}
@@ -2397,17 +2397,26 @@ this.character_screen <- {
 		this.loadData();
 	}
 
-	function onRemoveArmorUpgrade( _data )
+	function removeUpgrade( _slot, _data)
 	{
-		local slotId = _data[0];
 		local bro = this.Tactical.getEntityByID(_data[1]);
-		local upgrade = bro.removeArmorUpgrade(_data[0]);
+		local upgrade = bro.removeArmorUpgrade(_slot, _data[0]);
 		if (upgrade != null && !upgrade.isDestroyedOnRemove())
 		{
 			this.World.Assets.getStash().add(upgrade);
 		}
 		bro.getSkills().update();
 		return this.UIDataHelper.convertStashAndEntityToUIData(bro, null, false, this.m.InventoryFilter);
+	}
+
+	function onRemoveArmorUpgrade( _data )
+	{
+		return this.removeUpgrade(this.Const.ItemSlot.Body, _data);
+	}
+
+	function onRemoveHelmetUpgrade( _data )
+	{
+		return this.removeUpgrade(this.Const.ItemSlot.Head, _data);
 	}
 
 	function onUpdateFormationName( _data )

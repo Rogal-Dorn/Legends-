@@ -230,3 +230,9 @@ gt.Const.Items.ArmorUpgrades <- {
 	COUNT = 6
 }
 
+gt.Const.Items.HelmetUpgrades <- {
+	Bottom = 0,
+	Middle = 1,
+	Top = 2,
+	COUNT = 3
+}

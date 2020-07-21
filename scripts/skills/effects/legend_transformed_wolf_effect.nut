@@ -70,7 +70,10 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 
 
 		actor.getSprite("armor").Alpha = 10;
+		actor.getSprite("helmet_bottom").Alpha = 10;
 		actor.getSprite("helmet").Alpha = 10;
+		actor.getSprite("helmet_damage").Alpha = 10;
+		actor.getSprite("helmet_top").Alpha = 10;
 		actor.getSprite("shield_icon").Alpha = 10;
 		actor.getSprite("armor_layer_chain").Alpha = 10;
 		actor.getSprite("armor_layer_plate").Alpha = 10;
@@ -108,15 +111,14 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 
 	function onRemoved()
 	{
-
-
-
-
 		local actor = this.getContainer().getActor();
 		actor.getSprite("body").setBrush(this.m.Body);
 		actor.getSprite("head").setBrush(this.m.Head);
 		actor.getSprite("armor").Alpha = 255;
+		actor.getSprite("helmet_bottom").Alpha = 255;
 		actor.getSprite("helmet").Alpha = 255;
+		actor.getSprite("helmet_damage").Alpha = 255;
+		actor.getSprite("helmet_top").Alpha = 255;
 		actor.getSprite("shield_icon").Alpha = 255;
 		actor.getSprite("armor_layer_chain").Alpha = 255;
 		actor.getSprite("armor_layer_plate").Alpha = 255;
