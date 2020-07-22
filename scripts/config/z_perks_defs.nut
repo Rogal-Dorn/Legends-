@@ -3043,7 +3043,7 @@ gt.Const.Perks.PerkDefObjects <- [
 		ID = "perk.legend_herbcraft",
 		Script = "scripts/skills/perks/perk_legend_herbcraft",
 		Name = this.Const.Strings.PerkName.LegendHerbcraft,
-		Tooltip = this.Const.Strings.PerkName.LegendHerbcraft,
+		Tooltip = this.Const.Strings.PerkDescription.LegendHerbcraft,
 		Icon = "ui/perks/herbcraft.png",
 		IconDisabled = "ui/perks/herbcraft_bw.png",
 		Const = "LegendHerbcraft"
@@ -3052,7 +3052,7 @@ gt.Const.Perks.PerkDefObjects <- [
 		ID = "perk.legend_woodworking",
 		Script = "scripts/skills/perks/perk_legend_woodworking",
 		Name = this.Const.Strings.PerkName.LegendWoodworking,
-		Tooltip = this.Const.Strings.PerkName.LegendWoodworking,
+		Tooltip = this.Const.Strings.PerkDescription.LegendWoodworking,
 		Icon = "ui/perks/woodworking.png",
 		IconDisabled = "ui/perks/woodworking_bw.png",
 		Const = "LegendWoodworking"
@@ -3064,3 +3064,4 @@ foreach( i, v in gt.Const.Perks.PerkDefObjects )
 {
 	gt.Const.Perks.PerkDefs[v.Const] <- i;
 }
+

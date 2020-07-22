@@ -3700,6 +3700,12 @@ Adding perks looks like this now '''_tree[0].push(this.Const.Perks.PerkDefs.Lege
 
 **Changes**
 Tweaked the spawn lists for barbarians - there will be more Marauders/Reavers and less Thralls. There will now also be more Champions and Beastmasters on higher levels (Thank our friendly Skin Ghoul Mascot ;)
+Named Glaive Damange increased from 40/45 to 45/50
 
 **Fixes**
 Fixed rage's effect tooltip.
+Fixes tooltips for Woodworking and Herbcraft perks.
+Adds correct smashing shields perk to peasant woodsmen.
+Fixes name for Gladiator Helmet.
+Necromancers can now posses undead more than once.
+
