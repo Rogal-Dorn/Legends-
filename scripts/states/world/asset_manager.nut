@@ -156,7 +156,7 @@ this.asset_manager <- {
 	function getMaxMedicine()
 	{
 		local meds = this.Const.LegendMod.MaxResources[this.m.EconomicDifficulty].Medicine;
-		meds += this.World.State.getPlayer().getMedModifier();
+		meds += this.World.State.getPlayer().getMedsModifier();
 		foreach( bro in this.World.getPlayerRoster().getAll() )
 		{
 			meds += bro.getMedsModifier();
