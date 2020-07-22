@@ -53,7 +53,7 @@ var PaperdollItemIdentifier = {
 
 	 // repair layer
     var repairLayer;
-	
+
 	if(_isBig)
 		repairLayer = $('<div class="repair-layer repair-layer-big display-none"/>');
 	else
@@ -293,12 +293,12 @@ $.fn.assignPaperdollItemDragAndDrop = function(_parent, _dragStartCallback, _dra
         $(dd.drag).addClass('is-dragged');
 
         var drag = $(dd.drag);
-        
+
         if (jQuery.isFunction(_dragStartCallback) === true)
         {
             _dragStartCallback(drag, proxy);
         }
-        
+
         return proxy;
     });
 

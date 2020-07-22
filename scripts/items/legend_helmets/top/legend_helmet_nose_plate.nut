@@ -26,6 +26,9 @@ this.legend_helmet_nose_plate <- this.inherit("scripts/items/legend_helmets/lege
 		this.m.SpriteCorpse = ""//"bust_helmet_" + variant + "_dead";
 		this.m.IconLarge = "";
 		this.m.Icon = "legend_helmets/top/legend_nose_plate.png"
+		this.m.OverlayIcon = this.m.Icon;
+		this.m.OverlayIconLarge = this.m.OverlayIcon;
+
 	}
 
 });

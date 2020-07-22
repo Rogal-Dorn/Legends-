@@ -225,15 +225,6 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 			return runed;
 		}
 
-		local items = this.getIconOverlay();
-		foreach (i in items)
-		{
-			if (i != "")
-			{
-				return i;
-			}
-		}
-
 		return this.m.Icon;
 	}
 
@@ -252,14 +243,16 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 			return runed;
 		}
 
-		local items = this.getIconLargeOverlay();
-		foreach (i in items)
-		{
-			if (i != "")
-			{
-				return i;
-			}
-		}
+		return this.getIcon();
+
+		// local items = this.getIconLargeOverlay();
+		// foreach (i in items)
+		// {
+		// 	if (i != "")
+		// 	{
+		// 		return i;
+		// 	}
+		// }
 
 		return this.m.IconLarge != "" ? this.m.IconLarge : null;
 	}
