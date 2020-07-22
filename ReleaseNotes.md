@@ -3694,3 +3694,12 @@ Fixes bug with legend_cheer_on that prevents switching from lute to other useabl
 in your scenario files, the onBuildPerkTree function signature has changed. You will need to update your mods/edits
 Adding perks looks like this now '''_tree[0].push(this.Const.Perks.PerkDefs.LegendCampCook);'''
 
+
+14.0.0.16
+
+
+**Changes**
+Tweaked the spawn lists for barbarians - there will be more Marauders/Reavers and less Thralls. There will now also be more Champions and Beastmasters on higher levels (Thank our friendly Skin Ghoul Mascot ;)
+
+**Fixes**
+Fixed rage's effect tooltip.
