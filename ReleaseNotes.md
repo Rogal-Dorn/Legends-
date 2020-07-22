@@ -3703,7 +3703,8 @@ Tweaked the spawn lists for barbarians - there will be more Marauders/Reavers an
 Named Glaive Damange increased from 40/45 to 45/50
 
 **Fixes**
-Fixed rage's effect tooltip.
+Fixed rage's effect tooltip. (Salty)
+Lonewolf & Raiders now get armor layers if the option is enabled. Raiders armor is a bit heavier than vanilla, and Lonewolfs has 5 less durability (Salty)
 Fixes tooltips for Woodworking and Herbcraft perks.
 Adds correct smashing shields perk to peasant woodsmen.
 Fixes name for Gladiator Helmet.
