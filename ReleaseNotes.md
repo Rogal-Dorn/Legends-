@@ -3694,3 +3694,8 @@ Fixes bug with legend_cheer_on that prevents switching from lute to other useabl
 in your scenario files, the onBuildPerkTree function signature has changed. You will need to update your mods/edits
 Adding perks looks like this now '''_tree[0].push(this.Const.Perks.PerkDefs.LegendCampCook);'''
 
+
+14.0.0.16
+
+**Fixes**
+Fixes one possible crash on vala chanting and being devoured
