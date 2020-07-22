@@ -6,7 +6,7 @@ this.legend_helmet_goblin_scarf <- this.inherit("scripts/items/legend_helmets/le
 		this.m.ID = "armor.head.legend_helmet_goblin_scarf";
 		this.m.Name = "Goblin Scarf";
 		this.m.Description = "TODO Goblin Scarf";
-		this.m.ArmorDescription = this.m.Description;
+		//this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 188;
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;

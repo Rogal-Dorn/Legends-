@@ -26,6 +26,8 @@ this.legend_helmet_cloth_bandana <- this.inherit("scripts/items/legend_helmets/l
 		this.m.SpriteCorpse = ""//"bust_helmet_" + variant + "_dead";
 		this.m.IconLarge = "";
 		this.m.Icon = "legend_helmets/helm/legend_cloth_bandana.png"
+		this.m.OverlayIcon = this.m.Icon;
+		this.m.OverlayIconLarge = this.m.OverlayIcon;
 	}
 
 });

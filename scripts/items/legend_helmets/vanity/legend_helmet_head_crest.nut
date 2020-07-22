@@ -26,7 +26,10 @@ this.legend_helmet_head_crest <- this.inherit("scripts/items/legend_helmets/lege
 		this.m.SpriteDamaged = ""//"bust_helmet_" + variant + "_damaged";
 		this.m.SpriteCorpse = ""//"bust_helmet_" + variant + "_dead";
 		this.m.IconLarge = "";
-		this.m.Icon = "legend_helmets/vanity/legend_head_crest.png"
+		this.m.Icon = "legend_helmets/vanity/legend_head_crest.png";
+		this.m.OverlayIcon = this.m.Icon;
+		this.m.OverlayIconLarge = this.m.OverlayIcon;
+
 	}
 
 });

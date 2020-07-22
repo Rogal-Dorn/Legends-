@@ -17,6 +17,7 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 		Variants = [],
 		HideHair = false,
 		HideBeard = false,
+		Vision = 0
 	},
 	function create()
 	{
@@ -35,6 +36,11 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 		this.m.SpriteCorpse = "bust_helmet_" + variant + "_dead";
 		this.m.IconLarge = "";
 		this.m.Icon = "helmets/inventory_helmet_" + variant + ".png";
+	}
+
+	function getVision()
+	{
+		return this.m.Vision;
 	}
 
 	function isAmountShown()
@@ -269,7 +275,7 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 				{
 					_app.HelmetLayerVanity = "";
 					_app.HelmetLayerVanityCorpse = "";
-					_app.HelmetLayerVanityLower = _sprite;
+					_app.HelmetLayerVanityLower = sprite;
 					_app.HelmetLayerVanityLowerCorpse = this.m.SpriteCorpse != null ? this.m.SpriteCorpse : "";
 				}
 				else
@@ -302,15 +308,22 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 
 		switch(this.m.Type)
 		{
-		case this.Const.Items.HelmetUpgrades.Bottom:
-			_app.HelmetLayerBottom = "";
-			_app.HelmetLayerBottomCorpse = "";
-			break;
+			case this.Const.Items.HelmetUpgrades.Helm:
+				_app.HelmetLayerHelm = "";
+				_app.HelmetLayerHelmCorpse = ""
+				break;
 
-		case this.Const.Items.HelmetUpgrades.Top:
-			_app.HelmetLayerTop = "";
-			_app.HelmetLayerTopCorpse = "";
-			break;
+			case this.Const.Items.HelmetUpgrades.Top:
+				_app.HelmetLayerTop = "";
+				_app.HelmetLayerTopCorpse = ""
+				break;
+
+			case this.Const.Items.HelmetUpgrades.Vanity:
+					_app.HelmetLayerVanity = "";
+					_app.HelmetLayerVanityCorpse = "";
+					_app.HelmetLayerVanityLower = ""
+					_app.HelmetLayerVanityLowerCorpse = ""
+				break;
 		}
 
 		return this.m.IsDestroyedOnRemove;

@@ -27,6 +27,9 @@ this.legend_helmet_feather_band <- this.inherit("scripts/items/legend_helmets/le
 		this.m.SpriteCorpse = ""//"bust_helmet_" + variant + "_dead";
 		this.m.IconLarge = "";
 		this.m.Icon = "legend_helmets/vanity/legend_feather_band.png"
+		this.m.OverlayIcon = this.m.Icon;
+		this.m.OverlayIconLarge = this.m.OverlayIcon;
+
 	}
 
 });
