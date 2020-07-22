@@ -53,12 +53,7 @@ this.bandit_leader <- this.inherit("scripts/entity/tactical/human", {
 		local dirt = this.getSprite("dirt");
 		dirt.Visible = true;
 		dirt.Alpha = this.Math.rand(150, 255);
-		this.getSprite("armor").Saturation = 0.85;
-		this.getSprite("helmet_bottom").Saturation = 0.85;
-		this.getSprite("helmet").Saturation = 0.85;
-		this.getSprite("helmet_damage").Saturation = 0.85;
-		this.getSprite("helmet_top").Saturation = 0.85;
-		this.getSprite("shield_icon").Saturation = 0.85;
+		this.setArmorSaturation(0.85);
 		this.getSprite("shield_icon").setBrightness(0.85);
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_captain"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_shield_expert"));
@@ -87,11 +82,7 @@ this.bandit_leader <- this.inherit("scripts/entity/tactical/human", {
 	function onAppearanceChanged( _appearance, _setDirty = true )
 	{
 		this.actor.onAppearanceChanged(_appearance, false);
-		this.getSprite("armor").setBrightness(0.9);
-		this.getSprite("helmet_bottom").setBrightness(0.9);
-		this.getSprite("helmet").setBrightness(0.9);
-		this.getSprite("helmet_damage").setBrightness(0.9);
-		this.getSprite("helmet_top").setBrightness(0.9);
+		this.setArmorBrightness(0.9);
 		this.setDirty(true);
 	}
 

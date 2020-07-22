@@ -1447,7 +1447,7 @@ CharacterScreenPaperdollModule.prototype.assignEquipment = function (
   }
 
 
-  var _upgrades = [0,0,0];
+  var _upgrades = [];
   if (CharacterScreenIdentifier.ItemSlot.Head in _data) {
     this.assignItemToSlot(
       this.mMiddleEquipmentSlots.Head,
@@ -1479,7 +1479,7 @@ CharacterScreenPaperdollModule.prototype.assignEquipment = function (
       contentType: 'ui-item',
       entityId: _brotherId,
       itemId: index,
-      itemOwner: 'paperdoll.remove-armor-layer'
+      itemOwner: 'paperdoll.remove-helmet-layer'
     });
   });
 

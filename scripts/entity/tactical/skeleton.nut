@@ -419,10 +419,13 @@ this.skeleton <- this.inherit("scripts/entity/tactical/actor", {
 		this.getSprite("injury").setHorizontalFlipping(flip);
 		this.getSprite("beard").setHorizontalFlipping(flip);
 		this.getSprite("hair").setHorizontalFlipping(flip);
-		this.getSprite("helmet_bottom").setHorizontalFlipping(flip);
 		this.getSprite("helmet").setHorizontalFlipping(flip);
 		this.getSprite("helmet_damage").setHorizontalFlipping(flip);
+		this.getSprite("helmet_vanity_lower").setHorizontalFlipping(flip);
+		this.getSprite("helmet_helm").setHorizontalFlipping(flip);
 		this.getSprite("helmet_top").setHorizontalFlipping(flip);
+		this.getSprite("helmet_vanity").setHorizontalFlipping(flip);
+
 		this.getSprite("beard_top").setHorizontalFlipping(flip);
 		this.getSprite("body_blood").setHorizontalFlipping(flip);
 		this.getSprite("dirt").setHorizontalFlipping(flip);
@@ -493,10 +496,12 @@ this.skeleton <- this.inherit("scripts/entity/tactical/actor", {
 		}
 
 		this.setSpriteOffset("hair", this.createVec(0, -3));
-		this.addSprite("helmet_bottom");
+		this.addSprite("helmet_vanity_lower");
 		this.addSprite("helmet");
 		this.addSprite("helmet_damage");
+		this.addSprite("helmet_helm");
 		this.addSprite("helmet_top");
+		this.addSprite("helmet_vanity");
 		local beard_top = this.addSprite("beard_top");
 
 		if (beard.HasBrush && this.doesBrushExist(beard.getBrush().Name + "_top"))

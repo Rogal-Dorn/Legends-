@@ -312,7 +312,15 @@ this.tooltip_events <- {
 			{
 				return null;
 			}
-			return entity.getRemoveLayerTooltip(_itemId);
+			return entity.getRemoveLayerTooltip(this.Const.ItemSlot.Body, _itemId);
+
+		case "paperdoll.remove-helmet-layer":
+			if (entity == null)
+			{
+				return null;
+			}
+			return entity.getRemoveLayerTooltip(this.Const.ItemSlot.Head, _itemId);
+
 		}
 
 		return null;
@@ -851,7 +859,15 @@ this.tooltip_events <- {
 			{
 				return null;
 			}
-			return entity.getRemoveLayerTooltip(_itemId);
+			return entity.getRemoveLayerTooltip(this.Const.ItemSlot.Body, _itemId);
+
+
+		case "paperdoll.remove-helmet-layer":
+			if (entity == null)
+			{
+				return null;
+			}
+			return entity.getRemoveLayerTooltip(this.Const.ItemSlot.Head, _itemId);
 		}
 
 		return null;

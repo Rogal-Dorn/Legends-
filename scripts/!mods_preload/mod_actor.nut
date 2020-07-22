@@ -427,18 +427,33 @@
 	{
 		oacFn(_appearance, _setDirty);
 
-		if (this.hasSprite("helmet_bottom"))
+		if (this.hasSprite("helmet_vanity_lower"))
 		{
-			if (_appearance.HelmetLayerBottom.len() != 0 && !this.m.IsHidingHelmet)
+			if (_appearance.HelmetLayerVanityLower.len() != 0 && !this.m.IsHidingHelmet)
 			{
-				local helmet = this.getSprite("helmet_bottom");
-				helmet.setBrush(_appearance.HelmetLayerBottom);
+				local helmet = this.getSprite("helmet_vanity_lower");
+				helmet.setBrush(_appearance.HelmetLayerVanityLower);
 				helmet.Color = _appearance.HelmetColor;
 				helmet.Visible = true;
 			}
 			else
 			{
-				this.getSprite("helmet_bottom").Visible = false;
+				this.getSprite("helmet_vanity_lower").Visible = false;
+			}
+		}
+
+		if (this.hasSprite("helmet_helm"))
+		{
+			if (_appearance.HelmetLayerHelm.len() != 0 && !this.m.IsHidingHelmet)
+			{
+				local helmet = this.getSprite("helmet_helm");
+				helmet.setBrush(_appearance.HelmetLayerHelm);
+				helmet.Color = _appearance.HelmetColor;
+				helmet.Visible = true;
+			}
+			else
+			{
+				this.getSprite("helmet_helm").Visible = false;
 			}
 		}
 
@@ -454,6 +469,21 @@
 			else
 			{
 				this.getSprite("helmet_top").Visible = false;
+			}
+		}
+
+		if (this.hasSprite("helmet_vanity"))
+		{
+			if (_appearance.HelmetLayerVanity.len() != 0 && !this.m.IsHidingHelmet)
+			{
+				local helmet = this.getSprite("helmet_vanity");
+				helmet.setBrush(_appearance.HelmetLayerVanity);
+				helmet.Color = _appearance.HelmetColor;
+				helmet.Visible = true;
+			}
+			else
+			{
+				this.getSprite("helmet_vanity").Visible = false;
 			}
 		}
 

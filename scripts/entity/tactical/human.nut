@@ -482,8 +482,10 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 		this.getSprite("hair").setHorizontalFlipping(flip);
 		this.getSprite("helmet").setHorizontalFlipping(flip);
 		this.getSprite("helmet_damage").setHorizontalFlipping(flip);
-		this.getSprite("helmet_bottom").setHorizontalFlipping(flip);
+		this.getSprite("helmet_vanity_lower").setHorizontalFlipping(flip);
+		this.getSprite("helmet_helm").setHorizontalFlipping(flip);
 		this.getSprite("helmet_top").setHorizontalFlipping(flip);
+		this.getSprite("helmet_vanity").setHorizontalFlipping(flip);
 		this.getSprite("beard_top").setHorizontalFlipping(flip);
 		this.getSprite("body_blood").setHorizontalFlipping(flip);
 		this.getSprite("accessory").setHorizontalFlipping(flip);
@@ -565,10 +567,12 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 		this.addSprite("hair");
 		this.addSprite("permanent_injury_4");
 		this.addSprite("permanent_injury_1");
-		this.addSprite("helmet_bottom");
+		this.addSprite("helmet_vanity_lower");
 		this.addSprite("helmet");
 		this.addSprite("helmet_damage");
+		this.addSprite("helmet_helm");
 		this.addSprite("helmet_top");
+		this.addSprite("helmet_vanity");
 		this.addSprite("accessory");
 		this.addSprite("accessory_special");
 		this.addSprite("beard_top");
@@ -655,6 +659,39 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 		{
 			this.getSprite("beard").Visible = false;
 		}
+	}
+
+	function setArmorSaturation(level)
+	{
+		this.getSprite("armor").Saturation = level;
+		this.getSprite("armor_layer_chain").Saturation = level;
+		this.getSprite("armor_layer_plate").Saturation = level;
+		this.getSprite("armor_layer_tabbard").Saturation = level;
+		this.getSprite("armor_layer_cloak").Saturation = level;
+		this.getSprite("armor_upgrade_back").Saturation = level;
+		this.getSprite("helmet_vanity_lower").Saturation = level;
+		this.getSprite("helmet").Saturation = level;
+		this.getSprite("helmet_damage").Saturation = level;
+		this.getSprite("helmet_helm").Saturation = level;
+		this.getSprite("helmet_top").Saturation = level;
+		this.getSprite("helmet_vanity").Saturation = level;
+		this.getSprite("shield_icon").Saturation = level;
+	}
+
+	function setArmorBrightness(level)
+	{
+		this.getSprite("armor").setBrightness(level);
+		this.getSprite("armor_layer_chain").setBrightness(level);
+		this.getSprite("armor_layer_plate").setBrightness(level);
+		this.getSprite("armor_layer_tabbard").setBrightness(level);
+		this.getSprite("armor_layer_cloak").setBrightness(level);
+		this.getSprite("armor_upgrade_back").setBrightness(level);
+		this.getSprite("helmet_vanity_lower").setBrightness(level);
+		this.getSprite("helmet").setBrightness(level);
+		this.getSprite("helmet_damage").setBrightness(level);
+		this.getSprite("helmet_helm").setBrightness(level);
+		this.getSprite("helmet_top").setBrightness(level);
+		this.getSprite("helmet_vanity").setBrightness(level);
 	}
 
 	function onDamageReceived( _attacker, _skill, _hitInfo )

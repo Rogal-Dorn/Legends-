@@ -10,10 +10,13 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 		ConditionModifier = 0,
 		StaminaModifier = 0,
 		Type = -1,
+		IsLowerVanity = false,
 		ImpactSound = this.Const.Sound.ArmorLeatherImpact,
 		InventorySound = this.Const.Sound.ArmorLeatherImpact,
 		IsDestroyedOnRemove = false,
 		Variants = [],
+		HideHair = false,
+		HideBeard = false,
 	},
 	function create()
 	{
@@ -246,26 +249,40 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 
 		if (_app == null)
 		{
-			return;
+			return false;
 		}
 
 		switch(this.m.Type)
 		{
-		case this.Const.Items.HelmetUpgrades.Bottom:
-			_app.HelmetLayerBottom = sprite;
-			_app.HelmetLayerBottomCorpse = this.m.SpriteCorpse != null ? this.m.SpriteCorpse : "";
-			break;
+			case this.Const.Items.HelmetUpgrades.Helm:
+				_app.HelmetLayerHelm = sprite;
+				_app.HelmetLayerHelmCorpse = this.m.SpriteCorpse != null ? this.m.SpriteCorpse : "";
+				break;
 
-		case this.Const.Items.HelmetUpgrades.Middle:
-			_app.Helmet = sprite;
-			_app.HelmetCorpse = this.m.SpriteCorpse != null ? this.m.SpriteCorpse : "";
-			break;
+			case this.Const.Items.HelmetUpgrades.Top:
+				_app.HelmetLayerTop = sprite;
+				_app.HelmetLayerTopCorpse = this.m.SpriteCorpse != null ? this.m.SpriteCorpse : "";
+				break;
 
-		case this.Const.Items.HelmetUpgrades.Top:
-			_app.HelmetLayerTop = sprite;
-			_app.HelmetLayerTopCorpse = this.m.SpriteCorpse != null ? this.m.SpriteCorpse : "";
-			break;
+			case this.Const.Items.HelmetUpgrades.Vanity:
+				if (this.m.IsLowerVanity)
+				{
+					_app.HelmetLayerVanity = "";
+					_app.HelmetLayerVanityCorpse = "";
+					_app.HelmetLayerVanityLower = _sprite;
+					_app.HelmetLayerVanityLowerCorpse = this.m.SpriteCorpse != null ? this.m.SpriteCorpse : "";
+				}
+				else
+				{
+					_app.HelmetLayerVanity = sprite;
+					_app.HelmetLayerVanityCorpse = this.m.SpriteCorpse != null ? this.m.SpriteCorpse : "";
+					_app.HelmetLayerVanityLower = "";
+					_app.HelmetLayerVanityLowerCorpse = "";
+				}
+				break;
 		}
+
+		return true;
 
 	}
 
@@ -310,8 +327,9 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 
 		if (armor == null)
 		{
-			armor = this.new("scripts/items/legend_helmets/legend_helmet");
-			_actor.equipItem(armor);
+			return false
+			// armor = this.new("scripts/items/legend_helmets/legend_helmet");
+			// _actor.equipItem(armor);
 		}
 
 		local success = armor.setUpgrade(this);

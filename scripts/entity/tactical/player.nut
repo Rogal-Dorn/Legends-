@@ -2944,23 +2944,23 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.Sound.play(this.m.Sound[_type][this.Math.rand(0, this.m.Sound[_type].len() - 1)], volume, this.getPos(), _pitch);
 	}
 
-	function getRemoveLayerTooltip( _layer )
+	function getRemoveLayerTooltip(_slot, _layer)
 	{
-		local armor = this.getItems().getItemAtSlot(this.Const.ItemSlot.Body);
+		local armor = this.getItems().getItemAtSlot(_slot);
 		local title = "";
 
 		switch(_layer)
 		{
 		case 0:
-			title = "Chain Mail Layer";
+			title = _slot == this.Const.ItemSlot.Body ? "Chain Mail Layer" : "Helmet Layer";
 			break;
 
 		case 1:
-			title = "Plate Layer";
+			title = _slot == this.Const.ItemSlot.Body ? "Plate Layer" : "Top Layer";
 			break;
 
 		case 2:
-			title = "Tabard Layer";
+			title = _slot == this.Const.ItemSlot.Body ? "Tabard Layer" : "Vanity Layer";
 			break;
 
 		case 3:
@@ -2989,7 +2989,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			tt.push({
 				id = 2,
 				type = "description",
-				text = "A base piece of armor, such as a tunic or surcoat, needs to be worn in order to attach a layer"
+				text = _slot == this.Const.ItemSlot.Body ? "A base piece of armor, such as a tunic or surcoat, needs to be worn in order to attach a layer" : "A base piece of helmet, such as a hood or scarf, needs to be worn in order to attach a layer"
 			});
 			return tt;
 		}
@@ -2999,7 +2999,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			tt.push({
 				id = 2,
 				type = "description",
-				text = "The layer can not be attached to this piece of armor."
+				text = _slot == this.Const.ItemSlot.Body ? "The layer can not be attached to this piece of armor." : "The layer can not be attached to this helmet"
 			});
 			return tt;
 		}

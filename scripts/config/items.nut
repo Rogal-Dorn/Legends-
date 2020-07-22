@@ -231,8 +231,8 @@ gt.Const.Items.ArmorUpgrades <- {
 }
 
 gt.Const.Items.HelmetUpgrades <- {
-	Bottom = 0,
-	Middle = 1,
-	Top = 2,
+	Helm = 0,
+	Top = 1,
+	Vanity = 2,
 	COUNT = 3
 }

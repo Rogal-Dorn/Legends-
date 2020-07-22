@@ -822,10 +822,9 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 			}
 		}
 
-		this.updateAppearance();
-
 		if (this.m.Condition == 0)
 		{
+			this.updateAppearance();
 			return;
 		}
 
@@ -839,6 +838,7 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		{
 			this.Tactical.EventLog.logEx(this.Const.UI.getColorizedEntityName(this.getContainer().getActor()) + "\'s " + this.makeName() + " is hit for [b]" + this.Math.floor(_damage) + "[/b] damage");
 		}
+		this.updateAppearance();
 	}
 
 	function onUpdateProperties( _properties )
