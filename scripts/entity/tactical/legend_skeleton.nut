@@ -101,10 +101,12 @@ this.legend_skeleton <- this.inherit("scripts/entity/tactical/skeleton", {
 		}
 
 		this.setSpriteOffset("hair", this.createVec(0, -3));
-		this.addSprite("helmet_bottom");
+		this.addSprite("helmet_vanity_lower");
 		this.addSprite("helmet");
 		this.addSprite("helmet_damage");
+		this.addSprite("helmet_helm");
 		this.addSprite("helmet_top");
+		this.addSprite("helmet_vanity");
 		local beard_top = this.addSprite("beard_top");
 
 		if (beard.HasBrush && this.doesBrushExist(beard.getBrush().Name + "_top"))

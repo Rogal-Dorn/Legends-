@@ -29,12 +29,7 @@ this.legend_bandit_veteran <- this.inherit("scripts/entity/tactical/human", {
 		local dirt = this.getSprite("dirt");
 		dirt.Visible = true;
 		dirt.Alpha = this.Math.rand(150, 255);
-		this.getSprite("armor").Saturation = 0.6;
-		this.getSprite("helmet_bottom").Saturation = 0.8;
-		this.getSprite("helmet").Saturation = 0.8;
-		this.getSprite("helmet_damage").Saturation = 0.8;
-		this.getSprite("helmet_top").Saturation = 0.8;
-		this.getSprite("shield_icon").Saturation = 0.6;
+		this.setArmorSaturation(0.6);
 		this.getSprite("shield_icon").setBrightness(0.85);
 
 		if (!this.m.IsLow)

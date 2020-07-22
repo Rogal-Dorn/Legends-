@@ -322,9 +322,11 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		}
 
 		local helmets = [
-			"middle/legend_aketon_cap",
-			"bottom/legend_mail_coif",
-			"top/legend_mouth_piece"
+			"helm/legend_helmet_cloth_bandana",
+			"hood/legend_helmet_goblin_scarf",
+			"top/legend_helmet_nose_plate"
+			"vanity/legend_helmet_feather_band",
+			"vanity/legend_helmet_head_crest"
 		]
 
 		foreach(h in helmets)

@@ -165,7 +165,7 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 				icon = "ui/icons/fatigue.png",
 				text = "Maximum Fatigue [color=" + this.Const.UI.Color.PositiveValue + "] +" + this.getStaminaModifier() + "[/color]"
 			});
-		} 
+		}
 
 		return result;
 	}
