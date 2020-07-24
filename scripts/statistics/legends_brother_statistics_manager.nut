@@ -49,22 +49,25 @@ this.legends_brother_statistics_manager <- {
 		return val;
 	}
 
-    function createInteractionTable()
-    {
-        local table <- {
-            BattlesTogether = 0
-        };
-        return table;
-    }
+    // function createInteractionTable()
+    // {
+    //     local table <- {
+    //         BattlesTogether = 0
+    //     };
+    //     return table;
+    // }
 
     function addInteraction( _id ) 
-    {
+    {  
+        local DefaultInteraction <- {
+            BattlesTogether = 0
+        };
         //goes across and adds new tables -> i.e. addInteraction(3) adds [0][2], [1][2] -> [2][3], [2][4], ... [2][n], assuming the id exists
         for (local i = 0; i < _id - 1; ++i) 
         {
             if (idExists(i))
             {
-                this.m.ActorInteractions[_id - 1][i] = this.createInteractionTable();   
+                this.m.ActorInteractions[_id - 1][i] = clone DefaultInteraction;   
             }
             
         }
@@ -72,7 +75,7 @@ this.legends_brother_statistics_manager <- {
         {
             if (idExists(i))
             {
-                this.m.ActorInteractions[i][_id - 1] = this.createInteractionTable();
+                this.m.ActorInteractions[i][_id - 1] = clone DefaultInteraction;
             }
         }
     }
