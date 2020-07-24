@@ -50,7 +50,16 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 			"the Wildman",
 			"the Feral",
 			"the Wild",
-			"the Barbarian"
+			"the Barbarian",
+			"The Green thumb",
+			"Oakheart",
+			"Treebeard",
+			"The flower",
+			"The Pollenator",
+			"Nature's Wrath",
+			"The Bear",
+			"The Wolf",
+			"The Sapling"
 		];
 		this.m.Faces = this.Const.Faces.AllMale;
 		this.m.Hairs = this.Const.Hair.UntidyMale;

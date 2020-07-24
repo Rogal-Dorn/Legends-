@@ -3709,7 +3709,8 @@ Named Glaive Damange increased from 40/45 to 45/50
 Noble Supply run caravans and raid contracts now have a chance of spawning mercenaries, mixed nobles and mercs, or just noble forces as the defending force instead of always noble troops.
 
 **Fixes**
-Fixed rage's effect tooltip.
+Fixed rage's effect tooltip. (Salty)
+Lonewolf & Raiders now get armor layers if the option is enabled. Raiders armor is a bit heavier than vanilla, and Lonewolfs has 5 less durability (Salty)
 Fixes tooltips for Woodworking and Herbcraft perks.
 Adds correct smashing shields perk to peasant woodsmen.
 Fixes name for Gladiator Helmet.
