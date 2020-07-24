@@ -147,10 +147,6 @@ this.asset_manager <- {
 	{
 		local parts = this.Const.LegendMod.MaxResources[this.m.EconomicDifficulty].ArmorParts;
 		parts += this.World.State.getPlayer().getArmorPartsModifier();
-		foreach( bro in this.World.getPlayerRoster().getAll() )
-		{
-			parts += bro.getArmorPartsModifier();
-		}
 		return parts;
 	}
 
@@ -158,10 +154,6 @@ this.asset_manager <- {
 	{
 		local meds = this.Const.LegendMod.MaxResources[this.m.EconomicDifficulty].Medicine;
 		meds += this.World.State.getPlayer().getMedsModifier();
-		foreach( bro in this.World.getPlayerRoster().getAll() )
-		{
-			meds += bro.getMedsModifier();
-		}
 		return meds;
 	}
 
@@ -1043,9 +1035,9 @@ this.asset_manager <- {
 			_worldState.updateTopbarAssets();
 		}
 
-		if (this.World.getTime().Day > this.m.LastDayResourcesUpdated + 7)
+		if (this.World.getTime().Days > this.m.LastDayResourcesUpdated + 7)
 		{
-			this.m.LastDayResourcesUpdated = this.World.getTime().Day;
+			this.m.LastDayResourcesUpdated = this.World.getTime().Days;
 			foreach( t in this.World.EntityManager.getSettlements() )
 			{
 

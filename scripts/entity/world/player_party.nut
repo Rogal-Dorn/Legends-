@@ -418,7 +418,7 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 		return this.m.ArmorPartsMultiplier;
 	}
 
-	function getMedModifier()
+	function getMedsModifier()
 	{
 		return this.m.MedsMultiplier;
 	}
