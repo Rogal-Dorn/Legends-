@@ -3702,3 +3702,5 @@ Fixes one possible crash on vala chanting and being devoured
 Vanilla splt man double damage not happening fix
 Bandit warlords now have warlord stats, as opposed to bandidt leader stats
 Temporarily removes alchemy tree from being rolled (was highly unfinished/untested before)
+Zombie poison effect on legendary doesn't scale up fix
+Resilient/HoldOut tooltip fix, currently states -1 turn on debuffs, but gives -5
