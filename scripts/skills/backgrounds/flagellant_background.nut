@@ -130,7 +130,7 @@ this.flagellant_background <- this.inherit("scripts/skills/backgrounds/character
 		if (_gender == -1)
 		{
 			r = this.Math.rand(0, 9);
-			if (this.Const.LegendMod.Configs.LegendGenderEnabled())
+			if (this.World.LegendsMod.Configs().LegendGenderEnabled())
 			{
 				r = this.Math.rand(0, 1);
 			}

@@ -25,9 +25,9 @@ this.legends_skeleton_low_archer <- this.inherit("scripts/entity/tactical/legend
 		// 	this.m.Items.equip(this.new("scripts/items/shields/ancient/auxiliary_shield"));
 		// }
 
-		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
-			
+
 			local cloths = [
 				[2, ""],
 				[0, "cloth/legend_gambeson"],

@@ -20,12 +20,12 @@ this.legend_random_party_scenario <- this.inherit("scripts/scenarios/world/start
 		local partysize = this.Math.rand(1, 6);
 		local broLevelMax = this.Math.floor(6 / partysize);
 
-		
+
 
 		for( local i = 0; i < partysize; i = ++i )
 		{
 			local broLevel = this.Math.rand(1, broLevelMax);
-			local broPerks = broLevel - 1; 
+			local broPerks = broLevel - 1;
 			local bro;
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.m.HireTime = this.Time.getVirtualTimeF();
@@ -42,7 +42,7 @@ this.legend_random_party_scenario <- this.inherit("scripts/scenarios/world/start
 			bro.m.CompanyID = val;
 		}
 
-		if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+		if (this.World.LegendsMod.Configs().RelationshipsEnabled())
 {
     local avgAlignment = 0;
     foreach (bro in this.World.getPlayerRoster().getAll())

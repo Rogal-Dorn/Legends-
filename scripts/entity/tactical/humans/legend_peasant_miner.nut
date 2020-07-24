@@ -51,10 +51,10 @@ this.legend_peasant_miner <- this.inherit("scripts/entity/tactical/human", {
 	function assignRandomEquipment()
 	{
 		this.m.Items.equip(this.new("scripts/items/weapons/pickaxe"));
-		
 
 
-		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			local cloths = [
 				[0, ""],

@@ -54,7 +54,7 @@ this.legend_peasant_witchhunter <- this.inherit("scripts/entity/tactical/human",
 		this.m.Items.equip(this.new("scripts/items/ammo/quiver_of_bolts"));
 		this.m.Items.equip(this.new("scripts/items/weapons/shortsword"));
 
-		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			local cloths = [
 				[0, ""],

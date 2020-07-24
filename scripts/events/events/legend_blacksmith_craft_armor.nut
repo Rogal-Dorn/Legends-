@@ -73,7 +73,7 @@ this.legend_blacksmith_craft_armor <- this.inherit("scripts/events/event", {
 					Text = "A masterwork!",
 					function getResult( _event )
 					{
-						
+
 						return 0;
 					}
 
@@ -88,7 +88,7 @@ this.legend_blacksmith_craft_armor <- this.inherit("scripts/events/event", {
 					text = "You spend [color=" + this.Const.UI.Color.NegativeEventValue + "]10000[/color] Crowns"
 				});
 				local item = null;
-				if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+				if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 				{
 					item = this.new("scripts/items/legend_armor/named/legend_named_golden_lamellar_armor");
 				}
@@ -163,7 +163,7 @@ this.legend_blacksmith_craft_armor <- this.inherit("scripts/events/event", {
 					Text = "A masterwork!",
 					function getResult( _event )
 					{
-			
+
 						return 0;
 					}
 
@@ -201,7 +201,7 @@ this.legend_blacksmith_craft_armor <- this.inherit("scripts/events/event", {
 				}
 
 				local item = null;
-				if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+				if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 				{
 					item = this.new("scripts/items/legend_armor/named/legend_named_golden_lamellar_armor");
 				}
@@ -276,7 +276,7 @@ this.legend_blacksmith_craft_armor <- this.inherit("scripts/events/event", {
 					}
 				}
 				local item
-				if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+				if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 				{
 					local plates = [
 						[0, ""],

@@ -28,7 +28,7 @@ this.legends_seer_scenario <- this.inherit("scripts/scenarios/world/starting_sce
 		bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_roster_1"));
 		bro.getSkills().add(this.new("scripts/skills/perks/perk_student"));
 		bro.m.PerkPointsSpent += 3;
-		if (this.Const.LegendMod.Configs.LegendMagicEnabled())
+		if (this.World.LegendsMod.Configs().LegendMagicEnabled())
 		{
 			bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_magic_missile"));
 			bro.m.PerkPointsSpent += 1;
@@ -42,7 +42,7 @@ this.legends_seer_scenario <- this.inherit("scripts/scenarios/world/starting_sce
 
 		bro.m.HireTime = this.Time.getVirtualTimeF();
 
-		if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+		if (this.World.LegendsMod.Configs().RelationshipsEnabled())
 {
     local avgAlignment = 0;
     foreach (bro in this.World.getPlayerRoster().getAll())

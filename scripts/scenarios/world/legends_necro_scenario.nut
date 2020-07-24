@@ -40,14 +40,14 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
 		bros[0].getSkills().add(this.new("scripts/skills/traits/cultist_fanatic_trait"));
 		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_roster_1"));
-		if (this.Const.LegendMod.Configs.LegendMagicEnabled())
+		if (this.World.LegendsMod.Configs().LegendMagicEnabled())
 		{
 			bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_brink_of_death"));
 			bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_siphon"));
 		}
 		bros[0].getTags().set("IsPlayerCharacter", true);
 		bros[0].setPlaceInFormation(2);
-		bros[0].setVeteranPerks(2);	
+		bros[0].setVeteranPerks(2);
 		bros[1].setPlaceInFormation(3);
         bros[1].getTags().add("PlayerSkeleton");
         bros[1].getTags().add("undead");
@@ -56,7 +56,7 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[1].getBackground().m.RawDescription = "You found %name% starved to death on the road, you tease him endlessly about being skin and bones. You enjoy the ribbing, but he does not find it humerous.";
         bros[1].getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));
 		bros[1].getSkills().add(this.new("scripts/skills/racial/skeleton_racial"));
-		bros[1].setVeteranPerks(3);	
+		bros[1].setVeteranPerks(3);
 		bros[2].setPlaceInFormation(4);
         bros[2].getTags().add("PlayerZombie");
         bros[2].getTags().add("undead");
@@ -65,13 +65,13 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[2].getBackground().m.RawDescription = "You can not remember much about who %name% was in life, it is probably for the best that he can\'t either. All that matters is he is yours now.";
         bros[2].getSkills().add(this.new("scripts/skills/injury_permanent/legend_rotten_flesh"));
 		bros[2].getSkills().add(this.new("scripts/skills/perks/perk_legend_zombie_bite"));
-		bros[2].setVeteranPerks(3);	
+		bros[2].setVeteranPerks(3);
 		foreach( bro in bros )
 		{
 			local val = this.World.State.addNewID(bro);
 			bro.m.CompanyID = val;
 		}
-		if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+		if (this.World.LegendsMod.Configs().RelationshipsEnabled())
 {
     local avgAlignment = 0;
     foreach (bro in this.World.getPlayerRoster().getAll())
@@ -163,7 +163,7 @@ foreach (b in this.World.getPlayerRoster().getAll())
 		}
 
 	}
-	
+
 	function onInit()
 	{
 		this.starting_scenario.onInit();
