@@ -7,6 +7,11 @@ this.legends_mod <- {
         // this.m.BrotherStats = this.new("scripts/statistics/legends_brother_statistics_manager");
 	}
 
+    // function getStatistics()
+    // {
+    //     return this.m.BrotherStats;
+    // }
+
     function onDevConsole(_command, _args)
     {
         switch(_command)
