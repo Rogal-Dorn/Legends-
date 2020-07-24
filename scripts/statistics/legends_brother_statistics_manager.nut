@@ -49,13 +49,18 @@ this.legends_brother_statistics_manager <- {
 		return val;
 	}
 
-    // function createInteractionTable()
-    // {
-    //     local table <- {
-    //         BattlesTogether = 0
-    //     };
-    //     return table;
-    // }
+    //i.e. we can call `this.World.LegendsMod.getStatistics().incrementForAll("BattlesTogether")`
+    //or to change specific ones this.World.LegendsMod.getStatistics().getInteractionBetween(id1,id2).incrementKey("BattlesTogether", 1)
+    function incrementForAll( _key, _val = 1 )
+    {
+        for(local i = 0; i < 27; ++i)
+        {
+            for(local j = i + 1; j < 27; ++j)
+            {
+                this.m.ActorInteractions[i][j].incrementKey( _key, _val )
+            }
+        }
+    }
 
     function addInteraction( _id ) 
     {  
@@ -84,23 +89,6 @@ this.legends_brother_statistics_manager <- {
             this.m.ActorInteractions[i][_id - 1] = null; 
             this.m.ActorInteractions[_id - 1][i] = null; 
         }
-
-        // alternate way of doing it the one above just kinda looks slick visually so i like it
-        // for (local i = 0; i < _id - 1; ++i) 
-        // {
-        //     if (idExists(i))
-        //     {
-        //         this.m.ActorInteractions[_id - 1][i] = null;   
-        //     }
-            
-        // }
-        // for (local i = _id; i < 27; ++i)
-        // {
-        //     if (idExists(i))
-        //     {
-        //         this.m.ActorInteractions[i][_id - 1] = null;
-        //     }
-        // }
     }
 
     function getInteractionBetween( _id1, _id2 )
