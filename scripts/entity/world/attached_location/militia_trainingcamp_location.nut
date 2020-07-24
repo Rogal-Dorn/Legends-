@@ -364,5 +364,11 @@ this.militia_trainingcamp_location <- this.inherit("scripts/entity/world/attache
 		}
 	}
 
+
+	function getNewResources()
+	{
+		return 0;
+	}
+
 });
 

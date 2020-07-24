@@ -383,7 +383,7 @@
 
 		if (s != null)
 		{
-			if(this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+			if(this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
 			{
 				ret = _settlement.resolveSituationByInstance(_situationInstance);
 			}

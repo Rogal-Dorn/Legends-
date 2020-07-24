@@ -30,7 +30,7 @@ this.defend_bandits_action <- this.inherit("scripts/factions/faction_action", {
 
 			local mult = 0.66;
 			local distanceToNextSettlement = this.getDistanceToSettlements(s.getTile());
-			if (this.Const.LegendMod.Configs.LegendLocationScalingEnabled() && distanceToNextSettlement > 14)
+			if (this.World.LegendsMod.Configs().LegendLocationScalingEnabled() && distanceToNextSettlement > 14)
 			{
 				mult *= distanceToNextSettlement / 14.0;
 			}
@@ -39,7 +39,7 @@ this.defend_bandits_action <- this.inherit("scripts/factions/faction_action", {
 
 			foreach( e in entities )
 			{
-	
+
 				if (e.isParty() && e.isAttackable() && e.isAttackableByAI() && !s.isAlliedWith(e) && e.getStrength() < s.getResources() * mult)
 				{
 					if (e.getFaction() == beastFaction && this.Math.rand(1, 100) > 10)
@@ -90,7 +90,7 @@ this.defend_bandits_action <- this.inherit("scripts/factions/faction_action", {
 
 			local mult = 0.66;
 			local distanceToNextSettlement = this.getDistanceToSettlements(this.m.Settlement.getTile());
-			if (this.Const.LegendMod.Configs.LegendLocationScalingEnabled() && distanceToNextSettlement > 14)
+			if (this.World.LegendsMod.Configs().LegendLocationScalingEnabled() && distanceToNextSettlement > 14)
 			{
 				mult *= distanceToNextSettlement / 14.0;
 			}

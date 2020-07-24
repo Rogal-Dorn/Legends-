@@ -24,7 +24,7 @@ this.legend_hexe_leader_cloak_blueprint <- this.inherit("scripts/crafting/bluepr
 							"scripts/skills/backgrounds/tailor_background"]
 			}
 		]
-		this.initSkills(skills);	
+		this.initSkills(skills);
 	}
 
 	function isQualified()
@@ -35,7 +35,7 @@ this.legend_hexe_leader_cloak_blueprint <- this.inherit("scripts/crafting/bluepr
 	function onCraft( _stash )
 	{
 
-		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			_stash.add(this.new("scripts/items/legend_armor/cloak/legend_armor_hexe_leader_cloak_upgrade"));
 		}

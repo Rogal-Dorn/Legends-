@@ -146,7 +146,7 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 				this.Const.Perks.PerkDefs.Nimble,
 				this.Const.Perks.PerkDefs.Rebound,
 				this.Const.Perks.PerkDefs.LegendWindReader,
-				this.Const.Perks.PerkDefs.LegendCascade,	
+				this.Const.Perks.PerkDefs.LegendCascade,
 				this.Const.Perks.PerkDefs.LegendCoordinatedVolleys,
 				this.Const.Perks.PerkDefs.LegendSummonBear,
 				this.Const.Perks.PerkDefs.LegendPiercingShot,
@@ -184,7 +184,7 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 		if (_gender == -1)
 		{
 			r = 0;
-			if (this.Const.LegendMod.Configs.LegendGenderEnabled())
+			if (this.World.LegendsMod.Configs().LegendGenderEnabled())
 			{
 				r = this.Math.rand(0, 1);
 			}

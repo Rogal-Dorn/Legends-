@@ -23,7 +23,7 @@ this.disbanded_troops_situation <- this.inherit("scripts/entity/world/settlement
 
 	function onAdded( _settlement )
 	{
-		if(this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+		if(this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * 0.035);
 		}
@@ -85,7 +85,7 @@ this.disbanded_troops_situation <- this.inherit("scripts/entity/world/settlement
 		_draftList.push("legend_noble_shield");
 
 
-		if(this.Const.LegendMod.Configs.LegendMagicEnabled())
+		if(this.World.LegendsMod.Configs().LegendMagicEnabled())
 		{
 		_draftList.push("legend_noble_event_background");
 		_draftList.push("legend_noble_event_background");

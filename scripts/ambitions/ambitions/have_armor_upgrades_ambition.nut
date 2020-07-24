@@ -18,7 +18,7 @@ this.have_armor_upgrades_ambition <- this.inherit("scripts/ambitions/ambition", 
 		{
 			return;
 		}
-		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			return;
 		}

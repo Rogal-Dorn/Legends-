@@ -78,7 +78,7 @@ this.barbarian_beastmaster <- this.inherit("scripts/entity/tactical/human", {
 	{
 		this.m.Items.equip(this.new("scripts/items/weapons/barbarians/thorned_whip"));
 
-		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			local armor = this.new("scripts/items/legend_armor/cloth/legend_sackcloth");
 			armor.setUpgrade(this.new("scripts/items/legend_armor/plate/legend_hide_and_bone_armor"));

@@ -245,5 +245,10 @@ this.wooden_watchtower_location <- this.inherit("scripts/entity/world/attached_l
 		this.updateLighting();
 	}
 
+
+	function getNewResources()
+	{
+		return 0;
+	}
 });
 

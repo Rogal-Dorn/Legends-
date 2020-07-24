@@ -68,10 +68,10 @@ this.potion_of_oblivion_item <- this.inherit("scripts/items/item", {
 	function onUse( _actor, _item = null )
 	{
 		this.Sound.play("sounds/combat/drink_03.wav", this.Const.Sound.Volume.Inventory);
-		
+
 		local perks =  0;
 		local skills = _actor.getSkills();
-		
+
 		foreach( skill in skills.m.Skills)
 		{
 			if (!skill.isGarbage() && skill.isType(this.Const.SkillType.Perk) && !skill.isType(this.Const.SkillType.Racial))
@@ -79,7 +79,7 @@ this.potion_of_oblivion_item <- this.inherit("scripts/items/item", {
 				perks += 1;
 			}
 		}
-		
+
 		perks = perks+_actor.m.PerkPoints;
 		this.logDebug("perks before: "+ perks);
 		local hasStudent = false;
@@ -100,7 +100,7 @@ this.potion_of_oblivion_item <- this.inherit("scripts/items/item", {
 		_actor.m.PerkPoints = perks;
 		_actor.m.PerkPointsSpent = 0;
 		_actor.getSkills().removeByType(this.Const.SkillType.Perk);
-		
+
 		if (this.World.Assets.getOrigin().getID() == "scenario.legends_rangers")
 		{
 			if (_actor.getBackground().getID() == "background.legend_commander_ranger")
@@ -164,7 +164,7 @@ this.potion_of_oblivion_item <- this.inherit("scripts/items/item", {
 			{
 				_actor.getSkills().add(this.new("scripts/skills/perks/perk_legend_roster_1"));
 
-				if (this.Const.LegendMod.Configs.LegendMagicEnabled())
+				if (this.World.LegendsMod.Configs().LegendMagicEnabled())
 				{
 					_actor.getSkills().add(this.new("scripts/skills/perks/perk_legend_brink_of_death"));
 					_actor.getSkills().add(this.new("scripts/skills/perks/perk_legend_siphon"));
@@ -204,7 +204,7 @@ this.potion_of_oblivion_item <- this.inherit("scripts/items/item", {
 				_actor.getSkills().add(this.new("scripts/skills/perks/perk_legend_daze"));
 				_actor.getSkills().add(this.new("scripts/skills/perks/perk_legend_roster_1"));
 
-				if (this.Const.LegendMod.Configs.LegendMagicEnabled())
+				if (this.World.LegendsMod.Configs().LegendMagicEnabled())
 				{
 					_actor.getSkills().add(this.new("scripts/skills/perks/perk_legend_magic_missile"));
 					perks = perks - 1;
@@ -239,14 +239,14 @@ this.potion_of_oblivion_item <- this.inherit("scripts/items/item", {
 				perks = perks - 1;
 			}
 		}
-		if (_actor.getBackground().getID() == "background.legend_witch" && this.Const.LegendMod.Configs.LegendMagicEnabled())
+		if (_actor.getBackground().getID() == "background.legend_witch" && this.World.LegendsMod.Configs().LegendMagicEnabled())
 		{
 			_actor.getSkills().add(this.new("scripts/skills/perks/perk_legend_magic_missile"));
 			perks = perks - 1;
 		}
-		
+
 		_actor.m.PerkPoints = perks;
-		
+
 		if (hasStudent)
 		{
 			_actor.m.PerkPointsSpent += 1;

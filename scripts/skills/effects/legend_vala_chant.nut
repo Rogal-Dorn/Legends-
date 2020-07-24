@@ -106,6 +106,10 @@ this.legend_vala_chant <- this.inherit("scripts/skills/skill", {
 
 	function isInRange()
 	{
+		if (this.getContainer().getActor().getTags().get("Devoured") == true)
+		{
+			return false;
+		}
 		if (this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile()) != null)
 		{
 			if (this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile()) <= this.m.Range)

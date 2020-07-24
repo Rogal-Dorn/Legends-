@@ -24,10 +24,10 @@ this.legends_zombie_high_xbow <- this.inherit("scripts/entity/tactical/legend_zo
 		local r;
 
 		this.m.Items.equip(this.new("scripts/items/weapons/heavy_crossbow"));
-		this.m.Items.equip(this.new("scripts/items/ammo/quiver_of_bolts"));	
+		this.m.Items.equip(this.new("scripts/items/ammo/quiver_of_bolts"));
 
 		local armor;
-		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			local cloths = [
 				[0, ""],

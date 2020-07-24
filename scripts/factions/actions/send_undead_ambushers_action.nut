@@ -90,7 +90,7 @@ this.send_undead_ambushers_action <- this.inherit("scripts/factions/faction_acti
 			}
 		local rand = this.Math.rand(75, 120)
 		local distanceToNextSettlement = this.getDistanceToSettlements(settlement.getTile());
-			if (this.Const.LegendMod.Configs.LegendLocationScalingEnabled() && distanceToNextSettlement > 14)
+			if (this.World.LegendsMod.Configs().LegendLocationScalingEnabled() && distanceToNextSettlement > 14)
 			{
 			 rand *= distanceToNextSettlement / 14.0;
 			}

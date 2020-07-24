@@ -136,7 +136,7 @@ this.civilwar_ambush_event <- this.inherit("scripts/events/event", {
 				}
 				else if (r == 3)
 				{
-					if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+					if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 					{
 						item = this.new("scripts/items/legend_armor/chain/legend_armor_mail_shirt");
 					}
@@ -147,7 +147,7 @@ this.civilwar_ambush_event <- this.inherit("scripts/events/event", {
 				}
 				else if (r == 4)
 				{
-					if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+					if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 					{
 						item = this.new("scripts/items/legend_armor/chain/legend_armor_mail_shirt_simple");
 					}

@@ -93,7 +93,7 @@ this.legends_zombie_low <- this.inherit("scripts/entity/tactical/legend_zombie",
 			}
 		}
 
-		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			local cloths = [
 				[0, ""],

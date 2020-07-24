@@ -84,7 +84,7 @@ this.cultist_vs_uneducated_event <- this.inherit("scripts/events/event", {
 					}
 				];
 
-				if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+				if (this.World.LegendsMod.Configs().RelationshipsEnabled())
 				{
 					this.List.push({
 						id = 11,
@@ -178,15 +178,15 @@ this.cultist_vs_uneducated_event <- this.inherit("scripts/events/event", {
 						bro.getSkills().hasSkill("injury.brain_damage") )
 					{
 						//this.logInfo("1");
-						if(bro.getBackground().getID() != "background.legend_commander_berserker" && 
+						if(bro.getBackground().getID() != "background.legend_commander_berserker" &&
 						   bro.getBackground().getID() != "background.legend_berserker" &&
-						   bro.getBackground().getID() != "background.legend_donkey") 
+						   bro.getBackground().getID() != "background.legend_donkey")
 						{
 							//this.logInfo("2");
 							uneducated_candidates.push(bro);
 						}
 					}
-		
+
 		}
 
 		if (cultist_candidates.len() == 0 || uneducated_candidates.len() == 0)

@@ -102,7 +102,7 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
 
 	function isHidden()
 	{
-		if (this.Const.LegendMod.Configs.LegendCampUnlockEnabled())
+		if (this.World.LegendsMod.Configs().LegendCampUnlockEnabled())
 		{
 			return false;
 		}

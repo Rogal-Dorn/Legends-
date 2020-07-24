@@ -133,7 +133,7 @@ this.noble_sergeant <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Items.equip(this.new("scripts/items/weapons/legend_swordstaff"));
 		}
 
-		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			local cloths = [
 				[

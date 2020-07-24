@@ -42,7 +42,7 @@ this.cultist_origin_armor_event <- this.inherit("scripts/events/event", {
 					}
 				}
 				local item;
-				if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+				if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 				{
 					item = this.new("scripts/items/legend_armor/armor/legend_armor_robes_cultist");
 				}

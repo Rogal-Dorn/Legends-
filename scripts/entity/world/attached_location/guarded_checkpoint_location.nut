@@ -241,5 +241,10 @@ this.guarded_checkpoint_location <- this.inherit("scripts/entity/world/attached_
 		}
 	}
 
+	function getNewResources()
+	{
+		return 0;
+	}
+
 });
 

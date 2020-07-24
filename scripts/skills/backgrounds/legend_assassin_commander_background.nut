@@ -181,7 +181,7 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 		if (_gender == -1)
 		{
 			r = this.Math.rand(0, 9);
-			if (this.Const.LegendMod.Configs.LegendGenderEnabled())
+			if (this.World.LegendsMod.Configs().LegendGenderEnabled())
 			{
 				r = this.Math.rand(0, 1);
 			}

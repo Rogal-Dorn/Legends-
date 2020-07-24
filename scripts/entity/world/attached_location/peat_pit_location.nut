@@ -27,7 +27,7 @@ this.peat_pit_location <- this.inherit("scripts/entity/world/attached_location",
 		_list.push("female_daytaler_background");
 		_list.push("peddler_background");
 
-		if(this.Const.LegendMod.Configs.LegendMagicEnabled())
+		if(this.World.LegendsMod.Configs().LegendMagicEnabled())
 		{
 			local r;
 			if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_seer")

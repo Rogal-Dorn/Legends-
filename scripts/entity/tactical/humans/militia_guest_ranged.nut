@@ -83,7 +83,7 @@ this.militia_guest_ranged <- this.inherit("scripts/entity/tactical/player", {
 
 		r = this.Math.rand(1, 4);
 
-		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			local cloths = [
 				[0, ""],

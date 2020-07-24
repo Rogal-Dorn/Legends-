@@ -63,7 +63,7 @@ this.standard_bearer <- this.inherit("scripts/entity/tactical/human", {
 		weapon.setVariant(banner);
 		this.m.Items.equip(weapon);
 
-		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			local cloths = [
 				[

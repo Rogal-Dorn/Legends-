@@ -1382,7 +1382,7 @@ this.skill <- {
 		toHit = toHit + skill;
 		toHit = toHit - defense;
 
-		if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+		if (this.World.LegendsMod.Configs().RelationshipsEnabled())
 		{
 		//harder to hit = lower toHit, easier to hit = higher toHit
 			if ( _targetEntity.getFaction() == this.Const.Faction.Player && !_targetEntity.isGuest() && _targetEntity.getCompanyID() != -1)

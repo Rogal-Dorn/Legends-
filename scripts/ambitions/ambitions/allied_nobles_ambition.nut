@@ -115,7 +115,7 @@ this.allied_nobles_ambition <- this.inherit("scripts/ambitions/ambition", {
 			text = "You gain " + this.Const.Strings.getArticle(item.getName()) + item.getName()
 		});
 
-		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			item = this.new("scripts/items/legend_armor/armor/legend_armor_heraldic");
 			item.setupArmor(banner);

@@ -114,7 +114,7 @@ this.hedge_knight <- this.inherit("scripts/entity/tactical/human", {
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Body))
 		{
 
-			if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+			if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 			{
 				local cloths = [
 					[0, ""],

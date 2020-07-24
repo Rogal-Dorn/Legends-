@@ -55,7 +55,7 @@ this.butcher_gives_pointers_event <- this.inherit("scripts/events/event", {
 
 				//Exampe code on how to do relation changes between characters
 				//We use _event.m.Butcher and _event.m.Flagellant because these are the two brothers defined
-				
+
 
 				//the necessary values for changeActiveRelationship() are
 				//	 Actor, Modifier
@@ -72,7 +72,7 @@ this.butcher_gives_pointers_event <- this.inherit("scripts/events/event", {
 				local modifier = this.Math.rand(1, 5);
 				_event.m.Butcher.changeActiveRelationship( _event.m.Flagellant, modifier );
 
-				if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+				if (this.World.LegendsMod.Configs().RelationshipsEnabled())
 				{
 					this.List.push({
 						id = 10,
@@ -87,13 +87,13 @@ this.butcher_gives_pointers_event <- this.inherit("scripts/events/event", {
 
 				//Remember, [-50, 50] is the intended range of relations "steps" with each step being 10 numbers
 				//So [-9, 9] is something like "they know each other", and [10, 19] is "they're starting to like each other"
-				
+
 				//Below we show how to add new key or to change a relation, but for this event it won't be used
 				/*
 
 				_event.m.Butcher.changeactiveRelationship( _event.m.Flagellant, true, "ourNewModifier" )
 				_event.m.Flagellant.changeActiveRelationship( _event.m.Butcher, 13, "flagNewModifier" )
-				
+
 				*/
 
 				//If we happen to want to set a number, not just modify it we do the following

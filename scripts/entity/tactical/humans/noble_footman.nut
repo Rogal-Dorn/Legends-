@@ -109,7 +109,7 @@ this.noble_footman <- this.inherit("scripts/entity/tactical/human", {
 		shield.setFaction(banner);
 		this.m.Items.equip(shield);
 
-		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			local cloths = [
 				[0, ""],

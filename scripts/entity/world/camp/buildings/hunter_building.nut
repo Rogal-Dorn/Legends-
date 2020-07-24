@@ -13,7 +13,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
         this.m.ID = this.Const.World.CampBuildings.Hunter;
         this.m.ModName = "Hunting";
         this.m.ModMod = 10.0;
-        this.m.BaseCraft = 1.5;		
+        this.m.BaseCraft = 1.5;
         this.m.Slot = "hunt";
         this.m.Name = "Hunting";
         this.m.Description = "Send out a hunting party for food provisions"
@@ -50,7 +50,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		if (this.getUpgraded())
 		{
 			return this.m.Name + " *Upgraded*"
-		} 
+		}
 		return this.m.Name +  " *Not Upgraded*"
 	}
 
@@ -69,7 +69,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 	function getModifierToolip()
     {
 		local mod = this.getModifiers();
-		local ret = [			
+		local ret = [
 			{
 				id = 5,
 				type = "text",
@@ -93,14 +93,14 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 
 	function isHidden()
 	{
-		
-		if (this.Const.LegendMod.Configs.LegendCampUnlockEnabled())
+
+		if (this.World.LegendsMod.Configs().LegendCampUnlockEnabled())
 		{
 			return false;
 		}
-		
+
 		return !this.World.Tags.get("HasLegendCampHunting")
-	}	
+	}
 
 	function getUpgraded()
 	{
@@ -116,7 +116,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		}
 
 		local sub = "empty";
-		
+
 		if (this.getAssignedBros() > 0) {
 			sub =  "full";
 		}
@@ -144,7 +144,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
                 continue
             }
 
-		
+
 			if (bro.getSkills().hasSkill("perk.legend_meal_preperation"))
 			{
                chefLevel += bro.getLevel()
@@ -193,7 +193,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		}
         return res;
     }
-	
+
 	function getAssignedBros()
     {
         local mod = this.getModifiers();
@@ -221,7 +221,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		{
 			return this.getUpdateText();
 		}
-		
+
 		this.m.Points += this.m.Craft;
 		if (this.Stash.getNumberOfEmptySlots() == 0)
 		{
@@ -241,7 +241,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 				"scripts/items/misc/werewolf_pelt_item",
 				"scripts/items/accessory/spider_poison_item",
 				"scripts/items/supplies/strange_meat_item"
-				
+
 			];
 		}
 		else if (r == 3)
@@ -249,7 +249,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 			item = this.new("scripts/items/supplies/roots_and_berries_item");
 			secondary = [
 				"scripts/items/supplies/cured_vension_item"
-	
+
 			];
 		}
 		else if (r == 4)
@@ -257,14 +257,14 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 			item = this.new("scripts/items/supplies/legend_fresh_fruit_item");
 				secondary = [
 				"scripts/items/supplies/dried_fruit_item"
-	
+
 			];
 		}
 
 		local cheflevels = this.getChefLevel();
 		local brewerlevels = this.getBrewerLevel();
 		if (cheflevels >= 1 && cheflevels <= 15)
-		{	
+		{
 			secondary.extend([
 				"scripts/items/supplies/dried_fruit_item",
 				"scripts/items/supplies/cured_vension_item",
@@ -277,7 +277,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		}
 
 		if (cheflevels > 15)
-		{	
+		{
 			secondary.extend([
 				"scripts/items/supplies/smoked_ham_item",
 				"scripts/items/supplies/bread_item",
@@ -286,7 +286,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		}
 
 		if ( brewerlevels >= 1 && brewerlevels <= 15 )
-		{	
+		{
 			secondary.extend([
 				"scripts/items/supplies/beer_item",
 				"scripts/items/supplies/wine_item"
@@ -295,7 +295,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 
 
 		if ( brewerlevels > 15)
-		{	
+		{
 			secondary.extend([
 				"scripts/items/supplies/beer_item",
 				"scripts/items/supplies/wine_item",
@@ -313,7 +313,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 			this.m.Points -= item.getValue();
 		}
 
-	
+
 		item.randomizeAmount();
 		this.m.FoodAmount += item.getAmount();
 		item.randomizeBestBefore();
@@ -330,7 +330,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		{
 			item = this.new(secondary[this.Math.rand(0, secondary.len()-1)]);
 			this.m.Items.push(item);
-			this.Stash.add(item);				
+			this.Stash.add(item);
 		}
 
 		//Roll twice
@@ -338,7 +338,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		{
 			item = this.new(secondary[this.Math.rand(0, secondary.len()-1)]);
 			this.m.Items.push(item);
-			this.Stash.add(item);				
+			this.Stash.add(item);
 		}
 
 		return this.getUpdateText();
@@ -349,7 +349,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
         _campScreen.showHunterDialog();
         this.camp_building.onClicked(_campScreen);
 	}
-        
+
 	function onSerialize( _out )
 	{
 		this.camp_building.onSerialize(_out);

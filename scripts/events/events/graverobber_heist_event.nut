@@ -328,7 +328,7 @@ this.graverobber_heist_event <- this.inherit("scripts/events/event", {
 				}
 				else if (r == 3)
 				{
-				if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+				if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 				{
 					local plates = [
 						[0, ""],

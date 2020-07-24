@@ -69,7 +69,7 @@ this.legend_vampire_lord <- this.inherit("scripts/entity/tactical/actor", {
 			loot.drop(_tile);
 		}
 
-		if (this.Const.LegendMod.Configs.LegendMagicEnabled()) {
+		if (this.World.LegendsMod.Configs().LegendMagicEnabled()) {
 			if (_killer == null || _killer.getFaction() == this.Const.Faction.Player || _killer.getFaction() == this.Const.Faction.PlayerAnimals)
 			{
 				local n = 1 + (!this.Tactical.State.isScenarioMode() && this.Math.rand(1, 100) <= this.World.Assets.getExtraLootChance() ? 1 : 0);
@@ -150,7 +150,7 @@ this.legend_vampire_lord <- this.inherit("scripts/entity/tactical/actor", {
 			this.getSprite("body_injury").setBrush("bust_skeleton_body_05_injured");
 			this.getSprite("head").setBrush("bust_vampire_lady_head_01");
 			this.getSprite("injury").setBrush("bust_skeleton_head_05_injured");
-			this.getSprite("hair").setBrush("hair_black_25");		
+			this.getSprite("hair").setBrush("hair_black_25");
 		}
 		else
 		{

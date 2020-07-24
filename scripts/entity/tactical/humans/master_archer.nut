@@ -97,7 +97,7 @@ this.master_archer <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Body))
 		{
-			if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+			if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 			{
 				local cloths = [
 					[0, ""],
@@ -245,7 +245,7 @@ this.master_archer <- this.inherit("scripts/entity/tactical/human", {
 		}
 		else
 		{
-			if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+			if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 			{
 				this.m.Items.equip(this.new("scripts/items/" + armor[this.Math.rand(0, legend_armor.len() - 1)]));
 			}

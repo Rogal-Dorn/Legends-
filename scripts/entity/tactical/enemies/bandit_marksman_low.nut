@@ -39,7 +39,7 @@ this.bandit_marksman_low <- this.inherit("scripts/entity/tactical/enemies/bandit
 
 		this.m.Items.addToBag(this.new("scripts/items/weapons/knife"));
 
-		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			local cloths = [
 				[0, ""],

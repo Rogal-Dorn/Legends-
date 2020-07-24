@@ -61,7 +61,7 @@ this.councilman <- this.inherit("scripts/entity/tactical/human", {
 		local withDetail = true;
 		local withHelmet = true;
 
-		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			if (r <= 7)
 			{

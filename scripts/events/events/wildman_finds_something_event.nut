@@ -41,7 +41,7 @@ this.wildman_finds_something_event <- this.inherit("scripts/events/event", {
 					}
 					else if (r == 2)
 					{
-						if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+						if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 						{
 							local cloths = [
 								[0, ""],

@@ -52,7 +52,7 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 			local val = this.World.State.addNewID(bro);
 			bro.m.CompanyID = val;
 		}
-		if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+		if (this.World.LegendsMod.Configs().RelationshipsEnabled())
 {
     local avgAlignment = 0;
     foreach (bro in this.World.getPlayerRoster().getAll())

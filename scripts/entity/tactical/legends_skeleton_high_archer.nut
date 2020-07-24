@@ -7,7 +7,7 @@ this.legends_skeleton_high_archer <- this.inherit("scripts/entity/tactical/legen
 		this.legend_skeleton.onInit();;
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_crippling_strikes"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_steel_brow"));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_fearsome"));	
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_fearsome"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_mastery_bow"));
 		this.m.Skills.add(this.new("scripts/skills/injury_permanent/legend_fleshless"));
 		 if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
@@ -28,9 +28,9 @@ this.legends_skeleton_high_archer <- this.inherit("scripts/entity/tactical/legen
 		// 	this.m.Items.equip(this.new("scripts/items/shields/ancient/auxiliary_shield"));
 		// }
 
-if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
-			
+
 			local cloths = [
 				[0, ""],
 				[0, "cloth/legend_gambeson"],
@@ -117,7 +117,7 @@ if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
 				}
 				this.m.Items.equip(armor);
 			}
-			
+
 		}
 		else
 		{

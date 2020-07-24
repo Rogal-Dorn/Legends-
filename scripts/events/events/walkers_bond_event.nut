@@ -34,8 +34,8 @@ this.walkers_bond_event <- this.inherit("scripts/events/event", {
 				_event.m.Walker1.changeActiveRelationship( _event.m.Walker2, modifier1 );
 				local modifier2 = this.Math.rand(5, 10);
 				_event.m.Walker2.changeActiveRelationship( _event.m.Walker1, modifier2 );
-				
-				if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+
+				if (this.World.LegendsMod.Configs().RelationshipsEnabled())
 				{
 					this.List.push({
 						id = 10,

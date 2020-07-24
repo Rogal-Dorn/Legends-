@@ -35,7 +35,7 @@ this.legend_bandit_warlord <- this.inherit("scripts/entity/tactical/human", {
 	{
 		this.human.onInit();
 		local b = this.m.BaseProperties;
-		b.setValues(this.Const.Tactical.Actor.BanditLeader);
+		b.setValues(this.Const.Tactical.Actor.BanditWarlord);
 		b.IsSpecializedInSwords = true;
 		b.IsSpecializedInAxes = true;
 		b.IsSpecializedInMaces = true;
@@ -135,8 +135,8 @@ this.legend_bandit_warlord <- this.inherit("scripts/entity/tactical/human", {
 			"shields/named/named_bandit_kite_shield",
 			"shields/named/named_bandit_heater_shield"
 		]);
-
-		if (this.Math.rand(1, 100) > 50)
+		local r = this.Math.rand(1,100);
+		if (r > 50)
 		{
 			this.m.Items.equip(this.new("scripts/items/" + this.Const.Items.NamedMeleeWeapons[this.Math.rand(0, this.Const.Items.NamedMeleeWeapons.len() - 1)]));
 		}
@@ -184,7 +184,7 @@ this.legend_bandit_warlord <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.Math.rand(1, 100) > 50)
 		{
-			if (!this.Const.LegendMod.Configs.LegendArmorsEnabled())
+			if (!this.World.LegendsMod.Configs().LegendArmorsEnabled())
 			{
 				this.m.Items.equip(this.new("scripts/items/" + this.Const.Items.NamedArmors[this.Math.rand(0, this.Const.Items.NamedArmors.len() - 1)]));
 			}
@@ -196,7 +196,7 @@ this.legend_bandit_warlord <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Body) == null)
 		{
-			if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+			if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 			{
 				local cloths = [
 					[

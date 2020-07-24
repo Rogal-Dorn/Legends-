@@ -282,7 +282,7 @@ this.data_helper <- {
 			result.ground.push(null);
 		}
 
-		if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+		if (this.World.LegendsMod.Configs().RelationshipsEnabled())
 		{
 			if (("State" in this.Tactical) && this.Tactical.State != null)
 			{

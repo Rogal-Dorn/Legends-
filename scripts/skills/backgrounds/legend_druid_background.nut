@@ -38,7 +38,16 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 			"the Wildman",
 			"the Feral",
 			"the Wild",
-			"the Barbarian"
+			"the Barbarian",
+			"The Green thumb",
+			"Oakheart",
+			"Treebeard",
+			"The flower",
+			"The Pollenator",
+			"Nature's Wrath",
+			"The Bear",
+			"The Wolf",
+			"The Sapling"
 		];
 		this.m.Faces = this.Const.Faces.AllMale;
 		this.m.Hairs = this.Const.Hair.UntidyMale;
@@ -110,7 +119,7 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 		if (_gender == -1)
 		{
 			r = 0;
-			if (this.Const.LegendMod.Configs.LegendGenderEnabled())
+			if (this.World.LegendsMod.Configs().LegendGenderEnabled())
 			{
 				r = this.Math.rand(0, 1);
 			}

@@ -63,7 +63,7 @@ this.legend_mountain_armor_blueprint <- this.inherit("scripts/crafting/blueprint
 
 	function onCraft( _stash )
 	{
-		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			_stash.add(this.new("scripts/items/legend_armor/legendary/legend_armor_mountain"));
 		}

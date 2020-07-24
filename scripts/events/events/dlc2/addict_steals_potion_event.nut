@@ -128,13 +128,13 @@ this.addict_steals_potion_event <- this.inherit("scripts/events/event", {
 					modifier1 = this.Math.rand(5, 10);
 					bro.changeActiveRelationship( _event.m.Addict, modifier1 );
 					_event.m.Addict.changeActiveRelationship( bro, modifier1 );
-					
-					if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+
+					if (this.World.LegendsMod.Configs().RelationshipsEnabled())
 					{
 						this.List.push({
 							id = 10,
 							icon = "ui/icons/relation.png",
-							text = bro + " gains sympathy for " + _event.m.Addict.getName() 
+							text = bro + " gains sympathy for " + _event.m.Addict.getName()
 						});
 					}
 

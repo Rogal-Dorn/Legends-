@@ -272,7 +272,7 @@ this.civilwar_refugees_event <- this.inherit("scripts/events/event", {
 			}
 			else if (r == 2)
 			{
-				if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+				if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 				{
 					item = this.new("scripts/items/legend_armor/cloth/legend_sackcloth_tattered");
 				}
@@ -304,7 +304,7 @@ this.civilwar_refugees_event <- this.inherit("scripts/events/event", {
 			}
 			else if (r == 8)
 			{
-				if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+				if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 				{
 					item = this.new("scripts/items/legend_armor/plate/legend_armor_leather_jacket");
 				}
@@ -315,7 +315,7 @@ this.civilwar_refugees_event <- this.inherit("scripts/events/event", {
 			}
 			else if (r == 9)
 			{
-				if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+				if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 				{
 					item = this.new("scripts/items/legend_armor/cloth/legend_tunic");
 				}
