@@ -3697,7 +3697,6 @@ Adding perks looks like this now '''_tree[0].push(this.Const.Perks.PerkDefs.Lege
 
 14.0.0.16 Honey, I shrank the town
 
-
 **World Economy**
 With world economy enabled, orc/goblin crisis will now raze cities to the ground before destroying them (any settlement size > 1 is razed to the ground but not destroyed - If settlement is level 1, it is completely destroyed)
 Every 7 days Towns will generate new resources (Re: Wealth rating will increase) from each of its attached locations and the number of houses it has attached. This is to help put positive wealth pressure into the system so towns do not all eventually just peg down to 0 wealth rating.
@@ -3716,4 +3715,7 @@ Adds correct smashing shields perk to peasant woodsmen.
 Fixes name for Gladiator Helmet.
 Necromancers can now posses undead more than once.
 Fixes Stables not repopulating
-
+Fixes one possible crash on vala chanting and being devoured
+Fixed Vanilla splt man double damage perk.
+Bandit warlords now have warlord stats, as opposed to bandidt leader stats
+Temporarily removes alchemy tree from being rolled (was highly unfinished/untested before)
