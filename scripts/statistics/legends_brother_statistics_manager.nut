@@ -103,7 +103,7 @@ this.legends_brother_statistics_manager <- {
         // }
     }
 
-    function getInteractionsBetween( _id1, _id2 )
+    function getInteractionBetween( _id1, _id2 )
     {
         return ( _id1 < _id2 ? this.m.ActorInteractions[_id1][_id2] : this.m.ActorInteractions[_id2][_id1] )
     }
