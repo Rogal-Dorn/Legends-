@@ -59,15 +59,12 @@ this.legends_brother_statistics_manager <- {
 
     function addInteraction( _id ) 
     {  
-        local DefaultInteraction <- {
-            BattlesTogether = 0
-        };
         //goes across and adds new tables -> i.e. addInteraction(3) adds [0][2], [1][2] -> [2][3], [2][4], ... [2][n], assuming the id exists
         for (local i = 0; i < _id - 1; ++i) 
         {
             if (idExists(i))
             {
-                this.m.ActorInteractions[_id - 1][i] = clone DefaultInteraction;   
+                this.m.ActorInteractions[_id - 1][i] = this.new("scripts/statistics/legends_actor_interaction");   
             }
             
         }
@@ -75,7 +72,7 @@ this.legends_brother_statistics_manager <- {
         {
             if (idExists(i))
             {
-                this.m.ActorInteractions[i][_id - 1] = clone DefaultInteraction;
+                this.m.ActorInteractions[i][_id - 1] = this.new("scripts/statistics/legends_actor_interaction");
             }
         }
     }
@@ -88,7 +85,7 @@ this.legends_brother_statistics_manager <- {
             this.m.ActorInteractions[_id - 1][i] = null; 
         }
 
-        // alternate way of doing it the one above just kinda looks slick
+        // alternate way of doing it the one above just kinda looks slick visually so i like it
         // for (local i = 0; i < _id - 1; ++i) 
         // {
         //     if (idExists(i))
@@ -108,16 +105,41 @@ this.legends_brother_statistics_manager <- {
 
     function getInteractionsBetween( _id1, _id2 )
     {
-        return ( _id1 < _id2 ? this.m.RelationshipArray[_id1][_id2] : this.m.RelationshipArray[_id2][_id1] )
+        return ( _id1 < _id2 ? this.m.ActorInteractions[_id1][_id2] : this.m.ActorInteractions[_id2][_id1] )
     }
 
     function onDeserialize( _in )
     {
-        //lazy todo
+        //Sorta ugly but idk a better way of doing this stuff
+        local i = _in.readU8();
+        local j = _in.readU8();
+        while( !(i==j==0) )
+        {
+            this.m.ActorInteractions[i][j] = this.new("scripts/statistics/legends_actor_interactions");
+            this.m.ActorInteractions.onDeserialize(_in);
+            i = _in.readU8();
+            j = _in.readU8();
+        }
     }
     
     function onSerialize( _out )
     {
-        //lazy todo
+
+        //could add a flag to chop it it down cuz there'd be a ton of nulls but who cares lol it's just if statements and i'm lazy
+        for (local i = 0; i < 27; ++i)
+        {
+            for (local j = i + 1; i < 27; ++j)
+            {
+                if (this.m.ActorInteractions[i][j] != null)
+                {
+                    _out.writeU8(i);
+                    _out.writeU8(j);
+                    this.m.ActorInteractions[i][j].onSerialize(_out);
+                }
+            }
+        }
+        _out.writeU8(0);
+        _out.writeU8(0);
+       
     }
 };
