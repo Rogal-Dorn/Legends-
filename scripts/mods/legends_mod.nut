@@ -1,7 +1,10 @@
 this.legends_mod <- {
-	m = {},
+	m = {
+        // BrotherStats = null 
+    },
 	function create()
 	{
+        // this.m.BrotherStats = this.new("scripts/statistics/legends_brother_statistics_manager");
 	}
 
     function onDevConsole(_command, _args)
