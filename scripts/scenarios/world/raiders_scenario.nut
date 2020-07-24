@@ -48,7 +48,30 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		local warhound = this.new("scripts/items/accessory/warhound_item");
 		warhound.m.Name = "Fenrir the Warhound";
 		items.equip(warhound);
-		items.equip(this.new("scripts/items/armor/barbarians/reinforced_animal_hide_armor"));
+		
+		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		{
+			/*
+			65 -7
+			
+			10 -1
+			
+			55 -9
+			=
+			65 -10
+			Bit heavier, might need a fat reduction
+			*/
+			local armor = this.new("scripts/items/legend_armor/cloth/legend_sackcloth");
+			//local chains = this.new("scripts/items/legend_armor/chain/legend_armor_hauberk");
+			local plate = this.new("scripts/items/legend_armor/plate/legend_reinforced_animal_hide_armor");
+			//armor.setUpgrade(chain);
+			armor.setUpgrade(plate);
+			
+			items.equip(armor);
+		} else {
+			items.equip(this.new("scripts/items/armor/barbarians/reinforced_animal_hide_armor"));
+		}
+		
 		items.equip(this.new("scripts/items/helmets/barbarians/bear_headpiece"));
 		bros[1].setStartValuesEx([
 			"barbarian_background"
@@ -69,7 +92,29 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		local items = bros[1].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
-		items.equip(this.new("scripts/items/armor/barbarians/scrap_metal_armor"));
+		
+		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		{
+			/*
+			65 -7
+			
+			10 -1
+			
+			65 -10
+			=
+			75 -11
+			Bit heavier, might need a fat reduction
+			*/
+			local armor = this.new("scripts/items/legend_armor/cloth/legend_sackcloth");
+			//local chains = this.new("scripts/items/legend_armor/chain/legend_armor_hauberk");
+			local plate = this.new("scripts/items/legend_armor/plate/legend_scrap_metal_armor");
+			//armor.setUpgrade(chain);
+			armor.setUpgrade(plate);
+			
+			items.equip(armor);
+		} else {
+			items.equip(this.new("scripts/items/armor/barbarians/scrap_metal_armor"));
+		}
 		items.equip(this.new("scripts/items/helmets/barbarians/leather_headband"));
 		bros[2].setStartValuesEx([
 			"barbarian_background"
@@ -90,7 +135,29 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		local items = bros[2].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
-		items.equip(this.new("scripts/items/armor/barbarians/hide_and_bone_armor"));
+		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		{
+			/*
+			95 -10
+			
+			15 -1
+			
+			80 -11
+			=
+			95 -12
+			Bit heavier, might need a fat reduction
+			*/
+			local armor = this.new("scripts/items/legend_armor/cloth/legend_sackcloth_patched");
+			//local chains = this.new("scripts/items/legend_armor/chain/legend_armor_hauberk");
+			local plate = this.new("scripts/items/legend_armor/plate/legend_hide_and_bone_armor");
+			//armor.setUpgrade(chain);
+			armor.setUpgrade(plate);
+			
+			items.equip(armor);
+		} else {
+			items.equip(this.new("scripts/items/armor/barbarians/hide_and_bone_armor"));
+		}
+		
 		items.equip(this.new("scripts/items/helmets/barbarians/leather_helmet"));
 		bros[3].setStartValuesEx([
 			"monk_background"

@@ -53,7 +53,31 @@ this.lone_wolf_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Offhand));
-		items.equip(this.new("scripts/items/armor/sellsword_armor"));
+		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		{
+			/*
+			260 -32
+			
+			65 -8
+			95 -11
+			95 -13
+			= 
+			255 -32
+			5 less durability, but you can use the armor "better"
+			*/
+			local armor = this.new("scripts/items/legend_armor/cloth/legend_gambeson");
+			local chains = this.new("scripts/items/legend_armor/chain/legend_armor_hauberk");
+			local plate = this.new("scripts/items/legend_armor/plate/legend_armor_leather_riveted");
+			armor.setUpgrade(chain);
+			armor.setUpgrade(plate);
+			
+			items.equip(armor);
+		} else {
+			items.equip(this.new("scripts/items/armor/sellsword_armor"));
+		}
+		
+		
+		
 		items.equip(this.new("scripts/items/helmets/bascinet_with_mail"));
 		items.equip(this.new("scripts/items/weapons/longsword"));
 		local val = this.World.State.addNewID(bro);
