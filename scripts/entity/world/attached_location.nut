@@ -19,7 +19,7 @@ this.attached_location <- this.inherit("scripts/entity/world/location", {
 		}
 
 		local s = this.m.Sprite;
-		if (this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+		if (this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
 		{
 			s = "legend_" + this.m.Sprite;
 		}
@@ -39,7 +39,7 @@ this.attached_location <- this.inherit("scripts/entity/world/location", {
 		}
 
 		local s = this.m.SpriteDestroyed;
-		if (this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+		if (this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
 		{
 			s = "legend_" + this.m.SpriteDestroyed;
 		}

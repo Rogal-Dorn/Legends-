@@ -916,7 +916,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 				{
 					mins = this.m.PerkTreeDynamicMinsBeast;
 				}
-				else if (this.Const.LegendMod.Configs.LegendMagicEnabled())
+				else if (this.World.LegendsMod.Configs().LegendMagicEnabled())
 				{
 					mins = this.m.PerkTreeDynamicMinsMagic;
 				}
@@ -951,7 +951,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 
 	function addEquipment()
 	{
-		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			this.onAddLegendEquipment()
 		}
@@ -1169,9 +1169,9 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 
 	function calculateAdditionalReputationLevels()
 	{
-		if(this.Const.LegendMod.Configs.LegendRecruitScalingEnabled())
+		if(this.World.LegendsMod.Configs().LegendRecruitScalingEnabled())
 		{
-			if (!this.Const.LegendMod.Configs.RelationshipsEnabled())
+			if (!this.World.LegendsMod.Configs().RelationshipsEnabled())
 			{
 				return this.calculateAdditionalRecruitmentLevels();
 			}

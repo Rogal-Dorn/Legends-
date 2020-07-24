@@ -88,7 +88,7 @@ this.send_peasants_action <- this.inherit("scripts/factions/faction_action", {
 		party.setDescription("Farmers, craftsmen, pilgrims or other peasants on their way between settlements.");
 		party.getLoot().Money = this.Math.rand(0, 50);
 
-		if(this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+		if(this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
 		{
 			local resources = this.Math.max(1, this.Math.round(0.01 * this.m.Start.getResources()));
 			this.m.Start.setResources(this.m.Start.getResources() - resources);

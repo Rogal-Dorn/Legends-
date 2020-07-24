@@ -70,7 +70,7 @@ this.raiders_origin_redemption_event <- this.inherit("scripts/events/event", {
 					text = "You lose [color=" + this.Const.UI.Color.NegativeEventValue + "]-2000[/color] Crowns"
 				});
 				_event.m.NobleHouse.addPlayerRelation(20.0, "Was bribed to have dealings with you");
-				if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+				if (this.World.LegendsMod.Configs().RelationshipsEnabled())
 				{
 					this.List.push({
 						id = 10,

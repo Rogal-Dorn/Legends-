@@ -399,7 +399,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		}
 
 
-		if (this.Const.LegendMod.DebugMode || (this.m.IsVisited && this.Const.LegendMod.Configs.LegendWorldEconomyEnabled()))
+		if (this.Const.LegendMod.DebugMode || (this.m.IsVisited && this.World.LegendsMod.Configs().LegendWorldEconomyEnabled()))
 		{
 			ret.push({
 				id = 6,
@@ -442,7 +442,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 	function getSpriteName()
 	{
 		local s = this.m.Sprite;
-		if (this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+		if (this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
 		{
 			s = "legend_" + this.m.Sprite;
 		}
@@ -1744,7 +1744,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		{
 			if (building != null)
 			{
-				if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+				if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 				{
 					building.onUpdateLegendShopList();
 				}
@@ -2076,7 +2076,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		{
 			if (loc.isActive())
 			{
-				if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+				if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 				{
 					loc.onUpdateLegendShopList(_id, _list);
 				}
@@ -2273,7 +2273,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 	function onLeave()
 	{
-		if (this.Const.LegendMod.Configs.LegendCampUnlockEnabled())
+		if (this.World.LegendsMod.Configs().LegendCampUnlockEnabled())
 		{
 			return;
 		}

@@ -497,7 +497,7 @@ this.bandit_leader <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Body) == null)
 		{
-			if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+			if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 			{
 				this.assignArmorLayer(false);
 			}
@@ -581,7 +581,7 @@ this.bandit_leader <- this.inherit("scripts/entity/tactical/human", {
 		}
 		else if (r == 3)
 		{
-			if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+			if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 			{
 				this.assignArmorLayer(true);
 			}

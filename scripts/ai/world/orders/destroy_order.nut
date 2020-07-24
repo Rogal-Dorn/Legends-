@@ -100,7 +100,7 @@ this.destroy_order <- this.inherit("scripts/ai/world/world_behavior", {
 				if (e.isAlive() && e.getID() == this.m.TargetID)
 				{
 
-					if(this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+					if(this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
 					{
 						//Level
 						if (e.getSize() == 1)

@@ -28,24 +28,6 @@ this.female_farmhand_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.IsFemaleBackground = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.NeutralMax;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
-		if (this.Const.LegendMod.Configs.LegendGenderEnabled())
-		{
-			local r = this.Math.rand(0, 1);
-			if (r == 0)
-			{
-				this.m.Name = "Milkman";
-				this.m.Faces = this.Const.Faces.AllMale;
-				this.m.Hairs = this.Const.Hair.CommonMale;
-				this.m.HairColors = this.Const.HairColors.All;
-				this.m.Beards = this.Const.Beards.All;
-				this.m.Body = "bust_naked_body_01";
-				this.m.IsFemaleBackground = false;
-				this.m.BackgroundDescription = "Milkmen are used to physical labor.";
-				this.m.GoodEnding = "The former milkman, %name%, retired from the %companyname%. The money he made was put toward purchasing a bit of land. He spends the rest of his days happily farming and starting a family with way too many children.";
-				this.m.BadEnding = "The former milkman, %name%, soon left the %companyname%. He purchased a bit of land out {south | north | east | west} and was doing quite well for himself - until noble soldiers hanged him from a tree for refusing to hand over all his crops.";
-			}
-		}
-
 		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[2];
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
 		this.m.Modifiers.Terrain = [
@@ -95,16 +77,28 @@ this.female_farmhand_background <- this.inherit("scripts/skills/backgrounds/char
 		if (_gender == -1)
 		{
 			r = 1;
-			if (this.Const.LegendMod.Configs.LegendGenderEnabled())
+			if (this.World.LegendsMod.Configs().LegendGenderEnabled())
 			{
 				r = this.Math.rand(0, 1);
 			}
 		}
 
-		if (r == 0)
+		if (r == 1)
 		{
 			return
 		}
+
+		this.m.Name = "Milkman";
+		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Hairs = this.Const.Hair.CommonMale;
+		this.m.HairColors = this.Const.HairColors.All;
+		this.m.Beards = this.Const.Beards.All;
+		this.m.Body = "bust_naked_body_01";
+		this.m.IsFemaleBackground = false;
+		this.m.BackgroundDescription = "Milkmen are used to physical labor.";
+		this.m.GoodEnding = "The former milkman, %name%, retired from the %companyname%. The money he made was put toward purchasing a bit of land. He spends the rest of his days happily farming and starting a family with way too many children.";
+		this.m.BadEnding = "The former milkman, %name%, soon left the %companyname%. He purchased a bit of land out {south | north | east | west} and was doing quite well for himself - until noble soldiers hanged him from a tree for refusing to hand over all his crops.";
+
 	}
 
 	function getTooltip()

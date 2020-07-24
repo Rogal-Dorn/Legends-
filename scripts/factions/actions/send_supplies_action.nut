@@ -88,7 +88,7 @@ this.send_supplies_action <- this.inherit("scripts/factions/faction_action", {
 		if (this.m.Start.getProduce().len() != 0)
 		{
 			local produce = 3
-			if(this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+			if(this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
 			{
 				produce = this.Math.max(3, 3 + this.Math.round(0.05 * this.m.Start.getResources()));
 			}
@@ -116,7 +116,7 @@ this.send_supplies_action <- this.inherit("scripts/factions/faction_action", {
 			party.getLoot().Ammo = this.Math.rand(25 * r, 50 * r);
 		}
 
-		if(this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+		if(this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
 		{
 			local resources = this.Math.max(1, this.Math.round(0.05 * this.m.Start.getResources()));
 			this.m.Start.setResources(this.m.Start.getResources() - resources);

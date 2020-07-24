@@ -78,7 +78,7 @@ this.skeleton_heavy_bodyguard <- this.inherit("scripts/entity/tactical/skeleton"
 			this.m.Items.equip(this.new("scripts/items/shields/ancient/tower_shield"));
 		}
 
-		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			local cloths = [
 				[0, ""],

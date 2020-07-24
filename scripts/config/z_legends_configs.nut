@@ -1,3 +1,6 @@
+//THIS FILE IS DEPRECRATED FROM VERSION 71 ONWARDS - \
+//USE scripts/mods/legends_configs
+
 local gt = this.getroottable();
 
 if (!("LegendMod" in gt.Const))

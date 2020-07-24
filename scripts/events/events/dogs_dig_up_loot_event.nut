@@ -100,7 +100,7 @@ this.dogs_dig_up_loot_event <- this.inherit("scripts/events/event", {
 		}
 		else if (r == 2)
 		{
-			if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+			if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 			{
 				local cloths = [
 					[0, ""],
@@ -145,7 +145,7 @@ this.dogs_dig_up_loot_event <- this.inherit("scripts/events/event", {
 		}
 		else if (r == 7)
 		{
-			if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+			if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 			{
 				local cloths = [
 					[0, ""],
@@ -174,7 +174,7 @@ this.dogs_dig_up_loot_event <- this.inherit("scripts/events/event", {
 		}
 		else if (r == 8)
 		{
-			if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+			if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 			{
 				local cloths = [
 					[0, ""],
@@ -203,7 +203,7 @@ this.dogs_dig_up_loot_event <- this.inherit("scripts/events/event", {
 		}
 		else if (r == 9)
 		{
-			if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+			if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 			{
 				local cloths = [
 					[0, ""],
@@ -232,7 +232,7 @@ this.dogs_dig_up_loot_event <- this.inherit("scripts/events/event", {
 		}
 		else if (r == 10)
 		{
-			if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+			if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 			{
 				local cloths = [
 					[0, ""],

@@ -7,7 +7,7 @@ this.legends_skeleton_high <- this.inherit("scripts/entity/tactical/legend_skele
 		this.legend_skeleton.onInit();
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_reach_advantage"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_fearsome"));	
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_fearsome"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_shield_expert"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_reach_advantage"));
 		this.m.Skills.add(this.new("scripts/skills/injury_permanent/legend_fleshless"));
@@ -50,9 +50,9 @@ this.legends_skeleton_high <- this.inherit("scripts/entity/tactical/legend_skele
 			this.m.Items.equip(this.new("scripts/items/shields/ancient/tower_shield"));
 		}
 
-		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
-			
+
 			local cloths = [
 				[0, ""],
 				[0, "cloth/legend_gambeson"],
@@ -139,7 +139,7 @@ this.legends_skeleton_high <- this.inherit("scripts/entity/tactical/legend_skele
 				}
 				this.m.Items.equip(armor);
 			}
-			
+
 		}
 		else
 		{

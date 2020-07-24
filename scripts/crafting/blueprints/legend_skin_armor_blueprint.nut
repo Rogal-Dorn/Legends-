@@ -36,7 +36,7 @@ this.legend_skin_armor_blueprint <- this.inherit("scripts/crafting/blueprint", {
 				Scripts = ["scripts/skills/backgrounds/legend_blacksmith_background"]
 			}
 		]
-		this.initSkills(skills);	
+		this.initSkills(skills);
 	}
 
 	function isQualified()
@@ -47,7 +47,7 @@ this.legend_skin_armor_blueprint <- this.inherit("scripts/crafting/blueprint", {
 	function onCraft( _stash )
 	{
 		local item;
-		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			item = this.new("scripts/items/legend_armor/legendary/legend_armor_skin");
 		}

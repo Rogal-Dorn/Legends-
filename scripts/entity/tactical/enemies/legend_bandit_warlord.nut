@@ -189,7 +189,7 @@ this.legend_bandit_warlord <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.Math.rand(1, 100) > 50)
 		{
-			if (!this.Const.LegendMod.Configs.LegendArmorsEnabled())
+			if (!this.World.LegendsMod.Configs().LegendArmorsEnabled())
 			{
 				this.m.Items.equip(this.new("scripts/items/" + this.Const.Items.NamedArmors[this.Math.rand(0, this.Const.Items.NamedArmors.len() - 1)]));
 			}
@@ -201,7 +201,7 @@ this.legend_bandit_warlord <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Body) == null)
 		{
-			if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+			if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 			{
 				local cloths = [
 					[

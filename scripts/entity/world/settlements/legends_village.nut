@@ -46,7 +46,7 @@ this.legends_village <- this.inherit("scripts/entity/world/settlement", {
 	function getLighting()
 	{
 		local prefix = ""
-		if (this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+		if (this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
 		{
 			prefix ="legend_";
 		}
@@ -57,7 +57,7 @@ this.legends_village <- this.inherit("scripts/entity/world/settlement", {
 	function getSpriteName()
 	{
 		local prefix = ""
-		if (this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+		if (this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
 		{
 			prefix ="legend_";
 		}

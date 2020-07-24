@@ -84,7 +84,7 @@ this.legend_noble_halberdier <- this.inherit("scripts/entity/tactical/human", {
 		}
 		else if (r == 2)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/legend_voulge"));	
+			this.m.Items.equip(this.new("scripts/items/weapons/legend_voulge"));
 		}
 		else if (r == 3)
 		{
@@ -92,7 +92,7 @@ this.legend_noble_halberdier <- this.inherit("scripts/entity/tactical/human", {
 		}
 
 
-		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			local cloths = [
 				[0, ""],

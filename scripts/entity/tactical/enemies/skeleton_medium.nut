@@ -60,7 +60,7 @@ this.skeleton_medium <- this.inherit("scripts/entity/tactical/skeleton", {
 			}
 		}
 
-		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			local cloths = [
 				[0, ""],
@@ -175,7 +175,7 @@ this.skeleton_medium <- this.inherit("scripts/entity/tactical/skeleton", {
 
 
 
-		
+
 
 			local r = this.Math.rand(1, 100);
 			if (r <= 99)

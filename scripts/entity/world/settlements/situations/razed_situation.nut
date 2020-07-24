@@ -22,7 +22,7 @@ this.razed_situation <- this.inherit("scripts/entity/world/settlements/situation
 
 	function onAdded( _settlement )
 	{
-		if(this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+		if(this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.20);
 		}
@@ -53,7 +53,7 @@ this.razed_situation <- this.inherit("scripts/entity/world/settlements/situation
 		_draftList.push("graverobber_background");
 		_draftList.push("raider_background");
 		_draftList.push("female_thief_background");
-		if(this.Const.LegendMod.Configs.LegendMagicEnabled())
+		if(this.World.LegendsMod.Configs().LegendMagicEnabled())
 		{
 		_draftList.push("legend_death_summoner_background");
 		}

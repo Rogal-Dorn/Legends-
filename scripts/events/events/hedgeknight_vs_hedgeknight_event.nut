@@ -89,7 +89,7 @@ this.hedgeknight_vs_hedgeknight_event <- this.inherit("scripts/events/event", {
 				{
 					Text = "Let\'s see who is strongest in battle.",
 					function getResult( _event )
-					{						
+					{
 						return this.Math.rand(1, _event.m.HedgeKnight1.getLevel() + _event.m.HedgeKnight2.getLevel()) <= _event.m.HedgeKnight1.getLevel() ? "F" : "G";
 					}
 
@@ -286,7 +286,7 @@ this.hedgeknight_vs_hedgeknight_event <- this.inherit("scripts/events/event", {
 				_event.m.HedgeKnight1.changeActiveRelationship( _event.m.HedgeKnight2, modifier1 );
 				local modifier2 = this.Math.rand(-1, -5);
 				_event.m.HedgeKnight2.changeActiveRelationship( _event.m.HedgeKnight1, modifier2 );
-				if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+				if (this.World.LegendsMod.Configs().RelationshipsEnabled())
 				{
 					this.List.push({
 						id = 10,
@@ -356,7 +356,7 @@ this.hedgeknight_vs_hedgeknight_event <- this.inherit("scripts/events/event", {
 				_event.m.HedgeKnight1.changeActiveRelationship( _event.m.HedgeKnight2, modifier1 );
 				local modifier2 = this.Math.rand(-1, -5);
 				_event.m.HedgeKnight2.changeActiveRelationship( _event.m.HedgeKnight1, modifier2 );
-				if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+				if (this.World.LegendsMod.Configs().RelationshipsEnabled())
 				{
 					this.List.push({
 						id = 10,
@@ -564,7 +564,7 @@ this.hedgeknight_vs_hedgeknight_event <- this.inherit("scripts/events/event", {
 				_event.m.HedgeKnight2.changeActiveRelationship( _event.m.Monk, modifier2 );
 				_event.m.HedgeKnight2.changeActiveRelationship( _event.m.HedgeKnight1, modifier2 );
 
-				if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+				if (this.World.LegendsMod.Configs().RelationshipsEnabled())
 				{
 					this.List.push({
 						id = 10,

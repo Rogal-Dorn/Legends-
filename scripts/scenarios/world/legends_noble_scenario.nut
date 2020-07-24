@@ -187,7 +187,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			bro.m.CompanyID = val;
 		}
 
-		if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+		if (this.World.LegendsMod.Configs().RelationshipsEnabled())
 {
     local avgAlignment = 0;
     foreach (bro in this.World.getPlayerRoster().getAll())
@@ -206,7 +206,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 }
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/cured_rations_item"));
 
-		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 
 			local brothers = this.World.getPlayerRoster().getAll();

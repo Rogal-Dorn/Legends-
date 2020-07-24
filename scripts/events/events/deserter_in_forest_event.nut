@@ -89,7 +89,7 @@ this.deserter_in_forest_event <- this.inherit("scripts/events/event", {
 							"legend_cannibal_background"
 						]);
 						_event.m.Dude.getSkills().add(this.new("scripts/skills/racial/skeleton_racial"));
-						_event.m.Dude.getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));						
+						_event.m.Dude.getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));
 						}
 					else
 					{
@@ -100,8 +100,8 @@ this.deserter_in_forest_event <- this.inherit("scripts/events/event", {
 				_event.m.Dude.getBackground().m.RawDescription = "You found %name% the deserter being chased through the forest. Though bounty hunters were hot on the trail, you elected to defend the fugitive and for that swore an oath to you.";
 				_event.m.Dude.getBackground().buildDescription(true);
 				this.Characters.push(_event.m.Dude.getImagePath());
-				
-				if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+
+				if (this.World.LegendsMod.Configs().RelationshipsEnabled())
 				{
 					local brocount = 0;
 						foreach( bro in brothers )

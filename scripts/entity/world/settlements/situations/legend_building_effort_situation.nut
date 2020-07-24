@@ -98,7 +98,7 @@ this.legend_building_effort_situation <- this.inherit("scripts/entity/world/sett
 		_draftList.push("daytaler_background");
 		_draftList.push("daytaler_background");
 		_draftList.push("legend_blacksmith_background");
-		if (this.Const.LegendMod.Configs.LegendGenderEnabled())
+		if (this.World.LegendsMod.Configs().LegendGenderEnabled())
 		{
 			_draftList.push("female_daytaler_background");
 		}

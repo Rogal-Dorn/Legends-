@@ -108,7 +108,7 @@ this.cultist_origin_sacrifice_event <- this.inherit("scripts/events/event", {
 
 
 						//set relations
-						if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+						if (this.World.LegendsMod.Configs().RelationshipsEnabled())
 						{
 							local relations = this.World.getPlayerRoster().getAll();
 							foreach( relation in relations )

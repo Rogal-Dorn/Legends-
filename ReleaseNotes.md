@@ -3720,3 +3720,5 @@ Fixes one possible crash on vala chanting and being devoured
 Fixed Vanilla splt man double damage perk.
 Bandit warlords now have warlord stats, as opposed to bandidt leader stats
 Temporarily removes alchemy tree from being rolled (was highly unfinished/untested before)
+
+https://drive.google.com/file/d/1eScbaKttem93gLfFNLFPhJ2c1S6qaTXn/view?usp=sharing

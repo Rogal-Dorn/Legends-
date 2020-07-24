@@ -161,11 +161,11 @@ this.blueprint <- {
 
 			if ("LegendsArmor" in c)
 			{
-				if (c.LegendsArmor && !this.Const.LegendMod.Configs.LegendArmorsEnabled())
+				if (c.LegendsArmor && !this.World.LegendsMod.Configs().LegendArmorsEnabled())
 				{
 					continue;
 				}
-				if (!c.LegendsArmor && this.Const.LegendMod.Configs.LegendArmorsEnabled())
+				if (!c.LegendsArmor && this.World.LegendsMod.Configs().LegendArmorsEnabled())
 				{
 					continue;
 				}
@@ -205,7 +205,7 @@ this.blueprint <- {
 			return false
 		}
 
-		if (this.Const.LegendMod.Configs.LegendAllBlueprintsEnabled())
+		if (this.World.LegendsMod.Configs().LegendAllBlueprintsEnabled())
 		{
 			return true;
 		}
@@ -291,11 +291,11 @@ this.blueprint <- {
 
 			if ("LegendsArmor" in c)
 			{
-				if (c.LegendsArmor && !this.Const.LegendMod.Configs.LegendArmorsEnabled())
+				if (c.LegendsArmor && !this.World.LegendsMod.Configs().LegendArmorsEnabled())
 				{
 					continue;
 				}
-				if (!c.LegendsArmor && this.Const.LegendMod.Configs.LegendArmorsEnabled())
+				if (!c.LegendsArmor && this.World.LegendsMod.Configs().LegendArmorsEnabled())
 				{
 					continue;
 				}
@@ -336,11 +336,11 @@ this.blueprint <- {
 		{
 			if ("LegendsArmor" in c)
 			{
-				if (c.LegendsArmor && !this.Const.LegendMod.Configs.LegendArmorsEnabled())
+				if (c.LegendsArmor && !this.World.LegendsMod.Configs().LegendArmorsEnabled())
 				{
 					continue;
 				}
-				if (!c.LegendsArmor && this.Const.LegendMod.Configs.LegendArmorsEnabled())
+				if (!c.LegendsArmor && this.World.LegendsMod.Configs().LegendArmorsEnabled())
 				{
 					continue;
 				}
@@ -369,11 +369,11 @@ this.blueprint <- {
 		{
 			if ("LegendsArmor" in c)
 			{
-				if (c.LegendsArmor && !this.Const.LegendMod.Configs.LegendArmorsEnabled())
+				if (c.LegendsArmor && !this.World.LegendsMod.Configs().LegendArmorsEnabled())
 				{
 					continue;
 				}
-				if (!c.LegendsArmor && this.Const.LegendMod.Configs.LegendArmorsEnabled())
+				if (!c.LegendsArmor && this.World.LegendsMod.Configs().LegendArmorsEnabled())
 				{
 					continue;
 				}

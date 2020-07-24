@@ -71,7 +71,7 @@ this.legend_peasant_minstrel <- this.inherit("scripts/entity/tactical/human", {
 		}
 
 
-		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			local cloths = [
 				[0, ""],

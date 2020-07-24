@@ -780,7 +780,7 @@ this.asset_manager <- {
 						}
 				}
 
-				if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+				if (this.World.LegendsMod.Configs().RelationshipsEnabled())
 				{
 				// Check the company alignment against the mercenary alignment
 					if ( !bro.getSkills().hasSkill("trait.player") )
