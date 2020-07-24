@@ -89,24 +89,24 @@ this.barber_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 	{
 		return "dude_full";
 	}
-	
+
 	function isHidden()
 	{
-		
-		if (this.Const.LegendMod.Configs.LegendCampUnlockEnabled())
+
+		if (this.World.LegendsMod.Configs().LegendCampUnlockEnabled())
 		{
 			return false;
 		}
-		
+
 		return !this.World.Tags.get("HasLegendCampBarber")
-	}	
+	}
 
 	function onClicked( _campScreen )
 	{
         _campScreen.showBarberDialog();
         this.camp_building.onClicked(_campScreen);
 	}
-    
+
 	function onSerialize( _out )
 	{
 		this.camp_building.onSerialize(_out);

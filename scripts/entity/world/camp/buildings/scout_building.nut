@@ -24,7 +24,7 @@ this.scout_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 		if (this.getUpgraded())
 		{
 			return this.m.Name + " *Upgraded*"
-		} 
+		}
 		return this.m.Name +  " *Not Upgraded*"
 	}
 
@@ -65,14 +65,14 @@ this.scout_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 
 	function isHidden()
 	{
-		
-		if (this.Const.LegendMod.Configs.LegendCampUnlockEnabled())
+
+		if (this.World.LegendsMod.Configs().LegendCampUnlockEnabled())
 		{
 			return false;
 		}
-		
+
 		return !this.World.Tags.get("HasLegendCampScouting")
-	}	
+	}
 
 	function getUpgraded()
 	{
@@ -88,7 +88,7 @@ this.scout_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 		}
 
 		local sub = "empty";
-		
+
 		if (this.getAssignedBros() > 0) {
 			sub =  "full";
 		}
@@ -111,7 +111,7 @@ this.scout_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 
     function getModifiers()
     {
-        local ret = 
+        local ret =
         {
             Craft = 0.0,
             Assigned = 0,
@@ -125,22 +125,22 @@ this.scout_building <- this.inherit("scripts/entity/world/camp/camp_building", {
                 continue
             }
             local mod = this.m.BaseCraft + this.m.BaseCraft * bro.getBackground().getModifiers().Scout;
-			
+
 			if (bro.getSkills().hasSkill("perk.lookout"))
             {
 			mod = mod * 1.1;
 			}
 
             ++ret.Assigned
-			ret.Modifiers.push([mod, bro.getName(), bro.getBackground().getNameOnly()]);			
+			ret.Modifiers.push([mod, bro.getName(), bro.getBackground().getNameOnly()]);
         }
 
         ret.Modifiers.sort(this.sortModifiers);
         for (local i = 0; i < ret.Modifiers.len(); i = ++i)
         {
             ret.Modifiers[i][0] = ret.Modifiers[i][0] * this.Math.pow(i + 1, -0.5);
-			if (this.getUpgraded()) 
-			{  
+			if (this.getUpgraded())
+			{
 				ret.Modifiers[i][0] *= 1.15;
 			}
             ret.Craft += ret.Modifiers[i][0];
@@ -180,11 +180,11 @@ this.scout_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 
 		if (!this.getUpgraded())
 		{
-			return 
+			return
 		}
-        
+
         local r = this.Math.min(75, 10 * this.Math.pow(this.m.Camp.getCampTimeHours(), mod.Craft/2));
-		
+
         if (this.Math.rand(1, 100) > r)
         {
             return;
@@ -256,7 +256,7 @@ this.scout_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 		{
 			return "No one on patrol!";
 		}
-		
+
 		return "Patrol radius ... " + this.m.Radius;
 	}
 
@@ -270,7 +270,7 @@ this.scout_building <- this.inherit("scripts/entity/world/camp/camp_building", {
         _campScreen.showScoutDialog();
         this.camp_building.onClicked(_campScreen);
 	}
-        
+
 	function onSerialize( _out )
 	{
 		this.camp_building.onSerialize(_out);

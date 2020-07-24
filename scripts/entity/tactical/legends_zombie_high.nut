@@ -15,7 +15,7 @@ this.legends_zombie_high <- this.inherit("scripts/entity/tactical/legend_zombie"
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_nine_lives"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_last_stand"));
 		}
-		this.m.Skills.update();	
+		this.m.Skills.update();
 	}
 
 	function assignRandomEquipment()
@@ -109,7 +109,7 @@ this.legends_zombie_high <- this.inherit("scripts/entity/tactical/legend_zombie"
 		}
 
 		local armor;
-		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			local cloths = [
 				[0, ""],
@@ -195,8 +195,8 @@ this.legends_zombie_high <- this.inherit("scripts/entity/tactical/legend_zombie"
 					armor.setUpgrade(plate)
 				}
 			}
-		} 
-		else 
+		}
+		else
 		{
 			r = this.Math.rand(1, 3);
 			if (r == 1)

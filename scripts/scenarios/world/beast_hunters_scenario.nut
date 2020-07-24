@@ -105,7 +105,7 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			bro.m.Level = 2;
 		}
 
-		if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+		if (this.World.LegendsMod.Configs().RelationshipsEnabled())
 {
     local avgAlignment = 0;
     foreach (bro in this.World.getPlayerRoster().getAll())

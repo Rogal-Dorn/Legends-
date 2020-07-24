@@ -351,7 +351,7 @@
 					{
 						numAlliesAdjacent = ++numAlliesAdjacent;
 
-						if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+						if (this.World.LegendsMod.Configs().RelationshipsEnabled())
 						{
 							if (this.getFaction() == this.Const.Faction.Player && tile.getEntity().getFaction() == this.Const.Faction.Player && tile.getEntity().isAlive())
 							{
