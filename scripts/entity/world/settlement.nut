@@ -75,6 +75,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 	function changeSize(_v)
 	{
 		this.setUpgrading(false);
+		_v = this.Math.max(1, _v);
 		this.setSize(this.Math.min(3, _v));
 		//this.setActive(true, false, true);
 	}
@@ -388,7 +389,17 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			});
 		}
 
-		if (this.m.IsVisited && this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+		if (this.Const.LegendMod.DebugMode)
+		{
+			ret.push({
+				id = 6,
+				type = "hint",
+				text = "Generating Resources: " + this.getNewResources()
+			});
+		}
+
+
+		if (this.Const.LegendMod.DebugMode || (this.m.IsVisited && this.Const.LegendMod.Configs.LegendWorldEconomyEnabled()))
 		{
 			ret.push({
 				id = 6,
@@ -2433,6 +2444,29 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			num++;
 		}
 		return num;
+	}
+
+	function getNewResources()
+	{
+		local resources = 0;
+		foreach (loc in this.getAttachedLocations())
+		{
+			resources += loc.getNewResources();
+		}
+
+		resources += this.m.HousesTiles.len();
+
+		return resources;
+	}
+
+	function addNewResources()
+	{
+		if (!this.m.IsActive)
+		{
+			return;
+		}
+
+		this.setResources(this.getResources() + this.getNewResources());
 	}
 
 	function onSerialize( _out )

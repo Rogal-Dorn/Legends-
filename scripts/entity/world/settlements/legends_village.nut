@@ -146,7 +146,7 @@ this.legends_village <- this.inherit("scripts/entity/world/settlement", {
 
 	function getStablesList()
 	{
-		return this.m.DraftLists[this.m.Size - 1];
+		return this.m.StablesLists[this.m.Size - 1];
 	}
 
 	function onBuild( _settings )

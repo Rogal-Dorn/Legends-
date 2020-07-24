@@ -282,6 +282,11 @@ this.harbor_location <- this.inherit("scripts/entity/world/attached_location", {
 		}
 	}
 
+	function getNewResources()
+	{
+		return 2;
+	}
+
 	function onSerialize( _out )
 	{
 		_out.writeString(this.m.Sprite);

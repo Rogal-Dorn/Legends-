@@ -3695,12 +3695,19 @@ in your scenario files, the onBuildPerkTree function signature has changed. You 
 Adding perks looks like this now '''_tree[0].push(this.Const.Perks.PerkDefs.LegendCampCook);'''
 
 
-14.0.0.16
+14.0.0.16 Honey, I shrank the town
+
+
+**World Economy**
+With world economy enabled, orc/goblin crisis will now raze cities to the ground before destroying them (any settlement size > 1 is razed to the ground but not destroyed - If settlement is level 1, it is completely destroyed)
+Every 7 days Towns will generate new resources (Re: Wealth rating will increase) from each of its attached locations and the number of houses it has attached. This is to help put positive wealth pressure into the system so towns do not all eventually just peg down to 0 wealth rating.
+Settlements now have a chance to decrease in size whenever their Wealth value drops below 50%.
 
 
 **Changes**
 Tweaked the spawn lists for barbarians - there will be more Marauders/Reavers and less Thralls. There will now also be more Champions and Beastmasters on higher levels (Thank our friendly Skin Ghoul Mascot ;)
 Named Glaive Damange increased from 40/45 to 45/50
+Noble Supply run caravans and raid contracts now have a chance of spawning mercenaries, mixed nobles and mercs, or just noble forces as the defending force instead of always noble troops.
 
 **Fixes**
 Fixed rage's effect tooltip.
@@ -3708,4 +3715,5 @@ Fixes tooltips for Woodworking and Herbcraft perks.
 Adds correct smashing shields perk to peasant woodsmen.
 Fixes name for Gladiator Helmet.
 Necromancers can now posses undead more than once.
+Fixes Stables not repopulating
 

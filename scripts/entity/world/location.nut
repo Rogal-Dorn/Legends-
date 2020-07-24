@@ -667,6 +667,11 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 		this.updateStrength();
 	}
 
+	function getNewResources()
+	{
+		return 0;
+	}
+
 	function onSerialize( _out )
 	{
 		this.world_entity.onSerialize(_out);

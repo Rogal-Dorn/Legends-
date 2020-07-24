@@ -32,6 +32,7 @@ this.asset_manager <- {
 		BrothersScaleMax = 27,
 		BrothersScaleMin = 1,
 		LastDayPaid = 1,
+		LastDayResourcesUpdated = 0,
 		LastHourUpdated = 0,
 		LastFoodConsumed = 0,
 		IsIronman = false,
@@ -1041,6 +1042,17 @@ this.asset_manager <- {
 
 			_worldState.updateTopbarAssets();
 		}
+
+		if (this.World.getTime().Day > this.m.LastDayResourcesUpdated + 7)
+		{
+			this.m.LastDayResourcesUpdated = this.World.getTime().Day;
+			foreach( t in this.World.EntityManager.getSettlements() )
+			{
+
+				t.addNewResources();
+			}
+		}
+
 
 	}
 
@@ -2320,6 +2332,7 @@ this.asset_manager <- {
 			_out.writeString(name);
 		}
 		_out.writeU8(this.m.BrothersMax);
+		_out.writeU16(this.m.LastDayResourcesUpdated);
 		_out.writeBool(false);
 	}
 
@@ -2449,6 +2462,11 @@ this.asset_manager <- {
 					item.setVariant(this.World.Assets.getBannerID());
 				}
 			}
+		}
+
+		if (_in.getMetaData().getVersion() >= 70)
+		{
+			this.m.LastDayResourcesUpdated = _in.readU16();
 		}
 
 		_in.readBool();

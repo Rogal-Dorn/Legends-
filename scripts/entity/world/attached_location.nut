@@ -256,6 +256,11 @@ this.attached_location <- this.inherit("scripts/entity/world/location", {
 		this.location.onFinish();
 	}
 
+	function getNewResources()
+	{
+		return 1;
+	}
+
 	function onSerialize( _out )
 	{
 		this.location.onSerialize(_out);

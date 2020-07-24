@@ -169,5 +169,11 @@ this.wheat_fields_location <- this.inherit("scripts/entity/world/attached_locati
 		this.getSprite("body").Scale = 0.9;
 	}
 
+
+	function getNewResources()
+	{
+		return 2;
+	}
+
 });
 
