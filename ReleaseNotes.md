@@ -3722,3 +3722,18 @@ Bandit warlords now have warlord stats, as opposed to bandidt leader stats
 Temporarily removes alchemy tree from being rolled (was highly unfinished/untested before)
 
 https://drive.google.com/file/d/1eScbaKttem93gLfFNLFPhJ2c1S6qaTXn/view?usp=sharing
+
+
+14.0.0.***
+
+Therianthropy
+* metamorphasising into other creatures is now a permanent injury. It randomly transforms the character into the creature, and they turn against you. 
+* New perk - surpress urges - transformed characters are now friendly AI 
+* New perk - control instincts - transformed characters are now player controled 
+* New perk - master anger - transformation is no longer random, but can be controlled 
+Druids begin with the therianthripy perk group and a random therianthropic injury 
+
+
+changes
+*prong skill tooltip updated to correctly show impact of thrust master 
+

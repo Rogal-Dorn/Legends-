@@ -28,7 +28,7 @@ this.legend_transformed_bear_effect <- this.inherit("scripts/skills/skill", {
 					id = 11,
 					type = "text",
 					icon = "ui/icons/health.png",
-					text = "[color=" + this.Const.UI.Color.PositiveValue + "]+100%[/color] hitpoints"
+					text = "[color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color] hitpoints"
 				}
 			]);
 		}
@@ -51,6 +51,40 @@ this.legend_transformed_bear_effect <- this.inherit("scripts/skills/skill", {
 				}
 			}
 		}
+		
+		//change the AI 
+		this.m.OriginalAgent = actor.getAIAgent();
+		this.m.OriginalFaction = actor.getFaction();
+		
+		if (actor.isPlayerControlled())
+		{
+			if (this.m.Container.hasSkill("perk.legend_surpress_urges") && !this.m.Container.hasSkill("perk.legend_control_instincts"))
+			{
+			actor.setAIAgent(this.new("scripts/ai/tactical/agents/bear_agent"));
+			actor.getAIAgent().setActor(actor);
+			}
+			else if (this.m.Container.hasSkill("perk.legend_surppress_urges") && this.m.Container.hasSkill("perk.legend_control_instincts"))
+			{
+
+			}
+			else	
+			{
+			actor.setFaction(this.Const.Faction.Beasts);		
+			actor.setAIAgent(this.new("scripts/ai/tactical/agents/bear_agent"));
+			actor.getAIAgent().setActor(actor);
+			}
+
+		}
+		else
+		{
+		actor.setAIAgent(this.new("scripts/ai/tactical/agents/direwolf_agent"));
+		actor.getAIAgent().setActor(actor);
+		}
+	
+		this.m.OriginalSocket = actor.getSprite("socket").getBrush().Name;
+		actor.getSprite("socket").setBrush("bust_base_beasts");
+		actor.setDirty(true);		
+		
 		local items = actor.getItems();
 		items.getData()[this.Const.ItemSlot.Offhand][0] = null;
 		items.getData()[this.Const.ItemSlot.Mainhand][0] = null;
@@ -58,9 +92,9 @@ this.legend_transformed_bear_effect <- this.inherit("scripts/skills/skill", {
 		this.m.Body = actor.getSprite("body").getBrush().Name;
 		this.m.Head = actor.getSprite("head").getBrush().Name;
 
-		actor.getSprite("body").setBrush("bear_01");
-		actor.getSprite("head").setBrush("bear_head_01");
-		actor.getSprite("injury").setBrush("bear_01_injured");
+		actor.getSprite("body").setBrush("were_bear_body");
+		actor.getSprite("head").setBrush("were_bear_head");
+		actor.getSprite("injury").setBrush("were_injured");
 		actor.getSprite("body").setHorizontalFlipping(1);
 		actor.getSprite("head").setHorizontalFlipping(1);
 		actor.getSprite("injury").setHorizontalFlipping(1);
@@ -84,11 +118,11 @@ this.legend_transformed_bear_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("armor_upgrade_back").Alpha = 10;
 		actor.getSprite("armor_upgrade_front").Alpha = 10;
 		actor.getSprite("socket").Alpha = 10;
-		this.m.TurnsLeft = 5;
+		this.m.TurnsLeft = 3;
 
 		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_true_form"))
 		{
-			this.m.TurnsLeft = 8;
+			this.m.TurnsLeft = 6;
 		}
 
 		this.m.Container.add(this.new("scripts/skills/actives/legend_bear_claws"));
@@ -98,6 +132,17 @@ this.legend_transformed_bear_effect <- this.inherit("scripts/skills/skill", {
 	function onRemoved()
 	{
 		local actor = this.getContainer().getActor();
+		
+		//reset AI
+		if (this.m.OriginalAgent != null)
+		{
+			actor.setAIAgent(this.m.OriginalAgent);
+		}
+		actor.setFaction(this.m.OriginalFaction);
+		actor.getSprite("socket").setBrush(this.m.OriginalSocket);
+		actor.setDirty(true);
+		
+		//change appearance 		
 		actor.getSprite("body").setBrush(this.m.Body);
 		actor.getSprite("head").setBrush(this.m.Head);
 		actor.getSprite("armor").Alpha = 255;
