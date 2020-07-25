@@ -52,7 +52,7 @@ this.fletcher_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		if (this.getUpgraded())
 		{
 			return this.m.Name + " *Upgraded*"
-		} 
+		}
 		return this.m.Name +  " *Not Upgraded*"
 	}
 
@@ -71,7 +71,7 @@ this.fletcher_building <- this.inherit("scripts/entity/world/camp/camp_building"
 	function getModifierToolip()
     {
 		local mod = this.getModifiers();
-		local ret = [			
+		local ret = [
 			{
 				id = 5,
 				type = "text",
@@ -95,14 +95,14 @@ this.fletcher_building <- this.inherit("scripts/entity/world/camp/camp_building"
 
 	function isHidden()
 	{
-		
-		if (this.Const.LegendMod.Configs.LegendCampUnlockEnabled())
+
+		if (this.World.LegendsMod.Configs().LegendCampUnlockEnabled())
 		{
 			return false;
 		}
-		
+
 		return !this.World.Tags.get("HasLegendCampFletching")
-	}	
+	}
 
 	function getUpgraded()
 	{
@@ -118,13 +118,13 @@ this.fletcher_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		}
 
 		local sub = "empty";
-		
+
 		if (this.getAssignedBros() > 0) {
 			sub =  "full";
 		}
 		return pro + "_" + sub;
 	}
-	
+
     function init()
     {
 		this.m.AmmoAdded = 0;
@@ -155,10 +155,10 @@ this.fletcher_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		 		text = "You gained " + b.getName()
 			})
 			++id;
-		}		
+		}
         return res;
     }
-	
+
 	function getAssignedBros()
     {
         local mod = this.getModifiers();
@@ -192,7 +192,7 @@ this.fletcher_building <- this.inherit("scripts/entity/world/camp/camp_building"
 
 		if (!this.getUpgraded())
 		{
-			return 
+			return
 		}
 
 		if (this.Stash.getNumberOfEmptySlots() == 0)
@@ -210,18 +210,18 @@ this.fletcher_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		{
 			local item = this.new(secondary[this.Math.rand(0, secondary.len()-1)]);
 			this.m.Items.push(item);
-			this.Stash.add(item);				
+			this.Stash.add(item);
 		}
 
     }
-    
+
 
 	function onClicked( _campScreen )
 	{
         _campScreen.showFletcherDialog();
         this.camp_building.onClicked(_campScreen);
 	}
-        
+
 	function onSerialize( _out )
 	{
 		this.camp_building.onSerialize(_out);

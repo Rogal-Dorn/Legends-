@@ -336,7 +336,7 @@ this.hunting_webknechts_contract <- this.inherit("scripts/contracts/contract", {
 				local item;
 				local r = this.Math.rand(1, 2);
 
-				if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+				if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 				{
 					if (r == 1)
 					{

@@ -66,8 +66,8 @@ this.monk_vs_monk_event <- this.inherit("scripts/events/event", {
 				_event.m.Monk1.changeActiveRelationship( _event.m.Monk2, modifier1 );
 				local modifier2 = this.Math.rand(5, 10);
 				_event.m.Monk2.changeActiveRelationship( _event.m.Monk1, modifier2 );
-				
-				if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+
+				if (this.World.LegendsMod.Configs().RelationshipsEnabled())
 				{
 				this.List.push({
 					id = 10,

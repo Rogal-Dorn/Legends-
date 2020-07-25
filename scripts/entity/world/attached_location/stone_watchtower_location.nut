@@ -386,5 +386,11 @@ this.stone_watchtower_location <- this.inherit("scripts/entity/world/attached_lo
 		this.updateLighting();
 	}
 
+
+	function getNewResources()
+	{
+		return 0;
+	}
+
 });
 

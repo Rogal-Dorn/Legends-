@@ -65,7 +65,7 @@ this.contract_manager <- {
 			{
 				if (!c.isValid() || c.isTimedOut())
 				{
-					this.logInfo("contract removed: " + this.m.Open[i].getID());
+					//this.logInfo("contract removed: " + this.m.Open[i].getID());
 					this.World.FactionManager.getFaction(c.getFaction()).removeContract(c);
 					c.clear();
 					garbage.push(i);
@@ -123,7 +123,7 @@ this.contract_manager <- {
 			_contract.m.TimeOut += this.World.getTime().SecondsPerDay * (this.Math.rand(0, 200) - 100) * 0.01;
 		}
 
-		this.logDebug("contract added: " + _contract.getName());
+		//this.logDebug("contract added: " + _contract.getName());
 
 		if (_contract.getFaction() != 0)
 		{

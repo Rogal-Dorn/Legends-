@@ -58,24 +58,6 @@ this.hedge_knight_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.Body = "bust_naked_body_01";
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Cruel;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Chivalrous;
-		if (this.Const.LegendMod.Configs.LegendGenderEnabled())
-		{
-			local r = this.Math.rand(0, 1);
-			if (r == 0)
-				{
-				this.m.Faces = this.Const.Faces.AllFemale;
-				this.m.Hairs = this.Const.Hair.AllFemale;
-				this.m.HairColors = this.Const.HairColors.Young;
-				this.m.Beards = null;
-				this.m.BeardChance = 1;
-				this.m.Body = "bust_naked_body_03";
-				this.m.IsFemaleBackground = true;
-				this.m.BackgroundDescription = "Hedge Knights are competitive individuals that excel in fighting head to head with brute strength and heavy armor, but less so in cooperating with others or in swiftness.";
-				this.m.GoodEnding = "A woman like %name% would always find a way. The hedge knight eventually, if not inevitably, left the company and set out on her own. Unlike many other comrades, she did not spend her crowns on land or ladders with which to climb the noble life. Instead, she bought herself the finest war horses and the talents of armorers. The behemoth of a woman rode from one jousting tournament to the next, winning them all with ease. She\'s still at it to this day, and you think she won\'t stop until she\'s dead. The hedge knight simply knows no other life.";
-				this.m.BadEnding = "%name% the hedge knight eventually left the company. She traveled the lands, returning to her favorite past time of jousting, which was really a cover for her real favorite past time of lancing men off horses in a shower of splinters and glory. At some point, she was ordered to \'throw\' a match against a pitiful and gangly prince to earn the nobleman some prestige. Instead, the hedge knight drove her lance through the man\'s skull. Furious, the lord of the land ordered the hedge knight killed. They say over a hundred soldiers took to her home and only half returned alive.";
-			}
-		}
-
 		this.m.Level = this.Math.rand(2, 5);
 		this.m.IsCombatBackground = true;
 		this.m.IsCrusaderRecruitBackground = true;
@@ -109,6 +91,36 @@ this.hedge_knight_background <- this.inherit("scripts/skills/backgrounds/charact
 			Class = [],
 			Magic = []
 		}
+	}
+
+	function setGender(_gender = -1)
+	{
+		local r = _gender;
+		if (_gender == -1)
+		{
+			r = 0;
+			if (this.World.LegendsMod.Configs().LegendGenderEnabled())
+			{
+				r = this.Math.rand(0, 1);
+			}
+		}
+
+		if (r == 0)
+		{
+			return;
+		}
+
+		this.m.Faces = this.Const.Faces.AllFemale;
+		this.m.Hairs = this.Const.Hair.AllFemale;
+		this.m.HairColors = this.Const.HairColors.Young;
+		this.m.Beards = null;
+		this.m.BeardChance = 1;
+		this.m.Body = "bust_naked_body_03";
+		this.m.IsFemaleBackground = true;
+		this.m.BackgroundDescription = "Hedge Knights are competitive individuals that excel in fighting head to head with brute strength and heavy armor, but less so in cooperating with others or in swiftness.";
+		this.m.GoodEnding = "A woman like %name% would always find a way. The hedge knight eventually, if not inevitably, left the company and set out on her own. Unlike many other comrades, she did not spend her crowns on land or ladders with which to climb the noble life. Instead, she bought herself the finest war horses and the talents of armorers. The behemoth of a woman rode from one jousting tournament to the next, winning them all with ease. She\'s still at it to this day, and you think she won\'t stop until she\'s dead. The hedge knight simply knows no other life.";
+		this.m.BadEnding = "%name% the hedge knight eventually left the company. She traveled the lands, returning to her favorite past time of jousting, which was really a cover for her real favorite past time of lancing men off horses in a shower of splinters and glory. At some point, she was ordered to \'throw\' a match against a pitiful and gangly prince to earn the nobleman some prestige. Instead, the hedge knight drove her lance through the man\'s skull. Furious, the lord of the land ordered the hedge knight killed. They say over a hundred soldiers took to her home and only half returned alive.";
+
 	}
 
 	function getTooltip()

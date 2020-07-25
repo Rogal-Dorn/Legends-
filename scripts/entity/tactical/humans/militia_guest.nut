@@ -93,7 +93,7 @@ this.militia_guest <- this.inherit("scripts/entity/tactical/player", {
 				this.m.Items.equip(this.new("scripts/items/shields/wooden_shield"));
 			}
 
-		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			local cloths = [
 				[0, ""],

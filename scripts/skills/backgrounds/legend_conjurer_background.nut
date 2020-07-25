@@ -83,7 +83,7 @@ this.legend_conjurer_background <- this.inherit("scripts/skills/backgrounds/char
 		if (_gender == -1)
 		{
 			r = 1;
-			if (this.Const.LegendMod.Configs.LegendGenderEnabled())
+			if (this.World.LegendsMod.Configs().LegendGenderEnabled())
 			{
 				r = this.Math.rand(0, 1);
 			}

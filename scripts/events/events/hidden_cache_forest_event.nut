@@ -84,7 +84,7 @@ this.hidden_cache_forest_event <- this.inherit("scripts/events/event", {
 					text = "You gain " + this.Const.Strings.getArticle(item.getName()) + item.getName()
 				});
 
-				if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+				if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 				{
 					local cloths = [
 						[0, ""],

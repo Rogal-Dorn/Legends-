@@ -170,7 +170,7 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 		if (_gender == -1)
 		{
 			r = this.Math.rand(0, 9);
-			if (this.Const.LegendMod.Configs.LegendGenderEnabled())
+			if (this.World.LegendsMod.Configs().LegendGenderEnabled())
 			{
 				r = this.Math.rand(0, 1);
 			}
@@ -373,7 +373,7 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 				armor.setUpgrade(plate)
 			}
 
-			
+
 			local tabards = [
                 [0, ""],
 				[1, "tabard/legend_armor_tabard"]
@@ -383,7 +383,7 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 			{
 				armor.setUpgrade(tabard)
 			}
-		}		
+		}
 		items.equip(this.new("scripts/items/armor/mail_shirt"));
 		items.equip(this.new("scripts/items/helmets/greatsword_hat"));
 		local stash = this.World.Assets.getStash()
@@ -496,7 +496,7 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 				armor.setUpgrade(plate)
 			}
 
-			
+
 			local tabards = [
                 [0, ""],
 				[1, "tabard/legend_armor_tabard"]

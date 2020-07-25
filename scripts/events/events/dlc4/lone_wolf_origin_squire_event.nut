@@ -61,7 +61,7 @@ this.lone_wolf_origin_squire_event <- this.inherit("scripts/events/event", {
 				_event.m.Dude.getItems().unequip(_event.m.Dude.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand));
 				_event.m.Dude.getItems().unequip(_event.m.Dude.getItems().getItemAtSlot(this.Const.ItemSlot.Head));
 				_event.m.Dude.getItems().unequip(_event.m.Dude.getItems().getItemAtSlot(this.Const.ItemSlot.Body));
-				if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+				if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 				{
 					_event.m.Dude.getItems().equip(this.new("scripts/items/legend_armor/cloth/legend_tunic"));
 				}

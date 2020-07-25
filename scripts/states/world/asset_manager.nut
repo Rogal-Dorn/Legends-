@@ -32,6 +32,7 @@ this.asset_manager <- {
 		BrothersScaleMax = 27,
 		BrothersScaleMin = 1,
 		LastDayPaid = 1,
+		LastDayResourcesUpdated = 0,
 		LastHourUpdated = 0,
 		LastFoodConsumed = 0,
 		IsIronman = false,
@@ -146,21 +147,13 @@ this.asset_manager <- {
 	{
 		local parts = this.Const.LegendMod.MaxResources[this.m.EconomicDifficulty].ArmorParts;
 		parts += this.World.State.getPlayer().getArmorPartsModifier();
-		foreach( bro in this.World.getPlayerRoster().getAll() )
-		{
-			parts += bro.getArmorPartsModifier();
-		}
 		return parts;
 	}
 
 	function getMaxMedicine()
 	{
 		local meds = this.Const.LegendMod.MaxResources[this.m.EconomicDifficulty].Medicine;
-		meds += this.World.State.getPlayer().getMedModifier();
-		foreach( bro in this.World.getPlayerRoster().getAll() )
-		{
-			meds += bro.getMedsModifier();
-		}
+		meds += this.World.State.getPlayer().getMedsModifier();
 		return meds;
 	}
 
@@ -787,7 +780,7 @@ this.asset_manager <- {
 						}
 				}
 
-				if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+				if (this.World.LegendsMod.Configs().RelationshipsEnabled())
 				{
 				// Check the company alignment against the mercenary alignment
 					if ( !bro.getSkills().hasSkill("trait.player") )
@@ -1041,6 +1034,17 @@ this.asset_manager <- {
 
 			_worldState.updateTopbarAssets();
 		}
+
+		if (this.World.getTime().Days > this.m.LastDayResourcesUpdated + 7)
+		{
+			this.m.LastDayResourcesUpdated = this.World.getTime().Days;
+			foreach( t in this.World.EntityManager.getSettlements() )
+			{
+
+				t.addNewResources();
+			}
+		}
+
 
 	}
 
@@ -2320,6 +2324,7 @@ this.asset_manager <- {
 			_out.writeString(name);
 		}
 		_out.writeU8(this.m.BrothersMax);
+		_out.writeU16(this.m.LastDayResourcesUpdated);
 		_out.writeBool(false);
 	}
 
@@ -2449,6 +2454,11 @@ this.asset_manager <- {
 					item.setVariant(this.World.Assets.getBannerID());
 				}
 			}
+		}
+
+		if (_in.getMetaData().getVersion() >= 70)
+		{
+			this.m.LastDayResourcesUpdated = _in.readU16();
 		}
 
 		_in.readBool();

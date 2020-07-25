@@ -56,7 +56,7 @@ this.skeleton_light <- this.inherit("scripts/entity/tactical/skeleton", {
 			this.m.Items.equip(this.new("scripts/items/shields/ancient/auxiliary_shield"));
 		}
 
-		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			local cloths = [
 				[25, ""],

@@ -135,7 +135,7 @@ this.treasure_in_rock_event <- this.inherit("scripts/events/event", {
 			{
 				this.Characters.push(_event.m.Tiny.getImagePath());
 				local item;
-				if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+				if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 				{
 					local plates = [
 						[0, ""],

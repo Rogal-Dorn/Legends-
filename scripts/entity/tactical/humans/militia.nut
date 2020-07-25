@@ -48,7 +48,7 @@ this.militia <- this.inherit("scripts/entity/tactical/human", {
 
 	function assignRandomEquipment()
 	{
-	
+
 			local r = this.Math.rand(1, 5);
 
 			if (r == 1)
@@ -84,9 +84,9 @@ this.militia <- this.inherit("scripts/entity/tactical/human", {
 				this.m.Items.equip(this.new("scripts/items/shields/wooden_shield"));
 			}
 
-		
 
-		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			local cloths = [
 				[0, ""],

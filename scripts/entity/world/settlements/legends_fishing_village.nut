@@ -231,7 +231,7 @@ this.legends_fishing_village <- this.inherit("scripts/entity/world/settlements/l
 		]];
 		this.m.StablesLists = [[],[],[]];
 
-		if(this.Const.LegendMod.Configs.LegendMagicEnabled())
+		if(this.World.LegendsMod.Configs().LegendMagicEnabled())
 		{
 			this.m.DraftLists[2].push("legend_spiritualist_background");
 		}

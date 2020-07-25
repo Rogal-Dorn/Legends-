@@ -28,7 +28,7 @@ this.mushroom_grove_location <- this.inherit("scripts/entity/world/attached_loca
 		_list.push("wildman_background");
 		_list.push("legend_herbalist_background");
 
-		if(this.Const.LegendMod.Configs.LegendMagicEnabled())
+		if(this.World.LegendsMod.Configs().LegendMagicEnabled())
 		{
 			local r;
 			if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_berserker")

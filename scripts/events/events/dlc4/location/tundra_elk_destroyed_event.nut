@@ -50,7 +50,7 @@ this.tundra_elk_destroyed_event <- this.inherit("scripts/events/event", {
 					text = "You gain " + item.getName()
 				});
 
-				if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+				if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 				{
 					item = this.new("scripts/items/legend_armor/legendary/legend_ijirok_armor");
 				}

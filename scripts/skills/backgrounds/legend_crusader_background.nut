@@ -95,7 +95,7 @@ this.legend_crusader_background <- this.inherit("scripts/skills/backgrounds/char
 		if (_gender == -1)
 		{
 			r = 0;
-			if (this.Const.LegendMod.Configs.LegendGenderEnabled())
+			if (this.World.LegendsMod.Configs().LegendGenderEnabled())
 			{
 				r = this.Math.rand(0, 1);
 			}
@@ -237,7 +237,7 @@ function onAddEquipment()
 		local talents = this.getContainer().getActor().getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.MeleeDefense] = 3;
-		this.getContainer().getActor().fillTalentValues(2, true);	
+		this.getContainer().getActor().fillTalentValues(2, true);
 		local items = this.getContainer().getActor().getItems();
 		local r;
 
@@ -264,11 +264,11 @@ function onAddEquipment()
 		}
 		else if (r == 3)
 		{
-			shield = this.new("scripts/items/shields/heater_shield");		
+			shield = this.new("scripts/items/shields/heater_shield");
 		}
 		else if (r == 4)
 		{
-			shield = this.new("scripts/items/shields/kite_shield");		
+			shield = this.new("scripts/items/shields/kite_shield");
 		}
 		shield.onPaintSpecificColor(23);
 		items.equip(shield);
@@ -332,7 +332,7 @@ function onAddEquipment()
 		local talents = this.getContainer().getActor().getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.MeleeDefense] = 3;
-		this.getContainer().getActor().fillTalentValues(2, true);		
+		this.getContainer().getActor().fillTalentValues(2, true);
 		local items = this.getContainer().getActor().getItems();
 		local r;
 		r = this.Math.rand(0, 4);
@@ -358,11 +358,11 @@ function onAddEquipment()
 		}
 		else if (r == 3)
 		{
-			shield = this.new("scripts/items/shields/heater_shield");		
+			shield = this.new("scripts/items/shields/heater_shield");
 		}
 		else if (r == 4)
 		{
-			shield = this.new("scripts/items/shields/kite_shield");		
+			shield = this.new("scripts/items/shields/kite_shield");
 		}
 		shield.onPaintSpecificColor(23);
 		items.equip(shield);

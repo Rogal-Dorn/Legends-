@@ -168,7 +168,7 @@ this.black_monolith_location <- this.inherit("scripts/entity/world/location", {
 			"loot/ancient_gold_coins_item",
 			"misc/legend_ancient_scroll_item"
 		], _lootTable);
-		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			_lootTable.push(this.new("scripts/items/legend_armor/legendary/legend_emperors_armor"));
 		}

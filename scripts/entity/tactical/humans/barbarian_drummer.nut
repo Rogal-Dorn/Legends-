@@ -91,7 +91,7 @@ this.barbarian_drummer <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Items.equip(this.new("scripts/items/weapons/barbarians/drum_item"));
 
 		local item
-		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			local cloths = [
 				[1, "cloth/legend_sackcloth"]

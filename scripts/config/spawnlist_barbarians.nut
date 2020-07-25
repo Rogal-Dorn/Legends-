@@ -36,17 +36,17 @@ gt.Const.World.Spawn.Barbarians <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.BarbarianThrall,
-					Cost = 12
+					Cost = 15
 				},
 				{
-					MinR = 400,
+					MinR = 250,
 					Type = this.Const.World.Spawn.Troops.BarbarianMarauder,
-					Cost = 25
+					Cost = 22
 				},
 				{
-					MinR = 1000,
+					MinR = 500,
 					Type = this.Const.World.Spawn.Troops.BarbarianChampion,
-					Cost = 40
+					Cost = 35
 				}
 			]
 		},
@@ -61,7 +61,7 @@ gt.Const.World.Spawn.Barbarians <-
 		},
 		{
 			Weight = 10,
-			MinR = 800,
+			MinR = 650,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.BarbarianBeastmaster,

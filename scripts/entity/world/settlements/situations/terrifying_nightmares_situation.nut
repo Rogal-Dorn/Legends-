@@ -12,7 +12,7 @@ this.terrifying_nightmares_situation <- this.inherit("scripts/entity/world/settl
 	function onAdded( _settlement )
 	{
 		_settlement.resetRoster(true);
-		if(this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+		if(this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.025);
 		}
@@ -20,7 +20,7 @@ this.terrifying_nightmares_situation <- this.inherit("scripts/entity/world/settl
 
 	function onResolved( _settlement )
 	{
-		if(this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+		if(this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * 0.05);
 		}

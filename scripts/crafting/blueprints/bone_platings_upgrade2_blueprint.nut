@@ -18,7 +18,7 @@ this.bone_platings_upgrade2_blueprint <- this.inherit("scripts/crafting/blueprin
 
 	function onCraft( _stash )
 	{
-		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 		_stash.add(this.new("scripts/items/legend_armor/armor_upgrades/legend_bone_platings_upgrade"));
 		}

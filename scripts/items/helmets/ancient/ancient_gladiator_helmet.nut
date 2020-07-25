@@ -4,7 +4,7 @@ this.ancient_gladiator_helmet <- this.inherit("scripts/items/helmets/helmet", {
 	{
 		this.helmet.create();
 		this.m.ID = "armor.head.legend_ancient_gladiator_helmet";
-		this.m.Name = "Ancient Legionary Helmet";
+		this.m.Name = "Ancient Gladiator Helmet";
 		this.m.Description = "A well-crafted but partly decayed gladiator helmet of ancient design.";
 		this.m.ShowOnCharacter = true;
 		this.m.IsDroppedAsLoot = true;
@@ -29,5 +29,6 @@ this.ancient_gladiator_helmet <- this.inherit("scripts/items/helmets/helmet", {
 		this.m.IconLarge = "";
 		this.m.Icon = "helmets/inventory_ancient_gladiator.png";
 	}
+
 });
 

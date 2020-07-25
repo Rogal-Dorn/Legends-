@@ -151,12 +151,12 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
 
 	function isHidden()
 	{
-        
-		if (this.Const.LegendMod.Configs.LegendCampUnlockEnabled())
+
+		if (this.World.LegendsMod.Configs().LegendCampUnlockEnabled())
 		{
 			return false;
 		}
-		
+
 		return !this.World.Tags.get("HasLegendCampScraping")
 	}
 
@@ -391,30 +391,30 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
             if (r.Item.getRepair() <= 0)
             {
                 this.m.ItemsDestroyed += 1
-                
+
                 // Salvages runes
                 local myItem = this.World.Assets.getStash().getItemByInstanceID(r.Item.getInstanceID()).item;
-				if(myItem.getRuneVariant() != 0) 
+				if(myItem.getRuneVariant() != 0)
 				{
-					if (this.Const.LegendMod.Configs.LegendArmorsEnabled() && (myItem.getRuneVariant() == 21 || myItem.getRuneVariant() == 22 || myItem.getRuneVariant() == 23))
+					if (this.World.LegendsMod.Configs().LegendArmorsEnabled() && (myItem.getRuneVariant() == 21 || myItem.getRuneVariant() == 22 || myItem.getRuneVariant() == 23))
 					{
 						local rune;
-			
+
 						switch(myItem.getRuneVariant())
 						{
 						case 21:
 							rune = this.new("scripts/items/legend_armor/runes/legend_rune_endurance");
 							break;
-			
+
 						case 22:
 							rune = this.new("scripts/items/legend_armor/runes/legend_rune_safety");
 							break;
-			
+
 						case 23:
 							rune = this.new("scripts/items/legend_armor/runes/legend_rune_resilience");
 							break;
 						}
-			
+
 						rune.setRuneVariant(myItem.getRuneVariant());
 						rune.setRuneBonus1(myItem.getRuneBonus1());
 						rune.setRuneBonus2(myItem.getRuneBonus2());
@@ -431,7 +431,7 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
 						this.World.Assets.getStash().add(rune);
 					}
 				}
-						
+
 				this.World.Assets.getStash().remove(r.Item);
 				this.m.Salvage[i] = null;
             }
