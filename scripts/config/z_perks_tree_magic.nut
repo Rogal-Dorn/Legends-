@@ -402,6 +402,22 @@ gt.Const.Perks.AlchemyMagicTree <- {
 	]
 }
 
+gt.Const.Perks.TherianthropyTree <- {
+	ID = "TherianthropyMagicTree",
+	Descriptions = [
+		"divination"
+	],
+	Tree = [
+		[gt.Const.Perks.PerkDefs.LegendSurpressUrges],
+		[],
+		[gt.Const.Perks.PerkDefs.LegendControlInstincts],
+		[],
+		[gt.Const.Perks.PerkDefs.LegendMasterAnger],
+		[],
+		[gt.Const.Perks.PerkDefs.LegendTrueForm]
+	]
+};
+
 gt.Const.Perks.MagicTrees <- {
 	Tree = [
 		gt.Const.Perks.ValaChantMagicTree,
@@ -426,6 +442,7 @@ gt.Const.Perks.MagicTrees <- {
 		gt.Const.Perks.AssassinMagicTree,
 		gt.Const.Perks.PremonitionMagicTree,
 		// gt.Const.Perks.AlchemyMagicTree,
+		// gt.Const.Perks.TherianthropyMagicTree,
 		gt.Const.Perks.PhilosophyMagicTree
 
 	],

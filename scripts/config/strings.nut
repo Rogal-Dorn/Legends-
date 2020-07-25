@@ -1734,7 +1734,10 @@ gt.Const.Strings.PerkName <- {
 	LegendAlbedo = "Albedo",
 	LegendNigredo = "Nigredo",
 	LegendHerbcraft = "Herbcraft",
-	LegendWoodworking = "Woodworking"
+	LegendWoodworking = "Woodworking",
+	LegendSurpressUrges = "Surpress Urges",
+	LegendControlInstincts = "Control Instincts",
+	LegendMasterAnger = "Master Anger"
 
 };
 gt.Const.Strings.PerkDescription <- {
@@ -2092,7 +2095,11 @@ gt.Const.Strings.PerkDescription <- {
 	LegendAlbedo = "A concoction of secret materials that allows the user to restore up to 25 armor to a target",
 	LegendNigredo = "An alchemical mixture of acidic vapours, encased in flasks that can be thrown at the enemy to disolves their armor",
 	LegendHerbcraft = "Knowledge of the properties of various roots and herbs lets you construct medicines from base ingredients. Allows the creation of medicine, antidotes and poisons in the crafting tent [color=#0b0084]From the Apothecary perk group[/color]",
-	LegendWoodworking = "The ability to cut and shape wood is a craft few master. Allows the creation of fine wood from rough wood in the crafting tent[color=#0b0084]From the Woodaxe perk group[/color]"
+	LegendWoodworking = "The ability to cut and shape wood is a craft few master. Allows the creation of fine wood from rough wood in the crafting tent [color=#0b0084]From the Woodaxe perk group[/color]",
+	LegendSurpressUrges = "Allows this character to control shapeshifting to some extent, no longer deliberately striking allies while transformed by effects like lycanthropy [color=#0b0084]From the Therianthropy perk group[/color]",
+	LegendControlInstincts = "Further improves this character\'s self control while transformed, no longer deliberately striking allies while transformed [color=#0b0084]From the Therianthropy perk group[/color]",
+	LegendMasterAnger = "Allows the character to transform at will, no longer randomly transforming during battle [color=#0b0084]From the Therianthropy perk group[/color]"
+
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

@@ -107,6 +107,7 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.LegendBackToBasics,
 				this.Const.Perks.PerkDefs.LegendSpecStaffSkill,
 				this.Const.Perks.PerkDefs.LegendAlert,
+				this.Const.Perks.PerkDefs.LegendSurpressUrges,
 				this.Const.Perks.PerkDefs.LegendGatherer,
 				this.Const.Perks.PerkDefs.LegendRoots
 			],
@@ -132,13 +133,12 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.LegendSpecStaffStun,
 				this.Const.Perks.PerkDefs.LegendGrapple,
 				this.Const.Perks.PerkDefs.LegendSecondWind,
-				this.Const.Perks.PerkDefs.LegendWolfform,
+				this.Const.Perks.PerkDefs.LegendControlInstincts,
 				this.Const.Perks.PerkDefs.LegendPrayerOfLife
 
 			],
 			[
 				this.Const.Perks.PerkDefs.LegendSummonWolf,
-				this.Const.Perks.PerkDefs.LegendBearform,
 				this.Const.Perks.PerkDefs.LegendMasteryStaves,
 				this.Const.Perks.PerkDefs.LegendSpecFists,
 				this.Const.Perks.PerkDefs.LegendPoisonImmunity,
@@ -152,6 +152,7 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.LegendBattleheart,
 				this.Const.Perks.PerkDefs.LegendChoke,
 				this.Const.Perks.PerkDefs.LegendSummonStorm,
+				this.Const.Perks.PerkDefs.LegendMasterAnger,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyOrk,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyGoblin,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyBandit,
@@ -176,7 +177,6 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.BattleFlow,
 				this.Const.Perks.PerkDefs.Stalwart,
 				this.Const.Perks.PerkDefs.LegendFreedomOfMovement,
-				this.Const.Perks.PerkDefs.LegendTreeform,
 				this.Const.Perks.PerkDefs.LegendDrumsOfLife,
 				this.Const.Perks.PerkDefs.LegendTrueForm
 			]
@@ -251,31 +251,31 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 	{
 		local c = {
 			Hitpoints = [
-				20,
+				10,
 				25
 			],
 			Bravery = [
-				0,
-				0
+				-5,
+				5
 			],
 			Stamina = [
 				5,
 				10
 			],
 			MeleeSkill = [
-				10,
-				15
+				5,
+				10
 			],
 			RangedSkill = [
-				0,
+				-10,
 				0
 			],
 			MeleeDefense = [
-				15,
+				5,
 				15
 			],
 			RangedDefense = [
-				5,
+				-5,
 				5
 			],
 			Initiative = [
@@ -335,6 +335,25 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 		local actor = this.getContainer().getActor();
 		actor.setTitle("The Druid");
 		this.m.Container.add(this.new("scripts/skills/traits/deathwish_trait"));
+		
+		local r = this.Math.rand(1,4)
+		if (r == 1)
+		{
+		this.m.Container.add(this.new("scripts/skills/injury_permanent/legend_aperthropy_injury"));
+		}
+		else if (r == 2)
+		{
+		this.m.Container.add(this.new("scripts/skills/injury_permanent/legend_arborthropy_injury"));
+		}
+		else if (r == 3)
+		{
+		this.m.Container.add(this.new("scripts/skills/injury_permanent/legend_lycanthropy_injury"));
+		}
+		else if (r == 4)
+		{
+		this.m.Container.add(this.new("scripts/skills/injury_permanent/legend_ursathropy_injury"));
+		}		
+		
 		//this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
 	}
 

@@ -1,19 +1,16 @@
-this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
+this.legend_transformed_boar_effect <- this.inherit("scripts/skills/skill", {
 	m = {
 	TurnsLeft = 5,
 	Body = "",
 	Head = "",
 	Injury = ""
-	OriginalFaction = 0,
-	OriginalAgent = null,
-	OriginalSocket = null
 	},
 	function create()
 	{
-		this.m.ID = "effect.legend_transformed_wolf";
-		this.m.Name = "Wolf Form";
-		this.m.Description = "This character is currently a wolf";
-		this.m.Icon = "ui/perks/wolf_circle.png";
+		this.m.ID = "effect.legend_transformed_bear";
+		this.m.Name = "Boar Form";
+		this.m.Description = "This character is currently a boar";
+		this.m.Icon = "ui/perks/bear_circle.png";
 		this.m.IconMini = "status_effect_08_mini";
 		this.m.Type = this.Const.SkillType.Terrain | this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
@@ -30,23 +27,17 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 				{
 					id = 11,
 					type = "text",
-					icon = "ui/icons/special.png",
-					text = "[color=" + this.Const.UI.Color.PositiveValue + "]-1[/color] AP per tile moved"
+					icon = "ui/icons/health.png",
+					text = "[color=" + this.Const.UI.Color.PositiveValue + "]+100%[/color] stamina recovery rate"
 				}
 			]);
 		}
-
-
-
-
 		return ret;
-
 	}
 
 
 	function onAdded()
 	{
-		//show the transformation
 		local actor = this.getContainer().getActor();
 		if (("State" in this.Tactical) && this.Tactical.State != null) {
 			if (actor.getTile().IsVisibleForPlayer)
@@ -69,7 +60,7 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 		{
 			if (this.m.Container.hasSkill("perk.legend_surpress_urges") && !this.m.Container.hasSkill("perk.legend_control_instincts"))
 			{
-			actor.setAIAgent(this.new("scripts/ai/tactical/agents/wardog_agent"));
+			actor.setAIAgent(this.new("scripts/ai/tactical/agents/boar_agent"));
 			actor.getAIAgent().setActor(actor);
 			}
 			else if (this.m.Container.hasSkill("perk.legend_surppress_urges") && this.m.Container.hasSkill("perk.legend_control_instincts"))
@@ -79,7 +70,7 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 			else	
 			{
 			actor.setFaction(this.Const.Faction.Beasts);		
-			actor.setAIAgent(this.new("scripts/ai/tactical/agents/direwolf_agent"));
+			actor.setAIAgent(this.new("scripts/ai/tactical/agents/boar_agent"));
 			actor.getAIAgent().setActor(actor);
 			}
 
@@ -92,9 +83,7 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 	
 		this.m.OriginalSocket = actor.getSprite("socket").getBrush().Name;
 		actor.getSprite("socket").setBrush("bust_base_beasts");
-		actor.setDirty(true);
-		
-		// remove items 
+		actor.setDirty(true);		
 		
 		local items = actor.getItems();
 		items.getData()[this.Const.ItemSlot.Offhand][0] = null;
@@ -103,11 +92,12 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 		this.m.Body = actor.getSprite("body").getBrush().Name;
 		this.m.Head = actor.getSprite("head").getBrush().Name;
 
-		actor.getSprite("body").setBrush("were_wolf_body");
-		actor.getSprite("head").setBrush("were_wolf_head_0" + this.Math.rand(1, 3));
+		actor.getSprite("body").setBrush("were_boar_body");
+		actor.getSprite("head").setBrush("were_boar_head");
+		actor.getSprite("injury").setBrush("were_injury");
 		actor.getSprite("body").setHorizontalFlipping(1);
 		actor.getSprite("head").setHorizontalFlipping(1);
-
+		actor.getSprite("injury").setHorizontalFlipping(1);
 
 		actor.getSprite("armor").Alpha = 10;
 		actor.getSprite("helmet").Alpha = 10;
@@ -132,24 +122,15 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 
 		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_true_form"))
 		{
-		this.m.TurnsLeft = 6;
+			this.m.TurnsLeft = 6;
 		}
 
-		if (!this.m.Container.hasSkill("actives.werewolf_claws"))
-		{
-			this.m.Container.add(this.new("scripts/skills/actives/werewolf_claws"));
-		}
-		if (!this.m.Container.hasSkill("actives.werewolf_bite"))
-		{
-			this.m.Container.add(this.new("scripts/skills/actives/werewolf_bite"));
-		}
-
-
+		this.m.Container.add(this.new("scripts/skills/actives/gore_skill"));
+		this.m.Container.add(this.new("scripts/skills/actives/legend_boar_charge"));
 	}
 
 	function onRemoved()
 	{
-
 		local actor = this.getContainer().getActor();
 		
 		//reset AI
@@ -161,7 +142,7 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("socket").setBrush(this.m.OriginalSocket);
 		actor.setDirty(true);
 		
-		//change appearance 
+		//change appearance 		
 		actor.getSprite("body").setBrush(this.m.Body);
 		actor.getSprite("head").setBrush(this.m.Head);
 		actor.getSprite("armor").Alpha = 255;
@@ -186,7 +167,9 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("body").setHorizontalFlipping(0);
 		actor.getSprite("head").setHorizontalFlipping(0);
 		actor.getSprite("injury").setHorizontalFlipping(0);
-		if (("State" in this.Tactical) && this.Tactical.State != null) {
+
+		if (("State" in this.Tactical) && this.Tactical.State != null)
+		{
 			if (actor.getTile().IsVisibleForPlayer)
 			{
 				if (this.Const.Tactical.HideParticles.len() != 0)
@@ -199,9 +182,8 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 			}
 		}
 
-
-		actor.getSkills().removeByID("actives.werewolf_claws");
-		actor.getSkills().removeByID("actives.werewolf_bite");
+		actor.getSkills().removeByID("actives.legend_boar_charge");
+		actor.getSkills().removeByID("actives.gore");
 		local items = actor.getItems();
 		items.getData()[this.Const.ItemSlot.Offhand][0] = null;
 		items.getData()[this.Const.ItemSlot.Mainhand][0] = null;
@@ -211,8 +193,8 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 	{
 		local actor = this.getContainer().getActor();
 
-		actor.getSprite("body").setBrush("bust_wolf_01");
-		actor.getSprite("head").setBrush("bust_wolf_01_head");
+		actor.getSprite("body").setBrush("bear_01");
+		actor.getSprite("head").setBrush("bear_head_01");
 
 		actor.getSprite("armor").Alpha = 10;
 		actor.getSprite("helmet").Alpha = 10;
@@ -234,17 +216,7 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("armor_upgrade_front").Alpha = 10;
 		actor.getSprite("socket").Alpha = 10;
 
-
-		if (!this.m.Container.hasSkill("actives.werewolf_claws"))
-		{
-			this.m.Container.add(this.new("scripts/skills/actives/werewolf_claws"));
-		}
-		if (!this.m.Container.hasSkill("actives.werewolf_bite"))
-		{
-			this.m.Container.add(this.new("scripts/skills/actives/werewolf_bite"));
-		}
-		_properties.MovementAPCostAdditional += -1;
-		_properties.MovementFatigueCostMult *= 0.5;
+		_properties.FatigueRecoveryRateMult *= 2.0;
 
 	}
 
