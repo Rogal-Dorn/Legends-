@@ -3695,9 +3695,12 @@ in your scenario files, the onBuildPerkTree function signature has changed. You 
 Adding perks looks like this now '''_tree[0].push(this.Const.Perks.PerkDefs.LegendCampCook);'''
 
 
+<<<<<<< HEAD
 https://drive.google.com/file/d/1dJua7pwM8X42E5ZE5dEe_sqf5nYauSRk/view?usp=sharing
 
 
+=======
+>>>>>>> LegendsModv14
 
 14.0.0.16 Honey, I shrank the town
 
@@ -3724,6 +3727,6 @@ Fixes one possible crash on vala chanting and being devoured
 Fixed Vanilla splt man double damage perk.
 Bandit warlords now have warlord stats, as opposed to bandidt leader stats
 Temporarily removes alchemy tree from being rolled (was highly unfinished/untested before)
-
-https://drive.google.com/file/d/1eScbaKttem93gLfFNLFPhJ2c1S6qaTXn/view?usp=sharing
-
+Zombie poison effect on legendary doesn't scale up fix
+Resilient/HoldOut tooltip fix, currently states -1 turn on debuffs, but gives -5
+Clears the mustering troops on legendary bandit contract completion
