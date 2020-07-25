@@ -56,7 +56,6 @@ this.$name <- this.inherit("scripts/items/legend_helmets/legend_helmet_upgrade",
 		this.m.Condition = 80;
 		this.m.ConditionMax = 80;
 		this.m.StaminaModifier = -4;
-        this.m.IsLowerVanity = $lower;
 	}
 
 	function updateVariant()
@@ -150,7 +149,7 @@ layers = [
     {"name": "goblin_leaf_helm", "layer": "helm", "min": 1, "max": 1},
     {"name": "goblin_leather_helm", "layer": "helm", "min": 1, "max": 1},
     {"name": "goblin_leather_mask", "layer": "helm", "min": 1, "max": 1},
-    {"name": "gobline_spiked_helm", "layer": "helm", "min": 1, "max": 1},
+    {"name": "goblin_spiked_helm", "layer": "helm", "min": 1, "max": 1},
     {"name": "golden_helm", "layer": "helm", "min": 1, "max": 1},
     {"name": "great_helm", "layer": "helm", "min": 1, "max": 6},
     {"name": "heavy_plate_helm", "layer": "helm", "min": 1, "max": 2},
@@ -182,7 +181,7 @@ layers = [
 
     {"name": "chain_attachment", "layer": "top", "min": 1, "max": 1},
     {"name": "cult_hood", "layer": "top", "min": 1, "max": 7},
-    {"name": "eye_mask", "layer": "top", "min": 1, "max": 2},
+    {"name": "eyemask", "layer": "top", "min": 1, "max": 2},
     {"name": "facemask", "layer": "top", "min": 1, "max": 6},
     {"name": "faceplate_full", "layer": "top", "min": 1, "max": 1},
     {"name": "faceplate_gold", "layer": "top", "min": 1, "max": 1},
@@ -208,7 +207,7 @@ layers = [
     {"name": "bull_horns", "layer": "vanity", "min": 1, "max": 1},
     {"name": "cloth_long_hood", "layer": "vanity", "min": 1, "max": 4},
     {"name": "crown", "layer": "vanity", "min": 1, "max": 1},
-    {"name": "faction_helmet", "layer": "vanity", "min": 1, "max": 13},
+    {"name": "faction_helmet", "layer": "vanity", "min": 1, "max": 12},
     {"name": "faction_helmet_2", "layer": "vanity", "min": 1, "max": 10},
     {"name": "feather_band", "layer": "vanity", "min": 1, "max": 2},
     {"name": "feathered_hat", "layer": "vanity", "min": 1, "max": 2},
@@ -227,7 +226,7 @@ layers = [
     {"name": "olivebranch", "layer": "vanity", "min": 1, "max": 2},
     {"name": "orc_bones", "layer": "vanity", "min": 1, "max": 1},
     {"name": "plait", "layer": "vanity", "min": 1, "max": 12},
-    {"name": "poneytail", "layer": "vanity", "min": 1, "max": 4},
+    {"name": "ponytail", "layer": "vanity", "min": 1, "max": 4},
     {"name": "ram_horns", "layer": "vanity", "min": 1, "max": 1},
     {"name": "sack", "layer": "vanity", "min": 1, "max": 12},
     {"name": "side_feather", "layer": "vanity", "min": 1, "max": 5},
@@ -282,6 +281,6 @@ def main():
         F.write(text)
         F.close()
 
-        print('"' + layer + "/" + d["name"] + '",')
+        print('"' + layer + "/" + fname + '",')
 
 main()

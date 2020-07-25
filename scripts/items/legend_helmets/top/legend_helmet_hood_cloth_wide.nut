@@ -18,7 +18,6 @@ this.legend_helmet_hood_cloth_wide <- this.inherit("scripts/items/legend_helmets
 		this.m.Condition = 80;
 		this.m.ConditionMax = 80;
 		this.m.StaminaModifier = -4;
-        this.m.IsLowerVanity = False;
 	}
 
 	function updateVariant()

@@ -10,7 +10,7 @@ this.legend_helmet_faction_helmet <- this.inherit("scripts/items/legend_helmets/
 		this.m.Description = "TODO legend_helmet_faction_helmet";
         this.m.ArmorDescription = this.m.Description;
         this.m.Variant = 1;
-		this.m.Variants = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+		this.m.Variants = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
@@ -18,7 +18,6 @@ this.legend_helmet_faction_helmet <- this.inherit("scripts/items/legend_helmets/
 		this.m.Condition = 80;
 		this.m.ConditionMax = 80;
 		this.m.StaminaModifier = -4;
-        this.m.IsLowerVanity = False;
 	}
 
 	function updateVariant()

@@ -18,7 +18,6 @@ this.legend_helmet_kettle_helm <- this.inherit("scripts/items/legend_helmets/leg
 		this.m.Condition = 80;
 		this.m.ConditionMax = 80;
 		this.m.StaminaModifier = -4;
-        this.m.IsLowerVanity = False;
 	}
 
 	function updateVariant()

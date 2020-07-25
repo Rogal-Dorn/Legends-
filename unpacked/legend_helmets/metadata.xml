@@ -341,9 +341,9 @@
 <sprite id="legendhelms_goblin_leather_mask_01" offsetY="35" ic="FF242D3A" width="104" height="142" img="entity\legend_helmets\helm\goblin_leather_mask_01.png" left="-44" right="50" top="-53" bottom="13" />
 <sprite id="legendhelms_goblin_leather_mask_01_damaged" offsetY="35" ic="FF242C39" width="104" height="142" img="entity\legend_helmets\helm\goblin_leather_mask_01_damaged.png" left="-47" right="45" top="-64" bottom="14" />
 <sprite id="legendhelms_goblin_leather_mask_01_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\helm\goblin_leather_mask_01_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="legendhelms_gobline_spiked_helm_01" offsetY="35" ic="FF242D3A" width="104" height="142" img="entity\legend_helmets\helm\gobline_spiked_helm_01.png" left="-44" right="50" top="-53" bottom="13" />
-<sprite id="legendhelms_gobline_spiked_helm_01_damaged" offsetY="35" ic="FF242C39" width="104" height="142" img="entity\legend_helmets\helm\gobline_spiked_helm_01_damaged.png" left="-47" right="45" top="-64" bottom="14" />
-<sprite id="legendhelms_gobline_spiked_helm_01_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\helm\gobline_spiked_helm_01_dead.png" left="-57" right="59" top="-53" bottom="55" />
+<sprite id="legendhelms_goblin_spiked_helm_01" offsetY="35" ic="FF242D3A" width="104" height="142" img="entity\legend_helmets\helm\goblin_spiked_helm_01.png" left="-44" right="50" top="-53" bottom="13" />
+<sprite id="legendhelms_goblin_spiked_helm_01_damaged" offsetY="35" ic="FF242C39" width="104" height="142" img="entity\legend_helmets\helm\goblin_spiked_helm_01_damaged.png" left="-47" right="45" top="-64" bottom="14" />
+<sprite id="legendhelms_goblin_spiked_helm_01_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\helm\goblin_spiked_helm_01_dead.png" left="-57" right="59" top="-53" bottom="55" />
 <sprite id="legendhelms_golden_helm_01" offsetY="35" ic="FF242D3A" width="104" height="142" img="entity\legend_helmets\helm\golden_helm_01.png" left="-44" right="50" top="-53" bottom="13" />
 <sprite id="legendhelms_golden_helm_01_damaged" offsetY="35" ic="FF242C39" width="104" height="142" img="entity\legend_helmets\helm\golden_helm_01_damaged.png" left="-47" right="45" top="-64" bottom="14" />
 <sprite id="legendhelms_golden_helm_01_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\helm\golden_helm_01_dead.png" left="-57" right="59" top="-53" bottom="55" />
@@ -584,12 +584,12 @@
 <sprite id="legendhelms_cult_hood_05_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\top\cult_hood_05_dead.png" left="-57" right="59" top="-53" bottom="55" />
 <sprite id="legendhelms_cult_hood_06_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\top\cult_hood_06_dead.png" left="-57" right="59" top="-53" bottom="55" />
 <sprite id="legendhelms_cult_hood_07_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\top\cult_hood_07_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="legendhelms_eye_mask_01" offsetY="35" ic="FF242D3A" width="104" height="142" img="entity\legend_helmets\top\eye_mask_01.png" left="-44" right="50" top="-53" bottom="13" />
-<sprite id="legendhelms_eye_mask_02" offsetY="35" ic="FF242D3A" width="104" height="142" img="entity\legend_helmets\top\eye_mask_02.png" left="-44" right="50" top="-53" bottom="13" />
-<sprite id="legendhelms_eye_mask_01_damaged" offsetY="35" ic="FF242C39" width="104" height="142" img="entity\legend_helmets\top\eye_mask_01_damaged.png" left="-47" right="45" top="-64" bottom="14" />
-<sprite id="legendhelms_eye_mask_02_damaged" offsetY="35" ic="FF242C39" width="104" height="142" img="entity\legend_helmets\top\eye_mask_02_damaged.png" left="-47" right="45" top="-64" bottom="14" />
-<sprite id="legendhelms_eye_mask_01_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\top\eye_mask_01_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="legendhelms_eye_mask_02_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\top\eye_mask_02_dead.png" left="-57" right="59" top="-53" bottom="55" />
+<sprite id="legendhelms_eyemask_01" offsetY="35" ic="FF242D3A" width="104" height="142" img="entity\legend_helmets\top\eyemask_01.png" left="-44" right="50" top="-53" bottom="13" />
+<sprite id="legendhelms_eyemask_02" offsetY="35" ic="FF242D3A" width="104" height="142" img="entity\legend_helmets\top\eyemask_02.png" left="-44" right="50" top="-53" bottom="13" />
+<sprite id="legendhelms_eyemask_01_damaged" offsetY="35" ic="FF242C39" width="104" height="142" img="entity\legend_helmets\top\eyemask_01_damaged.png" left="-47" right="45" top="-64" bottom="14" />
+<sprite id="legendhelms_eyemask_02_damaged" offsetY="35" ic="FF242C39" width="104" height="142" img="entity\legend_helmets\top\eyemask_02_damaged.png" left="-47" right="45" top="-64" bottom="14" />
+<sprite id="legendhelms_eyemask_01_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\top\eyemask_01_dead.png" left="-57" right="59" top="-53" bottom="55" />
+<sprite id="legendhelms_eyemask_02_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\top\eyemask_02_dead.png" left="-57" right="59" top="-53" bottom="55" />
 <sprite id="legendhelms_facemask_01" offsetY="35" ic="FF242D3A" width="104" height="142" img="entity\legend_helmets\top\facemask_01.png" left="-44" right="50" top="-53" bottom="13" />
 <sprite id="legendhelms_facemask_02" offsetY="35" ic="FF242D3A" width="104" height="142" img="entity\legend_helmets\top\facemask_02.png" left="-44" right="50" top="-53" bottom="13" />
 <sprite id="legendhelms_facemask_03" offsetY="35" ic="FF242D3A" width="104" height="142" img="entity\legend_helmets\top\facemask_03.png" left="-44" right="50" top="-53" bottom="13" />
@@ -704,7 +704,6 @@
 <sprite id="legendhelms_faction_helmet_10" offsetY="35" ic="FF242D3A" width="104" height="142" img="entity\legend_helmets\vanity\faction_helmet_10.png" left="-44" right="50" top="-53" bottom="13" />
 <sprite id="legendhelms_faction_helmet_11" offsetY="35" ic="FF242D3A" width="104" height="142" img="entity\legend_helmets\vanity\faction_helmet_11.png" left="-44" right="50" top="-53" bottom="13" />
 <sprite id="legendhelms_faction_helmet_12" offsetY="35" ic="FF242D3A" width="104" height="142" img="entity\legend_helmets\vanity\faction_helmet_12.png" left="-44" right="50" top="-53" bottom="13" />
-<sprite id="legendhelms_faction_helmet_13" offsetY="35" ic="FF242D3A" width="104" height="142" img="entity\legend_helmets\vanity\faction_helmet_13.png" left="-44" right="50" top="-53" bottom="13" />
 <sprite id="legendhelms_faction_helmet_01_damaged" offsetY="35" ic="FF242C39" width="104" height="142" img="entity\legend_helmets\vanity\faction_helmet_01_damaged.png" left="-47" right="45" top="-64" bottom="14" />
 <sprite id="legendhelms_faction_helmet_02_damaged" offsetY="35" ic="FF242C39" width="104" height="142" img="entity\legend_helmets\vanity\faction_helmet_02_damaged.png" left="-47" right="45" top="-64" bottom="14" />
 <sprite id="legendhelms_faction_helmet_03_damaged" offsetY="35" ic="FF242C39" width="104" height="142" img="entity\legend_helmets\vanity\faction_helmet_03_damaged.png" left="-47" right="45" top="-64" bottom="14" />
@@ -717,7 +716,6 @@
 <sprite id="legendhelms_faction_helmet_10_damaged" offsetY="35" ic="FF242C39" width="104" height="142" img="entity\legend_helmets\vanity\faction_helmet_10_damaged.png" left="-47" right="45" top="-64" bottom="14" />
 <sprite id="legendhelms_faction_helmet_11_damaged" offsetY="35" ic="FF242C39" width="104" height="142" img="entity\legend_helmets\vanity\faction_helmet_11_damaged.png" left="-47" right="45" top="-64" bottom="14" />
 <sprite id="legendhelms_faction_helmet_12_damaged" offsetY="35" ic="FF242C39" width="104" height="142" img="entity\legend_helmets\vanity\faction_helmet_12_damaged.png" left="-47" right="45" top="-64" bottom="14" />
-<sprite id="legendhelms_faction_helmet_13_damaged" offsetY="35" ic="FF242C39" width="104" height="142" img="entity\legend_helmets\vanity\faction_helmet_13_damaged.png" left="-47" right="45" top="-64" bottom="14" />
 <sprite id="legendhelms_faction_helmet_01_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\vanity\faction_helmet_01_dead.png" left="-57" right="59" top="-53" bottom="55" />
 <sprite id="legendhelms_faction_helmet_02_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\vanity\faction_helmet_02_dead.png" left="-57" right="59" top="-53" bottom="55" />
 <sprite id="legendhelms_faction_helmet_03_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\vanity\faction_helmet_03_dead.png" left="-57" right="59" top="-53" bottom="55" />
@@ -730,7 +728,6 @@
 <sprite id="legendhelms_faction_helmet_10_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\vanity\faction_helmet_10_dead.png" left="-57" right="59" top="-53" bottom="55" />
 <sprite id="legendhelms_faction_helmet_11_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\vanity\faction_helmet_11_dead.png" left="-57" right="59" top="-53" bottom="55" />
 <sprite id="legendhelms_faction_helmet_12_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\vanity\faction_helmet_12_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="legendhelms_faction_helmet_13_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\vanity\faction_helmet_13_dead.png" left="-57" right="59" top="-53" bottom="55" />
 <sprite id="legendhelms_faction_helmet_2_01" offsetY="35" ic="FF242D3A" width="104" height="142" img="entity\legend_helmets\vanity\faction_helmet_2_01.png" left="-44" right="50" top="-53" bottom="13" />
 <sprite id="legendhelms_faction_helmet_2_02" offsetY="35" ic="FF242D3A" width="104" height="142" img="entity\legend_helmets\vanity\faction_helmet_2_02.png" left="-44" right="50" top="-53" bottom="13" />
 <sprite id="legendhelms_faction_helmet_2_03" offsetY="35" ic="FF242D3A" width="104" height="142" img="entity\legend_helmets\vanity\faction_helmet_2_03.png" left="-44" right="50" top="-53" bottom="13" />
@@ -1106,18 +1103,18 @@
 <sprite id="legendhelms_plait_10_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\vanity\plait_10_dead.png" left="-57" right="59" top="-53" bottom="55" />
 <sprite id="legendhelms_plait_11_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\vanity\plait_11_dead.png" left="-57" right="59" top="-53" bottom="55" />
 <sprite id="legendhelms_plait_12_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\vanity\plait_12_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="legendhelms_poneytail_01" offsetY="35" ic="FF242D3A" width="104" height="142" img="entity\legend_helmets\vanity\poneytail_01.png" left="-44" right="50" top="-53" bottom="13" />
-<sprite id="legendhelms_poneytail_02" offsetY="35" ic="FF242D3A" width="104" height="142" img="entity\legend_helmets\vanity\poneytail_02.png" left="-44" right="50" top="-53" bottom="13" />
-<sprite id="legendhelms_poneytail_03" offsetY="35" ic="FF242D3A" width="104" height="142" img="entity\legend_helmets\vanity\poneytail_03.png" left="-44" right="50" top="-53" bottom="13" />
-<sprite id="legendhelms_poneytail_04" offsetY="35" ic="FF242D3A" width="104" height="142" img="entity\legend_helmets\vanity\poneytail_04.png" left="-44" right="50" top="-53" bottom="13" />
-<sprite id="legendhelms_poneytail_01_damaged" offsetY="35" ic="FF242C39" width="104" height="142" img="entity\legend_helmets\vanity\poneytail_01_damaged.png" left="-47" right="45" top="-64" bottom="14" />
-<sprite id="legendhelms_poneytail_02_damaged" offsetY="35" ic="FF242C39" width="104" height="142" img="entity\legend_helmets\vanity\poneytail_02_damaged.png" left="-47" right="45" top="-64" bottom="14" />
-<sprite id="legendhelms_poneytail_03_damaged" offsetY="35" ic="FF242C39" width="104" height="142" img="entity\legend_helmets\vanity\poneytail_03_damaged.png" left="-47" right="45" top="-64" bottom="14" />
-<sprite id="legendhelms_poneytail_04_damaged" offsetY="35" ic="FF242C39" width="104" height="142" img="entity\legend_helmets\vanity\poneytail_04_damaged.png" left="-47" right="45" top="-64" bottom="14" />
-<sprite id="legendhelms_poneytail_01_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\vanity\poneytail_01_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="legendhelms_poneytail_02_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\vanity\poneytail_02_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="legendhelms_poneytail_03_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\vanity\poneytail_03_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="legendhelms_poneytail_04_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\vanity\poneytail_04_dead.png" left="-57" right="59" top="-53" bottom="55" />
+<sprite id="legendhelms_ponytail_01" offsetY="35" ic="FF242D3A" width="104" height="142" img="entity\legend_helmets\vanity\ponytail_01.png" left="-44" right="50" top="-53" bottom="13" />
+<sprite id="legendhelms_ponytail_02" offsetY="35" ic="FF242D3A" width="104" height="142" img="entity\legend_helmets\vanity\ponytail_02.png" left="-44" right="50" top="-53" bottom="13" />
+<sprite id="legendhelms_ponytail_03" offsetY="35" ic="FF242D3A" width="104" height="142" img="entity\legend_helmets\vanity\ponytail_03.png" left="-44" right="50" top="-53" bottom="13" />
+<sprite id="legendhelms_ponytail_04" offsetY="35" ic="FF242D3A" width="104" height="142" img="entity\legend_helmets\vanity\ponytail_04.png" left="-44" right="50" top="-53" bottom="13" />
+<sprite id="legendhelms_ponytail_01_damaged" offsetY="35" ic="FF242C39" width="104" height="142" img="entity\legend_helmets\vanity\ponytail_01_damaged.png" left="-47" right="45" top="-64" bottom="14" />
+<sprite id="legendhelms_ponytail_02_damaged" offsetY="35" ic="FF242C39" width="104" height="142" img="entity\legend_helmets\vanity\ponytail_02_damaged.png" left="-47" right="45" top="-64" bottom="14" />
+<sprite id="legendhelms_ponytail_03_damaged" offsetY="35" ic="FF242C39" width="104" height="142" img="entity\legend_helmets\vanity\ponytail_03_damaged.png" left="-47" right="45" top="-64" bottom="14" />
+<sprite id="legendhelms_ponytail_04_damaged" offsetY="35" ic="FF242C39" width="104" height="142" img="entity\legend_helmets\vanity\ponytail_04_damaged.png" left="-47" right="45" top="-64" bottom="14" />
+<sprite id="legendhelms_ponytail_01_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\vanity\ponytail_01_dead.png" left="-57" right="59" top="-53" bottom="55" />
+<sprite id="legendhelms_ponytail_02_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\vanity\ponytail_02_dead.png" left="-57" right="59" top="-53" bottom="55" />
+<sprite id="legendhelms_ponytail_03_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\vanity\ponytail_03_dead.png" left="-57" right="59" top="-53" bottom="55" />
+<sprite id="legendhelms_ponytail_04_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\vanity\ponytail_04_dead.png" left="-57" right="59" top="-53" bottom="55" />
 <sprite id="legendhelms_ram_horns_01" offsetY="35" ic="FF242D3A" width="104" height="142" img="entity\legend_helmets\vanity\ram_horns_01.png" left="-44" right="50" top="-53" bottom="13" />
 <sprite id="legendhelms_ram_horns_01_damaged" offsetY="35" ic="FF242C39" width="104" height="142" img="entity\legend_helmets\vanity\ram_horns_01_damaged.png" left="-47" right="45" top="-64" bottom="14" />
 <sprite id="legendhelms_ram_horns_01_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\vanity\ram_horns_01_dead.png" left="-57" right="59" top="-53" bottom="55" />
