@@ -2,6 +2,8 @@ FILES=$(git diff --name-only `git merge-base origin/master HEAD`)
 while read -r line; do
     if [[ "$line" == *.sh ]]; then
         echo "skipping $line"
+    elif [[ "$line" == *.py ]]; then
+        echo "skipping $line"
     elif [[ "$line" == *.md ]]; then
         echo "skipping $line"
     elif [[ "$line" == unpacked* ]]; then

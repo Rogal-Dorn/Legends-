@@ -18,7 +18,6 @@ this.legend_helmet_heavy_spiked_helm <- this.inherit("scripts/items/legend_helme
 		this.m.Condition = 80;
 		this.m.ConditionMax = 80;
 		this.m.StaminaModifier = -4;
-        this.m.IsLowerVanity = False;
 	}
 
 	function updateVariant()
