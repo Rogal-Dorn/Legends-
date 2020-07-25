@@ -3708,3 +3708,4 @@ Resilient/HoldOut tooltip fix, currently states -1 turn on debuffs, but gives -5
 14.0.0.17
 **Fixes**
 Clears the mustering troops on legendary bandit contract completion
+ANcient scrolls now actually drop
