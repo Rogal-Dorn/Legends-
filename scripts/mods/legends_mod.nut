@@ -1,15 +1,22 @@
 this.legends_mod <- {
 	m = {
         Configs = null
+        //BrotherStats = null
     },
 	function create()
 	{
         this.m.Configs = this.new("scripts/mods/legends_configs");
+        // this.m.BrotherStats = this.new("scripts/statistics/legends_brother_statistics_manager");
 	}
 
     function Configs() {
         return this.m.Configs;
     }
+
+    // function getStatistics()
+    // {
+    //     return this.m.BrotherStats;
+    // }
 
     function onDevConsole(_command, _args)
     {
