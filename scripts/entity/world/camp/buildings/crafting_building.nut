@@ -4,7 +4,7 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
         Queue = [],
 		PointsNeeded = 0,
 		PointsCrafted = 0,
-		NumBros = 0		
+		NumBros = 0
 	},
     function create()
     {
@@ -97,7 +97,7 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		if (this.getUpgraded())
 		{
 			return this.m.Name + " *Upgraded*"
-		} 
+		}
 		return this.m.Name +  " *Not Upgraded*"
 	}
 
@@ -128,7 +128,7 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 				type = "text",
 				icon = "ui/buttons/icon_time.png",
 				text = "It will take [color=" + this.Const.UI.Color.PositiveValue + "]" + this.getRequiredTime() + "[/color] hours to craft all items."
-			},				
+			},
 			{
 				id = 5,
 				type = "text",
@@ -157,13 +157,13 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 			return true;
 		}
 
-		if (this.Const.LegendMod.Configs.LegendCampUnlockEnabled())
+		if (this.World.LegendsMod.Configs().LegendCampUnlockEnabled())
 		{
 			return false;
 		}
-		
+
 		return !this.World.Tags.get("HasLegendCampCrafting")
-	}	
+	}
 
 	function getUpgraded()
 	{
@@ -179,13 +179,13 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		}
 
 		local sub = "empty";
-		
+
 		if (this.getAssignedBros() > 0) {
 			sub =  "full";
 		}
 		return pro + "_" + sub;
 	}
-	
+
     function init()
     {
 		this.onInit();
@@ -200,9 +200,9 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
             {
                 continue;
             }
-            
+
             this.m.PointsNeeded += r.Blueprint.getCost() - r.Points;
-        }				
+        }
     }
 
     function onInit()
@@ -217,7 +217,7 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 			if (this.m.Queue[i].Blueprint == null)
 			{
 				continue
-			}			
+			}
 			q.push(this.m.Queue[i])
 		}
 		this.m.Queue = q
@@ -256,7 +256,7 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		{
 			return "Crafted ... 100%";
 		}
-		
+
 		return "Crafted ... " + percent + "%";
 	}
 
@@ -297,7 +297,7 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 				this.m.Queue[i] = null;
 			}
 
-            if (modifiers.Craft <= 0) 
+            if (modifiers.Craft <= 0)
             {
                 break
             }
@@ -339,14 +339,14 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
         {
             return 0;
         }
-        
+
         foreach (r in this.m.Queue)
         {
             if (r == null)
             {
                 continue;
             }
-            
+
             points += (r.Blueprint.getCost() - r.Points);
         }
         local modifiers = this.getModifiers();
@@ -377,7 +377,7 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		if (blueprint.getSounds().len() != 0)
 		{
 			this.Sound.play(blueprint.getSounds()[this.Math.rand(0, blueprint.getSounds().len() - 1)], 1.0);
-		}		
+		}
 	}
 
 	function onRemove ( _idx )
@@ -410,7 +410,7 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
         _campScreen.showCraftingDialog();
         this.camp_building.onClicked(_campScreen);
 	}
-        
+
 	function onSerialize( _out )
 	{
 		this.onInit(); //clear out null queue items
@@ -436,5 +436,5 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 			})
 		}
 	}
-    
+
 });

@@ -33,9 +33,9 @@ this.legend_peasant_butcher <- this.inherit("scripts/entity/tactical/human", {
 		dirt.Alpha = this.Math.rand(0, 255);
 		this.getSprite("socket").setBrush("bust_base_militia");
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_bloodbath"));
-		
+
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_butcher_skill"));
-		
+
 		this.m.Skills.add(this.new("scripts/skills/actives/legend_prepare_bleed_skill"));
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 			{
@@ -65,9 +65,9 @@ this.legend_peasant_butcher <- this.inherit("scripts/entity/tactical/human", {
 		{
 			this.m.Items.equip(this.new("scripts/items/weapons/military_cleaver"));
 		}
-	
 
-		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			local cloths = [
 				[0, ""],

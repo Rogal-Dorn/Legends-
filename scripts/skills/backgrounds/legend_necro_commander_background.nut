@@ -65,10 +65,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[2];
 		this.m.Modifiers.MedConsumption = this.Const.LegendMod.ResourceModifiers.MedConsumption[3];
 
-
-
-
-		if (!this.Const.LegendMod.Configs.LegendMagicEnabled())
+		if (!this.World.LegendsMod.Configs().LegendMagicEnabled())
 		{
 				this.m.CustomPerkTree = [
 				[
@@ -217,7 +214,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 					this.Const.Perks.PerkDefs.LegendReclamation,
 					this.Const.Perks.PerkDefs.LegendMedIngredients,
 					this.Const.Perks.PerkDefs.LegendConservation,
-					this.Const.Perks.PerkDefs.LegendSlaughter,			
+					this.Const.Perks.PerkDefs.LegendSlaughter,
 					this.Const.Perks.PerkDefs.LegendRoster3
 				],
 				[
@@ -258,7 +255,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 		if (_gender == -1)
 		{
 			r = 0;
-			if (this.Const.LegendMod.Configs.LegendGenderEnabled())
+			if (this.World.LegendsMod.Configs().LegendGenderEnabled())
 			{
 				r = this.Math.rand(0, 1);
 			}
@@ -336,22 +333,22 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 		};
 		return c;
 	}
-	
+
 	function onAdded()
 	{
 		this.character_background.onAdded();
-		//if (this.Const.LegendMod.Configs.LegendMagicEnabled())
+		//if (this.World.LegendsMod.Configs().LegendMagicEnabled())
 		//{
 		//	this.m.Container.add(this.new("scripts/skills/perks/perk_legend_siphon"));
 		//}
-		
+
 		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_1"));
 		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_brink_of_death"));
 		this.m.Container.add(this.new("scripts/skills/traits/survivor_trait"));
-		if (this.Const.LegendMod.Configs.LegendMagicEnabled())
+		if (this.World.LegendsMod.Configs().LegendMagicEnabled())
 		{
 			this.m.Container.add(this.new("scripts/skills/actives/curseofyears_skill"));
-		}		
+		}
 	}
 
 	function onAddEquipment()

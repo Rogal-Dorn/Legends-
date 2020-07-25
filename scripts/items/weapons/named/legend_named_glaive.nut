@@ -16,12 +16,12 @@ this.legend_named_glaive <- this.inherit("scripts/items/weapons/named/named_weap
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
 		this.m.ArmamentIcon = "icon_legend_named_glaive_01";
-		this.m.Value = 4200;
+		this.m.Value = 6000;
 		this.m.Condition = 72.0;
 		this.m.ConditionMax = 72.0;
 		this.m.StaminaModifier = -16;
-		this.m.RegularDamage = 40;
-		this.m.RegularDamageMax = 45;
+		this.m.RegularDamage = 45;
+		this.m.RegularDamageMax = 50;
 		this.m.ArmorDamageMult = 1.0;
 		this.m.DirectDamageMult = 0.25;
 		this.randomizeValues();
@@ -36,7 +36,7 @@ this.legend_named_glaive <- this.inherit("scripts/items/weapons/named/named_weap
 		spearwall.m.BaseAttackName = p.getName();
 		this.addSkill(spearwall);
 	}
-	
+
 	function onUpdateProperties( _properties )
 	{
 		this.weapon.onUpdateProperties(_properties);

@@ -88,7 +88,7 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		if (_gender == -1)
 		{
 			r = this.Math.rand(0, 9);
-			if (this.Const.LegendMod.Configs.LegendGenderEnabled())
+			if (this.World.LegendsMod.Configs().LegendGenderEnabled())
 			{
 				r = this.Math.rand(0, 1);
 			}
@@ -108,7 +108,7 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.IsFemaleBackground = true;
 
 	}
-	
+
 	// Should overwrite the "character_backgrounds" isCultist() check
 	function isCultist()
 	{

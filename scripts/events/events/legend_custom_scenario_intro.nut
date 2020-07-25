@@ -541,7 +541,7 @@ this.legend_custom_scenario_intro <- this.inherit("scripts/events/event", {
 						 local bros = this.World.getPlayerRoster().getAll();
 
 
-						if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+						if (this.World.LegendsMod.Configs().RelationshipsEnabled())
 						{
 							local avgAlignment = 0;
 							foreach (bro in bros)

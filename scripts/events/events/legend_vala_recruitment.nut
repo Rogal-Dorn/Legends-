@@ -45,13 +45,13 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 					_event.m.Vala.getTags().add("PlayerSkeleton");
 					_event.m.Vala.getTags().add("undead");
 					_event.m.Vala.getTags().add("skeleton");
-				}	
+				}
 				_event.m.Vala.setStartValuesEx(["legend_vala_background"]);
 				if (this.World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
-				{				
+				{
 					_event.m.Vala.getSkills().add(this.new("scripts/skills/racial/skeleton_racial"));
-					_event.m.Vala.getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));	
-				}			
+					_event.m.Vala.getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));
+				}
 				this.Characters.push(_event.m.Vala.getImagePath());
 			}
 		});
@@ -95,7 +95,7 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 			return;
 		}
 
-		if (!this.Const.LegendMod.Configs.LegendMagicEnabled())
+		if (!this.World.LegendsMod.Configs().LegendMagicEnabled())
 		{
 			return;
 		}

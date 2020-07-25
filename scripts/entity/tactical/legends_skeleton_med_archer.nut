@@ -27,9 +27,9 @@ this.legends_skeleton_med_archer <- this.inherit("scripts/entity/tactical/legend
 		// }
 
 
-if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
-			
+
 			local cloths = [
 				[0, ""],
 				[0, "cloth/legend_gambeson"],
@@ -138,7 +138,7 @@ if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
 				this.m.Items.equip(this.new("scripts/items/armor/ancient/ancient_double_layer_mail"));
 			}
 		}
-		
+
 		if (this.Math.rand(1, 100) <= 66)
 		{
 			this.m.Items.equip(this.new("scripts/items/helmets/ancient/ancient_household_helmet"));

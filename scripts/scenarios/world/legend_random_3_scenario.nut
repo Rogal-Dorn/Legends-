@@ -27,9 +27,9 @@ this.legend_random_3_scenario <- this.inherit("scripts/scenarios/world/starting_
 		}
 
 		local bros = roster.getAll();
-		bros[0].setVeteranPerks(2);	
-		bros[1].setVeteranPerks(2);	
-		bros[2].setVeteranPerks(2);	
+		bros[0].setVeteranPerks(2);
+		bros[1].setVeteranPerks(2);
+		bros[2].setVeteranPerks(2);
 
 		foreach( bro in bros )
 		{
@@ -37,7 +37,7 @@ this.legend_random_3_scenario <- this.inherit("scripts/scenarios/world/starting_
 			bro.m.CompanyID = val;
 		}
 
-		if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+		if (this.World.LegendsMod.Configs().RelationshipsEnabled())
 {
     local avgAlignment = 0;
     foreach (bro in this.World.getPlayerRoster().getAll())

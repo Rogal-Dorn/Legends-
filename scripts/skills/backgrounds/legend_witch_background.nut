@@ -80,7 +80,7 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 		if (_gender == -1)
 		{
 			r = 1;
-			if (this.Const.LegendMod.Configs.LegendGenderEnabled())
+			if (this.World.LegendsMod.Configs().LegendGenderEnabled())
 			{
 				r = this.Math.rand(0, 1);
 			}
@@ -173,7 +173,7 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_daze"));
 		//this.m.Container.add(this.new("scripts/skills/perks/perk_student"));
 		this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
-		if (this.Const.LegendMod.Configs.LegendMagicEnabled())
+		if (this.World.LegendsMod.Configs().LegendMagicEnabled())
 		{
 			this.m.Container.add(this.new("scripts/skills/perks/perk_legend_magic_missile"));
 		}

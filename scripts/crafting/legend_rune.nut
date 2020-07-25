@@ -132,7 +132,7 @@ this.legend_rune <- this.inherit("scripts/crafting/blueprint", {
 
 	function onEnchant( _stash, _bonus )
 	{
-		if (this.Const.LegendMod.Configs.LegendArmorsEnabled() && (this.m.Rune == 21 || this.m.Rune == 22 || this.m.Rune == 23))
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled() && (this.m.Rune == 21 || this.m.Rune == 22 || this.m.Rune == 23))
 		{
 			local rune;
 			switch (this.m.Rune)
