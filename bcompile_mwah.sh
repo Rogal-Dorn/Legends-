@@ -79,11 +79,17 @@ cd ../bin
 ./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/legend_world.brush ../battlebrothers/unpacked/legend_world
 ./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/legends_ui.brush ../battlebrothers/unpacked/legends_ui
 ./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/legend_horses.brush ../battlebrothers/unpacked/legend_horses
-./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/legend_helments.brush ../battlebrothers/unpacked/legend_helmets
+
+ echo "Building Legend Helmets metadata.xml..."
+python ../battlebrothers/unpacked/make_legend_helmets.py
+ echo "Building Legend Helmets brush..."
+./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/legend_helmets.brush ../battlebrothers/unpacked/legend_helmets
+
  echo "Building Legend Armor metadata.xml..."
 python ../battlebrothers/unpacked/make_legend_armor.py
  echo "Building Legend Armor brush..."
 ./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/legend_armor.brush ../battlebrothers/unpacked/legend_armor
+
  echo "Compiling all nut files..."
 ./masscompile.bat "c:\Program Files (x86)\Steam\steamapps\common\Battle Brothers\data\scripts"
 

@@ -1,13 +1,14 @@
+
 this.legend_helmet_goblin_scarf <- this.inherit("scripts/items/legend_helmets/legend_helmet", {
 	m = {},
 	function create()
 	{
 		this.legend_helmet.create();
 		this.m.ID = "armor.head.legend_helmet_goblin_scarf";
-		this.m.Name = "Goblin Scarf";
-		this.m.Description = "TODO Goblin Scarf";
-		//this.m.ArmorDescription = this.m.Description;
-		this.m.Variant = 188;
+		this.m.Name = "TODO legend_helmet_goblin_scarf";
+		this.m.Description = "TODO legend_helmet_goblin_scarf";
+        this.m.Variant = 1;
+		this.m.Variants = [1, 2, 3, 4];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
@@ -20,12 +21,10 @@ this.legend_helmet_goblin_scarf <- this.inherit("scripts/items/legend_helmets/le
 	function updateVariant()
 	{
 		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
-		this.m.Sprite = "";
-		this.m.SpriteDamaged = ""//"bust_helmet_" + variant + "_damaged";
-		this.m.SpriteCorpse = ""//"bust_helmet_" + variant + "_dead";
+		this.m.Sprite = "legendhelms_goblin_scarf" + "_" + variant;
+		this.m.SpriteDamaged = "legendhelms_goblin_scarf" + "_" + variant + "_damaged";
+		this.m.SpriteCorpse = "legendhelms_goblin_scarf" + "_" + variant + "_dead";
 		this.m.IconLarge = "";
-		this.m.Icon = "legend_helmets/hood/legend_goblin_scarf.png"
+		this.m.Icon = "legend_helmets/hood/inventory_goblin_scarf" + "_" + variant + ".png"
 	}
-
 });
-
