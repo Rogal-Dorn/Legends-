@@ -3704,3 +3704,7 @@ Bandit warlords now have warlord stats, as opposed to bandidt leader stats
 Temporarily removes alchemy tree from being rolled (was highly unfinished/untested before)
 Zombie poison effect on legendary doesn't scale up fix
 Resilient/HoldOut tooltip fix, currently states -1 turn on debuffs, but gives -5
+
+14.0.0.17
+**Fixes**
+Clears the mustering troops on legendary bandit contract completion
