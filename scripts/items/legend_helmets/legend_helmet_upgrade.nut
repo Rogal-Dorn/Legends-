@@ -113,6 +113,58 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 		return this.m.StaminaModifier;
 	}
 
+	function getIconOverlay()
+	{
+		local L = [this.m.Icon];
+		switch (this.m.Type)
+		{
+			case this.Const.Items.HelmetUpgrades.Helm:
+				L.push("layers/layer_1.png");
+				break;
+			case this.Const.Items.HelmetUpgrades.Top:
+				L.push("layers/layer_2.png");
+				break;
+			case this.Const.Items.HelmetUpgrades.Vanity:
+				L.push("layers/layer_3.png");
+				break;
+		}
+
+		if (L.len() == 0)
+		{
+			return [
+				""
+			];
+		}
+
+		return L;
+	}
+
+	function getIconLargeOverlay()
+	{
+		local L = [this.m.Icon];
+		switch (this.m.Type)
+		{
+			case this.Const.Items.HelmetUpgrades.Helm:
+				L.push("layers/layer_1.png");
+				break;
+			case this.Const.Items.HelmetUpgrades.Top:
+				L.push("layers/layer_2.png");
+				break;
+			case this.Const.Items.HelmetUpgrades.Vanity:
+				L.push("layers/layer_3.png");
+				break;
+		}
+
+		if (L.len() == 0)
+		{
+			return [
+				""
+			];
+		}
+
+		return L;
+	}
+
 	function getTooltip()
 	{
 		local result = [
