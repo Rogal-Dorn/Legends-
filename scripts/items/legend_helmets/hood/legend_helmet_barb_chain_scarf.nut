@@ -6,8 +6,8 @@ this.legend_helmet_barb_chain_scarf <- this.inherit("scripts/items/legend_helmet
 		this.legend_helmet.create();
 		this.m.ID = "armor.head.legend_helmet_barb_chain_scarf";
 		this.m.Name = "Barb Chain Scarf";
-		this.m.Description = "TODO legend_helmet_barb_chain_scarf";
-        this.m.Variant = 1;
+		this.m.Description = "Barb Chain Scarf";
+		this.m.Variant = 1;
 		this.m.Variants = [1, 2, 3, 4, 5];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
@@ -16,6 +16,7 @@ this.legend_helmet_barb_chain_scarf <- this.inherit("scripts/items/legend_helmet
 		this.m.Condition = 80;
 		this.m.ConditionMax = 80;
 		this.m.StaminaModifier = -4;
+		this.m.Vision = 0;
 	}
 
 	function updateVariant()

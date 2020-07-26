@@ -7,9 +7,9 @@ this.legend_helmet_leather_hood_barb <- this.inherit("scripts/items/legend_helme
         this.m.Type = this.Const.Items.HelmetUpgrades.Helm;
 		this.m.ID = "armor.head.legend_helmet_leather_hood_barb";
 		this.m.Name = "Leather Hood Barb";
-		this.m.Description = "TODO legend_helmet_leather_hood_barb";
-        this.m.ArmorDescription = this.m.Description;
-        this.m.Variant = 1;
+		this.m.Description = "Leather Hood Barb";
+		this.m.ArmorDescription = this.m.Description;
+		this.m.Variant = 1;
 		this.m.Variants = [1];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
@@ -18,6 +18,8 @@ this.legend_helmet_leather_hood_barb <- this.inherit("scripts/items/legend_helme
 		this.m.Condition = 80;
 		this.m.ConditionMax = 80;
 		this.m.StaminaModifier = -4;
+		this.m.Vision = 0;
+		this.m.IsLowerVanity = false;
 	}
 
 	function updateVariant()
@@ -28,7 +30,7 @@ this.legend_helmet_leather_hood_barb <- this.inherit("scripts/items/legend_helme
 		this.m.SpriteCorpse = "legendhelms_leather_hood_barb" + "_" + variant + "_dead";
 		this.m.IconLarge = "";
 		this.m.Icon = "legend_helmets/inventory_leather_hood_barb" + "_" + variant + ".png";
-        this.m.OverlayIcon = this.m.Icon;
+		this.m.OverlayIcon = this.m.Icon;
 		this.m.OverlayIconLarge = this.m.OverlayIcon;
 	}
 });
