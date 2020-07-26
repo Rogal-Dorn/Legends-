@@ -4,7 +4,7 @@ this.legend_helmet_golden_helm <- this.inherit("scripts/items/legend_helmets/leg
 	function create()
 	{
 		this.legend_helmet_upgrade.create();
-		this.m.Type = this.Const.Items.HelmetUpgrades.Helm;
+        this.m.Type = this.Const.Items.HelmetUpgrades.Top;
 		this.m.ID = "armor.head.legend_helmet_golden_helm";
 		this.m.Name = "Golden Helm";
 		this.m.Description = "Golden Helm";

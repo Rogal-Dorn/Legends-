@@ -4,7 +4,7 @@ this.legend_helmet_ancient_crown <- this.inherit("scripts/items/legend_helmets/l
 	function create()
 	{
 		this.legend_helmet_upgrade.create();
-		this.m.Type = this.Const.Items.HelmetUpgrades.Helm;
+        this.m.Type = this.Const.Items.HelmetUpgrades.Top;
 		this.m.ID = "armor.head.legend_helmet_ancient_crown";
 		this.m.Name = "Ancient Crown";
 		this.m.Description = "Ancient Crown";
