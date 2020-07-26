@@ -55,8 +55,7 @@ this.legends_beggar_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		bros[0].getTags().set("IsPlayerCharacter", true);
 		foreach( bro in bros )
 		{
-			local val = this.World.LegendsMod.BroStats().addNewActorID(bro);
-			bro.m.CompanyID = val;
+			bro.m.CompanyID = this.World.LegendsMod.BroStats().addNewActorID(bro);
 		}
 
 		

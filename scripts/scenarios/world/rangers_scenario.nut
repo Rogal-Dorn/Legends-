@@ -85,8 +85,7 @@ this.rangers_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		items.equip(this.new("scripts/items/weapons/legend_slingstaff"));
 		foreach( bro in bros )
 		{
-			local val = this.World.LegendsMod.BroStats().addNewActorID(bro);
-			bro.m.CompanyID = val;
+			bro.m.CompanyID = this.World.LegendsMod.BroStats().addNewActorID(bro);
 		}
 		this.World.Assets.m.BusinessReputation = 50;
 		

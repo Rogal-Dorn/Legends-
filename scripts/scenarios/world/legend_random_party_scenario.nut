@@ -38,8 +38,7 @@ this.legend_random_party_scenario <- this.inherit("scripts/scenarios/world/start
 
 		foreach( bro in this.World.getPlayerRoster().getAll() )
 		{
-			local val = this.World.LegendsMod.BroStats().addNewActorID(bro);
-			bro.m.CompanyID = val;
+			bro.m.CompanyID = this.World.LegendsMod.BroStats().addNewActorID(bro);
 		}
 
 		
