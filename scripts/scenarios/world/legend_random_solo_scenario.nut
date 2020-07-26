@@ -36,7 +36,7 @@ this.legend_random_solo_scenario<- this.inherit("scripts/scenarios/world/startin
 
 		foreach( bro in bros )
 		{
-			local val = this.World.State.addNewID(bro);
+			local val = this.World.LegendsMod.BroStats().addNewActorID(bro);
 			bro.m.CompanyID = val;
 		}
 
