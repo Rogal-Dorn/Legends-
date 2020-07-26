@@ -69,7 +69,6 @@ this.cultist_origin_sacrifice_event <- this.inherit("scripts/events/event", {
 					text = _event.m.Sacrifice.getName() + " has died"
 				});
 				_event.m.Sacrifice.getItems().transferToStash(this.World.Assets.getStash());
-				_event.m.Sacrifice.removeActiveRelationship();
 				this.World.getPlayerRoster().remove(_event.m.Sacrifice);
 				local brothers = this.World.getPlayerRoster().getAll();
 				local hasProphet = false;
@@ -103,31 +102,6 @@ this.cultist_origin_sacrifice_event <- this.inherit("scripts/events/event", {
 								icon = this.Const.MoodStateIcon[bro.getMoodState()],
 								text = bro.getName() + this.Const.MoodStateEvent[bro.getMoodState()]
 							});
-						}
-
-
-
-						//set relations
-						if (this.World.LegendsMod.Configs().RelationshipsEnabled())
-						{
-							local relations = this.World.getPlayerRoster().getAll();
-							foreach( relation in relations )
-							{
-								if (relation.getBackground().getID() == "background.cultist")
-								{
-								local modifier1 = this.Math.rand(1, 5);
-								bro.changeActiveRelationship( relation, modifier1 );
-								local modifier2 = this.Math.rand(1, 5);
-								relation.changeActiveRelationship( bro, modifier2 );
-								this.List.push({
-									id = 11,
-									icon = "ui/icons/relation.png",
-									text = relation.getName() + " and " + bro.getName() + " grow closer"
-								});
-
-
-								}
-							}
 						}
 
 

@@ -38,8 +38,6 @@ this.legend_entrancer_background <- this.inherit("scripts/skills/backgrounds/cha
 		this.m.IsFemaleBackground = true;
 		this.m.IsPerformingBackground = true;
 		this.m.IsDruidRecruitBackground = true;
-		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
-		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Good;
 		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[0];
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[0];
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[1];

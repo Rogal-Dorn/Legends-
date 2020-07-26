@@ -19,8 +19,6 @@ this.legend_philosopher_background <- this.inherit("scripts/skills/backgrounds/c
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Body = "bust_naked_body_01";
 		this.m.Level = 1;
-		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
-		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[1];
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[3];
 		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Training[2];

@@ -28,8 +28,6 @@ this.legend_horse <- this.inherit("scripts/skills/backgrounds/character_backgrou
 		this.m.IsLowborn = true;
 		this.m.IsUntalented = true;
 		this.m.IsStabled = true;
-		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
-		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[3];
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[4];
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[3];

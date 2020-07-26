@@ -60,20 +60,6 @@ this.education_event <- this.inherit("scripts/events/event", {
 				this.Characters.push(_event.m.Scholar.getImagePath());
 				this.Characters.push(_event.m.DumbGuy.getImagePath());
 
-				//set relations
-				local modifier2 = this.Math.rand(-1, -5);
-				_event.m.Scholar.changeActiveRelationship( _event.m.DumbGuy, modifier2 );
-
-				_event.m.Scholar.worsenMood(2.0, "Failed to teach " + _event.m.DumbGuy.getName() + " anything");
-				if (this.World.LegendsMod.Configs().RelationshipsEnabled())
-				{
-					this.List.push({
-						id = 11,
-						icon = "ui/icons/relation.png",
-						text = _event.m.Scholar.getName() + " and " + _event.m.DumbGuy.getName() + " grow distant"
-					});
-				}
-
 				if (_event.m.Scholar.getMoodState() < this.Const.MoodState.Neutral)
 				{
 					this.List = [
@@ -109,20 +95,6 @@ this.education_event <- this.inherit("scripts/events/event", {
 				this.Characters.push(_event.m.DumbGuy.getImagePath());
 				_event.m.Scholar.improveMood(2.0, "Taught " + _event.m.DumbGuy.getName() + " something");
 				_event.m.DumbGuy.getSkills().removeByID("trait.dumb");
-
-				//set relations
-				local modifier1 = this.Math.rand(5, 10);
-				_event.m.DumbGuy.changeActiveRelationship( _event.m.Scholar, modifier1 );
-				local modifier2 = this.Math.rand(5, 10);
-				_event.m.Scholar.changeActiveRelationship( _event.m.DumbGuy, modifier2 );
-				if (this.World.LegendsMod.Configs().RelationshipsEnabled())
-				{
-					this.List.push({
-						id = 10,
-						icon = "ui/icons/relation.png",
-						text = _event.m.DumbGuy.getName() + " and " + _event.m.Scholar.getName() + " grow closer"
-					});
-				}
 
 				this.List.push({
 					id = 10,

@@ -27,8 +27,6 @@ this.pacified_flagellant_background <- this.inherit("scripts/skills/backgrounds/
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Untidy;
 		this.m.IsOffendedByViolence = true;
-		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Kind;
-		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[2];
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[3];
 		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[3];

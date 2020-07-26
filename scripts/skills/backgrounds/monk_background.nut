@@ -47,8 +47,6 @@ this.monk_background <- this.inherit("scripts/skills/backgrounds/character_backg
 		this.m.IsOffendedByViolence = true;
 		this.m.IsCrusaderRecruitBackground = true;
 		this.m.IsEducatedBackground = true;
-		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Good;
-		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[2];
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[3];
 		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[3];

@@ -54,8 +54,6 @@ this.legend_beggar_commander_background <- this.inherit("scripts/skills/backgrou
 
 		this.m.IsLowborn = true;
 		this.m.Level = 1;
-		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
-		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[0];
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[0];
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[0];

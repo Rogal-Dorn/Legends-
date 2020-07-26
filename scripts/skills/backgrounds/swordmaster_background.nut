@@ -58,8 +58,6 @@ this.swordmaster_background <- this.inherit("scripts/skills/backgrounds/characte
 		this.m.IsCombatBackground = true;
 		this.m.IsRangerRecruitBackground = true;
 		this.m.IsCrusaderRecruitBackground = true;
-		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Cruel;
-		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Chivalrous;
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[1];
 		this.m.Modifiers.Repair = this.Const.LegendMod.ResourceModifiers.Repair[1];
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[3];

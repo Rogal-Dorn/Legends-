@@ -42,8 +42,6 @@ this.legend_premonitionist_background <- this.inherit("scripts/skills/background
 		this.m.IsEducatedBackground = true;
 		this.m.IsUntalented = true;
 		this.m.Level = 1;
-		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
-		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Chivalrous;
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Scout[3];
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Meds[2];
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[2];

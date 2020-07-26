@@ -47,8 +47,6 @@ this.orc_slayer_background <- this.inherit("scripts/skills/backgrounds/character
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Raider;
 		this.m.Body = "bust_naked_body_01";
-		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
-		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.Level = 9;
 		this.m.IsCombatBackground = true;
 		this.m.IsRangerRecruitBackground = true;

@@ -61,32 +61,6 @@ this.monk_vs_monk_event <- this.inherit("scripts/events/event", {
 				this.Characters.push(_event.m.Monk1.getImagePath());
 				this.Characters.push(_event.m.Monk2.getImagePath());
 
-				//set relations
-				local modifier1 = this.Math.rand(5, 10);
-				_event.m.Monk1.changeActiveRelationship( _event.m.Monk2, modifier1 );
-				local modifier2 = this.Math.rand(5, 10);
-				_event.m.Monk2.changeActiveRelationship( _event.m.Monk1, modifier2 );
-
-				if (this.World.LegendsMod.Configs().RelationshipsEnabled())
-				{
-				this.List.push({
-					id = 10,
-					icon = "ui/icons/relation.png",
-					text = _event.m.Monk1.getName() + " and " + _event.m.Monk2.getName() + " grow closer"
-				});
-				}
-
-				_event.m.Monk1.improveMood(1.0, "Had a stimulating discourse on religious matters");
-
-				if (_event.m.Monk1.getMoodState() >= this.Const.MoodState.Neutral)
-				{
-					this.List.push({
-						id = 10,
-						icon = this.Const.MoodStateIcon[_event.m.Monk1.getMoodState()],
-						text = _event.m.Monk1.getName() + this.Const.MoodStateEvent[_event.m.Monk1.getMoodState()]
-					});
-				}
-
 				_event.m.Monk2.improveMood(1, "Had a stimulating discourse on religious matters");
 
 				if (_event.m.Monk2.getMoodState() >= this.Const.MoodState.Neutral)
@@ -121,16 +95,6 @@ this.monk_vs_monk_event <- this.inherit("scripts/events/event", {
 				this.Characters.push(_event.m.Monk1.getImagePath());
 				this.Characters.push(_event.m.Monk2.getImagePath());
 
-				local modifier1 = this.Math.rand(-5, -10);
-				_event.m.Monk1.changeActiveRelationship( _event.m.Monk2, modifier1 );
-				local modifier2 = this.Math.rand(-5, -10);
-				_event.m.Monk2.changeActiveRelationship( _event.m.Monk1, modifier2 );
-
-				this.List.push({
-					id = 10,
-					icon = "ui/icons/relation.png",
-					text = _event.m.Monk1.getName() + " and " + _event.m.Monk2.getName() + " grow distant"
-				});
 
 				_event.m.Monk1.getBaseProperties().Bravery += 1;
 				_event.m.Monk1.getSkills().update();
