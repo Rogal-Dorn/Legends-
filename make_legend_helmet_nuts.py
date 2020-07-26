@@ -272,6 +272,12 @@ def main():
         rname = d["name"]
         rname = rname.replace("_", " ")
         rname = rname.title()
+        testname = rname
+        testname = testname.split()[-1]
+        if testname == 'Tailed':
+            print(testname)
+            print(rname)
+            rname = "Tailed " + rname.rsplit(' ', 1)[0]
         opts = dict(
             name=fname,
             rname=rname,
@@ -289,6 +295,6 @@ def main():
         F.write(text)
         F.close()
 
-        print('"' + layer + "/" + fname + '",')
+        #print('"' + layer + "/" + fname + '",')
 
 main()
