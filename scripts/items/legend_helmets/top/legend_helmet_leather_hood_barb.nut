@@ -4,7 +4,7 @@ this.legend_helmet_leather_hood_barb <- this.inherit("scripts/items/legend_helme
 	function create()
 	{
 		this.legend_helmet_upgrade.create();
-        this.m.Type = this.Const.Items.HelmetUpgrades.Top;
+        this.m.Type = this.Const.Items.HelmetUpgrades.Helm;
 		this.m.ID = "armor.head.legend_helmet_leather_hood_barb";
 		this.m.Name = "Leather Hood Barb";
 		this.m.Description = "TODO legend_helmet_leather_hood_barb";
