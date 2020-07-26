@@ -241,12 +241,14 @@ World.getPlayerRoster = function()
   return playerRosterWrapper;
 }
 
-local removeFunc = World.getPlayerRoster().remove;
-World.getPlayerRoster().remove = function(actor)
-{
-  World.LegendsMod.BroStats().removeActorID(actor.getCompanyID())
-  removeFunc();
-}
+//could never get this to work lol
+// local removeFunc = World.getPlayerRoster().remove;
+// World.getPlayerRoster().remove = function(actor)
+// {
+//   logWarning("At least we got here?");
+//   World.LegendsMod.BroStats().removeActorID(actor.getCompanyID());
+//   removeFunc(actor);
+// }
 
 local getRosterFunc = World.getRoster, lastRoster = { }, rosterWrapper = { };
 World.getRoster = function(id)

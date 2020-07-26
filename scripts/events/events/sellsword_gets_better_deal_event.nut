@@ -21,7 +21,7 @@ this.sellsword_gets_better_deal_event <- this.inherit("scripts/events/event", {
 					function getResult( _event )
 					{
 						this.World.Statistics.addFallen(_event.m.Sellsword, "Got a better paying offer");
-						//this.World.LegendsMod.BroStats().removeActorID(_event.m.Sellsword.getCompanyID());
+						this.World.LegendsMod.BroStats().removeActorID(_event.m.Sellsword.getCompanyID());
 						this.World.getPlayerRoster().remove(_event.m.Sellsword);
 						return 0;
 					}
@@ -98,7 +98,7 @@ this.sellsword_gets_better_deal_event <- this.inherit("scripts/events/event", {
 				});
 				_event.m.Sellsword.getItems().transferToStash(this.World.Assets.getStash());
 				this.World.Statistics.addFallen(_event.m.Sellsword, "Got a better paying offer");	
-				//this.World.LegendsMod.BroStats().removeActorID(_event.m.Sellsword.getCompanyID());			
+				this.World.LegendsMod.BroStats().removeActorID(_event.m.Sellsword.getCompanyID());			
 				this.World.getPlayerRoster().remove(_event.m.Sellsword);
 			}
 

@@ -93,7 +93,7 @@ this.cultist_finale_event <- this.inherit("scripts/events/event", {
 						text = "The company\'s moral reputation decreases greatly"
 					});
 				_event.m.Sacrifice.getItems().transferToStash(this.World.Assets.getStash());
-				//this.World.LegendsMod.BroStats().removeActorID(_event.m.Sacrifice.getCompanyID());
+				this.World.LegendsMod.BroStats().removeActorID(_event.m.Sacrifice.getCompanyID());
 				this.World.getPlayerRoster().remove(_event.m.Sacrifice);
 				this.World.Assets.getStash().makeEmptySlots(1);
 				local item
