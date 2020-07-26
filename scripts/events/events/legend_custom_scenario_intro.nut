@@ -523,7 +523,8 @@ this.legend_custom_scenario_intro <- this.inherit("scripts/events/event", {
 						_event.m.Dude.fillAttributeLevelUpValues(this.Const.XP.MaxLevelWithPerkpoints - 1);
 						_event.m.Dude = null
 
-						 this.World.getPlayerRoster().remove(_event.m.StartBro)
+						this.World.LegendsMod.BroStats().removeActorID(_event.m.StartBro.getCompanyID());
+						this.World.getPlayerRoster().remove(_event.m.StartBro)
 
 
 

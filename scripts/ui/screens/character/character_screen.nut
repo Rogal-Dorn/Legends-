@@ -354,7 +354,8 @@ this.character_screen <- {
 			}
 
 			bro.getItems().transferToStash(this.World.Assets.getStash());
-			this.World.getPlayerRoster().remove(bro);
+			this.World.LegendsMod.BroStats().removeActorID(bro.getCompanyID());
+						this.World.getPlayerRoster().remove(bro);
 			this.loadData();
 			this.World.State.updateTopbarAssets();
 		}

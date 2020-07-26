@@ -28,6 +28,11 @@ this.legends_brother_statistics_manager <- {
 
     function removeActorID( _id )
 	{
+        if ( _id < 0 || _id > 26)
+        {
+            this.logWarning("Attempted to remove ID of: " + _id);
+            return;
+        }
 		this.m.IDToRef[_id] = -1;
 	}
 
