@@ -42,7 +42,7 @@
 					if (bro.getPlaceInFormation() <= 26 && !bro.isPlacedOnMap() && bro.getTags().get("Devoured") == true)
 					{
 						bro.onDeath(null, null, null, this.Const.FatalityType.Devoured);
-						//this.World.LegendsMod.BroStats().removeActorID(bro.getCompanyID());
+						this.World.LegendsMod.BroStats().removeActorID(bro.getCompanyID());
 						this.World.getPlayerRoster().remove(bro);
 					}
 					else if (bro.isPlacedOnMap())
@@ -90,7 +90,7 @@
 						if (bro.isAlive())
 						{
 							bro.onDeath(null, null, null, this.Const.FatalityType.Devoured);
-							//this.World.LegendsMod.BroStats().removeActorID(bro.getCompanyID());
+							this.World.LegendsMod.BroStats().removeActorID(bro.getCompanyID());
 							this.World.getPlayerRoster().remove(bro);
 						}
 					}
@@ -397,7 +397,7 @@
 			foreach( bro in survivor )
 			{
 				this.World.Statistics.addFallen(bro);
-				//this.World.LegendsMod.BroStats().removeActorID(bro.getCompanyID());
+				this.World.LegendsMod.BroStats().removeActorID(bro.getCompanyID());
 				this.World.getPlayerRoster().remove(bro);
 				bro.die();
 			}

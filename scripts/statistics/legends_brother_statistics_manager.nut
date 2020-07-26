@@ -6,7 +6,6 @@ this.legends_brother_statistics_manager <- {
     
     function create()
     {
-        this.m.IDToRef <- array(27);
         this.m.ActorInteractions <- array(27); //suposedly this is how u do 2d arrays in squirrel, code from https://forums.electricimp.com/t/2d-array/2788 
         foreach (subarr in this.m.ActorInteractions)
         {
@@ -29,29 +28,23 @@ this.legends_brother_statistics_manager <- {
     function removeActorID( _id )
 	{
         if ( _id < 0 || _id > 26)
-        {
-            this.logWarning("Attempted to remove ID of: " + _id);
             return;
-        }
+
 		this.m.IDToRef[_id] = -1;
 	}
 
+
     function idExists( _id )
     {
-        return !(this.m.IDToRef[_id] == -1);
+        return !(_id < 0 || _id > 26 || this.m.IDToRef[_id] == -1);
     }
 
     function getRefFromID( _id )
 	{
-		if (_id == -1) return null;
+        if (_id < 0 || _id > 26 || this.m.IDToRef[_id] == -1)
+            return null;
 
-		if (_id > this.m.IDToRef.len() - 1) return null;
-
-		local val = this.m.IDToRef[_id];
-		if (val == -1) {
-			return null
-		}
-		return val;
+		return this.m.IDToRef[_id];
 	}
 
     //i.e. we can call `this.World.LegendsMod.getStatistics().incrementForAll("BattlesTogether")`
