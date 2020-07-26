@@ -10,7 +10,7 @@ this.legend_helmet_feathered_hat <- this.inherit("scripts/items/legend_helmets/l
 		this.m.Description = "TODO legend_helmet_feathered_hat";
         this.m.ArmorDescription = this.m.Description;
         this.m.Variant = 1;
-		this.m.Variants = [1, 2];
+		this.m.Variants = [1];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
