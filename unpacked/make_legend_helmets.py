@@ -3,8 +3,8 @@ from string import Template
 from shutil import copyfile
 import os
 
-Layer = '<sprite id="$name" offsetY="35" ic="FF4E5053" width="184" height="222" img="$name_path" left="-41" right="43" top="-29" bottom="105" />\n'
-LayerDamaged = '<sprite id="$damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="$damaged_path" left="-39" right="43" top="-29" bottom="105" />\n'
+Layer = '<sprite id="$name" offsetY="35" ic="FF4E5053" width="184" height="222" img="$name_path" left="-71" right="66" top="-40" bottom="108" />\n'
+LayerDamaged = '<sprite id="$damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="$damaged_path" left="-71" right="66" top="-40" bottom="108" />\n'
 LayerDead = '<sprite id="$dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="$dead_path" left="-57" right="59" top="-53" bottom="55" />\n'
 
 layers = [
