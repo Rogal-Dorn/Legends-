@@ -116,7 +116,7 @@ layers = [
     {"name": "chain_scarf",         "layer": "hood", "min": 1, "max": 5, "base": True, "title": "Chain Scarf"},
     {"name": "cloth_scarf",         "layer": "hood", "min": 1, "max": 5, "base": True, "title": "Cloth Scarf"},
     {"name": "goblin_scarf",        "layer": "hood", "min": 1, "max": 4, "base": True, "title": "Goblin Scarf"},
-    {"name": "leather_hood",        "layer": "hood", "min": 1, "max": 5, "base": True, "title": "Leather Hood"},
+    {"name": "leather_hood",        "layer": "top", "min": 1, "max": 5, "base": True, "title": "Leather Hood"},
     {"name": "padded_hood",         "layer": "hood", "min": 1, "max": 3, "base": True, "title": "Padded Hood"},
     {"name": "patched_hood",        "layer": "hood", "min": 1, "max": 1, "base": True, "title": "Patched Hood"},
     {"name": "rotten_chain_scarf",  "layer": "hood", "min": 1, "max": 5, "base": True, "title": "Rotten Chain Scarf"},
@@ -132,7 +132,7 @@ layers = [
     {"name": "ancient_beard_mask",                  "layer": "helm", "min": 1, "max": 1, "title": "Ancient Beard Mask"},
     {"name": "ancient_conic_helm",                  "layer": "helm", "min": 1, "max": 1, "title": "Ancient Conic Helm"},
     {"name": "ancient_crested",                     "layer": "helm", "min": 1, "max": 1, "title": "Ancient Crested Helm"},
-    {"name": "ancient_crown",                       "layer": "helm", "min": 1, "max": 1, "title": "Ancient Crown"},
+    {"name": "ancient_crown",                       "layer": "top", "min": 1, "max": 1, "title": "Ancient Crown"},
     {"name": "ancient_dome",                        "layer": "helm", "min": 1, "max": 1, "title": "Ancient Dome"},
     {"name": "ancient_dome_tailed",                 "layer": "helm", "min": 1, "max": 1, "title": "Tailed Ancient Dome"},
     {"name": "ancient_face_helm",                   "layer": "helm", "min": 1, "max": 1, "title": "Ancient Face Helm"},
@@ -187,7 +187,7 @@ layers = [
     {"name": "goblin_leaf_helm",        "layer": "top", "min": 1, "max": 1, "title": "Goblin Leaf Helm"},
     {"name": "vampire_crown",           "layer": "top", "min": 1, "max": 1, "title": "Vampire Crown"},
     {"name": "chain_attachment",        "layer": "top", "min": 1, "max": 1, "title": "Chain Attachment"},
-    {"name": "cult_hood",               "layer": "top", "min": 1, "max": 7, "title": "Cult Hood"},
+    {"name": "cult_hood",               "layer": "helm", "min": 1, "max": 7, "title": "Cult Hood"},
     {"name": "eyemask",                 "layer": "top", "min": 1, "max": 2, "title": "Eyemask"},
     {"name": "facemask",                "layer": "top", "min": 1, "max": 6, "title": "Facemask"},
     {"name": "faceplate_full",          "layer": "top", "min": 1, "max": 1, "title": "Full Faceplate"},
@@ -244,7 +244,7 @@ layers = [
     {"name": "feather_crest",   "layer": "vanity", "lowervanity": True, "min": 1, "max": 5, "title": "Feather Crest"},
     {"name": "knotted_tail",    "layer": "vanity", "lowervanity": True, "min": 1, "max": 4, "title": "Knotted Tail"},
     {"name": "orc_tail",        "layer": "vanity", "lowervanity": True, "min": 1, "max": 2, "title": "Orc Tail"},
-    {"name": "wings",           "layer": "vanity", "lowervanity": True, "min": 1, "max": 6, "title": "Wings   "}
+    {"name": "wings",           "layer": "vanity", "lowervanity": True, "min": 1, "max": 6, "title": "Wings"}
 ]
 
 def main():
