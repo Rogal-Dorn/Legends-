@@ -18,10 +18,12 @@ this.$name <- this.inherit("scripts/items/legend_helmets/legend_helmet", {
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
-		this.m.Value = 200;
-		this.m.Condition = 80;
-		this.m.ConditionMax = 80;
-		this.m.StaminaModifier = -4;
+		this.m.Value = $value;
+		this.m.Condition = $condition;
+		this.m.ConditionMax = $condition;
+		this.m.StaminaModifier = $stamina;
+        this.m.Vision = $vision;
+
 	}
 
 	function updateVariant()
@@ -52,10 +54,12 @@ this.$name <- this.inherit("scripts/items/legend_helmets/legend_helmet_upgrade",
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
-		this.m.Value = 200;
-		this.m.Condition = 80;
-		this.m.ConditionMax = 80;
-		this.m.StaminaModifier = -4;
+		this.m.Value = $value;
+		this.m.Condition = $condition;
+		this.m.ConditionMax = $condition;
+		this.m.StaminaModifier = $stamina;
+        this.m.Vision = $vision;
+
 	}
 
 	function updateVariant()
@@ -88,10 +92,11 @@ this.$name <- this.inherit("scripts/items/legend_helmets/legend_helmet_upgrade",
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
-		this.m.Value = 200;
-		this.m.Condition = 80;
-		this.m.ConditionMax = 80;
-		this.m.StaminaModifier = -4;
+		this.m.Value = $value;
+		this.m.Condition = $condition;
+		this.m.ConditionMax = $condition;
+		this.m.StaminaModifier = $stamina;
+        this.m.Vision = $vision;
         this.m.IsLowerVanity = true;
 	}
 
@@ -110,142 +115,147 @@ this.$name <- this.inherit("scripts/items/legend_helmets/legend_helmet_upgrade",
 '''
 
 layers = [
-    {"name": "barb_chain_scarf",    "layer": "hood", "min": 1, "max": 5, "base": True},
-    {"name": "chain_hood",          "layer": "hood", "min": 1, "max": 4, "base": True},
-    {"name": "chain_hood_full",     "layer": "hood", "min": 1, "max": 6, "base": True},
-    {"name": "chain_scarf",         "layer": "hood", "min": 1, "max": 5, "base": True},
-    {"name": "cloth_scarf",         "layer": "hood", "min": 1, "max": 5, "base": True},
-    {"name": "goblin_scarf",        "layer": "hood", "min": 1, "max": 4, "base": True},
-    {"name": "leather_hood",        "layer": "hood", "min": 1, "max": 5, "base": True},
-    {"name": "padded_hood",         "layer": "hood", "min": 1, "max": 3, "base": True},
-    {"name": "patched_hood",        "layer": "hood", "min": 1, "max": 1, "base": True},
-    {"name": "rotten_chain_scarf",  "layer": "hood", "min": 1, "max": 5, "base": True},
-    {"name": "simple_hood",         "layer": "hood", "min": 1, "max": 5, "base": True},
-    {"name": "padded_cap",          "layer": "hood", "min": 1, "max": 1, "base": True},
-    {"name": "hood_cloth_round",    "layer": "hood", "min": 1, "max": 1, "base": True, "title" : "Rounded Cloth Hood"},
-    {"name": "hood_cloth_square",   "layer": "hood", "min": 1, "max": 1, "base": True},
-    {"name": "hood_cloth_wide",     "layer": "hood", "min": 1, "max": 2, "base": True},
-    {"name": "cloth_long_hood",     "layer": "hood", "min": 1, "max": 4, "base": True},
-    {"name": "cloth_bandana",       "layer": "hood", "min": 1, "max": 5, "base": True},
-    {"name": "leather_cap",         "layer": "hood", "min": 1, "max": 1, "base": True},
+    {"name": "barb_chain_scarf",    "layer": "hood", "min": 1, "max": 5, "base": True, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "chain_hood",          "layer": "hood", "min": 1, "max": 4, "base": True, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "chain_hood_full",     "layer": "hood", "min": 1, "max": 6, "base": True, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "chain_scarf",         "layer": "hood", "min": 1, "max": 5, "base": True, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "cloth_scarf",         "layer": "hood", "min": 1, "max": 5, "base": True, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "goblin_scarf",        "layer": "hood", "min": 1, "max": 4, "base": True, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "leather_hood",        "layer": "hood", "min": 1, "max": 5, "base": True, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "padded_hood",         "layer": "hood", "min": 1, "max": 3, "base": True, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "patched_hood",        "layer": "hood", "min": 1, "max": 1, "base": True, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "rotten_chain_scarf",  "layer": "hood", "min": 1, "max": 5, "base": True, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "simple_hood",         "layer": "hood", "min": 1, "max": 5, "base": True, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "padded_cap",          "layer": "hood", "min": 1, "max": 1, "base": True, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "hood_cloth_round",    "layer": "hood", "min": 1, "max": 1, "base": True, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0, "title" : "Rounded Cloth Hood"},
+    {"name": "hood_cloth_square",   "layer": "hood", "min": 1, "max": 1, "base": True, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "hood_cloth_wide",     "layer": "hood", "min": 1, "max": 2, "base": True, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "cloth_long_hood",     "layer": "hood", "min": 1, "max": 4, "base": True, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "cloth_bandana",       "layer": "hood", "min": 1, "max": 5, "base": True, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "leather_cap",         "layer": "hood", "min": 1, "max": 1, "base": True, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
 
-    {"name": "ancient_beard_mask",                  "layer": "helm", "min": 1, "max": 1},
-    {"name": "ancient_conic_helm",                  "layer": "helm", "min": 1, "max": 1},
-    {"name": "ancient_crested",                     "layer": "helm", "min": 1, "max": 1},
-    {"name": "ancient_crown",                       "layer": "helm", "min": 1, "max": 1},
-    {"name": "ancient_dome",                        "layer": "helm", "min": 1, "max": 1},
-    {"name": "ancient_dome_tailed",                 "layer": "helm", "min": 1, "max": 1},
-    {"name": "ancient_face_helm",                   "layer": "helm", "min": 1, "max": 1},
-    {"name": "ancient_face_plate",                  "layer": "helm", "min": 1, "max": 1},
-    {"name": "ancient_kettle",                      "layer": "helm", "min": 1, "max": 3},
-    {"name": "ancient_legionaire",                  "layer": "helm", "min": 1, "max": 1},
-    {"name": "ancient_lion_mask",                   "layer": "helm", "min": 1, "max": 1},
-    {"name": "ancient_mask",                        "layer": "helm", "min": 1, "max": 1},
-    {"name": "ancient_side_hawk",                   "layer": "helm", "min": 1, "max": 1},
-    {"name": "ancient_tailed_conic_helm",           "layer": "helm", "min": 1, "max": 1},
-    {"name": "barbute",                             "layer": "helm", "min": 1, "max": 7},
-    {"name": "basinet",                             "layer": "helm", "min": 1, "max": 7},
-    {"name": "carthaginian",                        "layer": "helm", "min": 1, "max": 3},
-    {"name": "conic_helm",                          "layer": "helm", "min": 1, "max": 6},
-    {"name": "crude_cylinder_helm",                 "layer": "helm", "min": 1, "max": 2},
-    {"name": "crude_metal_helm",                    "layer": "helm", "min": 1, "max": 3},
-    {"name": "crude_skull_helm",                    "layer": "helm", "min": 1, "max": 1},
-    {"name": "flat_top_face_plate",                 "layer": "helm", "min": 1, "max": 6},
-    {"name": "flat_top_helm",                       "layer": "helm", "min": 1, "max": 6},
-    {"name": "goblin_chain_helm",                   "layer": "helm", "min": 1, "max": 1},
-    {"name": "goblin_leather_helm",                 "layer": "helm", "min": 1, "max": 1},
-    {"name": "goblin_leather_mask",                 "layer": "helm", "min": 1, "max": 1},
-    {"name": "goblin_spiked_helm",                  "layer": "helm", "min": 1, "max": 1},
-    {"name": "golden_helm",                         "layer": "helm", "min": 1, "max": 1},
-    {"name": "great_helm",                          "layer": "helm", "min": 1, "max": 6},
-    {"name": "heavy_plate_helm",                    "layer": "helm", "min": 1, "max": 2},
-    {"name": "heavy_spiked_helm",                   "layer": "helm", "min": 1, "max": 1},
-    {"name": "horsetail",                           "layer": "helm", "min": 1, "max": 6},
-    {"name": "kettle_helm",                         "layer": "helm", "min": 1, "max": 6},
-    {"name": "legend_ancient_gladiator",            "layer": "helm", "min": 1, "max": 1},
-    {"name": "legend_ancient_legionaire_restored",  "layer": "helm", "min": 1, "max": 1},
-    {"name": "legend_frogmouth",                    "layer": "helm", "min": 1, "max": 3},
-    {"name": "nordic_helm",                         "layer": "helm", "min": 1, "max": 6},
-    {"name": "norman_helm",                         "layer": "helm", "min": 1, "max": 5},
-    {"name": "orc_double_helm",                     "layer": "helm", "min": 1, "max": 1},
-    {"name": "orc_great_helm",                      "layer": "helm", "min": 1, "max": 1},
-    {"name": "orc_horn_mask",                       "layer": "helm", "min": 1, "max": 1},
-    {"name": "orc_leather_mask",                    "layer": "helm", "min": 1, "max": 1},
-    {"name": "orc_metal_mask",                      "layer": "helm", "min": 1, "max": 1},
-    {"name": "orc_strapped_helm",                   "layer": "helm", "min": 1, "max": 1},
+    {"name": "ancient_beard_mask",                  "layer": "helm", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "ancient_conic_helm",                  "layer": "helm", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "ancient_crested",                     "layer": "helm", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "ancient_crown",                       "layer": "helm", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "ancient_dome",                        "layer": "helm", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "ancient_dome_tailed",                 "layer": "helm", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "ancient_face_helm",                   "layer": "helm", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "ancient_face_plate",                  "layer": "helm", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "ancient_kettle",                      "layer": "helm", "min": 1, "max": 3, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "ancient_legionaire",                  "layer": "helm", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "ancient_lion_mask",                   "layer": "helm", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "ancient_mask",                        "layer": "helm", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "ancient_side_hawk",                   "layer": "helm", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "ancient_tailed_conic_helm",           "layer": "helm", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "barbute",                             "layer": "helm", "min": 1, "max": 7, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "basinet",                             "layer": "helm", "min": 1, "max": 7, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "carthaginian",                        "layer": "helm", "min": 1, "max": 3, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "conic_helm",                          "layer": "helm", "min": 1, "max": 6, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "crude_cylinder_helm",                 "layer": "helm", "min": 1, "max": 2, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "crude_metal_helm",                    "layer": "helm", "min": 1, "max": 3, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "crude_skull_helm",                    "layer": "helm", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "flat_top_face_plate",                 "layer": "helm", "min": 1, "max": 6, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "flat_top_helm",                       "layer": "helm", "min": 1, "max": 6, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "goblin_chain_helm",                   "layer": "helm", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "goblin_leather_helm",                 "layer": "helm", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "goblin_leather_mask",                 "layer": "helm", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "goblin_spiked_helm",                  "layer": "helm", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "golden_helm",                         "layer": "helm", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "great_helm",                          "layer": "helm", "min": 1, "max": 6, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "heavy_plate_helm",                    "layer": "helm", "min": 1, "max": 2, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "heavy_spiked_helm",                   "layer": "helm", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "horsetail",                           "layer": "helm", "min": 1, "max": 6, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "kettle_helm",                         "layer": "helm", "min": 1, "max": 6, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "legend_ancient_gladiator",            "layer": "helm", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "legend_ancient_legionaire_restored",  "layer": "helm", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "legend_frogmouth",                    "layer": "helm", "min": 1, "max": 3, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "nordic_helm",                         "layer": "helm", "min": 1, "max": 6, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "norman_helm",                         "layer": "helm", "min": 1, "max": 5, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "orc_double_helm",                     "layer": "helm", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "orc_great_helm",                      "layer": "helm", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "orc_horn_mask",                       "layer": "helm", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "orc_leather_mask",                    "layer": "helm", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "orc_metal_mask",                      "layer": "helm", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "orc_strapped_helm",                   "layer": "helm", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
 
-    {"name": "rotten_flat_top_face_mask",   "layer": "helm", "min": 1, "max": 5},
-    {"name": "rotten_great_helm",           "layer": "helm", "min": 1, "max": 4},
-    {"name": "sallet",                      "layer": "helm", "min": 1, "max": 6},
-    {"name": "skin_helm",                   "layer": "helm", "min": 1, "max": 1},
-    {"name": "stag_helm",                   "layer": "helm", "min": 1, "max": 1},
-    {"name": "swan_helm",                   "layer": "helm", "min": 1, "max": 1},
-    {"name": "tailed_conic",                "layer": "helm", "min": 1, "max": 1},
-    {"name": "viking_helm",                 "layer": "helm", "min": 1, "max": 6},
-    {"name": "sack",                        "layer": "helm", "min": 1, "max": 12},
+    {"name": "rotten_flat_top_face_mask",   "layer": "helm", "min": 1, "max": 5, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "rotten_great_helm",           "layer": "helm", "min": 1, "max": 4, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "sallet",                      "layer": "helm", "min": 1, "max": 6, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "skin_helm",                   "layer": "helm", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "stag_helm",                   "layer": "helm", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "swan_helm",                   "layer": "helm", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "tailed_conic",                "layer": "helm", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "viking_helm",                 "layer": "helm", "min": 1, "max": 6, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "sack",                        "layer": "helm", "min": 1, "max": 12, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
 
-    {"name": "goblin_leaf_helm",        "layer": "top", "min": 1, "max": 1},
-    {"name": "vampire_crown",           "layer": "top", "min": 1, "max": 1},
-    {"name": "chain_attachment",        "layer": "top", "min": 1, "max": 1},
-    {"name": "cult_hood",               "layer": "top", "min": 1, "max": 7},
-    {"name": "eyemask",                 "layer": "top", "min": 1, "max": 2},
-    {"name": "facemask",                "layer": "top", "min": 1, "max": 6},
-    {"name": "faceplate_full",          "layer": "top", "min": 1, "max": 1},
-    {"name": "faceplate_gold",          "layer": "top", "min": 1, "max": 1},
-    {"name": "faceplate_long",          "layer": "top", "min": 1, "max": 1},
-    {"name": "faceplate_pointed",       "layer": "top", "min": 1, "max": 1},
-    {"name": "faceplate_raised",        "layer": "top", "min": 1, "max": 2},
-    {"name": "faceplate_short",         "layer": "top", "min": 1, "max": 1},
-    {"name": "faceplate_snub_nose",     "layer": "top", "min": 1, "max": 1},
-    {"name": "faceplate_winged",        "layer": "top", "min": 1, "max": 1},
-    {"name": "goblin_gillie",           "layer": "top", "min": 1, "max": 1},
-    {"name": "goblin_leaves",           "layer": "top", "min": 1, "max": 1},
-    {"name": "headband_nose",           "layer": "top", "min": 1, "max": 1},
-    {"name": "headband_side",           "layer": "top", "min": 1, "max": 1},
-    {"name": "leather_hood_barb",       "layer": "top", "min": 1, "max": 1},
-    {"name": "nose_plate",              "layer": "top", "min": 1, "max": 1},
+    {"name": "goblin_leaf_helm",        "layer": "top", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "vampire_crown",           "layer": "top", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "chain_attachment",        "layer": "top", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "cult_hood",               "layer": "top", "min": 1, "max": 7, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "eyemask",                 "layer": "top", "min": 1, "max": 2, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "facemask",                "layer": "top", "min": 1, "max": 6, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "faceplate_full",          "layer": "top", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "faceplate_gold",          "layer": "top", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "faceplate_long",          "layer": "top", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "faceplate_pointed",       "layer": "top", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "faceplate_raised",        "layer": "top", "min": 1, "max": 2, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "faceplate_short",         "layer": "top", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "faceplate_snub_nose",     "layer": "top", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "faceplate_winged",        "layer": "top", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "goblin_gillie",           "layer": "top", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "goblin_leaves",           "layer": "top", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "headband_nose",           "layer": "top", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "headband_side",           "layer": "top", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "leather_hood_barb",       "layer": "top", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "nose_plate",              "layer": "top", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
 
-    {"name": "antler",              "layer": "vanity", "min": 1, "max": 1},
-    {"name": "bear_head",           "layer": "vanity", "min": 1, "max": 1},
-    {"name": "beret",               "layer": "vanity", "min": 1, "max": 1},
-    {"name": "bull_horns",          "layer": "vanity", "min": 1, "max": 1},
-    {"name": "crown",               "layer": "vanity", "min": 1, "max": 1},
-    {"name": "faction_helmet",      "layer": "vanity", "min": 1, "max": 12},
-    {"name": "faction_helmet_2",    "layer": "vanity", "min": 1, "max": 10},
-    {"name": "feather_band",        "layer": "vanity", "min": 1, "max": 2},
-    {"name": "feathered_hat",       "layer": "vanity", "min": 1, "max": 1},
-    {"name": "fencer_hat",          "layer": "vanity", "min": 1, "max": 1},
-    {"name": "goat_horns",          "layer": "vanity", "min": 1, "max": 1},
-    {"name": "headband",            "layer": "vanity", "min": 1, "max": 16},
-    {"name": "horn_decorations",    "layer": "vanity", "min": 1, "max": 2},
-    {"name": "hunter_cap",          "layer": "vanity", "min": 1, "max": 1},
-    {"name": "impaled_head",        "layer": "vanity", "min": 1, "max": 1},
-    {"name": "jester_hat",          "layer": "vanity", "min": 1, "max": 65},
-    {"name": "metal_bird",          "layer": "vanity", "min": 1, "max": 2},
-    {"name": "noble_buckle",        "layer": "vanity", "min": 1, "max": 1},
-    {"name": "noble_feather",       "layer": "vanity", "min": 1, "max": 4},
-    {"name": "noble_floppy_hat",    "layer": "vanity", "min": 1, "max": 1},
-    {"name": "noble_hat",           "layer": "vanity", "min": 1, "max": 1},
-    {"name": "noble_hood",          "layer": "vanity", "min": 1, "max": 1},
-    {"name": "wreath",              "layer": "vanity", "min": 1, "max": 2},
-    {"name": "orc_bones",           "layer": "vanity", "min": 1, "max": 1},
-    {"name": "plait",               "layer": "vanity", "min": 1, "max": 12},
-    {"name": "ponytail",            "layer": "vanity", "min": 1, "max": 4},
-    {"name": "ram_horns",           "layer": "vanity", "min": 1, "max": 1},
-    {"name": "side_feather",        "layer": "vanity", "min": 1, "max": 5},
-    {"name": "straw_hat",           "layer": "vanity", "min": 1, "max": 1},
-    {"name": "top_feather",         "layer": "vanity", "min": 1, "max": 5},
-    {"name": "witchhunter_helm",    "layer": "vanity", "min": 1, "max": 7},
-    {"name": "wizard_cowl",         "layer": "vanity", "min": 1, "max": 20},
-    {"name": "wolf_helm",           "layer": "vanity", "min": 1, "max": 1},
+    {"name": "antler",              "layer": "vanity", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "bear_head",           "layer": "vanity", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "beret",               "layer": "vanity", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "bull_horns",          "layer": "vanity", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "crown",               "layer": "vanity", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "faction_helmet",      "layer": "vanity", "min": 1, "max": 12, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "faction_helmet_2",    "layer": "vanity", "min": 1, "max": 10, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "feather_band",        "layer": "vanity", "min": 1, "max": 2, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "feathered_hat",       "layer": "vanity", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "fencer_hat",          "layer": "vanity", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "goat_horns",          "layer": "vanity", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "headband",            "layer": "vanity", "min": 1, "max": 16, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "horn_decorations",    "layer": "vanity", "min": 1, "max": 2, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "hunter_cap",          "layer": "vanity", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "impaled_head",        "layer": "vanity", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "jester_hat",          "layer": "vanity", "min": 1, "max": 65, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "metal_bird",          "layer": "vanity", "min": 1, "max": 2, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "noble_buckle",        "layer": "vanity", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "noble_feather",       "layer": "vanity", "min": 1, "max": 4, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "noble_floppy_hat",    "layer": "vanity", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "noble_hat",           "layer": "vanity", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "noble_hood",          "layer": "vanity", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "wreath",              "layer": "vanity", "min": 1, "max": 2, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "orc_bones",           "layer": "vanity", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "plait",               "layer": "vanity", "min": 1, "max": 12, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "ponytail",            "layer": "vanity", "min": 1, "max": 4, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "ram_horns",           "layer": "vanity", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "side_feather",        "layer": "vanity", "min": 1, "max": 5, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "straw_hat",           "layer": "vanity", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "top_feather",         "layer": "vanity", "min": 1, "max": 5, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "witchhunter_helm",    "layer": "vanity", "min": 1, "max": 7, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "wizard_cowl",         "layer": "vanity", "min": 1, "max": 20, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "wolf_helm",           "layer": "vanity", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
 
-    {"name": "back_crest",      "layer": "vanity", "lowervanity": True, "min": 1, "max": 4},
-    {"name": "back_feathers",   "layer": "vanity", "lowervanity": True, "min": 1, "max": 4},
-    {"name": "feather_crest",   "layer": "vanity", "lowervanity": True, "min": 1, "max": 5},
-    {"name": "knotted_tail",    "layer": "vanity", "lowervanity": True, "min": 1, "max": 4},
-    {"name": "orc_tail",        "layer": "vanity", "lowervanity": True, "min": 1, "max": 2},
-    {"name": "wings",           "layer": "vanity", "lowervanity": True, "min": 1, "max": 6}
+    {"name": "back_crest",      "layer": "vanity", "lowervanity": True, "min": 1, "max": 4, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "back_feathers",   "layer": "vanity", "lowervanity": True, "min": 1, "max": 4, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "feather_crest",   "layer": "vanity", "lowervanity": True, "min": 1, "max": 5, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "knotted_tail",    "layer": "vanity", "lowervanity": True, "min": 1, "max": 4, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "orc_tail",        "layer": "vanity", "lowervanity": True, "min": 1, "max": 2, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "wings",           "layer": "vanity", "lowervanity": True, "min": 1, "max": 6, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 }
 ]
+
+
+descriptions = {
+    "wings" : "",
+}
 
 def main():
     for d in layers:
@@ -287,6 +297,10 @@ def main():
         opts = dict(
             name=fname,
             title=title,
+            condition = d["con"],
+            value = d["value"],
+            stamina = d["stam"],
+            visibility = d["vis"],
             id="armor.head." + fname,
             variants = variants,
             layer = layer,
