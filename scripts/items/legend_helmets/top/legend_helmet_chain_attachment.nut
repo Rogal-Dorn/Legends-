@@ -27,7 +27,7 @@ this.legend_helmet_chain_attachment <- this.inherit("scripts/items/legend_helmet
 		this.m.SpriteDamaged = "legendhelms_chain_attachment" + "_" + variant + "_damaged";
 		this.m.SpriteCorpse = "legendhelms_chain_attachment" + "_" + variant + "_dead";
 		this.m.IconLarge = "";
-		this.m.Icon = "legend_helmets/top/inventory_chain_attachment" + "_" + variant + ".png";
+		this.m.Icon = "legend_helmets/inventory_chain_attachment" + "_" + variant + ".png";
         this.m.OverlayIcon = this.m.Icon;
 		this.m.OverlayIconLarge = this.m.OverlayIcon;
 	}

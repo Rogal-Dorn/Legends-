@@ -27,7 +27,7 @@ this.legend_helmet_goblin_leaves <- this.inherit("scripts/items/legend_helmets/l
 		this.m.SpriteDamaged = "legendhelms_goblin_leaves" + "_" + variant + "_damaged";
 		this.m.SpriteCorpse = "legendhelms_goblin_leaves" + "_" + variant + "_dead";
 		this.m.IconLarge = "";
-		this.m.Icon = "legend_helmets/top/inventory_goblin_leaves" + "_" + variant + ".png";
+		this.m.Icon = "legend_helmets/inventory_goblin_leaves" + "_" + variant + ".png";
         this.m.OverlayIcon = this.m.Icon;
 		this.m.OverlayIconLarge = this.m.OverlayIcon;
 	}

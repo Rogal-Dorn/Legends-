@@ -10,8 +10,8 @@ cd ../bin
 # ./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/legend_horses.brush ../battlebrothers/unpacked/legend_horses
 python ../battlebrothers/unpacked/make_legend_helmets.py
 ./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/legend_helmets.brush ../battlebrothers/unpacked/legend_helmets
-python ../battlebrothers/unpacked/make_legend_armor.py
-./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/legend_armor.brush ../battlebrothers/unpacked/legend_armor
+# python ../battlebrothers/unpacked/make_legend_armor.py
+# ./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/legend_armor.brush ../battlebrothers/unpacked/legend_armor
 cd ../battlebrothers
 
 cp -R gfx/*.png "c:\Steam\steamapps\common\Battle Brothers\data\gfx"

@@ -25,6 +25,6 @@ this.legend_helmet_barb_chain_scarf <- this.inherit("scripts/items/legend_helmet
 		this.m.SpriteDamaged = "legendhelms_barb_chain_scarf" + "_" + variant + "_damaged";
 		this.m.SpriteCorpse = "legendhelms_barb_chain_scarf" + "_" + variant + "_dead";
 		this.m.IconLarge = "";
-		this.m.Icon = "legend_helmets/hood/inventory_barb_chain_scarf" + "_" + variant + ".png"
+		this.m.Icon = "legend_helmets/inventory_barb_chain_scarf" + "_" + variant + ".png"
 	}
 });

@@ -25,6 +25,6 @@ this.legend_helmet_cloth_bandana <- this.inherit("scripts/items/legend_helmets/l
 		this.m.SpriteDamaged = "legendhelms_cloth_bandana" + "_" + variant + "_damaged";
 		this.m.SpriteCorpse = "legendhelms_cloth_bandana" + "_" + variant + "_dead";
 		this.m.IconLarge = "";
-		this.m.Icon = "legend_helmets/hood/inventory_cloth_bandana" + "_" + variant + ".png"
+		this.m.Icon = "legend_helmets/inventory_cloth_bandana" + "_" + variant + ".png"
 	}
 });

@@ -27,7 +27,7 @@ this.legend_helmet_wreath <- this.inherit("scripts/items/legend_helmets/legend_h
 		this.m.SpriteDamaged = "legendhelms_wreath" + "_" + variant + "_damaged";
 		this.m.SpriteCorpse = "legendhelms_wreath" + "_" + variant + "_dead";
 		this.m.IconLarge = "";
-		this.m.Icon = "legend_helmets/vanity/inventory_wreath" + "_" + variant + ".png";
+		this.m.Icon = "legend_helmets/inventory_wreath" + "_" + variant + ".png";
         this.m.OverlayIcon = this.m.Icon;
 		this.m.OverlayIconLarge = this.m.OverlayIcon;
 	}

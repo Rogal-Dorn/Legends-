@@ -31,7 +31,7 @@ this.$name <- this.inherit("scripts/items/legend_helmets/legend_helmet", {
 		this.m.SpriteDamaged = "$brush" + "_" + variant + "_damaged";
 		this.m.SpriteCorpse = "$brush" + "_" + variant + "_dead";
 		this.m.IconLarge = "";
-		this.m.Icon = "legend_helmets/$layer/$icon" + "_" + variant + ".png"
+		this.m.Icon = "legend_helmets/$icon" + "_" + variant + ".png"
 	}
 });
 '''
@@ -65,7 +65,7 @@ this.$name <- this.inherit("scripts/items/legend_helmets/legend_helmet_upgrade",
 		this.m.SpriteDamaged = "$brush" + "_" + variant + "_damaged";
 		this.m.SpriteCorpse = "$brush" + "_" + variant + "_dead";
 		this.m.IconLarge = "";
-		this.m.Icon = "legend_helmets/$layer/$icon" + "_" + variant + ".png";
+		this.m.Icon = "legend_helmets/$icon" + "_" + variant + ".png";
         this.m.OverlayIcon = this.m.Icon;
 		this.m.OverlayIconLarge = this.m.OverlayIcon;
 	}
@@ -102,7 +102,7 @@ this.$name <- this.inherit("scripts/items/legend_helmets/legend_helmet_upgrade",
 		this.m.SpriteDamaged = "$brush" + "_" + variant + "_damaged";
 		this.m.SpriteCorpse = "$brush" + "_" + variant + "_dead";
 		this.m.IconLarge = "";
-		this.m.Icon = "legend_helmets/$layer/$icon" + "_" + variant + ".png";
+		this.m.Icon = "legend_helmets/$icon" + "_" + variant + ".png";
         this.m.OverlayIcon = this.m.Icon;
 		this.m.OverlayIconLarge = this.m.OverlayIcon;
 	}

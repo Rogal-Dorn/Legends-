@@ -27,7 +27,7 @@ this.legend_helmet_hunter_cap <- this.inherit("scripts/items/legend_helmets/lege
 		this.m.SpriteDamaged = "legendhelms_hunter_cap" + "_" + variant + "_damaged";
 		this.m.SpriteCorpse = "legendhelms_hunter_cap" + "_" + variant + "_dead";
 		this.m.IconLarge = "";
-		this.m.Icon = "legend_helmets/vanity/inventory_hunter_cap" + "_" + variant + ".png";
+		this.m.Icon = "legend_helmets/inventory_hunter_cap" + "_" + variant + ".png";
         this.m.OverlayIcon = this.m.Icon;
 		this.m.OverlayIconLarge = this.m.OverlayIcon;
 	}

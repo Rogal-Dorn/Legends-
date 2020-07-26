@@ -25,6 +25,6 @@ this.legend_helmet_cloth_scarf <- this.inherit("scripts/items/legend_helmets/leg
 		this.m.SpriteDamaged = "legendhelms_cloth_scarf" + "_" + variant + "_damaged";
 		this.m.SpriteCorpse = "legendhelms_cloth_scarf" + "_" + variant + "_dead";
 		this.m.IconLarge = "";
-		this.m.Icon = "legend_helmets/hood/inventory_cloth_scarf" + "_" + variant + ".png"
+		this.m.Icon = "legend_helmets/inventory_cloth_scarf" + "_" + variant + ".png"
 	}
 });

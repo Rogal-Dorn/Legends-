@@ -5,11 +5,13 @@ while read -r line; do
     if [ $x == "M" ] || [ $x == "A" ]; then
         if [ $x == "M" ]; then
             xpath=${line:2}
-        else 
+        else
             xpath=${line:3}
         fi
         if [[ "$xpath" == *.sh ]]; then
-            echo "skipping $line" 
+            echo "skipping $line"
+        elif [[ "$xpath" == *.py ]]; then
+            echo "skipping $line"
         elif [[ "$xpath" == *.md ]]; then
             echo "skipping $line"
         elif [[ "$xpath" == unpacked* ]]; then

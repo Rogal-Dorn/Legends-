@@ -25,6 +25,6 @@ this.legend_helmet_goblin_scarf <- this.inherit("scripts/items/legend_helmets/le
 		this.m.SpriteDamaged = "legendhelms_goblin_scarf" + "_" + variant + "_damaged";
 		this.m.SpriteCorpse = "legendhelms_goblin_scarf" + "_" + variant + "_dead";
 		this.m.IconLarge = "";
-		this.m.Icon = "legend_helmets/hood/inventory_goblin_scarf" + "_" + variant + ".png"
+		this.m.Icon = "legend_helmets/inventory_goblin_scarf" + "_" + variant + ".png"
 	}
 });

@@ -27,7 +27,7 @@ this.legend_helmet_facemask <- this.inherit("scripts/items/legend_helmets/legend
 		this.m.SpriteDamaged = "legendhelms_facemask" + "_" + variant + "_damaged";
 		this.m.SpriteCorpse = "legendhelms_facemask" + "_" + variant + "_dead";
 		this.m.IconLarge = "";
-		this.m.Icon = "legend_helmets/top/inventory_facemask" + "_" + variant + ".png";
+		this.m.Icon = "legend_helmets/inventory_facemask" + "_" + variant + ".png";
         this.m.OverlayIcon = this.m.Icon;
 		this.m.OverlayIconLarge = this.m.OverlayIcon;
 	}

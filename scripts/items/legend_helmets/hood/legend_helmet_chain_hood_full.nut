@@ -25,6 +25,6 @@ this.legend_helmet_chain_hood_full <- this.inherit("scripts/items/legend_helmets
 		this.m.SpriteDamaged = "legendhelms_chain_hood_full" + "_" + variant + "_damaged";
 		this.m.SpriteCorpse = "legendhelms_chain_hood_full" + "_" + variant + "_dead";
 		this.m.IconLarge = "";
-		this.m.Icon = "legend_helmets/hood/inventory_chain_hood_full" + "_" + variant + ".png"
+		this.m.Icon = "legend_helmets/inventory_chain_hood_full" + "_" + variant + ".png"
 	}
 });

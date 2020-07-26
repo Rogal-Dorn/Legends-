@@ -27,7 +27,7 @@ this.legend_helmet_leather_hood_barb <- this.inherit("scripts/items/legend_helme
 		this.m.SpriteDamaged = "legendhelms_leather_hood_barb" + "_" + variant + "_damaged";
 		this.m.SpriteCorpse = "legendhelms_leather_hood_barb" + "_" + variant + "_dead";
 		this.m.IconLarge = "";
-		this.m.Icon = "legend_helmets/top/inventory_leather_hood_barb" + "_" + variant + ".png";
+		this.m.Icon = "legend_helmets/inventory_leather_hood_barb" + "_" + variant + ".png";
         this.m.OverlayIcon = this.m.Icon;
 		this.m.OverlayIconLarge = this.m.OverlayIcon;
 	}

@@ -27,7 +27,7 @@ this.legend_helmet_horn_decorations <- this.inherit("scripts/items/legend_helmet
 		this.m.SpriteDamaged = "legendhelms_horn_decorations" + "_" + variant + "_damaged";
 		this.m.SpriteCorpse = "legendhelms_horn_decorations" + "_" + variant + "_dead";
 		this.m.IconLarge = "";
-		this.m.Icon = "legend_helmets/vanity/inventory_horn_decorations" + "_" + variant + ".png";
+		this.m.Icon = "legend_helmets/inventory_horn_decorations" + "_" + variant + ".png";
         this.m.OverlayIcon = this.m.Icon;
 		this.m.OverlayIconLarge = this.m.OverlayIcon;
 	}

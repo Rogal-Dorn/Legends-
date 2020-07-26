@@ -27,7 +27,7 @@ this.legend_helmet_nose_plate <- this.inherit("scripts/items/legend_helmets/lege
 		this.m.SpriteDamaged = "legendhelms_nose_plate" + "_" + variant + "_damaged";
 		this.m.SpriteCorpse = "legendhelms_nose_plate" + "_" + variant + "_dead";
 		this.m.IconLarge = "";
-		this.m.Icon = "legend_helmets/top/inventory_nose_plate" + "_" + variant + ".png";
+		this.m.Icon = "legend_helmets/inventory_nose_plate" + "_" + variant + ".png";
         this.m.OverlayIcon = this.m.Icon;
 		this.m.OverlayIconLarge = this.m.OverlayIcon;
 	}
