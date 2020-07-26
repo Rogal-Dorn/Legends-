@@ -4,8 +4,6 @@ this.barbarian_background <- this.inherit("scripts/skills/backgrounds/character_
 	},
 	function create()
 	{
-		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
-		this.m.AlignmentMax = this.Const.LegendMod.Alignment.NeutralMin;
 		this.character_background.create();
 		this.m.ID = "background.barbarian";
 		this.m.Name = "Barbarian";
@@ -40,8 +38,6 @@ this.barbarian_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.Beards = this.Const.Beards.WildExtended;
 		this.m.Body = "bust_naked_body_01";
 		this.m.IsFemaleBackground = false;
-		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
-		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Notorious;
 		this.m.Level = this.Math.rand(2, 4);
 		this.m.IsCombatBackground = true;
 		this.m.IsOutlawBackground = true;

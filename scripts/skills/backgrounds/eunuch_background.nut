@@ -34,8 +34,6 @@ this.eunuch_background <- this.inherit("scripts/skills/backgrounds/character_bac
 		this.m.IsCrusaderRecruitBackground = true;
 		this.m.IsEducatedBackground = true;
 		this.m.IsPerformingBackground = true;
-		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
-		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Good;
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[1];
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[2];

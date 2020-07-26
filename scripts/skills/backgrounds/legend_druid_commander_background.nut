@@ -71,8 +71,6 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 		this.m.IsCombatBackground = true;
 		this.m.IsLowborn = true;
 		this.m.IsUntalented = true;
-		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
-		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Good;
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[2];
 		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[3];
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[3];

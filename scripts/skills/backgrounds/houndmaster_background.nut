@@ -35,8 +35,6 @@ this.houndmaster_background <- this.inherit("scripts/skills/backgrounds/characte
 		this.m.IsLowborn = true;
 		this.m.IsRangerRecruitBackground = true;
 		this.m.IsDruidRecruitBackground = true;
-		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
-		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Good;
 		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[2];
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[3];
 		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[2];

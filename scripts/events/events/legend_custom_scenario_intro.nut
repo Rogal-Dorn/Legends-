@@ -120,16 +120,6 @@ this.legend_custom_scenario_intro <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
-				// if (!_event.m.Init)
-				// {
-				// 	local bros = this.World.getPlayerRoster();
-				// 	foreach (bro in bros)
-				// 	{
-				// 		//bro.removeActiveRelationship();
-				// 		this.World.getPlayerRoster().remove(bro);
-				// 	}
-				// }
-				// _event.m.Init = true;
 			}
 		}
 
@@ -233,8 +223,6 @@ this.legend_custom_scenario_intro <- this.inherit("scripts/events/event", {
 		local blist = {
 			character_trait = null,
 			legend_horse_trait = null,
-			legend_frenemies = null,
-			legend_alignment = null,
 			intensive_training_trait = null,
 
 		}
@@ -535,29 +523,9 @@ this.legend_custom_scenario_intro <- this.inherit("scripts/events/event", {
 						_event.m.Dude.fillAttributeLevelUpValues(this.Const.XP.MaxLevelWithPerkpoints - 1);
 						_event.m.Dude = null
 
-						//_event.m.StartBro.removeActiveRelationship();
 						 this.World.getPlayerRoster().remove(_event.m.StartBro)
 
-						 local bros = this.World.getPlayerRoster().getAll();
 
-
-						if (this.World.LegendsMod.Configs().RelationshipsEnabled())
-						{
-							local avgAlignment = 0;
-							foreach (bro in bros)
-							{
-								if (bro.getAlignment() <= this.Const.LegendMod.Alignment.NeutralMin)
-								{
-									avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMin);
-								}
-								else if (bro.getAlignment() >= this.Const.LegendMod.Alignment.NeutralMax)
-								{
-									avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMax);
-								}
-							}
-							avgAlignment *= (10 / this.World.getPlayerRoster().getSize());
-							this.World.Assets.addMoralReputation(avgAlignment);
-						}
 
 						return 0;
 					}
