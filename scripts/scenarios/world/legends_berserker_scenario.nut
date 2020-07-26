@@ -55,8 +55,7 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 		// bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_favoured_enemy_zombie"));
 		foreach( bro in bros )
 		{
-			local val = this.World.LegendsMod.BroStats().addNewActorID(bro);
-			bro.m.CompanyID = val;
+			bro.m.CompanyID = this.World.LegendsMod.BroStats().addNewActorID(bro);
 		}
 
 		

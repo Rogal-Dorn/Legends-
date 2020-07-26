@@ -64,8 +64,7 @@ this.legends_sisterhood_scenario <- this.inherit("scripts/scenarios/world/starti
 		bros[5].setVeteranPerks(2);
 		foreach( bro in bros )
 		{
-			local val = this.World.LegendsMod.BroStats().addNewActorID(bro);
-			bro.m.CompanyID = val;
+			bro.m.CompanyID = this.World.LegendsMod.BroStats().addNewActorID(bro);
 		}
 		
 		this.World.Tags.set("HasLegendCampGathering", true);

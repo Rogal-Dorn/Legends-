@@ -89,8 +89,7 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		items.equip(this.new("scripts/items/weapons/legend_ranged_wooden_flail"));
 		foreach( bro in bros )
 		{
-			local val = this.World.LegendsMod.BroStats().addNewActorID(bro);
-			bro.m.CompanyID = val;
+			bro.m.CompanyID = this.World.LegendsMod.BroStats().addNewActorID(bro);
 		}
 		
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/legend_pie_item"));
