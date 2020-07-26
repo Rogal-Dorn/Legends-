@@ -11,7 +11,7 @@ this.$name <- this.inherit("scripts/items/legend_helmets/legend_helmet", {
 	{
 		this.legend_helmet.create();
 		this.m.ID = "$id";
-		this.m.Name = "$rname";
+		this.m.Name = "$title";
 		this.m.Description = "TODO $name";
         this.m.Variant = 1;
 		this.m.Variants = $variants;
@@ -44,7 +44,7 @@ this.$name <- this.inherit("scripts/items/legend_helmets/legend_helmet_upgrade",
 		this.legend_helmet_upgrade.create();
         this.m.Type = this.Const.Items.HelmetUpgrades.$type;
 		this.m.ID = "$id";
-		this.m.Name = "$rname";
+		this.m.Name = "$title";
 		this.m.Description = "TODO $name";
         this.m.ArmorDescription = this.m.Description;
         this.m.Variant = 1;
@@ -80,7 +80,7 @@ this.$name <- this.inherit("scripts/items/legend_helmets/legend_helmet_upgrade",
 		this.legend_helmet_upgrade.create();
         this.m.Type = this.Const.Items.HelmetUpgrades.$type;
 		this.m.ID = "$id";
-		this.m.Name = "$rname";
+		this.m.Name = "$title";
 		this.m.Description = "TODO $name";
         this.m.ArmorDescription = this.m.Description;
         this.m.Variant = 1;
@@ -122,7 +122,7 @@ layers = [
     {"name": "rotten_chain_scarf",  "layer": "hood", "min": 1, "max": 5, "base": True},
     {"name": "simple_hood",         "layer": "hood", "min": 1, "max": 5, "base": True},
     {"name": "padded_cap",          "layer": "hood", "min": 1, "max": 1, "base": True},
-    {"name": "hood_cloth_round",    "layer": "hood", "min": 1, "max": 1, "base": True},
+    {"name": "hood_cloth_round",    "layer": "hood", "min": 1, "max": 1, "base": True, "title" : "Rounded Cloth Hood"},
     {"name": "hood_cloth_square",   "layer": "hood", "min": 1, "max": 1, "base": True},
     {"name": "hood_cloth_wide",     "layer": "hood", "min": 1, "max": 2, "base": True},
     {"name": "cloth_long_hood",     "layer": "hood", "min": 1, "max": 4, "base": True},
@@ -269,20 +269,24 @@ def main():
         variants = []
         for x in range(d["max"]):
             variants.append(x+1)
-        rname = d["name"]
-        rname = rname.replace("_", " ")
-        rname = rname.title()
-        testname = rname
-        testname = testname.split()[-1]
-        if testname == 'Tailed':
-            print(testname)
-            print(rname)
-            rname = "Tailed " + rname.rsplit(' ', 1)[0]
-        if testname == 'Crested':
-            rname = rname + " Helm"
+
+        if "title" in d:
+            title  = d["title"]
+        else:
+            title = d["name"]
+            title = title.replace("_", " ")
+            title = title.title()
+            testname = title
+            testname = testname.split()[-1]
+            if testname == 'Tailed':
+                testname = "Tailed " + title.rsplit(' ', 1)[0]
+            if testname == 'Crested':
+                title = title + " Helm"
+
+
         opts = dict(
             name=fname,
-            rname=rname,
+            title=title,
             id="armor.head." + fname,
             variants = variants,
             layer = layer,
