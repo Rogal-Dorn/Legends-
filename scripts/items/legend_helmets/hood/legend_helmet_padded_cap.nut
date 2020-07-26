@@ -25,6 +25,6 @@ this.legend_helmet_padded_cap <- this.inherit("scripts/items/legend_helmets/lege
 		this.m.SpriteDamaged = "legendhelms_padded_cap" + "_" + variant + "_damaged";
 		this.m.SpriteCorpse = "legendhelms_padded_cap" + "_" + variant + "_dead";
 		this.m.IconLarge = "";
-		this.m.Icon = "legend_helmets/hood/inventory_padded_cap" + "_" + variant + ".png"
+		this.m.Icon = "legend_helmets/inventory_padded_cap" + "_" + variant + ".png"
 	}
 });

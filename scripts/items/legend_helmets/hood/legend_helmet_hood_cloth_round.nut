@@ -25,6 +25,6 @@ this.legend_helmet_hood_cloth_round <- this.inherit("scripts/items/legend_helmet
 		this.m.SpriteDamaged = "legendhelms_hood_cloth_round" + "_" + variant + "_damaged";
 		this.m.SpriteCorpse = "legendhelms_hood_cloth_round" + "_" + variant + "_dead";
 		this.m.IconLarge = "";
-		this.m.Icon = "legend_helmets/hood/inventory_hood_cloth_round" + "_" + variant + ".png"
+		this.m.Icon = "legend_helmets/inventory_hood_cloth_round" + "_" + variant + ".png"
 	}
 });

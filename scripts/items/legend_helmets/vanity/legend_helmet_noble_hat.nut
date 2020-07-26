@@ -27,7 +27,7 @@ this.legend_helmet_noble_hat <- this.inherit("scripts/items/legend_helmets/legen
 		this.m.SpriteDamaged = "legendhelms_noble_hat" + "_" + variant + "_damaged";
 		this.m.SpriteCorpse = "legendhelms_noble_hat" + "_" + variant + "_dead";
 		this.m.IconLarge = "";
-		this.m.Icon = "legend_helmets/vanity/inventory_noble_hat" + "_" + variant + ".png";
+		this.m.Icon = "legend_helmets/inventory_noble_hat" + "_" + variant + ".png";
         this.m.OverlayIcon = this.m.Icon;
 		this.m.OverlayIconLarge = this.m.OverlayIcon;
 	}

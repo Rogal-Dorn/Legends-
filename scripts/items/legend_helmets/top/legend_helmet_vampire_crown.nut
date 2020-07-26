@@ -27,7 +27,7 @@ this.legend_helmet_vampire_crown <- this.inherit("scripts/items/legend_helmets/l
 		this.m.SpriteDamaged = "legendhelms_vampire_crown" + "_" + variant + "_damaged";
 		this.m.SpriteCorpse = "legendhelms_vampire_crown" + "_" + variant + "_dead";
 		this.m.IconLarge = "";
-		this.m.Icon = "legend_helmets/top/inventory_vampire_crown" + "_" + variant + ".png";
+		this.m.Icon = "legend_helmets/inventory_vampire_crown" + "_" + variant + ".png";
         this.m.OverlayIcon = this.m.Icon;
 		this.m.OverlayIconLarge = this.m.OverlayIcon;
 	}

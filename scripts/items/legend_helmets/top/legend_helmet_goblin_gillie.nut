@@ -27,7 +27,7 @@ this.legend_helmet_goblin_gillie <- this.inherit("scripts/items/legend_helmets/l
 		this.m.SpriteDamaged = "legendhelms_goblin_gillie" + "_" + variant + "_damaged";
 		this.m.SpriteCorpse = "legendhelms_goblin_gillie" + "_" + variant + "_dead";
 		this.m.IconLarge = "";
-		this.m.Icon = "legend_helmets/top/inventory_goblin_gillie" + "_" + variant + ".png";
+		this.m.Icon = "legend_helmets/inventory_goblin_gillie" + "_" + variant + ".png";
         this.m.OverlayIcon = this.m.Icon;
 		this.m.OverlayIconLarge = this.m.OverlayIcon;
 	}

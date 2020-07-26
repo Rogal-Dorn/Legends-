@@ -27,7 +27,7 @@ this.legend_helmet_impaled_head <- this.inherit("scripts/items/legend_helmets/le
 		this.m.SpriteDamaged = "legendhelms_impaled_head" + "_" + variant + "_damaged";
 		this.m.SpriteCorpse = "legendhelms_impaled_head" + "_" + variant + "_dead";
 		this.m.IconLarge = "";
-		this.m.Icon = "legend_helmets/vanity/inventory_impaled_head" + "_" + variant + ".png";
+		this.m.Icon = "legend_helmets/inventory_impaled_head" + "_" + variant + ".png";
         this.m.OverlayIcon = this.m.Icon;
 		this.m.OverlayIconLarge = this.m.OverlayIcon;
 	}

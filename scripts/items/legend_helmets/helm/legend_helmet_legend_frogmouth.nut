@@ -27,7 +27,7 @@ this.legend_helmet_legend_frogmouth <- this.inherit("scripts/items/legend_helmet
 		this.m.SpriteDamaged = "legendhelms_legend_frogmouth" + "_" + variant + "_damaged";
 		this.m.SpriteCorpse = "legendhelms_legend_frogmouth" + "_" + variant + "_dead";
 		this.m.IconLarge = "";
-		this.m.Icon = "legend_helmets/helm/inventory_legend_frogmouth" + "_" + variant + ".png";
+		this.m.Icon = "legend_helmets/inventory_legend_frogmouth" + "_" + variant + ".png";
         this.m.OverlayIcon = this.m.Icon;
 		this.m.OverlayIconLarge = this.m.OverlayIcon;
 	}

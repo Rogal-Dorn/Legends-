@@ -28,7 +28,7 @@ this.legend_helmet_feather_crest <- this.inherit("scripts/items/legend_helmets/l
 		this.m.SpriteDamaged = "legendhelms_feather_crest" + "_" + variant + "_damaged";
 		this.m.SpriteCorpse = "legendhelms_feather_crest" + "_" + variant + "_dead";
 		this.m.IconLarge = "";
-		this.m.Icon = "legend_helmets/vanity_lower/inventory_feather_crest" + "_" + variant + ".png";
+		this.m.Icon = "legend_helmets/inventory_feather_crest" + "_" + variant + ".png";
         this.m.OverlayIcon = this.m.Icon;
 		this.m.OverlayIconLarge = this.m.OverlayIcon;
 	}

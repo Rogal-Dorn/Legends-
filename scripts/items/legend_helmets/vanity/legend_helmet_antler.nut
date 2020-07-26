@@ -27,7 +27,7 @@ this.legend_helmet_antler <- this.inherit("scripts/items/legend_helmets/legend_h
 		this.m.SpriteDamaged = "legendhelms_antler" + "_" + variant + "_damaged";
 		this.m.SpriteCorpse = "legendhelms_antler" + "_" + variant + "_dead";
 		this.m.IconLarge = "";
-		this.m.Icon = "legend_helmets/vanity/inventory_antler" + "_" + variant + ".png";
+		this.m.Icon = "legend_helmets/inventory_antler" + "_" + variant + ".png";
         this.m.OverlayIcon = this.m.Icon;
 		this.m.OverlayIconLarge = this.m.OverlayIcon;
 	}

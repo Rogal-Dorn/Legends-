@@ -27,7 +27,7 @@ this.legend_helmet_faction_helmet_2 <- this.inherit("scripts/items/legend_helmet
 		this.m.SpriteDamaged = "legendhelms_faction_helmet_2" + "_" + variant + "_damaged";
 		this.m.SpriteCorpse = "legendhelms_faction_helmet_2" + "_" + variant + "_dead";
 		this.m.IconLarge = "";
-		this.m.Icon = "legend_helmets/vanity/inventory_faction_helmet_2" + "_" + variant + ".png";
+		this.m.Icon = "legend_helmets/inventory_faction_helmet_2" + "_" + variant + ".png";
         this.m.OverlayIcon = this.m.Icon;
 		this.m.OverlayIconLarge = this.m.OverlayIcon;
 	}

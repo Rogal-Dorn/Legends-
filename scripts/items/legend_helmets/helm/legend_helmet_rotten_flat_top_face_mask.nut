@@ -27,7 +27,7 @@ this.legend_helmet_rotten_flat_top_face_mask <- this.inherit("scripts/items/lege
 		this.m.SpriteDamaged = "legendhelms_rotten_flat_top_face_mask" + "_" + variant + "_damaged";
 		this.m.SpriteCorpse = "legendhelms_rotten_flat_top_face_mask" + "_" + variant + "_dead";
 		this.m.IconLarge = "";
-		this.m.Icon = "legend_helmets/helm/inventory_rotten_flat_top_face_mask" + "_" + variant + ".png";
+		this.m.Icon = "legend_helmets/inventory_rotten_flat_top_face_mask" + "_" + variant + ".png";
         this.m.OverlayIcon = this.m.Icon;
 		this.m.OverlayIconLarge = this.m.OverlayIcon;
 	}

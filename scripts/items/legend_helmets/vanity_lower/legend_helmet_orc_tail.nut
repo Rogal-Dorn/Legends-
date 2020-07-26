@@ -28,7 +28,7 @@ this.legend_helmet_orc_tail <- this.inherit("scripts/items/legend_helmets/legend
 		this.m.SpriteDamaged = "legendhelms_orc_tail" + "_" + variant + "_damaged";
 		this.m.SpriteCorpse = "legendhelms_orc_tail" + "_" + variant + "_dead";
 		this.m.IconLarge = "";
-		this.m.Icon = "legend_helmets/vanity_lower/inventory_orc_tail" + "_" + variant + ".png";
+		this.m.Icon = "legend_helmets/inventory_orc_tail" + "_" + variant + ".png";
         this.m.OverlayIcon = this.m.Icon;
 		this.m.OverlayIconLarge = this.m.OverlayIcon;
 	}

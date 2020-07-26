@@ -27,7 +27,7 @@ this.legend_helmet_witchhunter_helm <- this.inherit("scripts/items/legend_helmet
 		this.m.SpriteDamaged = "legendhelms_witchhunter_helm" + "_" + variant + "_damaged";
 		this.m.SpriteCorpse = "legendhelms_witchhunter_helm" + "_" + variant + "_dead";
 		this.m.IconLarge = "";
-		this.m.Icon = "legend_helmets/vanity/inventory_witchhunter_helm" + "_" + variant + ".png";
+		this.m.Icon = "legend_helmets/inventory_witchhunter_helm" + "_" + variant + ".png";
         this.m.OverlayIcon = this.m.Icon;
 		this.m.OverlayIconLarge = this.m.OverlayIcon;
 	}

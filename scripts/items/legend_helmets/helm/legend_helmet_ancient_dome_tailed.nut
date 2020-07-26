@@ -27,7 +27,7 @@ this.legend_helmet_ancient_dome_tailed <- this.inherit("scripts/items/legend_hel
 		this.m.SpriteDamaged = "legendhelms_ancient_dome_tailed" + "_" + variant + "_damaged";
 		this.m.SpriteCorpse = "legendhelms_ancient_dome_tailed" + "_" + variant + "_dead";
 		this.m.IconLarge = "";
-		this.m.Icon = "legend_helmets/helm/inventory_ancient_dome_tailed" + "_" + variant + ".png";
+		this.m.Icon = "legend_helmets/inventory_ancient_dome_tailed" + "_" + variant + ".png";
         this.m.OverlayIcon = this.m.Icon;
 		this.m.OverlayIconLarge = this.m.OverlayIcon;
 	}

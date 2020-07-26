@@ -27,7 +27,7 @@ this.legend_helmet_cult_hood <- this.inherit("scripts/items/legend_helmets/legen
 		this.m.SpriteDamaged = "legendhelms_cult_hood" + "_" + variant + "_damaged";
 		this.m.SpriteCorpse = "legendhelms_cult_hood" + "_" + variant + "_dead";
 		this.m.IconLarge = "";
-		this.m.Icon = "legend_helmets/top/inventory_cult_hood" + "_" + variant + ".png";
+		this.m.Icon = "legend_helmets/inventory_cult_hood" + "_" + variant + ".png";
         this.m.OverlayIcon = this.m.Icon;
 		this.m.OverlayIconLarge = this.m.OverlayIcon;
 	}

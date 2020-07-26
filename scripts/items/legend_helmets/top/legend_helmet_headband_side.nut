@@ -27,7 +27,7 @@ this.legend_helmet_headband_side <- this.inherit("scripts/items/legend_helmets/l
 		this.m.SpriteDamaged = "legendhelms_headband_side" + "_" + variant + "_damaged";
 		this.m.SpriteCorpse = "legendhelms_headband_side" + "_" + variant + "_dead";
 		this.m.IconLarge = "";
-		this.m.Icon = "legend_helmets/top/inventory_headband_side" + "_" + variant + ".png";
+		this.m.Icon = "legend_helmets/inventory_headband_side" + "_" + variant + ".png";
         this.m.OverlayIcon = this.m.Icon;
 		this.m.OverlayIconLarge = this.m.OverlayIcon;
 	}

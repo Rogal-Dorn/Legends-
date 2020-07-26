@@ -27,7 +27,7 @@ this.legend_helmet_goblin_chain_helm <- this.inherit("scripts/items/legend_helme
 		this.m.SpriteDamaged = "legendhelms_goblin_chain_helm" + "_" + variant + "_damaged";
 		this.m.SpriteCorpse = "legendhelms_goblin_chain_helm" + "_" + variant + "_dead";
 		this.m.IconLarge = "";
-		this.m.Icon = "legend_helmets/helm/inventory_goblin_chain_helm" + "_" + variant + ".png";
+		this.m.Icon = "legend_helmets/inventory_goblin_chain_helm" + "_" + variant + ".png";
         this.m.OverlayIcon = this.m.Icon;
 		this.m.OverlayIconLarge = this.m.OverlayIcon;
 	}

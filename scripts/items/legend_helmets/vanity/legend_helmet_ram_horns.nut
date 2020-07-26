@@ -27,7 +27,7 @@ this.legend_helmet_ram_horns <- this.inherit("scripts/items/legend_helmets/legen
 		this.m.SpriteDamaged = "legendhelms_ram_horns" + "_" + variant + "_damaged";
 		this.m.SpriteCorpse = "legendhelms_ram_horns" + "_" + variant + "_dead";
 		this.m.IconLarge = "";
-		this.m.Icon = "legend_helmets/vanity/inventory_ram_horns" + "_" + variant + ".png";
+		this.m.Icon = "legend_helmets/inventory_ram_horns" + "_" + variant + ".png";
         this.m.OverlayIcon = this.m.Icon;
 		this.m.OverlayIconLarge = this.m.OverlayIcon;
 	}

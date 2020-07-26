@@ -27,7 +27,7 @@ this.legend_helmet_wizard_cowl <- this.inherit("scripts/items/legend_helmets/leg
 		this.m.SpriteDamaged = "legendhelms_wizard_cowl" + "_" + variant + "_damaged";
 		this.m.SpriteCorpse = "legendhelms_wizard_cowl" + "_" + variant + "_dead";
 		this.m.IconLarge = "";
-		this.m.Icon = "legend_helmets/vanity/inventory_wizard_cowl" + "_" + variant + ".png";
+		this.m.Icon = "legend_helmets/inventory_wizard_cowl" + "_" + variant + ".png";
         this.m.OverlayIcon = this.m.Icon;
 		this.m.OverlayIconLarge = this.m.OverlayIcon;
 	}
