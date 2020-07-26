@@ -590,6 +590,7 @@
 				}
 				else
 				{
+					this.World.LegendsMod.BroStats().removeActorID(this.getCompayID());
 					this.World.getPlayerRoster().remove(this);
 				}
 			}
