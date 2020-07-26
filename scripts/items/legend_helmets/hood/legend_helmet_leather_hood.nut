@@ -5,7 +5,7 @@ this.legend_helmet_leather_hood <- this.inherit("scripts/items/legend_helmets/le
 	{
 		this.legend_helmet.create();
 		this.m.ID = "armor.head.legend_helmet_leather_hood";
-		this.m.Name = "TODO legend_helmet_leather_hood";
+		this.m.Name = "Leather Hood";
 		this.m.Description = "TODO legend_helmet_leather_hood";
         this.m.Variant = 1;
 		this.m.Variants = [1, 2, 3, 4, 5];

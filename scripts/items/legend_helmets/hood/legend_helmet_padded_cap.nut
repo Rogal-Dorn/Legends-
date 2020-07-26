@@ -5,7 +5,7 @@ this.legend_helmet_padded_cap <- this.inherit("scripts/items/legend_helmets/lege
 	{
 		this.legend_helmet.create();
 		this.m.ID = "armor.head.legend_helmet_padded_cap";
-		this.m.Name = "TODO legend_helmet_padded_cap";
+		this.m.Name = "Padded Cap";
 		this.m.Description = "TODO legend_helmet_padded_cap";
         this.m.Variant = 1;
 		this.m.Variants = [1];

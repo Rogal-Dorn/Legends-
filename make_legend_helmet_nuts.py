@@ -11,7 +11,7 @@ this.$name <- this.inherit("scripts/items/legend_helmets/legend_helmet", {
 	{
 		this.legend_helmet.create();
 		this.m.ID = "$id";
-		this.m.Name = "TODO $name";
+		this.m.Name = "$rname";
 		this.m.Description = "TODO $name";
         this.m.Variant = 1;
 		this.m.Variants = $variants;
@@ -44,7 +44,7 @@ this.$name <- this.inherit("scripts/items/legend_helmets/legend_helmet_upgrade",
 		this.legend_helmet_upgrade.create();
         this.m.Type = this.Const.Items.HelmetUpgrades.$type;
 		this.m.ID = "$id";
-		this.m.Name = "TODO $name";
+		this.m.Name = "$rname";
 		this.m.Description = "TODO $name";
         this.m.ArmorDescription = this.m.Description;
         this.m.Variant = 1;
@@ -80,7 +80,7 @@ this.$name <- this.inherit("scripts/items/legend_helmets/legend_helmet_upgrade",
 		this.legend_helmet_upgrade.create();
         this.m.Type = this.Const.Items.HelmetUpgrades.$type;
 		this.m.ID = "$id";
-		this.m.Name = "TODO $name";
+		this.m.Name = "$rname";
 		this.m.Description = "TODO $name";
         this.m.ArmorDescription = this.m.Description;
         this.m.Variant = 1;
@@ -269,8 +269,20 @@ def main():
         variants = []
         for x in range(d["max"]):
             variants.append(x+1)
+        rname = d["name"]
+        rname = rname.replace("_", " ")
+        rname = rname.title()
+        testname = rname
+        testname = testname.split()[-1]
+        if testname == 'Tailed':
+            print(testname)
+            print(rname)
+            rname = "Tailed " + rname.rsplit(' ', 1)[0]
+        if testname == 'Crested':
+            rname = rname + " Helm"
         opts = dict(
             name=fname,
+            rname=rname,
             id="armor.head." + fname,
             variants = variants,
             layer = layer,
@@ -285,6 +297,6 @@ def main():
         F.write(text)
         F.close()
 
-        print('"' + layer + "/" + fname + '",')
+        #print('"' + layer + "/" + fname + '",')
 
 main()

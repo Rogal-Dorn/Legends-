@@ -6,7 +6,7 @@ this.legend_helmet_jester_hat <- this.inherit("scripts/items/legend_helmets/lege
 		this.legend_helmet_upgrade.create();
         this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_jester_hat";
-		this.m.Name = "TODO legend_helmet_jester_hat";
+		this.m.Name = "Jester Hat";
 		this.m.Description = "TODO legend_helmet_jester_hat";
         this.m.ArmorDescription = this.m.Description;
         this.m.Variant = 1;
