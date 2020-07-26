@@ -6,7 +6,7 @@ this.legend_helmet_side_feather <- this.inherit("scripts/items/legend_helmets/le
 		this.legend_helmet_upgrade.create();
         this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_side_feather";
-		this.m.Name = "TODO legend_helmet_side_feather";
+		this.m.Name = "Side Feather";
 		this.m.Description = "TODO legend_helmet_side_feather";
         this.m.ArmorDescription = this.m.Description;
         this.m.Variant = 1;
