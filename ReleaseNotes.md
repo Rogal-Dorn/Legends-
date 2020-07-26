@@ -3727,3 +3727,9 @@ Resilient/HoldOut tooltip fix, currently states -1 turn on debuffs, but gives -5
 Clears the mustering troops on legendary bandit contract completion
 
 https://drive.google.com/file/d/1OWY9rIZfGYBW40LZk0poZLrEs125E81T/view?usp=sharing
+
+14.0.0.16b
+
+Quick update that fixes using config options when starting a new game
+
+https://drive.google.com/file/d/15C7nyBk8OMkrcIk9SQ4Tqh7u6kwe9eP3/view?usp=sharing

@@ -854,10 +854,10 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 			};
 		}
 
-		if (changed)
-		{
+		// if (changed)
+		// {
 			this.getContainer().updateAppearance();
-		}
+		//}
 
 	}
 
