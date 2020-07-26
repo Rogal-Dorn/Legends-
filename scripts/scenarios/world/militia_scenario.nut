@@ -143,7 +143,7 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		bros[11].getSkills().add(this.new("scripts/skills/traits/hate_nobles_trait"));
 		foreach( bro in bros )
 		{
-			local val = this.World.State.addNewID(bro);
+			local val = this.World.LegendsMod.BroStats().addNewActorID(bro);
 			bro.m.CompanyID = val;
 		}
 		this.World.Assets.m.BusinessReputation = -100;

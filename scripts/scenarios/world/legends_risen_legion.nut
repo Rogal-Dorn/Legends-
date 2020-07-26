@@ -200,7 +200,7 @@ this.legends_risen_legion <- this.inherit("scripts/scenarios/world/starting_scen
 				items.equip(armor);
 
 
-				local val = this.World.State.addNewID(bro);
+				local val = this.World.LegendsMod.BroStats().addNewActorID(bro);
 				bro.m.CompanyID = val;
 		}
 

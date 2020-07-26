@@ -880,7 +880,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		}
 
 		this.World.Assets.getOrigin().onHiredByScenario(this);
-        this.m.CompanyID = this.World.State.addNewID(this);
+        this.m.CompanyID = this.World.LegendsMod.BroStats().addNewActorID(this);
 
 		if (this.getSkills().hasSkill("trait.intensive_training_trait") && this.getLevel() > 1 )
 		{
@@ -1318,6 +1318,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			this.m.LifetimeStats.Battles += 1;
 			this.World.Statistics.addFallen(this, killedBy);
 		}
+		this.World.LegendsMod.BroStats().removeActorID(this.m.CompanyID);
 	}
 
 	function onInit()
@@ -2177,7 +2178,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 	//Only used occaisionally, shouldn't call this specifically
 	//Probably would be unused function
-	//Check world_state::addNewID and in this_file::onHired to see how w add company IDs to brothers
+	//Check brother_statistics_manager::addNewActorID 
 	function setCompanyID( _num )
 	{
 		this.m.CompanyID = _num;

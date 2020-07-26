@@ -33,11 +33,11 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 		bro.getTags().set("IsPlayerCharacter", true);
 		bro.getSprite("miniboss").setBrush("bust_miniboss_lone_wolf");
 		bro.m.HireTime = this.Time.getVirtualTimeF();
-		local val = this.World.State.addNewID(bro);
+		local val = this.World.LegendsMod.BroStats().addNewActorID(bro);
 		bro.m.CompanyID = val;
 
 
-		local val = this.World.State.addNewID(bro);
+		local val = this.World.LegendsMod.BroStats().addNewActorID(bro);
 		bro.m.CompanyID = val;
 
 

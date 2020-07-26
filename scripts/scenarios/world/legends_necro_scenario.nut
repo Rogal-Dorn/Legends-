@@ -68,7 +68,7 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[2].setVeteranPerks(3);
 		foreach( bro in bros )
 		{
-			local val = this.World.State.addNewID(bro);
+			local val = this.World.LegendsMod.BroStats().addNewActorID(bro);
 			bro.m.CompanyID = val;
 		}
 		
