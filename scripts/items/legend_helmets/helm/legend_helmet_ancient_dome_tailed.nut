@@ -6,7 +6,7 @@ this.legend_helmet_ancient_dome_tailed <- this.inherit("scripts/items/legend_hel
 		this.legend_helmet_upgrade.create();
         this.m.Type = this.Const.Items.HelmetUpgrades.Helm;
 		this.m.ID = "armor.head.legend_helmet_ancient_dome_tailed";
-		this.m.Name = "TODO legend_helmet_ancient_dome_tailed";
+		this.m.Name = "Tailed Ancient Dome";
 		this.m.Description = "TODO legend_helmet_ancient_dome_tailed";
         this.m.ArmorDescription = this.m.Description;
         this.m.Variant = 1;

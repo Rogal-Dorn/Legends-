@@ -6,7 +6,7 @@ this.legend_helmet_goblin_leaf_helm <- this.inherit("scripts/items/legend_helmet
 		this.legend_helmet_upgrade.create();
         this.m.Type = this.Const.Items.HelmetUpgrades.Top;
 		this.m.ID = "armor.head.legend_helmet_goblin_leaf_helm";
-		this.m.Name = "TODO legend_helmet_goblin_leaf_helm";
+		this.m.Name = "Goblin Leaf Helm";
 		this.m.Description = "TODO legend_helmet_goblin_leaf_helm";
         this.m.ArmorDescription = this.m.Description;
         this.m.Variant = 1;

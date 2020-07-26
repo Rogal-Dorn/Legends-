@@ -6,7 +6,7 @@ this.legend_helmet_facemask <- this.inherit("scripts/items/legend_helmets/legend
 		this.legend_helmet_upgrade.create();
         this.m.Type = this.Const.Items.HelmetUpgrades.Top;
 		this.m.ID = "armor.head.legend_helmet_facemask";
-		this.m.Name = "TODO legend_helmet_facemask";
+		this.m.Name = "Facemask";
 		this.m.Description = "TODO legend_helmet_facemask";
         this.m.ArmorDescription = this.m.Description;
         this.m.Variant = 1;

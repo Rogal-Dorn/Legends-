@@ -6,7 +6,7 @@ this.legend_helmet_heavy_plate_helm <- this.inherit("scripts/items/legend_helmet
 		this.legend_helmet_upgrade.create();
         this.m.Type = this.Const.Items.HelmetUpgrades.Helm;
 		this.m.ID = "armor.head.legend_helmet_heavy_plate_helm";
-		this.m.Name = "TODO legend_helmet_heavy_plate_helm";
+		this.m.Name = "Heavy Plate Helm";
 		this.m.Description = "TODO legend_helmet_heavy_plate_helm";
         this.m.ArmorDescription = this.m.Description;
         this.m.Variant = 1;

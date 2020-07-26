@@ -6,7 +6,7 @@ this.legend_helmet_knotted_tail <- this.inherit("scripts/items/legend_helmets/le
 		this.legend_helmet_upgrade.create();
         this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_knotted_tail";
-		this.m.Name = "TODO legend_helmet_knotted_tail";
+		this.m.Name = "Knotted Tail";
 		this.m.Description = "TODO legend_helmet_knotted_tail";
         this.m.ArmorDescription = this.m.Description;
         this.m.Variant = 1;

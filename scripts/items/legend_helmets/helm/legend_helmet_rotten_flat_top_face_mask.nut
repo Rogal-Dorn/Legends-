@@ -6,7 +6,7 @@ this.legend_helmet_rotten_flat_top_face_mask <- this.inherit("scripts/items/lege
 		this.legend_helmet_upgrade.create();
         this.m.Type = this.Const.Items.HelmetUpgrades.Helm;
 		this.m.ID = "armor.head.legend_helmet_rotten_flat_top_face_mask";
-		this.m.Name = "TODO legend_helmet_rotten_flat_top_face_mask";
+		this.m.Name = "Rotten Flat Top Face Mask";
 		this.m.Description = "TODO legend_helmet_rotten_flat_top_face_mask";
         this.m.ArmorDescription = this.m.Description;
         this.m.Variant = 1;
