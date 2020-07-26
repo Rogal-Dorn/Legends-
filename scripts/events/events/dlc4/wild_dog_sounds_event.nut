@@ -255,7 +255,7 @@ this.wild_dog_sounds_event <- this.inherit("scripts/events/event", {
 					text = _event.m.Expendable.getName() + " went missing"
 				});
 				_event.m.Expendable.getItems().transferToStash(this.World.Assets.getStash());
-				this.World.LegendsMod.BroStats().removeActorID(_event.m.Expendable.getCompanyID());
+				//this.World.LegendsMod.BroStats().removeActorID(_event.m.Expendable.getCompanyID());
 				this.World.getPlayerRoster().remove(_event.m.Expendable);
 			}
 

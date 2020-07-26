@@ -44,7 +44,7 @@ this.desertion_event <- this.inherit("scripts/events/event", {
 							_event.m.Deserter.getItems().transferToStash(this.World.Assets.getStash());
 						}
 						this.World.Statistics.addFallen(_event.m.Deserter, "Deserted the company");
-						this.World.LegendsMod.BroStats().removeActorID(_event.m.Deserter.getCompanyID());
+						//this.World.LegendsMod.BroStats().removeActorID(_event.m.Deserter.getCompanyID());
 						this.World.getPlayerRoster().remove(_event.m.Deserter);
 						_event.m.Deserter = null;
 						_event.m.Other = null;

@@ -401,7 +401,7 @@ this.hedgeknight_vs_hedgeknight_event <- this.inherit("scripts/events/event", {
 					text = _event.m.HedgeKnight2.getName() + " has died"
 				});
 				_event.m.HedgeKnight2.getItems().transferToStash(this.World.Assets.getStash());
-				this.World.LegendsMod.BroStats().removeActorID(_event.m.HedgeKnight2.getCompanyID());
+				//this.World.LegendsMod.BroStats().removeActorID(_event.m.HedgeKnight2.getCompanyID());
 				this.World.getPlayerRoster().remove(_event.m.HedgeKnight2);
 				local injury = _event.m.HedgeKnight1.addInjury(this.Const.Injury.Brawl);
 				this.List.push({
@@ -468,7 +468,7 @@ this.hedgeknight_vs_hedgeknight_event <- this.inherit("scripts/events/event", {
 					text = _event.m.HedgeKnight1.getName() + " has died"
 				});
 				_event.m.HedgeKnight1.getItems().transferToStash(this.World.Assets.getStash());
-				this.World.LegendsMod.BroStats().removeActorID(_event.m.HedgeKnight1.getCompanyID());
+				//this.World.LegendsMod.BroStats().removeActorID(_event.m.HedgeKnight1.getCompanyID());
 				this.World.getPlayerRoster().remove(_event.m.HedgeKnight1);
 				local injury = _event.m.HedgeKnight2.addInjury(this.Const.Injury.Brawl);
 				this.List.push({
