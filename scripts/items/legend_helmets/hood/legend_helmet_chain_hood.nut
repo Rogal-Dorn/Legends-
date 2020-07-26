@@ -6,8 +6,8 @@ this.legend_helmet_chain_hood <- this.inherit("scripts/items/legend_helmets/lege
 		this.legend_helmet.create();
 		this.m.ID = "armor.head.legend_helmet_chain_hood";
 		this.m.Name = "Chain Hood";
-		this.m.Description = "TODO legend_helmet_chain_hood";
-        this.m.Variant = 1;
+		this.m.Description = "Chain Hood";
+		this.m.Variant = 1;
 		this.m.Variants = [1, 2, 3, 4];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
@@ -16,6 +16,7 @@ this.legend_helmet_chain_hood <- this.inherit("scripts/items/legend_helmets/lege
 		this.m.Condition = 80;
 		this.m.ConditionMax = 80;
 		this.m.StaminaModifier = -4;
+		this.m.Vision = 0;
 	}
 
 	function updateVariant()

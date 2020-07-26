@@ -6,8 +6,8 @@ this.legend_helmet_padded_cap <- this.inherit("scripts/items/legend_helmets/lege
 		this.legend_helmet.create();
 		this.m.ID = "armor.head.legend_helmet_padded_cap";
 		this.m.Name = "Padded Cap";
-		this.m.Description = "TODO legend_helmet_padded_cap";
-        this.m.Variant = 1;
+		this.m.Description = "Padded Cap";
+		this.m.Variant = 1;
 		this.m.Variants = [1];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
@@ -16,6 +16,7 @@ this.legend_helmet_padded_cap <- this.inherit("scripts/items/legend_helmets/lege
 		this.m.Condition = 80;
 		this.m.ConditionMax = 80;
 		this.m.StaminaModifier = -4;
+		this.m.Vision = 0;
 	}
 
 	function updateVariant()

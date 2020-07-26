@@ -4,12 +4,12 @@ this.legend_helmet_faceplate_raised <- this.inherit("scripts/items/legend_helmet
 	function create()
 	{
 		this.legend_helmet_upgrade.create();
-        this.m.Type = this.Const.Items.HelmetUpgrades.Top;
+		this.m.Type = this.Const.Items.HelmetUpgrades.Top;
 		this.m.ID = "armor.head.legend_helmet_faceplate_raised";
-		this.m.Name = "Faceplate Raised";
-		this.m.Description = "TODO legend_helmet_faceplate_raised";
-        this.m.ArmorDescription = this.m.Description;
-        this.m.Variant = 1;
+		this.m.Name = "Raised Faceplate";
+		this.m.Description = "Raised Faceplate";
+		this.m.ArmorDescription = this.m.Description;
+		this.m.Variant = 1;
 		this.m.Variants = [1, 2];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
@@ -18,6 +18,8 @@ this.legend_helmet_faceplate_raised <- this.inherit("scripts/items/legend_helmet
 		this.m.Condition = 80;
 		this.m.ConditionMax = 80;
 		this.m.StaminaModifier = -4;
+		this.m.Vision = 0;
+		this.m.IsLowerVanity = false;
 	}
 
 	function updateVariant()
@@ -28,7 +30,7 @@ this.legend_helmet_faceplate_raised <- this.inherit("scripts/items/legend_helmet
 		this.m.SpriteCorpse = "legendhelms_faceplate_raised" + "_" + variant + "_dead";
 		this.m.IconLarge = "";
 		this.m.Icon = "legend_helmets/inventory_faceplate_raised" + "_" + variant + ".png";
-        this.m.OverlayIcon = this.m.Icon;
+		this.m.OverlayIcon = this.m.Icon;
 		this.m.OverlayIconLarge = this.m.OverlayIcon;
 	}
 });

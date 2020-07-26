@@ -4,12 +4,12 @@ this.legend_helmet_goblin_leather_helm <- this.inherit("scripts/items/legend_hel
 	function create()
 	{
 		this.legend_helmet_upgrade.create();
-        this.m.Type = this.Const.Items.HelmetUpgrades.Helm;
+		this.m.Type = this.Const.Items.HelmetUpgrades.Helm;
 		this.m.ID = "armor.head.legend_helmet_goblin_leather_helm";
 		this.m.Name = "Goblin Leather Helm";
-		this.m.Description = "TODO legend_helmet_goblin_leather_helm";
-        this.m.ArmorDescription = this.m.Description;
-        this.m.Variant = 1;
+		this.m.Description = "Goblin Leather Helm";
+		this.m.ArmorDescription = this.m.Description;
+		this.m.Variant = 1;
 		this.m.Variants = [1];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
@@ -18,6 +18,8 @@ this.legend_helmet_goblin_leather_helm <- this.inherit("scripts/items/legend_hel
 		this.m.Condition = 80;
 		this.m.ConditionMax = 80;
 		this.m.StaminaModifier = -4;
+		this.m.Vision = 0;
+		this.m.IsLowerVanity = false;
 	}
 
 	function updateVariant()
@@ -28,7 +30,7 @@ this.legend_helmet_goblin_leather_helm <- this.inherit("scripts/items/legend_hel
 		this.m.SpriteCorpse = "legendhelms_goblin_leather_helm" + "_" + variant + "_dead";
 		this.m.IconLarge = "";
 		this.m.Icon = "legend_helmets/inventory_goblin_leather_helm" + "_" + variant + ".png";
-        this.m.OverlayIcon = this.m.Icon;
+		this.m.OverlayIcon = this.m.Icon;
 		this.m.OverlayIconLarge = this.m.OverlayIcon;
 	}
 });

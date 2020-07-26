@@ -4,12 +4,12 @@ this.legend_helmet_ram_horns <- this.inherit("scripts/items/legend_helmets/legen
 	function create()
 	{
 		this.legend_helmet_upgrade.create();
-        this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
+		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_ram_horns";
 		this.m.Name = "Ram Horns";
-		this.m.Description = "TODO legend_helmet_ram_horns";
-        this.m.ArmorDescription = this.m.Description;
-        this.m.Variant = 1;
+		this.m.Description = "Ram Horns";
+		this.m.ArmorDescription = this.m.Description;
+		this.m.Variant = 1;
 		this.m.Variants = [1];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
@@ -18,6 +18,8 @@ this.legend_helmet_ram_horns <- this.inherit("scripts/items/legend_helmets/legen
 		this.m.Condition = 80;
 		this.m.ConditionMax = 80;
 		this.m.StaminaModifier = -4;
+		this.m.Vision = 0;
+		this.m.IsLowerVanity = false;
 	}
 
 	function updateVariant()
@@ -28,7 +30,7 @@ this.legend_helmet_ram_horns <- this.inherit("scripts/items/legend_helmets/legen
 		this.m.SpriteCorpse = "legendhelms_ram_horns" + "_" + variant + "_dead";
 		this.m.IconLarge = "";
 		this.m.Icon = "legend_helmets/inventory_ram_horns" + "_" + variant + ".png";
-        this.m.OverlayIcon = this.m.Icon;
+		this.m.OverlayIcon = this.m.Icon;
 		this.m.OverlayIconLarge = this.m.OverlayIcon;
 	}
 });

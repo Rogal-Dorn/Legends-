@@ -4,12 +4,12 @@ this.legend_helmet_back_feathers <- this.inherit("scripts/items/legend_helmets/l
 	function create()
 	{
 		this.legend_helmet_upgrade.create();
-        this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
+		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_back_feathers";
 		this.m.Name = "Back Feathers";
-		this.m.Description = "TODO legend_helmet_back_feathers";
-        this.m.ArmorDescription = this.m.Description;
-        this.m.Variant = 1;
+		this.m.Description = "Back Feathers";
+		this.m.ArmorDescription = this.m.Description;
+		this.m.Variant = 1;
 		this.m.Variants = [1, 2, 3, 4];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
@@ -18,7 +18,8 @@ this.legend_helmet_back_feathers <- this.inherit("scripts/items/legend_helmets/l
 		this.m.Condition = 80;
 		this.m.ConditionMax = 80;
 		this.m.StaminaModifier = -4;
-        this.m.IsLowerVanity = true;
+		this.m.Vision = 0;
+		this.m.IsLowerVanity = true;
 	}
 
 	function updateVariant()
@@ -29,7 +30,7 @@ this.legend_helmet_back_feathers <- this.inherit("scripts/items/legend_helmets/l
 		this.m.SpriteCorpse = "legendhelms_back_feathers" + "_" + variant + "_dead";
 		this.m.IconLarge = "";
 		this.m.Icon = "legend_helmets/inventory_back_feathers" + "_" + variant + ".png";
-        this.m.OverlayIcon = this.m.Icon;
+		this.m.OverlayIcon = this.m.Icon;
 		this.m.OverlayIconLarge = this.m.OverlayIcon;
 	}
 });
