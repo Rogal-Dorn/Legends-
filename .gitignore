@@ -7,3 +7,4 @@ gfx/*.png
 unpacked/**/*dead_arrows.png
 unpacked/**/*dead_javelin.png
 unpacked/legend_armor/metadata.xml
+unpacked/legend_helmets/metadata.xml

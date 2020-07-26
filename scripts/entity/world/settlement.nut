@@ -1949,9 +1949,11 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 			foreach( h in this.m.HousesTiles )
 			{
+				continue;
 				local tile = this.World.getTileSquare(h.X, h.Y);
 				tile.clear(this.Const.World.DetailType.Houses);
 				local d = tile.spawnDetail("world_houses_0" + this.getHousesType() + "_0" + h.V, this.Const.World.ZLevel.Object - 3, this.Const.World.DetailType.Houses);
+				if (d == null) continue;
 				d.Scale = 0.85;
 			}
 		}
@@ -1970,6 +1972,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 			foreach( h in this.m.HousesTiles )
 			{
+				continue;
 				local tile = this.World.getTileSquare(h.X, h.Y);
 				tile.clear(this.Const.World.DetailType.Houses | this.Const.World.DetailType.Lighting);
 				local d = tile.spawnDetail("world_houses_0" + this.getHousesType() + "_0" + h.V + "_ruins", this.Const.World.ZLevel.Object - 3, this.Const.World.DetailType.Houses);
