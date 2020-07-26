@@ -4506,7 +4506,7 @@ this.tooltip_events <- {
 					{
 						id = 2,
 						type = "description",
-						text = "If enabled, mercenaries will gradually form friendships based on morality and experiences. Affects combat, events and contracts. "
+						text = "If enabled, mercenaries will gradually form friendships based on experiences. Affects combat, events and contracts. "
 					}
 				];
 		case "mapconfig.legendworldeconomy":
