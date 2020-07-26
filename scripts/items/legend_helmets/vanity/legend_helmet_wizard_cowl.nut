@@ -6,7 +6,7 @@ this.legend_helmet_wizard_cowl <- this.inherit("scripts/items/legend_helmets/leg
 		this.legend_helmet_upgrade.create();
         this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_wizard_cowl";
-		this.m.Name = "TODO legend_helmet_wizard_cowl";
+		this.m.Name = "Wizard Cowl";
 		this.m.Description = "TODO legend_helmet_wizard_cowl";
         this.m.ArmorDescription = this.m.Description;
         this.m.Variant = 1;

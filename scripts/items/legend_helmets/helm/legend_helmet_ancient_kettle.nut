@@ -6,7 +6,7 @@ this.legend_helmet_ancient_kettle <- this.inherit("scripts/items/legend_helmets/
 		this.legend_helmet_upgrade.create();
         this.m.Type = this.Const.Items.HelmetUpgrades.Helm;
 		this.m.ID = "armor.head.legend_helmet_ancient_kettle";
-		this.m.Name = "TODO legend_helmet_ancient_kettle";
+		this.m.Name = "Ancient Kettle";
 		this.m.Description = "TODO legend_helmet_ancient_kettle";
         this.m.ArmorDescription = this.m.Description;
         this.m.Variant = 1;
