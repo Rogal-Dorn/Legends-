@@ -6,7 +6,7 @@ this.legend_helmet_faceplate_pointed <- this.inherit("scripts/items/legend_helme
 		this.legend_helmet_upgrade.create();
         this.m.Type = this.Const.Items.HelmetUpgrades.Top;
 		this.m.ID = "armor.head.legend_helmet_faceplate_pointed";
-		this.m.Name = "Faceplate Pointed";
+		this.m.Name = "Pointed Faceplate";
 		this.m.Description = "TODO legend_helmet_faceplate_pointed";
         this.m.ArmorDescription = this.m.Description;
         this.m.Variant = 1;
