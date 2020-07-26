@@ -278,6 +278,8 @@ def main():
             print(testname)
             print(rname)
             rname = "Tailed " + rname.rsplit(' ', 1)[0]
+        if testname == 'Crested':
+            rname = rname + " Helm"
         opts = dict(
             name=fname,
             rname=rname,
