@@ -5,9 +5,9 @@ this.legend_helmet_hood_cloth_square <- this.inherit("scripts/items/legend_helme
 	{
 		this.legend_helmet.create();
 		this.m.ID = "armor.head.legend_helmet_hood_cloth_square";
-		this.m.Name = "Hood Cloth Square";
-		this.m.Description = "TODO legend_helmet_hood_cloth_square";
-        this.m.Variant = 1;
+		this.m.Name = "Square Hood Cloth";
+		this.m.Description = "Square Hood Cloth";
+		this.m.Variant = 1;
 		this.m.Variants = [1];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
@@ -16,6 +16,7 @@ this.legend_helmet_hood_cloth_square <- this.inherit("scripts/items/legend_helme
 		this.m.Condition = 80;
 		this.m.ConditionMax = 80;
 		this.m.StaminaModifier = -4;
+		this.m.Vision = 0;
 	}
 
 	function updateVariant()

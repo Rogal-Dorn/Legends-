@@ -5,9 +5,9 @@ this.legend_helmet_hood_cloth_wide <- this.inherit("scripts/items/legend_helmets
 	{
 		this.legend_helmet.create();
 		this.m.ID = "armor.head.legend_helmet_hood_cloth_wide";
-		this.m.Name = "Hood Cloth Wide";
-		this.m.Description = "TODO legend_helmet_hood_cloth_wide";
-        this.m.Variant = 1;
+		this.m.Name = "Wide Hood Cloth";
+		this.m.Description = "Wide Hood Cloth";
+		this.m.Variant = 1;
 		this.m.Variants = [1, 2];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
@@ -16,6 +16,7 @@ this.legend_helmet_hood_cloth_wide <- this.inherit("scripts/items/legend_helmets
 		this.m.Condition = 80;
 		this.m.ConditionMax = 80;
 		this.m.StaminaModifier = -4;
+		this.m.Vision = 0;
 	}
 
 	function updateVariant()
