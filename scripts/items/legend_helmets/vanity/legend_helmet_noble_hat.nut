@@ -7,7 +7,7 @@ this.legend_helmet_noble_hat <- this.inherit("scripts/items/legend_helmets/legen
 		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_noble_hat";
 		this.m.Name = "Noble Hat";
-		this.m.Description = "Noble Hat";
+		this.m.Description = "A trendy hat amongst nobles.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1];

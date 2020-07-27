@@ -6,7 +6,7 @@ this.legend_helmet_ancient_tailed_conic_helm <- this.inherit("scripts/items/lege
 		this.legend_helmet_upgrade.create();
 		this.m.Type = this.Const.Items.HelmetUpgrades.Helm;
 		this.m.ID = "armor.head.legend_helmet_ancient_tailed_conic_helm";
-		this.m.Name = "Ancient Tailed Conic Helm";
+		this.m.Name = "Tailed Ancient Conic Helm";
 		this.m.Description = "Ancient Tailed Conic Helm";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;

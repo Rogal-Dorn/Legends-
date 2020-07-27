@@ -7,7 +7,7 @@ this.legend_helmet_cult_hood <- this.inherit("scripts/items/legend_helmets/legen
 		this.m.Type = this.Const.Items.HelmetUpgrades.Helm;
 		this.m.ID = "armor.head.legend_helmet_cult_hood";
 		this.m.Name = "Cult Hood";
-		this.m.Description = "Cult Hood";
+		this.m.Description = "A thick leather hood that covers the head and neck but limits vision, typically worn by cultists.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1, 2, 3, 4, 5, 6, 7];

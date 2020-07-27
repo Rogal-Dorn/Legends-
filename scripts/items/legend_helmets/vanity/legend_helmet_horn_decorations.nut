@@ -7,7 +7,7 @@ this.legend_helmet_horn_decorations <- this.inherit("scripts/items/legend_helmet
 		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_horn_decorations";
 		this.m.Name = "Horn Decorations";
-		this.m.Description = "Horn Decorations";
+		this.m.Description = "A pair of grotesque horns used for decoration.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1, 2];

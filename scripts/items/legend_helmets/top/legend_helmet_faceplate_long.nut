@@ -7,7 +7,7 @@ this.legend_helmet_faceplate_long <- this.inherit("scripts/items/legend_helmets/
 		this.m.Type = this.Const.Items.HelmetUpgrades.Top;
 		this.m.ID = "armor.head.legend_helmet_faceplate_long";
 		this.m.Name = "Long Faceplate";
-		this.m.Description = "Long Faceplate";
+		this.m.Description = "An effective but heavy lower-face guard.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1];

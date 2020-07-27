@@ -7,7 +7,7 @@ this.legend_helmet_sack <- this.inherit("scripts/items/legend_helmets/legend_hel
 		this.m.Type = this.Const.Items.HelmetUpgrades.Helm;
 		this.m.ID = "armor.head.legend_helmet_sack";
 		this.m.Name = "Sack";
-		this.m.Description = "Sack";
+		this.m.Description = "A rough spun cloth bag with two holes in it.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];

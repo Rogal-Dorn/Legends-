@@ -7,7 +7,7 @@ this.legend_helmet_sallet <- this.inherit("scripts/items/legend_helmets/legend_h
 		this.m.Type = this.Const.Items.HelmetUpgrades.Helm;
 		this.m.ID = "armor.head.legend_helmet_sallet";
 		this.m.Name = "Sallet";
-		this.m.Description = "Sallet";
+		this.m.Description = "A metal sallet helmet with an extended neckguard, a design uncommon in these lands.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1, 2, 3, 4, 5, 6];

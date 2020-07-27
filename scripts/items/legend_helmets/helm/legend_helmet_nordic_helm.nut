@@ -7,7 +7,7 @@ this.legend_helmet_nordic_helm <- this.inherit("scripts/items/legend_helmets/leg
 		this.m.Type = this.Const.Items.HelmetUpgrades.Helm;
 		this.m.ID = "armor.head.legend_helmet_nordic_helm";
 		this.m.Name = "Nordic Helm";
-		this.m.Description = "Nordic Helm";
+		this.m.Description = "A nordic helmet guarding the face with additional metal plates.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1, 2, 3, 4, 5, 6];

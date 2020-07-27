@@ -7,7 +7,7 @@ this.legend_helmet_feather_band <- this.inherit("scripts/items/legend_helmets/le
 		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_feather_band";
 		this.m.Name = "Feather Band";
-		this.m.Description = "Feather Band";
+		this.m.Description = "A band across the helmet with a feather in front.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1, 2];

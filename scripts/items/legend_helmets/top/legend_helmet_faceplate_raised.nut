@@ -7,7 +7,7 @@ this.legend_helmet_faceplate_raised <- this.inherit("scripts/items/legend_helmet
 		this.m.Type = this.Const.Items.HelmetUpgrades.Top;
 		this.m.ID = "armor.head.legend_helmet_faceplate_raised";
 		this.m.Name = "Raised Faceplate";
-		this.m.Description = "Raised Faceplate";
+		this.m.Description = "A faceplate but worn above the head. Offers less protection than wearing it properly but very breathable.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1, 2];

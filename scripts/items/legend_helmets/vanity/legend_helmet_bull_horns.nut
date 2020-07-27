@@ -7,7 +7,7 @@ this.legend_helmet_bull_horns <- this.inherit("scripts/items/legend_helmets/lege
 		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_bull_horns";
 		this.m.Name = "Bull Horns";
-		this.m.Description = "Bull Horns";
+		this.m.Description = "A sturdy pair of horns liberated from a bull.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1];

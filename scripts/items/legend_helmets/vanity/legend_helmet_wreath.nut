@@ -7,7 +7,7 @@ this.legend_helmet_wreath <- this.inherit("scripts/items/legend_helmets/legend_h
 		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_wreath";
 		this.m.Name = "Wreath";
-		this.m.Description = "Wreath";
+		this.m.Description = "A flower crown inspired by empires long ago.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1, 2];

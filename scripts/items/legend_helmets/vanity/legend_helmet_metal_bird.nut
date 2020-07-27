@@ -7,7 +7,7 @@ this.legend_helmet_metal_bird <- this.inherit("scripts/items/legend_helmets/lege
 		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_metal_bird";
 		this.m.Name = "Metal Bird";
-		this.m.Description = "Metal Bird";
+		this.m.Description = "A trophy of a bird made to sit on top of a helmet";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1, 2];

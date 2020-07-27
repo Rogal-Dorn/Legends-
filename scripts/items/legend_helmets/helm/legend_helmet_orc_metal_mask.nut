@@ -6,7 +6,7 @@ this.legend_helmet_orc_metal_mask <- this.inherit("scripts/items/legend_helmets/
 		this.legend_helmet_upgrade.create();
 		this.m.Type = this.Const.Items.HelmetUpgrades.Helm;
 		this.m.ID = "armor.head.legend_helmet_orc_metal_mask";
-		this.m.Name = "Orc Metal Mask";
+		this.m.Name = "Metal Orc Mask";
 		this.m.Description = "Orc Metal Mask";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;

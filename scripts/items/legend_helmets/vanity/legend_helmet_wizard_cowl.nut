@@ -7,7 +7,7 @@ this.legend_helmet_wizard_cowl <- this.inherit("scripts/items/legend_helmets/leg
 		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_wizard_cowl";
 		this.m.Name = "Wizard Cowl";
-		this.m.Description = "Wizard Cowl";
+		this.m.Description = "An iconic wizard's hat, not as hairy as one might have expected.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];

@@ -7,7 +7,7 @@ this.legend_helmet_faceplate_snub_nose <- this.inherit("scripts/items/legend_hel
 		this.m.Type = this.Const.Items.HelmetUpgrades.Top;
 		this.m.ID = "armor.head.legend_helmet_faceplate_snub_nose";
 		this.m.Name = "Snub Nose Faceplate";
-		this.m.Description = "Snub Nose Faceplate";
+		this.m.Description = "A faceplate which provides a bit more breathability than others.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1];

@@ -7,7 +7,7 @@ this.legend_helmet_hunter_cap <- this.inherit("scripts/items/legend_helmets/lege
 		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_hunter_cap";
 		this.m.Name = "Hunter Cap";
-		this.m.Description = "Hunter Cap";
+		this.m.Description = "A thick felt hat decorated with feathers as a hunter's trophy.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1];

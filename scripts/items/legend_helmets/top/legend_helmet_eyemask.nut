@@ -7,7 +7,7 @@ this.legend_helmet_eyemask <- this.inherit("scripts/items/legend_helmets/legend_
 		this.m.Type = this.Const.Items.HelmetUpgrades.Top;
 		this.m.ID = "armor.head.legend_helmet_eyemask";
 		this.m.Name = "Eyemask";
-		this.m.Description = "Eyemask";
+		this.m.Description = "A mask made to cover the wearer's eye-dentity.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1, 2];

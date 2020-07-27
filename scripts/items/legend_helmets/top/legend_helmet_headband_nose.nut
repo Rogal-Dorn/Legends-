@@ -7,7 +7,7 @@ this.legend_helmet_headband_nose <- this.inherit("scripts/items/legend_helmets/l
 		this.m.Type = this.Const.Items.HelmetUpgrades.Top;
 		this.m.ID = "armor.head.legend_helmet_headband_nose";
 		this.m.Name = "Headband Nose";
-		this.m.Description = "Headband Nose";
+		this.m.Description = "A headband with a small indentation for the nose.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1];

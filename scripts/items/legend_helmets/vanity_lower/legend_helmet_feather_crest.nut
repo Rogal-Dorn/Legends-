@@ -7,7 +7,7 @@ this.legend_helmet_feather_crest <- this.inherit("scripts/items/legend_helmets/l
 		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_feather_crest";
 		this.m.Name = "Feather Crest";
-		this.m.Description = "Feather Crest";
+		this.m.Description = "An ornamental crest made of feathers that attaches to the back of a helmet.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1, 2, 3, 4, 5];

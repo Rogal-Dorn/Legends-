@@ -7,7 +7,7 @@ this.legend_helmet_faceplate_gold <- this.inherit("scripts/items/legend_helmets/
 		this.m.Type = this.Const.Items.HelmetUpgrades.Top;
 		this.m.ID = "armor.head.legend_helmet_faceplate_gold";
 		this.m.Name = "Gold Faceplate";
-		this.m.Description = "Gold Faceplate";
+		this.m.Description = "An ornate lower-face guard, that is somewhat hard to breathe in.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1];

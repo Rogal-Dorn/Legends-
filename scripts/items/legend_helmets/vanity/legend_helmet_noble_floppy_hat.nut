@@ -6,8 +6,8 @@ this.legend_helmet_noble_floppy_hat <- this.inherit("scripts/items/legend_helmet
 		this.legend_helmet_upgrade.create();
 		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_noble_floppy_hat";
-		this.m.Name = "Noble Floppy Hat";
-		this.m.Description = "Noble Floppy Hat";
+		this.m.Name = "Floppy Noble Hat";
+		this.m.Description = "An older style amongst nobles, still sometimes worn at upper class events.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1];

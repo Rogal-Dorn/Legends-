@@ -6,7 +6,7 @@ this.legend_helmet_carthaginian <- this.inherit("scripts/items/legend_helmets/le
 		this.legend_helmet_upgrade.create();
 		this.m.Type = this.Const.Items.HelmetUpgrades.Helm;
 		this.m.ID = "armor.head.legend_helmet_carthaginian";
-		this.m.Name = "Carthaginian";
+		this.m.Name = "Carthaginian Helm";
 		this.m.Description = "Carthaginian";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;

@@ -6,8 +6,8 @@ this.legend_helmet_back_feathers <- this.inherit("scripts/items/legend_helmets/l
 		this.legend_helmet_upgrade.create();
 		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_back_feathers";
-		this.m.Name = "Back Feathers";
-		this.m.Description = "Back Feathers";
+		this.m.Name = "Feathers";
+		this.m.Description = "Feathers that attach to the back of a helmet.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1, 2, 3, 4];

@@ -7,7 +7,7 @@ this.legend_helmet_witchhunter_helm <- this.inherit("scripts/items/legend_helmet
 		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_witchhunter_helm";
 		this.m.Name = "Witchhunter Helm";
-		this.m.Description = "Witchhunter Helm";
+		this.m.Description = "The iconic addition for every witch hunter to distinguish themself with.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1, 2, 3, 4, 5, 6, 7];

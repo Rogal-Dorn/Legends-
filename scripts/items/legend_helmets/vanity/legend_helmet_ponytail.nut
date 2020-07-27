@@ -7,7 +7,7 @@ this.legend_helmet_ponytail <- this.inherit("scripts/items/legend_helmets/legend
 		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_ponytail";
 		this.m.Name = "Ponytail";
-		this.m.Description = "Ponytail";
+		this.m.Description = "A basic ponytail that attaches to the top of a helmet.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1, 2, 3, 4];

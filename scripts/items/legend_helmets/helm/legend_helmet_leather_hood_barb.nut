@@ -7,7 +7,7 @@ this.legend_helmet_leather_hood_barb <- this.inherit("scripts/items/legend_helme
 		this.m.Type = this.Const.Items.HelmetUpgrades.Helm;
 		this.m.ID = "armor.head.legend_helmet_leather_hood_barb";
 		this.m.Name = "Leather Hood Barb";
-		this.m.Description = "Leather Hood Barb";
+		this.m.Description = "A thick leather helmet fashioned from cured hides. The animals these once belonged to were certainly dangerous game.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1];

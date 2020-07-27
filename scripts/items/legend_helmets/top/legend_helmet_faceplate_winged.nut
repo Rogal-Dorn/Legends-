@@ -7,7 +7,7 @@ this.legend_helmet_faceplate_winged <- this.inherit("scripts/items/legend_helmet
 		this.m.Type = this.Const.Items.HelmetUpgrades.Top;
 		this.m.ID = "armor.head.legend_helmet_faceplate_winged";
 		this.m.Name = "Winged Faceplate";
-		this.m.Description = "Winged Faceplate";
+		this.m.Description = "An ornate halfplate with wings on the side.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1];

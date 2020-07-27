@@ -6,8 +6,8 @@ this.legend_helmet_antler <- this.inherit("scripts/items/legend_helmets/legend_h
 		this.legend_helmet_upgrade.create();
 		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_antler";
-		this.m.Name = "Antler";
-		this.m.Description = "Antler";
+		this.m.Name = "Antlers";
+		this.m.Description = "Deer antlers, now prepaerd and used for decoration";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1];

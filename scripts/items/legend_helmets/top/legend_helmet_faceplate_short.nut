@@ -7,7 +7,7 @@ this.legend_helmet_faceplate_short <- this.inherit("scripts/items/legend_helmets
 		this.m.Type = this.Const.Items.HelmetUpgrades.Top;
 		this.m.ID = "armor.head.legend_helmet_faceplate_short";
 		this.m.Name = "Short Faceplate";
-		this.m.Description = "Short Faceplate";
+		this.m.Description = "A lighter faceguard, but doesn't block vision.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1];
