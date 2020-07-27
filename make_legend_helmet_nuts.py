@@ -449,9 +449,9 @@ descriptions = {
     "leather_hood_barb" :        "Leather Hood Barb",
     "nose_plate" :               "Nose Plate",
 
-    "antler" :               "Antler",
-    "bear_head" :            "Bear Head",
-    "beret" :                "Beret",
+    "antler" :               "Deer antlers now used for decoration",
+    "bear_head" :            "The dried and prepped head of a large bear. Mostly donned for the looks.",
+    "beret" :                "A fancy beret often worn by a sergeant.", #idk do segeants wear this lol
     "bull_horns" :           "A sturdy pair of horns liberated from a bull.",
     "crown" :                "A well made crown, liberated from royalty.",
     "faction_helmet" :       "A special adornment often reserved for a knight or other high ranking member.",
