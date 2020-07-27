@@ -349,7 +349,7 @@ titles = {
     "metal_bird" :           "Metal Bird",
     "noble_buckle" :         "Noble Buckle",
     "noble_feather" :        "Noble Feather",
-    "noble_floppy_hat" :     "Noble Floppy Hat",
+    "noble_floppy_hat" :     "Floppy Noble Hat",
     "noble_hat" :            "Noble Hat",
     "noble_hood" :           "Noble Hood",
     "wreath" :               "Wreath",
