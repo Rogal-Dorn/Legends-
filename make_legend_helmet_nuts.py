@@ -390,7 +390,7 @@ descriptions = {
     "hood_cloth_square" :    "Square Hood Cloth",
     "hood_cloth_wide" :      "Wide Hood Cloth",
     "cloth_long_hood" :      "Cloth Long Hood",
-    "cloth_bandana" :        "A basic light bandana, useful for keeping the sweat out of someone\'s brows",
+    "cloth_bandana" :        "A basic light bandana, useful for keeping the sweat out of the face.",
     "leather_cap" :          "Leather Cap",
 
     "ancient_beard_mask" :                  "Ancient Beard Mask",
@@ -420,7 +420,7 @@ descriptions = {
     "goblin_leather_helm" :                 "Goblin Leather Helm",
     "goblin_leather_mask" :                 "Goblin Leather Mask",
     "goblin_spiked_helm" :                  "Goblin Spiked Helm",
-    "golden_helm" :                         "Golden Helm",
+    "golden_helm" :                         "Golden Helm", #Firm believer thi shoudl be tier 2 not 1 bc it's THE look of the piece [mwah]
     "great_helm" :                           "Great Helm",
     "heavy_plate_helm" :                     "Heavy Plate Helm",
     "heavy_spiked_helm" :                   "Heavy Spiked Helm",
@@ -429,7 +429,7 @@ descriptions = {
     "legend_ancient_gladiator" :            "Ancient Gladiator Helm",
     "legend_ancient_legionaire_restored" :  "Restored Ancient Legionaire",
     "legend_frogmouth" :                     "Frogmouth",
-    "nordic_helm" :                          "Nordic Helm",
+    "nordic_helm" :                          "A nordic helmet guarding the face with additional metal plates.",
     "norman_helm" :                         "Norman Helm",
     "orc_double_helm" :                     "Orc Double Helm",
     "orc_great_helm" :                      "Orc Great Helm",
@@ -438,14 +438,14 @@ descriptions = {
     "orc_metal_mask" :                      "Orc Metal Mask",
     "orc_strapped_helm" :                   "Orc Strapped Helm",
 
-    "rotten_flat_top_face_mask" :    "Rotten Flat Top Face Mask",
-    "rotten_great_helm" :           "Rotten Great Helm",
-    "sallet" :                        "Sallet",
-    "skin_helm" :                   "Skin Helm",
-    "stag_helm" :                   "Stag Helm",
-    "swan_helm" :                   "Swan Helm",
-    "tailed_conic" :                "Tailed Conic",
-    "viking_helm" :                   "Viking Helm",
+    "rotten_flat_top_face_mask" :    "A worn and torn closed helmet with complete faceguard. It has obviously been lying outdoors for a while.",
+    "rotten_great_helm" :           "This full helm suffers from rusty metal parts and brittle leather inlays but still offers good protection if you ignore its stench.",
+    "sallet" :                        "A metal sallet helmet with an extended neckguard, a design uncommon in these lands.",
+    "skin_helm" :                   "Skin Helm", #
+    "stag_helm" :                   "A heavy plate helmet with a pair of antlers.",
+    "swan_helm" :                   "A heavy ornate helmet, topped with an ornamenta swan.",
+    "tailed_conic" :                "Tailed Conic", #
+    "viking_helm" :                   "A nordic helmet guarding face and neck with additional metal plates.",
     "sack" :                         "A rough spun cloth bag with two holes in it.",
 
     "goblin_leaf_helm" :         "Bundles of sticks and leaves loosely tied together.",
