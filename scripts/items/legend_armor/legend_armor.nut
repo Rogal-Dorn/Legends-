@@ -93,7 +93,7 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 				continue;
 			}
 
-			delta = u.setCondition(delta);
+			delta = u.onRepair(delta);
 
 			if (delta <= 0)
 			{

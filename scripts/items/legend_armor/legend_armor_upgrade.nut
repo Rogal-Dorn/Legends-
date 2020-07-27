@@ -186,6 +186,11 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 		this.Sound.play(this.m.ImpactSound[0], this.Const.Sound.Volume.Inventory);
 	}
 
+	function onRepair(_a)
+	{
+		return this.setCondition(_a);
+	}
+
 	function setCondition( _a )
 	{
 		local delta = 0;
