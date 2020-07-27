@@ -26,6 +26,7 @@ layers = [
     {"name": "cloth_long_hood",     "layer": "hood", "min": 1, "max": 4, "base": True},
     {"name": "cloth_bandana",       "layer": "hood", "min": 1, "max": 5, "base": True},
     {"name": "leather_cap",         "layer": "hood", "min": 1, "max": 1, "base": True},
+    {"name": "bronze_chain",        "layer": "hood", "min": 1, "max": 1, "base": True},
 
     {"name": "ancient_beard_mask",                  "layer": "helm", "min": 1, "max": 1},
     {"name": "ancient_conic_helm",                  "layer": "helm", "min": 1, "max": 1},
@@ -71,7 +72,9 @@ layers = [
     {"name": "orc_leather_mask",                    "layer": "helm", "min": 1, "max": 1},
     {"name": "orc_metal_mask",                      "layer": "helm", "min": 1, "max": 1},
     {"name": "orc_strapped_helm",                   "layer": "helm", "min": 1, "max": 1},
-
+    {"name": "bronze_helm",                         "layer": "helm", "min": 1, "max": 1},
+    {"name": "dentist_helmet",                      "layer": "helm", "min": 1, "max": 1},
+    
     {"name": "rotten_flat_top_face_mask",   "layer": "helm", "min": 1, "max": 5},
     {"name": "rotten_great_helm",           "layer": "helm", "min": 1, "max": 4},
     {"name": "sallet",                      "layer": "helm", "min": 1, "max": 6},
@@ -102,7 +105,15 @@ layers = [
     {"name": "headband_side",           "layer": "top", "min": 1, "max": 1},
     {"name": "leather_hood_barb",       "layer": "top", "min": 1, "max": 1},
     {"name": "nose_plate",              "layer": "top", "min": 1, "max": 1},
-
+    {"name": "faceplate_curved",        "layer": "top", "min": 1, "max": 1},
+    {"name": "faceplate_flat",          "layer": "top", "min": 1, "max": 1},
+    {"name": "faceplate_full_gold",     "layer": "top", "min": 1, "max": 1},
+    {"name": "faceplate_pointed_slit",  "layer": "top", "min": 1, "max": 1},
+    {"name": "faceplate_sharp",         "layer": "top", "min": 1, "max": 1},
+    {"name": "faceplate_snub_slit",     "layer": "top", "min": 1, "max": 1},
+    {"name": "golden_mask",             "layer": "top", "min": 1, "max": 1},
+    {"name": "warlock_skull",           "layer": "top", "min": 1, "max": 3},
+    
     {"name": "antler",              "layer": "vanity", "min": 1, "max": 1},
     {"name": "bear_head",           "layer": "vanity", "min": 1, "max": 1},
     {"name": "beret",               "layer": "vanity", "min": 1, "max": 1},
@@ -136,12 +147,22 @@ layers = [
     {"name": "witchhunter_helm",    "layer": "vanity", "min": 1, "max": 7},
     {"name": "wizard_cowl",         "layer": "vanity", "min": 1, "max": 20},
     {"name": "wolf_helm",           "layer": "vanity", "min": 1, "max": 1},
+    {"name": "royal_hood",          "layer": "vanity", "min": 1, "max": 1},
+    {"name": "lindwurm_helm",       "layer": "vanity", "min": 1, "max": 1},
+    {"name": "redback_helm",        "layer": "vanity", "min": 1, "max": 1},
+    {"name": "nun_habit",           "layer": "vanity", "min": 1, "max": 1},
+    {"name": "white_wolf_helm",     "layer": "vanity", "min": 1, "max": 1},
+    {"name": "nach_helm",           "layer": "vanity", "min": 1, "max": 1},
+    {"name": "mountain_helm",       "layer": "vanity", "min": 1, "max": 1},
+    {"name": "demon_alp_helm",      "layer": "vanity", "min": 1, "max": 1},
+    {"name": "warlock_hood",        "layer": "vanity", "min": 1, "max": 4},
 
     {"name": "back_crest",      "layer": "vanity", "lowervanity": True, "min": 1, "max": 4},
     {"name": "back_feathers",   "layer": "vanity", "lowervanity": True, "min": 1, "max": 4},
     {"name": "feather_crest",   "layer": "vanity", "lowervanity": True, "min": 1, "max": 5},
     {"name": "knotted_tail",    "layer": "vanity", "lowervanity": True, "min": 1, "max": 4},
     {"name": "orc_tail",        "layer": "vanity", "lowervanity": True, "min": 1, "max": 2},
+    {"name": "top_plume",       "layer": "vanity", "lowervanity": True, "min": 1, "max": 1},
     {"name": "wings",           "layer": "vanity", "lowervanity": True, "min": 1, "max": 6}
 ]
 

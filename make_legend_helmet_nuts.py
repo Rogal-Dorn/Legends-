@@ -94,6 +94,7 @@ layers = [
     {"name": "cloth_long_hood",     "layer": "hood", "min": 1, "max": 4, "base": True, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
     {"name": "cloth_bandana",       "layer": "hood", "min": 1, "max": 5, "base": True, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
     {"name": "leather_cap",         "layer": "hood", "min": 1, "max": 1, "base": True, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "bronze_chain",        "layer": "hood", "min": 1, "max": 1, "base": True, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
 
     {"name": "ancient_beard_mask",                  "layer": "helm", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
     {"name": "ancient_conic_helm",                  "layer": "helm", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
@@ -136,7 +137,8 @@ layers = [
     {"name": "orc_horn_mask",                       "layer": "helm", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
     {"name": "orc_leather_mask",                    "layer": "helm", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
     {"name": "orc_metal_mask",                      "layer": "helm", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
-    {"name": "orc_strapped_helm",                   "layer": "helm", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "bronze_helm",                         "layer": "helm", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "dentist_helmet",                      "layer": "helm", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
 
     {"name": "cult_hood",                   "layer": "helm", "min": 1, "max": 7, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
     {"name": "rotten_flat_top_face_mask",   "layer": "helm", "min": 1, "max": 5, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
@@ -170,7 +172,15 @@ layers = [
     {"name": "headband_nose",           "layer": "top", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
     {"name": "headband_side",           "layer": "top", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
     {"name": "nose_plate",              "layer": "top", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
-
+    {"name": "faceplate_curved",        "layer": "top", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "faceplate_flat",          "layer": "top", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "faceplate_full_gold",     "layer": "top", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "faceplate_pointed_slit",  "layer": "top", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "faceplate_sharp",         "layer": "top", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "faceplate_snub_slit",     "layer": "top", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "golden_mask",             "layer": "top", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "warlock_skull",           "layer": "top", "min": 1, "max": 3, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    
     {"name": "antler",              "layer": "vanity", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
     {"name": "bear_head",           "layer": "vanity", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
     {"name": "beret",               "layer": "vanity", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
@@ -204,12 +214,22 @@ layers = [
     {"name": "witchhunter_helm",    "layer": "vanity", "min": 1, "max": 7, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
     {"name": "wizard_cowl",         "layer": "vanity", "min": 1, "max": 20, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
     {"name": "wolf_helm",           "layer": "vanity", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
-
+    {"name": "white_wolf_helm",     "layer": "vanity", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "royal_hood",          "layer": "vanity", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "lindwurm_helm",       "layer": "vanity", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "redback_helm",        "layer": "vanity", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "nun_habit",           "layer": "vanity", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "nach_helm",           "layer": "vanity", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "mountain_helm",       "layer": "vanity", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "demon_alp_helm",      "layer": "vanity", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "warlock_hood",        "layer": "vanity", "min": 1, "max": 4, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+     
     {"name": "back_crest",      "layer": "vanity", "lowervanity": True, "min": 1, "max": 4, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
     {"name": "back_feathers",   "layer": "vanity", "lowervanity": True, "min": 1, "max": 4, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
     {"name": "feather_crest",   "layer": "vanity", "lowervanity": True, "min": 1, "max": 5, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
     {"name": "knotted_tail",    "layer": "vanity", "lowervanity": True, "min": 1, "max": 4, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
     {"name": "orc_tail",        "layer": "vanity", "lowervanity": True, "min": 1, "max": 2, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
+    {"name": "top_plume",        "layer": "vanity", "lowervanity": True, "min": 1, "max": 2, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 },
     {"name": "wings",           "layer": "vanity", "lowervanity": True, "min": 1, "max": 6, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0 }
 ]
 
