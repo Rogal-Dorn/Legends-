@@ -3733,3 +3733,5 @@ Fixed. Armor layers parts will now repair when not attached to a base armor piec
 Updated Vala and Druid background icons
 Updates the demon hound dead image
 Fixes alignment of the sash armor layer
+Ancient scrolls now actually drop
+Zombie poison scales from 1 not 10 now on legendary when you have resilient

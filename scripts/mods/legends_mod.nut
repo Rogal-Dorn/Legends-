@@ -13,7 +13,7 @@ this.legends_mod <- {
         return this.m.Configs;
     }
 
-    // function getStatistics()
+    // function BroStats()
     // {
     //     return this.m.BrotherStats;
     // }
