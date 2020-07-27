@@ -1,13 +1,13 @@
 
-this.legend_helmet_leather_hood_barb <- this.inherit("scripts/items/legend_helmets/legend_helmet_upgrade", {
+this.legend_helmet_ancient_crown <- this.inherit("scripts/items/legend_helmets/legend_helmet_upgrade", {
 	m = {},
 	function create()
 	{
 		this.legend_helmet_upgrade.create();
-        this.m.Type = this.Const.Items.HelmetUpgrades.Helm;
-		this.m.ID = "armor.head.legend_helmet_leather_hood_barb";
-		this.m.Name = "Leather Hood Barb";
-		this.m.Description = "Leather Hood Barb";
+		this.m.Type = this.Const.Items.HelmetUpgrades.Top;
+		this.m.ID = "armor.head.legend_helmet_ancient_crown";
+		this.m.Name = "Ancient Crown";
+		this.m.Description = "Ancient Crown";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1];
@@ -25,11 +25,11 @@ this.legend_helmet_leather_hood_barb <- this.inherit("scripts/items/legend_helme
 	function updateVariant()
 	{
 		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
-		this.m.Sprite = "legendhelms_leather_hood_barb" + "_" + variant;
-		this.m.SpriteDamaged = "legendhelms_leather_hood_barb" + "_" + variant + "_damaged";
-		this.m.SpriteCorpse = "legendhelms_leather_hood_barb" + "_" + variant + "_dead";
+		this.m.Sprite = "legendhelms_ancient_crown" + "_" + variant;
+		this.m.SpriteDamaged = "legendhelms_ancient_crown" + "_" + variant + "_damaged";
+		this.m.SpriteCorpse = "legendhelms_ancient_crown" + "_" + variant + "_dead";
 		this.m.IconLarge = "";
-		this.m.Icon = "legend_helmets/inventory_leather_hood_barb" + "_" + variant + ".png";
+		this.m.Icon = "legend_helmets/inventory_ancient_crown" + "_" + variant + ".png";
 		this.m.OverlayIcon = this.m.Icon;
 		this.m.OverlayIconLarge = this.m.OverlayIcon;
 	}
