@@ -7,7 +7,7 @@ this.legend_helmet_faceplate_full <- this.inherit("scripts/items/legend_helmets/
 		this.m.Type = this.Const.Items.HelmetUpgrades.Top;
 		this.m.ID = "armor.head.legend_helmet_faceplate_full";
 		this.m.Name = "Full Faceplate";
-		this.m.Description = "Full Faceplate";
+		this.m.Description = "A heavy winged helm that limits vision.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1];

@@ -6,7 +6,7 @@ this.legend_helmet_goblin_leather_mask <- this.inherit("scripts/items/legend_hel
 		this.legend_helmet_upgrade.create();
 		this.m.Type = this.Const.Items.HelmetUpgrades.Helm;
 		this.m.ID = "armor.head.legend_helmet_goblin_leather_mask";
-		this.m.Name = "Goblin Leather Mask";
+		this.m.Name = "Leather Goblin Mask";
 		this.m.Description = "Goblin Leather Mask";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;

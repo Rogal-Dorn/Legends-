@@ -7,7 +7,7 @@ this.legend_helmet_vampire_crown <- this.inherit("scripts/items/legend_helmets/l
 		this.m.Type = this.Const.Items.HelmetUpgrades.Top;
 		this.m.ID = "armor.head.legend_helmet_vampire_crown";
 		this.m.Name = "Vampire Crown";
-		this.m.Description = "Vampire Crown";
+		this.m.Description = "The crown of a vampire lord, long dead.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1];

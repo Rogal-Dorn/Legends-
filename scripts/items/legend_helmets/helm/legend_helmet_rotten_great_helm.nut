@@ -7,7 +7,7 @@ this.legend_helmet_rotten_great_helm <- this.inherit("scripts/items/legend_helme
 		this.m.Type = this.Const.Items.HelmetUpgrades.Helm;
 		this.m.ID = "armor.head.legend_helmet_rotten_great_helm";
 		this.m.Name = "Rotten Great Helm";
-		this.m.Description = "Rotten Great Helm";
+		this.m.Description = "This full helm suffers from rusty metal parts and brittle leather inlays but still offers good protection if you ignore its stench.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1, 2, 3, 4];

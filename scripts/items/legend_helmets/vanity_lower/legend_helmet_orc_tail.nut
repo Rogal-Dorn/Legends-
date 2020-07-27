@@ -7,7 +7,7 @@ this.legend_helmet_orc_tail <- this.inherit("scripts/items/legend_helmets/legend
 		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_orc_tail";
 		this.m.Name = "Orc Tail";
-		this.m.Description = "Orc Tail";
+		this.m.Description = "A collection of orc hairs, now serving as a proud trophy.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1, 2];

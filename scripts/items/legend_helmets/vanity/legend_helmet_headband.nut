@@ -7,7 +7,7 @@ this.legend_helmet_headband <- this.inherit("scripts/items/legend_helmets/legend
 		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_headband";
 		this.m.Name = "Headband";
-		this.m.Description = "Headband";
+		this.m.Description = "A simple headband.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];

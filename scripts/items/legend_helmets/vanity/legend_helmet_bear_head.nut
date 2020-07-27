@@ -7,7 +7,7 @@ this.legend_helmet_bear_head <- this.inherit("scripts/items/legend_helmets/legen
 		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_bear_head";
 		this.m.Name = "Bear Head";
-		this.m.Description = "Bear Head";
+		this.m.Description = "The dried and prepped head of a large bear. Mostly donned for the looks.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1];

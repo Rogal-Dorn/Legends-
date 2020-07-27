@@ -7,7 +7,7 @@ this.legend_helmet_headband_side <- this.inherit("scripts/items/legend_helmets/l
 		this.m.Type = this.Const.Items.HelmetUpgrades.Top;
 		this.m.ID = "armor.head.legend_helmet_headband_side";
 		this.m.Name = "Headband Side";
-		this.m.Description = "Headband Side";
+		this.m.Description = "A headband fashioned to the side of the helmet.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1];

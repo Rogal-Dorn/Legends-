@@ -7,7 +7,7 @@ this.legend_helmet_goat_horns <- this.inherit("scripts/items/legend_helmets/lege
 		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_goat_horns";
 		this.m.Name = "Goat Horns";
-		this.m.Description = "Goat Horns";
+		this.m.Description = "A pair of barbarian horn liberated from northern goats.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1];

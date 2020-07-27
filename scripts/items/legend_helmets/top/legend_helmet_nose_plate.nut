@@ -7,7 +7,7 @@ this.legend_helmet_nose_plate <- this.inherit("scripts/items/legend_helmets/lege
 		this.m.Type = this.Const.Items.HelmetUpgrades.Top;
 		this.m.ID = "armor.head.legend_helmet_nose_plate";
 		this.m.Name = "Nose Plate";
-		this.m.Description = "Nose Plate";
+		this.m.Description = "A simple nose covering";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1];

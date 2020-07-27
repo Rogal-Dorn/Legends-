@@ -7,7 +7,7 @@ this.legend_helmet_rotten_flat_top_face_mask <- this.inherit("scripts/items/lege
 		this.m.Type = this.Const.Items.HelmetUpgrades.Helm;
 		this.m.ID = "armor.head.legend_helmet_rotten_flat_top_face_mask";
 		this.m.Name = "Rotten Flat Top Face Mask";
-		this.m.Description = "Rotten Flat Top Face Mask";
+		this.m.Description = "A worn and torn closed helmet with complete faceguard. It has obviously been lying outdoors for a while.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1, 2, 3, 4, 5];

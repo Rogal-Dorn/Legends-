@@ -7,7 +7,7 @@ this.legend_helmet_impaled_head <- this.inherit("scripts/items/legend_helmets/le
 		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_impaled_head";
 		this.m.Name = "Impaled Head";
-		this.m.Description = "Impaled Head";
+		this.m.Description = "The impaled head of an orc now rests upon this spike, a fine revenge.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1];

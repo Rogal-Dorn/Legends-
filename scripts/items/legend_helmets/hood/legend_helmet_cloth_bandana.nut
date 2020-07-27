@@ -6,7 +6,7 @@ this.legend_helmet_cloth_bandana <- this.inherit("scripts/items/legend_helmets/l
 		this.legend_helmet.create();
 		this.m.ID = "armor.head.legend_helmet_cloth_bandana";
 		this.m.Name = "Cloth Bandana";
-		this.m.Description = "Cloth Bandana";
+		this.m.Description = "A basic light bandana, useful for keeping the sweat out of the face.";
 		this.m.Variant = 1;
 		this.m.Variants = [1, 2, 3, 4, 5];
 		this.updateVariant();

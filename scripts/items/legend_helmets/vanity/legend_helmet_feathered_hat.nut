@@ -7,7 +7,7 @@ this.legend_helmet_feathered_hat <- this.inherit("scripts/items/legend_helmets/l
 		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_feathered_hat";
 		this.m.Name = "Feathered Hat";
-		this.m.Description = "Feathered Hat";
+		this.m.Description = "A fancy feathered hat usually worn by minstrels or nobles.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1];

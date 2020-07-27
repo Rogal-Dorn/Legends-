@@ -7,7 +7,7 @@ this.legend_helmet_faction_helmet <- this.inherit("scripts/items/legend_helmets/
 		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_faction_helmet";
 		this.m.Name = "Faction Helmet";
-		this.m.Description = "Faction Helmet";
+		this.m.Description = "A special adornment often reserved for a knight or other high ranking member.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];

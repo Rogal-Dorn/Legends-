@@ -7,7 +7,7 @@ this.legend_helmet_wolf_helm <- this.inherit("scripts/items/legend_helmets/legen
 		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_wolf_helm";
 		this.m.Name = "Wolf Helm";
-		this.m.Description = "Wolf Helm";
+		this.m.Description = "An impressive wolf head to attach to yours.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1];

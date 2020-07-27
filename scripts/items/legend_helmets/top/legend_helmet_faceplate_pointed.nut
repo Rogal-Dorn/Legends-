@@ -7,7 +7,7 @@ this.legend_helmet_faceplate_pointed <- this.inherit("scripts/items/legend_helme
 		this.m.Type = this.Const.Items.HelmetUpgrades.Top;
 		this.m.ID = "armor.head.legend_helmet_faceplate_pointed";
 		this.m.Name = "Pointed Faceplate";
-		this.m.Description = "Pointed Faceplate";
+		this.m.Description = "A faceplate that extends well past the nose, limits vision and makes kissing much harder.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1];

@@ -7,7 +7,7 @@ this.legend_helmet_orc_bones <- this.inherit("scripts/items/legend_helmets/legen
 		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_orc_bones";
 		this.m.Name = "Orc Bones";
-		this.m.Description = "Orc Bones";
+		this.m.Description = "The broken bones of an orc, now fashioned as headwear.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1];

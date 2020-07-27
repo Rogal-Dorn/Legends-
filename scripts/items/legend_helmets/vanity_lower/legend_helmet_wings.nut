@@ -7,7 +7,7 @@ this.legend_helmet_wings <- this.inherit("scripts/items/legend_helmets/legend_he
 		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_wings";
 		this.m.Name = "Wings";
-		this.m.Description = "Wings";
+		this.m.Description = "Large ornamental wing's that stand well above other men.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1, 2, 3, 4, 5, 6];

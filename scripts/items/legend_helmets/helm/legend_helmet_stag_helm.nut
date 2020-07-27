@@ -7,7 +7,7 @@ this.legend_helmet_stag_helm <- this.inherit("scripts/items/legend_helmets/legen
 		this.m.Type = this.Const.Items.HelmetUpgrades.Helm;
 		this.m.ID = "armor.head.legend_helmet_stag_helm";
 		this.m.Name = "Stag Helm";
-		this.m.Description = "Stag Helm";
+		this.m.Description = "A heavy plate helmet with a pair of antlers.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1];

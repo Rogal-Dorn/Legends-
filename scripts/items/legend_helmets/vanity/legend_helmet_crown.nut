@@ -7,7 +7,7 @@ this.legend_helmet_crown <- this.inherit("scripts/items/legend_helmets/legend_he
 		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_crown";
 		this.m.Name = "Crown";
-		this.m.Description = "Crown";
+		this.m.Description = "A well made crown, liberated from royalty.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1];

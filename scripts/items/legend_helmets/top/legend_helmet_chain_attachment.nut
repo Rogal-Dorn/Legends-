@@ -7,7 +7,7 @@ this.legend_helmet_chain_attachment <- this.inherit("scripts/items/legend_helmet
 		this.m.Type = this.Const.Items.HelmetUpgrades.Top;
 		this.m.ID = "armor.head.legend_helmet_chain_attachment";
 		this.m.Name = "Chain Attachment";
-		this.m.Description = "Chain Attachment";
+		this.m.Description = "A light attatchment of chain, useful for basic protection.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1];

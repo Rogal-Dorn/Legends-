@@ -7,7 +7,7 @@ this.legend_helmet_golden_helm <- this.inherit("scripts/items/legend_helmets/leg
 		this.m.Type = this.Const.Items.HelmetUpgrades.Top;
 		this.m.ID = "armor.head.legend_helmet_golden_helm";
 		this.m.Name = "Golden Helm";
-		this.m.Description = "Golden Helm";
+		this.m.Description = "A golden helmet and facemask, showing the visage of an emperor from an age long past, imbued with mystical energies. When you hold it into the light, it almost looks as if the face were moving and making expressions of disgust.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1];

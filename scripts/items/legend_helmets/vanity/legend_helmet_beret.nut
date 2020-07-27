@@ -7,7 +7,7 @@ this.legend_helmet_beret <- this.inherit("scripts/items/legend_helmets/legend_he
 		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_beret";
 		this.m.Name = "Beret";
-		this.m.Description = "Beret";
+		this.m.Description = "A fancy beret often worn by a sergeant.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1];

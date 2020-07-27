@@ -7,7 +7,7 @@ this.legend_helmet_goblin_leaves <- this.inherit("scripts/items/legend_helmets/l
 		this.m.Type = this.Const.Items.HelmetUpgrades.Top;
 		this.m.ID = "armor.head.legend_helmet_goblin_leaves";
 		this.m.Name = "Goblin Leaves";
-		this.m.Description = "Goblin Leaves";
+		this.m.Description = "A collection of leaves made to obscure the wearer.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1];

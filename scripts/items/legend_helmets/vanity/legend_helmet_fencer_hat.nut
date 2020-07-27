@@ -7,7 +7,7 @@ this.legend_helmet_fencer_hat <- this.inherit("scripts/items/legend_helmets/lege
 		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_fencer_hat";
 		this.m.Name = "Fencer Hat";
-		this.m.Description = "Fencer Hat";
+		this.m.Description = "A hat adorned by many fencers.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1];

@@ -7,7 +7,7 @@ this.legend_helmet_straw_hat <- this.inherit("scripts/items/legend_helmets/legen
 		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_straw_hat";
 		this.m.Name = "Straw Hat";
-		this.m.Description = "Straw Hat";
+		this.m.Description = "A crude straw hat to protect against the sun.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1];

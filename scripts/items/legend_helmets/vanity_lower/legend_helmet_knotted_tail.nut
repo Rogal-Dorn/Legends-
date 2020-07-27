@@ -7,7 +7,7 @@ this.legend_helmet_knotted_tail <- this.inherit("scripts/items/legend_helmets/le
 		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_knotted_tail";
 		this.m.Name = "Knotted Tail";
-		this.m.Description = "Knotted Tail";
+		this.m.Description = "A knotted donkey's tail that attaches to the top of a helmet.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1, 2, 3, 4];

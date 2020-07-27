@@ -7,7 +7,7 @@ this.legend_helmet_goblin_gillie <- this.inherit("scripts/items/legend_helmets/l
 		this.m.Type = this.Const.Items.HelmetUpgrades.Top;
 		this.m.ID = "armor.head.legend_helmet_goblin_gillie";
 		this.m.Name = "Goblin Gillie";
-		this.m.Description = "Goblin Gillie";
+		this.m.Description = "A collection of brush to obscure the face with.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1];
