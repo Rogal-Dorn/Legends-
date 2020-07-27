@@ -3745,3 +3745,5 @@ Updates the demon hound dead image
 Fixes alignment of the sash armor layer
 Ancient scrolls now actually drop
 Zombie poison scales from 1 not 10 now on legendary when you have resilient
+
+https://drive.google.com/file/d/1cHL80DD5DQvWlKIQlAw4bsSL2lb5JkXT/view?usp=sharing

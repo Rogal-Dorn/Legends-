@@ -20,6 +20,8 @@ this.legend_helmet_legend_ancient_legionaire_restored <- this.inherit("scripts/i
 		this.m.StaminaModifier = -4;
 		this.m.Vision = 0;
 		this.m.IsLowerVanity = false;
+		this.m.HideHair = true;
+		this.m.HideBeard = false;
 	}
 
 	function updateVariant()

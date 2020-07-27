@@ -20,6 +20,8 @@ this.legend_helmet_noble_floppy_hat <- this.inherit("scripts/items/legend_helmet
 		this.m.StaminaModifier = -4;
 		this.m.Vision = 0;
 		this.m.IsLowerVanity = false;
+		this.m.HideHair = true;
+		this.m.HideBeard = false;
 	}
 
 	function updateVariant()

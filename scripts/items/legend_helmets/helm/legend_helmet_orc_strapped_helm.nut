@@ -20,6 +20,8 @@ this.legend_helmet_orc_strapped_helm <- this.inherit("scripts/items/legend_helme
 		this.m.StaminaModifier = -4;
 		this.m.Vision = 0;
 		this.m.IsLowerVanity = false;
+		this.m.HideHair = true;
+		this.m.HideBeard = false;
 	}
 
 	function updateVariant()

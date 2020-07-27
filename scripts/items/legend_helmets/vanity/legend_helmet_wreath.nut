@@ -20,6 +20,8 @@ this.legend_helmet_wreath <- this.inherit("scripts/items/legend_helmets/legend_h
 		this.m.StaminaModifier = -4;
 		this.m.Vision = 0;
 		this.m.IsLowerVanity = false;
+		this.m.HideHair = false;
+		this.m.HideBeard = false;
 	}
 
 	function updateVariant()

@@ -10,7 +10,7 @@ this.legend_helmet_legend_frogmouth <- this.inherit("scripts/items/legend_helmet
 		this.m.Description = "Frogmouth";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
-		this.m.Variants = [1, 2, 3];
+		this.m.Variants = [1];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
@@ -20,6 +20,8 @@ this.legend_helmet_legend_frogmouth <- this.inherit("scripts/items/legend_helmet
 		this.m.StaminaModifier = -4;
 		this.m.Vision = 0;
 		this.m.IsLowerVanity = false;
+		this.m.HideHair = true;
+		this.m.HideBeard = true;
 	}
 
 	function updateVariant()

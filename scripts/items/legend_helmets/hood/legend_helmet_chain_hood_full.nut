@@ -17,6 +17,8 @@ this.legend_helmet_chain_hood_full <- this.inherit("scripts/items/legend_helmets
 		this.m.ConditionMax = 80;
 		this.m.StaminaModifier = -4;
 		this.m.Vision = 0;
+		this.m.HideHair = true;
+		this.m.HideBeard = true;
 	}
 
 	function updateVariant()

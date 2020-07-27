@@ -20,6 +20,8 @@ this.legend_helmet_knotted_tail <- this.inherit("scripts/items/legend_helmets/le
 		this.m.StaminaModifier = -4;
 		this.m.Vision = 0;
 		this.m.IsLowerVanity = true;
+		this.m.HideHair = false;
+		this.m.HideBeard = false;
 	}
 
 	function updateVariant()

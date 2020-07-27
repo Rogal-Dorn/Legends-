@@ -20,6 +20,8 @@ this.legend_helmet_back_crest <- this.inherit("scripts/items/legend_helmets/lege
 		this.m.StaminaModifier = -4;
 		this.m.Vision = 0;
 		this.m.IsLowerVanity = true;
+		this.m.HideHair = false;
+		this.m.HideBeard = false;
 	}
 
 	function updateVariant()

@@ -20,6 +20,8 @@ this.legend_helmet_plait <- this.inherit("scripts/items/legend_helmets/legend_he
 		this.m.StaminaModifier = -4;
 		this.m.Vision = 0;
 		this.m.IsLowerVanity = false;
+		this.m.HideHair = false;
+		this.m.HideBeard = false;
 	}
 
 	function updateVariant()

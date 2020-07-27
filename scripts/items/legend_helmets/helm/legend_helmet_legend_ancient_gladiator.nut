@@ -20,6 +20,8 @@ this.legend_helmet_legend_ancient_gladiator <- this.inherit("scripts/items/legen
 		this.m.StaminaModifier = -4;
 		this.m.Vision = 0;
 		this.m.IsLowerVanity = false;
+		this.m.HideHair = true;
+		this.m.HideBeard = true;
 	}
 
 	function updateVariant()

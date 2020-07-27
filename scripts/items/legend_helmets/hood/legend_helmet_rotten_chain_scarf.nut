@@ -17,6 +17,8 @@ this.legend_helmet_rotten_chain_scarf <- this.inherit("scripts/items/legend_helm
 		this.m.ConditionMax = 80;
 		this.m.StaminaModifier = -4;
 		this.m.Vision = 0;
+		this.m.HideHair = false;
+		this.m.HideBeard = true;
 	}
 
 	function updateVariant()
