@@ -3740,3 +3740,6 @@ https://drive.google.com/file/d/15C7nyBk8OMkrcIk9SQ4Tqh7u6kwe9eP3/view?usp=shari
 
 **Fixes**
 Fixed. Armor layers parts will now repair when not attached to a base armor piece.
+Updated Vala and Druid background icons
+Updates the demon hound dead image
+Fixes alignment of the sash armor layer
