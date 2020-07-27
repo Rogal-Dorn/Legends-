@@ -3730,4 +3730,5 @@ Clears the mustering troops on legendary bandit contract completion
 
 **Fixes**
 Fixed. Armor layers parts will now repair when not attached to a base armor piece.
-Update Vala and Druid background icons
+Updated Vala and Druid background icons
+Updates the demon hound dead image
