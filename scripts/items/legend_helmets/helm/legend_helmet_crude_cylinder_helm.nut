@@ -20,6 +20,8 @@ this.legend_helmet_crude_cylinder_helm <- this.inherit("scripts/items/legend_hel
 		this.m.StaminaModifier = -4;
 		this.m.Vision = 0;
 		this.m.IsLowerVanity = false;
+		this.m.HideHair = true;
+		this.m.HideBeard = false;
 	}
 
 	function updateVariant()

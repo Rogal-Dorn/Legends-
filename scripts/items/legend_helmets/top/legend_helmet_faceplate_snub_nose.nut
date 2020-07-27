@@ -20,6 +20,8 @@ this.legend_helmet_faceplate_snub_nose <- this.inherit("scripts/items/legend_hel
 		this.m.StaminaModifier = -4;
 		this.m.Vision = 0;
 		this.m.IsLowerVanity = false;
+		this.m.HideHair = false;
+		this.m.HideBeard = true;
 	}
 
 	function updateVariant()

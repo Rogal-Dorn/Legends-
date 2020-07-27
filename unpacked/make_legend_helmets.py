@@ -63,7 +63,8 @@ layers = [
     {"name": "kettle_helm",                         "layer": "helm", "min": 1, "max": 6},
     {"name": "legend_ancient_gladiator",            "layer": "helm", "min": 1, "max": 1},
     {"name": "legend_ancient_legionaire_restored",  "layer": "helm", "min": 1, "max": 1},
-    {"name": "legend_frogmouth",                    "layer": "helm", "min": 1, "max": 3},
+    {"name": "legend_frogmouth",                    "layer": "helm", "min": 1, "max": 1},
+    {"name": "legend_frogmouth_close",              "layer": "helm", "min": 1, "max": 2},
     {"name": "nordic_helm",                         "layer": "helm", "min": 1, "max": 6},
     {"name": "norman_helm",                         "layer": "helm", "min": 1, "max": 5},
     {"name": "orc_double_helm",                     "layer": "helm", "min": 1, "max": 1},
@@ -74,7 +75,7 @@ layers = [
     {"name": "orc_strapped_helm",                   "layer": "helm", "min": 1, "max": 1},
     {"name": "bronze_helm",                         "layer": "helm", "min": 1, "max": 1},
     {"name": "dentist_helmet",                      "layer": "helm", "min": 1, "max": 1},
-    
+
     {"name": "rotten_flat_top_face_mask",   "layer": "helm", "min": 1, "max": 5},
     {"name": "rotten_great_helm",           "layer": "helm", "min": 1, "max": 4},
     {"name": "sallet",                      "layer": "helm", "min": 1, "max": 6},
@@ -113,7 +114,7 @@ layers = [
     {"name": "faceplate_snub_slit",     "layer": "top", "min": 1, "max": 1},
     {"name": "golden_mask",             "layer": "top", "min": 1, "max": 1},
     {"name": "warlock_skull",           "layer": "top", "min": 1, "max": 3},
-    
+
     {"name": "antler",              "layer": "vanity", "min": 1, "max": 1},
     {"name": "bear_head",           "layer": "vanity", "min": 1, "max": 1},
     {"name": "beret",               "layer": "vanity", "min": 1, "max": 1},

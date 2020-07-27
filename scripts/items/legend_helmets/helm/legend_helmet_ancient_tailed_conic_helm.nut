@@ -20,6 +20,8 @@ this.legend_helmet_ancient_tailed_conic_helm <- this.inherit("scripts/items/lege
 		this.m.StaminaModifier = -4;
 		this.m.Vision = 0;
 		this.m.IsLowerVanity = false;
+		this.m.HideHair = true;
+		this.m.HideBeard = false;
 	}
 
 	function updateVariant()

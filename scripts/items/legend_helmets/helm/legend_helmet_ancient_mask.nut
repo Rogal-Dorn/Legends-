@@ -20,6 +20,8 @@ this.legend_helmet_ancient_mask <- this.inherit("scripts/items/legend_helmets/le
 		this.m.StaminaModifier = -4;
 		this.m.Vision = 0;
 		this.m.IsLowerVanity = false;
+		this.m.HideHair = true;
+		this.m.HideBeard = true;
 	}
 
 	function updateVariant()

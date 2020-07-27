@@ -20,6 +20,8 @@ this.legend_helmet_faceplate_pointed <- this.inherit("scripts/items/legend_helme
 		this.m.StaminaModifier = -4;
 		this.m.Vision = 0;
 		this.m.IsLowerVanity = false;
+		this.m.HideHair = false;
+		this.m.HideBeard = true;
 	}
 
 	function updateVariant()
