@@ -3726,7 +3726,7 @@ Resilient/HoldOut tooltip fix, currently states -1 turn on debuffs, but gives -5
 Clears the mustering troops on legendary bandit contract completion
 
 
-14.0.0.17
+14.0.0.16c
 
 **Fixes**
 Fixed. Armor layers parts will now repair when not attached to a base armor piece.
