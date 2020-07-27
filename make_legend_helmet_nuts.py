@@ -420,7 +420,7 @@ descriptions = {
     "goblin_leather_helm" :                 "Goblin Leather Helm",
     "goblin_leather_mask" :                 "Goblin Leather Mask",
     "goblin_spiked_helm" :                  "Goblin Spiked Helm",
-    "golden_helm" :                         "Golden Helm", #Firm believer thi shoudl be tier 2 not 1 bc it's THE look of the piece [mwah]
+    "golden_helm" :                         "A golden helmet and facemask, showing the visage of an emperor from an age long past, imbued with mystical energies. When you hold it into the light, it almost looks as if the face were moving and making expressions of disgust.", #Firm believer thi shoudl be tier 2 not 1 bc it's THE look of the piece [mwah]
     "great_helm" :                           "Great Helm",
     "heavy_plate_helm" :                     "Heavy Plate Helm",
     "heavy_spiked_helm" :                   "Heavy Spiked Helm",
@@ -441,7 +441,7 @@ descriptions = {
     "rotten_flat_top_face_mask" :    "A worn and torn closed helmet with complete faceguard. It has obviously been lying outdoors for a while.",
     "rotten_great_helm" :           "This full helm suffers from rusty metal parts and brittle leather inlays but still offers good protection if you ignore its stench.",
     "sallet" :                        "A metal sallet helmet with an extended neckguard, a design uncommon in these lands.",
-    "skin_helm" :                   "Skin Helm", #
+    "skin_helm" :                   "The Glimpse of Davkul is a gift bestowed upon man by ancient and dark powers, a helmet merged with human skin and bones through the most unspeakable of rituals. A glimpse of a future where man shall become one with creations from a realm beyond. It shall never break, but instead keep regrowing its scarred skin on the spot.", #is the skin helm the davkul thing? not actually sure
     "stag_helm" :                   "A heavy plate helmet with a pair of antlers.",
     "swan_helm" :                   "A heavy ornate helmet, topped with an ornamenta swan.",
     "tailed_conic" :                "Tailed Conic", #
