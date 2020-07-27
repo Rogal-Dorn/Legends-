@@ -3733,3 +3733,10 @@ https://drive.google.com/file/d/1OWY9rIZfGYBW40LZk0poZLrEs125E81T/view?usp=shari
 Quick update that fixes using config options when starting a new game
 
 https://drive.google.com/file/d/15C7nyBk8OMkrcIk9SQ4Tqh7u6kwe9eP3/view?usp=sharing
+
+
+
+14.0.0.17
+
+**Fixes**
+Fixed. Armor layers parts will now repair when not attached to a base armor piece.
