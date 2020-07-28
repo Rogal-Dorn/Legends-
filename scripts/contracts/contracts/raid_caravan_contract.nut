@@ -129,6 +129,17 @@ this.raid_caravan_contract <- this.inherit("scripts/contracts/contract", {
 				local enemyFaction = this.World.FactionManager.getFaction(this.Flags.get("EnemyNobleHouse"));
 				local best_start = this.World.getEntityByID(this.Flags.get("InterceptStart"));
 				local best_dest = this.World.getEntityByID(this.Flags.get("InterceptDest"));
+
+				local spawnParty = this.Const.World.Spawn.NobleCaravan;
+				local r = this.Math.rand(1, 100)
+				if (r > 75)
+				{
+					spawnParty = this.Const.World.Spawn.Mercenaries;
+				}
+				else if (r > 50)
+				{
+					spawnParty = this.Const.World.Spawn.MixedNobleCaravan;
+				}
 				local party = enemyFaction.spawnEntity(best_start.getTile(), "Caravan", false, this.Const.World.Spawn.NobleCaravan, 100 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
 				party.getSprite("base").Visible = false;
 				party.getSprite("banner").setBrush(enemyFaction.getBannerSmall());

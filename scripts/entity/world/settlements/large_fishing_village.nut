@@ -72,7 +72,7 @@ this.large_fishing_village <- this.inherit("scripts/entity/world/settlement", {
 			"swordmaster_background",
 			"legend_inventor_background"
 		];
-		if(this.Const.LegendMod.Configs.LegendMagicEnabled())
+		if(this.World.LegendsMod.Configs().LegendMagicEnabled())
 		{
 			this.m.DraftList.push("legend_spiritualist_background");
 		}

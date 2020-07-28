@@ -91,7 +91,7 @@ this.lucky_finds_something_event <- this.inherit("scripts/events/event", {
 		}
 		else if (r == 2)
 		{
-			if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+			if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 			{
 				item = this.new("scripts/items/armor/patched_mail_shirt");
 			}
@@ -119,7 +119,7 @@ this.lucky_finds_something_event <- this.inherit("scripts/events/event", {
 		}
 		else if (r == 7)
 		{
-			if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+			if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 			{
 				local cloths = [
 					[0, ""],
@@ -148,7 +148,7 @@ this.lucky_finds_something_event <- this.inherit("scripts/events/event", {
 		}
 		else if (r == 8)
 		{
-			if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+			if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 			{
 				local cloths = [
 					[0, ""],
@@ -189,7 +189,7 @@ this.lucky_finds_something_event <- this.inherit("scripts/events/event", {
 		}
 		else if (r == 12)
 		{
-			if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+			if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 			{
 				item = this.new("scripts/items/legend_armor/armor_upgrades/legend_joint_cover_upgrade");
 			}
@@ -217,7 +217,7 @@ this.lucky_finds_something_event <- this.inherit("scripts/events/event", {
 		}
 		else if (r == 17)
 		{
-			if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+			if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 			{
 				local cloths = [
 					[0, ""],
@@ -245,7 +245,7 @@ this.lucky_finds_something_event <- this.inherit("scripts/events/event", {
 		}
 		else if (r == 18)
 		{
-			if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+			if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 			{
 				item = this.new("scripts/items/legend_armor/armor_upgrades/legend_mail_patch_upgrade");
 			}

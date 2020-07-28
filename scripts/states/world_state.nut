@@ -459,6 +459,8 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.World.setOnBeforeLoadCallback(this.onBeforeDeserialize.bindenv(this));
 		this.World.setOnSaveCallback(this.onSerialize.bindenv(this));
 		this.World.setOnBeforeSaveCallback(this.onBeforeSerialize.bindenv(this));
+		this.m.LegendsMod = this.new("scripts/mods/legends_mod");
+		this.World.LegendsMod <- this.WeakTableRef(this.m.LegendsMod);
 		this.m.Entities = this.new("scripts/entity/world/entity_manager");
 		this.World.EntityManager <- this.WeakTableRef(this.m.Entities);
 		this.m.Factions = this.new("scripts/factions/faction_manager");
@@ -479,8 +481,6 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.World.Tags <- this.m.Tags;
 		this.m.Assets = this.new("scripts/states/world/asset_manager");
 		this.World.Assets <- this.WeakTableRef(this.m.Assets);
-		this.m.LegendsMod = this.new("scripts/mods/legends_mod");
-		this.World.LegendsMod <- this.WeakTableRef(this.m.LegendsMod);
 		this.m.Camp = this.new("scripts/states/world/camp_manager");
 		this.World.Camp <- this.WeakTableRef(this.m.Camp);
 		this.onInitUI();
@@ -1075,7 +1075,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.Time.setVirtualTime(0);
 		this.setPause(true);
 		this.Math.seedRandomString(this.m.CampaignSettings.Seed);
-		this.Const.LegendMod.Configs.Update(this.m.CampaignSettings);
+		this.World.LegendsMod.Configs().Update(this.m.CampaignSettings);
 		this.Const.World.SettingsUpdate(this.m.CampaignSettings);
 		this.Const.World.SettlementsUpdate(this.m.CampaignSettings.NumSettlements);
 		local worldmap = this.MapGen.get("world.worldmap_generator");
@@ -3805,7 +3805,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 		}
 
 		this.World.Tags.onSerialize(_out);
-		this.Const.LegendMod.Configs.onSerialize(_out)
+		this.World.LegendsMod.onSerialize(_out)
 		this.World.FactionManager.onSerialize(_out);
 		this.World.EntityManager.onSerialize(_out);
 		this.World.Assets.onSerialize(_out);
@@ -3844,7 +3844,16 @@ this.world_state <- this.inherit("scripts/states/state", {
 		}
 
 		this.World.Tags.onDeserialize(_in);
-		this.Const.LegendMod.Configs.onDeserialize(_in);
+		if (_in.getMetaData().getVersion() >= 71)
+		{
+			this.World.LegendsMod.onDeserialize(_in)
+		}
+		else
+		{
+			this.Const.LegendMod.Configs.onDeserialize(_in);
+			this.World.LegendsMod.UpdateFromConst();
+		}
+
 		this.World.FactionManager.onDeserialize(_in);
 		this.World.EntityManager.onDeserialize(_in);
 		this.World.Assets.onDeserialize(_in);

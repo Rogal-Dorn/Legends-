@@ -41,7 +41,7 @@ this.legend_vala_commander_background <- this.inherit("scripts/skills/background
 		this.m.Modifiers.Enchanting = 1.0;
 		this.m.Level = 2;
 
-		if (!this.Const.LegendMod.Configs.LegendMagicEnabled())
+		if (!this.World.LegendsMod.Configs().LegendMagicEnabled())
 		{
 			this.m.CustomPerkTree = [
 			[
@@ -178,7 +178,7 @@ this.legend_vala_commander_background <- this.inherit("scripts/skills/background
 				type = "text",
 				icon = "ui/icons/special.png",
 				text = "Most of the Vala\'s skills require her staff and scale in one way or another with the strength of her Resolve. Chants are sorcerous incantations delivered by song. These affect an area around the Vala and last until the start of her next turn. Trances are altered states entered into by the Vala. She will remain in these until her task is either completed or interrupted. Receiving damage of any kind, or becoming too fatigued to continue, will drop the Vala out of an active trance. "
-			}			
+			}
 		];
 	}
 

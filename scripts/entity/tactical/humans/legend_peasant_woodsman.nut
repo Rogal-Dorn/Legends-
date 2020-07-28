@@ -54,7 +54,7 @@ this.legend_peasant_woodsman <- this.inherit("scripts/entity/tactical/human", {
 	{
 		this.m.Items.equip(this.new("scripts/items/weapons/woodcutters_axe"));
 
-		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			local cloths = [
 				[

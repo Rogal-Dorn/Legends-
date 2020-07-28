@@ -182,14 +182,14 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		bros[0].m.Level = 2;
 		bros[0].m.XP = this.Const.LevelXP[bros[0].m.Level - 1];
 		bros[0].fillAttributeLevelUpValues(this.Const.XP.MaxLevelWithPerkpoints - 1);
-		bros[0].setVeteranPerks(2);	
+		bros[0].setVeteranPerks(2);
 		local items = bros[0].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Ammo));
 		items.equip(this.new("scripts/items/weapons/hatchet"));
 		bros[1].getBackground().m.RawDescription = "{A fine fighter by any judgment, %name% simply hated the low pay of being a soldier in the army. His pursuit of the sellsword\'s life makes sense. Though he is quite flighty, you believe his transient sense of allegiance will be buffered by a steady flow of good coin.}";
 		bros[1].getBackground().buildDescription(true);
-		bros[1].setVeteranPerks(2);	
+		bros[1].setVeteranPerks(2);
 		local talents = bros[1].getTalents();
 		talents[this.Const.Attributes.MeleeSkill] = 2;
 		talents[this.Const.Attributes.MeleeDefense] = 1;
@@ -199,14 +199,14 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		bros[1].m.Level = 1;
 		bros[1].m.XP = this.Const.LevelXP[bros[1].m.Level - 1];
 		bros[1].fillAttributeLevelUpValues(this.Const.XP.MaxLevelWithPerkpoints - 1);
-		bros[1].setVeteranPerks(2);	
+		bros[1].setVeteranPerks(2);
 		items = bros[1].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Ammo));
 		items.equip(this.new("scripts/items/weapons/shortsword"));
 		bros[2].getBackground().m.RawDescription = "{%name% is like many deserters. You can see the spirit of a fighter in him, but the heart for it is withering. It doesn\'t make him a coward, as many assume deserters to be, but instead simply a man who may need change. Hopefully the coin of mercenary work can provide it.}";
 		bros[2].getBackground().buildDescription(true);
-		bros[2].setVeteranPerks(2);	
+		bros[2].setVeteranPerks(2);
 		local talents = bros[2].getTalents();
 		talents[this.Const.Attributes.RangedSkill] = 2;
 		talents[this.Const.Attributes.RangedDefense] = 1;
@@ -228,7 +228,7 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 			bro.m.CompanyID = val;
 		}
 
-		if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+		if (this.World.LegendsMod.Configs().RelationshipsEnabled())
 {
     local avgAlignment = 0;
     foreach (bro in this.World.getPlayerRoster().getAll())
@@ -287,7 +287,7 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 				_list.push("female_disowned_noble_background");
 			}
 		}
-		else 
+		else
 		{
 			local r;
 			r = this.Math.rand(0, 1);
@@ -320,7 +320,7 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		foreach( i, bro in bros )
 		{
 			local r = this.Math.rand(0, 9);
-			
+
 			if (r == 0)
 			{
 				bro.getSkills().add(this.new("scripts/skills/traits/dastard_trait"));
@@ -345,7 +345,7 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 			{
 				bro.getSkills().add(this.new("scripts/skills/traits/superstitious_trait"));
 			}
-			
+
 			if (!bro.getBackground().isCombatBackground())
 			{
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost  * 0.9);

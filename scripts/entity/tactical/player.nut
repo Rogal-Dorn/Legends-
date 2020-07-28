@@ -905,7 +905,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.World.Assets.getOrigin().onHiredByScenario(this);
         this.m.CompanyID = this.World.State.addNewID(this);
 
-		if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+		if (this.World.LegendsMod.Configs().RelationshipsEnabled())
 		{
 			foreach ( b in this.World.getPlayerRoster().getAll() ) //Set relations to others characters to this one
 			{
@@ -2209,7 +2209,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			this.fillAttributeLevelUpValues(this.Const.XP.MaxLevelWithPerkpoints - 1);
 		}
 
-		if ( this.Const.LegendMod.Configs.RelationshipsEnabled() )
+		if ( this.World.LegendsMod.Configs().RelationshipsEnabled() )
 		{
         	this.setAlignment( null, background );
 		}
@@ -2282,7 +2282,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	//	bro.cAR(bro2, false, [anything], keyVal)
 	function changeActiveRelationship( _actor, _amount, _key = "RelationNum", _set = false )
 	{
-		if ( !this.Const.LegendMod.Configs.RelationshipsEnabled() )
+		if ( !this.World.LegendsMod.Configs().RelationshipsEnabled() )
 		{
 			return;
 		}
@@ -3094,8 +3094,8 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		_out.writeF32(this.m.LastCampTime);
 		_out.writeBool(this.m.InReserves);
 
-		_out.writeBool( this.Const.LegendMod.Configs.RelationshipsEnabled() );
-		if ( this.Const.LegendMod.Configs.RelationshipsEnabled() )
+		_out.writeBool( this.World.LegendsMod.Configs().RelationshipsEnabled() );
+		if ( this.World.LegendsMod.Configs().RelationshipsEnabled() )
 		{
 			_out.writeU8(this.m.Alignment);
 			_out.writeBool(this.m.IsAlignmentAssigned);
@@ -3103,7 +3103,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		_out.writeU8(this.m.CompanyID);
 
 		//keys are just string values
-		if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+		if (this.World.LegendsMod.Configs().RelationshipsEnabled())
 		{
 			foreach (index, relation in this.m.ActiveRelationships)
 			{

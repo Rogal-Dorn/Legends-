@@ -23,7 +23,7 @@ this.witch_burnings_situation <- this.inherit("scripts/entity/world/settlements/
 
 	function onAdded( _settlement )
 	{
-		if(this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+		if(this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * 0.05);
 		}
@@ -72,7 +72,7 @@ this.witch_burnings_situation <- this.inherit("scripts/entity/world/settlements/
 		_draftList.push("female_beggar_background");
 		_draftList.push("female_beggar_background");
 
-		if(this.Const.LegendMod.Configs.LegendMagicEnabled())
+		if(this.World.LegendsMod.Configs().LegendMagicEnabled())
 		{
 			_draftList.push("legend_witch_background");
 			_draftList.push("legend_spiritualist_background");

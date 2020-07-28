@@ -99,7 +99,37 @@ this.destroy_order <- this.inherit("scripts/ai/world/world_behavior", {
 			{
 				if (e.isAlive() && e.getID() == this.m.TargetID)
 				{
-					if (this.World.Assets.isPermanentDestruction())
+
+					if(this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
+					{
+						//Level
+						if (e.getSize() == 1)
+						{
+							local news = this.World.Statistics.createNews();
+							news.set("City", e.getName());
+							this.World.Statistics.addNews("crisis_greenskins_town_destroyed", news);
+							this.World.FactionManager.addGreaterEvilStrength(this.Const.Factions.GreaterEvilStrengthOnTownDestroyed);
+							e.setActive(false);
+							e.getTile().spawnDetail(e.m.Sprite + "_ruins", this.Const.World.ZLevel.Object - 3, 0, false);
+							e.fadeOutAndDie();
+							this.World.EntityManager.updateSettlementHeat();
+						}
+						else
+						{
+							local news = this.World.Statistics.createNews();
+							news.set("City", e.getName());
+							this.World.Statistics.addNews("crisis_greenskins_town_razed", news);
+							this.World.FactionManager.addGreaterEvilStrength(this.Const.Factions.GreaterEvilStrengthOnTownDestroyed);
+							e.addSituation(this.new("scripts/entity/world/settlements/situations/raided_situation"), 14);
+							e.setResources(0);
+							e.changeSize(1);
+							foreach( a in e.getAttachedLocations() )
+							{
+								e.setActive(false, true);
+							}
+						}
+					}
+					else if (this.World.Assets.isPermanentDestruction())
 					{
 						local news = this.World.Statistics.createNews();
 						news.set("City", e.getName());

@@ -77,7 +77,7 @@ this.zombie_yeoman <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 		}
 
 		local armor;
-		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			local cloths = [
 				[0, ""],

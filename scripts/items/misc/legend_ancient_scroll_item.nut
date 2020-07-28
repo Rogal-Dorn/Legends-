@@ -9,6 +9,7 @@ this.legend_ancient_scroll_item <- this.inherit("scripts/items/item", {
 		this.m.SlotType = this.Const.ItemSlot.None;
 		this.m.ItemType = this.Const.Items.ItemType.Usable;
 		this.m.IsUsable = true;
+		this.m.IsDroppedAsLoot = true;
 		this.m.Value = 50;
 	}
 

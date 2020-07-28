@@ -79,7 +79,7 @@ this.hedge_knight_vs_refugee_event <- this.inherit("scripts/events/event", {
 				this.Characters.push(_event.m.HedgeKnight.getImagePath());
 				this.Characters.push(_event.m.Refugee.getImagePath());
 
-				
+
 				//set relations
 				local modifier1 = this.Math.rand(-5, -10);
 				_event.m.HedgeKnight.changeActiveRelationship( _event.m.Refugee, modifier1 );
@@ -104,8 +104,8 @@ this.hedge_knight_vs_refugee_event <- this.inherit("scripts/events/event", {
 						text = _event.m.Refugee.getName() + this.Const.MoodStateEvent[_event.m.Refugee.getMoodState()]
 					});
 				}
-				
-				if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+
+				if (this.World.LegendsMod.Configs().RelationshipsEnabled())
 				{
 				this.List.push({
 					id = 11,
@@ -168,8 +168,8 @@ this.hedge_knight_vs_refugee_event <- this.inherit("scripts/events/event", {
 						text = _event.m.Refugee.getName() + this.Const.MoodStateEvent[_event.m.Refugee.getMoodState()]
 					});
 				}
-				
-				if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+
+				if (this.World.LegendsMod.Configs().RelationshipsEnabled())
 				{
 					this.List.push({
 					id = 10,
@@ -231,8 +231,8 @@ this.hedge_knight_vs_refugee_event <- this.inherit("scripts/events/event", {
 				_event.m.OtherGuy.changeActiveRelationship( _event.m.Refugee, modifier5 );
 				local modifier6 = this.Math.rand(1, 5);
 				_event.m.Refugee.changeActiveRelationship( _event.m.OtherGuy, modifier6 );
-				
-				if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+
+				if (this.World.LegendsMod.Configs().RelationshipsEnabled())
 				{
 					this.List.push({
 						id = 10,

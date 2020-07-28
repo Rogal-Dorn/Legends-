@@ -150,13 +150,13 @@ this.warriors_death_event <- this.inherit("scripts/events/event", {
 					local relations = this.World.getPlayerRoster().getAll();
 					foreach( relation in relations )
 					{
-	
+
 						local modifier1 = this.Math.rand(1, 5);
 						bro.changeActiveRelationship( relation, modifier1 );
 						local modifier2 = this.Math.rand(1, 5);
 						relation.changeActiveRelationship( bro, modifier2 );
-					
-					if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+
+					if (this.World.LegendsMod.Configs().RelationshipsEnabled())
 					{
 					this.List.push({
 							id = 10,
@@ -202,7 +202,7 @@ this.warriors_death_event <- this.inherit("scripts/events/event", {
 				local relations = this.World.getPlayerRoster().getAll();
 				foreach( relation in relations )
 				{
-	
+
 					local modifier1 = this.Math.rand(1, 5);
 					_event.m.Gravedigger.changeActiveRelationship( relation, modifier1 );
 					local modifier2 = this.Math.rand(1, 5);
@@ -234,12 +234,12 @@ this.warriors_death_event <- this.inherit("scripts/events/event", {
 					local relations = this.World.getPlayerRoster().getAll();
 					foreach( relation in relations )
 					{
-	
+
 						local modifier1 = this.Math.rand(1, 5);
 						bro.changeActiveRelationship( relation, modifier1 );
 						local modifier2 = this.Math.rand(1, 5);
 						relation.changeActiveRelationship( bro, modifier2 );
-					
+
 						this.List.push({
 							id = 10,
 							icon = "ui/icons/relation.png",

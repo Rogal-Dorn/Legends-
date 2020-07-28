@@ -67,7 +67,7 @@ this.militia_ranged <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Items.addToBag(this.new("scripts/items/weapons/bludgeon"));
 		}
 
-		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			local cloths = [
 				[0, ""],

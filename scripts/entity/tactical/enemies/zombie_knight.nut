@@ -69,7 +69,7 @@ this.zombie_knight <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 			this.updateAchievement("RestlessDead", 1, 1);
 		}
 
-		
+
 		this.zombie.onDeath(_killer, _skill, _tile, _fatalityType);
 	}
 
@@ -148,7 +148,7 @@ this.zombie_knight <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 
 		local armor;
 
-		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			local cloths = [
 				[

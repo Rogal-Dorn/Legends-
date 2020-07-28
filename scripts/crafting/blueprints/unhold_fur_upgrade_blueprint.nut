@@ -18,7 +18,7 @@ this.unhold_fur_upgrade_blueprint <- this.inherit("scripts/crafting/blueprint", 
 
 	function onCraft( _stash )
 	{
-		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			_stash.add(this.new("scripts/items/legend_armor/armor_upgrades/legend_unhold_fur_upgrade"));
 		}

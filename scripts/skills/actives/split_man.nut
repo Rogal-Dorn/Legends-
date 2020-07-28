@@ -133,6 +133,8 @@ this.split_man <- this.inherit("scripts/skills/skill", {
 			hitInfo.DamageArmor = damageArmor;
 			hitInfo.BodyPart = this.m.ApplyBonusToBodyPart;
 			hitInfo.BodyDamageMult = 1.0;
+			local damageDirect = this.Math.minf(1.0, p.DamageDirectMult * (this.m.DirectDamageMult + p.DamageDirectAdd));
+			hitInfo.DamageDirect = damageDirect;
 			targetEntity.onDamageReceived(this.getContainer().getActor(), this, hitInfo);
 			this.m.ApplyBonusToBodyPart = -1;
 		}

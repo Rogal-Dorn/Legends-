@@ -88,7 +88,7 @@ this.lend_men_to_build_event <- this.inherit("scripts/events/event", {
 						}
 
 						//set relations
-						if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+						if (this.World.LegendsMod.Configs().RelationshipsEnabled())
 						{
 
 							local relations = this.World.getPlayerRoster().getAll();

@@ -22,7 +22,7 @@ this.raided_situation <- this.inherit("scripts/entity/world/settlements/situatio
 
 	function onAdded( _settlement )
 	{
-		if(this.Const.LegendMod.Configs.LegendWorldEconomyEnabled())
+		if(this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.15);
 		}

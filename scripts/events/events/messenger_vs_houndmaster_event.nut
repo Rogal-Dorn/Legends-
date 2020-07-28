@@ -35,7 +35,7 @@ this.messenger_vs_houndmaster_event <- this.inherit("scripts/events/event", {
 				local modifier2 = this.Math.rand(10, 20);
 				_event.m.Houndmaster.changeActiveRelationship( _event.m.Messenger, modifier2 );
 
-				if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+				if (this.World.LegendsMod.Configs().RelationshipsEnabled())
 				{
 					this.List.push({
 						id = 10,

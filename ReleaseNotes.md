@@ -3695,12 +3695,19 @@ in your scenario files, the onBuildPerkTree function signature has changed. You 
 Adding perks looks like this now '''_tree[0].push(this.Const.Perks.PerkDefs.LegendCampCook);'''
 
 
-14.0.0.16
+
+14.0.0.16 Honey, I shrank the town
+
+**World Economy**
+With world economy enabled, orc/goblin crisis will now raze cities to the ground before destroying them (any settlement size > 1 is razed to the ground but not destroyed - If settlement is level 1, it is completely destroyed)
+Every 7 days Towns will generate new resources (Re: Wealth rating will increase) from each of its attached locations and the number of houses it has attached. This is to help put positive wealth pressure into the system so towns do not all eventually just peg down to 0 wealth rating.
+Settlements now have a chance to decrease in size whenever their Wealth value drops below 50%.
 
 
 **Changes**
 Tweaked the spawn lists for barbarians - there will be more Marauders/Reavers and less Thralls. There will now also be more Champions and Beastmasters on higher levels (Thank our friendly Skin Ghoul Mascot ;)
 Named Glaive Damange increased from 40/45 to 45/50
+Noble Supply run caravans and raid contracts now have a chance of spawning mercenaries, mixed nobles and mercs, or just noble forces as the defending force instead of always noble troops.
 
 **Fixes**
 Fixed rage's effect tooltip. (Salty)
@@ -3709,4 +3716,22 @@ Fixes tooltips for Woodworking and Herbcraft perks.
 Adds correct smashing shields perk to peasant woodsmen.
 Fixes name for Gladiator Helmet.
 Necromancers can now posses undead more than once.
+Fixes Stables not repopulating
+Fixes one possible crash on vala chanting and being devoured
+Fixed Vanilla splt man double damage perk.
+Bandit warlords now have warlord stats, as opposed to bandidt leader stats
+Temporarily removes alchemy tree from being rolled (was highly unfinished/untested before)
+Zombie poison effect on legendary doesn't scale up fix
+Resilient/HoldOut tooltip fix, currently states -1 turn on debuffs, but gives -5
+Clears the mustering troops on legendary bandit contract completion
 
+
+14.0.0.17
+
+**Fixes**
+Fixed. Armor layers parts will now repair when not attached to a base armor piece.
+Updated Vala and Druid background icons
+Updates the demon hound dead image
+Fixes alignment of the sash armor layer
+Ancient scrolls now actually drop
+Zombie poison scales from 1 not 10 now on legendary when you have resilient

@@ -36,7 +36,7 @@ this.legends_skeleton_med <- this.inherit("scripts/entity/tactical/legend_skelet
 		else if (r == 4)
 		{
 			this.m.Items.equip(this.new("scripts/items/weapons/ancient/ancient_spear"));
-		}		
+		}
 
 		if (this.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand) == null)
 		{
@@ -57,9 +57,9 @@ this.legends_skeleton_med <- this.inherit("scripts/entity/tactical/legend_skelet
 		}
 
 
-		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
-			
+
 			local cloths = [
 				[0, ""],
 				[0, "cloth/legend_gambeson"],

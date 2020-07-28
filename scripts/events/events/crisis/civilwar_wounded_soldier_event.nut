@@ -131,7 +131,7 @@ this.civilwar_wounded_soldier_event <- this.inherit("scripts/events/event", {
 		if (r == 1)
 		{
 
-			if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+			if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 			{
 				item = this.new("scripts/items/legend_armor/armor/legend_armor_heraldic");
 				item.setupArmor(banner);
@@ -149,7 +149,7 @@ this.civilwar_wounded_soldier_event <- this.inherit("scripts/events/event", {
 		}
 		else if (r == 3)
 		{
-			if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+			if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 			{
 				local chains = [
                 [0, ""],
@@ -179,7 +179,7 @@ this.civilwar_wounded_soldier_event <- this.inherit("scripts/events/event", {
 		}
 		else if (r == 4)
 		{
-			if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+			if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 			{
 				local chains = [
                 [0, ""],

@@ -85,7 +85,7 @@ this.noble_arbalester <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Items.addToBag(this.new("scripts/items/weapons/knife"));
 		}
 
-		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			local cloths = [
 				[0, ""],

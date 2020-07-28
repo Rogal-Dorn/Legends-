@@ -82,9 +82,9 @@ this.send_barbarian_roamers_action <- this.inherit("scripts/factions/faction_act
 		settlement.setLastSpawnTimeToNow();
 		local rand = this.Math.rand(60, 110);
 		local distanceToNextSettlement = this.getDistanceToSettlements(settlement.getTile());
-			if (this.Const.LegendMod.Configs.LegendLocationScalingEnabled() && distanceToNextSettlement > 14)
+			if (this.World.LegendsMod.Configs().LegendLocationScalingEnabled() && distanceToNextSettlement > 14)
 			{
-				
+
 				rand *= distanceToNextSettlement / 14.0;
 			}
 		local party = this.getFaction().spawnEntity(settlement.getTile(), "Barbarians", false, this.Const.World.Spawn.BarbarianHunters, this.Math.min(settlement.getResources(), rand));

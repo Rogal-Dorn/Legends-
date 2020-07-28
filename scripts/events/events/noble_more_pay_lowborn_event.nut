@@ -49,8 +49,8 @@ this.noble_more_pay_lowborn_event <- this.inherit("scripts/events/event", {
 				_event.m.Noble.changeActiveRelationship( _event.m.Lowborn, modifier1 );
 				local modifier2 = this.Math.rand(-1, -5);
 				_event.m.Lowborn.changeActiveRelationship( _event.m.Noble, modifier2 );
-				
-				if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+
+				if (this.World.LegendsMod.Configs().RelationshipsEnabled())
 				{
 					this.List.push({
 						id = 10,
@@ -211,7 +211,7 @@ this.noble_more_pay_lowborn_event <- this.inherit("scripts/events/event", {
             {
                 continue;
             }
-			
+
 			if (bro.getDailyCost() < lowestPay && bro.getBackground().isNoble())
 			{
 				lowestNoble = bro;

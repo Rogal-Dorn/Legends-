@@ -116,7 +116,7 @@ this.civilwar_deserter_event <- this.inherit("scripts/events/event", {
 				this.Characters.push(_event.m.Dude.getImagePath());
 
 
-				if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+				if (this.World.LegendsMod.Configs().RelationshipsEnabled())
 				{
 					local brocount = 0;
 							foreach( bro in brothers )
@@ -154,7 +154,7 @@ this.civilwar_deserter_event <- this.inherit("scripts/events/event", {
 						this.World.getPlayerRoster().add(_event.m.Dude);
 						this.World.getTemporaryRoster().clear();
 						_event.m.Dude.onHired();
-					
+
 
 						//set relations
 						local brothers = this.World.getPlayerRoster().getAll();

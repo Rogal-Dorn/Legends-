@@ -32,6 +32,7 @@ this.asset_manager <- {
 		BrothersScaleMax = 27,
 		BrothersScaleMin = 1,
 		LastDayPaid = 1,
+		LastDayResourcesUpdated = 0,
 		LastHourUpdated = 0,
 		LastFoodConsumed = 0,
 		IsIronman = false,
@@ -146,10 +147,6 @@ this.asset_manager <- {
 	{
 		local parts = this.Const.LegendMod.MaxResources[this.m.EconomicDifficulty].ArmorParts;
 		parts += this.World.State.getPlayer().getArmorPartsModifier();
-		foreach( bro in this.World.getPlayerRoster().getAll() )
-		{
-			parts += bro.getArmorPartsModifier();
-		}
 		return parts;
 	}
 
@@ -157,10 +154,6 @@ this.asset_manager <- {
 	{
 		local meds = this.Const.LegendMod.MaxResources[this.m.EconomicDifficulty].Medicine;
 		meds += this.World.State.getPlayer().getMedsModifier();
-		foreach( bro in this.World.getPlayerRoster().getAll() )
-		{
-			meds += bro.getMedsModifier();
-		}
 		return meds;
 	}
 
@@ -787,7 +780,7 @@ this.asset_manager <- {
 						}
 				}
 
-				if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+				if (this.World.LegendsMod.Configs().RelationshipsEnabled())
 				{
 				// Check the company alignment against the mercenary alignment
 					if ( !bro.getSkills().hasSkill("trait.player") )
@@ -941,26 +934,26 @@ this.asset_manager <- {
 			 	local items = bro.getItems().getAllItems();
 			 	local updateBro = false;
 
-						local skills =
-						[
-							"perk.legend_tools_spares",
-							"perk.legend_tools_drawers"
-						];
-						foreach (s in skills)
-						{
-							local skill = bro.getSkills().getSkillByID(s);
-							if (skill != null)
-							{
-								perkMod *= 1 - (skill.getModifier() / 100);
-							}
-						}
+				local skills =
+				[
+					"perk.legend_tools_spares",
+					"perk.legend_tools_drawers"
+				];
+				foreach (s in skills)
+				{
+					local skill = bro.getSkills().getSkillByID(s);
+					if (skill != null)
+					{
+						perkMod *= 1 - (skill.getModifier() / 100);
+					}
+				}
 
 			 	foreach( item in items )
 			 	{
 			 		if (item.getRepair() < item.getRepairMax())
 			 		{
 			 			local d = this.Math.minf(this.Const.World.Assets.ArmorPerHour * this.Const.Difficulty.RepairMult[this.World.Assets.getEconomicDifficulty()], item.getRepairMax() - item.getRepair());
-			 			item.setArmor(item.getRepair() + d);
+			 			item.onRepair(item.getRepair() + d);
 			 			this.m.ArmorParts = this.Math.maxf(0, this.m.ArmorParts - d * this.Const.World.Assets.ArmorPartsPerArmor * perkMod * this.Const.Difficulty.RepairMult[this.World.Assets.getEconomicDifficulty()]);
 			 			updateBro = true;
 			 		}
@@ -1001,7 +994,7 @@ this.asset_manager <- {
 			 		if (item.getRepair() < item.getRepairMax())
 			 		{
 			 			local d = this.Math.minf(this.Const.World.Assets.ArmorPerHour * this.Const.Difficulty.RepairMult[this.World.Assets.getEconomicDifficulty()], item.getRepairMax() - item.getRepair());
-			 			item.setArmor(item.getRepair() + d);
+			 			item.onRepair(item.getRepair() + d);
 						this.m.ArmorParts = this.Math.maxf(0, this.m.ArmorParts - d * this.Const.World.Assets.ArmorPartsPerArmor * this.Const.Difficulty.RepairMult[this.World.Assets.getEconomicDifficulty()]);
 			 		}
 
@@ -1041,6 +1034,17 @@ this.asset_manager <- {
 
 			_worldState.updateTopbarAssets();
 		}
+
+		if (this.World.getTime().Days > this.m.LastDayResourcesUpdated + 7)
+		{
+			this.m.LastDayResourcesUpdated = this.World.getTime().Days;
+			foreach( t in this.World.EntityManager.getSettlements() )
+			{
+
+				t.addNewResources();
+			}
+		}
+
 
 	}
 
@@ -2320,6 +2324,7 @@ this.asset_manager <- {
 			_out.writeString(name);
 		}
 		_out.writeU8(this.m.BrothersMax);
+		_out.writeU16(this.m.LastDayResourcesUpdated);
 		_out.writeBool(false);
 	}
 
@@ -2449,6 +2454,11 @@ this.asset_manager <- {
 					item.setVariant(this.World.Assets.getBannerID());
 				}
 			}
+		}
+
+		if (_in.getMetaData().getVersion() >= 70)
+		{
+			this.m.LastDayResourcesUpdated = _in.readU16();
 		}
 
 		_in.readBool();
