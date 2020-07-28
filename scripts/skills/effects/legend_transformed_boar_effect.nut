@@ -127,7 +127,7 @@ this.legend_transformed_boar_effect <- this.inherit("scripts/skills/skill", {
 
 		this.m.Container.add(this.new("scripts/skills/actives/gore_skill"));
 		this.m.Container.add(this.new("scripts/skills/actives/legend_boar_charge"));
-		if (!this.m.Container.hasSkill("actives.footwork))
+		if (!this.m.Container.hasSkill("actives.footwork"))
 		{
 			this.m.Container.add(this.new("scripts/skills/actives/footwork"));
 		}
@@ -188,7 +188,7 @@ this.legend_transformed_boar_effect <- this.inherit("scripts/skills/skill", {
 
 		actor.getSkills().removeByID("actives.legend_boar_charge");
 		actor.getSkills().removeByID("actives.gore");
-		if (!actor.getSkills().hasSkill("perk.footwork))
+		if (!actor.getSkills().hasSkill("perk.footwork"))
 		{
 			actor.getSkills().removeByID("actives.footwork");
 		}
