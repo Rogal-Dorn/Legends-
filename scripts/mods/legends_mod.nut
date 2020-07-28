@@ -5,8 +5,8 @@ this.legends_mod <- {
     },
 	function create()
 	{
-        this.m.BrotherStats = this.new("scripts/statistics/legends_brother_statistics_manager");
         this.m.Configs = this.new("scripts/mods/legends_configs");
+        this.m.BrotherStats = this.new("scripts/statistics/legends_brother_statistics_manager");
 	}
 
     function BroStats()

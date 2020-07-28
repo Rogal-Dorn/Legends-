@@ -3695,6 +3695,7 @@ in your scenario files, the onBuildPerkTree function signature has changed. You 
 Adding perks looks like this now '''_tree[0].push(this.Const.Perks.PerkDefs.LegendCampCook);'''
 
 
+
 14.0.0.16 Honey, I shrank the town
 
 **World Economy**
@@ -3720,11 +3721,17 @@ Fixes one possible crash on vala chanting and being devoured
 Fixed Vanilla splt man double damage perk.
 Bandit warlords now have warlord stats, as opposed to bandidt leader stats
 Temporarily removes alchemy tree from being rolled (was highly unfinished/untested before)
-<<<<<<< HEAD
 Zombie poison effect on legendary doesn't scale up fix
 Resilient/HoldOut tooltip fix, currently states -1 turn on debuffs, but gives -5
+Clears the mustering troops on legendary bandit contract completion
+
 
 14.0.0.17
+
 **Fixes**
+Fixed. Armor layers parts will now repair when not attached to a base armor piece.
+Updated Vala and Druid background icons
+Updates the demon hound dead image
+Fixes alignment of the sash armor layer
 Ancient scrolls now actually drop
-Zombie poison scales from 1 not 10 now on legendary when you have resilient [sorry about that lol]
+Zombie poison scales from 1 not 10 now on legendary when you have resilient
