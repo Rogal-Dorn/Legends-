@@ -143,7 +143,7 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 		{
 			this.m.Container.add(this.new("scripts/skills/actives/werewolf_bite"));
 		}
-		if (!this.m.Container.hasSkill("actives.footwork))
+		if (!this.m.Container.hasSkill("actives.footwork"))
 		{
 			this.m.Container.add(this.new("scripts/skills/actives/footwork"));
 		}
@@ -251,7 +251,7 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 		{
 			this.m.Container.add(this.new("scripts/skills/actives/werewolf_bite"));
 		}
-		if (!this.m.Container.hasSkill("actives.footwork))
+		if (!this.m.Container.hasSkill("actives.footwork"))
 		{
 			this.m.Container.add(this.new("scripts/skills/actives/footwork"));
 		}		
