@@ -64,7 +64,7 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 			local armor = this.new("scripts/items/legend_armor/cloth/legend_sackcloth");
 			//local chains = this.new("scripts/items/legend_armor/chain/legend_armor_hauberk");
 			local plate = this.new("scripts/items/legend_armor/plate/legend_reinforced_animal_hide_armor");
-			//armor.setUpgrade(chain);
+			//armor.setUpgrade(chains);
 			armor.setUpgrade(plate);
 			
 			items.equip(armor);
@@ -108,7 +108,7 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 			local armor = this.new("scripts/items/legend_armor/cloth/legend_sackcloth");
 			//local chains = this.new("scripts/items/legend_armor/chain/legend_armor_hauberk");
 			local plate = this.new("scripts/items/legend_armor/plate/legend_scrap_metal_armor");
-			//armor.setUpgrade(chain);
+			//armor.setUpgrade(chains);
 			armor.setUpgrade(plate);
 			
 			items.equip(armor);
@@ -150,7 +150,7 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 			local armor = this.new("scripts/items/legend_armor/cloth/legend_sackcloth_patched");
 			//local chains = this.new("scripts/items/legend_armor/chain/legend_armor_hauberk");
 			local plate = this.new("scripts/items/legend_armor/plate/legend_hide_and_bone_armor");
-			//armor.setUpgrade(chain);
+			//armor.setUpgrade(chains);
 			armor.setUpgrade(plate);
 			
 			items.equip(armor);
