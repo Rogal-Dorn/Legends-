@@ -4632,7 +4632,7 @@ this.tooltip_events <- {
 			local desc = "Number of people assigned to repair duty. The more assigned, the quicker equipment can be salvaged.";
 			if (this.Const.DLC.Wildmen == true)
 			local ret = [
-			{
+				{
 					id = 1,
 					type = "title",
 					text = "Assigned Brothers"
@@ -4656,7 +4656,7 @@ this.tooltip_events <- {
 					type = "text",
 					icon = "ui/icons/special.png",
 					text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + bro[0] + " units/hour [/color] " + bro[1] + " (" + bro[2] + ")"
-				})
+				});
 				++id;
 			}
 			return ret;

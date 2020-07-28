@@ -328,6 +328,11 @@ this.item <- {
 		this.setCondition( _a)
 	}
 
+	function onRepair( _a )
+	{
+		this.setArmor( _a );
+	}
+
 	function isAmountShown()
 	{
 	}
