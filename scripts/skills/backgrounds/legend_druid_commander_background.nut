@@ -107,7 +107,7 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.LegendBackToBasics,
 				this.Const.Perks.PerkDefs.LegendSpecStaffSkill,
 				this.Const.Perks.PerkDefs.LegendAlert,
-				this.Const.Perks.PerkDefs.LegendSurpressUrges,
+				this.Const.Perks.PerkDefs.LegendTrueForm,
 				this.Const.Perks.PerkDefs.LegendGatherer,
 				this.Const.Perks.PerkDefs.LegendRoots
 			],
@@ -133,7 +133,7 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.LegendSpecStaffStun,
 				this.Const.Perks.PerkDefs.LegendGrapple,
 				this.Const.Perks.PerkDefs.LegendSecondWind,
-				this.Const.Perks.PerkDefs.LegendControlInstincts,
+				this.Const.Perks.PerkDefs.LegendSurpressUrges,
 				this.Const.Perks.PerkDefs.LegendPrayerOfLife
 
 			],
@@ -152,7 +152,7 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.LegendBattleheart,
 				this.Const.Perks.PerkDefs.LegendChoke,
 				this.Const.Perks.PerkDefs.LegendSummonStorm,
-				this.Const.Perks.PerkDefs.LegendMasterAnger,
+				this.Const.Perks.PerkDefs.LegendControlInstincts,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyOrk,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyGoblin,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyBandit,
@@ -178,7 +178,7 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.Stalwart,
 				this.Const.Perks.PerkDefs.LegendFreedomOfMovement,
 				this.Const.Perks.PerkDefs.LegendDrumsOfLife,
-				this.Const.Perks.PerkDefs.LegendTrueForm
+				this.Const.Perks.PerkDefs.LegendMasterAnger		
 			]
 		];
 

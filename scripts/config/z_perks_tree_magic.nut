@@ -408,13 +408,13 @@ gt.Const.Perks.TherianthropyTree <- {
 		"divination"
 	],
 	Tree = [
+		[gt.Const.Perks.PerkDefs.LegendTrueForm],
+		[],
 		[gt.Const.Perks.PerkDefs.LegendSurpressUrges],
 		[],
 		[gt.Const.Perks.PerkDefs.LegendControlInstincts],
 		[],
-		[gt.Const.Perks.PerkDefs.LegendMasterAnger],
-		[],
-		[gt.Const.Perks.PerkDefs.LegendTrueForm]
+		[gt.Const.Perks.PerkDefs.LegendMasterAnger]
 	]
 };
 

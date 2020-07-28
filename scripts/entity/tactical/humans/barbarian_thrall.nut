@@ -57,15 +57,13 @@ this.barbarian_thrall <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_hold_out"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_recover"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_quick_hands"));
+		
 		local r = this.Math.rand(1, 4);
 		if(r == 1)
 			{
-				this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_bearform"));
-			}
-		local r = this.Math.rand(1, 4);
-		if(r == 1)
-			{
-				this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_wolfform"));
+				this.m.Skills.add(this.new("scripts/skills/injury_permanent/legend_lycanthropy_injury"));
+				this.m.AIAgent = this.new("scripts/ai/tactical/agents/direwolf_agent");
+				
 			}
 
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)

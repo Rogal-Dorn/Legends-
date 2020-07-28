@@ -11,6 +11,9 @@ this.legend_ursathropy_injury <- this.inherit("scripts/skills/injury_permanent/p
 
 	function getTooltip()
 	{
+		local day = this.World.getTime().Days;
+		local month = day / 28;
+		local monthfloor = this.Math.floor(month);
 		local ret = [
 			{
 				id = 1,
@@ -26,10 +29,21 @@ this.legend_ursathropy_injury <- this.inherit("scripts/skills/injury_permanent/p
 				id = 16,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Will transform into a werebear"
+				text = "This character is cursed to transform into a werebear"
 			}
 		];
 		this.addTooltipHint(ret);
+		
+		if (month == monthfloor)
+		{
+			ret.push({
+				id = 16,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "it is currently a full moon, the transformation will happen during any battle today"
+			});
+		}			
+		
 		return ret;
 	}
 
@@ -47,13 +61,31 @@ this.legend_ursathropy_injury <- this.inherit("scripts/skills/injury_permanent/p
 	if (!this.m.Container.hasSkill("effect.perk_master_anger")
 	{
 		local r = thisMath.rand(1,10);
-		if (r == 1)
+		local day = this.World.getTime().Days;
+		local month = day / 28;
+		local monthfloor = this.Math.floor(month);
+		if (r == 1 && this.World.getTime().IsDaytime)
 		{
 			if (!this.m.Container.hasSkill("effect.legend_transformed_bear"))
 			{
 				this.m.Container.add(this.new("scripts/skills/effects/legend_transformed_bear_effect"));
 			}
 		}
+		if (r <= 2 && !this.World.getTime().IsDaytime && month != monthfloor)
+		{
+				
+			if (!this.m.Container.hasSkill("effect.legend_transformed_bear"))
+			{
+				this.m.Container.add(this.new("scripts/skills/effects/legend_transformed_bear_effect"));
+			}
+		}	
+		if (month == monthfloor && !this.World.getTime().IsDaytime)	
+		{
+			if (!this.m.Container.hasSkill("effect.legend_transformed_bear"))
+			{
+				this.m.Container.add(this.new("scripts/skills/effects/legend_transformed_bear_effect"));
+			}
+		}	
 	}
 	else
 	{
