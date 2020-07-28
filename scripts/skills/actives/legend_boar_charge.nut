@@ -87,7 +87,7 @@ this.legend_boar_charge <- this.inherit("scripts/skills/skill", {
 		{
 			if (!this.m.Container.hasSkill("effect.legend_transformed_boar"))
 			{
-				this.m.Container.add(this.new("scripts/skills/effects/legend_transformed_bear_effect"));
+				this.m.Container.add(this.new("scripts/skills/effects/legend_transformed_boar_effect"));
 			}
 		}
 		

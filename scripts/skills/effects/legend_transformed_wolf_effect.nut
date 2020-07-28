@@ -143,6 +143,10 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 		{
 			this.m.Container.add(this.new("scripts/skills/actives/werewolf_bite"));
 		}
+		if (!this.m.Container.hasSkill("actives.footwork))
+		{
+			this.m.Container.add(this.new("scripts/skills/actives/footwork"));
+		}
 
 
 	}
@@ -202,6 +206,10 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 
 		actor.getSkills().removeByID("actives.werewolf_claws");
 		actor.getSkills().removeByID("actives.werewolf_bite");
+		if (!actor.getSkills().hasSkill("perk.footwork))
+		{
+			actor.getSkills().removeByID("actives.footwork");
+		}
 		local items = actor.getItems();
 		items.getData()[this.Const.ItemSlot.Offhand][0] = null;
 		items.getData()[this.Const.ItemSlot.Mainhand][0] = null;
@@ -243,6 +251,10 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 		{
 			this.m.Container.add(this.new("scripts/skills/actives/werewolf_bite"));
 		}
+		if (!this.m.Container.hasSkill("actives.footwork))
+		{
+			this.m.Container.add(this.new("scripts/skills/actives/footwork"));
+		}		
 		_properties.MovementAPCostAdditional += -1;
 		_properties.MovementFatigueCostMult *= 0.5;
 

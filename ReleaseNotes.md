@@ -3724,14 +3724,39 @@ Temporarily removes alchemy tree from being rolled (was highly unfinished/untest
 https://drive.google.com/file/d/1eScbaKttem93gLfFNLFPhJ2c1S6qaTXn/view?usp=sharing
 
 
-14.0.0.***
+14.0.0.***  where weary weres wear wary wares  
 
-Therianthropy
-* metamorphasising into other creatures is now a permanent injury. It randomly transforms the character into the creature, and they turn against you. 
+**Therianthropy**
+* metamorphasising into other creatures is now a permanent injury,It randomly transforms the character into the creature, and they turn against you. 
+lycanthropy 
+* Gain increased movement and gaining direwolf AI, bite, wolf claws, decreased movement AP and footwork. 
+* 10% chance per turn in daytime, 20% chance at night.
+aperthropy 
+* 10% chance per turn of turning into a wereboar, gaining increased fatigue recovery, decreased fatigue costs, boar AI, footwork and Gore skill 
+* New charge ability similar to an orc charge. 
+* 20% chance per turn in daytime, 10% chance at night, 
+ursathropy 
+*  10% chance per turn of turning into a werebear, gaining increased hitpoints, bear AI a powerful swiping attack.  
+*  Bite now scales like unarmed and heals on hit. 
+* 10% chance per turn in daytime, 20% chance at night. 
+arborthropy 
+*  10% chance per turn of turning into a schrat, gaining a regrowing shield, the ability to shed saplings when hit, and uproot skill. 
+* 20% chance per turn in daytime, 10% chance at night, 
+
+Barbarians often has theses injuries
+* Thralls have a 25% chance to have lycanthropy 
+* Reavers have a 25% chance to have aperthropy  
+* Chosen have a 25% chance to have  ursathropy 
+* Champions have a 25% chance to have arborthropy
+
+When a character is knocked unconcious by a character with tone of these injuries, the infection is passed on to them.
+The infection also cbrings with it a new perk group for mastering control of the disease and turning it to your advantag
 * New perk - surpress urges - transformed characters are now friendly AI 
 * New perk - control instincts - transformed characters are now player controled 
 * New perk - master anger - transformation is no longer random, but can be controlled 
-Druids begin with the therianthripy perk group and a random therianthropic injury 
+* True form - the transformation lasts twice as long
+Druids begin with the therianthropy perk group and a random therianthropic injury 
+ 
 
 
 changes
