@@ -495,7 +495,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		{
 			foreach (perkAdd in arrAdd)
 			{
-				this.addPerkBooleanFail(perkAdd, index);
+				this.addPerk(perkAdd, index);
 			}
 		}
 	}
