@@ -5,13 +5,13 @@ this.legend_lycanthropy_injury <- this.inherit("scripts/skills/injury_permanent/
 		this.permanent_injury.create();
 		this.m.ID = "injury.legend_lycanthropy";
 		this.m.Name = "Lycanthrope";
-		this.m.Description = "This character is cursed with lycanthropy and will transform into a wolf ";
+		this.m.Description = "This character is cursed with lycanthropy and will transform into a wolf, dropping all gear and attacking wildly unless controlled.";
 		this.m.Icon = "ui/injury/injury_lycanthropy.png";
 	}
 
 	function getTooltip()
 	{
-		local day = this.World.getTime().Days;
+	 	local day = this.World.getTime().Days;
 		local month = day / 28;
 		local monthfloor = this.Math.floor(month);
 		local ret = [
@@ -29,10 +29,30 @@ this.legend_lycanthropy_injury <- this.inherit("scripts/skills/injury_permanent/
 				id = 16,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Will transform into a werewolf"
+				text = "May transform into a werewolf"
 			}
 		];
 		this.addTooltipHint(ret);
+		
+		if (this.World.getTime().IsDaytime && month != monthfloor)
+		{
+			ret.push({
+				id = 16,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "10% chance to transform per turn during battle in daylight."
+			});
+		}		
+		
+		if (!this.World.getTime().IsDaytime && month != monthfloor)
+		{
+			ret.push({
+				id = 16,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "20% chance to transform per turn during battle at night."
+			});
+		}
 		
 		if (month == monthfloor)
 		{
@@ -40,9 +60,9 @@ this.legend_lycanthropy_injury <- this.inherit("scripts/skills/injury_permanent/
 				id = 16,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "it is currently a full moon, the transformation will happen during any battle today"
+				text = "it is currently a full moon, the transformation will happen during any battle tonight"
 			});
-		}			
+		}				
 		
 		return ret;
 	}
@@ -57,44 +77,46 @@ this.legend_lycanthropy_injury <- this.inherit("scripts/skills/injury_permanent/
 
 	function onTurnStart()
 	{
-	
-	if (!this.m.Container.hasSkill("effect.perk_master_anger")
-	{
-		local r = thisMath.rand(1,10);
-		local day = this.World.getTime().Days;
-		local month = day / 28;
-		local monthfloor = this.Math.floor(month);
-		if (r == 1 && this.World.getTime().IsDaytime)
+		local actor = this.getContainer().getActor();
+		if (!actor.getSkills().hasSkill("perk.legend_master_anger"))
 		{
-				
-			if (!this.m.Container.hasSkill("effect.legend_transformed_wolf"))
+			local r = thisMath.rand(1,10);
+			local day = this.World.getTime().Days;
+			local month = day / 28;
+			local monthfloor = this.Math.floor(month);
+			
+			if (r == 1 && this.World.getTime().IsDaytime)
 			{
-				this.m.Container.add(this.new("scripts/skills/effects/legend_transformed_wolf_effect"));
+					
+				if (!actor.getSkills().hasSkill("effect.legend_transformed_wolf"))
+				{
+					actor.getSkills().add(this.new("scripts/skills/effects/legend_transformed_wolf_effect"));
+				}
+			}
+			
+			if (r <= 2 && !this.World.getTime().IsDaytime && month != monthfloor)
+			{
+				if (!actor.getSkills().hasSkill("effect.legend_transformed_wolf"))
+				{
+					actor.getSkills().add(this.new("scripts/skills/effects/legend_transformed_wolf_effect"));
+				}
+			}	
+			
+			if (month == monthfloor && !this.World.getTime().IsDaytime)	
+			{
+				if (!actor.getSkills().hasSkill("effect.legend_transformed_wolf"))
+				{
+					actor.getSkills().add(this.new("scripts/skills/effects/legend_transformed_wolf_effect"));
+				}
+			}	
+		}
+		else
+		{
+			if (!actor.getSkills().hasSkill("active.legend_transform_into_wolf"))
+			{
+				actor.getSkills().add(this.new("scripts/skills/actives/legend_transform_into_wolf"));
 			}
 		}
-		if (r <= 2 && !this.World.getTime().IsDaytime && month != monthfloor)
-		{
-				
-			if (!this.m.Container.hasSkill("effect.legend_transformed_wolf"))
-			{
-				this.m.Container.add(this.new("scripts/skills/effects/legend_transformed_wolf_effect"));
-			}
-		}	
-		if (month == monthfloor && !this.World.getTime().IsDaytime)	
-		{
-			if (!this.m.Container.hasSkill("effect.legend_transformed_wolf"))
-			{
-				this.m.Container.add(this.new("scripts/skills/effects/legend_transformed_wolf_effect"));
-			}
-		}	
-	}
-	else
-	{
-		if (!this.m.Container.hasSkill("active.legend_transform_into_wolf"))
-		{
-			this.m.Container.add(this.new("scripts/skills/actives/legend_transform_into_wolf"));
-		}
-	}
 	
 	}
 

@@ -191,7 +191,7 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 		local r = _gender;
 		if (_gender == -1)
 		{
-			r = 0;
+			r = this.Math.rand(0, 9);
 			if (this.World.LegendsMod.Configs().LegendGenderEnabled())
 			{
 				r = this.Math.rand(0, 1);
@@ -200,11 +200,11 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 
 		if (r != 1)
 		{
-			return
+			return;
 		}
 		this.m.Faces = this.Const.Faces.PrettyFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
-		this.m.HairColors = this.Const.HairColors.Young;
+		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
 		this.m.Body = "bust_naked_body_03";
@@ -334,27 +334,39 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 		this.character_background.onAdded();
 		local actor = this.getContainer().getActor();
 		actor.setTitle("The Druid");
-		this.m.Container.add(this.new("scripts/skills/traits/deathwish_trait"));
 		
-		local r = this.Math.rand(1,4)
-		if (r == 1)
+		local r = this.Math.rand(1,99);
+		
+		if (r <= 50 )
 		{
-		this.m.Container.add(this.new("scripts/skills/injury_permanent/legend_aperthropy_injury"));
-		}
-		else if (r == 2)
-		{
-		this.m.Container.add(this.new("scripts/skills/injury_permanent/legend_arborthropy_injury"));
-		}
-		else if (r == 3)
-		{
-		this.m.Container.add(this.new("scripts/skills/injury_permanent/legend_lycanthropy_injury"));
-		}
-		else if (r == 4)
-		{
-		this.m.Container.add(this.new("scripts/skills/injury_permanent/legend_ursathropy_injury"));
+			actor.getSkills().add(this.new("scripts/skills/injury_permanent/legend_lycanthropy_injury"));
+			this.logDebug(this.getName() + " gained lycanthropy");
 		}		
 		
-		//this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
+		if (r > 50 && r <= 75)
+		{
+			actor.getSkills().add(this.new("scripts/skills/injury_permanent/legend_aperthropy_injury"));
+			this.logDebug(this.getName() + " gained aperthropy");
+		}
+	
+		if (r > 75 && r <= 90)
+		{
+			actor.getSkills().add(this.new("scripts/skills/injury_permanent/legend_arborthropy_injury"));
+			this.logDebug(this.getName() + " gained arborthropy");
+		}
+	
+		if (r > 90 && r <= 98)
+		{
+			actor.getSkills().add(this.new("scripts/skills/injury_permanent/legend_ursathropy_injury"));
+			this.logDebug(this.getName() + " gained ursathropy");
+		}
+		
+		if (r == 99)
+		{
+			actor.getSkills().add(this.new("scripts/skills/injury_permanent/legend_vermesthropy_injury"));
+			this.logDebug(this.getName() + " gained vermesthropy");
+		}		
+		
 	}
 
 
@@ -369,12 +381,6 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");
 		stash.removeByID("supplies.ground_grains");
-		stash.add(this.new("scripts/items/accessory/legend_apothecary_mushrooms_item"));
-		stash.add(this.new("scripts/items/accessory/antidote_item"));
-		stash.add(this.new("scripts/items/accessory/legend_warbear_item"));
-		stash.add(this.new("scripts/items/supplies/roots_and_berries_item"));
-		stash.add(this.new("scripts/items/supplies/legend_fresh_fruit_item"));
-		stash.add(this.new("scripts/items/supplies/medicine_item"));
 
 
 	}

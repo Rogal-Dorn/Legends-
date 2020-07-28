@@ -55,46 +55,48 @@ this.legend_arborthropy_injury <- this.inherit("scripts/skills/injury_permanent/
 	{
 	}
 
-	function onTurnStart()
+function onTurnStart()
 	{
-	
-	if (!this.m.Container.hasSkill("effect.perk_master_anger")
-	{
-		local r = thisMath.rand(1,10);
-		local day = this.World.getTime().Days;
-		local month = day / 28;
-		local monthfloor = this.Math.floor(month);
-		if (r == 1 && !this.World.getTime().IsDaytime)
+		local actor = this.getContainer().getActor();
+		if (!actor.getSkills().hasSkill("perk.legend_master_anger"))
 		{
-			if (!this.m.Container.hasSkill("effect.legend_transformed_tree"))
+			local r = thisMath.rand(1,10);
+			local day = this.World.getTime().Days;
+			local month = day / 28;
+			local monthfloor = this.Math.floor(month);
+			
+			if (r == 1 && this.World.getTime().IsDaytime)
 			{
-				this.m.Container.add(this.new("scripts/skills/effects/legend_transformed_tree_effect"));
+					
+				if (!actor.getSkills().hasSkill("effect.legend_transformed_tree"))
+				{
+					actor.getSkills().add(this.new("scripts/skills/effects/legend_transformed_tree_effect"));
+				}
+			}
+			
+			if (r <= 2 && !this.World.getTime().IsDaytime && month != monthfloor)
+			{
+				if (!actor.getSkills().hasSkill("effect.legend_transformed_tree"))
+				{
+					actor.getSkills().add(this.new("scripts/skills/effects/legend_transformed_tree_effect"));
+				}
+			}	
+			
+			if (month == monthfloor && !this.World.getTime().IsDaytime)	
+			{
+				if (!actor.getSkills().hasSkill("effect.legend_transformed_tree"))
+				{
+					actor.getSkills().add(this.new("scripts/skills/effects/legend_transformed_tree_effect"));
+				}
+			}	
+		}
+		else
+		{
+			if (!actor.getSkills().hasSkill("active.legend_transform_into_tree"))
+			{
+				actor.getSkills().add(this.new("scripts/skills/actives/legend_transform_into_tree"));
 			}
 		}
-		if (r <= 2 && this.World.getTime().IsDaytime && month != monthfloor)
-		{
-				
-			if (!this.m.Container.hasSkill("effect.legend_transformed_tree"))
-			{
-				this.m.Container.add(this.new("scripts/skills/effects/legend_transformed_tree_effect"));
-			}
-		}
-		if (month == monthfloor && this.World.getTime().IsDaytime)	
-		{
-			if (!this.m.Container.hasSkill("effect.legend_transformed_tree"))
-			{
-				this.m.Container.add(this.new("scripts/skills/effects/legend_transformed_tree_effect"));
-			}
-		}		
-		
-	}
-	else
-	{
-		if (!this.m.Container.hasSkill("active.legend_transform_into_tree"))
-		{
-			this.m.Container.add(this.new("scripts/skills/actives/legend_transform_into_tree"));
-		}
-	}
 	
 	}
 

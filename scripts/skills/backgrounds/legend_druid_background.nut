@@ -107,8 +107,7 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 
 				],
 			Magic = [
-				this.Const.Perks.DruidMagicTree,
-				this.Const.Perks.TherianthropyMagicTree
+				this.Const.Perks.DruidMagicTree
 			]
 		}
 	}
@@ -280,7 +279,7 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 
 		this.character_background.onAdded();
 		local actor = this.getContainer().getActor();
-		this.m.Container.add(this.new("scripts/skills/traits/deathwish_trait"));
+		actor.TherianthropeInfectionRandom();	
 		//this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
 	}
 
