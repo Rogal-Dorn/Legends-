@@ -129,7 +129,7 @@ this.legend_transformed_rat_effect <- this.inherit("scripts/skills/skill", {
 		this.m.Head = actor.getSprite("head").getBrush().Name;
 
 		this.logDebug(this.getName() + " changing visuals");
-		actor.getSprite("body").setBrush("bust_rat_body_0" + this.Math.rand(1, 4)));
+		actor.getSprite("body").setBrush("bust_rat_body_0" + this.Math.rand(1, 4));
 		actor.getSprite("head").setBrush("bust_rat_head_0" + this.Math.rand(1, 4));
 		actor.getSprite("body").setHorizontalFlipping(1);
 		actor.getSprite("head").setHorizontalFlipping(1);
