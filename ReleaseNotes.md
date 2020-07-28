@@ -3738,7 +3738,7 @@ aperthropy
 ursathropy 
 *  10% chance per turn of turning into a werebear, gaining increased hitpoints, bear AI a powerful swiping attack.  
 *  Bite now scales like unarmed and heals on hit. 
-* 10% chance per turn in daytime, 20% chance at night. 
+* 10% chance per turn in daytime, 20% chance at night. 100% chance on the full moon every 28 days. 
 arborthropy 
 *  10% chance per turn of turning into a schrat, gaining a regrowing shield, the ability to shed saplings when hit, and uproot skill. 
 * 20% chance per turn in daytime, 10% chance at night, 
@@ -3757,8 +3757,8 @@ The infection also cbrings with it a new perk group for mastering control of the
 * True form - the transformation lasts twice as long
 Druids begin with the therianthropy perk group and a random therianthropic injury 
  
+Rumours of man sized rats in this update are clearly the ravings of madmen
 
-
-changes
+other changes
 *prong skill tooltip updated to correctly show impact of thrust master 
 

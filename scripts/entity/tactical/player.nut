@@ -3039,7 +3039,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	}
 	
 	
-function TherianthropeInfection(_killer)
+	function TherianthropeInfection(_killer)
 	{
 		local TherianthropyGroup = [
 							[this.Const.Perks.PerkDefs.LegendTrueForm],
@@ -3051,33 +3051,82 @@ function TherianthropeInfection(_killer)
 							[this.Const.Perks.PerkDefs.LegendMasterAnger]
 					];
 
-		if (_killer.getSkills().hasSkill("injury.legend_aperthropy") && !this.hasSkill("injury.legend_aperthropy"))
+		if (_killer.getSkills().hasSkill("injury.legend_aperthropy") && !this.getSkills().hasSkill("injury.legend_aperthropy"))
 		{
-			this.add(this.new("scripts/skills/injury_permanent/legend_aperthropy_injury"));
+			this.getSkills().add(this.new("scripts/skills/injury_permanent/legend_aperthropy_injury"));
 			this.getBackground().addPerkGroup(TherianthropyGroup);
 			this.logDebug(this.getName() + " gained aperthropy");
 		}
 
 
-		if (_killer.getSkills().hasSkill("injury.legend_arborthropy") && !this.hasSkill("injury.legend_arborthropy"))
+		if (_killer.getSkills().hasSkill("injury.legend_arborthropy") && !this.getSkills().hasSkill("injury.legend_arborthropy"))
 		{
-			this.add(this.new("scripts/skills/injury_permanent/legend_arborthropy_injury"));
+			this.getSkills().add(this.new("scripts/skills/injury_permanent/legend_arborthropy_injury"));
 			this.getBackground().addPerkGroup(TherianthropyGroup);
 			this.logDebug(this.getName() + " gained arborthropy");
 		}
 
-		if (_killer.getSkills().hasSkill("injury.legend_lycanthropy") && !this.hasSkill("injury.legend_lycanthropy"))
+		if (_killer.getSkills().hasSkill("injury.legend_lycanthropy") && !this.getSkills().hasSkill("injury.legend_lycanthropy"))
 		{
-			this.add(this.new("scripts/skills/injury_permanent/legend_lycanthropy_injury"));
+			this.getSkills().add(this.new("scripts/skills/injury_permanent/legend_lycanthropy_injury"));
 			this.getBackground().addPerkGroup(TherianthropyGroup);
 			this.logDebug(this.getName() + " gained lycanthropy");
 		}
 
-		if (_killer.getSkills().hasSkill("injury.legend_ursathropy") && !this.hasSkill("injury.legend_ursathropy"))
+		if (_killer.getSkills().hasSkill("injury.legend_ursathropy") && !this.getSkills().hasSkill("injury.legend_ursathropy"))
 		{
-			this.add(this.new("scripts/skills/injury_permanent/legend_ursathropy_injury"));
+			this.getSkills().add(this.new("scripts/skills/injury_permanent/legend_ursathropy_injury"));
 			this.getBackground().addPerkGroup(TherianthropyGroup);
 			this.logDebug(this.getName() + " gained ursathropy");
+		} 
+	}	
+
+	function TherianthropeInfectionRandom()
+	{
+		local TherianthropyGroup = [
+							[this.Const.Perks.PerkDefs.LegendTrueForm],
+							[],
+							[this.Const.Perks.PerkDefs.LegendSurpressUrges],
+							[],
+							[this.Const.Perks.PerkDefs.LegendControlInstincts],
+							[],
+							[this.Const.Perks.PerkDefs.LegendMasterAnger]
+					];
+		local r = this.Math.rand(1,99);
+		
+		if (r <= 50 && !this.getSkills().hasSkill("injury.legend_lycanthropy"))
+		{
+			this.getSkills().add(this.new("scripts/skills/injury_permanent/legend_lycanthropy_injury"));
+			this.getBackground().addPerkGroup(TherianthropyGroup);
+			this.logDebug(this.getName() + " gained lycanthropy");
+		}		
+		
+		if (r > 50 && r <= 75 && !this.getSkills().hasSkill("injury.legend_aperthropy"))
+		{
+			this.getSkills().add(this.new("scripts/skills/injury_permanent/legend_aperthropy_injury"));
+			this.getBackground().addPerkGroup(TherianthropyGroup);
+			this.logDebug(this.getName() + " gained aperthropy");
+		}
+
+		if (r > 75 && r <= 90 && !this.getSkills().hasSkill("injury.legend_arborthropy"))
+		{
+			this.getSkills().add(this.new("scripts/skills/injury_permanent/legend_arborthropy_injury"));
+			this.getBackground().addPerkGroup(TherianthropyGroup);
+			this.logDebug(this.getName() + " gained arborthropy");
+		}
+
+		if (r > 90 & r <= 98 && !this.getSkills().hasSkill("injury.legend_ursathropy"))
+		{
+			this.getSkills().add(this.new("scripts/skills/injury_permanent/legend_ursathropy_injury"));
+			this.getBackground().addPerkGroup(TherianthropyGroup);
+			this.logDebug(this.getName() + " gained ursathropy");
+		} 
+		
+		if (r == 99 && !this.getSkills().hasSkill("injury.legend_vermesthropy"))
+		{
+			this.getSkills().add(this.new("scripts/skills/injury_permanent/legend_vermesthropy_injury"));
+			this.getBackground().addPerkGroup(TherianthropyGroup);
+			this.logDebug(this.getName() + " gained vermesthropy");
 		} 
 	}	
 

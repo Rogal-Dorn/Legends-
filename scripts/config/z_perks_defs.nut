@@ -3079,10 +3079,10 @@ gt.Const.Perks.PerkDefObjects <- [
 		ID = "perk.legend_master_anger",
 		Script = "scripts/skills/perks/perk_master_anger",
 		Name = this.Const.Strings.PerkName.LegendMasterAnger,
-		Tooltip = this.Const.Strings.PerkDescription.LegendLegendMasterAnger,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMasterAnger,
 		Icon = "ui/perks/master_anger.png",
 		IconDisabled = "ui/perks/master_anger_bw.png",
-		Const = "LegendLegendMasterAnger"
+		Const = "LegendMasterAnger"
 	}
 ];
 gt.Const.Perks.PerkDefs <- {};
