@@ -23,7 +23,7 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		if (this.getUpgraded())
 		{
 			return this.m.Name + " *Upgraded*"
-		} 
+		}
 		return this.m.Name +  " *Not Upgraded*"
 	}
 
@@ -42,7 +42,7 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 	function getModifierToolip()
     {
 		local mod = this.getModifiers();
-		local ret = [			
+		local ret = [
 			{
 				id = 5,
 				type = "text",
@@ -67,14 +67,14 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 
 	function isHidden()
 	{
-		
-		if (this.Const.LegendMod.Configs.LegendCampUnlockEnabled())
+
+		if (this.World.LegendsMod.Configs().LegendCampUnlockEnabled())
 		{
 			return false;
 		}
-		
+
 		return !this.World.Tags.get("HasLegendCampGathering")
-	}	
+	}
 
 	function getUpgraded()
 	{
@@ -90,7 +90,7 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		}
 
 		local sub = "empty";
-		
+
 		if (this.getAssignedBros() > 0) {
 			sub =  "full";
 		}
@@ -130,7 +130,7 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		}
         return res;
     }
-	
+
 	function getAssignedBros()
     {
         local mod = this.getModifiers();
@@ -172,8 +172,8 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 				case "background.legend_herbalist":
 					apothecaryLevel += bro.getLevel()
 			}
-			
-		
+
+
 			if (bro.getSkills().hasSkill("perk.legend_gatherer"))
 			{
                apothecaryLevel += bro.getLevel()
@@ -262,7 +262,7 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 
 		if (!this.getUpgraded())
 		{
-			return 
+			return
 		}
 
 		if (this.Stash.getNumberOfEmptySlots() == 0)
@@ -278,7 +278,7 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		//check for apothecaries
 		local apothecarylevels = this.getApothecaryLevel();
 
-		// set it to something that wont break if none are present 
+		// set it to something that wont break if none are present
 		if (apothecarylevels == null)
 		{
 		apothecarylevels = 0;
@@ -295,21 +295,21 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		//check for woodsmen
 		local woodsmanlevels = this.getWoodsmanLevel();
 
-		// set it to something that wont break if none are present 
+		// set it to something that wont break if none are present
 		if (woodsmanlevels == null)
 		{
 		woodsmanlevels = 0;
 		}
 
 		if (woodsmanlevels >= 1 && woodsmanlevels < 10)
-		{	
+		{
 			secondary.extend([
 				"scripts/items/trade/legend_raw_wood_item"
 			]);
 		}
 
 		if (woodsmanlevels >= 10)
-		{	
+		{
 			secondary.extend([
 				"scripts/items/trade/quality_wood_item"
 			]);
@@ -318,35 +318,35 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		//check for miners
 		local minerlevels = this.getMinerLevel();
 
-		// set it to something that wont break if none are present 
+		// set it to something that wont break if none are present
 		if (minerlevels == null)
 		{
 		minerlevels = 0;
 		}
 
 		if (minerlevels >= 1 && minerlevels < 10)
-		{	
+		{
 			secondary.extend([
 				"scripts/items/trade/peat_bricks_item"
 			]);
 		}
 
 		if (minerlevels >= 5)
-		{	
+		{
 			secondary.extend([
 				"scripts/items/trade/peat_bricks_item"
 			]);
 		}
 
 		if (minerlevels >= 10)
-		{	
+		{
 			secondary.extend([
 				"scripts/items/trade/uncut_gems_item"
 			]);
 		}
 
 		if (apothecarylevels >= 1 && apothecarylevels < 10)
-		{	
+		{
 			secondary.extend([
 				"scripts/items/accessory/berserker_mushrooms_item",
 				"scripts/items/accessory/legend_apothecary_mushrooms_item",
@@ -358,14 +358,14 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		}
 
 		if (apothecarylevels >= 10 && brewerlevels < 1)
-		{	
+		{
 			secondary.extend([
 				"scripts/items/misc/happy_powder_item"
 			]);
 		}
 
 		if (apothecarylevels >= 10 && brewerlevels >= 1)
-		{	
+		{
 			secondary.extend([
 				"scripts/items/accessory/lionheart_potion_item",
 				"scripts/items/accessory/iron_will_potion_item",
@@ -375,7 +375,7 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		}
 
 		if (apothecarylevels >= 60 && brewerlevels >= 20 )
-		{	
+		{
 			secondary.extend([
 				"scripts/items/misc/miracle_drug_item",
 				"scripts/items/accessory/spider_poison_item",
@@ -390,18 +390,18 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		{
 			local item = this.new(secondary[this.Math.rand(0, secondary.len()-1)]);
 			this.m.Items.push(item);
-			this.Stash.add(item);				
+			this.Stash.add(item);
 		}
 
 
     }
-    
+
 	function onClicked( _campScreen )
 	{
         _campScreen.showGathererDialog();
         this.camp_building.onClicked(_campScreen);
 	}
-        
+
 	function onSerialize( _out )
 	{
 		this.camp_building.onSerialize(_out);

@@ -29,7 +29,7 @@ this.dock_order <- this.inherit("scripts/ai/world/world_behavior", {
 				continue;
 			}
 
-			settlement.setResources(settlement.getResources() + _entity.getResources());
+			//settlement.setResources(settlement.getResources() + _entity.getResources());
 
 			local inv = _entity.getInventory();
 			if (inv.len() == 0)

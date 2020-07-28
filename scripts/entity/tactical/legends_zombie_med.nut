@@ -50,7 +50,7 @@ this.legends_zombie_med <- this.inherit("scripts/entity/tactical/legend_zombie",
 		}
 
 
-		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			local cloths = [
 				[0, ""],
@@ -197,7 +197,7 @@ this.legends_zombie_med <- this.inherit("scripts/entity/tactical/legend_zombie",
 			{
 				helmet = this.new("scripts/items/helmets/full_leather_cap");
 			}
-			
+
 			this.m.Items.equip(helmet);
 		}
 	}

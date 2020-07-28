@@ -36,7 +36,7 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		bros[0].m.LevelUps = 2;
 		bros[0].m.Level = 3;
 		bros[0].m.Talents = [];
-		bros[0].setVeteranPerks(2);	
+		bros[0].setVeteranPerks(2);
 		local talents = bros[0].getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.MeleeSkill] = 2;
@@ -48,14 +48,14 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		local warhound = this.new("scripts/items/accessory/warhound_item");
 		warhound.m.Name = "Fenrir the Warhound";
 		items.equip(warhound);
-		
-		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			/*
 			65 -7
-			
+
 			10 -1
-			
+
 			55 -9
 			=
 			65 -10
@@ -66,12 +66,12 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 			local plate = this.new("scripts/items/legend_armor/plate/legend_reinforced_animal_hide_armor");
 			//armor.setUpgrade(chains);
 			armor.setUpgrade(plate);
-			
+
 			items.equip(armor);
 		} else {
 			items.equip(this.new("scripts/items/armor/barbarians/reinforced_animal_hide_armor"));
 		}
-		
+
 		items.equip(this.new("scripts/items/helmets/barbarians/bear_headpiece"));
 		bros[1].setStartValuesEx([
 			"barbarian_background"
@@ -83,7 +83,7 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		bros[1].m.LevelUps = 2;
 		bros[1].m.Level = 3;
 		bros[1].m.Talents = [];
-		bros[1].setVeteranPerks(2);	
+		bros[1].setVeteranPerks(2);
 		local talents = bros[1].getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.MeleeSkill] = 2;
@@ -92,14 +92,14 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		local items = bros[1].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
-		
-		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			/*
 			65 -7
-			
+
 			10 -1
-			
+
 			65 -10
 			=
 			75 -11
@@ -110,7 +110,7 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 			local plate = this.new("scripts/items/legend_armor/plate/legend_scrap_metal_armor");
 			//armor.setUpgrade(chains);
 			armor.setUpgrade(plate);
-			
+
 			items.equip(armor);
 		} else {
 			items.equip(this.new("scripts/items/armor/barbarians/scrap_metal_armor"));
@@ -126,7 +126,7 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		bros[2].m.LevelUps = 2;
 		bros[2].m.Level = 3;
 		bros[2].m.Talents = [];
-		bros[2].setVeteranPerks(2);	
+		bros[2].setVeteranPerks(2);
 		local talents = bros[2].getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.MeleeSkill] = 1;
@@ -135,13 +135,13 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		local items = bros[2].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
-		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			/*
 			95 -10
-			
+
 			15 -1
-			
+
 			80 -11
 			=
 			95 -12
@@ -152,12 +152,12 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 			local plate = this.new("scripts/items/legend_armor/plate/legend_hide_and_bone_armor");
 			//armor.setUpgrade(chains);
 			armor.setUpgrade(plate);
-			
+
 			items.equip(armor);
 		} else {
 			items.equip(this.new("scripts/items/armor/barbarians/hide_and_bone_armor"));
 		}
-		
+
 		items.equip(this.new("scripts/items/helmets/barbarians/leather_helmet"));
 		bros[3].setStartValuesEx([
 			"monk_background"
@@ -166,7 +166,7 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		bros[3].improveMood(2.0, "Thinks he managed to convince you to give up raiding and pillaging");
 		bros[3].setPlaceInFormation(13);
 		bros[3].m.Talents = [];
-		bros[3].setVeteranPerks(2);	
+		bros[3].setVeteranPerks(2);
 		local talents = bros[3].getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.Bravery] = 3;
@@ -175,7 +175,7 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 			local val = this.World.State.addNewID(bro);
 			bro.m.CompanyID = val;
 		}
-		if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+		if (this.World.LegendsMod.Configs().RelationshipsEnabled())
 {
     local avgAlignment = 0;
     foreach (bro in this.World.getPlayerRoster().getAll())
@@ -366,7 +366,7 @@ foreach (b in this.World.getPlayerRoster().getAll())
 				_list.push("assassin_background");
 			}
 		}
-		else 
+		else
 		{
 			local r;
 			r = this.Math.rand(0, 2);
@@ -407,7 +407,7 @@ foreach (b in this.World.getPlayerRoster().getAll())
 				bro.improveMood(1.5, "Is excited at becoming a raider")
 				local r;
 				r = this.Math.rand(0, 9);
-			
+
 					if (r == 0)
 					{
 					bro.getSkills().add(this.new("scripts/skills/traits/bloodthirsty_trait"));
@@ -428,8 +428,8 @@ foreach (b in this.World.getPlayerRoster().getAll())
 					{
 					bro.getSkills().add(this.new("scripts/skills/traits/brute_trait"));
 					}
-					
-				
+
+
 			}
 		}
 	}

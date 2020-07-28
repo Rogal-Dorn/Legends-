@@ -39,9 +39,9 @@ this.disintegrating_effect <- this.inherit("scripts/skills/skill", {
 		return "This character is wearing away and falling apart they will lose [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.Damage + "[/color] hitpoints each turn for [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.TurnsLeft + "[/color] more turn(s).";
 	}
 
-	function getAttacker() 
+	function getAttacker()
 	{
-		if (!this.Const.LegendMod.Configs.LegendBleedKillerEnabled())
+		if (!this.World.LegendsMod.Configs().LegendBleedKillerEnabled())
 		{
 			return this.getContainer().getActor();
 		}
@@ -53,13 +53,13 @@ this.disintegrating_effect <- this.inherit("scripts/skills/skill", {
 
 		if (this.m.Actor != this.getContainer().getActor())
 		{
-			// Must be alive to get the credit, to stop crashes 
+			// Must be alive to get the credit, to stop crashes
 			if (!this.m.Actor.isAlive())
 			{
 				return this.getContainer().getActor();
 			}
 
-		
+
 			// If Swallowed and not on the map, can't be counted for bleed kills, it crashes the game
 			 if (this.m.Actor.isPlacedOnMap())
 			 {

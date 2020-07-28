@@ -34,22 +34,22 @@ this.have_all_camp_activities_ambition <- this.inherit("scripts/ambitions/ambiti
 		{
 			barber = true;
 		}
-		
+
 		if (this.World.Tags.get("HasLegendCampCrafting"))
 		{
 			crafting = true;
 		}
-		
+
 		if (this.World.Tags.get("HasLegendCampFletching"))
 		{
 			fletching = true;
 		}
-		
+
 		if (this.World.Tags.get("HasLegendCampHunting"))
 		{
 			hunting = true;
 		}
-		
+
 		if (this.World.Tags.get("HasLegendCampGathering"))
 		{
 			gathering = true;
@@ -128,27 +128,27 @@ this.have_all_camp_activities_ambition <- this.inherit("scripts/ambitions/ambiti
 		{
 			barber = true;
 		}
-		
+
 		if (this.World.Tags.get("HasLegendCampCrafting"))
 		{
 			crafting = true;
 		}
-		
+
 		if (this.World.Tags.get("HasLegendCampFletching"))
 		{
 			fletching = true;
 		}
-		
+
 		if (this.World.Tags.get("HasLegendCampHunting"))
 		{
 			hunting = true;
 		}
-		
+
 		if (this.World.Tags.get("HasLegendCampGathering"))
 		{
 			gathering = true;
 		}
-		
+
 		if (this.World.Tags.get("HasLegendCampScraping"))
 		{
 			scraping = true;
@@ -170,7 +170,7 @@ this.have_all_camp_activities_ambition <- this.inherit("scripts/ambitions/ambiti
 	function onUpdateScore()
 	{
 
-		if (this.Const.LegendMod.Configs.LegendCampUnlockEnabled())
+		if (this.World.LegendsMod.Configs().LegendCampUnlockEnabled())
 		{
 			this.m.IsDone = true;
 			return;

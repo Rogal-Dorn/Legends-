@@ -36,7 +36,7 @@ this.legends_assassin_scenario <- this.inherit("scripts/scenarios/world/starting
 		this.World.Assets.m.Money = 1.5 * this.World.Assets.m.Money;
 		this.World.Assets.m.Ammo = this.World.Assets.m.Ammo;
 
-		if (this.Const.LegendMod.Configs.RelationshipsEnabled())
+		if (this.World.LegendsMod.Configs().RelationshipsEnabled())
 {
     local avgAlignment = 0;
     foreach (bro in this.World.getPlayerRoster().getAll())

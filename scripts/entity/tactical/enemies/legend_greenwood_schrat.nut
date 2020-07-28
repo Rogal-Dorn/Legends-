@@ -147,7 +147,7 @@ this.legend_greenwood_schrat <- this.inherit("scripts/entity/tactical/actor", {
 					loot.drop(_tile);
 
 					local chance = 10;
-					if (this.Const.LegendMod.Configs.LegendMagicEnabled())
+					if (this.World.LegendsMod.Configs().LegendMagicEnabled())
 					{
 						chance = 100;
 					}

@@ -29,7 +29,7 @@ this.legend_skeleton_gladiator <- this.inherit("scripts/entity/tactical/skeleton
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_mastery_throwing"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_pathfinder"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_quick_hands"));
-		
+
 		 if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 			{
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_ballistics"));
@@ -51,9 +51,9 @@ this.legend_skeleton_gladiator <- this.inherit("scripts/entity/tactical/skeleton
 
 
 		this.m.Items.equip(this.new("scripts/items/shields/ancient/tower_shield"));
-	
 
-		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			local cloths = [
 				[3, ""],
