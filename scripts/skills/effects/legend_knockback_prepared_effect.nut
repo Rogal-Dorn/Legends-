@@ -53,47 +53,20 @@ this.legend_knockback_prepared_effect<- this.inherit("scripts/skills/skill", {
 			{
 				this.removeSelf();
 			}
-	}
 
-	function onTargetMissed( _skill, _targetEntity )
-	{
-		--this.m.AttacksLeft;
-
-		if (this.m.AttacksLeft <= 0)
-		{
-			this.removeSelf();
-		}
-	}
-
-	function onAnySkillUsed( _skill, _targetEntity, _properties )
-	{
-		local target = _targetEntity;
-		local targetTile = _targetEntity.getTile();
-		local user = this.getContainer().getActor();
-
-		if (this.m.SoundOnUse.len() != 0)
-		{
-			this.Sound.play(this.m.SoundOnUse[this.Math.rand(0, this.m.SoundOnUse.len() - 1)], this.Const.Sound.Volume.Skill, user.getPos());
-		}
-
-		if (this.Math.rand(1, 100) > _skill.getHitchance(target))
-		{
-			target.onMissed(this.getContainer().getActor(), this);
-			return false;
-		}
 
 		local knockToTile = this.findTileToKnockBackTo(user.getTile(), targetTile);
 
 		if (knockToTile == null)
 		{
-			return false;
+			return;
 		}
 
 		this.applyFatigueDamage(target, 10);
 
 		if (target.getCurrentProperties().IsImmuneToKnockBackAndGrab)
 		{
-			return false;
+			return;
 		}
 
 		if (!user.isHiddenToPlayer() && (targetTile.IsVisibleForPlayer || knockToTile.IsVisibleForPlayer))
@@ -160,6 +133,25 @@ this.legend_knockback_prepared_effect<- this.inherit("scripts/skills/skill", {
 
 			this.Tactical.getNavigator().teleport(target, knockToTile, this.onKnockedDown, tag, true);
 		}
+	}
+
+	function onTargetMissed( _skill, _targetEntity )
+	{
+		--this.m.AttacksLeft;
+
+		if (this.m.AttacksLeft <= 0)
+		{
+			this.removeSelf();
+		}
+	}
+
+	function onAnySkillUsed( _skill, _targetEntity, _properties )
+	{
+		local target = _targetEntity;
+		local targetTile = _targetEntity.getTile();
+		local user = this.getContainer().getActor();
+
+		
 
 		return true;
 	}
