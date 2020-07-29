@@ -201,8 +201,33 @@ this.legend_transformed_boar_effect <- this.inherit("scripts/skills/skill", {
 	{
 		local actor = this.getContainer().getActor();
 
-		actor.getSprite("body").setBrush("were_boar_body");
-		actor.getSprite("head").setBrush("were_boar_head");
+		// actor.getSprite("body").setBrush("were_boar_body");
+		// actor.getSprite("head").setBrush("were_boar_head");
+
+		if (actor.isPlayerControlled())
+		{
+			if (this.m.Container.hasSkill("perk.legend_surpress_urges") && !this.m.Container.hasSkill("perk.legend_control_instincts"))
+			{
+			actor.setAIAgent(this.new("scripts/ai/tactical/agents/boar_agent"));
+			actor.getAIAgent().setActor(actor);
+			}
+			else if (this.m.Container.hasSkill("perk.legend_surppress_urges") && this.m.Container.hasSkill("perk.legend_control_instincts"))
+			{
+
+			}
+			else	
+			{
+			actor.setFaction(this.Const.Faction.Beasts);		
+			actor.setAIAgent(this.new("scripts/ai/tactical/agents/boar_agent"));
+			actor.getAIAgent().setActor(actor);
+			}
+
+		}
+		else
+		{
+		actor.setAIAgent(this.new("scripts/ai/tactical/agents/direwolf_agent"));
+		actor.getAIAgent().setActor(actor);
+		}
 
 		actor.getSprite("armor").Alpha = 10;
 		actor.getSprite("helmet").Alpha = 10;

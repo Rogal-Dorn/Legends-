@@ -122,6 +122,7 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.LegendSmackdown,
 				this.Const.Perks.PerkDefs.LegendOnslaught,
 				this.Const.Perks.PerkDefs.LegendKick,
+				this.Const.Perks.PerkDefs.LegendScryTrance,
 				this.Const.Perks.PerkDefs.LegendSummonFalcon
 			],
 			[
@@ -141,8 +142,12 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.LegendSummonWolf,
 				this.Const.Perks.PerkDefs.LegendMasteryStaves,
 				this.Const.Perks.PerkDefs.LegendSpecFists,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyOrk,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyGoblin,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyBandit,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyNoble				
 				this.Const.Perks.PerkDefs.LegendPoisonImmunity,
-				this.Const.Perks.PerkDefs.LegendPotionBrewer
+				this.Const.Perks.PerkDefs.LegendPotionBrewer,	
 				this.Const.Perks.PerkDefs.SpecThrowing
 			],
 			[
@@ -153,11 +158,7 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.LegendChoke,
 				this.Const.Perks.PerkDefs.LegendSummonStorm,
 				this.Const.Perks.PerkDefs.LegendControlInstincts,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyOrk,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyGoblin,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyBandit,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyNoble
-
+				this.Const.Perks.PerkDefs.LegendReadOmensTrance
 			],
 			[
 				this.Const.Perks.PerkDefs.Berserk,
@@ -168,6 +169,7 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.LegendInsects,
 				this.Const.Perks.PerkDefs.LegendMuscularity,
 				this.Const.Perks.PerkDefs.LegendDrumsOfLife,
+				this.Const.Perks.PerkDefs.LegendDistantVisions,
 				this.Const.Perks.PerkDefs.LegendSummonBear
 			],
 			[

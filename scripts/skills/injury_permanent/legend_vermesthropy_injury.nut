@@ -58,47 +58,49 @@ this.legend_vermesthropy_injury <- this.inherit("scripts/skills/injury_permanent
 	function onTurnStart()
 	{
 	
-	//	if (!this.m.Container.hasSkill("effect.perk_master_anger")
-	//	{
-	//		local r = thisMath.rand(1,10);
-	//		local day = this.World.getTime().Days;
-	//		local month = day / 28;
-	//		local monthfloor = this.Math.floor(month);
-			local actor = this.getContainer().getActor();
-	//		if (r == 1 && this.World.getTime().IsDaytime)
-	//		{
-	//				
-	//			if (!this.m.Container.hasSkill("effect.legend_transformed_wolf"))
-	//			{
-	//				this.m.Container.add(this.new("scripts/skills/effects/legend_transformed_wolf_effect"));
-	//			}
-	//		}
-	//		
-	//		if (r <= 2 && !this.World.getTime().IsDaytime && month != monthfloor)
-	//		{
-	//			if (!this.m.Container.hasSkill("effect.legend_transformed_wolf"))
-	//			{
-	//				this.m.Container.add(this.new("scripts/skills/effects/legend_transformed_wolf_effect"));
-	//			}
-	//		}	
-	//		
-	//		if (month == monthfloor && !this.World.getTime().IsDaytime)	
-	//		{
-	//			if (!this.m.Container.hasSkill("effect.legend_transformed_wolf"))
-	//			{
-	//				this.m.Container.add(this.new("scripts/skills/effects/legend_transformed_wolf_effect"));
-	//			}
-	//		}	
-	//	}
-	//	else
-	//	{
-	//		if (!this.m.Container.hasSkill("active.legend_transform_into_wolf"))
-	//		{
-				actor.getSkills().add(this.new("scripts/skills/effects/legend_transformed_wolf_effect"));
-				actor.getSkills().add(this.new("scripts/skills/actives/legend_transform_into_wolf"));
-	//		}
-	//	}
-	//
+		function onTurnStart()
+	{
+		local actor = this.getContainer().getActor();
+		if (!actor.getSkills().hasSkill("perk.legend_master_anger"))
+		{
+			local r = this.Math.rand(1,10);
+			local day = this.World.getTime().Days;
+			local month = day / 28;
+			local monthfloor = this.Math.floor(month);
+			
+			if (r == 1 && this.World.getTime().IsDaytime)
+			{
+					
+				if (!actor.getSkills().hasSkill("effect.legend_transformed_rat"))
+				{
+					actor.getSkills().add(this.new("scripts/skills/effects/legend_transformed_rat_effect"));
+				}
+			}
+			
+			if (r <= 2 && !this.World.getTime().IsDaytime && month != monthfloor)
+			{
+				if (!actor.getSkills().hasSkill("effect.legend_transformed_rat"))
+				{
+					actor.getSkills().add(this.new("scripts/skills/effects/legend_transformed_rat_effect"));
+				}
+			}	
+			
+			if (month == monthfloor && !this.World.getTime().IsDaytime)	
+			{
+				if (!actor.getSkills().hasSkill("effect.legend_transformed_rat"))
+				{
+					actor.getSkills().add(this.new("scripts/skills/effects/legend_transformed_rat_effect"));
+				}
+			}	
+		}
+		else
+		{
+			if (!actor.getSkills().hasSkill("active.legend_transform_into_rat"))
+			{
+				actor.getSkills().add(this.new("scripts/skills/actives/legend_transform_into_rat"));
+			}
+		}
+	
 	}
 
 });

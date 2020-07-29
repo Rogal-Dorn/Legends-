@@ -80,7 +80,7 @@ this.legend_lycanthropy_injury <- this.inherit("scripts/skills/injury_permanent/
 		local actor = this.getContainer().getActor();
 		if (!actor.getSkills().hasSkill("perk.legend_master_anger"))
 		{
-			local r = thisMath.rand(1,10);
+			local r = this.Math.rand(1,10);
 			local day = this.World.getTime().Days;
 			local month = day / 28;
 			local monthfloor = this.Math.floor(month);

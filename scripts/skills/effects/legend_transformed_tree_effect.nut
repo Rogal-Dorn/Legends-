@@ -226,8 +226,32 @@ this.legend_transformed_tree_effect <- this.inherit("scripts/skills/skill", {
 	{
 		local actor = this.getContainer().getActor();
 
-		actor.getSprite("body").setBrush("bust_schrat_body_01");
-		actor.getSprite("head").setBrush("bust_schrat_head_01");
+		//actor.getSprite("body").setBrush("bust_schrat_body_01");
+		// actor.getSprite("head").setBrush("bust_schrat_head_01");
+
+		if (actor.isPlayerControlled())
+		{
+			if (this.m.Container.hasSkill("perk.legend_surpress_urges") && !this.m.Container.hasSkill("perk.legend_control_instincts"))
+			{
+			actor.setAIAgent(this.new("scripts/ai/tactical/agents/schrat_agent"));
+			actor.getAIAgent().setActor(actor);
+			}
+			else if (this.m.Container.hasSkill("perk.legend_surppress_urges") && this.m.Container.hasSkill("perk.legend_control_instincts"))
+			{
+			}
+			else	
+			{
+			actor.setFaction(this.Const.Faction.Beasts);		
+			actor.setAIAgent(this.new("scripts/ai/tactical/agents/schrat_agent"));
+			actor.getAIAgent().setActor(actor);
+			}
+
+		}
+		else
+		{
+		actor.setAIAgent(this.new("scripts/ai/tactical/agents/schrat_agent"));
+		actor.getAIAgent().setActor(actor);
+		}
 
 		actor.getSprite("armor").Alpha = 10;
 		actor.getSprite("helmet").Alpha = 10;
