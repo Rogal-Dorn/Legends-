@@ -3,7 +3,10 @@ this.legend_transformed_tree_effect <- this.inherit("scripts/skills/skill", {
 	TurnsLeft = 5,
 	Body = "",
 	Head = "",
-	Injury = ""
+	Injury = "",
+	OriginalFaction = 0,
+	OriginalAgent = null,
+	OriginalSocket = null
 	},
 	function create()
 	{
@@ -93,9 +96,29 @@ this.legend_transformed_tree_effect <- this.inherit("scripts/skills/skill", {
 		
 		//remove items 
 		
+		// remove items 
+		this.logDebug(this.getName() + " removing items");
 		local items = actor.getItems();
-		items.getData()[this.Const.ItemSlot.Offhand][0] = null;
-		items.getData()[this.Const.ItemSlot.Mainhand][0] = null;
+		if (items.getItemAtSlot(this.Const.ItemSlot.Mainhand))
+		{
+			local item = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
+			item.drop();
+		}
+		if (items.getItemAtSlot(this.Const.ItemSlot.Offhand))
+		{
+			local item = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
+			item.drop();
+		}
+		if (items.getItemAtSlot(this.Const.ItemSlot.Body))
+		{
+			local item = items.getItemAtSlot(this.Const.ItemSlot.Body);
+			item.drop();
+		}
+		if (items.getItemAtSlot(this.Const.ItemSlot.Head))
+		{
+			local item = items.getItemAtSlot(this.Const.ItemSlot.Head);
+			item.drop();
+		}
 
 		this.m.Body = actor.getSprite("body").getBrush().Name;
 		this.m.Head = actor.getSprite("head").getBrush().Name;

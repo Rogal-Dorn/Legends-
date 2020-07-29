@@ -3760,5 +3760,8 @@ Druids begin with the therianthropy perk group and a random therianthropic injur
 Rumours of man sized rats in this update are clearly the ravings of madmen
 
 other changes
+* artwork for legendary beasts reworked to be grittier 
 *prong skill tooltip updated to correctly show impact of thrust master 
+* fixed crash from Fell down well event while playing a solo avatar 
+* Intensive training trait is hidden until relevant 
 
