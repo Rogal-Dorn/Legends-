@@ -3,7 +3,10 @@ this.legend_transformed_boar_effect <- this.inherit("scripts/skills/skill", {
 	TurnsLeft = 5,
 	Body = "",
 	Head = "",
-	Injury = ""
+	Injury = "",
+	OriginalFaction = 0,
+	OriginalAgent = null,
+	OriginalSocket = null
 	},
 	function create()
 	{
@@ -77,7 +80,7 @@ this.legend_transformed_boar_effect <- this.inherit("scripts/skills/skill", {
 		}
 		else
 		{
-		actor.setAIAgent(this.new("scripts/ai/tactical/agents/direwolf_agent"));
+		actor.setAIAgent(this.new("scripts/ai/tactical/agents/boar_agent"));
 		actor.getAIAgent().setActor(actor);
 		}
 	
@@ -85,9 +88,29 @@ this.legend_transformed_boar_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("socket").setBrush("bust_base_beasts");
 		actor.setDirty(true);		
 		
+		// remove items 
+		this.logDebug(this.getName() + " removing items");
 		local items = actor.getItems();
-		items.getData()[this.Const.ItemSlot.Offhand][0] = null;
-		items.getData()[this.Const.ItemSlot.Mainhand][0] = null;
+		if (items.getItemAtSlot(this.Const.ItemSlot.Mainhand))
+		{
+			local item = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
+			item.drop();
+		}
+		if (items.getItemAtSlot(this.Const.ItemSlot.Offhand))
+		{
+			local item = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
+			item.drop();
+		}
+		if (items.getItemAtSlot(this.Const.ItemSlot.Body))
+		{
+			local item = items.getItemAtSlot(this.Const.ItemSlot.Body);
+			item.drop();
+		}
+		if (items.getItemAtSlot(this.Const.ItemSlot.Head))
+		{
+			local item = items.getItemAtSlot(this.Const.ItemSlot.Head);
+			item.drop();
+		}
 
 		this.m.Body = actor.getSprite("body").getBrush().Name;
 		this.m.Head = actor.getSprite("head").getBrush().Name;
@@ -125,7 +148,7 @@ this.legend_transformed_boar_effect <- this.inherit("scripts/skills/skill", {
 			this.m.TurnsLeft = 6;
 		}
 
-		this.m.Container.add(this.new("scripts/skills/actives/gore_skill"));
+		this.m.Container.add(this.new("scripts/skills/actives/legend_boar_gore"));
 		this.m.Container.add(this.new("scripts/skills/actives/legend_boar_charge"));
 		if (!this.m.Container.hasSkill("actives.footwork"))
 		{
@@ -225,7 +248,7 @@ this.legend_transformed_boar_effect <- this.inherit("scripts/skills/skill", {
 		}
 		else
 		{
-		actor.setAIAgent(this.new("scripts/ai/tactical/agents/direwolf_agent"));
+		actor.setAIAgent(this.new("scripts/ai/tactical/agents/boar_agent"));
 		actor.getAIAgent().setActor(actor);
 		}
 
@@ -250,7 +273,7 @@ this.legend_transformed_boar_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("socket").Alpha = 10;
 
 		_properties.FatigueRecoveryRateMult *= 2.0;
-		_properties.FatigueCostMult *= 0.75;
+		_properties.StaminaMult *= 1.25;
 	}
 
 	function onCombatFinished()
@@ -307,7 +330,7 @@ this.legend_transformed_boar_effect <- this.inherit("scripts/skills/skill", {
 		}
 
 		actor.getSkills().removeByID("actives.legend_boar_charge");
-		actor.getSkills().removeByID("actives.gore");
+		actor.getSkills().removeByID("actives.legend_boar_gore");
 		if (!actor.getSkills().hasSkill("perk.footwork"))
 		{
 			actor.getSkills().removeByID("actives.footwork");

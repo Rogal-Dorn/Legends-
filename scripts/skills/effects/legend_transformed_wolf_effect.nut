@@ -3,7 +3,7 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 	TurnsLeft = 5,
 	Body = "",
 	Head = "",
-	Injury = ""
+	Injury = "",
 	OriginalFaction = 0,
 	OriginalAgent = null,
 	OriginalSocket = null

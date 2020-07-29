@@ -7,6 +7,9 @@ this.legend_transformed_rat_effect <- this.inherit("scripts/skills/skill", {
 	OriginalFaction = 0,
 	OriginalAgent = null,
 	OriginalSocket = null
+	OriginalFaction = 0,
+	OriginalAgent = null,
+	OriginalSocket = null
 	},
 	function create()
 	{

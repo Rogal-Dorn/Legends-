@@ -3,7 +3,10 @@ this.legend_transformed_bear_effect <- this.inherit("scripts/skills/skill", {
 	TurnsLeft = 5,
 	Body = "",
 	Head = "",
-	Injury = ""
+	Injury = "",
+	OriginalFaction = 0,
+	OriginalAgent = null,
+	OriginalSocket = null
 	},
 	function create()
 	{

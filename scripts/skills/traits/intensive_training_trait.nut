@@ -17,7 +17,7 @@ this.intensive_training_trait <- this.inherit("scripts/skills/traits/character_t
 		this.m.ID = "trait.intensive_training_trait";
 		this.m.Name = "Training progress";
 		this.m.Icon = "ui/traits/IntensiveTraining.png";
-		this.m.Description = "This character can increase it's potential in the training grounds.";
+		this.m.Description = "This character can increase their potential in the training grounds.";
 		this.m.Order = this.Const.SkillOrder.Background + 1;
 		this.m.Type = this.Const.SkillType.Background | this.Const.SkillType.Trait;
 		this.m.IsActive = false;
@@ -90,7 +90,7 @@ this.intensive_training_trait <- this.inherit("scripts/skills/traits/character_t
 
 	function finishedTraining( _traitGained )
 	{
-		this.m.Description = "This character completed training and can't get skills from training. Training experience is slightly improved.";
+		this.m.Description = "This character completed training and can't get any more skills from training. Training experience is slightly improved.";
 		this.m.TraitGained = _traitGained;
 		this.m.BonusXP = 0.05;
 	}
@@ -211,11 +211,23 @@ this.intensive_training_trait <- this.inherit("scripts/skills/traits/character_t
 				id = 6,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
-				text = "This character has not started training (only upgraded training grounds gives permanent skill increase)"
+				text = "This character has not started training"
 			});
 		}
 		return tooltip;
 	}
+	
+    function isHidden()
+    {
+        if (this.getStatsIncreased() == 0)
+        {
+        return true;
+        }
+        else
+        {
+        return false;
+        }
+    }	
 
 	function onSerialize( _out )
 	{
