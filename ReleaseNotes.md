@@ -3739,3 +3739,4 @@ Zombie poison scales from 1 not 10 now on legendary when you have resilient
 14.0.0.16d
 **Fixes**
 Prepared knockback now shouldn't break the game
+Staffblock perk now works with slingstaff @ half effectiveness, similar to swordstaffs
