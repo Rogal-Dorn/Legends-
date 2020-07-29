@@ -29,3 +29,6 @@ done <<< "$FILES"
 cd ../bin
 ./masscompile.bat "c:\Program Files (x86)\Steam\steamapps\common\Battle Brothers\data\scripts"
 cd ../battlebrothers
+
+
+read -p "Finished"
