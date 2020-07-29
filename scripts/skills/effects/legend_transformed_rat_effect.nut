@@ -246,8 +246,40 @@ this.legend_transformed_rat_effect <- this.inherit("scripts/skills/skill", {
 
 
 		this.logDebug(this.getName() + " onUpdate setting visuals");
-		actor.getSprite("body").setBrush("bust_rat_body_0" + this.Math.rand(1, 4)));
-		actor.getSprite("head").setBrush("bust_rat_head_0" + this.Math.rand(1, 4));
+	//	actor.getSprite("body").setBrush("bust_rat_body_0" + this.Math.rand(1, 4)));
+	//	actor.getSprite("head").setBrush("bust_rat_head_0" + this.Math.rand(1, 4));
+
+		
+		if (actor.isPlayerControlled())
+		{
+			if (this.m.Container.hasSkill("perk.legend_surpress_urges") && !this.m.Container.hasSkill("perk.legend_control_instincts"))
+			{
+			this.logDebug(this.getName() + " AI set to wardog");
+			actor.setAIAgent(this.new("scripts/ai/tactical/agents/wardog_agent"));
+			actor.getAIAgent().setActor(actor);
+			
+			}
+			else if (this.m.Container.hasSkill("perk.legend_surppress_urges") && this.m.Container.hasSkill("perk.legend_control_instincts"))
+			{
+			this.logDebug(this.getName() + " AI unchanged");
+			}
+			else	
+			{
+			this.logDebug(this.getName() + " AI set to direwolf");
+			actor.setFaction(this.Const.Faction.Beasts);		
+			actor.setAIAgent(this.new("scripts/ai/tactical/agents/direwolf_agent"));
+			actor.getAIAgent().setActor(actor);
+		
+			}
+
+		}
+		else
+		{
+		this.logDebug(this.getName() + " AI set to direwolf 2");
+		actor.setAIAgent(this.new("scripts/ai/tactical/agents/direwolf_agent"));
+		actor.getAIAgent().setActor(actor);
+		}
+
 
 		actor.getSprite("armor").Alpha = 10;
 		actor.getSprite("helmet").Alpha = 10;
