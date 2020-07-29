@@ -24,11 +24,15 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 		}
 
 
-		if (this.World.Assets.getOrigin() == null || this.World.Assets.getOrigin().getID() == "scenario.militia")
+		if (this.World.Assets.getOrigin() == null)
 		{
 			this.m.Strength * 0.8;
 			return;
 		}
+
+		local broMult = 1.0; //adding this justin case another scenario ever wants to affect a multiplier easily, probably don't really NEED it
+		if (this.World.Assets.getOrigin().getID() == "scenario.militia")
+				broMult = (2/3);
 
 		local zombieSummonLevel = 0
 		local skeletonSummonLevel = 0
@@ -72,22 +76,25 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 				brolevel = brolevel / 2;
 			}
 
+			local broPow = 0;
 			if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Easy)
 			{
-				this.m.Strength +=  3 + ((brolevel / 4) + (brolevel - 1)) * 1.5;
+				broPow = 3 + ((brolevel / 4) + (brolevel - 1)) * 1.5;
 			}
 			else if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Normal)
 			{
-				this.m.Strength +=  10 + ((brolevel / 2) + (brolevel - 1)) * 2;
+				broPow =  10 + ((brolevel / 2) + (brolevel - 1)) * 2;
 			}
 			else if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Hard)
 			{
-				this.m.Strength +=  6 + (i / 2) + ((brolevel / 2) + (pow(brolevel,1.2)));
+				broPow =  6 + (i / 2) + ((brolevel / 2) + (pow(brolevel,1.2)));
 			}
 			else if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary )
 			{
-				this.m.Strength +=  i + (brolevel + (pow(brolevel,1.2)));
+				broPow =  i + (brolevel + (pow(brolevel,1.2)));
 			}
+			broPow *= broMult;
+			this.m.Strength += broPow;
 
 			if (this.World.LegendsMod.Configs().LegendItemScalingEnabled())
 			{
