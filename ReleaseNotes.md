@@ -3735,3 +3735,8 @@ Updates the demon hound dead image
 Fixes alignment of the sash armor layer
 Ancient scrolls now actually drop
 Zombie poison scales from 1 not 10 now on legendary when you have resilient
+
+Ranger now has fixed worldmap look (Thanks Leonion)
+Miasma skill should now prperly get removed if perk is removed.  (Thanks Leonion)
+Rune of power should now correctly display it's effect  (Thanks Leonion)
+Warbears nolonger roam the seven seas and grasslands, now correctly stay in the forests for rangers to tame  (Thanks Leonion)
