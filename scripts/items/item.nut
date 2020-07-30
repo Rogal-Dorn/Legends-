@@ -760,7 +760,7 @@ this.item <- {
 		switch (this.m.RuneVariant)
 		{
 			case 1:
-				return "This item has the power of the rune sigil of Power:\n[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.RuneBonus1 + "%[/color] Damage inflicted.";
+				return "This item has the power of the rune sigil of Power:\n[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.RuneBonus1 + "%[/color] to Minimum Damage.\n " + "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.RuneBonus2 + "%[/color] to Maximum Damage.";
 				break;
 
 			case 2:
