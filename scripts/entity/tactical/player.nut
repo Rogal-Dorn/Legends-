@@ -2470,7 +2470,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 		for( local done = 0; done < _num; done = ++done )
 		{
-			local weight = this.Math.rand(0, totalWeight);
+			local weight = this.Math.rand(1, totalWeight);
 			local totalhere = 0;
 
 			for( local i = 0; i < attributes.len(); i = ++i )
