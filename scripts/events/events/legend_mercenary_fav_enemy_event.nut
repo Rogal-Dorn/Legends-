@@ -49,6 +49,7 @@ this.legend_mercenary_fav_enemy_event <- this.inherit("scripts/events/event", {
 					Text = "",
 					function getResult( _event )
 					{
+						local tile = this.World.State.getPlayer().getTile();
 						local properties = this.World.State.getLocalCombatProperties(this.World.State.getPlayer().getPos());
 						properties.Music = this.Const.Music.BanditTracks;
                         properties.TerrainTemplate = this.Const.World.TerrainTacticalTemplate[tile.TacticalType];
@@ -78,18 +79,29 @@ this.legend_mercenary_fav_enemy_event <- this.inherit("scripts/events/event", {
 						};
                         	
 						properties.Entities = [];
-		
 						properties.Entities.push({
-                            ID = this.Const.EntityType.Swordmaster,
-                            Variant = 1,
-                            Row = 1,
-                            Script = "scripts/entity/tactical/humans/special/mercenary_mwah",
-                            Faction = this.Const.Faction.Enemy
-                            function Callback( _entity, _tag )
-                            {
-                                _entity.setName("Mwah I Love You");
-                            }							
-                        });
+								ID = this.Const.EntityType.Mercenary,
+								Variant = 0,
+								Row = 0,
+								Name = "Mwah ILY",
+								Script = "scripts/entity/tactical/humans/special/mercenary_mwah",
+								Faction = this.Const.Faction.Enemy
+								function Callback( _entity, _tag )
+								{
+									_entity.setName("Mwah ILY");
+				1				}							
+							});
+						// properties.Entities.push({
+                        //     ID = this.Const.EntityType.Mercenary,
+                        //     Variant = 1,
+                        //     Row = 0,
+                        //     Script = "scripts/entity/tactical/humans/special/mercenary_mwah",
+                        //     Faction = this.Const.Faction.Enemy
+                        //     function Callback( _entity, _tag )
+                        //     {
+                        //         _entity.setName("Mwah I Love You");
+                        //     }							
+                        // });
 		
 						// properties.Entities.push({
                         //     ID = this.Const.EntityType.BanditLeader,
@@ -234,7 +246,10 @@ this.legend_mercenary_fav_enemy_event <- this.inherit("scripts/events/event", {
 			// return;
 			this.m.Score = 9999;
 		}
-		this.m.Score = 9999 + this.m.Stats * 0.1;
+		else
+		{
+			this.m.Score = 9999 + this.m.Stats * 0.1;
+		}
  	}
 
 	function onPrepare()
