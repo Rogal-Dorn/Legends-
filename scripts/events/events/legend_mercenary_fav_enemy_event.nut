@@ -255,7 +255,7 @@ this.legend_mercenary_fav_enemy_event <- this.inherit("scripts/events/event", {
 		}
 		if (this.m.Stats == null)
 		{
-			// return;
+			return;
 			this.m.Score = 9999;
 		}
 		else
