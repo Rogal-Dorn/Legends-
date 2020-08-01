@@ -39,6 +39,8 @@ this.mercenary_freykin <- this.inherit("scripts/entity/tactical/humans/special/m
         this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
         this.m.Skills.add(this.new("scripts/skills/perks/perk_fearsome"));
         this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_ninetails_damage"));
+        this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_cult_hood"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_cult_armor"));
 		this.m.Skills.add(this.new("scripts/skills/actives/horrific_scream"));
         this.m.Skills.add(this.new("scripts/skills/perks/perk_backstabber"));
         this.m.Skills.add(this.new("scripts/skills/perks/perk_overwhelm"));
