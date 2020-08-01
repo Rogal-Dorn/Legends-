@@ -89,8 +89,20 @@ this.legend_mercenary_fav_enemy_event <- this.inherit("scripts/events/event", {
 								function Callback( _entity, _tag )
 								{
 									_entity.setName("Mwah ILY");
-				1				}							
-							});
+								}							
+						});
+						properties.Entities.push({
+								ID = this.Const.EntityType.Mercenary,
+								Variant = 0,
+								Row = 0,
+								Name = "Freykin",
+								Script = "scripts/entity/tactical/humans/special/mercenary_freykin",
+								Faction = this.Const.Faction.Enemy
+								function Callback( _entity, _tag )
+								{
+									_entity.setName("Freykin");
+								}							
+						});
 						// properties.Entities.push({
                         //     ID = this.Const.EntityType.Mercenary,
                         //     Variant = 1,
