@@ -1,4 +1,4 @@
-this.mercenary <- this.inherit("scripts/entity/tactical/human", {
+this.mercenary_custom <- this.inherit("scripts/entity/tactical/human", {
 	m = {},
 	function create()
 	{

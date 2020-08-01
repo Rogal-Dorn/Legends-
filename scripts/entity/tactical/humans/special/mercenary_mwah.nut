@@ -1,4 +1,4 @@
-this.mercenary <- this.inherit("scripts/entity/tactical/humans/special/mercenary_custom", {
+this.mercenary_mwah <- this.inherit("scripts/entity/tactical/humans/special/mercenary_custom", {
 	m = {},
 	function create()
 	{
@@ -6,11 +6,10 @@ this.mercenary <- this.inherit("scripts/entity/tactical/humans/special/mercenary
 		this.m.BloodType = this.Const.BloodType.Red;
 		this.m.XP = this.Const.Tactical.Actor.Mwah.XP;
 		this.human.create();
-		this.m.Faces = this.Const.Faces.AllFemale;
-		this.m.Hairs = this.Const.Hair.AllFemale;
-		this.m.HairColors = this.Const.HairColors.All;
-		this.m.Beards = this.Const.Beards.Female;
-		this.m.AIAgent = this.new("scripts/ai/tactical/agents/mercenary_mwah_melee_agent");
+		this.m.Faces = ["bust_head_female_01"];
+		this.m.Hairs = ["01"];
+		this.m.HairColors = ["grey"];
+        this.m.AIAgent = this.new("scripts/ai/tactical/agents/mercenary_mwah_melee_agent");
 		this.m.AIAgent.setActor(this);
 	}
 
@@ -33,8 +32,12 @@ this.mercenary <- this.inherit("scripts/entity/tactical/humans/special/mercenary
 		this.m.CurrentProperties = clone b;
 		this.setAppearance();
 		this.getSprite("socket").setBrush("bust_base_militia");
-	    this.m.Skills.add(this.new("scripts/skills/perks/perk_clarity"));
+
+		this.m.Skills.add(this.new("scripts/skills/actives/recover_skill"));
         this.m.Skills.add(this.new("scripts/skills/perks/perk_quick_hands"));
+        this.m.Skills.add(this.new("scripts/skills/perks/perk_killing_frenzy"));
+        this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_mind_over_body"));
+        this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));
 
 	}
 
@@ -47,14 +50,19 @@ this.mercenary <- this.inherit("scripts/entity/tactical/humans/special/mercenary
 	function assignRandomEquipment()
 	{
 		local r;
-        this.m.Items.equip(this.new("scripts/items/weapons/named/named_warscythe"));
-        this.m.Items.addToBag(this.new("scripts/items/weapons/javelin"));
+        local weapon = this.new("scripts/items/weapons/ancient/warscythe");
+        // local weapon = this.new("scripts/items/weapons/named/named_warscythe")
+        // weapon.m.IsDroppedAsLoot = false;
+        this.m.Items.equip(weapon);
+        this.m.Items.addToBag(this.new("scripts/items/weapons/barbarian/heavy_javelin"));
         this.m.Items.addToBag(this.new("scripts/items/weapons/throwing_spear"));
         if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
         {
-            local armor = this.new("scripts/items/legend_armor/cloth/legend_tunic_noble");
-            armor.setUpgrade(this.new("scripts/items/legend_armor/legend_armor_hauberk_sleevless"));
-            armor.setUpgrade(this.new("scripts/items/legend_armor/legend_armor_plate_full_greaves"));
+            local armor = this.new("scripts/items/legend_armor/cloth/legend_gambeson_wolf");
+            armor.setUpgrade(this.new("scripts/items/legend_armor/chain/legend_armor_hauberk_full"));
+            armor.setUpgrade(this.new("scripts/items/legend_armor/plate/legend_armor_plate_full_greaves"));
+            armor.setUpgrade(this.new("scripts/items/legend_armor/cloak/legend_armor_cloak_noble"));
+            armor.setUpgrade(this.new("scripts/items/legend_armor/armor_upgrades/legend_direwolf_pelt_upgrade"));
             this.m.Items.equip(armor);
             local helm = this.new("scripts/items/helmets/legend_vampire_lord_helmet");
             helm.m.ConditionMax = 300;
