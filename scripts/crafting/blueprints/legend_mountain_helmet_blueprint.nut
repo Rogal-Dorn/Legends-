@@ -14,7 +14,13 @@ this.legend_mountain_helmet_blueprint <- this.inherit("scripts/crafting/blueprin
 			},
 			{
 				Script = "scripts/items/helmets/full_helm",
-				Num = 1
+				Num = 1,
+				LegendsArmor = false
+			},
+			{
+				Script = "scripts/items/legend_helmets/helm/legend_helmet_great_helm",
+				Num = 1,
+				LegendsArmor = true
 			},
 			{
 				Script = "scripts/items/misc/legend_rock_unhold_hide_item",
@@ -39,10 +45,17 @@ this.legend_mountain_helmet_blueprint <- this.inherit("scripts/crafting/blueprin
 	{
 		return true;
 	}
-	
+
 	function onCraft( _stash )
 	{
-		_stash.add(this.new("scripts/items/helmets/named/legend_mountain_helmet_named"));
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+		{
+			_stash.add(this.new("scripts/items/legend_helmets/vanity/legend_helmet_mountain_helm"));
+		}
+		else
+		{
+			_stash.add(this.new("scripts/items/helmets/named/legend_mountain_helmet_named"));
+		}
 	}
 
 });
