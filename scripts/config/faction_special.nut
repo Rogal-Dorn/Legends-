@@ -68,3 +68,23 @@ gt.Const.Tactical.Actor.Poss <- {
 	],
 	FatigueRecoveryRate = 25
 };
+
+gt.Const.Tactical.Actor.Culty <- {
+	XP = 400,
+	ActionPoints = 9,
+	Hitpoints = 200,
+	Bravery = 200,
+	Stamina = 125,
+	MeleeSkill = 95,
+	RangedSkill = 85,
+	MeleeDefense = 30,
+	RangedDefense = 15,
+	Initiative = 125,
+	FatigueEffectMult = 1.0,
+	MoraleEffectMult = 1.0,
+	Armor = [
+		0,
+		0
+	],
+	FatigueRecoveryRate = 20
+};
