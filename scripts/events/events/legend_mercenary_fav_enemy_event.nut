@@ -103,6 +103,27 @@ this.legend_mercenary_fav_enemy_event <- this.inherit("scripts/events/event", {
 									_entity.setName("Freykin");
 								}							
 						});
+						properties.Entities.push({
+								ID = this.Const.EntityType.LegendSkinGhoul,
+								Variant = 0,
+								Row = 0,
+								Name = "Luft the Mascot",
+								Script = "scripts/entity/tactical/enemies/legend_skin_ghoul",
+								Faction = this.Const.Faction.Enemy
+								function Callback( _entity, _tag )
+								{
+									_entity.setName("Luft the Mascot");
+									local helm = this.new("scripts/items/helmets/named/jugglers_hat");
+									helm.m.ConditionMax = 125;
+									helm.m.Condition = 125;
+									helm.m.IsDroppedAsLoot = false;
+									_entity.addSprite("helmet");
+									_entity.m.Items.equip(helm); //todo: change to layer later
+									_entity.getSprite("helmet").Visible = true;
+									_entity.getSprite("helmet").setHorizontalFlipping(true);
+									_entity.setSpriteOffset("helmet", this.createVec(0, -5));
+								}							
+						});
 						// properties.Entities.push({
                         //     ID = this.Const.EntityType.Mercenary,
                         //     Variant = 1,
@@ -255,7 +276,7 @@ this.legend_mercenary_fav_enemy_event <- this.inherit("scripts/events/event", {
 		}
 		if (this.m.Stats == null)
 		{
-			return;
+			// return;
 			this.m.Score = 9999;
 		}
 		else
