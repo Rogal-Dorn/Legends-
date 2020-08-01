@@ -38,7 +38,6 @@ this.mercenary_forest_melee_agent <- this.inherit("scripts/ai/tactical/agent", {
 			this.m.Properties.EngageTargetMultipleOpponentsMult = 1.25;
 			this.m.Properties.EngageTargetAlreadyBeingEngagedMult = 1.5;
 		}
-
 	}
 
 	function onAddBehaviors()

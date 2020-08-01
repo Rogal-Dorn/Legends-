@@ -39,8 +39,6 @@ this.mercenary_mwah <- this.inherit("scripts/entity/tactical/humans/special/merc
         this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_mind_over_body"));
         this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));
 		this.getSprite("hair").setBrush("hair_" + "grey" + "_" + "01");
-
-
 	}
 
 	function onAppearanceChanged( _appearance, _setDirty = true )

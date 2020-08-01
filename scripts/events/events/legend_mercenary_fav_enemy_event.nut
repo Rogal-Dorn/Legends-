@@ -148,6 +148,18 @@ this.legend_mercenary_fav_enemy_event <- this.inherit("scripts/events/event", {
 									_entity.setName("Cultscidon the Bringer of Darkness");
 								}							
 						});
+						properties.Entities.push({
+								ID = this.Const.EntityType.Mercenary,
+								Variant = 0,
+								Row = 0,
+								Name = "Forest Wraith",
+								Script = "scripts/entity/tactical/humans/special/mercenary_forest",
+								Faction = this.Const.Faction.Enemy
+								function Callback( _entity, _tag )
+								{
+									_entity.setName("Forest Wraith");
+								}							
+						});
 						// properties.Entities.push({
                         //     ID = this.Const.EntityType.Mercenary,
                         //     Variant = 1,
