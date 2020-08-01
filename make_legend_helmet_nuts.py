@@ -120,7 +120,7 @@ layers = [
     {"name": "crude_cylinder_helm",                 "layer": "helm", "min": 1, "max": 2, "value" : 800, "con" : 110, "stam" : -10, "vis" : -2,  "hair" : "true", "beard" :"false" },
     {"name": "crude_metal_helm",                    "layer": "helm", "min": 1, "max": 3, "value" : 550, "con" : 65, "stam" : -6, "vis" : -1,  "hair" : "true", "beard" :"false" },
     {"name": "crude_skull_helm",                    "layer": "helm", "min": 1, "max": 1, "value" : 5000, "con" : 130, "stam" : -7, "vis" : -2,  "hair" : "true", "beard" :"false" },
-    {"name": "flat_top_face_plate",                 "layer": "helm", "min": 1, "max": 6, "value" : 2000, "con" : 30, "stam" : -3, "vis" : 0,  "hair" : "true", "beard" :"true" },
+    {"name": "flat_top_face_plate",                 "layer": "helm", "min": 1, "max": 6, "value" : 2000, "con" : 130, "stam" : -4, "vis" : -2,  "hair" : "true", "beard" :"true" },
     {"name": "flat_top_helm",                       "layer": "helm", "min": 1, "max": 6, "value" : 800, "con" : 70, "stam" : -3, "vis" : 0,  "hair" : "true", "beard" :"false" },
     {"name": "goblin_chain_helm",                   "layer": "top", "min": 1, "max": 1, "value" : 780, "con" : 70, "stam" : -6, "vis" : -1,  "hair" : "true", "beard" :"false" },
     {"name": "goblin_leather_helm",                 "layer": "top", "min": 1, "max": 1, "value" : 375, "con" : 45, "stam" : -3, "vis" : 0,  "hair" : "true", "beard" :"false" },
