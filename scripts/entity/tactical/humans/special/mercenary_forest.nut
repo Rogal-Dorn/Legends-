@@ -44,9 +44,7 @@ this.mercenary_forest <- this.inherit("scripts/entity/tactical/humans/special/me
         this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));
 
         this.getSprite("head").Saturation = 1.0;
-		this.getSprite("head").Color = this.createColor("#ffffff");
-
-
+		this.getSprite("head").Color = this.createColor("#000000");
 	}
 
 	function onAppearanceChanged( _appearance, _setDirty = true )
@@ -68,6 +66,7 @@ this.mercenary_forest <- this.inherit("scripts/entity/tactical/humans/special/me
 			armor.m.IsDroppedAsLoot = false;
             this.m.Items.equip(armor);
             local helm = this.new("scripts/items/helmets/hood");
+            helm.setVariant(63);
             helm.m.ConditionMax = 300;
             helm.m.Condition = 300;
             helm.m.IsDroppedAsLoot = false;

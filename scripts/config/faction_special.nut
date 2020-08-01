@@ -88,3 +88,23 @@ gt.Const.Tactical.Actor.Culty <- {
 	],
 	FatigueRecoveryRate = 20
 };
+
+gt.Const.Tactical.Actor.Forest <- {
+	XP = 425,
+	ActionPoints = 9,
+	Hitpoints = 100,
+	Bravery = 200,
+	Stamina = 150,
+	MeleeSkill = 100,
+	RangedSkill = 85,
+	MeleeDefense = 30,
+	RangedDefense = 5,
+	Initiative = 110,
+	FatigueEffectMult = 0.0,
+	MoraleEffectMult = 0.0,
+	Armor = [
+		0,
+		0
+	],
+	FatigueRecoveryRate = 25
+};
