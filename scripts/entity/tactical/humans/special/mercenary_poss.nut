@@ -6,9 +6,9 @@ this.mercenary_poss <- this.inherit("scripts/entity/tactical/humans/special/merc
 		this.m.BloodType = this.Const.BloodType.Red;
 		this.m.XP = this.Const.Tactical.Actor.Poss.XP;
 		this.human.create();
-		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Faces = this.Const.Faces.WildMale;
 		this.m.Hairs = this.Const.Hair.AllMale;
-		this.m.HairColors = this.Const.HairColors.All;
+		this.m.HairColors = this.Const.HairColors.Old;
         this.m.AIAgent = this.new("scripts/ai/tactical/agents/mercenary_poss_melee_agent");
 		this.m.AIAgent.setActor(this);
 	}
@@ -39,7 +39,19 @@ this.mercenary_poss <- this.inherit("scripts/entity/tactical/humans/special/merc
         this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_mind_over_body"));
         this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
         this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_ubernimble"));
-
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_composure"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_muscularity"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_backstabber"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_forceful_swing"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_sundering_strikes"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_duelist"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_feint"));
+		this.m.Skills.add(this.new("scripts/skills/racial/schrat_racial"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_hold_out"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_underdog"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_pathfinder"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_crippling_strikes"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_coup_de_grace"));
 
 	}
 
@@ -54,8 +66,8 @@ this.mercenary_poss <- this.inherit("scripts/entity/tactical/humans/special/merc
         local weapon = this.new("scripts/items/weapons/wooden_flail");
         weapon.m.IsDroppedAsLoot = false;
         this.m.Items.equip(weapon);
-        this.m.Skill.getSkillByID("actives.flail").m.ActionPointCost = 1;
-        this.m.Skill.getSkillByID("actives.lash").m.ActionPointCost = 1;
+        this.m.Skills.getSkillByID("actives.flail").m.ActionPointCost = 1;
+        this.m.Skills.getSkillByID("actives.lash").m.ActionPointCost = 1;
 	}
 
 });
