@@ -4,7 +4,7 @@ from shutil import copyfile
 import os
 
 Layer = '<sprite id="$name" offsetY="35" ic="FF4E5053" width="184" height="222" img="$name_path" left="-67" right="68" top="-40" bottom="108" />\n'
-LayerDamaged = '<sprite id="$damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="$damaged_path" left="-67" right="68" top="-40" bottom="108 />\n'
+LayerDamaged = '<sprite id="$damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="$damaged_path" left="-67" right="68" top="-40" bottom="108" />\n'
 LayerDead = '<sprite id="$dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="$dead_path" left="-57" right="59" top="-53" bottom="55" />\n'
 
 layers = [
@@ -152,11 +152,7 @@ layers = [
     {"name": "lindwurm_helm",       "layer": "vanity", "min": 1, "max": 1},
     {"name": "redback_helm",        "layer": "vanity", "min": 1, "max": 1},
     {"name": "nun_habit",           "layer": "vanity", "min": 1, "max": 1},
-    {"name": "white_wolf_helm",     "layer": "vanity", "min": 1, "max": 1},
-    {"name": "nach_helm",           "layer": "vanity", "min": 1, "max": 1},
-    {"name": "mountain_helm",       "layer": "vanity", "min": 1, "max": 1},
-    {"name": "demon_alp_helm",      "layer": "vanity", "min": 1, "max": 1},
-    {"name": "warlock_hood",        "layer": "vanity", "min": 1, "max": 4},
+
 
     {"name": "back_crest",      "layer": "vanity", "lowervanity": True, "min": 1, "max": 4},
     {"name": "back_feathers",   "layer": "vanity", "lowervanity": True, "min": 1, "max": 4},
@@ -164,7 +160,13 @@ layers = [
     {"name": "knotted_tail",    "layer": "vanity", "lowervanity": True, "min": 1, "max": 4},
     {"name": "orc_tail",        "layer": "vanity", "lowervanity": True, "min": 1, "max": 2},
     {"name": "top_plume",       "layer": "vanity", "lowervanity": True, "min": 1, "max": 1},
-    {"name": "wings",           "layer": "vanity", "lowervanity": True, "min": 1, "max": 6}
+    {"name": "wings",           "layer": "vanity", "lowervanity": True, "min": 1, "max": 6},
+
+    {"name": "white_wolf_helm",     "layer": "vanity", "min": 1, "max": 1},
+    {"name": "nach_helm",           "layer": "vanity", "min": 1, "max": 1},
+    {"name": "mountain_helm",       "layer": "vanity", "min": 1, "max": 1},
+    {"name": "demon_alp_helm",      "layer": "vanity", "min": 1, "max": 1},
+    {"name": "warlock_hood",        "layer": "vanity", "min": 1, "max": 4}
 ]
 
 helmets = r"""
@@ -847,10 +849,30 @@ helmets = r"""
   <sprite id="runed_jester_padded_10_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF305374" width="191" height="185" img="entity\legend_helmets\runed_jester_padded_10_dead.png" left="-80" right="22" top="-76" bottom="8" />
 """
 
+
+
+def makeSheet(num):
+    dirpath = os.path.join(os.path.dirname(os.path.abspath(__file__)), "legend_helmets", "" + str(num))
+    if not os.path.exists(dirpath):
+        os.makedirs(dirpath)
+
+    filepath = os.path.join(dirpath, "metadata.xml")
+    F = open(filepath, "w")
+    F.write('<brush name="gfx/legend_helmets_' + str(num) + '.png" version="17">\n')
+    return F
+
 def main():
-    mfile = os.path.join(os.path.dirname(os.path.abspath(__file__)), "legend_helmets/metadata.xml")
-    F = open(mfile, "w")
+    filepath = os.path.join(os.path.dirname(os.path.abspath(__file__)), "legend_helmets", "metadata.xml")
+    F = open(filepath, "w")
     F.write('<brush name="gfx/legend_helmets.png" version="17">\n')
+    F.write(helmets)
+    F.write('</brush>\n')
+    F.close()
+
+    fileCount = 0
+    imageCount = 0
+    F = makeSheet(fileCount)
+
     L = [Layer, LayerDamaged, LayerDead]
     for d in layers:
         R = L
@@ -872,14 +894,21 @@ def main():
                     name="legendhelms_" + name,
                     damaged= "legendhelms_" + name + "_damaged",
                     dead= "legendhelms_" + name + "_dead",
-                    name_path=os.path.join("entity", "legend_helmets", "layers", name + ".png"),
-                    damaged_path=os.path.join("entity", "legend_helmets", "layers", name + "_damaged.png"),
-                    dead_path=os.path.join("entity", "legend_helmets", "layers", name + "_dead.png")
+                    name_path=os.path.join("..", "entity", "legend_helmets", "layers", name + ".png"),
+                    damaged_path=os.path.join("..", "entity", "legend_helmets", "layers", name + "_damaged.png"),
+                    dead_path=os.path.join("..", "entity", "legend_helmets", "layers", name + "_dead.png")
                 )
                 s = Template(t)
                 text = s.substitute(opts)
                 text.replace("/", "\\")
                 F.write(text)
+                imageCount += 1
+                if (imageCount > 1000):
+                    F.write('</brush>\n')
+                    F.close()
+                    imageCount = 0
+                    fileCount += 1
+                    F = makeSheet(fileCount)
 
     #F.write(helmets)
 
