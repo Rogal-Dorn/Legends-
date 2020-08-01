@@ -39,21 +39,20 @@ this.mercenary_custom <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_brawny"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_anticipation"));  
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_fast_adaption"));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_backstabber"));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_overwhelm"));
-        this.m.Skills.add(this.new("scripts/skills/perks/perk_steel_brow"));
-        this.m.Skills.add(this.new("scripts/skills/perks/perk_footwork"));
+		// this.m.Skills.add(this.new("scripts/skills/perks/perk_backstabber"));
+		// this.m.Skills.add(this.new("scripts/skills/perks/perk_overwhelm"));
+        // this.m.Skills.add(this.new("scripts/skills/perks/perk_steel_brow"));
+        // this.m.Skills.add(this.new("scripts/skills/perks/perk_footwork"));
+        this.m.Skills.add(this.new("scripts/skills/actives/rotation"));
+		this.m.Skills.add(this.new("scripts/skills/actives/recover_skill"));
+        this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
 
-        //Give either in personal file
+		  //Give either in personal file
         /*
         this.m.Skills.add(this.new("scripts/skills/perks/perk_berserk"));
         this.m.Skills.add(this.new("scripts/skills/perks/perk_clarity"));
         */
         
-        this.m.Skills.add(this.new("scripts/skills/actives/rotation"));
-		this.m.Skills.add(this.new("scripts/skills/actives/recover_skill"));
-
-        this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
 	}
 
 	function onAppearanceChanged( _appearance, _setDirty = true )

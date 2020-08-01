@@ -28,3 +28,23 @@ gt.Const.Tactical.Actor.Mwah <- {
 	],
 	FatigueRecoveryRate = 20
 };
+
+gt.Const.Tactical.Actor.Freykin <- {
+	XP = 425,
+	ActionPoints = 9,
+	Hitpoints = 115,
+	Bravery = 150,
+	Stamina = 125,
+	MeleeSkill = 100,
+	RangedSkill = 85,
+	MeleeDefense = 25,
+	RangedDefense = 25,
+	Initiative = 110,
+	FatigueEffectMult = 1.0,
+	MoraleEffectMult = 1.0,
+	Armor = [
+		0,
+		0
+	],
+	FatigueRecoveryRate = 20
+};

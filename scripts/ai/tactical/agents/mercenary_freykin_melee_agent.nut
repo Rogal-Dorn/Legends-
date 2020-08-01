@@ -1,4 +1,4 @@
-this.mercenary_mwah_melee_agent <- this.inherit("scripts/ai/tactical/agent", {
+this.mercenary_freykin_melee_agent <- this.inherit("scripts/ai/tactical/agent", {
 	m = {},
 	function create()
 	{
@@ -51,10 +51,11 @@ this.mercenary_mwah_melee_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_break_free"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_wake_up_ally"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_disengage"));
+		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_indomitable"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_default"));
-		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_splitshield"));
-		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_reap"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_recover"));
+   		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_knock_out"));
+   		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_terror"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_switchto_melee"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_switchto_ranged"));
 	}
