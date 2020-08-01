@@ -1,4 +1,4 @@
-this.mercenary_mwah_melee_agent <- this.inherit("scripts/ai/tactical/agent", {
+this.mercenary_poss_melee_agent <- this.inherit("scripts/ai/tactical/agent", {
 	m = {},
 	function create()
 	{

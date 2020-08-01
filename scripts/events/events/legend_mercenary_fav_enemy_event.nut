@@ -124,6 +124,18 @@ this.legend_mercenary_fav_enemy_event <- this.inherit("scripts/events/event", {
 									_entity.setSpriteOffset("helmet", this.createVec(0, -5));
 								}							
 						});
+						properties.Entities.push({
+								ID = this.Const.EntityType.Mercenary,
+								Variant = 0,
+								Row = 0,
+								Name = "\'Bandit Rabble\' Poss",
+								Script = "scripts/entity/tactical/humans/special/mercenary_poss",
+								Faction = this.Const.Faction.Enemy
+								function Callback( _entity, _tag )
+								{
+									_entity.setName("\'Bandit Rabble\' Poss");
+								}							
+						});
 						// properties.Entities.push({
                         //     ID = this.Const.EntityType.Mercenary,
                         //     Variant = 1,

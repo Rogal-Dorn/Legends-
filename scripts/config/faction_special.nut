@@ -48,3 +48,23 @@ gt.Const.Tactical.Actor.Freykin <- {
 	],
 	FatigueRecoveryRate = 20
 };
+
+gt.Const.Tactical.Actor.Poss <- {
+	XP = 425,
+	ActionPoints = 10,
+	Hitpoints = 115,
+	Bravery = 150,
+	Stamina = 100,
+	MeleeSkill = 115,
+	RangedSkill = 85,
+	MeleeDefense = 20,
+	RangedDefense = 15,
+	Initiative = 130,
+	FatigueEffectMult = 1.0,
+	MoraleEffectMult = 1.0,
+	Armor = [
+		175,
+		175
+	],
+	FatigueRecoveryRate = 25
+};
