@@ -4,7 +4,7 @@ this.legend_ursathropy_injury <- this.inherit("scripts/skills/injury_permanent/p
 	{
 		this.permanent_injury.create();
 		this.m.ID = "injury.legend_ursathropy";
-		this.m.Name = "Lycanthrope";
+		this.m.Name = "Ursathrope";
 		this.m.Description = "This character is cursed with ursathropy and will transform into a bear ";
 		this.m.Icon = "ui/injury/injury_ursathropy.png";
 	}
@@ -68,7 +68,7 @@ this.legend_ursathropy_injury <- this.inherit("scripts/skills/injury_permanent/p
 			if (r == 1 && this.World.getTime().IsDaytime)
 			{
 					
-				if (!actor.getSkills().hasSkill("effect.legend_transformed_bear"))
+				if (!actor.getSkills().hasSkill("effect.legend_transformed_bear") && month != monthfloor)
 				{
 					actor.getSkills().add(this.new("scripts/skills/effects/legend_transformed_bear_effect"));
 				}

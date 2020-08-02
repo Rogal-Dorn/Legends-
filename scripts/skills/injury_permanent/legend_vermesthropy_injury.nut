@@ -71,7 +71,7 @@ this.legend_vermesthropy_injury <- this.inherit("scripts/skills/injury_permanent
 			if (r == 1 && this.World.getTime().IsDaytime)
 			{
 					
-				if (!actor.getSkills().hasSkill("effect.legend_transformed_rat"))
+				if (!actor.getSkills().hasSkill("effect.legend_transformed_rat") && month != monthfloor)
 				{
 					actor.getSkills().add(this.new("scripts/skills/effects/legend_transformed_rat_effect"));
 				}

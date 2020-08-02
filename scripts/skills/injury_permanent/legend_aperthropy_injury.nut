@@ -64,7 +64,7 @@ this.legend_aperthropy_injury <- this.inherit("scripts/skills/injury_permanent/p
 			local month = day / 28;
 			local monthfloor = this.Math.floor(month);
 			
-			if (r == 1 && this.World.getTime().IsDaytime)
+			if (r == 1 && this.World.getTime().IsDaytime && month != monthfloor)
 			{
 					
 				if (!actor.getSkills().hasSkill("effect.legend_transformed_boar"))
@@ -81,7 +81,7 @@ this.legend_aperthropy_injury <- this.inherit("scripts/skills/injury_permanent/p
 				}
 			}	
 			
-			if (month == monthfloor && !this.World.getTime().IsDaytime)	
+			if (month == monthfloor)	
 			{
 				if (!actor.getSkills().hasSkill("effect.legend_transformed_boar"))
 				{

@@ -63,15 +63,22 @@ this.legend_transformed_boar_effect <- this.inherit("scripts/skills/skill", {
 		{
 			if (this.m.Container.hasSkill("perk.legend_surpress_urges") && !this.m.Container.hasSkill("perk.legend_control_instincts"))
 			{
-			actor.setAIAgent(this.new("scripts/ai/tactical/agents/boar_agent"));
-			actor.getAIAgent().setActor(actor);
+			// this.logDebug(this.getName() + " AI set to boar");
+			// actor.setAIAgent(this.new("scripts/ai/tactical/agents/boar_agent"));
+			// actor.getAIAgent().setActor(actor);
+			//actor.setFaction(this.Const.Faction.PlayerAnimals);	
+			this.logDebug(this.getName() + " has surpress urges, AI set to wardog on added");
+			actor.setAIAgent(this.new("scripts/ai/tactical/agents/wardog_agent"));
+			actor.getAIAgent().setActor(actor);			
+			
 			}
 			else if (this.m.Container.hasSkill("perk.legend_surppress_urges") && this.m.Container.hasSkill("perk.legend_control_instincts"))
 			{
-
+			this.logDebug(this.getName() + " has control instincts, player retains control on added");
 			}
 			else	
 			{
+			this.logDebug(this.getName() + " has no control perks, AI set to boar on added");
 			actor.setFaction(this.Const.Faction.Beasts);		
 			actor.setAIAgent(this.new("scripts/ai/tactical/agents/boar_agent"));
 			actor.getAIAgent().setActor(actor);
@@ -80,9 +87,11 @@ this.legend_transformed_boar_effect <- this.inherit("scripts/skills/skill", {
 		}
 		else
 		{
+		this.logDebug(this.getName() + " AI set to boar on added");
 		actor.setAIAgent(this.new("scripts/ai/tactical/agents/boar_agent"));
 		actor.getAIAgent().setActor(actor);
 		}
+
 	
 		this.m.OriginalSocket = actor.getSprite("socket").getBrush().Name;
 		actor.getSprite("socket").setBrush("bust_base_beasts");
@@ -117,7 +126,7 @@ this.legend_transformed_boar_effect <- this.inherit("scripts/skills/skill", {
 
 		actor.getSprite("body").setBrush("were_boar_body");
 		actor.getSprite("head").setBrush("were_boar_head");
-		actor.getSprite("injury").setBrush("were_injury");
+		actor.getSprite("injury").setBrush("were_boar_body_injured");
 		actor.getSprite("body").setHorizontalFlipping(1);
 		actor.getSprite("head").setHorizontalFlipping(1);
 		actor.getSprite("injury").setHorizontalFlipping(1);
@@ -154,6 +163,8 @@ this.legend_transformed_boar_effect <- this.inherit("scripts/skills/skill", {
 		{
 			this.m.Container.add(this.new("scripts/skills/actives/footwork"));
 		}
+		
+		this.logDebug(this.getName() + " transformation complete");
 	}
 
 	function onRemoved()
@@ -223,24 +234,28 @@ this.legend_transformed_boar_effect <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		local actor = this.getContainer().getActor();
-
-		// actor.getSprite("body").setBrush("were_boar_body");
-		// actor.getSprite("head").setBrush("were_boar_head");
-
+		
 		if (actor.isPlayerControlled())
 		{
 			if (this.m.Container.hasSkill("perk.legend_surpress_urges") && !this.m.Container.hasSkill("perk.legend_control_instincts"))
 			{
-			actor.setAIAgent(this.new("scripts/ai/tactical/agents/boar_agent"));
-			actor.getAIAgent().setActor(actor);
+			// this.logDebug(this.getName() + " AI set to boar");
+			// actor.setAIAgent(this.new("scripts/ai/tactical/agents/boar_agent"));
+			// actor.getAIAgent().setActor(actor);
+			//actor.setFaction(this.Const.Faction.PlayerAnimals);	
+		//	this.logDebug(this.getName() + " has surpress urges, AI set to wardog on update");
+		//	actor.setAIAgent(this.new("scripts/ai/tactical/agents/wardog_agent"));
+		//	actor.getAIAgent().setActor(actor);			
+			
 			}
 			else if (this.m.Container.hasSkill("perk.legend_surppress_urges") && this.m.Container.hasSkill("perk.legend_control_instincts"))
 			{
-
+			this.logDebug(this.getName() + " has control instincts, player retains control on update");
 			}
 			else	
 			{
-			actor.setFaction(this.Const.Faction.Beasts);		
+			this.logDebug(this.getName() + " has no control perks, AI set to boar on update");
+			//actor.setFaction(this.Const.Faction.Beasts);		
 			actor.setAIAgent(this.new("scripts/ai/tactical/agents/boar_agent"));
 			actor.getAIAgent().setActor(actor);
 			}
@@ -248,9 +263,14 @@ this.legend_transformed_boar_effect <- this.inherit("scripts/skills/skill", {
 		}
 		else
 		{
+		this.logDebug(this.getName() + " AI set to boar on update");
 		actor.setAIAgent(this.new("scripts/ai/tactical/agents/boar_agent"));
 		actor.getAIAgent().setActor(actor);
-		}
+		}		
+
+		// actor.getSprite("body").setBrush("were_boar_body");
+		// actor.getSprite("head").setBrush("were_boar_head");
+
 
 		actor.getSprite("armor").Alpha = 10;
 		actor.getSprite("helmet").Alpha = 10;
@@ -338,6 +358,45 @@ this.legend_transformed_boar_effect <- this.inherit("scripts/skills/skill", {
 		local items = actor.getItems();
 		items.getData()[this.Const.ItemSlot.Offhand][0] = null;
 		items.getData()[this.Const.ItemSlot.Mainhand][0] = null;
+	}
+
+function onTurnStarted()
+	{
+	local actor = this.getContainer().getActor();
+	if (actor.isPlayerControlled())
+		{
+			if (this.m.Container.hasSkill("perk.legend_surpress_urges") && !this.m.Container.hasSkill("perk.legend_control_instincts"))
+			{
+			// this.logDebug(this.getName() + " AI set to boar");
+			// actor.setAIAgent(this.new("scripts/ai/tactical/agents/boar_agent"));
+			// actor.getAIAgent().setActor(actor);
+			
+			this.logDebug(this.getName() + " has surpress urges, AI set to wardog on turn start");
+			actor.setAIAgent(this.new("scripts/ai/tactical/agents/wardog_agent"));
+			actor.getAIAgent().setActor(actor);			
+			
+			}
+			else if (this.m.Container.hasSkill("perk.legend_surppress_urges") && this.m.Container.hasSkill("perk.legend_control_instincts"))
+			{
+			this.logDebug(this.getName() + " has control instincts, player retains control on turn start");
+			}
+			else	
+			{
+			this.logDebug(this.getName() + " has no control perks, AI set to boar on turn start");
+			actor.setFaction(this.Const.Faction.Beasts);		
+			actor.setAIAgent(this.new("scripts/ai/tactical/agents/boar_agent"));
+			actor.getAIAgent().setActor(actor);
+			}
+
+		}
+		else
+		{
+		this.logDebug(this.getName() + " AI set to boar on turn start");
+		actor.setAIAgent(this.new("scripts/ai/tactical/agents/boar_agent"));
+		actor.getAIAgent().setActor(actor);
+		}
+
+	
 	}
 
 
