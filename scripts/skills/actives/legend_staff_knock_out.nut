@@ -97,16 +97,18 @@ this.legend_staff_knock_out <- this.inherit("scripts/skills/skill", {
 		{
 			local target = _targetTile.getEntity();
 
-			if ((_user.getCurrentProperties().IsSpecializedInStaves || this.Math.rand(1, 100) <= this.m.StunChance) && !target.getCurrentProperties().IsImmuneToStun && !target.getSkills().hasSkill("effects.dazed"))
+			if ((_user.getCurrentProperties().IsSpecializedInStaves || this.Math.rand(1, 100) <= this.m.StunChance))
 			{
-				target.getSkills().add(this.new("scripts/skills/effects/dazed_effect"));
+				if (!target.getSkills().hasSkill("effects.dazed"))
+					target.getSkills().add(this.new("scripts/skills/effects/dazed_effect"));
 
 				if (_user.getCurrentProperties().IsSpecializedInStaffStun)
 				{
-				target.getSkills().add(this.new("scripts/skills/effects/stunned_effect"));
-				target.getSkills().add(this.new("scripts/skills/effects/staggered_effect"));
+					if (!target.getCurrentProperties().IsImmuneToStun)
+						target.getSkills().add(this.new("scripts/skills/effects/stunned_effect"));
+					if (!target.getSkills().hasSkill("effects.stagger"))
+						target.getSkills().add(this.new("scripts/skills/effects/staggered_effect"));
 				}
-
 
 				if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
 				{
