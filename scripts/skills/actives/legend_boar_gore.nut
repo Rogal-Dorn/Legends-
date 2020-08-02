@@ -10,9 +10,8 @@ this.legend_boar_gore <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "skills/boar_gore_bw.png";
 		this.m.Overlay = "active_89";
 		this.m.SoundOnUse = [
-			"sounds/combat/smash_01.wav",
-			"sounds/combat/smash_02.wav",
-			"sounds/combat/smash_03.wav"
+			"sounds/combat/boarattack1.wav",
+			"sounds/combat/boargore.wav",
 		];
 		this.m.SoundOnHit = [
 			"sounds/combat/smash_hit_01.wav",
@@ -31,7 +30,7 @@ this.legend_boar_gore <- this.inherit("scripts/skills/skill", {
 		this.m.InjuriesOnBody = this.Const.Injury.BluntBody;
 		this.m.InjuriesOnHead = this.Const.Injury.BluntHead;
 		this.m.DirectDamageMult = 0.5;
-		this.m.ActionPointCost = 6;
+		this.m.ActionPointCost = 3;
 		this.m.FatigueCost = 15;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 1;

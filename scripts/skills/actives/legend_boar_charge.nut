@@ -9,10 +9,7 @@ this.legend_boar_charge <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "skills/boar_charge.png";
 		this.m.Overlay = "active_53";
 		this.m.SoundOnUse = [
-			"sounds/enemies/orc_linebreaker_01.wav",
-			"sounds/enemies/orc_linebreaker_02.wav",
-			"sounds/enemies/orc_linebreaker_03.wav",
-			"sounds/enemies/orc_linebreaker_04.wav"
+			"sounds/enemies/boarcharge.wav"
 		];
 		this.m.SoundOnHit = [
 			"sounds/combat/knockback_hit_01.wav",
@@ -83,14 +80,12 @@ this.legend_boar_charge <- this.inherit("scripts/skills/skill", {
 	function onUse( _user, _targetTile )
 	{
 	
-		if (r == 1)
+
+		if (!this.m.Container.hasSkill("effect.legend_transformed_boar"))
 		{
-			if (!this.m.Container.hasSkill("effect.legend_transformed_boar"))
-			{
-				this.m.Container.add(this.new("scripts/skills/effects/legend_transformed_boar_effect"));
-			}
+			this.m.Container.add(this.new("scripts/skills/effects/legend_transformed_boar_effect"));
 		}
-		
+
 		
 		local target = _targetTile.getEntity();
 
