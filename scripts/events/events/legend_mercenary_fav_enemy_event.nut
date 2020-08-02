@@ -172,6 +172,7 @@ this.legend_mercenary_fav_enemy_event <- this.inherit("scripts/events/event", {
 									_entity.setName("Rue the Jester");
 								}							
 						});
+						
 						// properties.Entities.push({
                         //     ID = this.Const.EntityType.Mercenary,
                         //     Variant = 1,
