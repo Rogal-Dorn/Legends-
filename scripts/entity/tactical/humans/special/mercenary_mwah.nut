@@ -56,38 +56,21 @@ this.mercenary_mwah <- this.inherit("scripts/entity/tactical/humans/special/merc
         this.m.Items.equip(weapon);
         this.m.Items.addToBag(this.new("scripts/items/weapons/barbarians/heavy_javelin"));
         this.m.Items.addToBag(this.new("scripts/items/weapons/throwing_spear"));
-        if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
-        {
-            local armor = this.new("scripts/items/legend_armor/cloth/legend_gambeson_wolf");
-            armor.setUpgrade(this.new("scripts/items/legend_armor/chain/legend_armor_hauberk_full"));
-            armor.setUpgrade(this.new("scripts/items/legend_armor/plate/legend_armor_plate_full_greaves"));
-            armor.setUpgrade(this.new("scripts/items/legend_armor/cloak/legend_armor_cloak_noble"));
-            armor.setUpgrade(this.new("scripts/items/legend_armor/armor_upgrades/legend_direwolf_pelt_upgrade"));
-			armor.m.IsDroppedAsLoot = false;
-            this.m.Items.equip(armor);
-            local helm = this.new("scripts/items/helmets/legend_vampire_lord_helmet");
-            helm.m.ConditionMax = 300;
-            helm.m.Condition = 300;
-            helm.m.IsDroppedAsLoot = false;
-			helm.m.HideHair = false;
-            this.m.Items.equip(helm);
-        }
-		else
-		{
-			if (this.Const.DLC.Unhold)
-			{
-                this.m.Items.equip(this.new("scripts/items/armor/sellsword_armor"));
-			}
-			else
-			{
-                this.m.Items.equip(this.new("scripts/items/armor/lamellar_harness"));
-			}
-            local helm = this.new("scripts/items/helmets/legend_vampire_lord_helmet");
-            helm.m.ConditionMax = 300;
-            helm.m.Condition = 300;
-            helm.m.IsDroppedAsLoot = false;
-            this.m.Items.equip(helm);
-		}
+    
+		local armor = this.new("scripts/items/legend_armor/cloth/legend_gambeson_wolf");
+		armor.setUpgrade(this.new("scripts/items/legend_armor/chain/legend_armor_hauberk_full"));
+		armor.setUpgrade(this.new("scripts/items/legend_armor/plate/legend_armor_plate_full_greaves"));
+		armor.setUpgrade(this.new("scripts/items/legend_armor/cloak/legend_armor_cloak_noble"));
+		armor.setUpgrade(this.new("scripts/items/legend_armor/armor_upgrades/legend_direwolf_pelt_upgrade"));
+		armor.m.IsDroppedAsLoot = false;
+		this.m.Items.equip(armor);
+		local helm = this.new("scripts/items/helmets/legend_vampire_lord_helmet");
+		helm.m.ConditionMax = 300;
+		helm.m.Condition = 300;
+		helm.m.IsDroppedAsLoot = false;
+		helm.m.HideHair = false;
+		this.m.Items.equip(helm);
+    	
 		this.getSprite("hair").Visible = true;
 	}
 
