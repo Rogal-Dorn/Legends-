@@ -282,6 +282,8 @@ this.legend_mercenary_fav_enemy_event <- this.inherit("scripts/events/event", {
 
 	function onUpdateScore()
 	{
+		//keep this uncommented if we need to push some of my other changes, then none of the custom mercenary stuff matters, atm this is mostly testing and will be moved to a location later
+		return; 
 		if (!this.World.getTime().IsDaytime) { return; }
 
 		local towns = this.World.EntityManager.getSettlements();
