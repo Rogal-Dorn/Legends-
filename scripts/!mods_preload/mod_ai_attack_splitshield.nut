@@ -1,5 +1,7 @@
 ::mods_hookNewObject("ai/tactical/behaviors/ai_attack_splitshield", function(o) {
     local fn = o.onEvaluate
+
+    //atm this isn't perfect, if they happen to choose the guy w/ the dagger over another guy as the "best target" thus settin targetTile, it won't select the second best dude, just sets splitshield to not go
     o.onEvaluate = function ( _entity )
 	{
         local score = fn(_entity);
