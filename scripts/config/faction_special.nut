@@ -108,3 +108,23 @@ gt.Const.Tactical.Actor.Forest <- {
 	],
 	FatigueRecoveryRate = 25
 };
+
+gt.Const.Tactical.Actor.Rue <- {
+	XP = 425,
+	ActionPoints = 9,
+	Hitpoints = 100,
+	Bravery = 150,
+	Stamina = 145,
+	MeleeSkill = 100,
+	RangedSkill = 85,
+	MeleeDefense = 25,
+	RangedDefense = 40,
+	Initiative = 80,
+	FatigueEffectMult = 1.0,
+	MoraleEffectMult = 1.0,
+	Armor = [
+		0,
+		0
+	],
+	FatigueRecoveryRate = 20
+};
