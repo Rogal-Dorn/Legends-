@@ -19,14 +19,13 @@ this.noble_lion_helm_blueprint <- this.inherit("scripts/crafting/blueprint", {
 				Scripts = ["scripts/skills/backgrounds/legend_blacksmith_background"]
 			}
 		]
-		this.initSkills(skills);	
+		this.initSkills(skills);
 	}
 
 	function isQualified()
 	{
-		return true;
+		return !this.World.LegendsMod.Configs().LegendArmorsEnabled()
 	}
-
 	function onCraft( _stash )
 	{
 		local item = this.new("scripts/items/helmets/noble_lion_helm");
