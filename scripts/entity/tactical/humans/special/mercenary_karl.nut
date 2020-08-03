@@ -128,13 +128,13 @@ this.mercenary_karl <- this.inherit("scripts/entity/tactical/humans/special/merc
 	{
 		this.getSprite("status_rooted").Scale = 0.57;
 		this.setSpriteOffset("status_rooted", this.createVec(-2, -3));
-		this.actor.onAfterInit();
+		this.mercenary_custom.onAfterInit();
 	}
 
 	function onDamageReceived( _attacker, _skill, _hitInfo )
 	{
 		this.m.LastBodyPartHit = _hitInfo.BodyPart;
-		this.actor.onDamageReceived(_attacker, _skill, _hitInfo);
+		this.mercenary_custom.onDamageReceived(_attacker, _skill, _hitInfo);
 	}
 
 	function onDeath( _killer, _skill, _tile, _fatalityType )
@@ -157,7 +157,7 @@ this.mercenary_karl <- this.inherit("scripts/entity/tactical/humans/special/merc
 		}
 		else
 		{
-			this.goblin.onDeath(_killer, _skill, _tile, _fatalityType);
+			this.mercenary_custom.onDeath(_killer, _skill, _tile, _fatalityType);
 		}
 	}
 
