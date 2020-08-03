@@ -84,7 +84,7 @@ this.legend_mercenary_fav_enemy_event <- this.inherit("scripts/events/event", {
 								Variant = 0,
 								Row = 0,
 								Name = "Karl",
-								Script = "scripts/entity/tactical/enemies/legend_bandit_outrider",
+								Script = "scripts/entity/tactical/humans/special/mercenary_karl",
 								Faction = this.Const.Faction.Enemy
 								function Callback( _entity, _tag )
 								{
@@ -92,110 +92,98 @@ this.legend_mercenary_fav_enemy_event <- this.inherit("scripts/events/event", {
 								}							
 						});
 						properties.Entities.push({
-								ID = this.Const.EntityType.BanditRabblePoacher,
+								ID = this.Const.EntityType.Mercenary,
 								Variant = 0,
 								Row = 0,
-								Name = "poach",
-								Script = "scripts/entity/tactical/enemies/bandit_rabble_poacher",
+								Name = "Mwah ILY",
+								Script = "scripts/entity/tactical/humans/special/mercenary_mwah",
 								Faction = this.Const.Faction.Enemy
 								function Callback( _entity, _tag )
 								{
-									_entity.setName("poach");
+									_entity.setName("Mwah ILY");
 								}							
 						});
-						// properties.Entities.push({
-						// 		ID = this.Const.EntityType.Mercenary,
-						// 		Variant = 0,
-						// 		Row = 0,
-						// 		Name = "Mwah ILY",
-						// 		Script = "scripts/entity/tactical/humans/special/mercenary_mwah",
-						// 		Faction = this.Const.Faction.Enemy
-						// 		function Callback( _entity, _tag )
-						// 		{
-						// 			_entity.setName("Mwah ILY");
-						// 		}							
-						// });
-						// properties.Entities.push({
-						// 		ID = this.Const.EntityType.Mercenary,
-						// 		Variant = 0,
-						// 		Row = 0,
-						// 		Name = "Freykin",
-						// 		Script = "scripts/entity/tactical/humans/special/mercenary_freykin",
-						// 		Faction = this.Const.Faction.Enemy
-						// 		function Callback( _entity, _tag )
-						// 		{
-						// 			_entity.setName("Freykin");
-						// 		}							
-						// });
-						// properties.Entities.push({
-						// 		ID = this.Const.EntityType.LegendSkinGhoul,
-						// 		Variant = 0,
-						// 		Row = 0,
-						// 		Name = "Luft the Mascot",
-						// 		Script = "scripts/entity/tactical/enemies/legend_skin_ghoul",
-						// 		Faction = this.Const.Faction.Enemy
-						// 		function Callback( _entity, _tag )
-						// 		{
-						// 			_entity.setName("Luft the Mascot");
-						// 			local helm = this.new("scripts/items/helmets/named/jugglers_hat");
-						// 			helm.m.ConditionMax = 125;
-						// 			helm.m.Condition = 125;
-						// 			helm.m.IsDroppedAsLoot = false;
-						// 			_entity.addSprite("helmet");
-						// 			_entity.m.Items.equip(helm); //todo: change to layer later
-						// 			_entity.getSprite("helmet").Visible = true;
-						// 			_entity.getSprite("helmet").setHorizontalFlipping(true);
-						// 			_entity.setSpriteOffset("helmet", this.createVec(0, -5));
-						// 		}							
-						// });
-						// properties.Entities.push({
-						// 		ID = this.Const.EntityType.Mercenary,
-						// 		Variant = 0,
-						// 		Row = 0,
-						// 		Name = "\'Bandit Rabble\' Poss",
-						// 		Script = "scripts/entity/tactical/humans/special/mercenary_poss",
-						// 		Faction = this.Const.Faction.Enemy
-						// 		function Callback( _entity, _tag )
-						// 		{
-						// 			_entity.setName("\'Bandit Rabble\' Poss");
-						// 		}							
-						// });
-						// properties.Entities.push({
-						// 		ID = this.Const.EntityType.Mercenary,
-						// 		Variant = 0,
-						// 		Row = 0,
-						// 		Name = "Cultscidon the Bringer of Darkness",
-						// 		Script = "scripts/entity/tactical/humans/special/mercenary_culty",
-						// 		Faction = this.Const.Faction.Enemy
-						// 		function Callback( _entity, _tag )
-						// 		{
-						// 			_entity.setName("Cultscidon the Bringer of Darkness");
-						// 		}							
-						// });
-						// properties.Entities.push({
-						// 		ID = this.Const.EntityType.Mercenary,
-						// 		Variant = 0,
-						// 		Row = 0,
-						// 		Name = "Forest Wraith",
-						// 		Script = "scripts/entity/tactical/humans/special/mercenary_forest",
-						// 		Faction = this.Const.Faction.Enemy
-						// 		function Callback( _entity, _tag )
-						// 		{
-						// 			_entity.setName("Forest Wraith");
-						// 		}							
-						// });
-						// properties.Entities.push({
-						// 		ID = this.Const.EntityType.Mercenary,
-						// 		Variant = 0,
-						// 		Row = 0,
-						// 		Name = "Rue the Jester",
-						// 		Script = "scripts/entity/tactical/humans/special/mercenary_rue",
-						// 		Faction = this.Const.Faction.Enemy
-						// 		function Callback( _entity, _tag )
-						// 		{
-						// 			_entity.setName("Rue the Jester");
-						// 		}							
-						// });
+						properties.Entities.push({
+								ID = this.Const.EntityType.Mercenary,
+								Variant = 0,
+								Row = 0,
+								Name = "Freykin",
+								Script = "scripts/entity/tactical/humans/special/mercenary_freykin",
+								Faction = this.Const.Faction.Enemy
+								function Callback( _entity, _tag )
+								{
+									_entity.setName("Freykin");
+								}							
+						});
+						properties.Entities.push({
+								ID = this.Const.EntityType.LegendSkinGhoul,
+								Variant = 0,
+								Row = 0,
+								Name = "Luft the Mascot",
+								Script = "scripts/entity/tactical/enemies/legend_skin_ghoul",
+								Faction = this.Const.Faction.Enemy
+								function Callback( _entity, _tag )
+								{
+									_entity.setName("Luft the Mascot");
+									local helm = this.new("scripts/items/helmets/named/jugglers_hat");
+									helm.m.ConditionMax = 125;
+									helm.m.Condition = 125;
+									helm.m.IsDroppedAsLoot = false;
+									_entity.addSprite("helmet");
+									_entity.m.Items.equip(helm); //todo: change to layer later
+									_entity.getSprite("helmet").Visible = true;
+									_entity.getSprite("helmet").setHorizontalFlipping(true);
+									_entity.setSpriteOffset("helmet", this.createVec(0, -5));
+								}							
+						});
+						properties.Entities.push({
+								ID = this.Const.EntityType.Mercenary,
+								Variant = 0,
+								Row = 0,
+								Name = "\'Bandit Rabble\' Poss",
+								Script = "scripts/entity/tactical/humans/special/mercenary_poss",
+								Faction = this.Const.Faction.Enemy
+								function Callback( _entity, _tag )
+								{
+									_entity.setName("\'Bandit Rabble\' Poss");
+								}							
+						});
+						properties.Entities.push({
+								ID = this.Const.EntityType.Mercenary,
+								Variant = 0,
+								Row = 0,
+								Name = "Cultscidon the Bringer of Darkness",
+								Script = "scripts/entity/tactical/humans/special/mercenary_culty",
+								Faction = this.Const.Faction.Enemy
+								function Callback( _entity, _tag )
+								{
+									_entity.setName("Cultscidon the Bringer of Darkness");
+								}							
+						});
+						properties.Entities.push({
+								ID = this.Const.EntityType.Mercenary,
+								Variant = 0,
+								Row = 0,
+								Name = "Forest Wraith",
+								Script = "scripts/entity/tactical/humans/special/mercenary_forest",
+								Faction = this.Const.Faction.Enemy
+								function Callback( _entity, _tag )
+								{
+									_entity.setName("Forest Wraith");
+								}							
+						});
+						properties.Entities.push({
+								ID = this.Const.EntityType.Mercenary,
+								Variant = 0,
+								Row = 0,
+								Name = "Rue the Jester",
+								Script = "scripts/entity/tactical/humans/special/mercenary_rue",
+								Faction = this.Const.Faction.Enemy
+								function Callback( _entity, _tag )
+								{
+									_entity.setName("Rue the Jester");
+								}							
+						});
 
 						// properties.Entities.push({
                         //     ID = this.Const.EntityType.Mercenary,
