@@ -9,7 +9,7 @@ this.legend_boar_charge <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "skills/boar_charge.png";
 		this.m.Overlay = "active_53";
 		this.m.SoundOnUse = [
-			"sounds/enemies/boarcharge.wav"
+			"sounds/combat/boarcharge.wav"
 		];
 		this.m.SoundOnHit = [
 			"sounds/combat/knockback_hit_01.wav",

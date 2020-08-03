@@ -99,7 +99,7 @@ this.legend_lycanthropy_injury <- this.inherit("scripts/skills/injury_permanent/
 
 				}	
 				
-				if (month == monthfloor && !this.World.getTime().IsDaytime)	
+				if (month == monthfloor)	
 				{
 					actor.getSkills().add(this.new("scripts/skills/effects/legend_transformed_wolf_effect"));		
 				}	

@@ -77,7 +77,7 @@ this.legend_ursathropy_injury <- this.inherit("scripts/skills/injury_permanent/p
 					actor.getSkills().add(this.new("scripts/skills/effects/legend_transformed_bear_effect"));
 				}	
 				
-				if (month == monthfloor && !this.World.getTime().IsDaytime)	
+				if (month == monthfloor)	
 				{
 					actor.getSkills().add(this.new("scripts/skills/effects/legend_transformed_bear_effect"));
 				}	

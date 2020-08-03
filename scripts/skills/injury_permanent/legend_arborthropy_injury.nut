@@ -79,7 +79,7 @@ function onTurnStart()
 					actor.getSkills().add(this.new("scripts/skills/effects/legend_transformed_tree_effect"));
 				}	
 				
-				if (month == monthfloor && !this.World.getTime().IsDaytime)	
+				if (month == monthfloor)	
 				{
 
 					actor.getSkills().add(this.new("scripts/skills/effects/legend_transformed_tree_effect"));
