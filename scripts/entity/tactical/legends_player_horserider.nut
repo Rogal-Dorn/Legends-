@@ -1,7 +1,13 @@
 this.legends_player_horserider <- this.inherit("scripts/entity/tactical/player", {
 	m = {
 		Rider = null,
-		Horse = null
+		Horse = null,
+		playerArmor = null,
+		horseArmor = null,
+		horseHelmet = null,
+		LastBodyPartHit = this.Const.BodyPart.Body,
+		Tile = null,
+		RiderContainer = null
 	},
 	function setRider( _a )
 	{
@@ -15,6 +21,7 @@ this.legends_player_horserider <- this.inherit("scripts/entity/tactical/player",
 
 	function setHorse( _a )
 	{
+		this.m.PlaceInFormation = _a.getPlaceInFormation();
 		this.m.Horse = this.WeakTableRef(_a);
 	}
 
@@ -36,49 +43,19 @@ this.legends_player_horserider <- this.inherit("scripts/entity/tactical/player",
 	function onCombatStart()
 	{
 		this.getBackground().onSetAppearance();
-
 	}
 
 	function setScenarioValues()
 	{
- 		foreach(k,v in this)
- 		{
- 			this.logInfo("k = " + k + " : v = " + v)
- 		}
- 		this.logInfo("PLAYER")
- 		foreach(k,v in this.player)
- 		{
- 			this.logInfo("k = " + k + " : v = " + v)
- 		}
- this.logInfo("HUMAN")
- 		foreach(k,v in this.player.human)
- 		{
- 			this.logInfo("k = " + k + " : v = " + v)
- 		}
-
- this.logInfo("ACTOR")
- 		foreach(k,v in this.player.human.actor)
- 		{
- 			this.logInfo("k = " + k + " : v = " + v)
- 		}
-
- this.logInfo("ENTITY")
- 		foreach(k,v in this.player.human.actor.entity)
- 		{
- 			this.logInfo("k = " + k + " : v = " + v)
- 		}
 
 
+		this.getTags().add("IsHorse");
+		
+		if (!this.getRider().getCurrentProperties().IsContentWithBeingInReserve)
+			this.getRider().getTags().add("TemporaryRider");
+ 		
 		local b = this.m.BaseProperties;
 
-//determine action points
-//		local horseAP = this.getHorse().getActionPoints();
-//		this.logInfo("horseAP is " + horseAP)
-//		local riderAP = this.getRider().getActionPoints();
-//		this.logInfo("riderAP is " + riderAP)
-//		local totalAP = this.Math.floor((horseAP + riderAP) - 9);
-//		this.logInfo("totalAP is " + totalAP)
-//
 		b.ActionPoints = 9;
 
 //determine hitpoints
@@ -162,7 +139,7 @@ this.legends_player_horserider <- this.inherit("scripts/entity/tactical/player",
 		local totalInitiative = (horseInitiative + riderInitiative) / 2;
 		b.Initiative = totalInitiative;
 
-//determine name
+		//determine name
 		local horseName = this.getHorse().getName();
 		local riderName = this.getRider().getName();
 		local newName = riderName + " and " + horseName;
@@ -172,8 +149,7 @@ this.legends_player_horserider <- this.inherit("scripts/entity/tactical/player",
 		background.setScenarioOnly(true);
 		this.m.Skills.add(background);
 
-//add horse skills
-		
+		//add horse skills
 		this.m.ActionPointCosts = this.Const.HorseMovementAPCost;
 		this.m.FatigueCosts = clone this.Const.HorseMovementFatigueCost;
 
@@ -188,86 +164,30 @@ this.legends_player_horserider <- this.inherit("scripts/entity/tactical/player",
 		{
 			this.getSkills().add(this.new("scripts/skills/perks/perk_legend_horse_passage"));
 		}
-//		if (this.getHorse().getSkills().hasSkill("perk.legend_horse_pirouette"))
-//		{
+		//if (this.getHorse().getSkills().hasSkill("perk.legend_horse_pirouette"))
+		//{
 			this.getSkills().add(this.new("scripts/skills/perks/perk_legend_horse_pirouette"));
-//		}
-//		if (this.getHorse().getSkills().hasSkill("perk.legend_horse_charge"))
-//		{
+		//}
+		//if (this.getHorse().getSkills().hasSkill("perk.legend_horse_charge"))
+		//{
 			this.getSkills().add(this.new("scripts/skills/perks/perk_horse_charge"));
-//		}
+		//}
 
-//add rider skills
+		//add rider skills
 		if (this.getRider().getSkills().hasSkill("perk.legend_horse_movement") && !this.getHorse().getSkills().hasSkill("perk.legend_horse_passage"))
 		{
 			this.getSkills().add(this.new("scripts/skills/perks/perk_legend_horse_movement"));
 		}
 
-		// this.m.Items.m.Items[this.Const.ItemSlot.Ammo] = this.m.Rider.getItems().getItemAtSlot(this.Const.ItemSlot.Ammo); //ammo apparently all has the exact same ID for some reason so this is probably an alright fix
-		this.m.Items.equip(this.new("scripts/items/ammo/large_quiver_of_arrows"));
+		//add all rider items except for body armor 
+		this.getRider().getItems().transferTo(this.m.Items);
+		this.m.playerArmor = this.m.Items.getItemAtSlot(this.Const.ItemSlot.Body);
+		if (this.m.playerArmor != null)
+			this.m.Items.unequip(this.m.playerArmor);
 
-		local items = this.m.Rider.getItems();
-		if (items != null) {
-			if (items.getItemAtSlot(this.Const.ItemSlot.Mainhand) != null)
-			{
-				local item = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
-				local itemID = item.getID();
-				local pathNum = this.Const.Items.FullItemListIDs.find(itemID);
-				local pathToAdd = "scripts/items/" + this.Const.Items.FullItemList[pathNum];
-				this.m.Items.equip(this.new(pathToAdd));
-				if (item.isRuned())
-				{
-					local runeVariant = item.getRuneVariant();
-					local runeToken = this.new("scripts/items/rune_sigils/legend_vala_inscription_token");
-					runeToken.setRuneVariant(runeVariant);
-					runeToken.onUse(this);
-				}
-			}
-			if (items.getItemAtSlot(this.Const.ItemSlot.Offhand) != null)
-			{
-				local item = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
-				local itemID = item.getID();
-				local pathNum = this.Const.Items.FullItemListIDs.find(itemID);
-				local pathToAdd = "scripts/items/" + this.Const.Items.FullItemList[pathNum];
-				this.m.Items.equip(this.new(pathToAdd));
-				if (item.isRuned())
-				{
-					local runeVariant = item.getRuneVariant();
-					local runeToken = this.new("scripts/items/rune_sigils/legend_vala_inscription_token");
-					runeToken.setRuneVariant(runeVariant);
-					runeToken.onUse(this);
-				}
-			}
-			if (items.getItemAtSlot(this.Const.ItemSlot.Accessory) != null)
-			{
-				local item = items.getItemAtSlot(this.Const.ItemSlot.Accessory);
-				local itemID = item.getID();
-				local pathNum = this.Const.Items.FullItemListIDs.find(itemID);
-				local pathToAdd = "scripts/items/" + this.Const.Items.FullItemList[pathNum];
-				this.m.Items.equip(this.new(pathToAdd));
-				if (item.isRuned())
-				{
-					local runeVariant = item.getRuneVariant();
-					local runeToken = this.new("scripts/items/rune_sigils/legend_vala_inscription_token");
-					runeToken.setRuneVariant(runeVariant);
-					runeToken.onUse(this);
-				}
-			}
-			foreach (item in items.getAllItemsAtSlot(this.Const.ItemSlot.Bag))
-			{
-				local itemID = item.getID();
-				local pathNum = this.Const.Items.FullItemListIDs.find(itemID);
-				local pathToAdd = "scripts/items/" + this.Const.Items.FullItemList[pathNum];
-				this.m.Items.equip(this.new(pathToAdd));
-				if (item.isRuned())
-				{
-					local runeVariant = item.getRuneVariant();
-					local runeToken = this.new("scripts/items/rune_sigils/legend_vala_inscription_token");
-					runeToken.setRuneVariant(runeVariant);
-					runeToken.onUse(this);
-				}
-			}
-		}
+		this.m.horseArmor = this.getHorse().getItems().getItemAtSlot(this.Const.ItemSlot.Body);
+		if (this.m.horseArmor != null)
+			this.m.Items.equip(this.m.horseArmor)
 
 		background.buildDescription();
 		local c = this.m.CurrentProperties;
@@ -279,6 +199,114 @@ this.legends_player_horserider <- this.inherit("scripts/entity/tactical/player",
 
 	function getPlaceInFormation()
 	{
-		return this.m.Horse.getPlaceInFormation()
+		return this.m.PlaceInFormation
 	}
+
+	function kill( _killer = null, _skill = null, _fatalityType = this.Const.FatalityType.None, _silent = false)
+	{
+		this.player.kill(_killer, _skill, _fatalityType, _silent);
+		local num = this.Tactical.Entities.getAlliesNum();
+		if (num == 1 || num == 0) //if 1 then only horserider exsts
+		{
+			this.World.LegendsMod.BroStats().removeActorID(this.getRider().getCompanyID());
+			this.World.LegendsMod.BroStats().removeActorID(this.getHorse().getCompanyID());
+			this.World.getPlayerRoster().remove(this.getRider());
+			this.World.getPlayerRoster().remove(this.getHorse());
+			return;
+		}
+		local pBody = this.getRider().getSprite("body")
+		
+		if (this.m.LastBodyPartHit == this.Const.BodyPart.Body)
+		{
+			if (pBody != null && typeof pBody != "instance")
+				pBody.set("bust_naked_body_03");
+			this.getHorse().kill(_killer, _skill, _fatalityType, _silent);
+		}
+		else
+		{
+			this.getRider().kill(_killer, _skill, _fatalityType, _silent);
+		}
+	}
+
+	function onDeath( _killer, _skill, _tile, _fatalityType )
+	{
+		this.m.Tile = this.getTile();
+
+		this.player.onDeath(_killer, _skill, _tile, _fatalityType);
+		local num = this.Tactical.Entities.getAlliesNum();
+		if (num == 1 || num == 0) //if 1 then only horserider exsts
+		{
+			this.World.LegendsMod.BroStats().removeActorID(this.getRider().getCompanyID());
+			this.World.LegendsMod.BroStats().removeActorID(this.getHorse().getCompanyID());
+			this.World.getPlayerRoster().remove(this.getRider());
+			this.World.getPlayerRoster().remove(this.getHorse());
+			return;
+		}
+
+		if (this.m.LastBodyPartHit == this.Const.BodyPart.Body)
+		{
+			this.getHorse().onDeath(_killer, _skill, null, this.Const.FatalityType.Suicide);
+		}
+		else
+		{
+			this.getRider().onDeath(_killer, _skill, null, this.Const.FatalityType.Suicide);
+		}
+	}
+	function onAfterDeath( _tile )
+	{
+		if (this.Tactical.Entities.getAlliesNum() == 0)
+		{
+			//if left to die
+			return;
+		}
+
+
+		if (this.m.LastBodyPartHit == this.Const.BodyPart.Head)
+		{
+			this.spawnHorse();
+			return;
+		}
+
+		this.spawnRider();
+		return;
+
+	}
+
+	function spawnHorse()
+	{
+		this.Tactical.addEntityToMap(this.getHorse(), this.m.Tile.Coords.X, this.m.Tile.Coords.Y);
+	}
+
+	function spawnRider()
+	{
+		this.Tactical.addEntityToMap(this.getRider(), this.m.Tile.Coords.X, this.m.Tile.Coords.Y);
+		local entity = this.m.Tile.getEntity();
+		this.m.Items.transferTo(this.getRider().getItems());
+	}
+
+	function onDamageReceived( _attacker, _skill, _hitInfo )
+	{
+		this.m.LastBodyPartHit = _hitInfo.BodyPart;
+		this.player.onDamageReceived(_attacker, _skill, _hitInfo);
+	}
+
+	function onCombatFinished()
+	{
+		this.m.Items.unequip(this.m.horseArmor);
+		this.getHorse().equip(this.m.horseArmor);
+		this.m.Items.equip(this.m.playerArmor);
+		this.m.Items.transferTo(this.getRider().getItems());
+		
+		local horseHP = this.getHorse().getHitpoints();
+		local riderHP = this.getRider().getHitpoints();
+
+		local hpMissing = this.getHitpointsPct();
+
+		this.getRider().setHitpoints( (riderHP * hpMissing > 0) ? (riderHP * hpMissing) : riderHP )
+		this.getHorse().setHitpoints( (horseHP * hpMissing > 0) ? (horseHP * hpMissing) : horseHP )
+
+	
+		this.World.getPlayerRoster().remove(this);
+	}
+
 });
