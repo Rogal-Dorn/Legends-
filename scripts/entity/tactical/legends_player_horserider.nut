@@ -6,8 +6,7 @@ this.legends_player_horserider <- this.inherit("scripts/entity/tactical/player",
 		horseArmor = null,
 		horseHelmet = null,
 		LastBodyPartHit = this.Const.BodyPart.Body,
-		Tile = null,
-		RiderContainer = null
+		Tile = null
 	},
 	function setRider( _a )
 	{
@@ -49,7 +48,7 @@ this.legends_player_horserider <- this.inherit("scripts/entity/tactical/player",
 	{
 
 
-		this.getTags().add("IsHorse");
+		this.getTags().add("IsHorseRider");
 		
 		if (!this.getRider().getCurrentProperties().IsContentWithBeingInReserve)
 			this.getRider().getTags().add("TemporaryRider");
@@ -177,6 +176,16 @@ this.legends_player_horserider <- this.inherit("scripts/entity/tactical/player",
 		if (this.getRider().getSkills().hasSkill("perk.legend_horse_movement") && !this.getHorse().getSkills().hasSkill("perk.legend_horse_passage"))
 		{
 			this.getSkills().add(this.new("scripts/skills/perks/perk_legend_horse_movement"));
+		}
+
+		foreach ( skill in this.getRider().getSkills() )
+		{
+			this.getSkills().add(clone skill);
+		}
+
+		foreach ( skill in this.getHorse().getSkills() )
+		{
+			this.getSkills().add(clone skill);
 		}
 
 		//add all rider items except for body armor 
