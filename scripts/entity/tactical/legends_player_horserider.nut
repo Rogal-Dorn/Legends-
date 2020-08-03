@@ -6,7 +6,9 @@ this.legends_player_horserider <- this.inherit("scripts/entity/tactical/player",
 		horseArmor = null,
 		horseHelmet = null,
 		LastBodyPartHit = this.Const.BodyPart.Body,
-		Tile = null
+		Tile = null,
+		RiderSkills = null,
+		HorseSkills = null
 	},
 	function setRider( _a )
 	{
@@ -178,16 +180,6 @@ this.legends_player_horserider <- this.inherit("scripts/entity/tactical/player",
 			this.getSkills().add(this.new("scripts/skills/perks/perk_legend_horse_movement"));
 		}
 
-		foreach ( skill in this.getRider().getSkills() )
-		{
-			this.getSkills().add(clone skill);
-		}
-
-		foreach ( skill in this.getHorse().getSkills() )
-		{
-			this.getSkills().add(clone skill);
-		}
-
 		//add all rider items except for body armor 
 		this.getRider().getItems().transferTo(this.m.Items);
 		this.m.playerArmor = this.m.Items.getItemAtSlot(this.Const.ItemSlot.Body);
@@ -301,9 +293,15 @@ this.legends_player_horserider <- this.inherit("scripts/entity/tactical/player",
 
 	function onCombatFinished()
 	{
-		this.m.Items.unequip(this.m.horseArmor);
-		this.getHorse().equip(this.m.horseArmor);
-		this.m.Items.equip(this.m.playerArmor);
+		if (this.m.horseArmor != null)
+		{
+			this.m.Items.unequip(this.m.horseArmor);
+			this.getHorse().getItems().equip(this.m.horseArmor);
+		}
+		if (this.m.playerArmor != null)
+		{
+			this.m.Items.equip(this.m.playerArmor);
+		}
 		this.m.Items.transferTo(this.getRider().getItems());
 		
 		local horseHP = this.getHorse().getHitpoints();
