@@ -67,8 +67,8 @@ this.legend_transformed_boar_effect <- this.inherit("scripts/skills/skill", {
 			// actor.setAIAgent(this.new("scripts/ai/tactical/agents/boar_agent"));
 			// actor.getAIAgent().setActor(actor);
 			//actor.setFaction(this.Const.Faction.PlayerAnimals);	
-			this.logDebug(this.getName() + " has surpress urges, AI set to wardog on added");
-			actor.setAIAgent(this.new("scripts/ai/tactical/agents/wardog_agent"));
+			this.logDebug(this.getName() + " has surpress urges, AI set to boar on added");
+			actor.setAIAgent(this.new("scripts/ai/tactical/agents/boar_agent"));
 			actor.getAIAgent().setActor(actor);			
 			
 			}
@@ -293,7 +293,9 @@ this.legend_transformed_boar_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("socket").Alpha = 10;
 
 		_properties.FatigueRecoveryRateMult *= 2.0;
-		_properties.StaminaMult *= 1.25;
+		_properties.StaminaMult *= 1.5;
+		_properties.HitpointsMult *= 1.5;
+		_properties.BraveryMult *= 1.25;
 	}
 
 	function onCombatFinished()

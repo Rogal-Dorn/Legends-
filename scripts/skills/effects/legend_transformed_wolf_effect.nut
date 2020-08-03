@@ -24,6 +24,7 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
+		local actor = this.getContainer().getActor();
 		local ret = this.getDefaultTooltip();
 		{
 			ret.extend([
@@ -34,11 +35,18 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 					text = "[color=" + this.Const.UI.Color.PositiveValue + "]-1[/color] AP per tile moved"
 				}
 			]);
+			
+			ret.extend([
+				{
+					id = 11,
+					type = "text",
+					icon = "ui/icons/special.png",
+					text = "This character has lost control of themselves and may attack randomly. May still need your help to end their turn. "
+				}
+			]);
+			
+
 		}
-
-
-
-
 		return ret;
 
 	}
@@ -320,6 +328,10 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 		this.logDebug(this.getName() + " onUpdate setting properties");
 		_properties.MovementAPCostAdditional += -1;
 		_properties.MovementFatigueCostMult *= 0.5;
+		_properties.HitpointsMult *= 1.5;
+		_properties.MeleeDefenseMult *= 2.0;
+		
+		
 		
 		this.logDebug(this.getName() + " onUpdate done");
 
@@ -391,10 +403,15 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 
 	function onTurnEnd()
 	{
+
 		if (--this.m.TurnsLeft <= 0)
 		{
 			this.removeSelf();
 		}
+		local actor = this.getContainer().getActor();
+		actor.setFaction(this.m.OriginalFaction);
+		actor.getSprite("socket").setBrush(this.m.OriginalSocket);
+		actor.setDirty(true);
 	}
 });
 

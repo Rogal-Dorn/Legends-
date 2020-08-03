@@ -337,37 +337,6 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 		local actor = this.getContainer().getActor();
 		actor.setTitle("The Druid");
 		
-		local r = this.Math.rand(1,99);
-		
-		if (r <= 50 )
-		{
-			actor.getSkills().add(this.new("scripts/skills/injury_permanent/legend_lycanthropy_injury"));
-			this.logDebug(this.getName() + " gained lycanthropy");
-		}		
-		
-		if (r > 50 && r <= 75)
-		{
-			actor.getSkills().add(this.new("scripts/skills/injury_permanent/legend_aperthropy_injury"));
-			this.logDebug(this.getName() + " gained aperthropy");
-		}
-	
-		if (r > 75 && r <= 90)
-		{
-			actor.getSkills().add(this.new("scripts/skills/injury_permanent/legend_arborthropy_injury"));
-			this.logDebug(this.getName() + " gained arborthropy");
-		}
-	
-		if (r > 90 && r <= 98)
-		{
-			actor.getSkills().add(this.new("scripts/skills/injury_permanent/legend_ursathropy_injury"));
-			this.logDebug(this.getName() + " gained ursathropy");
-		}
-		
-		if (r == 99)
-		{
-			actor.getSkills().add(this.new("scripts/skills/injury_permanent/legend_vermesthropy_injury"));
-			this.logDebug(this.getName() + " gained vermesthropy");
-		}		
 		
 	}
 
