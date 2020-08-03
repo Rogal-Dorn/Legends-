@@ -644,7 +644,7 @@ def main():
             lower = "true"
 
         fname = "legend_helmet_" + d["name"]
-        dirpath = os.path.join(os.path.dirname(os.path.abspath(__file__)), "scripts", "items", "legend_helmets", layer)
+        dirpath = os.path.join(os.path.dirname(os.path.abspath(__file__)), "helmets", layer)
         if not os.path.exists(dirpath):
             os.makedirs(dirpath)
 
@@ -685,11 +685,10 @@ def main():
         )
         s = Template(temp)
         text = s.substitute(opts)
-        #text.replace("/", "\\")
         F.write(text)
         F.close()
 
-        print('[0, "' + layer + '/' + fname + '"],')
+        #print('[0, "' + layer + '/' + fname + '"],')
 
 main()
 
@@ -754,7 +753,8 @@ main()
         # [0, "helm/legend_helmet_legend_ancient_gladiator"],
         # [0, "helm/legend_helmet_legend_ancient_legionaire_restored"],
         # [0, "helm/legend_helmet_legend_frogmouth"],
-        # [0, "helm/legend_helmet_legend_frogmouth_close"],
+        # [0, "helm/legend_helmet_legend_armet"],
+        # [0, "helm/legend_helmet_legend_armet_01_named"],
         # [0, "helm/legend_helmet_nordic_helm"],
         # [0, "helm/legend_helmet_norman_helm"],
         # [0, "helm/legend_helmet_orc_double_helm"],
@@ -797,6 +797,7 @@ main()
         # [0, "top/legend_helmet_eyemask"],
         # [0, "top/legend_helmet_facemask"],
         # [0, "top/legend_helmet_faceplate_full"],
+        # [0, "top/legend_helmet_faceplate_full_01_named"],
         # [0, "top/legend_helmet_faceplate_gold"],
         # [0, "top/legend_helmet_faceplate_long"],
         # [0, "top/legend_helmet_faceplate_pointed"],

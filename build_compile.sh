@@ -71,7 +71,6 @@ while read -r line; do
 done <<< "$FILES"
 
 echo "Building helmets..."
-
 rm -rf helmets
 mkdir -p "helmets"
 python make_legend_helmet_nuts.py
