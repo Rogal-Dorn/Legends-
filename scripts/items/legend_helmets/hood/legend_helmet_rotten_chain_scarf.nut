@@ -5,17 +5,17 @@ this.legend_helmet_rotten_chain_scarf <- this.inherit("scripts/items/legend_helm
 	{
 		this.legend_helmet.create();
 		this.m.ID = "armor.head.legend_helmet_rotten_chain_scarf";
-		this.m.Name = "Rotten Chain Scarf";
-		this.m.Description = "Rotten Chain Scarf";
+		this.m.Name = "Rotten Aventail";
+		this.m.Description = "A rotten mail aventail that extends from below the eyeline to cover the neck";
 		this.m.Variant = 1;
 		this.m.Variants = [1, 2, 3, 4, 5];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
-		this.m.Value = 200;
-		this.m.Condition = 80;
-		this.m.ConditionMax = 80;
-		this.m.StaminaModifier = -4;
+		this.m.Value = 190;
+		this.m.Condition = 60;
+		this.m.ConditionMax = 60;
+		this.m.StaminaModifier = -2;
 		this.m.Vision = 0;
 		this.m.HideHair = false;
 		this.m.HideBeard = true;

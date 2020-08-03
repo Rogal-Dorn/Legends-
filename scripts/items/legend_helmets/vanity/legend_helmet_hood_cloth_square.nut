@@ -1,22 +1,25 @@
 
-this.legend_helmet_hood_cloth_square <- this.inherit("scripts/items/legend_helmets/legend_helmet", {
+this.legend_helmet_hood_cloth_square <- this.inherit("scripts/items/legend_helmets/legend_helmet_upgrade", {
 	m = {},
 	function create()
 	{
-		this.legend_helmet.create();
+		this.legend_helmet_upgrade.create();
+		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_hood_cloth_square";
-		this.m.Name = "Square Cloth Hood";
-		this.m.Description = "Square Hood Cloth";
+		this.m.Name = "Square Hood Cloth";
+		this.m.Description = "A simple hood to protect against weather and scratches.";
+		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
-		this.m.Value = 200;
-		this.m.Condition = 80;
-		this.m.ConditionMax = 80;
-		this.m.StaminaModifier = -4;
+		this.m.Value = 60;
+		this.m.Condition = 30;
+		this.m.ConditionMax = 30;
+		this.m.StaminaModifier = -1;
 		this.m.Vision = 0;
+		this.m.IsLowerVanity = false;
 		this.m.HideHair = true;
 		this.m.HideBeard = false;
 	}
@@ -28,6 +31,8 @@ this.legend_helmet_hood_cloth_square <- this.inherit("scripts/items/legend_helme
 		this.m.SpriteDamaged = "legendhelms_hood_cloth_square" + "_" + variant + "_damaged";
 		this.m.SpriteCorpse = "legendhelms_hood_cloth_square" + "_" + variant + "_dead";
 		this.m.IconLarge = "";
-		this.m.Icon = "legend_helmets/inventory_hood_cloth_square" + "_" + variant + ".png"
+		this.m.Icon = "legend_helmets/inventory_hood_cloth_square" + "_" + variant + ".png";
+		this.m.OverlayIcon = this.m.Icon;
+		this.m.OverlayIconLarge = this.m.OverlayIcon;
 	}
 });

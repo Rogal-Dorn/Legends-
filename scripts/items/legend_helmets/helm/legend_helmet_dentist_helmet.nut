@@ -14,11 +14,11 @@ this.legend_helmet_dentist_helmet <- this.inherit("scripts/items/legend_helmets/
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
-		this.m.Value = 200;
-		this.m.Condition = 80;
-		this.m.ConditionMax = 80;
-		this.m.StaminaModifier = -4;
-		this.m.Vision = 0;
+		this.m.Value = 1900;
+		this.m.Condition = 160;
+		this.m.ConditionMax = 160;
+		this.m.StaminaModifier = -11;
+		this.m.Vision = -3;
 		this.m.IsLowerVanity = false;
 		this.m.HideHair = true;
 		this.m.HideBeard = true;

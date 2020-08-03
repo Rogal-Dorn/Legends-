@@ -6,7 +6,7 @@ this.legend_helmet_skin_helm <- this.inherit("scripts/items/legend_helmets/legen
 		this.legend_helmet_upgrade.create();
 		this.m.Type = this.Const.Items.HelmetUpgrades.Helm;
 		this.m.ID = "armor.head.legend_helmet_skin_helm";
-		this.m.Name = "Skin Helm";
+		this.m.Name = "Glimpse of Davkul";
 		this.m.Description = "The Glimpse of Davkul is a gift bestowed upon man by ancient and dark powers, a helmet merged with human skin and bones through the most unspeakable of rituals. A glimpse of a future where man shall become one with creations from a realm beyond. It shall never break, but instead keep regrowing its scarred skin on the spot.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
@@ -14,10 +14,10 @@ this.legend_helmet_skin_helm <- this.inherit("scripts/items/legend_helmets/legen
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
-		this.m.Value = 200;
-		this.m.Condition = 80;
-		this.m.ConditionMax = 80;
-		this.m.StaminaModifier = -4;
+		this.m.Value = 20000;
+		this.m.Condition = 190;
+		this.m.ConditionMax = 190;
+		this.m.StaminaModifier = -6;
 		this.m.Vision = 0;
 		this.m.IsLowerVanity = false;
 		this.m.HideHair = true;

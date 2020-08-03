@@ -7,7 +7,7 @@ this.legend_helmet_wings <- this.inherit("scripts/items/legend_helmets/legend_he
 		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_wings";
 		this.m.Name = "Wings";
-		this.m.Description = "Large ornamental wing's that stand well above other men.";
+		this.m.Description = "A set of feathers arrayed on supports to form wings";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1, 2, 3, 4, 5, 6];
@@ -15,9 +15,9 @@ this.legend_helmet_wings <- this.inherit("scripts/items/legend_helmets/legend_he
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.Value = 200;
-		this.m.Condition = 80;
-		this.m.ConditionMax = 80;
-		this.m.StaminaModifier = -4;
+		this.m.Condition = 10;
+		this.m.ConditionMax = 10;
+		this.m.StaminaModifier = -1;
 		this.m.Vision = 0;
 		this.m.IsLowerVanity = true;
 		this.m.HideHair = false;

@@ -15,9 +15,9 @@ this.legend_helmet_warlock_hood <- this.inherit("scripts/items/legend_helmets/le
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.Value = 200;
-		this.m.Condition = 80;
-		this.m.ConditionMax = 80;
-		this.m.StaminaModifier = -4;
+		this.m.Condition = 10;
+		this.m.ConditionMax = 10;
+		this.m.StaminaModifier = -1;
 		this.m.Vision = 0;
 		this.m.IsLowerVanity = false;
 		this.m.HideHair = true;

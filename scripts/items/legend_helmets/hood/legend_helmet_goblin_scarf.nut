@@ -12,13 +12,13 @@ this.legend_helmet_goblin_scarf <- this.inherit("scripts/items/legend_helmets/le
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
-		this.m.Value = 200;
-		this.m.Condition = 80;
-		this.m.ConditionMax = 80;
-		this.m.StaminaModifier = -4;
+		this.m.Value = 5;
+		this.m.Condition = 5;
+		this.m.ConditionMax = 5;
+		this.m.StaminaModifier = 0;
 		this.m.Vision = 0;
-		this.m.HideHair = false;
-		this.m.HideBeard = true;
+		this.m.HideHair = true;
+		this.m.HideBeard = false;
 	}
 
 	function updateVariant()

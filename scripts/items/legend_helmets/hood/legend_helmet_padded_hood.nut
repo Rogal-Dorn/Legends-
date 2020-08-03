@@ -5,17 +5,17 @@ this.legend_helmet_padded_hood <- this.inherit("scripts/items/legend_helmets/leg
 	{
 		this.legend_helmet.create();
 		this.m.ID = "armor.head.legend_helmet_padded_hood";
-		this.m.Name = "Padded Hood";
-		this.m.Description = "Padded Hood";
+		this.m.Name = "Full Aketon Cap";
+		this.m.Description = "A large padded cloth cap also covering the neck.";
 		this.m.Variant = 1;
 		this.m.Variants = [1, 2, 3];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
-		this.m.Value = 200;
-		this.m.Condition = 80;
-		this.m.ConditionMax = 80;
-		this.m.StaminaModifier = -4;
+		this.m.Value = 140;
+		this.m.Condition = 50;
+		this.m.ConditionMax = 50;
+		this.m.StaminaModifier = -2;
 		this.m.Vision = 0;
 		this.m.HideHair = true;
 		this.m.HideBeard = false;

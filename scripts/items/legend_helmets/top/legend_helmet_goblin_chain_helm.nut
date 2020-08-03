@@ -4,21 +4,21 @@ this.legend_helmet_goblin_chain_helm <- this.inherit("scripts/items/legend_helme
 	function create()
 	{
 		this.legend_helmet_upgrade.create();
-		this.m.Type = this.Const.Items.HelmetUpgrades.Helm;
+		this.m.Type = this.Const.Items.HelmetUpgrades.Top;
 		this.m.ID = "armor.head.legend_helmet_goblin_chain_helm";
 		this.m.Name = "Goblin Chain Helm";
-		this.m.Description = "Goblin Chain Helm";
+		this.m.Description = "A chainlink helm of goblin design.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
-		this.m.Value = 200;
-		this.m.Condition = 80;
-		this.m.ConditionMax = 80;
-		this.m.StaminaModifier = -4;
-		this.m.Vision = 0;
+		this.m.Value = 780;
+		this.m.Condition = 70;
+		this.m.ConditionMax = 70;
+		this.m.StaminaModifier = -6;
+		this.m.Vision = -1;
 		this.m.IsLowerVanity = false;
 		this.m.HideHair = true;
 		this.m.HideBeard = false;

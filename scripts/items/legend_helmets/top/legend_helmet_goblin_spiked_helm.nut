@@ -4,21 +4,21 @@ this.legend_helmet_goblin_spiked_helm <- this.inherit("scripts/items/legend_helm
 	function create()
 	{
 		this.legend_helmet_upgrade.create();
-		this.m.Type = this.Const.Items.HelmetUpgrades.Helm;
+		this.m.Type = this.Const.Items.HelmetUpgrades.Top;
 		this.m.ID = "armor.head.legend_helmet_goblin_spiked_helm";
 		this.m.Name = "Spiked Goblin Helm";
-		this.m.Description = "Goblin Spiked Helm";
+		this.m.Description = "The distinctive spiked helm of a goblin overseer";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
-		this.m.Value = 200;
-		this.m.Condition = 80;
-		this.m.ConditionMax = 80;
-		this.m.StaminaModifier = -4;
-		this.m.Vision = 0;
+		this.m.Value = 1200;
+		this.m.Condition = 90;
+		this.m.ConditionMax = 90;
+		this.m.StaminaModifier = -8;
+		this.m.Vision = -2;
 		this.m.IsLowerVanity = false;
 		this.m.HideHair = true;
 		this.m.HideBeard = false;

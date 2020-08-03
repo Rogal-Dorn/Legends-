@@ -7,7 +7,7 @@ this.legend_helmet_plait <- this.inherit("scripts/items/legend_helmets/legend_he
 		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_plait";
 		this.m.Name = "Plait";
-		this.m.Description = "A simple braided rope to be stretched across a helmet.";
+		this.m.Description = "A decorative plait used to adorn helms.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
@@ -15,9 +15,9 @@ this.legend_helmet_plait <- this.inherit("scripts/items/legend_helmets/legend_he
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.Value = 200;
-		this.m.Condition = 80;
-		this.m.ConditionMax = 80;
-		this.m.StaminaModifier = -4;
+		this.m.Condition = 10;
+		this.m.ConditionMax = 10;
+		this.m.StaminaModifier = -1;
 		this.m.Vision = 0;
 		this.m.IsLowerVanity = false;
 		this.m.HideHair = false;

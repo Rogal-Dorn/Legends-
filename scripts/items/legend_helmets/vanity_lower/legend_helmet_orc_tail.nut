@@ -7,7 +7,7 @@ this.legend_helmet_orc_tail <- this.inherit("scripts/items/legend_helmets/legend
 		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_orc_tail";
 		this.m.Name = "Orc Tail";
-		this.m.Description = "A collection of orc hairs, now serving as a proud trophy.";
+		this.m.Description = "A knotted tail of hair used as decoration by an orc, there is still a scalp attached";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1, 2];
@@ -15,9 +15,9 @@ this.legend_helmet_orc_tail <- this.inherit("scripts/items/legend_helmets/legend
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.Value = 200;
-		this.m.Condition = 80;
-		this.m.ConditionMax = 80;
-		this.m.StaminaModifier = -4;
+		this.m.Condition = 10;
+		this.m.ConditionMax = 10;
+		this.m.StaminaModifier = -1;
 		this.m.Vision = 0;
 		this.m.IsLowerVanity = true;
 		this.m.HideHair = false;

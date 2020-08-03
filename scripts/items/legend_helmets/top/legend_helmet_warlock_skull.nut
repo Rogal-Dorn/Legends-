@@ -14,9 +14,9 @@ this.legend_helmet_warlock_skull <- this.inherit("scripts/items/legend_helmets/l
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
-		this.m.Value = 200;
-		this.m.Condition = 80;
-		this.m.ConditionMax = 80;
+		this.m.Value = 2000;
+		this.m.Condition = 90;
+		this.m.ConditionMax = 90;
 		this.m.StaminaModifier = -4;
 		this.m.Vision = 0;
 		this.m.IsLowerVanity = false;

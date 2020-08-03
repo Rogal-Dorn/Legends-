@@ -93,7 +93,6 @@ layers = [
     {"name": "simple_hood",         "layer": "hood", "min": 1, "max": 5, "base": True, "value" : 60, "con" : 30, "stam" : -1, "vis" : 0,  "hair" : "true", "beard" :"false" },
     {"name": "padded_cap",          "layer": "hood", "min": 1, "max": 1, "base": True, "value" : 95, "con" : 40, "stam" : -1, "vis" : 0,  "hair" : "true", "beard" :"false" },
     {"name": "hood_cloth_round",    "layer": "hood", "min": 1, "max": 1, "base": True, "value" : 60, "con" : 30, "stam" : -1, "vis" : 0,  "hair" : "true", "beard" :"false" },
-    {"name": "hood_cloth_square",   "layer": "vanity", "min": 1, "max": 1, "base": True, "value" : 60, "con" : 30, "stam" : -1, "vis" : 0,  "hair" : "true", "beard" :"false" },
     {"name": "hood_cloth_wide",     "layer": "hood", "min": 1, "max": 2, "base": True, "value" : 60, "con" : 30, "stam" : -1, "vis" : 0,  "hair" : "true", "beard" :"false" },
     {"name": "cloth_long_hood",     "layer": "hood", "min": 1, "max": 4, "base": True, "value" : 60, "con" : 30, "stam" : -1, "vis" : 0,  "hair" : "true", "beard" :"false" },
     {"name": "cloth_bandana",       "layer": "hood", "min": 1, "max": 5, "base": True, "value" : 20, "con" : 15, "stam" : 0, "vis" : 0,  "hair" : "true", "beard" :"false" },
@@ -122,10 +121,6 @@ layers = [
     {"name": "crude_skull_helm",                    "layer": "helm", "min": 1, "max": 1, "value" : 5000, "con" : 130, "stam" : -7, "vis" : -2,  "hair" : "true", "beard" :"false" },
     {"name": "flat_top_face_plate",                 "layer": "helm", "min": 1, "max": 6, "value" : 2000, "con" : 130, "stam" : -4, "vis" : -2,  "hair" : "true", "beard" :"true" },
     {"name": "flat_top_helm",                       "layer": "helm", "min": 1, "max": 6, "value" : 800, "con" : 70, "stam" : -3, "vis" : 0,  "hair" : "true", "beard" :"false" },
-    {"name": "goblin_chain_helm",                   "layer": "top", "min": 1, "max": 1, "value" : 780, "con" : 70, "stam" : -6, "vis" : -1,  "hair" : "true", "beard" :"false" },
-    {"name": "goblin_leather_helm",                 "layer": "top", "min": 1, "max": 1, "value" : 375, "con" : 45, "stam" : -3, "vis" : 0,  "hair" : "true", "beard" :"false" },
-    {"name": "goblin_leather_mask",                 "layer": "top", "min": 1, "max": 1, "value" : 310, "con" : 40, "stam" : -2, "vis" : 0,  "hair" : "true", "beard" :"false" },
-    {"name": "goblin_spiked_helm",                  "layer": "top", "min": 1, "max": 1, "value" : 1200, "con" : 90, "stam" : -8, "vis" : -2,  "hair" : "true", "beard" :"false" },
     {"name": "great_helm",                          "layer": "helm", "min": 1, "max": 6, "value" : 3500, "con" : 220, "stam" : -12, "vis" : -3,  "hair" : "true", "beard" :"false" },
     {"name": "heavy_plate_helm",                    "layer": "helm", "min": 1, "max": 2, "value" : 1300, "con" : 170, "stam" : -15, "vis" : -3,  "hair" : "true", "beard" :"false" },
     {"name": "heavy_spiked_helm",                   "layer": "helm", "min": 1, "max": 1, "value" : 5000, "con" : 150, "stam" : -9, "vis" : -2,  "hair" : "true", "beard" :"true" },
@@ -139,14 +134,10 @@ layers = [
     {"name": "norman_helm",                         "layer": "helm", "min": 1, "max": 5, "value" : 550, "con" : 50, "stam" : -2, "vis" : -1,  "hair" : "true", "beard" :"false" },
     {"name": "orc_double_helm",                     "layer": "helm", "min": 1, "max": 1, "value" : 1600, "con" : 220, "stam" : -20, "vis" : -3,  "hair" : "true", "beard" :"false" },
     {"name": "orc_great_helm",                      "layer": "helm", "min": 1, "max": 1, "value" : 3000, "con" : 420, "stam" : -35, "vis" : -4,  "hair" : "true", "beard" :"false" },
-    {"name": "orc_horn_mask",                       "layer": "top", "min": 1, "max": 1, "value" : 300, "con" : 60, "stam" : -7, "vis" : 0,  "hair" : "true", "beard" :"false" },
-    {"name": "orc_leather_mask",                    "layer": "top", "min": 1, "max": 1, "value" : 100, "con" : 35, "stam" : -5, "vis" : 0,  "hair" : "true", "beard" :"false" },
-    {"name": "orc_metal_mask",                      "layer": "top", "min": 1, "max": 1, "value" : 800, "con" : 120, "stam" : -16, "vis" : -3,  "hair" : "true", "beard" :"false" },
     {"name": "orc_strapped_helm",                   "layer": "helm", "min": 1, "max": 1, "value" : 1000, "con" : 160, "stam" : -27, "vis" : 0,  "hair" : "true", "beard" :"false" },
     {"name": "bronze_helm",                         "layer": "helm", "min": 1, "max": 1, "value" : 2400, "con" : 190, "stam" : -9, "vis" : -2,  "hair" : "true", "beard" :"false" },
     {"name": "dentist_helmet",                      "layer": "helm", "min": 1, "max": 1, "value" : 1900, "con" : 160, "stam" : -11, "vis" : -3,  "hair" : "true", "beard" :"true" },
 
-    {"name": "cult_hood",                   "layer": "top", "min": 1, "max": 7, "value" : 600, "con" : 65, "stam" : -3, "vis" : -1,  "hair" : "true", "beard" :"false" },
     {"name": "rotten_flat_top_face_mask",   "layer": "helm", "min": 1, "max": 5, "value" : 1250, "con" : 150, "stam" : -12, "vis" : -3,  "hair" : "true", "beard" :"true" },
     {"name": "rotten_great_helm",           "layer": "helm", "min": 1, "max": 4, "value" : 1500, "con" : 160, "stam" : -13, "vis" : -3,  "hair" : "true", "beard" :"true" },
     {"name": "sallet",                      "layer": "helm", "min": 1, "max": 6, "value" : 7000, "con" : 185, "stam" : -9, "vis" : -1,  "hair" : "true", "beard" :"false" },
@@ -155,9 +146,20 @@ layers = [
     {"name": "swan_helm",                   "layer": "helm", "min": 1, "max": 1, "value" : 3000, "con" : 230, "stam" : -11, "vis" : -3,  "hair" : "true", "beard" :"true" },
     {"name": "tailed_conic",                "layer": "helm", "min": 1, "max": 1, "value" : 2200, "con" : 185, "stam" : -15, "vis" : -2,  "hair" : "true", "beard" :"false" },
     {"name": "viking_helm",                 "layer": "helm", "min": 1, "max": 6, "value" : 500, "con" : 45, "stam" : -2, "vis" : -1,  "hair" : "true", "beard" :"false" },
-    {"name": "sack",                        "layer": "vanity", "min": 1, "max": 12, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0,  "hair" : "true", "beard" :"true" },
-    {"name": "leather_hood_barb",           "layer": "top", "min": 1, "max": 1, "value" : 720, "con" : 105, "stam" : -12, "vis" : -3,  "hair" : "true", "beard" :"false" },
 
+
+    {"name": "orc_horn_mask",                       "layer": "top", "min": 1, "max": 1, "value" : 300, "con" : 60, "stam" : -7, "vis" : 0,  "hair" : "true", "beard" :"false" },
+    {"name": "orc_leather_mask",                    "layer": "top", "min": 1, "max": 1, "value" : 100, "con" : 35, "stam" : -5, "vis" : 0,  "hair" : "true", "beard" :"false" },
+    {"name": "orc_metal_mask",                      "layer": "top", "min": 1, "max": 1, "value" : 800, "con" : 120, "stam" : -16, "vis" : -3,  "hair" : "true", "beard" :"false" },
+
+    {"name": "goblin_chain_helm",                   "layer": "top", "min": 1, "max": 1, "value" : 780, "con" : 70, "stam" : -6, "vis" : -1,  "hair" : "true", "beard" :"false" },
+    {"name": "goblin_leather_helm",                 "layer": "top", "min": 1, "max": 1, "value" : 375, "con" : 45, "stam" : -3, "vis" : 0,  "hair" : "true", "beard" :"false" },
+    {"name": "goblin_leather_mask",                 "layer": "top", "min": 1, "max": 1, "value" : 310, "con" : 40, "stam" : -2, "vis" : 0,  "hair" : "true", "beard" :"false" },
+    {"name": "goblin_spiked_helm",                  "layer": "top", "min": 1, "max": 1, "value" : 1200, "con" : 90, "stam" : -8, "vis" : -2,  "hair" : "true", "beard" :"false" },
+
+
+    {"name": "cult_hood",               "layer": "top", "min": 1, "max": 7, "value" : 600, "con" : 65, "stam" : -3, "vis" : -1,  "hair" : "true", "beard" :"false" },
+    {"name": "leather_hood_barb",       "layer": "top", "min": 1, "max": 1, "value" : 720, "con" : 105, "stam" : -12, "vis" : -3,  "hair" : "true", "beard" :"false" },
     {"name": "golden_helm",             "layer": "top", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0,  "hair" : "true", "beard" :"true" },
     {"name": "ancient_crown",           "layer": "top", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0,  "hair" : "false", "beard" :"false" },
     {"name": "goblin_leaf_helm",        "layer": "top", "min": 1, "max": 1, "value" : 30, "con" : 10, "stam" : -1, "vis" : 0,  "hair" : "true", "beard" :"false" },
@@ -187,6 +189,9 @@ layers = [
     {"name": "golden_mask",             "layer": "top", "min": 1, "max": 1, "value" : 3000, "con" : 100, "stam" : -6, "vis" : 0,  "hair" : "false", "beard" :"true" },
     {"name": "warlock_skull",           "layer": "top", "min": 1, "max": 3, "value" : 2000, "con" : 90, "stam" : -4, "vis" : 0,  "hair" : "false", "beard" :"true" },
 
+
+    {"name": "hood_cloth_square",   "layer": "vanity", "min": 1, "max": 1, "value" : 60, "con" : 30, "stam" : -1, "vis" : 0,  "hair" : "true", "beard" :"false" },
+    {"name": "sack",                "layer": "vanity", "min": 1, "max": 12, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0,  "hair" : "true", "beard" :"true" },
     {"name": "antler",              "layer": "vanity", "min": 1, "max": 1, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0,  "hair" : "false", "beard" :"false" },
     {"name": "bear_head",           "layer": "vanity", "min": 1, "max": 1, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0,  "hair" : "true", "beard" :"false" },
     {"name": "beret",               "layer": "vanity", "min": 1, "max": 1, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0,  "hair" : "true", "beard" :"false" },
