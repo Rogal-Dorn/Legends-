@@ -337,19 +337,7 @@ this.legend_transformed_boar_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("head").setHorizontalFlipping(0);
 		actor.getSprite("injury").setHorizontalFlipping(0);
 
-		if (("State" in this.Tactical) && this.Tactical.State != null)
-		{
-			if (actor.getTile().IsVisibleForPlayer)
-			{
-				if (this.Const.Tactical.HideParticles.len() != 0)
-				{
-					for( local i = 0; i < this.Const.Tactical.HideParticles.len(); i = ++i )
-					{
-						this.Tactical.spawnParticleEffect(false, this.Const.Tactical.HideParticles[i].Brushes, actor.getTile(), this.Const.Tactical.HideParticles[i].Delay, this.Const.Tactical.HideParticles[i].Quantity, this.Const.Tactical.HideParticles[i].LifeTimeQuantity, this.Const.Tactical.HideParticles[i].SpawnRate, this.Const.Tactical.HideParticles[i].Stages);
-					}
-				}
-			}
-		}
+
 
 		actor.getSkills().removeByID("actives.legend_boar_charge");
 		actor.getSkills().removeByID("actives.legend_boar_gore");

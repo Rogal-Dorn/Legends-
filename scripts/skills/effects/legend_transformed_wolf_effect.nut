@@ -141,6 +141,7 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("head").setBrush("were_wolf_head_0" + this.Math.rand(1, 3));
 		actor.getSprite("body").setHorizontalFlipping(1);
 		actor.getSprite("head").setHorizontalFlipping(1);
+		actor.getSprite("socket").setBrush("bust_base_beasts");
 		actor.getSprite("armor").Alpha = 10;
 		actor.getSprite("helmet").Alpha = 10;
 		actor.getSprite("shield_icon").Alpha = 10;
@@ -375,18 +376,7 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("body").setHorizontalFlipping(0);
 		actor.getSprite("head").setHorizontalFlipping(0);
 		actor.getSprite("injury").setHorizontalFlipping(0);
-		if (("State" in this.Tactical) && this.Tactical.State != null) {
-			if (actor.getTile().IsVisibleForPlayer)
-			{
-				if (this.Const.Tactical.HideParticles.len() != 0)
-				{
-					for( local i = 0; i < this.Const.Tactical.HideParticles.len(); i = ++i )
-					{
-						this.Tactical.spawnParticleEffect(false, this.Const.Tactical.HideParticles[i].Brushes, actor.getTile(), this.Const.Tactical.HideParticles[i].Delay, this.Const.Tactical.HideParticles[i].Quantity, this.Const.Tactical.HideParticles[i].LifeTimeQuantity, this.Const.Tactical.HideParticles[i].SpawnRate, this.Const.Tactical.HideParticles[i].Stages);
-					}
-				}
-			}
-		}
+
 
 
 		actor.getSkills().removeByID("actives.werewolf_claws");
