@@ -1860,7 +1860,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendInsects = "Unleash a horde of insects on your enemy, halving their melee skill, melee defense, ranged skill, ranged defense and initiative",
 	LegendForwardPush = "Direct your troops to attack at once, granting either [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] melee or ranged skill to all allies within [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] tiles for one turn",
 	LegendChainLightning = "Unleash an arcing barrage that strikes an opponent and sending sparks on to another 3 enemies, dealing additional damage and ignoring armor. Requires a staff",
-	LegendComposure = "Train to keep your cool, under even the most challenging circumstances. Grants immunity to stun and daze effects. \n[color=#0b0084]From the Composure perk group[/color]",
+	LegendComposure = "Train to keep your cool, under even the most challenging circumstances. Grants immunity to stun. \n[color=#0b0084]From the Composure perk group[/color]",
 	LegendNightvision = "Use your superior vision and training to spot targets in the gloom, and grant that vision to your allies",
 	LegendMasteryStaves = "Master the art of fighting with staves. Use 25% less fatigue when using Staff Bash or Staff Knock Out, increases the daze chance when using Staves. Also reduces costs for Missile, Revolt, Entice, Chain Lightning and Firefield. \n[color=#0b0084]From the Staff perk group[/color]",
 	LegendGruesomeFeast = "Taste of the forbidden flesh. Devour a recently departed corpse to gain strength and restore your own health by [color=" + this.Const.UI.Color.PositiveValue + "]50[/color] ",
