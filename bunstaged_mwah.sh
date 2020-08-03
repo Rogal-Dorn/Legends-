@@ -31,4 +31,4 @@ cd ../bin
 cd ../battlebrothers
 
 
-# read -p "Finished"
+read -p "Finished"
