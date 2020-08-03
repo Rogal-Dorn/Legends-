@@ -382,7 +382,7 @@ this.legend_transformed_tree_effect <- this.inherit("scripts/skills/skill", {
 			}
 		}
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Offhand));
-
+		this.removeSelf();
 
 	}
 

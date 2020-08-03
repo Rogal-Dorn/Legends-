@@ -58,46 +58,37 @@ this.legend_ursathropy_injury <- this.inherit("scripts/skills/injury_permanent/p
 	function onTurnStart()
 	{
 		local actor = this.getContainer().getActor();
-		if (!actor.getSkills().hasSkill("perk.legend_master_anger"))
+		if(!actor.getSkills().hasSkill("effect.legend_transformed_wolf") && !actor.getSkills().hasSkill("effect.legend_transformed_bear") && !actor.getSkills().hasSkill("effect.legend_transformed_boar") && !actor.getSkills().hasSkill("effect.legend_transformed_rat") && !actor.getSkills().hasSkill("effect.legend_transformed_tree") )
 		{
-			local r = this.Math.rand(1,10);
-			local day = this.World.getTime().Days;
-			local month = day / 28;
-			local monthfloor = this.Math.floor(month);
-			
-			if (r == 1 && this.World.getTime().IsDaytime)
+			if (!actor.getSkills().hasSkill("perk.legend_master_anger"))
 			{
-					
-				if (!actor.getSkills().hasSkill("effect.legend_transformed_bear") && month != monthfloor)
+				local r = this.Math.rand(1,10);
+				local day = this.World.getTime().Days;
+				local month = day / 28;
+				local monthfloor = this.Math.floor(month);
+				
+				if (r == 1 && this.World.getTime().IsDaytime)
 				{
 					actor.getSkills().add(this.new("scripts/skills/effects/legend_transformed_bear_effect"));
 				}
+				
+				if (r <= 2 && !this.World.getTime().IsDaytime && month != monthfloor)
+				{
+					actor.getSkills().add(this.new("scripts/skills/effects/legend_transformed_bear_effect"));
+				}	
+				
+				if (month == monthfloor && !this.World.getTime().IsDaytime)	
+				{
+					actor.getSkills().add(this.new("scripts/skills/effects/legend_transformed_bear_effect"));
+				}	
 			}
-			
-			if (r <= 2 && !this.World.getTime().IsDaytime && month != monthfloor)
+			else
 			{
-				if (!actor.getSkills().hasSkill("effect.legend_transformed_bear"))
-				{
-					actor.getSkills().add(this.new("scripts/skills/effects/legend_transformed_bear_effect"));
-				}
-			}	
-			
-			if (month == monthfloor && !this.World.getTime().IsDaytime)	
-			{
-				if (!actor.getSkills().hasSkill("effect.legend_transformed_bear"))
-				{
-					actor.getSkills().add(this.new("scripts/skills/effects/legend_transformed_bear_effect"));
-				}
-			}	
-		}
-		else
-		{
-			if (!actor.getSkills().hasSkill("active.legend_transform_into_bear"))
-			{
+
 				actor.getSkills().add(this.new("scripts/skills/actives/legend_transform_into_bear"));
+
 			}
 		}
-	
 	}
 
 });

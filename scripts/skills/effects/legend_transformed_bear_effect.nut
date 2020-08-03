@@ -63,6 +63,7 @@ this.legend_transformed_bear_effect <- this.inherit("scripts/skills/skill", {
 		{
 			if (this.m.Container.hasSkill("perk.legend_surpress_urges") && !this.m.Container.hasSkill("perk.legend_control_instincts"))
 			{
+			this.logDebug(this.getName() + " AI set to bear");
 			actor.setAIAgent(this.new("scripts/ai/tactical/agents/bear_agent"));
 			actor.getAIAgent().setActor(actor);
 			}
@@ -72,6 +73,7 @@ this.legend_transformed_bear_effect <- this.inherit("scripts/skills/skill", {
 			}
 			else	
 			{
+			this.logDebug(this.getName() + " AI set to beast bear");
 			actor.setFaction(this.Const.Faction.Beasts);		
 			actor.setAIAgent(this.new("scripts/ai/tactical/agents/bear_agent"));
 			actor.getAIAgent().setActor(actor);
@@ -117,7 +119,7 @@ this.legend_transformed_bear_effect <- this.inherit("scripts/skills/skill", {
 
 		actor.getSprite("body").setBrush("were_bear_body");
 		actor.getSprite("head").setBrush("were_bear_head");
-		actor.getSprite("injury").setBrush("were_injured");
+		actor.getSprite("injury").setBrush("were_bear_injured");
 		actor.getSprite("body").setHorizontalFlipping(1);
 		actor.getSprite("head").setHorizontalFlipping(1);
 		actor.getSprite("injury").setHorizontalFlipping(1);
@@ -264,8 +266,8 @@ this.legend_transformed_bear_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("armor_upgrade_front").Alpha = 10;
 		actor.getSprite("socket").Alpha = 10;
 
-		_properties.HitpointsMult *= 1.5;
-
+		_properties.HitpointsMult *= 2.0;
+		_properties.MeleeDefenseMult *= 1.5;
 	}
 
 	function onCombatFinished()
@@ -334,6 +336,10 @@ this.legend_transformed_bear_effect <- this.inherit("scripts/skills/skill", {
 		{
 			this.removeSelf();
 		}
+		local actor = this.getContainer().getActor();
+		actor.setFaction(this.m.OriginalFaction);
+		actor.getSprite("socket").setBrush(this.m.OriginalSocket);
+		actor.setDirty(true);
 	}
 });
 

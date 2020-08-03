@@ -34,7 +34,15 @@ this.legend_transformed_rat_effect <- this.inherit("scripts/skills/skill", {
 					id = 11,
 					type = "text",
 					icon = "ui/icons/special.png",
-					text = "[color=" + this.Const.UI.Color.PositiveValue + "]-1[/color] AP per tile moved"
+					text = "Poison bite"
+				}
+			]);
+			ret.extend([
+				{
+					id = 11,
+					type = "text",
+					icon = "ui/icons/special.png",
+					text = "This character has lost control of themselves and may attack randomly. May still need your help to end their turn. "
 				}
 			]);
 		}
@@ -132,8 +140,9 @@ this.legend_transformed_rat_effect <- this.inherit("scripts/skills/skill", {
 		this.m.Head = actor.getSprite("head").getBrush().Name;
 
 		this.logDebug(this.getName() + " changing visuals");
-		actor.getSprite("body").setBrush("bust_rat_body_0" + this.Math.rand(1, 4));
-		actor.getSprite("head").setBrush("bust_rat_head_0" + this.Math.rand(1, 4));
+		local r = this.Math.rand(1, 5);
+		actor.getSprite("body").setBrush("bust_rat_body_0" + r);
+		actor.getSprite("head").setBrush("bust_rat_head_0" + r);
 		actor.getSprite("body").setHorizontalFlipping(1);
 		actor.getSprite("head").setHorizontalFlipping(1);
 		actor.getSprite("armor").Alpha = 10;
@@ -236,7 +245,10 @@ this.legend_transformed_rat_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSkills().removeByID("actives.legend_rat_claws");
 		actor.getSkills().removeByID("actives.legend_rat_bite");
 		actor.getSkills().removeByID("racial.spider");
-
+		if (!actor.getSkills().hasSkill("perk.footwork"))
+		{
+			actor.getSkills().removeByID("actives.footwork");
+		}
 		local items = actor.getItems();
 		items.getData()[this.Const.ItemSlot.Offhand][0] = null;
 		items.getData()[this.Const.ItemSlot.Mainhand][0] = null;
@@ -318,11 +330,14 @@ this.legend_transformed_rat_effect <- this.inherit("scripts/skills/skill", {
 		{
 			this.m.Container.add(this.new("scripts/skills/racial/spider_racial"));
 		}	
-		
+		if (!this.m.Container.hasSkill("actives.footwork"))
+		{
+			this.m.Container.add(this.new("scripts/skills/actives/footwork"));
+		}
 		this.logDebug(this.getName() + " onUpdate setting properties");
-		_properties.MovementAPCostAdditional += -1;
-		_properties.MovementFatigueCostMult *= 0.5;
-		
+		_properties.ActionPointsMult *= 1.25;
+		_properties.MeleeSkillMult *= 1.25;
+		_properties.BraveryMult *= 0.75;
 		this.logDebug(this.getName() + " onUpdate done");
 
 	}
