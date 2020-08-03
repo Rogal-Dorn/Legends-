@@ -1,11 +1,11 @@
-this.legend_demonalp_helmet_blueprint <- this.inherit("scripts/crafting/blueprint", {
+this.legend_demonalp_helmet_layered_blueprint <- this.inherit("scripts/crafting/blueprint", {
 	m = {},
 	function create()
 	{
 		this.blueprint.create();
-		this.m.ID = "blueprint.legend_demonalp_helmet";
+		this.m.ID = "blueprint.legend_demonalp_helmet_layered";
 		this.m.Type = this.Const.Items.ItemType.Armor;
-		this.m.PreviewCraftable = this.new("scripts/items/helmets/legendary/legend_demonalp_helmet");
+		this.m.PreviewCraftable = this.new("scripts/items/legend_helmets/vanity/legend_helmet_demon_alp_helm");
 		this.m.Cost = 2500;
 		local ingredients = [
 			{
@@ -17,8 +17,8 @@ this.legend_demonalp_helmet_blueprint <- this.inherit("scripts/crafting/blueprin
 				Num = 1
 			},
 			{
-				Script = "scripts/items/helmets/bascinet_with_mail",
-				Num = 1,
+				Script = "scripts/items/legend_helmets/top/legend_helmet_facemask",
+				Num = 1
 			}
 		];
 		this.init(ingredients);
@@ -30,16 +30,15 @@ this.legend_demonalp_helmet_blueprint <- this.inherit("scripts/crafting/blueprin
 		this.initSkills(skills);
 	}
 
+
 	function isQualified()
 	{
-		return !this.World.LegendsMod.Configs().LegendArmorsEnabled();
+		return this.World.LegendsMod.Configs().LegendArmorsEnabled();
 	}
 
 	function onCraft( _stash )
 	{
-			local item = this.new("scripts/items/helmets/legendary/legend_demonalp_helmet");
-			item.m.Name = "";
-			_stash.add(item);
+		_stash.add(this.new("scripts/items/legend_helmets/vanity/legend_helmet_demon_alp_helm"));
 	}
 
 });
