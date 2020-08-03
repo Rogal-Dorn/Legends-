@@ -1,4 +1,4 @@
-this.mercenary_karl <- this.inherit("scripts/entity/tactical/human", {
+this.mercenary_karl <- this.inherit("scripts/entity/tactical/humans/special/mercenary_custom", {
 	m = {
 		Variant = 1,
 		LastBodyPartHit = this.Const.BodyPart.Body,
@@ -6,8 +6,8 @@ this.mercenary_karl <- this.inherit("scripts/entity/tactical/human", {
 	},
 	function create()
 	{
-		this.m.Type = this.Const.EntityType.GoblinWolfrider;
-		this.m.XP = this.Const.Tactical.Actor.GoblinWolfrider.XP;
+		this.m.Type = this.Const.EntityType.Karl;
+		this.m.XP = this.Const.Tactical.Actor.Karl.XP;
 		this.human.create();
 		this.m.ShakeLayers = [
 			[
@@ -55,7 +55,8 @@ this.mercenary_karl <- this.inherit("scripts/entity/tactical/human", {
 		this.human.onInit();
 
 		local b = this.m.BaseProperties;
-		b.setValues(this.Const.Tactical.Actor.GoblinWolfrider);
+		b.setValues(this.Const.Tactical.Actor.Karl);
+		b.IsSpecializedInPolearms = true;
 		this.m.ActionPoints = b.ActionPoints;
 		this.m.Hitpoints = b.Hitpoints;
 		this.m.CurrentProperties = clone b;
@@ -111,6 +112,16 @@ this.mercenary_karl <- this.inherit("scripts/entity/tactical/human", {
 		wolf_bite.setRestrained(true);
 		wolf_bite.m.ActionPointCost = 0;
 		this.m.Skills.add(wolf_bite);
+
+		this.getSprite("socket").setBrush("bust_base_militia");
+
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_killing_frenzy"));
+        this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));
+        this.m.Skills.add(this.new("scripts/skills/perks/perk_berserk"));
+        this.m.Skills.add(this.new("scripts/skills/perks/perk_overwhelm"));
+
+
+
 	}
 
 	function onAfterInit()
