@@ -13,8 +13,8 @@ this.$name <- this.inherit("scripts/items/legend_helmets/legend_helmet", {
 		this.m.ID = "$id";
 		this.m.Name = "$title";
 		this.m.Description = "$desc";
-		this.m.Variant = 1;
 		this.m.Variants = $variants;
+        this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
@@ -50,8 +50,8 @@ this.$name <- this.inherit("scripts/items/legend_helmets/legend_helmet_upgrade",
 		this.m.Name = "$title";
 		this.m.Description = "$desc";
 		this.m.ArmorDescription = this.m.Description;
-		this.m.Variant = 1;
 		this.m.Variants = $variants;
+        this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
@@ -75,6 +75,55 @@ this.$name <- this.inherit("scripts/items/legend_helmets/legend_helmet_upgrade",
 		this.m.Icon = "legend_helmets/$icon" + "_" + variant + ".png";
 		this.m.OverlayIcon = this.m.Icon;
 		this.m.OverlayIconLarge = this.m.OverlayIcon;
+	}
+});
+'''
+
+NamedLayer = '''
+this.$name <- this.inherit("scripts/items/legend_helmets/legend_named_helmet_upgrade", {
+	m = {},
+	function create()
+	{
+		this.legend_named_helmet_upgrade.create();
+		this.m.Type = this.Const.Items.HelmetUpgrades.$type;
+		this.m.ID = "$id";
+		this.m.Name = "$title";
+        this.m.NameList = $names;
+		this.m.Description = "$desc";
+		this.m.ArmorDescription = this.m.Description;
+		this.m.Variants = $variants;
+        this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
+		this.updateVariant();
+		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
+		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
+		this.m.Value = $value;
+		this.m.Condition = $condition;
+		this.m.ConditionMax = $condition;
+		this.m.StaminaModifier = $stamina;
+		this.m.Vision = $vision;
+		this.m.IsLowerVanity = $lower;
+		this.m.HideHair = $hair;
+		this.m.HideBeard = $beard;
+	}
+
+	function updateVariant()
+	{
+		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
+		this.m.Sprite = "$brush" + "_" + variant;
+		this.m.SpriteDamaged = "$brush" + "_" + variant + "_damaged";
+		this.m.SpriteCorpse = "$brush" + "_" + variant + "_dead";
+		this.m.IconLarge = "";
+		this.m.Icon = "legend_helmets/$icon" + "_" + variant + ".png";
+		this.m.OverlayIcon = this.m.Icon;
+		this.m.OverlayIconLarge = this.m.OverlayIcon;
+	}
+
+	function randomizeValues()
+	{
+        this.m.Vision = this.Math.rand($rminViz, $rmaxViz);
+		this.m.StaminaModifier = this.Math.rand($rminStam, $rmaxStam) * -1;
+		this.m.Condition = this.Math.rand($rminCond, $rmaxCond);
+		this.m.ConditionMax = this.m.Condition;
 	}
 });
 '''
@@ -130,7 +179,8 @@ layers = [
     {"name": "legend_ancient_legionaire_restored",  "layer": "helm", "min": 1, "max": 1, "value" : 2000, "con" : 60, "stam" : -3, "vis" : -2,  "hair" : "true", "beard" :"false" },
     {"name": "legend_frogmouth",                    "layer": "helm", "min": 1, "max": 1, "value" : 6000, "con" : 265, "stam" : -13, "vis" : -3,  "hair" : "true", "beard" :"true" },
     {"name": "legend_armet",                        "layer": "helm", "min": 1, "max": 1, "value" : 6000, "con" : 260, "stam" : -13, "vis" : -2,  "hair" : "true", "beard" :"true" },
-    {"name": "legend_armet_01_named",               "layer": "helm", "min": 1, "max": 3, "value" : 6000, "con" : 260, "stam" : -13, "vis" : -2,  "hair" : "true", "beard" :"true" },
+    {"name": "legend_armet_01_named",               "layer": "helm", "min": 1, "max": 3, "value" : 6000, "con" : 260, "stam" : -13, "vis" : -2,  "hair" : "true", "beard" :"true", \
+         "named" : True, "rminViz" : -1, "rmaxViz" : -2, "rminStam" : -10, "rmaxStam": -13, "rminCond" : 260, "rmaxCond" : 285,  "names" : []},
     {"name": "nordic_helm",                         "layer": "helm", "min": 1, "max": 6, "value" : 2600, "con" : 185, "stam" : -10, "vis" : -1,  "hair" : "true", "beard" :"false" },
     {"name": "norman_helm",                         "layer": "helm", "min": 1, "max": 5, "value" : 550, "con" : 50, "stam" : -2, "vis" : -1,  "hair" : "true", "beard" :"false" },
     {"name": "orc_double_helm",                     "layer": "helm", "min": 1, "max": 1, "value" : 1600, "con" : 220, "stam" : -20, "vis" : -3,  "hair" : "true", "beard" :"false" },
@@ -169,7 +219,8 @@ layers = [
     {"name": "eyemask",                 "layer": "top", "min": 1, "max": 2, "value" : 250, "con" : 335, "stam" : -3, "vis" : -1,  "hair" : "false", "beard" :"false" },
     {"name": "facemask",                "layer": "top", "min": 1, "max": 6, "value" : 1200, "con" : 90, "stam" : -7, "vis" : -2,  "hair" : "false", "beard" :"true" },
     {"name": "faceplate_full",          "layer": "top", "min": 1, "max": 1, "value" : 1700, "con" : 110, "stam" : -9, "vis" : -3,  "hair" : "false", "beard" :"true" },
-    {"name": "faceplate_full_01_named", "layer": "top", "min": 1, "max": 3, "value" : 1700, "con" : 110, "stam" : -9, "vis" : -3,  "hair" : "false", "beard" :"true" },
+    {"name": "faceplate_full_01_named", "layer": "top", "min": 1, "max": 3, "value" : 1700, "con" : 110, "stam" : -9, "vis" : -3,  "hair" : "false", "beard" :"true", \
+        "named" : True, "rminViz" : -2, "rmaxViz" : -3, "rminStam" : -7, "rmaxStam": -9, "rminCond" : 110, "rmaxCond" : 120,  "names" : []},
     {"name": "faceplate_gold",          "layer": "top", "min": 1, "max": 1, "value" : 1551, "con" : 105, "stam" : -8, "vis" : -2,  "hair" : "false", "beard" :"true" },
     {"name": "faceplate_long",          "layer": "top", "min": 1, "max": 1, "value" : 700, "con" : 65, "stam" : -5, "vis" : -2,  "hair" : "false", "beard" :"true" },
     {"name": "faceplate_pointed",       "layer": "top", "min": 1, "max": 1, "value" : 1320, "con" : 95, "stam" : -7, "vis" : -2,  "hair" : "false", "beard" :"true" },
@@ -581,9 +632,13 @@ def main():
         layer = d["layer"]
 
         lower = "false"
+
         temp = Layer
         if "base" in d:
             temp = BaseLayer
+        if "named" in d:
+            temp = NamedLayer
+
         if "lowervanity" in d:
             layer += "_lower"
             lower = "true"
@@ -619,7 +674,14 @@ def main():
             icon = "inventory_" + d["name"],
             lower = lower,
             hair = d["hair"],
-            beard = d["beard"]
+            beard = d["beard"],
+            names = d["names"] if "names" in d else [],
+            rminViz = d["rminViz"] if "rminViZ" in d else 0,
+            rmaxViz = d["rmaxVix"] if "rmaxVix" in d else 0,
+            rminStam = d["rminStam"] if "rminStam" in d else 0,
+            rmaxStam = d["rmaxStam"] if "rmaxStam" in d else 0,
+            rminCond = d["rminCond"] if "rminCond" in d else 0,
+            rmaxCond = d["rmaxCond"] if "rmaxCond" in d else 0,
         )
         s = Template(temp)
         text = s.substitute(opts)

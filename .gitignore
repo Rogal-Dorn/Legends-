@@ -1,9 +1,13 @@
 brushes/
+helmets/
+
 gfx/*.png
 !gfx/skills*
 !gfx/ui*
 *.cnut
 *.DS_Store
+
+
 unpacked/**/*dead_arrows.png
 unpacked/**/*dead_javelin.png
 unpacked/legend_armor/metadata.xml
