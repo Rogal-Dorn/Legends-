@@ -76,9 +76,7 @@ layers = [
     {"name": "bust_legend_plate_cuirass", "layer": "plate"},
     {"name": "bust_legend_plate_full", "layer": "plate"},
     {"name": "bust_legend_plate_full_greaves", "layer": "plate"},
-    {"name": "bust_legend_plate_full_greaves_named_01", "layer": "plate"},
-    {"name": "bust_legend_plate_full_greaves_named_02", "layer": "plate"},
-    {"name": "bust_legend_plate_full_greaves_named_03", "layer": "plate"},
+    {"name": "bust_legend_plate_full_greaves_named", "layer": "plate", "min" : 1 , "max" : 3},
     {"name": "bust_legend_plate_full_greaves_painted", "layer": "plate"},
     {"name": "bust_legend_scale_coat_rotten", "layer": "plate"},
     {"name": "bust_legend_scale_coat", "layer": "plate"},
@@ -97,154 +95,6 @@ layers = [
 
     {"name": "bust_legend_runed", "layer": "rune"}
 ]
-
-
-helmets = r"""
-<sprite id="legendhelms_barb_chain_scarf_01" offsetY="35" ic="FF4E5053" width="184" height="222" img="entity\legend_helmets\hood\barb_chain_scarf_01.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_barb_chain_scarf_02" offsetY="35" ic="FF4E5053" width="184" height="222" img="entity\legend_helmets\hood\barb_chain_scarf_02.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_barb_chain_scarf_03" offsetY="35" ic="FF4E5053" width="184" height="222" img="entity\legend_helmets\hood\barb_chain_scarf_03.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_barb_chain_scarf_04" offsetY="35" ic="FF4E5053" width="184" height="222" img="entity\legend_helmets\hood\barb_chain_scarf_04.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_barb_chain_scarf_05" offsetY="35" ic="FF4E5053" width="184" height="222" img="entity\legend_helmets\hood\barb_chain_scarf_05.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_barb_chain_scarf_01_damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="entity\legend_helmets\hood\barb_chain_scarf_01_damaged.png" left="-39" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_barb_chain_scarf_02_damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="entity\legend_helmets\hood\barb_chain_scarf_02_damaged.png" left="-39" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_barb_chain_scarf_03_damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="entity\legend_helmets\hood\barb_chain_scarf_03_damaged.png" left="-39" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_barb_chain_scarf_04_damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="entity\legend_helmets\hood\barb_chain_scarf_04_damaged.png" left="-39" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_barb_chain_scarf_05_damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="entity\legend_helmets\hood\barb_chain_scarf_05_damaged.png" left="-39" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_barb_chain_scarf_01_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\hood\barb_chain_scarf_01_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="legendhelms_barb_chain_scarf_02_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\hood\barb_chain_scarf_02_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="legendhelms_barb_chain_scarf_03_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\hood\barb_chain_scarf_03_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="legendhelms_barb_chain_scarf_04_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\hood\barb_chain_scarf_04_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="legendhelms_barb_chain_scarf_05_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\hood\barb_chain_scarf_05_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="legendhelms_chain_hood_01" offsetY="35" ic="FF4E5053" width="184" height="222" img="entity\legend_helmets\hood\chain_hood_01.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_chain_hood_02" offsetY="35" ic="FF4E5053" width="184" height="222" img="entity\legend_helmets\hood\chain_hood_02.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_chain_hood_03" offsetY="35" ic="FF4E5053" width="184" height="222" img="entity\legend_helmets\hood\chain_hood_03.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_chain_hood_04" offsetY="35" ic="FF4E5053" width="184" height="222" img="entity\legend_helmets\hood\chain_hood_04.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_chain_hood_01_damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="entity\legend_helmets\hood\chain_hood_01_damaged.png" left="-39" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_chain_hood_02_damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="entity\legend_helmets\hood\chain_hood_02_damaged.png" left="-39" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_chain_hood_03_damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="entity\legend_helmets\hood\chain_hood_03_damaged.png" left="-39" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_chain_hood_04_damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="entity\legend_helmets\hood\chain_hood_04_damaged.png" left="-39" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_chain_hood_01_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\hood\chain_hood_01_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="legendhelms_chain_hood_02_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\hood\chain_hood_02_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="legendhelms_chain_hood_03_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\hood\chain_hood_03_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="legendhelms_chain_hood_04_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\hood\chain_hood_04_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="legendhelms_chain_hood_full_01" offsetY="35" ic="FF4E5053" width="184" height="222" img="entity\legend_helmets\hood\chain_hood_full_01.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_chain_hood_full_02" offsetY="35" ic="FF4E5053" width="184" height="222" img="entity\legend_helmets\hood\chain_hood_full_02.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_chain_hood_full_03" offsetY="35" ic="FF4E5053" width="184" height="222" img="entity\legend_helmets\hood\chain_hood_full_03.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_chain_hood_full_04" offsetY="35" ic="FF4E5053" width="184" height="222" img="entity\legend_helmets\hood\chain_hood_full_04.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_chain_hood_full_05" offsetY="35" ic="FF4E5053" width="184" height="222" img="entity\legend_helmets\hood\chain_hood_full_05.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_chain_hood_full_06" offsetY="35" ic="FF4E5053" width="184" height="222" img="entity\legend_helmets\hood\chain_hood_full_06.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_chain_hood_full_01_damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="entity\legend_helmets\hood\chain_hood_full_01_damaged.png" left="-39" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_chain_hood_full_02_damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="entity\legend_helmets\hood\chain_hood_full_02_damaged.png" left="-39" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_chain_hood_full_03_damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="entity\legend_helmets\hood\chain_hood_full_03_damaged.png" left="-39" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_chain_hood_full_04_damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="entity\legend_helmets\hood\chain_hood_full_04_damaged.png" left="-39" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_chain_hood_full_05_damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="entity\legend_helmets\hood\chain_hood_full_05_damaged.png" left="-39" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_chain_hood_full_06_damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="entity\legend_helmets\hood\chain_hood_full_06_damaged.png" left="-39" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_chain_hood_full_01_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\hood\chain_hood_full_01_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="legendhelms_chain_hood_full_02_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\hood\chain_hood_full_02_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="legendhelms_chain_hood_full_03_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\hood\chain_hood_full_03_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="legendhelms_chain_hood_full_04_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\hood\chain_hood_full_04_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="legendhelms_chain_hood_full_05_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\hood\chain_hood_full_05_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="legendhelms_chain_hood_full_06_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\hood\chain_hood_full_06_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="legendhelms_chain_scarf_01" offsetY="35" ic="FF4E5053" width="184" height="222" img="entity\legend_helmets\hood\chain_scarf_01.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_chain_scarf_02" offsetY="35" ic="FF4E5053" width="184" height="222" img="entity\legend_helmets\hood\chain_scarf_02.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_chain_scarf_03" offsetY="35" ic="FF4E5053" width="184" height="222" img="entity\legend_helmets\hood\chain_scarf_03.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_chain_scarf_04" offsetY="35" ic="FF4E5053" width="184" height="222" img="entity\legend_helmets\hood\chain_scarf_04.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_chain_scarf_05" offsetY="35" ic="FF4E5053" width="184" height="222" img="entity\legend_helmets\hood\chain_scarf_05.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_chain_scarf_01_damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="entity\legend_helmets\hood\chain_scarf_01_damaged.png" left="-39" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_chain_scarf_02_damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="entity\legend_helmets\hood\chain_scarf_02_damaged.png" left="-39" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_chain_scarf_03_damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="entity\legend_helmets\hood\chain_scarf_03_damaged.png" left="-39" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_chain_scarf_04_damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="entity\legend_helmets\hood\chain_scarf_04_damaged.png" left="-39" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_chain_scarf_05_damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="entity\legend_helmets\hood\chain_scarf_05_damaged.png" left="-39" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_chain_scarf_01_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\hood\chain_scarf_01_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="legendhelms_chain_scarf_02_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\hood\chain_scarf_02_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="legendhelms_chain_scarf_03_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\hood\chain_scarf_03_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="legendhelms_chain_scarf_04_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\hood\chain_scarf_04_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="legendhelms_chain_scarf_05_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\hood\chain_scarf_05_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="legendhelms_cloth_scarf_01" offsetY="35" ic="FF4E5053" width="184" height="222" img="entity\legend_helmets\hood\cloth_scarf_01.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_cloth_scarf_02" offsetY="35" ic="FF4E5053" width="184" height="222" img="entity\legend_helmets\hood\cloth_scarf_02.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_cloth_scarf_03" offsetY="35" ic="FF4E5053" width="184" height="222" img="entity\legend_helmets\hood\cloth_scarf_03.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_cloth_scarf_04" offsetY="35" ic="FF4E5053" width="184" height="222" img="entity\legend_helmets\hood\cloth_scarf_04.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_cloth_scarf_05" offsetY="35" ic="FF4E5053" width="184" height="222" img="entity\legend_helmets\hood\cloth_scarf_05.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_cloth_scarf_01_damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="entity\legend_helmets\hood\cloth_scarf_01_damaged.png" left="-39" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_cloth_scarf_02_damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="entity\legend_helmets\hood\cloth_scarf_02_damaged.png" left="-39" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_cloth_scarf_03_damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="entity\legend_helmets\hood\cloth_scarf_03_damaged.png" left="-39" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_cloth_scarf_04_damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="entity\legend_helmets\hood\cloth_scarf_04_damaged.png" left="-39" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_cloth_scarf_05_damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="entity\legend_helmets\hood\cloth_scarf_05_damaged.png" left="-39" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_cloth_scarf_01_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\hood\cloth_scarf_01_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="legendhelms_cloth_scarf_02_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\hood\cloth_scarf_02_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="legendhelms_cloth_scarf_03_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\hood\cloth_scarf_03_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="legendhelms_cloth_scarf_04_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\hood\cloth_scarf_04_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="legendhelms_cloth_scarf_05_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\hood\cloth_scarf_05_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="legendhelms_goblin_scarf_01" offsetY="35" ic="FF4E5053" width="184" height="222" img="entity\legend_helmets\hood\goblin_scarf_01.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_goblin_scarf_02" offsetY="35" ic="FF4E5053" width="184" height="222" img="entity\legend_helmets\hood\goblin_scarf_02.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_goblin_scarf_03" offsetY="35" ic="FF4E5053" width="184" height="222" img="entity\legend_helmets\hood\goblin_scarf_03.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_goblin_scarf_04" offsetY="35" ic="FF4E5053" width="184" height="222" img="entity\legend_helmets\hood\goblin_scarf_04.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_goblin_scarf_01_damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="entity\legend_helmets\hood\goblin_scarf_01_damaged.png" left="-39" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_goblin_scarf_02_damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="entity\legend_helmets\hood\goblin_scarf_02_damaged.png" left="-39" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_goblin_scarf_03_damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="entity\legend_helmets\hood\goblin_scarf_03_damaged.png" left="-39" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_goblin_scarf_04_damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="entity\legend_helmets\hood\goblin_scarf_04_damaged.png" left="-39" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_goblin_scarf_01_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\hood\goblin_scarf_01_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="legendhelms_goblin_scarf_02_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\hood\goblin_scarf_02_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="legendhelms_goblin_scarf_03_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\hood\goblin_scarf_03_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="legendhelms_goblin_scarf_04_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\hood\goblin_scarf_04_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="legendhelms_leather_hood_01" offsetY="35" ic="FF4E5053" width="184" height="222" img="entity\legend_helmets\hood\leather_hood_01.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_leather_hood_02" offsetY="35" ic="FF4E5053" width="184" height="222" img="entity\legend_helmets\hood\leather_hood_02.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_leather_hood_03" offsetY="35" ic="FF4E5053" width="184" height="222" img="entity\legend_helmets\hood\leather_hood_03.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_leather_hood_04" offsetY="35" ic="FF4E5053" width="184" height="222" img="entity\legend_helmets\hood\leather_hood_04.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_leather_hood_05" offsetY="35" ic="FF4E5053" width="184" height="222" img="entity\legend_helmets\hood\leather_hood_05.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_leather_hood_01_damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="entity\legend_helmets\hood\leather_hood_01_damaged.png" left="-39" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_leather_hood_02_damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="entity\legend_helmets\hood\leather_hood_02_damaged.png" left="-39" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_leather_hood_03_damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="entity\legend_helmets\hood\leather_hood_03_damaged.png" left="-39" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_leather_hood_04_damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="entity\legend_helmets\hood\leather_hood_04_damaged.png" left="-39" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_leather_hood_05_damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="entity\legend_helmets\hood\leather_hood_05_damaged.png" left="-39" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_leather_hood_01_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\hood\leather_hood_01_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="legendhelms_leather_hood_02_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\hood\leather_hood_02_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="legendhelms_leather_hood_03_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\hood\leather_hood_03_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="legendhelms_leather_hood_04_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\hood\leather_hood_04_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="legendhelms_leather_hood_05_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\hood\leather_hood_05_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="legendhelms_padded_hood_01" offsetY="35" ic="FF4E5053" width="184" height="222" img="entity\legend_helmets\hood\padded_hood_01.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_padded_hood_02" offsetY="35" ic="FF4E5053" width="184" height="222" img="entity\legend_helmets\hood\padded_hood_02.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_padded_hood_03" offsetY="35" ic="FF4E5053" width="184" height="222" img="entity\legend_helmets\hood\padded_hood_03.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_padded_hood_01_damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="entity\legend_helmets\hood\padded_hood_01_damaged.png" left="-39" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_padded_hood_02_damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="entity\legend_helmets\hood\padded_hood_02_damaged.png" left="-39" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_padded_hood_03_damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="entity\legend_helmets\hood\padded_hood_03_damaged.png" left="-39" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_padded_hood_01_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\hood\padded_hood_01_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="legendhelms_padded_hood_02_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\hood\padded_hood_02_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="legendhelms_padded_hood_03_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\hood\padded_hood_03_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="legendhelms_patched_hood_01" offsetY="35" ic="FF4E5053" width="184" height="222" img="entity\legend_helmets\hood\patched_hood_01.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_patched_hood_01_damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="entity\legend_helmets\hood\patched_hood_01_damaged.png" left="-39" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_patched_hood_01_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\hood\patched_hood_01_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="legendhelms_rotten_chain_scarf_01" offsetY="35" ic="FF4E5053" width="184" height="222" img="entity\legend_helmets\hood\rotten_chain_scarf_01.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_rotten_chain_scarf_02" offsetY="35" ic="FF4E5053" width="184" height="222" img="entity\legend_helmets\hood\rotten_chain_scarf_02.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_rotten_chain_scarf_03" offsetY="35" ic="FF4E5053" width="184" height="222" img="entity\legend_helmets\hood\rotten_chain_scarf_03.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_rotten_chain_scarf_04" offsetY="35" ic="FF4E5053" width="184" height="222" img="entity\legend_helmets\hood\rotten_chain_scarf_04.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_rotten_chain_scarf_05" offsetY="35" ic="FF4E5053" width="184" height="222" img="entity\legend_helmets\hood\rotten_chain_scarf_05.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_rotten_chain_scarf_01_damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="entity\legend_helmets\hood\rotten_chain_scarf_01_damaged.png" left="-39" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_rotten_chain_scarf_02_damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="entity\legend_helmets\hood\rotten_chain_scarf_02_damaged.png" left="-39" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_rotten_chain_scarf_03_damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="entity\legend_helmets\hood\rotten_chain_scarf_03_damaged.png" left="-39" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_rotten_chain_scarf_04_damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="entity\legend_helmets\hood\rotten_chain_scarf_04_damaged.png" left="-39" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_rotten_chain_scarf_05_damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="entity\legend_helmets\hood\rotten_chain_scarf_05_damaged.png" left="-39" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_rotten_chain_scarf_01_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\hood\rotten_chain_scarf_01_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="legendhelms_rotten_chain_scarf_02_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\hood\rotten_chain_scarf_02_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="legendhelms_rotten_chain_scarf_03_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\hood\rotten_chain_scarf_03_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="legendhelms_rotten_chain_scarf_04_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\hood\rotten_chain_scarf_04_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="legendhelms_rotten_chain_scarf_05_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\hood\rotten_chain_scarf_05_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="legendhelms_simple_hood_01" offsetY="35" ic="FF4E5053" width="184" height="222" img="entity\legend_helmets\hood\simple_hood_01.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_simple_hood_02" offsetY="35" ic="FF4E5053" width="184" height="222" img="entity\legend_helmets\hood\simple_hood_02.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_simple_hood_03" offsetY="35" ic="FF4E5053" width="184" height="222" img="entity\legend_helmets\hood\simple_hood_03.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_simple_hood_04" offsetY="35" ic="FF4E5053" width="184" height="222" img="entity\legend_helmets\hood\simple_hood_04.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_simple_hood_05" offsetY="35" ic="FF4E5053" width="184" height="222" img="entity\legend_helmets\hood\simple_hood_05.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_simple_hood_01_damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="entity\legend_helmets\hood\simple_hood_01_damaged.png" left="-39" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_simple_hood_02_damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="entity\legend_helmets\hood\simple_hood_02_damaged.png" left="-39" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_simple_hood_03_damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="entity\legend_helmets\hood\simple_hood_03_damaged.png" left="-39" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_simple_hood_04_damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="entity\legend_helmets\hood\simple_hood_04_damaged.png" left="-39" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_simple_hood_05_damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="entity\legend_helmets\hood\simple_hood_05_damaged.png" left="-39" right="43" top="-29" bottom="105" />
-<sprite id="legendhelms_simple_hood_01_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\hood\simple_hood_01_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="legendhelms_simple_hood_02_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\hood\simple_hood_02_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="legendhelms_simple_hood_03_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\hood\simple_hood_03_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="legendhelms_simple_hood_04_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\hood\simple_hood_04_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="legendhelms_simple_hood_05_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\hood\simple_hood_05_dead.png" left="-57" right="59" top="-53" bottom="55" />
-"""
 
 def main():
     mfile = os.path.join(os.path.dirname(os.path.abspath(__file__)), "legend_armor/metadata.xml")
@@ -292,8 +142,6 @@ def main():
                     destF = os.path.join(os.path.dirname(os.path.abspath(__file__)), "legend_armor", opts["javelin_path"])
                     if not os.path.exists(destF):
                         copyfile(srcF, destF)
-
-    #F.write(helmets)
 
     F.write('</brush>\n')
     F.close()
