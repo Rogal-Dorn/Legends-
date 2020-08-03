@@ -132,7 +132,6 @@ this.killer_vs_others_event <- this.inherit("scripts/events/event", {
 					text = _event.m.Killer.getName() + " has died"
 				});
 				_event.m.Killer.getItems().transferToStash(this.World.Assets.getStash());
-				_event.m.Killer.();
 				this.World.Statistics.addFallen(_event.m.Killer, "Hanged for attempted murder");	
 				this.World.LegendsMod.BroStats().removeActorID(_event.m.Killer.getCompanyID());			
 				this.World.getPlayerRoster().remove(_event.m.Killer);
