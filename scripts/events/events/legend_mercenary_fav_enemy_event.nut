@@ -84,11 +84,23 @@ this.legend_mercenary_fav_enemy_event <- this.inherit("scripts/events/event", {
 								Variant = 0,
 								Row = 0,
 								Name = "Karl",
-								Script = "scripts/entity/tactical/humans/special/mercenary_karl",
+								Script = "scripts/entity/tactical/enemies/legend_bandit_outrider",
 								Faction = this.Const.Faction.Enemy
 								function Callback( _entity, _tag )
 								{
 									_entity.setName("Karl");
+								}							
+						});
+						properties.Entities.push({
+								ID = this.Const.EntityType.BanditRabblePoacher,
+								Variant = 0,
+								Row = 0,
+								Name = "poach",
+								Script = "scripts/entity/tactical/enemies/bandit_rabble_poacher",
+								Faction = this.Const.Faction.Enemy
+								function Callback( _entity, _tag )
+								{
+									_entity.setName("poach");
 								}							
 						});
 						// properties.Entities.push({
