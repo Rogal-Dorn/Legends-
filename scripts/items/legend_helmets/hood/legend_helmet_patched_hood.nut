@@ -12,10 +12,10 @@ this.legend_helmet_patched_hood <- this.inherit("scripts/items/legend_helmets/le
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
-		this.m.Value = 200;
-		this.m.Condition = 80;
-		this.m.ConditionMax = 80;
-		this.m.StaminaModifier = -4;
+		this.m.Value = 45;
+		this.m.Condition = 25;
+		this.m.ConditionMax = 25;
+		this.m.StaminaModifier = -1;
 		this.m.Vision = 0;
 		this.m.HideHair = true;
 		this.m.HideBeard = false;

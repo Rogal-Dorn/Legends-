@@ -4,21 +4,21 @@ this.legend_helmet_orc_metal_mask <- this.inherit("scripts/items/legend_helmets/
 	function create()
 	{
 		this.legend_helmet_upgrade.create();
-		this.m.Type = this.Const.Items.HelmetUpgrades.Helm;
+		this.m.Type = this.Const.Items.HelmetUpgrades.Top;
 		this.m.ID = "armor.head.legend_helmet_orc_metal_mask";
-		this.m.Name = "Metal Orc Mask";
-		this.m.Description = "Orc Metal Mask";
+		this.m.Name = "Orc Metal Plated Mask";
+		this.m.Description = "A simple construction of metal plates, worn by young orcs";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
-		this.m.Value = 200;
-		this.m.Condition = 80;
-		this.m.ConditionMax = 80;
-		this.m.StaminaModifier = -4;
-		this.m.Vision = 0;
+		this.m.Value = 800;
+		this.m.Condition = 120;
+		this.m.ConditionMax = 120;
+		this.m.StaminaModifier = -16;
+		this.m.Vision = -3;
 		this.m.IsLowerVanity = false;
 		this.m.HideHair = true;
 		this.m.HideBeard = false;

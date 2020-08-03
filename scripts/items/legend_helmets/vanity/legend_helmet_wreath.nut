@@ -7,7 +7,7 @@ this.legend_helmet_wreath <- this.inherit("scripts/items/legend_helmets/legend_h
 		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_wreath";
 		this.m.Name = "Wreath";
-		this.m.Description = "A flower crown inspired by empires long ago.";
+		this.m.Description = "A metallic wreath in the ancient style";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1, 2];
@@ -15,9 +15,9 @@ this.legend_helmet_wreath <- this.inherit("scripts/items/legend_helmets/legend_h
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.Value = 200;
-		this.m.Condition = 80;
-		this.m.ConditionMax = 80;
-		this.m.StaminaModifier = -4;
+		this.m.Condition = 10;
+		this.m.ConditionMax = 10;
+		this.m.StaminaModifier = -1;
 		this.m.Vision = 0;
 		this.m.IsLowerVanity = false;
 		this.m.HideHair = false;

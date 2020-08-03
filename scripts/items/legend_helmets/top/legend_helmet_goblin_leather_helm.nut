@@ -4,20 +4,20 @@ this.legend_helmet_goblin_leather_helm <- this.inherit("scripts/items/legend_hel
 	function create()
 	{
 		this.legend_helmet_upgrade.create();
-		this.m.Type = this.Const.Items.HelmetUpgrades.Helm;
+		this.m.Type = this.Const.Items.HelmetUpgrades.Top;
 		this.m.ID = "armor.head.legend_helmet_goblin_leather_helm";
 		this.m.Name = "Leather Goblin Helm";
-		this.m.Description = "Goblin Leather Helm";
+		this.m.Description = "A basic leather helm of goblin design";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
-		this.m.Value = 200;
-		this.m.Condition = 80;
-		this.m.ConditionMax = 80;
-		this.m.StaminaModifier = -4;
+		this.m.Value = 375;
+		this.m.Condition = 45;
+		this.m.ConditionMax = 45;
+		this.m.StaminaModifier = -3;
 		this.m.Vision = 0;
 		this.m.IsLowerVanity = false;
 		this.m.HideHair = true;

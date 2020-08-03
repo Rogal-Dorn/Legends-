@@ -7,7 +7,7 @@ this.legend_helmet_faction_helmet_2 <- this.inherit("scripts/items/legend_helmet
 		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_faction_helmet_2";
 		this.m.Name = "Faction Helmet";
-		this.m.Description = "A special issue adornment for a higher faction member.";
+		this.m.Description = "The helmet of a noble house";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -15,9 +15,9 @@ this.legend_helmet_faction_helmet_2 <- this.inherit("scripts/items/legend_helmet
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.Value = 200;
-		this.m.Condition = 80;
-		this.m.ConditionMax = 80;
-		this.m.StaminaModifier = -4;
+		this.m.Condition = 10;
+		this.m.ConditionMax = 10;
+		this.m.StaminaModifier = -1;
 		this.m.Vision = 0;
 		this.m.IsLowerVanity = false;
 		this.m.HideHair = true;

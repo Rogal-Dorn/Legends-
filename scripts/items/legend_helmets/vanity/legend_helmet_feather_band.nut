@@ -7,7 +7,7 @@ this.legend_helmet_feather_band <- this.inherit("scripts/items/legend_helmets/le
 		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_feather_band";
 		this.m.Name = "Feather Band";
-		this.m.Description = "A band across the helmet with a feather in front.";
+		this.m.Description = "A band holding a feather, purely for decoration";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1, 2];
@@ -15,9 +15,9 @@ this.legend_helmet_feather_band <- this.inherit("scripts/items/legend_helmets/le
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.Value = 200;
-		this.m.Condition = 80;
-		this.m.ConditionMax = 80;
-		this.m.StaminaModifier = -4;
+		this.m.Condition = 10;
+		this.m.ConditionMax = 10;
+		this.m.StaminaModifier = -1;
 		this.m.Vision = 0;
 		this.m.IsLowerVanity = false;
 		this.m.HideHair = false;

@@ -7,7 +7,7 @@ this.legend_helmet_antler <- this.inherit("scripts/items/legend_helmets/legend_h
 		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_antler";
 		this.m.Name = "Antlers";
-		this.m.Description = "Deer antlers, now prepaerd and used for decoration";
+		this.m.Description = "The wide antlers of a beast, often a mark of distinction in northern tribes";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1];
@@ -15,9 +15,9 @@ this.legend_helmet_antler <- this.inherit("scripts/items/legend_helmets/legend_h
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.Value = 200;
-		this.m.Condition = 80;
-		this.m.ConditionMax = 80;
-		this.m.StaminaModifier = -4;
+		this.m.Condition = 10;
+		this.m.ConditionMax = 10;
+		this.m.StaminaModifier = -1;
 		this.m.Vision = 0;
 		this.m.IsLowerVanity = false;
 		this.m.HideHair = false;

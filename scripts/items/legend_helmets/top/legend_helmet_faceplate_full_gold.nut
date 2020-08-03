@@ -14,11 +14,11 @@ this.legend_helmet_faceplate_full_gold <- this.inherit("scripts/items/legend_hel
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
-		this.m.Value = 200;
-		this.m.Condition = 80;
-		this.m.ConditionMax = 80;
-		this.m.StaminaModifier = -4;
-		this.m.Vision = 0;
+		this.m.Value = 1800;
+		this.m.Condition = 115;
+		this.m.ConditionMax = 115;
+		this.m.StaminaModifier = -9;
+		this.m.Vision = -3;
 		this.m.IsLowerVanity = false;
 		this.m.HideHair = false;
 		this.m.HideBeard = false;

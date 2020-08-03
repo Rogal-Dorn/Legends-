@@ -7,7 +7,7 @@ this.legend_helmet_knotted_tail <- this.inherit("scripts/items/legend_helmets/le
 		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_knotted_tail";
 		this.m.Name = "Knotted Tail";
-		this.m.Description = "A knotted donkey's tail that attaches to the top of a helmet.";
+		this.m.Description = "A knotted pony tail, used as a sign of prowess in foreign lands";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1, 2, 3, 4];
@@ -15,9 +15,9 @@ this.legend_helmet_knotted_tail <- this.inherit("scripts/items/legend_helmets/le
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.Value = 200;
-		this.m.Condition = 80;
-		this.m.ConditionMax = 80;
-		this.m.StaminaModifier = -4;
+		this.m.Condition = 10;
+		this.m.ConditionMax = 10;
+		this.m.StaminaModifier = -1;
 		this.m.Vision = 0;
 		this.m.IsLowerVanity = true;
 		this.m.HideHair = false;

@@ -5,18 +5,18 @@ this.legend_helmet_chain_hood <- this.inherit("scripts/items/legend_helmets/lege
 	{
 		this.legend_helmet.create();
 		this.m.ID = "armor.head.legend_helmet_chain_hood";
-		this.m.Name = "Chain Hood";
-		this.m.Description = "Chain Hood";
+		this.m.Name = "Mail Coif";
+		this.m.Description = "A sturdy chain hood";
 		this.m.Variant = 1;
 		this.m.Variants = [1, 2, 3, 4];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
-		this.m.Value = 200;
+		this.m.Value = 310;
 		this.m.Condition = 80;
 		this.m.ConditionMax = 80;
 		this.m.StaminaModifier = -4;
-		this.m.Vision = 0;
+		this.m.Vision = -1;
 		this.m.HideHair = true;
 		this.m.HideBeard = false;
 	}

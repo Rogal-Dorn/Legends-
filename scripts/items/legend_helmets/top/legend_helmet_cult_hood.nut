@@ -4,21 +4,21 @@ this.legend_helmet_cult_hood <- this.inherit("scripts/items/legend_helmets/legen
 	function create()
 	{
 		this.legend_helmet_upgrade.create();
-		this.m.Type = this.Const.Items.HelmetUpgrades.Helm;
+		this.m.Type = this.Const.Items.HelmetUpgrades.Top;
 		this.m.ID = "armor.head.legend_helmet_cult_hood";
 		this.m.Name = "Cult Hood";
-		this.m.Description = "A thick leather hood that covers the head and neck but limits vision, typically worn by cultists.";
+		this.m.Description = "Cult Hood";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variant = 1;
 		this.m.Variants = [1, 2, 3, 4, 5, 6, 7];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
-		this.m.Value = 200;
-		this.m.Condition = 80;
-		this.m.ConditionMax = 80;
-		this.m.StaminaModifier = -4;
-		this.m.Vision = 0;
+		this.m.Value = 600;
+		this.m.Condition = 65;
+		this.m.ConditionMax = 65;
+		this.m.StaminaModifier = -3;
+		this.m.Vision = -1;
 		this.m.IsLowerVanity = false;
 		this.m.HideHair = true;
 		this.m.HideBeard = false;

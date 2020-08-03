@@ -5,16 +5,16 @@ this.legend_helmet_chain_scarf <- this.inherit("scripts/items/legend_helmets/leg
 	{
 		this.legend_helmet.create();
 		this.m.ID = "armor.head.legend_helmet_chain_scarf";
-		this.m.Name = "Chain Scarf";
-		this.m.Description = "Chain Scarf";
+		this.m.Name = "Aventail";
+		this.m.Description = "A mail aventail that extends from below the eyeline to cover the neck";
 		this.m.Variant = 1;
 		this.m.Variants = [1, 2, 3, 4, 5];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
-		this.m.Value = 200;
-		this.m.Condition = 80;
-		this.m.ConditionMax = 80;
+		this.m.Value = 250;
+		this.m.Condition = 70;
+		this.m.ConditionMax = 70;
 		this.m.StaminaModifier = -4;
 		this.m.Vision = 0;
 		this.m.HideHair = false;

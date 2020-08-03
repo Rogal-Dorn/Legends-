@@ -5,17 +5,17 @@ this.legend_helmet_hood_cloth_round <- this.inherit("scripts/items/legend_helmet
 	{
 		this.legend_helmet.create();
 		this.m.ID = "armor.head.legend_helmet_hood_cloth_round";
-		this.m.Name = "Round Cloth Hood";
-		this.m.Description = "Round Hood Cloth";
+		this.m.Name = "Round Hood Cloth";
+		this.m.Description = "A simple hood to protect against weather and scratches.";
 		this.m.Variant = 1;
 		this.m.Variants = [1];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
-		this.m.Value = 200;
-		this.m.Condition = 80;
-		this.m.ConditionMax = 80;
-		this.m.StaminaModifier = -4;
+		this.m.Value = 60;
+		this.m.Condition = 30;
+		this.m.ConditionMax = 30;
+		this.m.StaminaModifier = -1;
 		this.m.Vision = 0;
 		this.m.HideHair = true;
 		this.m.HideBeard = false;
