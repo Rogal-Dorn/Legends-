@@ -63,7 +63,7 @@
 
 					}
 
-					else if (bro.getMoodState() > this.Const.MoodState.Concerned && !bro.getCurrentProperties().IsContentWithBeingInReserve)
+					else if (bro.getMoodState() > this.Const.MoodState.Concerned && !bro.getCurrentProperties().IsContentWithBeingInReserve && (!bro.getTags().has("TemporaryRider") || !bro.getTags().has("IsHorse")))
 					{
 						++bro.getLifetimeStats().BattlesWithoutMe;
 
@@ -72,6 +72,7 @@
 							bro.worsenMood(this.Const.MoodChange.BattleWithoutMe, "Felt useless in reserve");
 						}
 					}
+					bro.getTags().remove("TemporaryRider");
 				}
 			}
 		}
@@ -114,7 +115,7 @@
 							bro.worsenMood(this.Const.MoodChange.BattleRetreat, "Retreated from battle");
 						}
 					}
-					else if (bro.getMoodState() > this.Const.MoodState.Concerned && !bro.getCurrentProperties().IsContentWithBeingInReserve)
+					else if (bro.getMoodState() > this.Const.MoodState.Concerned && !bro.getCurrentProperties().IsContentWithBeingInReserve && (!bro.getTags().has("TemporaryRider") || !bro.getTags().has("IsHorse")))
 					{
 						++bro.getLifetimeStats().BattlesWithoutMe;
 
@@ -123,6 +124,7 @@
 							bro.worsenMood(this.Const.MoodChange.BattleWithoutMe, "Felt useless in reserve");
 						}
 					}
+					bro.getTags().remove("TemporaryRider");
 				}
 
 				if (this.World.getPlayerRoster().getSize() != 0)
