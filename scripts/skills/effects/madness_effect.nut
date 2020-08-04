@@ -49,16 +49,17 @@ this.madness_effect <- this.inherit("scripts/skills/skill", {
 		if (this.m.SoundOnUse.len() != 0)
 		{
 			this.Sound.play(this.m.SoundOnUse[this.Math.rand(0, this.m.SoundOnUse.len() - 1)], this.Const.Sound.Volume.Skill * 1.0, actor.getPos());
-			if (this.m.OriginalFaction = this.m.MasterFaction)
+			if (this.m.OriginalFaction = this.m.MasterFaction && this.m.MasterFaction !=this.Const.FactionType.Barbarians)
 			{
 				actor.setFaction(this.World.FactionManager.getFactionOfType(this.Const.FactionType.Barbarians).getID());
+				actor.getSprite("socket").setBrush("bust_base_wildmen_01");
 			}
 			else
 			{
 				actor.setFaction(this.m.MasterFaction);
+				actor.getSprite("socket").setBrush("bust_base_beasts");
 			}
 		}
-		actor.getSprite("socket").setBrush("bust_base_beasts");
 		actor.setDirty(true);
 	}
 
