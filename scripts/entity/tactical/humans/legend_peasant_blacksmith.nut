@@ -173,9 +173,8 @@ this.legend_peasant_blacksmith <- this.inherit("scripts/entity/tactical/human", 
 		{
 			this.m.Items.equip(this.Const.World.Common.pickHelmet([
 				[1, "headscarf"],
-				[1, "hood"],
-				[1, "headscarf"],
-				[1, ""]
+				[2, "hood"],
+				[1, "straw_hat"]
 			]))
 		}
 	}

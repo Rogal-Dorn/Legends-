@@ -183,8 +183,7 @@ this.legend_peasant_poacher <- this.inherit("scripts/entity/tactical/human", {
 		{
 			this.m.Items.equip(this.Const.World.Common.pickHelmet([
 				[1, "hunters_hat"],
-				[1, "hood"],
-				[2, ""]
+				[3, "hood"]
 			]))
 		}
 	}
