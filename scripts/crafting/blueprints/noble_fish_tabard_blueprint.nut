@@ -20,12 +20,12 @@ this.noble_fish_tabard_blueprint <- this.inherit("scripts/crafting/blueprint", {
 							"scripts/skills/backgrounds/tailor_background"]
 			}
 		]
-		this.initSkills(skills);	
+		this.initSkills(skills);
 	}
 
 	function isQualified()
 	{
-		return true;
+		return this.World.LegendsMod.Configs().LegendArmorsEnabled()
 	}
 
 	function onCraft( _stash )

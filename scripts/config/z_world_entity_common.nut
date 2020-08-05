@@ -563,37 +563,15 @@ gt.Const.World.Common.buildDynamicTroopList <- function( _template, _resources)
 
 gt.Const.World.Common.pickLegendArmor <- function (_list)
 {
-	local candidates = []
-	local totalWeight = 0
-	local w = 0
-	foreach (t in _list)
-	{
-		if (t[0] == 0)
-		{
-			continue;
-		}
-		candidates.push(t)
-		totalWeight += t[0]
-	}
-
-	local r = this.Math.rand(0, totalWeight);
-	foreach (t in candidates)
-	{
-		r = r - t[0];
-		if (r > 0)
-		{
-			continue;
-		}
-		if (t[1] == "")
-		{
-			return null;
-		}
-		return this.new("scripts/items/legend_armor/" + t[1]);
-	}
-	return null;
+	return this.Const.World.Common.pickItem(_list, "scripts/items/legend_armor/")
 }
 
-gt.Const.World.Common.pickItem <- function (_list)
+gt.Const.World.Common.pickLegendHelmet <- function (_list)
+{
+	return this.Const.World.Common.pickItem(_list, "scripts/items/legend_helmets/")
+}
+
+gt.Const.World.Common.pickItem <- function (_list, _script = "")
 {
 	local candidates = []
 	local totalWeight = 0
@@ -616,9 +594,82 @@ gt.Const.World.Common.pickItem <- function (_list)
 		{
 			continue;
 		}
-		return t[1];
+
+		if (_script == "")
+		{
+			return t[1];
+		}
+
+		return this.new(_script + t[1]);
 	}
 	return null;
+}
+
+gt.Const.World.Common.pickHelmet <- function (_helms)
+{
+	local candidates = [];
+	local totalWeight = 0;
+	foreach (t in _helms)
+	{
+		if (t[0] == 0)
+		{
+			continue;
+		}
+		candidates.push(t);
+		totalWeight += t[0];
+	}
+
+	local r = this.Math.rand(0, totalWeight);
+	local helm = "";
+	foreach (t in candidates)
+	{
+		r = r - t[0];
+		if (r > 0)
+		{
+			continue;
+		}
+		helm = t[1];
+		break;
+	}
+
+	if (!this.World.LegendsMod.Configs().LegendArmorsEnabled())
+	{
+		if (helm == "")
+		{
+			return null;
+		}
+		return this.new("scripts/items/helmets/" + helm);
+	}
+
+	local layersObj = this.Const.LegendMod.Helmets[helm];
+	if (layersObj.Script != "")
+	{
+		return this.new("scripts/items/legend_helmets/" + layersObjs.Script);
+	}
+
+	local helmet = this.Const.World.Common.pickLegendHelmet(layersObj.Hoods);
+	if (helmet != null)
+	{
+         local helm = this.Const.World.Common.pickLegendHelmet(layersObj.Helms);
+         if (helm != null)
+         {
+             helmet.setUpgrade(helm)
+         }
+
+         local top = this.Const.World.Common.pickLegendHelmet(layersObj.Tops);
+         if (top != null)
+         {
+             helmet.setUpgrade(top)
+         }
+
+		local van = this.Const.World.Common.pickLegendHelmet(layersObj.Vanity);
+         if (van != null)
+         {
+             helmet.setUpgrade(van)
+         }
+	}
+
+	return helmet;
 }
 
 if (!("LegendMod" in gt.Const))

@@ -70,6 +70,13 @@ while read -r line; do
     fi
 done <<< "$FILES"
 
+echo "Building helmets..."
+rm -rf helmets
+mkdir -p "helmets"
+python make_legend_helmet_nuts.py
+cp -R helmets/. "c:\Program Files (x86)\Steam\steamapps\common\Battle Brothers\data\scripts\items\legend_helmets"
+
+
 mkdir -p "brushes"
 cd ../bin
  echo "Building brushes..."
@@ -86,6 +93,8 @@ cd ../bin
 python ../battlebrothers/unpacked/make_legend_helmets.py
  echo "Building Legend Helmets brush..."
 ./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/legend_helmets.brush ../battlebrothers/unpacked/legend_helmets
+./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/legend_helmets.brush ../battlebrothers/unpacked/legend_helmets/0
+./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/legend_helmets.brush ../battlebrothers/unpacked/legend_helmets/1
 
  echo "Building Legend Armor metadata.xml..."
 python ../battlebrothers/unpacked/make_legend_armor.py

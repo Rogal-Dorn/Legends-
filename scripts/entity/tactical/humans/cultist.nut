@@ -97,15 +97,14 @@ this.cultist <- this.inherit("scripts/entity/tactical/human", {
 			}
 		}
 
-		r = this.Math.rand(1, 2);
+		local item = this.Const.World.Common.pickHelmet([
+			[1, "cultist_hood"],
+			[1, "cultist_leather_hood"]
+		]);
 
-		if (r == 1)
+		if (item != null)
 		{
-			this.m.Items.equip(this.new("scripts/items/helmets/cultist_hood"));
-		}
-		else if (r == 2)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/cultist_leather_hood"));
+			this.m.Items.equip(item);
 		}
 	}
 
