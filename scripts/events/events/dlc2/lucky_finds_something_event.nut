@@ -103,19 +103,19 @@ this.lucky_finds_something_event <- this.inherit("scripts/events/event", {
 		}
 		else if (r == 3)
 		{
-			item = this.Const.World.Common.pickHelmet([1, "dented_nasal_helmet"]);
+			item = this.Const.World.Common.pickHelmet([[1, "dented_nasal_helmet"]]);
 		}
 		else if (r == 4)
 		{
-			item = this.Const.World.Common.pickHelmet([1, "mail_coif"]);
+			item = this.Const.World.Common.pickHelmet([[1, "mail_coif"]]);
 		}
 		else if (r == 5)
 		{
-			item = this.Const.World.Common.pickHelmet([1, "cultist_hood"]);
+			item = this.Const.World.Common.pickHelmet([[1, "cultist_hood"]]);
 		}
 		else if (r == 6)
 		{
-			item = this.Const.World.Common.pickHelmet([1, "full_leather_cap"]);
+			item = this.Const.World.Common.pickHelmet([[1, "full_leather_cap"]]);
 		}
 		else if (r == 7)
 		{

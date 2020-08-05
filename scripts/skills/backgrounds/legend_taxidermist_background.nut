@@ -132,7 +132,7 @@ this.legend_taxidermist_background <- this.inherit("scripts/skills/backgrounds/c
 		return c;
 	}
 
-	function onAddEquipment()
+	function onAddLegendEquipment()
 	{
 		local items = this.getContainer().getActor().getItems();
 		local r;
@@ -157,12 +157,11 @@ this.legend_taxidermist_background <- this.inherit("scripts/skills/backgrounds/c
 		local armor = this.Const.World.Common.pickLegendArmor(cloths)
 		items.equip(armor)
 
-		r = this.Math.rand(0, 1);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/feathered_hat"));
-		}
+		local item = this.Const.World.Common.pickHelmet([
+				[1, "feathered_hat"],
+				[1, ""]
+		]))
+		items.equip(item);
 	}
 
 });

@@ -147,7 +147,7 @@ this.come_across_ritual_event <- this.inherit("scripts/events/event", {
 						}
 
 						properties.Loot = [
-							this.Const.World.Common.pickHelmet([1, "legendary/mask_of_davkul"])
+							this.Const.World.Common.pickHelmet([[1, "legendary/mask_of_davkul"]])
 						];
 						this.World.State.startScriptedCombat(properties, false, false, true);
 						return 0;
@@ -194,7 +194,7 @@ this.come_across_ritual_event <- this.inherit("scripts/events/event", {
 					});
 				this.Characters.push(_event.m.Cultist.getImagePath());
 				this.World.Assets.getStash().makeEmptySlots(1);
-				local item = this.Const.World.Common.pickHelmet([1, "legendary/mask_of_davkul"]);
+				local item = this.Const.World.Common.pickHelmet([[1, "legendary/mask_of_davkul"]]);
 				this.World.Assets.getStash().add(item);
 				this.List.push({
 					id = 10,

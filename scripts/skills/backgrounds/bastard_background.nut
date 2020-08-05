@@ -173,20 +173,11 @@ this.bastard_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			items.equip(this.new("scripts/items/armor/padded_surcoat"));
 		}
 
-		r = this.Math.rand(0, 3);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/nasal_helmet"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/padded_nasal_helmet"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/helmets/hood"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "nasal_helmet"],
+			[1, "padded_nasal_helmet"],
+			[1, "hood"]
+		]))
 	}
 
 	function onAddLegendEquipment()
@@ -305,21 +296,11 @@ this.bastard_background <- this.inherit("scripts/skills/backgrounds/character_ba
 
 			items.equip(armor);
 		}
-
-		r = this.Math.rand(0, 3);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/nasal_helmet"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/padded_nasal_helmet"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/helmets/hood"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "nasal_helmet"],
+			[1, "padded_nasal_helmet"],
+			[1, "hood"]
+		]))
 	}
 });
 

@@ -264,20 +264,11 @@ this.barbarian_background <- this.inherit("scripts/skills/backgrounds/character_
 			items.equip(this.new("scripts/items/armor/barbarians/scrap_metal_armor"));
 		}
 
-		r = this.Math.rand(0, 3);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/barbarians/bear_headpiece"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/barbarians/leather_headband"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/helmets/barbarians/leather_helmet"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "barbarians/bear_headpiece"],
+			[1, "barbarians/leather_headband"],
+			[1, "barbarians/leather_helmet"]
+		]))
 	}
 
 	function onAddLegendEquipment()
@@ -329,20 +320,11 @@ this.barbarian_background <- this.inherit("scripts/skills/backgrounds/character_
 			items.equip(armor);
 		}
 
-		r = this.Math.rand(0, 3);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/barbarians/bear_headpiece"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/barbarians/leather_headband"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/helmets/barbarians/leather_helmet"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "barbarians/bear_headpiece"],
+			[1, "barbarians/leather_headband"],
+			[1, "barbarians/leather_helmet"]
+		]))
 	}
 
 	function onSerialize( _out )

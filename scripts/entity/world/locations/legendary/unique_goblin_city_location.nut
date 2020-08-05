@@ -153,7 +153,7 @@ this.unique_goblin_city_location <- this.inherit("scripts/entity/world/location"
 			"loot/signet_ring_item",
 			"misc/legend_ancient_scroll_item"
 		], _lootTable);
-		_lootTable.push(this.Const.World.Common.pickHelmet([1, "legendary/emperors_countenance"]));
+		_lootTable.push(this.Const.World.Common.pickHelmet([[1, "legendary/emperors_countenance"]));
 	}
 
 	function onInit()

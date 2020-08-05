@@ -53,7 +53,7 @@ this.scenario_combat_basics <- this.inherit("scripts/scenarios/tactical/scenario
 		entity.setFaction(this.Const.Faction.Player);
 		entity.setScenarioValues();
 		items = entity.getItems();
-		items.equip(this.Const.World.Common.pickHelmet([1, "nasal_helmet"]));
+		items.equip(this.Const.World.Common.pickHelmet([[1, "nasal_helmet"]]));
 		items.equip(this.new("scripts/items/armor/leather_tunic"));
 		items.equip(this.new("scripts/items/weapons/hand_axe"));
 		items.equip(this.new("scripts/items/shields/wooden_shield"));
@@ -63,7 +63,7 @@ this.scenario_combat_basics <- this.inherit("scripts/scenarios/tactical/scenario
 		entity.setFaction(this.Const.Faction.Player);
 		entity.setScenarioValues();
 		items = entity.getItems();
-		items.equip(this.Const.World.Common.pickHelmet([1, "hood"]));
+		items.equip(this.Const.World.Common.pickHelmet([[1, "hood"]]));
 		items.equip(this.new("scripts/items/armor/padded_surcoat"));
 		items.equip(this.new("scripts/items/weapons/noble_sword"));
 		items.equip(this.new("scripts/items/shields/wooden_shield"));

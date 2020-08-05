@@ -207,12 +207,11 @@ this.bowyer_background <- this.inherit("scripts/skills/backgrounds/character_bac
 			items.equip(this.new("scripts/items/armor/apron"));
 		}
 
-		r = this.Math.rand(0, 2);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/feathered_hat"));
-		}
+		local item = this.Const.World.Common.pickHelmet([
+				[1, "feathered_hat"],
+				[2, ""]
+		]))
+		items.equip(item);
 	}
 
 	function onAddLegendEquipment()
@@ -233,12 +232,11 @@ this.bowyer_background <- this.inherit("scripts/skills/backgrounds/character_bac
 		items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
 		items.equip(this.new("scripts/items/legend_armor/cloth/legend_apron_smith"));
 
-		r = this.Math.rand(0, 2);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/feathered_hat"));
-		}
+		local item = this.Const.World.Common.pickHelmet([
+				[1, "feathered_hat"],
+				[2, ""]
+		]))
+		items.equip(item);
 	}
 });
 
