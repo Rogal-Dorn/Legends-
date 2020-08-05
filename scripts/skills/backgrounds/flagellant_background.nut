@@ -239,12 +239,10 @@ this.flagellant_background <- this.inherit("scripts/skills/backgrounds/character
 			items.equip(this.new("scripts/items/armor/monk_robe"));
 		}
 
-		r = this.Math.rand(0, 4);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/hood"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "hood"],
+			[4, ""]
+		]));
 	}
 
 	function onAddLegendEquipment()
@@ -343,13 +341,10 @@ this.flagellant_background <- this.inherit("scripts/skills/backgrounds/character
 				armor.setUpgrade(plate)
 			}
 		items.equip(armor)
-		local r;
-		r = this.Math.rand(0, 4);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/hood"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "hood"],
+			[4, ""]
+		]));
 	}
 });
 
