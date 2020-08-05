@@ -54,7 +54,7 @@ this.scenario_test_bed <- this.inherit("scripts/scenarios/tactical/scenario_temp
 			local items = entity.getItems();
 			local r = this.Math.rand(1, 3);
 			items.equip(this.new("scripts/items/armor/legendary/ijirok_armor"));
-			items.equip(this.Const.World.Common.pickHelmet([1, "legendary/ijirok_helmet"])));
+			items.equip(this.Const.World.Common.pickHelmet([1, "legendary/ijirok_helmet"]));
 			items.equip(this.new("scripts/items/weapons/battle_whip"));
 			local r = this.Math.rand(0, 2);
 		}

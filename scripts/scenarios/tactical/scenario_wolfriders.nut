@@ -149,7 +149,7 @@ this.scenario_wolfriders <- this.inherit("scripts/scenarios/tactical/scenario_te
 		entity.setName(this.getRandomPlayerName());
 		entity.setScenarioValues();
 		items = entity.getItems();
-		items.equip(this.Const.World.Common.pickHelmet([1, "dented_nasal_helmet"])));
+		items.equip(this.Const.World.Common.pickHelmet([1, "dented_nasal_helmet"]));
 		items.equip(this.new("scripts/items/armor/padded_leather"));
 		items.equip(this.new("scripts/items/weapons/arming_sword"));
 		items.equip(this.new("scripts/items/shields/wooden_shield"));
@@ -185,7 +185,7 @@ this.scenario_wolfriders <- this.inherit("scripts/scenarios/tactical/scenario_te
 		entity.setName(this.getRandomPlayerName());
 		entity.setScenarioValues();
 		items = entity.getItems();
-		items.equip(this.Const.World.Common.pickHelmet([1, "witchhunter_hat"])));
+		items.equip(this.Const.World.Common.pickHelmet([1, "witchhunter_hat"]));
 		items.equip(this.new("scripts/items/armor/ragged_surcoat"));
 		items.equip(this.new("scripts/items/weapons/winged_mace"));
 		entity = this.spawnEntity("scripts/entity/tactical/player", 15, 15, 13, 13);
