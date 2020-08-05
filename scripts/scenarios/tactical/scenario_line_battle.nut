@@ -161,7 +161,7 @@ this.scenario_line_battle <- this.inherit("scripts/scenarios/tactical/scenario_t
 		entity.setName(this.getRandomPlayerName());
 		entity.setScenarioValues();
 		items = entity.getItems();
-		items.equip(this.new("scripts/items/helmets/bascinet_with_mail"));
+		items.equip(this.Const.World.Common.pickHelmet([1, "bascinet_with_mail"])));
 		items.equip(this.new("scripts/items/armor/mail_hauberk"));
 		items.equip(this.new("scripts/items/weapons/warhammer"));
 		items.equip(this.new("scripts/items/shields/wooden_shield"));

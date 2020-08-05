@@ -124,7 +124,7 @@ this.scenario_line_battle_orcs <- this.inherit("scripts/scenarios/tactical/scena
 		entity.setName(this.getRandomPlayerName());
 		entity.setScenarioValues();
 		items = entity.getItems();
-		items.equip(this.new("scripts/items/helmets/nasal_helmet_with_rusty_mail"));
+		items.equip(this.Const.World.Common.pickHelmet([1, "nasal_helmet_with_rusty_mail"])));
 		items.equip(this.new("scripts/items/armor/mail_shirt"));
 		items.equip(this.new("scripts/items/weapons/warhammer"));
 		items.equip(this.new("scripts/items/shields/wooden_shield"));
