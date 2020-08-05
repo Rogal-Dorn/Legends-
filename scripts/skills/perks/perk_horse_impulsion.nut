@@ -15,7 +15,7 @@ this.perk_horse_impulsion <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		_properties.InitiativlMult *= 1.25;
+		_properties.InitiativeMult *= 1.25;
 	}
 
 });

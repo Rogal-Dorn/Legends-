@@ -3742,3 +3742,5 @@ Prepared knockback now shouldn't break the game
 Staffblock perk now works with slingstaff @ half effectiveness, similar to swordstaffs
 Peasant militia now properly scales brothers and correctly does armor value scaling
 Staffs can now stun/stagger already dazed enemies & can stagger when enemy is immune to stun, unlike before
+Horse impulsion doesn't crash to desktop now
+Tooltip update for rally the troops - sleep removal is a chance not just a guaranteed remove
