@@ -97,12 +97,10 @@ this.legend_spiritualist_background <- this.inherit("scripts/skills/backgrounds/
 			items.equip(this.new("scripts/items/armor/legend_herbalist_robe"));
 		}
 
-		r = this.Math.rand(0, 0);
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "hood"]
+		]));
 
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/hood"));
-		}
 	}
 
 	function onAddLegendEquipment()
@@ -144,7 +142,11 @@ this.legend_spiritualist_background <- this.inherit("scripts/skills/backgrounds/
 		{
 			armor.setUpgrade(plate)
 		}
-		items.equip(this.new("scripts/items/helmets/magician_hat"));
+
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "hood"],
+			[1, "magician_hat"]
+		]));
 
 	}
 });

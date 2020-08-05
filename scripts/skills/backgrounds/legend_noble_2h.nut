@@ -233,16 +233,11 @@ this.legend_noble_2h <- this.inherit("scripts/skills/backgrounds/character_backg
 			items.equip(this.new("scripts/items/armor/thick_tunic"));
 		}
 
-		r = this.Math.rand(0, 1);
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "aketon_cap"],
+			[1, "open_leather_cap"]
+		]));
 
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/hood"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/headscarf"));
-		}
 	}
 
 	function onAddLegendEquipment()
@@ -347,16 +342,10 @@ this.legend_noble_2h <- this.inherit("scripts/skills/backgrounds/character_backg
 			items.equip(armor);
 		}
 
-		r = this.Math.rand(0, 1);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/aketon_cap"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/open_leather_cap"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "aketon_cap"],
+			[1, "open_leather_cap"]
+		]));
 	}
 
 });

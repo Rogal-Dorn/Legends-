@@ -296,40 +296,19 @@ this.sellsword_background <- this.inherit("scripts/skills/backgrounds/character_
 			items.equip(this.new("scripts/items/armor/mail_shirt"));
 		}
 
-		r = this.Math.rand(0, 9);
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, ""],
+			[1, "nasal_helmet"],
+			[1, "padded_nasal_helmet"],
+			[1, "mail_coif"],
+			[1, "closed_mail_coif"],
+			[1, "reinforced_mail_coif"],
+			[1, "kettle_hat"],
+			[1, "padded_kettle_hat"],
+			[1, "hood"]
+		]));
 
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/nasal_helmet"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/padded_nasal_helmet"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/helmets/mail_coif"));
-		}
-		else if (r == 3)
-		{
-			items.equip(this.new("scripts/items/helmets/closed_mail_coif"));
-		}
-		else if (r == 4)
-		{
-			items.equip(this.new("scripts/items/helmets/reinforced_mail_coif"));
-		}
-		else if (r == 5)
-		{
-			items.equip(this.new("scripts/items/helmets/kettle_hat"));
-		}
-		else if (r == 6)
-		{
-			items.equip(this.new("scripts/items/helmets/padded_kettle_hat"));
-		}
-		else if (r == 7)
-		{
-			items.equip(this.new("scripts/items/helmets/hood"));
-		}
+
 	}
 
 	function onAddLegendEquipment()
@@ -468,40 +447,17 @@ this.sellsword_background <- this.inherit("scripts/skills/backgrounds/character_
 			items.equip(armor);
 		}
 
-		r = this.Math.rand(0, 9);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/nasal_helmet"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/padded_nasal_helmet"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/helmets/mail_coif"));
-		}
-		else if (r == 3)
-		{
-			items.equip(this.new("scripts/items/helmets/closed_mail_coif"));
-		}
-		else if (r == 4)
-		{
-			items.equip(this.new("scripts/items/helmets/reinforced_mail_coif"));
-		}
-		else if (r == 5)
-		{
-			items.equip(this.new("scripts/items/helmets/kettle_hat"));
-		}
-		else if (r == 6)
-		{
-			items.equip(this.new("scripts/items/helmets/padded_kettle_hat"));
-		}
-		else if (r == 7)
-		{
-			items.equip(this.new("scripts/items/helmets/hood"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, ""],
+			[1, "nasal_helmet"],
+			[1, "padded_nasal_helmet"],
+			[1, "mail_coif"],
+			[1, "closed_mail_coif"],
+			[1, "reinforced_mail_coif"],
+			[1, "kettle_hat"],
+			[1, "padded_kettle_hat"],
+			[1, "hood"]
+		]));
 	}
 });
 

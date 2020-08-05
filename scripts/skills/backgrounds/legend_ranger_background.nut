@@ -336,16 +336,11 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 			items.equip(this.new("scripts/items/armor/leather_tunic"));
 		}
 
-		r = this.Math.rand(0, 1);
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "hood"],
+			[1, "hunters_hat"]
+		]));
 
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/hood"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/hunters_hat"));
-		}
 	}
 
 	function onAddLegendEquipment()
@@ -401,16 +396,10 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 		];
 		local armor = this.Const.World.Common.pickLegendArmor(cloths)
 		items.equip(armor)
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "hood"],
+			[1, "hunters_hat"]
+		]));
 
-		r = this.Math.rand(0, 1);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/hood"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/hunters_hat"));
-		}
 	}
 });

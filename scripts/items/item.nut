@@ -1200,6 +1200,11 @@ this.item <- {
 		return [];
 	}
 
+
+	function onPaint( _color )
+	{
+	}
+
 	function onSerialize( _out )
 	{
 		_out.writeBool(this.m.IsToBeRepaired);

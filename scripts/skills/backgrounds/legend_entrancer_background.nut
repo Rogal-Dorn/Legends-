@@ -111,12 +111,10 @@ this.legend_entrancer_background <- this.inherit("scripts/skills/backgrounds/cha
 			items.equip(this.new("scripts/items/armor/legend_herbalist_robe"));
 		}
 
-		r = this.Math.rand(0, 0);
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "hood"]
+		]));
 
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/hood"));
-		}
 	}
 
 	function onAddLegendEquipment()
@@ -158,7 +156,10 @@ this.legend_entrancer_background <- this.inherit("scripts/skills/backgrounds/cha
 		{
 			armor.setUpgrade(plate)
 		}
-		items.equip(this.new("scripts/items/helmets/hood"));
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "hood"]
+		]));
+
 
 	}
 });
