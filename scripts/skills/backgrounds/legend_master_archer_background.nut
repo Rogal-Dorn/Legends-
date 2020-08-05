@@ -187,11 +187,11 @@ this.legend_master_archer_background <- this.inherit("scripts/skills/backgrounds
 			items.equip(this.new("scripts/items/armor/leather_tunic"));
 		}
 
-		local item = this.Const.World.Common.pickHelmet([
-				[1, "hood"],
-				[1, "hunters_hat"]
-		]))
-		items.equip(item);
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "hood"],
+			[1, "hunters_hat"]
+		]));
+
 	}
 
 	function onAddLegendEquipment()
@@ -300,11 +300,11 @@ this.legend_master_archer_background <- this.inherit("scripts/skills/backgrounds
 			items.equip(armor);
 		}
 
-		local item = this.Const.World.Common.pickHelmet([
-				[1, "hood"],
-				[1, "hunters_hat"]
-		]))
-		items.equip(item);
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "hood"],
+			[1, "hunters_hat"]
+		]));
+
 	}
 
 });

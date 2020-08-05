@@ -356,6 +356,9 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 		stash.add(this.new("scripts/items/supplies/roots_and_berries_item"));
 		stash.add(this.new("scripts/items/supplies/legend_fresh_fruit_item"));
 		stash.add(this.new("scripts/items/supplies/medicine_item"));
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "barbarians/bear_headpiece"]
+		]));
 
 
 	}
@@ -411,7 +414,9 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 		{
 			armor.setUpgrade(plate)
 		}
-		items.equip(this.new("scripts/items/helmets/barbarians/bear_headpiece"));
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "barbarians/bear_headpiece"]
+		]));
 	}
 
 	function onSerialize( _out )

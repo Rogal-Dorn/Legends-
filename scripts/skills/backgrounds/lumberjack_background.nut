@@ -186,12 +186,11 @@ this.lumberjack_background <- this.inherit("scripts/skills/backgrounds/character
 			items.equip(item);
 		}
 
-		r = this.Math.rand(0, 1);
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, ""],
+			[1, "hood"]
+		]));
 
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/hood"));
-		}
 	}
 
 	function onAddLegendEquipment()
@@ -305,12 +304,11 @@ this.lumberjack_background <- this.inherit("scripts/skills/backgrounds/character
 			items.equip(armor);
 		}
 
-		r = this.Math.rand(0, 1);
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, ""],
+			[1, "hood"]
+		]));
 
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/hood"));
-		}
 	}
 });
 

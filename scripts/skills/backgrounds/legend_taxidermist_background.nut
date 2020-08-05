@@ -157,11 +157,10 @@ this.legend_taxidermist_background <- this.inherit("scripts/skills/backgrounds/c
 		local armor = this.Const.World.Common.pickLegendArmor(cloths)
 		items.equip(armor)
 
-		local item = this.Const.World.Common.pickHelmet([
-				[1, "feathered_hat"],
-				[1, ""]
-		]))
-		items.equip(item);
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, ""],
+			[1, "feathered_hat"]
+		]));
 	}
 
 });

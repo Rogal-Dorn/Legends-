@@ -297,34 +297,19 @@ function onAddEquipment()
 			items.equip(this.new("scripts/items/armor/worn_mail_shirt"));
 		}
 
-		local helm;
-		r = this.Math.rand(0, 4);
+		local item = this.Const.World.Common.pickHelmet([
+			[1, "nasal_helmet"],
+			[1, "nasal_helmet_with_mail"],
+			[1, "mail_coif"],
+			[1, "bascinet_with_mail"],
+			[1, "closed_flat_top_helmet"]
+		])
+		if (item != null)
+		{
+			item.onPaint(this.Const.Items.Paint.None);
+			items.equip(item);
+		}
 
-		if (r == 0)
-		{
-			helm = this.new("scripts/items/helmets/nasal_helmet");
-			helm.onPaint(this.Const.Items.Paint.None);
-		}
-		else if (r == 1)
-		{
-			helm = this.new("scripts/items/helmets/nasal_helmet_with_mail");
-			helm.onPaint(this.Const.Items.Paint.None);
-		}
-		else if (r == 2)
-		{
-			helm = this.new("scripts/items/helmets/mail_coif");
-		}
-		else if (r == 3)
-		{
-			helm = this.new("scripts/items/helmets/bascinet_with_mail");
-			helm.onPaint(this.Const.Items.Paint.None);
-		}
-		else if (r == 4)
-		{
-			helm = this.new("scripts/items/helmets/closed_flat_top_helmet");
-			helm.onPaint(this.Const.Items.Paint.None);
-		}
-		items.equip(helm);
 	}
 
 	function onAddLegendEquipment()
@@ -369,34 +354,18 @@ function onAddEquipment()
 
 
 
-		local helm;
-		r = this.Math.rand(0, 4);
-
-		if (r == 0)
+		local item = this.Const.World.Common.pickHelmet([
+			[1, "nasal_helmet"],
+			[1, "nasal_helmet_with_mail"],
+			[1, "mail_coif"],
+			[1, "bascinet_with_mail"],
+			[1, "closed_flat_top_helmet"]
+		])
+		if (item != null)
 		{
-			helm = this.new("scripts/items/helmets/nasal_helmet");
-			helm.onPaint(this.Const.Items.Paint.Black);
+			item.onPaint(this.Const.Items.Paint.Black);
+			items.equip(item);
 		}
-		else if (r == 1)
-		{
-			helm = this.new("scripts/items/helmets/nasal_helmet_with_mail");
-			helm.onPaint(this.Const.Items.Paint.Black);
-		}
-		else if (r == 2)
-		{
-			helm = this.new("scripts/items/helmets/mail_coif");
-		}
-		else if (r == 3)
-		{
-			helm = this.new("scripts/items/helmets/bascinet_with_mail");
-			helm.onPaint(this.Const.Items.Paint.Black);
-		}
-		else if (r == 4)
-		{
-			helm = this.new("scripts/items/helmets/closed_flat_top_helmet");
-			helm.onPaint(this.Const.Items.Paint.Black);
-		}
-		items.equip(helm);
 
 		local cloths = [
             [0, ""],
