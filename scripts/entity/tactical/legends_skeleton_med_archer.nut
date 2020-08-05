@@ -139,10 +139,17 @@ if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 			}
 		}
 
-		if (this.Math.rand(1, 100) <= 66)
+
+		local item = this.Const.World.Common.pickHelmet([
+			[44, ""],
+			[66, "ancient/ancient_household_helmet"]
+		])
+
+		if (item != null)
 		{
-			this.m.Items.equip(this.new("scripts/items/helmets/ancient/ancient_household_helmet"));
+			this.m.Items.equip(item);
 		}
+
 	}
 
 });

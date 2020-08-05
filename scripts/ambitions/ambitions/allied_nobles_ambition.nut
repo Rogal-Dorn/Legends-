@@ -107,14 +107,13 @@ this.allied_nobles_ambition <- this.inherit("scripts/ambitions/ambition", {
 		local item;
 		local stash = this.World.Assets.getStash();
 
+		local item = this.Const.World.Common.pickHelmet([[1, "faction_helm"]]);
 		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
-			item = this.new("scripts/items/legend_helmets/helmets/legend_faction_helmet");
 			item.setupArmor(banner);
 		}
 		else
 		{
-			item = this.new("scripts/items/helmets/faction_helm");
 			item.setVariant(banner);
 		}
 

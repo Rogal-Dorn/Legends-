@@ -216,32 +216,19 @@ this.legends_zombie_high <- this.inherit("scripts/entity/tactical/legend_zombie"
 
 		this.m.Items.equip(armor);
 
-		if (this.Math.rand(1, 100) <= 90)
+
+		local item = this.Const.World.Common.pickHelmet([
+			[1, ""],
+			[2, "decayed_closed_flat_top_with_mail"],
+			[1, "decayed_closed_flat_top_with_sack"],
+			[3, "decayed_full_helm"],
+			[3, "decayed_great_helm"]
+		])
+
+		if (item != null)
 		{
-			r = this.Math.rand(1, 3);
-			local helmet;
-
-			if (r == 1)
-			{
-				if (this.Math.rand(1, 4) <= 3)
-				{
-					helmet = this.new("scripts/items/helmets/decayed_closed_flat_top_with_mail");
-				}
-				else
-				{
-					helmet = this.new("scripts/items/helmets/decayed_closed_flat_top_with_sack");
-				}
-			}
-			else if (r == 2)
-			{
-				helmet = this.new("scripts/items/helmets/decayed_full_helm");
-			}
-			else if (r == 3)
-			{
-				helmet = this.new("scripts/items/helmets/decayed_great_helm");
-			}
-
-			this.m.Items.equip(helmet);
+			this.m.Items.equip(item);
 		}
+
 	}
 });

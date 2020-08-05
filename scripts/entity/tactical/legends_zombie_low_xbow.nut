@@ -155,35 +155,20 @@ this.legends_zombie_low_xbow <- this.inherit("scripts/entity/tactical/legend_zom
 
 		this.m.Items.equip(armor);
 
-		if (this.Math.rand(1, 100) <= 33)
+		local item = this.Const.World.Common.pickHelmet([
+			[67, ""],
+			[7, "hood"],
+			[7, "aketon_cap"],
+			[7, "full_aketon_cap"],
+			[7, "open_leather_cap"],
+			[7, "full_leather_cap"]
+		])
+
+		if (item != null)
 		{
-			r = this.Math.rand(1, 5);
-			local helmet;
-
-			if (r == 1)
-			{
-				helmet = this.new("scripts/items/helmets/hood");
-			}
-			else if (r == 2)
-			{
-				helmet = this.new("scripts/items/helmets/aketon_cap");
-			}
-			else if (r == 3)
-			{
-				helmet = this.new("scripts/items/helmets/full_aketon_cap");
-			}
-			else if (r == 4)
-			{
-				helmet = this.new("scripts/items/helmets/open_leather_cap");
-			}
-			else if (r == 5)
-			{
-				helmet = this.new("scripts/items/helmets/full_leather_cap");
-			}
-
-
-			this.m.Items.equip(helmet);
+			this.m.Items.equip(item);
 		}
+
 	}
 
 });

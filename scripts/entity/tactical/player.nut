@@ -1723,103 +1723,38 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Items.equip(this.new("scripts/items/armor/leather_lamellar"));
 		}
 
-		r = this.Math.rand(1, 30);
 
-		if (r == 1)
+		local item = this.Const.World.Common.pickHelmet([
+			[6, ""],
+			[1, "hood"],
+			[1, "mail_coif"],
+			[1, "closed_mail_coif"],
+			[1, "reinforced_mail_coif"],
+			[1, "kettle_hat"],
+			[1, "nasal_helmet"],
+			[1, "padded_nasal_helmet"],
+			[1, "nasal_helmet_with_mail"],
+			[1, "full_helm"],
+			[1, "flat_top_helmet"],
+			[1, "padded_flat_top_helmet"],
+			[1, "flat_top_with_mail"],
+			[1, "kettle_hat_with_mail"],
+			[1, "kettle_hat_with_closed_mail"],
+			[1, "closed_flat_top_with_neckguard"],
+			[1, "closed_flat_top_helmet"],
+			[1, "closed_flat_top_with_mail"],
+			[1, "witchhunter_hat"],
+			[1, "named/golden_feathers_helmet"],
+			[1, "named/heraldic_mail_helmet"],
+			[1, "named/nasal_feather_helmet"],
+			[1, "named/norse_helmet"],
+			[1, "named/sallet_green_helmet"],
+			[1, "named/wolf_helmet"]
+		])
+
+		if (item != null)
 		{
-			this.m.Items.equip(this.new("scripts/items/helmets/hood"));
-		}
-		else if (r == 2)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/mail_coif"));
-		}
-		else if (r == 3)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/closed_mail_coif"));
-		}
-		else if (r == 4)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/reinforced_mail_coif"));
-		}
-		else if (r == 5)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/kettle_hat"));
-		}
-		else if (r == 6)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/nasal_helmet"));
-		}
-		else if (r == 7)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/padded_nasal_helmet"));
-		}
-		else if (r == 8)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/nasal_helmet_with_mail"));
-		}
-		else if (r == 9)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/full_helm"));
-		}
-		else if (r == 10)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/flat_top_helmet"));
-		}
-		else if (r == 11)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/padded_flat_top_helmet"));
-		}
-		else if (r == 12)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/flat_top_with_mail"));
-		}
-		else if (r == 13)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/kettle_hat_with_mail"));
-		}
-		else if (r == 14)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/kettle_hat_with_closed_mail"));
-		}
-		else if (r == 15)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/closed_flat_top_with_neckguard"));
-		}
-		else if (r == 16)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/closed_flat_top_helmet"));
-		}
-		else if (r == 17)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/closed_flat_top_with_mail"));
-		}
-		else if (r == 18)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/witchhunter_hat"));
-		}
-		else if (r == 19)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/named/golden_feathers_helmet"));
-		}
-		else if (r == 20)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/named/heraldic_mail_helmet"));
-		}
-		else if (r == 21)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/named/nasal_feather_helmet"));
-		}
-		else if (r == 22)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/named/norse_helmet"));
-		}
-		else if (r == 23)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/named/sallet_green_helmet"));
-		}
-		else if (r == 24)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/named/wolf_helmet"));
+			this.m.Items.equip(item);
 		}
 
 		r = this.Math.rand(1, 17);
@@ -1944,28 +1879,20 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Items.equip(this.new("scripts/items/armor/thick_tunic"));
 		}
 
-		r = this.Math.rand(1, 7);
+		local item = this.Const.World.Common.pickHelmet([
+			[2, ""],
+			[1, "hood"],
+			[1, "aketon_cap"],
+			[1, "full_aketon_cap"],
+			[1, "open_leather_cap"],
+			[1, "full_leather_cap"]
+		])
 
-		if (r == 1)
+		if (item != null)
 		{
-			this.m.Items.equip(this.new("scripts/items/helmets/hood"));
+			this.m.Items.equip(item);
 		}
-		else if (r == 2)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/aketon_cap"));
-		}
-		else if (r == 3)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/full_aketon_cap"));
-		}
-		else if (r == 4)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/open_leather_cap"));
-		}
-		else if (r == 5)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/full_leather_cap"));
-		}
+
 
 		r = this.Math.rand(1, 4);
 
@@ -2028,19 +1955,16 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Items.equip(this.new("scripts/items/armor/tattered_sackcloth"));
 		}
 
-		r = this.Math.rand(1, 4);
+		local item = this.Const.World.Common.pickHelmet([
+			[1, ""],
+			[1, "hood"],
+			[1, "aketon_cap"],
+			[1, "full_aketon_cap"]
+		])
 
-		if (r == 1)
+		if (item != null)
 		{
-			this.m.Items.equip(this.new("scripts/items/helmets/hood"));
-		}
-		else if (r == 2)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/aketon_cap"));
-		}
-		else if (r == 3)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/full_aketon_cap"));
+			this.m.Items.equip(item);
 		}
 
 		r = this.Math.rand(1, 2);

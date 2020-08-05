@@ -570,7 +570,9 @@ this.barbarian_king_contract <- this.inherit("scripts/contracts/contract", {
 			],
 			function start()
 			{
-				local item = this.new("scripts/items/helmets/barbarians/heavy_horned_plate_helmet");
+
+
+				local item = this.Const.World.Common.pickHelmet([[1, "barbarians/heavy_horned_plate_helmet"]]);
 				this.World.Assets.getStash().add(item);
 				this.List.push({
 					id = 10,
