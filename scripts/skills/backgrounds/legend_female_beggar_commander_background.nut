@@ -186,7 +186,7 @@ this.legend_female_beggar_commander_background <- this.inherit("scripts/skills/b
 		this.character_background.onAdded();
 		local actor = this.getContainer().getActor();
 		actor.setName(this.Const.Strings.CharacterNamesFemale[this.Math.rand(0, this.Const.Strings.CharacterNamesFemale.len() - 1)]);
-		
+
 	}
 
 	function onSetAppearance()
@@ -230,14 +230,19 @@ this.legend_female_beggar_commander_background <- this.inherit("scripts/skills/b
 			items.equip(this.new("scripts/items/armor/leather_wraps"));
 		}
 
-		r = this.Math.rand(0, 4);
-
-		if (r == 0)
+		local item = this.Const.World.Common.pickHelmet([
+			[3, ""],
+			[1, "hood"]
+		])
+		if (item != null)
 		{
-			local item = this.new("scripts/items/helmets/hood");
-			item.setVariant(38);
+			if (item.getID() == "armor.head.hood")
+			{
+				item.setVariant(38);
+			}
 			items.equip(item);
 		}
+
 	}
 
 	function onAddLegendEquipment()
@@ -276,13 +281,10 @@ this.legend_female_beggar_commander_background <- this.inherit("scripts/skills/b
 		local armor = this.Const.World.Common.pickLegendArmor(cloths)
 		items.equip(armor)
 
-		r = this.Math.rand(0, 4);
+		items.equip(this.Const.World.Common.pickHelmet([
+			[3, ""],
+			[1, "hood"]
+		]));
 
-		if (r == 0)
-		{
-			local item = this.new("scripts/items/helmets/hood");
-			item.setVariant(38);
-			items.equip(item);
-		}
 	}
 });

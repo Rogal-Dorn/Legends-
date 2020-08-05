@@ -224,11 +224,11 @@ this.thief_background <- this.inherit("scripts/skills/backgrounds/character_back
 			items.equip(this.new("scripts/items/armor/linen_tunic"));
 		}
 
-		local item = this.Const.World.Common.pickHelmet([
-				[1, "hood"],
-				[1, "headscarf"]
-		]))
-		items.equip(item);
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "hood"],
+			[1, "headscarf"]
+		]));
+
 	}
 
 	function onAddLegendEquipment()
@@ -333,11 +333,12 @@ this.thief_background <- this.inherit("scripts/skills/backgrounds/character_back
 
 			items.equip(armor);
 		}
-local item = this.Const.World.Common.pickHelmet([
-				[1, "hood"],
-				[1, "headscarf"]
-		]))
-		items.equip(item);
+
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "hood"],
+			[1, "headscarf"]
+		]));
+
 	}
 });
 

@@ -147,12 +147,6 @@ this.shepherd_background <- this.inherit("scripts/skills/backgrounds/character_b
 			items.equip(this.new("scripts/items/armor/leather_tunic"));
 		}
 
-		local item = this.Const.World.Common.pickHelmet([
-				[1, "straw_hat"]
-		]))
-		items.equip(item);
-
-
 		r = this.Math.rand(0, 4);
 
 		if (r <= 3)
@@ -163,6 +157,10 @@ this.shepherd_background <- this.inherit("scripts/skills/backgrounds/character_b
 		{
 			items.equip(this.new("scripts/items/weapons/legend_staff"));
 		}
+
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "straw_hat"],
+		]));
 
 	}
 
@@ -200,10 +198,9 @@ this.shepherd_background <- this.inherit("scripts/skills/backgrounds/character_b
 		items.equip(armor)
 
 
-		local item = this.Const.World.Common.pickHelmet([
-				[1, "straw_hat"]
-		]))
-		items.equip(item);
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "straw_hat"],
+		]));
 
 
 		r = this.Math.rand(0, 4);

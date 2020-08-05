@@ -154,11 +154,13 @@ this.messenger_background <- this.inherit("scripts/skills/backgrounds/character_
 		{
 			items.equip(this.new("scripts/items/armor/linen_tunic"));
 		}
-local item = this.Const.World.Common.pickHelmet([
-				[1, "hood"],
-				[1, "straw_hat"]
-		]))
-		items.equip(item);
+
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, ""],
+			[1, "hood"],
+			[1, "straw_hat"]
+		]));
+
 	}
 
 	function onAddLegendEquipment()
@@ -253,11 +255,11 @@ local item = this.Const.World.Common.pickHelmet([
 			items.equip(armor);
 		}
 
-		local item = this.Const.World.Common.pickHelmet([
-				[1, "hood"],
-				[1, "straw_hat"]
-		]))
-		items.equip(item);
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, ""],
+			[1, "hood"],
+			[1, "straw_hat"]
+		]));
 	}
 
 });

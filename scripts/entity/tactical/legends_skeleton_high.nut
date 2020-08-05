@@ -163,14 +163,9 @@ this.legends_skeleton_high <- this.inherit("scripts/entity/tactical/legend_skele
 			}
 		}
 
-		local item = this.Const.World.Common.pickHelmet([
+		this.m.Items.equip(this.Const.World.Common.pickHelmet([
 			[1, "ancient/ancient_honorguard_helmet"]
-		])
-
-		if (item != null)
-		{
-			this.m.Items.equip(item);
-		}
+		]))
 
 	}
 

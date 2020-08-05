@@ -208,7 +208,12 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 	{
 		local items = this.getContainer().getActor().getItems();
 		local r;
-		items.equip(this.new("scripts/items/helmets/hunters_hat"));
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "hunters_hat"],
+			[1, "aketon_cap"],
+			[1, "open_leather_cap"]
+		]));
+
 		items.equip(this.new("scripts/items/weapons/legend_sling"));
 		items.addToBag(this.new("scripts/items/weapons/legend_shiv"));
 		r = this.Math.rand(0, 1);
@@ -229,14 +234,12 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 		local r;
 		r = this.Math.rand(0, 1);
 
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/aketon_cap"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/open_leather_cap"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "hunters_hat"],
+			[1, "aketon_cap"],
+			[1, "open_leather_cap"]
+		]));
+
 		items.equip(this.new("scripts/items/weapons/light_crossbow"));
 		items.equip(this.new("scripts/items/ammo/quiver_of_bolts"));
 		items.addToBag(this.new("scripts/items/weapons/knife"));

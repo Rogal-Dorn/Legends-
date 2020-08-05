@@ -193,7 +193,11 @@ this.legend_premonitionist_background <- this.inherit("scripts/skills/background
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/armor/legend_seer_robes"));
 		items.equip(this.new("scripts/items/weapons/legend_mystic_staff"));
-		items.equip(this.new("scripts/items/helmets/legend_seer_hat"));
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "legend_seer_hat"],
+			[1, "magician_hat"]
+		]));
+
 		local stash = this.World.Assets.getStash()
 		// stash.removeByID("supplies.ground_grains");
 		// stash.removeByID("supplies.ground_grains");
@@ -209,7 +213,11 @@ this.legend_premonitionist_background <- this.inherit("scripts/skills/background
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/legend_armor/cloth/legend_robes_magic"));
 		items.equip(this.new("scripts/items/weapons/legend_staff_gnarled"));
-		items.equip(this.new("scripts/items/helmets/magician_hat"));
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "legend_seer_hat"],
+			[1, "magician_hat"]
+		]));
+
 		local stash = this.World.Assets.getStash()
 		// stash.removeByID("supplies.ground_grains");
 		// stash.removeByID("supplies.ground_grains");

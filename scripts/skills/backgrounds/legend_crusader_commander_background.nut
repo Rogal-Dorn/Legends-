@@ -327,7 +327,9 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 		stash.add(this.new("scripts/items/supplies/cured_venison_item"));
 		items.equip(this.new("scripts/items/weapons/legend_crusader_sword"));;
 		items.equip(this.new("scripts/items/armor/legend_crusader_armor"));
-		items.equip(this.new("scripts/items/helmets/closed_flat_top_helmet"));
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "closed_flat_top_helmet"]
+		]));
 
 	}
 
@@ -347,7 +349,9 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 		stash.add(this.new("scripts/items/supplies/cured_venison_item"));
 		items.equip(this.new("scripts/items/weapons/legend_crusader_sword"));;
 		items.equip(this.new("scripts/items/legend_armor/armor/legend_armor_crusader"));
-		items.equip(this.new("scripts/items/helmets/closed_flat_top_helmet"));
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "closed_flat_top_helmet"]
+		]));
 
 	}
 

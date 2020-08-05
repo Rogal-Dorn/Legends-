@@ -231,24 +231,13 @@ this.squire_background <- this.inherit("scripts/skills/backgrounds/character_bac
 			items.equip(this.new("scripts/items/armor/leather_tunic"));
 		}
 
-		r = this.Math.rand(0, 4);
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "nasal_helmet"],
+			[1, "full_aketon_cap"],
+			[1, "aketon_cap"],
+			[1, "open_leather_cap"]
+		]));
 
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/nasal_helmet"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/full_aketon_cap"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/helmets/aketon_cap"));
-		}
-		else if (r == 3)
-		{
-			items.equip(this.new("scripts/items/helmets/open_leather_cap"));
-		}
 	}
 
 	function onAddLegendEquipment()
@@ -369,24 +358,13 @@ this.squire_background <- this.inherit("scripts/skills/backgrounds/character_bac
 			items.equip(armor);
 		}
 
-		r = this.Math.rand(0, 4);
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "nasal_helmet"],
+			[1, "full_aketon_cap"],
+			[1, "aketon_cap"],
+			[1, "open_leather_cap"]
+		]));
 
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/nasal_helmet"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/full_aketon_cap"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/helmets/aketon_cap"));
-		}
-		else if (r == 3)
-		{
-			items.equip(this.new("scripts/items/helmets/open_leather_cap"));
-		}
 	}
 });
 
