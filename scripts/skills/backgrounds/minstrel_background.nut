@@ -136,10 +136,11 @@ this.minstrel_background <- this.inherit("scripts/skills/backgrounds/character_b
 		items.equip(armor);
 		local r = this.Math.rand(0, 1);
 
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/feathered_hat"));
-		}
+		local item = this.Const.World.Common.pickHelmet([
+				[1, "feathered_hat"],
+				[1, ""]
+		]))
+		items.equip(item);
 
 		local r = this.Math.rand(0, 4);
 		if (r <= 2)
@@ -158,10 +159,11 @@ this.minstrel_background <- this.inherit("scripts/skills/backgrounds/character_b
 		items.equip(this.new("scripts/items/legend_armor/cloth/legend_tunic"));
 		local r = this.Math.rand(0, 1);
 
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/feathered_hat"));
-		}
+		local item = this.Const.World.Common.pickHelmet([
+				[1, "feathered_hat"],
+				[1, ""]
+		]))		
+		items.equip(item);
 
 		local r = this.Math.rand(0, 4);
 		if (r <= 2)

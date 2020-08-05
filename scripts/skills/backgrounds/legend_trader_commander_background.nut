@@ -229,7 +229,9 @@ this.legend_trader_commander_background <- this.inherit("scripts/skills/backgrou
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/weapons/legend_tipstaff"));
 		items.equip(this.new("scripts/items/armor/linen_tunic"));
-		items.equip(this.new("scripts/items/helmets/feathered_hat"));
+		items.equip(local item = this.Const.World.Common.pickHelmet([
+				[1, "feathered_hat"]
+		])));
 		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");
 		stash.removeByID("supplies.ground_grains");
@@ -255,7 +257,9 @@ this.legend_trader_commander_background <- this.inherit("scripts/skills/backgrou
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/weapons/legend_tipstaff"));
 		items.equip(this.new("scripts/items/legend_armor/cloth/legend_tunic"));
-		items.equip(this.new("scripts/items/helmets/feathered_hat"));
+		items.equip(local item = this.Const.World.Common.pickHelmet([
+				[1, "feathered_hat"]
+		])));
 		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");
 		stash.removeByID("supplies.ground_grains");

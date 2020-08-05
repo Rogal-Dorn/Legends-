@@ -232,7 +232,9 @@ this.female_beggar_background <- this.inherit("scripts/skills/backgrounds/charac
 
 		if (r == 0)
 		{
-			local item = this.new("scripts/items/helmets/hood");
+			local item = this.Const.World.Common.pickHelmet([
+				[1, "hood"]
+			]);
 			item.setVariant(38);
 			items.equip(item);
 		}
@@ -278,7 +280,9 @@ this.female_beggar_background <- this.inherit("scripts/skills/backgrounds/charac
 
 		if (r == 0)
 		{
-			local item = this.new("scripts/items/helmets/hood");
+			local item = this.Const.World.Common.pickHelmet([
+				[1, "hood"]
+			]);			
 			item.setVariant(38);
 			items.equip(item);
 		}

@@ -45,7 +45,7 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
 		items.equip(this.new("scripts/items/weapons/legend_staff"));
-		items.equip(this.new("scripts/items/helmets/feathered_hat"));
+		items.equip(this.Const.World.Common.pickHelmet([[1, "feathered_hat"]));
 
 		bros[1].setStartValuesEx([
 			"caravan_hand_background"

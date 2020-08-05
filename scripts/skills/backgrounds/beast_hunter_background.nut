@@ -281,16 +281,10 @@ this.beast_hunter_background <- this.inherit("scripts/skills/backgrounds/charact
 			items.equip(this.new("scripts/items/armor/leather_tunic"));
 		}
 
-		r = this.Math.rand(0, 1);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/hood"));
-		}
-		else if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/hunters_hat"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "hunters_hat"],
+			[1, "hood"]
+		]))
 	}
 
 	function onAddLegendEquipment()
@@ -411,16 +405,10 @@ this.beast_hunter_background <- this.inherit("scripts/skills/backgrounds/charact
 			items.equip(armor);
 		}
 
-		r = this.Math.rand(0, 1);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/hood"));
-		}
-		else if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/hunters_hat"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "hunters_hat"],
+			[1, "hood"]
+		]))
 	}
 });
 

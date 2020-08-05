@@ -161,16 +161,11 @@ this.vagabond_background <- this.inherit("scripts/skills/backgrounds/character_b
 			items.equip(this.new("scripts/items/armor/leather_tunic"));
 		}
 
-		r = this.Math.rand(0, 2);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/hood"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/straw_hat"));
-		}
+		local item = this.Const.World.Common.pickHelmet([
+				[1, "hood"],
+				[1, "straw_hat"]
+		]))
+		items.equip(item);
 	}
 
 	function onAddLegendEquipment()
@@ -275,16 +270,11 @@ this.vagabond_background <- this.inherit("scripts/skills/backgrounds/character_b
 
 			items.equip(armor);
 		}
-		r = this.Math.rand(0, 2);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/hood"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/straw_hat"));
-		}
+		local item = this.Const.World.Common.pickHelmet([
+				[1, "hood"],
+				[1, "straw_hat"]
+		]))
+		items.equip(item);
 	}
 });
 
