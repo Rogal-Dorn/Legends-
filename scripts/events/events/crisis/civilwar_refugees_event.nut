@@ -288,7 +288,7 @@ this.civilwar_refugees_event <- this.inherit("scripts/events/event", {
 			}
 			else if (r == 4)
 			{
-				item = this.new("scripts/items/helmets/hood");
+				item = this.Const.World.Common.pickHelmet([[1, "hood"]]);
 			}
 			else if (r == 5)
 			{
@@ -326,7 +326,7 @@ this.civilwar_refugees_event <- this.inherit("scripts/events/event", {
 			}
 			else if (r == 10)
 			{
-				item = this.new("scripts/items/helmets/feathered_hat");
+				item = this.Const.World.Common.pickHelmet([[1, "feathered_hat"]]);
 			}
 
 			this.World.Assets.getStash().add(item);

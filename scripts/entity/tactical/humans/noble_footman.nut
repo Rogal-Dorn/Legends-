@@ -251,68 +251,32 @@ this.noble_footman <- this.inherit("scripts/entity/tactical/human", {
 		local helmet;
 
 		if (banner <= 4)
-		{
-			r = this.Math.rand(1, 4);
-
-			if (r == 1)
 			{
-				helmet = this.new("scripts/items/helmets/kettle_hat");
+				helmet = this.Const.World.Common.pickHelmet([
+					[1, "kettle_hat"],
+					[1, "padded_kettle_hat"],
+					[1, "kettle_hat_with_mail"],
+					[1, "mail_coif"]
+				])
 			}
-			else if (r == 2)
+			else if (banner <= 7)
 			{
-				helmet = this.new("scripts/items/helmets/padded_kettle_hat");
-			}
-			else if (r == 3)
-			{
-				helmet = this.new("scripts/items/helmets/kettle_hat_with_mail");
-			}
-			else
-			{
-				helmet = this.new("scripts/items/helmets/mail_coif");
-			}
-		}
-		else if (banner <= 7)
-		{
-			r = this.Math.rand(1, 4);
-
-			if (r == 1)
-			{
-				helmet = this.new("scripts/items/helmets/flat_top_helmet");
-			}
-			else if (r == 2)
-			{
-				helmet = this.new("scripts/items/helmets/padded_flat_top_helmet");
-			}
-			else if (r == 3)
-			{
-				helmet = this.new("scripts/items/helmets/flat_top_with_mail");
+				helmet = this.Const.World.Common.pickHelmet([
+					[1, "flat_top"],
+					[1, "padded_flat_top"],
+					[1, "flat_top_with_mail"],
+					[1, "mail_coif"]
+				])
 			}
 			else
 			{
-				helmet = this.new("scripts/items/helmets/mail_coif");
+				helmet = this.Const.World.Common.pickHelmet([
+					[1, "nasal_helmet"],
+					[1, "padded_nasal_helmet"],
+					[1, "nasal_helmet_with_mail"],
+					[1, "mail_coif"]
+				])
 			}
-		}
-		else
-		{
-			r = this.Math.rand(1, 4);
-
-			if (r == 1)
-			{
-				helmet = this.new("scripts/items/helmets/nasal_helmet");
-			}
-			else if (r == 2)
-			{
-				helmet = this.new("scripts/items/helmets/padded_nasal_helmet");
-			}
-			else if (r == 3)
-			{
-				helmet = this.new("scripts/items/helmets/nasal_helmet_with_mail");
-			}
-			else
-			{
-				helmet = this.new("scripts/items/helmets/mail_coif");
-			}
-		}
 
 		if (helmet != null)
 		{

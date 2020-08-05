@@ -141,7 +141,7 @@ if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 
 
 		local item = this.Const.World.Common.pickHelmet([
-			[44, ""],
+			[34, ""],
 			[66, "ancient/ancient_household_helmet"]
 		])
 

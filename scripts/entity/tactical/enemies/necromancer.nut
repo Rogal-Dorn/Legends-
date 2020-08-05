@@ -178,21 +178,17 @@ this.necromancer <- this.inherit("scripts/entity/tactical/human", {
 				this.m.Items.equip(this.new("scripts/items/armor/thick_dark_tunic"));
 			}
 		}
-		local r = this.Math.rand(1, 3);
 
-		if (r == 1)
+		local item = this.Const.World.Common.pickHelmet([
+			[1, "witchhunter_hat"],
+			[1, "dark_cowl"],
+			[1, "hood"]
+		])
+		if (item != null)
 		{
-			this.m.Items.equip(this.new("scripts/items/helmets/witchhunter_hat"));
-		}
-		else if (r == 2)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/dark_cowl"));
-		}
-		else if (r == 3)
-		{
-			local hood = this.new("scripts/items/helmets/hood");
-			hood.setVariant(63);
-			this.m.Items.equip(hood);
+			if (item.getID() == "armor.head.hood" || item.getID() == "armor.head.legend_helmet_hood")
+				item.setVariant(63);
+			this.m.Items.equip(item);
 		}
 	}
 

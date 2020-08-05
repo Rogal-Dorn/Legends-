@@ -233,16 +233,11 @@ this.female_thief_background <- this.inherit("scripts/skills/backgrounds/charact
 			items.equip(this.new("scripts/items/armor/legend_maid_dress"));
 		}
 
-		r = this.Math.rand(0, 1);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/hood"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/headscarf"));
-		}
+		local item = this.Const.World.Common.pickHelmet([
+				[1, "hood"],
+				[1, "headscarf"]
+		]))
+		items.equip(item);
 	}
 
 	function onAddLegendEquipment()
@@ -348,15 +343,10 @@ this.female_thief_background <- this.inherit("scripts/skills/backgrounds/charact
 			items.equip(armor);
 		}
 
-		r = this.Math.rand(0, 1);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/hood"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/headscarf"));
-		}
+	local item = this.Const.World.Common.pickHelmet([
+				[1, "hood"],
+				[1, "headscarf"]
+		]))
+		items.equip(item);
 	}
 });

@@ -427,11 +427,14 @@ this.orc_berserker <- this.inherit("scripts/entity/tactical/actor", {
 			this.m.Items.equip(this.new("scripts/items/armor/greenskins/orc_berserker_medium_armor"));
 		}
 
-		r = this.Math.rand(1, 3);
 
-		if (r == 1)
+		local item = this.Const.World.Common.pickHelmet([
+			[2, ""],
+			[1, "greenskins/orc_berserker_helmet"]
+		])
+		if (item != null)
 		{
-			this.m.Items.equip(this.new("scripts/items/helmets/greenskins/orc_berserker_helmet"));
+			this.m.Items.equip(item);
 		}
 
 		if (this.Math.rand(1, 100) <= 10)

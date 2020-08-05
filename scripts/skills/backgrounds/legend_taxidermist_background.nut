@@ -132,7 +132,7 @@ this.legend_taxidermist_background <- this.inherit("scripts/skills/backgrounds/c
 		return c;
 	}
 
-	function onAddEquipment()
+	function onAddLegendEquipment()
 	{
 		local items = this.getContainer().getActor().getItems();
 		local r;

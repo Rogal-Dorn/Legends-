@@ -123,13 +123,13 @@ this.goblin_fighter <- this.inherit("scripts/entity/tactical/goblin", {
 
 		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Head) == null)
 		{
-			if (this.Math.rand(1, 100) <= 75)
+			local item = this.Const.World.Common.pickHelmet([
+				[75, "greenskins/goblin_light_helmet"],
+				[25, "greenskins/goblin_heavy_helmet"]
+			])
+			if (item != null)
 			{
-				this.m.Items.equip(this.new("scripts/items/helmets/greenskins/goblin_light_helmet"));
-			}
-			else
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/greenskins/goblin_heavy_helmet"));
+				this.m.Items.equip(item);
 			}
 		}
 	}

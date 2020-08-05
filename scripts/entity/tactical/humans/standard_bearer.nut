@@ -362,54 +362,27 @@ this.standard_bearer <- this.inherit("scripts/entity/tactical/human", {
 
 			if (banner <= 4)
 			{
-				r = this.Math.rand(1, 3);
-
-				if (r == 1)
-				{
-					helmet = this.new("scripts/items/helmets/kettle_hat");
-				}
-				else if (r == 2)
-				{
-					helmet = this.new("scripts/items/helmets/padded_kettle_hat");
-				}
-				else
-				{
-					helmet = this.new("scripts/items/helmets/kettle_hat_with_mail");
-				}
+				helmet = this.Const.World.Common.pickHelmet([
+					[1, "kettle_hat"],
+					[1, "padded_kettle_hat"],
+					[1, "kettle_hat_with_mail"]
+				])
 			}
 			else if (banner <= 7)
 			{
-				r = this.Math.rand(1, 3);
-
-				if (r == 1)
-				{
-					helmet = this.new("scripts/items/helmets/flat_top_helmet");
-				}
-				else if (r == 2)
-				{
-					helmet = this.new("scripts/items/helmets/padded_flat_top_helmet");
-				}
-				else
-				{
-					helmet = this.new("scripts/items/helmets/flat_top_with_mail");
-				}
+				helmet = this.Const.World.Common.pickHelmet([
+					[1, "flat_top"],
+					[1, "padded_flat_top"],
+					[1, "flat_top_with_mail"]
+				])
 			}
 			else
 			{
-				r = this.Math.rand(1, 3);
-
-				if (r == 1)
-				{
-					helmet = this.new("scripts/items/helmets/nasal_helmet");
-				}
-				else if (r == 2)
-				{
-					helmet = this.new("scripts/items/helmets/padded_nasal_helmet");
-				}
-				else
-				{
-					helmet = this.new("scripts/items/helmets/nasal_helmet_with_mail");
-				}
+				helmet = this.Const.World.Common.pickHelmet([
+					[1, "nasal_helmet"],
+					[1, "padded_nasal_helmet"],
+					[1, "nasal_helmet_with_mail"]
+				])
 			}
 
 			helmet.setPlainVariant();

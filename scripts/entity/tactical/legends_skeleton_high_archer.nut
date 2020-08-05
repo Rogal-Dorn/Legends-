@@ -141,7 +141,7 @@ this.legends_skeleton_high_archer <- this.inherit("scripts/entity/tactical/legen
 			}
 
 			local item = this.Const.World.Common.pickHelmet([
-				[44, ""],
+				[34, ""],
 				[66, "ancient/ancient_household_helmet"]
 			])
 

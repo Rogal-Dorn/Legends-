@@ -176,16 +176,14 @@ this.skeleton_medium <- this.inherit("scripts/entity/tactical/skeleton", {
 
 
 
-
-			local r = this.Math.rand(1, 100);
-			if (r <= 99)
-			{
-			this.m.Items.equip(this.new("scripts/items/helmets/ancient/ancient_legionary_helmet"));
-			}
-			if (r = 100)
-			{
-			this.m.Items.equip(this.new("scripts/items/helmets/ancient/legend_ancient_legionary_helmet_restored"));
-			}
+		local item = this.Const.World.Common.pickHelmet([
+			[99, "ancient/ancient_honorguard_helmet"],
+			[1, "ancient/legend_ancient_legionary_helmet_restored"]
+		])
+		if (item != null)
+		{
+			this.m.Items.equip(item);
+		}
 	}
 
 });

@@ -405,11 +405,15 @@ this.noble_greatsword <- this.inherit("scripts/entity/tactical/human", {
 
 		if (r == 1)
 		{
-			this.m.Items.equip(this.new("scripts/items/helmets/greatsword_hat"));
+			this.m.Items.equip(this.Const.World.Common.pickHelmet([
+					[1, "greatsword_hat"]
+			]));
 		}
 		else if (r == 2)
 		{
-			local helm = this.new("scripts/items/helmets/greatsword_faction_helm");
+			local helm = this.Const.World.Common.pickHelmet([
+					[1, "greatsword_faction_helm"]
+			])
 			helm.setVariant(banner);
 			this.m.Items.equip(helm);
 		}

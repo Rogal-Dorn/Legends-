@@ -196,7 +196,11 @@ this.legend_conjurer_background <- this.inherit("scripts/skills/backgrounds/char
 		items.equip(this.new("scripts/items/weapons/legend_mystic_staff"));
 		items.equip(this.Const.World.Common.pickHelmet([
 			[1, "legend_seer_hat"],
+<<<<<<< HEAD
 			[1, "magician_hat"]
+=======
+			[0, "magcian_hat"]
+>>>>>>> mwahv14Helm
 		]));
 		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");
@@ -214,8 +218,13 @@ this.legend_conjurer_background <- this.inherit("scripts/skills/backgrounds/char
 		items.equip(this.new("scripts/items/legend_armor/cloth/legend_robes_magic"));
 		items.equip(this.new("scripts/items/weapons/legend_mystic_staff"));
 		items.equip(this.Const.World.Common.pickHelmet([
+<<<<<<< HEAD
 			[1, "legend_seer_hat"],
 			[1, "magician_hat"]
+=======
+			[0, "legend_seer_hat"],
+			[1, "magcian_hat"]
+>>>>>>> mwahv14Helm
 		]));
 		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");

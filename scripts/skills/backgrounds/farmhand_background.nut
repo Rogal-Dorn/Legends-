@@ -221,12 +221,10 @@ this.farmhand_background <- this.inherit("scripts/skills/backgrounds/character_b
 			items.equip(item);
 		}
 
-		r = this.Math.rand(0, 2);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/straw_hat"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "straw_hat"],
+			[2, ""]
+		]));
 	}
 
 	function onAddLegendEquipment()
@@ -276,12 +274,10 @@ this.farmhand_background <- this.inherit("scripts/skills/backgrounds/character_b
 		local armor = this.Const.World.Common.pickLegendArmor(cloths)
 		items.equip(armor)
 
-		r = this.Math.rand(0, 2);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/straw_hat"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "straw_hat"],
+			[2, ""]
+		]));
 	}
 });
 

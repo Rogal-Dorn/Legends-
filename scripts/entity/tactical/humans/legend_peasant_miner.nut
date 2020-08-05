@@ -164,16 +164,10 @@ this.legend_peasant_miner <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.Math.rand(1, 100) <= 66)
 		{
-			local r = this.Math.rand(1, 4);
-
-			if (r == 1)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/hood"));
-			}
-			else if (r >= 2)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/mouth_piece"));
-			}
+			this.m.Items.equip(this.Const.World.Common.pickHelmet([
+				[2, "mouth_piece"],
+				[1, "hood"]
+			]))
 		}
 	}
 

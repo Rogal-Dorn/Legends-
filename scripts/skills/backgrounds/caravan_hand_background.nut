@@ -176,16 +176,11 @@ this.caravan_hand_background <- this.inherit("scripts/skills/backgrounds/charact
 			items.equip(this.new("scripts/items/armor/leather_tunic"));
 		}
 
-		r = this.Math.rand(0, 2);
-
-		if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/headscarf"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/helmets/open_leather_cap"));
-		}
+		local item = this.Const.World.Common.pickHelmet([
+				[1, "headscarf"],
+				[1, "open_leather_cap"]
+		]))
+		items.equip(item);
 	}
 
 	function onAddLegendEquipment()
@@ -304,16 +299,11 @@ this.caravan_hand_background <- this.inherit("scripts/skills/backgrounds/charact
 			items.equip(armor);
 		}
 
-		r = this.Math.rand(0, 2);
-
-		if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/headscarf"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/helmets/open_leather_cap"));
-		}
+		local item = this.Const.World.Common.pickHelmet([
+				[1, "headscarf"],
+				[1, "open_leather_cap"]
+		]))
+		items.equip(item);
 	}
 
 });

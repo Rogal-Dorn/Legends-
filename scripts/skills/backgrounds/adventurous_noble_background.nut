@@ -214,24 +214,12 @@ this.adventurous_noble_background <- this.inherit("scripts/skills/backgrounds/ch
 			items.equip(this.new("scripts/items/armor/mail_hauberk"));
 		}
 
-		r = this.Math.rand(0, 4);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/nasal_helmet"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/padded_nasal_helmet"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/helmets/nasal_helmet_with_mail"));
-		}
-		else if (r == 3)
-		{
-			items.equip(this.new("scripts/items/helmets/mail_coif"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "nasal_helmet"],
+			[1, "padded_nasal_helmet"],
+			[1, "nasal_helmet_with_mail"],
+			[1, "mail_coif"]
+		]))
 	}
 
 	function onAddLegendEquipment()
@@ -338,24 +326,12 @@ this.adventurous_noble_background <- this.inherit("scripts/skills/backgrounds/ch
 			items.equip(armor);
 		}
 
-		r = this.Math.rand(0, 4);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/nasal_helmet"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/padded_nasal_helmet"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/helmets/nasal_helmet_with_mail"));
-		}
-		else if (r == 3)
-		{
-			items.equip(this.new("scripts/items/helmets/mail_coif"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "nasal_helmet"],
+			[1, "padded_nasal_helmet"],
+			[1, "nasal_helmet_with_mail"],
+			[1, "mail_coif"]
+		]))
 	}
 });
 

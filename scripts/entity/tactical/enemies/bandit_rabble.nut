@@ -88,8 +88,8 @@ this.bandit_rabble <- this.inherit("scripts/entity/tactical/human", {
 	function assignRandomEquipment()
 	{
 
-
 		local r = this.Math.rand(1, 13);
+		local item; //helmet selector for below
 
 		if (r == 1)
 		{
@@ -100,7 +100,7 @@ this.bandit_rabble <- this.inherit("scripts/entity/tactical/human", {
 				this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_pitchfork_skill"));
 				this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_pitchfork_damage"));
 				//this.m.Items.equip(this.new("scripts/items/armor/tattered_sackcloth"));
-				this.m.Items.equip(this.new("scripts/items/helmets/straw_hat"));
+				item = this.Const.World.Common.pickHelmet([[1, "straw_hat"]]);
 			}
 
 		}
@@ -113,7 +113,7 @@ this.bandit_rabble <- this.inherit("scripts/entity/tactical/human", {
 					this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_militia_damage"));
 					this.m.Items.equip(this.new("scripts/items/shields/buckler_shield"));
 					//this.m.Items.equip(this.new("scripts/items/armor/leather_tunic"));
-					this.m.Items.equip(this.new("scripts/items/helmets/open_leather_cap"));
+					item = this.Const.World.Common.pickHelmet([[1, "open_leather_cap"]]);
 
 				}
 
@@ -126,7 +126,7 @@ this.bandit_rabble <- this.inherit("scripts/entity/tactical/human", {
 					this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_sickle_skill"));
 					this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_sickle_damage"));
 					//this.m.Items.equip(this.new("scripts/items/armor/legend_herbalist_robe"));
-					this.m.Items.equip(this.new("scripts/items/helmets/hood"));
+					item = this.Const.World.Common.pickHelmet([[1, "hood"]]);
 				}
 		}
 		else if (r == 4)
@@ -138,7 +138,7 @@ this.bandit_rabble <- this.inherit("scripts/entity/tactical/human", {
 					this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_mastery_staff_stun"));
 					this.m.Skills.add(this.new("scripts/skills/perks/perk_fortified_mind"));
 					//this.m.Items.equip(this.new("scripts/items/armor/monk_robe"));
-					this.m.Items.equip(this.new("scripts/items/helmets/hood"));
+					item = this.Const.World.Common.pickHelmet([[1, "hood"]]);
 				}
 		}
 		else if (r == 5)
@@ -149,7 +149,7 @@ this.bandit_rabble <- this.inherit("scripts/entity/tactical/human", {
 					this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_shovel_skill"));
 					this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_shovel_damage"));
 					//this.m.Items.equip(this.new("scripts/items/armor/leather_wraps"));
-					this.m.Items.equip(this.new("scripts/items/helmets/hood"));
+					item = this.Const.World.Common.pickHelmet([[1, "hood"]]);
 				}
 		}
 		else if (r == 6)
@@ -163,7 +163,7 @@ this.bandit_rabble <- this.inherit("scripts/entity/tactical/human", {
 					this.m.Skills.add(this.new("scripts/skills/perks/perk_colossus"));
 					this.m.Skills.add(this.new("scripts/skills/perks/perk_recover"));
 					this.m.Skills.add(this.new("scripts/skills/perks/perk_rebound"));
-					this.m.Items.equip(this.new("scripts/items/helmets/straw_hat"));
+					item = this.Const.World.Common.pickHelmet([[1, "straw_hat"]]);
 				}
 		}
 		else if (r == 7)
@@ -175,7 +175,7 @@ this.bandit_rabble <- this.inherit("scripts/entity/tactical/human", {
 					this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_hammer_damage"));
 					this.m.Skills.add(this.new("scripts/skills/perks/perk_colossus"));
 					//this.m.Items.equip(this.new("scripts/items/armor/legend_blacksmith_apron"));
-					this.m.Items.equip(this.new("scripts/items/helmets/mouth_piece"));
+					item = this.Const.World.Common.pickHelmet([[1, "mouth_piece"]]);
 
 				}
 		}
@@ -187,7 +187,7 @@ this.bandit_rabble <- this.inherit("scripts/entity/tactical/human", {
 					this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_knife_skill"));
 					this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_knife_damage"));
 					this.m.Skills.add(this.new("scripts/skills/perks/perk_duelist"));
-					this.m.Items.equip(this.new("scripts/items/helmets/headscarf"));
+					item = this.Const.World.Common.pickHelmet([[1, "headscarf"]]);
 					//this.m.Items.equip(this.new("scripts/items/armor/linen_tunic"));
 				}
 		}
@@ -200,7 +200,7 @@ this.bandit_rabble <- this.inherit("scripts/entity/tactical/human", {
 					this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_mind_over_body"));
 					this.m.Skills.add(this.new("scripts/skills/perks/perk_recover"));
 					//this.m.Items.equip(this.new("scripts/items/armor/linen_tunic"));
-					this.m.Items.equip(this.new("scripts/items/helmets/feathered_hat"));
+					item = this.Const.World.Common.pickHelmet([[1, "feathered_hat"]]);
 				}
 		}
 		else if (r == 10)
@@ -212,7 +212,7 @@ this.bandit_rabble <- this.inherit("scripts/entity/tactical/human", {
 					this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_butcher_skill"));
 					this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_butcher_damage"));
 					//this.m.Items.equip(this.new("scripts/items/armor/butcher_apron"));
-					this.m.Items.equip(this.new("scripts/items/helmets/mouth_piece"));
+					item = this.Const.World.Common.pickHelmet([[1, "mouth_piece"]]);
 				}
 		}
 		else if (r == 11)
@@ -224,7 +224,7 @@ this.bandit_rabble <- this.inherit("scripts/entity/tactical/human", {
 				this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_woodaxe_skill"));
 				this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_woodaxe_damage"));
 				//this.m.Items.equip(this.new("scripts/items/armor/apron"));
-				this.m.Items.equip(this.new("scripts/items/helmets/headscarf"));
+					item = this.Const.World.Common.pickHelmet([[1, "headscarf"]]);
 				}
 		}
 		else if (r == 12)
@@ -236,7 +236,7 @@ this.bandit_rabble <- this.inherit("scripts/entity/tactical/human", {
 				this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_pitchfork_skill"));
 				this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_pitchfork_damage"));
 				//this.m.Items.equip(this.new("scripts/items/armor/linen_tunic"));
-				this.m.Items.equip(this.new("scripts/items/helmets/straw_hat"));
+					item = this.Const.World.Common.pickHelmet([[1, "straw_hat"]]);
 				}
 		}
 		else if (r == 13)
@@ -249,9 +249,11 @@ this.bandit_rabble <- this.inherit("scripts/entity/tactical/human", {
 				this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_pitchfork_skill"));
 				this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_pitchfork_damage"));
 				//this.m.Items.equip(this.new("scripts/items/armor/leather_wraps"));
-				this.m.Items.equip(this.new("scripts/items/helmets/cultist_hood"));
+					item = this.Const.World.Common.pickHelmet([[1, "cultist_hood"]]);
 				}
 		}
+		if (item != null)
+			this.m.Items.equip(item);
 
 
 		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
@@ -374,21 +376,18 @@ this.bandit_rabble <- this.inherit("scripts/entity/tactical/human", {
 		}
 
 
-		if (this.Math.rand(1, 100) <= 50)
-		{
-			local r = this.Math.rand(1, 2);
-
-			if (r == 1)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/headscarf"));
-			}
-			else if (r == 2)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/mouth_piece"));
-			}
-
-
-		}
+		//we did helmet selection above so dont need to do it here?
+		// if (this.Math.rand(1, 100) <= 50)
+		// {
+		// local item = this.Const.World.Common.pickHelmet([
+			// 	[1, "headscarf"],
+			// 	[1, "mouth_piece"]
+			// ])
+			// if (item != null)
+			// {
+			// 	this.m.Items.equip(item);
+			// }
+		// }
 	}
 
 });

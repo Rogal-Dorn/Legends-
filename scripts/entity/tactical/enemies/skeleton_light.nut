@@ -157,9 +157,13 @@ this.skeleton_light <- this.inherit("scripts/entity/tactical/skeleton", {
 
 
 
-		if (this.Math.rand(1, 100) <= 66)
+		local item = this.Const.World.Common.pickHelmet([
+			[66, "ancient/ancient_household_helmet"],
+			[34, ""]
+		])
+		if (item != null)
 		{
-			this.m.Items.equip(this.new("scripts/items/helmets/ancient/ancient_household_helmet"));
+			this.m.Items.equip(item);
 		}
 	}
 

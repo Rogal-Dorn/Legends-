@@ -73,7 +73,7 @@ this.wildman_finds_something_event <- this.inherit("scripts/events/event", {
 					}
 					else if (r == 4)
 					{
-						item = this.new("scripts/items/helmets/hood");
+						ithis.Const.World.Common.pickHelmet([[1, "hood"]]);
 					}
 					else if (r == 5)
 					{

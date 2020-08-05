@@ -933,33 +933,20 @@ this.zombie <- this.inherit("scripts/entity/tactical/actor", {
 
 		if (this.Math.rand(1, 100) <= 33)
 		{
-			r = this.Math.rand(1, 5);
-			local helmet;
-
-			if (r == 1)
+			local item = this.Const.World.Common.pickHelmet([
+				[1, "aketon_cap"],
+				[1, "full_aketon_cap"],
+				[1, "kettle_hat"],
+				[1, "padded_kettle_hat"],
+				[1, "full_leather_cap"]
+			])
+			if (item != null)
 			{
-				helmet = this.new("scripts/items/helmets/hood");
-			}
-			else if (r == 2)
-			{
-				helmet = this.new("scripts/items/helmets/aketon_cap");
-			}
-			else if (r == 3)
-			{
-				helmet = this.new("scripts/items/helmets/full_aketon_cap");
-			}
-			else if (r == 4)
-			{
-				helmet = this.new("scripts/items/helmets/open_leather_cap");
-			}
-			else if (r == 5)
-			{
-				helmet = this.new("scripts/items/helmets/full_leather_cap");
-			}
-
-			if (this.Math.rand(1, 100) <= 50)
-			{
-				helmet.setArmor(helmet.getArmorMax() / 2 - 1);
+				if (this.Math.rand(1, 100) <= 50)
+				{
+					item.setArmor(item.getArmorMax() / 2 - 1);
+				}
+				this.m.Items.equip(item);
 			}
 
 			this.m.Items.equip(helmet);

@@ -171,20 +171,11 @@ this.legend_peasant_blacksmith <- this.inherit("scripts/entity/tactical/human", 
 
 		if (this.Math.rand(1, 100) <= 66)
 		{
-			local r = this.Math.rand(1, 4);
-
-			if (r <= 2)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/hood"));
-			}
-			else if (r == 3)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/headscarf"));
-			}
-			else if (r == 4)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/straw_hat"));
-			}
+			this.m.Items.equip(this.Const.World.Common.pickHelmet([
+				[1, "headscarf"],
+				[2, "hood"],
+				[1, "straw_hat"]
+			]))
 		}
 	}
 

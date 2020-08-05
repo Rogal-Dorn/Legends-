@@ -71,7 +71,13 @@ this.goblin_fighter_low <- this.inherit("scripts/entity/tactical/enemies/goblin_
 
 		if (this.Math.rand(1, 100) <= 50)
 		{
-			this.m.Items.equip(this.new("scripts/items/helmets/greenskins/goblin_light_helmet"));
+			local item = this.Const.World.Common.pickHelmet([
+				[1, "greenskins/goblin_light_helmet"]
+			])
+			if (item != null)
+			{
+				this.m.Items.equip(item);
+			}
 		}
 	}
 

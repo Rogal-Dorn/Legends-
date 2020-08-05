@@ -154,7 +154,13 @@ this.skeleton_medium_polearm <- this.inherit("scripts/entity/tactical/skeleton",
 			}
 		}
 
-		this.m.Items.equip(this.new("scripts/items/helmets/ancient/ancient_legionary_helmet"));
+		local item = this.Const.World.Common.pickHelmet([
+			[66, "ancient/ancient_legionary_helmet"]
+		])
+		if (item != null)
+		{
+			this.m.Items.equip(item);
+		}
 	}
 
 });

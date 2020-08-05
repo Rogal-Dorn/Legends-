@@ -455,44 +455,18 @@ this.mercenary_low <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.Math.rand(1, 100) <= 90)
 		{
-			local r = this.Math.rand(1, 10);
-
-			if (r == 1)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/nasal_helmet"));
-			}
-			else if (r == 2)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/padded_nasal_helmet"));
-			}
-			else if (r == 3)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/mail_coif"));
-			}
-			else if (r == 4)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/closed_mail_coif"));
-			}
-			else if (r == 5)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/headscarf"));
-			}
-			else if (r == 6)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/kettle_hat"));
-			}
-			else if (r == 7)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/padded_kettle_hat"));
-			}
-			else if (r == 8)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/flat_top_helmet"));
-			}
-			else if (r == 9)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/padded_flat_top_helmet"));
-			}
+			this.m.Items.equip(this.Const.World.Common.pickHelmet([
+				[1, "padded_nasal_helmet"],
+				[1, "nasal_helmet"],
+				[1, "closed_mail_coif"],
+				[1, "mail_coif"],
+				[1, "headscarf"],
+				[1, "padded_kettle_hat"],
+				[1, "kettle_hat"],
+				[1, "flat_top_helmet"],
+				[1, "padded_flat_top_helmet"],
+				[1, ""]
+			]))
 		}
 	}
 

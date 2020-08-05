@@ -352,8 +352,6 @@ function onAddEquipment()
 		shield.onPaintSpecificColor(23);
 		items.equip(shield);
 
-
-
 		local item = this.Const.World.Common.pickHelmet([
 			[1, "nasal_helmet"],
 			[1, "nasal_helmet_with_mail"],
@@ -469,6 +467,19 @@ function onAddEquipment()
 				armor.setUpgrade(cloak)
 			}
 			items.equip(armor);
+		}
+
+		local item = this.Const.World.Common.pickHelmet([
+			[1, "nasal_helmet"],
+			[1, "nasal_helmet_with_mail"],
+			[1, "mail_coif"],
+			[1, "bascinet_with_mail"],
+			[1, "closed_flat_top_helmet"]
+		])
+		if (item != null)
+		{
+			item.onPaint(this.Const.Items.Paint.Black);
+			items.equip(item);
 		}
 
 	}

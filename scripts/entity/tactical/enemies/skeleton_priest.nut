@@ -70,7 +70,13 @@ this.skeleton_priest <- this.inherit("scripts/entity/tactical/skeleton", {
 	function assignRandomEquipment()
 	{
 		this.m.Items.equip(this.new("scripts/items/armor/ancient/ancient_priest_attire"));
-		this.m.Items.equip(this.new("scripts/items/helmets/ancient/ancient_priest_diadem"));
+		local item = this.Const.World.Common.pickHelmet([
+			[99, "ancient/ancient_priest_diadem"]
+		])
+		if (item != null)
+		{
+			this.m.Items.equip(item);
+		}
 	}
 
 });

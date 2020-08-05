@@ -69,7 +69,9 @@ this.councilman <- this.inherit("scripts/entity/tactical/human", {
 
 				if (this.Math.rand(1, 100) <= 33)
 				{
-					this.m.Items.equip(this.new("scripts/items/helmets/feathered_hat"));
+					this.m.Items.equip(this.Const.World.Common.pickHelmet([
+						[1, "feathered_hat"]
+					]))
 					withHelmet = false;
 				}
 			}
@@ -90,7 +92,9 @@ this.councilman <- this.inherit("scripts/entity/tactical/human", {
 
 				if (this.Math.rand(1, 100) <= 50)
 				{
-					this.m.Items.equip(this.new("scripts/items/helmets/wizard_hat"));
+					this.m.Items.equip(this.Const.World.Common.pickHelmet([
+						[1, "wizard_hat"]
+					]))
 					withHelmet = false;
 				}
 			}
@@ -103,7 +107,9 @@ this.councilman <- this.inherit("scripts/entity/tactical/human", {
 
 				if (this.Math.rand(1, 100) <= 33)
 				{
-					this.m.Items.equip(this.new("scripts/items/helmets/feathered_hat"));
+					this.m.Items.equip(this.Const.World.Common.pickHelmet([
+						[1, "feathered_hat"]
+					]))
 					withHelmet = false;
 				}
 			}
@@ -124,7 +130,9 @@ this.councilman <- this.inherit("scripts/entity/tactical/human", {
 
 				if (this.Math.rand(1, 100) <= 50)
 				{
-					this.m.Items.equip(this.new("scripts/items/helmets/wizard_hat"));
+					this.m.Items.equip(this.Const.World.Common.pickHelmet([
+						[1, "wizard_hat"]
+					]))
 					withHelmet = false;
 				}
 			}
@@ -148,11 +156,15 @@ this.councilman <- this.inherit("scripts/entity/tactical/human", {
 		{
 			if (this.Math.rand(1, 100) <= 50)
 			{
-				this.m.Items.equip(this.new("scripts/items/helmets/feathered_hat"));
+				this.m.Items.equip(this.Const.World.Common.pickHelmet([
+						[1, "feathered_hat"]
+					]))
 			}
 			else
 			{
-				this.m.Items.equip(this.new("scripts/items/helmets/noble_headgear"));
+				this.m.Items.equip(this.Const.World.Common.pickHelmet([
+						[1, "noble_headgear"]
+					]))
 			}
 		}
 	}
