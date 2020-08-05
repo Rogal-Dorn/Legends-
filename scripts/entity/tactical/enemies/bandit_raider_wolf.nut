@@ -426,27 +426,16 @@ this.bandit_raider_wolf <- this.inherit("scripts/entity/tactical/enemies/bandit_
 
 		if (this.Math.rand(1, 100) <= 75)
 		{
-			local r = this.Math.rand(1, 5);
-
-			if (r == 1)
+			local item = this.Const.World.Common.pickHelmet([
+				[1, "nasal_helmet"],
+				[1, "dented_nasal_helmet"],
+				[1, "rusty_mail_coif"],
+				[1, "headscarf"],
+				[1, "nasal_helmet_with_rusty_mail"]
+			])
+			if (item != null)
 			{
-				this.m.Items.equip(this.new("scripts/items/helmets/nasal_helmet"));
-			}
-			else if (r == 2)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/dented_nasal_helmet"));
-			}
-			else if (r == 3)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/nasal_helmet_with_rusty_mail"));
-			}
-			else if (r == 4)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/rusty_mail_coif"));
-			}
-			else if (r == 5)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/headscarf"));
+				this.m.Items.equip(item);
 			}
 		}
 	}

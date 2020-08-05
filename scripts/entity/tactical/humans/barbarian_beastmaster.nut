@@ -88,8 +88,13 @@ this.barbarian_beastmaster <- this.inherit("scripts/entity/tactical/human", {
 		{
 			this.m.Items.equip(this.new("scripts/items/armor/barbarians/hide_and_bone_armor"));
 		}
-
-		this.m.Items.equip(this.new("scripts/items/helmets/barbarians/beastmasters_headpiece"));
+		local item = this.Const.World.Common.pickHelmet([
+			[99, "barbarians/beastmasters_headpiece"]
+		])
+		if (item != null)
+		{
+			this.m.Items.equip(item);
+		}
 	}
 
 });

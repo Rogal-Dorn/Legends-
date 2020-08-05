@@ -138,15 +138,13 @@ this.barbarian_drummer <- this.inherit("scripts/entity/tactical/human", {
 			}
 		}
 
-		r = this.Math.rand(1, 2);
-
-		if (r == 1)
+		local item = this.Const.World.Common.pickHelmet([
+			[1, "barbarians/leather_headband"],
+			[1, "barbarians/bear_headpiece"]
+		])
+		if (item != null)
 		{
-			this.m.Items.equip(this.new("scripts/items/helmets/barbarians/leather_headband"));
-		}
-		else if (r == 2)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/barbarians/bear_headpiece"));
+			this.m.Items.equip(item);
 		}
 	}
 

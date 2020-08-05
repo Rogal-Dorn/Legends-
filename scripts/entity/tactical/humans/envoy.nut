@@ -53,10 +53,13 @@ this.envoy <- this.inherit("scripts/entity/tactical/player", {
 		{
 			this.m.Items.equip(this.new("scripts/items/armor/linen_tunic"));
 		}
-
-		if (this.Math.rand(1, 100) <= 33)
+		local item = this.Const.World.Common.pickHelmet([
+			[1, "feathered_hat"],
+			[2, ""]
+		])
+		if (item != null)
 		{
-			this.m.Items.equip(this.new("scripts/items/helmets/feathered_hat"));
+			this.m.Items.equip(item);
 		}
 	}
 

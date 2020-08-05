@@ -191,15 +191,13 @@ this.bandit_poacher <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.Math.rand(1, 100) <= 50)
 		{
-			local r = this.Math.rand(1, 2);
-
-			if (r == 1)
+			local item = this.Const.World.Common.pickHelmet([
+				[1, "headscarf"],
+				[1, "mouth_piece"]
+			])
+			if (item != null)
 			{
-				this.m.Items.equip(this.new("scripts/items/helmets/headscarf"));
-			}
-			else if (r == 2)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/mouth_piece"));
+				this.m.Items.equip(item);
 			}
 		}
 	}

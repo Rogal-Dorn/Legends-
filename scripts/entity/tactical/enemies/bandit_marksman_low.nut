@@ -133,17 +133,16 @@ this.bandit_marksman_low <- this.inherit("scripts/entity/tactical/enemies/bandit
 			this.m.Items.equip(this.new("scripts/items/armor/leather_wraps"));
 		}
 
-		if (this.Math.rand(1, 100) <= 50)
+		if (this.Math.rand(0,1) == 0)
 		{
-			local r = this.Math.rand(1, 2);
+			local item = this.Const.World.Common.pickHelmet([
+				[5, "headscarf"],
+				[5, "mouth_piece"]
+			])
 
-			if (r == 1)
+			if (item != null)
 			{
-				this.m.Items.equip(this.new("scripts/items/helmets/headscarf"));
-			}
-			else if (r == 2)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/mouth_piece"));
+				this.m.Items.equip(item);
 			}
 		}
 	}

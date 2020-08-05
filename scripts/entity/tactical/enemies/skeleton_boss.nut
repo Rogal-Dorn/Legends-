@@ -63,7 +63,13 @@ this.skeleton_boss <- this.inherit("scripts/entity/tactical/skeleton", {
 			this.m.Items.equip(this.new("scripts/items/armor/legendary/emperors_armor_fake"));
 		}
 
-		this.m.Items.equip(this.new("scripts/items/helmets/ancient/ancient_laurels"));
+		local item = this.Const.World.Common.pickHelmet([
+			[66, "ancient/ancient_laurels"]
+		])
+		if (item != null)
+		{
+			this.m.Items.equip(item);
+		}
 	}
 
 });

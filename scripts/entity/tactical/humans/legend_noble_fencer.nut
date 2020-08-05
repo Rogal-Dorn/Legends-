@@ -231,91 +231,43 @@ this.legend_noble_fencer <- this.inherit("scripts/entity/tactical/human", {
 
 			if (banner <= 4)
 			{
-				r = this.Math.rand(1, 4);
-
-				if (r == 1)
-				{
-					helmet = this.new("scripts/items/helmets/kettle_hat");
-				}
-				else if (r == 2)
-				{
-					helmet = this.new("scripts/items/helmets/padded_kettle_hat");
-				}
-				else if (r == 3)
-				{
-					helmet = this.new("scripts/items/helmets/kettle_hat_with_mail");
-				}
-				else
-				{
-					helmet = this.new("scripts/items/helmets/mail_coif");
-				}
+				this.m.Items.equip(this.Const.World.Common.pickHelmet([
+					[1, "kettle_hat"],
+					[1, "padded_kettle_hat"],
+					[1, "kettle_hat_with_mail"],
+					[1, "mail_coif"]
+				]))
 			}
 			else if (banner <= 7)
 			{
-				r = this.Math.rand(1, 4);
-
-				if (r == 1)
-				{
-					helmet = this.new("scripts/items/helmets/flat_top_helmet");
-				}
-				else if (r == 2)
-				{
-					helmet = this.new("scripts/items/helmets/padded_flat_top_helmet");
-				}
-				else if (r == 3)
-				{
-					helmet = this.new("scripts/items/helmets/flat_top_with_mail");
-				}
-				else
-				{
-					helmet = this.new("scripts/items/helmets/mail_coif");
-				}
+				this.m.Items.equip(this.Const.World.Common.pickHelmet([
+					[1, "flat_top_helmet"],
+					[1, "padded_flat_top_helmet"],
+					[1, "flat_top_with_mail"],
+					[1, "mail_coif"]
+				]))
 			}
 			else
 			{
-				r = this.Math.rand(1, 4);
-
-				if (r == 1)
-				{
-					helmet = this.new("scripts/items/helmets/nasal_helmet");
-				}
-				else if (r == 2)
-				{
-					helmet = this.new("scripts/items/helmets/padded_nasal_helmet");
-				}
-				else if (r == 3)
-				{
-					helmet = this.new("scripts/items/helmets/nasal_helmet_with_mail");
-				}
-				else
-				{
-					helmet = this.new("scripts/items/helmets/mail_coif");
-				}
+				this.m.Items.equip(this.Const.World.Common.pickHelmet([
+					[1, "nasal_helmet"],
+					[1, "padded_nasal_helmet"],
+					[1, "nasal_helmet_with_mail"],
+					[1, "mail_coif"]
+				]))
 			}
 
-			helmet.setPlainVariant();
+			this.m.Items.getItemAtSlot(this.Const.ItemSlot.Head).setPlainVariant();
 			this.m.Items.equip(helmet);
 		}
 		else
 		{
-			r = this.Math.rand(1, 5);
-
-			if (r == 1)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/aketon_cap"));
-			}
-			else if (r == 2)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/full_aketon_cap"));
-			}
-			else if (r == 3)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/aketon_cap"));
-			}
-			else if (r == 4)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/headscarf"));
-			}
+			this.m.Items.equip(this.Const.World.Common.pickHelmet([
+				[2, "aketon_cap"],
+				[1, "full_aketon_cap"],
+				[1, "headscarf"],
+				[1, ""]
+			]))
 		}
 	}
 

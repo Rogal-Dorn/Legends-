@@ -200,15 +200,13 @@ this.caravan_hand <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.Math.rand(1, 100) <= 33)
 		{
-			local r = this.Math.rand(1, 2);
-
-			if (r == 1)
+			local item = this.Const.World.Common.pickHelmet([
+				[1, "hood"],
+				[1, "aketon_cap"]
+			])
+			if (item != null)
 			{
-				this.m.Items.equip(this.new("scripts/items/helmets/hood"));
-			}
-			else if (r == 2)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/aketon_cap"));
+				this.m.Items.equip(item);
 			}
 		}
 	}

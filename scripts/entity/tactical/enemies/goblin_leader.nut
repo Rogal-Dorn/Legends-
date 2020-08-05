@@ -55,7 +55,13 @@ this.goblin_leader <- this.inherit("scripts/entity/tactical/goblin", {
 		this.m.Items.equip(this.new("scripts/items/weapons/greenskins/goblin_crossbow"));
 		this.m.Items.addToBag(this.new("scripts/items/weapons/greenskins/goblin_falchion"));
 		this.m.Items.equip(this.new("scripts/items/armor/greenskins/goblin_leader_armor"));
-		this.m.Items.equip(this.new("scripts/items/helmets/greenskins/goblin_leader_helmet"));
+		local item = this.Const.World.Common.pickHelmet([
+			[1, "greenskins/goblin_leader_helmet"]
+		])
+		if (item != null)
+		{
+			this.m.Items.equip(item);
+		}	
 	}
 
 });

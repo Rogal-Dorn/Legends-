@@ -24,7 +24,13 @@ this.unhold_frost_armored <- this.inherit("scripts/entity/tactical/enemies/unhol
 	function assignRandomEquipment()
 	{
 		this.m.Items.equip(this.new("scripts/items/armor/barbarians/unhold_armor_heavy"));
-		this.m.Items.equip(this.new("scripts/items/helmets/barbarians/unhold_helmet_heavy"));
+		local item = this.Const.World.Common.pickHelmet([
+			[99, "barbarians/unhold_helmet_heavy"]
+		])
+		if (item != null)
+		{
+			this.m.Items.equip(item);
+		}
 	}
 
 	function onTurnStart()
