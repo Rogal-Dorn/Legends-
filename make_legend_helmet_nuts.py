@@ -234,7 +234,7 @@ layers = [
 
     {"name": "nose_plate",              "layer": "top", "min": 1, "max": 1, "value" : 60, "con" : 15, "stam" : -2, "vis" : 0,  "hair" : "false", "beard" :"false" },
     {"name": "headband_side",           "layer": "top", "min": 1, "max": 1, "value" : 95, "con" : 20, "stam" : -2, "vis" : 0,  "hair" : "false", "beard" :"false" },
-    {"name": "headband_nose",           "layer": "top", "min": 1, "max": 1, "value" : 190, "con" : 30, "stam" : -2, "vis" : 0,  "hair" : "false", "beard" :"false" }
+    {"name": "headband_nose",           "layer": "top", "min": 1, "max": 1, "value" : 190, "con" : 30, "stam" : -2, "vis" : 0,  "hair" : "false", "beard" :"false" },
     {"name": "eyemask",                 "layer": "top", "min": 1, "max": 2, "value" : 250, "con" : 35, "stam" : -3, "vis" : -1,  "hair" : "false", "beard" :"false" },
     {"name": "chain_attachment",        "layer": "top", "min": 1, "max": 1, "value" : 310, "con" : 40, "stam" : -3, "vis" : -1,  "hair" : "false", "beard" :"true" },
     {"name": "faceplate_flat",          "layer": "top", "min": 1, "max": 1, "value" : 375, "con" : 45, "stam" : -3, "vis" : -2,  "hair" : "false", "beard" :"false" },
@@ -374,6 +374,7 @@ titles = {
     "golden_helm" :                         "Golden Helm",
     "great_helm" :                           "Great Helm",
     "heavy_plate_helm" :                     "Heavy Plate Helm",
+    "heavy_plate_helm_named" : "",
     "heavy_spiked_helm" :                   "Heavy Spiked Helm",
     "horsetail" :                            "Steppe Helm",
     "kettle_helm" :                          "Kettle Helm",
@@ -537,7 +538,8 @@ descriptions = {
     "goblin_spiked_helm" :                  "The distinctive spiked helm of a goblin overseer",
     "golden_helm" :                         "A golden helmet and facemask, showing the visage of an emperor from an age long past, imbued with mystical energies. When you hold it into the light, it almost looks as if the face were moving and making expressions of disgust.",
     "great_helm" :                           "A closed metal helm with breathing holes. Great in the way of protection but hard to breathe in and limiting the field of view.",
-    "heavy_plate_helm" :                     "This heavy helmet usually has ornamental horns attached. This is a sign of high standing and reputation within barbarian warbands.",
+    "heavy_plate_helm" :                     "This heavy helmet usually is worn as a sign of high standing and reputation within barbarian warbands.",
+    "heavy_plate_helm_named" :               "This heavy helmet has ornamental horns attached and is of exceptional quality among the barbarian clans. This is a sign of high standing and reputation within barbarian warbands.",
     "heavy_spiked_helm" :                   "his helmet must have belonged to a distinct warrior of the barbarians. Its size and design appear alien to all southern folks.",
     "horsetail" :                            "A nasal helmet witch an attached mail neck guard fashioned in the way of the steppe folks.",
     "kettle_helm" :                          "A full-metal helmet with a broad rim.",
