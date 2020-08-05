@@ -367,6 +367,7 @@ function onAddEquipment()
 			items.equip(item);
 		}
 
+
 		local cloths = [
             [0, ""],
 			[0, "cloth/legend_gambeson"],
@@ -470,28 +471,6 @@ function onAddEquipment()
 			items.equip(armor);
 		}
 
-		r = this.Math.rand(0, 4);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/nasal_helmet"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/nasal_helmet_with_mail"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/helmets/mail_coif"));
-		}
-		else if (r == 3)
-		{
-			items.equip(this.new("scripts/items/helmets/bascinet_with_mail"));
-		}
-		else if (r == 4)
-		{
-			items.equip(this.new("scripts/items/helmets/closed_flat_top_helmet"));
-		}
 	}
 
 });

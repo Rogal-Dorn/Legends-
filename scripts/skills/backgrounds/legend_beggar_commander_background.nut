@@ -265,12 +265,20 @@ this.legend_beggar_commander_background <- this.inherit("scripts/skills/backgrou
 
 		r = this.Math.rand(0, 4);
 
-		if (r == 0)
+
+		local item = this.Const.World.Common.pickHelmet([
+			[3, ""],
+			[1, "hood"]
+		])
+		if (item != null)
 		{
-			local item = this.new("scripts/items/helmets/hood");
-			item.setVariant(38);
+			if (item.getID() == "armor.head.hood")
+			{
+				item.setVariant(38);
+			}
 			items.equip(item);
 		}
+
 	}
 
 	function onAddLegendEquipment()
@@ -309,12 +317,17 @@ this.legend_beggar_commander_background <- this.inherit("scripts/skills/backgrou
 		local armor = this.Const.World.Common.pickLegendArmor(cloths)
 		items.equip(armor)
 
-		r = this.Math.rand(0, 4);
 
-		if (r == 0)
+		local item = this.Const.World.Common.pickHelmet([
+			[3, ""],
+			[1, "hood"]
+		])
+		if (item != null)
 		{
-			local item = this.new("scripts/items/helmets/hood");
-			item.setVariant(38);
+			if (item.getID() == "armor.head.hood")
+			{
+				item.setVariant(38);
+			}
 			items.equip(item);
 		}
 	}
