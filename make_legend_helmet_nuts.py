@@ -3,6 +3,161 @@ from string import Template
 from shutil import copyfile
 import os
 
+vanilla = [
+    "aketon_cap",
+    "ancient/ancient_gladiator_helmet",
+    "ancient/ancient_honorguard_helmet",
+    "ancient/ancient_household_helmet",
+    "ancient/ancient_laurels",
+    "ancient/ancient_legionary_helmet",
+    "ancient/ancient_priest_diadem",
+    "ancient/legend_ancient_legionary_helmet_restored",
+    "barbarians/barbarian_ritual_helmet",
+    "barbarians/bear_headpiece",
+    "barbarians/beastmasters_headpiece",
+    "barbarians/closed_scrap_metal_helmet",
+    "barbarians/crude_faceguard_helmet",
+    "barbarians/crude_metal_helmet",
+    "barbarians/heavy_horned_plate_helmet",
+    "barbarians/leather_headband",
+    "barbarians/leather_helmet",
+    "barbarians/unhold_helmet_heavy",
+    "barbarians/unhold_helmet_light",
+    "barbute_helmet",
+    "bascinet_with_mail",
+    "closed_flat_top_helmet",
+    "closed_flat_top_with_mail",
+    "closed_flat_top_with_neckguard",
+    "closed_mail_coif",
+    "conic_helmet_with_closed_mail",
+    "conic_helmet_with_faceguard",
+    "cultist_hood",
+    "cultist_leather_hood",
+    "dark_cowl",
+    "decayed_closed_flat_top_with_mail",
+    "decayed_closed_flat_top_with_sack",
+    "decayed_full_helm",
+    "decayed_great_helm",
+    "dented_nasal_helmet",
+    "faction_helm",
+    "feathered_hat",
+    "flat_top_helmet",
+    "flat_top_with_closed_mail",
+    "flat_top_with_mail",
+    "full_aketon_cap",
+    "full_helm",
+    "full_leather_cap",
+    "greatsword_faction_helm",
+    "greatsword_hat",
+    "greenskins/goblin_heavy_helmet",
+    "greenskins/goblin_leader_helmet",
+    "greenskins/goblin_light_helmet",
+    "greenskins/goblin_shaman_helmet",
+    "greenskins/goblin_skirmisher_helmet",
+    "greenskins/legend_orc_behemoth_helmet",
+    "greenskins/orc_berserker_helmet",
+    "greenskins/orc_elite_heavy_helmet",
+    "greenskins/orc_warlord_helmet",
+    "greenskins/orc_warrior_heavy_helmet",
+    "greenskins/orc_warrior_light_helmet",
+    "greenskins/orc_warrior_medium_helmet",
+    "greenskins/orc_young_heavy_helmet",
+    "greenskins/orc_young_light_helmet",
+    "greenskins/orc_young_medium_helmet",
+    "headscarf",
+    "hood",
+    "hunters_hat",
+    "jesters_hat",
+    "kettle_hat",
+    "kettle_hat_with_closed_mail",
+    "kettle_hat_with_mail",
+    "legend_frogmouth_helm",
+    "legend_frogmouth_helm_crested",
+    "legend_nun_habit",
+    "legend_seer_hat",
+    "legend_vampire_lord_helmet",
+    "legend_warlock_hood",
+    "legendary/emperors_countenance",
+    "legendary/fangshire",
+    "legendary/ijirok_helmet",
+    "legendary/legend_demonalp_helmet",
+    "legendary/legend_mountain_helmet",
+    "legendary/legend_redback_helmet",
+    "legendary/legend_skin_helmet",
+    "legendary/legend_stollwurm_helmet",
+    "legendary/legend_white_wolf_helmet",
+    "legendary/mask_of_davkul",
+    "magician_hat",
+    "mail_coif",
+    "mouth_piece",
+    "named/death_jesters_helm",
+    "named/golden_feathers_helmet",
+    "named/heraldic_mail_helmet",
+    "named/jugglers_hat",
+    "named/jugglers_padded_hat",
+    "named/legend_frogmouth_helm_crested_painted",
+    "named/legend_frogmouth_helm_decorated",
+    "named/legend_mountain_helmet_named",
+    "named/legend_named_warlock_hood",
+    "named/lindwurm_helmet",
+    "named/named_conic_helmet_with_faceguard",
+    "named/named_helmet",
+    "named/named_metal_bull_helmet",
+    "named/named_metal_nose_horn_helmet",
+    "named/named_metal_skull_helmet",
+    "named/named_nordic_helmet_with_closed_mail",
+    "named/named_steppe_helmet_with_mail",
+    "named/nasal_feather_helmet",
+    "named/norse_helmet",
+    "named/sallet_green_helmet",
+    "named/witchhunter_helm",
+    "named/wolf_helmet",
+    "nasal_helmet",
+    "nasal_helmet_with_closed_mail",
+    "nasal_helmet_with_mail",
+    "nasal_helmet_with_rusty_mail",
+    "necromancer_hat",
+    "noble_arrow_helm",
+    "noble_bull_helm",
+    "noble_castle_helm",
+    "noble_deer_helm",
+    "noble_dragon_helm",
+    "noble_feather_helm",
+    "noble_fish_helm",
+    "noble_headgear",
+    "noble_lion_helm",
+    "noble_sun_helm",
+    "noble_swan_helm",
+    "nordic_helmet",
+    "nordic_helmet_with_closed_mail",
+    "open_leather_cap",
+    "padded_flat_top_helmet",
+    "padded_kettle_hat",
+    "padded_nasal_helmet",
+    "reinforced_mail_coif",
+    "rusty_mail_coif",
+    "sallet_helmet",
+    "steppe_helmet_with_mail",
+    "straw_hat",
+    "witchhunter_hat",
+    "wizard_hat"
+]
+
+HelmObj = '''{
+    ID = "$id",
+    Script = "",
+    Hoods = [
+
+    ],
+    Helms = [
+    ],
+    Tops = [
+
+    ],
+    Vanity = [
+
+    ]
+},'''
 
 BaseLayer = '''
 this.$name <- this.inherit("scripts/items/legend_helmets/legend_helmet", {
@@ -145,6 +300,7 @@ layers = [
     {"name": "leather_hood",        "layer": "hood", "min": 1, "max": 5, "base": True, "value" : 115, "con" : 45, "stam" : -2, "vis" : 0,  "hair" : "true", "beard" :"false" },
     {"name": "padded_hood",         "layer": "hood", "min": 1, "max": 3, "base": True, "value" : 140, "con" : 50, "stam" : -2, "vis" : 0,  "hair" : "true", "beard" :"false" },
 
+    {"name": "open_chain_hood",     "layer": "hood", "min": 1, "max": 3, "base": True, "value" : 200, "con" : 65, "stam" : -3, "vis" : 0,  "hair" : "true", "beard" :"false" },
     {"name": "chain_scarf",         "layer": "hood", "min": 1, "max": 5, "base": True, "value" : 250, "con" : 70, "stam" : -4, "vis" : 0,  "hair" : "false", "beard" :"true" },
     {"name": "chain_hood",          "layer": "hood", "min": 1, "max": 4, "base": True, "value" : 310, "con" : 80, "stam" : -4, "vis" : -1,  "hair" : "true", "beard" :"false" },
     {"name": "chain_hood_full",     "layer": "hood", "min": 1, "max": 6, "base": True, "value" : 375, "con" : 90, "stam" : -6, "vis" : -2,  "hair" : "true", "beard" :"true" },
@@ -343,6 +499,7 @@ titles = {
     "cloth_long_hood" :      "Cloth Long Hood",
     "cloth_bandana" :        "Headscarf",
     "leather_cap" :          "Leather Cap",
+    "open_chain_hood" : "Chain Mail Hood",
 
     "ancient_beard_mask" :                  "Ancient Bearded Mask",
     "ancient_conic_helm" :                  "Ancient Conic Helm",
@@ -508,6 +665,7 @@ descriptions = {
     "cloth_long_hood" :      "A simple hood to protect against weather and scratches.",
     "cloth_bandana" :        "A thick piece of cloth wrapped around the head.",
     "leather_cap" :          "A sturdy leather cap that is not covering the ears and neck.",
+    "open_chain_hood" : "A hood made of chainmail. Offer good protection and visibiliy.",
 
     "ancient_beard_mask" :                  "Bearded Mask of an ancient honor guard",
     "ancient_conic_helm" :                  "Conic Helm of an ancient household guard",
@@ -718,219 +876,16 @@ def main():
 
         #print('[0, "' + layer + '/' + fname + '"],')
 
+
+    # filepath = os.path.join(os.path.dirname(os.path.abspath(__file__)), "temp.nut")
+    # F = open(filepath, "w")
+    # F.write("gt.Const.LegendMod.HelmetObjs <- [")
+    # for v in vanilla:
+    #     s = Template(HelmObj)
+    #     text = s.substitute(dict(id=v))
+    #     F.write(text)
+    # F.write("]")
+    # F.close()
+
 main()
 
-
-# '''
-# if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
-# {
-#     local hoods = [
-#         [0, ""],
-        # [0, "hood/legend_helmet_barb_chain_scarf"],
-        # [0, "hood/legend_helmet_chain_hood"],
-        # [0, "hood/legend_helmet_chain_hood_full"],
-        # [0, "hood/legend_helmet_chain_scarf"],
-        # [0, "hood/legend_helmet_cloth_scarf"],
-        # [0, "hood/legend_helmet_goblin_scarf"],
-        # [0, "hood/legend_helmet_leather_hood"],
-        # [0, "hood/legend_helmet_padded_hood"],
-        # [0, "hood/legend_helmet_patched_hood"],
-        # [0, "hood/legend_helmet_rotten_chain_scarf"],
-        # [0, "hood/legend_helmet_simple_hood"],
-        # [0, "hood/legend_helmet_padded_cap"],
-        # [0, "hood/legend_helmet_hood_cloth_round"],
-        # [0, "hood/legend_helmet_hood_cloth_wide"],
-        # [0, "hood/legend_helmet_cloth_long_hood"],
-        # [0, "hood/legend_helmet_cloth_bandana"],
-        # [0, "hood/legend_helmet_leather_cap"],
-        # [0, "hood/legend_helmet_bronze_chain"]
-#     ];
-#     local helmet = this.Const.World.Common.pickLegendHelmet(hoods)
-
-#     if (helmet != null)
-#     {
-#         local helms = [
-        # [0, ""]
-        # [0, "helm/legend_helmet_ancient_beard_mask"],
-        # [0, "helm/legend_helmet_ancient_conic_helm"],
-        # [0, "helm/legend_helmet_ancient_crested"],
-        # [0, "helm/legend_helmet_ancient_dome"],
-        # [0, "helm/legend_helmet_ancient_dome_tailed"],
-        # [0, "helm/legend_helmet_ancient_face_helm"],
-        # [0, "helm/legend_helmet_ancient_face_plate"],
-        # [0, "helm/legend_helmet_ancient_kettle"],
-        # [0, "helm/legend_helmet_ancient_legionaire"],
-        # [0, "helm/legend_helmet_ancient_lion_mask"],
-        # [0, "helm/legend_helmet_ancient_mask"],
-        # [0, "helm/legend_helmet_ancient_side_hawk"],
-        # [0, "helm/legend_helmet_ancient_tailed_conic_helm"],
-        # [0, "helm/legend_helmet_barbute"],
-        # [0, "helm/legend_helmet_basinet"],
-        # [0, "helm/legend_helmet_carthaginian"],
-        # [0, "helm/legend_helmet_conic_helm"],
-        # [0, "helm/legend_helmet_crude_cylinder_helm"],
-        # [0, "helm/legend_helmet_crude_metal_helm"],
-        # [0, "helm/legend_helmet_crude_skull_helm"],
-        # [0, "helm/legend_helmet_flat_top_face_plate"],
-        # [0, "helm/legend_helmet_flat_top_helm"],
-        # [0, "helm/legend_helmet_great_helm"],
-        # [0, "helm/legend_helmet_heavy_plate_helm"],
-        # [0, "helm/legend_helmet_heavy_spiked_helm"],
-        # [0, "helm/legend_helmet_horsetail"],
-        # [0, "helm/legend_helmet_kettle_helm"],
-        # [0, "helm/legend_helmet_legend_ancient_gladiator"],
-        # [0, "helm/legend_helmet_legend_ancient_legionaire_restored"],
-        # [0, "helm/legend_helmet_legend_frogmouth"],
-        # [0, "helm/legend_helmet_legend_armet"],
-        # [0, "helm/legend_helmet_legend_armet_01_named"],
-        # [0, "helm/legend_helmet_nordic_helm"],
-        # [0, "helm/legend_helmet_norman_helm"],
-        # [0, "helm/legend_helmet_orc_double_helm"],
-        # [0, "helm/legend_helmet_orc_great_helm"],
-        # [0, "helm/legend_helmet_orc_strapped_helm"],
-        # [0, "helm/legend_helmet_bronze_helm"],
-        # [0, "helm/legend_helmet_dentist_helmet"],
-        # [0, "helm/legend_helmet_rotten_flat_top_face_mask"],
-        # [0, "helm/legend_helmet_rotten_great_helm"],
-        # [0, "helm/legend_helmet_sallet"],
-        # [0, "helm/legend_helmet_skin_helm"],
-        # [0, "helm/legend_helmet_stag_helm"],
-        # [0, "helm/legend_helmet_swan_helm"],
-        # [0, "helm/legend_helmet_tailed_conic"],
-        # [0, "helm/legend_helmet_viking_helm"]
-#         ]
-
-#         local helm = this.Const.World.Common.pickLegendHelmet(helms)
-#         if (helm != null)
-#         {
-#             helmet.setUpgrade(helm)
-#         }
-
-#         local tops = [
-        # [0, ""],
-        # [0, "top/legend_helmet_orc_horn_mask"],
-        # [0, "top/legend_helmet_orc_leather_mask"],
-        # [0, "top/legend_helmet_orc_metal_mask"],
-        # [0, "top/legend_helmet_goblin_chain_helm"],
-        # [0, "top/legend_helmet_goblin_leather_helm"],
-        # [0, "top/legend_helmet_goblin_leather_mask"],
-        # [0, "top/legend_helmet_goblin_spiked_helm"],
-        # [0, "top/legend_helmet_cult_hood"],
-        # [0, "top/legend_helmet_leather_hood_barb"],
-        # [0, "top/legend_helmet_golden_helm"],
-        # [0, "top/legend_helmet_ancient_crown"],
-        # [0, "top/legend_helmet_goblin_leaf_helm"],
-        # [0, "top/legend_helmet_vampire_crown"],
-        # [0, "top/legend_helmet_chain_attachment"],
-        # [0, "top/legend_helmet_eyemask"],
-        # [0, "top/legend_helmet_facemask"],
-        # [0, "top/legend_helmet_faceplate_full"],
-        # [0, "top/legend_helmet_faceplate_full_01_named"],
-        # [0, "top/legend_helmet_faceplate_gold"],
-        # [0, "top/legend_helmet_faceplate_long"],
-        # [0, "top/legend_helmet_faceplate_pointed"],
-        # [0, "top/legend_helmet_faceplate_raised"],
-        # [0, "top/legend_helmet_faceplate_short"],
-        # [0, "top/legend_helmet_faceplate_snub_nose"],
-        # [0, "top/legend_helmet_faceplate_winged"],
-        # [0, "top/legend_helmet_goblin_gillie"],
-        # [0, "top/legend_helmet_goblin_leaves"],
-        # [0, "top/legend_helmet_headband_nose"],
-        # [0, "top/legend_helmet_headband_side"],
-        # [0, "top/legend_helmet_nose_plate"],
-        # [0, "top/legend_helmet_faceplate_curved"],
-        # [0, "top/legend_helmet_faceplate_flat"],
-        # [0, "top/legend_helmet_faceplate_full_gold"],
-        # [0, "top/legend_helmet_faceplate_pointed_slit"],
-        # [0, "top/legend_helmet_faceplate_sharp"],
-        # [0, "top/legend_helmet_faceplate_snub_slit"],
-        # [0, "top/legend_helmet_golden_mask"],
-        # [0, "top/legend_helmet_warlock_skull"],
-#         ]
-#         local top = this.Const.World.Common.pickLegendHelmet(tops)
-#         if (top != null)
-#         {
-#             helmet.setUpgrade(top)
-#         }
-
-#         local flairs = [
-        # [0, ""],
-        # [0, "vanity/legend_helmet_hood_cloth_square"],
-        # [0, "vanity/legend_helmet_sack"],
-        # [0, "vanity/legend_helmet_antler"],
-        # [0, "vanity/legend_helmet_bear_head"],
-        # [0, "vanity/legend_helmet_beret"],
-        # [0, "vanity/legend_helmet_bull_horns"],
-        # [0, "vanity/legend_helmet_crown"],
-        # [0, "vanity/legend_helmet_faction_helmet"],
-        # [0, "vanity/legend_helmet_faction_helmet_2"],
-        # [0, "vanity/legend_helmet_feather_band"],
-        # [0, "vanity/legend_helmet_feathered_hat"],
-        # [0, "vanity/legend_helmet_fencer_hat"],
-        # [0, "vanity/legend_helmet_goat_horns"],
-        # [0, "vanity/legend_helmet_headband"],
-        # [0, "vanity/legend_helmet_horn_decorations"],
-        # [0, "vanity/legend_helmet_hunter_cap"],
-        # [0, "vanity/legend_helmet_impaled_head"],
-        # [0, "vanity/legend_helmet_jester_hat"],
-        # [0, "vanity/legend_helmet_metal_bird"],
-        # [0, "vanity/legend_helmet_noble_buckle"],
-        # [0, "vanity/legend_helmet_noble_feather"],
-        # [0, "vanity/legend_helmet_noble_floppy_hat"],
-        # [0, "vanity/legend_helmet_noble_hat"],
-        # [0, "vanity/legend_helmet_noble_hood"],
-        # [0, "vanity/legend_helmet_wreath"],
-        # [0, "vanity/legend_helmet_orc_bones"],
-        # [0, "vanity/legend_helmet_plait"],
-        # [0, "vanity/legend_helmet_ponytail"],
-        # [0, "vanity/legend_helmet_ram_horns"],
-        # [0, "vanity/legend_helmet_side_feather"],
-        # [0, "vanity/legend_helmet_straw_hat"],
-        # [0, "vanity/legend_helmet_top_feather"],
-        # [0, "vanity/legend_helmet_witchhunter_helm"],
-        # [0, "vanity/legend_helmet_wizard_cowl"],
-        # [0, "vanity/legend_helmet_wolf_helm"],
-        # [0, "vanity/legend_helmet_white_wolf_helm"],
-        # [0, "vanity/legend_helmet_royal_hood"],
-        # [0, "vanity/legend_helmet_lindwurm_helm"],
-        # [0, "vanity/legend_helmet_redback_helm"],
-        # [0, "vanity/legend_helmet_nun_habit"],
-        # [0, "vanity/legend_helmet_nach_helm"],
-        # [0, "vanity/legend_helmet_wolf_helm"],
-        # [0, "vanity/legend_helmet_white_wolf_helm"],
-        # [0, "vanity/legend_helmet_royal_hood"],
-        # [0, "vanity/legend_helmet_lindwurm_helm"],
-        # [0, "vanity/legend_helmet_redback_helm"],
-        # [0, "vanity/legend_helmet_nun_habit"],
-        # [0, "vanity/legend_helmet_nach_helm"],
-        # [0, "vanity/legend_helmet_mountain_helm"],
-        # [0, "vanity/legend_helmet_demon_alp_helm"],
-        # [0, "vanity/legend_helmet_warlock_hood"],
-        # [0, "vanity_lower/legend_helmet_back_crest"],
-        # [0, "vanity_lower/legend_helmet_back_feathers"],
-        # [0, "vanity/legend_helmet_mountain_helm"],
-        # [0, "vanity/legend_helmet_demon_alp_helm"],
-        # [0, "vanity/legend_helmet_warlock_hood"],
-        # [0, "vanity_lower/legend_helmet_back_crest"],
-        # [0, "vanity_lower/legend_helmet_back_feathers"],
-        # [0, "vanity/legend_helmet_mountain_helm"],
-        # [0, "vanity/legend_helmet_demon_alp_helm"],
-        # [0, "vanity/legend_helmet_warlock_hood"],
-        # [0, "vanity_lower/legend_helmet_back_crest"],
-        # [0, "vanity_lower/legend_helmet_back_feathers"],
-        # [0, "vanity_lower/legend_helmet_feather_crest"],
-        # [0, "vanity_lower/legend_helmet_knotted_tail"],
-        # [0, "vanity_lower/legend_helmet_orc_tail"],
-        # [0, "vanity_lower/legend_helmet_top_plume"],
-        # [0, "vanity_lower/legend_helmet_wings"],
-#         ]
-#         local flair = this.Const.World.Common.pickLegendHelmet(flairs)
-#         if (flair != null)
-#         {
-#             helmet.setUpgrade(flair)
-#         }
-#         this.m.Items.equip(helmet);
-#     }
-# }
-
-# '''

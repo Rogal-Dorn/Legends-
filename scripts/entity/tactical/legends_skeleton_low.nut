@@ -128,12 +128,18 @@ this.legends_skeleton_low <- this.inherit("scripts/entity/tactical/legend_skelet
 			{
 				this.m.Items.equip(this.new("scripts/items/armor/ancient/ancient_ripped_cloth"));
 			}
-
-			if (this.Math.rand(1, 100) <= 66)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/ancient/ancient_household_helmet"));
-			}
 		}
+
+		local item = this.Const.World.Common.pickHelmet([
+			[44, ""],
+			[66, "ancient/ancient_household_helmet"]
+		])
+
+		if (item != null)
+		{
+			this.m.Items.equip(item);
+		}
+
 	}
 
 });
