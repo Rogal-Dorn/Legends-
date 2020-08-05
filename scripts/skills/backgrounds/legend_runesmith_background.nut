@@ -92,8 +92,9 @@ this.legend_runesmith_background <- this.inherit("scripts/skills/backgrounds/cha
 
 		items.equip(this.new("scripts/items/armor/legend_blacksmith_apron"));
 
-			items.equip(this.new("scripts/items/helmets/hood"));
-
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "hood"]
+		]));
 	}
 
 	function onAddLegendEquipment()
@@ -111,7 +112,10 @@ this.legend_runesmith_background <- this.inherit("scripts/skills/backgrounds/cha
 			armor.setUpgrade(plate)
 		}
 		items.equip(armor);
-		items.equip(this.new("scripts/items/helmets/hood"));
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "hood"]
+		]));
+
 
 	}
 });

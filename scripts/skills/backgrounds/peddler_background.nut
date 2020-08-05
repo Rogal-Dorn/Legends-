@@ -201,12 +201,11 @@ this.peddler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			items.equip(this.new("scripts/items/armor/linen_tunic"));
 		}
 
-		r = this.Math.rand(0, 3);
+		items.equip(this.Const.World.Common.pickHelmet([
+			[2, ""],
+			[1, "feathered_hat"]
+		]));
 
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/feathered_hat"));
-		}
 	}
 
 	function onAddLegendEquipment()
@@ -231,12 +230,11 @@ this.peddler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 
 		items.equip(this.new("scripts/items/legend_armor/cloth/legend_tunic"));
 
-		r = this.Math.rand(0, 3);
+		items.equip(this.Const.World.Common.pickHelmet([
+			[2, ""],
+			[1, "feathered_hat"]
+		]));
 
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/feathered_hat"));
-		}
 	}
 });
 

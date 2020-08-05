@@ -146,7 +146,11 @@ this.legend_nun_background <- this.inherit("scripts/skills/backgrounds/character
 	function onAddEquipment()
 	{
 		local items = this.getContainer().getActor().getItems();
-		items.equip(this.new("scripts/items/helmets/legend_nun_habit"));
+
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "legend_nun_habit"]
+		]));
+
 		local r;
 		r = this.Math.rand(0, 3);
 
@@ -164,7 +168,9 @@ this.legend_nun_background <- this.inherit("scripts/skills/backgrounds/character
 	function onAddLegendEquipment()
 	{
 		local items = this.getContainer().getActor().getItems();
-		items.equip(this.new("scripts/items/helmets/legend_nun_habit"));
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "legend_nun_habit"]
+		]));
 
 		local cloths = [
             [0, ""],

@@ -385,7 +385,9 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 			}
 		}
 		items.equip(this.new("scripts/items/armor/mail_shirt"));
-		items.equip(this.new("scripts/items/helmets/greatsword_hat"));
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "greatsword_hat"]
+		]));
 		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");
 		stash.removeByID("supplies.ground_grains");
@@ -402,8 +404,9 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 		talents[this.Const.Attributes.MeleeSkill] = 3;
 		this.getContainer().getActor().fillTalentValues(2, true);
 		local items = this.getContainer().getActor().getItems();
-		items.equip(this.new("scripts/items/helmets/greatsword_hat"));
-
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "greatsword_hat"]
+		]));
 		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");
 		stash.removeByID("supplies.ground_grains");

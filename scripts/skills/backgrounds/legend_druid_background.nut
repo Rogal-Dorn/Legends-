@@ -277,7 +277,10 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 		stash.removeByID("supplies.ground_grains");
 		stash.removeByID("supplies.ground_grains");
 		items.equip(this.new("scripts/items/armor/barbarians/hide_and_bone_armor"));
-		items.equip(this.new("scripts/items/helmets/barbarians/bear_headpiece"));
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "barbarians/bear_headpiece"]
+		]));
+
 	}
 
 	function onAddLegendEquipment()
@@ -330,7 +333,10 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 		{
 			armor.setUpgrade(plate)
 		}
-		items.equip(this.new("scripts/items/helmets/barbarians/bear_headpiece"));
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "barbarians/bear_headpiece"]
+		]));
+
 	}
 
 	function onSerialize( _out )

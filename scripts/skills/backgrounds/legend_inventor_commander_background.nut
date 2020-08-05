@@ -195,6 +195,7 @@ this.legend_inventor_commander_background <- this.inherit("scripts/skills/backgr
 	function onAddEquipment()
 	{
 		local items = this.getContainer().getActor().getItems();
+
 		local r;
 
 		r = this.Math.rand(0, 1);
@@ -203,15 +204,10 @@ this.legend_inventor_commander_background <- this.inherit("scripts/skills/backgr
 			items.equip(this.new("scripts/items/armor/apron"));
 		}
 
-		r = this.Math.rand(0, 1);
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/mouth_piece"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/headscarf"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "mouth_piece"],
+			[1, "headscarf"]
+		]));
 
 		r = this.Math.rand(0, 1);
 		if (r == 0)
@@ -250,16 +246,10 @@ this.legend_inventor_commander_background <- this.inherit("scripts/skills/backgr
 		];
 		local armor = this.Const.World.Common.pickLegendArmor(cloths)
 		items.equip(armor)
-
-		r = this.Math.rand(0, 1);
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/mouth_piece"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/headscarf"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "mouth_piece"],
+			[1, "headscarf"]
+		]));
 
 		r = this.Math.rand(0, 1);
 		if (r == 0)

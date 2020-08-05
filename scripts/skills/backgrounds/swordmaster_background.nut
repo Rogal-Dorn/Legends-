@@ -213,10 +213,11 @@ this.swordmaster_background <- this.inherit("scripts/skills/backgrounds/characte
 			items.equip(this.new("scripts/items/armor/padded_surcoat"));
 		}
 
-		if (this.Math.rand(1, 100) <= 33)
-		{
-			items.equip(this.new("scripts/items/helmets/greatsword_hat"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[67, ""],
+			[33, "greatsword_hat"]
+		]));
+
 	}
 
 	function onAddLegendEquipment()
@@ -343,10 +344,11 @@ this.swordmaster_background <- this.inherit("scripts/skills/backgrounds/characte
 			items.equip(armor);
 		}
 
-		if (this.Math.rand(1, 100) <= 33)
-		{
-			items.equip(this.new("scripts/items/helmets/greatsword_hat"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[67, ""],
+			[33, "greatsword_hat"]
+		]));
+
 	}
 });
 

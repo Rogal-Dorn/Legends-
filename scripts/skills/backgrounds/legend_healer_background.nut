@@ -155,7 +155,9 @@ this.legend_healer_background <- this.inherit("scripts/skills/backgrounds/charac
 		talents[this.Const.Attributes.Hitpoints] = 3;
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/armor/monk_robe"));
-		items.equip(this.new("scripts/items/helmets/noble_headgear"));
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "noble_headgear"]
+		]));
 		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");
 		stash.removeByID("supplies.ground_grains");
@@ -192,8 +194,9 @@ this.legend_healer_background <- this.inherit("scripts/skills/backgrounds/charac
 		];
 		local armor = this.Const.World.Common.pickLegendArmor(cloths)
 		items.equip(armor)
-
-		items.equip(this.new("scripts/items/helmets/noble_headgear"));
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "noble_headgear"]
+		]));
 		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");
 		stash.removeByID("supplies.ground_grains");

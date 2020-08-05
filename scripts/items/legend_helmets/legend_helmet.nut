@@ -21,6 +21,11 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 		}
 	}
 
+	function onPaint(_variant)
+	{
+
+	}
+
 	function getHideHair()
 	{
 		if (this.m.HideHair)
