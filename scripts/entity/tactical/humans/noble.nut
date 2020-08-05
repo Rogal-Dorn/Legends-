@@ -81,7 +81,9 @@ this.noble <- this.inherit("scripts/entity/tactical/human", {
 
 			if (this.Math.rand(1, 100) <= 25)
 			{
-				local h = this.new("scripts/items/helmets/greatsword_faction_helm");
+				local h = this.Const.World.Common.pickHelmet([
+					[1, "greatsword_faction_helm"]
+				])
 				h.setVariant(this.World.FactionManager.getFaction(this.getFaction()).getBanner());
 				this.m.Items.equip(h);
 			}
@@ -108,7 +110,9 @@ this.noble <- this.inherit("scripts/entity/tactical/human", {
 
 			if (this.Math.rand(1, 100) <= 25)
 			{
-				local h = this.new("scripts/items/helmets/greatsword_faction_helm");
+				local h = this.Const.World.Common.pickHelmet([
+					[1, "greatsword_faction_helm"]
+				])
 				h.setVariant(this.World.FactionManager.getFaction(this.getFaction()).getBanner());
 				this.m.Items.equip(h);
 			}
@@ -142,7 +146,9 @@ this.noble <- this.inherit("scripts/entity/tactical/human", {
 
 		if (withHelmet && this.Math.rand(1, 100) <= 50)
 		{
-			this.m.Items.equip(this.new("scripts/items/helmets/noble_headgear"));
+			this.Const.World.Common.pickHelmet([
+					[1, "noble_headgear"]
+			])
 		}
 	}
 

@@ -161,7 +161,7 @@ this.traveling_troupe_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				this.World.Assets.addMoralReputation(-2);
-				local item = this.new("scripts/items/helmets/jesters_hat");
+				local item = this.Const.World.Common.pickHelmet([1, "jesters_hat"]);
 				this.World.Assets.getStash().add(item);
 				this.List.push({
 					id = 10,

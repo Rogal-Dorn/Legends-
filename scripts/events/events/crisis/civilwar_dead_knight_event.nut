@@ -31,7 +31,7 @@ this.civilwar_dead_knight_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
-				local item = this.new("scripts/items/helmets/faction_helm");
+				local item = this.Const.World.Common.pickHelmet([1, "faction_helm"]);
 				item.setCondition(27.0);
 				this.World.Assets.getStash().add(item);
 				this.List.push({

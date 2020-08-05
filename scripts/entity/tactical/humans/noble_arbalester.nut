@@ -214,26 +214,13 @@ this.noble_arbalester <- this.inherit("scripts/entity/tactical/human", {
 
 		}
 
-		local r = this.Math.rand(1, 5);
-		local helmet;
-
-		if (r == 1)
-		{
-			helmet = this.new("scripts/items/helmets/aketon_cap");
-		}
-		else if (r == 2)
-		{
-			helmet = this.new("scripts/items/helmets/full_aketon_cap");
-		}
-		else if (r == 3)
-		{
-			helmet = this.new("scripts/items/helmets/mail_coif");
-		}
-		else if (r == 4)
-		{
-			helmet = this.new("scripts/items/helmets/headscarf");
-		}
-
+		local helmet = this.Const.World.Common.pickHelmet([
+				[1, "mail_coif"],
+				[1, "aketon_cap"],
+				[1, "open_leather_cap"],
+				[1, "headscarf"],
+				[1, ""]
+		])
 		if (helmet != null)
 		{
 			helmet.setPlainVariant();

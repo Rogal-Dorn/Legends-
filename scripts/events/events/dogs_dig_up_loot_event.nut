@@ -129,19 +129,19 @@ this.dogs_dig_up_loot_event <- this.inherit("scripts/events/event", {
 		}
 		else if (r == 3)
 		{
-			item = this.new("scripts/items/helmets/aketon_cap");
+			item = this.Const.World.Common.pickHelmet([1, "aketon_cap"]);
 		}
 		else if (r == 4)
 		{
-			item = this.new("scripts/items/helmets/hood");
+			item = this.Const.World.Common.pickHelmet([1, "cultist_hood"]);
 		}
 		else if (r == 5)
 		{
-			item = this.new("scripts/items/helmets/cultist_hood");
+			item = this.Const.World.Common.pickHelmet([1, "hood"]);
 		}
 		else if (r == 6)
 		{
-			item = this.new("scripts/items/helmets/full_leather_cap");
+			item = this.Const.World.Common.pickHelmet([1, "full_leather_cap"]);
 		}
 		else if (r == 7)
 		{

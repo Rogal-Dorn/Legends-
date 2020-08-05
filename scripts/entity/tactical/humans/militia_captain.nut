@@ -227,23 +227,12 @@ this.militia_captain <- this.inherit("scripts/entity/tactical/human", {
 		}
 
 		local r = this.Math.rand(1, 4);
-
-		if (r == 1)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/mail_coif"));
-		}
-		else if (r == 2)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/kettle_hat"));
-		}
-		else if (r == 3)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/nasal_helmet_with_mail"));
-		}
-		else if (r == 4)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/feathered_hat"));
-		}
+		this.m.Items.equip(this.Const.World.Common.pickHelmet([
+				[1, "nasal_helmet_with_mail"],
+				[1, "mail_coif"],
+				[1, "feathered_hat"],
+				[1, "kettle_hat"]
+		]))
 	}
 
 });

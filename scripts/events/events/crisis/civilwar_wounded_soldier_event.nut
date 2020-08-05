@@ -144,7 +144,7 @@ this.civilwar_wounded_soldier_event <- this.inherit("scripts/events/event", {
 		}
 		else if (r == 2)
 		{
-			item = this.new("scripts/items/helmets/faction_helm");
+			item = this.Const.World.Common.pickHelmet([1, "faction_helm"]);
 			item.setVariant(banner);
 		}
 		else if (r == 3)

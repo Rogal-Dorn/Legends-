@@ -213,28 +213,13 @@ this.militia <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.Math.rand(1, 100) <= 50)
 		{
-			local r = this.Math.rand(1, 5);
-
-			if (r == 1)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/hood"));
-			}
-			else if (r == 2)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/aketon_cap"));
-			}
-			else if (r == 3)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/open_leather_cap"));
-			}
-			else if (r == 4)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/full_leather_cap"));
-			}
-			else if (r == 5)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/headscarf"));
-			}
+			this.m.Items.equip(this.Const.World.Common.pickHelmet([
+				[1, "hood"],
+				[1, "aketon_cap"],
+				[1, "open_leather_cap"],
+				[1, "full_leather_cap"],
+				[1, "headscarf"]
+			]))
 		}
 	}
 
