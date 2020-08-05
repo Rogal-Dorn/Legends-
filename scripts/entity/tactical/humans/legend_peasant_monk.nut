@@ -183,9 +183,8 @@ this.legend_peasant_monk <- this.inherit("scripts/entity/tactical/human", {
 		{
 			this.m.Items.equip(this.Const.World.Common.pickHelmet([
 				[1, "straw_hat"],
-				[1, "hood"],
-				[1, "head_scarf"],
-				[1, ""]
+				[2, "hood"],
+				[1, "head_scarf"]
 			]))
 		}
 	}
