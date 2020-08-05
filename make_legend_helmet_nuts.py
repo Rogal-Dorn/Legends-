@@ -215,7 +215,6 @@ layers = [
     {"name": "rotten_great_helm",           "layer": "helm", "min": 1, "max": 4, "value" : 1500, "con" : 160, "stam" : -13, "vis" : -3,  "hair" : "true", "beard" :"true" },
 
 
-
     {"name": "orc_leather_mask",                    "layer": "top", "min": 1, "max": 1, "value" : 100, "con" : 35, "stam" : -5, "vis" : 0,  "hair" : "true", "beard" :"false" },
     {"name": "orc_horn_mask",                       "layer": "top", "min": 1, "max": 1, "value" : 300, "con" : 60, "stam" : -7, "vis" : 0,  "hair" : "true", "beard" :"false" },
     {"name": "orc_metal_mask",                      "layer": "top", "min": 1, "max": 1, "value" : 800, "con" : 120, "stam" : -16, "vis" : -3,  "hair" : "true", "beard" :"false" },
@@ -229,40 +228,45 @@ layers = [
     {"name": "goblin_spiked_helm",                  "layer": "top", "min": 1, "max": 1, "value" : 1200, "con" : 90, "stam" : -8, "vis" : -2,  "hair" : "true", "beard" :"false" },
 
     {"name": "vampire_crown",           "layer": "top", "min": 1, "max": 1, "value" : 500, "con" : 30, "stam" : -1, "vis" : 0,  "hair" : "false", "beard" :"false" },
-
-    {"name": "chain_attachment",        "layer": "top", "min": 1, "max": 1, "value" : 310, "con" : 40, "stam" : -3, "vis" : -1,  "hair" : "false", "beard" :"true" },
-    {"name": "faceplate_raised",        "layer": "top", "min": 1, "max": 2, "value" : 525, "con" : 55, "stam" : -4, "vis" : -2,  "hair" : "false", "beard" :"true" },
-    {"name": "cult_hood",               "layer": "top", "min": 1, "max": 7, "value" : 600, "con" : 65, "stam" : -3, "vis" : -1,  "hair" : "true", "beard" :"false" },
-
-    {"name": "leather_hood_barb",       "layer": "top", "min": 1, "max": 1, "value" : 720, "con" : 105, "stam" : -12, "vis" : -3,  "hair" : "true", "beard" :"false" },
-    {"name": "golden_helm",             "layer": "top", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0,  "hair" : "true", "beard" :"true" },
     {"name": "ancient_crown",           "layer": "top", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0,  "hair" : "false", "beard" :"false" },
 
+    {"name": "leather_hood_barb",       "layer": "top", "min": 1, "max": 1, "value" : 720, "con" : 105, "stam" : -12, "vis" : -3,  "hair" : "true", "beard" :"false" },
 
-    {"name": "eyemask",                 "layer": "top", "min": 1, "max": 2, "value" : 250, "con" : 335, "stam" : -3, "vis" : -1,  "hair" : "false", "beard" :"false" },
-    {"name": "facemask",                "layer": "top", "min": 1, "max": 6, "value" : 1200, "con" : 90, "stam" : -7, "vis" : -2,  "hair" : "false", "beard" :"true" },
-    {"name": "faceplate_full",          "layer": "top", "min": 1, "max": 1, "value" : 1700, "con" : 110, "stam" : -9, "vis" : -3,  "hair" : "false", "beard" :"true" },
-    {"name": "faceplate_full_01_named", "layer": "top", "min": 1, "max": 3, "value" : 1700, "con" : 110, "stam" : -9, "vis" : -3,  "hair" : "false", "beard" :"true", \
-        "named" : True, "rminViz" : -2, "rmaxViz" : -3, "rminStam" : -7, "rmaxStam": -9, "rminCond" : 110, "rmaxCond" : 120,  "names" : []},
-    {"name": "faceplate_gold",          "layer": "top", "min": 1, "max": 1, "value" : 1551, "con" : 105, "stam" : -8, "vis" : -2,  "hair" : "false", "beard" :"true" },
-    {"name": "faceplate_long",          "layer": "top", "min": 1, "max": 1, "value" : 700, "con" : 65, "stam" : -5, "vis" : -2,  "hair" : "false", "beard" :"true" },
-    {"name": "faceplate_pointed",       "layer": "top", "min": 1, "max": 1, "value" : 1320, "con" : 95, "stam" : -7, "vis" : -2,  "hair" : "false", "beard" :"true" },
-
-    {"name": "faceplate_short",         "layer": "top", "min": 1, "max": 1, "value" : 610, "con" : 60, "stam" : -4, "vis" : -2,  "hair" : "false", "beard" :"true" },
-    {"name": "faceplate_snub_nose",     "layer": "top", "min": 1, "max": 1, "value" : 880, "con" : 75, "stam" : -6, "vis" : -2,  "hair" : "false", "beard" :"true" },
-    {"name": "faceplate_winged",        "layer": "top", "min": 1, "max": 1, "value" : 780, "con" : 70, "stam" : -5, "vis" : -2,  "hair" : "false", "beard" :"true" },
-
-    {"name": "headband_nose",           "layer": "top", "min": 1, "max": 1, "value" : 190, "con" : 30, "stam" : -2, "vis" : 0,  "hair" : "false", "beard" :"false" },
-    {"name": "headband_side",           "layer": "top", "min": 1, "max": 1, "value" : 95, "con" : 20, "stam" : -2, "vis" : 0,  "hair" : "false", "beard" :"false" },
     {"name": "nose_plate",              "layer": "top", "min": 1, "max": 1, "value" : 60, "con" : 15, "stam" : -2, "vis" : 0,  "hair" : "false", "beard" :"false" },
-    {"name": "faceplate_curved",        "layer": "top", "min": 1, "max": 1, "value" : 450, "con" : 50, "stam" : -3, "vis" : -2,  "hair" : "false", "beard" :"false" },
+    {"name": "headband_side",           "layer": "top", "min": 1, "max": 1, "value" : 95, "con" : 20, "stam" : -2, "vis" : 0,  "hair" : "false", "beard" :"false" },
+    {"name": "headband_nose",           "layer": "top", "min": 1, "max": 1, "value" : 190, "con" : 30, "stam" : -2, "vis" : 0,  "hair" : "false", "beard" :"false" }
+    {"name": "eyemask",                 "layer": "top", "min": 1, "max": 2, "value" : 250, "con" : 35, "stam" : -3, "vis" : -1,  "hair" : "false", "beard" :"false" },
+    {"name": "chain_attachment",        "layer": "top", "min": 1, "max": 1, "value" : 310, "con" : 40, "stam" : -3, "vis" : -1,  "hair" : "false", "beard" :"true" },
     {"name": "faceplate_flat",          "layer": "top", "min": 1, "max": 1, "value" : 375, "con" : 45, "stam" : -3, "vis" : -2,  "hair" : "false", "beard" :"false" },
-    {"name": "faceplate_full_gold",     "layer": "top", "min": 1, "max": 1, "value" : 1800, "con" : 115, "stam" : -9, "vis" : -3,  "hair" : "false", "beard" :"false" },
-    {"name": "faceplate_pointed_slit",  "layer": "top", "min": 1, "max": 1, "value" : 1430, "con" : 100, "stam" : -7, "vis" : -2,  "hair" : "false", "beard" :"false" },
-    {"name": "faceplate_sharp",         "layer": "top", "min": 1, "max": 1, "value" : 1090, "con" : 85, "stam" : -7, "vis" : -2,  "hair" : "false", "beard" :"false" },
+    {"name": "faceplate_curved",        "layer": "top", "min": 1, "max": 1, "value" : 450, "con" : 50, "stam" : -3, "vis" : -2,  "hair" : "false", "beard" :"false" },
+    {"name": "faceplate_short",         "layer": "top", "min": 1, "max": 1, "value" : 610, "con" : 60, "stam" : -4, "vis" : -2,  "hair" : "false", "beard" :"true" },
+    {"name": "cult_hood",               "layer": "top", "min": 1, "max": 7, "value" : 600, "con" : 65, "stam" : -3, "vis" : -1,  "hair" : "true", "beard" :"false" },
+    {"name": "faceplate_long",          "layer": "top", "min": 1, "max": 1, "value" : 700, "con" : 65, "stam" : -5, "vis" : -2,  "hair" : "false", "beard" :"true" },
+    {"name": "faceplate_winged",        "layer": "top", "min": 1, "max": 1, "value" : 780, "con" : 70, "stam" : -5, "vis" : -2,  "hair" : "false", "beard" :"true" },
+    {"name": "faceplate_snub_nose",     "layer": "top", "min": 1, "max": 1, "value" : 880, "con" : 75, "stam" : -6, "vis" : -2,  "hair" : "false", "beard" :"true" },
     {"name": "faceplate_snub_slit",     "layer": "top", "min": 1, "max": 1, "value" : 980, "con" : 80, "stam" : -6, "vis" : -2,  "hair" : "false", "beard" :"false" },
-    {"name": "golden_mask",             "layer": "top", "min": 1, "max": 1, "value" : 3000, "con" : 100, "stam" : -6, "vis" : 0,  "hair" : "false", "beard" :"true" },
-    {"name": "warlock_skull",           "layer": "top", "min": 1, "max": 3, "value" : 2000, "con" : 90, "stam" : -4, "vis" : 0,  "hair" : "false", "beard" :"true" },
+    {"name": "faceplate_sharp",         "layer": "top", "min": 1, "max": 1, "value" : 1090, "con" : 85, "stam" : -7, "vis" : -2,  "hair" : "false", "beard" :"false" },
+    {"name": "facemask",                "layer": "top", "min": 1, "max": 6, "value" : 1200, "con" : 90, "stam" : -7, "vis" : -2,  "hair" : "false", "beard" :"true" },
+    {"name": "faceplate_pointed",       "layer": "top", "min": 1, "max": 1, "value" : 1320, "con" : 95, "stam" : -7, "vis" : -2,  "hair" : "false", "beard" :"true" },
+    {"name": "faceplate_pointed_slit",  "layer": "top", "min": 1, "max": 1, "value" : 1430, "con" : 100, "stam" : -7, "vis" : -2,  "hair" : "false", "beard" :"false" },
+    {"name": "faceplate_full",          "layer": "top", "min": 1, "max": 1, "value" : 1700, "con" : 110, "stam" : -9, "vis" : -3,  "hair" : "false", "beard" :"true" },
+
+
+    {"name": "faceplate_gold",          "layer": "top", "min": 1, "max": 1, "value" : 1551, "con" : 105, "stam" : -8, "vis" : -2,  "hair" : "false", "beard" :"true", \
+        "named" : True, "rminViz" : -2, "rmaxViz" : -1, "rminStam" : -8, "rmaxStam": -6, "rminCond" : 105, "rmaxCond" : 135,  "names" : []},
+    {"name": "faceplate_full_gold",     "layer": "top", "min": 1, "max": 1, "value" : 1800, "con" : 115, "stam" : -9, "vis" : -3,  "hair" : "false", "beard" :"false", \
+        "named" : True, "rminViz" : -3, "rmaxViz" : -2, "rminStam" : -9, "rmaxStam": -7, "rminCond" : 115, "rmaxCond" : 145,  "names" : []},
+    {"name": "golden_helm",             "layer": "top", "min": 1, "max": 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0,  "hair" : "true", "beard" :"true", \
+        "named" : True, "rminViz" : -1, "rmaxViz" : 0, "rminStam" : -4, "rmaxStam": -3, "rminCond" : 80, "rmaxCond" : 100,  "names" : []},
+    {"name": "faceplate_raised",        "layer": "top", "min": 1, "max": 2, "value" : 1500, "con" : 55, "stam" : -4, "vis" : -2,  "hair" : "false", "beard" :"true", \
+        "named" : True, "rminViz" : -2, "rmaxViz" : -1, "rminStam" : -4, "rmaxStam": -3, "rminCond" : 55, "rmaxCond" : 75,  "names" : []},
+    {"name": "faceplate_full_01_named", "layer": "top", "min": 1, "max": 3, "value" : 2700, "con" : 110, "stam" : -9, "vis" : -3,  "hair" : "false", "beard" :"true", \
+        "named" : True, "rminViz" : -3, "rmaxViz" : -2, "rminStam" : -9, "rmaxStam": -7, "rminCond" : 110, "rmaxCond" : 120,  "names" : []},
+    {"name": "golden_mask",             "layer": "top", "min": 1, "max": 1, "value" : 3000, "con" : 100, "stam" : -6, "vis" : 0,  "hair" : "false", "beard" :"true", \
+        "named" : True, "rminViz" : 0, "rmaxViz" : 0, "rminStam" : -6, "rmaxStam": -5, "rminCond" : 100, "rmaxCond" : 125,  "names" : []},
+    {"name": "warlock_skull",           "layer": "top", "min": 1, "max": 3, "value" : 2000, "con" : 90, "stam" : -4, "vis" : 0,  "hair" : "false", "beard" :"true", \
+        "named" : True, "rminViz" : 0, "rmaxViz" : 0, "rminStam" : -4, "rmaxStam": -3, "rminCond" : 90, "rmaxCond" : 115,  "names" : []},
+
 
 
     {"name": "hood_cloth_square",   "layer": "vanity", "min": 1, "max": 1, "value" : 60, "con" : 30, "stam" : -1, "vis" : 0,  "hair" : "true", "beard" :"false" },
