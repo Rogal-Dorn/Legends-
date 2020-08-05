@@ -12,6 +12,16 @@
 		_tile.IsContainingItemsFlipped = true;
 	}
 
+    local equipfn = o.equip
+    o.equip = function (_item)
+    {
+        if (_item == null)
+        {
+            return false;
+        }
+        return equipfn(_item);
+    }
+
     o.transferToList <- function( _stash )
 	{
 		for( local i = 0; i < this.Const.ItemSlot.COUNT; i = ++i )
