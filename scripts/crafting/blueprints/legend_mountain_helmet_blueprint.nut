@@ -37,9 +37,9 @@ this.legend_mountain_helmet_blueprint <- this.inherit("scripts/crafting/blueprin
 
 	function isQualified()
 	{
-		return true;
+		return !this.World.LegendsMod.Configs().LegendArmorsEnabled()
 	}
-	
+
 	function onCraft( _stash )
 	{
 		_stash.add(this.new("scripts/items/helmets/named/legend_mountain_helmet_named"));

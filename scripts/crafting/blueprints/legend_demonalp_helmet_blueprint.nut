@@ -18,7 +18,7 @@ this.legend_demonalp_helmet_blueprint <- this.inherit("scripts/crafting/blueprin
 			},
 			{
 				Script = "scripts/items/helmets/bascinet_with_mail",
-				Num = 1
+				Num = 1,
 			}
 		];
 		this.init(ingredients);
@@ -30,17 +30,16 @@ this.legend_demonalp_helmet_blueprint <- this.inherit("scripts/crafting/blueprin
 		this.initSkills(skills);
 	}
 
-
 	function isQualified()
 	{
-		return true;
+		return !this.World.LegendsMod.Configs().LegendArmorsEnabled();
 	}
-	
+
 	function onCraft( _stash )
 	{
-		local item = this.new("scripts/items/helmets/legendary/legend_demonalp_helmet");
-		item.m.Name = "";
-		_stash.add(item);
+			local item = this.new("scripts/items/helmets/legendary/legend_demonalp_helmet");
+			item.m.Name = "";
+			_stash.add(item);
 	}
 
 });

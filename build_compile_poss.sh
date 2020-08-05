@@ -70,6 +70,13 @@ while read -r line; do
     fi
 done <<< "$FILES"
 
+echo "Building helmets..."
+rm -rf helmets
+mkdir -p "helmets"
+python make_legend_helmet_nuts.py
+cp -R helmets/. "c:\Steam\steamapps\common\Battle Brothers\data\scripts\items\legend_helmets"
+
+
 mkdir -p "brushes"
 cd ../bin
 ./bbrusher.exe pack --gfxPath "../Repo/" ../Repo/brushes/entity_blood.brush ../Repo/unpacked/entity_blood
@@ -87,6 +94,8 @@ python ../Repo/unpacked/make_legend_armor.py
 
 python ../Repo/unpacked/make_legend_helmets.py
 ./bbrusher.exe pack --gfxPath "../Repo/" ../Repo/brushes/legend_helmets.brush ../Repo/unpacked/legend_helmets
+./bbrusher.exe pack --gfxPath "../Repo/" ../Repo/brushes/legend_helmets_0.brush ../Repo/unpacked/legend_helmets/0
+./bbrusher.exe pack --gfxPath "../Repo/" ../Repo/brushes/legend_helmets_1.brush ../Repo/unpacked/legend_helmets/1
 
 
 ./masscompile.bat "c:\Steam\steamapps\common\Battle Brothers\data\scripts"
