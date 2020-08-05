@@ -166,7 +166,9 @@ this.crusader_background <- this.inherit("scripts/skills/backgrounds/character_b
 		local r;
 		items.equip(this.new("scripts/items/weapons/greatsword"));
 		items.equip(this.new("scripts/items/armor/mail_hauberk"));
-		items.equip(this.new("scripts/items/helmets/full_helm"));
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "full_helm"]
+		]));
 	}
 
 	function onAddLegendEquipment()
@@ -174,7 +176,9 @@ this.crusader_background <- this.inherit("scripts/skills/backgrounds/character_b
 		local items = this.getContainer().getActor().getItems();
 		local r;
 		items.equip(this.new("scripts/items/weapons/greatsword"));
-		items.equip(this.new("scripts/items/helmets/full_helm"));
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "full_helm"]
+		]));
 
 		local cloths = [
             [0, ""],

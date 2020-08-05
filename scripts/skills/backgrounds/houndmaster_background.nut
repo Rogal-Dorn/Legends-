@@ -145,12 +145,10 @@ this.houndmaster_background <- this.inherit("scripts/skills/backgrounds/characte
 			items.equip(this.new("scripts/items/armor/ragged_surcoat"));
 		}
 
-		r = this.Math.rand(0, 1);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/open_leather_cap"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "open_leather_cap"],
+			[1, ""]
+		]));
 	}
 
 	function onAddLegendEquipment()
@@ -183,12 +181,10 @@ this.houndmaster_background <- this.inherit("scripts/skills/backgrounds/characte
 		local armor = this.Const.World.Common.pickLegendArmor(cloths)
 		items.equip(armor)
 
-		r = this.Math.rand(0, 1);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/open_leather_cap"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "open_leather_cap"],
+			[1, ""]
+		]));
 	}
 
 });

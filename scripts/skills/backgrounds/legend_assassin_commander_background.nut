@@ -327,7 +327,9 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/weapons/rondel_dagger"));
 		items.equip(this.new("scripts/items/armor/thick_dark_tunic"));
-		items.equip(this.new("scripts/items/helmets/hood"));
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "hood"]
+		]));
 	}
 
 	function onAddLegendEquipment()
@@ -346,7 +348,9 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/weapons/rondel_dagger"));
 		items.equip(this.new("scripts/items/legend_armor/cloth/legend_tunic"));
-		items.equip(this.new("scripts/items/helmets/hood"));
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "hood"]
+		]));
 	}
 	function onSerialize( _out )
 	{

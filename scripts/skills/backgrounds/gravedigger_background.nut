@@ -144,12 +144,10 @@ this.gravedigger_background <- this.inherit("scripts/skills/backgrounds/characte
 			items.equip(this.new("scripts/items/armor/tattered_sackcloth"));
 		}
 
-		r = this.Math.rand(0, 1);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/hood"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "hood"],
+			[1, ""]
+		]));
 	}
 
 	function onAddLegendEquipment()
@@ -188,12 +186,10 @@ this.gravedigger_background <- this.inherit("scripts/skills/backgrounds/characte
 		items.equip(armor)
 
 
-		r = this.Math.rand(0, 1);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/hood"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "hood"],
+			[1, ""]
+		]));
 	}
 });
 
