@@ -356,8 +356,13 @@ this.legend_orc_elite <- this.inherit("scripts/entity/tactical/actor", {
 
 
 			this.m.Items.equip(this.new("scripts/items/armor/greenskins/orc_elite_heavy_armor"));
-			this.m.Items.equip(this.new("scripts/items/helmets/greenskins/orc_elite_heavy_helmet"));
-	
+			local item = this.Const.World.Common.pickHelmet([
+				[1, "greenskins/orc_elite_heavy_helmet"]
+			])
+			if (item != null)
+			{
+				this.m.Items.equip(item);
+			}	
 	}
 
 	function makeMiniboss()

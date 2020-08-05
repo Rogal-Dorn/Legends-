@@ -154,12 +154,11 @@ this.historian_background <- this.inherit("scripts/skills/backgrounds/character_
 			items.equip(this.new("scripts/items/armor/linen_tunic"));
 		}
 
-		r = this.Math.rand(0, 3);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/feathered_hat"));
-		}
+		local item = this.Const.World.Common.pickHelmet([
+				[1, "feathered_hat"],
+				[3, ""]
+		]))
+		items.equip(item);
 	}
 
 	function onAddLegendEquipment()
@@ -167,11 +166,11 @@ this.historian_background <- this.inherit("scripts/skills/backgrounds/character_
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/legend_armor/cloth/legend_tunic"));
 
-		local r = this.Math.rand(0, 3);
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/feathered_hat"));
-		}
+		local item = this.Const.World.Common.pickHelmet([
+				[1, "feathered_hat"],
+				[3, ""]
+		]))
+		items.equip(item);
 	}
 
 	function onUpdate( _properties )

@@ -153,16 +153,10 @@ this.legend_peasant_squire <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.Math.rand(1, 100) <= 66)
 		{
-			local r = this.Math.rand(1, 4);
-
-			if (r == 1)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/feathered_hat"));
-			}
-			else if (r >= 2)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/aketon_cap"));
-			}
+			this.m.Items.equip(this.Const.World.Common.pickHelmet([
+				[1, "feathered_hat"],
+				[3, "aketon_cap"]
+			]))
 		}
 	}
 

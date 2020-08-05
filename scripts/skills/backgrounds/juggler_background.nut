@@ -171,12 +171,10 @@ this.juggler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			items.equip(this.new("scripts/items/armor/linen_tunic"));
 		}
 
-		r = this.Math.rand(0, 1);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/jesters_hat"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "jesters_hat"],
+			[1, ""]
+		]));
 	}
 
 	function onAddLegendEquipment()
@@ -289,12 +287,10 @@ this.juggler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 
 			items.equip(armor);
 		}
-		r = this.Math.rand(0, 1);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/jesters_hat"));
-		}
+	items.equip(this.Const.World.Common.pickHelmet([
+			[1, "jesters_hat"],
+			[1, ""]
+		]));
 	}
 
 	function onUpdate( _properties )

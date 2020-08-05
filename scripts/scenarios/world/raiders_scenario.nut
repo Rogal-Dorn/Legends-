@@ -72,7 +72,7 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 			items.equip(this.new("scripts/items/armor/barbarians/reinforced_animal_hide_armor"));
 		}
 
-		items.equip(this.new("scripts/items/helmets/barbarians/bear_headpiece"));
+		items.equipthis.Const.World.Common.pickHelmet([[1, "barbarians/bear_headpiece"]));
 		bros[1].setStartValuesEx([
 			"barbarian_background"
 		]);
@@ -115,7 +115,7 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		} else {
 			items.equip(this.new("scripts/items/armor/barbarians/scrap_metal_armor"));
 		}
-		items.equip(this.new("scripts/items/helmets/barbarians/leather_headband"));
+		items.equip(this.Const.World.Common.pickHelmet([[1, "barbarians/leather_headband"]));
 		bros[2].setStartValuesEx([
 			"barbarian_background"
 		]);
@@ -158,7 +158,7 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 			items.equip(this.new("scripts/items/armor/barbarians/hide_and_bone_armor"));
 		}
 
-		items.equip(this.new("scripts/items/helmets/barbarians/leather_helmet"));
+		items.equip(this.Const.World.Common.pickHelmet([[1, "barbarians/leather_helmet"]));
 		bros[3].setStartValuesEx([
 			"monk_background"
 		]);

@@ -218,12 +218,9 @@ this.killer_on_the_run_background <- this.inherit("scripts/skills/backgrounds/ch
 			items.equip(this.new("scripts/items/armor/leather_tunic"));
 		}
 
-		r = this.Math.rand(0, 0);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/hood"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "hood"]
+		]));
 	}
 
 	function onAddLegendEquipment()
@@ -328,12 +325,9 @@ this.killer_on_the_run_background <- this.inherit("scripts/skills/backgrounds/ch
 
 			items.equip(armor);
 		}
-		r = this.Math.rand(0, 0);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/hood"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "hood"]
+		]));
 	}
 	function onUpdate( _properties )
 	{
