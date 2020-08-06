@@ -59,11 +59,11 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 		if (("State" in this.Tactical) && this.Tactical.State != null) {
 			if (actor.getTile().IsVisibleForPlayer)
 			{
-				if (this.Const.Tactical.HideParticles.len() != 0)
+				if (this.Const.Tactical.TransformParticles.len() != 0)
 				{
-					for( local i = 0; i < this.Const.Tactical.HideParticles.len(); i = ++i )
+					for( local i = 0; i < this.Const.Tactical.TransformParticles.len(); i = ++i )
 					{
-						this.Tactical.spawnParticleEffect(false, this.Const.Tactical.HideParticles[i].Brushes, actor.getTile(), this.Const.Tactical.HideParticles[i].Delay, this.Const.Tactical.HideParticles[i].Quantity, this.Const.Tactical.HideParticles[i].LifeTimeQuantity, this.Const.Tactical.HideParticles[i].SpawnRate, this.Const.Tactical.HideParticles[i].Stages);
+						this.Tactical.spawnParticleEffect(false, this.Const.Tactical.TransformParticles[i].Brushes, actor.getTile(), this.Const.Tactical.TransformParticles[i].Delay, this.Const.Tactical.TransformParticles[i].Quantity, this.Const.Tactical.TransformParticles[i].LifeTimeQuantity, this.Const.Tactical.TransformParticles[i].SpawnRate, this.Const.Tactical.TransformParticles[i].Stages);
 					}
 				}
 			}
@@ -228,16 +228,15 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 		if (("State" in this.Tactical) && this.Tactical.State != null) {
 			if (actor.getTile().IsVisibleForPlayer)
 			{
-				if (this.Const.Tactical.HideParticles.len() != 0)
+				if (this.Const.Tactical.TransformParticles.len() != 0)
 				{
-					for( local i = 0; i < this.Const.Tactical.HideParticles.len(); i = ++i )
+					for( local i = 0; i < this.Const.Tactical.TransformParticles.len(); i = ++i )
 					{
-						this.Tactical.spawnParticleEffect(false, this.Const.Tactical.HideParticles[i].Brushes, actor.getTile(), this.Const.Tactical.HideParticles[i].Delay, this.Const.Tactical.HideParticles[i].Quantity, this.Const.Tactical.HideParticles[i].LifeTimeQuantity, this.Const.Tactical.HideParticles[i].SpawnRate, this.Const.Tactical.HideParticles[i].Stages);
+						this.Tactical.spawnParticleEffect(false, this.Const.Tactical.TransformParticles[i].Brushes, actor.getTile(), this.Const.Tactical.TransformParticles[i].Delay, this.Const.Tactical.TransformParticles[i].Quantity, this.Const.Tactical.TransformParticles[i].LifeTimeQuantity, this.Const.Tactical.TransformParticles[i].SpawnRate, this.Const.Tactical.TransformParticles[i].Stages);
 					}
 				}
 			}
 		}
-
 
 		actor.getSkills().removeByID("actives.werewolf_claws");
 		actor.getSkills().removeByID("actives.werewolf_bite");

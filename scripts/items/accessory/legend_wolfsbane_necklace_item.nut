@@ -61,7 +61,24 @@ this.legend_wolfsbane_necklace_item <- this.inherit("scripts/items/accessory/acc
 		});
 		return result;
 	}
+	
+	function onUpdateProperties( _properties )
+	{
+		this.accessory.onUpdateProperties(_properties);
+		_properties.FatigueRecoveryRate += 1;
+	}
 
+	function onEquip()
+	{
+		this.accessory.onEquip();
+		this.addSkill(this.new("scripts/skills/effects/legend_wolfsbane_effect"));
+	}
+	
+	function onUnequip()
+	{
+		this.accessory.onUnequip();
+		this.getSkills().removeByID("effects.legend_wolfsbane");
+	}
 
 
 });
