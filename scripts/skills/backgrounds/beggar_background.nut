@@ -174,16 +174,19 @@ this.beggar_background <- this.inherit("scripts/skills/backgrounds/character_bac
 			items.equip(this.new("scripts/items/armor/legend_rabble_tunic"));
 		}
 
-		r = this.Math.rand(0, 4);
-
-		if (r == 0)
+		local item = this.Const.World.Common.pickHelmet([
+			[3, ""],
+			[1, "hood"]
+		])
+		if (item != null)
 		{
-			local item = this.Const.World.Common.pickHelmet([
-				[1, "hood"]
-			]))
-			item.setVariant(38);
+			if (item.getID() == "armor.head.hood")
+			{
+				item.setVariant(38);
+			}
 			items.equip(item);
 		}
+
 	}
 
 	function onAddLegendEquipment()
@@ -225,14 +228,16 @@ this.beggar_background <- this.inherit("scripts/skills/backgrounds/character_bac
 			items.equip(armor);
 		}
 
-		r = this.Math.rand(0, 4);
-
-		if (r == 0)
+		local item = this.Const.World.Common.pickHelmet([
+			[3, ""],
+			[1, "hood"]
+		])
+		if (item != null)
 		{
-			local item = this.Const.World.Common.pickHelmet([
-				[1, "hood"]
-			]))
-			item.setVariant(38);
+			if (item.getID() == "armor.head.hood")
+			{
+				item.setVariant(38);
+			}
 			items.equip(item);
 		}
 	}

@@ -109,14 +109,9 @@ this.legend_astrologist_background <- this.inherit("scripts/skills/backgrounds/c
 		// this.getContainer().getActor().fillTalentValues(2, true);
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.Const.World.Common.pickHelmet([
-<<<<<<< HEAD
 			[1, ""],
 			[1, "legend_seer_hat"],
 			[1, "magician_hat"]
-=======
-			[1, "dark_cowl"],
-			[1, "witchhunter_hat"]
->>>>>>> mwahv14Helm
 		]));
 		items.equip(this.new("scripts/items/armor/thick_dark_tunic"));
 		items.equip(this.new("scripts/items/weapons/ancient/broken_ancient_sword"));
@@ -131,14 +126,9 @@ this.legend_astrologist_background <- this.inherit("scripts/skills/backgrounds/c
 		// this.getContainer().getActor().fillTalentValues(2, true);
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.Const.World.Common.pickHelmet([
-<<<<<<< HEAD
 			[1, ""],
 			[1, "legend_seer_hat"],
 			[1, "magician_hat"]
-=======
-			[1, "dark_cowl"],
-			[1, "witchhunter_hat"]
->>>>>>> mwahv14Helm
 		]));
 		items.equip(this.new("scripts/items/legend_armor/cloth/legend_dark_tunic"));
 		items.equip(this.new("scripts/items/weapons/ancient/broken_ancient_sword"));

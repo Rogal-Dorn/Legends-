@@ -216,7 +216,7 @@ this.female_bowyer_background <- this.inherit("scripts/skills/backgrounds/charac
 		local item = this.Const.World.Common.pickHelmet([
 				[1, "feathered_hat"],
 				[2, ""]
-		]))
+		])
 		items.equip(item);
 	}
 
@@ -241,7 +241,7 @@ this.female_bowyer_background <- this.inherit("scripts/skills/backgrounds/charac
 		local item = this.Const.World.Common.pickHelmet([
 				[1, "feathered_hat"],
 				[2, ""]
-		]))
+		])
 		items.equip(item);
 	}
 

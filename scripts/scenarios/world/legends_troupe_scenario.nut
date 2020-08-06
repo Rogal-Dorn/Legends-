@@ -38,7 +38,7 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		bros[0].m.PerkPointsSpent += 1;
 		local items = bros[0].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
-		items.equip(this.Const.World.Common.pickHelmet([[1, "jesters_hat"]));
+		items.equip(this.Const.World.Common.pickHelmet([[1, "jesters_hat"]]));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.equip(this.new("scripts/items/weapons/legend_staff"));
 		bros[1].setStartValuesEx([
@@ -52,7 +52,7 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		bros[1].m.PerkPointsSpent += 1;
 		local items = bros[1].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
-		items.equip(this.Const.World.Common.pickHelmet([[1, "named/jugglers_hat"]));
+		items.equip(this.Const.World.Common.pickHelmet([[1, "named/jugglers_hat"]]));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.equip(this.new("scripts/items/weapons/lute"));
 		bros[2].setStartValuesEx([
@@ -69,7 +69,7 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		bros[2].m.PerkPointsSpent += 1;
 		local items = bros[2].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
-		items.equip(this.Const.World.Common.pickHelmet([[1, "named/jugglers_hat"]));
+		items.equip(this.Const.World.Common.pickHelmet([[1, "named/jugglers_hat"]]));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.equip(this.new("scripts/items/weapons/legend_drum"));
 		bros[3].setStartValuesEx([
@@ -84,7 +84,7 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		bros[3].m.PerkPointsSpent += 1;
 		local items = bros[3].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
-		items.equip(this.Const.World.Common.pickHelmet([[1, "named/jugglers_padded_hat"]));
+		items.equip(this.Const.World.Common.pickHelmet([[1, "named/jugglers_padded_hat"]]));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.equip(this.new("scripts/items/weapons/legend_ranged_wooden_flail"));
 		foreach( bro in bros )

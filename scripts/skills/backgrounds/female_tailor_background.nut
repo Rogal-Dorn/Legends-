@@ -136,11 +136,10 @@ this.female_tailor_background <- this.inherit("scripts/skills/backgrounds/charac
 		}
 
 
-		local item = this.Const.World.Common.pickHelmet([
+		items.equip(this.Const.World.Common.pickHelmet([
 				[1, "feathered_hat"],
 				[1, ""]
 		]))
-		items.equip(item);
 	}
 
 	function onAddLegendEquipment()
@@ -148,11 +147,10 @@ this.female_tailor_background <- this.inherit("scripts/skills/backgrounds/charac
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/legend_armor/cloth/legend_peasant_dress"));
 
-		local item = this.Const.World.Common.pickHelmet([
+		items.equip(this.Const.World.Common.pickHelmet([
 				[1, "feathered_hat"],
 				[1, ""]
 		]))
-		items.equip(item);
 	}
 
 });
