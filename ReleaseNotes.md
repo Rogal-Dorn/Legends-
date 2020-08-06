@@ -3743,7 +3743,7 @@ arborthropy
 *  10% chance per turn of turning into a schrat, gaining a regrowing shield, the ability to shed saplings when hit, and uproot skill. 
 * 20% chance per turn in daytime, 10% chance at night, 
 
-Barbarians often has theses injuries
+Barbarians often have theses injuries
 * Thralls have a 25% chance to have lycanthropy 
 * Reavers have a 25% chance to have aperthropy  
 * Chosen have a 25% chance to have  ursathropy 
@@ -3755,12 +3755,26 @@ The infection also cbrings with it a new perk group for mastering control of the
 * New perk - control instincts - transformed characters are now player controled 
 * New perk - master anger - transformation is no longer random, but can be controlled 
 * True form - the transformation lasts twice as long
+
+harvesting can now provide mistletoe and wolfsbane, used in recipes
+Possible to craft a wolfsbane necklace to 
+
 Druids begin with the therianthropy perk group and a random therianthropic injury 
  
 Rumours of man sized rats in this update are clearly the ravings of madmen
 
 other changes
 * artwork for legendary beasts reworked to be grittier 
+* artwork for piercing and broadhead ammunition made clearer 
+* artwork for essence necklace made unique 
+* artwork for necrosavant ladies fixed to be less thicc 
+* noble slingers have less ranged skill and ranged defense 
+* noble halberdiers have slightly more moral and melee defense 
+* peasant miners have slightly lower melee skill
+* peastant monks have slightly more hitpoints and defense 
+* peasant blacksmiths have slightly more hitpoints and less moral 
+* peasant squires have significantly 
+* peasant witch hunters have significantly higher bravery and hitpoints 
 *prong skill tooltip updated to correctly show impact of thrust master 
 * fixed crash from Fell down well event while playing a solo avatar 
 * Intensive training trait is hidden until relevant 

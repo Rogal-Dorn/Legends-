@@ -3,17 +3,17 @@ this.therianthropic_potion_blueprint <- this.inherit("scripts/crafting/blueprint
 	function create()
 	{
 		this.blueprint.create();
-		this.m.ID = "blueprint.herbal_oblivion_potion";
+		this.m.ID = "blueprint.therianthropic_potion";
 		this.m.Type = this.Const.Items.ItemType.Usable
 		this.m.PreviewCraftable = this.new("scripts/items/accessory/therianthropy_potion_item");
 		this.m.Cost = 30;
 		local ingredients = [
 			{
-				Script = "scripts/items/accessory/wardog_item",
+				Script = "scripts/items/misc/legend_wolfsbane_item",
 				Num = 1
 			},
 			{
-				Script = "scripts/items/accessory/legend_heartwood_sap_flask_item",
+				Script = "scripts/items/misc/legend_werehand_item",
 				Num = 1
 			},
 			{
