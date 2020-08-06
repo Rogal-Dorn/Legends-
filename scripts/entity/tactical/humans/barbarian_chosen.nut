@@ -96,6 +96,11 @@ this.barbarian_chosen <- this.inherit("scripts/entity/tactical/human", {
 		{
 			this.updateAchievement("KingOfTheNorth", 1, 1);
 		}
+		if ((_killer == null || _killer.getFaction() == this.Const.Faction.Player || _killer.getFaction() == this.Const.Faction.PlayerAnimals) && this.m.skills.hasSkill("injury_permanent.legend_ursathropy_injury"))
+		{
+			local loot = this.new("scripts/items/misc/legend_werehand_item");
+			loot.drop(_tile);
+		}		
 
 		this.human.onDeath(_killer, _skill, _tile, _fatalityType);
 	}

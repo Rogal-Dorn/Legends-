@@ -10,7 +10,11 @@ this.herbal_mushrooms_blueprint <- this.inherit("scripts/crafting/blueprint", {
 		local ingredients = [
 			{
 				Script = "scripts/items/supplies/roots_and_berries_item",
-				Num = 3
+				Num = 2
+			},
+			{
+				Script = "scripts/items/misc/legend_mistletoe_item",
+				Num = 1
 			}
 		];
 		this.init(ingredients);

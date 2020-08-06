@@ -57,9 +57,6 @@ this.legend_peasant_poacher <- this.inherit("scripts/entity/tactical/human", {
 			[
 				"weapons/short_bow",
 				"ammo/quiver_of_arrows"
-			],
-			[
-				"weapons/legend_sling"
 			]
 		];
 		local n = this.Math.rand(0, weapons.len() - 1);

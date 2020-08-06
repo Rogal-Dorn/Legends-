@@ -58,7 +58,8 @@ this.legend_ursathropy_injury <- this.inherit("scripts/skills/injury_permanent/p
 	function onTurnStart()
 	{
 		local actor = this.getContainer().getActor();
-		if(!actor.getSkills().hasSkill("effect.legend_transformed_wolf") && !actor.getSkills().hasSkill("effect.legend_transformed_bear") && !actor.getSkills().hasSkill("effect.legend_transformed_boar") && !actor.getSkills().hasSkill("effect.legend_transformed_rat") && !actor.getSkills().hasSkill("effect.legend_transformed_tree") )
+		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Accessory);
+		if(!actor.getSkills().hasSkill("effect.legend_transformed_wolf") && !actor.getSkills().hasSkill("effect.legend_transformed_bear") && !actor.getSkills().hasSkill("effect.legend_transformed_boar") && !actor.getSkills().hasSkill("effect.legend_transformed_rat") && !actor.getSkills().hasSkill("effect.legend_transformed_tree") && item.getID() != "accessory.legend_wolfsbane_necklace")
 		{
 			if (!actor.getSkills().hasSkill("perk.legend_master_anger"))
 			{
