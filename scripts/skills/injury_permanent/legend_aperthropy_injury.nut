@@ -58,10 +58,12 @@ this.legend_aperthropy_injury <- this.inherit("scripts/skills/injury_permanent/p
 	{
 		local actor = this.getContainer().getActor();
 		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Accessory);
-		if(!actor.getSkills().hasSkill("effect.legend_transformed_wolf") && !actor.getSkills().hasSkill("effect.legend_transformed_bear") && !actor.getSkills().hasSkill("effect.legend_transformed_boar") && !actor.getSkills().hasSkill("effect.legend_transformed_rat") && !actor.getSkills().hasSkill("effect.legend_transformed_tree") && item.getID() != "accessory.legend_wolfsbane_necklace")
+		if(!actor.getSkills().hasSkill("effect.legend_transformed_wolf") && !actor.getSkills().hasSkill("effect.legend_transformed_bear") && !actor.getSkills().hasSkill("effect.legend_transformed_boar") && !actor.getSkills().hasSkill("effect.legend_transformed_rat") && !actor.getSkills().hasSkill("effect.legend_transformed_tree") && !actor.getSkills().hasSkill("effect.legend_wolfsbane"))
 		{
-				if (!actor.getSkills().hasSkill("perk.legend_master_anger"))
+		
+			if (!actor.getSkills().hasSkill("perk.legend_master_anger"))
 			{
+			
 				local r = this.Math.rand(1,10);
 				local day = this.World.getTime().Days;
 				local month = day / 28;

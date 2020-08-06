@@ -41,15 +41,18 @@ this.legend_transformed_boar_effect <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
+	
+
 		local actor = this.getContainer().getActor();
+		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Accessory);
 		if (("State" in this.Tactical) && this.Tactical.State != null) {
 			if (actor.getTile().IsVisibleForPlayer)
 			{
-				if (this.Const.Tactical.HideParticles.len() != 0)
+				if (this.Const.Tactical.TransformParticles.len() != 0)
 				{
-					for( local i = 0; i < this.Const.Tactical.HideParticles.len(); i = ++i )
+					for( local i = 0; i < this.Const.Tactical.TransformParticles.len(); i = ++i )
 					{
-						this.Tactical.spawnParticleEffect(false, this.Const.Tactical.HideParticles[i].Brushes, actor.getTile(), this.Const.Tactical.HideParticles[i].Delay, this.Const.Tactical.HideParticles[i].Quantity, this.Const.Tactical.HideParticles[i].LifeTimeQuantity, this.Const.Tactical.HideParticles[i].SpawnRate, this.Const.Tactical.HideParticles[i].Stages);
+						this.Tactical.spawnParticleEffect(false, this.Const.Tactical.TransformParticles[i].Brushes, actor.getTile(), this.Const.Tactical.TransformParticles[i].Delay, this.Const.Tactical.TransformParticles[i].Quantity, this.Const.Tactical.TransformParticles[i].LifeTimeQuantity, this.Const.Tactical.TransformParticles[i].SpawnRate, this.Const.Tactical.TransformParticles[i].Stages);
 					}
 				}
 			}
@@ -206,15 +209,14 @@ this.legend_transformed_boar_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("head").setHorizontalFlipping(0);
 		actor.getSprite("injury").setHorizontalFlipping(0);
 
-		if (("State" in this.Tactical) && this.Tactical.State != null)
-		{
+		if (("State" in this.Tactical) && this.Tactical.State != null) {
 			if (actor.getTile().IsVisibleForPlayer)
 			{
-				if (this.Const.Tactical.HideParticles.len() != 0)
+				if (this.Const.Tactical.TransformParticles.len() != 0)
 				{
-					for( local i = 0; i < this.Const.Tactical.HideParticles.len(); i = ++i )
+					for( local i = 0; i < this.Const.Tactical.TransformParticles.len(); i = ++i )
 					{
-						this.Tactical.spawnParticleEffect(false, this.Const.Tactical.HideParticles[i].Brushes, actor.getTile(), this.Const.Tactical.HideParticles[i].Delay, this.Const.Tactical.HideParticles[i].Quantity, this.Const.Tactical.HideParticles[i].LifeTimeQuantity, this.Const.Tactical.HideParticles[i].SpawnRate, this.Const.Tactical.HideParticles[i].Stages);
+						this.Tactical.spawnParticleEffect(false, this.Const.Tactical.TransformParticles[i].Brushes, actor.getTile(), this.Const.Tactical.TransformParticles[i].Delay, this.Const.Tactical.TransformParticles[i].Quantity, this.Const.Tactical.TransformParticles[i].LifeTimeQuantity, this.Const.Tactical.TransformParticles[i].SpawnRate, this.Const.Tactical.TransformParticles[i].Stages);
 					}
 				}
 			}
