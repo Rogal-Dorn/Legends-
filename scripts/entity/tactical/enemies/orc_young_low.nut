@@ -92,7 +92,7 @@ this.orc_young_low <- this.inherit("scripts/entity/tactical/enemies/orc_young", 
 
 		local item = this.Const.World.Common.pickHelmet([
 			[2, ""],
-			[1, "greenskins/orc_young_light_helmet"]
+			[1, "greenskins/orc_young_light_helmet"],
 			[1, "greenskins/orc_young_medium_helmet"]
 		])
 		if (item != null)

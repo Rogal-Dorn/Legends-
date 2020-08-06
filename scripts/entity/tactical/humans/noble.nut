@@ -84,8 +84,11 @@ this.noble <- this.inherit("scripts/entity/tactical/human", {
 				local h = this.Const.World.Common.pickHelmet([
 					[1, "greatsword_faction_helm"]
 				])
-				h.setVariant(this.World.FactionManager.getFaction(this.getFaction()).getBanner());
-				this.m.Items.equip(h);
+				if (h != null)
+				{
+					h.setVariant(this.World.FactionManager.getFaction(this.getFaction()).getBanner());
+					this.m.Items.equip(h);
+				}
 			}
 
 			if (this.Math.rand(1, 100) <= 33)

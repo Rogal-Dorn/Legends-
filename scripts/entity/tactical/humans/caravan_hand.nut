@@ -197,7 +197,6 @@ this.caravan_hand <- this.inherit("scripts/entity/tactical/human", {
 			}
 		}
 
-
 		if (this.Math.rand(1, 100) <= 33)
 		{
 			local item = this.Const.World.Common.pickHelmet([

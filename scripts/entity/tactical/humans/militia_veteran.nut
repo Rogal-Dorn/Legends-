@@ -218,7 +218,7 @@ this.militia_veteran <- this.inherit("scripts/entity/tactical/human", {
 		{
 			this.m.Items.equip(this.Const.World.Common.pickHelmet([
 				[1, "hood"],
-				[1, "aketon_cap"]
+				[1, "aketon_cap"],
 				[1, "full_leather_cap"]
 			]))
 		}

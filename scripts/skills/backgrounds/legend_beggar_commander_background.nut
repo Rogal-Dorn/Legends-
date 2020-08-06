@@ -272,17 +272,10 @@ this.legend_beggar_commander_background <- this.inherit("scripts/skills/backgrou
 		])
 		if (item != null)
 		{
-<<<<<<< HEAD
 			if (item.getID() == "armor.head.hood")
 			{
 				item.setVariant(38);
 			}
-=======
-			local item =this.Const.World.Common.pickHelmet([
-				[1, "hood"]
-			]);
-			item.setVariant(38);
->>>>>>> mwahv14Helm
 			items.equip(item);
 		}
 
@@ -331,17 +324,10 @@ this.legend_beggar_commander_background <- this.inherit("scripts/skills/backgrou
 		])
 		if (item != null)
 		{
-<<<<<<< HEAD
 			if (item.getID() == "armor.head.hood")
 			{
 				item.setVariant(38);
 			}
-=======
-			local item = this.Const.World.Common.pickHelmet([
-				[1, "hood"]
-			]);
-			item.setVariant(38);
->>>>>>> mwahv14Helm
 			items.equip(item);
 		}
 	}

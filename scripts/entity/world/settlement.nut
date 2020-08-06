@@ -2154,7 +2154,15 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		}
 
 		this.updateRoster();
-		this.updateShop();
+		if (this.World.LegendsMod.Configs().LegendHelmetEnabled())
+    	{
+			this.updateLegendShop();
+    	}
+		else
+		{
+			this.updateShop();
+		}
+
 		this.Math.seedRandom(this.Time.getRealTime());
 		return true;
 	}

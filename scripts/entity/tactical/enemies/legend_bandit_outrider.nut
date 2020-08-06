@@ -148,7 +148,7 @@ this.legend_bandit_outrider <- this.inherit("scripts/entity/tactical/human", {
 			WolfSaturation = this.getSprite("wolf").Saturation,
 			Morale = this.Math.max(this.Const.MoraleState.Breaking, this.getMoraleState())
 		};
-		
+
 
 		if (this.m.LastBodyPartHit == this.Const.BodyPart.Body)
 		{
@@ -348,8 +348,8 @@ this.legend_bandit_outrider <- this.inherit("scripts/entity/tactical/human", {
 				[1, "open_leather_cap"],
 				[1, "headscarf"],
 				[1, "mouth_piece"],
-				[1, "full_leather_cap"]
-				[1, "aketon_cap"],
+				[1, "full_leather_cap"],
+				[1, "aketon_cap"]
 			])
 			if (item != null)
 			{
@@ -360,7 +360,7 @@ this.legend_bandit_outrider <- this.inherit("scripts/entity/tactical/human", {
 
 	function getHeadNames() {
 		local r = this.Math.rand(0,1);
-	
+
 		//I only see these two, feel free to fix. Just needs to assign "bust_head_xx" for horse to work properly, not from Heads array for some reason
 		if (r == 0) {
 			return "bust_head_5" + this.Math.rand(0,1);

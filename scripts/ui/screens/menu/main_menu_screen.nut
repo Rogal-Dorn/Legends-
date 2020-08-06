@@ -138,7 +138,12 @@ this.main_menu_screen <- {
 		}
 
 		this.m.JSHandle.asyncCall("setDLC", dlc);
-		this.m.JSHandle.asyncCall("setMOTD", "Welcome to Legends Beta. \n\n To report bugs, share strategies and ideas, or try out new test builds, join us on https://discord.gg/ZfCHGuC");
+		if (!this.Const.DLC.Unhold && !this.Const.DLC.Wildmen)
+		{
+			this.m.JSHandle.asyncCall("setLMOTD", "Legends Mod requires all DLC to be installed and enabled. \n Legends extensively uses features and assets from all official DLC. We would not be able to offer this mod experience without all the awesome work from Overhype. \n We apologize that we can't offer a version without support from the DLC's, but we also do feel that the devs deserve our support for this amazing game.");
+		} else {
+			this.m.JSHandle.asyncCall("setMOTD", "Welcome to Legends Beta. \n\n To report bugs, share strategies and ideas, or try out new test builds, join us on https://discord.gg/ZfCHGuC");
+		}
 	}
 
 	function destroy()
@@ -164,7 +169,15 @@ this.main_menu_screen <- {
 		if (this.m.JSHandle != null && !this.isVisible())
 		{
 			this.Tooltip.hide();
-			this.m.JSHandle.asyncCall("show", null);
+
+			if (!this.Const.DLC.Unhold && !this.Const.DLC.Wildmen)
+			{
+				this.m.JSHandle.asyncCall("noshow", null);
+			}
+			else
+			{
+				this.m.JSHandle.asyncCall("show", null);
+			}
 		}
 	}
 

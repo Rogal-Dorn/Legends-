@@ -200,12 +200,11 @@ this.gambler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			items.equip(this.new("scripts/items/armor/linen_tunic"));
 		}
 
-		local item = this.Const.World.Common.pickHelmet([
+		items.equip(this.Const.World.Common.pickHelmet([
 				[1, "feathered_hat"],
 				[3, ""]
 		]))
-		items.equip(item);
-		
+
 	}
 
 	function onAddLegendEquipment()
@@ -234,11 +233,10 @@ this.gambler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		items.equip(armor)
 
 
-	local item = this.Const.World.Common.pickHelmet([
+		items.equip(this.Const.World.Common.pickHelmet([
 				[1, "feathered_hat"],
 				[3, ""]
 		]))
-		items.equip(item);
 	}
 
 });

@@ -151,7 +151,6 @@ this.legend_skeleton_gladiator <- this.inherit("scripts/entity/tactical/skeleton
 			}
 		}
 
-
 		local item = this.Const.World.Common.pickHelmet([
 			[34, ""],
 			[66, "ancient/ancient_gladiator_helmet"]
@@ -160,6 +159,7 @@ this.legend_skeleton_gladiator <- this.inherit("scripts/entity/tactical/skeleton
 		{
 			this.m.Items.equip(item);
 		}
+	}
 
 });
 

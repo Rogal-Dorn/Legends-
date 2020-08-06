@@ -172,7 +172,7 @@ this.companion_1h_background <- this.inherit("scripts/skills/backgrounds/charact
 				[1, "open_leather_cap"],
 				[1, "full_aketon_cap"],
 				[1, "full_leather_cap"]
-		]))
+		])
 		items.equip(item);
 	}
 
@@ -212,7 +212,7 @@ this.companion_1h_background <- this.inherit("scripts/skills/backgrounds/charact
 				[1, "open_leather_cap"],
 				[1, "full_aketon_cap"],
 				[1, "full_leather_cap"]
-		]))
+		])
 		items.equip(item);
 	}
 });

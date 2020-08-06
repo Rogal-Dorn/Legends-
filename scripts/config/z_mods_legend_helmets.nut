@@ -1930,7 +1930,7 @@ gt.Const.LegendMod.Helmets <- {};
 
 foreach( i, v in gt.Const.LegendMod.HelmetObjs )
 {
-	local id = "scripts/items/helmets/" + v.ID;
-	gt.Const.LegendMod.Helmets[id] <- i;
+	//local id = "scripts/items/helmets/" + v.ID;
+	gt.Const.LegendMod.Helmets[v.ID] <- v;
 }
 

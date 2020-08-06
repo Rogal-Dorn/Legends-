@@ -144,14 +144,9 @@ this.legend_ancient_summoner_background <- this.inherit("scripts/skills/backgrou
 		this.getContainer().getActor().fillTalentValues(1, true);
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.Const.World.Common.pickHelmet([
-<<<<<<< HEAD
 			[1, ""],
 			[1, "legend_seer_hat"],
 			[1, "magician_hat"]
-=======
-			[1, "dark_cowl"],
-			[1, "witchhunter_hat"]
->>>>>>> mwahv14Helm
 		]));
 		items.equip(this.new("scripts/items/armor/thick_dark_tunic"));
 		items.equip(this.new("scripts/items/weapons/legend_grisly_scythe"));
@@ -167,14 +162,9 @@ this.legend_ancient_summoner_background <- this.inherit("scripts/skills/backgrou
 		this.getContainer().getActor().fillTalentValues(1, true);
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.Const.World.Common.pickHelmet([
-<<<<<<< HEAD
 			[1, ""],
 			[1, "legend_seer_hat"],
 			[1, "magician_hat"]
-=======
-			[1, "dark_cowl"],
-			[1, "witchhunter_hat"]
->>>>>>> mwahv14Helm
 		]));
 		items.equip(this.new("scripts/items/legend_armor/cloth/legend_dark_tunic"));
 		items.equip(this.new("scripts/items/weapons/legend_grisly_scythe"));

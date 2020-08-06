@@ -3847,12 +3847,18 @@ this.world_state <- this.inherit("scripts/states/state", {
 		if (_in.getMetaData().getVersion() >= 71)
 		{
 			this.World.LegendsMod.onDeserialize(_in)
+			if (_in.getMetaData().getVersion() >= 72 && this.World.LegendsMod.Configs().LegendHelmetEnabled())
+			{
+				_in.readBool();
+			}
 		}
 		else
 		{
 			this.Const.LegendMod.Configs.onDeserialize(_in);
 			this.World.LegendsMod.UpdateFromConst();
 		}
+
+
 
 		this.World.FactionManager.onDeserialize(_in);
 		this.World.EntityManager.onDeserialize(_in);

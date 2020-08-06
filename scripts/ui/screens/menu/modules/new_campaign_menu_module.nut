@@ -104,7 +104,8 @@ this.new_campaign_menu_module <- this.inherit("scripts/ui/screens/ui_module", {
 			LegendBleedKiller = _settings[34],
 			LegendAllBlueprints = _settings[35],
 			LegendRelationship = _settings[36],
-			LegendWorldEconomy = _settings[37]
+			LegendWorldEconomy = _settings[37],
+			LegendIsHelmet = this.Const.DLC.Unhold ? 1 : 0
 		};
 
 		// local settings = {

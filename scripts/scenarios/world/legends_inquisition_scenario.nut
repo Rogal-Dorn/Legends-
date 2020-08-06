@@ -48,7 +48,7 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 		bros[1].m.PerkPointsSpent += 1;
 		local items = bros[1].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
-		items.equip(this.Const.World.Common.pickHelmet([[1, "barbarians/leather_helmet"]));
+		items.equip(this.Const.World.Common.pickHelmet([[1, "barbarians/leather_helmet"]]));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
 		items.equip(this.new("scripts/items/armor/cultist_leather_robe"));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
@@ -58,7 +58,7 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 		]);
 		local items = bros[2].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
-		items.equip(this.Const.World.Common.pickHelmet([[1, "witchhunter_hat"]));
+		items.equip(this.Const.World.Common.pickHelmet([[1, "witchhunter_hat"]]));
 		items.equip(this.new("scripts/items/weapons/greenskins/goblin_crossbow"));
 		bros[2].getBackground().m.RawDescription = "{%name% has seen well the damage magic can bring to the world. The witches who steal the minds of men, the nightmares that end lives, and the necromancers who bring them back again. Hunting these foul creatures is the duty of all who serve the good of the gods. If the war is to be won, %name% will need a witch hunter army.}";
 		bros[2].improveMood(1.0, "Recently purged the unworthy");

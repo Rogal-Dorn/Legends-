@@ -1040,9 +1040,14 @@ this.asset_manager <- {
 			this.m.LastDayResourcesUpdated = this.World.getTime().Days;
 			foreach( t in this.World.EntityManager.getSettlements() )
 			{
-
 				t.addNewResources();
 			}
+		}
+
+		if (this.World.LegendsMod.Configs().m.IsHelmets == 1)
+		{
+			this.World.LegendsMod.Configs().m.IsHelmets += this.Const.DLC.Wildmen ? 1 : 0
+			this.logInfo("Set IsHelmets to " + this.World.LegendsMod.Configs().m.IsHelmets)
 		}
 
 

@@ -17,16 +17,16 @@ this.legends_risen_legion <- this.inherit("scripts/scenarios/world/starting_scen
 		local partysize = 12;
 		local broLevelMax = 3;
 
-		
+
 
 		for( local i = 0; i < partysize; i = ++i )
 		{
 			local broLevel = this.Math.rand(1, broLevelMax);
-			local broPerks = broLevel - 1; 
+			local broPerks = broLevel - 1;
 			local bro;
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.m.HireTime = this.Time.getVirtualTimeF();
-			
+
 			bro.m.Level = broLevel;
 			bro.m.LevelUps = broPerks;
 			bro.m.PerkPoints = broPerks;
@@ -44,7 +44,7 @@ this.legends_risen_legion <- this.inherit("scripts/scenarios/world/starting_scen
 			items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
 			items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Ammo));
 
-	
+
 
 			local r = this.Math.rand(1, 8);
 			if (r <= 3)
@@ -65,7 +65,7 @@ this.legends_risen_legion <- this.inherit("scripts/scenarios/world/starting_scen
 				items.equip(this.new("scripts/items/shields/ancient/tower_shield"));
 				items.addToBag(this.new("scripts/items/weapons/javelin"));
 				items.addToBag(this.new("scripts/items/weapons/javelin"));
-	
+
 				}
 			if (r == 4)
 				{
@@ -94,12 +94,12 @@ this.legends_risen_legion <- this.inherit("scripts/scenarios/world/starting_scen
 				items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
 				items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
 				items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Ammo));
-				items.equip(this.Const.World.Common.pickHelmet([[1, "ancient/ancient_gladiator_helmet"]));
+				items.equip(this.Const.World.Common.pickHelmet([[1, "ancient/ancient_gladiator_helmet"]]));
 				items.equip(this.new("scripts/items/weapons/ancient/ancient_sword"));
 				items.equip(this.new("scripts/items/tools/throwing_net"));
 				items.addToBag(this.new("scripts/items/tools/throwing_net"));
 				items.addToBag(this.new("scripts/items/tools/throwing_net"));
-	
+
 				}
 			if (r == 6)
 				{
@@ -112,7 +112,7 @@ this.legends_risen_legion <- this.inherit("scripts/scenarios/world/starting_scen
 				items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
 				items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
 				items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Ammo));
-				items.equip(this.Const.World.Common.pickHelmet([[1, "ancient/ancient_honorguard_helmet"]));
+				items.equip(this.Const.World.Common.pickHelmet([[1, "ancient/ancient_honorguard_helmet"]]));
 				items.equip(this.new("scripts/items/weapons/ancient/rhomphaia"));
 				items.addToBag(this.new("scripts/items/weapons/javelin"));
 				items.addToBag(this.new("scripts/items/weapons/javelin"));
@@ -128,14 +128,14 @@ this.legends_risen_legion <- this.inherit("scripts/scenarios/world/starting_scen
 				items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
 				items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
 				items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Ammo));
-				items.equip(this.Const.World.Common.pickHelmet([[1, "ancient/ancient_household_helmet"]));
+				items.equip(this.Const.World.Common.pickHelmet([[1, "ancient/ancient_household_helmet"]]));
 				items.equip(this.new("scripts/items/weapons/ancient/bladed_pike"));
 				items.addToBag(this.new("scripts/items/weapons/javelin"));
 				items.addToBag(this.new("scripts/items/weapons/javelin"));
 
 				}
 
-			
+
 				local cloths = [
 					[0, ""],
 					[1, "cloth/legend_sackcloth"],
@@ -194,7 +194,7 @@ this.legends_risen_legion <- this.inherit("scripts/scenarios/world/starting_scen
 				bro.m.CompanyID = val;
 		}
 
-		
+
 
 			this.World.Assets.getStash().add(this.new("scripts/items/supplies/wine_item"));
 			this.World.Assets.getStash().add(this.new("scripts/items/tents/tent_train"));
