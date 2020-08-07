@@ -6,7 +6,7 @@ this.light_trait <- this.inherit("scripts/skills/traits/character_trait", {
 		this.m.ID = "trait.light";
 		this.m.Name = "Light";
 		this.m.Icon = "ui/traits/light_trait.png";
-		this.m.Description = "Being exceptionally light, this character\'s strikes doesn\'t really hurt, but he\'s also extremely fast.";
+		this.m.Description = "Being exceptionally light, this character\'s strikes don\'t really hurt, however they\'re also extremely fast.";
 		this.m.Titles = [
 			"the Feather",
 			"the Rabbit",
