@@ -22,11 +22,17 @@ this.perk_close_combat_archer <- this.inherit("scripts/skills/skill", {
 
 		local rdef = this.getContainer().getActor().getCurrentProperties().getRangedDefense()
 		local bonus = 1 + (rdef / 100);
+		local negbonus = 1 - (rdef / 100);
 
 		if (_skill.isRanged() && this.getContainer().getActor().getTile().getDistanceTo(_targetEntity.getTile()) <= 2)
 		{
 			_properties.DamageRegularMult *= bonus;
 			_properties.DamageArmorMult *= bonus;
+		}
+		if (_skill.isRanged() && this.getContainer().getActor().getTile().getDistanceTo(_targetEntity.getTile()) => 4)
+		{
+			_properties.DamageRegularMult *= negbonus;
+			_properties.DamageArmorMult *= negbonus;
 		}
 	}
 

@@ -24,8 +24,8 @@ this.legend_man_mangler <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Condition = 64.0;
 		this.m.ConditionMax = 64.0;
 		this.m.StaminaModifier = -26;
-		this.m.RegularDamage = 90;
-		this.m.RegularDamageMax = 120;
+		this.m.RegularDamage = 60;
+		this.m.RegularDamageMax = 95;
 		this.m.ArmorDamageMult = 1.0;
 		this.m.DirectDamageMult = 0.35;
 		this.m.ChanceToHitHead = 5;

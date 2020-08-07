@@ -1,6 +1,6 @@
 this.double_strike_effect <- this.inherit("scripts/skills/skill", {
 	m = {
-		TimeAdded = 0
+		Used = 0
 	},
 	function create()
 	{
@@ -21,7 +21,7 @@ this.double_strike_effect <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
-		this.m.TimeAdded = this.Time.getVirtualTimeF();
+		this.m.Used = 0;
 	}
 
 	function onUpdate( _properties )
@@ -35,10 +35,15 @@ this.double_strike_effect <- this.inherit("scripts/skills/skill", {
 		{
 			return;
 		}
-
-		if (!this.m.IsGarbage && this.m.TimeAdded + 0.1 < this.Time.getVirtualTimeF() && !_targetEntity.isAlliedWith(this.getContainer().getActor()))
+		
+		if (this.m.Used == 1)
 		{
 			this.removeSelf();
+			
+		}
+		else if (this.m.Used == 0)
+		{
+			this.m.Used = 1;
 		}
 	}
 

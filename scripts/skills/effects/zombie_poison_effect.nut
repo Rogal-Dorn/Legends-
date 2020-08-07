@@ -21,7 +21,8 @@ this.zombie_poison_effect <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		local remaining = (10 - this.m.TurnsLeft);
+		local nsed = this.getContainer().getActor().getCurrentProperties().NegativeStatusEffectDuration;
+		local remaining = (10 - (this.m.TurnsLeft - nsed));
 
 		return [
 			{
@@ -77,9 +78,10 @@ this.zombie_poison_effect <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		local AP = this.Math.min(1, 1 * (10 - this.m.TurnsLeft));
-		local Init = this.Math.min(1, 10 * (10 - this.m.TurnsLeft));
-		local Vis = this.Math.min(1, 1 * (10 - this.m.TurnsLeft));
+		local nsed = this.getContainer().getActor().getCurrentProperties().NegativeStatusEffectDuration; //if uhave resilient t starts scaling from like 5 and scales to 10 but that seems weird, this makes it scale from like 1 to 5	
+		local AP = this.Math.max(1, 1 * (10 - (this.m.TurnsLeft - nsed)));
+		local Init = this.Math.max(1, 10 * (10 -(this.m.TurnsLeft - nsed)));
+		local Vis = this.Math.max(1, 1 * (10 - (this.m.TurnsLeft - nsed)));
 		_properties.ActionPoints -= AP;
 		_properties.Initiative -= Init;
 		_properties.Vision -= Vis;
