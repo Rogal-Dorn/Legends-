@@ -354,7 +354,7 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
                 needed = modifiers.Craft;
             }
 
-            r.Item.setArmor(r.Item.getRepair() + needed);
+            r.Item.onRepair(r.Item.getRepair() + needed);
             this.m.PointsRepaired += needed;
             modifiers.Craft -= needed;
 
