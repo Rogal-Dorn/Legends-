@@ -411,36 +411,5 @@ this.legend_transformed_tree_effect <- this.inherit("scripts/skills/skill", {
 		}
 		
 	}
-	function removeItems()
-	{
-		local actor = this.getContainer().getActor();
-		local items = actor.getItems();
-		local iArr = [];
-		if (items.getItemAtSlot(this.Const.ItemSlot.Mainhand))
-		{
-			local item = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
-			iArr.push(item);
-		}
-		if (items.getItemAtSlot(this.Const.ItemSlot.Offhand))
-		{
-			local item = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
-			iArr.push(item);
-		}
-		if (items.getItemAtSlot(this.Const.ItemSlot.Body))
-		{
-			local item = items.getItemAtSlot(this.Const.ItemSlot.Body);
-			iArr.push(item);
-		}
-		if (items.getItemAtSlot(this.Const.ItemSlot.Head))
-		{
-			local item = items.getItemAtSlot(this.Const.ItemSlot.Head);
-			iArr.push(item);
-		}
-		foreach( i in iArr )
-		{
-			items.unequip(i);
-			i.drop(actor.getTile());
-		}
-	}
 });
 

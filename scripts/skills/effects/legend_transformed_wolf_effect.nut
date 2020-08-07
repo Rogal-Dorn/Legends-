@@ -419,36 +419,6 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 			actor.getAIAgent().setActor(actor);
 		}
 	}
-	function removeItems()
-	{
-		local actor = this.getContainer().getActor();
-		local items = actor.getItems();
-		local iArr = [];
-		if (items.getItemAtSlot(this.Const.ItemSlot.Mainhand))
-		{
-			local item = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
-			iArr.push(item);
-		}
-		if (items.getItemAtSlot(this.Const.ItemSlot.Offhand))
-		{
-			local item = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
-			iArr.push(item);
-		}
-		if (items.getItemAtSlot(this.Const.ItemSlot.Body))
-		{
-			local item = items.getItemAtSlot(this.Const.ItemSlot.Body);
-			iArr.push(item);
-		}
-		if (items.getItemAtSlot(this.Const.ItemSlot.Head))
-		{
-			local item = items.getItemAtSlot(this.Const.ItemSlot.Head);
-			iArr.push(item);
-		}
-		foreach( i in iArr )
-		{
-			items.unequip(i);
-			i.drop(actor.getTile());
-		}
-	}
+	
 });
 
