@@ -6,7 +6,8 @@ this.legend_transformed_boar_effect <- this.inherit("scripts/skills/skill", {
 	Injury = "",
 	OriginalFaction = 0,
 	OriginalAgent = null,
-	OriginalSocket = null
+	OriginalSocket = null,
+	Items = []
 	},
 	function create()
 	{
@@ -106,23 +107,30 @@ this.legend_transformed_boar_effect <- this.inherit("scripts/skills/skill", {
 		if (items.getItemAtSlot(this.Const.ItemSlot.Mainhand))
 		{
 			local item = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
-			item.drop();
+			items.unequip(item);
+			this.m.Items.push(item);
 		}
 		if (items.getItemAtSlot(this.Const.ItemSlot.Offhand))
 		{
 			local item = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
-			item.drop();
+			items.unequip(item);
+			this.m.Items.push(item);
 		}
 		if (items.getItemAtSlot(this.Const.ItemSlot.Body))
 		{
 			local item = items.getItemAtSlot(this.Const.ItemSlot.Body);
-			item.drop();
+			items.unequip(item);
+			this.m.Items.push(item);
 		}
 		if (items.getItemAtSlot(this.Const.ItemSlot.Head))
 		{
 			local item = items.getItemAtSlot(this.Const.ItemSlot.Head);
-			item.drop();
+			items.unequip(item);
+			this.m.Items.push(item);
 		}
+
+		foreach( i in this.m.Items )
+			i.drop(this.getContainer().getActor().getTile());
 
 		this.m.Body = actor.getSprite("body").getBrush().Name;
 		this.m.Head = actor.getSprite("head").getBrush().Name;

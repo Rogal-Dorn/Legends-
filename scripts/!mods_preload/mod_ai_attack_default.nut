@@ -18,5 +18,6 @@
 	o.m.PossibleSkills.push("actives.legend_bear_bite");
 	o.m.PossibleSkills.push("actives.legend_bear_claws");
 	o.m.PossibleSkills.push("actives.legend_flaggelate");
+	o.m.PossibleSkills.push("actives.legend_boar_gore");
 
 });
