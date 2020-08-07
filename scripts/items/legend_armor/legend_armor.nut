@@ -93,7 +93,7 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 				continue;
 			}
 
-			delta = u.setCondition(delta);
+			delta = u.onRepair(delta);
 
 			if (delta <= 0)
 			{
@@ -186,12 +186,12 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 				continue;
 			}
 
-			if (u.isItemType(this.Const.Items.ItemType.Named)) 
+			if (u.isItemType(this.Const.Items.ItemType.Named))
 			{
 				return "legend_armor/inventory_named_armor.png";
 			}
 
-			if (u.isItemType(this.Const.Items.ItemType.Legendary)) 
+			if (u.isItemType(this.Const.Items.ItemType.Legendary))
 			{
 				return "legend_armor/inventory_named_armor.png";
 			}
@@ -230,12 +230,12 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 				continue;
 			}
 
-			if (u.isItemType(this.Const.Items.ItemType.Named)) 
+			if (u.isItemType(this.Const.Items.ItemType.Named))
 			{
 				return "legend_armor/named_armor.png";
 			}
 
-			if (u.isItemType(this.Const.Items.ItemType.Legendary)) 
+			if (u.isItemType(this.Const.Items.ItemType.Legendary))
 			{
 				return "legend_armor/named_armor.png";
 			}
@@ -275,7 +275,7 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		if (named != "" && runed != "")
 		{
 			L.push(runed);
-		} 
+		}
 
 		if (named != "" || runed != "")
 		{
@@ -348,7 +348,7 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		if (named != "" && runed != "")
 		{
 			L.push(runed);
-		} 
+		}
 
 		if (named != "" || runed != "")
 		{
@@ -446,7 +446,7 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 
 		this.m.Upgrades[_upgrade.getType()] = _upgrade;
 
-		
+
 
 		this.m.Upgrades[_upgrade.getType()].setArmor(this);
 		this.m.Upgrades[_upgrade.getType()].onAdded();
@@ -533,7 +533,7 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 			image = this.m.IconLarge != "" ? this.m.IconLarge : this.m.Icon,
 			isLarge = this.m.IconLarge != "" ? true : false
 		});
-		
+
 
 		foreach( u in this.m.Upgrades )
 		{
@@ -648,12 +648,12 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 				continue;
 			}
 
-			if (u.isItemType(this.Const.Items.ItemType.Named)) 
+			if (u.isItemType(this.Const.Items.ItemType.Named))
 			{
 				return true;
 			}
 
-			if (u.isItemType(this.Const.Items.ItemType.Legendary)) 
+			if (u.isItemType(this.Const.Items.ItemType.Legendary))
 			{
 				return true;
 			}

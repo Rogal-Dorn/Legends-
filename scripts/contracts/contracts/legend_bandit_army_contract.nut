@@ -716,7 +716,8 @@ this.legend_bandit_army_contract <- this.inherit("scripts/contracts/contract", {
 					text = "You gain [color=" + this.Const.UI.Color.PositiveEventValue + "]" + this.Contract.m.Reward + "[/color] Crowns"
 				});
 				this.Contract.m.SituationID = this.Contract.resolveSituation(this.Contract.m.SituationID, this.Contract.m.Home, this.List);
-
+				this.Contract.m.Home.removeSituationByID("situation.mustering_troops");
+				
 				if (this.Math.rand(1, 100) <= 80)
 				{
 					this.Contract.addSituation(this.new("scripts/entity/world/settlements/situations/disbanded_troops_situation"), 2, this.Contract.m.Home, this.List);

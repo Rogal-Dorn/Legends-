@@ -3695,6 +3695,7 @@ in your scenario files, the onBuildPerkTree function signature has changed. You 
 Adding perks looks like this now '''_tree[0].push(this.Const.Perks.PerkDefs.LegendCampCook);'''
 
 
+
 14.0.0.16 Honey, I shrank the town
 
 **World Economy**
@@ -3720,11 +3721,14 @@ Fixes one possible crash on vala chanting and being devoured
 Fixed Vanilla splt man double damage perk.
 Bandit warlords now have warlord stats, as opposed to bandidt leader stats
 Temporarily removes alchemy tree from being rolled (was highly unfinished/untested before)
+Zombie poison effect on legendary doesn't scale up fix
+Resilient/HoldOut tooltip fix, currently states -1 turn on debuffs, but gives -5
+Clears the mustering troops on legendary bandit contract completion
 
 https://drive.google.com/file/d/1eScbaKttem93gLfFNLFPhJ2c1S6qaTXn/view?usp=sharing
 
 
-14.0.0.***  where weary weres wear wary wares  
+14.0.0.17  where weary weres wear wary wares  
 
 **Therianthropy**
 * metamorphasising into other creatures is now a permanent injury,It randomly transforms the character into the creature, and they turn against you. 
@@ -3763,11 +3767,11 @@ Druids begin with the therianthropy perk group and a random therianthropic injur
  
 Rumours of man sized rats in this update are clearly the ravings of madmen
 
-other changes
+**changes**
+Close combat archer now not only buffs damage when close, it reduces damage when 4 or more tiles away 
+* Double strike effect updated to remove itself properly as described. 
 * artwork for legendary beasts reworked to be grittier 
 * artwork for piercing and broadhead ammunition made clearer 
-* artwork for essence necklace made unique 
-* artwork for necrosavant ladies fixed to be less thicc 
 * noble slingers have less ranged skill and ranged defense 
 * noble halberdiers have slightly more moral and melee defense 
 * peasant miners have slightly lower melee skill
@@ -3775,7 +3779,28 @@ other changes
 * peasant blacksmiths have slightly more hitpoints and less moral 
 * peasant squires have significantly 
 * peasant witch hunters have significantly higher bravery and hitpoints 
-*prong skill tooltip updated to correctly show impact of thrust master 
-* fixed crash from Fell down well event while playing a solo avatar 
-* Intensive training trait is hidden until relevant 
 
+
+
+**Fixes**
+
+Updated Vala and Druid background icons
+Updates the demon hound dead image
+Fixes alignment of the sash armor layer
+Ancient scrolls now actually drop
+Artwork for essence necklace made unique 
+Artwork for necrosavant ladies fixed to be less thicc 
+prong skill tooltip updated to correctly show impact of thrust master 
+fixed crash from Fell down well event while playing a solo avatar 
+Intensive training trait is hidden until relevant 
+Fixed. Armor layers parts will now repair when not attached to a base armor piece.
+Zombie poison scales from 1 not 10 now on legendary when you have resilient
+Ranger now has fixed worldmap look (Thanks Leonion)
+Miasma skill should now prperly get removed if perk is removed.  (Thanks Leonion)
+Rune of power should now correctly display it's effect  (Thanks Leonion)
+Warbears nolonger roam the seven seas and grasslands, now correctly stay in the forests for rangers to tame  (Thanks Leonion)
+Fixed wrong path for lumbercamp ancient wood (Salty)
+Added clarification to CCA & Heightend reflexes if they use base or current stats (Salty)
+Mountain Armor should give correct named variant (Salty)
+Tuned Manmangler Orc sword, and the Great slash skills, should nolonger be overtuned. (Salty)
+Fixed a bug with the Uproot skill, should nolonger crash, and will now properly exlude Greenwood (Salty)
