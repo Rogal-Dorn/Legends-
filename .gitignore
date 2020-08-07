@@ -1,6 +1,7 @@
 brushes/
-!legend_helmets/helmets/*
 helmets/
+!scripts/items/legend_helmets/helmets/
+
 
 gfx/*.png
 !gfx/skills*
