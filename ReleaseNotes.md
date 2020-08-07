@@ -3768,7 +3768,7 @@ Druids begin with the therianthropy perk group and a random therianthropic injur
 Rumours of man sized rats in this update are clearly the ravings of madmen
 
 **changes**
-Close combat archer now not only buffs damage when close, it reduces damage when 4 or more tiles away 
+* Close combat archer now not only buffs damage when close, it reduces damage when 4 or more tiles away 
 * Double strike effect updated to remove itself properly as described. 
 * artwork for legendary beasts reworked to be grittier 
 * artwork for piercing and broadhead ammunition made clearer 
@@ -3779,8 +3779,10 @@ Close combat archer now not only buffs damage when close, it reduces damage when
 * peasant blacksmiths have slightly more hitpoints and less moral 
 * peasant squires have significantly 
 * peasant witch hunters have significantly higher bravery and hitpoints 
-
-
+* Tuned Manmangler Orc sword, and the Great slash skills, should nolonger be overtuned. (Salty)
+* Horses slightly less broken 
+* Stun immunity works against more attacks 
+* staff perk melee defense works on slingstaff 
 
 **Fixes**
 
@@ -3802,5 +3804,12 @@ Warbears nolonger roam the seven seas and grasslands, now correctly stay in the 
 Fixed wrong path for lumbercamp ancient wood (Salty)
 Added clarification to CCA & Heightend reflexes if they use base or current stats (Salty)
 Mountain Armor should give correct named variant (Salty)
-Tuned Manmangler Orc sword, and the Great slash skills, should nolonger be overtuned. (Salty)
 Fixed a bug with the Uproot skill, should nolonger crash, and will now properly exlude Greenwood (Salty)
+Fixed Crash in Knockback Prepared
+Fixed Crash in Horse Impulsion 
+icon fixed for pudding eaten 
+Cultist AI fixed to use ninetails 
+AI fixed to not hit parrying daggers as much 
+Descriptions updated for Quickhands,  bags and belts, and rally the troops 
+
+
