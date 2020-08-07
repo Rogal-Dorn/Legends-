@@ -647,22 +647,23 @@ gt.Const.World.Common.pickHelmet <- function (_helms)
 		return this.new("scripts/items/legend_helmets/" + layersObjs.Script);
 	}
 
-	local helmet = this.Const.World.Common.pickLegendHelmet(layersObj.Hoods);
+	local set = layersObj.Sets[this.Math.rand(0, layersObj.Sets.len() -1)]
+	local helmet = this.Const.World.Common.pickLegendHelmet(set.Hoods);
 	if (helmet != null)
 	{
-         local helm = this.Const.World.Common.pickLegendHelmet(layersObj.Helms);
+         local helm = this.Const.World.Common.pickLegendHelmet(set.Helms);
          if (helm != null)
          {
              helmet.setUpgrade(helm)
          }
 
-         local top = this.Const.World.Common.pickLegendHelmet(layersObj.Tops);
+         local top = this.Const.World.Common.pickLegendHelmet(set.Tops);
          if (top != null)
          {
              helmet.setUpgrade(top)
          }
 
-		local van = this.Const.World.Common.pickLegendHelmet(layersObj.Vanity);
+		local van = this.Const.World.Common.pickLegendHelmet(set.Vanity);
          if (van != null)
          {
              helmet.setUpgrade(van)

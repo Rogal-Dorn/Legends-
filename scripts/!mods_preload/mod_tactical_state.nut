@@ -318,7 +318,11 @@
 							}
 
 							item.removeFromContainer();
-							loot.push(item);
+							foreach (i in item.getLootLayers())
+							{
+								loot.push(i);
+							}
+
 						}
 					}
 				}

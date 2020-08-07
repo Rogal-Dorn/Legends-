@@ -1200,6 +1200,10 @@ this.item <- {
 		return [];
 	}
 
+	function getLootLayers()
+	{
+		return [this];
+	}
 
 	function onPaint( _color )
 	{

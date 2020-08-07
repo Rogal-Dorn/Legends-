@@ -1,4 +1,5 @@
 brushes/
+!legend_helmets/helmets/*
 helmets/
 
 gfx/*.png
