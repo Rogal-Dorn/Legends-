@@ -24,91 +24,94 @@ this.legend_bandit_outrider <- this.inherit("scripts/entity/tactical/human", {
 			]
 		];
 		this.m.Sound[this.Const.Sound.ActorEvent.Other1] = [
-			"sounds/combat/rearing_01.wav",
-			"sounds/combat/rearing_01.wav"
+			"sounds/misc/donkey_hurt_01.wav",
+			"sounds/misc/donkey_hurt_02.wav",
+			"sounds/misc/donkey_hurt_03.wav"
 		];
 		this.m.Sound[this.Const.Sound.ActorEvent.Other2] = [
-			"sounds/enemies/wolf_death_00.wav",
-			"sounds/enemies/wolf_death_01.wav",
-			"sounds/enemies/wolf_death_02.wav",
-			"sounds/enemies/wolf_death_03.wav",
-			"sounds/enemies/wolf_death_04.wav",
-			"sounds/enemies/wolf_death_05.wav"
+			"sounds/misc/donkey_death_01.wav",
+			"sounds/misc/donkey_death_02.wav"
 		];
 		this.m.Sound[this.Const.Sound.ActorEvent.Idle] = [
-			"sounds/enemies/wolf_idle_00.wav",
-			"sounds/enemies/wolf_idle_01.wav",
-			"sounds/enemies/wolf_idle_02.wav",
-			"sounds/enemies/wolf_idle_03.wav",
-			"sounds/enemies/wolf_idle_04.wav",
-			"sounds/enemies/wolf_idle_06.wav",
-			"sounds/enemies/wolf_idle_07.wav",
-			"sounds/enemies/wolf_idle_08.wav",
-			"sounds/enemies/wolf_idle_09.wav"
+			"sounds/misc/donkey_idle_01.wav",
+			"sounds/misc/donkey_idle_02.wav",
+			"sounds/misc/donkey_idle_03.wav",
+			"sounds/misc/donkey_idle_04.wav",
+			"sounds/misc/donkey_idle_05.wav",
+			"sounds/misc/donkey_idle_06.wav",
+			"sounds/misc/donkey_idle_07.wav",
+			"sounds/misc/donkey_idle_08.wav"
 		];
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.Idle] = 0.6;
 		this.m.Sound[this.Const.Sound.ActorEvent.Move] = [
-			"sounds/combat/gallop.wav"
+			"sounds/enemies/werewolf_fatigue_01.wav"
 		];
-		this.m.AIAgent = this.new("scripts/ai/tactical/agents/goblin_wolfrider_agent");
+		this.m.AIAgent = this.new("scripts/ai/tactical/agents/legend_bandit_outrider_agent"); //todo: change the ai agent
 		this.m.AIAgent.setActor(this);
 	}
 
 	function onInit()
 	{
 		this.human.onInit();
+
 		local b = this.m.BaseProperties;
 		b.setValues(this.Const.Tactical.Actor.BanditOutrider);
-		b.AdditionalActionPointCost = 1;
-		b.DamageDirectMult = 1.25;
-		b.IsSpecializedInSwords = true;
-		b.IsSpecializedInSpears = true;
 		this.m.ActionPoints = b.ActionPoints;
 		this.m.Hitpoints = b.Hitpoints;
 		this.m.CurrentProperties = clone b;
+
 		this.m.ActionPointCosts = this.Const.DefaultMovementAPCost;
 		this.m.FatigueCosts = this.Const.DefaultMovementFatigueCost;
-		this.getSprite("head").setBrush(getHeadNames());
-		this.getSprite("head").setBrush("bust_head_female_0" + this.Math.rand(1, 9));
+
+		this.getSprite("head").setBrush(this.Const.Faces.AllHuman[this.Math.rand(0, this.Const.Faces.AllHuman.len() - 1)]);
+		this.getSprite("head").setHorizontalFlipping(true);
+		this.getSprite("helmet").setHorizontalFlipping(true);
+
+		
+		local playerOffset = this.createVec(7, 12);
 		this.setAlwaysApplySpriteOffset(true);
-		local offset = this.createVec(8, 14);
-		this.setSpriteOffset("body", offset);
-		this.setSpriteOffset("armor", offset);
-		this.setSpriteOffset("head", offset);
-		this.setSpriteOffset("injury", offset);
-		this.setSpriteOffset("helmet", offset);
-		this.setSpriteOffset("helmet_damage", offset);
-		this.setSpriteOffset("body_blood", offset);
-		local variant = this.Math.rand(1, 2);
+		this.setSpriteOffset("body", playerOffset);
+		this.setSpriteOffset("armor", playerOffset);
+		this.setSpriteOffset("head", playerOffset);
+		this.setSpriteOffset("injury", playerOffset);
+		this.setSpriteOffset("helmet", playerOffset);
+		this.setSpriteOffset("helmet_damage", playerOffset);
+		this.setSpriteOffset("body_blood", playerOffset);
+
+		local variant = this.Math.rand(0, 7);
+		this.m.Variant = variant;
 		local wolf = this.addSprite("wolf");
 		wolf.setBrush("bust_naked_body_10" + variant);
 		wolf.varySaturation(0.15);
-		wolf.varyColor(0.07, 0.07, 0.07);
+		wolf.setHorizontalFlipping(true);
 		local wolf = this.addSprite("wolf_head");
 		wolf.setBrush("bust_head_10" + variant);
 		wolf.Saturation = wolf.Saturation;
 		wolf.Color = wolf.Color;
-		wolf.setHorizontalFlipping(this.isAlliedWithPlayer());
+		wolf.setHorizontalFlipping(true);
 		this.removeSprite("injury_body");
 		local wolf_injury = this.addSprite("injury_body");
 		wolf_injury.setBrush("bust_naked_body_100_injured");
 		wolf_injury.Visible = false;
-		wolf_injury.setHorizontalFlipping(this.isAlliedWithPlayer());
-		local wolf_armor = this.addSprite("horse_armor");
-		wolf_armor.setBrush("horse_armor_plate");
-		wolf_armor.setHorizontalFlipping(this.isAlliedWithPlayer());
-		offset = this.createVec(8, -20);
-		local wolfarmoroffset = this.createVec(8,14);
+
+		local wolf_armor = this.addSprite("wolf_armor");
+		wolf_armor.setBrush("bust_wolf_02_armor_01");
+		local offset = this.createVec(-6, -20);
 		this.setSpriteOffset("wolf", offset);
 		this.setSpriteOffset("wolf_head", offset);
-		this.setSpriteOffset("wolf_armor", wolfarmoroffset);
+		this.setSpriteOffset("wolf_armor", offset);
 		this.setSpriteOffset("injury_body", offset);
 		this.addDefaultStatusSprites();
+
 		this.setSpriteOffset("arms_icon", this.createVec(15, 15));
 		this.getSprite("arms_icon").Rotation = 13.0;
-		local horse_kick = this.new("scripts/skills/actives/legend_horse_kick");
-		this.m.Skills.add(horse_kick);
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_horse_movement"));
+
+		//change to horse kick later
+		local wolf_bite = this.new("scripts/skills/actives/legend_horse_kick");
+		wolf_bite.setRestrained(true);
+		wolf_bite.m.ActionPointCost = 0;
+		this.m.Skills.add(wolf_bite);
+        this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_horse_movement"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_horse_charge"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_horse_pirouette"));
 
@@ -124,19 +127,19 @@ this.legend_bandit_outrider <- this.inherit("scripts/entity/tactical/human", {
 
 	function onAfterInit()
 	{
+		this.getSprite("status_rooted").Scale = 0.57;
+		this.setSpriteOffset("status_rooted", this.createVec(-2, -3));
 		this.actor.onAfterInit();
 	}
 
 	function onDamageReceived( _attacker, _skill, _hitInfo )
 	{
-		this.logInfo("Outrider took damage");
 		this.m.LastBodyPartHit = _hitInfo.BodyPart;
 		this.actor.onDamageReceived(_attacker, _skill, _hitInfo);
 	}
 
 	function onDeath( _killer, _skill, _tile, _fatalityType )
 	{
-		this.logInfo("onDeath begun");
 		this.m.Info = {
 			Tile = this.getTile(),
 			Faction = this.getFaction(),
@@ -148,24 +151,19 @@ this.legend_bandit_outrider <- this.inherit("scripts/entity/tactical/human", {
 			WolfSaturation = this.getSprite("wolf").Saturation,
 			Morale = this.Math.max(this.Const.MoraleState.Breaking, this.getMoraleState())
 		};
-		
 
 		if (this.m.LastBodyPartHit == this.Const.BodyPart.Body)
 		{
-			this.logInfo("Spawning dead horse " + Tile);
 			this.spawnDeadWolf(_killer, _skill, _tile, _fatalityType);
-
 		}
 		else
 		{
-			this.logInfo("spawning dead rider " + Tile);
-			this.human.onDeath(_killer, _skill, _tile, _fatalityType);
+			this.goblin.onDeath(_killer, _skill, _tile, _fatalityType);
 		}
 	}
 
 	function onAfterDeath( _tile )
 	{
-		this.logInfo("onAfterDeath begun");
 		if (this.Tactical.Entities.getHostilesNum() == 0)
 		{
 			return;
@@ -179,16 +177,17 @@ this.legend_bandit_outrider <- this.inherit("scripts/entity/tactical/human", {
 			{
 				if (!this.m.Info.Tile.hasNextTile(i))
 				{
-					continue;
 				}
-
-				local tile = this.m.Info.Tile.getNextTile(i);
-
-				if (tile.IsEmpty && this.Math.abs(tile.Level - this.m.Info.Tile.Level) <= 1)
+				else
 				{
-					this.m.Info.Tile = tile;
-					changed = true;
-					break;
+					local tile = this.m.Info.Tile.getNextTile(i);
+
+					if (tile.IsEmpty && this.Math.abs(tile.Level - this.m.Info.Tile.Level) <= 1)
+					{
+						this.m.Info.Tile = tile;
+						changed = true;
+						break;
+					}
 				}
 			}
 
@@ -200,12 +199,10 @@ this.legend_bandit_outrider <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.m.LastBodyPartHit == this.Const.BodyPart.Body)
 		{
-			this.logInfo("Spawning rider");
 			this.spawnGoblin(this.m.Info);
 		}
 		else
 		{
-			this.logInfo("Spawning mount");
 			this.spawnWolf(this.m.Info);
 		}
 	}
@@ -216,7 +213,7 @@ this.legend_bandit_outrider <- this.inherit("scripts/entity/tactical/human", {
 		{
 			return;
 		}
-		this.logInfo("Spawn dead mount begun");
+
 		local flip = this.Math.rand(0, 100) < 50;
 		local decal;
 		this.m.IsCorpseFlipped = flip;
@@ -255,7 +252,7 @@ this.legend_bandit_outrider <- this.inherit("scripts/entity/tactical/human", {
 
 		this.spawnTerrainDropdownEffect(_tile);
 		local corpse = clone this.Const.Corpse;
-		corpse.CorpseName = "A Wolf";
+		corpse.CorpseName = "A Horse";
 		corpse.IsHeadAttached = _fatalityType != this.Const.FatalityType.Decapitated;
 		corpse.IsResurrectable = false;
 		_tile.Properties.set("Corpse", corpse);
@@ -264,14 +261,12 @@ this.legend_bandit_outrider <- this.inherit("scripts/entity/tactical/human", {
 
 	function spawnWolf( _info )
 	{
-		this.logInfo("Spawn mount begun");
 		this.Sound.play(this.m.Sound[this.Const.Sound.ActorEvent.DamageReceived][this.Math.rand(0, this.m.Sound[this.Const.Sound.ActorEvent.DamageReceived].len() - 1)], this.Const.Sound.Volume.Actor * this.m.SoundVolume[this.Const.Sound.ActorEvent.Other1], _info.Tile.Pos, 1.0);
 		local entity = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/legend_horse", _info.Tile.Coords.X, _info.Tile.Coords.Y);
 
 		if (entity != null)
 		{
-			//No setVariant for our horse do it different way
-			//entity.setVariant(this.m.Variant, _info.WolfColor, _info.WolfSaturation, 0.45);
+			entity.setVariant(this.m.Variant);
 			entity.setFaction(_info.Faction);
 			entity.setMoraleState(_info.Morale);
 		}
@@ -279,16 +274,15 @@ this.legend_bandit_outrider <- this.inherit("scripts/entity/tactical/human", {
 
 	function spawnGoblin( _info )
 	{
-		this.logInfo("Spawn rider begun");
 		this.Sound.play(this.m.Sound[this.Const.Sound.ActorEvent.Other1][this.Math.rand(0, this.m.Sound[this.Const.Sound.ActorEvent.Other1].len() - 1)], this.Const.Sound.Volume.Actor * this.m.SoundVolume[this.Const.Sound.ActorEvent.Other1], _info.Tile.Pos, 1.0);
 		local entity = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/bandit_thug", _info.Tile.Coords.X, _info.Tile.Coords.Y);
 
 		if (entity != null)
 		{
-			local newBody = entity.getSprite("body");
-			newBody.setBrush(_info.Body);
-			newBody.Color = _info.Color;
-			newBody.Saturation = _info.Saturation;
+			// local newBody = entity.getSprite("body");
+			// newBody.setBrush(_info.Body);
+			// newBody.Color = _info.Color;
+			// newBody.Saturation = _info.Saturation;
 			local newHead = entity.getSprite("head");
 			newHead.setBrush(_info.Head);
 			newHead.Color = _info.Color;
@@ -372,23 +366,6 @@ this.legend_bandit_outrider <- this.inherit("scripts/entity/tactical/human", {
 		}
 	}
 
-	function getHeadNames() {
-		local r = this.Math.rand(0,1);
-	
-		//I only see these two, feel free to fix. Just needs to assign "bust_head_xx" for horse to work properly, not from Heads array for some reason
-		if (r == 0) {
-			return "bust_head_5" + this.Math.rand(0,1);
-		}
-		else {
-			local r = this.Math.rand(0,1);
-			if (r == 0) {
-				return "bust_head_female_0" + this.Math.rand(1, 9);
-			}
-			else {
-				return "bust_head_female_1" + this.Math.rand(0,6);
-			}
-		}
-	}
 
 });
 

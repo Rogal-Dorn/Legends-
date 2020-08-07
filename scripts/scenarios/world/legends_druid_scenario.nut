@@ -7,6 +7,7 @@ this.legends_druid_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		this.m.Description = "[p=c][img]gfx/ui/events/event_25.png[/img][/p][p]The druids of the wild woods are wary of humans, prefering the company of beasts \n\n[color=#bcad8c]Wildform:[/color] Can take on the form of beasts in battle.\n[color=#bcad8c]Solitary:[/color] The Druid hates nearly all humans except wildlings, herbalists and practictioners of wild magic \n[color=#bcad8c]Avatar:[/color] If your druid dies, its game over.[/p]";
 		this.m.Difficulty = 3;
 		this.m.Order = 27;
+		this.m.IsFixedLook = true;
 	}
 
 	function isValid()
@@ -40,7 +41,40 @@ this.legends_druid_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		]);
 		bros[0].getBackground().m.RawDescription = "%name% has only ever known the wild woods, the worlds of men are strange and disgusting";
 		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
-		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_bearform"));
+		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_surpress_urges"));
+		local r = this.Math.rand(1,99);
+		
+		if (r <= 50 )
+		{
+			bros[0].getSkills().add(this.new("scripts/skills/injury_permanent/legend_lycanthropy_injury"));
+			this.logDebug(this.getName() + " gained lycanthropy");
+		}		
+		
+		if (r > 50 && r <= 80)
+		{
+			bros[0].getSkills().add(this.new("scripts/skills/injury_permanent/legend_aperthropy_injury"));
+			this.logDebug(this.getName() + " gained aperthropy");
+		}
+	
+		if (r > 80 && r <= 95)
+		{
+			bros[0].getSkills().add(this.new("scripts/skills/injury_permanent/legend_ursathropy_injury"));
+			this.logDebug(this.getName() + " gained ursathropy");
+		}
+	
+		if (r > 95 && r <= 98)
+		{
+			bros[0].getSkills().add(this.new("scripts/skills/injury_permanent/legend_arborthropy_injury"));
+			this.logDebug(this.getName() + " gained arborthropy");
+		}
+		
+		if (r == 99)
+		{
+			bros[0].getSkills().add(this.new("scripts/skills/injury_permanent/legend_vermesthropy_injury"));
+			this.logDebug(this.getName() + " gained vermesthropy");
+		}			
+		
+		
 		bros[0].getTags().set("IsPlayerCharacter", true);
 		bros[0].setPlaceInFormation(3);
 		bros[0].setVeteranPerks(2);
