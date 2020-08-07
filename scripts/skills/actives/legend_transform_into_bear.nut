@@ -75,7 +75,7 @@ this.legend_transform_into_bear <- this.inherit("scripts/skills/skill", {
 
 	function onRemoved()
 	{
-		this.m.Container.removeByID("effect.legend_transformed_bear");
+		this.m.Container.removeByID("effect.legend_transformed_bear"); 
 	}
 
 });
