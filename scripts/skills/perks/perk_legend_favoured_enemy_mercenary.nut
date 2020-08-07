@@ -7,11 +7,7 @@ this.perk_legend_favoured_enemy_mercenary <- this.inherit("scripts/skills/legend
 		this.m.Name = this.Const.Strings.PerkName.LegendFavouredEnemyMercenary;
 		this.m.Description = this.Const.Strings.PerkDescription.LegendFavouredEnemyMercenary;
 		this.m.Icon = "ui/perks/favoured_mercenary_01.png";
-		this.m.ValidTypes = [
-			this.Const.EntityType.Wardog,
-			this.Const.EntityType.Mercenary,
-			this.Const.EntityType.BountyHunter
-		];
+		this.m.ValidTypes = this.Const.LegendMod.FavoriteMercenary;
 	}
 
 });
