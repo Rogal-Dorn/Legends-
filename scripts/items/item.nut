@@ -328,6 +328,12 @@ this.item <- {
 		this.setCondition( _a)
 	}
 
+	function onRepair( _a)
+	{
+		this.setArmor(_a);
+		return 0;
+	}
+
 	function isAmountShown()
 	{
 	}
@@ -755,7 +761,7 @@ this.item <- {
 		switch (this.m.RuneVariant)
 		{
 			case 1:
-				return "This item has the power of the rune sigil of Power:\n[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.RuneBonus1 + "%[/color] Damage inflicted.";
+				return "This item has the power of the rune sigil of Power:\n[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.RuneBonus1 + "%[/color] Damage inflicted.\n" + "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.RuneBonus2 + "%[/color] Max damage.";
 				break;
 
 			case 2:

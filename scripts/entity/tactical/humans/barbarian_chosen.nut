@@ -70,6 +70,12 @@ this.barbarian_chosen <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_hold_out"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_recover"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_brawny"));
+
+		local r = this.Math.rand(1, 4);
+		if(r == 1)
+			{
+				this.m.Skills.add(this.new("scripts/skills/injury_permanent/legend_ursathropy_injury"));
+			}		
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 			{
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_overwhelm"));
@@ -90,6 +96,11 @@ this.barbarian_chosen <- this.inherit("scripts/entity/tactical/human", {
 		{
 			this.updateAchievement("KingOfTheNorth", 1, 1);
 		}
+		if ((_killer == null || _killer.getFaction() == this.Const.Faction.Player || _killer.getFaction() == this.Const.Faction.PlayerAnimals) && this.m.skills.hasSkill("injury_permanent.legend_ursathropy_injury"))
+		{
+			local loot = this.new("scripts/items/misc/legend_werehand_item");
+			loot.drop(_tile);
+		}		
 
 		this.human.onDeath(_killer, _skill, _tile, _fatalityType);
 	}

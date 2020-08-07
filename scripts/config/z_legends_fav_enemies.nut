@@ -175,6 +175,12 @@ gt.Const.LegendMod.FavoriteNoble <- [
 	this.Const.EntityType.Knight
 ];
 
+gt.Const.LegendMod.FavoriteMercenary <- [
+	this.Const.EntityType.Wardog,
+	this.Const.EntityType.Mercenary,
+	this.Const.EntityType.BountyHunter
+];
+
 gt.Const.LegendMod.GetFavoriteEnemyValue <- function ( _type )
 {
 	switch(_type)

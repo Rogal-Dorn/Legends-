@@ -4630,7 +4630,7 @@ this.tooltip_events <- {
 			local tent = this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Workshop)
 			local repair = tent.getModifiers();
 			local desc = "Number of people assigned to repair duty. The more assigned, the quicker equipment can be salvaged.";
-			if (this.Const.DLC.Wildmen == true)
+			//if (this.Const.DLC.Wildmen == true) This shouldn't be here right?
 			local ret = [
 			{
 					id = 1,

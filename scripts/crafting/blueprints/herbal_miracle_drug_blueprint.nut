@@ -13,7 +13,7 @@ this.herbal_miracle_drug_blueprint <- this.inherit("scripts/crafting/blueprint",
 				Num = 2
 			},
 			{
-				Script = "scripts/items/misc/legend_demon_hound_bones_item",
+				Script = "scripts/items/misc/legend_mistletoe_item",
 				Num = 1
 			},
 			{

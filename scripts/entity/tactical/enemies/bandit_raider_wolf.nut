@@ -9,6 +9,11 @@ this.bandit_raider_wolf <- this.inherit("scripts/entity/tactical/enemies/bandit_
 	function onInit()
 	{
 		this.bandit_raider.onInit();
+		local r = this.Math.rand(1,4);
+		if ( r == 1)
+		{
+		this.m.Skills.add(this.new("scripts/skills/injury_permanent/legend_lycanthropy_injury"));
+		}
 	}
 
 	function assignRandomEquipment()
