@@ -6,7 +6,8 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 	Injury = "",
 	OriginalFaction = 0,
 	OriginalAgent = null,
-	OriginalSocket = null
+	OriginalSocket = null,
+	Items = []
 	},
 	function create()
 	{
@@ -99,9 +100,9 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 		}
 		else
 		{
-		this.logDebug(this.getName() + " AI set to direwolf 2");
-		actor.setAIAgent(this.new("scripts/ai/tactical/agents/direwolf_agent"));
-		actor.getAIAgent().setActor(actor);
+		// this.logDebug(this.getName() + " AI set to direwolf 2");
+		// actor.setAIAgent(this.new("scripts/ai/tactical/agents/direwolf_agent"));
+		// actor.getAIAgent().setActor(actor);
 		}
 	
 		this.m.OriginalSocket = actor.getSprite("socket").getBrush().Name;
@@ -110,7 +111,7 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 		
 		// remove items 
 		this.logDebug(this.getName() + " removing items");
-			local items = actor.getItems();
+		local items = actor.getItems();
 		if (items.getItemAtSlot(this.Const.ItemSlot.Mainhand))
 		{
 			local item = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
@@ -138,15 +139,18 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 
 		foreach( i in this.m.Items )
 			i.drop(this.getContainer().getActor().getTile());
-		
+
 		this.m.Body = actor.getSprite("body").getBrush().Name;
 		this.m.Head = actor.getSprite("head").getBrush().Name;
 
 		this.logDebug(this.getName() + " changing visuals");
 		actor.getSprite("body").setBrush("were_wolf_body");
 		actor.getSprite("head").setBrush("were_wolf_head_0" + this.Math.rand(1, 3));
-		actor.getSprite("body").setHorizontalFlipping(1);
-		actor.getSprite("head").setHorizontalFlipping(1);
+			if (!actor.isPlayerControlled())
+		{
+		actor.getSprite("body").setHorizontalFlipping(0);
+		actor.getSprite("head").setHorizontalFlipping(0);
+		}
 		actor.getSprite("socket").setBrush("bust_base_beasts");
 		actor.getSprite("armor").Alpha = 10;
 		actor.getSprite("helmet").Alpha = 10;
@@ -290,9 +294,9 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 		}
 		else
 		{
-		this.logDebug(this.getName() + " AI set to direwolf 2");
-		actor.setAIAgent(this.new("scripts/ai/tactical/agents/direwolf_agent"));
-		actor.getAIAgent().setActor(actor);
+		// this.logDebug(this.getName() + " AI set to direwolf 2");
+		// actor.setAIAgent(this.new("scripts/ai/tactical/agents/direwolf_agent"));
+		// actor.getAIAgent().setActor(actor);
 		}
 
 
@@ -407,6 +411,13 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 		actor.setFaction(this.m.OriginalFaction);
 		actor.getSprite("socket").setBrush(this.m.OriginalSocket);
 		actor.setDirty(true);
+				local actor = this.getContainer().getActor();
+
+		if (actor.getAIAgent().getID() != "agent.direwolf")
+		{
+			actor.setAIAgent(this.new("scripts/ai/tactical/agents/direwolf_agent"));
+			actor.getAIAgent().setActor(actor);
+		}
 	}
 	function removeItems()
 	{

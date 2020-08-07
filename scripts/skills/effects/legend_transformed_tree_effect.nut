@@ -6,7 +6,8 @@ this.legend_transformed_tree_effect <- this.inherit("scripts/skills/skill", {
 	Injury = "",
 	OriginalFaction = 0,
 	OriginalAgent = null,
-	OriginalSocket = null
+	OriginalSocket = null,
+	Items = []
 	},
 	function create()
 	{
@@ -86,8 +87,6 @@ this.legend_transformed_tree_effect <- this.inherit("scripts/skills/skill", {
 		}
 		else
 		{
-		actor.setAIAgent(this.new("scripts/ai/tactical/agents/schrat_agent"));
-		actor.getAIAgent().setActor(actor);
 		}
 	
 		this.m.OriginalSocket = actor.getSprite("socket").getBrush().Name;
@@ -132,8 +131,11 @@ this.legend_transformed_tree_effect <- this.inherit("scripts/skills/skill", {
 
 		actor.getSprite("body").setBrush("bust_schrat_body_01");
 		actor.getSprite("head").setBrush("bust_schrat_head_01");
-		actor.getSprite("body").setHorizontalFlipping(1);
-		actor.getSprite("head").setHorizontalFlipping(1);
+			if (!actor.isPlayerControlled())
+		{
+		actor.getSprite("body").setHorizontalFlipping(0);
+		actor.getSprite("head").setHorizontalFlipping(0);
+		}
 
 		actor.getSprite("armor").Alpha = 10;
 		actor.getSprite("helmet").Alpha = 10;
@@ -279,8 +281,8 @@ this.legend_transformed_tree_effect <- this.inherit("scripts/skills/skill", {
 		}
 		else
 		{
-		actor.setAIAgent(this.new("scripts/ai/tactical/agents/schrat_agent"));
-		actor.getAIAgent().setActor(actor);
+		// actor.setAIAgent(this.new("scripts/ai/tactical/agents/schrat_agent"));
+		// actor.getAIAgent().setActor(actor);
 		}
 
 		actor.getSprite("armor").Alpha = 10;
@@ -400,6 +402,14 @@ this.legend_transformed_tree_effect <- this.inherit("scripts/skills/skill", {
 		{
 			this.removeSelf();
 		}
+				local actor = this.getContainer().getActor();
+
+		if (actor.getAIAgent().getID() != "agent.schrat")
+		{
+			actor.setAIAgent(this.new("scripts/ai/tactical/agents/schrat_agent"));
+			actor.getAIAgent().setActor(actor);
+		}
+		
 	}
 	function removeItems()
 	{
