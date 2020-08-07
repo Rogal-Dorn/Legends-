@@ -9,7 +9,8 @@ this.legend_transformed_rat_effect <- this.inherit("scripts/skills/skill", {
 	OriginalSocket = null
 	OriginalFaction = 0,
 	OriginalAgent = null,
-	OriginalSocket = null
+	OriginalSocket = null,
+	Items = []
 	},
 	function create()
 	{
@@ -102,9 +103,9 @@ this.legend_transformed_rat_effect <- this.inherit("scripts/skills/skill", {
 		}
 		else
 		{
-		this.logDebug(this.getName() + " AI set to direwolf 2");
-		actor.setAIAgent(this.new("scripts/ai/tactical/agents/direwolf_agent"));
-		actor.getAIAgent().setActor(actor);
+		// this.logDebug(this.getName() + " AI set to direwolf 2");
+		// actor.setAIAgent(this.new("scripts/ai/tactical/agents/direwolf_agent"));
+		// actor.getAIAgent().setActor(actor);
 		}
 	
 		this.m.OriginalSocket = actor.getSprite("socket").getBrush().Name;
@@ -149,8 +150,11 @@ this.legend_transformed_rat_effect <- this.inherit("scripts/skills/skill", {
 		local r = this.Math.rand(1, 5);
 		actor.getSprite("body").setBrush("bust_rat_body_0" + r);
 		actor.getSprite("head").setBrush("bust_rat_head_0" + r);
-		actor.getSprite("body").setHorizontalFlipping(1);
-		actor.getSprite("head").setHorizontalFlipping(1);
+			if (!actor.isPlayerControlled())
+		{
+		actor.getSprite("body").setHorizontalFlipping(0);
+		actor.getSprite("head").setHorizontalFlipping(0);
+		}
 		actor.getSprite("armor").Alpha = 10;
 		actor.getSprite("helmet").Alpha = 10;
 		actor.getSprite("shield_icon").Alpha = 10;
@@ -296,9 +300,9 @@ this.legend_transformed_rat_effect <- this.inherit("scripts/skills/skill", {
 		}
 		else
 		{
-		this.logDebug(this.getName() + " AI set to direwolf 2");
-		actor.setAIAgent(this.new("scripts/ai/tactical/agents/direwolf_agent"));
-		actor.getAIAgent().setActor(actor);
+		// this.logDebug(this.getName() + " AI set to direwolf 2");
+		// actor.setAIAgent(this.new("scripts/ai/tactical/agents/direwolf_agent"));
+		// actor.getAIAgent().setActor(actor);
 		}
 
 
@@ -406,6 +410,13 @@ this.legend_transformed_rat_effect <- this.inherit("scripts/skills/skill", {
 		if (--this.m.TurnsLeft <= 0)
 		{
 			this.removeSelf();
+		}
+				local actor = this.getContainer().getActor();
+
+		if (actor.getAIAgent().getID() != "agent.direwolf")
+		{
+			actor.setAIAgent(this.new("scripts/ai/tactical/agents/direwolf_agent"));
+			actor.getAIAgent().setActor(actor);
 		}
 	}
 

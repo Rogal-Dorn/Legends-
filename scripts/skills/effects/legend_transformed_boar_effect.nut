@@ -91,9 +91,9 @@ this.legend_transformed_boar_effect <- this.inherit("scripts/skills/skill", {
 		}
 		else
 		{
-		this.logDebug(this.getName() + " AI set to boar on added");
-		actor.setAIAgent(this.new("scripts/ai/tactical/agents/boar_agent"));
-		actor.getAIAgent().setActor(actor);
+		// this.logDebug(this.getName() + " AI set to boar on added");
+		// actor.setAIAgent(this.new("scripts/ai/tactical/agents/boar_agent"));
+		// actor.getAIAgent().setActor(actor);
 		}
 
 	
@@ -138,9 +138,12 @@ this.legend_transformed_boar_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("body").setBrush("were_boar_body");
 		actor.getSprite("head").setBrush("were_boar_head");
 		actor.getSprite("injury").setBrush("were_boar_body_injured");
-		actor.getSprite("body").setHorizontalFlipping(1);
-		actor.getSprite("head").setHorizontalFlipping(1);
-		actor.getSprite("injury").setHorizontalFlipping(1);
+		if (!actor.isPlayerControlled())
+		{
+		actor.getSprite("body").setHorizontalFlipping(0);
+		actor.getSprite("head").setHorizontalFlipping(0);
+		actor.getSprite("injury").setHorizontalFlipping(0);
+		}
 
 		actor.getSprite("armor").Alpha = 10;
 		actor.getSprite("helmet").Alpha = 10;
@@ -266,16 +269,16 @@ this.legend_transformed_boar_effect <- this.inherit("scripts/skills/skill", {
 			{
 			this.logDebug(this.getName() + " has no control perks, AI set to boar on update");
 			//actor.setFaction(this.Const.Faction.Beasts);		
-			actor.setAIAgent(this.new("scripts/ai/tactical/agents/boar_agent"));
-			actor.getAIAgent().setActor(actor);
+			// actor.setAIAgent(this.new("scripts/ai/tactical/agents/boar_agent"));
+			// actor.getAIAgent().setActor(actor);
 			}
 
 		}
 		else
 		{
-		this.logDebug(this.getName() + " AI set to boar on update");
-		actor.setAIAgent(this.new("scripts/ai/tactical/agents/boar_agent"));
-		actor.getAIAgent().setActor(actor);
+		// this.logDebug(this.getName() + " AI set to boar on update");
+		// actor.setAIAgent(this.new("scripts/ai/tactical/agents/boar_agent"));
+		// actor.getAIAgent().setActor(actor);
 		}		
 
 		// actor.getSprite("body").setBrush("were_boar_body");
@@ -391,9 +394,9 @@ function onTurnStarted()
 		}
 		else
 		{
-		this.logDebug(this.getName() + " AI set to boar on turn start");
-		actor.setAIAgent(this.new("scripts/ai/tactical/agents/boar_agent"));
-		actor.getAIAgent().setActor(actor);
+		// this.logDebug(this.getName() + " AI set to boar on turn start");
+		// actor.setAIAgent(this.new("scripts/ai/tactical/agents/boar_agent"));
+		// actor.getAIAgent().setActor(actor);
 		}
 
 	
@@ -405,6 +408,13 @@ function onTurnStarted()
 		if (--this.m.TurnsLeft <= 0)
 		{
 			this.removeSelf();
+		}
+		local actor = this.getContainer().getActor();
+		if (actor.getAIAgent().getID() != "agent.boar")
+		{
+			this.logDebug(this.getName() + " AI set to boar on turn end");
+			actor.setAIAgent(this.new("scripts/ai/tactical/agents/boar_agent"));
+			actor.getAIAgent().setActor(actor);
 		}
 	}
 });
