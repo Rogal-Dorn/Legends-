@@ -53,7 +53,7 @@ this.legend_eat_pudding_skill <- this.inherit("scripts/skills/skill", {
 			{
 				id = 11,
 				type = "text",
-				icon = "ui/icons/initiative.png",
+				icon = "ui/icons/health.png",
 				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Health "
 			}
 		];

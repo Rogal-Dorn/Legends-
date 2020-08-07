@@ -1162,6 +1162,14 @@ gt.Const.World.Spawn.Troops <- {
 		Cost = 40,
 		Row = 2,
 		Script = "scripts/entity/tactical/enemies/legend_skeleton_gladiator"
+	},
+	BanditVermes = {
+		ID = this.Const.EntityType.Direwolf,
+		Variant = 0,
+		Strength = 5,
+		Cost = 5,
+		Row = 0,
+		Script = "scripts/entity/tactical/humans/peasant_armed_infected"
 	}
 };
 

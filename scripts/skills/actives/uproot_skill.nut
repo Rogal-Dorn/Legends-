@@ -141,7 +141,7 @@ this.uproot_skill <- this.inherit("scripts/skills/skill", {
 				}
 			}.bindenv(this), null);
 
-			if (forwardTile.IsOccupiedByActor && forwardTile.getEntity().isAttackable() && this.Math.abs(forwardTile.Level - myTile.Level) <= 1 && !(forwardTile.getEntity().getType() == this.Const.EntityType.Schrat || forwardTile.getEntity().getType() == this.Const.EntityType.SchratSmall || _targetTile.getEntity().getType() == this.Const.EntityType.LegendGreenwoodSchrat || _targetTile.getEntity().getType() == this.Const.EntityType.LegendGreenwoodSchratSmall ))
+			if (forwardTile.IsOccupiedByActor && forwardTile.getEntity().isAttackable() && this.Math.abs(forwardTile.Level - myTile.Level) <= 1 && !(forwardTile.getEntity().getType() == this.Const.EntityType.Schrat || forwardTile.getEntity().getType() == this.Const.EntityType.SchratSmall || forwardTile.getEntity().getType() == this.Const.EntityType.LegendGreenwoodSchrat || forwardTile.getEntity().getType() == this.Const.EntityType.LegendGreenwoodSchratSmall))
 			{
 				this.Time.scheduleEvent(this.TimeUnit.Virtual, 400, function ( _tag )
 				{
@@ -171,7 +171,7 @@ this.uproot_skill <- this.inherit("scripts/skills/skill", {
 					}
 				}.bindenv(this), null);
 
-				if (furtherForwardTile.IsOccupiedByActor && furtherForwardTile.getEntity().isAttackable() && !(furtherForwardTile.getEntity().getType() == this.Const.EntityType.Schrat || furtherForwardTile.getEntity().getType() == this.Const.EntityType.SchratSmall || _targetTile.getEntity().getType() == this.Const.EntityType.LegendGreenwoodSchrat || _targetTile.getEntity().getType() == this.Const.EntityType.LegendGreenwoodSchratSmall ))
+				if (furtherForwardTile.IsOccupiedByActor && furtherForwardTile.getEntity().isAttackable() && !(furtherForwardTile.getEntity().getType() == this.Const.EntityType.Schrat || furtherForwardTile.getEntity().getType() == this.Const.EntityType.SchratSmall || furtherForwardTile.getEntity().getType() == this.Const.EntityType.LegendGreenwoodSchrat || furtherForwardTile.getEntity().getType() == this.Const.EntityType.LegendGreenwoodSchratSmall))
 				{
 					this.Time.scheduleEvent(this.TimeUnit.Virtual, 600, function ( _tag )
 					{

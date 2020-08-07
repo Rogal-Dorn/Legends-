@@ -219,7 +219,7 @@ this.lumber_camp_location <- this.inherit("scripts/entity/world/attached_locatio
 			_list.push({
 				R = 80,
 				P = 1.0,
-				S = "trade/ancient_wood_item"
+				S = "misc/ancient_wood_item"
 			});
 		}
 		else if (_id == "building.weaponsmith")

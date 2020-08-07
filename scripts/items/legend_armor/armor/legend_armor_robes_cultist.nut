@@ -17,8 +17,8 @@ this.legend_armor_robes_cultist <- this.inherit("scripts/items/legend_armor/lege
 		this.m.ConditionMax = 88;
 		this.m.StaminaModifier = -9;
         this.blockUpgrades();
-		this.m.Blocked[ this.Const.Items.ArmorUpgrades.Attachment] = false
-		this.m.Blocked[ this.Const.Items.ArmorUpgrades.Rune] = false
+		this.m.Blocked[ this.Const.Items.ArmorUpgrades.Attachment] = false;
+		this.m.Blocked[ this.Const.Items.ArmorUpgrades.Rune] = false;
 	}
 
 });

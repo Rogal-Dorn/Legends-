@@ -73,6 +73,11 @@ this.roaming_beasts_contract <- this.inherit("scripts/contracts/contract", {
 						this.Flags.set("IsSpiders", true);
 					}
 				}
+				else if (r >= 99)
+				{
+					this.Flags.set("IsVermes", true);
+				}
+
 
 				local playerTile = this.World.State.getPlayer().getTile();
 				local tile = this.Contract.getTileToSpawnLocation(playerTile, 5, 10);
@@ -81,6 +86,11 @@ this.roaming_beasts_contract <- this.inherit("scripts/contracts/contract", {
 				if (this.Flags.get("IsHumans"))
 				{
 					party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Bandits).spawnEntity(tile, "Direwolves", false, this.Const.World.Spawn.BanditsDisguisedAsDirewolves, 100 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
+					party.setDescription("A pack of ferocious direwolves on the hunt for prey.");
+				}
+				else if (this.Flags.get("IsVermes"))
+				{
+					party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).spawnEntity(tile, "Direwolves", false, this.Const.World.Spawn.BanditVermes, 120 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
 					party.setDescription("A pack of ferocious direwolves on the hunt for prey.");
 				}
 				else if (this.Flags.get("IsGhouls"))
@@ -139,6 +149,11 @@ this.roaming_beasts_contract <- this.inherit("scripts/contracts/contract", {
 					if (this.Flags.get("IsHumans"))
 					{
 						this.Contract.setScreen("CollectingProof");
+						this.World.Contracts.showActiveContract();
+					}
+					else if (this.Flags.get("IsVermes"))
+					{
+						this.Contract.setScreen("CollectingVermes");
 						this.World.Contracts.showActiveContract();
 					}
 					else if (this.Flags.get("IsGhouls"))
@@ -207,6 +222,10 @@ this.roaming_beasts_contract <- this.inherit("scripts/contracts/contract", {
 					if (this.Flags.get("IsHumans"))
 					{
 						this.Contract.setScreen("Success2");
+					}
+					else if (this.Flags.get("IsVermes"))
+					{
+						this.Contract.setScreen("Success5");
 					}
 					else if (this.Flags.get("IsGhouls"))
 					{
@@ -320,6 +339,23 @@ this.roaming_beasts_contract <- this.inherit("scripts/contracts/contract", {
 			ID = "CollectingProof",
 			Title = "After the battle...",
 			Text = "[img]gfx/ui/events/event_22.png[/img]{Your men take the fools\' disguises lest your employer, %employer%, not believe your doings here. | Your employer might not believe what was going on here. You order your men to collect the disguises. %bro1%, stripping a mask off one of the slain, starts to wonder.%SPEECH_ON%So they dressed themselves up as the sort of thing to attract us, and now they\'re all dead. I hope they didn\'t think it a game.%SPEECH_OFF%%bro2% cleans his blade in the folds of one of the disguises.%SPEECH_ON%Well, if it were a game, I sure enjoyed playing it.%SPEECH_OFF% | %randombrother% nods at the slain.%SPEECH_ON%It\'s mighty likely that %employer% wouldn\'t believe a group of brigands were dressing up as beasts.%SPEECH_OFF%Agreeing, you order the men to begin collecting the masks and disguises as evidence. | You\'ll need evidence to show your employer, %employer%. These weren\'t the beasts you were looking for, but they do carry a lot of disguises that your employer would probably be most interested in seeing. One of the men wonders aloud.%SPEECH_ON%So what were they playing dress up for?%SPEECH_OFF%%bro2% folds some of the disguises over his arm as he goes about collecting them.%SPEECH_ON%Suicide by ceremony? Their dance and fun got our attention, after all.%SPEECH_OFF%He picks up one of the disguises only for the head of the dead to get slinged up with it. The sellsword laughs as he kicks the dead man\'s head out.}",
+			Image = "",
+			List = [],
+			Options = [
+				{
+					Text = "Back to %townname%!",
+					function getResult()
+					{
+						return 0;
+					}
+
+				}
+			]
+		});
+		this.m.Screens.push({
+			ID = "CollectingGhouls",
+			Title = "After the battle...",
+			Text = "[img]gfx/ui/events/event_131.png[/img]{The fight over, you walk to a dead infected peasant and take a knee. A pool of poison is still dripping from the peasant\'s teeth. Instead of admiring the dental failures at hand, you instead take out a knife and saw its head off, ripping through a very tough outer layer of skin before, surprisingly, easily cutting through the muscles and tendons. You raise the head up and order the %companyname% follow suit. %employer% will be expecting some proof, after all. | The peasants\'s dead body looks more rat than man as it lays flat and unmoving. Flies are already coupling inside its mouth, sowing life on the frothy remains of death. You order %randombrother% to take its head, for %employer% will be expecting proof. | Dead peasants are scattered about. You take a knee beside one and look at its mouth. Whatever was in its lungs is still issuing forth, a wheeze burping out. Putting a cloth to your nose, you use the other hand to chop away at its neck with a blade, cutting off the head and holding it up. You order a few brothers to follow suit for %employer% will be expecting proof. | A dead infected peasant is an interesting specimen to behold. You can\'t help but wonder where it falls on the natural spectrum. Half rat and half man, these things are the thing of child\'s nightmares. You order the %companyname% to start collecting the heads of the foul things for %employer% will surely be wanting proof.}",
 			Image = "",
 			List = [],
 			Options = [
@@ -496,6 +532,39 @@ this.roaming_beasts_contract <- this.inherit("scripts/contracts/contract", {
 			}
 
 		});
+		this.m.Screens.push({
+			ID = "Success5",
+			Title = "On your return...",
+			Text = "[img]gfx/ui/events/event_04.png[/img]{You find %employer% resting on his laurels. He stands and pulls his pants up, a servant quickly retrieving a bucket from whence he was sitting. The poor servant quickly rushes out of the room. %employer% points at the rat head dangling from your hand.%SPEECH_ON%That is absolutely disgusting. %randomname%, give this man his pay. %reward% crowns, was it?%SPEECH_OFF% | You place the rat head onto %employer%\'s desk. For some reason, fluids still issue from its neck, dribbling down the side of the oak and no doubt staining it. The man leans back, tenting his fingers on his belly.%SPEECH_ON%Man sized rats? And what else, ghosts?%SPEECH_OFF%The man snickers to himself.%SPEECH_ON%Nothing is too difficult for you, sellsword. Best not mention this to anyone. %SPEECH_OFF%He snaps his fingers and a servant comes up, handing you a satchel of %reward% crowns. | Between the battle and walking to %employer%\'s place, the maw of the Rat became filled with flies, its tongue replaced by a formless, throbbing black ball that\'s more buzz than bite. %employer% takes one look at it and puts a cloth to his mouth.%SPEECH_ON%Yes, I get it, take it away, please. Make sure no one else sees it%SPEECH_OFF%He waves one of his guards over and you are handed a satchel of %reward% crowns. | A steely eyed %employer% leans forward to get a good look at the Rat head you\'ve brought in.%SPEECH_ON%That is quite the sight, mercenary. I wish you\'d never brought it though.%SPEECH_OFF%He leans back.%SPEECH_ON%Leave it on my desk, I\'ll make sure it disapears.%SPEECH_OFF%He snaps his fingers and a servant comes to give you %reward% crowns. | You bring the Rat head to %employer% who stares at it for a long time.%SPEECH_ON%That reminds me of someone. I can\'t quite put my finger on it, and I\'m not sure I should. We must keep this secret from escaping. Excuse me, sellsword, I borrow your time without paying for it. Servant, give this man his money!%SPEECH_OFF%You are rewarded as promised. | %employer% takes the Rat head and holds it up. A few mewling cats seemingly appear out of nowhere, circling beneath it like buzzards would overhead. He throws it into the fire nearby and the cats wail, seemingly crying at the loss of a meal.%SPEECH_ON%Good work, sellsword. %reward% crowns, as promised. Let\'s keep this between us%SPEECH_OFF% | You put a Rat head on %employer%\'s table. He looks up from a dinner plate, glances at the head, then at you.%SPEECH_ON%I was eating, sellsword.%SPEECH_OFF%The silverware clatters as the disgusted man shoves the plate aside. A servant whisks the food away for destruction. %employer% takes a satchel out and puts it on the table.%SPEECH_ON% I\'ll make that heresy disapear, %reward_completion% crowns as was promised.%SPEECH_OFF%}",
+			Image = "",
+			List = [],
+			ShowEmployer = true,
+			Options = [
+				{
+					Text = "A successful hunt.",
+					function getResult()
+					{
+						this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnContractSuccess);
+						this.World.Assets.addMoney(this.Contract.m.Payment.getOnCompletion());
+						this.World.FactionManager.getFaction(this.Contract.getFaction()).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractSuccess, "Rid the town of infection");
+						this.World.Contracts.finishActiveContract();
+						return 0;
+					}
+
+				}
+			],
+			function start()
+			{
+				this.List.push({
+					id = 10,
+					icon = "ui/icons/asset_money.png",
+					text = "You gain [color=" + this.Const.UI.Color.PositiveEventValue + "]" + this.Contract.m.Payment.getOnCompletion() + "[/color] Crowns"
+				});
+				this.Contract.m.SituationID = this.Contract.resolveSituation(this.Contract.m.SituationID, this.Contract.m.Home, this.List);
+			}
+
+		});		
+		
 	}
 
 	function onPrepareVariables( _vars )

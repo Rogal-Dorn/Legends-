@@ -64,6 +64,16 @@ this.prong_skill <- this.inherit("scripts/skills/skill", {
 				text = "Has [color=" + this.Const.UI.Color.NegativeValue + "]-15%[/color] chance to hit targets directly adjacent because the weapon is too unwieldy"
 			});
 		}
+		
+		if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInSpearThrust)
+		{
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/hitchance.png",
+				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]+15%[/color] damage due to thrust specialisation"
+			});
+		}
 
 		return ret;
 	}

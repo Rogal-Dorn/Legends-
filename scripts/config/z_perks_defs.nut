@@ -3056,6 +3056,33 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/woodworking.png",
 		IconDisabled = "ui/perks/woodworking_bw.png",
 		Const = "LegendWoodworking"
+	},
+	{
+		ID = "perk.legend_surpress_urges",
+		Script = "scripts/skills/perks/perk_surpress_urges",
+		Name = this.Const.Strings.PerkName.LegendSurpressUrges,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSurpressUrges,
+		Icon = "ui/perks/surpress_urges.png",
+		IconDisabled = "ui/perks/surpress_urges_bw.png",
+		Const = "LegendSurpressUrges"
+	},
+	{
+		ID = "perk.legend_control_instincts",
+		Script = "scripts/skills/perks/perk_control_instincts",
+		Name = this.Const.Strings.PerkName.LegendControlInstincts,
+		Tooltip = this.Const.Strings.PerkDescription.LegendControlInstincts,
+		Icon = "ui/perks/control_instincts.png",
+		IconDisabled = "ui/perks/control_instincts_bw.png",
+		Const = "LegendControlInstincts"
+	},
+	{
+		ID = "perk.legend_master_anger",
+		Script = "scripts/skills/perks/perk_master_anger",
+		Name = this.Const.Strings.PerkName.LegendMasterAnger,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMasterAnger,
+		Icon = "ui/perks/master_anger.png",
+		IconDisabled = "ui/perks/master_anger_bw.png",
+		Const = "LegendMasterAnger"
 	}
 ];
 gt.Const.Perks.PerkDefs <- {};

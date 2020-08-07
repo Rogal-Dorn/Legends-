@@ -568,6 +568,7 @@
 
 		if (!isReallyDead)
 		{
+			this.TherianthropeInfection( _killer );
 			_fatalityType = this.Const.FatalityType.Unconscious;
 			this.logDebug(this.getName() + " is unconscious.");
 		}

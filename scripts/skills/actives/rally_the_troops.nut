@@ -60,7 +60,7 @@ this.rally_the_troops <- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Removes the Sleeping status effect of allies within 4 tiles distance"
+				text = "Has a chance to remove the Sleeping effect on cast. This chance is 40% of the resolve of the user."
 			}
 		];
 
