@@ -62,8 +62,8 @@ this.barbarian_thrall <- this.inherit("scripts/entity/tactical/human", {
 		if(r == 1)
 			{
 				this.m.Skills.add(this.new("scripts/skills/injury_permanent/legend_lycanthropy_injury"));
-				this.m.AIAgent = this.new("scripts/ai/tactical/agents/direwolf_agent");
-				
+				// this.m.AIAgent = this.new("scripts/ai/tactical/agents/direwolf_agent");
+				// this.m.AIAgent.setActor(this);
 			}
 
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
