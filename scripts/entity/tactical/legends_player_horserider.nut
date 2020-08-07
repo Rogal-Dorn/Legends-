@@ -209,8 +209,8 @@ this.legends_player_horserider <- this.inherit("scripts/entity/tactical/player",
 		local num = this.Tactical.Entities.getAlliesNum();
 		if (num == 1 || num == 0) //if 1 then only horserider exsts
 		{
-			this.World.LegendsMod.BroStats().removeActorID(this.getRider().getCompanyID());
-			this.World.LegendsMod.BroStats().removeActorID(this.getHorse().getCompanyID());
+			this.getRider().removeActiveRelationship();
+			this.getHorse().removeActiveRelationship();
 			this.World.getPlayerRoster().remove(this.getRider());
 			this.World.getPlayerRoster().remove(this.getHorse());
 			return;
@@ -237,8 +237,8 @@ this.legends_player_horserider <- this.inherit("scripts/entity/tactical/player",
 		local num = this.Tactical.Entities.getAlliesNum();
 		if (num == 1 || num == 0) //if 1 then only horserider exsts
 		{
-			this.World.LegendsMod.BroStats().removeActorID(this.getRider().getCompanyID());
-			this.World.LegendsMod.BroStats().removeActorID(this.getHorse().getCompanyID());
+			this.getRider().removeActiveRelationship();
+			this.getHorse().removeActiveRelationship();
 			this.World.getPlayerRoster().remove(this.getRider());
 			this.World.getPlayerRoster().remove(this.getHorse());
 			return;
