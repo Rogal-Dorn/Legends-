@@ -110,28 +110,34 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 		
 		// remove items 
 		this.logDebug(this.getName() + " removing items");
-		local items = actor.getItems();
+			local items = actor.getItems();
 		if (items.getItemAtSlot(this.Const.ItemSlot.Mainhand))
 		{
 			local item = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
-			item.drop();
+			items.unequip(item);
+			this.m.Items.push(item);
 		}
 		if (items.getItemAtSlot(this.Const.ItemSlot.Offhand))
 		{
 			local item = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
-			item.drop();
+			items.unequip(item);
+			this.m.Items.push(item);
 		}
 		if (items.getItemAtSlot(this.Const.ItemSlot.Body))
 		{
 			local item = items.getItemAtSlot(this.Const.ItemSlot.Body);
-			item.drop();
+			items.unequip(item);
+			this.m.Items.push(item);
 		}
 		if (items.getItemAtSlot(this.Const.ItemSlot.Head))
 		{
 			local item = items.getItemAtSlot(this.Const.ItemSlot.Head);
-			item.drop();
+			items.unequip(item);
+			this.m.Items.push(item);
 		}
 
+		foreach( i in this.m.Items )
+			i.drop(this.getContainer().getActor().getTile());
 		
 		this.m.Body = actor.getSprite("body").getBrush().Name;
 		this.m.Head = actor.getSprite("head").getBrush().Name;
@@ -401,6 +407,37 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 		actor.setFaction(this.m.OriginalFaction);
 		actor.getSprite("socket").setBrush(this.m.OriginalSocket);
 		actor.setDirty(true);
+	}
+	function removeItems()
+	{
+		local actor = this.getContainer().getActor();
+		local items = actor.getItems();
+		local iArr = [];
+		if (items.getItemAtSlot(this.Const.ItemSlot.Mainhand))
+		{
+			local item = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
+			iArr.push(item);
+		}
+		if (items.getItemAtSlot(this.Const.ItemSlot.Offhand))
+		{
+			local item = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
+			iArr.push(item);
+		}
+		if (items.getItemAtSlot(this.Const.ItemSlot.Body))
+		{
+			local item = items.getItemAtSlot(this.Const.ItemSlot.Body);
+			iArr.push(item);
+		}
+		if (items.getItemAtSlot(this.Const.ItemSlot.Head))
+		{
+			local item = items.getItemAtSlot(this.Const.ItemSlot.Head);
+			iArr.push(item);
+		}
+		foreach( i in iArr )
+		{
+			items.unequip(i);
+			i.drop(actor.getTile());
+		}
 	}
 });
 
