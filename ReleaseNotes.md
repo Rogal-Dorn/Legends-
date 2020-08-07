@@ -3813,4 +3813,10 @@ Cultist AI fixed to use ninetails
 AI fixed to not hit parrying daggers as much
 Descriptions updated for Quickhands,  bags and belts, and rally the troops
 
+14.0.0.17.c
+**Fixes**
+Transformed enemies no longer moonwalk
+Fixes capitalization error in chosen enemies causing them to not die
+Fixes boar ai not using the boar gore skill
+
 
