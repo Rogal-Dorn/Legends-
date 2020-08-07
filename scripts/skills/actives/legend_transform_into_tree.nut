@@ -77,7 +77,7 @@ this.legend_transform_into_tree <- this.inherit("scripts/skills/skill", {
 
 	function onRemoved()
 	{
-		this.m.Container.removeByID("effects.legend_transformed_tree");
+		this.m.Container.removeByID("effect.legend_transformed_tree");
 	}
 
 });
