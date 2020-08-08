@@ -3821,3 +3821,4 @@ Fixes boar ai not using the boar gore skill
 Fixes problem with assigning random infection
 Fixes thrall lycanthropy ai causing crash
 Can no longer cast tree transform multiple times
+String no longer gets cloned which causes crash
