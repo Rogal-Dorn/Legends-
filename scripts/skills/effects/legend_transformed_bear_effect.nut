@@ -177,7 +177,7 @@ this.legend_transformed_bear_effect <- this.inherit("scripts/skills/skill", {
 
 	function onRemoved()
 	{
-		this.removeEFfect();
+		this.removeEffect();
 	}
 	
 	function onCombatFinished()
