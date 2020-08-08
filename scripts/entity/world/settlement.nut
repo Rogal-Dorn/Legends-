@@ -1651,7 +1651,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 		local maxRecruits = this.Math.rand(rosterMin, rosterMax);
 		local draftList;
-		draftList = clone this.getStablesList();
+		draftList = this.getStablesList();
 
 		foreach( loc in this.m.AttachedLocations )
 		{
