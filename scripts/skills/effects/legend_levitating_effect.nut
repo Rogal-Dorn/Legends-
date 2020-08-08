@@ -30,4 +30,13 @@ this.legend_levitating_effect <- this.inherit("scripts/skills/skill", {
 		this.removeSelf();
 	}
 
+	function onCombatFinished()
+	{
+		local actor = this.getContainer().getActor();
+		actor.m.ActionPointCosts = this.Const.DefaultMovementAPCost;
+		actor.m.FatigueCosts = this.Const.DefaultMovementFatigueCost;
+		actor.m.LevelActionPointCost = this.Const.Movement.LevelDifferenceActionPointCost;
+		this.removeSelf();
+	}
+
 });
