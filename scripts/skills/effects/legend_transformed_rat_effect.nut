@@ -1,16 +1,16 @@
 this.legend_transformed_rat_effect <- this.inherit("scripts/skills/skill", {
 	m = {
-	TurnsLeft = 5,
-	Body = "",
-	Head = "",
-	Injury = ""
-	OriginalFaction = 0,
-	OriginalAgent = null,
-	OriginalSocket = null
-	OriginalFaction = 0,
-	OriginalAgent = null,
-	OriginalSocket = null,
-	Items = []
+		TurnsLeft = 5,
+		Body = "",
+		Head = "",
+		Injury = ""
+		OriginalFaction = 0,
+		OriginalAgent = null,
+		OriginalSocket = null
+		OriginalFaction = 0,
+		OriginalAgent = null,
+		OriginalSocket = null,
+		Items = []
 	},
 	function create()
 	{
@@ -139,6 +139,11 @@ this.legend_transformed_rat_effect <- this.inherit("scripts/skills/skill", {
 			items.unequip(item);
 			this.m.Items.push(item);
 		}
+		foreach (i in items.getAllItemsAtSlot(this.Const.ItemSlot.Bag))
+		{
+			items.unequip(i);
+			this.m.Items.push(i);
+		}
 
 		foreach( i in this.m.Items )
 			i.drop(this.getContainer().getActor().getTile());
@@ -151,6 +156,11 @@ this.legend_transformed_rat_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("body").setBrush("bust_rat_body_0" + r);
 		actor.getSprite("head").setBrush("bust_rat_head_0" + r);
 		if (!actor.isPlayerControlled())
+		{
+			actor.getSprite("body").setHorizontalFlipping(0);
+			actor.getSprite("head").setHorizontalFlipping(0);
+		}
+		else
 		{
 			actor.getSprite("body").setHorizontalFlipping(1);
 			actor.getSprite("head").setHorizontalFlipping(1);
@@ -351,9 +361,12 @@ this.legend_transformed_rat_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("armor_upgrade_back").Alpha = 255;
 		actor.getSprite("armor_upgrade_front").Alpha = 255;
 		actor.getSprite("socket").Alpha = 255;
-		actor.getSprite("body").setHorizontalFlipping(0);
-		actor.getSprite("head").setHorizontalFlipping(0);
-		actor.getSprite("injury").setHorizontalFlipping(0);
+		if (actor.isPlayerControlled())
+		{
+			actor.getSprite("body").setHorizontalFlipping(0);
+			actor.getSprite("head").setHorizontalFlipping(0);
+			actor.getSprite("injury").setHorizontalFlipping(0);
+		}
 
 		if (("State" in this.Tactical) && this.Tactical.State != null) {
 			if (actor.getTile().IsVisibleForPlayer)
