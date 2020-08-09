@@ -276,7 +276,7 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("armor_upgrade_back").Alpha = 255;
 		actor.getSprite("armor_upgrade_front").Alpha = 255;
 		actor.getSprite("socket").Alpha = 255;
-		if (!actor.isPlayerControlled())
+		if (actor.isPlayerControlled())
 		{
 			actor.getSprite("body").setHorizontalFlipping(0);
 			actor.getSprite("head").setHorizontalFlipping(0);
