@@ -212,46 +212,6 @@ this.legend_transformed_boar_effect <- this.inherit("scripts/skills/skill", {
 		_properties.BraveryMult *= 1.25;
 	}
 
-function onTurnStarted()
-	{
-	local actor = this.getContainer().getActor();
-	if (actor.isPlayerControlled())
-		{
-			if (this.m.Container.hasSkill("perk.legend_surpress_urges") && !this.m.Container.hasSkill("perk.legend_control_instincts"))
-			{
-			// this.logDebug(this.getName() + " AI set to boar");
-			// actor.setAIAgent(this.new("scripts/ai/tactical/agents/boar_agent"));
-			// actor.getAIAgent().setActor(actor);
-			
-			this.logDebug(this.getName() + " has surpress urges, AI set to wardog on turn start");
-			actor.setAIAgent(this.new("scripts/ai/tactical/agents/wardog_agent"));
-			actor.getAIAgent().setActor(actor);			
-			
-			}
-			else if (this.m.Container.hasSkill("perk.legend_surpress_urges") && this.m.Container.hasSkill("perk.legend_control_instincts"))
-			{
-			this.logDebug(this.getName() + " has control instincts, player retains control on turn start");
-			}
-			else	
-			{
-			this.logDebug(this.getName() + " has no control perks, AI set to boar on turn start");
-			actor.setFaction(this.Const.Faction.Beasts);		
-			actor.setAIAgent(this.new("scripts/ai/tactical/agents/boar_agent"));
-			actor.getAIAgent().setActor(actor);
-			}
-
-		}
-		else
-		{
-		// this.logDebug(this.getName() + " AI set to boar on turn start");
-		// actor.setAIAgent(this.new("scripts/ai/tactical/agents/boar_agent"));
-		// actor.getAIAgent().setActor(actor);
-		}
-
-	
-	}
-
-
 	function onTurnEnd()
 	{
 		if (--this.m.TurnsLeft <= 0)
@@ -261,7 +221,7 @@ function onTurnStarted()
 			return;
 		}
 		local actor = this.getContainer().getActor();
-		if (actor.getAIAgent().getID() != "agent.boar")
+		if (!actor.isPlayerControlled() && actor.getAIAgent().getID() != "agent.boar")
 		{
 			this.logDebug(this.getName() + " AI set to boar on turn end");
 			actor.setAIAgent(this.new("scripts/ai/tactical/agents/boar_agent"));

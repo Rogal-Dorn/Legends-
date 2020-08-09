@@ -211,12 +211,12 @@ this.legend_transformed_rat_effect <- this.inherit("scripts/skills/skill", {
 	function onCombatFinished()
 	{
 	  	this.removeSelf();
-	  	this.removeEffect();
+	  	this.removeEffect();	
 	}
 
 	function onUpdate( _properties )
 	{
-		_properties.ActionPointsMult *= 1.25;
+		_properties.ActionPoints = this.Math.floor(_properties.ActionPoints * 1.25);
 		_properties.MeleeSkillMult *= 1.25;
 		_properties.BraveryMult *= 0.75;
 	}
@@ -231,8 +231,7 @@ this.legend_transformed_rat_effect <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 		local actor = this.getContainer().getActor();
-
-		if (actor.getAIAgent().getID() != "agent.direwolf")
+		if (!actor.isPlayerControlled() && actor.getAIAgent().getID() != "agent.direwolf")
 		{
 			actor.setAIAgent(this.new("scripts/ai/tactical/agents/direwolf_agent"));
 			actor.getAIAgent().setActor(actor);
