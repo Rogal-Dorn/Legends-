@@ -3825,3 +3825,4 @@ String no longer gets cloned which causes crash
 Fixes druids not getting the Transformation Infections in the right place causing crashes
 AI no longer gets reset at end of turn for your brother even if they have perks to prevent it
 Taking the new transformation perks no longer bugs out: "Surpress Urges", "Control Instincts", "Master Anger"
+Fixes the rat beast-contract not working
