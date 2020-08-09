@@ -194,12 +194,14 @@ this.legend_transformed_bear_effect <- this.inherit("scripts/skills/skill", {
 
 	function onTurnEnd()
 	{
+		
 		if (--this.m.TurnsLeft <= 0)
 		{
 			this.removeSelf();
 			this.removeEffect();
 			return;
 		}
+		local actor = this.getContainer().getActor();
 		if (!actor.isPlayerControlled() && actor.getAIAgent().getID() != "agent.bear")
 		{
 			actor.setAIAgent(this.new("scripts/ai/tactical/agents/bear_agent"));
