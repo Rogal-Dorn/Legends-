@@ -234,7 +234,7 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 		}
 		
 		local actor = this.getContainer().getActor();
-		if (actor.getAIAgent().getID() != "agent.direwolf")
+		if (!actor.isPlayerControlled() && actor.getAIAgent().getID() != "agent.direwolf")
 		{
 			actor.setAIAgent(this.new("scripts/ai/tactical/agents/direwolf_agent"));
 			actor.getAIAgent().setActor(actor);

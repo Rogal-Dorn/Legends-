@@ -218,7 +218,7 @@ this.legend_transformed_tree_effect <- this.inherit("scripts/skills/skill", {
 		}
 
 		local actor = this.getContainer().getActor();
-		if (actor.getAIAgent().getID() != "agent.schrat")
+		if (!actor.isPlayerControlled() && actor.getAIAgent().getID() != "agent.schrat")
 		{
 			actor.setAIAgent(this.new("scripts/ai/tactical/agents/schrat_agent"));
 			actor.getAIAgent().setActor(actor);

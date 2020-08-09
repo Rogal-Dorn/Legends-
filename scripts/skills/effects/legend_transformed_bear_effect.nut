@@ -200,10 +200,11 @@ this.legend_transformed_bear_effect <- this.inherit("scripts/skills/skill", {
 			this.removeEffect();
 			return;
 		}
-		local actor = this.getContainer().getActor();
-		actor.setFaction(this.m.OriginalFaction);
-		actor.getSprite("socket").setBrush(this.m.OriginalSocket);
-		actor.setDirty(true);
+		if (!actor.isPlayerControlled() && actor.getAIAgent().getID() != "agent.bear")
+		{
+			actor.setAIAgent(this.new("scripts/ai/tactical/agents/bear_agent"));
+			actor.getAIAgent().setActor(actor);
+		}
 	}
 	function removeEffect()
 	{
