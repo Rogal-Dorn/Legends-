@@ -188,56 +188,6 @@ this.legend_transformed_bear_effect <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		local actor = this.getContainer().getActor();
-
-	//	actor.getSprite("body").setBrush("were_bear_body");
-	//	actor.getSprite("head").setBrush("were_bear_head");
-		
-		if (actor.isPlayerControlled())
-		{
-			if (this.m.Container.hasSkill("perk.legend_surpress_urges") && !this.m.Container.hasSkill("perk.legend_control_instincts"))
-			{
-			actor.setAIAgent(this.new("scripts/ai/tactical/agents/bear_agent"));
-			actor.getAIAgent().setActor(actor);
-			}
-			else if (this.m.Container.hasSkill("perk.legend_surpress_urges") && this.m.Container.hasSkill("perk.legend_control_instincts"))
-			{
-
-			}
-			else	
-			{
-			actor.setFaction(this.Const.Faction.Beasts);		
-			actor.setAIAgent(this.new("scripts/ai/tactical/agents/bear_agent"));
-			actor.getAIAgent().setActor(actor);
-			}
-
-		}
-		else
-		{
-		// actor.setAIAgent(this.new("scripts/ai/tactical/agents/direwolf_agent"));
-		// actor.getAIAgent().setActor(actor);
-		}	
-		
-		actor.getSprite("armor").Alpha = 10;
-		actor.getSprite("helmet").Alpha = 10;
-		actor.getSprite("shield_icon").Alpha = 10;
-		actor.getSprite("armor_layer_chain").Alpha = 10;
-		actor.getSprite("armor_layer_plate").Alpha = 10;
-		actor.getSprite("armor_layer_tabbard").Alpha = 10;
-		actor.getSprite("armor_layer_tabbard").Alpha = 10;
-		actor.getSprite("hair").Alpha = 10;
-		actor.getSprite("beard").Alpha = 10;
-		actor.getSprite("tattoo_head").Alpha = 10;
-		actor.getSprite("tattoo_body").Alpha = 10;
-		actor.getSprite("quiver").Alpha = 10;
-		actor.getSprite("arms_icon").Alpha = 10;
-		actor.getSprite("dirt").Alpha = 10;
-		actor.getSprite("accessory").Alpha = 10;
-		actor.getSprite("surcoat").Alpha = 10;
-		actor.getSprite("armor_upgrade_back").Alpha = 10;
-		actor.getSprite("armor_upgrade_front").Alpha = 10;
-		actor.getSprite("socket").Alpha = 10;
-
 		_properties.HitpointsMult *= 2.0;
 		_properties.MeleeDefenseMult *= 1.5;
 	}

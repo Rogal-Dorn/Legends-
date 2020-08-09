@@ -206,65 +206,6 @@ this.legend_transformed_boar_effect <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		local actor = this.getContainer().getActor();
-		
-		if (actor.isPlayerControlled())
-		{
-			if (this.m.Container.hasSkill("perk.legend_surpress_urges") && !this.m.Container.hasSkill("perk.legend_control_instincts"))
-			{
-			// this.logDebug(this.getName() + " AI set to boar");
-			// actor.setAIAgent(this.new("scripts/ai/tactical/agents/boar_agent"));
-			// actor.getAIAgent().setActor(actor);
-			//actor.setFaction(this.Const.Faction.PlayerAnimals);	
-		//	this.logDebug(this.getName() + " has surpress urges, AI set to wardog on update");
-		//	actor.setAIAgent(this.new("scripts/ai/tactical/agents/wardog_agent"));
-		//	actor.getAIAgent().setActor(actor);			
-			
-			}
-			else if (this.m.Container.hasSkill("perk.legend_surpress_urges") && this.m.Container.hasSkill("perk.legend_control_instincts"))
-			{
-			this.logDebug(this.getName() + " has control instincts, player retains control on update");
-			}
-			else	
-			{
-			this.logDebug(this.getName() + " has no control perks, AI set to boar on update");
-			actor.setFaction(this.Const.Faction.Beasts);		
-			actor.setAIAgent(this.new("scripts/ai/tactical/agents/boar_agent"));
-			actor.getAIAgent().setActor(actor);
-			}
-
-		}
-		else
-		{
-		// this.logDebug(this.getName() + " AI set to boar on update");
-		// actor.setAIAgent(this.new("scripts/ai/tactical/agents/boar_agent"));
-		// actor.getAIAgent().setActor(actor);
-		}		
-
-		// actor.getSprite("body").setBrush("were_boar_body");
-		// actor.getSprite("head").setBrush("were_boar_head");
-
-
-		actor.getSprite("armor").Alpha = 10;
-		actor.getSprite("helmet").Alpha = 10;
-		actor.getSprite("shield_icon").Alpha = 10;
-		actor.getSprite("armor_layer_chain").Alpha = 10;
-		actor.getSprite("armor_layer_plate").Alpha = 10;
-		actor.getSprite("armor_layer_tabbard").Alpha = 10;
-		actor.getSprite("armor_layer_tabbard").Alpha = 10;
-		actor.getSprite("hair").Alpha = 10;
-		actor.getSprite("beard").Alpha = 10;
-		actor.getSprite("tattoo_head").Alpha = 10;
-		actor.getSprite("tattoo_body").Alpha = 10;
-		actor.getSprite("quiver").Alpha = 10;
-		actor.getSprite("arms_icon").Alpha = 10;
-		actor.getSprite("dirt").Alpha = 10;
-		actor.getSprite("accessory").Alpha = 10;
-		actor.getSprite("surcoat").Alpha = 10;
-		actor.getSprite("armor_upgrade_back").Alpha = 10;
-		actor.getSprite("armor_upgrade_front").Alpha = 10;
-		actor.getSprite("socket").Alpha = 10;
-
 		_properties.FatigueRecoveryRateMult *= 2.0;
 		_properties.StaminaMult *= 1.5;
 		_properties.HitpointsMult *= 1.5;

@@ -19,5 +19,7 @@
 	o.m.PossibleSkills.push("actives.legend_bear_claws");
 	o.m.PossibleSkills.push("actives.legend_flaggelate");
 	o.m.PossibleSkills.push("actives.legend_boar_gore");
+	o.m.PossibleSkills.push("actives.legend_rat_claws");
+	o.m.PossibleSkills.push("actives.legend_rat_bite");
 
 });
