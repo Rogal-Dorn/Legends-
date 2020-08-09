@@ -3822,3 +3822,5 @@ Fixes problem with assigning random infection
 Fixes thrall lycanthropy ai causing crash
 Can no longer cast tree transform multiple times
 String no longer gets cloned which causes crash
+Fixes druids not getting the Transformation Infections in the right place causing crashes
+AI no longer gets reset at end of turn for your brother even if they have perks to prevent it
