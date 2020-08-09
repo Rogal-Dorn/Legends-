@@ -126,7 +126,7 @@ function getTooltip()
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = " Heals for" + heal + " as 10% of your max health"
+			text = " Heals for" + this.Math.floor(bodyHealth/10) + " hitpoints [10% of your maximum hp]"
 		});
 
 		return ret;

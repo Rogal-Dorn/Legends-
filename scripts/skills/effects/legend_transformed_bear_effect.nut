@@ -64,27 +64,20 @@ this.legend_transformed_bear_effect <- this.inherit("scripts/skills/skill", {
 		{
 			if (this.m.Container.hasSkill("perk.legend_surpress_urges") && !this.m.Container.hasSkill("perk.legend_control_instincts"))
 			{
-			this.logDebug(this.getName() + " AI set to bear");
-			actor.setAIAgent(this.new("scripts/ai/tactical/agents/bear_agent"));
-			actor.getAIAgent().setActor(actor);
+				this.logDebug(this.getName() + " AI set to bear");
+				actor.setAIAgent(this.new("scripts/ai/tactical/agents/bear_agent"));
+				actor.getAIAgent().setActor(actor);
 			}
 			else if (this.m.Container.hasSkill("perk.legend_surpress_urges") && this.m.Container.hasSkill("perk.legend_control_instincts"))
-			{
-
-			}
+			{}
 			else	
 			{
-			this.logDebug(this.getName() + " AI set to beast bear");
-			actor.setFaction(this.Const.Faction.Beasts);		
-			actor.setAIAgent(this.new("scripts/ai/tactical/agents/bear_agent"));
-			actor.getAIAgent().setActor(actor);
+				this.logDebug(this.getName() + " AI set to beast bear");
+				actor.setFaction(this.Const.Faction.Beasts);		
+				actor.setAIAgent(this.new("scripts/ai/tactical/agents/bear_agent"));
+				actor.getAIAgent().setActor(actor);
 			}
 
-		}
-		else
-		{
-		actor.setAIAgent(this.new("scripts/ai/tactical/agents/direwolf_agent"));
-		actor.getAIAgent().setActor(actor);
 		}
 	
 		this.m.OriginalSocket = actor.getSprite("socket").getBrush().Name;

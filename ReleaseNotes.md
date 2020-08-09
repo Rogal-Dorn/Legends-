@@ -3826,3 +3826,5 @@ Fixes druids not getting the Transformation Infections in the right place causin
 AI no longer gets reset at end of turn for your brother even if they have perks to prevent it
 Taking the new transformation perks no longer bugs out: "Surpress Urges", "Control Instincts", "Master Anger"
 Fixes the rat beast-contract not working
+Fixes bear bite tooltip index heal not existing
+Fixes boar transform active ability not existing 

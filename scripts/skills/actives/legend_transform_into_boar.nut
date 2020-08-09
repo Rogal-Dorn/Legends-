@@ -1,6 +1,6 @@
 this.legend_transform_into_boar <- this.inherit("scripts/skills/skill", {
 	m = {
-		IsSpent = false
+		IsSpent = false 
 	},
 	function create()
 	{

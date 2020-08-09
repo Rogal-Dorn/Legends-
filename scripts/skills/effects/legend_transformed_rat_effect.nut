@@ -82,22 +82,17 @@ this.legend_transformed_rat_effect <- this.inherit("scripts/skills/skill", {
 		{
 			if (this.m.Container.hasSkill("perk.legend_surpress_urges") && !this.m.Container.hasSkill("perk.legend_control_instincts"))
 			{
-			this.logDebug(this.getName() + " AI set to wardog");
-			actor.setAIAgent(this.new("scripts/ai/tactical/agents/wardog_agent"));
-			actor.getAIAgent().setActor(actor);
-			
+				this.logDebug(this.getName() + " AI set to wardog");
+				actor.setAIAgent(this.new("scripts/ai/tactical/agents/wardog_agent"));
+				actor.getAIAgent().setActor(actor);
 			}
 			else if (this.m.Container.hasSkill("perk.legend_surpress_urges") && this.m.Container.hasSkill("perk.legend_control_instincts"))
-			{
-			this.logDebug(this.getName() + " AI unchanged");
-			}
+			{}
 			else	
 			{
-			this.logDebug(this.getName() + " AI set to direwolf");
-			actor.setFaction(this.Const.Faction.Beasts);		
-			actor.setAIAgent(this.new("scripts/ai/tactical/agents/direwolf_agent"));
-			actor.getAIAgent().setActor(actor);
-		
+				actor.setFaction(this.Const.Faction.Beasts);		
+				actor.setAIAgent(this.new("scripts/ai/tactical/agents/direwolf_agent"));
+				actor.getAIAgent().setActor(actor);
 			}
 
 		}
