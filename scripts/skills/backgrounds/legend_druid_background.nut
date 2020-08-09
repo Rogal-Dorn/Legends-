@@ -226,24 +226,7 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 		{
 			actor.setName(this.Const.Strings.BarbarianNames[this.Math.rand(0, this.Const.Strings.BarbarianNames.len() - 1)]);
 		}
-		
-		local r = this.Math.rand(1,4)
-		if (r == 1)
-		{
-		this.m.Container.add(this.new("scripts/skills/injury_permanent/legend_aperthropy_injury"));
-		}
-		else if (r == 2)
-		{
-		this.m.Container.add(this.new("scripts/skills/injury_permanent/legend_arborthropy_injury"));
-		}
-		else if (r == 3)
-		{
-		this.m.Container.add(this.new("scripts/skills/injury_permanent/legend_lycanthropy_injury"));
-		}
-		else if (r == 4)
-		{
-		this.m.Container.add(this.new("scripts/skills/injury_permanent/legend_ursathropy_injury"));
-		}			
+		actor.TherianthropeInfectionRandom();
 		
 	}
 
@@ -273,16 +256,6 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 			tattoo_body.setBrush((this.m.Tattoo == 0 ? "warpaint_01_" : "scar_02_") + body.getBrush().Name);
 		}
 	}
-
-	function onAdded()
-	{
-
-		this.character_background.onAdded();
-		local actor = this.getContainer().getActor();
-		actor.TherianthropeInfectionRandom();	
-		//this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
-	}
-
 
 	function onAddEquipment()
 	{

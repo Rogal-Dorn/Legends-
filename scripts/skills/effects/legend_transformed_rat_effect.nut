@@ -101,12 +101,6 @@ this.legend_transformed_rat_effect <- this.inherit("scripts/skills/skill", {
 			}
 
 		}
-		else
-		{
-		// this.logDebug(this.getName() + " AI set to direwolf 2");
-		// actor.setAIAgent(this.new("scripts/ai/tactical/agents/direwolf_agent"));
-		// actor.getAIAgent().setActor(actor);
-		}
 	
 		this.m.OriginalSocket = actor.getSprite("socket").getBrush().Name;
 		actor.getSprite("socket").setBrush("bust_base_beasts");
@@ -222,90 +216,9 @@ this.legend_transformed_rat_effect <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		this.logDebug(this.getName() + " onUpdate started");
-		local actor = this.getContainer().getActor();
-
-
-		this.logDebug(this.getName() + " onUpdate setting visuals");
-	//	actor.getSprite("body").setBrush("bust_rat_body_0" + this.Math.rand(1, 4)));
-	//	actor.getSprite("head").setBrush("bust_rat_head_0" + this.Math.rand(1, 4));
-
-		
-		if (actor.isPlayerControlled())
-		{
-			if (this.m.Container.hasSkill("perk.legend_surpress_urges") && !this.m.Container.hasSkill("perk.legend_control_instincts"))
-			{
-			this.logDebug(this.getName() + " AI set to wardog");
-			actor.setAIAgent(this.new("scripts/ai/tactical/agents/wardog_agent"));
-			actor.getAIAgent().setActor(actor);
-			
-			}
-			else if (this.m.Container.hasSkill("perk.legend_surpress_urges") && this.m.Container.hasSkill("perk.legend_control_instincts"))
-			{
-			this.logDebug(this.getName() + " AI unchanged");
-			}
-			else	
-			{
-			this.logDebug(this.getName() + " AI set to direwolf");
-			actor.setFaction(this.Const.Faction.Beasts);		
-			actor.setAIAgent(this.new("scripts/ai/tactical/agents/direwolf_agent"));
-			actor.getAIAgent().setActor(actor);
-		
-			}
-
-		}
-		else
-		{
-		// this.logDebug(this.getName() + " AI set to direwolf 2");
-		// actor.setAIAgent(this.new("scripts/ai/tactical/agents/direwolf_agent"));
-		// actor.getAIAgent().setActor(actor);
-		}
-
-
-		actor.getSprite("armor").Alpha = 10;
-		actor.getSprite("helmet").Alpha = 10;
-		actor.getSprite("shield_icon").Alpha = 10;
-		actor.getSprite("armor_layer_chain").Alpha = 10;
-		actor.getSprite("armor_layer_plate").Alpha = 10;
-		actor.getSprite("armor_layer_tabbard").Alpha = 10;
-		actor.getSprite("armor_layer_tabbard").Alpha = 10;
-		actor.getSprite("hair").Alpha = 10;
-		actor.getSprite("beard").Alpha = 10;
-		actor.getSprite("tattoo_head").Alpha = 10;
-		actor.getSprite("tattoo_body").Alpha = 10;
-		actor.getSprite("quiver").Alpha = 10;
-		actor.getSprite("arms_icon").Alpha = 10;
-		actor.getSprite("dirt").Alpha = 10;
-		actor.getSprite("accessory").Alpha = 10;
-		actor.getSprite("surcoat").Alpha = 10;
-		actor.getSprite("armor_upgrade_back").Alpha = 10;
-		actor.getSprite("armor_upgrade_front").Alpha = 10;
-		actor.getSprite("socket").Alpha = 10;
-
-
-		this.logDebug(this.getName() + " onUpdate setting skills");
-		if (!this.m.Container.hasSkill("actives.legend_rat_claws"))
-		{
-			this.m.Container.add(this.new("scripts/skills/actives/legend_rat_claws"));
-		}
-		if (!this.m.Container.hasSkill("actives.legend_rat_bite"))
-		{
-			this.m.Container.add(this.new("scripts/skills/actives/legend_rat_bite_skill"));
-		}
-		if (!this.m.Container.hasSkill("racial.spider"))
-		{
-			this.m.Container.add(this.new("scripts/skills/racial/spider_racial"));
-		}	
-		if (!this.m.Container.hasSkill("actives.footwork"))
-		{
-			this.m.Container.add(this.new("scripts/skills/actives/footwork"));
-		}
-		this.logDebug(this.getName() + " onUpdate setting properties");
 		_properties.ActionPointsMult *= 1.25;
 		_properties.MeleeSkillMult *= 1.25;
 		_properties.BraveryMult *= 0.75;
-		this.logDebug(this.getName() + " onUpdate done");
-
 	}
 
 
