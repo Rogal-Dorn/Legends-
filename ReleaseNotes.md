@@ -3813,7 +3813,7 @@ Cultist AI fixed to use ninetails
 AI fixed to not hit parrying daggers as much
 Descriptions updated for Quickhands,  bags and belts, and rally the troops
 
-14.0.0.17.c
+14.0.0.17.XYZ
 **Fixes**
 Transformed enemies no longer moonwalk
 Fixes capitalization error in chosen enemies causing them to not die
@@ -3824,3 +3824,4 @@ Can no longer cast tree transform multiple times
 String no longer gets cloned which causes crash
 Fixes druids not getting the Transformation Infections in the right place causing crashes
 AI no longer gets reset at end of turn for your brother even if they have perks to prevent it
+Taking the new transformation perks no longer bugs out: "Surpress Urges", "Control Instincts", "Master Anger"
