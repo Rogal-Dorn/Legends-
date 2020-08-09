@@ -6,7 +6,13 @@ gfx/*.png
 *.DS_Store
 unpacked/**/*dead_arrows.png
 unpacked/**/*dead_javelin.png
+<<<<<<< HEAD
 unpacked/legend_armor/metadata.xml
 unpacked/legend_helmets/metadata.xml
 unpacked/legend_helmets/0
 unpacked/legend_helmets/1
+=======
+!unpacked/dead_arrows.png
+!unpacked/dead_javelin.png
+unpacked/legend_armor/metadata.xml
+>>>>>>> 97f81fafec2d9ccd0e201d17d6fde12c8d2e15e5
