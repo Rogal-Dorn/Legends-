@@ -3828,3 +3828,8 @@ Taking the new transformation perks no longer bugs out: "Surpress Urges", "Contr
 Fixes the rat beast-contract not working
 Fixes bear bite tooltip index heal not existing
 Fixes boar transform active ability not existing 
+
+14.0.0.18b
+**Fixes**
+Wolfsbane necklace can now be unequipped
+Fixes some spelling and capitalization on the Wolfsbane necklace's effect
