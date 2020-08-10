@@ -210,7 +210,7 @@ local cloths = [
 
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/bread_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/wine_item"));
-		this.World.Assets.getStash().add(this.new("scripts/items/misc/legend_wolfsbane_item"));
+		this.World.Assets.getStash().add(this.new("scripts/items/accessory/legend_wolfsbane_necklace_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/weapons/legend_wooden_stake"));
 		this.World.Assets.getStash().add(this.new("scripts/items/weapons/legend_wooden_stake"))
 		this.World.Assets.getStash().add(this.new("scripts/items/weapons/legend_wooden_stake"));

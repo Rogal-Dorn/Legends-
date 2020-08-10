@@ -3814,12 +3814,24 @@ Descriptions updated for Quickhands,  bags and belts, and rally the troops
 
 14.0.0.18
 
-Fixes missing image from wolfsbane item 
-Starting resource caps halved 
-Executioner now works with "debilitated" 
 
-Troupe
+**Changes **
 Instruments use staff bash, benefit from Staff Block and staff mastery 
 Drum value, condition and damage increased 
 Lute  value and weight decreased, max damaged and condition slightly increased 
 Named lute damage increased 
+Druids and inquisiton begins with a wolfsbane necklace to control their transformation
+It is possible for certain injuries to spread through your company via an event 
+
+**Fixes**
+Fixes druid not being able to unlock some perks 
+Fixes missing image from wolfsbane item 
+Starting resource caps reduced
+Executioner now works with "debilitated" 
+
+Transformed enemies no longer moonwalk
+Fixes capitalization error in chosen enemies causing them to not die
+Fixes boar ai not using the boar gore skill
+Fixes problem with assigning random infection
+Fixes thrall lycanthropy ai causing crash
+Can no longer cast tree transform multiple times

@@ -297,6 +297,7 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 		stash.removeByID("supplies.ground_grains");
 		items.equip(this.new("scripts/items/armor/barbarians/hide_and_bone_armor"));
 		items.equip(this.new("scripts/items/helmets/barbarians/bear_headpiece"));
+		items.equip(this.new("scripts/items/accessory/legend_wolfsbane_necklace_item"));
 	}
 
 	function onAddLegendEquipment()
@@ -312,7 +313,7 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 		stash.removeByID("supplies.ground_grains");
 		stash.add(this.new("scripts/items/supplies/roots_and_berries_item"));
 		stash.add(this.new("scripts/items/supplies/medicine_item"));
-
+		items.equip(this.new("scripts/items/accessory/legend_wolfsbane_necklace_item"));
 			local cloths = [
             [0, ""],
 			[0, "cloth/legend_gambeson"],

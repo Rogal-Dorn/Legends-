@@ -135,6 +135,13 @@ this.ratcatcher_background <- this.inherit("scripts/skills/backgrounds/character
 			local actor = this.getContainer().getActor();
 			actor.setTitle(this.Const.Strings.RatcatcherTitles[this.Math.rand(0, this.Const.Strings.RatcatcherTitles.len() - 1)]);
 		}
+		
+		local r = this.Math.rand(1,9)
+		if (r == 1)
+		{
+		this.m.Container.add(this.new("scripts/skills/injury_permanent/legend_vermesthropy_injury"));
+		}
+
 	}
 
 	function onAddEquipment()

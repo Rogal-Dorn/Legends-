@@ -3115,7 +3115,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			this.logDebug(this.getName() + " gained arborthropy");
 		}
 
-		if (r > 90 & r <= 98 && !this.getSkills().hasSkill("injury.legend_ursathropy"))
+		if (r > 90 && r <= 98 && !this.getSkills().hasSkill("injury.legend_ursathropy"))
 		{
 			this.getSkills().add(this.new("scripts/skills/injury_permanent/legend_ursathropy_injury"));
 			this.getBackground().addPerkGroup(TherianthropyGroup);

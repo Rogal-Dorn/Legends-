@@ -9,7 +9,8 @@ this.legend_transformed_rat_effect <- this.inherit("scripts/skills/skill", {
 	OriginalSocket = null
 	OriginalFaction = 0,
 	OriginalAgent = null,
-	OriginalSocket = null
+	OriginalSocket = null,
+	Items = []
 	},
 	function create()
 	{
@@ -86,7 +87,7 @@ this.legend_transformed_rat_effect <- this.inherit("scripts/skills/skill", {
 			actor.getAIAgent().setActor(actor);
 			
 			}
-			else if (this.m.Container.hasSkill("perk.legend_surppress_urges") && this.m.Container.hasSkill("perk.legend_control_instincts"))
+			else if (this.m.Container.hasSkill("perk.legend_surpress_urges") && this.m.Container.hasSkill("perk.legend_control_instincts"))
 			{
 			this.logDebug(this.getName() + " AI unchanged");
 			}
@@ -102,9 +103,9 @@ this.legend_transformed_rat_effect <- this.inherit("scripts/skills/skill", {
 		}
 		else
 		{
-		this.logDebug(this.getName() + " AI set to direwolf 2");
-		actor.setAIAgent(this.new("scripts/ai/tactical/agents/direwolf_agent"));
-		actor.getAIAgent().setActor(actor);
+		// this.logDebug(this.getName() + " AI set to direwolf 2");
+		// actor.setAIAgent(this.new("scripts/ai/tactical/agents/direwolf_agent"));
+		// actor.getAIAgent().setActor(actor);
 		}
 	
 		this.m.OriginalSocket = actor.getSprite("socket").getBrush().Name;
@@ -117,24 +118,30 @@ this.legend_transformed_rat_effect <- this.inherit("scripts/skills/skill", {
 		if (items.getItemAtSlot(this.Const.ItemSlot.Mainhand))
 		{
 			local item = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
-			item.drop();
+			items.unequip(item);
+			this.m.Items.push(item);
 		}
 		if (items.getItemAtSlot(this.Const.ItemSlot.Offhand))
 		{
 			local item = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
-			item.drop();
+			items.unequip(item);
+			this.m.Items.push(item);
 		}
 		if (items.getItemAtSlot(this.Const.ItemSlot.Body))
 		{
 			local item = items.getItemAtSlot(this.Const.ItemSlot.Body);
-			item.drop();
+			items.unequip(item);
+			this.m.Items.push(item);
 		}
 		if (items.getItemAtSlot(this.Const.ItemSlot.Head))
 		{
 			local item = items.getItemAtSlot(this.Const.ItemSlot.Head);
-			item.drop();
+			items.unequip(item);
+			this.m.Items.push(item);
 		}
 
+		foreach( i in this.m.Items )
+			i.drop(this.getContainer().getActor().getTile());
 		
 		this.m.Body = actor.getSprite("body").getBrush().Name;
 		this.m.Head = actor.getSprite("head").getBrush().Name;
@@ -143,8 +150,11 @@ this.legend_transformed_rat_effect <- this.inherit("scripts/skills/skill", {
 		local r = this.Math.rand(1, 5);
 		actor.getSprite("body").setBrush("bust_rat_body_0" + r);
 		actor.getSprite("head").setBrush("bust_rat_head_0" + r);
-		actor.getSprite("body").setHorizontalFlipping(1);
-		actor.getSprite("head").setHorizontalFlipping(1);
+		if (!actor.isPlayerControlled())
+		{
+			actor.getSprite("body").setHorizontalFlipping(1);
+			actor.getSprite("head").setHorizontalFlipping(1);
+		}
 		actor.getSprite("armor").Alpha = 10;
 		actor.getSprite("helmet").Alpha = 10;
 		actor.getSprite("shield_icon").Alpha = 10;
@@ -191,67 +201,13 @@ this.legend_transformed_rat_effect <- this.inherit("scripts/skills/skill", {
 
 	function onRemoved()
 	{
-
-		local actor = this.getContainer().getActor();
-		
-		//reset AI
-		if (this.m.OriginalAgent != null)
-		{
-			actor.setAIAgent(this.m.OriginalAgent);
-		}
-		actor.setFaction(this.m.OriginalFaction);
-		actor.getSprite("socket").setBrush(this.m.OriginalSocket);
-		actor.setDirty(true);
-		
-		//change appearance 
-		actor.getSprite("body").setBrush(this.m.Body);
-		actor.getSprite("head").setBrush(this.m.Head);
-		actor.getSprite("armor").Alpha = 255;
-		actor.getSprite("helmet").Alpha = 255;
-		actor.getSprite("shield_icon").Alpha = 255;
-		actor.getSprite("armor_layer_chain").Alpha = 255;
-		actor.getSprite("armor_layer_plate").Alpha = 255;
-		actor.getSprite("armor_layer_tabbard").Alpha = 255;
-		actor.getSprite("armor_layer_cloak").Alpha = 255;
-		actor.getSprite("hair").Alpha = 255;
-		actor.getSprite("beard").Alpha = 255;
-		actor.getSprite("tattoo_head").Alpha = 255;
-		actor.getSprite("tattoo_body").Alpha = 255;
-		actor.getSprite("quiver").Alpha = 255;
-		actor.getSprite("arms_icon").Alpha = 255;
-		actor.getSprite("dirt").Alpha = 255;
-		actor.getSprite("accessory").Alpha = 255;
-		actor.getSprite("surcoat").Alpha = 255;
-		actor.getSprite("armor_upgrade_back").Alpha = 255;
-		actor.getSprite("armor_upgrade_front").Alpha = 255;
-		actor.getSprite("socket").Alpha = 255;
-		actor.getSprite("body").setHorizontalFlipping(0);
-		actor.getSprite("head").setHorizontalFlipping(0);
-		actor.getSprite("injury").setHorizontalFlipping(0);
-		if (("State" in this.Tactical) && this.Tactical.State != null) {
-			if (actor.getTile().IsVisibleForPlayer)
-			{
-				if (this.Const.Tactical.TransformParticles.len() != 0)
-				{
-					for( local i = 0; i < this.Const.Tactical.TransformParticles.len(); i = ++i )
-					{
-						this.Tactical.spawnParticleEffect(false, this.Const.Tactical.TransformParticles[i].Brushes, actor.getTile(), this.Const.Tactical.TransformParticles[i].Delay, this.Const.Tactical.TransformParticles[i].Quantity, this.Const.Tactical.TransformParticles[i].LifeTimeQuantity, this.Const.Tactical.TransformParticles[i].SpawnRate, this.Const.Tactical.TransformParticles[i].Stages);
-					}
-				}
-			}
-		}
-
-
-		actor.getSkills().removeByID("actives.legend_rat_claws");
-		actor.getSkills().removeByID("actives.legend_rat_bite");
-		actor.getSkills().removeByID("racial.spider");
-		if (!actor.getSkills().hasSkill("perk.footwork"))
-		{
-			actor.getSkills().removeByID("actives.footwork");
-		}
-		local items = actor.getItems();
-		items.getData()[this.Const.ItemSlot.Offhand][0] = null;
-		items.getData()[this.Const.ItemSlot.Mainhand][0] = null;
+		this.removeEffect();
+	}
+	
+	function onCombatFinished()
+	{
+	  	this.removeSelf();
+	  	this.removeEffect();
 	}
 
 	function onUpdate( _properties )
@@ -274,7 +230,7 @@ this.legend_transformed_rat_effect <- this.inherit("scripts/skills/skill", {
 			actor.getAIAgent().setActor(actor);
 			
 			}
-			else if (this.m.Container.hasSkill("perk.legend_surppress_urges") && this.m.Container.hasSkill("perk.legend_control_instincts"))
+			else if (this.m.Container.hasSkill("perk.legend_surpress_urges") && this.m.Container.hasSkill("perk.legend_control_instincts"))
 			{
 			this.logDebug(this.getName() + " AI unchanged");
 			}
@@ -290,9 +246,9 @@ this.legend_transformed_rat_effect <- this.inherit("scripts/skills/skill", {
 		}
 		else
 		{
-		this.logDebug(this.getName() + " AI set to direwolf 2");
-		actor.setAIAgent(this.new("scripts/ai/tactical/agents/direwolf_agent"));
-		actor.getAIAgent().setActor(actor);
+		// this.logDebug(this.getName() + " AI set to direwolf 2");
+		// actor.setAIAgent(this.new("scripts/ai/tactical/agents/direwolf_agent"));
+		// actor.getAIAgent().setActor(actor);
 		}
 
 
@@ -341,9 +297,27 @@ this.legend_transformed_rat_effect <- this.inherit("scripts/skills/skill", {
 		this.logDebug(this.getName() + " onUpdate done");
 
 	}
-	
-	function onCombatFinished()
-	  {
+
+
+	function onTurnEnd()
+	{
+		if (--this.m.TurnsLeft <= 0)
+		{
+			this.removeSelf();
+			this.removeEffect();
+			return;
+		}
+		local actor = this.getContainer().getActor();
+
+		if (actor.getAIAgent().getID() != "agent.direwolf")
+		{
+			actor.setAIAgent(this.new("scripts/ai/tactical/agents/direwolf_agent"));
+			actor.getAIAgent().setActor(actor);
+		}
+	}
+
+	function removeEffect()
+	{
 		local actor = this.getContainer().getActor();
 		
 		//reset AI
@@ -381,10 +355,23 @@ this.legend_transformed_rat_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("head").setHorizontalFlipping(0);
 		actor.getSprite("injury").setHorizontalFlipping(0);
 
+		if (("State" in this.Tactical) && this.Tactical.State != null) {
+			if (actor.getTile().IsVisibleForPlayer)
+			{
+				if (this.Const.Tactical.TransformParticles.len() != 0)
+				{
+					for( local i = 0; i < this.Const.Tactical.TransformParticles.len(); i = ++i )
+					{
+						this.Tactical.spawnParticleEffect(false, this.Const.Tactical.TransformParticles[i].Brushes, actor.getTile(), this.Const.Tactical.TransformParticles[i].Delay, this.Const.Tactical.TransformParticles[i].Quantity, this.Const.Tactical.TransformParticles[i].LifeTimeQuantity, this.Const.Tactical.TransformParticles[i].SpawnRate, this.Const.Tactical.TransformParticles[i].Stages);
+					}
+				}
+			}
+		}
 
 
-		actor.getSkills().removeByID("actives.werewolf_claws");
-		actor.getSkills().removeByID("actives.werewolf_bite");
+		actor.getSkills().removeByID("actives.rat_claws");
+		actor.getSkills().removeByID("actives.rat_bite");
+		actor.getSkills().removeByID("racial.spider");
 		if (!actor.getSkills().hasSkill("perk.footwork"))
 		{
 			actor.getSkills().removeByID("actives.footwork");
@@ -392,15 +379,8 @@ this.legend_transformed_rat_effect <- this.inherit("scripts/skills/skill", {
 		local items = actor.getItems();
 		items.getData()[this.Const.ItemSlot.Offhand][0] = null;
 		items.getData()[this.Const.ItemSlot.Mainhand][0] = null;	  
-	  
-	  }
-
-	function onTurnEnd()
-	{
-		if (--this.m.TurnsLeft <= 0)
-		{
-			this.removeSelf();
-		}
 	}
+
+	
 });
 
