@@ -5,7 +5,7 @@ this.legend_lycanthropy_injury <- this.inherit("scripts/skills/injury_permanent/
 		this.permanent_injury.create();
 		this.m.ID = "injury.legend_lycanthropy";
 		this.m.Name = "Lycanthrope";
-		this.m.Description = "This character is cursed with lycanthropy and will transform into a wolf, dropping all gear and attacking wildly unless controlled.";
+		this.m.Description = "This character is cursed with lycanthropy and will transform into a wolf, dropping all gear and attacking wildly unless controlled. It is rumoured wolfsbane may help.";
 		this.m.Icon = "ui/injury/injury_lycanthropy.png";
 	}
 

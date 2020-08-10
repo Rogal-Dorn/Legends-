@@ -4,7 +4,7 @@ this.legend_prayer_of_life_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_prayer_of_life";
 		this.m.Name = "Prayer of Life";
-		this.m.Description = "Push allies on with your chant of holy scripture, restoring the health of all allies within 1 tile by 10% of their resolve. ";
+		this.m.Description = "Push allies on with your chant of holy scripture, restoring the health of all allies within 1 tile by 20% of their resolve. ";
 		this.m.Icon = "skills/prayer_green_square.png";
 		this.m.IconDisabled = "skills/prayer_green_square_bw.png";
 		this.m.Overlay = "prayer_green";
@@ -23,7 +23,7 @@ this.legend_prayer_of_life_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsAttack = false;
 		this.m.IsVisibleTileNeeded = false;
 		this.m.ActionPointCost = 6;
-		this.m.FatigueCost = 20;
+		this.m.FatigueCost = 30;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 1;
 	}

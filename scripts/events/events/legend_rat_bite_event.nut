@@ -1,7 +1,7 @@
 this.legend_rat_bite_event <- this.inherit("scripts/events/event", {
 	m = {
-		NightOwl = null,
-		FoundItem = null
+		Ratman = null,
+		Bitten = null
 	},
 	function create()
 	{
@@ -34,8 +34,8 @@ this.legend_rat_bite_event <- this.inherit("scripts/events/event", {
 				{
 					this.List.push({
 						id = 10,
-						icon = this.Const.MoodStateIcon[_event.m.NightOwl.getMoodState()],
-						text = _event.m.NightOwl.getName() + this.Const.MoodStateEvent[_event.m.NightOwl.getMoodState()]
+						icon = this.Const.MoodStateIcon[_event.m.Bitten.getMoodState()],
+						text = _event.m.Bitten.getName() + this.Const.MoodStateEvent[_event.m.NightOwl.getMoodState()]
 					});
 				}
 				_event.m.Bitten.TherianthropeInfection(_event.m.Ratman );
@@ -118,7 +118,8 @@ this.legend_rat_bite_event <- this.inherit("scripts/events/event", {
 		this.m.Ratman = ratman_candidates[this.Math.rand(0, hedge_knight_candidates.len() - 1)];
 		this.m.Bitten = bitten_candidates[this.Math.rand(0, raider_candidates.len() - 1)];
 		this.m.Score = ratman_candidates.len() * 3;
-
+	}
+	
 	function onPrepare()
 	{
 	}
@@ -129,6 +130,7 @@ this.legend_rat_bite_event <- this.inherit("scripts/events/event", {
 			"ratman",
 			this.m.Ratman.getNameOnly()
 		]);
+		
 		_vars.push([
 			"bitten",
 			this.m.Bitten.getNameOnly()
