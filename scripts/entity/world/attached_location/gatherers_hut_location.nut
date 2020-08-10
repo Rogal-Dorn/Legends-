@@ -68,9 +68,24 @@ this.gatherers_hut_location <- this.inherit("scripts/entity/world/attached_locat
 				S = "supplies/legend_cooking_spices_item"
 			});
 			_list.push({
+				R = 10,
+				P = 1.0,
+				S = "misc/legend_wolfsbane_item"
+			});
+			_list.push({
+				R = 20,
+				P = 1.0,
+				S = "misc/legend_mistletoe_item"
+			});
+			_list.push({
 				R = 30,
 				P = 1.0,
 				S = "supplies/legend_pudding_item"
+			});
+			_list.push({
+				R = 40,
+				P = 1.0,
+				S = "accessory/legend_wolfsbane_necklace_item"
 			});
 			_list.push({
 				R = 20,

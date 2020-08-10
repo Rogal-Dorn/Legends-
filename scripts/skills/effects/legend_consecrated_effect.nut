@@ -1,6 +1,6 @@
 this.legend_consecrated_effect <- this.inherit("scripts/skills/skill", {
 	m = {
-		TurnsLeft = 2
+		TurnsLeft = 4
 	},
 	function create()
 	{
@@ -32,7 +32,7 @@ this.legend_consecrated_effect <- this.inherit("scripts/skills/skill", {
 				id = 12,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Affected by injuries, losing hitpoints, bleeding and poison for [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.TurnsLeft + "[/color] more turns. Will not ressurect if killed."
+				text = "Affected by injuries, losing hitpoints, bleeding and poison for [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.TurnsLeft + "[/color] more turns."
 			}
 		];
 	}
@@ -63,8 +63,8 @@ this.legend_consecrated_effect <- this.inherit("scripts/skills/skill", {
 		_properties.IsAffectedByLosingHitpoints = true;
 		_properties.IsAffectedByInjuries = true;
 		_properties.IsAffectedByFreshInjuries = true;
-		_properties.IsImmuneToBleeding = true;
-		_properties.IsImmuneToPoison = true;
+		_properties.IsImmuneToBleeding = false;
+		_properties.IsImmuneToPoison = false;
 	}
 
 });

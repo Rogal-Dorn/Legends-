@@ -26,8 +26,8 @@ this.legend_prayer_of_faith_effect <- this.inherit("scripts/skills/skill", {
 	{
 		local actor = this.getContainer().getActor();
 		local resolve = actor.getBaseProperties().Bravery;
-		_properties.MeleeDefense += this.Math.floor(resolve * 0.10);
-		_properties.RangedDefense += this.Math.floor(resolve * 0.10);
+		_properties.MeleeDefense += this.Math.floor(resolve * 0.20);
+		_properties.RangedDefense += this.Math.floor(resolve * 0.20);
 
 	}
 
