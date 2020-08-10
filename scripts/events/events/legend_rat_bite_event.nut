@@ -139,8 +139,8 @@ this.legend_rat_bite_event <- this.inherit("scripts/events/event", {
 
 	function onClear()
 	{
-		this.m.NightOwl = null;
-		this.m.FoundItem = null;
+		this.m.Ratman = null;
+		this.m.Bitten = null;
 	}
 
 });
