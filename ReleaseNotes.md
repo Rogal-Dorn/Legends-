@@ -3833,3 +3833,4 @@ Fixes boar transform active ability not existing
 **Fixes**
 Wolfsbane necklace can now be unequipped
 Fixes some spelling and capitalization on the Wolfsbane necklace's effect
+Misclicking the bush doesn't crash to desktop when you use harvest bush skill
