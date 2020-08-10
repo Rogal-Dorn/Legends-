@@ -352,7 +352,7 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");
 		stash.removeByID("supplies.ground_grains");
-		stash.add(this.new("scripts/items/accessory/legend_wolfsbane_necklace_item"));
+		items.equip(this.new("scripts/items/accessory/legend_wolfsbane_necklace_item"));
 
 	}
 
@@ -369,7 +369,7 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 		stash.removeByID("supplies.ground_grains");
 		stash.add(this.new("scripts/items/supplies/roots_and_berries_item"));
 		stash.add(this.new("scripts/items/supplies/medicine_item"));
-		stash.add(this.new("scripts/items/accessory/legend_wolfsbane_necklace_item"));
+		items.equip(this.new("scripts/items/accessory/legend_wolfsbane_necklace_item"));
 			local cloths = [
             [0, ""],
 			[0, "cloth/legend_gambeson"],
