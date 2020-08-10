@@ -3821,6 +3821,7 @@ Drum value, condition and damage increased
 Lute  value and weight decreased, max damaged and condition slightly increased 
 Named lute damage increased 
 Druids and inquisiton begins with a wolfsbane necklace to control their transformation
+Chance for certain backgrounds to have injuries 
 It is possible for certain injuries to spread through your company via an event 
 
 **Fixes**
