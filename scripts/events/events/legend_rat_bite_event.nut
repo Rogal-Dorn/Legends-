@@ -38,7 +38,7 @@ this.legend_rat_bite_event <- this.inherit("scripts/events/event", {
 						text = _event.m.NightOwl.getName() + this.Const.MoodStateEvent[_event.m.NightOwl.getMoodState()]
 					});
 				}
-
+				_event.m.Bitten.TherianthropeInfection(_event.m.Ratman );
 				local injury = this.new("scripts/skills/injury/split_hand_injury");
 				_event.m.Ratman.getSkills().add(injury);
 

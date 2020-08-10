@@ -3814,15 +3814,14 @@ Descriptions updated for Quickhands,  bags and belts, and rally the troops
 
 14.0.0.18
 
-
 **Changes **
 Instruments use staff bash, benefit from Staff Block and staff mastery 
 Drum value, condition and damage increased 
 Lute  value and weight decreased, max damaged and condition slightly increased 
 Named lute damage increased 
 Druids and inquisiton begins with a wolfsbane necklace to control their transformation
-Chance for certain backgrounds to have injuries 
-It is possible for certain injuries to spread through your company via an event 
+Chance for certain backgrounds to be infected when hired
+It is possible for certain infections to spread through your company via an event 
 
 **Fixes**
 Fixes druid not being able to unlock some perks 
