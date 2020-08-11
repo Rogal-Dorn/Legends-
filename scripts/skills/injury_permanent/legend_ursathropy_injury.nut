@@ -33,7 +33,7 @@ this.legend_ursathropy_injury <- this.inherit("scripts/skills/injury_permanent/p
 			}
 		];
 		this.addTooltipHint(ret);
-		
+
 		if (month == monthfloor)
 		{
 			ret.push({
@@ -42,8 +42,8 @@ this.legend_ursathropy_injury <- this.inherit("scripts/skills/injury_permanent/p
 				icon = "ui/icons/special.png",
 				text = "it is currently a full moon, the transformation will happen during any battle today"
 			});
-		}			
-		
+		}
+
 		return ret;
 	}
 
@@ -58,7 +58,7 @@ this.legend_ursathropy_injury <- this.inherit("scripts/skills/injury_permanent/p
 	function onTurnStart()
 	{
 		local actor = this.getContainer().getActor();
-		if(!actor.getSkills().hasSkill("effect.legend_transformed_wolf") && !actor.getSkills().hasSkill("effect.legend_transformed_bear") && !actor.getSkills().hasSkill("effect.legend_transformed_boar") && !actor.getSkills().hasSkill("effect.legend_transformed_rat") && !actor.getSkills().hasSkill("effect.legend_transformed_tree")  && !actor.getSkills().hasSkill("effect.legend_wolfsbane"))
+		if(!actor.getSkills().hasSkill("effect.legend_transformed_wolf") && !actor.getSkills().hasSkill("effect.legend_transformed_bear") && !actor.getSkills().hasSkill("effect.legend_transformed_boar") && !actor.getSkills().hasSkill("effect.legend_transformed_rat") && !actor.getSkills().hasSkill("effect.legend_transformed_tree")  && !actor.getSkills().hasSkill("effects.legend_wolfsbane"))
 		{
 			if (!actor.getSkills().hasSkill("perk.legend_master_anger"))
 			{
@@ -66,21 +66,21 @@ this.legend_ursathropy_injury <- this.inherit("scripts/skills/injury_permanent/p
 				local day = this.World.getTime().Days;
 				local month = day / 28;
 				local monthfloor = this.Math.floor(month);
-				
+
 				if (r == 1 && this.World.getTime().IsDaytime)
 				{
 					actor.getSkills().add(this.new("scripts/skills/effects/legend_transformed_bear_effect"));
 				}
-				
+
 				if (r <= 2 && !this.World.getTime().IsDaytime && month != monthfloor)
 				{
 					actor.getSkills().add(this.new("scripts/skills/effects/legend_transformed_bear_effect"));
-				}	
-				
-				if (month == monthfloor)	
+				}
+
+				if (month == monthfloor)
 				{
 					actor.getSkills().add(this.new("scripts/skills/effects/legend_transformed_bear_effect"));
-				}	
+				}
 			}
 			else
 			{
