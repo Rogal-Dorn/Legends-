@@ -190,6 +190,7 @@ gt.Const.Tactical.Common <- {
 			}
 			else
 			{
+			
 				_entity.getSkills().add(this.new("scripts/skills/effects/legend_sanctified_effect"));
 				_entity.getSkills().add(this.new("scripts/skills/effects/legend_prayer_of_life_effect"));
 				_entity.getSkills().add(this.new("scripts/skills/effects/legend_prayer_of_faith_effect"));
@@ -213,6 +214,7 @@ gt.Const.Tactical.Common <- {
 			else
 			{
 				_entity.getSkills().add(this.new("scripts/skills/effects/legend_consecrated_effect"));
+				_entity.getSkills().add(this.new("scripts/skills/effects/holy_water_effect"));
 				_entity.getSkills().add(this.new("scripts/skills/effects/bleeding_effect"));
 				_entity.getSkills().add(this.new("scripts/skills/effects/zombie_poison_effect"));
 				local hitInfo = clone this.Const.Tactical.HitInfo;

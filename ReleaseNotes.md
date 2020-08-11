@@ -3728,7 +3728,6 @@ Clears the mustering troops on legendary bandit contract completion
 https://drive.google.com/file/d/1eScbaKttem93gLfFNLFPhJ2c1S6qaTXn/view?usp=sharing
 
 
-
 14.0.0.17  where weary weres wear wary wares
 
 **Therianthropy**
@@ -3813,8 +3812,43 @@ Cultist AI fixed to use ninetails
 AI fixed to not hit parrying daggers as much
 Descriptions updated for Quickhands,  bags and belts, and rally the troops
 
-14.0.0.17.XYZ
+14.0.0.18
+
+**Troupe **
+Instruments use staff bash, benefit from Staff Block and staff mastery
+Drum value, condition and damage increased
+Lute  value and weight decreased, max damaged and condition slightly increased
+Named lute damage increased
+Drums of life healing increased by 25%
+Drums of war fatigue increased by 20%
+
+**Inquisition**
+Begins with Holy water and a wolfsbane necklace
+Holy water is now craftable
+Prayer of faith buffed to 20% of resolve
+Prayer of life bug
+Holy flame also applies holy water effect to enemies
+Sanctified effect buffed to 4 turns
+Consecrated effect buffed to 4 turns
+
+**Druid**
+Begins with wolfs bane necklace to  stop transformations
+Fixes druid not being able to unlock some perks
+Fixes backwards transformations
+Fixes boar change images
+Fixes eenemies not dying while transformed
+Fixes AI issues while transforming
+Fixes random transformation
+Fixes not getting perks
+
+
 **Fixes**
+Chance for certain backgrounds to be infected when hired
+It is possible for certain infections to spread through your company via an event
+Fixes missing image from wolfsbane item
+Starting resource caps reduced
+Executioner now works with "debilitated"
+
 Transformed enemies no longer moonwalk
 Fixes capitalization error in chosen enemies causing them to not die
 Fixes boar ai not using the boar gore skill
@@ -3828,6 +3862,8 @@ Taking the new transformation perks no longer bugs out: "Surpress Urges", "Contr
 Fixes the rat beast-contract not working
 Fixes bear bite tooltip index heal not existing
 Fixes boar transform active ability not existing
+
+
 
 14.0.0.18b
 **Fixes**

@@ -4,7 +4,7 @@ this.legend_drums_of_war_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_drums_of_war";
 		this.m.Name = "War Chant";
-		this.m.Description = "Push allies on with your music, lowering the fatigue of all allies within 8 tiles by 4 fatigue. Must be holding a musical instrument to use.";
+		this.m.Description = "Push allies on with your music, lowering the fatigue of all allies within 8 tiles by 5 fatigue. Must be holding a musical instrument to use.";
 		this.m.Icon = "skills/active_163.png";
 		this.m.IconDisabled = "skills/active_163.png";
 		this.m.Overlay = "active_163";

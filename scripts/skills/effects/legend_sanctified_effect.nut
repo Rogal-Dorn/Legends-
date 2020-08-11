@@ -1,6 +1,6 @@
 this.legend_sanctified_effect <- this.inherit("scripts/skills/skill", {
 	m = {
-		TurnsLeft = 2
+		TurnsLeft = 4
 	},
 	function create()
 	{
