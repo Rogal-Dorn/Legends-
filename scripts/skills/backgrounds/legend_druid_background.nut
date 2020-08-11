@@ -225,26 +225,7 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 		else
 		{
 			actor.setName(this.Const.Strings.BarbarianNames[this.Math.rand(0, this.Const.Strings.BarbarianNames.len() - 1)]);
-		}
-		
-		local r = this.Math.rand(1,4)
-		if (r == 1)
-		{
-		this.m.Container.add(this.new("scripts/skills/injury_permanent/legend_aperthropy_injury"));
-		}
-		else if (r == 2)
-		{
-		this.m.Container.add(this.new("scripts/skills/injury_permanent/legend_arborthropy_injury"));
-		}
-		else if (r == 3)
-		{
-		this.m.Container.add(this.new("scripts/skills/injury_permanent/legend_lycanthropy_injury"));
-		}
-		else if (r == 4)
-		{
-		this.m.Container.add(this.new("scripts/skills/injury_permanent/legend_ursathropy_injury"));
-		}			
-		
+		}		
 	}
 
 	function onSetAppearance()
@@ -274,16 +255,6 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 		}
 	}
 
-	function onAdded()
-	{
-
-		this.character_background.onAdded();
-		local actor = this.getContainer().getActor();
-		actor.TherianthropeInfectionRandom();	
-		//this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
-	}
-
-
 	function onAddEquipment()
 	{
 		local talents = this.getContainer().getActor().getTalents();
@@ -297,6 +268,7 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 		stash.removeByID("supplies.ground_grains");
 		items.equip(this.new("scripts/items/armor/barbarians/hide_and_bone_armor"));
 		items.equip(this.new("scripts/items/helmets/barbarians/bear_headpiece"));
+		this.getContainer().getActor().TherianthropeInfectionRandom();
 	}
 
 	function onAddLegendEquipment()
@@ -350,6 +322,7 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 			armor.setUpgrade(plate)
 		}
 		items.equip(this.new("scripts/items/helmets/barbarians/bear_headpiece"));
+		this.getContainer().getActor().TherianthropeInfectionRandom();
 	}
 
 	function onSerialize( _out )
