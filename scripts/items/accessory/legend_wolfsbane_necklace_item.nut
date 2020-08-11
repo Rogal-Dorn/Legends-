@@ -61,7 +61,7 @@ this.legend_wolfsbane_necklace_item <- this.inherit("scripts/items/accessory/acc
 		});
 		return result;
 	}
-	
+
 	function onUpdateProperties( _properties )
 	{
 		this.accessory.onUpdateProperties(_properties);
@@ -73,11 +73,16 @@ this.legend_wolfsbane_necklace_item <- this.inherit("scripts/items/accessory/acc
 		this.accessory.onEquip();
 		this.addSkill(this.new("scripts/skills/effects/legend_wolfsbane_effect"));
 	}
-	
+
 	function onUnequip()
 	{
 		this.accessory.onUnequip();
-		this.getContainer().getSkills().removeByID("effects.legend_wolfsbane");
+		local a = this.getContainer().getActor();
+		if (a == null)
+		{
+			return;
+		}
+		a.getSkills().removeByID("effects.legend_wolfsbane");
 	}
 
 
