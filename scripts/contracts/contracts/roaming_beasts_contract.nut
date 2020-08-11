@@ -353,7 +353,7 @@ this.roaming_beasts_contract <- this.inherit("scripts/contracts/contract", {
 			]
 		});
 		this.m.Screens.push({
-			ID = "CollectingGhouls",
+			ID = "CollectingVermes",
 			Title = "After the battle...",
 			Text = "[img]gfx/ui/events/event_131.png[/img]{The fight over, you walk to a dead infected peasant and take a knee. A pool of poison is still dripping from the peasant\'s teeth. Instead of admiring the dental failures at hand, you instead take out a knife and saw its head off, ripping through a very tough outer layer of skin before, surprisingly, easily cutting through the muscles and tendons. You raise the head up and order the %companyname% follow suit. %employer% will be expecting some proof, after all. | The peasants\'s dead body looks more rat than man as it lays flat and unmoving. Flies are already coupling inside its mouth, sowing life on the frothy remains of death. You order %randombrother% to take its head, for %employer% will be expecting proof. | Dead peasants are scattered about. You take a knee beside one and look at its mouth. Whatever was in its lungs is still issuing forth, a wheeze burping out. Putting a cloth to your nose, you use the other hand to chop away at its neck with a blade, cutting off the head and holding it up. You order a few brothers to follow suit for %employer% will be expecting proof. | A dead infected peasant is an interesting specimen to behold. You can\'t help but wonder where it falls on the natural spectrum. Half rat and half man, these things are the thing of child\'s nightmares. You order the %companyname% to start collecting the heads of the foul things for %employer% will surely be wanting proof.}",
 			Image = "",
@@ -563,8 +563,8 @@ this.roaming_beasts_contract <- this.inherit("scripts/contracts/contract", {
 				this.Contract.m.SituationID = this.Contract.resolveSituation(this.Contract.m.SituationID, this.Contract.m.Home, this.List);
 			}
 
-		});		
-		
+		});
+
 	}
 
 	function onPrepareVariables( _vars )
