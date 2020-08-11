@@ -92,7 +92,7 @@ this.legend_harvest_tree <- this.inherit("scripts/skills/skill", {
 	{
 		local item = _user.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
 		local condition = item.getCondition();
-		local damage = this.Math.random(4,8);
+		local damage = this.Math.rand(4,8);
 		this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectChop);
 		return this.attackEntity(_user, _targetTile.getEntity());
 		item.setCondition(condition - damage);
