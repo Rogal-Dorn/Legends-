@@ -1,6 +1,11 @@
 local gt = this.getroottable();
 gt.Const.TipOfTheDay <- [
 	"As brothers we fight, as brothers we die!",
+	"Wolfsbane can help with lycanthropy",
+	"Cooking recipes can heal and turn a profit",
+	"Ancient Scrolls can have random powerful effects when read. They can be identified by scholars.",
+	"Jugglers can leap and tumble, and have a great aim.",
+	"Herbalists can create herbal cures for fun and profit",
 	"Shields can be destroyed using axes and some two-handed weapons.",
 	"If you are having trouble killing trees, try bringing axes.",
 	"Different types of shields are better suited against melee or ranged attacks.",

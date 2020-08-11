@@ -43,38 +43,38 @@ this.legends_druid_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
 		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_surpress_urges"));
 		local r = this.Math.rand(1,99);
-		
+
 		if (r <= 50 )
 		{
 			bros[0].getSkills().add(this.new("scripts/skills/injury_permanent/legend_lycanthropy_injury"));
 			this.logDebug(this.getName() + " gained lycanthropy");
-		}		
-		
+		}
+
 		if (r > 50 && r <= 80)
 		{
 			bros[0].getSkills().add(this.new("scripts/skills/injury_permanent/legend_aperthropy_injury"));
 			this.logDebug(this.getName() + " gained aperthropy");
 		}
-	
+
 		if (r > 80 && r <= 95)
 		{
 			bros[0].getSkills().add(this.new("scripts/skills/injury_permanent/legend_ursathropy_injury"));
 			this.logDebug(this.getName() + " gained ursathropy");
 		}
-	
+
 		if (r > 95 && r <= 98)
 		{
 			bros[0].getSkills().add(this.new("scripts/skills/injury_permanent/legend_arborthropy_injury"));
 			this.logDebug(this.getName() + " gained arborthropy");
 		}
-		
+
 		if (r == 99)
 		{
 			bros[0].getSkills().add(this.new("scripts/skills/injury_permanent/legend_vermesthropy_injury"));
 			this.logDebug(this.getName() + " gained vermesthropy");
-		}			
-		
-		
+		}
+
+
 		bros[0].getTags().set("IsPlayerCharacter", true);
 		bros[0].setPlaceInFormation(3);
 		bros[0].setVeteranPerks(2);
@@ -105,6 +105,7 @@ this.legends_druid_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/legend_fresh_fruit_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/roots_and_berries_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/accessory/legend_apothecary_mushrooms_item"));
+		this.World.Assets.getStash().add(this.new("scripts/items/accessory/legend_wolfsbane_necklace_item"));
 	}
 
 	function onSpawnPlayer()

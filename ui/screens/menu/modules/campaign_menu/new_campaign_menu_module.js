@@ -245,8 +245,8 @@ var NewCampaignMenuModule = function () {
 	this.mLegendBleedKillerCheckboxLabel = null;
 	this.mLegendAllBlueprintsCheckbox = null;
 	this.mLegendAllBlueprintsCheckboxLabel = null;
-	this.mLegendRelationshipCheckbox = null;
-	this.mLegendRelationshipCheckboxLabel = null;
+	this.mLegendTherianCheckbox = null;
+	this.mLegendTherianCheckboxLabel = null;
 	this.mLegendWorldEconomyCheckbox = null;
 	this.mLegendWorldEconomyCheckboxLabel = null;
 	// generics
@@ -1168,19 +1168,34 @@ NewCampaignMenuModule.prototype.buildConfigPage = function () {
 		increaseArea: '30%'
 	});
 
+	// var row = $('<div class="row"></div>');
+	// rightColumn.append(row);
+	// var control = $('<div class="control"/>');
+	// row.append(control);
+	// this.mLegendTherianCheckbox = $('<input type="checkbox" id="cb-legendrelationship"/>');
+	// control.append(this.mLegendTherianCheckbox);
+	// this.mLegendTherianCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendrelationship">Relationships</label>');
+	// control.append(this.mLegendTherianCheckboxLabel);
+	// this.mLegendTherianCheckbox.iCheck({
+	// 	checkboxClass: 'icheckbox_flat-orange',
+	// 	radioClass: 'iradio_flat-orange',
+	// 	increaseArea: '30%'
+	// });
+
 	var row = $('<div class="row"></div>');
 	rightColumn.append(row);
 	var control = $('<div class="control"/>');
 	row.append(control);
-	this.mLegendRelationshipCheckbox = $('<input type="checkbox" id="cb-legendrelationship"/>');
-	control.append(this.mLegendRelationshipCheckbox);
-	this.mLegendRelationshipCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendrelationship">Relationships</label>');
-	control.append(this.mLegendRelationshipCheckboxLabel);
-	this.mLegendRelationshipCheckbox.iCheck({
+	this.mLegendTherianCheckbox = $('<input type="checkbox" id="cb-legendtherian"/>');
+	control.append(this.mLegendTherianCheckbox);
+	this.mLegendTherianCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendtherian">Therianthropy</label>');
+	control.append(this.mLegendTherianCheckboxLabel);
+	this.mLegendTherianCheckbox.iCheck({
 		checkboxClass: 'icheckbox_flat-orange',
 		radioClass: 'iradio_flat-orange',
 		increaseArea: '30%'
 	});
+
 
 };
 
@@ -1639,13 +1654,13 @@ NewCampaignMenuModule.prototype.bindTooltips = function () {
 		elementId: 'mapconfig.legendallblueprints'
 	});
 
-	this.mLegendRelationshipCheckbox.bindTooltip({
+	this.mLegendTherianCheckbox.bindTooltip({
 		contentType: 'ui-element',
-		elementId: 'mapconfig.legendrelationship'
+		elementId: 'mapconfig.legendtherian'
 	});
-	this.mLegendRelationshipCheckboxLabel.bindTooltip({
+	this.mLegendTherianCheckboxLabel.bindTooltip({
 		contentType: 'ui-element',
-		elementId: 'mapconfig.legendrelationship'
+		elementId: 'mapconfig.legendtherian'
 	});
 
 	this.mLegendWorldEconomyCheckbox.bindTooltip({
@@ -1797,8 +1812,8 @@ NewCampaignMenuModule.prototype.unbindTooltips = function () {
 	this.mLegendAllBlueprintsCheckbox.unbindTooltip();
 	this.mLegendAllBlueprintsCheckboxLabel.unbindTooltip();
 
-	this.mLegendRelationshipCheckbox.unbindTooltip();
-	this.mLegendRelationshipCheckboxLabel.unbindTooltip();
+	this.mLegendTherianCheckbox.unbindTooltip();
+	this.mLegendTherianCheckboxLabel.unbindTooltip();
 };
 
 
@@ -2133,8 +2148,9 @@ NewCampaignMenuModule.prototype.collectSettings = function () {
 	settings.push(this.mLegendRecruitScalingCheckbox.is(":checked"));
 	settings.push(this.mLegendBleedKillerCheckbox.is(":checked"));
 	settings.push(this.mLegendAllBlueprintsCheckbox.is(":checked"));
-	settings.push(this.mLegendRelationshipCheckbox.is(":checked"));
+	settings.push(false); //settings.push(this.mLegendRelationshipCheckbox.is(":checked"));
 	settings.push(this.mLegendWorldEconomyCheckbox.is(":checked"));
+	settings.push(this.mLegendTherianCheckbox.is(":checked"));
 
 	return settings;
 }

@@ -16,7 +16,7 @@ this.legend_wolfsbane_effect <- this.inherit("scripts/skills/skill", {
 	{
 		return "This character smells like Wolfsbane and can\'t be transformed into a were-creature.";
 	}
-	
+
 
 
 

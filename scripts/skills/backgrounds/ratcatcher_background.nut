@@ -135,6 +135,14 @@ this.ratcatcher_background <- this.inherit("scripts/skills/backgrounds/character
 			local actor = this.getContainer().getActor();
 			actor.setTitle(this.Const.Strings.RatcatcherTitles[this.Math.rand(0, this.Const.Strings.RatcatcherTitles.len() - 1)]);
 		}
+
+		if ("LegendsMod" in this.World && this.World.LegendsMod != null && this.World.LegendsMod.Configs().LegendTherianthropyEnabled())
+		{
+			if(this.Math.rand(1, 50) == 1)
+			{
+				this.m.Container.add(this.new("scripts/skills/injury_permanent/legend_vermesthropy_injury"));
+			}
+		}
 	}
 
 	function onAddEquipment()

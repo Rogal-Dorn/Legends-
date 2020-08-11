@@ -758,6 +758,10 @@ this.skill <- {
 	{
 	}
 
+	function onUnlocked()
+	{
+	}
+
 	function onUpdate( _properties )
 	{
 	}

@@ -1,6 +1,6 @@
 local gt = this.getroottable();
 gt.Const.Serialization <- {
-	Version = 71
+	Version = 72
 };
 gt.Const.DLC <- {
 	Mask = 0,
@@ -215,27 +215,27 @@ gt.Const.Difficulty <- {
 	MaxResources = [
 		{
 			Food = 300,
-			Ammo = 500,
-			Medicine = 200,
-			ArmorParts = 200
+			Ammo = 250,
+			Medicine = 100,
+			ArmorParts = 100
 		},
 		{
 			Food = 250,
-			Ammo = 300,
-			Medicine = 150,
-			ArmorParts = 150
+			Ammo = 150,
+			Medicine = 75,
+			ArmorParts = 75
 		},
 		{
 			Food = 200,
-			Ammo = 250,
-			Medicine = 100,
-			ArmorParts = 150
+			Ammo = 100,
+			Medicine = 50,
+			ArmorParts = 75
 		},
 		{
 			Food = 100,
-			Ammo = 150,
-			Medicine = 60,
-			ArmorParts = 80
+			Ammo = 75,
+			Medicine = 30,
+			ArmorParts = 50
 		}
 	]
 };
