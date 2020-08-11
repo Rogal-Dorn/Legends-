@@ -119,7 +119,8 @@ this.legend_transformed_bear_effect <- this.inherit("scripts/skills/skill", {
 
 		foreach( i in this.m.Items )
 			i.drop(this.getContainer().getActor().getTile());
-
+		foreach( i in this.m.Items )
+			i.clearSkills();
 		this.m.Body = actor.getSprite("body").getBrush().Name;
 		this.m.Head = actor.getSprite("head").getBrush().Name;
 
