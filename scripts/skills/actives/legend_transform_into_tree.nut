@@ -47,7 +47,7 @@ this.legend_transform_into_tree <- this.inherit("scripts/skills/skill", {
 
 	function isUsable()
 	{
-		return !this.m.Container.hasSkill("effect.legend_transformed_wolf") && this.skill.isUsable();
+		return !this.m.Container.hasSkill("effect.legend_transformed_tree") && this.skill.isUsable();
 	}
 
 	  function isHidden()
@@ -77,7 +77,7 @@ this.legend_transform_into_tree <- this.inherit("scripts/skills/skill", {
 
 	function onRemoved()
 	{
-		this.m.Container.removeByID("effects.legend_transformed_tree");
+		this.m.Container.removeByID("effect.legend_transformed_tree");
 	}
 
 });

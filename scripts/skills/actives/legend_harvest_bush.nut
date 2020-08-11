@@ -70,6 +70,11 @@ this.legend_harvest_bush <- this.inherit("scripts/skills/skill", {
 
 	function onVerifyTarget( _originTile, _targetTile )
 	{
+		if (_targetTile.getEntity() == null)
+		{
+			return false;
+		}
+
 		if (_targetTile.getEntity().isBush())
 		{
 			return true;
