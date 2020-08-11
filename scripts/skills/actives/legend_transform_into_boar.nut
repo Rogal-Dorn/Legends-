@@ -1,14 +1,14 @@
-this.legend_transform_into_wolf <- this.inherit("scripts/skills/skill", {
+this.legend_transform_into_boar <- this.inherit("scripts/skills/skill", {
 	m = {
-		IsSpent = false
+		IsSpent = false 
 	},
 	function create()
 	{
-		this.m.ID = "actives.legend_transform_into_wolf";
-		this.m.Name = "Transform into Wolf";
-		this.m.Description = "Enables the character to turn into a wolf, requires free hands";
-		this.m.Icon = "skills/wolf2_square.png";
-		this.m.IconDisabled = "skills/wolf2_square_bw.png";
+		this.m.ID = "actives.legend_transform_into_boar";
+		this.m.Name = "Transform into Boar";
+		this.m.Description = "Enables the character to turn into a boar, requires free hands. Temporary Icon sorry";
+		this.m.Icon = "skills/blooddrop_square.png";
+		this.m.IconDisabled = "skills/blooddrop_square_bw.png";
 		this.m.Overlay = "active_12";
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.NonTargeted;
@@ -47,12 +47,12 @@ this.legend_transform_into_wolf <- this.inherit("scripts/skills/skill", {
 
 	function isUsable()
 	{
-		return !this.m.Container.hasSkill("effect.legend_transformed_wolf") && this.skill.isUsable();
+		return !this.m.Container.hasSkill("effect.legend_transformed_boar") && this.skill.isUsable();
 	}
 
 	  function isHidden()
     {
-        return this.m.IsHidden || !this.getContainer().getActor().getItems().hasEmptySlot(this.Const.ItemSlot.Mainhand);
+        return this.m.IsHidden || !this.getContainer().getActor().getItems().hasEmptySlot(this.Const.ItemSlot.Mainhand) || !this.isUsable();
     }
 
 
@@ -63,11 +63,9 @@ this.legend_transform_into_wolf <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
-		if (!this.m.IsSpent)
-		{
-			this.m.Container.add(this.new("scripts/skills/effects/legend_transformed_wolf_effect"));
-			this.m.IsSpent = true;
-		}
+
+			this.m.Container.add(this.new("scripts/skills/effects/legend_transformed_boar_effect"));
+
 	}
 
 	function onTurnStart()
@@ -77,7 +75,7 @@ this.legend_transform_into_wolf <- this.inherit("scripts/skills/skill", {
 
 	function onRemoved()
 	{
-		this.m.Container.removeByID("effect.legend_transformed_wolf");
+		this.m.Container.removeByID("effect.legend_transformed_boar"); 
 	}
 
 });

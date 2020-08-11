@@ -7,7 +7,7 @@ this.legend_rat_bite_skill <- this.inherit("scripts/skills/skill", {
 		this.m.Description = "A vicious bite with a 15% increased chance to hit the head and 100% chance to infect";
 		this.m.KilledString = "Gnawed";
 		this.m.Icon = "skills/active_24.png";
-		this.m.IconDisabled = "skills/active_24_sw.png";
+		this.m.IconDisabled = "skills/active_24_bw.png";
 		this.m.Overlay = "active_24";
 		this.m.SoundOnUse = [
 			"sounds/enemies/zombie_bite_01.wav",

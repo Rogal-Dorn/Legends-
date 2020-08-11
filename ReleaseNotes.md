@@ -3813,4 +3813,25 @@ Cultist AI fixed to use ninetails
 AI fixed to not hit parrying daggers as much
 Descriptions updated for Quickhands,  bags and belts, and rally the troops
 
+14.0.0.17.XYZ
+**Fixes**
+Transformed enemies no longer moonwalk
+Fixes capitalization error in chosen enemies causing them to not die
+Fixes boar ai not using the boar gore skill
+Fixes problem with assigning random infection
+Fixes thrall lycanthropy ai causing crash
+Can no longer cast tree transform multiple times
+String no longer gets cloned which causes crash
+Fixes druids not getting the Transformation Infections in the right place causing crashes
+AI no longer gets reset at end of turn for your brother even if they have perks to prevent it
+Taking the new transformation perks no longer bugs out: "Surpress Urges", "Control Instincts", "Master Anger"
+Fixes the rat beast-contract not working
+Fixes bear bite tooltip index heal not existing
+Fixes boar transform active ability not existing 
 
+14.0.0.18b
+**Fixes**
+Wolfsbane necklace can now be unequipped
+Fixes some spelling and capitalization on the Wolfsbane necklace's effect
+Misclicking the bush doesn't crash to desktop when you use harvest bush skill
+Fixes uncommon error with transforms crashing

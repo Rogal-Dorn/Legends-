@@ -73,9 +73,7 @@ this.barbarian_marauder <- this.inherit("scripts/entity/tactical/human", {
 		if(r == 1)
 			{
 				this.m.Skills.add(this.new("scripts/skills/actives/legend_boar_charge"));
-				this.m.Skills.add(this.new("scripts/skills/injury_permanent/legend_aperthropy_injury"));
-				this.m.AIAgent = this.new("scripts/ai/tactical/agents/boar_agent");
-				
+				this.m.Skills.add(this.new("scripts/skills/injury_permanent/legend_aperthropy_injury"));	
 			}
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 			{
