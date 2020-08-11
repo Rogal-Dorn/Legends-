@@ -3866,6 +3866,11 @@ Fixes boar transform active ability not existing
 
 
 14.0.0.18b
+**Changes**
+Relationships removed as campaign option (will return in the future)
+Theriantropy added as a new campaign option.
+Therianthropic infection chances reduced to 10% from 25%
+
 **Fixes**
 Wolfsbane necklace can now be unequipped
 Fixes some spelling and capitalization on the Wolfsbane necklace's effect

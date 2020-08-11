@@ -59,6 +59,11 @@ this.legend_rat_bite_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
+		if (!this.World.LegendsMod.Configs().LegendTherianthropyEnabled())
+		{
+			return;
+		}
+
 		local currentTile = this.World.State.getPlayer().getTile();
 
 		if (!currentTile.HasRoad)
@@ -119,7 +124,7 @@ this.legend_rat_bite_event <- this.inherit("scripts/events/event", {
 		this.m.Bitten = bitten_candidates[this.Math.rand(0, raider_candidates.len() - 1)];
 		this.m.Score = ratman_candidates.len() * 3;
 	}
-	
+
 	function onPrepare()
 	{
 	}
@@ -130,7 +135,7 @@ this.legend_rat_bite_event <- this.inherit("scripts/events/event", {
 			"ratman",
 			this.m.Ratman.getNameOnly()
 		]);
-		
+
 		_vars.push([
 			"bitten",
 			this.m.Bitten.getNameOnly()
