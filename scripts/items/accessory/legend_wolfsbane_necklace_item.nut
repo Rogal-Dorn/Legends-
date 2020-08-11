@@ -77,12 +77,11 @@ this.legend_wolfsbane_necklace_item <- this.inherit("scripts/items/accessory/acc
 	function onUnequip()
 	{
 		this.accessory.onUnequip();
-		local a = this.getContainer().getActor();
-		if (a == null)
+		if (this.getContainer().getActor() != null)
 		{
-			return;
+			this.getContainer().getActor().getSkills().removeByID("effects.legend_wolfsbane");
 		}
-		a.getSkills().removeByID("effects.legend_wolfsbane");
+
 	}
 
 
