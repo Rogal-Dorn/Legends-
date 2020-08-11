@@ -13,7 +13,7 @@ this.legend_aperthropy_injury <- this.inherit("scripts/skills/injury_permanent/p
 	{
 		local day = this.World.getTime().Days;
 		local month = day / 28;
-		local monthfloor = this.Math.floor(month);	
+		local monthfloor = this.Math.floor(month);
 		local ret = [
 			{
 				id = 1,
@@ -42,7 +42,7 @@ this.legend_aperthropy_injury <- this.inherit("scripts/skills/injury_permanent/p
 				icon = "ui/icons/special.png",
 				text = "it is currently a full moon, the transformation will happen during any battle today"
 			});
-		}		
+		}
 		return ret;
 	}
 
@@ -58,40 +58,40 @@ this.legend_aperthropy_injury <- this.inherit("scripts/skills/injury_permanent/p
 	{
 		local actor = this.getContainer().getActor();
 		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Accessory);
-		if(!actor.getSkills().hasSkill("effect.legend_transformed_wolf") && !actor.getSkills().hasSkill("effect.legend_transformed_bear") && !actor.getSkills().hasSkill("effect.legend_transformed_boar") && !actor.getSkills().hasSkill("effect.legend_transformed_rat") && !actor.getSkills().hasSkill("effect.legend_transformed_tree") && !actor.getSkills().hasSkill("effect.legend_wolfsbane"))
+		if(!actor.getSkills().hasSkill("effect.legend_transformed_wolf") && !actor.getSkills().hasSkill("effect.legend_transformed_bear") && !actor.getSkills().hasSkill("effect.legend_transformed_boar") && !actor.getSkills().hasSkill("effect.legend_transformed_rat") && !actor.getSkills().hasSkill("effect.legend_transformed_tree") && !actor.getSkills().hasSkill("effects.legend_wolfsbane"))
 		{
-		
+
 			if (!actor.getSkills().hasSkill("perk.legend_master_anger"))
 			{
-			
+
 				local r = this.Math.rand(1,10);
 				local day = this.World.getTime().Days;
 				local month = day / 28;
 				local monthfloor = this.Math.floor(month);
-				
+
 				if (r == 1 && this.World.getTime().IsDaytime && month != monthfloor)
 				{
 					actor.getSkills().add(this.new("scripts/skills/effects/legend_transformed_boar_effect"));
 				}
-				
+
 				if (r <= 2 && !this.World.getTime().IsDaytime && month != monthfloor)
 				{
 					actor.getSkills().add(this.new("scripts/skills/effects/legend_transformed_boar_effect"));
-				}	
-				
-				if (month == monthfloor)	
+				}
+
+				if (month == monthfloor)
 				{
 					actor.getSkills().add(this.new("scripts/skills/effects/legend_transformed_boar_effect"));
-				}	
+				}
 			}
 			else
 			{
 
-				actor.getSkills().add(this.new("scripts/skills/actives/legend_transform_into_boar"));
+				actor.getSkills().add(this.new("scripts/skills/actives/legend_boar_charge"));
 
-			}	
+			}
 		}
-	
+
 	}
 
 });

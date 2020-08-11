@@ -5,7 +5,7 @@ this.legend_lycanthropy_injury <- this.inherit("scripts/skills/injury_permanent/
 		this.permanent_injury.create();
 		this.m.ID = "injury.legend_lycanthropy";
 		this.m.Name = "Lycanthrope";
-		this.m.Description = "This character is cursed with lycanthropy and will transform into a wolf, dropping all gear and attacking wildly unless controlled.";
+		this.m.Description = "This character is cursed with lycanthropy and will transform into a wolf, dropping all gear and attacking wildly unless controlled. It is rumoured wolfsbane may help.";
 		this.m.Icon = "ui/injury/injury_lycanthropy.png";
 	}
 
@@ -33,7 +33,7 @@ this.legend_lycanthropy_injury <- this.inherit("scripts/skills/injury_permanent/
 			}
 		];
 		this.addTooltipHint(ret);
-		
+
 		if (this.World.getTime().IsDaytime && month != monthfloor)
 		{
 			ret.push({
@@ -42,8 +42,8 @@ this.legend_lycanthropy_injury <- this.inherit("scripts/skills/injury_permanent/
 				icon = "ui/icons/special.png",
 				text = "10% chance to transform per turn during battle in daylight."
 			});
-		}		
-		
+		}
+
 		if (!this.World.getTime().IsDaytime && month != monthfloor)
 		{
 			ret.push({
@@ -53,7 +53,7 @@ this.legend_lycanthropy_injury <- this.inherit("scripts/skills/injury_permanent/
 				text = "20% chance to transform per turn during battle at night."
 			});
 		}
-		
+
 		if (month == monthfloor)
 		{
 			ret.push({
@@ -62,8 +62,8 @@ this.legend_lycanthropy_injury <- this.inherit("scripts/skills/injury_permanent/
 				icon = "ui/icons/special.png",
 				text = "it is currently a full moon, the transformation will happen during any battle tonight"
 			});
-		}				
-		
+		}
+
 		return ret;
 	}
 
@@ -78,33 +78,33 @@ this.legend_lycanthropy_injury <- this.inherit("scripts/skills/injury_permanent/
 	function onTurnStart()
 	{
 		local actor = this.getContainer().getActor();
-		if(!actor.getSkills().hasSkill("effect.legend_transformed_wolf") && !actor.getSkills().hasSkill("effect.legend_transformed_bear") && !actor.getSkills().hasSkill("effect.legend_transformed_boar") && !actor.getSkills().hasSkill("effect.legend_transformed_rat") && !actor.getSkills().hasSkill("effect.legend_transformed_tree") && !actor.getSkills().hasSkill("effect.legend_wolfsbane"))
+		if(!actor.getSkills().hasSkill("effect.legend_transformed_wolf") && !actor.getSkills().hasSkill("effect.legend_transformed_bear") && !actor.getSkills().hasSkill("effect.legend_transformed_boar") && !actor.getSkills().hasSkill("effect.legend_transformed_rat") && !actor.getSkills().hasSkill("effect.legend_transformed_tree") && !actor.getSkills().hasSkill("effects.legend_wolfsbane"))
 		{
 
-		
+
 			if (!actor.getSkills().hasSkill("perk.legend_master_anger")  )
 			{
 				local r = this.Math.rand(1,10);
 				local day = this.World.getTime().Days;
 				local month = day / 28;
 				local monthfloor = this.Math.floor(month);
-				
+
 				if (r == 1 && this.World.getTime().IsDaytime && month != monthfloor)
 				{
 					actor.getSkills().add(this.new("scripts/skills/effects/legend_transformed_wolf_effect"));
 				}
-				
+
 				if (r <= 2 && !this.World.getTime().IsDaytime && month != monthfloor)
 				{
 
 					actor.getSkills().add(this.new("scripts/skills/effects/legend_transformed_wolf_effect"));
 
-				}	
-				
-				if (month == monthfloor)	
+				}
+
+				if (month == monthfloor)
 				{
-					actor.getSkills().add(this.new("scripts/skills/effects/legend_transformed_wolf_effect"));		
-				}	
+					actor.getSkills().add(this.new("scripts/skills/effects/legend_transformed_wolf_effect"));
+				}
 			}
 			else
 			{
@@ -112,7 +112,7 @@ this.legend_lycanthropy_injury <- this.inherit("scripts/skills/injury_permanent/
 
 			}
 		}
-	
+
 	}
 
 });

@@ -284,7 +284,6 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 		stash.removeByID("supplies.ground_grains");
 		stash.add(this.new("scripts/items/supplies/roots_and_berries_item"));
 		stash.add(this.new("scripts/items/supplies/medicine_item"));
-
 			local cloths = [
             [0, ""],
 			[0, "cloth/legend_gambeson"],

@@ -16,7 +16,7 @@ this.legend_drums_of_war_effect <- this.inherit("scripts/skills/skill", {
 	function onAdded()
 	{
 		local actor = this.getContainer().getActor();
-		actor.setFatigue(this.Math.max(0, actor.getFatigue() - 4));
+		actor.setFatigue(this.Math.max(0, actor.getFatigue() - 5));
 		this.spawnIcon(this.m.Overlay, actor.getTile());
 	}
 

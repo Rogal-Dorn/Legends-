@@ -3742,7 +3742,6 @@ https://drive.google.com/file/d/15C7nyBk8OMkrcIk9SQ4Tqh7u6kwe9eP3/view?usp=shari
 https://drive.google.com/file/d/1eScbaKttem93gLfFNLFPhJ2c1S6qaTXn/view?usp=sharing
 
 
-
 14.0.0.17  where weary weres wear wary wares
 
 **Therianthropy**
@@ -3833,11 +3832,50 @@ AI fixed to not hit parrying daggers as much
 Descriptions updated for Quickhands,  bags and belts, and rally the troops
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 >>>>>>> d299c1d87b0f32e6da0e8eca601d2575c6d3953c
 =======
 14.0.0.17.XYZ
+=======
+14.0.0.18
+
+**Troupe **
+Instruments use staff bash, benefit from Staff Block and staff mastery
+Drum value, condition and damage increased
+Lute  value and weight decreased, max damaged and condition slightly increased
+Named lute damage increased
+Drums of life healing increased by 25%
+Drums of war fatigue increased by 20%
+
+**Inquisition**
+Begins with Holy water and a wolfsbane necklace
+Holy water is now craftable
+Prayer of faith buffed to 20% of resolve
+Prayer of life bug
+Holy flame also applies holy water effect to enemies
+Sanctified effect buffed to 4 turns
+Consecrated effect buffed to 4 turns
+
+**Druid**
+Begins with wolfs bane necklace to  stop transformations
+Fixes druid not being able to unlock some perks
+Fixes backwards transformations
+Fixes boar change images
+Fixes eenemies not dying while transformed
+Fixes AI issues while transforming
+Fixes random transformation
+Fixes not getting perks
+
+
+>>>>>>> 4461206f596c203dc8284ecf52065ad62c23edb3
 **Fixes**
+Chance for certain backgrounds to be infected when hired
+It is possible for certain infections to spread through your company via an event
+Fixes missing image from wolfsbane item
+Starting resource caps reduced
+Executioner now works with "debilitated"
+
 Transformed enemies no longer moonwalk
 Fixes capitalization error in chosen enemies causing them to not die
 Fixes boar ai not using the boar gore skill
@@ -3850,12 +3888,24 @@ AI no longer gets reset at end of turn for your brother even if they have perks 
 Taking the new transformation perks no longer bugs out: "Surpress Urges", "Control Instincts", "Master Anger"
 Fixes the rat beast-contract not working
 Fixes bear bite tooltip index heal not existing
-Fixes boar transform active ability not existing 
+Fixes boar transform active ability not existing
+
+
 
 14.0.0.18b
+**Changes**
+Relationships removed as campaign option (will return in the future)
+Theriantropy added as a new campaign option.
+Therianthropic infection chances reduced to 10% from 25%
+
 **Fixes**
 Wolfsbane necklace can now be unequipped
 Fixes some spelling and capitalization on the Wolfsbane necklace's effect
 Misclicking the bush doesn't crash to desktop when you use harvest bush skill
 Fixes uncommon error with transforms crashing
+<<<<<<< HEAD
 >>>>>>> 692b0b22b1950f2d69c97f562004ec873e763d66
+=======
+Fixes Vermin Ending of roaming beast contract
+Fixes loading of save game when player has warlock perks selected (maxMedicine issues)
+>>>>>>> 4461206f596c203dc8284ecf52065ad62c23edb3
