@@ -3042,6 +3042,11 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 	function TherianthropeInfection(_killer)
 	{
+		if (!this.World.LegendsMod.Configs().LegendTherianthropyEnabled())
+		{
+			return;
+		}
+
 		local TherianthropyGroup = [
 							[this.Const.Perks.PerkDefs.LegendTrueForm],
 							[],
@@ -3058,7 +3063,6 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			this.getBackground().addPerkGroup(TherianthropyGroup);
 			this.logDebug(this.getName() + " gained aperthropy");
 		}
-
 
 		if (_killer.getSkills().hasSkill("injury.legend_arborthropy") && !this.getSkills().hasSkill("injury.legend_arborthropy"))
 		{
@@ -3084,6 +3088,12 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 	function TherianthropeInfectionRandom()
 	{
+
+		if (!this.World.LegendsMod.Configs().LegendTherianthropyEnabled())
+		{
+			return;
+		}
+
 		local TherianthropyGroup = [
 							[this.Const.Perks.PerkDefs.LegendTrueForm],
 							[],

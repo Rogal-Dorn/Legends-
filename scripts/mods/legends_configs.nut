@@ -10,7 +10,8 @@ this.legends_configs <- {
         IsBleedKiller = false,
         IsBlueprintsVisible = false,
         IsRelationship = false,
-        IsWorldEconomy = false
+        IsWorldEconomy = false,
+        IsTherian = false
     },
 
     function Update (_settings)
@@ -26,6 +27,7 @@ this.legends_configs <- {
         this.m.IsBlueprintsVisible = _settings.LegendAllBlueprints;
         this.m.IsRelationship = _settings.LegendRelationship;
         this.m.IsWorldEconomy = _settings.LegendWorldEconomy;
+        this.m.IsTherian = _settings.LegendTherian
     }
 
     function LegendArmorsEnabled()
@@ -83,6 +85,11 @@ this.legends_configs <- {
         return this.m.IsWorldEconomy
     }
 
+    function LegendTherianthropyEnabled()
+    {
+        return this.m.IsTherian
+    }
+
     function onSerialize(_out)
     {
         _out.writeBool(this.m.IsArmor);
@@ -96,6 +103,7 @@ this.legends_configs <- {
         _out.writeBool(this.m.IsBlueprintsVisible);
         _out.writeBool(this.m.IsRelationship);
         _out.writeBool(this.m.IsWorldEconomy);
+        _out.writeBool(this.m.IsTherian);
     }
 
     function onDeserialize(_in)
@@ -131,6 +139,11 @@ this.legends_configs <- {
             this.m.IsWorldEconomy = _in.readBool();
         }
 
+        this.m.IsTherian = true;
+        if (_in.getMetaData().getVersion() >= 72)
+        {
+            this.m.IsTherian = _in.readBool();
+        }
 
     }
 }

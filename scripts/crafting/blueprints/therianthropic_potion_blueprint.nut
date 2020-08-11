@@ -42,6 +42,15 @@ this.therianthropic_potion_blueprint <- this.inherit("scripts/crafting/blueprint
 		this.initSkills(skills);
 	}
 
+	function isQualified()
+	{
+		if (!this.World.LegendsMod.Configs().LegendTherianthropyEnabled())
+		{
+			return false;
+		}
+		return this.blueprint.isQualified();
+	}
+
 	function onCraft( _stash )
 	{
 		_stash.add(this.new("scripts/items/accessory/therianthropy_potion_item"));
