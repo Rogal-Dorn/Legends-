@@ -43,7 +43,7 @@ this.monk_background <- this.inherit("scripts/skills/backgrounds/character_backg
 		this.m.Hairs = this.Const.Hair.Monk;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Monk;
-		this.m.Body = "bust_naked_body_00";
+		this.m.Bodies = this.Const.Bodies.Skinny;
 		this.m.IsOffendedByViolence = true;
 	}
 

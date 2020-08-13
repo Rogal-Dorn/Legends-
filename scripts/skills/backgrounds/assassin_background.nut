@@ -9,15 +9,14 @@ this.assassin_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.BackgroundDescription = "";
 		this.m.GoodEnding = "";
 		this.m.BadEnding = "";
-		this.m.HiringCost = 95;
-		this.m.DailyCost = 20;
+		this.m.HiringCost = 800;
+		this.m.DailyCost = 25;
 		this.m.Excluded = [
 			"trait.huge",
 			"trait.weasel",
 			"trait.teamplayer",
 			"trait.night_blind",
 			"trait.clubfooted",
-			"trait.brute",
 			"trait.dumb",
 			"trait.loyal",
 			"trait.clumsy",
@@ -44,7 +43,7 @@ this.assassin_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.Hairs = this.Const.Hair.CommonMale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.Body = "bust_naked_body_00";
+		this.m.Bodies = this.Const.Bodies.Skinny;
 		this.m.Level = 4;
 	}
 

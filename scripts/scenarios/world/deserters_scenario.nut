@@ -6,7 +6,7 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		this.m.Name = "Deserters";
 		this.m.Description = "[p=c][img]gfx/ui/events/event_88.png[/img][/p][p]For too long have you been dragged from one bloody battle to another at the whim of lords sitting in high towers. Last night, you absconded from camp together with three others. You\'re dressed like soldiers still, but you\'re deserters, and the noose will be your end if you stay here for too long.\n\n[color=#bcad8c]Deserters:[/color] Start with three deserters and decent armor, but lower funds and a noble house that wants to hunt you down.\n[color=#bcad8c]First to Run:[/color] Your men always are first to act in the very first round of combat.[/p]";
 		this.m.Difficulty = 2;
-		this.m.Order = 6;
+		this.m.Order = 50;
 	}
 
 	function isValid()
@@ -81,7 +81,7 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 	{
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
-		this.World.Assets.m.BusinessReputation = 100;
+		this.World.Assets.m.BusinessReputation = 150;
 		this.World.Assets.m.Money = this.World.Assets.m.Money / 2;
 	}
 
@@ -93,7 +93,7 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		{
 			randomVillage = this.World.EntityManager.getSettlements()[i];
 
-			if (randomVillage.isMilitary() && !randomVillage.isIsolatedFromRoads())
+			if (randomVillage.isMilitary() && !randomVillage.isIsolatedFromRoads() && !randomVillage.isSouthern())
 			{
 				break;
 			}

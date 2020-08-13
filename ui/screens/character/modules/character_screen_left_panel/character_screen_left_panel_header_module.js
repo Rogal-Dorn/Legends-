@@ -2,7 +2,7 @@
  *  @Project:		Battle Brothers
  *	@Company:		Overhype Studios
  *
- *	@Copyright:		(c) Overhype Studios | 2013 - 2017
+ *	@Copyright:		(c) Overhype Studios | 2013 - 2020
  * 
  *  @Author:		Overhype Studios
  *  @Date:			24.05.2017 / Reworked: 26.11.2017
@@ -426,8 +426,13 @@ CharacterScreenLeftPanelHeaderModule.prototype.createDismissDialogContent = func
     }
 
     var result = $('<div class="dismiss-character-container"/>');
+    var titleLabel;
 
-	var titleLabel = $('<div class="title-label title-font-normal font-bold font-color-title">Really dismiss ' + selectedBrother[CharacterScreenIdentifier.Entity.Character.Name] + '?</div>');
+    if (selectedBrother['dailyMoneyCost'] == 0)
+        titleLabel = $('<div class="title-label title-font-normal font-bold font-color-title">Really free ' + selectedBrother[CharacterScreenIdentifier.Entity.Character.Name] + '?</div>');
+    else
+        titleLabel = $('<div class="title-label title-font-normal font-bold font-color-title">Really dismiss ' + selectedBrother[CharacterScreenIdentifier.Entity.Character.Name] + '?</div>');
+
 	result.append(titleLabel);
 
 	var textLabel = $('<div class="label text-font-medium font-color-description font-style-normal">' + selectedBrother[CharacterScreenIdentifier.Entity.Character.Name] + ' will permanently leave you and place his <br/>current equipment in the stash.</div>');
@@ -441,8 +446,14 @@ CharacterScreenLeftPanelHeaderModule.prototype.createDismissDialogContent = func
 	var checkbox = $('<input type="checkbox" class="compensation-checkbox" id="compensation" name="display"/>');
 	retirementPackage.append(checkbox);
 
-	var checkboxLabel = $('<label class="blub text-font-medium font-color-subtitle font-style-normal" for="compensation">Pay <img src="' + Path.GFX + Asset.ICON_MONEY_SMALL + '"/>' + (Math.max(1, selectedBrother['daysWithCompany']) * 10) + ' Compensation</label>');
-	retirementPackage.append(checkboxLabel);
+    var checkboxLabel;
+
+    if (selectedBrother['dailyMoneyCost'] == 0)
+        checkboxLabel = $('<label class="blub text-font-medium font-color-subtitle font-style-normal" for="compensation">Pay <img src="' + Path.GFX + Asset.ICON_MONEY_SMALL + '"/>' + (Math.max(1, selectedBrother['daysWithCompany']) * 10) + ' Reparations</label>');
+    else
+        checkboxLabel = $('<label class="blub text-font-medium font-color-subtitle font-style-normal" for="compensation">Pay <img src="' + Path.GFX + Asset.ICON_MONEY_SMALL + '"/>' + (Math.max(1, selectedBrother['daysWithCompany']) * 10) + ' Compensation</label>');
+
+    retirementPackage.append(checkboxLabel);
 
 	checkboxLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterScreen.DismissPopupDialog.Compensation });
 

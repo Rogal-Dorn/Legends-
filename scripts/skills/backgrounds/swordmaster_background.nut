@@ -51,7 +51,7 @@ this.swordmaster_background <- this.inherit("scripts/skills/backgrounds/characte
 		this.m.Hairs = this.Const.Hair.TidyMale;
 		this.m.HairColors = this.Const.HairColors.Old;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.Body = "bust_naked_body_01";
+		this.m.Bodies = this.Const.Bodies.Muscular;
 		this.m.Level = this.Math.rand(3, 5);
 		this.m.IsCombatBackground = true;
 	}

@@ -58,7 +58,10 @@ var NewCampaignMenuModule = function()
 	this.mEvilGreenskinsCheckbox = null;
 	this.mEvilGreenskinsLabel = null;
 	this.mEvilUndeadCheckbox = null;
-	this.mEvilUndeadLabel = null;
+    this.mEvilUndeadLabel = null;
+    this.mEvilCrusadeCheckbox = null;
+    this.mEvilCrusadeLabel = null;
+    this.mEvilCrusadeControl = null;
 	this.mEvilNoneCheckbox = null;
 	this.mEvilNoneLabel = null;
 	this.mEvilNoDesctructionCheckbox = null;
@@ -183,7 +186,7 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv)
 		row.append(evilWarControl);
 		this.mEvilWarCheckbox = $('<input type="radio" id="cb-evil-war" name="evil"/>');
 		evilWarControl.append(this.mEvilWarCheckbox);
-		this.mEvilWarLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-evil-war">War</label>');
+		this.mEvilWarLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-evil-war">Nobles at War</label>');
 		evilWarControl.append(this.mEvilWarLabel);
 		this.mEvilWarCheckbox.iCheck({
 			checkboxClass: 'icheckbox_flat-orange',
@@ -228,7 +231,27 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv)
 		{
 			var self = _event.data;
 			self.mEvil = 3;
-		});
+        });
+
+        this.mEvilCrusadeControl = $('<div class="control"></div>');
+        row.append(this.mEvilCrusadeControl);
+        this.mEvilCrusadeCheckbox = $('<input type="radio" id="cb-evil-crusade" name="evil"/>');
+        this.mEvilCrusadeControl.append(this.mEvilCrusadeCheckbox);
+        this.mEvilCrusadeLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-evil-crusade">Holy War</label>');
+        this.mEvilCrusadeControl.append(this.mEvilCrusadeLabel);
+        this.mEvilCrusadeCheckbox.iCheck({
+            checkboxClass: 'icheckbox_flat-orange',
+            radioClass: 'iradio_flat-orange',
+            increaseArea: '30%'
+        });
+        this.mEvilCrusadeCheckbox.on('ifChecked', null, this, function (_event)
+        {
+            var self = _event.data;
+            self.mEvil = 4;
+        });
+
+        var space = $('<div class="control permanent-destruction-control"/>');
+        row.append(space);
 
 		var extraLateControl = $('<div class="control permanent-destruction-control"/>');
 		row.append(extraLateControl);
@@ -272,16 +295,6 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv)
 			_image.removeClass('display-none').addClass('display-block');
 			//_image.centerImageWithinParent();
 		}, null, 'display-none banner-image');
-
-		// seed
-		var row = $('<div class="row map-seed-control" />');
-		leftColumn.append(row);
-		var title = $('<div class="title title-font-big font-color-title">Map Seed</div>');
-		row.append(title);
-
-		var inputLayout = $('<div class="l-input"/>');
-		row.append(inputLayout);
-		this.mSeed = inputLayout.createInput('', 0, 10, 1, null, 'title-font-big font-bold font-color-brother-name');
 
 	this.mThirdPanel = $('<div class="display-none"/>');
     contentContainer.append(this.mThirdPanel);
@@ -480,6 +493,29 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv)
 			increaseArea: '30%'
         });
 
+        // seed
+        var row = $('<div class="row map-seed-control" />');
+        leftColumn.append(row);
+        var title = $('<div class="title title-font-big font-color-title">Map Seed</div>');
+        row.append(title);
+
+        var inputLayout = $('<div class="l-input"/>');
+        row.append(inputLayout);
+        this.mSeed = inputLayout.createInput('', 0, 10, 1, null, 'title-font-big font-bold font-color-brother-name');
+
+        var explorationControl = $('<div class="control ironman-control"/>');
+        row.append(explorationControl);
+        this.mExplorationCheckbox = $('<input type="checkbox" id="cb-exploration"/>');
+        explorationControl.append(this.mExplorationCheckbox);
+        this.mExplorationCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-exploration">Unexplored Map</label>');
+        explorationControl.append(this.mExplorationCheckboxLabel);
+        this.mExplorationCheckbox.iCheck({
+            checkboxClass: 'icheckbox_flat-orange',
+            radioClass: 'iradio_flat-orange',
+            increaseArea: '30%'
+        });
+
+
     this.mFirstPanel = $('<div class="display-none"/>');
     contentContainer.append(this.mFirstPanel);
 
@@ -493,6 +529,14 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv)
         leftColumn.append(row);
         var title = $('<div class="title title-font-big font-color-title">Company Origin</div>');
         row.append(title);
+
+        var listContainerLayout = $('<div class="l-list-container"/>');
+        row.append(listContainerLayout);
+        this.mScenarioListContainer = listContainerLayout.createList(5, null, true);
+        this.mScenarioListScrollContainer = this.mScenarioListContainer.findListScrollContainer();
+
+        var row = $('<div class="row4" />');
+        this.mScenarioListScrollContainer.append(row);
         this.mScenariosRow = row;
 
         var row = $('<div class="row3 text-font-medium font-color-description" />');
@@ -630,6 +674,9 @@ NewCampaignMenuModule.prototype.bindTooltips = function ()
 	this.mIronmanCheckboxLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.Ironman });
 	this.mIronmanCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.Ironman });
 
+    this.mExplorationCheckboxLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.Exploration });
+    this.mExplorationCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.Exploration });
+
 	this.mEconomicDifficultyEasyLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.EconomicDifficultyEasy });
 	this.mEconomicDifficultyEasyCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.EconomicDifficultyEasy });
 
@@ -661,7 +708,10 @@ NewCampaignMenuModule.prototype.bindTooltips = function ()
 	this.mEvilGreenskinsCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.EvilGreenskins });
 
 	this.mEvilUndeadLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.EvilUndead });
-	this.mEvilUndeadCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.EvilUndead });
+    this.mEvilUndeadCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.EvilUndead });
+
+    this.mEvilCrusadeLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.EvilCrusade });
+    this.mEvilCrusadeCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.EvilCrusade });
 
 	this.mEvilPermanentDestructionLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.EvilPermanentDestruction });
 	this.mEvilPermanentDestructionCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.EvilPermanentDestruction });
@@ -702,6 +752,9 @@ NewCampaignMenuModule.prototype.unbindTooltips = function ()
 	this.mIronmanCheckboxLabel.unbindTooltip();
 	this.mIronmanCheckbox.unbindTooltip();
 
+    this.mExplorationCheckboxLabel.unbindTooltip();
+    this.mExplorationCheckbox.unbindTooltip();
+
 	this.mEvilRandomLabel.unbindTooltip();
 	this.mEvilRandomCheckbox.unbindTooltip();
 
@@ -715,7 +768,10 @@ NewCampaignMenuModule.prototype.unbindTooltips = function ()
 	this.mEvilGreenskinsCheckbox.unbindTooltip();
 
 	this.mEvilUndeadLabel.unbindTooltip();
-	this.mEvilUndeadCheckbox.unbindTooltip();
+    this.mEvilUndeadCheckbox.unbindTooltip();
+
+    this.mEvilCrusadeLabel.unbindTooltip();
+    this.mEvilCrusadeCheckbox.unbindTooltip();
 
 	this.mEvilPermanentDestructionLabel.unbindTooltip();
 	this.mEvilPermanentDestructionCheckbox.unbindTooltip();
@@ -902,6 +958,19 @@ NewCampaignMenuModule.prototype.setStartingScenarios = function (_data)
 }
 
 
+NewCampaignMenuModule.prototype.setCrusadeCampaignVisible = function (_data)
+{
+    if(_data)
+    {
+        this.mEvilCrusadeControl.addClass('display-block').removeClass('display-none');
+    }
+    else
+    {
+        this.mEvilCrusadeControl.removeClass('display-block').addClass('display-none');
+    }
+}
+
+
 NewCampaignMenuModule.prototype.addStartingScenario = function (_index, _data, _row)
 {
     var self = this;
@@ -964,7 +1033,8 @@ NewCampaignMenuModule.prototype.collectSettings = function()
 	settings.push(this.mDifficulty);
 	settings.push(this.mEconomicDifficulty);
 	settings.push(this.mBudgetDifficulty);
-	settings.push(this.mIronmanCheckbox.is(':checked'));
+    settings.push(this.mIronmanCheckbox.is(':checked'));
+    settings.push(this.mExplorationCheckbox.is(':checked'));
 	settings.push(this.mEvil);
 	settings.push(this.mEvilPermanentDestructionCheckbox.is(':checked'));
     settings.push(this.mSeed.getInputText());

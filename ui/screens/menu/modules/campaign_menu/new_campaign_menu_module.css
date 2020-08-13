@@ -40,6 +40,7 @@
 .new-campaign-menu-module > .dialog .content .column2
 {
     width: 35.0rem;
+    height: 500px;
 }
 
 .new-campaign-menu-module > .dialog .content .column3
@@ -68,6 +69,13 @@
     width: 41.0rem;
 }
 
+.new-campaign-menu-module > .dialog .content .row4
+{
+    width: 33.0rem;
+    padding-top : 0.0rem;
+    padding-left: 0.0rem;
+}
+
 .new-campaign-menu-module > .dialog .content .difficulty
 {
      position: absolute;
@@ -75,7 +83,8 @@
      right: 17.3rem;
 }
 
-.new-campaign-menu-module > .dialog .content .row:first-child
+.new-campaign-menu-module > .dialog .content .row:first-child,
+.new-campaign-menu-module > .dialog .content .row4:first-child
 {
     margin-top: 1.0rem;
 }
@@ -101,7 +110,8 @@
     float: left;
 }
 
-.new-campaign-menu-module > .dialog .content .row .control
+.new-campaign-menu-module > .dialog .content .row .control,
+.new-campaign-menu-module > .dialog .content .row4 .control
 {
     float: left;
     clear: left;
