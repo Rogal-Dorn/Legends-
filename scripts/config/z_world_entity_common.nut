@@ -644,7 +644,7 @@ gt.Const.World.Common.pickHelmet <- function (_helms)
 	local layersObj = this.Const.LegendMod.Helmets[helm];
 	if (layersObj.Script != "")
 	{
-		return this.new("scripts/items/legend_helmets/" + layersObjs.Script);
+		return this.new(layersObjs.Script);
 	}
 
 	local set = layersObj.Sets[this.Math.rand(0, layersObj.Sets.len() -1)]
