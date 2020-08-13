@@ -11,7 +11,11 @@ this.legends_configs <- {
         IsBlueprintsVisible = false,
         IsRelationship = false,
         IsWorldEconomy = false,
+<<<<<<< HEAD
         IsHelmets = 0
+=======
+        IsTherian = false
+>>>>>>> LegendsModv14
     },
 
     function Update (_settings)
@@ -27,7 +31,11 @@ this.legends_configs <- {
         this.m.IsBlueprintsVisible = _settings.LegendAllBlueprints;
         this.m.IsRelationship = _settings.LegendRelationship;
         this.m.IsWorldEconomy = _settings.LegendWorldEconomy;
+<<<<<<< HEAD
         this.m.IsHelmets = _settings.LegendIsHelmet;
+=======
+        this.m.IsTherian = _settings.LegendTherian
+>>>>>>> LegendsModv14
     }
 
     function LegendArmorsEnabled()
@@ -90,6 +98,11 @@ this.legends_configs <- {
         return this.m.IsHelmets != 2;
     }
 
+    function LegendTherianthropyEnabled()
+    {
+        return this.m.IsTherian
+    }
+
     function onSerialize(_out)
     {
         _out.writeBool(this.m.IsArmor);
@@ -104,6 +117,7 @@ this.legends_configs <- {
         _out.writeBool(this.m.IsRelationship);
         _out.writeBool(this.m.IsWorldEconomy);
         _out.writeU8(this.m.IsHelmets);
+        _out.writeBool(this.m.IsTherian);
     }
 
     function onDeserialize(_in)
@@ -142,6 +156,12 @@ this.legends_configs <- {
         if (_in.getMetaData().getVersion() >= 72)
         {
             this.m.IsHelmets = _in.readU8();
+        }
+
+        this.m.IsTherian = true;
+        if (_in.getMetaData().getVersion() >= 72)
+        {
+            this.m.IsTherian = _in.readBool();
         }
 
     }

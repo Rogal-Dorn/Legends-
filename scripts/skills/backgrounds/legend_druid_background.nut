@@ -178,31 +178,31 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 	{
 		local c = {
 			Hitpoints = [
-				10,
+				0,
 				15
 			],
 			Bravery = [
 				0,
-				0
+				5
 			],
 			Stamina = [
-				0,
+				-5,
 				5
 			],
 			MeleeSkill = [
-				5,
+				-5,
 				10
 			],
 			RangedSkill = [
-				0,
-				0
+				-15,
+				-5
 			],
 			MeleeDefense = [
-				10,
+				-10,
 				10
 			],
 			RangedDefense = [
-				0,
+				-10,
 				0
 			],
 			Initiative = [
@@ -255,16 +255,6 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 		}
 	}
 
-	function onAdded()
-	{
-
-		this.character_background.onAdded();
-		local actor = this.getContainer().getActor();
-		this.m.Container.add(this.new("scripts/skills/traits/deathwish_trait"));
-		//this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
-	}
-
-
 	function onAddEquipment()
 	{
 		local talents = this.getContainer().getActor().getTalents();
@@ -280,7 +270,7 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 		items.equip(this.Const.World.Common.pickHelmet([
 			[1, "barbarians/bear_headpiece"]
 		]));
-
+		this.getContainer().getActor().TherianthropeInfectionRandom();
 	}
 
 	function onAddLegendEquipment()
@@ -296,7 +286,6 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 		stash.removeByID("supplies.ground_grains");
 		stash.add(this.new("scripts/items/supplies/roots_and_berries_item"));
 		stash.add(this.new("scripts/items/supplies/medicine_item"));
-
 			local cloths = [
             [0, ""],
 			[0, "cloth/legend_gambeson"],
@@ -336,7 +325,7 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 		items.equip(this.Const.World.Common.pickHelmet([
 			[1, "barbarians/bear_headpiece"]
 		]));
-
+		this.getContainer().getActor().TherianthropeInfectionRandom();
 	}
 
 	function onSerialize( _out )

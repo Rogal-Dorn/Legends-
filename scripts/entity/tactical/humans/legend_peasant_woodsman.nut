@@ -90,7 +90,7 @@ this.legend_peasant_woodsman <- this.inherit("scripts/entity/tactical/human", {
 					"cloth/legend_robes_nun"
 				],
 				[
-					0,
+					1,
 					"cloth/legend_apron_smith"
 				],
 				[
