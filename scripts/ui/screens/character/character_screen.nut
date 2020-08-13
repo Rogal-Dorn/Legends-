@@ -352,8 +352,6 @@ this.character_screen <- {
 					}
 				}
 			}
-
-			bro.removeActiveRelationship();
 			bro.getItems().transferToStash(this.World.Assets.getStash());
 			this.World.getPlayerRoster().remove(bro);
 			this.loadData();

@@ -44,21 +44,6 @@ this.noble_more_pay_lowborn_event <- this.inherit("scripts/events/event", {
 			{
 				this.Characters.push(_event.m.Noble.getImagePath());
 				this.Characters.push(_event.m.Lowborn.getImagePath());
-				//set relations
-				local modifier1 = this.Math.rand(-1, -5);
-				_event.m.Noble.changeActiveRelationship( _event.m.Lowborn, modifier1 );
-				local modifier2 = this.Math.rand(-1, -5);
-				_event.m.Lowborn.changeActiveRelationship( _event.m.Noble, modifier2 );
-
-				if (this.World.LegendsMod.Configs().RelationshipsEnabled())
-				{
-					this.List.push({
-						id = 10,
-						icon = "ui/icons/relation.png",
-						text = _event.m.Noble.getName() + " and " + _event.m.Lowborn.getName() + " grow distant"
-					});
-				}
-
 
 			}
 

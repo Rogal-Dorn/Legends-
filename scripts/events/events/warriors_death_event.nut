@@ -145,28 +145,6 @@ this.warriors_death_event <- this.inherit("scripts/events/event", {
 							text = bro.getName() + this.Const.MoodStateEvent[bro.getMoodState()]
 						});
 					}
-
-					//set relations
-					local relations = this.World.getPlayerRoster().getAll();
-					foreach( relation in relations )
-					{
-
-						local modifier1 = this.Math.rand(1, 5);
-						bro.changeActiveRelationship( relation, modifier1 );
-						local modifier2 = this.Math.rand(1, 5);
-						relation.changeActiveRelationship( bro, modifier2 );
-
-					if (this.World.LegendsMod.Configs().RelationshipsEnabled())
-					{
-					this.List.push({
-							id = 10,
-							icon = "ui/icons/relation.png",
-							text = relation.getName() + " and " + bro.getName() + " grow closer"
-						});
-					}
-
-					}
-
 				}
 
 				this.World.Assets.addMoney(-60);
@@ -197,29 +175,7 @@ this.warriors_death_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				this.Characters.push(_event.m.Gravedigger.getImagePath());
-
-				//set relations
-				local relations = this.World.getPlayerRoster().getAll();
-				foreach( relation in relations )
-				{
-
-					local modifier1 = this.Math.rand(1, 5);
-					_event.m.Gravedigger.changeActiveRelationship( relation, modifier1 );
-					local modifier2 = this.Math.rand(1, 5);
-					relation.changeActiveRelationship( _event.m.Gravedigger, modifier2 );
-
-						this.List.push({
-							id = 10,
-							icon = "ui/icons/relation.png",
-							text = relation.getName() + " and " + _event.m.Gravedigger.getName() + " grow closer"
-						});
-
-				}
-
-				local r;
 				local brothers = this.World.getPlayerRoster().getAll();
-
-
 
 				foreach( bro in brothers )
 				{
@@ -230,23 +186,6 @@ this.warriors_death_event <- this.inherit("scripts/events/event", {
 						continue;
 					}
 
-					//set relations
-					local relations = this.World.getPlayerRoster().getAll();
-					foreach( relation in relations )
-					{
-
-						local modifier1 = this.Math.rand(1, 5);
-						bro.changeActiveRelationship( relation, modifier1 );
-						local modifier2 = this.Math.rand(1, 5);
-						relation.changeActiveRelationship( bro, modifier2 );
-
-						this.List.push({
-							id = 10,
-							icon = "ui/icons/relation.png",
-							text = relation.getName() + " and " + bro.getName() + " grow closer"
-						});
-
-					}
 					bro.improveMood(0.5, "Glad to see fallen comrades receive a fine farewell");
 
 					if (bro.getMoodState() >= this.Const.MoodState.Neutral)

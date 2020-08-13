@@ -281,20 +281,6 @@ this.hedgeknight_vs_hedgeknight_event <- this.inherit("scripts/events/event", {
 				this.Characters.push(_event.m.HedgeKnight1.getImagePath());
 				this.Characters.push(_event.m.HedgeKnight2.getImagePath());
 
-				//set relations
-				local modifier1 = this.Math.rand(-1, -5);
-				_event.m.HedgeKnight1.changeActiveRelationship( _event.m.HedgeKnight2, modifier1 );
-				local modifier2 = this.Math.rand(-1, -5);
-				_event.m.HedgeKnight2.changeActiveRelationship( _event.m.HedgeKnight1, modifier2 );
-				if (this.World.LegendsMod.Configs().RelationshipsEnabled())
-				{
-					this.List.push({
-						id = 10,
-						icon = "ui/icons/relation.png",
-						text = _event.m.HedgeKnight1.getName() + " and " + _event.m.HedgeKnight2.getName() + " grow distant"
-					});
-				}
-
 				this.World.Assets.addMoney(-2000);
 				this.List = [
 					{
@@ -350,20 +336,6 @@ this.hedgeknight_vs_hedgeknight_event <- this.inherit("scripts/events/event", {
 			{
 				this.Characters.push(_event.m.HedgeKnight1.getImagePath());
 				this.Characters.push(_event.m.HedgeKnight2.getImagePath());
-
-				//set relations
-				local modifier1 = this.Math.rand(-1, -5);
-				_event.m.HedgeKnight1.changeActiveRelationship( _event.m.HedgeKnight2, modifier1 );
-				local modifier2 = this.Math.rand(-1, -5);
-				_event.m.HedgeKnight2.changeActiveRelationship( _event.m.HedgeKnight1, modifier2 );
-				if (this.World.LegendsMod.Configs().RelationshipsEnabled())
-				{
-					this.List.push({
-						id = 10,
-						icon = "ui/icons/relation.png",
-						text = _event.m.HedgeKnight1.getName() + " and " + _event.m.HedgeKnight2.getName() + " grow distant"
-					});
-				}
 
 				local brothers = this.World.getPlayerRoster().getAll();
 
@@ -429,7 +401,6 @@ this.hedgeknight_vs_hedgeknight_event <- this.inherit("scripts/events/event", {
 					text = _event.m.HedgeKnight2.getName() + " has died"
 				});
 				_event.m.HedgeKnight2.getItems().transferToStash(this.World.Assets.getStash());
-				_event.m.HedgeKnight2.removeActiveRelationship();
 				this.World.getPlayerRoster().remove(_event.m.HedgeKnight2);
 				local injury = _event.m.HedgeKnight1.addInjury(this.Const.Injury.Brawl);
 				this.List.push({
@@ -496,7 +467,6 @@ this.hedgeknight_vs_hedgeknight_event <- this.inherit("scripts/events/event", {
 					text = _event.m.HedgeKnight1.getName() + " has died"
 				});
 				_event.m.HedgeKnight1.getItems().transferToStash(this.World.Assets.getStash());
-				_event.m.HedgeKnight1.removeActiveRelationship();
 				this.World.getPlayerRoster().remove(_event.m.HedgeKnight1);
 				local injury = _event.m.HedgeKnight2.addInjury(this.Const.Injury.Brawl);
 				this.List.push({
@@ -555,29 +525,6 @@ this.hedgeknight_vs_hedgeknight_event <- this.inherit("scripts/events/event", {
 			{
 				this.World.Assets.addMoralReputation(2);
 				this.Characters.push(_event.m.Monk.getImagePath());
-
-				//set relations
-				local modifier1 = this.Math.rand(1, 5);
-				_event.m.HedgeKnight1.changeActiveRelationship( _event.m.Monk, modifier1 );
-				_event.m.HedgeKnight1.changeActiveRelationship( _event.m.HedgeKnight2, modifier1 );
-				local modifier2 = this.Math.rand(1, 5);
-				_event.m.HedgeKnight2.changeActiveRelationship( _event.m.Monk, modifier2 );
-				_event.m.HedgeKnight2.changeActiveRelationship( _event.m.HedgeKnight1, modifier2 );
-
-				if (this.World.LegendsMod.Configs().RelationshipsEnabled())
-				{
-					this.List.push({
-						id = 10,
-						icon = "ui/icons/relation.png",
-						text = _event.m.HedgeKnight1.getName() + " and " + _event.m.Monk.getName() + " grow closer"
-					});
-
-					this.List.push({
-						id = 10,
-						icon = "ui/icons/relation.png",
-						text = _event.m.HedgeKnight2.getName() + " and " + _event.m.Monk.getName() + " grow closer"
-					});
-				}
 
 				if (!_event.m.Monk.getTags().has("resolve_via_hedgeknight"))
 				{

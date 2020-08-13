@@ -93,7 +93,6 @@ this.cultist_finale_event <- this.inherit("scripts/events/event", {
 						text = "The company\'s moral reputation decreases greatly"
 					});
 				_event.m.Sacrifice.getItems().transferToStash(this.World.Assets.getStash());
-				_event.m.Sacrifice.removeActiveRelationship();
 				this.World.getPlayerRoster().remove(_event.m.Sacrifice);
 				this.World.Assets.getStash().makeEmptySlots(1);
 				local item

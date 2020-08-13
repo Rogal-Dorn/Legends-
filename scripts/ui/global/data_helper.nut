@@ -8,11 +8,6 @@ this.data_helper <- {
 	{
 	}
 
-	function convertLegendCampaignsToUIData()
-	{
-		return this.Const.LegendMod.Starts;
-	}
-
 	function convertCampaignStoragesToUIData()
 	{
 		local isWorldmap = ("Assets" in this.World) && this.World.Assets != null;
@@ -280,90 +275,6 @@ this.data_helper <- {
 		{
 			this.convertItemsToUIData(_entity.getTile().Items, result.ground);
 			result.ground.push(null);
-		}
-
-		if (this.World.LegendsMod.Configs().RelationshipsEnabled())
-		{
-			if (("State" in this.Tactical) && this.Tactical.State != null)
-			{
-				if ( _entity.getFaction() == this.Const.Faction.Player && !_entity.isGuest())
-				{
-					local targetTile = _entity.getTile();
-
-					for (local i = 0; i != 6; ++i)
-					{
-						if (!targetTile.hasNextTile(i)) {}
-						else
-						{
-							local tile = targetTile.getNextTile(i);
-							if (tile.IsOccupiedByActor && tile.getEntity().getMoraleState() != this.Const.MoraleState.Fleeing)
-							{
-
-								if (tile.getEntity().getFaction() == this.Const.Faction.Player)
-								{
-									// local relTab = _targetEntity.getTile().getEntity().getActiveRelationshipWith(tile.getEntity());
-									// local relNum = relTab.RelationNum;
-									if (tile.getEntity().getCompanyID() == -1)
-									{
-										continue;
-									}
-
-									if (_entity.getCompanyID() == -1)
-									{
-										continue;
-									}
-
-									local relB = this.World.State.getRefFromID(_entity.getCompanyID()).getActiveRelationshipWith(tile.getEntity());
-									if (relB == null)
-									{
-										continue;
-									}
-
-									if (!("getActiveRelationshipWith" in relB))
-									{
-										continue;
-									}
-
-									local relTab = relB.getActiveRelationshipWith(tile.getEntity());
-									if (relTab == null) {
-										continue;
-									}
-
-									local relNum = relTab.RelationNum;
-
-									if ( relNum <= -10 )
-									{
-										result.stats.bravery -= 5;
-									}
-									if ( relNum <= -20 )
-									{
-										result.stats.rangeDefense -= 5;
-									}
-									if ( relNum <= -30 )
-									{
-										result.stats.meleeDefense -= 5;
-									}
-
-									if ( relNum > 10 )
-									{
-										result.stats.bravery += 5;
-									}
-									if ( relNum > 20 )
-									{
-										result.stats.rangeDefense += 5;
-									}
-									if ( relNum > 30 )
-									{
-										result.stats.meleeDefense += 5;
-									}
-
-								}
-
-							}
-						}
-					}
-				}
-			}
 		}
 
 		return result;

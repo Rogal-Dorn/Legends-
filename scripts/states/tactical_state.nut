@@ -606,7 +606,6 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 					Battles = bro.getLifetimeStats().Battles,
 					KilledBy = "Left to die"
 				};
-				bro.removeActiveRelationship();
 				this.World.Statistics.addFallen(fallen);
 				this.World.getPlayerRoster().remove(bro);
 				bro.die();

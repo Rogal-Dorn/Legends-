@@ -208,11 +208,6 @@ this.pimp_vs_harlot_event <- this.inherit("scripts/events/event", {
 						this.World.getPlayerRoster().add(_event.m.Dude);
 						this.World.getTemporaryRoster().clear();
 						_event.m.Dude.onHired();
-						//set relations
-						local modifier1 = this.Math.rand(5, 10);
-						_event.m.Dude.changeActiveRelationship( _event.m.Monk, modifier1 );
-						local modifier2 = this.Math.rand(5, 10);
-						_event.m.Monk.changeActiveRelationship( _event.m.Dude, modifier2 );
 						_event.m.Dude = null;
 						return 0;
 					}

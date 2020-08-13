@@ -231,21 +231,6 @@ this.troublemakers_bully_peasants_event <- this.inherit("scripts/events/event", 
 			{
 				this.Characters.push(_event.m.Troublemaker.getImagePath());
 				this.Characters.push(_event.m.Peacekeeper.getImagePath());
-				//set relations
-				local modifier1 = this.Math.rand(5, 10);
-				_event.m.Troublemaker.changeActiveRelationship( _event.m.Peacekeeper, modifier1 );
-				local modifier2 = this.Math.rand(5, 10);
-				_event.m.Peacekeeper.changeActiveRelationship( _event.m.Troublemaker, modifier2 );
-
-				if (this.World.LegendsMod.Configs().RelationshipsEnabled())
-				{
-				this.List.push({
-						id = 10,
-						icon = "ui/icons/relation.png",
-						text = _event.m.Troublemaker.getName() + " and " + _event.m.Peacekeeper.getName() + " grow closer"
-					});
-				}
-
 			}
 
 		});
@@ -269,12 +254,6 @@ this.troublemakers_bully_peasants_event <- this.inherit("scripts/events/event", 
 			{
 				this.Characters.push(_event.m.Troublemaker.getImagePath());
 				this.Characters.push(_event.m.Peacekeeper.getImagePath());
-
-				//set relations
-				local modifier1 = this.Math.rand(-5, -10);
-				_event.m.Troublemaker.changeActiveRelationship( _event.m.Peacekeeper, modifier1 );
-				local modifier2 = this.Math.rand(-5, -10);
-				_event.m.Peacekeeper.changeActiveRelationship( _event.m.Troublemaker, modifier2 );
 
 				this.List.push({
 						id = 10,
