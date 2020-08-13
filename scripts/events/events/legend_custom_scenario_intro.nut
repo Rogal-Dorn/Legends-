@@ -538,27 +538,6 @@ this.legend_custom_scenario_intro <- this.inherit("scripts/events/event", {
 						//_event.m.StartBro.removeActiveRelationship();
 						 this.World.getPlayerRoster().remove(_event.m.StartBro)
 
-						 local bros = this.World.getPlayerRoster().getAll();
-
-
-						if (this.World.LegendsMod.Configs().RelationshipsEnabled())
-						{
-							local avgAlignment = 0;
-							foreach (bro in bros)
-							{
-								if (bro.getAlignment() <= this.Const.LegendMod.Alignment.NeutralMin)
-								{
-									avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMin);
-								}
-								else if (bro.getAlignment() >= this.Const.LegendMod.Alignment.NeutralMax)
-								{
-									avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMax);
-								}
-							}
-							avgAlignment *= (10 / this.World.getPlayerRoster().getSize());
-							this.World.Assets.addMoralReputation(avgAlignment);
-						}
-
 						return 0;
 					}
 				}
