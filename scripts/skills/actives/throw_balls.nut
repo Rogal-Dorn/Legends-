@@ -33,7 +33,7 @@ this.throw_balls <- this.inherit("scripts/skills/skill", {
 		this.m.IsDoingForwardMove = false;
 		this.m.InjuriesOnBody = this.Const.Injury.BluntAndPiercingBody;
 		this.m.InjuriesOnHead = this.Const.Injury.BluntAndPiercingHead;
-		this.m.DirectDamageMult = 0.35;
+		this.m.DirectDamageMult = 0.4;
 		this.m.ActionPointCost = 4;
 		this.m.FatigueCost = 15;
 		this.m.MinRange = 2;
@@ -68,7 +68,7 @@ this.throw_balls <- this.inherit("scripts/skills/skill", {
 			ret.push({
 				id = 8,
 				type = "text",
-				icon = "ui/icons/ranged_skill.png",
+				icon = "ui/icons/ammo.png",
 				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]" + ammo + "[/color] spiked balls left"
 			});
 		}

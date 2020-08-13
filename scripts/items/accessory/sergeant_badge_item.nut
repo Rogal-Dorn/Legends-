@@ -62,6 +62,11 @@ this.sergeant_badge_item <- this.inherit("scripts/items/accessory/accessory", {
 		return result;
 	}
 
+	function getBuyPrice()
+	{
+		return 1000000;
+	}
+
 	function playInventorySound( _eventType )
 	{
 		this.Sound.play("sounds/cloth_01.wav", this.Const.Sound.Volume.Inventory);

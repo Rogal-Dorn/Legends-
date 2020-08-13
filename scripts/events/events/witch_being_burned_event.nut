@@ -44,7 +44,7 @@ this.witch_being_burned_event <- this.inherit("scripts/events/event", {
 
 		foreach( t in towns )
 		{
-			if (t.isMilitary() || t.getSize() > 2)
+			if (t.isMilitary() || t.isSouthern() || t.getSize() > 2)
 			{
 				continue;
 			}

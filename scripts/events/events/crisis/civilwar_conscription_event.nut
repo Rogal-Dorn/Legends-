@@ -334,7 +334,7 @@ this.civilwar_conscription_event <- this.inherit("scripts/events/event", {
 
 		foreach( t in towns )
 		{
-			if (t.isMilitary() || t.getSize() > 1)
+			if (t.isMilitary() || t.isSouthern() || t.getSize() > 1)
 			{
 				continue;
 			}

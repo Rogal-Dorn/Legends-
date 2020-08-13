@@ -16,7 +16,7 @@ this.ijirok_2_event <- this.inherit("scripts/events/event", {
 					Text = "Keep this between us.",
 					function getResult( _event )
 					{
-						this.World.Tags.set("IjirokStage", 2);
+						this.World.Flags.set("IjirokStage", 2);
 						return 0;
 					}
 
@@ -36,7 +36,7 @@ this.ijirok_2_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
-		if (!this.World.Tags.has("IjirokStage") || this.World.Tags.get("IjirokStage") == 0 || this.World.Tags.get("IjirokStage") >= 5)
+		if (!this.World.Flags.has("IjirokStage") || this.World.Flags.get("IjirokStage") == 0 || this.World.Flags.get("IjirokStage") >= 5)
 		{
 			return;
 		}

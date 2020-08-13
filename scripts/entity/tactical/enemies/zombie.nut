@@ -60,8 +60,8 @@ this.zombie <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Sound[this.Const.Sound.ActorEvent.Move] = this.m.Sound[this.Const.Sound.ActorEvent.Idle];
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.Move] = 0.1;
 		this.m.SoundPitch = this.Math.rand(70, 120) * 0.01;
-		this.getTags().add("undead");
-		this.getTags().add("zombie_minion");
+		this.getFlags().add("undead");
+		this.getFlags().add("zombie_minion");
 
 		if (this.m.IsCreatingAgent)
 		{
@@ -121,6 +121,13 @@ this.zombie <- this.inherit("scripts/entity/tactical/actor", {
 			if (this.m.Surcoat != null)
 			{
 				decal = _tile.spawnDetail("surcoat_" + (this.m.Surcoat < 10 ? "0" + this.m.Surcoat : this.m.Surcoat) + "_dead", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
+				decal.Scale = 0.9;
+				decal.setBrightness(0.9);
+			}
+
+			if (appearance.CorpseArmorUpgradeBack != "")
+			{
+				decal = _tile.spawnDetail(appearance.CorpseArmorUpgradeBack, this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
 				decal.Scale = 0.9;
 				decal.setBrightness(0.9);
 			}
@@ -321,6 +328,13 @@ this.zombie <- this.inherit("scripts/entity/tactical/actor", {
 				decal.setBrightness(0.85);
 			}
 
+			if (appearance.CorpseArmorUpgradeFront != "")
+			{
+				decal = _tile.spawnDetail(appearance.CorpseArmorUpgradeFront, this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
+				decal.Scale = 0.9;
+				decal.setBrightness(0.9);
+			}
+
 			this.spawnTerrainDropdownEffect(_tile);
 			this.spawnFlies(_tile);
 			local custom = {
@@ -334,7 +348,8 @@ this.zombie <- this.inherit("scripts/entity/tactical/actor", {
 				HairColor = sprite_hair.Color,
 				HairSaturation = sprite_hair.Saturation,
 				Beard = sprite_beard.HasBrush ? sprite_beard.getBrush().Name : null,
-				Surcoat = this.m.Surcoat
+				Surcoat = this.m.Surcoat,
+				Ethnicity = 0
 			};
 			local corpse = clone this.Const.Corpse;
 			corpse.Type = this.m.ResurrectWithScript;
@@ -412,6 +427,11 @@ this.zombie <- this.inherit("scripts/entity/tactical/actor", {
 				head.varySaturation(0.2);
 				head.Color = this.createColor("#c1ddaa");
 				head.varyColor(0.05, 0.05, 0.05);
+
+				if (_info.Custom.Ethnicity == 1)
+				{
+					head.setBrightness(1.25);
+				}
 			}
 			else
 			{
@@ -575,6 +595,8 @@ this.zombie <- this.inherit("scripts/entity/tactical/actor", {
 		this.getSprite("body").setHorizontalFlipping(flip);
 		this.getSprite("tattoo_body").setHorizontalFlipping(flip);
 		this.getSprite("armor").setHorizontalFlipping(flip);
+		this.getSprite("armor_upgrade_back").setHorizontalFlipping(flip);
+		this.getSprite("armor_upgrade_front").setHorizontalFlipping(flip);
 		this.getSprite("head").setHorizontalFlipping(flip);
 		this.getSprite("tattoo_head").setHorizontalFlipping(flip);
 		this.getSprite("injury").setHorizontalFlipping(flip);
@@ -598,6 +620,12 @@ this.zombie <- this.inherit("scripts/entity/tactical/actor", {
 		b.IsAffectedByInjuries = false;
 		b.IsImmuneToBleeding = true;
 		b.IsImmuneToPoison = true;
+
+		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 90)
+		{
+			b.DamageTotalMult += 0.1;
+		}
+
 		this.m.ActionPoints = b.ActionPoints;
 		this.m.Hitpoints = b.Hitpoints;
 		this.m.CurrentProperties = clone b;
@@ -628,6 +656,7 @@ this.zombie <- this.inherit("scripts/entity/tactical/actor", {
 		body_injury.setBrush("zombify_body_01");
 		this.addSprite("armor").setHorizontalFlipping(true);
 		this.addSprite("surcoat");
+		this.addSprite("armor_upgrade_back");
 		local body_blood_always = this.addSprite("body_blood_always");
 		body_blood_always.setBrush("bust_body_bloodied_01");
 		this.addSprite("shaft");
@@ -681,6 +710,7 @@ this.zombie <- this.inherit("scripts/entity/tactical/actor", {
 			beard_top.Color = beard.Color;
 		}
 
+		this.addSprite("armor_upgrade_front");
 		local body_blood = this.addSprite("body_blood");
 		body_blood.setBrush("bust_body_bloodied_02");
 		body_blood.setHorizontalFlipping(true);

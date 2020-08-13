@@ -1,7 +1,12 @@
 this.ai_always_use <- this.inherit("scripts/ai/tactical/behavior", {
 	m = {
 		PossibleSkills = [
-			"actives.crack_the_whip"
+			"actives.crack_the_whip",
+			"actives.load_mortar",
+			"actives.explode",
+			"actives.geomancy",
+			"actives.raise_all_undead",
+			"actives.geomancy_once"
 		],
 		Skill = null
 	},
@@ -42,9 +47,14 @@ this.ai_always_use <- this.inherit("scripts/ai/tactical/behavior", {
 	{
 		this.m.Skill.use(_entity.getTile());
 
-		if (!_entity.isHiddenToPlayer())
+		if (_entity.isAlive())
 		{
 			this.getAgent().declareAction();
+
+			if (this.m.Skill.getDelay() != 0)
+			{
+				this.getAgent().declareEvaluationDelay(this.m.Skill.getDelay());
+			}
 		}
 
 		this.m.Skill = null;

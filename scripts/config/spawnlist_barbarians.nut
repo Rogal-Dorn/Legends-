@@ -1669,7 +1669,7 @@ gt.Const.World.Spawn.Barbarians <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.BarbarianDrummer,
-				Num = 2
+				Num = 1
 			}
 		]
 	},
@@ -1686,7 +1686,7 @@ gt.Const.World.Spawn.Barbarians <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.BarbarianDrummer,
-				Num = 2
+				Num = 1
 			}
 		]
 	},
@@ -1703,7 +1703,7 @@ gt.Const.World.Spawn.Barbarians <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.BarbarianDrummer,
-				Num = 2
+				Num = 1
 			}
 		]
 	},
@@ -1930,7 +1930,7 @@ gt.Const.World.Spawn.Barbarians <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.BarbarianDrummer,
-				Num = 2
+				Num = 1
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.Warhound,
@@ -1972,7 +1972,7 @@ gt.Const.World.Spawn.Barbarians <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.BarbarianDrummer,
-				Num = 2
+				Num = 1
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.Warhound,
@@ -2254,7 +2254,7 @@ gt.Const.World.Spawn.Barbarians <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.BarbarianDrummer,
-				Num = 2
+				Num = 1
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.BarbarianMarauder,
@@ -2341,7 +2341,7 @@ gt.Const.World.Spawn.Barbarians <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.BarbarianDrummer,
-				Num = 2
+				Num = 1
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.BarbarianMarauder,

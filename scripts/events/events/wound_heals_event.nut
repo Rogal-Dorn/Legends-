@@ -61,7 +61,7 @@ this.wound_heals_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getSkills().hasSkillOfType(this.Const.SkillType.TemporaryInjury))
+			if (bro.getBackground().getID() != "background.slave" && bro.getSkills().hasSkillOfType(this.Const.SkillType.TemporaryInjury))
 			{
 				candidates.push(bro);
 			}

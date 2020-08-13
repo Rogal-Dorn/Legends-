@@ -7,7 +7,7 @@ this.lone_wolf_origin_squire_event <- this.inherit("scripts/events/event", {
 	{
 		this.m.ID = "event.lone_wolf_origin_squire";
 		this.m.Title = "At %townname%";
-		this.m.Cooldown = 999999.0 * this.World.getTime().SecondsPerDay;
+		this.m.Cooldown = 99999.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
 			Text = "[img]gfx/ui/events/event_20.png[/img]The pub is full of drunk denizens sloshing about, cheering, singing, carousing with the womenfolk of either wench or wife or whore. A man with a lute dances and plays and another with metal cymbals crashes overhead while a fat man booms with songs of battles or love, and whether a tale of victory or defeat they provoke rounds of ale and more merriment all the same.\n\n You leave the pub and enter the next building over. The wind whistles down a pew filled nave as you stand at the door. A man sweeping the stone floor looks up for a time then continues with his work. Another man cheerfully crosses the room and asks if you\'d like to pray. You decline and he purses his lips and crosses his arms. The crowd next door roars with drunken delight as though to make a mockery of you both and then he moves on. You stay for a moment longer and then leave and go back out to the town center and squat on a series of steps. It seems there used to be a statue at the top of those steps, but vandals and raiders alike have made short work of another\'s artisanry. You fall asleep there at the foot of impermanence. \n\n Waking from a nap, you find a young man at the bottom of the steps. He says he knows you\'re a knight and he\'s come to offer his services as a squire.",
@@ -221,7 +221,7 @@ this.lone_wolf_origin_squire_event <- this.inherit("scripts/events/event", {
 
 		foreach( t in towns )
 		{
-			if (t.getTile().getDistanceTo(playerTile) <= 4 && t.isAlliedWithPlayer())
+			if (!t.isSouthern() && t.getTile().getDistanceTo(playerTile) <= 4 && t.isAlliedWithPlayer())
 			{
 				nearTown = true;
 				town = t;

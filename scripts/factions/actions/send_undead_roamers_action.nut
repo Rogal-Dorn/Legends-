@@ -84,9 +84,11 @@ this.send_undead_roamers_action <- this.inherit("scripts/factions/faction_action
 		local party = this.getFaction().spawnEntity(settlement.getTile(), "Undead", false, settlement.getRoamerSpawnList(), this.Math.max(settlement.getResources() * 0.75, this.Math.rand(60, 100) * this.getReputationToDifficultyLightMult()));
 		party.getSprite("banner").setBrush(settlement.getBanner());
 		party.setDescription("Something seems wrong.");
+		party.setFootprintType(this.Const.World.FootprintsType.Undead);
 		party.setSlowerAtNight(false);
 		party.setUsingGlobalVision(false);
 		party.setLooting(false);
+		party.getFlags().set("IsRandomlySpawned", true);
 		party.getLoot().Money = this.Math.rand(0, 100);
 		party.getLoot().ArmorParts = this.Math.rand(0, 10);
 		local r = this.Math.rand(1, 3);

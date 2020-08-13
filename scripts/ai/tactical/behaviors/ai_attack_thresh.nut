@@ -115,7 +115,7 @@ this.ai_attack_thresh <- this.inherit("scripts/ai/tactical/behavior", {
 					if (target.isAlliedWith(_entity))
 					{
 						local relief = target.getCurrentProperties().getMeleeDefense() * 0.01;
-						score = score - (1.0 - this.getProperties().TargetPriorityHittingAlliesMult - relief);
+						score = score - this.Math.max(0, 1.0 - this.getProperties().TargetPriorityHittingAlliesMult - relief) * target.getCurrentProperties().TargetAttractionMult;
 						numAllies = ++numAllies;
 					}
 					else

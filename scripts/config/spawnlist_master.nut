@@ -24,11 +24,13 @@ gt.Const.World.Spawn.Unit <- {
 gt.Const.World.Spawn.Troops <- {
 	Necromancer = {
 		ID = this.Const.EntityType.Necromancer,
-		Variant = 0,
+		Variant = 1,
 		Strength = 35,
 		Cost = 30,
 		Row = 3,
-		Script = "scripts/entity/tactical/enemies/necromancer"
+		Script = "scripts/entity/tactical/enemies/necromancer",
+		NameList = this.Const.Strings.NecromancerNames,
+		TitleList = null
 	},
 	Zombie = {
 		ID = this.Const.EntityType.Zombie,
@@ -46,11 +48,27 @@ gt.Const.World.Spawn.Troops <- {
 		Row = -1,
 		Script = "scripts/entity/tactical/enemies/zombie_yeoman"
 	},
+	ZombieNomad = {
+		ID = this.Const.EntityType.ZombieYeoman,
+		Variant = 0,
+		Strength = 10,
+		Cost = 12,
+		Row = -1,
+		Script = "scripts/entity/tactical/enemies/zombie_nomad"
+	},
+	ZombieNomadBodyguard = {
+		ID = this.Const.EntityType.ZombieYeoman,
+		Variant = 0,
+		Strength = 6,
+		Cost = 6,
+		Row = 2,
+		Script = "scripts/entity/tactical/enemies/zombie_nomad_bodyguard"
+	},
 	ZombieKnight = {
 		ID = this.Const.EntityType.ZombieKnight,
 		Variant = 1,
 		Strength = 20,
-		Cost = 25,
+		Cost = 24,
 		Row = -1,
 		Script = "scripts/entity/tactical/enemies/zombie_knight",
 		NameList = this.Const.Strings.KnightNames,
@@ -76,7 +94,7 @@ gt.Const.World.Spawn.Troops <- {
 		ID = this.Const.EntityType.ZombieKnight,
 		Variant = 0,
 		Strength = 20,
-		Cost = 25,
+		Cost = 24,
 		Row = 2,
 		Script = "scripts/entity/tactical/enemies/zombie_knight_bodyguard"
 	},
@@ -101,7 +119,7 @@ gt.Const.World.Spawn.Troops <- {
 		Variant = 0,
 		Strength = 25,
 		Cost = 20,
-		Row = -1,
+		Row = 2,
 		Script = "scripts/entity/tactical/enemies/ghost"
 	},
 	SkeletonLight = {
@@ -389,7 +407,7 @@ gt.Const.World.Spawn.Troops <- {
 	Spider = {
 		ID = this.Const.EntityType.Spider,
 		Variant = 0,
-		Strength = 12,
+		Strength = 13,
 		Cost = 12,
 		Row = -1,
 		Script = "scripts/entity/tactical/enemies/spider"
@@ -397,7 +415,7 @@ gt.Const.World.Spawn.Troops <- {
 	SpiderBodyguard = {
 		ID = this.Const.EntityType.Spider,
 		Variant = 0,
-		Strength = 12,
+		Strength = 13,
 		Cost = 12,
 		Row = 1,
 		Script = "scripts/entity/tactical/enemies/spider_bodyguard"
@@ -441,6 +459,54 @@ gt.Const.World.Spawn.Troops <- {
 		Cost = 0,
 		Row = 1,
 		Script = "scripts/entity/tactical/enemies/trickster_god"
+	},
+	Serpent = {
+		ID = this.Const.EntityType.Serpent,
+		Variant = 0,
+		Strength = 20,
+		Cost = 20,
+		Row = -1,
+		Script = "scripts/entity/tactical/enemies/serpent"
+	},
+	Hyena = {
+		ID = this.Const.EntityType.Hyena,
+		Variant = 0,
+		Strength = 15,
+		Cost = 20,
+		Row = -1,
+		Script = "scripts/entity/tactical/enemies/hyena"
+	},
+	HyenaHIGH = {
+		ID = this.Const.EntityType.Hyena,
+		Variant = 0,
+		Strength = 20,
+		Cost = 25,
+		Row = -1,
+		Script = "scripts/entity/tactical/enemies/hyena_high"
+	},
+	SandGolem = {
+		ID = this.Const.EntityType.SandGolem,
+		Variant = 0,
+		Strength = 13,
+		Cost = 13,
+		Row = -1,
+		Script = "scripts/entity/tactical/enemies/sand_golem"
+	},
+	SandGolemMEDIUM = {
+		ID = this.Const.EntityType.SandGolem,
+		Variant = 0,
+		Strength = 30,
+		Cost = 30,
+		Row = -1,
+		Script = "scripts/entity/tactical/enemies/sand_golem_medium"
+	},
+	SandGolemHIGH = {
+		ID = this.Const.EntityType.SandGolem,
+		Variant = 0,
+		Strength = 70,
+		Cost = 70,
+		Row = -1,
+		Script = "scripts/entity/tactical/enemies/sand_golem_high"
 	},
 	Militia = {
 		ID = this.Const.EntityType.Militia,
@@ -497,6 +563,14 @@ gt.Const.World.Spawn.Troops <- {
 		Cost = 10,
 		Row = -1,
 		Script = "scripts/entity/tactical/humans/peasant"
+	},
+	SouthernPeasant = {
+		ID = this.Const.EntityType.PeasantSouthern,
+		Variant = 0,
+		Strength = 4,
+		Cost = 10,
+		Row = -1,
+		Script = "scripts/entity/tactical/humans/peasant_southern"
 	},
 	PeasantArmed = {
 		ID = this.Const.EntityType.Peasant,
@@ -587,8 +661,8 @@ gt.Const.World.Spawn.Troops <- {
 	CaravanGuard = {
 		ID = this.Const.EntityType.CaravanGuard,
 		Variant = 0,
-		Strength = 15,
-		Cost = 15,
+		Strength = 14,
+		Cost = 14,
 		Row = 2,
 		Script = "scripts/entity/tactical/humans/caravan_guard"
 	},
@@ -619,7 +693,7 @@ gt.Const.World.Spawn.Troops <- {
 	Greatsword = {
 		ID = this.Const.EntityType.Greatsword,
 		Variant = 0,
-		Strength = 25,
+		Strength = 30,
 		Cost = 25,
 		Row = 1,
 		Script = "scripts/entity/tactical/humans/noble_greatsword"
@@ -740,6 +814,78 @@ gt.Const.World.Spawn.Troops <- {
 		NameList = this.Const.Strings.BanditLeaderNames,
 		TitleList = null
 	},
+	NomadCutthroat = {
+		ID = this.Const.EntityType.NomadCutthroat,
+		Variant = 0,
+		Strength = 10,
+		Cost = 10,
+		Row = 0,
+		Script = "scripts/entity/tactical/humans/nomad_cutthroat"
+	},
+	NomadArcher = {
+		ID = this.Const.EntityType.NomadArcher,
+		Variant = 0,
+		Strength = 15,
+		Cost = 15,
+		Row = 1,
+		Script = "scripts/entity/tactical/humans/nomad_archer"
+	},
+	NomadSlinger = {
+		ID = this.Const.EntityType.NomadSlinger,
+		Variant = 0,
+		Strength = 12,
+		Cost = 12,
+		Row = 1,
+		Script = "scripts/entity/tactical/humans/nomad_slinger"
+	},
+	NomadOutlaw = {
+		ID = this.Const.EntityType.NomadOutlaw,
+		Variant = 0,
+		Strength = 20,
+		Cost = 20,
+		Row = 0,
+		Script = "scripts/entity/tactical/humans/nomad_outlaw"
+	},
+	NomadLeader = {
+		ID = this.Const.EntityType.NomadLeader,
+		Variant = 1,
+		Strength = 30,
+		Cost = 25,
+		Row = 2,
+		Script = "scripts/entity/tactical/humans/nomad_leader",
+		NameList = this.Const.Strings.SouthernNames,
+		TitleList = this.Const.Strings.NomadChampionTitles
+	},
+	DesertDevil = {
+		ID = this.Const.EntityType.DesertDevil,
+		Variant = 2,
+		Strength = 40,
+		Cost = 40,
+		Row = 0,
+		Script = "scripts/entity/tactical/humans/desert_devil",
+		NameList = this.Const.Strings.DesertDevilChampionTitles,
+		TitleList = null
+	},
+	Executioner = {
+		ID = this.Const.EntityType.Executioner,
+		Variant = 2,
+		Strength = 40,
+		Cost = 40,
+		Row = 0,
+		Script = "scripts/entity/tactical/humans/executioner",
+		NameList = this.Const.Strings.ExecutionerChampionTitles,
+		TitleList = null
+	},
+	DesertStalker = {
+		ID = this.Const.EntityType.DesertStalker,
+		Variant = 2,
+		Strength = 40,
+		Cost = 40,
+		Row = 1,
+		Script = "scripts/entity/tactical/humans/desert_stalker",
+		NameList = this.Const.Strings.SouthernNames,
+		TitleList = this.Const.Strings.DesertStalkerChampionTitles
+	},
 	Warhound = {
 		ID = this.Const.EntityType.Warhound,
 		Variant = 0,
@@ -800,7 +946,7 @@ gt.Const.World.Spawn.Troops <- {
 		ID = this.Const.EntityType.BarbarianUnhold,
 		Variant = 0,
 		Strength = 50,
-		Cost = 50,
+		Cost = 55,
 		Row = 0,
 		Script = "scripts/entity/tactical/enemies/unhold_armored"
 	},
@@ -808,7 +954,7 @@ gt.Const.World.Spawn.Troops <- {
 		ID = this.Const.EntityType.BarbarianUnholdFrost,
 		Variant = 0,
 		Strength = 70,
-		Cost = 70,
+		Cost = 75,
 		Row = 0,
 		Script = "scripts/entity/tactical/enemies/unhold_frost_armored"
 	},
@@ -819,6 +965,98 @@ gt.Const.World.Spawn.Troops <- {
 		Cost = 15,
 		Row = 2,
 		Script = "scripts/entity/tactical/humans/barbarian_beastmaster"
+	},
+	Slave = {
+		ID = this.Const.EntityType.Slave,
+		Variant = 0,
+		Strength = 7,
+		Cost = 7,
+		Row = 0,
+		Script = "scripts/entity/tactical/humans/slave"
+	},
+	NorthernSlave = {
+		ID = this.Const.EntityType.Slave,
+		Variant = 0,
+		Strength = 7,
+		Cost = 7,
+		Row = 0,
+		Script = "scripts/entity/tactical/humans/slave_northern"
+	},
+	Conscript = {
+		ID = this.Const.EntityType.Conscript,
+		Variant = 0,
+		Strength = 20,
+		Cost = 20,
+		Row = 0,
+		Script = "scripts/entity/tactical/humans/conscript"
+	},
+	ConscriptPolearm = {
+		ID = this.Const.EntityType.Conscript,
+		Variant = 0,
+		Strength = 20,
+		Cost = 15,
+		Row = 1,
+		Script = "scripts/entity/tactical/humans/conscript_polearm"
+	},
+	Officer = {
+		ID = this.Const.EntityType.Officer,
+		Variant = 1,
+		Strength = 35,
+		Cost = 25,
+		Row = 1,
+		Script = "scripts/entity/tactical/humans/officer",
+		NameList = this.Const.Strings.SouthernNames,
+		TitleList = this.Const.Strings.SouthernOfficerTitles
+	},
+	Gunner = {
+		ID = this.Const.EntityType.Gunner,
+		Variant = 0,
+		Strength = 20,
+		Cost = 20,
+		Row = 1,
+		Script = "scripts/entity/tactical/humans/gunner"
+	},
+	Engineer = {
+		ID = this.Const.EntityType.Engineer,
+		Variant = 0,
+		Strength = 10,
+		Cost = 10,
+		Row = 2,
+		Script = "scripts/entity/tactical/humans/engineer"
+	},
+	Mortar = {
+		ID = this.Const.EntityType.Mortar,
+		Variant = 0,
+		Strength = 30,
+		Cost = 20,
+		Row = 2,
+		Script = "scripts/entity/tactical/objective/mortar"
+	},
+	Gladiator = {
+		ID = this.Const.EntityType.Gladiator,
+		Variant = 2,
+		Strength = 40,
+		Cost = 40,
+		Row = 0,
+		Script = "scripts/entity/tactical/humans/gladiator",
+		NameList = this.Const.Strings.SouthernNames,
+		TitleList = this.Const.Strings.GladiatorTitles
+	},
+	Assassin = {
+		ID = this.Const.EntityType.Assassin,
+		Variant = 0,
+		Strength = 35,
+		Cost = 35,
+		Row = 1,
+		Script = "scripts/entity/tactical/humans/assassin"
+	},
+	SouthernDonkey = {
+		ID = this.Const.EntityType.CaravanDonkey,
+		Variant = 0,
+		Strength = 10,
+		Cost = 0,
+		Row = 3,
+		Script = "scripts/entity/tactical/objective/donkey_southern"
 	}
 };
 gt.Const.World.Spawn.Caravan <- [

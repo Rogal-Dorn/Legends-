@@ -76,20 +76,6 @@ this.donkey <- this.inherit("scripts/entity/tactical/actor", {
 		}
 
 		this.actor.onDeath(_killer, _skill, _tile, _fatalityType);
-
-		if (this.m.WorldTroop != null && ("Party" in this.m.WorldTroop) && this.m.WorldTroop.Party != null)
-		{
-			local numDonkeys = 0;
-			local troops = this.m.WorldTroop.Party.getTroops();
-
-			foreach( t in troops )
-			{
-				if (t.Script == "scripts/entity/tactical/objective/donkey")
-				{
-					numDonkeys = ++numDonkeys;
-				}
-			}
-		}
 	}
 
 	function onDamageReceived( _attacker, _skill, _hitInfo )
@@ -117,7 +103,7 @@ this.donkey <- this.inherit("scripts/entity/tactical/actor", {
 		b.IsAffectedByInjuries = false;
 		b.IsAffectedByNight = false;
 		b.IsMovable = false;
-		b.TargetAttractionMult = 1.25;
+		b.TargetAttractionMult = 1.1;
 		this.m.ActionPoints = b.ActionPoints;
 		this.m.Hitpoints = b.Hitpoints;
 		this.m.CurrentProperties = clone b;

@@ -10,6 +10,7 @@ this.weapon <- this.inherit("scripts/items/item", {
 		RangeMin = 1,
 		RangeMax = 1,
 		RangeIdeal = 1,
+		RangeMaxBonus = 9,
 		Ammo = 0,
 		AmmoMax = 0,
 		AmmoCost = 3,
@@ -26,6 +27,7 @@ this.weapon <- this.inherit("scripts/items/item", {
 		IsDoubleGrippable = false,
 		IsAgainstShields = false,
 		IsAoE = false,
+		IsEnforcingRangeLimit = false,
 		IsBloodied = false
 	},
 	function getRangeMin()
@@ -41,6 +43,16 @@ this.weapon <- this.inherit("scripts/items/item", {
 	function getRangeIdeal()
 	{
 		return this.m.RangeIdeal;
+	}
+
+	function getRangeEffective()
+	{
+		return this.m.RangeMax;
+	}
+
+	function getRangeMaxBonus()
+	{
+		return this.m.RangeMaxBonus;
 	}
 
 	function getDamageMin()
@@ -81,6 +93,11 @@ this.weapon <- this.inherit("scripts/items/item", {
 	function isAoE()
 	{
 		return this.m.IsAoE;
+	}
+
+	function isEnforcingRangeLimit()
+	{
+		return this.m.IsEnforcingRangeLimit;
 	}
 
 	function getAmmo()
@@ -171,7 +188,6 @@ this.weapon <- this.inherit("scripts/items/item", {
 	function create()
 	{
 		this.m.IsDroppedAsLoot = true;
-		this.m.IsDroppedWhenDamaged = false;
 	}
 
 	function getTooltip()
@@ -224,9 +240,9 @@ this.weapon <- this.inherit("scripts/items/item", {
 				id = 4,
 				type = "progressbar",
 				icon = "ui/icons/asset_supplies.png",
-				value = this.m.Condition,
-				valueMax = this.m.ConditionMax,
-				text = "" + this.m.Condition + " / " + this.m.ConditionMax + "",
+				value = this.getCondition(),
+				valueMax = this.getConditionMax(),
+				text = "" + this.getCondition() + " / " + this.getConditionMax() + "",
 				style = "armor-body-slim"
 			});
 		}
@@ -346,7 +362,7 @@ this.weapon <- this.inherit("scripts/items/item", {
 				result.push({
 					id = 10,
 					type = "text",
-					icon = "ui/icons/ranged_skill.png",
+					icon = "ui/icons/ammo.png",
 					text = "Contains ammo for [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.Ammo + "[/color] uses"
 				});
 			}
@@ -377,8 +393,9 @@ this.weapon <- this.inherit("scripts/items/item", {
 		}
 
 		local isPlayer = this.m.LastEquippedByFaction == this.Const.Faction.Player || this.getContainer() != null && this.getContainer().getActor() != null && !this.getContainer().getActor().isNull() && this.isKindOf(this.getContainer().getActor().get(), "player");
-		local isLucky = !this.Tactical.State.isScenarioMode() && this.World.Assets.getOrigin().isDroppedAsLoot(this);
-		return (this.m.AmmoMax == 0 || isPlayer || this.m.Ammo > 0 && this.getCurrentSlotType() != this.Const.ItemSlot.Bag) && (this.m.Condition >= 12 || this.m.ConditionMax <= 1 || isPlayer || isLucky || this.isItemType(this.Const.Items.ItemType.Named) || this.isItemType(this.Const.Items.ItemType.Legendary)) && (isPlayer || isLucky || this.isItemType(this.Const.Items.ItemType.Named) || this.isItemType(this.Const.Items.ItemType.Legendary) || this.Math.rand(1, 100) <= 90);
+		local isLucky = !this.Tactical.State.isScenarioMode() && !isPlayer && this.World.Assets.getOrigin().isDroppedAsLoot(this);
+		local isBlacksmithed = isPlayer && !this.Tactical.State.isScenarioMode() && this.World.Assets.m.IsBlacksmithed;
+		return (this.m.AmmoMax == 0 || isPlayer || this.m.Ammo > 0 && this.getCurrentSlotType() != this.Const.ItemSlot.Bag) && (this.m.Condition >= 12 || this.m.ConditionMax <= 1 || isLucky || isBlacksmithed || !isPlayer && this.isItemType(this.Const.Items.ItemType.Named) || this.isItemType(this.Const.Items.ItemType.Legendary)) && (isPlayer || isLucky || this.isItemType(this.Const.Items.ItemType.Named) || this.isItemType(this.Const.Items.ItemType.Legendary) || this.Math.rand(1, 100) <= 90);
 	}
 
 	function consumeAmmo()
@@ -435,6 +452,11 @@ this.weapon <- this.inherit("scripts/items/item", {
 		{
 			_skill.setFatigueCost(this.Math.max(0, _skill.getFatigueCostRaw() + this.m.FatigueOnSkillUse));
 		}
+	}
+
+	function getAdditionalRange( _actor )
+	{
+		return 0;
 	}
 
 	function onEquip()

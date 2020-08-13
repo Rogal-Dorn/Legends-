@@ -46,6 +46,28 @@ this.deep_abdominal_cut_injury <- this.inherit("scripts/skills/injury/injury", {
 		return ret;
 	}
 
+	function onAdded()
+	{
+		this.injury.onAdded();
+
+		if (!("State" in this.Tactical) || this.Tactical.State == null)
+		{
+			return;
+		}
+
+		local p = this.getContainer().getActor().getCurrentProperties();
+
+		if (!p.IsAffectedByInjuries || this.m.IsFresh && !p.IsAffectedByFreshInjuries)
+		{
+			return;
+		}
+
+		if (this.getContainer().getActor().getHitpointsPct() > 0.75)
+		{
+			this.getContainer().getActor().setHitpoints(this.getContainer().getActor().getHitpointsMax() * 0.75);
+		}
+	}
+
 	function onUpdate( _properties )
 	{
 		this.injury.onUpdate(_properties);
@@ -60,7 +82,7 @@ this.deep_abdominal_cut_injury <- this.inherit("scripts/skills/injury/injury", {
 			_properties.HitpointsMult *= 0.75;
 		}
 
-		_properties.StaminaMult *= 0.75;
+		_properties.StaminaMult *= 0.7;
 	}
 
 });

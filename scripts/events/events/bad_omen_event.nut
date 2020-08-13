@@ -62,7 +62,7 @@ this.bad_omen_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getSkills().hasSkill("trait.superstitious") && !bro.getSkills().hasSkill("effects.afraid"))
+			if ((bro.getSkills().hasSkill("trait.superstitious") || bro.getSkills().hasSkill("trait.mad")) && !bro.getSkills().hasSkill("effects.afraid"))
 			{
 				candidates.push(bro);
 			}

@@ -41,7 +41,7 @@ this.deserter_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.Hairs = this.Const.Hair.CommonMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.Body = "bust_naked_body_00";
+		this.m.Bodies = this.Const.Bodies.Skinny;
 		this.m.Level = this.Math.rand(1, 2);
 		this.m.IsCombatBackground = true;
 		this.m.IsLowborn = true;

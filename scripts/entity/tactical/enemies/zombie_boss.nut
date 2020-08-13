@@ -39,8 +39,8 @@ this.zombie_boss <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.Move] = 0.1;
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.DamageReceived] = 0.5;
 		this.m.SoundPitch = 80 * 0.01;
-		this.getTags().add("undead");
-		this.getTags().add("zombie_minion");
+		this.getFlags().add("undead");
+		this.getFlags().add("zombie_minion");
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/zombie_agent");
 		this.m.AIAgent.setActor(this);
 	}
@@ -256,10 +256,12 @@ this.zombie_boss <- this.inherit("scripts/entity/tactical/actor", {
 		this.actor.onInit();
 		local b = this.m.BaseProperties;
 		b.setValues(this.Const.Tactical.Actor.ZombieBoss);
+		b.SurroundedBonus = 10;
 		b.IsAffectedByNight = false;
 		b.IsAffectedByInjuries = false;
 		b.IsImmuneToBleeding = true;
 		b.IsImmuneToPoison = true;
+		b.FatigueDealtPerHitMult = 2.0;
 		this.m.ActionPoints = b.ActionPoints;
 		this.m.Hitpoints = b.Hitpoints;
 		this.m.CurrentProperties = clone b;

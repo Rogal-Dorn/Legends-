@@ -75,9 +75,11 @@ this.move_orcs_action <- this.inherit("scripts/factions/faction_action", {
 
 		for( local i = 0; i < num; i = ++i )
 		{
-			local party = this.getFaction().spawnEntity(this.m.Start.getTile(), "Orcs", false, this.Const.World.Spawn.OrcRaiders, this.Math.rand(70, 130) * this.getReputationToDifficultyMult());
+			local party = this.getFaction().spawnEntity(this.m.Start.getTile(), "Orcs", false, this.Const.World.Spawn.OrcRaiders, this.Math.rand(70, 130) * this.getScaledDifficultyMult());
 			party.getSprite("banner").setBrush(this.m.Start.getBanner());
 			party.setDescription("A band of menacing orcs, greenskinned and towering any man.");
+			party.setFootprintType(this.Const.World.FootprintsType.Orcs);
+			party.getFlags().set("IsRandomlySpawned", true);
 			party.getLoot().ArmorParts = this.Math.rand(0, 25);
 			party.getLoot().Ammo = this.Math.rand(0, 10);
 			party.addToInventory("supplies/strange_meat_item");

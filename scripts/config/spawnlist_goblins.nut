@@ -2178,6 +2178,23 @@ gt.Const.World.Spawn.GoblinDefenders <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.GoblinSkirmisherLOW,
+				Num = 5
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_goblin_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinSkirmisherLOW,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusherLOW,
 				Num = 4
 			}
 		]
@@ -2233,8 +2250,8 @@ gt.Const.World.Spawn.GoblinDefenders <- [
 		Body = "figure_goblin_01",
 		Troops = [
 			{
-				Type = this.Const.World.Spawn.Troops.GoblinSkirmisher,
-				Num = 6
+				Type = this.Const.World.Spawn.Troops.GoblinSkirmisherLOW,
+				Num = 4
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.GoblinAmbusherLOW,
@@ -2250,8 +2267,71 @@ gt.Const.World.Spawn.GoblinDefenders <- [
 		Body = "figure_goblin_01",
 		Troops = [
 			{
+				Type = this.Const.World.Spawn.Troops.GoblinSkirmisher,
+				Num = 4
+			},
+			{
 				Type = this.Const.World.Spawn.Troops.GoblinSkirmisherLOW,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusherLOW,
+				Num = 3
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_goblin_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinSkirmisher,
 				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 3
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_goblin_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinSkirmisher,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusherLOW,
+				Num = 2
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_goblin_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinSkirmisher,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 2
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.GoblinAmbusherLOW,
@@ -2301,7 +2381,7 @@ gt.Const.World.Spawn.GoblinDefenders <- [
 		Body = "figure_goblin_01",
 		Troops = [
 			{
-				Type = this.Const.World.Spawn.Troops.GoblinSkirmisherLOW,
+				Type = this.Const.World.Spawn.Troops.GoblinSkirmisher,
 				Num = 4
 			},
 			{
@@ -2309,7 +2389,7 @@ gt.Const.World.Spawn.GoblinDefenders <- [
 				Num = 3
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.GoblinAmbusherLOW,
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
 				Num = 4
 			}
 		]
@@ -2322,7 +2402,7 @@ gt.Const.World.Spawn.GoblinDefenders <- [
 		Body = "figure_goblin_01",
 		Troops = [
 			{
-				Type = this.Const.World.Spawn.Troops.GoblinSkirmisherLOW,
+				Type = this.Const.World.Spawn.Troops.GoblinSkirmisher,
 				Num = 6
 			},
 			{
@@ -2339,7 +2419,7 @@ gt.Const.World.Spawn.GoblinDefenders <- [
 		Body = "figure_goblin_05",
 		Troops = [
 			{
-				Type = this.Const.World.Spawn.Troops.GoblinAmbusherLOW,
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
 				Num = 2
 			},
 			{
@@ -2390,7 +2470,7 @@ gt.Const.World.Spawn.GoblinDefenders <- [
 		Body = "figure_goblin_05",
 		Troops = [
 			{
-				Type = this.Const.World.Spawn.Troops.GoblinAmbusherLOW,
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
 				Num = 4
 			},
 			{
@@ -2475,11 +2555,11 @@ gt.Const.World.Spawn.GoblinDefenders <- [
 		Body = "figure_goblin_01",
 		Troops = [
 			{
-				Type = this.Const.World.Spawn.Troops.GoblinSkirmisherLOW,
+				Type = this.Const.World.Spawn.Troops.GoblinSkirmisher,
 				Num = 6
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.GoblinAmbusherLOW,
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
 				Num = 3
 			}
 		]
@@ -2547,7 +2627,7 @@ gt.Const.World.Spawn.GoblinDefenders <- [
 				Num = 6
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.GoblinAmbusherLOW,
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
 				Num = 5
 			}
 		]

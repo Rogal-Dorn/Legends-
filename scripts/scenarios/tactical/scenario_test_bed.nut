@@ -7,13 +7,12 @@ this.scenario_test_bed <- this.inherit("scripts/scenarios/tactical/scenario_temp
 		this.initMap();
 		this.initEntities(6, 1);
 		this.initStash();
-		local weather = this.Tactical.getWeather();
 		this.Tactical.getCamera().Level = 0;
 	}
 
 	function initMap()
 	{
-		local testMap = this.MapGen.get("tactical.tundra");
+		local testMap = this.MapGen.get("tactical.sinkhole");
 		local minX = testMap.getMinX();
 		local minY = testMap.getMinY();
 		this.Tactical.resizeScene(minX, minY);
@@ -23,6 +22,23 @@ this.scenario_test_bed <- this.inherit("scripts/scenarios/tactical/scenario_temp
 			W = minX,
 			H = minY
 		}, null);
+		local locationTemplate = clone this.Const.Tactical.LocationTemplate;
+		locationTemplate.Template[0] = "tactical.sunken_library";
+		locationTemplate.Fortification = this.Const.Tactical.FortificationType.None;
+		locationTemplate.CutDownTrees = true;
+		locationTemplate.ShiftX = 0;
+		testMap.campify({
+			X = 0,
+			Y = 0,
+			W = minX,
+			H = minY
+		}, locationTemplate);
+		this.MapGen.get(locationTemplate.Template[0]).fill({
+			X = 0,
+			Y = 0,
+			W = minX,
+			H = minY
+		}, locationTemplate);
 	}
 
 	function initEntities( _numPlayer, _numEnemy )
@@ -52,11 +68,25 @@ this.scenario_test_bed <- this.inherit("scripts/scenarios/tactical/scenario_temp
 			entity.setName(this.getRandomPlayerName());
 			entity.setScenarioValues();
 			local items = entity.getItems();
+			items.equip(this.new("scripts/items/helmets/oriental/southern_head_wrap"));
 			local r = this.Math.rand(1, 3);
-			items.equip(this.new("scripts/items/armor/legendary/ijirok_armor"));
-			items.equip(this.new("scripts/items/helmets/legendary/ijirok_helmet"));
-			items.equip(this.new("scripts/items/weapons/battle_whip"));
-			local r = this.Math.rand(0, 2);
+			items.equip(this.new("scripts/items/tools/fire_bomb_item"));
+			local a = this.new("scripts/items/armor/oriental/gladiator_harness");
+			local u;
+			r = this.Math.rand(1, 2);
+
+			if (r == 1)
+			{
+				u = this.new("scripts/items/armor_upgrades/light_gladiator_upgrade");
+			}
+			else if (r == 2)
+			{
+				u = this.new("scripts/items/armor_upgrades/heavy_gladiator_upgrade");
+			}
+
+			a.setUpgrade(u);
+			items.equip(a);
+			items.equip(this.new("scripts/items/tools/fire_bomb_item"));
 		}
 
 		local entity = this.spawnEntity("scripts/entity/tactical/enemies/orc_berserker");

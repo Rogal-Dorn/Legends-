@@ -123,6 +123,7 @@ this.ai_gruesome_feast <- this.inherit("scripts/ai/tactical/behavior", {
 				}
 
 				score = score - this.Const.AI.Behavior.GruesomeFeastWaitPenalty;
+				score = score - this.Const.AI.Behavior.GruesomeFeastSpearwallPenalty * this.querySpearwallValueForTile(_entity, c);
 				local mag = this.queryOpponentMagnitude(c, this.Const.AI.Behavior.GruesomeFeastMagnitudeMaxRange);
 				score = score - mag.Opponents * (1.0 - mag.AverageDistanceScore) * this.Math.maxf(0.5, 1.0 - mag.AverageEngaged) * this.Const.AI.Behavior.GruesomeFeastOpponentValue;
 

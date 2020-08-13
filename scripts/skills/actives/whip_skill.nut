@@ -1,15 +1,15 @@
 this.whip_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		SoundsA = [
-			"sounds/combat/dlc4/whip_bleed_01.wav",
-			"sounds/combat/dlc4/whip_bleed_02.wav",
-			"sounds/combat/dlc4/whip_bleed_03.wav"
+			"sounds/combat/whip_bleed_01.wav",
+			"sounds/combat/whip_bleed_02.wav",
+			"sounds/combat/whip_bleed_03.wav"
 		],
 		SoundsB = [
-			"sounds/combat/dlc4/whip_hit_01.wav",
-			"sounds/combat/dlc4/whip_hit_02.wav",
-			"sounds/combat/dlc4/whip_hit_03.wav",
-			"sounds/combat/dlc4/whip_hit_04.wav"
+			"sounds/combat/whip_hit_01.wav",
+			"sounds/combat/whip_hit_02.wav",
+			"sounds/combat/whip_hit_03.wav",
+			"sounds/combat/whip_hit_04.wav"
 		]
 	},
 	function create()
@@ -22,9 +22,9 @@ this.whip_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "skills/active_161.png";
 		this.m.Overlay = "active_161";
 		this.m.SoundOnUse = [
-			"sounds/combat/dlc4/whip_01.wav",
-			"sounds/combat/dlc4/whip_02.wav",
-			"sounds/combat/dlc4/whip_03.wav"
+			"sounds/combat/whip_01.wav",
+			"sounds/combat/whip_02.wav",
+			"sounds/combat/whip_03.wav"
 		];
 		this.m.SoundOnHit = [];
 		this.m.Type = this.Const.SkillType.Active;

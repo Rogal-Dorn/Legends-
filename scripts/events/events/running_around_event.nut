@@ -9,7 +9,7 @@ this.running_around_event <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 100.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_75.png[/img]{Walking, running, fighting, fucking, all good for a man\'s heart. The time spent traveling the land has improved the vitality and vigor of the men. You even caught one of the cheekier mercenaries flexing into pondwater, admiring his own reflection like some smirkin\' wench. | All this running about the land has increased the stamina of the men. One runs in place, holding a finger to his neck. He remarks that his heart rate isn\'t going up at all. Another brother remarks that the guy doesn\'t even know how to count. The running man pauses.%SPEECH_ON%Oh. That\'s right.%SPEECH_OFF%}",
+			Text = "%terrainImage%{Walking, running, fighting, fucking, all good for a man\'s heart. The time spent traveling the land has improved the vitality and vigor of the men. You even caught one of the cheekier mercenaries flexing into pondwater, admiring his own reflection like some smirkin\' wench. | All this running about the land has increased the stamina of the men. One runs in place, holding a finger to his neck. He remarks that his heart rate isn\'t going up at all. Another brother remarks that the guy doesn\'t even know how to count. The running man pauses.%SPEECH_ON%Oh. That\'s right.%SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			Characters = [],

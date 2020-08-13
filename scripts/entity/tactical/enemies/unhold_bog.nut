@@ -13,6 +13,8 @@ this.unhold_bog <- this.inherit("scripts/entity/tactical/enemies/unhold", {
 		this.actor.onInit();
 		local b = this.m.BaseProperties;
 		b.setValues(this.Const.Tactical.Actor.UnholdBog);
+		b.IsImmuneToDisarm = true;
+		b.IsImmuneToRotation = true;
 
 		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 90)
 		{

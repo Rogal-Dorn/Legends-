@@ -203,4 +203,45 @@ gt.Const.FactionArchetypes <- [
 		}
 	]
 ];
+gt.Const.CityStateArchetypes <- [
+	{
+		Traits = [
+			this.Const.FactionTrait.OrientalCityState
+		],
+		Description = "A wealthy and independent city state focused mostly on trade and acquiring further wealth.",
+		Mottos = [
+			"He lives well who lives peacefully",
+			"Wealth is my arrow",
+			"Wealth is our sword",
+			"Golden towers in the distance",
+			"A gift returned",
+			"One giveth, one taketh"
+		]
+	},
+	{
+		Traits = [
+			this.Const.FactionTrait.OrientalCityState
+		],
+		Description = "A city state dedicated to acquiring knowledge above all - even if it comes at the cost of doing autopsies, reading forbidden tomes or engaging with sinister powers not of this world.",
+		Mottos = [
+			"Dare to be wise",
+			"Wisdom the conqueror of fortune",
+			"Read and learn",
+			"The castle of wisdom",
+			"Knowledge at last"
+		]
+	},
+	{
+		Traits = [
+			this.Const.FactionTrait.OrientalCityState
+		],
+		Description = "A city state ruled by a ruthless council that is out to achieve power by all means. Many an untimely death is rumored to have been an assassination ordered by the viziers of %citystatename%.",
+		Mottos = [
+			"A snake in the grass",
+			"From the shadows",
+			"By all means",
+			"The hawk catcheth not flies"
+		]
+	}
+];
 

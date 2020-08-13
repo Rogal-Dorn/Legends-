@@ -92,9 +92,11 @@ this.defend_undead_action <- this.inherit("scripts/factions/faction_action", {
 			local party = this.getFaction().spawnEntity(spawnpoints[i], "Undead", false, this.m.Settlement.getRoamerSpawnList(), this.m.Settlement.getResources() * 0.66);
 			party.getSprite("banner").setBrush(this.m.Settlement.getBanner());
 			party.setDescription("Something seems wrong.");
+			party.setFootprintType(this.Const.World.FootprintsType.Undead);
 			party.setSlowerAtNight(false);
 			party.setUsingGlobalVision(false);
 			party.setLooting(false);
+			party.getFlags().set("IsRandomlySpawned", true);
 			party.getLoot().Money = this.Math.rand(0, 100);
 			party.getLoot().ArmorParts = this.Math.rand(0, 10);
 			local c = party.getController();

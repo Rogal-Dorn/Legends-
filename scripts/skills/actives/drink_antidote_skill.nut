@@ -57,6 +57,12 @@ this.drink_antidote_skill <- this.inherit("scripts/skills/skill", {
 				type = "text",
 				icon = "ui/icons/special.png",
 				text = "Removes the Poisoned status effect"
+			},
+			{
+				id = 8,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Grants immunity to Poison for 3 turns"
 			}
 		];
 
@@ -121,17 +127,7 @@ this.drink_antidote_skill <- this.inherit("scripts/skills/skill", {
 		}
 		else
 		{
-			if (target.getSkills().hasSkill("effects.goblin_poison"))
-			{
-				return true;
-			}
-
-			if (target.getSkills().hasSkill("effects.spider_poison"))
-			{
-				return true;
-			}
-
-			return false;
+			return true;
 		}
 	}
 
@@ -151,6 +147,8 @@ this.drink_antidote_skill <- this.inherit("scripts/skills/skill", {
 			{
 				user.getSkills().removeByID("effects.spider_poison");
 			}
+
+			user.getSkills().add(this.new("scripts/skills/effects/antidote_effect"));
 
 			if (!user.isHiddenToPlayer())
 			{

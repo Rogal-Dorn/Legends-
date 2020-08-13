@@ -234,7 +234,7 @@ this.apprentice_learns_event <- this.inherit("scripts/events/event", {
 
 	function markAsLearned()
 	{
-		this.m.Apprentice.getTags().add("learned");
+		this.m.Apprentice.getFlags().add("learned");
 	}
 
 	function onUpdateScore()
@@ -250,7 +250,7 @@ this.apprentice_learns_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getLevel() > 3 && bro.getBackground().getID() == "background.apprentice" && !bro.getTags().has("learned"))
+			if (bro.getLevel() > 3 && bro.getBackground().getID() == "background.apprentice" && !bro.getFlags().has("learned"))
 			{
 				apprentice_candidates.push(bro);
 			}

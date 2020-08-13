@@ -230,7 +230,7 @@ this.civilwar_ambush_event <- this.inherit("scripts/events/event", {
 
 		foreach( t in towns )
 		{
-			if (t.isMilitary() || t.getSize() >= 3)
+			if (t.isMilitary() || t.isSouthern() || t.getSize() >= 3)
 			{
 				continue;
 			}

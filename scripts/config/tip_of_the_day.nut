@@ -41,7 +41,7 @@ gt.Const.TipOfTheDay <- [
 	"Use trading to supplement your income.",
 	"Learn the \'Rotation\' or \'Footwork\' perks for additional mobility in battle.",
 	"View range is decreased at night, both in combat and on the worldmap.",
-	"Skeletons are highly resistant to ranged attacks.",
+	"Skeletons are highly resistant to ranged attacks and fire.",
 	"Heavy armor offers great protection, but also slows down the wearer and makes him tire more quickly.",
 	"Heavy helmets can be hard to breathe in and limit the field of vision.",
 	"Warhammers and Military Picks can make short work of heavy armor.",
@@ -81,6 +81,7 @@ gt.Const.TipOfTheDay <- [
 	"Ranged weapons are less accurate at night - those of your enemies included.",
 	"Make camp to have your men heal and repair their equipment faster.",
 	"Use ALT + Right Click to mark items for repair in your stash. Items equipped by your men are repaired automatically.",
+	"You can have your items repaired at the smith for a fee by using ALT + Right Click.",
 	"Breaking a contract will anger your employer - especially if you\'ve received advance payment.",
 	"Fortifications will only offer you contracts from the noble house that owns them.",
 	"Nobles give contracts only to mercenary companies with professional renown.",
@@ -92,7 +93,7 @@ gt.Const.TipOfTheDay <- [
 	"If you keep losing to an enemy, change your tactics!",
 	"The larger a party on the worldmap, the slower it moves. Yours included.",
 	"Use wardogs to hunt down elusive or fleeing enemies.",
-	"Use a trained falcon to discover hidden enemies in difficult terrain.",
+	"Use a trained falcon to discover hidden enemies on difficult terrain.",
 	"Cleavers can inflict bleeding wounds.",
 	"Fulfilling ambitions will raise everyone\'s mood and grant you renown, as well as some unique rewards.",
 	"Use CTRL + Left Click to attack allied parties on the worldmap. This only works if you are currently unemployed.",
@@ -105,11 +106,15 @@ gt.Const.TipOfTheDay <- [
 	"The natural habitat of direwolves is the forest.",
 	"You can enable faster AI turns in the options menu.",
 	"Trees can be hidden in combat using the \'T\' key.",
+	"Objects blocking tiles can be highlighted using the \'B\' key.",
 	"Higher renown will unlock more difficult contracts and better pay.",
 	"If your plan can fail with bad luck, maybe it isn\'t good enough of a plan.",
 	"Do the job. Survive. Get paid.",
 	"If a character waits their turn, their position in the turn order of the next round is determined with a penalty of 25% to Initiative.",
-	"A 95% chance to hit is also a 5% chance to miss."
+	"A 95% chance to hit is also a 5% chance to miss.",
+	"The \'Lone Wolf\' perk is not affected by nearby dogs or allies that are not part of your company.",
+	"The \'Fast Adaptation\' perk reduces variance of randomness.",
+	"Consider that enemy encampments on hills are harder to asssault, especially if they are fortified."
 ];
 gt.Const.LoadingScreens <- [
 	"ui/screens/loading_screen_01.jpg",

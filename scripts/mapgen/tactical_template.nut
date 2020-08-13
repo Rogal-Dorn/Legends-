@@ -9,6 +9,10 @@ this.tactical_template <- this.inherit("scripts/mapgen/map_template", {
 	{
 	}
 
+	function campify( _rect, _properties )
+	{
+	}
+
 	function addRoads( _rect, _properties )
 	{
 		if (_properties == null || _properties.Tile == null)

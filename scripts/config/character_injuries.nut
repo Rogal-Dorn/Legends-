@@ -86,14 +86,14 @@ gt.Const.Injury.BluntHead <- [
 ];
 gt.Const.Injury.CuttingBody <- [
 	{
-		ID = "injury.cut_leg_muscles",
-		Threshold = 0.25,
-		Script = "injury/cut_leg_muscles_injury"
-	},
-	{
 		ID = "injury.deep_abdominal_cut",
 		Threshold = 0.25,
 		Script = "injury/deep_abdominal_cut_injury"
+	},
+	{
+		ID = "injury.cut_leg_muscles",
+		Threshold = 0.25,
+		Script = "injury/cut_leg_muscles_injury"
 	},
 	{
 		ID = "injury.cut_arm_sinew",
@@ -112,7 +112,7 @@ gt.Const.Injury.CuttingBody <- [
 	},
 	{
 		ID = "injury.exposed_ribs",
-		Threshold = 0.35,
+		Threshold = 0.25,
 		Script = "injury/exposed_ribs_injury"
 	},
 	{
@@ -200,14 +200,14 @@ gt.Const.Injury.PiercingBody <- [
 		Script = "injury/pierced_arm_muscles_injury"
 	},
 	{
-		ID = "injury.pierced_lung",
-		Threshold = 0.5,
-		Script = "injury/pierced_lung_injury"
-	},
-	{
 		ID = "injury.grazed_kidney",
 		Threshold = 0.5,
 		Script = "injury/grazed_kidney_injury"
+	},
+	{
+		ID = "injury.pierced_lung",
+		Threshold = 0.5,
+		Script = "injury/pierced_lung_injury"
 	},
 	{
 		ID = "injury.stabbed_guts",
@@ -247,6 +247,30 @@ gt.Const.Injury.PiercingHead <- [
 		Script = "injury/crushed_windpipe_injury"
 	}
 ];
+gt.Const.Injury.BurningBody <- [
+	{
+		ID = "injury.burnt_legs",
+		Threshold = 0.25,
+		Script = "injury/burnt_legs_injury"
+	},
+	{
+		ID = "injury.burnt_hands",
+		Threshold = 0.5,
+		Script = "injury/burnt_hands_injury"
+	}
+];
+gt.Const.Injury.BurningHead <- [
+	{
+		ID = "injury.burnt_face",
+		Threshold = 0.25,
+		Script = "injury/burnt_face_injury"
+	},
+	{
+		ID = "injury.inhaled_flames",
+		Threshold = 0.5,
+		Script = "injury/inhaled_flames_injury"
+	}
+];
 gt.Const.Injury.All <- [];
 gt.Const.Injury.All.extend(this.Const.Injury.BluntBody);
 gt.Const.Injury.All.extend(this.Const.Injury.BluntHead);
@@ -254,10 +278,21 @@ gt.Const.Injury.All.extend(this.Const.Injury.CuttingBody);
 gt.Const.Injury.All.extend(this.Const.Injury.CuttingHead);
 gt.Const.Injury.All.extend(this.Const.Injury.PiercingBody);
 gt.Const.Injury.All.extend(this.Const.Injury.PiercingHead);
+gt.Const.Injury.CuttingAndPiercingBody <- clone this.Const.Injury.CuttingBody;
+gt.Const.Injury.CuttingAndPiercingBody.extend(this.Const.Injury.PiercingBody);
+gt.Const.Injury.CuttingAndPiercingHead <- clone this.Const.Injury.CuttingHead;
+gt.Const.Injury.CuttingAndPiercingHead.extend(this.Const.Injury.PiercingHead);
 gt.Const.Injury.BluntAndPiercingBody <- clone this.Const.Injury.BluntBody;
 gt.Const.Injury.BluntAndPiercingBody.extend(this.Const.Injury.PiercingBody);
 gt.Const.Injury.BluntAndPiercingHead <- clone this.Const.Injury.BluntHead;
 gt.Const.Injury.BluntAndPiercingHead.extend(this.Const.Injury.PiercingHead);
+gt.Const.Injury.BurningAndPiercingBody <- clone this.Const.Injury.BurningBody;
+gt.Const.Injury.BurningAndPiercingBody.extend(this.Const.Injury.BurningBody);
+gt.Const.Injury.BurningAndPiercingBody.extend(this.Const.Injury.PiercingBody);
+gt.Const.Injury.BurningAndPiercingHead <- clone this.Const.Injury.BurningHead;
+gt.Const.Injury.BurningAndPiercingHead.extend(this.Const.Injury.PiercingHead);
+gt.Const.Injury.Burning <- clone this.Const.Injury.BurningBody;
+gt.Const.Injury.Burning.extend(this.Const.Injury.BurningHead);
 gt.Const.Injury.Permanent <- [
 	{
 		ID = "injury.missing_nose",

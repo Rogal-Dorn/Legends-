@@ -131,7 +131,7 @@ this.ai_attack_swing <- this.inherit("scripts/ai/tactical/behavior", {
 					{
 						if (tile.getEntity().isAlliedWith(_entity))
 						{
-							combinedValue = combinedValue - (1.0 - this.getProperties().TargetPriorityHittingAlliesMult);
+							combinedValue = combinedValue - (1.0 - this.getProperties().TargetPriorityHittingAlliesMult) * tile.getEntity().getCurrentProperties().TargetAttractionMult;
 						}
 						else
 						{
@@ -154,7 +154,7 @@ this.ai_attack_swing <- this.inherit("scripts/ai/tactical/behavior", {
 					{
 						if (tile.getEntity().isAlliedWith(_entity))
 						{
-							combinedValue = combinedValue - (1.0 - this.getProperties().TargetPriorityHittingAlliesMult);
+							combinedValue = combinedValue - (1.0 - this.getProperties().TargetPriorityHittingAlliesMult) * tile.getEntity().getCurrentProperties().TargetAttractionMult;
 						}
 						else
 						{

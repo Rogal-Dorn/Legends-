@@ -85,6 +85,11 @@ this.ai_attack_lash <- this.inherit("scripts/ai/tactical/behavior", {
 				this.getAgent().declareAction();
 			}
 
+			if (this.m.Skill.getDelay() != 0)
+			{
+				this.getAgent().declareEvaluationDelay(this.m.Skill.getDelay());
+			}
+
 			this.m.TargetTile = null;
 		}
 

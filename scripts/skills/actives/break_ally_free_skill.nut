@@ -53,6 +53,11 @@ this.break_ally_free_skill <- this.inherit("scripts/skills/skill", {
 		];
 	}
 
+	function getChance()
+	{
+		return this.Math.min(100, this.getContainer().getActor().getCurrentProperties().getMeleeSkill() - 10);
+	}
+
 	function isHidden()
 	{
 		local actor = this.getContainer().getActor();
@@ -101,6 +106,13 @@ this.break_ally_free_skill <- this.inherit("scripts/skills/skill", {
 							this.m.IconDisabled = "skills/active_151_sw.png";
 							return false;
 						}
+
+						if (entity.getSkills().hasSkill("effects.serpent_ensnare"))
+						{
+							this.m.Icon = "skills/active_190.png";
+							this.m.IconDisabled = "skills/active_190_sw.png";
+							return false;
+						}
 					}
 				}
 			}
@@ -143,6 +155,11 @@ this.break_ally_free_skill <- this.inherit("scripts/skills/skill", {
 			return true;
 		}
 
+		if (target.getSkills().hasSkill("effects.serpent_ensnare"))
+		{
+			return true;
+		}
+
 		return false;
 	}
 
@@ -168,6 +185,11 @@ this.break_ally_free_skill <- this.inherit("scripts/skills/skill", {
 		if (target.getSkills().hasSkill("effects.kraken_ensnare"))
 		{
 			this.spawnIcon("status_effect_96", _targetTile);
+		}
+
+		if (target.getSkills().hasSkill("effects.serpent_ensnare"))
+		{
+			this.spawnIcon("status_effect_114", _targetTile);
 		}
 
 		local breakFree = target.getSkills().getSkillByID("actives.break_free");

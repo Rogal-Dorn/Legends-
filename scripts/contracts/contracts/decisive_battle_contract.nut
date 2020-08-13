@@ -144,7 +144,7 @@ this.decisive_battle_contract <- this.inherit("scripts/contracts/contract", {
 					this.Const.World.TerrainType.SnowyForest,
 					this.Const.World.TerrainType.AutumnForest,
 					this.Const.World.TerrainType.Swamp
-				], true, false, true);
+				], false, false, true);
 				tile.clear();
 				this.Contract.m.WarcampTile = tile;
 				this.Contract.m.Warcamp = this.WeakTableRef(this.World.spawnLocation("scripts/entity/world/locations/noble_camp_location", tile.Coords));
@@ -519,7 +519,7 @@ this.decisive_battle_contract <- this.inherit("scripts/contracts/contract", {
 
 			function onPartyDestroyed( _party )
 			{
-				if (_party.getTags().has("ContractSupplies"))
+				if (_party.getFlags().has("ContractSupplies"))
 				{
 					this.Flags.set("IsInterceptSuppliesSuccess", true);
 				}
@@ -677,7 +677,7 @@ this.decisive_battle_contract <- this.inherit("scripts/contracts/contract", {
 						allyStrength = allyStrength - 20;
 					}
 
-					this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Noble, allyStrength * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.Contract.getFaction());
+					this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Noble, allyStrength * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult(), this.Contract.getFaction());
 					p.Entities.push({
 						ID = this.Const.EntityType.Knight,
 						Variant = 0,
@@ -698,8 +698,8 @@ this.decisive_battle_contract <- this.inherit("scripts/contracts/contract", {
 						enemyStrength = enemyStrength + 25;
 					}
 
-					this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Noble, enemyStrength * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.Flags.get("EnemyNobleHouse"));
-					this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Mercenaries, 60 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.Flags.get("EnemyNobleHouse"));
+					this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Noble, enemyStrength * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult(), this.Flags.get("EnemyNobleHouse"));
+					this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Mercenaries, 60 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult(), this.Flags.get("EnemyNobleHouse"));
 					p.Entities.push({
 						ID = this.Const.EntityType.Knight,
 						Variant = this.Const.DLC.Wildmen && this.Contract.getDifficultyMult() >= 1.15 ? 1 : 0,
@@ -854,8 +854,10 @@ this.decisive_battle_contract <- this.inherit("scripts/contracts/contract", {
 			{
 				local playerTile = this.Contract.m.Warcamp.getTile();
 				local tile = this.Contract.getTileToSpawnLocation(playerTile, 5, 8);
-				local party = this.World.FactionManager.getFaction(this.Flags.get("EnemyNobleHouse")).spawnEntity(tile, "Scouts", false, this.Const.World.Spawn.Noble, 60 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
+				local party = this.World.FactionManager.getFaction(this.Flags.get("EnemyNobleHouse")).spawnEntity(tile, "Scouts", false, this.Const.World.Spawn.Noble, 60 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult());
 				party.getSprite("banner").setBrush(this.World.FactionManager.getFaction(this.Flags.get("EnemyNobleHouse")).getBannerSmall());
+				party.setDescription("Professional soldiers in service to local lords.");
+				party.setFootprintType(this.Const.World.FootprintsType.Nobles);
 				this.Contract.m.UnitsSpawned.push(party);
 				party.getLoot().Money = this.Math.rand(50, 100);
 				party.getLoot().ArmorParts = this.Math.rand(0, 10);
@@ -1040,8 +1042,8 @@ this.decisive_battle_contract <- this.inherit("scripts/contracts/contract", {
 							this.Const.PlayerBanners[n - 1],
 							"banner_noble_11"
 						];
-						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Mercenaries, 100 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.Const.Faction.Enemy);
-						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.PeasantsArmed, 40 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.Const.Faction.Enemy);
+						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Mercenaries, 100 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult(), this.Const.Faction.Enemy);
+						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.PeasantsArmed, 40 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult(), this.Const.Faction.Enemy);
 						this.World.Contracts.startScriptedCombat(p, false, true, true);
 						return 0;
 					}
@@ -1151,7 +1153,7 @@ this.decisive_battle_contract <- this.inherit("scripts/contracts/contract", {
 						p.EnemyBanners = [
 							"banner_noble_11"
 						];
-						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Peasants, 80 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.Const.Faction.Enemy);
+						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Peasants, 80 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult(), this.Const.Faction.Enemy);
 						this.World.Contracts.startScriptedCombat(p, false, true, true);
 						return 0;
 					}
@@ -1234,7 +1236,7 @@ this.decisive_battle_contract <- this.inherit("scripts/contracts/contract", {
 				local startTile = this.World.getEntityByID(this.Flags.get("InterceptSuppliesStart")).getTile();
 				local destTile = this.World.getEntityByID(this.Flags.get("InterceptSuppliesDest")).getTile();
 				local enemyFaction = this.World.FactionManager.getFaction(this.Flags.get("EnemyNobleHouse"));
-				local party = enemyFaction.spawnEntity(startTile, "Supply Caravan", false, this.Const.World.Spawn.NobleCaravan, 110 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
+				local party = enemyFaction.spawnEntity(startTile, "Supply Caravan", false, this.Const.World.Spawn.NobleCaravan, 110 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult());
 				party.getSprite("base").Visible = false;
 				party.getSprite("banner").setBrush(this.World.FactionManager.getFaction(this.Flags.get("EnemyNobleHouse")).getBannerSmall());
 				party.setMirrored(true);
@@ -1242,8 +1244,9 @@ this.decisive_battle_contract <- this.inherit("scripts/contracts/contract", {
 				party.setImportant(true);
 				party.setDiscovered(true);
 				party.setDescription("A caravan with armed escorts transporting provisions, supplies and equipment between settlements.");
+				party.setFootprintType(this.Const.World.FootprintsType.Caravan);
 				party.setAttackableByAI(false);
-				party.getTags().add("ContractSupplies");
+				party.getFlags().add("ContractSupplies");
 				this.Contract.m.Destination = this.WeakTableRef(party);
 				this.Contract.m.UnitsSpawned.push(party);
 				party.getLoot().Money = this.Math.rand(50, 100);
@@ -1345,12 +1348,13 @@ this.decisive_battle_contract <- this.inherit("scripts/contracts/contract", {
 					this.Const.World.TerrainType.Shore,
 					this.Const.World.TerrainType.Mountains
 				]);
-				local party = this.World.FactionManager.getFaction(this.Contract.getFaction()).spawnEntity(tile, "Deserters", false, this.Const.World.Spawn.Noble, 80 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
+				local party = this.World.FactionManager.getFaction(this.Contract.getFaction()).spawnEntity(tile, "Deserters", false, this.Const.World.Spawn.Noble, 80 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult());
 				party.getSprite("banner").setBrush("banner_deserters");
+				party.setFootprintType(this.Const.World.FootprintsType.Nobles);
 				party.setAttackableByAI(false);
 				party.getController().getBehavior(this.Const.World.AI.Behavior.ID.Attack).setEnabled(false);
 				party.setFootprintSizeOverride(0.75);
-				this.Const.World.Common.addFootprintsFromTo(playerTile, party.getTile(), this.Const.GenericFootprints, 0.75);
+				this.Const.World.Common.addFootprintsFromTo(playerTile, party.getTile(), this.Const.GenericFootprints, this.Const.World.FootprintsType.Nobles, 0.75);
 				this.Contract.m.Destination = this.WeakTableRef(party);
 				party.getLoot().Money = this.Math.rand(50, 100);
 				party.getLoot().ArmorParts = this.Math.rand(0, 10);

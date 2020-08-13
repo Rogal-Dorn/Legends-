@@ -62,7 +62,8 @@ gt.Const.Strings.SabreNames <- [
 	"Crescent",
 	"Half Moon",
 	"South Star",
-	"Shamshir"
+	"Shamshir",
+	"Scimitar"
 ];
 gt.Const.Strings.CleaverNames <- [
 	"Chopper",
@@ -83,10 +84,10 @@ gt.Const.Strings.CleaverNames <- [
 	"Meat Axe",
 	"Mincer",
 	"Hacker",
-	"Lacerater",
+	"Lacerator",
 	"Mangler",
 	"Gasher",
-	"Mutilater",
+	"Mutilator",
 	"Maimer",
 	"Tormentor",
 	"Render"
@@ -499,8 +500,26 @@ gt.Const.Strings.WarscytheNames <- [
 	"Blade",
 	"Edge",
 	"Scythe",
-	"Harvester"
+	"Harvester",
+	"Crescent"
 ];
+gt.Const.Strings.HandgonneNames <- [
+	"Cannon",
+	"Firebreather",
+	"Powderstick",
+	"Roar",
+	"Thunder",
+	"Rod of Fire",
+	"Dragontongue",
+	"Gonne",
+	"Thunderrod",
+	"Firespitter"
+];
+gt.Const.Strings.SwordlanceNames <- [
+	"Bladed Staff",
+	"Bladed Lance"
+];
+this.Const.Strings.SwordlanceNames.extend(this.Const.Strings.WarscytheNames);
 gt.Const.Strings.OldWeaponPrefix <- [
 	"Ancient",
 	"Forefather\'s",
@@ -549,6 +568,66 @@ gt.Const.Strings.BarbarianPrefix <- [
 	"Bloodied",
 	"Chosen"
 ];
+gt.Const.Strings.BarbarianSuffix <- [
+	"of the North",
+	"of Old",
+	"of Rage",
+	"of Slaughter",
+	"of Carnage",
+	"of the Gods",
+	"of Defiance",
+	"of Heroes"
+];
+gt.Const.Strings.SouthernPrefix <- [
+	"Southern",
+	"Nomad\'s",
+	"Manhunter\'s",
+	"Gladiator\'s",
+	"Assassin\'s",
+	"Gilded",
+	"Desert",
+	"True",
+	"The",
+	"Deadly",
+	"Well-crafted",
+	"Masterwork",
+	"Well-balanced",
+	"Honed",
+	"Famed",
+	"Trusty",
+	"Glorious",
+	"Ravenous",
+	"Bitter",
+	"Infamous",
+	"Marvellous",
+	"Vizier\'s",
+	"Oversized",
+	"Bloody",
+	"Cruel",
+	"Murderous",
+	"Malignant",
+	"Violent",
+	"Lethal",
+	"Ominous",
+	"Grisly",
+	"Magnificent",
+	"Exquisite"
+];
+gt.Const.Strings.SouthernSuffix <- [
+	"of the South",
+	"of the Gilder",
+	"of the Desert",
+	"of the Sands",
+	"of the Rising Sun",
+	"of the Morning",
+	"of the Oasis",
+	"of the Stars",
+	"of the Moon",
+	"of Splendor",
+	"of Magnificence",
+	"of Cleansing Fire",
+	"of Divine Will"
+];
 gt.Const.Strings.GoblinWeaponPrefix <- [
 	"Razor-sharp",
 	"Quick",
@@ -579,7 +658,6 @@ gt.Const.Strings.RandomWeaponPrefix <- [
 	"Champion\'s",
 	"Battle-forged",
 	"Northern",
-	"Southern",
 	"Raider\'s",
 	"Unsung Hero\'s",
 	"Glorious",

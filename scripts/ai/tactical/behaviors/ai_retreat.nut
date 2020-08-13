@@ -16,7 +16,7 @@ this.ai_retreat <- this.inherit("scripts/ai/tactical/behavior", {
 		// Function is a generator.
 		this.m.TargetTile = null;
 
-		if (this.Const.AI.NoRetreatMode && _entity.getFaction() != this.Const.Faction.Player)
+		if ((this.Const.AI.NoRetreatMode || this.Tactical.State.getStrategicProperties() != null && this.Tactical.State.getStrategicProperties().IsArenaMode) && _entity.getFaction() != this.Const.Faction.Player)
 		{
 			return this.Const.AI.Behavior.Score.Zero;
 		}

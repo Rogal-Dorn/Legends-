@@ -28,7 +28,7 @@ this.squire_vs_hedge_knight_event <- this.inherit("scripts/events/event", {
 			{
 				this.Characters.push(_event.m.Squire.getImagePath());
 				this.Characters.push(_event.m.HedgeKnight.getImagePath());
-				_event.m.Squire.getTags().set("squire_vs_hedge_knight", true);
+				_event.m.Squire.getFlags().set("squire_vs_hedge_knight", true);
 				local resolve = this.Math.rand(1, 4);
 				_event.m.Squire.getBaseProperties().Bravery += resolve;
 				_event.m.Squire.getSkills().update();
@@ -61,7 +61,7 @@ this.squire_vs_hedge_knight_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getLevel() <= 4 && bro.getBackground().getID() == "background.squire" && !bro.getTags().has("squire_vs_hedge_knight"))
+			if (bro.getLevel() <= 4 && bro.getBackground().getID() == "background.squire" && !bro.getFlags().has("squire_vs_hedge_knight"))
 			{
 				squire_candidates.push(bro);
 			}

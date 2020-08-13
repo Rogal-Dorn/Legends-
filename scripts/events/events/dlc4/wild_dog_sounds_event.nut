@@ -253,7 +253,8 @@ this.wild_dog_sounds_event <- this.inherit("scripts/events/event", {
 					TimeWithCompany = this.Math.max(1, dead.getDaysWithCompany()),
 					Kills = dead.getLifetimeStats().Kills,
 					Battles = dead.getLifetimeStats().Battles,
-					KilledBy = "Went missing"
+					KilledBy = "Went missing",
+					Expendable = dead.getBackground().getID() == "background.slave"
 				};
 				this.World.Statistics.addFallen(fallen);
 				this.List.push({

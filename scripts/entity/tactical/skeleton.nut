@@ -1,7 +1,8 @@
 this.skeleton <- this.inherit("scripts/entity/tactical/actor", {
 	m = {
 		ResurrectionValue = 2.0,
-		ResurrectWithScript = ""
+		ResurrectWithScript = "",
+		IsResurrectable = true
 	},
 	function create()
 	{
@@ -45,8 +46,8 @@ this.skeleton <- this.inherit("scripts/entity/tactical/actor", {
 			"sounds/enemies/skeleton_idle_05.wav",
 			"sounds/enemies/skeleton_idle_06.wav"
 		];
-		this.getTags().add("undead");
-		this.getTags().add("skeleton");
+		this.getFlags().add("undead");
+		this.getFlags().add("skeleton");
 	}
 
 	function playSound( _type, _volume, _pitch = 1.0 )
@@ -63,7 +64,7 @@ this.skeleton <- this.inherit("scripts/entity/tactical/actor", {
 	{
 		local flip = this.Math.rand(0, 100) < 50;
 		this.m.IsCorpseFlipped = flip;
-		local isResurrectable = _fatalityType != this.Const.FatalityType.Decapitated;
+		local isResurrectable = _fatalityType != this.Const.FatalityType.Decapitated && this.m.IsResurrectable;
 		local appearance = this.getItems().getAppearance();
 		local sprite_body = this.getSprite("body");
 		local sprite_head = this.getSprite("head");

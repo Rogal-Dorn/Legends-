@@ -42,7 +42,7 @@ this.fishing_huts_location <- this.inherit("scripts/entity/world/attached_locati
 				S = "weapons/militia_spear"
 			});
 			_list.push({
-				R = 20,
+				R = 10,
 				P = 1.0,
 				S = "tools/throwing_net"
 			});

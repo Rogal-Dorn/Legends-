@@ -33,8 +33,8 @@ this.uproot_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsIgnoredAsAOO = true;
 		this.m.IsAOE = true;
 		this.m.IsTargetingActor = false;
-		this.m.InjuriesOnBody = this.Const.Injury.BluntBody;
-		this.m.InjuriesOnHead = this.Const.Injury.BluntHead;
+		this.m.InjuriesOnBody = this.Const.Injury.PiercingBody;
+		this.m.InjuriesOnHead = this.Const.Injury.PiercingHead;
 		this.m.DirectDamageMult = 0.5;
 		this.m.ActionPointCost = 5;
 		this.m.FatigueCost = 25;

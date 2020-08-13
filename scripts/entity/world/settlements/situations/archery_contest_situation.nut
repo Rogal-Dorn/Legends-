@@ -7,6 +7,11 @@ this.archery_contest_situation <- this.inherit("scripts/entity/world/settlements
 		this.m.Name = "Archery Contest";
 		this.m.Description = "A contest in archery has attracted anyone proficient with a bow. A good time, perhaps, to look for according recruits.";
 		this.m.Icon = "ui/settlement_status/settlement_effect_31.png";
+		this.m.Rumors = [
+			"If you\'re a skilled archer, you might want to head to that big contest over in %settlement% and let fly some arrows!",
+			"You know, I myself was once the best archer near and far, I swear! Until a damned donkey stepped on my hand, that is. Otherwise, I\'d be in %settlement% for the archery contest right now...",
+			"Anyone skilled with a bow is making their way to %settlement% these days for some contest. Most of them poachers and other lowlifes, I imagine."
+		];
 		this.m.IsStacking = false;
 		this.m.ValidDays = 3;
 	}

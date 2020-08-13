@@ -99,7 +99,7 @@ this.shoot_stake <- this.inherit("scripts/skills/skill", {
 			ret.push({
 				id = 8,
 				type = "text",
-				icon = "ui/icons/ranged_skill.png",
+				icon = "ui/icons/ammo.png",
 				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]" + ammo + "[/color] bolts left"
 			});
 		}
@@ -176,6 +176,7 @@ this.shoot_stake <- this.inherit("scripts/skills/skill", {
 		this.getItem().setLoaded(false);
 		local skillToAdd = this.new("scripts/skills/actives/reload_bolt");
 		skillToAdd.setItem(this.getItem());
+		skillToAdd.setFatigueCost(this.Math.max(0, skillToAdd.getFatigueCostRaw() + this.getItem().m.FatigueOnSkillUse));
 		this.getContainer().add(skillToAdd);
 		return ret;
 	}

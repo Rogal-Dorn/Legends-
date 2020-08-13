@@ -138,7 +138,7 @@ this.main_menu_screen <- {
 		}
 
 		this.m.JSHandle.asyncCall("setDLC", dlc);
-		this.m.JSHandle.asyncCall("setMOTD", "Battle Brothers is a hard game.\n\nEven if you\'ve played similar games before, it\'s recommended that you start with \'Beginner\' difficulty and play the tutorial!");
+		this.m.JSHandle.asyncCall("setMOTD", "Battle Brothers is a challenging game. Losses and comebacks are part of the gameplay.\n\nIt\'s recommended that you start with \'Beginner\' difficulty and the tutorial origin!");
 	}
 
 	function destroy()
@@ -159,12 +159,12 @@ this.main_menu_screen <- {
 		this.m.JSHandle = this.UI.disconnect(this.m.JSHandle);
 	}
 
-	function show()
+	function show( _animate )
 	{
 		if (this.m.JSHandle != null && !this.isVisible())
 		{
 			this.Tooltip.hide();
-			this.m.JSHandle.asyncCall("show", null);
+			this.m.JSHandle.asyncCall("show", _animate);
 		}
 	}
 

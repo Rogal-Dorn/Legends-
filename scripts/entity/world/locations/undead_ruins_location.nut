@@ -2,7 +2,16 @@ this.undead_ruins_location <- this.inherit("scripts/entity/world/location", {
 	m = {},
 	function getDescription()
 	{
-		return "A once proud fortress now lying in ruins.";
+		local isSouthern = this.getTile().Type == this.Const.World.TerrainType.Desert || this.getTile().Type == this.Const.World.TerrainType.Steppe || this.getTile().Type == this.Const.World.TerrainType.Oasis || this.getTile().TacticalType == this.Const.World.TerrainTacticalType.DesertHills;
+
+		if (isSouthern)
+		{
+			return "These ancient ruins cast their shadows far over the surrounding sands.";
+		}
+		else
+		{
+			return "A once proud fortress now lying in ruins.";
+		}
 	}
 
 	function create()
@@ -10,6 +19,11 @@ this.undead_ruins_location <- this.inherit("scripts/entity/world/location", {
 		this.location.create();
 		this.m.TypeID = "location.undead_ruins";
 		this.m.LocationType = this.Const.World.LocationType.Lair | this.Const.World.LocationType.Passive;
+		this.m.CombatLocation.Template[0] = "tactical.ruins";
+		this.m.CombatLocation.Fortification = this.Const.Tactical.FortificationType.Walls;
+		this.m.CombatLocation.CutDownTrees = false;
+		this.m.CombatLocation.ForceLineBattle = true;
+		this.m.CombatLocation.AdditionalRadius = 5;
 		this.m.IsShowingDefenders = false;
 		this.m.IsShowingBanner = false;
 		local r = this.Math.rand(1, 3);
@@ -72,7 +86,22 @@ this.undead_ruins_location <- this.inherit("scripts/entity/world/location", {
 	{
 		this.location.onInit();
 		local body = this.addSprite("body");
-		body.setBrush("world_ruins_0" + this.Math.rand(1, 3));
+		local isSouthern = this.getTile().Type == this.Const.World.TerrainType.Desert || this.getTile().Type == this.Const.World.TerrainType.Steppe || this.getTile().Type == this.Const.World.TerrainType.Oasis || this.getTile().TacticalType == this.Const.World.TerrainTacticalType.DesertHills;
+
+		if (isSouthern)
+		{
+			body.setBrush("world_desert_ruins_0" + this.Math.rand(1, 2));
+			this.setDefenderSpawnList(this.Const.World.Spawn.UndeadArmy);
+
+			if (this.Const.DLC.Desert)
+			{
+				this.m.CombatLocation.Template[0] = "tactical.southern_ruins";
+			}
+		}
+		else
+		{
+			body.setBrush("world_ruins_0" + this.Math.rand(1, 3));
+		}
 	}
 
 });

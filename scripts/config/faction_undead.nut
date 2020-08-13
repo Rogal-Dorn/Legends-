@@ -14,7 +14,7 @@ gt.Const.Tactical.Actor.SkeletonLight <- {
 	XP = 150,
 	ActionPoints = 9,
 	Hitpoints = 45,
-	Bravery = 100,
+	Bravery = 60,
 	Stamina = 100,
 	MeleeSkill = 55,
 	RangedSkill = 0,
@@ -32,7 +32,7 @@ gt.Const.Tactical.Actor.SkeletonMedium <- {
 	XP = 250,
 	ActionPoints = 9,
 	Hitpoints = 55,
-	Bravery = 100,
+	Bravery = 80,
 	Stamina = 100,
 	MeleeSkill = 65,
 	RangedSkill = 0,
@@ -82,11 +82,84 @@ gt.Const.Tactical.Actor.SkeletonPriest <- {
 		0
 	]
 };
+gt.Const.Tactical.Actor.SkeletonLich <- {
+	XP = 750,
+	ActionPoints = 12,
+	Hitpoints = 240,
+	Bravery = 100,
+	Stamina = 100,
+	MeleeSkill = 0,
+	RangedSkill = 0,
+	MeleeDefense = 15,
+	RangedDefense = 15,
+	Initiative = 50,
+	FatigueEffectMult = 0.0,
+	MoraleEffectMult = 0.0,
+	Armor = [
+		0,
+		0
+	]
+};
+gt.Const.Tactical.Actor.SkeletonLichMirrorImage <- {
+	XP = 1,
+	ActionPoints = 5,
+	Hitpoints = 1,
+	Bravery = 100,
+	Stamina = 100,
+	MeleeSkill = 75,
+	RangedSkill = 0,
+	MeleeDefense = 20,
+	RangedDefense = 20,
+	Initiative = 70,
+	FatigueEffectMult = 0.0,
+	MoraleEffectMult = 0.0,
+	Armor = [
+		0,
+		0
+	]
+};
+gt.Const.Tactical.Actor.FlyingSkull <- {
+	XP = 1,
+	ActionPoints = 6,
+	Hitpoints = 25,
+	Bravery = 100,
+	Stamina = 100,
+	MeleeSkill = 0,
+	RangedSkill = 0,
+	MeleeDefense = 10,
+	RangedDefense = 10,
+	Initiative = 80,
+	FatigueEffectMult = 0.0,
+	MoraleEffectMult = 0.0,
+	Armor = [
+		0,
+		0
+	]
+};
+gt.Const.Tactical.Actor.SkeletonPhylactery <- {
+	XP = 0,
+	ActionPoints = 0,
+	Hitpoints = 25,
+	Bravery = 0,
+	Stamina = 0,
+	MeleeSkill = 0,
+	RangedSkill = 0,
+	MeleeDefense = -50,
+	RangedDefense = 0,
+	Initiative = 0,
+	FatigueEffectMult = 1.0,
+	MoraleEffectMult = 1.0,
+	FatigueRecoveryRate = 0,
+	Armor = [
+		0,
+		0
+	]
+};
 gt.Const.Tactical.Actor.SkeletonBoss <- {
 	XP = 600,
 	ActionPoints = 9,
 	Hitpoints = 350,
-	Bravery = 100,
+	Bravery = 120,
 	Stamina = 100,
 	MeleeSkill = 90,
 	RangedSkill = 0,
@@ -173,6 +246,24 @@ gt.Const.Tactical.Actor.ZombieBetrayer <- {
 		0
 	]
 };
+gt.Const.Tactical.Actor.ZombieTreasureHunter <- {
+	XP = 250,
+	ActionPoints = 8,
+	Hitpoints = 180,
+	Bravery = 80,
+	Stamina = 100,
+	MeleeSkill = 80,
+	RangedSkill = 0,
+	MeleeDefense = 5,
+	RangedDefense = 0,
+	Initiative = 70,
+	FatigueEffectMult = 0.0,
+	MoraleEffectMult = 0.0,
+	Armor = [
+		0,
+		0
+	]
+};
 gt.Const.Tactical.Actor.ZombiePlayer <- {
 	XP = 150,
 	ActionPoints = 6,
@@ -212,7 +303,7 @@ gt.Const.Tactical.Actor.Vampire <- {
 gt.Const.Tactical.Actor.Ghost <- {
 	XP = 225,
 	ActionPoints = 9,
-	Hitpoints = 5,
+	Hitpoints = 1,
 	Bravery = 100,
 	Stamina = 100,
 	MeleeSkill = 65,
@@ -249,7 +340,7 @@ gt.Const.Tactical.Actor.GhostKnight <- {
 	XP = 500,
 	ActionPoints = 9,
 	Hitpoints = 275,
-	Bravery = 100,
+	Bravery = 130,
 	Stamina = 100,
 	MeleeSkill = 90,
 	RangedSkill = 0,

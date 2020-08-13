@@ -1,5 +1,7 @@
 this.crack_the_whip_skill <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		IsUsed = false
+	},
 	function create()
 	{
 		this.m.ID = "actives.crack_the_whip";
@@ -9,9 +11,9 @@ this.crack_the_whip_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "skills/active_162.png";
 		this.m.Overlay = "active_162";
 		this.m.SoundOnUse = [
-			"sounds/combat/dlc4/whip_01.wav",
-			"sounds/combat/dlc4/whip_02.wav",
-			"sounds/combat/dlc4/whip_03.wav"
+			"sounds/combat/whip_01.wav",
+			"sounds/combat/whip_02.wav",
+			"sounds/combat/whip_03.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.Any;
@@ -29,6 +31,11 @@ this.crack_the_whip_skill <- this.inherit("scripts/skills/skill", {
 
 	function isUsable()
 	{
+		if (this.m.IsUsed)
+		{
+			return false;
+		}
+
 		if (!this.skill.isUsable() || this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions()))
 		{
 			return false;
@@ -63,7 +70,13 @@ this.crack_the_whip_skill <- this.inherit("scripts/skills/skill", {
 			this.spawnIcon("status_effect_106", a.getTile());
 		}
 
+		this.m.IsUsed = true;
 		return true;
+	}
+
+	function onTurnStart()
+	{
+		this.m.IsUsed = false;
 	}
 
 });

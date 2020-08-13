@@ -9,7 +9,7 @@ this.ghoul <- this.inherit("scripts/entity/tactical/actor", {
 		return this.m.Size;
 	}
 
-	function getXP()
+	function getXPValue()
 	{
 		return this.m.XP * this.m.Size;
 	}
@@ -105,8 +105,8 @@ this.ghoul <- this.inherit("scripts/entity/tactical/actor", {
 		local onArmorHitSounds = this.getItems().getAppearance().ImpactSound;
 		onArmorHitSounds[this.Const.BodyPart.Body] = this.Const.Sound.ArmorLeatherImpact;
 		onArmorHitSounds[this.Const.BodyPart.Head] = this.Const.Sound.ArmorLeatherImpact;
-		this.getTags().add("ghoul");
-		this.getTags().add("undead");
+		this.getFlags().add("ghoul");
+		this.getFlags().add("undead");
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/ghoul_agent");
 		this.m.AIAgent.setActor(this);
 	}
@@ -210,6 +210,12 @@ this.ghoul <- this.inherit("scripts/entity/tactical/actor", {
 						loot.drop(_tile);
 					}
 				}
+
+				if (this.Math.rand(1, 100) <= (this.m.Size - 1) * 15)
+				{
+					local loot = this.new("scripts/items/loot/growth_pearls_item");
+					loot.drop(_tile);
+				}
 			}
 		}
 
@@ -232,7 +238,7 @@ this.ghoul <- this.inherit("scripts/entity/tactical/actor", {
 
 		local e = skill.getSwallowedEntity();
 		this.Tactical.addEntityToMap(e, _tile.Coords.X, _tile.Coords.Y);
-		e.getTags().set("Devoured", false);
+		e.getFlags().set("Devoured", false);
 		local slime = e.getSprite("dirt");
 		slime.setBrush("bust_slime");
 		slime.Visible = true;
@@ -299,7 +305,6 @@ this.ghoul <- this.inherit("scripts/entity/tactical/actor", {
 
 		if (this.m.Size == 2)
 		{
-			this.m.SoundPitch = 1.06;
 			this.getSprite("body").setBrush("bust_ghoul_body_02");
 			this.getSprite("head").setBrush("bust_ghoul_02_head_0" + this.m.Head);
 			this.getSprite("injury").setBrush("bust_ghoul_02_injured");
@@ -321,7 +326,6 @@ this.ghoul <- this.inherit("scripts/entity/tactical/actor", {
 		}
 		else if (this.m.Size == 3)
 		{
-			this.m.SoundPitch = 1.0;
 			this.getSprite("body").setBrush("bust_ghoul_body_03");
 			this.getSprite("head").setBrush("bust_ghoul_03_head_0" + this.m.Head);
 			this.getSprite("injury").setBrush("bust_ghoul_03_injured");

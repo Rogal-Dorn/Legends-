@@ -1,6 +1,6 @@
 this.entity <- {
 	m = {
-		Tags = null,
+		Flags = null,
 		ContentID = this.Math.rand(),
 		IsAlive = true,
 		IsDirty = false,
@@ -21,14 +21,9 @@ this.entity <- {
 		return "UNKNOWN";
 	}
 
-	function getTags()
-	{
-		return this.m.Tags;
-	}
-
 	function getFlags()
 	{
-		return this.m.Tags;
+		return this.m.Flags;
 	}
 
 	function setDirty( _value )
@@ -62,12 +57,12 @@ this.entity <- {
 
 	function getImagePath()
 	{
-		return "tacticalentity(" + this.m.ContentID + "," + this.getID() + ",socket,miniboss)";
+		return "tacticalentity(" + this.m.ContentID + "," + this.getID() + ",socket)";
 	}
 
 	function getTooltip( _targetedWidthSkill = null )
 	{
-		return [
+		local ret = [
 			{
 				id = 1,
 				type = "title",
@@ -78,8 +73,26 @@ this.entity <- {
 				id = 2,
 				type = "description",
 				text = this.getDescription()
+			},
+			{
+				id = 3,
+				type = "text",
+				icon = "ui/icons/cancel.png",
+				text = "Blocking movement"
 			}
 		];
+
+		if (this.isBlockingSight())
+		{
+			ret.push({
+				id = 4,
+				type = "text",
+				icon = "ui/icons/vision.png",
+				text = "Blocking sight"
+			});
+		}
+
+		return ret;
 	}
 
 	function getOverlayImage()
@@ -89,7 +102,7 @@ this.entity <- {
 
 	function create()
 	{
-		this.m.Tags = this.new("scripts/tools/tag_collection");
+		this.m.Flags = this.new("scripts/tools/tag_collection");
 	}
 
 	function onInit()
@@ -108,12 +121,12 @@ this.entity <- {
 
 	function onSerialize( _out )
 	{
-		this.m.Tags.onSerialize(_out);
+		this.m.Flags.onSerialize(_out);
 	}
 
 	function onDeserialize( _in )
 	{
-		this.m.Tags.onDeserialize(_in, false);
+		this.m.Flags.onDeserialize(_in, false);
 	}
 
 };

@@ -143,5 +143,61 @@ this.tactical_forest_snow <- this.inherit("scripts/mapgen/tactical_template", {
 		this.makeBordersImpassable(_rect);
 	}
 
+	function campify( _rect, _properties )
+	{
+		local snowTile3 = this.MapGen.get("tactical.tile.snow3");
+		local centerTile = this.Tactical.getTileSquare(_rect.X + _rect.W / 2 + _properties.ShiftX, _rect.Y + _rect.H / 2 + _properties.ShiftY);
+		local radius = this.Const.Tactical.Settings.CampRadius + _properties.AdditionalRadius;
+
+		for( local x = _rect.X; x < _rect.X + _rect.W; x = ++x )
+		{
+			for( local y = _rect.Y; y < _rect.Y + _rect.H; y = ++y )
+			{
+				local tile = this.Tactical.getTileSquare(x, y);
+				local d = centerTile.getDistanceTo(tile);
+
+				if (_properties.CutDownTrees && !tile.IsEmpty && this.Math.rand(1, 100) <= 20)
+				{
+					tile.clear();
+					tile.removeObject();
+					tile.spawnObject("entity/tactical/objects/tree_stump3");
+				}
+
+				if (d <= radius + 3)
+				{
+					tile.Level = 0;
+
+					if (this.Math.rand(1, 100) <= 40 + (7 - d) * 7)
+					{
+						tile.Type = 0;
+						tile.clear();
+						snowTile3.fill({
+							X = x,
+							Y = y,
+							W = 1,
+							H = 1,
+							IsEmpty = false
+						}, null);
+					}
+
+					if (tile.IsHidingEntity)
+					{
+						tile.clear();
+					}
+
+					if (!tile.IsEmpty && this.Math.rand(1, 100) <= 66)
+					{
+						tile.removeObject();
+					}
+				}
+
+				if (d > 10 && x < centerTile.SquareCoords.X && x > 4 && y > 10 && y < 30 && this.Math.rand(1, 100) <= 66)
+				{
+					tile.removeObject();
+				}
+			}
+		}
+	}
+
 });
 

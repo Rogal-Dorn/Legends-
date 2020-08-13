@@ -33,7 +33,7 @@ this.ghost <- this.inherit("scripts/entity/tactical/actor", {
 			"sounds/enemies/geist_idle_17.wav"
 		];
 		this.m.SoundPitch = this.Math.rand(90, 110) * 0.01;
-		this.getTags().add("undead");
+		this.getFlags().add("undead");
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/ghost_agent");
 		this.m.AIAgent.setActor(this);
 	}
@@ -126,6 +126,7 @@ this.ghost <- this.inherit("scripts/entity/tactical/actor", {
 		b.IsImmuneToStun = true;
 		b.IsImmuneToRoot = true;
 		b.IsImmuneToDisarm = true;
+		b.IsImmuneToFire = true;
 		b.IsIgnoringArmorOnAttack = true;
 		b.IsAffectedByNight = false;
 		b.IsAffectedByInjuries = false;
@@ -163,9 +164,10 @@ this.ghost <- this.inherit("scripts/entity/tactical/actor", {
 		this.addDefaultStatusSprites();
 		this.getSprite("status_rooted").Scale = 0.55;
 		this.setSpriteOffset("status_rooted", this.createVec(-5, -5));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_fearsome"));
+		this.m.Skills.add(this.new("scripts/skills/racial/ghost_racial"));
 		this.m.Skills.add(this.new("scripts/skills/actives/ghastly_touch"));
 		this.m.Skills.add(this.new("scripts/skills/actives/horrific_scream"));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_anticipation"));
 	}
 
 	function onRender()

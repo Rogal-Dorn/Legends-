@@ -20,6 +20,10 @@ gt.Const.World.Common <- {
 				this.Const.Strings.CharacterNames[this.Math.rand(0, this.Const.Strings.CharacterNames.len() - 1)]
 			],
 			[
+				"randomsouthernname",
+				this.Const.Strings.SouthernNames[this.Math.rand(0, this.Const.Strings.SouthernNames.len() - 1)]
+			],
+			[
 				"randomknightname",
 				this.Const.Strings.KnightNames[this.Math.rand(0, this.Const.Strings.KnightNames.len() - 1)]
 			],
@@ -40,7 +44,9 @@ gt.Const.World.Common <- {
 
 		if (troop.Variant > 0)
 		{
-			if (!this.Const.DLC.Wildmen || this.Math.rand(1, 100) > troop.Variant + _minibossify + (this.World.getTime().Days > 100 ? 0 : -1))
+			_minibossify = _minibossify + this.World.Assets.m.ChampionChanceAdditional;
+
+			if (!this.Const.DLC.Wildmen || this.Math.rand(1, 100) > troop.Variant + _minibossify + (this.World.getTime().Days > 90 ? 0 : -1))
 			{
 				troop.Variant = 0;
 			}
@@ -62,6 +68,8 @@ gt.Const.World.Common <- {
 		{
 			_party.updateStrength();
 		}
+
+		return troop;
 	}
 
 	function despawnParty( _party, _location )
@@ -260,7 +268,7 @@ gt.Const.World.Common <- {
 		}
 	}
 
-	function addFootprintsFromTo( _from, _to, _type, _scale = 0.5, _visibility = 1.0 )
+	function addFootprintsFromTo( _from, _to, _type, _infoType, _scale = 0.5, _visibility = 1.0 )
 	{
 		local navSettings = this.World.getNavigator().createSettings();
 		navSettings.ActionPointCosts = this.Const.World.TerrainTypeNavCost_Sneak;
@@ -300,7 +308,7 @@ gt.Const.World.Common <- {
 
 			if (!tile.IsOccupied)
 			{
-				this.World.spawnFootprint(pos, _type[this.World.getDirection8FromTo(pos, dest)] + "_0" + (left ? "1" : "2"), _scale, 30.0, _visibility * this.World.Assets.getFootprintVision());
+				this.World.spawnFootprint(pos, _type[this.World.getDirection8FromTo(pos, dest)] + "_0" + (left ? "1" : "2"), _scale, 30.0, _visibility * this.World.Assets.getFootprintVision(), _infoType);
 				left = !left;
 			}
 		}

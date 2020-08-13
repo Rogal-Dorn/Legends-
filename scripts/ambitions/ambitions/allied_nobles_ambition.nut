@@ -6,6 +6,7 @@ this.allied_nobles_ambition <- this.inherit("scripts/ambitions/ambition", {
 		this.m.ID = "ambition.allied_nobles";
 		this.m.Duration = 40.0 * this.World.getTime().SecondsPerDay;
 		this.m.ButtonText = "We shall earn the trust of a noble house and become their ally. Surely they will\nshare the fruits of their well-stocked armories with good friends.";
+		this.m.RewardTooltip = "You\'ll be awarded equipment unique to the noble house with which you ally";
 		this.m.UIText = "Get to \'Allied\' relations with a noble house";
 		this.m.TooltipText = "Increase the relation with any noble house to \'Allied\' by fulfilling contracts given by members of the faction. Failing contracts or betraying their trust will lower your relations.";
 		this.m.SuccessText = "[img]gfx/ui/events/event_78.png[/img]You had long heard, and through experience learned it to be true, that noblemen are a difficult, fickle lot, but your relationship with %noblehouse% proves profitable and in the end even pleasant. They may not see you as equals when everyone is seated at a feast, but neither are they your equals on the battlefield. Having earned their trust through hard work and commitment, the %companyname% has finally been acknowledged as a trusted ally of %noblehouse%.\n\nOne benefit of this station is that your men are allowed a worthwhile browse through the noble\'s armory. A few bitter partisans may call you lapdogs for allying yourselves with the nobility, and presenting their banners on your shields, but never to your face.";

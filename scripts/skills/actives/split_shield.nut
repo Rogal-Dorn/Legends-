@@ -164,6 +164,13 @@ this.split_shield <- this.inherit("scripts/skills/skill", {
 					"shield_icon"
 				], 1.0);
 			}
+
+			local overwhelm = this.getContainer().getSkillByID("perk.overwhelm");
+
+			if (overwhelm != null)
+			{
+				overwhelm.onTargetHit(this, _targetTile.getEntity(), this.Const.BodyPart.Body, 0, 0);
+			}
 		}
 
 		return true;

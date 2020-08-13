@@ -71,17 +71,17 @@ this.potion_of_oblivion_item <- this.inherit("scripts/items/item", {
 		local perks = _actor.m.PerkPointsSpent;
 		local hasStudent = false;
 
-		if (_actor.getSkills().hasSkill("perk.student"))
+		if (_actor.getLevel() >= 11 && _actor.getSkills().hasSkill("perk.student"))
 		{
 			perks = perks - 1;
 			hasStudent = true;
 		}
 
 		_actor.m.PerkPoints += perks;
-		_actor.m.PerkPointsSpent = 0;
+		_actor.m.PerkPointsSpent = hasStudent ? 1 : 0;
 		_actor.getSkills().removeByType(this.Const.SkillType.Perk);
 
-		if (hasStudent && _actor.getLevel() >= 11)
+		if (hasStudent)
 		{
 			_actor.getSkills().add(this.new("scripts/skills/perks/perk_student"));
 		}

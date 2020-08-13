@@ -85,7 +85,7 @@ this.shady_character_offers_map_event <- this.inherit("scripts/events/event", {
 					function getResult( _event )
 					{
 						this.World.uncoverFogOfWar(_event.m.Location.getTile().Pos, 700.0);
-						_event.m.Location.getTags().set("IsEventLocation", true);
+						_event.m.Location.getFlags().set("IsEventLocation", true);
 						_event.m.Location.setDiscovered(true);
 						this.World.getCamera().moveTo(_event.m.Location);
 						return 0;
@@ -119,7 +119,7 @@ this.shady_character_offers_map_event <- this.inherit("scripts/events/event", {
 					function getResult( _event )
 					{
 						this.World.uncoverFogOfWar(_event.m.Location.getTile().Pos, 700.0);
-						_event.m.Location.getTags().set("IsEventLocation", true);
+						_event.m.Location.getFlags().set("IsEventLocation", true);
 						_event.m.Location.setDiscovered(true);
 						this.World.getCamera().moveTo(_event.m.Location);
 						return 0;
@@ -273,7 +273,7 @@ this.shady_character_offers_map_event <- this.inherit("scripts/events/event", {
 
 		foreach( b in bases )
 		{
-			if (!b.getLoot().isEmpty() && !b.getTags().get("IsEventLocation"))
+			if (!b.getLoot().isEmpty() && !b.getFlags().get("IsEventLocation"))
 			{
 				candidates_location.push(b);
 			}

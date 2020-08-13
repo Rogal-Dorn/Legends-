@@ -94,12 +94,13 @@ this.return_item_contract <- this.inherit("scripts/contracts/contract", {
 					this.Const.World.TerrainType.Mountains
 				]);
 				local party;
-				party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Bandits).spawnEntity(tile, "Thieves", false, this.Const.World.Spawn.BanditRaiders, 80 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
+				party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Bandits).spawnEntity(tile, "Thieves", false, this.Const.World.Spawn.BanditRaiders, 80 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult());
 				party.setDescription("A group of thieves and bandits.");
+				party.setFootprintType(this.Const.World.FootprintsType.Brigands);
 				party.setAttackableByAI(false);
 				party.getController().getBehavior(this.Const.World.AI.Behavior.ID.Attack).setEnabled(false);
 				party.setFootprintSizeOverride(0.75);
-				this.Const.World.Common.addFootprintsFromTo(this.Contract.m.Home.getTile(), party.getTile(), this.Const.GenericFootprints, 0.75);
+				this.Const.World.Common.addFootprintsFromTo(this.Contract.m.Home.getTile(), party.getTile(), this.Const.GenericFootprints, this.Const.World.FootprintsType.Brigands, 0.75);
 				this.Contract.m.Target = this.WeakTableRef(party);
 				party.getSprite("banner").setBrush("banner_bandits_0" + this.Math.rand(1, 6));
 				local c = party.getController();

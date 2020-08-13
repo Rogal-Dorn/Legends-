@@ -176,11 +176,6 @@ this.cultist_vs_uneducated_event <- this.inherit("scripts/events/event", {
 		]);
 	}
 
-	function onDetermineStartScreen()
-	{
-		return "A";
-	}
-
 	function onClear()
 	{
 		this.m.Cultist = null;

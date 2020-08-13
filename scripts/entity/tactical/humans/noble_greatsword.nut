@@ -35,12 +35,15 @@ this.noble_greatsword <- this.inherit("scripts/entity/tactical/human", {
 		this.getSprite("socket").setBrush("bust_base_military");
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_brawny"));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_overwhelm"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_reach_advantage"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_lone_wolf"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_berserk"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_fast_adaption"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_steel_brow"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_relentless"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_anticipation"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_overwhelm"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_crippling_strikes"));
 		this.m.Skills.add(this.new("scripts/skills/actives/rotation"));
 		this.m.Skills.add(this.new("scripts/skills/actives/recover_skill"));
 	}

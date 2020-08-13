@@ -34,8 +34,9 @@ this.zombie_knight <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 		b.IsAffectedByInjuries = false;
 		b.IsImmuneToBleeding = true;
 		b.IsImmuneToPoison = true;
+		b.FatigueDealtPerHitMult = 2.0;
 
-		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 100)
+		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 90)
 		{
 			b.MeleeSkill += 5;
 			b.DamageTotalMult += 0.1;
@@ -211,6 +212,7 @@ this.zombie_knight <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 		}
 
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_hold_out"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_nine_lives"));
 		return true;
 	}
 

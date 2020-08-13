@@ -214,10 +214,7 @@ this.reap_skill <- this.inherit("scripts/skills/skill", {
 				continue;
 			}
 
-			if (!t.IsEmpty && t.getEntity().isAttackable())
-			{
-				this.Tactical.getHighlighter().addOverlayIcon(this.Const.Tactical.Settings.AreaOfEffectIcon, t, t.Pos.X, t.Pos.Y);
-			}
+			this.Tactical.getHighlighter().addOverlayIcon(this.Const.Tactical.Settings.AreaOfEffectIcon, t, t.Pos.X, t.Pos.Y);
 		}
 	}
 

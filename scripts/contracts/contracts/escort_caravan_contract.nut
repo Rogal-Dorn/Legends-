@@ -94,11 +94,6 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 				continue;
 			}
 
-			if (!s.isDiscovered())
-			{
-				continue;
-			}
-
 			if (!s.isAlliedWith(this.getFaction()))
 			{
 				continue;
@@ -160,7 +155,7 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 			this.m.DifficultyMult = this.Math.rand(70, 85) * 0.01;
 		}
 
-		this.m.Payment.Pool = this.Math.max(150, distance * 6.0 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult());
+		this.m.Payment.Pool = this.Math.max(150, distance * 7.0 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult());
 		local r = this.Math.rand(1, 3);
 
 		if (r == 1)
@@ -199,10 +194,15 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 					"Escort caravan to %objective% about %days% to the %direction%",
 					"Provisions for the way are provided to your men"
 				];
+				local isSouthern = this.World.FactionManager.getFaction(this.Contract.getFaction()).getType() == this.Const.FactionType.OrientalCityState;
 
-				if (this.Math.rand(1, 100) <= this.Const.Contracts.Settings.IntroChance)
+				if (!isSouthern && this.Math.rand(1, 100) <= this.Const.Contracts.Settings.IntroChance)
 				{
 					this.Contract.setScreen("Intro");
+				}
+				else if (isSouthern)
+				{
+					this.Contract.setScreen("TaskSouthern");
 				}
 				else
 				{
@@ -212,12 +212,13 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 
 			function end()
 			{
+				local isSouthern = this.World.FactionManager.getFaction(this.Contract.getFaction()).getType() == this.Const.FactionType.OrientalCityState;
 				this.World.Assets.addMoney(this.Contract.m.Payment.getInAdvance());
 				local r = this.Math.rand(1, 100);
 
 				if (r <= 5)
 				{
-					if (this.World.Assets.getBusinessReputation() > 700)
+					if (this.World.Assets.getBusinessReputation() > 700 && !isSouthern)
 					{
 						this.Flags.set("IsStolenGoods", true);
 						this.Flags.set("IsEnoughCombat", true);
@@ -251,7 +252,7 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 				}
 				else if (r <= 20)
 				{
-					if (this.Contract.m.NobleHouseID != 0 && this.Flags.has("NobleName") && this.Flags.has("NobleSettlement"))
+					if (this.Contract.m.NobleHouseID != 0 && this.Flags.has("NobleName") && this.Flags.has("NobleSettlement") && !isSouthern)
 					{
 						this.Flags.set("IsPrisoner", true);
 					}
@@ -551,6 +552,38 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 
 		});
 		this.m.Screens.push({
+			ID = "TaskSouthern",
+			Title = "Negotiations",
+			Text = "[img]gfx/ui/events/event_98.png[/img]{Nested in towers and aviaries, bells and birds alike echo in the air like the rattled voluntaries of a caged city. Beneath the noise, in the dull marbled halls of a palace, you find %employer% ordering the death of a servant. The offense is unknown to you, not that it bothers the Vizier in the slightest as he approaches you with a smile and clean hands.%SPEECH_ON%A number of councilmen are sending goods to %objective%, a good %days% to the %direction%. These goods must arrive in a shape that is passable to the awaiting merchants. I believe a Crownling such as yourself can see to this task, yes?%SPEECH_OFF% | You find a few of the councilmen and aldermen of %employer%, the resident Vizier. They approach you with a document stamped with his emblem.%SPEECH_ON%We shall soon be off for to %objective% with a caravan of goods. The city guard refuse to aide us in defending our wares, however we are still bright beneath the Gilder\'s eye, and our pockets full of shine. We\'ll pay you, Crownling, to help us to our destination for the next %days%.%SPEECH_OFF% | A servant boy carries a leash of slaves in one hand and a note in the other. He presents the latter which carries written instruction to meet with a set of merchants. They announce that they are traveling to %objective%, around %days% to the %direction%, under orders of the Gilder and Vizier alike, and need protection. For this, your services are needed and will be paid for quite handsomely. | The town\'s merchant square is rife with business and, apparently, you are wanted to be a part of it. A few of the Vizier\'s \'finest\' peddlers are wanting to take a caravan of goods to %objective%, a good %days% of travel. One explains tersely.%SPEECH_ON%If the Gilder might look the other way, I pray the so-called \'soldiers\' of this town find the world of shade. You, Crownling, I suspect you\'d be willing to help us where others are not? For coin, of course.%SPEECH_OFF% | You watch as slaves bundle goods and load them into a series of wagons. The caravan\'s owners spot you and seek you out, pushing their workforce out of the way or smacking them for apparently no reason at all other than it brings some unknown pleasure to do so. One beams with delight as he greets you. He puts one hand out, but you do not shake it.%SPEECH_ON%Ah, Crownling, it is true that this hand has profaned itself with the flesh of an indebted, but you shouldn\'t be so shy. We are all bright beneath the Gilder\'s eye, are we not? We\'ve a task for you, one of some import given the governance of our suzerain %employer%. The caravan is heading to %objective%, a good %days%\'s travel, and requires a fair bit of guard so that it may arrive in good health. Is this task amenable to your coin-seeking interests?%SPEECH_OFF%}",
+			Image = "",
+			List = [],
+			ShowEmployer = true,
+			ShowDifficulty = true,
+			Options = [
+				{
+					Text = "{Let\'s talk money. | How many crowns are we talking about? | What does it pay?}",
+					function getResult()
+					{
+						return "Negotiation";
+					}
+
+				},
+				{
+					Text = "{Not interested. | This is not the kind of work we\'re looking for.}",
+					function getResult()
+					{
+						this.World.Contracts.removeContract(this.Contract);
+						return 0;
+					}
+
+				}
+			],
+			function start()
+			{
+			}
+
+		});
+		this.m.Screens.push({
 			ID = "StolenGoods1",
 			Title = "Along the road...",
 			Text = "[img]gfx/ui/events/event_78.png[/img]{A group of men flying the banner of %noblehouse% appear on the road. Their horses are off to the side, their reins pitched to the dirt. Looks like they\'ve been waiting for you. One of them steps forward, hands on his hips.%SPEECH_ON%You are transporting stolen goods, friends. Stolen goods that belong to %noblehouse%. Hand them over immediately or pay the consequences.%SPEECH_OFF%Hmm, you should have known %employer% would be transporting something fishy. | A few men step out onto the road. They carry the banner of %noblehouse% which probably is not a good sign of what\'s to come. Their lieutenant confronts you all.%SPEECH_ON%Greetings! Unfortunately, you are transporting stolen goods that belong to %noblehouse%. Step aside from the caravan, turn back, and go the way you came. Do that, and you live. Stay, and you will die here today.%SPEECH_OFF% | Well, it looks like %employer% wasn\'t completely honest with you: a group of bannermen from %noblehouse% are inquiring as to what you are doing transporting goods that were stolen from them. Their lieutenant shouts at you all.%SPEECH_ON%If you wish to live to see tomorrow, turn over the goods and go back the way you came. I understand you are just doing your jobs. However, your job is not to disobey me. Do that and, I promise, you will all die here today.%SPEECH_OFF% | A man steps out into the road and doesn\'t appear ready to move. One of the caravan drivers seizes up on his reins and just as he does, a large group of other armed men join the loner on the road. They carry the sigil of %noblehouse%.%SPEECH_ON%So, this is where %noblehouse%\'s goods have gone. You fellas are transporting goods which belong to our noble house. If you wish to live, turn them all over. If you wish to die, well, just don\'t do what I ask and see what happens.%SPEECH_OFF%%randombrother% walks up to you, whispering.%SPEECH_ON%We shouldn\'t have trusted that rat %employer%.%SPEECH_OFF% | You really should push harder to learn what you are transporting. A group of men has accosted you on the road, demanding you turn over the caravan and go back the way you came. When you inquire as to whom exactly is making this demand, they state they are from %noblehouse% and that every good you are transporting was stolen a week ago. Their lieutenant makes the option for a peaceful passage clear.%SPEECH_ON%Leave and you shall live. I have no qualms with you people, only with your taskmaster. However, you impede our reacquisitions here and you shall die. Don\'t die over goods that don\'t belong to you. It\'s not worth it.%SPEECH_OFF%}",
@@ -623,7 +656,7 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 							}
 						}
 
-						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Noble, 120 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.Contract.m.NobleHouseID);
+						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Noble, 120 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult(), this.Contract.m.NobleHouseID);
 						this.World.Contracts.startScriptedCombat(p, false, true, true);
 						return 0;
 					}
@@ -885,7 +918,7 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 						p.Music = this.Const.Music.UndeadTracks;
 						p.PlayerDeploymentType = this.Const.Tactical.DeploymentType.Center;
 						p.EnemyDeploymentType = this.Const.Tactical.DeploymentType.Circle;
-						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Vampires, 80 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.World.FactionManager.getFactionOfType(this.Const.FactionType.Undead).getID());
+						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Vampires, 80 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult(), this.World.FactionManager.getFactionOfType(this.Const.FactionType.Undead).getID());
 						this.World.Contracts.startScriptedCombat(p, false, false, false);
 						return 0;
 					}
@@ -922,7 +955,16 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 						local money = this.Contract.m.Payment.getOnCompletion() + this.Contract.m.Payment.getPerCount() * this.Flags.get("HeadsCollected");
 						this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnContractSuccess);
 						this.World.Assets.addMoney(money);
-						this.World.FactionManager.getFaction(this.Contract.getFaction()).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractSuccess, "Protected a caravan as promised");
+
+						if (this.World.FactionManager.getFaction(this.Contract.getFaction()).getType() == this.Const.FactionType.OrientalCityState)
+						{
+							this.World.FactionManager.getFaction(this.Contract.getFaction()).addPlayerRelation(this.Const.World.Assets.RelationNobleContractSuccess, "Protected a caravan as promised");
+						}
+						else
+						{
+							this.World.FactionManager.getFaction(this.Contract.getFaction()).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractSuccess, "Protected a caravan as promised");
+						}
+
 						this.World.Contracts.finishActiveContract();
 						return 0;
 					}
@@ -958,7 +1000,16 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 						money = this.Math.floor(money / 2);
 						this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnContractSuccess);
 						this.World.Assets.addMoney(money);
-						this.World.FactionManager.getFaction(this.Contract.getFaction()).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractPoor, "Protected a caravan, albeit poorly");
+
+						if (this.World.FactionManager.getFaction(this.Contract.getFaction()).getType() == this.Const.FactionType.OrientalCityState)
+						{
+							this.World.FactionManager.getFaction(this.Contract.getFaction()).addPlayerRelation(this.Const.World.Assets.RelationNobleContractPoor, "Protected a caravan, albeit poorly");
+						}
+						else
+						{
+							this.World.FactionManager.getFaction(this.Contract.getFaction()).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractPoor, "Protected a caravan, albeit poorly");
+						}
+
 						this.World.Contracts.finishActiveContract();
 						return 0;
 					}
@@ -991,7 +1042,16 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 					function getResult()
 					{
 						this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnContractFail);
-						this.World.FactionManager.getFaction(this.Contract.getFaction()).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractFail, "Failed to protect a caravan");
+
+						if (this.World.FactionManager.getFaction(this.Contract.getFaction()).getType() == this.Const.FactionType.OrientalCityState)
+						{
+							this.World.FactionManager.getFaction(this.Contract.getFaction()).addPlayerRelation(this.Const.World.Assets.RelationNobleContractFail, "Failed to protect a caravan");
+						}
+						else
+						{
+							this.World.FactionManager.getFaction(this.Contract.getFaction()).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractFail, "Failed to protect a caravan");
+						}
+
 						this.World.Contracts.finishActiveContract(true);
 						return 0;
 					}
@@ -1032,7 +1092,17 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 	function spawnCaravan()
 	{
 		local faction = this.World.FactionManager.getFaction(this.getFaction());
-		local party = faction.spawnEntity(this.m.Home.getTile(), "Trading Caravan", false, this.Const.World.Spawn.CaravanEscort, this.m.Home.getResources() * 0.4);
+		local party;
+
+		if (faction.hasTrait(this.Const.FactionTrait.OrientalCityState))
+		{
+			party = faction.spawnEntity(this.m.Home.getTile(), "Trading Caravan", false, this.Const.World.Spawn.CaravanSouthernEscort, this.m.Home.getResources() * this.Math.rand(10, 25) * 0.01);
+		}
+		else
+		{
+			party = faction.spawnEntity(this.m.Home.getTile(), "Trading Caravan", false, this.Const.World.Spawn.CaravanEscort, this.m.Home.getResources() * 0.4);
+		}
+
 		party.getSprite("banner").Visible = false;
 		party.getSprite("base").Visible = false;
 		party.setMirrored(true);
@@ -1084,23 +1154,28 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 			local nearest_bandits = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Bandits).getNearestSettlement(tile);
 			local nearest_goblins = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Goblins).getNearestSettlement(tile);
 			local nearest_orcs = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Orcs).getNearestSettlement(tile);
+			local nearest_barbarians = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Barbarians).getNearestSettlement(tile);
+			local nearest_nomads = this.World.FactionManager.getFactionOfType(this.Const.FactionType.OrientalBandits).getNearestSettlement(tile);
 
-			if (nearest_bandits == null && nearest_goblins == null && nearest_orcs == null)
+			if (nearest_bandits == null && nearest_goblins == null && nearest_orcs == null && nearest_barbarians == null && nearest_nomads == null)
 			{
 				this.logInfo("no enemy base found");
 				return false;
 			}
 
-			local bandits_dist = nearest_bandits != null ? nearest_bandits.getTile().getDistanceTo(tile) + this.Math.rand(0, 10) - 5 : 9000;
+			local bandits_dist = nearest_bandits != null ? nearest_bandits.getTile().getDistanceTo(tile) + this.Math.rand(0, 10) : 9000;
 			local goblins_dist = nearest_goblins != null ? nearest_bandits.getTile().getDistanceTo(tile) + this.Math.rand(0, 10) : 9000;
 			local orcs_dist = nearest_orcs != null ? nearest_bandits.getTile().getDistanceTo(tile) + this.Math.rand(0, 10) : 9000;
+			local barbarians_dist = nearest_barbarians != null ? nearest_barbarians.getTile().getDistanceTo(tile) + this.Math.rand(0, 10) : 9000;
+			local nomads_dist = nearest_nomads != null ? nearest_nomads.getTile().getDistanceTo(tile) + this.Math.rand(0, 10) : 9000;
 			local party;
 			local origin;
 
-			if (bandits_dist <= goblins_dist && bandits_dist <= orcs_dist)
+			if (bandits_dist <= goblins_dist && bandits_dist <= orcs_dist && bandits_dist <= barbarians_dist && bandits_dist <= nomads_dist)
 			{
-				party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Bandits).spawnEntity(tile, "Brigands", false, this.Const.World.Spawn.BanditRaiders, this.Math.rand(80, 100) * this.getDifficultyMult() * this.getReputationToDifficultyMult());
+				party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Bandits).spawnEntity(tile, "Brigands", false, this.Const.World.Spawn.BanditRaiders, this.Math.rand(80, 100) * this.getDifficultyMult() * this.getScaledDifficultyMult());
 				party.setDescription("A rough and tough band of brigands preying on the weak.");
+				party.setFootprintType(this.Const.World.FootprintsType.Brigands);
 				party.getLoot().Money = this.Math.rand(50, 100);
 				party.getLoot().ArmorParts = this.Math.rand(0, 10);
 				party.getLoot().Medicine = this.Math.rand(0, 2);
@@ -1130,10 +1205,11 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 
 				origin = nearest_bandits;
 			}
-			else if (goblins_dist <= bandits_dist && goblins_dist <= orcs_dist)
+			else if (goblins_dist <= bandits_dist && goblins_dist <= orcs_dist && goblins_dist <= barbarians_dist && goblins_dist <= nomads_dist)
 			{
-				party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Goblins).spawnEntity(tile, "Goblin Raiders", false, this.Const.World.Spawn.GoblinRaiders, this.Math.rand(80, 100) * this.getDifficultyMult() * this.getReputationToDifficultyMult());
+				party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Goblins).spawnEntity(tile, "Goblin Raiders", false, this.Const.World.Spawn.GoblinRaiders, this.Math.rand(80, 100) * this.getDifficultyMult() * this.getScaledDifficultyMult());
 				party.setDescription("A band of mischievous goblins, small but cunning and not to be underestimated.");
+				party.setFootprintType(this.Const.World.FootprintsType.Goblins);
 				party.getLoot().ArmorParts = this.Math.rand(0, 10);
 				party.getLoot().Medicine = this.Math.rand(0, 2);
 				party.getLoot().Ammo = this.Math.rand(0, 30);
@@ -1154,10 +1230,82 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 
 				origin = nearest_goblins;
 			}
+			else if (barbarians_dist <= goblins_dist && barbarians_dist <= bandits_dist && barbarians_dist <= orcs_dist && barbarians_dist <= nomads_dist)
+			{
+				party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Barbarians).spawnEntity(tile, "Barbarians", false, this.Const.World.Spawn.Barbarians, this.Math.rand(80, 100) * this.getDifficultyMult() * this.getScaledDifficultyMult());
+				party.setDescription("A warband of barbarian tribals.");
+				party.setFootprintType(this.Const.World.FootprintsType.Barbarians);
+				party.getLoot().Money = this.Math.rand(0, 50);
+				party.getLoot().ArmorParts = this.Math.rand(0, 10);
+				party.getLoot().Medicine = this.Math.rand(0, 10);
+				party.getLoot().Ammo = this.Math.rand(0, 30);
+
+				if (this.Math.rand(1, 100) <= 50)
+				{
+					party.addToInventory("loot/bone_figurines_item");
+				}
+
+				if (this.Math.rand(1, 100) <= 50)
+				{
+					party.addToInventory("loot/bead_necklace_item");
+				}
+
+				local r = this.Math.rand(2, 5);
+
+				if (r == 2)
+				{
+					party.addToInventory("supplies/roots_and_berries_item");
+				}
+				else if (r == 3)
+				{
+					party.addToInventory("supplies/dried_fruits_item");
+				}
+				else if (r == 4)
+				{
+					party.addToInventory("supplies/ground_grains_item");
+				}
+				else if (r == 5)
+				{
+					party.addToInventory("supplies/pickled_mushrooms_item");
+				}
+
+				origin = nearest_barbarians;
+			}
+			else if (nomads_dist <= barbarians_dist && nomads_dist <= goblins_dist && nomads_dist <= bandits_dist && nomads_dist <= orcs_dist)
+			{
+				party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.OrientalBandits).spawnEntity(tile, "Nomads", false, this.Const.World.Spawn.NomadRaiders, this.Math.rand(80, 100) * this.getDifficultyMult() * this.getScaledDifficultyMult());
+				party.setDescription("A band of desert raiders preying on anyone trying to cross the seas of sand.");
+				party.setFootprintType(this.Const.World.FootprintsType.Nomads);
+				party.getLoot().Money = this.Math.rand(50, 200);
+				party.getLoot().ArmorParts = this.Math.rand(0, 10);
+				party.getLoot().Medicine = this.Math.rand(0, 2);
+				party.getLoot().Ammo = this.Math.rand(0, 20);
+				local r = this.Math.rand(1, 4);
+
+				if (r == 1)
+				{
+					party.addToInventory("supplies/bread_item");
+				}
+				else if (r == 2)
+				{
+					party.addToInventory("supplies/dates_item");
+				}
+				else if (r == 3)
+				{
+					party.addToInventory("supplies/rice_item");
+				}
+				else if (r == 4)
+				{
+					party.addToInventory("supplies/dried_lamb_item");
+				}
+
+				origin = nearest_nomads;
+			}
 			else
 			{
-				party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Orcs).spawnEntity(tile, "Orc Marauders", false, this.Const.World.Spawn.OrcRaiders, this.Math.rand(80, 100) * this.getDifficultyMult() * this.getReputationToDifficultyMult());
+				party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Orcs).spawnEntity(tile, "Orc Marauders", false, this.Const.World.Spawn.OrcRaiders, this.Math.rand(80, 100) * this.getDifficultyMult() * this.getScaledDifficultyMult());
 				party.setDescription("A band of menacing orcs, greenskinned and towering any man.");
+				party.setFootprintType(this.Const.World.FootprintsType.Orcs);
 				party.getLoot().ArmorParts = this.Math.rand(0, 25);
 				party.getLoot().Ammo = this.Math.rand(0, 10);
 				party.addToInventory("supplies/strange_meat_item");
@@ -1166,6 +1314,7 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 
 			party.getSprite("banner").setBrush(origin.getBanner());
 			party.setAttackableByAI(false);
+			party.setAlwaysAttackPlayer(true);
 			local c = party.getController();
 			local intercept = this.new("scripts/ai/world/orders/intercept_order");
 			intercept.setTarget(this.World.State.getPlayer());

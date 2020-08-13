@@ -24,8 +24,8 @@ this.vampire <- this.inherit("scripts/entity/tactical/actor", {
 			"sounds/enemies/vampire_idle_02.wav",
 			"sounds/enemies/vampire_idle_03.wav"
 		];
-		this.getTags().add("undead");
-		this.getTags().add("vampire");
+		this.getFlags().add("undead");
+		this.getFlags().add("vampire");
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/vampire_agent");
 		this.m.AIAgent.setActor(this);
 	}

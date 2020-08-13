@@ -218,7 +218,36 @@ this.warriors_death_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
-		if (fallen[0].Time < this.World.getTime().Days || fallen[1].Time < this.World.getTime().Days)
+		local f0;
+		local f1;
+
+		foreach( f in fallen )
+		{
+			if (f.Expendable)
+			{
+				continue;
+			}
+
+			if (f0 == null)
+			{
+				f0 = f;
+			}
+			else if (f1 == null)
+			{
+				f1 = f;
+			}
+			else
+			{
+				break;
+			}
+		}
+
+		if (f0 == null || f1 == null)
+		{
+			return;
+		}
+
+		if (f0.Time < this.World.getTime().Days || f1.Time < this.World.getTime().Days)
 		{
 			return;
 		}
@@ -240,7 +269,7 @@ this.warriors_death_event <- this.inherit("scripts/events/event", {
 			}
 		}
 
-		this.m.Casualty = fallen[0].Name;
+		this.m.Casualty = f0.Name;
 
 		if (candidates_gravedigger.len() != 0)
 		{

@@ -72,6 +72,16 @@ gt.Const.HairColors.Lineage <- [
 		"grey"
 	]
 ];
+gt.Const.HairColors.Southern <- [
+	"brown",
+	"grey",
+	"brown",
+	"brown",
+	"brown"
+];
+gt.Const.HairColors.SouthernYoung <- [
+	"brown"
+];
 gt.Const.Faces.AllMale <- [
 	"bust_head_01",
 	"bust_head_02",
@@ -92,6 +102,7 @@ gt.Const.Faces.AllMale <- [
 	"bust_head_17",
 	"bust_head_18"
 ];
+gt.Const.Faces.Barber <- clone this.Const.Faces.AllMale;
 gt.Const.Faces.SmartMale <- [
 	"bust_head_01",
 	"bust_head_04",
@@ -117,11 +128,21 @@ gt.Const.Faces.WildMale <- [
 	"bust_head_19",
 	"bust_head_20"
 ];
+gt.Const.Faces.SouthernMale <- [
+	"bust_head_southern_01",
+	"bust_head_southern_02",
+	"bust_head_southern_03",
+	"bust_head_southern_04",
+	"bust_head_southern_05",
+	"bust_head_southern_06",
+	"bust_head_southern_07",
+	"bust_head_southern_08"
+];
 gt.Const.Faces.Necromancer <- [
 	"bust_head_necro_01",
 	"bust_head_necro_02"
 ];
-gt.Const.Hair.BarberMale <- [
+gt.Const.Hair.Barber <- [
 	"",
 	"shaved",
 	"01",
@@ -246,6 +267,30 @@ gt.Const.Hair.Monk <- [
 	"15",
 	"16"
 ];
+gt.Const.Hair.SouthernMaleOnly <- [
+	"southern_01",
+	"southern_02",
+	"southern_03",
+	"southern_04",
+	"southern_05",
+	"southern_06",
+	"southern_07",
+	"southern_08"
+];
+gt.Const.Hair.SouthernMale <- [
+	"southern_01",
+	"southern_02",
+	"southern_03",
+	"southern_04",
+	"southern_05",
+	"southern_06",
+	"southern_07",
+	"southern_08",
+	"10",
+	"15",
+	"16",
+	"19"
+];
 gt.Const.Hair.Vampire <- [
 	"zombie_01",
 	"zombie_02",
@@ -346,6 +391,18 @@ gt.Const.Beards.Untidy <- [
 	"14",
 	"17"
 ];
+gt.Const.Beards.SouthernUntidy <- [
+	"southern_01",
+	"southern_02",
+	"southern_01",
+	"southern_02",
+	"01",
+	"05",
+	"07",
+	"09",
+	"14",
+	"17"
+];
 gt.Const.Beards.Raider <- [
 	"01",
 	"03",
@@ -372,6 +429,20 @@ gt.Const.Beards.WildExtended <- [
 gt.Const.Beards.Monk <- [
 	"01",
 	"05",
+	"07",
+	"09"
+];
+gt.Const.Beards.SouthernOnly <- [
+	"southern_01",
+	"southern_02"
+];
+gt.Const.Beards.Southern <- [
+	"southern_01",
+	"southern_02",
+	"southern_01",
+	"southern_02",
+	"01",
+	"06",
 	"07",
 	"09"
 ];
@@ -430,5 +501,39 @@ gt.Const.Bodies.AllMale <- [
 	"bust_naked_body_00",
 	"bust_naked_body_01",
 	"bust_naked_body_02"
+];
+gt.Const.Bodies.Barber <- clone this.Const.Bodies.AllMale;
+gt.Const.Bodies.SouthernMale <- [
+	"bust_naked_body_southern_00",
+	"bust_naked_body_southern_01",
+	"bust_naked_body_southern_02"
+];
+gt.Const.Bodies.Skinny <- [
+	"bust_naked_body_00"
+];
+gt.Const.Bodies.SouthernSkinny <- [
+	"bust_naked_body_southern_00"
+];
+gt.Const.Bodies.Muscular <- [
+	"bust_naked_body_01"
+];
+gt.Const.Bodies.SouthernMuscular <- [
+	"bust_naked_body_southern_01"
+];
+gt.Const.Bodies.Thick <- [
+	"bust_naked_body_02"
+];
+gt.Const.Bodies.SouthernThick <- [
+	"bust_naked_body_southern_01"
+];
+gt.Const.Bodies.Gladiator <- [
+	"bust_naked_body_southern_01",
+	"bust_naked_body_southern_02"
+];
+gt.Const.Bodies.SouthernSlave <- [
+	"bust_naked_body_southern_00"
+];
+gt.Const.Bodies.NorthernSlave <- [
+	"bust_naked_body_00"
 ];
 

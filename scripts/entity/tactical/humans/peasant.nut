@@ -10,7 +10,7 @@ this.peasant <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Hairs = this.Const.Hair.AllMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
-		this.getTags().add("peasant");
+		this.getFlags().add("peasant");
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/militia_melee_agent");
 		this.m.AIAgent.setActor(this);
 	}
@@ -50,6 +50,14 @@ this.peasant <- this.inherit("scripts/entity/tactical/human", {
 		else if (r == 4)
 		{
 			this.m.Items.equip(this.new("scripts/items/weapons/pickaxe"));
+		}
+		else if (r == 5)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/wooden_stick"));
+		}
+		else if (r == 6)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/butchers_cleaver"));
 		}
 
 		r = this.Math.rand(1, 10);

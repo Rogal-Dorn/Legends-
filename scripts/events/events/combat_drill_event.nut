@@ -172,7 +172,7 @@ this.combat_drill_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "C1",
-			Text = "[img]gfx/ui/events/event_05.png[/img] %oldguard% musters the men together and begins handing them training bows.%SPEECH_ON%Now these ain\'t made for killing unless ye got an axe to grind with a newborn babe, which I\'m some of y\'all do, but for now we\'ll just use them to practice.\n\nHere\'s how this contraption works. Oh, ye already know? Yer not a bunch of fools? Well go ahead, then, show me what ye sharpshooters got.%SPEECH_OFF%",
+			Text = "[img]gfx/ui/events/event_05.png[/img] %oldguard% musters the men together and begins handing them training bows.%SPEECH_ON%Now these ain\'t made for killing unless ye got an axe to grind with a newborn babe, which I\'m sure of y\'all do, but for now we\'ll just use them to practice.\n\nHere\'s how this contraption works. Oh, ye already know? Yer not a bunch of fools? Well go ahead, then, show me what ye sharpshooters got.%SPEECH_OFF%",
 			Image = "",
 			List = [],
 			Characters = [],

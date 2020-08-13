@@ -53,7 +53,8 @@ gt.Const.Items.AmmoType <- {
 	None = 0,
 	Arrows = 1,
 	Bolts = 2,
-	Spears = 4
+	Spears = 4,
+	Powder = 8
 };
 gt.Const.Items.Property <- {
 	None = 0,
@@ -116,6 +117,7 @@ gt.Const.Items.NamedUndeadShields <- [
 gt.Const.Items.NamedOrcShields <- [
 	"shields/named/named_orc_heavy_shield"
 ];
+gt.Const.Items.NamedSouthernShields <- [];
 gt.Const.Items.NamedOrcWeapons <- [
 	"weapons/named/named_orc_axe",
 	"weapons/named/named_orc_cleaver"
@@ -154,6 +156,10 @@ gt.Const.Items.NamedWeapons.extend(this.Const.Items.NamedRangedWeapons);
 gt.Const.Items.NamedBarbarianWeapons <- [];
 gt.Const.Items.NamedBarbarianHelmets <- [];
 gt.Const.Items.NamedBarbarianArmors <- [];
+gt.Const.Items.NamedSouthernWeapons <- [];
+gt.Const.Items.NamedSouthernMeleeWeapons <- [];
+gt.Const.Items.NamedSouthernHelmets <- [];
+gt.Const.Items.NamedSouthernArmors <- [];
 gt.Const.Items.NamedUndeadWeapons <- [
 	"weapons/named/named_bladed_pike",
 	"weapons/named/named_crypt_cleaver",

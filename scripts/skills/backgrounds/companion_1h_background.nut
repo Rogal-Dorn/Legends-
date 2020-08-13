@@ -10,6 +10,7 @@ this.companion_1h_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.DailyCost = 14;
 		this.m.DailyCostMult = 1.0;
 		this.m.Excluded = [
+			"trait.superstitious",
 			"trait.hate_undead",
 			"trait.hate_beasts",
 			"trait.hate_greenskins",
@@ -46,7 +47,7 @@ this.companion_1h_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.Hairs = this.Const.Hair.AllMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.Body = "bust_naked_body_01";
+		this.m.Bodies = this.Const.Bodies.Muscular;
 		this.m.IsCombatBackground = true;
 		this.m.IsUntalented = true;
 	}

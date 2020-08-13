@@ -63,7 +63,7 @@ this.quiver_of_bolts <- this.inherit("scripts/items/ammo/ammo", {
 			result.push({
 				id = 6,
 				type = "text",
-				icon = "ui/icons/ranged_skill.png",
+				icon = "ui/icons/ammo.png",
 				text = "Contains [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.Ammo + "[/color] bolts"
 			});
 		}

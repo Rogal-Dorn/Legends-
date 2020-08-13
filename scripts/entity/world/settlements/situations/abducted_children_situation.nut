@@ -7,6 +7,11 @@ this.abducted_children_situation <- this.inherit("scripts/entity/world/settlemen
 		this.m.Name = "Abducted Children";
 		this.m.Description = "Children have been disappearing from this settlement. Distrust and fear rule the streets and are slowly poisoning the community.";
 		this.m.Icon = "ui/settlement_status/settlement_effect_34.png";
+		this.m.Rumors = [
+			"Rumor is that children disappear from their cribs in %settlement% into thin air. Imagine the parents\' terror...",
+			"My grandma told me a story about witches abducting children for their innocent blood. And now in %settlement%, kids have gone missing just like in the stories.",
+			"Never ever strike a deal with witches! A relative in %settlement% did it years ago and now his kid is gone missing."
+		];
 	}
 
 	function getAddedString( _s )

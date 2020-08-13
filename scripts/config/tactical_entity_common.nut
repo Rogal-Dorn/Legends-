@@ -6,6 +6,7 @@ if (!("Tactical" in gt.Const))
 }
 
 gt.Const.Tactical.Common <- {
+	LastAIBehaviorID = "",
 	function getRandomPlayerName()
 	{
 		return this.Const.Strings.CharacterNames[this.Math.rand(0, this.Const.Strings.CharacterNames.len() - 1)];
@@ -85,7 +86,7 @@ gt.Const.Tactical.Common <- {
 
 	function onApplyMiasma( _tile, _entity )
 	{
-		if (_entity.getTags().has("undead"))
+		if (_entity.getFlags().has("undead"))
 		{
 			return;
 		}
@@ -93,7 +94,7 @@ gt.Const.Tactical.Common <- {
 		this.Tactical.spawnIconEffect("status_effect_00", _tile, this.Const.Tactical.Settings.SkillIconOffsetX, this.Const.Tactical.Settings.SkillIconOffsetY, this.Const.Tactical.Settings.SkillIconScale, this.Const.Tactical.Settings.SkillIconFadeInDuration, this.Const.Tactical.Settings.SkillIconStayDuration, this.Const.Tactical.Settings.SkillIconFadeOutDuration, this.Const.Tactical.Settings.SkillIconMovement);
 		local sounds = [];
 
-		if (_entity.getTags().has("human"))
+		if (_entity.getFlags().has("human"))
 		{
 			sounds = [
 				"sounds/humans/human_coughing_01.wav",
@@ -121,22 +122,67 @@ gt.Const.Tactical.Common <- {
 		_tile.getEntity().onDamageReceived(_entity, null, hitInfo);
 	}
 
-	function onApplyDust( _tile, _entity )
+	function onApplyFire( _tile, _entity )
 	{
-		if (_entity.isNonCombatant() || _entity.getType() == this.Const.EntityType.Alp)
+		if (_entity.getCurrentProperties().IsImmuneToFire)
 		{
 			return;
 		}
 
-		local sleep = _entity.getSkills().getSkillByID("effects.sleeping");
+		this.Tactical.spawnIconEffect("status_effect_116", _tile, this.Const.Tactical.Settings.SkillIconOffsetX, this.Const.Tactical.Settings.SkillIconOffsetY, this.Const.Tactical.Settings.SkillIconScale, this.Const.Tactical.Settings.SkillIconFadeInDuration, this.Const.Tactical.Settings.SkillIconStayDuration, this.Const.Tactical.Settings.SkillIconFadeOutDuration, this.Const.Tactical.Settings.SkillIconMovement);
+		local sounds = [
+			"sounds/combat/dlc6/status_on_fire_01.wav",
+			"sounds/combat/dlc6/status_on_fire_02.wav",
+			"sounds/combat/dlc6/status_on_fire_03.wav"
+		];
+		this.Sound.play(sounds[this.Math.rand(0, sounds.len() - 1)], this.Const.Sound.Volume.Actor, _entity.getPos());
+		local damageMult = 1.0;
 
-		if (sleep != null)
+		if (_entity.getType() == this.Const.EntityType.Schrat)
 		{
-			sleep.addDuration(1);
+			damageMult = 3.0;
 		}
-		else
+
+		if (_entity.getSkills().hasSkill("racial.skeleton"))
 		{
-			_entity.getSkills().add(this.new("scripts/skills/effects/sleeping_dust_effect"));
+			damageMult = 0.33;
+		}
+
+		if (_entity.getSkills().hasSkill("items.firearms_resistance") || _entity.getSkills().hasSkill("racial.serpent"))
+		{
+			damageMult = 0.66;
+		}
+
+		local damage = this.Math.rand(15, 30);
+		local hitInfo = clone this.Const.Tactical.HitInfo;
+		hitInfo.DamageRegular = damage * damageMult;
+		hitInfo.DamageArmor = damage;
+		hitInfo.DamageDirect = 0.1;
+		hitInfo.BodyPart = this.Const.BodyPart.Body;
+		hitInfo.BodyDamageMult = 1.0;
+		hitInfo.FatalityChanceMult = 0.0;
+		hitInfo.Injuries = this.Const.Injury.Burning;
+		hitInfo.IsPlayingArmorSound = false;
+		_entity.onDamageReceived(_entity, null, hitInfo);
+
+		if (!_entity.isAlive() || _entity.isDying())
+		{
+			this.updateAchievement("BurnThemAll", 1, 1);
+		}
+	}
+
+	function onApplySmoke( _tile, _entity )
+	{
+		if (_entity.isNonCombatant())
+		{
+			return;
+		}
+
+		local smoke = _entity.getSkills().getSkillByID("effects.smoke");
+
+		if (smoke == null)
+		{
+			_entity.getSkills().add(this.new("scripts/skills/effects/smoke_effect"));
 		}
 	}
 
@@ -217,6 +263,7 @@ gt.Const.Tactical.Common <- {
 		{
 			local effect = this.new("scripts/skills/injury/sickness_injury");
 			_actor.getSkills().add(effect);
+			this.Sound.play("sounds/vomit_01.wav", this.Const.Sound.Volume.Actor);
 		}
 	}
 

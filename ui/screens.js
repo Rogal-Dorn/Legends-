@@ -96,6 +96,7 @@ function registerScreens()
     registerScreen("WorldCombatDialog", new WorldCombatDialog());
     registerScreen("WorldRelationsScreen", new WorldRelationsScreen());
     registerScreen("WorldObituaryScreen", new WorldObituaryScreen());
+    registerScreen("WorldCampfireScreen", new WorldCampfireScreen());
     registerScreen("MainMenuScreen", new MainMenuScreen());
     registerScreen("WorldMenuScreen", new IngameMenuScreen());
     registerScreen("TacticalMenuScreen", new IngameMenuScreen());

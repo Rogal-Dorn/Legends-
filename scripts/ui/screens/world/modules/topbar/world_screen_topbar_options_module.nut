@@ -3,6 +3,7 @@ this.world_screen_topbar_options_module <- this.inherit("scripts/ui/screens/ui_m
 		OnBrothersPressedListener = null,
 		OnActiveContractPressedListener = null,
 		OnRelationsPressedListener = null,
+		OnPerksPressedListener = null,
 		OnObituaryPressedListener = null,
 		OnQuitPressedListener = null
 	},
@@ -26,6 +27,11 @@ this.world_screen_topbar_options_module <- this.inherit("scripts/ui/screens/ui_m
 		this.m.OnObituaryPressedListener = _listener;
 	}
 
+	function setOnPerksPressedListener( _listener )
+	{
+		this.m.OnPerksPressedListener = _listener;
+	}
+
 	function setOnQuitPressedListener( _listener )
 	{
 		this.m.OnQuitPressedListener = _listener;
@@ -36,6 +42,7 @@ this.world_screen_topbar_options_module <- this.inherit("scripts/ui/screens/ui_m
 		this.m.OnBrothersPressedListener = null;
 		this.m.OnActiveContractPressedListener = null;
 		this.m.OnRelationsPressedListener = null;
+		this.m.OnPerksPressedListener = null;
 		this.m.OnObituaryPressedListener = null;
 		this.m.OnQuitPressedListener = null;
 	}
@@ -55,6 +62,11 @@ this.world_screen_topbar_options_module <- this.inherit("scripts/ui/screens/ui_m
 	function enableCampButton( _enabled )
 	{
 		this.m.JSHandle.asyncCall("enableCampButton", _enabled);
+	}
+
+	function enablePerksButton( _enabled )
+	{
+		this.m.JSHandle.asyncCall("enablePerksButton", _enabled);
 	}
 
 	function onBrothersButtonPressed()
@@ -78,6 +90,14 @@ this.world_screen_topbar_options_module <- this.inherit("scripts/ui/screens/ui_m
 		if (this.m.OnRelationsPressedListener != null)
 		{
 			this.m.OnRelationsPressedListener();
+		}
+	}
+
+	function onPerksButtonPressed()
+	{
+		if (this.m.OnPerksPressedListener != null)
+		{
+			this.m.OnPerksPressedListener();
 		}
 	}
 

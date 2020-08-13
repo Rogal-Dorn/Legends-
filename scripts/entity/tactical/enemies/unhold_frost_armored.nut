@@ -31,7 +31,7 @@ this.unhold_frost_armored <- this.inherit("scripts/entity/tactical/enemies/unhol
 	{
 		this.actor.onTurnStart();
 
-		if (!this.m.HasTurned && !this.m.HasBeenWhipped && !this.Tactical.State.isAutoRetreat())
+		if (this.Time.getRound() >= 2 && !this.m.HasTurned && !this.m.HasBeenWhipped && !this.Tactical.State.isAutoRetreat())
 		{
 			this.m.Skills.getSkillByID("racial.unhold").spawnIcon("status_effect_107", this.getTile());
 

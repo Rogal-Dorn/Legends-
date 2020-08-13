@@ -64,6 +64,21 @@ this.oldguard_becomes_drunkard_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
+		local numFallen = 0;
+
+		foreach( f in fallen )
+		{
+			if (!f.Expendable)
+			{
+				numFallen = ++numFallen;
+			}
+		}
+
+		if (numFallen < 7)
+		{
+			return;
+		}
+
 		local brothers = this.World.getPlayerRoster().getAll();
 
 		if (brothers.len() < 3)
@@ -75,12 +90,12 @@ this.oldguard_becomes_drunkard_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.cultist" || bro.getBackground().getID() == "background.converted_cultist")
+			if (bro.getBackground().getID() == "background.cultist" || bro.getBackground().getID() == "background.converted_cultist" || bro.getBackground().getID() == "background.slave")
 			{
 				continue;
 			}
 
-			if (bro.getLevel() >= 8 && !bro.getSkills().hasSkill("trait.drunkard") && this.World.getTime().Days - bro.getDaysWithCompany() < fallen[0].Time && this.World.getTime().Days - bro.getDaysWithCompany() < fallen[1].Time && !bro.getSkills().hasSkill("trait.player"))
+			if (bro.getLevel() >= 8 && !bro.getSkills().hasSkill("trait.drunkard") && this.World.getTime().Days - bro.getDaysWithCompany() < fallen[0].Time && this.World.getTime().Days - bro.getDaysWithCompany() < fallen[1].Time && !bro.getSkills().hasSkill("trait.player") && !bro.getSkills().hasSkill("trait.fabulous"))
 			{
 				candidates.push(bro);
 			}
@@ -92,9 +107,27 @@ this.oldguard_becomes_drunkard_event <- this.inherit("scripts/events/event", {
 		}
 
 		this.m.Oldguard = candidates[this.Math.rand(0, candidates.len() - 1)];
-		this.m.Casualty = fallen[1].Name;
-		this.m.OtherCasualty = fallen[0].Name;
-		this.m.Score = fallen.len() * 1 - 2;
+
+		for( local i = 0; i < fallen.len(); i = ++i )
+		{
+			if (fallen[i].Expendable)
+			{
+			}
+			else if (this.m.OtherCasualty == null)
+			{
+				this.m.OtherCasualty = fallen[i].Name;
+			}
+			else if (this.m.Casualty == null)
+			{
+				this.m.Casualty = fallen[i].Name;
+			}
+			else
+			{
+				break;
+			}
+		}
+
+		this.m.Score = numFallen - 2;
 	}
 
 	function onPrepare()

@@ -3,7 +3,7 @@ this.military_ranged_agent <- this.inherit("scripts/ai/tactical/agent", {
 	function create()
 	{
 		this.agent.create();
-		this.m.ID = this.Const.AI.Agent.ID.BanditRanged;
+		this.m.ID = this.Const.AI.Agent.ID.MilitaryRanged;
 		this.m.Properties.BehaviorMult[this.Const.AI.Behavior.ID.Defend] = 1.0;
 		this.m.Properties.BehaviorMult[this.Const.AI.Behavior.ID.EngageMelee] = 0.0;
 		this.m.Properties.IsRangedUnit = true;
@@ -17,7 +17,7 @@ this.military_ranged_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.m.Properties.TargetPriorityCounterSkillsMult = 0.5;
 		this.m.Properties.TargetPriorityArmorMult = 0.5;
 		this.m.Properties.OverallDefensivenessMult = 1.0;
-		this.m.Properties.OverallFormationMult = 1.0;
+		this.m.Properties.OverallFormationMult = 1.1;
 		this.m.Properties.EngageTargetMultipleOpponentsMult = 1.35;
 	}
 
@@ -32,8 +32,11 @@ this.military_ranged_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_wake_up_ally"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_defend_riposte"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_bow"));
+		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_handgonne"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_default"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_puncture"));
+		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_gash"));
+		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_knock_out"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_reload"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_recover"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_switchto_melee"));

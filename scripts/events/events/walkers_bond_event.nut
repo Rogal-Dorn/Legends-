@@ -73,7 +73,7 @@ this.walkers_bond_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.vagabond" || bro.getBackground().getID() == "background.messenger" || bro.getBackground().getID() == "background.refugee")
+			if (bro.getBackground().getID() == "background.vagabond" || bro.getBackground().getID() == "background.messenger" || bro.getBackground().getID() == "background.refugee" || bro.getBackground().getID() == "background.nomad")
 			{
 				candidates.push(bro);
 			}

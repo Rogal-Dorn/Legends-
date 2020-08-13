@@ -311,7 +311,7 @@ this.bird_shits_on_sellsword_event <- this.inherit("scripts/events/event", {
 			{
 				candidates_archer.push(bro);
 			}
-			else if (!bro.getSkills().hasSkill("trait.lucky"))
+			else if (!bro.getSkills().hasSkill("trait.lucky") && bro.getBackground().getID() != "background.slave")
 			{
 				candidates_victim.push(bro);
 			}

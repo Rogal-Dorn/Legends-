@@ -19,6 +19,19 @@ this.spider <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.DecapitateSplatterOffset = this.createVec(20, -15);
 		this.m.DecapitateBloodAmount = 1.0;
 		this.m.ConfidentMoraleBrush = "icon_confident_orcs";
+		this.m.ExcludedInjuries = [
+			"injury.fractured_hand",
+			"injury.crushed_finger",
+			"injury.fractured_elbow",
+			"injury.smashed_hand",
+			"injury.broken_arm",
+			"injury.cut_arm_sinew",
+			"injury.cut_arm",
+			"injury.split_hand",
+			"injury.pierced_hand",
+			"injury.pierced_arm_muscles",
+			"injury.burnt_hands"
+		];
 		this.actor.create();
 		this.m.Sound[this.Const.Sound.ActorEvent.DamageReceived] = [
 			"sounds/enemies/dlc2/giant_spider_hurt_01.wav",
@@ -224,6 +237,12 @@ this.spider <- this.inherit("scripts/entity/tactical/actor", {
 
 					loot.drop(_tile);
 				}
+
+				if (this.Math.rand(1, 100) <= 5)
+				{
+					local loot = this.new("scripts/items/loot/webbed_valuables_item");
+					loot.drop(_tile);
+				}
 			}
 		}
 
@@ -240,13 +259,15 @@ this.spider <- this.inherit("scripts/entity/tactical/actor", {
 		b.IsImmuneToPoison = true;
 		b.IsImmuneToDisarm = true;
 
-		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 30)
+		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 25)
 		{
 			b.DamageDirectAdd += 0.05;
 
 			if (this.World.getTime().Days >= 50)
 			{
 				b.DamageDirectAdd += 0.05;
+				b.MeleeDefense += 5;
+				b.RangedDefense += 5;
 			}
 		}
 

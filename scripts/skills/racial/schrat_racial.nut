@@ -45,6 +45,14 @@ this.schrat_racial <- this.inherit("scripts/skills/skill", {
 		{
 			_properties.DamageReceivedRegularMult *= 0.5;
 		}
+		else if (_skill.getID() == "actives.throw_javelin")
+		{
+			_properties.DamageReceivedRegularMult *= 0.5;
+		}
+		else if (_skill.getID() == "actives.ignite_firelance")
+		{
+			_properties.DamageReceivedRegularMult *= 1.33;
+		}
 	}
 
 	function onDamageReceived( _attacker, _damageHitpoints, _damageArmor )

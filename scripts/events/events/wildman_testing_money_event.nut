@@ -43,7 +43,7 @@ this.wildman_testing_money_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				this.Characters.push(_event.m.Wildman.getImagePath());
-				_event.m.Wildman.getTags().set("IsConceptionOfMoneyTested", true);
+				_event.m.Wildman.getFlags().set("IsConceptionOfMoneyTested", true);
 			}
 
 		});
@@ -142,7 +142,7 @@ this.wildman_testing_money_event <- this.inherit("scripts/events/event", {
 				continue;
 			}
 
-			if (bro.getBackground().getID() == "background.wildman" && !bro.getTags().get("IsConceptionOfMoneyTested"))
+			if (bro.getBackground().getID() == "background.wildman" && !bro.getFlags().get("IsConceptionOfMoneyTested"))
 			{
 				candidates.push(bro);
 			}

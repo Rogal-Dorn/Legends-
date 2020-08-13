@@ -7,6 +7,11 @@ this.refugees_situation <- this.inherit("scripts/entity/world/settlements/situat
 		this.m.Name = "Refugees";
 		this.m.Description = "With the war raging, a constant stream of refugees is pouring into this settlement. It puts a strain on local economy, but it also means cheap recruits for anyone that can offer work.";
 		this.m.Icon = "ui/settlement_status/settlement_effect_01.png";
+		this.m.Rumors = [
+			"Come morning I\'ll head out to %settlement%. Word is a large group of refugees just arrived and I need more hands for my farm.",
+			"From what I\'ve heard, %settlement% is flooded with refugees nowadays. Those cowards should have stayed and fought for their home, I\'d say!",
+			"The beggars, the downtrodden, the fugitives, they all have to go somewhere. A large group of them just arrived at %settlement% from what I heard."
+		];
 	}
 
 	function getAddedString( _s )

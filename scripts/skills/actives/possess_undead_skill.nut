@@ -25,7 +25,7 @@ this.possess_undead_skill <- this.inherit("scripts/skills/skill", {
 		this.m.ActionPointCost = 3;
 		this.m.FatigueCost = 10;
 		this.m.MinRange = 1;
-		this.m.MaxRange = 9;
+		this.m.MaxRange = 99;
 		this.m.MaxLevelDifference = 4;
 	}
 
@@ -65,7 +65,7 @@ this.possess_undead_skill <- this.inherit("scripts/skills/skill", {
 
 		local target = _targetTile.getEntity();
 
-		if (!target.getTags().has("zombie_minion"))
+		if (!target.getFlags().has("zombie_minion"))
 		{
 			return false;
 		}

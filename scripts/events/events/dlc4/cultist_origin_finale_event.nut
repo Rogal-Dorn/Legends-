@@ -86,7 +86,8 @@ this.cultist_origin_finale_event <- this.inherit("scripts/events/event", {
 					TimeWithCompany = this.Math.max(1, dead.getDaysWithCompany()),
 					Kills = dead.getLifetimeStats().Kills,
 					Battles = dead.getLifetimeStats().Battles,
-					KilledBy = "Sacrificed to Davkul"
+					KilledBy = "Sacrificed to Davkul",
+					Expendable = dead.getBackground().getID() == "background.slave"
 				};
 				this.World.Statistics.addFallen(fallen);
 				this.List.push({

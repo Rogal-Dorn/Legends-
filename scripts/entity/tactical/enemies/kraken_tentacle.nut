@@ -29,7 +29,7 @@ this.kraken_tentacle <- this.inherit("scripts/entity/tactical/actor", {
 			if (this.m.Mode == 0 && _m == 1)
 			{
 				this.m.IsUsingZoneOfControl = true;
-				this.getTile().addZoneOfControl(this.getFaction());
+				this.setZoneOfControl(this.getTile(), true);
 			}
 
 			this.onUpdateInjuryLayer();

@@ -101,6 +101,7 @@ this.building <- {
 		local medicineRarityMult = this.getSettlement().getModifiers().MedicalPriceMult;
 		local mineralRarityMult = this.getSettlement().getModifiers().MineralRarityMult;
 		local buildingRarityMult = this.getSettlement().getModifiers().BuildingRarityMult;
+		local isTrader = this.World.Retinue.hasFollower("follower.trader");
 
 		foreach( i in _list )
 		{
@@ -109,10 +110,11 @@ this.building <- {
 			for( local num = 0; true;  )
 			{
 				local p = this.Math.rand(0, 100) * rarityMult;
+				local item;
 
 				if (p >= r)
 				{
-					local item = this.new("scripts/items/" + i.S);
+					item = this.new("scripts/items/" + i.S);
 					local isFood = item.isItemType(this.Const.Items.ItemType.Food);
 					local isMedicine = item.getID() == "supplies.medicine";
 					local isMineral = item.getID() == "misc.uncut_gems" || item.getID() == "misc.copper_ingots";
@@ -154,7 +156,7 @@ this.building <- {
 
 				num = ++num;
 
-				if (num >= 3)
+				if (num >= 3 || !isTrader && num >= 2 && item.isItemType(this.Const.Items.ItemType.TradeGood))
 				{
 					break;
 				}

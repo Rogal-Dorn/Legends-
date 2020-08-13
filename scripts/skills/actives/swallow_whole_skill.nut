@@ -69,7 +69,7 @@ this.swallow_whole_skill <- this.inherit("scripts/skills/skill", {
 		}
 
 		this.m.SwallowedEntity = target;
-		this.m.SwallowedEntity.getTags().set("Devoured", true);
+		this.m.SwallowedEntity.getFlags().set("Devoured", true);
 		this.m.SwallowedEntity.setHitpoints(this.Math.max(5, this.m.SwallowedEntity.getHitpoints() - this.Math.rand(10, 20)));
 		target.removeFromMap();
 		_user.getSprite("body").setBrush("bust_ghoul_body_04");

@@ -4,9 +4,9 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 	{
 		this.m.ID = "scenario.trader";
 		this.m.Name = "Trading Caravan";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_41.png[/img][/p][p]You\'re running a small trading caravan and have most of your crowns invested into trading goods. But the roads have become dangerous - brigands and greenskins lay in ambush, and there\'s rumors of even worse things out there.\n\n[color=#bcad8c]Caravan:[/color] Start with two caravan hands in your employ.\n[color=#bcad8c]Trader:[/color] Get 10% better prices for buying and selling.\n[color=#bcad8c]Not a Warrior:[/color] Start with no renown, and gain renown at half the normal rate.[/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_41.png[/img][/p][p]You\'re running a small trade caravan and have most of your crowns invested into trading goods. But the roads have become dangerous - brigands and greenskins lay in ambush, and there\'s rumors of even worse things out there.\n\n[color=#bcad8c]Caravan:[/color] Start with two caravan hands in your employ.\n[color=#bcad8c]Trader:[/color] Get 10% better prices for buying and selling.\n[color=#bcad8c]Not a Warrior:[/color] Start with no renown, and gain renown at only 66% the normal rate.[/p]";
 		this.m.Difficulty = 2;
-		this.m.Order = 4;
+		this.m.Order = 40;
 	}
 
 	function isValid()
@@ -139,7 +139,7 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 
 	function onInit()
 	{
-		this.World.Assets.m.BusinessReputationRate = 0.5;
+		this.World.Assets.m.BusinessReputationRate = 0.66;
 		this.World.Assets.m.BuyPriceMult = 0.9;
 		this.World.Assets.m.SellPriceMult = 1.1;
 	}

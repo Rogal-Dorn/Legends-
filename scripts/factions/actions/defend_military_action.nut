@@ -115,6 +115,8 @@ this.defend_military_action <- this.inherit("scripts/factions/faction_action", {
 			local party = this.getFaction().spawnEntity(spawnpoints[i], this.m.Settlement.getName() + " Company", true, this.Const.World.Spawn.Noble, this.m.Settlement.getResources());
 			party.getSprite("body").setBrush(party.getSprite("body").getBrush().Name + "_" + _faction.getBannerString());
 			party.setDescription("Professional soldiers in service to local lords.");
+			party.setFootprintType(this.Const.World.FootprintsType.Nobles);
+			party.getFlags().set("IsRandomlySpawned", true);
 			local c = party.getController();
 			local sleep = this.new("scripts/ai/world/orders/sleep_order");
 			sleep.setTime(1.0);

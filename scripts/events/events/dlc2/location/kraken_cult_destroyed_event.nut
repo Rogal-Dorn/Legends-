@@ -17,7 +17,7 @@ this.kraken_cult_destroyed_event <- this.inherit("scripts/events/event", {
 					Text = "Alright, show me what\'s been found.",
 					function getResult( _event )
 					{
-						if (this.World.Tags.get("IsWaterWheelVisited"))
+						if (this.World.Flags.get("IsWaterWheelVisited"))
 						{
 							return "C";
 						}
@@ -100,7 +100,7 @@ this.kraken_cult_destroyed_event <- this.inherit("scripts/events/event", {
 
 	function onPrepare()
 	{
-		this.World.Tags.set("IsKrakenDefeated", true);
+		this.World.Flags.set("IsKrakenDefeated", true);
 	}
 
 	function onPrepareVariables( _vars )

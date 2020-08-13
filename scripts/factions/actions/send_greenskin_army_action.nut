@@ -77,6 +77,25 @@ this.send_greenskin_army_action <- this.inherit("scripts/factions/faction_action
 
 			if (d <= lowest_distance && !s.isIsolatedFromLocation(origin))
 			{
+				if (s.isSouthern())
+				{
+					local skip = true;
+
+					foreach( l in s.getAttachedLocations() )
+					{
+						if (l.isActive() && l.isUsable())
+						{
+							skip = false;
+							break;
+						}
+					}
+
+					if (skip)
+					{
+						continue;
+					}
+				}
+
 				lowest_distance = d;
 				best_settlement = s;
 			}
@@ -99,9 +118,11 @@ this.send_greenskin_army_action <- this.inherit("scripts/factions/faction_action
 		}
 
 		local nearestOrcs = this.getNearestLocationTo(origin, this.World.FactionManager.getFactionOfType(this.Const.FactionType.Orcs).getSettlements());
-		local party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Orcs).spawnEntity(myTile, "Greenskin Horde", false, this.Const.World.Spawn.GreenskinHorde, this.Math.rand(80, 120) * this.getReputationToDifficultyMult());
+		local party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Orcs).spawnEntity(myTile, "Greenskin Horde", false, this.Const.World.Spawn.GreenskinHorde, this.Math.rand(80, 120) * this.getScaledDifficultyMult());
 		party.getSprite("banner").setBrush(nearestOrcs.getBanner());
 		party.setDescription("A horde of greenskins marching to war.");
+		party.setFootprintType(this.Const.World.FootprintsType.Orcs);
+		party.getFlags().set("IsRandomlySpawned", true);
 		party.getLoot().ArmorParts = this.Math.rand(0, 10);
 		party.getLoot().Ammo = this.Math.rand(0, 10);
 		local numFood = this.Math.rand(1, 2);

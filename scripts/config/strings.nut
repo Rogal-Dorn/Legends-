@@ -60,6 +60,72 @@ gt.Const.Strings.Quantity <- [
 	"19th",
 	"20th"
 ];
+gt.Const.Strings.Amount <- [
+	"no",
+	"one",
+	"two",
+	"three",
+	"four",
+	"five",
+	"six",
+	"seven",
+	"eight",
+	"nine",
+	"ten",
+	"eleven",
+	"twelve",
+	"thirteen",
+	"fourteen",
+	"fifteen",
+	"sixteen",
+	"seventeen",
+	"eighteen",
+	"nineteen",
+	"twenty",
+	"twenty-one",
+	"twenty-two",
+	"twenty-three",
+	"twenty-four",
+	"twenty-five",
+	"twenty-six",
+	"twenty-seven",
+	"twenty-eight",
+	"twenty-nine",
+	"thirty"
+];
+gt.Const.Strings.AmountC <- [
+	"No",
+	"One",
+	"Two",
+	"Three",
+	"Four",
+	"Five",
+	"Six",
+	"Seven",
+	"Eight",
+	"Nine",
+	"Ten",
+	"Eleven",
+	"Twelve",
+	"Thirteen",
+	"Fourteen",
+	"Fifteen",
+	"Sixteen",
+	"Seventeen",
+	"Eighteen",
+	"Nineteen",
+	"Twenty",
+	"Twenty-one",
+	"Twenty-two",
+	"Twenty-three",
+	"Twenty-four",
+	"Twenty-five",
+	"Twenty-six",
+	"Twenty-seven",
+	"Twenty-eight",
+	"Twenty-nine",
+	"Thirty"
+];
 gt.Const.Strings.Difficulty <- [
 	"Beginner",
 	"Veteran",
@@ -146,7 +212,32 @@ gt.Const.Strings.EntityName <- [
 	"Barbarian King",
 	"Warhound",
 	"The Ijirok",
-	"Barbarian Madman"
+	"Barbarian Madman",
+	"Serpent",
+	"Ifrit",
+	"Hyena",
+	"Conscript",
+	"Gunner",
+	"Officer",
+	"Engineer",
+	"Assassin",
+	"Indebted",
+	"Gladiator",
+	"Mortar",
+	"Nomad Cutthroat",
+	"Nomad Outlaw",
+	"Nomad Slinger",
+	"Nomad Archer",
+	"Nomad Leader",
+	"Desert Stalker",
+	"Nomad Executioner",
+	"Blade Dancer",
+	"Citizen",
+	"The Lorekeeper",
+	"Lorekeeper\'s Apparition",
+	"Phylactery",
+	"Lost Treasure Hunter",
+	"Screaming Skull"
 ];
 gt.Const.Strings.EntityNamePlural <- [
 	"Necromancers",
@@ -229,20 +320,48 @@ gt.Const.Strings.EntityNamePlural <- [
 	"Barbarian Kings",
 	"Warhounds",
 	"Beasts of Winter",
-	"Barbarian Madmen"
+	"Barbarian Madmen",
+	"Serpents",
+	"Ifrits",
+	"Hyenas",
+	"Conscripts",
+	"Gunners",
+	"Officers",
+	"Engineers",
+	"Assassins",
+	"Indebted",
+	"Gladiators",
+	"Mortars",
+	"Nomad Cutthroats",
+	"Nomad Outlaws",
+	"Nomad Slingers",
+	"Nomad Archers",
+	"Nomad Leaders",
+	"Desert Stalkers",
+	"Nomad Executioners",
+	"Blade Dancers",
+	"Citizens",
+	"The Lorekeeper",
+	"Lorekeeper\'s Apparition",
+	"Phylacteries",
+	"Lost Treasure Hunters",
+	"Screaming Skulls"
 ];
 gt.Const.Strings.Tactical.EntityName <- {
 	Boulder = "Boulder",
+	Ruin = "Ruin",
 	Shrubbery = "Shrubbery",
 	Tree = "Tree",
 	Brush = "Brush",
 	Cartwheel = "Old Cartwheel",
 	RuinedPillar = "Ruined Pillar",
 	Cart = "Caravan Cart",
-	Donkey = "Donkey"
+	Donkey = "Donkey",
+	Plant = "Plant"
 };
 gt.Const.Strings.Tactical.EntityDescription <- {
 	Boulder = "A large stone boulder. Blocks movement and line of sight.",
+	Ruin = "Ruins from an age long past.",
 	Shrubbery = "Very dense shrubbery that blocks movement and line of sight.",
 	Tree = "A large tree with a massive trunk.",
 	TreeSwamp = "This tree is rotten and long dead.",
@@ -251,8 +370,37 @@ gt.Const.Strings.Tactical.EntityDescription <- {
 	Cartwheel = "The old and broken wheel of an oxcart.",
 	RuinedPillar = "TODO",
 	Cart = "A cart full of trading goods.",
-	Donkey = "A donkey used for pulling heavy carts."
+	Donkey = "A donkey used for pulling heavy carts.",
+	Plant = "An exotic plant that blocks movement and line of sight."
 };
+gt.Const.Strings.FootprintsType <- [
+	"",
+	"Northern soldiers",
+	"Gilded soldiers",
+	"A caravan",
+	"Peasants",
+	"Militia",
+	"Refugees",
+	"Brigands",
+	"Undead",
+	"Orcs",
+	"Goblins",
+	"Barbarians",
+	"Nomads",
+	"Direwolves",
+	"Nachzehrers",
+	"Hyenas",
+	"Serpents",
+	"Webknechts",
+	"Unholds",
+	"Alps",
+	"Hexen",
+	"Schrats",
+	"A Kraken",
+	"Ifrits",
+	"Lindwurms",
+	"Mercenaries"
+];
 gt.Const.Strings.ShipNames <- [
 	"Summer Daze",
 	"Merry Mist",
@@ -340,22 +488,21 @@ gt.Const.Strings.MercenaryCompanyNames <- [
 	"Hammerguard",
 	"Crowntakers",
 	"Silverreach Spears",
-	"The Iron Pact",
-	"The Blood Bound",
-	"The Bulwark",
+	"Iron Pact",
+	"Blood Bound",
+	"Bulwark",
 	"Dawn\'s March",
 	"Sons of Winter",
 	"Company of the River House",
 	"Flaming Comet Company",
-	"The Grand Company",
+	"Grand Company",
 	"Rightful Ravagers",
-	"The Host",
 	"Forsaken Brigade",
 	"Battle\'s Chosen",
 	"Bringers of Peace",
 	"Shields of the Night",
-	"The Mongrels",
-	"The Bone Wardens",
+	"Mongrels",
+	"Bone Wardens",
 	"Lost Legion"
 ];
 gt.Const.Strings.NobleHouseNames <- [
@@ -390,6 +537,31 @@ gt.Const.Strings.NobleHouseNames <- [
 	"Steinwall",
 	"Harkon",
 	"Osten"
+];
+gt.Const.Strings.CityStateNames <- [
+	"Dahab",
+	"Kabira",
+	"Ras Sanan",
+	"Tanwir",
+	"Azim Shab",
+	"Tarwa",
+	"Hakim Al Ramal",
+	"Karrakan",
+	"Al-Hazred",
+	"Al-Hazif",
+	"Quadim",
+	"Hikma",
+	"El-Hadet",
+	"Al-Anwar"
+];
+gt.Const.Strings.CityStateTitles <- [
+	"City State of",
+	"City of",
+	"Protectorate of",
+	"Realm of",
+	"Grand City of",
+	"Free City of",
+	"Holy City of"
 ];
 gt.Const.Strings.BusinessReputation <- [
 	"Treacherous",
@@ -450,7 +622,9 @@ gt.Const.Strings.Tactical.TerrainName <- [
 	"Snow",
 	"Light Snow",
 	"Stone",
-	"Stone"
+	"Stone",
+	"Sand",
+	"Shallow Water"
 ];
 gt.Const.Strings.Tactical.TerrainDescription <- [
 	"None",
@@ -469,7 +643,9 @@ gt.Const.Strings.Tactical.TerrainDescription <- [
 	"Frozen ground covered in a thick layer of snow.",
 	"Frozen ground covered in a light layer of snow.",
 	"Smooth stone ground granting a good footing.",
-	"TODO"
+	"Rough stone ground.",
+	"Burning hot desert sand.",
+	"Clear and shallow water."
 ];
 gt.Const.Strings.UI <- {
 	Introduction = "You soak in the cool morning air. As the sun slowly rises, so does a new chapter in your life begin. After years of bloodying your sword for meager pay you\'ve saved up enough crowns to start your very own mercenary company. With you are %allbrothers% with whom you\'ve fought before side by side in the shieldwall. You are their commander now, the leader of the %companyname%.\n\nAs you travel the lands you should hire new men in the villages and cities to fill your ranks. Many who offer their services will have never picked up a real weapon before. Maybe they are desperate, maybe they are greedy for quick spoils of war. Most of them will die on the battlefield. But do not be discouraged. Such is the mercenary life, and the next village will always have new men eagerly looking for a new start in life.\n\nThe lands are dangerous these times. Robbers and pillagers lay in ambush by the roads, wild beasts roam the dark forests and orc tribes are restless in the swamps to the east. There are rumors even of dark magic being at work, the dead rising from their graves and walking again. There is plenty of opportunity to earn good money, whether by taking on contracts you can find in the villages, cities and strongholds all over the land, or by venturing out on your own to explore and raid.\n\nYour men look to you to give a command. They live and die for the %companyname% now.\n\n[color=#bd9d71]EARLY ACCESS DISCLAIMER: This version is still heavily work in progress and does not represent the final quality of the product. Features may be incomplete or missing, the UI is unskinned as of yet, there will be bugs, and the balancing and progression of the economy, resources and enemies may need tweaking and can be too challenging or easy occasionally. A lot of additional content will be added over the course of the Early Access, including more enemies, items, contracts, terrain types, unique locations, story events and other features.[/color]",
@@ -541,7 +717,30 @@ gt.Const.Strings.Terrain <- [
 	"in the wastelands",
 	"in the tundra",
 	"in the steppe",
-	"on the shore"
+	"on the shore",
+	"in the desert",
+	"in the wetlands"
+];
+gt.Const.Strings.TerrainAlternative <- [
+	"",
+	"",
+	"on plains",
+	"in the swamp",
+	"on a hill",
+	"in the forest",
+	"in the forest",
+	"in the forest",
+	"in the forest",
+	"on a mountain",
+	"on plains",
+	"on plains",
+	"in the snow",
+	"",
+	"in the tundra",
+	"on steppe",
+	"",
+	"in the desert",
+	"in wetlands"
 ];
 gt.Const.Strings.TerrainShort <- [
 	"",
@@ -560,7 +759,11 @@ gt.Const.Strings.TerrainShort <- [
 	"wastelands",
 	"tundra",
 	"steppe",
-	"shore"
+	"shore",
+	"",
+	"desert",
+	"hills",
+	"wetlands"
 ];
 gt.Const.Strings.TerrainRegionNames <- [
 	[],
@@ -917,6 +1120,7 @@ gt.Const.Strings.TerrainRegionNames <- [
 		"Clan\'s Claim",
 		"Rugged Flats",
 		"Northern Clanlands",
+		"Northern Reaches",
 		"Ragwilds",
 		"Barrens",
 		"Ragnar\'s Range",
@@ -972,7 +1176,42 @@ gt.Const.Strings.TerrainRegionNames <- [
 		"Jundland",
 		"The Borderlands"
 	],
-	[]
+	[],
+	[
+		"Silver Sands",
+		"Dead Sands",
+		"Golden Flats",
+		"Timeless Sands",
+		"Glittering Sands",
+		"Scorching Desert",
+		"The Emptiness",
+		"The Burning Barrens",
+		"Southern Sands",
+		"Dusty Desert",
+		"Sea of Sand",
+		"Land of the Sun",
+		"The Great Desert",
+		"Neverending Sands",
+		"Southern Reach",
+		"Mumbling Sands",
+		"Whispering Sands",
+		"Shifting Sands",
+		"Moaning Sands",
+		"Sparkling Sands",
+		"Glistening Flats",
+		"Dry Wastes"
+	],
+	[
+		"The Lost Oasis",
+		"Green Shallows",
+		"Emerald Bassin",
+		"Pearl of the South",
+		"Fruitful Shallows",
+		"Springs of Life",
+		"Gift of God",
+		"Prophet\'s Salvation",
+		"The Wetlands"
+	]
 ];
 gt.Const.Strings.Distance <- [
 	"close by",
@@ -997,6 +1236,27 @@ gt.Const.Strings.EngageEnemyNumbers <- [
 	"Many",
 	"Lots of",
 	"A plethora of"
+];
+gt.Const.Strings.InventoryHeader <- [
+	"Donkey",
+	"Cart",
+	"Wagon",
+	"Big Wagon"
+];
+gt.Const.Strings.InventoryUpgradeHeader <- [
+	"Buy a Cart",
+	"Buy a Wagon",
+	"Buy a Big Wagon"
+];
+gt.Const.Strings.InventoryUpgradeText <- [
+	"buy a cart",
+	"buy a wagon",
+	"buy a big wagon"
+];
+gt.Const.Strings.InventoryUpgradeCosts <- [
+	"5,000",
+	"10,000",
+	"20,000"
 ];
 gt.Const.Strings.PerkName <- {
 	Bullseye = "Bullseye",
@@ -1051,7 +1311,7 @@ gt.Const.Strings.PerkName <- {
 	Overwhelm = "Overwhelm",
 	Relentless = "Relentless",
 	SpecBow = "Bow Mastery",
-	SpecCrossbow = "Crossbow Mastery",
+	SpecCrossbow = "Crossbow & Firearms Mastery",
 	SpecThrowing = "Throwing Mastery",
 	SpecAxe = "Axe Mastery",
 	SpecCleaver = "Cleaver Mastery",
@@ -1064,22 +1324,22 @@ gt.Const.Strings.PerkName <- {
 	SpecFlail = "Flail Mastery"
 };
 gt.Const.Strings.PerkDescription <- {
-	Relentless = "Don\'t slow down! At all times your Initiative is reduced only by [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] of your accumulated Fatigue, instead of all of it.",
+	Relentless = "Don\'t slow down! At all times your Initiative is reduced only by [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] of your accumulated Fatigue, instead of all of it. In addition, using the \'Wait\' command will no longer give you a penalty to Initiative in the next round.",
 	Rotation = "Unlocks the \'Rotation\' skill which allows two characters to switch places while ignoring Zone of Control as long as neither character is stunned, rooted or otherwise disabled.",
 	Footwork = "Unlocks the \'Footwork\' skill which allows you to leave a Zone of Control without triggering free attacks by using skillful footwork.",
 	Debilitate = "Unlocks the \'Debilitate\' skill which can prime your next attack to cripple a target for one turn, reducing their ability to inflict damage by [color=" + this.Const.UI.Color.NegativeValue + "]-50%[/color].",
 	Indomitable = "Unlocks the \'Indomitable\' skill which grants a [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] damage reduction and immunity to being stunned, knocked back or grabbed for one turn.",
 	RallyTheTroops = "Unlocks the \'Rally\' skill which can rally fleeing allies, and raise morale of all nearby allies to a steady level. The higher the Resolve of the character using the skill, the higher the chance to succeed.",
 	Adrenaline = "Unlocks the \'Adrenaline\' skill which puts you first in the turn order for the next round, to have another turn before your enemies do. Feel the adrenaline rushing through your veins!",
-	Fearsome = "Make them scatter and flee! Any attack that inflicts at least 1 point of damage to hitpoints triggers a morale check for the opponent, as opposed to only if at or above 15 points of damage.",
-	HeadHunter = "Go for the head! Gain [color=" + this.Const.UI.Color.PositiveValue + "]+15%[/color] chance to hit the head for critical damage each time you hit the body. Bonus is reset upon hitting the head.",
+	Fearsome = "Make them scatter and flee! Any attack that inflicts at least 1 point of damage to hitpoints triggers a morale check for the opponent with a penalty equal to [color=" + this.Const.UI.Color.NegativeValue + "]20%[/color] of your Resolve, as opposed to with no penalty and only if at or above 15 points of damage.",
+	HeadHunter = "Go for the head! Hitting the head of a target will give you a guaranteed hit to the head also with your next attack. Connecting with your hit, or missing with your attack, will reset the effect.",
 	SunderingStrikes = "Effectiveness vs. Armor is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] for any weapon used.",
-	FastAdaption = "Adapt to your opponent\'s moves! Gain an additional stacking [color=" + this.Const.UI.Color.PositiveValue + "]+8%[/color] chance to hit with each attack that misses an opponent. Bonus is reset upon landing a hit.",
+	FastAdaption = "Adapt to your opponent\'s moves! Gain an additional stacking [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] chance to hit with each attack that misses an opponent. Bonus is reset upon landing a hit.",
 	Weaponmaster = "All attacks cost [color=" + this.Const.UI.Color.NegativeValue + "]-20%[/color] Fatigue to use and weapon condition degrades only half as fast. Dance gracefully with your weapon and make every hit count. ",
 	CoupDeGrace = "Inflict additional [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color] damage against targets that have sustained any injury effects, like a broken arm.",
 	SteelBrow = "Hits to the head no longer cause critical damage to this character, which also lowers the risk of sustaining debilitating head injuries significantly.",
-	Anticipation = "When being attacked with ranged weapons, gain [color=" + this.Const.UI.Color.PositiveValue + "]1 + 10% of your base Ranged Defense[/color] as additional Ranged Defense per tile that the attacker is away.",
-	HoldOut = "Keep it together! Any negative status effect with a finite duration (e.g. Bleeding, Charmed) has its duration reduced to [color=" + this.Const.UI.Color.NegativeValue + "]1[/color] turn.",
+	Anticipation = "When being attacked with ranged weapons, gain [color=" + this.Const.UI.Color.PositiveValue + "]1 + 10% of your base Ranged Defense[/color] as additional Ranged Defense per tile that the attacker is away, and always at least [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] to Ranged Defense.",
+	HoldOut = "Keep it together! Any negative status effect with a finite duration (e.g. Bleeding, Charmed) has its duration reduced to [color=" + this.Const.UI.Color.NegativeValue + "]1[/color] turn. Status effects that have their effects grow weaker over several turns (e.g. Goblin Poison) are at their weakest state from the start.",
 	Dodge = "Too fast for you! Gain [color=" + this.Const.UI.Color.PositiveValue + "]15%[/color] of the character\'s current Initiative as a bonus to Melee and Ranged Defense.",
 	Nimble = "Specialize in light armor! By nimbly dodging or deflecting blows, convert any hits to glancing hits. Hitpoint damage taken is reduced by up to [color=" + this.Const.UI.Color.PositiveValue + "]60%[/color], but lowered exponentially by the total penalty to Maximum Fatigue from body and head armor above [color=" + this.Const.UI.Color.PositiveValue + "]15[/color]. The lighter your armor and helmet, the more you benefit.\n\nBrawny does not affect this perk.\n\nDoes not affect damage from mental attacks or status effects, but can help to avoid receiving them.",
 	BattleForged = "Specialize in heavy armor! Armor damage taken is reduced by a percentage equal to [color=" + this.Const.UI.Color.PositiveValue + "]5%[/color] of the current total armor value of both body and head armor. The heavier your armor and helmet, the more you benefit.\n\nDoes not affect damage from mental attacks or status effects, but can help to avoid receiving them.",
@@ -1093,16 +1353,16 @@ gt.Const.Strings.PerkDescription <- {
 	DevastatingStrikes = "All damage inflicted is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] for any weapon used. What could stand before you now?",
 	KillingFrenzy = "Go into a killing frenzy! A kill increases all damage by [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color] for 2 turns. Does not stack, but another kill will reset the timer.",
 	ShieldBash = "The Knock Back skill now also inflicts [color=" + this.Const.UI.Color.DamageValue + "]10 - 25[/color] Damage (50% effective against armor) and [color=" + this.Const.UI.Color.DamageValue + "]10[/color] Fatigue in addition to its normal effect, and costs 10 Fatigue less to use.",
-	Brawny = "The fatigue and initiative penalty from wearing armor and helmet is reduced by [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color].",
+	Brawny = "The fatigue and initiative penalty from wearing armor and helmet is reduced by [color=" + this.Const.UI.Color.NegativeValue + "]30%[/color].",
 	Stalwart = "Immunity against being knocked back or pulled up close. Applies to skills such as Knock Back, Hook and others that change a character\'s position.",
 	Steadfast = "Getting hit by regular attacks does not cause a loss of fatigue anymore. Attacks that specifically target fatigue are unaffected.",
 	Taunt = "Unlocks the \'Taunt\' skill which makes the targeted opponent take offensive actions instead of defensive ones, and attack the taunting character over another, potentially more vulnerable one.",
 	Colossus = "Bring it on! Hitpoints are increased by [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color], which also reduces the chance to sustain debilitating injuries when being hit.",
 	ShieldExpert = "Learn to better deflect hits to the side instead of blocking them head on.\n\nThe shield defense bonus is increased by [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color]. This also applies to the additional defense bonus of the Shieldwall skill.\n\nShield damage received is reduced by [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] to a minimum of 1.\n\nThe \'Knock Back\' skill gains [color=" + this.Const.UI.Color.PositiveValue + "]+15%[/color] chance to hit.",
-	NineLives = "Once per battle, upon receiving a killing blow, survive instead with a few hitpoints left. The next hit is likely to kill you for good, of course.",
+	NineLives = "Once per battle, upon receiving a killing blow, survive instead with a few hitpoints left and have all damage over time effects (e.g. bleeding, poisoned) cured. The next hit is likely to kill you for good, of course, but improved defensive stats until your next turn help you to survive until then.",
 	BatteringRam = "Immunity against being stunned.",
 	BagsAndBelts = "Unlock two extra bag slots to carry all your favorite things. Items placed in bags no longer give a penalty to Maximum Fatigue, except for two-handed weapons.",
-	Student = "Everything can be learned if you put your mind to it. Gain additional [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color] experience from battle. At the eleventh character level, you gain an additional perk point and this perk becomes inert.",
+	Student = "Everything can be learned if you put your mind to it. Gain additional [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color] experience from battle. At the eleventh character level, you gain an additional perk point and this perk becomes inert.\n\nPlaying the \'Manhunters\' origin, your indebted get the perk point refunded at the seventh character level.",
 	Gifted = "Mercenary life comes easy when you\'re naturally gifted. Instantly gain a levelup to increase this character\'s attributes with maximum rolls, but without talents.",
 	Zweihander = "Fatigue costs for all two-handed weapon skills are reduced by [color=" + this.Const.UI.Color.NegativeValue + "]-20%[/color].",
 	Pathfinder = "Learn to move on difficult terrain. Action Point costs for movement on all terrain is reduced by [color=" + this.Const.UI.Color.NegativeValue + "]-1[/color] to a minimum of 2 Action Points per tile, and Fatigue cost is reduced to half. Changing height levels also has no additional Action Point cost anymore.",
@@ -1116,16 +1376,16 @@ gt.Const.Strings.PerkDescription <- {
 	ReachAdvantage = "Learn to use the superior reach of large weapons to keep the enemy from getting close enough to land a good hit.\n\nEach hit with a two-handed melee weapon adds a stack of Reach Advantage that increases your Melee Defense by [color=" + this.Const.UI.Color.PositiveValue + "]+5[/color], up to a maximum of 5 stacks, until this character\'s next turn. A single attack hitting multiple targets can add several stacks at once.\n\nIf you put away your weapon, you lose all stacks.",
 	Overwhelm = "Learn to take advantage of your high Initiative and prevent the enemy from attacking effectively by overwhelming them with your attacks!\n\nWith every attack, hit or miss, against an opponent that acts after you in the current round, inflict the \'Overwhelmed\' status effect which lowers both Melee Skill and Ranged Skill by [color=" + this.Const.UI.Color.NegativeValue + "]10%[/color] for one turn.\n\nThe effect stacks with each attack, and can be applied to multiple targets at once with a single attack.",
 	SpecBow = "Master the art of archery and pelting your opponents with arrows from afar. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nView range and maximum firing range with bows is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color].",
-	SpecCrossbow = "Master crossbows and learn where to aim best. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nAn additional [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color] of damage inflicted with crossbows ignores armor.",
+	SpecCrossbow = "Master crossbows and firearms, and learn where to aim best. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nAn additional [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color] of damage inflicted with crossbows ignores armor.\n\nHandgonnes now require [color=" + this.Const.UI.Color.NegativeValue + "]6[/color] Action Points to reload and can be fired every turn instead of every other turn.",
 	SpecThrowing = "Master throwing weapons to wound or kill the enemy before they even get close. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nDamage is increased by [color=" + this.Const.UI.Color.PositiveValue + "]40%[/color] when attacking at 2 tiles of distance.\n\nDamage is increased by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color] when attacking at 3 tiles of distance.",
 	SpecAxe = "Master combat with axes and destroying shields. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nSplit Shield damage to shields is increased by [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] when used with axes.\n\nRound Swing gains [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] chance to hit.\n\nThe Longaxe no longer has a penalty for attacking targets directly adjacent.",
 	SpecCleaver = "Master cleavers to inflict gruesome wounds. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nBleeding damage inflicted by cleavers and whips is doubled to [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] and [color=" + this.Const.UI.Color.PositiveValue + "]20[/color] per turn, respectively.\n\nDisarm no longer has a penalty to hit.",
-	SpecDagger = "Master swift and deadly daggers. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nStab and Puncture have a reduced Action Point cost to allow for an additional attack each turn.",
-	SpecSword = "Master the art of swordfighting and using your opponent\'s mistakes to your advantage. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nRiposte no longer has a penalty to hitchance.\n\nSplit and Swing gain [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] chance to hit.",
+	SpecDagger = "Master swift and deadly daggers. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nStab, Puncture and Deathblow have a reduced Action Point cost to allow for an additional attack each turn.",
+	SpecSword = "Master the art of swordfighting and using your opponent\'s mistakes to your advantage. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nRiposte no longer has a penalty to hitchance.\n\nGash has a [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] lower threshold to inflict injuries.\n\nSplit and Swing gain [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] chance to hit.",
 	SpecSpear = "Master fighting with spears and keeping the enemy at bay. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nSpearwall is no longer disabled once an opponent manages to overcome it. Instead, Spearwall continues to give free attacks on any further opponent attempting to enter the Zone of Control.\n\nThe Spetum and Warfork no longer have a penalty for attacking targets directly adjacent.",
 	SpecPolearm = "Master polearms and keeping the enemy at bay. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nPolearm skills have their Action Point cost reduced to [color=" + this.Const.UI.Color.NegativeValue + "]5[/color], and no longer have a penalty for attacking targets directly adjacent.",
 	SpecHammer = "Master hammers and fighting against heavily armored opponents. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nDestroy Armor and Demolish Armor inflict [color=" + this.Const.UI.Color.PositiveValue + "]33%[/color] more damage against armor.\n\nShatter gains [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] chance to hit.\n\nThe Polehammer no longer has a penalty for attacking targets directly adjacent.",
-	SpecMace = "Master maces to beat your opponents into submission, armored or not. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nKnock Out and Strike Down have a [color=" + this.Const.UI.Color.PositiveValue + "]100%[/color] chance to stun the target if not immune.",
+	SpecMace = "Master maces to beat your opponents into submission, armored or not. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nKnock Out, Knock Over and Strike Down have a [color=" + this.Const.UI.Color.PositiveValue + "]100%[/color] chance to stun the target if not immune.\n\nThe Polemace no longer has a penalty for attacking targets directly adjacent.",
 	SpecFlail = "Master flails and circumvent your opponent\'s shield. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nLash and Hail ignore the defense bonus of shields.\n\nThresh gains [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] chance to hit."
 };
 gt.Const.Strings.Tooltip <- {

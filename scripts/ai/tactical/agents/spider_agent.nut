@@ -33,5 +33,17 @@ this.spider_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_default"));
 	}
 
+	function onUpdate()
+	{
+		if (this.getActor().getHitpointsPct() < 1.0 && this.Math.rand(1, 100) <= 25)
+		{
+			this.m.Properties.EngageAgainstSpearwallMult = 1.33;
+		}
+		else
+		{
+			this.m.Properties.EngageAgainstSpearwallMult = 1.0;
+		}
+	}
+
 });
 

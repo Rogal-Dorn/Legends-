@@ -35,7 +35,7 @@ this.addict_trait <- this.inherit("scripts/skills/traits/character_trait", {
 			time = this.Time.getVirtualTimeF();
 		}
 
-		local isAffected = time - this.getContainer().getActor().getFlags().get("PotionLastUsed") >= 7.0 * this.World.getTime().SecondsPerDay;
+		local isAffected = time - this.getContainer().getActor().getFlags().get("PotionLastUsed") >= 5.0 * this.World.getTime().SecondsPerDay;
 
 		if (isAffected)
 		{
@@ -76,7 +76,7 @@ this.addict_trait <- this.inherit("scripts/skills/traits/character_trait", {
 				id = 10,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Currently no effect because drugs were consumed within the last 7 days"
+				text = "Currently no effect because drugs were consumed within the last 5 days"
 			});
 		}
 

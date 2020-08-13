@@ -1,6 +1,7 @@
 this.named_shield <- this.inherit("scripts/items/shields/shield", {
 	m = {
 		PrefixList = this.Const.Strings.RandomShieldPrefix,
+		SuffixList = [],
 		NameList = [],
 		UseRandomName = true
 	},
@@ -18,6 +19,10 @@ this.named_shield <- this.inherit("scripts/items/shields/shield", {
 				this.Const.Strings.CharacterNames[this.Math.rand(0, this.Const.Strings.CharacterNames.len() - 1)]
 			],
 			[
+				"randomsouthernname",
+				this.Const.Strings.SouthernNames[this.Math.rand(0, this.Const.Strings.SouthernNames.len() - 1)]
+			],
+			[
 				"randomtown",
 				this.Const.World.LocationNames.VillageWestern[this.Math.rand(0, this.Const.World.LocationNames.VillageWestern.len() - 1)]
 			]
@@ -27,23 +32,47 @@ this.named_shield <- this.inherit("scripts/items/shields/shield", {
 
 	function createRandomName()
 	{
-		if (!this.m.UseRandomName || this.Math.rand(1, 100) <= 75)
+		if (!this.m.UseRandomName || this.Math.rand(1, 100) <= 60)
 		{
-			return this.m.PrefixList[this.Math.rand(0, this.m.PrefixList.len() - 1)] + " ";
+			if (this.m.SuffixList.len() == 0 || this.Math.rand(1, 100) <= 70)
+			{
+				return this.m.PrefixList[this.Math.rand(0, this.m.PrefixList.len() - 1)] + " " + this.m.NameList[this.Math.rand(0, this.m.NameList.len() - 1)];
+			}
+			else
+			{
+				return this.m.NameList[this.Math.rand(0, this.m.NameList.len() - 1)] + " " + this.m.SuffixList[this.Math.rand(0, this.m.SuffixList.len() - 1)];
+			}
 		}
 		else if (this.Math.rand(1, 2) == 1)
 		{
-			return this.getRandomCharacterName(this.Const.Strings.KnightNames) + "\'s ";
+			return this.getRandomCharacterName(this.Const.Strings.KnightNames) + "\'s " + this.m.NameList[this.Math.rand(0, this.m.NameList.len() - 1)];
 		}
 		else
 		{
-			return this.getRandomCharacterName(this.Const.Strings.BanditLeaderNames) + "\'s ";
+			return this.getRandomCharacterName(this.Const.Strings.BanditLeaderNames) + "\'s " + this.m.NameList[this.Math.rand(0, this.m.NameList.len() - 1)];
 		}
 	}
 
-	function setName( _prefix = "" )
+	function onEquip()
 	{
-		this.m.Name = _prefix + this.m.NameList[this.Math.rand(0, this.m.NameList.len() - 1)];
+		this.shield.onEquip();
+
+		if (this.m.Name.len() == 0)
+		{
+			if (this.Math.rand(1, 100) <= 25)
+			{
+				this.setName(this.getContainer().getActor().getName() + "\'s " + this.m.NameList[this.Math.rand(0, this.m.NameList.len() - 1)]);
+			}
+			else
+			{
+				this.setName(this.createRandomName());
+			}
+		}
+	}
+
+	function setName( _name )
+	{
+		this.m.Name = _name;
 	}
 
 	function randomizeValues()
@@ -87,7 +116,7 @@ this.named_shield <- this.inherit("scripts/items/shields/shield", {
 		{
 			if (this.Math.rand(1, 100) <= 25)
 			{
-				this.setName(this.getContainer().getActor().getName() + "\'s ");
+				this.setName(this.getContainer().getActor().getName() + "\'s " + this.m.NameList[this.Math.rand(0, this.m.NameList.len() - 1)]);
 			}
 			else
 			{

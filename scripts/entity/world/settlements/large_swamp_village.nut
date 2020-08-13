@@ -97,6 +97,7 @@ this.large_swamp_village <- this.inherit("scripts/entity/world/settlement", {
 		this.m.Sprite = "world_townhall_03";
 		this.m.Lighting = "world_townhall_03_light";
 		this.m.Rumors = this.Const.Strings.RumorsSwampSettlement;
+		this.m.Culture = this.Const.World.Culture.Neutral;
 		this.m.IsMilitary = false;
 		this.m.Size = 3;
 		this.m.HousesType = 3;

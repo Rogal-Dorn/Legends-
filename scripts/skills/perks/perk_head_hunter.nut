@@ -18,45 +18,42 @@ this.perk_head_hunter <- this.inherit("scripts/skills/skill", {
 
 	function getDescription()
 	{
-		return "This character has an additional [color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.Stacks * 15 + "%[/color] chance to land a hit to the head.";
+		return "This character is guaranteed to land a hit to the head if the next attack connects.";
 	}
 
 	function onUpdate( _properties )
 	{
 		this.m.IsHidden = this.m.Stacks == 0;
+
+		if (this.m.Stacks != 0)
+		{
+			_properties.HitChance[this.Const.BodyPart.Head] = 100.0;
+		}
 	}
 
 	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
-		if (this.m.SkillCount == this.Const.SkillCounter)
-		{
-			return;
-		}
-
-		this.m.SkillCount = this.Const.SkillCounter;
-		local dirty = false;
-
 		if (_bodyPart == this.Const.BodyPart.Head)
 		{
-			if (this.m.Stacks != 0)
+			if (this.m.Stacks == 0 && this.m.SkillCount != this.Const.SkillCounter)
 			{
-				dirty = true;
+				this.m.Stacks = 1;
+				this.m.SkillCount = this.Const.SkillCounter;
+			}
+			else
+			{
+				this.m.Stacks = 0;
 			}
 
+			this.getContainer().getActor().setDirty(true);
+		}
+	}
+
+	function onTargetMissed( _skill, _targetEntity )
+	{
+		if (this.m.Stacks != 0)
+		{
 			this.m.Stacks = 0;
-		}
-		else
-		{
-			++this.m.Stacks;
-
-			if (this.m.Stacks == 1)
-			{
-				dirty = true;
-			}
-		}
-
-		if (dirty)
-		{
 			this.getContainer().getActor().setDirty(true);
 		}
 	}
@@ -77,9 +74,9 @@ this.perk_head_hunter <- this.inherit("scripts/skills/skill", {
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
-		if (_skill.isAttack())
+		if (_skill.isAttack() && this.m.Stacks != 0)
 		{
-			_properties.HitChance[this.Const.BodyPart.Head] += 15 * this.m.Stacks;
+			_properties.HitChanceMult[this.Const.BodyPart.Body] = 0.0;
 		}
 	}
 

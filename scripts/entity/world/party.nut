@@ -7,6 +7,7 @@ this.party <- this.inherit("scripts/entity/world/world_entity", {
 		LastFootprintType = 1,
 		Footprints = this.Const.GenericFootprints,
 		FootprintSizeOverride = 0.0,
+		FootprintType = 0,
 		IdleSoundsIndex = 0,
 		OriginalStrength = 0.0,
 		SpawnTime = 0.0,
@@ -23,7 +24,8 @@ this.party <- this.inherit("scripts/entity/world/world_entity", {
 		IsSlowerAtNight = true,
 		IsPlayer = false,
 		IsMirrored = false,
-		IsLeavingFootprints = true
+		IsLeavingFootprints = true,
+		IsAlwaysAttackingPlayer = false
 	},
 	function getController()
 	{
@@ -53,6 +55,11 @@ this.party <- this.inherit("scripts/entity/world/world_entity", {
 	function getFootprintsSize()
 	{
 		return this.Math.minf(1.0, this.Math.maxf(0.4, this.m.Troops.len() * 0.05));
+	}
+
+	function getFootprintType()
+	{
+		return this.m.FootprintType;
 	}
 
 	function setDestination( _dest )
@@ -110,6 +117,11 @@ this.party <- this.inherit("scripts/entity/world/world_entity", {
 		this.m.FootprintSizeOverride = _s;
 	}
 
+	function setFootprintType( _t )
+	{
+		this.m.FootprintType = _t;
+	}
+
 	function isSlowerAtNight()
 	{
 		return this.m.IsSlowerAtNight;
@@ -118,6 +130,16 @@ this.party <- this.inherit("scripts/entity/world/world_entity", {
 	function isParty()
 	{
 		return true;
+	}
+
+	function setAlwaysAttackPlayer( _f )
+	{
+		this.m.IsAlwaysAttackingPlayer = _f;
+	}
+
+	function isAlwaysAttackingPlayer()
+	{
+		return this.m.IsAlwaysAttackingPlayer;
 	}
 
 	function setCombatID( _v )
@@ -191,7 +213,7 @@ this.party <- this.inherit("scripts/entity/world/world_entity", {
 
 		local f = this.World.FactionManager.getFaction(this.getFaction());
 
-		if (this.m.Tags.get("IsMercenaries") == true)
+		if (this.m.Flags.get("IsMercenaries") == true)
 		{
 			ret.push({
 				id = 50,
@@ -248,19 +270,19 @@ this.party <- this.inherit("scripts/entity/world/world_entity", {
 			this.m.Controller.think();
 		}
 
-		if (this.m.Tags.get("IsAlps"))
+		if (this.m.Flags.get("IsAlps"))
 		{
+			this.m.IsLeavingFootprints = false;
+
 			if (this.World.getTime().IsDaytime)
 			{
 				this.m.VisibilityMult = 0.0;
 				this.getController().getBehavior(this.Const.World.AI.Behavior.ID.Attack).setEnabled(false);
-				this.m.IsLeavingFootprints = false;
 			}
 			else
 			{
 				this.m.VisibilityMult = 1.0;
 				this.getController().getBehavior(this.Const.World.AI.Behavior.ID.Attack).setEnabled(true);
-				this.m.IsLeavingFootprints = true;
 			}
 		}
 
@@ -320,6 +342,11 @@ this.party <- this.inherit("scripts/entity/world/world_entity", {
 				{
 					speed = speed * this.Const.World.TerrainTypeSpeedMult[myTile.Type];
 				}
+
+				if (this.m.IsPlayer)
+				{
+					speed = speed * this.World.Assets.getTerrainTypeSpeedMult(myTile.Type);
+				}
 			}
 
 			if (this.m.IsSlowerAtNight && !this.World.isDaytime())
@@ -354,7 +381,7 @@ this.party <- this.inherit("scripts/entity/world/world_entity", {
 						scale = this.m.FootprintSizeOverride;
 					}
 
-					this.World.spawnFootprint(this.createVec(this.getPos().X - 5, this.getPos().Y - 15), this.m.Footprints[this.getDirection8To(this.m.Destination)] + "_0" + this.m.LastFootprintType, scale, this.m.FootprintSizeOverride != 0.0 ? 30.0 : 0.0, this.World.Assets.getFootprintVision());
+					this.World.spawnFootprint(this.createVec(this.getPos().X - 5, this.getPos().Y - 15), this.m.Footprints[this.getDirection8To(this.m.Destination)] + "_0" + this.m.LastFootprintType, scale, this.m.FootprintSizeOverride != 0.0 ? 30.0 : 0.0, this.World.Assets.getFootprintVision(), this.m.FootprintType);
 					this.m.LastFootprintTime = this.Time.getVirtualTimeF();
 					this.m.LastFootprintType = this.m.LastFootprintType == 1 ? 2 : 1;
 				}
@@ -440,6 +467,11 @@ this.party <- this.inherit("scripts/entity/world/world_entity", {
 		this.dropAmmo(this.m.Loot.Ammo, _lootTable);
 		this.dropMedicine(this.m.Loot.Medicine, _lootTable);
 		this.dropArmorParts(this.m.Loot.ArmorParts, _lootTable);
+
+		if (this.m.Flags.get("IsCaravan"))
+		{
+			this.World.Statistics.getFlags().increment("CaravansRaided");
+		}
 	}
 
 	function onSerialize( _out )
@@ -452,6 +484,7 @@ this.party <- this.inherit("scripts/entity/world/world_entity", {
 		_out.writeF32(this.m.LastFootprintTime);
 		_out.writeU8(this.m.LastFootprintType);
 		_out.writeF32(this.m.FootprintSizeOverride);
+		_out.writeU16(this.m.FootprintType);
 
 		if (this.m.Controller != null)
 		{
@@ -470,6 +503,8 @@ this.party <- this.inherit("scripts/entity/world/world_entity", {
 		_out.writeBool(this.m.IsMirrored);
 		_out.writeBool(this.m.IsSlowerAtNight);
 		_out.writeBool(this.m.IsLeavingFootprints);
+		_out.writeBool(this.m.IsAlwaysAttackingPlayer);
+		_out.writeBool(this.isVisibleInFogOfWar());
 		_out.writeF32(this.m.StunTime);
 		_out.writeU8(this.m.IdleSoundsIndex);
 	}
@@ -484,6 +519,12 @@ this.party <- this.inherit("scripts/entity/world/world_entity", {
 		this.m.LastFootprintTime = _in.readF32();
 		this.m.LastFootprintType = _in.readU8();
 		this.m.FootprintSizeOverride = _in.readF32();
+
+		if (_in.getMetaData().getVersion() >= 62)
+		{
+			this.m.FootprintType = _in.readU16();
+		}
+
 		local controllerHash = _in.readI32();
 
 		if (controllerHash != 0)
@@ -500,10 +541,17 @@ this.party <- this.inherit("scripts/entity/world/world_entity", {
 		this.m.IsSlowerAtNight = _in.readBool();
 		this.m.IsLeavingFootprints = _in.readBool();
 
-		if (_in.getMetaData().getVersion() >= 27)
+		if (_in.getMetaData().getVersion() >= 53)
 		{
-			this.m.StunTime = _in.readF32();
+			this.m.IsAlwaysAttackingPlayer = _in.readBool();
 		}
+
+		if (_in.getMetaData().getVersion() >= 57)
+		{
+			this.setVisibleInFogOfWar(_in.readBool());
+		}
+
+		this.m.StunTime = _in.readF32();
 
 		if (_in.getMetaData().getVersion() >= 37)
 		{

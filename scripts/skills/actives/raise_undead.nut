@@ -13,6 +13,7 @@ this.raise_undead <- this.inherit("scripts/skills/skill", {
 			"sounds/enemies/necromancer_02.wav",
 			"sounds/enemies/necromancer_03.wav"
 		];
+		this.m.SoundVolume = 1.2;
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.UtilityTargeted;
 		this.m.IsSerialized = false;
@@ -26,30 +27,8 @@ this.raise_undead <- this.inherit("scripts/skills/skill", {
 		this.m.ActionPointCost = 3;
 		this.m.FatigueCost = 10;
 		this.m.MinRange = 1;
-		this.m.MaxRange = 8;
+		this.m.MaxRange = 99;
 		this.m.MaxLevelDifference = 4;
-	}
-
-	function getTooltip()
-	{
-		local p = this.getContainer().getActor().getCurrentProperties();
-		return [
-			{
-				id = 1,
-				type = "title",
-				text = this.getName()
-			},
-			{
-				id = 2,
-				type = "description",
-				text = this.getDescription()
-			},
-			{
-				id = 3,
-				type = "text",
-				text = this.getCostString()
-			}
-		];
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )
@@ -81,7 +60,7 @@ this.raise_undead <- this.inherit("scripts/skills/skill", {
 	{
 		local p = _tile.Properties.get("Corpse");
 		p.Faction = _user.getFaction();
-		local e = this.Tactical.Entities.onResurrect(p);
+		local e = this.Tactical.Entities.onResurrect(p, true);
 
 		if (e != null)
 		{

@@ -17,12 +17,45 @@ this.asset_manager <- {
 		Ammo = 0.0,
 		ArmorParts = 0.0,
 		Medicine = 0.0,
+		FoodAdditionalDays = 0,
+		FoodConsumptionMult = 1.0,
+		DailyWageMult = 1.0,
+		TaxidermistPriceMult = 1.0,
+		TrainingPriceMult = 1.0,
+		TryoutPriceMult = 1.0,
+		ContractPaymentMult = 1.0,
+		ArmorPartsPerArmor = 0.067,
+		HitpointsPerHourMult = 1.0,
+		RepairSpeedMult = 1.0,
+		HiringCostMult = 1.0,
+		RosterSizeAdditionalMin = 0,
+		RosterSizeAdditionalMax = 0,
+		XPMult = 1.0,
+		ChampionChanceAdditional = 0,
+		RelationDecayGoodMult = 1.0,
+		RelationDecayBadMult = 1.0,
+		NegotiationAnnoyanceMult = 1.0,
+		AdvancePaymentCap = 0.5,
+		AmmoMaxAdditional = 0,
+		MedicineMaxAdditional = 0,
+		ArmorPartsMaxAdditional = 0,
+		TerrainTypeSpeedMult = [],
+		IsRecoveringAmmo = false,
+		IsRecoveringArmor = false,
+		IsBlacksmithed = false,
+		IsDisciplined = false,
+		IsBrigand = false,
+		IsNonFlavorRumorsOnly = false,
+		IsSurvivalGuaranteed = false,
+		IsShowingExtendedFootprints = false,
 		BusinessReputation = 0,
 		BusinessReputationRate = 1.0,
 		MoralReputation = 50.0,
 		Score = 0.0,
 		BuyPriceMult = 1.0,
+		BuyPriceTradeMult = 1.0,
 		SellPriceMult = 1.0,
+		SellPriceTradeMult = 1.0,
 		ExtraLootChance = 0,
 		FootprintVision = 1.0,
 		AverageMoodState = this.Const.MoodState.Neutral,
@@ -34,6 +67,7 @@ this.asset_manager <- {
 		LastHourUpdated = 0,
 		LastFoodConsumed = 0,
 		IsIronman = false,
+		IsExplorationMode = false,
 		IsPermanentDestruction = true,
 		IsCamping = false,
 		IsUsingProvisions = true,
@@ -174,9 +208,19 @@ this.asset_manager <- {
 		return this.m.BrothersScaleMin;
 	}
 
+	function getTerrainTypeSpeedMult( _t )
+	{
+		return this.m.TerrainTypeSpeedMult[_t];
+	}
+
 	function isIronman()
 	{
 		return this.m.IsIronman;
+	}
+
+	function isExplorationMode()
+	{
+		return this.m.IsExplorationMode;
 	}
 
 	function isPermanentDestruction()
@@ -227,33 +271,33 @@ this.asset_manager <- {
 
 	function setAmmo( _f )
 	{
-		this.m.Ammo = this.Math.min(this.Math.max(0, _f), this.Const.Difficulty.MaxResources[this.m.EconomicDifficulty].Ammo);
+		this.m.Ammo = this.Math.min(this.Math.max(0, _f), this.Const.Difficulty.MaxResources[this.m.EconomicDifficulty].Ammo + this.m.AmmoMaxAdditional);
 		this.refillAmmo();
 	}
 
 	function setArmorParts( _f )
 	{
-		this.m.ArmorParts = this.Math.min(this.Math.max(0, _f), this.Const.Difficulty.MaxResources[this.m.EconomicDifficulty].ArmorParts);
+		this.m.ArmorParts = this.Math.min(this.Math.max(0, _f), this.Const.Difficulty.MaxResources[this.m.EconomicDifficulty].ArmorParts + this.m.MedicineMaxAdditional);
 	}
 
 	function setMedicine( _f )
 	{
-		this.m.Medicine = this.Math.min(this.Math.max(0, _f), this.Const.Difficulty.MaxResources[this.m.EconomicDifficulty].Medicine);
+		this.m.Medicine = this.Math.min(this.Math.max(0, _f), this.Const.Difficulty.MaxResources[this.m.EconomicDifficulty].Medicine + this.m.ArmorPartsMaxAdditional);
 	}
 
 	function addAmmo( _f )
 	{
-		this.m.Ammo = this.Math.min(this.Math.max(0, this.m.Ammo + _f), this.Const.Difficulty.MaxResources[this.m.EconomicDifficulty].Ammo);
+		this.m.Ammo = this.Math.min(this.Math.max(0, this.m.Ammo + _f), this.Const.Difficulty.MaxResources[this.m.EconomicDifficulty].Ammo + this.m.AmmoMaxAdditional);
 	}
 
 	function addArmorParts( _f )
 	{
-		this.m.ArmorParts = this.Math.min(this.Math.max(0, this.m.ArmorParts + _f), this.Const.Difficulty.MaxResources[this.m.EconomicDifficulty].ArmorParts);
+		this.m.ArmorParts = this.Math.min(this.Math.max(0, this.m.ArmorParts + _f), this.Const.Difficulty.MaxResources[this.m.EconomicDifficulty].ArmorParts + this.m.MedicineMaxAdditional);
 	}
 
 	function addMedicine( _f )
 	{
-		this.m.Medicine = this.Math.min(this.Math.max(0, this.m.Medicine + _f), this.Const.Difficulty.MaxResources[this.m.EconomicDifficulty].Medicine);
+		this.m.Medicine = this.Math.min(this.Math.max(0, this.m.Medicine + _f), this.Const.Difficulty.MaxResources[this.m.EconomicDifficulty].Medicine + this.m.ArmorPartsMaxAdditional);
 	}
 
 	function addMoralReputation( _f )
@@ -323,10 +367,10 @@ this.asset_manager <- {
 		this.m.IsIronman = _settings.Ironman;
 		this.m.IsPermanentDestruction = _settings.PermanentDestruction;
 		this.m.Origin = _settings.StartingScenario;
+		this.m.IsExplorationMode = _settings.ExplorationMode;
 		this.m.BusinessReputation = 0;
 		this.m.SeedString = _settings.Seed;
 		this.World.FactionManager.getGreaterEvil().Type = _settings.GreaterEvil;
-		this.World.FactionManager.getGreaterEvil().IsExtraLate = false;
 
 		switch(_settings.BudgetDifficulty)
 		{
@@ -440,7 +484,7 @@ this.asset_manager <- {
 
 					if (d > 0)
 					{
-						ret.ArmorParts += d * this.Const.World.Assets.ArmorPartsPerArmor;
+						ret.ArmorParts += d * this.m.ArmorPartsPerArmor;
 
 						if (d / this.Const.World.Assets.ArmorPerHour > ret.Hours)
 						{
@@ -469,7 +513,7 @@ this.asset_manager <- {
 
 			if (d > 0)
 			{
-				ret.ArmorParts += d * this.Const.World.Assets.ArmorPartsPerArmor;
+				ret.ArmorParts += d * this.m.ArmorPartsPerArmor;
 
 				if (d / this.Const.World.Assets.ArmorPerHour > ret.Hours)
 				{
@@ -479,7 +523,7 @@ this.asset_manager <- {
 		}
 
 		ret.ArmorParts = this.Math.ceil(ret.ArmorParts);
-		ret.Hours = this.Math.ceil(ret.Hours * (this.isCamping() ? 0.5 : 1.0));
+		ret.Hours = this.Math.ceil(ret.Hours * (this.isCamping() ? 0.5 : 1.0) / this.m.RepairSpeedMult);
 		return ret;
 	}
 
@@ -562,15 +606,64 @@ this.asset_manager <- {
 	{
 		this.m.Stash.clear();
 		this.m.SeedString = "";
+		this.resetToDefaults();
+	}
+
+	function resetToDefaults()
+	{
 		this.m.BrothersMax = 20;
 		this.m.BrothersMaxInCombat = 12;
 		this.m.BrothersScaleMax = 12;
 		this.m.BrothersScaleMin = 3;
 		this.m.BusinessReputationRate = 1.0;
 		this.m.BuyPriceMult = 1.0;
+		this.m.BuyPriceTradeMult = 1.0;
 		this.m.SellPriceMult = 1.0;
+		this.m.SellPriceTradeMult = 1.0;
 		this.m.ExtraLootChance = 0;
 		this.m.FootprintVision = 1.0;
+		this.m.FoodAdditionalDays = 0;
+		this.m.FoodConsumptionMult = 1.0;
+		this.m.DailyWageMult = 1.0;
+		this.m.TaxidermistPriceMult = 1.0;
+		this.m.TrainingPriceMult = 1.0;
+		this.m.TryoutPriceMult = 1.0;
+		this.m.ContractPaymentMult = 1.0;
+		this.m.ArmorPartsPerArmor = this.Const.World.Assets.ArmorPartsPerArmor;
+		this.m.HitpointsPerHourMult = 1.0;
+		this.m.RepairSpeedMult = 1.0;
+		this.m.HiringCostMult = 1.0;
+		this.m.RosterSizeAdditionalMin = 0;
+		this.m.RosterSizeAdditionalMax = 0;
+		this.m.XPMult = 1.0;
+		this.m.ChampionChanceAdditional = 0;
+		this.m.RelationDecayGoodMult = 1.0;
+		this.m.RelationDecayBadMult = 1.0;
+		this.m.NegotiationAnnoyanceMult = 1.0;
+		this.m.AdvancePaymentCap = 0.5;
+		this.m.AmmoMaxAdditional = 0;
+		this.m.MedicineMaxAdditional = 0;
+		this.m.ArmorPartsMaxAdditional = 0;
+		this.m.TerrainTypeSpeedMult.resize(this.Const.World.TerrainFoodConsumption.len());
+
+		for( local i = 0; i < this.m.TerrainTypeSpeedMult.len(); i = ++i )
+		{
+			this.m.TerrainTypeSpeedMult[i] = 1.0;
+		}
+
+		this.m.IsRecoveringAmmo = false;
+		this.m.IsRecoveringArmor = false;
+		this.m.IsDisciplined = false;
+		this.m.IsBrigand = false;
+		this.m.IsNonFlavorRumorsOnly = false;
+		this.m.IsSurvivalGuaranteed = false;
+		this.m.IsShowingExtendedFootprints = false;
+		this.m.IsBlacksmithed = false;
+
+		if (this.m.Origin != null)
+		{
+			this.m.Origin.onInit();
+		}
 	}
 
 	function create()
@@ -578,7 +671,6 @@ this.asset_manager <- {
 		this.m.Stash = this.new("scripts/items/stash_container");
 		this.m.Stash.resize(99);
 		this.m.Stash.setID("player");
-		this.m.LastFoodConsumed = this.Time.getVirtualTimeF();
 		local globalTable = this.getroottable();
 		globalTable.Stash <- this.WeakTableRef(this.m.Stash);
 	}
@@ -586,6 +678,7 @@ this.asset_manager <- {
 	function init()
 	{
 		this.m.LastFoodConsumed = this.Time.getVirtualTimeF();
+		this.clear();
 	}
 
 	function destroy()
@@ -663,9 +756,9 @@ this.asset_manager <- {
 		}
 
 		food.sort(this.sortFoodByFreshness);
-		local d = this.Time.getVirtualTimeF() - this.m.LastFoodConsumed;
+		local d = this.Math.maxf(0.0, this.Time.getVirtualTimeF() - this.m.LastFoodConsumed);
 		this.m.LastFoodConsumed = this.Time.getVirtualTimeF();
-		local eaten = d * this.getDailyFoodCost() * this.Const.World.TerrainFoodConsumption[this.World.State.getPlayer().getTile().Type] * this.Const.World.Assets.FoodConsumptionMult;
+		local eaten = d * this.getDailyFoodCost() * this.Const.World.TerrainFoodConsumption[this.World.State.getPlayer().getTile().Type] * this.m.FoodConsumptionMult * this.Const.World.Assets.FoodConsumptionMult;
 
 		for( local i = 0; i < food.len();  )
 		{
@@ -680,11 +773,12 @@ this.asset_manager <- {
 					if (item == food[i])
 					{
 						items[j] = null;
+						break;
 					}
 				}
 
 				food.remove(i);
-				  // [127]  OP_JMP            0      8    0    0
+				  // [136]  OP_JMP            0      8    0    0
 			}
 			else
 			{
@@ -707,13 +801,32 @@ this.asset_manager <- {
 				this.m.BusinessReputation = this.Math.max(0, this.m.BusinessReputation + this.Const.World.Assets.ReputationDaily);
 			}
 
-			if (this.World.Tags.get("IsGoldenGoose") == true)
+			this.World.Retinue.onNewDay();
+
+			if (this.World.Flags.get("IsGoldenGoose") == true)
 			{
 				this.addMoney(15);
 			}
 
-			local mood = 0;
 			local roster = this.World.getPlayerRoster().getAll();
+			local mood = 0;
+			local slaves = 0;
+			local nonSlaves = 0;
+
+			if (this.m.Origin.getID() == "scenario.manhunters")
+			{
+				foreach( bro in roster )
+				{
+					if (bro.getBackground().getID() == "background.slave")
+					{
+						slaves = ++slaves;
+					}
+					else
+					{
+						nonSlaves = ++nonSlaves;
+					}
+				}
+			}
 
 			foreach( bro in roster )
 			{
@@ -745,6 +858,14 @@ this.asset_manager <- {
 					else
 					{
 						bro.worsenMood(this.Const.MoodChange.NotEaten, "Did go hungry");
+					}
+				}
+
+				if (this.m.Origin.getID() == "scenario.manhunters" && slaves <= nonSlaves)
+				{
+					if (bro.getBackground().getID() != "background.slave")
+					{
+						bro.worsenMood(this.Const.MoodChange.TooFewSlaves, "Too few indebted in the company");
 					}
 				}
 
@@ -783,7 +904,7 @@ this.asset_manager <- {
 			this.m.LastHourUpdated = this.World.getTime().Hours;
 			this.consumeFood();
 			local roster = this.World.getPlayerRoster().getAll();
-			local campMultiplier = this.isCamping() ? 2.0 : 1.0;
+			local campMultiplier = this.isCamping() ? 1.5 : 1.0;
 
 			foreach( bro in roster )
 			{
@@ -791,7 +912,7 @@ this.asset_manager <- {
 
 				if (bro.getHitpoints() < bro.getHitpointsMax())
 				{
-					bro.setHitpoints(this.Math.minf(bro.getHitpointsMax(), bro.getHitpoints() + this.Const.World.Assets.HitpointsPerHour * campMultiplier));
+					bro.setHitpoints(this.Math.minf(bro.getHitpointsMax(), bro.getHitpoints() + this.Const.World.Assets.HitpointsPerHour * campMultiplier * this.m.HitpointsPerHourMult));
 				}
 			}
 
@@ -809,9 +930,9 @@ this.asset_manager <- {
 				{
 					if (item.getCondition() < item.getConditionMax())
 					{
-						local d = this.Math.minf(this.Const.World.Assets.ArmorPerHour * campMultiplier, item.getConditionMax() - item.getCondition());
+						local d = this.Math.minf(this.Const.World.Assets.ArmorPerHour * campMultiplier * this.m.RepairSpeedMult, item.getConditionMax() - item.getCondition());
 						item.setCondition(item.getCondition() + d);
-						this.m.ArmorParts = this.Math.maxf(0, this.m.ArmorParts - d * this.Const.World.Assets.ArmorPartsPerArmor);
+						this.m.ArmorParts = this.Math.maxf(0, this.m.ArmorParts - d * this.m.ArmorPartsPerArmor);
 						updateBro = true;
 					}
 
@@ -852,7 +973,7 @@ this.asset_manager <- {
 					{
 						local d = this.Math.minf(this.Const.World.Assets.ArmorPerHour * campMultiplier, item.getConditionMax() - item.getCondition());
 						item.setCondition(item.getCondition() + d);
-						this.m.ArmorParts = this.Math.maxf(0, this.m.ArmorParts - d * this.Const.World.Assets.ArmorPartsPerArmor);
+						this.m.ArmorParts = this.Math.maxf(0, this.m.ArmorParts - d * this.m.ArmorPartsPerArmor);
 					}
 
 					if (item.getCondition() >= item.getConditionMax())
@@ -1100,10 +1221,11 @@ this.asset_manager <- {
 
 		local roster = this.World.getPlayerRoster().getAll();
 		local candidates = [];
+		local hasPaymaster = this.World.Retinue.hasFollower("follower.paymaster");
 
 		foreach( bro in roster )
 		{
-			if (bro.getTags().has("IsPlayerCharacter"))
+			if (bro.getDailyCost() == 0 || bro.getFlags().has("IsPlayerCharacter"))
 			{
 				continue;
 			}
@@ -1122,6 +1244,11 @@ this.asset_manager <- {
 				}
 
 				if (bro.getBackground().getID() == "background.companion")
+				{
+					chance = chance * 0.5;
+				}
+
+				if (hasPaymaster)
 				{
 					chance = chance * 0.5;
 				}
@@ -1328,7 +1455,6 @@ this.asset_manager <- {
 				ID = bro.getID(),
 				Slots = []
 			};
-			store.Slots.resize(this.Const.ItemSlot.Free, null);
 
 			for( local i = this.Const.ItemSlot.Mainhand; i <= this.Const.ItemSlot.Ammo; i = ++i )
 			{
@@ -1336,7 +1462,23 @@ this.asset_manager <- {
 
 				if (item != null && item != "-1")
 				{
-					store.Slots[i] = item.getInstanceID();
+					store.Slots.push({
+						Item = item,
+						Slot = i
+					});
+				}
+			}
+
+			for( local i = 0; i < bro.getItems().getUnlockedBagSlots(); i = ++i )
+			{
+				local item = bro.getItems().getItemAtBagSlot(i);
+
+				if (item != null && item != "-1")
+				{
+					store.Slots.push({
+						Item = item,
+						Slot = this.Const.ItemSlot.Bag
+					});
 				}
 			}
 
@@ -1355,174 +1497,111 @@ this.asset_manager <- {
 				continue;
 			}
 
-			if (bro.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) != null && s.Slots[this.Const.ItemSlot.Mainhand] != 0 && bro.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).getInstanceID() != s.Slots[this.Const.ItemSlot.Mainhand] && bro.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand) != null)
+			local currentItems = [];
+			local itemsHandled = [];
+			local overflowItems = [];
+
+			for( local i = this.Const.ItemSlot.Mainhand; i <= this.Const.ItemSlot.Ammo; i = ++i )
 			{
-				local prevTwohanded = false;
+				local item = bro.getItems().getItemAtSlot(i);
 
-				for( local j = 0; j < bro.getItems().getUnlockedBagSlots(); j = ++j )
+				if (item != null && item != "-1")
 				{
-					local potentialItem = bro.getItems().getItemAtBagSlot(j);
+					currentItems.push({
+						Item = item,
+						Slot = i
+					});
+					bro.getItems().unequip(item);
+				}
+			}
 
-					if (potentialItem != null && potentialItem.getInstanceID() == s.Slots[this.Const.ItemSlot.Mainhand] && potentialItem.getBlockedSlotType() == this.Const.ItemSlot.Offhand)
+			for( local i = 0; i < bro.getItems().getUnlockedBagSlots(); i = ++i )
+			{
+				local item = bro.getItems().getItemAtBagSlot(i);
+
+				if (item != null && item != "-1")
+				{
+					currentItems.push({
+						Item = item,
+						Slot = this.Const.ItemSlot.Bag
+					});
+					bro.getItems().removeFromBag(item);
+				}
+			}
+
+			foreach( item in s.Slots )
+			{
+				local itemExists = false;
+
+				foreach( current in currentItems )
+				{
+					if (current.Item.getInstanceID() == item.Item.getInstanceID())
 					{
-						prevTwohanded = true;
+						itemExists = true;
 						break;
 					}
 				}
 
-				if (prevTwohanded)
+				if (!itemExists)
 				{
-					local emptySlot = false;
+					continue;
+				}
 
-					for( local j = 0; j < bro.getItems().getUnlockedBagSlots(); j = ++j )
+				if (item.Slot == this.Const.ItemSlot.Bag)
+				{
+					if (!bro.getItems().addToBag(item.Item))
 					{
-						local potentialItem = bro.getItems().getItemAtBagSlot(j);
-
-						if (potentialItem == null)
-						{
-							emptySlot = true;
-							break;
-						}
+						overflowItems.push(item.Item);
 					}
 
-					if (!emptySlot)
+					itemsHandled.push(item.Item.getInstanceID());
+				}
+				else
+				{
+					if (!bro.getItems().equip(item.Item))
 					{
-						continue;
+						overflowItems.push(item.Item);
 					}
+
+					itemsHandled.push(item.Item.getInstanceID());
 				}
 			}
 
-			for( local i = this.Const.ItemSlot.Mainhand; i <= this.Const.ItemSlot.Ammo; i = ++i )
+			foreach( item in currentItems )
 			{
-				local currentItem = bro.getItems().getItemAtSlot(i);
-
-				if (currentItem == null && bro.getItems().hasBlockedSlot(i))
+				if (itemsHandled.find(item.Item.getInstanceID()) != null)
 				{
-					currentItem = "-1";
+					continue;
 				}
 
-				if (s.Slots[i] == null)
+				if (item.Item.getCurrentSlotType() == this.Const.ItemSlot.Bag)
 				{
-					if (currentItem == null || currentItem == "-1")
+					if (!bro.getItems().addToBag(item.Item))
 					{
-						continue;
+						overflowItems.push(item.Item);
 					}
+
+					itemsHandled.push(item.Item.getInstanceID());
 				}
-				else if (currentItem == null)
+				else
 				{
-					for( local j = 0; j < bro.getItems().getUnlockedBagSlots(); j = ++j )
+					if (!bro.getItems().equip(item.Item))
 					{
-						local potentialItem = bro.getItems().getItemAtBagSlot(j);
-
-						if (potentialItem != null && potentialItem.getInstanceID() == s.Slots[i])
-						{
-							bro.getItems().removeFromBag(potentialItem);
-
-							if (!bro.getItems().equip(potentialItem))
-							{
-								if (potentialItem.getBlockedSlotType() != null)
-								{
-									local blockingItem = bro.getItems().getItemAtSlot(potentialItem.getBlockedSlotType());
-
-									if (blockingItem != null)
-									{
-										bro.getItems().unequip(blockingItem);
-
-										if (!bro.getItems().equip(potentialItem))
-										{
-											bro.getItems().addToBag(potentialItem);
-											bro.getItems().equip(blockingItem);
-										}
-										else
-										{
-											bro.getItems().addToBag(blockingItem);
-										}
-									}
-								}
-							}
-
-							break;
-						}
+						overflowItems.push(item.Item);
 					}
+
+					itemsHandled.push(item.Item.getInstanceID());
 				}
-				else if (currentItem == "-1")
+			}
+
+			foreach( item in overflowItems )
+			{
+				if (itemsHandled.find(item.getInstanceID()) != null)
 				{
-					for( local j = 0; j < bro.getItems().getUnlockedBagSlots(); j = ++j )
-					{
-						local potentialItem = bro.getItems().getItemAtBagSlot(j);
-
-						if (potentialItem != null && potentialItem.getInstanceID() == s.Slots[i])
-						{
-							local blockingItem = bro.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-
-							if (blockingItem != null)
-							{
-								bro.getItems().unequip(blockingItem);
-								bro.getItems().removeFromBag(potentialItem);
-								bro.getItems().equip(potentialItem);
-								bro.getItems().addToBag(blockingItem);
-							}
-
-							break;
-						}
-					}
+					continue;
 				}
-				else if (currentItem != null && currentItem != "-1")
-				{
-					if (currentItem.getInstanceID() == s.Slots[i])
-					{
-					}
-					else
-					{
-						for( local j = 0; j < bro.getItems().getUnlockedBagSlots(); j = ++j )
-						{
-							local potentialItem = bro.getItems().getItemAtBagSlot(j);
-							local blockingItem;
 
-							if (potentialItem != null && potentialItem.getInstanceID() == s.Slots[i])
-							{
-								bro.getItems().removeFromBag(potentialItem);
-								bro.getItems().unequip(currentItem);
-
-								if (potentialItem.getBlockedSlotType() != null)
-								{
-									blockingItem = bro.getItems().getItemAtSlot(potentialItem.getBlockedSlotType());
-
-									if (blockingItem != null)
-									{
-										bro.getItems().unequip(blockingItem);
-									}
-								}
-
-								local success = bro.getItems().equip(potentialItem);
-
-								if (success)
-								{
-									bro.getItems().addToBag(currentItem);
-
-									if (blockingItem != null)
-									{
-										bro.getItems().addToBag(blockingItem);
-									}
-								}
-								else
-								{
-									bro.getItems().addToBag(potentialItem);
-									bro.getItems().equip(currentItem);
-
-									if (blockingItem != null)
-									{
-										bro.getItems().equip(blockingItem);
-									}
-								}
-
-								break;
-							}
-						}
-
-						  // [483]  OP_JMP            0      0    0    0
-					}
-				}
+				this.m.Stash.add(item);
 			}
 		}
 
@@ -1984,7 +2063,7 @@ this.asset_manager <- {
 		_out.writeU8(this.m.LastHourUpdated);
 		_out.writeF32(this.m.LastFoodConsumed);
 		_out.writeBool(this.m.IsCamping);
-		_out.writeBool(false);
+		_out.writeBool(this.m.IsExplorationMode);
 	}
 
 	function onDeserialize( _in )
@@ -2008,16 +2087,7 @@ this.asset_manager <- {
 		this.m.BannerID = _in.readU8();
 		this.m.Look = _in.readU8();
 		this.m.EconomicDifficulty = _in.readU8();
-
-		if (_in.getMetaData().getVersion() >= 26)
-		{
-			this.m.CombatDifficulty = _in.readU8();
-		}
-		else
-		{
-			this.m.CombatDifficulty = this.m.EconomicDifficulty;
-		}
-
+		this.m.CombatDifficulty = _in.readU8();
 		this.m.IsIronman = _in.readBool();
 		this.m.IsPermanentDestruction = !_in.readBool();
 
@@ -2038,18 +2108,14 @@ this.asset_manager <- {
 		}
 		else
 		{
-			if (_in.getMetaData().getVersion() >= 24)
-			{
-				_in.readI32();
-			}
-
+			_in.readI32();
 			this.m.SeedString = "Unknown";
 		}
 
 		this.m.Money = _in.readF32();
-		this.m.Ammo = this.Math.min(this.Math.max(0, _in.readF32()), this.Const.Difficulty.MaxResources[this.m.EconomicDifficulty].Ammo);
-		this.m.ArmorParts = this.Math.min(this.Math.max(0, _in.readF32()), this.Const.Difficulty.MaxResources[this.m.EconomicDifficulty].ArmorParts);
-		this.m.Medicine = this.Math.min(this.Math.max(0, _in.readF32()), this.Const.Difficulty.MaxResources[this.m.EconomicDifficulty].Medicine);
+		this.m.Ammo = this.Math.max(0, _in.readF32());
+		this.m.ArmorParts = this.Math.max(0, _in.readF32());
+		this.m.Medicine = this.Math.max(0, _in.readF32());
 		this.m.BusinessReputation = _in.readU32();
 		this.m.MoralReputation = _in.readF32();
 		this.m.Score = _in.readF32();
@@ -2060,40 +2126,7 @@ this.asset_manager <- {
 		this.updateAverageMoodState();
 		this.updateFood();
 		this.updateFormation();
-
-		if (_in.getMetaData().getVersion() <= 28 && this.m.BannerID >= 19)
-		{
-			this.m.Banner = this.Const.PlayerBanners[this.m.BannerID - 1];
-			this.World.State.getPlayer().getSprite("banner").setBrush(this.m.Banner);
-			this.World.State.getPlayer().getSprite("zoom_banner").setBrush(this.m.Banner);
-		}
-
-		if (_in.getMetaData().getVersion() <= 32)
-		{
-			local items = this.World.Assets.getStash().getItems();
-
-			foreach( item in items )
-			{
-				if (item != null && item.getID() == "weapon.player_banner")
-				{
-					item.setVariant(this.World.Assets.getBannerID());
-				}
-			}
-
-			local roster = this.World.getPlayerRoster().getAll();
-
-			foreach( bro in roster )
-			{
-				local item = bro.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-
-				if (item != null && item.getID() == "weapon.player_banner")
-				{
-					item.setVariant(this.World.Assets.getBannerID());
-				}
-			}
-		}
-
-		_in.readBool();
+		this.m.IsExplorationMode = _in.readBool();
 		this.m.Origin.onInit();
 	}
 

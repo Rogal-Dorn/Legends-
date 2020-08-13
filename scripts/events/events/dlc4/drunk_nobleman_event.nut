@@ -345,6 +345,11 @@ this.drunk_nobleman_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
+		if (this.Const.DLC.Desert && currentTile.SquareCoords.Y <= this.World.getMapSize().Y * 0.2)
+		{
+			return;
+		}
+
 		if (!this.World.Assets.getStash().hasEmptySlot())
 		{
 			return;

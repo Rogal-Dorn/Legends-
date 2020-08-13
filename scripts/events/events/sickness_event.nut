@@ -124,7 +124,7 @@ this.sickness_event <- this.inherit("scripts/events/event", {
 	{
 		local currentTile = this.World.State.getPlayer().getTile();
 
-		if (currentTile.Type != this.Const.World.TerrainType.Swamp && currentTile.Type != this.Const.World.TerrainType.Snow && currentTile.Type != this.Const.World.TerrainType.SnowyForest)
+		if (currentTile.Type != this.Const.World.TerrainType.Swamp && (currentTile.Type != this.Const.World.TerrainType.Snow && currentTile.Type != this.Const.World.TerrainType.SnowyForest || this.World.Retinue.hasFollower("follower.scout")))
 		{
 			return;
 		}

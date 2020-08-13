@@ -17,15 +17,15 @@ this.defeat_greenskins_ambition <- this.inherit("scripts/ambitions/ambition", {
 		local f = this.World.FactionManager.getGreaterEvil().Strength / this.Const.Factions.GreaterEvilStartStrength;
 		local text;
 
-		if (f >= 1.0)
+		if (f >= 0.95)
 		{
 			text = "Losing";
 		}
-		else if (f >= 0.75)
+		else if (f >= 0.5)
 		{
 			text = "Undecided";
 		}
-		else if (f >= 0.5)
+		else if (f >= 0.25)
 		{
 			text = "Winning Slightly";
 		}

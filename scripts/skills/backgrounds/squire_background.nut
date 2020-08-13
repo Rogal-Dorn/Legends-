@@ -35,7 +35,7 @@ this.squire_background <- this.inherit("scripts/skills/backgrounds/character_bac
 		this.m.Hairs = this.Const.Hair.YoungMale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.Tidy;
-		this.m.Body = "bust_naked_body_01";
+		this.m.Bodies = this.Const.Bodies.Muscular;
 		this.m.IsCombatBackground = true;
 	}
 

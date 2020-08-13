@@ -82,10 +82,24 @@ this.send_peasants_action <- this.inherit("scripts/factions/faction_action", {
 
 	function onExecute( _faction )
 	{
-		local party = _faction.spawnEntity(this.m.Start.getTile(), "Peasants", false, this.Const.World.Spawn.Peasants, this.Math.rand(30, 60));
+		local party;
+
+		if (_faction.getType() == this.Const.FactionType.OrientalCityState)
+		{
+			party = _faction.spawnEntity(this.m.Start.getTile(), "Citizens", false, this.Const.World.Spawn.PeasantsSouthern, this.Math.rand(30, 60));
+			party.getSprite("body").setBrush("figure_civilian_06");
+			party.setDescription("Farmers, craftsmen, pilgrims or other citizens of the great city states on their way between settlements.");
+		}
+		else
+		{
+			party = _faction.spawnEntity(this.m.Start.getTile(), "Peasants", false, this.Const.World.Spawn.Peasants, this.Math.rand(30, 60));
+			party.getSprite("body").setBrush("figure_civilian_0" + this.Math.rand(1, 5));
+			party.setDescription("Farmers, craftsmen, pilgrims or other peasants on their way between settlements.");
+		}
+
+		party.setFootprintType(this.Const.World.FootprintsType.Peasants);
 		party.getSprite("banner").Visible = false;
-		party.getSprite("body").setBrush("figure_civilian_0" + this.Math.rand(1, 5));
-		party.setDescription("Farmers, craftsmen, pilgrims or other peasants on their way between settlements.");
+		party.getFlags().set("IsRandomlySpawned", true);
 		party.getLoot().Money = this.Math.rand(0, 50);
 		local r = this.Math.rand(1, 4);
 

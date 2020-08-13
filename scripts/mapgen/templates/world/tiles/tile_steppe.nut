@@ -84,6 +84,7 @@ this.tile_steppe <- this.inherit("scripts/mapgen/map_template", {
 		local tile = this.World.getTileSquare(_rect.X, _rect.Y);
 		local forest_leave = 0;
 		local plains = 0;
+		local oasis = 0;
 		local hills = 0;
 		local forest_autumn = 0;
 		local brown_hills = 0;
@@ -103,6 +104,10 @@ this.tile_steppe <- this.inherit("scripts/mapgen/map_template", {
 				if (nextTile.Type == this.Const.World.TerrainType.Plains)
 				{
 					plains = ++plains;
+				}
+				else if (nextTile.Type == this.Const.World.TerrainType.Oasis)
+				{
+					oasis = ++oasis;
 				}
 				else if (nextTile.Type == this.Const.World.TerrainType.LeaveForest)
 				{
@@ -132,6 +137,25 @@ this.tile_steppe <- this.inherit("scripts/mapgen/map_template", {
 			if (this.Math.rand(1, 100) <= 33)
 			{
 				tile.spawnDetail("world_grass_0" + this.Math.rand(1, 6), this.Const.World.ZLevel.Terrain, this.Const.World.DetailType.NotCompatibleWithRoad);
+			}
+		}
+		else if (oasis > 0)
+		{
+			if (this.Math.rand(1, 100) <= 33)
+			{
+				tile.spawnDetail("world_oasis_transition_0" + this.Math.rand(1, 6), this.Const.World.ZLevel.Terrain, this.Const.World.DetailType.NotCompatibleWithRoad);
+			}
+
+			if (this.Math.rand(1, 100) <= 25)
+			{
+				local r = this.Math.rand(9, 13);
+
+				if (r < 10)
+				{
+					r = "0" + r;
+				}
+
+				tile.spawnDetail("world_detail_desert_oasis_" + r, this.Const.World.ZLevel.Object, 0);
 			}
 		}
 		else if (forest_leave > 0)

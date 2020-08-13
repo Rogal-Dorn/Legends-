@@ -136,6 +136,10 @@ this.attached_location <- this.inherit("scripts/entity/world/location", {
 		this.m.IsAttackableByAI = false;
 		this.m.IsDestructible = false;
 		this.m.IsShowingName = false;
+		this.m.CombatLocation.Template[0] = "tactical.human_camp";
+		this.m.CombatLocation.Fortification = this.Const.Tactical.FortificationType.None;
+		this.m.CombatLocation.CutDownTrees = true;
+		this.m.CombatLocation.AdditionalRadius = 5;
 		this.m.LocationType = this.Const.World.LocationType.AttachedLocation;
 	}
 

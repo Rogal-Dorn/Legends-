@@ -36,7 +36,9 @@ gt.Const.World.TerrainType <- {
 	Tundra = 14,
 	Steppe = 15,
 	Shore = 16,
-	COUNT = 17
+	Desert = 17,
+	Oasis = 18,
+	COUNT = 19
 };
 gt.Const.World.TerrainScript <- [
 	"",
@@ -55,7 +57,9 @@ gt.Const.World.TerrainScript <- [
 	"world.tile.badlands",
 	"world.tile.highlands",
 	"world.tile.steppe",
-	"world.tile.ocean"
+	"world.tile.ocean",
+	"world.tile.desert",
+	"world.tile.oasis"
 ];
 gt.Const.World.TerrainTypeSpeedMult <- [
 	0.0,
@@ -74,7 +78,9 @@ gt.Const.World.TerrainTypeSpeedMult <- [
 	0.9,
 	0.9,
 	1.0,
-	0.5
+	0.5,
+	0.75,
+	0.9
 ];
 gt.Const.World.TerrainTypeVisibilityMult <- [
 	1.0,
@@ -93,7 +99,9 @@ gt.Const.World.TerrainTypeVisibilityMult <- [
 	1.0,
 	1.0,
 	1.0,
-	1.0
+	1.0,
+	1.0,
+	0.9
 ];
 gt.Const.World.TerrainTypeVisionRadiusMult <- [
 	1.0,
@@ -106,6 +114,8 @@ gt.Const.World.TerrainTypeVisionRadiusMult <- [
 	1.0,
 	1.0,
 	2.0,
+	1.0,
+	1.0,
 	1.0,
 	1.0,
 	1.0,
@@ -131,6 +141,8 @@ gt.Const.World.TerrainFoodConsumption <- [
 	1.25,
 	1.0,
 	1.1,
+	1.0,
+	1.5,
 	1.0
 ];
 gt.Const.World.TerrainTypeLineBattle <- [
@@ -142,6 +154,8 @@ gt.Const.World.TerrainTypeLineBattle <- [
 	false,
 	false,
 	false,
+	true,
+	true,
 	true,
 	true,
 	true,
@@ -175,7 +189,10 @@ gt.Const.World.TerrainTacticalType <- {
 	SteppeHills = 19,
 	Shore = 20,
 	Quarry = 21,
-	COUNT = 22
+	Desert = 22,
+	DesertHills = 23,
+	Oasis = 24,
+	COUNT = 25
 };
 gt.Const.World.TerrainTacticalTemplate <- [
 	"",
@@ -199,7 +216,10 @@ gt.Const.World.TerrainTacticalTemplate <- [
 	"tactical.steppe",
 	"tactical.hills_steppe",
 	"tactical.plains",
-	"tactical.quarry"
+	"tactical.quarry",
+	"tactical.desert",
+	"tactical.hills_desert",
+	"tactical.oasis"
 ];
 gt.Const.World.TerrainTacticalImage <- [
 	"",
@@ -223,13 +243,16 @@ gt.Const.World.TerrainTacticalImage <- [
 	"engage/engage_steppe",
 	"engage/engage_steppe_hills",
 	"engage/engage_grass",
-	"engage/engage_quarry"
+	"engage/engage_quarry",
+	"engage/engage_desert",
+	"engage/engage_desert_hills",
+	"engage/engage_oasis"
 ];
 gt.Const.World.TerrainSettlementImages <- [
 	{},
 	{
 		Foreground = null,
-		Background = null,
+		Background = "ui/settlements/village_bg_07",
 		Ramp = null,
 		Mood = null
 	},
@@ -304,8 +327,21 @@ gt.Const.World.TerrainSettlementImages <- [
 	},
 	{
 		Foreground = null,
-		Background = null,
-		Ramp = null
+		Background = "ui/settlements/village_bg_07",
+		Ramp = null,
+		Mood = null
+	},
+	{
+		Foreground = "ui/settlements/foreground_08",
+		Background = "ui/settlements/village_bg_10",
+		Ramp = "ui/settlements/ramp_07",
+		Mood = null
+	},
+	{
+		Foreground = "ui/settlements/foreground_08",
+		Background = "ui/settlements/village_bg_10",
+		Ramp = "ui/settlements/ramp_07",
+		Mood = null
 	}
 ];
 gt.Const.World.ZLevel <- {
@@ -342,6 +378,7 @@ gt.Const.World.GreaterEvilType <- {
 	CivilWar = 1,
 	Greenskins = 2,
 	Undead = 3,
+	HolyWar = 4,
 	None = 255
 };
 gt.Const.World.GreaterEvilTypeBit <- {
@@ -349,19 +386,50 @@ gt.Const.World.GreaterEvilTypeBit <- {
 	CivilWar = 1,
 	Greenskins = 2,
 	Undead = 4,
-	All = 1 | 2 | 4
+	HolyWar = 8,
+	All = 1 | 2 | 4 | 8
 };
 gt.Const.World.GreaterEvilPhase <- {
 	NotSet = 0,
 	Warning = 1,
 	Live = 2
 };
+gt.Const.World.FootprintsType <- {
+	None = 0,
+	Nobles = 1,
+	CityState = 2,
+	Caravan = 3,
+	Peasants = 4,
+	Militia = 5,
+	Refugees = 6,
+	Brigands = 7,
+	Undead = 8,
+	Orcs = 9,
+	Goblins = 10,
+	Barbarians = 11,
+	Nomads = 12,
+	Direwolves = 13,
+	Ghouls = 14,
+	Hyenas = 15,
+	Serpents = 16,
+	Spiders = 17,
+	Unholds = 18,
+	Alps = 19,
+	Hexen = 20,
+	Schrats = 21,
+	Kraken = 22,
+	SandGolems = 23,
+	Lindwurms = 24,
+	Mercenaries = 25,
+	COUNT = 26
+};
 gt.Const.World.Settings <- {
 	SizeX = 140,
 	SizeY = 140,
-	LandMassMult = 1.4,
+	LandMassMult = 1.5,
 	WaterConnectivity = 38,
-	MinLandToWaterRatio = 1.5,
+	MinLandToWaterRatio = 1.7,
+	MinDesertTiles = 2400,
 	Snowline = 0.9,
 	Vision = 500.0
 };
@@ -709,6 +777,11 @@ gt.Const.World.Buildings <- {
 	Fletchers = 0,
 	Temples = 0,
 	Taxidermists = 0,
+	TaxidermistsOriental = 0,
+	Alchemists = 0,
+	Arenas = 0,
+	ArmorsmithsOriental = 0,
+	WeaponsmithsOriental = 0,
 	function reset()
 	{
 		this.Barbers = 0;
@@ -716,6 +789,11 @@ gt.Const.World.Buildings <- {
 		this.Fletchers = 0;
 		this.Temples = 0;
 		this.Taxidermists = 0;
+		this.TaxidermistsOriental = 0;
+		this.Alchemists = 0;
+		this.Arenas = 0;
+		this.ArmorsmithsOriental = 0;
+		this.WeaponsmithsOriental = 0;
 	}
 
 };

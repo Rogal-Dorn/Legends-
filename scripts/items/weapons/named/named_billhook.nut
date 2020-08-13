@@ -23,9 +23,9 @@ this.named_billhook <- this.inherit("scripts/items/weapons/named/named_weapon", 
 		this.m.RangeMin = 1;
 		this.m.RangeMax = 2;
 		this.m.RangeIdeal = 2;
-		this.m.RegularDamage = 60;
-		this.m.RegularDamageMax = 90;
-		this.m.ArmorDamageMult = 1.5;
+		this.m.RegularDamage = 55;
+		this.m.RegularDamageMax = 85;
+		this.m.ArmorDamageMult = 1.4;
 		this.m.DirectDamageMult = 0.3;
 		this.m.ChanceToHitHead = 5;
 		this.randomizeValues();

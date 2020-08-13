@@ -24,7 +24,7 @@ this.tundra_elk_destroyed_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
-				this.World.Tags.set("IjirokStage", 5);
+				this.World.Flags.set("IjirokStage", 5);
 				local stash = this.World.Assets.getStash().getItems();
 
 				foreach( i, item in stash )
@@ -77,7 +77,7 @@ this.tundra_elk_destroyed_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
-				this.World.Tags.set("IjirokStage", 5);
+				this.World.Flags.set("IjirokStage", 5);
 			}
 
 		});

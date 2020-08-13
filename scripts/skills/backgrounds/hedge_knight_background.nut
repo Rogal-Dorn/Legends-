@@ -55,7 +55,7 @@ this.hedge_knight_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.Hairs = this.Const.Hair.AllMale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.Body = "bust_naked_body_01";
+		this.m.Bodies = this.Const.Bodies.Muscular;
 		this.m.Level = this.Math.rand(2, 5);
 		this.m.IsCombatBackground = true;
 	}

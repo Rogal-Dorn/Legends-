@@ -165,12 +165,12 @@ gt.Const.World.Spawn.OrcRoamers <- [
 		Body = "figure_orc_03",
 		Troops = [
 			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 3
-			},
-			{
 				Type = this.Const.World.Spawn.Troops.OrcYoung,
 				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 3
 			}
 		]
 	},
@@ -182,12 +182,12 @@ gt.Const.World.Spawn.OrcRoamers <- [
 		Body = "figure_orc_03",
 		Troops = [
 			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 4
-			},
-			{
 				Type = this.Const.World.Spawn.Troops.OrcYoung,
 				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 4
 			}
 		]
 	}

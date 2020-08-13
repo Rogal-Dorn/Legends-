@@ -8,6 +8,7 @@ this.event <- {
 		Screens = [],
 		ActiveScreen = null,
 		TerrainImage = "",
+		TownImage = "",
 		IsSpecial = false,
 		HasBigButtons = false
 	},
@@ -74,6 +75,8 @@ this.event <- {
 	{
 		this.m.Score = 0;
 		this.m.ActiveScreen = null;
+		this.m.TerrainImage = "";
+		this.m.TownImage = "";
 		this.onClear();
 	}
 
@@ -168,6 +171,7 @@ this.event <- {
 		local brother1;
 		local brother2;
 		local notnagel;
+		local slaves = [];
 
 		for( local i = 0; i < brothers.len(); i = ++i )
 		{
@@ -179,8 +183,11 @@ this.event <- {
 				{
 					brothers.remove(i);
 				}
-
-				break;
+			}
+			else if (brothers.len() > 1 && brothers[i].getBackground().getID() == "background.slave")
+			{
+				slaves.push(brothers[i]);
+				brothers.remove(i);
 			}
 		}
 
@@ -191,6 +198,10 @@ this.event <- {
 		if (brothers.len() != 0)
 		{
 			brother2 = brothers[this.Math.rand(0, brothers.len() - 1)].getName();
+		}
+		else if (slaves.len() != 0)
+		{
+			brother2 = slaves[this.Math.rand(0, slaves.len() - 1)].getName();
 		}
 		else if (notnagel != null)
 		{
@@ -203,11 +214,26 @@ this.event <- {
 
 		local villages = this.World.EntityManager.getSettlements();
 		local nobleHouses = this.World.FactionManager.getFactionsOfType(this.Const.FactionType.NobleHouse);
+		local citystates = [];
+		local northern = [];
+
+		for( local i = 0; i < villages.len(); i = ++i )
+		{
+			if (this.isKindOf(villages[i], "city_state"))
+			{
+				citystates.push(villages[i]);
+			}
+			else
+			{
+				northern.push(villages[i]);
+			}
+		}
+
 		local currentTile = this.World.State.getPlayer().getTile();
 
 		if (!this.World.getTime().IsDaytime)
 		{
-			this.m.TerrainImage = "[img]gfx/ui/events/event_76.png[/img]";
+			this.m.TerrainImage = "[img]gfx/ui/events/event_33.png[/img]";
 		}
 		else if (currentTile.Type == this.Const.World.TerrainType.Snow)
 		{
@@ -237,9 +263,13 @@ this.event <- {
 		{
 			this.m.TerrainImage = "[img]gfx/ui/events/event_09.png[/img]";
 		}
+		else if (currentTile.TacticalType == this.Const.World.TerrainTacticalType.DesertHills)
+		{
+			this.m.TerrainImage = "[img]gfx/ui/events/event_150.png[/img]";
+		}
 		else if (currentTile.Type == this.Const.World.TerrainType.Hills)
 		{
-			this.m.TerrainImage = "[img]gfx/ui/events/event_76.png[/img]";
+			this.m.TerrainImage = "[img]gfx/ui/events/event_36.png[/img]";
 		}
 		else if (currentTile.Type == this.Const.World.TerrainType.Tundra)
 		{
@@ -248,6 +278,14 @@ this.event <- {
 		else if (currentTile.Type == this.Const.World.TerrainType.Steppe)
 		{
 			this.m.TerrainImage = "[img]gfx/ui/events/event_66.png[/img]";
+		}
+		else if (currentTile.Type == this.Const.World.TerrainType.Desert)
+		{
+			this.m.TerrainImage = "[img]gfx/ui/events/event_161.png[/img]";
+		}
+		else if (currentTile.Type == this.Const.World.TerrainType.Oasis)
+		{
+			this.m.TerrainImage = "[img]gfx/ui/events/event_161.png[/img]";
 		}
 		else if (currentTile.Type == this.Const.World.TerrainType.Mountains)
 		{
@@ -258,11 +296,35 @@ this.event <- {
 			this.m.TerrainImage = "[img]gfx/ui/events/event_76.png[/img]";
 		}
 
+		if (("Town" in this.m) && this.m.Town != null)
+		{
+			if (this.m.Town.isSouthern())
+			{
+				this.m.TownImage = "[img]gfx/ui/events/event_163.png[/img]";
+			}
+			else if (this.m.Town.isMilitary())
+			{
+				this.m.TownImage = "[img]gfx/ui/events/event_31.png[/img]";
+			}
+			else if (this.m.Town.getSize() <= 2)
+			{
+				this.m.TownImage = "[img]gfx/ui/events/event_79.png[/img]";
+			}
+			else
+			{
+				this.m.TownImage = "[img]gfx/ui/events/event_20.png[/img]";
+			}
+		}
+
 		local text;
 		local vars = [
 			[
 				"SPEECH_ON",
 				"\n\n[color=#bcad8c]\""
+			],
+			[
+				"SPEECH_START",
+				"[color=#bcad8c]\""
 			],
 			[
 				"SPEECH_OFF",
@@ -302,11 +364,19 @@ this.event <- {
 			],
 			[
 				"randomtown",
-				villages[this.Math.rand(0, villages.len() - 1)].getNameOnly()
+				northern[this.Math.rand(0, northern.len() - 1)].getNameOnly()
+			],
+			[
+				"randomcitystate",
+				citystates.len() != 0 ? citystates[this.Math.rand(0, citystates.len() - 1)].getNameOnly() : ""
 			],
 			[
 				"terrainImage",
 				this.m.TerrainImage
+			],
+			[
+				"townImage",
+				this.m.TownImage
 			]
 		];
 		this.onPrepareVariables(vars);
@@ -324,20 +394,19 @@ this.event <- {
 
 		foreach( i, option in this.m.ActiveScreen.Options )
 		{
+			buttons.push({
+				id = i,
+				text = option.Text
+			});
+
 			if ("Icon" in option)
 			{
-				buttons.push({
-					id = i,
-					text = option.Text,
-					icon = option.Icon
-				});
+				buttons[buttons.len() - 1].icon <- option.Icon;
 			}
-			else
+
+			if ("Tooltip" in option)
 			{
-				buttons.push({
-					id = i,
-					text = option.Text
-				});
+				buttons[buttons.len() - 1].tooltip <- option.Tooltip;
 			}
 		}
 
@@ -406,6 +475,11 @@ this.event <- {
 		return null;
 	}
 
+	function isValid()
+	{
+		return true;
+	}
+
 	function onUpdateScore()
 	{
 	}
@@ -425,7 +499,6 @@ this.event <- {
 
 	function onClear()
 	{
-		this.m.TerrainImage = "";
 	}
 
 	function onSerialize( _out )
@@ -470,7 +543,7 @@ this.event <- {
 		}
 	}
 
-	function getReputationToDifficultyMult()
+	function getScaledDifficultyMult()
 	{
 		local r = this.Math.minf(4.0, this.Math.maxf(0.75, this.Math.pow(this.Math.maxf(0, 0.003 * this.World.Assets.getBusinessReputation()), 0.4)));
 		local s = this.Math.maxf(0.75, this.Math.pow(0.01 * this.World.State.getPlayer().getStrength(), 0.9));

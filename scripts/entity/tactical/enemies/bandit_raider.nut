@@ -249,11 +249,11 @@ this.bandit_raider <- this.inherit("scripts/entity/tactical/human", {
 		}
 		else if (r == 6)
 		{
-			armor = this.new("scripts/items/armor/leather_lamellar");
+			armor = this.new("scripts/items/armor/worn_mail_shirt");
 		}
 		else if (r == 7)
 		{
-			armor = this.new("scripts/items/armor/basic_mail_shirt");
+			armor = this.new("scripts/items/armor/patched_mail_shirt");
 		}
 
 		this.m.Items.equip(armor);

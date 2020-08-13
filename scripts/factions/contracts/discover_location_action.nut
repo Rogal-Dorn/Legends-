@@ -43,6 +43,28 @@ this.discover_location_action <- this.inherit("scripts/factions/faction_action",
 				continue;
 			}
 
+			if (!this.World.State.getRegion(b.getTile().Region).Center.IsDiscovered)
+			{
+				continue;
+			}
+
+			local region = this.World.State.getRegion(b.getTile().Region);
+
+			if (!region.Center.IsDiscovered)
+			{
+				continue;
+			}
+
+			if (region.Discovered < 0.25)
+			{
+				this.World.State.updateRegionDiscovery(region);
+			}
+
+			if (region.Discovered < 0.25)
+			{
+				continue;
+			}
+
 			local d = myTile.getDistanceTo(b.getTile());
 
 			if (d < lowestDistance)

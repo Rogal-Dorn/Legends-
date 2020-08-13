@@ -34,7 +34,7 @@ this.disowned_noble_reminisces_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				this.Characters.push(_event.m.Disowned.getImagePath());
-				_event.m.Disowned.getTags().set("disowned_noble_reminisces", true);
+				_event.m.Disowned.getFlags().set("disowned_noble_reminisces", true);
 			}
 
 		});
@@ -131,7 +131,7 @@ this.disowned_noble_reminisces_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getLevel() >= 5 && bro.getBackground().getID() == "background.disowned_noble" && !bro.getTags().get("disowned_noble_reminisces"))
+			if (bro.getLevel() >= 5 && bro.getBackground().getID() == "background.disowned_noble" && !bro.getFlags().get("disowned_noble_reminisces"))
 			{
 				candidates.push(bro);
 			}

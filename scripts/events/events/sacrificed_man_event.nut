@@ -225,7 +225,7 @@ this.sacrificed_man_event <- this.inherit("scripts/events/event", {
 			{
 				candidates_cultist.push(bro);
 			}
-			else
+			else if (bro.getBackground().getID() != "background.slave")
 			{
 				candidates_other.push(bro);
 			}

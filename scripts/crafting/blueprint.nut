@@ -39,7 +39,7 @@ this.blueprint <- {
 
 	function getCost()
 	{
-		return this.m.Cost;
+		return this.Math.ceil(this.m.Cost * this.World.Assets.m.TaxidermistPriceMult);
 	}
 
 	function getSounds()
@@ -180,12 +180,22 @@ this.blueprint <- {
 		this.World.Statistics.getFlags().increment("ItemsCrafted", 1);
 		this.World.Ambitions.updateUI();
 		local stash = this.World.Assets.getStash();
+		local hasAlchemist = this.World.Retinue.hasFollower("follower.alchemist");
 
 		foreach( c in this.m.PreviewComponents )
 		{
 			for( local j = 0; j < c.Num; j = ++j )
 			{
-				stash.removeByID(c.Instance.getID());
+				local item = stash.getItemByID(c.Instance.getID());
+
+				if (!hasAlchemist || item.getMagicNumber() > 25)
+				{
+					stash.remove(item);
+				}
+				else
+				{
+					item.setMagicNumber(this.Math.rand(1, 100));
+				}
 			}
 		}
 

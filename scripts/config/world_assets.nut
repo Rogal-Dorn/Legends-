@@ -25,7 +25,8 @@ gt.Const.World.Assets <- {
 	ReputationOnContractFail = -75,
 	ReputationOnContractBetrayal = -200,
 	ReputationOnAmbition = 100,
-	ReputationDaily = -2,
+	ReputationOnArenaCancel = -50,
+	ReputationDaily = -3,
 	RelationDecayPerDayCivilian = 0.25,
 	RelationDecayPerDayNoble = 0.25,
 	RelationContractCancel = -10.0,
@@ -39,6 +40,7 @@ gt.Const.World.Assets <- {
 	RelationContractNegotiationsFail = -2.5,
 	RelationAttacked = -30.0,
 	RelationBetrayal = -100.0,
+	RelationMajorOffense = -30.0,
 	RelationOffense = -20.0,
 	RelationMinorOffense = -10.0,
 	RelationFavor = 15.0,
@@ -50,6 +52,13 @@ gt.Const.World.Assets <- {
 	BaseLootSellPrice = 0.95,
 	SellPriceNotProducedHere = 1.01,
 	BuyPriceNotProducedHere = 1.5,
+	BuyPriceNotLocalCulture = 1.5,
+	SellPriceNotLocalCulture = 1.1,
 	BaseWoundTreatmentPrice = 20
 };
+gt.Const.World.InventoryUpgradeCosts <- [
+	5000,
+	10000,
+	20000
+];
 

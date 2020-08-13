@@ -141,7 +141,7 @@ this.shatter_skill <- this.inherit("scripts/skills/skill", {
 		}
 		else if (applyEffect == 2)
 		{
-			if (_target.getCurrentProperties().IsImmuneToKnockBackAndGrab)
+			if (_target.getCurrentProperties().IsImmuneToKnockBackAndGrab || _target.getCurrentProperties().IsRooted)
 			{
 				return;
 			}
@@ -300,7 +300,7 @@ this.shatter_skill <- this.inherit("scripts/skills/skill", {
 		{
 			local nextTile = ownTile.getNextTile(nextDir);
 
-			if (!nextTile.IsEmpty && nextTile.getEntity().isAttackable() && this.Math.abs(nextTile.Level - ownTile.Level) <= 1)
+			if (this.Math.abs(nextTile.Level - ownTile.Level) <= 1)
 			{
 				this.Tactical.getHighlighter().addOverlayIcon(this.Const.Tactical.Settings.AreaOfEffectIcon, nextTile, nextTile.Pos.X, nextTile.Pos.Y);
 			}
@@ -312,7 +312,7 @@ this.shatter_skill <- this.inherit("scripts/skills/skill", {
 		{
 			local nextTile = ownTile.getNextTile(nextDir);
 
-			if (!nextTile.IsEmpty && nextTile.getEntity().isAttackable() && this.Math.abs(nextTile.Level - ownTile.Level) <= 1)
+			if (this.Math.abs(nextTile.Level - ownTile.Level) <= 1)
 			{
 				this.Tactical.getHighlighter().addOverlayIcon(this.Const.Tactical.Settings.AreaOfEffectIcon, nextTile, nextTile.Pos.X, nextTile.Pos.Y);
 			}

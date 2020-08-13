@@ -82,6 +82,8 @@ this.defend_barbarians_action <- this.inherit("scripts/factions/faction_action",
 			local party = this.getFaction().spawnEntity(spawnpoints[i], "Barbarians", false, this.Const.World.Spawn.Barbarians, this.m.Settlement.getResources() * 0.66);
 			party.getSprite("banner").setBrush(this.m.Settlement.getBanner());
 			party.setDescription("A warband of barbarian tribals.");
+			party.setFootprintType(this.Const.World.FootprintsType.Barbarians);
+			party.getFlags().set("IsRandomlySpawned", true);
 
 			if (this.Math.rand(1, 100) <= 33)
 			{

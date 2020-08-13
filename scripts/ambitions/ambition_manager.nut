@@ -253,7 +253,7 @@ this.ambition_manager <- {
 	{
 		if (_ambition.getID() == "ambition.none")
 		{
-			this.setDelay(24 * 7);
+			this.setDelay(24 * 3);
 		}
 		else
 		{

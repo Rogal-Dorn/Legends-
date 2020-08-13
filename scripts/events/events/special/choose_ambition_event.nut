@@ -33,6 +33,7 @@ this.choose_ambition_event <- this.inherit("scripts/events/event", {
 	{
 		return {
 			Text = _s.getButtonText(),
+			Tooltip = _s.getButtonTooltip(),
 			Icon = "ui/icons/ambition.png",
 			function getResult( _event )
 			{

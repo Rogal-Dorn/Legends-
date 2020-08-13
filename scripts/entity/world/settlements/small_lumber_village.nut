@@ -76,6 +76,7 @@ this.small_lumber_village <- this.inherit("scripts/entity/world/settlement", {
 		this.m.Sprite = "world_townhall_01";
 		this.m.Lighting = "world_townhall_01_light";
 		this.m.Rumors = this.Const.Strings.RumorsForestSettlement;
+		this.m.Culture = this.Const.World.Culture.Neutral;
 		this.m.IsMilitary = false;
 		this.m.Size = 1;
 		this.m.HousesType = 1;

@@ -79,14 +79,14 @@ this.drive_away_bandits_contract <- this.inherit("scripts/contracts/contract", {
 				this.World.Assets.addMoney(this.Contract.m.Payment.getInAdvance());
 				this.Contract.m.Destination.clearTroops();
 
-				if (this.Contract.getDifficultyMult() <= 1.15 && !this.Contract.m.Destination.getTags().get("IsEventLocation"))
+				if (this.Contract.getDifficultyMult() <= 1.15 && !this.Contract.m.Destination.getFlags().get("IsEventLocation"))
 				{
 					this.Contract.m.Destination.getLoot().clear();
 				}
 
-				this.Contract.addUnitsToEntity(this.Contract.m.Destination, this.Const.World.Spawn.BanditDefenders, 110 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
-				this.Contract.m.Destination.setLootScaleBasedOnResources(110 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
-				this.Contract.m.Destination.setResources(this.Math.min(this.Contract.m.Destination.getResources(), 70 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult()));
+				this.Contract.addUnitsToEntity(this.Contract.m.Destination, this.Const.World.Spawn.BanditDefenders, 110 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult());
+				this.Contract.m.Destination.setLootScaleBasedOnResources(110 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult());
+				this.Contract.m.Destination.setResources(this.Math.min(this.Contract.m.Destination.getResources(), 70 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult()));
 				this.Contract.m.Destination.setDiscovered(true);
 				this.World.uncoverFogOfWar(this.Contract.m.Destination.getTile().Pos, 500.0);
 
@@ -174,13 +174,13 @@ this.drive_away_bandits_contract <- this.inherit("scripts/contracts/contract", {
 
 			function onRobberBaronPlaced( _entity, _tag )
 			{
-				_entity.getTags().set("IsRobberBaron", true);
+				_entity.getFlags().set("IsRobberBaron", true);
 				_entity.setName(this.Flags.get("RobberBaronName"));
 			}
 
 			function onActorKilled( _actor, _killer, _combatID )
 			{
-				if (_actor.getTags().get("IsRobberBaron") == true)
+				if (_actor.getFlags().get("IsRobberBaron") == true)
 				{
 					this.Flags.set("IsRobberBaronDead", true);
 				}
@@ -225,6 +225,15 @@ this.drive_away_bandits_contract <- this.inherit("scripts/contracts/contract", {
 				if (_combatID == "BountyHunters")
 				{
 					this.Flags.set("IsBountyHunterPresent", false);
+				}
+			}
+
+			function onRetreatedFromCombat( _combatID )
+			{
+				if (_combatID == "BountyHunters")
+				{
+					this.Flags.set("IsBountyHunterPresent", false);
+					this.Flags.set("IsRobberBaronDead", false);
 				}
 			}
 
@@ -334,7 +343,7 @@ this.drive_away_bandits_contract <- this.inherit("scripts/contracts/contract", {
 						p.CombatID = "BountyHunters";
 						p.PlayerDeploymentType = this.Const.Tactical.DeploymentType.Line;
 						p.EnemyDeploymentType = this.Const.Tactical.DeploymentType.Line;
-						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.BountyHunters, 130 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.World.FactionManager.getFactionOfType(this.Const.FactionType.Bandits).getID());
+						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.BountyHunters, 130 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult(), this.World.FactionManager.getFactionOfType(this.Const.FactionType.Bandits).getID());
 						this.World.Contracts.startScriptedCombat(p, false, true, true);
 						return 0;
 					}

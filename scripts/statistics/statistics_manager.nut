@@ -1,20 +1,9 @@
 this.statistics_manager <- {
 	m = {
-		LastLocationDestroyedName = "",
-		LastLocationDestroyedFaction = 0,
-		LastLocationDestroyedForContract = false,
-		LastEnemiesDefeatedCount = 0,
-		LastCombatResult = 0,
-		LastCombatFaction = 0,
 		Flags = null,
 		News = [],
 		Fallen = []
 	},
-	function get()
-	{
-		return this.m;
-	}
-
 	function getFlags()
 	{
 		return this.m.Flags;
@@ -100,6 +89,15 @@ this.statistics_manager <- {
 		this.m.Flags = this.new("scripts/tools/tag_collection");
 		this.m.Flags.set("GreaterEvilsDefeated", 0);
 		this.m.Flags.set("ItemsCrafted", 0);
+		this.m.Flags.set("LastLocationDestroyedName", "");
+		this.m.Flags.set("LastLocationDestroyedFaction", 0);
+		this.m.Flags.set("LastLocationDestroyedForContract", false);
+		this.m.Flags.set("LastEnemiesDefeatedCount", 0);
+		this.m.Flags.set("LastCombatResult", 0);
+		this.m.Flags.set("LastCombatFaction", 0);
+		this.m.Flags.set("LastCombatSavedCaravan", false);
+		this.m.Flags.set("LastCombatSavedCaravanProduce", "");
+		this.m.Flags.set("LastCombatWasOngoingBattle", false);
 	}
 
 	function clear()
@@ -109,12 +107,6 @@ this.statistics_manager <- {
 
 	function onSerialize( _out )
 	{
-		_out.writeString(this.m.LastLocationDestroyedName);
-		_out.writeU8(this.m.LastLocationDestroyedFaction);
-		_out.writeBool(this.m.LastLocationDestroyedForContract);
-		_out.writeU16(this.m.LastEnemiesDefeatedCount);
-		_out.writeU8(this.m.LastCombatResult);
-		_out.writeU8(this.m.LastCombatFaction);
 		this.m.Flags.onSerialize(_out);
 		_out.writeU8(this.m.News.len());
 
@@ -135,25 +127,31 @@ this.statistics_manager <- {
 			_out.writeU32(f.Kills);
 			_out.writeU32(f.Battles);
 			_out.writeString(f.KilledBy);
-			_out.writeBool(false);
+			_out.writeBool(f.Expendable);
 		}
 	}
 
 	function onDeserialize( _in )
 	{
-		this.m.LastLocationDestroyedName = _in.readString();
-		this.m.LastLocationDestroyedFaction = _in.readU8();
-		this.m.LastLocationDestroyedForContract = _in.readBool();
-		this.m.LastEnemiesDefeatedCount = _in.readU16();
-
-		if (_in.getMetaData().getVersion() >= 21)
+		if (_in.getMetaData().getVersion() <= 53)
 		{
-			this.m.LastCombatResult = _in.readU8();
-		}
+			this.m.Flags.set("LastLocationDestroyedName", _in.readString());
+			this.m.Flags.set("LastLocationDestroyedFaction", _in.readU8());
+			this.m.Flags.set("LastLocationDestroyedForContract", _in.readBool());
+			this.m.Flags.set("LastEnemiesDefeatedCount", _in.readU16());
+			this.m.Flags.set("LastCombatResult", _in.readU8());
 
-		if (_in.getMetaData().getVersion() >= 42)
-		{
-			this.m.LastCombatFaction = _in.readU8();
+			if (_in.getMetaData().getVersion() >= 42)
+			{
+				this.m.Flags.set("LastCombatFaction", _in.readU8());
+			}
+			else
+			{
+				this.m.Flags.set("LastCombatFaction", 0);
+			}
+
+			this.m.Flags.set("LastCombatSavedCaravan", false);
+			this.m.Flags.set("LastCombatSavedCaravanProduce", "");
 		}
 
 		this.m.Flags.onDeserialize(_in);
@@ -181,7 +179,7 @@ this.statistics_manager <- {
 			f.Kills <- _in.readU32();
 			f.Battles <- _in.readU32();
 			f.KilledBy <- _in.readString();
-			_in.readBool();
+			f.Expendable <- _in.readBool();
 			this.m.Fallen[i] = f;
 		}
 	}

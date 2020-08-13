@@ -47,6 +47,23 @@ this.discover_location_contract <- this.inherit("scripts/contracts/contract", {
 				continue;
 			}
 
+			local region = this.World.State.getRegion(b.getTile().Region);
+
+			if (!region.Center.IsDiscovered)
+			{
+				continue;
+			}
+
+			if (region.Discovered < 0.25)
+			{
+				this.World.State.updateRegionDiscovery(region);
+			}
+
+			if (region.Discovered < 0.25)
+			{
+				continue;
+			}
+
 			local d = myTile.getDistanceTo(b.getTile());
 
 			if (d > 20)
@@ -71,7 +88,7 @@ this.discover_location_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Flags.set("Region", this.World.State.getTileRegion(this.m.Location.getTile()).Name);
 		this.m.Flags.set("Location", this.m.Location.getName());
 		this.m.DifficultyMult = this.Math.rand(70, 85) * 0.01;
-		this.m.Payment.Pool = this.Math.max(300, 100 + lowestDistance * 15.0 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentLightMult());
+		this.m.Payment.Pool = this.Math.max(300, 100 + (this.World.Assets.isExplorationMode() ? 100 : 0) + lowestDistance * 15.0 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentLightMult());
 
 		if (this.Math.rand(1, 100) <= 33)
 		{
@@ -323,7 +340,7 @@ this.discover_location_contract <- this.inherit("scripts/contracts/contract", {
 						p.CombatID = "DiscoverLocation";
 						p.PlayerDeploymentType = this.Const.Tactical.DeploymentType.Line;
 						p.EnemyDeploymentType = this.Const.Tactical.DeploymentType.Line;
-						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.BanditRaiders, 100 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.World.FactionManager.getFactionOfType(this.Const.FactionType.Bandits).getID());
+						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.BanditRaiders, 100 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult(), this.World.FactionManager.getFactionOfType(this.Const.FactionType.Bandits).getID());
 						this.World.Contracts.startScriptedCombat(p, false, false, false);
 						return 0;
 					}
@@ -485,7 +502,7 @@ this.discover_location_contract <- this.inherit("scripts/contracts/contract", {
 					{
 						this.World.Assets.addMoney(this.Flags.get("Bribe"));
 						this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnContractFail);
-						this.World.FactionManager.getFaction(this.Contract.getFaction()).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractFail);
+						this.World.FactionManager.getFaction(this.Contract.getFaction()).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractFail, "Sold the location of " + this.Flags.get("Location") + " to another party");
 						this.World.Contracts.finishActiveContract(true);
 						return 0;
 					}

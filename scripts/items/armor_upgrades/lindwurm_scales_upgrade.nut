@@ -63,7 +63,7 @@ this.lindwurm_scales_upgrade <- this.inherit("scripts/items/armor_upgrades/armor
 
 		if (c != null && c.getActor() != null && !c.getActor().isNull())
 		{
-			c.getActor().getTags().add("body_immune_to_acid");
+			c.getActor().getFlags().add("body_immune_to_acid");
 		}
 	}
 
@@ -74,7 +74,7 @@ this.lindwurm_scales_upgrade <- this.inherit("scripts/items/armor_upgrades/armor
 
 		if (c != null && c.getActor() != null && !c.getActor().isNull())
 		{
-			c.getActor().getTags().remove("body_immune_to_acid");
+			c.getActor().getFlags().remove("body_immune_to_acid");
 		}
 	}
 
@@ -85,7 +85,7 @@ this.lindwurm_scales_upgrade <- this.inherit("scripts/items/armor_upgrades/armor
 
 		if (c != null && c.getActor() != null && !c.getActor().isNull())
 		{
-			c.getActor().getTags().add("body_immune_to_acid");
+			c.getActor().getFlags().add("body_immune_to_acid");
 		}
 	}
 
@@ -96,7 +96,7 @@ this.lindwurm_scales_upgrade <- this.inherit("scripts/items/armor_upgrades/armor
 
 		if (c != null && c.getActor() != null && !c.getActor().isNull())
 		{
-			c.getActor().getTags().remove("body_immune_to_acid");
+			c.getActor().getFlags().remove("body_immune_to_acid");
 		}
 	}
 

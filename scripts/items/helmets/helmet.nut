@@ -12,6 +12,7 @@ this.helmet <- this.inherit("scripts/items/item", {
 		SpriteColor = this.createColor("#ffffff"),
 		SpriteCorpse = "",
 		SpriteDamaged = "",
+		VariantString = "helmet",
 		ImpactSound = this.Const.Sound.ArmorLeatherImpact,
 		InventorySound = this.Const.Sound.ArmorLeatherImpact,
 		Armor = 0.0,
@@ -84,7 +85,6 @@ this.helmet <- this.inherit("scripts/items/item", {
 	{
 		this.m.SlotType = this.Const.ItemSlot.Head;
 		this.m.ItemType = this.Const.Items.ItemType.Helmet;
-		this.m.IsDroppedWhenDamaged = false;
 	}
 
 	function getTooltip()
@@ -175,9 +175,10 @@ this.helmet <- this.inherit("scripts/items/item", {
 		}
 
 		local isPlayer = this.m.LastEquippedByFaction == this.Const.Faction.Player || this.getContainer() != null && this.getContainer().getActor() != null && !this.getContainer().getActor().isNull() && this.isKindOf(this.getContainer().getActor().get(), "player");
-		local isLucky = !this.Tactical.State.isScenarioMode() && this.World.Assets.getOrigin().isDroppedAsLoot(this);
+		local isLucky = !this.Tactical.State.isScenarioMode() && !isPlayer && this.World.Assets.getOrigin().isDroppedAsLoot(this);
+		local isBlacksmithed = isPlayer && !this.Tactical.State.isScenarioMode() && this.World.Assets.m.IsBlacksmithed;
 
-		if (this.m.Condition > 15 && isPlayer || this.m.Condition > 30 && this.m.Condition / this.m.ConditionMax >= 0.25 && (isLucky || this.Math.rand(1, 100) <= 70) || this.isItemType(this.Const.Items.ItemType.Named) || this.isItemType(this.Const.Items.ItemType.Legendary))
+		if (this.m.Condition > 15 && isPlayer || this.m.Condition > 30 && this.m.Condition / this.m.ConditionMax >= 0.25 && (isLucky || this.Math.rand(1, 100) <= 70) || !isPlayer && this.isItemType(this.Const.Items.ItemType.Named) || this.isItemType(this.Const.Items.ItemType.Legendary) || isBlacksmithed)
 		{
 			return true;
 		}
@@ -263,11 +264,11 @@ this.helmet <- this.inherit("scripts/items/item", {
 	function updateVariant()
 	{
 		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
-		this.m.Sprite = "bust_helmet_" + variant;
-		this.m.SpriteDamaged = "bust_helmet_" + variant + "_damaged";
-		this.m.SpriteCorpse = "bust_helmet_" + variant + "_dead";
+		this.m.Sprite = "bust_" + this.m.VariantString + "_" + variant;
+		this.m.SpriteDamaged = "bust_" + this.m.VariantString + "_" + variant + "_damaged";
+		this.m.SpriteCorpse = "bust_" + this.m.VariantString + "_" + variant + "_dead";
 		this.m.IconLarge = "";
-		this.m.Icon = "helmets/inventory_helmet_" + variant + ".png";
+		this.m.Icon = "helmets/inventory_" + this.m.VariantString + "_" + variant + ".png";
 	}
 
 	function onEquip()
@@ -321,6 +322,11 @@ this.helmet <- this.inherit("scripts/items/item", {
 		if (this.m.Condition == 0 && !this.m.IsIndestructible)
 		{
 			this.Tactical.EventLog.logEx(this.Const.UI.getColorizedEntityName(this.getContainer().getActor()) + "\'s " + this.getName() + " is hit for [b]" + this.Math.floor(_damage) + "[/b] damage and has been destroyed!");
+
+			if (_attacker != null && _attacker.isPlayerControlled())
+			{
+				this.Tactical.Entities.addArmorParts(this.getArmorMax());
+			}
 		}
 		else
 		{
@@ -336,7 +342,7 @@ this.helmet <- this.inherit("scripts/items/item", {
 
 		if (this.getContainer().getActor().getSkills().hasSkill("perk.brawny"))
 		{
-			staminaMult = 0.75;
+			staminaMult = 0.7;
 		}
 
 		_properties.Armor[this.Const.BodyPart.Head] += this.m.Condition;

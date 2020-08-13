@@ -9,7 +9,7 @@ this.antidote_blueprint <- this.inherit("scripts/crafting/blueprint", {
 		local ingredients = [
 			{
 				Script = "scripts/items/misc/ghoul_teeth_item",
-				Num = 1
+				Num = 2
 			}
 		];
 		this.init(ingredients);

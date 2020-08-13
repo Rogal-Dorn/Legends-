@@ -33,10 +33,26 @@ this.civilwar_warnings_event <- this.inherit("scripts/events/event", {
 		if (this.World.FactionManager.getGreaterEvilType() == this.Const.World.GreaterEvilType.CivilWar && this.World.FactionManager.getGreaterEvilPhase() == this.Const.World.GreaterEvilPhase.Warning)
 		{
 			local playerTile = this.World.State.getPlayer().getTile();
+
+			if (!playerTile.HasRoad)
+			{
+				return;
+			}
+
+			if (this.Const.DLC.Desert && playerTile.SquareCoords.Y <= this.World.getMapSize().Y * 0.2)
+			{
+				return;
+			}
+
 			local towns = this.World.EntityManager.getSettlements();
 
 			foreach( t in towns )
 			{
+				if (t.isSouthern())
+				{
+					continue;
+				}
+
 				if (t.getTile().getDistanceTo(playerTile) <= 4)
 				{
 					return;

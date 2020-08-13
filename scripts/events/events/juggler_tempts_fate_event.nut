@@ -35,7 +35,7 @@ this.juggler_tempts_fate_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				this.Characters.push(_event.m.Juggler.getImagePath());
-				_event.m.Juggler.getTags().add("juggler_tempted_fate");
+				_event.m.Juggler.getFlags().add("juggler_tempted_fate");
 			}
 
 		});
@@ -335,12 +335,12 @@ this.juggler_tempts_fate_event <- this.inherit("scripts/events/event", {
 
 			if (bro.getBackground().getID() == "background.juggler")
 			{
-				if (!bro.getTags().has("juggler_tempted_fate"))
+				if (!bro.getFlags().has("juggler_tempted_fate"))
 				{
 					juggler_candidates.push(bro);
 				}
 			}
-			else
+			else if (bro.getBackground().getID() != "background.slave")
 			{
 				nonjuggler_candidates.push(bro);
 			}

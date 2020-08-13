@@ -30,7 +30,8 @@ this.adventurous_noble_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.m.Hairs = this.Const.Hair.TidyMale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.Body = "bust_naked_body_01";
+		this.m.Bodies = this.Const.Bodies.Muscular;
+		this.m.Names = this.Const.Strings.KnightNames;
 		this.m.Level = this.Math.rand(1, 3);
 		this.m.IsCombatBackground = true;
 		this.m.IsNoble = true;
@@ -94,13 +95,6 @@ this.adventurous_noble_background <- this.inherit("scripts/skills/backgrounds/ch
 			]
 		};
 		return c;
-	}
-
-	function onAdded()
-	{
-		this.character_background.onAdded();
-		local actor = this.getContainer().getActor();
-		actor.setName(this.Const.Strings.KnightNames[this.Math.rand(0, this.Const.Strings.KnightNames.len() - 1)]);
 	}
 
 	function onAddEquipment()

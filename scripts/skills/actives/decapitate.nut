@@ -16,7 +16,7 @@ this.decapitate <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.decapitate";
 		this.m.Name = "Decapitate";
-		this.m.Description = "A devastating blow aimed to decapitate the target on the spot. Does more damage to hitpoints, the more the target is already injured. Killing the target will always decapitate it, if at all possible.";
+		this.m.Description = "A devastating blow aimed to decapitate the target on the spot. Does more damage to hitpoints, the more the target is already wounded. Killing the target will always decapitate it, if at all possible.";
 		this.m.Icon = "skills/active_34.png";
 		this.m.IconDisabled = "skills/active_34_sw.png";
 		this.m.Overlay = "active_34";
@@ -80,7 +80,7 @@ this.decapitate <- this.inherit("scripts/skills/skill", {
 			id = 4,
 			type = "text",
 			icon = "ui/icons/regular_damage.png",
-			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + damage_regular_min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + damage_regular_max * 2 + "[/color] damage depending on how injured the target already is, of which [color=" + this.Const.UI.Color.DamageValue + "]0[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + damage_direct_max + "[/color] can ignore armor"
+			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + damage_regular_min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + damage_regular_max * 2 + "[/color] damage depending on how wounded the target already is, of which [color=" + this.Const.UI.Color.DamageValue + "]0[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + damage_direct_max + "[/color] can ignore armor"
 		});
 
 		if (damage_Armor_max > 0)

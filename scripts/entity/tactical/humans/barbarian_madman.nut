@@ -78,6 +78,7 @@ this.barbarian_madman <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_recover"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_brawny"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_battering_ram"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_pathfinder"));
 	}
 
 	function onDeath( _killer, _skill, _tile, _fatalityType )

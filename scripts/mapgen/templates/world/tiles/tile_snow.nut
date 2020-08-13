@@ -18,7 +18,37 @@ this.tile_snow <- this.inherit("scripts/mapgen/map_template", {
 
 		tile.Type = this.Const.World.TerrainType.Snow;
 		tile.TacticalType = this.Const.World.TerrainTacticalType.Snow;
-		tile.setBrush("world_snow_0" + this.Math.rand(1, 3));
+		local water = 0;
+
+		for( local i = 0; i != 6; i = ++i )
+		{
+			if (!tile.hasNextTile(i))
+			{
+			}
+			else
+			{
+				local nextTile = tile.getNextTile(i);
+
+				if (nextTile.Type == this.Const.World.TerrainType.Shore)
+				{
+					water = ++water;
+				}
+				else if (nextTile.Type == this.Const.World.TerrainType.Ocean)
+				{
+					water = 6;
+					break;
+				}
+			}
+		}
+
+		if (water >= 3)
+		{
+			tile.setBrush("world_snow_04");
+		}
+		else
+		{
+			tile.setBrush("world_snow_0" + this.Math.rand(1, 3));
+		}
 	}
 
 	function onSecondPass( _rect )

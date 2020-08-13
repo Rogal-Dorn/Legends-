@@ -7,6 +7,7 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 		DefenderSpawnList = null,
 		DefenderSpawnDay = 0,
 		RoamerSpawnList = null,
+		CombatLocation = null,
 		Resources = 0,
 		LastSpawnTime = -1000.0,
 		Loot = null,
@@ -17,6 +18,7 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 		OnDiscovered = null,
 		OnEnter = null,
 		OnDestroyed = null,
+		OnEnterCallback = null,
 		IsSpawningDefenders = true,
 		IsDespawningDefenders = true,
 		IsScalingDefenders = true,
@@ -92,6 +94,11 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 		return this.m.Loot;
 	}
 
+	function getCombatLocation()
+	{
+		return this.m.CombatLocation;
+	}
+
 	function getStrength()
 	{
 		if (this.m.Strength != 0)
@@ -145,6 +152,16 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 		this.m.IsDroppingLoot = _l;
 	}
 
+	function setOnEnterCallback( _c )
+	{
+		this.m.OnEnterCallback = _c;
+	}
+
+	function getOnEnterCallback()
+	{
+		return this.m.OnEnterCallback;
+	}
+
 	function getDefenderSpawnList()
 	{
 		return this.m.DefenderSpawnList;
@@ -176,6 +193,8 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 		this.m.IsAttackable = true;
 		this.m.IsAttackableByAI = false;
 		this.m.IsShowingStrength = false;
+		this.m.CombatLocation = clone this.Const.Tactical.LocationTemplate;
+		this.m.CombatLocation.Template = clone this.Const.Tactical.LocationTemplate.Template;
 		this.m.Loot = this.new("scripts/items/stash_container");
 		this.m.Loot.setResizable(true);
 	}
@@ -264,6 +283,23 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 					text = "Unknown garrison"
 				});
 			}
+
+			ret.push({
+				id = 21,
+				type = "hint",
+				icon = "ui/orientation/terrain_orientation.png",
+				text = "This location is " + this.Const.Strings.TerrainAlternative[this.getTile().Type]
+			});
+
+			if (this.isShowingDefenders() && this.getCombatLocation().Template[0] != null && this.getCombatLocation().Fortification != 0 && !this.getCombatLocation().ForceLineBattle)
+			{
+				ret.push({
+					id = 20,
+					type = "hint",
+					icon = "ui/orientation/palisade_01_orientation.png",
+					text = "This location has fortifications"
+				});
+			}
 		}
 
 		return ret;
@@ -286,6 +322,11 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 		{
 			this.m.IsVisited = true;
 			this.World.Events.fire(this.m.OnEnter);
+			return false;
+		}
+		else if (this.m.OnEnterCallback != null)
+		{
+			this.m.OnEnterCallback(this);
 			return false;
 		}
 		else
@@ -533,7 +574,18 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 		this.world_entity.onDiscovered();
 		this.getTile().clearAllBut(this.Const.World.DetailType.Road | this.Const.World.DetailType.Shore);
 		this.getLabel("name").Visible = this.Const.World.AI.VisualizeNameOfLocations && this.m.IsShowingLabel;
-		this.World.Ambitions.onLocationDiscovered(this);
+
+		if (!this.isHiddenToPlayer() && this.getTypeID() != "location.battlefield")
+		{
+			this.World.Statistics.getFlags().increment("LocationsDiscovered");
+
+			if (this.World.Retinue.hasFollower("follower.cartographer"))
+			{
+				this.World.Retinue.getFollower("follower.cartographer").onLocationDiscovered(this);
+			}
+
+			this.World.Ambitions.onLocationDiscovered(this);
+		}
 
 		if (this.m.OnDiscovered != null)
 		{

@@ -1,11 +1,9 @@
 this.lionheart_potion_effect <- this.inherit("scripts/skills/skill", {
-	m = {
-		TurnsLeft = 4
-	},
+	m = {},
 	function create()
 	{
 		this.m.ID = "effects.lionheart_potion";
-		this.m.Name = "Lionheart Potion";
+		this.m.Name = "Enhanced Bravery";
 		this.m.Icon = "skills/status_effect_90.png";
 		this.m.IconMini = "status_effect_90_mini";
 		this.m.Overlay = "status_effect_90";
@@ -17,7 +15,7 @@ this.lionheart_potion_effect <- this.inherit("scripts/skills/skill", {
 
 	function getDescription()
 	{
-		return "Thanks to a cocktail of psychoactive substances, this character\'s fears are inhibited along with their ability to reasonably judge the situation, and they have found courage instead to face impossible odds. The effect will slowly wear off over [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.TurnsLeft + "[/color] more turn(s).";
+		return "Thanks to a cocktail of psychoactive substances, this character\'s fears are inhibited along with their ability to reasonably judge the situation, and they have found courage instead to face impossible odds.";
 	}
 
 	function getTooltip()
@@ -37,7 +35,13 @@ this.lionheart_potion_effect <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/bravery.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+ " + this.m.TurnsLeft * 10 + "[/color] Resolve"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+20[/color] Resolve"
+			},
+			{
+				id = 7,
+				type = "hint",
+				icon = "ui/icons/action_points.png",
+				text = "Will be gone after 1 more battle"
 			}
 		];
 		return ret;
@@ -45,20 +49,7 @@ this.lionheart_potion_effect <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		_properties.Bravery += this.m.TurnsLeft * 10;
-	}
-
-	function onAdded()
-	{
-		this.m.TurnsLeft = 4;
-	}
-
-	function onTurnEnd()
-	{
-		if (--this.m.TurnsLeft <= 0)
-		{
-			this.removeSelf();
-		}
+		_properties.Bravery += 20;
 	}
 
 });

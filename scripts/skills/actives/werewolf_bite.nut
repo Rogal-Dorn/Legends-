@@ -26,6 +26,8 @@ this.werewolf_bite <- this.inherit("scripts/skills/skill", {
 		this.m.IsTargeted = true;
 		this.m.IsStacking = false;
 		this.m.IsAttack = true;
+		this.m.InjuriesOnBody = this.Const.Injury.CuttingAndPiercingBody;
+		this.m.InjuriesOnHead = this.Const.Injury.CuttingAndPiercingHead;
 		this.m.DirectDamageMult = 0.2;
 		this.m.ActionPointCost = 4;
 		this.m.FatigueCost = 6;

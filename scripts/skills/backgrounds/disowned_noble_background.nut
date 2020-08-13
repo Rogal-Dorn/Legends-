@@ -27,7 +27,7 @@ this.disowned_noble_background <- this.inherit("scripts/skills/backgrounds/chara
 		this.m.Hairs = this.Const.Hair.AllMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.Body = "bust_naked_body_02";
+		this.m.Bodies = this.Const.Bodies.Thick;
 		this.m.Level = this.Math.rand(1, 3);
 		this.m.IsCombatBackground = true;
 		this.m.IsNoble = true;

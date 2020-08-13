@@ -6,7 +6,7 @@ this.lone_wolf_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		this.m.Name = "Lone Wolf";
 		this.m.Description = "[p=c][img]gfx/ui/events/event_35.png[/img][/p][p]You\'ve been traveling alone for a long time, taking part in tourneys and sparring with young nobles. A hedge knight tall as a tree, you never needed anybody for long. Is it true still?\n\n[color=#bcad8c]Lone Wolf:[/color] Start with a single experienced hedge knight and great equipment, but low funds.\n[color=#bcad8c]Elite Few:[/color] Can never have more than 12 men in your roster.\n[color=#bcad8c]Avatar:[/color] If your hedge knight dies, the campaign ends.[/p]";
 		this.m.Difficulty = 3;
-		this.m.Order = 9;
+		this.m.Order = 110;
 		this.m.IsFixedLook = true;
 	}
 
@@ -32,7 +32,7 @@ this.lone_wolf_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		bro.getSkills().removeByID("trait.disloyal");
 		bro.getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
 		bro.setPlaceInFormation(4);
-		bro.getTags().set("IsPlayerCharacter", true);
+		bro.getFlags().set("IsPlayerCharacter", true);
 		bro.getSprite("miniboss").setBrush("bust_miniboss_lone_wolf");
 		bro.m.HireTime = this.Time.getVirtualTimeF();
 		bro.m.PerkPoints = 3;
@@ -72,7 +72,7 @@ this.lone_wolf_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		{
 			randomVillage = this.World.EntityManager.getSettlements()[i];
 
-			if (randomVillage.isMilitary() && !randomVillage.isIsolatedFromRoads() && randomVillage.getSize() >= 3)
+			if (randomVillage.isMilitary() && !randomVillage.isIsolatedFromRoads() && randomVillage.getSize() >= 3 && !randomVillage.isSouthern())
 			{
 				break;
 			}
@@ -133,7 +133,7 @@ this.lone_wolf_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 
 		foreach( bro in roster )
 		{
-			if (bro.getTags().get("IsPlayerCharacter"))
+			if (bro.getFlags().get("IsPlayerCharacter"))
 			{
 				return true;
 			}

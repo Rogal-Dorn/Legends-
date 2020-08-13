@@ -237,15 +237,15 @@ this.ai_hex <- this.inherit("scripts/ai/tactical/behavior", {
 	{
 		local d = this.queryActorTurnsNearTarget(_actor, _target, _entity);
 
-		if (d.Turns <= this.Const.AI.Behavior.RangedEngageKeepMinTurnsAway && d.InZonesOfControl <= 2)
+		if (d.Turns <= this.Const.AI.Behavior.RangedEngageKeepMinTurnsAway && d.InZonesOfControl < 2)
 		{
-			if (d.InZonesOfControl != 0 || _actor.getCurrentProperties().IsStunned || _actor.getCurrentProperties().IsRooted)
+			if (d.InZonesOfOccupation != 0 || _actor.getCurrentProperties().IsRooted)
 			{
 				return 1.0;
 			}
 			else
 			{
-				return 3.0;
+				return (1.0 - d.Turns) * 6.0;
 			}
 		}
 		else

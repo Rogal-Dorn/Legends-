@@ -27,7 +27,7 @@ gt.Const.Tactical.Actor.Footman <- {
 		0,
 		0
 	],
-	FatigueRecoveryRate = 20
+	FatigueRecoveryRate = 15
 };
 gt.Const.Tactical.Actor.Billman <- {
 	XP = 250,
@@ -49,7 +49,7 @@ gt.Const.Tactical.Actor.Billman <- {
 	FatigueRecoveryRate = 15
 };
 gt.Const.Tactical.Actor.Greatsword <- {
-	XP = 300,
+	XP = 350,
 	ActionPoints = 9,
 	Hitpoints = 90,
 	Bravery = 70,
@@ -90,7 +90,7 @@ gt.Const.Tactical.Actor.Arbalester <- {
 	XP = 250,
 	ActionPoints = 9,
 	Hitpoints = 60,
-	Bravery = 55,
+	Bravery = 60,
 	Stamina = 100,
 	MeleeSkill = 55,
 	RangedSkill = 60,
@@ -127,7 +127,7 @@ gt.Const.Tactical.Actor.StandardBearer <- {
 gt.Const.Tactical.Actor.Knight <- {
 	XP = 450,
 	ActionPoints = 9,
-	Hitpoints = 125,
+	Hitpoints = 135,
 	Bravery = 90,
 	Stamina = 140,
 	MeleeSkill = 90,

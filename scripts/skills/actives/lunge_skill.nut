@@ -105,7 +105,7 @@ this.lunge_skill <- this.inherit("scripts/skills/skill", {
 			{
 				local tile = _targetTile.getNextTile(i);
 
-				if (tile.IsEmpty && tile.getDistanceTo(myTile) == 1 && this.Math.abs(myTile.Level - tile.Level) <= 1)
+				if (tile.IsEmpty && tile.getDistanceTo(myTile) == 1 && this.Math.abs(myTile.Level - tile.Level) <= 1 && this.Math.abs(_targetTile.Level - tile.Level) <= 1)
 				{
 					hasTile = true;
 					break;
@@ -146,7 +146,7 @@ this.lunge_skill <- this.inherit("scripts/skills/skill", {
 			{
 				local tile = _targetTile.getNextTile(i);
 
-				if (tile.IsEmpty && tile.getDistanceTo(myTile) == 1 && this.Math.abs(myTile.Level - tile.Level) <= 1)
+				if (tile.IsEmpty && tile.getDistanceTo(myTile) == 1 && this.Math.abs(myTile.Level - tile.Level) <= 1 && this.Math.abs(_targetTile.Level - tile.Level) <= 1)
 				{
 					destTile = tile;
 					break;

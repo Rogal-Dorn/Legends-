@@ -21,6 +21,7 @@ this.master_archer <- this.inherit("scripts/entity/tactical/human", {
 		b.setValues(this.Const.Tactical.Actor.MasterArcher);
 		b.DamageDirectMult = 1.25;
 		b.IsSpecializedInBows = true;
+		b.Vision = 8;
 		this.m.ActionPoints = b.ActionPoints;
 		this.m.Hitpoints = b.Hitpoints;
 		this.m.CurrentProperties = clone b;

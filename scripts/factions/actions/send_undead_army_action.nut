@@ -77,6 +77,25 @@ this.send_undead_army_action <- this.inherit("scripts/factions/faction_action", 
 
 			if (d <= lowest_distance && !s.isIsolatedFromLocation(origin))
 			{
+				if (s.isSouthern())
+				{
+					local skip = true;
+
+					foreach( l in s.getAttachedLocations() )
+					{
+						if (l.isActive() && l.isUsable())
+						{
+							skip = false;
+							break;
+						}
+					}
+
+					if (skip)
+					{
+						continue;
+					}
+				}
+
 				lowest_distance = d;
 				best_settlement = s;
 			}
@@ -99,12 +118,14 @@ this.send_undead_army_action <- this.inherit("scripts/factions/faction_action", 
 		}
 
 		local nearestUndead = this.getNearestLocationTo(origin, this.World.FactionManager.getFactionOfType(this.Const.FactionType.Undead).getSettlements());
-		local party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Undead).spawnEntity(myTile, "Undead", false, this.Const.World.Spawn.UndeadScourge, this.Math.rand(80, 120) * this.getReputationToDifficultyMult());
+		local party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Undead).spawnEntity(myTile, "Undead", false, this.Const.World.Spawn.UndeadScourge, this.Math.rand(80, 120) * this.getScaledDifficultyMult());
 		party.getSprite("banner").setBrush(nearestUndead.getBanner());
 		party.setDescription("A legion of walking dead, back to claim from the living what was once theirs.");
+		party.setFootprintType(this.Const.World.FootprintsType.Undead);
 		party.setSlowerAtNight(false);
 		party.setUsingGlobalVision(false);
 		party.setLooting(false);
+		party.getFlags().set("IsRandomlySpawned", true);
 		party.getLoot().ArmorParts = this.Math.rand(0, 15);
 		local c = party.getController();
 		c.getBehavior(this.Const.World.AI.Behavior.ID.Flee).setEnabled(false);

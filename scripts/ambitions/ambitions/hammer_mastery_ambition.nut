@@ -6,10 +6,15 @@ this.hammer_mastery_ambition <- this.inherit("scripts/ambitions/ambition", {
 		this.m.ID = "ambition.hammer_mastery";
 		this.m.Duration = 21.0 * this.World.getTime().SecondsPerDay;
 		this.m.ButtonText = "Our company is ill-prepared to fight armored opponents. We shall train two men\nto master the hammer in combat, and no knight will be safe from us.";
-		this.m.UIText = "Have 2 men with the hammer mastery perk.";
+		this.m.UIText = "Have men with the hammer mastery perk";
 		this.m.TooltipText = "Have 2 men with the hammer mastery perk.";
 		this.m.SuccessText = "[img]gfx/ui/events/event_82.png[/img]The men gather around to watch %hammerbrother%\'s prowess as he practices his strokes against a pine tree, crack-crack-crack.%SPEECH_ON%Behold the hammer head! You could practically punch right through any helmet and have a good look what\'s inside that skull-bowl!%SPEECH_OFF%He swings once more and the tree trunk splits in the middle, with the upper half falling directly into the camp. %nothammerbrother% scrambles up from his seat, spilling soup all over himself, to narrowly avoid being crushed. %SPEECH_ON%Here I thought there was nothing new to see in the world but I have never killed a man with a falling tree before!%SPEECH_OFF%%hammerbrother% shouts laughingly. You anticipate that you will fare well next time you come up against heavily armored enemies.";
 		this.m.SuccessButtonText = "Armor, what armor?";
+	}
+
+	function getUIText()
+	{
+		return this.m.UIText + " (" + this.Math.min(2, this.getBrosWithMastery()) + "/2)";
 	}
 
 	function getBrosWithMastery()

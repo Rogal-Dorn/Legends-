@@ -14,6 +14,8 @@ this.unhold_frost <- this.inherit("scripts/entity/tactical/enemies/unhold", {
 		local b = this.m.BaseProperties;
 		b.setValues(this.Const.Tactical.Actor.UnholdFrost);
 		b.DamageTotalMult += 0.15;
+		b.IsImmuneToDisarm = true;
+		b.IsImmuneToRotation = true;
 
 		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 90)
 		{

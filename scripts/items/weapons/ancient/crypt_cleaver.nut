@@ -17,14 +17,14 @@ this.crypt_cleaver <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
 		this.m.ArmamentIcon = "icon_crypt_cleaver_01";
-		this.m.Value = 1600;
+		this.m.Value = 2000;
 		this.m.ShieldDamage = 16;
 		this.m.Condition = 48.0;
 		this.m.ConditionMax = 48.0;
 		this.m.StaminaModifier = -16;
-		this.m.RegularDamage = 65;
-		this.m.RegularDamageMax = 85;
-		this.m.ArmorDamageMult = 1.15;
+		this.m.RegularDamage = 60;
+		this.m.RegularDamageMax = 80;
+		this.m.ArmorDamageMult = 1.2;
 		this.m.DirectDamageMult = 0.25;
 	}
 

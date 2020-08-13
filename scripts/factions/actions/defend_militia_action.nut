@@ -125,6 +125,8 @@ this.defend_militia_action <- this.inherit("scripts/factions/faction_action", {
 			local party = _faction.spawnEntity(spawnpoints[i], this.m.Settlement.getName() + " Militia", false, this.Const.World.Spawn.Militia, this.m.Settlement.getResources());
 			party.getSprite("banner").setBrush(this.m.Settlement.getBanner());
 			party.setDescription("Brave men defending their homes with their lives. Farmers, craftsmen, artisans - but not one real soldier.");
+			party.setFootprintType(this.Const.World.FootprintsType.Militia);
+			party.getFlags().set("IsRandomlySpawned", true);
 			local c = party.getController();
 			local sleep = this.new("scripts/ai/world/orders/sleep_order");
 			sleep.setTime(1.0);

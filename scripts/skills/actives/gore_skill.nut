@@ -6,7 +6,7 @@ this.gore_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.gore";
 		this.m.Name = "Gore";
-		this.m.Description = "TODO";
+		this.m.Description = "";
 		this.m.Icon = "skills/active_166.png";
 		this.m.IconDisabled = "skills/active_166.png";
 		this.m.Overlay = "active_166";
@@ -170,7 +170,7 @@ this.gore_skill <- this.inherit("scripts/skills/skill", {
 			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " has staggered " + this.Const.UI.getColorizedEntityName(_target) + " for one turn");
 		}
 
-		if (!_target.getCurrentProperties().IsImmuneToKnockBackAndGrab)
+		if (!_target.getCurrentProperties().IsImmuneToKnockBackAndGrab && !_target.getCurrentProperties().IsRooted)
 		{
 			local knockToTile = this.findTileToKnockBackTo(_user.getTile(), _targetTile);
 

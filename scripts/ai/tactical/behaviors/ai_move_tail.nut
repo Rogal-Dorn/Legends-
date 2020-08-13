@@ -89,7 +89,7 @@ this.ai_move_tail <- this.inherit("scripts/ai/tactical/behavior", {
 			score = score * this.Const.AI.Behavior.MoveTailNearHeadMult;
 		}
 
-		local potentialTiles = this.queryDestinationsInMeleeRange(bodyTile, 1, this.Const.AI.Behavior.MoveTailMaxDistanceToHead);
+		local potentialTiles = this.queryDestinationsInRange(bodyTile, 1, this.Const.AI.Behavior.MoveTailMaxDistanceToHead);
 		yield null;
 		time = this.Time.getExactTime();
 

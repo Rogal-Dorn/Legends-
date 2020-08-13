@@ -24,7 +24,7 @@ this.sweep_skill <- this.inherit("scripts/skills/skill", {
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.OffensiveTargeted;
-		this.m.Delay = 750;
+		this.m.Delay = 1100;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
 		this.m.IsTargeted = true;
@@ -105,7 +105,7 @@ this.sweep_skill <- this.inherit("scripts/skills/skill", {
 		{
 			return;
 		}
-		else if (applyEffect == 2 && !_target.getCurrentProperties().IsImmuneToKnockBackAndGrab)
+		else if (applyEffect == 2 && !_target.getCurrentProperties().IsImmuneToKnockBackAndGrab && !_target.getCurrentProperties().IsRooted)
 		{
 			local knockToTile = this.findTileToKnockBackTo(_user.getTile(), _targetTile);
 
@@ -179,7 +179,7 @@ this.sweep_skill <- this.inherit("scripts/skills/skill", {
 
 		if (!_user.isHiddenToPlayer() || _targetTile.IsVisibleForPlayer)
 		{
-			this.Time.scheduleEvent(this.TimeUnit.Virtual, this.m.Delay, this.onPerformAttack.bindenv(this), tag);
+			this.Time.scheduleEvent(this.TimeUnit.Virtual, 750, this.onPerformAttack.bindenv(this), tag);
 
 			if (!_user.isPlayerControlled() && _targetTile.getEntity().isPlayerControlled())
 			{

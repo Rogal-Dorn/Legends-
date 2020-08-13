@@ -7,6 +7,11 @@ this.lost_at_sea_situation <- this.inherit("scripts/entity/world/settlements/sit
 		this.m.Name = "Lost at Sea";
 		this.m.Description = "A boat with fishermen has been lost at sea during a storm. Both fresh fish and willing recruits are a rare sight.";
 		this.m.Icon = "ui/settlement_status/settlement_effect_18.png";
+		this.m.Rumors = [
+			"They never came back from the sea... thinking about all the poor souls lost from %settlement% makes me shiver.",
+			"Damn wenches by %settlement%, wailin\' and wailin\'. Went over to sell them some of me pigs, but they only wailin\' with nary a man to be found. Some boat lost at sea or sumthin\'. Went right back with not a single pig sold.",
+			"Seafaring has always been a dangerous profession. That\'s why I turned my back to the water. And right in time, might I say, for otherwise it might have been me on that boat that got lost by %settlement%."
+		];
 		this.m.IsStacking = false;
 		this.m.ValidDays = 4;
 	}

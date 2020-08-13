@@ -162,7 +162,7 @@ this.cultist_origin_vs_uneducated_event <- this.inherit("scripts/events/event", 
 
 		this.m.Cultist = cultist_candidates[this.Math.rand(0, cultist_candidates.len() - 1)];
 		this.m.Uneducated = uneducated_candidates[this.Math.rand(0, uneducated_candidates.len() - 1)];
-		this.m.Score = cultist_candidates.len() * 7;
+		this.m.Score = cultist_candidates.len() * 9;
 	}
 
 	function onPrepare()

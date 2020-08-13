@@ -156,9 +156,9 @@ this.bad_curse_event <- this.inherit("scripts/events/event", {
 				this.Characters.push(_event.m.Cursed.getImagePath());
 				this.Characters.push(_event.m.Monk.getImagePath());
 
-				if (!_event.m.Cursed.getTags().has("resolve_via_curse"))
+				if (!_event.m.Cursed.getFlags().has("resolve_via_curse"))
 				{
-					_event.m.Cursed.getTags().add("resolve_via_curse");
+					_event.m.Cursed.getFlags().add("resolve_via_curse");
 					_event.m.Cursed.getBaseProperties().Bravery += 1;
 					_event.m.Cursed.getSkills().update();
 					this.List.push({
@@ -168,9 +168,9 @@ this.bad_curse_event <- this.inherit("scripts/events/event", {
 					});
 				}
 
-				if (!_event.m.Monk.getTags().has("resolve_via_curse"))
+				if (!_event.m.Monk.getFlags().has("resolve_via_curse"))
 				{
-					_event.m.Monk.getTags().add("resolve_via_curse");
+					_event.m.Monk.getFlags().add("resolve_via_curse");
 					_event.m.Monk.getBaseProperties().Bravery += 1;
 					_event.m.Monk.getSkills().update();
 					this.List.push({
@@ -252,7 +252,7 @@ this.bad_curse_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getSkills().hasSkill("trait.superstitious"))
+			if (bro.getBackground().getID() != "background.slave" && bro.getSkills().hasSkill("trait.superstitious"))
 			{
 				candidates_cursed.push(bro);
 			}

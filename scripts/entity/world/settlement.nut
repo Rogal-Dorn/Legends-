@@ -26,12 +26,15 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		HousesMax = 0,
 		HousesType = 1,
 		HousesTiles = [],
+		LastPreload = 0.0,
+		PreloadState = 0,
 		LastShopUpdate = 0.0,
 		LastRosterUpdate = 0.0,
 		ShopSeed = 0,
 		RosterSeed = 0,
 		Owner = null,
 		Factions = [],
+		Culture = 0,
 		ProduceString = "goods",
 		Produce = [],
 		ProduceImported = [],
@@ -83,6 +86,11 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		return this.m.IsMilitary;
 	}
 
+	function isSouthern()
+	{
+		return false;
+	}
+
 	function isConnectedTo( _s )
 	{
 		return this.m.ConnectedTo.find(_s.getID()) != null;
@@ -118,6 +126,11 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		return this.m.Modifiers;
 	}
 
+	function getCulture()
+	{
+		return this.m.Culture;
+	}
+
 	function getDeepOceanTile()
 	{
 		return this.m.DeepOceanTile;
@@ -150,7 +163,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			return false;
 		}
 
-		if (this.isMilitary())
+		if (this.isMilitary() || this.isKindOf(this, "city_state"))
 		{
 			if (!this.getOwner().isAlliedWithPlayer())
 			{
@@ -279,6 +292,26 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			});
 		}
 
+		if (this.World.Retinue.hasFollower("follower.agent"))
+		{
+			local contracts = this.getContracts();
+
+			foreach( i, c in contracts )
+			{
+				if (c.isActive())
+				{
+					continue;
+				}
+
+				ret.push({
+					id = 10 + i,
+					type = "text",
+					icon = "ui/icons/contract_scroll.png",
+					text = c.getName()
+				});
+			}
+		}
+
 		foreach( i in this.m.Factions )
 		{
 			local f = this.World.FactionManager.getFaction(i);
@@ -358,7 +391,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			BackgroundRight = this.m.UIBackgroundRight + (night ? "_night" : "") + ".png",
 			Ramp = this.m.UIRamp + (night ? "_night" : "") + ".png",
 			RampPathway = this.m.UIRampPathway != null ? this.m.UIRampPathway + (night ? "_night" : "") + ".png" : null,
-			Mood = this.m.UIMood + ".png",
+			Mood = this.m.UIMood != null ? this.m.UIMood + ".png" : null,
 			Foreground = this.m.UIForeground != null ? this.m.UIForeground + (night ? "_night" : "") + ".png" : null,
 			Water = water != null ? water + (night ? "_night" : "") + ".png" : null,
 			Slots = [],
@@ -450,7 +483,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			BackgroundRight = this.m.UIBackgroundRight + (night ? "_night" : "") + ".png",
 			Ramp = this.m.UIRamp + (night ? "_night" : "") + ".png",
 			RampPathway = this.m.UIRampPathway != null ? this.m.UIRampPathway + (night ? "_night" : "") + ".png" : null,
-			Mood = this.m.UIMood + ".png",
+			Mood = this.m.UIMood != null ? this.m.UIMood + ".png" : null,
 			Foreground = this.m.UIForeground != null ? this.m.UIForeground + (night ? "_night" : "") + ".png" : null,
 			Water = water != null ? water + (night ? "_night" : "") + ".png" : null,
 			Slots = []
@@ -573,7 +606,11 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			return [];
 		}
 
-		if (this.m.IsMilitary)
+		if (this.isSouthern())
+		{
+			return this.Const.Music.CityStateTracks;
+		}
+		else if (this.m.IsMilitary)
 		{
 			return this.Const.Music.StrongholdTracks;
 		}
@@ -686,6 +723,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		this.m.IsShowingStrength = false;
 		this.m.IsScalingDefenders = false;
 		this.m.IsShowingLabel = true;
+		this.m.VisibilityMult = 2.0;
 		this.m.Buildings.resize(6, null);
 	}
 
@@ -834,6 +872,11 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		}
 	}
 
+	function getSituations()
+	{
+		return this.m.Situations;
+	}
+
 	function hasFreeBuildingSlot()
 	{
 		for( local i = 0; i < this.m.Buildings.len(); i = ++i )
@@ -892,6 +935,26 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		else if (_building.getID() == "building.taxidermist")
 		{
 			++this.Const.World.Buildings.Taxidermists;
+		}
+		else if (_building.getID() == "building.taxidermist_oriental")
+		{
+			++this.Const.World.Buildings.TaxidermistsOriental;
+		}
+		else if (_building.getID() == "building.alchemist")
+		{
+			++this.Const.World.Buildings.Alchemists;
+		}
+		else if (_building.getID() == "building.arena")
+		{
+			++this.Const.World.Buildings.Arenas;
+		}
+		else if (_building.getID() == "building.weaponsmith_oriental")
+		{
+			++this.Const.World.Buildings.WeaponsmithsOriental;
+		}
+		else if (_building.getID() == "building.armorsmith_oriental")
+		{
+			++this.Const.World.Buildings.ArmorsmithsOriental;
 		}
 	}
 
@@ -1027,7 +1090,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 				_num = --_num;
 				tries = 0;
 
-				if (entity.isUsable() && this.Math.rand(1, 100) <= 9)
+				if (entity.isUsable() && !entity.isMilitary() && this.Math.rand(1, 100) <= 8)
 				{
 					entity.setActive(false);
 				}
@@ -1068,6 +1131,19 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		return false;
 	}
 
+	function getBuilding( _id )
+	{
+		foreach( b in this.m.Buildings )
+		{
+			if (b != null && b.getID() == _id)
+			{
+				return b;
+			}
+		}
+
+		return null;
+	}
+
 	function getRandomName( _names )
 	{
 		local name;
@@ -1098,13 +1174,13 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 	function build()
 	{
-		this.onBuild();
-
 		if (this.m.IsCoastal && (this.m.Buildings[3] == null || this.m.Buildings[3].getID() != "building.port"))
 		{
 			this.addBuilding(this.new("scripts/entity/world/settlements/buildings/port_building"), 3);
 			this.m.UIBackgroundLeft = "ui/settlements/water_01";
 		}
+
+		this.onBuild();
 
 		if (this.m.Size <= 1)
 		{
@@ -1122,6 +1198,11 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		if (this.isMilitary())
 		{
 			this.m.Resources += 50;
+		}
+
+		if (this.isKindOf(this, "city_state"))
+		{
+			this.m.Resources += 100;
 		}
 
 		if (this.m.HousesMax > 0)
@@ -1142,11 +1223,11 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 					if (nextTile.IsOccupied)
 					{
 					}
-					else if (nextTile.Type == this.Const.World.TerrainType.Plains || nextTile.Type == this.Const.World.TerrainType.Tundra || nextTile.Type == this.Const.World.TerrainType.Steppe || nextTile.Type == this.Const.World.TerrainType.Snow)
+					else if (nextTile.Type == this.Const.World.TerrainType.Oasis || nextTile.Type == this.Const.World.TerrainType.Plains || nextTile.Type == this.Const.World.TerrainType.Tundra || nextTile.Type == this.Const.World.TerrainType.Steppe || nextTile.Type == this.Const.World.TerrainType.Snow)
 					{
 						candidates.push(nextTile);
 					}
-					else if (nextTile.Type == this.Const.World.TerrainType.Hills || nextTile.Type == this.Const.World.TerrainType.Forest || nextTile.Type == this.Const.World.TerrainType.SnowyForest || nextTile.Type == this.Const.World.TerrainType.LeaveForest || nextTile.Type == this.Const.World.TerrainType.AutumnForest || nextTile.Type == this.Const.World.TerrainType.Swamp)
+					else if (nextTile.Type == this.Const.World.TerrainType.Desert || nextTile.Type == this.Const.World.TerrainType.Hills || nextTile.Type == this.Const.World.TerrainType.Forest || nextTile.Type == this.Const.World.TerrainType.SnowyForest || nextTile.Type == this.Const.World.TerrainType.LeaveForest || nextTile.Type == this.Const.World.TerrainType.AutumnForest || nextTile.Type == this.Const.World.TerrainType.Swamp)
 					{
 						poorCandidates.push(nextTile);
 					}
@@ -1183,6 +1264,49 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			if (a.isActive())
 			{
 				a.onUpdateProduce(this.m.Produce);
+			}
+		}
+	}
+
+	function updateSituations()
+	{
+		local garbage = [];
+
+		foreach( i, s in this.m.Situations )
+		{
+			if (!s.isValid())
+			{
+				garbage.push(i);
+			}
+			else if (s.getValidUntil() == 0)
+			{
+				if (!this.World.Contracts.hasContractWithSituation(s.getInstanceID()))
+				{
+					garbage.push(i);
+				}
+			}
+		}
+
+		garbage.reverse();
+
+		foreach( g in garbage )
+		{
+			this.m.Situations[g].onRemoved(this);
+			this.m.Situations.remove(g);
+		}
+
+		this.m.Modifiers.reset();
+
+		foreach( s in this.m.Situations )
+		{
+			s.onUpdate(this.m.Modifiers);
+		}
+
+		foreach( building in this.m.Buildings )
+		{
+			if (building != null)
+			{
+				building.onSettlementEntered();
 			}
 		}
 	}
@@ -1234,8 +1358,8 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			5,
 			7
 		];
-		local rosterMin = minRosterSizes[this.m.Size];
-		local rosterMax = minRosterSizes[this.m.Size] + activeLocations;
+		local rosterMin = minRosterSizes[this.m.Size] + this.World.Assets.m.RosterSizeAdditionalMin + (this.isSouthern() ? 2 : 0);
+		local rosterMax = minRosterSizes[this.m.Size] + activeLocations + this.World.Assets.m.RosterSizeAdditionalMax + (this.isSouthern() ? 1 : 0);
 
 		if (this.World.FactionManager.getFaction(this.m.Factions[0]).getPlayerRelation() < 50)
 		{
@@ -1706,46 +1830,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 	{
 		this.location.onEnter();
 		this.m.CurrentBuilding = null;
-		local garbage = [];
-
-		foreach( i, s in this.m.Situations )
-		{
-			if (!s.isValid())
-			{
-				garbage.push(i);
-			}
-			else if (s.getValidUntil() == 0)
-			{
-				if (!this.World.Contracts.hasContractWithSituation(s.getInstanceID()))
-				{
-					garbage.push(i);
-				}
-			}
-		}
-
-		garbage.reverse();
-
-		foreach( g in garbage )
-		{
-			this.m.Situations[g].onRemoved(this);
-			this.m.Situations.remove(g);
-		}
-
-		this.m.Modifiers.reset();
-
-		foreach( s in this.m.Situations )
-		{
-			s.onUpdate(this.m.Modifiers);
-		}
-
-		foreach( building in this.m.Buildings )
-		{
-			if (building != null)
-			{
-				building.onSettlementEntered();
-			}
-		}
-
+		this.updateSituations();
 		this.updateRoster();
 		this.updateShop();
 		this.Math.seedRandom(this.Time.getRealTime());
@@ -1849,7 +1934,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 		this.m.UIBackground = this.Const.World.TerrainSettlementImages[highest].Background;
 		this.m.UIRamp = this.Const.World.TerrainSettlementImages[highest].Ramp;
-		this.m.UIForeground = this.m.HousesMax < 5 ? this.Const.World.TerrainSettlementImages[highest].Foreground : "ui/settlements/foreground_04";
+		this.m.UIForeground = this.m.HousesMax < 5 || this.isSouthern() ? this.Const.World.TerrainSettlementImages[highest].Foreground : "ui/settlements/foreground_04";
 		this.m.UIMood = this.Const.World.TerrainSettlementImages[highest].Mood;
 		this.World.createRoster(this.getID());
 		this.registerThinker();
@@ -1886,6 +1971,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		this.location.onSerialize(_out);
 		_out.writeBool(this.m.IsActive);
 		_out.writeBool(this.m.IsCoastal);
+		_out.writeF32(this.m.LastPreload);
 		_out.writeF32(this.m.LastShopUpdate);
 		_out.writeF32(this.m.LastRosterUpdate);
 		_out.writeI32(this.m.ShopSeed);
@@ -1961,6 +2047,12 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		this.location.onDeserialize(_in);
 		this.m.IsActive = _in.readBool();
 		this.m.IsCoastal = _in.readBool();
+
+		if (_in.getMetaData().getVersion() >= 52)
+		{
+			this.m.LastPreload = _in.readF32();
+		}
+
 		this.m.LastShopUpdate = _in.readF32();
 		this.m.LastRosterUpdate = _in.readF32();
 		this.m.ShopSeed = _in.readI32();

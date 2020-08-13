@@ -83,6 +83,8 @@ this.send_barbarian_roamers_action <- this.inherit("scripts/factions/faction_act
 		local party = this.getFaction().spawnEntity(settlement.getTile(), "Barbarians", false, this.Const.World.Spawn.BarbarianHunters, this.Math.min(settlement.getResources(), this.Math.rand(60, 110)));
 		party.getSprite("banner").setBrush(settlement.getBanner());
 		party.setDescription("A band of barbarians out to hunt game.");
+		party.setFootprintType(this.Const.World.FootprintsType.Barbarians);
+		party.getFlags().set("IsRandomlySpawned", true);
 		party.getLoot().ArmorParts = this.Math.rand(0, 5);
 		party.getLoot().Medicine = this.Math.rand(0, 6);
 		party.getLoot().Ammo = this.Math.rand(10, 30);

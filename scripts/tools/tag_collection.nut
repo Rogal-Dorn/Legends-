@@ -59,6 +59,30 @@ this.tag_collection <- {
 		}
 	}
 
+	function getAsInt( _tag )
+	{
+		if (this.m.rawin(_tag))
+		{
+			return this.m.rawget(_tag).Value;
+		}
+		else
+		{
+			return 0;
+		}
+	}
+
+	function getAsFloat( _tag )
+	{
+		if (this.m.rawin(_tag))
+		{
+			return this.m.rawget(_tag).Value;
+		}
+		else
+		{
+			return 0.0;
+		}
+	}
+
 	function onSerialize( _out )
 	{
 		_out.writeU16(this.m.len());

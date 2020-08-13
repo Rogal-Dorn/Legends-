@@ -23,6 +23,7 @@ this.zombie_betrayer <- this.inherit("scripts/entity/tactical/enemies/zombie_kni
 		b.IsImmuneToPoison = true;
 		b.DamageTotalMult = 1.25;
 		b.DamageReceivedArmorMult = 0.75;
+		b.FatigueDealtPerHitMult = 2.0;
 		this.m.Skills.update();
 	}
 

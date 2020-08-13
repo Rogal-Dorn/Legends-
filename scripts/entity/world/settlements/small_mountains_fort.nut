@@ -57,6 +57,7 @@ this.small_mountains_fort <- this.inherit("scripts/entity/world/settlement", {
 		this.m.UISprite = "ui/settlement_sprites/stronghold_01.png";
 		this.m.Sprite = "world_stronghold_01";
 		this.m.Lighting = "world_stronghold_01_light";
+		this.m.Culture = this.Const.World.Culture.Neutral;
 		this.m.IsMilitary = true;
 		this.m.Size = 1;
 		this.m.HousesType = 1;

@@ -91,7 +91,7 @@ this.mountains_are_dangerous_event <- this.inherit("scripts/events/event", {
 	{
 		local currentTile = this.World.State.getPlayer().getTile();
 
-		if (currentTile.Type != this.Const.World.TerrainType.Mountains)
+		if (currentTile.Type != this.Const.World.TerrainType.Mountains || this.World.Retinue.hasFollower("follower.scout"))
 		{
 			return;
 		}

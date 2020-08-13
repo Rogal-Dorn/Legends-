@@ -47,7 +47,7 @@ this.lindwurm_helmet <- this.inherit("scripts/items/helmets/named/named_helmet",
 
 		if (c != null && c.getActor() != null && !c.getActor().isNull())
 		{
-			this.m.Container.getActor().getTags().add("head_immune_to_acid");
+			this.m.Container.getActor().getFlags().add("head_immune_to_acid");
 		}
 	}
 
@@ -57,7 +57,7 @@ this.lindwurm_helmet <- this.inherit("scripts/items/helmets/named/named_helmet",
 
 		if (c != null && c.getActor() != null && !c.getActor().isNull())
 		{
-			this.m.Container.getActor().getTags().remove("head_immune_to_acid");
+			this.m.Container.getActor().getFlags().remove("head_immune_to_acid");
 		}
 
 		this.helmet.onUnequip();

@@ -46,6 +46,35 @@ this.raze_attached_location_action <- this.inherit("scripts/factions/faction_act
 			return;
 		}
 
+		local hasActiveLocation = false;
+
+		foreach( s in _faction.getSettlements() )
+		{
+			if (s.isMilitary() || s.getAttachedLocations().len() == 0 || !s.isDiscovered())
+			{
+				continue;
+			}
+
+			foreach( a in s.getAttachedLocations() )
+			{
+				if (a.isActive() && a.isUsable() && !a.isMilitary())
+				{
+					hasActiveLocation = true;
+					break;
+				}
+			}
+
+			if (hasActiveLocation)
+			{
+				break;
+			}
+		}
+
+		if (!hasActiveLocation)
+		{
+			return;
+		}
+
 		this.m.Score = 1;
 	}
 
@@ -60,7 +89,7 @@ this.raze_attached_location_action <- this.inherit("scripts/factions/faction_act
 
 		foreach( s in _faction.getSettlements() )
 		{
-			if (s.isMilitary() || s.getAttachedLocations().len() == 0)
+			if (s.isMilitary() || !s.isDiscovered() || s.getAttachedLocations().len() == 0)
 			{
 				continue;
 			}

@@ -11,12 +11,12 @@ this.named_full_metal_heater_shield <- this.inherit("scripts/items/shields/named
 		this.m.SoundOnHit = this.Const.Sound.ShieldHitMetal;
 		this.m.AddGenericSkill = true;
 		this.m.ShowOnCharacter = true;
-		this.m.Value = 1000;
+		this.m.Value = 1500;
 		this.m.MeleeDefense = 20;
 		this.m.RangedDefense = 15;
-		this.m.StaminaModifier = -18;
-		this.m.Condition = 50;
-		this.m.ConditionMax = 50;
+		this.m.StaminaModifier = -16;
+		this.m.Condition = 60;
+		this.m.ConditionMax = 60;
 		this.randomizeValues();
 	}
 

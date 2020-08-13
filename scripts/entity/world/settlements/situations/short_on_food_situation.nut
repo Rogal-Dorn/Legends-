@@ -7,6 +7,10 @@ this.short_on_food_situation <- this.inherit("scripts/entity/world/settlements/s
 		this.m.Name = "Short on Food";
 		this.m.Description = "Recent events have left this place short on food. As people are on the verge of starving, food is hard to come by and prices are on the rise.";
 		this.m.Icon = "ui/settlement_status/settlement_effect_04.png";
+		this.m.Rumors = [
+			"The men and women in %settlement% are starving, I heard, with nothing but dirt to eat. I don\'t think I\'ll ever complain about my mouldy grain soup again!",
+			"Some farmer just arrived today from %settlement%. Told stories of slain cattle, burned fields and empty larders. Looked like a damn walking skeleton himself!"
+		];
 		this.m.IsStacking = false;
 	}
 

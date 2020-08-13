@@ -7,6 +7,10 @@ this.warehouse_burned_down_situation <- this.inherit("scripts/entity/world/settl
 		this.m.Name = "Warehouse Burned Down";
 		this.m.Description = "A recent fire in a warehouse caused significant damage. What survived the fire is now sold at high prices.";
 		this.m.Icon = "ui/settlement_status/settlement_effect_21.png";
+		this.m.Rumors = [
+			"Seen the smoke on the horizon last night? They say it was the big warehouse in %settlement% burning down to the ground.",
+			"I heard they caught the arsonist lighting the warehouse up in %settlement%. Hanged him from a tree right then and now, but it\'ll take them a lot longer to build up the warehouse again."
+		];
 		this.m.IsStacking = false;
 		this.m.ValidDays = 5;
 	}

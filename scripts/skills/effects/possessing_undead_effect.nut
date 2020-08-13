@@ -46,6 +46,12 @@ this.possessing_undead_effect <- this.inherit("scripts/skills/skill", {
 
 			this.removeSelf();
 		}
+
+		if (_damageHitpoints >= this.getContainer().getActor().getHitpoints())
+		{
+			this.m.IsAlive = false;
+			this.onRemoved();
+		}
 	}
 
 	function onAdded()
@@ -94,15 +100,6 @@ this.possessing_undead_effect <- this.inherit("scripts/skills/skill", {
 				skill.setPossessor(null);
 				this.m.Possessed.getSkills().remove(skill);
 			}
-		}
-	}
-
-	function onDamageReceived( _attacker, _damageHitpoints, _damageArmor )
-	{
-		if (_damageHitpoints >= this.getContainer().getActor().getHitpoints())
-		{
-			this.m.IsAlive = false;
-			this.onRemoved();
 		}
 	}
 

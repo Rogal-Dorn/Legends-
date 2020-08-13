@@ -2,7 +2,7 @@
  *  @Project:		Battle Brothers
  *	@Company:		Overhype Studios
  *
- *	@Copyright:		(c) Overhype Studios | 2013 - 2017
+ *	@Copyright:		(c) Overhype Studios | 2013 - 2020
  * 
  *  @Author:		Overhype Studios
  *  @Date:			12.04.2017 (refactored: 03.10.2017)

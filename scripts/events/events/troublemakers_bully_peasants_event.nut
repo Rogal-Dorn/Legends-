@@ -11,7 +11,7 @@ this.troublemakers_bully_peasants_event <- this.inherit("scripts/events/event", 
 		this.m.Cooldown = 40.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_20.png[/img]Entering %townname%, it isn\'t long until %troublemaker% is bothering the locals. He\'s slapping buckets out of their hands and kicking women into the mud. When an old man confronts him, the sellsword draws out his weapon. Other peasants beg that you put a stop to this at once.",
+			Text = "%townImage%Entering %townname%, it isn\'t long until %troublemaker% is bothering the locals. He\'s slapping buckets out of their hands and kicking women into the mud. When an old man confronts him, the sellsword draws out his weapon. Other peasants beg that you put a stop to this at once.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -64,7 +64,7 @@ this.troublemakers_bully_peasants_event <- this.inherit("scripts/events/event", 
 		});
 		this.m.Screens.push({
 			ID = "B",
-			Text = "[img]gfx/ui/events/event_20.png[/img]You shrug. %troublemaker% doesn\'t run the old man through, but he does threaten to, raising the weapon on high. When the old man cowers, the sellsword delivers a punch that knocks the elderly right out, his teeth peppering the muck like spits of white rain. This brings a few jeers from the villagers, but they know not to contest your presence any further.\n\nA few men drag the elder away while children boo and women hiss. One child even runs up to the sellsword, pointing at him as he yells \'he\'s a bad man.\' %troublemaker% shrugs as he sheathes his weapon.%SPEECH_ON%And yet the bad man still stands. Would you also like a taste of the mud, little one?%SPEECH_OFF%The kid quickly runs off.",
+			Text = "%townImage%You shrug. %troublemaker% doesn\'t run the old man through, but he does threaten to, raising the weapon on high. When the old man cowers, the sellsword delivers a punch that knocks the elderly right out, his teeth peppering the muck like spits of white rain. This brings a few jeers from the villagers, but they know not to contest your presence any further.\n\nA few men drag the elder away while children boo and women hiss. One child even runs up to the sellsword, pointing at him as he yells \'he\'s a bad man.\' %troublemaker% shrugs as he sheathes his weapon.%SPEECH_ON%And yet the bad man still stands. Would you also like a taste of the mud, little one?%SPEECH_OFF%The kid quickly runs off.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -99,7 +99,7 @@ this.troublemakers_bully_peasants_event <- this.inherit("scripts/events/event", 
 		});
 		this.m.Screens.push({
 			ID = "C",
-			Text = "[img]gfx/ui/events/event_20.png[/img]As %troublemaker% raises his weapon on high, you grab him by the forearm and bring it back down. He swings around, looking at you sternly. The cowering old man backs off, soon collected by caretakers that shuttle him back inside before he gets himself hurt.\n\nA few other peasants linger around, watching with keen interest. You tell the sellsword to back down. He\'s paid to fight who you deem he should fight, not a bunch of peasants who are minding their own.\n\n As %troublemaker% glances around, you realize you\'ve left him no \'out\' that will save face. In his eyes, there is a look that says he\'s about to kill you. It\'d be the end of him, but he\'d go out with his suicidal pride intact. But the look fades, and embarrassment and humiliation take its place. He sheathes his weapon, spits, and remarks that he was only having some fun.",
+			Text = "%townImage%As %troublemaker% raises his weapon on high, you grab him by the forearm and bring it back down. He swings around, looking at you sternly. The cowering old man backs off, soon collected by caretakers that shuttle him back inside before he gets himself hurt.\n\nA few other peasants linger around, watching with keen interest. You tell the sellsword to back down. He\'s paid to fight who you deem he should fight, not a bunch of peasants who are minding their own.\n\n As %troublemaker% glances around, you realize you\'ve left him no \'out\' that will save face. In his eyes, there is a look that says he\'s about to kill you. It\'d be the end of him, but he\'d go out with his suicidal pride intact. But the look fades, and embarrassment and humiliation take its place. He sheathes his weapon, spits, and remarks that he was only having some fun.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -194,7 +194,7 @@ this.troublemakers_bully_peasants_event <- this.inherit("scripts/events/event", 
 		});
 		this.m.Screens.push({
 			ID = "E",
-			Text = "[img]gfx/ui/events/event_20.png[/img]%peacekeeperfull% places himself between %troublemaker% and the old man. He shakes his head \'no\' in a very modest fashion, but you can\'t help but notice that his swordhand is also on the pommel of his weapon. The troublemaking sellsword briefly seems to consider cutting the man down, but then a smile snaps across his face. He laughs as he sheathes his weapon.%SPEECH_ON%Only having a bit of fun, my brother.%SPEECH_OFF%The peasants slowly start going about their business again, but they are wary and stare side-eyed at your men for the rest of your duration in %townname%.",
+			Text = "%townImage%%peacekeeperfull% places himself between %troublemaker% and the old man. He shakes his head \'no\' in a very modest fashion, but you can\'t help but notice that his swordhand is also on the pommel of his weapon. The troublemaking sellsword briefly seems to consider cutting the man down, but then a smile snaps across his face. He laughs as he sheathes his weapon.%SPEECH_ON%Only having a bit of fun, my brother.%SPEECH_OFF%The peasants slowly start going about their business again, but they are wary and stare side-eyed at your men for the rest of your duration in %townname%.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -217,7 +217,7 @@ this.troublemakers_bully_peasants_event <- this.inherit("scripts/events/event", 
 		});
 		this.m.Screens.push({
 			ID = "F",
-			Text = "[img]gfx/ui/events/event_20.png[/img]%peacekeeperfull% steps in between %troublemaker% and the old man. The troublemaking sellsword laughs and sheathes his weapon. He turns back to the rest of the company, grinning and shaking his head, but you notice that this smile quickly fades. Before you can say anything, %troublemaker% wheels a fist back around and knocks %peacekeeper% out cold.\n\n Well, that\'s one way to mollify a mercenary.",
+			Text = "%townImage%%peacekeeperfull% steps in between %troublemaker% and the old man. The troublemaking sellsword laughs and sheathes his weapon. He turns back to the rest of the company, grinning and shaking his head, but you notice that this smile quickly fades. Before you can say anything, %troublemaker% wheels a fist back around and knocks %peacekeeper% out cold.\n\n Well, that\'s one way to mollify a mercenary.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -270,7 +270,7 @@ this.troublemakers_bully_peasants_event <- this.inherit("scripts/events/event", 
 
 		foreach( t in towns )
 		{
-			if (t.isMilitary())
+			if (t.isSouthern() || t.isMilitary())
 			{
 				continue;
 			}

@@ -57,6 +57,11 @@ this.new_campaign_menu_module <- this.inherit("scripts/ui/screens/ui_module", {
 		this.m.JSHandle.asyncCall("setStartingScenarios", _scenarios);
 	}
 
+	function setCrusadeCampaignAvailable( _available )
+	{
+		this.m.JSHandle.asyncCall("setCrusadeCampaignVisible", _available);
+	}
+
 	function onStartButtonPressed( _settings )
 	{
 		local settings = {
@@ -66,10 +71,11 @@ this.new_campaign_menu_module <- this.inherit("scripts/ui/screens/ui_module", {
 			EconomicDifficulty = _settings[3],
 			BudgetDifficulty = _settings[4],
 			Ironman = _settings[5],
-			GreaterEvil = _settings[6],
-			PermanentDestruction = _settings[7],
-			Seed = _settings[8],
-			StartingScenario = _settings[9]
+			ExplorationMode = _settings[6],
+			GreaterEvil = _settings[7],
+			PermanentDestruction = _settings[8],
+			Seed = _settings[9],
+			StartingScenario = _settings[10]
 		};
 
 		if (this.m.OnStartButtonPressedListener != null)

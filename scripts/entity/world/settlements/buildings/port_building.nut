@@ -174,6 +174,11 @@ this.port_building <- this.inherit("scripts/entity/world/settlements/buildings/b
 
 	function onClicked( _townScreen )
 	{
+		if (this.World.Contracts.getActiveContract() != null && this.World.Contracts.getActiveContract().getType() == "contract.escort_caravan")
+		{
+			return;
+		}
+
 		_townScreen.getTravelDialogModule().setData(this.getUITravelRoster());
 		_townScreen.showTravelDialog();
 		this.pushUIMenuStack();
@@ -205,7 +210,7 @@ this.port_building <- this.inherit("scripts/entity/world/settlements/buildings/b
 				continue;
 			}
 
-			if (!s.isAlliedWithPlayer() || !this.m.Settlement.getFactionOfType(this.Const.FactionType.NobleHouse).isAlliedWith(s.getFaction()))
+			if (!s.isAlliedWithPlayer() || !this.m.Settlement.getOwner().isAlliedWith(s.getFaction()))
 			{
 				continue;
 			}

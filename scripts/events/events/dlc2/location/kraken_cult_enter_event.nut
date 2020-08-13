@@ -44,8 +44,8 @@ this.kraken_cult_enter_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
-				this.World.Tags.set("IsKrakenCultVisited", true);
-				this.World.Tags.set("KrakenCultStage", 0);
+				this.World.Flags.set("IsKrakenCultVisited", true);
+				this.World.Flags.set("KrakenCultStage", 0);
 
 				if (this.World.State.getLastLocation() != null)
 				{
@@ -120,7 +120,7 @@ this.kraken_cult_enter_event <- this.inherit("scripts/events/event", {
 					Text = "I\'ll bring you the hides.",
 					function getResult( _event )
 					{
-						this.World.Tags.set("KrakenCultStage", 1);
+						this.World.Flags.set("KrakenCultStage", 1);
 						return 0;
 					}
 
@@ -207,7 +207,7 @@ this.kraken_cult_enter_event <- this.inherit("scripts/events/event", {
 					Text = "From dust to finding dust.",
 					function getResult( _event )
 					{
-						this.World.Tags.set("KrakenCultStage", 2);
+						this.World.Flags.set("KrakenCultStage", 2);
 						return 0;
 					}
 
@@ -384,15 +384,15 @@ this.kraken_cult_enter_event <- this.inherit("scripts/events/event", {
 
 	function onDetermineStartScreen()
 	{
-		if (!this.World.Tags.get("IsKrakenCultVisited"))
+		if (!this.World.Flags.get("IsKrakenCultVisited"))
 		{
 			return "A";
 		}
-		else if (this.World.Tags.get("KrakenCultStage") == 0)
+		else if (this.World.Flags.get("KrakenCultStage") == 0)
 		{
 			return "B";
 		}
-		else if (this.World.Tags.get("KrakenCultStage") == 1)
+		else if (this.World.Flags.get("KrakenCultStage") == 1)
 		{
 			local stash = this.World.Assets.getStash().getItems();
 			local hides = 0;
@@ -414,7 +414,7 @@ this.kraken_cult_enter_event <- this.inherit("scripts/events/event", {
 				return "C";
 			}
 		}
-		else if (this.World.Tags.get("KrakenCultStage") == 2)
+		else if (this.World.Flags.get("KrakenCultStage") == 2)
 		{
 			local stash = this.World.Assets.getStash().getItems();
 			local dust = 0;

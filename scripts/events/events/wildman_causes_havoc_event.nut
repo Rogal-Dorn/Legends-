@@ -11,7 +11,7 @@ this.wildman_causes_havoc_event <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 50.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_20.png[/img]Civilization is no place for a wildman like %wildman% and he quickly proves it.\n\nApparently, the damned man went crazy while in a shop and trashed the whole place. As the story goes, he just walked in and started taking things, not quite understanding the social norms of paying for goods. The shop owner then came after him with a broom, trying to shoo the man out of his store. Believing the broom a monster, the wildman proceeded to go completely crazy. Judging by the reports, it was quite the commotion, up to and including shite throwing.\n\nNow the shop owner is in your face demanding compensation for the damage done. Apparently he\'s wanting %compensation% crowns. Behind him, a few town militia stand with very watchful eyes.",
+			Text = "%townImage%Civilization is no place for a wildman like %wildman% and he quickly proves it.\n\nApparently, the damned man went crazy while in a shop and trashed the whole place. As the story goes, he just walked in and started taking things, not quite understanding the social norms of paying for goods. The shop owner then came after him with a broom, trying to shoo the man out of his store. Believing the broom a monster, the wildman proceeded to go completely crazy. Judging by the reports, it was quite the commotion, up to and including shite throwing.\n\nNow the shop owner is in your face demanding compensation for the damage done. Apparently he\'s wanting %compensation% crowns. Behind him, a few town militia stand with very watchful eyes.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -49,7 +49,7 @@ this.wildman_causes_havoc_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "B",
-			Text = "[img]gfx/ui/events/event_20.png[/img]You push the shop owner away, telling him that you owe nothing. When he jumps forward again, your hand deftly moves to the pommel of your sword, stopping the man in one swift motion. He raises his hands up, nodding as he backs off. A few townspeople see this and skirt by, trying to avoid your gaze. The militiamen notice, but they seem uncertain on whether to take action or not.",
+			Text = "%townImage%You push the shop owner away, telling him that you owe nothing. When he jumps forward again, your hand deftly moves to the pommel of your sword, stopping the man in one swift motion. He raises his hands up, nodding as he backs off. A few townspeople see this and skirt by, trying to avoid your gaze. The militiamen notice, but they seem uncertain on whether to take action or not.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -100,7 +100,7 @@ this.wildman_causes_havoc_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "D",
-			Text = "[img]gfx/ui/events/event_20.png[/img]Surveying the damage, you agree to compensate the businessman. But this isn\'t your fault, it\'s the wildman\'s. You dock his pay: for some time to come, the mercenary\'s earnings will be halved. Furthermore, you take what earnings he\'s made and hand them over to the shop owner. It doesn\'t even begin to cover the damages, but it\'s a start. One man is left happy, and another quite disgruntled.\n\nYou tell the wild cretin that now he\'ll think twice about smearing shit all over someone else\'s walls. But the wildman doesn\'t seem to understand you. He just understands that the gold he once owned has been given to someone else, and he eyes its departure with sadness and bottled anger.",
+			Text = "%townImage%Surveying the damage, you agree to compensate the businessman. But this isn\'t your fault, it\'s the wildman\'s. You dock his pay: for some time to come, the mercenary\'s earnings will be halved. Furthermore, you take what earnings he\'s made and hand them over to the shop owner. It doesn\'t even begin to cover the damages, but it\'s a start. One man is left happy, and another quite disgruntled.\n\nYou tell the wild cretin that now he\'ll think twice about smearing shit all over someone else\'s walls. But the wildman doesn\'t seem to understand you. He just understands that the gold he once owned has been given to someone else, and he eyes its departure with sadness and bottled anger.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -249,6 +249,11 @@ this.wildman_causes_havoc_event <- this.inherit("scripts/events/event", {
 
 		foreach( t in towns )
 		{
+			if (t.isSouthern() || t.isMilitary())
+			{
+				continue;
+			}
+
 			if (t.getTile().getDistanceTo(playerTile) <= 3 && t.isAlliedWithPlayer())
 			{
 				nearTown = true;

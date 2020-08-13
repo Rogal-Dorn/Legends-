@@ -61,7 +61,7 @@ this.raiders_origin_redemption_event <- this.inherit("scripts/events/event", {
 			{
 				this.Characters.push(_event.m.Monk.getImagePath());
 				this.Banner = _event.m.NobleHouse.getUIBannerSmall();
-				this.World.Tags.set("IsRaidersRedemption", true);
+				this.World.Flags.set("IsRaidersRedemption", true);
 				this.World.Assets.addBusinessReputation(50);
 				this.World.Assets.addMoney(-2000);
 				this.List.push({
@@ -97,7 +97,7 @@ this.raiders_origin_redemption_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
-		if (this.World.Tags.get("IsRaidersRedemption"))
+		if (this.World.Flags.get("IsRaidersRedemption"))
 		{
 			return;
 		}

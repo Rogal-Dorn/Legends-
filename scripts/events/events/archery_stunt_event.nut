@@ -363,11 +363,6 @@ this.archery_stunt_event <- this.inherit("scripts/events/event", {
 		]);
 	}
 
-	function onDetermineStartScreen()
-	{
-		return "A";
-	}
-
 	function onClear()
 	{
 		this.m.Clown = null;

@@ -31,12 +31,12 @@ this.discover_unique_locations_ambition <- this.inherit("scripts/ambitions/ambit
 			return;
 		}
 
-		if (!this.World.Tags.has("LegendaryLocationsDiscovered"))
+		if (!this.World.Flags.has("LegendaryLocationsDiscovered"))
 		{
-			this.World.Tags.set("LegendaryLocationsDiscovered", 0);
+			this.World.Flags.set("LegendaryLocationsDiscovered", 0);
 		}
 
-		if (this.World.Tags.get("LegendaryLocationsDiscovered") >= 11 - 3)
+		if (this.World.Flags.get("LegendaryLocationsDiscovered") >= 11 - 3)
 		{
 			return;
 		}

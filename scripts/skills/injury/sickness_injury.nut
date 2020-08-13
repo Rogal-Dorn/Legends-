@@ -125,15 +125,47 @@ this.sickness_injury <- this.inherit("scripts/skills/injury/injury", {
 		}
 	}
 
-	function onUpdate( _properties )
+	function onTurnStart()
 	{
-		this.injury.onUpdate(_properties);
-
-		if (!_properties.IsAffectedByInjuries || this.m.IsFresh && !_properties.IsAffectedByFreshInjuries)
+		if (this.Math.rand(1, 100) <= 90)
 		{
 			return;
 		}
 
+		local bro = this.getContainer().getActor();
+		this.Sound.play("sounds/vomit_01.wav", this.Const.Sound.Volume.Actor, bro.getPos());
+		local myTile = bro.getTile();
+		local candidates = [];
+
+		for( local i = 0; i < 6; i = ++i )
+		{
+			if (!myTile.hasNextTile(i))
+			{
+			}
+			else
+			{
+				local next = myTile.getNextTile(i);
+
+				if (next.IsEmpty)
+				{
+					candidates.push(next);
+				}
+			}
+		}
+
+		if (candidates.len() == 0)
+		{
+			candidates.push(myTile);
+		}
+
+		myTile = candidates[this.Math.rand(0, candidates.len() - 1)];
+		myTile.spawnDetail("detail_vomit");
+		this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(bro) + " vomits");
+	}
+
+	function onUpdate( _properties )
+	{
+		this.injury.onUpdate(_properties);
 		_properties.HitpointsMult *= 0.75;
 		_properties.BraveryMult *= 0.75;
 		_properties.InitiativeMult *= 0.75;

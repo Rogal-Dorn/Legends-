@@ -104,6 +104,12 @@ this.ai_line_breaker <- this.inherit("scripts/ai/tactical/behavior", {
 				score = score * this.Const.AI.Behavior.LineBreakerExecuteMult;
 			}
 
+			if (t.getSkills().hasSkill("effects.riposte"))
+			{
+				isGoodReason = true;
+				score = score * this.Const.AI.Behavior.LineBreakerVSRiposteMult;
+			}
+
 			local numAllyZOC = pushTile.getZoneOfControlCountOtherThan(t.getAlliedFactions());
 
 			if (numAllyZOC - 1 >= 2 && numAllyZOC - 1 > pushTile.getZoneOfControlCount(t.getFaction()))
@@ -172,11 +178,6 @@ this.ai_line_breaker <- this.inherit("scripts/ai/tactical/behavior", {
 			if (isGoodReason)
 			{
 				if (t.getSkills().hasSkill("effects.shieldwall"))
-				{
-					score = score * this.Const.AI.Behavior.LineBreakerCounterSkillMult;
-				}
-
-				if (t.getSkills().hasSkill("effects.riposte"))
 				{
 					score = score * this.Const.AI.Behavior.LineBreakerCounterSkillMult;
 				}

@@ -39,6 +39,11 @@ this.ai_alp_teleport <- this.inherit("scripts/ai/tactical/behavior", {
 			return this.Const.AI.Behavior.Score.Zero;
 		}
 
+		if (this.Tactical.TurnSequenceBar.getActiveEntity() != null && this.Tactical.TurnSequenceBar.getActiveEntity().getID() == _entity.getID())
+		{
+			return this.Const.AI.Behavior.Score.Zero;
+		}
+
 		local skills = [];
 
 		foreach( skillID in this.m.PossibleSkills )
@@ -58,90 +63,104 @@ this.ai_alp_teleport <- this.inherit("scripts/ai/tactical/behavior", {
 		}
 
 		local myTile = _entity.getTile();
-		local inZonesOfControl = myTile.getZoneOfControlCountOtherThan(_entity.getAlliedFactions());
-		local targets = this.getAgent().getKnownOpponents();
 		local potentialDestinations = [];
 
-		foreach( t in targets )
+		if (this.Const.Tactical.Actor.Alp.TeleportTargets.len() == 0 || this.Const.Tactical.Actor.Alp.TeleportFrame != this.Time.getFrame())
 		{
-			if (t.Actor.isNull())
+			this.Const.Tactical.Actor.Alp.TeleportTargets = [];
+			this.Const.Tactical.Actor.Alp.TeleportFrame = this.Time.getFrame();
+			local targets = this.getAgent().getKnownOpponents();
+
+			foreach( t in targets )
 			{
-				continue;
-			}
-
-			local targetValue = this.queryTargetValue(_entity, t.Actor);
-
-			if (t.Actor.getCurrentProperties().IsStunned && t.Actor.getSkills().hasSkill("effects.sleeping"))
-			{
-				targetValue = targetValue * 1.33;
-			}
-
-			local potentialTiles = this.queryDestinationsInMeleeRange(t.Actor.getTile(), this.getProperties().EngageRangeMin, this.getProperties().EngageRangeMax);
-
-			foreach( tile in potentialTiles )
-			{
-				if (!tile.IsEmpty || tile.Type == this.Const.Tactical.TerrainType.Impassable)
+				if (t.Actor.isNull())
 				{
 					continue;
 				}
 
-				local score = 16;
-				score = score - tile.getZoneOfControlCountOtherThan(_entity.getAlliedFactions()) * 6.0;
-				score = score + tile.TVTotal;
+				local targetValue = this.queryTargetValue(_entity, t.Actor);
 
-				foreach( o in targets )
+				if (t.Actor.getCurrentProperties().IsStunned && t.Actor.getSkills().hasSkill("effects.sleeping"))
 				{
-					if (o.Actor.isNull() || o.Actor.getID() == t.Actor.getID())
-					{
-						continue;
-					}
-
-					if (o.Actor.getMoraleState() == this.Const.MoraleState.Fleeing)
-					{
-						continue;
-					}
-
-					local d = o.Actor.getTile().getDistanceTo(tile);
-
-					if (d <= 3)
-					{
-						score = score - 2.0;
-					}
+					targetValue = targetValue * 1.5;
 				}
 
-				for( local i = 0; i < 6; i = ++i )
+				if (t.Actor.getCurrentProperties().MoraleCheckBraveryMult[1] > 0.0)
 				{
-					if (!tile.hasNextTile(i))
-					{
-					}
-					else
-					{
-						local nextTile = tile.getNextTile(i);
+					targetValue = targetValue / t.Actor.getCurrentProperties().MoraleCheckBraveryMult[1];
+				}
 
-						if (nextTile.IsOccupiedByActor && nextTile.getEntity().getType() == this.Const.EntityType.Alp)
+				local potentialTiles = this.queryDestinationsInRange(t.Actor.getTile(), this.getProperties().EngageRangeMin, this.getProperties().EngageRangeMax);
+
+				foreach( tile in potentialTiles )
+				{
+					if (!tile.IsEmpty || tile.Type == this.Const.Tactical.TerrainType.Impassable)
+					{
+						continue;
+					}
+
+					local score = 60.0 + 40.0 * targetValue;
+					score = score - tile.getZoneOfOccupationCountOtherThan(_entity.getAlliedFactions()) * 20.0;
+					score = score + tile.TVTotal;
+					score = score - (tile.Properties.Effect != null && !tile.Properties.Effect.IsPositive ? 40.0 : 0.0);
+
+					foreach( o in targets )
+					{
+						if (o.Actor.isNull() || o.Actor.getID() == t.Actor.getID())
 						{
-							score = score - 6.0;
+							continue;
+						}
+
+						if (o.Actor.getMoraleState() == this.Const.MoraleState.Fleeing || o.Actor.getCurrentProperties().IsStunned)
+						{
+							continue;
+						}
+
+						local d = o.Actor.getTile().getDistanceTo(tile);
+
+						if (d <= 3)
+						{
+							score = score - 5.0;
 						}
 					}
-				}
 
-				if (score >= 0)
-				{
-					score = score * targetValue;
-				}
-				else
-				{
-					score = score / targetValue;
-				}
-
-				if (score > 0)
-				{
-					potentialDestinations.push({
+					this.Const.Tactical.Actor.Alp.TeleportTargets.push({
 						Tile = tile,
 						Score = score
 					});
 				}
 			}
+		}
+
+		foreach( pd in this.Const.Tactical.Actor.Alp.TeleportTargets )
+		{
+			if (!pd.Tile.IsEmpty || pd.Tile.Type == this.Const.Tactical.TerrainType.Impassable)
+			{
+				continue;
+			}
+
+			local score = pd.Score;
+
+			for( local i = 0; i < 6; i = ++i )
+			{
+				if (!pd.Tile.hasNextTile(i))
+				{
+				}
+				else
+				{
+					local nextTile = pd.Tile.getNextTile(i);
+
+					if (nextTile.IsOccupiedByActor && nextTile.getEntity().getType() == this.Const.EntityType.Alp)
+					{
+						score = score - 10.0;
+					}
+				}
+			}
+
+			potentialDestinations.push({
+				Tile = pd.Tile,
+				Score = score
+			});
 		}
 
 		if (potentialDestinations.len() == 0)

@@ -5289,6 +5289,31 @@ gt.Const.World.Spawn.BanditBoss <- [
 				Num = 3
 			}
 		]
+	},
+	{
+		Cost = 0,
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.HedgeKnight,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.BanditRaider,
+				Num = 14
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.BanditMarksman,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.MasterArcher,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.BanditLeader,
+				Num = 1
+			}
+		]
 	}
 ];
 gt.Const.World.Spawn.BanditsDisguisedAsDirewolves <- [

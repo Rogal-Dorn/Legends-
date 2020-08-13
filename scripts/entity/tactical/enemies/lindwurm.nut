@@ -55,9 +55,9 @@ this.lindwurm <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.Idle] = 2.0;
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.Move] = 1.5;
 		this.m.SoundPitch = this.Math.rand(95, 105) * 0.01;
-		this.getTags().add("body_immune_to_acid");
-		this.getTags().add("head_immune_to_acid");
-		this.getTags().add("lindwurm");
+		this.getFlags().add("body_immune_to_acid");
+		this.getFlags().add("head_immune_to_acid");
+		this.getFlags().add("lindwurm");
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/lindwurm_agent");
 		this.m.AIAgent.setActor(this);
 	}
@@ -214,6 +214,7 @@ this.lindwurm <- this.inherit("scripts/entity/tactical/actor", {
 	{
 		if (this.m.Tail != null && !this.m.Tail.isNull() && this.m.Tail.isAlive())
 		{
+			this.m.Tail.m.IsAlive = false;
 			this.m.Tail.die();
 			this.m.Tail = null;
 		}

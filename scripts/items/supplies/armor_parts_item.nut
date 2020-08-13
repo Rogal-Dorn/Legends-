@@ -43,7 +43,8 @@ this.armor_parts_item <- this.inherit("scripts/items/item", {
 	{
 		if (("State" in this.World) && this.World.State != null && this.World.State.getCurrentTown() != null)
 		{
-			local isBuildingPresent = this.World.State.getCurrentTown().hasAttachedLocation("attached_location.workshop") || this.World.State.getCurrentTown().hasAttachedLocation("attached_location.leather_tanner") || this.World.State.getCurrentTown().hasBuilding("building.armorsmith") || this.World.State.getCurrentTown().hasBuilding("building.weaponsmith");
+			local t = this.World.State.getCurrentTown();
+			local isBuildingPresent = t.hasAttachedLocation("attached_location.workshop") || t.hasAttachedLocation("attached_location.leather_tanner") || t.hasBuilding("building.armorsmith") || t.hasBuilding("building.armorsmith_oriental") || t.hasBuilding("building.weaponsmith") || t.hasBuilding("building.weaponsmith_oriental");
 			return this.Math.max(this.getSellPrice(), this.Math.ceil(this.getValue() * this.getPriceMult() * this.Const.Difficulty.BuyPriceMult[this.World.Assets.getEconomicDifficulty()] * this.World.State.getCurrentTown().getBuyPriceMult() * (isBuildingPresent ? 1.0 : 1.5)));
 		}
 

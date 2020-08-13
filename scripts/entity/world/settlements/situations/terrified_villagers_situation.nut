@@ -7,6 +7,10 @@ this.terrified_villagers_situation <- this.inherit("scripts/entity/world/settlem
 		this.m.Name = "Terrified Villagers";
 		this.m.Description = "The villagers here are terrified of unknown horrors. Fewer potential recruits are to be found on the streets, and people deal less favourably with strangers.";
 		this.m.Icon = "ui/settlement_status/settlement_effect_09.png";
+		this.m.Rumors = [
+			"The dead ain\'t really dead, sometimes they come back to haunt the living! Don\'t believe me? Just head over to %settlement% and see for yourself!",
+			"You look like an able swordsman! I heard rumors of the dead walking again near %settlement%. Humbug probably, but frightened folks often pay good crowns to feel safe again."
+		];
 	}
 
 	function onUpdate( _modifiers )

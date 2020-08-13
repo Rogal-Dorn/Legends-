@@ -73,6 +73,13 @@ this.injury <- this.inherit("scripts/skills/skill", {
 		local time = this.getTime();
 		local mint = this.Math.max(1, (this.m.IsTreated ? this.m.HealingTimeMin * 0.5 : this.m.HealingTimeMin) - this.Math.ceil((time - this.m.TimeApplied) / this.World.getTime().SecondsPerDay));
 		local maxt = this.Math.max(1, (this.m.IsTreated ? this.m.HealingTimeMax * 0.5 : this.m.HealingTimeMax) - this.Math.floor((time - this.m.TimeApplied) / this.World.getTime().SecondsPerDay));
+
+		if (("State" in this.World) && this.World.State != null && this.World.Retinue.hasFollower("follower.surgeon"))
+		{
+			mint = this.Math.max(1, mint - 1);
+			maxt = this.Math.max(1, maxt - 1);
+		}
+
 		return {
 			Min = mint,
 			Max = maxt
@@ -110,12 +117,24 @@ this.injury <- this.inherit("scripts/skills/skill", {
 
 		if (!this.m.IsAlwaysInEffect && !this.getContainer().getActor().getCurrentProperties().IsAffectedByInjuries && this.m.IsHealingMentioned)
 		{
-			_tooltip.push({
-				id = 7,
-				type = "text",
-				icon = "ui/icons/warning.png",
-				text = "Will take effect only after combat ends due to the Iron Will effect"
-			});
+			if (("State" in this.Tactical) && this.Tactical.State != null)
+			{
+				_tooltip.push({
+					id = 7,
+					type = "text",
+					icon = "ui/icons/warning.png",
+					text = "Will take effect only after combat ends due to the Iron Will effect"
+				});
+			}
+			else
+			{
+				_tooltip.push({
+					id = 7,
+					type = "text",
+					icon = "ui/icons/warning.png",
+					text = "Will take effect again only after the next battle due to the Iron Will effect"
+				});
+			}
 		}
 
 		if (("State" in this.World) && this.World.State != null && this.World.Assets.getMedicine() <= 0 && this.m.IsHealingMentioned)
@@ -129,20 +148,18 @@ this.injury <- this.inherit("scripts/skills/skill", {
 		}
 		else
 		{
-			local time = this.getTime();
-			local mint = this.Math.max(1, (this.m.IsTreated ? this.m.HealingTimeMin * 0.5 : this.m.HealingTimeMin) - this.Math.ceil((time - this.m.TimeApplied) / this.World.getTime().SecondsPerDay));
-			local maxt = this.Math.max(1, (this.m.IsTreated ? this.m.HealingTimeMax * 0.5 : this.m.HealingTimeMax) - this.Math.floor((time - this.m.TimeApplied) / this.World.getTime().SecondsPerDay));
+			local ht = this.getHealingTime();
 			local d;
 
 			if (this.m.IsHealingMentioned)
 			{
-				if (maxt > 1 && mint == maxt)
+				if (ht.Max > 1 && ht.Min == ht.Max)
 				{
-					d = "Will heal in " + mint + " days";
+					d = "Will heal in " + ht.Min + " days";
 				}
-				else if (maxt > 1)
+				else if (ht.Max > 1)
 				{
-					d = "Will heal in " + mint + " to " + maxt + " days";
+					d = "Will heal in " + ht.Min + " to " + ht.Max + " days";
 				}
 				else
 				{
@@ -158,13 +175,13 @@ this.injury <- this.inherit("scripts/skills/skill", {
 			}
 			else
 			{
-				if (maxt > 1 && mint == maxt)
+				if (ht.Max > 1 && ht.Min == ht.Max)
 				{
-					d = "Will be gone in " + mint + " days";
+					d = "Will be gone in " + ht.Min + " days";
 				}
-				else if (maxt > 1)
+				else if (ht.Max > 1)
 				{
-					d = "Will be gone in " + mint + " to " + maxt + " days";
+					d = "Will be gone in " + ht.Min + " to " + ht.Max + " days";
 				}
 				else
 				{
@@ -237,6 +254,12 @@ this.injury <- this.inherit("scripts/skills/skill", {
 			local daysPassed = this.Math.ceil((time - this.m.TimeApplied) / this.World.getTime().SecondsPerDay);
 			local minTime = this.m.HealingTimeMin * (this.m.IsTreated ? 0.5 : 1.0);
 			local maxTime = this.m.HealingTimeMax * (this.m.IsTreated ? 0.5 : 1.0);
+
+			if (this.World.Retinue.hasFollower("follower.surgeon"))
+			{
+				minTime = this.Math.max(1, minTime - 1);
+				maxTime = this.Math.max(1, maxTime - 1);
+			}
 
 			if (daysPassed < minTime)
 			{

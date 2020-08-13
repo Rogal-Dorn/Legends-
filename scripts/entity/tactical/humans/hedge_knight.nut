@@ -176,7 +176,7 @@ this.hedge_knight <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Items.equip(this.new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]));
 		}
 
-		this.m.Skills.add(this.new("scripts/skills/actives/indomitable"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_relentless"));
 		return true;
 	}
 

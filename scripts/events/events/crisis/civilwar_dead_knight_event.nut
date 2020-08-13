@@ -91,6 +91,11 @@ this.civilwar_dead_knight_event <- this.inherit("scripts/events/event", {
 
 		foreach( t in towns )
 		{
+			if (t.isSouthern())
+			{
+				continue;
+			}
+
 			if (t.getTile().getDistanceTo(playerTile) <= 10 && t.getTile().getDistanceTo(playerTile) >= 4 && t.isAlliedWithPlayer())
 			{
 				nearTown = true;

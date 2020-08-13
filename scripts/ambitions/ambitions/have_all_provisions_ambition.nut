@@ -6,6 +6,7 @@ this.have_all_provisions_ambition <- this.inherit("scripts/ambitions/ambition", 
 		this.m.ID = "ambition.have_all_provisions";
 		this.m.Duration = 14.0 * this.World.getTime().SecondsPerDay;
 		this.m.ButtonText = "I know you are weary of our bad fortune and the stale fare day after day.\nWe shall get food and drink from all over the land and have a feast!";
+		this.m.RewardTooltip = "Significantly improve the mood of your men.";
 		this.m.UIText = "Have one of each provision type there is";
 		this.m.TooltipText = "Have one of each provision type there is in your stash to hold a feast.";
 		this.m.SuccessText = "[img]gfx/ui/events/event_61.png[/img]Having put in the legwork chasing down provisioners and haggling with farmers, you assemble a selection of foodstuffs that would catch the eye of even the most jaded nobleman. With the larder full, you call a feast for the %companyname% and invite every man to eat his fill. Your brothers waste no time. What they lack in manners, they make up in appetite. %randombrother% uses the opportunity to share his knowledge on meat.%SPEECH_ON%This beast died with joy in its heart, that\'s why it is so tender.%SPEECH_OFF%To the admiration of his comrades, %strongest_brother% gives a thunderous belch.%SPEECH_ON%I am ashamed to say it, but I must wash this down with water, not more grog.%SPEECH_OFF%After this, there is not much in the way of talk, but greasy beards and full bellies guarantee the men will be in good spirits for your next encounter.";
@@ -32,6 +33,10 @@ this.have_all_provisions_ambition <- this.inherit("scripts/ambitions/ambition", 
 		local berries = false;
 		local smoked_ham = false;
 		local wine = false;
+		local cured_rations = false;
+		local dates = false;
+		local rice = false;
+		local dried_lamb = false;
 		local items = this.World.Assets.getStash().getItems();
 
 		foreach( item in items )
@@ -85,6 +90,22 @@ this.have_all_provisions_ambition <- this.inherit("scripts/ambitions/ambition", 
 				else if (item.getID() == "supplies.wine")
 				{
 					wine = true;
+				}
+				else if (item.getID() == "supplies.dates")
+				{
+					dates = true;
+				}
+				else if (item.getID() == "supplies.rice")
+				{
+					rice = true;
+				}
+				else if (item.getID() == "supplies.dried_lamb")
+				{
+					dried_lamb = true;
+				}
+				else if (item.getID() == "supplies.cured_rations")
+				{
+					cured_rations = true;
 				}
 			}
 		}
@@ -151,6 +172,29 @@ this.have_all_provisions_ambition <- this.inherit("scripts/ambitions/ambition", 
 			ret = ret + "\n- Wine";
 		}
 
+		if (!cured_rations)
+		{
+			ret = ret + "\n- Cured Rations";
+		}
+
+		if (this.Const.DLC.Desert)
+		{
+			if (!dates)
+			{
+				ret = ret + "\n- Dates";
+			}
+
+			if (!rice)
+			{
+				ret = ret + "\n- Rice";
+			}
+
+			if (!dried_lamb)
+			{
+				ret = ret + "\n- Dried Lamb";
+			}
+		}
+
 		return ret;
 	}
 
@@ -168,6 +212,10 @@ this.have_all_provisions_ambition <- this.inherit("scripts/ambitions/ambition", 
 		local berries = false;
 		local smoked_ham = false;
 		local wine = false;
+		local cured_rations = false;
+		local dates = false;
+		local rice = false;
+		local dried_lamb = false;
 		local items = this.World.Assets.getStash().getItems();
 
 		foreach( item in items )
@@ -222,10 +270,33 @@ this.have_all_provisions_ambition <- this.inherit("scripts/ambitions/ambition", 
 				{
 					wine = true;
 				}
+				else if (item.getID() == "supplies.dates")
+				{
+					dates = true;
+				}
+				else if (item.getID() == "supplies.rice")
+				{
+					rice = true;
+				}
+				else if (item.getID() == "supplies.dried_lamb")
+				{
+					dried_lamb = true;
+				}
+				else if (item.getID() == "supplies.cured_rations")
+				{
+					cured_rations = true;
+				}
 			}
 		}
 
-		return beer && bread && cured_venison && dried_fish && dried_fruits && goat_cheese && ground_grains && mead && mushrooms && berries && smoked_ham && wine;
+		if (!this.Const.DLC.Desert)
+		{
+			return beer && bread && cured_venison && dried_fish && dried_fruits && goat_cheese && ground_grains && mead && mushrooms && berries && smoked_ham && wine && cured_rations;
+		}
+		else
+		{
+			return beer && bread && cured_venison && dried_fish && dried_fruits && goat_cheese && ground_grains && mead && mushrooms && berries && smoked_ham && wine && cured_rations && dates && rice && dried_lamb;
+		}
 	}
 
 	function onUpdateScore()

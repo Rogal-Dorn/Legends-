@@ -40,6 +40,7 @@ this.tile_hills <- this.inherit("scripts/mapgen/map_template", {
 		local tile = this.World.getTileSquare(_rect.X, _rect.Y);
 		local hills = 0;
 		local steppe = 0;
+		local desert = 0;
 		local tundra = 0;
 		local snow = 0;
 		local mountains = [];
@@ -61,6 +62,10 @@ this.tile_hills <- this.inherit("scripts/mapgen/map_template", {
 				if (nextTile.Type == this.Const.World.TerrainType.Steppe || nextTile.Type == this.Const.World.TerrainType.Hills && nextTile.Subregion == this.Const.World.TerrainType.Steppe)
 				{
 					steppe = ++steppe;
+				}
+				else if ((nextTile.Type == this.Const.World.TerrainType.Desert || nextTile.Type == this.Const.World.TerrainType.Oasis) || nextTile.Type == this.Const.World.TerrainType.Hills && nextTile.Subregion == this.Const.World.TerrainType.Desert)
+				{
+					desert = ++desert;
 				}
 				else if (nextTile.Type == this.Const.World.TerrainType.Tundra || nextTile.Type == this.Const.World.TerrainType.Hills && nextTile.Subregion == this.Const.World.TerrainType.Tundra)
 				{
@@ -127,6 +132,57 @@ this.tile_hills <- this.inherit("scripts/mapgen/map_template", {
 			else
 			{
 				tile.Type = this.Const.World.TerrainType.Steppe;
+				tile.TacticalType = this.Const.World.TerrainTacticalType.Steppe;
+
+				if (this.Math.rand(1, 100) <= 33)
+				{
+					tile.spawnDetail("world_detail_plains_stony_0" + this.Math.rand(1, 5), this.Const.World.ZLevel.Object, 0);
+				}
+			}
+		}
+		else if (desert >= 2 || mountains.len() >= 1 && desert != 0)
+		{
+			tile.setBrush("world_desert_0" + this.Math.rand(1, 4));
+			tile.Subregion = this.Const.World.TerrainType.Desert;
+
+			if (mountains.len() >= 1)
+			{
+				tile.TacticalType = this.Const.World.TerrainTacticalType.DesertHills;
+
+				if (tile.hasNextTile(this.Const.Direction.NE) && tile.getNextTile(this.Const.Direction.NE).IsOccupied)
+				{
+					tile.spawnDetail("world_steppe_hill_grey_0" + this.Math.rand(6, 6), this.Const.World.ZLevel.Terrain, this.Const.World.DetailType.Hills, false);
+				}
+				else
+				{
+					tile.spawnDetail("world_steppe_hill_grey_0" + this.Math.rand(3, 6), this.Const.World.ZLevel.Terrain, this.Const.World.DetailType.Hills, false);
+				}
+			}
+			else if (steppe >= 4 || steppe >= 3 && this.Math.rand(1, 100) <= 50)
+			{
+				tile.TacticalType = this.Const.World.TerrainTacticalType.DesertHills;
+				local r;
+
+				if (hills <= 2 || tile.hasNextTile(this.Const.Direction.NE) && tile.getNextTile(this.Const.Direction.NE).IsOccupied)
+				{
+					r = this.Math.rand(1, 3);
+				}
+				else
+				{
+					r = this.Math.rand(1, 5);
+				}
+
+				tile.spawnDetail("world_steppe_hill_grey_0" + r, this.Const.World.ZLevel.Terrain, this.Const.World.DetailType.Hills, false);
+
+				if (r <= 2 && this.Math.rand(1, 100) <= 25)
+				{
+					tile.spawnDetail("world_detail_plains_stony_0" + this.Math.rand(1, 5), this.Const.World.ZLevel.Object, 0);
+				}
+			}
+			else
+			{
+				tile.Type = this.Const.World.TerrainType.Desert;
+				tile.TacticalType = this.Const.World.TerrainTacticalType.Desert;
 
 				if (this.Math.rand(1, 100) <= 33)
 				{
@@ -181,10 +237,12 @@ this.tile_hills <- this.inherit("scripts/mapgen/map_template", {
 			if (steppe != 0)
 			{
 				tile.setBrush("world_steppe_0" + this.Math.rand(1, 3));
+				tile.TacticalType = this.Const.World.TerrainTacticalType.SteppeHills;
 			}
 			else
 			{
 				tile.setBrush("world_grassland_0" + this.Math.rand(1, 4));
+				tile.TacticalType = this.Const.World.TerrainTacticalType.Hills;
 			}
 
 			if (mountains.len() >= 1)
@@ -215,7 +273,7 @@ this.tile_hills <- this.inherit("scripts/mapgen/map_template", {
 					{
 						tile.spawnDetail("world_detail_flowers_0" + this.Math.rand(1, 6), this.Const.World.ZLevel.Object, this.Const.World.DetailType.Hills, false);
 					}
-					else
+					else if (_rect.Y > this.Const.World.Settings.SizeY * 0.25)
 					{
 						tile.spawnDetail("world_detail_forest_light_0" + this.Math.rand(1, 5), this.Const.World.ZLevel.Object, 0);
 					}

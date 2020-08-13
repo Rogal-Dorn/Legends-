@@ -35,6 +35,11 @@ this.short_bow <- this.inherit("scripts/items/weapons/weapon", {
 		return "ammo.arrows";
 	}
 
+	function getAdditionalRange( _actor )
+	{
+		return _actor.getCurrentProperties().IsSpecializedInBows ? 1 : 0;
+	}
+
 	function onEquip()
 	{
 		this.weapon.onEquip();

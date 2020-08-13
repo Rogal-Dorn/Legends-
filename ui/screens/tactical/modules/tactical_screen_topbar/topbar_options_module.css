@@ -2,7 +2,7 @@
  *  @Project:		Battle Brothers
  *	@Company:		Overhype Studios
  *
- *	@Copyright:		(c) Overhype Studios | 2013 - 2017
+ *	@Copyright:		(c) Overhype Studios | 2013 - 2020
  * 
  *  @Author:		Overhype Studios
  *  @Date:			08.03.2017
@@ -22,7 +22,7 @@
 }
 
 .tactical-screen .topbar-options-module .l-center-camera-button,
-.tactical-screen .topbar-options-module .l-switch-map-orientation-button,
+.tactical-screen .topbar-options-module .l-toggle-blocked-tile-highlights-button,
 .tactical-screen .topbar-options-module .l-switch-map-level-up-button,
 .tactical-screen .topbar-options-module .l-switch-map-level-down-button,
 .tactical-screen .topbar-options-module .l-toggle-stats-overlays-button,
@@ -63,9 +63,14 @@
     left: 13.0rem;
 }
 
-.tactical-screen .topbar-options-module .l-toggle-stats-overlays-button
+.tactical-screen .topbar-options-module .l-toggle-blocked-tile-highlights-button
 {
     left: 17.0rem;
+}
+
+.tactical-screen .topbar-options-module .l-toggle-stats-overlays-button
+{
+    left: 21.0rem;
 }
 
 .tactical-screen .topbar-options-module .l-flee-button

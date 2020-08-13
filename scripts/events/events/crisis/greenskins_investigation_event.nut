@@ -473,7 +473,7 @@ this.greenskins_investigation_event <- this.inherit("scripts/events/event", {
 				continue;
 			}
 
-			if (!t.isMilitary() || t.getSize() < 2)
+			if (!t.isMilitary() || t.isSouthern() || t.getSize() < 2)
 			{
 				continue;
 			}

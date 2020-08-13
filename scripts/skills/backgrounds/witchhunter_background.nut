@@ -34,7 +34,7 @@ this.witchhunter_background <- this.inherit("scripts/skills/backgrounds/characte
 		this.m.Hairs = this.Const.Hair.CommonMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.Body = "bust_naked_body_01";
+		this.m.Bodies = this.Const.Bodies.Muscular;
 		this.m.Level = this.Math.rand(1, 3);
 		this.m.IsCombatBackground = true;
 	}

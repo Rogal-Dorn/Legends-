@@ -7,6 +7,11 @@ this.ambushed_trade_routes_situation <- this.inherit("scripts/entity/world/settl
 		this.m.Name = "Ambushed Trade Routes";
 		this.m.Description = "The roads leading here are unsafe of late, and many a caravan has been ambushed and plundered. With little successful trade, the selection of goods is lower and the prices higher.";
 		this.m.Icon = "ui/settlement_status/settlement_effect_12.png";
+		this.m.Rumors = [
+			"Brigands and raiders are the bane of us traveling merchants! An old friend of mine got ambushed, robbed and beaten just outside of %settlement%!",
+			"If you have any valuables on you, stay away from %settlement%. The place is scourged by cutthroats, bandits and highwaymen!",
+			"The guardsmen are doing what they can, but these brigands just move on to the next town and waylay traders on the road. They\'re said to lurk around %settlement% now!"
+		];
 	}
 
 	function getAddedString( _s )

@@ -9,6 +9,19 @@ this.direwolf <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.DecapitateSplatterOffset = this.createVec(-10, -25);
 		this.m.DecapitateBloodAmount = 1.0;
 		this.m.ConfidentMoraleBrush = "icon_confident_orcs";
+		this.m.ExcludedInjuries = [
+			"injury.fractured_hand",
+			"injury.crushed_finger",
+			"injury.fractured_elbow",
+			"injury.smashed_hand",
+			"injury.broken_arm",
+			"injury.cut_arm_sinew",
+			"injury.cut_arm",
+			"injury.split_hand",
+			"injury.pierced_hand",
+			"injury.pierced_arm_muscles",
+			"injury.burnt_hands"
+		];
 		this.actor.create();
 		this.m.Sound[this.Const.Sound.ActorEvent.DamageReceived] = [
 			"sounds/enemies/werewolf_hurt_01.wav",
@@ -199,6 +212,12 @@ this.direwolf <- this.inherit("scripts/entity/tactical/actor", {
 					else if (this.Math.rand(1, 100) <= 33)
 					{
 						local loot = this.new("scripts/items/supplies/strange_meat_item");
+						loot.drop(_tile);
+					}
+
+					if (this.isKindOf(this, "direwolf_high") && this.Math.rand(1, 100) <= 20)
+					{
+						local loot = this.new("scripts/items/loot/sabertooth_item");
 						loot.drop(_tile);
 					}
 				}

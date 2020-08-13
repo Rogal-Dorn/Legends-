@@ -133,7 +133,7 @@ this.town_barber_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 			}
 
 			color = this.Const.HairColors.All[index];
-			this.changeIndexEx(this.Const.Hair.BarberMale, temp.getSprite("hair"), 0, "hair", color, "");
+			this.changeIndexEx(this.Const.Hair.Barber, temp.getSprite("hair"), 0, "hair", color, "");
 			this.changeIndexEx(this.Const.Beards.Barber, temp.getSprite("beard"), 0, "beard", color, "");
 
 			if (temp.getSprite("beard").HasBrush && this.doesBrushExist(temp.getSprite("beard").getBrush().Name + "_top"))
@@ -147,16 +147,16 @@ this.town_barber_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 		}
 		else if (_layerID == "body")
 		{
-			this.changeIndex(this.Const.Bodies.AllMale, temp.getSprite("body"), _change);
+			this.changeIndex(this.Const.Bodies.Barber, temp.getSprite("body"), _change);
 			this.changeIndexEx(this.Const.Tattoos.All, temp.getSprite("tattoo_body"), 0, "", "", temp.getSprite("body").getBrush().Name);
 		}
 		else if (_layerID == "head")
 		{
-			this.changeIndex(this.Const.Faces.AllMale, temp.getSprite("head"), _change);
+			this.changeIndex(this.Const.Faces.Barber, temp.getSprite("head"), _change);
 		}
 		else if (_layerID == "hair")
 		{
-			this.changeIndexEx(this.Const.Hair.BarberMale, temp.getSprite("hair"), _change, "hair", color, "");
+			this.changeIndexEx(this.Const.Hair.Barber, temp.getSprite("hair"), _change, "hair", color, "");
 		}
 		else if (_layerID == "beard")
 		{

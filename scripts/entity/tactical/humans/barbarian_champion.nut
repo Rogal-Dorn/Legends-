@@ -68,6 +68,7 @@ this.barbarian_champion <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_hold_out"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_recover"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_brawny"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_pathfinder"));
 	}
 
 	function assignRandomEquipment()
@@ -145,7 +146,7 @@ this.barbarian_champion <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Items.equip(this.new("scripts/items/" + helmets[this.Math.rand(0, helmets.len() - 1)]));
 		}
 
-		this.m.Skills.add(this.new("scripts/skills/actives/indomitable"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_fearsome"));
 		return true;
 	}
 

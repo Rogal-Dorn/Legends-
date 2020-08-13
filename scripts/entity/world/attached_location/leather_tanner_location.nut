@@ -92,11 +92,6 @@ this.leather_tanner_location <- this.inherit("scripts/entity/world/attached_loca
 				S = "armor/reinforced_mail_hauberk"
 			});
 			_list.push({
-				R = 55,
-				P = 1.0,
-				S = "armor/lamellar_harness"
-			});
-			_list.push({
 				R = 30,
 				P = 1.0,
 				S = "helmets/padded_nasal_helmet"

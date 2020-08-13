@@ -103,7 +103,7 @@ this.tail_slam_skill <- this.inherit("scripts/skills/skill", {
 		}
 		else if (applyEffect == 2)
 		{
-			if (_target.isNonCombatant() || _target.getCurrentProperties().IsImmuneToKnockBackAndGrab)
+			if (_target.isNonCombatant() || _target.getCurrentProperties().IsImmuneToKnockBackAndGrab || _target.getCurrentProperties().IsRooted)
 			{
 				return;
 			}
@@ -210,7 +210,7 @@ this.tail_slam_skill <- this.inherit("scripts/skills/skill", {
 			local nextTile = ownTile.getNextTile(nextDir);
 			local success = false;
 
-			if (nextTile.IsOccupiedByActor && nextTile.getEntity().isAttackable() && this.Math.abs(nextTile.Level - ownTile.Level) <= 1 && !nextTile.getEntity().getTags().has("lindwurm"))
+			if (nextTile.IsOccupiedByActor && nextTile.getEntity().isAttackable() && this.Math.abs(nextTile.Level - ownTile.Level) <= 1 && !nextTile.getEntity().getFlags().has("lindwurm"))
 			{
 				success = this.attackEntity(_user, nextTile.getEntity());
 			}
@@ -220,7 +220,7 @@ this.tail_slam_skill <- this.inherit("scripts/skills/skill", {
 				return success;
 			}
 
-			if (success && nextTile.IsOccupiedByActor && nextTile.getEntity().isAlive() && !nextTile.getEntity().isDying() && !nextTile.getEntity().getTags().has("lindwurm"))
+			if (success && nextTile.IsOccupiedByActor && nextTile.getEntity().isAlive() && !nextTile.getEntity().isDying() && !nextTile.getEntity().getFlags().has("lindwurm"))
 			{
 				this.applyEffectToTarget(_user, nextTile.getEntity(), nextTile);
 			}
@@ -235,7 +235,7 @@ this.tail_slam_skill <- this.inherit("scripts/skills/skill", {
 			local nextTile = ownTile.getNextTile(nextDir);
 			local success = false;
 
-			if (nextTile.IsOccupiedByActor && nextTile.getEntity().isAttackable() && this.Math.abs(nextTile.Level - ownTile.Level) <= 1 && !nextTile.getEntity().getTags().has("lindwurm"))
+			if (nextTile.IsOccupiedByActor && nextTile.getEntity().isAttackable() && this.Math.abs(nextTile.Level - ownTile.Level) <= 1 && !nextTile.getEntity().getFlags().has("lindwurm"))
 			{
 				success = this.attackEntity(_user, nextTile.getEntity());
 			}
@@ -245,7 +245,7 @@ this.tail_slam_skill <- this.inherit("scripts/skills/skill", {
 				return success;
 			}
 
-			if (success && nextTile.IsOccupiedByActor && nextTile.getEntity().isAlive() && !nextTile.getEntity().isDying() && !nextTile.getEntity().getTags().has("lindwurm"))
+			if (success && nextTile.IsOccupiedByActor && nextTile.getEntity().isAlive() && !nextTile.getEntity().isDying() && !nextTile.getEntity().getFlags().has("lindwurm"))
 			{
 				this.applyEffectToTarget(_user, nextTile.getEntity(), nextTile);
 			}

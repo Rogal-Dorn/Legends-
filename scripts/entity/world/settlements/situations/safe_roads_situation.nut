@@ -7,6 +7,11 @@ this.safe_roads_situation <- this.inherit("scripts/entity/world/settlements/situ
 		this.m.Name = "Safe Roads";
 		this.m.Description = "The roads leading here have been reasonably safe of late, which allowed for many a profitable trade to be made and the settlement to prosper somewhat.";
 		this.m.Icon = "ui/settlement_status/settlement_effect_06.png";
+		this.m.Rumors = [
+			"Seems the brigands around %settlement% are having a rough time now with all those patrols going on.",
+			"Just got back from %settlement% last night. No brigand in sight on the roads, thank the gods.",
+			"Been telling my cousin for years to stop robbing people on the road. Ain\'t no way for it but to end badly. And right I was, it did. Got his comeuppance the other day by %settlement%. Place is crawling with militia."
+		];
 		this.m.IsStacking = false;
 	}
 

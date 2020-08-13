@@ -70,6 +70,7 @@ this.barbarian_chosen <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_hold_out"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_recover"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_brawny"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_pathfinder"));
 	}
 
 	function onDeath( _killer, _skill, _tile, _fatalityType )
@@ -123,7 +124,7 @@ this.barbarian_chosen <- this.inherit("scripts/entity/tactical/human", {
 		this.getSprite("miniboss").setBrush("bust_miniboss");
 		local weapons = this.Const.Items.NamedBarbarianWeapons;
 		this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
-		this.m.Skills.add(this.new("scripts/skills/actives/indomitable"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_fearsome"));
 		return true;
 	}
 

@@ -99,7 +99,7 @@ this.destroy_order <- this.inherit("scripts/ai/world/world_behavior", {
 			{
 				if (e.isAlive() && e.getID() == this.m.TargetID)
 				{
-					if (this.World.Assets.isPermanentDestruction())
+					if (this.World.Assets.isPermanentDestruction() && !e.isSouthern())
 					{
 						local news = this.World.Statistics.createNews();
 						news.set("City", e.getName());

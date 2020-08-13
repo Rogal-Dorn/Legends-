@@ -229,6 +229,11 @@ this.ai_root <- this.inherit("scripts/ai/tactical/behavior", {
 					target_score = target_score + this.Const.AI.Behavior.RootBadTerrain;
 				}
 
+				if (target.getTile().Properties.Effect != null && !target.getTile().Properties.Effect.IsPositive && target.getTile().Properties.Effect.Applicable(target))
+				{
+					target_score = target_score + this.Const.AI.Behavior.RootBadTerrain;
+				}
+
 				target_score = target_score * target.getCurrentProperties().TargetAttractionMult;
 				score = score + target_score;
 				numAffected = ++numAffected;

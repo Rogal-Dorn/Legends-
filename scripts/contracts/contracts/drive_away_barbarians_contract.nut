@@ -67,14 +67,14 @@ this.drive_away_barbarians_contract <- this.inherit("scripts/contracts/contract"
 				this.World.Assets.addMoney(this.Contract.m.Payment.getInAdvance());
 				this.Contract.m.Destination.clearTroops();
 
-				if (this.Contract.getDifficultyMult() <= 1.15 && !this.Contract.m.Destination.getTags().get("IsEventLocation"))
+				if (this.Contract.getDifficultyMult() <= 1.15 && !this.Contract.m.Destination.getFlags().get("IsEventLocation"))
 				{
 					this.Contract.m.Destination.getLoot().clear();
 				}
 
-				this.Contract.addUnitsToEntity(this.Contract.m.Destination, this.Const.World.Spawn.Barbarians, 110 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
-				this.Contract.m.Destination.setLootScaleBasedOnResources(110 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
-				this.Contract.m.Destination.setResources(this.Math.min(this.Contract.m.Destination.getResources(), 70 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult()));
+				this.Contract.addUnitsToEntity(this.Contract.m.Destination, this.Const.World.Spawn.Barbarians, 110 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult());
+				this.Contract.m.Destination.setLootScaleBasedOnResources(110 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult());
+				this.Contract.m.Destination.setResources(this.Math.min(this.Contract.m.Destination.getResources(), 70 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult()));
 				this.Contract.m.Destination.setDiscovered(true);
 				this.World.uncoverFogOfWar(this.Contract.m.Destination.getTile().Pos, 500.0);
 				local r = this.Math.rand(1, 100);
@@ -582,7 +582,7 @@ this.drive_away_barbarians_contract <- this.inherit("scripts/contracts/contract"
 						properties.Music = this.Const.Music.BarbarianTracks;
 						properties.EnemyBanners.push(this.Flags.get("EnemyBanner"));
 						properties.Entities = [];
-						this.Const.World.Common.addUnitsToCombat(properties.Entities, this.Const.World.Spawn.Barbarians, 110 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.World.FactionManager.getFactionOfType(this.Const.FactionType.Barbarians).getID());
+						this.Const.World.Common.addUnitsToCombat(properties.Entities, this.Const.World.Spawn.Barbarians, 110 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult(), this.World.FactionManager.getFactionOfType(this.Const.FactionType.Barbarians).getID());
 						this.World.Contracts.startScriptedCombat(properties, false, true, false);
 						return 0;
 					}
@@ -636,7 +636,7 @@ this.drive_away_barbarians_contract <- this.inherit("scripts/contracts/contract"
 					function getResult()
 					{
 						this.World.FactionManager.getFaction(this.Contract.getFaction()).getRoster().remove(this.Tactical.getEntityByID(this.Contract.m.EmployerID));
-						this.Contract.m.Home.addSituation(this.new("scripts/entity/world/settlements/situations/raided_situation"));
+						this.Contract.m.Home.addSituation(this.new("scripts/entity/world/settlements/situations/raided_situation"), 4);
 						this.Contract.m.Home.setLastSpawnTimeToNow();
 						this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnContractFail * 2);
 						this.World.FactionManager.getFaction(this.Contract.getFaction()).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractFail * 2, "You failed to save " + this.Contract.m.Home.getName() + " from barbarians out for revenge");

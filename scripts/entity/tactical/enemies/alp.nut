@@ -215,6 +215,12 @@ this.alp <- this.inherit("scripts/entity/tactical/actor", {
 
 					loot.drop(_tile);
 				}
+
+				if (this.Math.rand(1, 100) <= 20)
+				{
+					local loot = this.new("scripts/items/loot/soul_splinter_item");
+					loot.drop(_tile);
+				}
 			}
 		}
 
@@ -249,12 +255,13 @@ this.alp <- this.inherit("scripts/entity/tactical/actor", {
 		this.actor.onInit();
 		local b = this.m.BaseProperties;
 		b.setValues(this.Const.Tactical.Actor.Alp);
-		b.Initiative += this.Math.rand(0, 50);
+		b.Initiative += this.Math.rand(0, 55);
 		b.IsAffectedByNight = false;
 		b.IsAffectedByInjuries = false;
 		b.IsImmuneToBleeding = true;
 		b.IsImmuneToPoison = true;
 		b.IsImmuneToDisarm = true;
+		b.IsImmuneToKnockBackAndGrab = true;
 		this.m.ActionPoints = b.ActionPoints;
 		this.m.Hitpoints = b.Hitpoints;
 		this.m.CurrentProperties = clone b;
