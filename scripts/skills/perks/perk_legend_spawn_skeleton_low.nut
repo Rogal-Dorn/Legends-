@@ -14,20 +14,24 @@ this.perk_legend_spawn_skeleton_low <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = false;
 	}
 
+	function onUnlocked()
+	{
+		local stash = this.World.Assets.getStash()
+		stash.add(this.new("scripts/items/spawns/skeleton_item"));
+		stash.add(this.new("scripts/items/spawns/skeleton_item"));
+		stash.add(this.new("scripts/items/spawns/skeleton_item"));
+		this.World.Assets.addMedicine(30);
+	}
+
 	function onAdded()
 	{
 		if (!this.m.Container.hasSkill("actives.legend_spawn_skeleton_low_skill"))
 		{
 			this.m.Container.add(this.new("scripts/skills/actives/legend_spawn_skeleton_low_skill"));
 			this.m.Container.add(this.new("scripts/skills/actives/legend_spawn_skeleton_low_archer_skill"));
-			local stash = this.World.Assets.getStash()
-			stash.add(this.new("scripts/items/spawns/skeleton_item"));
-			stash.add(this.new("scripts/items/spawns/skeleton_item"));
-			stash.add(this.new("scripts/items/spawns/skeleton_item"));
-			this.World.Assets.addMedicine(30);
 		}
 	}
-	
+
 	function onRemoved()
 	{
 		this.m.Container.removeByID("actives.legend_spawn_skeleton_low_skill");

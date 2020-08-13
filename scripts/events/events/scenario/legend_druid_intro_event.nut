@@ -36,7 +36,7 @@ this.legend_druid_intro_event <- this.inherit("scripts/events/event", {
 
 	function onPrepare()
 	{
-		this.m.Title = "The Troupe";
+		this.m.Title = "The Druid";
 	}
 
 	function onPrepareVariables( _vars )

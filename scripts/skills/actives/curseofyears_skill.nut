@@ -61,19 +61,19 @@ this.curseofyears_skill <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "The damage will etermine in the next turn ,has [color=" + this.Const.UI.Color.PositiveValue + "]17%[/color] suffers a Wound At the next phase has [color=" + this.Const.UI.Color.PositiveValue + "]33%[/color] and so on,to a maximun of [color=" + this.Const.UI.Color.PositiveValue + "]83%[/color] .No armour saves are allowed against Wounds caused by Curse of Years"
+				text = "The damage that applies next turn, has a [color=" + this.Const.UI.Color.PositiveValue + "]17%[/color] to cause a wound. It adds an additional stack every turn, to a maximum of [color=" + this.Const.UI.Color.PositiveValue + "]83%[/color]. The damage pierces armor."
 			},
 			{
 				id = 6,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Before target Actvation,has [color=" + this.Const.UI.Color.DamageValue + "]30%[/color] chance break effect"
+				text = "Before damage is applied, the target has a [color=" + this.Const.UI.Color.DamageValue + "]30%[/color] chance to break the effect."
 			},
 			{
 				id = 6,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Skill has [color=" + this.Const.UI.Color.DamageValue + "]4[/color]  trun cooldwon"
+				text = "Curse of Years has [color=" + this.Const.UI.Color.DamageValue + "]4[/color] turn cooldwon"
 			}
 		];
 		return ret;
@@ -136,7 +136,7 @@ this.curseofyears_skill <- this.inherit("scripts/skills/skill", {
 
 		if (!_user.isHiddenToPlayer() && !target.isHiddenToPlayer())
 		{
-			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(target) + " Deid over time");
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(target) + " Died over time");
 		}
 
 		target.getSkills().add(this.new("scripts/skills/effects/curseofyears_effect"));

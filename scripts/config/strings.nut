@@ -1734,7 +1734,10 @@ gt.Const.Strings.PerkName <- {
 	LegendAlbedo = "Albedo",
 	LegendNigredo = "Nigredo",
 	LegendHerbcraft = "Herbcraft",
-	LegendWoodworking = "Woodworking"
+	LegendWoodworking = "Woodworking",
+	LegendSurpressUrges = "Surpress Urges",
+	LegendControlInstincts = "Control Instincts",
+	LegendMasterAnger = "Master Anger"
 
 };
 gt.Const.Strings.PerkDescription <- {
@@ -1767,11 +1770,11 @@ gt.Const.Strings.PerkDescription <- {
 	Vengeance = "After receiving a blow, the next attack of this character will inflict [color=" + this.Const.UI.Color.PositiveValue + "]+100%[/color] damage to both hitpoints and armor. If the attack misses, the effect is wasted. \n[color=#0b0084]From the Martyr perk group[/color]",
 	Duelist = "Become one with your weapon and go for the weak spots! With the offhand free, an additional [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] of any damage ignores armor. Does not work with two-handed weapons. \n[color=#0b0084]From the One Handed Sword perk group[/color]",
 	CripplingStrikes = "Cripple your enemies! Lowers the threshold to inflict injuries by [color=" + this.Const.UI.Color.NegativeValue + "]33%[/color] for both melee and ranged attacks. Undead cannot be injured, but you gain [color=" + this.Const.UI.Color.NegativeValue + "]+10%[/color] damage against them. \n[color=#0b0084]From the Vicious perk group[/color]",
-	QuickHands = "Looking for this? Swapping items in battle becomes a free action with no Action Point cost once every turn. \n[color=#0b0084]From the Throwing perk group[/color]",
+	QuickHands = "Looking for this? Swapping any item in battle except for shields becomes a free action with no Action Point cost once every turn.  \n[color=#0b0084]From the Throwing perk group[/color]",
 	TrophyHunter = "Each fight tells a story, with glory and strength growing in their end. Gain [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] permanent hitpoint for every opponent slain.",
 	Bruiser = "Intense weight training has led your attacks to inflict more damage against armor. Effectiveness vs. Armor is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] for any weapon used.",
 	Crusher = "Put full force in your every blow! Shield damage is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color] when using the Split Shield skill.",
-	CloseCombatArcher = "If you can see the white in your enemy\'s eyes, aim for it! Damage is increased by a percentage equal to your Ranged Defense when using a ranged weapon (including throwing weapons) against a target 2 or less tiles away. \n[color=#0b0084]From the Throwing perk group[/color]",
+	CloseCombatArcher = "If you can see the white in your enemy\'s eyes, aim for it! Damage is increased by a percentage equal to your current Ranged Defense when using a ranged weapon (including throwing weapons) against a target 2 or less tiles away. Damaged is decreased by the same ammount for any target 4 or more tiles away. \n[color=#0b0084]From the Throwing perk group[/color]",
 	Bullseye = "Nailed it! The penalty to hitchance when shooting at a target you have no clear line of fire to is reduced from [color=" + this.Const.UI.Color.NegativeValue + "]75%[/color] to [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] for ranged weapons.  \n[color=#0b0084]From the Bow perk group[/color]",
 	Ballistics = "The range penalty to hitchance is reduced by [color=" + this.Const.UI.Color.NegativeValue + "]-1[/color] per tile. \n[color=#0b0084]From the Crossbow perk group[/color]",
 	Berserk = "RAAARGH! Once per turn, upon killing an enemy, [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] Action Points are immediately regained. Characters can not regain more than their maximum Action Points and no more than 4 for a single attack. \n[color=#0b0084]From the Vicious perk group[/color]",
@@ -1793,7 +1796,7 @@ gt.Const.Strings.PerkDescription <- {
 	BatteringRam = "Immunity against being stunned.",
 	LastStand = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] additional Melee and Ranged Defense for every 2% of missing hitpoints below 66%. When below 33% health this character becomes immune to the effects of fresh injuries, and is not upset by health losses. \n[color=#0b0084]From the Martyr perk group[/color]",
 	Ironside = "All damage received is reduced by [color=" + this.Const.UI.Color.NegativeValue + "]-5%[/color] for every opponent adjacent and in melee range, up to a [color=" + this.Const.UI.Color.NegativeValue + "]-30%[/color] total damage reduction.",
-	BagsAndBelts = "Unlock two extra bag slots to carry all your favorite things. Items placed in bags no longer give a penalty to Maximum Fatigue, except for two-handed weapons and shields. \n[color=#0b0084]From the Organised perk group[/color]",
+	BagsAndBelts = "Unlock two extra bag slots to carry all your favorite things. Items placed in bags no longer give a penalty to Maximum Fatigue. \n[color=#0b0084]From the Organised perk group[/color]",
 	Rebound = "Fatigue regeneration is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] per turn while over 90% fatigued. \n[color=#0b0084]From the Fit perk group[/color]",
 	Feint = "If an attack misses, it costs [color=" + this.Const.UI.Color.NegativeValue + "]-20%[/color] less fatigue than normal and you leave your opponent parried, lowering their defenses by 10. \n[color=#0b0084]From the One Handed Sword perk group[/color]",
 	Student = "Everything can be learned if you put your mind to it. Gain additional [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color] experience from battle. At the eleventh character level, you gain an additional perk point and this perk becomes inert. \n[color=#0b0084]From the Intelligent perk group[/color]",
@@ -1996,7 +1999,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendHidden = "Master the art of concealment. Blend in with your surroundings and remain hidden from the enemy for 3 turns, or until your next attack \n[color=#0b0084]From the Devious perk group[/color]",
 	LegendBlendIn = "Hold yourself in a way that makes you seem more trouble than its worth, lean into trees, place objects between you and an enemy, and hide behind allies. Makes enemies [color=" + this.Const.UI.Color.PositiveValue + "]90%[/color] less likely to attack you instead of an ally. \n[color=#0b0084]From the Devious perk group[/color]",
 	LegendSpecStaffStun = "Master the movements required to spin your staff in a great flourish that lands with additional force. Any strike with a staff that would normally daze, also stuns and staggers. \n[color=#0b0084]From the Staff perk group[/color]",
-	LegendSpecStaffSkill = "Twist and thrust with your staff to deflect blows and intercept strikes. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+16[/color] melee and ranged defense while wielding a staff. 50% of this bonus is applied to Swordstaves. \n[color=#0b0084]From the Staff perk group[/color]",
+	LegendSpecStaffSkill = "Twist and thrust with your staff to deflect blows and intercept strikes. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+16[/color] melee and ranged defense while wielding a staff. 50% of this bonus is applied to swordstaves and instruments. \n[color=#0b0084]From the Staff perk group[/color]",
 	LegendDrumsOfWar = "Learn powerful rythms that drive your allies on. Unlocks the Drums of War skill that restores [color=" + this.Const.UI.Color.PositiveValue + "]+4[/color] fatigue to every ally within eight tiles. Can only be used with a Drum or Lute equipped. \n[color=#0b0084]From the Bard perk group[/color]",
 	LegendSpecFists = "Master the martial arts of unarmed combat. Reduces the fatigue cost of Hand to Hand, Kick and Grapple. Increases armor penetration and increases chance to hit for Hand to Hand, adds damage to Kick. \n[color=#0b0084]From the Unarmed perk group[/color]",
 	LegendKick = "Put all your force into a lunging kick, pushing your opponent away and inflicting fatigue. Grants the \'Kick\' ability. Targets will take damage if falling off an edge.  A successful kick cancels Shieldwall, Spearwall and Riposte. \n[color=#0b0084]From the Unarmed perk group[/color] ",
@@ -2060,7 +2063,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendDogBreeder = "Intimate knowledge of dog care and conditions required for breeding allows you to successfully breed dogs. Unlocks a recipe in the crafting tent for breeding dogs. [color=#0b0084]From the Dog Handling perk group[/color]",
 	LegendDogHandling = "You have mastered the art of training dogs. In the heat of battle your hounds will respond and react to your commands. Order them to attack targets or return and heel and defend their master.[color=#0b0084]From the Dog Handling perk group[/color]",
 	LegendDogMaster = "Your way with animals extends so far as turning those dogs that would do you harm. By spending one item of food you can make a dog flee from battle. The food item is chosen at random and the perk does not work if you have less than 25 food. [color=#0b0084]From the Dog Handling perk group[/color]",
-	LegendHeightenedReflexes = "You have trained in avoiding arrows, this skill translates well into dodging blades. Gain your Ranged Defence as Initiative, with a minimum bonus of 3. [color=#0b0084]From the Crossbow perk group[/color]",
+	LegendHeightenedReflexes = "You have trained in avoiding arrows, this skill translates well into dodging blades. Gain your base Ranged Defence as Initiative, with a minimum bonus of 3. [color=#0b0084]From the Crossbow perk group[/color]",
 	LegendWindReader = "You have learned to read the wind, estimating the path of arrows in uncertain conditions. This is very helpful for dodging arrows, but can also be applied to shooting them as well.  Gain a third of your Ranged Defence as Ranged Skill, with a minimum bonus of 3.  [color=#0b0084]From the Bow perk group[/color]",
 	LegendChoke = "Once an opponent is in a weakened state, it may be easier to choke them out than to fight through their armor. Unlocks the Choke ability which becomes available with no weapons equipped. Hit chance determined by your targets fatigue, 0% if they are fresh and 100% if they are exhausted. If your target is dazed or parried hitchance is increased by +10%.  If they are stunned or netted you gain +25%. If they are grappled or sleeping you gain +50%. Unarmed mastery doubles your chance to hit. These bonuses stack up to 100%. [color=#0b0084]From the Unarmed perk group[/color] "
 	LegendPaymaster = "Shifting numbers is a fine art, by negotiating pay terms and usuary it is possible to drive down mercenary pay. Lowers daily wages for all mercenaries in the company, by a percentage equal to your barter skill. This perk is only counted once per company. [color=#0b0084]From the Barter perk group[/color] ",
@@ -2085,14 +2088,18 @@ gt.Const.Strings.PerkDescription <- {
 	LegendCallLightning = "Call down lightning upon your enemies. Grants a 10% chance to unleash lightning on each unit withing 4 tiles. Must have empty hands and it must be raining.",
 	LegendScryTrance = "Scries an area of 12 tiles around the user. The user will be unable to move or act during the trance until cancelled. Minimum of 1 turn channel.",
 	LegendReadOmensTrance = "The user enters a trance, telling all allies of their future. Grants [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] chance to have any attacker require two successful attack rolls in order to hit",
-	LegendDistantVisions = "This character spends a lot of time alone outside camp, staring into the distance and smoking strange bark. Allows the user to have distant visions of towns.  Each morning this characeter is in reserves grants you insight into a specific town's current events and buildings.",
+	LegendDistantVisions = "This character spends a lot of time alone outside camp, staring into the distance and smoking strange bark. Allows the user to have distant visions of towns.  Each morning this character is in reserves grants you insight into a specific town's current events and buildings.",
 	LegendScrollIngredients = "Allows the user to identify Ancient Scrolls. These tomes a specific effect whereas an Ancient Scroll gives any random effect.",
 	LegendScholar = "Allows the user to be counted as educated for events, regardless if other conditions are met."
 	LegendCitrinitas = "A powerful cocktail of ingredients provides a trance like state, granting the banner effect, and drums of war effects to everyone in the company at the end of the user\'s turn",
 	LegendAlbedo = "A concoction of secret materials that allows the user to restore up to 25 armor to a target",
 	LegendNigredo = "An alchemical mixture of acidic vapours, encased in flasks that can be thrown at the enemy to disolves their armor",
 	LegendHerbcraft = "Knowledge of the properties of various roots and herbs lets you construct medicines from base ingredients. Allows the creation of medicine, antidotes and poisons in the crafting tent [color=#0b0084]From the Apothecary perk group[/color]",
-	LegendWoodworking = "The ability to cut and shape wood is a craft few master. Allows the creation of fine wood from rough wood in the crafting tent[color=#0b0084]From the Woodaxe perk group[/color]"
+	LegendWoodworking = "The ability to cut and shape wood is a craft few master. Allows the creation of fine wood from rough wood in the crafting tent [color=#0b0084]From the Woodaxe perk group[/color]",
+	LegendSurpressUrges = "Allows this character to control shapeshifting to some extent, no longer deliberately striking allies while transformed by effects like lycanthropy [color=#0b0084]From the Therianthropy perk group[/color]",
+	LegendControlInstincts = "Further improves this character\'s self control while transformed, no longer deliberately striking allies while transformed [color=#0b0084]From the Therianthropy perk group[/color]",
+	LegendMasterAnger = "Allows the character to transform at will, no longer randomly transforming during battle [color=#0b0084]From the Therianthropy perk group[/color]"
+
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

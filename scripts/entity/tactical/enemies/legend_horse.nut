@@ -155,7 +155,7 @@ this.legend_horse <- this.inherit("scripts/entity/tactical/actor", {
 		local variant = this.Math.rand(0, 7);
 		local horse = this.addSprite("horse");
 		horse.setBrush("bust_naked_body_10" + variant);
-		horse.setHorizontalFlipping(true); //Spawns looking wrong way without flipping because of the brush
+		// horse.setHorizontalFlipping(true); 
 		horse.varySaturation(0.15);
 		horse.varyColor(0.07, 0.07, 0.07);
 		local horse = this.addSprite("horse_head");
@@ -175,12 +175,21 @@ this.legend_horse <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_horse_charge"))
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_horse_pirouette"));
 
-		 if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
-			{
+		if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+		{
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_muscularity"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
-			}
+		}
 
+	}
+
+	//used for horse riders
+	function setVariant( _v )
+	{
+		local body = this.getSprite("horse");
+		body.setBrush("bust_naked_body_10" + _v);
+		local head = this.getSprite("horse_head");
+		head.setBrush("bust_head_10" + _v);
 	}
 
 });

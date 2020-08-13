@@ -4538,6 +4538,19 @@ this.tooltip_events <- {
 						text = "If enabled, Settlements will actively trade items and resources and can grow or decline in value \n\n  Details: The value of a settlement is now a dynamic value that grows and declines with caravan arrivals and departures, contracts fullfilled or failed, good or bad settlement events. \n\n The value of the settlement determines how valuable the caravans it creates are, as well as the strength of local militia. \n\n Very prosperous settlements will continue to grow and potentialy add new locations."
 					}
 				];
+		case "mapconfig.legendtherian":
+			return [
+					{
+						id = 1,
+						type = "title",
+						text = "Therianthropy"
+					},
+					{
+						id = 2,
+						type = "description",
+						text = "An ancient infection plagues the lands of the north. Rumors abound of men turning into monsters and creatures of the dark. Beware the moon as it crosses its zenith."
+					}
+				];
 		case "camp.commander":
 		case "camp.rest":
 		case "camp.repair":
@@ -4646,7 +4659,7 @@ this.tooltip_events <- {
 			local tent = this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Workshop)
 			local repair = tent.getModifiers();
 			local desc = "Number of people assigned to repair duty. The more assigned, the quicker equipment can be salvaged.";
-			if (this.Const.DLC.Wildmen == true)
+			//if (this.Const.DLC.Wildmen == true) This shouldn't be here right?
 			local ret = [
 			{
 					id = 1,

@@ -23,7 +23,7 @@ this.perk_legend_miasma <- this.inherit("scripts/skills/skill", {
 	}
 		function onRemoved()
 	{
-		this.m.Container.removeByID("actives.legend_miasma_skill");
+		this.m.Container.removeByID("actives.legend_miasma");
 	}
 
 });

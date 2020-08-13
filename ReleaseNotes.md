@@ -3726,24 +3726,157 @@ Zombie poison effect on legendary doesn't scale up fix
 Resilient/HoldOut tooltip fix, currently states -1 turn on debuffs, but gives -5
 Clears the mustering troops on legendary bandit contract completion
 
-https://drive.google.com/file/d/1OWY9rIZfGYBW40LZk0poZLrEs125E81T/view?usp=sharing
-
-14.0.0.16b
-
-Quick update that fixes using config options when starting a new game
-
-https://drive.google.com/file/d/15C7nyBk8OMkrcIk9SQ4Tqh7u6kwe9eP3/view?usp=sharing
+https://drive.google.com/file/d/1eScbaKttem93gLfFNLFPhJ2c1S6qaTXn/view?usp=sharing
 
 
+14.0.0.17  where weary weres wear wary wares
 
-14.0.0.16c
+**Therianthropy**
+* metamorphasising into other creatures is now a permanent injury,It randomly transforms the character into the creature, and they turn against you.
+lycanthropy
+* Gain increased movement and gaining direwolf AI, bite, wolf claws, decreased movement AP and footwork.
+* 10% chance per turn in daytime, 20% chance at night.
+aperthropy
+* 10% chance per turn of turning into a wereboar, gaining increased fatigue recovery, decreased fatigue costs, boar AI, footwork and Gore skill
+* New charge ability similar to an orc charge.
+* 20% chance per turn in daytime, 10% chance at night,
+ursathropy
+*  10% chance per turn of turning into a werebear, gaining increased hitpoints, bear AI a powerful swiping attack.
+*  Bite now scales like unarmed and heals on hit.
+* 10% chance per turn in daytime, 20% chance at night. 100% chance on the full moon every 28 days.
+arborthropy
+*  10% chance per turn of turning into a schrat, gaining a regrowing shield, the ability to shed saplings when hit, and uproot skill.
+* 20% chance per turn in daytime, 10% chance at night,
+
+Barbarians often have theses injuries
+* Thralls have a 25% chance to have lycanthropy
+* Reavers have a 25% chance to have aperthropy
+* Chosen have a 25% chance to have  ursathropy
+* Champions have a 25% chance to have arborthropy
+
+When a character is knocked unconcious by a character with tone of these injuries, the infection is passed on to them.
+The infection also cbrings with it a new perk group for mastering control of the disease and turning it to your advantag
+* New perk - surpress urges - transformed characters are now friendly AI
+* New perk - control instincts - transformed characters are now player controled
+* New perk - master anger - transformation is no longer random, but can be controlled
+* True form - the transformation lasts twice as long
+
+harvesting can now provide mistletoe and wolfsbane, used in recipes
+Possible to craft a wolfsbane necklace to
+
+Druids begin with the therianthropy perk group and a random therianthropic injury
+
+Rumours of man sized rats in this update are clearly the ravings of madmen
+
+**changes**
+* Close combat archer now not only buffs damage when close, it reduces damage when 4 or more tiles away
+* Double strike effect updated to remove itself properly as described.
+* artwork for legendary beasts reworked to be grittier
+* artwork for piercing and broadhead ammunition made clearer
+* noble slingers have less ranged skill and ranged defense
+* noble halberdiers have slightly more moral and melee defense
+* peasant miners have slightly lower melee skill
+* peastant monks have slightly more hitpoints and defense
+* peasant blacksmiths have slightly more hitpoints and less moral
+* peasant squires have significantly
+* peasant witch hunters have significantly higher bravery and hitpoints
+* Tuned Manmangler Orc sword, and the Great slash skills, should nolonger be overtuned. (Salty)
+* Horses slightly less broken
+* Stun immunity works against more attacks
+* staff perk melee defense works on slingstaff
 
 **Fixes**
-Fixed. Armor layers parts will now repair when not attached to a base armor piece.
+
 Updated Vala and Druid background icons
 Updates the demon hound dead image
 Fixes alignment of the sash armor layer
 Ancient scrolls now actually drop
-Zombie poison scales from 1 not 10 now on legendary when you have resilient
+Artwork for essence necklace made unique
+Artwork for necrosavant ladies fixed to be less thicc
+prong skill tooltip updated to correctly show impact of thrust master
+fixed crash from Fell down well event while playing a solo avatar
+Intensive training trait is hidden until relevant
+Fixed. Armor layers parts will now repair when not attached to a base armor piece.
 
-https://drive.google.com/file/d/1cHL80DD5DQvWlKIQlAw4bsSL2lb5JkXT/view?usp=sharing
+Ranger now has fixed worldmap look (Thanks Leonion)
+Miasma skill should now prperly get removed if perk is removed.  (Thanks Leonion)
+Rune of power should now correctly display it's effect  (Thanks Leonion)
+Warbears nolonger roam the seven seas and grasslands, now correctly stay in the forests for rangers to tame  (Thanks Leonion)
+Fixed wrong path for lumbercamp ancient wood (Salty)
+Added clarification to CCA & Heightend reflexes if they use base or current stats (Salty)
+Mountain Armor should give correct named variant (Salty)
+Fixed a bug with the Uproot skill, should nolonger crash, and will now properly exlude Greenwood (Salty)
+Fixed Crash in Knockback Prepared
+Fixed Crash in Horse Impulsion
+icon fixed for pudding eaten
+Cultist AI fixed to use ninetails
+AI fixed to not hit parrying daggers as much
+Descriptions updated for Quickhands,  bags and belts, and rally the troops
+
+14.0.0.18
+
+**Troupe **
+Instruments use staff bash, benefit from Staff Block and staff mastery
+Drum value, condition and damage increased
+Lute  value and weight decreased, max damaged and condition slightly increased
+Named lute damage increased
+Drums of life healing increased by 25%
+Drums of war fatigue increased by 20%
+
+**Inquisition**
+Begins with Holy water and a wolfsbane necklace
+Holy water is now craftable
+Prayer of faith buffed to 20% of resolve
+Prayer of life bug
+Holy flame also applies holy water effect to enemies
+Sanctified effect buffed to 4 turns
+Consecrated effect buffed to 4 turns
+
+**Druid**
+Begins with wolfs bane necklace to  stop transformations
+Fixes druid not being able to unlock some perks
+Fixes backwards transformations
+Fixes boar change images
+Fixes eenemies not dying while transformed
+Fixes AI issues while transforming
+Fixes random transformation
+Fixes not getting perks
+
+
+**Fixes**
+Chance for certain backgrounds to be infected when hired
+It is possible for certain infections to spread through your company via an event
+Fixes missing image from wolfsbane item
+Starting resource caps reduced
+Executioner now works with "debilitated"
+
+Transformed enemies no longer moonwalk
+Fixes capitalization error in chosen enemies causing them to not die
+Fixes boar ai not using the boar gore skill
+Fixes problem with assigning random infection
+Fixes thrall lycanthropy ai causing crash
+Can no longer cast tree transform multiple times
+String no longer gets cloned which causes crash
+Fixes druids not getting the Transformation Infections in the right place causing crashes
+AI no longer gets reset at end of turn for your brother even if they have perks to prevent it
+Taking the new transformation perks no longer bugs out: "Surpress Urges", "Control Instincts", "Master Anger"
+Fixes the rat beast-contract not working
+Fixes bear bite tooltip index heal not existing
+Fixes boar transform active ability not existing
+
+
+
+14.0.0.18b
+**Changes**
+Relationships removed as campaign option (will return in the future)
+Theriantropy added as a new campaign option.
+Therianthropic infection chances reduced to 10% from 25%
+
+**Fixes**
+Wolfsbane necklace can now be unequipped
+Fixes some spelling and capitalization on the Wolfsbane necklace's effect
+Misclicking the bush doesn't crash to desktop when you use harvest bush skill
+Fixes uncommon error with transforms crashing
+Fixes Vermin Ending of roaming beast contract
+Fixes loading of save game when player has warlock perks selected (maxMedicine issues)
+

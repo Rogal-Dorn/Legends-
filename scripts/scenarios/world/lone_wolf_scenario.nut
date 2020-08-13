@@ -68,7 +68,7 @@ this.lone_wolf_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 			local armor = this.new("scripts/items/legend_armor/cloth/legend_gambeson");
 			local chains = this.new("scripts/items/legend_armor/chain/legend_armor_hauberk");
 			local plate = this.new("scripts/items/legend_armor/plate/legend_armor_leather_riveted");
-			armor.setUpgrade(chain);
+			armor.setUpgrade(chains);
 			armor.setUpgrade(plate);
 
 			items.equip(armor);

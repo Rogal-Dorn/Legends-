@@ -215,27 +215,27 @@ gt.Const.Difficulty <- {
 	MaxResources = [
 		{
 			Food = 300,
-			Ammo = 500,
-			Medicine = 200,
-			ArmorParts = 200
+			Ammo = 250,
+			Medicine = 100,
+			ArmorParts = 100
 		},
 		{
 			Food = 250,
-			Ammo = 300,
-			Medicine = 150,
-			ArmorParts = 150
+			Ammo = 150,
+			Medicine = 75,
+			ArmorParts = 75
 		},
 		{
 			Food = 200,
-			Ammo = 250,
-			Medicine = 100,
-			ArmorParts = 150
+			Ammo = 100,
+			Medicine = 50,
+			ArmorParts = 75
 		},
 		{
 			Food = 100,
-			Ammo = 150,
-			Medicine = 60,
-			ArmorParts = 80
+			Ammo = 75,
+			Medicine = 30,
+			ArmorParts = 50
 		}
 	]
 };
@@ -365,6 +365,7 @@ gt.Const.EntityType <- {
     LegendHorse = 116,
 	SkeletonGladiator = 117,
 	BanditRabblePoacher = 118,
+	BanditVermes = 119,
 	function convertOldToNew( _id )
 	{
 		switch(_id)
@@ -646,6 +647,7 @@ gt.Const.EntityIcon <- [
 	"catapult_01_orientation",
 	"horse_orientation",
 	"gladiator_orientation",
-	"poacher_orientation"
+	"poacher_orientation",
+	"rabble2_orientation"
 ];
 

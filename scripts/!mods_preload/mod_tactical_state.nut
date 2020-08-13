@@ -42,6 +42,7 @@
 					if (bro.getPlaceInFormation() <= 26 && !bro.isPlacedOnMap() && bro.getTags().get("Devoured") == true)
 					{
 						bro.onDeath(null, null, null, this.Const.FatalityType.Devoured);
+						bro.removeActiveRelationship();
 						this.World.getPlayerRoster().remove(bro);
 					}
 					else if (bro.isPlacedOnMap())
@@ -62,7 +63,7 @@
 
 					}
 
-					else if (bro.getMoodState() > this.Const.MoodState.Concerned && !bro.getCurrentProperties().IsContentWithBeingInReserve)
+					else if (bro.getMoodState() > this.Const.MoodState.Concerned && !bro.getCurrentProperties().IsContentWithBeingInReserve && (!bro.getTags().has("TemporaryRider") || !bro.getTags().has("IsHorse")))
 					{
 						++bro.getLifetimeStats().BattlesWithoutMe;
 
@@ -71,6 +72,7 @@
 							bro.worsenMood(this.Const.MoodChange.BattleWithoutMe, "Felt useless in reserve");
 						}
 					}
+					bro.getTags().remove("TemporaryRider");
 				}
 			}
 		}
@@ -89,6 +91,7 @@
 						if (bro.isAlive())
 						{
 							bro.onDeath(null, null, null, this.Const.FatalityType.Devoured);
+							bro.removeActiveRelationship();
 							this.World.getPlayerRoster().remove(bro);
 						}
 					}
@@ -112,7 +115,7 @@
 							bro.worsenMood(this.Const.MoodChange.BattleRetreat, "Retreated from battle");
 						}
 					}
-					else if (bro.getMoodState() > this.Const.MoodState.Concerned && !bro.getCurrentProperties().IsContentWithBeingInReserve)
+					else if (bro.getMoodState() > this.Const.MoodState.Concerned && !bro.getCurrentProperties().IsContentWithBeingInReserve && (!bro.getTags().has("TemporaryRider") || !bro.getTags().has("IsHorse")))
 					{
 						++bro.getLifetimeStats().BattlesWithoutMe;
 
@@ -121,6 +124,7 @@
 							bro.worsenMood(this.Const.MoodChange.BattleWithoutMe, "Felt useless in reserve");
 						}
 					}
+					bro.getTags().remove("TemporaryRider");
 				}
 
 				if (this.World.getPlayerRoster().getSize() != 0)
@@ -399,6 +403,7 @@
 			foreach( bro in survivor )
 			{
 				this.World.Statistics.addFallen(bro);
+				bro.removeActiveRelationship();
 				this.World.getPlayerRoster().remove(bro);
 				bro.die();
 			}

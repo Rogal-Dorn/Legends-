@@ -68,18 +68,27 @@ this.barbarian_champion <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_hold_out"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_recover"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_brawny"));
-	 if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_onslaught"));
+
+		if ("LegendsMod" in this.World && this.World.LegendsMod != null && this.World.LegendsMod.Configs().LegendTherianthropyEnabled())
+		{
+			if(this.Math.rand(1, 10) == 1)
 			{
+				this.m.Skills.add(this.new("scripts/skills/injury_permanent/legend_arborthropy_injury"));
+			}
+		}
+
+	 	if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+		{
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_overwhelm"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_relentless"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_alert"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_balance"));
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_onslaught"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_backstabber"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_mastery_fist"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_last_stand"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
-			}
+		}
 	}
 
 	function assignRandomEquipment()

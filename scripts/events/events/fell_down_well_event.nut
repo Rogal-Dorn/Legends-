@@ -168,6 +168,12 @@ this.fell_down_well_event <- this.inherit("scripts/events/event", {
 		}
 
 		local brothers = this.World.getPlayerRoster().getAll();
+
+		if (brothers.len() == 1)
+		{
+			return;
+		}
+
 		local candidates_strong = [];
 		local candidates_other = [];
 

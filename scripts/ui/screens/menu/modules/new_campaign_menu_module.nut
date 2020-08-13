@@ -106,6 +106,7 @@ this.new_campaign_menu_module <- this.inherit("scripts/ui/screens/ui_module", {
 			LegendRelationship = _settings[36],
 			LegendWorldEconomy = _settings[37],
 			LegendIsHelmet = this.Const.DLC.Unhold ? 1 : 0
+			LegendTherian = _settings[38]
 		};
 
 		// local settings = {
