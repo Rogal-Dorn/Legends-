@@ -151,10 +151,6 @@ this.legend_bandit_outrider <- this.inherit("scripts/entity/tactical/human", {
 			WolfSaturation = this.getSprite("wolf").Saturation,
 			Morale = this.Math.max(this.Const.MoraleState.Breaking, this.getMoraleState())
 		};
-<<<<<<< HEAD
-
-=======
->>>>>>> LegendsModv14
 
 		if (this.m.LastBodyPartHit == this.Const.BodyPart.Body)
 		{

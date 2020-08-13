@@ -11,11 +11,8 @@ this.legends_configs <- {
         IsBlueprintsVisible = false,
         IsRelationship = false,
         IsWorldEconomy = false,
-<<<<<<< HEAD
-        IsHelmets = 0
-=======
+        IsHelmets = 0,
         IsTherian = false
->>>>>>> LegendsModv14
     },
 
     function Update (_settings)
@@ -31,11 +28,8 @@ this.legends_configs <- {
         this.m.IsBlueprintsVisible = _settings.LegendAllBlueprints;
         this.m.IsRelationship = _settings.LegendRelationship;
         this.m.IsWorldEconomy = _settings.LegendWorldEconomy;
-<<<<<<< HEAD
         this.m.IsHelmets = _settings.LegendIsHelmet;
-=======
-        this.m.IsTherian = _settings.LegendTherian
->>>>>>> LegendsModv14
+        this.m.IsTherian = _settings.LegendTherian;
     }
 
     function LegendArmorsEnabled()
