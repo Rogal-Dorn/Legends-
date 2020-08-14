@@ -118,6 +118,7 @@ this.statistics_manager <- {
 		this.m.Flags.set("LastEnemiesDefeatedCount", 0);
 		this.m.Flags.set("LastCombatResult", 0);
 		this.m.Flags.set("LastCombatFaction", 0);
+		this.m.Flags.set("LastCombatKills", 0);
 		this.m.Flags.set("LastCombatSavedCaravan", false);
 		this.m.Flags.set("LastCombatSavedCaravanProduce", "");
 		this.m.Flags.set("LastCombatWasOngoingBattle", false);

@@ -27,7 +27,7 @@ this.helped_caravan_event <- this.inherit("scripts/events/event", {
 			{
 				local n = 1;
 
-				if (this.World.Statistics.getFlags().getAsInt("LastEnemiesDefeatedCount") > this.Math.rand(11, 14))
+				if (this.World.Statistics.getFlags().getAsInt("LastCombatKills") > this.Math.rand(11, 14))
 				{
 					n = ++n;
 				}
@@ -49,7 +49,7 @@ this.helped_caravan_event <- this.inherit("scripts/events/event", {
 
 	function isValid()
 	{
-		if (this.World.Statistics.getFlags().get("LastCombatSavedCaravan") && this.World.Statistics.getFlags().get("LastCombatWasOngoingBattle") && this.World.Statistics.getFlags().get("LastCombatID") > this.m.LastCombatID && this.World.Statistics.getFlags().getAsInt("LastEnemiesDefeatedCount") >= this.Math.rand(4, 6))
+		if (this.World.Statistics.getFlags().get("LastCombatSavedCaravan") && this.World.Statistics.getFlags().get("LastCombatWasOngoingBattle") && this.World.Statistics.getFlags().get("LastCombatID") > this.m.LastCombatID && this.World.Statistics.getFlags().getAsInt("LastCombatKills") >= this.Math.rand(4, 6))
 		{
 			this.m.LastCombatID = this.World.Statistics.getFlags().getAsInt("LastCombatID");
 			return true;

@@ -231,7 +231,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 					}
 				}
 
-				local tile = _action.getTileToSpawnLocation(10, disallowedTerrain, 7, 40, 1000, 3, 0, _nearTile, 0.1, 0.8);
+				local tile = _action.getTileToSpawnLocation(10, disallowedTerrain, 7, 40, 1000, 3, 0, _nearTile, this.Const.DLC.Desert ? 0.2 : 0.1, 0.8);
 
 				if (tile == null)
 				{
@@ -745,7 +745,8 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 				roam.setTerrain(this.Const.World.TerrainType.Forest, true);
 				roam.setTerrain(this.Const.World.TerrainType.LeaveForest, true);
 				roam.setTerrain(this.Const.World.TerrainType.AutumnForest, true);
-				roam.setTerrain(this.Const.World.TerrainType.Swamp, true);
+				roam.setTerrain(this.Const.World.TerrainType.Desert, true);
+				roam.setTerrain(this.Const.World.TerrainType.Steppe, true);
 				party.getController().addOrder(roam);
 				return true;
 			};
@@ -1094,7 +1095,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 	{
 		foreach( u in _faction.getUnits() )
 		{
-			if (!u.isDiscovered() && this.Time.getVirtualTimeF() - u.getSpawnTime() >= 20.0 * this.World.getTime().SecondsPerDay && !u.getSprite("selection").Visible && (this.World.State.getPlayer() == null || this.World.State.getPlayer().getTile().getDistanceTo(u.getTile()) >= 6))
+			if (!u.isDiscovered() && this.Time.getVirtualTimeF() - u.getSpawnTime() >= 20.0 * this.World.getTime().SecondsPerDay && !u.getSprite("selection").Visible && (this.World.State.getPlayer() == null || this.World.State.getPlayer().getTile().getDistanceTo(u.getTile()) >= 8))
 			{
 				u.die();
 				break;

@@ -56,5 +56,13 @@ this.mortar <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Skills.update();
 	}
 
+	function onDeath( _killer, _skill, _tile, _fatalityType )
+	{
+		if (_tile != null)
+		{
+			_tile.spawnDetail("mortar_destroyed", this.Const.Tactical.DetailFlag.Corpse, false);
+		}
+	}
+
 });
 

@@ -100,6 +100,7 @@ this.drive_away_nomads_contract <- this.inherit("scripts/contracts/contract", {
 						this.Contract.m.Destination.setFaction(zombies.getID());
 						zombies.addSettlement(this.Contract.m.Destination.get(), false);
 						this.Contract.addUnitsToEntity(this.Contract.m.Destination, this.Const.World.Spawn.NecromancerSouthern, 110 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult());
+						this.Contract.m.Destination.setLastSpawnTimeToNow();
 					}
 				}
 				else if (r <= 50)

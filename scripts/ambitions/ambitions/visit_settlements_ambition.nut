@@ -53,6 +53,11 @@ this.visit_settlements_ambition <- this.inherit("scripts/ambitions/ambition", {
 
 	function onUpdateScore()
 	{
+		if (this.World.Ambitions.getDone() == 0 && (this.World.Assets.getOrigin().getID() != "scenario.deserters" || this.World.Assets.getOrigin().getID() != "scenario.raiders"))
+		{
+			return;
+		}
+
 		if (this.World.Ambitions.getDone() < 2)
 		{
 			return;

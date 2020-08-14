@@ -45,7 +45,7 @@ this.bounty_hunter_follower <- this.inherit("scripts/retinue/follower", {
 	{
 		if (this.Tactical.State.getStrategicProperties() == null || !this.Tactical.State.getStrategicProperties().IsArenaMode)
 		{
-			this.World.Assets.addMoney(_champion.getXPValue());
+			this.World.Assets.addMoney(this.Math.floor(_champion.getXPValue()));
 		}
 	}
 

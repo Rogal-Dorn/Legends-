@@ -104,7 +104,7 @@ this.tactical_orc_camp <- this.inherit("scripts/mapgen/tactical_template", {
 				{
 					tile.clear();
 
-					if ((!isOnHill || tile.Level >= 2) && (this.Math.rand(1, 100) < 50 + (isOnHill ? -10 : 0) || y == centerTile.SquareCoords.Y + 2 || y == centerTile.SquareCoords.Y - 2))
+					if ((!isOnHill || tile.Level >= 2) && (this.Math.rand(1, 100) < 40 + (isOnHill ? -10 : 0) || y == centerTile.SquareCoords.Y + 2 || y == centerTile.SquareCoords.Y - 2))
 					{
 						tile.removeObject();
 						local o;
