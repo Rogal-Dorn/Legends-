@@ -331,7 +331,7 @@ TacticalCombatResultScreen.prototype.onCombatInformation = function (_dataSource
     if (TacticalCombatResultScreenIdentifier.CombatInformation.Result.Key in _data &&
         _data[TacticalCombatResultScreenIdentifier.CombatInformation.Result.Key] !== null)
     {
-        var enableLootButton = _data['result'] === TacticalCombatResultScreenIdentifier.CombatInformation.Result.Win && _data['loot'];
+        var enableLootButton = (_data['result'] === TacticalCombatResultScreenIdentifier.CombatInformation.Result.Win || _data['arena'] == true) && _data['loot'];
         this.mSwitchToLootButton.enableButton(enableLootButton);
 
 		if(!enableLootButton)
