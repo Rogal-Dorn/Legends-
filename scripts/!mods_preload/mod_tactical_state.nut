@@ -178,7 +178,7 @@
 			{
 				if (this.m.TacticalCombatResultScreen != null)
 				{
-					if (_isVictory && !this.Tactical.State.isScenarioMode() && this.m.StrategicProperties != null && !this.m.StrategicProperties.IsLootingProhibited && this.Settings.getGameplaySettings().AutoLoot)
+					if (_isVictory && !this.Tactical.State.isScenarioMode() && this.m.StrategicProperties != null && (!this.m.StrategicProperties.IsLootingProhibited || this.m.StrategicProperties.IsArenaMode && !this.m.CombatResultLoot.isEmpty()) && this.Settings.getGameplaySettings().AutoLoot)
 					{
 						this.m.TacticalCombatResultScreen.onLootAllItemsButtonPressed();
 						this.World.Assets.consumeItems();
@@ -212,7 +212,14 @@
 			playerKills = playerKills + bro.getCombatStats().Kills;
 		}
 
-		if (!this.isScenarioMode() && this.m.StrategicProperties != null && this.m.StrategicProperties.IsLootingProhibited)
+		if (!this.isScenarioMode())
+		{
+			this.World.Statistics.getFlags().set("LastCombatKills", playerKills);
+		}
+
+		local isArena = !this.isScenarioMode() && this.m.StrategicProperties != null && this.m.StrategicProperties.IsArenaMode;
+
+		if (!isArena && !this.isScenarioMode() && this.m.StrategicProperties != null && this.m.StrategicProperties.IsLootingProhibited)
 		{
 			return;
 		}
@@ -287,6 +294,11 @@
 				{
 					foreach( item in tile.Items )
 					{
+						if (isArena && item.getLastEquippedByFaction() != 1)
+						{
+							continue;
+						}
+
 						item.onCombatFinished();
 						loot.push(item);
 					}
@@ -341,6 +353,12 @@
 
 					foreach( item in items )
 					{
+
+						if (isArena && item.getLastEquippedByFaction() != 1)
+						{
+							continue;
+						}
+
 						item.onCombatFinished();
 						if (!item.isChangeableInBattle(null) && item.isDroppedAsLoot())
 						{
@@ -362,7 +380,7 @@
 			}
 		}
 
-		if (this.m.StrategicProperties != null)
+		if (!isArena && this.m.StrategicProperties != null)
 		{
 			local player = this.World.State.getPlayer();
 
@@ -380,7 +398,7 @@
 			}
 		}
 
-		if (!this.isScenarioMode())
+		if (!isArena && !this.isScenarioMode())
 		{
 			if (this.Tactical.Entities.getAmmoSpent() > 0 && this.World.Assets.m.IsRecoveringAmmo)
 			{
@@ -435,8 +453,9 @@
 		local dead = this.Tactical.getCasualtyRoster().getAll();
 		local survivor = this.Tactical.getSurvivorRoster().getAll();
 		local retreated = this.Tactical.getRetreatRoster().getAll();
+		local isArena = this.m.StrategicProperties != null && this.m.StrategicProperties.IsArenaMode;
 
-		if (_isVictory)
+		if (_isVictory || isArena)
 		{
 			foreach( s in survivor )
 			{
