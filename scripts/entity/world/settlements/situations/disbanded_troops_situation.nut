@@ -7,6 +7,11 @@ this.disbanded_troops_situation <- this.inherit("scripts/entity/world/settlement
 		this.m.Name = "Disbanded Troops";
 		this.m.Description = "With a local conflict now solved, many levied troops and their weapons are no longer needed. A good time to grab a bargain or hire experienced new men.";
 		this.m.Icon = "ui/settlement_status/settlement_effect_30.png";
+		this.m.Rumors = [
+			"Standing armies are expensive, my friend. I heard an entire regiment was disbanded at %settlement%. Surely there\'ll be some veteran fighters lingering there still, desperate for coin.",
+			"When I was young I used to be a soldier, and I liked it. Even the marching. But when my unit was disbanded I didn\'t know what the hell to do with myself. Now they\'re disbanding one of them regiments over at %settlement%, from what I hear.",
+			"I\'m concerned for my niece; an entire unit of soldiers got disbanded at %settlement%, right near where she lives. Things won\'t end well if those brutes don\'t find employment soon!"
+		];
 		this.m.IsStacking = false;
 		this.m.ValidDays = 4;
 	}

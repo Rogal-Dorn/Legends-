@@ -160,7 +160,7 @@ this.ai_attack_reap <- this.inherit("scripts/ai/tactical/behavior", {
 				{
 					if (t.getEntity().isAlliedWith(_entity))
 					{
-						combinedValue = combinedValue - (1.0 - this.getProperties().TargetPriorityHittingAlliesMult);
+						combinedValue = combinedValue - (1.0 - this.getProperties().TargetPriorityHittingAlliesMult) * t.getEntity().getCurrentProperties().TargetAttractionMult;
 					}
 					else
 					{

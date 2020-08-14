@@ -53,12 +53,16 @@ this.add_random_situation_action <- this.inherit("scripts/factions/faction_actio
 		{
 			possible_situations.push("warehouse_burned_down_situation");
 			possible_situations.push("public_executions_situation");
-			possible_situations.push("cultist_procession_situation");
-			possible_situations.push("archery_contest_situation");
 
-			if (this.World.Assets.getOrigin().getID() == "scenario.cultists")
+			if (!this.isKindOf(this.m.Settlement, "city_state"))
 			{
 				possible_situations.push("cultist_procession_situation");
+				possible_situations.push("archery_contest_situation");
+
+				if (this.World.Assets.getOrigin().getID() == "scenario.cultists")
+				{
+					possible_situations.push("cultist_procession_situation");
+				}
 			}
 		}
 
@@ -73,8 +77,12 @@ this.add_random_situation_action <- this.inherit("scripts/factions/faction_actio
 		if (!this.m.Settlement.isMilitary())
 		{
 			possible_situations.push("local_holiday_situation");
-			possible_situations.push("witch_burnings_situation");
-			possible_situations.push("sickness_situation");
+
+			if (!this.isKindOf(this.m.Settlement, "city_state"))
+			{
+				possible_situations.push("witch_burnings_situation");
+				possible_situations.push("sickness_situation");
+			}
 		}
 		else
 		{
@@ -97,9 +105,13 @@ this.add_random_situation_action <- this.inherit("scripts/factions/faction_actio
 			possible_situations.push("full_nets_situation");
 		}
 
-		if (this.isKindOf(this.m.Settlement, "small_steppe_village") || this.isKindOf(this.m.Settlement, "medium_steppe_village") || this.isKindOf(this.m.Settlement, "large_steppe_village") || this.isKindOf(this.m.Settlement, "small_farming_village") || this.isKindOf(this.m.Settlement, "medium_farming_village") || this.isKindOf(this.m.Settlement, "large_farming_village"))
+		if (this.isKindOf(this.m.Settlement, "small_steppe_village") || this.isKindOf(this.m.Settlement, "medium_steppe_village") || this.isKindOf(this.m.Settlement, "large_steppe_village") || this.isKindOf(this.m.Settlement, "small_farming_village") || this.isKindOf(this.m.Settlement, "medium_farming_village") || this.isKindOf(this.m.Settlement, "large_farming_village") || this.isKindOf(this.m.Settlement, "city_state"))
 		{
-			possible_situations.push("draught_situation");
+			if (!this.isKindOf(this.m.Settlement, "city_state"))
+			{
+				possible_situations.push("draught_situation");
+			}
+
 			possible_situations.push("good_harvest_situation");
 		}
 
@@ -117,6 +129,28 @@ this.add_random_situation_action <- this.inherit("scripts/factions/faction_actio
 		if (this.isKindOf(this.m.Settlement, "small_lumber_village") || this.isKindOf(this.m.Settlement, "medium_lumber_village") || this.isKindOf(this.m.Settlement, "large_lumber_village") || this.isKindOf(this.m.Settlement, "small_forest_fort") || this.isKindOf(this.m.Settlement, "medium_forest_fort") || this.isKindOf(this.m.Settlement, "large_forest_fort"))
 		{
 			possible_situations.push("hunting_season_situation");
+		}
+
+		if (!this.m.Settlement.isSouthern() && this.m.Settlement.hasBuilding("building.temple"))
+		{
+			possible_situations.push("ceremonial_season_situation");
+		}
+		else if (this.m.Settlement.isSouthern())
+		{
+			possible_situations.push("sand_storm_situation");
+
+			if (this.m.Settlement.hasBuilding("building.arena"))
+			{
+				if (!this.m.Settlement.hasSituation("situation.arena_tournament"))
+				{
+					possible_situations.push("bread_and_games_situation");
+				}
+
+				if (this.World.getTime().Days > 10 && !this.m.Settlement.hasSituation("situation.bread_and_games"))
+				{
+					possible_situations.push("arena_tournament_situation");
+				}
+			}
 		}
 
 		if (possible_situations.len() == 0)
@@ -142,6 +176,11 @@ this.add_random_situation_action <- this.inherit("scripts/factions/faction_actio
 	function onExecute( _faction )
 	{
 		this.m.Settlement.addSituation(this.new("scripts/entity/world/settlements/situations/" + this.m.Situation));
+
+		if (this.m.Settlement.hasBuilding("building.arena"))
+		{
+			this.m.Cooldown = this.World.getTime().SecondsPerDay * 9;
+		}
 	}
 
 });

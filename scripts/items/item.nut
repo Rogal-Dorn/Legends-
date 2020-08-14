@@ -7,6 +7,7 @@ this.item <- {
 		IconLarge = "",
 		Description = "",
 		Categories = "",
+		MagicNumber = this.Math.rand(1, 100),
 		Variant = 0,
 		Condition = 1.0,
 		ConditionMax = 1.0,
@@ -24,7 +25,6 @@ this.item <- {
 		LastEquippedByFaction = 0,
 		IsGarbage = false,
 		IsDroppedAsLoot = false,
-		IsDroppedWhenDamaged = true,
 		IsChangeableInBattle = true,
 		IsIndestructible = false,
 		IsToBeRepaired = false,
@@ -104,6 +104,11 @@ this.item <- {
 		return this.m.Description;
 	}
 
+	function getCategories()
+	{
+		return this.m.Categories;
+	}
+
 	function getSlotType()
 	{
 		return this.m.SlotType;
@@ -167,11 +172,6 @@ this.item <- {
 	function isDroppedAsLoot()
 	{
 		return this.m.IsDroppedAsLoot;
-	}
-
-	function isDroppedWhenDamaged()
-	{
-		return this.m.IsDroppedWhenDamaged;
 	}
 
 	function isSold()
@@ -259,6 +259,11 @@ this.item <- {
 		return this.m.Variant;
 	}
 
+	function getMagicNumber()
+	{
+		return this.m.MagicNumber;
+	}
+
 	function getArmor()
 	{
 		return 0;
@@ -332,6 +337,11 @@ this.item <- {
 	{
 		this.setArmor(_a);
 		return 0;
+	}
+
+	function setMagicNumber( _m )
+	{
+		this.m.MagicNumber = _m;
 	}
 
 	function isAmountShown()
@@ -434,31 +444,61 @@ this.item <- {
 			}
 		];
 
-		if (this.m.Categories.len() != 0)
+		if (!this.isItemType(this.Const.Items.ItemType.Crafting))
 		{
-			result.push({
-				id = 65,
-				type = "text",
-				text = this.m.Categories
-			});
-		}
+			if (this.m.Categories.len() != 0)
+			{
+				result.push({
+					id = 65,
+					type = "text",
+					text = this.m.Categories
+				});
+			}
 
-		if (this.getIconLarge() != null)
-		{
 			result.push({
-				id = 3,
-				type = "image",
-				image = this.getIconLarge(),
-				isLarge = true
+				id = 66,
+				type = "text",
+				text = this.getValueString()
 			});
+
+			if (!this.isItemType(this.Const.Items.ItemType.Misc) || this.isItemType(this.Const.Items.ItemType.Usable) || this.isItemType(this.Const.Items.ItemType.Legendary))
+			{
+				if (this.getIconLarge() != null)
+				{
+					result.push({
+						id = 3,
+						type = "image",
+						image = this.getIconLarge(),
+						isLarge = true
+					});
+				}
+				else
+				{
+					result.push({
+						id = 3,
+						type = "image",
+						image = this.getIcon()
+					});
+				}
+			}
 		}
 		else
 		{
 			result.push({
-				id = 3,
-				type = "image",
-				image = this.getIcon()
+				id = 66,
+				type = "text",
+				text = this.getValueString()
 			});
+
+			if (this.Const.DLC.Unhold)
+			{
+				result.push({
+					id = 50,
+					type = "hint",
+					icon = "ui/icons/plus.png",
+					text = "Can be used to craft items"
+				});
+			}
 		}
 
 		return result;
@@ -520,7 +560,7 @@ this.item <- {
 
 	function drop( _tile = null )
 	{
-		local isDropped = this.isDroppedAsLoot();
+		local isDropped = this.isDroppedAsLoot() && (this.Tactical.State.getStrategicProperties() == null || !this.Tactical.State.getStrategicProperties().IsArenaMode || this.m.Container != null && this.m.Container.getActor() != null && this.m.Container.getActor().isPlayerControlled());
 
 		if (this.m.Container != null)
 		{
@@ -625,6 +665,10 @@ this.item <- {
 	}
 
 	function onDamageDealt( _target, _skill, _hitInfo )
+	{
+	}
+
+	function onShieldHit( _attacker, _skill )
 	{
 	}
 
@@ -1228,21 +1272,13 @@ this.item <- {
 		_out.writeU16(this.m.IsToBeSalvagedQueue);
 		_out.writeU8(this.m.RuneBonus1);
 		_out.writeU8(this.m.RuneBonus2);
+		_out.writeU8(this.m.MagicNumber);
 	}
 
 	function onDeserialize( _in )
 	{
 		this.m.IsToBeRepaired = _in.readBool();
-
-		if (_in.getMetaData().getVersion() >= 28)
-		{
-			this.m.Variant = _in.readU16();
-		}
-		else
-		{
-			this.m.Variant = _in.readU8();
-		}
-
+		this.m.Variant = _in.readU16();
 		this.m.Condition = _in.readF32();
 		this.m.PriceMult = _in.readF32();
 		if (_in.getMetaData().getVersion() >= 46)
@@ -1271,6 +1307,12 @@ this.item <- {
 		{
 			this.m.RuneBonus2 =  _in.readU8();
 		}
+
+		if (_in.getMetaData().getVersion() >= 58)
+		{
+			this.m.MagicNumber = _in.readU8();
+		}
+
 		this.updateVariant();
 	}
 

@@ -2,7 +2,7 @@
  *  @Project:		Battle Brothers
  *	@Company:		Overhype Studios
  *
- *	@Copyright:		(c) Overhype Studios | 2013 - 2017
+ *	@Copyright:		(c) Overhype Studios | 2013 - 2020
  * 
  *  @Author:		Overhype Studios
  *  @Date:			23.09.2017
@@ -96,7 +96,7 @@
 .world-screen .topbar-options-module .l-center-button
 {
     top: 0.3rem;
-    left: 12.0rem;
+    left: 11.0rem;
     bottom: 0;
     width: 4.5rem;
     height: 4.1rem;
@@ -107,7 +107,7 @@
 .world-screen .topbar-options-module .l-cameralock-button
 {
     top: 0.3rem;
-    left: 16.0rem;
+    left: 15.0rem;
     bottom: 0;
     width: 4.5rem;
     height: 4.1rem;
@@ -118,7 +118,7 @@
 .world-screen .topbar-options-module .l-tracking-button
 {
     top: 0.3rem;
-    left: 20.0rem;
+    left: 19.0rem;
     bottom: 0;
     width: 4.5rem;
     height: 4.1rem;
@@ -129,7 +129,7 @@
 .world-screen .topbar-options-module .l-camp-button
 {
     top: 0.3rem;
-    left: 24.0rem;
+    left: 23.0rem;
     bottom: 0;
     width: 4.5rem;
     height: 4.1rem;
@@ -137,10 +137,10 @@
     margin: auto 0;
 }
 
-.world-screen .topbar-options-module .l-relations-button
+.world-screen .topbar-options-module .l-perks-button
 {
     top: 0.3rem;
-    left: 29.0rem;
+    left: 27.0rem;
     bottom: 0;
     width: 4.5rem;
     height: 4.1rem;
@@ -151,7 +151,18 @@
 .world-screen .topbar-options-module .l-obituary-button
 {
     top: 0.3rem;
-    left: 33.0rem;
+    left: 31.0rem;
+    bottom: 0;
+    width: 4.5rem;
+    height: 4.1rem;
+    position: absolute;
+    margin: auto 0;
+}
+
+.world-screen .topbar-options-module .l-relations-button
+{
+    top: 0.3rem;
+    left: 35.0rem;
     bottom: 0;
     width: 4.5rem;
     height: 4.1rem;

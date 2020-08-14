@@ -103,7 +103,7 @@ this.tail_slam_big_skill <- this.inherit("scripts/skills/skill", {
 		}
 		else if (applyEffect == 2)
 		{
-			if (_target.isNonCombatant() || _target.getCurrentProperties().IsImmuneToKnockBackAndGrab)
+			if (_target.isNonCombatant() || _target.getCurrentProperties().IsImmuneToKnockBackAndGrab || _target.getCurrentProperties().IsRooted)
 			{
 				return;
 			}
@@ -201,7 +201,7 @@ this.tail_slam_big_skill <- this.inherit("scripts/skills/skill", {
 			{
 				local tile = ownTile.getNextTile(i);
 
-				if (tile.IsOccupiedByActor && tile.getEntity().isAttackable() && this.Math.abs(tile.Level - ownTile.Level) <= 1 && !tile.getEntity().getTags().has("lindwurm"))
+				if (tile.IsOccupiedByActor && tile.getEntity().isAttackable() && this.Math.abs(tile.Level - ownTile.Level) <= 1 && !tile.getEntity().getFlags().has("lindwurm"))
 				{
 					if (ret && soundBackup.len() == 0)
 					{

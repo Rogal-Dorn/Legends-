@@ -293,7 +293,7 @@ this.more_men_event <- this.inherit("scripts/events/event", {
 
 	function onUpdateScore()
 	{
-		if (this.World.Assets.getOrigin().getID() == "scenario.lone_wolf")
+		if (this.World.Assets.getOrigin().getID() == "scenario.lone_wolf" || this.World.Assets.getOrigin().getID() == "scenario.gladiators")
 		{
 			return;
 		}

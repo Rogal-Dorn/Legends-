@@ -80,9 +80,7 @@ this.noble_faction <- this.inherit("scripts/factions/faction", {
 
 	function onUpdateRoster()
 	{
-		local roster = this.getRoster();
-
-		while (roster.getSize() < 4)
+		for( local roster = this.getRoster(); roster.getSize() < 4;  )
 		{
 			local character = roster.create("scripts/entity/tactical/humans/noble");
 			character.setFaction(this.m.ID);
@@ -91,8 +89,6 @@ this.noble_faction <- this.inherit("scripts/factions/faction", {
 			character.setTitle("von " + this.m.Name);
 			character.assignRandomEquipment();
 		}
-
-		roster = this.getRoster().getAll();
 	}
 
 	function isReadyForContract()
@@ -103,11 +99,17 @@ this.noble_faction <- this.inherit("scripts/factions/faction", {
 	function onSerialize( _out )
 	{
 		this.faction.onSerialize(_out);
+		_out.writeU8(this.m.HairColor);
 	}
 
 	function onDeserialize( _in )
 	{
 		this.faction.onDeserialize(_in);
+
+		if (_in.getMetaData().getVersion() >= 52)
+		{
+			this.m.HairColor = _in.readU8();
+		}
 	}
 
 });

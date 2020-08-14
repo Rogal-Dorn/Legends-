@@ -26,6 +26,7 @@ this.farmhand_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.Body = "bust_naked_body_01";
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.NeutralMax;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
+		this.m.Bodies = this.Const.Bodies.Muscular;
 		this.m.IsLowborn = true;
 		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[2];
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];

@@ -103,6 +103,8 @@ this.send_bandit_ambushers_action <- this.inherit("scripts/factions/faction_acti
 		local party = this.getFaction().spawnEntity(settlement.getTile(), "Brigands", false, this.Const.World.Spawn.BanditRaiders, this.Math.rand(75, 120) * this.getReputationToDifficultyMult() * mult);
 		party.getSprite("banner").setBrush(settlement.getBanner());
 		party.setDescription("A rough and tough band of brigands preying on the weak.");
+		party.setFootprintType(this.Const.World.FootprintsType.Brigands);
+		party.getFlags().set("IsRandomlySpawned", true);
 		party.getLoot().Money = this.Math.rand(50, 200);
 		party.getLoot().ArmorParts = this.Math.rand(0, 10);
 		party.getLoot().Medicine = this.Math.rand(0, 2);

@@ -10,7 +10,7 @@ this.skeleton_priest_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.m.Properties.TargetPriorityMoraleMult = 0.25;
 		this.m.Properties.TargetPriorityBraveryMult = 0.25;
 		this.m.Properties.TargetPriorityHittingAlliesMult = 1.0;
-		this.m.Properties.OverallDefensivenessMult = 0.0;
+		this.m.Properties.OverallDefensivenessMult = 0.1;
 		this.m.Properties.OverallFormationMult = 1.0;
 		this.m.Properties.EngageRangeMin = 5;
 		this.m.Properties.EngageRangeMax = 7;

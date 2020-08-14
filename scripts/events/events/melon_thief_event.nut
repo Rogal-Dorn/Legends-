@@ -261,7 +261,7 @@ this.melon_thief_event <- this.inherit("scripts/events/event", {
 
 		foreach( t in towns )
 		{
-			if (!t.isMilitary() && t.getSize() <= 1 && t.getTile().getDistanceTo(playerTile) <= 4 && t.isAlliedWithPlayer())
+			if (!t.isMilitary() && !t.isSouthern() && t.getSize() <= 1 && t.getTile().getDistanceTo(playerTile) <= 4 && t.isAlliedWithPlayer())
 			{
 				nearTown = true;
 				town = t;

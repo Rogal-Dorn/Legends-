@@ -84,6 +84,9 @@
 				"SPEECH_ON",
 				"\n\n[color=#bcad8c]\""
 			],
+				"SPEECH_START",
+				"[color=#bcad8c]\""
+			],
 			[
 				"SPEECH_OFF",
 				"\"[/color]\n\n"
@@ -126,7 +129,7 @@
 			],
 			[
 				"employer",
-				this.Tactical.getEntityByID(this.m.EmployerID).getName()
+				this.m.EmployerID != 0 ? this.Tactical.getEntityByID(this.m.EmployerID).getName() : ""
 			],
 			[
 				"faction",
@@ -171,30 +174,18 @@
 		return this.Math.max(this.Const.Difficulty.MinHeadPayments[this.World.Assets.getEconomicDifficulty()], val)
 	}
 
-	o.getReputationToDifficultyMult = function()
+	o.getScaledDifficultyMult = function()
 	{
 		local s = this.Math.maxf(0.75, 0.94 * this.Math.pow(0.01 * this.World.State.getPlayer().getStrength(), 0.94));
 		local d = this.Math.minf(5.0, s);
 		return d * this.Const.Difficulty.EnemyMult[this.World.Assets.getCombatDifficulty()];
 	}
-//	o.getReputationToPaymentMult = function()
-//	{
-//		local r = this.Math.minf(2.7, this.Math.maxf(0.1, this.Math.pow(this.Math.maxf(0, 0.003 * this.World.Assets.getBusinessReputation()), 0.39)));
-//		return r * this.Const.Difficulty.PaymentMult[this.World.Assets.getEconomicDifficulty()];
-//	}
-//
-//	o.getReputationToPaymentLightMult = function()
-//	{
-//		local r = this.Math.minf(5.0, this.Math.maxf(0.1, this.Math.pow(this.Math.maxf(0, 0.003 * this.World.Assets.getBusinessReputation()), 0.35)));
-//		return r * this.Const.Difficulty.PaymentMult[this.World.Assets.getEconomicDifficulty()];
-//	}
-
 
 	o.getPaymentMult = function()
 	{
 		local repDiffMult = this.Math.pow(this.getReputationToDifficultyMult(), 0.5);
 		local broMult = this.World.State.getPlayer().getBarterMult();
-		return (this.m.PaymentMult + broMult) * (this.m.DifficultyMult * repDiffMult);
+		return (this.m.PaymentMult + broMult) * (this.m.DifficultyMult * repDiffMult) * this.World.Assets.m.ContractPaymentMult;
 	}
 
 	o.addUnitsToEntity = function ( _entity, _partyList, _resources )

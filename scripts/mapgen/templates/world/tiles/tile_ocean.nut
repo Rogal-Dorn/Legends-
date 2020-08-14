@@ -30,6 +30,7 @@ this.tile_ocean <- this.inherit("scripts/mapgen/map_template", {
 		local tundra = 0;
 		local snow = 0;
 		local steppe = 0;
+		local desert = 0;
 
 		for( local i = 0; i != 6; i = ++i )
 		{
@@ -56,6 +57,10 @@ this.tile_ocean <- this.inherit("scripts/mapgen/map_template", {
 					{
 						steppe = ++steppe;
 					}
+					else if (land.TacticalType == this.Const.World.TerrainTacticalType.Desert || land.TacticalType == this.Const.World.TerrainTacticalType.DesertHills)
+					{
+						desert = ++desert;
+					}
 					else if (land.TacticalType == this.Const.World.TerrainTacticalType.Highlands || land.TacticalType == this.Const.World.TerrainTacticalType.HighlandsHills)
 					{
 						tundra = ++tundra;
@@ -81,15 +86,19 @@ this.tile_ocean <- this.inherit("scripts/mapgen/map_template", {
 			tile.spawnDetail(this.Const.World.ShoreBrushes.get(dir), this.Const.World.ZLevel.Terrain + 1000, this.Const.World.DetailType.Shore, false);
 			tile.Subregion = dir;
 
-			if (tundra >= plains && tundra >= snow && tundra >= steppe)
+			if (tundra >= plains && tundra >= snow && tundra >= steppe && tundra >= desert)
 			{
 				tile.TacticalType = this.Const.World.TerrainTacticalType.Highlands;
 			}
-			else if (steppe >= plains && steppe >= tundra && steppe >= snow)
+			else if (steppe >= plains && steppe >= tundra && steppe >= snow && steppe >= desert)
 			{
 				tile.TacticalType = this.Const.World.TerrainTacticalType.Steppe;
 			}
-			else if (snow >= plains && snow >= tundra && snow >= steppe)
+			else if (desert >= plains && desert >= tundra && desert >= snow && desert >= steppe)
+			{
+				tile.TacticalType = this.Const.World.TerrainTacticalType.Desert;
+			}
+			else if (snow >= plains && snow >= tundra && snow >= steppe && snow >= desert)
 			{
 				tile.TacticalType = this.Const.World.TerrainTacticalType.Snow;
 			}

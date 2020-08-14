@@ -46,6 +46,7 @@ this.butcher_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[1];
 		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[2];
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[1];
+		this.m.Bodies = this.Const.Bodies.Thick;
 		this.m.IsLowborn = true;
 		this.m.PerkTreeDynamic = {
 			Weapon = [

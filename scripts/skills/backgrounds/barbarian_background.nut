@@ -42,6 +42,7 @@ this.barbarian_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.IsFemaleBackground = false;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Notorious;
+		this.m.Bodies = this.Const.Bodies.Muscular;
 		this.m.Level = this.Math.rand(2, 4);
 		this.m.IsCombatBackground = true;
 		this.m.IsOutlawBackground = true;

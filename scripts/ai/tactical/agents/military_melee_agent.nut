@@ -4,6 +4,7 @@ this.military_melee_agent <- this.inherit("scripts/ai/tactical/agent", {
 	{
 		this.agent.create();
 		this.m.ID = this.Const.AI.Agent.ID.MilitaryMelee;
+		this.m.Properties.BehaviorMult[this.Const.AI.Behavior.ID.Split] = 1.25;
 		this.m.Properties.TargetPriorityHitchanceMult = 0.4;
 		this.m.Properties.TargetPriorityHitpointsMult = 0.25;
 		this.m.Properties.TargetPriorityRandomMult = 0.0;
@@ -14,7 +15,7 @@ this.military_melee_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.m.Properties.TargetPriorityCounterSkillsMult = 0.5;
 		this.m.Properties.TargetPriorityArmorMult = 0.6;
 		this.m.Properties.OverallDefensivenessMult = 1.25;
-		this.m.Properties.OverallFormationMult = 1.5;
+		this.m.Properties.OverallFormationMult = 2.0;
 		this.m.Properties.EngageTargetMultipleOpponentsMult = 1.25;
 		this.m.Properties.EngageTargetAlreadyBeingEngagedMult = 1.0;
 
@@ -55,6 +56,9 @@ this.military_melee_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_decapitate"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_knock_out"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_lash"));
+		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_gash"));
+		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_reap"));
+		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_puncture"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_defend_spearwall"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_defend_shieldwall"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_defend_knock_back"));
@@ -78,6 +82,24 @@ this.military_melee_agent <- this.inherit("scripts/ai/tactical/agent", {
 		else
 		{
 			this.m.Properties.EngageTargetMultipleOpponentsMult = 1.25;
+		}
+
+		if (item != null && item.isItemType(this.Const.Items.ItemType.Weapon) && item.getRangeIdeal() == 2)
+		{
+			this.m.Properties.EngageTargetAlreadyBeingEngagedMult = 0.25;
+		}
+		else
+		{
+			this.m.Properties.EngageTargetAlreadyBeingEngagedMult = 1.0;
+		}
+
+		if (this.m.Properties.EngageRangeIdeal > 1)
+		{
+			this.m.Properties.OverallFormationMult = 2.5;
+		}
+		else
+		{
+			this.m.Properties.OverallFormationMult = 2.0;
 		}
 
 		this.m.Properties.BehaviorMult[this.Const.AI.Behavior.ID.Protect] = 0.0;

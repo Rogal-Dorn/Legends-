@@ -5,7 +5,7 @@ this.undead_trophy_item <- this.inherit("scripts/items/accessory/accessory", {
 		this.accessory.create();
 		this.m.ID = "accessory.undead_trophy";
 		this.m.Name = "Undead Trophy";
-		this.m.Description = "This ancient necklace taken from a pile of bones declares the one wearing it a veteran of many battles against the undead scourge, and one not to waver in the face of their horror.";
+		this.m.Description = "This ancient necklace taken from a pile of bones declares the one wearing it a veteran of many battles against the undead scourge, and one not to waver easily in the face of their horror.";
 		this.m.SlotType = this.Const.ItemSlot.Accessory;
 		this.m.IsDroppedAsLoot = true;
 		this.m.ShowOnCharacter = true;
@@ -57,7 +57,7 @@ this.undead_trophy_item <- this.inherit("scripts/items/accessory/accessory", {
 			id = 10,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Grants immunity against fear and mind control abilities"
+			text = "Doubles your Resolve if defending against fear and mind control abilities"
 		});
 		return result;
 	}
@@ -65,7 +65,7 @@ this.undead_trophy_item <- this.inherit("scripts/items/accessory/accessory", {
 	function onUpdateProperties( _properties )
 	{
 		this.accessory.onUpdateProperties(_properties);
-		_properties.MoraleCheckBraveryMult[this.Const.MoraleCheckType.MentalAttack] *= 10000.0;
+		_properties.MoraleCheckBraveryMult[this.Const.MoraleCheckType.MentalAttack] *= 2.0;
 	}
 
 });

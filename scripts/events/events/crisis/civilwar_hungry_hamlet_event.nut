@@ -284,7 +284,14 @@ this.civilwar_hungry_hamlet_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
-		if (!this.World.State.getPlayer().getTile().HasRoad)
+		local currentTile = this.World.State.getPlayer().getTile();
+
+		if (!currentTile.HasRoad)
+		{
+			return;
+		}
+
+		if (this.Const.DLC.Desert && currentTile.SquareCoords.Y <= this.World.getMapSize().Y * 0.2)
 		{
 			return;
 		}
@@ -303,6 +310,11 @@ this.civilwar_hungry_hamlet_event <- this.inherit("scripts/events/event", {
 
 		foreach( t in towns )
 		{
+			if (t.isSouthern())
+			{
+				continue;
+			}
+
 			local d = playerTile.getDistanceTo(t.getTile());
 
 			if (d <= bestDistance)

@@ -52,11 +52,11 @@ this.barbarian_thrall <- this.inherit("scripts/entity/tactical/human", {
 		this.getSprite("socket").setBrush("bust_base_wildmen_01");
 		this.m.Skills.add(this.new("scripts/skills/actives/barbarian_fury_skill"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_adrenalin"));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_dodge"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_anticipation"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_hold_out"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_recover"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_quick_hands"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_pathfinder"));
 
 		if ("LegendsMod" in this.World && this.World.LegendsMod != null && this.World.LegendsMod.Configs().LegendTherianthropyEnabled())
 		{
@@ -67,7 +67,7 @@ this.barbarian_thrall <- this.inherit("scripts/entity/tactical/human", {
 		}
 
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
-			{
+		{
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_relentless"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_alert"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_balance"));
@@ -77,9 +77,9 @@ this.barbarian_thrall <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_mastery_fist"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_last_stand"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
-			}
+		}
 
-		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 30)
+		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 20)
 		{
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_relentless"));
 		}

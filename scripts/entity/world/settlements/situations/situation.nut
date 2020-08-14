@@ -5,6 +5,7 @@ this.situation <- {
 		Name = "",
 		Description = "",
 		Icon = null,
+		Rumors = [],
 		IsStacking = true,
 		ValidDays = 0,
 		ValidUntil = 0.0
@@ -42,6 +43,11 @@ this.situation <- {
 	function getDefaultDays()
 	{
 		return this.m.ValidDays;
+	}
+
+	function getRumors()
+	{
+		return this.m.Rumors;
 	}
 
 	function isStacking()

@@ -16,7 +16,7 @@ this.goblin_ambusher <- this.inherit("scripts/entity/tactical/goblin", {
 		this.goblin.onInit();
 		local b = this.m.BaseProperties;
 		b.setValues(this.Const.Tactical.Actor.GoblinAmbusher);
-		b.DamageDirectMult = 1.4;
+		b.DamageDirectMult = 1.25;
 		b.TargetAttractionMult = 1.1;
 		this.m.ActionPoints = b.ActionPoints;
 		this.m.Hitpoints = b.Hitpoints;
@@ -30,10 +30,11 @@ this.goblin_ambusher <- this.inherit("scripts/entity/tactical/goblin", {
 		if (!this.m.IsLow)
 		{
 			b.IsSpecializedInBows = true;
+			b.Vision = 8;
 
 			if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 180)
 			{
-				b.DamageDirectMult = 1.5;
+				b.DamageDirectMult = 1.35;
 			}
 		}
 
@@ -53,13 +54,13 @@ this.goblin_ambusher <- this.inherit("scripts/entity/tactical/goblin", {
 		{
 			local r = this.Math.rand(1, 2);
 
-			if (r == 1)
+			if (r == 1 || !this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 60)
 			{
-				this.m.Items.equip(this.new("scripts/items/weapons/greenskins/goblin_bow"));
+				this.m.Items.equip(this.new("scripts/items/weapons/greenskins/goblin_heavy_bow"));
 			}
 			else if (r == 2)
 			{
-				this.m.Items.equip(this.new("scripts/items/weapons/greenskins/goblin_heavy_bow"));
+				this.m.Items.equip(this.new("scripts/items/weapons/greenskins/goblin_bow"));
 			}
 		}
 
@@ -106,6 +107,10 @@ this.goblin_ambusher <- this.inherit("scripts/entity/tactical/goblin", {
 		];
 		this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_overwhelm"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_dodge"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_relentless"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_head_hunter"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_fast_adaption"));
 		return true;
 	}
 

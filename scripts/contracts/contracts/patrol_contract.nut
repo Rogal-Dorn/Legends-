@@ -46,7 +46,7 @@ this.patrol_contract <- this.inherit("scripts/contracts/contract", {
 
 		this.m.Location1 = this.WeakTableRef(this.getNearestLocationTo(this.m.Home, settlements, true));
 		this.m.Location2 = this.WeakTableRef(this.getNearestLocationTo(this.m.Location1, settlements, true));
-		this.m.Payment.Pool = 800 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult();
+		this.m.Payment.Pool = 750 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult();
 		local r = this.Math.rand(1, 3);
 
 		if (r == 1)
@@ -155,7 +155,7 @@ this.patrol_contract <- this.inherit("scripts/contracts/contract", {
 			{
 				if (this.Flags.get("LastUpdateDay") != this.World.getTime().Days)
 				{
-					if (this.World.getTime().Days - this.Flags.get("StartDay") >= 7)
+					if (this.World.getTime().Days - this.Flags.get("StartDay") >= 5)
 					{
 						this.Contract.setScreen("Failure1");
 						this.World.Contracts.showActiveContract();
@@ -224,7 +224,7 @@ this.patrol_contract <- this.inherit("scripts/contracts/contract", {
 			{
 				if (this.Flags.get("LastUpdateDay") != this.World.getTime().Days)
 				{
-					if (this.World.getTime().Days - this.Flags.get("StartDay") >= 7)
+					if (this.World.getTime().Days - this.Flags.get("StartDay") >= 5)
 					{
 						this.Contract.setScreen("Failure1");
 						this.World.Contracts.showActiveContract();
@@ -320,7 +320,7 @@ this.patrol_contract <- this.inherit("scripts/contracts/contract", {
 			{
 				if (this.Flags.get("LastUpdateDay") != this.World.getTime().Days)
 				{
-					if (this.World.getTime().Days - this.Flags.get("StartDay") >= 7)
+					if (this.World.getTime().Days - this.Flags.get("StartDay") >= 5)
 					{
 						this.Contract.setScreen("Failure1");
 						this.World.Contracts.showActiveContract();
@@ -982,8 +982,10 @@ this.patrol_contract <- this.inherit("scripts/contracts/contract", {
 			local nearest_bandits = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Bandits).getNearestSettlement(tile);
 			local nearest_goblins = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Goblins).getNearestSettlement(tile);
 			local nearest_orcs = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Orcs).getNearestSettlement(tile);
+			local nearest_barbarians = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Barbarians).getNearestSettlement(tile);
+			local nearest_nomads = this.World.FactionManager.getFactionOfType(this.Const.FactionType.OrientalBandits).getNearestSettlement(tile);
 
-			if (nearest_bandits == null && nearest_goblins == null && nearest_orcs == null)
+			if (nearest_bandits == null && nearest_goblins == null && nearest_orcs == null && nearest_barbarians == null && nearest_nomads == null)
 			{
 				this.logInfo("no enemy base found");
 				return false;
@@ -992,21 +994,24 @@ this.patrol_contract <- this.inherit("scripts/contracts/contract", {
 			local bandits_dist = nearest_bandits != null ? nearest_bandits.getTile().getDistanceTo(tile) + this.Math.rand(0, 10) : 9000;
 			local goblins_dist = nearest_goblins != null ? nearest_goblins.getTile().getDistanceTo(tile) + this.Math.rand(0, 10) : 9000;
 			local orcs_dist = nearest_orcs != null ? nearest_orcs.getTile().getDistanceTo(tile) + this.Math.rand(0, 10) : 9000;
+			local barbarians_dist = nearest_barbarians != null ? nearest_barbarians.getTile().getDistanceTo(tile) + this.Math.rand(0, 10) : 9000;
+			local nomads_dist = nearest_nomads != null ? nearest_nomads.getTile().getDistanceTo(tile) + this.Math.rand(0, 10) : 9000;
 			local party;
 			local origin;
 
-			if (bandits_dist <= goblins_dist && bandits_dist <= orcs_dist)
+			if (bandits_dist <= goblins_dist && bandits_dist <= orcs_dist && bandits_dist <= barbarians_dist && bandits_dist <= nomads_dist)
 			{
 				if (this.Math.rand(1, 100) <= 50)
 				{
-					party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Bandits).spawnEntity(tile, "Brigands", false, this.Const.World.Spawn.BanditRaiders, 110 * this.getDifficultyMult() * this.getReputationToDifficultyMult());
+					party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Bandits).spawnEntity(tile, "Brigands", false, this.Const.World.Spawn.BanditRaiders, 110 * this.getDifficultyMult() * this.getScaledDifficultyMult());
 				}
 				else
 				{
-					party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Bandits).spawnEntity(tile, "Brigand Hunters", false, this.Const.World.Spawn.BanditRoamers, 80 * this.getDifficultyMult() * this.getReputationToDifficultyMult());
+					party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Bandits).spawnEntity(tile, "Brigand Hunters", false, this.Const.World.Spawn.BanditRoamers, 80 * this.getDifficultyMult() * this.getScaledDifficultyMult());
 				}
 
 				party.setDescription("A rough and tough band of brigands preying on the weak.");
+				party.setFootprintType(this.Const.World.FootprintsType.Brigands);
 				party.getLoot().Money = this.Math.rand(50, 100);
 				party.getLoot().ArmorParts = this.Math.rand(0, 10);
 				party.getLoot().Medicine = this.Math.rand(0, 2);
@@ -1036,18 +1041,19 @@ this.patrol_contract <- this.inherit("scripts/contracts/contract", {
 
 				origin = nearest_bandits;
 			}
-			else if (goblins_dist <= bandits_dist && goblins_dist <= orcs_dist)
+			else if (goblins_dist <= bandits_dist && goblins_dist <= orcs_dist && goblins_dist <= barbarians_dist && goblins_dist <= nomads_dist)
 			{
 				if (this.Math.rand(1, 100) <= 50)
 				{
-					party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Goblins).spawnEntity(tile, "Goblin Raiders", false, this.Const.World.Spawn.GoblinRaiders, 110 * this.getDifficultyMult() * this.getReputationToDifficultyMult());
+					party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Goblins).spawnEntity(tile, "Goblin Raiders", false, this.Const.World.Spawn.GoblinRaiders, 110 * this.getDifficultyMult() * this.getScaledDifficultyMult());
 				}
 				else
 				{
-					party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Goblins).spawnEntity(tile, "Goblin Scouts", false, this.Const.World.Spawn.GoblinScouts, 80 * this.getDifficultyMult() * this.getReputationToDifficultyMult());
+					party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Goblins).spawnEntity(tile, "Goblin Scouts", false, this.Const.World.Spawn.GoblinScouts, 80 * this.getDifficultyMult() * this.getScaledDifficultyMult());
 				}
 
 				party.setDescription("A band of mischievous goblins, small but cunning and not to be underestimated.");
+				party.setFootprintType(this.Const.World.FootprintsType.Goblins);
 				party.getLoot().ArmorParts = this.Math.rand(0, 10);
 				party.getLoot().Medicine = this.Math.rand(0, 2);
 				party.getLoot().Ammo = this.Math.rand(0, 30);
@@ -1074,18 +1080,90 @@ this.patrol_contract <- this.inherit("scripts/contracts/contract", {
 
 				origin = nearest_goblins;
 			}
+			else if (barbarians_dist <= goblins_dist && barbarians_dist <= bandits_dist && barbarians_dist <= orcs_dist && barbarians_dist <= nomads_dist)
+			{
+				party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Barbarians).spawnEntity(tile, "Barbarians", false, this.Const.World.Spawn.Barbarians, 110 * this.getDifficultyMult() * this.getScaledDifficultyMult());
+				party.setDescription("A warband of barbarian tribals.");
+				party.setFootprintType(this.Const.World.FootprintsType.Barbarians);
+				party.getLoot().Money = this.Math.rand(0, 50);
+				party.getLoot().ArmorParts = this.Math.rand(0, 10);
+				party.getLoot().Medicine = this.Math.rand(0, 10);
+				party.getLoot().Ammo = this.Math.rand(0, 30);
+
+				if (this.Math.rand(1, 100) <= 50)
+				{
+					party.addToInventory("loot/bone_figurines_item");
+				}
+
+				if (this.Math.rand(1, 100) <= 50)
+				{
+					party.addToInventory("loot/bead_necklace_item");
+				}
+
+				local r = this.Math.rand(2, 5);
+
+				if (r == 2)
+				{
+					party.addToInventory("supplies/roots_and_berries_item");
+				}
+				else if (r == 3)
+				{
+					party.addToInventory("supplies/dried_fruits_item");
+				}
+				else if (r == 4)
+				{
+					party.addToInventory("supplies/ground_grains_item");
+				}
+				else if (r == 5)
+				{
+					party.addToInventory("supplies/pickled_mushrooms_item");
+				}
+
+				origin = nearest_barbarians;
+			}
+			else if (nomads_dist <= barbarians_dist && nomads_dist <= goblins_dist && nomads_dist <= bandits_dist && nomads_dist <= orcs_dist)
+			{
+				party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.OrientalBandits).spawnEntity(tile, "Nomads", false, this.Const.World.Spawn.NomadRaiders, 110 * this.getDifficultyMult() * this.getScaledDifficultyMult());
+				party.setDescription("A band of desert raiders preying on anyone trying to cross the seas of sand.");
+				party.setFootprintType(this.Const.World.FootprintsType.Nomads);
+				party.getLoot().Money = this.Math.rand(50, 200);
+				party.getLoot().ArmorParts = this.Math.rand(0, 10);
+				party.getLoot().Medicine = this.Math.rand(0, 2);
+				party.getLoot().Ammo = this.Math.rand(0, 20);
+				local r = this.Math.rand(1, 4);
+
+				if (r == 1)
+				{
+					party.addToInventory("supplies/bread_item");
+				}
+				else if (r == 2)
+				{
+					party.addToInventory("supplies/dates_item");
+				}
+				else if (r == 3)
+				{
+					party.addToInventory("supplies/rice_item");
+				}
+				else if (r == 4)
+				{
+					party.addToInventory("supplies/dried_lamb_item");
+				}
+
+				origin = nearest_nomads;
+			}
 			else
 			{
 				if (this.Math.rand(1, 100) <= 50)
 				{
-					party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Orcs).spawnEntity(tile, "Orc Marauders", false, this.Const.World.Spawn.OrcRaiders, 110 * this.getDifficultyMult() * this.getReputationToDifficultyMult());
+					party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Orcs).spawnEntity(tile, "Orc Marauders", false, this.Const.World.Spawn.OrcRaiders, 110 * this.getDifficultyMult() * this.getScaledDifficultyMult());
 				}
 				else
 				{
-					party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Orcs).spawnEntity(tile, "Orc Scouts", false, this.Const.World.Spawn.OrcScouts, 80 * this.getDifficultyMult() * this.getReputationToDifficultyMult());
+					party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Orcs).spawnEntity(tile, "Orc Scouts", false, this.Const.World.Spawn.OrcScouts, 80 * this.getDifficultyMult() * this.getScaledDifficultyMult());
 				}
 
 				party.setDescription("A band of menacing orcs, greenskinned and towering any man.");
+				party.setFootprintType(this.Const.World.FootprintsType.Orcs);
 				party.getLoot().ArmorParts = this.Math.rand(0, 25);
 				party.getLoot().Ammo = this.Math.rand(0, 10);
 				party.addToInventory("supplies/strange_meat_item");
@@ -1094,6 +1172,7 @@ this.patrol_contract <- this.inherit("scripts/contracts/contract", {
 
 			party.getSprite("banner").setBrush(origin.getBanner());
 			party.setAttackableByAI(false);
+			party.setAlwaysAttackPlayer(true);
 			local c = party.getController();
 			local intercept = this.new("scripts/ai/world/orders/intercept_order");
 			intercept.setTarget(this.World.State.getPlayer());
@@ -1125,7 +1204,7 @@ this.patrol_contract <- this.inherit("scripts/contracts/contract", {
 		]);
 		_vars.push([
 			"days",
-			7 - (this.World.getTime().Days - this.m.Flags.get("StartDay"))
+			5 - (this.World.getTime().Days - this.m.Flags.get("StartDay"))
 		]);
 		_vars.push([
 			"crucifiedman",

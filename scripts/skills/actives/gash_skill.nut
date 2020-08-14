@@ -10,7 +10,7 @@ this.gash_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.gash";
 		this.m.Name = "Gash";
-		this.m.Description = "A powerful slashing attack that is likely to inflict debilitating injuries.";
+		this.m.Description = "A well-placed slashing attack that is likely to inflict debilitating injuries.";
 		this.m.KilledString = "Cut down";
 		this.m.Icon = "skills/active_189.png";
 		this.m.IconDisabled = "skills/active_189_sw.png";
@@ -55,7 +55,7 @@ this.gash_skill <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/hitchance.png",
-				text = "Has a [color=" + this.Const.UI.Color.NegativeValue + "]33%[/color] lower threshold to inflict injuries"
+				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] chance to hit"
 			}
 		]);
 		if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInSwords)
@@ -64,9 +64,19 @@ this.gash_skill <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/hitchance.png",
-				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] chance to hit due to sword specialisation"
+				text = "Has a [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] lower threshold to inflict injuries"
 			});
 		}
+		else
+		{
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/hitchance.png",
+				text = "Has a [color=" + this.Const.UI.Color.NegativeValue + "]33%[/color] lower threshold to inflict injuries"
+			});
+		}
+
 		return ret;
 	}
 
@@ -93,7 +103,14 @@ this.gash_skill <- this.inherit("scripts/skills/skill", {
 	{
 		if (_skill == this)
 		{
-			_hitInfo.InjuryThresholdMult *= 0.66;
+			if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInSwords)
+			{
+				_hitInfo.InjuryThresholdMult *= 0.5;
+			}
+			else
+			{
+				_hitInfo.InjuryThresholdMult *= 0.66;
+			}
 
 			if (_targetEntity.isAlive() && !_targetEntity.getCurrentProperties().IsImmuneToBleeding)
 			{
@@ -106,10 +123,7 @@ this.gash_skill <- this.inherit("scripts/skills/skill", {
 	{
 		if (_skill == this)
 		{
-			if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInSwords)
-			{
-				_properties.MeleeSkill += 5;
-			}
+			_properties.MeleeSkill += 10;
 		}
 	}
 

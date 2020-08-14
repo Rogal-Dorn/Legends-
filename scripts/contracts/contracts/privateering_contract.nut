@@ -116,7 +116,7 @@ this.privateering_contract <- this.inherit("scripts/contracts/contract", {
 
 				foreach( s in f.getSettlements() )
 				{
-					if (s.isIsolated())
+					if (s.isIsolated() || !s.isDiscovered())
 					{
 						continue;
 					}
@@ -137,7 +137,7 @@ this.privateering_contract <- this.inherit("scripts/contracts/contract", {
 					{
 						if (obj.isMilitary())
 						{
-							this.Contract.addUnitsToEntity(obj, this.Const.World.Spawn.Noble, this.Math.rand(90, 120) * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
+							this.Contract.addUnitsToEntity(obj, this.Const.World.Spawn.Noble, this.Math.rand(90, 120) * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult());
 						}
 						else
 						{
@@ -145,17 +145,17 @@ this.privateering_contract <- this.inherit("scripts/contracts/contract", {
 
 							if (r <= 10)
 							{
-								this.Contract.addUnitsToEntity(obj, this.Const.World.Spawn.Mercenaries, this.Math.rand(90, 110) * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
+								this.Contract.addUnitsToEntity(obj, this.Const.World.Spawn.Mercenaries, this.Math.rand(90, 110) * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult());
 							}
 							else
 							{
-								this.Contract.addUnitsToEntity(obj, this.Const.World.Spawn.Noble, this.Math.rand(70, 100) * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
+								this.Contract.addUnitsToEntity(obj, this.Const.World.Spawn.Noble, this.Math.rand(70, 100) * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult());
 							}
 						}
 					}
 					else if (obj.isMilitary())
 					{
-						this.Contract.addUnitsToEntity(obj, this.Const.World.Spawn.Militia, this.Math.rand(80, 110) * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
+						this.Contract.addUnitsToEntity(obj, this.Const.World.Spawn.Militia, this.Math.rand(80, 110) * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult());
 					}
 					else
 					{
@@ -163,16 +163,16 @@ this.privateering_contract <- this.inherit("scripts/contracts/contract", {
 
 						if (r <= 15)
 						{
-							this.Contract.addUnitsToEntity(obj, this.Const.World.Spawn.Mercenaries, this.Math.rand(80, 110) * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
+							this.Contract.addUnitsToEntity(obj, this.Const.World.Spawn.Mercenaries, this.Math.rand(80, 110) * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult());
 						}
 						else if (r <= 30)
 						{
-							obj.getTags().set("HasNobleProtection", true);
-							this.Contract.addUnitsToEntity(obj, this.Const.World.Spawn.Noble, this.Math.rand(80, 100) * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
+							obj.getFlags().set("HasNobleProtection", true);
+							this.Contract.addUnitsToEntity(obj, this.Const.World.Spawn.Noble, this.Math.rand(80, 100) * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult());
 						}
 						else if (r <= 70)
 						{
-							this.Contract.addUnitsToEntity(obj, this.Const.World.Spawn.Militia, this.Math.rand(70, 110) * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
+							this.Contract.addUnitsToEntity(obj, this.Const.World.Spawn.Militia, this.Math.rand(70, 110) * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult());
 						}
 						else
 						{
@@ -187,7 +187,7 @@ this.privateering_contract <- this.inherit("scripts/contracts/contract", {
 				}
 
 				local origin = nonIsolatedSettlements[this.Math.rand(0, nonIsolatedSettlements.len() - 1)];
-				local party = f.spawnEntity(origin.getTile(), origin.getName() + " Company", true, this.Const.World.Spawn.Noble, 190 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
+				local party = f.spawnEntity(origin.getTile(), origin.getName() + " Company", true, this.Const.World.Spawn.Noble, 190 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult());
 				party.getSprite("body").setBrush(party.getSprite("body").getBrush().Name + "_" + f.getBannerString());
 				party.setDescription("Professional soldiers in service to local lords.");
 				this.Contract.m.UnitsSpawned.push(party.getID());
@@ -414,7 +414,7 @@ this.privateering_contract <- this.inherit("scripts/contracts/contract", {
 					{
 						obj.getSprite("selection").Visible = false;
 						obj.setAttackable(false);
-						obj.getTags().set("HasNobleProtection", false);
+						obj.getFlags().set("HasNobleProtection", false);
 						obj.setOnCombatWithPlayerCallback(null);
 					}
 
@@ -440,6 +440,11 @@ this.privateering_contract <- this.inherit("scripts/contracts/contract", {
 				{
 					local p = this.World.State.getLocalCombatProperties(this.World.State.getPlayer().getPos());
 					p.CombatID = "RazeLocation";
+					p.LocationTemplate = clone this.Const.Tactical.LocationTemplate;
+					p.LocationTemplate.Template[0] = "tactical.human_camp";
+					p.LocationTemplate.Fortification = this.Const.Tactical.FortificationType.None;
+					p.LocationTemplate.CutDownTrees = true;
+					p.LocationTemplate.AdditionalRadius = 5;
 
 					if (_dest.isMilitary())
 					{
@@ -452,7 +457,7 @@ this.privateering_contract <- this.inherit("scripts/contracts/contract", {
 
 					p.EnemyBanners = [];
 
-					if (_dest.getSettlement().isMilitary() || _dest.getTags().get("HasNobleProtection"))
+					if (_dest.getSettlement().isMilitary() || _dest.getFlags().get("HasNobleProtection"))
 					{
 						p.EnemyBanners.push(_dest.getSettlement().getBanner());
 					}
@@ -461,7 +466,7 @@ this.privateering_contract <- this.inherit("scripts/contracts/contract", {
 						p.EnemyBanners.push("banner_noble_11");
 					}
 
-					if (_dest.getTags().get("HasNobleProtection"))
+					if (_dest.getFlags().get("HasNobleProtection"))
 					{
 						local f = this.Flags.get("FeudingHouseID");
 
@@ -488,7 +493,7 @@ this.privateering_contract <- this.inherit("scripts/contracts/contract", {
 					this.Contract.m.CurrentObjective.getSprite("selection").Visible = false;
 					this.Contract.m.CurrentObjective.setOnCombatWithPlayerCallback(null);
 					this.Contract.m.CurrentObjective.setAttackable(false);
-					this.Contract.m.CurrentObjective.getTags().set("HasNobleProtection", false);
+					this.Contract.m.CurrentObjective.getFlags().set("HasNobleProtection", false);
 					this.Flags.set("Score", this.Flags.get("Score") + 5);
 
 					foreach( i, obj in this.Contract.m.Objectives )
@@ -670,7 +675,7 @@ this.privateering_contract <- this.inherit("scripts/contracts/contract", {
 						local a = this.World.FactionManager.getFaction(this.Flags.get("RivalHouseID"));
 						a.addPlayerRelationEx(50.0 - a.getPlayerRelation(), "Changed sides in the war");
 						a.makeSettlementsFriendlyToPlayer();
-						this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnContractFail);
+						this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnContractBetrayal);
 						this.World.Contracts.finishActiveContract(true);
 						return 0;
 					}
@@ -833,7 +838,7 @@ this.privateering_contract <- this.inherit("scripts/contracts/contract", {
 					obj.clearTroops();
 					obj.setAttackable(false);
 					obj.getSprite("selection").Visible = false;
-					obj.getTags().set("HasNobleProtection", false);
+					obj.getFlags().set("HasNobleProtection", false);
 					obj.setOnCombatWithPlayerCallback(null);
 				}
 			}
@@ -896,7 +901,7 @@ this.privateering_contract <- this.inherit("scripts/contracts/contract", {
 				this.m.Objectives.push(this.WeakTableRef(this.World.getEntityByID(o)));
 				local obj = this.m.Objectives[this.m.Objectives.len() - 1];
 
-				if (!obj.isMilitary() && !obj.getSettlement().isMilitary() && !obj.getTags().get("HasNobleProtection"))
+				if (!obj.isMilitary() && !obj.getSettlement().isMilitary() && !obj.getFlags().get("HasNobleProtection"))
 				{
 					local garbage = [];
 

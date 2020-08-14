@@ -82,11 +82,6 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		return 100 + (this.m.Level - 1) * 30;
 	}
 
-	function getXPForNextLevel()
-	{
-		return this.m.Level < this.Const.LevelXP.len() ? this.Const.LevelXP[this.m.Level] : this.Const.LevelXP[this.Const.LevelXP.len() - 1];
-	}
-
 	function getLevel()
 	{
 		return this.m.Level;
@@ -139,12 +134,12 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 	function getTryoutCost()
 	{
-		return this.Math.max(10, this.Math.min(this.m.HiringCost - 25, 25 + this.m.HiringCost * this.Const.Tryouts.CostMult));
+		return this.Math.ceil(this.Math.max(10, this.Math.min(this.m.HiringCost - 25, 25 + this.m.HiringCost * this.Const.Tryouts.CostMult) * this.World.Assets.m.TryoutPriceMult));
 	}
 
 	function getDailyCost()
 	{
-		local wageMult = this.m.CurrentProperties.DailyWageMult - this.World.State.getPlayer().getWageModifier();
+		local wageMult = (this.m.CurrentProperties.DailyWageMult * (("State" in this.World) && this.World.State != null ? this.World.Assets.m.DailyWageMult : 1.0)) - this.World.State.getPlayer().getWageModifier();
 		//local costAdj = this.Math.max(0, this.m.CurrentProperties.DailyWageMult * barterMult);
 		return this.Math.max(0, this.m.CurrentProperties.DailyWage * wageMult);
 	}
@@ -721,7 +716,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.getHitpoints() < this.getHitpointsMax())
 		{
-			local ht = this.Math.ceil((this.getHitpointsMax() - this.getHitpoints()) / this.Const.World.Assets.HitpointsPerHour / 24.0);
+			local ht = this.Math.ceil((this.getHitpointsMax() - this.getHitpoints()) / (this.Const.World.Assets.HitpointsPerHour * (("State" in this.World) && this.World.State != null ? this.World.Assets.m.HitpointsPerHourMult : 1.0)) / 24.0);
 
 			if (ht > 1)
 			{
@@ -776,7 +771,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	{
 		if (this.getHitpoints() < this.getHitpointsMax())
 		{
-			return this.Math.ceil((this.getHitpointsMax() - this.getHitpoints()) / this.Const.World.Assets.HitpointsPerHour / 24.0);
+			return this.Math.ceil((this.getHitpointsMax() - this.getHitpoints()) / (this.Const.World.Assets.HitpointsPerHour * (("State" in this.World) && this.World.State != null ? this.World.Assets.m.HitpointsPerHourMult : 1.0)) / 24.0);
 		}
 		else
 		{
@@ -855,9 +850,9 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Type = this.Const.EntityType.Player;
 		this.m.BloodType = this.Const.BloodType.Red;
 		this.human.create();
-		this.getTags().add("human");
-		this.getTags().set("PotionLastUsed", 0.0);
-		this.getTags().set("PotionsUsed", 0);
+		this.getFlags().add("human");
+		this.getFlags().set("PotionLastUsed", 0.0);
+		this.getFlags().set("PotionsUsed", 0);
 		this.m.AIAgent = this.new("scripts/ai/tactical/player_agent");
 		this.m.AIAgent.setActor(this);
 		this.m.Formations = this.new("scripts/entity/tactical/formations_container");
@@ -867,7 +862,16 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	function onHired()
 	{
 		this.m.HireTime = this.Time.getVirtualTimeF();
-		this.improveMood(1.5, "Joined a mercenary company");
+
+		if (this.getBackground().getID() != "background.slave")
+		{
+			this.improveMood(1.5, "Joined a mercenary company");
+		}
+
+		if (("State" in this.World) && this.World.State != null && this.World.Assets.getOrigin().getID() == "scenario.manhunters" && this.getBackground().getID() != "background.slave")
+		{
+			this.getSkills().add(this.new("scripts/skills/actives/whip_slave_skill"));
+		}
 
 		if (this.World.getPlayerRoster().getSize() >= 12)
 		{
@@ -932,10 +936,10 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 		this.resetBloodied(false);
 		this.getSprite("dirt").Visible = false;
-		this.getTags().set("Devoured", false);
-		this.getTags().set("Charmed", false);
-		this.getTags().set("Sleeping", false);
-		this.getTags().set("Nightmare", false);
+		this.getFlags().set("Devoured", false);
+		this.getFlags().set("Charmed", false);
+		this.getFlags().set("Sleeping", false);
+		this.getFlags().set("Nightmare", false);
 		this.m.Fatigue = 0;
 		this.m.ActionPoints = 0;
 		this.m.Items.onCombatFinished();
@@ -966,7 +970,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			return true;
 		}
 
-		if (this.Math.rand(1, 100) > this.Const.Combat.SurviveWithInjuryChance * this.m.CurrentProperties.SurviveWithInjuryChanceMult)
+		if (this.Math.rand(1, 100) <= this.Const.Combat.SurviveWithInjuryChance * this.m.CurrentProperties.SurviveWithInjuryChanceMult || this.World.Assets.m.IsSurvivalGuaranteed && !this.m.Skills.hasSkillOfType(this.Const.SkillType.PermanentInjury) && (this.World.Assets.getOrigin().getID() != "scenario.manhunters" || this.getBackground().getID() != "background.slave"))
 		{
 			return true;
 		}
@@ -1039,9 +1043,9 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 			if (r == 0)
 			{
-				this.getTags().add("PlayerSkeleton");
-				this.getTags().add("undead");
-				this.getTags().add("skeleton");
+				this.getFlags().add("PlayerSkeleton");
+				this.getFlags().add("undead");
+				this.getFlags().add("skeleton");
 				local body = this.getSprite("body");
 				local skill = this.new("scripts/skills/injury_permanent/legend_fleshless");
 				this.m.Skills.add(skill);
@@ -1049,9 +1053,9 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			}
 			else
 			{
-				this.getTags().add("PlayerZombie");
-				this.getTags().add("undead");
-				this.getTags().add("zombie_minion");
+				this.getFlags().add("PlayerZombie");
+				this.getFlags().add("undead");
+				this.getFlags().add("zombie_minion");
 				local skill = this.new("scripts/skills/injury_permanent/legend_rotten_flesh");
 				this.m.Skills.add(skill);
 				this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_zombie_bite"));
@@ -1064,12 +1068,37 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.worsenMood(this.Const.MoodChange.PermanentInjury, "Suffered a permanent injury");
 		this.updateAchievement("ScarsForLife", 1, 1);
 
-		if (this.getTags().has("PlayerSkeleton") || this.getTags().has("PlayerZombie"))
+		if (this.getFlags().has("PlayerSkeleton") || this.getFlags().has("PlayerZombie"))
 		{
 			return false;
 		}
 
 		return false;
+	}
+
+	function onOtherActorDeath( _killer, _victim, _skill )
+	{
+		if (!this.m.IsAlive || this.m.IsDying)
+		{
+			return;
+		}
+
+		if (_victim.getFaction() == this.getFaction() && ("getBackground" in _victim) && _victim.getBackground().getID() == "background.slave" && this.getBackground().getID() != "background.slave")
+		{
+			return;
+		}
+
+		this.actor.onOtherActorDeath(_killer, _victim, _skill);
+	}
+
+	function kill( _killer = null, _skill = null, _fatalityType = this.Const.FatalityType.None, _silent = false )
+	{
+		if (!this.Tactical.State.isScenarioMode() && this.World.Assets.m.IsSurvivalGuaranteed && !this.m.Skills.hasSkillOfType(this.Const.SkillType.PermanentInjury) && (this.World.Assets.getOrigin().getID() != "scenario.manhunters" || this.getBackground().getID() != "background.slave"))
+		{
+			_fatalityType = this.Const.FatalityType.None;
+		}
+
+		this.actor.kill(_killer, _skill, _fatalityType, _silent);
 	}
 
 	function onDeath( _killer, _skill, _tile, _fatalityType )
@@ -1315,8 +1344,16 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				killedBy = killedBy + (" by " + _killer.getKilledName());
 			}
 
-			this.m.LifetimeStats.Battles += 1;
-			this.World.Statistics.addFallen(this, killedBy);
+			local fallen = {
+				Name = this.getName(),
+				Time = this.World.getTime().Days,
+				TimeWithCompany = this.Math.max(1, this.getDaysWithCompany()),
+				Kills = this.m.LifetimeStats.Kills,
+				Battles = this.m.LifetimeStats.Battles + 1,
+				KilledBy = killedBy,
+				Expendable = this.getBackground().getID() == "background.slave"
+			};
+			this.World.Statistics.addFallen(fallen);
 		}
 	}
 
@@ -1331,7 +1368,6 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.add(this.new("scripts/skills/actives/break_ally_free_skill"));
 		this.m.Skills.add(this.new("scripts/skills/effects/realm_of_nightmares_effect"));
 		this.m.Skills.add(this.new("scripts/skills/special/legend_horserider_skill"));
-		// this.m.Skills.add(this.new("scripts/skills/special/relationship_check"));
 
 		if (this.Const.DLC.Unhold)
 		{
@@ -1404,6 +1440,10 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		{
 			_difficulty = _difficulty + (this.Math.rand(0, 1) == 0 ? 10 : -10);
 		}
+		else if (this.m.Skills.hasSkill("trait.mad"))
+		{
+			_difficulty = _difficulty + (this.Math.rand(0, 1) == 0 ? 15 : -15);
+		}
 
 		if (_change < 0 && _type == this.Const.MoraleCheckType.MentalAttack && this.m.Skills.hasSkill("trait.superstitious"))
 		{
@@ -1413,9 +1453,23 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		return this.actor.checkMorale(_change, _difficulty, _type, _showIconBeforeMoraleIcon, _noNewLine);
 	}
 
+	function getXPForNextLevel()
+	{
+		if (this.m.Level >= 7 && ("State" in this.World) && this.World.State != null && this.World.Assets.getOrigin().getID() == "scenario.manhunters" && this.getBackground().getID() == "background.slave")
+		{
+			return this.Const.LevelXP[6];
+		}
+		else
+		{
+			return this.m.Level < this.Const.LevelXP.len() ? this.Const.LevelXP[this.m.Level] : this.Const.LevelXP[this.Const.LevelXP.len() - 1];
+		}
+	}
+
 	function addXP( _xp, _scale = true )
 	{
-		if (this.m.Level >= this.Const.LevelXP.len() || this.isGuest())
+		local isScenarioMode = !(("State" in this.World) && this.World.State != null);
+
+		if (this.m.Level >= this.Const.LevelXP.len() || this.isGuest() || !isScenarioMode && this.World.Assets.getOrigin().getID() == "scenario.manhunters" && this.m.Level >= 7 && this.getBackground().getID() == "background.slave")
 		{
 			return;
 		}
@@ -1430,12 +1484,30 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			_xp = _xp * this.Const.Combat.GlobalXPVeteranLevelMult;
 		}
 
-		if (this.getTags().has("PlayerSkeleton"))
+		if (this.getFlags().has("PlayerSkeleton"))
 		{
 			_xp = _xp * 0.33;
 		}
 
-		if (this.getTags().has("PlayerZombie"))
+		if (!isScenarioMode)
+		{
+			if (_scale)
+			{
+				_xp = _xp * this.World.Assets.m.XPMult;
+
+				if (this.World.Retinue.hasFollower("follower.drill_sergeant"))
+				{
+					_xp = _xp * this.Math.maxf(1.0, 1.2 - 0.02 * (this.m.Level - 1));
+				}
+			}
+
+			if (this.World.getPlayerRoster().getSize() < 3)
+			{
+				_xp = _xp * (1.0 - (3 - this.World.getPlayerRoster().getSize()) * 0.15);
+			}
+		}
+
+		if (this.getFlags().has("PlayerZombie"))
 		{
 			_xp = _xp * 0.25;
 		}
@@ -1448,6 +1520,12 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		{
 			this.m.CombatStats.XPGained += this.Const.LevelXP[this.Const.LevelXP.len() - 1] - this.m.XP;
 			this.m.XP = this.Const.LevelXP[this.Const.LevelXP.len() - 1];
+			return;
+		}
+		else if (!isScenarioMode && this.World.Assets.getOrigin().getID() == "scenario.manhunters" && this.m.XP + _xp * this.m.CurrentProperties.XPGainMult >= this.Const.LevelXP[6] && this.getBackground().getID() == "background.slave")
+		{
+			this.m.CombatStats.XPGained += this.Const.LevelXP[6] - this.m.XP;
+			this.m.XP = this.Const.LevelXP[6];
 			return;
 		}
 
@@ -1480,7 +1558,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		p.onUnlocked();
 		this.m.Skills.update();
 
-		if (this.m.Level >= 11 && _id == "perk.student")
+		if ((this.m.Level >= 11 || this.m.Level >= 7 && this.World.Assets.getOrigin().getID() == "scenario.manhunters" && this.getBackground().getID() == "background.slave") && _id == "perk.student")
 		{
 			++this.m.PerkPoints;
 		}
@@ -1547,7 +1625,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				++this.m.PerkPoints;
 			}
 
-			if (this.m.Level == 11 && this.m.Skills.hasSkill("perk.student"))
+			if ((this.m.Level == 11 || this.m.Level == 7 && this.World.Assets.getOrigin().getID() == "scenario.manhunters" && this.getBackground().getID() == "background.slave") && this.m.Skills.hasSkill("perk.student"))
 			{
 				++this.m.PerkPoints;
 			}
@@ -1977,16 +2055,19 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		background.setGender(_gender);
 		this.m.Skills.add(background);
 		this.m.Background = background;
+		this.m.Ethnicity = this.m.Background.getEthnicity();
+		background.buildAttributes();
+		background.buildDescription();
 
-		if (this.m.Name.len() == 0 && background.isFemaleBackground() == false)
+		if (this.m.Name.len() == 0)
 		{
-			this.m.Name = this.Const.Tactical.Common.getRandomPlayerName();
+			this.m.Name = background.m.Names[this.Math.rand(0, background.m.Names.len() - 1)];
 		}
 
-		if (this.m.Name.len() == 0 && background.isFemaleBackground() == true)
-		{
-			this.m.Name = this.Const.Tactical.Common.getRandomPlayerNameFemale();
-		}
+		// if (this.m.Name.len() == 0 && background.isFemaleBackground() == true)
+		// {
+		// 	this.m.Name = this.Const.Tactical.Common.getRandomPlayerNameFemale();
+		// }
 
 		if (background.isFemaleBackground())
 		{
@@ -1996,11 +2077,11 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		local attributes = background.buildPerkTree();
 		local maxTraits = 0;
 
-		if (this.getTags().has("PlayerZombie"))
+		if (this.getFlags().has("PlayerZombie"))
 		{
 			this.m.StarWeights = background.buildAttributes("zombie", attributes);
 		}
-		else if (this.getTags().has("PlayerSkeleton"))
+		else if (this.getFlags().has("PlayerSkeleton"))
 		{
 			this.m.StarWeights = background.buildAttributes("skeleton", attributes);
 		}
@@ -2071,11 +2152,11 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			background.addEquipment();
 		}
 
-		if (this.getTags().has("PlayerZombie"))
+		if (this.getFlags().has("PlayerZombie"))
 		{
 			background.setAppearance("zombie");
 		}
-		else if (this.getTags().has("PlayerSkeleton"))
+		else if (this.getFlags().has("PlayerSkeleton"))
 		{
 			background.setAppearance("skeleton");
 		}
@@ -2140,11 +2221,11 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				continue;
 			}
 
-			if (this.getTags().has("PlayerZombie") && (i == this.Const.Attributes.Bravery || i == this.Const.Attributes.Fatigue || i == this.Const.Attributes.Initiative))
+			if (this.getFlags().has("PlayerZombie") && (i == this.Const.Attributes.Bravery || i == this.Const.Attributes.Fatigue || i == this.Const.Attributes.Initiative))
 			{
 				continue;
 			}
-			else if (this.getTags().has("PlayerSkeleton") && (i == this.Const.Attributes.Bravery || i == this.Const.Attributes.Fatigue || i == this.Const.Attributes.Hitpoints))
+			else if (this.getFlags().has("PlayerSkeleton") && (i == this.Const.Attributes.Bravery || i == this.Const.Attributes.Fatigue || i == this.Const.Attributes.Hitpoints))
 			{
 				continue;
 			}
@@ -2827,7 +2908,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 	function onSerialize( _out )
 	{
-		this.actor.onSerialize(_out);
+		this.human.onSerialize(_out);
 		_out.writeU8(this.m.Level);
 		_out.writeU8(this.m.PerkPoints);
 		_out.writeU8(this.m.PerkPointsSpent);
@@ -2885,7 +2966,16 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 	function onDeserialize( _in )
 	{
-		this.actor.onDeserialize(_in);
+		if (_in.getMetaData().getVersion() >= 59)
+		{
+			this.human.onDeserialize(_in);
+		}
+		else
+		{
+			this.actor.onDeserialize(_in);
+		}
+
+		this.m.Surcoat = null;
 		this.m.Level = _in.readU8();
 		this.m.PerkPoints = _in.readU8();
 		this.m.PerkPointsSpent = _in.readU8();

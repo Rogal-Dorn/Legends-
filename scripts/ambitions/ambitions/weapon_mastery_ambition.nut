@@ -6,10 +6,15 @@ this.weapon_mastery_ambition <- this.inherit("scripts/ambitions/ambition", {
 		this.m.ID = "ambition.weapon_mastery";
 		this.m.Duration = 21.0 * this.World.getTime().SecondsPerDay;
 		this.m.ButtonText = "Imagine the trail of terror we could blaze if your skills matched your bravery.\nWe shall train five men to master their weapons so that they may act as a vanguard!";
-		this.m.UIText = "Have 5 men with a weapon mastery perk each";
+		this.m.UIText = "Have men with a weapon mastery perk each";
 		this.m.TooltipText = "Have 5 of your men with a weapon mastery perk each, no matter which one.";
 		this.m.SuccessText = "[img]gfx/ui/events/event_50.png[/img]Introducing a new regimen to train the brothers in mastering a weapon is good for everyone\'s morale. Those who do the training improve their prowess and chances of survival, and earn the admiration of their companions, while the others have something fun to watch while sitting on a log and stuffing their faces with mutton.\n\nThe trainees practice in every spare moment with a variety of weapons until hard arms have become like oaken branches, and sharp eyes grow as keen and unforgiving as those of a great cat.%SPEECH_ON%Not only is %weaponbrother% a fearsome threat to our enemies, but his swift footwork makes you think of dancing girls.%SPEECH_OFF%%notweaponbrother% remarks, only to be soundly chastised with a training sword by %weaponbrother%.";
 		this.m.SuccessButtonText = "They\'re professionals now.";
+	}
+
+	function getUIText()
+	{
+		return this.m.UIText + " (" + this.Math.min(5, this.getBrosWithMastery()) + "/5)";
 	}
 
 	function getBrosWithMastery()

@@ -10,6 +10,9 @@ this.goblin_city_location <- this.inherit("scripts/entity/world/location", {
 		this.location.create();
 		this.m.TypeID = "location.goblin_city";
 		this.m.LocationType = this.Const.World.LocationType.Lair | this.Const.World.LocationType.Unique;
+		this.m.CombatLocation.Template[0] = "tactical.goblin_camp";
+		this.m.CombatLocation.Fortification = this.Const.Tactical.FortificationType.Walls;
+		this.m.CombatLocation.CutDownTrees = true;
 		this.m.IsShowingDefenders = false;
 		this.m.IsShowingBanner = true;
 		this.m.IsDespawningDefenders = false;

@@ -26,7 +26,7 @@ this.polehammer <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RangeIdeal = 2;
 		this.m.RegularDamage = 50;
 		this.m.RegularDamageMax = 75;
-		this.m.ArmorDamageMult = 1.75;
+		this.m.ArmorDamageMult = 1.85;
 		this.m.DirectDamageMult = 0.5;
 		this.m.ChanceToHitHead = 5;
 	}

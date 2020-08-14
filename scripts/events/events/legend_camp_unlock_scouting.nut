@@ -17,7 +17,7 @@ this.legend_camp_unlock_scouting <- this.inherit("scripts/events/event", {
 					Text = "Patrol unlocked in camp.",
 					function getResult( _event )
 					{
-						this.World.Tags.set("HasLegendCampScouting", true);
+						this.World.Flags.set("HasLegendCampScouting", true);
 					}
 
 				}
@@ -44,7 +44,7 @@ this.legend_camp_unlock_scouting <- this.inherit("scripts/events/event", {
 		this.m.TownName = _v;
 		this.m.Screens[0].Text += this.getText()
 	}
-	
+
 	function onUpdateScore()
 	{
 		return

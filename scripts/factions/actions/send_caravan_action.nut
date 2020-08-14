@@ -69,11 +69,31 @@ this.send_caravan_action <- this.inherit("scripts/factions/faction_action", {
 
 	function onExecute( _faction )
 	{
-		local party = _faction.spawnEntity(this.m.Start.getTile(), "Trading Caravan", false, this.Const.World.Spawn.Caravan, this.m.Start.getResources() * 0.5);
+		local party;
+
+		if (_faction.hasTrait(this.Const.FactionTrait.OrientalCityState))
+		{
+			party = _faction.spawnEntity(this.m.Start.getTile(), "Trading Caravan", false, this.Const.World.Spawn.CaravanSouthern, this.m.Start.getResources() * 0.6);
+		}
+		else
+		{
+			party = _faction.spawnEntity(this.m.Start.getTile(), "Trading Caravan", false, this.Const.World.Spawn.Caravan, this.m.Start.getResources() * 0.5);
+		}
+
 		party.getSprite("banner").Visible = false;
 		party.getSprite("base").Visible = false;
 		party.setMirrored(true);
 		party.setDescription("A trading caravan from " + this.m.Start.getName() + " that is transporting all manner of goods between settlements.");
+		party.setFootprintType(this.Const.World.FootprintsType.Caravan);
+		party.getFlags().set("IsCaravan", true);
+		party.getFlags().set("IsRandomlySpawned", true);
+
+		if (this.World.Assets.m.IsBrigand && this.m.Start.getTile().getDistanceTo(this.World.State.getPlayer().getTile()) <= 70)
+		{
+			party.setVisibleInFogOfWar(true);
+			party.setImportant(true);
+			party.setDiscovered(true);
+		}
 
 		if (this.m.Start.getProduce().len() != 0)
 		{

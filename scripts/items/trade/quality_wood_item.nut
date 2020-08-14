@@ -7,39 +7,21 @@ this.quality_wood_item <- this.inherit("scripts/items/trade/trading_good_item", 
 		this.m.Name = "Quality Wood";
 		this.m.Description = "High quality wood with no knotholes or other flaws. Traders will pay good coin for this.";
 		this.m.Icon = "trade/inventory_trade_01.png";
+		this.m.Culture = this.Const.World.Culture.Neutral;
+		this.m.ProducingBuildings = [
+			"attached_location.lumber_camp"
+		];
 		this.m.Value = 180;
 	}
 
-	function getBuyPrice()
+	function getSellPriceMult()
 	{
-		if (this.m.IsSold)
-		{
-			return this.getSellPrice();
-		}
-
-		if (("State" in this.World) && this.World.State != null && this.World.State.getCurrentTown() != null)
-		{
-			local isBuildingPresent = this.World.State.getCurrentTown().hasAttachedLocation("attached_location.lumber_camp");
-			return this.Math.max(this.getSellPrice(), this.Math.ceil(this.getValue() * this.getPriceMult() * this.World.State.getCurrentTown().getBuyPriceMult() * this.World.State.getCurrentTown().getModifiers().BuildingPriceMult * (isBuildingPresent ? this.Const.World.Assets.BaseBuyPrice : this.Const.World.Assets.BuyPriceNotProducedHere)));
-		}
-
-		return this.item.getBuyPrice();
+		return this.World.State.getCurrentTown().getModifiers().BuildingPriceMult;
 	}
 
-	function getSellPrice()
+	function getBuyPriceMult()
 	{
-		if (this.m.IsBought)
-		{
-			return this.getBuyPrice();
-		}
-
-		if (("State" in this.World) && this.World.State != null && this.World.State.getCurrentTown() != null)
-		{
-			local isBuildingPresent = this.World.State.getCurrentTown().hasAttachedLocation("attached_location.lumber_camp");
-			return this.Math.floor(this.getValue() * this.World.State.getCurrentTown().getSellPriceMult() * this.World.State.getCurrentTown().getModifiers().BuildingPriceMult * (isBuildingPresent ? this.Const.World.Assets.BaseSellPrice : this.Const.World.Assets.SellPriceNotProducedHere));
-		}
-
-		return this.item.getSellPrice();
+		return this.World.State.getCurrentTown().getModifiers().BuildingPriceMult;
 	}
 
 });

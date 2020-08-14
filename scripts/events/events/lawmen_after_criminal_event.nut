@@ -281,6 +281,11 @@ this.lawmen_after_criminal_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
+		if (this.World.getTime().Days < 30 && this.World.Assets.getOrigin().getID() == "scenario.raiders")
+		{
+			return;
+		}
+
 		if (!this.World.getTime().IsDaytime)
 		{
 			return;
@@ -298,6 +303,11 @@ this.lawmen_after_criminal_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
+		if (this.Const.DLC.Desert && currentTile.SquareCoords.Y <= this.World.getMapSize().Y * 0.18)
+		{
+			return;
+		}
+
 		local brothers = this.World.getPlayerRoster().getAll();
 		local candidates = [];
 
@@ -308,7 +318,7 @@ this.lawmen_after_criminal_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.killer_on_the_run" || bro.getBackground().getID() == "background.thief" || bro.getBackground().getID() == "background.graverobber" || bro.getBackground().getID() == "background.raider"  || bro.getBackground().getID() == "background.legend_commander_assassin")
+			if (bro.getBackground().getID() == "background.killer_on_the_run" || bro.getBackground().getID() == "background.thief" || bro.getBackground().getID() == "background.graverobber" || bro.getBackground().getID() == "background.raider" || bro.getBackground().getID() == "background.nomad" || bro.getBackground().getID() == "background.legend_commander_assassin")
 			{
 				candidates.push(bro);
 			}

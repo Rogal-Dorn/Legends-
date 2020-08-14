@@ -99,7 +99,7 @@ this.golden_goose_item <- this.inherit("scripts/items/item", {
 	{
 		if (_stashID == "player")
 		{
-			this.World.Tags.set("IsGoldenGoose", true);
+			this.World.Flags.set("IsGoldenGoose", true);
 		}
 	}
 
@@ -107,7 +107,7 @@ this.golden_goose_item <- this.inherit("scripts/items/item", {
 	{
 		if (_stashID == "player")
 		{
-			this.World.Tags.set("IsGoldenGoose", false);
+			this.World.Flags.set("IsGoldenGoose", false);
 		}
 	}
 

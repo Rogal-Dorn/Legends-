@@ -10,8 +10,7 @@ this.faction_manager <- {
 			Phase = 0,
 			NextPhaseTime = 0.0,
 			Strength = 0.0,
-			LastUpdate = 0,
-			IsExtraLate = false
+			LastUpdate = 0
 		}
 	},
 	function getGreaterEvilType()
@@ -57,6 +56,11 @@ this.faction_manager <- {
 	function isUndeadScourge()
 	{
 		return this.m.GreaterEvil.Type == 3 && this.m.GreaterEvil.Phase == this.Const.World.GreaterEvilPhase.Live;
+	}
+
+	function isHolyWar()
+	{
+		return this.m.GreaterEvil.Type == 4 && this.m.GreaterEvil.Phase == this.Const.World.GreaterEvilPhase.Live;
 	}
 
 	function addGreaterEvilStrength( _strength )
@@ -158,7 +162,7 @@ this.faction_manager <- {
 		this.clear();
 	}
 
-	function update()
+	function update( _ignoreDelay = false )
 	{
 		if (this.m.LastRelationUpdateDay != this.World.getTime().Days)
 		{
@@ -184,7 +188,7 @@ this.faction_manager <- {
 
 		if (this.m.Factions[this.m.NextFactionToUpdate] != null)
 		{
-			this.m.Factions[this.m.NextFactionToUpdate].update();
+			this.m.Factions[this.m.NextFactionToUpdate].update(_ignoreDelay, false);
 		}
 
 		this.updateGreaterEvil();
@@ -197,6 +201,7 @@ this.faction_manager <- {
 
 		local barbarians = this.Const.DLC.Wildmen ? this.getFactionOfType(this.Const.FactionType.Barbarians) : null;
 		local bandits = this.getFactionOfType(this.Const.FactionType.Bandits);
+		local nomads = this.Const.DLC.Desert ? this.getFactionOfType(this.Const.FactionType.OrientalBandits) : null;
 		local orcs = this.getFactionOfType(this.Const.FactionType.Orcs);
 		local goblins = this.getFactionOfType(this.Const.FactionType.Goblins);
 		local undead = this.getFactionOfType(this.Const.FactionType.Undead);
@@ -207,15 +212,20 @@ this.faction_manager <- {
 		{
 			if (barbarians != null)
 			{
-				barbarians.update(true);
+				barbarians.update(true, true);
 			}
 
-			bandits.update(true);
-			goblins.update(true);
-			orcs.update(true);
-			undead.update(true);
-			zombies.update(true);
-			beasts.update(true);
+			if (nomads != null)
+			{
+				nomads.update(true, true);
+			}
+
+			bandits.update(true, true);
+			goblins.update(true, true);
+			orcs.update(true, true);
+			undead.update(true, true);
+			zombies.update(true, true);
+			beasts.update(true, true);
 			if (i % 20 == 0)
 			{
 				local progress = (i * 1.0) / (this.Const.Factions.CyclesOnNewCampaign * 1.0);
@@ -236,12 +246,25 @@ this.faction_manager <- {
 	function createFactions( _settings )
 	{
 		this.createGenericEnemy();
+
+		if (this.Const.DLC.Desert)
+		{
+			this.createArena();
+		}
+
 		this.createSettlements();
+
+		if (this.Const.DLC.Desert)
+		{
+			local cityStates = this.createCityStates();
+			this.assignSettlementsToCityStates(cityStates);
+		}
+
 		local nobles = this.createNobleHouses( _settings.NumFactions );
 		this.assignSettlementsToNobleHouses(nobles);
-		this.uncoverSettlements( _settings.FOW );
 		this.createBandits();
 		this.createBarbarians();
+		this.createNomads();
 		this.createOrcs();
 		this.createGoblins();
 		this.createUndead();
@@ -257,13 +280,16 @@ this.faction_manager <- {
 		}
 	}
 
-	function uncoverSettlements( _fow )
+	function uncoverSettlements( _explorationMode )
 	{
 		foreach( s in this.World.EntityManager.getSettlements() )
 		{
-			s.setDiscovered(true);
+			if (!_explorationMode || this.getVecDistance(this.World.State.getPlayer().getPos(), s.getPos()) <= 950)
+			{
+				s.setDiscovered(true);
+			}
 
-			if (s.getOwner() != null || s.getSize() >= 1)
+			if (!_explorationMode && (s.getOwner() != null || s.getSize() >= 2))
 			{
 				local vis = 2100;
 				if (_fow)
@@ -282,6 +308,15 @@ this.faction_manager <- {
 		f.setName("Enemy");
 		f.setDiscovered(true);
 		f.addTrait(this.Const.FactionTrait.Beasts);
+		this.m.Factions.push(f);
+	}
+
+	function createArena()
+	{
+		local f = this.new("scripts/factions/arena_faction");
+		f.setID(this.m.Factions.len());
+		f.setName("Arena");
+		f.setDiscovered(true);
 		this.m.Factions.push(f);
 	}
 
@@ -307,6 +342,21 @@ this.faction_manager <- {
 		f.setName("Barbarians");
 		f.setDiscovered(true);
 		f.addTrait(this.Const.FactionTrait.Barbarians);
+		this.m.Factions.push(f);
+	}
+
+	function createNomads()
+	{
+		if (!this.Const.DLC.Desert)
+		{
+			return;
+		}
+
+		local f = this.new("scripts/factions/nomad_faction");
+		f.setID(this.m.Factions.len());
+		f.setName("Desert Raiders");
+		f.setDiscovered(true);
+		f.addTrait(this.Const.FactionTrait.OrientalBandits);
 		this.m.Factions.push(f);
 	}
 
@@ -348,6 +398,77 @@ this.faction_manager <- {
 		f.setDiscovered(true);
 		f.addTrait(this.Const.FactionTrait.Zombies);
 		this.m.Factions.push(f);
+	}
+
+	function createCityStates()
+	{
+		local names = [];
+		local cityStates = [];
+
+		foreach( i, a in this.Const.CityStateArchetypes )
+		{
+			local f = this.new("scripts/factions/city_state_faction");
+			local banner = i + 12;
+			local name;
+
+			do
+			{
+				name = this.Const.Strings.CityStateNames[this.Math.rand(0, this.Const.Strings.CityStateNames.len() - 1)];
+			}
+			while (names.find(name) != null);
+
+			names.push(name);
+			f.setID(this.m.Factions.len());
+			f.setName(name);
+			f.setTitle(this.Const.Strings.CityStateTitles[this.Math.rand(0, this.Const.Strings.CityStateTitles.len() - 1)]);
+			f.setMotto("\"" + a.Mottos[this.Math.rand(0, a.Mottos.len() - 1)] + "\"");
+			f.setDescription(a.Description);
+			f.setBanner(banner);
+			f.addTrait(this.Const.FactionTrait.OrientalCityState);
+			f.setDiscovered(true);
+			this.m.Factions.push(f);
+			cityStates.push(f);
+		}
+
+		return cityStates;
+	}
+
+	function assignSettlementsToCityStates( _cityStates )
+	{
+		local settlements = this.World.EntityManager.getSettlements();
+		local city = [];
+
+		for( local i = 0; i < settlements.len(); i = ++i )
+		{
+			if (this.isKindOf(settlements[i], "city_state"))
+			{
+				city.push(settlements[i]);
+			}
+		}
+
+		foreach( c in _cityStates )
+		{
+			if (city.len() == 0)
+			{
+				break;
+			}
+
+			city[0].setName(c.getNameOnly());
+			c.addSettlement(city[0]);
+			city.remove(0);
+			local description = c.getDescription();
+			local vars = [
+				[
+					"citystatename",
+					c.getNameOnly()
+				],
+				[
+					"regionname",
+					""
+				]
+			];
+			c.setDescription(this.buildTextFromTemplate(description, vars));
+		}
 	}
 
 	function createNobleHouses( _num )
@@ -405,15 +526,18 @@ this.faction_manager <- {
 		local military = [];
 		local civilian = [];
 
-		foreach( s in settlements )
+		for( local i = 0; i < settlements.len(); i = ++i )
 		{
-			if (s.isMilitary())
+			if (this.isKindOf(settlements[i], "city_state"))
 			{
-				military.push(s);
+			}
+			else if (settlements[i].isMilitary())
+			{
+				military.push(settlements[i]);
 			}
 			else
 			{
-				civilian.push(s);
+				civilian.push(settlements[i]);
 			}
 		}
 
@@ -487,6 +611,51 @@ this.faction_manager <- {
 				best.addSettlement(s);
 			}
 		}
+
+		local mapSize = this.World.getMapSize();
+		local northernTile = this.World.getTileSquare(mapSize.X / 2, mapSize.Y - 1);
+		local houses = [];
+
+		foreach( n in _nobleHouses )
+		{
+			local closest;
+			local dist = 9999;
+
+			foreach( s in n.getSettlements() )
+			{
+				local d = s.getTile().getDistanceTo(northernTile);
+
+				if (d < dist)
+				{
+					dist = d;
+					closest = s;
+				}
+			}
+
+			houses.push({
+				Faction = n,
+				Dist = dist
+			});
+		}
+
+		houses.sort(function ( _a, _b )
+		{
+			if (_a.Dist > _b.Dist)
+			{
+				return -1;
+			}
+			else if (_a.Dist < _b.Dist)
+			{
+				return 1;
+			}
+
+			return 0;
+		});
+
+		for( local i = 0; i < 2; i = ++i )
+		{
+			houses[i].Faction.getFlags().set("IsHolyWarParticipant", true);
+		}
 	}
 
 	function createSettlements()
@@ -495,7 +664,7 @@ this.faction_manager <- {
 
 		foreach( s in settlements )
 		{
-			if (s.isMilitary())
+			if (s.isMilitary() || this.isKindOf(s, "city_state"))
 			{
 				continue;
 			}
@@ -540,6 +709,22 @@ this.faction_manager <- {
 						this.m.Factions[i].addAlly(j);
 					}
 					else if (this.m.Factions[i].getType() == this.Const.FactionType.Settlement && this.m.Factions[j].getType() == this.Const.FactionType.NobleHouse)
+					{
+						this.m.Factions[i].addAlly(j);
+					}
+					else if (this.m.Factions[i].getType() == this.Const.FactionType.Settlement && this.m.Factions[j].getType() == this.Const.FactionType.OrientalCityState)
+					{
+						this.m.Factions[i].addAlly(j);
+					}
+					else if (this.m.Factions[i].getType() == this.Const.FactionType.OrientalCityState && this.m.Factions[j].getType() == this.Const.FactionType.Settlement)
+					{
+						this.m.Factions[i].addAlly(j);
+					}
+					else if (this.m.Factions[i].getType() == this.Const.FactionType.NobleHouse && this.m.Factions[j].getType() == this.Const.FactionType.OrientalCityState)
+					{
+						this.m.Factions[i].addAlly(j);
+					}
+					else if (this.m.Factions[i].getType() == this.Const.FactionType.OrientalCityState && this.m.Factions[j].getType() == this.Const.FactionType.NobleHouse)
 					{
 						this.m.Factions[i].addAlly(j);
 					}
@@ -597,6 +782,36 @@ this.faction_manager <- {
 		}
 	}
 
+	function breakNorthSouthAlliances()
+	{
+		local nobles = this.getFactionsOfType(this.Const.FactionType.NobleHouse);
+		local cityStates = this.getFactionsOfType(this.Const.FactionType.OrientalCityState);
+
+		foreach( n in nobles )
+		{
+			if (!n.getFlags().get("IsHolyWarParticipant"))
+			{
+				continue;
+			}
+
+			foreach( c in cityStates )
+			{
+				n.removeAlly(c.getID());
+				c.removeAlly(n.getID());
+
+				foreach( s in n.getSettlements() )
+				{
+					if (s.getFaction() != n.getID())
+					{
+						local sf = this.World.FactionManager.getFaction(s.getFaction());
+						sf.removeAlly(c.getID());
+						c.removeAlly(sf.getID());
+					}
+				}
+			}
+		}
+	}
+
 	function makeEveryoneFriendlyToPlayer()
 	{
 		for( local i = 0; i < this.m.Factions.len(); i = ++i )
@@ -604,7 +819,7 @@ this.faction_manager <- {
 			if (this.m.Factions[i] == null)
 			{
 			}
-			else if (this.m.Factions[i].getType() == this.Const.FactionType.Settlement || this.m.Factions[i].getType() == this.Const.FactionType.NobleHouse)
+			else if (this.m.Factions[i].getType() == this.Const.FactionType.Settlement || this.m.Factions[i].getType() == this.Const.FactionType.NobleHouse || this.m.Factions[i].getType() == this.Const.FactionType.OrientalCityState)
 			{
 				if (this.m.Factions[i].getPlayerRelation() < 30)
 				{
@@ -853,23 +1068,21 @@ this.faction_manager <- {
 
 		if (GE.NextPhaseTime == 0.0)
 		{
-			if (GE.IsExtraLate)
-			{
-				GE.NextPhaseTime = this.Time.getVirtualTimeF() + this.Math.rand(100, 120) * this.World.getTime().SecondsPerDay;
-			}
-			else
-			{
-				GE.NextPhaseTime = this.Time.getVirtualTimeF() + this.Math.rand(55, 65) * this.World.getTime().SecondsPerDay;
-			}
+			GE.NextPhaseTime = this.Time.getVirtualTimeF() + this.Math.rand(50, 60) * this.World.getTime().SecondsPerDay;
 
 			if (this.World.Assets.isIronman())
+			{
+				GE.NextPhaseTime += 5.0 * this.World.getTime().SecondsPerDay;
+			}
+
+			if (this.World.Assets.getCombatDifficulty() == 0)
 			{
 				GE.NextPhaseTime += 5.0 * this.World.getTime().SecondsPerDay;
 			}
 		}
 		else if (GE.NextPhaseTime <= this.Time.getVirtualTimeF())
 		{
-            if (GE.Phase == this.Const.World.GreaterEvilPhase.NotSet && this.World.State.getPlayer().getStrength() >= 110)
+			if (GE.Phase == this.Const.World.GreaterEvilPhase.NotSet && this.World.State.getPlayer().getStrength() >= 160)
 			{
 				this.logInfo("STARTING GREATER EVIL - WARNING PHASE!");
 				GE.Phase = this.Const.World.GreaterEvilPhase.Warning;
@@ -894,32 +1107,42 @@ this.faction_manager <- {
 						possibilities.push(this.Const.World.GreaterEvilType.Undead);
 					}
 
+					if ((GE.TypesUsed & this.Const.World.GreaterEvilTypeBit.HolyWar) == 0 && this.Const.DLC.Desert && this.isCityStateExisting() && this.isNoblesFeuding())
+					{
+						possibilities.push(this.Const.World.GreaterEvilType.HolyWar);
+					}
+
 					if (possibilities.len() != 0)
 					{
 						GE.Type = possibilities[this.Math.rand(0, possibilities.len() - 1)];
 					}
 					else
 					{
-						while (true)
+						if (GE.LastType != this.Const.World.GreaterEvilType.CivilWar && this.isNoblesFeuding())
 						{
-							if (this.isNoblesFeuding())
-							{
-								GE.Type = this.Math.rand(this.Const.World.GreaterEvilType.Random + 1, this.Const.World.GreaterEvilType.len() - 1);
-							}
-							else
-							{
-								GE.Type = this.Math.rand(this.Const.World.GreaterEvilType.Random + 2, this.Const.World.GreaterEvilType.len() - 1);
-							}
-
-							if (GE.Type != GE.LastType)
-							{
-								break;
-							}
+							possibilities.push(this.Const.World.GreaterEvilType.CivilWar);
 						}
+
+						if (GE.LastType != this.Const.World.GreaterEvilType.Greenskins)
+						{
+							possibilities.push(this.Const.World.GreaterEvilType.Greenskins);
+						}
+
+						if (GE.LastType != this.Const.World.GreaterEvilType.Undead)
+						{
+							possibilities.push(this.Const.World.GreaterEvilType.Undead);
+						}
+
+						if (GE.LastType != this.Const.World.GreaterEvilType.HolyWar && this.Const.DLC.Desert && this.isCityStateExisting() && this.isNoblesFeuding())
+						{
+							possibilities.push(this.Const.World.GreaterEvilType.HolyWar);
+						}
+
+						GE.Type = possibilities[this.Math.rand(0, possibilities.len() - 1)];
 					}
 				}
 			}
-            else if (GE.Phase == this.Const.World.GreaterEvilPhase.Warning && this.World.State.getPlayer().getStrength() >= 110)
+			else if (GE.Phase == this.Const.World.GreaterEvilPhase.Warning && this.World.State.getPlayer().getStrength() >= 180)
 			{
 				this.logInfo("STARTING GREATER EVIL - LIVE PHASE!");
 				GE.Phase = this.Const.World.GreaterEvilPhase.Live;
@@ -941,6 +1164,12 @@ this.faction_manager <- {
 				else if (GE.Type == this.Const.World.GreaterEvilType.Undead)
 				{
 					this.World.Statistics.addNews("crisis_undead_start", this.World.Statistics.createNews());
+				}
+				else if (GE.Type == this.Const.World.GreaterEvilType.HolyWar)
+				{
+					this.World.Statistics.addNews("crisis_holywar_start", this.World.Statistics.createNews());
+					GE.Strength -= 10.0;
+					this.breakNorthSouthAlliances();
 				}
 			}
 			else if (GE.Phase == this.Const.World.GreaterEvilPhase.Live)
@@ -978,6 +1207,11 @@ this.faction_manager <- {
 						GE.TypesUsed = GE.TypesUsed | this.Const.World.GreaterEvilTypeBit.Undead;
 						this.World.Statistics.addNews("crisis_undead_end", this.World.Statistics.createNews());
 					}
+					else if (GE.Type == this.Const.World.GreaterEvilType.HolyWar)
+					{
+						GE.TypesUsed = GE.TypesUsed | this.Const.World.GreaterEvilTypeBit.HolyWar;
+						this.World.Statistics.addNews("crisis_holywar_end", this.World.Statistics.createNews());
+					}
 
 					this.World.Combat.abortAll();
 					GE.LastType = GE.Type;
@@ -1004,6 +1238,12 @@ this.faction_manager <- {
 		}
 
 		return feuding >= 2;
+	}
+
+	function isCityStateExisting()
+	{
+		local cityStates = this.getFactionsOfType(this.Const.FactionType.OrientalCityState);
+		return cityStates.len() != 0;
 	}
 
 	function onSerialize( _out )
@@ -1050,7 +1290,7 @@ this.faction_manager <- {
 		_out.writeF32(this.m.GreaterEvil.NextPhaseTime);
 		_out.writeF32(this.m.GreaterEvil.Strength);
 		_out.writeF32(this.m.GreaterEvil.LastUpdate);
-		_out.writeBool(this.m.GreaterEvil.IsExtraLate);
+		_out.writeBool(false);
 	}
 
 	function onDeserialize( _in )
@@ -1082,11 +1322,7 @@ this.faction_manager <- {
 		this.m.GreaterEvil.NextPhaseTime = _in.readF32();
 		this.m.GreaterEvil.Strength = _in.readF32();
 		this.m.GreaterEvil.LastUpdate = _in.readU32();
-
-		if (_in.getMetaData().getVersion() >= 23)
-		{
-			this.m.GreaterEvil.IsExtraLate = _in.readBool();
-		}
+		_in.readBool();
 	}
 
 };

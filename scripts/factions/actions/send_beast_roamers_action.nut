@@ -31,16 +31,18 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 			}
 			else
 			{
-				for( local i = 0; i < this.Const.World.TerrainType.COUNT; i = ++i )
-				{
-					if (i == this.Const.World.TerrainType.Snow || i == this.Const.World.TerrainType.SnowyForest || i == this.Const.World.TerrainType.Forest || i == this.Const.World.TerrainType.LeaveForest || i == this.Const.World.TerrainType.AutumnForest || i == this.Const.World.TerrainType.Hills)
-					{
-						disallowedTerrain.push(i);
-					}
-				}
+				disallowedTerrain = [
+					this.Const.World.TerrainType.Snow,
+					this.Const.World.TerrainType.SnowyForest,
+					this.Const.World.TerrainType.Forest,
+					this.Const.World.TerrainType.LeaveForest,
+					this.Const.World.TerrainType.AutumnForest,
+					this.Const.World.TerrainType.Desert,
+					this.Const.World.TerrainType.Oasis
+				];
 			}
 
-			local tile = _action.getTileToSpawnLocation(10, disallowedTerrain, 7, 35, 1000, 3, 0, _nearTile);
+			local tile = _action.getTileToSpawnLocation(10, disallowedTerrain, 7, 35, 1000, 3, 0, _nearTile, 0.0, 0.75);
 
 			if (tile == null)
 			{
@@ -53,9 +55,10 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 			}
 
 			local distanceToNextSettlement = _action.getDistanceToSettlements(tile);
-			local party = _action.getFaction().spawnEntity(tile, "Nachzehrers", false, this.Const.World.Spawn.Ghouls, this.Math.rand(80, 120) * _action.getReputationToDifficultyMult() * this.Math.maxf(0.7, this.Math.minf(1.5, distanceToNextSettlement / 14.0)));
+			local party = _action.getFaction().spawnEntity(tile, "Nachzehrers", false, this.Const.World.Spawn.Ghouls, this.Math.rand(80, 120) * _action.getScaledDifficultyMult() * this.Math.maxf(0.7, this.Math.minf(1.5, distanceToNextSettlement / 14.0)));
 			party.getSprite("banner").setBrush("banner_beasts_01");
 			party.setDescription("A flock of scavenging nachzehrers.");
+			party.setFootprintType(this.Const.World.FootprintsType.Ghouls);
 			party.setSlowerAtNight(false);
 			party.setUsingGlobalVision(false);
 			party.setLooting(false);
@@ -75,7 +78,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 
 			for( local i = 0; i < this.Const.World.TerrainType.COUNT; i = ++i )
 			{
-				if (i == this.Const.World.TerrainType.Forest || i == this.Const.World.TerrainType.SnowyForest || i == this.Const.World.TerrainType.LeaveForest || i == this.Const.World.TerrainType.AutumnForest || i == this.Const.World.TerrainType.Hills)
+				if (i == this.Const.World.TerrainType.Forest || i == this.Const.World.TerrainType.SnowyForest || i == this.Const.World.TerrainType.LeaveForest || i == this.Const.World.TerrainType.AutumnForest)
 				{
 				}
 				else
@@ -84,7 +87,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 				}
 			}
 
-			local tile = _action.getTileToSpawnLocation(10, disallowedTerrain, 7, 50, 1000, 3, 0, _nearTile);
+			local tile = _action.getTileToSpawnLocation(10, disallowedTerrain, 7, 50, 1000, 3, 0, _nearTile, 0.2);
 
 			if (tile == null)
 			{
@@ -97,13 +100,10 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 			}
 
 			local distanceToNextSettlement = _action.getDistanceToSettlements(tile);
-			if (this.World.LegendsMod.Configs().LegendLocationScalingEnabled())
-			{
-			 distanceToNextSettlement *= 2;
-			}
-			local party = _action.getFaction().spawnEntity(tile, "Direwolves", false, this.Const.World.Spawn.Direwolves, this.Math.rand(80, 120) * _action.getReputationToDifficultyMult() * this.Math.maxf(0.7, this.Math.minf(1.5, distanceToNextSettlement / 14.0)));
+			local party = _action.getFaction().spawnEntity(tile, "Direwolves", false, this.Const.World.Spawn.Direwolves, this.Math.rand(80, 120) * _action.getScaledDifficultyMult() * this.Math.maxf(0.7, this.Math.minf(1.5, distanceToNextSettlement / 14.0)));
 			party.getSprite("banner").setBrush("banner_beasts_01");
 			party.setDescription("A pack of ferocious direwolves on the hunt for prey.");
+			party.setFootprintType(this.Const.World.FootprintsType.Direwolves);
 			party.setSlowerAtNight(false);
 			party.setUsingGlobalVision(false);
 			party.setLooting(false);
@@ -119,6 +119,100 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 		};
 		this.m.Options.push(beast);
 		this.m.BeastsLow.push(beast);
+
+		if (this.Const.DLC.Desert)
+		{
+			beast = function ( _action, _nearTile = null )
+			{
+				local disallowedTerrain = [];
+
+				for( local i = 0; i < this.Const.World.TerrainType.COUNT; i = ++i )
+				{
+					if (i == this.Const.World.TerrainType.Desert || i == this.Const.World.TerrainType.Oasis || i == this.Const.World.TerrainType.Hills)
+					{
+					}
+					else
+					{
+						disallowedTerrain.push(i);
+					}
+				}
+
+				local tile = _action.getTileToSpawnLocation(10, disallowedTerrain, 7, 50, 1000, 3, 0, _nearTile, 0.0, 0.2);
+
+				if (tile == null)
+				{
+					return false;
+				}
+
+				if (_action.getDistanceToNextAlly(tile) <= distanceToNextAlly / (_nearTile == null ? 1 : 2))
+				{
+					return false;
+				}
+
+				local distanceToNextSettlement = _action.getDistanceToSettlements(tile);
+				local party = _action.getFaction().spawnEntity(tile, "Hyenas", false, this.Const.World.Spawn.Hyenas, this.Math.rand(80, 120) * _action.getScaledDifficultyMult() * this.Math.maxf(0.7, this.Math.minf(1.5, distanceToNextSettlement / 14.0)));
+				party.getSprite("banner").setBrush("banner_beasts_01");
+				party.setDescription("A pack of esurient hyenas on the hunt for prey.");
+				party.setFootprintType(this.Const.World.FootprintsType.Hyenas);
+				party.setSlowerAtNight(false);
+				party.setUsingGlobalVision(false);
+				party.setLooting(false);
+				local roam = this.new("scripts/ai/world/orders/roam_order");
+				roam.setNoTerrainAvailable();
+				roam.setTerrain(this.Const.World.TerrainType.Desert, true);
+				roam.setTerrain(this.Const.World.TerrainType.Oasis, true);
+				roam.setTerrain(this.Const.World.TerrainType.Steppe, true);
+				roam.setTerrain(this.Const.World.TerrainType.Hills, true);
+				party.getController().addOrder(roam);
+				return true;
+			};
+			this.m.Options.push(beast);
+			beast = function ( _action, _nearTile = null )
+			{
+				local disallowedTerrain = [];
+
+				for( local i = 0; i < this.Const.World.TerrainType.COUNT; i = ++i )
+				{
+					if (i == this.Const.World.TerrainType.Desert || i == this.Const.World.TerrainType.Oasis)
+					{
+					}
+					else
+					{
+						disallowedTerrain.push(i);
+					}
+				}
+
+				local tile = _action.getTileToSpawnLocation(10, disallowedTerrain, 7, 50, 1000, 3, 0, _nearTile, 0.0, 0.2);
+
+				if (tile == null)
+				{
+					return false;
+				}
+
+				if (_action.getDistanceToNextAlly(tile) <= distanceToNextAlly / (_nearTile == null ? 1 : 2))
+				{
+					return false;
+				}
+
+				local distanceToNextSettlement = _action.getDistanceToSettlements(tile);
+				local party = _action.getFaction().spawnEntity(tile, "Serpents", false, this.Const.World.Spawn.Serpents, this.Math.rand(80, 120) * _action.getScaledDifficultyMult() * this.Math.maxf(0.7, this.Math.minf(1.5, distanceToNextSettlement / 14.0)));
+				party.getSprite("banner").setBrush("banner_beasts_01");
+				party.setDescription("Giant serpents slithering about.");
+				party.setFootprintType(this.Const.World.FootprintsType.Serpents);
+				party.setSlowerAtNight(false);
+				party.setUsingGlobalVision(false);
+				party.setLooting(false);
+				local roam = this.new("scripts/ai/world/orders/roam_order");
+				roam.setNoTerrainAvailable();
+				roam.setTerrain(this.Const.World.TerrainType.Desert, true);
+				roam.setTerrain(this.Const.World.TerrainType.Oasis, true);
+				roam.setTerrain(this.Const.World.TerrainType.Steppe, true);
+				roam.setTerrain(this.Const.World.TerrainType.Hills, true);
+				party.getController().addOrder(roam);
+				return true;
+			};
+			this.m.Options.push(beast);
+		}
 
 		if (this.Const.DLC.Unhold)
 		{
@@ -137,7 +231,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 					}
 				}
 
-				local tile = _action.getTileToSpawnLocation(10, disallowedTerrain, 7, 40, 1000, 3, 0, _nearTile);
+				local tile = _action.getTileToSpawnLocation(10, disallowedTerrain, 7, 40, 1000, 3, 0, _nearTile, 0.1, 0.8);
 
 				if (tile == null)
 				{
@@ -150,13 +244,14 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 				}
 
 				local distanceToNextSettlement = _action.getDistanceToSettlements(tile);
-				local party = _action.getFaction().spawnEntity(tile, "Webknechts", false, this.Const.World.Spawn.Spiders, this.Math.rand(80, 120) * _action.getReputationToDifficultyMult() * this.Math.maxf(0.7, this.Math.minf(1.5, distanceToNextSettlement / 14.0)));
+				local party = _action.getFaction().spawnEntity(tile, "Webknechts", false, this.Const.World.Spawn.Spiders, this.Math.rand(80, 120) * _action.getScaledDifficultyMult() * this.Math.maxf(0.7, this.Math.minf(1.5, distanceToNextSettlement / 14.0)));
 				party.getSprite("banner").setBrush("banner_beasts_01");
 				party.setDescription("A swarm of webknechts skittering about.");
+				party.setFootprintType(this.Const.World.FootprintsType.Spiders);
 				party.setSlowerAtNight(false);
 				party.setUsingGlobalVision(false);
 				party.setLooting(false);
-				party.getTags().set("IsWebknechts", true);
+				party.getFlags().set("IsWebknechts", true);
 				local roam = this.new("scripts/ai/world/orders/roam_order");
 				roam.setNoTerrainAvailable();
 				roam.setTerrain(this.Const.World.TerrainType.Forest, true);
@@ -189,7 +284,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 					}
 				}
 
-				local tile = _action.getTileToSpawnLocation(10, disallowedTerrain, 10 - (_nearTile == null ? 0 : 2), 100, 1000, 3, 0, _nearTile);
+				local tile = _action.getTileToSpawnLocation(10, disallowedTerrain, 10 - (_nearTile == null ? 0 : 2), 100, 1000, 3, 0, _nearTile, 0.0, 0.9);
 
 				if (tile == null)
 				{
@@ -202,17 +297,14 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 				}
 
 				local distanceToNextSettlement = _action.getDistanceToSettlements(tile);
-				if (this.World.LegendsMod.Configs().LegendLocationScalingEnabled())
-					{
-					 distanceToNextSettlement *= 2;
-					}
-				local party = _action.getFaction().spawnEntity(tile, "Unhold", false, this.Const.World.Spawn.Unhold, this.Math.rand(80, 120) * _action.getReputationToDifficultyMult() * this.Math.maxf(0.7, this.Math.minf(1.5, distanceToNextSettlement / 14.0)));
+				local party = _action.getFaction().spawnEntity(tile, "Unhold", false, this.Const.World.Spawn.Unhold, this.Math.rand(80, 120) * _action.getScaledDifficultyMult() * this.Math.maxf(0.7, this.Math.minf(1.5, distanceToNextSettlement / 14.0)));
 				party.getSprite("banner").setBrush("banner_beasts_01");
 				party.setDescription("One or more lumbering giants.");
+				party.setFootprintType(this.Const.World.FootprintsType.Unholds);
 				party.setSlowerAtNight(true);
 				party.setUsingGlobalVision(false);
 				party.setLooting(false);
-				party.getTags().set("IsUnholds", true);
+				party.getFlags().set("IsUnholds", true);
 				local roam = this.new("scripts/ai/world/orders/roam_order");
 				roam.setNoTerrainAvailable();
 				roam.setTerrain(this.Const.World.TerrainType.Forest, true);
@@ -245,7 +337,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 					}
 				}
 
-				local tile = _action.getTileToSpawnLocation(10, disallowedTerrain, 5, 100, 1000, 3, 0, _nearTile);
+				local tile = _action.getTileToSpawnLocation(10, disallowedTerrain, 5, 100, 1000, 3, 0, _nearTile, 0.7);
 
 				if (tile == null)
 				{
@@ -258,17 +350,14 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 				}
 
 				local distanceToNextSettlement = _action.getDistanceToSettlements(tile);
-				if (this.World.LegendsMod.Configs().LegendLocationScalingEnabled())
-					{
-					 distanceToNextSettlement *= 2;
-					}
-				local party = _action.getFaction().spawnEntity(tile, "Unhold", false, this.Const.World.Spawn.UnholdFrost, this.Math.rand(80, 120) * _action.getReputationToDifficultyMult() * this.Math.maxf(0.7, this.Math.minf(1.5, distanceToNextSettlement / 14.0)));
+				local party = _action.getFaction().spawnEntity(tile, "Unhold", false, this.Const.World.Spawn.UnholdFrost, this.Math.rand(80, 120) * _action.getScaledDifficultyMult() * this.Math.maxf(0.7, this.Math.minf(1.5, distanceToNextSettlement / 14.0)));
 				party.getSprite("banner").setBrush("banner_beasts_01");
 				party.setDescription("One or more lumbering giants.");
+				party.setFootprintType(this.Const.World.FootprintsType.Unholds);
 				party.setSlowerAtNight(true);
 				party.setUsingGlobalVision(false);
 				party.setLooting(false);
-				party.getTags().set("IsUnholds", true);
+				party.getFlags().set("IsUnholds", true);
 				local roam = this.new("scripts/ai/world/orders/roam_order");
 				roam.setNoTerrainAvailable();
 				roam.setTerrain(this.Const.World.TerrainType.Snow, true);
@@ -296,7 +385,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 
 				for( local i = 0; i < this.Const.World.TerrainType.COUNT; i = ++i )
 				{
-					if (i == this.Const.World.TerrainType.Swamp || i == this.Const.World.TerrainType.LeaveForest)
+					if (i == this.Const.World.TerrainType.Swamp || i == this.Const.World.TerrainType.LeaveForest || i == this.Const.World.TerrainType.Oasis)
 					{
 					}
 					else
@@ -318,17 +407,14 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 				}
 
 				local distanceToNextSettlement = _action.getDistanceToSettlements(tile);
-				if (this.World.LegendsMod.Configs().LegendLocationScalingEnabled())
-					{
-					 distanceToNextSettlement *= 2;
-					}
-				local party = _action.getFaction().spawnEntity(tile, "Unhold", false, this.Const.World.Spawn.UnholdBog, this.Math.rand(80, 120) * _action.getReputationToDifficultyMult() * this.Math.maxf(0.7, this.Math.minf(1.5, distanceToNextSettlement / 14.0)));
+				local party = _action.getFaction().spawnEntity(tile, "Unhold", false, this.Const.World.Spawn.UnholdBog, this.Math.rand(80, 120) * _action.getScaledDifficultyMult() * this.Math.maxf(0.7, this.Math.minf(1.5, distanceToNextSettlement / 14.0)));
 				party.getSprite("banner").setBrush("banner_beasts_01");
 				party.setDescription("One or more lumbering giants.");
+				party.setFootprintType(this.Const.World.FootprintsType.Unholds);
 				party.setSlowerAtNight(true);
 				party.setUsingGlobalVision(false);
 				party.setLooting(false);
-				party.getTags().set("IsUnholds", true);
+				party.getFlags().set("IsUnholds", true);
 				local roam = this.new("scripts/ai/world/orders/roam_order");
 				roam.setNoTerrainAvailable();
 				roam.setTerrain(this.Const.World.TerrainType.Swamp, true);
@@ -372,16 +458,17 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 
 				local distanceToNextSettlement = _action.getDistanceToSettlements(tile);
 				if (this.World.LegendsMod.Configs().LegendLocationScalingEnabled())
-					{
-					 distanceToNextSettlement *= 2;
-					}
-				local party = _action.getFaction().spawnEntity(tile, "Alps", false, this.Const.World.Spawn.Alps, this.Math.rand(80, 120) * _action.getReputationToDifficultyMult() * this.Math.maxf(0.7, this.Math.minf(1.5, distanceToNextSettlement / 14.0)));
+				{
+					distanceToNextSettlement *= 2;
+				}
+				local party = _action.getFaction().spawnEntity(tile, "Alps", false, this.Const.World.Spawn.Alps, this.Math.rand(80, 120) * _action.getScaledDifficultyMult() * this.Math.maxf(0.7, this.Math.minf(1.5, distanceToNextSettlement / 14.0)));
 				party.getSprite("banner").setBrush("banner_beasts_01");
 				party.setDescription("Pale and haggard creatures creeping around.");
+				party.setFootprintType(this.Const.World.FootprintsType.Alps);
 				party.setSlowerAtNight(false);
 				party.setUsingGlobalVision(false);
 				party.setLooting(false);
-				party.getTags().set("IsAlps", true);
+				party.getFlags().set("IsAlps", true);
 				local roam = this.new("scripts/ai/world/orders/roam_order");
 				roam.setAllTerrainAvailable();
 				roam.setTerrain(this.Const.World.TerrainType.Mountains, false);
@@ -408,8 +495,10 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 					this.Const.World.TerrainType.Mountains,
 					this.Const.World.TerrainType.Hills,
 					this.Const.World.TerrainType.Snow,
-					this.Const.World.TerrainType.SnowyForest
-				], 8, 50, 1000, 3, 0, _nearTile);
+					this.Const.World.TerrainType.SnowyForest,
+					this.Const.World.TerrainType.Desert,
+					this.Const.World.TerrainType.Oasis
+				], 8, 50, 1000, 3, 0, _nearTile, 0.1, 0.9);
 
 				if (tile == null)
 				{
@@ -422,13 +511,18 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 				}
 
 				local distanceToNextSettlement = _action.getDistanceToSettlements(tile);
+<<<<<<< HEAD
 				if (this.World.LegendsMod.Configs().LegendLocationScalingEnabled())
 					{
 					 distanceToNextSettlement *= 2;
 					}
 				local party = _action.getFaction().spawnEntity(tile, "Hexen", false, this.Const.World.Spawn.HexenAndMore, this.Math.rand(80, 120) * _action.getReputationToDifficultyMult() * this.Math.maxf(0.7, this.Math.minf(1.5, distanceToNextSettlement / 14.0)));
+=======
+				local party = _action.getFaction().spawnEntity(tile, "Hexen", false, this.Const.World.Spawn.HexenAndMore, this.Math.rand(80, 120) * _action.getScaledDifficultyMult() * this.Math.maxf(0.7, this.Math.minf(1.5, distanceToNextSettlement / 14.0)));
+>>>>>>> master
 				party.getSprite("banner").setBrush("banner_beasts_01");
 				party.setDescription("A malevolent old crone, said to lure and abduct little children to make broth and concoctions out of, strike sinister pacts with villagers, and weave curses.");
+				party.setFootprintType(this.Const.World.FootprintsType.Hexen);
 				party.setSlowerAtNight(false);
 				party.setUsingGlobalVision(false);
 				party.setLooting(false);
@@ -462,7 +556,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 					}
 				}
 
-				local tile = _action.getTileToSpawnLocation(10, disallowedTerrain, 20 - (_nearTile == null ? 0 : 11), 100, 1000, 3, 0, _nearTile);
+				local tile = _action.getTileToSpawnLocation(10, disallowedTerrain, 20 - (_nearTile == null ? 0 : 11), 100, 1000, 3, 0, _nearTile, 0.1, 0.9);
 
 				if (tile == null)
 				{
@@ -475,13 +569,18 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 				}
 
 				local distanceToNextSettlement = _action.getDistanceToSettlements(tile);
+<<<<<<< HEAD
 				if (this.World.LegendsMod.Configs().LegendLocationScalingEnabled())
 					{
 					 distanceToNextSettlement *= 2;
 					}
 				local party = _action.getFaction().spawnEntity(tile, "Schrats", false, this.Const.World.Spawn.Schrats, this.Math.rand(80, 120) * _action.getReputationToDifficultyMult() * this.Math.maxf(0.7, this.Math.minf(1.5, distanceToNextSettlement / 14.0)));
+=======
+				local party = _action.getFaction().spawnEntity(tile, "Schrats", false, this.Const.World.Spawn.Schrats, this.Math.rand(80, 120) * _action.getScaledDifficultyMult() * this.Math.maxf(0.7, this.Math.minf(1.5, distanceToNextSettlement / 14.0)));
+>>>>>>> master
 				party.getSprite("banner").setBrush("banner_beasts_01");
 				party.setDescription("A creature of bark and wood, blending between trees and shambling slowly, its roots digging through the soil.");
+				party.setFootprintType(this.Const.World.FootprintsType.Schrats);
 				party.setSlowerAtNight(false);
 				party.setUsingGlobalVision(false);
 				party.setLooting(false);
@@ -499,7 +598,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 			this.m.BeastsHigh.push(beast);
 			beast = function ( _action, _nearTile = null )
 			{
-				if (!this.World.Tags.get("IsKrakenDefeated"))
+				if (!this.World.Flags.get("IsKrakenDefeated"))
 				{
 					return false;
 				}
@@ -537,12 +636,66 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 				local party = _action.getFaction().spawnEntity(tile, "Kraken", false, this.Const.World.Spawn.Kraken, 1000);
 				party.getSprite("banner").setBrush("banner_beasts_01");
 				party.setDescription("A tentacled horror from another age.");
+				party.setFootprintType(this.Const.World.FootprintsType.Kraken);
 				party.setSlowerAtNight(true);
 				party.setUsingGlobalVision(false);
 				party.setLooting(false);
 				local roam = this.new("scripts/ai/world/orders/roam_order");
 				roam.setNoTerrainAvailable();
 				roam.setTerrain(this.Const.World.TerrainType.Swamp, true);
+				party.getController().addOrder(roam);
+				return true;
+			};
+			this.m.Options.push(beast);
+		}
+
+		if (this.Const.DLC.Desert)
+		{
+			beast = function ( _action, _nearTile = null )
+			{
+				if (this.World.getTime().Days < 20 && _nearTile == null)
+				{
+					return false;
+				}
+
+				local disallowedTerrain = [];
+
+				for( local i = 0; i < this.Const.World.TerrainType.COUNT; i = ++i )
+				{
+					if (i == this.Const.World.TerrainType.Desert || i == this.Const.World.TerrainType.Oasis || i == this.Const.World.TerrainType.Hills)
+					{
+					}
+					else
+					{
+						disallowedTerrain.push(i);
+					}
+				}
+
+				local tile = _action.getTileToSpawnLocation(10, disallowedTerrain, 16 - (_nearTile == null ? 0 : 10), 100, 1000, 3, 0, _nearTile, 0.0, 0.2);
+
+				if (tile == null)
+				{
+					return false;
+				}
+
+				if (_action.getDistanceToNextAlly(tile) <= distanceToNextAlly / (_nearTile == null ? 1 : 2))
+				{
+					return false;
+				}
+
+				local distanceToNextSettlement = _action.getDistanceToSettlements(tile);
+				local party = _action.getFaction().spawnEntity(tile, "Ifrits", false, this.Const.World.Spawn.SandGolems, this.Math.rand(80, 120) * _action.getScaledDifficultyMult() * this.Math.maxf(0.7, this.Math.minf(1.5, distanceToNextSettlement / 14.0)));
+				party.getSprite("banner").setBrush("banner_beasts_01");
+				party.setDescription("Creatures of living stone shaped by the blistering heat and fire of the burning sun of the south.");
+				party.setFootprintType(this.Const.World.FootprintsType.SandGolems);
+				party.setSlowerAtNight(false);
+				party.setUsingGlobalVision(false);
+				party.setLooting(false);
+				local roam = this.new("scripts/ai/world/orders/roam_order");
+				roam.setNoTerrainAvailable();
+				roam.setTerrain(this.Const.World.TerrainType.Desert, true);
+				roam.setTerrain(this.Const.World.TerrainType.Oasis, true);
+				roam.setTerrain(this.Const.World.TerrainType.Hills, true);
 				party.getController().addOrder(roam);
 				return true;
 			};
@@ -562,7 +715,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 
 				for( local i = 0; i < this.Const.World.TerrainType.COUNT; i = ++i )
 				{
-					if (i == this.Const.World.TerrainType.Steppe)
+					if (i == this.Const.World.TerrainType.Steppe || i == this.Const.World.TerrainType.Desert)
 					{
 					}
 					else
@@ -571,7 +724,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 					}
 				}
 
-				local tile = _action.getTileToSpawnLocation(10, disallowedTerrain, 18 - (_nearTile == null ? 0 : 10), 100, 1000, 3, 0, _nearTile);
+				local tile = _action.getTileToSpawnLocation(10, disallowedTerrain, 18 - (_nearTile == null ? 0 : 10), 100, 1000, 3, 0, _nearTile, this.Const.DLC.Desert ? 0.1 : 0.0, 0.5);
 
 				if (tile == null)
 				{
@@ -584,13 +737,18 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 				}
 
 				local distanceToNextSettlement = _action.getDistanceToSettlements(tile);
+<<<<<<< HEAD
 				if (this.World.LegendsMod.Configs().LegendLocationScalingEnabled())
 					{
 					 distanceToNextSettlement *= 2;
 					}
 				local party = _action.getFaction().spawnEntity(tile, "Lindwurm", false, this.Const.World.Spawn.Lindwurm, this.Math.rand(80, 120) * _action.getReputationToDifficultyMult() * this.Math.maxf(0.7, this.Math.minf(1.5, distanceToNextSettlement / 14.0)));
+=======
+				local party = _action.getFaction().spawnEntity(tile, "Lindwurm", false, this.Const.World.Spawn.Lindwurm, this.Math.rand(80, 120) * _action.getScaledDifficultyMult() * this.Math.maxf(0.7, this.Math.minf(1.5, distanceToNextSettlement / 14.0)));
+>>>>>>> master
 				party.getSprite("banner").setBrush("banner_beasts_01");
 				party.setDescription("A Lindwurm - a wingless bipedal dragon resembling a giant snake.");
+				party.setFootprintType(this.Const.World.FootprintsType.Lindwurms);
 				party.setSlowerAtNight(false);
 				party.setUsingGlobalVision(false);
 				party.setLooting(false);
@@ -955,7 +1113,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 			}
 		}
 
-		if (_faction.getUnits().len() >= 14)
+		if (_faction.getUnits().len() >= 14 + (this.Const.DLC.Desert ? 3 : 0))
 		{
 			return;
 		}
@@ -973,7 +1131,19 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 
 		if (this.World.getTime().Days <= 9)
 		{
-			r = this.Math.rand(0, this.Const.DLC.Unhold ? 2 : 1);
+			local r_max = 1;
+
+			if (this.Const.DLC.Desert)
+			{
+				r_max = r_max + 2;
+			}
+
+			if (this.Const.DLC.Unhold)
+			{
+				r_max = r_max + 1;
+			}
+
+			r = this.Math.rand(0, r_max);
 		}
 
 		for( local i = 0; i < 15 - _faction.getUnits().len(); i = ++i )

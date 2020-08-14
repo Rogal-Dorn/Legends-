@@ -13,12 +13,12 @@ this.build_undead_camp_action <- this.inherit("scripts/factions/faction_action",
 
 		if (this.World.FactionManager.isUndeadScourge() && this.World.FactionManager.getGreaterEvilStrength() >= 20.0)
 		{
-			if (settlements.len() > 19)
+			if (settlements.len() > 19 + (this.Const.DLC.Desert ? 4 : 0))
 			{
 				return;
 			}
 		}
-		else if (settlements.len() > 11)
+		else if (settlements.len() > 11 + (this.Const.DLC.Desert ? 4 : 0))
 		{
 			return;
 		}
@@ -33,7 +33,7 @@ this.build_undead_camp_action <- this.inherit("scripts/factions/faction_action",
 	function onExecute( _faction )
 	{
 		local camp;
-		local r = this.Math.rand(1, 5);
+		local r = this.Math.rand(1, 5 + (this.Const.DLC.Desert ? 3 : 0));
 
 		if (r == 1)
 		{
@@ -42,14 +42,18 @@ this.build_undead_camp_action <- this.inherit("scripts/factions/faction_action",
 			if (this.World.FactionManager.isUndeadScourge())
 			{
 				tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries, [
-					this.Const.World.TerrainType.Mountains
-				], 8, 16);
+					this.Const.World.TerrainType.Mountains,
+					this.Const.World.TerrainType.Desert,
+					this.Const.World.TerrainType.Oasis
+				], 8, 16, 1000, 7, 7, null, this.Const.DLC.Desert ? 0.2 : 0.0);
 			}
 			else
 			{
 				tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries, [
-					this.Const.World.TerrainType.Mountains
-				], 8, 16);
+					this.Const.World.TerrainType.Mountains,
+					this.Const.World.TerrainType.Desert,
+					this.Const.World.TerrainType.Oasis
+				], 8, 16, 1000, 7, 7, null, this.Const.DLC.Desert ? 0.2 : 0.0);
 			}
 
 			if (tile != null)
@@ -65,13 +69,13 @@ this.build_undead_camp_action <- this.inherit("scripts/factions/faction_action",
 			{
 				tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries, [
 					this.Const.World.TerrainType.Mountains
-				], 12, 30);
+				], 12, 30, 1000, 7, 7, null, 0.0, this.Const.DLC.Desert ? 0.9 : 1.0);
 			}
 			else
 			{
 				tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries, [
 					this.Const.World.TerrainType.Mountains
-				], 12, 1000);
+				], 12, 1000, 1000, 7, 7, null, 0.0, this.Const.DLC.Desert ? 0.9 : 1.0);
 			}
 
 			if (tile != null)
@@ -109,13 +113,13 @@ this.build_undead_camp_action <- this.inherit("scripts/factions/faction_action",
 			{
 				tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries, [
 					this.Const.World.TerrainType.Mountains
-				], 15, 25);
+				], 15, 25, 1000, 7, 7, null, 0.0, this.Const.DLC.Desert ? 0.9 : 1.0);
 			}
 			else
 			{
 				tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries, [
 					this.Const.World.TerrainType.Mountains
-				], 15, 25);
+				], 15, 25, 1000, 7, 7, null, 0.0, this.Const.DLC.Desert ? 0.9 : 1.0);
 			}
 
 			if (tile != null)
@@ -149,6 +153,99 @@ this.build_undead_camp_action <- this.inherit("scripts/factions/faction_action",
 			if (tile != null)
 			{
 				camp = this.World.spawnLocation("scripts/entity/world/locations/undead_buried_castle_location", tile.Coords);
+			}
+		}
+		else if (r == 6)
+		{
+			local disallowTerrain = [];
+
+			for( local i = 0; i != this.Const.World.TerrainType.COUNT; i = ++i )
+			{
+				if (i == this.Const.World.TerrainType.Desert)
+				{
+				}
+				else
+				{
+					disallowTerrain.push(i);
+				}
+			}
+
+			local tile;
+
+			if (this.World.FactionManager.isUndeadScourge())
+			{
+				tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries, disallowTerrain, 8, 20);
+			}
+			else
+			{
+				tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries, disallowTerrain, 10, 30);
+			}
+
+			if (tile != null)
+			{
+				camp = this.World.spawnLocation("scripts/entity/world/locations/undead_ruins_location", tile.Coords);
+			}
+		}
+		else if (r == 7)
+		{
+			local disallowTerrain = [];
+
+			for( local i = 0; i != this.Const.World.TerrainType.COUNT; i = ++i )
+			{
+				if (i == this.Const.World.TerrainType.Desert)
+				{
+				}
+				else
+				{
+					disallowTerrain.push(i);
+				}
+			}
+
+			local tile;
+
+			if (this.World.FactionManager.isUndeadScourge())
+			{
+				tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries, disallowTerrain, 11, 25, 1000, 7, 7);
+			}
+			else
+			{
+				tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries, disallowTerrain, 12, 25, 1000, 7, 7);
+			}
+
+			if (tile != null)
+			{
+				camp = this.World.spawnLocation("scripts/entity/world/locations/undead_vampire_coven_location", tile.Coords);
+			}
+		}
+		else if (r == 8)
+		{
+			local disallowTerrain = [];
+
+			for( local i = 0; i != this.Const.World.TerrainType.COUNT; i = ++i )
+			{
+				if (i == this.Const.World.TerrainType.Desert)
+				{
+				}
+				else
+				{
+					disallowTerrain.push(i);
+				}
+			}
+
+			local tile;
+
+			if (this.World.FactionManager.isUndeadScourge())
+			{
+				tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries, disallowTerrain, 11, 30, 1000, 7, 7);
+			}
+			else
+			{
+				tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries, disallowTerrain, 12, 1000, 1000, 7, 7);
+			}
+
+			if (tile != null)
+			{
+				camp = this.World.spawnLocation("scripts/entity/world/locations/undead_mass_grave_location", tile.Coords);
 			}
 		}
 

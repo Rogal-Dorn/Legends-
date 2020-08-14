@@ -7,7 +7,7 @@ gt.Const.Factions <- {
 	NeutralColor = this.createColor("#ffffff"),
 	HostileColor = this.createColor("#e57878"),
 	PermanentHostileColor = this.createColor("#c72727"),
-	GreaterEvilStartStrength = 120.0,
+	GreaterEvilStartStrength = 125.0,
 	GreaterEvilDailyStrength = -1.0,
 	GreaterEvilStrengthOnPartyDestroyed = -2.0,
 	GreaterEvilStrengthOnLocationDestroyed = -4.0,
@@ -31,7 +31,10 @@ gt.Const.FactionType <- {
 	Beasts = 10,
 	Generic = 11,
 	Barbarians = 12,
-	COUNT = 13
+	OrientalCityState = 13,
+	OrientalBandits = 14,
+	Arena = 15,
+	COUNT = 16
 };
 gt.Const.Faction <- {
 	None = 0,
@@ -47,7 +50,10 @@ gt.Const.Faction <- {
 	Orcs = 10,
 	Goblins = 11,
 	Barbarians = 12,
-	COUNT = 13
+	OrientalCityState = 13,
+	OrientalBandits = 14,
+	Arena = 15,
+	COUNT = 16
 };
 gt.Const.FactionColor <- [
 	this.createColor("#ffffff"),
@@ -63,7 +69,10 @@ gt.Const.FactionColor <- [
 	this.createColor("#bd00c4"),
 	this.createColor("#1aa83f"),
 	this.createColor("#537117"),
-	this.createColor("#ff9595")
+	this.createColor("#ff9595"),
+	this.createColor("#ffffff"),
+	this.createColor("#ff9595"),
+	this.createColor("#b75a00")
 ];
 gt.Const.FactionBase <- [
 	"",
@@ -78,7 +87,10 @@ gt.Const.FactionBase <- [
 	"bust_base_undead",
 	"bust_base_orcs",
 	"bust_base_goblins",
-	"bust_base_wildmen_01"
+	"bust_base_wildmen_01",
+	"bust_base_militia",
+	"bust_base_militia",
+	"bust_base_beasts"
 ];
 gt.Const.FactionAlliance <- [
 	[
@@ -146,6 +158,18 @@ gt.Const.FactionAlliance <- [
 	],
 	[
 		this.Const.Faction.Barbarians
+	],
+	[
+		this.Const.Faction.NobleHouse,
+		this.Const.Faction.Civilian,
+		this.Const.Faction.Player,
+		this.Const.Faction.PlayerAnimals
+	],
+	[
+		this.Const.Faction.OrientalBandits
+	],
+	[
+		this.Const.Faction.Arena
 	]
 ];
 gt.Const.GenericFootprints <- [

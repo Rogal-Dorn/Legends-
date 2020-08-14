@@ -8,6 +8,7 @@ this.named_rusty_warblade <- this.inherit("scripts/items/weapons/named/named_wea
 		this.m.ID = "weapon.named_rusty_warblade";
 		this.m.NameList = this.Const.Strings.CleaverNames;
 		this.m.PrefixList = this.Const.Strings.BarbarianPrefix;
+		this.m.SuffixList = this.Const.Strings.BarbarianSuffix;
 		this.m.UseRandomName = false;
 		this.m.Description = "This massive and exceptionally well-crafted warblade is covered with runes and decorations that are typical for the barbarian tribes of the north.";
 		this.m.Categories = "Cleaver, Two-Handed";

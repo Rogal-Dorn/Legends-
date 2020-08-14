@@ -68,7 +68,7 @@ gt.Const.World.Settlements.LegendsWorldMaster <- [
 		]
 	},
 	{
-		Ratio = 0.45,
+		Ratio = 0.40,
 		Types = Const.World.Settlements.Legends_villages,
 		Sizes = [
 			{
@@ -108,6 +108,18 @@ gt.Const.World.Settlements.LegendsWorldMaster <- [
 				Size = 3
 			}
 		]
+	},
+	{
+		Ratio = 0.20,
+		Types = Const.World.Settlements.Legends_citystates,
+		IgnoreSide = true,
+		AdditionalSpace = 13,
+		Sizes = [
+			{
+				Ratio = 1,
+				MinAmount = 1,
+				Size = 1
+			},
 	}
 ];
 
@@ -119,7 +131,7 @@ gt.Const.World.NewCampaignOpts <- function ()
 		WidthMax = 140,
 		Height = this.Const.World.Settings.SizeY,
 		HeightMin = 100,
-		HeightMax = 140,
+		HeightMax = 170,
 		LandMassMult = 40, //this.Const.World.Settings.LandMassMult * 100 - 100,
 		LandMassMultMin = 1,
 		LandMassMultMax = 100,

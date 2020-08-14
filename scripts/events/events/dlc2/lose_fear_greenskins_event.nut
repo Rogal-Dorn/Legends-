@@ -45,7 +45,7 @@ this.lose_fear_greenskins_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
-		if (this.World.Statistics.get().LastCombatFaction != this.World.FactionManager.getFactionOfType(this.Const.FactionType.Orcs).getID() && this.World.Statistics.get().LastCombatFaction != this.World.FactionManager.getFactionOfType(this.Const.FactionType.Goblins).getID())
+		if (this.World.Statistics.getFlags().getAsInt("LastCombatFaction") != this.World.FactionManager.getFactionOfType(this.Const.FactionType.Orcs).getID() && this.World.Statistics.getFlags().getAsInt("LastCombatFaction") != this.World.FactionManager.getFactionOfType(this.Const.FactionType.Goblins).getID())
 		{
 			return;
 		}

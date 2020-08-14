@@ -26,7 +26,7 @@ this.knight <- this.inherit("scripts/entity/tactical/human", {
 		this.human.onInit();
 		local b = this.m.BaseProperties;
 		b.setValues(this.Const.Tactical.Actor.Knight);
-		b.TargetAttractionMult = 1.25;
+		b.TargetAttractionMult = 1.0;
 		b.IsSpecializedInSwords = true;
 		b.IsSpecializedInAxes = true;
 		b.IsSpecializedInMaces = true;
@@ -330,7 +330,8 @@ this.knight <- this.inherit("scripts/entity/tactical/human", {
 		]))
 
 
-		this.m.Skills.add(this.new("scripts/skills/actives/indomitable"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_killing_frenzy"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_hold_out"));
 		return true;
 	}
 

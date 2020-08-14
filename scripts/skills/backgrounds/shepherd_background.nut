@@ -6,7 +6,7 @@ this.shepherd_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.ID = "background.shepherd";
 		this.m.Name = "Shepherd";
 		this.m.Icon = "ui/backgrounds/background_44.png";
-		this.m.BackgroundDescription = "Shepherds are used to physical labor, and using a sling to scare away foxes";
+		this.m.BackgroundDescription = "Shepherds are used to physical labor and known to keep the occasional wolf at bay with a sling.";
 		this.m.GoodEnding = "It was unusual that a shepherd such as %name% ever found his way into a company of sellswords, but he did prove himself an able warrior. With injuries mounting, he eventually retired, returning to a meadow, staff in hand, and herding sheep until his final, peaceful days.";
 		this.m.BadEnding = "You\'d think a shepherd would have no place in the company of sellsword and, eventually, %name% agreed. He left the %companyname% not long after you and last you heard he was back to tending his sheep. While most men left the company in poor spirits, %name%\'s injuries did not bring down his docile lifestyle of staring at fluffy white critters about as dangerous as a bad dream.";
 		this.m.HiringCost = 80;
@@ -42,7 +42,7 @@ this.shepherd_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.Hairs = this.Const.Hair.CommonMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.Body = "bust_naked_body_00";
+		this.m.Bodies = this.Const.Bodies.Skinny;
 		this.m.IsOffendedByViolence = true;
 		this.m.IsLowborn = true;
 		this.m.IsCrusaderRecruitBackground = true;

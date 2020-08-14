@@ -149,20 +149,19 @@ this.ai_swarm_of_insects <- this.inherit("scripts/ai/tactical/behavior", {
 
 			if (target.getSkills().hasSkill("effects.insect_swarm"))
 			{
+				for( ; target.getCurrentProperties().NegativeStatusEffectDuration < 0;  )
+				{
+				}
+
 				score = score * this.Const.AI.Behavior.InsectSwarmAlreadyAppliedMult;
 			}
 
-			if (opponentTile.hasZoneOfControlOtherThan(target.getAlliedFactions()))
+			if (opponentTile.hasZoneOfOccupationOtherThan(target.getAlliedFactions()))
 			{
 				score = score * this.Const.AI.Behavior.InsectSwarmEngagedMult;
 			}
 
 			score = score * target.getCurrentProperties().TargetAttractionMult;
-
-			if (target.getSkills().hasSkill("perk.killing_frenzy"))
-			{
-				score = score * this.Const.AI.Behavior.InsectSwarmPerfectFocusMult;
-			}
 
 			if (_entity.getAttackers().find(target.getID()) != null)
 			{

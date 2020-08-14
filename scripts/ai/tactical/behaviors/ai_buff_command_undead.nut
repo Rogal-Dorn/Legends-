@@ -63,7 +63,7 @@ this.ai_buff_command_undead <- this.inherit("scripts/ai/tactical/behavior", {
 
 		foreach( a in targets )
 		{
-			if (_entity.getTile().getDistanceTo(a.getTile()) <= this.m.Skill.getMaxRange() && a.getTags().has("zombie_minion"))
+			if (_entity.getTile().getDistanceTo(a.getTile()) <= this.m.Skill.getMaxRange() && a.getFlags().has("zombie_minion"))
 			{
 				if (this.isAllottedTimeReached(time))
 				{
@@ -95,7 +95,7 @@ this.ai_buff_command_undead <- this.inherit("scripts/ai/tactical/behavior", {
 				local hitpointsMax = a.getHitpointsMax() + a.getArmorMax(this.Const.BodyPart.Body) + a.getArmorMax(this.Const.BodyPart.Head);
 				score = score * (hitpoints / hitpointsMax * this.Const.AI.Behavior.CommandUndeadHitpointsMult);
 
-				if (a.getTile().hasZoneOfControlOtherThan(a.getAlliedFactions()))
+				if (a.getTile().hasZoneOfOccupationOtherThan(a.getAlliedFactions()))
 				{
 					score = score * this.Const.AI.Behavior.CommandUndeadEngagedMult;
 				}

@@ -28,6 +28,7 @@ this.poacher_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Beards = this.Const.Beards.Untidy;
 		this.m.Body = "bust_naked_body_00";
 
+		this.m.Bodies = this.Const.Bodies.Skinny;
 		this.m.IsLowborn = true;
 		this.m.IsOutlawBackground = true;
 		this.m.IsRangerRecruitBackground = true;

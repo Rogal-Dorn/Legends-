@@ -28,7 +28,7 @@ this.butcher_gives_pointers_event <- this.inherit("scripts/events/event", {
 			{
 				this.Characters.push(_event.m.Butcher.getImagePath());
 				this.Characters.push(_event.m.Flagellant.getImagePath());
-				_event.m.Flagellant.getTags().add("pointers_from_butcher");
+				_event.m.Flagellant.getFlags().add("pointers_from_butcher");
 				_event.m.Flagellant.getBaseProperties().MeleeSkill += 2;
 				_event.m.Flagellant.getSkills().update();
 				this.List.push({
@@ -66,7 +66,7 @@ this.butcher_gives_pointers_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getTags().has("pointers_from_butcher"))
+			if (bro.getFlags().has("pointers_from_butcher"))
 			{
 				continue;
 			}

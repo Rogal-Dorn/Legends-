@@ -394,7 +394,16 @@ this.hedgeknight_vs_hedgeknight_event <- this.inherit("scripts/events/event", {
 				this.World.Assets.addMoralReputation(-1);
 				this.Characters.push(_event.m.HedgeKnight1.getImagePath());
 				local dead = _event.m.HedgeKnight2;
-				this.World.Statistics.addFallen(dead, "Killed in a duel by " + _event.m.HedgeKnight1.getName());
+				local fallen = {
+					Name = dead.getName(),
+					Time = this.World.getTime().Days,
+					TimeWithCompany = this.Math.max(1, dead.getDaysWithCompany()),
+					Kills = dead.getLifetimeStats().Kills,
+					Battles = dead.getLifetimeStats().Battles,
+					KilledBy = "Killed in a duel by " + _event.m.HedgeKnight1.getName(),
+					Expendable = false
+				};
+				this.World.Statistics.addFallen(fallen);
 				this.List.push({
 					id = 13,
 					icon = "ui/icons/kills.png",
@@ -460,7 +469,16 @@ this.hedgeknight_vs_hedgeknight_event <- this.inherit("scripts/events/event", {
 				this.World.Assets.addMoralReputation(-1);
 				this.Characters.push(_event.m.HedgeKnight2.getImagePath());
 				local dead = _event.m.HedgeKnight1;
-				this.World.Statistics.addFallen(dead,  "Killed in a duel by " + _event.m.HedgeKnight2.getName());
+				local fallen = {
+					Name = dead.getName(),
+					Time = this.World.getTime().Days,
+					TimeWithCompany = this.Math.max(1, dead.getDaysWithCompany()),
+					Kills = dead.getLifetimeStats().Kills,
+					Battles = dead.getLifetimeStats().Battles,
+					KilledBy = "Killed in a duel by " + _event.m.HedgeKnight2.getName(),
+					Expendable = false
+				};
+				this.World.Statistics.addFallen(fallen);
 				this.List.push({
 					id = 13,
 					icon = "ui/icons/kills.png",
@@ -526,10 +544,10 @@ this.hedgeknight_vs_hedgeknight_event <- this.inherit("scripts/events/event", {
 				this.World.Assets.addMoralReputation(2);
 				this.Characters.push(_event.m.Monk.getImagePath());
 
-				if (!_event.m.Monk.getTags().has("resolve_via_hedgeknight"))
+				if (!_event.m.Monk.getFlags().has("resolve_via_hedgeknight"))
 				{
-					_event.m.Monk.getTags().add("resolve_via_hedgeknight");
-					_event.m.Monk.getBaseProperties().Bravery += 3;
+					_event.m.Monk.getFlags().add("resolve_via_hedgeknight");
+					_event.m.Monk.getBaseProperties().Bravery += 2;
 					_event.m.Monk.getSkills().update();
 					this.List = [
 						{

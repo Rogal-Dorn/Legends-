@@ -34,7 +34,7 @@ this.swordmaster <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_duelist"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_underdog"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_steel_brow"));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_dodge"));
+		this.m.Skills.add(this.new("scripts/skills/effects/dodge_effect"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_berserk"));
 		this.m.Skills.add(this.new("scripts/skills/actives/footwork"));
 		this.m.Skills.add(this.new("scripts/skills/actives/recover_skill"));
@@ -77,7 +77,7 @@ this.swordmaster <- this.inherit("scripts/entity/tactical/human", {
 				"weapons/arming_sword"
 			];
 
-			if (this.Const.DLC.Wildmen)
+			if (this.Const.DLC.Wildmen || this.Const.DLC.Desert)
 			{
 				weapons.extend([
 					"weapons/noble_sword",
@@ -431,7 +431,7 @@ this.swordmaster <- this.inherit("scripts/entity/tactical/human", {
 			"weapons/named/named_sword"
 		];
 
-		if (this.Const.DLC.Wildmen)
+		if (this.Const.DLC.Wildmen || this.Const.DLC.Desert)
 		{
 			weapons.extend([
 				"weapons/named/named_sword",

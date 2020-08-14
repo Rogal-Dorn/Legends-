@@ -10,6 +10,11 @@ this.undead_graveyard_location <- this.inherit("scripts/entity/world/location", 
 		this.location.create();
 		this.m.TypeID = "location.undead_graveyard";
 		this.m.LocationType = this.Const.World.LocationType.Lair;
+		this.m.CombatLocation.Template[0] = "tactical.graveyard";
+		this.m.CombatLocation.Fortification = this.Const.Tactical.FortificationType.Walls;
+		this.m.CombatLocation.CutDownTrees = false;
+		this.m.CombatLocation.ForceLineBattle = true;
+		this.m.CombatLocation.AdditionalRadius = 5;
 		this.m.IsShowingDefenders = false;
 		this.m.IsShowingBanner = false;
 		local r = this.Math.rand(1, 4);

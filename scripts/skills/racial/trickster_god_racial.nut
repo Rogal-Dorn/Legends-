@@ -4,7 +4,7 @@ this.trickster_god_racial <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "racial.trickster_god";
 		this.m.Name = "";
-		this.m.Description = "TODO";
+		this.m.Description = "";
 		this.m.Icon = "skills/status_effect_79.png";
 		this.m.SoundOnUse = [
 			"sounds/enemies/unhold_regenerate_01.wav",

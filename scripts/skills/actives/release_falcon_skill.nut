@@ -85,6 +85,11 @@ this.release_falcon_skill <- this.inherit("scripts/skills/skill", {
 		{
 			_tile.getEntity().setDiscovered(true);
 		}
+
+		if (this.Tactical.TurnSequenceBar.getActiveEntity() != null)
+		{
+			this.Tactical.TurnSequenceBar.getActiveEntity().updateVisibilityForFaction();
+		}
 	}
 
 });

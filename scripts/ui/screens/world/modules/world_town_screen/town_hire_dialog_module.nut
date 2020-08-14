@@ -48,7 +48,8 @@ this.town_hire_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 			local currentFood = this.World.Assets.getFood();
 			local currentBrothers = entities.len();
 			local brothersMax = this.World.Assets.getBrothersMax();
-			local hiringCost = entry.getHiringCost();
+			local hiringCost = this.Math.ceil(entry.getHiringCost() * this.World.Assets.m.HiringCostMult);
+
 			if (currentMoney < hiringCost)
 			{
 				return {
@@ -68,6 +69,7 @@ this.town_hire_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 			this.World.getRoster(this.m.RosterID).remove(entry);
 			entry.onHired();
 			this.World.Assets.addMoney(-hiringCost);
+			this.World.Statistics.getFlags().increment("BrosHired");
 
 			if (this.World.getRoster(this.m.RosterID).getSize() == 0)
 			{

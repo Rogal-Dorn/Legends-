@@ -25,7 +25,7 @@ this.named_item_set_ambition <- this.inherit("scripts/ambitions/ambition", {
 
 		foreach( item in items )
 		{
-			if (item != null && (item.isItemType(this.Const.Items.ItemType.Named) || item.isItemType(this.Const.Items.ItemType.Legendary)))
+			if (item != null && (item.isItemType(this.Const.Items.ItemType.Named) || item.isItemType(this.Const.Items.ItemType.Legendary)) && item.getID() != "armor.head.fangshire")
 			{
 				++ret.Items;
 
@@ -78,7 +78,7 @@ this.named_item_set_ambition <- this.inherit("scripts/ambitions/ambition", {
 
 			item = bro.getItems().getItemAtSlot(this.Const.ItemSlot.Head);
 
-			if (item != null && (item.isItemType(this.Const.Items.ItemType.Named) || item.isItemType(this.Const.Items.ItemType.Legendary)))
+			if (item != null && (item.isItemType(this.Const.Items.ItemType.Named) || item.isItemType(this.Const.Items.ItemType.Legendary)) && item.getID() != "armor.head.fangshire")
 			{
 				++ret.Items;
 
@@ -133,6 +133,11 @@ this.named_item_set_ambition <- this.inherit("scripts/ambitions/ambition", {
 
 	function onUpdateScore()
 	{
+		if (!this.Const.DLC.Wildmen)
+		{
+			return;
+		}
+
 		if (this.World.getTime().Days <= 50)
 		{
 			return;

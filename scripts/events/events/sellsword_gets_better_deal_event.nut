@@ -68,7 +68,7 @@ this.sellsword_gets_better_deal_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				this.Characters.push(_event.m.Sellsword.getImagePath());
-				_event.m.Sellsword.getTags().add("convincedToStayWithCompany");
+				_event.m.Sellsword.getFlags().add("convincedToStayWithCompany");
 			}
 
 		});
@@ -134,12 +134,17 @@ this.sellsword_gets_better_deal_event <- this.inherit("scripts/events/event", {
 
 	function onUpdateScore()
 	{
+		if (this.World.Retinue.hasFollower("follower.paymaster"))
+		{
+			return;
+		}
+
 		local brothers = this.World.getPlayerRoster().getAll();
 		local candidates = [];
 
 		foreach( bro in brothers )
 		{
-			if (bro.getLevel() >= 4 && bro.getLevel() <= 9 && this.Time.getVirtualTimeF() - bro.getHireTime() > this.World.getTime().SecondsPerDay * 25.0 && bro.getBackground().getID() == "background.sellsword" && !bro.getTags().has("convincedToStayWithCompany"))
+			if (bro.getLevel() >= 4 && bro.getLevel() <= 9 && this.Time.getVirtualTimeF() - bro.getHireTime() > this.World.getTime().SecondsPerDay * 25.0 && bro.getBackground().getID() == "background.sellsword" && !bro.getFlags().has("convincedToStayWithCompany"))
 			{
 				candidates.push(bro);
 			}

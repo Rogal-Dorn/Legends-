@@ -345,7 +345,14 @@ this.civilwar_refugees_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
-		if (!this.World.State.getPlayer().getTile().HasRoad)
+		local currentTile = this.World.State.getPlayer().getTile();
+
+		if (!currentTile.HasRoad)
+		{
+			return;
+		}
+
+		if (this.Const.DLC.Desert && currentTile.SquareCoords.Y <= this.World.getMapSize().Y * 0.2)
 		{
 			return;
 		}
@@ -371,7 +378,7 @@ this.civilwar_refugees_event <- this.inherit("scripts/events/event", {
 			{
 				candidates_refugees.push(bro);
 			}
-			else if (!bro.getSkills().hasSkill("trait.player"))
+			else if (!bro.getSkills().hasSkill("trait.player") && bro.getBackground().getID() != "background.slave")
 			{
 				candidates_other.push(bro);
 			}

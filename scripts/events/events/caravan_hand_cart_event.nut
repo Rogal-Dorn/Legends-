@@ -6,7 +6,7 @@ this.caravan_hand_cart_event <- this.inherit("scripts/events/event", {
 	{
 		this.m.ID = "event.caravan_hand_cart";
 		this.m.Title = "During camp...";
-		this.m.Cooldown = 99999.0 * this.World.getTime().SecondsPerDay;
+		this.m.Cooldown = 999999.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
 			Text = "[img]gfx/ui/events/event_55.png[/img]You come across the once-caravan hand, %caravanhand%, finicking with the company wagon. He\'s nailing a slat of board to the bed and using pins to put it on a roller. The board can then drop down into the belly of the wagon with a little bit of a pull and switch. Rather ingenious. This will allow you to load more onto the wagon.",
@@ -49,7 +49,7 @@ this.caravan_hand_cart_event <- this.inherit("scripts/events/event", {
 
 	function onUpdateScore()
 	{
-		if (!this.World.Ambitions.getAmbition("ambition.cart").isDone())
+		if (!this.World.Ambitions.getAmbition("ambition.cart").isDone() && this.World.Retinue.getInventoryUpgrades() == 0)
 		{
 			return;
 		}

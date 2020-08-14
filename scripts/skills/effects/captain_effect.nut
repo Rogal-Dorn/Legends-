@@ -5,7 +5,7 @@ this.captain_effect <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.ID = "effects.captain";
-		this.m.Name = "Inspired by Nearby Leader";
+		this.m.Name = "Inspired by nearby Leader";
 		this.m.Description = "With a captain nearby that provides guidance and pushes forward, this character has temporarily increased Resolve.";
 		this.m.Icon = "ui/perks/perk_26.png";
 		this.m.IconMini = "perk_26_mini";

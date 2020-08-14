@@ -50,7 +50,7 @@ this.waterwheel_enter_event <- this.inherit("scripts/events/event", {
 					Text = "We\'ll have to resolve it ourselves.",
 					function getResult( _event )
 					{
-						this.World.Tags.set("IsWaterWheelVisited", true);
+						this.World.Flags.set("IsWaterWheelVisited", true);
 						return 0;
 					}
 
@@ -72,7 +72,7 @@ this.waterwheel_enter_event <- this.inherit("scripts/events/event", {
 					Text = "We\'ll have to resolve it ourselves.",
 					function getResult( _event )
 					{
-						this.World.Tags.set("IsWaterWheelVisited", true);
+						this.World.Flags.set("IsWaterWheelVisited", true);
 						return 0;
 					}
 
@@ -205,7 +205,7 @@ this.waterwheel_enter_event <- this.inherit("scripts/events/event", {
 	function onDetermineStartScreen()
 	{
 		local hasBlade = false;
-		local hasBeenHereBefore = this.World.Tags.get("IsWaterWheelVisited");
+		local hasBeenHereBefore = this.World.Flags.get("IsWaterWheelVisited");
 		local items = this.World.Assets.getStash().getItems();
 
 		foreach( item in items )

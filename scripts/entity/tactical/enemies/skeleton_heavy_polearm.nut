@@ -21,6 +21,12 @@ this.skeleton_heavy_polearm <- this.inherit("scripts/entity/tactical/skeleton", 
 		b.IsAffectedByInjuries = false;
 		b.IsImmuneToBleeding = true;
 		b.IsImmuneToPoison = true;
+
+		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 100)
+		{
+			b.IsSpecializedInPolearms = true;
+		}
+
 		this.m.ActionPoints = b.ActionPoints;
 		this.m.Hitpoints = b.Hitpoints;
 		this.m.CurrentProperties = clone b;

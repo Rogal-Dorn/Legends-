@@ -30,7 +30,7 @@ this.repel <- this.inherit("scripts/skills/skill", {
 		this.m.IsWeaponSkill = true;
 		this.m.HitChanceBonus = 10;
 		this.m.ActionPointCost = 6;
-		this.m.FatigueCost = 30;
+		this.m.FatigueCost = 25;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 2;
 	}

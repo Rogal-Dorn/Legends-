@@ -20,7 +20,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 
 		foreach( s in settlements )
 		{
-			if (s.isMilitary() || !s.isDiscovered() || s.getSize() > 1 || s.isIsolatedFromRoads())
+			if (s.isMilitary() || s.getSize() > 1 || s.isIsolatedFromRoads())
 			{
 				continue;
 			}
@@ -35,7 +35,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 					continue;
 				}
 
-				if (!b.isDiscovered() || b.getSize() <= 1 || b.isIsolatedFromRoads())
+				if (b.getSize() <= 1 || b.isIsolatedFromRoads())
 				{
 					continue;
 				}
@@ -60,6 +60,8 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 		this.setHome(best_start);
 		this.setOrigin(best_start);
 		this.m.Home.setVisited(true);
+		this.m.Home.setDiscovered(true);
+		this.World.uncoverFogOfWar(this.m.Home.getTile().Pos, 500.0);
 		this.m.Faction = best_start.getFactions()[0];
 		this.m.EmployerID = this.World.FactionManager.getFaction(this.m.Faction).getRandomCharacter().getID();
 		this.m.BigCity = this.WeakTableRef(best_big);
@@ -328,6 +330,8 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 
 				this.Contract.m.BulletpointsObjectives.push("Buy weapons and armor for your men");
 				this.World.State.getPlayer().setAttackable(false);
+				this.Contract.m.BigCity.setDiscovered(true);
+				this.World.uncoverFogOfWar(this.Contract.m.BigCity.getTile().Pos, 500.0);
 			}
 
 			function update()
@@ -493,7 +497,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 				e.setName(this.Flags.get("BossName"));
 				e.m.IsGeneratingKillName = false;
 				e.getAIAgent().getProperties().BehaviorMult[this.Const.AI.Behavior.ID.Retreat] = 0.0;
-				e.getTags().add("IsFinalBoss", true);
+				e.getFlags().add("IsFinalBoss", true);
 				local items = e.getItems();
 				items.equip(this.new("scripts/items/armor/patched_mail_shirt"));
 				items.equip(this.new("scripts/items/weapons/falchion"));
@@ -508,7 +512,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 
 			function onActorKilled( _actor, _killer, _combatID )
 			{
-				if (_actor.getTags().get("IsFinalBoss") == true)
+				if (_actor.getFlags().get("IsFinalBoss") == true)
 				{
 					this.Flags.set("IsHoggartDead", true);
 					this.updateAchievement("TrialByFire", 1, 1);
@@ -789,7 +793,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 					Text = "As brothers!",
 					function getResult()
 					{
-						this.World.Tags.set("IsHoggartDead", true);
+						this.World.Flags.set("IsHoggartDead", true);
 						this.Music.setTrackList(this.Const.Music.WorldmapTracks, this.Const.Music.CrossFadeTime, true);
 						this.World.Assets.addMoney(400);
 						this.World.FactionManager.getFaction(this.Contract.getFaction()).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractSuccess, "Killed Hoggart for good");

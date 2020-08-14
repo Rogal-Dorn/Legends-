@@ -62,6 +62,11 @@ this.new_campaign_menu_module <- this.inherit("scripts/ui/screens/ui_module", {
 		this.m.JSHandle.asyncCall("setStartingScenarios", _scenarios);
 	}
 
+	function setCrusadeCampaignAvailable( _available )
+	{
+		this.m.JSHandle.asyncCall("setCrusadeCampaignVisible", _available);
+	}
+
 	function onStartButtonPressed( _settings )
 	{
 		local settings = {
@@ -84,6 +89,7 @@ this.new_campaign_menu_module <- this.inherit("scripts/ui/screens/ui_module", {
 			NumFactions = _settings[16],
 			//Vision = _settings[17],
 			FOW = _settings[17],
+			ExplorationMode = _settings[17],
 			ForestsMult = _settings[18] / 100.0,
 			SwampsMult = _settings[19] / 100.0 ,
 			MountainsMult = _settings[20] / 100.0,

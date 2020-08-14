@@ -22,6 +22,9 @@ this.assassin_background <- this.inherit("scripts/skills/backgrounds/character_b
 			"trait.night_blind",
 			"trait.ailing",
 			"trait.clubfooted",
+			"trait.dumb",
+			"trait.loyal",
+			"trait.clumsy",
 			"trait.fat",
 			"trait.tiny",
 			"trait.gluttonous",
@@ -59,13 +62,14 @@ this.assassin_background <- this.inherit("scripts/skills/backgrounds/character_b
 		];
 
 		this.m.Faces = this.Const.Faces.AllMale;
-		this.m.Hairs = this.Const.Hair.TidyMale;
-		this.m.HairColors = this.Const.HairColors.All;
-		this.m.Beards = this.Const.Beards.Tidy;
 		this.m.Body = "bust_naked_body_02";
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Merciless;
-		this.m.Level = 3;
+		this.m.Hairs = this.Const.Hair.CommonMale;
+		this.m.HairColors = this.Const.HairColors.Young;
+		this.m.Beards = this.Const.Beards.All;
+		this.m.Bodies = this.Const.Bodies.Skinny;
+		this.m.Level = 4;
 		this.m.IsOutlawBackground = true;
 		this.m.IsUntalented = true;
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[3];

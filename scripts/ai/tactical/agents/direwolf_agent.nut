@@ -12,7 +12,8 @@ this.direwolf_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.m.Properties.TargetPriorityHittingAlliesMult = 0.1;
 		this.m.Properties.TargetPriorityCounterSkillsMult = 0.75;
 		this.m.Properties.OverallDefensivenessMult = 0.0;
-		this.m.Properties.OverallFormationMult = 1.25;
+		this.m.Properties.OverallFormationMult = 1.0;
+		this.m.Properties.EngageFlankingMult = 1.75;
 		this.m.Properties.EngageTargetAlreadyBeingEngagedMult = 1.5;
 		this.m.Properties.EngageLockDownTargetMult = 2.0;
 		this.m.Properties.PreferCarefulEngage = false;
@@ -24,7 +25,6 @@ this.direwolf_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_flee"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_retreat"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_engage_melee"));
-		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_buff_howl"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_break_free"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_default"));
 	}

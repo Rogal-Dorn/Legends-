@@ -180,6 +180,11 @@ this.noble_more_pay_lowborn_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
+		if (this.World.Retinue.hasFollower("follower.paymaster"))
+		{
+			return;
+		}
+
 		local brothers = this.World.getPlayerRoster().getAll();
 
 		if (brothers.len() < 2)

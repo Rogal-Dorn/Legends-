@@ -95,7 +95,7 @@ this.split_axe <- this.inherit("scripts/skills/skill", {
 		{
 			local forwardTile = _targetTile.getNextTile(dir);
 
-			if (forwardTile.IsOccupiedByActor && forwardTile.getEntity().isAttackable() && this.Math.abs(forwardTile.Level - ownTile.Level) <= 1)
+			if (this.Math.abs(forwardTile.Level - ownTile.Level) <= 1)
 			{
 				this.Tactical.getHighlighter().addOverlayIcon(this.Const.Tactical.Settings.AreaOfEffectIcon, forwardTile, forwardTile.Pos.X, forwardTile.Pos.Y);
 			}

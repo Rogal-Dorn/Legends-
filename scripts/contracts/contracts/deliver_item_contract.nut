@@ -131,10 +131,15 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 				this.Contract.m.BulletpointsObjectives = [
 					"Deliver cargo to %recipient% in %objective% about %days% to the %direction% by road"
 				];
+				local isSouthern = this.World.FactionManager.getFaction(this.Contract.getFaction()).getType() == this.Const.FactionType.OrientalCityState;
 
-				if (this.Math.rand(1, 100) <= this.Const.Contracts.Settings.IntroChance)
+				if (!isSouthern && this.Math.rand(1, 100) <= this.Const.Contracts.Settings.IntroChance)
 				{
 					this.Contract.setScreen("Intro");
+				}
+				else if (isSouthern)
+				{
+					this.Contract.setScreen("TaskSouthern");
 				}
 				else
 				{
@@ -145,8 +150,6 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 			function end()
 			{
 				this.World.Assets.addMoney(this.Contract.m.Payment.getInAdvance());
-				this.Contract.m.Destination.setDiscovered(true);
-				this.World.uncoverFogOfWar(this.Contract.m.Destination.getTile().Pos, 500.0);
 				local r = this.Math.rand(1, 100);
 
 				if (r <= 10)
@@ -162,7 +165,7 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 					{
 						this.Flags.set("IsEvilArtifact", true);
 
-						if (!this.World.Tags.get("IsCursedCrystalSkull") && this.Math.rand(1, 100) <= 50)
+						if (!this.World.Flags.get("IsCursedCrystalSkull") && this.Math.rand(1, 100) <= 50)
 						{
 							this.Flags.set("IsCursedCrystalSkull", true);
 						}
@@ -205,7 +208,16 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 					}
 					else
 					{
-						this.Contract.setScreen("Success1");
+						local isSouthern = this.Contract.m.Destination.isSouthern();
+
+						if (isSouthern)
+						{
+							this.Contract.setScreen("Success2");
+						}
+						else
+						{
+							this.Contract.setScreen("Success1");
+						}
 					}
 
 					this.World.Contracts.showActiveContract();
@@ -258,8 +270,8 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 						this.Contract.m.Location.setResources(0);
 						this.World.FactionManager.getFactionOfType(this.Const.FactionType.Bandits).addSettlement(this.Contract.m.Location.get(), false);
 						this.Contract.m.Location.onSpawned();
-						this.Contract.addUnitsToEntity(this.Contract.m.Location, this.Const.World.Spawn.BanditDefenders, 90 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
-						this.Const.World.Common.addFootprintsFromTo(this.World.State.getPlayer().getTile(), tile, this.Const.GenericFootprints, 0.75);
+						this.Contract.addUnitsToEntity(this.Contract.m.Location, this.Const.World.Spawn.BanditDefenders, 80 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult());
+						this.Const.World.Common.addFootprintsFromTo(this.World.State.getPlayer().getTile(), tile, this.Const.GenericFootprints, this.Const.World.FootprintsType.Brigands, 0.75);
 						this.Flags.set("IsStolenByThieves", true);
 						this.Contract.setScreen("Thieves1");
 						this.World.Contracts.showActiveContract();
@@ -283,12 +295,28 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 			{
 				if (_combatID == "EvilArtifact")
 				{
-					this.World.FactionManager.getFaction(this.Contract.m.Destination.getFactions()[0]).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractFail, "Failed to deliver cargo");
+					if (this.World.FactionManager.getFaction(this.Contract.m.Destination.getFactions()[0]).getType() == this.Const.FactionType.OrientalCityState)
+					{
+						this.World.FactionManager.getFaction(this.Contract.m.Destination.getFactions()[0]).addPlayerRelation(this.Const.World.Assets.RelationNobleContractFail, "Failed to deliver cargo");
+					}
+					else
+					{
+						this.World.FactionManager.getFaction(this.Contract.m.Destination.getFactions()[0]).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractFail, "Failed to deliver cargo");
+					}
+
 					this.World.Contracts.removeContract(this.Contract);
 				}
 				else if (_combatID == "Mercs")
 				{
-					this.World.FactionManager.getFaction(this.Contract.m.Destination.getFactions()[0]).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractFail, "Failed to deliver cargo");
+					if (this.World.FactionManager.getFaction(this.Contract.m.Destination.getFactions()[0]).getType() == this.Const.FactionType.OrientalCityState)
+					{
+						this.World.FactionManager.getFaction(this.Contract.m.Destination.getFactions()[0]).addPlayerRelation(this.Const.World.Assets.RelationNobleContractFail, "Failed to deliver cargo");
+					}
+					else
+					{
+						this.World.FactionManager.getFaction(this.Contract.m.Destination.getFactions()[0]).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractFail, "Failed to deliver cargo");
+					}
+
 					this.World.Contracts.removeContract(this.Contract);
 				}
 			}
@@ -363,6 +391,38 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 
 		});
 		this.m.Screens.push({
+			ID = "TaskSouthern",
+			Title = "Negotiations",
+			Text = "[img]gfx/ui/events/event_112.png[/img]{One of the Vizier\'s aldermen approaches with a retinue of servants. They\'re laboring a modestly sized crate in your general direction.%SPEECH_ON%Crownling, the Vizier has use for you. Have these servants load the crate into your keeping then take it to %recipient% in %objective%, a good %days% by road to the %direction%.%SPEECH_OFF%The alderman bows.%SPEECH_ON%Though a simple task it may be, the Vizier is willing to pay a plentiful sum for the task\'s completion.%SPEECH_OFF% | You find %employer% awaiting in the foyer. He is listening to a row of merchants, each with their own request or offer, and all the while a scribe at his side makes notations in a ledger which unfurls ever longer across the marbled floor. Seeing you, the Vizier snaps his fingers and a man off to the side approaches.%SPEECH_ON%Crownling, the majesty wishes to make use of your services. Take a crate with this labeling to %recipient% in %objective%, about %days% by road. You will be compensated upon arrival.%SPEECH_OFF% | A man with peacock feathers in a jaunty cap approaches you seemingly out of nowhere. He sidles along with a ledger in hand, though the ledger carries the emblem of one of %townname%\'s Viziers and his guard.%SPEECH_ON%%employer% wishes to employ your services, Crownling. You are to handle a fine material, crated away from your devilish eyes of course, and secret it to %recipient% in %objective%, located %days% by road to the %direction%. Once the material is delivered, you will then be paid at the location upon which you have arrived.%SPEECH_OFF%The man rakes the feathers back and briefly shakes his head.%SPEECH_ON%Do you find this offer congruent with your current financial wishes?%SPEECH_OFF% | You\'re first hailed by a pigeon with a note, the note pointing you to a young boy who then takes you to a servant, the servant guides you through a harem hall of naked women after which you arrive to the room of a wealthy merchant.%SPEECH_ON%Ah, finally, you have arrived. I set out a simple task to my indebted and it takes this long to complete? I\'ll have to look into that.%SPEECH_OFF%The merchant tosses you a ledger and simultaneously falls into a pile of cushions.%SPEECH_ON%I, excuse me, the Vizier needs you to take a crate of goods to %recipient% in %objective%, located %days% on the road to the %direction%. You are not to open said goods, only deliver them. If you open the goods, the Vizier will hear of it. And trust me, Crownling, the Vizier only likes to hear of splendid things. That is why I am here instead of the majesty.%SPEECH_OFF%What a courtesy.}",
+			Image = "",
+			List = [],
+			ShowEmployer = true,
+			ShowDifficulty = true,
+			Options = [
+				{
+					Text = "{Let\'s talk money. | How many crowns are we talking about?}",
+					function getResult()
+					{
+						return "Negotiation";
+					}
+
+				},
+				{
+					Text = "{Not interested. | Our travels will not take us there for a while. | This is not the kind of work we\'re looking for.}",
+					function getResult()
+					{
+						this.World.Contracts.removeContract(this.Contract);
+						return 0;
+					}
+
+				}
+			],
+			function start()
+			{
+			}
+
+		});
+		this.m.Screens.push({
 			ID = "Mercenaries1",
 			Title = "Along the road...",
 			Text = "[img]gfx/ui/events/event_07.png[/img]{While on the road, a band of well-armed men cross your path. | Marching toward %objective%, a few men interrupt your quiet travels, the clinky-clank of their weapons and armor filling the air as they step into formation. | Your travels, unfortunately, are not to be simple. A number of men have stepped out in front of you, clearly blocking your way. | Some armed and well armored men have come out to make something of a metal impasse. They look as though they intend to make sure you go no farther. | A few of the men come to a stop. You go to the front to figure out what is going on, only to see a line of well-armed men standing in %companyname%\'s way. Well, this should be interesting.} The enemy lieutenant steps forward and pounds his chest with his fist clenched.%SPEECH_ON%{It is us, the %mercband%, that stand before you. Slayers of beasts beyond imagination, the last hope of this godsforsaken land! | The name is %mercband% and we\'re well known throughout this land as splitters of heads, drinkers of kegs and lovers of ladies! | \'Tis the legendary %mercband% standing before you. It is we, saviors of %randomtown% and slayers of the false king! | Behold my proud band, the %mercband%! We, who fought off a hundred orcs to save a city from certain doom. What have you to your name? | You\'re talking to a man of the %mercband%. No common brigand, foul greenskin, bag of coins or skirt ever escaped from us!}%SPEECH_OFF%After the man finishes his posturing and personal pontificating, he points at the cargo you are carrying.%SPEECH_ON%{So now that you realize the danger you are in, why don\'t you go ahead and hand that cargo over? | I hope you realize who you\'ve come to face, pathetic sellsword, so that you may best make sure your men make it to their beds tonight. All you need to do is hand over the cargo and we won\'t have to add you to the history of %mercband%. | Ah, I bet you\'d like to be a part of our history, wouldn\'t you? Well, good news, all you gotta do is not hand over that cargo and we\'ll scribble you in with our swords. Of course, you can escape the scribe\'s pen if you just give us that cargo. | Now, if it isn\'t the %companyname%. As much as I\'d like add you to our list of victories, I\'ll give you a chance here, mercenary to mercenary. All you have to do is hand over that cargo and we\'ll be on our way. How\'s that sound?}%SPEECH_OFF%{Hmm, well it was a bombastic request if nothing else. | Well, the theatrics were pretty entertaining if nothing else. | You don\'t quite understand the need for showmanship, but there\'s little doubt about the seriousness of this new situation you\'ve found yourself in. | While you appreciated the superlatives and hyperbole, there remains the very terse reality that these men do actually mean business.}",
@@ -378,7 +438,7 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 						p.Music = this.Const.Music.NobleTracks;
 						p.PlayerDeploymentType = this.Const.Tactical.DeploymentType.Line;
 						p.EnemyDeploymentType = this.Const.Tactical.DeploymentType.Line;
-						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Mercenaries, 130 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.World.FactionManager.getFactionOfType(this.Const.FactionType.Bandits).getID());
+						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Mercenaries, 120 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult(), this.World.FactionManager.getFactionOfType(this.Const.FactionType.Bandits).getID());
 						this.World.Contracts.startScriptedCombat(p, false, true, true);
 						return 0;
 					}
@@ -407,7 +467,16 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 					{
 						this.Flags.set("IsMercenaries", false);
 						this.Flags.set("IsMercenariesDialogTriggered", true);
-						this.World.FactionManager.getFaction(this.Contract.m.Destination.getFactions()[0]).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractFail, "Failed to deliver cargo");
+
+						if (this.World.FactionManager.getFaction(this.Contract.m.Destination.getFactions()[0]).getType() == this.Const.FactionType.OrientalCityState)
+						{
+							this.World.FactionManager.getFaction(this.Contract.m.Destination.getFactions()[0]).addPlayerRelation(this.Const.World.Assets.RelationNobleContractFail, "Failed to deliver cargo");
+						}
+						else
+						{
+							this.World.FactionManager.getFaction(this.Contract.m.Destination.getFactions()[0]).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractFail, "Failed to deliver cargo");
+						}
+
 						local recipientFaction = this.Contract.m.Destination.getFactionOfType(this.Const.FactionType.Settlement);
 
 						if (recipientFaction != null)
@@ -454,7 +523,7 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 						p.Music = this.Const.Music.NobleTracks;
 						p.PlayerDeploymentType = this.Const.Tactical.DeploymentType.Line;
 						p.EnemyDeploymentType = this.Const.Tactical.DeploymentType.Line;
-						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Mercenaries, 150 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.World.FactionManager.getFactionOfType(this.Const.FactionType.Bandits).getID());
+						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Mercenaries, 140 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult(), this.World.FactionManager.getFactionOfType(this.Const.FactionType.Bandits).getID());
 						this.World.Contracts.startScriptedCombat(p, false, true, true);
 						return 0;
 					}
@@ -563,13 +632,13 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 
 						if (this.Flags.get("IsCursedCrystalSkull"))
 						{
-							this.World.Tags.set("IsCursedCrystalSkull", true);
+							this.World.Flags.set("IsCursedCrystalSkull", true);
 							p.Loot = [
 								"scripts/items/accessory/legendary/cursed_crystal_skull"
 							];
 						}
 
-						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.UndeadArmy, 130 * this.Contract.getReputationToDifficultyMult(), this.World.FactionManager.getFactionOfType(this.Const.FactionType.Undead).getID());
+						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.UndeadArmy, 120 * this.Contract.getScaledDifficultyMult(), this.World.FactionManager.getFactionOfType(this.Const.FactionType.Undead).getID());
 						this.World.Contracts.startScriptedCombat(p, false, false, false);
 						return 0;
 					}
@@ -615,7 +684,16 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 					function getResult()
 					{
 						this.Flags.set("IsEvilArtifact", false);
-						this.World.FactionManager.getFaction(this.Contract.m.Destination.getFactions()[0]).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractFail, "Failed to deliver cargo");
+
+						if (this.World.FactionManager.getFaction(this.Contract.m.Destination.getFactions()[0]).getType() == this.Const.FactionType.OrientalCityState)
+						{
+							this.World.FactionManager.getFaction(this.Contract.m.Destination.getFactions()[0]).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractFail, "Failed to deliver cargo");
+						}
+						else
+						{
+							this.World.FactionManager.getFaction(this.Contract.m.Destination.getFactions()[0]).addPlayerRelation(this.Const.World.Assets.RelationNobleContractFail, "Failed to deliver cargo");
+						}
+
 						local recipientFaction = this.Contract.m.Destination.getFactionOfType(this.Const.FactionType.Settlement);
 
 						if (recipientFaction != null)
@@ -662,14 +740,80 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 					{
 						this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnContractSuccess);
 						this.World.Assets.addMoney(this.Contract.m.Payment.getOnCompletion());
+
 						local playerRoster = this.World.getPlayerRoster().getAll();
 						local xp = this.Contract.m.Payment.getOnCompletion() * 0.25;
 						foreach( bro in playerRoster )
-							{
+						{
 								bro.addXP(xp);
 								bro.updateLevel();
-							}
-						this.World.FactionManager.getFaction(this.Contract.getFaction()).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractSuccess, "Delivered some cargo");
+						}
+						if (this.World.FactionManager.getFaction(this.Contract.getFaction()).getType() == this.Const.FactionType.OrientalCityState)
+						{
+							this.World.FactionManager.getFaction(this.Contract.getFaction()).addPlayerRelation(this.Const.World.Assets.RelationNobleContractSuccess, "Delivered some cargo");
+						}
+						else
+						{
+							this.World.FactionManager.getFaction(this.Contract.getFaction()).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractSuccess, "Delivered some cargo");
+						}
+
+						local recipientFaction = this.Contract.m.Destination.getFactionOfType(this.Const.FactionType.Settlement);
+
+						if (recipientFaction != null)
+						{
+							recipientFaction.addPlayerRelation(this.Const.World.Assets.RelationCivilianContractSuccess * 0.5, "Delivered some cargo");
+						}
+
+						this.World.Contracts.finishActiveContract();
+						return 0;
+					}
+
+				}
+			],
+			function start()
+			{
+				this.Characters.push(this.Tactical.getEntityByID(this.Contract.m.RecipientID).getImagePath());
+				this.List.push({
+					id = 10,
+					icon = "ui/icons/asset_money.png",
+					text = "You gain [color=" + this.Const.UI.Color.PositiveEventValue + "]" + this.Contract.m.Payment.getOnCompletion() + "[/color] Crowns"
+				});
+			}
+
+		});
+		this.m.Screens.push({
+			ID = "Success2",
+			Title = "At %objective%",
+			Text = "[img]gfx/ui/events/event_163.png[/img]{%SPEECH_START%Ah, the Crownling.%SPEECH_OFF%The voice comes from a nearby alley. Usually that means you\'re about to have some coin lifted off ya, but instead find a man offering you gold.%SPEECH_ON%I am %recipient%, and that package belongs to me. Send %employer% my regards, or don\'t, I don\'t care.%SPEECH_OFF%The man steals away and is gone just as soon as he came. | %recipient% is a squat man and he carries the Vizier\'s emblem and signage as though it were as heavy as the crate you just brought him.%SPEECH_ON%I\'ve given the Vizier much, and what does he use to repay me? A Crownling\'s sweat. May the Gilder blink when gazing upon that man\'s future.%SPEECH_OFF%You say nothing to this, in part because you wonder if it is a \'test\' to see if you\'ll agree with him and turn yourself out to be an enemy of the ever majestic Vizier. The man stares at you for a moment, then shrugs and continues.%SPEECH_ON%I have your payment here. The coin is all accounted for, though I will not take offense if you wish to count it yourself. Ah, I see you already are. Good. See? It\'s all there. Now run along little Crownling.%SPEECH_OFF% | You find %recipient% holding court over a small throng of children. He quickly singles you and teaches them a lesson about keeping to their studies lest they end up like you. After the kids are dismissed, the man comes over with a satchel of crowns.%SPEECH_ON%My men told me you had arrived and that the material was still in good standing. Here is your motly payment, Crownling.%SPEECH_OFF% | You enter %recipient%\'s home where the package is finally dropped off and whisked away by servants. Staring at you from a comfortable looking chair, %recipient% asks if your journey went well. You state that idle talk does not fill your pockets and then inquire about your pay. The man raises an eyebrow.%SPEECH_ON%Ah, have I offended the Crownling with my kind, civilized sensibilities? How dare I. Well then, your pay is in the corner and it is in full as agreed upon.%SPEECH_OFF% | %recipient% is pontificating about the nature of birds to a mirror. When he sees you in the reflection, he turns around and speaks as though nothing unusual had been going on at all.%SPEECH_ON%A Crownling. Of course the Vizier sends a Crownling. I like to imagine you did not dare profane the materials of the crate with your eyes, but I can\'t even trust such professionalism out of your sort. But you can expect it of me: your payment is in the corner, and in full.%SPEECH_OFF%}",
+			Image = "",
+			Characters = [],
+			List = [],
+			ShowEmployer = false,
+			Options = [
+				{
+					Text = "Crowns well deserved.",
+					function getResult()
+					{
+						this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnContractSuccess);
+						this.World.Assets.addMoney(this.Contract.m.Payment.getOnCompletion());
+
+						local playerRoster = this.World.getPlayerRoster().getAll();
+						local xp = this.Contract.m.Payment.getOnCompletion() * 0.25;
+						foreach( bro in playerRoster )
+						{
+							bro.addXP(xp);
+							bro.updateLevel();
+						}
+
+						if (this.World.FactionManager.getFaction(this.Contract.getFaction()).getType() == this.Const.FactionType.OrientalCityState)
+						{
+							this.World.FactionManager.getFaction(this.Contract.getFaction()).addPlayerRelation(this.Const.World.Assets.RelationNobleContractSuccess, "Delivered some cargo");
+						}
+						else
+						{
+							this.World.FactionManager.getFaction(this.Contract.getFaction()).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractSuccess, "Delivered some cargo");
+						}
+
 						local recipientFaction = this.Contract.m.Destination.getFactionOfType(this.Const.FactionType.Settlement);
 
 						if (recipientFaction != null)

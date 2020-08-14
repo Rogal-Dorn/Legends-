@@ -4,6 +4,7 @@ this.ai_attack_split <- this.inherit("scripts/ai/tactical/behavior", {
 		PossibleSkills = [
 			"actives.split",
 			"actives.split_axe",
+			"actives.ignite_firelance",
 			"actives.tail_slam_split",
 			"actives.uproot",
 			"actives.ghost_split"
@@ -95,82 +96,76 @@ this.ai_attack_split <- this.inherit("scripts/ai/tactical/behavior", {
 		local bestTarget;
 		local bestScore = this.m.MinTargets;
 		local bestCombinedValue = 0;
+		local tiles = [];
+		this.Tactical.queryTilesInRange(myTile, this.m.Skill.getMinRange(), this.m.Skill.getMaxRange(), false, [], this.onQueryTile, tiles);
 
-		for( local i = 0; i < 6; i = ++i )
+		foreach( targetTile in tiles )
 		{
-			if (!myTile.hasNextTile(i))
+			if (!_skill.onVerifyTarget(myTile, targetTile))
 			{
+				continue;
 			}
-			else
-			{
-				local targetTile = myTile.getNextTile(i);
 
-				if (!_skill.onVerifyTarget(myTile, targetTile))
+			local dir = myTile.getDirectionTo(targetTile);
+			local score = 0;
+			local combinedValue = 0.0;
+
+			if (targetTile.IsOccupiedByActor && this.Math.abs(targetTile.Level - myTile.Level) <= this.m.Skill.getMaxLevelDifference())
+			{
+				if (targetTile.getEntity().isAlliedWith(_entity))
+				{
+					combinedValue = combinedValue - 3.0 * (1.0 - this.getProperties().TargetPriorityHittingAlliesMult) * targetTile.getEntity().getCurrentProperties().TargetAttractionMult;
+				}
+				else
+				{
+					combinedValue = combinedValue + this.queryTargetValue(_entity, targetTile.getEntity(), _skill);
+					score = score + 1;
+
+					if (this.getAgent().getForcedOpponent() != null && this.getAgent().getForcedOpponent().getID() == targetTile.getEntity().getID())
+					{
+						score = score + 1;
+					}
+				}
+			}
+
+			local nextTile = targetTile;
+
+			for( local j = 0; j < this.m.Length - 1; j = ++j )
+			{
+				if (!nextTile.hasNextTile(dir))
 				{
 				}
 				else
 				{
-					local score = 0;
-					local combinedValue = 0.0;
+					local tile = targetTile.getNextTile(dir);
 
-					if (targetTile.IsOccupiedByActor && this.Math.abs(targetTile.Level - myTile.Level) <= this.m.Skill.getMaxLevelDifference())
+					if (this.Math.abs(tile.Level - myTile.Level) <= this.m.Skill.getMaxLevelDifference() && tile.IsOccupiedByActor)
 					{
-						if (targetTile.getEntity().isAlliedWith(_entity))
+						if (tile.getEntity().isAlliedWith(_entity))
 						{
-							combinedValue = combinedValue - 3.0 * (1.0 - this.getProperties().TargetPriorityHittingAlliesMult);
+							combinedValue = combinedValue - 3.0 * (1.0 - this.getProperties().TargetPriorityHittingAlliesMult) * tile.getEntity().getCurrentProperties().TargetAttractionMult;
 						}
 						else
 						{
-							combinedValue = combinedValue + this.queryTargetValue(_entity, targetTile.getEntity(), _skill);
+							combinedValue = combinedValue + this.queryTargetValue(_entity, tile.getEntity(), _skill);
 							score = score + 1;
 
-							if (this.getAgent().getForcedOpponent() != null && this.getAgent().getForcedOpponent().getID() == targetTile.getEntity().getID())
+							if (this.getAgent().getForcedOpponent() != null && this.getAgent().getForcedOpponent().getID() == tile.getEntity().getID())
 							{
 								score = score + 1;
 							}
 						}
 					}
 
-					local nextTile = targetTile;
-
-					for( local j = 0; j < this.m.Length - 1; j = ++j )
-					{
-						if (!nextTile.hasNextTile(i))
-						{
-						}
-						else
-						{
-							local tile = targetTile.getNextTile(i);
-
-							if (this.Math.abs(tile.Level - myTile.Level) <= this.m.Skill.getMaxLevelDifference() && tile.IsOccupiedByActor)
-							{
-								if (tile.getEntity().isAlliedWith(_entity))
-								{
-									combinedValue = combinedValue - 3.0 * (1.0 - this.getProperties().TargetPriorityHittingAlliesMult);
-								}
-								else
-								{
-									combinedValue = combinedValue + this.queryTargetValue(_entity, tile.getEntity(), _skill);
-									score = score + 1;
-
-									if (this.getAgent().getForcedOpponent() != null && this.getAgent().getForcedOpponent().getID() == tile.getEntity().getID())
-									{
-										score = score + 1;
-									}
-								}
-							}
-
-							nextTile = tile;
-						}
-					}
-
-					if (score > bestScore || score == bestScore && combinedValue > bestCombinedValue)
-					{
-						bestTarget = targetTile;
-						bestCombinedValue = combinedValue;
-						bestScore = score;
-					}
+					nextTile = tile;
 				}
+			}
+
+			if (score > bestScore || score == bestScore && combinedValue > bestCombinedValue)
+			{
+				bestTarget = targetTile;
+				bestCombinedValue = combinedValue;
+				bestScore = score;
 			}
 		}
 
@@ -179,6 +174,11 @@ this.ai_attack_split <- this.inherit("scripts/ai/tactical/behavior", {
 			Target = bestTarget,
 			Score = score
 		};
+	}
+
+	function onQueryTile( _tile, _tag )
+	{
+		_tag.push(_tile);
 	}
 
 });

@@ -66,7 +66,7 @@ this.mercenary_order <- this.inherit("scripts/ai/world/world_behavior", {
 		this.Const.World.Common.assignTroops(_entity, this.Const.World.Spawn.Mercenaries, this.Math.rand(r * 0.8, r));
 		_entity.getSprite("body").setBrush(brush);
 
-		if (this.m.TargetSettlement.isMilitary())
+		if (this.m.TargetSettlement.getFactions().len() == 1)
 		{
 			_entity.setFaction(this.m.TargetSettlement.getOwner().getID());
 		}

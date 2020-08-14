@@ -55,20 +55,6 @@ this.raid_order <- this.inherit("scripts/ai/world/world_behavior", {
 		if (this.m.Start == 0.0)
 		{
 			this.m.Start = this.Time.getVirtualTimeF();
-			local entities = this.World.getAllEntitiesAndOneLocationAtPos(_entity.getPos(), 1.0);
-
-			foreach( e in entities )
-			{
-				if (e.isLocation() && e.getSettlement() != null && !e.getSettlement().isNull() && e.getSettlement().isAlive())
-				{
-					if (this.World.FactionManager.isAllied(_entity.getFaction(), e.getSettlement().getFaction()))
-					{
-						this.getController().popOrder();
-					}
-
-					break;
-				}
-			}
 		}
 		else if (this.Time.getVirtualTimeF() - this.m.Start >= this.m.Time)
 		{

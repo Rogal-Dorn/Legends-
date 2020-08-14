@@ -229,6 +229,19 @@ this.stash_container <- {
 		return null;
 	}
 
+	function getItemByID( _id )
+	{
+		for( local i = 0; i < this.m.Items.len(); i = ++i )
+		{
+			if (this.m.Items[i] != null && this.m.Items[i].getID() == _id)
+			{
+				return this.m.Items[i];
+			}
+		}
+
+		return null;
+	}
+
 	function getItems()
 	{
 		return this.m.Items;
@@ -439,6 +452,14 @@ this.stash_container <- {
 			return -1;
 		}
 		else if (_item1.getItemType() < _item2.getItemType())
+		{
+			return 1;
+		}
+		else if (_item1.getCategories() > _item2.getCategories())
+		{
+			return -1;
+		}
+		else if (_item1.getCategories() < _item2.getCategories())
 		{
 			return 1;
 		}

@@ -17,7 +17,7 @@ this.legend_camp_unlock_training <- this.inherit("scripts/events/event", {
 					Text = "Training unlocked in camp.",
 					function getResult( _event )
 					{
-						this.World.Tags.set("HasLegendCampTraining", true);
+						this.World.Flags.set("HasLegendCampTraining", true);
 					}
 
 				}

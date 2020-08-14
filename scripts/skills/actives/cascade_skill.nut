@@ -70,34 +70,52 @@ this.cascade_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectChop);
 		local target = _targetTile.getEntity();
-		this.attackEntity(_user, target);
-		this.m.IsDoingAttackMove = false;
-		this.getContainer().setBusy(true);
-		this.Time.scheduleEvent(this.TimeUnit.Virtual, 100, function ( _skill )
+		local ret = this.attackEntity(_user, target);
+
+		if (this.Tactical.TurnSequenceBar.getActiveEntity().getID() == _user.getID() && (!_user.isHiddenToPlayer() || _targetTile.IsVisibleForPlayer))
+		{
+			this.m.IsDoingAttackMove = false;
+			this.getContainer().setBusy(true);
+			this.Time.scheduleEvent(this.TimeUnit.Virtual, 100, function ( _skill )
+			{
+				if (target.isAlive())
+				{
+					_skill.attackEntity(_user, target);
+				}
+			}.bindenv(this), this);
+			this.Time.scheduleEvent(this.TimeUnit.Virtual, 200, function ( _skill )
+			{
+				if (target.isAlive())
+				{
+					_skill.attackEntity(_user, target);
+				}
+
+				_skill.m.IsDoingAttackMove = true;
+				_skill.getContainer().setBusy(false);
+			}.bindenv(this), this);
+			return true;
+		}
+		else
 		{
 			if (target.isAlive())
 			{
-				_skill.attackEntity(_user, target);
-			}
-		}.bindenv(this), this);
-		this.Time.scheduleEvent(this.TimeUnit.Virtual, 200, function ( _skill )
-		{
-			if (target.isAlive())
-			{
-				_skill.attackEntity(_user, target);
+				ret = this.attackEntity(_user, target) || ret;
 			}
 
-			_skill.m.IsDoingAttackMove = true;
-			_skill.getContainer().setBusy(false);
-		}.bindenv(this), this);
-		return true;
+			if (target.isAlive())
+			{
+				ret = this.attackEntity(_user, target) || ret;
+			}
+
+			return ret;
+		}
 	}
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
 		if (_skill == this)
 		{
-			_properties.DamageTotalMult *= 0.5;
+			_properties.DamageTotalMult *= 0.33333334;
 			_properties.DamageTooltipMaxMult *= 3.0;
 		}
 	}

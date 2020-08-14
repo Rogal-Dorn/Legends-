@@ -1,11 +1,12 @@
 this.human <- this.inherit("scripts/entity/tactical/actor", {
 	m = {
+		Bodies = this.Const.Bodies.AllMale,
 		Faces = null,
 		Hairs = null,
 		HairColors = null,
 		Beards = null,
 		BeardChance = 60,
-		Body = this.Math.rand(0, 2),
+		Body = 0,
 		Surcoat = null,
 		Ethnicity = 0,
 		Gender = 0,
@@ -13,6 +14,11 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 		IsEyesClosed = false,
 		NextBlinkTime = 0.0
 	},
+	function getEthnicity()
+	{
+		return this.m.Ethnicity;
+	}
+
 	function setEyesClosed( _f )
 	{
 		this.m.IsEyesClosed = _f;
@@ -22,7 +28,7 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 	{
 		this.actor.create();
 		this.setGender(0);
-		this.getTags().add("human");
+		this.getFlags().add("human");
 	}
 
 	function setGender( _v, _reroll = true)
@@ -54,6 +60,7 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 			{
 				this.m.VoiceSet = this.Math.rand(0, this.Const.HumanSounds.len() - 1);
 			}
+			this.m.Body = this.Math.rand(0, this.m.Bodies.len() - 1);
 			this.m.Sound[this.Const.Sound.ActorEvent.NoDamageReceived] = this.Const.HumanSounds[this.m.VoiceSet].NoDamageReceived;
 			this.m.Sound[this.Const.Sound.ActorEvent.DamageReceived] = this.Const.HumanSounds[this.m.VoiceSet].DamageReceived;
 			this.m.Sound[this.Const.Sound.ActorEvent.Death] = this.Const.HumanSounds[this.m.VoiceSet].Death;
@@ -411,7 +418,8 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 				HairColor = sprite_hair.Color,
 				HairSaturation = sprite_hair.Saturation,
 				Beard = sprite_beard.HasBrush ? sprite_beard.getBrush().Name : null,
-				Surcoat = this.m.Surcoat
+				Surcoat = this.m.Surcoat,
+				Ethnicity = this.m.Ethnicity
 			};
 			local corpse = clone this.Const.Corpse;
 			corpse.Type = "scripts/entity/tactical/enemies/zombie_player";
@@ -525,18 +533,18 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.FatigueCosts = this.Const.DefaultMovementFatigueCost;
 		local app = this.getItems().getAppearance();
 		app.Quiver = this.Const.Items.Default.PlayerQuiver;
-		app.Body = "bust_naked_body_0" + this.m.Body;
-		app.Corpse = "bust_naked_body_0" + this.m.Body + "_dead";
+		app.Body = this.m.Bodies[this.m.Body];
+		app.Corpse = this.m.Bodies[this.m.Body] + "_dead";
 		this.addSprite("background");
 		this.addSprite("socket").setBrush("bust_base_player");
 		this.addSprite("quiver");
 		local body = this.addSprite("body");
-		body.setBrush(app.Body);
+		body.setBrush(this.m.Bodies[this.m.Body]);
 		this.addSprite("tattoo_body");
 		this.addSprite("scar_body");
 		local injury_body = this.addSprite("injury_body");
 		injury_body.Visible = false;
-		injury_body.setBrush(body.getBrush().Name + "_injured");
+		injury_body.setBrush("bust_naked_body_0" + this.m.Body + "_injured");
 		this.addSprite("armor");
 		this.addSprite("armor_layer_chain");
 		this.addSprite("armor_layer_plate");
@@ -563,8 +571,8 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 		this.addSprite("injury").Visible = false;
 		this.addSprite("permanent_injury_3");
 		this.addSprite("permanent_injury_2");
-		this.addSprite("beard");
-		this.addSprite("hair");
+		local beard = this.addSprite("beard");
+		local hair = this.addSprite("hair");
 		this.addSprite("permanent_injury_4");
 		this.addSprite("permanent_injury_1");
 		this.addSprite("helmet_vanity_lower");
@@ -575,7 +583,7 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 		this.addSprite("helmet_vanity");
 		this.addSprite("accessory");
 		this.addSprite("accessory_special");
-		this.addSprite("beard_top");
+		local beard_top = this.addSprite("beard_top");
 		this.addSprite("armor_upgrade_front");
 		local bandage1 = this.addSprite("bandage_1");
 		bandage1.Visible = false;
@@ -658,6 +666,19 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 		{
 			this.getSprite("beard").Visible = false;
 		}
+
+		if (this.m.Ethnicity == 1 && hairColor != "grey")
+		{
+			local hair = this.getSprite("hair");
+			hair.Saturation = 0.8;
+			hair.setBrightness(0.4);
+			local beard = this.getSprite("beard");
+			beard.Color = hair.Color;
+			beard.Saturation = hair.Saturation;
+			local beard_top = this.getSprite("beard_top");
+			beard_top.Color = hair.Color;
+			beard_top.Saturation = hair.Saturation;
+		}
 	}
 
 	function setArmorSaturation(level)
@@ -712,7 +733,16 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 	{
 		this.actor.onSerialize(_out);
 		_out.writeU8(this.m.Body);
-		_out.writeU8(this.m.Surcoat);
+
+		if (this.m.Surcoat != null)
+		{
+			_out.writeU8(this.m.Surcoat);
+		}
+		else
+		{
+			_out.writeU8(0);
+		}
+
 		_out.writeU8(this.m.Ethnicity);
 		_out.writeU8(this.m.Gender);
 		_out.writeU8(this.m.VoiceSet);
@@ -724,6 +754,12 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 		this.actor.onDeserialize(_in);
 		this.m.Body = _in.readU8();
 		this.m.Surcoat = _in.readU8();
+
+		if (this.m.Surcoat == 0)
+		{
+			this.m.Surcoat = null;
+		}
+
 		this.m.Ethnicity = _in.readU8();
 		this.m.Gender = _in.readU8();
 		this.m.VoiceSet = _in.readU8();

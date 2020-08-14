@@ -58,11 +58,10 @@ this.bandit_leader <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_captain"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_shield_expert"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_brawny"));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_nine_lives"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_coup_de_grace"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_sundering_strikes"));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_overwhelm"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_quick_hands"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_nine_lives"));
 		this.m.Skills.add(this.new("scripts/skills/actives/rotation"));
 		this.m.Skills.add(this.new("scripts/skills/actives/recover_skill"));
 
@@ -450,8 +449,8 @@ this.bandit_leader <- this.inherit("scripts/entity/tactical/human", {
 				"weapons/noble_sword",
 				"weapons/fighting_axe",
 				"weapons/warhammer",
-				"weapons/boar_spear",
 				"weapons/legend_glaive",
+				"weapons/fighting_spear",
 				"weapons/winged_mace",
 				"weapons/arming_sword",
 				"weapons/military_cleaver"
@@ -502,8 +501,7 @@ this.bandit_leader <- this.inherit("scripts/entity/tactical/human", {
 					"armor/reinforced_mail_hauberk",
 					"armor/worn_mail_shirt",
 					"armor/patched_mail_shirt",
-					"armor/mail_shirt",
-					"armor/lamellar_harness"
+					"armor/mail_shirt"
 				];
 
 				if (this.Const.DLC.Unhold)
@@ -521,18 +519,21 @@ this.bandit_leader <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Head) == null)
 		{
-			local helmet = [
-				"helmets/closed_mail_coif",
-				"helmets/padded_kettle_hat",
-				"helmets/kettle_hat_with_closed_mail",
-				"helmets/kettle_hat_with_mail",
-				"helmets/padded_flat_top_helmet",
-				"helmets/nasal_helmet_with_mail",
-				"helmets/flat_top_with_mail",
-				"helmets/padded_nasal_helmet",
-				"helmets/bascinet_with_mail"
-			];
-			this.m.Items.equip(this.new("scripts/items/" + helmet[this.Math.rand(0, helmet.len() - 1)]));
+			local item = this.Const.World.Common.pickHelmet([
+				[1, "/closed_mail_coif"],
+				[1, "padded_kettle_hat"],
+				[1, "kettle_hat_with_closed_mail"],
+				[1, "kettle_hat_with_mail"],
+				[1, "padded_flat_top_helmet"],
+				[1, "nasal_helmet_with_mail"],
+				[1, "flat_top_with_mail"],
+				[1, "padded_nasal_helmet"],
+				[1, "bascinet_with_mail"]
+			])
+			if (item != null)
+			{
+				this.m.Items.equip(item);
+			}
 		}
 	}
 
@@ -590,6 +591,7 @@ this.bandit_leader <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Items.equip(this.new("scripts/items/" + this.Const.Items.NamedHelmets[this.Math.rand(0, this.Const.Items.NamedHelmets.len() - 1)]));
 		}
 
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_underdog"));
 		return true;
 	}
 

@@ -68,6 +68,7 @@ this.ammo <- this.inherit("scripts/items/item", {
 		if (this.getContainer().getActor().isPlayerControlled())
 		{
 			--this.m.Ammo;
+			this.Tactical.Entities.spendAmmo(this.m.AmmoCost);
 		}
 	}
 

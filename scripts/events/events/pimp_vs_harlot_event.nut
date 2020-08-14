@@ -282,7 +282,7 @@ this.pimp_vs_harlot_event <- this.inherit("scripts/events/event", {
 
 		foreach( t in towns )
 		{
-			if (t.getSize() >= 2 && !t.isMilitary() && t.getTile().getDistanceTo(playerTile) <= 3 && t.isAlliedWithPlayer())
+			if (t.getSize() >= 2 && !t.isMilitary() && !t.isSouthern() && t.getTile().getDistanceTo(playerTile) <= 3 && t.isAlliedWithPlayer())
 			{
 				nearTown = true;
 				town = t;

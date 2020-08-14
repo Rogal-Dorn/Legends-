@@ -26,7 +26,7 @@ this.legend_necro_intro_event <- this.inherit("scripts/events/event", {
 				this.logInfo("Making zombies like you");
 				//this.World.FactionManager.makeZombiesFriendlyToPlayer();
 				this.logInfo("Unlocking gathering");
-				this.World.Tags.set("HasLegendCampGathering", true);				
+				this.World.Flags.set("HasLegendCampGathering", true);
 			}
 		});
 	}
@@ -45,7 +45,7 @@ this.legend_necro_intro_event <- this.inherit("scripts/events/event", {
 	{
 		_vars.push([
 			"home",
-			this.World.Tags.get("HomeVillage")
+			this.World.Flags.get("HomeVillage")
 		]);
 	}
 

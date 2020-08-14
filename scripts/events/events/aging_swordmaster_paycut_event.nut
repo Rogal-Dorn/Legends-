@@ -33,7 +33,7 @@ this.aging_swordmaster_paycut_event <- this.inherit("scripts/events/event", {
 					icon = "ui/icons/asset_daily_money.png",
 					text = _event.m.Swordmaster.getName() + " is now paid " + _event.m.Swordmaster.getDailyCost() + " crowns a day"
 				});
-				_event.m.Swordmaster.getTags().add("aging_paycut");
+				_event.m.Swordmaster.getFlags().add("aging_paycut");
 			}
 
 		});
@@ -46,7 +46,7 @@ this.aging_swordmaster_paycut_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getLevel() >= 6 && bro.getBackground().getID() == "background.swordmaster" && !bro.getTags().has("aging_paycut") && !bro.getSkills().hasSkill("trait.old"))
+			if (bro.getLevel() >= 6 && bro.getBackground().getID() == "background.swordmaster" && !bro.getFlags().has("aging_paycut") && !bro.getSkills().hasSkill("trait.old"))
 			{
 				candidates.push(bro);
 			}

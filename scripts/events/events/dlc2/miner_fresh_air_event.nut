@@ -40,7 +40,7 @@ this.miner_fresh_air_event <- this.inherit("scripts/events/event", {
 				local stamina = this.Math.rand(3, 6);
 				_event.m.Miner.getBaseProperties().Stamina += stamina;
 				_event.m.Miner.getSkills().update();
-				_event.m.Miner.getTags().add("fresh_air");
+				_event.m.Miner.getFlags().add("fresh_air");
 				this.List.push({
 					id = 17,
 					icon = "ui/icons/fatigue.png",
@@ -69,7 +69,7 @@ this.miner_fresh_air_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getLevel() > 3 && bro.getBackground().getID() == "background.miner" && !bro.getTags().has("fresh_air"))
+			if (bro.getLevel() > 3 && bro.getBackground().getID() == "background.miner" && !bro.getFlags().has("fresh_air"))
 			{
 				candidates.push(bro);
 			}

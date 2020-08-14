@@ -40,6 +40,7 @@ this.tooltip_screen <- {
 		this.m.Tooltip.setOnQueryUIElementTooltipDataListener(this.m.TooltipEvents.onQueryUIElementTooltipData);
 		this.m.Tooltip.setOnQueryUIItemTooltipDataListener(this.m.TooltipEvents.onQueryUIItemTooltipData);
 		this.m.Tooltip.setOnQueryUIPerkTooltipDataListener(this.m.TooltipEvents.onQueryUIPerkTooltipData);
+		this.m.Tooltip.setOnQueryFollowerTooltipDataListener(this.m.TooltipEvents.onQueryFollowerTooltipData);
 		local gt = this.getroottable();
 		gt.Tooltip <- this.WeakTableRef(this.m.Tooltip);
 		gt.TooltipEvents <- this.WeakTableRef(this.m.TooltipEvents);

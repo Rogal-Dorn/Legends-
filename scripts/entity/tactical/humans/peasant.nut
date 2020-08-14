@@ -10,7 +10,7 @@ this.peasant <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Hairs = this.Const.Hair.AllMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
-		this.getTags().add("peasant");
+		this.getFlags().add("peasant");
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/militia_melee_agent");
 		this.m.AIAgent.setActor(this);
 		if (this.Math.rand(1, 100) <= 10)
@@ -44,7 +44,7 @@ this.peasant <- this.inherit("scripts/entity/tactical/human", {
 	function assignRandomEquipment()
 	{
 		local r;
-		r = this.Math.rand(1, 13);
+		r = this.Math.rand(1, 14);
 
 		if (r == 1)
 		{
@@ -97,6 +97,10 @@ this.peasant <- this.inherit("scripts/entity/tactical/human", {
 		else if (r == 13)
 		{
 			this.m.Items.equip(this.new("scripts/items/weapons/legend_staff"));
+		}
+		else if (r == 14)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/butchers_cleaver"));
 		}
 
 		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())

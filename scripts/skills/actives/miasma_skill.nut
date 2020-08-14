@@ -25,6 +25,7 @@ this.miasma_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
 		this.m.IsTargeted = true;
+		this.m.IsTargetingActor = false;
 		this.m.IsStacking = false;
 		this.m.IsAttack = true;
 		this.m.IsRanged = false;
@@ -47,7 +48,7 @@ this.miasma_skill <- this.inherit("scripts/skills/skill", {
 			return false;
 		}
 
-		if (_target.getTags().has("undead"))
+		if (_target.getFlags().has("undead"))
 		{
 			return false;
 		}
@@ -80,11 +81,19 @@ this.miasma_skill <- this.inherit("scripts/skills/skill", {
 		local p = {
 			Type = "miasma",
 			Tooltip = "Miasma lingers here, harmful to any living being",
+			IsPositive = false,
 			IsAppliedAtRoundStart = false,
 			IsAppliedAtTurnEnd = true,
 			IsAppliedOnMovement = false,
+			IsAppliedOnEnter = false,
+			IsByPlayer = false,
 			Timeout = this.Time.getRound() + 3,
-			Callback = this.Const.Tactical.Common.onApplyMiasma
+			Callback = this.Const.Tactical.Common.onApplyMiasma,
+			function Applicable( _a )
+			{
+				return !_a.getFlags().has("undead");
+			}
+
 		};
 
 		foreach( tile in targets )
@@ -95,6 +104,11 @@ this.miasma_skill <- this.inherit("scripts/skills/skill", {
 			}
 			else
 			{
+				if (tile.Properties.Effect != null)
+				{
+					this.Tactical.Entities.removeTileEffect(tile);
+				}
+
 				tile.Properties.Effect = clone p;
 				local particles = [];
 

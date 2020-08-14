@@ -19,7 +19,11 @@ this.spider_racial <- this.inherit("scripts/skills/skill", {
 
 	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
+<<<<<<< HEAD
 		if (_targetEntity.getCurrentProperties().IsImmuneToPoison || _damageInflictedHitpoints <= this.Const.Combat.PoisonEffectMinDamage || _targetEntity.getHitpoints() <= 0)
+=======
+		if (_damageInflictedHitpoints < this.Const.Combat.PoisonEffectMinDamage || _targetEntity.getHitpoints() <= 0)
+>>>>>>> master
 		{
 			return;
 		}
@@ -29,7 +33,7 @@ this.spider_racial <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
-		if (_targetEntity.getTags().has("undead"))
+		if (_targetEntity.getFlags().has("undead"))
 		{
 			return;
 		}
@@ -49,7 +53,8 @@ this.spider_racial <- this.inherit("scripts/skills/skill", {
 
 		if (poison == null)
 		{
-			_targetEntity.getSkills().add(this.new("scripts/skills/effects/spider_poison_effect"));
+			local effect = this.new("scripts/skills/effects/spider_poison_effect");
+			_targetEntity.getSkills().add(effect);
 		}
 		else
 		{

@@ -5,7 +5,7 @@ this.perk_coup_de_grace <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "perk.coup_de_grace";
 		this.m.Name = this.Const.Strings.PerkName.CoupDeGrace;
 		this.m.Description = this.Const.Strings.PerkDescription.CoupDeGrace;
-		this.m.Icon = "ui/perks/perk_32.png";
+		this.m.Icon = "ui/perks/perk_16.png";
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;
@@ -20,7 +20,11 @@ this.perk_coup_de_grace <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
+<<<<<<< HEAD
 		if (_targetEntity.getSkills().hasSkillOfType(this.Const.SkillType.TemporaryInjury) || _targetEntity.getSkills().hasSkill("effects.debilitated"))
+=======
+		if (_skill.isAttack() && _targetEntity.getSkills().hasSkillOfType(this.Const.SkillType.TemporaryInjury))
+>>>>>>> master
 		{
 			_properties.DamageTotalMult *= 1.2;
 		}

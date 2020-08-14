@@ -5,6 +5,7 @@ this.settlement_modifiers <- {
 	FoodPriceMult = 1.0,
 	MedicalPriceMult = 1.0,
 	BuildingPriceMult = 1.0,
+	IncensePriceMult = 1.0,
 	RarityMult = 1.0,
 	FoodRarityMult = 1.0,
 	MedicalRarityMult = 1.0,
@@ -20,6 +21,7 @@ this.settlement_modifiers <- {
 		this.FoodPriceMult = 1.0;
 		this.MedicalPriceMult = 1.0;
 		this.BuildingPriceMult = 1.0;
+		this.IncensePriceMult = 1.0;
 		this.RarityMult = 1.0;
 		this.FoodRarityMult = 1.0;
 		this.MedicalRarityMult = 1.0;

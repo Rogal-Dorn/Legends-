@@ -60,6 +60,8 @@ this.send_refugees_action <- this.inherit("scripts/factions/faction_action", {
 		party.getSprite("banner").Visible = false;
 		party.getSprite("body").setBrush("figure_civilian_0" + this.Math.rand(1, 2));
 		party.setDescription("Refugees fleeing the horrors of war - beaten down, tired and desperate.");
+		party.setFootprintType(this.Const.World.FootprintsType.Refugees);
+		party.getFlags().set("IsRandomlySpawned", true);
 		party.getLoot().Money = this.Math.rand(0, 50);
 
 		if(this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())

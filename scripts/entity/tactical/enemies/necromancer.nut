@@ -192,5 +192,32 @@ this.necromancer <- this.inherit("scripts/entity/tactical/human", {
 		}
 	}
 
+	function makeMiniboss()
+	{
+		if (!this.actor.makeMiniboss())
+		{
+			return false;
+		}
+
+		this.getSprite("miniboss").setBrush("bust_miniboss");
+		local weapons = [
+			"weapons/named/named_dagger"
+		];
+
+		if (this.Const.DLC.Desert)
+		{
+			weapons.extend([
+				"weapons/named/named_dagger",
+				"weapons/named/named_qatal_dagger"
+			]);
+		}
+
+		this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
+		this.m.ActionPoints = 9;
+		this.m.BaseProperties.ActionPoints = 9;
+		this.m.Skills.update();
+		return true;
+	}
+
 });
 

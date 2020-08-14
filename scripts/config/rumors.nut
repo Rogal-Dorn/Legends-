@@ -23,7 +23,7 @@ gt.Const.Strings.PayTavernRumorsIntro <- [
 	"The patrons shout your name as they clink their cups. The drink loosens their tongues.",
 	"The patrons nod approvingly.",
 	"People raise their mugs in appreciation.",
-	"The people murmor approvingly.",
+	"The people murmur approvingly.",
 	"The innkeeper rings a bell to let everyone know the next round is on you."
 ];
 gt.Const.Strings.RumorsLocation <- [
@@ -101,10 +101,10 @@ gt.Const.Strings.RumorsMilitary <- [
 	"We\'ll head out again soon to patrol the roads. Sometimes I feel everything would go down the shitter if it weren\'t for us keeping order \'round here.",
 	"Farkin\' patrol duty. Barely got back \'ere, blisters on me feet still from all the marchin\' and we\'re about to \'ead out again. Just put us on \'orses, I say!",
 	"Got wounded bad some months back in a skirmish \'gainst goblins. Couldn\'t feel me legs anymore, but the lads carried me all the way back to %townname%. Gods bless \'em.",
-	"You\'ll know greenskin territory from the idols they errect out of skulls and bones. Of human skulls and bones.",
+	"You\'ll know greenskin territory from the idols they erect out of skulls and bones. Of human skulls and bones.",
 	"Fourteen. That\'s how many men I\'ve killed. Women I count extra, three so far. What about you?",
 	"I usually stand guard on the gate tower. To be honest, spitting down on some travellers is the only fun I get all day.",
-	"The mood amongst the garrison is pretty bad. They say that pay\'s been delayed a few times already and everyone\'s starting to loose patience.",
+	"The mood amongst the garrison is pretty bad. They say that pay\'s been delayed a few times already and everyone\'s starting to lose patience.",
 	"When I was moved to %townname% I never imagined life here to be so dull and hard. But still better than working the fields until your back snaps, I suppose...",
 	"I prefer fighting with my flail. Hard to defend against and it don\'t matter if they carry a shield, I\'ll just swing around it and make pulp of their head!",
 	"Damn nigh impossible to find a reliable shield \'round here, bloody things keep breaking in two. Been keeping a spare on me back now just incase. I should charge more for fighting men with axes, ha!",
@@ -163,6 +163,11 @@ gt.Const.Strings.RumorsSwampSettlement <- [
 	"Traders don\'t come here often. Their large carriages tend to get stuck in the mud and guess who has to help them out once that happens...",
 	"There once was a stone road leading here bringing traders, customers and all kinds of folk. One day it completely sunk into the swamp and look at this place now...",
 	"Don\'t wander through the swamps at night! You might get lost, yes, but out in the swamp at night there\'s far worse things that can happen to a man. Just ask anyone around here."
+];
+gt.Const.Strings.RumorsDesertSettlement <- [
+	"Those northeners pay good coin for our silk and spices, so we have caravans going up all the time. And caravans need escorts, you know.",
+	"If I can give you one piece of advice, it\'s this: don\'t venture too far out in the desert. There are things far worse than heat and sand at the edge of the world.",
+	"Those northern dogs have no right to come into our lands, they should stay where they belong!"
 ];
 gt.Const.Strings.RumorsItemsOrcs <- [
 	[
@@ -230,6 +235,73 @@ gt.Const.Strings.RumorsItemsUndead <- [
 	[
 		"So %terrain% %direction% of here is supposedly the last resting place of a mystical piece of armor. Don\'t know the name myself, I just know a lot of adventurers go there and don\'t come back. Dunno why I told you, really. I like your business.",
 		"You heard of %location%? Ask anyone around here, it\'s been haunting %townname% since before I was born. Folks say some armor from the gods is sealed there for all time, back from when man first settled to the %direction%"
+	]
+];
+gt.Const.Strings.RumorsItemsBarbarians <- [
+	[
+		"Nothing is holy to those barbarian brutes! A completely naked priest stumbled in here from %direction%. He was on the way to bring a revered relic to the temple but they took it from him.",
+		"A mercenary company came by here hunting barbarians. The leader wielded a weapon unlike anything I ever saw before. They turned %direction% and were never to be seen again.",
+		"When you head out %terrain% %direction%, keep your eyes peeled for a group of fierce wild men. They may lead you to their stash where a famed stolen weapon is said to be found."
+	],
+	[
+		"Hark! A tribe of uncultured barbarians has been seen %direction% of here with a shield called %item% in their dirty hands! Slay them and get it back!",
+		"A friend of a friend spotted some wildmen in the distance %direction% of here. He swears they carried a finely crafted shield. I call horseshit, as everbody knows they do not use shields like we do!",
+		"Only a good defense allows for a strong offense they say. Rumors has it, a band of barbarians %distance% to the %direction% are in the possession of a famed shield...",
+		"I used to be trading with some of the not-so-wild barbarians %direction% of here. When I last visited them there was a magnificent shield hanging in one of their huts. They might still be hanging out there %terrain%."
+	],
+	[
+		"You look like you could use some better armor, my friend. If you are not scared of taking on fierce barbarians, there is a mighty fine armor to be claimed in one of their camps called %location%, %terrain% %direction% of here.",
+		"The famed %item% has been guarded in the armory for decades, but when the wild men from the north came they took everything with them. They are said to be camping out somewhere in %terrain% %distance% form here.",
+		"I came here to pick up an heirloom from my late grandfather just to get to know it has been stolen by marauding barbarians. They are said to loiter somewhere %terrain% %direction% of here, but I fear I will never get it back.",
+		"Are you also here to look for %item% like all those other fools? It is said to lie somewhere %terrain% %direction%. Nothing but hogwash if you ask me..."
+	]
+];
+gt.Const.Strings.RumorsItemsNomads <- [
+	[
+		"The nomads take what they want and hide out in the desert. The guards have been looking for them %terrain% %direction% of here. I think they\'re %distance%.",
+		"The days here in the south are as bright as the nights are dark. I must have stumbled and lost my precious weapon %distance% to the %direction%, but I gave up looking for it.",
+		"The craftsmen of the ancient times really knew how to make remarkable weapons. Rumors has it such a weapon is with a nomad tribe hiding out in the %direction%, but who should take it from them - me? Ha!"
+	],
+	[
+		"A shield reflecting the sunlight like a mirror, more blinding than the midday in the desert! Where I saw that? Some Nomads had it in the %direction% %distance% from here, if I recall correctly.",
+		"All my life I\'ve been hunting nomdas across the borders %terrain%, but I never saw one wield a shield like this one before. It was %distance% to the %direction% at one of their camps.",
+		"Nomads do not only take from the living but from the dead as well! Word has it they plundered the so-called %item% from a tomb %direction% of here where they have their camp still. They really do not have any decency."
+	],
+	[
+		"I used to be first quartermaster to a Vizier. When the famed armor I ordered for a guest of honor did not arrive, I lost my position. The caravan with it was ambushed by nomads, I later learned, %direction% of here.",
+		"An oppulent armor is said to be hidden out %terrain% %direction% from here. Many treasure seekers failed to claim it so far but maybe you have more luck?",
+		"The most skilled armorsmith around, who happens to be a friend of mine, got tricked by those damned nomads and they made off with one of his prize armors. If you come across any nomads %direction% of here, search their bodies thoroughly!"
+	]
+];
+gt.Const.Strings.RumorsGreaterEvil <- [
+	[],
+	[
+		"The nobles are quarreling again like two old hags at the garden fence. They just can\'t get over their pride!",
+		"The nobles will take all your crowns, and your sons and husbands too, and burn them in their pointless struggles - a thousand curses \'pon them!",
+		"I\'ve served my time in the army twenty years ago. Lost an ear, see? Now my boy\'s marching. Was snatched right out the stables and forced into the frontline. Different war, same old shit. I pray he stays low and keeps his shield up."
+	],
+	[
+		"The green tide keeps washing away one army after the other! We\'re all doomed! Doomed!",
+		"All are running from the greenskins but not me! I will stand my ground, club in one hand, pitcher in the other! Send them my way!",
+		"We barely fought off the greenskins last time at the Battle of Many Names, just barely made it, and now they\'re back.",
+		"We hear stories of more and more farms and hamlets getting burned every day. It\'s greenskins raiding the countryside."
+	],
+	[
+		"May the old gods help us! The dead are stirring in their graves all over the lands. They will come and claim the living. Repent, repent and pray!",
+		"The nobles are on their back foot, and nobody knows how to stop the undead menace coming for us. I have to keep my mind off of it - inkeeper! Another!",
+		"Maybe I should just hang myself, get it over with and join the ranks of the marching dead. This waiting is driving me insane!",
+		"A man was found dead on the road. He sat upright on a donkey cart, all dried up, like a puppet of skin, tendrils, and bone. The donkey too. \'Tis like the blood was sucked right out of \'em.",
+		"Ghastly ghosts, empty graves, otherworldly mindless slaves\nHave a glass, find a wench before your teeth will clench!\nKill the can, don\'t stay dry, three days until we die!",
+		"%randomnoble% had his lunch come back from the dead. Was about to take a healthy bite of stuffed goose when the thing jumped from his plate and started flapping in circles. Sprayed baked apples across the living quarters. Must\'ve been a sight to remember."
+	],
+	[
+		"Did you hear the news? Armies are rallying at %randomtown% to march south. I just hope the gilded don\'t strike back some day...",
+		"If you are looking for coin you should head south and teach those sun-worshippers a lesson!",
+		"What.... WHAT!? I can\'t hear you! I was fighting those Gilder followers at the Oracle and something loud went up near my ear...",
+		"Want some soup? I got beef and potatoes in there. No spices, though. Ran out of \'em on account of the war.",
+		"The priest says that the old gods will take you in if you don\'t make it back from the crusade. \'Tis a good thing to know, right? Those Gilder fanatics are a dangerous lot.",
+		"Can you believe it? %randomnoble% paid some nomad folk to guide his host through the desert. Bloody folly if true, that. Wouldn\'t trust those snakes as far as I can piss.",
+		"A nephew of mine got killed in the desert. Poor lad. Set out to protect the faith and was ran through with a spear for it. Bastard who did it is still alive. Make \'em pay for it, I say. Make the thrice cursed lot o\'em pay!"
 	]
 ];
 

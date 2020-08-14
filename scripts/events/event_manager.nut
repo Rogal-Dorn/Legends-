@@ -1,9 +1,10 @@
 this.event_manager <- {
 	m = {
 		LastEventTime = 0.0,
-		LastEventHour = 0,
+		LastCheckTime = 0.0,
 		LastEventID = "",
 		Events = [],
+		SpecialEvents = [],
 		ActiveEvent = null,
 		Thread = null,
 		VictoryScreen = null,
@@ -36,7 +37,12 @@ this.event_manager <- {
 	function resetLastEventTime()
 	{
 		this.m.LastEventTime = -9000.0;
-		this.m.LastEventHour = -4;
+		this.m.LastCheckTime = -9000.0;
+	}
+
+	function addSpecialEvent( _e )
+	{
+		this.m.SpecialEvents.push(_e);
 	}
 
 	function getEvent( _id )
@@ -61,6 +67,12 @@ this.event_manager <- {
 			this.m.Events.push(this.new(scriptFile));
 		}
 
+		if (this.Const.DLC.Desert)
+		{
+			this.addSpecialEvent("event.manhunters_origin_capture_prisoner");
+		}
+
+		this.addSpecialEvent("event.helped_caravan");
 		this.m.LastEventTime = this.Time.getVirtualTimeF();
 	}
 
@@ -102,7 +114,7 @@ this.event_manager <- {
 		}
 	}
 
-	function canFireEvent( _ignoreEvaluating = false )
+	function canFireEvent( _ignoreEvaluating = false, _ignorePreviousBattle = false )
 	{
 		if (this.World.State.getMenuStack().hasBacksteps() || this.LoadingScreen != null && (this.LoadingScreen.isAnimating() || this.LoadingScreen.isVisible()) || this.World.State.m.EventScreen.isVisible() || this.World.State.m.EventScreen.isAnimating())
 		{
@@ -119,12 +131,12 @@ this.event_manager <- {
 			return false;
 		}
 
-		if (this.m.Thread != null && !_ignoreEvaluating)
+		if (!_ignoreEvaluating && this.m.Thread != null)
 		{
 			return false;
 		}
 
-		if (this.Time.getVirtualTimeF() - this.m.LastBattleTime < 2.0)
+		if (!_ignorePreviousBattle && this.Time.getVirtualTimeF() - this.m.LastBattleTime < 2.0)
 		{
 			return false;
 		}
@@ -140,6 +152,35 @@ this.event_manager <- {
 		}
 
 		return true;
+	}
+
+	function updateSpecialEvents()
+	{
+		foreach( e in this.m.SpecialEvents )
+		{
+			if (this.getEvent(e).isValid())
+			{
+				if (this.canFireEvent(true, true))
+				{
+					this.fire(e);
+				}
+				else
+				{
+					this.Time.scheduleEvent(this.TimeUnit.Real, 4000, function ( _tag )
+					{
+						if (this.World.Events.canFireEvent(true, true))
+						{
+							this.World.Events.fire(e);
+						}
+					}, null);
+				}
+
+				return true;
+			}
+		}
+
+		  // [037]  OP_CLOSE          0      1    0    0
+		return false;
 	}
 
 	function update()
@@ -183,6 +224,11 @@ this.event_manager <- {
 			return;
 		}
 
+		if (this.updateSpecialEvents())
+		{
+			return;
+		}
+
 		if (this.m.Thread != null)
 		{
 			if (resume this.m.Thread != false)
@@ -203,12 +249,12 @@ this.event_manager <- {
 			return;
 		}
 
-		if (this.Math.abs(this.World.getTime().Hours - this.m.LastEventHour) < 2)
+		if (this.Time.getVirtualTimeF() - this.m.LastCheckTime <= this.World.getTime().SecondsPerHour * 2)
 		{
 			return;
 		}
 
-		this.m.LastEventHour = this.World.getTime().Hours;
+		this.m.LastCheckTime = this.Time.getVirtualTimeF();
 		local timeSinceLastEvent = this.Time.getVirtualTimeF() - this.m.LastEventTime - this.Const.Events.GlobalMinDelay;
 		local chanceToFireEvent = this.Const.Events.GlobalBaseChance + timeSinceLastEvent * this.Const.Events.GlobalChancePerSecond;
 

@@ -216,7 +216,16 @@ this.killer_vs_others_event <- this.inherit("scripts/events/event", {
 				this.World.Assets.addMoralReputation(-2);
 				this.Characters.push(_event.m.OtherGuy1.getImagePath());
 				local dead = _event.m.Killer;
-				this.World.Statistics.addFallen(dead,  "Murdered by his fellow comrades");
+				local fallen = {
+					Name = dead.getName(),
+					Time = this.World.getTime().Days,
+					TimeWithCompany = this.Math.max(1, dead.getDaysWithCompany()),
+					Kills = dead.getLifetimeStats().Kills,
+					Battles = dead.getLifetimeStats().Battles,
+					KilledBy = "Murdered by his fellow brothers",
+					Expendable = dead.getBackground().getID() == "background.slave"
+				};
+				this.World.Statistics.addFallen(fallen);
 				this.List.push({
 					id = 13,
 					icon = "ui/icons/kills.png",
@@ -361,7 +370,7 @@ this.killer_vs_others_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getID() != this.m.Killer.getID())
+			if (bro.getID() != this.m.Killer.getID() && bro.getBackground().getID() != "background.slave")
 			{
 				other_candidates.push(bro);
 			}
@@ -410,11 +419,6 @@ this.killer_vs_others_event <- this.inherit("scripts/events/event", {
 			"otherguy2",
 			this.m.OtherGuy2.getName()
 		]);
-	}
-
-	function onDetermineStartScreen()
-	{
-		return "A";
 	}
 
 	function onClear()

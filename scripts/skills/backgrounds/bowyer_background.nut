@@ -42,6 +42,7 @@ this.bowyer_background <- this.inherit("scripts/skills/backgrounds/character_bac
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Tidy;
 		this.m.Body = "bust_naked_body_00";
+		this.m.Bodies = this.Const.Bodies.Skinny;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Notorious;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.IsRangerRecruitBackground = true;

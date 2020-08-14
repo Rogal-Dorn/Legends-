@@ -178,7 +178,7 @@ this.noble_vs_lowborn_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (!bro.getSkills().hasSkill("trait.hesitant") && bro.getBackground().isLowborn())
+			if (!bro.getSkills().hasSkill("trait.hesitant") && bro.getBackground().isLowborn() && bro.getBackground().getID() != "background.slave")
 			{
 				lowborn_candidates.push(bro);
 			}
@@ -216,11 +216,6 @@ this.noble_vs_lowborn_event <- this.inherit("scripts/events/event", {
 			"lowborn_short",
 			this.m.Lowborn.getNameOnly()
 		]);
-	}
-
-	function onDetermineStartScreen()
-	{
-		return "A";
 	}
 
 	function onClear()

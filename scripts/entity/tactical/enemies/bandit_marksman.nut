@@ -53,6 +53,7 @@ this.bandit_marksman <- this.inherit("scripts/entity/tactical/human", {
 			b.IsSpecializedInBows = true;
 			b.IsSpecializedInCrossbows = true;
 			b.IsSpecializedInSlings = true;
+			b.Vision = 8;
 		}
 
 		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 40)

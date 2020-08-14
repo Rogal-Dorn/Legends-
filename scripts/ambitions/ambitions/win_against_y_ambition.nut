@@ -16,7 +16,7 @@ this.win_against_y_ambition <- this.inherit("scripts/ambitions/ambition", {
 
 	function onUpdateScore()
 	{
-		if (this.World.Statistics.get().LastEnemiesDefeatedCount >= 24)
+		if (this.World.Statistics.getFlags().getAsInt("LastEnemiesDefeatedCount") >= 24)
 		{
 			return;
 		}
@@ -36,7 +36,7 @@ this.win_against_y_ambition <- this.inherit("scripts/ambitions/ambition", {
 
 	function onCheckSuccess()
 	{
-		if (this.World.Statistics.get().LastEnemiesDefeatedCount >= 24 || this.m.IsFulfilled)
+		if (this.World.Statistics.getFlags().getAsInt("LastEnemiesDefeatedCount") >= 24 || this.m.IsFulfilled)
 		{
 			return true;
 		}
@@ -46,7 +46,7 @@ this.win_against_y_ambition <- this.inherit("scripts/ambitions/ambition", {
 
 	function onLocationDestroyed( _location )
 	{
-		if (this.World.Statistics.get().LastEnemiesDefeatedCount >= 24)
+		if (this.World.Statistics.getFlags().getAsInt("LastEnemiesDefeatedCount") >= 24)
 		{
 			this.m.IsFulfilled = true;
 		}
@@ -54,7 +54,7 @@ this.win_against_y_ambition <- this.inherit("scripts/ambitions/ambition", {
 
 	function onPartyDestroyed( _party )
 	{
-		if (this.World.Statistics.get().LastEnemiesDefeatedCount >= 24)
+		if (this.World.Statistics.getFlags().getAsInt("LastEnemiesDefeatedCount") >= 24)
 		{
 			this.m.IsFulfilled = true;
 		}
@@ -69,11 +69,7 @@ this.win_against_y_ambition <- this.inherit("scripts/ambitions/ambition", {
 	function onDeserialize( _in )
 	{
 		this.ambition.onDeserialize(_in);
-
-		if (_in.getMetaData().getVersion() >= 25)
-		{
-			this.m.IsFulfilled = _in.readBool();
-		}
+		this.m.IsFulfilled = _in.readBool();
 	}
 
 });

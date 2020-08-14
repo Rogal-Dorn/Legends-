@@ -81,6 +81,54 @@ this.tooltip_events <- {
 		return this.TooltipEvents.general_queryUIElementTooltipData(_entityId, _elementId, _elementOwner);
 	}
 
+	function onQueryFollowerTooltipData( _followerID )
+	{
+		if (typeof _followerID == "integer")
+		{
+			local renown = "\'" + this.Const.Strings.BusinessReputation[this.Const.FollowerSlotRequirements[_followerID]] + "\' (" + this.Const.BusinessReputation[this.Const.FollowerSlotRequirements[_followerID]] + ")";
+			local ret = [
+				{
+					id = 1,
+					type = "title",
+					text = "Locked Seat"
+				},
+				{
+					id = 4,
+					type = "description",
+					text = "Your company lacks the renown necessary to hire more non-combat followers. Attain at least " + renown + " renown in order to unlock this seat. Gain renown by completing ambitions and contracts, as well as by winning battles."
+				}
+			];
+			return ret;
+		}
+		else if (_followerID == "free")
+		{
+			local ret = [
+				{
+					id = 1,
+					type = "title",
+					text = "Free Seat"
+				},
+				{
+					id = 4,
+					type = "description",
+					text = "There\'s space here to add another non-combat follower to your company."
+				},
+				{
+					id = 1,
+					type = "hint",
+					icon = "ui/icons/mouse_left_button.png",
+					text = "Open Hiring Screen"
+				}
+			];
+			return ret;
+		}
+		else
+		{
+			local p = this.World.Retinue.getFollower(_followerID);
+			return p.getTooltip();
+		}
+	}
+
 	function tactical_queryTileTooltipData()
 	{
 		local lastTileHovered = this.Tactical.State.getLastTileHovered();
@@ -350,7 +398,7 @@ this.tooltip_events <- {
 		{
 			if (_activeEntity != null && this.isKindOf(_targetedEntity, "actor") && _activeEntity.isPlayerControlled() && _targetedEntity != null && !_targetedEntity.isPlayerControlled())
 			{
-				local skill = _activeEntity.getSkills().getSkillByID(this.Tactical.State.getSelectedSkillId());
+				local skill = _activeEntity.getSkills().getSkillByID(this.Tactical.State.getSelectedSkillID());
 
 				if (skill != null)
 				{
@@ -364,10 +412,6 @@ this.tooltip_events <- {
 		if (this.isKindOf(_targetedEntity, "entity"))
 		{
 			return this.tactical_helper_addContentTypeToTooltip(_targetedEntity, _targetedEntity.getTooltip(), _isTileEntity);
-		}
-		else
-		{
-			_targetedEntity.removeFromMap();
 		}
 
 		return null;
@@ -745,7 +789,34 @@ this.tooltip_events <- {
 
 		if (lastTileHovered != null)
 		{
-			return null;
+			if (this.World.Assets.m.IsShowingExtendedFootprints)
+			{
+				local footprints = this.World.getAllFootprintsAtPos(this.World.getCamera().screenToWorld(this.Cursor.getX(), this.Cursor.getY()), this.Const.World.FootprintsType.COUNT);
+				local ret = [
+					{
+						id = 1,
+						type = "title",
+						text = "Your Lookout reports"
+					}
+				];
+
+				for( local i = 1; i < footprints.len(); i = ++i )
+				{
+					if (footprints[i])
+					{
+						ret.push({
+							id = 1,
+							type = "hint",
+							text = this.Const.Strings.FootprintsType[i] + " recently passed through here"
+						});
+					}
+				}
+
+				if (ret.len() > 1)
+				{
+					return ret;
+				}
+			}
 		}
 
 		return null;
@@ -1315,7 +1386,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Assorted arrows, bolts and throwing weapons used to automatically refill quivers after battle. Replacing one arrow will take up one point of ammunition, and replacing one throwing weapon will take up three. Running out of ammunition will leave your quivers empty and your people with nothing to shoot with. You can carry no more than " + this.World.Assets.getMaxAmmo() + " units at a time."
+					text = "Assorted arrows, bolts and throwing weapons used to automatically refill quivers after battle. Replacing one arrow or bolt will take up one point of ammunition, replacing one shot of a Handgonne will take up two points, and replacing one throwing weapon or charge of a Fire Lance will take up three. Running out of ammunition will leave your quivers empty and your people with nothing to shoot with. You can carry no more than " + this.World.Assets.getMaxAmmo() + " units at a time."
 				}
 			];
 
@@ -1606,24 +1677,14 @@ this.tooltip_events <- {
 		case "assets.Ambition":
 			if (this.World.Ambitions.hasActiveAmbition())
 			{
-				return [
-					{
-						id = 1,
-						type = "title",
-						text = "Ambition"
-					},
-					{
-						id = 2,
-						type = "description",
-						text = this.World.Ambitions.getActiveAmbition().getTooltipText()
-					},
-					{
-						id = 3,
-						type = "hint",
-						icon = "ui/icons/mouse_right_button.png",
-						text = "Cancel Ambition"
-					}
-				];
+				local ret = this.World.Ambitions.getActiveAmbition().getButtonTooltip();
+				ret.push({
+					id = 10,
+					type = "hint",
+					icon = "ui/icons/mouse_right_button.png",
+					text = "Cancel Ambition"
+				});
+				return ret;
 			}
 			else
 			{
@@ -2293,6 +2354,20 @@ this.tooltip_events <- {
 				}
 			];
 
+		case "menu-screen.new-campaign.Exploration":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Unexplored Map"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "An optional way to play the game where the map is entirely unexplored and not visible to you at the start of your campaign. You\'ll have to discover everything on your own, which makes your campaign more difficult, but potentially also more exciting.\n\nRecommended only for experienced players that know what they\'re doing."
+				}
+			];
+
 		case "menu-screen.new-campaign.EvilRandom":
 			return [
 				{
@@ -2318,20 +2393,6 @@ this.tooltip_events <- {
 					id = 2,
 					type = "description",
 					text = "There will be no late game crisis, and you can keep on playing the sandbox experience forever. Note that with this option selected, a significant part of the game\'s content and late game challenge won\'t be accessible. Not recommended for the best experience."
-				}
-			];
-
-		case "menu-screen.new-campaign.EvilExtraLate":
-			return [
-				{
-					id = 1,
-					type = "title",
-					text = "Very Late Crisis"
-				},
-				{
-					id = 2,
-					type = "description",
-					text = "The late game crisis will occur much later than usual. This gives you more time to roam the lands without the pressure of a looming threat on the horizon, but it also means that you\'ll have access to some of the game\'s content and challenges only after significant play time. Not recommended for the best experience."
 				}
 			];
 
@@ -2388,6 +2449,20 @@ this.tooltip_events <- {
 					id = 2,
 					type = "description",
 					text = "The first late game crisis will be the ancient dead arising again to take back what was once theirs. If you survive for long enough, the following ones will be chosen at random."
+				}
+			];
+
+		case "menu-screen.new-campaign.EvilCrusade":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Holy War"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "The first late game crisis will be a holy war between northern and southern cultures. If you survive for long enough, the following ones will be chosen at random."
 				}
 			];
 
@@ -2713,17 +2788,17 @@ this.tooltip_events <- {
 				}
 			];
 
-		case "tactical-screen.topbar.options-bar-module.SwitchMapOrientationButton":
+		case "tactical-screen.topbar.options-bar-module.ToggleHighlightBlockedTilesButton":
 			return [
 				{
 					id = 1,
 					type = "title",
-					text = "Rotate Map (Ctrl)"
+					text = "Show/Hide Highlights for Blocked Tiles (B)"
 				},
 				{
 					id = 2,
 					type = "description",
-					text = "Rotate the map by 180Â° so you can see the backside of hills."
+					text = "Toggle between showing and hiding red overlays that indicate tiles blocked with environmental objects (such as trees) that characters can not move onto."
 				}
 			];
 
@@ -2784,7 +2859,7 @@ this.tooltip_events <- {
 			];
 
 		case "tactical-screen.topbar.options-bar-module.FleeButton":
-			return [
+			local ret = [
 				{
 					id = 1,
 					type = "title",
@@ -2796,6 +2871,18 @@ this.tooltip_events <- {
 					text = "Retreat from combat and run for your lives. Better to fight another day than to die here pointlessly."
 				}
 			];
+
+			if (!this.Tactical.State.isScenarioMode() && this.Tactical.State.getStrategicProperties() != null && this.Tactical.State.getStrategicProperties().IsFleeingProhibited)
+			{
+				ret.push({
+					id = 3,
+					type = "hint",
+					icon = "ui/tooltips/warning.png",
+					text = "You cannot retreat from this particular fight"
+				});
+			}
+
+			return ret;
 
 		case "tactical-screen.topbar.options-bar-module.QuitButton":
 			return [
@@ -3129,7 +3216,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Dismiss this character from your roster to save daily wage and make room for someone else."
+					text = "Dismiss this character from your roster to save daily wage and make room for someone else. Indebted characters will be freed from slavery and leave your company."
 				}
 			];
 
@@ -3367,7 +3454,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Paying a compensation, gratuity or pension for the time spent with the company will allow the dismissed to leave with dignity and something to start a new life with, and it will prevent others in the company from reacting with anger over the dismissal."
+					text = "Paying a compensation, gratuity or pension for the time spent with the company will allow the dismissed to leave with dignity and something to start a new life with, and it will prevent others in the company from reacting with anger over the dismissal.\n\nIndebted characters are paid reparations instead for their time with the company. Other indebted will appreciate it if you pay these, but no one will react with anger if you don\'t."
 				}
 			];
 
@@ -3474,7 +3561,7 @@ this.tooltip_events <- {
 				{
 					id = 1,
 					type = "title",
-					text = "Toggle Tracking Footprints (Tab)"
+					text = "Toggle Tracking Footprints (F)"
 				},
 				{
 					id = 2,
@@ -3508,6 +3595,20 @@ this.tooltip_events <- {
 			}
 
 			return ret;
+
+		case "world-screen.topbar.options-module.PerksButton":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Retinue (P)"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "See your retinue of non-combat followers that grant various advantages outside combat, and upgrade your cart for more inventory space."
+				}
+			];
 
 		case "world-screen.topbar.options-module.ObituaryButton":
 			return [
@@ -3807,22 +3908,77 @@ this.tooltip_events <- {
 				}
 			];
 
-		case "world-town-screen.main-dialog-module.Trader":
+		case "world-town-screen.main-dialog-module.Alchemist":
 			return [
 				{
 					id = 1,
 					type = "title",
-					text = "Trader"
+					text = "Alchemist"
 				},
 				{
 					id = 2,
 					type = "description",
-					text = "TODO"
+					text = "An alchemist offering exotic and quite dangerous contraptions for a tidy sum."
 				}
 			];
 
+		case "world-town-screen.main-dialog-module.Arena":
+			local ret = [
+				{
+					id = 1,
+					type = "title",
+					text = "Arena"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "The arena offers an opportunity to earn gold and fame in fights that are to the death, and in front of crowds that cheer for the most gruesome manner in which lives are dispatched."
+				}
+			];
+
+			if (this.World.State.getCurrentTown() != null && this.World.State.getCurrentTown().getBuilding("building.arena").isClosed())
+			{
+				ret.push({
+					id = 3,
+					type = "hint",
+					icon = "ui/tooltips/warning.png",
+					text = "No more matches take place here today. Come back tomorrow!"
+				});
+			}
+
+			if (this.World.Contracts.getActiveContract() != null && this.World.Contracts.getActiveContract().getType() != "contract.arena" && this.World.Contracts.getActiveContract().getType() != "contract.arena_tournament")
+			{
+				ret.push({
+					id = 3,
+					type = "hint",
+					icon = "ui/tooltips/warning.png",
+					text = "You cannot fight in the arena while contracted to do other work"
+				});
+			}
+
+			if (this.World.State.getCurrentTown() != null && this.World.State.getCurrentTown().hasSituation("situation.arena_tournament") && this.World.Assets.getStash().getNumberOfEmptySlots() < 5)
+			{
+				ret.push({
+					id = 3,
+					type = "hint",
+					icon = "ui/tooltips/warning.png",
+					text = "You need at least 5 empty inventory slots to fight in the ongoing tournament"
+				});
+			}
+			else if (this.World.Assets.getStash().getNumberOfEmptySlots() < 3)
+			{
+				ret.push({
+					id = 3,
+					type = "hint",
+					icon = "ui/tooltips/warning.png",
+					text = "You need at least 3 empty inventory slots to fight in the arena"
+				});
+			}
+
+			return ret;
+
 		case "world-town-screen.main-dialog-module.Port":
-			return [
+			local ret = [
 				{
 					id = 1,
 					type = "title",
@@ -3834,6 +3990,18 @@ this.tooltip_events <- {
 					text = "A harbor that serves both foreign trading ships and local fishermen. You\'ll likely be able to book passage by sea to other parts of the continent here."
 				}
 			];
+
+			if (this.World.Contracts.getActiveContract() != null && this.World.Contracts.getActiveContract().getType() == "contract.escort_caravan")
+			{
+				ret.push({
+					id = 3,
+					type = "hint",
+					icon = "ui/tooltips/warning.png",
+					text = "You cannot use the harbor while contracted to escort a caravan"
+				});
+			}
+
+			return ret;
 
 		case "world-town-screen.main-dialog-module.Marketplace":
 			return [
@@ -4123,6 +4291,32 @@ this.tooltip_events <- {
 						text = "" + change.Text + ""
 					});
 				}
+			}
+
+			return ret;
+
+		case "world-campfire-screen.Cart":
+			local ret = [
+				{
+					id = 1,
+					type = "title",
+					text = this.Const.Strings.InventoryHeader[this.World.Retinue.getInventoryUpgrades()]
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "A mercenary company has to carry a lot of equipment and supplies. By using carts and wagons, you can expand your available inventory space and carry even more."
+				}
+			];
+
+			if (this.World.Retinue.getInventoryUpgrades() < this.Const.Strings.InventoryUpgradeHeader.len())
+			{
+				ret.push({
+					id = 1,
+					type = "hint",
+					icon = "ui/icons/mouse_left_button.png",
+					text = this.Const.Strings.InventoryUpgradeHeader[this.World.Retinue.getInventoryUpgrades()] + " for [img]gfx/ui/tooltips/money.png[/img]" + this.Const.Strings.InventoryUpgradeCosts[this.World.Retinue.getInventoryUpgrades()]
+				});
 			}
 
 			return ret;
@@ -4892,7 +5086,36 @@ this.tooltip_events <- {
 			});
 			return ret;
 
+		case "dlc_6":
+			local ret = [
+				{
+					id = 1,
+					type = "title",
+					text = "Blazing Deserts"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "The Blazing Deserts DLC adds a new desert region to the south inspired by medieval Arabic and Persian cultures, a new late game crisis involving a holy war, a retinue of non-combat followers with which to customize your company, alchemical contraptions and primitive firearms, new human and beastly opponents, new contracts and events, and more."
+				}
+			];
 
+			if (this.Const.DLC.Desert == true)
+			{
+				ret[1].text += "\n\n[color=" + this.Const.UI.Color.PositiveValue + "]This DLC has been installed.[/color]";
+			}
+			else
+			{
+				ret[1].text += "\n\n[color=" + this.Const.UI.Color.NegativeValue + "]This DLC is missing. It\'s available for purchase on Steam and GOG![/color]";
+			}
+
+			ret.push({
+				id = 1,
+				type = "hint",
+				icon = "ui/icons/mouse_left_button.png",
+				text = "Open store page in browser"
+			});
+			return ret;
 		}
 
 		return null;

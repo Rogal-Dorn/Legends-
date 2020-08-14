@@ -73,7 +73,7 @@ this.kings_guard_1_event <- this.inherit("scripts/events/event", {
 				_event.m.Dude.getItems().unequip(_event.m.Dude.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand));
 				_event.m.Dude.getItems().unequip(_event.m.Dude.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand));
 				_event.m.Dude.worsenMood(1.5, "Got taken by barbarians and left to die in the cold");
-				_event.m.Dude.getTags().set("IsKingsGuard", true);
+				_event.m.Dude.getFlags().set("IsKingsGuard", true);
 				this.Characters.push(_event.m.Dude.getImagePath());
 			}
 

@@ -565,7 +565,7 @@ this.legend_custom_scenario_intro <- this.inherit("scripts/events/event", {
 	{
 		_vars.push([
 			"home",
-			this.World.Tags.get("HomeVillage")
+			this.World.Flags.get("HomeVillage")
 		]);
 	}
 

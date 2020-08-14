@@ -67,6 +67,15 @@ this.militia_melee_agent <- this.inherit("scripts/ai/tactical/agent", {
 	function onUpdate()
 	{
 		this.setEngageRangeBasedOnWeapon();
+
+		if (this.m.Properties.EngageRangeIdeal > 1)
+		{
+			this.m.Properties.OverallFormationMult = 2.0;
+		}
+		else
+		{
+			this.m.Properties.OverallFormationMult = 1.5;
+		}
 	}
 
 });

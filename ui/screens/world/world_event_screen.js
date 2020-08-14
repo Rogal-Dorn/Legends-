@@ -575,6 +575,9 @@ WorldEventScreen.prototype.renderButton = function (_data, _bigButton)
         self.notifyBackendButtonPressed(buttonId);
     }, '', _bigButton ? 9 : 5, "icon" in _data ? Path.GFX + _data.icon : null);
 
+    if('tooltip' in _data && _data.tooltip != null)
+        button.bindTooltip({ contentType: 'verbatim', tooltip: _data.tooltip });
+
     this.mButtons.push(button);
 };
 

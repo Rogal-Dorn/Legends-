@@ -26,6 +26,8 @@ this.strategy <- {
 			AllyRangedTotal = 0,
 			EnemyRangedTotal = 0,
 			ShortestDistanceToEnemy = 0,
+			ShortestDistanceToEnemyNotMoved = 0,
+			LongestDistanceToEnemy = 0,
 			IsOutrangedByEnemy = false,
 			IsOutrangingEnemy = false,
 			IsEngaged = false,
@@ -138,7 +140,9 @@ this.strategy <- {
 		local enemyRangedFiring = 0.0;
 		local allyRangedTotal = 0;
 		local enemyRangedTotal = 0;
-		local distToEnemy = 9000;
+		local shortestDistToEnemy = 9000;
+		local shortestDistToEnemyNotMoved = 9000;
+		local longestDistToEnemy = 0;
 		local allies = [];
 		local enemies = [];
 		local time = this.Time.getExactTime();
@@ -325,7 +329,9 @@ this.strategy <- {
 			if (allyTile.hasZoneOfControlOtherThan(ally.Entity.getAlliedFactions()))
 			{
 				allyEngaged = ++allyEngaged;
-				distToEnemy = 1;
+				shortestDistToEnemy = 1;
+				shortestDistToEnemyNotMoved = 1;
+				longestDistToEnemy = 1;
 
 				if (ally.Entity.getFaction() == this.m.Faction)
 				{
@@ -335,16 +341,21 @@ this.strategy <- {
 				continue;
 			}
 
+			local shortestDist = 9999;
+			local shortestDistNotMoved = 9999;
+
 			foreach( enemy in enemies )
 			{
-				if (distToEnemy > 1)
-				{
-					local d = allyTile.getDistanceTo(enemy.Entity.getTile());
+				local d = allyTile.getDistanceTo(enemy.Entity.getTile());
 
-					if (d < distToEnemy)
-					{
-						distToEnemy = d;
-					}
+				if (d < shortestDist)
+				{
+					shortestDist = d;
+				}
+
+				if (d < shortestDistNotMoved && ally.Entity.getActionPoints() == ally.Entity.getActionPointsMax())
+				{
+					shortestDistNotMoved = d;
 				}
 
 				if (enemy.HasRangedWeapon)
@@ -366,8 +377,24 @@ this.strategy <- {
 					break;
 				}
 			}
+
+			if (shortestDist < shortestDistToEnemy)
+			{
+				shortestDistToEnemy = shortestDist;
+			}
+
+			if (shortestDistNotMoved < shortestDistToEnemyNotMoved)
+			{
+				shortestDistToEnemyNotMoved = shortestDistNotMoved;
+			}
+
+			if (shortestDist > longestDistToEnemy)
+			{
+				longestDistToEnemy = shortestDist;
+			}
 		}
 
+		local defendingCamp = this.isDefendingCamp();
 		this.m.Stats.AlliesVSEnemiesRatio = this.Math.maxf(1.0, allies.len()) / this.Math.maxf(1.0, enemies.len());
 		this.m.Stats.EnemiesVSAlliesRatio = this.Math.maxf(1.0, enemies.len()) / this.Math.maxf(1.0, allies.len());
 		this.m.Stats.RangedAlliedVSEnemies = (allyRanged / 7.0 + 0.5) / (enemyRanged / 7.0 + 0.5);
@@ -376,11 +403,11 @@ this.strategy <- {
 		this.m.Stats.FleeingEnemiesRatio = enemyFleeing / this.Math.maxf(1.0, enemies.len());
 		this.m.Stats.DefensiveAlliesRatio = this.Math.max(1, allyDefensive) / this.Math.maxf(1.0, allies.len());
 		this.m.Stats.DefensiveEnemiesRatio = enemyDefensive / this.Math.maxf(1.0, enemies.len());
-		this.m.Stats.DefensiveBiasAverage = defensiveBias / this.Math.maxf(1.0, allies.len());
+		this.m.Stats.DefensiveBiasAverage = defensiveBias / this.Math.maxf(1.0, allies.len()) * (defendingCamp ? 2.0 : 1.0);
 		this.m.Stats.EnemyRangedReadyRatio = enemyRangedWeaponsReady / this.Math.maxf(1.0, enemies.len());
 		this.m.Stats.AllyRangedReadyRatio = allyRangedWeaponsReady / this.Math.maxf(1.0, allies.len());
 		this.m.Stats.AllyVSEnemyOutrange = (allyOutranging + 2.0) / (enemyOutranging + 2.0);
-		this.m.Stats.IsOutrangedByEnemy = enemyOutranging > allyOutranging && enemyRangedFiring >= allyRangedFiring;
+		this.m.Stats.IsOutrangedByEnemy = (!defendingCamp && enemyOutranging > allyOutranging || defendingCamp && enemyOutranging - 1 > allyOutranging) && (!defendingCamp && enemyRangedFiring >= allyRangedFiring || defendingCamp && enemyRangedFiring > allyRangedFiring);
 		this.m.Stats.IsOutrangingEnemy = allyOutranging > enemyOutranging && allyRangedFiring > enemyRangedFiring;
 		this.m.Stats.EnemyOutranging = enemyOutranging;
 		this.m.Stats.AllyOutranging = allyOutranging;
@@ -389,7 +416,9 @@ this.strategy <- {
 		this.m.Stats.EnemyRangedTotal = enemyRangedTotal;
 		this.m.Stats.AllyRangedTotal = allyRangedTotal;
 		this.m.Stats.IsEngaged = this.m.Stats.EngagedAlliesRatio > 0.1;
-		this.m.Stats.ShortestDistanceToEnemy = distToEnemy;
+		this.m.Stats.ShortestDistanceToEnemy = shortestDistToEnemy;
+		this.m.Stats.ShortestDistanceToEnemyNotMoved = shortestDistToEnemyNotMoved;
+		this.m.Stats.LongestDistanceToEnemy = longestDistToEnemy;
 		local players = this.Tactical.Entities.getInstancesOfFaction(this.Const.Faction.Player);
 		local levels = 0;
 		local armors = 0;
@@ -440,6 +469,11 @@ this.strategy <- {
 
 	function updateDefending()
 	{
+		if (this.Const.AI.NoDefendMode || !this.Tactical.State.isScenarioMode() && this.Tactical.State.getStrategicProperties().IsArenaMode)
+		{
+			return false;
+		}
+
 		if (!this.m.Stats.IsOwnFactionEngaged && !this.Tactical.State.isScenarioMode() && this.World.State.getEscortedEntity() != null && !this.World.State.getEscortedEntity().isNull() && this.World.State.getEscortedEntity().getFaction() == this.m.Faction && this.World.FactionManager.getFaction(this.World.State.getEscortedEntity().getFaction()) != null && this.World.FactionManager.getFaction(this.World.State.getEscortedEntity().getFaction()).getType() == this.Const.FactionType.Settlement)
 		{
 			this.m.IsEscortedByPlayer = true;
@@ -487,6 +521,11 @@ this.strategy <- {
 			defensiveThreshold = defensiveThreshold * 0.5;
 		}
 
+		if (this.m.Stats.EnemyRangedTotal == 0 && this.m.Stats.EnemyRangedFiring == 0 && this.m.Stats.DefensiveBiasAverage >= 1.0)
+		{
+			defensiveThreshold = defensiveThreshold * 0.25;
+		}
+
 		if (defensiveScore < defensiveThreshold)
 		{
 			this.m.IsOffensiveLastTurn = true;
@@ -502,6 +541,11 @@ this.strategy <- {
 
 			return true;
 		}
+	}
+
+	function isDefendingCamp()
+	{
+		return !this.m.IsAttackingOnWorldmap && !this.Tactical.State.isScenarioMode() && this.Tactical.State.getStrategicProperties().LocationTemplate != null && this.Tactical.State.getStrategicProperties().LocationTemplate.Fortification != this.Const.Tactical.FortificationType.None && this.World.FactionManager.isAllied(this.m.Faction, this.Tactical.State.getStrategicProperties().LocationTemplate.OwnedByFaction);
 	}
 
 	function compileKnownOpponents()
@@ -524,7 +568,10 @@ this.strategy <- {
 
 			for( local p = 0; p != instances[f].len(); p = ++p )
 			{
-				if (instances[f][p].getTile().IsHidingEntity && !instances[f][p].isVisibleToEntity())
+				if (!instances[f][p].isAttackable())
+				{
+				}
+				else if (instances[f][p].getTile().IsHidingEntity && !instances[f][p].isVisibleToEntity())
 				{
 				}
 				else
@@ -557,7 +604,7 @@ this.strategy <- {
 
 	function onOpponentSighted( _entity )
 	{
-		if (!_entity.isAlive())
+		if (!_entity.isAlive() || !_entity.isAttackable())
 		{
 			return;
 		}

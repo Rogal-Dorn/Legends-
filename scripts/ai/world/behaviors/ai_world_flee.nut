@@ -81,6 +81,11 @@ this.ai_world_flee <- this.inherit("scripts/ai/world/world_behavior", {
 				continue;
 			}
 
+			if (_entity.isAlwaysAttackingPlayer() && o.Entity.isPlayerControlled())
+			{
+				continue;
+			}
+
 			local score = 1.0;
 			local dist = this.getVecDistance(myPos, o.Entity.getPos());
 

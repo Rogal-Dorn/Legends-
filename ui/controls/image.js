@@ -1,7 +1,7 @@
 /*
  *  @Project:		Untitled Project
  *
- *	@Copyright:		(c) Overhype Studios | 2013 - 2017
+ *	@Copyright:		(c) Overhype Studios | 2013 - 2020
  *
  *  @Author:		Overhype Studios
  *  @Date:			01.10.2017

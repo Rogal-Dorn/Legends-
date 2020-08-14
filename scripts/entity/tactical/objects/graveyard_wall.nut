@@ -2,12 +2,12 @@ this.graveyard_wall <- this.inherit("scripts/entity/tactical/entity", {
 	m = {},
 	function getName()
 	{
-		return "TODO";
+		return "Old Wall";
 	}
 
 	function getDescription()
 	{
-		return "TODO";
+		return "An old and partly crumbled wall.";
 	}
 
 	function setDirBasedOnCenter( _centerTile, _dist )
@@ -17,7 +17,7 @@ this.graveyard_wall <- this.inherit("scripts/entity/tactical/entity", {
 
 		if (myTile.SquareCoords.X < _centerTile.SquareCoords.X)
 		{
-			if (myTile.SquareCoords.Y < _centerTile.SquareCoords.Y + _dist * 0.5 && myTile.SquareCoords.Y > _centerTile.SquareCoords.Y - _dist * 0.5)
+			if (myTile.SquareCoords.Y < _centerTile.SquareCoords.Y + _dist / 2 && myTile.SquareCoords.Y > _centerTile.SquareCoords.Y - _dist / 2 - 1)
 			{
 				b.setBrush("graveyard_29_07");
 			}
@@ -32,7 +32,7 @@ this.graveyard_wall <- this.inherit("scripts/entity/tactical/entity", {
 		}
 		else if (myTile.SquareCoords.X > _centerTile.SquareCoords.X)
 		{
-			if (myTile.SquareCoords.Y < _centerTile.SquareCoords.Y + _dist * 0.5 && myTile.SquareCoords.Y > _centerTile.SquareCoords.Y - _dist * 0.5)
+			if (myTile.SquareCoords.Y < _centerTile.SquareCoords.Y + _dist / 2 && myTile.SquareCoords.Y > _centerTile.SquareCoords.Y - _dist / 2 - 1)
 			{
 				b.setBrush("graveyard_29_06");
 			}
@@ -60,6 +60,7 @@ this.graveyard_wall <- this.inherit("scripts/entity/tactical/entity", {
 		local body = this.addSprite("body");
 		body.setBrush("graveyard_29_0" + this.Math.rand(1, 7));
 		body.IgnoreCameraFlip = true;
+		this.setBlockSight(false);
 	}
 
 });

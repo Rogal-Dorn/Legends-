@@ -68,7 +68,7 @@ this.legends_sisterhood_scenario <- this.inherit("scripts/scenarios/world/starti
 			bro.m.CompanyID = val;
 		}
 
-		this.World.Tags.set("HasLegendCampGathering", true);
+		this.World.Flags.set("HasLegendCampGathering", true);
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/bread_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/mead_item"));
 	}
@@ -140,7 +140,7 @@ this.legends_sisterhood_scenario <- this.inherit("scripts/scenarios/world/starti
 	{
 		this.starting_scenario.onInit();
 		this.World.Assets.m.BrothersMax = 6;
-		this.World.Tags.set("IsLegendsVala", true);
+		this.World.Flags.set("IsLegendsVala", true);
 	}
 
 	function onHiredByScenario( bro )

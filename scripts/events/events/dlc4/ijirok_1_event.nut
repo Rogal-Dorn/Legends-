@@ -16,7 +16,7 @@ this.ijirok_1_event <- this.inherit("scripts/events/event", {
 					Text = "And keep your wits about you.",
 					function getResult( _event )
 					{
-						this.World.Tags.set("IjirokStage", 1);
+						this.World.Flags.set("IjirokStage", 1);
 						return 0;
 					}
 
@@ -36,7 +36,7 @@ this.ijirok_1_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
-		if (!this.World.Tags.has("IjirokStage") || this.World.Tags.get("IjirokStage") >= 5)
+		if (!this.World.Flags.has("IjirokStage") || this.World.Flags.get("IjirokStage") >= 5)
 		{
 			return;
 		}

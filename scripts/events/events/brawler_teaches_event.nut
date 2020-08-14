@@ -44,8 +44,8 @@ this.brawler_teaches_event <- this.inherit("scripts/events/event", {
 			{
 				this.Characters.push(_event.m.Brawler.getImagePath());
 				this.Characters.push(_event.m.Student.getImagePath());
-				_event.m.Brawler.getTags().add("brawler_teaches");
-				_event.m.Student.getTags().add("brawler_teaches");
+				_event.m.Brawler.getFlags().add("brawler_teaches");
+				_event.m.Student.getFlags().add("brawler_teaches");
 				_event.m.Brawler.improveMood(0.25, "Has toughened up " + _event.m.Student.getName());
 			}
 
@@ -172,7 +172,7 @@ this.brawler_teaches_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getTags().has("brawler_teaches"))
+			if (bro.getFlags().has("brawler_teaches"))
 			{
 				continue;
 			}

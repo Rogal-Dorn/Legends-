@@ -113,8 +113,9 @@ this.hunting_schrats_contract <- this.inherit("scripts/contracts/contract", {
 
 				local tile = this.Contract.getTileToSpawnLocation(playerTile, numWoods >= 12 ? 6 : 3, 11, disallowedTerrain);
 				local party;
-				party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).spawnEntity(tile, "Schrats", false, this.Const.World.Spawn.Schrats, 100 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
+				party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).spawnEntity(tile, "Schrats", false, this.Const.World.Spawn.Schrats, 100 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult());
 				party.setDescription("A creature of bark and wood, blending between trees and shambling slowly, its roots digging through the soil.");
+				party.setFootprintType(this.Const.World.FootprintsType.Schrats);
 				party.setAttackableByAI(false);
 				party.setFootprintSizeOverride(0.75);
 
@@ -124,7 +125,7 @@ this.hunting_schrats_contract <- this.inherit("scripts/contracts/contract", {
 
 					if (nearTile != null)
 					{
-						this.Const.World.Common.addFootprintsFromTo(nearTile, party.getTile(), this.Const.BeastFootprints, 0.75);
+						this.Const.World.Common.addFootprintsFromTo(nearTile, party.getTile(), this.Const.BeastFootprints, this.Const.World.FootprintsType.Schrats, 0.75);
 					}
 				}
 
@@ -308,7 +309,7 @@ this.hunting_schrats_contract <- this.inherit("scripts/contracts/contract", {
 					Text = "Charge!",
 					function getResult()
 					{
-						this.Contract.addUnitsToEntity(this.Contract.m.Target, this.Const.World.Spawn.Direwolves, 70 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
+						this.Contract.addUnitsToEntity(this.Contract.m.Target, this.Const.World.Spawn.Direwolves, 70 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult());
 						this.Contract.getActiveState().onTargetAttacked(this.Contract.m.Target, this.Contract.m.IsPlayerAttacking);
 						return 0;
 					}

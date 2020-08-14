@@ -20,7 +20,7 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 		IsExitingToMenu = false,
 		IsAutoRetreat = false,
 		CurrentActionState = null,
-		SelectedSkillId = null,
+		SelectedSkillID = null,
 		IsInputLocked = false,
 		LastFatigueSoundTime = 0.0,
 		LastTileSelected = null,
@@ -84,9 +84,9 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 		return this.m.CurrentActionState;
 	}
 
-	function getSelectedSkillId()
+	function getSelectedSkillID()
 	{
-		return this.m.SelectedSkillId;
+		return this.m.SelectedSkillID;
 	}
 
 	function getStrategicProperties()
@@ -192,7 +192,7 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 		local ri = this.m.TacticalScreen.getTopbarRoundInformationModule();
 		ri.setOnQueryRoundInformationListener(this.topbar_round_information_onQueryRoundInformation.bindenv(this));
 		local ob = this.m.TacticalScreen.getTopbarOptionsModule();
-		ob.setOnSwitchMapOrientationListener(this.topbar_options_onSwitchMapOrientationButtonClicked.bindenv(this));
+		ob.setOnToggleHighlightBlockedTilesListener(this.topbar_options_onToggleHighlightBlockedTilesButtonClicked.bindenv(this));
 		ob.setOnSwitchMapLevelUpListener(this.topbar_options_onSwitchMapLevelUpButtonClicked.bindenv(this));
 		ob.setOnSwitchMapLevelDownListener(this.topbar_options_onSwitchMapLevelDownButtonClicked.bindenv(this));
 		ob.setOnToggleStatsOverlaysListener(this.topbar_options_onToggleStatsOverlaysButtonClicked.bindenv(this));
@@ -330,7 +330,7 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 			else
 			{
 				local faction = this.m.Factions.getHostileFactionWithMostInstances();
-				this.World.Statistics.get().LastCombatFaction = faction;
+				this.World.Statistics.getFlags().set("LastCombatFaction", faction);
 
 				if (this.m.StrategicProperties != null)
 				{
@@ -339,12 +339,8 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 						this.World.State.getLastLocation().setVisited(true);
 					}
 
+					this.World.Statistics.getFlags().set("LastCombatWasOngoingBattle", this.m.StrategicProperties.InCombatAlready);
 					this.Music.setTrackList(this.m.StrategicProperties.Music, this.Const.Music.CrossFadeTime);
-
-					if (this.m.StrategicProperties.IsFleeingProhibited)
-					{
-						this.m.TacticalScreen.getTopbarOptionsModule().setFleeButtonEnabled(false);
-					}
 				}
 				else
 				{
@@ -487,6 +483,11 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 			playerKills = playerKills + bro.getCombatStats().Kills;
 		}
 
+		if (!this.isScenarioMode() && this.m.StrategicProperties != null && this.m.StrategicProperties.IsLootingProhibited)
+		{
+			return;
+		}
+
 		local loot = [];
 		local size = this.Tactical.getMapSize();
 
@@ -547,6 +548,35 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 			}
 		}
 
+		if (!this.isScenarioMode())
+		{
+			if (this.Tactical.Entities.getAmmoSpent() > 0 && this.World.Assets.m.IsRecoveringAmmo)
+			{
+				local amount = this.Math.max(1, this.Tactical.Entities.getAmmoSpent() * 0.2);
+				amount = this.Math.rand(amount / 2, amount);
+
+				if (amount > 0)
+				{
+					local ammo = this.new("scripts/items/supplies/ammo_item");
+					ammo.setAmount(amount);
+					loot.push(ammo);
+				}
+			}
+
+			if (this.Tactical.Entities.getArmorParts() > 0 && this.World.Assets.m.IsRecoveringArmor)
+			{
+				local amount = this.Math.min(60, this.Math.max(1, this.Tactical.Entities.getArmorParts() * this.Const.World.Assets.ArmorPartsPerArmor * 0.15));
+				amount = this.Math.rand(amount / 2, amount);
+
+				if (amount > 0)
+				{
+					local parts = this.new("scripts/items/supplies/armor_parts_item");
+					parts.setAmount(amount);
+					loot.push(parts);
+				}
+			}
+		}
+
 		this.m.CombatResultLoot.assign(loot);
 		this.m.CombatResultLoot.sort();
 	}
@@ -604,7 +634,8 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 					TimeWithCompany = this.Math.max(1, bro.getDaysWithCompany()),
 					Kills = bro.getLifetimeStats().Kills,
 					Battles = bro.getLifetimeStats().Battles,
-					KilledBy = "Left to die"
+					KilledBy = "Left to die",
+					Expendable = bro.getBackground().getID() == "background.slave"
 				};
 				this.World.Statistics.addFallen(fallen);
 				this.World.getPlayerRoster().remove(bro);
@@ -645,7 +676,7 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 		}
 
 		this.Tactical.calculateTacticalValuesForTerrain();
-		this.logDebug("TACTICAL: STASH LOCKED: " + this.Stash.isLocked());
+		this.Tactical.createBlockedTileHighlights();
 
 		if (this.Stash.isLocked() == false && this.m.Scenario != null)
 		{
@@ -658,6 +689,7 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 			this.Tactical.TurnSequenceBar.initNextRound();
 		}
 
+		this.Tactical.addResource("gfx/detail.png");
 		local allEntities = this.Tactical.Entities.getAllInstances();
 
 		foreach( f in allEntities )
@@ -665,6 +697,67 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 			foreach( e in f )
 			{
 				e.loadResources();
+			}
+		}
+
+		if (this.m.StrategicProperties != null)
+		{
+			foreach( r in this.m.StrategicProperties.Ambience[0] )
+			{
+				this.Tactical.addResource("sounds/" + r.File);
+			}
+
+			foreach( r in this.m.StrategicProperties.Ambience[1] )
+			{
+				this.Tactical.addResource("sounds/" + r.File);
+			}
+		}
+
+		if (this.m.StrategicProperties != null && this.m.StrategicProperties.IsArenaMode)
+		{
+			foreach( r in this.Const.Sound.ArenaNewRound )
+			{
+				this.Tactical.addResource(r);
+			}
+
+			foreach( r in this.Const.Sound.ArenaHit )
+			{
+				this.Tactical.addResource(r);
+			}
+
+			foreach( r in this.Const.Sound.ArenaHit )
+			{
+				this.Tactical.addResource(r);
+			}
+
+			foreach( r in this.Const.Sound.ArenaBigHit )
+			{
+				this.Tactical.addResource(r);
+			}
+
+			foreach( r in this.Const.Sound.ArenaKill )
+			{
+				this.Tactical.addResource(r);
+			}
+
+			foreach( r in this.Const.Sound.ArenaMiss )
+			{
+				this.Tactical.addResource(r);
+			}
+
+			foreach( r in this.Const.Sound.ArenaBigMiss )
+			{
+				this.Tactical.addResource(r);
+			}
+
+			foreach( r in this.Const.Sound.ArenaShock )
+			{
+				this.Tactical.addResource(r);
+			}
+
+			foreach( r in this.Const.Sound.ArenaFlee )
+			{
+				this.Tactical.addResource(r);
 			}
 		}
 
@@ -757,6 +850,11 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 	function initMap()
 	{
+		if (this.m.StrategicProperties.LocationTemplate != null && this.m.StrategicProperties.MapSeed != 0)
+		{
+			this.Math.seedRandom(this.m.StrategicProperties.MapSeed);
+		}
+
 		local map = this.MapGen.get(this.m.StrategicProperties.TerrainTemplate);
 		local minX = map.getMinX();
 		local minY = map.getMinY();
@@ -767,31 +865,59 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 			W = minX,
 			H = minY
 		}, this.m.StrategicProperties);
-		local size = this.Tactical.getMapSize();
 
-		for( local x = 0; x < size.X; x = ++x )
+		if (this.m.StrategicProperties.LocationTemplate != null && this.m.StrategicProperties.LocationTemplate.Template[0] != null)
 		{
-			this.spawnRetreatIcon(this.Tactical.getTileSquare(x, 0));
+			if (this.m.StrategicProperties.LocationTemplate.ForceLineBattle || this.m.StrategicProperties.LocationTemplate.Fortification == this.Const.Tactical.FortificationType.None)
+			{
+				this.m.StrategicProperties.LocationTemplate.ShiftX = 0;
+				this.m.StrategicProperties.LocationTemplate.ShiftY = 0;
+			}
+
+			map.campify({
+				X = 0,
+				Y = 0,
+				W = minX,
+				H = minY
+			}, this.m.StrategicProperties.LocationTemplate);
+			local env0 = this.MapGen.get(this.m.StrategicProperties.LocationTemplate.Template[0]);
+			env0.fill({
+				X = 0,
+				Y = 0,
+				W = minX,
+				H = minY
+			}, this.m.StrategicProperties.LocationTemplate);
 		}
 
-		for( local x = 0; x < size.X; x = ++x )
+		if (!this.m.StrategicProperties.IsFleeingProhibited)
 		{
-			this.spawnRetreatIcon(this.Tactical.getTileSquare(x, size.Y - 1));
+			local size = this.Tactical.getMapSize();
+
+			for( local x = 0; x < size.X; x = ++x )
+			{
+				this.spawnRetreatIcon(this.Tactical.getTileSquare(x, 0));
+			}
+
+			for( local x = 0; x < size.X; x = ++x )
+			{
+				this.spawnRetreatIcon(this.Tactical.getTileSquare(x, size.Y - 1));
+			}
+
+			for( local y = 1; y < size.Y - 1; y = ++y )
+			{
+				this.spawnRetreatIcon(this.Tactical.getTileSquare(0, y));
+			}
+
+			for( local y = 1; y < size.Y - 1; y = ++y )
+			{
+				this.spawnRetreatIcon(this.Tactical.getTileSquare(size.X - 1, y));
+			}
 		}
 
-		for( local y = 1; y < size.Y - 1; y = ++y )
-		{
-			this.spawnRetreatIcon(this.Tactical.getTileSquare(0, y));
-		}
-
-		for( local y = 1; y < size.Y - 1; y = ++y )
-		{
-			this.spawnRetreatIcon(this.Tactical.getTileSquare(size.X - 1, y));
-		}
-
+		this.m.IsFogOfWarVisible = this.m.StrategicProperties.IsFogOfWarVisible;
 		this.m.Factions.spawn(this.m.StrategicProperties);
 
-		if (this.m.Scenario == null)
+		if (this.m.Scenario == null && !this.m.StrategicProperties.IsWithoutAmbience)
 		{
 			this.m.Factions.setupAmbience(this.m.StrategicProperties.Tile);
 		}
@@ -817,13 +943,6 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 	{
 		if (this.m.StrategicProperties != null && this.m.StrategicProperties.IsFleeingProhibited)
 		{
-			return;
-		}
-
-		if (this.m.StrategicProperties != null && this.m.StrategicProperties.IsFleeingProhibited)
-		{
-			this.m.IsExitingToMenu = true;
-			this.exitTactical();
 			return;
 		}
 
@@ -1009,14 +1128,14 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 			}
 		}
 
-		if (this.m.SelectedSkillId == _skill.getID() && this.m.CurrentActionState == this.Const.Tactical.ActionState.SkillSelected)
+		if (this.m.SelectedSkillID == _skill.getID() && this.m.CurrentActionState == this.Const.Tactical.ActionState.SkillSelected)
 		{
 			_skill.onTargetDeselected();
 			this.cancelEntitySkill(_activeEntity);
 		}
 		else
 		{
-			this.m.SelectedSkillId = _skill.getID();
+			this.m.SelectedSkillID = _skill.getID();
 			this.m.CurrentActionState = this.Const.Tactical.ActionState.SkillSelected;
 			this.Tactical.TurnSequenceBar.selectSkillById(_skill.getID(), true);
 			this.Tactical.TurnSequenceBar.setActiveEntityCostsPreview({
@@ -1155,7 +1274,7 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 	function executeEntitySkill( _activeEntity, _targetTile )
 	{
-		local skill = _activeEntity.getSkills().getSkillByID(this.m.SelectedSkillId);
+		local skill = _activeEntity.getSkills().getSkillByID(this.m.SelectedSkillID);
 
 		if (skill != null && skill.isUsable() && skill.isAffordable())
 		{
@@ -1192,7 +1311,7 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 				this.Tactical.TurnSequenceBar.deselectActiveSkill();
 				this.Tactical.getHighlighter().clear();
 				this.m.CurrentActionState = null;
-				this.m.SelectedSkillId = null;
+				this.m.SelectedSkillID = null;
 				this.updateCursorAndTooltip();
 			}
 			else
@@ -1207,7 +1326,7 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 	{
 		this.Tactical.getHighlighter().clear();
 		this.m.CurrentActionState = null;
-		this.m.SelectedSkillId = null;
+		this.m.SelectedSkillID = null;
 		this.Tactical.TurnSequenceBar.deselectActiveSkill();
 		this.Tactical.TurnSequenceBar.resetActiveEntityCostsPreview();
 		this.Tooltip.reload();
@@ -1438,12 +1557,11 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 			switch(this.m.CurrentActionState)
 			{
 			case this.Const.Tactical.ActionState.SkillSelected:
-				if (!hoveredTile.IsEmpty && entity != null)
+				if (entity != null)
 				{
-					local tileEntity = hoveredTile.getEntity();
-					local skill = entity.getSkills().getSkillByID(this.m.SelectedSkillId);
+					local skill = entity.getSkills().getSkillByID(this.m.SelectedSkillID);
 
-					if (skill == null || !skill.isUsable() || !skill.isAffordable() || !skill.onVerifyTarget(entity.getTile(), hoveredTile) || !skill.isInRange(hoveredTile) || !hoveredTile.IsVisibleForEntity || !this.isKindOf(tileEntity, "actor"))
+					if (skill == null || !skill.isUsable() || !skill.isAffordable() || !skill.onVerifyTarget(entity.getTile(), hoveredTile) || !skill.isInRange(hoveredTile) || !hoveredTile.IsVisibleForEntity || skill.isTargetingActor() && !hoveredTile.IsEmpty && !this.isKindOf(hoveredTile.getEntity(), "actor"))
 					{
 						this.Cursor.setCursor(this.Const.UI.Cursor.Denied);
 					}
@@ -1512,7 +1630,7 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 			if (this.m.CurrentActionState == this.Const.Tactical.ActionState.SkillSelected)
 			{
-				local skill = entity.getSkills().getSkillByID(this.m.SelectedSkillId);
+				local skill = entity.getSkills().getSkillByID(this.m.SelectedSkillID);
 
 				if (skill != null)
 				{
@@ -1524,7 +1642,7 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 			if (this.m.CurrentActionState == this.Const.Tactical.ActionState.SkillSelected && isValidSkill)
 			{
-				local skill = entity.getSkills().getSkillByID(this.m.SelectedSkillId);
+				local skill = entity.getSkills().getSkillByID(this.m.SelectedSkillID);
 				skill.onTargetSelected(hoveredTile);
 			}
 
@@ -1557,7 +1675,7 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 			if (this.m.CurrentActionState == this.Const.Tactical.ActionState.SkillSelected && isValidSkill && _skillSelected)
 			{
-				local skill = entity.getSkills().getSkillByID(this.m.SelectedSkillId);
+				local skill = entity.getSkills().getSkillByID(this.m.SelectedSkillID);
 				skill.onTargetSelected(hoveredTile);
 			}
 		}
@@ -1711,16 +1829,6 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 		}
 	}
 
-	function rotateMap()
-	{
-		this.Tactical.getCamera().IsFlipped = !this.Tactical.getCamera().IsFlipped;
-		local ob = this.m.TacticalScreen.getTopbarOptionsModule();
-		ob.setSwitchMapOrientationButtonState(!this.Tactical.getCamera().IsFlipped);
-		this.Tooltip.hide();
-		this.m.LastTileHovered = null;
-		this.updateCursorAndTooltip();
-	}
-
 	function onBattleEnded()
 	{
 		if (this.m.IsExitingToMenu)
@@ -1754,29 +1862,51 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 				this.World.Contracts.onCombatVictory(this.m.StrategicProperties != null ? this.m.StrategicProperties.CombatID : "");
 				this.World.Events.onCombatVictory(this.m.StrategicProperties != null ? this.m.StrategicProperties.CombatID : "");
-				this.World.Statistics.get().LastEnemiesDefeatedCount = this.m.MaxHostiles;
-				this.World.Statistics.get().LastCombatResult = 1;
+				this.World.Statistics.getFlags().set("LastEnemiesDefeatedCount", this.m.MaxHostiles);
+				this.World.Statistics.getFlags().set("LastCombatResult", 1);
+
+				if (this.World.Statistics.getFlags().getAsInt("LastCombatFaction") == this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID())
+				{
+					this.World.Statistics.getFlags().increment("BeastsDefeated");
+				}
+
 				local playerRoster = this.World.getPlayerRoster().getAll();
 
 				foreach( bro in playerRoster )
 				{
-					if (bro.getPlaceInFormation() <= 17 && !bro.isPlacedOnMap() && bro.getTags().get("Devoured") == true)
+					if (bro.getPlaceInFormation() <= 17 && !bro.isPlacedOnMap() && bro.getFlags().get("Devoured") == true)
 					{
 						bro.onDeath(null, null, null, this.Const.FatalityType.Devoured);
 						this.World.getPlayerRoster().remove(bro);
 					}
-					else if (bro.getPlaceInFormation() <= 17)
+					else if (this.m.StrategicProperties.IsUsingSetPlayers && bro.isPlacedOnMap())
 					{
 						bro.getLifetimeStats().BattlesWithoutMe = 0;
-						bro.improveMood(this.Const.MoodChange.BattleWon, "Won a battle");
-					}
-					else if (bro.getMoodState() > this.Const.MoodState.Concerned && !bro.getCurrentProperties().IsContentWithBeingInReserve)
-					{
-						++bro.getLifetimeStats().BattlesWithoutMe;
 
-						if (bro.getLifetimeStats().BattlesWithoutMe > this.Math.max(2, 6 - bro.getLevel()))
+						if (this.m.StrategicProperties.IsArenaMode)
 						{
-							bro.worsenMood(this.Const.MoodChange.BattleWithoutMe, "Felt useless in reserve");
+							bro.improveMood(this.Const.MoodChange.BattleWon, "Won a fight in the arena");
+						}
+						else
+						{
+							bro.improveMood(this.Const.MoodChange.BattleWon, "Won a battle");
+						}
+					}
+					else if (!this.m.StrategicProperties.IsUsingSetPlayers)
+					{
+						if (bro.getPlaceInFormation() <= 17)
+						{
+							bro.getLifetimeStats().BattlesWithoutMe = 0;
+							bro.improveMood(this.Const.MoodChange.BattleWon, "Won a battle");
+						}
+						else if (bro.getMoodState() > this.Const.MoodState.Concerned && !bro.getCurrentProperties().IsContentWithBeingInReserve && !this.World.Assets.m.IsDisciplined)
+						{
+							++bro.getLifetimeStats().BattlesWithoutMe;
+
+							if (bro.getLifetimeStats().BattlesWithoutMe > this.Math.max(2, 6 - bro.getLevel()))
+							{
+								bro.worsenMood(this.Const.MoodChange.BattleWithoutMe, "Felt useless in reserve");
+							}
 						}
 					}
 				}
@@ -1792,7 +1922,7 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 				foreach( bro in playerRoster )
 				{
-					if (bro.getPlaceInFormation() <= 17 && !bro.isPlacedOnMap() && bro.getTags().get("Devoured") == true)
+					if (bro.getPlaceInFormation() <= 17 && !bro.isPlacedOnMap() && bro.getFlags().get("Devoured") == true)
 					{
 						if (bro.isAlive())
 						{
@@ -1800,7 +1930,7 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 							this.World.getPlayerRoster().remove(bro);
 						}
 					}
-					else if (bro.getPlaceInFormation() <= 17 && bro.isPlacedOnMap() && (bro.getTags().get("Charmed") == true || bro.getTags().get("Sleeping") == true || bro.getTags().get("Nightmare") == true))
+					else if (bro.getPlaceInFormation() <= 17 && bro.isPlacedOnMap() && (bro.getFlags().get("Charmed") == true || bro.getFlags().get("Sleeping") == true || bro.getFlags().get("Nightmare") == true))
 					{
 						if (bro.isAlive())
 						{
@@ -1836,10 +1966,19 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 					this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnLoss);
 					this.World.Contracts.onRetreatedFromCombat(this.m.StrategicProperties != null ? this.m.StrategicProperties.CombatID : "");
 					this.World.Events.onRetreatedFromCombat(this.m.StrategicProperties != null ? this.m.StrategicProperties.CombatID : "");
-					this.World.Statistics.get().LastEnemiesDefeatedCount = 0;
-					this.World.Statistics.get().LastCombatResult = 2;
+					this.World.Statistics.getFlags().set("LastEnemiesDefeatedCount", 0);
+					this.World.Statistics.getFlags().set("LastCombatResult", 2);
 				}
 			}
+		}
+
+		if (this.m.StrategicProperties != null && this.m.StrategicProperties.IsArenaMode)
+		{
+			this.Sound.play(this.Const.Sound.ArenaEnd[this.Math.rand(0, this.Const.Sound.ArenaEnd.len() - 1)], this.Const.Sound.Volume.Tactical);
+			this.Time.scheduleEvent(this.TimeUnit.Real, 4500, function ( _t )
+			{
+				this.Sound.play(this.Const.Sound.ArenaOutro[this.Math.rand(0, this.Const.Sound.ArenaOutro.len() - 1)], this.Const.Sound.Volume.Tactical);
+			}, null);
 		}
 
 		this.gatherBrothers(isVictory);
@@ -1858,7 +1997,7 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 			{
 				if (this.m.TacticalCombatResultScreen != null)
 				{
-					if (_isVictory && !this.Tactical.State.isScenarioMode() && this.Settings.getGameplaySettings().AutoLoot)
+					if (_isVictory && !this.Tactical.State.isScenarioMode() && this.m.StrategicProperties != null && !this.m.StrategicProperties.IsLootingProhibited && this.Settings.getGameplaySettings().AutoLoot)
 					{
 						this.m.TacticalCombatResultScreen.onLootAllItemsButtonPressed();
 						this.World.Assets.consumeItems();
@@ -1951,6 +2090,7 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 		local ob = this.m.TacticalScreen.getTopbarOptionsModule();
 		ob.setToggleStatsOverlaysButtonState(tempSettings.ShowOverlayStats);
 		ob.setToggleTreesButtonState(!tempSettings.HideTrees);
+		ob.setToggleHighlightBlockedTilesListenerButtonState(tempSettings.HighlightBlockedTiles);
 	}
 
 	function onCameraMovementStart()
@@ -1967,11 +2107,15 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 		this.init();
 	}
 
-	function topbar_options_onSwitchMapOrientationButtonClicked()
+	function topbar_options_onToggleHighlightBlockedTilesButtonClicked()
 	{
 		if (!this.isInputLocked())
 		{
-			this.rotateMap();
+			local settings = this.Settings.getTempGameplaySettings();
+			settings.HighlightBlockedTiles = !settings.HighlightBlockedTiles;
+			this.Tactical.setBlockedTileHighlightsVisibility(settings.HighlightBlockedTiles);
+			local ob = this.m.TacticalScreen.getTopbarOptionsModule();
+			ob.setToggleHighlightBlockedTilesListenerButtonState(settings.HighlightBlockedTiles);
 		}
 	}
 
@@ -2061,7 +2205,18 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 		this.logDebug("INFO: Next round issued: " + _round);
 		this.Time.setRound(_round);
 
-		if (this.Const.Sound.NewRound.len() > 0)
+		if (this.m.StrategicProperties != null && this.m.StrategicProperties.IsArenaMode)
+		{
+			if (_round == 1)
+			{
+				this.Sound.play(this.Const.Sound.ArenaStart[this.Math.rand(0, this.Const.Sound.ArenaStart.len() - 1)], this.Const.Sound.Volume.Tactical);
+			}
+			else
+			{
+				this.Sound.play(this.Const.Sound.ArenaNewRound[this.Math.rand(0, this.Const.Sound.ArenaNewRound.len() - 1)], this.Const.Sound.Volume.Tactical * this.Const.Sound.Volume.Arena);
+			}
+		}
+		else
 		{
 			this.Sound.play(this.Const.Sound.NewRound[this.Math.rand(0, this.Const.Sound.NewRound.len() - 1)], this.Const.Sound.Volume.Tactical);
 		}
@@ -2092,7 +2247,7 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 		this.Tactical.TopbarRoundInformation.update();
 		this.m.MaxHostiles = this.Math.max(this.m.MaxHostiles, this.Tactical.Entities.getHostilesNum());
 
-		if (_round > 1 && !this.Tactical.Entities.isCombatFinished())
+		if (_round > 1 && !this.Tactical.Entities.isCombatFinished() && !this.m.IsAutoRetreat)
 		{
 			this.Tactical.Entities.checkEnemyRetreating();
 
@@ -2210,8 +2365,10 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 	{
 		local rounds = this.Tactical.TurnSequenceBar.getCurrentRound();
 		local isWin = this.Tactical.Entities.getCombatResult() == this.Const.Tactical.CombatResult.EnemyDestroyed || this.Tactical.Entities.getCombatResult() == this.Const.Tactical.CombatResult.EnemyRetreated;
+		local isLooting = isWin && (this.m.StrategicProperties == null || !this.m.StrategicProperties.IsLootingProhibited);
 		local result = {
 			result = isWin ? "win" : "loose",
+			loot = isLooting,
 			title = "",
 			subTitle = ""
 		};
@@ -2716,10 +2873,9 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 			if (this.m.LastTileHovered != null && this.m.LastTileHovered.IsEmpty)
 			{
-				local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/orc_warlord");
+				local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/zombie");
 				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Goblins : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Goblins).getID());
 				e.assignRandomEquipment();
-				e.makeMiniboss();
 			}
 
 			break;
@@ -2732,8 +2888,8 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 			if (this.m.LastTileHovered != null && this.m.LastTileHovered.IsEmpty)
 			{
-				local e = this.Tactical.spawnEntity("scripts/entity/tactical/armored_warhound");
-				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Orcs : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Orcs).getID());
+				local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/goblin_fighter");
+				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Undead : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Undead).getID());
 				e.assignRandomEquipment();
 			}
 
@@ -2747,7 +2903,7 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 			if (this.m.LastTileHovered != null && this.m.LastTileHovered.IsEmpty)
 			{
-				local e = this.Tactical.spawnEntity("scripts/entity/tactical/warhound");
+				local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/goblin_ambusher");
 				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Undead : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Undead).getID());
 				e.assignRandomEquipment();
 			}
@@ -2762,10 +2918,10 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 			if (this.m.LastTileHovered != null && this.m.LastTileHovered.IsEmpty)
 			{
-				local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/orc_warrior");
+				local e = this.Tactical.spawnEntity("scripts/entity/tactical/humans/nomad_leader");
 				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Bandits : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Orcs).getID());
-				e.assignRandomEquipment();
 				e.makeMiniboss();
+				e.assignRandomEquipment();
 			}
 
 			break;
@@ -2776,11 +2932,13 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 				break;
 			}
 
-			if (this.m.LastTileHovered != null && this.m.LastTileHovered.IsEmpty)
+			if (this.m.LastTileHovered != null)
 			{
-				local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/goblin_wolfrider");
-				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Goblins : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Orcs).getID());
-				e.assignRandomEquipment();
+				for( local i = 0; i < this.Const.Tactical.HandgonneRightParticles.len(); i = ++i )
+				{
+					local effect = this.Const.Tactical.HandgonneRightParticles[i];
+					this.Tactical.spawnParticleEffect(false, effect.Brushes, this.m.LastTileHovered, effect.Delay, effect.Quantity, effect.LifeTimeQuantity, effect.SpawnRate, effect.Stages, this.createVec(0, 0));
+				}
 			}
 
 			break;
@@ -2841,8 +2999,9 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 			if (this.m.LastTileHovered != null && this.m.LastTileHovered.IsEmpty)
 			{
-				local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/ghost");
-				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Bandits : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Undead).getID());
+				local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/flying_skull");
+				e.setFaction(this.isScenarioMode() ? this.Const.Faction.OrientalBandits : this.World.FactionManager.getFactionOfType(this.Const.FactionType.OrientalBandits).getID());
+				e.assignRandomEquipment();
 			}
 
 			break;
@@ -2855,7 +3014,7 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 			if (this.m.LastTileHovered != null && this.m.LastTileHovered.IsEmpty)
 			{
-				local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/zombie_bodyguard");
+				local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/zombie");
 				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Undead : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Undead).getID());
 				e.assignRandomEquipment();
 			}
@@ -2870,8 +3029,63 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 			if (this.m.LastTileHovered != null && this.m.LastTileHovered.IsEmpty)
 			{
-				local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/necromancer");
-				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Barbarians : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Barbarians).getID());
+				local e = this.Tactical.spawnEntity("scripts/entity/tactical/humans/conscript_polearm");
+				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Undead : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Undead).getID());
+				e.assignRandomEquipment();
+			}
+
+			break;
+
+		case 53:
+			if (!this.m.IsDeveloperModeEnabled)
+			{
+				break;
+			}
+
+			if (this.m.LastTileHovered != null && this.m.LastTileHovered.IsEmpty)
+			{
+				local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/sand_golem");
+				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Beasts : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID());
+				e.assignRandomEquipment();
+			}
+
+			break;
+
+		case 54:
+			if (!this.m.IsDeveloperModeEnabled)
+			{
+				break;
+			}
+
+			if (this.m.LastTileHovered != null && this.m.LastTileHovered.IsEmpty)
+			{
+				local e;
+
+				if (this.Math.rand(0, 1) == 0)
+				{
+					e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/hyena");
+				}
+				else
+				{
+					e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/hyena_high");
+				}
+
+				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Beasts : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID());
+				e.assignRandomEquipment();
+			}
+
+			break;
+
+		case 45:
+			if (!this.m.IsDeveloperModeEnabled)
+			{
+				break;
+			}
+
+			if (this.m.LastTileHovered != null && this.m.LastTileHovered.IsEmpty)
+			{
+				local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/serpent");
+				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Beasts : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID());
 				e.assignRandomEquipment();
 			}
 
@@ -2885,8 +3099,8 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 			if (this.m.LastTileHovered != null && this.m.LastTileHovered.IsEmpty)
 			{
-				local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/alp");
-				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Beasts : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID());
+				local e = this.Tactical.spawnEntity("scripts/entity/tactical/humans/nomad_cutthroat");
+				e.setFaction(this.isScenarioMode() ? this.Const.Faction.OrientalBandits : this.World.FactionManager.getFactionOfType(this.Const.FactionType.OrientalBandits).getID());
 				e.assignRandomEquipment();
 			}
 
@@ -2900,8 +3114,8 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 			if (this.m.LastTileHovered != null && this.m.LastTileHovered.IsEmpty)
 			{
-				local e = this.Tactical.spawnEntity("scripts/entity/tactical/humans/barbarian_marauder");
-				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Barbarians : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Barbarians).getID());
+				local e = this.Tactical.spawnEntity("scripts/entity/tactical/humans/nomad_outlaw");
+				e.setFaction(this.isScenarioMode() ? this.Const.Faction.OrientalBandits : this.World.FactionManager.getFactionOfType(this.Const.FactionType.OrientalBandits).getID());
 				e.assignRandomEquipment();
 			}
 
@@ -2915,8 +3129,9 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 			if (this.m.LastTileHovered != null && this.m.LastTileHovered.IsEmpty)
 			{
-				local e = this.Tactical.spawnEntity("scripts/entity/tactical/humans/barbarian_champion");
-				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Barbarians : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Barbarians).getID());
+				local e;
+				e = this.Tactical.spawnEntity("scripts/entity/tactical/humans/nomad_slinger");
+				e.setFaction(this.isScenarioMode() ? this.Const.Faction.OrientalBandits : this.World.FactionManager.getFactionOfType(this.Const.FactionType.OrientalBandits).getID());
 				e.assignRandomEquipment();
 			}
 
@@ -2930,9 +3145,8 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 			if (this.m.LastTileHovered != null && this.m.LastTileHovered.IsEmpty)
 			{
-				local e = this.Tactical.spawnEntity("scripts/entity/tactical/humans/barbarian_chosen");
-				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Barbarians : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Barbarians).getID());
-				e.makeMiniboss();
+				local e = this.Tactical.spawnEntity("scripts/entity/tactical/humans/nomad_archer");
+				e.setFaction(this.isScenarioMode() ? this.Const.Faction.OrientalBandits : this.World.FactionManager.getFactionOfType(this.Const.FactionType.OrientalBandits).getID());
 				e.assignRandomEquipment();
 			}
 
@@ -2946,8 +3160,8 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 			if (this.m.LastTileHovered != null && this.m.LastTileHovered.IsEmpty)
 			{
-				local e = this.Tactical.spawnEntity("scripts/entity/tactical/humans/barbarian_drummer");
-				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Barbarians : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Barbarians).getID());
+				local e = this.Tactical.spawnEntity("scripts/entity/tactical/humans/conscript");
+				e.setFaction(this.isScenarioMode() ? this.Const.Faction.OrientalBandits : this.World.FactionManager.getFactionOfType(this.Const.FactionType.OrientalCityState).getID());
 				e.assignRandomEquipment();
 			}
 
@@ -2961,8 +3175,8 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 			if (this.m.LastTileHovered != null && this.m.LastTileHovered.IsEmpty)
 			{
-				local e = this.Tactical.spawnEntity("scripts/entity/tactical/humans/barbarian_beastmaster");
-				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Barbarians : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Barbarians).getID());
+				local e = this.Tactical.spawnEntity("scripts/entity/tactical/humans/gunner");
+				e.setFaction(this.isScenarioMode() ? this.Const.Faction.OrientalBandits : this.World.FactionManager.getFactionOfType(this.Const.FactionType.OrientalCityState).getID());
 				e.assignRandomEquipment();
 			}
 
@@ -2976,8 +3190,8 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 			if (this.m.LastTileHovered != null && this.m.LastTileHovered.IsEmpty)
 			{
-				local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/unhold");
-				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Barbarians : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Barbarians).getID());
+				local e = this.Tactical.spawnEntity("scripts/entity/tactical/objective/mortar");
+				e.setFaction(this.isScenarioMode() ? this.Const.Faction.OrientalBandits : this.World.FactionManager.getFactionOfType(this.Const.FactionType.OrientalCityState).getID());
 				e.assignRandomEquipment();
 			}
 
@@ -2991,8 +3205,8 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 			if (this.m.LastTileHovered != null && this.m.LastTileHovered.IsEmpty)
 			{
-				local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/unhold_frost_armored");
-				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Barbarians : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Barbarians).getID());
+				local e = this.Tactical.spawnEntity("scripts/entity/tactical/humans/engineer");
+				e.setFaction(this.isScenarioMode() ? this.Const.Faction.OrientalBandits : this.World.FactionManager.getFactionOfType(this.Const.FactionType.OrientalCityState).getID());
 				e.assignRandomEquipment();
 			}
 
@@ -3006,8 +3220,23 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 			if (this.m.LastTileHovered != null && this.m.LastTileHovered.IsEmpty)
 			{
-				local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/trickster_god");
-				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Barbarians : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Barbarians).getID());
+				local e = this.Tactical.spawnEntity("scripts/entity/tactical/humans/officer");
+				e.setFaction(this.isScenarioMode() ? this.Const.Faction.OrientalBandits : this.World.FactionManager.getFactionOfType(this.Const.FactionType.OrientalCityState).getID());
+				e.assignRandomEquipment();
+			}
+
+			break;
+
+		case 44:
+			if (!this.m.IsDeveloperModeEnabled)
+			{
+				break;
+			}
+
+			if (this.m.LastTileHovered != null && this.m.LastTileHovered.IsEmpty)
+			{
+				local e = this.Tactical.spawnEntity("scripts/entity/tactical/humans/assassin");
+				e.setFaction(this.isScenarioMode() ? this.Const.Faction.OrientalBandits : this.World.FactionManager.getFactionOfType(this.Const.FactionType.OrientalCityState).getID());
 				e.assignRandomEquipment();
 			}
 
@@ -3039,21 +3268,6 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 			if (this.m.LastTileHovered != null && this.m.LastTileHovered.IsEmpty)
 			{
 				local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/bandit_marksman");
-				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Beasts : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID());
-				e.assignRandomEquipment();
-			}
-
-			break;
-
-		case 53:
-			if (!this.m.IsDeveloperModeEnabled)
-			{
-				break;
-			}
-
-			if (this.m.LastTileHovered != null && this.m.LastTileHovered.IsEmpty)
-			{
-				local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/bandit_raider");
 				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Beasts : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID());
 				e.assignRandomEquipment();
 			}
@@ -3184,9 +3398,9 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 			if (this.m.LastTileHovered != null && !this.m.LastTileHovered.IsEmpty)
 			{
-				if ("setState" in this.m.LastTileHovered.getEntity())
+				if ("grow" in this.m.LastTileHovered.getEntity())
 				{
-					this.m.LastTileHovered.getEntity().setState(this.Math.rand(0, 4));
+					this.m.LastTileHovered.getEntity().grow();
 				}
 			}
 
@@ -3198,12 +3412,15 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 			}
 			else
 			{
-				if (this.m.LastTileHovered != null && this.m.LastTileHovered.IsEmpty)
+				if (this.m.LastTileHovered != null && !this.m.LastTileHovered.IsEmpty)
 				{
-					local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/ghoul");
-					e.setFaction(this.isScenarioMode() ? this.Const.Faction.Beasts : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID());
+					if ("shrink" in this.m.LastTileHovered.getEntity())
+					{
+						this.m.LastTileHovered.getEntity().shrink();
+					}
 				}
 
+				break;
 				break;
 			}
 		}
@@ -3293,6 +3510,10 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 				case 30:
 					this.topbar_options_onToggleTreesButtonClicked();
+					return true;
+
+				case 12:
+					this.topbar_options_onToggleHighlightBlockedTilesButtonClicked();
 					return true;
 
 				case 14:

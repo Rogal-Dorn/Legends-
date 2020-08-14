@@ -81,7 +81,16 @@ this.cultist_finale_event <- this.inherit("scripts/events/event", {
 				this.World.Assets.addMoralReputation(-10);
 				this.Characters.push(_event.m.Sacrifice.getImagePath());
 				local dead = _event.m.Sacrifice;
-				this.World.Statistics.addFallen(dead, "Sacrificed to Davkul");
+				local fallen = {
+					Name = dead.getName(),
+					Time = this.World.getTime().Days,
+					TimeWithCompany = this.Math.max(1, dead.getDaysWithCompany()),
+					Kills = dead.getLifetimeStats().Kills,
+					Battles = dead.getLifetimeStats().Battles,
+					KilledBy = "Sacrificed to Davkul",
+					Expendable = dead.getBackground().getID() == "background.slave"
+				};
+				this.World.Statistics.addFallen(fallen);
 				this.List.push({
 					id = 13,
 					icon = "ui/icons/kills.png",
@@ -231,7 +240,7 @@ this.cultist_finale_event <- this.inherit("scripts/events/event", {
 					bestCultist = bro;
 				}
 			}
-			else if (bro.getLevel() >= 11 && !bro.getSkills().hasSkill("trait.player"))
+			else if (bro.getLevel() >= 11 && !bro.getSkills().hasSkill("trait.player") && !bro.getSkills().hasSkill("trait.fabulous"))
 			{
 				sacrifice_candidates.push(bro);
 			}

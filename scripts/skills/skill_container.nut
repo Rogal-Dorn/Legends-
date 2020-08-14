@@ -67,6 +67,7 @@ this.skill_container <- {
 		{
 			this.m.Skills.push(_skill);
 			_skill.onAdded();
+			_skill.m.IsNew = false;
 			this.m.Skills.sort(this.compareSkillsByOrder);
 			this.update();
 		}
@@ -206,6 +207,7 @@ this.skill_container <- {
 			{
 				this.m.Skills.push(skill);
 				skill.onAdded();
+				skill.m.IsNew = false;
 			}
 
 			this.m.SkillsToAdd.clear();
@@ -255,7 +257,7 @@ this.skill_container <- {
 		return ret;
 	}
 
-	function querySortedByItems( _filter )
+	function querySortedByItems( _filter, _notFilter = 0 )
 	{
 		local ret = [];
 
@@ -266,7 +268,7 @@ this.skill_container <- {
 
 		foreach( skill in this.m.Skills )
 		{
-			if (!skill.isGarbage() && skill.isType(_filter) && !skill.isHidden())
+			if (!skill.isGarbage() && skill.isType(_filter) && !skill.isType(_notFilter) && !skill.isHidden())
 			{
 				if (skill.getItem() != null)
 				{
@@ -447,6 +449,7 @@ this.skill_container <- {
 		this.m.Actor.setActionPoints(this.Math.min(this.m.Actor.getActionPoints(), this.m.Actor.getActionPointsMax()));
 		this.m.Actor.setFatigue(this.Math.min(this.m.Actor.getFatigue(), this.m.Actor.getFatigueMax()));
 		this.m.IsUpdating = false;
+		this.m.Actor.onSkillsUpdated();
 		this.m.Actor.updateOverlay();
 	}
 
@@ -633,6 +636,31 @@ this.skill_container <- {
 			}
 
 			skill.onResumeTurn();
+
+			if (!this.m.Actor.isAlive())
+			{
+				break;
+			}
+		}
+
+		this.m.IsUpdating = false;
+		this.update();
+	}
+
+	function onRoundEnd()
+	{
+		this.m.IsUpdating = true;
+		this.m.IsBusy = false;
+		this.m.BusyStack = 0;
+
+		foreach( i, skill in this.m.Skills )
+		{
+			if (skill.isGarbage())
+			{
+				continue;
+			}
+
+			skill.onRoundEnd();
 
 			if (!this.m.Actor.isAlive())
 			{
@@ -979,9 +1007,18 @@ this.skill_container <- {
 		local numSkills = _in.readU16();
 		for( local i = 0; i < numSkills; i = ++i )
 		{
-			local skill = this.new(this.IO.scriptFilenameByHash(_in.readI32()));
-			skill.onDeserialize(_in);
-			this.add(skill);
+			local script = this.IO.scriptFilenameByHash(_in.readI32());
+
+			if (script != null)
+			{
+				local skill = this.new(script);
+				skill.onDeserialize(_in);
+				this.add(skill);
+			}
+			else if (_in.getMetaData().getVersion() >= 57)
+			{
+				_in.readU8();
+			}
 		}
 
 		this.m.IsUpdating = false;

@@ -149,6 +149,9 @@ this.goblin_fighter <- this.inherit("scripts/entity/tactical/goblin", {
 		];
 		this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_dodge"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_relentless"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_nine_lives"));
 		return true;
 	}
 

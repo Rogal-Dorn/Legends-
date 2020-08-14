@@ -102,7 +102,7 @@ this.ai_move_tentacle <- this.inherit("scripts/ai/tactical/behavior", {
 			}
 
 			local zocByAllies = targetTile.getZoneOfControlCountOtherThan(target.getAlliedFactions());
-			local potentialTiles = this.queryDestinationsInMeleeRange(targetTile, this.getProperties().EngageRangeMin, this.Math.max(_entity.getIdealRange(), this.getProperties().EngageRangeMax));
+			local potentialTiles = this.queryDestinationsInRange(targetTile, this.getProperties().EngageRangeMin, this.Math.max(_entity.getIdealRange(), this.getProperties().EngageRangeMax));
 			potentialTiles.push(myTile);
 
 			foreach( tile in potentialTiles )

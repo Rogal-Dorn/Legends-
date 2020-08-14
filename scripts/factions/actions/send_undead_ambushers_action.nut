@@ -97,9 +97,11 @@ this.send_undead_ambushers_action <- this.inherit("scripts/factions/faction_acti
 		local party = _faction.spawnEntity(settlement.getTile(), "Undead", false, this.Const.World.Spawn.UndeadScourge, rand * this.getReputationToDifficultyMult() * mult);
 		party.getSprite("banner").setBrush(settlement.getBanner());
 		party.setDescription("A legion of walking dead, back to claim from the living what was once theirs.");
+		party.setFootprintType(this.Const.World.FootprintsType.Undead);
 		party.setSlowerAtNight(false);
 		party.setUsingGlobalVision(false);
 		party.setLooting(false);
+		party.getFlags().set("IsRandomlySpawned", true);
 		party.getLoot().ArmorParts = this.Math.rand(0, 15);
 		local r = this.Math.rand(1, 3);
 

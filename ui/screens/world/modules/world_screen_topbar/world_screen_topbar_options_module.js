@@ -2,7 +2,7 @@
  *  @Project:		Battle Brothers
  *	@Company:		Overhype Studios
  *
- *	@Copyright:		(c) Overhype Studios | 2013 - 2017
+ *	@Copyright:		(c) Overhype Studios | 2013 - 2020
  * 
  *  @Author:		Overhype Studios
  *  @Date:			23.09.2017
@@ -24,7 +24,8 @@ var WorldScreenTopbarOptionsModule = function(_dataSource)
 
 	// buttons
     this.mBrothersButton = null;
-	this.mRelationsButton = null;
+    this.mRelationsButton = null;
+    this.mPerksButton = null;
 	this.mCampButton = null;
 	this.mCenterButton = null;
 	this.mCameraLockButton = null;
@@ -116,6 +117,13 @@ WorldScreenTopbarOptionsModule.prototype.createDIV = function (_parentDiv)
         self.notifyBackendTrackingButtonPressed();
     }, '', 6);
 
+    layout = $('<div class="l-perks-button"/>');
+    this.mContainer.append(layout);
+    this.mPerksButton = layout.createImageButton(Path.GFX + Asset.ICON_PERKS, function ()
+    {
+        self.notifyBackendPerksButtonPressed();
+    }, '', 6);
+
     layout = $('<div class="l-obituary-button"/>');
     this.mContainer.append(layout);
     this.mObituaryButton = layout.createImageButton(Path.GFX + Asset.ICON_OBITUARY, function ()
@@ -174,7 +182,8 @@ WorldScreenTopbarOptionsModule.prototype.bindTooltips = function ()
 	this.mCameraLockButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.WorldScreen.Topbar.OptionsModule.CameraLockButton });
 	this.mCenterButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.WorldScreen.Topbar.OptionsModule.CenterButton });
 	this.mTrackingButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.WorldScreen.Topbar.OptionsModule.TrackingButton });
-	this.mCampButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.WorldScreen.Topbar.OptionsModule.CampButton });
+    this.mCampButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.WorldScreen.Topbar.OptionsModule.CampButton });
+    this.mPerksButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.WorldScreen.Topbar.OptionsModule.PerksButton });
 	this.mObituaryButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.WorldScreen.Topbar.OptionsModule.ObituaryButton });
 	this.mQuitButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.WorldScreen.Topbar.OptionsModule.QuitButton });
 };
@@ -185,7 +194,8 @@ WorldScreenTopbarOptionsModule.prototype.unbindTooltips = function ()
 	this.mCameraLockButton.unbindTooltip();
 	this.mCenterButton.unbindTooltip();
 	this.mTrackingButton.unbindTooltip();
-	this.mCampButton.unbindTooltip();
+    this.mCampButton.unbindTooltip();
+    this.mPerksButton.unbindTooltip();
 	this.mObituaryButton.unbindTooltip();
     this.mQuitButton.unbindTooltip();
 };
@@ -294,6 +304,17 @@ WorldScreenTopbarOptionsModule.prototype.enableCampButton = function (_enabled)
 		this.mCampButton.changeButtonImage(Path.GFX + Asset.ICON_CAMP);
 	else
 		this.mCampButton.changeButtonImage(Path.GFX + Asset.ICON_CAMP_DISABLED);
+};
+
+
+WorldScreenTopbarOptionsModule.prototype.enablePerksButton = function (_enabled)
+{
+    this.mPerksButton.enableButton(_enabled);
+
+	if(_enabled)
+        this.mPerksButton.removeClass('display-none').addClass('display-block');
+	else
+        this.mPerksButton.removeClass('display-block').addClass('display-none');
 };
 
 
@@ -416,6 +437,11 @@ WorldScreenTopbarOptionsModule.prototype.notifyBackendCenterButtonPressed = func
 WorldScreenTopbarOptionsModule.prototype.notifyBackendTrackingButtonPressed = function ()
 {
     SQ.call(this.mSQHandle, 'onTrackingButtonPressed');
+};
+
+WorldScreenTopbarOptionsModule.prototype.notifyBackendPerksButtonPressed = function ()
+{
+    SQ.call(this.mSQHandle, 'onPerksButtonPressed');
 };
 
 WorldScreenTopbarOptionsModule.prototype.notifyBackendObituaryButtonPressed = function ()

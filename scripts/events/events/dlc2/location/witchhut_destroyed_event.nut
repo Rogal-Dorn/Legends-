@@ -191,7 +191,7 @@ this.witchhut_destroyed_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
-				this.World.Tags.set("IsWitchhutLeft", true);
+				this.World.Flags.set("IsWitchhutLeft", true);
 			}
 
 		});
@@ -213,7 +213,7 @@ this.witchhut_destroyed_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
-				this.World.Tags.set("IsWitchhutKilled", true);
+				this.World.Flags.set("IsWitchhutKilled", true);
 			}
 
 		});

@@ -58,7 +58,8 @@ gt.Const.UI <- {
 		Drink = "cursor_drink",
 		Give = "cursor_give",
 		Bandage = "cursor_bandage",
-		Rotation = "cursor_rotation"
+		Rotation = "cursor_rotation",
+		Enter = "cursor_enter"
 	},
 	Color = {
 		PositiveValue = "#135213",

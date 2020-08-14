@@ -30,7 +30,7 @@ this.roster_of_20_ambition <- this.inherit("scripts/ambitions/ambition", {
 			return;
 		}
 
-		if (this.World.Assets.getOrigin().getID() == "scenario.lone_wolf")
+		if (this.World.Assets.getBrothersMax() < 20)
 		{
 			return;
 		}

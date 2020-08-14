@@ -10,6 +10,9 @@ this.orc_camp_location <- this.inherit("scripts/entity/world/location", {
 		this.location.create();
 		this.m.TypeID = "location.orc_camp";
 		this.m.LocationType = this.Const.World.LocationType.Lair | this.Const.World.LocationType.Mobile;
+		this.m.CombatLocation.Template[0] = "tactical.orc_camp";
+		this.m.CombatLocation.Fortification = this.Const.Tactical.FortificationType.Palisade;
+		this.m.CombatLocation.CutDownTrees = true;
 		this.setDefenderSpawnList(this.Const.World.Spawn.OrcDefenders);
 		this.m.Resources = 140;
 		this.m.NamedWeaponsList = this.Const.Items.NamedOrcWeapons;
@@ -50,16 +53,6 @@ this.orc_camp_location <- this.inherit("scripts/entity/world/location", {
 		this.setVisibleInFogOfWar(true);
 		local body = this.addSprite("body");
 		body.setBrush("world_orc_camp_01");
-	}
-
-	function onSerialize( _out )
-	{
-		this.location.onSerialize(_out);
-	}
-
-	function onDeserialize( _in )
-	{
-		this.location.onDeserialize(_in);
 	}
 
 });

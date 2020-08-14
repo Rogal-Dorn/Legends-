@@ -310,14 +310,14 @@ this.legends_risen_legion <- this.inherit("scripts/scenarios/world/starting_scen
 			this.World.Events.fire("event.legend_risen_legion_intro");
 		}, null);
 
-				this.World.Tags.set("HasLegendCampGathering", true);
-				this.World.Tags.set("HasLegendCampCrafting", true);
-				this.World.Tags.set("HasLegendCampFletching", true);
-				this.World.Tags.set("HasLegendCampHealing", true);
-				this.World.Tags.set("HasLegendCampHunting", true);
-				this.World.Tags.set("HasLegendCampScouting", true);
-				this.World.Tags.set("HasLegendCampScraping", true);
-				this.World.Tags.set("HasLegendCampTraining", true);
+				this.World.Flags.set("HasLegendCampGathering", true);
+				this.World.Flags.set("HasLegendCampCrafting", true);
+				this.World.Flags.set("HasLegendCampFletching", true);
+				this.World.Flags.set("HasLegendCampHealing", true);
+				this.World.Flags.set("HasLegendCampHunting", true);
+				this.World.Flags.set("HasLegendCampScouting", true);
+				this.World.Flags.set("HasLegendCampScraping", true);
+				this.World.Flags.set("HasLegendCampTraining", true);
 	}
 
 	function onUpdateHiringRoster( _roster )

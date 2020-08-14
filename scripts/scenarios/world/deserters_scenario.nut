@@ -81,7 +81,7 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 	{
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
-		this.World.Assets.m.BusinessReputation = 100;
+		this.World.Assets.m.BusinessReputation = 150;
 		this.World.Assets.m.Money = this.World.Assets.m.Money / 2;
 	}
 
@@ -93,7 +93,7 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		{
 			randomVillage = this.World.EntityManager.getSettlements()[i];
 
-			if (randomVillage.isMilitary() && !randomVillage.isIsolatedFromRoads())
+			if (randomVillage.isMilitary() && !randomVillage.isIsolatedFromRoads() && !randomVillage.isSouthern())
 			{
 				break;
 			}
@@ -228,7 +228,7 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 			bro.m.CompanyID = val;
 		}
 
-		this.World.Tags.set("HasLegendCampScouting", true);
+		this.World.Flags.set("HasLegendCampScouting", true);
 		this.Time.scheduleEvent(this.TimeUnit.Real, 1000, function ( _tag )
 		{
 			this.Music.setTrackList([

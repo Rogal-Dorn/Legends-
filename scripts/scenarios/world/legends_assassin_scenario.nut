@@ -107,7 +107,7 @@ this.legends_assassin_scenario <- this.inherit("scripts/scenarios/world/starting
 	{
 		this.starting_scenario.onInit();
 		this.World.Assets.m.BrothersMax = 3;
-		this.World.Tags.set("IsLegendsAssassin", true);
+		this.World.Flags.set("IsLegendsAssassin", true);
 	}
 
 	function onCombatFinished()

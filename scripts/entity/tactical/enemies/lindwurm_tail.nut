@@ -142,7 +142,6 @@ this.lindwurm_tail <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.DecapitateSplatterOffset = this.createVec(-10, -25);
 		this.m.DecapitateBloodAmount = 1.0;
 		this.m.ConfidentMoraleBrush = "icon_confident_orcs";
-		this.m.IsUsingZoneOfControl = false;
 		this.actor.create();
 		this.m.Sound[this.Const.Sound.ActorEvent.DamageReceived] = [
 			"sounds/enemies/lindwurm_hurt_01.wav",
@@ -168,9 +167,9 @@ this.lindwurm_tail <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.Idle] = 2.0;
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.Attack] = 2.0;
 		this.m.SoundPitch = this.Math.rand(95, 105) * 0.01;
-		this.getTags().add("body_immune_to_acid");
-		this.getTags().add("head_immune_to_acid");
-		this.getTags().add("lindwurm");
+		this.getFlags().add("body_immune_to_acid");
+		this.getFlags().add("head_immune_to_acid");
+		this.getFlags().add("lindwurm");
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/lindwurm_tail_agent");
 		this.m.AIAgent.setActor(this);
 	}
@@ -517,6 +516,7 @@ this.lindwurm_tail <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Skills.add(this.new("scripts/skills/actives/tail_slam_skill"));
 		this.m.Skills.add(this.new("scripts/skills/actives/tail_slam_big_skill"));
 		this.m.Skills.add(this.new("scripts/skills/actives/tail_slam_split_skill"));
+		this.m.Skills.add(this.new("scripts/skills/actives/tail_slam_zoc_skill"));
 		this.m.Skills.add(this.new("scripts/skills/actives/move_tail_skill"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_hold_out"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_reach_advantage"));

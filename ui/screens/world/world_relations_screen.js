@@ -278,29 +278,11 @@ WorldRelationsScreen.prototype.addListEntry = function (_data)
     var row = $('<div class="row is-top"/>');
     column.append(row);
 
-//     var image = $('<img/>');
-//     image.attr('src', Path.GFX + _data['TypeImagePath']);
-//     row.append(image);
-
     // bind tooltip
     //image.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterBackgrounds.Generic, elementOwner: TooltipIdentifier.ElementOwner.HireScreen, entityId: _data[WorldTownScreenIdentifier.HireRosterEntry.Id] });
 
     var name = $('<div class="name title-font-normal font-bold font-color-brother-name">' + _data['Name'] + '</div>');
     row.append(name);
-
-    /* NOTE: (js) we wanted to remove the level icon and label
-    
-    var levelContainer = $('<div class="l-level-container"/>');
-    row.append(levelContainer);
-    image = $('<img/>');
-    image.attr('src', Path.GFX + Asset.ICON_LEVEL);
-    levelContainer.append(image);
-    // bin tooltip
-    image.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterLevels.Generic, elementOwner: TooltipIdentifier.ElementOwner.HireScreen, entityId: _data[WorldTownScreenIdentifier.HireRosterEntry.Id] });
-    var level = $('<div class="level text-font-normal font-bold font-color-value">' + _data[WorldTownScreenIdentifier.HireRosterEntry.Level] + '</div>');
-    levelContainer.append(level);
-    
-    */
 
     // bottom row
     row = $('<div class="row is-bottom"/>');
@@ -325,24 +307,6 @@ WorldRelationsScreen.prototype.addListEntry = function (_data)
 
     var progressbarLabel = $('<div class="stats-progressbar-label text-font-small font-color-progressbar-label">' + _data['Relation'] + '</div>');
     progressbarContainer.append(progressbarLabel);
-
-    /*var text;
-	if(_data['IsHostile'])
-		text = $('<div class="is-relation text-font-normal font-color-assets-negative-value">' + _data['Relation'] + '</div>');
-	else
-		text = $('<div class="is-relation text-font-normal font-color-assets-positive-value">' + _data['Relation'] + '</div>');
-
-    assetsContainer.append(text);*/
-
-//     // daily money
-//     assetsContainer = $('<div class="l-assets-container"/>');
-//     assetsCenterContainer.append(assetsContainer);
-//     image = $('<img/>');
-//     image.attr('src', Path.GFX + Asset.ICON_ASSET_DAILY_MONEY);
-//     assetsContainer.append(image);
-//     image.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.Assets.DailyMoney });
-//     text = $('<div class="label is-daily-money-cost text-font-normal font-color-assets-positive-value">' + Helper.numberWithCommas(_data[WorldTownScreenIdentifier.HireRosterEntry.DailyMoneyCost]) + '</div>');
-//     assetsContainer.append(text);
 };
 
 WorldRelationsScreen.prototype.selectListEntry = function(_element, _scrollToEntry)

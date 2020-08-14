@@ -1,11 +1,9 @@
 this.recovery_potion_effect <- this.inherit("scripts/skills/skill", {
-	m = {
-		TurnsLeft = 4
-	},
+	m = {},
 	function create()
 	{
 		this.m.ID = "effects.recovery_potion";
-		this.m.Name = "Second Wind Potion";
+		this.m.Name = "Enhanced Stamina";
 		this.m.Icon = "skills/status_effect_89.png";
 		this.m.IconMini = "status_effect_89_mini";
 		this.m.Overlay = "status_effect_89";
@@ -17,7 +15,7 @@ this.recovery_potion_effect <- this.inherit("scripts/skills/skill", {
 
 	function getDescription()
 	{
-		return "Thanks to taking a concoction of dubious ingredients, this character feels a second wind for another [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.TurnsLeft + "[/color] turn(s).";
+		return "I can do this all night! Thanks to a cocktail of ergogenic substances, euphemistically called a \'Second Wind Potion\', this character\'s heart is racing, he doesn\'t tire easily and his stamina is enhanced. Also, is it getting hot in here?";
 	}
 
 	function getTooltip()
@@ -37,7 +35,13 @@ this.recovery_potion_effect <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/fatigue.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Fatigue Recovery per turn"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+4[/color] Fatigue Recovery per turn"
+			},
+			{
+				id = 7,
+				type = "hint",
+				icon = "ui/icons/action_points.png",
+				text = "Will be gone after 1 more battle"
 			}
 		];
 		return ret;
@@ -45,20 +49,7 @@ this.recovery_potion_effect <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		_properties.FatigueRecoveryRate += 10;
-	}
-
-	function onAdded()
-	{
-		this.m.TurnsLeft = 4;
-	}
-
-	function onTurnEnd()
-	{
-		if (--this.m.TurnsLeft <= 0)
-		{
-			this.removeSelf();
-		}
+		_properties.FatigueRecoveryRate += 4;
 	}
 
 });

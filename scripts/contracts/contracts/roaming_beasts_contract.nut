@@ -56,21 +56,122 @@ this.roaming_beasts_contract <- this.inherit("scripts/contracts/contract", {
 			function end()
 			{
 				this.World.Assets.addMoney(this.Contract.m.Payment.getInAdvance());
-				local r = this.Math.rand(1, 100);
 
-				if (r <= 5 && this.World.Assets.getBusinessReputation() > 500)
+				if (this.Math.rand(1, 100) <= 5 && this.World.Assets.getBusinessReputation() > 500)
 				{
 					this.Flags.set("IsHumans", true);
 				}
-				else if (r <= 35)
+				else
 				{
-					this.Flags.set("IsGhouls", true);
-				}
-				else if (r <= 65)
-				{
+					local village = this.Contract.getHome().get();
+					local twists = [];
+					local r;
+					r = 50;
+
+					if (this.isKindOf(village, "small_lumber_village") || this.isKindOf(village, "medium_lumber_village"))
+					{
+						r = r + 50;
+					}
+					else if (this.isKindOf(village, "small_tundra_village") || this.isKindOf(village, "medium_tundra_village"))
+					{
+						r = r + 50;
+					}
+					else if (this.isKindOf(village, "small_snow_village") || this.isKindOf(village, "medium_snow_village"))
+					{
+						r = r + 50;
+					}
+					else if (this.isKindOf(village, "small_steppe_village") || this.isKindOf(village, "medium_steppe_village"))
+					{
+						r = r - 25;
+					}
+					else if (this.isKindOf(village, "small_swamp_village") || this.isKindOf(village, "medium_swamp_village"))
+					{
+						r = r - 25;
+					}
+
+					twists.push({
+						F = "IsDirewolves",
+						R = r
+					});
+					r = 50;
+
+					if (this.isKindOf(village, "small_steppe_village") || this.isKindOf(village, "medium_steppe_village"))
+					{
+						r = r + 50;
+					}
+					else if (this.isKindOf(village, "small_farming_village") || this.isKindOf(village, "medium_farming_village"))
+					{
+						r = r + 25;
+					}
+					else if (this.isKindOf(village, "small_tundra_village") || this.isKindOf(village, "medium_tundra_village"))
+					{
+						r = r - 25;
+					}
+					else if (this.isKindOf(village, "small_snow_village") || this.isKindOf(village, "medium_snow_village"))
+					{
+						r = r - 50;
+					}
+					else if (this.isKindOf(village, "small_swamp_village") || this.isKindOf(village, "medium_swamp_village"))
+					{
+						r = r + 25;
+					}
+
+					twists.push({
+						F = "IsGhouls",
+						R = r
+					});
+
 					if (this.Const.DLC.Unhold)
 					{
-						this.Flags.set("IsSpiders", true);
+						r = 50;
+
+						if (this.isKindOf(village, "small_lumber_village") || this.isKindOf(village, "medium_lumber_village"))
+						{
+							r = r + 100;
+						}
+						else if (this.isKindOf(village, "small_tundra_village") || this.isKindOf(village, "medium_tundra_village"))
+						{
+							r = r - 25;
+						}
+						else if (this.isKindOf(village, "small_steppe_village") || this.isKindOf(village, "medium_steppe_village"))
+						{
+							r = r - 25;
+						}
+						else if (this.isKindOf(village, "small_snow_village") || this.isKindOf(village, "medium_snow_village"))
+						{
+							r = r - 50;
+						}
+						else if (this.isKindOf(village, "small_swamp_village") || this.isKindOf(village, "medium_swamp_village"))
+						{
+							r = r + 25;
+						}
+
+						twists.push({
+							F = "IsSpiders",
+							R = r
+						});
+					}
+
+					local maxR = 0;
+
+					foreach( t in twists )
+					{
+						maxR = maxR + t.R;
+					}
+
+					local r = this.Math.rand(1, maxR);
+
+					foreach( t in twists )
+					{
+						if (r <= t.R)
+						{
+							this.Flags.set(t.F, true);
+							  // [346]  OP_JMP            0      5    0    0
+						}
+						else
+						{
+							r = r - t.R;
+						}
 					}
 				}
 				else if (r >= 99)
@@ -85,8 +186,10 @@ this.roaming_beasts_contract <- this.inherit("scripts/contracts/contract", {
 
 				if (this.Flags.get("IsHumans"))
 				{
-					party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Bandits).spawnEntity(tile, "Direwolves", false, this.Const.World.Spawn.BanditsDisguisedAsDirewolves, 100 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
+					party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Bandits).spawnEntity(tile, "Direwolves", false, this.Const.World.Spawn.BanditsDisguisedAsDirewolves, 100 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult());
 					party.setDescription("A pack of ferocious direwolves on the hunt for prey.");
+					party.setFootprintType(this.Const.World.FootprintsType.Direwolves);
+					this.Const.World.Common.addFootprintsFromTo(this.Contract.m.Home.getTile(), party.getTile(), this.Const.BeastFootprints, this.Const.World.FootprintsType.Direwolves, 0.75);
 				}
 				else if (this.Flags.get("IsVermes"))
 				{
@@ -95,23 +198,28 @@ this.roaming_beasts_contract <- this.inherit("scripts/contracts/contract", {
 				}
 				else if (this.Flags.get("IsGhouls"))
 				{
-					party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).spawnEntity(tile, "Nachzehrers", false, this.Const.World.Spawn.Ghouls, 110 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
+					party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).spawnEntity(tile, "Nachzehrers", false, this.Const.World.Spawn.Ghouls, 110 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult());
 					party.setDescription("A flock of scavenging nachzehrers.");
+					party.setFootprintType(this.Const.World.FootprintsType.Ghouls);
+					this.Const.World.Common.addFootprintsFromTo(this.Contract.m.Home.getTile(), party.getTile(), this.Const.BeastFootprints, this.Const.World.FootprintsType.Ghouls, 0.75);
 				}
 				else if (this.Flags.get("IsSpiders"))
 				{
-					party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).spawnEntity(tile, "Webknechts", false, this.Const.World.Spawn.Spiders, 110 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
+					party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).spawnEntity(tile, "Webknechts", false, this.Const.World.Spawn.Spiders, 110 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult());
 					party.setDescription("A swarm of webknechts skittering about.");
+					party.setFootprintType(this.Const.World.FootprintsType.Spiders);
+					this.Const.World.Common.addFootprintsFromTo(this.Contract.m.Home.getTile(), party.getTile(), this.Const.BeastFootprints, this.Const.World.FootprintsType.Spiders, 0.75);
 				}
 				else
 				{
-					party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).spawnEntity(tile, "Direwolves", false, this.Const.World.Spawn.Direwolves, 110 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
+					party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).spawnEntity(tile, "Direwolves", false, this.Const.World.Spawn.Direwolves, 110 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult());
 					party.setDescription("A pack of ferocious direwolves on the hunt for prey.");
+					party.setFootprintType(this.Const.World.FootprintsType.Direwolves);
+					this.Const.World.Common.addFootprintsFromTo(this.Contract.m.Home.getTile(), party.getTile(), this.Const.BeastFootprints, this.Const.World.FootprintsType.Direwolves, 0.75);
 				}
 
 				party.setAttackableByAI(false);
 				party.setFootprintSizeOverride(0.75);
-				this.Const.World.Common.addFootprintsFromTo(this.Contract.m.Home.getTile(), party.getTile(), this.Const.BeastFootprints, 0.75);
 				this.Contract.m.Target = this.WeakTableRef(party);
 				party.getSprite("banner").setBrush("banner_beasts_01");
 				local c = party.getController();

@@ -57,6 +57,12 @@ this.happy_powder_item <- this.inherit("scripts/items/item", {
 			type = "text",
 			text = "Right-click or drag onto the currently selected character in order to snort. This item will be consumed in the process."
 		});
+		result.push({
+			id = 65,
+			type = "hint",
+			icon = "ui/tooltips/warning.png",
+			text = "Overindulgence may lead to sickness"
+		});
 		return result;
 	}
 
@@ -69,6 +75,7 @@ this.happy_powder_item <- this.inherit("scripts/items/item", {
 	{
 		this.Sound.play("sounds/combat/taunt_03.wav", this.Const.Sound.Volume.Inventory);
 		_actor.improveMood(10.0, "Fear and loathing along the road");
+		this.Const.Tactical.Common.checkDrugEffect(_actor);
 		return true;
 	}
 

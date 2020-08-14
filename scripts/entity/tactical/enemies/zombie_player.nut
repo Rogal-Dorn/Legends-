@@ -34,6 +34,7 @@ this.zombie_player <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 		b.IsAffectedByInjuries = false;
 		b.IsImmuneToBleeding = true;
 		b.IsImmuneToPoison = true;
+		b.FatigueDealtPerHitMult = 2.0;
 		this.m.ActionPoints = b.ActionPoints;
 		this.m.Hitpoints = b.Hitpoints;
 		this.m.CurrentProperties = clone b;

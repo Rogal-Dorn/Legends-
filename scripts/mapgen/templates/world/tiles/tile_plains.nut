@@ -88,6 +88,8 @@ this.tile_plains <- this.inherit("scripts/mapgen/map_template", {
 		local urban = 0;
 		local highlands = 0;
 		local steppe = 0;
+		local desert = 0;
+		local oasis = 0;
 
 		for( local i = 0; i != 6; i = ++i )
 		{
@@ -134,6 +136,14 @@ this.tile_plains <- this.inherit("scripts/mapgen/map_template", {
 				{
 					steppe = ++steppe;
 				}
+				else if (nextTile.Type == this.Const.World.TerrainType.Desert)
+				{
+					desert = ++desert;
+				}
+				else if (nextTile.Type == this.Const.World.TerrainType.Oasis)
+				{
+					oasis = ++oasis;
+				}
 				else if (nextTile.Type == this.Const.World.TerrainType.AutumnForest)
 				{
 					forest_autumn = ++forest_autumn;
@@ -160,7 +170,7 @@ this.tile_plains <- this.inherit("scripts/mapgen/map_template", {
 			if (this.Math.rand(1, 100) <= 50 + forest_autumn * 10)
 			{
 				local r = this.Math.rand(1, 10);
-				local d = tile.spawnDetail("world_detail_autumn_light_" + (r < 10 ? "0" + r : r), this.Const.World.ZLevel.Object, 0);
+				tile.spawnDetail("world_detail_autumn_light_" + (r < 10 ? "0" + r : r), this.Const.World.ZLevel.Object, 0);
 			}
 		}
 		else if (mountain != 0 || hills >= 2)
@@ -175,6 +185,25 @@ this.tile_plains <- this.inherit("scripts/mapgen/map_template", {
 			if (this.Math.rand(1, 100) <= 50 + swamp * 4)
 			{
 				tile.spawnDetail("world_detail_swamp_light_0" + this.Math.rand(0, 9), this.Const.World.ZLevel.Object, this.Const.World.DetailType.Swamp);
+			}
+		}
+		else if (oasis != 0)
+		{
+			if (this.Math.rand(1, 100) <= 33)
+			{
+				tile.spawnDetail("world_oasis_transition_0" + this.Math.rand(1, 6), this.Const.World.ZLevel.Terrain, this.Const.World.DetailType.NotCompatibleWithRoad);
+			}
+
+			if (this.Math.rand(1, 100) <= 25)
+			{
+				local r = this.Math.rand(9, 13);
+
+				if (r < 10)
+				{
+					r = "0" + r;
+				}
+
+				tile.spawnDetail("world_detail_desert_oasis_" + r, this.Const.World.ZLevel.Object, 0);
 			}
 		}
 		else if (steppe != 0)

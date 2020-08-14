@@ -23,6 +23,7 @@ this.skeleton_heavy_bodyguard <- this.inherit("scripts/entity/tactical/skeleton"
 		b.IsImmuneToPoison = true;
 		b.IsSpecializedInAxes = true;
 		b.IsSpecializedInCleavers = true;
+		b.IsSpecializedInPolearms = true;
 		this.m.ActionPoints = b.ActionPoints;
 		this.m.Hitpoints = b.Hitpoints;
 		this.m.CurrentProperties = clone b;

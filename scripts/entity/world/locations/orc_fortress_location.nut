@@ -10,6 +10,9 @@ this.orc_fortress_location <- this.inherit("scripts/entity/world/location", {
 		this.location.create();
 		this.m.TypeID = "location.orc_fortress";
 		this.m.LocationType = this.Const.World.LocationType.Lair;
+		this.m.CombatLocation.Template[0] = "tactical.orc_camp";
+		this.m.CombatLocation.Fortification = this.Const.Tactical.FortificationType.Palisade;
+		this.m.CombatLocation.CutDownTrees = true;
 		this.m.IsShowingDefenders = false;
 		this.m.IsShowingBanner = true;
 		this.m.IsDespawningDefenders = false;
@@ -66,7 +69,7 @@ this.orc_fortress_location <- this.inherit("scripts/entity/world/location", {
 	{
 		this.location.onInit();
 		local body = this.addSprite("body");
-		body.setBrush("world_orc_camp_03");
+		body.setBrush("world_orc_camp_04");
 	}
 
 });

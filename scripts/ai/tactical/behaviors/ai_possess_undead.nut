@@ -69,7 +69,7 @@ this.ai_possess_undead <- this.inherit("scripts/ai/tactical/behavior", {
 
 		foreach( a in allAllies )
 		{
-			if (!a.getTags().has("zombie_minion"))
+			if (!a.getFlags().has("zombie_minion"))
 			{
 				continue;
 			}
@@ -82,7 +82,7 @@ this.ai_possess_undead <- this.inherit("scripts/ai/tactical/behavior", {
 			local score = 0.0;
 			local tile = a.getTile();
 			local distToMe = myTile.getDistanceTo(tile);
-			local zoc = tile.getZoneOfControlCountOtherThan(a.getAlliedFactions());
+			local zoc = tile.getZoneOfOccupationCountOtherThan(a.getAlliedFactions());
 
 			if (zoc == 0 && a.getCurrentProperties().IsRooted)
 			{

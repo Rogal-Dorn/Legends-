@@ -53,6 +53,12 @@ this.potion_of_knowledge_item <- this.inherit("scripts/items/item", {
 		}
 
 		result.push({
+			id = 13,
+			type = "text",
+			icon = "ui/icons/xp_received.png",
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+100%[/color] Experience Gain"
+		});
+		result.push({
 			id = 65,
 			type = "text",
 			text = "Right-click or drag onto the currently selected character in order to drink. This item will be consumed in the process."
@@ -68,7 +74,7 @@ this.potion_of_knowledge_item <- this.inherit("scripts/items/item", {
 	function onUse( _actor, _item = null )
 	{
 		this.Sound.play("sounds/combat/drink_03.wav", this.Const.Sound.Volume.Inventory);
-		_actor.getSkills().add(this.new("scripts/skills/effects_world/knowledge_potion_effect"));
+		_actor.getSkills().add(this.new("scripts/skills/effects_world/new_knowledge_potion_effect"));
 		this.Const.Tactical.Common.checkDrugEffect(_actor);
 		return true;
 	}

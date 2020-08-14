@@ -108,7 +108,7 @@ this.break_greenskin_siege_contract <- this.inherit("scripts/contracts/contract"
 				}
 
 				local faction = this.World.FactionManager.getFaction(this.Contract.getFaction());
-				local party = faction.spawnEntity(this.Contract.getHome().getTile(), this.Contract.getHome().getName() + " Company", true, this.Const.World.Spawn.Noble, 110 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
+				local party = faction.spawnEntity(this.Contract.getHome().getTile(), this.Contract.getHome().getName() + " Company", true, this.Const.World.Spawn.Noble, 110 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult());
 				party.getSprite("banner").setBrush(faction.getBannerSmall());
 				party.setDescription("Professional soldiers in service to local lords.");
 				this.Contract.m.Troops = this.WeakTableRef(party);
@@ -261,7 +261,7 @@ this.break_greenskin_siege_contract <- this.inherit("scripts/contracts/contract"
 					{
 						e.getSprite("selection").Visible = true;
 
-						if (e.getTags().has("SiegeEngine"))
+						if (e.getFlags().has("SiegeEngine"))
 						{
 							e.setOnCombatWithPlayerCallback(this.onCombatWithSiegeEngines.bindenv(this));
 						}
@@ -645,7 +645,7 @@ this.break_greenskin_siege_contract <- this.inherit("scripts/contracts/contract"
 				break;
 			}
 
-			local party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Goblins).spawnEntity(tile, "Siege Engines", false, this.Const.World.Spawn.GreenskinHorde, this.Math.rand(100, 120) * this.getDifficultyMult() * this.getReputationToDifficultyMult());
+			local party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Goblins).spawnEntity(tile, "Siege Engines", false, this.Const.World.Spawn.GreenskinHorde, this.Math.rand(100, 120) * this.getDifficultyMult() * this.getScaledDifficultyMult());
 			this.m.UnitsSpawned.push(party.getID());
 			party.setDescription("A horde of greenskins and their siege engines.");
 			local numSiegeUnits = this.Math.rand(3, 4);
@@ -666,7 +666,7 @@ this.break_greenskin_siege_contract <- this.inherit("scripts/contracts/contract"
 			party.getSprite("banner").Visible = false;
 			party.getSprite("base").Visible = false;
 			party.setAttackableByAI(false);
-			party.getTags().add("SiegeEngine");
+			party.getFlags().add("SiegeEngine");
 			local c = party.getController();
 			c.getBehavior(this.Const.World.AI.Behavior.ID.Flee).setEnabled(false);
 			c.getBehavior(this.Const.World.AI.Behavior.ID.Attack).setEnabled(false);
@@ -726,7 +726,7 @@ this.break_greenskin_siege_contract <- this.inherit("scripts/contracts/contract"
 				break;
 			}
 
-			local party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Orcs).spawnEntity(tile, "Greenskin Horde", false, this.Const.World.Spawn.GreenskinHorde, this.Math.rand(90, 110) * this.getDifficultyMult() * this.getReputationToDifficultyMult());
+			local party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Orcs).spawnEntity(tile, "Greenskin Horde", false, this.Const.World.Spawn.GreenskinHorde, this.Math.rand(90, 110) * this.getDifficultyMult() * this.getScaledDifficultyMult());
 			this.m.UnitsSpawned.push(party.getID());
 			party.setDescription("A horde of greenskins marching to war.");
 			party.getLoot().ArmorParts = this.Math.rand(0, 15);
@@ -802,7 +802,7 @@ this.break_greenskin_siege_contract <- this.inherit("scripts/contracts/contract"
 				{
 					e.setAttackableByAI(true);
 
-					if (e.getTags().has("SiegeEngine"))
+					if (e.getFlags().has("SiegeEngine"))
 					{
 						local c = e.getController();
 						c.clearOrders();

@@ -12,28 +12,6 @@ this.third_eye_item <- this.inherit("scripts/items/item", {
 		this.m.Value = 750;
 	}
 
-	function getTooltip()
-	{
-		local result = [
-			{
-				id = 1,
-				type = "title",
-				text = this.getName()
-			},
-			{
-				id = 2,
-				type = "description",
-				text = this.getDescription()
-			}
-		];
-		result.push({
-			id = 66,
-			type = "text",
-			text = this.getValueString()
-		});
-		return result;
-	}
-
 	function playInventorySound( _eventType )
 	{
 		this.Sound.play("sounds/combat/armor_leather_impact_03.wav", this.Const.Sound.Volume.Inventory);

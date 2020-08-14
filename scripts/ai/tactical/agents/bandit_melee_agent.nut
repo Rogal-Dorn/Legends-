@@ -60,7 +60,9 @@ this.bandit_melee_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_crush_armor"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_decapitate"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_knock_out"));
+		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_distract"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_lash"));
+		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_gash"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_defend_spearwall"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_defend_shieldwall"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_defend_knock_back"));
@@ -83,6 +85,15 @@ this.bandit_melee_agent <- this.inherit("scripts/ai/tactical/agent", {
 		else
 		{
 			this.m.Properties.EngageTargetMultipleOpponentsMult = 1.25;
+		}
+
+		if (item != null && item.isItemType(this.Const.Items.ItemType.Weapon) && item.getRangeIdeal() == 2)
+		{
+			this.m.Properties.EngageTargetAlreadyBeingEngagedMult = 0.25;
+		}
+		else
+		{
+			this.m.Properties.EngageTargetAlreadyBeingEngagedMult = 0.5;
 		}
 
 		this.m.Properties.BehaviorMult[this.Const.AI.Behavior.ID.Protect] = 0.0;

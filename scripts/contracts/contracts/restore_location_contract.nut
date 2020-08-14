@@ -14,7 +14,7 @@ this.restore_location_contract <- this.inherit("scripts/contracts/contract", {
 		this.contract.create();
 		this.m.DifficultyMult = this.Math.rand(70, 90) * 0.01;
 		this.m.Type = "contract.restore_location";
-		this.m.Name = "Rebuilding";
+		this.m.Name = "Rebuilding Effort";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 	}
 
@@ -63,14 +63,13 @@ this.restore_location_contract <- this.inherit("scripts/contracts/contract", {
 			function end()
 			{
 				this.World.Assets.addMoney(this.Contract.m.Payment.getInAdvance());
-				local r = 70;
+				local r = this.Math.rand(1, 100);
 
 				if (r <= 15)
 				{
 					this.Flags.set("IsEmpty", true);
 				}
-
-				if (r <= 30)
+				else if (r <= 30)
 				{
 					this.Flags.set("IsRefugees", true);
 				}
@@ -279,7 +278,7 @@ this.restore_location_contract <- this.inherit("scripts/contracts/contract", {
 			ShowDifficulty = true,
 			Options = [
 				{
-					Text = "{Sounds easy enough | Let\'s talk crowns.}",
+					Text = "{Sounds easy enough. | Let\'s talk crowns.}",
 					function getResult()
 					{
 						return "Negotiation";
@@ -339,7 +338,11 @@ this.restore_location_contract <- this.inherit("scripts/contracts/contract", {
 						p.TerrainTemplate = "tactical.plains";
 						p.PlayerDeploymentType = this.Const.Tactical.DeploymentType.Line;
 						p.EnemyDeploymentType = this.Const.Tactical.DeploymentType.Line;
-						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.BanditScouts, 80 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.World.FactionManager.getFactionOfType(this.Const.FactionType.Bandits).getID());
+						p.LocationTemplate = clone this.Const.Tactical.LocationTemplate;
+						p.LocationTemplate.Template[0] = "tactical.human_camp";
+						p.LocationTemplate.Fortification = this.Const.Tactical.FortificationType.None;
+						p.LocationTemplate.CutDownTrees = true;
+						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.BanditScouts, 90 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult(), this.World.FactionManager.getFactionOfType(this.Const.FactionType.Bandits).getID());
 						this.World.Contracts.startScriptedCombat(p, false, true, true);
 						return 0;
 					}
@@ -367,7 +370,7 @@ this.restore_location_contract <- this.inherit("scripts/contracts/contract", {
 						p.TerrainTemplate = "tactical.plains";
 						p.PlayerDeploymentType = this.Const.Tactical.DeploymentType.Line;
 						p.EnemyDeploymentType = this.Const.Tactical.DeploymentType.Line;
-						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Spiders, 80 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID());
+						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Spiders, 90 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult(), this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID());
 						this.World.Contracts.startScriptedCombat(p, false, true, true);
 						return 0;
 					}
@@ -561,6 +564,7 @@ this.restore_location_contract <- this.inherit("scripts/contracts/contract", {
 		party.getSprite("base").Visible = false;
 		party.setMirrored(true);
 		party.setDescription("A caravan of workers and building materials from " + this.m.Home.getName() + ".");
+		party.setFootprintType(this.Const.World.FootprintsType.Caravan);
 		party.setMovementSpeed(this.Const.World.MovementSettings.Speed * 0.5);
 		party.setLeaveFootprints(false);
 		local c = party.getController();

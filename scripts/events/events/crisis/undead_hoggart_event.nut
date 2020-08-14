@@ -323,12 +323,19 @@ this.undead_hoggart_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
-		if (!this.World.State.getPlayer().getTile().HasRoad)
+		local currentTile = this.World.State.getPlayer().getTile();
+
+		if (!currentTile.HasRoad)
 		{
 			return;
 		}
 
-		if (!this.World.Tags.get("IsHoggartDead") == true)
+		if (this.Const.DLC.Desert && currentTile.SquareCoords.Y <= this.World.getMapSize().Y * 0.2)
+		{
+			return;
+		}
+
+		if (!this.World.Flags.get("IsHoggartDead") == true)
 		{
 			return;
 		}

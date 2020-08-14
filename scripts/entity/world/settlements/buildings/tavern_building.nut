@@ -127,6 +127,16 @@ this.tavern_building <- this.inherit("scripts/entity/world/settlements/buildings
 	function buildText( _text )
 	{
 		local villages = this.World.EntityManager.getSettlements();
+		local towns = [];
+
+		foreach( v in villages )
+		{
+			if (!v.isSouthern())
+			{
+				towns.push(v);
+			}
+		}
+
 		local distance = this.m.Location != null && !this.m.Location.isNull() ? this.m.Settlement.getTile().getDistanceTo(this.m.Location.getTile()) : 0;
 		distance = this.Const.Strings.Distance[this.Math.min(this.Const.Strings.Distance.len() - 1, distance / 30.0 * (this.Const.Strings.Distance.len() - 1))];
 		local mercCompany = this.World.EntityManager.getMercenaries().len() != 0 ? this.World.EntityManager.getMercenaries()[this.Math.rand(0, this.World.EntityManager.getMercenaries().len() - 1)].getName() : this.Const.Strings.MercenaryCompanyNames[this.Math.rand(0, this.Const.Strings.MercenaryCompanyNames.len() - 1)];
@@ -182,7 +192,7 @@ this.tavern_building <- this.inherit("scripts/entity/world/settlements/buildings
 			],
 			[
 				"randomtown",
-				villages[this.Math.rand(0, villages.len() - 1)].getNameOnly()
+				towns[this.Math.rand(0, towns.len() - 1)].getNameOnly()
 			],
 			[
 				"randommercenarycompany",
@@ -287,11 +297,19 @@ this.tavern_building <- this.inherit("scripts/entity/world/settlements/buildings
 			}
 
 			local candidates = [];
-			local r = this.Math.rand(1, 5);
+			local r = this.World.Assets.m.IsNonFlavorRumorsOnly ? this.Math.rand(2, 6) : this.Math.rand(1, 6);
 
 			if (r <= 2)
 			{
-				candidates.extend(this.Const.Strings.RumorsGeneral);
+				if (this.World.FactionManager.isGreaterEvil())
+				{
+					candidates.extend(this.Const.Strings.RumorsGreaterEvil[this.World.FactionManager.getGreaterEvilType()]);
+					candidates.extend(this.Const.Strings.RumorsGreaterEvil[this.World.FactionManager.getGreaterEvilType()]);
+				}
+				else
+				{
+					candidates.extend(this.Const.Strings.RumorsGeneral);
+				}
 
 				if (this.m.Settlement.isMilitary())
 				{
@@ -356,7 +374,7 @@ this.tavern_building <- this.inherit("scripts/entity/world/settlements/buildings
 
 				foreach( s in this.World.EntityManager.getLocations() )
 				{
-					if (s.isLocationType(this.Const.World.LocationType.AttachedLocation) || s.isAlliedWithPlayer())
+					if (s.isLocationType(this.Const.World.LocationType.AttachedLocation) || s.isLocationType(this.Const.World.LocationType.Unique) || s.isAlliedWithPlayer())
 					{
 						continue;
 					}
@@ -448,12 +466,68 @@ this.tavern_building <- this.inherit("scripts/entity/world/settlements/buildings
 					{
 						candidates.extend(this.Const.Strings.RumorsItemsUndead[category]);
 					}
+					else if (f.getType() == this.Const.FactionType.Barbarians)
+					{
+						candidates.extend(this.Const.Strings.RumorsItemsBarbarians[category]);
+					}
+					else if (f.getType() == this.Const.FactionType.OrientalBandits)
+					{
+						candidates.extend(this.Const.Strings.RumorsItemsNomads[category]);
+					}
 					else
 					{
 						candidates.extend(this.Const.Strings.RumorsItemsBandits[category]);
 					}
 
 					this.m.Location = this.WeakTableRef(best);
+				}
+				else
+				{
+					candidates.extend(this.Const.Strings.RumorsGeneral);
+
+					if (this.m.Settlement.isMilitary())
+					{
+						candidates.extend(this.Const.Strings.RumorsMilitary);
+					}
+					else
+					{
+						candidates.extend(this.Const.Strings.RumorsCivilian);
+					}
+
+					candidates.extend(this.m.Settlement.getRumors());
+				}
+			}
+			else if (r == 6)
+			{
+				local best;
+				local bestDist = 9000;
+
+				foreach( s in this.World.EntityManager.getSettlements() )
+				{
+					if (s.getID() == this.m.Settlement.getID())
+					{
+						continue;
+					}
+
+					s.updateSituations();
+
+					if (s.getSituations().len() > 0)
+					{
+						local d = s.getTile().getDistanceTo(this.m.Settlement.getTile());
+
+						if (d < bestDist)
+						{
+							bestDist = d;
+							best = s;
+						}
+					}
+				}
+
+				if (best != null)
+				{
+					local situation = best.getSituations()[this.Math.rand(0, best.getSituations().len() - 1)];
+					candidates.extend(situation.getRumors());
+					this.m.ContractSettlement = this.WeakTableRef(best);
 				}
 				else
 				{
@@ -579,7 +653,7 @@ this.tavern_building <- this.inherit("scripts/entity/world/settlements/buildings
 			if ((b.getLastDrinkTime() == 0 || this.Time.getVirtualTimeF() - b.getLastDrinkTime() > this.World.getTime().SecondsPerDay) && this.Math.rand(1, 100) <= 35)
 			{
 				b.setLastDrinkTime(this.Time.getVirtualTimeF());
-				b.improveMood(1.0, "Got drunk with the company");
+				b.improveMood(this.Const.MoodChange.DrunkAtTavern, "Got drunk with the company");
 				result.Result.push({
 					Icon = this.Const.MoodStateIcon[b.getMoodState()],
 					Text = b.getName() + this.Const.MoodStateEvent[b.getMoodState()]

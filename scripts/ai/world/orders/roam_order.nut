@@ -108,9 +108,19 @@ this.roam_order <- this.inherit("scripts/ai/world/world_behavior", {
 	{
 		this.world_behavior.onDeserialize(_in);
 
-		for( local i = 0; i != this.Const.World.TerrainType.COUNT; i = ++i )
+		if (_in.getMetaData().getVersion() <= 49)
 		{
-			this.m.Terrain[i] = _in.readBool();
+			for( local i = 0; i <= this.Const.World.TerrainType.Shore; i = ++i )
+			{
+				this.m.Terrain[i] = _in.readBool();
+			}
+		}
+		else
+		{
+			for( local i = 0; i != this.Const.World.TerrainType.COUNT; i = ++i )
+			{
+				this.m.Terrain[i] = _in.readBool();
+			}
 		}
 
 		local pivotID = _in.readU32();

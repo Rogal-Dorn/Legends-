@@ -7,6 +7,11 @@ this.besieged_situation <- this.inherit("scripts/entity/world/settlements/situat
 		this.m.Name = "Besieged";
 		this.m.Description = "This place is or has until recently been besieged by the enemy! It\'s suffered damage, the supplies are low and many have lost their lives.";
 		this.m.Icon = "ui/settlement_status/settlement_effect_13.png";
+		this.m.Rumors = [
+			"Rocks and fire arrows flying, hot oil being poured, people starving and dying - that is a siege. You can head over to %settlement% and get a good close look yourself.",
+			"When I was younger, I served in %randomnoble%\'s army. The worst was a siege we partook in, it lasted for months. A shame that it is happening again right now in %settlement%.",
+			"Heard the word? %settlement% is under siege! Poor folks up in there will suffer a lot."
+		];
 		this.m.IsStacking = false;
 	}
 

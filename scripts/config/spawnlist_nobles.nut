@@ -28,7 +28,7 @@ gt.Const.World.Spawn.Noble <- {
 	],
 	Troops = [
 		{
-			Weight = 44,
+			Weight = 45,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Footman,
@@ -37,7 +37,7 @@ gt.Const.World.Spawn.Noble <- {
 			]
 		},
 		{
-			Weight = 21,
+			Weight = 25,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Billman,
@@ -46,7 +46,7 @@ gt.Const.World.Spawn.Noble <- {
 			]
 		},
 		{
-			Weight = 15,
+			Weight = 10,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Arbalester,

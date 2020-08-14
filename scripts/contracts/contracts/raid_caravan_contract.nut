@@ -140,7 +140,7 @@ this.raid_caravan_contract <- this.inherit("scripts/contracts/contract", {
 				{
 					spawnParty = this.Const.World.Spawn.MixedNobleCaravan;
 				}
-				local party = enemyFaction.spawnEntity(best_start.getTile(), "Caravan", false, this.Const.World.Spawn.NobleCaravan, 100 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
+				local party = enemyFaction.spawnEntity(best_start.getTile(), "Caravan", false, this.Const.World.Spawn.NobleCaravan, 100 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult());
 				party.getSprite("base").Visible = false;
 				party.getSprite("banner").setBrush(enemyFaction.getBannerSmall());
 				party.setMirrored(true);
@@ -148,8 +148,9 @@ this.raid_caravan_contract <- this.inherit("scripts/contracts/contract", {
 				party.setImportant(true);
 				party.setDiscovered(true);
 				party.setDescription("A caravan with armed escorts transporting something worth protecting between settlements.");
+				party.setFootprintType(this.Const.World.FootprintsType.Caravan);
 				party.setAttackableByAI(false);
-				party.getTags().add("ContractCaravan");
+				party.getFlags().add("ContractCaravan");
 				this.Contract.m.Target = this.WeakTableRef(party);
 				this.Contract.m.UnitsSpawned.push(party);
 				party.getLoot().Money = this.Math.rand(50, 100);
@@ -527,7 +528,7 @@ this.raid_caravan_contract <- this.inherit("scripts/contracts/contract", {
 							enemyFaction.getBannerSmall(),
 							this.Const.ZombieBanners[0]
 						];
-						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Necromancer, 100 * this.Contract.getReputationToDifficultyMult(), this.World.FactionManager.getFactionOfType(this.Const.FactionType.Zombies).getID());
+						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Necromancer, 100 * this.Contract.getScaledDifficultyMult(), this.World.FactionManager.getFactionOfType(this.Const.FactionType.Zombies).getID());
 						this.World.Contracts.startScriptedCombat(p, false, true, false);
 						return 0;
 					}
@@ -687,7 +688,7 @@ this.raid_caravan_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Screens.push({
 			ID = "Success1",
 			Title = "On your return...",
-			Text = "[img]gfx/ui/events/event_04.png[/img]{You return to %employer% with news of your success. He\'s got a warm greeting - a satchel heavy with crowns.%SPEECH_ON%Good job sellsword. Did you, uh, see anything else while down there?%SPEECH_OFF%It\'s an odd question, but you don\'t pursue it. You tell the man it went down just as the results show. He nods and quickly thanks you before returning to his work. | %employer%\'s standing by a window when you return. He\'s drinking a goblet of wine, swishing it around in both cup and mouth.%SPEECH_ON%My little birds tell me the caravan was destroyed. The songs they sing, are they true?%SPEECH_OFF%You nod and tell him of the news. He hands over a chest of crowns, thanking you for your service before returning to the window. You catch a wry grin on the side of his face just before you leave. | %employer%\'s petting a dog as you return. His hand his shaking through the fur.%SPEECH_ON%I take it the wagon train is destroyed?%SPEECH_OFF%You tell him the details. He nods, but his petting hand comes to a rest.%SPEECH_ON%Did you by any chance... find something interesting?%SPEECH_OFF%You think it over, but can\'t come up with anything out of the ordinary. The man grins and returns to petting his dog.%SPEECH_ON%Thank you for services, sellsword.%SPEECH_OFF% | %employer%\'s writing when you enter his room. He drops the quill pen in a hurry and stands up.%SPEECH_ON%So it\'s destroyed then? The caravan, I mean.%SPEECH_OFF%You report the results of your \'services.\' He laughs and claps his hands together.%SPEECH_ON%Excellent! Most excellent, sellsword! You\'ve no idea what your work has done for me today. Of course, your payment, as promised...%SPEECH_OFF%He hands over a satchel of %reward_completion% crowns. It\'s all there, but you have to wonder why the man was so giddy about something so seemingly ordinary... did you miss something? | %employer%\'s talking to his council when you return. He shoos them out. It is a strange sight - seeing these powerful figures making way for a motley sellsword. You stand a little taller as you report the news of the caravan\'s destruction.%SPEECH_ON%Thank you, mercenary. This is the sort of news I\'ve waiting for. And your payment, of course...%SPEECH_OFF%He heaves a wooden chest onto his desk and pushes it across. Its heavy enough to leave a mark.%SPEECH_ON%%reward_completion% crowns, as we agreed upon.%SPEECH_OFF%You\'re curious as to why the nobleman would excuse his council to take in a sellsword, but decide not to dwell on it.}",
+			Text = "[img]gfx/ui/events/event_04.png[/img]{You return to %employer% with news of your success. He\'s got a warm greeting - a satchel heavy with crowns.%SPEECH_ON%Good job sellsword. Did you, uh, see anything else while down there?%SPEECH_OFF%It\'s an odd question, but you don\'t pursue it. You tell the man it went down just as the results show. He nods and quickly thanks you before returning to his work. | %employer%\'s standing by a window when you return. He\'s drinking a goblet of wine, swishing it around in both cup and mouth.%SPEECH_ON%My little birds tell me the caravan was destroyed. The songs they sing, are they true?%SPEECH_OFF%You nod and tell him of the news. He hands over a chest of crowns, thanking you for your service before returning to the window. You catch a wry grin on the side of his face just before you leave. | %employer%\'s petting a dog as you return. His hand his shaking through the fur.%SPEECH_ON%I take it the wagon train is destroyed?%SPEECH_OFF%You tell him the details. He nods, but his petting hand comes to a rest.%SPEECH_ON%Did you by any chance... find something interesting?%SPEECH_OFF%You think it over, but can\'t come up with anything out of the ordinary. The man grins and returns to petting his dog.%SPEECH_ON%Thank you for services, sellsword.%SPEECH_OFF% | %employer%\'s writing when you enter his room. He drops the quill pen in a hurry and stands up.%SPEECH_ON%So it\'s destroyed then? The caravan, I mean.%SPEECH_OFF%You report the results of your \'services.\' He laughs and claps his hands together.%SPEECH_ON%Excellent! Most excellent, sellsword! You\'ve no idea what your work has done for me today. Of course, your payment, as promised...%SPEECH_OFF%He hands over a satchel of %reward_completion% crowns. It\'s all there, but you have to wonder why the man was so giddy about something so seemingly ordinary... did you miss something? | %employer%\'s talking to his council when you return. He shoos them out. It is a strange sight - seeing these powerful figures making way for a motley sellsword. You stand a little taller as you report the news of the caravan\'s destruction.%SPEECH_ON%Thank you, mercenary. This is the sort of news I\'ve been waiting for. And your payment, of course...%SPEECH_OFF%He heaves a wooden chest onto his desk and pushes it across. Its heavy enough to leave a mark.%SPEECH_ON%%reward_completion% crowns, as we agreed upon.%SPEECH_OFF%You\'re curious as to why the nobleman would excuse his council to take in a sellsword, but decide not to dwell on it.}",
 			Image = "",
 			Characters = [],
 			List = [],

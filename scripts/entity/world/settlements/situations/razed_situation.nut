@@ -7,6 +7,11 @@ this.razed_situation <- this.inherit("scripts/entity/world/settlements/situation
 		this.m.Name = "Razed";
 		this.m.Description = "This place has been razed. Many of its inhabitants lie slain, and any valuables have been plundered.";
 		this.m.Icon = "ui/settlement_status/settlement_effect_10.png";
+		this.m.Rumors = [
+			"Smoke columns can be seen from miles and miles away. There is naught more than a burning pile of rubble where %settlement% once stood.",
+			"Floods of refugees have been arriving from %settlement%. They claim that most of it has been burned to the ground! Can this be true?",
+			"%settlement% is no more, just a black charred skeleton smoking and smoldering... How did it come to this?"
+		];
 		this.m.IsStacking = false;
 	}
 

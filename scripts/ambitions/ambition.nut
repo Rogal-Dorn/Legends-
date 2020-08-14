@@ -2,6 +2,8 @@ this.ambition <- {
 	m = {
 		ID = "",
 		ButtonText = "",
+		TaskTooltip = "",
+		RewardTooltip = "",
 		UIText = "",
 		TooltipText = "",
 		SuccessText = "",
@@ -75,6 +77,45 @@ this.ambition <- {
 		this.m.IsDone = _d;
 	}
 
+	function getButtonTooltip()
+	{
+		local ret = [
+			{
+				id = 1,
+				type = "title",
+				text = "Your Task"
+			},
+			{
+				id = 2,
+				type = "text",
+				text = this.getTooltipText() + "\n\n"
+			},
+			{
+				id = 4,
+				type = "header",
+				text = "Your Reward"
+			}
+		];
+
+		if (this.m.RewardTooltip != "")
+		{
+			ret.push({
+				id = 5,
+				type = "text",
+				icon = "ui/icons/ambition_tooltip.png",
+				text = this.m.RewardTooltip
+			});
+		}
+
+		ret.push({
+			id = 6,
+			type = "text",
+			icon = "ui/icons/ambition_tooltip.png",
+			text = "Your Renown will increase, which means higher pay for contracts and potentially unlocking new types of contracts."
+		});
+		return ret;
+	}
+
 	function create()
 	{
 	}
@@ -115,6 +156,7 @@ this.ambition <- {
 		}
 
 		this.onReward();
+		this.m.CooldownUntil = this.Time.getVirtualTimeF() + 14.0 * this.World.getTime().SecondsPerDay;
 	}
 
 	function fail()

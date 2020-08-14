@@ -7,6 +7,11 @@ this.hunting_season_situation <- this.inherit("scripts/entity/world/settlements/
 		this.m.Name = "Hunting Season";
 		this.m.Description = "The forests are bustling with deer and it is hunting season. Venison and furs are in rich supply.";
 		this.m.Icon = "ui/settlement_status/settlement_effect_36.png";
+		this.m.Rumors = [
+			"Do you like venison, sellsword? And how about your men? I heard that hunting season has started in %settlement%. Just saying.",
+			"It\'s the time of the year that all hunters have been eagerly waiting for. The hunting season started around %settlement% just now!",
+			"Hunting outside the season might get you your hands cut right off! Doesn\'t matter, though, as the season will start any day now in the forests over by %settlement%."
+		];
 		this.m.IsStacking = false;
 		this.m.ValidDays = 5;
 	}

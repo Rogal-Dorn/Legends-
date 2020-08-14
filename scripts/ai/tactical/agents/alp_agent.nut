@@ -4,6 +4,7 @@ this.alp_agent <- this.inherit("scripts/ai/tactical/agent", {
 	{
 		this.agent.create();
 		this.m.ID = this.Const.AI.Agent.ID.Alp;
+		this.m.Properties.BehaviorMult[this.Const.AI.Behavior.ID.AttackDefault] = 1.25;
 		this.m.Properties.TargetPriorityHitchanceMult = 0.0;
 		this.m.Properties.TargetPriorityHitpointsMult = 0.4;
 		this.m.Properties.TargetPriorityRandomMult = 0.2;

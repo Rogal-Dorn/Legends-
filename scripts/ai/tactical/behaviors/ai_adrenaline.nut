@@ -41,7 +41,7 @@ this.ai_adrenaline <- this.inherit("scripts/ai/tactical/behavior", {
 		}
 
 		local myTile = _entity.getTile();
-		local isEngaged = myTile.hasZoneOfControlOtherThan(_entity.getAlliedFactions());
+		local isEngaged = myTile.hasZoneOfOccupationOtherThan(_entity.getAlliedFactions());
 		local attackSkill = _entity.getSkills().getAttackOfOpportunity();
 		local apRequiredForAttack = attackSkill != null ? attackSkill.getActionPointCost() : 4;
 

@@ -114,7 +114,7 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 	{
 		this.starting_scenario.onInit();
 		this.World.Assets.m.BrothersMax = 2;
-		this.World.Tags.set("IsLegendsCrusader", true);
+		this.World.Flags.set("IsLegendsCrusader", true);
 	}
 
 	function onCombatFinished()

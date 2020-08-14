@@ -84,7 +84,7 @@ this.legends_party_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	{
 		this.starting_scenario.onInit();
 		this.World.Assets.m.BrothersMax = 6;
-		this.World.Tags.set("IsLegendsParty", true);
+		this.World.Flags.set("IsLegendsParty", true);
 	}
 
 

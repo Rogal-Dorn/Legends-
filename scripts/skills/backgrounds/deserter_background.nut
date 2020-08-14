@@ -44,6 +44,7 @@ this.deserter_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.Body = "bust_naked_body_00";
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Good;
+		this.m.Bodies = this.Const.Bodies.Skinny;
 		this.m.Level = this.Math.rand(1, 2);
 		this.m.IsCombatBackground = true;
 		this.m.IsLowborn = true;

@@ -146,7 +146,7 @@ this.how_far_is_the_sun_event <- this.inherit("scripts/events/event", {
 
 				foreach( bro in brothers )
 				{
-					if (bro.getID() == _event.m.Monk.getID() || bro.getBackground().isCultist() || bro.getBackground().getID() == "background.legend_nun" || bro.getBackground().getID() == "background.historian" || bro.getBackground().getID() == "background.legend_inventor" || bro.getBackground().getID() == "background.legend_witch" || bro.getBackground().getID() == "background.legend_witch_commander" || bro.getBackground().getID() == "background.legend_necro" || bro.getBackground().getID() == "background.legend_necro_commander")
+					if (bro.getEthnicity() == 1 || bro.getID() == _event.m.Monk.getID() || bro.getBackground().isCultist() || bro.getBackground().getID() == "background.historian" || bro.getBackground().getID() == "background.legend_nun" || bro.getBackground().getID() == "background.historian" || bro.getBackground().getID() == "background.legend_inventor" || bro.getBackground().getID() == "background.legend_witch" || bro.getBackground().getID() == "background.legend_witch_commander" || bro.getBackground().getID() == "background.legend_necro" || bro.getBackground().getID() == "background.legend_necro_commander")
 					{
 						continue;
 					}
@@ -217,7 +217,20 @@ this.how_far_is_the_sun_event <- this.inherit("scripts/events/event", {
 							});
 						}
 					}
-					else if (bro.getSkills().hasSkill("trait.superstitious"))
+					else if (bro.getEthnicity() == 1)
+					{
+						bro.worsenMood(1.0, "Angry about the heretical ramblings of " + _event.m.Cultist.getName());
+
+						if (bro.getMoodState() < this.Const.MoodState.Neutral)
+						{
+							this.List.push({
+								id = 10,
+								icon = this.Const.MoodStateIcon[bro.getMoodState()],
+								text = bro.getName() + this.Const.MoodStateEvent[bro.getMoodState()]
+							});
+						}
+					}
+					else if (bro.getSkills().hasSkill("trait.superstitious") || bro.getSkills().hasSkill("trait.mad"))
 					{
 						bro.worsenMood(1.0, "Terrified at the prospect of a dying sun");
 
@@ -314,7 +327,7 @@ this.how_far_is_the_sun_event <- this.inherit("scripts/events/event", {
 			{
 				candidate_archer.push(bro);
 			}
-			else
+			else if (bro.getEthnicity() != 1 && bro.getBackground().getID() != "background.slave")
 			{
 				candidate_other.push(bro);
 			}

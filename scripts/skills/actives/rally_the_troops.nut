@@ -19,7 +19,7 @@ this.rally_the_troops <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
 		this.m.IsVisibleTileNeeded = false;
-		this.m.ActionPointCost = 6;
+		this.m.ActionPointCost = 5;
 		this.m.FatigueCost = 25;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 1;

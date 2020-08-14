@@ -224,7 +224,14 @@ this.civilwar_wounded_soldier_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
-		if (!this.World.State.getPlayer().getTile().HasRoad)
+		local currentTile = this.World.State.getPlayer().getTile();
+
+		if (!currentTile.HasRoad)
+		{
+			return;
+		}
+
+		if (this.Const.DLC.Desert && currentTile.SquareCoords.Y <= this.World.getMapSize().Y * 0.2)
 		{
 			return;
 		}

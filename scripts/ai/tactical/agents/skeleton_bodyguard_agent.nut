@@ -37,6 +37,26 @@ this.skeleton_bodyguard_agent <- this.inherit("scripts/ai/tactical/agent", {
 	function onUpdate()
 	{
 		this.setEngageRangeBasedOnWeapon();
+		local entities = this.Tactical.Entities.getInstancesOfFaction(this.getActor().getFaction());
+		local hasLich = false;
+
+		foreach( e in entities )
+		{
+			if (e.getType() == this.Const.EntityType.SkeletonLich)
+			{
+				hasLich = true;
+				break;
+			}
+		}
+
+		if (hasLich)
+		{
+			this.m.Properties.EngageTileLimit = 0;
+		}
+		else
+		{
+			this.m.Properties.EngageTileLimit = 3;
+		}
 	}
 
 });

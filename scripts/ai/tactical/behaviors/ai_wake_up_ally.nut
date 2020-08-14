@@ -3,7 +3,8 @@ this.ai_wake_up_ally <- this.inherit("scripts/ai/tactical/behavior", {
 		PossibleSkills = [
 			"actives.wake_ally"
 		],
-		Skill = null
+		Skill = null,
+		Target = null
 	},
 	function create()
 	{
@@ -15,6 +16,7 @@ this.ai_wake_up_ally <- this.inherit("scripts/ai/tactical/behavior", {
 	function onEvaluate( _entity )
 	{
 		this.m.Skill = null;
+		this.m.Target = null;
 		local score = this.getProperties().BehaviorMult[this.m.ID];
 
 		if (_entity.getActionPoints() < this.Const.Movement.AutoEndTurnBelowAP)
@@ -35,6 +37,30 @@ this.ai_wake_up_ally <- this.inherit("scripts/ai/tactical/behavior", {
 		}
 
 		score = score * this.getFatigueScoreMult(this.m.Skill);
+		local myTile = _entity.getTile();
+
+		for( local i = 0; i < 6; i = ++i )
+		{
+			if (!myTile.hasNextTile(i))
+			{
+			}
+			else
+			{
+				local nextTile = myTile.getNextTile(i);
+
+				if (nextTile.IsOccupiedByActor && nextTile.getEntity().isAlliedWith(_entity) && this.m.Skill.onVerifyTarget(myTile, nextTile))
+				{
+					this.m.Target = nextTile;
+					break;
+				}
+			}
+		}
+
+		if (this.m.Target == null)
+		{
+			return this.Const.AI.Behavior.Score.Zero;
+		}
+
 		return this.Const.AI.Behavior.Score.WakeUpAlly;
 	}
 
@@ -42,10 +68,10 @@ this.ai_wake_up_ally <- this.inherit("scripts/ai/tactical/behavior", {
 	{
 		if (this.Const.AI.VerboseMode)
 		{
-			this.logInfo("* " + _entity.getName() + ": Wakes Up Allies!");
+			this.logInfo("* " + _entity.getName() + ": Wakes Up Ally!");
 		}
 
-		this.m.Skill.use(_entity.getTile());
+		this.m.Skill.use(this.m.Target);
 
 		if (!_entity.isHiddenToPlayer())
 		{
@@ -53,6 +79,7 @@ this.ai_wake_up_ally <- this.inherit("scripts/ai/tactical/behavior", {
 		}
 
 		this.m.Skill = null;
+		this.m.Target = null;
 		return true;
 	}
 

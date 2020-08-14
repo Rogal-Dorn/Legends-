@@ -8,7 +8,7 @@ this.legend_camp_unlock_crafting <- this.inherit("scripts/events/event", {
 		this.m.Title = "At %townname%";
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/legend_camp_crafting.png[/img]", 
+			Text = "[img]gfx/ui/events/legend_camp_crafting.png[/img]",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -17,7 +17,7 @@ this.legend_camp_unlock_crafting <- this.inherit("scripts/events/event", {
 					Text = "Crafting unlocked in camp.",
 					function getResult( _event )
 					{
-						this.World.Tags.set("HasLegendCampCrafting", true);
+						this.World.Flags.set("HasLegendCampCrafting", true);
 					}
 
 				}
@@ -46,7 +46,7 @@ this.legend_camp_unlock_crafting <- this.inherit("scripts/events/event", {
 		this.m.TownName = _v;
 		this.m.Screens[0].Text += this.getText()
 	}
-	
+
 	function onUpdateScore()
 	{
 		return

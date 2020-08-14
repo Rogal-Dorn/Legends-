@@ -118,7 +118,7 @@ this.supposed_witch_event <- this.inherit("scripts/events/event", {
 						text = "The company\'s moral reputation increases"
 					});
 				local brothers = this.World.getPlayerRoster().getAll();
-				
+
 				local roster = this.World.getTemporaryRoster();
 				_event.m.Dude = roster.create("scripts/entity/tactical/player");
 					if (this.World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
@@ -130,7 +130,7 @@ this.supposed_witch_event <- this.inherit("scripts/events/event", {
 								this.Const.CharacterFemaleBackgrounds
 							);
 						_event.m.Dude.getSkills().add(this.new("scripts/skills/racial/skeleton_racial"));
-						_event.m.Dude.getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));							
+						_event.m.Dude.getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));
 						}
 					else
 					{
@@ -212,7 +212,7 @@ this.supposed_witch_event <- this.inherit("scripts/events/event", {
 
 				foreach( bro in brothers )
 				{
-					if (this.Math.rand(1, 100) <= 25 || bro.getBackground().getID() == "background.witchhunter" || bro.getBackground().getID() == "background.monk" || bro.getBackground().getID() == "background.legend_nun" || bro.getSkills().hasSkill("trait.superstitious"))
+					if (this.Math.rand(1, 100) <= 25 || bro.getBackground().getID() == "background.witchhunter" || bro.getBackground().getID() == "background.monk" || bro.getBackground().getID() == "background.legend_nun" || bro.getSkills().hasSkill("trait.superstitious") || bro.getSkills().hasSkill("trait.mad"))
 					{
 						bro.worsenMood(1.0, "You set free an evil spirit");
 

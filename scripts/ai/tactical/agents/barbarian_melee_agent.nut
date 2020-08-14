@@ -16,7 +16,7 @@ this.barbarian_melee_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.m.Properties.TargetPriorityArmorMult = 0.75;
 		this.m.Properties.OverallDefensivenessMult = 0.75;
 		this.m.Properties.OverallFormationMult = 0.75;
-		this.m.Properties.EngageFlankingMult = 1.5;
+		this.m.Properties.EngageFlankingMult = 1.25;
 		this.m.Properties.EngageTargetMultipleOpponentsMult = 1.25;
 		this.m.Properties.EngageTargetAlreadyBeingEngagedMult = 0.5;
 	}

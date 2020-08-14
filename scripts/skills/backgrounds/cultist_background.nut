@@ -52,6 +52,7 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Untidy;
 		this.m.Body = "bust_naked_body_00";
+		this.m.Bodies = this.Const.Bodies.Skinny;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Merciless;
 		this.m.IsOutlawBackground = true;
@@ -351,7 +352,7 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			[1, "hood"],
 			[1, "cultist_leather_hood"]
 		]));
-		
+
 	}
 });
 

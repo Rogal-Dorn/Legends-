@@ -14,12 +14,7 @@ this.find_and_destroy_location_ambition <- this.inherit("scripts/ambitions/ambit
 
 	function onUpdateScore()
 	{
-		if (this.World.Ambitions.getDone() < 1)
-		{
-			return;
-		}
-
-		if (this.World.Statistics.get().LastLocationDestroyedFaction != 0 && this.World.Statistics.get().LastLocationDestroyedForContract == false)
+		if (this.World.Statistics.getFlags().getAsInt("LastLocationDestroyedFaction") != 0 && this.World.Statistics.getFlags().get("LastLocationDestroyedForContract") == false)
 		{
 			return;
 		}
@@ -29,7 +24,7 @@ this.find_and_destroy_location_ambition <- this.inherit("scripts/ambitions/ambit
 
 	function onCheckSuccess()
 	{
-		if (this.World.Statistics.get().LastLocationDestroyedFaction != 0 && this.World.Statistics.get().LastLocationDestroyedForContract == false)
+		if (this.World.Statistics.getFlags().getAsInt("LastLocationDestroyedFaction") != 0 && this.World.Statistics.getFlags().get("LastLocationDestroyedForContract") == false)
 		{
 			return true;
 		}
@@ -108,7 +103,7 @@ this.find_and_destroy_location_ambition <- this.inherit("scripts/ambitions/ambit
 		]);
 		_vars.push([
 			"recently_destroyed",
-			this.World.Statistics.get().LastLocationDestroyedName
+			this.World.Statistics.getFlags().get("LastLocationDestroyedName")
 		]);
 	}
 

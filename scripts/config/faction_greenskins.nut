@@ -17,7 +17,7 @@ gt.Const.Tactical.Actor.OrcYoung <- {
 	Bravery = 65,
 	Stamina = 150,
 	MeleeSkill = 60,
-	RangedSkill = 45,
+	RangedSkill = 50,
 	MeleeDefense = -5,
 	RangedDefense = -5,
 	Initiative = 120,

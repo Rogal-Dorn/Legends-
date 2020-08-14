@@ -97,6 +97,8 @@ this.send_orc_roamers_action <- this.inherit("scripts/factions/faction_action", 
 		local party = this.getFaction().spawnEntity(settlement.getTile(), "Orc Hunters", false, this.Const.World.Spawn.OrcRoamers, this.Math.min(settlement.getResources(), rand) * this.getReputationToDifficultyLightMult());
 		party.getSprite("banner").setBrush(settlement.getBanner());
 		party.setDescription("A band of menacing orcs, greenskinned and towering any man.");
+		party.setFootprintType(this.Const.World.FootprintsType.Orcs);
+		party.getFlags().set("IsRandomlySpawned", true);
 		party.getLoot().ArmorParts = this.Math.rand(0, 25);
 		local numFood = this.Math.rand(2, 3);
 
