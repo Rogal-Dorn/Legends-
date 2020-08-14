@@ -520,493 +520,115 @@ gt.Const.World.Spawn.Necromancer <-
 }
 
 
-gt.Const.World.Spawn.NecromancerSouthern <- [
-	{
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_zombie_04",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Necromancer,
-				Num = 1
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.ZombieNomad,
-				Num = 3
-			}
-		]
-	},
-	{
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_zombie_04",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Necromancer,
-				Num = 1
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.ZombieNomad,
-				Num = 4
-			}
-		]
-	},
-	{
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_zombie_04",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Necromancer,
-				Num = 1
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.ZombieNomad,
-				Num = 5
-			}
-		]
-	},
-	{
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_zombie_04",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Necromancer,
-				Num = 1
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.ZombieNomad,
-				Num = 6
-			}
-		]
-	},
-	{
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_zombie_04",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Necromancer,
-				Num = 1
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.ZombieNomadBodyguard,
-				Num = 1
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.ZombieNomad,
-				Num = 6
-			}
-		]
-	},
-	{
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_zombie_04",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Necromancer,
-				Num = 1
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.ZombieNomadBodyguard,
-				Num = 2
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.ZombieNomad,
-				Num = 7
-			}
-		]
-	},
-	{
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_zombie_04",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Necromancer,
-				Num = 1
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.ZombieNomadBodyguard,
-				Num = 2
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.ZombieNomad,
-				Num = 8
-			}
-		]
-	},
-	{
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_zombie_04",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Necromancer,
-				Num = 1
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.ZombieNomadBodyguard,
-				Num = 2
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.ZombieNomad,
-				Num = 10
-			}
-		]
-	},
-	{
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_zombie_04",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Necromancer,
-				Num = 1
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.ZombieKnightBodyguard,
-				Num = 1
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.ZombieNomad,
-				Num = 8
-			}
-		]
-	},
-	{
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_zombie_04",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Necromancer,
-				Num = 1
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.ZombieNomadBodyguard,
-				Num = 1
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.ZombieKnightBodyguard,
-				Num = 1
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.ZombieNomad,
-				Num = 9
-			}
-		]
-	},
-	{
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_zombie_04",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Necromancer,
-				Num = 1
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.ZombieNomadBodyguard,
-				Num = 3
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.ZombieNomad,
-				Num = 10
-			}
-		]
-	},
-	{
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_zombie_04",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Necromancer,
-				Num = 1
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.ZombieNomadBodyguard,
-				Num = 2
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.ZombieNomad,
-				Num = 11
-			}
-		]
-	},
-	{
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_zombie_04",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Necromancer,
-				Num = 1
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.ZombieNomadBodyguard,
-				Num = 2
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.ZombieNomad,
-				Num = 12
-			}
-		]
-	},
-	{
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_zombie_04",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Necromancer,
-				Num = 1
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.ZombieNomadBodyguard,
-				Num = 2
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.ZombieNomad,
-				Num = 12
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.ZombieYeoman,
-				Num = 2
-			}
-		]
-	},
-	{
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_zombie_04",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Necromancer,
-				Num = 1
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.ZombieNomadBodyguard,
-				Num = 3
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.ZombieNomad,
-				Num = 14
-			}
-		]
-	},
-	{
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_zombie_04",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Necromancer,
-				Num = 2
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.ZombieNomadBodyguard,
-				Num = 3
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.ZombieNomad,
-				Num = 13
-			}
-		]
-	},
-	{
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_zombie_04",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Necromancer,
-				Num = 2
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.ZombieNomadBodyguard,
-				Num = 4
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.ZombieNomad,
-				Num = 15
-			}
-		]
-	},
-	{
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_zombie_04",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Necromancer,
-				Num = 1
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.ZombieKnightBodyguard,
-				Num = 2
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.ZombieNomad,
-				Num = 14
-			}
-		]
-	},
-	{
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_zombie_04",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Necromancer,
-				Num = 1
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.ZombieNomadBodyguard,
-				Num = 4
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.ZombieNomad,
-				Num = 16
-			}
-		]
-	},
-	{
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_zombie_04",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Necromancer,
-				Num = 1
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.ZombieNomadBodyguard,
-				Num = 4
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.ZombieNomad,
-				Num = 17
-			}
-		]
-	},
-	{
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_zombie_04",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Necromancer,
-				Num = 1
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.ZombieNomadBodyguard,
-				Num = 4
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.ZombieNomad,
-				Num = 18
-			}
-		]
-	},
-	{
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_zombie_04",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Necromancer,
-				Num = 2
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.ZombieNomadBodyguard,
-				Num = 5
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.ZombieNomad,
-				Num = 19
-			}
-		]
-	},
-	{
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_zombie_04",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Necromancer,
-				Num = 2
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.ZombieNomadBodyguard,
-				Num = 5
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.ZombieNomad,
-				Num = 21
-			}
-		]
-	}
-];
-
-function onCostCompare( _t1, _t2 )
+gt.Const.World.Spawn.NecromancerSouthern <-
 {
-	if (_t1.Cost < _t2.Cost)
-	{
-		return -1;
-	}
-	else if (_t1.Cost > _t2.Cost)
-	{
-		return 1;
-	}
-
-	return 0;
-}
-
-function calculateCosts( _p )
-{
-	foreach( p in _p )
-	{
-		p.Cost <- 0;
-
-		foreach( t in p.Troops )
+	Name = "NecromancerSouthern",
+	IsDynamic = true,
+	MovementSpeedMult = 0.8,
+	VisibilityMult = 1.0,
+	VisionMult = 0.8,
+	Body = "figure_zombie_04",
+	MaxR = 706,
+	MinR = 102,
+	Fixed = [
 		{
-			p.Cost += t.Type.Cost * t.Num;
-		}
-
-		if (!("MovementSpeedMult" in p))
+			Type = this.Const.World.Spawn.Troops.Necromancer,
+			Cost = 30,
+			MinGuards = 1,
+			MaxGuards = 2,
+			MaxGuardsWeight = 25,
+			Weight = 0,
+			Guards = [
+				{
+					Type = this.Const.World.Spawn.Troops.ZombieNomadBodyguard,
+					MinR = 200,
+					Cost = 6,
+					function Weight(scale) {
+						local c = 100 - (scale * 100)
+						return this.Math.max(0, c);
+					}
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.ZombieKnightBodyguard,
+					MinR = 400,
+					Cost = 24,
+					function Weight(scale) {
+						local c = 100 - ((1.0 - scale) * 100)
+						return this.Math.min(100, c);
+					}
+				}
+			]
+		}	
+	],
+	Troops = [
 		{
-			p.MovementSpeedMult <- 1.0;
+			Weight = 30,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.ZombieNomad,
+					Cost = 10
+				}
+			]
+		},
+		{
+			Weight = 45,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.ZombieYeoman,
+					Cost = 10
+				}
+			]
+		},
+		{
+			Weight = 14,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.ZombieNomadBodyguard,
+					MinR = 250,
+					Cost = 20
+				}
+			]
+		},
+		{
+			Weight = 5,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.ZombieKnight,
+					MinR = 400,
+					Cost = 30
+				}
+			]
 		}
-	}
-
-	_p.sort(this.onCostCompare);
-}
-
-this.calculateCosts(this.Const.World.Spawn.NecromancerSouthern);
+		{
+			Weight = 5,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.Necromancer,
+					Cost = 30,
+					Roll = true
+					MinGuards = 1,
+					MaxGuards = 2,
+					MaxGuardsWeight = 50,
+					Guards = [
+						{
+							Type = this.Const.World.Spawn.Troops.ZombieNomadBodyguard,
+							Cost = 6,
+							function Weight(scale) {
+								local c = 100 - (scale * 100)
+								return this.Math.max(0, c);
+							}
+						},
+						{
+							Type = this.Const.World.Spawn.Troops.ZombieKnightBodyguard,
+							Cost = 24,
+							function Weight(scale) {
+								local c = 100 - ((1.0 - scale) * 100)
+								return this.Math.min(100, c);
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+};
