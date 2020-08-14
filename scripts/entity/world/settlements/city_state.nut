@@ -79,7 +79,7 @@ this.city_state <- this.inherit("scripts/entity/world/settlement", {
 		return true;
 	}
 
-	function onBuild()
+	function onBuild( _settings = null)
 	{
 		local myTile = this.getTile();
 		local tiles = [

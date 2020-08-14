@@ -1419,7 +1419,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		return name;
 	}
 
-	function build( _settings )
+	function build( _settings = null)
 	{
 		if (this.m.IsCoastal && (this.m.Buildings[3] == null || this.m.Buildings[3].getID() != "building.port"))
 		{
@@ -1427,7 +1427,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			this.m.UIBackgroundLeft = "ui/settlements/water_01";
 		}
 
-		this.onBuild();
+		this.onBuild( _settings );
 
 		if (this.m.Size <= 1)
 		{
@@ -2211,7 +2211,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		}
 	}
 
-	function onBuild( _settings )
+	function onBuild( _settings = null )
 	{
 	}
 

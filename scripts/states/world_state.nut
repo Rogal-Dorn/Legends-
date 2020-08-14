@@ -1143,50 +1143,56 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.setPause(true);
 		this.Math.seedRandomString(this.m.CampaignSettings.Seed);
 		this.World.LegendsMod.Configs().Update(this.m.CampaignSettings);
-		this.Const.World.SettingsUpdate(this.m.CampaignSettings);
-		this.Const.World.SettlementsUpdate(this.m.CampaignSettings.NumSettlements);
+		//this.Const.World.SettingsUpdate(this.m.CampaignSettings);
+		//this.Const.World.SettlementsUpdate(this.m.CampaignSettings.NumSettlements);
 		local worldmap = this.MapGen.get("world.worldmap_generator");
 		local minX = this.Const.World.Settings.SizeX;
 		local minY = this.Const.World.Settings.SizeY;
 		this.World.resizeScene(minX, minY);
-		local tries = 200;
-		while (tries > 0)
-		{
-			local result = worldmap.fill({
-				X = 0,
-				Y = 0,
-				W = minX,
-				H = minY
-			}, this.m.CampaignSettings);
-			if (result)
-			{
-				break;
-			}
-			tries = --tries
-			this.logInfo("Invalid map. Regenerating...")
-			//Failures are because of water issues, help map generation towards default results
-			if (tries < 195)
-			{
-				if (this.Const.World.Settings.LandMassMult > 1.4) {
-					this.Const.World.Settings.LandMassMult -= 0.05;
-				} else {
-					this.Const.World.Settings.LandMassMult += 0.05;
-				}
+		worldmap.fill({
+			X = 0,
+			Y = 0,
+			W = minX,
+			H = minY
+		}, null);
+		// local tries = 200;
+		// while (tries > 0)
+		// {
+		// 	local result = worldmap.fill({
+		// 		X = 0,
+		// 		Y = 0,
+		// 		W = minX,
+		// 		H = minY
+		// 	}, this.m.CampaignSettings);
+		// 	if (result)
+		// 	{
+		// 		break;
+		// 	}
+		// 	tries = --tries
+		// 	this.logInfo("Invalid map. Regenerating...")
+		// 	//Failures are because of water issues, help map generation towards default results
+		// 	// if (tries < 195)
+		// 	// {
+		// 	// 	if (this.Const.World.Settings.LandMassMult > 1.4) {
+		// 	// 		this.Const.World.Settings.LandMassMult -= 0.05;
+		// 	// 	} else {
+		// 	// 		this.Const.World.Settings.LandMassMult += 0.05;
+		// 	// 	}
 
-				if (this.Const.World.Settings.WaterConnectivity > 38) {
-					this.Const.World.Settings.WaterConnectivity -= 1;
-				} else {
-					this.Const.World.Settings.WaterConnectivity += 1;
-				}
-				this.logInfo("LandMassMult = " + this.Const.World.Settings.LandMassMult);
-				this.logInfo("WaterConnectivity = " + this.Const.World.Settings.WaterConnectivity);
-			}
-		}
+		// 	// 	if (this.Const.World.Settings.WaterConnectivity > 38) {
+		// 	// 		this.Const.World.Settings.WaterConnectivity -= 1;
+		// 	// 	} else {
+		// 	// 		this.Const.World.Settings.WaterConnectivity += 1;
+		// 	// 	}
+		// 	// 	this.logInfo("LandMassMult = " + this.Const.World.Settings.LandMassMult);
+		// 	// 	this.logInfo("WaterConnectivity = " + this.Const.World.Settings.WaterConnectivity);
+		// 	// }
+		// }
 		this.m.Assets.init();
 		this.m.Camp.init();
-		this.LoadingScreen.updateProgress("Creating Factions ...");
-		this.World.FactionManager.createFactions();
-		this.LoadingScreen.updateProgress("Adding Roads ...");
+		//this.LoadingScreen.updateProgress("Creating Factions ...");
+		this.World.FactionManager.createFactions(this.m.CampaignSettings);
+		//this.LoadingScreen.updateProgress("Adding Roads ...");
 		this.World.EntityManager.buildRoadAmbushSpots();
 		this.Math.seedRandomString(this.m.CampaignSettings.Seed);
 		if (this.m.CampaignSettings != null)
