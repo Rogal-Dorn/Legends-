@@ -96,11 +96,11 @@ this.legend_barbarian_prisoner_action <- this.inherit("scripts/factions/faction_
 		{
 			return;
 		}
-		
+
 		local minResources = this.Const.World.LegendaryContract.BarbPrison * this.Const.World.ContractCost.BarbPrison + this.Const.World.ContractCost.BarbPrison;
-		
-		local currentResources = this.getDifficultyMult() * this.getReputationToDifficultyMult() * this.Const.World.ContractCost.BarbPrison;
-		
+
+		local currentResources = this.getDifficultyMult() * this.getScaledDifficultyMult() * this.Const.World.ContractCost.BarbPrison;
+
 		if(currentResources < minResources)
 		{
 			return;
@@ -109,7 +109,7 @@ this.legend_barbarian_prisoner_action <- this.inherit("scripts/factions/faction_
 		{
 			this.Const.World.LegendaryContract.BarbPrison += 1;
 		}
-		
+
 		this.m.Score = 5;
 	}
 

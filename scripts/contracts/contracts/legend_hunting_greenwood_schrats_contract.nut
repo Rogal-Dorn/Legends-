@@ -5,7 +5,7 @@ this.legend_hunting_greenwood_schrats_contract <- this.inherit("scripts/contract
 		IsPlayerAttacking = false,
 		MinStrength = 500,
 		Perk = "perk.legend_favoured_enemy_schrat",
-		ValidTypes = this.Const.LegendMod.FavoriteSchrat		
+		ValidTypes = this.Const.LegendMod.FavoriteSchrat
 	},
 	function create()
 	{
@@ -122,7 +122,7 @@ this.legend_hunting_greenwood_schrats_contract <- this.inherit("scripts/contract
 
 				local tile = this.Contract.getTileToSpawnLocation(playerTile, numWoods >= 12 ? 6 : 3, 11, disallowedTerrain);
 				local party;
-				party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).spawnEntity(tile, "Heartwood Schrats", false, this.Const.World.Spawn.LegendGreenwoodSchrat, 200 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
+				party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).spawnEntity(tile, "Heartwood Schrats", false, this.Const.World.Spawn.LegendGreenwoodSchrat, 200 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult());
 				party.setDescription("A creature of bark and wood, blending between trees and shambling slowly, its roots digging through the soil.");
 				party.setAttackableByAI(false);
 				party.setFootprintSizeOverride(0.85);
@@ -317,7 +317,7 @@ this.legend_hunting_greenwood_schrats_contract <- this.inherit("scripts/contract
 					Text = "Charge!",
 					function getResult()
 					{
-						this.Contract.addUnitsToEntity(this.Contract.m.Target, this.Const.World.Spawn.HexenAndMore, 70 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
+						this.Contract.addUnitsToEntity(this.Contract.m.Target, this.Const.World.Spawn.HexenAndMore, 70 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult());
 						this.Contract.getActiveState().onTargetAttacked(this.Contract.m.Target, this.Contract.m.IsPlayerAttacking);
 						return 0;
 					}
@@ -538,7 +538,7 @@ this.legend_hunting_greenwood_schrats_contract <- this.inherit("scripts/contract
 			}
 
 			local stats = this.Const.LegendMod.GetFavoriteEnemyStats(bro, this.m.ValidTypes);
-			if (stats.Strength >= this.m.MinStrength) 
+			if (stats.Strength >= this.m.MinStrength)
 			{
 				return true;
 			}

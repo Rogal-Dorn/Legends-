@@ -177,14 +177,14 @@
 
 	o.getScaledDifficultyMult = function()
 	{
-		local s = this.Math.maxf(0.75, 0.94 * this.Math.pow(0.01 * this.World.State.getPlayer().getStrength(), 0.94));
+		local s = this.Math.maxf(0.75, 0.94 * this.Math.pow(0.01 * this.World.State.getPlayer().getStrength(), 0.89));
 		local d = this.Math.minf(5.0, s);
 		return d * this.Const.Difficulty.EnemyMult[this.World.Assets.getCombatDifficulty()];
 	}
 
 	o.getPaymentMult = function()
 	{
-		local repDiffMult = this.Math.pow(this.getReputationToDifficultyMult(), 0.5);
+		local repDiffMult = this.Math.pow(this.getScaledDifficultyMult(), 0.5);
 		local broMult = this.World.State.getPlayer().getBarterMult();
 		return (this.m.PaymentMult + broMult) * (this.m.DifficultyMult * repDiffMult) * this.World.Assets.m.ContractPaymentMult;
 	}

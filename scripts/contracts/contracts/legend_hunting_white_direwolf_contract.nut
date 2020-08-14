@@ -89,7 +89,7 @@ this.legend_hunting_white_direwolf_contract <- this.inherit("scripts/contracts/c
 				]);
 				local nearTile = this.Contract.getTileToSpawnLocation(playerTile, 4, 8);
 				local party;
-				party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).spawnEntity(tile, "White Wolf Pack", false, this.Const.World.Spawn.LegendWhiteDirewolf, 200 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
+				party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).spawnEntity(tile, "White Wolf Pack", false, this.Const.World.Spawn.LegendWhiteDirewolf, 200 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult());
 
 				party.setDescription("The wolf pack of the legendary White Wolf.");
 				party.setAttackableByAI(false);
@@ -341,7 +341,7 @@ this.legend_hunting_white_direwolf_contract <- this.inherit("scripts/contracts/c
 					Text = "We still need to catch the other wolf",
 					function getResult()
 					{
-	
+
 						return 0;
 					}
 
@@ -378,7 +378,7 @@ this.legend_hunting_white_direwolf_contract <- this.inherit("scripts/contracts/c
 					Text = "",
 					function getResult()
 					{
-						this.Contract.addUnitsToEntity(this.Contract.m.Target, this.Const.World.Spawn.LegendWhiteDirewolf, 70 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
+						this.Contract.addUnitsToEntity(this.Contract.m.Target, this.Const.World.Spawn.LegendWhiteDirewolf, 70 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult());
 						this.Contract.getActiveState().onTargetAttacked(this.Contract.m.Target, false);
 						return 0;
 					}
@@ -392,7 +392,7 @@ this.legend_hunting_white_direwolf_contract <- this.inherit("scripts/contracts/c
 				local injury2;
 				if (this.Math.rand(1, 100) <= 90)
 				{
-							
+
 					injury1 = this.Contract.m.Dude.addInjury(this.Const.Injury.BluntBody);
 					injury2 = this.Contract.m.Dude.addInjury(this.Const.Injury.BluntBody);
 				}
@@ -552,7 +552,7 @@ this.legend_hunting_white_direwolf_contract <- this.inherit("scripts/contracts/c
 			}
 
 			local stats = this.Const.LegendMod.GetFavoriteEnemyStats(bro, this.m.ValidTypes);
-			if (stats.Strength >= this.m.MinStrength) 
+			if (stats.Strength >= this.m.MinStrength)
 			{
 				return true;
 			}
