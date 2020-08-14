@@ -4723,9 +4723,39 @@ function calculateCosts( _p )
 	}
 
 	_p.sort(this.onCostCompare);
+
+	this.logInfo("minR " + _p[0].Cost + " : MaxR " +_p[_p.len() - 1].Cost);
+	local firstCost = 0;
+	local _map = {}
+	foreach ( p in _p)
+	{
+		firstCost += p.Cost;
+		foreach (t in p.Troops)
+		{
+			local ID = "" + t.Type.Script
+			if (!(ID in _map))
+			{
+				this.logInfo("adding  " + ID)
+				_map[ID] <- {
+					First = firstCost
+					Total = 0
+				}
+			}
+			local obj = _map[ID];
+			obj.Total += t.Num;
+		}
+	}
+	foreach (k, v in _map)
+	{
+		this.logInfo(k + " First : " + v.First + " Num : " + v.Total);
+	}
 }
 
+this.logInfo("Costs for NomadRomaer")
 this.calculateCosts(this.Const.World.Spawn.NomadRoamers);
+this.logInfo("Costs for NomadRaiders")
 this.calculateCosts(this.Const.World.Spawn.NomadRaiders);
+this.logInfo("Costs for NomadDefenders")
 this.calculateCosts(this.Const.World.Spawn.NomadDefenders);
+
 

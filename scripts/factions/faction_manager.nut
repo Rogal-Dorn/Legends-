@@ -291,12 +291,7 @@ this.faction_manager <- {
 
 			if (!_explorationMode && (s.getOwner() != null || s.getSize() >= 2))
 			{
-				local vis = 2100;
-				if (_fow)
-				{
-					vis = 0;
-				}
-				this.World.uncoverFogOfWar(s.getTile().Pos, vis);
+				this.World.uncoverFogOfWar(s.getTile().Pos, 2100);
 			}
 		}
 	}
