@@ -750,7 +750,7 @@ this.asset_manager <- {
 		this.m.Stash.setID("player");
 		local globalTable = this.getroottable();
 		globalTable.Stash <- this.WeakTableRef(this.m.Stash);
-		for( local i = 0; i < this.Const.Formations.Count; i = ++i )
+		for( local i = 0; i < this.Const.LegendMod.Formations.Count; i = ++i )
         {
 			local name = "NULL"
 			if (i == 0)
@@ -2477,7 +2477,7 @@ this.asset_manager <- {
 
 		if (_in.getMetaData().getVersion() >= 47 )
 		{
-			for( local i = 0; i < this.Const.Formations.Count; i = ++i )
+			for( local i = 0; i < this.Const.LegendMod.Formations.Count; i = ++i )
 			{
 				this.setFormationName(i, _in.readString())
 			}

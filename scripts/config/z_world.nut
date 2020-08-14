@@ -2,24 +2,24 @@ local gt = this.getroottable();
 
 gt.Const.World.SettingsUpdate <- function (_settings)
 {
-	this.Const.World.Settings.SizeX = _settings.Width;
-	this.Const.World.Settings.SizeY = _settings.Height;
-	this.Const.World.Settings.LandMassMult = _settings.LandMassMult;
-	this.Const.World.Settings.WaterConnectivity = _settings.WaterConnectivity;
-	if ( _settings.LandMassMult < 1.1) {
-		this.Const.World.Settings.MinLandToWaterRatio = 1.0;
-	} else if  ( _settings.LandMassMult < 1.2 ) {
-		this.Const.World.Settings.MinLandToWaterRatio = 1.2;
-	} else if  ( _settings.LandMassMult < 1.3 ) {
-		this.Const.World.Settings.MinLandToWaterRatio = 1.3;
-	} else if  ( _settings.LandMassMult < 1.4 ) {
-		this.Const.World.Settings.MinLandToWaterRatio = 1.4;
-	}
-	//this.Const.World.Settings.MinLandToWaterRatio = _settings.MinLandToWaterRatio;
-	this.Const.World.Settings.Snowline = _settings.Snowline;
-	this.Const.World.Settings.ForestsMult <- _settings.ForestsMult;
-	this.Const.World.Settings.SwampsMult <- _settings.SwampsMult;
-	this.Const.World.Settings.MountainsMult <- _settings.MountainsMult;
+	// this.Const.World.Settings.SizeX = _settings.Width;
+	// this.Const.World.Settings.SizeY = _settings.Height;
+	// this.Const.World.Settings.LandMassMult = _settings.LandMassMult;
+	// this.Const.World.Settings.WaterConnectivity = _settings.WaterConnectivity;
+	// if ( _settings.LandMassMult < 1.1) {
+	// 	this.Const.World.Settings.MinLandToWaterRatio = 1.0;
+	// } else if  ( _settings.LandMassMult < 1.2 ) {
+	// 	this.Const.World.Settings.MinLandToWaterRatio = 1.2;
+	// } else if  ( _settings.LandMassMult < 1.3 ) {
+	// 	this.Const.World.Settings.MinLandToWaterRatio = 1.3;
+	// } else if  ( _settings.LandMassMult < 1.4 ) {
+	// 	this.Const.World.Settings.MinLandToWaterRatio = 1.4;
+	// }
+	// //this.Const.World.Settings.MinLandToWaterRatio = _settings.MinLandToWaterRatio;
+	// this.Const.World.Settings.Snowline = _settings.Snowline;
+	// this.Const.World.Settings.ForestsMult <- _settings.ForestsMult;
+	// this.Const.World.Settings.SwampsMult <- _settings.SwampsMult;
+	// this.Const.World.Settings.MountainsMult <- _settings.MountainsMult;
 	// this.Const.World.Settings.Vision = _settings.Vision
 	//Vision = 500.0
 };
@@ -27,22 +27,18 @@ gt.Const.World.SettingsUpdate <- function (_settings)
 
 gt.Const.World.SettlementsUpdate <- function (_val)
 {
-	foreach (s in gt.Const.World.Settlements.Master)
+	local total = 0.0
+	foreach(s in gt.Const.World.Settlements.Master)
 	{
-		s.Amount = Math.ceil(_val * s.Percentage);
+		total = total + s.Amount;
+	}
+
+	foreach(s in gt.Const.World.Settlements.Master)
+	{
+		s.Percentage <- s.Amount / total;
+		s.Amount = Math.ceil(_val * (s.Amount / total));
 	}
 };
-
-local total = 0.0
-foreach(s in gt.Const.World.Settlements.Master)
-{
-	total = total + s.Amount;
-}
-
-foreach(s in gt.Const.World.Settlements.Master)
-{
-	s.Percentage <- s.Amount / total;
-}
 
 
 gt.Const.World.Settlements.LegendsWorldMaster <- [

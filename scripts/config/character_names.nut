@@ -2045,3 +2045,23 @@ gt.Const.Strings.FallenHeroTitles <- [
 	"the Soulless",
 	"the Vessel"
 ];
+gt.Const.Strings.NecromancerNames <- [
+	"King of Worms",
+	"%randomname% the Undying",
+	"%randomname% the Black",
+	"%randomname% the Necromancer",
+	"The Puppeteer",
+	"The Plaguebringer",
+	"The Dark Master",
+	"The Reanimator",
+	"%randomname% the Mad",
+	"%randomname% the Obsessed",
+	"The Pale Duke",
+	"The Master of Undeath",
+	"%randomname% the Apostate",
+	"%randomname% the Knowledgeable",
+	"%randomname% the Wormbitten",
+	"%randomname% the Unholy",
+	"%randomname% the Mad",
+	"%randomname% the Enlightened"
+];

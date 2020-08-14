@@ -9,7 +9,6 @@ this.legend_named_armor <- this.inherit("scripts/items/legend_armor/legend_armor
 		this.legend_armor.create();
 		this.m.ItemType = this.m.ItemType | this.Const.Items.ItemType.Named;
 		this.m.ShowOnCharacter = true;
-		this.m.IsDroppedWhenDamaged = true;
 		this.m.IsDroppedAsLoot = true;
 		this.blockUpgrades();
 		this.m.Blocked[ this.Const.Items.ArmorUpgrades.Attachment] = false
