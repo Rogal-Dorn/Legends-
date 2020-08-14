@@ -147,8 +147,8 @@
 					this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnLoss);
 					this.World.Contracts.onRetreatedFromCombat(this.m.StrategicProperties != null ? this.m.StrategicProperties.CombatID : "");
 					this.World.Events.onRetreatedFromCombat(this.m.StrategicProperties != null ? this.m.StrategicProperties.CombatID : "");
-					this.World.Statistics.get().LastEnemiesDefeatedCount = 0;
-					this.World.Statistics.get().LastCombatResult = 2;
+					this.World.Statistics.getFlags().set("LastEnemiesDefeatedCount", 0)
+					this.World.Statistics.getFlags().set("LastCombatResult", 2);
 				}
 			}
 		}
