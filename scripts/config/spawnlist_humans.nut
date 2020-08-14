@@ -391,210 +391,26 @@ gt.Const.World.Spawn.Militia <-
 	]
 }
 
-gt.Const.World.Spawn.PeasantsSouthern <- [
-	{
-		MovementSpeedMult = 0.75,
-		VisibilityMult = 1.0,
-		VisionMult = 0.75,
-		Body = "figure_civilian_06",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.SouthernPeasant,
-				Num = 3
-			}
-		]
-	},
-	{
-		MovementSpeedMult = 0.75,
-		VisibilityMult = 1.0,
-		VisionMult = 0.75,
-		Body = "figure_civilian_06",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.SouthernPeasant,
-				Num = 4
-			}
-		]
-	},
-	{
-		MovementSpeedMult = 0.75,
-		VisibilityMult = 1.0,
-		VisionMult = 0.75,
-		Body = "figure_civilian_06",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.SouthernPeasant,
-				Num = 5
-			}
-		]
-	},
-	{
-		MovementSpeedMult = 0.75,
-		VisibilityMult = 1.0,
-		VisionMult = 0.75,
-		Body = "figure_civilian_06",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.SouthernPeasant,
-				Num = 6
-			}
-		]
-	},
-	{
-		MovementSpeedMult = 0.75,
-		VisibilityMult = 1.0,
-		VisionMult = 0.75,
-		Body = "figure_civilian_06",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.SouthernPeasant,
-				Num = 7
-			}
-		]
-	},
-	{
-		MovementSpeedMult = 0.75,
-		VisibilityMult = 1.0,
-		VisionMult = 0.75,
-		Body = "figure_civilian_06",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.SouthernPeasant,
-				Num = 8
-			}
-		]
-	},
-	{
-		MovementSpeedMult = 0.75,
-		VisibilityMult = 1.0,
-		VisionMult = 0.75,
-		Body = "figure_civilian_06",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.SouthernPeasant,
-				Num = 9
-			}
-		]
-	},
-	{
-		MovementSpeedMult = 0.75,
-		VisibilityMult = 1.0,
-		VisionMult = 0.75,
-		Body = "figure_civilian_06",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.SouthernPeasant,
-				Num = 10
-			}
-		]
-	},
-	{
-		MovementSpeedMult = 0.75,
-		VisibilityMult = 1.0,
-		VisionMult = 0.75,
-		Body = "figure_civilian_06",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.SouthernPeasant,
-				Num = 11
-			}
-		]
-	},
-	{
-		MovementSpeedMult = 0.75,
-		VisibilityMult = 1.0,
-		VisionMult = 0.75,
-		Body = "figure_civilian_06",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.SouthernPeasant,
-				Num = 12
-			}
-		]
-	},
-	{
-		MovementSpeedMult = 0.75,
-		VisibilityMult = 1.0,
-		VisionMult = 0.75,
-		Body = "figure_civilian_06",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.SouthernPeasant,
-				Num = 13
-			}
-		]
-	},
-	{
-		MovementSpeedMult = 0.75,
-		VisibilityMult = 1.0,
-		VisionMult = 0.75,
-		Body = "figure_civilian_06",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.SouthernPeasant,
-				Num = 14
-			}
-		]
-	},
-	{
-		MovementSpeedMult = 0.75,
-		VisibilityMult = 1.0,
-		VisionMult = 0.75,
-		Body = "figure_civilian_06",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.SouthernPeasant,
-				Num = 15
-			}
-		]
-	},
-	{
-		MovementSpeedMult = 0.75,
-		VisibilityMult = 1.0,
-		VisionMult = 0.75,
-		Body = "figure_civilian_06",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.SouthernPeasant,
-				Num = 16
-			}
-		]
-	}
-];
-
-
-function onCostCompare( _t1, _t2 )
+gt.Const.World.Spawn.PeasantsSouthern <-
 {
-	if (_t1.Cost < _t2.Cost)
-	{
-		return -1;
-	}
-	else if (_t1.Cost > _t2.Cost)
-	{
-		return 1;
-	}
-
-	return 0;
-}
-
-function calculateCosts( _p )
-{
-	foreach( p in _p )
-	{
-		p.Cost <- 0;
-
-		foreach( t in p.Troops )
+	Name = "PeasantsSouthern",
+	IsDynamic = true,
+	MovementSpeedMult = 0.75,
+	VisibilityMult = 1.0,
+	VisionMult = 0.75,
+	Body = "figure_civilian_06",
+	MaxR = 160,
+	Troops = 
+	[
 		{
-			p.Cost += t.Type.Cost * t.Num;
+			Weight = 100,
+			Types =
+			[
+				{
+					Type = this.Const.World.Spawn.Troops.SouthernPeasant,
+					Cost = 10
+				}
+			]
 		}
-
-		if (!("MovementSpeedMult" in p))
-		{
-			p.MovementSpeedMult <- 1.0;
-		}
-	}
-
-	_p.sort(this.onCostCompare);
-}
-
-this.calculateCosts(this.Const.World.Spawn.PeasantsSouthern);
+	]
+};

@@ -1553,6 +1553,111 @@ gt.Const.World.Spawn.CaravanEscort <- [
 	}
 ];
 
+gt.Const.World.Spawn.CaravanSouthernEscort <- [
+	{
+		Cost = 0,
+		MovementSpeedMult = 0.5,
+		VisibilityMult = 1.0,
+		VisionMult = 0.25,
+		Body = "cart_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Conscript,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.SouthernDonkey,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 0.5,
+		VisibilityMult = 1.0,
+		VisionMult = 0.25,
+		Body = "cart_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Conscript,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.SouthernDonkey,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 0.5,
+		VisibilityMult = 1.0,
+		VisionMult = 0.25,
+		Body = "cart_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Conscript,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.SouthernDonkey,
+				Num = 2
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 0.5,
+		VisibilityMult = 1.0,
+		VisionMult = 0.25,
+		Body = "cart_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Conscript,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.SouthernDonkey,
+				Num = 2
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 0.5,
+		VisibilityMult = 1.0,
+		VisionMult = 0.25,
+		Body = "cart_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Conscript,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.SouthernDonkey,
+				Num = 3
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 0.5,
+		VisibilityMult = 1.0,
+		VisionMult = 0.25,
+		Body = "cart_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Conscript,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.SouthernDonkey,
+				Num = 3
+			}
+		]
+	}
+];
+
 function onCostCompare( _t1, _t2 )
 {
 	if (_t1.Cost < _t2.Cost)

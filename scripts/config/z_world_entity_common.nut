@@ -239,21 +239,22 @@ gt.Const.World.Common.dynamicSelectTroop <- function (_list, _resources, _scale,
 	local T = [];
 	local totalWeight = 0;
 	local dateToSkip = 0
-	switch (this.World.Assets.getCombatDifficulty())
-	{
-		case this.Const.Difficulty.Easy:
-			dateToSkip = 120;
-			break;
-		case this.Const.Difficulty.Normal:
-			dateToSkip = 90
-			break;
-		case this.Const.Difficulty.Hard:
-			dateToSkip = 60
-			break;
-		case this.Const.Difficulty.Legendary:
-			dateToSkip = 30
-			break;
-	}
+	// switch (this.World.Assets.getCombatDifficulty())
+	// {
+	// 	case this.Const.Difficulty.Easy:
+	// 		dateToSkip = 120;
+	// 		break;
+	// 	case this.Const.Difficulty.Normal:
+	// 		dateToSkip = 90
+	// 		break;
+	// 	case this.Const.Difficulty.Hard:
+	// 		dateToSkip = 60
+	// 		break;
+	// 	case this.Const.Difficulty.Legendary:
+	// 		dateToSkip = 30
+	// 		break;
+	// }
+	dateToSkip = 90;
 
 	//Go through each Item in the spawn list (which are structures defining enemies)
 	foreach (t in _list)
@@ -801,7 +802,7 @@ foreach(k,v in this.Const.World.Spawn)
 	}
 
 }
-//TESTING
+// TESTING
 // foreach(k,v in this.Const.World.Spawn)
 // {
 // 	if (k == "Troops" || k == "Unit" || k == "TroopsMap")
@@ -838,8 +839,26 @@ foreach(k,v in this.Const.World.Spawn)
 // 	}
 // }
 
-// for (local i = 0; i < 25; i = ++i)
+// local weight = [100, 300, 600];
+// local pList = [
+	
+// 	this.Const.World.Spawn.Southern
+	
+// ];
+// foreach ( p in pList )
 // {
-// 	this.logInfo(" RUN  " + i)
-// 	local res = gt.Const.World.Common.buildDynamicTroopList(this.Const.World.Spawn.BanditRaiders, 51.06)
+// 	foreach ( w in weight )
+// 	{
+// 		for (local i = 0; i < 25; i = ++i)
+// 		{
+			
+// 			this.logWarning(" RUNNING ON TROOP: " + p);
+// 			this.logInfo(" RUN: " + i + ", OF WEIGHT: " + w);
+
+// 			local res = gt.Const.World.Common.buildDynamicTroopList(p, w);
+// 			foreach (t in res.Troops)
+// 				this.logInfo(t.Type.Script + " : " + t.Num);
+
+// 		}
+// 	}
 // }
