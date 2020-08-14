@@ -114,7 +114,7 @@ this.building <- {
 
 				if (p >= r)
 				{
-					local item = this.new("scripts/items/" + i.S);
+					item = this.new("scripts/items/" + i.S);
 					if (item == null)
 					{
 						break;

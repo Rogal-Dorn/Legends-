@@ -4737,7 +4737,7 @@ function calculateCosts( _p )
 			{
 				this.logInfo("adding  " + ID)
 				_map[ID] <- {
-					First = firstCost
+					First = p.Cost,
 					Total = 0
 				}
 			}
