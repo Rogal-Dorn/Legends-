@@ -104,6 +104,7 @@ this.retired_gladiator_event <- this.inherit("scripts/events/event", {
 					icon = "ui/items/armor_upgrades/upgrade_25.png",
 					text = "You gain a " + a.getName()
 				});
+				this.World.Assets.getStash().add(a);
 				this.World.Assets.addMoney(-1000);
 				this.List.push({
 					id = 10,
@@ -225,6 +226,11 @@ this.retired_gladiator_event <- this.inherit("scripts/events/event", {
 	function onUpdateScore()
 	{
 		if (!this.Const.DLC.Desert)
+		{
+			return;
+		}
+
+		if (this.World.Assets.getMoney() < 1250)
 		{
 			return;
 		}

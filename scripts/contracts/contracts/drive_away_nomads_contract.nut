@@ -504,9 +504,9 @@ this.drive_away_nomads_contract <- this.inherit("scripts/contracts/contract", {
 				if (this.m.Flags.get("IsNecromancer"))
 				{
 					local nomads = this.World.FactionManager.getFactionOfType(this.Const.FactionType.OrientalBandits);
-					this.World.FactionManager.getFaction(this.Contract.m.Destination.getFaction()).removeSettlement(this.Contract.m.Destination);
-					this.Contract.m.Destination.setFaction(nomads.getID());
-					nomads.addSettlement(this.Contract.m.Destination.get(), false);
+					this.World.FactionManager.getFaction(this.m.Destination.getFaction()).removeSettlement(this.m.Destination);
+					this.m.Destination.setFaction(nomads.getID());
+					nomads.addSettlement(this.m.Destination.get(), false);
 				}
 			}
 

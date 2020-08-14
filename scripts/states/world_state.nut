@@ -2428,12 +2428,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 			this.m.EngageCombatPos = null;
 			this.m.CombatDialog.hide();
 			this.m.WorldScreen.show();
-
-			if (!_isPlayerInitiated)
-			{
-				this.stunPartiesNearPlayer(_isPlayerInitiated);
-			}
-
+			this.stunPartiesNearPlayer(_isPlayerInitiated);
 			this.setAutoPause(false);
 		}, function ()
 		{
@@ -2468,7 +2463,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 		{
 			if (!party.isPlayerControlled())
 			{
-				party.stun(_isMinor ? 0.25 : 5.0);
+				party.stun(_isMinor ? 0.5 : 5.0);
 			}
 		}
 	}

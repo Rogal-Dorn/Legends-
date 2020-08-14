@@ -118,7 +118,10 @@ this.nomad_outlaw <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.Const.DLC.Unhold)
 		{
-			weapons.push("weapons/three_headed_flail");
+			if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days > 10)
+			{
+				weapons.push("weapons/three_headed_flail");
+			}
 		}
 
 		this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
