@@ -1,8 +1,189 @@
 ::mods_hookNewObject("mapgen/templates/world/worldmap_generator", function(o) {
-    o.isWorldAcceptable = function (_rect)
+    // o.isWorldAcceptable = function (_rect)
+	// {
+	// 	local ocean = 0;
+	// 	local nonOcean = 0;
+
+	// 	for( local x = _rect.X; x < _rect.X + _rect.W; x = ++x )
+	// 	{
+	// 		for( local y = _rect.Y; y < _rect.Y + _rect.H; y = ++y )
+	// 		{
+	// 			local tile = this.World.getTileSquare(x, y);
+
+	// 			if (tile.Type == this.Const.World.TerrainType.Ocean)
+	// 			{
+	// 				ocean = ++ocean;
+	// 			}
+	// 			else
+	// 			{
+	// 				nonOcean = ++nonOcean;
+	// 			}
+	// 		}
+	// 	}
+    //     this.logInfo("Land:" + nonOcean + " Ocean:" + ocean);
+	// 	return nonOcean * 1.0 / (ocean * 1.0) >= this.Const.World.Settings.MinLandToWaterRatio;
+	// }
+
+    // o.fill = function ( _rect, _properties)
+	// {
+	// 	this.Const.World.Buildings.reset();
+	// 	this.m.Tiles = [];
+	// 	this.m.Tiles.resize(this.Const.World.TerrainType.COUNT);
+
+	// 	for( local i = 0; i < this.Const.World.TerrainType.COUNT; i = ++i )
+	// 	{
+	// 		if (this.Const.World.TerrainScript[i].len() != 0)
+	// 		{
+	// 			this.m.Tiles[i] = this.MapGen.get(this.Const.World.TerrainScript[i]);
+	// 		}
+	// 	}
+
+	// 	this.__ping();
+
+	// 	while (true)
+	// 	{
+	// 		this.buildLandAndSea(_rect);
+	// 		this.__ping();
+
+	// 		if (!this.isWorldAcceptable(_rect))
+	// 		{
+	// 			this.logInfo("World rejected. Creating new one...");
+	// 			this.clearWorld(_rect);
+	// 			continue;
+	// 		}
+
+	// 		this.__ping();
+	// 		this.buildElevation(_rect);
+	// 		this.__ping();
+	// 		this.__ping();
+	// 		this.defragmentTerrain(_rect);
+	// 		this.__ping();
+
+	// 		if (this.Const.DLC.Desert && !this.isDesertAcceptable(_rect))
+	// 		{
+	// 			this.logInfo("World rejected. Creating new one...");
+	// 			this.clearWorld(_rect);
+	// 			continue;
+	// 		}
+
+	// 		this.logInfo("World accepted.");
+	// 		break;
+	// 	}
+
+	// 	this.__ping();
+	// 	this.removeStraits(_rect);
+	// 	this.__ping();
+	// 	this.refineTerrain(_rect, null);
+	// 	this.__ping();
+	// 	this.buildSettlements(_rect, _properties);
+	// 	this.__ping();
+	// 	this.buildRoads(_rect, null);
+	// 	this.__ping();
+	// 	this.refineSettlements(_rect, null);
+	// 	this.__ping();
+	// 	this.guaranteeAllBuildingsInSettlements();
+	// 	this.__ping();
+	// 	this.buildAdditionalRoads(_rect, null);
+	// 	this.__ping();
+	// 	this.buildRoadSprites(_rect, null);
+	// 	this.__ping();
+	// 	this.buildLabels(_rect);
+	// 	this.__ping();
+
+	// 	if (this.Const.DLC.Desert)
+	// 	{
+	// 		this.buildAbandonedFortresses(_rect);
+	// 	}
+
+	// 	this.__ping();
+	// }
+	// {
+	// 	this.Const.World.Buildings.reset();
+	// 	this.m.Tiles = [];
+	// 	this.m.Tiles.resize(this.Const.World.TerrainType.COUNT);
+
+	// 	for( local i = 0; i < this.Const.World.TerrainType.COUNT; i = ++i )
+	// 	{
+	// 		if (this.Const.World.TerrainScript[i].len() != 0)
+	// 		{
+	// 			this.m.Tiles[i] = this.MapGen.get(this.Const.World.TerrainScript[i]);
+	// 		}
+	// 	}
+
+	// 	this.__ping();
+	// 	this.LoadingScreen.updateProgress("Building Land and Sea ...");
+	// 	this.buildLandAndSea(_rect);
+	// 	this.__ping();
+    //     if (!this.isWorldAcceptable(_rect))
+    //     {
+    //         this.clearWorld(_rect);
+    //         return false;
+    //     }
+
+	// 	this.__ping();
+	// 	this.LoadingScreen.updateProgress("Building Terrain ...");
+	// 	this.buildElevation(_rect);
+	// 	this.__ping();
+
+	// 	this.__ping();
+	// 	this.defragmentTerrain(_rect);
+	// 	this.__ping();
+
+	// 	if (this.Const.DLC.Desert && !this.isDesertAcceptable(_rect))
+	// 	{
+	// 		//this.logInfo("World rejected. Creating new one...");
+	// 		this.clearWorld(_rect);
+	// 		return false;
+	// 	}
+
+	// 	this.removeStraits(_rect);
+	// 	this.__ping();
+	// 	this.refineTerrain(_rect, _properties);
+	// 	this.__ping();
+    //     if (!this.buildSettlements(_rect, _properties))
+    //     {
+	// 		this.clearWorld(_rect);
+	// 		//this.World.clearScene();
+    //         return false;
+    //     }
+	// 	this.__ping();
+	// 	this.buildRoads(_rect, _properties);
+	// 	this.__ping();
+	// 	this.refineSettlements(_rect, _properties);
+	// 	this.__ping();
+	// 	this.guaranteeAllBuildingsInSettlements();
+	// 	this.__ping();
+	// 	if ( _properties.AllTradeLocations )
+	// 	{
+	// 		this.guaranteeAllLocations(_rect, _properties);
+	// 		this.__ping();
+	// 	}
+	// 	this.buildAdditionalRoads(_rect, _properties);
+	// 	this.__ping();
+	// 	this.buildRoadSprites(_rect, _properties);
+	// 	this.__ping();
+	// 	this.buildLabels(_rect);
+	// 	this.__ping();
+	// 	if (this.Const.DLC.Desert)
+	// 	{
+	// 		this.buildAbandonedFortresses(_rect);
+	// 	}
+	// 	this.__ping();
+
+    //     return true;
+	// }
+
+	o.refineSettlements = function ( _rect )
 	{
-		local ocean = 0;
-		local nonOcean = 0;
+		local _properties = this.World.State.m.CampaignSettings;
+
+		local settlements = this.World.EntityManager.getSettlements();
+
+		foreach( s in settlements )
+		{
+			s.updateProperties();
+			s.build(_properties);
+		}
 
 		for( local x = _rect.X; x < _rect.X + _rect.W; x = ++x )
 		{
@@ -10,95 +191,19 @@
 			{
 				local tile = this.World.getTileSquare(x, y);
 
-				if (tile.Type == this.Const.World.TerrainType.Ocean)
+				foreach( s in settlements )
 				{
-					ocean = ++ocean;
-				}
-				else
-				{
-					nonOcean = ++nonOcean;
+					local d = s.getTile().getDistanceTo(tile);
+
+					if (d > 6)
+					{
+						continue;
+					}
+
+					tile.HeatFromSettlements = tile.HeatFromSettlements + (6 - d);
 				}
 			}
 		}
-        this.logInfo("Land:" + nonOcean + " Ocean:" + ocean);
-		return nonOcean * 1.0 / (ocean * 1.0) >= this.Const.World.Settings.MinLandToWaterRatio;
-	}
-
-    o.fill = function ( _rect, _properties)
-	{
-		this.Const.World.Buildings.reset();
-		this.m.Tiles = [];
-		this.m.Tiles.resize(this.Const.World.TerrainType.COUNT);
-
-		for( local i = 0; i < this.Const.World.TerrainType.COUNT; i = ++i )
-		{
-			if (this.Const.World.TerrainScript[i].len() != 0)
-			{
-				this.m.Tiles[i] = this.MapGen.get(this.Const.World.TerrainScript[i]);
-			}
-		}
-
-		this.__ping();
-		this.LoadingScreen.updateProgress("Building Land and Sea ...");
-		this.buildLandAndSea(_rect);
-		this.__ping();
-        if (!this.isWorldAcceptable(_rect))
-        {
-            this.clearWorld(_rect);
-            return false;
-        }
-
-		this.__ping();
-		this.LoadingScreen.updateProgress("Building Terrain ...");
-		this.buildElevation(_rect);
-		this.__ping();
-
-		this.__ping();
-		this.defragmentTerrain(_rect);
-		this.__ping();
-
-		if (this.Const.DLC.Desert && !this.isDesertAcceptable(_rect))
-		{
-			//this.logInfo("World rejected. Creating new one...");
-			this.clearWorld(_rect);
-			return false;
-		}
-
-		this.removeStraits(_rect);
-		this.__ping();
-		this.refineTerrain(_rect, _properties);
-		this.__ping();
-        if (!this.buildSettlements(_rect, _properties))
-        {
-			this.clearWorld(_rect);
-			//this.World.clearScene();
-            return false;
-        }
-		this.__ping();
-		this.buildRoads(_rect, _properties);
-		this.__ping();
-		this.refineSettlements(_rect, _properties);
-		this.__ping();
-		this.guaranteeAllBuildingsInSettlements();
-		this.__ping();
-		if ( _properties.AllTradeLocations )
-		{
-			this.guaranteeAllLocations(_rect, _properties);
-			this.__ping();
-		}
-		this.buildAdditionalRoads(_rect, _properties);
-		this.__ping();
-		this.buildRoadSprites(_rect, _properties);
-		this.__ping();
-		this.buildLabels(_rect);
-		this.__ping();
-		if (this.Const.DLC.Desert)
-		{
-			this.buildAbandonedFortresses(_rect);
-		}
-		this.__ping();
-
-        return true;
 	}
 
 	o.addSettlement <- function (_rect, isLeft, settlementList, settlementSize, settlementTiles, additionalSpace, ignoreSide)
@@ -234,7 +339,7 @@
 			}
 
 			tile.clear();
-			local entity = this.World.spawnLocation(stype.Script, tile.Coords);
+			local entity = this.World.spawnLocation(type.Script, tile.Coords);
 			entity.setSize(settlementSize);
 			settlementTiles.push(tile);
 			return settlementTiles;
@@ -242,8 +347,10 @@
 		return settlementTiles
 	}
 
-    o.buildSettlements = function ( _rect, _properties )
+    o.buildSettlements = function ( _rect )
 	{
+
+		local _properties = this.World.State.m.CampaignSettings;
 		this.LoadingScreen.updateProgress("Building Settlements ...");
 		this.logInfo("Building settlements...");
 		local isLeft = this.Math.rand(0, 1);
@@ -279,7 +386,7 @@
 					{
 						continue;
 					}
-					settlementTiles = this.addSettlement(_rect, isLeft, list.Types, s.Size, settlementTiles);
+					settlementTiles = this.addSettlement(_rect, isLeft, list.Types, s.Size, settlementTiles, additionalSpace, "IgnoreSide" in list);
 					break;
 				}
 				num = --num;
@@ -290,317 +397,317 @@
 		return settlementTiles.len() >= 19
 	}
 
-	o.guaranteeAllBuildingsInSettlements = function ()
-	{
+	// o.guaranteeAllBuildingsInSettlements = function ()
+	// {
 
-		local settlements = this.World.EntityManager.getSettlements();
+	// 	local settlements = this.World.EntityManager.getSettlements();
 
-		if (this.Const.World.Buildings.Fletchers < 2)
-		{
-			local candidates = [];
+	// 	if (this.Const.World.Buildings.Fletchers < 2)
+	// 	{
+	// 		local candidates = [];
 
-			foreach( s in settlements )
-			{
-				if (s.getSize() >= 2 && s.hasFreeBuildingSlot() && !s.hasBuilding("building.fletcher"))
-				{
-					candidates.push(s);
-				}
-			}
+	// 		foreach( s in settlements )
+	// 		{
+	// 			if (s.getSize() >= 2 && s.hasFreeBuildingSlot() && !s.hasBuilding("building.fletcher"))
+	// 			{
+	// 				candidates.push(s);
+	// 			}
+	// 		}
 
-			for( local i = this.Const.World.Buildings.Fletchers; i <= 2; i = ++i )
-			{
-				local r = this.Math.rand(0, candidates.len() - 1);
-				local s = candidates[r];
-				candidates.remove(r);
-				s.addBuilding(this.new("scripts/entity/world/settlements/buildings/fletcher_building"));
+	// 		for( local i = this.Const.World.Buildings.Fletchers; i <= 2; i = ++i )
+	// 		{
+	// 			local r = this.Math.rand(0, candidates.len() - 1);
+	// 			local s = candidates[r];
+	// 			candidates.remove(r);
+	// 			s.addBuilding(this.new("scripts/entity/world/settlements/buildings/fletcher_building"));
 
-				if (candidates.len() == 0)
-				{
-					break;
-				}
-			}
-		}
+	// 			if (candidates.len() == 0)
+	// 			{
+	// 				break;
+	// 			}
+	// 		}
+	// 	}
 
-		if (this.Const.World.Buildings.Temples < 2)
-		{
-			local candidates = [];
+	// 	if (this.Const.World.Buildings.Temples < 2)
+	// 	{
+	// 		local candidates = [];
 
-			foreach( s in settlements )
-			{
-				if (s.getSize() >= 2 && s.hasFreeBuildingSlot() && !s.hasBuilding("building.temple"))
-				{
-					candidates.push(s);
-				}
-			}
+	// 		foreach( s in settlements )
+	// 		{
+	// 			if (s.getSize() >= 2 && s.hasFreeBuildingSlot() && !s.hasBuilding("building.temple"))
+	// 			{
+	// 				candidates.push(s);
+	// 			}
+	// 		}
 
-			for( local i = this.Const.World.Buildings.Temples; i <= 2; i = ++i )
-			{
-				local r = this.Math.rand(0, candidates.len() - 1);
-				local s = candidates[r];
-				candidates.remove(r);
-				s.addBuilding(this.new("scripts/entity/world/settlements/buildings/temple_building"));
+	// 		for( local i = this.Const.World.Buildings.Temples; i <= 2; i = ++i )
+	// 		{
+	// 			local r = this.Math.rand(0, candidates.len() - 1);
+	// 			local s = candidates[r];
+	// 			candidates.remove(r);
+	// 			s.addBuilding(this.new("scripts/entity/world/settlements/buildings/temple_building"));
 
-				if (candidates.len() == 0)
-				{
-					break;
-				}
-			}
-		}
+	// 			if (candidates.len() == 0)
+	// 			{
+	// 				break;
+	// 			}
+	// 		}
+	// 	}
 
-		if (this.Const.World.Buildings.Barbers < 2)
-		{
-			local candidates = [];
+	// 	if (this.Const.World.Buildings.Barbers < 2)
+	// 	{
+	// 		local candidates = [];
 
-			foreach( s in settlements )
-			{
-				if (s.getSize() >= 2 && !s.isMilitary() && s.hasFreeBuildingSlot() && !s.hasBuilding("building.barber"))
-				{
-					candidates.push(s);
-				}
-			}
+	// 		foreach( s in settlements )
+	// 		{
+	// 			if (s.getSize() >= 2 && !s.isMilitary() && s.hasFreeBuildingSlot() && !s.hasBuilding("building.barber"))
+	// 			{
+	// 				candidates.push(s);
+	// 			}
+	// 		}
 
-			for( local i = this.Const.World.Buildings.Barbers; i <= 2; i = ++i )
-			{
-				local r = this.Math.rand(0, candidates.len() - 1);
-				local s = candidates[r];
-				candidates.remove(r);
-				s.addBuilding(this.new("scripts/entity/world/settlements/buildings/barber_building"));
+	// 		for( local i = this.Const.World.Buildings.Barbers; i <= 2; i = ++i )
+	// 		{
+	// 			local r = this.Math.rand(0, candidates.len() - 1);
+	// 			local s = candidates[r];
+	// 			candidates.remove(r);
+	// 			s.addBuilding(this.new("scripts/entity/world/settlements/buildings/barber_building"));
 
-				if (candidates.len() == 0)
-				{
-					break;
-				}
-			}
-		}
+	// 			if (candidates.len() == 0)
+	// 			{
+	// 				break;
+	// 			}
+	// 		}
+	// 	}
 
-		if (this.Const.World.Buildings.Kennels < 2)
-		{
-			local candidates = [];
+	// 	if (this.Const.World.Buildings.Kennels < 2)
+	// 	{
+	// 		local candidates = [];
 
-			foreach( s in settlements )
-			{
-				if (s.isMilitary() && s.hasFreeBuildingSlot() && !s.hasBuilding("building.kennel"))
-				{
-					candidates.push(s);
-				}
-			}
+	// 		foreach( s in settlements )
+	// 		{
+	// 			if (s.isMilitary() && s.hasFreeBuildingSlot() && !s.hasBuilding("building.kennel"))
+	// 			{
+	// 				candidates.push(s);
+	// 			}
+	// 		}
 
-			for( local i = this.Const.World.Buildings.Kennels; i <= 2; i = ++i )
-			{
-				local r = this.Math.rand(0, candidates.len() - 1);
-				local s = candidates[r];
-				candidates.remove(r);
-				s.addBuilding(this.new("scripts/entity/world/settlements/buildings/kennel_building"));
+	// 		for( local i = this.Const.World.Buildings.Kennels; i <= 2; i = ++i )
+	// 		{
+	// 			local r = this.Math.rand(0, candidates.len() - 1);
+	// 			local s = candidates[r];
+	// 			candidates.remove(r);
+	// 			s.addBuilding(this.new("scripts/entity/world/settlements/buildings/kennel_building"));
 
-				if (candidates.len() == 0)
-				{
-					break;
-				}
-			}
-		}
+	// 			if (candidates.len() == 0)
+	// 			{
+	// 				break;
+	// 			}
+	// 		}
+	// 	}
 
-		if (this.Const.DLC.Unhold && this.Const.World.Buildings.Taxidermists < 2)
-		{
-			local candidates = [];
+	// 	if (this.Const.DLC.Unhold && this.Const.World.Buildings.Taxidermists < 2)
+	// 	{
+	// 		local candidates = [];
 
-			foreach( s in settlements )
-			{
-				if (!s.isMilitary() && s.hasFreeBuildingSlot() && !s.hasBuilding("building.taxidermist"))
-				{
-					candidates.push(s);
-				}
-			}
+	// 		foreach( s in settlements )
+	// 		{
+	// 			if (!s.isMilitary() && s.hasFreeBuildingSlot() && !s.hasBuilding("building.taxidermist"))
+	// 			{
+	// 				candidates.push(s);
+	// 			}
+	// 		}
 
-			for( local i = this.Const.World.Buildings.Taxidermists; i <= 2; i = ++i )
-			{
-				local r = this.Math.rand(0, candidates.len() - 1);
-				local s = candidates[r];
-				candidates.remove(r);
-				s.addBuilding(this.new("scripts/entity/world/settlements/buildings/taxidermist_building"));
+	// 		for( local i = this.Const.World.Buildings.Taxidermists; i <= 2; i = ++i )
+	// 		{
+	// 			local r = this.Math.rand(0, candidates.len() - 1);
+	// 			local s = candidates[r];
+	// 			candidates.remove(r);
+	// 			s.addBuilding(this.new("scripts/entity/world/settlements/buildings/taxidermist_building"));
 
-				if (candidates.len() == 0)
-				{
-					break;
-				}
-			}
-		}
+	// 			if (candidates.len() == 0)
+	// 			{
+	// 				break;
+	// 			}
+	// 		}
+	// 	}
 
-		if (this.Const.World.Buildings.Stables < 2)
-		{
-			local candidates = [];
+	// 	if (this.Const.World.Buildings.Stables < 2)
+	// 	{
+	// 		local candidates = [];
 
-			foreach( s in settlements )
-			{
-				if (s.isMilitary() && s.hasFreeBuildingSlot() && !s.hasBuilding("building.stables"))
-				{
-					candidates.push(s);
-				}
-			}
+	// 		foreach( s in settlements )
+	// 		{
+	// 			if (s.isMilitary() && s.hasFreeBuildingSlot() && !s.hasBuilding("building.stables"))
+	// 			{
+	// 				candidates.push(s);
+	// 			}
+	// 		}
 
-			for( local i = this.Const.World.Buildings.Stables; i <= 2; i = ++i )
-			{
-				local r = this.Math.rand(0, candidates.len() - 1);
-				local s = candidates[r];
-				candidates.remove(r);
-				s.addBuilding(this.new("scripts/entity/world/settlements/buildings/stables_building"));
+	// 		for( local i = this.Const.World.Buildings.Stables; i <= 2; i = ++i )
+	// 		{
+	// 			local r = this.Math.rand(0, candidates.len() - 1);
+	// 			local s = candidates[r];
+	// 			candidates.remove(r);
+	// 			s.addBuilding(this.new("scripts/entity/world/settlements/buildings/stables_building"));
 
-				if (candidates.len() == 0)
-				{
-					break;
-				}
-			}
-		}
+	// 			if (candidates.len() == 0)
+	// 			{
+	// 				break;
+	// 			}
+	// 		}
+	// 	}
 
-	}
+	// }
 
-	o.guaranteeAllLocations <- function( _rect, _properties )
-	{
-		local locs = {}
-		locs["attached_location.amber_collector"] <- {
-			Amount = 0,
-			Script = "scripts/entity/world/attached_location/amber_collector_location"
-		}
-		locs["attached_location.beekeeper"] <- {
-			Amount = 0,
-			Script = "scripts/entity/world/attached_location/beekeeper_location"
-		};
-		locs["attached_location.brewery"] <- {
-			Amount = 0,
-			Script = "scripts/entity/world/attached_location/brewery_location"
-		};
-		locs["attached_location.dye_maker"] <- {
-			Amount = 0,
-			Script = "scripts/entity/world/attached_location/dye_maker_location"
-		};
-		locs["attached_location.fishing_huts"] <- {
-			Amount = 0,
-			Script = "scripts/entity/world/attached_location/fishing_huts_location"
-		};
-		locs["attached_location.gatherers_hut"] <- {
-			Amount = 0,
-			Script = "scripts/entity/world/attached_location/gatherers_hut_location"
-		};
-		locs["attached_location.gem_mine"] <- {
-			Amount = 0,
-			Script = "scripts/entity/world/attached_location/gem_mine_location"
-		};
-		locs["attached_location.goat_herd"] <- {
-			Amount = 0,
-			Script = "scripts/entity/world/attached_location/goat_herd_location"
-		};
-		locs["attached_location.gold_mine"] <- {
-			Amount = 0,
-			Script = "scripts/entity/world/attached_location/gold_mine_location"
-		};
-		locs["attached_location.herbalists_grove"] <- {
-			Amount = 0,
-			Script = "scripts/entity/world/attached_location/herbalists_grove_location"
-		};
-		locs["attached_location.hunters_cabin"] <- {
-			Amount = 0,
-			Script = "scripts/entity/world/attached_location/hunters_cabin_location"
-		};
-		locs["attached_location.leather_tanner"] <- {
-			Amount = 0,
-			Script = "scripts/entity/world/attached_location/leather_tanner_location"
-		};
-		locs["attached_location.lumber_camp"] <- {
-			Amount = 0,
-			Script = "scripts/entity/world/attached_location/lumber_camp_location"
-		};
-		locs["attached_location.mushroom_grove"] <- {
-			Amount = 0,
-			Script = "scripts/entity/world/attached_location/mushroom_grove_location"
-		};
-		locs["attached_location.orchard"] <- {
-			Amount = 0,
-			Script = "scripts/entity/world/attached_location/orchard_location"
-		};
-		locs["attached_location.peat_pit"] <- {
-			Amount = 0,
-			Script = "scripts/entity/world/attached_location/peat_pit_location"
-		};
-		locs["attached_location.pig_farm"] <- {
-			Amount = 0,
-			Script = "scripts/entity/world/attached_location/pig_farm_location"
-		};
-		locs["attached_location.salt_mine"] <- {
-			Amount = 0,
-			Script = "scripts/entity/world/attached_location/salt_mine_location"
-		};
-		locs["attached_location.surface_copper_vein"] <- {
-			Amount = 0,
-			Script = "scripts/entity/world/attached_location/surface_copper_vein_location"
-		};
-		locs["attached_location.surface_iron_vein"] <- {
-			Amount = 0,
-			Script = "scripts/entity/world/attached_location/surface_iron_vein_location"
-		};
-		locs["attached_location.trapper"] <- {
-			Amount = 0,
-			Script = "scripts/entity/world/attached_location/trapper_location"
-		};
-		locs["attached_location.wheat_fields"] <- {
-			Amount = 0,
-			Script = "scripts/entity/world/attached_location/wheat_fields_location"
-		};
-		locs["attached_location.winery"] <- {
-			Amount = 0,
-			Script = "scripts/entity/world/attached_location/winery_location"
-		};
-		locs["attached_location.wool_spinner"] <- {
-			Amount = 0,
-			Script = "scripts/entity/world/attached_location/wool_spinner_location"
-		};
-		locs["attached_location.workshop"] <- {
-			Amount = 0,
-			Script = "scripts/entity/world/attached_location/workshop_location"
-		};
+	// o.guaranteeAllLocations <- function( _rect, _properties )
+	// {
+	// 	local locs = {}
+	// 	locs["attached_location.amber_collector"] <- {
+	// 		Amount = 0,
+	// 		Script = "scripts/entity/world/attached_location/amber_collector_location"
+	// 	}
+	// 	locs["attached_location.beekeeper"] <- {
+	// 		Amount = 0,
+	// 		Script = "scripts/entity/world/attached_location/beekeeper_location"
+	// 	};
+	// 	locs["attached_location.brewery"] <- {
+	// 		Amount = 0,
+	// 		Script = "scripts/entity/world/attached_location/brewery_location"
+	// 	};
+	// 	locs["attached_location.dye_maker"] <- {
+	// 		Amount = 0,
+	// 		Script = "scripts/entity/world/attached_location/dye_maker_location"
+	// 	};
+	// 	locs["attached_location.fishing_huts"] <- {
+	// 		Amount = 0,
+	// 		Script = "scripts/entity/world/attached_location/fishing_huts_location"
+	// 	};
+	// 	locs["attached_location.gatherers_hut"] <- {
+	// 		Amount = 0,
+	// 		Script = "scripts/entity/world/attached_location/gatherers_hut_location"
+	// 	};
+	// 	locs["attached_location.gem_mine"] <- {
+	// 		Amount = 0,
+	// 		Script = "scripts/entity/world/attached_location/gem_mine_location"
+	// 	};
+	// 	locs["attached_location.goat_herd"] <- {
+	// 		Amount = 0,
+	// 		Script = "scripts/entity/world/attached_location/goat_herd_location"
+	// 	};
+	// 	locs["attached_location.gold_mine"] <- {
+	// 		Amount = 0,
+	// 		Script = "scripts/entity/world/attached_location/gold_mine_location"
+	// 	};
+	// 	locs["attached_location.herbalists_grove"] <- {
+	// 		Amount = 0,
+	// 		Script = "scripts/entity/world/attached_location/herbalists_grove_location"
+	// 	};
+	// 	locs["attached_location.hunters_cabin"] <- {
+	// 		Amount = 0,
+	// 		Script = "scripts/entity/world/attached_location/hunters_cabin_location"
+	// 	};
+	// 	locs["attached_location.leather_tanner"] <- {
+	// 		Amount = 0,
+	// 		Script = "scripts/entity/world/attached_location/leather_tanner_location"
+	// 	};
+	// 	locs["attached_location.lumber_camp"] <- {
+	// 		Amount = 0,
+	// 		Script = "scripts/entity/world/attached_location/lumber_camp_location"
+	// 	};
+	// 	locs["attached_location.mushroom_grove"] <- {
+	// 		Amount = 0,
+	// 		Script = "scripts/entity/world/attached_location/mushroom_grove_location"
+	// 	};
+	// 	locs["attached_location.orchard"] <- {
+	// 		Amount = 0,
+	// 		Script = "scripts/entity/world/attached_location/orchard_location"
+	// 	};
+	// 	locs["attached_location.peat_pit"] <- {
+	// 		Amount = 0,
+	// 		Script = "scripts/entity/world/attached_location/peat_pit_location"
+	// 	};
+	// 	locs["attached_location.pig_farm"] <- {
+	// 		Amount = 0,
+	// 		Script = "scripts/entity/world/attached_location/pig_farm_location"
+	// 	};
+	// 	locs["attached_location.salt_mine"] <- {
+	// 		Amount = 0,
+	// 		Script = "scripts/entity/world/attached_location/salt_mine_location"
+	// 	};
+	// 	locs["attached_location.surface_copper_vein"] <- {
+	// 		Amount = 0,
+	// 		Script = "scripts/entity/world/attached_location/surface_copper_vein_location"
+	// 	};
+	// 	locs["attached_location.surface_iron_vein"] <- {
+	// 		Amount = 0,
+	// 		Script = "scripts/entity/world/attached_location/surface_iron_vein_location"
+	// 	};
+	// 	locs["attached_location.trapper"] <- {
+	// 		Amount = 0,
+	// 		Script = "scripts/entity/world/attached_location/trapper_location"
+	// 	};
+	// 	locs["attached_location.wheat_fields"] <- {
+	// 		Amount = 0,
+	// 		Script = "scripts/entity/world/attached_location/wheat_fields_location"
+	// 	};
+	// 	locs["attached_location.winery"] <- {
+	// 		Amount = 0,
+	// 		Script = "scripts/entity/world/attached_location/winery_location"
+	// 	};
+	// 	locs["attached_location.wool_spinner"] <- {
+	// 		Amount = 0,
+	// 		Script = "scripts/entity/world/attached_location/wool_spinner_location"
+	// 	};
+	// 	locs["attached_location.workshop"] <- {
+	// 		Amount = 0,
+	// 		Script = "scripts/entity/world/attached_location/workshop_location"
+	// 	};
 
-		local settlements = this.World.EntityManager.getSettlements();
-		foreach( s in settlements )
-		{
-			foreach (a in s.getAttachedLocations())
-			{
-				if (a.getTypeID() in locs)
-				{
-					locs[a.getTypeID()].Amount += 1
-				}
-			}
-		}
+	// 	local settlements = this.World.EntityManager.getSettlements();
+	// 	foreach( s in settlements )
+	// 	{
+	// 		foreach (a in s.getAttachedLocations())
+	// 		{
+	// 			if (a.getTypeID() in locs)
+	// 			{
+	// 				locs[a.getTypeID()].Amount += 1
+	// 			}
+	// 		}
+	// 	}
 
-		foreach (k,v in locs)
-		{
+	// 	foreach (k,v in locs)
+	// 	{
 
-			if (v.Amount > 0)
-			{
-				continue;
-			}
+	// 		if (v.Amount > 0)
+	// 		{
+	// 			continue;
+	// 		}
 
-			local ALL = [
-				this.Const.World.TerrainType.Plains,
-				this.Const.World.TerrainType.Steppe,
-				this.Const.World.TerrainType.Snow,
-				this.Const.World.TerrainType.Hills,
-				this.Const.World.TerrainType.Tundra,
-				this.Const.World.TerrainType.Forest,
-				this.Const.World.TerrainType.SnowyForest,
-				this.Const.World.TerrainType.AutumnForest,
-				this.Const.World.TerrainType.LeaveForest
-			];
-			local tries = 0;
-			while (tries++ < 1000)
-			{
-				local index = this.Math.rand(0, settlements.len() - 1)
-				settlements[index].buildAttachedLocation(1, v.Script, ALL, [], 2, false, true, true);
-				if (settlements[index].hasAttachedLocation(k)) {
-					//this.logInfo("Added " + k)
-					break;
-				}
-				tries = --tries;
-			}
-		}
+	// 		local ALL = [
+	// 			this.Const.World.TerrainType.Plains,
+	// 			this.Const.World.TerrainType.Steppe,
+	// 			this.Const.World.TerrainType.Snow,
+	// 			this.Const.World.TerrainType.Hills,
+	// 			this.Const.World.TerrainType.Tundra,
+	// 			this.Const.World.TerrainType.Forest,
+	// 			this.Const.World.TerrainType.SnowyForest,
+	// 			this.Const.World.TerrainType.AutumnForest,
+	// 			this.Const.World.TerrainType.LeaveForest
+	// 		];
+	// 		local tries = 0;
+	// 		while (tries++ < 1000)
+	// 		{
+	// 			local index = this.Math.rand(0, settlements.len() - 1)
+	// 			settlements[index].buildAttachedLocation(1, v.Script, ALL, [], 2, false, true, true);
+	// 			if (settlements[index].hasAttachedLocation(k)) {
+	// 				//this.logInfo("Added " + k)
+	// 				break;
+	// 			}
+	// 			tries = --tries;
+	// 		}
+	// 	}
 
-	}
+	// }
 
 })
