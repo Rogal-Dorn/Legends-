@@ -129,7 +129,7 @@ gt.Const.World.Spawn.NomadRaiders <-
 		{
 			Weight = 2,
 			MinR = 310,
-			Types = 
+			Types =
 			[
 				{
 					Type = this.Const.World.Spawn.Troops.DesertDevil,
@@ -216,7 +216,7 @@ gt.Const.World.Spawn.NomadDefenders <-
 		{
 			Weight = 2,
 			MinR = 425,
-			Types = 
+			Types =
 			[
 				{
 					Type = this.Const.World.Spawn.Troops.DesertDevil,

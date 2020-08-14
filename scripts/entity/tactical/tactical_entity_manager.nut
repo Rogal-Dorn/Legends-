@@ -828,14 +828,14 @@ this.tactical_entity_manager <- {
 		{
 			local clouds = weather.createCloudSettings();
 			clouds.Type = this.getconsttable().CloudType.Fog;
-			clouds.MinClouds = 15;
-			clouds.MaxClouds = 25;
+			clouds.MinClouds = 20;
+			clouds.MaxClouds = 20;
 			clouds.MinVelocity = 3.0;
-			clouds.MaxVelocity = 10.0;
-			clouds.MinAlpha = 0.3;
-			clouds.MaxAlpha = 0.5;
-			clouds.MinScale = 1.5;
-			clouds.MaxScale = 3.5;
+			clouds.MaxVelocity = 9.0;
+			clouds.MinAlpha = 0.35;
+			clouds.MaxAlpha = 0.45;
+			clouds.MinScale = 2.0;
+			clouds.MaxScale = 3.0;
 			weather.buildCloudCover(clouds);
 		}
 		else if (this.Math.rand(1, 100) <= 10 && _worldTile.TacticalType != this.Const.World.TerrainTacticalType.SteppeHills && _worldTile.TacticalType != this.Const.World.TerrainTacticalType.Steppe && _worldTile.TacticalType != this.Const.World.TerrainTacticalType.Snow && _worldTile.TacticalType != this.Const.World.TerrainTacticalType.SnowyForest && _worldTile.TacticalType != this.Const.World.TerrainTacticalType.SnowyHills && _worldTile.TacticalType != this.Const.World.TerrainTacticalType.AutumnForest && _worldTile.TacticalType != this.Const.World.TerrainTacticalType.Desert && _worldTile.TacticalType != this.Const.World.TerrainTacticalType.DesertHills)
@@ -877,31 +877,31 @@ this.tactical_entity_manager <- {
 			}
 
 			local rain = weather.createRainSettings();
-			rain.MinDrops = 20;
-			rain.MaxDrops = 60;
-			rain.NumSplats = 30;
-			rain.MinVelocity = 250.0;
-			rain.MaxVelocity = 500.0;
-			rain.MinAlpha = 0.3;
-			rain.MaxAlpha = 0.7;
+			rain.MinDrops = 40;
+			rain.MaxDrops = 40;
+			rain.NumSplats = 20;
+			rain.MinVelocity = 300.0;
+			rain.MaxVelocity = 400.0;
+			rain.MinAlpha = 0.4;
+			rain.MaxAlpha = 0.6;
 			rain.SplatAlpha = 0.5;
-			rain.MinScale = 0.6;
-			rain.MaxScale = 1.1;
+			rain.MinScale = 0.75;
+			rain.MaxScale = 1.0;
 			weather.buildRain(rain);
 			this.Sound.setAmbience(0, this.Const.SoundAmbience.RainLight, this.Const.Sound.Volume.Ambience, 0);
 		}
 		else if (this.Math.rand(1, 100) <= 25 && (_worldTile.TacticalType == this.Const.World.TerrainTacticalType.Snow || _worldTile.TacticalType == this.Const.World.TerrainTacticalType.SnowyForest || _worldTile.TacticalType == this.Const.World.TerrainTacticalType.SnowyHills))
 		{
 			local rain = weather.createRainSettings();
-			rain.MinDrops = 100;
-			rain.MaxDrops = 300;
+			rain.MinDrops = 200;
+			rain.MaxDrops = 200;
 			rain.NumSplats = 0;
-			rain.MinVelocity = 50.0;
-			rain.MaxVelocity = 250.0;
-			rain.MinAlpha = 0.4;
-			rain.MaxAlpha = 0.95;
-			rain.MinScale = 0.2;
-			rain.MaxScale = 0.5;
+			rain.MinVelocity = 100.0;
+			rain.MaxVelocity = 200.0;
+			rain.MinAlpha = 0.5;
+			rain.MaxAlpha = 0.9;
+			rain.MinScale = 0.25;
+			rain.MaxScale = 0.4;
 			rain.clearDropBrushes();
 			rain.addDropBrush("ice_crystal");
 			weather.buildRain(rain);
@@ -909,15 +909,15 @@ this.tactical_entity_manager <- {
 		else if (this.Math.rand(1, 100) <= 15 && (_worldTile.TacticalType == this.Const.World.TerrainTacticalType.Highlands || _worldTile.TacticalType == this.Const.World.TerrainTacticalType.HighlandsHills))
 		{
 			local rain = weather.createRainSettings();
-			rain.MinDrops = 150;
-			rain.MaxDrops = 400;
+			rain.MinDrops = 200;
+			rain.MaxDrops = 200;
 			rain.NumSplats = 0;
-			rain.MinVelocity = 25.0;
-			rain.MaxVelocity = 250.0;
+			rain.MinVelocity = 100.0;
+			rain.MaxVelocity = 200.0;
 			rain.MinAlpha = 0.5;
-			rain.MaxAlpha = 1.0;
+			rain.MaxAlpha = 0.9;
 			rain.MinScale = 0.15;
-			rain.MaxScale = 0.5;
+			rain.MaxScale = 0.3;
 			rain.clearDropBrushes();
 			rain.addDropBrush("ice_crystal");
 			weather.buildRain(rain);
@@ -940,48 +940,48 @@ this.tactical_entity_manager <- {
 			weather.buildRain(rain);
 			local clouds = weather.createCloudSettings();
 			clouds.Type = this.getconsttable().CloudType.Custom;
-			clouds.MinClouds = 100;
-			clouds.MaxClouds = 200;
-			clouds.MinVelocity = 350.0;
-			clouds.MaxVelocity = 600.0;
-			clouds.MinAlpha = 0.5;
+			clouds.MinClouds = 150;
+			clouds.MaxClouds = 150;
+			clouds.MinVelocity = 400.0;
+			clouds.MaxVelocity = 500.0;
+			clouds.MinAlpha = 0.6;
 			clouds.MaxAlpha = 1.0;
 			clouds.MinScale = 1.0;
-			clouds.MaxScale = 5.0;
+			clouds.MaxScale = 4.0;
 			clouds.Sprite = "wind_01";
 			clouds.RandomizeDirection = false;
 			clouds.RandomizeRotation = false;
-			clouds.Direction = this.createVec(-1.0, -0.699999988);
+			clouds.Direction = this.createVec(-1.0, -0.7);
 			weather.buildCloudCover(clouds);
 			this.Sound.setAmbience(0, this.Const.SoundAmbience.Blizzard, this.Const.Sound.Volume.Ambience, 0);
 		}
 		else if (this.Math.rand(1, 100) <= 60 && _worldTile.TacticalType != this.Const.World.TerrainTacticalType.Desert && _worldTile.TacticalType != this.Const.World.TerrainTacticalType.DesertHills)
 		{
 			local clouds = weather.createCloudSettings();
-			clouds.MinClouds = 4;
-			clouds.MaxClouds = 6;
-			clouds.MinVelocity = 20.0;
-			clouds.MaxVelocity = 60.0;
-			clouds.MinAlpha = 0.25;
-			clouds.MaxAlpha = 0.6;
-			clouds.MinScale = 1.0;
-			clouds.MaxScale = 3.5;
+			clouds.MinClouds = 5;
+			clouds.MaxClouds = 5;
+			clouds.MinVelocity = 30.0;
+			clouds.MaxVelocity = 50.0;
+			clouds.MinAlpha = 0.35;
+			clouds.MaxAlpha = 0.5;
+			clouds.MinScale = 1.5;
+			clouds.MaxScale = 3.0;
 			weather.buildCloudCover(clouds);
 		}
 
 		if (_worldTile.Type == this.Const.World.TerrainType.AutumnForest)
 		{
 			local rain = weather.createRainSettings();
-			rain.MinDrops = 15;
-			rain.MaxDrops = 25;
+			rain.MinDrops = 20;
+			rain.MaxDrops = 20;
 			rain.DropLifetime = 7000;
 			rain.NumSplats = 0;
-			rain.MinVelocity = 25.0;
+			rain.MinVelocity = 50.0;
 			rain.MaxVelocity = 100.0;
 			rain.MinAlpha = 1.0;
 			rain.MaxAlpha = 1.0;
-			rain.MinScale = 0.2;
-			rain.MaxScale = 0.6;
+			rain.MinScale = 0.3;
+			rain.MaxScale = 0.5;
 			rain.ScaleDropsWithTime = true;
 			rain.clearDropBrushes();
 			rain.addDropBrush("leaf_01");
@@ -1016,7 +1016,7 @@ this.tactical_entity_manager <- {
 
 		foreach( p in all_players )
 		{
-			if (p.getPlaceInFormation() > 26)
+			if (!_properties.IsUsingSetPlayers && p.getPlaceInFormation() > 17)
 			{
 				continue;
 			}
@@ -1034,7 +1034,7 @@ this.tactical_entity_manager <- {
 
 			num = ++num;
 
-			if (num >= 27)
+			if (num >= this.World.Assets.getBrothersMaxInCombat())
 			{
 				break;
 			}
@@ -1058,8 +1058,7 @@ this.tactical_entity_manager <- {
 			{
 				_properties.PlayerDeploymentType = this.Const.Tactical.DeploymentType.Line;
 			}
-
-			if (_properties.LocationTemplate != null && _properties.LocationTemplate.Fortification != this.Const.Tactical.FortificationType.None && !_properties.LocationTemplate.ForceLineBattle)
+			else if (_properties.LocationTemplate != null && _properties.LocationTemplate.Fortification != this.Const.Tactical.FortificationType.None && !_properties.LocationTemplate.ForceLineBattle)
 			{
 				_properties.PlayerDeploymentType = this.Const.Tactical.DeploymentType.LineBack;
 			}

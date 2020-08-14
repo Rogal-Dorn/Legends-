@@ -112,7 +112,7 @@ this.bounty_hunter_melee_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.m.Properties.BehaviorMult[this.Const.AI.Behavior.ID.Protect] = 0.0;
 		this.m.Properties.BehaviorMult[this.Const.AI.Behavior.ID.SwitchToRanged] = 1.0;
 
-		if (this.m.KnownAllies.len() >= 8 && this.getActor().getCurrentProperties().TargetAttractionMult <= 1.0)
+		if (!this.getStrategy().isDefendingCamp() && this.m.KnownAllies.len() >= 8 && this.getActor().getCurrentProperties().TargetAttractionMult <= 1.0)
 		{
 			item = this.m.Actor.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
 

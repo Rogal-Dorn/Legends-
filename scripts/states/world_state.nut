@@ -1645,60 +1645,64 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.m.CombatStartTime = 0;
 		this.m.CombatSeed = 0;
 		this.World.Statistics.getFlags().set("LastCombatSavedCaravan", false);
-		local nonLocationBattle = true;
 
-		foreach( party in this.m.PartiesInCombat )
+		if (!this.World.Statistics.getFlags().get("LastCombatWasArena"))
 		{
-			if (party.isLocation() && !party.isAlliedWithPlayer())
-			{
-				nonLocationBattle = false;
-			}
+			local nonLocationBattle = true;
 
-			if (party.isAlive() && party.getTroops().len() == 0)
+			foreach( party in this.m.PartiesInCombat )
 			{
-				party.onCombatLost();
-			}
-			else if (party.isAlive() && party.isAlliedWithPlayer() && party.getFlags().get("IsCaravan") && this.m.EscortedEntity == null)
-			{
-				this.World.Statistics.getFlags().set("LastCombatSavedCaravan", true);
-				this.World.Statistics.getFlags().set("LastCombatSavedCaravanProduce", party.getInventory()[this.Math.rand(0, party.getInventory().len() - 1)]);
-			}
-		}
-
-		this.m.PartiesInCombat = [];
-
-		if (nonLocationBattle)
-		{
-			local playerTile = this.getPlayer().getTile();
-			local battlefield;
-
-			if (!playerTile.IsOccupied)
-			{
-				battlefield = this.World.spawnLocation("scripts/entity/world/locations/battlefield_location", playerTile.Coords);
-			}
-			else
-			{
-				for( local i = 0; i != 6; i = ++i )
+				if (party.isLocation() && !party.isAlliedWithPlayer())
 				{
-					if (!playerTile.hasNextTile(i))
-					{
-					}
-					else
-					{
-						local nextTile = playerTile.getNextTile(i);
+					nonLocationBattle = false;
+				}
 
-						if (!nextTile.IsOccupied)
-						{
-							battlefield = this.World.spawnLocation("scripts/entity/world/locations/battlefield_location", nextTile.Coords);
-							break;
-						}
-					}
+				if (party.isAlive() && party.getTroops().len() == 0)
+				{
+					party.onCombatLost();
+				}
+				else if (party.isAlive() && party.isAlliedWithPlayer() && party.getFlags().get("IsCaravan") && this.m.EscortedEntity == null)
+				{
+					this.World.Statistics.getFlags().set("LastCombatSavedCaravan", true);
+					this.World.Statistics.getFlags().set("LastCombatSavedCaravanProduce", party.getInventory()[this.Math.rand(0, party.getInventory().len() - 1)]);
 				}
 			}
 
-			if (battlefield != null)
+			this.m.PartiesInCombat = [];
+
+			if (nonLocationBattle)
 			{
-				battlefield.setSize(2);
+				local playerTile = this.getPlayer().getTile();
+				local battlefield;
+
+				if (!playerTile.IsOccupied)
+				{
+					battlefield = this.World.spawnLocation("scripts/entity/world/locations/battlefield_location", playerTile.Coords);
+				}
+				else
+				{
+					for( local i = 0; i != 6; i = ++i )
+					{
+						if (!playerTile.hasNextTile(i))
+						{
+						}
+						else
+						{
+							local nextTile = playerTile.getNextTile(i);
+
+							if (!nextTile.IsOccupied)
+							{
+								battlefield = this.World.spawnLocation("scripts/entity/world/locations/battlefield_location", nextTile.Coords);
+								break;
+							}
+						}
+					}
+				}
+
+				if (battlefield != null)
+				{
+					battlefield.setSize(2);
+				}
 			}
 		}
 

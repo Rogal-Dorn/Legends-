@@ -157,7 +157,7 @@ this.arena_contract <- this.inherit("scripts/contracts/contract", {
 				P = 0
 			});
 		}
-		else if (this.World.Statistics.getFlags().getAsInt("ArenaFightsWon") > 3)
+		else
 		{
 			twists.push({
 				R = 10,
@@ -196,7 +196,7 @@ this.arena_contract <- this.inherit("scripts/contracts/contract", {
 			{
 				this.m.Flags.set(t.F, true);
 				pay = pay + t.P;
-				  // [470]  OP_JMP            0      5    0    0
+				  // [460]  OP_JMP            0      5    0    0
 			}
 			else
 			{

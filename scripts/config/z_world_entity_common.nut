@@ -16,6 +16,7 @@ gt.Const.World.Common.assignTroops = function( _party, _partyList, _resources, _
 	//Vanilla partlyList spawnlists
 	else
 	{
+
 		if (_partyList[_partyList.len() - 1].Cost < _resources * 0.7)
 		{
 			_resources = _partyList[_partyList.len() - 1].Cost;
@@ -25,6 +26,7 @@ gt.Const.World.Common.assignTroops = function( _party, _partyList, _resources, _
 		local best;
 		local bestCost = _weightMode == this.WeightMode.Strongest ? -9000.0 : 9000;
 		local potential = [];
+
 
 		foreach( party in _partyList )
 		{
@@ -61,21 +63,18 @@ gt.Const.World.Common.assignTroops = function( _party, _partyList, _resources, _
 			}
 		}
 
-		local p;
-
 		if (potential.len() == 0 && best == null)
 		{
 			bestCost = 9000;
-
 			foreach( party in _partyList )
 			{
-				if (this.Math.abs(_resources - party.Cost) <= bestCost)
+				best = party;
+				if (this.Math.abs(_resources - party.Cost) > bestCost)
 				{
-					best = party;
-					bestCost = this.Math.abs(_resources - party.Cost);
+					break;
 				}
+				bestCost = this.Math.abs(_resources - party.Cost);
 			}
-
 			p = best;
 		}
 		else if (_weightMode == this.WeightMode.Random)
@@ -88,13 +87,13 @@ gt.Const.World.Common.assignTroops = function( _party, _partyList, _resources, _
 		}
 		else if (_weightMode == this.WeightMode.Weighted)
 		{
+			p = best;
 			local pick = this.Math.rand(1, total_weight);
-
 			foreach( party in potential )
 			{
+				p = party;
 				if (pick <= party.Cost)
 				{
-					p = party;
 					break;
 				}
 
