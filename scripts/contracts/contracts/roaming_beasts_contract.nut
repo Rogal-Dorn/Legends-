@@ -56,12 +56,12 @@ this.roaming_beasts_contract <- this.inherit("scripts/contracts/contract", {
 			function end()
 			{
 				this.World.Assets.addMoney(this.Contract.m.Payment.getInAdvance());
-
-				if (this.Math.rand(1, 100) <= 5 && this.World.Assets.getBusinessReputation() > 500)
+				local r = this.Math.rand(1, 100)
+				if (r <= 5 && this.World.Assets.getBusinessReputation() > 500)
 				{
 					this.Flags.set("IsHumans", true);
 				}
-				else
+				else if (r < 99)
 				{
 					local village = this.Contract.getHome().get();
 					local twists = [];
@@ -174,7 +174,7 @@ this.roaming_beasts_contract <- this.inherit("scripts/contracts/contract", {
 						}
 					}
 				}
-				else if (r >= 99)
+				else
 				{
 					this.Flags.set("IsVermes", true);
 				}

@@ -781,7 +781,7 @@ gt.Const.World.Buildings <- {
 	Alchemists = 0,
 	Arenas = 0,
 	ArmorsmithsOriental = 0,
-	WeaponsmithsOriental = 0,,
+	WeaponsmithsOriental = 0,
 	Stables = 0,
 	function reset()
 	{

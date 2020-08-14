@@ -511,15 +511,11 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 				}
 
 				local distanceToNextSettlement = _action.getDistanceToSettlements(tile);
-<<<<<<< HEAD
 				if (this.World.LegendsMod.Configs().LegendLocationScalingEnabled())
-					{
-					 distanceToNextSettlement *= 2;
-					}
-				local party = _action.getFaction().spawnEntity(tile, "Hexen", false, this.Const.World.Spawn.HexenAndMore, this.Math.rand(80, 120) * _action.getReputationToDifficultyMult() * this.Math.maxf(0.7, this.Math.minf(1.5, distanceToNextSettlement / 14.0)));
-=======
+				{
+					distanceToNextSettlement *= 2;
+				}
 				local party = _action.getFaction().spawnEntity(tile, "Hexen", false, this.Const.World.Spawn.HexenAndMore, this.Math.rand(80, 120) * _action.getScaledDifficultyMult() * this.Math.maxf(0.7, this.Math.minf(1.5, distanceToNextSettlement / 14.0)));
->>>>>>> master
 				party.getSprite("banner").setBrush("banner_beasts_01");
 				party.setDescription("A malevolent old crone, said to lure and abduct little children to make broth and concoctions out of, strike sinister pacts with villagers, and weave curses.");
 				party.setFootprintType(this.Const.World.FootprintsType.Hexen);
@@ -569,15 +565,11 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 				}
 
 				local distanceToNextSettlement = _action.getDistanceToSettlements(tile);
-<<<<<<< HEAD
 				if (this.World.LegendsMod.Configs().LegendLocationScalingEnabled())
-					{
+				{
 					 distanceToNextSettlement *= 2;
-					}
-				local party = _action.getFaction().spawnEntity(tile, "Schrats", false, this.Const.World.Spawn.Schrats, this.Math.rand(80, 120) * _action.getReputationToDifficultyMult() * this.Math.maxf(0.7, this.Math.minf(1.5, distanceToNextSettlement / 14.0)));
-=======
+				}
 				local party = _action.getFaction().spawnEntity(tile, "Schrats", false, this.Const.World.Spawn.Schrats, this.Math.rand(80, 120) * _action.getScaledDifficultyMult() * this.Math.maxf(0.7, this.Math.minf(1.5, distanceToNextSettlement / 14.0)));
->>>>>>> master
 				party.getSprite("banner").setBrush("banner_beasts_01");
 				party.setDescription("A creature of bark and wood, blending between trees and shambling slowly, its roots digging through the soil.");
 				party.setFootprintType(this.Const.World.FootprintsType.Schrats);
@@ -737,15 +729,11 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 				}
 
 				local distanceToNextSettlement = _action.getDistanceToSettlements(tile);
-<<<<<<< HEAD
 				if (this.World.LegendsMod.Configs().LegendLocationScalingEnabled())
 					{
 					 distanceToNextSettlement *= 2;
 					}
-				local party = _action.getFaction().spawnEntity(tile, "Lindwurm", false, this.Const.World.Spawn.Lindwurm, this.Math.rand(80, 120) * _action.getReputationToDifficultyMult() * this.Math.maxf(0.7, this.Math.minf(1.5, distanceToNextSettlement / 14.0)));
-=======
 				local party = _action.getFaction().spawnEntity(tile, "Lindwurm", false, this.Const.World.Spawn.Lindwurm, this.Math.rand(80, 120) * _action.getScaledDifficultyMult() * this.Math.maxf(0.7, this.Math.minf(1.5, distanceToNextSettlement / 14.0)));
->>>>>>> master
 				party.getSprite("banner").setBrush("banner_beasts_01");
 				party.setDescription("A Lindwurm - a wingless bipedal dragon resembling a giant snake.");
 				party.setFootprintType(this.Const.World.FootprintsType.Lindwurms);

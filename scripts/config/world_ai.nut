@@ -63,13 +63,9 @@ gt.Const.World.AI <- {
 			"Mercenary",
 			"AttackZone",
 			"Patrol",
-<<<<<<< HEAD
+			"Occupy",
 			"Sleep",
 			"Dock"
-=======
-			"Occupy",
-			"Sleep"
->>>>>>> master
 		],
 		Score = {
 			Zero = 0,

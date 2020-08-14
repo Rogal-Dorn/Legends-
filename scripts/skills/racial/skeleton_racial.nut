@@ -20,27 +20,15 @@ this.skeleton_racial <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
-<<<<<<< HEAD
 		if (_skill.getID() == "actives.aimed_shot" || _skill.getID() == "actives.quick_shot"  || _skill.getID() == "actives.legend_cascade"  || _skill.getID() == "actives.legend_siphon_skill")
 		{
 			_properties.DamageReceivedRegularMult *= 0.1;
 		}
-		else if (_skill.getID() == "actives.shoot_bolt" || _skill.getID() == "actives.shoot_stake" || _skill.getID() == "actives.sling_stone" || _skill.getID() == "actives.legend_piercing_shot")
+		else if (_skill.getID() == "actives.shoot_bolt" || _skill.getID() == "actives.shoot_stake" || _skill.getID() == "actives.sling_stone" || _skill.getID() == "actives.legend_piercing_shot" || _skill.getID() == "actives.fire_handgonne")
 		{
 			_properties.DamageReceivedRegularMult *= 0.33;
 		}
-		else if (_skill.getID() == "actives.throw_javelin" || _skill.getID() == "actives.legend_magic_missile")
-=======
-		if (_skill.getID() == "actives.aimed_shot" || _skill.getID() == "actives.quick_shot")
-		{
-			_properties.DamageReceivedRegularMult *= 0.1;
-		}
-		else if (_skill.getID() == "actives.shoot_bolt" || _skill.getID() == "actives.shoot_stake" || _skill.getID() == "actives.sling_stone" || _skill.getID() == "actives.fire_handgonne")
-		{
-			_properties.DamageReceivedRegularMult *= 0.33;
-		}
-		else if (_skill.getID() == "actives.throw_javelin" || _skill.getID() == "actives.ignite_firelance")
->>>>>>> master
+		else if (_skill.getID() == "actives.throw_javelin" || _skill.getID() == "actives.legend_magic_missile" || _skill.getID() == "actives.ignite_firelance")
 		{
 			_properties.DamageReceivedRegularMult *= 0.25;
 		}

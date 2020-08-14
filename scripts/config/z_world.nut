@@ -119,7 +119,8 @@ gt.Const.World.Settlements.LegendsWorldMaster <- [
 				Ratio = 1,
 				MinAmount = 1,
 				Size = 1
-			},
+			}
+		]
 	}
 ];
 

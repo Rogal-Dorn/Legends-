@@ -20,11 +20,7 @@ this.perk_coup_de_grace <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
-<<<<<<< HEAD
-		if (_targetEntity.getSkills().hasSkillOfType(this.Const.SkillType.TemporaryInjury) || _targetEntity.getSkills().hasSkill("effects.debilitated"))
-=======
-		if (_skill.isAttack() && _targetEntity.getSkills().hasSkillOfType(this.Const.SkillType.TemporaryInjury))
->>>>>>> master
+		if (_skill.isAttack() && _targetEntity.getSkills().hasSkillOfType(this.Const.SkillType.TemporaryInjury) || _targetEntity.getSkills().hasSkill("effects.debilitated"))
 		{
 			_properties.DamageTotalMult *= 1.2;
 		}

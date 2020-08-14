@@ -53,11 +53,7 @@ this.double_grip <- this.inherit("scripts/skills/skill", {
 	{
 		if (this.canDoubleGrip())
 		{
-<<<<<<< HEAD
-			_properties.DamageTotalMult *= 1.25000000;
-=======
 			_properties.MeleeDamageMult *= 1.25;
->>>>>>> master
 		}
 	}
 });

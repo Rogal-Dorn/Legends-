@@ -116,21 +116,18 @@ this.large_steppe_fort <- this.inherit("scripts/entity/world/settlement", {
 			"swordmaster_background",
 			"hedge_knight_background"
 		];
-<<<<<<< HEAD
 		this.m.StablesList = [
 			"legend_horse_destrier",
 			"legend_horse_courser",
 			"legend_horse_destrier",
 			"legend_horse_courser"
 		];
-=======
 
 		if (this.Const.DLC.Desert)
 		{
 			this.m.DraftList.push("eunuch_southern_background");
 		}
 
->>>>>>> master
 		this.m.UIDescription = "A mighty citadel towering above the surrounding steppe";
 		this.m.Description = "This mighty citadel towers high above the surrounding steppe and is the seat of power in the region. It houses a large garrison and offers all kinds of services valuable to travellers and mercenaries.";
 		this.m.UIBackgroundCenter = "ui/settlements/stronghold_03";
