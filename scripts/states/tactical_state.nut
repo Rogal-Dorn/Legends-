@@ -335,6 +335,7 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 					}
 
 					this.World.Statistics.getFlags().set("LastCombatWasOngoingBattle", this.m.StrategicProperties.InCombatAlready);
+					this.World.Statistics.getFlags().set("LastCombatWasArena", this.m.StrategicProperties.IsArenaMode);
 					this.Music.setTrackList(this.m.StrategicProperties.Music, this.Const.Music.CrossFadeTime);
 				}
 				else

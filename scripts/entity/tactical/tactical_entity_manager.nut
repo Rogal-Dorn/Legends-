@@ -1058,8 +1058,7 @@ this.tactical_entity_manager <- {
 			{
 				_properties.PlayerDeploymentType = this.Const.Tactical.DeploymentType.Line;
 			}
-
-			if (_properties.LocationTemplate != null && _properties.LocationTemplate.Fortification != this.Const.Tactical.FortificationType.None && !_properties.LocationTemplate.ForceLineBattle)
+			else if (_properties.LocationTemplate != null && _properties.LocationTemplate.Fortification != this.Const.Tactical.FortificationType.None && !_properties.LocationTemplate.ForceLineBattle)
 			{
 				_properties.PlayerDeploymentType = this.Const.Tactical.DeploymentType.LineBack;
 			}

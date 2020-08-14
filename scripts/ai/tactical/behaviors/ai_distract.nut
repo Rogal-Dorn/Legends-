@@ -151,7 +151,7 @@ this.ai_distract <- this.inherit("scripts/ai/tactical/behavior", {
 					continue;
 				}
 
-				if (myTile.getZoneOfControlCountOtherThan(_entity.getAlliedFactions()) == 1 && target.getTile().getZoneOfControlCountOtherThan(target.getAlliedFactions()) == 1 && _entity.getActionPoints() >= apRequiredForAttack && attackSkill.getHitchance(target) >= 20)
+				if (myTile.getZoneOfControlCountOtherThan(_entity.getAlliedFactions()) == 1 && target.getTile().getZoneOfControlCountOtherThan(target.getAlliedFactions()) == 1 && _entity.getActionPoints() >= apRequiredForAttack && attackSkill != null && attackSkill.getHitchance(target) >= 20)
 				{
 					continue;
 				}

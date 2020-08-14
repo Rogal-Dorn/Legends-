@@ -521,11 +521,6 @@ this.strategy <- {
 			defensiveThreshold = defensiveThreshold * 0.5;
 		}
 
-		if (this.m.Stats.EnemyRangedTotal == 0 && this.m.Stats.EnemyRangedFiring == 0 && this.m.Stats.DefensiveBiasAverage >= 1.0)
-		{
-			defensiveThreshold = defensiveThreshold * 0.5;
-		}
-
 		if (defensiveScore < defensiveThreshold)
 		{
 			this.m.IsOffensiveLastTurn = true;

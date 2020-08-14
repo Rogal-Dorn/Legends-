@@ -251,7 +251,7 @@ this.party <- this.inherit("scripts/entity/world/world_entity", {
 	function onUpdate()
 	{
 		this.world_entity.onUpdate();
-		local delta = this.Time.getVirtualTimeF() - this.m.LastUpdateTime;
+		local delta = this.Math.maxf(0.0, this.Time.getVirtualTimeF() - this.m.LastUpdateTime);
 		this.m.LastUpdateTime = this.Time.getVirtualTimeF();
 
 		if (this.isInCombat())
