@@ -46,7 +46,7 @@ this.legend_horse_trait <- this.inherit("scripts/skills/traits/character_trait",
 		items.getData()[this.Const.ItemSlot.Mainhand][0] = -1;
 		items.getData()[this.Const.ItemSlot.Head][0] = -1;
 		items.getData()[this.Const.ItemSlot.Ammo][0] = -1;
-		this.getContainer().getActor().getTags().add("IsHorse");
+		this.getContainer().getActor().getFlags().add("IsHorse");
 	}
 
 	function onUpdate( _properties )

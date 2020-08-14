@@ -52,7 +52,7 @@ this.legends_beggar_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		}
 
 		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
-		bros[0].getTags().set("IsPlayerCharacter", true);
+		bros[0].getFlags().set("IsPlayerCharacter", true);
 		foreach( bro in bros )
 		{
 			local val = this.World.State.addNewID(bro);
@@ -153,7 +153,7 @@ this.legends_beggar_scenario <- this.inherit("scripts/scenarios/world/starting_s
 
 		foreach( bro in roster )
 		{
-			if (bro.getTags().get("IsPlayerCharacter"))
+			if (bro.getFlags().get("IsPlayerCharacter"))
 			{
 				return true;
 			}

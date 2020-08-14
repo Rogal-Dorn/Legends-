@@ -50,10 +50,10 @@ this.legends_player_horserider <- this.inherit("scripts/entity/tactical/player",
 	{
 
 
-		this.getTags().add("IsHorseRider");
+		this.getFlags().add("IsHorseRider");
 
 		if (!this.getRider().getCurrentProperties().IsContentWithBeingInReserve)
-			this.getRider().getTags().add("TemporaryRider");
+			this.getRider().getFlags().add("TemporaryRider");
 
 		local b = this.m.BaseProperties;
 

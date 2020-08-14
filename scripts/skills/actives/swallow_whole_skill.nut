@@ -57,7 +57,7 @@ this.swallow_whole_skill <- this.inherit("scripts/skills/skill", {
 		{
 			return false;
 		}
-		if (target.getTags().has("IsSummoned"))
+		if (target.getFlags().has("IsSummoned"))
 		{
 			return false;
 		}
@@ -83,7 +83,7 @@ this.swallow_whole_skill <- this.inherit("scripts/skills/skill", {
 		skills.removeByID("effects.legend_vala_chant_senses_effect");
 		skills.removeByID("effects.legend_vala_currently_chanting");
 		skills.removeByID("effects.legend_vala_in_trance");
-		
+
 
 		if (target.getMoraleState() != this.Const.MoraleState.Ignore)
 		{

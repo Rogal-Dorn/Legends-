@@ -31,13 +31,13 @@ this.legion_origin_buried_castle_event <- this.inherit("scripts/events/event", {
 			{
 				local roster = this.World.getTemporaryRoster();
 				_event.m.Dude = roster.create("scripts/entity/tactical/player");
-				
-				_event.m.Dude.getTags().add("PlayerSkeleton");
-				_event.m.Dude.getTags().add("undead");
-				_event.m.Dude.getTags().add("skeleton");
+
+				_event.m.Dude.getFlags().add("PlayerSkeleton");
+				_event.m.Dude.getFlags().add("undead");
+				_event.m.Dude.getFlags().add("skeleton");
 				_event.m.Dude.setStartValuesEx(this.Const.CharacterBackgroundsAnimated);
 				_event.m.Dude.getSkills().add(this.new("scripts/skills/racial/skeleton_racial"));
-				_event.m.Dude.getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));				
+				_event.m.Dude.getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));
 				this.Characters.push(_event.m.Dude.getImagePath());
 			local nobles = this.World.FactionManager.getFactionsOfType(this.Const.FactionType.NobleHouse);
 
@@ -70,7 +70,7 @@ this.legion_origin_buried_castle_event <- this.inherit("scripts/events/event", {
 
 
 		local locations = this.World.EntityManager.getLocations();
-		local nearSite = false; 
+		local nearSite = false;
 		foreach( v in locations )
 		{
 			if (v.getTypeID() == "location.undead_buried_castle" && v.getTile().getDistanceTo(currentTile) < 5)

@@ -5,7 +5,7 @@ this.legend_hunting_stollwurms_contract <- this.inherit("scripts/contracts/contr
 		IsPlayerAttacking = true,
 		MinStrength = 500,
 		Perk = "perk.legend_favoured_enemy_lindwurm",
-		ValidTypes = this.Const.LegendMod.FavoriteLindwurm		
+		ValidTypes = this.Const.LegendMod.FavoriteLindwurm
 	},
 	function create()
 	{
@@ -498,7 +498,7 @@ this.legend_hunting_stollwurms_contract <- this.inherit("scripts/contracts/contr
 
 						foreach( b in bases )
 						{
-							if (!b.getLoot().isEmpty() && !b.isLocationType(this.Const.World.LocationType.Unique) && !b.getTags().get("IsEventLocation"))
+							if (!b.getLoot().isEmpty() && !b.isLocationType(this.Const.World.LocationType.Unique) && !b.getFlags().get("IsEventLocation"))
 							{
 								candidates_location.push(b);
 							}
@@ -511,7 +511,7 @@ this.legend_hunting_stollwurms_contract <- this.inherit("scripts/contracts/contr
 
 						local location = candidates_location[this.Math.rand(0, candidates_location.len() - 1)];
 						this.World.uncoverFogOfWar(location.getTile().Pos, 700.0);
-						location.getTags().set("IsEventLocation", true);
+						location.getFlags().set("IsEventLocation", true);
 						location.setDiscovered(true);
 						this.World.getCamera().moveTo(location);
 						return 0;
@@ -681,7 +681,7 @@ this.legend_hunting_stollwurms_contract <- this.inherit("scripts/contracts/contr
 			}
 
 			local stats = this.Const.LegendMod.GetFavoriteEnemyStats(bro, this.m.ValidTypes);
-			if (stats.Strength >= this.m.MinStrength) 
+			if (stats.Strength >= this.m.MinStrength)
 			{
 				return true;
 			}

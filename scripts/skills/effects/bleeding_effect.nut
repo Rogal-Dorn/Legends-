@@ -66,7 +66,7 @@ this.bleeding_effect <- this.inherit("scripts/skills/skill", {
 		 		return this.getContainer().getActor();
 			 }
 
-			 if (this.m.Actor.getTags().get("Devoured") == true)
+			 if (this.m.Actor.getFlags().get("Devoured") == true)
 			 {
 		 		return this.getContainer().getActor();
 			 }

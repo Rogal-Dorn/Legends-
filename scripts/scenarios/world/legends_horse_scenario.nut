@@ -50,7 +50,7 @@ this.legends_horse_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"legend_trader_commander_background"
 		]);
 		bros[2].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
-		bros[2].getTags().set("IsPlayerCharacter", true);
+		bros[2].getFlags().set("IsPlayerCharacter", true);
 		bros[2].setPlaceInFormation(4);
 		bros[2].setVeteranPerks(2);
 		local items = bros[2].getItems();
@@ -155,7 +155,7 @@ this.legends_horse_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 		foreach( bro in roster )
 		{
-			if (bro.getTags().get("IsPlayerCharacter"))
+			if (bro.getFlags().get("IsPlayerCharacter"))
 			{
 				return true;
 			}

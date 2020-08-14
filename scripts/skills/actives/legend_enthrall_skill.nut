@@ -53,11 +53,11 @@ this.legend_enthrall_skill <- this.inherit("scripts/skills/skill", {
 			return false;
 		}
 
-		if (!target.getTags().has("IsSummoned")){
+		if (!target.getFlags().has("IsSummoned")){
 			return false;
 		}
 
-		if (target.getTags().has("IsEnthralled")){
+		if (target.getFlags().has("IsEnthralled")){
 			return false;
 		}
 
@@ -68,12 +68,12 @@ this.legend_enthrall_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local target = _targetTile.getEntity();
 		local agent;
-		if (target.getTags().has("zombie_minion"))
+		if (target.getFlags().has("zombie_minion"))
 		{
 			agent = this.new("scripts/ai/tactical/agents/zombie_bodyguard_agent");
 		}
 
-		if (target.getTags().has("skeleton"))
+		if (target.getFlags().has("skeleton"))
 		{
 			agent =  this.new("scripts/ai/tactical/agents/skeleton_bodyguard_agent");
 		}
@@ -86,7 +86,7 @@ this.legend_enthrall_skill <- this.inherit("scripts/skills/skill", {
 		target.getAIAgent().setFinished(true);
 		target.getAIAgent().setActor(_user);
 		this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " enthralls " + this.Const.UI.getColorizedEntityName(target));
-		target.getTags().add("IsEnthralled", true);
+		target.getFlags().add("IsEnthralled", true);
 	}
 
 

@@ -52,7 +52,7 @@ this.legend_spawn_skill <- this.inherit("scripts/skills/skill", {
 		{
 			return this.Math.ceil(this.m.FatigueCost * this.m.Container.getActor().getCurrentProperties().FatigueEffectMult);
 		}
-		
+
 		local perkMult = 1.0;
 		local skill = this.getContainer().getSkillByID("perk.legend_channeled_power");
 		if (skill != null)
@@ -109,17 +109,17 @@ this.legend_spawn_skill <- this.inherit("scripts/skills/skill", {
 			{
 				continue;
 			}
-			
+
 			if (item.getID() != this.m.SpawnItem)
 			{
 				continue;
 			}
 
-			if (item.isUnleashed()) 
+			if (item.isUnleashed())
 			{
 				continue;
 			}
-			
+
 			++num;
 		}
 		return num;
@@ -193,17 +193,17 @@ this.legend_spawn_skill <- this.inherit("scripts/skills/skill", {
 			{
 				continue;
 			}
-			
+
 			if (item.getID() != this.m.SpawnItem)
 			{
 				continue;
 			}
 
-			if (item.isUnleashed()) 
+			if (item.isUnleashed())
 			{
 				continue;
 			}
-			
+
 			spawnItem = item;
 			this.World.Assets.getStash().remove(item);
 			break;
@@ -225,8 +225,8 @@ this.legend_spawn_skill <- this.inherit("scripts/skills/skill", {
 		entity.setName(spawnItem.getName());
 		entity.assignRandomEquipment();
 		entity.riseFromGround();
-		entity.getTags().add("IsSummoned", true);
-		entity.getTags().add("Summoner", _user);
+		entity.getFlags().add("IsSummoned", true);
+		entity.getFlags().add("Summoner", _user);
 		entity.setActionPoints(this.Math.round(this.m.APStartMult * entity.getActionPoints()));
 		spawnItem.setEntity(entity);
 		this.m.Items.push(spawnItem);
@@ -246,7 +246,7 @@ this.legend_spawn_skill <- this.inherit("scripts/skills/skill", {
 			{
 				continue;
 			}
-			
+
 			item.onCombatFinished();
 		}
 		this.m.Items = [];

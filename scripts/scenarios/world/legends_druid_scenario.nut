@@ -75,7 +75,7 @@ this.legends_druid_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		}
 
 
-		bros[0].getTags().set("IsPlayerCharacter", true);
+		bros[0].getFlags().set("IsPlayerCharacter", true);
 		bros[0].setPlaceInFormation(3);
 		bros[0].setVeteranPerks(2);
 
@@ -177,7 +177,7 @@ this.legends_druid_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 		foreach( bro in roster )
 		{
-			if (bro.getTags().get("IsPlayerCharacter"))
+			if (bro.getFlags().get("IsPlayerCharacter"))
 			{
 				return true;
 			}

@@ -10,7 +10,7 @@ this.legend_violent_decomposition_skill <- this.inherit("scripts/skills/skill", 
 		this.m.SoundOnUse = [
 		 	"sounds/combat/violent_decomposition.wav"
 		];
-		
+
 		this.m.SoundOnHit = [
 			"sounds/enemies/necromancer_01.wav",
 			"sounds/enemies/necromancer_02.wav",
@@ -56,7 +56,7 @@ this.legend_violent_decomposition_skill <- this.inherit("scripts/skills/skill", 
 			return false;
 		}
 
-		if (!target.getTags().has("IsSummoned")){
+		if (!target.getFlags().has("IsSummoned")){
 			return false;
 		}
 

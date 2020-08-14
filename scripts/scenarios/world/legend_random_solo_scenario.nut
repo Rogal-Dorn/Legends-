@@ -32,7 +32,7 @@ this.legend_random_solo_scenario<- this.inherit("scripts/scenarios/world/startin
 		bros[0].m.Level = 4;
 		bros[0].setVeteranPerks(2);
 		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
-		bros[0].getTags().set("IsPlayerCharacter", true);
+		bros[0].getFlags().set("IsPlayerCharacter", true);
 
 		foreach( bro in bros )
 		{
@@ -117,7 +117,7 @@ this.legend_random_solo_scenario<- this.inherit("scripts/scenarios/world/startin
 
 		foreach( bro in roster )
 		{
-			if (bro.getTags().get("IsPlayerCharacter"))
+			if (bro.getFlags().get("IsPlayerCharacter"))
 			{
 				return true;
 			}

@@ -58,7 +58,7 @@ this.skeleton_racial <- this.inherit("scripts/skills/skill", {
 					return;
 				}
 
-				if (_targetEntity.getTags().has("undead"))
+				if (_targetEntity.getFlags().has("undead"))
 				{
 					return;
 				}

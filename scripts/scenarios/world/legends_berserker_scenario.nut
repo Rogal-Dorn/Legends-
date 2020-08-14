@@ -59,7 +59,7 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 			bro.m.CompanyID = val;
 		}
 
-		bros[0].getTags().set("IsPlayerCharacter", true);
+		bros[0].getFlags().set("IsPlayerCharacter", true);
 		bros[0].setVeteranPerks(2);
 		this.World.Assets.m.Money = this.World.Assets.m.Money;
 		this.World.Assets.m.Ammo = this.World.Assets.m.Ammo;
@@ -211,7 +211,7 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 
 		foreach( bro in roster )
 		{
-			if (bro.getTags().get("IsPlayerCharacter"))
+			if (bro.getFlags().get("IsPlayerCharacter"))
 			{
 				return true;
 			}

@@ -73,7 +73,7 @@ this.legend_siphon_skill <- this.inherit("scripts/skills/skill", {
 			return false;
 		}
 
-		if (_targetTile.getEntity().getTags().has("IsSummoned"))
+		if (_targetTile.getEntity().getFlags().has("IsSummoned"))
 		{
 			return false;
 		}

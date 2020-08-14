@@ -105,8 +105,8 @@ this.legend_skin_ghoul <- this.inherit("scripts/entity/tactical/actor", {
 		local onArmorHitSounds = this.getItems().getAppearance().ImpactSound;
 		onArmorHitSounds[this.Const.BodyPart.Body] = this.Const.Sound.ArmorLeatherImpact;
 		onArmorHitSounds[this.Const.BodyPart.Head] = this.Const.Sound.ArmorLeatherImpact;
-		this.getTags().add("ghoul");
-		this.getTags().add("undead");
+		this.getFlags().add("ghoul");
+		this.getFlags().add("undead");
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/ghoul_agent");
 		this.m.AIAgent.setActor(this);
 	}
@@ -186,11 +186,11 @@ this.legend_skin_ghoul <- this.inherit("scripts/entity/tactical/actor", {
 				{
 					if (this.Const.DLC.Unhold)
 					{
-	
+
 						local loot;
 
 							loot = this.new("scripts/items/misc/legend_skin_ghoul_skin_item");
-		
+
 
 						loot.drop(_tile);
 					}
@@ -227,7 +227,7 @@ this.legend_skin_ghoul <- this.inherit("scripts/entity/tactical/actor", {
 		}
 
 		this.Tactical.addEntityToMap(e, _tile.Coords.X, _tile.Coords.Y);
-		e.getTags().set("Devoured", false);
+		e.getFlags().set("Devoured", false);
 		local slime = e.getSprite("dirt");
 		slime.setBrush("bust_slime");
 		slime.Visible = true;

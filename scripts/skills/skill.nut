@@ -1843,7 +1843,7 @@ this.skill <- {
 
 		if (this.m.InjuriesOnBody != null && bodyPart == this.Const.BodyPart.Body)
 		{
-		if (_info.TargetEntity.getTags().has("skeleton"))
+		if (_info.TargetEntity.getFlags().has("skeleton"))
 			{
 				injuries = this.Const.Injury.SkeletonBody;
 			}
@@ -1854,7 +1854,7 @@ this.skill <- {
 		}
 		else if (this.m.InjuriesOnHead != null && bodyPart == this.Const.BodyPart.Head)
 		{
-			if (_info.TargetEntity.getTags().has("skeleton"))
+			if (_info.TargetEntity.getFlags().has("skeleton"))
 			{
 				injuries = this.Const.Injury.SkeletonHead;
 			}

@@ -294,9 +294,9 @@ this.imprisoned_wildman_event <- this.inherit("scripts/events/event", {
 				_event.m.Dude = roster.create("scripts/entity/tactical/player");
 					if (this.World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
 						{
-						_event.m.Dude.getTags().add("PlayerSkeleton");
-						_event.m.Dude.getTags().add("undead");
-						_event.m.Dude.getTags().add("skeleton");
+						_event.m.Dude.getFlags().add("PlayerSkeleton");
+						_event.m.Dude.getFlags().add("undead");
+						_event.m.Dude.getFlags().add("skeleton");
 							local r;
 							r = this.Math.rand(0, 2);
 							if (r == 0)

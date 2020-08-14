@@ -5,7 +5,7 @@ this.legend_hunting_rock_unholds_contract <- this.inherit("scripts/contracts/con
 		IsPlayerAttacking = true,
 		MinStrength = 300,
 		Perk = "perk.legend_favoured_enemy_unhold",
-		ValidTypes = this.Const.LegendMod.FavoriteUnhold		
+		ValidTypes = this.Const.LegendMod.FavoriteUnhold
 	},
 	function setEnemyType( _t )
 	{
@@ -95,7 +95,7 @@ this.legend_hunting_rock_unholds_contract <- this.inherit("scripts/contracts/con
 				party.setDescription("One or more lumbering giants.");
 				party.setAttackableByAI(false);
 				party.setFootprintSizeOverride(0.85);
-				party.getTags().set("IsUnholds", true);
+				party.getFlags().set("IsUnholds", true);
 				this.Const.World.Common.addFootprintsFromTo(nearTile, party.getTile(), this.Const.BeastFootprints, 0.85);
 				this.Contract.m.Target = this.WeakTableRef(party);
 				party.getSprite("banner").setBrush("banner_beasts_01");
@@ -396,7 +396,7 @@ this.legend_hunting_rock_unholds_contract <- this.inherit("scripts/contracts/con
 				local injury2;
 				if (this.Math.rand(1, 100) <= 90)
 				{
-							
+
 					injury1 = this.Contract.m.Dude.addInjury(this.Const.Injury.BluntBody);
 					injury2 = this.Contract.m.Dude.addInjury(this.Const.Injury.BluntBody);
 				}
@@ -589,7 +589,7 @@ this.legend_hunting_rock_unholds_contract <- this.inherit("scripts/contracts/con
 			}
 
 			local stats = this.Const.LegendMod.GetFavoriteEnemyStats(bro, this.m.ValidTypes);
-			if (stats.Strength >= this.m.MinStrength) 
+			if (stats.Strength >= this.m.MinStrength)
 			{
 				return true;
 			}

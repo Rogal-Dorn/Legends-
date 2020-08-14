@@ -196,11 +196,11 @@ this.legend_stollwurm_tail <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.Idle] = 2.0;
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.Attack] = 2.0;
 		this.m.SoundPitch = this.Math.rand(95, 105) * 0.01;
-		this.getTags().add("body_immune_to_acid");
-		this.getTags().add("head_immune_to_acid");
-		this.getTags().add("lindwurm");
+		this.getFlags().add("body_immune_to_acid");
+		this.getFlags().add("head_immune_to_acid");
+		this.getFlags().add("lindwurm");
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/lindwurm_tail_agent");
-		
+
 		this.logInfo("AIAGENT STOLLWURM TAIL = " + this.m.AIAgent)
 		foreach(k,v in this.m.AIAgent)
 		{

@@ -54,7 +54,7 @@ this.legends_sisterhood_scenario <- this.inherit("scripts/scenarios/world/starti
 		], true, 1);
 		bros[4].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
 		bros[4].getSkills().add(this.new("scripts/skills/perks/perk_legend_roster_1"));
-		bros[4].getTags().set("IsPlayerCharacter", true);
+		bros[4].getFlags().set("IsPlayerCharacter", true);
 		bros[4].setPlaceInFormation(13);
 		bros[4].setVeteranPerks(2);
 		bros[5].setStartValuesEx([
@@ -182,7 +182,7 @@ this.legends_sisterhood_scenario <- this.inherit("scripts/scenarios/world/starti
 
 		foreach( bro in roster )
 		{
-			if (bro.getTags().get("IsPlayerCharacter"))
+			if (bro.getFlags().get("IsPlayerCharacter"))
 			{
 				return true;
 			}
