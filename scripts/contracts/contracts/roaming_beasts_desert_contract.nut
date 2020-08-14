@@ -142,7 +142,7 @@ this.roaming_beasts_desert_contract <- this.inherit("scripts/contracts/contract"
 
 					this.Contract.setState("Return");
 				}
-				else if (!this.Flags.get("IsWorkOfBeastsShown") && this.World.getTime().IsDaytime && this.Contract.m.Target.isHiddenToPlayer() && this.Math.rand(1, 1000) <= 1)
+				else if (!this.Flags.get("IsWorkOfBeastsShown") && this.World.getTime().IsDaytime && this.Contract.m.Target.isHiddenToPlayer() && this.Math.rand(1, 9000) <= 1)
 				{
 					this.Flags.set("IsWorkOfBeastsShown", true);
 					this.Contract.setScreen("WorkOfBeasts");

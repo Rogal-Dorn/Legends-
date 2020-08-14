@@ -109,6 +109,11 @@ this.tactical_entity_manager <- {
 			return;
 		}
 
+		if (this.isNoCombatantsLeft())
+		{
+			this.killNonCombatants();
+		}
+
 		this.m.IsCombatFinished = _forceFinish || this.getHostilesNum() == 0 || this.getInstancesOfFaction(this.Const.Faction.Player).len() == 0;
 
 		if (this.m.IsCombatFinished)
@@ -120,6 +125,71 @@ this.tactical_entity_manager <- {
 	function setOnCombatFinishedListener( _l )
 	{
 		this.m.OnCombatFinishedListener = _l;
+	}
+
+	function killNonCombatants()
+	{
+		if (this.Tactical.State.isScenarioMode())
+		{
+			return;
+		}
+
+		for( local i = this.Const.Faction.Player + 2; i != this.World.FactionManager.getFactions().len(); i = ++i )
+		{
+			if (!this.World.FactionManager.isAlliedWithPlayer(i))
+			{
+				foreach( e in this.m.Instances[i] )
+				{
+					if (e.isNonCombatant())
+					{
+						e.killSilently();
+					}
+				}
+			}
+		}
+	}
+
+	function isNoCombatantsLeft()
+	{
+		if (this.m.IsCombatFinished)
+		{
+			return true;
+		}
+
+		if (this.Tactical.State.isScenarioMode())
+		{
+			for( local i = this.Const.Faction.Player + 2; i != this.Const.Faction.COUNT; i = ++i )
+			{
+				if (this.Const.FactionAlliance[i].find(this.Const.Faction.Player) == null)
+				{
+					foreach( e in this.m.Instances[i] )
+					{
+						if (!e.isNonCombatant())
+						{
+							return false;
+						}
+					}
+				}
+			}
+		}
+		else
+		{
+			for( local i = this.Const.Faction.Player + 2; i != this.World.FactionManager.getFactions().len(); i = ++i )
+			{
+				if (!this.World.FactionManager.isAlliedWithPlayer(i))
+				{
+					foreach( e in this.m.Instances[i] )
+					{
+						if (!e.isNonCombatant())
+						{
+							return false;
+						}
+					}
+				}
+			}
+		}
+
+		return true;
 	}
 
 	function checkEnemyRetreating()

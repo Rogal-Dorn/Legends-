@@ -19,7 +19,7 @@ this.roster_of_12_ambition <- this.inherit("scripts/ambitions/ambition", {
 			return;
 		}
 
-		if (this.World.Ambitions.getDone() < 1)
+		if (this.World.Ambitions.getDone() < 1 && this.World.Assets.getOrigin().getID() != "scenario.deserters" && this.World.Assets.getOrigin().getID() != "scenario.raiders")
 		{
 			return;
 		}

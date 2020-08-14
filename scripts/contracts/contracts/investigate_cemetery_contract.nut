@@ -96,11 +96,11 @@ this.investigate_cemetery_contract <- this.inherit("scripts/contracts/contract",
 				this.Contract.m.Destination.setLootScaleBasedOnResources(100 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult());
 				this.Contract.m.Destination.setResources(this.Math.min(this.Contract.m.Destination.getResources(), 60 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult()));
 				local r = this.Math.rand(1, 100);
-				r = 60;
 
 				if (r <= 10 && this.World.Assets.getBusinessReputation() > 500)
 				{
 					this.Flags.set("IsMysteriousMap", true);
+					this.logInfo("map");
 					local bandits = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Bandits);
 					this.World.FactionManager.getFaction(this.Contract.m.Destination.getFaction()).removeSettlement(this.Contract.m.Destination);
 					this.Contract.m.Destination.setFaction(bandits.getID());
@@ -109,12 +109,14 @@ this.investigate_cemetery_contract <- this.inherit("scripts/contracts/contract",
 				}
 				else if (r <= 40)
 				{
+					this.logInfo("ghouls");
 					this.Flags.set("IsGhouls", true);
 					this.Contract.addUnitsToEntity(this.Contract.m.Destination, this.Const.World.Spawn.Ghouls, 100 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult());
 				}
 				else if (r <= 70)
 				{
 					this.Flags.set("IsGraverobbers", true);
+					this.logInfo("graverobbers");
 					local bandits = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Bandits);
 					this.World.FactionManager.getFaction(this.Contract.m.Destination.getFaction()).removeSettlement(this.Contract.m.Destination);
 					this.Contract.m.Destination.setFaction(bandits.getID());
@@ -123,10 +125,12 @@ this.investigate_cemetery_contract <- this.inherit("scripts/contracts/contract",
 				}
 				else
 				{
+					this.logInfo("undead");
 					this.Flags.set("IsUndead", true);
 					this.Contract.addUnitsToEntity(this.Contract.m.Destination, this.Const.World.Spawn.Zombies, 100 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult());
 				}
 
+				this.Contract.m.Destination.setLastSpawnTimeToNow();
 				this.Contract.m.Destination.resetDefenderSpawnDay();
 				this.Contract.setScreen("Overview");
 				this.World.Contracts.setActiveContract(this.Contract);

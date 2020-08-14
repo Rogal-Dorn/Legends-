@@ -412,7 +412,7 @@ gt.Const.AI <- {
 			Indomitable = 50,
 			WakeUpAlly = 50,
 			Warcry = 50,
-			Distract = 60,
+			Distract = 50,
 			SwarmOfInsects = 60,
 			Disengage = 60,
 			CrushArmor = 80,

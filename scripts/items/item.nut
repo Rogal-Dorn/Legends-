@@ -109,6 +109,11 @@ this.item <- {
 		return this.m.BlockedSlotType;
 	}
 
+	function getLastEquippedByFaction()
+	{
+		return this.m.LastEquippedByFaction;
+	}
+
 	function setCurrentSlotType( _t )
 	{
 		this.m.CurrentSlotType = _t;
@@ -480,7 +485,8 @@ this.item <- {
 
 	function drop( _tile = null )
 	{
-		local isDropped = this.isDroppedAsLoot() && (this.Tactical.State.getStrategicProperties() == null || !this.Tactical.State.getStrategicProperties().IsArenaMode || this.m.Container != null && this.m.Container.getActor() != null && this.m.Container.getActor().isPlayerControlled());
+		local isPlayer = this.m.Container != null && this.m.Container.getActor() != null && this.m.Container.getActor().isPlayerControlled();
+		local isDropped = this.isDroppedAsLoot() && (this.Tactical.State.getStrategicProperties() == null || !this.Tactical.State.getStrategicProperties().IsArenaMode || isPlayer);
 
 		if (this.m.Container != null)
 		{

@@ -26,7 +26,7 @@ this.gladiator_helmet <- this.inherit("scripts/items/helmets/helmet", {
 		this.m.Value = 2200;
 		this.m.Condition = 225;
 		this.m.ConditionMax = 225;
-		this.m.StaminaModifier = -11;
+		this.m.StaminaModifier = -13;
 		this.m.Vision = -3;
 	}
 

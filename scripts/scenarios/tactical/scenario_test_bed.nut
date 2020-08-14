@@ -23,8 +23,8 @@ this.scenario_test_bed <- this.inherit("scripts/scenarios/tactical/scenario_temp
 			H = minY
 		}, null);
 		local locationTemplate = clone this.Const.Tactical.LocationTemplate;
-		locationTemplate.Template[0] = "tactical.sunken_library";
-		locationTemplate.Fortification = this.Const.Tactical.FortificationType.None;
+		locationTemplate.Template[0] = "tactical.barbarian_camp";
+		locationTemplate.Fortification = this.Const.Tactical.FortificationType.Palisade;
 		locationTemplate.CutDownTrees = true;
 		locationTemplate.ShiftX = 0;
 		testMap.campify({

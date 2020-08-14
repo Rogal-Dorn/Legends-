@@ -149,6 +149,23 @@ this.arena_contract <- this.inherit("scripts/contracts/contract", {
 			});
 		}
 
+		if (this.World.Statistics.getFlags().getAsInt("ArenaFightsWon") <= 3)
+		{
+			twists.push({
+				R = 10,
+				F = "IsHyenas",
+				P = 0
+			});
+		}
+		else if (this.World.Statistics.getFlags().getAsInt("ArenaFightsWon") > 3)
+		{
+			twists.push({
+				R = 10,
+				F = "IsFrenziedHyenas",
+				P = 0
+			});
+		}
+
 		twists.push({
 			R = 10,
 			F = "IsGhouls",
@@ -162,11 +179,6 @@ this.arena_contract <- this.inherit("scripts/contracts/contract", {
 		twists.push({
 			R = 10,
 			F = "IsSerpents",
-			P = 0
-		});
-		twists.push({
-			R = 10,
-			F = "IsHyenas",
 			P = 0
 		});
 		local maxR = 0;
@@ -184,7 +196,7 @@ this.arena_contract <- this.inherit("scripts/contracts/contract", {
 			{
 				this.m.Flags.set(t.F, true);
 				pay = pay + t.P;
-				  // [437]  OP_JMP            0      5    0    0
+				  // [470]  OP_JMP            0      5    0    0
 			}
 			else
 			{
@@ -425,6 +437,12 @@ this.arena_contract <- this.inherit("scripts/contracts/contract", {
 				}
 				else if (this.Flags.get("IsHyenas"))
 				{
+					this.Flags.set("Number", this.Math.max(2, this.Contract.getAmountToSpawn(this.Const.World.Spawn.Troops.Hyena, baseDifficulty)));
+					this.Contract.m.BulletpointsObjectives[1] = "Enter the arena again to start the fight against %amount% hyenas";
+					this.Text += "%SPEECH_ON%Hyenas. Heeheehee. Hyenas. %numberC% of the giggling mutts, to be exact. Good luck, and may the Gilder watch over you.%SPEECH_OFF%";
+				}
+				else if (this.Flags.get("IsFrenziedHyenas"))
+				{
 					this.Flags.set("Number", this.Math.max(2, this.Contract.getAmountToSpawn(this.Const.World.Spawn.Troops.HyenaHIGH, baseDifficulty)));
 					this.Contract.m.BulletpointsObjectives[1] = "Enter the arena again to start the fight against %amount% frenzied hyenas";
 					this.Text += "%SPEECH_ON%Hyenas. Heeheehee. Hyenas. %numberC% of the giggling mutts, to be exact. Good luck, and may the Gilder watch over you.%SPEECH_OFF%";
@@ -664,6 +682,13 @@ this.arena_contract <- this.inherit("scripts/contracts/contract", {
 							}
 						}
 						else if (this.Flags.get("IsHyenas"))
+						{
+							for( local i = 0; i < this.Flags.get("Number"); i = ++i )
+							{
+								this.Contract.addToCombat(p.Entities, this.Const.World.Spawn.Troops.Hyena);
+							}
+						}
+						else if (this.Flags.get("IsFrenziedHyenas"))
 						{
 							for( local i = 0; i < this.Flags.get("Number"); i = ++i )
 							{
