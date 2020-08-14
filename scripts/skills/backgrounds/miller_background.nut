@@ -34,6 +34,7 @@ this.miller_background <- this.inherit("scripts/skills/backgrounds/character_bac
 		this.m.Body = "bust_naked_body_00";
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.NeutralMax;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
+		this.m.Bodies = this.Const.Bodies.Skinny;
 		this.m.IsLowborn = true;
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
 		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[1];

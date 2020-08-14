@@ -32,7 +32,7 @@ this.lone_wolf_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		bro.getSkills().removeByID("trait.disloyal");
 		bro.getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
 		bro.setPlaceInFormation(4);
-		bro.getTags().set("IsPlayerCharacter", true);
+		bro.getFlags().set("IsPlayerCharacter", true);
 		bro.getSprite("miniboss").setBrush("bust_miniboss_lone_wolf");
 		bro.m.HireTime = this.Time.getVirtualTimeF();
 		bro.m.PerkPoints = 3;
@@ -83,7 +83,7 @@ this.lone_wolf_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		local val = this.World.State.addNewID(bro);
 		bro.m.CompanyID = val;
 		this.World.Assets.m.BusinessReputation = 200;
-		this.World.Tags.set("HasLegendCampTraining", true);
+		this.World.Flags.set("HasLegendCampTraining", true);
 		//this.World.Assets.getStash().resize(this.Math.min(10, this.World.Assets.getStash().getCapacity() - 9));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/smoked_ham_item"));
 		this.World.Assets.m.Money = this.World.Assets.m.Money / 2 - (this.World.Assets.getEconomicDifficulty() == 0 ? 0 : 100);
@@ -100,7 +100,7 @@ this.lone_wolf_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		{
 			randomVillage = this.World.EntityManager.getSettlements()[i];
 
-			if (randomVillage.isMilitary() && !randomVillage.isIsolatedFromRoads() && randomVillage.getSize() >= 3)
+			if (randomVillage.isMilitary() && !randomVillage.isIsolatedFromRoads() && randomVillage.getSize() >= 3 && !randomVillage.isSouthern())
 			{
 				break;
 			}
@@ -163,7 +163,7 @@ this.lone_wolf_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 
 		foreach( bro in roster )
 		{
-			if (bro.getTags().get("IsPlayerCharacter"))
+			if (bro.getFlags().get("IsPlayerCharacter"))
 			{
 				return true;
 			}

@@ -32,6 +32,7 @@ this.gravedigger_background <- this.inherit("scripts/skills/backgrounds/characte
 		this.m.Body = "bust_naked_body_00";
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Good;
+		this.m.Bodies = this.Const.Bodies.Skinny;
 		this.m.IsLowborn = true;
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
 		this.m.PerkTreeDynamic = {

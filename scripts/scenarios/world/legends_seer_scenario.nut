@@ -111,7 +111,7 @@ this.legends_seer_scenario <- this.inherit("scripts/scenarios/world/starting_sce
 	{
 		this.starting_scenario.onInit();
 		this.World.Assets.m.BrothersMax = 2;
-		this.World.Tags.set("IsLegendsSeer", true);
+		this.World.Flags.set("IsLegendsSeer", true);
 	}
 
 	function onCombatFinished()

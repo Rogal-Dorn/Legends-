@@ -240,7 +240,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	{
 		this.starting_scenario.onInit();
 		this.World.Assets.m.BrothersMax = 6;
-		this.World.Tags.set("IsLegendsNoble", true);
+		this.World.Flags.set("IsLegendsNoble", true);
 	}
 
 	function onHiredByScenario( bro )

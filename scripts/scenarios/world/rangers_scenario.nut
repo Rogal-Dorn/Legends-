@@ -88,10 +88,10 @@ this.rangers_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 			local val = this.World.State.addNewID(bro);
 			bro.m.CompanyID = val;
 		}
-		this.World.Assets.m.BusinessReputation = 50;
-
 		//this.World.Assets.getStash().resize(this.Math.min(15, this.World.Assets.getStash().getCapacity() / 2));
-		this.World.Tags.set("HasLegendCampHunting", true);
+		this.World.Flags.set("HasLegendCampHunting", true);
+		this.World.Assets.m.BusinessReputation = 100;
+		this.World.Assets.getStash().resize(this.World.Assets.getStash().getCapacity() - 18);
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/cured_venison_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/trade/furs_item"));
 		this.World.Assets.m.ArmorParts = this.World.Assets.m.ArmorParts / 2;
@@ -173,8 +173,15 @@ this.rangers_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 
 	function onInit()
 	{
+<<<<<<< HEAD
 		this.starting_scenario.onInit();
 		this.World.State.getPlayer().m.BaseMovementSpeed = 111;
+=======
+		if (this.World.State.getPlayer() != null)
+		{
+			this.World.State.getPlayer().m.BaseMovementSpeed = 111;
+		}
+>>>>>>> master
 	}
 
 });

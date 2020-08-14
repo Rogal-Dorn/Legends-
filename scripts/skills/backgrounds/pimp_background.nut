@@ -63,6 +63,7 @@ this.pimp_background <- this.inherit("scripts/skills/backgrounds/character_backg
 			Class = [this.Const.Perks.FistsClassTree],
 			Magic = []
 		}
+		this.m.Bodies = this.Const.Bodies.Thick;
 	}
 
 	function getTooltip()

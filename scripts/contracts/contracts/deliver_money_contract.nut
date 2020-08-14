@@ -535,7 +535,7 @@ this.deliver_money_contract <- this.inherit("scripts/contracts/contract", {
 
 						if (this.Flags.get("IsCursedCrystalSkull"))
 						{
-							this.World.Tags.set("IsCursedCrystalSkull", true);
+							this.World.Flags.set("IsCursedCrystalSkull", true);
 							p.Loot = [
 								"scripts/items/accessory/legendary/cursed_crystal_skull"
 							];

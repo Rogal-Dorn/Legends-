@@ -162,7 +162,7 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 			return false;
 		}
 
-		return !this.World.Tags.get("HasLegendCampCrafting")
+		return !this.World.Flags.get("HasLegendCampCrafting")
 	}
 
 	function getUpgraded()

@@ -48,15 +48,22 @@
             return false;
         }
 
-        local result;
 		this.__ping();
 		this.LoadingScreen.updateProgress("Building Terrain ...");
 		this.buildElevation(_rect);
 		this.__ping();
-		this.buildTerrain(_rect);
+
 		this.__ping();
 		this.defragmentTerrain(_rect);
 		this.__ping();
+
+		if (this.Const.DLC.Desert && !this.isDesertAcceptable(_rect))
+		{
+			//this.logInfo("World rejected. Creating new one...");
+			this.clearWorld(_rect);
+			return false;
+		}
+
 		this.removeStraits(_rect);
 		this.__ping();
 		this.refineTerrain(_rect, _properties);
@@ -85,27 +92,41 @@
 		this.__ping();
 		this.buildLabels(_rect);
 		this.__ping();
+		if (this.Const.DLC.Desert)
+		{
+			this.buildAbandonedFortresses(_rect);
+		}
+		this.__ping();
+
         return true;
 	}
 
-	o.addSettlement <- function (_rect, isLeft, settlementList, settlementSize, settlementTiles)
+	o.addSettlement <- function (_rect, isLeft, settlementList, settlementSize, settlementTiles, additionalSpace, ignoreSide)
 	{
 		local tries = 0;
+
 		while (tries++ < 9000)
 		{
 			local x;
 			local y;
 
-			if (isLeft)
+			if (!ignoreSide)
 			{
-				x = this.Math.rand(6, _rect.W * 0.6);
+				if (isLeft)
+				{
+					x = this.Math.rand(5, _rect.W * 0.6);
+				}
+				else
+				{
+					x = this.Math.rand(_rect.W * 0.4, _rect.W - 6);
+				}
 			}
 			else
 			{
-				x = this.Math.rand(_rect.W * 0.4, _rect.W - 6);
+				x = this.Math.rand(5, _rect.W - 6);
 			}
 
-			y = this.Math.rand(6, _rect.H * 0.95);
+			y = this.Math.rand(5, _rect.H * 0.95);
 			local tile = this.World.getTileSquare(x, y);
 
 			if (settlementTiles.find(tile.ID) != null)
@@ -114,12 +135,12 @@
 			}
 
 			local next = false;
-			local distance = 12;
+			local distance = 12 + additionalSpace;
 			if (tries > 3000) {
-				distance = 8;
+				distance -= 4;
 			}
 			if (tries > 6000) {
-				distance = 4;
+				distance -= 8;
 			}
 
 			foreach( settlement in settlementTiles )
@@ -158,49 +179,23 @@
 				continue;
 			}
 
-			local randCandidates = [];
-			while (candidates.len() > 0)
-			{
-				local sIndex = this.Math.rand(0, candidates.len() - 1)
-				randCandidates.push(candidates[sIndex]);
+			local type = candidates[this.Math.rand(0, candidates.len() - 1)];
 
-				local tempCandidates = [];
-				foreach(i, t in candidates)
-				{
-					if (i == sIndex)
-					{
-						continue
-					}
-					tempCandidates.push(candidates[i]);
-				}
-				candidates = tempCandidates;
-			}
-
-			local stype = null;
-			foreach( s in randCandidates)
-			{
-				if ((terrain.Region[this.Const.World.TerrainType.Ocean] >= 3 || terrain.Region[this.Const.World.TerrainType.Shore] >= 3) && !("IsCoastal" in s))
-				{
-					continue;
-				}
-				stype = s;
-				break;
-			}
-
-			if (stype == null)
+			if ((terrain.Region[this.Const.World.TerrainType.Ocean] >= 3 || terrain.Region[this.Const.World.TerrainType.Shore] >= 3) && !("IsCoastal" in type) && !("IsFlexible" in type))
 			{
 				continue;
 			}
 
-			if (!("IsCoastal" in stype))
+			if (!("IsCoastal" in type))
 			{
-				local skip = true;
+				local skip = settlementTiles.len() != 0;
 				local navSettings = this.World.getNavigator().createSettings();
 
 				for( local i = settlementTiles.len() - 1; i >= 0; i = --i )
 				{
+					local settlement = settlementTiles[i];
 					navSettings.ActionPointCosts = this.Const.World.TerrainTypeNavCost;
-					local path = this.World.getNavigator().findPath(tile,  settlementTiles[i], navSettings, 0);
+					local path = this.World.getNavigator().findPath(tile, settlement, navSettings, 0);
 
 					if (!path.isEmpty())
 					{
@@ -220,9 +215,10 @@
 
 				for( local i = settlementTiles.len() - 1; i >= 0; i = --i )
 				{
+					local settlement = settlementTiles[i];
 					local navSettings = this.World.getNavigator().createSettings();
 					navSettings.ActionPointCosts = this.Const.World.TerrainTypeNavCost_Flat;
-					local path = this.World.getNavigator().findPath(tile, settlementTiles[i], navSettings, 0);
+					local path = this.World.getNavigator().findPath(tile, settlement, navSettings, 0);
 
 					if (!path.isEmpty())
 					{
@@ -257,11 +253,17 @@
 		{
 			local num = Math.ceil(_properties.NumSettlements * list.Ratio)
 			//Add at least one of each
+
+			local additionalSpace = 0
+			if ("AdditionalSpace" in list)
+			{
+				additionalSpace = list.AdditionalSpace;
+			}
 			foreach (s in list.Sizes)
 			{
 				for (local i = 0; i < s.MinAmount; i = ++i)
 				{
-					settlementTiles = this.addSettlement(_rect, isLeft, list.Types, s.Size, settlementTiles);
+					settlementTiles = this.addSettlement(_rect, isLeft, list.Types, s.Size, settlementTiles, additionalSpace, "IgnoreSide" in list);
 					num = --num;
 				}
 			}
@@ -290,6 +292,7 @@
 
 	o.guaranteeAllBuildingsInSettlements = function ()
 	{
+
 		local settlements = this.World.EntityManager.getSettlements();
 
 		if (this.Const.World.Buildings.Fletchers < 2)
@@ -396,6 +399,32 @@
 			}
 		}
 
+		if (this.Const.DLC.Unhold && this.Const.World.Buildings.Taxidermists < 2)
+		{
+			local candidates = [];
+
+			foreach( s in settlements )
+			{
+				if (!s.isMilitary() && s.hasFreeBuildingSlot() && !s.hasBuilding("building.taxidermist"))
+				{
+					candidates.push(s);
+				}
+			}
+
+			for( local i = this.Const.World.Buildings.Taxidermists; i <= 2; i = ++i )
+			{
+				local r = this.Math.rand(0, candidates.len() - 1);
+				local s = candidates[r];
+				candidates.remove(r);
+				s.addBuilding(this.new("scripts/entity/world/settlements/buildings/taxidermist_building"));
+
+				if (candidates.len() == 0)
+				{
+					break;
+				}
+			}
+		}
+
 		if (this.Const.World.Buildings.Stables < 2)
 		{
 			local candidates = [];
@@ -422,62 +451,6 @@
 			}
 		}
 
-		if (this.Const.DLC.Unhold && this.Const.World.Buildings.Taxidermists < 2)
-		{
-			local candidates = [];
-
-			foreach( s in settlements )
-			{
-				if (!s.isMilitary() && s.hasFreeBuildingSlot() && !s.hasBuilding("building.taxidermist"))
-				{
-					candidates.push(s);
-				}
-			}
-
-			for( local i = this.Const.World.Buildings.Taxidermists; i <= 2; i = ++i )
-			{
-				local r = this.Math.rand(0, candidates.len() - 1);
-				local s = candidates[r];
-				candidates.remove(r);
-				s.addBuilding(this.new("scripts/entity/world/settlements/buildings/taxidermist_building"));
-
-				if (candidates.len() == 0)
-				{
-					break;
-				}
-			}
-		}
-	}
-
-	o.refineSettlements = function (_rect, _properties )
-	{
-		local settlements = this.World.EntityManager.getSettlements();
-
-		foreach( s in settlements )
-		{
-			s.updateProperties();
-			s.build(_properties);
-		}
-
-		for( local x = _rect.X; x < _rect.X + _rect.W; x = ++x )
-		{
-			for( local y = _rect.Y; y < _rect.Y + _rect.H; y = ++y )
-			{
-				local tile = this.World.getTileSquare(x, y);
-
-				foreach( s in settlements )
-				{
-					local d = s.getTile().getDistanceTo(tile);
-
-					if (d > 6)
-					{
-						continue;
-					}
-
-					tile.HeatFromSettlements = tile.HeatFromSettlements + (6 - d);
-				}
-			}
-		}
 	}
 
 	o.guaranteeAllLocations <- function( _rect, _properties )

@@ -47,6 +47,7 @@ this.historian_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.Body = "bust_naked_body_00";
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
+		this.m.Bodies = this.Const.Bodies.Skinny;
 		this.m.IsOffendedByViolence = true;
 		this.m.IsCrusaderRecruitBackground = true;
 		this.m.IsEducatedBackground = true;

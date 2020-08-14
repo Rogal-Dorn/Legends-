@@ -42,6 +42,7 @@ this.tailor_background <- this.inherit("scripts/skills/backgrounds/character_bac
 		this.m.Body = "bust_naked_body_02";
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Good;
+		this.m.Bodies = this.Const.Bodies.Thick;
 		this.m.IsLowborn = true;
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[1];
 		this.m.Modifiers.Repair = this.Const.LegendMod.ResourceModifiers.Repair[2];

@@ -7,11 +7,11 @@
 			{
 				continue;
 			}
-			
+
 			if (item.getID() == _id)
 			{
 				return true
-			} 
+			}
 		}
 		return false;
 	}
@@ -43,54 +43,6 @@
 		return null;
 	}
 
-	o.onItemCompare = function ( _item1, _item2 )
-	{
-		if (_item1 != null && "Type" in _item1.m)
-		{
-			this.logInfo("ITEM1 Type = ", _item1.m.Type)
-		}
-		if (_item1 == null && _item2 == null)
-		{
-			return 0;
-		}
-		else if (_item1 == null && _item2 != null)
-		{
-			return 1;
-		}
-		else if (_item1 != null && _item2 == null)
-		{
-			return -1;
-		}
-		else if (_item1.getItemType() > _item2.getItemType())
-		{
-			return -1;
-		}
-		else if (_item1.getItemType() < _item2.getItemType())
-		{
-			return 1;
-		}
-		else if (_item1.getType() < _item2.getType())
-		{
-			return -1;
-		}
-		else if (_item1.getType() > _item2.getType())
-		{
-			return 1;
-		}			
-		else if (_item1.getID() > _item2.getID())
-		{
-			return -1;
-		}
-		else if (_item1.getID() < _item2.getID())
-		{
-			return 1;
-		}
-		else
-		{
-			return 0;
-		}
-	}
-
 	o.onSerialize = function ( _out )
 	{
 		_out.writeU16(this.m.Items.len());
@@ -109,7 +61,7 @@
 				_out.writeBool(true);
 				_out.writeI32(item.ClassNameHash);
 				item.onSerialize(_out);
-		
+
 			}
 		}
 	}
@@ -131,7 +83,7 @@
 				this.m.Capacity = numItems;
 			}
 		}
-		
+
 		for( local i = 0; i < numItems; i = ++i )
 		{
 			local hasItem = _in.readBool();
@@ -143,7 +95,7 @@
 				this.m.Items[i] = item;
 			}
 		}
-	}	
+	}
 
 
 })

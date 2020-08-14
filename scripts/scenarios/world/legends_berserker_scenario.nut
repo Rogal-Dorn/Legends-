@@ -202,7 +202,7 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 	{
 		this.starting_scenario.onInit();
 		this.World.Assets.m.BrothersMax = 1;
-		this.World.Tags.set("IsLegendsBerserker", true);
+		this.World.Flags.set("IsLegendsBerserker", true);
 	}
 
 	function onCombatFinished()

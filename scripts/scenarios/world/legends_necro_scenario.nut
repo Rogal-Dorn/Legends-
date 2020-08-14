@@ -143,7 +143,7 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	{
 		this.starting_scenario.onInit();
 		this.World.Assets.m.BrothersMax = 3;
-		this.World.Tags.set("IsLegendsNecro", true);
+		this.World.Flags.set("IsLegendsNecro", true);
 	}
 
 	function onCombatFinished()

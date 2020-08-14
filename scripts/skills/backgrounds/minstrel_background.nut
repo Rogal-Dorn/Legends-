@@ -66,6 +66,7 @@ this.minstrel_background <- this.inherit("scripts/skills/backgrounds/character_b
 			Class = [this.Const.Perks.BardClassTree],
 			Magic = []
 		}
+		this.m.Bodies = this.Const.Bodies.Skinny;
 	}
 
 	function getTooltip()

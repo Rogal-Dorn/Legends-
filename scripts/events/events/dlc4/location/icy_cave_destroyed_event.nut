@@ -301,7 +301,7 @@ this.icy_cave_destroyed_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				_event.m.Title = "After the battle...";
-				this.World.Tags.set("IjirokStage", 4);
+				this.World.Flags.set("IjirokStage", 4);
 				local locations = this.World.EntityManager.getLocations();
 
 				foreach( v in locations )
@@ -336,7 +336,7 @@ this.icy_cave_destroyed_event <- this.inherit("scripts/events/event", {
 
 	function onDetermineStartScreen()
 	{
-		if (this.World.Tags.get("IjirokStage") == 3)
+		if (this.World.Flags.get("IjirokStage") == 3)
 		{
 			return "A2";
 		}

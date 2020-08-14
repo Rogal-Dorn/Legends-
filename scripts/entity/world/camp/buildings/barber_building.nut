@@ -98,7 +98,7 @@ this.barber_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 			return false;
 		}
 
-		return !this.World.Tags.get("HasLegendCampBarber")
+		return !this.World.Flags.get("HasLegendCampBarber")
 	}
 
 	function onClicked( _campScreen )

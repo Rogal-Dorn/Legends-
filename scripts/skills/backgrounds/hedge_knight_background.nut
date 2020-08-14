@@ -58,6 +58,7 @@ this.hedge_knight_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.Body = "bust_naked_body_01";
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Cruel;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Chivalrous;
+		this.m.Bodies = this.Const.Bodies.Muscular;
 		this.m.Level = this.Math.rand(2, 5);
 		this.m.IsCombatBackground = true;
 		this.m.IsCrusaderRecruitBackground = true;

@@ -173,7 +173,7 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		}
 
 		local randomVillageTile = randomVillage.getTile();
-		this.World.Tags.set("HomeVillage", randomVillage.getName());
+		this.World.Flags.set("HomeVillage", randomVillage.getName());
 		local navSettings = this.World.getNavigator().createSettings();
 		navSettings.ActionPointCosts = this.Const.World.TerrainTypeNavCost_Flat;
 
