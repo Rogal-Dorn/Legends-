@@ -1377,43 +1377,28 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			this.m.DailyCostMult = 1.0;
 		}
 
-		if (_in.getMetaData().getVersion() >= 61)
+		this.m.IsFemaleBackground = _in.readBool();
+		if (this.m.IsFemaleBackground)
 		{
-			this.m.IsFemaleBackground = _in.readBool();
+			this.setGender(1);
+		}
+		else
+		{
+			this.setGender(0);
 		}
 
-		if (_in.getMetaData().getVersion() >= 64)
+		this.m.IsConverted = _in.readBool();
+		this.m.CustomPerkTree = [];
+		local numRows = _in.readU8();
+		for( local i = 0; i < numRows; i = ++i )
 		{
-			if (this.m.IsFemaleBackground)
+			local numPerks = _in.readU8();
+			local perks = [];
+			for( local j = 0; j < numPerks; j = ++j )
 			{
-				this.setGender(1);
+				perks.push(_in.readU16())
 			}
-			else
-			{
-				this.setGender(0);
-			}
-		}
-
-		// Not sure what number this should be set to
-		if (_in.getMetaData().getVersion() >= 68)
-		{
-			this.m.IsConverted = _in.readBool();
-		}
-
-		if (_in.getMetaData().getVersion() >= 57)
-		{
-			this.m.CustomPerkTree = [];
-			local numRows = _in.readU8();
-			for( local i = 0; i < numRows; i = ++i )
-	        {
-				local numPerks = _in.readU8();
-				local perks = [];
-				for( local j = 0; j < numPerks; j = ++j )
-				{
-					perks.push(_in.readU16())
-				}
-				this.m.CustomPerkTree.push(perks);
-			}
+			this.m.CustomPerkTree.push(perks);
 		}
 
 		if (this.m.CustomPerkTree != null)

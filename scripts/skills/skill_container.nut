@@ -1015,7 +1015,7 @@ this.skill_container <- {
 				skill.onDeserialize(_in);
 				this.add(skill);
 			}
-			else if (_in.getMetaData().getVersion() >= 57)
+			else
 			{
 				_in.readU8();
 			}

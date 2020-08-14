@@ -299,10 +299,7 @@ this.attached_location <- this.inherit("scripts/entity/world/location", {
 		}
 
 		local active = _in.readBool();
-		if (_in.getMetaData().getVersion() >= 67)
-		{
-			this.m.IsNew = _in.readBool();
-		}
+		this.m.IsNew = _in.readBool();
 		this.setActive(active, true);
 		this.setAttackable(false);
 		this.getSprite("lighting").Color = this.createColor("ffffff00");

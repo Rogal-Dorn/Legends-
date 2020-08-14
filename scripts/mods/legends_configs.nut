@@ -123,41 +123,12 @@ this.legends_configs <- {
         this.m.IsLocationScaling = _in.readBool();
         this.m.IsCampUnlock = _in.readBool();
         this.m.IsRecruitScaling = _in.readBool();
-        if (_in.getMetaData().getVersion() >= 63)
-		{
-			this.m.IsBleedKiller = _in.readBool();
-		}
-
-        if (_in.getMetaData().getVersion() >= 65)
-		{
-			this.m.IsBlueprintsVisible = _in.readBool();
-		}
-
-        if (_in.getMetaData().getVersion() == 65)
-        {
-            this.m.IsRelationship = true;
-        }
-        else if (_in.getMetaData().getVersion() >= 66)
-        {
-            this.m.IsRelationship = _in.readBool();
-        }
-
-        if (_in.getMetaData().getVersion() >= 67)
-        {
-            this.m.IsWorldEconomy = _in.readBool();
-        }
-
-        if (_in.getMetaData().getVersion() >= 72)
-        {
-            this.m.IsHelmets = _in.readU8();
-        }
-
-        this.m.IsTherian = true;
-        if (_in.getMetaData().getVersion() >= 72)
-        {
-            this.m.IsTherian = _in.readBool();
-        }
-
+		this.m.IsBleedKiller = _in.readBool();
+		this.m.IsBlueprintsVisible = _in.readBool();
+        this.m.IsRelationship = _in.readBool();
+        this.m.IsWorldEconomy = _in.readBool();
+        this.m.IsHelmets = _in.readU8();
+        this.m.IsTherian = _in.readBool();
     }
 }
 

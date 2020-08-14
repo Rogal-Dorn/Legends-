@@ -2645,11 +2645,8 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 	function onDeserialize( _in )
 	{
 		this.location.onDeserialize(_in);
-		if (_in.getMetaData().getVersion() >= 67)
-		{
-			this.m.Size = _in.readU8();
-			this.m.IsUpgrading = _in.readBool();
-		}
+		this.m.Size = _in.readU8();
+		this.m.IsUpgrading = _in.readBool();
 		this.m.IsActive = _in.readBool()
 		this.m.IsCoastal = _in.readBool();
 

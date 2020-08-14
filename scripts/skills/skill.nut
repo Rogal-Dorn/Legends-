@@ -1962,14 +1962,7 @@ this.skill <- {
 
 	function onDeserialize( _in )
 	{
-		if (_in.getMetaData().getVersion() >= 57)
-		{
-			this.m.IsNew = _in.readU8();
-		}
-		else
-		{
-			this.m.IsNew = false;
-		}
+		this.m.IsNew = _in.readU8();
 	}
 
 };

@@ -79,7 +79,7 @@ this.legend_horse <- this.inherit("scripts/skills/backgrounds/character_backgrou
 				this.Const.Perks.PerkDefs.LegendHorseCollection,
 				this.Const.Perks.PerkDefs.LegendBackToBasics,
 				this.Const.Perks.PerkDefs.LegendHorseCharge
-				
+
 			],
 			[
 				this.Const.Perks.PerkDefs.LegendEfficientPacking,
@@ -240,12 +240,8 @@ this.legend_horse <- this.inherit("scripts/skills/backgrounds/character_backgrou
 	function onDeserialize( _in )
 	{
 		this.character_background.onDeserialize(_in)
-
-		if (_in.getMetaData().getVersion() >= 59)
-		{
-			this.m.Variant = _in.readU8()
-			this.updateVariant()
-		}
+		this.m.Variant = _in.readU8()
+		this.updateVariant()
 
 	}
 });
