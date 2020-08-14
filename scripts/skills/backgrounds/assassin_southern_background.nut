@@ -9,7 +9,7 @@ this.assassin_southern_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.m.BackgroundDescription = "An assassin has to be quick on his feet and skilled with the use of weapons.";
 		this.m.GoodEnding = "%name% the assassin departed the %companyname% with a large chest of gold and traveled far away. From what rumors you\'ve heard, he built a castle in the mountains east of the southern kingdoms. You\'re not sure if it\'s true, but there\'s been a steady increase in dead viziers and lords alike as of late.";
 		this.m.BadEnding = "%name% disappeared not long after your retirement from the %companyname%. The assassin presumably does not want to be found and there\'s no telling where he is. In moments of honesty, you tell others you wished you never hired him at all. You just can\'t shake the terror that it is you he is stalking and hunting, and you spend many nights with one eye open, looking for the man in black with the crooked dagger.";
-		this.m.HiringCost = 200;
+		this.m.HiringCost = 800;
 		this.m.DailyCost = 25;
 		this.m.Excluded = [
 			"trait.superstitious",
