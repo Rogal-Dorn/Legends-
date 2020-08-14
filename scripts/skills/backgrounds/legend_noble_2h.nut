@@ -47,7 +47,7 @@ this.legend_noble_2h <- this.inherit("scripts/skills/backgrounds/character_backg
 		this.m.Hairs = this.Const.Hair.AllMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Raider;
-		this.m.Body = "bust_naked_body_01";
+
 
 		this.m.IsCombatBackground = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
@@ -105,7 +105,7 @@ this.legend_noble_2h <- this.inherit("scripts/skills/backgrounds/character_backg
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsFemaleBackground = true;
 
 		this.m.GoodEnding = "Supporting your cause from the start, %name% was with you in retirement, leaving the company not long after you did. Though she was a lowly peasant, she proved herself in battle after battle and slowly became as trusted and valued a friend as one can have in a mercenary company.";

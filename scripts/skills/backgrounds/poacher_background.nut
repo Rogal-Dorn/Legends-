@@ -26,7 +26,7 @@ this.poacher_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Untidy;
-		this.m.Body = "bust_naked_body_00";
+
 
 		this.m.Bodies = this.Const.Bodies.Skinny;
 		this.m.IsLowborn = true;
@@ -105,7 +105,7 @@ this.poacher_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsFemaleBackground = true;
 		this.m.GoodEnding = "%name%, former poacher, eventually saved enough money to leave the %companyname%. You learned she found a bit of mountain land and works it for a local nobleman. Ironically, her job is to hunt down poachers.";
 		this.m.BadEnding = "No longer seeing the point in risking her life for so few crowns, %name% the former poacher put down the sellsword\'s life and returned to unlawfully hunting deer in the woods. A nobleman once offered you a good satchel of crowns to specifically hunt the woman down. You declined the offer, but the writing was on the wall: her days are numbered.";

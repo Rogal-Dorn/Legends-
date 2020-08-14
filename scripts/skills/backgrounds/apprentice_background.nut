@@ -36,7 +36,7 @@ this.apprentice_background <- this.inherit("scripts/skills/backgrounds/character
 		this.m.Hairs = this.Const.Hair.YoungMale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.Body = "bust_naked_body_01";
+
 		this.m.Bodies = this.Const.Bodies.Muscular;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.NeutralMax;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
@@ -93,7 +93,7 @@ this.apprentice_background <- this.inherit("scripts/skills/backgrounds/character
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsFemaleBackground = true;
 		this.m.GoodEnding = "Perhaps one of the sharpest women you\'ve ever met, %name% the apprentice was the quickest learner in the %companyname%. With plenty of crowns stored, she retired from fighting to take her talents to the business world. Last you heard she was doing very well for herself across multiple trades. If you ever have a child, this is the woman you\'ll send them to for apprenticeship.";
 		this.m.BadEnding = "%name% the apprentice was, by far, the quickest learner in the %companyname%. Little surprise then that she was also one of the quickest to recognize its inevitable downfall and leave while she still could. Had she been born in a different time she would have gone on to do great things. Instead, many wars, invasions, and plagues spreading across the land ultimately ensured %name% and many other talented women went to total waste.";

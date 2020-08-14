@@ -52,7 +52,7 @@ this.mage_background <- this.inherit("scripts/skills/backgrounds/character_backg
 		this.m.Hairs = this.Const.Hair.CommonMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.Body = "bust_naked_body_00";
+
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Good;
 		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[0];

@@ -34,7 +34,7 @@ this.messenger_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.Hairs = this.Const.Hair.CommonMale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.Tidy;
-		this.m.Body = "bust_naked_body_00";
+
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Notorious;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[3];

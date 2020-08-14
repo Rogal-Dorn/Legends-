@@ -42,7 +42,7 @@ this.female_bowyer_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsFemaleBackground = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.NeutralMax;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
@@ -96,7 +96,7 @@ this.female_bowyer_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.Hairs = this.Const.Hair.CommonMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.Body = "bust_naked_body_01";
+
 		this.m.IsFemaleBackground = false;
 		this.m.GoodEnding = "While at a jousting tournament, a young boy was using an oddly shaped, yet perfectly crafted bow. His aiming hand was shaky, yet the arrows did not wobble upon being loosed. After he won the competition, you inquired about where the boy had gotten such an incredible bow. He stated that a bowyer by the name of %name% had crafted it. Apparently, he\'s known for making the finest bows in all the land!";
 		this.m.BadEnding = "After you left the %companyname%, you sent a letter inquiring about the status of %name% the bowyer. You got word that he had discovered a way to craft the finest bow possible and, instead of giving this secret to the company, he departed to start his own business. He did not get far: whatever he had learned about his trade died with him on a muddy road out {north | south | west | east} of here, his body ironically skewered with what is said to have been a dozen arrows.";

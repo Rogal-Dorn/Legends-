@@ -41,7 +41,7 @@ this.deserter_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.Hairs = this.Const.Hair.CommonMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.Body = "bust_naked_body_00";
+
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Good;
 		this.m.Bodies = this.Const.Bodies.Skinny;
@@ -99,7 +99,7 @@ this.deserter_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsFemaleBackground = true;
 		this.m.GoodEnding = "%name% the deserter continued fighting for the %companyname%, ever striving to redeem her name. Word has it that during a brutal fight with orcs, she dove headfirst into a crowd of greenskins, surfing across the top of their shocked heads. Her heroism rallied the mercenaries to an incredible victory and she lives out her days getting toasted in every bar she enters.";
 		this.m.BadEnding = "You heard %name% the deserter actually renewed her title and fled a battle the %companyname% had with some greenskins. Goblins caught her out in the woods and turned her head into a goblet for an orc warlord.";

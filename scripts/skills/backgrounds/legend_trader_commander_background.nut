@@ -36,7 +36,7 @@ this.legend_trader_commander_background <- this.inherit("scripts/skills/backgrou
 		this.m.Hairs = this.Const.Hair.TidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Tidy;
-		this.m.Body = "bust_naked_body_02";
+
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Chivalrous;
 		this.m.Level = 2;
@@ -140,7 +140,7 @@ this.legend_trader_commander_background <- this.inherit("scripts/skills/backgrou
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsFemaleBackground = true;
 	}
 

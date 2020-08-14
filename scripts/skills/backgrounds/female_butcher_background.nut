@@ -40,7 +40,7 @@ this.female_butcher_background <- this.inherit("scripts/skills/backgrounds/chara
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsFemaleBackground = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.NeutralMax;
@@ -94,7 +94,7 @@ this.female_butcher_background <- this.inherit("scripts/skills/backgrounds/chara
 			this.m.Hairs = this.Const.Hair.CommonMale;
 			this.m.HairColors = this.Const.HairColors.All;
 			this.m.Beards = this.Const.Beards.Untidy;
-			this.m.Body = "bust_naked_body_00";
+
 			this.m.IsFemaleBackground = false;
 			this.m.GoodEnding = "Mercenary work is a bloody business, which is probably why a fishmonger like %name% felt right at home in it. While an outstanding fighter, you hear that he still has problems with the war dogs in the party and has been repeatedly caught trying to slaughter them. Eventually, if not desperately, the company gave the man an adorable puppy to raise as his own. From what you know of, the little runt\'s glowy doe eyes converted the dog hater into a lover. Now he goes into an insatiable bloodlust whenever a wardog is harmed and his little mongrel grew up to be the fiercest beast in the company!";
 			this.m.BadEnding = "%name% the fishmonger eventually left the declining company. He joined up with another outfit, but was caught slaughtering one of their war dogs. Apparently, he had been feeding the mercenaries dogmeat from all their mongrels that had gone \'missing\'. They did not take this news kindly, stripped the butcher, and fed him to the beasts.";

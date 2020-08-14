@@ -33,7 +33,7 @@ this.legend_female_inventor_commander_background <- this.inherit("scripts/skills
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsFemaleBackground = true;
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[2];
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[2];

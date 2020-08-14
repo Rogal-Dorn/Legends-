@@ -17,7 +17,7 @@ this.legend_astrologist_background <- this.inherit("scripts/skills/backgrounds/c
 		this.m.Hairs = this.Const.Hair.AllMale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.Body = "bust_naked_body_01";
+
 		this.m.Level = 1;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.NeutralMin;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Good;
