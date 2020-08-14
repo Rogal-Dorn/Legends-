@@ -128,7 +128,7 @@ this.legend_redback_puncture <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
-		if (_targetEntity.getTags().has("undead"))
+		if (_targetEntity.getFlags().has("undead"))
 		{
 			return;
 		}
@@ -176,7 +176,7 @@ this.legend_redback_puncture <- this.inherit("scripts/skills/skill", {
 		{
 			_properties.DamageTotalMult /= 1.25;
 		}
-		
+
 		if (_targetEntity != null && _targetEntity.getSkills().hasSkill("effects.web"))
 		{
 			_properties.DamageDirectMult *= 2.0;

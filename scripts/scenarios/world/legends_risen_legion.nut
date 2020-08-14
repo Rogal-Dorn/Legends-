@@ -31,9 +31,9 @@ this.legends_risen_legion <- this.inherit("scripts/scenarios/world/starting_scen
 			bro.m.LevelUps = broPerks;
 			bro.m.PerkPoints = broPerks;
 			bro.setVeteranPerks(3);
-			bro.getTags().add("PlayerSkeleton");
-			bro.getTags().add("undead");
-			bro.getTags().add("skeleton");
+			bro.getFlags().add("PlayerSkeleton");
+			bro.getFlags().add("undead");
+			bro.getFlags().add("skeleton");
 			bro.getSkills().add(this.new("scripts/skills/traits/legend_deathly_spectre_trait"));
 			bro.getSkills().add(this.new("scripts/skills/racial/skeleton_racial"));
 			bro.getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));
@@ -347,7 +347,7 @@ this.legends_risen_legion <- this.inherit("scripts/scenarios/world/starting_scen
 	{
 		bro.getSkills().add(this.new("scripts/skills/traits/legend_deathly_spectre_trait"));
 
-		if (!bro.getSkills().hasSkill("racial.skeleton") && bro.getTags().has("skeleton"))
+		if (!bro.getSkills().hasSkill("racial.skeleton") && bro.getFlags().has("skeleton"))
 		{
 		bro.getSkills().add(this.new("scripts/skills/racial/skeleton_racial"));
 		bro.getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));

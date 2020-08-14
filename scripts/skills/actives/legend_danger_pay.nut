@@ -66,7 +66,7 @@ this.legend_danger_pay <- this.inherit("scripts/skills/skill", {
 		local money = this.World.Assets.getMoney();
 		this.m.Money = money;
 
-		if (!target.getTags().has("human"))
+		if (!target.getFlags().has("human"))
 		{
 			return false;
 		}

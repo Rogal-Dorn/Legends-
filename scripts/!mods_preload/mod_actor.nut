@@ -604,7 +604,7 @@
 				{
 					this.spawnDecapitateSplatters(tile, 1.0 * this.m.DecapitateBloodAmount);
 				}
-				else if (_fatalityType == this.Const.FatalityType.Smashed && (this.getTags().has("human") || this.getTags().has("zombie_minion")))
+				else if (_fatalityType == this.Const.FatalityType.Smashed && (this.getFlags().has("human") || this.getFlags().has("zombie_minion")))
 				{
 					this.spawnSmashSplatters(tile, 1.0);
 				}

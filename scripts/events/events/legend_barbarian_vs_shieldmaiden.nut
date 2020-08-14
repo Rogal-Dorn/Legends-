@@ -10,7 +10,7 @@ this.legend_barbarian_vs_shieldmaiden <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 45.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_06.png[/img]You find %barbarian% and %shieldmaiden% arguing with one another. The Barbarian\'s voice is raised.%SPEECH_ON%The best defense is the good offence! That\'s why I rush to a battle first!%SPEECH_OFF%Also raising her voice, and clenching a shield at her side, the Shieldmaiden shakes her head.%SPEECH_ON%Why are you even talking to me? I have no desire to get to know someone who is only going to get killed by rushing into battle before thinking!%SPEECH_OFF%The fighting words kick off a scuffle.\n\n",  
+			Text = "[img]gfx/ui/events/event_06.png[/img]You find %barbarian% and %shieldmaiden% arguing with one another. The Barbarian\'s voice is raised.%SPEECH_ON%The best defense is the good offence! That\'s why I rush to a battle first!%SPEECH_OFF%Also raising her voice, and clenching a shield at her side, the Shieldmaiden shakes her head.%SPEECH_ON%Why are you even talking to me? I have no desire to get to know someone who is only going to get killed by rushing into battle before thinking!%SPEECH_OFF%The fighting words kick off a scuffle.\n\n",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -27,9 +27,9 @@ this.legend_barbarian_vs_shieldmaiden <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				local victorious = false;
-				
+
 				if (this.Math.rand(1, 100) <= 50)
-				{		
+				{
 					this.Text = this.Text + " %barbarian% rushes at %shieldmaiden% with a full swing of a weapon, as if trying to cut her in half,  but she raises her shield to deftly deflect the blow and immedietly counters with a quick jab of her shield that stuns and knocks %barbarian% back.%SPEECH_ON%See I told you! you rush without thinking and now you are laying on the ground...%SPEECH_OFF%";
 					local MeleeDefense = this.Math.rand(2, 4);
 					_event.m.Shieldmaiden.getBaseProperties().MeleeDefense += MeleeDefense;
@@ -60,12 +60,12 @@ this.legend_barbarian_vs_shieldmaiden <- this.inherit("scripts/events/event", {
 								icon = this.Const.MoodStateIcon[_event.m.Barbarian.getMoodState()],
 								text = _event.m.Barbarian.getName() + this.Const.MoodStateEvent[_event.m.Barbarian.getMoodState()]
 							}
-						];				
+						];
 				}
 				else
-				{	
+				{
 					this.Text = this.Text + " %barbarian% rushes at %shieldmaiden% who and tries to react by blocking the blow with her shield but the barbarian easily avoids the blow and knocks her back to the ground, before stopping a strike an inch from her head.%SPEECH_ON%See I told you! Best defence is a good offence%SPEECH_OFF%";
-					
+
 					local meleeSkill = this.Math.rand(2, 4);
 					_event.m.Barbarian.getBaseProperties().MeleeSkill += meleeSkill;
 					_event.m.Barbarian.getSkills().update();
@@ -96,10 +96,10 @@ this.legend_barbarian_vs_shieldmaiden <- this.inherit("scripts/events/event", {
 								text = _event.m.Shieldmaiden.getName() + this.Const.MoodStateEvent[_event.m.Shieldmaiden.getMoodState()]
 							}
 						];
-					
+
 				}
 
-			
+
 			}
 
 		});
@@ -118,7 +118,7 @@ this.legend_barbarian_vs_shieldmaiden <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getLevel() > 3 && (bro.getBackground().getID() == "background.barbarian" && !bro.getTags().has("learned")) || (bro.getBackground().getID() == "background.raider" && !bro.getTags().has("learned")))
+			if (bro.getLevel() > 3 && (bro.getBackground().getID() == "background.barbarian" && !bro.getFlags().has("learned")) || (bro.getBackground().getID() == "background.raider" && !bro.getFlags().has("learned")))
 			{
 				Barbarian_candidates.push(bro);
 				break;
@@ -134,7 +134,7 @@ this.legend_barbarian_vs_shieldmaiden <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getLevel() > 3 && bro.getBackground().getID() == "background.legend_shieldmaiden" && !bro.getTags().has("learned"))
+			if (bro.getLevel() > 3 && bro.getBackground().getID() == "background.legend_shieldmaiden" && !bro.getFlags().has("learned"))
 			{
 				Shieldmaiden_candidates.push(bro);
 			}
@@ -156,14 +156,14 @@ this.legend_barbarian_vs_shieldmaiden <- this.inherit("scripts/events/event", {
 
 	function markAsLearnedB()
 	{
-		this.m.Barbarian.getTags().add("learned");
+		this.m.Barbarian.getFlags().add("learned");
 	}
-	
+
 	function markAsLearnedS()
 	{
-		this.m.Shieldmaiden.getTags().add("learned");
+		this.m.Shieldmaiden.getFlags().add("learned");
 	}
-	
+
 	function onPrepareVariables( _vars )
 	{
 		_vars.push([

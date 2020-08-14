@@ -41,14 +41,14 @@ this.legend_cannibal_recruitment <- this.inherit("scripts/events/event", {
 				_event.m.Cannibal = roster.create("scripts/entity/tactical/player");
 						if (this.World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
 							{
-							_event.m.Cannibal.getTags().add("PlayerSkeleton");
-							_event.m.Cannibal.getTags().add("undead");
-							_event.m.Cannibal.getTags().add("skeleton");
+							_event.m.Cannibal.getFlags().add("PlayerSkeleton");
+							_event.m.Cannibal.getFlags().add("undead");
+							_event.m.Cannibal.getFlags().add("skeleton");
 							_event.m.Cannibal.setStartValuesEx([
 								"legend_cannibal_background"
 							]);
 							_event.m.Cannibal.getSkills().add(this.new("scripts/skills/racial/skeleton_racial"));
-							_event.m.Cannibal.getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));	
+							_event.m.Cannibal.getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));
 							}
 						else
 						{

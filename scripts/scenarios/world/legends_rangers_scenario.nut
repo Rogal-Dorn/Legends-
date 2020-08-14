@@ -44,7 +44,7 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_pathfinder"));
 		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_footwork"));
 		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_roster_2"));
-		bros[0].getTags().set("IsPlayerCharacter", true);
+		bros[0].getFlags().set("IsPlayerCharacter", true);
 		bros[0].setPlaceInFormation(3);
 		bros[0].setVeteranPerks(2);
 
@@ -161,7 +161,7 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 
 		foreach( bro in roster )
 		{
-			if (bro.getTags().get("IsPlayerCharacter"))
+			if (bro.getFlags().get("IsPlayerCharacter"))
 			{
 				return true;
 			}
