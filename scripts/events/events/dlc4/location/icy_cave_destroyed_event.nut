@@ -23,7 +23,7 @@ this.icy_cave_destroyed_event <- this.inherit("scripts/events/event", {
 
 				foreach( bro in raw_roster )
 				{
-					if (bro.getPlaceInFormation() <= 17)
+					if (bro.getPlaceInFormation() <= 26)
 					{
 						roster.push(bro);
 					}
@@ -59,7 +59,7 @@ this.icy_cave_destroyed_event <- this.inherit("scripts/events/event", {
 					  // [057]  OP_CLOSE          0      6    0    0
 				}
 
-				$[stack offset 0].Options.push({
+				this.Options.push({
 					Text = "We should leave this place.",
 					function getResult( _event )
 					{
@@ -116,7 +116,7 @@ this.icy_cave_destroyed_event <- this.inherit("scripts/events/event", {
 					  // [036]  OP_CLOSE          0      5    0    0
 				}
 
-				$[stack offset 0].Options.push({
+				this.Options.push({
 					Text = "We should leave this place.",
 					function getResult( _event )
 					{
@@ -266,7 +266,7 @@ this.icy_cave_destroyed_event <- this.inherit("scripts/events/event", {
 					  // [041]  OP_CLOSE          0      5    0    0
 				}
 
-				$[stack offset 0].Options.push({
+				this.Options.push({
 					Text = "This isn\'t worth it. We should leave this place.",
 					function getResult( _event )
 					{

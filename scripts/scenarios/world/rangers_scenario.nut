@@ -173,15 +173,11 @@ this.rangers_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 
 	function onInit()
 	{
-<<<<<<< HEAD
 		this.starting_scenario.onInit();
-		this.World.State.getPlayer().m.BaseMovementSpeed = 111;
-=======
 		if (this.World.State.getPlayer() != null)
 		{
 			this.World.State.getPlayer().m.BaseMovementSpeed = 111;
 		}
->>>>>>> master
 	}
 
 });

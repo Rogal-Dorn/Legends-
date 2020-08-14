@@ -84,6 +84,7 @@
 				"SPEECH_ON",
 				"\n\n[color=#bcad8c]\""
 			],
+			[
 				"SPEECH_START",
 				"[color=#bcad8c]\""
 			],
