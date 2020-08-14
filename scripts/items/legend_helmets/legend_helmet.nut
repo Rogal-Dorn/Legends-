@@ -9,7 +9,6 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 	function create()
 	{
 		this.helmet.create();
-		this.m.IsDroppedWhenDamaged = true;
 		this.m.ShowOnCharacter = true;
 		this.m.IsDroppedAsLoot = true;
 		this.m.Upgrades = [];
