@@ -43,7 +43,7 @@ this.legend_nun_background <- this.inherit("scripts/skills/backgrounds/character
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsFemaleBackground = true;
 		this.m.IsEducatedBackground = true;
 		this.m.IsCrusaderRecruitBackground = true;

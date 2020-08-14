@@ -36,7 +36,7 @@ this.legend_necrosavant_background <- this.inherit("scripts/skills/backgrounds/c
 		this.m.Hairs = this.Const.Hair.Vampire;
 		this.m.HairColors = this.Const.HairColors.Zombie;
 		this.m.Beards = this.Const.Beards.Tidy;
-		this.m.Body = "bust_naked_body_00";
+
 		this.m.Level = 1;
 		this.m.IsUntalented = true;
 		this.m.IsOutlawBackground = true;

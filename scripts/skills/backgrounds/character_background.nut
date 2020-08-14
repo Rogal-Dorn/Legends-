@@ -9,7 +9,6 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		Hairs = null,
 		HairColors = null,
 		Beards = null,
-		Body = null, //This has been deprecated
 		Bodies = this.Const.Bodies.AllMale,
 		Ethnicity = 0,
 		Level = 1,
@@ -1138,13 +1137,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 				}
 			}
 
-			if (this.m.Body != null)
-			{
-				actor.getSprite("body").setBrush(this.m.Body);
-				actor.getSprite("injury_body").setBrush(this.m.Body + "_injured");
-			}
-
-			else if (this.m.Bodies != null)
+			if (this.m.Bodies != null)
 			{
 				local body = this.m.Bodies[this.Math.rand(0, this.m.Bodies.len() - 1)];
 				actor.getSprite("body").setBrush(body);

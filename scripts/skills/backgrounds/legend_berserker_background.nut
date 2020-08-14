@@ -57,7 +57,7 @@ this.legend_berserker_background <- this.inherit("scripts/skills/backgrounds/cha
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.Wild;
 		this.m.BeardChance = 100;
-		this.m.Body = "bust_naked_body_01";
+		this.m.Bodies = this.Const.Bodies.LegendTattos
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Cruel;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.NeutralMax;
 		this.m.Level = 1;
@@ -140,7 +140,7 @@ this.legend_berserker_background <- this.inherit("scripts/skills/backgrounds/cha
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsFemaleBackground = true;
 
 	}

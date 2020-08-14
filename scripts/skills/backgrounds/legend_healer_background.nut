@@ -67,7 +67,7 @@ this.legend_healer_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.Hairs = this.Const.Hair.CommonMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.Level = 2;
 
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[3];

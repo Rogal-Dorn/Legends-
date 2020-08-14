@@ -32,7 +32,7 @@ this.legend_taxidermist_background <- this.inherit("scripts/skills/backgrounds/c
 		this.m.Hairs = this.Const.Hair.TidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Tidy;
-		this.m.Body = "bust_naked_body_02";
+
 		this.m.IsRangerRecruitBackground = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Chivalrous;

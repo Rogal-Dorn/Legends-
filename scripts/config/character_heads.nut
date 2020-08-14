@@ -866,3 +866,11 @@ gt.Const.Bodies.Horses <- [
 	"bust_naked_body_106",
 	"bust_naked_body_107"
 ];
+
+gt.Const.Bodies.Donkeys <- [
+	"bust_naked_body_05"
+]
+
+gt.Const.Bodies.LegendTattos <- [
+	"bust_naked_body_04"
+]

@@ -41,7 +41,7 @@ this.killer_on_the_run_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Untidy;
-		this.m.Body = "bust_naked_body_00";
+
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Notorious;
 		this.m.Bodies = this.Const.Bodies.Skinny;
@@ -98,7 +98,7 @@ this.killer_on_the_run_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsFemaleBackground = true;
 		this.m.GoodEnding = "Always a risk taker, you accepted %name% into the %companyname%\'s ranks despite her being a killer on the run. It worked in your favor as she proved herself an able and brave sellsword. As far as you know, she is still with the company, thoroughly enjoying every \'business\' opportunity it affords her.";
 		this.m.BadEnding = "While many doubted the risk of hiring a killer on the run such as %name%, the woman did prove herself a very capable sellsword. Unfortunately, an old life never trails far behind and bounty hunters kidnapped her in the night. You can find her skeleton squatting in a gibbet fifty feet in the air.";

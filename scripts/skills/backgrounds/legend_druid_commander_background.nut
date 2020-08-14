@@ -66,7 +66,7 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.Untidy;
 		this.m.BeardChance = 100;
-		this.m.Body = "bust_naked_body_04";
+		this.m.Bodies = this.Const.Bodies.LegendTattos
 		this.m.Level = 3;
 		this.m.IsCombatBackground = true;
 		this.m.IsLowborn = true;
@@ -209,7 +209,7 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsFemaleBackground = true;
 	}
 

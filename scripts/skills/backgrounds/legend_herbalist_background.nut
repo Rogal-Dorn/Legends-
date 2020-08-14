@@ -42,7 +42,7 @@ this.legend_herbalist_background <- this.inherit("scripts/skills/backgrounds/cha
 		this.m.Hairs = this.Const.Hair.Monk;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Monk;
-		this.m.Body = "bust_naked_body_00";
+
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Kind;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.IsOffendedByViolence = true;
@@ -125,7 +125,7 @@ this.legend_herbalist_background <- this.inherit("scripts/skills/backgrounds/cha
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsFemaleBackground = true;
 	}
 

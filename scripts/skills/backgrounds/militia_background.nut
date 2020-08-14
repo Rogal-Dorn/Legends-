@@ -78,7 +78,7 @@ this.militia_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Beards = null;
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.BeardChance = 0;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsFemaleBackground = true;
 	}
 

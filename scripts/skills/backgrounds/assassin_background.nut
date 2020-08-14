@@ -62,7 +62,7 @@ this.assassin_background <- this.inherit("scripts/skills/backgrounds/character_b
 		];
 
 		this.m.Faces = this.Const.Faces.AllMale;
-		this.m.Body = "bust_naked_body_02";
+
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Merciless;
 		this.m.Hairs = this.Const.Hair.CommonMale;
@@ -121,7 +121,7 @@ this.assassin_background <- this.inherit("scripts/skills/backgrounds/character_b
 			this.m.HairColors = this.Const.HairColors.Young;
 			this.m.Beards = null;
 			this.m.BeardChance = 0;
-			this.m.Body = "bust_naked_body_03";
+			this.m.Bodies = this.Const.Bodies.AllFemale;
 			this.m.IsFemaleBackground = true;
 		}
 	}

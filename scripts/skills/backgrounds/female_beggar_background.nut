@@ -45,7 +45,7 @@ this.female_beggar_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.HairColors = this.Const.HairColors.Old;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsFemaleBackground = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.NeutralMax;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
@@ -96,7 +96,7 @@ this.female_beggar_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.Hairs = this.Const.Hair.TidyMale;
 		this.m.HairColors = this.Const.HairColors.Old;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.Body = "bust_naked_body_01";
+
 		this.m.Name = "Widower";
 		this.m.BackgroundDescription = "Widowers who are too old or poor to find another wife have few ties, mercenary work is a last resort of the hopeless.";
 		this.m.GoodEnding = "Having enough of all the fighting, %name% the once-beggar retired from the %companyname%. You know the man made a pretty crown in his time with the mercenary company, yet the other day you saw him out begging again. You asked if he\'d wasted all his money and he laughed. He said he\'d purchased land and was doing just fine. Then he held out his little tin and asked for a crown. You gave him two.";
@@ -282,7 +282,7 @@ this.female_beggar_background <- this.inherit("scripts/skills/backgrounds/charac
 		{
 			local item = this.Const.World.Common.pickHelmet([
 				[1, "hood"]
-			]);			
+			]);
 			item.setVariant(38);
 			items.equip(item);
 		}

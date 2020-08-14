@@ -36,7 +36,7 @@ this.legend_ancient_summoner_background <- this.inherit("scripts/skills/backgrou
 		this.m.Hairs = this.Const.Hair.Vampire;
 		this.m.HairColors = this.Const.HairColors.Zombie;
 		this.m.Beards = this.Const.Beards.Raider;
-		this.m.Body = "bust_naked_body_00";
+
 		this.m.Level = 1;
 		this.m.IsUntalented = true;
 		this.m.IsOutlawBackground = true;
