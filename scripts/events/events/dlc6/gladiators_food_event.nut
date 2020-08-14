@@ -68,7 +68,7 @@ this.gladiators_food_event <- this.inherit("scripts/events/event", {
 		{
 			if (item != null && item.isItemType(this.Const.Items.ItemType.Food))
 			{
-				if (item.getValue() >= 85)
+				if (item.getRawValue() >= 85)
 				{
 					hasExquisiteFood = true;
 					break;

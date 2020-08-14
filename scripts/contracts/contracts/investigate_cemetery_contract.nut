@@ -752,9 +752,9 @@ this.investigate_cemetery_contract <- this.inherit("scripts/contracts/contract",
 				this.m.Destination.getSprite("selection").Visible = false;
 				this.m.Destination.setOnCombatWithPlayerCallback(null);
 				local zombies = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Zombies);
-				this.World.FactionManager.getFaction(this.Contract.m.Destination.getFaction()).removeSettlement(this.Contract.m.Destination);
-				this.Contract.m.Destination.setFaction(zombies.getID());
-				zombies.addSettlement(this.Contract.m.Destination.get(), false);
+				this.World.FactionManager.getFaction(this.m.Destination.getFaction()).removeSettlement(this.m.Destination);
+				this.m.Destination.setFaction(zombies.getID());
+				zombies.addSettlement(this.m.Destination.get(), false);
 			}
 
 			this.m.Home.getSprite("selection").Visible = false;

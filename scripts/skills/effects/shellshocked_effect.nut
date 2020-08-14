@@ -89,7 +89,7 @@ this.shellshocked_effect <- this.inherit("scripts/skills/skill", {
 
 		if (this.m.SoundOnUse.len() != 0)
 		{
-			this.Sound.play(this.m.SoundOnUse[this.Math.rand(0, this.m.SoundOnUse.len() - 1)], this.Const.Sound.Volume.RacialEffect * 0.9, this.getContainer().getActor().getPos());
+			this.Sound.play(this.m.SoundOnUse[this.Math.rand(0, this.m.SoundOnUse.len() - 1)], this.Const.Sound.Volume.RacialEffect * 0.8, this.getContainer().getActor().getPos());
 		}
 
 		this.getContainer().getActor().checkMorale(-1, 0);
@@ -102,7 +102,7 @@ this.shellshocked_effect <- this.inherit("scripts/skills/skill", {
 
 		if (this.m.SoundOnUse.len() != 0)
 		{
-			this.Sound.play(this.m.SoundOnUse[this.Math.rand(0, this.m.SoundOnUse.len() - 1)], this.Const.Sound.Volume.RacialEffect * 0.9, this.getContainer().getActor().getPos());
+			this.Sound.play(this.m.SoundOnUse[this.Math.rand(0, this.m.SoundOnUse.len() - 1)], this.Const.Sound.Volume.RacialEffect * 0.8, this.getContainer().getActor().getPos());
 		}
 	}
 

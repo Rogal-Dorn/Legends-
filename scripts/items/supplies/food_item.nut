@@ -36,6 +36,11 @@ this.food_item <- this.inherit("scripts/items/item", {
 		this.m.Amount = _a;
 	}
 
+	function getRawValue()
+	{
+		return this.m.Value;
+	}
+
 	function getValue()
 	{
 		return this.Math.floor(this.m.Amount / 25.0 * (this.getSpoilInDays() / (this.m.GoodForDays * 1.0)) * this.m.Value);

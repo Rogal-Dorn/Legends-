@@ -125,7 +125,7 @@ this.ignite_firelance_skill <- this.inherit("scripts/skills/skill", {
 		{
 			local success = this.attackEntity(user, t, false);
 
-			if (success && t.isAlive() && !t.isDying())
+			if (success && t.isAlive() && !t.isDying() && t.getTile().IsVisibleForPlayer)
 			{
 				for( local i = 0; i < this.Const.Tactical.BurnParticles.len() - 1; i = ++i )
 				{
@@ -188,20 +188,23 @@ this.ignite_firelance_skill <- this.inherit("scripts/skills/skill", {
 		local dir = myTile.getDirectionTo(targetTile);
 		this.consumeAmmo();
 
-		if (user.isAlliedWithPlayer())
+		if (myTile.IsVisibleForPlayer)
 		{
-			for( local i = 0; i < this.Const.Tactical.FireLanceRightParticles.len(); i = ++i )
+			if (user.isAlliedWithPlayer())
 			{
-				local effect = this.Const.Tactical.FireLanceRightParticles[i];
-				this.Tactical.spawnParticleEffect(false, effect.Brushes, myTile, effect.Delay, effect.Quantity, effect.LifeTimeQuantity, effect.SpawnRate, effect.Stages, this.createVec(0, 0));
+				for( local i = 0; i < this.Const.Tactical.FireLanceRightParticles.len(); i = ++i )
+				{
+					local effect = this.Const.Tactical.FireLanceRightParticles[i];
+					this.Tactical.spawnParticleEffect(false, effect.Brushes, myTile, effect.Delay, effect.Quantity, effect.LifeTimeQuantity, effect.SpawnRate, effect.Stages, this.createVec(0, 0));
+				}
 			}
-		}
-		else
-		{
-			for( local i = 0; i < this.Const.Tactical.FireLanceLeftParticles.len(); i = ++i )
+			else
 			{
-				local effect = this.Const.Tactical.FireLanceLeftParticles[i];
-				this.Tactical.spawnParticleEffect(false, effect.Brushes, myTile, effect.Delay, effect.Quantity, effect.LifeTimeQuantity, effect.SpawnRate, effect.Stages, this.createVec(0, 0));
+				for( local i = 0; i < this.Const.Tactical.FireLanceLeftParticles.len(); i = ++i )
+				{
+					local effect = this.Const.Tactical.FireLanceLeftParticles[i];
+					this.Tactical.spawnParticleEffect(false, effect.Brushes, myTile, effect.Delay, effect.Quantity, effect.LifeTimeQuantity, effect.SpawnRate, effect.Stages, this.createVec(0, 0));
+				}
 			}
 		}
 
