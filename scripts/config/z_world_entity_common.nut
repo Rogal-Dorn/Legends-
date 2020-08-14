@@ -61,6 +61,8 @@ gt.Const.World.Common.assignTroops = function( _party, _partyList, _resources, _
 			}
 		}
 
+		local p;
+
 		if (potential.len() == 0 && best == null)
 		{
 			bestCost = 9000;
@@ -631,6 +633,13 @@ gt.Const.World.Common.pickHelmet <- function (_helms)
 		helm = t[1];
 		break;
 	}
+
+	//Disabling helmet layers temporariliy
+	if (helm == "")
+	{
+		return null;
+	}
+	return this.new("scripts/items/helmets/" + helm);
 
 	if (!this.World.LegendsMod.Configs().LegendArmorsEnabled())
 	{

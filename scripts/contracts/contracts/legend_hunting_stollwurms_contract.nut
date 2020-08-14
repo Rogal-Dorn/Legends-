@@ -89,7 +89,7 @@ this.legend_hunting_stollwurms_contract <- this.inherit("scripts/contracts/contr
 					this.Const.World.TerrainType.Mountains
 				]);
 				local nearTile = this.Contract.getTileToSpawnLocation(playerTile, 4, 7);
-				local party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).spawnEntity(tile, "Stollwurm", false, this.Const.World.Spawn.LegendStollwurm, 100 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
+				local party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).spawnEntity(tile, "Stollwurm", false, this.Const.World.Spawn.LegendStollwurm, 100 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult());
 				party.getSprite("banner").setBrush("banner_beasts_01");
 				party.setDescription("A Stollwurm - a burrowing bipedal dragon resembling a giant snake.");
 				party.setAttackableByAI(false);
@@ -391,7 +391,7 @@ this.legend_hunting_stollwurms_contract <- this.inherit("scripts/contracts/contr
 						p.Music = this.Const.Music.BeastsTracks;
 						p.PlayerDeploymentType = this.Const.Tactical.DeploymentType.Edge;
 						p.EnemyDeploymentType = this.Const.Tactical.DeploymentType.Random;
-						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.OrcScouts, 100 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.World.FactionManager.getFactionOfType(this.Const.FactionType.Orcs).getID());
+						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.OrcScouts, 100 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult(), this.World.FactionManager.getFactionOfType(this.Const.FactionType.Orcs).getID());
 						this.World.Contracts.startScriptedCombat(p, false, true, true);
 						return 0;
 					}

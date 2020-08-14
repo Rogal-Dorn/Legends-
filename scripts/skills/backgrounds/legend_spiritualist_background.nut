@@ -20,7 +20,7 @@ this.legend_spiritualist_background <- this.inherit("scripts/skills/backgrounds/
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
-		this.m.Body = this.Const.Bodies.AllFemale[this.Math.rand(0, this.Const.Bodies.AllFemale.len() - 1)];
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsFemaleBackground = true;
 		this.m.IsPerformingBackground = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;

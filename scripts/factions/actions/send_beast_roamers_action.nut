@@ -799,7 +799,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 					{
 					 distanceToNextSettlement *= 2;
 					}
-				local party = _action.getFaction().spawnEntity(tile, "Rock Unhold", false, this.Const.World.Spawn.LegendRockUnhold, this.Math.rand(80, 120) * _action.getReputationToDifficultyMult() * this.Math.maxf(0.7, this.Math.minf(1.5, distanceToNextSettlement / 14.0)));
+				local party = _action.getFaction().spawnEntity(tile, "Rock Unhold", false, this.Const.World.Spawn.LegendRockUnhold, this.Math.rand(80, 120) * _action.getScaledDifficultyMult() * this.Math.maxf(0.7, this.Math.minf(1.5, distanceToNextSettlement / 14.0)));
 				party.getSprite("banner").setBrush("banner_beasts_01");
 				party.setDescription("A Rock Unhold");
 				party.setSlowerAtNight(false);
@@ -852,7 +852,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 					{
 					 distanceToNextSettlement *= 2;
 					}
-				local party = _action.getFaction().spawnEntity(tile, "Skin Ghoul", false, this.Const.World.Spawn.LegendSkinGhouls, this.Math.rand(80, 120) * _action.getReputationToDifficultyMult() * this.Math.maxf(0.7, this.Math.minf(1.5, distanceToNextSettlement / 14.0)));
+				local party = _action.getFaction().spawnEntity(tile, "Skin Ghoul", false, this.Const.World.Spawn.LegendSkinGhouls, this.Math.rand(80, 120) * _action.getScaledDifficultyMult() * this.Math.maxf(0.7, this.Math.minf(1.5, distanceToNextSettlement / 14.0)));
 				party.getSprite("banner").setBrush("banner_beasts_01");
 				party.setDescription("A Skin Ghoul");
 				party.setSlowerAtNight(false);
@@ -906,7 +906,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 					{
 					 distanceToNextSettlement *= 2;
 					}
-				local party = _action.getFaction().spawnEntity(tile, "White Wolf", false, this.Const.World.Spawn.LegendWhiteDirewolf, this.Math.rand(80, 120) * _action.getReputationToDifficultyMult() * this.Math.maxf(0.7, this.Math.minf(1.5, distanceToNextSettlement / 14.0)));
+				local party = _action.getFaction().spawnEntity(tile, "White Wolf", false, this.Const.World.Spawn.LegendWhiteDirewolf, this.Math.rand(80, 120) * _action.getScaledDifficultyMult() * this.Math.maxf(0.7, this.Math.minf(1.5, distanceToNextSettlement / 14.0)));
 				party.getSprite("banner").setBrush("banner_beasts_01");
 				party.setDescription("A White Wolf");
 				party.setSlowerAtNight(false);
@@ -960,7 +960,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 					{
 					 distanceToNextSettlement *= 2;
 					}
-				local party = _action.getFaction().spawnEntity(tile, "Redback Spider", false, this.Const.World.Spawn.LegendRedbackSpider, this.Math.rand(80, 120) * _action.getReputationToDifficultyMult() * this.Math.maxf(0.7, this.Math.minf(1.5, distanceToNextSettlement / 14.0)));
+				local party = _action.getFaction().spawnEntity(tile, "Redback Spider", false, this.Const.World.Spawn.LegendRedbackSpider, this.Math.rand(80, 120) * _action.getScaledDifficultyMult() * this.Math.maxf(0.7, this.Math.minf(1.5, distanceToNextSettlement / 14.0)));
 				party.getSprite("banner").setBrush("banner_beasts_01");
 				party.setDescription("A Redback Spider");
 				party.setSlowerAtNight(false);
@@ -1015,7 +1015,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 					{
 					 distanceToNextSettlement *= 2;
 					}
-				local party = _action.getFaction().spawnEntity(tile, "Stollwurm", false, this.Const.World.Spawn.LegendStollwurm, this.Math.rand(80, 120) * _action.getReputationToDifficultyMult() * this.Math.maxf(0.7, this.Math.minf(1.5, distanceToNextSettlement / 14.0)));
+				local party = _action.getFaction().spawnEntity(tile, "Stollwurm", false, this.Const.World.Spawn.LegendStollwurm, this.Math.rand(80, 120) * _action.getScaledDifficultyMult() * this.Math.maxf(0.7, this.Math.minf(1.5, distanceToNextSettlement / 14.0)));
 				party.getSprite("banner").setBrush("banner_beasts_01");
 				party.setDescription("A Stollwurm - a wingless bipedal dragon resembling a giant snake.");
 				party.setSlowerAtNight(false);
@@ -1068,7 +1068,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 					{
 					 distanceToNextSettlement *= 2;
 					}
-				local party = _action.getFaction().spawnEntity(tile, "Greenwood Schrats", false, this.Const.World.Spawn.LegendGreenwoodSchrat, this.Math.rand(80, 120) * _action.getReputationToDifficultyMult() * this.Math.maxf(0.7, this.Math.minf(1.5, distanceToNextSettlement / 14.0)));
+				local party = _action.getFaction().spawnEntity(tile, "Greenwood Schrats", false, this.Const.World.Spawn.LegendGreenwoodSchrat, this.Math.rand(80, 120) * _action.getScaledDifficultyMult() * this.Math.maxf(0.7, this.Math.minf(1.5, distanceToNextSettlement / 14.0)));
 				party.getSprite("banner").setBrush("banner_beasts_01");
 				party.setDescription("A creature of bark and wood, blending between trees and shambling slowly, its roots digging through the soil.");
 				party.setSlowerAtNight(false);

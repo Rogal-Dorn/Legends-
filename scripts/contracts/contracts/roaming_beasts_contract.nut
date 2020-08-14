@@ -193,7 +193,7 @@ this.roaming_beasts_contract <- this.inherit("scripts/contracts/contract", {
 				}
 				else if (this.Flags.get("IsVermes"))
 				{
-					party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).spawnEntity(tile, "Direwolves", false, this.Const.World.Spawn.BanditVermes, 120 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
+					party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).spawnEntity(tile, "Direwolves", false, this.Const.World.Spawn.BanditVermes, 120 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult());
 					party.setDescription("A pack of ferocious direwolves on the hunt for prey.");
 				}
 				else if (this.Flags.get("IsGhouls"))

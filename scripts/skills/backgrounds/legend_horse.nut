@@ -23,7 +23,7 @@ this.legend_horse <- this.inherit("scripts/skills/backgrounds/character_backgrou
 		this.m.Faces = this.Const.Faces.Horse;
 		this.m.Hairs = this.Const.Hair.None;
 		this.m.HairColors = this.Const.HairColors.None;
-		this.m.Body = "bust_naked_body_10"
+		this.m.Bodies = this.Const.Bodies.Horses;
 		this.m.IsFemaleBackground = false;
 		this.m.IsLowborn = true;
 		this.m.IsUntalented = true;
@@ -141,9 +141,9 @@ this.legend_horse <- this.inherit("scripts/skills/backgrounds/character_backgrou
 
 		if (this.m.Body != null)
 		{
-			this.m.Body = this.m.Body + this.m.Variant;
-			actor.getSprite("body").setBrush(this.m.Body);
-			actor.getSprite("injury_body").setBrush(this.m.Body + "_injured");
+			local body = this.m.Bodies[this.m.Variant];
+			actor.getSprite("body").setBrush(body);
+			actor.getSprite("injury_body").setBrush(body + "_injured");
 		}
 
 		this.onSetAppearance();
@@ -224,11 +224,6 @@ this.legend_horse <- this.inherit("scripts/skills/backgrounds/character_backgrou
 		talents[this.Const.Attributes.Hitpoints] = 3;
 		talents[this.Const.Attributes.Fatigue] = 3;
 		this.getContainer().getActor().fillTalentValues(1, true);
-	}
-
-	function updateVariant()
-	{
-		this.m.Body = this.m.Body + this.m.Variant;
 	}
 
 	function onSerialize( _out )
