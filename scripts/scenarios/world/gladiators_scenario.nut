@@ -195,7 +195,7 @@ this.gladiators_scenario <- this.inherit("scripts/scenarios/world/starting_scena
 			{
 				if (bro.getFlags().get("IsPlayerCharacter"))
 				{
-					bro.getBackground().m.RawDescription = "{%fullname% is somber about the passing of a good friend, but he looks to the future knowing that he has someone behind him at all times. Behind him in a brotherly, way, that is. And spiritually. Brotherly and spiritually, only.}";
+					bro.getBackground().m.RawDescription = "{%fullname% is somber about the passing of a good friend, but he looks to the future knowing that he has someone behind him at all times. Behind him in a brotherly way, that is. And spiritually. Brotherly and spiritually, only.}";
 					bro.getBackground().buildDescription(true);
 				}
 			}
