@@ -495,8 +495,8 @@ gt.Const.World.Spawn.Troops <- {
 	SandGolemMEDIUM = {
 		ID = this.Const.EntityType.SandGolem,
 		Variant = 0,
-		Strength = 30,
-		Cost = 30,
+		Strength = 35,
+		Cost = 35,
 		Row = -1,
 		Script = "scripts/entity/tactical/enemies/sand_golem_medium"
 	},

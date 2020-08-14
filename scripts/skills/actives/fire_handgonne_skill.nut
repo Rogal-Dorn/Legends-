@@ -172,7 +172,7 @@ this.fire_handgonne_skill <- this.inherit("scripts/skills/skill", {
 			local target = t.getEntity();
 			local success = this.attackEntity(user, target, false);
 
-			if (success && target.isAlive() && !target.isDying())
+			if (success && target.isAlive() && !target.isDying() && t.IsVisibleForPlayer)
 			{
 				if (user.getPos().X <= target.getPos().X)
 				{
@@ -307,20 +307,23 @@ this.fire_handgonne_skill <- this.inherit("scripts/skills/skill", {
 		local myTile = user.getTile();
 		local dir = myTile.getDirectionTo(targetTile);
 
-		if (user.isAlliedWithPlayer())
+		if (myTile.IsVisibleForPlayer)
 		{
-			for( local i = 0; i < this.Const.Tactical.HandgonneRightParticles.len(); i = ++i )
+			if (user.isAlliedWithPlayer())
 			{
-				local effect = this.Const.Tactical.HandgonneRightParticles[i];
-				this.Tactical.spawnParticleEffect(false, effect.Brushes, myTile, effect.Delay, effect.Quantity, effect.LifeTimeQuantity, effect.SpawnRate, effect.Stages, this.createVec(0, 0));
+				for( local i = 0; i < this.Const.Tactical.HandgonneRightParticles.len(); i = ++i )
+				{
+					local effect = this.Const.Tactical.HandgonneRightParticles[i];
+					this.Tactical.spawnParticleEffect(false, effect.Brushes, myTile, effect.Delay, effect.Quantity, effect.LifeTimeQuantity, effect.SpawnRate, effect.Stages, this.createVec(0, 0));
+				}
 			}
-		}
-		else
-		{
-			for( local i = 0; i < this.Const.Tactical.HandgonneLeftParticles.len(); i = ++i )
+			else
 			{
-				local effect = this.Const.Tactical.HandgonneLeftParticles[i];
-				this.Tactical.spawnParticleEffect(false, effect.Brushes, myTile, effect.Delay, effect.Quantity, effect.LifeTimeQuantity, effect.SpawnRate, effect.Stages, this.createVec(0, 0));
+				for( local i = 0; i < this.Const.Tactical.HandgonneLeftParticles.len(); i = ++i )
+				{
+					local effect = this.Const.Tactical.HandgonneLeftParticles[i];
+					this.Tactical.spawnParticleEffect(false, effect.Brushes, myTile, effect.Delay, effect.Quantity, effect.LifeTimeQuantity, effect.SpawnRate, effect.Stages, this.createVec(0, 0));
+				}
 			}
 		}
 

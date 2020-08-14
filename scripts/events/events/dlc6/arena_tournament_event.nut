@@ -65,7 +65,8 @@ this.arena_tournament_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
-		this.m.Score = 75;
+		this.m.Town = town;
+		this.m.Score = 50;
 	}
 
 	function onPrepare()

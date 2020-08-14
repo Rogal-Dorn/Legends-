@@ -27,7 +27,16 @@ this.eunuch_ladies_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				this.Characters.push(_event.m.Eunuch.getImagePath());
-				_event.m.Town.getFactionOfType(this.Const.FactionType.Settlement).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractSuccess, "One of your men got a reputation with the ladies");
+
+				if (_event.m.Town.isSouthern())
+				{
+					_event.m.Town.getOwner().addPlayerRelation(this.Const.World.Assets.RelationCivilianContractSuccess, "One of your men got a reputation with the ladies");
+				}
+				else
+				{
+					_event.m.Town.getFactionOfType(this.Const.FactionType.Settlement).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractSuccess, "One of your men got a reputation with the ladies");
+				}
+
 				_event.m.Eunuch.improveMood(1.5, "Got friendly with some ladies in " + _event.m.Town.getName());
 
 				if (_event.m.Eunuch.getMoodState() >= this.Const.MoodState.Neutral)
