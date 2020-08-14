@@ -435,7 +435,8 @@ this.character_screen <- {
 			this.m.PerkTreesLoaded = true;
 			result.perkTrees <- this.onQueryPerkTrees();
 		}
-		this.logDebug("Generating stash list info :" + result.stashSpaceUsed + " : " + result.stashSpaceMax)
+		if ("stashSpaceUsed" in result)
+			this.logDebug("Generating stash list info :" + result.stashSpaceUsed + " : " + result.stashSpaceMax)
 
 		return result;
 	}
