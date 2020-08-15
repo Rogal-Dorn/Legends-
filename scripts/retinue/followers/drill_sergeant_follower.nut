@@ -15,7 +15,7 @@ this.drill_sergeant_follower <- this.inherit("scripts/retinue/follower", {
 		this.m.Requirements = [
 			{
 				IsSatisfied = false,
-				Text = "Retired a man with a permanent injury"
+				Text = "Retired a man with a permanent injury that isn\'t indebted"
 			}
 		];
 	}
