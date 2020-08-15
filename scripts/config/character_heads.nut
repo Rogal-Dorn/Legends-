@@ -190,6 +190,10 @@ gt.Const.Faces.AllFemale <- [
 	"bust_head_female_16"
 ];
 
+gt.Const.Faces.SouthernFemale <- [
+
+]
+
 gt.Const.Faces.PrettyFemale <- [
 	"bust_head_female_01",
 	"bust_head_female_02",
@@ -854,6 +858,10 @@ gt.Const.Bodies.NorthernSlave <- [
 
 gt.Const.Bodies.AllFemale <- [
 	"bust_naked_body_03"
+];
+
+gt.Const.Bodies.FemaleSouthern <- [
+	"bust_naked_southern_female_01"
 ];
 
 gt.Const.Bodies.Horses <- [
