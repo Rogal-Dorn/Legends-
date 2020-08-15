@@ -1,11 +1,11 @@
-this.legend_upgrade_settlement_action <- this.inherit("scripts/factions/faction_action", {
+this.legend_upgrade_locations_action <- this.inherit("scripts/factions/faction_action", {
 	m = {
 		Settlement = null
 	},
 	function create()
 	{
-		this.m.ID = "legend_upgrade_settlement_action";
-		this.m.Cooldown = this.World.getTime().SecondsPerDay * 15;
+		this.m.ID = "legend_upgrade_locations_action";
+		this.m.Cooldown = this.World.getTime().SecondsPerDay * 7;
 		this.m.IsSettlementsRequired = true;
 		this.faction_action.create();
 	}
@@ -16,7 +16,6 @@ this.legend_upgrade_settlement_action <- this.inherit("scripts/factions/faction_
 		{
 			return;
 		}
-
 		// if (this.Math.rand(1, 100) > 10)
 		// {
 		// 	return;
@@ -29,13 +28,7 @@ this.legend_upgrade_settlement_action <- this.inherit("scripts/factions/faction_
 			return;
 		}
 
-		//We can only upgrade a settlement once all the locations have been filled up.
-		if (this.m.Settlement.canBuildLocation())
-		{
-			return;
-		}
-
-		if (!this.m.Settlement.canUpgrade())
+		if (!this.m.Settlement.canUpgradeLocations())
 		{
 			return;
 		}
@@ -50,7 +43,7 @@ this.legend_upgrade_settlement_action <- this.inherit("scripts/factions/faction_
 
 	function onExecute( _faction )
 	{
-		this.m.Settlement.addSituation(this.new("scripts/entity/world/settlements/situations/legend_upgrading_effort_situation"));
+		this.m.Settlement.addSituation(this.new("scripts/entity/world/settlements/situations/legend_upgrading_locations_effort_situation"));
 	}
 
 });

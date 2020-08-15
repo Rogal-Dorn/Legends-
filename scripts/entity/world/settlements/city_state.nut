@@ -79,6 +79,99 @@ this.city_state <- this.inherit("scripts/entity/world/settlement", {
 		return true;
 	}
 
+	function buildNewLocation()
+	{
+		local ALL = [
+			this.Const.World.TerrainType.Plains,
+			this.Const.World.TerrainType.Steppe,
+			this.Const.World.TerrainType.Snow,
+			this.Const.World.TerrainType.Hills,
+			this.Const.World.TerrainType.Tundra,
+			this.Const.World.TerrainType.Forest,
+			this.Const.World.TerrainType.SnowyForest,
+			this.Const.World.TerrainType.AutumnForest,
+			this.Const.World.TerrainType.LeaveForest,
+			this.Const.World.TerrainType.Desert,
+			this.Const.World.TerrainType.Oasis
+		];
+		local items = [
+			[1, {
+				Script = "scripts/entity/world/attached_location/harbor_location",
+				Terrain = [this.Const.World.TerrainType.Shore],
+				NearTerrain = [this.Const.World.TerrainType.Shore, this.Const.World.TerrainType.Ocean],
+				Distance = 1,
+				Road = false,
+				Clear = false,
+				Force = true
+			}],
+
+			[1, {
+				Script = "scripts/entity/world/attached_location/fishing_huts_oriental_location",
+				Terrain = ALL,
+				NearTerrain = [this.Const.World.TerrainType.Shore],
+				Distance = 1,
+				Road = false,
+				Clear = true,
+				Force = true
+			}],
+
+			[1, {
+				Script = "scripts/entity/world/attached_location/incense_dryer_location",
+				Terrain = ALL,
+				NearTerrain = [],
+				Distance = 1,
+				Road = false,
+				Clear = true,
+				Force = true
+			}],
+
+            [1, {
+				Script = "scripts/entity/world/attached_location/silk_farm_location",
+				Terrain = ALL
+				NearTerrain = [],
+				Distance = 1,
+				Road = false,
+				Clear = true,
+				Force = true
+			}],
+
+			[1, {
+				Script = "scripts/entity/world/attached_location/plantation_location",
+				Terrain = ALL,
+				NearTerrain = [],
+				Distance = 1,
+				Road = false,
+				Clear = true,
+				Force = true
+			}],
+
+			[1, {
+				Script = "scripts/entity/world/attached_location/dye_maker_oriental_location",
+				Terrain = ALL,
+				NearTerrain = [],
+				Distance = 1,
+				Road = false,
+				Clear = true,
+				Force = true
+			}],
+
+			[1, {
+				Script = "scripts/entity/world/attached_location/goat_herd_oriental_location",
+				Terrain = ALL,
+				NearTerrain = [],
+				Distance = 1,
+				Road = false,
+				Clear = true,
+				Force = true
+			}],
+
+
+		]
+
+		local item = this.Const.World.Common.pickItem(items)
+		return this.buildAttachedLocation(1, item.Script, item.Terrain, item.NearTerrain, item.Distance, item.Road, item.Clear, item.Force)
+	}
+
 	function onBuild( _settings = null)
 	{
 		local myTile = this.getTile();
@@ -298,6 +391,18 @@ this.city_state <- this.inherit("scripts/entity/world/settlement", {
 			this.Const.World.TerrainType.Desert,
 			this.Const.World.TerrainType.Oasis
 		], []);
+	}
+
+	function onSerialize( _out )
+	{
+		this.settlement.onSerialize(_out);
+		_out.writeU8(this.m.AttachedLocationsMax);
+	}
+
+	function onDeserialize( _in )
+	{
+		this.settlement.onDeserialize(_in);
+		this.m.AttachedLocationsMax = _in.readU8();
 	}
 
 });

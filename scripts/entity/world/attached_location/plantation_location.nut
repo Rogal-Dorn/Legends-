@@ -50,5 +50,10 @@ this.plantation_location <- this.inherit("scripts/entity/world/attached_location
 		}
 	}
 
+	function getNewResources()
+	{
+		return 2;
+	}
+
 });
 

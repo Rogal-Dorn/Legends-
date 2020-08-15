@@ -109,18 +109,46 @@ this.rebuilding_effort_situation <- this.inherit("scripts/entity/world/settlemen
 		this.m.Target = _in.readString();
 	}
 
-
 	function onUpdateDraftList( _draftList )
 	{
-		_draftList.push("lumberjack_background");
-		_draftList.push("lumberjack_background");
-		_draftList.push("mason_background");
-		_draftList.push("mason_background");
-		_draftList.push("daytaler_background");
-		_draftList.push("daytaler_background");
-		_draftList.push("daytaler_background");
-		_draftList.push("daytaler_background");
+		if (_settlement.isSouthern())
+		{
+			_draftList.push("daytaler_southern_background");
+			_draftList.push("daytaler_southern_background");
+			_draftList.push("daytaler_southern_background");
+			_draftList.push("daytaler_southern_background");
+			_draftList.push("slave_southern_background");
+			_draftList.push("slave_southern_background");
+			_draftList.push("slave_southern_background");
+			_draftList.push("slave_southern_background");
+			_draftList.push("slave_southern_background");
+			_draftList.push("slave_southern_background");
+
+		}
+		else
+		{
+			_draftList.push("lumberjack_background");
+			_draftList.push("lumberjack_background");
+			_draftList.push("mason_background");
+			_draftList.push("mason_background");
+			_draftList.push("daytaler_background");
+			_draftList.push("daytaler_background");
+			_draftList.push("daytaler_background");
+
+			_draftList.push("legend_inventor_background");
+
+			if (this.World.LegendsMod.Configs().LegendGenderEnabled())
+			{
+				_draftList.push("female_daytaler_background");
+			}
+		}
+
+		_draftList.push("legend_blacksmith_background");
+		_draftList.push("legend_blacksmith_background");
+		_draftList.push("legend_blacksmith_background");
+
 	}
+
 
 });
 

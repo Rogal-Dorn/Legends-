@@ -1,90 +1,52 @@
-this.legend_building_effort_situation <- this.inherit("scripts/entity/world/settlements/situations/situation", {
-	m = {
-		Target = ""
-	},
+this.legend_upgrading_locations_effort_situation <- this.inherit("scripts/entity/world/settlements/situations/situation", {
+	m = {},
 	function create()
 	{
 		this.situation.create();
-		this.m.ID = "situation.legend_building_effort";
-		this.m.Name = "Building Effort";
-		this.m.Description = "This settlement is expanding with a new location, building materials are in high demand and low supply.";
+		this.m.ID = "situation.legend_upgrading_locations_effort";
+		this.m.Name = "Upgrading Max Locations Effort";
+		this.m.Description = "This settlement is in the process of upgrading, building materials are in high demand and low supply.";
 		this.m.Icon = "ui/settlement_status/settlement_effect_15.png";
 		this.m.IsStacking = false;
-		this.m.ValidDays = 5;
+		this.m.ValidDays = 10;
 	}
 
 	function getDescription()
 	{
-		if (this.m.Target != "")
-		{
-			return "In an effort to build the new " + this.m.Target.tolower() + ", building materials are in high demand and low supply.";
-		}
-		else
-		{
-			return this.m.Description;
-		}
+		return "In an effort to expand and upgrade the settlement, building materials are in high demand and low supply.";
 	}
 
 	function isValid()
 	{
-		if (this.m.Target == "")
-		{
-			return false;
-		}
-
 		return this.situation.isValid();
 	}
 
 	function onAdded( _settlement )
 	{
 		_settlement.resetShop();
-
-		local a = _settlement.buildNewLocation();
-
-		if (a == null)
-		{
-			_settlement.removeSituationByID("situation.legend_building_effort");
-			return;
-		}
-
-		a.setNew(true);
-		a.setActive(false);
-
-		this.m.Target = a.getRealName();
+		_settlement.setUpgrading(true);
 	}
 
 	function onUpdate( _modifiers )
 	{
-		_modifiers.BuildingPriceMult *= 1.5;
-		_modifiers.BuildingRarityMult *= 0.5;
+		_modifiers.BuildingPriceMult *= 2.0;
+		_modifiers.BuildingRarityMult *= 0.75;
 	}
 
 	function onRemoved( _settlement )
 	{
-		foreach( a in _settlement.getAttachedLocations() )
-		{
-			if (!a.isBuilding())
-			{
-				continue;
-			}
-
-			_settlement.setResources(_settlement.getResources() - 50);
-			a.setNew(false);
-			a.setActive(true);
-			break;
-		}
+		_settlement.setResources(_settlement.getResources() - 50);
+		_settlement.m.AttachedLocationsMax + 1;
 	}
 
 	function onSerialize( _out )
 	{
 		this.situation.onSerialize(_out);
-		_out.writeString(this.m.Target);
 	}
 
 	function onDeserialize( _in )
 	{
 		this.situation.onDeserialize(_in);
-		this.m.Target = _in.readString();
 	}
 
 	function onUpdateDraftList( _draftList )
@@ -119,6 +81,13 @@ this.legend_building_effort_situation <- this.inherit("scripts/entity/world/sett
 				_draftList.push("female_daytaler_background");
 			}
 		}
+
+		_draftList.push("legend_blacksmith_background");
+		_draftList.push("legend_blacksmith_background");
+		_draftList.push("legend_blacksmith_background");
+		_draftList.push("legend_blacksmith_background");
+		_draftList.push("legend_blacksmith_background");
+		_draftList.push("legend_blacksmith_background");
 
 	}
 

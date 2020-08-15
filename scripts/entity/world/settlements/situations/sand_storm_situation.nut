@@ -28,6 +28,10 @@ this.sand_storm_situation <- this.inherit("scripts/entity/world/settlements/situ
 	function onAdded( _settlement )
 	{
 		_settlement.resetShop();
+		if(this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		{
+			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.01);
+		}
 	}
 
 	function onUpdate( _modifiers )

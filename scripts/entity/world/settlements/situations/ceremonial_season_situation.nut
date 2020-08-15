@@ -27,6 +27,11 @@ this.ceremonial_season_situation <- this.inherit("scripts/entity/world/settlemen
 
 	function onAdded( _settlement )
 	{
+		if(this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		{
+			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.01);
+		}
+		_settlement.resetShop();
 	}
 
 	function onUpdate( _modifiers )

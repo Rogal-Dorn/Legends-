@@ -34,6 +34,11 @@ this.rebuild_location_action <- this.inherit("scripts/factions/faction_action", 
 			return;
 		}
 
+		if (this.m.Settlement.isBuilding())
+		{
+			return;
+		}
+
 		local playerTile = this.World.State.getPlayer().getTile();
 		local numInactive = 0;
 		local nogo = false

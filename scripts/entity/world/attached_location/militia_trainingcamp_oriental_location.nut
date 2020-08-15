@@ -188,5 +188,10 @@ this.militia_trainingcamp_oriental_location <- this.inherit("scripts/entity/worl
 		}
 	}
 
+	function getNewResources()
+	{
+		return 0;
+	}
+
 });
 

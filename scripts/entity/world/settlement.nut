@@ -452,6 +452,12 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		{
 			baseLevel += 50.0;
 		}
+
+		if (this.isKindOf(this, "city_state"))
+		{
+			baseLevel += 100;
+		}
+
 		switch (this.getSize())
 		{
 			case 1:
@@ -2426,6 +2432,52 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		this.unregisterThinker();
 	}
 
+	function isBuilding()
+	{
+		foreach (s in this.getSituations())
+		{
+			switch (s.getID())
+			{
+				case "situation.rebuilding_effort":
+				case "situation.legend_degrading_effort":
+				case "situation.legend_upgrading_effort":
+				case "situation.legend_upgrading_locations_effort":
+					return true;
+			}
+		}
+		return false
+	}
+
+
+	function getBaseResourceLevel()
+	{
+		local minResources = 50;
+		if (this.isMilitary())
+		{
+			minResources += 50;
+		}
+
+		if (this.isKindOf(this, "city_state"))
+		{
+			minResources += 100;
+		}
+
+		switch (this.m.Size)
+		{
+			case 1:
+				minResources += 100;
+				break;
+			case 2:
+				minResources += 150;
+				break;
+			case 3:
+				minResources += 200;
+				break;
+		}
+
+		return minResources;
+	}
+
 	function canUpgrade()
 	{
 		if (this.m.Size >= 3)
@@ -2446,25 +2498,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			}
 		}
 
-		local minResources = 50;
-		if (this.isMilitary())
-		{
-			minResources += 50;
-		}
-		switch (this.m.Size)
-		{
-			case 1:
-				minResources += 100;
-				break;
-			case 2:
-				minResources += 150;
-				break;
-			case 3:
-				minResources += 200;
-				break;
-		}
-
-		if (this.getResources() < minResources)
+		if (this.getResources() < this.getBaseResourceLevel())
 		{
 			return false;
 		}
@@ -2493,25 +2527,36 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			}
 		}
 
-		local minResources = 50;
-		if (this.isMilitary())
+		if (this.getResources() < this.getBaseResourceLevel())
 		{
-			minResources += 50;
-		}
-		switch (this.m.Size)
-		{
-			case 1:
-				minResources += 100;
-				break;
-			case 2:
-				minResources += 150;
-				break;
-			case 3:
-				minResources += 200;
-				break;
+			return false;
 		}
 
-		if (this.getResources() < minResources)
+		return true;
+	}
+
+	function canUpgradeLocations()
+	{
+
+		if (this.isUpgrading())
+		{
+			return false;
+		}
+
+		if (this.m.AttachedLocations.len() < this.getAttachedLocationsMax())
+		{
+			return false;
+		}
+
+		foreach( a in this.getAttachedLocations() )
+		{
+			if (a.isBuilding())
+			{
+				return false;
+			}
+		}
+
+		if (this.getResources() < this.getBaseResourceLevel())
 		{
 			return false;
 		}
