@@ -40,5 +40,12 @@ this.old_gladiator_background <- this.inherit("scripts/skills/backgrounds/gladia
 		items.equip(a);
 	}
 
+	function onAddLegendEquipment()
+	{
+		local items = this.getContainer().getActor().getItems();
+		local r;
+		//todo legends armor
+	}
+
 });
 

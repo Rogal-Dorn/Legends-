@@ -91,5 +91,23 @@ this.companion_2h_southern_background <- this.inherit("scripts/skills/background
 		}
 	}
 
+	function onAddLegendEquipment()
+	{
+		local items = this.getContainer().getActor().getItems();
+		local r;
+		items.equip(this.new("scripts/items/weapons/two_handed_wooden_hammer"));
+
+		//todo legends armor
+
+		local helm =this.Const.World.Common.pickHelmet([
+			[1, "oriental/leather_head_wrap"],
+			[1, "oriental/leather_head_wrap"],
+			[1, "oriental/southern_head_wrap"]
+		]) 
+		if (helm.getID() == "armor.head.southern_head_wrap")
+			helm.setVariant(this.Math.rand(0, 1) == 1 ? 12 : 8);
+		items.equip(helm);
+	}
+
 });
 

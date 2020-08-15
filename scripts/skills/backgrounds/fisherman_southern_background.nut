@@ -55,5 +55,32 @@ this.fisherman_southern_background <- this.inherit("scripts/skills/backgrounds/f
 		items.equip(this.new("scripts/items/helmets/oriental/southern_head_wrap"));
 	}
 
+	function onAddLegendEquipment()
+	{
+		local items = this.getContainer().getActor().getItems();
+		r = this.Math.rand(0, 1);
+
+		if (r == 0)
+		{
+			items.equip(this.new("scripts/items/weapons/knife"));
+		}
+
+		items.equip(this.new("scripts/items/tools/throwing_net"));
+
+		//todo legends armor
+
+		r = this.Math.rand(0, 4);
+
+		if (r == 0)
+		{
+			items.equip(this.new("scripts/items/helmets/oriental/southern_head_wrap"));
+		}
+
+		local helm =this.Const.World.Common.pickHelmet([
+			[1, "oriental/southern_head_wrap"]
+		]);
+		items.equip(helm);
+	}
+
 });
 

@@ -45,5 +45,12 @@ this.eunuch_southern_background <- this.inherit("scripts/skills/backgrounds/eunu
 		}
 	}
 
+	function onAddLegendEquipment()
+	{
+		local items = this.getContainer().getActor().getItems();
+		local r;
+		//todo legends armor
+	}
+
 });
 
