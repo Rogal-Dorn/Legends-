@@ -146,7 +146,7 @@ this.officer <- this.inherit("scripts/entity/tactical/human", {
 		local helm = [];
 		foreach (h in this.Const.Items.NamedSouthernHelmets)
 		{
-			helm.push([1, h.slice(h.find("helmets/"))]);
+			helm.push([1, h.slice(h.find("helmets/") + "helmets/".len())]);
 		}
 		local r = this.Math.rand(1, 4);
 
