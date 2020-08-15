@@ -111,10 +111,54 @@ this.building <- {
 			{
 				local p = this.Math.rand(0, 100) * rarityMult;
 				local item;
+				local IsHelm = false;
+				
+				// if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+				// {
+				// 	local script = i.S;
+				// 	local index = script.find("helmets/");
+				// 	if (index != null)
+				// 	{
+				// 		local ugs = 0;
+				// 		local r;
+				// 		IsHelm = true;
 
+				// 		script = script.slice(index + "helmets/".len());
+				// 		item = this.Const.World.Common.pickHelmet([
+				// 			[1, script]
+				// 		]);
+
+				// 		local upgrades = item.getUpgrades();
+				// 		foreach (u in upgrades)
+				// 			if (u == 1)
+				// 				ugs += 1;
+						
+				// 		if (ugs > 0)
+				// 			r = this.Math.rand(0, ugs);
+
+				// 		if (r == 0)
+				// 		{
+				// 			break; //sell full it	em as is by leaving item as the pickHelmet
+				// 		}
+				// 		else
+				// 		{
+				// 			foreach (i, u in upgrades )
+				// 				if ( u == 1 ) {
+				// 					r -= 1;
+				// 					if (r == 0) {
+				// 						item = item.removeUpgrade(i)
+				// 						break;
+				// 					}
+				// 				}
+							
+				// 		}
+				// 	}
+				// }
 				if (p >= r)
 				{
-					item = this.new("scripts/items/" + i.S);
+					if (!IsHelm)
+						item = this.new("scripts/items/" + i.S);
+
 					if (item == null)
 					{
 						break;
