@@ -101,6 +101,13 @@ this.gladiators_scenario <- this.inherit("scripts/scenarios/world/starting_scena
 		bros[1].getBackground().buildDescription(true);
 		bros[2].getBackground().m.RawDescription = "{Why are you looking at %fullname%? Captain, it is I, " + bros[1].getName() + ", who is your greatest gladiator. I am the one who swept the legs of a lindwurm and choked it out with its own tail! What you bastards say? You call that a tall tale? Pah! \'Tis a horizontal lizard at best.}";
 		bros[2].getBackground().buildDescription(true);
+
+		foreach( bro in bros )
+		{
+			local val = this.World.State.addNewID(bro);
+			bro.m.CompanyID = val;
+		}
+
 		this.World.Assets.m.BusinessReputation = 100;
 		this.World.Assets.getStash().resize(this.World.Assets.getStash().getCapacity() - 9);
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/dried_lamb_item"));
