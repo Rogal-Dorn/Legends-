@@ -100,23 +100,30 @@ this.nomad_cutthroat <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Items.equip(this.new("scripts/items/" + shields[this.Math.rand(0, shields.len() - 1)]));
 		}
 
-		local armor = [
-			"armor/oriental/nomad_robe",
-			"armor/oriental/nomad_robe",
-			"armor/oriental/thick_nomad_robe",
-			"armor/oriental/thick_nomad_robe",
-			"armor/oriental/cloth_sash",
-			"armor/oriental/cloth_sash",
-			"armor/leather_wraps"
-		];
-		this.m.Items.equip(this.new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]));
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+		{
+			//todo legends armor
+		}
+		else
+		{
+			local armor = [
+				"armor/oriental/nomad_robe",
+				"armor/oriental/nomad_robe",
+				"armor/oriental/thick_nomad_robe",
+				"armor/oriental/thick_nomad_robe",
+				"armor/oriental/cloth_sash",
+				"armor/oriental/cloth_sash",
+				"armor/leather_wraps"
+			];
+			this.m.Items.equip(this.new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]));
+		}
 		local helmet = [
-			"helmets/oriental/nomad_head_wrap",
-			"helmets/oriental/nomad_head_wrap",
-			"helmets/oriental/leather_head_wrap",
-			"helmets/oriental/nomad_leather_cap"
+			[1, "oriental/nomad_head_wrap"],
+			[1, "oriental/nomad_head_wrap"],
+			[1, "oriental/leather_head_wrap"],
+			[1, "oriental/nomad_leather_cap"]
 		];
-		this.m.Items.equip(this.new("scripts/items/" + helmet[this.Math.rand(0, helmet.len() - 1)]));
+		this.m.Items.equip(this.Const.World.Common.pickHelmet(helmet));
 	}
 
 });

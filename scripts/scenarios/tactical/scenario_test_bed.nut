@@ -68,23 +68,34 @@ this.scenario_test_bed <- this.inherit("scripts/scenarios/tactical/scenario_temp
 			entity.setName(this.getRandomPlayerName());
 			entity.setScenarioValues();
 			local items = entity.getItems();
-			items.equip(this.new("scripts/items/helmets/oriental/southern_head_wrap"));
-			local r = this.Math.rand(1, 3);
-			local a = this.new("scripts/items/armor/oriental/gladiator_harness");
-			local u;
-			r = this.Math.rand(1, 2);
+			local helmet = [
+				[1, "oriental/southern_head_wrap"]
+			]
+			items.equip(this.Const.World.Common.pickHelmet(helmet));
 
-			if (r == 1)
+			if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 			{
-				u = this.new("scripts/items/armor_upgrades/light_gladiator_upgrade");
+				//todo legend armors
 			}
-			else if (r == 2)
+			else
 			{
-				u = this.new("scripts/items/armor_upgrades/heavy_gladiator_upgrade");
-			}
+				local r = this.Math.rand(1, 3);
+				local a = this.new("scripts/items/armor/oriental/gladiator_harness");
+				local u;
+				r = this.Math.rand(1, 2);
 
-			a.setUpgrade(u);
-			items.equip(a);
+				if (r == 1)
+				{
+					u = this.new("scripts/items/armor_upgrades/light_gladiator_upgrade");
+				}
+				else if (r == 2)
+				{
+					u = this.new("scripts/items/armor_upgrades/heavy_gladiator_upgrade");
+				}
+
+				a.setUpgrade(u);
+				items.equip(a);
+			}
 			items.equip(this.new("scripts/items/ammo/powder_bag"));
 
 			if (this.Math.rand(1, 100) <= 50)

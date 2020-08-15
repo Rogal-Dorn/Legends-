@@ -19,7 +19,7 @@ this.arena_tournament_contract <- this.inherit("scripts/contracts/contract", {
 		local items = [];
 		items.extend(this.Const.Items.NamedWeapons);
 		items.extend(this.Const.Items.NamedHelmets);
-		items.extend(this.Const.Items.NamedArmors);
+		items.extend(this.Const.Items.NamedArmors); //todo legend armors  : not sure how to do this one honestly but the todo is here 
 		local item = this.new("scripts/items/" + items[this.Math.rand(0, items.len() - 1)]);
 		this.m.Flags.set("PrizeName", item.createRandomName());
 		this.m.Flags.set("PrizeScript", item.ClassNameHash);

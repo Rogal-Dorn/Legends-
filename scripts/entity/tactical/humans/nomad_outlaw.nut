@@ -135,19 +135,26 @@ this.nomad_outlaw <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Items.equip(this.new("scripts/items/" + shields[this.Math.rand(0, shields.len() - 1)]));
 		}
 
-		local armor = [
-			"armor/oriental/stitched_nomad_armor",
-			"armor/oriental/plated_nomad_mail",
-			"armor/oriental/leather_nomad_robe"
-		];
-		this.m.Items.equip(this.new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]));
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+		{
+			//todo legends armor
+		}
+		else
+		{
+			local armor = [
+				"armor/oriental/stitched_nomad_armor",
+				"armor/oriental/plated_nomad_mail",
+				"armor/oriental/leather_nomad_robe"
+			];
+			this.m.Items.equip(this.new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]));
+		}
 		local helmet = [
-			"helmets/oriental/nomad_leather_cap",
-			"helmets/oriental/nomad_light_helmet",
-			"helmets/oriental/nomad_reinforced_helmet",
-			"helmets/oriental/leather_head_wrap"
+			[1, "oriental/nomad_leather_cap"],
+			[1, "oriental/nomad_light_helmet"],
+			[1, "oriental/nomad_reinforced_helmet"],
+			[1, "oriental/leather_head_wrap"]
 		];
-		this.m.Items.equip(this.new("scripts/items/" + helmet[this.Math.rand(0, helmet.len() - 1)]));
+		this.m.Items.equip(this.Const.World.Common.pickHelmet(helmet));
 	}
 
 });

@@ -71,20 +71,27 @@ this.vizier <- this.inherit("scripts/entity/tactical/human", {
 		local alwaysWithDetails = false;
 		local withHelmet = true;
 
-		if (r == 1)
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
-			this.m.Items.equip(this.new("scripts/items/armor/oriental/padded_mail_and_lamellar_hauberk"));
-		}
-		else if (r == 2)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/oriental/mail_and_lamellar_plating"));
+			//todo legends armor
 		}
 		else
 		{
-			this.m.Items.equip(this.new("scripts/items/armor/oriental/vizier_gear"));
+			if (r == 1)
+			{
+				this.m.Items.equip(this.new("scripts/items/armor/oriental/padded_mail_and_lamellar_hauberk"));
+			}
+			else if (r == 2)
+			{
+				this.m.Items.equip(this.new("scripts/items/armor/oriental/mail_and_lamellar_plating"));
+			}
+			else
+			{
+				this.m.Items.equip(this.new("scripts/items/armor/oriental/vizier_gear"));
+			}
 		}
 
-		if (withDetails && (alwaysWithDetails || this.Math.rand(1, 100) <= 50))
+		if (withDetails && (alwaysWithDetails || this.Math.rand(1, 100) <= 50)) //may need to go into legends armor check
 		{
 			local variants = [
 				"03",
@@ -95,7 +102,10 @@ this.vizier <- this.inherit("scripts/entity/tactical/human", {
 
 		if (withHelmet && this.Math.rand(1, 100) <= 80)
 		{
-			this.m.Items.equip(this.new("scripts/items/helmets/oriental/vizier_headgear"));
+			local helmet = [
+				[1, "oriental/vizier_headgear"]
+			];
+			this.m.Items.equip(this.Const.World.Common.pickHelmet(helmet));
 		}
 	}
 

@@ -37,37 +37,44 @@ this.zombie_nomad <- this.inherit("scripts/entity/tactical/enemies/zombie_yeoman
 			this.m.Items.equip(shield);
 		}
 
-		local armor = [
-			"armor/oriental/stitched_nomad_armor",
-			"armor/oriental/plated_nomad_mail",
-			"armor/oriental/leather_nomad_robe",
-			"armor/oriental/nomad_robe",
-			"armor/oriental/thick_nomad_robe"
-		];
-		local armor = this.new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]);
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+		{
+			//todo legends armor
+		}
+		else {
+			local armor = [
+				"armor/oriental/stitched_nomad_armor",
+				"armor/oriental/plated_nomad_mail",
+				"armor/oriental/leather_nomad_robe",
+				"armor/oriental/nomad_robe",
+				"armor/oriental/thick_nomad_robe"
+			];
+			local armor = this.new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]);
+			this.m.Items.equip(armor);
+		}
 
 		if (this.Math.rand(1, 100) <= 66)
 		{
-			armor.setArmor(armor.getArmorMax() / 2 - 1);
+			this.m.Items.getItemAtSlot(this.Const.ItemSlot.Body).setArmor(armor.getArmorMax() / 2 - 1);
 		}
 
-		this.m.Items.equip(armor);
+		
 		local helmet = [
-			"helmets/oriental/nomad_leather_cap",
-			"helmets/oriental/nomad_light_helmet",
-			"helmets/oriental/nomad_reinforced_helmet",
-			"helmets/oriental/leather_head_wrap",
-			"helmets/oriental/nomad_head_wrap",
-			"helmets/oriental/nomad_head_wrap"
+			[1, "oriental/nomad_leather_cap"],
+			[1, "oriental/nomad_light_helmet"],
+			[1, "oriental/nomad_reinforced_helmet"],
+			[1, "oriental/leather_head_wrap"],
+			[1, "oriental/nomad_head_wrap"],
+			[1, "oriental/nomad_head_wrap"]
 		];
-		local helmet = this.new("scripts/items/" + helmet[this.Math.rand(0, helmet.len() - 1)]);
+		local helm = this.Const.World.Common.pickHelmet(helmet);
 
 		if (this.Math.rand(1, 100) <= 66)
 		{
-			helmet.setArmor(helmet.getArmorMax() / 2 - 1);
+			helm.setArmor(helmet.getArmorMax() / 2 - 1);
 		}
 
-		this.m.Items.equip(helmet);
+		this.m.Items.equip(helm);
 	}
 
 });

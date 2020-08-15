@@ -618,7 +618,13 @@ this.defend_holy_site_contract <- this.inherit("scripts/contracts/contract", {
 						break;
 
 					case 5:
+						if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+						{
+							//todo legends armor
+						}
+						else {
 						item = this.new("scripts/items/armor/ancient/ancient_mail");
+						}
 						break;
 
 					case 6:
@@ -646,7 +652,10 @@ this.defend_holy_site_contract <- this.inherit("scripts/contracts/contract", {
 						break;
 
 					case 12:
-						item = this.new("scripts/items/helmets/oriental/spiked_skull_cap_with_mail");
+						local helmet = [
+							[1, "oriental/spiked_skull_cap_with_mail"]
+						];
+						item = this.Const.World.Common.pickHelmet(helmet);
 						break;
 					}
 

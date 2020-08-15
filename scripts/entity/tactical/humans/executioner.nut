@@ -84,21 +84,28 @@ this.executioner <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Body))
 		{
-			local armor = [
-				"armor/lamellar_harness",
-				"armor/heavy_lamellar_armor"
-			];
-			this.m.Items.equip(this.new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]));
+			if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+			{
+				//todo legends armor
+			}
+			else
+			{
+				local armor = [
+					"armor/lamellar_harness",
+					"armor/heavy_lamellar_armor"
+				];
+				this.m.Items.equip(this.new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]));
+			}
 		}
 
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Head))
 		{
-			local helmet = [
-				"helmets/oriental/nomad_reinforced_helmet",
-				"helmets/oriental/southern_helmet_with_coif",
-				"helmets/oriental/turban_helmet"
-			];
-			this.m.Items.equip(this.new("scripts/items/" + helmet[this.Math.rand(0, helmet.len() - 1)]));
+			local helm =this.Const.World.Common.pickHelmet([
+				[1, "oriental/nomad_reinforced_helmet"],
+				[1, "oriental/southern_helmet_with_coif"],
+				[1, "oriental/turban_helmet"]
+			]) 
+			this.m.Items.equip(helm);
 		}
 	}
 
@@ -141,7 +148,15 @@ this.executioner <- this.inherit("scripts/entity/tactical/human", {
 		}
 		else
 		{
-			this.m.Items.equip(this.new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]));
+
+			if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+			{
+				//todo legends armor
+			}
+			else
+			{
+				this.m.Items.equip(this.new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]));
+			}
 		}
 
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_reach_advantage"));

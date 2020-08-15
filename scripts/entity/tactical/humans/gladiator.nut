@@ -111,28 +111,36 @@ this.gladiator <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Items.equip(this.new("scripts/items/" + offhand[this.Math.rand(0, offhand.len() - 1)]));
 		}
 
-		r = this.Math.rand(1, 2);
-		local a = this.new("scripts/items/armor/oriental/gladiator_harness");
-		local u;
-		r = this.Math.rand(1, 2);
 
-		if (r == 1)
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
-			u = this.new("scripts/items/armor_upgrades/light_gladiator_upgrade");
+			//todo legends armor
 		}
-		else if (r == 2)
+		else
 		{
-			u = this.new("scripts/items/armor_upgrades/heavy_gladiator_upgrade");
-		}
+			r = this.Math.rand(1, 2);
+			local a = this.new("scripts/items/armor/oriental/gladiator_harness");
+			local u;
+			r = this.Math.rand(1, 2);
 
-		a.setUpgrade(u);
-		this.m.Items.equip(a);
-		r = this.Math.rand(2, 3);
+			if (r == 1)
+			{
+				u = this.new("scripts/items/armor_upgrades/light_gladiator_upgrade");
+			}
+			else if (r == 2)
+			{
+				u = this.new("scripts/items/armor_upgrades/heavy_gladiator_upgrade");
+			}
 
-		if (r == 2)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/oriental/gladiator_helmet"));
+			a.setUpgrade(u);
+			this.m.Items.equip(a);
 		}
+		
+		local helm = this.Const.World.Common.pickHelmet([
+			[1, "oriental/gladiator_helmet"],
+			[1, ""]
+		]) 
+		this.m.Items.equip(helm);
 	}
 
 	function makeMiniboss()
@@ -169,22 +177,47 @@ this.gladiator <- this.inherit("scripts/entity/tactical/human", {
 		}
 		else if (r == 3)
 		{
-			if (this.Math.rand(0, 1) == 0)
+			if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 			{
-				this.m.Items.equip(this.new("scripts/items/" + this.Const.Items.NamedSouthernArmors[this.Math.rand(0, this.Const.Items.NamedSouthernArmors.len() - 1)]));
+				//todo legends armor
 			}
 			else
 			{
-				this.m.Items.equip(this.new("scripts/items/" + this.Const.Items.NamedArmors[this.Math.rand(0, this.Const.Items.NamedArmors.len() - 1)]));
+				if (this.Math.rand(0, 1) == 0)
+				{
+					this.m.Items.equip(this.new("scripts/items/" + this.Const.Items.NamedSouthernArmors[this.Math.rand(0, this.Const.Items.NamedSouthernArmors.len() - 1)]));
+				}
+				else
+				{
+					this.m.Items.equip(this.new("scripts/items/" + this.Const.Items.NamedArmors[this.Math.rand(0, this.Const.Items.NamedArmors.len() - 1)]));
+				}
 			}
 		}
 		else if (this.Math.rand(0, 1) == 0)
 		{
-			this.m.Items.equip(this.new("scripts/items/" + this.Const.Items.NamedSouthernHelmets[this.Math.rand(0, this.Const.Items.NamedSouthernHelmets.len() - 1)]));
+			local helms = []; //honestly just easier to slice the helmets/ from the beginning lol
+			foreach(h in this.Const.Items.NamedSouthernHelmets)
+			{
+				helms.push( 
+					[ 1, h.slice(h.find("helmets/")) ] 
+				);
+			}
+			//helms is an array of arrays so should work (:
+			local helm = this.Const.World.Common.pickHelmet(helms) 
+			this.m.Items.equip(helm);
 		}
 		else
 		{
-			this.m.Items.equip(this.new("scripts/items/" + this.Const.Items.NamedHelmets[this.Math.rand(0, this.Const.Items.NamedHelmets.len() - 1)]));
+			local helms = []; //honestly just easier to slice the helmets/ from the beginning lol
+			foreach(h in this.Const.Items.NamedHelmets)
+			{
+				helms.push( 
+					[ 1, h.slice(h.find("helmets/")) ] 
+				);
+			}
+			//helms is an array of arrays so should work (:
+			local helm = this.Const.World.Common.pickHelmet(helms) 
+			this.m.Items.equip(helm);
 		}
 
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_nine_lives"));

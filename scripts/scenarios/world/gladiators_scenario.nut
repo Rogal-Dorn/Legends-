@@ -44,6 +44,10 @@ this.gladiators_scenario <- this.inherit("scripts/scenarios/world/starting_scena
 			bro.m.Attributes = [];
 		}
 
+		local helmet = [
+			[1, "oriental/gladiator_helmet"]
+		];
+
 		local bros = roster.getAll();
 		local a;
 		local u;
@@ -54,10 +58,10 @@ this.gladiators_scenario <- this.inherit("scripts/scenarios/world/starting_scena
 		bros[0].getTalents()[this.Const.Attributes.Fatigue] = 2;
 		bros[0].getTalents()[this.Const.Attributes.MeleeSkill] = 3;
 		bros[0].fillAttributeLevelUpValues(this.Const.XP.MaxLevelWithPerkpoints - 1);
-		a = this.new("scripts/items/armor/oriental/gladiator_harness");
+		a = this.new("scripts/items/armor/oriental/gladiator_harness"); //todo legends armor
 		a.setUpgrade(this.new("scripts/items/armor_upgrades/light_gladiator_upgrade"));
 		bros[0].getItems().equip(a);
-		a = this.new("scripts/items/helmets/oriental/gladiator_helmet");
+		a = this.Const.World.Common.pickHelmet(helmet);
 		a.setVariant(13);
 		bros[0].getItems().equip(a);
 		bros[0].getItems().equip(this.new("scripts/items/weapons/scimitar"));
@@ -70,10 +74,10 @@ this.gladiators_scenario <- this.inherit("scripts/scenarios/world/starting_scena
 		bros[1].getTalents()[this.Const.Attributes.Fatigue] = 2;
 		bros[1].getTalents()[this.Const.Attributes.Bravery] = 2;
 		bros[1].fillAttributeLevelUpValues(this.Const.XP.MaxLevelWithPerkpoints - 1);
-		a = this.new("scripts/items/armor/oriental/gladiator_harness");
+		a = this.new("scripts/items/armor/oriental/gladiator_harness"); //todo legends armor
 		a.setUpgrade(this.new("scripts/items/armor_upgrades/heavy_gladiator_upgrade"));
 		bros[1].getItems().equip(a);
-		a = this.new("scripts/items/helmets/oriental/gladiator_helmet");
+		a = this.Const.World.Common.pickHelmet(helmet);
 		a.setVariant(15);
 		bros[1].getItems().equip(a);
 		bros[1].getItems().equip(this.new("scripts/items/weapons/oriental/heavy_southern_mace"));
@@ -86,10 +90,10 @@ this.gladiators_scenario <- this.inherit("scripts/scenarios/world/starting_scena
 		bros[2].getTalents()[this.Const.Attributes.Initiative] = 3;
 		bros[2].getTalents()[this.Const.Attributes.MeleeSkill] = 2;
 		bros[2].fillAttributeLevelUpValues(this.Const.XP.MaxLevelWithPerkpoints - 1);
-		a = this.new("scripts/items/armor/oriental/gladiator_harness");
+		a = this.new("scripts/items/armor/oriental/gladiator_harness"); //todo legends armor
 		a.setUpgrade(this.new("scripts/items/armor_upgrades/light_gladiator_upgrade"));
 		bros[2].getItems().equip(a);
-		a = this.new("scripts/items/helmets/oriental/gladiator_helmet");
+		a = this.Const.World.Common.pickHelmet(helmet);
 		a.setVariant(14);
 		bros[2].getItems().equip(a);
 		bros[2].getItems().equip(this.new("scripts/items/weapons/oriental/qatal_dagger"));

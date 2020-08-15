@@ -127,24 +127,32 @@ this.nomad_leader <- this.inherit("scripts/entity/tactical/human", {
 
 			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 		}
+		
 
 		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Body) == null)
 		{
-			local armor = [
-				"armor/oriental/plated_nomad_mail",
-				"armor/oriental/southern_long_mail_with_padding"
-			];
-			this.m.Items.equip(this.new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]));
+			if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+			{
+				//todo legends armor
+			}
+			else
+			{
+				local armor = [
+					"armor/oriental/plated_nomad_mail",
+					"armor/oriental/southern_long_mail_with_padding"
+				];
+				this.m.Items.equip(this.new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]));
+			}
 		}
 
 		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Head) == null)
 		{
 			local helmet = [
-				"helmets/oriental/southern_helmet_with_coif",
-				"helmets/oriental/nomad_reinforced_helmet",
-				"helmets/oriental/nomad_reinforced_helmet"
+				[1, "oriental/southern_helmet_with_coif"],
+				[1, "oriental/nomad_reinforced_helmet"],
+				[1, "oriental/nomad_reinforced_helmet"]
 			];
-			this.m.Items.equip(this.new("scripts/items/" + helmet[this.Math.rand(0, helmet.len() - 1)]));
+			this.m.Items.equip(this.Const.World.Common.pickHelmet(helmet));
 		}
 	}
 
@@ -168,11 +176,27 @@ this.nomad_leader <- this.inherit("scripts/entity/tactical/human", {
 		}
 		else if (r == 3)
 		{
-			this.m.Items.equip(this.new("scripts/items/" + this.Const.Items.NamedSouthernArmors[this.Math.rand(0, this.Const.Items.NamedSouthernArmors.len() - 1)]));
+			if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+			{
+				//todo legends armor
+			}
+			else
+			{
+				this.m.Items.equip(this.new("scripts/items/" + this.Const.Items.NamedSouthernArmors[this.Math.rand(0, this.Const.Items.NamedSouthernArmors.len() - 1)]));
+			}
 		}
 		else
 		{
-			this.m.Items.equip(this.new("scripts/items/" + this.Const.Items.NamedSouthernHelmets[this.Math.rand(0, this.Const.Items.NamedSouthernHelmets.len() - 1)]));
+			local helms = []; //honestly just easier to slice the helmets/ from the beginning lol
+			foreach(h in this.Const.Items.NamedSouthernHelmets)
+			{
+				helms.push( 
+					[ 1, h.slice(h.find("helmets/")) ] 
+				);
+			}
+			//helms is an array of arrays so should work (:
+			local helm = this.Const.World.Common.pickHelmet(helms) 
+			this.m.Items.equip(helm);
 		}
 
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_underdog"));
