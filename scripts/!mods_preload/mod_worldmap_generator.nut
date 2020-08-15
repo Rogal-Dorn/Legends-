@@ -1,28 +1,50 @@
 ::mods_hookNewObject("mapgen/templates/world/worldmap_generator", function(o) {
-    // o.isWorldAcceptable = function (_rect)
-	// {
-	// 	local ocean = 0;
-	// 	local nonOcean = 0;
+    o.isWorldAcceptable = function (_rect)
+	{
+		local ocean = 0;
+		local nonOcean = 0;
 
-	// 	for( local x = _rect.X; x < _rect.X + _rect.W; x = ++x )
-	// 	{
-	// 		for( local y = _rect.Y; y < _rect.Y + _rect.H; y = ++y )
-	// 		{
-	// 			local tile = this.World.getTileSquare(x, y);
+		for( local x = _rect.X; x < _rect.X + _rect.W; x = ++x )
+		{
+			for( local y = _rect.Y; y < _rect.Y + _rect.H; y = ++y )
+			{
+				local tile = this.World.getTileSquare(x, y);
 
-	// 			if (tile.Type == this.Const.World.TerrainType.Ocean)
-	// 			{
-	// 				ocean = ++ocean;
-	// 			}
-	// 			else
-	// 			{
-	// 				nonOcean = ++nonOcean;
-	// 			}
-	// 		}
-	// 	}
-    //     this.logInfo("Land:" + nonOcean + " Ocean:" + ocean);
-	// 	return nonOcean * 1.0 / (ocean * 1.0) >= this.Const.World.Settings.MinLandToWaterRatio;
-	// }
+				if (tile.Type == this.Const.World.TerrainType.Ocean)
+				{
+					ocean = ++ocean;
+				}
+				else
+				{
+					nonOcean = ++nonOcean;
+				}
+			}
+		}
+		local ratio = nonOcean * 1.0 / (ocean * 1.0);
+		this.logInfo("Land Ocean ratio" + ratio + " >= " +  this.Const.World.Settings.MinLandToWaterRatio + " :: Land :" + nonOcean + " Ocean:" + ocean);
+		return nonOcean * 1.0 / (ocean * 1.0) >= this.Const.World.Settings.MinLandToWaterRatio;
+	}
+
+	o.isDesertAcceptable = function ( _rect )
+	{
+		local desert = 0;
+
+		for( local x = _rect.X; x < _rect.X + _rect.W; x = ++x )
+		{
+			for( local y = _rect.Y; y < _rect.Y + _rect.H; y = ++y )
+			{
+				local tile = this.World.getTileSquare(x, y);
+
+				if (tile.Type == this.Const.World.TerrainType.Desert || tile.Type == this.Const.World.TerrainType.Oasis || tile.TacticalType == this.Const.World.TerrainTacticalType.DesertHills)
+				{
+					desert = ++desert;
+				}
+			}
+		}
+
+		this.logInfo("Desert tiles " + desert + " >= " +  this.Const.World.Settings.MinDesertTiles);
+		return desert >= this.Const.World.Settings.MinDesertTiles;
+	}
 
     // o.fill = function ( _rect, _properties)
 	// {
