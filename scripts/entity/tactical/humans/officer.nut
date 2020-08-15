@@ -115,20 +115,12 @@ this.officer <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Head))
 		{
-			r = this.Math.rand(1, 3);
-
-			if (r == 1)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/oriental/turban_helmet"));
-			}
-			else if (r == 2)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/oriental/heavy_lamellar_helmet"));
-			}
-			else if (r == 3)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/oriental/southern_helmet_with_coif"));
-			}
+			local helmet = [
+				[1, "oriental/turban_helmet"],
+				[1, "oriental/heavy_lamellar_helmet"],
+				[1, "oriental/southern_helmet_with_coif"]
+			]
+			this.m.Items.equip(this.Const.World.Common.pickHelmet(helmet));
 		}
 	}
 
@@ -151,6 +143,11 @@ this.officer <- this.inherit("scripts/entity/tactical/human", {
 		local shields = this.Const.Items.NamedSouthernShields;
 		local armor = this.Const.Items.NamedSouthernArmors;
 		local helmets = this.Const.Items.NamedSouthernHelmets;
+		local helm = [];
+		foreach (h in this.Const.Items.NamedSouthernHelmets)
+		{
+			helm.push([1, h.slice(h.find("helmets/"))]);
+		}
 		local r = this.Math.rand(1, 4);
 
 		if (r == 1)
@@ -167,7 +164,7 @@ this.officer <- this.inherit("scripts/entity/tactical/human", {
 		}
 		else
 		{
-			this.m.Items.equip(this.new("scripts/items/" + helmets[this.Math.rand(0, helmets.len() - 1)]));
+			this.m.Items.equip(this.Const.World.Common.pickHelmet(helm));
 		}
 
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_nine_lives"));

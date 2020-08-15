@@ -63,37 +63,39 @@ this.peasant_southern <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Items.equip(this.new("scripts/items/weapons/butchers_cleaver"));
 		}
 
-		r = this.Math.rand(1, 10);
 
-		if (r == 1)
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
-			this.m.Items.equip(this.new("scripts/items/armor/sackcloth"));
-		}
-		else if (r == 2)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/apron"));
-		}
-		else if (r == 3)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/tattered_sackcloth"));
+			//todo legends armor
 		}
 		else
 		{
-			this.m.Items.equip(this.new("scripts/items/armor/oriental/cloth_sash"));
+			r = this.Math.rand(1, 10);
+
+			if (r == 1)
+			{
+				this.m.Items.equip(this.new("scripts/items/armor/sackcloth"));
+			}
+			else if (r == 2)
+			{
+				this.m.Items.equip(this.new("scripts/items/armor/apron"));
+			}
+			else if (r == 3)
+			{
+				this.m.Items.equip(this.new("scripts/items/armor/tattered_sackcloth"));
+			}
+			else
+			{
+				this.m.Items.equip(this.new("scripts/items/armor/oriental/cloth_sash"));
+			}
 		}
 
 		if (this.Math.rand(1, 100) <= 50)
 		{
-			local r = this.Math.rand(1, 3);
-
-			if (r <= 2)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/oriental/southern_head_wrap"));
-			}
-			else
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/oriental/nomad_head_wrap"));
-			}
+			this.m.Items.equip(this.Const.World.Common.pickHelmet([
+				[2, "oriental/southern_head_wrap"],
+				[1, "oriental/nomad_head_wrap"]
+			]));
 		}
 	}
 

@@ -115,22 +115,31 @@ this.slave <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.Math.rand(1, 100) <= 66)
 		{
-			r = this.Math.rand(1, 2);
-
-			if (r == 1)
+			if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 			{
-				this.m.Items.equip(this.new("scripts/items/armor/sackcloth"));
+				//todo legends armor
 			}
-			else if (r == 2)
+			else
 			{
-				this.m.Items.equip(this.new("scripts/items/armor/tattered_sackcloth"));
+				r = this.Math.rand(1, 2);
+
+				if (r == 1)
+				{
+					this.m.Items.equip(this.new("scripts/items/armor/sackcloth"));
+				}
+				else if (r == 2)
+				{
+					this.m.Items.equip(this.new("scripts/items/armor/tattered_sackcloth"));
+				}
 			}
 		}
 
-		if (this.Math.rand(1, 100) <= 33)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/oriental/southern_head_wrap"));
-		}
+		
+		local helmet = [
+			[1, "oriental/southern_head_wrap"],
+			[2, ""]
+		];
+		this.m.Items.equip(this.Const.World.Common.pickHelmet(helmet));
 	}
 
 });

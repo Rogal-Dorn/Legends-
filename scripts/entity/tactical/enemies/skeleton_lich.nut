@@ -205,8 +205,19 @@ this.skeleton_lich <- this.inherit("scripts/entity/tactical/skeleton", {
 
 	function assignRandomEquipment()
 	{
-		this.m.Items.equip(this.new("scripts/items/armor/ancient/ancient_lich_attire"));
-		this.m.Items.equip(this.new("scripts/items/helmets/ancient/ancient_lich_headpiece"));
+		//MAY NOT WANT THIS CHECK, ANCIENT LICH ATTIRE DOES NOT DROP AS LOOT
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+		{
+			//todo legends armor
+		}
+		else
+		{
+			this.m.Items.equip(this.new("scripts/items/armor/ancient/ancient_lich_attire"));
+		}
+		local helmet = [
+			[1, "helmets/ancient/ancient_lich_headpiece"]
+		];
+		this.m.Items.equip(this.Const.World.Common.pickHelmet(helmet));
 	}
 
 });

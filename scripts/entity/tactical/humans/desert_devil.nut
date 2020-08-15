@@ -86,26 +86,33 @@ this.desert_devil <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Body))
 		{
-			local armor = [
-				"armor/oriental/assassin_robe"
-			];
-
-			if (this.Const.DLC.Unhold)
+			if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 			{
-				armor.extend([
-					"armor/leather_scale_armor"
-				]);
+				//todo legends armor
 			}
+			else
+			{
+				local armor = [
+					"armor/oriental/assassin_robe"
+				];
 
-			this.m.Items.equip(this.new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]));
+				if (this.Const.DLC.Unhold)
+				{
+					armor.extend([
+						"armor/leather_scale_armor"
+					]);
+				}
+
+				this.m.Items.equip(this.new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]));
+			}
 		}
 
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Head))
 		{
-			local helmet = [
-				"helmets/oriental/blade_dancer_head_wrap"
-			];
-			this.m.Items.equip(this.new("scripts/items/" + helmet[this.Math.rand(0, helmet.len() - 1)]));
+			local helm =this.Const.World.Common.pickHelmet([
+				[1, "oriental/blade_dancer_head_wrap"]
+			]) 
+			this.m.Items.equip(helm);
 		}
 	}
 
@@ -126,13 +133,22 @@ this.desert_devil <- this.inherit("scripts/entity/tactical/human", {
 			"armor/named/black_leather_armor"
 		];
 
+		local legend_armor = []; //maybe dont need? here for posterity
+		
 		if (this.Math.rand(1, 100) <= 75)
 		{
 			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 		}
 		else
 		{
-			this.m.Items.equip(this.new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]));
+			if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+			{
+				//todo legends armor
+			}
+			else
+			{
+				this.m.Items.equip(this.new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]));
+			}
 		}
 
 		this.m.BaseProperties.DamageDirectMult *= 1.25;

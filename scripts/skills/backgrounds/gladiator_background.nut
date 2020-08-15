@@ -211,5 +211,56 @@ this.gladiator_background <- this.inherit("scripts/skills/backgrounds/character_
 		}
 	}
 
+	function onAddLegendEquipment()
+	{
+		local items = this.getContainer().getActor().getItems();
+		local r;
+
+		if (items.hasEmptySlot(this.Const.ItemSlot.Mainhand))
+		{
+			local weapons = [
+				"weapons/shamshir",
+				"weapons/shamshir",
+				"weapons/oriental/two_handed_scimitar",
+				"weapons/oriental/heavy_southern_mace",
+				"weapons/oriental/heavy_southern_mace",
+				"weapons/oriental/swordlance",
+				"weapons/oriental/polemace",
+				"weapons/fighting_axe",
+				"weapons/fighting_spear"
+			];
+
+			if (this.Const.DLC.Wildmen)
+			{
+				weapons.extend([
+					"weapons/two_handed_flail",
+					"weapons/two_handed_flanged_mace",
+					"weapons/bardiche"
+				]);
+			}
+
+			items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
+		}
+
+		if (items.hasEmptySlot(this.Const.ItemSlot.Offhand))
+		{
+			local offhand = [
+				"tools/throwing_net",
+				"shields/oriental/metal_round_shield"
+			];
+			items.equip(this.new("scripts/items/" + offhand[this.Math.rand(0, offhand.len() - 1)]));
+		}
+
+		//todo legends armor
+
+		r = this.Math.rand(2, 3);
+		if (r == 2)
+		{
+			items.equip(this.new("scripts/items/helmets/oriental/gladiator_helmet"));
+		}
+
+
+	}
+
 });
 

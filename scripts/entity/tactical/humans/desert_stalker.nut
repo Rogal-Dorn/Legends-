@@ -80,18 +80,25 @@ this.desert_stalker <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Body))
 		{
-			local armor = [
-				"armor/oriental/plated_nomad_mail"
-			];
-			this.m.Items.equip(this.new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]));
+			if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+			{
+				//todo legends armor
+			}
+			else
+			{
+				local armor = [
+					"armor/oriental/plated_nomad_mail"
+				];
+				this.m.Items.equip(this.new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]));
+			}
 		}
 
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Head) && this.Math.rand(1, 100) <= 75)
 		{
-			local helmet = [
-				"helmets/oriental/desert_stalker_head_wrap"
-			];
-			this.m.Items.equip(this.new("scripts/items/" + helmet[this.Math.rand(0, helmet.len() - 1)]));
+			local helm =this.Const.World.Common.pickHelmet([
+				[1, "oriental/desert_stalker_head_wrap"]
+			]) 
+			this.m.Items.equip(helm);
 		}
 	}
 

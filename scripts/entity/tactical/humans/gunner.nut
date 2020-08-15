@@ -57,7 +57,7 @@ this.gunner <- this.inherit("scripts/entity/tactical/human", {
 
 		this.actor.onOtherActorFleeing(_actor);
 	}
-
+	
 	function assignRandomEquipment()
 	{
 		local r;
@@ -72,12 +72,21 @@ this.gunner <- this.inherit("scripts/entity/tactical/human", {
 		{
 			this.m.Items.addToBag(this.new("scripts/items/weapons/oriental/saif"));
 		}
-
 		this.m.Items.equip(this.new("scripts/items/weapons/oriental/handgonne"));
 		this.m.Items.equip(this.new("scripts/items/ammo/powder_bag"));
-		this.m.Items.equip(this.new("scripts/items/armor/oriental/padded_vest"));
-		local helmet = this.new("scripts/items/helmets/oriental/gunner_hat");
-		this.m.Items.equip(helmet);
+
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+		{
+			//todo legends armor
+		}
+		else
+		{
+			this.m.Items.equip(this.new("scripts/items/armor/oriental/padded_vest"));
+		}
+		local helm =this.Const.World.Common.pickHelmet([
+				[1, "oriental/gunner_hat"]
+		]) 
+		this.m.Items.equip(helm);
 	}
 
 });

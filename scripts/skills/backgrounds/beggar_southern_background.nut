@@ -55,5 +55,31 @@ this.beggar_southern_background <- this.inherit("scripts/skills/backgrounds/begg
 		}
 	}
 
+	function onAddLegendEquipment()
+	{
+		local items = this.getContainer().getActor().getItems();
+		local r;
+		r = this.Math.rand(0, 4);
+
+		if (r == 0)
+		{
+			items.equip(this.new("scripts/items/weapons/knife"));
+		}
+		else if (r == 1)
+		{
+			items.equip(this.new("scripts/items/weapons/wooden_stick"));
+		}
+		
+
+		//todo legends armor
+		r = this.Math.rand(1, 2);
+
+		local helm = this.Const.World.Common.pickHelmet([
+			[1, "oriental/nomad_head_wrap"]
+		]);
+		helm.setVariant(16);
+		items.equip(helm);
+	}
+
 });
 

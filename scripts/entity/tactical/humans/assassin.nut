@@ -78,17 +78,18 @@ this.assassin <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Items.equip(this.new("scripts/items/weapons/shamshir"));
 		}
 
-		this.m.Items.equip(this.new("scripts/items/armor/oriental/assassin_robe"));
-		r = this.Math.rand(1, 2);
-
-		if (r == 1)
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
-			this.m.Items.equip(this.new("scripts/items/helmets/oriental/assassin_head_wrap"));
+			//todo legends armor
 		}
-		else if (r == 2)
+		else
 		{
-			this.m.Items.equip(this.new("scripts/items/helmets/oriental/assassin_face_mask"));
+			this.m.Items.equip(this.new("scripts/items/armor/oriental/assassin_robe"));
 		}
+		this.m.Items.equip(this.Const.World.Common.pickHelmet([
+				[1, "oriental/assassin_head_wrap"],
+				[1, "oriental/assassin_face_mask"]
+		]));
 	}
 
 });

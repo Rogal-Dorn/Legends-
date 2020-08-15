@@ -103,61 +103,56 @@ this.conscript <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Items.equip(this.new("scripts/items/shields/oriental/southern_light_shield"));
 		}
 
-		r = this.Math.rand(1, 3);
-
-		if (r <= 2)
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
-			local armor = this.new("scripts/items/armor/oriental/linothorax");
-
-			if (banner == 12)
-			{
-				armor.setVariant(9);
-			}
-			else if (banner == 13)
-			{
-				armor.setVariant(10);
-			}
-			else if (banner == 14)
-			{
-				armor.setVariant(8);
-			}
-
-			this.m.Items.equip(armor);
+			//todo legends armor
 		}
-		else if (r == 3)
+		else
 		{
-			this.m.Items.equip(this.new("scripts/items/armor/oriental/southern_mail_shirt"));
-		}
+			r = this.Math.rand(1, 3);
 
-		r = this.Math.rand(1, 3);
-
-		if (r == 1)
-		{
-			local helmet = this.new("scripts/items/helmets/oriental/southern_head_wrap");
-
-			if (banner == 12)
+			if (r <= 2)
 			{
-				helmet.setVariant(12);
+				local armor = this.new("scripts/items/armor/oriental/linothorax");
+
+				if (banner == 12)
+				{
+					armor.setVariant(9);
+				}
+				else if (banner == 13)
+				{
+					armor.setVariant(10);
+				}
+				else if (banner == 14)
+				{
+					armor.setVariant(8);
+				}
+
+				this.m.Items.equip(armor);
 			}
-			else if (banner == 13)
+			else if (r == 3)
 			{
-				helmet.setVariant(8);
-			}
-			else if (banner == 14)
-			{
-				helmet.setVariant(7);
+				this.m.Items.equip(this.new("scripts/items/armor/oriental/southern_mail_shirt"));
 			}
 
-			this.m.Items.equip(helmet);
 		}
-		else if (r == 2)
+
+		
+		local helm =this.Const.World.Common.pickHelmet([
+			[1, "oriental/southern_head_wrap"],
+			[1, "oriental/wrapped_southern_helmet"],
+			[1, "oriental/spiked_skull_cap_with_mail"]
+		]) 
+
+		if (helm.getID() == "armor.head.southern_head_wrap")
 		{
-			this.m.Items.equip(this.new("scripts/items/helmets/oriental/wrapped_southern_helmet"));
+			if (banner == 12 || banner == 14)
+				helm.setVariant(banner - 3);
+			else
+				helm.setVariant(8);
 		}
-		else if (r == 3)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/oriental/spiked_skull_cap_with_mail"));
-		}
+		this.m.Items.equip(helm);
+
 	}
 
 });

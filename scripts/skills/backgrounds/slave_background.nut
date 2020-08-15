@@ -189,6 +189,13 @@ this.slave_background <- this.inherit("scripts/skills/backgrounds/character_back
 		}
 	}
 
+	function onAddLegendEquipment()
+	{
+		local items = this.getContainer().getActor().getItems();
+		local r;
+		//todo legends armor
+	}
+
 	function onUpdate( _properties )
 	{
 		this.character_background.onUpdate(_properties);

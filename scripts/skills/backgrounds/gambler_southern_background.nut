@@ -58,5 +58,13 @@ this.gambler_southern_background <- this.inherit("scripts/skills/backgrounds/gam
 		}
 	}
 
+	function onAddLegendEquipment()
+	{
+		local items = this.getContainer().getActor().getItems();
+		local r;
+
+		//todo legends armor
+	}
+
 });
 
