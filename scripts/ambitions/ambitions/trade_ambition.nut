@@ -54,7 +54,7 @@ this.trade_ambition <- this.inherit("scripts/ambitions/ambition", {
 	{
 		this.ambition.onSerialize(_out);
 		_out.writeU32(this.m.AmountToBuy);
-		_out.writeU32(this.m.AmountToBuy);
+		_out.writeU32(this.m.AmountToSell);
 	}
 
 	function onDeserialize( _in )

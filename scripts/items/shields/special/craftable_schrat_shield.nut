@@ -29,7 +29,7 @@ this.craftable_schrat_shield <- this.inherit("scripts/items/shields/shield", {
 
 	function getTooltip()
 	{
-		local result = this.armor.getTooltip();
+		local result = this.shield.getTooltip();
 		result.push({
 			id = 6,
 			type = "text",

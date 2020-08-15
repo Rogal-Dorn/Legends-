@@ -58,7 +58,7 @@ this.arena_tournament_contract <- this.inherit("scripts/contracts/contract", {
 				R = 5,
 				function F( _c, _d, _e )
 				{
-					_c.addToCombat(_e, this.Const.World.Spawn.Troops.Swordmaster, _round);
+					_c.addToCombat(_e, this.Const.World.Spawn.Troops.Swordmaster);
 
 					for( local i = 0; i < _c.getAmountToSpawn(this.Const.World.Spawn.Troops.Mercenary, _d - this.Const.World.Spawn.Troops.Swordmaster.Cost); i = ++i )
 					{
@@ -75,7 +75,7 @@ this.arena_tournament_contract <- this.inherit("scripts/contracts/contract", {
 				R = 5,
 				function F( _c, _d, _e )
 				{
-					_c.addToCombat(_e, this.Const.World.Spawn.Troops.Swordmaster, _round, true);
+					_c.addToCombat(_e, this.Const.World.Spawn.Troops.Swordmaster, true);
 
 					for( local i = 0; i < _c.getAmountToSpawn(this.Const.World.Spawn.Troops.Mercenary, _d - this.Const.World.Spawn.Troops.Swordmaster.Cost * 2); i = ++i )
 					{
