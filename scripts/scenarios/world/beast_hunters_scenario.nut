@@ -98,8 +98,6 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 		foreach( bro in bros )
 		{
-			local val = this.World.State.addNewID(bro);
-			bro.m.CompanyID = val;
 			bro.m.PerkPoints = 1;
 			bro.m.LevelUps = 1;
 			bro.m.Level = 2;

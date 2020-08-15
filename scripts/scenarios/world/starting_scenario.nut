@@ -89,7 +89,6 @@ this.starting_scenario <- {
 	function onInit()
 	{
 		this.m.StaticRelationsToFaction.resize(this.Const.FactionType.len());
-		this.logInfo(this.World.State.getPlayer() + " onInit() **")
 		if (this.World.State.getPlayer() != null)
 		{
 			this.World.State.getPlayer().calculateModifiers();

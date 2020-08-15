@@ -18,7 +18,6 @@ this.legend_custom_scenario_intro <- this.inherit("scripts/events/event", {
 
 		this.World.getPlayerRoster().add(this.m.Dude);
 		this.World.getTemporaryRoster().clear();
-		this.m.Dude.m.CompanyID = this.World.State.addNewID(this.m.Dude);
 		//this.m.Dude.onHired();
 		this.m.PartySize += 1;
 		this.m.Traits = [];

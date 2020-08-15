@@ -71,11 +71,6 @@ this.legends_party_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[5].getBackground().m.RawDescription = "There is a quiet calm to %name%, with an intense gaze that seems to see more detail than anyone else. He speaks little of himself, but it is clear he holds a deep affinity with the land, and sees orcs as a symbol of all that is wrong with the world.";
 		bros[5].setPlaceInFormation(14);
 		bros[5].setVeteranPerks(2);
-		foreach( bro in bros )
-		{
-			local val = this.World.State.addNewID(bro);
-			bro.m.CompanyID = val;
-		}
 
 		this.World.Assets.m.Money = this.World.Assets.m.Money * 2;
 	}

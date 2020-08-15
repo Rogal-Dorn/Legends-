@@ -81,13 +81,6 @@ this.cultists_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 		bros[3].setPlaceInFormation(5);
 		bros[3].setVeteranPerks(2);
 		local items = bros[3].getItems();
-
-		foreach( bro in bros )
-		{
-			local val = this.World.State.addNewID(bro);
-			bro.m.CompanyID = val;
-		}
-
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));

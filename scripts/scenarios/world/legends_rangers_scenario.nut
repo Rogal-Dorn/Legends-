@@ -48,12 +48,6 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 		bros[0].setPlaceInFormation(3);
 		bros[0].setVeteranPerks(2);
 
-		foreach( bro in bros )
-		{
-			local val = this.World.State.addNewID(bro);
-			bro.m.CompanyID = val;
-		}
-
 	//	bros[1].setStartValuesEx([
 	//		"legend_ranger_background"
 	//	]);

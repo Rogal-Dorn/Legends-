@@ -730,6 +730,7 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 		_out.writeF32(this.m.LastSpawnTime);
 		_out.writeString(this.m.Banner);
 		_out.writeBool(this.m.IsVisited);
+		_out.writeU16(this.m.Resources);
 		this.m.Loot.onSerialize(_out);
 	}
 
@@ -738,12 +739,9 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 		this.world_entity.onDeserialize(_in);
 		this.m.DefenderSpawnDay = _in.readU32();
 		this.m.LastSpawnTime = _in.readF32();
-		if (_in.getMetaData().getVersion() < 63)
-		{
-			this.m.Resources = _in.readU16();
-		}
 		this.m.Banner = _in.readString();
 		this.m.IsVisited = _in.readBool();
+		this.m.Resources = _in.readU16();
 		this.m.Loot.onDeserialize(_in);
 		this.getLabel("name").Visible = this.Const.World.AI.VisualizeNameOfLocations && this.m.IsShowingLabel;
 		this.onUpdate();

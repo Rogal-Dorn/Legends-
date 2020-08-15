@@ -53,11 +53,6 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 		// bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_favoured_enemy_swordmaster"));
 		// bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_favoured_enemy_vampire"));
 		// bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_favoured_enemy_zombie"));
-		foreach( bro in bros )
-		{
-			local val = this.World.State.addNewID(bro);
-			bro.m.CompanyID = val;
-		}
 
 		bros[0].getFlags().set("IsPlayerCharacter", true);
 		bros[0].setVeteranPerks(2);

@@ -456,6 +456,8 @@ this.asset_manager <- {
 
 		foreach( bro in bros )
 		{
+			local val = this.World.State.addNewID(bro);
+			bro.m.CompanyID = val;
 			bro.getBackground().buildDescription(true);
 			bro.m.XP = this.Const.LevelXP[bro.m.Level - 1];
 			bro.m.Attributes = [];

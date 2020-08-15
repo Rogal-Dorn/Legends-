@@ -66,11 +66,6 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
         bros[2].getSkills().add(this.new("scripts/skills/injury_permanent/legend_rotten_flesh"));
 		bros[2].getSkills().add(this.new("scripts/skills/perks/perk_legend_zombie_bite"));
 		bros[2].setVeteranPerks(3);
-		foreach( bro in bros )
-		{
-			local val = this.World.State.addNewID(bro);
-			bro.m.CompanyID = val;
-		}
 
 		this.World.Assets.m.Money = this.World.Assets.m.Money / 2;
 	}
