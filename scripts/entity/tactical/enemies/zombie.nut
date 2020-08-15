@@ -732,7 +732,7 @@ this.zombie <- this.inherit("scripts/entity/tactical/actor", {
 			beard_top.Color = beard.Color;
 		}
 
-		this.addSprite("armor_upgrade_front");
+		// this.addSprite("armor_upgrade_front"); already doing this above
 		local body_blood = this.addSprite("body_blood");
 		body_blood.setBrush("bust_body_bloodied_02");
 		body_blood.setHorizontalFlipping(true);
@@ -978,7 +978,7 @@ this.zombie <- this.inherit("scripts/entity/tactical/actor", {
 				this.m.Items.equip(item);
 			}
 
-			this.m.Items.equip(helmet);
+			this.m.Items.equip(item);
 		}
 	}
 
