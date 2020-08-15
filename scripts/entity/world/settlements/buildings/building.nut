@@ -120,7 +120,7 @@ this.building <- {
 				// 	if (index != null)
 				// 	{
 				// 		local ugs = 0;
-				// 		local r;
+				// 		local r = -1;
 				// 		IsHelm = true;
 
 				// 		script = script.slice(index + "helmets/".len());
@@ -134,11 +134,17 @@ this.building <- {
 				// 				ugs += 1;
 						
 				// 		if (ugs > 0)
-				// 			r = this.Math.rand(0, ugs);
+				// 			r = this.Math.rand(-1, ugs);
 
-				// 		if (r == 0)
+				// 		if (r == -1)
 				// 		{
-				// 			break; //sell full it	em as is by leaving item as the pickHelmet
+				// 			break; //sell full piece if -1, means that no upgrades were found OR we rolled on sell the full piece 
+				// 		}
+				// 		else if (r == 0)
+				// 		{
+				// 			foreach( i, u in upgrades )
+				// 				item.removeUpgrade(i);
+				// 			break; //sell base layer after removing all upgrades
 				// 		}
 				// 		else
 				// 		{
@@ -147,7 +153,7 @@ this.building <- {
 				// 					r -= 1;
 				// 					if (r == 0) {
 				// 						item = item.removeUpgrade(i)
-				// 						break;
+				// 						break; //sell just one upgrade from the helmet
 				// 					}
 				// 				}
 							
