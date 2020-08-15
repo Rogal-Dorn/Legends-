@@ -41,7 +41,7 @@ this.nightmare_skill <- this.inherit("scripts/skills/skill", {
 
 	function getDamage( _actor )
 	{
-		return this.Math.max(5, 30 - this.Math.floor(_actor.getCurrentProperties().getBravery() * 0.25));
+		return this.Math.max(5, 25 - this.Math.floor(_actor.getCurrentProperties().getBravery() * 0.25));
 	}
 
 	function isUsable()

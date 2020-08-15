@@ -3,7 +3,9 @@ this.sand_golem <- this.inherit("scripts/entity/tactical/actor", {
 		Size = 1,
 		Variant = 1,
 		ScaleStartTime = 0,
-		IsShrinking = false
+		BackupFaction = 0,
+		IsShrinking = false,
+		IsSpawningOnTile = false
 	},
 	function getSize()
 	{
@@ -85,7 +87,9 @@ this.sand_golem <- this.inherit("scripts/entity/tactical/actor", {
 			this.updateAchievement("StoneMason", 1, 1);
 		}
 
-		if (this.getSize() > 1)
+		this.m.BackupFaction = this.getFaction();
+
+		if (_tile != null && this.getSize() > 1)
 		{
 			local freeTiles = [];
 
@@ -123,9 +127,21 @@ this.sand_golem <- this.inherit("scripts/entity/tactical/actor", {
 
 					if (this.getWorldTroop() != null && ("Party" in this.getWorldTroop()) && this.getWorldTroop().Party != null)
 					{
-						local e = this.Const.World.Common.addTroop(this.getWorldTroop().Party.get(), {
-							Type = this.Const.World.Spawn.Troops.SandGolem
-						}, false);
+						local e;
+
+						if (this.getSize() == 3)
+						{
+							e = this.Const.World.Common.addTroop(this.getWorldTroop().Party.get(), {
+								Type = this.Const.World.Spawn.Troops.SandGolemMEDIUM
+							}, false);
+						}
+						else
+						{
+							e = this.Const.World.Common.addTroop(this.getWorldTroop().Party.get(), {
+								Type = this.Const.World.Spawn.Troops.SandGolem
+							}, false);
+						}
+
 						rock.setWorldTroop(e);
 					}
 
@@ -145,7 +161,20 @@ this.sand_golem <- this.inherit("scripts/entity/tactical/actor", {
 						rock.grow(true);
 					}
 				}
+
+				if (n > 0)
+				{
+					this.m.IsSpawningOnTile = true;
+				}
 			}
+			else
+			{
+				this.m.IsSpawningOnTile = true;
+			}
+		}
+		else
+		{
+			this.m.IsSpawningOnTile = true;
 		}
 
 		local flip = this.Math.rand(0, 100) < 50;
@@ -191,6 +220,47 @@ this.sand_golem <- this.inherit("scripts/entity/tactical/actor", {
 			}
 
 			this.actor.onDeath(_killer, _skill, _tile, _fatalityType);
+		}
+	}
+
+	function onAfterDeath( _tile )
+	{
+		if (!this.m.IsSpawningOnTile)
+		{
+			return;
+		}
+
+		if (this.getSize() == 1)
+		{
+			return;
+		}
+
+		local rock = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/sand_golem", _tile.Coords.X, _tile.Coords.Y);
+		rock.setFaction(this.m.BackupFaction);
+
+		if (this.getWorldTroop() != null && ("Party" in this.getWorldTroop()) && this.getWorldTroop().Party != null)
+		{
+			local e;
+
+			if (this.getSize() == 3)
+			{
+				e = this.Const.World.Common.addTroop(this.getWorldTroop().Party.get(), {
+					Type = this.Const.World.Spawn.Troops.SandGolemMEDIUM
+				}, false);
+			}
+			else
+			{
+				e = this.Const.World.Common.addTroop(this.getWorldTroop().Party.get(), {
+					Type = this.Const.World.Spawn.Troops.SandGolem
+				}, false);
+			}
+
+			rock.setWorldTroop(e);
+		}
+
+		if (this.getSize() == 3)
+		{
+			rock.grow(true);
 		}
 	}
 

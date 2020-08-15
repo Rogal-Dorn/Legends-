@@ -6707,6 +6707,86 @@ gt.Const.World.Spawn.SandGolems <- [
 				Num = 25
 			}
 		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_golem_02",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.SandGolemMEDIUM,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.SandGolem,
+				Num = 10
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_golem_02",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.SandGolemMEDIUM,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.SandGolem,
+				Num = 12
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_golem_02",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.SandGolemMEDIUM,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.SandGolem,
+				Num = 14
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_golem_02",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.SandGolemMEDIUM,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.SandGolem,
+				Num = 16
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_golem_02",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.SandGolemMEDIUM,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.SandGolem,
+				Num = 18
+			}
+		]
 	}
 ];
 this.Const.World.Spawn.Beasts <- [];
