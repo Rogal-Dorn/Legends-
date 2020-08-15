@@ -144,7 +144,7 @@ this.ghost_knight <- this.inherit("scripts/entity/tactical/actor", {
 		b.IsImmuneToStun = true;
 		b.IsImmuneToRoot = true;
 		b.IsImmuneToDisarm = true;
-		b.b.IsImmuneToFire = true;
+		b.IsImmuneToFire = true;
 		b.IsIgnoringArmorOnAttack = true;
 		b.IsAffectedByNight = false;
 		b.IsAffectedByInjuries = false;
