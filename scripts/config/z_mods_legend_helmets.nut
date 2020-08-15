@@ -44,7 +44,7 @@ gt.Const.LegendMod.HelmetObjs <- [{
         Helms = [
             [1, "helm/legend_helmet_ancient_beard_mask"],
             [1, "helm/legend_helmet_ancient_lion_mask"],
-            [1, "helm/legend_helmet_ancient_mask"],
+            [1, "helm/legend_helmet_ancient_mask"]
         ],
         Tops = [
         ],
