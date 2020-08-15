@@ -1143,12 +1143,16 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.setPause(true);
 		this.Math.seedRandomString(this.m.CampaignSettings.Seed);
 		this.World.LegendsMod.Configs().Update(this.m.CampaignSettings);
-		//this.Const.World.SettingsUpdate(this.m.CampaignSettings);
-		//this.Const.World.SettlementsUpdate(this.m.CampaignSettings.NumSettlements);
+		this.Const.World.SettingsUpdate(this.m.CampaignSettings);
 		local worldmap = this.MapGen.get("world.worldmap_generator");
 		local minX = this.Const.World.Settings.SizeX;
 		local minY = this.Const.World.Settings.SizeY;
 		this.World.resizeScene(this.m.CampaignSettings.Width, this.m.CampaignSettings.Height);
+		this.logInfo("Generating world with following settings...")
+		foreach (k,v in this.Const.World.Settings)
+		{
+			this.logInfo(k + " : " + v);
+		}
 		worldmap.fill({
 			X = 0,
 			Y = 0,

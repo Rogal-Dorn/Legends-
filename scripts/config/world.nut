@@ -429,7 +429,7 @@ gt.Const.World.Settings <- {
 	LandMassMult = 1.5,
 	WaterConnectivity = 38,
 	MinLandToWaterRatio = 1.7,
-	MinDesertTiles = 2400,
+	MinDesertTiles = 2000,
 	Snowline = 0.9,
 	Vision = 500.0
 };

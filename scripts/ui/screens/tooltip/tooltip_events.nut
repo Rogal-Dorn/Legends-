@@ -4430,12 +4430,12 @@ this.tooltip_events <- {
 				{
 					id = 1,
 					type = "title",
-					text = "Water Connectivity"
+					text = "Water"
 				},
 				{
 					id = 2,
 					type = "description",
-					text = "Impacts how connected the water masses are. Default is 4. Small value results in patchy water around corners of map. larger numbers can create a single large island given a low enough land mass ratio."
+					text = "Impacts how much of the map is water. Small value results in patchy water around corners of map. larger numbers can create a single large island given a low enough land mass ratio."
 				}
 			];
 
