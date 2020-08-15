@@ -89,12 +89,12 @@ this.starting_scenario <- {
 	function onInit()
 	{
 		this.m.StaticRelationsToFaction.resize(this.Const.FactionType.len());
-		this.World.State.getPlayer().calculateModifiers();
-		//local roster = this.World.getPlayerRoster().getAll();
-		//foreach (bro in roster)
-		//{
-		//	bro.getBackground().buildPerkTree();
-		//}
+		this.logInfo(this.World.State.getPlayer() + " onInit() **")
+		if (this.World.State.getPlayer() != null)
+		{
+			this.World.State.getPlayer().calculateModifiers();
+		}
+
 	}
 
 	function onUpdateHiringRoster( _roster )
