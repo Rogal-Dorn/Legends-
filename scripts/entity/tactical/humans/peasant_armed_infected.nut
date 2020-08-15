@@ -187,24 +187,13 @@ this.peasant_armed_infected <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.Math.rand(1, 100) <= 33)
 		{
-			local r = this.Math.rand(1, 4);
-
-			if (r == 1)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/hood"));
-			}
-			else if (r == 2)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/headscarf"));
-			}
-			else if (r == 3)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/straw_hat"));
-			}
-			else if (r == 4)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/feathered_hat"));
-			}
+			local helmet = [
+				[1, "hood"],
+				[1, "headscarf"],
+				[1, "straw_hat"],
+				[1, "feathered_hat"]
+			]
+			this.m.Items.equip(this.Const.World.Common.pickHelmet(helmet))
 		}
 	}
 

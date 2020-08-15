@@ -66,7 +66,10 @@ this.manhunters_scenario <- this.inherit("scripts/scenarios/world/starting_scena
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Offhand));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
-		items.equip(this.new("scripts/items/helmets/oriental/southern_head_wrap"));
+		
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "oriental/southern_head_wrap"]
+		]));
 		items.equip(this.new("scripts/items/weapons/battle_whip"));
 		bros[1].getSkills().add(this.new("scripts/skills/actives/whip_slave_skill"));
 		bros[1].worsenMood(0.0, "Annoyed by your recent reprimand not to mistreat your captives");
@@ -87,7 +90,9 @@ this.manhunters_scenario <- this.inherit("scripts/scenarios/world/starting_scena
 		local items = bros[2].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.equip(this.new("scripts/items/weapons/wooden_stick"));
-		items.equip(this.new("scripts/items/helmets/oriental/nomad_head_wrap"));
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "oriental/nomad_head_wrap"]
+		]));
 		bros[2].worsenMood(0.0, "Misses his books");
 		bros[3].setStartValuesEx([
 			"slave_background"
