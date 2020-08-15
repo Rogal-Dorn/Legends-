@@ -188,11 +188,7 @@ this.legends_risen_legion <- this.inherit("scripts/scenarios/world/starting_scen
 						armor.setUpgrade(plate)
 					}
 				items.equip(armor);
-
-
-				local val = this.World.State.addNewID(bro);
-				bro.m.CompanyID = val;
-		}
+			}
 
 
 

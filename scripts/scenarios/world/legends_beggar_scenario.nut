@@ -53,11 +53,6 @@ this.legends_beggar_scenario <- this.inherit("scripts/scenarios/world/starting_s
 
 		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
 		bros[0].getFlags().set("IsPlayerCharacter", true);
-		foreach( bro in bros )
-		{
-			local val = this.World.State.addNewID(bro);
-			bro.m.CompanyID = val;
-		}
 
 		this.World.Assets.m.BusinessReputation = -200;
 		this.World.Assets.getStash().resize(this.World.Assets.getStash().getCapacity() + 9);

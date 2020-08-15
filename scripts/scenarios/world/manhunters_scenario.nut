@@ -121,12 +121,6 @@ this.manhunters_scenario <- this.inherit("scripts/scenarios/world/starting_scena
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.equip(this.new("scripts/items/weapons/wooden_stick"));
 
-		foreach( bro in bros )
-		{
-			local val = this.World.State.addNewID(bro);
-			bro.m.CompanyID = val;
-		}
-
 		this.World.Assets.m.BusinessReputation = 100;
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/rice_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/rice_item"));

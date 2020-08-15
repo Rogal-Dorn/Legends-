@@ -87,12 +87,6 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		items.equip(this.Const.World.Common.pickHelmet([[1, "named/jugglers_padded_hat"]]));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.equip(this.new("scripts/items/weapons/legend_ranged_wooden_flail"));
-		foreach( bro in bros )
-		{
-			local val = this.World.State.addNewID(bro);
-			bro.m.CompanyID = val;
-		}
-
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/legend_pie_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/mead_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/weapons/legend_drum"));

@@ -32,8 +32,6 @@ this.legends_assassin_scenario <- this.inherit("scripts/scenarios/world/starting
 		bro.setVeteranPerks(2);
 		bro.getFlags().set("IsPlayerCharacter", true);
 		bro.getSprite("miniboss").setBrush("bust_miniboss_lone_wolf");
-		local val = this.World.State.addNewID(bro);
-		bro.m.CompanyID = val;
 		this.World.Assets.m.Money = 1.5 * this.World.Assets.m.Money;
 		this.World.Assets.m.Ammo = this.World.Assets.m.Ammo;
 

@@ -34,12 +34,6 @@ this.legend_random_solo_scenario<- this.inherit("scripts/scenarios/world/startin
 		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
 		bros[0].getFlags().set("IsPlayerCharacter", true);
 
-		foreach( bro in bros )
-		{
-			local val = this.World.State.addNewID(bro);
-			bro.m.CompanyID = val;
-		}
-
 		this.World.Assets.m.BusinessReputation = 100;
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/smoked_ham_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/beer_item"));
