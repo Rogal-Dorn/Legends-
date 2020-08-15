@@ -109,5 +109,9 @@ this.belly_dancer_background <- this.inherit("scripts/skills/backgrounds/charact
 	{
 	}
 
+	function onAddLegendEquipment()
+	{
+	}
+
 });
 

@@ -63,5 +63,19 @@ this.tailor_southern_background <- this.inherit("scripts/skills/backgrounds/tail
 		}
 	}
 
+	function onAddLegendEquipment()
+	{
+		local items = this.getContainer().getActor().getItems();
+		//todo legends armor
+
+		r = this.Math.rand(1, 2);
+		local helm = this.Const.World.Common.pickHelmet([
+			[1, "oriental/southern_head_wrap"],
+			[1, "feathered_hat"],
+			[2, ""]
+		]);
+		items.equip(helm);
+	}
+
 });
 

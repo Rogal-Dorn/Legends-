@@ -86,5 +86,39 @@ this.caravan_hand_southern_background <- this.inherit("scripts/skills/background
 		}
 	}
 
+	function onAddLegendEquipment()
+	{
+		local items = this.getContainer().getActor().getItems();
+		local r;
+
+		r = this.Math.rand(0, 3);
+		if (r == 0)
+		{
+			items.equip(this.new("scripts/items/weapons/knife"));
+		}
+		else if (r == 1)
+		{
+			items.equip(this.new("scripts/items/weapons/bludgeon"));
+		}
+		else if (r == 2)
+		{
+			items.equip(this.new("scripts/items/weapons/oriental/light_southern_mace"));
+		}
+		else if (r == 3)
+		{
+			items.equip(this.new("scripts/items/weapons/oriental/saif"));
+		}
+
+
+		//todo legends armor
+
+		
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "oriental/southern_head_wrap"],
+			[1, "oriental/nomad_head_wrap"],
+			[1, "oriental/nomad_leather_cap"]
+		]))
+	}
+
 });
 
