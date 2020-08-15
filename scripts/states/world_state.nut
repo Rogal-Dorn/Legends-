@@ -1148,7 +1148,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 		local worldmap = this.MapGen.get("world.worldmap_generator");
 		local minX = this.Const.World.Settings.SizeX;
 		local minY = this.Const.World.Settings.SizeY;
-		this.World.resizeScene(minX, minY);
+		this.World.resizeScene(this.m.CampaignSettings.Width, this.m.CampaignSettings.Height);
 		worldmap.fill({
 			X = 0,
 			Y = 0,

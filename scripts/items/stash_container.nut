@@ -519,7 +519,6 @@ this.stash_container <- {
 			{
 				_out.writeBool(true);
 				_out.writeI32(item.ClassNameHash);
-				this.logInfo(item.ClassNameHash + " : " + item.m.ID);
 				item.onSerialize(_out);
 			}
 		}

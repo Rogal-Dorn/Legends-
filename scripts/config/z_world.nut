@@ -2,8 +2,8 @@ local gt = this.getroottable();
 
 gt.Const.World.SettingsUpdate <- function (_settings)
 {
-	// this.Const.World.Settings.SizeX = _settings.Width;
-	// this.Const.World.Settings.SizeY = _settings.Height;
+	this.Const.World.Settings.SizeX = _settings.Width;
+	this.Const.World.Settings.SizeY = _settings.Height;
 	// this.Const.World.Settings.LandMassMult = _settings.LandMassMult;
 	// this.Const.World.Settings.WaterConnectivity = _settings.WaterConnectivity;
 	// if ( _settings.LandMassMult < 1.1) {
@@ -43,7 +43,7 @@ gt.Const.World.SettlementsUpdate <- function (_val)
 
 gt.Const.World.Settlements.LegendsWorldMaster <- [
 	{
-		Ratio = 0.30,
+		Ratio = 0.20,
 		Types = this.Const.World.Settlements.Legends_villages_coast,
 		Sizes = [
 			{
@@ -64,7 +64,7 @@ gt.Const.World.Settlements.LegendsWorldMaster <- [
 		]
 	},
 	{
-		Ratio = 0.40,
+		Ratio = 0.50,
 		Types = Const.World.Settlements.Legends_villages,
 		Sizes = [
 			{
@@ -85,7 +85,7 @@ gt.Const.World.Settlements.LegendsWorldMaster <- [
 		]
 	},
 	{
-		Ratio = 0.25,
+		Ratio = 0.30,
 		Types = Const.World.Settlements.Legends_fortifications,
 		Sizes = [
 			{
@@ -106,15 +106,15 @@ gt.Const.World.Settlements.LegendsWorldMaster <- [
 		]
 	},
 	{
-		Ratio = 0.20,
+		Ratio = 0.0,
 		Types = Const.World.Settlements.Legends_citystates,
 		IgnoreSide = true,
 		AdditionalSpace = 13,
 		Sizes = [
 			{
-				Ratio = 1,
-				MinAmount = 1,
-				Size = 1
+				Ratio = 10,
+				MinAmount = 3,
+				Size = 3
 			}
 		]
 	}
@@ -123,12 +123,12 @@ gt.Const.World.Settlements.LegendsWorldMaster <- [
 gt.Const.World.NewCampaignOpts <- function ()
 {
 	return {
-		Width = this.Const.World.Settings.SizeX,
-		WidthMin = 100,
-		WidthMax = 140,
-		Height = this.Const.World.Settings.SizeY,
-		HeightMin = 100,
-		HeightMax = 170,
+		Width = 180, //this.Const.World.Settings.SizeX,
+		WidthMin = 140,
+		WidthMax = 500,
+		Height = 220,//this.Const.World.Settings.SizeY,
+		HeightMin = 170,
+		HeightMax = 500,
 		LandMassMult = 40, //this.Const.World.Settings.LandMassMult * 100 - 100,
 		LandMassMultMin = 1,
 		LandMassMultMax = 100,
