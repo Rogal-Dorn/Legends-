@@ -15,6 +15,7 @@ this.legends_configs <- {
         IsTherian = false
     },
 
+
     function Update (_settings)
     {
 		this.m.IsGender = _settings.LegendGenderEquality;

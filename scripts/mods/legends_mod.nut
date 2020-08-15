@@ -39,22 +39,6 @@ this.legends_mod <- {
         this.World.Events.fire(_args);
     }
 
-    //Backwards compatibility from < 71 versions
-    function UpdateFromConst()
-    {
-        this.m.Configs.m.IsArmor = this.Const.LegendMod.Configs.LegendArmorsEnabled();
-        this.m.Configs.m.IsMagic = this.Const.LegendMod.Configs.LegendMagicEnabled();
-        this.m.Configs.m.IsGender = this.Const.LegendMod.Configs.LegendGenderEnabled();
-        this.m.Configs.m.IsItemScaling = this.Const.LegendMod.Configs.LegendItemScalingEnabled();
-        this.m.Configs.m.IsLocationScaling = this.Const.LegendMod.Configs.LegendLocationScalingEnabled();
-        this.m.Configs.m.IsCampUnlock = this.Const.LegendMod.Configs.LegendCampUnlockEnabled();
-        this.m.Configs.m.IsRecruitScaling = this.Const.LegendMod.Configs.LegendRecruitScalingEnabled();
-        this.m.Configs.m.IsBleedKiller = this.Const.LegendMod.Configs.LegendBleedKillerEnabled();
-        this.m.Configs.m.IsBlueprintsVisible = this.Const.LegendMod.Configs.LegendAllBlueprintsEnabled();
-        this.m.Configs.m.IsRelationship = this.Const.LegendMod.Configs.RelationshipsEnabled();
-        this.m.Configs.m.IsWorldEconomy = this.Const.LegendMod.Configs.LegendWorldEconomyEnabled();
-    }
-
     function onSerialize(_out)
     {
         this.m.Configs.onSerialize(_out);
