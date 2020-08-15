@@ -16,7 +16,7 @@ this.holywar_occupied_south_event <- this.inherit("scripts/events/event", {
 			Characters = [],
 			Options = [
 				{
-					Text = "The fires of religious turmoil burn still.",
+					Text = "The fires of religious turmoil burn bright.",
 					function getResult( _event )
 					{
 						return 0;

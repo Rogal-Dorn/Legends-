@@ -920,8 +920,8 @@ gt.Const.World.Spawn.Troops <- {
 	NomadCutthroat = {
 		ID = this.Const.EntityType.NomadCutthroat,
 		Variant = 0,
-		Strength = 10,
-		Cost = 10,
+		Strength = 12,
+		Cost = 12,
 		Row = 0,
 		Script = "scripts/entity/tactical/humans/nomad_cutthroat"
 	},
@@ -944,8 +944,8 @@ gt.Const.World.Spawn.Troops <- {
 	NomadOutlaw = {
 		ID = this.Const.EntityType.NomadOutlaw,
 		Variant = 0,
-		Strength = 20,
-		Cost = 20,
+		Strength = 25,
+		Cost = 25,
 		Row = 0,
 		Script = "scripts/entity/tactical/humans/nomad_outlaw"
 	},
@@ -953,7 +953,7 @@ gt.Const.World.Spawn.Troops <- {
 		ID = this.Const.EntityType.NomadLeader,
 		Variant = 1,
 		Strength = 30,
-		Cost = 25,
+		Cost = 30,
 		Row = 2,
 		Script = "scripts/entity/tactical/humans/nomad_leader",
 		NameList = this.Const.Strings.SouthernNames,
