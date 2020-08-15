@@ -927,8 +927,8 @@ NewCampaignMenuModule.prototype.buildMapConfig = function () {
 
 	this.createSliderControlDIV(this.mMapOptions.Width, 'Map Width', leftColumn);
 	this.createSliderControlDIV(this.mMapOptions.Height, 'Map Height', leftColumn);
-	this.createSliderControlDIV(this.mMapOptions.LandMassMult, 'Land Mass Ratio', leftColumn);
-	this.createSliderControlDIV(this.mMapOptions.WaterConnectivity, 'Water Connectivity', leftColumn);
+	//this.createSliderControlDIV(this.mMapOptions.LandMassMult, 'Land Mass Ratio', leftColumn);
+	this.createSliderControlDIV(this.mMapOptions.WaterConnectivity, 'Water', leftColumn);
 	//this.createSliderControlDIV(this.mMapOptions.MinLandToWaterRatio, 'Land To Water Ratio', leftColumn);
 	this.createSliderControlDIV(this.mMapOptions.Snowline, 'Snowline', leftColumn);
 	//this.createSliderControlDIV(this.mMapOptions.MountainsMult, 'Mountain Density', rightColumn);
@@ -1226,7 +1226,7 @@ NewCampaignMenuModule.prototype.updateMapConfig = function () {
 	var controls = [
 		this.mMapOptions.Width,
 		this.mMapOptions.Height,
-		this.mMapOptions.LandMassMult,
+		//this.mMapOptions.LandMassMult,
 		this.mMapOptions.WaterConnectivity,
 		this.mMapOptions.Snowline,
 		this.mMapOptions.NumSettlements,
@@ -1497,14 +1497,14 @@ NewCampaignMenuModule.prototype.bindTooltips = function () {
 		elementId: 'mapconfig.height'
 	});
 
-	this.mMapOptions.LandMassMult.Control.bindTooltip({
-		contentType: 'ui-element',
-		elementId: 'mapconfig.landmass'
-	});
-	this.mMapOptions.LandMassMult.Title.bindTooltip({
-		contentType: 'ui-element',
-		elementId: 'mapconfig.landmass'
-	});
+	// this.mMapOptions.LandMassMult.Control.bindTooltip({
+	// 	contentType: 'ui-element',
+	// 	elementId: 'mapconfig.landmass'
+	// });
+	// this.mMapOptions.LandMassMult.Title.bindTooltip({
+	// 	contentType: 'ui-element',
+	// 	elementId: 'mapconfig.landmass'
+	// });
 
 	this.mMapOptions.WaterConnectivity.Control.bindTooltip({
 		contentType: 'ui-element',
@@ -1786,8 +1786,8 @@ NewCampaignMenuModule.prototype.unbindTooltips = function () {
 	this.mMapOptions.Height.Control.unbindTooltip();
 	this.mMapOptions.Height.Title.unbindTooltip();
 
-	this.mMapOptions.LandMassMult.Control.unbindTooltip();
-	this.mMapOptions.LandMassMult.Title.unbindTooltip();
+	// this.mMapOptions.LandMassMult.Control.unbindTooltip();
+	// this.mMapOptions.LandMassMult.Title.unbindTooltip();
 
 	this.mMapOptions.WaterConnectivity.Control.unbindTooltip();
 	this.mMapOptions.WaterConnectivity.Title.unbindTooltip();
