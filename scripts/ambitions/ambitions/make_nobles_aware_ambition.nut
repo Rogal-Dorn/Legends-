@@ -20,13 +20,19 @@ this.make_nobles_aware_ambition <- this.inherit("scripts/ambitions/ambition", {
 			return;
 		}
 
-		if (this.World.Ambitions.getDone() < 3 && this.World.Assets.getBusinessReputation() < 800)
+		if (this.World.Assets.getBusinessReputation() < 800)
 		{
 			return;
 		}
 
 		if (!this.World.Ambitions.getAmbition("ambition.battle_standard").isDone())
 		{
+			return;
+		}
+
+		if (this.World.Assets.getBusinessReputation() >= 1050 && this.World.FactionManager.isGreaterEvil())
+		{
+			this.m.IsDone = true;
 			return;
 		}
 

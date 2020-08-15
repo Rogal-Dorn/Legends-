@@ -131,10 +131,13 @@ this.occupy_order <- this.inherit("scripts/ai/world/world_behavior", {
 								image = 152;
 							}
 
-							local news = this.World.Statistics.createNews();
-							news.set("Holysite", e.getName());
-							news.set("Image", image);
-							this.World.Statistics.addNews(this.World.FactionManager.getFaction(_entity.getFaction()).getType() == this.Const.FactionType.OrientalCityState ? "crisis_holywar_holysite_south" : "crisis_holywar_holysite_north", news);
+							if (this.Math.rand(1, 100) <= 66)
+							{
+								local news = this.World.Statistics.createNews();
+								news.set("Holysite", e.getName());
+								news.set("Image", image);
+								this.World.Statistics.addNews(this.World.FactionManager.getFaction(_entity.getFaction()).getType() == this.Const.FactionType.OrientalCityState ? "crisis_holywar_holysite_south" : "crisis_holywar_holysite_north", news);
+							}
 						}
 					}
 

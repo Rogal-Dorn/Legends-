@@ -1847,17 +1847,10 @@ this.asset_manager <- {
 					{
 						overflowItems.push(item.Item);
 					}
-
-					itemsHandled.push(item.Item.getInstanceID());
 				}
-				else
+				else if (!bro.getItems().equip(item.Item))
 				{
-					if (!bro.getItems().equip(item.Item))
-					{
-						overflowItems.push(item.Item);
-					}
-
-					itemsHandled.push(item.Item.getInstanceID());
+					overflowItems.push(item.Item);
 				}
 			}
 
