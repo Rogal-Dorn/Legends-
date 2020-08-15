@@ -155,7 +155,7 @@ this.town_barber_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 			}
 			else
 			{
-				this.changeIndexEx(this.Const.Hair.BarberMale, temp.getSprite("hair"), 0, "hair", color, "");
+				this.changeIndexEx(this.Const.Hair.Barber, temp.getSprite("hair"), 0, "hair", color, "");
 				this.changeIndexEx(this.Const.Beards.Barber, temp.getSprite("beard"), 0, "beard", color, "");
 			}
 
