@@ -67,5 +67,7 @@ this.slave_barbarian_background <- this.inherit("scripts/skills/backgrounds/slav
 		return c;
 	}
 
+	//no need to do legendsequipment here because it inherits from slave_background
+
 });
 

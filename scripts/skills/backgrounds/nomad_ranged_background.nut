@@ -96,5 +96,32 @@ this.nomad_ranged_background <- this.inherit("scripts/skills/backgrounds/nomad_b
 		}
 	}
 
+	function onAddLegendEquipment()
+	{
+		local items = this.getContainer().getActor().getItems();
+		local r;
+		r = this.Math.rand(0, 1);
+
+		if (r == 0)
+		{
+			items.equip(this.new("scripts/items/weapons/oriental/nomad_sling"));
+		}
+		else if (r == 1)
+		{
+			items.equip(this.new("scripts/items/weapons/oriental/composite_bow"));
+			items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
+		}
+
+		//todo legends armor
+
+		r = this.Math.rand(1, 2);
+		local helm = this.Const.World.Common.pickHelmet([
+			[1, "oriental/nomad_head_wrap"],
+			[1, "oriental/nomad_leather_cap"],
+			[1, "oriental/nomad_light_helmet"]
+		]);
+		items.equip(helm);
+	}
+
 });
 
