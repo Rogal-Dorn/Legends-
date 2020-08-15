@@ -248,16 +248,7 @@ this.wild_dog_sounds_event <- this.inherit("scripts/events/event", {
 			{
 				this.Characters.push(_event.m.Expendable.getImagePath());
 				local dead = _event.m.Expendable;
-				local fallen = {
-					Name = dead.getName(),
-					Time = this.World.getTime().Days,
-					TimeWithCompany = this.Math.max(1, dead.getDaysWithCompany()),
-					Kills = dead.getLifetimeStats().Kills,
-					Battles = dead.getLifetimeStats().Battles,
-					KilledBy = "Went missing",
-					Expendable = dead.getBackground().getID() == "background.slave"
-				};
-				this.World.Statistics.addFallen(fallen);
+				this.World.Statistics.addFallen(dead, "Went missing");
 				this.List.push({
 					id = 13,
 					icon = "ui/icons/kills.png",

@@ -394,16 +394,7 @@ this.hedgeknight_vs_hedgeknight_event <- this.inherit("scripts/events/event", {
 				this.World.Assets.addMoralReputation(-1);
 				this.Characters.push(_event.m.HedgeKnight1.getImagePath());
 				local dead = _event.m.HedgeKnight2;
-				local fallen = {
-					Name = dead.getName(),
-					Time = this.World.getTime().Days,
-					TimeWithCompany = this.Math.max(1, dead.getDaysWithCompany()),
-					Kills = dead.getLifetimeStats().Kills,
-					Battles = dead.getLifetimeStats().Battles,
-					KilledBy = "Killed in a duel by " + _event.m.HedgeKnight1.getName(),
-					Expendable = false
-				};
-				this.World.Statistics.addFallen(fallen);
+				this.World.Statistics.addFallen(dead, "Killed in a duel by " + _event.m.HedgeKnight1.getName());
 				this.List.push({
 					id = 13,
 					icon = "ui/icons/kills.png",
@@ -469,16 +460,7 @@ this.hedgeknight_vs_hedgeknight_event <- this.inherit("scripts/events/event", {
 				this.World.Assets.addMoralReputation(-1);
 				this.Characters.push(_event.m.HedgeKnight2.getImagePath());
 				local dead = _event.m.HedgeKnight1;
-				local fallen = {
-					Name = dead.getName(),
-					Time = this.World.getTime().Days,
-					TimeWithCompany = this.Math.max(1, dead.getDaysWithCompany()),
-					Kills = dead.getLifetimeStats().Kills,
-					Battles = dead.getLifetimeStats().Battles,
-					KilledBy = "Killed in a duel by " + _event.m.HedgeKnight2.getName(),
-					Expendable = false
-				};
-				this.World.Statistics.addFallen(fallen);
+				this.World.Statistics.addFallen(dead,  "Killed in a duel by " + _event.m.HedgeKnight2.getName());
 				this.List.push({
 					id = 13,
 					icon = "ui/icons/kills.png",

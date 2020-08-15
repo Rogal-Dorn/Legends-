@@ -1349,16 +1349,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				killedBy = killedBy + (" by " + _killer.getKilledName());
 			}
 
-			local fallen = {
-				Name = this.getName(),
-				Time = this.World.getTime().Days,
-				TimeWithCompany = this.Math.max(1, this.getDaysWithCompany()),
-				Kills = this.m.LifetimeStats.Kills,
-				Battles = this.m.LifetimeStats.Battles + 1,
-				KilledBy = killedBy,
-				Expendable = this.getBackground().getID() == "background.slave"
-			};
-			this.World.Statistics.addFallen(fallen);
+			this.World.Statistics.addFallen(this, killedBy);
 		}
 	}
 

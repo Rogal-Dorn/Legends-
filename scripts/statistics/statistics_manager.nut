@@ -79,9 +79,9 @@ this.statistics_manager <- {
 		return this.new("scripts/tools/tag_collection");
 	}
 
-	function addFallen( _bro, _killedBy="Left to die")
+	function addFallen( bro, _killedby = "Left to die")
 	{
-		local b = _bro.getBaseProperties();
+		local b = bro.getBaseProperties();
 		local bstats = [
 			b.Hitpoints,
 			b.Stamina,
@@ -93,12 +93,13 @@ this.statistics_manager <- {
 			b.RangedDefense
 		];
 		local _fallen = {
-			Name = _bro.getName(),
+			Name = bro.getName(),
 			Time = this.World.getTime().Days,
-			TimeWithCompany = this.Math.max(1, _bro.getDaysWithCompany()),
-			Kills = _bro.getLifetimeStats().Kills,
-			Battles = _bro.getLifetimeStats().Battles,
-			KilledBy = _killedBy,
+			TimeWithCompany = this.Math.max(1, bro.getDaysWithCompany()),
+			Kills = bro.getLifetimeStats().Kills,
+			Battles = bro.getLifetimeStats().Battles,
+			KilledBy = _killedby,
+			Expendable = bro.getBackground().getID() == "background.slave",
 			level = _bro.getLevel(),
 			traits = _bro.getDeadTraits(),
 			stats = bstats,
