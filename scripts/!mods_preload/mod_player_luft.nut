@@ -10,7 +10,7 @@
 	o.onInit = function ()
 	{
 		ifn();
-		this.m.Skills.add(this.new("scripts/skills/active/legend_good_boy"));
+		// this.m.Skills.add(this.new("scripts/skills/active/legend_good_boy"));
 	}
 
 });
