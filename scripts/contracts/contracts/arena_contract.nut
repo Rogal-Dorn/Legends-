@@ -46,7 +46,7 @@ this.arena_contract <- this.inherit("scripts/contracts/contract", {
 			twists.push({
 				R = 2,
 				F = "IsSwordmasterChampion",
-				P = 100
+				P = 150
 			});
 		}
 
@@ -64,7 +64,7 @@ this.arena_contract <- this.inherit("scripts/contracts/contract", {
 			twists.push({
 				R = 2,
 				F = "IsExecutionerChampion",
-				P = 100
+				P = 150
 			});
 		}
 
@@ -82,7 +82,7 @@ this.arena_contract <- this.inherit("scripts/contracts/contract", {
 			twists.push({
 				R = 2,
 				F = "IsDesertDevilChampion",
-				P = 100
+				P = 150
 			});
 		}
 
@@ -122,7 +122,7 @@ this.arena_contract <- this.inherit("scripts/contracts/contract", {
 			});
 		}
 
-		if (this.Const.DLC.Wildmen && this.World.Statistics.getFlags().getAsInt("ArenaFightsWon") >= 2)
+		if (this.Const.DLC.Wildmen && this.World.Statistics.getFlags().getAsInt("ArenaFightsWon") >= 3)
 		{
 			twists.push({
 				R = 15,
@@ -136,11 +136,11 @@ this.arena_contract <- this.inherit("scripts/contracts/contract", {
 			twists.push({
 				R = 5,
 				F = "IsGladiatorChampion",
-				P = 100
+				P = 150
 			});
 		}
 
-		if (this.Const.DLC.Unhold && this.World.Statistics.getFlags().getAsInt("ArenaFightsWon") <= 6)
+		if (this.Const.DLC.Unhold && this.World.Statistics.getFlags().getAsInt("ArenaFightsWon") <= 5)
 		{
 			twists.push({
 				R = 10,
