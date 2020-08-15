@@ -563,10 +563,14 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 			return null;
 		}
 
-		local app = this.getContainer().getAppearance();
 		local item = this.m.Upgrades[_slot];
-		this.m.Upgrades[_slot] = null;
+		local app = null;
+		if (this.getContainer() != null) 
+		{
+			app = this.getContainer().getAppearance();
+		}
 		item.onRemoved(app);
+		this.m.Upgrades[_slot] = null;
 		this.updateAppearance();
 		return item;
 	}
