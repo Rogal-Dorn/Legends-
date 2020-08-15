@@ -24,6 +24,11 @@ this.legend_degrade_settlement_action <- this.inherit("scripts/factions/faction_
 
 		this.m.Settlement = _faction.getSettlements()[this.Math.rand(0, _faction.getSettlements().len() - 1)];
 
+		if (this.m.Settlement.isBuilding())
+		{
+			return;
+		}
+
 		if (this.m.Settlement.getWealth() > 50)
 		{
 			return;

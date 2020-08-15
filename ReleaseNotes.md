@@ -3880,3 +3880,19 @@ Fixes uncommon error with transforms crashing
 Fixes Vermin Ending of roaming beast contract
 Fixes loading of save game when player has warlock perks selected (maxMedicine issues)
 
+
+
+15.0.0.0
+Looking for some brave beta testers. This is a playable build with 1.4.0.35 version.
+This *DOES NOT* have any Legends content fully integrated with the new DLC content (we are working hard on those parts).
+To allow us to continue adding in and integrating the new content we are looking for people to help look for
+any major issues (crashes or errors in the log files)
+Please do not play this and expect things to work flawlessly.
+Do not tell me that the southern armors are not layered, or X skill or X perk isn't balanced, etc...
+To REPEAT! Looking for crashes or any errors in log files.
+
+https://drive.google.com/file/d/136wvQKhe-u6H6VQHsaQJ66cVszzwu9Oy/view?usp=sharing
+
+
+**Changes**
+World Economy for city states - unlike northern settlements, ciy states can continue to grow their locations indefinitly.
