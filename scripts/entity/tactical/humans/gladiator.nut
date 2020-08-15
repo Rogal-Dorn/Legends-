@@ -199,7 +199,7 @@ this.gladiator <- this.inherit("scripts/entity/tactical/human", {
 			foreach(h in this.Const.Items.NamedSouthernHelmets)
 			{
 				helms.push( 
-					[ 1, h.slice(h.find("helmets/")) ] 
+					[ 1, h.slice(h.find("helmets/") + "helmets/".len()) ] 
 				);
 			}
 			//helms is an array of arrays so should work (:
@@ -212,7 +212,7 @@ this.gladiator <- this.inherit("scripts/entity/tactical/human", {
 			foreach(h in this.Const.Items.NamedHelmets)
 			{
 				helms.push( 
-					[ 1, h.slice(h.find("helmets/")) ] 
+					[ 1, h.slice(h.find("helmets/") + "helmets/".len()) ] 
 				);
 			}
 			//helms is an array of arrays so should work (:

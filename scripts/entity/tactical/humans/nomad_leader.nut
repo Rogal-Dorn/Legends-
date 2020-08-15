@@ -191,7 +191,7 @@ this.nomad_leader <- this.inherit("scripts/entity/tactical/human", {
 			foreach(h in this.Const.Items.NamedSouthernHelmets)
 			{
 				helms.push( 
-					[ 1, h.slice(h.find("helmets/")) ] 
+					[ 1, h.slice(h.find("helmets/") + "helmets/".len()) ] 
 				);
 			}
 			//helms is an array of arrays so should work (:
