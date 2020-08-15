@@ -4003,10 +4003,10 @@ this.world_state <- this.inherit("scripts/states/state", {
 			}
 		}
 		this.World.LegendsMod.onDeserialize(_in)
-		if (this.World.LegendsMod.Configs().LegendHelmetEnabled())
-		{
-			_in.readBool();
-		}
+		// if (this.World.LegendsMod.Configs().LegendHelmetEnabled())
+		// {
+		// 	_in.readBool();
+		// }
 		this.World.Flags.onDeserialize(_in);
 		this.World.FactionManager.onDeserialize(_in);
 		this.World.EntityManager.onDeserialize(_in);

@@ -21,7 +21,7 @@ this.stash_container <- {
 		return this.m.IsLocked;
 	}
 
-	function setLocked( _value )
+	function setLocked( _value ) 
 	{
 		this.m.IsLocked = _value;
 	}
@@ -531,9 +531,9 @@ this.stash_container <- {
 	{
 		this.clear();
 		local numItems = _in.readU16();
-		this.logInfo("Items = " + numItems);
+		// this.logInfo("Items = " + numItems);
 		this.m.Capacity = _in.readU16();
-		this.logInfo("Capactity = " + this.m.Capacity);
+		// this.logInfo("Capactity = " + this.m.Capacity);
 
 		if (this.m.Items.len() < numItems)
 		{
@@ -547,9 +547,9 @@ this.stash_container <- {
 			if (hasItem)
 			{
 				local namehash = _in.readI32();
-				this.logInfo(namehash)
 				local classname = this.IO.scriptFilenameByHash(namehash);
-				local item = this.new(hashname);
+				// this.logInfo(classname)
+				local item = this.new(classname);
 				item.onDeserialize(_in);
 				this.m.Items[i] = item;
 			}

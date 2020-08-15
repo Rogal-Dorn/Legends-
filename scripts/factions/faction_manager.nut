@@ -1296,6 +1296,7 @@ this.faction_manager <- {
 		for( local i = 0; i != numFactions; i = ++i )
 		{
 			local f = this.new(this.IO.scriptFilenameByHash(_in.readI32()));
+			// this.logWarning("faction name by hash = " + f);
 			this.m.Factions.push(f);
 		}
 

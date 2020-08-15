@@ -738,7 +738,7 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 		this.world_entity.onDeserialize(_in);
 		this.m.DefenderSpawnDay = _in.readU32();
 		this.m.LastSpawnTime = _in.readF32();
-		if (_in.getMetaData().getVersion() < 67)
+		if (_in.getMetaData().getVersion() < 63)
 		{
 			this.m.Resources = _in.readU16();
 		}
