@@ -37,6 +37,12 @@ this.have_all_provisions_ambition <- this.inherit("scripts/ambitions/ambition", 
 		local dates = false;
 		local rice = false;
 		local dried_lamb = false;
+		local legend_fresh_fruit = false;
+		local legend_fresh_meat = false;
+		local legend_pie = false;
+		local legend_porridge = false;
+		local legend_pudding = false;
+		local legend_cooking_spices = false;
 		local items = this.World.Assets.getStash().getItems();
 
 		foreach( item in items )
@@ -106,6 +112,30 @@ this.have_all_provisions_ambition <- this.inherit("scripts/ambitions/ambition", 
 				else if (item.getID() == "supplies.cured_rations")
 				{
 					cured_rations = true;
+				}
+				else if (item.getID() == "supplies.legend_fresh_fruit")
+				{
+					legend_fresh_fruit = true;
+				}
+				else if (item.getID() == "supplies.legend_fresh_meat")
+				{
+					legend_fresh_meat = true;
+				}
+				else if (item.getID() == "supplies.legend_pie")
+				{
+					legend_pie = true;
+				}
+				else if (item.getID() == "supplies.legend_porridge")
+				{
+					legend_porridge = true;
+				}
+				else if (item.getID() == "supplies.legend_pudding")
+				{
+					legend_pudding = true;
+				}
+				else if (item.getID() == "supplies.legend_cooking_spices")
+				{
+					legend_cooking_spices = true;
 				}
 			}
 		}
@@ -177,6 +207,36 @@ this.have_all_provisions_ambition <- this.inherit("scripts/ambitions/ambition", 
 			ret = ret + "\n- Cured Rations";
 		}
 
+		if (!legend_fresh_fruit)
+		{
+			ret = ret + "\n- Fresh Fruit";
+		}
+
+		if (!legend_fresh_meat)
+		{
+			ret = ret + "\n- Fresh Meat";
+		}
+
+		if (!legend_pie)
+		{
+			ret = ret + "\n- Pie";
+		}
+
+		if (!legend_porridge)
+		{
+			
+			ret = ret + "\n- Porridge";
+		}
+		if (!legend_pudding)
+		{
+			ret = ret + "\n- Pudding";
+		}
+
+		if (!legend_cooking_spices)
+		{
+			ret = ret + "\n- Cooking Spices";
+		}
+
 		if (this.Const.DLC.Desert)
 		{
 			if (!dates)
@@ -216,6 +276,12 @@ this.have_all_provisions_ambition <- this.inherit("scripts/ambitions/ambition", 
 		local dates = false;
 		local rice = false;
 		local dried_lamb = false;
+		local legend_fresh_fruit = false;
+		local legend_fresh_meat = false;
+		local legend_pie = false;
+		local legend_porridge = false;
+		local legend_pudding = false;
+		local legend_cooking_spices = false;
 		local items = this.World.Assets.getStash().getItems();
 
 		foreach( item in items )
@@ -286,16 +352,42 @@ this.have_all_provisions_ambition <- this.inherit("scripts/ambitions/ambition", 
 				{
 					cured_rations = true;
 				}
+				else if (item.getID() == "supplies.legend_fresh_fruit")
+				{
+					legend_fresh_fruit = true;
+				}
+				else if (item.getID() == "supplies.legend_fresh_meat")
+				{
+					legend_fresh_meat = true;
+				}
+				else if (item.getID() == "supplies.legend_pie")
+				{
+					legend_pie = true;
+				}
+				else if (item.getID() == "supplies.legend_porridge")
+				{
+					legend_porridge = true;
+				}
+				else if (item.getID() == "supplies.legend_pudding")
+				{
+					legend_pudding = true;
+				}
+				else if (item.getID() == "supplies.legend_cooking_spices")
+				{
+					legend_cooking_spices = true;
+				}
 			}
 		}
 
+		local hasLegend = legend_fresh_fruit && legend_fresh_meat && legend_cooking_spices && legend_pie && legend_porridge && legend_pudding;
+
 		if (!this.Const.DLC.Desert)
 		{
-			return beer && bread && cured_venison && dried_fish && dried_fruits && goat_cheese && ground_grains && mead && mushrooms && berries && smoked_ham && wine && cured_rations;
+			return beer && bread && cured_venison && dried_fish && dried_fruits && goat_cheese && ground_grains && mead && mushrooms && berries && smoked_ham && wine && cured_rations && hasLegend;
 		}
 		else
 		{
-			return beer && bread && cured_venison && dried_fish && dried_fruits && goat_cheese && ground_grains && mead && mushrooms && berries && smoked_ham && wine && cured_rations && dates && rice && dried_lamb;
+			return beer && bread && cured_venison && dried_fish && dried_fruits && goat_cheese && ground_grains && mead && mushrooms && berries && smoked_ham && wine && cured_rations && dates && rice && dried_lamb && hasLegend;
 		}
 	}
 
