@@ -927,7 +927,7 @@ NewCampaignMenuModule.prototype.buildMapConfig = function () {
 
 	this.createSliderControlDIV(this.mMapOptions.Width, 'Map Width', leftColumn);
 	this.createSliderControlDIV(this.mMapOptions.Height, 'Map Height', leftColumn);
-	//this.createSliderControlDIV(this.mMapOptions.LandMassMult, 'Land Mass Ratio', leftColumn);
+	this.createSliderControlDIV(this.mMapOptions.LandMassMult, 'Land Mass Ratio', leftColumn);
 	this.createSliderControlDIV(this.mMapOptions.WaterConnectivity, 'Water', leftColumn);
 	//this.createSliderControlDIV(this.mMapOptions.MinLandToWaterRatio, 'Land To Water Ratio', leftColumn);
 	this.createSliderControlDIV(this.mMapOptions.Snowline, 'Snowline', leftColumn);
@@ -1226,7 +1226,7 @@ NewCampaignMenuModule.prototype.updateMapConfig = function () {
 	var controls = [
 		this.mMapOptions.Width,
 		this.mMapOptions.Height,
-		//this.mMapOptions.LandMassMult,
+		this.mMapOptions.LandMassMult,
 		this.mMapOptions.WaterConnectivity,
 		this.mMapOptions.Snowline,
 		this.mMapOptions.NumSettlements,
