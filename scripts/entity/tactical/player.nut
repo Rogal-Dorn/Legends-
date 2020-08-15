@@ -807,6 +807,11 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			return true;
 		}
 
+		if (this.isGuest())
+		{
+			return true;
+		}
+
 		if (this.Math.rand(1, 100) <= this.Const.Combat.SurviveWithInjuryChance * this.m.CurrentProperties.SurviveWithInjuryChanceMult || this.World.Assets.m.IsSurvivalGuaranteed && !this.m.Skills.hasSkillOfType(this.Const.SkillType.PermanentInjury) && (this.World.Assets.getOrigin().getID() != "scenario.manhunters" || this.getBackground().getID() != "background.slave"))
 		{
 			local potential = [];
@@ -853,7 +858,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			return;
 		}
 
-		if (_victim.getFaction() == this.getFaction() && ("getBackground" in _victim) && _victim.getBackground().getID() == "background.slave" && this.getBackground().getID() != "background.slave")
+		if (!this.isGuest() && _victim.getFaction() == this.getFaction() && ("getBackground" in _victim) && _victim.getBackground().getID() == "background.slave" && this.getBackground().getID() != "background.slave")
 		{
 			return;
 		}
@@ -863,7 +868,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 	function kill( _killer = null, _skill = null, _fatalityType = this.Const.FatalityType.None, _silent = false )
 	{
-		if (!this.Tactical.State.isScenarioMode() && this.World.Assets.m.IsSurvivalGuaranteed && !this.m.Skills.hasSkillOfType(this.Const.SkillType.PermanentInjury) && (this.World.Assets.getOrigin().getID() != "scenario.manhunters" || this.getBackground().getID() != "background.slave"))
+		if (!this.Tactical.State.isScenarioMode() && this.World.Assets.m.IsSurvivalGuaranteed && !this.m.Skills.hasSkillOfType(this.Const.SkillType.PermanentInjury) && (this.World.Assets.getOrigin().getID() != "scenario.manhunters" || this.getBackground() != null && this.getBackground().getID() != "background.slave"))
 		{
 			_fatalityType = this.Const.FatalityType.None;
 		}
