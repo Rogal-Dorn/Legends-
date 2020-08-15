@@ -838,29 +838,35 @@ this.conquer_holy_site_contract <- this.inherit("scripts/contracts/contract", {
 		{
 			for( local y = o.Y + 4; y <= o.Y + 6; y = ++y )
 			{
-				local tile = this.World.getTileSquare(x, y);
-
-				if (tile.Type == this.Const.World.TerrainType.Ocean)
+				if (!this.World.isValidTileSquare(x, y))
 				{
 				}
 				else
 				{
-					local s = this.Math.rand(0, 3);
+					local tile = this.World.getTileSquare(x, y);
 
-					if (tile.Type == this.Const.World.TerrainType.Mountains)
+					if (tile.Type == this.Const.World.TerrainType.Ocean)
 					{
-						s = s - 10;
 					}
-
-					if (tile.HasRoad)
+					else
 					{
-						s = s + 10;
-					}
+						local s = this.Math.rand(0, 3);
 
-					tiles.push({
-						Tile = tile,
-						Score = s
-					});
+						if (tile.Type == this.Const.World.TerrainType.Mountains)
+						{
+							s = s - 10;
+						}
+
+						if (tile.HasRoad)
+						{
+							s = s + 10;
+						}
+
+						tiles.push({
+							Tile = tile,
+							Score = s
+						});
+					}
 				}
 			}
 		}
@@ -945,29 +951,35 @@ this.conquer_holy_site_contract <- this.inherit("scripts/contracts/contract", {
 		{
 			for( local y = o.Y - 4; y <= o.Y - 3; y = ++y )
 			{
-				local tile = this.World.getTileSquare(x, y);
-
-				if (tile.Type == this.Const.World.TerrainType.Ocean)
+				if (!this.World.isValidTileSquare(x, y))
 				{
 				}
 				else
 				{
-					local s = this.Math.rand(0, 3);
+					local tile = this.World.getTileSquare(x, y);
 
-					if (tile.Type == this.Const.World.TerrainType.Mountains)
+					if (tile.Type == this.Const.World.TerrainType.Ocean)
 					{
-						s = s - 10;
 					}
-
-					if (tile.HasRoad)
+					else
 					{
-						s = s + 10;
-					}
+						local s = this.Math.rand(0, 3);
 
-					tiles.push({
-						Tile = tile,
-						Score = s
-					});
+						if (tile.Type == this.Const.World.TerrainType.Mountains)
+						{
+							s = s - 10;
+						}
+
+						if (tile.HasRoad)
+						{
+							s = s + 10;
+						}
+
+						tiles.push({
+							Tile = tile,
+							Score = s
+						});
+					}
 				}
 			}
 		}
