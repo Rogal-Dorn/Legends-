@@ -209,7 +209,7 @@ this.female_adventurous_noble_background <- this.inherit("scripts/skills/backgro
 		items.equip(this.Const.World.Common.pickHelmet([
 			[1, "nasal_helmet"],
 			[1, "padded_nasal_helmet"],
-			[1, "nasal_helmey_with_mail"],
+			[1, "nasal_helmet_with_mail"],
 			[1, "mail_coif"],
 			[1, ""]
 		]));
@@ -325,7 +325,7 @@ this.female_adventurous_noble_background <- this.inherit("scripts/skills/backgro
 		items.equip(this.Const.World.Common.pickHelmet([
 			[1, "nasal_helmet"],
 			[1, "padded_nasal_helmet"],
-			[1, "nasal_helmey_with_mail"],
+			[1, "nasal_helmet_with_mail"],
 			[1, "mail_coif"],
 			[1, ""]
 		]));
