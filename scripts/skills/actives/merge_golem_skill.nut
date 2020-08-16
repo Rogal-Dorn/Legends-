@@ -83,6 +83,7 @@ this.merge_golem_skill <- this.inherit("scripts/skills/skill", {
 					tile.getEntity().fadeTo(this.createColor("ffffff00"), 150);
 					this.Time.scheduleEvent(this.TimeUnit.Virtual, 200, function ( _entity )
 					{
+						_entity.setIsAlive(false);
 						_entity.onRemovedFromMap();
 						_entity.die();
 					}, tile.getEntity());

@@ -3124,8 +3124,9 @@ this.world_state <- this.inherit("scripts/states/state", {
 				break;
 			}
 
+			this.logInfo("distance: " + this.m.LastTileHovered.getDistanceTo(this.getPlayer().getTile()));
+			this.logInfo("y: " + this.m.LastTileHovered.SquareCoords.Y);
 			this.logInfo("type: " + this.m.LastTileHovered.Type);
-			this.logInfo("tactical type: " + this.Const.World.TerrainTacticalTemplate[this.m.LastTileHovered.TacticalType]);
 			return true;
 
 		case 21:

@@ -197,7 +197,7 @@ this.manhunters_scenario <- this.inherit("scripts/scenarios/world/starting_scena
 	{
 		this.World.Assets.m.BrothersMax = 25;
 		this.World.Assets.m.BrothersMaxInCombat = 16;
-		this.World.Assets.m.BrothersScaleMax = 14;
+		this.World.Assets.m.BrothersScaleMax = 16;
 	}
 
 });

@@ -277,6 +277,11 @@ this.world_town_screen <- {
 			this.m.LastActiveModule = null;
 			this.Tooltip.hide();
 			this.m.JSHandle.asyncCall("showMainDialog", this.queryAssetsInformation());
+
+			if (this.World.Assets.isIronman())
+			{
+				this.World.presave();
+			}
 		}
 	}
 

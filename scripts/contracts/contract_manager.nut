@@ -213,11 +213,6 @@ this.contract_manager <- {
 		{
 			this.Sound.play("sounds/scribble.wav");
 		}
-
-		if (!_alreadyStarted && this.World.Assets.isIronman())
-		{
-			this.World.presave();
-		}
 	}
 
 	function updateActiveContract()

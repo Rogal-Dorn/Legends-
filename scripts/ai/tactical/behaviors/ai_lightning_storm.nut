@@ -121,6 +121,11 @@ this.ai_lightning_storm <- this.inherit("scripts/ai/tactical/behavior", {
 
 		foreach( target in _targets )
 		{
+			if (target.Actor.getType() == this.Const.EntityType.Wardog || target.Actor.getType() == this.Const.EntityType.ArmoredWardog || target.Actor.getType() == this.Const.EntityType.Warhound)
+			{
+				continue;
+			}
+
 			local x = target.Actor.getTile().SquareCoords.X;
 			local score = this.queryTargetValue(_entity, target.Actor, this.m.Skill);
 

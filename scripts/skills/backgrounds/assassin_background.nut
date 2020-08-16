@@ -45,6 +45,7 @@ this.assassin_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Bodies = this.Const.Bodies.Skinny;
 		this.m.Level = 4;
+		this.m.IsCombatBackground = true;
 	}
 
 	function getTooltip()

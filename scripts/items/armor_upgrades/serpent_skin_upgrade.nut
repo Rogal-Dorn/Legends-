@@ -52,7 +52,7 @@ this.serpent_skin_upgrade <- this.inherit("scripts/items/armor_upgrades/armor_up
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Reduces damage from firearms by [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color]"
+			text = "Reduces damage from fire and firearms by [color=" + this.Const.UI.Color.NegativeValue + "]33%[/color]"
 		});
 	}
 

@@ -35,6 +35,7 @@ gt.Const.TipOfTheDay <- [
 	"Spears are good defensive weapons due to their Spearwall ability.",
 	"Expect to lose some men.",
 	"Losing is fun.",
+	"Use terrain and chokepoints to your advantage.",
 	"The higher their level, the more your men will demand in wages.",
 	"Selling in rich and big cities will net you the most crowns for your goods.",
 	"Use throwing nets to restrict the movement of particularly dangerous enemies.",

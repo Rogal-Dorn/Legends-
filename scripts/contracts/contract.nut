@@ -1245,6 +1245,7 @@ this.contract <- {
 		local myTile = _pivot;
 		local minDistToLocations = _minDist == 0 ? 0 : this.Math.min(4, _minDist - 1);
 		local used = [];
+		local pathDistanceMult = 2;
 
 		while (1)
 		{
@@ -1254,6 +1255,11 @@ this.contract <- {
 			{
 				_maxDist = _maxDist * 2;
 				_minDist = _minDist / 2;
+			}
+			else if (_needsLandConnection && tries == 2000)
+			{
+				used = [];
+				pathDistanceMult = 4;
 			}
 
 			local x = this.Math.rand(myTile.SquareCoords.X - _maxDist, myTile.SquareCoords.X + _maxDist);
@@ -1298,6 +1304,22 @@ this.contract <- {
 				continue;
 			}
 
+			local abort = false;
+
+			foreach( t in _notOnTerrain )
+			{
+				if (t == tile.Type)
+				{
+					abort = true;
+					break;
+				}
+			}
+
+			if (abort)
+			{
+				continue;
+			}
+
 			if (!_allowRoad)
 			{
 				local hasRoad = false;
@@ -1315,22 +1337,6 @@ this.contract <- {
 				{
 					continue;
 				}
-			}
-
-			local abort = false;
-
-			foreach( t in _notOnTerrain )
-			{
-				if (t == tile.Type)
-				{
-					abort = true;
-					break;
-				}
-			}
-
-			if (abort)
-			{
-				continue;
 			}
 
 			local settlements = this.World.EntityManager.getSettlements();
@@ -1383,7 +1389,7 @@ this.contract <- {
 					continue;
 				}
 
-				for( ; path.getSize() > _maxDist * 2;  )
+				for( ; path.getSize() > _maxDist * pathDistanceMult;  )
 				{
 				}
 			}

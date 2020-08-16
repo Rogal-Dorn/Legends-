@@ -9,7 +9,7 @@ this.lose_fear_greenskins_event <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 25.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_26.png[/img]{%fearful% is staring into the campfire and nodding as he mumbles to himself. It\'s a worrisome sight, but almost on cue of that thought he speaks up.%SPEECH_ON%You know what? The greenskins ain\'t shit.%SPEECH_OFF}",
+			Text = "[img]gfx/ui/events/event_26.png[/img]{%fearful% is staring into the campfire and nodding as he mumbles to himself. It\'s a worrisome sight, but almost on cue of that thought he speaks up.%SPEECH_ON%You know what? The greenskins ain\'t shit.%SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			Characters = [],
