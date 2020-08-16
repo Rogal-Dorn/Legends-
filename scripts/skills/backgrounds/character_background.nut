@@ -1234,7 +1234,8 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		if (actor.getNameOnly() == "")
 		{
 			local names = this.m.Names;
-			if (names == null || this.m.Names.len() == 1)
+
+			if (names == null || this.m.Names.len() == 0)
 			{
 				names = this.Const.Strings.CharacterNames;
 				if (this.m.Ethnicity == 1)
@@ -1278,6 +1279,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 	{
 		return "";
 	}
+
 
 	function onCombatStarted()
 	{

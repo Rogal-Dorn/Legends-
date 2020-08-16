@@ -33,6 +33,12 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 
 	function setGender( _v, _reroll = true)
 	{
+
+		if ("LegendMod" in this.World && !this.World.LegendsMod.Configs().LegendGenderEnabled())
+		{
+			_v = 0;
+		}
+
 		this.m.Gender = _v
 		if(this.m.Gender == 1)
 		{
@@ -41,6 +47,13 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 			this.m.Bodies = this.Const.Bodies.AllFemale;
 			this.m.BeardChance = 0;
 			this.m.Hairs = this.Const.Hair.AllFemale;
+			if (this.m.Ethnicity == 1)
+			{
+				this.m.Bodies = this.Const.Bodies.SouthernFemale;
+				this.m.Faces = this.Const.Faces.SouthernFemale;
+				this.m.Hairs = this.Const.Hair.SouthernFemale;
+				this.m.HairColors = this.Const.HairColors.Southern;
+			}
 
 			if (_reroll)
 			{

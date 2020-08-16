@@ -2049,6 +2049,8 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		}
 
 		local background = this.new("scripts/skills/backgrounds/" + _backgrounds[this.Math.rand(0, _backgrounds.len() - 1)]);
+
+
 		//background.setGender(_gender);
 		this.m.Skills.add(background);
 		//this.m.Background = background;

@@ -301,14 +301,6 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 		this.m.Container.add(this.new("scripts/skills/traits/fearless_trait"));
 		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_1"));
 
-		if (this.m.IsFemaleBackground == true)
-		{
-			actor.setName(this.Const.Strings.LadyNames[this.Math.rand(0, this.Const.Strings.LadyNames.len() - 1)]);
-		}
-		else
-		{
-			actor.setName(this.Const.Strings.KnightNames[this.Math.rand(0, this.Const.Strings.KnightNames.len() - 1)]);
-		}
 	}
 
 	function onAddEquipment()

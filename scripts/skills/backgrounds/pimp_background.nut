@@ -126,11 +126,6 @@ this.pimp_background <- this.inherit("scripts/skills/backgrounds/character_backg
 		return c;
 	}
 
-	function onAdded()
-	{
-		this.character_background.onAdded();
-	}
-
 	function onAddEquipment()
 	{
 		local items = this.getContainer().getActor().getItems();

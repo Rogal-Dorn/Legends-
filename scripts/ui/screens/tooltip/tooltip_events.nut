@@ -4576,17 +4576,43 @@ this.tooltip_events <- {
 						text = "If enabled, all recruits for hire will have a unique perk tree including new Legends perks. \n\n Detail: Dynamic perk trees are half determined by background, and half randomly chosen from perk groups. Perk groups align around a theme, and you can see hints about the perks of potential recruits in their background description. Recruits will also have their stats and talents modifed to align with their new perks"
 					}
 				];
-		case "mapconfig.legendgenderequality":
+		case "mapconfig.legendgenderequality_off":
 			return [
 					{
 						id = 1,
 						type = "title",
-						text = "Battle Sisters"
+						text = "No Battle Sisters"
 					},
 					{
 						id = 2,
 						type = "description",
-						text = "If enabled, battle sister backgrounds will be recruitable."
+						text = "The vanilla experience. No backgrounds or enemy encounters with females. (Yes, your friend the Hex is still here!)"
+					}
+				];
+		case "mapconfig.legendgenderequality_low":
+			return [
+					{
+						id = 1,
+						type = "title",
+						text = "Selected Battle Sisters"
+					},
+					{
+						id = 2,
+						type = "description",
+						text = "Legend curated female backgrounds and enemies can be found and recruited throughout your adventure."
+					}
+				];
+		case "mapconfig.legendgenderequality_high":
+			return [
+					{
+						id = 1,
+						type = "title",
+						text = "Woman can do anything"
+					},
+					{
+						id = 2,
+						type = "description",
+						text = "All commanders and most backgrounds will have a chance of being any gender"
 					}
 				];
 		case "mapconfig.legendmagic":
