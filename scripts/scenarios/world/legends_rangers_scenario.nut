@@ -164,7 +164,7 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 		return false;
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 
 		local r;

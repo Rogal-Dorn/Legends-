@@ -185,7 +185,7 @@ this.legends_sisterhood_scenario <- this.inherit("scripts/scenarios/world/starti
 		return false;
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 		if (_list.len() >= 10)
 		{

@@ -191,7 +191,7 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 		}
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 		if (_list.len() < 10)
 		{

@@ -86,36 +86,6 @@ this.female_thief_background <- this.inherit("scripts/skills/backgrounds/charact
 		}
 	}
 
-	//Default Female
-	function setGender(_gender = -1)
-	{
-		local r = _gender;
-		if (_gender == -1)
-		{
-			r = 1;
-			if (this.World.LegendsMod.Configs().LegendGenderEnabled())
-			{
-				r = this.Math.rand(0, 1);
-			}
-		}
-
-		if (r == 1)
-		{
-			return
-		}
-		this.m.Faces = this.Const.Faces.AllMale;
-		this.m.Hairs = this.Const.Hair.CommonMale;
-		this.m.HairColors = this.Const.HairColors.Young;
-		this.m.Beards = this.Const.Beards.All;
-
-		this.m.BeardChance = 50;
-		this.m.IsFemaleBackground = false;
-		this.m.BackgroundDescription = "A good thief will have quick reflexes and the ability to evade any captors.";
-		this.m.GoodEnding = "%name% the pickpocket retired from fighting and disappeared off the map. You haven\'t heard word of the man since, but there are rumors that a certain nobleman had one of his pockets completely drained in broad daylight during a public address.";
-		this.m.BadEnding = "%name% the pickpocket read the lines being drawn in the sands and retired from the %companyname% while he still could. He took what money he had made and threw together a crew of thieves and brigands. Last you heard, he pulled off a perfect heist only for one of his partners to stab him in the back and take off with all the goods.";
-
-	}
-
 	function getTooltip()
 	{
 		return [

@@ -186,7 +186,7 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		this.World.Assets.m.FootprintVision = 1.5;
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 		if (_list.len() < 10)
 		{

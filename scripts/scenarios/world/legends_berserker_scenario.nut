@@ -216,7 +216,7 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 	}
 
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 		if (_list.len() <= 5)
 		{

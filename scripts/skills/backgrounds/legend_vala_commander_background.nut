@@ -11,6 +11,7 @@ this.legend_vala_commander_background <- this.inherit("scripts/skills/background
 		this.m.BadEnding = null;
 		this.m.HiringCost = 240;
 		this.m.DailyCost = 0;
+		this.m.Ethnicity = 2;
 		this.m.Excluded = [
 			"trait.asthmatic",
 			"trait.clumsy",
@@ -227,16 +228,6 @@ this.legend_vala_commander_background <- this.inherit("scripts/skills/background
 		return c;
 	}
 
-	function onAdded()
-	{
-		this.character_background.onAdded();
-		local actor = this.getContainer().getActor();
-		actor.setName(this.Const.Strings.CharacterNamesFemaleNorse[this.Math.rand(0, this.Const.Strings.CharacterNamesFemaleNorse.len() - 1)]);
-		actor.setTitle("the Vala");
-		//this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
-		//this.m.Container.add(this.new("scripts/skills/perks/legend_vala_information"));
-		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_1"));
-	}
 
 	function onAddEquipment()
 	{

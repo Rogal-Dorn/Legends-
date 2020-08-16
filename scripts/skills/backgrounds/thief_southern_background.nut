@@ -70,7 +70,7 @@ this.thief_southern_background <- this.inherit("scripts/skills/backgrounds/thief
 		local items = this.getContainer().getActor().getItems();
 		local r;
 		items.equip(this.new("scripts/items/weapons/knife"));
-		
+
 		//todo legends armor
 
 		r = this.Math.rand(1, 2);
@@ -78,7 +78,7 @@ this.thief_southern_background <- this.inherit("scripts/skills/backgrounds/thief
 			[1, "oriental/nomad_head_wrap"]
 		]);
 		items.equip(helm);
-	}	
+	}
 
 });
 

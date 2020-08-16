@@ -84,35 +84,6 @@ this.thief_background <- this.inherit("scripts/skills/backgrounds/character_back
 		}
 	}
 
-	//Default Male
-	function setGender(_gender = -1)
-	{
-		local r = _gender;
-		if (_gender == -1)
-		{
-			r = 0;
-			if (this.World.LegendsMod.Configs().LegendGenderEnabled())
-			{
-				r = this.Math.rand(0, 1);
-			}
-		}
-
-		if (r != 1)
-		{
-			return
-		}
-		this.m.Faces = this.Const.Faces.PrettyFemale;
-		this.m.Hairs = this.Const.Hair.AllFemale;
-		this.m.HairColors = this.Const.HairColors.Young;
-		this.m.Beards = null;
-		this.m.BeardChance = 0;
-		this.m.Bodies = this.Const.Bodies.AllFemale;
-		this.m.IsFemaleBackground = true;
-		this.m.GoodEnding = "%name% the pickpocket retired from fighting and disappeared off the map. You haven\'t heard word of the woman since, but there are rumors that a certain nobleman had his pockets completely drained in broad daylight during a public address.";
-		this.m.BadEnding = "%name% the thief read the lines being drawn in the sands and retired from the %companyname% while she still could. She took what money she had made and threw together a crew of thieves and brigands. Last you heard, she pulled off a perfect theft only for one of her partners to stab her in the back and take off with all the goods.";
-
-	}
-
 	function getTooltip()
 	{
 		return [

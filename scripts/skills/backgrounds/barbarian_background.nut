@@ -38,6 +38,7 @@ this.barbarian_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.Hairs = this.Const.Hair.WildMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.WildExtended;
+		this.m.Ethnicity = 2;
 
 		this.m.IsFemaleBackground = false;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
@@ -133,20 +134,6 @@ this.barbarian_background <- this.inherit("scripts/skills/backgrounds/character_
 		{
 			return "{%name% survived the battle between yourself and his own tribe of warriors. He offered himself to your company or to your sword. Impressed by his bravery, you chose to take him in. A foreign brute, he hardly speaks your native tongue and he is not well liked by the rest of the company. But if anything can bond two men it is fighting beside one another, killing when it counts, and drinking the night away at the tavern.}";
 		}
-	}
-
-	function onAdded()
-	{
-		if (this.m.IsNew && this.m.IsFemaleBackground == false)
-		{
-			this.getContainer().getActor().setName(this.Const.Strings.BarbarianNames[this.Math.rand(0, this.Const.Strings.BarbarianNames.len() - 1)]);
-		}
-		if (this.m.IsNew && this.m.IsFemaleBackground == true)
-		{
-			this.getContainer().getActor().setName(this.Const.Strings.CharacterNamesFemaleNorse[this.Math.rand(0, this.Const.Strings.CharacterNamesFemaleNorse.len() - 1)]);
-		}
-
-		this.character_background.onAdded();
 	}
 
 	function onSetAppearance()

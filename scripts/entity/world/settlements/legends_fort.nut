@@ -2,6 +2,7 @@ this.legends_fort <- this.inherit("scripts/entity/world/settlement", {
 	m = {
 		Names = [],
 		DraftLists = [],
+		FemaleDraftLists = [],
 		StablesLists = []
 	},
 	function create()
@@ -139,7 +140,13 @@ this.legends_fort <- this.inherit("scripts/entity/world/settlement", {
 
 	function getDraftList()
 	{
-		return this.m.DraftLists[this.m.Size - 1];
+		local L = clone this.m.DraftLists[this.m.Size - 1];
+		if (this.World.LegendsMod.Configs().LegendGenderEnabled())
+		{
+			L.extend(this.m.FemaleDraftLists[this.m.Size - 1]);
+		}
+
+		return L;
 	}
 
 	function getStablesList()

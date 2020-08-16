@@ -30,6 +30,7 @@ this.legend_shieldmaiden_background <- this.inherit("scripts/skills/backgrounds/
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
 		this.m.Bodies = this.Const.Bodies.AllFemale;
+		this.m.Ethnicity = 2;
 		this.m.Level = this.Math.rand(1, 2);
 		this.m.IsCombatBackground = true;
 		this.m.IsFemaleBackground = true;
@@ -124,14 +125,6 @@ this.legend_shieldmaiden_background <- this.inherit("scripts/skills/backgrounds/
 			]
 		};
 		return c;
-	}
-
-	function onAdded()
-	{
-		this.character_background.onAdded();
-		local actor = this.getContainer().getActor();
-		actor.setName(this.Const.Strings.CharacterNamesFemaleNorse[this.Math.rand(0, this.Const.Strings.CharacterNamesFemaleNorse.len() - 1)]);
-		actor.setTitle("the Shieldmaiden");
 	}
 
 	function onAddEquipment()

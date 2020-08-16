@@ -56,7 +56,8 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 		this.m.Hairs = this.Const.Hair.Berserker;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.Berserker;
-		this.m.Bodies = this.Const.Bodies.LegendTattos
+		this.m.Bodies = this.Const.Bodies.LegendTattos;
+		this.m.Ethnicity = 2;
 		this.m.BeardChance = 100;
 		this.m.Level = 3;
 		this.m.IsCombatBackground = true;
@@ -277,21 +278,6 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 			]
 		};
 		return c;
-	}
-
-	function onAdded()
-	{
-		this.character_background.onAdded();
-		local actor = this.getContainer().getActor();
-
-		if (this.m.IsFemaleBackground == true)
-		{
-			actor.setName(this.Const.Strings.CharacterNamesFemaleNorse[this.Math.rand(0, this.Const.Strings.CharacterNamesFemaleNorse.len() - 1)]);
-		}
-		else
-		{
-			actor.setName(this.Const.Strings.BarbarianNames[this.Math.rand(0, this.Const.Strings.BarbarianNames.len() - 1)]);
-		}
 	}
 
 	function onSetAppearance()
