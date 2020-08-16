@@ -341,12 +341,25 @@ this.strategy <- {
 				continue;
 			}
 
+			local isEngaged = false;
 			local shortestDist = 9999;
 			local shortestDistNotMoved = 9999;
 
 			foreach( enemy in enemies )
 			{
-				local d = allyTile.getDistanceTo(enemy.Entity.getTile());
+				local enemyTile = enemy.Entity.getTile();
+				local d = allyTile.getDistanceTo(enemyTile);
+
+				if (!isEngaged && this.Math.abs(enemyTile.Level - allyTile.Level) <= 1 && (d <= this.Math.min(2, ally.Entity.getIdealRange()) || d <= this.Math.min(2, enemy.Entity.getIdealRange())))
+				{
+					allyEngaged = ++allyEngaged;
+					isEngaged = true;
+
+					if (ally.Entity.getFaction() == this.m.Faction)
+					{
+						this.m.Stats.IsOwnFactionEngaged = true;
+					}
+				}
 
 				if (d < shortestDist)
 				{
@@ -356,25 +369,6 @@ this.strategy <- {
 				if (d < shortestDistNotMoved && ally.Entity.getActionPoints() == ally.Entity.getActionPointsMax())
 				{
 					shortestDistNotMoved = d;
-				}
-
-				if (enemy.HasRangedWeapon)
-				{
-					continue;
-				}
-
-				local enemyTile = enemy.Entity.getTile();
-
-				if (enemy.Entity.getIdealRange() >= enemyTile.getDistanceTo(allyTile) && this.Math.abs(enemyTile.Level - allyTile.Level) <= 1)
-				{
-					allyEngaged = ++allyEngaged;
-
-					if (ally.Entity.getFaction() == this.m.Faction)
-					{
-						this.m.Stats.IsOwnFactionEngaged = true;
-					}
-
-					break;
 				}
 			}
 

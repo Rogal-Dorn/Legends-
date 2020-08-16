@@ -9,7 +9,7 @@ this.sunken_library_location <- this.inherit("scripts/entity/world/location", {
 	{
 		this.location.create();
 		this.m.TypeID = "location.sunken_library";
-		this.m.LocationType = this.Const.World.LocationType.Lair | this.Const.World.LocationType.Unique;
+		this.m.LocationType = this.Const.World.LocationType.Unique;
 		this.m.IsShowingDefenders = false;
 		this.m.IsShowingBanner = false;
 		this.m.IsAttackable = true;

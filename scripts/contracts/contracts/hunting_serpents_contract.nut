@@ -79,7 +79,7 @@ this.hunting_serpents_contract <- this.inherit("scripts/contracts/contract", {
 
 				local playerTile = this.World.State.getPlayer().getTile();
 				local mapSize = this.World.getMapSize();
-				local tile = this.Contract.getTileToSpawnLocation(playerTile, 5, 12, disallowedTerrain);
+				local tile = this.Contract.getTileToSpawnLocation(playerTile, 5, 14, disallowedTerrain);
 				local party;
 				party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).spawnEntity(tile, "Serpents", false, this.Const.World.Spawn.Serpents, 110 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult());
 				party.setDescription("Giant serpents slithering about.");

@@ -161,10 +161,13 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 		}
 		actor.getSprite("socket").setBrush("bust_base_beasts");
 		actor.getSprite("armor").Alpha = 10;
-		actor.getSprite("helmet_bottom").Alpha = 10;
+		actor.getSprite("helmet_vanity_lower").Alpha = 10;
 		actor.getSprite("helmet").Alpha = 10;
 		actor.getSprite("helmet_damage").Alpha = 10;
+		actor.getSprite("helmet_helm").Alpha = 10;
 		actor.getSprite("helmet_top").Alpha = 10;
+		actor.getSprite("helmet_vanity").Alpha = 10;
+
 		actor.getSprite("shield_icon").Alpha = 10;
 		actor.getSprite("armor_layer_chain").Alpha = 10;
 		actor.getSprite("armor_layer_plate").Alpha = 10;
@@ -260,10 +263,12 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("body").setBrush(this.m.Body);
 		actor.getSprite("head").setBrush(this.m.Head);
 		actor.getSprite("armor").Alpha = 255;
-		actor.getSprite("helmet_bottom").Alpha = 255;
+		actor.getSprite("helmet_vanity_lower").Alpha = 255;
 		actor.getSprite("helmet").Alpha = 255;
 		actor.getSprite("helmet_damage").Alpha = 255;
+		actor.getSprite("helmet_helm").Alpha = 255;
 		actor.getSprite("helmet_top").Alpha = 255;
+		actor.getSprite("helmet_vanity").Alpha = 255;
 		actor.getSprite("shield_icon").Alpha = 255;
 		actor.getSprite("armor_layer_chain").Alpha = 255;
 		actor.getSprite("armor_layer_plate").Alpha = 255;

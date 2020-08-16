@@ -4,6 +4,7 @@ this.sand_golem <- this.inherit("scripts/entity/tactical/actor", {
 		Variant = 1,
 		ScaleStartTime = 0,
 		BackupFaction = 0,
+		BackupWorldParty = null,
 		IsShrinking = false,
 		IsSpawningOnTile = false
 	},
@@ -88,6 +89,7 @@ this.sand_golem <- this.inherit("scripts/entity/tactical/actor", {
 		}
 
 		this.m.BackupFaction = this.getFaction();
+		this.m.BackupWorldParty = this.m.WorldTroop != null && ("Party" in this.m.WorldTroop) && this.m.WorldTroop.Party != null && !this.m.WorldTroop.Party.isNull() ? this.m.WorldTroop.Party : null;
 
 		if (_tile != null && this.getSize() > 1)
 		{
@@ -125,7 +127,7 @@ this.sand_golem <- this.inherit("scripts/entity/tactical/actor", {
 					local rock = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/sand_golem", tile.Coords.X, tile.Coords.Y);
 					rock.setFaction(this.getFaction());
 
-					if (this.getWorldTroop() != null && ("Party" in this.getWorldTroop()) && this.getWorldTroop().Party != null)
+					if (this.getWorldTroop() != null && ("Party" in this.getWorldTroop()) && this.getWorldTroop().Party != null && !this.m.WorldTroop.Party.isNull())
 					{
 						local e;
 
@@ -238,19 +240,19 @@ this.sand_golem <- this.inherit("scripts/entity/tactical/actor", {
 		local rock = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/sand_golem", _tile.Coords.X, _tile.Coords.Y);
 		rock.setFaction(this.m.BackupFaction);
 
-		if (this.getWorldTroop() != null && ("Party" in this.getWorldTroop()) && this.getWorldTroop().Party != null)
+		if (this.m.BackupWorldParty != null)
 		{
 			local e;
 
 			if (this.getSize() == 3)
 			{
-				e = this.Const.World.Common.addTroop(this.getWorldTroop().Party.get(), {
+				e = this.Const.World.Common.addTroop(this.m.BackupWorldParty.get(), {
 					Type = this.Const.World.Spawn.Troops.SandGolemMEDIUM
 				}, false);
 			}
 			else
 			{
-				e = this.Const.World.Common.addTroop(this.getWorldTroop().Party.get(), {
+				e = this.Const.World.Common.addTroop(this.m.BackupWorldParty.get(), {
 					Type = this.Const.World.Spawn.Troops.SandGolem
 				}, false);
 			}
@@ -332,8 +334,9 @@ this.sand_golem <- this.inherit("scripts/entity/tactical/actor", {
 			this.setSpriteOffset("status_rooted", this.createVec(-4, 10));
 			this.setSpriteOffset("status_rooted_back", this.createVec(-4, 10));
 
-			if (this.m.WorldTroop != null && ("Party" in this.m.WorldTroop) && this.m.WorldTroop.Party != null)
+			if (this.m.WorldTroop != null && ("Party" in this.m.WorldTroop) && this.m.WorldTroop.Party != null && !this.m.WorldTroop.Party.isNull())
 			{
+				this.logInfo("FFS");
 				this.m.WorldTroop.Script = this.Const.World.Spawn.Troops.SandGolemMEDIUM.Script;
 				this.m.WorldTroop.Strength = this.Const.World.Spawn.Troops.SandGolemMEDIUM.Strength;
 			}
@@ -354,7 +357,7 @@ this.sand_golem <- this.inherit("scripts/entity/tactical/actor", {
 			this.setSpriteOffset("status_rooted_back", this.createVec(-7, 14));
 			b.IsImmuneToKnockBackAndGrab = true;
 
-			if (this.m.WorldTroop != null && ("Party" in this.m.WorldTroop) && this.m.WorldTroop.Party != null)
+			if (this.m.WorldTroop != null && ("Party" in this.m.WorldTroop) && this.m.WorldTroop.Party != null && !this.m.WorldTroop.Party.isNull())
 			{
 				this.m.WorldTroop.Script = this.Const.World.Spawn.Troops.SandGolemHIGH.Script;
 				this.m.WorldTroop.Strength = this.Const.World.Spawn.Troops.SandGolemHIGH.Strength;
@@ -490,7 +493,7 @@ this.sand_golem <- this.inherit("scripts/entity/tactical/actor", {
 	{
 		this.actor.onRemovedFromMap();
 
-		if (this.m.WorldTroop != null && ("Party" in this.m.WorldTroop) && this.m.WorldTroop.Party != null)
+		if (!this.m.IsAlive && this.m.WorldTroop != null && ("Party" in this.m.WorldTroop) && this.m.WorldTroop.Party != null && !this.m.WorldTroop.Party.isNull())
 		{
 			this.m.WorldTroop.Party.removeTroop(this.m.WorldTroop);
 		}

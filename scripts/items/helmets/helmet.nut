@@ -367,6 +367,11 @@ this.helmet <- this.inherit("scripts/items/item", {
 		_properties.Vision += this.getVision();
 	}
 
+	function upgradeIsBlocked(_slot)
+	{
+		return true;
+	}
+
 	function onSerialize( _out )
 	{
 		this.item.onSerialize(_out);

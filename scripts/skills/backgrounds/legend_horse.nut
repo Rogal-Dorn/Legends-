@@ -139,12 +139,9 @@ this.legend_horse <- this.inherit("scripts/skills/backgrounds/character_backgrou
 			body.Saturation = sprite.Saturation;
 		}
 
-		if (this.m.Body != null)
-		{
-			local body = this.m.Bodies[this.m.Variant];
-			actor.getSprite("body").setBrush(body);
-			actor.getSprite("injury_body").setBrush(body + "_injured");
-		}
+		local body = this.m.Bodies[this.m.Variant];
+		actor.getSprite("body").setBrush(body);
+		actor.getSprite("injury_body").setBrush(body + "_injured");
 
 		this.onSetAppearance();
 	}

@@ -1083,8 +1083,11 @@ this.turn_sequence_bar <- this.inherit("scripts/ui/screens/ui_module", {
 
 	function checkBattleEndedCondition()
 	{
-		this.Tactical.Entities.checkCombatFinished();
-		this.m.IsBattleEnded = this.Tactical.Entities.isCombatFinished();
+		this.Time.scheduleEvent(this.TimeUnit.Real, 50, function ( _d )
+		{
+			this.Tactical.Entities.checkCombatFinished();
+			_d.m.IsBattleEnded = this.Tactical.Entities.isCombatFinished();
+		}.bindenv(this), this);
 	}
 
 	function moveToEntity( _entity, _jumpToEntity = false, _force = false )

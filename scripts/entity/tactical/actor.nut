@@ -471,7 +471,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 
 		if (item == null)
 		{
-			return 1;
+			return this.getAIAgent().getProperties().EngageRangeIdeal;
 		}
 		else
 		{
@@ -3374,7 +3374,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 		this.m.IsTurnDone = true;
 		this.m.IsAlive = false;
 
-		if (this.m.WorldTroop != null && ("Party" in this.m.WorldTroop) && this.m.WorldTroop.Party != null)
+		if (this.m.WorldTroop != null && ("Party" in this.m.WorldTroop) && this.m.WorldTroop.Party != null && !this.m.WorldTroop.Party.isNull())
 		{
 			this.m.WorldTroop.Party.removeTroop(this.m.WorldTroop);
 		}

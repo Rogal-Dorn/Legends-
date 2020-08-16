@@ -54,6 +54,7 @@ this.assassin_southern_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.m.Ethnicity = 1;
 		this.m.Names = this.Const.Strings.SouthernNames;
 		this.m.LastNames = this.Const.Strings.SouthernNamesLast;
+		this.m.IsCombatBackground = true;
 	}
 
 	function getTooltip()

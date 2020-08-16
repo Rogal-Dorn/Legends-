@@ -927,6 +927,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	{
 		this.actor.resetRenderEffects();
 		this.m.IsAlive = true;
+		this.m.IsAbleToDie = true;
 		this.m.Hitpoints = this.Math.max(1, this.m.Hitpoints);
 		this.m.MaxEnemiesThisTurn = 1;
 
@@ -2463,6 +2464,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		}
 
 		this.m.IsTurnDone = true;
+		this.m.IsAbleToDie = false;
 		this.Tactical.getRetreatRoster().add(this);
 		this.removeFromMap();
 		this.Tactical.Entities.setLastCombatResult(this.Const.Tactical.CombatResult.PlayerRetreated);

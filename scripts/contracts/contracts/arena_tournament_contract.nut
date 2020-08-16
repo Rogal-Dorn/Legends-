@@ -42,6 +42,7 @@ this.arena_tournament_contract <- this.inherit("scripts/contracts/contract", {
 		}
 
 		this.m.Flags.set("Round", 1);
+		this.m.Flags.set("RewardApplied", 0);
 		this.m.Flags.set("Opponents1", this.getOpponents(1).I);
 		this.m.Flags.set("Opponents2", this.getOpponents(2).I);
 		this.m.Flags.set("Opponents3", this.getOpponents(3).I);
@@ -541,7 +542,7 @@ this.arena_tournament_contract <- this.inherit("scripts/contracts/contract", {
 		}
 
 		p.Entities = [];
-		local baseDifficulty = 50 + 10 * this.m.Flags.get("Round");
+		local baseDifficulty = 45 + 10 * this.m.Flags.get("Round");
 		baseDifficulty = baseDifficulty * this.getScaledDifficultyMult();
 		local opponents = this.getOpponents(this.m.Flags.get("Round"), this.m.Flags.get("Opponents" + this.m.Flags.get("Round")));
 		opponents.F(this, baseDifficulty, p.Entities);
@@ -764,14 +765,19 @@ this.arena_tournament_contract <- this.inherit("scripts/contracts/contract", {
 			],
 			function start()
 			{
-				this.World.Statistics.getFlags().increment("ArenaFightsWon", 1);
-
-				if (this.World.Statistics.getFlags().getAsInt("ArenaFightsWon") >= 10)
+				if (this.Flags.getAsInt("RewardsApplied") < 2)
 				{
-					this.updateAchievement("Gladiator", 1, 1);
+					this.Flags.set("RewardsApplied", 2);
+					this.World.Statistics.getFlags().increment("ArenaFightsWon", 1);
+
+					if (this.World.Statistics.getFlags().getAsInt("ArenaFightsWon") >= 10)
+					{
+						this.updateAchievement("Gladiator", 1, 1);
+					}
+
+					this.Contract.updateTraits(this.List);
 				}
 
-				this.Contract.updateTraits(this.List);
 				this.Contract.m.BulletpointsObjectives = [
 					"The next round will start automatically",
 					"Each round will be to the death and you won\'t be able to retreat or loot afterwards",
@@ -807,14 +813,18 @@ this.arena_tournament_contract <- this.inherit("scripts/contracts/contract", {
 			],
 			function start()
 			{
-				this.World.Statistics.getFlags().increment("ArenaFightsWon", 1);
-
-				if (this.World.Statistics.getFlags().getAsInt("ArenaFightsWon") >= 10)
+				if (this.Flags.getAsInt("RewardsApplied") < 3)
 				{
-					this.updateAchievement("Gladiator", 1, 1);
-				}
+					this.Flags.set("RewardsApplied", 3);
+					this.World.Statistics.getFlags().increment("ArenaFightsWon", 1);
 
-				this.Contract.updateTraits(this.List);
+					if (this.World.Statistics.getFlags().getAsInt("ArenaFightsWon") >= 10)
+					{
+						this.updateAchievement("Gladiator", 1, 1);
+					}
+
+					this.Contract.updateTraits(this.List);
+				}
 			}
 
 		});
@@ -841,6 +851,7 @@ this.arena_tournament_contract <- this.inherit("scripts/contracts/contract", {
 			],
 			function start()
 			{
+				this.Flags.set("RewardsApplied", 4);
 				this.World.Statistics.getFlags().increment("ArenaFightsWon", 1);
 
 				if (this.World.Statistics.getFlags().getAsInt("ArenaFightsWon") >= 10)
