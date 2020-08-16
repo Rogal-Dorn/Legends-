@@ -1026,8 +1026,8 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			local hairColor = this.Const.HairColors.Zombie[this.Math.rand(0, this.Const.HairColors.Zombie.len() - 1)];
 
 			local body = actor.getSprite("body");
-			local body = this.m.Bodies[this.Math.rand(0, this.m.Bodies.len() - 1)];
-			body.setBrush(body);
+			local b = this.m.Bodies[this.Math.rand(0, this.m.Bodies.len() - 1)];
+			body.setBrush(b);
 			body.Saturation = 0.5;
 			body.varySaturation(0.2);
 			body.Color = this.createColor("#c1ddaa");
