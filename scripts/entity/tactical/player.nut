@@ -2050,23 +2050,18 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 		local background = this.new("scripts/skills/backgrounds/" + _backgrounds[this.Math.rand(0, _backgrounds.len() - 1)]);
 
-
-		//background.setGender(_gender);
+		if (this.World.LegendsMod.Configs().LegendGenderLevel() == 2)
+		{
+			background.setGender(_gender);
+		}
 		this.m.Skills.add(background);
-		//this.m.Background = background;
-		//this.m.Ethnicity = this.m.Background.getEthnicity();
-		//background.buildAttributes();
+
+		/*Skill onAdded sets these values
+		this.m.Background = background;
+		this.m.Ethnicity = this.m.Background.getEthnicity();
+		background.buildAttributes();
+		*/
 		background.buildDescription();
-
-		// if (this.m.Name.len() == 0)
-		// {
-		// 	this.m.Name = background.m.Names[this.Math.rand(0, background.m.Names.len() - 1)];
-		// }
-
-		// if (this.m.Name.len() == 0 && background.isFemaleBackground() == true)
-		// {
-		// 	this.m.Name = this.Const.Tactical.Common.getRandomPlayerNameFemale();
-		// }
 
 		if (background.isFemaleBackground())
 		{
