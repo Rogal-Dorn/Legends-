@@ -82,10 +82,13 @@ this.legend_hidden_effect <- this.inherit("scripts/skills/skill", {
 				}
 			}
 		actor.getSprite("armor").Alpha = 10;
-		actor.getSprite("helmet_bottom").Alpha = 10;
+		actor.getSprite("helmet_vanity_lower").Alpha = 10;
 		actor.getSprite("helmet").Alpha = 10;
 		actor.getSprite("helmet_damage").Alpha = 10;
+		actor.getSprite("helmet_helm").Alpha = 10;
 		actor.getSprite("helmet_top").Alpha = 10;
+		actor.getSprite("helmet_vanity").Alpha = 10;
+
 		actor.getSprite("shield_icon").Alpha = 10;
 		actor.getSprite("armor_layer_chain").Alpha = 10;
 		actor.getSprite("armor_layer_plate").Alpha = 10;
@@ -118,10 +121,12 @@ this.legend_hidden_effect <- this.inherit("scripts/skills/skill", {
 		this.getContainer().getActor().setHidden(false);
 		local actor = this.getContainer().getActor();
 		actor.getSprite("armor").Alpha = 255;
-		actor.getSprite("helmet_bottom").Alpha = 255;
+		actor.getSprite("helmet_vanity_lower").Alpha = 255;
 		actor.getSprite("helmet").Alpha = 255;
 		actor.getSprite("helmet_damage").Alpha = 255;
+		actor.getSprite("helmet_helm").Alpha = 255;
 		actor.getSprite("helmet_top").Alpha = 255;
+		actor.getSprite("helmet_vanity").Alpha = 255;
 		actor.getSprite("shield_icon").Alpha = 255;
 		actor.getSprite("armor_layer_chain").Alpha = 255;
 		actor.getSprite("armor_layer_plate").Alpha = 255;
