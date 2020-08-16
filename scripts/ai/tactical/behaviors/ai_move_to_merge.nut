@@ -1,6 +1,7 @@
 this.ai_move_to_merge <- this.inherit("scripts/ai/tactical/behavior", {
 	m = {
-		TargetTile = null
+		TargetTile = null,
+		IsWaiting = false
 	},
 	function create()
 	{
@@ -14,6 +15,7 @@ this.ai_move_to_merge <- this.inherit("scripts/ai/tactical/behavior", {
 	{
 		// Function is a generator.
 		this.m.TargetTile = null;
+		this.m.IsWaiting = false;
 		local time = this.Time.getExactTime();
 		local scoreMult = this.getProperties().BehaviorMult[this.m.ID];
 
@@ -58,7 +60,15 @@ this.ai_move_to_merge <- this.inherit("scripts/ai/tactical/behavior", {
 
 		if (currentCount >= 2)
 		{
-			return this.Const.AI.Behavior.Score.Zero;
+			if (_entity.getActionPoints() < 6 && _entity.isAbleToWait())
+			{
+				this.m.IsWaiting = true;
+				return this.Const.AI.Behavior.Score.MoveToMerge * scoreMult;
+			}
+			else
+			{
+				return this.Const.AI.Behavior.Score.Zero;
+			}
 		}
 
 		local entities = this.Tactical.Entities.getInstancesOfFaction(_entity.getFaction());
@@ -209,6 +219,16 @@ this.ai_move_to_merge <- this.inherit("scripts/ai/tactical/behavior", {
 
 	function onExecute( _entity )
 	{
+		if (this.m.IsWaiting && this.Tactical.TurnSequenceBar.entityWaitTurn(_entity))
+		{
+			if (this.Const.AI.VerboseMode)
+			{
+				this.logInfo("* " + _entity.getName() + ": Waiting until others have moved!");
+			}
+
+			return true;
+		}
+
 		local navigator = this.Tactical.getNavigator();
 
 		if (this.m.IsFirstExecuted)
