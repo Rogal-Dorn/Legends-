@@ -156,7 +156,7 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		return false;
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 
 		local r = this.Math.rand(0, 2);

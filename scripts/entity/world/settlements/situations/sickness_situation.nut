@@ -42,16 +42,21 @@ this.sickness_situation <- this.inherit("scripts/entity/world/settlements/situat
 		_modifiers.RecruitsMult *= 0.25;
 	}
 
-	function onUpdateDraftList( _draftList )
+	function onUpdateDraftList( _draftList, _gender )
 	{
 		_draftList.push("cripple_background");
 		_draftList.push("cripple_background");
 		_draftList.push("beggar_background");
 		_draftList.push("beggar_background");
+		_draftList.push("monk_background");
+
+		if (_gender)
+		{
 		_draftList.push("female_beggar_background");
 		_draftList.push("legend_nun_background");
 		_draftList.push("legend_herbalist_background");
-		_draftList.push("monk_background");
+
+		}
 
 		if(this.World.LegendsMod.Configs().LegendMagicEnabled())
 		{

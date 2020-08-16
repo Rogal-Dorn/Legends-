@@ -2065,3 +2065,6 @@ gt.Const.Strings.NecromancerNames <- [
 	"%randomname% the Mad",
 	"%randomname% the Enlightened"
 ];
+
+//TODO need female southern names
+gt.Const.Strings.SouthernFemaleNames <- gt.Const.Strings.CharacterNamesFemale;

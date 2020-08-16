@@ -54,7 +54,7 @@ this.mine_cavein_situation <- this.inherit("scripts/entity/world/settlements/sit
 		while (_stash.removeByID("misc.copper_ingots") != null);
 	}
 
-	function onUpdateDraftList( _draftList )
+	function onUpdateDraftList( _draftList, _gender )
 	{
 		_draftList.push("miner_background");
 		_draftList.push("miner_background");

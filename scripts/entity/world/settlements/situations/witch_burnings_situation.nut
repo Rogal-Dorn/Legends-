@@ -47,7 +47,7 @@ this.witch_burnings_situation <- this.inherit("scripts/entity/world/settlements/
 		_modifiers.FoodPriceMult *= 1.15;
 	}
 
-	function onUpdateDraftList( _draftList )
+	function onUpdateDraftList( _draftList, _gender )
 	{
 		_draftList.push("witchhunter_background");
 		_draftList.push("witchhunter_background");
@@ -72,16 +72,21 @@ this.witch_burnings_situation <- this.inherit("scripts/entity/world/settlements/
 		_draftList.push("witchhunter_background");
 		_draftList.push("witchhunter_background");
 		_draftList.push("witchhunter_background");
-		_draftList.push("female_beggar_background");
-		_draftList.push("female_beggar_background");
-		_draftList.push("female_beggar_background");
+
+		if (_gender)
+		{
+			_draftList.push("female_beggar_background");
+			_draftList.push("female_beggar_background");
+			_draftList.push("female_beggar_background");
+			_draftList.push("legend_nun_background");
+
+		}
 
 		if(this.World.LegendsMod.Configs().LegendMagicEnabled())
 		{
 			_draftList.push("legend_witch_background");
 			_draftList.push("legend_spiritualist_background");
 			_draftList.push("legend_diviner_background");
-			_draftList.push("legend_nun_background");
 			_draftList.push("legend_entrancer_background");
 		}
 

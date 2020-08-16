@@ -41,7 +41,7 @@ this.hunting_season_situation <- this.inherit("scripts/entity/world/settlements/
 		_modifiers.FoodPriceMult *= 0.5;
 	}
 
-	function onUpdateDraftList( _draftList )
+	function onUpdateDraftList( _draftList, _gender )
 	{
 		_draftList.push("hunter_background");
 		_draftList.push("hunter_background");

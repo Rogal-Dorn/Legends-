@@ -126,7 +126,7 @@ this.legends_seer_scenario <- this.inherit("scripts/scenarios/world/starting_sce
 		return false;
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 		if (_list.len() < 10)
 		{

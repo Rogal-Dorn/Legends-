@@ -112,7 +112,7 @@ this.building <- {
 				local p = this.Math.rand(0, 100) * rarityMult;
 				local item;
 				local IsHelm = false;
-				
+
 				// if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 				// {
 				// 	local script = i.S;
@@ -132,7 +132,7 @@ this.building <- {
 				// 		foreach (u in upgrades)
 				// 			if (u == 1)
 				// 				ugs += 1;
-						
+
 				// 		if (ugs > 0)
 				// 			r = this.Math.rand(0, ugs);
 
@@ -150,7 +150,7 @@ this.building <- {
 				// 						break;
 				// 					}
 				// 				}
-							
+
 				// 		}
 				// 	}
 				// }
@@ -232,7 +232,7 @@ this.building <- {
 	{
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 	}
 

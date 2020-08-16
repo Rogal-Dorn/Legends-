@@ -11,7 +11,7 @@ this.guarded_checkpoint_location <- this.inherit("scripts/entity/world/attached_
 		this.m.IsMilitary = true;
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 		if (!this.isActive())
 		{

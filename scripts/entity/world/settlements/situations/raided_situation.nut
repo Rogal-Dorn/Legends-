@@ -42,10 +42,14 @@ this.raided_situation <- this.inherit("scripts/entity/world/settlements/situatio
 		_modifiers.RarityMult *= 0.5;
 	}
 
-	function onUpdateDraftList( _draftList )
+	function onUpdateDraftList( _draftList, _gender )
 	{
+		if (_gender)
+		{
 		_draftList.push("female_beggar_background");
 		_draftList.push("female_beggar_background");
+
+		}
 		_draftList.push("refugee_background");
 		_draftList.push("cripple_background");
 		_draftList.push("cripple_background");

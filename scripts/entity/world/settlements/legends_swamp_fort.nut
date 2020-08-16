@@ -117,14 +117,12 @@ this.legends_swamp_fort <- this.inherit("scripts/entity/world/settlements/legend
 			"ratcatcher_background",
 			"ratcatcher_background",
 			"wildman_background",
-			"wildwoman_background",
 			"witchhunter_background",
 			"bastard_background",
 			"deserter_background",
 			"retired_soldier_background",
-						"cultist_background",
+			"cultist_background",
 			"houndmaster_background",
-			"female_daytaler_background",
 			"hunter_background",
 			"militia_background",
 			"militia_background",
@@ -150,7 +148,6 @@ this.legends_swamp_fort <- this.inherit("scripts/entity/world/settlements/legend
 			"flagellant_background",
 			"ratcatcher_background",
 			"wildman_background",
-			"wildwoman_background",
 			"witchhunter_background",
 			"witchhunter_background",
 			"adventurous_noble_background",
@@ -159,9 +156,8 @@ this.legends_swamp_fort <- this.inherit("scripts/entity/world/settlements/legend
 			"disowned_noble_background",
 			"raider_background",
 			"retired_soldier_background",
-						"apprentice_background",
+			"apprentice_background",
 			"houndmaster_background",
-			"female_beggar_background",
 			"butcher_background",
 			"cultist_background",
 			"gravedigger_background",
@@ -175,10 +171,8 @@ this.legends_swamp_fort <- this.inherit("scripts/entity/world/settlements/legend
 			"wildman_background",
 			"witchhunter_background",
 			"witchhunter_background",
-			"female_adventurous_noble_background",
 			"bastard_background",
 			"deserter_background",
-			"female_disowned_noble_background",
 			"raider_background",
 			"retired_soldier_background"
 		],[
@@ -196,7 +190,6 @@ this.legends_swamp_fort <- this.inherit("scripts/entity/world/settlements/legend
 			"flagellant_background",
 			"ratcatcher_background",
 			"wildman_background",
-			"wildwoman_background",
 			"witchhunter_background",
 			"witchhunter_background",
 			"adventurous_noble_background",
@@ -205,9 +198,8 @@ this.legends_swamp_fort <- this.inherit("scripts/entity/world/settlements/legend
 			"disowned_noble_background",
 			"raider_background",
 			"retired_soldier_background",
-						"apprentice_background",
+			"apprentice_background",
 			"houndmaster_background",
-			"female_beggar_background",
 			"butcher_background",
 			"cultist_background",
 			"gravedigger_background",
@@ -221,12 +213,24 @@ this.legends_swamp_fort <- this.inherit("scripts/entity/world/settlements/legend
 			"wildman_background",
 			"witchhunter_background",
 			"witchhunter_background",
-			"female_adventurous_noble_background",
 			"bastard_background",
 			"deserter_background",
-			"female_disowned_noble_background",
 			"raider_background",
 			"retired_soldier_background"
+		]];
+		this.m.FemaleDraftLists = [[
+			"wildwoman_background",
+			"female_daytaler_background"
+		],[
+			"wildwoman_background",
+			"female_beggar_background",
+			"female_adventurous_noble_background",
+			"female_disowned_noble_background"
+		],[
+			"wildwoman_background",
+			"female_beggar_background",
+			"female_adventurous_noble_background",
+			"female_disowned_noble_background"
 		]];
 		this.m.StablesLists = [[
 			"legend_donkey",

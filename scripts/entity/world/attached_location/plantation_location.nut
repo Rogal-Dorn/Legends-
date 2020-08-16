@@ -22,7 +22,7 @@ this.plantation_location <- this.inherit("scripts/entity/world/attached_location
 		_list.push("trade/spices_item");
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 		if (!this.isActive())
 		{

@@ -195,7 +195,7 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		_tree[0].push(this.Const.Perks.PerkDefs.LegendLeap);
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 		if (_list.len() < 5)
 		{
@@ -211,7 +211,7 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 			_list.push("minstrel_background");
 			}
 			r = this.Math.rand(0, 6);
-			if (r == 0)
+			if (r == 0 && _gender)
 			{
 			_list.push("female_minstrel_background");
 			}
@@ -235,7 +235,7 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 			_list.push("minstrel_background");
 			}
 			r = this.Math.rand(0, 6);
-			if (r == 0)
+			if (r == 0 && _gender)
 			{
 			_list.push("female_minstrel_background");
 			}

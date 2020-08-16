@@ -233,15 +233,19 @@ this.harbor_location <- this.inherit("scripts/entity/world/attached_location", {
 		return true;
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 		if (!this.isActive())
 		{
 			return;
 		}
-		_list.push("female_butcher_background");
-		_list.push("female_butcher_background");
 		_list.push("fisherman_background");
+		if (_gender)
+		{
+		_list.push("female_butcher_background");
+		_list.push("female_butcher_background");
+
+		}
 
 		if(this.World.LegendsMod.Configs().LegendMagicEnabled())
 		{

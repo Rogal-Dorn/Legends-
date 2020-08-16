@@ -34,7 +34,7 @@ this.seasonal_fair_situation <- this.inherit("scripts/entity/world/settlements/s
 		_modifiers.RecruitsMult *= 1.25;
 	}
 
-	function onUpdateDraftList( _draftList )
+	function onUpdateDraftList( _draftList, _gender )
 	{
 		_draftList.push("peddler_background");
 		_draftList.push("peddler_background");
@@ -60,9 +60,13 @@ this.seasonal_fair_situation <- this.inherit("scripts/entity/world/settlements/s
 		_draftList.push("minstrel_background");
 		_draftList.push("minstrel_background");
 		_draftList.push("minstrel_background");
+		if (_gender)
+		{
 		_draftList.push("female_minstrel_background");
 		_draftList.push("female_minstrel_background");
 		_draftList.push("female_minstrel_background");
+
+		}
 	}
 
 });

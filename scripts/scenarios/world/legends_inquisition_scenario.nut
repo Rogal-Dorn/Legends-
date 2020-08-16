@@ -318,7 +318,7 @@ local cloths = [
 		_tree[0].push(this.Const.Perks.PerkDefs.LegendMindOverBody);
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 		if (_list.len() < 5)
 		{
@@ -334,7 +334,7 @@ local cloths = [
 			_list.push("monk_background");
 			}
 			r = this.Math.rand(0, 6);
-			if (r == 0)
+			if (r == 0 && _gender)
 			{
 			_list.push("legend_nun_background");
 			}
@@ -363,7 +363,7 @@ local cloths = [
 				_list.push("monk_background");
 			}
 			r = this.Math.rand(0, 4);
-			if (r == 0)
+			if (r == 0 && _gender)
 			{
 				_list.push("legend_nun_background");
 			}

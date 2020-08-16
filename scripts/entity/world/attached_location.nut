@@ -220,7 +220,7 @@ this.attached_location <- this.inherit("scripts/entity/world/location", {
 	{
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 	}
 

@@ -49,7 +49,7 @@ this.legend_upgrading_locations_effort_situation <- this.inherit("scripts/entity
 		this.situation.onDeserialize(_in);
 	}
 
-	function onUpdateDraftList( _draftList )
+	function onUpdateDraftList( _draftList, _gender )
 	{
 		if (_settlement.isSouthern())
 		{
@@ -76,7 +76,7 @@ this.legend_upgrading_locations_effort_situation <- this.inherit("scripts/entity
 
 			_draftList.push("legend_inventor_background");
 
-			if (this.World.LegendsMod.Configs().LegendGenderEnabled())
+			if (_gender)
 			{
 				_draftList.push("female_daytaler_background");
 			}

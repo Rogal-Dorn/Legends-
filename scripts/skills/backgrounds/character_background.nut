@@ -13,7 +13,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		Ethnicity = 0,
 		Level = 1,
 		BeardChance = 60,
-		Names = this.Const.Strings.CharacterNames,
+		Names = [],
 		LastNames = [],
 		Titles = [],
 		RawDescription = "",
@@ -1202,33 +1202,76 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 
 		local actor = this.getContainer().getActor();
 		actor.m.Background = this;
+		actor.m.Ethnicity = this.m.Ethnicity;
 
-		if (this.m.IsNew && !(("State" in this.Tactical) && this.Tactical.State != null && this.Tactical.State.isScenarioMode()))
+		if (!this.m.IsNew)
 		{
-			this.m.IsNew = false;
-
-			if (actor.getTitle() == "" && this.m.LastNames.len() != 0 && this.Math.rand(0, 1) == 1)
-			{
-				actor.setTitle(this.m.LastNames[this.Math.rand(0, this.m.LastNames.len() - 1)]);
-			}
-
-			if (actor.getTitle() == "" && this.m.Titles.len() != 0 && this.Math.rand(0, 3) == 3)
-			{
-				actor.setTitle(this.m.Titles[this.Math.rand(0, this.m.Titles.len() - 1)]);
-			}
-
-			this.m.Level += actor.m.Background.calculateAdditionalRecruitmentLevels();
-
-			if (this.m.Level != 1)
-			{
-				actor.m.PerkPoints = this.m.Level - 1;
-				actor.m.LevelUps = this.m.Level - 1;
-				actor.m.Level = this.m.Level;
-				actor.m.XP = this.Const.LevelXP[this.m.Level - 1];
-			}
-
+			return;
 		}
 
+		if (("State" in this.Tactical) && this.Tactical.State != null && this.Tactical.State.isScenarioMode())
+		{
+			return;
+		}
+
+		this.m.IsNew = false;
+
+		if (this.m.LastNames.len() == 0 && this.m.Ethnicity == 1)
+		{
+			this.m.LastNames = this.Const.Strings.SouthernNamesLast;
+		}
+
+		if (actor.getTitle() == "" && this.m.LastNames.len() != 0 && this.Math.rand(0, 1) == 1)
+		{
+			actor.setTitle(this.m.LastNames[this.Math.rand(0, this.m.LastNames.len() - 1)]);
+		}
+
+		if (actor.getTitle() == "" && this.m.Titles.len() != 0 && this.Math.rand(0, 3) == 3)
+		{
+			actor.setTitle(this.m.Titles[this.Math.rand(0, this.m.Titles.len() - 1)]);
+		}
+
+		if (actor.getNameOnly() == "")
+		{
+			local names = this.m.Names;
+			if (names == null || this.m.Names.len() == 1)
+			{
+				names = this.Const.Strings.CharacterNames;
+				if (this.m.Ethnicity == 1)
+				{
+					names = this.Const.Strings.SouthernNames;
+				}
+				else if (this.m.Ethnicity == 2)
+				{
+					names = this.Const.Strings.BarbarianNames
+				}
+
+				if (this.m.IsFemaleBackground)
+				{
+					names = this.Const.Strings.CharacterNamesFemale;
+					if (this.m.Ethnicity == 1)
+					{
+						names = this.Const.Strings.SouthernFemaleNames;
+					}
+					else if (this.m.Ethnicity == 2)
+					{
+						names = this.Const.Strings.CharacterNamesFemaleNorse;
+					}
+				}
+			}
+
+			actor.setName(names[this.Math.rand(0, names.len() - 1)]);
+		}
+
+		this.m.Level += actor.m.Background.calculateAdditionalRecruitmentLevels();
+
+		if (this.m.Level != 1)
+		{
+			actor.m.PerkPoints = this.m.Level - 1;
+			actor.m.LevelUps = this.m.Level - 1;
+			actor.m.Level = this.m.Level;
+			actor.m.XP = this.Const.LevelXP[this.m.Level - 1];
+		}
 	}
 
 	function onBuildDescription()

@@ -35,7 +35,7 @@ this.arena_tournament_situation <- this.inherit("scripts/entity/world/settlement
 	{
 	}
 
-	function onUpdateDraftList( _draftList )
+	function onUpdateDraftList( _draftList, _gender )
 	{
 		_draftList.push("gladiator_background");
 		_draftList.push("gladiator_background");

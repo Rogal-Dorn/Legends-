@@ -41,7 +41,7 @@ this.draught_situation <- this.inherit("scripts/entity/world/settlements/situati
 		_modifiers.FoodPriceMult *= 2.0;
 	}
 
-	function onUpdateDraftList( _draftList )
+	function onUpdateDraftList( _draftList, _gender )
 	{
 		_draftList.push("farmhand_background");
 		_draftList.push("farmhand_background");

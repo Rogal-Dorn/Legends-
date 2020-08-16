@@ -111,7 +111,7 @@ this.militia_trainingcamp_oriental_location <- this.inherit("scripts/entity/worl
 		}
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 		if (!this.isActive())
 		{

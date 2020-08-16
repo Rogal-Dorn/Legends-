@@ -4581,12 +4581,12 @@ this.tooltip_events <- {
 					{
 						id = 1,
 						type = "title",
-						text = "Women can do anything"
+						text = "Battle Sisters"
 					},
 					{
 						id = 2,
 						type = "description",
-						text = "If enabled, all commanders and most backgrounds will have a chance of being any gender. \n\n Detail: If disabled there will still be females, but more rarely and in positions more reflective of historical discrimination."
+						text = "If enabled, battle sister backgrounds will be recruitable."
 					}
 				];
 		case "mapconfig.legendmagic":

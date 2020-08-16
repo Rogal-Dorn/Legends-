@@ -58,7 +58,7 @@ this.surface_iron_vein_location <- this.inherit("scripts/entity/world/attached_l
 		return r;
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 		if (!this.isActive())
 		{

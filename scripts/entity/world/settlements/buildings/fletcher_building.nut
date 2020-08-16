@@ -240,10 +240,14 @@ this.fletcher_building <- this.inherit("scripts/entity/world/settlements/buildin
 		this.fillStash(list, this.m.Stash, 1.25, false);
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 		_list.push("bowyer_background");
-		_list.push("female_bowyer_background");
+		if (_gender)
+		{
+			_list.push("female_bowyer_background");
+		}
+
 	}
 
 	function onSerialize( _out )

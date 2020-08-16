@@ -22,7 +22,7 @@ this.incense_dryer_location <- this.inherit("scripts/entity/world/attached_locat
 		_list.push("trade/incense_item");
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 		if (!this.isActive())
 		{

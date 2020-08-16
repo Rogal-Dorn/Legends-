@@ -44,10 +44,8 @@ this.besieged_situation <- this.inherit("scripts/entity/world/settlements/situat
 		_modifiers.RarityMult *= 0.5;
 	}
 
-	function onUpdateDraftList( _draftList )
+	function onUpdateDraftList( _draftList, _gender )
 	{
-		_draftList.push("female_beggar_background");
-		_draftList.push("female_beggar_background");
 		_draftList.push("cripple_background");
 		_draftList.push("cripple_background");
 		_draftList.push("gravedigger_background");
@@ -55,6 +53,13 @@ this.besieged_situation <- this.inherit("scripts/entity/world/settlements/situat
 		_draftList.push("beggar_background");
 		_draftList.push("deserter_background");
 		_draftList.push("militia_background");
+
+		if (_gender)
+		{
+		_draftList.push("female_beggar_background");
+		_draftList.push("female_beggar_background");
+
+		}
 	}
 
 });

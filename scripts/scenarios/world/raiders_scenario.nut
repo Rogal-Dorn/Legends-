@@ -317,7 +317,7 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		return this.Math.rand(1, 100) <= 15;
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 		if (_list.len() >= 10)
 		{

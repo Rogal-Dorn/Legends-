@@ -20,6 +20,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		SoundsAtNight = [],
 		Situations = [],
 		DraftList = [],
+		FemaleDraftList = [],
 		StablesList = [],
 		Rumors = [],
 		Size = 1,
@@ -85,7 +86,13 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 	function getDraftList()
 	{
-		return this.m.DraftList;
+		local L = clone this.m.DraftList;
+		if (this.World.LegendsMod.Configs().LegendGenderEnabled())
+		{
+			L.extend(this.m.FemaleDraftList)
+		}
+
+		return L;
 	}
 
 	function getStablesList()
@@ -1655,27 +1662,28 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 		local maxRecruits = this.Math.rand(rosterMin, rosterMax);
 		local draftList;
-		draftList = clone this.getDraftList();
+		draftList = this.getDraftList();
 
+		local gender = this.World.LegendsMod.Configs().LegendGenderEnabled();
 		foreach( loc in this.m.AttachedLocations )
 		{
-			loc.onUpdateDraftList(draftList);
+			loc.onUpdateDraftList(draftList, gender);
 		}
 
 		foreach( b in this.m.Buildings )
 		{
 			if (b != null)
 			{
-				b.onUpdateDraftList(draftList);
+				b.onUpdateDraftList(draftList, gender);
 			}
 		}
 
 		foreach( s in this.m.Situations )
 		{
-			s.onUpdateDraftList(draftList);
+			s.onUpdateDraftList(draftList, gender);
 		}
 
-		this.World.Assets.getOrigin().onUpdateDraftList(draftList);
+		this.World.Assets.getOrigin().onUpdateDraftList(draftList, gender);
 
 		while (maxRecruits > current.len())
 		{

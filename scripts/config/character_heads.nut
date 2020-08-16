@@ -85,6 +85,7 @@ gt.Const.HairColors.Southern <- [
 	"brown",
 	"brown"
 ];
+
 gt.Const.HairColors.SouthernYoung <- [
 	"brown"
 ];
@@ -189,10 +190,6 @@ gt.Const.Faces.AllFemale <- [
 	"bust_head_female_15",
 	"bust_head_female_16"
 ];
-
-gt.Const.Faces.SouthernFemale <- [
-
-]
 
 gt.Const.Faces.PrettyFemale <- [
 	"bust_head_female_01",
@@ -439,6 +436,8 @@ gt.Const.Hair.AllFemale <- [
 	"29",
 	"30"
 ];
+
+
 
 gt.Const.Hair.CommonMale <- [
 	"shaved",
@@ -860,9 +859,7 @@ gt.Const.Bodies.AllFemale <- [
 	"bust_naked_body_03"
 ];
 
-gt.Const.Bodies.FemaleSouthern <- [
-	"bust_naked_southern_female_01"
-];
+
 
 gt.Const.Bodies.Horses <- [
 	"bust_naked_body_100",
@@ -881,4 +878,41 @@ gt.Const.Bodies.Donkeys <- [
 
 gt.Const.Bodies.LegendTattos <- [
 	"bust_naked_body_04"
+]
+
+
+gt.Const.Bodies.SouthernFemale <- [
+	"bust_naked_southern_female_01"
+];
+
+gt.Const.Faces.SouthernFemale <- [
+	"bust_head_southern_female_01",
+	"bust_head_southern_female_02",
+	"bust_head_southern_female_03",
+	"bust_head_southern_female_04",
+	"bust_head_southern_female_05",
+	"bust_head_southern_female_06",
+	"bust_head_southern_female_07"
+]
+
+gt.Const.Hair.SouthernFemale <- [
+	"01",
+	"02",
+	"03",
+	"04",
+	"05",
+	"06",
+	"07",
+	"08",
+	"10",
+	"19",
+	"20",
+	"21",
+	"23",
+	"24",
+	"25",
+	"26",
+	"27",
+	"28",
+	"30"
 ]

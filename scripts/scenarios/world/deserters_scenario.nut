@@ -233,7 +233,7 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		}, null);
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 		if (_list.len() >= 10)
 		{
@@ -254,7 +254,7 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 				_list.push("disowned_noble_background");
 			}
 			r = this.Math.rand(0, 9);
-			if (r == 0)
+			if (r == 0 && _gender)
 			{
 				_list.push("female_disowned_noble_background");
 			}

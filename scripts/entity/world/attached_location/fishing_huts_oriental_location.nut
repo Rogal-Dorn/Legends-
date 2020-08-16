@@ -12,7 +12,7 @@ this.fishing_huts_oriental_location <- this.inherit("scripts/entity/world/attach
 		_list.push("supplies/dried_fish_item");
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 		if (!this.isActive())
 		{

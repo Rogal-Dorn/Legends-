@@ -123,7 +123,7 @@ this.legends_assassin_scenario <- this.inherit("scripts/scenarios/world/starting
 		return false;
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 		local r;
 		r = this.Math.rand(0, 199);
@@ -144,7 +144,7 @@ this.legends_assassin_scenario <- this.inherit("scripts/scenarios/world/starting
 		local r;
 		r = this.Math.rand(0, 9);
 
-		if (r == 0)
+		if (r == 0 && _gender)
 		{
 			_list.push("female_thief_background");
 		}

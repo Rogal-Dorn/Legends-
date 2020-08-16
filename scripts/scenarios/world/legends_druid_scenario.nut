@@ -180,7 +180,7 @@ this.legends_druid_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		return false;
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 
 		local r;

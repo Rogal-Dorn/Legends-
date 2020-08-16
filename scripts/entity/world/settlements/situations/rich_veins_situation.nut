@@ -42,7 +42,7 @@ this.rich_veins_situation <- this.inherit("scripts/entity/world/settlements/situ
 		_modifiers.MineralRarityMult = 1.5;
 	}
 
-	function onUpdateDraftList( _draftList )
+	function onUpdateDraftList( _draftList, _gender )
 	{
 		_draftList.push("miner_background");
 		_draftList.push("miner_background");

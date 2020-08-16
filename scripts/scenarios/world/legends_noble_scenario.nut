@@ -273,7 +273,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		}
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 
 

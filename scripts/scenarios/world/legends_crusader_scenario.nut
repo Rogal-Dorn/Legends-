@@ -180,7 +180,7 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 		_tree[0].push(this.Const.Perks.PerkDefs.FortifiedMind);
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 		if (_list.len() < 5)
 		{
@@ -196,7 +196,7 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 			_list.push("monk_background");
 			}
 			r = this.Math.rand(0, 6);
-			if (r == 0)
+			if (r == 0 && _gender)
 			{
 			_list.push("legend_nun_background");
 			}

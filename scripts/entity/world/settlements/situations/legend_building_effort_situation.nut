@@ -87,7 +87,7 @@ this.legend_building_effort_situation <- this.inherit("scripts/entity/world/sett
 		this.m.Target = _in.readString();
 	}
 
-	function onUpdateDraftList( _draftList )
+	function onUpdateDraftList( _draftList, _gender )
 	{
 		if (_settlement.isSouthern())
 		{

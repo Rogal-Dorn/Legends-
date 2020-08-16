@@ -223,7 +223,7 @@ this.alchemist_building <- this.inherit("scripts/entity/world/settlements/buildi
 		this.fillStash(list, this.m.Stash, 1.0, false);
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 	}
 

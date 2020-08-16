@@ -96,7 +96,7 @@ this.workshop_location <- this.inherit("scripts/entity/world/attached_location",
 		_list.push("supplies/armor_parts_small_item");
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 		if (!this.isActive())
 		{
@@ -111,8 +111,13 @@ this.workshop_location <- this.inherit("scripts/entity/world/attached_location",
 		_list.push("apprentice_background");
 		_list.push("caravan_hand_background");
 		_list.push("peddler_background");
-		_list.push("female_daytaler_background");
 		_list.push("daytaler_background");
+
+		if (_gender)
+		{
+		_list.push("female_daytaler_background");
+
+		}
 
 		if(this.World.LegendsMod.Configs().LegendMagicEnabled())
 		{

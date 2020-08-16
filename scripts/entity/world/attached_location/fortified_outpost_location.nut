@@ -110,7 +110,7 @@ this.fortified_outpost_location <- this.inherit("scripts/entity/world/attached_l
 		}
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 		if (!this.isActive())
 		{
@@ -125,6 +125,10 @@ this.fortified_outpost_location <- this.inherit("scripts/entity/world/attached_l
 		if(this.World.LegendsMod.Configs().LegendMagicEnabled())
 		{
 			_list.push("legend_master_archer_background");
+		}
+		if (_gender)
+		{
+
 		}
 	}
 

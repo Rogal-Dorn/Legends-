@@ -17,18 +17,22 @@ this.herbalists_grove_location <- this.inherit("scripts/entity/world/attached_lo
 		_list.push("supplies/medicine_small_item");
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 		if (!this.isActive())
 		{
 			return;
 		}
 
-		_list.push("legend_nun_background");
 		_list.push("monk_background");
 		_list.push("legend_herbalist_background");
 		_list.push("legend_herbalist_background");
 		_list.push("legend_herbalist_background");
+
+		if (_gender)
+		{
+			_list.push("legend_nun_background");
+		}
 
 		if(this.World.LegendsMod.Configs().LegendMagicEnabled())
 		{

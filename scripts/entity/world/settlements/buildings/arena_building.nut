@@ -117,7 +117,7 @@ this.arena_building <- this.inherit("scripts/entity/world/settlements/buildings/
 	{
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 		_list.push("gladiator_background");
 		_list.push("gladiator_background");

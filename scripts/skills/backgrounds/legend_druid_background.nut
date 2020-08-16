@@ -54,7 +54,8 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.Untidy;
 		this.m.BeardChance = 100;
-		this.m.Bodies = this.Const.Bodies.LegendTattos
+		this.m.Bodies = this.Const.Bodies.LegendTattos;
+		this.m.Ethnicity = 2;
 		this.m.Level = 3;
 		this.m.IsCombatBackground = true;
 		this.m.IsLowborn = true;
@@ -213,20 +214,6 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 		return c;
 	}
 
-	function onAdded()
-	{
-		this.character_background.onAdded();
-		local actor = this.getContainer().getActor();
-
-		if (this.m.IsFemaleBackground == true)
-		{
-			actor.setName(this.Const.Strings.CharacterNamesFemaleNorse[this.Math.rand(0, this.Const.Strings.CharacterNamesFemaleNorse.len() - 1)]);
-		}
-		else
-		{
-			actor.setName(this.Const.Strings.BarbarianNames[this.Math.rand(0, this.Const.Strings.BarbarianNames.len() - 1)]);
-		}
-	}
 
 	function onSetAppearance()
 	{

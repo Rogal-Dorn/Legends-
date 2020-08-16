@@ -154,7 +154,7 @@ this.cultists_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 		}, null);
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 		if (_list.len() >= 5)
 		{

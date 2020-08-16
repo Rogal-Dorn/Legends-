@@ -49,6 +49,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	},
 	function setName( _value )
 	{
+
 		this.m.Name = _value;
 
 		if (this.m.Background != null)
@@ -2048,17 +2049,17 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		}
 
 		local background = this.new("scripts/skills/backgrounds/" + _backgrounds[this.Math.rand(0, _backgrounds.len() - 1)]);
-		background.setGender(_gender);
+		//background.setGender(_gender);
 		this.m.Skills.add(background);
-		this.m.Background = background;
-		this.m.Ethnicity = this.m.Background.getEthnicity();
-		background.buildAttributes();
+		//this.m.Background = background;
+		//this.m.Ethnicity = this.m.Background.getEthnicity();
+		//background.buildAttributes();
 		background.buildDescription();
 
-		if (this.m.Name.len() == 0)
-		{
-			this.m.Name = background.m.Names[this.Math.rand(0, background.m.Names.len() - 1)];
-		}
+		// if (this.m.Name.len() == 0)
+		// {
+		// 	this.m.Name = background.m.Names[this.Math.rand(0, background.m.Names.len() - 1)];
+		// }
 
 		// if (this.m.Name.len() == 0 && background.isFemaleBackground() == true)
 		// {

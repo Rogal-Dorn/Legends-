@@ -42,7 +42,7 @@ this.disbanded_troops_situation <- this.inherit("scripts/entity/world/settlement
 		_modifiers.RecruitsMult *= 1.25;
 	}
 
-	function onUpdateDraftList( _draftList )
+	function onUpdateDraftList( _draftList, _gender )
 	{
 		_draftList.push("deserter_background");
 		_draftList.push("deserter_background");
@@ -76,9 +76,6 @@ this.disbanded_troops_situation <- this.inherit("scripts/entity/world/settlement
 		_draftList.push("squire_background");
 		_draftList.push("squire_background");
 		_draftList.push("squire_background");
-		_draftList.push("legend_shieldmaiden_background");
-		_draftList.push("legend_shieldmaiden_background");
-		_draftList.push("legend_shieldmaiden_background");
 		_draftList.push("hedge_knight_background");
 		_draftList.push("hedge_knight_background");
 		_draftList.push("hedge_knight_background");
@@ -88,6 +85,14 @@ this.disbanded_troops_situation <- this.inherit("scripts/entity/world/settlement
 		_draftList.push("legend_noble_ranged");
 		_draftList.push("legend_noble_shield");
 		_draftList.push("legend_noble_shield");
+
+		if (_gender)
+		{
+		_draftList.push("legend_shieldmaiden_background");
+		_draftList.push("legend_shieldmaiden_background");
+		_draftList.push("legend_shieldmaiden_background");
+
+		}
 
 
 		if(this.World.LegendsMod.Configs().LegendMagicEnabled())

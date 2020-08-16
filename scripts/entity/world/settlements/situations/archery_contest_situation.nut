@@ -37,7 +37,7 @@ this.archery_contest_situation <- this.inherit("scripts/entity/world/settlements
 		_modifiers.RecruitsMult *= 1.25;
 	}
 
-	function onUpdateDraftList( _draftList )
+	function onUpdateDraftList( _draftList, _gender )
 	{
 		_draftList.push("hunter_background");
 		_draftList.push("hunter_background");
@@ -61,15 +61,20 @@ this.archery_contest_situation <- this.inherit("scripts/entity/world/settlements
 		_draftList.push("poacher_background");
 		_draftList.push("poacher_background");
 		_draftList.push("poacher_background");
+		_draftList.push("witchhunter_background");
+		_draftList.push("witchhunter_background");
+		_draftList.push("witchhunter_background");
+		_draftList.push("sellsword_background");
+		_draftList.push("sellsword_background");
+		_draftList.push("sellsword_background");
+
+		if (_gender)
+		{
 		_draftList.push("female_adventurous_noble_background");
 		_draftList.push("female_adventurous_noble_background");
 		_draftList.push("female_disowned_noble_background");
-		_draftList.push("witchhunter_background");
-		_draftList.push("witchhunter_background");
-		_draftList.push("witchhunter_background");
-		_draftList.push("sellsword_background");
-		_draftList.push("sellsword_background");
-		_draftList.push("sellsword_background");
+
+		}
 
 		if(this.World.LegendsMod.Configs().LegendMagicEnabled())
 		{

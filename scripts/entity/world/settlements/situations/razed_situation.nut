@@ -44,11 +44,8 @@ this.razed_situation <- this.inherit("scripts/entity/world/settlements/situation
 		_modifiers.RarityMult *= 0.25;
 	}
 
-	function onUpdateDraftList( _draftList )
+	function onUpdateDraftList( _draftList, _gender )
 	{
-		_draftList.push("female_beggar_background");
-		_draftList.push("female_beggar_background");
-		_draftList.push("female_beggar_background");
 		_draftList.push("beggar_background");
 		_draftList.push("beggar_background");
 		_draftList.push("beggar_background");
@@ -57,7 +54,16 @@ this.razed_situation <- this.inherit("scripts/entity/world/settlements/situation
 		_draftList.push("cripple_background");
 		_draftList.push("graverobber_background");
 		_draftList.push("raider_background");
+
+		if (_gender)
+		{
+		_draftList.push("female_beggar_background");
+		_draftList.push("female_beggar_background");
+		_draftList.push("female_beggar_background");
 		_draftList.push("female_thief_background");
+
+		}
+
 		if(this.World.LegendsMod.Configs().LegendMagicEnabled())
 		{
 		_draftList.push("legend_death_summoner_background");

@@ -41,19 +41,24 @@ this.good_harvest_situation <- this.inherit("scripts/entity/world/settlements/si
 		_modifiers.FoodPriceMult *= 0.5;
 	}
 
-	function onUpdateDraftList( _draftList )
+	function onUpdateDraftList( _draftList, _gender )
 	{
 		_draftList.push("farmhand_background");
 		_draftList.push("farmhand_background");
 		_draftList.push("farmhand_background");
 		_draftList.push("farmhand_background");
-		_draftList.push("female_farmhand_background");
-		_draftList.push("female_farmhand_background");
 		_draftList.push("miller_background");
 		_draftList.push("miller_background");
-		_draftList.push("female_miller_background");
-		_draftList.push("female_miller_background");
 		_draftList.push("legend_herbalist_background");
+
+		if (_gender)
+		{
+		_draftList.push("female_farmhand_background");
+		_draftList.push("female_farmhand_background");
+		_draftList.push("female_miller_background");
+		_draftList.push("female_miller_background");
+
+		}
 	}
 
 });

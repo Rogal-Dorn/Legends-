@@ -9,7 +9,7 @@ this.temple_oriental_building <- this.inherit("scripts/entity/world/settlements/
 		this.m.SoundsAtNight = [];
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 		_list.push("cripple_southern_background");
 	}

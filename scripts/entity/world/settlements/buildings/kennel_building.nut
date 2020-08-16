@@ -255,7 +255,7 @@ this.kennel_building <- this.inherit("scripts/entity/world/settlements/buildings
 		this.fillStash(list, this.m.Stash, 0.75, false);
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 		_list.push("houndmaster_background");
 		_list.push("houndmaster_background");

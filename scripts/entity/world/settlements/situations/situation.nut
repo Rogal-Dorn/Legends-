@@ -113,7 +113,7 @@ this.situation <- {
 	{
 	}
 
-	function onUpdateDraftList( _draftList )
+	function onUpdateDraftList( _draftList, _gender )
 	{
 	}
 

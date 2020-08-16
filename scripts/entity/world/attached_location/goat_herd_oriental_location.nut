@@ -7,7 +7,7 @@ this.goat_herd_oriental_location <- this.inherit("scripts/entity/world/attached_
 		this.m.SpriteDestroyed = "world_southern_goat_ruins";
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 		if (!this.isActive())
 		{

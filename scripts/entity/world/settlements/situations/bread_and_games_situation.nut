@@ -42,7 +42,7 @@ this.bread_and_games_situation <- this.inherit("scripts/entity/world/settlements
 		_modifiers.FoodPriceMult *= 0.9;
 	}
 
-	function onUpdateDraftList( _draftList )
+	function onUpdateDraftList( _draftList, _gender )
 	{
 		_draftList.push("gladiator_background");
 		_draftList.push("gladiator_background");
