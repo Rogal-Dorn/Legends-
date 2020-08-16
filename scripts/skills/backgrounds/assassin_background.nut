@@ -107,23 +107,22 @@ this.assassin_background <- this.inherit("scripts/skills/backgrounds/character_b
 		local r = _gender;
 		if (_gender == -1)
 		{
-			r = this.Math.rand(0, 9);
-			if (this.World.LegendsMod.Configs().LegendGenderEnabled())
-			{
-				r = this.Math.rand(0, 1);
-			}
+			r = this.Math.rand(0, 1);
 		}
 
-		if (r == 1)
+		if (r == 0)
 		{
-			this.m.Faces = this.Const.Faces.AllFemale;
-			this.m.Hairs = this.Const.Hair.AllFemale;
-			this.m.HairColors = this.Const.HairColors.Young;
-			this.m.Beards = null;
-			this.m.BeardChance = 0;
-			this.m.Bodies = this.Const.Bodies.AllFemale;
-			this.m.IsFemaleBackground = true;
+			return;
 		}
+
+		this.m.Faces = this.Const.Faces.AllFemale;
+		this.m.Hairs = this.Const.Hair.AllFemale;
+		this.m.HairColors = this.Const.HairColors.Young;
+		this.m.Beards = null;
+		this.m.BeardChance = 0;
+		this.m.Bodies = this.Const.Bodies.AllFemale;
+		this.m.IsFemaleBackground = true;
+
 	}
 
 	function getTooltip()
