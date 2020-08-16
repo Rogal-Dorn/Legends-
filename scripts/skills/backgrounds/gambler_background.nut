@@ -171,21 +171,6 @@ this.gambler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		return c;
 	}
 
-	function onAdded()
-	{
-		this.character_background.onAdded();
-		local actor = this.getContainer().getActor();
-
-		if (this.m.IsFemaleBackground == true)
-		{
-			actor.setName(this.Const.Strings.CharacterNamesFemale[this.Math.rand(0, this.Const.Strings.CharacterNamesFemale.len() - 1)]);
-		}
-		else
-		{
-			actor.setName(this.Const.Strings.CharacterNames[this.Math.rand(0, this.Const.Strings.CharacterNames.len() - 1)]);
-		}
-	}
-
 	function onAddEquipment()
 	{
 		local items = this.getContainer().getActor().getItems();

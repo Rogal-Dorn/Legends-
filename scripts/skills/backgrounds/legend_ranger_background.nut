@@ -276,14 +276,6 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 		//this.m.Container.add(this.new("scripts/skills/perks/perk_footwork"));
 		this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
 
-		if (this.m.IsFemaleBackground == true)
-		{
-			actor.setName(this.Const.Strings.CharacterNamesFemale[this.Math.rand(0, this.Const.Strings.CharacterNamesFemale.len() - 1)]);
-		}
-		else
-		{
-			actor.setName(this.Const.Strings.CharacterNames[this.Math.rand(0, this.Const.Strings.CharacterNames.len() - 1)]);
-		}
 	}
 
 

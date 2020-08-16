@@ -129,12 +129,6 @@ this.legend_death_summoner_background <- this.inherit("scripts/skills/background
 		return c;
 	}
 
-	function onAdded()
-	{
-		this.character_background.onAdded();
-		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_siphon"));
-	}
-
 	function onAddEquipment()
 	{
 		local talents = this.getContainer().getActor().getTalents();

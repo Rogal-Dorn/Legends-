@@ -181,13 +181,6 @@ this.legend_female_beggar_commander_background <- this.inherit("scripts/skills/b
 		return c;
 	}
 
-	function onAdded()
-	{
-		this.character_background.onAdded();
-		local actor = this.getContainer().getActor();
-		actor.setName(this.Const.Strings.CharacterNamesFemale[this.Math.rand(0, this.Const.Strings.CharacterNamesFemale.len() - 1)]);
-
-	}
 
 	function onSetAppearance()
 	{
@@ -195,12 +188,6 @@ this.legend_female_beggar_commander_background <- this.inherit("scripts/skills/b
 		local dirt = actor.getSprite("dirt");
 		dirt.Visible = true;
 	}
-
-	/*function onAdded()
-	{
-		this.character_background.onAdded();
-		//this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
-	}*/
 
 	function onAddEquipment()
 	{

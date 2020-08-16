@@ -207,21 +207,6 @@ this.legend_beggar_commander_background <- this.inherit("scripts/skills/backgrou
 		return c;
 	}
 
-	function onAdded()
-	{
-		this.character_background.onAdded();
-		local actor = this.getContainer().getActor();
-
-		if (this.m.IsFemaleBackground == true)
-		{
-			actor.setName(this.Const.Strings.CharacterNamesFemale[this.Math.rand(0, this.Const.Strings.CharacterNamesFemale.len() - 1)]);
-		}
-		else
-		{
-			actor.setName(this.Const.Strings.CharacterNames[this.Math.rand(0, this.Const.Strings.CharacterNames.len() - 1)]);
-		}
-	}
-
 	function onSetAppearance()
 	{
 		local actor = this.getContainer().getActor();
@@ -229,11 +214,6 @@ this.legend_beggar_commander_background <- this.inherit("scripts/skills/backgrou
 		dirt.Visible = true;
 	}
 
-	function onAdded()
-	{
-		this.character_background.onAdded();
-		//this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
-	}
 
 	function onAddEquipment()
 	{

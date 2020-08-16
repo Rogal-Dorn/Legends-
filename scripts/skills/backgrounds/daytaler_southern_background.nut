@@ -64,7 +64,7 @@ this.daytaler_southern_background <- this.inherit("scripts/skills/backgrounds/da
 	function onAddLegendEquipment()
 	{
 		local items = this.getContainer().getActor().getItems();
-		r = this.Math.rand(0, 4);
+		local r = this.Math.rand(0, 4);
 		if (r == 0)
 		{
 			items.equip(this.new("scripts/items/weapons/knife"));

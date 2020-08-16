@@ -32,14 +32,13 @@ this.belly_dancer_background <- this.inherit("scripts/skills/backgrounds/charact
 			this.Const.Attributes.RangedDefense,
 			this.Const.Attributes.Bravery
 		];
-		this.m.Bodies = this.Const.Bodies.SouthernSkinny;
-		this.m.Faces = this.Const.Faces.SouthernMale;
-		this.m.Hairs = this.Const.Hair.SouthernMale;
+		this.m.Bodies = this.Const.Bodies.SouthernFemale;
+		this.m.Faces = this.Const.Faces.SouthernFemale;
+		this.m.Hairs = this.Const.Hair.SouthernFemale;
 		this.m.HairColors = this.Const.HairColors.SouthernYoung;
 		this.m.BeardChance = 0;
 		this.m.Ethnicity = 1;
-		this.m.Names = this.Const.Strings.SouthernNames;
-		this.m.LastNames = this.Const.Strings.SouthernNamesLast;
+		this.m.IsFemaleBackground = true;
 		this.m.IsCombatBackground = false;
 	}
 

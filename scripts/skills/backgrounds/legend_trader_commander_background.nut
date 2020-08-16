@@ -214,14 +214,6 @@ this.legend_trader_commander_background <- this.inherit("scripts/skills/backgrou
 		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_2"));
 		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_4"));
 
-		if (this.m.IsFemaleBackground == true)
-		{
-			actor.setName(this.Const.Strings.CharacterNamesFemale[this.Math.rand(0, this.Const.Strings.CharacterNamesFemale.len() - 1)]);
-		}
-		else
-		{
-			actor.setName(this.Const.Strings.CharacterNames[this.Math.rand(0, this.Const.Strings.CharacterNames.len() - 1)]);
-		}
 	}
 
 	function onAddEquipment()
