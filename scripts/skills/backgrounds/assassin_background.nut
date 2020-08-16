@@ -72,6 +72,7 @@ this.assassin_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.Level = 4;
 		this.m.IsOutlawBackground = true;
 		this.m.IsUntalented = true;
+		this.m.IsCombatBackground = true;
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[3];
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[1];
 		this.m.PerkTreeDynamic = {
