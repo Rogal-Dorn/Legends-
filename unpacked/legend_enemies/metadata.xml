@@ -189,7 +189,7 @@
   <sprite id="bust_vampire_lord_dead" offsetY="12" ic="FF465E6A" img="entity\undead\bust_vampire_lord_dead.png" left="-58" right="59" />
  <sprite id="bust_vampire_lady_head_01" offsetY="35" ic="FF495564" width="44" height="74" img="entity\undead\bust_vampire_lady_head_01.png" left="-17" right="27" top="-30" bottom="44" />
  <sprite id="bust_vampire_lady_body_01" offsetY="35" ic="FF5B6878" width="104" height="142" img="entity\undead\bust_vampire_lady_body_01.png" left="-42" right="40" top="-49" bottom="9" />
-  
+
 
 
   <sprite id="bust_demon_hound_01" offsetY="35" offsetX="-10" ic="FF192432" width="106" height="99" img="entity\undead\bust_demon_hound_01.png" left="-55" right="51" top="-54" bottom="45" />
@@ -232,7 +232,7 @@
 
    <sprite id="bust_schrat_body_01_injured" offsetX="-5" offsetY="35" ic="FF36586C" width="174" height="214" img="entity\beasts\bust_schrat_body_01_injured.png" left="-32" right="50" top="-47" bottom="23" />
 
-  <sprite id="were_boar_body" offsetY="35" ic="FF2F3435" width="174" height="214" img="entity\beasts\were_boar_body.png" left="-47" right="61" top="-65" bottom="31" /> 
+  <sprite id="were_boar_body" offsetY="35" ic="FF2F3435" width="174" height="214" img="entity\beasts\were_boar_body.png" left="-47" right="61" top="-65" bottom="31" />
   <sprite id="were_boar_body_injured" offsetX="-5" offsetY="35" ic="FF272C3A" width="130" height="172" img="entity\beasts\were_injury.png" left="-64" right="70" top="-67" bottom="83" />
   <sprite id="were_boar_head" offsetY="35" ic="FF30393F" width="174" height="214" img="entity\beasts\were_boar_head.png" left="-57" right="49" top="-37" bottom="61" />
   <sprite id="were_boar_head_dead" offsetX="5" offsetY="20" f="6401" f1="30" f2="-15" ic="FF2F353C" width="169" height="139" img="entity\beasts\were_boar_head_dead.png" left="-8" right="70" top="-70" bottom="20" /> <sprite id="were_boar_dead" offsetY="30" f="6403" ic="FF23283B" width="164" height="116" img="entity\beasts\were_boar_dead.png" left="-83" right="79" top="-70" bottom="62" />
@@ -287,6 +287,11 @@
   <sprite id="bust_rat_body_05" offsetY="35" ic="FF2A2D2F" width="104" height="142" img="entity\beasts\bust_rat_body_05.png" left="-38" right="46" top="-56" bottom="34" />
   <sprite id="bust_rat_body_05_dead" offsetX="5" offsetY="20" f="6403" ic="FF252930" width="169" height="139" img="entity\beasts\bust_rat_body_05_dead.png" left="-65" right="69" top="-54" bottom="52" />
   <sprite id="bust_rat_05_injured" offsetY="35" ic="FF131231" width="104" height="142" img="entity\beasts\bust_rat_injured.png" left="-25" right="35" top="-44" bottom="14" />
- 
+
+  <sprite id="bust_nacht_body_01" offsetX="-5" offsetY="35" f="6402" ic="FF1E384E" width="174" height="214" img="entity\beasts\natchbodyadapt1.png" left="-65" right="77" top="-57" bottom="95" />
+  <sprite id="bust_nacht_body_02" offsetX="-5" offsetY="35" f="6402" ic="FF1E384E" width="174" height="214" img="entity\beasts\natchbodyadapt2.png" left="-65" right="77" top="-57" bottom="95" />
+  <sprite id="bust_nacht_body_03" offsetX="-5" offsetY="35" f="6402" ic="FF1E384E" width="174" height="214" img="entity\beasts\natchbodyadapt3.png" left="-65" right="77" top="-57" bottom="95" />
+  <sprite id="bust_nacht_head_01" offsetX="-5" offsetY="35" ic="FF203653" width="174" height="214" img="entity\beasts\natchheadadapt1.png" left="-58" right="38" top="-16" bottom="98" />
+  <sprite id="bust_nacht_head_02" offsetX="-5" offsetY="35" ic="FF203653" width="174" height="214" img="entity\beasts\natchheadadapt2.png" left="-58" right="38" top="-16" bottom="98" />
 
 </brush>
