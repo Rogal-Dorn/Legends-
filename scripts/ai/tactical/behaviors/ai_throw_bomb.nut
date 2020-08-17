@@ -190,9 +190,15 @@ this.ai_throw_bomb <- this.inherit("scripts/ai/tactical/behavior", {
 			Target = null,
 			Item = "scripts/items/tools/fire_bomb_item"
 		};
+		local myTile = _entity.getTile();
 
 		foreach( tile in _tiles )
 		{
+			if (myTile.Level + 1 < tile.Level)
+			{
+				continue;
+			}
+
 			local score = 0.0;
 			local targets = [];
 			local alliesHit = 0;
@@ -279,9 +285,15 @@ this.ai_throw_bomb <- this.inherit("scripts/ai/tactical/behavior", {
 			Target = null,
 			Item = "scripts/items/tools/daze_bomb_item"
 		};
+		local myTile = _entity.getTile();
 
 		foreach( tile in _tiles )
 		{
+			if (myTile.Level + 1 < tile.Level)
+			{
+				continue;
+			}
+
 			local score = 0.0;
 			local targets = [];
 			local alliesHit = 0;

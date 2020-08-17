@@ -471,7 +471,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 
 		if (item == null)
 		{
-			return this.getAIAgent().getProperties().EngageRangeIdeal;
+			return 1;
 		}
 		else
 		{
@@ -1820,7 +1820,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 
 	function onSkillsUpdated()
 	{
-		if (this.isPlacedOnMap() && !this.Tactical.getNavigator().isTravelling(this))
+		if (this.isPlacedOnMap() && !this.m.IsDying && !this.Tactical.getNavigator().isTravelling(this))
 		{
 			this.setZoneOfControl(this.getTile(), this.hasZoneOfControl());
 		}
@@ -2214,6 +2214,8 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 
 	function onRemovedFromMap()
 	{
+		this.m.IsDying = true;
+
 		if (this.isPlacedOnMap())
 		{
 			this.Tactical.getShaker().cancel(this);

@@ -12,7 +12,7 @@ this.scenario_test_bed <- this.inherit("scripts/scenarios/tactical/scenario_temp
 
 	function initMap()
 	{
-		local testMap = this.MapGen.get("tactical.sinkhole");
+		local testMap = this.MapGen.get("tactical.desert");
 		local minX = testMap.getMinX();
 		local minY = testMap.getMinY();
 		this.Tactical.resizeScene(minX, minY);
@@ -70,6 +70,7 @@ this.scenario_test_bed <- this.inherit("scripts/scenarios/tactical/scenario_temp
 			local items = entity.getItems();
 			items.equip(this.new("scripts/items/helmets/oriental/southern_head_wrap"));
 			local r = this.Math.rand(1, 3);
+			items.equip(this.new("scripts/items/tools/fire_bomb_item"));
 			local a = this.new("scripts/items/armor/oriental/gladiator_harness");
 			local u;
 			r = this.Math.rand(1, 2);
@@ -85,17 +86,6 @@ this.scenario_test_bed <- this.inherit("scripts/scenarios/tactical/scenario_temp
 
 			a.setUpgrade(u);
 			items.equip(a);
-			items.equip(this.new("scripts/items/ammo/powder_bag"));
-
-			if (this.Math.rand(1, 100) <= 50)
-			{
-				items.equip(this.new("scripts/items/weapons/oriental/handgonne"));
-			}
-			else
-			{
-				items.equip(this.new("scripts/items/weapons/oriental/firelance"));
-			}
-
 			items.equip(this.new("scripts/items/tools/fire_bomb_item"));
 		}
 
