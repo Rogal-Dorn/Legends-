@@ -58,7 +58,7 @@ this.fisherman_southern_background <- this.inherit("scripts/skills/backgrounds/f
 	function onAddLegendEquipment()
 	{
 		local items = this.getContainer().getActor().getItems();
-		r = this.Math.rand(0, 1);
+		local r = this.Math.rand(0, 1);
 
 		if (r == 0)
 		{
