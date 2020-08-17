@@ -615,8 +615,8 @@ gt.Const.Beards.Barber <- [
 	"15",
 	"16",
 	"17",
-	"18"
-	// "19"
+	"legends_01",
+	"legends_02"
 ];
 gt.Const.Beards.All <- [
 	"01",
@@ -636,12 +636,12 @@ gt.Const.Beards.All <- [
 	"15",
 	"16",
 	"17",
-	"18"
-	// "19"
+	"legends_01",
+	"legends_02"
 ];
 
 gt.Const.Beards.Berserker <- [
-	"18",
+	"legends_02"
 	"14"
 ];
 
@@ -660,7 +660,9 @@ gt.Const.Beards.Tidy <- [
 	"06",
 	"10",
 	"11",
-	"16"
+	"16",
+	"legends_01",
+	"legends_02"
 ];
 gt.Const.Beards.Untidy <- [
 	"01",
@@ -672,7 +674,8 @@ gt.Const.Beards.Untidy <- [
 	"09",
 	"14",
 	"17",
-	"18"
+	"legends_01",
+	"legends_02"
 ];
 gt.Const.Beards.SouthernUntidy <- [
 	"southern_01",
@@ -684,7 +687,8 @@ gt.Const.Beards.SouthernUntidy <- [
 	"07",
 	"09",
 	"14",
-	"17"
+	"17",
+	"legends_01"
 ];
 gt.Const.Beards.Raider <- [
 	"01",
@@ -697,7 +701,9 @@ gt.Const.Beards.Raider <- [
 	"12",
 	"13",
 	"14",
-	"15"
+	"15",
+	"legends_01",
+	"legends_02"
 ];
 gt.Const.Beards.Wild <- [
 	"14"
@@ -713,7 +719,8 @@ gt.Const.Beards.Monk <- [
 	"01",
 	"05",
 	"07",
-	"09"
+	"09",
+	"legends_01"
 ];
 gt.Const.Beards.SouthernOnly <- [
 	"southern_01",
@@ -727,7 +734,8 @@ gt.Const.Beards.Southern <- [
 	"01",
 	"06",
 	"07",
-	"09"
+	"09",
+	"legends_01"
 ];
 gt.Const.Beards.ZombieOnly <- [
 	"zombie_01",
@@ -750,7 +758,9 @@ gt.Const.Beards.Zombie <- [
 	"08",
 	"09",
 	"10",
-	"11"
+	"11",
+	"legends_01",
+	"legends_02"
 ];
 gt.Const.Beards.ZombieExtended <- [
 	"zombie_01",
@@ -771,7 +781,9 @@ gt.Const.Beards.ZombieExtended <- [
 	"12",
 	"13",
 	"14",
-	"15"
+	"15",
+	"legends_01",
+	"legends_02"
 ];
 gt.Const.Tattoos.All <- [
 	"",
@@ -892,7 +904,9 @@ gt.Const.Faces.SouthernFemale <- [
 	"bust_head_southern_female_04",
 	"bust_head_southern_female_05",
 	"bust_head_southern_female_06",
-	"bust_head_southern_female_07"
+	"bust_head_southern_female_07",
+	"bust_head_southern_female_08",
+	"bust_head_southern_female_09"
 ]
 
 gt.Const.Hair.SouthernFemale <- [
