@@ -146,6 +146,14 @@ this.legend_horse <- this.inherit("scripts/skills/backgrounds/character_backgrou
 		this.onSetAppearance();
 	}
 
+	function updateVariant()
+	{
+		local actor = this.getContainer().getActor();
+		local body = this.m.Bodies[this.m.Variant];
+		actor.getSprite("body").setBrush(body);
+		actor.getSprite("injury_body").setBrush(body + "_injured");
+	}
+
 	function getTooltip()
 	{
 		return [
