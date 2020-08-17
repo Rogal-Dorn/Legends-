@@ -762,6 +762,11 @@
 		this.m.AIAgent.setPriorityTarget(_entity);
 	}
 
+	o.TherianthropeInfection <- function (_killer)
+	{
+		return;
+	}
+
 	local szFn = o.onSerialize
 	o.onSerialize = function( _out )
 	{
