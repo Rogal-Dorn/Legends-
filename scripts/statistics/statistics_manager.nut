@@ -100,10 +100,10 @@ this.statistics_manager <- {
 			Battles = bro.getLifetimeStats().Battles,
 			KilledBy = _killedby,
 			Expendable = bro.getBackground().getID() == "background.slave",
-			level = _bro.getLevel(),
-			traits = _bro.getDeadTraits(),
+			level = bro.getLevel(),
+			traits = bro.getDeadTraits(),
 			stats = bstats,
-			talents = _bro.getTalents(),
+			talents = bro.getTalents(),
 		};
 		this.m.Fallen.insert(0, _fallen);
 	}

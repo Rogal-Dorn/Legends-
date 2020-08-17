@@ -1020,6 +1020,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		}
 
 		_s.onAdded(this);
+		_s.m.IsSouthern = this.isSouthern();
 		this.m.Modifiers.reset();
 
 		foreach( s in this.m.Situations )

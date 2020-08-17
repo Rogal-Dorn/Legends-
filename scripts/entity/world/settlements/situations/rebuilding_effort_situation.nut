@@ -111,7 +111,7 @@ this.rebuilding_effort_situation <- this.inherit("scripts/entity/world/settlemen
 
 	function onUpdateDraftList( _draftList, _gender )
 	{
-		if (_settlement.isSouthern())
+		if (this.m.IsSouthern)
 		{
 			_draftList.push("daytaler_southern_background");
 			_draftList.push("daytaler_southern_background");
