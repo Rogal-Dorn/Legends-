@@ -40,6 +40,28 @@ this.exposed_ribs_injury <- this.inherit("scripts/skills/injury/injury", {
 		return ret;
 	}
 
+	function onAdded()
+	{
+		this.injury.onAdded();
+
+		if (!("State" in this.Tactical) || this.Tactical.State == null)
+		{
+			return;
+		}
+
+		local p = this.getContainer().getActor().getCurrentProperties();
+
+		if (!p.IsAffectedByInjuries || this.m.IsFresh && !p.IsAffectedByFreshInjuries)
+		{
+			return;
+		}
+
+		if (this.getContainer().getActor().getHitpointsPct() > 0.65)
+		{
+			this.getContainer().getActor().setHitpoints(this.getContainer().getActor().getHitpointsMax() * 0.65);
+		}
+	}
+
 	function onUpdate( _properties )
 	{
 		this.injury.onUpdate(_properties);

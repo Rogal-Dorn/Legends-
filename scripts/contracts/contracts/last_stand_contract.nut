@@ -17,7 +17,7 @@ this.last_stand_contract <- this.inherit("scripts/contracts/contract", {
 		}
 
 		this.m.Type = "contract.last_stand";
-		this.m.Name = "Defend %objective%";
+		this.m.Name = "Defend Settlement";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 		this.m.MakeAllSpawnsResetOrdersOnContractEnd = false;
 		this.m.MakeAllSpawnsAttackableByAIOnceDiscovered = true;
@@ -36,6 +36,7 @@ this.last_stand_contract <- this.inherit("scripts/contracts/contract", {
 		}
 
 		this.m.Flags.set("ObjectiveName", this.m.Origin.getName());
+		this.m.Name = "Defend %objective%";
 		this.m.Payment.Pool = 1600 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult();
 
 		if (this.Math.rand(1, 100) <= 33)
@@ -323,7 +324,7 @@ this.last_stand_contract <- this.inherit("scripts/contracts/contract", {
 
 			function onActorKilled( _actor, _killer, _combatID )
 			{
-				if (_combatID == "ContractCombat" && _actor.getTags().has("militia"))
+				if (_combatID == "ContractCombat" && _actor.getFlags().has("militia"))
 				{
 					this.Flags.set("Militia", this.Flags.get("Militia") - 1);
 				}
@@ -690,11 +691,12 @@ this.last_stand_contract <- this.inherit("scripts/contracts/contract", {
 			}
 		}
 
-		local party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Undead).spawnEntity(tile, "Undead Horde", false, this.Const.World.Spawn.UndeadArmy, (80 + this.m.Flags.get("Wave") * 10) * this.getDifficultyMult() * this.getReputationToDifficultyMult());
+		local party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Undead).spawnEntity(tile, "Undead Horde", false, this.Const.World.Spawn.UndeadArmy, (80 + this.m.Flags.get("Wave") * 10) * this.getDifficultyMult() * this.getScaledDifficultyMult());
 		this.m.UnitsSpawned.push(party.getID());
 		party.getLoot().ArmorParts = this.Math.rand(0, 15);
 		party.getSprite("banner").setBrush(undeadBase.getBanner());
 		party.setDescription("A legion of walking dead, back to claim from the living what was once theirs.");
+		party.setFootprintType(this.Const.World.FootprintsType.Undead);
 		party.setSlowerAtNight(false);
 		party.setUsingGlobalVision(false);
 		party.setLooting(false);
@@ -719,12 +721,13 @@ this.last_stand_contract <- this.inherit("scripts/contracts/contract", {
 	function spawnUndeadAtTheWalls()
 	{
 		local undeadBase = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Zombies).getNearestSettlement(this.m.Origin.getTile());
-		local party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Zombies).spawnEntity(this.m.Origin.getTile(), "Undead Horde", false, this.Const.World.Spawn.ZombiesOrZombiesAndGhosts, 100 * this.getDifficultyMult() * this.getReputationToDifficultyMult());
+		local party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Zombies).spawnEntity(this.m.Origin.getTile(), "Undead Horde", false, this.Const.World.Spawn.ZombiesOrZombiesAndGhosts, 100 * this.getDifficultyMult() * this.getScaledDifficultyMult());
 		party.setPos(this.createVec(party.getPos().X - 50, party.getPos().Y - 50));
 		this.m.UnitsSpawned.push(party.getID());
 		party.getLoot().ArmorParts = this.Math.rand(0, 15);
 		party.getSprite("banner").setBrush(undeadBase.getBanner());
 		party.setDescription("A legion of walking dead, back to claim from the living what was once theirs.");
+		party.setFootprintType(this.Const.World.FootprintsType.Undead);
 		party.setSlowerAtNight(false);
 		party.setUsingGlobalVision(false);
 		party.setLooting(false);
@@ -779,7 +782,7 @@ this.last_stand_contract <- this.inherit("scripts/contracts/contract", {
 			}
 		}
 
-		local party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Undead).spawnEntity(tile, "Nachzehrers", false, this.Const.World.Spawn.Ghouls, 110 * this.getDifficultyMult() * this.getReputationToDifficultyMult());
+		local party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Undead).spawnEntity(tile, "Nachzehrers", false, this.Const.World.Spawn.Ghouls, 110 * this.getDifficultyMult() * this.getScaledDifficultyMult());
 		this.m.UnitsSpawned.push(party.getID());
 		party.getSprite("banner").setBrush("banner_beasts_01");
 		party.setDescription("A flock of scavenging nachzehrers.");

@@ -283,7 +283,7 @@ this.kraken <- this.inherit("scripts/entity/tactical/actor", {
 
 		if (!this.Tactical.State.isScenarioMode())
 		{
-			if (!this.World.Tags.get("IsKrakenDefeated"))
+			if (!this.World.Flags.get("IsKrakenDefeated"))
 			{
 				this.setName("Beast of Beasts");
 			}

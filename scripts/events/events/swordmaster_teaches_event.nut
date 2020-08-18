@@ -31,7 +31,7 @@ this.swordmaster_teaches_event <- this.inherit("scripts/events/event", {
 				local meleeDefense = this.Math.rand(1, 4);
 				_event.m.Student.getBaseProperties().MeleeDefense += meleeDefense;
 				_event.m.Student.getSkills().update();
-				_event.m.Student.getTags().add("taughtBySwordmaster");
+				_event.m.Student.getFlags().add("taughtBySwordmaster");
 				_event.m.Student.improveMood(0.5, "Learned from " + _event.m.Teacher.getName());
 				_event.m.Teacher.improveMood(1.0, "Has taught " + _event.m.Student.getName() + " something");
 				this.List = [
@@ -92,7 +92,7 @@ this.swordmaster_teaches_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getLevel() >= 3 && !bro.getTags().has("taughtBySwordmaster") && (bro.getBackground().getID() == "background.squire" || bro.getBackground().getID() == "background.bastard" || bro.getBackground().getID() == "background.adventurous_noble" || bro.getBackground().getID() == "background.disowned_noble" || bro.getBackground().getID() == "background.female_adventurous_noble" || bro.getBackground().getID() == "background.female_disowned_noble"))
+			if (bro.getLevel() >= 3 && !bro.getFlags().has("taughtBySwordmaster") && (bro.getBackground().getID() == "background.squire" || bro.getBackground().getID() == "background.bastard" || bro.getBackground().getID() == "background.adventurous_noble" || bro.getBackground().getID() == "background.disowned_noble" || bro.getBackground().getID() == "background.female_adventurous_noble" || bro.getBackground().getID() == "background.female_disowned_noble"))
 			{
 				student_candidates.push(bro);
 			}

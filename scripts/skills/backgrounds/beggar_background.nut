@@ -48,9 +48,7 @@ this.beggar_background <- this.inherit("scripts/skills/backgrounds/character_bac
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Untidy;
-		this.m.Body = "bust_naked_body_00";
-		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
-		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
+		this.m.Bodies = this.Const.Bodies.Skinny;
 		this.m.IsLowborn = true;
 		this.m.IsPerformingBackground = true;
 		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[1];
@@ -174,14 +172,19 @@ this.beggar_background <- this.inherit("scripts/skills/backgrounds/character_bac
 			items.equip(this.new("scripts/items/armor/legend_rabble_tunic"));
 		}
 
-		r = this.Math.rand(0, 4);
-
-		if (r == 0)
+		local item = this.Const.World.Common.pickHelmet([
+			[3, ""],
+			[1, "hood"]
+		])
+		if (item != null)
 		{
-			local item = this.new("scripts/items/helmets/hood");
-			item.setVariant(38);
+			if (item.getID() == "armor.head.hood")
+			{
+				item.setVariant(38);
+			}
 			items.equip(item);
 		}
+
 	}
 
 	function onAddLegendEquipment()
@@ -223,12 +226,16 @@ this.beggar_background <- this.inherit("scripts/skills/backgrounds/character_bac
 			items.equip(armor);
 		}
 
-		r = this.Math.rand(0, 4);
-
-		if (r == 0)
+		local item = this.Const.World.Common.pickHelmet([
+			[3, ""],
+			[1, "hood"]
+		])
+		if (item != null)
 		{
-			local item = this.new("scripts/items/helmets/hood");
-			item.setVariant(38);
+			if (item.getID() == "armor.head.hood")
+			{
+				item.setVariant(38);
+			}
 			items.equip(item);
 		}
 	}

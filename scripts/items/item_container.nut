@@ -449,6 +449,11 @@ this.item_container <- {
 
 	function equip( _item )
 	{
+		if (_item == null)
+		{
+			return false
+		}
+
 		if (_item.getSlotType() == this.Const.ItemSlot.None)
 		{
 			return false;
@@ -460,16 +465,16 @@ this.item_container <- {
 			return false;
 		}
 
-		if (!this.getActor().getTags().has("IsHorseRider"))
+		if (!this.getActor().getFlags().has("IsHorseRider"))
 		{
-			if  (  (_item.getItemType() == this.Const.Items.ItemType.HorseArmor && !this.getActor().getTags().has("IsHorse"))
-				|| (_item.getItemType() != this.Const.Items.ItemType.HorseArmor && this.getActor().getTags().has("IsHorse")))
+			if  (  (_item.getItemType() == this.Const.Items.ItemType.HorseArmor && !this.getActor().getFlags().has("IsHorse"))
+				|| (_item.getItemType() != this.Const.Items.ItemType.HorseArmor && this.getActor().getFlags().has("IsHorse")))
 			{
 				return false;
 			}
 
-			if  (  (_item.getItemType() == this.Const.Items.ItemType.HorseHelmet && !this.getActor().getTags().has("IsHorse"))
-				|| (_item.getItemType() != this.Const.Items.ItemType.HorseHelmet && this.getActor().getTags().has("IsHorse")))
+			if  (  (_item.getItemType() == this.Const.Items.ItemType.HorseHelmet && !this.getActor().getFlags().has("IsHorse"))
+				|| (_item.getItemType() != this.Const.Items.ItemType.HorseHelmet && this.getActor().getFlags().has("IsHorse")))
 			{
 				return false;
 			}
@@ -626,6 +631,7 @@ this.item_container <- {
 	{
 		local IsDroppingLoot = true;
 		local isPlayer = this.m.Actor.getFaction() == this.Const.Faction.Player || this.isKindOf(this.m.Actor.get(), "player");
+		local emergency = false;
 
 		if (_killer != null && !_killer.isPlayerControlled() && !this.m.Actor.isPlayerControlled() && _killer.getID() != this.m.Actor.getID() && _killer.getFaction() != this.Const.Faction.PlayerAnimals)
 		{
@@ -647,6 +653,7 @@ this.item_container <- {
 			if (this.m.Actor.isPlacedOnMap())
 			{
 				_tile = this.m.Actor.getTile();
+				emergency = true;
 			}
 			else
 			{
@@ -661,7 +668,7 @@ this.item_container <- {
 				if (this.m.Items[i][j] == null || this.m.Items[i][j] == -1)
 				{
 				}
-				else if (this.m.Items[i][j].isChangeableInBattle(null))
+				else if (this.m.Items[i][j].isChangeableInBattle(null) || emergency)
 				{
 					if (IsDroppingLoot)
 					{
@@ -931,6 +938,33 @@ this.item_container <- {
 				if (this.m.Items[this.Const.ItemSlot.Mainhand][i].isGarbage())
 				{
 					this.unequip(this.m.Items[this.Const.ItemSlot.Mainhand][i]);
+				}
+			}
+		}
+
+		this.m.IsUpdating = false;
+	}
+
+	function onShieldHit( _attacker, _skill )
+	{
+		this.m.IsUpdating = true;
+
+		for( local i = 0; i < this.m.Items[this.Const.ItemSlot.Offhand].len(); i = ++i )
+		{
+			if (this.m.Items[this.Const.ItemSlot.Offhand][i] != null && this.m.Items[this.Const.ItemSlot.Offhand][i] != -1)
+			{
+				this.m.Items[this.Const.ItemSlot.Offhand][i].onShieldHit(_attacker, _skill);
+
+				if (this.m.Items[this.Const.ItemSlot.Offhand][i].isGarbage())
+				{
+					if (this.m.Items[this.Const.ItemSlot.Offhand][i].isEquipped())
+					{
+						this.unequip(this.m.Items[this.Const.ItemSlot.Offhand][i]);
+					}
+					else
+					{
+						this.removeFromBag(this.m.Items[this.Const.ItemSlot.Offhand][i]);
+					}
 				}
 			}
 		}

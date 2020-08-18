@@ -7,6 +7,10 @@ this.well_supplied_situation <- this.inherit("scripts/entity/world/settlements/s
 		this.m.Name = "Well Supplied";
 		this.m.Description = "This place has been recently supplied with fresh wares, and many of those can now be bought for the right price.";
 		this.m.Icon = "ui/settlement_status/settlement_effect_03.png";
+		this.m.Rumors = [
+			"Trade with %settlement% is prospering, my friend! Safe roads and full stocks, let\'s hope it stays this way...",
+			"My cousin over in %settlement% keeps bragging about how good they have it there. Well stocked market stands and all. Not like this rotten place."
+		];
 		this.m.IsStacking = false;
 	}
 

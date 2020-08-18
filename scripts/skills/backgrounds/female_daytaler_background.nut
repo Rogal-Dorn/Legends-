@@ -22,7 +22,7 @@ this.female_daytaler_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsLowborn = true;
 		this.m.IsFemaleBackground = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Notorious;
@@ -130,12 +130,10 @@ this.female_daytaler_background <- this.inherit("scripts/skills/backgrounds/char
 		}
 
 
-		r = this.Math.rand(0, 4);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/headscarf"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "headscarf"],
+			[4, ""]
+		]));
 	}
 
 	function onAddLegendEquipment()
@@ -174,11 +172,9 @@ this.female_daytaler_background <- this.inherit("scripts/skills/backgrounds/char
 		local armor = this.Const.World.Common.pickLegendArmor(cloths)
 		items.equip(armor)
 
-		r = this.Math.rand(0, 4);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/headscarf"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "headscarf"],
+			[4, ""]
+		]));
 	}
 });

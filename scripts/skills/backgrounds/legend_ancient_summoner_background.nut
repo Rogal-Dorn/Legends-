@@ -36,7 +36,7 @@ this.legend_ancient_summoner_background <- this.inherit("scripts/skills/backgrou
 		this.m.Hairs = this.Const.Hair.Vampire;
 		this.m.HairColors = this.Const.HairColors.Zombie;
 		this.m.Beards = this.Const.Beards.Raider;
-		this.m.Body = "bust_naked_body_00";
+
 		this.m.Level = 1;
 		this.m.IsUntalented = true;
 		this.m.IsOutlawBackground = true;
@@ -129,11 +129,6 @@ this.legend_ancient_summoner_background <- this.inherit("scripts/skills/backgrou
 		return c;
 	}
 
-	function onAdded()
-	{
-		this.character_background.onAdded();
-		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_siphon"));
-	}
 
 	function onAddEquipment()
 	{
@@ -143,17 +138,11 @@ this.legend_ancient_summoner_background <- this.inherit("scripts/skills/backgrou
 		talents[this.Const.Attributes.Hitpoints] = 3;
 		this.getContainer().getActor().fillTalentValues(1, true);
 		local items = this.getContainer().getActor().getItems();
-		local r;
-		r = this.Math.rand(0, 2);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/dark_cowl"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/witchhunter_hat"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, ""],
+			[1, "legend_seer_hat"],
+			[1, "magician_hat"]
+		]));
 		items.equip(this.new("scripts/items/armor/thick_dark_tunic"));
 		items.equip(this.new("scripts/items/weapons/legend_grisly_scythe"));
 		local stash = this.World.Assets.getStash()
@@ -167,17 +156,11 @@ this.legend_ancient_summoner_background <- this.inherit("scripts/skills/backgrou
 		talents[this.Const.Attributes.Hitpoints] = 3;
 		this.getContainer().getActor().fillTalentValues(1, true);
 		local items = this.getContainer().getActor().getItems();
-		local r;
-		r = this.Math.rand(0, 2);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/dark_cowl"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/witchhunter_hat"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, ""],
+			[1, "legend_seer_hat"],
+			[1, "magician_hat"]
+		]));
 		items.equip(this.new("scripts/items/legend_armor/cloth/legend_dark_tunic"));
 		items.equip(this.new("scripts/items/weapons/legend_grisly_scythe"));
 		local stash = this.World.Assets.getStash()

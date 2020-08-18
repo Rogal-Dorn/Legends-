@@ -20,7 +20,7 @@ this.legend_runesmith_background <- this.inherit("scripts/skills/backgrounds/cha
 		this.m.Hairs = this.Const.Hair.CommonMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.Body = "bust_naked_body_00";
+
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Cruel;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[0];
@@ -92,8 +92,9 @@ this.legend_runesmith_background <- this.inherit("scripts/skills/backgrounds/cha
 
 		items.equip(this.new("scripts/items/armor/legend_blacksmith_apron"));
 
-			items.equip(this.new("scripts/items/helmets/hood"));
-
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "hood"]
+		]));
 	}
 
 	function onAddLegendEquipment()
@@ -111,7 +112,10 @@ this.legend_runesmith_background <- this.inherit("scripts/skills/backgrounds/cha
 			armor.setUpgrade(plate)
 		}
 		items.equip(armor);
-		items.equip(this.new("scripts/items/helmets/hood"));
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "hood"]
+		]));
+
 
 	}
 });

@@ -32,7 +32,7 @@ this.lone_wolf_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		bro.getSkills().removeByID("trait.disloyal");
 		bro.getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
 		bro.setPlaceInFormation(4);
-		bro.getTags().set("IsPlayerCharacter", true);
+		bro.getFlags().set("IsPlayerCharacter", true);
 		bro.getSprite("miniboss").setBrush("bust_miniboss_lone_wolf");
 		bro.m.HireTime = this.Time.getVirtualTimeF();
 		bro.m.PerkPoints = 3;
@@ -78,35 +78,16 @@ this.lone_wolf_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 
 
 
-		items.equip(this.new("scripts/items/helmets/bascinet_with_mail"));
+		items.equip(this.Const.World.Common.pickHelmet([[1, "bascinet_with_mail"]]));
 		items.equip(this.new("scripts/items/weapons/longsword"));
-		local val = this.World.State.addNewID(bro);
-		bro.m.CompanyID = val;
 		this.World.Assets.m.BusinessReputation = 200;
-		this.World.Tags.set("HasLegendCampTraining", true);
+		this.World.Flags.set("HasLegendCampTraining", true);
 		//this.World.Assets.getStash().resize(this.Math.min(10, this.World.Assets.getStash().getCapacity() - 9));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/smoked_ham_item"));
 		this.World.Assets.m.Money = this.World.Assets.m.Money / 2 - (this.World.Assets.getEconomicDifficulty() == 0 ? 0 : 100);
 		this.World.Assets.m.ArmorParts = this.World.Assets.m.ArmorParts / 2;
 		this.World.Assets.m.Medicine = this.World.Assets.m.Medicine / 3;
 		this.World.Assets.m.Ammo = 0;
-		if (this.World.LegendsMod.Configs().RelationshipsEnabled())
-{
-    local avgAlignment = 0;
-    foreach (bro in this.World.getPlayerRoster().getAll())
-    {
-        if (bro.getAlignment() <= this.Const.LegendMod.Alignment.NeutralMin)
-        {
-            avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMin);
-        }
-        else if (bro.getAlignment() >= this.Const.LegendMod.Alignment.NeutralMax)
-        {
-            avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMax);
-        }
-    }
-    avgAlignment *= (10 / this.World.getPlayerRoster().getSize());
-    this.World.Assets.addMoralReputation(avgAlignment);
-}
 	}
 
 	function onSpawnPlayer()
@@ -117,7 +98,7 @@ this.lone_wolf_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		{
 			randomVillage = this.World.EntityManager.getSettlements()[i];
 
-			if (randomVillage.isMilitary() && !randomVillage.isIsolatedFromRoads() && randomVillage.getSize() >= 3)
+			if (randomVillage.isMilitary() && !randomVillage.isIsolatedFromRoads() && randomVillage.getSize() >= 3 && !randomVillage.isSouthern())
 			{
 				break;
 			}
@@ -165,13 +146,6 @@ this.lone_wolf_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 			], this.Const.Music.CrossFadeTime);
 			this.World.Events.fire("event.lone_wolf_scenario_intro");
 		}, null);
-foreach (b in this.World.getPlayerRoster().getAll())
-		{
-			foreach (add in this.World.getPlayerRoster().getAll())
-			{
-				b.changeActiveRelationship(add, this.Math.rand(0, 10));
-			}
-		}
 
 	}
 
@@ -187,7 +161,7 @@ foreach (b in this.World.getPlayerRoster().getAll())
 
 		foreach( bro in roster )
 		{
-			if (bro.getTags().get("IsPlayerCharacter"))
+			if (bro.getFlags().get("IsPlayerCharacter"))
 			{
 				return true;
 			}

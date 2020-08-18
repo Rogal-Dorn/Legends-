@@ -36,7 +36,7 @@ this.legend_trader_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.Hairs = this.Const.Hair.TidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Tidy;
-		this.m.Body = "bust_naked_body_02";
+
 				this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Chivalrous;
 		this.m.Level = 1;
@@ -134,7 +134,7 @@ this.legend_trader_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsFemaleBackground = true;
 
 	}
@@ -207,14 +207,6 @@ this.legend_trader_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
 		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_bribe"));
 
-		if (this.m.IsFemaleBackground == true)
-		{
-			actor.setName(this.Const.Strings.CharacterNamesFemale[this.Math.rand(0, this.Const.Strings.CharacterNamesFemale.len() - 1)]);
-		}
-		else
-		{
-			actor.setName(this.Const.Strings.CharacterNames[this.Math.rand(0, this.Const.Strings.CharacterNames.len() - 1)]);
-		}
 	}
 
 	function onAddEquipment()
@@ -222,7 +214,9 @@ this.legend_trader_background <- this.inherit("scripts/skills/backgrounds/charac
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/weapons/legend_tipstaff"));
 		items.equip(this.new("scripts/items/armor/linen_tunic"));
-		items.equip(this.new("scripts/items/helmets/feathered_hat"));
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "feathered_hat"]
+		]));
 		// local stash = this.World.Assets.getStash()
 		// stash.removeByID("supplies.ground_grains");
 		// stash.removeByID("supplies.ground_grains");
@@ -248,7 +242,9 @@ this.legend_trader_background <- this.inherit("scripts/skills/backgrounds/charac
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/weapons/legend_tipstaff"));
 		items.equip(this.new("scripts/items/legend_armor/cloth/legend_tunic"));
-		items.equip(this.new("scripts/items/helmets/feathered_hat"));
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "feathered_hat"]
+		]));
 		// local stash = this.World.Assets.getStash()
 		// stash.removeByID("supplies.ground_grains");
 		// stash.removeByID("supplies.ground_grains");

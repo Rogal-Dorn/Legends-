@@ -10,7 +10,7 @@ this.militia_veteran <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Hairs = this.Const.Hair.CommonMale;
 		this.m.HairColors = this.Const.HairColors.Old;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.Tags.add("militia");
+		this.m.Flags.add("militia");
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/militia_melee_agent");
 		this.m.AIAgent.setActor(this);
 	}
@@ -216,20 +216,11 @@ this.militia_veteran <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.Math.rand(1, 100) <= 75)
 		{
-			local r = this.Math.rand(1, 3);
-
-			if (r == 1)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/hood"));
-			}
-			else if (r == 2)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/aketon_cap"));
-			}
-			else if (r == 3)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/full_aketon_cap"));
-			}
+			this.m.Items.equip(this.Const.World.Common.pickHelmet([
+				[1, "hood"],
+				[1, "aketon_cap"],
+				[1, "full_leather_cap"]
+			]))
 		}
 	}
 

@@ -55,14 +55,14 @@ this.barbarian_drummer <- this.inherit("scripts/entity/tactical/human", {
 		this.setAppearance();
 		this.getSprite("socket").setBrush("bust_base_wildmen_01");
 		this.m.Skills.add(this.new("scripts/skills/actives/barbarian_fury_skill"));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_dodge"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_underdog"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_anticipation"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_hold_out"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_recover"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_brawny"));
+
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
-			{
+		{
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_overwhelm"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_relentless"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_alert"));
@@ -72,7 +72,13 @@ this.barbarian_drummer <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_last_stand"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_mastery_fist"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
-			}
+		}
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_pathfinder"));
+
+		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 30)
+		{
+			this.m.Skills.add(this.new("scripts/skills/effects/dodge_effect"));
+		}
 	}
 
 	function assignRandomEquipment()
@@ -138,15 +144,13 @@ this.barbarian_drummer <- this.inherit("scripts/entity/tactical/human", {
 			}
 		}
 
-		r = this.Math.rand(1, 2);
-
-		if (r == 1)
+		local item = this.Const.World.Common.pickHelmet([
+			[1, "barbarians/leather_headband"],
+			[1, "barbarians/bear_headpiece"]
+		])
+		if (item != null)
 		{
-			this.m.Items.equip(this.new("scripts/items/helmets/barbarians/leather_headband"));
-		}
-		else if (r == 2)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/barbarians/bear_headpiece"));
+			this.m.Items.equip(item);
 		}
 	}
 

@@ -1059,3 +1059,79 @@ gt.Const.World.Spawn.LegendGreenwoodSchrat <-
 		}
 	]
 }
+
+gt.Const.World.Spawn.Hyenas <-
+{
+	Name = "Hyenas",
+	IsDynamic = true,
+	MovementSpeedMult = 1.0,
+	VisibilityMult = 1.0,
+	VisionMult = 1.0,
+	Body = "figure_hyena_01",
+	MaxR = 650,
+	Troops = [
+		{
+			Weight = 100,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.Hyena,
+					Cost = 15
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.HyenaHIGH,
+					MinR = 400,
+					Cost = 20
+				}
+			]
+		}
+	]
+}
+
+gt.Const.World.Spawn.Serpents <-
+{
+	Name = "Serpents",
+	IsDynamic = true,
+	MovementSpeedMult = 1.0,
+	VisibilityMult = 1.0,
+	VisionMult = 1.0,
+	Body = "figure_serpent_01",
+	MaxR = 560,
+	Troops = [
+		{
+			Weight = 100,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.Serpent,
+					Cost = 20
+				}
+			]
+		}
+	]
+}
+
+gt.Const.World.Spawn.SandGolems <-
+{
+	Name = "SandGolems",
+	IsDynamic = true,
+	MovementSpeedMult = 1.0,
+	VisibilityMult = 1.0,
+	VisionMult = 1.0,
+	Body = "figure_golem_01",
+	MaxR = 560,
+	Troops = [
+		{
+			Weight = 100,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.SandGolem,
+					Cost = 13
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.SandGolemMEDIUM,
+					MinR = 200,
+					Cost = 35
+				}
+			]
+		}
+	]
+}

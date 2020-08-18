@@ -55,7 +55,7 @@ this.ai_defend <- this.inherit("scripts/ai/tactical/behavior", {
 			return this.Const.AI.Behavior.Score.Zero;
 		}
 
-		if (this.getAgent().getBehavior(this.Const.AI.Behavior.ID.EngageRanged) != null && this.getAgent().getBehavior(this.Const.AI.Behavior.ID.EngageRanged).getScore() > 0 || this.getAgent().getBehavior(this.Const.AI.Behavior.ID.EngageMelee) != null && this.getAgent().getBehavior(this.Const.AI.Behavior.ID.EngageMelee).getScore() > 0 || this.getAgent().getBehavior(this.Const.AI.Behavior.ID.AttackBow) != null && this.getAgent().getBehavior(this.Const.AI.Behavior.ID.AttackBow).getScore() > 0 || this.getAgent().getBehavior(this.Const.AI.Behavior.ID.AttackDefault) != null && this.getAgent().getBehavior(this.Const.AI.Behavior.ID.AttackDefault).getScore() > 0 || this.getAgent().getBehavior(this.Const.AI.Behavior.ID.Reload) != null && this.getAgent().getBehavior(this.Const.AI.Behavior.ID.Reload).getScore() > 0 || this.getAgent().getBehavior(this.Const.AI.Behavior.ID.Protect) != null && this.getAgent().getBehavior(this.Const.AI.Behavior.ID.Protect).getScore() > 0)
+		if (this.getAgent().getBehavior(this.Const.AI.Behavior.ID.EngageRanged) != null && this.getAgent().getBehavior(this.Const.AI.Behavior.ID.EngageRanged).getScore() > 0 || this.getAgent().getBehavior(this.Const.AI.Behavior.ID.EngageRanged) != null && this.getAgent().getBehavior(this.Const.AI.Behavior.ID.EngageRanged).isUsedThisTurn() || this.getAgent().getBehavior(this.Const.AI.Behavior.ID.EngageMelee) != null && this.getAgent().getBehavior(this.Const.AI.Behavior.ID.EngageMelee).getScore() > 0 || this.getAgent().getBehavior(this.Const.AI.Behavior.ID.AttackBow) != null && this.getAgent().getBehavior(this.Const.AI.Behavior.ID.AttackBow).getScore() > 0 || this.getAgent().getBehavior(this.Const.AI.Behavior.ID.AttackHandgonne) != null && this.getAgent().getBehavior(this.Const.AI.Behavior.ID.AttackHandgonne).getScore() > 0 || this.getAgent().getBehavior(this.Const.AI.Behavior.ID.AttackDefault) != null && this.getAgent().getBehavior(this.Const.AI.Behavior.ID.AttackDefault).getScore() > 0 || this.getAgent().getBehavior(this.Const.AI.Behavior.ID.Reload) != null && this.getAgent().getBehavior(this.Const.AI.Behavior.ID.Reload).getScore() > 0 || this.getAgent().getBehavior(this.Const.AI.Behavior.ID.Protect) != null && (this.getAgent().getBehavior(this.Const.AI.Behavior.ID.Protect).getScore() > 0 || this.getAgent().getBehavior(this.Const.AI.Behavior.ID.Protect).isDoneThisTurn()))
 		{
 			return this.Const.AI.Behavior.Score.Zero;
 		}
@@ -104,6 +104,11 @@ this.ai_defend <- this.inherit("scripts/ai/tactical/behavior", {
 		}
 
 		if (targetTile != null && targetTile.IsBadTerrain)
+		{
+			score = score * this.Const.AI.Behavior.DefendAvoidBadTerrainMult;
+		}
+
+		if (targetTile != null && targetTile.Properties.Effect != null && !targetTile.Properties.Effect.IsPositive && targetTile.Properties.Effect.Applicable(_entity))
 		{
 			score = score * this.Const.AI.Behavior.DefendAvoidBadTerrainMult;
 		}
@@ -298,6 +303,18 @@ this.ai_defend <- this.inherit("scripts/ai/tactical/behavior", {
 			}
 		}
 
+		local size = this.Tactical.getMapSize();
+		local centerTile;
+
+		if (this.Tactical.State.getStrategicProperties() != null && this.Tactical.State.getStrategicProperties().LocationTemplate != null)
+		{
+			centerTile = this.Tactical.getTileSquare(size.X / 2 + this.Tactical.State.getStrategicProperties().LocationTemplate.ShiftX, size.Y / 2 + this.Tactical.State.getStrategicProperties().LocationTemplate.ShiftY);
+		}
+		else
+		{
+			centerTile = this.Tactical.getTileSquare(size.X / 2, size.Y / 2);
+		}
+
 		foreach( t in tiles.Tiles )
 		{
 			if (this.isAllottedTimeReached(time))
@@ -317,6 +334,17 @@ this.ai_defend <- this.inherit("scripts/ai/tactical/behavior", {
 				break;
 			}
 
+			if (this.getStrategy().isDefendingCamp())
+			{
+				local d = t.Tile.getDistanceTo(centerTile);
+
+				for( ; d > this.Const.Tactical.Settings.CampRadius + this.Tactical.State.getStrategicProperties().LocationTemplate.AdditionalRadius + 1;  )
+				{
+				}
+			}
+
+			local movementCosts;
+
 			if (!t.Tile.isSameTileAs(myTile))
 			{
 				settings.ActionPointCosts = _entity.getActionPointCosts();
@@ -331,7 +359,7 @@ this.ai_defend <- this.inherit("scripts/ai/tactical/behavior", {
 
 				if (navigator.findPath(myTile, t.Tile, settings, 0))
 				{
-					local movementCosts = navigator.getCostForPath(_entity, settings, _entity.getActionPoints(), _entity.getFatigueMax() - _entity.getFatigue());
+					movementCosts = navigator.getCostForPath(_entity, settings, _entity.getActionPoints(), _entity.getFatigueMax() - _entity.getFatigue());
 					apCost = apCost + movementCosts.ActionPointsRequired;
 					finalTile = movementCosts.End;
 					isForNextTurn = false;
@@ -537,6 +565,26 @@ this.ai_defend <- this.inherit("scripts/ai/tactical/behavior", {
 				}
 			}
 
+			if (this.getStrategy().isDefendingCamp())
+			{
+				if (movementCosts != null && !movementCosts.IsComplete)
+				{
+					local d = movementCosts.End.getDistanceTo(centerTile);
+
+					if (d > this.Const.Tactical.Settings.CampRadius + this.Tactical.State.getStrategicProperties().LocationTemplate.AdditionalRadius + 1)
+					{
+						t.ScoreBonus -= this.Const.AI.Behavior.DefendAtPalisadeBonus;
+					}
+				}
+
+				local d = t.Tile.getDistanceTo(centerTile);
+
+				if (d == this.Const.Tactical.Settings.CampRadius + this.Tactical.State.getStrategicProperties().LocationTemplate.AdditionalRadius || d == this.Const.Tactical.Settings.CampRadius + this.Tactical.State.getStrategicProperties().LocationTemplate.AdditionalRadius - 1)
+				{
+					t.ScoreBonus += this.Const.AI.Behavior.DefendAtPalisadeBonus;
+				}
+			}
+
 			local score = apCost - t.ScoreBonus - allyDefendBonus - coverBonus;
 
 			if (score < bestScore)
@@ -565,6 +613,12 @@ this.ai_defend <- this.inherit("scripts/ai/tactical/behavior", {
 		local dist = _tile.getDistanceTo(_tag.Origin);
 		local score = _tile.Level * 2.0 + _tile.TVTotal - dist * 2.0;
 		local scoreBonus = _tile.Level + _tile.TVTotal * this.Const.AI.Behavior.DefendTerrainValueMult;
+
+		if (_tile.Properties.Effect != null && !_tile.Properties.Effect.IsPositive && _tile.Properties.Effect.Applicable(_tag.Actor))
+		{
+			score = score - this.Const.AI.Behavior.DefendAvoidTileEffectPenalty;
+			scoreBonus = scoreBonus - this.Const.AI.Behavior.DefendAvoidTileEffectPenalty;
+		}
 
 		for( local i = 0; i < 6; i = ++i )
 		{

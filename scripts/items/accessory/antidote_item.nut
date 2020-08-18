@@ -13,7 +13,7 @@ this.antidote_item <- this.inherit("scripts/items/accessory/accessory", {
 		this.m.IconLarge = "";
 		this.m.Icon = "consumables/antidote_01.png";
 		this.m.StaminaModifier = -2;
-		this.m.Value = 100;
+		this.m.Value = 150;
 	}
 
 	function getTooltip()

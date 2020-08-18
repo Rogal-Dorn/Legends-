@@ -9,9 +9,9 @@ this.disarm_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "skills/active_170_sw.png";
 		this.m.Overlay = "active_170";
 		this.m.SoundOnUse = [
-			"sounds/combat/dlc4/whip_01.wav",
-			"sounds/combat/dlc4/whip_02.wav",
-			"sounds/combat/dlc4/whip_03.wav"
+			"sounds/combat/whip_01.wav",
+			"sounds/combat/whip_02.wav",
+			"sounds/combat/whip_03.wav"
 		];
 		this.m.SoundOnHit = [];
 		this.m.Type = this.Const.SkillType.Active;
@@ -108,6 +108,7 @@ this.disarm_skill <- this.inherit("scripts/skills/skill", {
 			}
 
 			_properties.DamageTotalMult = 0.0;
+			_properties.HitChanceMult[this.Const.BodyPart.Head] = 0.0;
 		}
 	}
 

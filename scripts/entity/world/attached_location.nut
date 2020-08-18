@@ -200,6 +200,10 @@ this.attached_location <- this.inherit("scripts/entity/world/location", {
 		this.m.IsAttackableByAI = false;
 		this.m.IsDestructible = false;
 		this.m.IsShowingName = false;
+		this.m.CombatLocation.Template[0] = "tactical.human_camp";
+		this.m.CombatLocation.Fortification = this.Const.Tactical.FortificationType.None;
+		this.m.CombatLocation.CutDownTrees = true;
+		this.m.CombatLocation.AdditionalRadius = 5;
 		this.m.LocationType = this.Const.World.LocationType.AttachedLocation;
 	}
 
@@ -216,7 +220,7 @@ this.attached_location <- this.inherit("scripts/entity/world/location", {
 	{
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 	}
 
@@ -295,10 +299,7 @@ this.attached_location <- this.inherit("scripts/entity/world/location", {
 		}
 
 		local active = _in.readBool();
-		if (_in.getMetaData().getVersion() >= 67)
-		{
-			this.m.IsNew = _in.readBool();
-		}
+		this.m.IsNew = _in.readBool();
 		this.setActive(active, true);
 		this.setAttackable(false);
 		this.getSprite("lighting").Color = this.createColor("ffffff00");

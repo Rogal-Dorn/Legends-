@@ -98,22 +98,27 @@ this.wheat_fields_location <- this.inherit("scripts/entity/world/attached_locati
 		_list.push("supplies/bread_item");
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 		if (!this.isActive())
 		{
 			return;
 		}
+		_list.push("farmhand_background");
+		_list.push("farmhand_background");
+		_list.push("farmhand_background");
+		_list.push("daytaler_background");
+		_list.push("daytaler_background");
+		_list.push("miller_background");
+		_list.push("miller_background");
+
+		if (_gender)
+		{
 		_list.push("female_farmhand_background");
-		_list.push("farmhand_background");
-		_list.push("farmhand_background");
-		_list.push("farmhand_background");
 		_list.push("female_daytaler_background");
-		_list.push("daytaler_background");
-		_list.push("daytaler_background");
-		_list.push("miller_background");
 		_list.push("female_miller_background");
-		_list.push("miller_background");
+
+		}
 	}
 
 	function onUpdateShopList( _id, _list )

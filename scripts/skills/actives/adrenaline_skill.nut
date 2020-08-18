@@ -19,7 +19,7 @@ this.adrenaline_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsTargeted = false;
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
-		this.m.ActionPointCost = 0;
+		this.m.ActionPointCost = 1;
 		this.m.FatigueCost = 20;
 		this.m.MinRange = 0;
 		this.m.MaxRange = 0;

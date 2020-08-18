@@ -40,6 +40,12 @@ this.ai_break_free <- this.inherit("scripts/ai/tactical/behavior", {
 		}
 
 		score = score * this.getFatigueScoreMult(this.m.Skill);
+
+		if (this.m.Skill.getChance() <= 30 && _entity.getTile().hasZoneOfControlOtherThan(_entity.getAlliedFactions()))
+		{
+			return this.Const.AI.Behavior.Score.Zero;
+		}
+
 		return this.Const.AI.Behavior.Score.BreakFree;
 	}
 

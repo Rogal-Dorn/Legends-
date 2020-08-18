@@ -5,7 +5,7 @@ this.noble_gear <- this.inherit("scripts/items/armor/armor", {
 		this.armor.create();
 		this.m.ID = "armor.body.noble_gear";
 		this.m.Name = "";
-		this.m.Description = "A simple cloth tunic. Fashionable but offering little in protection.";
+		this.m.Description = "";
 		this.m.IsDroppedAsLoot = false;
 		this.m.ShowOnCharacter = true;
 		local variants = [

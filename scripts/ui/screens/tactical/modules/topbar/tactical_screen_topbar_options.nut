@@ -1,6 +1,6 @@
 this.tactical_screen_topbar_options <- this.inherit("scripts/ui/screens/ui_module", {
 	m = {
-		OnSwitchMapOrientationListener = null,
+		OnToggleHighlightBlockedTilesListener = null,
 		OnSwitchMapLevelUpListener = null,
 		OnSwitchMapLevelDownListener = null,
 		OnToggleStatsOverlaysListener = null,
@@ -9,9 +9,9 @@ this.tactical_screen_topbar_options <- this.inherit("scripts/ui/screens/ui_modul
 		OnCenterPressedListener = null,
 		OnToggleTreesPressedListener = null
 	},
-	function setOnSwitchMapOrientationListener( _listener )
+	function setOnToggleHighlightBlockedTilesListener( _listener )
 	{
-		this.m.OnSwitchMapOrientationListener = _listener;
+		this.m.OnToggleHighlightBlockedTilesListener = _listener;
 	}
 
 	function setOnSwitchMapLevelUpListener( _listener )
@@ -51,7 +51,7 @@ this.tactical_screen_topbar_options <- this.inherit("scripts/ui/screens/ui_modul
 
 	function clearEventListener()
 	{
-		this.m.OnSwitchMapOrientationListener = null;
+		this.m.OnToggleHighlightBlockedTilesListener = null;
 		this.m.OnSwitchMapLevelUpListener = null;
 		this.m.OnSwitchMapLevelDownListener = null;
 		this.m.OnToggleStatsOverlaysListener = null;
@@ -73,9 +73,9 @@ this.tactical_screen_topbar_options <- this.inherit("scripts/ui/screens/ui_modul
 		this.ui_module.destroy();
 	}
 
-	function setSwitchMapOrientationButtonState( _toNorth )
+	function setToggleHighlightBlockedTilesListenerButtonState( _enable )
 	{
-		this.m.JSHandle.asyncCall("setSwitchMapOrientationButtonState", _toNorth);
+		this.m.JSHandle.asyncCall("setHighlightBlockedTilesButtonState", _enable);
 	}
 
 	function setToggleStatsOverlaysButtonState( _enable )
@@ -93,11 +93,11 @@ this.tactical_screen_topbar_options <- this.inherit("scripts/ui/screens/ui_modul
 		this.m.JSHandle.asyncCall("setFleeButtonEnabled", _enabled);
 	}
 
-	function onSwitchMapOrientationButtonPressed()
+	function onToggleHighlightBlockedTilesListenerButtonPressed()
 	{
-		if (this.m.OnSwitchMapOrientationListener != null)
+		if (this.m.OnToggleHighlightBlockedTilesListener != null)
 		{
-			this.m.OnSwitchMapOrientationListener();
+			this.m.OnToggleHighlightBlockedTilesListener();
 		}
 	}
 

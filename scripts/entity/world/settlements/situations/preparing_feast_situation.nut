@@ -7,6 +7,10 @@ this.preparing_feast_situation <- this.inherit("scripts/entity/world/settlements
 		this.m.Name = "Preparing Feast";
 		this.m.Description = "The nobles are preparing for a feast. Cook houses and kitchens are buying food in bulk.";
 		this.m.Icon = "ui/settlement_status/settlement_effect_29.png";
+		this.m.Rumors = [
+			"The oh-so-noble highborns are preparing a feast at %settlement% while us peasants have but old grain to choke on...",
+			"My uncle is a servant at %settlement%, and he tells me that they\'re preparing a big feast. No point in going there unless you\'re invited, though."
+		];
 		this.m.IsStacking = false;
 		this.m.ValidDays = 3;
 	}
@@ -36,19 +40,24 @@ this.preparing_feast_situation <- this.inherit("scripts/entity/world/settlements
 		_modifiers.FoodPriceMult *= 2.0;
 	}
 
-	function onUpdateDraftList( _draftList )
+	function onUpdateDraftList( _draftList, _gender )
 	{
 		_draftList.push("butcher_background");
 		_draftList.push("butcher_background");
-		_draftList.push("female_butcher_background");
-		_draftList.push("female_butcher_background");
 		_draftList.push("servant_background");
 		_draftList.push("servant_background");
 		_draftList.push("servant_background");
-		_draftList.push("female_servant_background");
-		_draftList.push("female_servant_background");
-		_draftList.push("female_servant_background");
 		_draftList.push("eunuch_background");;
+
+		if (_gender)
+		{
+		_draftList.push("female_servant_background");
+		_draftList.push("female_servant_background");
+		_draftList.push("female_servant_background");
+		_draftList.push("female_butcher_background");
+		_draftList.push("female_butcher_background");
+
+		}
 
 	}
 

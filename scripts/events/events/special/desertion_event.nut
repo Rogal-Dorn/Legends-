@@ -43,7 +43,6 @@ this.desertion_event <- this.inherit("scripts/events/event", {
 						{
 							_event.m.Deserter.getItems().transferToStash(this.World.Assets.getStash());
 						}
-						_event.m.Deserter.removeActiveRelationship();
 						this.World.Statistics.addFallen(_event.m.Deserter, "Deserted the company");
 						this.World.getPlayerRoster().remove(_event.m.Deserter);
 						_event.m.Deserter = null;

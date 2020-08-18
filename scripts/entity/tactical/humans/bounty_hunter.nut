@@ -37,7 +37,7 @@ this.bounty_hunter <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_brawny"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_bullseye"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_quick_hands"));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_dodge"));
+		this.m.Skills.add(this.new("scripts/skills/effects/dodge_effect"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_overwhelm"));
 		this.m.Skills.add(this.new("scripts/skills/actives/rotation"));
@@ -452,24 +452,19 @@ this.bounty_hunter <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.Math.rand(1, 100) <= 90)
 		{
-			local helmets = [
-				"scripts/items/helmets/nasal_helmet",
-				"scripts/items/helmets/nasal_helmet_with_mail",
-				"scripts/items/helmets/mail_coif",
-				"scripts/items/helmets/reinforced_mail_coif",
-				"scripts/items/helmets/headscarf",
-				"scripts/items/helmets/kettle_hat",
-				"scripts/items/helmets/kettle_hat_with_mail"
-			];
-
-			if (this.Const.DLC.Wildmen)
+			local item = this.Const.World.Common.pickHelmet([
+				[1, "nasal_helmet"],
+				[1, "nasal_helmet_with_mail"],
+				[1, "reinforced_mail_coif"],
+				[1, "headscarf"],
+				[1, "kettle_hat"],
+				[1, "kettle_hat_with_mail"],
+				[1, "nordic_helmet"]
+			])
+			if (item != null)
 			{
-				helmets.extend([
-					"scripts/items/helmets/nordic_helmet"
-				]);
+				this.m.Items.equip(item);
 			}
-
-			this.m.Items.equip(this.new(helmets[this.Math.rand(1, helmets.len() - 1)]));
 		}
 	}
 

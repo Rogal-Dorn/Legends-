@@ -84,7 +84,7 @@ this.shortsighted_shoots_bro_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getID() != this.m.Shortsighted.getID())
+			if (bro.getID() != this.m.Shortsighted.getID() && bro.getBackground().getID() != "background.slave")
 			{
 				this.m.OtherGuy = bro;
 				break;

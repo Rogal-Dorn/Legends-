@@ -28,7 +28,7 @@ this.butcher_gives_pointers_event <- this.inherit("scripts/events/event", {
 			{
 				this.Characters.push(_event.m.Butcher.getImagePath());
 				this.Characters.push(_event.m.Flagellant.getImagePath());
-				_event.m.Flagellant.getTags().add("pointers_from_butcher");
+				_event.m.Flagellant.getFlags().add("pointers_from_butcher");
 				_event.m.Flagellant.getBaseProperties().MeleeSkill += 2;
 				_event.m.Flagellant.getSkills().update();
 				this.List.push({
@@ -53,57 +53,6 @@ this.butcher_gives_pointers_event <- this.inherit("scripts/events/event", {
 					});
 				}
 
-				//Exampe code on how to do relation changes between characters
-				//We use _event.m.Butcher and _event.m.Flagellant because these are the two brothers defined
-
-
-				//the necessary values for changeActiveRelationship() are
-				//	 Actor, Modifier
-				//after those 2 are optional values
-				//	 Table Key/What we modify, and Set
-				//the default table key is "RelationNum", and set is automatically off unless you need to set a value specifically and overwrite the old one (maybe going to neutral 0 specifically etc)
-				//examples below
-
-
-				//for a typical event you may only use the next 3 lines and none of the commented code below
-
-				//This has a random modifier to increase our relations
-				//It changes how the Butcher views the Flagellant
-				local modifier = this.Math.rand(1, 5);
-				_event.m.Butcher.changeActiveRelationship( _event.m.Flagellant, modifier );
-
-				if (this.World.LegendsMod.Configs().RelationshipsEnabled())
-				{
-					this.List.push({
-						id = 10,
-						icon = "ui/icons/relation.png",
-						text = _event.m.Butcher.getName() + " and " + _event.m.Flagellant.getName() + " grow closer"
-					});
-				}
-
-				//You can instead set a flat modifier also like so
-				//This changes how the Flagellant sees the butcher
-				_event.m.Flagellant.changeActiveRelationship( _event.m.Butcher, 3 );
-
-				//Remember, [-50, 50] is the intended range of relations "steps" with each step being 10 numbers
-				//So [-9, 9] is something like "they know each other", and [10, 19] is "they're starting to like each other"
-
-				//Below we show how to add new key or to change a relation, but for this event it won't be used
-				/*
-
-				_event.m.Butcher.changeactiveRelationship( _event.m.Flagellant, true, "ourNewModifier" )
-				_event.m.Flagellant.changeActiveRelationship( _event.m.Butcher, 13, "flagNewModifier" )
-
-				*/
-
-				//If we happen to want to set a number, not just modify it we do the following
-				/*
-
-				_event.m.Butcher.changeActiveRelationship( _event.m.Flagellant, 999, "RelationNum", true)
-
-				*/
-
-
 			}
 
 		});
@@ -117,7 +66,7 @@ this.butcher_gives_pointers_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getTags().has("pointers_from_butcher"))
+			if (bro.getFlags().has("pointers_from_butcher"))
 			{
 				continue;
 			}

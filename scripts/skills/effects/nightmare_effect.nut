@@ -80,7 +80,7 @@ this.nightmare_effect <- this.inherit("scripts/skills/skill", {
 		this.m.Container.removeByID("effects.riposte");
 		this.m.Container.removeByID("effects.return_favor");
 		local actor = this.getContainer().getActor();
-		actor.getTags().set("Nightmare", true);
+		actor.getFlags().set("Nightmare", true);
 
 		if (this.m.SoundOnUse.len() != 0)
 		{
@@ -123,7 +123,7 @@ this.nightmare_effect <- this.inherit("scripts/skills/skill", {
 			actor.getSprite("closed_eyes").Visible = false;
 		}
 
-		actor.getTags().set("Nightmare", false);
+		actor.getFlags().set("Nightmare", false);
 
 		if ("setEyesClosed" in actor.get())
 		{

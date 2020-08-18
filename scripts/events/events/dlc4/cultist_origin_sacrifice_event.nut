@@ -2,7 +2,8 @@ this.cultist_origin_sacrifice_event <- this.inherit("scripts/events/event", {
 	m = {
 		Sacrifice = null,
 		Sacrifice1 = null,
-		Sacrifice2 = null
+		Sacrifice2 = null,
+		LastTriggeredOnDay = 0
 	},
 	function create()
 	{
@@ -69,7 +70,6 @@ this.cultist_origin_sacrifice_event <- this.inherit("scripts/events/event", {
 					text = _event.m.Sacrifice.getName() + " has died"
 				});
 				_event.m.Sacrifice.getItems().transferToStash(this.World.Assets.getStash());
-				_event.m.Sacrifice.removeActiveRelationship();
 				this.World.getPlayerRoster().remove(_event.m.Sacrifice);
 				local brothers = this.World.getPlayerRoster().getAll();
 				local hasProphet = false;
@@ -104,32 +104,6 @@ this.cultist_origin_sacrifice_event <- this.inherit("scripts/events/event", {
 								text = bro.getName() + this.Const.MoodStateEvent[bro.getMoodState()]
 							});
 						}
-
-
-
-						//set relations
-						if (this.World.LegendsMod.Configs().RelationshipsEnabled())
-						{
-							local relations = this.World.getPlayerRoster().getAll();
-							foreach( relation in relations )
-							{
-								if (relation.getBackground().getID() == "background.cultist")
-								{
-								local modifier1 = this.Math.rand(1, 5);
-								bro.changeActiveRelationship( relation, modifier1 );
-								local modifier2 = this.Math.rand(1, 5);
-								relation.changeActiveRelationship( bro, modifier2 );
-								this.List.push({
-									id = 11,
-									icon = "ui/icons/relation.png",
-									text = relation.getName() + " and " + bro.getName() + " grow closer"
-								});
-
-
-								}
-							}
-						}
-
 
 						if (this.Math.rand(1, 100) > 50)
 						{
@@ -197,7 +171,7 @@ this.cultist_origin_sacrifice_event <- this.inherit("scripts/events/event", {
 							});
 						}
 					}
-					else
+					else if (!bro.getSkills().hasSkill("trait.mad"))
 					{
 						bro.worsenMood(4.0, "Horrified by the sacrifice of " + _event.m.Sacrifice.getName());
 
@@ -258,11 +232,12 @@ this.cultist_origin_sacrifice_event <- this.inherit("scripts/events/event", {
 		brothers.remove(r);
 		r = this.Math.rand(0, this.Math.min(2, brothers.len() - 1));
 		this.m.Sacrifice2 = brothers[r];
-		this.m.Score = 75;
+		this.m.Score = 50 + (this.World.getTime().Days - this.m.LastTriggeredOnDay);
 	}
 
 	function onPrepare()
 	{
+		this.m.LastTriggeredOnDay = this.World.getTime().Days;
 	}
 
 	function onPrepareVariables( _vars )
@@ -286,6 +261,22 @@ this.cultist_origin_sacrifice_event <- this.inherit("scripts/events/event", {
 		this.m.Sacrifice1 = null;
 		this.m.Sacrifice2 = null;
 		this.m.Sacrifice = null;
+	}
+
+	function onSerialize( _out )
+	{
+		this.event.onSerialize(_out);
+		_out.writeU16(this.m.LastTriggeredOnDay);
+	}
+
+	function onDeserialize( _in )
+	{
+		this.event.onDeserialize(_in);
+
+		if (_in.getMetaData().getVersion() >= 62)
+		{
+			this.m.LastTriggeredOnDay = _in.readU16();
+		}
 	}
 
 });

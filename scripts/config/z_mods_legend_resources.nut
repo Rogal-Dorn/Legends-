@@ -5,6 +5,10 @@ if (!("LegendMod" in gt.Const))
 	gt.Const.LegendMod <- {};
 }
 
+gt.Const.LegendMod.Formations <- {
+	Count = 8
+};
+
 gt.Const.LegendMod.MaxResources <- [
 	{
 		Food = 300,

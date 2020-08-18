@@ -5,7 +5,7 @@ this.legend_hunting_stollwurms_contract <- this.inherit("scripts/contracts/contr
 		IsPlayerAttacking = true,
 		MinStrength = 500,
 		Perk = "perk.legend_favoured_enemy_lindwurm",
-		ValidTypes = this.Const.LegendMod.FavoriteLindwurm		
+		ValidTypes = this.Const.LegendMod.FavoriteLindwurm
 	},
 	function create()
 	{
@@ -89,7 +89,7 @@ this.legend_hunting_stollwurms_contract <- this.inherit("scripts/contracts/contr
 					this.Const.World.TerrainType.Mountains
 				]);
 				local nearTile = this.Contract.getTileToSpawnLocation(playerTile, 4, 7);
-				local party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).spawnEntity(tile, "Stollwurm", false, this.Const.World.Spawn.LegendStollwurm, 100 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
+				local party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).spawnEntity(tile, "Stollwurm", false, this.Const.World.Spawn.LegendStollwurm, 100 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult());
 				party.getSprite("banner").setBrush("banner_beasts_01");
 				party.setDescription("A Stollwurm - a burrowing bipedal dragon resembling a giant snake.");
 				party.setAttackableByAI(false);
@@ -391,7 +391,7 @@ this.legend_hunting_stollwurms_contract <- this.inherit("scripts/contracts/contr
 						p.Music = this.Const.Music.BeastsTracks;
 						p.PlayerDeploymentType = this.Const.Tactical.DeploymentType.Edge;
 						p.EnemyDeploymentType = this.Const.Tactical.DeploymentType.Random;
-						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.OrcScouts, 100 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.World.FactionManager.getFactionOfType(this.Const.FactionType.Orcs).getID());
+						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.OrcScouts, 100 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult(), this.World.FactionManager.getFactionOfType(this.Const.FactionType.Orcs).getID());
 						this.World.Contracts.startScriptedCombat(p, false, true, true);
 						return 0;
 					}
@@ -498,7 +498,7 @@ this.legend_hunting_stollwurms_contract <- this.inherit("scripts/contracts/contr
 
 						foreach( b in bases )
 						{
-							if (!b.getLoot().isEmpty() && !b.isLocationType(this.Const.World.LocationType.Unique) && !b.getTags().get("IsEventLocation"))
+							if (!b.getLoot().isEmpty() && !b.isLocationType(this.Const.World.LocationType.Unique) && !b.getFlags().get("IsEventLocation"))
 							{
 								candidates_location.push(b);
 							}
@@ -511,7 +511,7 @@ this.legend_hunting_stollwurms_contract <- this.inherit("scripts/contracts/contr
 
 						local location = candidates_location[this.Math.rand(0, candidates_location.len() - 1)];
 						this.World.uncoverFogOfWar(location.getTile().Pos, 700.0);
-						location.getTags().set("IsEventLocation", true);
+						location.getFlags().set("IsEventLocation", true);
 						location.setDiscovered(true);
 						this.World.getCamera().moveTo(location);
 						return 0;
@@ -681,7 +681,7 @@ this.legend_hunting_stollwurms_contract <- this.inherit("scripts/contracts/contr
 			}
 
 			local stats = this.Const.LegendMod.GetFavoriteEnemyStats(bro, this.m.ValidTypes);
-			if (stats.Strength >= this.m.MinStrength) 
+			if (stats.Strength >= this.m.MinStrength)
 			{
 				return true;
 			}

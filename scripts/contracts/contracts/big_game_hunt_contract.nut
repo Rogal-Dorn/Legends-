@@ -82,7 +82,7 @@ this.big_game_hunt_contract <- this.inherit("scripts/contracts/contract", {
 			];
 		}
 
-		this.m.Payment.Pool = 1250 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult() * priceMult;
+		this.m.Payment.Pool = 1300 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult() * priceMult;
 		this.m.Payment.Count = 1.0;
 		this.m.Payment.MaxCount = maximumHeads[this.Math.rand(0, maximumHeads.len() - 1)];
 		local settlements = this.World.FactionManager.getFaction(this.m.Faction).getSettlements();
@@ -97,6 +97,26 @@ this.big_game_hunt_contract <- this.inherit("scripts/contracts/contract", {
 			local nearSettlements = 0;
 
 			if (r.Type == this.Const.World.TerrainType.Snow || r.Type == this.Const.World.TerrainType.Mountains)
+			{
+				continue;
+			}
+
+			if (!r.Center.IsDiscovered)
+			{
+				continue;
+			}
+
+			if (this.m.Size == 2 && r.Type != this.Const.World.TerrainType.Steppe && r.Type != this.Const.World.TerrainType.Forest && r.Type != this.Const.World.TerrainType.LeaveForest && r.Type != this.Const.World.TerrainType.AutumnForest)
+			{
+				continue;
+			}
+
+			if (r.Discovered < 0.5)
+			{
+				this.World.State.updateRegionDiscovery(r);
+			}
+
+			if (r.Discovered < 0.5)
 			{
 				continue;
 			}
@@ -209,7 +229,6 @@ this.big_game_hunt_contract <- this.inherit("scripts/contracts/contract", {
 
 			function end()
 			{
-				this.World.Assets.addMoney(this.Contract.m.Payment.getInAdvance());
 				this.Flags.set("StartDay", this.World.getTime().Days);
 				local action = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getAction("send_beast_roamers_action");
 				local options;
@@ -239,7 +258,7 @@ this.big_game_hunt_contract <- this.inherit("scripts/contracts/contract", {
 							party.setAttackableByAI(false);
 							this.Contract.m.UnitsSpawned.push(party.getID());
 							local footPrintsOrigin = this.Contract.getTileToSpawnLocation(nearTile, 4, 8);
-							this.Const.World.Common.addFootprintsFromTo(footPrintsOrigin, party.getTile(), this.Const.BeastFootprints, party.getFootprintsSize(), 1.1);
+							this.Const.World.Common.addFootprintsFromTo(footPrintsOrigin, party.getTile(), this.Const.BeastFootprints, party.getFootprintType(), party.getFootprintsSize(), 1.1);
 							break;
 						}
 					}

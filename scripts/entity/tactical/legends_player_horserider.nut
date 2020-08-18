@@ -50,11 +50,11 @@ this.legends_player_horserider <- this.inherit("scripts/entity/tactical/player",
 	{
 
 
-		this.getTags().add("IsHorseRider");
-		
+		this.getFlags().add("IsHorseRider");
+
 		if (!this.getRider().getCurrentProperties().IsContentWithBeingInReserve)
-			this.getRider().getTags().add("TemporaryRider");
- 		
+			this.getRider().getFlags().add("TemporaryRider");
+
 		local b = this.m.BaseProperties;
 
 		b.ActionPoints = 9;
@@ -74,7 +74,7 @@ this.legends_player_horserider <- this.inherit("scripts/entity/tactical/player",
 		local riderBravery = this.getRider().getBaseProperties().Bravery;
 			this.logInfo("riderBravery is " + riderBravery)
 		local totalBravery = (horseBravery + riderBravery) / 2;
-			
+
 		if (this.getHorse().getSkills().hasSkill("perk.legend_horse_liberty"))
 		{
 			totalBravery += riderBravery * 0.25;
@@ -82,7 +82,7 @@ this.legends_player_horserider <- this.inherit("scripts/entity/tactical/player",
 		this.logInfo("totalBravery is " + totalBravery)
 		b.Bravery = totalBravery;
 
-//determine fatigue 
+//determine fatigue
 		local horseFatigue = this.getHorse().getBaseProperties().Stamina;
 			this.logInfo("horseFatigue is " + horseFatigue)
 		local riderFatigue = this.getRider().getBaseProperties().Stamina;
@@ -92,7 +92,7 @@ this.legends_player_horserider <- this.inherit("scripts/entity/tactical/player",
 		b.Stamina = totalFatigue;
 
 
-//determine melee skill 
+//determine melee skill
 		local horseMeleeSkill  = this.getHorse().getBaseProperties().MeleeSkill;
 		local riderMeleeSkill  = this.getRider().getBaseProperties().MeleeSkill;
 		local totalMeleeSkill  = (horseMeleeSkill  + riderMeleeSkill ) / 2;
@@ -104,7 +104,7 @@ this.legends_player_horserider <- this.inherit("scripts/entity/tactical/player",
 
 		b.MeleeSkill = totalMeleeSkill;
 
-//determine ranged skill 
+//determine ranged skill
 		local horseRangedSkill  = this.getHorse().getBaseProperties().RangedSkill;
 		local riderRangedSkill  = this.getRider().getBaseProperties().RangedSkill;
 		local totalRangedSkill  = (horseRangedSkill  + riderRangedSkill ) / 2;
@@ -180,7 +180,7 @@ this.legends_player_horserider <- this.inherit("scripts/entity/tactical/player",
 			this.getSkills().add(this.new("scripts/skills/perks/perk_legend_horse_movement"));
 		}
 
-		//add all rider items except for body armor 
+		//add all rider items except for body armor
 		this.getRider().getItems().transferTo(this.m.Items);
 		this.m.playerArmor = this.m.Items.getItemAtSlot(this.Const.ItemSlot.Body);
 		if (this.m.playerArmor != null)
@@ -209,14 +209,12 @@ this.legends_player_horserider <- this.inherit("scripts/entity/tactical/player",
 		local num = this.Tactical.Entities.getAlliesNum();
 		if (num == 1 || num == 0) //if 1 then only horserider exsts
 		{
-			this.getRider().removeActiveRelationship();
-			this.getHorse().removeActiveRelationship();
 			this.World.getPlayerRoster().remove(this.getRider());
 			this.World.getPlayerRoster().remove(this.getHorse());
 			return;
 		}
 		local pBody = this.getRider().getSprite("body")
-		
+
 		if (this.m.LastBodyPartHit == this.Const.BodyPart.Body)
 		{
 			if (pBody != null && typeof pBody != "instance")
@@ -237,8 +235,6 @@ this.legends_player_horserider <- this.inherit("scripts/entity/tactical/player",
 		local num = this.Tactical.Entities.getAlliesNum();
 		if (num == 1 || num == 0) //if 1 then only horserider exsts
 		{
-			this.getRider().removeActiveRelationship();
-			this.getHorse().removeActiveRelationship();
 			this.World.getPlayerRoster().remove(this.getRider());
 			this.World.getPlayerRoster().remove(this.getHorse());
 			return;
@@ -303,7 +299,7 @@ this.legends_player_horserider <- this.inherit("scripts/entity/tactical/player",
 			this.m.Items.equip(this.m.playerArmor);
 		}
 		this.m.Items.transferTo(this.getRider().getItems());
-		
+
 		local horseHP = this.getHorse().getHitpoints();
 		local riderHP = this.getRider().getHitpoints();
 
@@ -312,7 +308,7 @@ this.legends_player_horserider <- this.inherit("scripts/entity/tactical/player",
 		this.getRider().setHitpoints( (riderHP * hpMissing > 0) ? (riderHP * hpMissing) : riderHP )
 		this.getHorse().setHitpoints( (horseHP * hpMissing > 0) ? (horseHP * hpMissing) : horseHP )
 
-	
+
 		this.World.getPlayerRoster().remove(this);
 	}
 

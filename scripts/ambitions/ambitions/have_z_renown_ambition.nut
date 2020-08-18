@@ -46,7 +46,15 @@ this.have_z_renown_ambition <- this.inherit("scripts/ambitions/ambition", {
 	{
 		if (!this.World.Assets.getOrigin().isFixedLook())
 		{
-			this.World.Assets.updateLook(3);
+			if (this.World.Assets.getOrigin().getID() == "scenario.southern_quickstart")
+			{
+				this.World.Assets.updateLook(15);
+			}
+			else
+			{
+				this.World.Assets.updateLook(3);
+			}
+
 			this.m.SuccessList.push({
 				id = 10,
 				icon = "ui/icons/special.png",

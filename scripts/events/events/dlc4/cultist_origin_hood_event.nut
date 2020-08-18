@@ -42,7 +42,7 @@ this.cultist_origin_hood_event <- this.inherit("scripts/events/event", {
 					}
 				}
 
-				local item = this.new("scripts/items/helmets/cultist_leather_hood");
+				local item = this.Const.World.Common.pickHelmet([[1, "cultist_leather_hood"]]);
 				this.World.Assets.getStash().add(item);
 				this.List.push({
 					id = 10,

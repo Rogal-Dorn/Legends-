@@ -29,9 +29,10 @@ this.gravedigger_background <- this.inherit("scripts/skills/backgrounds/characte
 		this.m.Hairs = this.Const.Hair.CommonMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.Body = "bust_naked_body_00";
+
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Good;
+		this.m.Bodies = this.Const.Bodies.Skinny;
 		this.m.IsLowborn = true;
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
 		this.m.PerkTreeDynamic = {
@@ -144,12 +145,10 @@ this.gravedigger_background <- this.inherit("scripts/skills/backgrounds/characte
 			items.equip(this.new("scripts/items/armor/tattered_sackcloth"));
 		}
 
-		r = this.Math.rand(0, 1);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/hood"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "hood"],
+			[1, ""]
+		]));
 	}
 
 	function onAddLegendEquipment()
@@ -188,12 +187,10 @@ this.gravedigger_background <- this.inherit("scripts/skills/backgrounds/characte
 		items.equip(armor)
 
 
-		r = this.Math.rand(0, 1);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/hood"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "hood"],
+			[1, ""]
+		]));
 	}
 });
 

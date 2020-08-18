@@ -2,7 +2,7 @@
  *  @Project:		Battle Brothers
  *	@Company:		Overhype Studios
  *
- *	@Copyright:		(c) Overhype Studios | 2013 - 2017
+ *	@Copyright:		(c) Overhype Studios | 2013 - 2020
  * 
  *  @Author:		Overhype Studios
  *  @Date:			08.03.2017
@@ -22,14 +22,14 @@ var TacticalScreenTopbarOptionsModule = function()
 	this.mContainer = null;
 
 	// buttons
-	this.mSwitchMapOrientationButton	= null;
-	this.mSwitchMapLevelUpButton		= null;
-	this.mSwitchMapLevelDownButton		= null;
-	this.mToggleStatsOverlaysButton		= null;
-	this.mCenterButton					= null;
-	this.mTreesButton					= null;
-    this.mFleeButton					= null;
-	this.mQuitButton					= null;
+    this.mToggleHighlightBlockedTilesButton	    = null;
+	this.mSwitchMapLevelUpButton		        = null;
+	this.mSwitchMapLevelDownButton		        = null;
+	this.mToggleStatsOverlaysButton		        = null;
+	this.mCenterButton					        = null;
+	this.mTreesButton					        = null;
+    this.mFleeButton					        = null;
+	this.mQuitButton					        = null;
 };
 
 TacticalScreenTopbarOptionsModule.prototype.isConnected = function ()
@@ -68,13 +68,6 @@ TacticalScreenTopbarOptionsModule.prototype.createDIV = function (_parentDiv)
     _parentDiv.append(this.mContainer);
 
 	// create: buttons
-    /*var layout = $('<div class="l-switch-map-orientation-button"/>');
-    this.mContainer.append(layout);
-    this.mSwitchMapOrientationButton = layout.createImageButton(Path.GFX + Asset.BUTTON_SWITCH_MAP_ORIENTATION_TO_NORTH, function()
-	{
-        self.notifyBackendSwitchMapOrientationButtonPressed();
-    }, '', 6);*/
-
     var layout = $('<div class="l-center-camera-button"/>');
     this.mContainer.append(layout);
     this.mCenterButton = layout.createImageButton(Path.GFX + Asset.ICON_CENTER, function ()
@@ -107,7 +100,14 @@ TacticalScreenTopbarOptionsModule.prototype.createDIV = function (_parentDiv)
     this.mContainer.append(layout);
     this.mTreesButton = layout.createImageButton(Path.GFX + Asset.BUTTON_TOGGLE_TREES_ENABLED, function ()
     {
-    	self.notifyBackendToggleTreesButtonPressed();
+        self.notifyBackendToggleTreesButtonPressed();
+    }, '', 6);
+
+    layout = $('<div class="l-toggle-blocked-tile-highlights-button"/>');
+    this.mContainer.append(layout);
+    this.mToggleHighlightBlockedTilesButton = layout.createImageButton(Path.GFX + Asset.BUTTON_TOGGLE_HIGHLIGHT_BLOCKED_TILES_DISABLED, function ()
+    {
+        self.notifyBackendHighlightBlockedTilesButtonPressed();
     }, '', 6);
 
     layout = $('<div class="l-flee-button"/>');
@@ -127,8 +127,8 @@ TacticalScreenTopbarOptionsModule.prototype.createDIV = function (_parentDiv)
 
 TacticalScreenTopbarOptionsModule.prototype.destroyDIV = function ()
 {
-    //this.mSwitchMapOrientationButton.remove();
-    //this.mSwitchMapOrientationButton = null;
+    this.mToggleHighlightBlockedTilesButton.remove();
+    this.mToggleHighlightBlockedTilesButton = null;
 	this.mCenterButton.remove();
 	this.mCenterButtonButton = null;
 	this.mSwitchMapLevelUpButton.remove();
@@ -152,7 +152,7 @@ TacticalScreenTopbarOptionsModule.prototype.destroyDIV = function ()
 
 TacticalScreenTopbarOptionsModule.prototype.bindTooltips = function ()
 {
-	//this.mSwitchMapOrientationButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.TacticalScreen.Topbar.OptionsBarModule.SwitchMapOrientationButton });
+    this.mToggleHighlightBlockedTilesButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.TacticalScreen.Topbar.OptionsBarModule.ToggleHighlightBlockedTilesButton });
 	this.mCenterButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.TacticalScreen.Topbar.OptionsBarModule.CenterButton });
 	this.mSwitchMapLevelUpButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.TacticalScreen.Topbar.OptionsBarModule.SwitchMapLevelUpButton });
 	this.mSwitchMapLevelDownButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.TacticalScreen.Topbar.OptionsBarModule.SwitchMapLevelDownButton });
@@ -164,7 +164,7 @@ TacticalScreenTopbarOptionsModule.prototype.bindTooltips = function ()
 
 TacticalScreenTopbarOptionsModule.prototype.unbindTooltips = function ()
 {
-	//this.mSwitchMapOrientationButton.unbindTooltip();
+    this.mToggleHighlightBlockedTilesButton.unbindTooltip();
 	this.mCenterButton.unbindTooltip();
 	this.mSwitchMapLevelUpButton.unbindTooltip();
 	this.mSwitchMapLevelDownButton.unbindTooltip();
@@ -234,15 +234,15 @@ TacticalScreenTopbarOptionsModule.prototype.registerEventListener = function (_l
 };
 
 
-TacticalScreenTopbarOptionsModule.prototype.setSwitchMapOrientationButtonState = function (_toNorth)
+TacticalScreenTopbarOptionsModule.prototype.setHighlightBlockedTilesButtonState = function (_enable)
 {
-	/*if (_toNorth !== null && typeof(_toNorth) === 'boolean')
-	{
-        if (_toNorth === true)
-            this.mSwitchMapOrientationButton.changeButtonImage(Path.GFX + Asset.BUTTON_SWITCH_MAP_ORIENTATION_TO_NORTH);
+    if (_enable !== null && typeof (_enable) === 'boolean')
+    {
+        if (_enable === true)
+            this.mToggleHighlightBlockedTilesButton.changeButtonImage(Path.GFX + Asset.BUTTON_TOGGLE_HIGHLIGHT_BLOCKED_TILES_ENABLED);
         else
-            this.mSwitchMapOrientationButton.changeButtonImage(Path.GFX + Asset.BUTTON_SWITCH_MAP_ORIENTATION_TO_SOUTH);
-	}*/
+            this.mToggleHighlightBlockedTilesButton.changeButtonImage(Path.GFX + Asset.BUTTON_TOGGLE_HIGHLIGHT_BLOCKED_TILES_DISABLED);
+    }
 };
 
 
@@ -281,9 +281,9 @@ TacticalScreenTopbarOptionsModule.prototype.notifyBackendCenterButtonPressed = f
 	SQ.call(this.mSQHandle, 'onCenterButtonPressed');
 };
 
-TacticalScreenTopbarOptionsModule.prototype.notifyBackendSwitchMapOrientationButtonPressed = function ()
+TacticalScreenTopbarOptionsModule.prototype.notifyBackendHighlightBlockedTilesButtonPressed = function ()
 {
-	SQ.call(this.mSQHandle, 'onSwitchMapOrientationButtonPressed');
+    SQ.call(this.mSQHandle, 'onToggleHighlightBlockedTilesListenerButtonPressed');
 };
 
 TacticalScreenTopbarOptionsModule.prototype.notifyBackendSwitchMapLevelUpButtonPressed = function ()

@@ -33,11 +33,33 @@ this.grazed_kidney_injury <- this.inherit("scripts/skills/injury/injury", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/health.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-50%[/color] Hitpoints"
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-60%[/color] Hitpoints"
 			}
 		];
 		this.addTooltipHint(ret);
 		return ret;
+	}
+
+	function onAdded()
+	{
+		this.injury.onAdded();
+
+		if (!("State" in this.Tactical) || this.Tactical.State == null)
+		{
+			return;
+		}
+
+		local p = this.getContainer().getActor().getCurrentProperties();
+
+		if (!p.IsAffectedByInjuries || this.m.IsFresh && !p.IsAffectedByFreshInjuries)
+		{
+			return;
+		}
+
+		if (this.getContainer().getActor().getHitpointsPct() > 0.4)
+		{
+			this.getContainer().getActor().setHitpoints(this.getContainer().getActor().getHitpointsMax() * 0.4);
+		}
 	}
 
 	function onUpdate( _properties )
@@ -46,7 +68,7 @@ this.grazed_kidney_injury <- this.inherit("scripts/skills/injury/injury", {
 
 		if (this.m.IsShownOutOfCombat)
 		{
-			_properties.HitpointsMult *= 0.5;
+			_properties.HitpointsMult *= 0.4;
 		}
 	}
 

@@ -34,7 +34,7 @@ this.indomitable_effect <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Only receive [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] of any damage"
+				text = "Receives only [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] of any damage"
 			},
 			{
 				id = 6,

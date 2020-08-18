@@ -59,7 +59,6 @@ this.barbarian_marauder <- this.inherit("scripts/entity/tactical/human", {
 		this.getSprite("socket").setBrush("bust_base_wildmen_01");
 		this.m.Skills.add(this.new("scripts/skills/actives/barbarian_fury_skill"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_adrenalin"));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_dodge"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_underdog"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_anticipation"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_hold_out"));
@@ -67,6 +66,7 @@ this.barbarian_marauder <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_brawny"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_bullseye"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_quick_hands"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_pathfinder"));
 
 		if ("LegendsMod" in this.World && this.World.LegendsMod != null && this.World.LegendsMod.Configs().LegendTherianthropyEnabled())
 		{
@@ -207,24 +207,16 @@ this.barbarian_marauder <- this.inherit("scripts/entity/tactical/human", {
 				this.m.Items.equip(this.new("scripts/items/armor/barbarians/reinforced_animal_hide_armor"));
 			}
 		}
-
-		r = this.Math.rand(1, 5);
-
-		if (r == 1)
+		local item = this.Const.World.Common.pickHelmet([
+			[1, "barbarians/leather_headband"],
+			[1, "barbarians/bear_headpiece"],
+			[1, "barbarians/leather_helmet"],
+			[1, "barbarians/crude_metal_helmet"],
+			[1, ""]
+		])
+		if (item != null)
 		{
-			this.m.Items.equip(this.new("scripts/items/helmets/barbarians/leather_headband"));
-		}
-		else if (r == 2)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/barbarians/bear_headpiece"));
-		}
-		else if (r == 3)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/barbarians/leather_helmet"));
-		}
-		else if (r == 4)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/barbarians/crude_metal_helmet"));
+			this.m.Items.equip(item);
 		}
 	}
 

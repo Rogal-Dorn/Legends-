@@ -10,6 +10,12 @@ while read -r line; do
         fi
         if [[ "$xpath" == *.sh ]]; then
             echo "skipping $line"
+        elif [[ "$xpath" == make_legend_helmet_nuts.py ]]; then
+            rm -rf helmets
+            mkdir -p "helmets"
+            python make_legend_helmet_nuts.py
+            cp -R helmets/. "c:\Steam\steamapps\common\Battle Brothers\data\scripts\items\legend_helmets"
+
         elif [[ "$xpath" == *.py ]]; then
             echo "skipping $line"
         elif [[ "$xpath" == *.md ]]; then

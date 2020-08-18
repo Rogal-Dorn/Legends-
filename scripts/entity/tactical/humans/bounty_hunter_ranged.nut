@@ -24,6 +24,7 @@ this.bounty_hunter_ranged <- this.inherit("scripts/entity/tactical/human", {
 		local b = this.m.BaseProperties;
 		b.setValues(this.Const.Tactical.Actor.BountyHunterRanged);
 		b.TargetAttractionMult = 1.1;
+		b.Vision = 8;
 		b.IsSpecializedInCrossbows = true;
 		b.IsSpecializedInBows = true;
 		this.m.ActionPoints = b.ActionPoints;
@@ -214,27 +215,17 @@ this.bounty_hunter_ranged <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.Math.rand(1, 100) <= 50)
 		{
-			local r = this.Math.rand(1, 5);
-
-			if (r == 1)
+			local item = this.Const.World.Common.pickHelmet([
+				[1, "hood"],
+				[1, "full_aketon_cap"],
+				[1, "headscarf"],
+				[1, "mouth_piece"],
+				[1, "full_leather_cap"],
+				[1, "aketon_cap"]
+			])
+			if (item != null)
 			{
-				this.m.Items.equip(this.new("scripts/items/helmets/hood"));
-			}
-			else if (r == 2)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/aketon_cap"));
-			}
-			else if (r == 3)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/full_leather_cap"));
-			}
-			else if (r == 4)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/headscarf"));
-			}
-			else if (r == 5)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/full_aketon_cap"));
+				this.m.Items.equip(item);
 			}
 		}
 	}

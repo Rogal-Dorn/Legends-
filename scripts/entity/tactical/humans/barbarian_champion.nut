@@ -69,6 +69,7 @@ this.barbarian_champion <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_recover"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_brawny"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_onslaught"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_pathfinder"));
 
 		if ("LegendsMod" in this.World && this.World.LegendsMod != null && this.World.LegendsMod.Configs().LegendTherianthropyEnabled())
 		{
@@ -89,6 +90,7 @@ this.barbarian_champion <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_last_stand"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
 		}
+
 	}
 
 	function assignRandomEquipment()
@@ -174,12 +176,12 @@ this.barbarian_champion <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Head))
 		{
-			local helmet = [
-				"helmets/barbarians/crude_faceguard_helmet",
-				"helmets/barbarians/closed_scrap_metal_helmet",
-				"helmets/barbarians/crude_metal_helmet"
-			];
-			this.m.Items.equip(this.new("scripts/items/" + helmet[this.Math.rand(0, helmet.len() - 1)]));
+			this.m.Items.equip(this.Const.World.Common.pickHelmet([
+				[1, "barbarians/crude_faceguard_helmet"],
+				[1, "barbarians/closed_scrap_metal_helmet"],
+				[1, "barbarians/crude_metal_helmet"]
+			]));
+
 		}
 	}
 
@@ -213,7 +215,7 @@ this.barbarian_champion <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Items.equip(this.new("scripts/items/" + helmets[this.Math.rand(0, helmets.len() - 1)]));
 		}
 
-		this.m.Skills.add(this.new("scripts/skills/actives/indomitable"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_fearsome"));
 		return true;
 	}
 

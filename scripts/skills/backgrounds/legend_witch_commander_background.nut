@@ -57,7 +57,7 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsFemaleBackground = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Good;
@@ -254,7 +254,7 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 		this.m.Hairs = this.Const.Hair.CommonMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.Body = "bust_naked_body_01";
+
 		this.m.IsFemaleBackground = false;
 	}
 
@@ -336,15 +336,6 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 		//	this.m.Container.add(this.new("scripts/skills/perks/perk_legend_magic_missile"));
 		//}
 
-		local actor = this.getContainer().getActor();
-		if (this.m.IsFemaleBackground == true)
-		{
-			actor.setName(this.Const.Strings.CharacterNamesFemale[this.Math.rand(0, this.Const.Strings.CharacterNamesFemale.len() - 1)]);
-		}
-		else
-		{
-			actor.setName(this.Const.Strings.CharacterNames[this.Math.rand(0, this.Const.Strings.CharacterNames.len() - 1)]);
-		}
 	}
 
 	function onAddEquipment()
@@ -356,7 +347,9 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 		this.getContainer().getActor().fillTalentValues(2, true);
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/armor/legend_seer_robes"));
-		items.equip(this.new("scripts/items/helmets/legend_seer_hat"));
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "legend_seer_hat"]
+		]));
 		items.equip(this.new("scripts/items/weapons/legend_mystic_staff"));
 		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");
@@ -374,8 +367,12 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 		this.getContainer().getActor().fillTalentValues(2, true);
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/legend_armor/cloth/legend_robes_magic"));
-		items.equip(this.new("scripts/items/helmets/legend_seer_hat"));
-		items.equip(this.new("scripts/items/helmets/magician_hat"));
+
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "legend_seer_hat"],
+			[1, "magician_hat"]
+		]));
+
 		items.equip(this.new("scripts/items/weapons/legend_mystic_staff"));
 		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");

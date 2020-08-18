@@ -15,7 +15,7 @@ this.bounty_hunter_melee_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.m.Properties.TargetPriorityCounterSkillsMult = 0.5;
 		this.m.Properties.TargetPriorityArmorMult = 0.75;
 		this.m.Properties.OverallDefensivenessMult = 1.0;
-		this.m.Properties.OverallFormationMult = 1.0;
+		this.m.Properties.OverallFormationMult = 1.25;
 		this.m.Properties.EngageFlankingMult = 1.25;
 		this.m.Properties.EngageTargetMultipleOpponentsMult = 1.25;
 		this.m.Properties.EngageTargetAlreadyBeingEngagedMult = 0.5;
@@ -52,6 +52,7 @@ this.bounty_hunter_melee_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_wake_up_ally"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_disengage"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_indomitable"));
+		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_adrenaline"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_default"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_puncture"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_splitshield"));
@@ -60,9 +61,12 @@ this.bounty_hunter_melee_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_thresh"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_crush_armor"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_decapitate"));
+		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_gash"));
+		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_reap"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_knock_out"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_throw_net"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_lash"));
+		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_distract"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_defend_spearwall"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_defend_shieldwall"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_defend_knock_back"));
@@ -70,11 +74,7 @@ this.bounty_hunter_melee_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_recover"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_switchto_melee"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_switchto_ranged"));
-
-		if (this.Math.rand(1, 100) <= this.Const.AI.Agent.ChanceToHaveProtectBehavior)
-		{
-			this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_protect"));
-		}
+		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_protect"));
 	}
 
 	function onUpdate()
@@ -89,6 +89,67 @@ this.bounty_hunter_melee_agent <- this.inherit("scripts/ai/tactical/agent", {
 		else
 		{
 			this.m.Properties.EngageTargetMultipleOpponentsMult = 1.25;
+		}
+
+		if (this.m.Properties.EngageRangeIdeal > 1)
+		{
+			this.m.Properties.OverallFormationMult = 1.5;
+		}
+		else
+		{
+			this.m.Properties.OverallFormationMult = 1.0;
+		}
+
+		if (item != null && item.isItemType(this.Const.Items.ItemType.Weapon) && item.getRangeIdeal() == 2)
+		{
+			this.m.Properties.EngageTargetAlreadyBeingEngagedMult = 0.25;
+		}
+		else
+		{
+			this.m.Properties.EngageTargetAlreadyBeingEngagedMult = 0.5;
+		}
+
+		this.m.Properties.BehaviorMult[this.Const.AI.Behavior.ID.Protect] = 0.0;
+		this.m.Properties.BehaviorMult[this.Const.AI.Behavior.ID.SwitchToRanged] = 1.0;
+
+		if (!this.getStrategy().isDefendingCamp() && this.m.KnownAllies.len() >= 8 && this.getActor().getCurrentProperties().TargetAttractionMult <= 1.0)
+		{
+			item = this.m.Actor.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
+
+			if (item != null && item.isItemType(this.Const.Items.ItemType.Shield))
+			{
+				local myTile = this.getActor().getTile();
+				local priorityAlliesInRange = 0;
+				local protectors = 0;
+
+				foreach( a in this.m.KnownAllies )
+				{
+					if (a.getID() == this.getActor().getID())
+					{
+						continue;
+					}
+
+					if (a.getCurrentProperties().TargetAttractionMult <= 1.0 && a.getAIAgent().getProperties().BehaviorMult[this.Const.AI.Behavior.ID.Protect] >= 1.0)
+					{
+						protectors = ++protectors;
+					}
+					else if (a.getCurrentProperties().TargetAttractionMult > 1.0)
+					{
+						local d = a.getTile().getDistanceTo(myTile);
+
+						if (d <= 2)
+						{
+							priorityAlliesInRange = ++priorityAlliesInRange;
+						}
+					}
+				}
+
+				if (priorityAlliesInRange > 0 && protectors <= this.m.KnownAllies.len() / 14)
+				{
+					this.m.Properties.BehaviorMult[this.Const.AI.Behavior.ID.Protect] = 1.0;
+					this.m.Properties.BehaviorMult[this.Const.AI.Behavior.ID.SwitchToRanged] = 0.0;
+				}
+			}
 		}
 	}
 

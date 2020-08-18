@@ -10,6 +10,7 @@ this.companion_1h_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.DailyCost = 14;
 		this.m.DailyCostMult = 1.0;
 		this.m.Excluded = [
+			"trait.superstitious",
 			"trait.hate_undead",
 			"trait.hate_beasts",
 			"trait.hate_greenskins",
@@ -46,7 +47,7 @@ this.companion_1h_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.Hairs = this.Const.Hair.AllMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.Body = "bust_naked_body_01";
+		this.m.Bodies = this.Const.Bodies.Muscular;
 		this.m.IsCombatBackground = true;
 		this.m.IsUntalented = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
@@ -167,24 +168,13 @@ this.companion_1h_background <- this.inherit("scripts/skills/backgrounds/charact
 			items.equip(this.new("scripts/items/armor/gambeson"));
 		}
 
-		r = this.Math.rand(0, 3);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/aketon_cap"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/open_leather_cap"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/helmets/full_aketon_cap"));
-		}
-		else if (r == 3)
-		{
-			items.equip(this.new("scripts/items/helmets/full_leather_cap"));
-		}
+		local item = this.Const.World.Common.pickHelmet([
+				[1, "aketon_cap"],
+				[1, "open_leather_cap"],
+				[1, "full_aketon_cap"],
+				[1, "full_leather_cap"]
+		])
+		items.equip(item);
 	}
 
 	function onAddLegendEquipment()
@@ -218,24 +208,13 @@ this.companion_1h_background <- this.inherit("scripts/skills/backgrounds/charact
 		local armor = this.Const.World.Common.pickLegendArmor(cloths)
 		items.equip(armor)
 
-		r = this.Math.rand(0, 3);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/aketon_cap"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/open_leather_cap"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/helmets/full_aketon_cap"));
-		}
-		else if (r == 3)
-		{
-			items.equip(this.new("scripts/items/helmets/full_leather_cap"));
-		}
+		local item = this.Const.World.Common.pickHelmet([
+				[1, "aketon_cap"],
+				[1, "open_leather_cap"],
+				[1, "full_aketon_cap"],
+				[1, "full_leather_cap"]
+		])
+		items.equip(item);
 	}
 });
 

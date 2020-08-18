@@ -14,16 +14,31 @@ this.visit_settlements_ambition <- this.inherit("scripts/ambitions/ambition", {
 
 	function getTooltipText()
 	{
-		if (!this.onCheckSuccess())
+		if (this.World.Ambitions.getActiveAmbition() == null)
+		{
+			return this.m.TooltipText;
+		}
+		else if (!this.onCheckSuccess())
 		{
 			local ret = this.m.TooltipText + "\n\nThere\'s still some settlements left to visit.\n";
+			local c = 0;
 			local settlements = this.World.EntityManager.getSettlements();
 
 			foreach( s in settlements )
 			{
 				if (!s.isVisited())
 				{
-					ret = ret + ("\n- " + s.getName());
+					c = ++c;
+
+					if (c <= 10)
+					{
+						ret = ret + ("\n- " + s.getName());
+					}
+					else
+					{
+						ret = ret + "\n... and others!";
+						break;
+					}
 				}
 			}
 
@@ -38,6 +53,11 @@ this.visit_settlements_ambition <- this.inherit("scripts/ambitions/ambition", {
 
 	function onUpdateScore()
 	{
+		if (this.World.Ambitions.getDone() == 0 && (this.World.Assets.getOrigin().getID() != "scenario.deserters" || this.World.Assets.getOrigin().getID() != "scenario.raiders"))
+		{
+			return;
+		}
+
 		if (this.World.Ambitions.getDone() < 2)
 		{
 			return;

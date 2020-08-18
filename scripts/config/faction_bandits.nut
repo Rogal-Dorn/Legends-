@@ -51,7 +51,7 @@ gt.Const.Tactical.Actor.Warhound <- {
 gt.Const.Tactical.Actor.WarWolf <- {
 	XP = 150,
 	ActionPoints = 12,
-	Hitpoints = 70,
+	Hitpoints = 90,
 	Bravery = 60,
 	Stamina = 150,
 	MeleeSkill = 65,
@@ -163,7 +163,7 @@ gt.Const.Tactical.Actor.BanditRaider <- {
 	FatigueRecoveryRate = 20
 };
 gt.Const.Tactical.Actor.BanditLeader <- {
-	XP = 400,
+	XP = 375,
 	ActionPoints = 9,
 	Hitpoints = 100,
 	Bravery = 70,
@@ -179,7 +179,7 @@ gt.Const.Tactical.Actor.BanditLeader <- {
 		0,
 		0
 	],
-	FatigueRecoveryRate = 25
+	FatigueRecoveryRate = 20
 };
 
 gt.Const.Tactical.Actor.BanditVeteran <- {

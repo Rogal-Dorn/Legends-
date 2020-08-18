@@ -33,7 +33,7 @@ this.break_siege_action <- this.inherit("scripts/factions/faction_action", {
 			return;
 		}
 
-		if (this.Math.rand(1, 100) > 25)
+		if (this.Math.rand(1, 100) > 30)
 		{
 			return;
 		}
@@ -51,7 +51,7 @@ this.break_siege_action <- this.inherit("scripts/factions/faction_action", {
 
 		foreach( s in settlements )
 		{
-			if (s.isIsolated())
+			if (s.isIsolated() || !s.isDiscovered())
 			{
 				continue;
 			}

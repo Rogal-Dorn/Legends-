@@ -39,6 +39,29 @@ this.named_warscythe <- this.inherit("scripts/items/weapons/named/named_weapon",
 		this.m.ArmamentIcon = "icon_warscythe_named_0" + this.m.Variant;
 	}
 
+	function createRandomName()
+	{
+		if (!this.m.UseRandomName || this.Math.rand(1, 100) <= 60)
+		{
+			if (this.m.SuffixList.len() == 0 || this.Math.rand(1, 100) <= 70)
+			{
+				return this.m.PrefixList[this.Math.rand(0, this.m.PrefixList.len() - 1)] + " " + this.m.NameList[this.Math.rand(0, this.m.NameList.len() - 1)];
+			}
+			else
+			{
+				return this.m.NameList[this.Math.rand(0, this.m.NameList.len() - 1)] + " " + this.m.SuffixList[this.Math.rand(0, this.m.SuffixList.len() - 1)];
+			}
+		}
+		else if (this.Math.rand(1, 2) == 1)
+		{
+			return this.getRandomCharacterName(this.Const.Strings.SouthernNamesLast) + "\'s " + this.m.NameList[this.Math.rand(0, this.m.NameList.len() - 1)];
+		}
+		else
+		{
+			return this.getRandomCharacterName(this.Const.Strings.NomadChampionStandalone) + "\'s " + this.m.NameList[this.Math.rand(0, this.m.NameList.len() - 1)];
+		}
+	}
+
 	function onEquip()
 	{
 		this.named_weapon.onEquip();

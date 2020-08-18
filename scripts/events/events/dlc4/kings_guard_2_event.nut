@@ -46,9 +46,9 @@ this.kings_guard_2_event <- this.inherit("scripts/events/event", {
 					});
 				}
 
-				_event.m.Dude.getBaseProperties().MeleeSkill += 10;
-				_event.m.Dude.getBaseProperties().MeleeDefense += 5;
-				_event.m.Dude.getBaseProperties().RangedDefense += 5;
+				_event.m.Dude.getBaseProperties().MeleeSkill += 12;
+				_event.m.Dude.getBaseProperties().MeleeDefense += 7;
+				_event.m.Dude.getBaseProperties().RangedDefense += 7;
 				_event.m.Dude.getBaseProperties().Hitpoints += 15;
 				_event.m.Dude.getBaseProperties().Stamina += 10;
 				_event.m.Dude.getBaseProperties().Initiative += 10;
@@ -100,7 +100,7 @@ this.kings_guard_2_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getDaysWithCompany() >= 30 && bro.getTags().get("IsKingsGuard"))
+			if (bro.getDaysWithCompany() >= 30 && bro.getFlags().get("IsKingsGuard"))
 			{
 				candidate = bro;
 				break;

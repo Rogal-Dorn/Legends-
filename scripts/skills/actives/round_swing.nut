@@ -129,7 +129,7 @@ this.round_swing <- this.inherit("scripts/skills/skill", {
 			{
 				local tile = ownTile.getNextTile(i);
 
-				if (!tile.IsEmpty && tile.getEntity().isAttackable() && this.Math.abs(tile.Level - ownTile.Level) <= 1)
+				if (this.Math.abs(tile.Level - ownTile.Level) <= 1)
 				{
 					this.Tactical.getHighlighter().addOverlayIcon(this.Const.Tactical.Settings.AreaOfEffectIcon, tile, tile.Pos.X, tile.Pos.Y);
 				}

@@ -73,6 +73,11 @@ this.food_goes_bad_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
+		if (this.World.Retinue.hasFollower("follower.cook"))
+		{
+			return;
+		}
+
 		local currentTile = this.World.State.getPlayer().getTile();
 
 		if (currentTile.Type != this.Const.World.TerrainType.Plains && currentTile.Type != this.Const.World.TerrainType.Swamp && currentTile.Type != this.Const.World.TerrainType.Farmland && currentTile.Type != this.Const.World.TerrainType.Steppe && currentTile.Type != this.Const.World.TerrainType.Hills)

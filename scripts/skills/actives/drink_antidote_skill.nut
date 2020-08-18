@@ -57,6 +57,12 @@ this.drink_antidote_skill <- this.inherit("scripts/skills/skill", {
 				type = "text",
 				icon = "ui/icons/special.png",
 				text = "Removes the Poisoned status effect"
+			},
+			{
+				id = 8,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Grants immunity to Poison for 3 turns"
 			}
 		];
 
@@ -161,6 +167,7 @@ this.drink_antidote_skill <- this.inherit("scripts/skills/skill", {
 			{
 				user.getSkills().removeByID("effects.legend_redback_spider_poison");
 			}
+			user.getSkills().add(this.new("scripts/skills/effects/antidote_effect"));
 
 			if (!user.isHiddenToPlayer())
 			{

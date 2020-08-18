@@ -41,6 +41,7 @@ this.build_bandit_camp_action <- this.inherit("scripts/factions/faction_action",
 	{
 		local camp;
 		local r = this.Math.rand(1, 3);
+		local minY = this.Const.DLC.Desert ? 0.2 : 0.0;
 		local maxY = this.Const.DLC.Wildmen ? 0.75 : 1.0;
 
 		if (r == 1)
@@ -48,7 +49,7 @@ this.build_bandit_camp_action <- this.inherit("scripts/factions/faction_action",
 			local tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries, [
 				this.Const.World.TerrainType.Mountains,
 				this.Const.World.TerrainType.Snow
-			], 7, 16, 1000, 7, 7, null, 0.0, maxY);
+			], 7, 16, 1000, 7, 7, null, minY, maxY);
 
 			if (tile != null)
 			{
@@ -60,7 +61,7 @@ this.build_bandit_camp_action <- this.inherit("scripts/factions/faction_action",
 			local tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries, [
 				this.Const.World.TerrainType.Mountains,
 				this.Const.World.TerrainType.Snow
-			], 6, 12, 1000, 7, 7, null, 0.0, maxY);
+			], 6, 12, 1000, 7, 7, null, minY, maxY);
 
 			if (tile != null)
 			{
@@ -72,7 +73,7 @@ this.build_bandit_camp_action <- this.inherit("scripts/factions/faction_action",
 			local tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries, [
 				this.Const.World.TerrainType.Mountains,
 				this.Const.World.TerrainType.Snow
-			], 10, 20, 1000, 7, 7, null, 0.0, maxY);
+			], 10, 20, 1000, 7, 7, null, minY, maxY);
 
 			if (tile != null)
 			{

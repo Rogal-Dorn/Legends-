@@ -47,7 +47,7 @@ this.legend_miasma_skill <- this.inherit("scripts/skills/skill", {
 			return false;
 		}
 
-		if (_target.getTags().has("undead"))
+		if (_target.getFlags().has("undead"))
 		{
 			return false;
 		}

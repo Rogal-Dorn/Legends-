@@ -69,7 +69,7 @@ this.fletchers_hut_location <- this.inherit("scripts/entity/world/attached_locat
 		_list.push("supplies/ammo_small_item");
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 		if (!this.isActive())
 		{
@@ -78,10 +78,14 @@ this.fletchers_hut_location <- this.inherit("scripts/entity/world/attached_locat
 
 		_list.push("hunter_background");
 		_list.push("bowyer_background");
-		_list.push("female_bowyer_background");
-		_list.push("female_bowyer_background");
 		_list.push("poacher_background");
 		_list.push("witchhunter_background");
+
+		if (_gender)
+		{
+			_list.push("female_bowyer_background");
+			_list.push("female_bowyer_background");
+		}
 	}
 
 	function onUpdateShopList( _id, _list )

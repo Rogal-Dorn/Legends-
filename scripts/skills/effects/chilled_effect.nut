@@ -17,7 +17,7 @@ this.chilled_effect <- this.inherit("scripts/skills/skill", {
 
 	function getDescription()
 	{
-		return "This character has been chilled to the bone by cold. With his limbs frozen stiff, it takes a great deal of effort for him to move in a coordinated fashion. Will wear off in [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.TurnsLeft + "[/color] turn(s).";
+		return "This character has been chilled to the bone by cold. With their limbs frozen stiff, it takes a great deal of effort to move in a coordinated fashion. The effect will slowly wear off over [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.TurnsLeft + "[/color] more turn(s).";
 	}
 
 	function getTooltip()

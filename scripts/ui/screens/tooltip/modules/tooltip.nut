@@ -11,7 +11,8 @@ this.tooltip <- {
 		OnQuerySettlementStatusEffectTooltipDataListener = null,
 		OnQueryUIElementTooltipDataListener = null,
 		OnQueryUIItemTooltipDataListener = null,
-		OnQueryUIPerkTooltipDataListener = null
+		OnQueryUIPerkTooltipDataListener = null,
+		OnQueryFollowerTooltipDataListener = null
 	},
 	function setCurrentHoveredEntity( _entityId )
 	{
@@ -70,6 +71,11 @@ this.tooltip <- {
 		this.m.OnQueryUIPerkTooltipDataListener = _listener;
 	}
 
+	function setOnQueryFollowerTooltipDataListener( _listener )
+	{
+		this.m.OnQueryFollowerTooltipDataListener = _listener;
+	}
+
 	function clearEventListener()
 	{
 		this.m.OnQueryTileTooltipDataListener = null;
@@ -81,6 +87,7 @@ this.tooltip <- {
 		this.m.OnQueryUIElementTooltipDataListener = null;
 		this.m.OnQueryUIItemTooltipDataListener = null;
 		this.m.OnQueryUIPerkTooltipDataListener = null;
+		this.m.OnQueryFollowerTooltipDataListener = null;
 	}
 
 	function create()
@@ -262,6 +269,16 @@ this.tooltip <- {
 		if (this.m.OnQueryUIPerkTooltipDataListener != null)
 		{
 			return this.m.OnQueryUIPerkTooltipDataListener(_data[0], _data[1]);
+		}
+
+		return null;
+	}
+
+	function onQueryFollowerTooltipData( _data )
+	{
+		if (this.m.OnQueryFollowerTooltipDataListener != null)
+		{
+			return this.m.OnQueryFollowerTooltipDataListener(_data);
 		}
 
 		return null;

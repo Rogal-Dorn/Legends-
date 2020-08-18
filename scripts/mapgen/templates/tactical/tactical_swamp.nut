@@ -149,5 +149,65 @@ this.tactical_swamp <- this.inherit("scripts/mapgen/tactical_template", {
 		this.makeBordersImpassable(_rect);
 	}
 
+	function campify( _rect, _properties )
+	{
+		local tile1 = this.MapGen.get("tactical.tile.swamp1");
+		local tile2 = this.MapGen.get("tactical.tile.swamp2");
+		local tile3 = this.MapGen.get("tactical.tile.swamp3");
+		local centerTile = this.Tactical.getTileSquare(_rect.X + _rect.W / 2 + _properties.ShiftX, _rect.Y + _rect.H / 2 + _properties.ShiftY);
+		local radius = this.Const.Tactical.Settings.CampRadius + _properties.AdditionalRadius;
+
+		for( local x = _rect.X; x < _rect.X + _rect.W; x = ++x )
+		{
+			for( local y = _rect.Y; y < _rect.Y + _rect.H; y = ++y )
+			{
+				local tile = this.Tactical.getTileSquare(x, y);
+				local d = centerTile.getDistanceTo(tile);
+
+				if (d <= radius + 1)
+				{
+					if (tile.IsHidingEntity)
+					{
+						tile.clear();
+					}
+
+					tile.Type = 0;
+					local r = this.Math.rand(1, 3);
+
+					if (r == 1)
+					{
+						tile1.fill({
+							X = x,
+							Y = y,
+							W = 1,
+							H = 1,
+							IsEmpty = false
+						}, null);
+					}
+					else if (r == 2)
+					{
+						tile2.fill({
+							X = x,
+							Y = y,
+							W = 1,
+							H = 1,
+							IsEmpty = false
+						}, null);
+					}
+					else if (r == 3)
+					{
+						tile3.fill({
+							X = x,
+							Y = y,
+							W = 1,
+							H = 1,
+							IsEmpty = false
+						}, null);
+					}
+				}
+			}
+		}
+	}
+
 });
 

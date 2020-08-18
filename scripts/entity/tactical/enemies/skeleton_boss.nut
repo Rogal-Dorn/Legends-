@@ -21,7 +21,6 @@ this.skeleton_boss <- this.inherit("scripts/entity/tactical/skeleton", {
 		b.IsAffectedByInjuries = false;
 		b.IsImmuneToBleeding = true;
 		b.IsImmuneToPoison = true;
-		b.IsImmuneToStun = false;
 		b.IsImmuneToDisarm = true;
 		b.IsSpecializedInCleavers = true;
 		this.m.ActionPoints = b.ActionPoints;
@@ -63,7 +62,13 @@ this.skeleton_boss <- this.inherit("scripts/entity/tactical/skeleton", {
 			this.m.Items.equip(this.new("scripts/items/armor/legendary/emperors_armor_fake"));
 		}
 
-		this.m.Items.equip(this.new("scripts/items/helmets/ancient/ancient_laurels"));
+		local item = this.Const.World.Common.pickHelmet([
+			[66, "ancient/ancient_laurels"]
+		])
+		if (item != null)
+		{
+			this.m.Items.equip(item);
+		}
 	}
 
 });

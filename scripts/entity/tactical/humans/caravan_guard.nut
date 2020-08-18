@@ -209,27 +209,16 @@ this.caravan_guard <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.Math.rand(1, 100) <= 75)
 		{
-			local r = this.Math.rand(1, 5);
-
-			if (r == 1)
+			local item = this.Const.World.Common.pickHelmet([
+				[1, "hood"],
+				[1, "full_aketon_cap"],
+				[1, "headscarf"],
+				[1, "nasal_helmet"],
+				[1, "padded_nasal_helmet"]
+			])
+			if (item != null)
 			{
-				this.m.Items.equip(this.new("scripts/items/helmets/hood"));
-			}
-			else if (r == 2)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/aketon_cap"));
-			}
-			else if (r == 3)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/full_aketon_cap"));
-			}
-			else if (r == 4)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/nasal_helmet"));
-			}
-			else if (r == 5)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/padded_nasal_helmet"));
+				this.m.Items.equip(item);
 			}
 		}
 	}

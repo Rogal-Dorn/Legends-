@@ -67,7 +67,7 @@ this.ai_buff_howl <- this.inherit("scripts/ai/tactical/behavior", {
 
 		foreach( a in knownAllies )
 		{
-			if (_entity.getTile().getDistanceTo(a.getTile()) <= 6 && a.getTags().has("werewolf"))
+			if (_entity.getTile().getDistanceTo(a.getTile()) <= 6 && a.getFlags().has("werewolf"))
 			{
 				allies = ++allies;
 			}

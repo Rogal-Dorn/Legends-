@@ -50,7 +50,7 @@ this.blast_furnace_location <- this.inherit("scripts/entity/world/attached_locat
 		return r;
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 		if (!this.isActive())
 		{

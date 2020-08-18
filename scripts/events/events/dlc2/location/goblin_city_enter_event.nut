@@ -32,7 +32,7 @@ this.goblin_city_enter_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
-				this.World.Tags.set("IsGoblinCityVisited", true);
+				this.World.Flags.set("IsGoblinCityVisited", true);
 
 				if (this.World.State.getLastLocation() != null)
 				{
@@ -88,8 +88,8 @@ this.goblin_city_enter_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
-				this.World.Tags.set("IsGoblinCityScouts", true);
-				this.World.Tags.set("GoblinCityCount", 0);
+				this.World.Flags.set("IsGoblinCityScouts", true);
+				this.World.Flags.set("GoblinCityCount", 0);
 			}
 
 		});
@@ -111,8 +111,8 @@ this.goblin_city_enter_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
-				this.World.Tags.set("IsGoblinCityOutposts", true);
-				this.World.Tags.set("GoblinCityCount", 0);
+				this.World.Flags.set("IsGoblinCityOutposts", true);
+				this.World.Flags.set("GoblinCityCount", 0);
 			}
 
 		});
@@ -226,19 +226,19 @@ this.goblin_city_enter_event <- this.inherit("scripts/events/event", {
 
 	function onDetermineStartScreen()
 	{
-		if (!this.World.Tags.get("IsGoblinCityVisited"))
+		if (!this.World.Flags.get("IsGoblinCityVisited"))
 		{
 			return "A";
 		}
-		else if (this.World.Tags.get("IsGoblinCityOutposts") && this.World.Tags.get("GoblinCityCount") >= 5 || this.World.Tags.get("IsGoblinCityScouts") && this.World.Tags.get("GoblinCityCount") >= 10)
+		else if (this.World.Flags.get("IsGoblinCityOutposts") && this.World.Flags.get("GoblinCityCount") >= 5 || this.World.Flags.get("IsGoblinCityScouts") && this.World.Flags.get("GoblinCityCount") >= 10)
 		{
 			return "E";
 		}
-		else if (this.World.Tags.get("IsGoblinCityScouts"))
+		else if (this.World.Flags.get("IsGoblinCityScouts"))
 		{
 			return "F";
 		}
-		else if (this.World.Tags.get("IsGoblinCityOutposts"))
+		else if (this.World.Flags.get("IsGoblinCityOutposts"))
 		{
 			return "G";
 		}

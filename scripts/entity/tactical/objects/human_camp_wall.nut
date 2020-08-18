@@ -2,12 +2,12 @@ this.human_camp_wall <- this.inherit("scripts/entity/tactical/entity", {
 	m = {},
 	function getName()
 	{
-		return "TODO";
+		return "Palisade";
 	}
 
 	function getDescription()
 	{
-		return "TODO";
+		return "A wooden palisade.";
 	}
 
 	function setDirBasedOnCenter( _centerTile, _dist )
@@ -17,7 +17,7 @@ this.human_camp_wall <- this.inherit("scripts/entity/tactical/entity", {
 
 		if (myTile.SquareCoords.X < _centerTile.SquareCoords.X)
 		{
-			if (myTile.SquareCoords.Y < _centerTile.SquareCoords.Y + _dist * 0.5 && myTile.SquareCoords.Y > _centerTile.SquareCoords.Y - _dist * 0.5)
+			if (myTile.SquareCoords.Y < _centerTile.SquareCoords.Y + _dist / 2 && myTile.SquareCoords.Y > _centerTile.SquareCoords.Y - _dist / 2 - 1)
 			{
 				b.setBrush("camp_18_07");
 			}
@@ -32,7 +32,7 @@ this.human_camp_wall <- this.inherit("scripts/entity/tactical/entity", {
 		}
 		else if (myTile.SquareCoords.X > _centerTile.SquareCoords.X)
 		{
-			if (myTile.SquareCoords.Y < _centerTile.SquareCoords.Y + _dist * 0.5 && myTile.SquareCoords.Y > _centerTile.SquareCoords.Y - _dist * 0.5)
+			if (myTile.SquareCoords.Y < _centerTile.SquareCoords.Y + _dist / 2 && myTile.SquareCoords.Y > _centerTile.SquareCoords.Y - _dist / 2 - 1)
 			{
 				b.setBrush("camp_18_06");
 			}
@@ -60,6 +60,7 @@ this.human_camp_wall <- this.inherit("scripts/entity/tactical/entity", {
 		local body = this.addSprite("body");
 		body.setBrush("camp_18_0" + this.Math.rand(1, 7));
 		body.IgnoreCameraFlip = true;
+		this.setBlockSight(false);
 	}
 
 });

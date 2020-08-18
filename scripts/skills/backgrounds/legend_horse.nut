@@ -23,7 +23,7 @@ this.legend_horse <- this.inherit("scripts/skills/backgrounds/character_backgrou
 		this.m.Faces = this.Const.Faces.Horse;
 		this.m.Hairs = this.Const.Hair.None;
 		this.m.HairColors = this.Const.HairColors.None;
-		this.m.Body = "bust_naked_body_10"
+		this.m.Bodies = this.Const.Bodies.Horses;
 		this.m.IsFemaleBackground = false;
 		this.m.IsLowborn = true;
 		this.m.IsUntalented = true;
@@ -79,7 +79,7 @@ this.legend_horse <- this.inherit("scripts/skills/backgrounds/character_backgrou
 				this.Const.Perks.PerkDefs.LegendHorseCollection,
 				this.Const.Perks.PerkDefs.LegendBackToBasics,
 				this.Const.Perks.PerkDefs.LegendHorseCharge
-				
+
 			],
 			[
 				this.Const.Perks.PerkDefs.LegendEfficientPacking,
@@ -139,14 +139,19 @@ this.legend_horse <- this.inherit("scripts/skills/backgrounds/character_backgrou
 			body.Saturation = sprite.Saturation;
 		}
 
-		if (this.m.Body != null)
-		{
-			this.m.Body = this.m.Body + this.m.Variant;
-			actor.getSprite("body").setBrush(this.m.Body);
-			actor.getSprite("injury_body").setBrush(this.m.Body + "_injured");
-		}
+		local body = this.m.Bodies[this.m.Variant];
+		actor.getSprite("body").setBrush(body);
+		actor.getSprite("injury_body").setBrush(body + "_injured");
 
 		this.onSetAppearance();
+	}
+
+	function updateVariant()
+	{
+		local actor = this.getContainer().getActor();
+		local body = this.m.Bodies[this.m.Variant];
+		actor.getSprite("body").setBrush(body);
+		actor.getSprite("injury_body").setBrush(body + "_injured");
 	}
 
 	function getTooltip()
@@ -216,6 +221,12 @@ this.legend_horse <- this.inherit("scripts/skills/backgrounds/character_backgrou
 		this.m.Container.add(this.new("scripts/skills/traits/legend_horse_trait"));
 	}
 
+	function updateVariant()
+	{
+		local body = this.m.Bodies[this.m.Variant];
+		actor.getSprite("body").setBrush(body);
+		actor.getSprite("injury_body").setBrush(body + "_injured");
+	}
 
 	function onAddEquipment()
 	{
@@ -224,11 +235,6 @@ this.legend_horse <- this.inherit("scripts/skills/backgrounds/character_backgrou
 		talents[this.Const.Attributes.Hitpoints] = 3;
 		talents[this.Const.Attributes.Fatigue] = 3;
 		this.getContainer().getActor().fillTalentValues(1, true);
-	}
-
-	function updateVariant()
-	{
-		this.m.Body = this.m.Body + this.m.Variant;
 	}
 
 	function onSerialize( _out )
@@ -240,12 +246,8 @@ this.legend_horse <- this.inherit("scripts/skills/backgrounds/character_backgrou
 	function onDeserialize( _in )
 	{
 		this.character_background.onDeserialize(_in)
-
-		if (_in.getMetaData().getVersion() >= 59)
-		{
-			this.m.Variant = _in.readU8()
-			this.updateVariant()
-		}
+		this.m.Variant = _in.readU8()
+		this.updateVariant()
 
 	}
 });

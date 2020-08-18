@@ -9,7 +9,6 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 	function create()
 	{
 		this.helmet.create();
-		this.m.IsDroppedWhenDamaged = true;
 		this.m.ShowOnCharacter = true;
 		this.m.IsDroppedAsLoot = true;
 		this.m.Upgrades = [];
@@ -19,6 +18,11 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 			this.m.Upgrades.push(null);
 			this.m.Blocked.push(false);
 		}
+	}
+
+	function onPaint(_variant)
+	{
+
 	}
 
 	function getHideHair()
@@ -559,10 +563,14 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 			return null;
 		}
 
-		local app = this.getContainer().getAppearance();
 		local item = this.m.Upgrades[_slot];
-		this.m.Upgrades[_slot] = null;
+		local app = null;
+		if (this.getContainer() != null) 
+		{
+			app = this.getContainer().getAppearance();
+		}
 		item.onRemoved(app);
+		this.m.Upgrades[_slot] = null;
 		this.updateAppearance();
 		return item;
 	}

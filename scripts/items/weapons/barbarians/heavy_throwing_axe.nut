@@ -31,8 +31,8 @@ this.heavy_throwing_axe <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RangeMax = 4;
 		this.m.RangeIdeal = 4;
 		this.m.StaminaModifier = -6;
-		this.m.RegularDamage = 35;
-		this.m.RegularDamageMax = 55;
+		this.m.RegularDamage = 30;
+		this.m.RegularDamageMax = 50;
 		this.m.ArmorDamageMult = 1.15;
 		this.m.DirectDamageMult = 0.25;
 		this.m.ShieldDamage = 0;

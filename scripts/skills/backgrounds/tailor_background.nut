@@ -39,9 +39,10 @@ this.tailor_background <- this.inherit("scripts/skills/backgrounds/character_bac
 		this.m.Hairs = this.Const.Hair.TidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Tidy;
-		this.m.Body = "bust_naked_body_02";
+
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Good;
+		this.m.Bodies = this.Const.Bodies.Thick;
 		this.m.IsLowborn = true;
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[1];
 		this.m.Modifiers.Repair = this.Const.LegendMod.ResourceModifiers.Repair[2];
@@ -119,34 +120,25 @@ this.tailor_background <- this.inherit("scripts/skills/backgrounds/character_bac
 	{
 		local items = this.getContainer().getActor().getItems();
 		local r;
-		r = this.Math.rand(0, 0);
 
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/armor/linen_tunic"));
-		}
+		items.equip(this.new("scripts/items/armor/linen_tunic"));
 
-		r = this.Math.rand(0, 1);
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, ""],
+			[1, "feathered_hat"]
+		]));
 
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/feathered_hat"));
-		}
 	}
 
 	function onAddLegendEquipment()
 	{
 		local items = this.getContainer().getActor().getItems();
-		local r;
 		items.equip(this.new("scripts/items/legend_armor/cloth/legend_tunic"));
 
-
-		r = this.Math.rand(0, 1);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/feathered_hat"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, ""],
+			[1, "feathered_hat"]
+		]));
 	}
 
 });

@@ -26,7 +26,7 @@ this.knight <- this.inherit("scripts/entity/tactical/human", {
 		this.human.onInit();
 		local b = this.m.BaseProperties;
 		b.setValues(this.Const.Tactical.Actor.Knight);
-		b.TargetAttractionMult = 1.25;
+		b.TargetAttractionMult = 1.0;
 		b.IsSpecializedInSwords = true;
 		b.IsSpecializedInAxes = true;
 		b.IsSpecializedInMaces = true;
@@ -252,30 +252,16 @@ this.knight <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Head))
 		{
-			r = this.Math.rand(1, 100);
-
-			if (r <= 45)
-			{
-				local helmet = this.new("scripts/items/helmets/full_helm");
-				helmet.setPlainVariant();
-				this.m.Items.equip(helmet);
-			}
-			else if (r <= 89)
-			{
-				local helm = this.new("scripts/items/helmets/faction_helm");
+			this.m.Items.equip(this.Const.World.Common.pickHelmet([
+				[45, "feathered_hat"],
+				[44, "faction_helm"],
+				[6, "legend_frogmouth_helm"],
+				[1, "legend_frogmouth_helm_crested"]
+			]))
+			local helm = this.m.Items.getItemAtSlot(this.Const.ItemSlot.Head);
+			local id = helm.getID();
+			if (id == "armor.head.legend_helmet_faction_helm")
 				helm.setVariant(banner);
-				this.m.Items.equip(helm);
-			}
-			else if (r <= 95)
-			{
-				local helm = this.new("scripts/items/helmets/legend_frogmouth_helm");
-				this.m.Items.equip(helm);
-			}
-			else if (r <= 100)
-			{
-				local helm = this.new("scripts/items/helmets/legend_frogmouth_helm_crested");
-				this.m.Items.equip(helm);
-			}
 		}
 	}
 
@@ -339,12 +325,13 @@ this.knight <- this.inherit("scripts/entity/tactical/human", {
 				this.m.Items.equip(this.new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]));
 			}
 		}
-				local helm = this.new("scripts/items/helmets/named/legend_frogmouth_helm_crested_painted");
-				this.m.Items.equip(helm);
+		this.m.Items.equip(this.Const.World.Common.pickHelmet([
+			[1, "named/legend_frogmouth_helm_crested_painted"]
+		]))
 
 
-
-		this.m.Skills.add(this.new("scripts/skills/actives/indomitable"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_killing_frenzy"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_hold_out"));
 		return true;
 	}
 

@@ -47,8 +47,8 @@ this.legend_transformed_tree_effect <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
-	
-	
+
+
 		local actor = this.getContainer().getActor();
 		if (("State" in this.Tactical) && this.Tactical.State != null) {
 			if (actor.getTile().IsVisibleForPlayer)
@@ -62,11 +62,11 @@ this.legend_transformed_tree_effect <- this.inherit("scripts/skills/skill", {
 				}
 			}
 		}
-		
-		//change the AI 
+
+		//change the AI
 		this.m.OriginalAgent = actor.getAIAgent();
 		this.m.OriginalFaction = actor.getFaction();
-		
+
 		if (actor.isPlayerControlled())
 		{
 			if (this.m.Container.hasSkill("perk.legend_surpress_urges") && !this.m.Container.hasSkill("perk.legend_control_instincts"))
@@ -77,9 +77,9 @@ this.legend_transformed_tree_effect <- this.inherit("scripts/skills/skill", {
 			else if (this.m.Container.hasSkill("perk.legend_surpress_urges") && this.m.Container.hasSkill("perk.legend_control_instincts"))
 			{
 			}
-			else	
+			else
 			{
-			actor.setFaction(this.Const.Faction.Beasts);		
+			actor.setFaction(this.Const.Faction.Beasts);
 			actor.setAIAgent(this.new("scripts/ai/tactical/agents/schrat_agent"));
 			actor.getAIAgent().setActor(actor);
 			}
@@ -88,14 +88,14 @@ this.legend_transformed_tree_effect <- this.inherit("scripts/skills/skill", {
 		else
 		{
 		}
-	
+
 		this.m.OriginalSocket = actor.getSprite("socket").getBrush().Name;
 		actor.getSprite("socket").setBrush("bust_base_beasts");
-		actor.setDirty(true);	
-		
-		//remove items 
-		
-		// remove items 
+		actor.setDirty(true);
+
+		//remove items
+
+		// remove items
 		this.logDebug(this.getName() + " removing items");
 		local items = actor.getItems();
 		if (items.getItemAtSlot(this.Const.ItemSlot.Mainhand))
@@ -149,10 +149,13 @@ this.legend_transformed_tree_effect <- this.inherit("scripts/skills/skill", {
 		}
 
 		actor.getSprite("armor").Alpha = 10;
-		actor.getSprite("helmet_bottom").Alpha = 10;
+		actor.getSprite("helmet_vanity_lower").Alpha = 10;
 		actor.getSprite("helmet").Alpha = 10;
 		actor.getSprite("helmet_damage").Alpha = 10;
+		actor.getSprite("helmet_helm").Alpha = 10;
 		actor.getSprite("helmet_top").Alpha = 10;
+		actor.getSprite("helmet_vanity").Alpha = 10;
+
 		actor.getSprite("shield_icon").Alpha = 10;
 		actor.getSprite("armor_layer_chain").Alpha = 10;
 		actor.getSprite("armor_layer_plate").Alpha = 10;
@@ -302,13 +305,13 @@ this.legend_transformed_tree_effect <- this.inherit("scripts/skills/skill", {
 			actor.setAIAgent(this.new("scripts/ai/tactical/agents/schrat_agent"));
 			actor.getAIAgent().setActor(actor);
 		}
-		
+
 	}
 
 	function removeEffect()
 	{
 		local actor = this.getContainer().getActor();
-		
+
 		//reset AI
 		if (this.m.OriginalAgent != null)
 		{
@@ -317,12 +320,21 @@ this.legend_transformed_tree_effect <- this.inherit("scripts/skills/skill", {
 		actor.setFaction(this.m.OriginalFaction);
 		actor.getSprite("socket").setBrush(this.m.OriginalSocket);
 		actor.setDirty(true);
-		
-		//change appearance 		
+
+		//change appearance
 		actor.getSprite("body").setBrush(this.m.Body);
 		actor.getSprite("head").setBrush(this.m.Head);
 		actor.getSprite("armor").Alpha = 255;
+<<<<<<< HEAD
 		actor.getSprite("helmet").Alpha = 255;
+=======
+		actor.getSprite("helmet_vanity_lower").Alpha = 255;
+		actor.getSprite("helmet").Alpha = 255;
+		actor.getSprite("helmet_damage").Alpha = 255;
+		actor.getSprite("helmet_helm").Alpha = 255;
+		actor.getSprite("helmet_top").Alpha = 255;
+		actor.getSprite("helmet_vanity").Alpha = 255;
+>>>>>>> 1f16b12b6e7970000cb087274d79802f039f9eee
 		actor.getSprite("shield_icon").Alpha = 255;
 		actor.getSprite("armor_layer_chain").Alpha = 255;
 		actor.getSprite("armor_layer_plate").Alpha = 255;

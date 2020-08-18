@@ -84,6 +84,16 @@ this.send_supplies_action <- this.inherit("scripts/factions/faction_action", {
 		party.getSprite("base").Visible = false;
 		party.setMirrored(true);
 		party.setDescription("A caravan with armed escorts transporting provisions, supplies and equipment between settlements.");
+		party.setFootprintType(this.Const.World.FootprintsType.Caravan);
+		party.getFlags().set("IsCaravan", true);
+		party.getFlags().set("IsRandomlySpawned", true);
+
+		if (this.World.Assets.m.IsBrigand && this.m.Start.getTile().getDistanceTo(this.World.State.getPlayer().getTile()) <= 70)
+		{
+			party.setVisibleInFogOfWar(true);
+			party.setImportant(true);
+			party.setDiscovered(true);
+		}
 
 		if (this.m.Start.getProduce().len() != 0)
 		{

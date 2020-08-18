@@ -24,7 +24,7 @@ this.perk_fast_adaption <- this.inherit("scripts/skills/skill", {
 
 	function getDescription()
 	{
-		return "This character is adapting fast to their opponent\'s moves and gains an additional [color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.Stacks * 8 + "%[/color] chance to hit with any attack.";
+		return "This character is adapting fast to their opponent\'s moves and gains an additional [color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.Stacks * 10 + "%[/color] chance to hit with any attack.";
 	}
 
 	function onUpdate( _properties )
@@ -86,8 +86,8 @@ this.perk_fast_adaption <- this.inherit("scripts/skills/skill", {
 	{
 		if (this.m.Stacks != 0 && _skill.isAttack())
 		{
-			_properties.MeleeSkill += 8 * this.m.Stacks;
-			_properties.RangedSkill += 8 * this.m.Stacks;
+			_properties.MeleeSkill += 10 * this.m.Stacks;
+			_properties.RangedSkill += 10 * this.m.Stacks;
 		}
 	}
 

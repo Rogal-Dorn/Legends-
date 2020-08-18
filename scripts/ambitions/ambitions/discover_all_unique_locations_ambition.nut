@@ -24,12 +24,12 @@ this.discover_all_unique_locations_ambition <- this.inherit("scripts/ambitions/a
 			return;
 		}
 
-		if (!this.World.Tags.has("LegendaryLocationsDiscovered"))
+		if (!this.World.Flags.has("LegendaryLocationsDiscovered"))
 		{
-			this.World.Tags.set("LegendaryLocationsDiscovered", 0);
+			this.World.Flags.set("LegendaryLocationsDiscovered", 0);
 		}
 
-		if (this.World.Tags.get("LegendaryLocationsDiscovered") >= 11)
+		if (this.World.Flags.get("LegendaryLocationsDiscovered") >= 11)
 		{
 			return;
 		}
@@ -39,7 +39,7 @@ this.discover_all_unique_locations_ambition <- this.inherit("scripts/ambitions/a
 
 	function onCheckSuccess()
 	{
-		return this.World.Tags.get("LegendaryLocationsDiscovered") >= 11;
+		return this.World.Flags.get("LegendaryLocationsDiscovered") >= 11;
 	}
 
 	function onSerialize( _out )

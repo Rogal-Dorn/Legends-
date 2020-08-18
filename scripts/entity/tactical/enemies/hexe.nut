@@ -194,6 +194,12 @@ this.hexe <- this.inherit("scripts/entity/tactical/actor", {
 						food.randomizeBestBefore();
 						food.drop(_tile);
 					}
+
+					if (this.Math.rand(1, 100) <= 30)
+					{
+						local loot = this.new("scripts/items/loot/jade_broche_item");
+						loot.drop(_tile);
+					}
 				}
 
 				local chance = 1;

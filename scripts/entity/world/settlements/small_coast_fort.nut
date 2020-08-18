@@ -83,6 +83,7 @@ this.small_coast_fort <- this.inherit("scripts/entity/world/settlement", {
 		this.m.Sprite = "world_stronghold_01";
 		this.m.Lighting = "world_stronghold_01_light";
 		this.m.Rumors = this.Const.Strings.RumorsFishingSettlement;
+		this.m.Culture = this.Const.World.Culture.Neutral;
 		this.m.IsMilitary = true;
 		this.m.Size = 2;
 		this.m.HousesType = 1;

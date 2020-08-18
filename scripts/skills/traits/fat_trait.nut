@@ -54,7 +54,21 @@ this.fat_trait <- this.inherit("scripts/skills/traits/character_trait", {
 
 	function onAdded()
 	{
-		this.getContainer().getActor().getSprite("body").setBrush("bust_naked_body_02");
+		if (!this.m.IsNew)
+		{
+			return;
+		}
+
+		local actor = this.getContainer().getActor();
+
+		if (actor.getEthnicity() == 1)
+		{
+			actor.getSprite("body").setBrush("bust_naked_body_southern_02");
+		}
+		else
+		{
+			actor.getSprite("body").setBrush("bust_naked_body_02");
+		}
 	}
 
 	function onUpdate( _properties )

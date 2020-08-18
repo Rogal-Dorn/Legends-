@@ -10,7 +10,7 @@ this.legend_peasant_squire <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Hairs = this.Const.Hair.AllMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
-		this.getTags().add("peasant");
+		this.getFlags().add("peasant");
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/military_melee_agent");
 		this.m.AIAgent.setActor(this);
 		if (this.Math.rand(1, 100) <= 10)
@@ -153,16 +153,10 @@ this.legend_peasant_squire <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.Math.rand(1, 100) <= 66)
 		{
-			local r = this.Math.rand(1, 4);
-
-			if (r == 1)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/feathered_hat"));
-			}
-			else if (r >= 2)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/aketon_cap"));
-			}
+			this.m.Items.equip(this.Const.World.Common.pickHelmet([
+				[1, "feathered_hat"],
+				[3, "aketon_cap"]
+			]))
 		}
 	}
 

@@ -12,7 +12,11 @@ this.build_unique_locations_action <- this.inherit("scripts/factions/faction_act
 		BuildWaterWheel = true,
 		BuildKrakenCult = true,
 		BuildIcyCave = true,
-		BuildHuntingGround = true
+		BuildHuntingGround = true,
+		BuildSunkenLibrary = true,
+		BuildHolySite1 = true,
+		BuildHolySite2 = true,
+		BuildHolySite3 = true
 	},
 	function create()
 	{
@@ -90,6 +94,26 @@ this.build_unique_locations_action <- this.inherit("scripts/factions/faction_act
 			{
 				this.m.BuildHuntingGround = false;
 			}
+
+			if (!this.Const.DLC.Desert || v.getTypeID() == "location.sunken_library")
+			{
+				this.m.BuildSunkenLibrary = false;
+			}
+
+			if (!this.Const.DLC.Desert || v.getTypeID() == "location.holy_site.meteorite")
+			{
+				this.m.BuildHolySite1 = false;
+			}
+
+			if (!this.Const.DLC.Desert || v.getTypeID() == "location.holy_site.oracle")
+			{
+				this.m.BuildHolySite2 = false;
+			}
+
+			if (!this.Const.DLC.Desert || v.getTypeID() == "location.holy_site.vulcano")
+			{
+				this.m.BuildHolySite3 = false;
+			}
 		}
 	}
 
@@ -119,7 +143,9 @@ this.build_unique_locations_action <- this.inherit("scripts/factions/faction_act
 
 			for( local i = 0; i < this.Const.World.TerrainType.COUNT; i = ++i )
 			{
-				if (i == this.Const.World.TerrainType.Hills || i == this.Const.World.TerrainType.Steppe || i == this.Const.World.TerrainType.Tundra)
+				i == this.Const.World.TerrainType.Hills || i == this.Const.World.TerrainType.Steppe || i == this.Const.World.TerrainType.Tundra || i;
+
+				if (this.Const.World.TerrainType.Plains)
 				{
 				}
 				else
@@ -128,7 +154,7 @@ this.build_unique_locations_action <- this.inherit("scripts/factions/faction_act
 				}
 			}
 
-			local tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries * 100, disallowedTerrain, 45, 1000, 1000, distanceToOthers, distanceToOthers);
+			local tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries * 100, disallowedTerrain, 45, 1000, 1001, distanceToOthers, distanceToOthers);
 
 			if (tile != null)
 			{
@@ -156,7 +182,7 @@ this.build_unique_locations_action <- this.inherit("scripts/factions/faction_act
 				}
 			}
 
-			local tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries * 100, disallowedTerrain, 30, 1000, 1000, distanceToOthers, distanceToOthers);
+			local tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries * 100, disallowedTerrain, 30, 1000, 1001, distanceToOthers, distanceToOthers);
 
 			if (tile != null)
 			{
@@ -180,11 +206,13 @@ this.build_unique_locations_action <- this.inherit("scripts/factions/faction_act
 				this.Const.World.TerrainType.Mountains,
 				this.Const.World.TerrainType.Plains,
 				this.Const.World.TerrainType.Steppe,
+				this.Const.World.TerrainType.Desert,
+				this.Const.World.TerrainType.Oasis,
 				this.Const.World.TerrainType.SnowyForest,
 				this.Const.World.TerrainType.Forest,
 				this.Const.World.TerrainType.LeaveForest,
 				this.Const.World.TerrainType.AutumnForest
-			], 25, 1000, 1000, distanceToOthers, distanceToOthers);
+			], 25, 1000, 1001, distanceToOthers, distanceToOthers);
 
 			if (tile != null)
 			{
@@ -211,7 +239,7 @@ this.build_unique_locations_action <- this.inherit("scripts/factions/faction_act
 				}
 			}
 
-			local tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries * 100, disallowedTerrain, 40, 1000, 1000, distanceToOthers, distanceToOthers);
+			local tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries * 100, disallowedTerrain, 40, 1000, 1001, distanceToOthers, distanceToOthers);
 
 			if (tile != null)
 			{
@@ -238,7 +266,7 @@ this.build_unique_locations_action <- this.inherit("scripts/factions/faction_act
 				}
 			}
 
-			local tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries * 100, disallowedTerrain, 15, 25, 1000, distanceToOthers, distanceToOthers);
+			local tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries * 100, disallowedTerrain, 15, 25, 1001, distanceToOthers, distanceToOthers);
 
 			if (tile != null)
 			{
@@ -257,7 +285,7 @@ this.build_unique_locations_action <- this.inherit("scripts/factions/faction_act
 
 			for( local i = 0; i < this.Const.World.TerrainType.COUNT; i = ++i )
 			{
-				if (i == this.Const.World.TerrainType.Plains || i == this.Const.World.TerrainType.Steppe)
+				if (i == this.Const.World.TerrainType.Plains)
 				{
 				}
 				else
@@ -266,7 +294,7 @@ this.build_unique_locations_action <- this.inherit("scripts/factions/faction_act
 				}
 			}
 
-			local tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries * 100, disallowedTerrain, 15, 30, 1000, distanceToOthers, distanceToOthers);
+			local tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries * 100, disallowedTerrain, 15, 30, 1001, distanceToOthers, distanceToOthers);
 
 			if (tile != null)
 			{
@@ -293,7 +321,7 @@ this.build_unique_locations_action <- this.inherit("scripts/factions/faction_act
 				}
 			}
 
-			local tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries * 100, disallowedTerrain, 25, 1000, 1000, distanceToOthers, distanceToOthers);
+			local tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries * 100, disallowedTerrain, 25, 1000, 1001, distanceToOthers, distanceToOthers);
 
 			if (tile != null)
 			{
@@ -320,7 +348,7 @@ this.build_unique_locations_action <- this.inherit("scripts/factions/faction_act
 				}
 			}
 
-			local tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries * 100, disallowedTerrain, 10, 35, 1000, distanceToOthers - 5, distanceToOthers - 5);
+			local tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries * 100, disallowedTerrain, 10, 35, 1001, distanceToOthers - 5, distanceToOthers - 5);
 
 			if (tile != null)
 			{
@@ -329,7 +357,7 @@ this.build_unique_locations_action <- this.inherit("scripts/factions/faction_act
 
 			if (camp != null)
 			{
-				this.World.Tags.set("IjirokStage", 0);
+				this.World.Flags.set("IjirokStage", 0);
 				tile.TacticalType = this.Const.World.TerrainTacticalType.Snow;
 				camp.onSpawned();
 			}
@@ -349,7 +377,7 @@ this.build_unique_locations_action <- this.inherit("scripts/factions/faction_act
 				}
 			}
 
-			local tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries * 100, disallowedTerrain, 15, 99, 1000, distanceToOthers, distanceToOthers);
+			local tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries * 100, disallowedTerrain, 15, 99, 1001, distanceToOthers, distanceToOthers);
 
 			if (tile != null)
 			{
@@ -376,7 +404,7 @@ this.build_unique_locations_action <- this.inherit("scripts/factions/faction_act
 				}
 			}
 
-			local tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries * 100, disallowedTerrain, 25, 60, 1000, distanceToOthers, distanceToOthers);
+			local tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries * 100, disallowedTerrain, 25, 60, 1001, distanceToOthers, distanceToOthers, null, this.Const.DLC.Desert ? 0.15 : 0.0);
 
 			if (tile != null)
 			{
@@ -411,7 +439,7 @@ this.build_unique_locations_action <- this.inherit("scripts/factions/faction_act
 				this.Const.World.TerrainType.Snow,
 				this.Const.World.TerrainType.SnowyForest,
 				this.Const.World.TerrainType.Forest
-			], 20, 35, 1000, distanceToOthers, distanceToOthers);
+			], 20, 35, 1001, distanceToOthers, distanceToOthers);
 
 			if (tile != null)
 			{
@@ -428,12 +456,121 @@ this.build_unique_locations_action <- this.inherit("scripts/factions/faction_act
 			local tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries * 100, [
 				this.Const.World.TerrainType.Mountains,
 				this.Const.World.TerrainType.Snow,
-				this.Const.World.TerrainType.SnowyForest
-			], 25, 40, 1000, distanceToOthers, distanceToOthers);
+				this.Const.World.TerrainType.SnowyForest,
+				this.Const.World.TerrainType.Desert
+			], 25, 40, 1001, distanceToOthers, distanceToOthers);
 
 			if (tile != null)
 			{
 				camp = this.World.spawnLocation("scripts/entity/world/locations/legendary/ancient_temple_location", tile.Coords);
+			}
+
+			if (camp != null)
+			{
+				camp.onSpawned();
+			}
+		}
+		else if (this.m.BuildSunkenLibrary)
+		{
+			local disallowedTerrain = [];
+
+			for( local i = 0; i < this.Const.World.TerrainType.COUNT; i = ++i )
+			{
+				if (i == this.Const.World.TerrainType.Desert)
+				{
+				}
+				else
+				{
+					disallowedTerrain.push(i);
+				}
+			}
+
+			local tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries * 100, disallowedTerrain, 20, 50, 1001, distanceToOthers, distanceToOthers);
+
+			if (tile != null)
+			{
+				camp = this.World.spawnLocation("scripts/entity/world/locations/legendary/sunken_library_location", tile.Coords);
+			}
+
+			if (camp != null)
+			{
+				camp.onSpawned();
+			}
+		}
+		else if (this.m.BuildHolySite1)
+		{
+			local disallowedTerrain = [];
+
+			for( local i = 0; i < this.Const.World.TerrainType.COUNT; i = ++i )
+			{
+				if (i == this.Const.World.TerrainType.Steppe || i == this.Const.World.TerrainType.Plains)
+				{
+				}
+				else
+				{
+					disallowedTerrain.push(i);
+				}
+			}
+
+			local tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries * 100, disallowedTerrain, 8, 25, 1001, 8, 8, null, 0.1, 0.35);
+
+			if (tile != null)
+			{
+				camp = this.World.spawnLocation("scripts/entity/world/locations/legendary/meteorite_location", tile.Coords);
+			}
+
+			if (camp != null)
+			{
+				camp.onSpawned();
+			}
+		}
+		else if (this.m.BuildHolySite2)
+		{
+			local disallowedTerrain = [];
+
+			for( local i = 0; i < this.Const.World.TerrainType.COUNT; i = ++i )
+			{
+				if (i == this.Const.World.TerrainType.Desert || i == this.Const.World.TerrainType.Steppe)
+				{
+				}
+				else
+				{
+					disallowedTerrain.push(i);
+				}
+			}
+
+			local tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries * 100, disallowedTerrain, 8, 25, 1001, 8, 8);
+
+			if (tile != null)
+			{
+				camp = this.World.spawnLocation("scripts/entity/world/locations/legendary/oracle_location", tile.Coords);
+			}
+
+			if (camp != null)
+			{
+				camp.onSpawned();
+			}
+		}
+		else if (this.m.BuildHolySite3)
+		{
+			local disallowedTerrain = [];
+
+			for( local i = 0; i < this.Const.World.TerrainType.COUNT; i = ++i )
+			{
+				if (i == this.Const.World.TerrainType.Desert)
+				{
+				}
+				else
+				{
+					disallowedTerrain.push(i);
+				}
+			}
+
+			local tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries * 100, disallowedTerrain, 8, 25, 1001, 8, 8, null, 0.1);
+
+			if (tile != null)
+			{
+				camp = this.World.spawnLocation("scripts/entity/world/locations/legendary/vulcano_location", tile.Coords);
 			}
 
 			if (camp != null)

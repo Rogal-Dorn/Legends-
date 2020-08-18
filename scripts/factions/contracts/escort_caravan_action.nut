@@ -32,11 +32,6 @@ this.escort_caravan_action <- this.inherit("scripts/factions/faction_action", {
 				continue;
 			}
 
-			if (!s.isDiscovered())
-			{
-				continue;
-			}
-
 			if (!s.isAlliedWith(_faction.getID()))
 			{
 				continue;

@@ -11,14 +11,17 @@ this.ai_defend_rotation <- this.inherit("scripts/ai/tactical/behavior", {
 	{
 		this.m.ID = this.Const.AI.Behavior.ID.Rotation;
 		this.m.Order = this.Const.AI.Behavior.Order.Rotation;
+		this.m.IsThreaded = true;
 		this.behavior.create();
 	}
 
 	function onEvaluate( _entity )
 	{
+		// Function is a generator.
 		this.m.TargetTile = null;
 		this.m.Skill = null;
 		local scoreMult = this.getProperties().BehaviorMult[this.m.ID];
+		local time = this.Time.getExactTime();
 
 		if (_entity.getActionPoints() < this.Const.Movement.AutoEndTurnBelowAP)
 		{
@@ -56,7 +59,7 @@ this.ai_defend_rotation <- this.inherit("scripts/ai/tactical/behavior", {
 		}
 
 		local myTile = _entity.getTile();
-		local zoc = _entity.getTile().getZoneOfControlCountOtherThan(_entity.getAlliedFactions());
+		local zoc = _entity.getTile().getZoneOfOccupationCountOtherThan(_entity.getAlliedFactions());
 		local isOffensive = this.m.Skill.getID() == "actives.barbarian_fury";
 		local hitpointRatio = (_entity.getHitpoints() + _entity.getArmor(this.Const.BodyPart.Body) + _entity.getArmor(this.Const.BodyPart.Head)) / (_entity.getHitpointsMax() + _entity.getArmorMax(this.Const.BodyPart.Body) + _entity.getArmorMax(this.Const.BodyPart.Head));
 		local isEntityWounded = false;
@@ -67,7 +70,7 @@ this.ai_defend_rotation <- this.inherit("scripts/ai/tactical/behavior", {
 		}
 
 		local isEntityArmedWithShield = _entity.isArmedWithShield();
-		local isEntityExpendable = _entity.getCurrentProperties().TargetAttractionMult <= 0.25;
+		local isEntityExpendable = _entity.getCurrentProperties().TargetAttractionMult <= 0.5;
 		local isEntityRangedUnit = this.isRangedUnit(_entity);
 		local isEntityArmedWithMeleeWeapon = true;
 
@@ -80,10 +83,70 @@ this.ai_defend_rotation <- this.inherit("scripts/ai/tactical/behavior", {
 			isEntityArmedWithMeleeWeapon = false;
 		}
 
+		local isEntitySupport = _entity.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) != null && _entity.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).isItemType(this.Const.Items.ItemType.Misc);
+		local attackSkill = _entity.getSkills().getAttackOfOpportunity();
+		local apRequiredForAttack = attackSkill != null ? attackSkill.getActionPointCost() : 4;
 		local isEntityAOE = isEntityArmedWithMeleeWeapon && _entity.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) != null && _entity.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).isItemType(this.Const.Items.ItemType.Weapon) && _entity.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).isAoE();
 		local isEntityTwoHanded = isEntityArmedWithMeleeWeapon && _entity.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) != null && _entity.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).isItemType(this.Const.Items.ItemType.Weapon) && _entity.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).isItemType(this.Const.Items.ItemType.TwoHanded);
 		local currentPotentialTargets = this.queryTargetsInMeleeRange(this.getProperties().EngageRangeMin, this.Math.max(_entity.getIdealRange(), this.getProperties().EngageRangeMax), 1, myTile);
 		local currentBestTarget = this.queryBestMeleeTarget(_entity, null, currentPotentialTargets);
+		local targets = this.getAgent().getKnownOpponents();
+		local dirs = [
+			0,
+			0,
+			0,
+			0,
+			0,
+			0
+		];
+
+		foreach( opponent in targets )
+		{
+			local dir = myTile.getDirection8To(opponent.Actor.getTile());
+			local mult = this.isRangedUnit(opponent.Actor) ? 2 : 1;
+			mult = mult * (7.0 / myTile.getDistanceTo(opponent.Actor.getTile()));
+
+			switch(dir)
+			{
+			case this.Const.Direction8.W:
+				dirs[this.Const.Direction.NW] += 4 * mult;
+				dirs[this.Const.Direction.SW] += 4 * mult;
+				break;
+
+			case this.Const.Direction8.E:
+				dirs[this.Const.Direction.NE] += 4 * mult;
+				dirs[this.Const.Direction.SE] += 4 * mult;
+				break;
+
+			default:
+				local dir = myTile.getDirectionTo(opponent.Actor.getTile());
+				local dir_left = dir - 1 >= 0 ? dir - 1 : 6 - 1;
+				local dir_right = dir + 1 < 6 ? dir + 1 : 0;
+				dirs[dir] += 4 * mult;
+				dirs[dir_left] += 3 * mult;
+				dirs[dir_right] += 3 * mult;
+				break;
+			}
+		}
+
+		local entityCover = 0.0;
+
+		for( local i = 0; i < 6; i = ++i )
+		{
+			if (!myTile.hasNextTile(i))
+			{
+			}
+			else
+			{
+				local adjacentTile = myTile.getNextTile(i);
+
+				if (dirs[i] >= 8 && !adjacentTile.IsEmpty)
+				{
+					entityCover = entityCover + dirs[i] / targets.len() * this.Const.AI.Behavior.DefendSeekCoverMult;
+				}
+			}
+		}
+
 		local isEntityAtIdealWeaponRange = true;
 
 		if (zoc != 0 && !isEntityArmedWithMeleeWeapon)
@@ -101,10 +164,17 @@ this.ai_defend_rotation <- this.inherit("scripts/ai/tactical/behavior", {
 				continue;
 			}
 
+			if (this.isAllottedTimeReached(time))
+			{
+				yield null;
+				time = this.Time.getExactTime();
+			}
+
 			local score = 1.0;
 			local reverseScore = 1.0;
-			local allyZOC = ally.getTile().getZoneOfControlCountOtherThan(ally.getAlliedFactions());
-			local isAllyExpendable = ally.getCurrentProperties().TargetAttractionMult <= 0.25;
+			local allyTile = ally.getTile();
+			local allyZOC = allyTile.getZoneOfOccupationCountOtherThan(ally.getAlliedFactions());
+			local isAllyExpendable = ally.getCurrentProperties().TargetAttractionMult <= 0.5;
 			local isAllyValuable = ally.getCurrentProperties().TargetAttractionMult > _entity.getCurrentProperties().TargetAttractionMult;
 			local isEntityValuable = _entity.getCurrentProperties().TargetAttractionMult > ally.getCurrentProperties().TargetAttractionMult;
 			local isAllyArmedWithMeleeWeapon = true;
@@ -119,6 +189,7 @@ this.ai_defend_rotation <- this.inherit("scripts/ai/tactical/behavior", {
 				isAllyArmedWithMeleeWeapon = false;
 			}
 
+			local isAllySupport = ally.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) != null && ally.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).isItemType(this.Const.Items.ItemType.Misc);
 			local isAllyAOE = isAllyArmedWithMeleeWeapon && ally.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) != null && ally.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).isItemType(this.Const.Items.ItemType.Weapon) && ally.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).isAoE();
 			local isAllyAtIdealWeaponRange = true;
 
@@ -132,8 +203,63 @@ this.ai_defend_rotation <- this.inherit("scripts/ai/tactical/behavior", {
 			local isAllyTurnDone = isAllyFleeing || ally.isTurnDone() || ally.getCurrentProperties().IsStunned || !ally.getCurrentProperties().IsAbleToUseWeaponSkills;
 			local isAllyArmedWithShield = ally.isArmedWithShield();
 			local allyHitpointRatio = (ally.getHitpoints() + ally.getArmor(this.Const.BodyPart.Body) + ally.getArmor(this.Const.BodyPart.Head)) / (ally.getHitpointsMax() + ally.getArmorMax(this.Const.BodyPart.Body) + ally.getArmorMax(this.Const.BodyPart.Head));
+			local dirs = [
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			];
 
-			if (!isAllyExpendable && !isAllyFleeing && isEntityArmedWithMeleeWeapon && !isAllyArmedWithMeleeWeapon && allyZOC != 0 && zoc == 0)
+			foreach( opponent in targets )
+			{
+				local dir = allyTile.getDirection8To(opponent.Actor.getTile());
+				local mult = this.isRangedUnit(opponent.Actor) ? 2 : 1;
+				mult = mult * (7.0 / allyTile.getDistanceTo(opponent.Actor.getTile()));
+
+				switch(dir)
+				{
+				case this.Const.Direction8.W:
+					dirs[this.Const.Direction.NW] += 4 * mult;
+					dirs[this.Const.Direction.SW] += 4 * mult;
+					break;
+
+				case this.Const.Direction8.E:
+					dirs[this.Const.Direction.NE] += 4 * mult;
+					dirs[this.Const.Direction.SE] += 4 * mult;
+					break;
+
+				default:
+					local dir = allyTile.getDirectionTo(opponent.Actor.getTile());
+					local dir_left = dir - 1 >= 0 ? dir - 1 : 6 - 1;
+					local dir_right = dir + 1 < 6 ? dir + 1 : 0;
+					dirs[dir] += 4 * mult;
+					dirs[dir_left] += 3 * mult;
+					dirs[dir_right] += 3 * mult;
+					break;
+				}
+			}
+
+			local allyCover = 0.0;
+
+			for( local i = 0; i < 6; i = ++i )
+			{
+				if (!allyTile.hasNextTile(i))
+				{
+				}
+				else
+				{
+					local adjacentTile = allyTile.getNextTile(i);
+
+					if (dirs[i] >= 8 && !adjacentTile.IsEmpty)
+					{
+						allyCover = allyCover + dirs[i] / targets.len() * this.Const.AI.Behavior.DefendSeekCoverMult;
+					}
+				}
+			}
+
+			if (!isAllyFleeing && isEntityArmedWithMeleeWeapon && !isAllyArmedWithMeleeWeapon && allyZOC != 0 && zoc == 0)
 			{
 				score = score * this.Const.AI.Behavior.RotationWrongWeaponMult;
 			}
@@ -165,7 +291,7 @@ this.ai_defend_rotation <- this.inherit("scripts/ai/tactical/behavior", {
 				score = score * (this.Const.AI.Behavior.RotationSaveWoundedMult * (1.0 + (allyHitpointRatio - hitpointRatio)));
 			}
 
-			if (!isAllyExpendable && ally.getMoraleState() == this.Const.MoraleState.Fleeing && allyZOC > 0 && zoc == 0 && isEntityArmedWithMeleeWeapon)
+			if (!isAllyExpendable && isAllyFleeing && allyZOC > 0 && zoc == 0 && isEntityArmedWithMeleeWeapon)
 			{
 				score = score * this.Const.AI.Behavior.RotationSaveFleeingAlly;
 			}
@@ -174,7 +300,7 @@ this.ai_defend_rotation <- this.inherit("scripts/ai/tactical/behavior", {
 			{
 				score = score * this.Const.AI.Behavior.RotationPriorityTargetMult;
 			}
-			else if (_entity.getCurrentProperties().TargetAttractionMult > ally.getCurrentProperties().TargetAttractionMult * this.Const.AI.Behavior.RotationPriorityTargetMinPct && zoc > allyZOC)
+			else if (_entity.getCurrentProperties().TargetAttractionMult > ally.getCurrentProperties().TargetAttractionMult * this.Const.AI.Behavior.RotationPriorityTargetMinPct && zoc > allyZOC && isAllyArmedWithMeleeWeapon)
 			{
 				score = score * this.Const.AI.Behavior.RotationPriorityTargetMult;
 			}
@@ -183,12 +309,12 @@ this.ai_defend_rotation <- this.inherit("scripts/ai/tactical/behavior", {
 			{
 				score = score * this.Const.AI.Behavior.RotationAOEMult;
 			}
-			else if (zoc >= 3 && allyZOC == 0 && !isEntityAOE && isAllyAOE && !isAllyTurnDone)
+			else if (zoc >= 3 && allyZOC == 0 && !isEntityAOE && isAllyAOE && !isAllyTurnDone && !isAllyFleeing)
 			{
 				score = score * this.Const.AI.Behavior.RotationAOEMult;
 			}
 
-			if (isOffensive && _entity.getActionPoints() >= 9)
+			if (isOffensive && _entity.getActionPoints() >= 9 && !isEntitySupport && !(allyZOC > zoc && !isEntityArmedWithMeleeWeapon) && !(zoc > allyZOC && !isAllyArmedWithMeleeWeapon) && !(isAllyFleeing && zoc != 0) && _entity.getCurrentProperties().IsAbleToUseWeaponSkills)
 			{
 				local potentialTargets = this.queryTargetsInMeleeRange(this.getProperties().EngageRangeMin, this.Math.max(_entity.getIdealRange(), this.getProperties().EngageRangeMax), 1, ally.getTile());
 				local bestTarget = this.queryBestMeleeTarget(_entity, null, potentialTargets);
@@ -201,7 +327,7 @@ this.ai_defend_rotation <- this.inherit("scripts/ai/tactical/behavior", {
 					}
 				}
 			}
-			else if (isOffensive && _entity.getActionPoints() <= 3 && ally.getActionPoints() >= 9 && !ally.getCurrentProperties().IsStunned && ally.getCurrentProperties().IsAbleToUseWeaponSkills)
+			else if ((isOffensive || _entity.getXPValue() >= ally.getXPValue() * this.Const.AI.Behavior.RotationEliteAllyXPMult) && _entity.getActionPoints() <= 3 && ally.getActionPoints() >= 9 && !isAllyFleeing && !isAllySupport && ally.getCurrentProperties().IsAbleToUseWeaponSkills && (isAllyArmedWithMeleeWeapon || zoc == 0))
 			{
 				local potentialTargets = this.queryTargetsInMeleeRange(ally.getAIAgent().getProperties().EngageRangeMin, this.Math.max(ally.getIdealRange(), ally.getAIAgent().getProperties().EngageRangeMax), 1, myTile);
 				local bestTarget = this.queryBestMeleeTarget(ally, null, potentialTargets);
@@ -214,7 +340,16 @@ this.ai_defend_rotation <- this.inherit("scripts/ai/tactical/behavior", {
 				}
 			}
 
-			if (!isAllyExpendable && !isAllyFleeing && isEntityArmedWithMeleeWeapon && !isAllyArmedWithMeleeWeapon && allyZOC == 0 && zoc != 0)
+			if (this.getStrategy().isDefending() && isEntityArmedWithShield && !isAllyArmedWithShield && isEntityArmedWithMeleeWeapon && isAllyArmedWithMeleeWeapon && !isAllyRangedUnit && !isEntityRangedUnit && entityCover > allyCover * 2.0)
+			{
+				score = score * this.Const.AI.Behavior.RotationCoverMult;
+			}
+			else if (this.getStrategy().isDefending() && !isEntityArmedWithShield && isAllyArmedWithShield && isEntityArmedWithMeleeWeapon && isAllyArmedWithMeleeWeapon && !isAllyRangedUnit && !isEntityRangedUnit && allyCover > entityCover * 2.0)
+			{
+				score = score * this.Const.AI.Behavior.RotationCoverMult;
+			}
+
+			if (!isAllyFleeing && isEntityArmedWithMeleeWeapon && !isAllyArmedWithMeleeWeapon && allyZOC == 0 && zoc != 0)
 			{
 				reverseScore = reverseScore * this.Const.AI.Behavior.RotationWrongWeaponMult;
 			}
@@ -250,7 +385,7 @@ this.ai_defend_rotation <- this.inherit("scripts/ai/tactical/behavior", {
 			{
 				reverseScore = reverseScore * this.Const.AI.Behavior.RotationPriorityTargetMult;
 			}
-			else if (_entity.getCurrentProperties().TargetAttractionMult > ally.getCurrentProperties().TargetAttractionMult * this.Const.AI.Behavior.RotationPriorityTargetMinPct && zoc <= allyZOC)
+			else if (_entity.getCurrentProperties().TargetAttractionMult > ally.getCurrentProperties().TargetAttractionMult * this.Const.AI.Behavior.RotationPriorityTargetMinPct && zoc <= allyZOC && isEntityArmedWithMeleeWeapon)
 			{
 				reverseScore = reverseScore * this.Const.AI.Behavior.RotationPriorityTargetMult;
 			}
@@ -279,7 +414,7 @@ this.ai_defend_rotation <- this.inherit("scripts/ai/tactical/behavior", {
 		this.m.TargetTile = bestTile;
 		scoreMult = scoreMult * bestScore;
 
-		if (this.getAgent().getBehavior(this.Const.AI.Behavior.ID.EngageMelee) != null && this.getAgent().getBehavior(this.Const.AI.Behavior.ID.EngageMelee).getScore() * 2.0 >= this.Const.AI.Behavior.Score.Rotation * scoreMult)
+		if (this.getAgent().getBehavior(this.Const.AI.Behavior.ID.EngageMelee) != null && this.getAgent().getBehavior(this.Const.AI.Behavior.ID.EngageMelee).getScore() * 1.5 >= this.Const.AI.Behavior.Score.Rotation * scoreMult)
 		{
 			return this.Const.AI.Behavior.Score.Zero;
 		}

@@ -47,7 +47,7 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 		this.m.Hairs = this.Const.Hair.TidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Tidy;
-		this.m.Body = "bust_naked_body_02";
+
 
 		this.m.Level = 3;
 		this.m.IsCombatBackground = true;
@@ -188,7 +188,7 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsFemaleBackground = true;
 	}
 
@@ -301,14 +301,6 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 		this.m.Container.add(this.new("scripts/skills/traits/fearless_trait"));
 		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_1"));
 
-		if (this.m.IsFemaleBackground == true)
-		{
-			actor.setName(this.Const.Strings.LadyNames[this.Math.rand(0, this.Const.Strings.LadyNames.len() - 1)]);
-		}
-		else
-		{
-			actor.setName(this.Const.Strings.KnightNames[this.Math.rand(0, this.Const.Strings.KnightNames.len() - 1)]);
-		}
 	}
 
 	function onAddEquipment()
@@ -327,7 +319,9 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 		stash.add(this.new("scripts/items/supplies/cured_venison_item"));
 		items.equip(this.new("scripts/items/weapons/legend_crusader_sword"));;
 		items.equip(this.new("scripts/items/armor/legend_crusader_armor"));
-		items.equip(this.new("scripts/items/helmets/closed_flat_top_helmet"));
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "closed_flat_top_helmet"]
+		]));
 
 	}
 
@@ -347,7 +341,9 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 		stash.add(this.new("scripts/items/supplies/cured_venison_item"));
 		items.equip(this.new("scripts/items/weapons/legend_crusader_sword"));;
 		items.equip(this.new("scripts/items/legend_armor/armor/legend_armor_crusader"));
-		items.equip(this.new("scripts/items/helmets/closed_flat_top_helmet"));
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "closed_flat_top_helmet"]
+		]));
 
 	}
 

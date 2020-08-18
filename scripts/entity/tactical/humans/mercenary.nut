@@ -424,30 +424,22 @@ this.mercenary <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.Math.rand(1, 100) <= 95)
 		{
-			local helmets = [
-				"scripts/items/helmets/nasal_helmet",
-				"scripts/items/helmets/nasal_helmet_with_mail",
-				"scripts/items/helmets/mail_coif",
-				"scripts/items/helmets/reinforced_mail_coif",
-				"scripts/items/helmets/headscarf",
-				"scripts/items/helmets/kettle_hat",
-				"scripts/items/helmets/kettle_hat_with_mail",
-				"scripts/items/helmets/flat_top_helmet",
-				"scripts/items/helmets/flat_top_with_mail",
-				"scripts/items/helmets/closed_flat_top_helmet",
-				"scripts/items/helmets/closed_mail_coif",
-				"scripts/items/helmets/bascinet_with_mail"
-			];
-
-			if (this.Const.DLC.Wildmen)
-			{
-				helmets.extend([
-					"scripts/items/helmets/nordic_helmet",
-					"scripts/items/helmets/steppe_helmet_with_mail"
-				]);
-			}
-
-			this.m.Items.equip(this.new(helmets[this.Math.rand(1, helmets.len() - 1)]));
+			this.m.Items.equip(this.Const.World.Common.pickHelmet([
+				[1, "nasal_helmet_with_mail"],
+				[1, "nasal_helmet"],
+				[1, "mail_coif"],
+				[1, "reinforced_mail_coif"],
+				[1, "headscarf"],
+				[1, "kettle_hat"],
+				[1, "kettle_hat_with_mail"],
+				[1, "flat_top_helmet"],
+				[1, "flat_top_with_mail"],
+				[1, "closed_flat_top_helmet"],
+				[1, "closed_mail_coif"],
+				[1, "bascinet_with_mail"],
+				[1, "nordic_helmet"],
+				[1, "steppe_helmet_with_mail"]
+			]))
 		}
 	}
 

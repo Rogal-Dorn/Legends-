@@ -30,7 +30,7 @@ this.flagellant_background <- this.inherit("scripts/skills/backgrounds/character
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Untidy;
-		this.m.Body = "bust_naked_body_00";
+		this.m.Bodies = this.Const.Bodies.Skinny;
 		this.m.IsOffendedByViolence = true;
 		this.m.IsCrusaderRecruitBackground = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Good;
@@ -146,7 +146,7 @@ this.flagellant_background <- this.inherit("scripts/skills/backgrounds/character
 		this.m.HairColors = this.Const.HairColors.Old;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsFemaleBackground = true;
 
 	}
@@ -239,12 +239,10 @@ this.flagellant_background <- this.inherit("scripts/skills/backgrounds/character
 			items.equip(this.new("scripts/items/armor/monk_robe"));
 		}
 
-		r = this.Math.rand(0, 4);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/hood"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "hood"],
+			[4, ""]
+		]));
 	}
 
 	function onAddLegendEquipment()
@@ -343,13 +341,10 @@ this.flagellant_background <- this.inherit("scripts/skills/backgrounds/character
 				armor.setUpgrade(plate)
 			}
 		items.equip(armor)
-		local r;
-		r = this.Math.rand(0, 4);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/hood"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "hood"],
+			[4, ""]
+		]));
 	}
 });
 

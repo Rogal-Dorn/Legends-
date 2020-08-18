@@ -61,7 +61,7 @@ this.stone_watchtower_location <- this.inherit("scripts/entity/world/attached_lo
 		return r;
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 		if (!this.isActive())
 		{

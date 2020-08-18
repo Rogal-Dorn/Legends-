@@ -44,7 +44,7 @@ this.legend_crusader_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.Hairs = this.Const.Hair.TidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Tidy;
-		this.m.Body = "bust_naked_body_02";
+
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Good;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.Level = 1;
@@ -110,7 +110,7 @@ this.legend_crusader_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsFemaleBackground = true;
 	}
 
@@ -222,14 +222,6 @@ this.legend_crusader_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.Container.add(this.new("scripts/skills/traits/legend_undead_killer_trait"));
 		//this.m.Container.add(this.new("scripts/skills/perks/perk_rebound"));
 
-		if(this.m.IsFemaleBackground == true)
-		{
-			actor.setName(this.Const.Strings.LadyNames[this.Math.rand(0, this.Const.Strings.LadyNames.len() - 1)]);
-		}
-		else
-		{
-			actor.setName(this.Const.Strings.KnightNames[this.Math.rand(0, this.Const.Strings.KnightNames.len() - 1)]);
-		}
 	}
 
 function onAddEquipment()
@@ -297,34 +289,19 @@ function onAddEquipment()
 			items.equip(this.new("scripts/items/armor/worn_mail_shirt"));
 		}
 
-		local helm;
-		r = this.Math.rand(0, 4);
+		local item = this.Const.World.Common.pickHelmet([
+			[1, "nasal_helmet"],
+			[1, "nasal_helmet_with_mail"],
+			[1, "mail_coif"],
+			[1, "bascinet_with_mail"],
+			[1, "closed_flat_top_helmet"]
+		])
+		if (item != null)
+		{
+			item.onPaint(this.Const.Items.Paint.None);
+			items.equip(item);
+		}
 
-		if (r == 0)
-		{
-			helm = this.new("scripts/items/helmets/nasal_helmet");
-			helm.onPaint(this.Const.Items.Paint.None);
-		}
-		else if (r == 1)
-		{
-			helm = this.new("scripts/items/helmets/nasal_helmet_with_mail");
-			helm.onPaint(this.Const.Items.Paint.None);
-		}
-		else if (r == 2)
-		{
-			helm = this.new("scripts/items/helmets/mail_coif");
-		}
-		else if (r == 3)
-		{
-			helm = this.new("scripts/items/helmets/bascinet_with_mail");
-			helm.onPaint(this.Const.Items.Paint.None);
-		}
-		else if (r == 4)
-		{
-			helm = this.new("scripts/items/helmets/closed_flat_top_helmet");
-			helm.onPaint(this.Const.Items.Paint.None);
-		}
-		items.equip(helm);
 	}
 
 	function onAddLegendEquipment()
@@ -367,36 +344,19 @@ function onAddEquipment()
 		shield.onPaintSpecificColor(23);
 		items.equip(shield);
 
+		local item = this.Const.World.Common.pickHelmet([
+			[1, "nasal_helmet"],
+			[1, "nasal_helmet_with_mail"],
+			[1, "mail_coif"],
+			[1, "bascinet_with_mail"],
+			[1, "closed_flat_top_helmet"]
+		])
+		if (item != null)
+		{
+			item.onPaint(this.Const.Items.Paint.Black);
+			items.equip(item);
+		}
 
-
-		local helm;
-		r = this.Math.rand(0, 4);
-
-		if (r == 0)
-		{
-			helm = this.new("scripts/items/helmets/nasal_helmet");
-			helm.onPaint(this.Const.Items.Paint.Black);
-		}
-		else if (r == 1)
-		{
-			helm = this.new("scripts/items/helmets/nasal_helmet_with_mail");
-			helm.onPaint(this.Const.Items.Paint.Black);
-		}
-		else if (r == 2)
-		{
-			helm = this.new("scripts/items/helmets/mail_coif");
-		}
-		else if (r == 3)
-		{
-			helm = this.new("scripts/items/helmets/bascinet_with_mail");
-			helm.onPaint(this.Const.Items.Paint.Black);
-		}
-		else if (r == 4)
-		{
-			helm = this.new("scripts/items/helmets/closed_flat_top_helmet");
-			helm.onPaint(this.Const.Items.Paint.Black);
-		}
-		items.equip(helm);
 
 		local cloths = [
             [0, ""],
@@ -501,28 +461,19 @@ function onAddEquipment()
 			items.equip(armor);
 		}
 
-		r = this.Math.rand(0, 4);
+		local item = this.Const.World.Common.pickHelmet([
+			[1, "nasal_helmet"],
+			[1, "nasal_helmet_with_mail"],
+			[1, "mail_coif"],
+			[1, "bascinet_with_mail"],
+			[1, "closed_flat_top_helmet"]
+		])
+		if (item != null)
+		{
+			item.onPaint(this.Const.Items.Paint.Black);
+			items.equip(item);
+		}
 
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/nasal_helmet"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/nasal_helmet_with_mail"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/helmets/mail_coif"));
-		}
-		else if (r == 3)
-		{
-			items.equip(this.new("scripts/items/helmets/bascinet_with_mail"));
-		}
-		else if (r == 4)
-		{
-			items.equip(this.new("scripts/items/helmets/closed_flat_top_helmet"));
-		}
 	}
 
 });

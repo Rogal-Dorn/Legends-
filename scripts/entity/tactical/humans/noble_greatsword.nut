@@ -35,12 +35,15 @@ this.noble_greatsword <- this.inherit("scripts/entity/tactical/human", {
 		this.getSprite("socket").setBrush("bust_base_military");
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_brawny"));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_overwhelm"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_reach_advantage"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_lone_wolf"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_berserk"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_fast_adaption"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_steel_brow"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_relentless"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_anticipation"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_overwhelm"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_crippling_strikes"));
 		this.m.Skills.add(this.new("scripts/skills/actives/rotation"));
 		this.m.Skills.add(this.new("scripts/skills/actives/recover_skill"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_mastery_greatsword"));
@@ -405,11 +408,15 @@ this.noble_greatsword <- this.inherit("scripts/entity/tactical/human", {
 
 		if (r == 1)
 		{
-			this.m.Items.equip(this.new("scripts/items/helmets/greatsword_hat"));
+			this.m.Items.equip(this.Const.World.Common.pickHelmet([
+					[1, "greatsword_hat"]
+			]));
 		}
 		else if (r == 2)
 		{
-			local helm = this.new("scripts/items/helmets/greatsword_faction_helm");
+			local helm = this.Const.World.Common.pickHelmet([
+					[1, "greatsword_faction_helm"]
+			])
 			helm.setVariant(banner);
 			this.m.Items.equip(helm);
 		}

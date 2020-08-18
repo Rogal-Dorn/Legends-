@@ -78,9 +78,11 @@ this.move_undead_action <- this.inherit("scripts/factions/faction_action", {
 			local party = _faction.spawnEntity(this.m.Start.getTile(), "Undead", false, this.Const.World.Spawn.UndeadScourge, this.Math.rand(70, 130) * this.getReputationToDifficultyLightMult());
 			party.getSprite("banner").setBrush(this.m.Start.getBanner());
 			party.setDescription("A legion of walking dead, back to claim from the living what was once theirs.");
+			party.setFootprintType(this.Const.World.FootprintsType.Undead);
 			party.setSlowerAtNight(false);
 			party.setUsingGlobalVision(false);
 			party.setLooting(false);
+			party.getFlags().set("IsRandomlySpawned", true);
 			party.getLoot().ArmorParts = this.Math.rand(0, 15);
 			local r = this.Math.rand(1, 3);
 

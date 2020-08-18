@@ -99,11 +99,10 @@ this.destroy_order <- this.inherit("scripts/ai/world/world_behavior", {
 			{
 				if (e.isAlive() && e.getID() == this.m.TargetID)
 				{
-
 					if(this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
 					{
 						//Level
-						if (e.getSize() == 1)
+						if (e.getSize() == 1 && !e.isSouthern())
 						{
 							local news = this.World.Statistics.createNews();
 							news.set("City", e.getName());
@@ -129,7 +128,7 @@ this.destroy_order <- this.inherit("scripts/ai/world/world_behavior", {
 							}
 						}
 					}
-					else if (this.World.Assets.isPermanentDestruction())
+					else if (this.World.Assets.isPermanentDestruction() && !e.isSouthern())
 					{
 						local news = this.World.Statistics.createNews();
 						news.set("City", e.getName());

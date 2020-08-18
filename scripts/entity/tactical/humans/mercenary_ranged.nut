@@ -25,6 +25,7 @@ this.mercenary_ranged <- this.inherit("scripts/entity/tactical/human", {
 		local b = this.m.BaseProperties;
 		b.setValues(this.Const.Tactical.Actor.MercenaryRanged);
 		b.TargetAttractionMult = 1.1;
+		b.Vision = 8;
 		b.IsSpecializedInBows = true;
 		b.IsSpecializedInCrossbows = true;
 		b.IsSpecializedInDaggers = true;
@@ -224,36 +225,15 @@ this.mercenary_ranged <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.Math.rand(1, 100) <= 75)
 		{
-			local r = this.Math.rand(1, 7);
-
-			if (r == 1)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/hood"));
-			}
-			else if (r == 2)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/aketon_cap"));
-			}
-			else if (r == 3)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/full_leather_cap"));
-			}
-			else if (r == 4)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/headscarf"));
-			}
-			else if (r == 5)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/full_aketon_cap"));
-			}
-			else if (r == 6)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/kettle_hat"));
-			}
-			else if (r == 7)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/mail_coif"));
-			}
+			this.m.Items.equip(this.Const.World.Common.pickHelmet([
+				[1, "hood"],
+				[1, "aketon_cap"],
+				[1, "full_aketon_cap"],
+				[1, "full_leather_cap"],
+				[1, "headscarf"],
+				[1, "kettle_hat"],
+				[1, "mail_coif"]
+			]))
 		}
 	}
 

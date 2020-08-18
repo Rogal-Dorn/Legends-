@@ -16,6 +16,7 @@ gt.Const.World.Common.assignTroops = function( _party, _partyList, _resources, _
 	//Vanilla partlyList spawnlists
 	else
 	{
+
 		if (_partyList[_partyList.len() - 1].Cost < _resources * 0.7)
 		{
 			_resources = _partyList[_partyList.len() - 1].Cost;
@@ -25,6 +26,7 @@ gt.Const.World.Common.assignTroops = function( _party, _partyList, _resources, _
 		local best;
 		local bestCost = _weightMode == this.WeightMode.Strongest ? -9000.0 : 9000;
 		local potential = [];
+
 
 		foreach( party in _partyList )
 		{
@@ -64,16 +66,15 @@ gt.Const.World.Common.assignTroops = function( _party, _partyList, _resources, _
 		if (potential.len() == 0 && best == null)
 		{
 			bestCost = 9000;
-
 			foreach( party in _partyList )
 			{
-				if (this.Math.abs(_resources - party.Cost) <= bestCost)
+				best = party;
+				if (this.Math.abs(_resources - party.Cost) > bestCost)
 				{
-					best = party;
-					bestCost = this.Math.abs(_resources - party.Cost);
+					break;
 				}
+				bestCost = this.Math.abs(_resources - party.Cost);
 			}
-
 			p = best;
 		}
 		else if (_weightMode == this.WeightMode.Random)
@@ -86,13 +87,13 @@ gt.Const.World.Common.assignTroops = function( _party, _partyList, _resources, _
 		}
 		else if (_weightMode == this.WeightMode.Weighted)
 		{
+			p = best;
 			local pick = this.Math.rand(1, total_weight);
-
 			foreach( party in potential )
 			{
+				p = party;
 				if (pick <= party.Cost)
 				{
-					p = party;
 					break;
 				}
 
@@ -252,6 +253,7 @@ gt.Const.World.Common.dynamicSelectTroop <- function (_list, _resources, _scale,
 			dateToSkip = 30
 			break;
 	}
+	// dateToSkip = 90;
 
 	//Go through each Item in the spawn list (which are structures defining enemies)
 	foreach (t in _list)
@@ -600,11 +602,89 @@ gt.Const.World.Common.pickItem <- function (_list, _script = "")
 			return t[1];
 		}
 
+		if (t[1] == "")
+		{
+			return null
+		}
+
 		return this.new(_script + t[1]);
-
-
 	}
 	return null;
+}
+
+gt.Const.World.Common.pickHelmet <- function (_helms)
+{
+	local candidates = [];
+	local totalWeight = 0;
+	foreach (t in _helms)
+	{
+		if (t[0] == 0)
+		{
+			continue;
+		}
+		candidates.push(t);
+		totalWeight += t[0];
+	}
+
+	local r = this.Math.rand(0, totalWeight);
+	local helm = "";
+	foreach (t in candidates)
+	{
+		r = r - t[0];
+		if (r > 0)
+		{
+			continue;
+		}
+		helm = t[1];
+		break;
+	}
+
+	//Disabling helmet layers temporariliy
+	if (helm == "")
+	{
+		return null;
+	}
+	return this.new("scripts/items/helmets/" + helm);
+
+	if (!this.World.LegendsMod.Configs().LegendArmorsEnabled())
+	{
+		if (helm == "")
+		{
+			return null;
+		}
+		return this.new("scripts/items/helmets/" + helm);
+	}
+
+	local layersObj = this.Const.LegendMod.Helmets[helm];
+	if (layersObj.Script != "")
+	{
+		return this.new(layersObjs.Script);
+	}
+
+	local set = layersObj.Sets[this.Math.rand(0, layersObj.Sets.len() -1)]
+	local helmet = this.Const.World.Common.pickLegendHelmet(set.Hoods);
+	if (helmet != null)
+	{
+         local helm = this.Const.World.Common.pickLegendHelmet(set.Helms);
+         if (helm != null)
+         {
+             helmet.setUpgrade(helm)
+         }
+
+         local top = this.Const.World.Common.pickLegendHelmet(set.Tops);
+         if (top != null)
+         {
+             helmet.setUpgrade(top)
+         }
+
+		local van = this.Const.World.Common.pickLegendHelmet(set.Vanity);
+         if (van != null)
+         {
+             helmet.setUpgrade(van)
+         }
+	}
+
+	return helmet;
 }
 
 if (!("LegendMod" in gt.Const))
@@ -721,7 +801,7 @@ foreach(k,v in this.Const.World.Spawn)
 	}
 
 }
-//TESTING
+// TESTING
 // foreach(k,v in this.Const.World.Spawn)
 // {
 // 	if (k == "Troops" || k == "Unit" || k == "TroopsMap")
@@ -758,8 +838,26 @@ foreach(k,v in this.Const.World.Spawn)
 // 	}
 // }
 
-// for (local i = 0; i < 25; i = ++i)
+// local weight = [100, 300, 600];
+// local pList = [
+	
+// 	this.Const.World.Spawn.Southern
+	
+// ];
+// foreach ( p in pList )
 // {
-// 	this.logInfo(" RUN  " + i)
-// 	local res = gt.Const.World.Common.buildDynamicTroopList(this.Const.World.Spawn.BanditRaiders, 51.06)
-// }
+// 	foreach ( w in weight )
+// 	{
+// 		for (local i = 0; i < 25; i = ++i)
+// 		{
+			
+// 			this.logWarning(" RUNNING ON TROOP: " + p);
+// 			this.logInfo(" RUN: " + i + ", OF WEIGHT: " + w);
+
+// 			local res = gt.Const.World.Common.buildDynamicTroopList(p, w);
+// 			foreach (t in res.Troops)
+// 				this.logInfo(t.Type.Script + " : " + t.Num);
+
+// 		}
+// 	}
+// } 

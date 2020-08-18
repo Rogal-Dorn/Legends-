@@ -42,6 +42,7 @@ this.charmed_player_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_lash"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_bow"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_reload"));
+		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_throw_bomb"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_defend_spearwall"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_defend_knock_back"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_protect"));

@@ -17,7 +17,7 @@ this.legend_camp_unlock_fletching <- this.inherit("scripts/events/event", {
 					Text = "Fletching unlocked in camp",
 					function getResult( _event )
 					{
-						this.World.Tags.set("HasLegendCampFletching", true);
+						this.World.Flags.set("HasLegendCampFletching", true);
 					}
 
 				}

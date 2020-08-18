@@ -10,7 +10,7 @@ this.leather_tanner_location <- this.inherit("scripts/entity/world/attached_loca
 		this.m.SpriteDestroyed = "world_leather_tanner_01_ruins";
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 		if (!this.isActive())
 		{
@@ -133,11 +133,6 @@ this.leather_tanner_location <- this.inherit("scripts/entity/world/attached_loca
 				R = 50,
 				P = 1.0,
 				S = "armor/reinforced_mail_hauberk"
-			});
-			_list.push({
-				R = 55,
-				P = 1.0,
-				S = "armor/lamellar_harness"
 			});
 			_list.push({
 				R = 30,

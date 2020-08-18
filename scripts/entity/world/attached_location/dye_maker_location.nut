@@ -15,7 +15,7 @@ this.dye_maker_location <- this.inherit("scripts/entity/world/attached_location"
 		_list.push("trade/dies_item");
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 		if (!this.isActive())
 		{
@@ -25,7 +25,11 @@ this.dye_maker_location <- this.inherit("scripts/entity/world/attached_location"
 		_list.push("apprentice_background");
 		_list.push("caravan_hand_background");
 		_list.push("tailor_background");
-		_list.push("female_tailor_background");
+		if (_gender)
+		{
+			_list.push("female_tailor_background");
+		}
+
 	}
 
 	function onUpdateShopList( _id, _list )
@@ -51,7 +55,7 @@ this.dye_maker_location <- this.inherit("scripts/entity/world/attached_location"
 				R = 30,
 				P = 1.0,
 				S = "helmets/jesters_hat"
-			});	
+			});
 
 			if (this.Const.DLC.Unhold)
 			{

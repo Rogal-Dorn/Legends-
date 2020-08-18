@@ -70,6 +70,7 @@ this.barbarian_chosen <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_hold_out"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_recover"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_brawny"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_pathfinder"));
 
 		if ("LegendsMod" in this.World && this.World.LegendsMod != null && this.World.LegendsMod.Configs().LegendTherianthropyEnabled())
 		{
@@ -91,6 +92,7 @@ this.barbarian_chosen <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_mastery_fist"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
 		}
+
 	}
 
 	function onDeath( _killer, _skill, _tile, _fatalityType )
@@ -177,10 +179,9 @@ this.barbarian_chosen <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Head))
 		{
-			local helmet = [
-				"helmets/barbarians/heavy_horned_plate_helmet"
-			];
-			this.m.Items.equip(this.new("scripts/items/" + helmet[this.Math.rand(0, helmet.len() - 1)]));
+			this.m.Items.equip(this.Const.World.Common.pickHelmet([
+				[1, "barbarians/heavy_horned_plate_helmet"]
+			]));
 		}
 	}
 
@@ -194,7 +195,7 @@ this.barbarian_chosen <- this.inherit("scripts/entity/tactical/human", {
 		this.getSprite("miniboss").setBrush("bust_miniboss");
 		local weapons = this.Const.Items.NamedBarbarianWeapons;
 		this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
-		this.m.Skills.add(this.new("scripts/skills/actives/indomitable"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_fearsome"));
 		return true;
 	}
 

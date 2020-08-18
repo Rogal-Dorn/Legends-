@@ -6,6 +6,11 @@ this.ai_protect <- this.inherit("scripts/ai/tactical/behavior", {
 		IsHoldingPosition = true,
 		IsDoneThisTurn = false
 	},
+	function isDoneThisTurn()
+	{
+		return this.m.IsDoneThisTurn;
+	}
+
 	function create()
 	{
 		this.m.ID = this.Const.AI.Behavior.ID.Protect;
@@ -39,6 +44,11 @@ this.ai_protect <- this.inherit("scripts/ai/tactical/behavior", {
 		}
 
 		if (_entity.getMoraleState() == this.Const.MoraleState.Fleeing)
+		{
+			return this.Const.AI.Behavior.Score.Zero;
+		}
+
+		if (this.getStrategy().isDefending() && this.getStrategy().isDefendingCamp())
 		{
 			return this.Const.AI.Behavior.Score.Zero;
 		}
@@ -336,6 +346,11 @@ this.ai_protect <- this.inherit("scripts/ai/tactical/behavior", {
 									}
 								}
 							}
+						}
+
+						if (tile.Properties.Effect != null && !tile.Properties.Effect.IsPositive && tile.Properties.Effect.Applicable(_entity))
+						{
+							immediateBonus = immediateBonus - this.Const.AI.Behavior.ProtectAllyTileEffectPenalty;
 						}
 
 						score = score + immediateBonus;

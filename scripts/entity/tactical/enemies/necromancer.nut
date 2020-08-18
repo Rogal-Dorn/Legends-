@@ -178,22 +178,45 @@ this.necromancer <- this.inherit("scripts/entity/tactical/human", {
 				this.m.Items.equip(this.new("scripts/items/armor/thick_dark_tunic"));
 			}
 		}
-		local r = this.Math.rand(1, 3);
 
-		if (r == 1)
+		local item = this.Const.World.Common.pickHelmet([
+			[1, "witchhunter_hat"],
+			[1, "dark_cowl"],
+			[1, "hood"]
+		])
+		if (item != null)
 		{
-			this.m.Items.equip(this.new("scripts/items/helmets/witchhunter_hat"));
+			if (item.getID() == "armor.head.hood" || item.getID() == "armor.head.legend_helmet_hood")
+				item.setVariant(63);
+			this.m.Items.equip(item);
 		}
-		else if (r == 2)
+	}
+
+	function makeMiniboss()
+	{
+		if (!this.actor.makeMiniboss())
 		{
-			this.m.Items.equip(this.new("scripts/items/helmets/dark_cowl"));
+			return false;
 		}
-		else if (r == 3)
+
+		this.getSprite("miniboss").setBrush("bust_miniboss");
+		local weapons = [
+			"weapons/named/named_dagger"
+		];
+
+		if (this.Const.DLC.Desert)
 		{
-			local hood = this.new("scripts/items/helmets/hood");
-			hood.setVariant(63);
-			this.m.Items.equip(hood);
+			weapons.extend([
+				"weapons/named/named_dagger",
+				"weapons/named/named_qatal_dagger"
+			]);
 		}
+
+		this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
+		this.m.ActionPoints = 9;
+		this.m.BaseProperties.ActionPoints = 9;
+		this.m.Skills.update();
+		return true;
 	}
 
 });

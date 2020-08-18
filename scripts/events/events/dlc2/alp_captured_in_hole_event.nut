@@ -120,7 +120,7 @@ this.alp_captured_in_hole_event <- this.inherit("scripts/events/event", {
 			Characters = [],
 			Options = [
 				{
-					Text = "Let\'s get back on the road",
+					Text = "Let\'s get back on the road.",
 					function getResult( _event )
 					{
 						return 0;
@@ -162,7 +162,7 @@ this.alp_captured_in_hole_event <- this.inherit("scripts/events/event", {
 			Characters = [],
 			Options = [
 				{
-					Text = "Let\'s get back on the road",
+					Text = "Let\'s get back on the road.",
 					function getResult( _event )
 					{
 						return 0;

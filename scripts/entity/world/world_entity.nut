@@ -9,7 +9,7 @@ this.world_entity <- {
 		OnCombatWithPlayerCallback = null,
 		Troops = [],
 		Strength = 0.0,
-		Tags = null,
+		Flags = null,
 		Inventory = [],
 		LootScale = 1.0,
 		IsAlive = true,
@@ -39,9 +39,9 @@ this.world_entity <- {
 		return this.m.Description;
 	}
 
-	function getTags()
+	function getFlags()
 	{
-		return this.m.Tags;
+		return this.m.Flags;
 	}
 
 	function getVisibilityMult()
@@ -598,7 +598,7 @@ this.world_entity <- {
 
 	function create()
 	{
-		this.m.Tags = this.new("scripts/tools/tag_collection");
+		this.m.Flags = this.new("scripts/tools/tag_collection");
 	}
 
 	function onUpdate()
@@ -758,7 +758,7 @@ this.world_entity <- {
 		_out.writeBool(this.m.IsLooting);
 		_out.writeBool(this.m.IsDroppingLoot);
 		_out.writeU16(this.m.Resources);
-		this.m.Tags.onSerialize(_out);
+		this.m.Flags.onSerialize(_out);
 		_out.writeBool(false);
 	}
 
@@ -838,18 +838,14 @@ this.world_entity <- {
 		this.m.IsShowingName = _in.readBool();
 		this.m.IsLooting = _in.readBool();
 		this.m.IsDroppingLoot = _in.readBool();
-
-		if (_in.getMetaData().getVersion() >= 67)
-		{
-			this.m.Resources = _in.readU16();
-		}
+		this.m.Resources = _in.readU16();
 
 		if (this.hasLabel("name"))
 		{
-			this.getLabel("name").Visible = this.m.IsShowingName;
+			this.getLabel("name").Visible = true;
 		}
 
-		this.m.Tags.onDeserialize(_in);
+		this.m.Flags.onDeserialize(_in);
 		_in.readBool();
 	}
 

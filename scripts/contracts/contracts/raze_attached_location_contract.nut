@@ -87,7 +87,7 @@ this.raze_attached_location_contract <- this.inherit("scripts/contracts/contract
 					if (this.Math.rand(1, 100) <= 25)
 					{
 						this.Flags.set("IsMilitiaPresent", true);
-						this.Contract.addUnitsToEntity(this.Contract.m.Destination, this.Const.World.Spawn.Militia, this.Math.min(300, 80 * this.Contract.getReputationToDifficultyMult()));
+						this.Contract.addUnitsToEntity(this.Contract.m.Destination, this.Const.World.Spawn.Militia, this.Math.min(300, 80 * this.Contract.getScaledDifficultyMult()));
 					}
 				}
 
@@ -128,7 +128,7 @@ this.raze_attached_location_contract <- this.inherit("scripts/contracts/contract
 
 			function onEntityPlaced( _entity, _tag )
 			{
-				if (_entity.getTags().has("peasant") && this.Math.rand(1, 100) <= 75)
+				if (_entity.getFlags().has("peasant") && this.Math.rand(1, 100) <= 75)
 				{
 					_entity.setMoraleState(this.Const.MoraleState.Fleeing);
 					_entity.getBaseProperties().Bravery = 0;
@@ -136,7 +136,7 @@ this.raze_attached_location_contract <- this.inherit("scripts/contracts/contract
 					_entity.getAIAgent().addBehavior(this.new("scripts/ai/tactical/behaviors/ai_retreat_always"));
 				}
 
-				if (_entity.getTags().has("peasant") || _entity.getTags().has("militia"))
+				if (_entity.getFlags().has("peasant") || _entity.getFlags().has("militia"))
 				{
 					_entity.setFaction(this.Const.Faction.Enemy);
 					_entity.getSprite("socket").setBrush("bust_base_militia");
@@ -175,6 +175,11 @@ this.raze_attached_location_contract <- this.inherit("scripts/contracts/contract
 					p.CombatID = "RazeLocation";
 					p.TerrainTemplate = this.Const.World.TerrainTacticalTemplate[this.Contract.m.Destination.getTile().Type];
 					p.Tile = this.World.getTile(this.World.worldToTile(this.World.State.getPlayer().getPos()));
+					p.LocationTemplate = clone this.Const.Tactical.LocationTemplate;
+					p.LocationTemplate.Template[0] = "tactical.human_camp";
+					p.LocationTemplate.Fortification = this.Const.Tactical.FortificationType.None;
+					p.LocationTemplate.CutDownTrees = true;
+					p.LocationTemplate.AdditionalRadius = 5;
 					p.PlayerDeploymentType = this.Flags.get("IsEncircled") ? this.Const.Tactical.DeploymentType.Circle : this.Const.Tactical.DeploymentType.Edge;
 					p.EnemyDeploymentType = this.Const.Tactical.DeploymentType.Center;
 					p.Music = this.Const.Music.CivilianTracks;
@@ -194,7 +199,7 @@ this.raze_attached_location_contract <- this.inherit("scripts/contracts/contract
 
 			function onActorRetreated( _actor, _combatID )
 			{
-				if (_actor.getTags().has("peasant"))
+				if (_actor.getFlags().has("peasant"))
 				{
 					this.Flags.set("PeasantsEscaped", this.Flags.get("PeasantsEscaped") + 1);
 				}
@@ -403,7 +408,7 @@ this.raze_attached_location_contract <- this.inherit("scripts/contracts/contract
 						p.PlayerDeploymentType = this.Const.Tactical.DeploymentType.Line;
 						p.EnemyDeploymentType = this.Const.Tactical.DeploymentType.Line;
 						p.Music = this.Const.Music.NobleTracks;
-						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Noble, 150 * this.Contract.getReputationToDifficultyMult(), this.Contract.getFaction());
+						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Noble, 150 * this.Contract.getScaledDifficultyMult(), this.Contract.getFaction());
 						this.World.Contracts.startScriptedCombat(p, false, true, true);
 						return 0;
 					}

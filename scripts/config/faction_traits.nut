@@ -18,6 +18,8 @@ gt.Const.FactionTrait <- {
 	Zombies = 15,
 	Beasts = 16,
 	Barbarians = 17,
+	OrientalCityState = 18,
+	OrientalBandits = 19,
 	Actions = [
 		[],
 		[],
@@ -46,6 +48,9 @@ gt.Const.FactionTrait <- {
 			"scripts/factions/contracts/decisive_battle_action",
 			"scripts/factions/contracts/privateering_action",
 			"scripts/factions/contracts/siege_fortification_action",
+			"scripts/factions/contracts/conquer_holy_site_action",
+			"scripts/factions/contracts/defend_holy_site_action",
+			"scripts/factions/contracts/intercept_raiding_parties_action",
 			"scripts/factions/actions/defend_military_action",
 			"scripts/factions/actions/move_troops_action",
 			"scripts/factions/actions/patrol_roads_action",
@@ -68,6 +73,7 @@ gt.Const.FactionTrait <- {
 			"scripts/factions/contracts/legend_hunting_skin_ghouls_action",
 			"scripts/factions/contracts/legend_bandit_army_action",
 			"scripts/factions/contracts/legend_barbarian_prisoner_action"
+			"scripts/factions/actions/send_military_holysite_action"
 		],
 		[],
 		[
@@ -161,6 +167,37 @@ gt.Const.FactionTrait <- {
 			"scripts/factions/actions/send_barbarian_ambushers_action",
 			"scripts/factions/actions/send_barbarian_roamers_action",
 			"scripts/factions/actions/defend_barbarians_action"
+		],
+		[
+			"scripts/factions/contracts/drive_away_nomads_action",
+			"scripts/factions/contracts/roaming_beasts_desert_action",
+			"scripts/factions/contracts/slave_uprising_action",
+			"scripts/factions/contracts/item_delivery_action",
+			"scripts/factions/contracts/escort_caravan_action",
+			"scripts/factions/contracts/hunting_serpents_action",
+			"scripts/factions/contracts/hunting_sand_golems_action",
+			"scripts/factions/contracts/conquer_holy_site_action",
+			"scripts/factions/contracts/defend_holy_site_action",
+			"scripts/factions/contracts/hold_chokepoint_action",
+			"scripts/factions/actions/defend_citystate_action",
+			"scripts/factions/actions/send_ship_action",
+			"scripts/factions/actions/receive_ship_action",
+			"scripts/factions/actions/add_random_situation_action",
+			"scripts/factions/actions/burn_location_action",
+			"scripts/factions/actions/rebuild_location_action",
+			"scripts/factions/actions/legend_build_location_action",
+			"scripts/factions/actions/legend_upgrade_locations_action",
+			"scripts/factions/actions/patrol_area_action",
+			"scripts/factions/actions/send_peasants_action",
+			"scripts/factions/actions/send_caravan_action",
+			"scripts/factions/actions/send_citystate_army_action",
+			"scripts/factions/actions/send_citystate_holysite_action"
+		],
+		[
+			"scripts/factions/actions/build_nomad_camp_action",
+			"scripts/factions/actions/send_nomad_ambushers_action",
+			"scripts/factions/actions/send_nomad_roamers_action",
+			"scripts/factions/actions/defend_nomad_action"
 		]
 	]
 };

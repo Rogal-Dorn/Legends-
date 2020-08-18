@@ -161,7 +161,7 @@ this.ai_switchto_ranged <- this.inherit("scripts/ai/tactical/behavior", {
 					if (!tile.IsOccupiedByActor || this.Math.abs(tile.Level - declaredTargetTile.Level) > 1)
 					{
 					}
-					else if (!tile.getEntity().isAlliedWith(_entity) && !tile.hasZoneOfControlOtherThan(tile.getEntity().getAlliedFactions()) && tile.getEntity().getSkills().hasSkill("effects.spearwall"))
+					else if (!tile.getEntity().isAlliedWith(_entity) && (tile.getEntity().getCurrentProperties().IsAttackingOnZoneOfControlAlways || !tile.hasZoneOfControlOtherThan(tile.getEntity().getAlliedFactions())) && tile.getEntity().getSkills().hasSkill("effects.spearwall"))
 					{
 						willRunIntoSpearwalls = ++willRunIntoSpearwalls;
 					}

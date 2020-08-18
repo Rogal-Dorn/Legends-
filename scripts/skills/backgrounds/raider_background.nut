@@ -45,7 +45,7 @@ this.raider_background <- this.inherit("scripts/skills/backgrounds/character_bac
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Raider;
-		this.m.Body = "bust_naked_body_01";
+		this.m.Bodies = this.Const.Bodies.Muscular;
 		this.m.Level = this.Math.rand(2, 4);
 		this.m.IsCombatBackground = true;
 		this.m.IsOutlawBackground = true;
@@ -228,16 +228,12 @@ this.raider_background <- this.inherit("scripts/skills/backgrounds/character_bac
 			items.equip(this.new("scripts/items/armor/leather_lamellar"));
 		}
 
-		r = this.Math.rand(0, 2);
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, ""],
+			[1, "dented_nasal_helmet"],
+			[1, "nasal_helmet_with_rusty_mail"]
+		]));
 
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/dented_nasal_helmet"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/nasal_helmet_with_rusty_mail"));
-		}
 	}
 
 	function onAddLegendEquipment()
@@ -366,16 +362,11 @@ this.raider_background <- this.inherit("scripts/skills/backgrounds/character_bac
 			items.equip(armor);
 		}
 
-		r = this.Math.rand(0, 2);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/dented_nasal_helmet"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/nasal_helmet_with_rusty_mail"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, ""],
+			[1, "dented_nasal_helmet"],
+			[1, "nasal_helmet_with_rusty_mail"]
+		]));
 	}
 });
 

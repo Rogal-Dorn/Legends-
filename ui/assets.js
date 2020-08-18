@@ -2,7 +2,7 @@
  *  @Project:		Battle Brothers
  *	@Company:		Overhype Studios
  *
- *	@Copyright:		(c) Overhype Studios | 2013 - 2017
+ *	@Copyright:		(c) Overhype Studios | 2013 - 2020
  * 
  *  @Author:		Overhype Studios
  *  @Date:			03.03.2017
@@ -34,14 +34,15 @@ var Asset =
     BUTTON_END_ALL_TURNS:                   'ui/skin/icon_end_all_turns.png',
     BUTTON_OPEN_EVENTLOG:                   'ui/skin/icon_expand.png',
     BUTTON_CLOSE_EVENTLOG:                  'ui/skin/icon_retract.png',
-	BUTTON_SWITCH_MAP_ORIENTATION_TO_NORTH:	'ui/buttons/switch-map-orientation-to-north-button.png',
-	BUTTON_SWITCH_MAP_ORIENTATION_TO_SOUTH:	'ui/buttons/switch-map-orientation-to-south-button.png',
 	BUTTON_SWITCH_MAP_LEVEL_UP:             'ui/skin/icon_height_up.png',
 	BUTTON_SWITCH_MAP_LEVEL_DOWN:           'ui/skin/icon_height_down.png',
 	BUTTON_TOGGLE_STATS_OVERLAYS_ENABLED:   'ui/skin/icon_tabs.png',
 	BUTTON_TOGGLE_STATS_OVERLAYS_DISABLED:	'ui/skin/icon_tabs_deactivated.png',
 	BUTTON_TOGGLE_TREES_ENABLED:			'ui/skin/icon_trees.png',
 	BUTTON_TOGGLE_TREES_DISABLED:			'ui/skin/icon_trees_sw.png',
+
+    BUTTON_TOGGLE_HIGHLIGHT_BLOCKED_TILES_ENABLED:   'ui/skin/icon_highlight.png',
+    BUTTON_TOGGLE_HIGHLIGHT_BLOCKED_TILES_DISABLED:  'ui/skin/icon_highlight_sw.png',
 
 	BUTTON_OPEN_INVENTORY:					'ui/buttons/open-inventory-button.png',
 	BUTTON_QUIT:                            'ui/skin/icon_cross.png',
@@ -137,6 +138,7 @@ var Asset =
 	ICON_CAMP:								'ui/icons/camp.png',
 	ICON_CAMP_DISABLED:						'ui/icons/camp_sw.png',
 	ICON_OBITUARY:							'ui/icons/obituary.png',
+    ICON_PERKS:							    'ui/icons/campfire.png',
 
 	ICON_REPAIR_ITEM:                       'ui/icons/repair_item.png',
 

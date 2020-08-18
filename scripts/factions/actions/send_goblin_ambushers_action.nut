@@ -84,9 +84,11 @@ this.send_goblin_ambushers_action <- this.inherit("scripts/factions/faction_acti
 			{
 			 mult *= distanceToNextSettlement / 14;
 			}
-		local party = this.getFaction().spawnEntity(settlement.getTile(), "Goblin Raiders", false, this.Const.World.Spawn.GoblinRaiders, this.Math.rand(75, 120) * this.getReputationToDifficultyMult() * mult);
+		local party = this.getFaction().spawnEntity(settlement.getTile(), "Goblin Raiders", false, this.Const.World.Spawn.GoblinRaiders, this.Math.rand(75, 120) * this.getScaledDifficultyMult() * mult);
 		party.getSprite("banner").setBrush(settlement.getBanner());
 		party.setDescription("A band of mischievous goblins, small but cunning and not to be underestimated.");
+		party.setFootprintType(this.Const.World.FootprintsType.Goblins);
+		party.getFlags().set("IsRandomlySpawned", true);
 		party.getLoot().ArmorParts = this.Math.rand(0, 10);
 		party.getLoot().Medicine = this.Math.rand(0, 3);
 		party.getLoot().Ammo = this.Math.rand(10, 30);

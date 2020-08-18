@@ -54,7 +54,7 @@ this.player_is_rich_event <- this.inherit("scripts/events/event", {
 
 				foreach( bro in brothers )
 				{
-					if (bro.getSkills().hasSkill("trait.player"))
+					if (bro.getSkills().hasSkill("trait.player") || bro.getSkills().hasSkill("trait.fabulous") || bro.getBackground().getID() == "background.slave")
 					{
 						continue;
 					}
@@ -96,7 +96,7 @@ this.player_is_rich_event <- this.inherit("scripts/events/event", {
 
 				foreach( bro in brothers )
 				{
-					if (bro.getSkills().hasSkill("trait.player"))
+					if (bro.getSkills().hasSkill("trait.player") || bro.getSkills().hasSkill("trait.fabulous") || bro.getBackground().getID() == "background.slave")
 					{
 						continue;
 					}
@@ -153,7 +153,28 @@ this.player_is_rich_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
-		if (this.World.getPlayerRoster().getSize() < 3)
+		if (this.World.getPlayerRoster().getSize() < 5)
+		{
+			return;
+		}
+
+		if (this.World.Retinue.hasFollower("follower.paymaster"))
+		{
+			return;
+		}
+
+		local brothers = this.World.getPlayerRoster().getAll();
+		local numBros = 0;
+
+		foreach( bro in brothers )
+		{
+			if (bro.getBackground().getID() != "background.slave")
+			{
+				numBros = ++numBros;
+			}
+		}
+
+		if (numBros < 2)
 		{
 			return;
 		}

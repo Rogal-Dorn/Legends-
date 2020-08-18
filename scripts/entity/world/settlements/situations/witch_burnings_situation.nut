@@ -7,6 +7,10 @@ this.witch_burnings_situation <- this.inherit("scripts/entity/world/settlements/
 		this.m.Name = "Witch Burnings";
 		this.m.Description = "A fiery spectacle, witch burnings attract spectators, and spectators attract food stands. And then, there\'s bound to be a number of witchhunters in town...";
 		this.m.Icon = "ui/settlement_status/settlement_effect_32.png";
+		this.m.Rumors = [
+			"Some witch hunters came by yesterday. They didn\'t find what they were looking for and headed on to %settlement%.",
+			"From what I hear they found a witch in %settlement% and will put her to the pyre. Come to think of it, maybe I should report that old shrew that bested me on the market the other day, she\'s a witch for sure!"
+		];
 		this.m.IsStacking = false;
 		this.m.ValidDays = 3;
 	}
@@ -43,7 +47,7 @@ this.witch_burnings_situation <- this.inherit("scripts/entity/world/settlements/
 		_modifiers.FoodPriceMult *= 1.15;
 	}
 
-	function onUpdateDraftList( _draftList )
+	function onUpdateDraftList( _draftList, _gender )
 	{
 		_draftList.push("witchhunter_background");
 		_draftList.push("witchhunter_background");
@@ -68,16 +72,21 @@ this.witch_burnings_situation <- this.inherit("scripts/entity/world/settlements/
 		_draftList.push("witchhunter_background");
 		_draftList.push("witchhunter_background");
 		_draftList.push("witchhunter_background");
-		_draftList.push("female_beggar_background");
-		_draftList.push("female_beggar_background");
-		_draftList.push("female_beggar_background");
+
+		if (_gender)
+		{
+			_draftList.push("female_beggar_background");
+			_draftList.push("female_beggar_background");
+			_draftList.push("female_beggar_background");
+			_draftList.push("legend_nun_background");
+
+		}
 
 		if(this.World.LegendsMod.Configs().LegendMagicEnabled())
 		{
 			_draftList.push("legend_witch_background");
 			_draftList.push("legend_spiritualist_background");
 			_draftList.push("legend_diviner_background");
-			_draftList.push("legend_nun_background");
 			_draftList.push("legend_entrancer_background");
 		}
 

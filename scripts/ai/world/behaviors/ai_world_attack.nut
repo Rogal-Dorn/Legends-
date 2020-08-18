@@ -77,7 +77,7 @@ this.ai_world_attack <- this.inherit("scripts/ai/world/world_behavior", {
 		{
 			local mult = 1.0;
 
-			if (_entity.getTags().get("IsUnholds") || _entity.getTags().get("IsWebknechts"))
+			if (_entity.getFlags().get("IsUnholds") || _entity.getFlags().get("IsWebknechts"))
 			{
 				mult = mult * 0.5;
 			}
@@ -91,6 +91,7 @@ this.ai_world_attack <- this.inherit("scripts/ai/world/world_behavior", {
 		local myPos = _entity.getPos();
 		local totalEnemyStrength = 0;
 		local totalAlliedStrength = _entity.getStrength();
+		local isPlayerInvolved = false;
 
 		foreach( o in this.getController().getKnownAllies() )
 		{
@@ -127,9 +128,14 @@ this.ai_world_attack <- this.inherit("scripts/ai/world/world_behavior", {
 				continue;
 			}
 
+			if (o.Entity.isPlayerControlled())
+			{
+				isPlayerInvolved = true;
+			}
+
 			totalEnemyStrength = totalEnemyStrength + o.Entity.getStrength();
 
-			if (_entity.getStrength() / o.Entity.getStrength() <= 0.6)
+			if ((!_entity.isAlwaysAttackingPlayer() || !isPlayerInvolved) && _entity.getStrength() / o.Entity.getStrength() <= 0.6)
 			{
 				continue;
 			}
@@ -162,7 +168,7 @@ this.ai_world_attack <- this.inherit("scripts/ai/world/world_behavior", {
 			threshold = 0.65;
 		}
 
-		if (totalAlliedStrength / totalEnemyStrength <= threshold)
+		if ((!_entity.isAlwaysAttackingPlayer() || !isPlayerInvolved) && totalAlliedStrength / totalEnemyStrength <= threshold)
 		{
 			return this.Const.World.AI.Behavior.Score.Zero;
 		}

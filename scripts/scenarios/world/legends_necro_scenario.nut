@@ -45,49 +45,27 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_brink_of_death"));
 			bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_siphon"));
 		}
-		bros[0].getTags().set("IsPlayerCharacter", true);
+		bros[0].getFlags().set("IsPlayerCharacter", true);
 		bros[0].setPlaceInFormation(2);
 		bros[0].setVeteranPerks(2);
 		bros[1].setPlaceInFormation(3);
-        bros[1].getTags().add("PlayerSkeleton");
-        bros[1].getTags().add("undead");
-        bros[1].getTags().add("skeleton");
+        bros[1].getFlags().add("PlayerSkeleton");
+        bros[1].getFlags().add("undead");
+        bros[1].getFlags().add("skeleton");
         bros[1].setStartValuesEx(this.Const.CharacterBackgroundsAnimated);
 		bros[1].getBackground().m.RawDescription = "You found %name% starved to death on the road, you tease him endlessly about being skin and bones. You enjoy the ribbing, but he does not find it humerous.";
         bros[1].getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));
 		bros[1].getSkills().add(this.new("scripts/skills/racial/skeleton_racial"));
 		bros[1].setVeteranPerks(3);
 		bros[2].setPlaceInFormation(4);
-        bros[2].getTags().add("PlayerZombie");
-        bros[2].getTags().add("undead");
-        bros[2].getTags().add("zombie_minion");
+        bros[2].getFlags().add("PlayerZombie");
+        bros[2].getFlags().add("undead");
+        bros[2].getFlags().add("zombie_minion");
         bros[2].setStartValuesEx(this.Const.CharacterBackgroundsAnimated);
 		bros[2].getBackground().m.RawDescription = "You can not remember much about who %name% was in life, it is probably for the best that he can\'t either. All that matters is he is yours now.";
         bros[2].getSkills().add(this.new("scripts/skills/injury_permanent/legend_rotten_flesh"));
 		bros[2].getSkills().add(this.new("scripts/skills/perks/perk_legend_zombie_bite"));
 		bros[2].setVeteranPerks(3);
-		foreach( bro in bros )
-		{
-			local val = this.World.State.addNewID(bro);
-			bro.m.CompanyID = val;
-		}
-		if (this.World.LegendsMod.Configs().RelationshipsEnabled())
-{
-    local avgAlignment = 0;
-    foreach (bro in this.World.getPlayerRoster().getAll())
-    {
-        if (bro.getAlignment() <= this.Const.LegendMod.Alignment.NeutralMin)
-        {
-            avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMin);
-        }
-        else if (bro.getAlignment() >= this.Const.LegendMod.Alignment.NeutralMax)
-        {
-            avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMax);
-        }
-    }
-    avgAlignment *= (10 / this.World.getPlayerRoster().getSize());
-    this.World.Assets.addMoralReputation(avgAlignment);
-}
 
 		this.World.Assets.m.Money = this.World.Assets.m.Money / 2;
 	}
@@ -154,21 +132,13 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			this.Music.setTrackList(this.Const.Music.CivilianTracks, this.Const.Music.CrossFadeTime);
 			this.World.Events.fire("event.legend_necro_scenario_intro");
 		}, null);
-foreach (b in this.World.getPlayerRoster().getAll())
-		{
-			foreach (add in this.World.getPlayerRoster().getAll())
-			{
-				b.changeActiveRelationship(add, this.Math.rand(0, 10));
-			}
-		}
-
 	}
 
 	function onInit()
 	{
 		this.starting_scenario.onInit();
 		this.World.Assets.m.BrothersMax = 3;
-		this.World.Tags.set("IsLegendsNecro", true);
+		this.World.Flags.set("IsLegendsNecro", true);
 	}
 
 	function onCombatFinished()
@@ -177,7 +147,7 @@ foreach (b in this.World.getPlayerRoster().getAll())
 
 		foreach( bro in roster )
 		{
-			if (bro.getTags().get("IsPlayerCharacter"))
+			if (bro.getFlags().get("IsPlayerCharacter"))
 			{
 				return true;
 			}
@@ -186,7 +156,7 @@ foreach (b in this.World.getPlayerRoster().getAll())
 		return false;
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 
 		local r = this.Math.rand(0, 2);

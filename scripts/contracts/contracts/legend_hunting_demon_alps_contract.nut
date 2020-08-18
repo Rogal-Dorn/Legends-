@@ -234,7 +234,7 @@ this.legend_hunting_demon_alps_contract <- this.inherit("scripts/contracts/contr
 						p.Entities = [];
 						p.Music = this.Const.Music.BeastsTracks;
 						p.PlayerDeploymentType = this.Const.Tactical.DeploymentType.Line;
-						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.LegendDemonAlp, 200 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID());
+						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.LegendDemonAlp, 200 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult(), this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID());
 						this.World.Contracts.startScriptedCombat(p, false, true, true);
 						return 0;
 					}
@@ -404,7 +404,7 @@ this.legend_hunting_demon_alps_contract <- this.inherit("scripts/contracts/contr
 			}
 
 			local stats = this.Const.LegendMod.GetFavoriteEnemyStats(bro, this.m.ValidTypes);
-			if (stats.Strength >= this.m.MinStrength) 
+			if (stats.Strength >= this.m.MinStrength)
 			{
 				return true;
 			}

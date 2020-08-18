@@ -34,6 +34,11 @@ this.alp_racial <- this.inherit("scripts/skills/skill", {
 
 	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
 	{
+		if (_skill == null)
+		{
+			return;
+		}
+
 		if (_skill.getID() == "actives.aimed_shot" || _skill.getID() == "actives.quick_shot")
 		{
 			_properties.DamageReceivedRegularMult *= 0.1;
@@ -46,7 +51,7 @@ this.alp_racial <- this.inherit("scripts/skills/skill", {
 		{
 			_properties.DamageReceivedRegularMult *= 0.25;
 		}
-		else if (_skill.getID() == "actives.puncture" || _skill.getID() == "actives.thrust" || _skill.getID() == "actives.stab" || _skill.getID() == "actives.impale" || _skill.getID() == "actives.prong" || _skill.getID() == "actives.rupture" || _skill.getID() == "actives.lunge")
+		else if (_skill.getID() == "actives.puncture" || _skill.getID() == "actives.thrust" || _skill.getID() == "actives.stab" || _skill.getID() == "actives.impale" || _skill.getID() == "actives.prong" || _skill.getID() == "actives.rupture" || _skill.getID() == "actives.lunge" || _skill.getID() == "actives.fire_handgonne")
 		{
 			_properties.DamageReceivedRegularMult *= 0.5;
 		}

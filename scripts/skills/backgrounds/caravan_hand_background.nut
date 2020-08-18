@@ -23,9 +23,10 @@ this.caravan_hand_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Untidy;
-		this.m.Body = "bust_naked_body_00";
+
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Notorious;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Chivalrous;
+		this.m.Bodies = this.Const.Bodies.Skinny;
 		this.m.IsCombatBackground = true;
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[2];
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[2];
@@ -176,16 +177,11 @@ this.caravan_hand_background <- this.inherit("scripts/skills/backgrounds/charact
 			items.equip(this.new("scripts/items/armor/leather_tunic"));
 		}
 
-		r = this.Math.rand(0, 2);
-
-		if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/headscarf"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/helmets/open_leather_cap"));
-		}
+		local item = this.Const.World.Common.pickHelmet([
+				[1, "headscarf"],
+				[1, "open_leather_cap"]
+		])
+		items.equip(item);
 	}
 
 	function onAddLegendEquipment()
@@ -304,16 +300,11 @@ this.caravan_hand_background <- this.inherit("scripts/skills/backgrounds/charact
 			items.equip(armor);
 		}
 
-		r = this.Math.rand(0, 2);
-
-		if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/headscarf"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/helmets/open_leather_cap"));
-		}
+		local item = this.Const.World.Common.pickHelmet([
+				[1, "headscarf"],
+				[1, "open_leather_cap"]
+		])
+		items.equip(item);
 	}
 
 });

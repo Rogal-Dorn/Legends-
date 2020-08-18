@@ -15,6 +15,7 @@ this.realm_of_nightmares_effect <- this.inherit("scripts/skills/skill", {
 		this.m.IsRemovedAfterBattle = true;
 	}
 
+
 	function isHidden()
 	{
 		local actor = this.getContainer().getActor();

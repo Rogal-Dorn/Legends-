@@ -53,6 +53,7 @@ this.bandit_marksman <- this.inherit("scripts/entity/tactical/human", {
 			b.IsSpecializedInBows = true;
 			b.IsSpecializedInCrossbows = true;
 			b.IsSpecializedInSlings = true;
+			b.Vision = 8;
 		}
 
 		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 40)
@@ -254,27 +255,16 @@ this.bandit_marksman <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.Math.rand(1, 100) <= 50)
 		{
-			local r = this.Math.rand(1, 5);
-
-			if (r == 1)
+			local item = this.Const.World.Common.pickHelmet([
+				[20, "hood"],
+				[20, "open_leather_cap"],
+				[20,"headscarf"],
+				[20,"full_leather_cap"],
+				[20,"mouth_piece"]
+			])
+			if (item != null)
 			{
-				this.m.Items.equip(this.new("scripts/items/helmets/hood"));
-			}
-			else if (r == 2)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/open_leather_cap"));
-			}
-			else if (r == 3)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/full_leather_cap"));
-			}
-			else if (r == 4)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/headscarf"));
-			}
-			else if (r == 5)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/mouth_piece"));
+				this.m.Items.equip(item);
 			}
 		}
 	}

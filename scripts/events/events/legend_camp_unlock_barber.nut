@@ -18,7 +18,7 @@ this.legend_camp_unlock_barber <- this.inherit("scripts/events/event", {
 					Text = "Barbering unlocked in camp.",
 					function getResult( _event )
 					{
-						this.World.Tags.set("HasLegendCampBarber", true);
+						this.World.Flags.set("HasLegendCampBarber", true);
 					}
 
 				}

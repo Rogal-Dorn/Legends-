@@ -80,7 +80,7 @@ this.lose_addiction_event <- this.inherit("scripts/events/event", {
 
 		this.m.Addict = candidates_addict[this.Math.rand(0, candidates_addict.len() - 1)];
 		this.m.Other = candidates_other[this.Math.rand(0, candidates_other.len() - 1)];
-		this.m.Score = 5;
+		this.m.Score = 5 + candidates_addict.len();
 	}
 
 	function onPrepare()

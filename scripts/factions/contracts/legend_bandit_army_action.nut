@@ -53,12 +53,12 @@ this.legend_bandit_army_action <- this.inherit("scripts/factions/faction_action"
 		{
 			return;
 		}
-		
+
 		if (_faction.getSettlements().len() < 3)
 		{
 			return;
 		}
-		
+
 		local numConnected = 0;
 
 		foreach( s in _faction.getSettlements() )
@@ -76,9 +76,9 @@ this.legend_bandit_army_action <- this.inherit("scripts/factions/faction_action"
 
 
 		local minResources = this.Const.World.LegendaryContract.BanditArmy * this.Const.World.ContractCost.BanditArmy + this.Const.World.ContractCost.BanditArmy;
-		
-		local currentResources = this.getDifficultyMult() * this.getReputationToDifficultyMult() * this.Const.World.ContractCost.BanditArmy;
-		
+
+		local currentResources = this.getDifficultyMult() * this.getScaledDifficultyMult() * this.Const.World.ContractCost.BanditArmy;
+
 		if(currentResources < minResources)
 		{
 			return;

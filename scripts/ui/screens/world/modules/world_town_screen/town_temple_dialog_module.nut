@@ -112,6 +112,7 @@ this.town_temple_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 			Entity = e,
 			Assets = this.m.Parent.queryAssetsInformation()
 		};
+		this.World.Statistics.getFlags().increment("InjuriesTreatedAtTemple");
 		this.updateAchievement("PatchedUp", 1, 1);
 		return r;
 	}

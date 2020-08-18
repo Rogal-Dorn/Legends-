@@ -36,9 +36,10 @@ this.lumberjack_background <- this.inherit("scripts/skills/backgrounds/character
 		this.m.Hairs = this.Const.Hair.CommonMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Untidy;
-		this.m.Body = "bust_naked_body_01";
+
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.NeutralMax;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
+		this.m.Bodies = this.Const.Bodies.Muscular;
 		this.m.IsLowborn = true;
 		this.m.IsRangerRecruitBackground = true;
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[1];
@@ -186,12 +187,11 @@ this.lumberjack_background <- this.inherit("scripts/skills/backgrounds/character
 			items.equip(item);
 		}
 
-		r = this.Math.rand(0, 1);
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, ""],
+			[1, "hood"]
+		]));
 
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/hood"));
-		}
 	}
 
 	function onAddLegendEquipment()
@@ -305,12 +305,11 @@ this.lumberjack_background <- this.inherit("scripts/skills/backgrounds/character
 			items.equip(armor);
 		}
 
-		r = this.Math.rand(0, 1);
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, ""],
+			[1, "hood"]
+		]));
 
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/hood"));
-		}
 	}
 });
 

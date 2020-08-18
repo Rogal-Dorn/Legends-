@@ -15,7 +15,7 @@ this.ghoul_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.m.Properties.TargetPriorityArmorMult = 0.5;
 		this.m.Properties.TargetPriorityMoraleMult = 0.0;
 		this.m.Properties.TargetPriorityBraveryMult = 0.0;
-		this.m.Properties.OverallDefensivenessMult = 2.0;
+		this.m.Properties.OverallDefensivenessMult = 0.0;
 		this.m.Properties.OverallFormationMult = 2.0;
 		this.m.Properties.EngageAgainstSpearwallMult = 1.25;
 		this.m.Properties.EngageTargetAlreadyBeingEngagedMult = 0.75;
@@ -37,13 +37,21 @@ this.ghoul_agent <- this.inherit("scripts/ai/tactical/agent", {
 
 	function onUpdate()
 	{
-		this.m.Properties.OverallDefensivenessMult = 2.0 - (this.m.Actor.getSize() - 1) * 0.5;
+		if (this.getActor().getHitpointsPct() < 1.0 && this.Math.rand(1, 100) <= 25)
+		{
+			this.m.Properties.EngageAgainstSpearwallMult = 1.5;
+		}
+		else
+		{
+			this.m.Properties.EngageAgainstSpearwallMult = 1.25;
+		}
+
 		local ghouls = 0;
 		local nonGhouls = 0;
 
 		foreach( ally in this.m.KnownAllies )
 		{
-			if (ally.getTags().has("ghoul"))
+			if (ally.getFlags().has("ghoul"))
 			{
 				ghouls = ++ghouls;
 			}

@@ -164,42 +164,22 @@ this.legends_zombie_med <- this.inherit("scripts/entity/tactical/legend_zombie",
 
 		this.m.Items.equip(armor);
 
-		if (this.Math.rand(1, 100) <= 75)
+		local item = this.Const.World.Common.pickHelmet([
+			[25, ""],
+			[11, "kettle_hat"],
+			[11, "aketon_cap"],
+			[11, "full_aketon_cap"],
+			[11, "padded_kettle_hat"],
+			[11, "dented_nasal_helmet"],
+			[11, "mail_coif"],
+			[11, "full_leather_cap"]
+		])
+
+		if (item != null)
 		{
-			r = this.Math.rand(1, 7);
-			local helmet;
-
-			if (r == 1)
-			{
-				helmet = this.new("scripts/items/helmets/aketon_cap");
-			}
-			else if (r == 2)
-			{
-				helmet = this.new("scripts/items/helmets/full_aketon_cap");
-			}
-			else if (r == 3)
-			{
-				helmet = this.new("scripts/items/helmets/kettle_hat");
-			}
-			else if (r == 4)
-			{
-				helmet = this.new("scripts/items/helmets/padded_kettle_hat");
-			}
-			else if (r == 5)
-			{
-				helmet = this.new("scripts/items/helmets/dented_nasal_helmet");
-			}
-			else if (r == 6)
-			{
-				helmet = this.new("scripts/items/helmets/mail_coif");
-			}
-			else if (r == 7)
-			{
-				helmet = this.new("scripts/items/helmets/full_leather_cap");
-			}
-
-			this.m.Items.equip(helmet);
+			this.m.Items.equip(item);
 		}
+
 	}
 
 

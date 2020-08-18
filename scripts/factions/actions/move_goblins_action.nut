@@ -75,8 +75,11 @@ this.move_goblins_action <- this.inherit("scripts/factions/faction_action", {
 
 		for( local i = 0; i < num; i = ++i )
 		{
-			local party = this.getFaction().spawnEntity(this.m.Start.getTile(), "Goblins", false, this.Const.World.Spawn.GoblinRaiders, this.Math.rand(70, 130) * this.getReputationToDifficultyMult());
+			local party = this.getFaction().spawnEntity(this.m.Start.getTile(), "Goblins", false, this.Const.World.Spawn.GoblinRaiders, this.Math.rand(70, 130) * this.getScaledDifficultyMult());
 			party.getSprite("banner").setBrush(this.m.Start.getBanner());
+			party.setDescription("A band of mischievous goblins, small but cunning and not to be underestimated.");
+			party.setFootprintType(this.Const.World.FootprintsType.Goblins);
+			party.getFlags().set("IsRandomlySpawned", true);
 			party.getLoot().ArmorParts = this.Math.rand(0, 10);
 			party.getLoot().Medicine = this.Math.rand(0, 2);
 			party.getLoot().Ammo = this.Math.rand(0, 30);

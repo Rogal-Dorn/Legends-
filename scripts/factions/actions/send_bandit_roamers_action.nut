@@ -90,6 +90,8 @@ this.send_bandit_roamers_action <- this.inherit("scripts/factions/faction_action
 
 		party.getSprite("banner").setBrush(settlement.getBanner());
 		party.setDescription("A rough and tough band of brigands out to hunt for food.");
+		party.setFootprintType(this.Const.World.FootprintsType.Brigands);
+		party.getFlags().set("IsRandomlySpawned", true);
 		party.getLoot().Money = this.Math.rand(0, 100);
 		party.getLoot().ArmorParts = this.Math.rand(0, 5);
 		party.getLoot().Medicine = this.Math.rand(0, 3);

@@ -10,7 +10,7 @@ this.master_no_use_apprentice_event <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 99999.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_20.png[/img]While walking about %townname%, you run into an old man dragging a youthful man by the ear.%SPEECH_ON%You want to be a master, it takes time! Blood! Sweat! Tears if yer of the cryin\' sort and there\'s no shame in that if ya are. Here, look! A sellsword! If you want to fight so bad, why not go to him?%SPEECH_OFF%You hold your hands out and ask for an explanation before getting offloaded some annoying git. The elderly man calms himself and lets the kid\'s ear go.%SPEECH_ON%Aye, I suppose you are owed more of an explanation. I\'m the fencing master of this town, but I teach discipline and patience before anyone so much can touch a sword! And this damned student of mine has neither! So I told him, if you want to fight so bad, get the hell out!%SPEECH_OFF%You look at the kid. He\'s got a fresh face, but there is in fact some impatient eagerness in his eyes. You ask him if what the swordmaster says is true. The kid nods.%SPEECH_ON%Yessir. And I\'d be more than happy to fight for you, too.%SPEECH_OFF%",
+			Text = "%townImage%While walking about %townname%, you run into an old man dragging a youthful man by the ear.%SPEECH_ON%You want to be a master, it takes time! Blood! Sweat! Tears if yer of the cryin\' sort and there\'s no shame in that if ya are. Here, look! A sellsword! If you want to fight so bad, why not go to him?%SPEECH_OFF%You hold your hands out and ask for an explanation before getting offloaded some annoying git. The elderly man calms himself and lets the kid\'s ear go.%SPEECH_ON%Aye, I suppose you are owed more of an explanation. I\'m the fencing master of this town, but I teach discipline and patience before anyone so much can touch a sword! And this damned student of mine has neither! So I told him, if you want to fight so bad, get the hell out!%SPEECH_OFF%You look at the kid. He\'s got a fresh face, but there is in fact some impatient eagerness in his eyes. You ask him if what the swordmaster says is true. The kid nods.%SPEECH_ON%Yessir. And I\'d be more than happy to fight for you, too.%SPEECH_OFF%",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -42,14 +42,14 @@ this.master_no_use_apprentice_event <- this.inherit("scripts/events/event", {
 				_event.m.Dude = roster.create("scripts/entity/tactical/player");
 					if (this.World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
 						{
-						_event.m.Dude.getTags().add("PlayerSkeleton");
-						_event.m.Dude.getTags().add("undead");
-						_event.m.Dude.getTags().add("skeleton");
+						_event.m.Dude.getFlags().add("PlayerSkeleton");
+						_event.m.Dude.getFlags().add("undead");
+						_event.m.Dude.getFlags().add("skeleton");
 						_event.m.Dude.setStartValuesEx([
 							"apprentice_background"
 						]);
 						_event.m.Dude.getSkills().add(this.new("scripts/skills/racial/skeleton_racial"));
-						_event.m.Dude.getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));						
+						_event.m.Dude.getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));
 						}
 					else
 					{
@@ -82,7 +82,7 @@ this.master_no_use_apprentice_event <- this.inherit("scripts/events/event", {
 
 		foreach( t in towns )
 		{
-			if (t.isMilitary() || t.getSize() <= 1)
+			if (t.isMilitary() || t.isSouthern() || t.getSize() <= 1)
 			{
 				continue;
 			}

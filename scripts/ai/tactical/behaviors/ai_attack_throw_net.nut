@@ -125,7 +125,7 @@ this.ai_attack_throw_net <- this.inherit("scripts/ai/tactical/behavior", {
 				continue;
 			}
 
-			if (target.getCurrentProperties().TargetAttractionMult <= this.Const.AI.Behavior.ThrowNetMinAttaction)
+			if (target.getCurrentProperties().TargetAttractionMult < this.Const.AI.Behavior.ThrowNetMinAttaction)
 			{
 				continue;
 			}
@@ -146,6 +146,11 @@ this.ai_attack_throw_net <- this.inherit("scripts/ai/tactical/behavior", {
 			score = score - tile.TVTotal * this.Const.AI.Behavior.ThrowNetTVMult;
 
 			if (tile.IsBadTerrain)
+			{
+				score = score + this.Const.AI.Behavior.ThrowNetBadTerrainBonus;
+			}
+
+			if (tile.Properties.Effect != null && !tile.Properties.Effect.IsPositive && tile.Properties.Effect.Applicable(target))
 			{
 				score = score + this.Const.AI.Behavior.ThrowNetBadTerrainBonus;
 			}
@@ -201,6 +206,28 @@ this.ai_attack_throw_net <- this.inherit("scripts/ai/tactical/behavior", {
 			if (target.getType() == this.Const.EntityType.Wardog || target.getType() == this.Const.EntityType.Warhound)
 			{
 				score = score * this.Const.AI.Behavior.ThrowNetVSWardogsMult;
+			}
+
+			if (target.isTurnDone())
+			{
+				for( local i = 0; i < 6; i = ++i )
+				{
+					if (!tile.hasNextTile(i))
+					{
+					}
+					else
+					{
+						local adjacent = tile.getNextTile(i);
+
+						if (adjacent.IsOccupiedByActor && adjacent.getEntity().isAlliedWith(_entity))
+						{
+							if (adjacent.getEntity().getSkills().hasSkill("actives.deathblow"))
+							{
+								score = score * this.Const.AI.Behavior.ThrowNetToSetupDeathblowMult;
+							}
+						}
+					}
+				}
 			}
 
 			if (score > bestScore)

@@ -67,7 +67,7 @@ this.legend_bandit_outrider <- this.inherit("scripts/entity/tactical/human", {
 		this.getSprite("head").setHorizontalFlipping(true);
 		this.getSprite("helmet").setHorizontalFlipping(true);
 
-		
+
 		local playerOffset = this.createVec(7, 12);
 		this.setAlwaysApplySpriteOffset(true);
 		this.setSpriteOffset("body", playerOffset);
@@ -337,35 +337,38 @@ this.legend_bandit_outrider <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.Math.rand(1, 100) <= 75)
 		{
-			local r = this.Math.rand(1, 6);
-
-			if (r == 1)
+			local item = this.Const.World.Common.pickHelmet([
+				[1, "hood"],
+				[1, "open_leather_cap"],
+				[1, "headscarf"],
+				[1, "mouth_piece"],
+				[1, "full_leather_cap"],
+				[1, "aketon_cap"]
+			])
+			if (item != null)
 			{
-				this.m.Items.equip(this.new("scripts/items/helmets/hood"));
-			}
-			else if (r == 2)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/open_leather_cap"));
-			}
-			else if (r == 3)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/headscarf"));
-			}
-			else if (r == 4)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/mouth_piece"));
-			}
-			else if (r == 5)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/full_leather_cap"));
-			}
-			else if (r == 6)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/aketon_cap"));
+				this.m.Items.equip(item);
 			}
 		}
 	}
 
+	function getHeadNames() {
+		local r = this.Math.rand(0,1);
+
+		//I only see these two, feel free to fix. Just needs to assign "bust_head_xx" for horse to work properly, not from Heads array for some reason
+		if (r == 0) {
+			return "bust_head_5" + this.Math.rand(0,1);
+		}
+		else {
+			local r = this.Math.rand(0,1);
+			if (r == 0) {
+				return "bust_head_female_0" + this.Math.rand(1, 9);
+			}
+			else {
+				return "bust_head_female_1" + this.Math.rand(0,6);
+			}
+		}
+	}
 
 });
 

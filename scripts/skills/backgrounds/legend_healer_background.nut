@@ -67,7 +67,7 @@ this.legend_healer_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.Hairs = this.Const.Hair.CommonMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.Level = 2;
 
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[3];
@@ -155,7 +155,9 @@ this.legend_healer_background <- this.inherit("scripts/skills/backgrounds/charac
 		talents[this.Const.Attributes.Hitpoints] = 3;
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/armor/monk_robe"));
-		items.equip(this.new("scripts/items/helmets/noble_headgear"));
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "noble_headgear"]
+		]));
 		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");
 		stash.removeByID("supplies.ground_grains");
@@ -192,8 +194,9 @@ this.legend_healer_background <- this.inherit("scripts/skills/backgrounds/charac
 		];
 		local armor = this.Const.World.Common.pickLegendArmor(cloths)
 		items.equip(armor)
-
-		items.equip(this.new("scripts/items/helmets/noble_headgear"));
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "noble_headgear"]
+		]));
 		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");
 		stash.removeByID("supplies.ground_grains");

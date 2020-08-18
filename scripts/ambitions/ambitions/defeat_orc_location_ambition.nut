@@ -8,6 +8,7 @@ this.defeat_orc_location_ambition <- this.inherit("scripts/ambitions/ambition", 
 		this.m.ID = "ambition.defeat_orc_location";
 		this.m.Duration = 21.0 * this.World.getTime().SecondsPerDay;
 		this.m.ButtonText = "Besting orcs in battle and burning down some of their camps would make people\nrecognize the company\'s ability on the battlefield. Let us do so!";
+		this.m.RewardTooltip = "You\'ll be awarded a unique accessory that makes the wearer immune to being stunned.";
 		this.m.UIText = "Destroy locations controlled by orcs";
 		this.m.TooltipText = "Destroy four locations controlled by orcs to prove the company\'s prowess, whether as part of a contract or by heading out on your own. You\'ll also need space enough in your inventory for a new item.";
 		this.m.SuccessText = "[img]gfx/ui/events/event_81.png[/img]With the %recently_destroyed% still smouldering in your wake, a group of people come out from their hiding place in a nearby copse of trees where they had been watching the battle from afar. An old woman approaches you.%SPEECH_ON%Those green-skinned fiends drove us from our farm outside %nearesttown%, but thanks to you stalwart fellows we will prosper again. This is for you.%SPEECH_OFF%She proffers a bag of apples. Though it isn\'t much of a reward, the sentiment will be repeated again and again as word spreads of the orcs\' destruction. %highestexperience_brother% barks out a laugh and bites into one of the juicy apples.%SPEECH_ON%With orcs, the big ones are too slow, and the young ones too stupid. Strategy overcomes brute force every time. The great green beasts depend on fear to do their work for them. Stand fast and they can be beat like anyone else!%SPEECH_OFF%The peasants marvel at %highestexperience_brother%\'s speech, and prowess, and strength, clapping their hands, showering him with compliments and patting him on the back. While certainly true words, this is hardly the audience that should put his advice to use. You lay your hand on %highestexperience_brother%\'s shoulder, as if to say to drop it a notch, lest any of the peasants think themselves heroes next time they spot a greenskin.";
@@ -40,7 +41,7 @@ this.defeat_orc_location_ambition <- this.inherit("scripts/ambitions/ambition", 
 			return;
 		}
 
-		this.m.Score = 1 + this.Math.rand(0, 5);
+		this.m.Score = 2 + this.Math.rand(0, 5);
 	}
 
 	function onCheckSuccess()
@@ -82,7 +83,7 @@ this.defeat_orc_location_ambition <- this.inherit("scripts/ambitions/ambition", 
 			{
 				fearful.push(bro);
 			}
-			else if (!bro.getBackground().isLowborn())
+			else if (bro.getBackground().isLowborn())
 			{
 				lowborn.push(bro);
 			}
@@ -109,7 +110,7 @@ this.defeat_orc_location_ambition <- this.inherit("scripts/ambitions/ambition", 
 		]);
 		_vars.push([
 			"recently_destroyed",
-			this.World.Statistics.get().LastLocationDestroyedName
+			this.World.Statistics.getFlags().get("LastLocationDestroyedName")
 		]);
 	}
 

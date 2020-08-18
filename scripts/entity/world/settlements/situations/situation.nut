@@ -5,9 +5,11 @@ this.situation <- {
 		Name = "",
 		Description = "",
 		Icon = null,
+		Rumors = [],
 		IsStacking = true,
 		ValidDays = 0,
-		ValidUntil = 0.0
+		ValidUntil = 0.0,
+		IsSouthern = false
 	},
 	function getID()
 	{
@@ -42,6 +44,11 @@ this.situation <- {
 	function getDefaultDays()
 	{
 		return this.m.ValidDays;
+	}
+
+	function getRumors()
+	{
+		return this.m.Rumors;
 	}
 
 	function isStacking()
@@ -107,7 +114,7 @@ this.situation <- {
 	{
 	}
 
-	function onUpdateDraftList( _draftList )
+	function onUpdateDraftList( _draftList, _gender )
 	{
 	}
 

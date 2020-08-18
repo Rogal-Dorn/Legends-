@@ -73,7 +73,7 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 			return false;
 		}
 
-		return !this.World.Tags.get("HasLegendCampGathering")
+		return !this.World.Flags.get("HasLegendCampGathering")
 	}
 
 	function getUpgraded()

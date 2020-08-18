@@ -18,7 +18,7 @@ this.build_orc_camp_action <- this.inherit("scripts/factions/faction_action", {
 				return;
 			}
 		}
-		else if (settlements.len() > 12)
+		else if (settlements.len() > 12 + (this.Const.DLC.Desert ? 2 : 0))
 		{
 			return;
 		}
@@ -34,6 +34,7 @@ this.build_orc_camp_action <- this.inherit("scripts/factions/faction_action", {
 	{
 		local camp;
 		local r;
+		local minY = this.Const.DLC.Desert ? 0.15 : 0.0;
 
 		if (_faction.getSettlements().len() == 0)
 		{
@@ -57,14 +58,14 @@ this.build_orc_camp_action <- this.inherit("scripts/factions/faction_action", {
 				tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries, [
 					this.Const.World.TerrainType.Mountains,
 					this.Const.World.TerrainType.Snow
-				], 8, 20, 20);
+				], 8, 20, 20, 7, 7, null, minY);
 			}
 			else
 			{
 				tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries, [
 					this.Const.World.TerrainType.Mountains,
 					this.Const.World.TerrainType.Snow
-				], 15, 1000, 20);
+				], 15, 1000, 20, 7, 7, null, minY);
 			}
 
 			if (tile != null)
@@ -105,14 +106,14 @@ this.build_orc_camp_action <- this.inherit("scripts/factions/faction_action", {
 				tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries, [
 					this.Const.World.TerrainType.Mountains,
 					this.Const.World.TerrainType.Snow
-				], 8, 18, 20);
+				], 8, 18, 20, 7, 7, null, minY);
 			}
 			else
 			{
 				tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries, [
 					this.Const.World.TerrainType.Mountains,
 					this.Const.World.TerrainType.Snow
-				], 14, 30, 20);
+				], 14, 30, 20, 7, 7, null, minY);
 			}
 
 			if (tile != null)
@@ -128,13 +129,13 @@ this.build_orc_camp_action <- this.inherit("scripts/factions/faction_action", {
 			{
 				tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries, [
 					this.Const.World.TerrainType.Mountains
-				], 6, 14, 30);
+				], 6, 14, 30, 7, 7, null, minY);
 			}
 			else
 			{
 				tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries, [
 					this.Const.World.TerrainType.Mountains
-				], 10, 20, 30);
+				], 10, 20, 30, 7, 7, null, minY);
 			}
 
 			if (tile != null)
@@ -151,14 +152,14 @@ this.build_orc_camp_action <- this.inherit("scripts/factions/faction_action", {
 				tile = this.getTileToSpawnLocation(r == 6 ? 1000 : this.Const.Factions.BuildCampTries, [
 					this.Const.World.TerrainType.Mountains,
 					this.Const.World.TerrainType.Snow
-				], 15, 30, 30);
+				], 15, 30, 30, 7, 7, null, minY);
 			}
 			else
 			{
 				tile = this.getTileToSpawnLocation(r == 6 ? 1000 : this.Const.Factions.BuildCampTries, [
 					this.Const.World.TerrainType.Mountains,
 					this.Const.World.TerrainType.Snow
-				], 25, 1000, 20);
+				], 25, 1000, 20, 7, 7, null, minY);
 			}
 
 			if (tile != null && _faction.getSettlements().len() == 0)

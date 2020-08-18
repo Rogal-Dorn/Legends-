@@ -27,9 +27,10 @@ this.disowned_noble_background <- this.inherit("scripts/skills/backgrounds/chara
 		this.m.Hairs = this.Const.Hair.AllMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.Body = "bust_naked_body_02";
+
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Good;
+		this.m.Bodies = this.Const.Bodies.Thick;
 		this.m.Level = this.Math.rand(1, 3);
 		this.m.IsCombatBackground = true;
 		this.m.IsEducatedBackground = true;
@@ -174,32 +175,16 @@ this.disowned_noble_background <- this.inherit("scripts/skills/backgrounds/chara
 			items.equip(this.new("scripts/items/armor/mail_hauberk"));
 		}
 
-		r = this.Math.rand(0, 8);
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "nasal_helmet"],
+			[1, "padded_nasal_helmet"],
+			[1, "aketon_cap"],
+			[1, "full_aketon_cap"],
+			[1, "mail_coif"],
+			[1, "feathered_hat"],
+			[3, ""]
+		]));
 
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/nasal_helmet"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/padded_nasal_helmet"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/helmets/aketon_cap"));
-		}
-		else if (r == 3)
-		{
-			items.equip(this.new("scripts/items/helmets/full_aketon_cap"));
-		}
-		else if (r == 4)
-		{
-			items.equip(this.new("scripts/items/helmets/mail_coif"));
-		}
-		else if (r == 5)
-		{
-			items.equip(this.new("scripts/items/helmets/feathered_hat"));
-		}
 	}
 
 	function onAddLegendEquipment()
@@ -320,32 +305,15 @@ this.disowned_noble_background <- this.inherit("scripts/skills/backgrounds/chara
 			items.equip(armor);
 		}
 
-		r = this.Math.rand(0, 8);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/nasal_helmet"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/padded_nasal_helmet"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/helmets/aketon_cap"));
-		}
-		else if (r == 3)
-		{
-			items.equip(this.new("scripts/items/helmets/full_aketon_cap"));
-		}
-		else if (r == 4)
-		{
-			items.equip(this.new("scripts/items/helmets/mail_coif"));
-		}
-		else if (r == 5)
-		{
-			items.equip(this.new("scripts/items/helmets/feathered_hat"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "nasal_helmet"],
+			[1, "padded_nasal_helmet"],
+			[1, "aketon_cap"],
+			[1, "full_aketon_cap"],
+			[1, "mail_coif"],
+			[1, "feathered_hat"],
+			[3, ""]
+		]));
 	}
 });
 

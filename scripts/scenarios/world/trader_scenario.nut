@@ -45,7 +45,7 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
 		items.equip(this.new("scripts/items/weapons/legend_staff"));
-		items.equip(this.new("scripts/items/helmets/feathered_hat"));
+		items.equip(this.Const.World.Common.pickHelmet([[1, "feathered_hat"]]));
 
 		bros[1].setStartValuesEx([
 			"caravan_hand_background"
@@ -61,28 +61,7 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 		local items = bros[1].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.equip(this.new("scripts/items/weapons/scimitar"));
-		foreach( bro in bros )
-		{
-			local val = this.World.State.addNewID(bro);
-			bro.m.CompanyID = val;
-		}
-		if (this.World.LegendsMod.Configs().RelationshipsEnabled())
-{
-    local avgAlignment = 0;
-    foreach (bro in this.World.getPlayerRoster().getAll())
-    {
-        if (bro.getAlignment() <= this.Const.LegendMod.Alignment.NeutralMin)
-        {
-            avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMin);
-        }
-        else if (bro.getAlignment() >= this.Const.LegendMod.Alignment.NeutralMax)
-        {
-            avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMax);
-        }
-    }
-    avgAlignment *= (10 / this.World.getPlayerRoster().getSize());
-    this.World.Assets.addMoralReputation(avgAlignment);
-}
+
 		this.World.Assets.m.BusinessReputation = 0;
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/bread_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/mead_item"));
@@ -158,13 +137,6 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 			], this.Const.Music.CrossFadeTime);
 			this.World.Events.fire("event.legend_trader_scenario_intro");
 		}, null);
-foreach (b in this.World.getPlayerRoster().getAll())
-		{
-			foreach (add in this.World.getPlayerRoster().getAll())
-			{
-				b.changeActiveRelationship(add, this.Math.rand(0, 10));
-			}
-		}
 	}
 
 	function onInit()
@@ -174,7 +146,7 @@ foreach (b in this.World.getPlayerRoster().getAll())
 		this.World.Assets.m.BuyPriceMult = 0.9;
 		this.World.Assets.m.SellPriceMult = 1.1;
 		this.World.Assets.m.BrothersMax = 27;
-		this.World.Tags.set("IsLegendsTrader", true);
+		this.World.Flags.set("IsLegendsTrader", true);
 	}
 
 
@@ -219,7 +191,7 @@ foreach (b in this.World.getPlayerRoster().getAll())
 		}
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 		if (_list.len() < 10)
 		{

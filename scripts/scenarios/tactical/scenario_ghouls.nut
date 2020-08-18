@@ -73,7 +73,7 @@ this.scenario_ghouls <- this.inherit("scripts/scenarios/tactical/scenario_templa
 		entity.setName(this.getRandomPlayerName());
 		entity.setScenarioValues();
 		items = entity.getItems();
-		items.equip(this.new("scripts/items/helmets/full_helm"));
+		items.equip(this.Const.World.Common.pickHelmet([[1, "full_helm"]]));
 		items.equip(this.new("scripts/items/armor/coat_of_plates"));
 		items.equip(this.new("scripts/items/weapons/greatsword"));
 		entity = this.spawnEntity("scripts/entity/tactical/player", 14, 16, 14, 16);
@@ -82,7 +82,7 @@ this.scenario_ghouls <- this.inherit("scripts/scenarios/tactical/scenario_templa
 		entity.setName(this.getRandomPlayerName());
 		entity.setScenarioValues();
 		items = entity.getItems();
-		items.equip(this.new("scripts/items/helmets/named/norse_helmet"));
+		items.equip(this.Const.World.Common.pickHelmet([[1, "named/norse_helmet"]]));
 		items.equip(this.new("scripts/items/armor/mail_shirt"));
 		items.equip(this.new("scripts/items/weapons/hand_axe"));
 		items.equip(this.new("scripts/items/shields/wooden_shield"));
@@ -92,7 +92,7 @@ this.scenario_ghouls <- this.inherit("scripts/scenarios/tactical/scenario_templa
 		entity.setName(this.getRandomPlayerName());
 		entity.setScenarioValues();
 		items = entity.getItems();
-		items.equip(this.new("scripts/items/helmets/kettle_hat"));
+		items.equip(this.Const.World.Common.pickHelmet([[1, "kettle_hat"]]));
 		items.equip(this.new("scripts/items/armor/mail_shirt"));
 		items.equip(this.new("scripts/items/weapons/hand_axe"));
 		items.equip(this.new("scripts/items/shields/wooden_shield"));
@@ -102,7 +102,7 @@ this.scenario_ghouls <- this.inherit("scripts/scenarios/tactical/scenario_templa
 		entity.setName(this.getRandomPlayerName());
 		entity.setScenarioValues();
 		items = entity.getItems();
-		items.equip(this.new("scripts/items/helmets/mail_coif"));
+		items.equip(this.Const.World.Common.pickHelmet([[1, "mail_coif"]]));
 		items.equip(this.new("scripts/items/armor/mail_shirt"));
 		items.equip(this.new("scripts/items/weapons/winged_mace"));
 		items.equip(this.new("scripts/items/shields/named/named_red_white_shield"));
@@ -121,7 +121,7 @@ this.scenario_ghouls <- this.inherit("scripts/scenarios/tactical/scenario_templa
 		entity.setName(this.getRandomPlayerName());
 		entity.setScenarioValues();
 		items = entity.getItems();
-		items.equip(this.new("scripts/items/helmets/aketon_cap"));
+		items.equip(this.Const.World.Common.pickHelmet([[1, "aketon_cap"]]));
 		items.equip(this.new("scripts/items/armor/gambeson"));
 		items.equip(this.new("scripts/items/weapons/crossbow"));
 		items.equip(this.new("scripts/items/ammo/quiver_of_bolts"));
@@ -132,7 +132,7 @@ this.scenario_ghouls <- this.inherit("scripts/scenarios/tactical/scenario_templa
 		entity.setName(this.getRandomPlayerName());
 		entity.setScenarioValues();
 		items = entity.getItems();
-		items.equip(this.new("scripts/items/helmets/hood"));
+		items.equip(this.Const.World.Common.pickHelmet([[1, "hood"]]));
 		items.equip(this.new("scripts/items/armor/padded_surcoat"));
 		items.equip(this.new("scripts/items/weapons/hunting_bow"));
 		items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
@@ -251,13 +251,13 @@ this.scenario_ghouls <- this.inherit("scripts/scenarios/tactical/scenario_templa
 		this.Stash.add(this.new("scripts/items/shields/wooden_shield"));
 		this.Stash.add(this.new("scripts/items/shields/wooden_shield"));
 		this.Stash.add(this.new("scripts/items/shields/kite_shield"));
-		this.Stash.add(this.new("scripts/items/helmets/hood"));
-		this.Stash.add(this.new("scripts/items/helmets/full_aketon_cap"));
-		this.Stash.add(this.new("scripts/items/helmets/padded_nasal_helmet"));
-		this.Stash.add(this.new("scripts/items/helmets/mail_coif"));
-		this.Stash.add(this.new("scripts/items/helmets/kettle_hat"));
-		this.Stash.add(this.new("scripts/items/helmets/flat_top_helmet"));
-		this.Stash.add(this.new("scripts/items/helmets/full_helm"));
+		this.Stash.add(this.Const.World.Common.pickHelmet([[1, "hood"]]));
+		this.Stash.add(this.Const.World.Common.pickHelmet([[1, "full_aketon_cap"]]));
+		this.Stash.add(this.Const.World.Common.pickHelmet([[1, "padded_nasal_helmet"]]));
+		this.Stash.add(this.Const.World.Common.pickHelmet([[1, "mail_coif"]]));
+		this.Stash.add(this.Const.World.Common.pickHelmet([[1, "kettle_hat"]]));
+		this.Stash.add(this.Const.World.Common.pickHelmet([[1, "flat_top_helmet"]]));
+		this.Stash.add(this.Const.World.Common.pickHelmet([[1, "full_helm"]]));
 		this.Stash.add(this.new("scripts/items/armor/gambeson"));
 		this.Stash.add(this.new("scripts/items/armor/padded_surcoat"));
 		this.Stash.add(this.new("scripts/items/armor/padded_leather"));

@@ -151,11 +151,13 @@ this.legend_skeleton_gladiator <- this.inherit("scripts/entity/tactical/skeleton
 			}
 		}
 
-
-
-		if (this.Math.rand(1, 100) <= 66)
+		local item = this.Const.World.Common.pickHelmet([
+			[34, ""],
+			[66, "ancient/ancient_gladiator_helmet"]
+		])
+		if (item != null)
 		{
-			this.m.Items.equip(this.new("scripts/items/helmets/ancient/ancient_gladiator_helmet"));
+			this.m.Items.equip(item);
 		}
 	}
 

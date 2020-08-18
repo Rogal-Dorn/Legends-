@@ -242,6 +242,16 @@ this.contract_manager <- {
 			{
 				this.updateAchievement("BloodMoney", 1, 1);
 			}
+
+			if (this.m.Active.getType() == "contract.escort_caravan")
+			{
+				this.World.Statistics.getFlags().increment("EscortCaravanContractsDone");
+			}
+
+			if (this.World.FactionManager.getFaction(this.m.Active.getFaction()).getType() == this.Const.FactionType.OrientalCityState)
+			{
+				this.World.Statistics.getFlags().increment("CityStateContractsDone");
+			}
 		}
 		else
 		{
@@ -261,6 +271,7 @@ this.contract_manager <- {
 
 		this.World.State.getWorldScreen().clearContract();
 		this.World.State.updateTopbarAssets();
+		this.World.Ambitions.updateUI();
 	}
 
 	function showContractByID( _id )

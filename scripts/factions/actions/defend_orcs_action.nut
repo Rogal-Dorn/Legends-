@@ -88,7 +88,9 @@ this.defend_orcs_action <- this.inherit("scripts/factions/faction_action", {
 		{
 			local party = this.getFaction().spawnEntity(spawnpoints[i], "Orcs", false, this.Const.World.Spawn.OrcDefenders, this.m.Settlement.getResources() * 0.66);
 			party.setDescription("A band of menacing orcs, greenskinned and towering any man.");
+			party.setFootprintType(this.Const.World.FootprintsType.Orcs);
 			party.getSprite("banner").setBrush(this.m.Settlement.getBanner());
+			party.getFlags().set("IsRandomlySpawned", true);
 			local c = party.getController();
 			local guard = this.new("scripts/ai/world/orders/guard_order");
 			guard.setTarget(spawnpoints[i]);

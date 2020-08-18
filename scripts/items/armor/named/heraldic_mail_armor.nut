@@ -14,7 +14,6 @@ this.heraldic_mail_armor <- this.inherit("scripts/items/armor/named/named_armor"
 			"Full Mail",
 			"Mail Hauberk",
 			"Chainmail",
-			"Surcoat",
 			"Duty",
 			"Honor",
 			"Noble Mail"

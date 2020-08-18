@@ -11,6 +11,7 @@ this.turn_sequence_bar <- this.inherit("scripts/ui/screens/ui_module", {
 		IsBattleEnded = false,
 		IsSkippingRound = false,
 		IsInitNextRound = false,
+		IsLastEntityPlayerControlled = false,
 		ActiveEntityMouseHover = null,
 		ActiveEntityCostsPreview = null,
 		InShutdown = null,
@@ -87,6 +88,11 @@ this.turn_sequence_bar <- this.inherit("scripts/ui/screens/ui_module", {
 		this.m.OnEntityMouseLeaveListener = null;
 		this.m.OnBattleEndedListener = null;
 		this.m.OnOpenInventoryButtonPressed = null;
+	}
+
+	function isLastEntityPlayerControlled()
+	{
+		return this.m.IsLastEntityPlayerControlled;
 	}
 
 	function getCurrentRound()
@@ -298,6 +304,11 @@ this.turn_sequence_bar <- this.inherit("scripts/ui/screens/ui_module", {
 			entity.onTurnEnd();
 		}
 
+		foreach( entity in this.m.AllEntities )
+		{
+			entity.onRoundEnd();
+		}
+
 		this.m.CurrentEntities = [];
 		this.m.ActiveEntityMouseHover = null;
 
@@ -387,6 +398,7 @@ this.turn_sequence_bar <- this.inherit("scripts/ui/screens/ui_module", {
 		activeEntity.onTurnEnd();
 		this.m.CurrentEntities.remove(0);
 		++this.m.TurnPosition;
+		this.m.IsLastEntityPlayerControlled = activeEntity.isPlayerControlled();
 
 		if (this.m.CurrentEntities.len() >= this.m.MaxVisibleEntities)
 		{
@@ -1071,8 +1083,11 @@ this.turn_sequence_bar <- this.inherit("scripts/ui/screens/ui_module", {
 
 	function checkBattleEndedCondition()
 	{
-		this.Tactical.Entities.checkCombatFinished();
-		this.m.IsBattleEnded = this.Tactical.Entities.isCombatFinished();
+		this.Time.scheduleEvent(this.TimeUnit.Real, 50, function ( _d )
+		{
+			this.Tactical.Entities.checkCombatFinished();
+			_d.m.IsBattleEnded = this.Tactical.Entities.isCombatFinished();
+		}.bindenv(this), this);
 	}
 
 	function moveToEntity( _entity, _jumpToEntity = false, _force = false )

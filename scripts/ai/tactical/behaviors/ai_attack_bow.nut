@@ -6,7 +6,8 @@ this.ai_attack_bow <- this.inherit("scripts/ai/tactical/behavior", {
 			"actives.aimed_shot",
 			"actives.shoot_bolt",
 			"actives.shoot_stake",
-			"actives.sling_stone"
+			"actives.sling_stone",
+			"actives.throw_golem"
 		],
 		SelectedSkill = null
 	},
@@ -160,8 +161,27 @@ this.ai_attack_bow <- this.inherit("scripts/ai/tactical/behavior", {
 
 			foreach( s in skills )
 			{
-				s.Score = this.queryTargetValue(_entity, target.Actor, s.Skill);
-				score = score + s.Score;
+				local tilesAffected = s.Skill.getAffectedTiles(targetTile);
+
+				foreach( t in tilesAffected )
+				{
+					if (!t.IsOccupiedByActor)
+					{
+						continue;
+					}
+
+					if (_entity.isAlliedWith(t.getEntity()))
+					{
+						if (this.getProperties().TargetPriorityHittingAlliesMult < 1.0)
+						{
+							s.Score -= 1.0 / 6.0 * 4.0 * (1.0 - this.getProperties().TargetPriorityHittingAlliesMult) * t.getEntity().getCurrentProperties().TargetAttractionMult;
+						}
+					}
+					else
+					{
+						s.Score += this.queryTargetValue(_entity, t.getEntity(), s.Skill);
+					}
+				}
 			}
 
 			local blockedTiles = this.Const.Tactical.Common.getBlockedTiles(myTile, targetTile, _entity.getFaction());
@@ -195,7 +215,7 @@ this.ai_attack_bow <- this.inherit("scripts/ai/tactical/behavior", {
 							{
 								if (this.getProperties().TargetPriorityHittingAlliesMult < 1.0)
 								{
-									score = score - 1.0 / 6.0 * 4.0 * (1.0 - this.getProperties().TargetPriorityHittingAlliesMult);
+									score = score - 1.0 / 6.0 * 4.0 * (1.0 - this.getProperties().TargetPriorityHittingAlliesMult) * tile.getEntity().getCurrentProperties().TargetAttractionMult;
 								}
 
 								alliesAdjacent = ++alliesAdjacent;

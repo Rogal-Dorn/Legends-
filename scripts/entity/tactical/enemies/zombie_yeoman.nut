@@ -22,7 +22,12 @@ this.zombie_yeoman <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 		b.IsImmuneToBleeding = true;
 		b.IsImmuneToPoison = true;
 
-		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 100)
+		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 20)
+		{
+			b.FatigueDealtPerHitMult = 2.0;
+		}
+
+		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 90)
 		{
 			b.DamageTotalMult += 0.1;
 		}
@@ -199,44 +204,23 @@ this.zombie_yeoman <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 
 		if (this.Math.rand(1, 100) <= 75)
 		{
-			r = this.Math.rand(1, 7);
-			local helmet;
-
-			if (r == 1)
+			local item = this.Const.World.Common.pickHelmet([
+				[1, "aketon_cap"],
+				[1, "full_aketon_cap"],
+				[1, "kettle_hat"],
+				[1, "padded_kettle_hat"],
+				[1, "dented_nasal_helmet"],
+				[1, "mail_coif"],
+				[1, "full_leather_cap"]
+			])
+			if (item != null)
 			{
-				helmet = this.new("scripts/items/helmets/aketon_cap");
+				if (this.Math.rand(1, 100) <= 66)
+				{
+					item.setArmor(item.getArmorMax() / 2 - 1);
+				}
+				this.m.Items.equip(item);
 			}
-			else if (r == 2)
-			{
-				helmet = this.new("scripts/items/helmets/full_aketon_cap");
-			}
-			else if (r == 3)
-			{
-				helmet = this.new("scripts/items/helmets/kettle_hat");
-			}
-			else if (r == 4)
-			{
-				helmet = this.new("scripts/items/helmets/padded_kettle_hat");
-			}
-			else if (r == 5)
-			{
-				helmet = this.new("scripts/items/helmets/dented_nasal_helmet");
-			}
-			else if (r == 6)
-			{
-				helmet = this.new("scripts/items/helmets/mail_coif");
-			}
-			else if (r == 7)
-			{
-				helmet = this.new("scripts/items/helmets/full_leather_cap");
-			}
-
-			if (this.Math.rand(1, 100) <= 66)
-			{
-				helmet.setArmor(helmet.getArmorMax() / 2 - 1);
-			}
-
-			this.m.Items.equip(helmet);
 		}
 	}
 

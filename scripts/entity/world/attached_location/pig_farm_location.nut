@@ -58,7 +58,7 @@ this.pig_farm_location <- this.inherit("scripts/entity/world/attached_location",
 		_list.push("supplies/smoked_ham_item");
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 		if (!this.isActive())
 		{
@@ -67,13 +67,17 @@ this.pig_farm_location <- this.inherit("scripts/entity/world/attached_location",
 
 		_list.push("butcher_background");
 		_list.push("daytaler_background");
-		_list.push("female_daytaler_background");
 		_list.push("daytaler_background");
-		_list.push("female_farmhand_background");
 		_list.push("farmhand_background");
 		_list.push("farmhand_background");
 		_list.push("farmhand_background");
 		_list.push("legend_taxidermist_background");
+		if (_gender)
+		{
+		_list.push("female_daytaler_background");
+		_list.push("female_farmhand_background");
+
+		}
 	}
 
 	function onUpdateShopList( _id, _list )

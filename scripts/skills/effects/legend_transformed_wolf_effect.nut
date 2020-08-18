@@ -36,7 +36,7 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 					text = "[color=" + this.Const.UI.Color.PositiveValue + "]-1[/color] AP per tile moved"
 				}
 			]);
-			
+
 			ret.extend([
 				{
 					id = 11,
@@ -45,7 +45,7 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 					text = "This character has lost control of themselves and may attack randomly. May still need your help to end their turn. "
 				}
 			]);
-			
+
 
 		}
 		return ret;
@@ -69,12 +69,12 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 				}
 			}
 		}
-		
-		//change the AI 
+
+		//change the AI
 		this.logDebug(this.getName() + " changing AI");
 		this.m.OriginalAgent = actor.getAIAgent();
 		this.m.OriginalFaction = actor.getFaction();
-		
+
 		if (actor.isPlayerControlled())
 		{
 			if (this.m.Container.hasSkill("perk.legend_surpress_urges") && !this.m.Container.hasSkill("perk.legend_control_instincts"))
@@ -86,10 +86,10 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 			else if (this.m.Container.hasSkill("perk.legend_surpress_urges") && this.m.Container.hasSkill("perk.legend_control_instincts"))
 			{
 			}
-			else	
+			else
 			{
 				this.logDebug(this.getName() + " AI set to direwolf");
-				actor.setFaction(this.Const.Faction.Beasts);		
+				actor.setFaction(this.Const.Faction.Beasts);
 				actor.setAIAgent(this.new("scripts/ai/tactical/agents/direwolf_agent"));
 				actor.getAIAgent().setActor(actor);
 			}
@@ -101,12 +101,12 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 		// actor.setAIAgent(this.new("scripts/ai/tactical/agents/direwolf_agent"));
 		// actor.getAIAgent().setActor(actor);
 		}
-	
+
 		this.m.OriginalSocket = actor.getSprite("socket").getBrush().Name;
 		actor.getSprite("socket").setBrush("bust_base_beasts");
 		actor.setDirty(true);
-		
-		// remove items 
+
+		// remove items
 		this.logDebug(this.getName() + " removing items");
 		local items = actor.getItems();
 		if (items.getItemAtSlot(this.Const.ItemSlot.Mainhand))
@@ -161,10 +161,13 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 		}
 		actor.getSprite("socket").setBrush("bust_base_beasts");
 		actor.getSprite("armor").Alpha = 10;
-		actor.getSprite("helmet_bottom").Alpha = 10;
+		actor.getSprite("helmet_vanity_lower").Alpha = 10;
 		actor.getSprite("helmet").Alpha = 10;
 		actor.getSprite("helmet_damage").Alpha = 10;
+		actor.getSprite("helmet_helm").Alpha = 10;
 		actor.getSprite("helmet_top").Alpha = 10;
+		actor.getSprite("helmet_vanity").Alpha = 10;
+
 		actor.getSprite("shield_icon").Alpha = 10;
 		actor.getSprite("armor_layer_chain").Alpha = 10;
 		actor.getSprite("armor_layer_plate").Alpha = 10;
@@ -211,10 +214,13 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 	{
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> d299c1d87b0f32e6da0e8eca601d2575c6d3953c
 =======
+=======
+>>>>>>> 1f16b12b6e7970000cb087274d79802f039f9eee
 		this.removeEffect();
 	}
 	function onCombatFinished()
@@ -240,7 +246,7 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 			this.removeEffect();
 			return;
 		}
-		
+
 		local actor = this.getContainer().getActor();
 		if (!actor.isPlayerControlled() && actor.getAIAgent().getID() != "agent.direwolf")
 		{
@@ -251,9 +257,12 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 
 	function removeEffect()
 	{
+<<<<<<< HEAD
 >>>>>>> 692b0b22b1950f2d69c97f562004ec873e763d66
+=======
+>>>>>>> 1f16b12b6e7970000cb087274d79802f039f9eee
 		local actor = this.getContainer().getActor();
-		
+
 		//reset AI
 		if (this.m.OriginalAgent != null)
 		{
@@ -262,15 +271,17 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 		actor.setFaction(this.m.OriginalFaction);
 		actor.getSprite("socket").setBrush(this.m.OriginalSocket);
 		actor.setDirty(true);
-		
-		//change appearance 
+
+		//change appearance
 		actor.getSprite("body").setBrush(this.m.Body);
 		actor.getSprite("head").setBrush(this.m.Head);
 		actor.getSprite("armor").Alpha = 255;
-		actor.getSprite("helmet_bottom").Alpha = 255;
+		actor.getSprite("helmet_vanity_lower").Alpha = 255;
 		actor.getSprite("helmet").Alpha = 255;
 		actor.getSprite("helmet_damage").Alpha = 255;
+		actor.getSprite("helmet_helm").Alpha = 255;
 		actor.getSprite("helmet_top").Alpha = 255;
+		actor.getSprite("helmet_vanity").Alpha = 255;
 		actor.getSprite("shield_icon").Alpha = 255;
 		actor.getSprite("armor_layer_chain").Alpha = 255;
 		actor.getSprite("armor_layer_plate").Alpha = 255;
@@ -317,6 +328,6 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 		items.getData()[this.Const.ItemSlot.Offhand][0] = null;
 		items.getData()[this.Const.ItemSlot.Mainhand][0] = null;
 	}
-	
+
 });
 

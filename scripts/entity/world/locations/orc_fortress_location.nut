@@ -10,6 +10,9 @@ this.orc_fortress_location <- this.inherit("scripts/entity/world/location", {
 		this.location.create();
 		this.m.TypeID = "location.orc_fortress";
 		this.m.LocationType = this.Const.World.LocationType.Lair;
+		this.m.CombatLocation.Template[0] = "tactical.orc_camp";
+		this.m.CombatLocation.Fortification = this.Const.Tactical.FortificationType.None;
+		this.m.CombatLocation.CutDownTrees = true;
 		this.m.IsShowingDefenders = false;
 		this.m.IsShowingBanner = true;
 		this.m.IsDespawningDefenders = false;
@@ -59,14 +62,14 @@ this.orc_fortress_location <- this.inherit("scripts/entity/world/location", {
 			"trade/dies_item",
 			"loot/white_pearls_item"
 		], _lootTable);
-		_lootTable.push(this.new("scripts/items/helmets/legendary/emperors_countenance"));
+		_lootTable.push(this.Const.World.Common.pickHelmet([[1, "legendary/emperors_countenance"]]));
 	}
 
 	function onInit()
 	{
 		this.location.onInit();
 		local body = this.addSprite("body");
-		body.setBrush("world_orc_camp_03");
+		body.setBrush("world_orc_camp_04");
 	}
 
 });

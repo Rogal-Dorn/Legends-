@@ -75,33 +75,10 @@ this.legends_druid_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		}
 
 
-		bros[0].getTags().set("IsPlayerCharacter", true);
+		bros[0].getFlags().set("IsPlayerCharacter", true);
 		bros[0].setPlaceInFormation(3);
 		bros[0].setVeteranPerks(2);
 
-		foreach( bro in bros )
-		{
-			local val = this.World.State.addNewID(bro);
-			bro.m.CompanyID = val;
-		}
-
-		if (this.World.LegendsMod.Configs().RelationshipsEnabled())
-{
-    local avgAlignment = 0;
-    foreach (bro in this.World.getPlayerRoster().getAll())
-    {
-        if (bro.getAlignment() <= this.Const.LegendMod.Alignment.NeutralMin)
-        {
-            avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMin);
-        }
-        else if (bro.getAlignment() >= this.Const.LegendMod.Alignment.NeutralMax)
-        {
-            avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMax);
-        }
-    }
-    avgAlignment *= (10 / this.World.getPlayerRoster().getSize());
-    this.World.Assets.addMoralReputation(avgAlignment);
-}
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/legend_fresh_fruit_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/roots_and_berries_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/accessory/legend_apothecary_mushrooms_item"));
@@ -178,13 +155,6 @@ this.legends_druid_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			this.Music.setTrackList(this.Const.Music.IntroTracks, this.Const.Music.CrossFadeTime);
 			this.World.Events.fire("event.legend_druid_scenario_intro");
 		}, null);
-foreach (b in this.World.getPlayerRoster().getAll())
-		{
-			foreach (add in this.World.getPlayerRoster().getAll())
-			{
-				b.changeActiveRelationship(add, this.Math.rand(0, 10));
-			}
-		}
 	}
 
 	function onInit()
@@ -192,7 +162,7 @@ foreach (b in this.World.getPlayerRoster().getAll())
 		this.starting_scenario.onInit();
 		this.World.State.getPlayer().m.BaseMovementSpeed = 111;
 		this.World.Assets.m.BrothersMax = 27;
-		this.World.Tags.set("IsLegendsDruid", true);
+		this.World.Flags.set("IsLegendsDruid", true);
 	}
 
 	function onCombatFinished()
@@ -201,7 +171,7 @@ foreach (b in this.World.getPlayerRoster().getAll())
 
 		foreach( bro in roster )
 		{
-			if (bro.getTags().get("IsPlayerCharacter"))
+			if (bro.getFlags().get("IsPlayerCharacter"))
 			{
 				return true;
 			}
@@ -210,7 +180,7 @@ foreach (b in this.World.getPlayerRoster().getAll())
 		return false;
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 
 		local r;

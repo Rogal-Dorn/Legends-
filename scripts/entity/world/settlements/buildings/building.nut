@@ -101,6 +101,7 @@ this.building <- {
 		local medicineRarityMult = this.getSettlement().getModifiers().MedicalPriceMult;
 		local mineralRarityMult = this.getSettlement().getModifiers().MineralRarityMult;
 		local buildingRarityMult = this.getSettlement().getModifiers().BuildingRarityMult;
+		local isTrader = this.World.Retinue.hasFollower("follower.trader");
 
 		foreach( i in _list )
 		{
@@ -109,10 +110,61 @@ this.building <- {
 			for( local num = 0; true;  )
 			{
 				local p = this.Math.rand(0, 100) * rarityMult;
+				local item;
+				local IsHelm = false;
 
+				// if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+				// {
+				// 	local script = i.S;
+				// 	local index = script.find("helmets/");
+				// 	if (index != null)
+				// 	{
+				// 		local ugs = 0;
+				// 		local r = -1;
+				// 		IsHelm = true;
+
+				// 		script = script.slice(index + "helmets/".len());
+				// 		item = this.Const.World.Common.pickHelmet([
+				// 			[1, script]
+				// 		]);
+
+				// 		local upgrades = item.getUpgrades();
+				// 		foreach (u in upgrades)
+				// 			if (u == 1)
+				// 				ugs += 1;
+
+				// 		if (ugs > 0)
+				// 			r = this.Math.rand(-1, ugs);
+
+				// 		if (r == -1)
+				// 		{
+				// 			break; //sell full piece if -1, means that no upgrades were found OR we rolled on sell the full piece 
+				// 		}
+				// 		else if (r == 0)
+				// 		{
+				// 			foreach( i, u in upgrades )
+				// 				item.removeUpgrade(i);
+				// 			break; //sell base layer after removing all upgrades
+				// 		}
+				// 		else
+				// 		{
+				// 			foreach (i, u in upgrades )
+				// 				if ( u == 1 ) {
+				// 					r -= 1;
+				// 					if (r == 0) {
+				// 						item = item.removeUpgrade(i)
+				// 						break; //sell just one upgrade from the helmet
+				// 					}
+				// 				}
+
+				// 		}
+				// 	}
+				// }
 				if (p >= r)
 				{
-					local item = this.new("scripts/items/" + i.S);
+					if (!IsHelm)
+						item = this.new("scripts/items/" + i.S);
+
 					if (item == null)
 					{
 						break;
@@ -159,7 +211,7 @@ this.building <- {
 
 				num = ++num;
 
-				if (num >= 3)
+				if (num >= 3 || !isTrader && num >= 2 && item.isItemType(this.Const.Items.ItemType.TradeGood))
 				{
 					break;
 				}
@@ -186,7 +238,7 @@ this.building <- {
 	{
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 	}
 

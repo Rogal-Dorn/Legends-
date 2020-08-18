@@ -39,8 +39,9 @@ this.ai_recover <- this.inherit("scripts/ai/tactical/behavior", {
 
 		local myTile = _entity.getTile();
 		local inZonesOfControl = myTile.getZoneOfControlCountOtherThan(_entity.getAlliedFactions());
+		local isDisarmed = !_entity.getCurrentProperties().IsAbleToUseWeaponSkills;
 
-		if (inZonesOfControl != 0)
+		if (inZonesOfControl != 0 && (!isDisarmed || _entity.isArmedWithShield()))
 		{
 			return this.Const.AI.Behavior.Score.Zero;
 		}

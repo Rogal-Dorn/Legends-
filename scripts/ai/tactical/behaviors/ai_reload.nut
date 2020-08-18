@@ -1,7 +1,8 @@
 this.ai_reload <- this.inherit("scripts/ai/tactical/behavior", {
 	m = {
 		PossibleSkills = [
-			"actives.reload_bolt"
+			"actives.reload_bolt",
+			"actives.reload_handgonne"
 		],
 		Skill = null
 	},

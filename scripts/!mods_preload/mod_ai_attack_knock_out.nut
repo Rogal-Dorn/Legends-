@@ -10,10 +10,11 @@
 		local attackSkill = _entity.getSkills().getAttackOfOpportunity();
         if (attackSkill == null)
         {
-            return {
+            this.m.BestTarget = {
                 Target = null,
                 Score = 0.0
-		    }
+            };
+            return true;
         }
 
         return fn(_entity, _skill, _targets)

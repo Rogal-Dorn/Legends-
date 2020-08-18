@@ -34,7 +34,7 @@ this.messenger_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.Hairs = this.Const.Hair.CommonMale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.Tidy;
-		this.m.Body = "bust_naked_body_00";
+
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Notorious;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[3];
@@ -78,6 +78,7 @@ this.messenger_background <- this.inherit("scripts/skills/backgrounds/character_
 			Class = [],
 			Magic = []
 		}
+		this.m.Bodies = this.Const.Bodies.Skinny;
 	}
 
 	function getTooltip()
@@ -155,16 +156,12 @@ this.messenger_background <- this.inherit("scripts/skills/backgrounds/character_
 			items.equip(this.new("scripts/items/armor/linen_tunic"));
 		}
 
-		r = this.Math.rand(0, 2);
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, ""],
+			[1, "hood"],
+			[1, "straw_hat"]
+		]));
 
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/hood"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/straw_hat"));
-		}
 	}
 
 	function onAddLegendEquipment()
@@ -259,16 +256,11 @@ this.messenger_background <- this.inherit("scripts/skills/backgrounds/character_
 			items.equip(armor);
 		}
 
-		r = this.Math.rand(0, 2);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/hood"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/straw_hat"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, ""],
+			[1, "hood"],
+			[1, "straw_hat"]
+		]));
 	}
 
 });

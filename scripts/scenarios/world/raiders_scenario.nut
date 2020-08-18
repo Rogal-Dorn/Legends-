@@ -72,7 +72,7 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 			items.equip(this.new("scripts/items/armor/barbarians/reinforced_animal_hide_armor"));
 		}
 
-		items.equip(this.new("scripts/items/helmets/barbarians/bear_headpiece"));
+		items.equip(this.Const.World.Common.pickHelmet([[1, "barbarians/bear_headpiece"]]));
 		bros[1].setStartValuesEx([
 			"barbarian_background"
 		]);
@@ -115,7 +115,7 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		} else {
 			items.equip(this.new("scripts/items/armor/barbarians/scrap_metal_armor"));
 		}
-		items.equip(this.new("scripts/items/helmets/barbarians/leather_headband"));
+		items.equip(this.Const.World.Common.pickHelmet([[1, "barbarians/leather_headband"]]));
 		bros[2].setStartValuesEx([
 			"barbarian_background"
 		]);
@@ -158,7 +158,7 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 			items.equip(this.new("scripts/items/armor/barbarians/hide_and_bone_armor"));
 		}
 
-		items.equip(this.new("scripts/items/helmets/barbarians/leather_helmet"));
+		items.equip(this.Const.World.Common.pickHelmet([[1, "barbarians/leather_helmet"]]));
 		bros[3].setStartValuesEx([
 			"monk_background"
 		]);
@@ -170,29 +170,8 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		local talents = bros[3].getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.Bravery] = 3;
-		foreach( bro in bros )
-		{
-			local val = this.World.State.addNewID(bro);
-			bro.m.CompanyID = val;
-		}
-		if (this.World.LegendsMod.Configs().RelationshipsEnabled())
-{
-    local avgAlignment = 0;
-    foreach (bro in this.World.getPlayerRoster().getAll())
-    {
-        if (bro.getAlignment() <= this.Const.LegendMod.Alignment.NeutralMin)
-        {
-            avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMin);
-        }
-        else if (bro.getAlignment() >= this.Const.LegendMod.Alignment.NeutralMax)
-        {
-            avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMax);
-        }
-    }
-    avgAlignment *= (10 / this.World.getPlayerRoster().getSize());
-    this.World.Assets.addMoralReputation(avgAlignment);
-}
-		this.World.Assets.m.BusinessReputation = -100;
+		this.World.Assets.m.BusinessReputation = -50;
+		this.World.Assets.m.MoralReputation = -30;
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/goat_cheese_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/smoked_ham_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/loot/silverware_item"));
@@ -331,13 +310,6 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 			], this.Const.Music.CrossFadeTime);
 			this.World.Events.fire("event.raiders_scenario_intro");
 		}, null);
-foreach (b in this.World.getPlayerRoster().getAll())
-		{
-			foreach (add in this.World.getPlayerRoster().getAll())
-			{
-				b.changeActiveRelationship(add, this.Math.rand(0, 10));
-			}
-		}
 	}
 
 	function isDroppedAsLoot( _item )
@@ -345,7 +317,7 @@ foreach (b in this.World.getPlayerRoster().getAll())
 		return this.Math.rand(1, 100) <= 15;
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 		if (_list.len() >= 10)
 		{

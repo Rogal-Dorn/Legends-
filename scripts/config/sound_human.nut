@@ -204,12 +204,6 @@ gt.Const.HumanSounds <- [
 			"sounds/humans/4/human_fatigue_03.wav"
 		],
 		Flee = [
-			"sounds/humans/4/human_flee_05.wav",
-			"sounds/humans/4/human_flee_06.wav",
-			"sounds/humans/4/human_flee_07.wav",
-			"sounds/humans/4/human_flee_08.wav",
-			"sounds/humans/4/human_flee_09.wav",
-			"sounds/humans/4/human_flee_10.wav",
 			"sounds/humans/4/human_fatigue_01.wav",
 			"sounds/humans/4/human_fatigue_02.wav",
 			"sounds/humans/4/human_fatigue_03.wav"

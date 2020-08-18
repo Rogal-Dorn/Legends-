@@ -39,7 +39,7 @@ this.lindwurm_acid_effect <- this.inherit("scripts/skills/skill", {
 			}
 		];
 
-		if (!this.getContainer().getActor().getTags().has("head_immune_to_acid"))
+		if (!this.getContainer().getActor().getFlags().has("head_immune_to_acid"))
 		{
 			ret.push({
 				id = 10,
@@ -49,7 +49,7 @@ this.lindwurm_acid_effect <- this.inherit("scripts/skills/skill", {
 			});
 		}
 
-		if (!this.getContainer().getActor().getTags().has("body_immune_to_acid"))
+		if (!this.getContainer().getActor().getFlags().has("body_immune_to_acid"))
 		{
 			ret.push({
 				id = 10,
@@ -78,8 +78,8 @@ this.lindwurm_acid_effect <- this.inherit("scripts/skills/skill", {
 		{
 			this.m.LastRoundApplied = this.Time.getRound();
 			local actor = this.getContainer().getActor();
-			local head_affected = !actor.getTags().has("head_immune_to_acid");
-			local body_affected = !actor.getTags().has("body_immune_to_acid");
+			local head_affected = !actor.getFlags().has("head_immune_to_acid");
+			local body_affected = !actor.getFlags().has("body_immune_to_acid");
 			local damage_applied = false;
 			this.spawnIcon("status_effect_78", actor.getTile());
 

@@ -13,6 +13,28 @@ this.beast_faction <- this.inherit("scripts/factions/faction", {
 		this.m.IsRelationDecaying = false;
 	}
 
+	function addPlayerRelation( _r, _reason = "" )
+	{
+	}
+
+	function addPlayerRelationEx( _r, _reason = "" )
+	{
+	}
+
+	function getCombatMusic()
+	{
+		local playerTile = this.World.State.getPlayer().getTile();
+
+		if (this.Const.DLC.Desert && (playerTile.Type == this.Const.World.TerrainType.Desert || playerTile.Type == this.Const.World.TerrainType.Oasis || playerTile.TacticalType == this.Const.World.TerrainTacticalType.DesertHills))
+		{
+			return this.Const.Music.BeastsTracksSouth;
+		}
+		else
+		{
+			return this.m.CombatMusic;
+		}
+	}
+
 	function onSerialize( _out )
 	{
 		this.faction.onSerialize(_out);

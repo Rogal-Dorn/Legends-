@@ -125,7 +125,7 @@ this.main_menu_module <- this.inherit("scripts/ui/screens/ui_module", {
 			this.m.OnNewCampaignPressedListener();
 		}
 	}
-	
+
 	function onNewLegendCampaignButtonPressed()
 	{
 		if (this.m.OnNewLegendCampaignPressedListener != null)

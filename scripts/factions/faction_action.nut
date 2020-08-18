@@ -68,7 +68,7 @@ this.faction_action <- {
 			return;
 		}
 
-		if (_isNewCampaign && this.m.IsRunOnNewCampaign || this.Time.getVirtualTimeF() > this.m.CooldownUntil)
+		if (_isNewCampaign && this.m.IsRunOnNewCampaign || this.Time.getVirtualTimeF() >= this.m.CooldownUntil)
 		{
 			this.onUpdate(this.m.Faction);
 		}
@@ -268,7 +268,7 @@ this.faction_action <- {
 				{
 					local next = tile.getNextTile(i);
 
-					if (next.HasRoad || next.Type == this.Const.World.TerrainType.Ocean)
+					if (next.HasRoad || next.Type == this.Const.World.TerrainType.Ocean || _maxDistanceToAllies > 1000 && next.Type == this.Const.World.TerrainType.Shore)
 					{
 						abort = true;
 						break;
@@ -497,7 +497,7 @@ this.faction_action <- {
 		return null;
 	}
 
-	function getReputationToDifficultyMult()
+	function getScaledDifficultyMult()
 	{
 		local s = this.Math.maxf(0.5, 0.6 * this.Math.pow(0.01 * this.World.State.getPlayer().getStrength(), 0.9));
 		local d = this.Math.minf(4.0, s + this.Math.minf(1.0, this.World.getTime().Days * 0.01));

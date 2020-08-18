@@ -24,9 +24,24 @@ this.perk_fearsome <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
-		if ((this.Time.getFrame() == this.m.LastFrameApplied || this.m.SkillCount == this.Const.SkillCounter) && _targetEntity.getID() == this.m.LastEnemyAppliedTo)
+		if (_targetEntity.getMoraleState() == this.Const.MoraleState.Ignore)
 		{
 			return;
+		}
+
+		if ((this.Time.getFrame() == this.m.LastFrameApplied || this.m.SkillCount == this.Const.SkillCounter) && _targetEntity.getID() == this.m.LastEnemyAppliedTo)
+		{
+			if (_damageInflictedHitpoints >= this.Const.Morale.OnHitMinDamage)
+			{
+				this.spawnIcon("perk_27", _targetEntity.getTile());
+			}
+
+			return;
+		}
+
+		if (_damageInflictedHitpoints >= 1)
+		{
+			this.spawnIcon("perk_27", _targetEntity.getTile());
 		}
 
 		this.m.LastFrameApplied = this.Time.getFrame();
@@ -35,8 +50,13 @@ this.perk_fearsome <- this.inherit("scripts/skills/skill", {
 
 		if (_damageInflictedHitpoints >= 1 && _damageInflictedHitpoints < this.Const.Morale.OnHitMinDamage)
 		{
-			_targetEntity.checkMorale(-1, this.Const.Morale.OnHitBaseDifficulty * (1.0 - _targetEntity.getHitpoints() / _targetEntity.getHitpointsMax()));
+			_targetEntity.checkMorale(-1, this.Const.Morale.OnHitBaseDifficulty * (1.0 - _targetEntity.getHitpoints() / _targetEntity.getHitpointsMax()) - this.getContainer().getActor().getCurrentProperties().ThreatOnHit);
 		}
+	}
+
+	function onAfterUpdate( _properties )
+	{
+		_properties.ThreatOnHit += this.Math.min(20, this.Math.max(0, _properties.getBravery() * 0.2));
 	}
 
 	function onCombatStarted()

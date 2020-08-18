@@ -107,11 +107,9 @@ this.legends_mountains_fort <- this.inherit("scripts/entity/world/settlements/le
 			"deserter_background",
 			"retired_soldier_background",
 			"retired_soldier_background",
-						"apprentice_background",
+			"apprentice_background",
 			"houndmaster_background",
-			"female_beggar_background",
 			"brawler_background",
-			"female_daytaler_background",
 			"mason_background",
 			"messenger_background",
 			"militia_background",
@@ -148,7 +146,7 @@ this.legends_mountains_fort <- this.inherit("scripts/entity/world/settlements/le
 			"retired_soldier_background",
 			"sellsword_background",
 			"sellsword_background",
-						"apprentice_background",
+			"apprentice_background",
 			"apprentice_background",
 			"houndmaster_background",
 			"brawler_background",
@@ -161,14 +159,11 @@ this.legends_mountains_fort <- this.inherit("scripts/entity/world/settlements/le
 			"militia_background",
 			"miner_background",
 			"miner_background",
-			"female_servant_background",
 			"shepherd_background",
 			"witchhunter_background",
-			"female_adventurous_noble_background",
 			"bastard_background",
 			"deserter_background",
 			"deserter_background",
-			"female_disowned_noble_background",
 			"retired_soldier_background",
 			"sellsword_background",
 			"sellsword_background"
@@ -231,7 +226,6 @@ this.legends_mountains_fort <- this.inherit("scripts/entity/world/settlements/le
 			"ratcatcher_background",
 			"vagabond_background",
 			"witchhunter_background",
-			"female_adventurous_noble_background",
 			"bastard_background",
 			"deserter_background",
 			"deserter_background",
@@ -248,6 +242,17 @@ this.legends_mountains_fort <- this.inherit("scripts/entity/world/settlements/le
 			"hedge_knight_background",
 			"hedge_knight_background"
 		]]
+		this.m.FemaleDraftLists = [[
+			"female_beggar_background",
+			"female_daytaler_background",
+		],[
+			"female_servant_background",
+			"female_adventurous_noble_background",
+			"female_disowned_noble_background",
+		],[
+			"female_adventurous_noble_background",
+		]]
+
 		this.m.StablesLists = [ [
 			"legend_donkey",
 			"legend_horse_rouncey"

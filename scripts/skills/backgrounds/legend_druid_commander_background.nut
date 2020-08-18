@@ -66,7 +66,8 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.Untidy;
 		this.m.BeardChance = 100;
-		this.m.Body = "bust_naked_body_04";
+		this.m.Bodies = this.Const.Bodies.LegendTattos;
+		this.m.Ethnicity = 2;
 		this.m.Level = 3;
 		this.m.IsCombatBackground = true;
 		this.m.IsLowborn = true;
@@ -145,9 +146,9 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyOrk,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyGoblin,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyBandit,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyNoble				
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyNoble
 				this.Const.Perks.PerkDefs.LegendPoisonImmunity,
-				this.Const.Perks.PerkDefs.LegendPotionBrewer,	
+				this.Const.Perks.PerkDefs.LegendPotionBrewer,
 				this.Const.Perks.PerkDefs.SpecThrowing
 			],
 			[
@@ -180,7 +181,7 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.Stalwart,
 				this.Const.Perks.PerkDefs.LegendFreedomOfMovement,
 				this.Const.Perks.PerkDefs.LegendDrumsOfLife,
-				this.Const.Perks.PerkDefs.LegendMasterAnger		
+				this.Const.Perks.PerkDefs.LegendMasterAnger
 			]
 		];
 
@@ -209,7 +210,7 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsFemaleBackground = true;
 	}
 
@@ -288,21 +289,6 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 		return c;
 	}
 
-	function onAdded()
-	{
-		this.character_background.onAdded();
-		local actor = this.getContainer().getActor();
-
-		if (this.m.IsFemaleBackground == true)
-		{
-			actor.setName(this.Const.Strings.CharacterNamesFemaleNorse[this.Math.rand(0, this.Const.Strings.CharacterNamesFemaleNorse.len() - 1)]);
-		}
-		else
-		{
-			actor.setName(this.Const.Strings.BarbarianNames[this.Math.rand(0, this.Const.Strings.BarbarianNames.len() - 1)]);
-		}
-	}
-
 	function onSetAppearance()
 	{
 		local actor = this.getContainer().getActor();
@@ -336,8 +322,8 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 		this.character_background.onAdded();
 		local actor = this.getContainer().getActor();
 		actor.setTitle("The Druid");
-		
-		
+
+
 	}
 
 
@@ -352,6 +338,10 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");
 		stash.removeByID("supplies.ground_grains");
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "barbarians/bear_headpiece"]
+		]));
+
 		items.equip(this.new("scripts/items/accessory/legend_wolfsbane_necklace_item"));
 
 	}
@@ -406,7 +396,9 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 		{
 			armor.setUpgrade(plate)
 		}
-		items.equip(this.new("scripts/items/helmets/barbarians/bear_headpiece"));
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "barbarians/bear_headpiece"]
+		]));
 	}
 
 	function onSerialize( _out )

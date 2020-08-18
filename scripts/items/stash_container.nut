@@ -224,6 +224,27 @@ this.stash_container <- {
 					index = i
 				};
 			}
+
+			if (this.m.Items[i] != null && this.m.Items[i].getOldInstanceID() == _instanceID)
+			{
+				return {
+					item = this.m.Items[i],
+					index = i
+				};
+			}
+		}
+
+		return null;
+	}
+
+	function getItemByID( _id )
+	{
+		for( local i = 0; i < this.m.Items.len(); i = ++i )
+		{
+			if (this.m.Items[i] != null && this.m.Items[i].getID() == _id)
+			{
+				return this.m.Items[i];
+			}
 		}
 
 		return null;
@@ -442,6 +463,14 @@ this.stash_container <- {
 		{
 			return 1;
 		}
+		else if (_item1.getCategories() > _item2.getCategories())
+		{
+			return -1;
+		}
+		else if (_item1.getCategories() < _item2.getCategories())
+		{
+			return 1;
+		}
 		else if (_item1.getID() > _item2.getID())
 		{
 			return -1;
@@ -456,9 +485,27 @@ this.stash_container <- {
 		}
 	}
 
+	function hasItem(_id)
+	{
+		foreach(item in this.m.Items)
+		{
+			if (item == null)
+			{
+				continue;
+			}
+
+			if (item.getID() == _id)
+			{
+				return true
+			}
+		}
+		return false;
+	}
+
 	function onSerialize( _out )
 	{
 		_out.writeU16(this.m.Items.len());
+		_out.writeU16(this.m.Capacity);
 
 		for( local i = 0; i != this.m.Items.len(); i = ++i )
 		{
@@ -481,6 +528,7 @@ this.stash_container <- {
 	{
 		this.clear();
 		local numItems = _in.readU16();
+		this.m.Capacity = _in.readU16();
 
 		if (this.m.Items.len() < numItems)
 		{
@@ -493,7 +541,8 @@ this.stash_container <- {
 
 			if (hasItem)
 			{
-				local item = this.new(this.IO.scriptFilenameByHash(_in.readI32()));
+				local classname = this.IO.scriptFilenameByHash(_in.readI32());
+				local item = this.new(classname);
 				item.onDeserialize(_in);
 				this.m.Items[i] = item;
 			}

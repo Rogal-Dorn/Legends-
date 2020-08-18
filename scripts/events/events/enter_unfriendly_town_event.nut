@@ -44,7 +44,7 @@ this.enter_unfriendly_town_event <- this.inherit("scripts/events/event", {
 
 		foreach( t in towns )
 		{
-			if (t.isMilitary())
+			if (t.isMilitary() || t.isSouthern())
 			{
 				continue;
 			}

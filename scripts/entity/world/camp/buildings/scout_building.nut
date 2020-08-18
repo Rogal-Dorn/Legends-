@@ -71,7 +71,7 @@ this.scout_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 			return false;
 		}
 
-		return !this.World.Tags.get("HasLegendCampScouting")
+		return !this.World.Flags.get("HasLegendCampScouting")
 	}
 
 	function getUpgraded()

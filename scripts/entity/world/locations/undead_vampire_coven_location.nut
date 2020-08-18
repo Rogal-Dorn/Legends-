@@ -10,6 +10,11 @@ this.undead_vampire_coven_location <- this.inherit("scripts/entity/world/locatio
 		this.location.create();
 		this.m.TypeID = "location.undead_vampire_coven";
 		this.m.LocationType = this.Const.World.LocationType.Lair;
+		this.m.CombatLocation.Template[0] = "tactical.ruins";
+		this.m.CombatLocation.Fortification = this.Const.Tactical.FortificationType.Walls;
+		this.m.CombatLocation.CutDownTrees = false;
+		this.m.CombatLocation.ForceLineBattle = true;
+		this.m.CombatLocation.AdditionalRadius = 5;
 		local r = this.Math.rand(1, 2);
 
 		if (r == 1)
@@ -54,7 +59,17 @@ this.undead_vampire_coven_location <- this.inherit("scripts/entity/world/locatio
 	{
 		this.location.onInit();
 		local body = this.addSprite("body");
-		body.setBrush("world_vampire_coven");
+		local isSouthern = this.getTile().Type == this.Const.World.TerrainType.Desert || this.getTile().Type == this.Const.World.TerrainType.Steppe || this.getTile().Type == this.Const.World.TerrainType.Oasis || this.getTile().TacticalType == this.Const.World.TerrainTacticalType.DesertHills;
+
+		if (isSouthern && this.Const.DLC.Desert)
+		{
+			body.setBrush("world_vampire_coven_02");
+			this.m.CombatLocation.Template[0] = "tactical.southern_ruins";
+		}
+		else
+		{
+			body.setBrush("world_vampire_coven");
+		}
 	}
 
 });

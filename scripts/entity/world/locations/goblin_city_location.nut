@@ -10,6 +10,9 @@ this.goblin_city_location <- this.inherit("scripts/entity/world/location", {
 		this.location.create();
 		this.m.TypeID = "location.goblin_city";
 		this.m.LocationType = this.Const.World.LocationType.Lair | this.Const.World.LocationType.Unique;
+		this.m.CombatLocation.Template[0] = "tactical.goblin_camp";
+		this.m.CombatLocation.Fortification = this.Const.Tactical.FortificationType.Walls;
+		this.m.CombatLocation.CutDownTrees = true;
 		this.m.IsShowingDefenders = false;
 		this.m.IsShowingBanner = true;
 		this.m.IsDespawningDefenders = false;
@@ -212,7 +215,8 @@ this.goblin_city_location <- this.inherit("scripts/entity/world/location", {
 			"loot/goblin_rank_insignia_item",
 			"misc/legend_ancient_scroll_item"
 		], _lootTable);
-		_lootTable.push(this.new("scripts/items/helmets/legendary/emperors_countenance"));
+		_lootTable.push(this.Const.World.Common.pickHelmet([[1, "legendary/emperors_countenance"]]));
+
 	}
 
 	function onInit()

@@ -2,6 +2,8 @@ this.ai_disengage <- this.inherit("scripts/ai/tactical/behavior", {
 	m = {
 		TargetTile = null,
 		Target = null,
+		JustMove = false,
+		IsMoving = false,
 		PossibleSkills = [
 			"actives.footwork"
 		],
@@ -19,6 +21,8 @@ this.ai_disengage <- this.inherit("scripts/ai/tactical/behavior", {
 		this.m.TargetTile = null;
 		this.m.Target = null;
 		this.m.Skill = null;
+		this.m.JustMove = false;
+		this.m.IsMoving = false;
 		local scoreMult = this.getProperties().BehaviorMult[this.m.ID];
 
 		if (_entity.getActionPoints() < this.Const.Movement.AutoEndTurnBelowAP)
@@ -58,6 +62,7 @@ this.ai_disengage <- this.inherit("scripts/ai/tactical/behavior", {
 		local currentBestTargetScore = 0.0;
 		local inMeleeWithRanged = false;
 		local hasShieldWall = _entity.getSkills().hasSkill("effects.shieldwall");
+		local isOnBurningTile = this.hasNegativeTileEffect(myTile, _entity);
 
 		if (!rangedUnit)
 		{
@@ -98,6 +103,7 @@ this.ai_disengage <- this.inherit("scripts/ai/tactical/behavior", {
 		settings.AlliedFactions = _entity.getAlliedFactions();
 		settings.Faction = _entity.getFaction();
 		local opponents = this.getAgent().getKnownOpponents();
+		local accumulatedAOO = 0;
 		local bestTile;
 		local bestScore = -9000.0;
 		local bestTarget;
@@ -112,6 +118,21 @@ this.ai_disengage <- this.inherit("scripts/ai/tactical/behavior", {
 				local nextTile = myTile.getNextTile(i);
 				local goodReason = false;
 				local score = 1.0;
+
+				if (nextTile.IsOccupiedByActor)
+				{
+					local e = nextTile.getEntity();
+
+					if (e.isExertingZoneOfControl() && this.Math.abs(nextTile.Level - myTile.Level) <= 1 && !e.isAlliedWith(_entity))
+					{
+						local attackSkill = e.getSkills().getAttackOfOpportunity();
+
+						if (attackSkill != null)
+						{
+							accumulatedAOO = accumulatedAOO + attackSkill.getHitchance(_entity);
+						}
+					}
+				}
 
 				if (!nextTile.IsEmpty)
 				{
@@ -212,7 +233,7 @@ this.ai_disengage <- this.inherit("scripts/ai/tactical/behavior", {
 								}
 							}
 
-							if ((nextTile.Level > myTile.Level || myTile.IsBadTerrain && !nextTile.IsBadTerrain) && numNewZOC <= inZonesOfControl && numNewZOC != 0 && currentBestTargetScore >= bestTargetScore)
+							if ((nextTile.Level > myTile.Level || myTile.IsBadTerrain && !nextTile.IsBadTerrain || isOnBurningTile && !this.hasNegativeTileEffect(nextTile, _entity)) && numNewZOC <= inZonesOfControl && numNewZOC != 0 && currentBestTargetScore >= bestTargetScore)
 							{
 								score = score * (this.Const.AI.Behavior.DisengageBetterTileMult + bestTargetScore * this.Const.AI.Behavior.DisengageTargetMult);
 								goodReason = true;
@@ -235,6 +256,11 @@ this.ai_disengage <- this.inherit("scripts/ai/tactical/behavior", {
 			return this.Const.AI.Behavior.Score.Zero;
 		}
 
+		if (accumulatedAOO <= 15)
+		{
+			this.m.JustMove = true;
+		}
+
 		this.m.TargetTile = bestTile;
 		this.m.Target = bestTarget;
 		scoreMult = scoreMult * bestScore;
@@ -245,33 +271,79 @@ this.ai_disengage <- this.inherit("scripts/ai/tactical/behavior", {
 	{
 		if (this.m.IsFirstExecuted)
 		{
+			if (this.Const.AI.VerboseMode)
+			{
+				this.logInfo("* " + _entity.getName() + ": Disengaging!");
+			}
+
 			this.getAgent().adjustCameraToTarget(this.m.TargetTile);
 			this.m.IsFirstExecuted = false;
 			return false;
 		}
 
-		if (this.Const.AI.VerboseMode)
+		if (this.m.IsMoving)
 		{
-			this.logInfo("* " + _entity.getName() + ": Disengaging!");
+			local navigator = this.Tactical.getNavigator();
+
+			if (!navigator.travel(_entity, _entity.getActionPoints(), _entity.getFatigueMax() - _entity.getFatigue()))
+			{
+				this.m.Target = null;
+				this.m.TargetTile = null;
+				this.m.Skill = null;
+				return true;
+			}
+		}
+		else if (this.m.JustMove)
+		{
+			local navigator = this.Tactical.getNavigator();
+			local settings = navigator.createSettings();
+			settings.ActionPointCosts = _entity.getActionPointCosts();
+			settings.FatigueCosts = _entity.getFatigueCosts();
+			settings.FatigueCostFactor = 0.0;
+			settings.ActionPointCostPerLevel = _entity.getLevelActionPointCost();
+			settings.FatigueCostPerLevel = _entity.getLevelFatigueCost();
+			settings.AllowZoneOfControlPassing = true;
+			settings.ZoneOfControlCost = 0;
+			settings.AlliedFactions = _entity.getAlliedFactions();
+			settings.Faction = _entity.getFaction();
+			navigator.findPath(_entity.getTile(), this.m.TargetTile, settings, 0);
+			local movement = navigator.getCostForPath(_entity, settings, _entity.getActionPoints(), _entity.getFatigueMax() - _entity.getFatigue());
+
+			if (movement.Tiles == 0)
+			{
+				this.m.JustMove = false;
+				this.m.IsMoving = false;
+				return false;
+			}
+			else
+			{
+				this.m.IsMoving = true;
+				this.m.JustMove = false;
+				return false;
+			}
+		}
+		else
+		{
+			this.m.Skill.use(this.m.TargetTile);
+
+			if (!_entity.isHiddenToPlayer() || this.m.TargetTile.IsVisibleForPlayer)
+			{
+				this.getAgent().declareEvaluationDelay(1000);
+				this.getAgent().declareAction();
+			}
+
+			if (this.m.Target != null && this.getAgent().getForcedOpponent() == null)
+			{
+				this.getAgent().setForcedOpponent(this.m.Target);
+			}
+
+			this.m.Target = null;
+			this.m.TargetTile = null;
+			this.m.Skill = null;
+			return true;
 		}
 
-		this.m.Skill.use(this.m.TargetTile);
-
-		if (!_entity.isHiddenToPlayer() || this.m.TargetTile.IsVisibleForPlayer)
-		{
-			this.getAgent().declareEvaluationDelay(1000);
-			this.getAgent().declareAction();
-		}
-
-		if (this.m.Target != null && this.getAgent().getForcedOpponent() == null)
-		{
-			this.getAgent().setForcedOpponent(this.m.Target);
-		}
-
-		this.m.Target = null;
-		this.m.TargetTile = null;
-		this.m.Skill = null;
-		return true;
+		return false;
 	}
 
 });

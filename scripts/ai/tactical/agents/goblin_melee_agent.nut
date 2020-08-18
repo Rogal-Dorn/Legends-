@@ -38,8 +38,7 @@ this.goblin_melee_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_defend_shieldwall"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_defend_knock_back"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_switchto_melee"));
-		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_switchto_ranged"));
-		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_hook"));
+		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_switchto_ranged"))
 		if (this.Math.rand(1, 100) <= this.Const.AI.Agent.ChanceToHaveProtectBehavior)
 		{
 			this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_protect"));
