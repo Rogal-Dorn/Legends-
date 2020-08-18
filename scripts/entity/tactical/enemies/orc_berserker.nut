@@ -416,16 +416,12 @@ this.orc_berserker <- this.inherit("scripts/entity/tactical/actor", {
 			this.m.Items.equip(this.new("scripts/items/weapons/greenskins/legend_skullbreaker"));
 		}
 
-		r = this.Math.rand(1, 5);
-
-		if (r == 1)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/greenskins/orc_berserker_light_armor"));
-		}
-		else if (r == 2)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/greenskins/orc_berserker_medium_armor"));
-		}
+		local item = this.Const.World.Common.pickArmor([
+			[1, "greenskins/orc_berserker_light_armor"],
+			[1, "greenskins/orc_berserker_medium_armor"],
+			[3, ""]
+		]);
+		this.m.Items.equip(item);
 
 
 		local item = this.Const.World.Common.pickHelmet([
