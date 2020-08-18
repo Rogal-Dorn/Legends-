@@ -43,7 +43,7 @@ this.legend_nun_background <- this.inherit("scripts/skills/backgrounds/character
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsFemaleBackground = true;
 		this.m.IsEducatedBackground = true;
 		this.m.IsCrusaderRecruitBackground = true;
@@ -146,7 +146,11 @@ this.legend_nun_background <- this.inherit("scripts/skills/backgrounds/character
 	function onAddEquipment()
 	{
 		local items = this.getContainer().getActor().getItems();
-		items.equip(this.new("scripts/items/helmets/legend_nun_habit"));
+
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "legend_nun_habit"]
+		]));
+
 		local r;
 		r = this.Math.rand(0, 3);
 
@@ -164,7 +168,9 @@ this.legend_nun_background <- this.inherit("scripts/skills/backgrounds/character
 	function onAddLegendEquipment()
 	{
 		local items = this.getContainer().getActor().getItems();
-		items.equip(this.new("scripts/items/helmets/legend_nun_habit"));
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "legend_nun_habit"]
+		]));
 
 		local cloths = [
             [0, ""],

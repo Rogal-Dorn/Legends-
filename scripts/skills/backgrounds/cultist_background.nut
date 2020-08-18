@@ -51,7 +51,8 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Untidy;
-		this.m.Body = "bust_naked_body_00";
+
+		this.m.Bodies = this.Const.Bodies.Skinny;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Merciless;
 		this.m.IsOutlawBackground = true;
@@ -104,7 +105,7 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.HairColors = this.Const.HairColors.Old;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsFemaleBackground = true;
 
 	}
@@ -173,21 +174,6 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			]
 		};
 		return c;
-	}
-
-	function onAdded()
-	{
-		this.character_background.onAdded();
-		local actor = this.getContainer().getActor();
-
-		if (this.m.IsFemaleBackground == true)
-		{
-			actor.setName(this.Const.Strings.CharacterNamesFemale[this.Math.rand(0, this.Const.Strings.CharacterNamesFemale.len() - 1)]);
-		}
-		else
-		{
-			actor.setName(this.Const.Strings.CharacterNames[this.Math.rand(0, this.Const.Strings.CharacterNames.len() - 1)]);
-		}
 	}
 
 	function onSetAppearance()
@@ -285,20 +271,11 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			items.equip(this.new("scripts/items/armor/cultist_leather_robe"));
 		}
 
-		r = this.Math.rand(0, 2);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/cultist_hood"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/cultist_leather_hood"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/helmets/hood"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "cultist_hood"],
+			[1, "hood"],
+			[1, "cultist_leather_hood"]
+		]));
 	}
 
 	function onAddLegendEquipment()
@@ -355,20 +332,12 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		local armor = this.Const.World.Common.pickLegendArmor(cloths)
 		items.equip(armor)
 
-		r = this.Math.rand(0, 2);
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "cultist_hood"],
+			[1, "hood"],
+			[1, "cultist_leather_hood"]
+		]));
 
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/cultist_hood"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/cultist_leather_hood"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/helmets/hood"));
-		}
 	}
 });
 

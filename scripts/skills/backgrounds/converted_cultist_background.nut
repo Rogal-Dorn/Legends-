@@ -33,7 +33,7 @@ this.converted_cultist_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Untidy;
-		this.m.Body = "bust_naked_body_00";
+
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Merciless;
 		this.m.PerkTreeDynamic = {
@@ -54,6 +54,7 @@ this.converted_cultist_background <- this.inherit("scripts/skills/backgrounds/ch
 			Class = [this.Const.Perks.NinetailsClassTree],
 			Magic = []
 		}
+		this.m.Bodies = this.Const.Bodies.Skinny;
 	}
 
 	function onBuildDescription()

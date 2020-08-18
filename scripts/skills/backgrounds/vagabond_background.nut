@@ -36,7 +36,7 @@ this.vagabond_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Untidy;
-		this.m.Body = "bust_naked_body_00";
+		this.m.Bodies = this.Const.Bodies.Skinny;
 		this.m.IsLowborn = true;
 		this.m.IsOutlawBackground = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Cruel;
@@ -161,16 +161,13 @@ this.vagabond_background <- this.inherit("scripts/skills/backgrounds/character_b
 			items.equip(this.new("scripts/items/armor/leather_tunic"));
 		}
 
-		r = this.Math.rand(0, 2);
 
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/hood"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/straw_hat"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, ""],
+			[1, "hood"],
+			[1, "straw_hat"]
+		]));
+
 	}
 
 	function onAddLegendEquipment()
@@ -275,16 +272,13 @@ this.vagabond_background <- this.inherit("scripts/skills/backgrounds/character_b
 
 			items.equip(armor);
 		}
-		r = this.Math.rand(0, 2);
 
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/hood"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/straw_hat"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, ""],
+			[1, "hood"],
+			[1, "straw_hat"]
+		]));
+
 	}
 });
 

@@ -25,8 +25,8 @@ this.legend_vampire_lord <- this.inherit("scripts/entity/tactical/actor", {
 			"sounds/enemies/vampire_idle_02.wav",
 			"sounds/enemies/vampire_idle_03.wav"
 		];
-		this.getTags().add("undead");
-		this.getTags().add("vampire");
+		this.getFlags().add("undead");
+		this.getFlags().add("vampire");
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/vampire_agent");
 		this.m.AIAgent.setActor(this);
 	}
@@ -312,7 +312,13 @@ this.legend_vampire_lord <- this.inherit("scripts/entity/tactical/actor", {
 	{
 
 		this.m.Items.equip(this.new("scripts/items/armor/legend_vampire_lord_armor"));
-		this.m.Items.equip(this.new("scripts/items/helmets/legend_vampire_lord_helmet"));
+		local item = this.Const.World.Common.pickHelmet([
+			[66, "legend_vampire_lord_helmet"]
+		])
+		if (item != null)
+		{
+			this.m.Items.equip(item);
+		}
 
 		local r = this.Math.rand(1, 100);
 

@@ -42,9 +42,9 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 				_event.m.Vala = roster.create("scripts/entity/tactical/player");
 				if (this.World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
 				{
-					_event.m.Vala.getTags().add("PlayerSkeleton");
-					_event.m.Vala.getTags().add("undead");
-					_event.m.Vala.getTags().add("skeleton");
+					_event.m.Vala.getFlags().add("PlayerSkeleton");
+					_event.m.Vala.getFlags().add("undead");
+					_event.m.Vala.getFlags().add("skeleton");
 				}
 				_event.m.Vala.setStartValuesEx(["legend_vala_background"]);
 				if (this.World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")

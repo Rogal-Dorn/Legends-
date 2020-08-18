@@ -53,7 +53,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 		this.m.Hairs = this.Const.Hair.Necromancer;
 		this.m.HairColors = this.Const.HairColors.Zombie;
 		this.m.Beards = this.Const.Beards.Raider;
-		this.m.Body = "bust_naked_body_00";
+
 		this.m.Level = 2;
 		this.m.IsUntalented = true;
 		this.m.IsOutlawBackground = true;
@@ -270,7 +270,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 		this.m.HairColors = this.Const.HairColors.Zombie;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsFemaleBackground = true;
 	}
 	function getTooltip()
@@ -360,7 +360,10 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 		this.getContainer().getActor().fillTalentValues(2, true);
 		local items = this.getContainer().getActor().getItems();
 
-		items.equip(this.new("scripts/items/helmets/dark_cowl"));
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "dark_cowl"]
+		]));
+
 		items.equip(this.new("scripts/items/armor/thick_dark_tunic"));
 		items.equip(this.new("scripts/items/weapons/legend_grisly_scythe"));
 		local stash = this.World.Assets.getStash()
@@ -378,8 +381,9 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 		talents[this.Const.Attributes.Hitpoints] = 3;
 		this.getContainer().getActor().fillTalentValues(2, true);
 		local items = this.getContainer().getActor().getItems();
-
-		items.equip(this.new("scripts/items/helmets/dark_cowl"));
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "dark_cowl"]
+		]));
 		items.equip(this.new("scripts/items/legend_armor/cloth/legend_dark_tunic"));
 		items.equip(this.new("scripts/items/weapons/legend_grisly_scythe"));
 		local stash = this.World.Assets.getStash()

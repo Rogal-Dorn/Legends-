@@ -37,9 +37,10 @@ this.brawler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Untidy;
-		this.m.Body = "bust_naked_body_01";
+
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Kind;
+		this.m.Bodies = this.Const.Bodies.Muscular;
 		this.m.IsCombatBackground = true;
 		this.m.IsOutlawBackground = true;
 		this.m.IsLowborn = true;

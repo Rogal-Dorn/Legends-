@@ -33,7 +33,7 @@ this.legend_female_inventor_commander_background <- this.inherit("scripts/skills
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsFemaleBackground = true;
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[2];
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[2];
@@ -203,16 +203,10 @@ this.legend_female_inventor_commander_background <- this.inherit("scripts/skills
 			items.equip(this.new("scripts/items/armor/apron"));
 		}
 
-		r = this.Math.rand(0, 1);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/mouth_piece"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/headscarf"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "mouth_piece"],
+			[1, "headscarf"]
+		]));
 
 		r = this.Math.rand(0, 1);
 
@@ -249,17 +243,10 @@ this.legend_female_inventor_commander_background <- this.inherit("scripts/skills
 		];
 		local armor = this.Const.World.Common.pickLegendArmor(cloths)
 		items.equip(armor)
-
-		r = this.Math.rand(0, 1);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/mouth_piece"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/headscarf"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "mouth_piece"],
+			[1, "headscarf"]
+		]));
 
 		r = this.Math.rand(0, 1);
 

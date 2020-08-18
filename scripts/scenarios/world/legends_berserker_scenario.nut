@@ -53,30 +53,8 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 		// bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_favoured_enemy_swordmaster"));
 		// bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_favoured_enemy_vampire"));
 		// bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_favoured_enemy_zombie"));
-		foreach( bro in bros )
-		{
-			local val = this.World.State.addNewID(bro);
-			bro.m.CompanyID = val;
-		}
 
-		if (this.World.LegendsMod.Configs().RelationshipsEnabled())
-{
-    local avgAlignment = 0;
-    foreach (bro in this.World.getPlayerRoster().getAll())
-    {
-        if (bro.getAlignment() <= this.Const.LegendMod.Alignment.NeutralMin)
-        {
-            avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMin);
-        }
-        else if (bro.getAlignment() >= this.Const.LegendMod.Alignment.NeutralMax)
-        {
-            avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMax);
-        }
-    }
-    avgAlignment *= (10 / this.World.getPlayerRoster().getSize());
-    this.World.Assets.addMoralReputation(avgAlignment);
-}
-		bros[0].getTags().set("IsPlayerCharacter", true);
+		bros[0].getFlags().set("IsPlayerCharacter", true);
 		bros[0].setVeteranPerks(2);
 		this.World.Assets.m.Money = this.World.Assets.m.Money;
 		this.World.Assets.m.Ammo = this.World.Assets.m.Ammo;
@@ -213,20 +191,13 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 			], this.Const.Music.CrossFadeTime);
 			this.World.Events.fire("event.legend_berserker_scenario_intro");
 		}, null);
-foreach (b in this.World.getPlayerRoster().getAll())
-		{
-			foreach (add in this.World.getPlayerRoster().getAll())
-			{
-				b.changeActiveRelationship(add, this.Math.rand(0, 10));
-			}
-		}
 	}
 
 	function onInit()
 	{
 		this.starting_scenario.onInit();
 		this.World.Assets.m.BrothersMax = 1;
-		this.World.Tags.set("IsLegendsBerserker", true);
+		this.World.Flags.set("IsLegendsBerserker", true);
 	}
 
 	function onCombatFinished()
@@ -235,7 +206,7 @@ foreach (b in this.World.getPlayerRoster().getAll())
 
 		foreach( bro in roster )
 		{
-			if (bro.getTags().get("IsPlayerCharacter"))
+			if (bro.getFlags().get("IsPlayerCharacter"))
 			{
 				return true;
 			}
@@ -245,7 +216,7 @@ foreach (b in this.World.getPlayerRoster().getAll())
 	}
 
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 		if (_list.len() <= 5)
 		{

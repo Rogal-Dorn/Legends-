@@ -44,7 +44,7 @@ this.legend_skin_ghoul_agent <- this.inherit("scripts/ai/tactical/agent", {
 
 		foreach( ally in this.m.KnownAllies )
 		{
-			if (ally.getTags().has("ghoul"))
+			if (ally.getFlags().has("ghoul"))
 			{
 				ghouls = ++ghouls;
 			}

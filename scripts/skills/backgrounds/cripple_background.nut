@@ -41,9 +41,10 @@ this.cripple_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Untidy;
-		this.m.Body = "bust_naked_body_00";
+
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.NeutralMin;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
+		this.m.Bodies = this.Const.Bodies.Skinny;
 		this.m.IsLowborn = true;
 		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[1];
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[2];
@@ -175,7 +176,9 @@ this.cripple_background <- this.inherit("scripts/skills/backgrounds/character_ba
 
 		if (r == 0)
 		{
-			local item = this.new("scripts/items/helmets/hood");
+			local item = this.Const.World.Common.pickHelmet([
+				[1, "hood"]
+			]);
 			item.setVariant(38);
 			items.equip(item);
 		}
@@ -220,7 +223,9 @@ this.cripple_background <- this.inherit("scripts/skills/backgrounds/character_ba
 
 		if (r == 0)
 		{
-			local item = this.new("scripts/items/helmets/hood");
+			local item = this.Const.World.Common.pickHelmet([
+				[1, "hood"]
+			]);
 			item.setVariant(38);
 			items.equip(item);
 		}

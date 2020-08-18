@@ -18,7 +18,7 @@ this.formations_container <- {
 
 	function create()
 	{
-        for( local i = 0; i < this.Const.Formations.Count; i = ++i )
+        for( local i = 0; i < this.Const.LegendMod.Formations.Count; i = ++i )
         {
             this.m.Positions.push(255);
             this.m.Items.push([]);
@@ -93,7 +93,7 @@ this.formations_container <- {
 	{
 		_out.writeU8(this.m.CurrentIndex);
 
-		for( local i = 0; i < this.Const.Formations.Count; i = ++i )
+		for( local i = 0; i < this.Const.LegendMod.Formations.Count; i = ++i )
         {
 		    _out.writeU8(this.m.Positions[i]);
             local items = this.m.Items[i];
@@ -114,7 +114,7 @@ this.formations_container <- {
 	function onDeserialize( _in )
 	{
 		this.m.CurrentIndex = _in.readU8();
-		for( local i = 0; i < this.Const.Formations.Count; i = ++i )
+		for( local i = 0; i < this.Const.LegendMod.Formations.Count; i = ++i )
         {
 		    this.m.Positions[i] = _in.readU8();
             local numItems = _in.readU8();

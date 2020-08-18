@@ -31,7 +31,7 @@ this.legend_blacksmith_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.m.Hairs = this.Const.Hair.CommonMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.Body = "bust_naked_body_01";
+
 		this.m.IsRangerRecruitBackground = true;
 		this.m.IsCrusaderRecruitBackground = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;

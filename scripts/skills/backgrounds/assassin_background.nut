@@ -22,6 +22,9 @@ this.assassin_background <- this.inherit("scripts/skills/backgrounds/character_b
 			"trait.night_blind",
 			"trait.ailing",
 			"trait.clubfooted",
+			"trait.dumb",
+			"trait.loyal",
+			"trait.clumsy",
 			"trait.fat",
 			"trait.tiny",
 			"trait.gluttonous",
@@ -59,15 +62,17 @@ this.assassin_background <- this.inherit("scripts/skills/backgrounds/character_b
 		];
 
 		this.m.Faces = this.Const.Faces.AllMale;
-		this.m.Hairs = this.Const.Hair.TidyMale;
-		this.m.HairColors = this.Const.HairColors.All;
-		this.m.Beards = this.Const.Beards.Tidy;
-		this.m.Body = "bust_naked_body_02";
+
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Merciless;
-		this.m.Level = 3;
+		this.m.Hairs = this.Const.Hair.CommonMale;
+		this.m.HairColors = this.Const.HairColors.Young;
+		this.m.Beards = this.Const.Beards.All;
+		this.m.Bodies = this.Const.Bodies.Skinny;
+		this.m.Level = 4;
 		this.m.IsOutlawBackground = true;
 		this.m.IsUntalented = true;
+		this.m.IsCombatBackground = true;
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[3];
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[1];
 		this.m.PerkTreeDynamic = {
@@ -103,23 +108,22 @@ this.assassin_background <- this.inherit("scripts/skills/backgrounds/character_b
 		local r = _gender;
 		if (_gender == -1)
 		{
-			r = this.Math.rand(0, 9);
-			if (this.World.LegendsMod.Configs().LegendGenderEnabled())
-			{
-				r = this.Math.rand(0, 1);
-			}
+			r = this.Math.rand(0, 1);
 		}
 
-		if (r == 1)
+		if (r == 0)
 		{
-			this.m.Faces = this.Const.Faces.AllFemale;
-			this.m.Hairs = this.Const.Hair.AllFemale;
-			this.m.HairColors = this.Const.HairColors.Young;
-			this.m.Beards = null;
-			this.m.BeardChance = 0;
-			this.m.Body = "bust_naked_body_03";
-			this.m.IsFemaleBackground = true;
+			return;
 		}
+
+		this.m.Faces = this.Const.Faces.AllFemale;
+		this.m.Hairs = this.Const.Hair.AllFemale;
+		this.m.HairColors = this.Const.HairColors.Young;
+		this.m.Beards = null;
+		this.m.BeardChance = 0;
+		this.m.Bodies = this.Const.Bodies.AllFemale;
+		this.m.IsFemaleBackground = true;
+
 	}
 
 	function getTooltip()
@@ -212,14 +216,6 @@ this.assassin_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.Container.add(this.new("scripts/skills/traits/quick_trait"));
 		this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
 
-		if(this.m.IsFemaleBackground == true)
-		{
-			actor.setName(this.Const.Strings.CharacterNamesFemale[this.Math.rand(0, this.Const.Strings.CharacterNamesFemale.len() - 1)]);
-		}
-		else
-		{
-			actor.setName(this.Const.Strings.CharacterNames[this.Math.rand(0, this.Const.Strings.CharacterNames.len() - 1)]);
-		}
 	}
 
 	function onAddEquipment()
@@ -232,7 +228,9 @@ this.assassin_background <- this.inherit("scripts/skills/backgrounds/character_b
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/weapons/rondel_dagger"));
 		items.equip(this.new("scripts/items/armor/thick_dark_tunic"));
-		items.equip(this.new("scripts/items/helmets/hood"));
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "hood"]
+		]))
 	}
 
 	function onAddLegendEquipment()
@@ -245,7 +243,9 @@ this.assassin_background <- this.inherit("scripts/skills/backgrounds/character_b
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/weapons/rondel_dagger"));
 		items.equip(this.new("scripts/items/legend_armor/cloth/legend_tunic"));
-		items.equip(this.new("scripts/items/helmets/hood"));
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "hood"]
+		]))
 	}
 
 	function onSerialize( _out )

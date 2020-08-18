@@ -46,7 +46,7 @@ this.companion_2h_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.Hairs = this.Const.Hair.AllMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Raider;
-		this.m.Body = "bust_naked_body_01";
+		this.m.Bodies = this.Const.Bodies.Muscular;
 		this.m.IsUntalented = true;
 		this.m.IsCombatBackground = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
@@ -172,16 +172,10 @@ this.companion_2h_background <- this.inherit("scripts/skills/backgrounds/charact
 			items.equip(this.new("scripts/items/armor/gambeson"));
 		}
 
-		r = this.Math.rand(0, 1);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/hood"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/headscarf"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+				[1, "hood"],
+				[1, "headscarf"]
+		]))
 	}
 
 	function onAddLegendEquipment()
@@ -220,16 +214,10 @@ this.companion_2h_background <- this.inherit("scripts/skills/backgrounds/charact
 		local armor = this.Const.World.Common.pickLegendArmor(cloths)
 		items.equip(armor)
 
-		r = this.Math.rand(0, 1);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/hood"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/headscarf"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+				[1, "hood"],
+				[1, "headscarf"]
+		]))
 	}
 });
 

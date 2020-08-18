@@ -1,14 +1,13 @@
 ::mods_hookNewObject("entity/tactical/tactical_entity_manager", function(o) {
-    o.spawn = function ( _properties )
+ 	o.spawn = function ( _properties )
 	{
-		if (!this.Tactical.State.isScenarioMode() && this.World.State.getCombatSeed() != 0)
+		if (this.World.State.getCombatSeed() != 0)
 		{
 			this.Math.seedRandom(this.World.State.getCombatSeed());
 		}
 
 		this.Time.setRound(0);
 		this.World.Assets.updateFormation();
-		local isPlayerInFormation = false;
 		local all_players = _properties.IsUsingSetPlayers ? _properties.Players : this.World.getPlayerRoster().getAll();
 		local players = [];
 
@@ -19,7 +18,6 @@
 				this.World.FactionManager.getFaction(e).setIsTemporaryEnemy(true);
 			}
 		}
-
 		local riderMap = {}
 		local hasSheildsUpPerk = false;
 
@@ -113,13 +111,19 @@
 			_properties.BeforeDeploymentCallback();
 		}
 
+		local isPlayerInitiated = _properties.IsPlayerInitiated;
+
 		if (_properties.PlayerDeploymentType == this.Const.Tactical.DeploymentType.Auto)
 		{
-			if (!this.Tactical.State.isScenarioMode() && this.World.State.getEscortedEntity() != null && !this.World.State.getEscortedEntity().isNull())
+			if (this.World.State.getEscortedEntity() != null && !this.World.State.getEscortedEntity().isNull())
 			{
 				_properties.PlayerDeploymentType = this.Const.Tactical.DeploymentType.Line;
 			}
-			else if ((this.Const.World.TerrainTypeLineBattle[_properties.Tile.Type] || _properties.IsAttackingLocation || _properties.IsPlayerInitiated) && !_properties.InCombatAlready)
+			else if (_properties.LocationTemplate != null && _properties.LocationTemplate.Fortification != this.Const.Tactical.FortificationType.None && !_properties.LocationTemplate.ForceLineBattle)
+			{
+				_properties.PlayerDeploymentType = this.Const.Tactical.DeploymentType.LineBack;
+			}
+			else if ((this.Const.World.TerrainTypeLineBattle[_properties.Tile.Type] || _properties.IsAttackingLocation || isPlayerInitiated) && !_properties.InCombatAlready)
 			{
 				_properties.PlayerDeploymentType = this.Const.Tactical.DeploymentType.Line;
 			}
@@ -129,80 +133,222 @@
 			}
 			else
 			{
-				_properties.PlayerDeploymentType = this.Const.Tactical.DeploymentType.Edge;
+				_properties.PlayerDeploymentType = this.Const.Tactical.DeploymentType.LineBack;
 			}
 		}
 
-		if (_properties.EnemyDeploymentType == this.Const.Tactical.DeploymentType.Auto)
+		_properties.Entities.sort(this.onFactionCompare);
+		local ai_entities = [];
+
+		foreach( e in _properties.Entities )
 		{
-			if (!this.Tactical.State.isScenarioMode() && this.World.State.getEscortedEntity() != null && !this.World.State.getEscortedEntity().isNull())
+			if (ai_entities.len() == 0 || ai_entities[ai_entities.len() - 1].Faction != e.Faction)
 			{
-				_properties.EnemyDeploymentType = this.Const.Tactical.DeploymentType.Line;
+				local f = {
+					Faction = e.Faction,
+					IsAlliedWithPlayer = this.World.FactionManager.isAlliedWithPlayer(e.Faction),
+					IsOwningLocation = false,
+					DeploymentType = _properties.EnemyDeploymentType,
+					Entities = []
+				};
+				ai_entities.push(f);
+
+				if (_properties.LocationTemplate != null && this.World.FactionManager.isAllied(f.Faction, _properties.LocationTemplate.OwnedByFaction))
+				{
+					f.IsOwningLocation = true;
+				}
+
+				if (f.DeploymentType == this.Const.Tactical.DeploymentType.Auto)
+				{
+					if (this.World.State.getEscortedEntity() != null && !this.World.State.getEscortedEntity().isNull())
+					{
+						f.DeploymentType = this.Const.Tactical.DeploymentType.Line;
+					}
+					else if (f.IsAlliedWithPlayer && !_properties.InCombatAlready)
+					{
+						f.DeploymentType = _properties.PlayerDeploymentType;
+					}
+					else if (_properties.LocationTemplate != null && _properties.LocationTemplate.Fortification != this.Const.Tactical.FortificationType.None && !this.World.FactionManager.isAllied(f.Faction, _properties.LocationTemplate.OwnedByFaction) && !_properties.LocationTemplate.ForceLineBattle)
+					{
+						f.DeploymentType = this.Const.Tactical.DeploymentType.LineBack;
+					}
+					else if (_properties.LocationTemplate != null && _properties.LocationTemplate.Fortification != this.Const.Tactical.FortificationType.None && this.World.FactionManager.isAllied(f.Faction, _properties.LocationTemplate.OwnedByFaction) && !_properties.LocationTemplate.ForceLineBattle)
+					{
+						f.DeploymentType = this.Const.Tactical.DeploymentType.Camp;
+					}
+					else if (_properties.LocationTemplate != null && (_properties.LocationTemplate.Fortification == this.Const.Tactical.FortificationType.None || _properties.LocationTemplate.ForceLineBattle))
+					{
+						f.DeploymentType = this.Const.Tactical.DeploymentType.Line;
+					}
+					else if (this.Const.World.TerrainTypeLineBattle[_properties.Tile.Type] || _properties.IsAttackingLocation || isPlayerInitiated || _properties.InCombatAlready)
+					{
+						f.DeploymentType = this.Const.Tactical.DeploymentType.Line;
+					}
+					else
+					{
+						f.DeploymentType = this.Const.Tactical.DeploymentType.Circle;
+					}
+				}
 			}
-			else if (this.Const.World.TerrainTypeLineBattle[_properties.Tile.Type] || _properties.IsAttackingLocation || _properties.IsPlayerInitiated)
+
+			ai_entities[ai_entities.len() - 1].Entities.push(e);
+		}
+
+		ai_entities.sort(function ( _a, _b )
+		{
+			if (_a.IsOwningLocation && !_b.IsOwningLocation)
 			{
-				_properties.EnemyDeploymentType = this.Const.Tactical.DeploymentType.Line;
+				return -1;
 			}
-			else
+			else if (!_a.IsOwningLocation && _b.IsOwningLocation)
 			{
-				_properties.EnemyDeploymentType = this.Const.Tactical.DeploymentType.Circle;
+				return 1;
+			}
+
+			return 0;
+		});
+		local hasCampDeployment = false;
+
+		foreach( ai in ai_entities )
+		{
+			if (ai.DeploymentType == this.Const.Tactical.DeploymentType.Camp)
+			{
+				hasCampDeployment = true;
+				break;
 			}
 		}
+
+		local shiftX = _properties.LocationTemplate != null ? _properties.LocationTemplate.ShiftX : 0;
+		local shiftY = _properties.LocationTemplate != null ? _properties.LocationTemplate.ShiftY : 0;
 
 		switch(_properties.PlayerDeploymentType)
 		{
-			case this.Const.Tactical.DeploymentType.Line:
-				this.placePlayersInFormation(players);
-				isPlayerInFormation = true;
-				break;
+		case this.Const.Tactical.DeploymentType.Line:
+			this.placePlayersInFormation(players);
+			break;
 
-			case this.Const.Tactical.DeploymentType.Center:
-				this.placePlayersAtCenter(players);
-				break;
+		case this.Const.Tactical.DeploymentType.LineBack:
+			if (_properties.InCombatAlready)
+			{
+				this.placePlayersInFormation(players, -10);
+			}
+			else
+			{
+				this.placePlayersInFormation(players, -10 + shiftX);
+			}
 
-			case this.Const.Tactical.DeploymentType.Edge:
-				this.placePlayersAtBorder(players);
-				break;
+			break;
 
-			case this.Const.Tactical.DeploymentType.Random:
-			case this.Const.Tactical.DeploymentType.Circle:
-				this.placePlayersInCircle(players);
-				break;
+		case this.Const.Tactical.DeploymentType.LineForward:
+			this.placePlayersInFormation(players, 8 + shiftX);
+			break;
 
-			case this.Const.Tactical.DeploymentType.Custom:
-				if (_properties.PlayerDeploymentCallback != null)
-				{
-					_properties.PlayerDeploymentCallback();
-				}
+		case this.Const.Tactical.DeploymentType.Arena:
+			this.placePlayersInFormation(players, -4, -3);
+			break;
 
-				break;
+		case this.Const.Tactical.DeploymentType.Center:
+			this.placePlayersAtCenter(players);
+			break;
+
+		case this.Const.Tactical.DeploymentType.Edge:
+			this.placePlayersAtBorder(players);
+			break;
+
+		case this.Const.Tactical.DeploymentType.Random:
+		case this.Const.Tactical.DeploymentType.Circle:
+			this.placePlayersInCircle(players);
+			break;
+
+		case this.Const.Tactical.DeploymentType.Custom:
+			if (_properties.PlayerDeploymentCallback != null)
+			{
+				_properties.PlayerDeploymentCallback();
+			}
+
+			break;
 		}
 
-		switch(_properties.EnemyDeploymentType)
+		local factionsNotAlliedWithPlayer = hasCampDeployment || _properties.InCombatAlready && ai_entities.len() <= 2 ? 1 : 0;
+		local lastFaction = 99;
+
+		foreach( i, f in ai_entities )
 		{
+			if ((!f.IsAlliedWithPlayer || _properties.InCombatAlready) && f.DeploymentType != this.Const.Tactical.DeploymentType.Camp && (lastFaction == 99 || !this.World.FactionManager.isAllied(lastFaction, f.Faction)))
+			{
+				factionsNotAlliedWithPlayer = ++factionsNotAlliedWithPlayer;
+			}
+
+			if (factionsNotAlliedWithPlayer > 3)
+			{
+				continue;
+			}
+
+			local n = f.IsAlliedWithPlayer && !_properties.InCombatAlready ? 0 : factionsNotAlliedWithPlayer;
+			lastFaction = f.Faction;
+
+			switch(f.DeploymentType)
+			{
 			case this.Const.Tactical.DeploymentType.Line:
-				this.spawnEntitiesInFormation(_properties.Entities, isPlayerInFormation);
-				break;
-
-			case this.Const.Tactical.DeploymentType.Center:
-				this.spawnEntitiesAtCenter(_properties.Entities);
-				break;
-
-			case this.Const.Tactical.DeploymentType.Random:
-				this.spawnEntitiesRandomly(_properties.Entities);
-				break;
-
-			case this.Const.Tactical.DeploymentType.Circle:
-				this.spawnEntitiesInCircle(_properties.Entities);
-				break;
-
-			case this.Const.Tactical.DeploymentType.Custom:
-				if (_properties.EnemyDeploymentCallback != null)
+				if (_properties.InCombatAlready)
 				{
-					_properties.EnemyDeploymentCallback();
+					if (n == 1)
+					{
+						this.spawnEntitiesInFormation(f.Entities, n, -5, 0);
+					}
+					else
+					{
+						this.spawnEntitiesInFormation(f.Entities, n, 0, 7);
+					}
+				}
+				else
+				{
+					this.spawnEntitiesInFormation(f.Entities, n);
 				}
 
 				break;
+
+			case this.Const.Tactical.DeploymentType.Camp:
+				this.spawnEntitiesAtCamp(f.Entities, shiftX, shiftY);
+				break;
+
+			case this.Const.Tactical.DeploymentType.LineBack:
+				if (f.IsAlliedWithPlayer && _properties.PlayerDeploymentType == this.Const.Tactical.DeploymentType.LineForward)
+				{
+					this.spawnEntitiesInFormation(f.Entities, n, 8 + shiftX);
+				}
+				else if (!f.IsAlliedWithPlayer && _properties.PlayerDeploymentType == this.Const.Tactical.DeploymentType.LineForward)
+				{
+					this.spawnEntitiesInFormation(f.Entities, n, -10 - shiftX);
+				}
+				else
+				{
+					this.spawnEntitiesInFormation(f.Entities, n, -10 + shiftX);
+				}
+
+				break;
+
+			case this.Const.Tactical.DeploymentType.Arena:
+				this.spawnEntitiesInFormation(f.Entities, n, 3, -3);
+				break;
+
+			case this.Const.Tactical.DeploymentType.Center:
+				this.spawnEntitiesAtCenter(f.Entities);
+				break;
+
+			case this.Const.Tactical.DeploymentType.Random:
+				this.spawnEntitiesRandomly(f.Entities);
+				break;
+
+			case this.Const.Tactical.DeploymentType.Circle:
+				this.spawnEntitiesInCircle(f.Entities);
+				break;
+			}
+		}
+
+		if (_properties.EnemyDeploymentCallback != null)
+		{
+			_properties.EnemyDeploymentCallback();
 		}
 
 		this.m.IsLineVSLine = _properties.PlayerDeploymentType == this.Const.Tactical.DeploymentType.Line && _properties.EnemyDeploymentType == this.Const.Tactical.DeploymentType.Line;
@@ -254,9 +400,9 @@
 							{
 							local hasLeader = false; // bandits are too undisciplined unless there's a leader
 							foreach(e in this.m.Instances[i])
-							if(e.getType() == this.Const.EntityType.BanditLeader) 
-								{ 
-								hasLeader = true; break; 
+							if(e.getType() == this.Const.EntityType.BanditLeader)
+								{
+								hasLeader = true; break;
 								}
 							if(!hasLeader) continue;
 							}
@@ -311,6 +457,46 @@
 
 		this.makeEnemiesKnownToAI(_properties.InCombatAlready);
 
+		if (this.World.Assets.getOrigin().getID() == "scenario.manhunters")
+		{
+			local roster = this.World.getPlayerRoster().getAll();
+			local slaves = 0;
+			local nonSlaves = 0;
+
+			foreach( bro in roster )
+			{
+				if (!bro.isPlacedOnMap())
+				{
+					continue;
+				}
+
+				if (bro.getBackground().getID() == "background.slave")
+				{
+					slaves = ++slaves;
+				}
+				else
+				{
+					nonSlaves = ++nonSlaves;
+				}
+			}
+
+			if (slaves <= nonSlaves)
+			{
+				foreach( bro in roster )
+				{
+					if (!bro.isPlacedOnMap())
+					{
+						continue;
+					}
+
+					if (bro.getBackground().getID() != "background.slave")
+					{
+						bro.worsenMood(this.Const.MoodChange.TooFewSlavesInBattle, "Too few indebted in battle");
+					}
+				}
+			}
+		}
+
 		foreach( player in this.m.Instances[this.Const.Faction.Player] )
 		{
 			player.onCombatStart();
@@ -319,11 +505,11 @@
 		this.Math.seedRandom(this.Time.getRealTime());
 	}
 
-	o.placePlayersInFormation = function ( _players )
+	o.placePlayersInFormation = function ( _players, _offsetX = 0, _offsetY = 0 )
 	{
-		for( local x = 11; x <= 14; x = ++x )
+		for( local x = 11 + _offsetX; x <= 14 + _offsetX; x = ++x )
 		{
-			for( local y = 10; y <= 20; y = ++y )
+			for( local y = 10; y <= 20 + _offsetY; y = ++y )
 			{
 				this.Tactical.getTile(x, y - x / 2).removeObject();
 			}
@@ -344,8 +530,8 @@
 				positions[p] = 1;
 			}
 
-			local x = 13 - p / 9;
-			local y = 30 - (11 + p - p / 9 * 9);
+			local x = 13 - p / 9 + _offsetX;
+			local y = 30 - (11 + p - p / 9 * 9) + _offsetY;
 			local tile = this.Tactical.getTileSquare(x, y);
 
 			if (!tile.IsEmpty)
@@ -380,7 +566,7 @@
 				e.getSkills().add(this.new("scripts/skills/special/legend_rain_effect"));
 			}
 
-			
+
 		}
 	}
 
@@ -407,6 +593,13 @@
 			return true;
 		}
 
+		local size = this.Tactical.getMapSize();
+
+		if (_tile.Level == 0 && this.Tactical.getTileSquare(0, 0).Level == 3 && this.Tactical.getTileSquare(size.X - 1, size.Y - 1).Level == 3 && this.Tactical.getTileSquare(0, size.Y - 1).Level == 3 && this.Tactical.getTileSquare(size.X - 1, 0).Level == 3)
+		{
+			return false;
+		}
+
 		local allFactions = [];
 		allFactions.resize(128, 0); //Yuck, we have this dynamic throughout the code, but not sure how to get that dynamic here
 
@@ -422,7 +615,7 @@
 		settings.AllowZoneOfControlPassing = true;
 		settings.AlliedFactions = allFactions;
 
-		if (!navigator.findPath(_tile, this.Tactical.getTileSquare(0, 0), settings, 1) && !navigator.findPath(_tile, this.Tactical.getTileSquare(31, 31), settings, 1) && !navigator.findPath(_tile, this.Tactical.getTileSquare(0, 31), settings, 1) && !navigator.findPath(_tile, this.Tactical.getTileSquare(31, 0), settings, 1))
+		if (!navigator.findPath(_tile, this.Tactical.getTileSquare(0, 0), settings, 1) && !navigator.findPath(_tile, this.Tactical.getTileSquare(size.X - 1, size.Y - 1), settings, 1) && !navigator.findPath(_tile, this.Tactical.getTileSquare(0, size.Y - 1), settings, 1) && !navigator.findPath(_tile, this.Tactical.getTileSquare(size.X - 1, 0), settings, 1))
 		{
 			return true;
 		}

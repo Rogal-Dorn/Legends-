@@ -52,7 +52,7 @@ this.mage_background <- this.inherit("scripts/skills/backgrounds/character_backg
 		this.m.Hairs = this.Const.Hair.CommonMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.Body = "bust_naked_body_00";
+
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Good;
 		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[0];
@@ -125,12 +125,10 @@ this.mage_background <- this.inherit("scripts/skills/backgrounds/character_backg
 			items.equip(this.new("scripts/items/armor/wizard_robe"));
 		}
 
-		r = this.Math.rand(0, 0);
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "wizard_hat"]
+		]));
 
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/wizard_hat"));
-		}
 	}
 
 	function onAddLegendEquipment()
@@ -155,7 +153,10 @@ this.mage_background <- this.inherit("scripts/skills/backgrounds/character_backg
 		];
 		local armor = this.Const.World.Common.pickLegendArmor(cloths)
 		items.equip(armor)
-		items.equip(this.new("scripts/items/helmets/wizard_hat"));
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "wizard_hat"]
+		]));
+
 
 	}
 });

@@ -47,7 +47,7 @@ this.legend_noble_2h <- this.inherit("scripts/skills/backgrounds/character_backg
 		this.m.Hairs = this.Const.Hair.AllMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Raider;
-		this.m.Body = "bust_naked_body_01";
+
 
 		this.m.IsCombatBackground = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
@@ -105,7 +105,7 @@ this.legend_noble_2h <- this.inherit("scripts/skills/backgrounds/character_backg
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsFemaleBackground = true;
 
 		this.m.GoodEnding = "Supporting your cause from the start, %name% was with you in retirement, leaving the company not long after you did. Though she was a lowly peasant, she proved herself in battle after battle and slowly became as trusted and valued a friend as one can have in a mercenary company.";
@@ -195,15 +195,6 @@ this.legend_noble_2h <- this.inherit("scripts/skills/backgrounds/character_backg
 		{
 			actor.setTitle(this.Const.Strings.SellswordTitles[this.Math.rand(0, this.Const.Strings.SellswordTitles.len() - 1)]);
 		}
-
-		if (this.m.IsFemaleBackground == true)
-		{
-			actor.setName(this.Const.Strings.CharacterNamesFemale[this.Math.rand(0, this.Const.Strings.CharacterNamesFemale.len() - 1)]);
-		}
-		else
-		{
-			actor.setName(this.Const.Strings.CharacterNames[this.Math.rand(0, this.Const.Strings.CharacterNames.len() - 1)]);
-		}
 	}
 
 	function onAddEquipment()
@@ -233,16 +224,11 @@ this.legend_noble_2h <- this.inherit("scripts/skills/backgrounds/character_backg
 			items.equip(this.new("scripts/items/armor/thick_tunic"));
 		}
 
-		r = this.Math.rand(0, 1);
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "aketon_cap"],
+			[1, "open_leather_cap"]
+		]));
 
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/hood"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/headscarf"));
-		}
 	}
 
 	function onAddLegendEquipment()
@@ -347,16 +333,10 @@ this.legend_noble_2h <- this.inherit("scripts/skills/backgrounds/character_backg
 			items.equip(armor);
 		}
 
-		r = this.Math.rand(0, 1);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/aketon_cap"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/open_leather_cap"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "aketon_cap"],
+			[1, "open_leather_cap"]
+		]));
 	}
 
 });

@@ -17,7 +17,7 @@ this.legend_camp_unlock_scrap <- this.inherit("scripts/events/event", {
 					Text = "Scrapping unlocked in camp",
 					function getResult( _event )
 					{
-						this.World.Tags.set("HasLegendCampScraping", true);
+						this.World.Flags.set("HasLegendCampScraping", true);
 					}
 
 				}
@@ -34,7 +34,7 @@ this.legend_camp_unlock_scrap <- this.inherit("scripts/events/event", {
 	{
 		local text = "While perusing some equipment you could only hope to afford in your dreams, the smith enters the room carrying a large crate. "
 		text += "He lugs it to the counter and drops it with a heavy wooden thud and a cacophony of metal clatters. "
-		text += "You wonder aloud about what is inside, and the smith, seemingly taken aback by your curiosity, " 
+		text += "You wonder aloud about what is inside, and the smith, seemingly taken aback by your curiosity, "
 		text += "explains that the market was trying to pass off a bunch of junk as weapons and armor. "
 		text += "He goes on to say that he bought it with intent to salvage so he could use the scraps to repair some equipment brought in by another patron. "
 		text += "With your curiosity sated, you leave with new ideas in your head."

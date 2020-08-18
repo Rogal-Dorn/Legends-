@@ -28,9 +28,9 @@ this.legend_white_wolf_helmet_blueprint <- this.inherit("scripts/crafting/bluepr
 
 	function isQualified()
 	{
-		return true;
+		return !this.World.LegendsMod.Configs().LegendArmorsEnabled()
 	}
-	
+
 	function onCraft( _stash )
 	{
 		local item = this.new("scripts/items/helmets/legendary/legend_white_wolf_helmet");

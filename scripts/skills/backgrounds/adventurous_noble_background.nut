@@ -30,9 +30,11 @@ this.adventurous_noble_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.m.Hairs = this.Const.Hair.TidyMale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.Body = "bust_naked_body_01";
+
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
+		this.m.Bodies = this.Const.Bodies.Muscular;
+		this.m.Names = this.Const.Strings.KnightNames;
 		this.m.Level = this.Math.rand(1, 3);
 		this.m.IsCombatBackground = true;
 		this.m.IsNoble = true;
@@ -70,11 +72,7 @@ this.adventurous_noble_background <- this.inherit("scripts/skills/backgrounds/ch
 		local r = _gender;
 		if (_gender == -1)
 		{
-			r = 0;
-			if (this.World.LegendsMod.Configs().LegendGenderEnabled())
-			{
-				r = this.Math.rand(0, 1);
-			}
+			r = this.Math.rand(0, 1);
 		}
 
 		if (r == 0)
@@ -88,7 +86,7 @@ this.adventurous_noble_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsFemaleBackground = true;
 		this.m.BackgroundDescription = "Adventurous Nobles tend to have high resolve and melee skills, but often neglect ranged defense.";
 		this.m.GoodEnding = "Adventurousness never leaves the soul of a woman like %name%. {Instead of returning to her noble family, she left the %companyname% and headed east in search of rare beasts. Word has it she returned to town with the head of what looked like a giant lizard, but you don\'t believe such fantastical tripe. | She departed the %companyname% and ventured west, sailing across the oceans to unseen lands. There\'s no telling where she is these days, but you\'ve little doubt that she\'ll be coming back with stories to tell. | She retired from the %companyname% and, instead of returning to her noble family, headed south. Word has it she fought in a great noble civil war, killed an orc warlord, climbed the highest mountain in the land, and is currently writing an epic about her travels. | The noblewoman left the %companyname% and, preferring the life of adventure to noble boredom, she headed north. Word has it that she\'s currently marching a troop of explorers to the furthest reaches of the world.}";
@@ -163,20 +161,6 @@ this.adventurous_noble_background <- this.inherit("scripts/skills/backgrounds/ch
 		return c;
 	}
 
-	function onAdded()
-	{
-		this.character_background.onAdded();
-		local actor = this.getContainer().getActor();
-
-		if (this.m.IsFemaleBackground == true)
-		{
-			actor.setName(this.Const.Strings.LadyNames[this.Math.rand(0, this.Const.Strings.LadyNames.len() - 1)]);
-		}
-		else
-		{
-			actor.setName(this.Const.Strings.KnightNames[this.Math.rand(0, this.Const.Strings.KnightNames.len() - 1)]);
-		}
-	}
 
 	function onAddEquipment()
 	{
@@ -214,24 +198,12 @@ this.adventurous_noble_background <- this.inherit("scripts/skills/backgrounds/ch
 			items.equip(this.new("scripts/items/armor/mail_hauberk"));
 		}
 
-		r = this.Math.rand(0, 4);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/nasal_helmet"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/padded_nasal_helmet"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/helmets/nasal_helmet_with_mail"));
-		}
-		else if (r == 3)
-		{
-			items.equip(this.new("scripts/items/helmets/mail_coif"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "nasal_helmet"],
+			[1, "padded_nasal_helmet"],
+			[1, "nasal_helmet_with_mail"],
+			[1, "mail_coif"]
+		]))
 	}
 
 	function onAddLegendEquipment()
@@ -338,24 +310,12 @@ this.adventurous_noble_background <- this.inherit("scripts/skills/backgrounds/ch
 			items.equip(armor);
 		}
 
-		r = this.Math.rand(0, 4);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/nasal_helmet"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/padded_nasal_helmet"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/helmets/nasal_helmet_with_mail"));
-		}
-		else if (r == 3)
-		{
-			items.equip(this.new("scripts/items/helmets/mail_coif"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "nasal_helmet"],
+			[1, "padded_nasal_helmet"],
+			[1, "nasal_helmet_with_mail"],
+			[1, "mail_coif"]
+		]))
 	}
 });
 

@@ -31,7 +31,7 @@ this.houndmaster_background <- this.inherit("scripts/skills/backgrounds/characte
 		this.m.Hairs = this.Const.Hair.AllMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.Body = "bust_naked_body_00";
+		this.m.Bodies = this.Const.Bodies.Skinny;
 		this.m.IsLowborn = true;
 		this.m.IsRangerRecruitBackground = true;
 		this.m.IsDruidRecruitBackground = true;
@@ -158,12 +158,10 @@ this.houndmaster_background <- this.inherit("scripts/skills/backgrounds/characte
 			items.equip(this.new("scripts/items/armor/ragged_surcoat"));
 		}
 
-		r = this.Math.rand(0, 1);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/open_leather_cap"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "open_leather_cap"],
+			[1, ""]
+		]));
 	}
 
 	function onAddLegendEquipment()
@@ -196,12 +194,10 @@ this.houndmaster_background <- this.inherit("scripts/skills/backgrounds/characte
 		local armor = this.Const.World.Common.pickLegendArmor(cloths)
 		items.equip(armor)
 
-		r = this.Math.rand(0, 1);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/open_leather_cap"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "open_leather_cap"],
+			[1, ""]
+		]));
 	}
 
 });

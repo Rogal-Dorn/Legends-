@@ -30,42 +30,42 @@ this.have_all_camp_activities_ambition <- this.inherit("scripts/ambitions/ambiti
 
 		local ret = this.m.TooltipText + "\n\nSkills we still need to learn.\n";
 
-		if (this.World.Tags.get("HasLegendCampBarber"))
+		if (this.World.Flags.get("HasLegendCampBarber"))
 		{
 			barber = true;
 		}
 
-		if (this.World.Tags.get("HasLegendCampCrafting"))
+		if (this.World.Flags.get("HasLegendCampCrafting"))
 		{
 			crafting = true;
 		}
 
-		if (this.World.Tags.get("HasLegendCampFletching"))
+		if (this.World.Flags.get("HasLegendCampFletching"))
 		{
 			fletching = true;
 		}
 
-		if (this.World.Tags.get("HasLegendCampHunting"))
+		if (this.World.Flags.get("HasLegendCampHunting"))
 		{
 			hunting = true;
 		}
 
-		if (this.World.Tags.get("HasLegendCampGathering"))
+		if (this.World.Flags.get("HasLegendCampGathering"))
 		{
 			gathering = true;
 		}
 
-		if (this.World.Tags.get("HasLegendCampScraping"))
+		if (this.World.Flags.get("HasLegendCampScraping"))
 		{
 			scraping = true;
 		}
 
-		if (this.World.Tags.get("HasLegendCampScouting"))
+		if (this.World.Flags.get("HasLegendCampScouting"))
 		{
 			scouting = true;
 		}
 
-		if (this.World.Tags.get("HasLegendCampTraining"))
+		if (this.World.Flags.get("HasLegendCampTraining"))
 		{
 			training = true;
 		}
@@ -124,42 +124,42 @@ this.have_all_camp_activities_ambition <- this.inherit("scripts/ambitions/ambiti
 		local scraping = false;
 		local scouting = false;
 
-		if (this.World.Tags.get("HasLegendCampBarber"))
+		if (this.World.Flags.get("HasLegendCampBarber"))
 		{
 			barber = true;
 		}
 
-		if (this.World.Tags.get("HasLegendCampCrafting"))
+		if (this.World.Flags.get("HasLegendCampCrafting"))
 		{
 			crafting = true;
 		}
 
-		if (this.World.Tags.get("HasLegendCampFletching"))
+		if (this.World.Flags.get("HasLegendCampFletching"))
 		{
 			fletching = true;
 		}
 
-		if (this.World.Tags.get("HasLegendCampHunting"))
+		if (this.World.Flags.get("HasLegendCampHunting"))
 		{
 			hunting = true;
 		}
 
-		if (this.World.Tags.get("HasLegendCampGathering"))
+		if (this.World.Flags.get("HasLegendCampGathering"))
 		{
 			gathering = true;
 		}
 
-		if (this.World.Tags.get("HasLegendCampScraping"))
+		if (this.World.Flags.get("HasLegendCampScraping"))
 		{
 			scraping = true;
 		}
 
-		if (this.World.Tags.get("HasLegendCampScouting"))
+		if (this.World.Flags.get("HasLegendCampScouting"))
 		{
 			scouting = true;
 		}
 
-		if (this.World.Tags.get("HasLegendCampTraining"))
+		if (this.World.Flags.get("HasLegendCampTraining"))
 		{
 			training = true;
 		}

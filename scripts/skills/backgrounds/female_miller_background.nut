@@ -32,7 +32,7 @@ this.female_miller_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsFemaleBackground = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.NeutralMax;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
@@ -81,7 +81,7 @@ this.female_miller_background <- this.inherit("scripts/skills/backgrounds/charac
 			this.m.Hairs = this.Const.Hair.CommonMale;
 			this.m.HairColors = this.Const.HairColors.All;
 			this.m.Beards = this.Const.Beards.Untidy;
-			this.m.Body = "bust_naked_body_00";
+
 			this.m.IsFemaleBackground = false;
 			this.m.GoodEnding = "%name% the once-baker stayed with the %companyname% for a time, collecting enough crowns to start his own bakery. Last you heard, his sword-shaped desserts have been a hit with the nobility and he makes more money selling to them than he ever did with the company.";
 			this.m.BadEnding = "As the %companyname% fell on hard times, %name% the baker saw fit to go ahead and leave while he could still walk. He helped a nobleman test out a new way of grinding grains with mules and waterwheels working in tandem. Unfortunately, by \'helping\' he managed to fall into the contraption and was brutally crushed to death.";
@@ -155,20 +155,6 @@ this.female_miller_background <- this.inherit("scripts/skills/backgrounds/charac
 		return c;
 	}
 
-	function onAdded()
-	{
-		this.character_background.onAdded();
-		local actor = this.getContainer().getActor();
-
-		if (this.m.IsFemaleBackground == true)
-		{
-			actor.setName(this.Const.Strings.CharacterNamesFemale[this.Math.rand(0, this.Const.Strings.CharacterNamesFemale.len() - 1)]);
-		}
-		else
-		{
-			actor.setName(this.Const.Strings.CharacterNames[this.Math.rand(0, this.Const.Strings.CharacterNames.len() - 1)]);
-		}
-	}
 
 	function onAddEquipment()
 	{

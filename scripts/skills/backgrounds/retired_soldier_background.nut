@@ -43,7 +43,7 @@ this.retired_soldier_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.Hairs = this.Const.Hair.CommonMale;
 		this.m.HairColors = this.Const.HairColors.Old;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.Body = "bust_naked_body_01";
+		this.m.Bodies = this.Const.Bodies.Muscular;
 		this.m.Level = this.Math.rand(2, 3);
 		this.m.IsCombatBackground = true;
 		this.m.IsRangerRecruitBackground = true;
@@ -190,32 +190,16 @@ this.retired_soldier_background <- this.inherit("scripts/skills/backgrounds/char
 			items.equip(this.new("scripts/items/armor/worn_mail_shirt"));
 		}
 
-		r = this.Math.rand(0, 8);
+		items.equip(this.Const.World.Common.pickHelmet([
+			[2, ""],
+			[1, "nasal_helmet"],
+			[1, "padded_nasal_helmet"],
+			[1, "mail_coif"],
+			[1, "rusty_mail_coif"],
+			[1, "aketon_cap"],
+			[1, "full_aketon_cap"]
+		]));
 
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/nasal_helmet"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/padded_nasal_helmet"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/helmets/mail_coif"));
-		}
-		else if (r == 3)
-		{
-			items.equip(this.new("scripts/items/helmets/rusty_mail_coif"));
-		}
-		else if (r == 4)
-		{
-			items.equip(this.new("scripts/items/helmets/aketon_cap"));
-		}
-		else if (r == 5)
-		{
-			items.equip(this.new("scripts/items/helmets/full_aketon_cap"));
-		}
 	}
 
 	function onAddLegendEquipment()
@@ -336,32 +320,15 @@ this.retired_soldier_background <- this.inherit("scripts/skills/backgrounds/char
 			items.equip(armor);
 		}
 
-		r = this.Math.rand(0, 8);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/nasal_helmet"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/padded_nasal_helmet"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/helmets/mail_coif"));
-		}
-		else if (r == 3)
-		{
-			items.equip(this.new("scripts/items/helmets/rusty_mail_coif"));
-		}
-		else if (r == 4)
-		{
-			items.equip(this.new("scripts/items/helmets/aketon_cap"));
-		}
-		else if (r == 5)
-		{
-			items.equip(this.new("scripts/items/helmets/full_aketon_cap"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[2, ""],
+			[1, "nasal_helmet"],
+			[1, "padded_nasal_helmet"],
+			[1, "mail_coif"],
+			[1, "rusty_mail_coif"],
+			[1, "aketon_cap"],
+			[1, "full_aketon_cap"]
+		]));
 	}
 });
 

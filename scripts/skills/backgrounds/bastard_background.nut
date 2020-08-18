@@ -26,9 +26,10 @@ this.bastard_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Hairs = this.Const.Hair.TidyMale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.Tidy;
-		this.m.Body = "bust_naked_body_01";
+
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Good;
+		this.m.Bodies = this.Const.Bodies.Muscular;
 		this.m.Level = this.Math.rand(1, 3);
 		this.m.IsCombatBackground = true;
 		this.m.Modifiers.Repair = this.Const.LegendMod.ResourceModifiers.Repair[1];
@@ -173,20 +174,11 @@ this.bastard_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			items.equip(this.new("scripts/items/armor/padded_surcoat"));
 		}
 
-		r = this.Math.rand(0, 3);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/nasal_helmet"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/padded_nasal_helmet"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/helmets/hood"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "nasal_helmet"],
+			[1, "padded_nasal_helmet"],
+			[1, "hood"]
+		]))
 	}
 
 	function onAddLegendEquipment()
@@ -305,21 +297,11 @@ this.bastard_background <- this.inherit("scripts/skills/backgrounds/character_ba
 
 			items.equip(armor);
 		}
-
-		r = this.Math.rand(0, 3);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/nasal_helmet"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/padded_nasal_helmet"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/helmets/hood"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "nasal_helmet"],
+			[1, "padded_nasal_helmet"],
+			[1, "hood"]
+		]))
 	}
 });
 

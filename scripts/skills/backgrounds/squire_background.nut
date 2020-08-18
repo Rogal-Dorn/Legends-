@@ -35,8 +35,9 @@ this.squire_background <- this.inherit("scripts/skills/backgrounds/character_bac
 		this.m.Hairs = this.Const.Hair.YoungMale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.Tidy;
-		this.m.Body = "bust_naked_body_01";
 
+
+		this.m.Bodies = this.Const.Bodies.Muscular;
 		this.m.IsCombatBackground = true;
 		this.m.IsRangerRecruitBackground = true;
 		this.m.IsCrusaderRecruitBackground = true;
@@ -93,7 +94,7 @@ this.squire_background <- this.inherit("scripts/skills/backgrounds/character_bac
 		this.m.Beards = null;
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.BeardChance = 0;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsFemaleBackground = true;
 		this.m.GoodEnding = "%name% the squire eventually left the %companyname%. You\'ve heard that she\'s since been knighted. No doubt she is sitting happy as a plum wherever she is.";
 		this.m.BadEnding = "The squire, %name%, eventually departed the %companyname%. She intended to return home and become knighted, fulfilling her lifelong dream. Cruel politics got in the way and not only was she not knighted, she was stripped of her squire duties. Word has it she hanged herself from a barn\'s rafters.";
@@ -167,20 +168,6 @@ this.squire_background <- this.inherit("scripts/skills/backgrounds/character_bac
 		return c;
 	}
 
-	function onAdded()
-	{
-		this.character_background.onAdded();
-		local actor = this.getContainer().getActor();
-
-		if (this.m.IsFemaleBackground == true)
-		{
-			actor.setName(this.Const.Strings.LadyNames[this.Math.rand(0, this.Const.Strings.LadyNames.len() - 1)]);
-		}
-		else
-		{
-			actor.setName(this.Const.Strings.CharacterNames[this.Math.rand(0, this.Const.Strings.CharacterNames.len() - 1)]);
-		}
-	}
 
 	function onAddEquipment()
 	{
@@ -231,24 +218,13 @@ this.squire_background <- this.inherit("scripts/skills/backgrounds/character_bac
 			items.equip(this.new("scripts/items/armor/leather_tunic"));
 		}
 
-		r = this.Math.rand(0, 4);
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "nasal_helmet"],
+			[1, "full_aketon_cap"],
+			[1, "aketon_cap"],
+			[1, "open_leather_cap"]
+		]));
 
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/nasal_helmet"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/full_aketon_cap"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/helmets/aketon_cap"));
-		}
-		else if (r == 3)
-		{
-			items.equip(this.new("scripts/items/helmets/open_leather_cap"));
-		}
 	}
 
 	function onAddLegendEquipment()
@@ -369,24 +345,13 @@ this.squire_background <- this.inherit("scripts/skills/backgrounds/character_bac
 			items.equip(armor);
 		}
 
-		r = this.Math.rand(0, 4);
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "nasal_helmet"],
+			[1, "full_aketon_cap"],
+			[1, "aketon_cap"],
+			[1, "open_leather_cap"]
+		]));
 
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/nasal_helmet"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/full_aketon_cap"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/helmets/aketon_cap"));
-		}
-		else if (r == 3)
-		{
-			items.equip(this.new("scripts/items/helmets/open_leather_cap"));
-		}
 	}
 });
 

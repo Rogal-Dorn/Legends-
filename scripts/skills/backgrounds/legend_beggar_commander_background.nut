@@ -50,7 +50,7 @@ this.legend_beggar_commander_background <- this.inherit("scripts/skills/backgrou
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Untidy;
-		this.m.Body = "bust_naked_body_00";
+
 
 		this.m.IsLowborn = true;
 		this.m.Level = 1;
@@ -140,7 +140,7 @@ this.legend_beggar_commander_background <- this.inherit("scripts/skills/backgrou
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsFemaleBackground = true;
 		this.m.GoodEnding = "Having enough of all the fighting, %name% the once-beggar retired from the %companyname%. You know the woman made a pretty crown in her time with the mercenary company, yet the other day you saw her out begging again. You asked if she\'d wasted all her money and she laughed. She said she\'d purchased land and was doing just fine. Then she held out his little tin and asked for a crown. You gave her two.";
 		this.m.BadEnding = "The fighting life is a rough one, and %name% the once-beggar saw fit to retire from it before it became a deadly one. Unfortunately, she went back to beggaring. Word has it that a nobleman cleaned a city of riff-raff and sent them marching north despite it being winter. Cold and hungry, %name% died on the side of a road, a tin cup frozen to her finger.";
@@ -207,21 +207,6 @@ this.legend_beggar_commander_background <- this.inherit("scripts/skills/backgrou
 		return c;
 	}
 
-	function onAdded()
-	{
-		this.character_background.onAdded();
-		local actor = this.getContainer().getActor();
-
-		if (this.m.IsFemaleBackground == true)
-		{
-			actor.setName(this.Const.Strings.CharacterNamesFemale[this.Math.rand(0, this.Const.Strings.CharacterNamesFemale.len() - 1)]);
-		}
-		else
-		{
-			actor.setName(this.Const.Strings.CharacterNames[this.Math.rand(0, this.Const.Strings.CharacterNames.len() - 1)]);
-		}
-	}
-
 	function onSetAppearance()
 	{
 		local actor = this.getContainer().getActor();
@@ -229,11 +214,6 @@ this.legend_beggar_commander_background <- this.inherit("scripts/skills/backgrou
 		dirt.Visible = true;
 	}
 
-	function onAdded()
-	{
-		this.character_background.onAdded();
-		//this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
-	}
 
 	function onAddEquipment()
 	{
@@ -265,12 +245,20 @@ this.legend_beggar_commander_background <- this.inherit("scripts/skills/backgrou
 
 		r = this.Math.rand(0, 4);
 
-		if (r == 0)
+
+		local item = this.Const.World.Common.pickHelmet([
+			[3, ""],
+			[1, "hood"]
+		])
+		if (item != null)
 		{
-			local item = this.new("scripts/items/helmets/hood");
-			item.setVariant(38);
+			if (item.getID() == "armor.head.hood")
+			{
+				item.setVariant(38);
+			}
 			items.equip(item);
 		}
+
 	}
 
 	function onAddLegendEquipment()
@@ -309,12 +297,17 @@ this.legend_beggar_commander_background <- this.inherit("scripts/skills/backgrou
 		local armor = this.Const.World.Common.pickLegendArmor(cloths)
 		items.equip(armor)
 
-		r = this.Math.rand(0, 4);
 
-		if (r == 0)
+		local item = this.Const.World.Common.pickHelmet([
+			[3, ""],
+			[1, "hood"]
+		])
+		if (item != null)
 		{
-			local item = this.new("scripts/items/helmets/hood");
-			item.setVariant(38);
+			if (item.getID() == "armor.head.hood")
+			{
+				item.setVariant(38);
+			}
 			items.equip(item);
 		}
 	}

@@ -33,8 +33,9 @@ this.sellsword_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.Hairs = this.Const.Hair.AllMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.Body = "bust_naked_body_01";
 
+
+		this.m.Bodies = this.Const.Bodies.Muscular;
 		this.m.Level = this.Math.rand(2, 4);
 		this.m.IsCombatBackground = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
@@ -94,7 +95,7 @@ this.sellsword_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;
 		this.m.BeardChance = 1;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsFemaleBackground = true;
 		this.m.BackgroundDescription = "Sellswords are expensive, but a life of warfare has forged them into skilled fighters.";
 		this.m.GoodEnding = "%name% the sellsword left the %companyname% and started her own mercenary company. As far as you know, it\'s a very successful venture and she often buddies up with the mercenaries of the %companyname% to work together.";
@@ -211,14 +212,6 @@ this.sellsword_background <- this.inherit("scripts/skills/backgrounds/character_
 			actor.setTitle(this.Const.Strings.SellswordTitles[this.Math.rand(0, this.Const.Strings.SellswordTitles.len() - 1)]);
 		}
 
-		if (this.m.IsFemaleBackground == true)
-		{
-			actor.setName(this.Const.Strings.CharacterNamesFemale[this.Math.rand(0, this.Const.Strings.CharacterNamesFemale.len() - 1)]);
-		}
-		else
-		{
-			actor.setName(this.Const.Strings.CharacterNames[this.Math.rand(0, this.Const.Strings.CharacterNames.len() - 1)]);
-		}
 	}
 
 	function onAddEquipment()
@@ -296,40 +289,19 @@ this.sellsword_background <- this.inherit("scripts/skills/backgrounds/character_
 			items.equip(this.new("scripts/items/armor/mail_shirt"));
 		}
 
-		r = this.Math.rand(0, 9);
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, ""],
+			[1, "nasal_helmet"],
+			[1, "padded_nasal_helmet"],
+			[1, "mail_coif"],
+			[1, "closed_mail_coif"],
+			[1, "reinforced_mail_coif"],
+			[1, "kettle_hat"],
+			[1, "padded_kettle_hat"],
+			[1, "hood"]
+		]));
 
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/nasal_helmet"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/padded_nasal_helmet"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/helmets/mail_coif"));
-		}
-		else if (r == 3)
-		{
-			items.equip(this.new("scripts/items/helmets/closed_mail_coif"));
-		}
-		else if (r == 4)
-		{
-			items.equip(this.new("scripts/items/helmets/reinforced_mail_coif"));
-		}
-		else if (r == 5)
-		{
-			items.equip(this.new("scripts/items/helmets/kettle_hat"));
-		}
-		else if (r == 6)
-		{
-			items.equip(this.new("scripts/items/helmets/padded_kettle_hat"));
-		}
-		else if (r == 7)
-		{
-			items.equip(this.new("scripts/items/helmets/hood"));
-		}
+
 	}
 
 	function onAddLegendEquipment()
@@ -468,40 +440,17 @@ this.sellsword_background <- this.inherit("scripts/skills/backgrounds/character_
 			items.equip(armor);
 		}
 
-		r = this.Math.rand(0, 9);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/nasal_helmet"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/padded_nasal_helmet"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/helmets/mail_coif"));
-		}
-		else if (r == 3)
-		{
-			items.equip(this.new("scripts/items/helmets/closed_mail_coif"));
-		}
-		else if (r == 4)
-		{
-			items.equip(this.new("scripts/items/helmets/reinforced_mail_coif"));
-		}
-		else if (r == 5)
-		{
-			items.equip(this.new("scripts/items/helmets/kettle_hat"));
-		}
-		else if (r == 6)
-		{
-			items.equip(this.new("scripts/items/helmets/padded_kettle_hat"));
-		}
-		else if (r == 7)
-		{
-			items.equip(this.new("scripts/items/helmets/hood"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, ""],
+			[1, "nasal_helmet"],
+			[1, "padded_nasal_helmet"],
+			[1, "mail_coif"],
+			[1, "closed_mail_coif"],
+			[1, "reinforced_mail_coif"],
+			[1, "kettle_hat"],
+			[1, "padded_kettle_hat"],
+			[1, "hood"]
+		]));
 	}
 });
 

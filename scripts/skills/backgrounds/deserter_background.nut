@@ -41,9 +41,10 @@ this.deserter_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.Hairs = this.Const.Hair.CommonMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.Body = "bust_naked_body_00";
+
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Good;
+		this.m.Bodies = this.Const.Bodies.Skinny;
 		this.m.Level = this.Math.rand(1, 2);
 		this.m.IsCombatBackground = true;
 		this.m.IsLowborn = true;
@@ -98,7 +99,7 @@ this.deserter_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsFemaleBackground = true;
 		this.m.GoodEnding = "%name% the deserter continued fighting for the %companyname%, ever striving to redeem her name. Word has it that during a brutal fight with orcs, she dove headfirst into a crowd of greenskins, surfing across the top of their shocked heads. Her heroism rallied the mercenaries to an incredible victory and she lives out her days getting toasted in every bar she enters.";
 		this.m.BadEnding = "You heard %name% the deserter actually renewed her title and fled a battle the %companyname% had with some greenskins. Goblins caught her out in the woods and turned her head into a goblet for an orc warlord.";
@@ -178,21 +179,6 @@ this.deserter_background <- this.inherit("scripts/skills/backgrounds/character_b
 		return c;
 	}
 
-	function onAdded()
-	{
-		this.character_background.onAdded();
-		local actor = this.getContainer().getActor();
-
-		if(this.m.IsFemaleBackground == true)
-		{
-			actor.setName(this.Const.Strings.CharacterNamesFemale[this.Math.rand(0, this.Const.Strings.CharacterNamesFemale.len() - 1)]);
-		}
-		else
-		{
-			actor.setName(this.Const.Strings.CharacterNames[this.Math.rand(0, this.Const.Strings.CharacterNames.len() - 1)]);
-		}
-	}
-
 	function onAddEquipment()
 	{
 		local items = this.getContainer().getActor().getItems();
@@ -239,24 +225,13 @@ this.deserter_background <- this.inherit("scripts/skills/backgrounds/character_b
 			items.equip(this.new("scripts/items/armor/gambeson"));
 		}
 
-		r = this.Math.rand(0, 5);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/hood"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/aketon_cap"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/helmets/full_aketon_cap"));
-		}
-		else if (r == 3)
-		{
-			items.equip(this.new("scripts/items/helmets/open_leather_cap"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "hood"],
+			[1, "open_leather_cap"],
+			[1, "aketon_cap"],
+			[1, "full_aketon_cap"],
+			[2, ""]
+		]));
 	}
 
 	function onAddLegendEquipment()
@@ -378,24 +353,13 @@ this.deserter_background <- this.inherit("scripts/skills/backgrounds/character_b
 			items.equip(armor);
 		}
 
-		r = this.Math.rand(0, 5);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/hood"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/aketon_cap"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/helmets/full_aketon_cap"));
-		}
-		else if (r == 3)
-		{
-			items.equip(this.new("scripts/items/helmets/open_leather_cap"));
-		}
+	items.equip(this.Const.World.Common.pickHelmet([
+			[1, "hood"],
+			[1, "open_leather_cap"],
+			[1, "aketon_cap"],
+			[1, "full_aketon_cap"],
+			[2, ""]
+		]));
 	}
 	function onUpdate( _properties )
 	{

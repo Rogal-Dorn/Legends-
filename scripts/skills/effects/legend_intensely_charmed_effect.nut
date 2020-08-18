@@ -61,7 +61,7 @@ this.legend_intensely_charmed_effect <- this.inherit("scripts/skills/skill", {
 		actor.setFaction(this.m.MasterFaction);
 		this.m.OriginalSocket = actor.getSprite("socket").getBrush().Name;
 		actor.getSprite("socket").setBrush("bust_base_beasts");
-		actor.getTags().set("Charmed", true);
+		actor.getFlags().set("Charmed", true);
 		actor.setDirty(true);
 
 		if (this.m.SoundOnUse.len() != 0)
@@ -133,7 +133,7 @@ this.legend_intensely_charmed_effect <- this.inherit("scripts/skills/skill", {
 
 		actor.setFaction(this.m.OriginalFaction);
 		actor.getSprite("socket").setBrush(this.m.OriginalSocket);
-		actor.getTags().set("Charmed", false);
+		actor.getFlags().set("Charmed", false);
 		actor.setDirty(true);
 
 		if (this.m.Master != null)

@@ -44,7 +44,7 @@ this.legend_beggar_intro_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 			}
-        }); 
+        });
 		this.m.Screens.push({
 			ID = "C",
 			Title = "Beggar",
@@ -67,7 +67,7 @@ this.legend_beggar_intro_event <- this.inherit("scripts/events/event", {
 				this.Banner = "ui/banners/" + this.World.Assets.getBanner() + "s.png";
 				//this.World.FactionManager.makeNoblesUnfriendlyToPlayer();
 			}
-		});	          
+		});
 	}
 
 	function onUpdateScore()
@@ -84,7 +84,7 @@ this.legend_beggar_intro_event <- this.inherit("scripts/events/event", {
 	{
 		_vars.push([
 			"home",
-			this.World.Tags.get("HomeVillage")
+			this.World.Flags.get("HomeVillage")
 		]);
 	}
 

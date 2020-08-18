@@ -36,7 +36,7 @@ this.juggler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Hairs = this.Const.Hair.CommonMale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.Body = "bust_naked_body_00";
+
 		this.m.IsPerformingBackground = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
@@ -62,6 +62,7 @@ this.juggler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			Class = [this.Const.Perks.JugglerClassTree,],
 			Magic = []
 		}
+		this.m.Bodies = this.Const.Bodies.Skinny;
 	}
 
 	function getTooltip()
@@ -171,12 +172,10 @@ this.juggler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			items.equip(this.new("scripts/items/armor/linen_tunic"));
 		}
 
-		r = this.Math.rand(0, 1);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/jesters_hat"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "jesters_hat"],
+			[1, ""]
+		]));
 	}
 
 	function onAddLegendEquipment()
@@ -289,12 +288,10 @@ this.juggler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 
 			items.equip(armor);
 		}
-		r = this.Math.rand(0, 1);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/jesters_hat"));
-		}
+	items.equip(this.Const.World.Common.pickHelmet([
+			[1, "jesters_hat"],
+			[1, ""]
+		]));
 	}
 
 	function onUpdate( _properties )

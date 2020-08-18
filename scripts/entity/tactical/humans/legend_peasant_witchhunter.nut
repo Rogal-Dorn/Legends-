@@ -10,7 +10,7 @@ this.legend_peasant_witchhunter <- this.inherit("scripts/entity/tactical/human",
 		this.m.Hairs = this.Const.Hair.AllMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
-		this.getTags().add("peasant");
+		this.getFlags().add("peasant");
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/military_ranged_agent");
 		this.m.AIAgent.setActor(this);
 		if (this.Math.rand(1, 100) <= 10)
@@ -154,16 +154,10 @@ this.legend_peasant_witchhunter <- this.inherit("scripts/entity/tactical/human",
 
 		if (this.Math.rand(1, 100) <= 66)
 		{
-			local r = this.Math.rand(1, 9);
-
-			if (r == 1)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/hood"));
-			}
-			else if (r >= 2)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/witchhunter_hat"));
-			}
+			this.m.Items.equip(this.Const.World.Common.pickHelmet([
+				[8, "witchhunter_hat"],
+				[1, "hood"]
+			]))
 		}
 	}
 

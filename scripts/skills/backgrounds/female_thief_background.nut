@@ -52,7 +52,7 @@ this.female_thief_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.NeutralMin;
 		this.m.IsFemaleBackground = true;
@@ -84,36 +84,6 @@ this.female_thief_background <- this.inherit("scripts/skills/backgrounds/charact
 			Class = [this.Const.Perks.KnifeClassTree],
 			Magic = []
 		}
-	}
-
-	//Default Female
-	function setGender(_gender = -1)
-	{
-		local r = _gender;
-		if (_gender == -1)
-		{
-			r = 1;
-			if (this.World.LegendsMod.Configs().LegendGenderEnabled())
-			{
-				r = this.Math.rand(0, 1);
-			}
-		}
-
-		if (r == 1)
-		{
-			return
-		}
-		this.m.Faces = this.Const.Faces.AllMale;
-		this.m.Hairs = this.Const.Hair.CommonMale;
-		this.m.HairColors = this.Const.HairColors.Young;
-		this.m.Beards = this.Const.Beards.All;
-		this.m.Body = "bust_naked_body_00";
-		this.m.BeardChance = 50;
-		this.m.IsFemaleBackground = false;
-		this.m.BackgroundDescription = "A good thief will have quick reflexes and the ability to evade any captors.";
-		this.m.GoodEnding = "%name% the pickpocket retired from fighting and disappeared off the map. You haven\'t heard word of the man since, but there are rumors that a certain nobleman had one of his pockets completely drained in broad daylight during a public address.";
-		this.m.BadEnding = "%name% the pickpocket read the lines being drawn in the sands and retired from the %companyname% while he still could. He took what money he had made and threw together a crew of thieves and brigands. Last you heard, he pulled off a perfect heist only for one of his partners to stab him in the back and take off with all the goods.";
-
 	}
 
 	function getTooltip()
@@ -184,21 +154,6 @@ this.female_thief_background <- this.inherit("scripts/skills/backgrounds/charact
 		return c;
 	}
 
-	function onAdded()
-	{
-		this.character_background.onAdded();
-		local actor = this.getContainer().getActor();
-
-		if (this.m.IsFemaleBackground == true)
-		{
-			actor.setName(this.Const.Strings.CharacterNamesFemale[this.Math.rand(0, this.Const.Strings.CharacterNamesFemale.len() - 1)]);
-		}
-		else
-		{
-			actor.setName(this.Const.Strings.CharacterNames[this.Math.rand(0, this.Const.Strings.CharacterNames.len() - 1)]);
-		}
-	}
-
 	function onAddEquipment()
 	{
 		local items = this.getContainer().getActor().getItems();
@@ -233,16 +188,10 @@ this.female_thief_background <- this.inherit("scripts/skills/backgrounds/charact
 			items.equip(this.new("scripts/items/armor/legend_maid_dress"));
 		}
 
-		r = this.Math.rand(0, 1);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/hood"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/headscarf"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+				[1, "hood"],
+				[1, "headscarf"]
+		]))
 	}
 
 	function onAddLegendEquipment()
@@ -348,15 +297,10 @@ this.female_thief_background <- this.inherit("scripts/skills/backgrounds/charact
 			items.equip(armor);
 		}
 
-		r = this.Math.rand(0, 1);
+		items.equip(this.Const.World.Common.pickHelmet([
+				[1, "hood"],
+				[1, "headscarf"]
+		]))
 
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/hood"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/headscarf"));
-		}
 	}
 });

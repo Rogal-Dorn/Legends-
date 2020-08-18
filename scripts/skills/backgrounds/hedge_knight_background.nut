@@ -55,9 +55,10 @@ this.hedge_knight_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.Hairs = this.Const.Hair.AllMale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.Body = "bust_naked_body_01";
+
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Cruel;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Chivalrous;
+		this.m.Bodies = this.Const.Bodies.Muscular;
 		this.m.Level = this.Math.rand(2, 5);
 		this.m.IsCombatBackground = true;
 		this.m.IsCrusaderRecruitBackground = true;
@@ -115,7 +116,7 @@ this.hedge_knight_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;
 		this.m.BeardChance = 1;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsFemaleBackground = true;
 		this.m.BackgroundDescription = "Hedge Knights are competitive individuals that excel in fighting head to head with brute strength and heavy armor, but less so in cooperating with others or in swiftness.";
 		this.m.GoodEnding = "A woman like %name% would always find a way. The hedge knight eventually, if not inevitably, left the company and set out on her own. Unlike many other comrades, she did not spend her crowns on land or ladders with which to climb the noble life. Instead, she bought herself the finest war horses and the talents of armorers. The behemoth of a woman rode from one jousting tournament to the next, winning them all with ease. She\'s still at it to this day, and you think she won\'t stop until she\'s dead. The hedge knight simply knows no other life.";
@@ -223,20 +224,6 @@ this.hedge_knight_background <- this.inherit("scripts/skills/backgrounds/charact
 		return c;
 	}
 
-	function onAdded()
-	{
-		this.character_background.onAdded();
-		local actor = this.getContainer().getActor();
-
-		if(this.m.IsFemaleBackground == true)
-		{
-			actor.setName(this.Const.Strings.LadyNames[this.Math.rand(0, this.Const.Strings.LadyNames.len() - 1)]);
-		}
-		else
-		{
-			actor.setName(this.Const.Strings.KnightNames[this.Math.rand(0, this.Const.Strings.KnightNames.len() - 1)]);
-		}
-	}
 
 	function onAddEquipment()
 	{
@@ -277,28 +264,13 @@ this.hedge_knight_background <- this.inherit("scripts/skills/backgrounds/charact
 			items.equip(this.new("scripts/items/armor/worn_mail_shirt"));
 		}
 
-		r = this.Math.rand(0, 4);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/nasal_helmet"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/nasal_helmet_with_mail"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/helmets/mail_coif"));
-		}
-		else if (r == 3)
-		{
-			items.equip(this.new("scripts/items/helmets/bascinet_with_mail"));
-		}
-		else if (r == 4)
-		{
-			items.equip(this.new("scripts/items/helmets/closed_flat_top_helmet"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "nasal_helmet"],
+			[1, "nasal_helmet_with_mail"],
+			[1, "mail_coif"],
+			[1, "bascinet_with_mail"],
+			[1, "closed_flat_top_helmet"]
+		]));
 	}
 
 	function onAddLegendEquipment()
@@ -403,28 +375,13 @@ this.hedge_knight_background <- this.inherit("scripts/skills/backgrounds/charact
 			items.equip(armor);
 		}
 
-		r = this.Math.rand(0, 4);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/nasal_helmet"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/nasal_helmet_with_mail"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/helmets/mail_coif"));
-		}
-		else if (r == 3)
-		{
-			items.equip(this.new("scripts/items/helmets/bascinet_with_mail"));
-		}
-		else if (r == 4)
-		{
-			items.equip(this.new("scripts/items/helmets/closed_flat_top_helmet"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "nasal_helmet"],
+			[1, "nasal_helmet_with_mail"],
+			[1, "mail_coif"],
+			[1, "bascinet_with_mail"],
+			[1, "closed_flat_top_helmet"]
+		]));
 	}
 });
 

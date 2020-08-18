@@ -24,6 +24,10 @@
 					continue;
 				}
 
+				if (!instances[f][p].isAttackable())
+				{
+					continue;
+				}
 
 				if (instances[f][p].getTile().IsHidingEntity && !instances[f][p].isVisibleToEntity())
 				{
@@ -31,7 +35,7 @@
 				}
 
 				this.onOpponentSighted(instances[f][p]);
-				
+
 			}
 		}
 	}

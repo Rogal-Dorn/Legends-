@@ -29,7 +29,8 @@ this.legend_shieldmaiden_background <- this.inherit("scripts/skills/backgrounds/
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Body = this.Const.Bodies.AllFemale[this.Math.rand(0, this.Const.Bodies.AllFemale.len() - 1)];
+		this.m.Bodies = this.Const.Bodies.AllFemale;
+		this.m.Ethnicity = 2;
 		this.m.Level = this.Math.rand(1, 2);
 		this.m.IsCombatBackground = true;
 		this.m.IsFemaleBackground = true;
@@ -126,14 +127,6 @@ this.legend_shieldmaiden_background <- this.inherit("scripts/skills/backgrounds/
 		return c;
 	}
 
-	function onAdded()
-	{
-		this.character_background.onAdded();
-		local actor = this.getContainer().getActor();
-		actor.setName(this.Const.Strings.CharacterNamesFemaleNorse[this.Math.rand(0, this.Const.Strings.CharacterNamesFemaleNorse.len() - 1)]);
-		actor.setTitle("the Shieldmaiden");
-	}
-
 	function onAddEquipment()
 	{
 		local items = this.getContainer().getActor().getItems();
@@ -157,23 +150,12 @@ this.legend_shieldmaiden_background <- this.inherit("scripts/skills/backgrounds/
 			items.equip(this.new("scripts/items/armor/gambeson"));
 		}
 
-		r = this.Math.rand(0, 3);
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/open_leather_cap"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/aketon_cap"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/helmets/full_leather_cap"));
-		}
-		else if (r == 3)
-		{
-			items.equip(this.new("scripts/items/helmets/full_aketon_cap"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "open_leather_cap"],
+			[1, "aketon_cap"],
+			[1, "full_leather_cap"],
+			[1, "full_aketon_cap"]
+		]));
 
 		r = this.Math.rand(0, 3);
 		if (r <= 2)
@@ -291,23 +273,12 @@ this.legend_shieldmaiden_background <- this.inherit("scripts/skills/backgrounds/
 			items.equip(armor);
 		}
 
-		r = this.Math.rand(0, 3);
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/open_leather_cap"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/aketon_cap"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/helmets/full_leather_cap"));
-		}
-		else if (r == 3)
-		{
-			items.equip(this.new("scripts/items/helmets/full_aketon_cap"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "open_leather_cap"],
+			[1, "aketon_cap"],
+			[1, "full_leather_cap"],
+			[1, "full_aketon_cap"]
+		]));
 
 		r = this.Math.rand(0, 3);
 		if (r <= 2)

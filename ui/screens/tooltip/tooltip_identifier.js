@@ -2,8 +2,8 @@
  *  @Project:		Battle Brothers
  *	@Company:		Overhype Studios
  *
- *	@Copyright:		(c) Overhype Studios | 2013 - 2017
- * 
+ *	@Copyright:		(c) Overhype Studios | 2013 - 2020
+ *
  *  @Author:		Overhype Studios
  *  @Date:			18.02.2017
  *  @Description:	Global Tooltip UI Identifier
@@ -115,14 +115,15 @@ var TooltipIdentifier =
 			BudgetDifficultyNormal: 'menu-screen.new-campaign.NormalDifficultyBudget',
 			BudgetDifficultyHard: 'menu-screen.new-campaign.HardDifficultyBudget',
 			BudgetDifficultyLegendary: 'menu-screen.new-campaign.LegendaryDifficultyBudget',
-			Ironman: 'menu-screen.new-campaign.Ironman',
 			Autosave: 'menu-screen.new-campaign.Autosave',
+            Ironman: 'menu-screen.new-campaign.Ironman',
+            Exploration: 'menu-screen.new-campaign.Exploration',
 			EvilRandom: 'menu-screen.new-campaign.EvilRandom',
 			EvilNone: 'menu-screen.new-campaign.EvilNone',
 			EvilWar: 'menu-screen.new-campaign.EvilWar',
 			EvilGreenskins: 'menu-screen.new-campaign.EvilGreenskins',
-			EvilUndead: 'menu-screen.new-campaign.EvilUndead',
-			EvilExtraLate: 'menu-screen.new-campaign.EvilExtraLate',
+            EvilUndead: 'menu-screen.new-campaign.EvilUndead',
+            EvilCrusade: 'menu-screen.new-campaign.EvilCrusade',
             EvilPermanentDestruction: 'menu-screen.new-campaign.EvilPermanentDestruction',
             StartingScenario: 'menu-screen.new-campaign.StartingScenario'
 		},
@@ -173,7 +174,7 @@ var TooltipIdentifier =
 			OptionsBarModule:
 			{
 				CenterButton: 'tactical-screen.topbar.options-bar-module.CenterButton',
-				SwitchMapOrientationButton: 'tactical-screen.topbar.options-bar-module.SwitchMapOrientationButton',
+                ToggleHighlightBlockedTilesButton: 'tactical-screen.topbar.options-bar-module.ToggleHighlightBlockedTilesButton',
                 SwitchMapLevelUpButton: 'tactical-screen.topbar.options-bar-module.SwitchMapLevelUpButton',
                 SwitchMapLevelDownButton: 'tactical-screen.topbar.options-bar-module.SwitchMapLevelDownButton',
                 ToggleStatsOverlaysButton: 'tactical-screen.topbar.options-bar-module.ToggleStatsOverlaysButton',
@@ -226,10 +227,11 @@ var TooltipIdentifier =
                 ActiveContractButton: 'world-screen.topbar.options-module.ActiveContractButton',
                 RelationsButton: 'world-screen.topbar.options-module.RelationsButton',
                 CameraLockButton: 'world-screen.topbar.options-module.CameraLockButton',
-				CenterButton: 'world-screen.topbar.options-module.CenterButton',       
-				TrackingButton: 'world-screen.topbar.options-module.TrackingButton',  
+				CenterButton: 'world-screen.topbar.options-module.CenterButton',
+				TrackingButton: 'world-screen.topbar.options-module.TrackingButton',
 				CampButton: 'world-screen.topbar.options-module.CampButton',
-				ObituaryButton: 'world-screen.topbar.options-module.ObituaryButton',
+                ObituaryButton: 'world-screen.topbar.options-module.ObituaryButton',
+                PerksButton: 'world-screen.topbar.options-module.PerksButton',
 				QuitButton: 'world-screen.topbar.options-module.QuitButton'
             }
         },
@@ -246,7 +248,7 @@ var TooltipIdentifier =
 			ColumnBattles : 'world-screen.obituary.ColumnBattles',
 			ColumnKills : 'world-screen.obituary.ColumnKills',
 			ColumnKilledBy: 'world-screen.obituary.ColumnKilledBy'
-		}
+        }
     },
 
 	WorldTownScreen:
@@ -257,7 +259,7 @@ var TooltipIdentifier =
 			ContractNegotiated: 'world-town-screen.main-dialog-module.ContractNegotiated',
 			ContractDisabled: 'world-town-screen.main-dialog-module.ContractDisabled',
 			ContractLocked: 'world-town-screen.main-dialog-module.ContractLocked',
-			LeaveButton: 'world-town-screen.main-dialog-module.LeaveButton'			
+			LeaveButton: 'world-town-screen.main-dialog-module.LeaveButton'
         },
 
         TaxiDermistDialogModule:
@@ -291,7 +293,12 @@ var TooltipIdentifier =
 	RelationsScreen:
 	{
 		Relations: 'world-relations-screen.Relations',
-	},
+    },
+
+    CampfireScreen:
+    {
+        Cart: 'world-campfire-screen.Cart',
+    },
 
 	WorldGameFinishScreen:
 	{

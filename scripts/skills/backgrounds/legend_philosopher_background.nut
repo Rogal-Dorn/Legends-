@@ -17,7 +17,7 @@ this.legend_philosopher_background <- this.inherit("scripts/skills/backgrounds/c
 		this.m.Hairs = this.Const.Hair.AllMale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.Body = "bust_naked_body_01";
+
 		this.m.Level = 1;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
@@ -110,17 +110,11 @@ this.legend_philosopher_background <- this.inherit("scripts/skills/backgrounds/c
 		// talents[this.Const.Attributes.Bravery] = 3;
 		// this.getContainer().getActor().fillTalentValues(2, true);
 		local items = this.getContainer().getActor().getItems();
-		local r;
-		r = this.Math.rand(0, 2);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/dark_cowl"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/witchhunter_hat"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, ""],
+			[1, "dark_cowl"],
+			[1, "witchhunter_hat"]
+		]));
 		items.equip(this.new("scripts/items/armor/thick_dark_tunic"));
 		items.equip(this.new("scripts/items/weapons/ancient/broken_ancient_sword"));
 		local stash = this.World.Assets.getStash()
@@ -133,17 +127,12 @@ this.legend_philosopher_background <- this.inherit("scripts/skills/backgrounds/c
 		// talents[this.Const.Attributes.Bravery] = 3;
 		// this.getContainer().getActor().fillTalentValues(2, true);
 		local items = this.getContainer().getActor().getItems();
-		local r;
-		r = this.Math.rand(0, 2);
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, ""],
+			[1, "dark_cowl"],
+			[1, "witchhunter_hat"]
+		]));
 
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/dark_cowl"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/witchhunter_hat"));
-		}
 		items.equip(this.new("scripts/items/legend_armor/cloth/legend_dark_tunic"));
 		items.equip(this.new("scripts/items/weapons/ancient/broken_ancient_sword"));
 		local stash = this.World.Assets.getStash()

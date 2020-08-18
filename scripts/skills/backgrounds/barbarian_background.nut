@@ -38,10 +38,12 @@ this.barbarian_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.Hairs = this.Const.Hair.WildMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.WildExtended;
-		this.m.Body = "bust_naked_body_01";
+		this.m.Ethnicity = 2;
+
 		this.m.IsFemaleBackground = false;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Notorious;
+		this.m.Bodies = this.Const.Bodies.Muscular;
 		this.m.Level = this.Math.rand(2, 4);
 		this.m.IsCombatBackground = true;
 		this.m.IsOutlawBackground = true;
@@ -99,7 +101,7 @@ this.barbarian_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsFemaleBackground = true;
 		this.m.GoodEnding = "%name% the barbarian took all the coin she earned with the company and ventured north. With her money, she gathered a band of warriors and conquered so many tribes that, last you heard, she had been ordained \'queen of the north\'.";
 		this.m.BadEnding = "With things the way they were, %name% departed. Last you heard she was traveling north. Penniless with little to her name but an axe, and not looking anything like the natives or speaking their tongue, you figure the barbarian did not get far. Based upon what you\'ve seen happen to her ilk, she\'s either been killed already or captured as a slave.";
@@ -132,20 +134,6 @@ this.barbarian_background <- this.inherit("scripts/skills/backgrounds/character_
 		{
 			return "{%name% survived the battle between yourself and his own tribe of warriors. He offered himself to your company or to your sword. Impressed by his bravery, you chose to take him in. A foreign brute, he hardly speaks your native tongue and he is not well liked by the rest of the company. But if anything can bond two men it is fighting beside one another, killing when it counts, and drinking the night away at the tavern.}";
 		}
-	}
-
-	function onAdded()
-	{
-		if (this.m.IsNew && this.m.IsFemaleBackground == false)
-		{
-			this.getContainer().getActor().setName(this.Const.Strings.BarbarianNames[this.Math.rand(0, this.Const.Strings.BarbarianNames.len() - 1)]);
-		}
-		if (this.m.IsNew && this.m.IsFemaleBackground == true)
-		{
-			this.getContainer().getActor().setName(this.Const.Strings.CharacterNamesFemaleNorse[this.Math.rand(0, this.Const.Strings.CharacterNamesFemaleNorse.len() - 1)]);
-		}
-
-		this.character_background.onAdded();
 	}
 
 	function onSetAppearance()
@@ -264,20 +252,11 @@ this.barbarian_background <- this.inherit("scripts/skills/backgrounds/character_
 			items.equip(this.new("scripts/items/armor/barbarians/scrap_metal_armor"));
 		}
 
-		r = this.Math.rand(0, 3);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/barbarians/bear_headpiece"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/barbarians/leather_headband"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/helmets/barbarians/leather_helmet"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "barbarians/bear_headpiece"],
+			[1, "barbarians/leather_headband"],
+			[1, "barbarians/leather_helmet"]
+		]))
 	}
 
 	function onAddLegendEquipment()
@@ -329,20 +308,11 @@ this.barbarian_background <- this.inherit("scripts/skills/backgrounds/character_
 			items.equip(armor);
 		}
 
-		r = this.Math.rand(0, 3);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/barbarians/bear_headpiece"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/barbarians/leather_headband"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/helmets/barbarians/leather_helmet"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "barbarians/bear_headpiece"],
+			[1, "barbarians/leather_headband"],
+			[1, "barbarians/leather_helmet"]
+		]))
 	}
 
 	function onSerialize( _out )

@@ -24,7 +24,7 @@ this.legend_troupe_intro_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				this.logInfo("Unlocking healing");
-				this.World.Tags.set("HasLegendCampHealing", true);				
+				this.World.Flags.set("HasLegendCampHealing", true);
 			}
 		});
 	}
@@ -43,7 +43,7 @@ this.legend_troupe_intro_event <- this.inherit("scripts/events/event", {
 	{
 		_vars.push([
 			"home",
-			this.World.Tags.get("HomeVillage")
+			this.World.Flags.get("HomeVillage")
 		]);
 	}
 

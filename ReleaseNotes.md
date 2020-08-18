@@ -3727,6 +3727,7 @@ Resilient/HoldOut tooltip fix, currently states -1 turn on debuffs, but gives -5
 Clears the mustering troops on legendary bandit contract completion
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 https://drive.google.com/file/d/1OWY9rIZfGYBW40LZk0poZLrEs125E81T/view?usp=sharing
 
 14.0.0.16b
@@ -3739,6 +3740,8 @@ https://drive.google.com/file/d/15C7nyBk8OMkrcIk9SQ4Tqh7u6kwe9eP3/view?usp=shari
 
 14.0.0.16c
 =======
+=======
+>>>>>>> 1f16b12b6e7970000cb087274d79802f039f9eee
 https://drive.google.com/file/d/1eScbaKttem93gLfFNLFPhJ2c1S6qaTXn/view?usp=sharing
 
 
@@ -3797,7 +3800,10 @@ Rumours of man sized rats in this update are clearly the ravings of madmen
 * Horses slightly less broken
 * Stun immunity works against more attacks
 * staff perk melee defense works on slingstaff
+<<<<<<< HEAD
 >>>>>>> d299c1d87b0f32e6da0e8eca601d2575c6d3953c
+=======
+>>>>>>> 1f16b12b6e7970000cb087274d79802f039f9eee
 
 **Fixes**
 
@@ -3811,11 +3817,15 @@ prong skill tooltip updated to correctly show impact of thrust master
 fixed crash from Fell down well event while playing a solo avatar
 Intensive training trait is hidden until relevant
 Fixed. Armor layers parts will now repair when not attached to a base armor piece.
+<<<<<<< HEAD
 Zombie poison scales from 1 not 10 now on legendary when you have resilient
 <<<<<<< HEAD
 
 https://drive.google.com/file/d/1cHL80DD5DQvWlKIQlAw4bsSL2lb5JkXT/view?usp=sharing
 =======
+=======
+
+>>>>>>> 1f16b12b6e7970000cb087274d79802f039f9eee
 Ranger now has fixed worldmap look (Thanks Leonion)
 Miasma skill should now prperly get removed if perk is removed.  (Thanks Leonion)
 Rune of power should now correctly display it's effect  (Thanks Leonion)
@@ -3908,4 +3918,24 @@ Fixes uncommon error with transforms crashing
 =======
 Fixes Vermin Ending of roaming beast contract
 Fixes loading of save game when player has warlock perks selected (maxMedicine issues)
+<<<<<<< HEAD
 >>>>>>> 4461206f596c203dc8284ecf52065ad62c23edb3
+=======
+
+
+
+15.0.0.0
+Looking for some brave beta testers. This is a playable build with 1.4.0.35 version.
+This *DOES NOT* have any Legends content fully integrated with the new DLC content (we are working hard on those parts).
+To allow us to continue adding in and integrating the new content we are looking for people to help look for
+any major issues (crashes or errors in the log files)
+Please do not play this and expect things to work flawlessly.
+Do not tell me that the southern armors are not layered, or X skill or X perk isn't balanced, etc...
+To REPEAT! Looking for crashes or any errors in log files.
+
+https://drive.google.com/file/d/136wvQKhe-u6H6VQHsaQJ66cVszzwu9Oy/view?usp=sharing
+
+
+**Changes**
+World Economy for city states - unlike northern settlements, ciy states can continue to grow their locations indefinitly.
+>>>>>>> 1f16b12b6e7970000cb087274d79802f039f9eee

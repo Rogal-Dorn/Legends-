@@ -47,7 +47,7 @@ this.cultists_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
 		items.equip(this.new("scripts/items/weapons/legend_cat_o_nine_tails"));
-		items.equip(this.new("scripts/items/helmets/cultist_hood"));
+		items.equip(this.Const.World.Common.pickHelmet([[1, "cultist_hood"]]));
 		items.equip(this.new("scripts/items/armor/leather_wraps"));
 		bros[1].setStartValuesEx([
 			"cultist_background"
@@ -61,7 +61,7 @@ this.cultists_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
 		items.equip(this.new("scripts/items/weapons/two_handed_wooden_flail"));
 		items.equip(this.new("scripts/items/armor/cultist_leather_robe"));
-		items.equip(this.new("scripts/items/helmets/hood"));
+		items.equip(this.Const.World.Common.pickHelmet([[1, "hood"]]));
 		bros[2].setStartValuesEx([
 			"cultist_background"
 		]);
@@ -73,7 +73,7 @@ this.cultists_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
 		items.equip(this.new("scripts/items/weapons/battle_whip"));
-		items.equip(this.new("scripts/items/helmets/cultist_leather_hood"));
+		items.equip(this.Const.World.Common.pickHelmet([[1, "cultist_leather_hood"]]));
 		bros[3].setStartValuesEx([
 			"cultist_background"
 		]);
@@ -81,36 +81,11 @@ this.cultists_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 		bros[3].setPlaceInFormation(5);
 		bros[3].setVeteranPerks(2);
 		local items = bros[3].getItems();
-
-		foreach( bro in bros )
-		{
-			local val = this.World.State.addNewID(bro);
-			bro.m.CompanyID = val;
-		}
-
-		if (this.World.LegendsMod.Configs().RelationshipsEnabled())
-{
-    local avgAlignment = 0;
-    foreach (bro in this.World.getPlayerRoster().getAll())
-    {
-        if (bro.getAlignment() <= this.Const.LegendMod.Alignment.NeutralMin)
-        {
-            avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMin);
-        }
-        else if (bro.getAlignment() >= this.Const.LegendMod.Alignment.NeutralMax)
-        {
-            avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMax);
-        }
-    }
-    avgAlignment *= (10 / this.World.getPlayerRoster().getSize());
-    this.World.Assets.addMoralReputation(avgAlignment);
-}
-
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
 		items.equip(this.new("scripts/items/weapons/legend_cat_o_nine_tails"));
-		items.equip(this.new("scripts/items/helmets/cultist_hood"));
+		items.equip(this.Const.World.Common.pickHelmet([[1, "cultist_hood"]]));
 		items.equip(this.new("scripts/items/armor/leather_wraps"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
 		this.World.Assets.m.Money = this.World.Assets.m.Money + 400;
@@ -177,16 +152,9 @@ this.cultists_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 			this.Music.setTrackList(this.Const.Music.CivilianTracks, this.Const.Music.CrossFadeTime);
 			this.World.Events.fire("event.cultists_scenario_intro");
 		}, null);
-		foreach (b in this.World.getPlayerRoster().getAll())
-		{
-			foreach (add in this.World.getPlayerRoster().getAll())
-			{
-				b.changeActiveRelationship(add, this.Math.rand(-30, 30));
-			}
-		}
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 		if (_list.len() >= 5)
 		{

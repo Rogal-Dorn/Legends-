@@ -81,7 +81,7 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 	{
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
-		this.World.Assets.m.BusinessReputation = 100;
+		this.World.Assets.m.BusinessReputation = 150;
 		this.World.Assets.m.Money = this.World.Assets.m.Money / 2;
 	}
 
@@ -93,7 +93,7 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		{
 			randomVillage = this.World.EntityManager.getSettlements()[i];
 
-			if (randomVillage.isMilitary() && !randomVillage.isIsolatedFromRoads())
+			if (randomVillage.isMilitary() && !randomVillage.isIsolatedFromRoads() && !randomVillage.isSouthern())
 			{
 				break;
 			}
@@ -222,30 +222,8 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Ammo));
 		items.equip(this.new("scripts/items/weapons/light_crossbow"));
 		items.equip(this.new("scripts/items/ammo/quiver_of_bolts"));
-		foreach( bro in bros )
-		{
-			local val = this.World.State.addNewID(bro);
-			bro.m.CompanyID = val;
-		}
 
-		if (this.World.LegendsMod.Configs().RelationshipsEnabled())
-{
-    local avgAlignment = 0;
-    foreach (bro in this.World.getPlayerRoster().getAll())
-    {
-        if (bro.getAlignment() <= this.Const.LegendMod.Alignment.NeutralMin)
-        {
-            avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMin);
-        }
-        else if (bro.getAlignment() >= this.Const.LegendMod.Alignment.NeutralMax)
-        {
-            avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMax);
-        }
-    }
-    avgAlignment *= (10 / this.World.getPlayerRoster().getSize());
-    this.World.Assets.addMoralReputation(avgAlignment);
-}
-		this.World.Tags.set("HasLegendCampScouting", true);
+		this.World.Flags.set("HasLegendCampScouting", true);
 		this.Time.scheduleEvent(this.TimeUnit.Real, 1000, function ( _tag )
 		{
 			this.Music.setTrackList([
@@ -253,15 +231,9 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 			], this.Const.Music.CrossFadeTime);
 			this.World.Events.fire("event.deserters_scenario_intro");
 		}, null);
-		foreach (b in this.World.getPlayerRoster().getAll())
-		{
-			foreach (add in this.World.getPlayerRoster().getAll())
-			{
-				b.changeActiveRelationship(add, this.Math.rand(-20, 30));
-			}
-		}
 	}
-	function onUpdateDraftList( _list )
+
+	function onUpdateDraftList( _list, _gender)
 	{
 		if (_list.len() >= 10)
 		{
@@ -282,7 +254,7 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 				_list.push("disowned_noble_background");
 			}
 			r = this.Math.rand(0, 9);
-			if (r == 0)
+			if (r == 0 && _gender)
 			{
 				_list.push("female_disowned_noble_background");
 			}

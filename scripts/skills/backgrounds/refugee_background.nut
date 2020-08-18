@@ -40,7 +40,7 @@ this.refugee_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Untidy;
-		this.m.Body = "bust_naked_body_00";
+		this.m.Bodies = this.Const.Bodies.Skinny;
 		this.m.IsOffendedByViolence = true;
 		this.m.IsLowborn = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
@@ -89,7 +89,7 @@ this.refugee_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Beards = null;
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.BeardChance = 0;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsFemaleBackground = true;
 	}
 
@@ -154,20 +154,6 @@ this.refugee_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		return c;
 	}
 
-	function onAdded()
-	{
-		this.character_background.onAdded();
-		local actor = this.getContainer().getActor();
-
-		if (this.m.IsFemaleBackground == true)
-		{
-			actor.setName(this.Const.Strings.CharacterNamesFemale[this.Math.rand(0, this.Const.Strings.CharacterNamesFemale.len() - 1)]);
-		}
-		else
-		{
-			actor.setName(this.Const.Strings.CharacterNames[this.Math.rand(0, this.Const.Strings.CharacterNames.len() - 1)]);
-		}
-	}
 
 	function onAddEquipment()
 	{

@@ -103,10 +103,8 @@ this.legends_tundra_fort <- this.inherit("scripts/entity/world/settlements/legen
 			"Geirborg"
 		]];
 		this.m.DraftLists = [[
-			"legend_shieldmaiden_background",
 			"apprentice_background",
 			"houndmaster_background",
-			"female_daytaler_background",
 			"militia_background",
 			"militia_background",
 			"miner_background",
@@ -118,11 +116,8 @@ this.legends_tundra_fort <- this.inherit("scripts/entity/world/settlements/legen
 			"retired_soldier_background",
 			"retired_soldier_background"
 		],[
-			"legend_shieldmaiden_background",
 			"houndmaster_background",
-			"female_bowyer_background",
 			"brawler_background",
-			"female_daytaler_background",
 			"gravedigger_background",
 			"messenger_background",
 			"militia_background",
@@ -130,28 +125,21 @@ this.legends_tundra_fort <- this.inherit("scripts/entity/world/settlements/legen
 			"ratcatcher_background",
 			"vagabond_background",
 			"wildman_background",
-			"wildwoman_background",
 			"witchhunter_background",
 			"bastard_background",
 			"deserter_background",
 			"deserter_background",
-			"female_disowned_noble_background",
 			"raider_background",
 			"retired_soldier_background",
 			"retired_soldier_background",
 			"sellsword_background"
 		],[
-			"legend_shieldmaiden_background",
 			"apprentice_background",
-			"female_beggar_background",
-			"female_bowyer_background",
 			"brawler_background",
 			"brawler_background",
 			"brawler_background",
 			"gambler_background",
 			"cultist_background",
-			"female_daytaler_background",
-			"female_farmhand_background",
 			"gravedigger_background",
 			"graverobber_background",
 			"messenger_background",
@@ -165,14 +153,12 @@ this.legends_tundra_fort <- this.inherit("scripts/entity/world/settlements/legen
 			"shepherd_background",
 			"vagabond_background",
 			"wildman_background",
-			"wildwoman_background",
 			"wildman_background",
 			"witchhunter_background",
 			"bastard_background",
 			"bastard_background",
 			"deserter_background",
 			"deserter_background",
-			"female_disowned_noble_background",
 			"raider_background",
 			"retired_soldier_background",
 			"sellsword_background",
@@ -184,6 +170,28 @@ this.legends_tundra_fort <- this.inherit("scripts/entity/world/settlements/legen
 			"hedge_knight_background",
 			"hedge_knight_background"
 		]];
+
+		this.m.FemaleDraftLists = [[
+			"legend_shieldmaiden_background",
+			"female_daytaler_background",
+		],[
+			"legend_shieldmaiden_background",
+			"female_bowyer_background",
+			"female_daytaler_background",
+			"wildwoman_background",
+			"witchhunter_background",
+			"female_disowned_noble_background",
+		],[
+			"legend_shieldmaiden_background",
+			"female_beggar_background",
+			"female_bowyer_background",
+			"female_daytaler_background",
+			"female_farmhand_background",
+			"wildwoman_background",
+			"witchhunter_background",
+			"female_disowned_noble_background",
+		]];
+
 		this.m.StablesLists = [[
 			"legend_donkey",
 			"legend_horse_rouncey"

@@ -41,7 +41,7 @@ this.legend_master_archer_background <- this.inherit("scripts/skills/backgrounds
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.Untidy;
-		this.m.Body = "bust_naked_body_01";
+
 		this.m.Level = this.Math.rand(1, 4);
 		this.m.IsUntalented = true;
 		this.m.IsCombatBackground = true;
@@ -187,16 +187,11 @@ this.legend_master_archer_background <- this.inherit("scripts/skills/backgrounds
 			items.equip(this.new("scripts/items/armor/leather_tunic"));
 		}
 
-		r = this.Math.rand(0, 1);
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "hood"],
+			[1, "hunters_hat"]
+		]));
 
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/hood"));
-		}
-		else
-		{
-			items.equip(this.new("scripts/items/helmets/hunters_hat"));
-		}
 	}
 
 	function onAddLegendEquipment()
@@ -305,16 +300,11 @@ this.legend_master_archer_background <- this.inherit("scripts/skills/backgrounds
 			items.equip(armor);
 		}
 
-		r = this.Math.rand(0, 1);
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "hood"],
+			[1, "hunters_hat"]
+		]));
 
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/hood"));
-		}
-		else
-		{
-			items.equip(this.new("scripts/items/helmets/hunters_hat"));
-		}
 	}
 
 });

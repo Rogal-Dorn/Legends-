@@ -21,7 +21,7 @@ this.daytaler_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Untidy;
-		this.m.Body = "bust_naked_body_00";
+		this.m.Bodies = this.Const.Bodies.Skinny;
 		this.m.IsLowborn = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Good;
@@ -137,12 +137,12 @@ this.daytaler_background <- this.inherit("scripts/skills/backgrounds/character_b
 			items.equip(item);
 		}
 
-		r = this.Math.rand(0, 4);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/headscarf"));
-		}
+		
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "headscarf"],
+			[4, ""]
+		]));
+		
 	}
 
 	function onAddLegendEquipment()
@@ -192,12 +192,10 @@ this.daytaler_background <- this.inherit("scripts/skills/backgrounds/character_b
 		local armor = this.Const.World.Common.pickLegendArmor(cloths)
 		items.equip(armor)
 
-		r = this.Math.rand(0, 4);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/headscarf"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "headscarf"],
+			[4, ""]
+		]));
 	}
 });
 

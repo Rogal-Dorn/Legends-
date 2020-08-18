@@ -23,7 +23,7 @@ this.female_farmhand_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsLowborn = true;
 		this.m.IsFemaleBackground = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.NeutralMax;
@@ -93,7 +93,7 @@ this.female_farmhand_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.Hairs = this.Const.Hair.CommonMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.Body = "bust_naked_body_01";
+
 		this.m.IsFemaleBackground = false;
 		this.m.BackgroundDescription = "Milkmen are used to physical labor.";
 		this.m.GoodEnding = "The former milkman, %name%, retired from the %companyname%. The money he made was put toward purchasing a bit of land. He spends the rest of his days happily farming and starting a family with way too many children.";
@@ -168,21 +168,6 @@ this.female_farmhand_background <- this.inherit("scripts/skills/backgrounds/char
 		return c;
 	}
 
-	function onAdded()
-	{
-		this.character_background.onAdded();
-		local actor = this.getContainer().getActor();
-
-		if(this.m.IsFemaleBackground == true)
-		{
-			actor.setName(this.Const.Strings.CharacterNamesFemale[this.Math.rand(0, this.Const.Strings.CharacterNamesFemale.len() - 1)]);
-		}
-		else
-		{
-			actor.setName(this.Const.Strings.CharacterNames[this.Math.rand(0, this.Const.Strings.CharacterNames.len() - 1)]);
-		}
-	}
-
 	function onAddEquipment()
 	{
 		local items = this.getContainer().getActor().getItems();
@@ -236,12 +221,10 @@ this.female_farmhand_background <- this.inherit("scripts/skills/backgrounds/char
 			}
 		}
 
-		r = this.Math.rand(0, 2);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/straw_hat"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "straw_hat"],
+			[2, ""]
+		]));
 	}
 
 	function onAddLegendEquipment()
@@ -287,11 +270,9 @@ this.female_farmhand_background <- this.inherit("scripts/skills/backgrounds/char
 		local armor = this.Const.World.Common.pickLegendArmor(cloths)
 		items.equip(armor)
 
-		r = this.Math.rand(0, 2);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/straw_hat"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "straw_hat"],
+			[2, ""]
+		]));
 	}
 });

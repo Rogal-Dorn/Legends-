@@ -29,11 +29,11 @@ this.legend_faction_helmet <- this.inherit("scripts/items/legend_helmets/hood/le
 	}
 
     function setupArmor( _variant ) {
-        local helm = this.new("scripts/items/legend_armor/helm/legend_helmet_great_helm");
+        local helm = this.new("scripts/items/legend_helmets/helm/legend_helmet_great_helm");
         helm.setVariant(1);
         helmet.setUpgrade(helm)
 
-        local flair = this.new("scripts/items/legend_armor/flair/legend_helmet_faction_helmet");
+        local flair = this.new("scripts/items/legend_helmets/vanity/legend_helmet_faction_helmet");
         flair.setVariant(_variant);
         helmet.setUpgrade(flair);
     }
