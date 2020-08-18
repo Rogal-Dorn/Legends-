@@ -687,6 +687,27 @@ gt.Const.World.Common.pickHelmet <- function (_helms)
 	return helmet;
 }
 
+gt.Const.World.Common.convNameToList <- function ( _named )	
+{
+	local findString = ["helmets/", "armor/", "legend_armor/"];
+	local list = clone _named; //iirc we have to clone this because this is the actual array & we don't want to edit it
+	local retArr;
+	foreach( search in findString )
+	{
+		if (list[0].find(search) != null ) //was this list
+		{
+			foreach( item in ilst )
+			{
+				retArr.push(
+					[1, item.slice(item.find(search) + search.len())]
+				);
+			}
+			break; //can skip 1-2 list[0].finds with this
+		}
+	}
+	return retArr;
+}
+
 if (!("LegendMod" in gt.Const))
 {
 	gt.Const.LegendMod <- {};
