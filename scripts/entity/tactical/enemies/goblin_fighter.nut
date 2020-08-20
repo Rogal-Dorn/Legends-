@@ -113,12 +113,12 @@ this.goblin_fighter <- this.inherit("scripts/entity/tactical/goblin", {
 
 		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Body) == null)
 		{
-			local armor = [
-				"armor/greenskins/goblin_light_armor",
-				"armor/greenskins/goblin_medium_armor",
-				"armor/greenskins/goblin_heavy_armor"
-			];
-			this.m.Items.equip(this.new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]));
+			local item = this.Const.World.Common.pickArmor([
+				[1, "greenskins/goblin_light_armor"],
+				[1, "greenskins/goblin_medium_armor"],
+				[1, "greenskins/goblin_heavy_armor"]
+			])
+			this.m.Items.equip(item);
 		}
 
 		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Head) == null)

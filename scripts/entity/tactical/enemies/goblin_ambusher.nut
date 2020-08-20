@@ -69,7 +69,10 @@ this.goblin_ambusher <- this.inherit("scripts/entity/tactical/goblin", {
 
 		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Body) == null)
 		{
-			this.m.Items.equip(this.new("scripts/items/armor/greenskins/goblin_skirmisher_armor"));
+			local item = this.Const.World.Common.pickArmor([
+				[1, "greenskins/goblin_skirmisher_armor"]
+			])
+			this.m.Items.equip(item);
 		}
 
 		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Head) == null)
@@ -77,10 +80,7 @@ this.goblin_ambusher <- this.inherit("scripts/entity/tactical/goblin", {
 			local item = this.Const.World.Common.pickHelmet([
 				[1, "greenskins/goblin_skirmisher_helmet"]
 			])
-			if (item != null)
-			{
-				this.m.Items.equip(item);
-			}
+			this.m.Items.equip(item);
 		}
 
 		if (this.Math.rand(1, 100) <= 10)

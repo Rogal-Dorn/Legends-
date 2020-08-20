@@ -42,14 +42,15 @@ this.zombie_nomad <- this.inherit("scripts/entity/tactical/enemies/zombie_yeoman
 			//todo legends armor
 		}
 		else {
-			local armor = [
-				"armor/oriental/stitched_nomad_armor",
-				"armor/oriental/plated_nomad_mail",
-				"armor/oriental/leather_nomad_robe",
-				"armor/oriental/nomad_robe",
-				"armor/oriental/thick_nomad_robe"
+			
+			local aList = [
+				[1, "oriental/stitched_nomad_armor"],
+				[1, "oriental/plated_nomad_mail"],
+				[1, "oriental/leather_nomad_robe"],
+				[1, "oriental/nomad_robe"],
+				[1, "oriental/thick_nomad_robe"]
 			];
-			local armor = this.new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]);
+			local armor = this.Const.World.Common.pickArmor(aList);
 			this.m.Items.equip(armor);
 		}
 

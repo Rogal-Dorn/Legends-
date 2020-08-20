@@ -355,26 +355,15 @@ this.orc_young <- this.inherit("scripts/entity/tactical/actor", {
 			this.m.Items.equip(this.new("scripts/items/shields/greenskins/orc_light_shield"));
 		}
 
-		r = this.Math.rand(1, 5);
-
-		if (r == 1)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/greenskins/orc_young_very_light_armor"));
-		}
-		else if (r == 2)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/greenskins/orc_young_light_armor"));
-		}
-		else if (r == 3)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/greenskins/orc_young_medium_armor"));
-		}
-		else if (r == 4)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/greenskins/orc_young_heavy_armor"));
-		}
-
-
+		local item = this.Const.World.Common.pickArmor([
+			[1, "greenskins/orc_young_very_light_armor"],
+			[1, "greenskins/orc_young_light_armor"],
+			[1, "greenskins/orc_young_medium_armor"],
+			[1, "greenskins/orc_young_heavy_armor"],
+			[1, ""]
+		]);
+		this.m.Items.equip(item);
+		
 		local item = this.Const.World.Common.pickHelmet([
 			[1, ""],
 			[1, "greenskins/orc_young_light_helmet"],
