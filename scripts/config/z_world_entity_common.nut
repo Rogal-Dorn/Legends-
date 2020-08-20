@@ -687,6 +687,95 @@ gt.Const.World.Common.pickHelmet <- function (_helms)
 	return helmet;
 }
 
+
+gt.Const.World.Common.pickArmor <- function (_armors)
+{
+	local candidates = [];
+	local totalWeight = 0;
+	foreach (t in _armors)
+	{
+		if (t[0] == 0)
+		{
+			continue;
+		}
+		candidates.push(t);
+		totalWeight += t[0];
+	}
+
+	local r = this.Math.rand(0, totalWeight);
+	local armorID = "";
+	foreach (t in candidates)
+	{
+		r = r - t[0];
+		if (r > 0)
+		{
+			continue;
+		}
+		armorID = t[1];
+		break;
+	}
+
+	if (!this.World.LegendsMod.Configs().LegendArmorsEnabled())
+	{
+		if (armorID == "")
+		{
+			return null;
+		}
+		return this.new("scripts/items/armor/" + armorID);
+	}
+
+	if (!(armorID in this.Const.LegendsMod.Armors))
+	{
+		this.logError("Armor not defined in Legends Armor Obj : " + armorID);
+		return this.new("scripts/items/armor/" + armorID);
+	}
+
+	local layersObj = this.Const.LegendMod.Armors[armorID];
+	if (layersObj.Script != "")
+	{
+		return this.new(layersObjs.Script);
+	}
+
+	local set = layersObj.Sets[this.Math.rand(0, layersObj.Sets.len() -1)]
+	local armor = this.Const.World.Common.pickLegendArmor(set.Cloth);
+	if (armor == null)
+	{
+		return this.new("scripts/items/armor/" + armorID);
+	}
+
+	local chain = this.Const.World.Common.pickLegendArmor(set.Chain);
+	if (chain != null)
+	{
+		armor.setUpgrade(chain)
+	}
+
+	local plate = this.Const.World.Common.pickLegendArmor(set.Plate);
+	if (plate != null)
+	{
+		armor.setUpgrade(plate)
+	}
+
+	local cloak = this.Const.World.Common.pickLegendArmor(set.Cloak);
+	if (cloak != null)
+	{
+		armor.setUpgrade(cloak)
+	}
+
+	local tab = this.Const.World.Common.pickLegendArmor(set.Tabard);
+	if (tab != null)
+	{
+		armor.setUpgrade(tab)
+	}
+
+	local att = this.Const.World.Common.pickLegendArmor(set.Attachments);
+	if (att != null)
+	{
+		armor.setUpgrade(att)
+	}
+
+	return armor;
+}
+
 if (!("LegendMod" in gt.Const))
 {
 	gt.Const.LegendMod <- {};
@@ -840,9 +929,9 @@ foreach(k,v in this.Const.World.Spawn)
 
 // local weight = [100, 300, 600];
 // local pList = [
-	
+
 // 	this.Const.World.Spawn.Southern
-	
+
 // ];
 // foreach ( p in pList )
 // {
@@ -850,7 +939,7 @@ foreach(k,v in this.Const.World.Spawn)
 // 	{
 // 		for (local i = 0; i < 25; i = ++i)
 // 		{
-			
+
 // 			this.logWarning(" RUNNING ON TROOP: " + p);
 // 			this.logInfo(" RUN: " + i + ", OF WEIGHT: " + w);
 
@@ -860,4 +949,4 @@ foreach(k,v in this.Const.World.Spawn)
 
 // 		}
 // 	}
-// } 
+// }
