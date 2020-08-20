@@ -36,38 +36,36 @@ this.conscript_polearm <- this.inherit("scripts/entity/tactical/humans/conscript
 		}
 
 
-		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+		r = this.Math.rand(1, 3);
+
+		if (r <= 2)
 		{
-			//todo legends armor
+			local armor = this.Const.World.Common.pickArmor([
+				[1, "oriental/linothrax"]
+			])
+
+			if (banner == 12)
+			{
+				armor.setVariant(9);
+			}
+			else if (banner == 13)
+			{
+				armor.setVariant(10);
+			}
+			else if (banner == 14)
+			{
+				armor.setVariant(8);
+			}
+
+			this.m.Items.equip(armor);
 		}
-		else
+		else if (r == 3)
 		{
-			r = this.Math.rand(1, 3);
-
-			if (r <= 2)
-			{
-				local armor = this.new("scripts/items/armor/oriental/linothorax");
-
-				if (banner == 12)
-				{
-					armor.setVariant(9);
-				}
-				else if (banner == 13)
-				{
-					armor.setVariant(10);
-				}
-				else if (banner == 14)
-				{
-					armor.setVariant(8);
-				}
-
-				this.m.Items.equip(armor);
-			}
-			else if (r == 3)
-			{
-				this.m.Items.equip(this.new("scripts/items/armor/oriental/southern_mail_shirt"));
-			}
+			this.m.Items.equip(this.Const.World.Common.pickArmor([
+				[1, "oriental/southern_mail_shirt"]
+			]));
 		}
+	
 		local helm =this.Const.World.Common.pickHelmet([
 			[1, "oriental/southern_head_wrap"]
 		]) 

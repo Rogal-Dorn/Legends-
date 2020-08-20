@@ -62,15 +62,20 @@ this.noble <- this.inherit("scripts/entity/tactical/human", {
 		local withDetails = true;
 		local alwaysWithDetails = false;
 		local withHelmet = true;
-
+		
 		if (r == 1)
 		{
+			this.m.Items.equip(this.Const.World.Common.pickArmor([
+				[1, "noble_tunic"]
+			]));
 			this.m.Items.equip(this.new("scripts/items/armor/noble_tunic"));
 			alwaysWithDetails = true;
 		}
 		else if (r == 2)
 		{
-			this.m.Items.equip(this.new("scripts/items/armor/coat_of_plates"));
+			this.m.Items.equip(this.Const.World.Common.pickArmor([
+				[1, "coat_of_plates"]
+			]));
 			withDetails = false;
 			withHelmet = false;
 
@@ -102,7 +107,9 @@ this.noble <- this.inherit("scripts/entity/tactical/human", {
 		}
 		else if (r == 3)
 		{
-			this.m.Items.equip(this.new("scripts/items/armor/coat_of_scales"));
+			this.m.Items.equip(this.Const.World.Common.pickArmor([
+				[1, "coat_of_scales"]
+			]));
 			withDetails = false;
 			withHelmet = false;
 
@@ -131,7 +138,9 @@ this.noble <- this.inherit("scripts/entity/tactical/human", {
 		}
 		else
 		{
-			this.m.Items.equip(this.new("scripts/items/armor/noble_gear"));
+			this.m.Items.equip(this.Const.World.Common.pickArmor([
+				[1, "noble_gear"]
+			]));
 		}
 
 		if (withDetails && (alwaysWithDetails || this.Math.rand(1, 100) <= 50))
