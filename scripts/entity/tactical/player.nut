@@ -927,6 +927,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	{
 		this.actor.resetRenderEffects();
 		this.m.IsAlive = true;
+		this.m.IsDying = false;
 		this.m.IsAbleToDie = true;
 		this.m.Hitpoints = this.Math.max(1, this.m.Hitpoints);
 		this.m.MaxEnemiesThisTurn = 1;

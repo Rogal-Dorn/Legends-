@@ -350,7 +350,7 @@ this.drive_away_nomads_contract <- this.inherit("scripts/contracts/contract", {
 			],
 			function start()
 			{
-				local e = this.Math.rand(1, 2);
+				local e = 2;
 
 				for( local i = 0; i < e; i = ++i )
 				{

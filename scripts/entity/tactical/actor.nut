@@ -1752,7 +1752,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 			return;
 		}
 
-		if (_victim.getXPValue() == 0)
+		if (_victim.getXPValue() <= 1)
 		{
 			return;
 		}
