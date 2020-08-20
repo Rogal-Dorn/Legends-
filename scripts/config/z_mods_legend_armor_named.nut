@@ -148,49 +148,9 @@ gt.Const.LegendMod.ArmorObjs.extend([
         ]
     }]
 },{
-    ID = "named/legend_named_warlock_cloak", // 180
-    Script = "scripts/items/legend_armor/named/legend_armor_named_warlock_cloak",
-    Sets = [{
-        Cloth = [
-
-        ],
-        Chain = [
-
-        ],
-        Plate = [
-
-        ],
-        Cloak = [
-        ],
-        Tabard = [
-        ],
-        Attachments =[
-        ]
-    }]
-},{
     //TODO Southern
     ID = "named/leopard_armor", // 290
     Script = "",
-    Sets = [{
-        Cloth = [
-
-        ],
-        Chain = [
-
-        ],
-        Plate = [
-
-        ],
-        Cloak = [
-        ],
-        Tabard = [
-        ],
-        Attachments =[
-        ]
-    }]
-},{
-    ID = "named/lindwurm_armor", // 300
-    Script = "scripts/items/legend_armor/named/legend_lindwurm_armor",
     Sets = [{
         Cloth = [
 

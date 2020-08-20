@@ -92,6 +92,7 @@ this.nomad_slinger <- this.inherit("scripts/entity/tactical/human", {
 			"weapons/wooden_stick"
 		];
 		this.m.Items.addToBag(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
+<<<<<<< HEAD
 		// if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		// {
 		// 	//todo legends armor
@@ -105,6 +106,13 @@ this.nomad_slinger <- this.inherit("scripts/entity/tactical/human", {
 			];
 			this.m.Items.equip(this.new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]));
 		//}
+=======
+		this.m.Items.equip(this.Const.World.Common.pickArmor([
+			[1, "oriental/nomad_robe"],
+			[1, "oriental/thick_nomad_robe"],
+			[1, "oriental/cloth_sash"]
+		]));
+>>>>>>> d8279f9fdbeeb42b83d1720e71ac6919b5cd2062
 		local helmet = [
 			[1, "oriental/nomad_head_wrap"]
 		];

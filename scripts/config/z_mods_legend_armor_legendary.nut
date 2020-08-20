@@ -131,5 +131,45 @@ gt.Const.LegendMod.ArmorObjs.extend([
         Attachments =[
         ]
     }]
+},{
+    ID = "named/legend_named_warlock_cloak", // 180
+    Script = "scripts/items/legend_armor/legendary/legend_armor_named_warlock_cloak",
+    Sets = [{
+        Cloth = [
+
+        ],
+        Chain = [
+
+        ],
+        Plate = [
+
+        ],
+        Cloak = [
+        ],
+        Tabard = [
+        ],
+        Attachments =[
+        ]
+    }]
+},{
+    ID = "named/lindwurm_armor", // 300
+    Script = "scripts/items/legend_armor/legendary/legend_lindwurm_armor",
+    Sets = [{
+        Cloth = [
+
+        ],
+        Chain = [
+
+        ],
+        Plate = [
+
+        ],
+        Cloak = [
+        ],
+        Tabard = [
+        ],
+        Attachments =[
+        ]
+    }]
 }
 ])

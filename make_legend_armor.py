@@ -84,52 +84,36 @@ layers = [
     "desc" :  "A shorter and lighter chainmail that offers good protection and is fatiguing to wear.", \
     "adesc" : "Includes a shorter and lighter chainmail that offers good protection but is fatiguing to wear."
 },
-{"name": "legend_armor_cloak",                            "layer": "cloak", "min": 1, "max": 1, "value" : 350, "con" : 3, "stam" : -1, "impactSound" : "leather", "invSound" : "leather", \
-    "title" :  "Cloak", \
-    "desc" :  "The Cloak. Everyone needs a good cloak. Offers minimal protection and small boost to moral.", \
-    "adesc" : "Has a flowing cloth cloak"
-},
-{"name": "legend_armor_cloak_common",                     "layer": "cloak", "min": 8, "max": 34, "value" : 100, "con" : 10, "stam" : -2, "impactSound" : "leather", "invSound" : "leather", \
-    "title" :  "Simple Cloak", \
-    "desc" :  "A rustic cloak made of strong warm wool, provides some small protection, from the weather if nothing else ", \
-    "adesc" : "Has a stout wool cloak"
-},
-{"name": "legend_armor_cloak_crusader",                   "layer": "cloak", "min": 36, "max": 36, "value" : 1000, "con" : 35, "stam" : -5, "impactSound" : "leather", "invSound" : "leather", \
-    "title" :  "Crusader Cloak", \
-    "desc" :  "A holy cloak made of thick layered strong warm wool, provides protection from some blows but is quite hefty. ", \
-    "adesc" : "Has a holy thick cloak"
-},
-{"name": "legend_armor_cloak_heavy",                      "layer": "cloak", "min": 3, "max": 35, "value" : 1000, "con" : 30, "stam" : -4, "impactSound" : "leather", "invSound" : "leather", \
-    "title" :  "Heavy Cloak", \
-    "desc" :  "A rustic cloak made of thick layered strong warm wool, provides protection from some blows but is quite hefty. ", \
-    "adesc" : "Has a heavy thick cloak"
-},
-{"name": "legend_armor_cloak_noble",                      "layer": "cloak", "min": 1, "max": 25, "value" : 3000, "con" : 25, "stam" : -2, "impactSound" : "leather", "invSound" : "leather", \
-    "title" :  "Noble Cloak", \
-    "desc" :  "A fine cloak made of light foreign silk, provides protection and looks great. ", \
-    "adesc" : "Has a flowing light cloak"
-},
-{"name": "legend_armor_cloak_rich",                       "layer": "cloak", "min": 1, "max": 5, "value" : 10000, "con" : 35, "stam" : -2, "impactSound" : "leather", "invSound" : "leather", \
-    "title" :  "", \
-    "desc" :  "A silk embroidered cloak made with the finest clothes. Those who wear it feel as if a king", \
-    "adesc" : "Has a flowing embroidered cloak", \
-    "named" : True, "rminStam" : 0, "rmaxStam": 0, "rminCond" : 30, "rmaxCond" : 40,  "names" : ['"Kingly"', '"Splendor"', '"Pageantry"', '"Swank"', '"Noble"', '"Undead"']
-},
-{"name": "legend_armor_hexe_leader_cloak_upgrade",        "layer": "cloak", "min": 1, "max": 1, "value" : 12000, "con" : 20, "stam" : 0, "impactSound" : "leather", "invSound" : "leather", \
-    "title" :  "Hexen Redback Silk Cloak", \
-    "desc" :  "This flowing cloak is made from spider web, and offers excellent protection against ranged attacks.", \
-    "adesc" : "A cloak of spider silk offers extra protection"
-},
-{"name": "legend_armor_redback_cloak_upgrade",            "layer": "cloak", "min": 1, "max": 1, "value" : 7500, "con" : 35, "stam" : -3, "impactSound" : "leather", "invSound" : "leather", \
-    "title" :  "Redback Silk Cloak", \
-    "desc" :  "This flowing cloack is made from spider web, and offers excellent protection against ranged attacks.", \
-    "adesc" : "A cloak of spider silk offers extra protection"
-},
-{"name": "legend_armor_sash",                             "layer": "cloak", "min": 1, "max": 1, "value" : 150, "con" : 3, "stam" : -1, "impactSound" : "leather", "invSound" : "leather", \
-    "title" :  "Sash", \
-    "desc" :  "Sash.", \
-    "adesc" : "Has a flowing cloth sash"
-},
+# {"name": "legend_armor_cloak",                            "layer": "cloak", "min": 1, "max": 1, "value" : 350, "con" : 3, "stam" : -1, "impactSound" : "leather", "invSound" : "leather", \
+#     "title" :  "Cloak", \
+#     "desc" :  "The Cloak. Everyone needs a good cloak. Offers minimal protection and small boost to moral.", \
+#     "adesc" : "Has a flowing cloth cloak"
+# },
+# {"name": "legend_armor_cloak_common",                     "layer": "cloak", "min": 8, "max": 34, "value" : 100, "con" : 10, "stam" : -2, "impactSound" : "leather", "invSound" : "leather", \
+#     "title" :  "Simple Cloak", \
+#     "desc" :  "A rustic cloak made of strong warm wool, provides some small protection, from the weather if nothing else ", \
+#     "adesc" : "Has a stout wool cloak"
+# },
+# {"name": "legend_armor_cloak_crusader",                   "layer": "cloak", "min": 36, "max": 36, "value" : 1000, "con" : 35, "stam" : -5, "impactSound" : "leather", "invSound" : "leather", \
+#     "title" :  "Crusader Cloak", \
+#     "desc" :  "A holy cloak made of thick layered strong warm wool, provides protection from some blows but is quite hefty. ", \
+#     "adesc" : "Has a holy thick cloak"
+# },
+# {"name": "legend_armor_cloak_heavy",                      "layer": "cloak", "min": 3, "max": 35, "value" : 1000, "con" : 30, "stam" : -4, "impactSound" : "leather", "invSound" : "leather", \
+#     "title" :  "Heavy Cloak", \
+#     "desc" :  "A rustic cloak made of thick layered strong warm wool, provides protection from some blows but is quite hefty. ", \
+#     "adesc" : "Has a heavy thick cloak"
+# },
+# {"name": "legend_armor_cloak_noble",                      "layer": "cloak", "min": 1, "max": 25, "value" : 3000, "con" : 25, "stam" : -2, "impactSound" : "leather", "invSound" : "leather", \
+#     "title" :  "Noble Cloak", \
+#     "desc" :  "A fine cloak made of light foreign silk, provides protection and looks great. ", \
+#     "adesc" : "Has a flowing light cloak"
+# },
+# {"name": "legend_armor_sash",                             "layer": "cloak", "min": 1, "max": 1, "value" : 150, "con" : 3, "stam" : -1, "impactSound" : "leather", "invSound" : "leather", \
+#     "title" :  "Sash", \
+#     "desc" :  "Sash.", \
+#     "adesc" : "Has a flowing cloth sash"
+# },
 {"name": "legend_ancient_cloth",                          "layer": "cloth", "min": 1, "max": 1, "value" : 20, "con" : 30, "stam" : -5, "impactSound" : "leather", "invSound" : "cloth", \
     "title" :  "Ancient Cloth", \
     "desc" :  "An ancient cloth wrap, heavy and offering little protection", \
@@ -719,9 +703,9 @@ def main():
             layer = layer,
             type= d["layer"].capitalize(),
             brush = "bust_" + d["name"],
-            overlayLarge = "inventory_" + d["name"],
-            overlay = "icon_" + d["name"],
-            icon = d["name"],
+            overlayLarge = layer + "/inventory_" + d["name"],
+            overlay = layer + "/icon_" + d["name"],
+            icon = layer + "/" + d["name"],
             impactSound = impactsound,
             invSound = invsound,
             names = d["names"] if "names" in d else [],
