@@ -109,11 +109,27 @@ layers = [
 #     "desc" :  "A fine cloak made of light foreign silk, provides protection and looks great. ", \
 #     "adesc" : "Has a flowing light cloak"
 # },
-# {"name": "legend_armor_sash",                             "layer": "cloak", "min": 1, "max": 1, "value" : 150, "con" : 3, "stam" : -1, "impactSound" : "leather", "invSound" : "leather", \
-#     "title" :  "Sash", \
-#     "desc" :  "Sash.", \
-#     "adesc" : "Has a flowing cloth sash"
+# {"name": "legend_armor_cloak_rich",                       "layer": "cloak", "min": 1, "max": 5, "value" : 10000, "con" : 35, "stam" : -2, "impactSound" : "leather", "invSound" : "leather", \
+#     "title" :  "", \
+#     "desc" :  "A silk embroidered cloak made with the finest clothes. Those who wear it feel as if a king", \
+#     "adesc" : "Has a flowing embroidered cloak", \
+#     "named" : True, "rminStam" : 0, "rmaxStam": 0, "rminCond" : 30, "rmaxCond" : 40,  "names" : ['"Kingly"', '"Splendor"', '"Pageantry"', '"Swank"', '"Noble"', '"Undead"']
 # },
+# {"name": "legend_armor_hexe_leader_cloak_upgrade",        "layer": "cloak", "min": 1, "max": 1, "value" : 12000, "con" : 20, "stam" : 0, "impactSound" : "leather", "invSound" : "leather", \
+#     "title" :  "Hexen Redback Silk Cloak", \
+#     "desc" :  "This flowing cloak is made from spider web, and offers excellent protection against ranged attacks.", \
+#     "adesc" : "A cloak of spider silk offers extra protection"
+# },
+# {"name": "legend_armor_redback_cloak_upgrade",            "layer": "cloak", "min": 1, "max": 1, "value" : 7500, "con" : 35, "stam" : -3, "impactSound" : "leather", "invSound" : "leather", \
+#     "title" :  "Redback Silk Cloak", \
+#     "desc" :  "This flowing cloack is made from spider web, and offers excellent protection against ranged attacks.", \
+#     "adesc" : "A cloak of spider silk offers extra protection"
+# },
+{"name": "legend_armor_sash",                             "layer": "cloak", "min": 1, "max": 1, "value" : 150, "con" : 3, "stam" : -1, "impactSound" : "leather", "invSound" : "leather", \
+    "title" :  "Sash", \
+    "desc" :  "Sash.", \
+    "adesc" : "Has a flowing cloth sash"
+},
 {"name": "legend_ancient_cloth",                          "layer": "cloth", "min": 1, "max": 1, "value" : 20, "con" : 30, "stam" : -5, "impactSound" : "leather", "invSound" : "cloth", \
     "title" :  "Ancient Cloth", \
     "desc" :  "An ancient cloth wrap, heavy and offering little protection", \
@@ -139,7 +155,7 @@ layers = [
     "desc" :  "A leather apron usually worn by a blacksmith", \
     "adesc" :""
 },
-{"name": "legend_apron_taxidermist",                      "layer": "cloth", "min": 1, "max": 1, "value" : 0, "con" : 0, "stam" : 0, "impactSound" : "leather", "invSound" : "leather", \
+{"name": "legend_apron_taxidermist",                      "layer": "cloth", "min": 1, "max": 1, "value" : 50, "con" : 30, "stam" : -2, "impactSound" : "leather", "invSound" : "leather", "inherit" : "legend_apron", \
     "title" :  "Taxidermist Apron", \
     "desc" :  "A leather apron usually worn by a taxidermist", \
     "adesc" :""
@@ -154,9 +170,9 @@ layers = [
     "desc" :  "A sturdy and heavy padded tunic that offers decent protection.", \
     "adesc" :""
 },
-{"name": "legend_gambeson_common_color",                  "layer": "cloth", "min": 0, "max": 34, "value" : 0, "con" : 0, "stam" : 0, "impactSound" : "leather", "invSound" : "leather", \
-    "title" : "", \
-    "desc" : "", \
+{"name": "legend_gambeson_common_color",                  "layer": "cloth", "min": 0, "max": 34, "value" : 250, "con" : 65, "stam" : -8, "impactSound" : "leather", "invSound" : "cloth", "inherit" : "legend_gambeson", \
+    "title" :  "Gambeson", \
+    "desc" :  "A sturdy and heavy padded tunic that offers decent protection.", \
     "adesc" :""
 },
 {"name": "legend_gambeson_named",                         "layer": "cloth", "min": 1, "max": 1, "value" : 1500, "con" : 70, "stam" : -7, "impactSound" : "leather", "invSound" : "cloth", \
@@ -165,14 +181,14 @@ layers = [
     "adesc" :"", \
     "named" : True, "rminStam" : 4, "rmaxStam": 6, "rminCond" : 75, "rmaxCond" : 90,  "names" : ['"Heraldic Gambeson"', '"Splendor"', '"Grandiosity"', '"Pageantry"', '"Swank"', '"Noble Surcoat"', '"Duty"', '"Honor"']
 },
-{"name": "legend_gambeson_plain",                         "layer": "cloth", "min": 0, "max": 34, "value" : 0, "con" : 0, "stam" : 0, "impactSound" : "leather", "invSound" : "leather", \
-    "title" : "", \
-    "desc" : "", \
+{"name": "legend_gambeson_plain",                         "layer": "cloth", "min": 0, "max": 34, "value" : 250, "con" : 65, "stam" : -8, "impactSound" : "leather", "invSound" : "leather", "inherit" : "legend_gambeson",\
+    "title" :  "Gambeson", \
+    "desc" :  "A sturdy and heavy padded tunic that offers decent protection.", \
     "adesc" :""
 },
-{"name": "legend_gambeson_rare_color",                    "layer": "cloth", "min": 4, "max": 12, "value" : 400, "con" : 65, "stam" : -7, "impactSound" : "leather", "invSound" : "leather", \
-    "title" : "", \
-    "desc" : "", \
+{"name": "legend_gambeson_rare_color",                    "layer": "cloth", "min": 4, "max": 12, "value" : 400, "con" : 65, "stam" : -7, "impactSound" : "leather", "invSound" : "cloth", "inherit" : "legend_gambeson",\
+    "title" :  "Gambeson", \
+    "desc" :  "A sturdy and heavy padded tunic that offers decent protection.", \
     "adesc" :""
 },
 {"name": "legend_gambeson_wolf",                          "layer": "cloth", "min": 1, "max": 1, "value" : 300, "con" : 70, "stam" : -9, "impactSound" : "leather", "invSound" : "cloth", \
@@ -195,27 +211,27 @@ layers = [
     "desc" :  "A rugged, large robe made of simple cloth usually worn by monks and similar individuals who don\'t care for fashion.", \
     "adesc" :""
 },
-{"name": "legend_robes_herbalist",                        "layer": "cloth", "min": 2, "max": 18, "value" : 25, "con" : 27, "stam" : -2, "impactSound" : "leather", "invSound" : "leather", \
+{"name": "legend_robes_herbalist",                        "layer": "cloth", "min": 2, "max": 18, "value" : 25, "con" : 27, "stam" : -2, "impactSound" : "leather", "invSound" : "cloth", "inherit" : "legend_robes",\
     "title" :  "Herbailist Robes", \
     "desc" :  "Robes worn by herbalists.", \
     "adesc" :""
 },
-{"name": "legend_robes_magic",                            "layer": "cloth", "min": 1, "max": 11, "value" : 1000, "con" : 40, "stam" : 1, "impactSound" : "leather", "invSound" : "cloth", \
+{"name": "legend_robes_magic",                            "layer": "cloth", "min": 1, "max": 11, "value" : 1000, "con" : 40, "stam" : -1, "impactSound" : "leather", "invSound" : "cloth", \
     "title" :  "Magician\'s Robe", \
     "desc" :  "A soft shiny robe worn by practictioners of the arcane arts", \
     "adesc" :""
 },
-{"name": "legend_robes_nun",                              "layer": "cloth", "min": 6, "max": 7, "value" : 25, "con" : 22, "stam" : -1, "impactSound" : "leather", "invSound" : "leather", \
+{"name": "legend_robes_nun",                              "layer": "cloth", "min": 6, "max": 7, "value" : 25, "con" : 22, "stam" : -1, "impactSound" : "leather", "invSound" : "cloth", "inherit" : "legend_robes",\
     "title" :  "Nun\'s Robe", \
     "desc" :  "A rugged, large robe made of simple cloth usually worn by young nuns.", \
     "adesc" :""
 },
-{"name": "legend_robes_wizard",                           "layer": "cloth", "min": 1, "max": 1, "value" : 1000, "con" : 40, "stam" : 1, "impactSound" : "leather", "invSound" : "leather", \
+{"name": "legend_robes_wizard",                           "layer": "cloth", "min": 1, "max": 1, "value" : 1000, "con" : 40, "stam" : -11, "impactSound" : "leather", "invSound" : "cloth", "inherit" : "legend_robes",\
     "title" :  "Wizard\'s Robe", \
     "desc" :  "A cloth robe coverd in all kinds of mystical ornaments and symbols.", \
     "adesc" :""
 },
-{"name": "legend_sackcloth",                              "layer": "cloth", "min": 1, "max": 12, "value" : 15, "con" : 10, "stam" : 1, "impactSound" : "leather", "invSound" : "cloth", \
+{"name": "legend_sackcloth",                              "layer": "cloth", "min": 1, "max": 12, "value" : 15, "con" : 10, "stam" : 0, "impactSound" : "leather", "invSound" : "cloth", \
     "title" :  "Sackcloth", \
     "desc" :  "Better than running naked.", \
     "adesc" :""
@@ -240,7 +256,7 @@ layers = [
     "desc" :  "A simple cloth tunic. Fashionable but offering little in protection.", \
     "adesc" :""
 },
-{"name": "legend_tunic_noble",                            "layer": "cloth", "min": 2, "max": 28, "value" : 500, "con" : 40, "stam" : -2, "impactSound" : "leather", "invSound" : "leather", \
+{"name": "legend_tunic_noble",                            "layer": "cloth", "min": 2, "max": 28, "value" : 500, "con" : 40, "stam" : -2, "impactSound" : "leather", "invSound" : "leather", "inherit" : "legend_tunic", \
     "title" :  "Noble Tunic", \
     "desc" :  "A fine linen tunic of exquisite material, embroided with pleasing patterns. Fashionable but offering little in protection.", \
     "adesc" :""
@@ -518,6 +534,25 @@ this.$name <- this.inherit("scripts/items/legend_armor/legend_armor", {
 });
 '''
 
+BaseNutInherit = '''
+this.$name <- this.inherit("scripts/items/legend_armor/cloth/$inherit", {
+	m = {},
+	function create()
+	{
+		this.$inherit.create();
+		this.m.ID = "$id";
+		this.m.Name = "$title";
+		this.m.Description = "$desc";
+		this.m.Variants = $variants;
+        this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
+		this.updateVariant();
+		this.m.Value = $value;
+		this.m.Condition = $condition;
+		this.m.ConditionMax = $condition;
+		this.m.StaminaModifier = $stamina;
+	}
+});
+'''
 
 UpgradeNut = '''
 this.$name <- this.inherit("scripts/items/legend_armor/legend_armor_upgrade", {
@@ -653,6 +688,9 @@ def main():
     #Build Nuts
     for d in layers:
 
+        inherit = ""
+        if "inherit"in d:
+            inherit = d["inherit"]
         layer = d["layer"]
 
         temp = UpgradeNut
@@ -660,19 +698,21 @@ def main():
             temp = BaseNut
             if "named" in d:
                 temp = BaseNamedNut
+            elif inherit != "":
+                temp = BaseNutInherit
         elif "named" in d:
             temp = NamedUpgradeNut
 
         fname = d["name"]
-        dirpath = os.path.join(os.path.dirname(os.path.abspath(__file__)), "testing", layer)
+        dirpath = os.path.join(os.path.dirname(os.path.abspath(__file__)), "scripts", "items", "legend_armor", layer)
         if not os.path.exists(dirpath):
             os.makedirs(dirpath)
 
         filepath = os.path.join(dirpath, fname + ".nut")
         F = open(filepath, "w")
         variants = []
-        for x in range(d["max"]):
-            variants.append(x+1)
+        for x in range(d["min"], d["max"] + 1):
+            variants.append(x)
 
 
         impactsound = "this.Const.Sound.ArmorLeatherImpact"
@@ -691,6 +731,7 @@ def main():
 
         opts = dict(
             test="true",
+            inherit=inherit,
             name=fname,
             title=d["title"],
             desc=d["desc"],

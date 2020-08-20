@@ -3,6 +3,7 @@ helmets/
 !scripts/items/legend_helmets/helmets/
 
 
+
 gfx/*.png
 !gfx/skills*
 !gfx/ui*
