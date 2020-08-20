@@ -938,6 +938,7 @@ gt.Const.AI <- {
 		CharmSkillMult = 0.25,
 		CharmDefenseSkillMult = 0.5,
 		CharmStillToActMult = 1.25,
+		CharmAlreadyWaitedMult = 0.5,
 		CharmTargetsMult = 4.0,
 		CharmTargetLockdownMult = 0.25,
 		CharmMeleeDangerMult = 7.0,

@@ -1596,7 +1596,7 @@ this.asset_manager <- {
 
 				if (this.m.Stash.add(item) == null)
 				{
-					bro.getItems().addToBag(item.Item);
+					bro.getItems().addToBag(item);
 				}
 			}
 		}

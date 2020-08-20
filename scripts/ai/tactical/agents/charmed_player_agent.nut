@@ -7,6 +7,7 @@ this.charmed_player_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.m.Properties.BehaviorMult[this.Const.AI.Behavior.ID.Defend] = 0.0;
 		this.m.Properties.BehaviorMult[this.Const.AI.Behavior.ID.AttackDefault] = 1.25;
 		this.m.Properties.BehaviorMult[this.Const.AI.Behavior.ID.ThrowBomb] = 1.5;
+		this.m.Properties.BehaviorMult[this.Const.AI.Behavior.ID.Adrenaline] = 1.5;
 		this.m.Properties.TargetPriorityHitchanceMult = 0.5;
 		this.m.Properties.TargetPriorityHitpointsMult = 0.3;
 		this.m.Properties.TargetPriorityRandomMult = 0.0;
@@ -41,6 +42,8 @@ this.charmed_player_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_knock_out"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_throw_net"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_lash"));
+		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_gash"));
+		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_deathblow"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_bow"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_reload"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_throw_bomb"));
