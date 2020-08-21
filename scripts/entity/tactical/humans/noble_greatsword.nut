@@ -90,52 +90,18 @@ this.noble_greatsword <- this.inherit("scripts/entity/tactical/human", {
 
 		
 
-		r = this.Math.rand(1, 5);
+		this.m.Items.equip(this.Const.World.Common.pickArmor([
+			[2, "mail_hauberk", 28],
+			[1, "scale_armor"],
+			[1, "reinforced_mail_hauberk"],
+			[2, "footman_armor"]
+		]));
 
-		if (r <= 2)
-		{
-			local armor = this.Const.World.Common.pickArmor([
-				[1, "mail_hauberk"]
-			]);
-			armor.setVariant(28); //todo setvariant
-			this.m.Items.equip(armor);
-		}
-		else if (r == 3)
-		{
-			this.m.Items.equip(this.Const.World.Common.pickArmor([
-				[1, "scale_armor"]
-			]));
-		}
-		else if (r == 4)
-		{
-			this.m.Items.equip(this.Const.World.Common.pickArmor([
-				[1, "reinforced_mail_hauberk"]
-			]));
-		}
-		else if (r == 5)
-		{
-			this.m.Items.equip(this.Const.World.Common.pickArmor([
-				[1, "footman_armor"]
-			]));
-		}
-		
 
-		r = this.Math.rand(1, 2);
-
-		if (r == 1)
-		{
-			this.m.Items.equip(this.Const.World.Common.pickHelmet([
-					[1, "greatsword_hat"]
-			]));
-		}
-		else if (r == 2)
-		{
-			local helm = this.Const.World.Common.pickHelmet([
-					[1, "greatsword_faction_helm"]
-			])
-			helm.setVariant(banner);
-			this.m.Items.equip(helm);
-		}
+		this.m.Items.equip(this.Const.World.Common.pickHelmet([
+				[1, "greatsword_hat"]
+				[1, "greatsword_faction_helm", banner]
+		]));
 	}
 
 });

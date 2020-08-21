@@ -111,34 +111,12 @@ this.noble_footman <- this.inherit("scripts/entity/tactical/human", {
 
 
 		r = this.Math.rand(1, 5);
-
-		if (r == 1)
-		{
-			local armor = (this.Const.World.Common.pickArmor([
-				[1, "mail_hauberk"]
-			]);
-			armor.setVariant(28); //todo setvariant
-			this.m.Items.equip(armor);
-		}
-		else if (r == 2)
-		{
-			this.m.Items.equip(this.Const.World.Common.pickArmor([
-				[1, "mail_shirt"]]
-			]));
-		}
-		else if (r == 3)
-		{
-			this.m.Items.equip(this.Const.World.Common.pickArmor([
-				[1, "gambeson"]]
-			]));
-		}
-		else
-		{
-			this.m.Items.equip(this.Const.World.Common.pickArmor([
-				[1, "basic_mail_shirt"]]
-			]));
-		}
-
+		this.m.Items.equip(this.Const.World.Common.pickArmor([
+			[1, "mail_shirt"],
+			[1, "mail_hauberk", 28],
+			[1, "gambeson"],
+			[1, "basic_mail_shirt"]
+		]));
 
 		local helmet;
 
@@ -172,7 +150,7 @@ this.noble_footman <- this.inherit("scripts/entity/tactical/human", {
 
 		if (helmet != null)
 		{
-			helmet.setPlainVariant();
+			// helmet.setPlainVariant();
 			this.m.Items.equip(helmet);
 		}
 	}

@@ -147,14 +147,10 @@ this.knight <- this.inherit("scripts/entity/tactical/human", {
 		{
 			this.m.Items.equip(this.Const.World.Common.pickHelmet([
 				[45, "feathered_hat"],
-				[44, "faction_helm"],
+				[44, "faction_helm", banner],
 				[6, "legend_frogmouth_helm"],
 				[1, "legend_frogmouth_helm_crested"]
 			]))
-			local helm = this.m.Items.getItemAtSlot(this.Const.ItemSlot.Head);
-			local id = helm.getID();
-			if (id == "armor.head.legend_helmet_faction_helm")
-				helm.setVariant(banner);
 		}
 	}
 
@@ -180,12 +176,6 @@ this.knight <- this.inherit("scripts/entity/tactical/human", {
 			"armor/named/heraldic_mail_armor"
 		];
 
-		local legend_armor = [
-			"legend_armor/named/legend_brown_coat_of_plates_armor",
-			"legend_armor/named/legend_golden_scale_armor",
-			"legend_armor/named/legend_green_coat_of_plates_armor",
-			"legend_armor/named/legend_heraldic_mail_armor"
-		];
 		local r = this.Math.rand(1, 3);
 
 		if (r == 1)
@@ -198,25 +188,13 @@ this.knight <- this.inherit("scripts/entity/tactical/human", {
 		}
 		else
 		{
-			if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
-			{
-				local item = this.new("scripts/items/" + legend_armor[this.Math.rand(0, armor.len() - 1)]);
-				local upgrades = [
-					[79, ""],
-					[20, "cloak/legend_armor_cloak_noble"],
-					[1, "cloak/legend_armor_cloak_rich"]
-				];
-				local upgrade = this.Const.World.Common.pickLegendArmor(upgrades)
-				if (upgrade != null)
-				{
-					item.setUpgrade(upgrade)
-				}
-				this.m.Items.equip(item)
-			}
-			else
-			{
-				this.m.Items.equip(this.new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]));
-			}
+			this.m.Items.equip(this.new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]));
+			local h = this.Const.World.Common.pickArmor(
+				this.Const.World.Common.convNameToList(
+					armor
+				)
+			)
+			this.m.Items.equip(h);
 		}
 		this.m.Items.equip(this.Const.World.Common.pickHelmet([
 			[1, "named/legend_frogmouth_helm_crested_painted"]

@@ -63,30 +63,12 @@ this.standard_bearer <- this.inherit("scripts/entity/tactical/human", {
 		weapon.setVariant(banner);
 		this.m.Items.equip(weapon);
 
-		r = this.Math.rand(1, 4);
-
-		if (r == 1)
-		{
-			local armor = this.Const.World.Common.pickArmor([
-				[1, "mail_hauberk"]
-			]);
-			armor.setVariant(28); //todo setvaraint
-			this.m.Items.equip(armor);
-		}
-		else if (r == 2)
-		{
-			this.m.Items.equip(this.Const.World.Common.pickArmor([
-				[1, "mail_shirt"]
-			]));
-		}
-		else
-		{
-			this.m.Items.equip(this.Const.World.Common.pickArmor([
-				[1, "basic_mail_shirt"]
-			]));
-		}
-
-
+		this.m.Items.equip(this.Const.World.Common.pickArmor([
+			[1, "mail_hauberk", 28],
+			[1, "mail_shirt"],
+			[2, "basic_mail_shirt"]
+		]));
+		
 		if (this.Math.rand(1, 100) <= 75)
 		{
 			local helmet;
