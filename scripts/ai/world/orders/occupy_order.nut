@@ -131,7 +131,7 @@ this.occupy_order <- this.inherit("scripts/ai/world/world_behavior", {
 								image = 152;
 							}
 
-							if (this.Math.rand(1, 100) <= 66)
+							if (this.Math.rand(1, 100) <= 50)
 							{
 								local news = this.World.Statistics.createNews();
 								news.set("Holysite", e.getName());
