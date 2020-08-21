@@ -810,6 +810,7 @@ this.arena_contract <- this.inherit("scripts/contracts/contract", {
 			function start()
 			{
 				local roster = this.World.getPlayerRoster().getAll();
+				local n = 0;
 
 				foreach( bro in roster )
 				{
@@ -853,6 +854,13 @@ this.arena_contract <- this.inherit("scripts/contracts/contract", {
 								text = bro.getName() + " is now " + this.Const.Strings.getArticle(skill.getName()) + skill.getName()
 							});
 						}
+
+						n = ++n;
+					}
+
+					if (n >= 3)
+					{
+						break;
 					}
 				}
 
@@ -945,6 +953,7 @@ this.arena_contract <- this.inherit("scripts/contracts/contract", {
 					function getResult()
 					{
 						local roster = this.World.getPlayerRoster().getAll();
+						local n = 0;
 
 						foreach( bro in roster )
 						{
@@ -953,6 +962,12 @@ this.arena_contract <- this.inherit("scripts/contracts/contract", {
 							if (item != null && item.getID() == "accessory.arena_collar")
 							{
 								bro.getFlags().increment("ArenaFights", 1);
+								n = ++n;
+							}
+
+							if (n >= 3)
+							{
+								break;
 							}
 						}
 

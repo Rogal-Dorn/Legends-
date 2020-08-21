@@ -228,7 +228,7 @@ this.cultist_finale_event <- this.inherit("scripts/events/event", {
 					bestCultist = bro;
 				}
 			}
-			else if (bro.getLevel() >= 11 && !bro.getSkills().hasSkill("trait.player") && !bro.getSkills().hasSkill("trait.fabulous"))
+			else if (bro.getLevel() >= 11 && !bro.getSkills().hasSkill("trait.player") && !bro.getSkills().hasSkill("trait.fabulous") && !bro.getFlags().get("IsPlayerCharacter"))
 			{
 				sacrifice_candidates.push(bro);
 			}

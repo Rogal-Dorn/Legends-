@@ -869,9 +869,16 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			this.improveMood(1.5, "Joined a mercenary company");
 		}
 
-		if (("State" in this.World) && this.World.State != null && this.World.Assets.getOrigin().getID() == "scenario.manhunters" && this.getBackground().getID() != "background.slave")
+		if (("State" in this.World) && this.World.State != null && this.World.Assets.getOrigin().getID() == "scenario.manhunters")
 		{
-			this.getSkills().add(this.new("scripts/skills/actives/whip_slave_skill"));
+			if (this.getBackground().getID() != "background.slave")
+			{
+				this.getSkills().add(this.new("scripts/skills/actives/whip_slave_skill"));
+			}
+			else
+			{
+				this.getSprite("miniboss").setBrush("bust_miniboss_indebted");
+			}
 		}
 
 		if (this.World.getPlayerRoster().getSize() >= 12)
