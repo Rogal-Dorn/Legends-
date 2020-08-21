@@ -133,21 +133,11 @@ this.noble_sergeant <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Items.equip(this.new("scripts/items/weapons/legend_swordstaff"));
 		}
 
-	
-		r = this.Math.rand(1, 2);
 
-		if (r == 1)
-		{
-			this.m.Items.equip(this.Const.World.Common.pickArmor([
-				[1, "reinforced_mail_hauberk"]
-			]));
-		}
-		else if (r == 2)
-		{
-			local item = this.new("scripts/items/armor/mail_hauberk");
-			item.setVariant(30);
-			this.m.Items.equip(item);
-		}
+		this.m.Items.equip(this.Const.World.Common.pickArmor([
+			[1, "reinforced_mail_hauberk"],
+			[1, "mail_hauberk", 30]
+		]));
 
 	}
 

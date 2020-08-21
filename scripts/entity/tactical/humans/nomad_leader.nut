@@ -127,34 +127,15 @@ this.nomad_leader <- this.inherit("scripts/entity/tactical/human", {
 
 			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 		}
-<<<<<<< HEAD
 
-
-		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Body) == null)
-		{
-			// if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
-			// {
-			// 	//todo legends armor
-			// }
-			// else
-			// {
-				local armor = [
-					"armor/oriental/plated_nomad_mail",
-					"armor/oriental/southern_long_mail_with_padding"
-				];
-				this.m.Items.equip(this.new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]));
-			//}
-=======
-		
 		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Body) == null)
 		{
 			this.m.Items.equip(this.Const.World.Common.pickArmor([
 				[1, "oriental/plated_nomad_mail"],
 				[1, "oriental/southern_long_mail_with_padding"]
 			]));
->>>>>>> d8279f9fdbeeb42b83d1720e71ac6919b5cd2062
 		}
-		
+
 
 		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Head) == null)
 		{
@@ -195,24 +176,11 @@ this.nomad_leader <- this.inherit("scripts/entity/tactical/human", {
 		}
 		else
 		{
-<<<<<<< HEAD
-			local helms = []; //honestly just easier to slice the helmets/ from the beginning lol
-			foreach(h in this.Const.Items.NamedSouthernHelmets)
-			{
-				helms.push(
-					[ 1, h.slice(h.find("helmets/") + "helmets/".len()) ]
-				);
-			}
-			//helms is an array of arrays so should work (:
-			local helm = this.Const.World.Common.pickHelmet(helms)
-			this.m.Items.equip(helm);
-=======
-			this.m.Items.equip(this.Const.World.Common.pickArmor(
+			this.m.Items.equip(this.Const.World.Common.pickHelmet(
 				this.Const.World.convNameToList(
 					this.Const.Items.NamedSouthernHelmets
 				)
 			));
->>>>>>> d8279f9fdbeeb42b83d1720e71ac6919b5cd2062
 		}
 
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_underdog"));

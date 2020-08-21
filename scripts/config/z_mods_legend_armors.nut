@@ -143,6 +143,7 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 			[1, "chain/legend_armor_mail_shirt_simple"],
             [1, "chain/legend_armor_reinforced_mail"],
 			[1, "chain/legend_armor_reinforced_mail_shirt"],
+        ]
         Plate = [
             [1, "plate/legend_armor_scale"],
             [1, "plate/legend_armor_scale_coat"],
@@ -1340,13 +1341,12 @@ gt.Const.LegendMod.ArmorObjs.extend([{
         Attachments =[
         ]
     }]
-}]
+}]);
 
 gt.Const.LegendMod.Armors <- {};
 
-
 foreach( i, v in gt.Const.LegendMod.ArmorObjs )
 {
-	gt.Const.LegendMod.ArmorObjs[v.ID] <- v;
+	gt.Const.LegendMod.Armors[v.ID] <- v;
 }
 

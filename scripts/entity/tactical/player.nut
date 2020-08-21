@@ -1663,105 +1663,31 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 	function assignRandomMeleeEquipment()
 	{
-		local r = this.Math.rand(1, 24);
 
-		if (r == 1)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/padded_surcoat"));
-		}
-		else if (r == 2)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/mail_shirt"));
-		}
-		else if (r == 3)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/coat_of_plates"));
-		}
-		else if (r == 4)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/gambeson"));
-		}
-		else if (r == 5)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/leather_tunic"));
-		}
-		else if (r == 6)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/padded_leather"));
-		}
-		else if (r == 7)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/lamellar_harness"));
-		}
-		else if (r == 8)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/sackcloth"));
-		}
-		else if (r == 9)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/heavy_lamellar_armor"));
-		}
-		else if (r == 10)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/basic_mail_shirt"));
-		}
-		else if (r == 11)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/scale_armor"));
-		}
-		else if (r == 12)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/coat_of_scales"));
-		}
-		else if (r == 13)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/linen_tunic"));
-		}
-		else if (r == 14)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/tattered_sackcloth"));
-		}
-		else if (r == 15)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/heraldic_mail"));
-		}
-		else if (r == 16)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/named/black_leather_armor"));
-		}
-		else if (r == 17)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/named/golden_scale_armor"));
-		}
-		else if (r == 18)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/named/blue_studded_mail_armor"));
-		}
-		else if (r == 19)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/named/brown_coat_of_plates_armor"));
-		}
-		else if (r == 20)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/named/green_coat_of_plates_armor"));
-		}
-		else if (r == 21)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/ragged_surcoat"));
-		}
-		else if (r == 22)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/reinforced_mail_hauberk"));
-		}
-		else if (r == 23)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/mail_hauberk"));
-		}
-		else if (r == 24)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/leather_lamellar"));
-		}
-
+		this.m.Items.equip(this.Const.World.Common.pickArmor([
+			[1, "padded_surcoat"],
+			[1, "mail_shirt"],
+			[1, "coat_of_plates"],
+			[1, "gambeson"],
+			[1, "leather_tunic"],
+			[1, "lamellar_harness"],
+			[1, "sackcloth"],
+			[1, "heavy_lamellar_armor"],
+			[1, "basic_mail_shirt"],
+			[1, "scale_armor"],
+			[1, "coat_of_scales"],
+			[1, "linen_tunic"],
+			[1, "tattered_sackcloth"],
+			[1, "heraldic_mail"],
+			[1, "named/black_leather_armor"],
+			[1, "named/golden_scale_armor"],
+			[1, "named/blue_studded_mail_armor"],
+			[1, "named/brown_coat_of_plates_armor"],
+			[1, "named/green_coat_of_plates_armor"],
+			[1, "reinforced_mail_hauberk"],
+			[1, "mail_hauberk"],
+			[1, "leather_lamellar"],
+		]));
 
 		local item = this.Const.World.Common.pickHelmet([
 			[6, ""],
@@ -1796,7 +1722,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Items.equip(item);
 		}
 
-		r = this.Math.rand(1, 17);
+		local r = this.Math.rand(1, 17);
 
 		if (r == 1)
 		{
@@ -1875,48 +1801,18 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 	function assignRandomRangedEquipment()
 	{
-		local r = this.Math.rand(1, 10);
-
-		if (r == 1)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/padded_surcoat"));
-		}
-		else if (r == 2)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/mail_shirt"));
-		}
-		else if (r == 3)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/padded_leather"));
-		}
-		else if (r == 4)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/gambeson"));
-		}
-		else if (r == 5)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/leather_tunic"));
-		}
-		else if (r == 6)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/sackcloth"));
-		}
-		else if (r == 7)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/linen_tunic"));
-		}
-		else if (r == 8)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/tattered_sackcloth"));
-		}
-		else if (r == 9)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/ragged_surcoat"));
-		}
-		else if (r == 10)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/thick_tunic"));
-		}
+		this.m.Items.equip(this.Const.World.Common.pickArmor([
+			[1, "padded_surcoat"],
+			[1, "mail_shirt"],
+			[1, "padded_leather"],
+			[1, "gambeson"],
+			[1, "leather_tunic"],
+			[1, "sackcloth"],
+			[1, "linen_tunic"],
+			[1, "tattered_sackcloth"],
+			[1, "ragged_surcoat"],
+			[1, "thick_tunic"],
+		]));
 
 		local item = this.Const.World.Common.pickHelmet([
 			[2, ""],
@@ -1933,7 +1829,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		}
 
 
-		r = this.Math.rand(1, 4);
+		local r = this.Math.rand(1, 4);
 
 		if (r == 1)
 		{
@@ -1959,40 +1855,16 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 	function assignRandomThrowingEquipment()
 	{
-		local r = this.Math.rand(1, 8);
-
-		if (r == 1)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/padded_surcoat"));
-		}
-		else if (r == 2)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/mail_shirt"));
-		}
-		else if (r == 3)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/padded_leather"));
-		}
-		else if (r == 4)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/gambeson"));
-		}
-		else if (r == 5)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/leather_tunic"));
-		}
-		else if (r == 6)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/sackcloth"));
-		}
-		else if (r == 7)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/linen_tunic"));
-		}
-		else if (r == 8)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/tattered_sackcloth"));
-		}
+		this.m.Items.equip(this.Const.World.Common.pickArmor([
+			[1, "padded_surcoat"],
+			[1, "mail_shirt"],
+			[1, "padded_leather"],
+			[1, "gambeson"],
+			[1, "leather_tunic"],
+			[1, "sackcloth"],
+			[1, "linen_tunic"],
+			[1, "tattered_sackcloth"],
+		]));
 
 		local item = this.Const.World.Common.pickHelmet([
 			[1, ""],

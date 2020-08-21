@@ -62,13 +62,12 @@ this.noble <- this.inherit("scripts/entity/tactical/human", {
 		local withDetails = true;
 		local alwaysWithDetails = false;
 		local withHelmet = true;
-		
+
 		if (r == 1)
 		{
 			this.m.Items.equip(this.Const.World.Common.pickArmor([
 				[1, "noble_tunic"]
 			]));
-			this.m.Items.equip(this.new("scripts/items/armor/noble_tunic"));
 			alwaysWithDetails = true;
 		}
 		else if (r == 2)

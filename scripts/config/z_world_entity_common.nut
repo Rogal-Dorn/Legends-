@@ -628,6 +628,7 @@ gt.Const.World.Common.pickHelmet <- function (_helms)
 
 	local r = this.Math.rand(0, totalWeight);
 	local helm = "";
+	local variant = null;
 	foreach (t in candidates)
 	{
 		r = r - t[0];
@@ -636,6 +637,11 @@ gt.Const.World.Common.pickHelmet <- function (_helms)
 			continue;
 		}
 		helm = t[1];
+
+		if (t.len() == 3)
+		{
+			variant = t[2];
+		}
 		break;
 	}
 
@@ -652,7 +658,12 @@ gt.Const.World.Common.pickHelmet <- function (_helms)
 		{
 			return null;
 		}
-		return this.new("scripts/items/helmets/" + helm);
+		local item = this.new("scripts/items/helmets/" + helm);
+		if (variant != null)
+		{
+			item.setVariant(variant);
+		}
+		return item;
 	}
 
 	local layersObj = this.Const.LegendMod.Helmets[helm];
@@ -665,6 +676,11 @@ gt.Const.World.Common.pickHelmet <- function (_helms)
 	local helmet = this.Const.World.Common.pickLegendHelmet(set.Hoods);
 	if (helmet != null)
 	{
+		if (variant != null)
+		{
+			helmet.setupArmor(variant);
+		}
+
          local helm = this.Const.World.Common.pickLegendHelmet(set.Helms);
          if (helm != null)
          {
@@ -703,6 +719,8 @@ gt.Const.World.Common.pickArmor <- function (_armors)
 
 	local r = this.Math.rand(0, totalWeight);
 	local armorID = "";
+	local variant = null;
+	local faction = null;
 	foreach (t in candidates)
 	{
 		r = r - t[0];
@@ -711,6 +729,14 @@ gt.Const.World.Common.pickArmor <- function (_armors)
 			continue;
 		}
 		armorID = t[1];
+		if (t.len() == 3)
+		{
+			variant = t[2];
+		}
+		if (t.len() == 4)
+		{
+			faction = t[3];
+		}
 		break;
 	}
 
@@ -720,7 +746,16 @@ gt.Const.World.Common.pickArmor <- function (_armors)
 		{
 			return null;
 		}
-		return this.new("scripts/items/armor/" + armorID);
+		local item = this.new("scripts/items/armor/" + armorID);
+		if (faction != null)
+		{
+			item.setFaction(faction);
+		}
+		else if (variant != null)
+		{
+			item.setVariant(variant);
+		}
+		return item;
 	}
 
 	if (!(armorID in this.Const.LegendsMod.Armors))
@@ -740,6 +775,11 @@ gt.Const.World.Common.pickArmor <- function (_armors)
 	if (armor == null)
 	{
 		return this.new("scripts/items/armor/" + armorID);
+	}
+
+	if (faction != null)
+	{
+		item.setupArmor(faction);
 	}
 
 	local chain = this.Const.World.Common.pickLegendArmor(set.Chain);

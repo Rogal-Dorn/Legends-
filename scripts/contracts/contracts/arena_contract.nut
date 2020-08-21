@@ -882,15 +882,15 @@ this.arena_contract <- this.inherit("scripts/contracts/contract", {
 					switch(r)
 					{
 					case 1:
-						if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
-						{
-							//todo legends armor
-						}
-						else {
-							a = this.new("scripts/items/armor/oriental/gladiator_harness");
-							u = this.new("scripts/items/armor_upgrades/light_gladiator_upgrade");
-							a.setUpgrade(u);
-						}
+
+						a = this.Const.World.Common.pickArmor([
+								[1, "oriental/gladiator_harness"],
+						]);
+						u = this.Const.World.Common.pickArmor([
+								[1, "oriental/light_gladiator_upgrade"],
+						]);
+						a.setUpgrade(u);
+
 						this.List.push({
 							id = 12,
 							icon = "ui/items/armor_upgrades/upgrade_24.png",
@@ -899,15 +899,13 @@ this.arena_contract <- this.inherit("scripts/contracts/contract", {
 						break;
 
 					case 2:
-						if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
-						{
-							//todo legends armor
-						}
-						else {
-							a = this.new("scripts/items/armor/oriental/gladiator_harness");
-							u = this.new("scripts/items/armor_upgrades/heavy_gladiator_upgrade");
-							a.setUpgrade(u);
-						}
+						a = this.Const.World.Common.pickArmor([
+								[1, "oriental/gladiator_harness"],
+						]);
+						u = this.Const.World.Common.pickArmor([
+								[1, "oriental/heavy_gladiator_upgrade"],
+						]);
+						a.setUpgrade(u);
 						this.List.push({
 							id = 12,
 							icon = "ui/items/armor_upgrades/upgrade_25.png",
