@@ -22,28 +22,25 @@ this.old_gladiator_background <- this.inherit("scripts/skills/backgrounds/gladia
 	function onAddEquipment()
 	{
 		local items = this.getContainer().getActor().getItems();
-		items.equip(this.Const.World.Common.pickArmor([
+		local a = this.Const.World.Common.pickArmor([
 			[1, "oriental/gladiator_harness"]
-		]))
+		]);
 
-		//Not sure if the armor upgrades need to be set here or if we'll have them in the pickArmro() indices so I keep this commented out
+		r = this.Math.rand(1, 2);
 
-		// local r;
-		// local a = this.new("scripts/items/armor/oriental/gladiator_harness");
-		// local u;
-		// r = this.Math.rand(1, 2);
-
-		// if (r == 1)
-		// {
-		// 	u = this.new("scripts/items/armor_upgrades/light_gladiator_upgrade");
-		// }
-		// else if (r == 2)
-		// {
-		// 	u = this.new("scripts/items/armor_upgrades/heavy_gladiator_upgrade");
-		// }
-
-		// a.setUpgrade(u);
-		// items.equip(a);
+		if (r == 1)
+		{
+			a.setUpgrade(this.new("scripts/items/" +
+				(this.World.LegendsMod.Configs().LegendArmorsEnabled() ? "legend_armor/armor_upgrades/legend_light_gladiator_upgrade" : "armor_upgrades/light_gladiator_upgrade")
+			))
+		}
+		else if (r == 2)
+		{
+			a.setUpgrade(this.new("scripts/items/" +
+				(this.World.LegendsMod.Configs().LegendArmorsEnabled() ? "legend_armor/armor_upgrades/legend_heavy_gladiator_upgrade" : "armor_upgrades/heavy_gladiator_upgrade")
+			))
+		}
+		items.equip(a);
 	}
 });
 

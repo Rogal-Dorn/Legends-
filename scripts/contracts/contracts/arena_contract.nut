@@ -910,10 +910,9 @@ this.arena_contract <- this.inherit("scripts/contracts/contract", {
 						a = this.Const.World.Common.pickArmor([
 								[1, "oriental/gladiator_harness"],
 						]);
-						u = this.Const.World.Common.pickArmor([
-								[1, "oriental/heavy_gladiator_upgrade"],
-						]);
-						a.setUpgrade(u);
+						a.setUpgrade(this.new("scripts/items/" +
+							(this.World.LegendsMod.Configs().LegendArmorsEnabled() ? "legend_armor/armor_upgrades/legend_heavy_gladiator_upgrade" : "armor_upgrades/heavy_gladiator_upgrade")
+						))
 						this.List.push({
 							id = 12,
 							icon = "ui/items/armor_upgrades/upgrade_25.png",
