@@ -22,30 +22,28 @@ this.old_gladiator_background <- this.inherit("scripts/skills/backgrounds/gladia
 	function onAddEquipment()
 	{
 		local items = this.getContainer().getActor().getItems();
-		local r;
-		local a = this.new("scripts/items/armor/oriental/gladiator_harness");
-		local u;
-		r = this.Math.rand(1, 2);
+		items.equip(this.Const.World.Common.pickArmor([
+			[1, "oriental/gladiator_harness"]
+		]))
 
-		if (r == 1)
-		{
-			u = this.new("scripts/items/armor_upgrades/light_gladiator_upgrade");
-		}
-		else if (r == 2)
-		{
-			u = this.new("scripts/items/armor_upgrades/heavy_gladiator_upgrade");
-		}
+		//Not sure if the armor upgrades need to be set here or if we'll have them in the pickArmro() indices so I keep this commented out
 
-		a.setUpgrade(u);
-		items.equip(a);
+		// local r;
+		// local a = this.new("scripts/items/armor/oriental/gladiator_harness");
+		// local u;
+		// r = this.Math.rand(1, 2);
+
+		// if (r == 1)
+		// {
+		// 	u = this.new("scripts/items/armor_upgrades/light_gladiator_upgrade");
+		// }
+		// else if (r == 2)
+		// {
+		// 	u = this.new("scripts/items/armor_upgrades/heavy_gladiator_upgrade");
+		// }
+
+		// a.setUpgrade(u);
+		// items.equip(a);
 	}
-
-	function onAddLegendEquipment()
-	{
-		local items = this.getContainer().getActor().getItems();
-		local r;
-		//todo legends armor
-	}
-
 });
 
