@@ -133,12 +133,10 @@ this.noble_sergeant <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Items.equip(this.new("scripts/items/weapons/legend_swordstaff"));
 		}
 
-
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
 			[1, "reinforced_mail_hauberk"],
 			[1, "mail_hauberk", 30]
 		]));
-
 	}
 
 });

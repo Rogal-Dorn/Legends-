@@ -148,7 +148,7 @@ this.noble_footman <- this.inherit("scripts/entity/tactical/human", {
 
 		if (helmet != null)
 		{
-			helmet.setPlainVariant();
+			// helmet.setPlainVariant();
 			this.m.Items.equip(helmet);
 		}
 	}
