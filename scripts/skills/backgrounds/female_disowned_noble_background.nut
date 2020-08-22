@@ -156,7 +156,7 @@ this.female_disowned_noble_background <- this.inherit("scripts/skills/background
 			[1, "mail_shirt"],
 			[1, "mail_hauberk"]
 		]))
-		
+
 		items.equip(this.Const.World.Common.pickHelmet([
 			[1, "nasal_helmet"],
 			[1, "padded_nasal_helmet"],
@@ -166,5 +166,6 @@ this.female_disowned_noble_background <- this.inherit("scripts/skills/background
 			[1, "feathered_hat"],
 			[3, ""]
 		]));
-	
+	}
+
 });

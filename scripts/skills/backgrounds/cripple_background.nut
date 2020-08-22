@@ -166,7 +166,7 @@ this.cripple_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		]))
 
 		local helm = this.Const.World.Common.pickHelmet([
-			[1, "hood", 38]
+			[1, "hood", 38],
 			[3, ""]
 		]);
 		items.equip(helm);

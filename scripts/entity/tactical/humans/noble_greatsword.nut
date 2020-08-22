@@ -88,7 +88,7 @@ this.noble_greatsword <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Items.equip(this.new("scripts/items/weapons/greatsword"));
 		}
 
-		
+
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
 			[2, "mail_hauberk", 28],
@@ -99,7 +99,7 @@ this.noble_greatsword <- this.inherit("scripts/entity/tactical/human", {
 
 
 		this.m.Items.equip(this.Const.World.Common.pickHelmet([
-				[1, "greatsword_hat"]
+				[1, "greatsword_hat"],
 				[1, "greatsword_faction_helm", banner]
 		]));
 	}

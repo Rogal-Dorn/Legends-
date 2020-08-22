@@ -494,7 +494,7 @@ gt.Const.LegendMod.ArmorObjs.extend([{
     Script = "",
     Sets = [{
         Cloth = [
-            [1, "cloth/legend_apron_smith"],
+            [1, "cloth/legend_apron"],
         ],
         Chain = [
         ],
@@ -532,7 +532,7 @@ gt.Const.LegendMod.ArmorObjs.extend([{
     Script = "",
     Sets = [{
         Cloth = [
-            [1, "cloth/legend_robes_herbalist"],
+            [1, "cloth/legend_robes"],
         ],
         Chain = [
         ],
@@ -682,8 +682,8 @@ gt.Const.LegendMod.ArmorObjs.extend([{
     Script = "",
     Sets = [{
         Cloth = [
+            [1, "cloth/legend_robes"],
             [1, "cloth/legend_robes_magic"],
-            [1, "cloth/legend_robes_wizard"],
         ],
         Chain = [
         ],
@@ -701,7 +701,7 @@ gt.Const.LegendMod.ArmorObjs.extend([{
     Script = "",
     Sets = [{
         Cloth = [
-            [1, "cloth/legend_apron_taxidermist"],
+            [1, "cloth/legend_apron"],
         ],
         Chain = [
         ],
@@ -1255,7 +1255,7 @@ gt.Const.LegendMod.ArmorObjs.extend([{
     Script = "",
     Sets = [{
         Cloth = [
-            [1, "cloth/legend_robes_wizard"], // 40
+            [1, "cloth/legend_robes_magic"], // 40
         ],
         Chain = [
         ],

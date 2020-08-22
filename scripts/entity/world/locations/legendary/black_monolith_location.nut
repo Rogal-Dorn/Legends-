@@ -171,7 +171,7 @@ this.black_monolith_location <- this.inherit("scripts/entity/world/location", {
 
 		_lootTable.push(this.Const.World.Common.pickArmor([
 			[1, "legendary/emperors_armor"],
-		])
+		]))
 	}
 
 	function onInit()

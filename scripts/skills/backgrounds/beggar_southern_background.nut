@@ -39,11 +39,11 @@ this.beggar_southern_background <- this.inherit("scripts/skills/backgrounds/begg
 		]));
 
 		local helm = this.Const.World.Common.pickHelmet([
-			[1, "oriental/nomad_head_wrap", 16]
+			[1, "oriental/nomad_head_wrap", 16],
 			[3, ""]
 		]);
 		items.equip(helm);
-		
+
 	}
 });
 

@@ -18,10 +18,9 @@ gt.Const.LegendMod.ArmorObjs.extend([
         Cloth = [
             [1, "cloth/legend_ancient_cloth"], // 30
             [1, "cloth/legend_ancient_cloth_restored"], // 35
-            [1, "cloth/legend_apron"], // 30
-            [1, "cloth/legend_apron_butcher"], // 40
-            [1, "cloth/legend_apron_smith"], // 45
-            [1, "cloth/legend_apron_taxidermist"], // 30
+            [1, "cloth/legend_apron_butcher"], // 30
+            [1, "cloth/legend_apron"], // 35
+
             [1, "cloth/legend_dark_tunic"], // 35
             [1, "cloth/legend_gambeson"], // 65
             [1, "cloth/legend_gambeson_common_color"], // 65
@@ -116,10 +115,9 @@ gt.Const.LegendMod.ArmorObjs.extend([
         Cloth = [
             [1, "cloth/legend_ancient_cloth"], // 30
             [1, "cloth/legend_ancient_cloth_restored"], // 35
-            [1, "cloth/legend_apron"], // 30
-            [1, "cloth/legend_apron_butcher"], // 40
-            [1, "cloth/legend_apron_smith"], // 45
-            [1, "cloth/legend_apron_taxidermist"], // 30
+            [1, "cloth/legend_apron_butcher"], // 30
+            [1, "cloth/legend_apron"], // 35
+
             [1, "cloth/legend_dark_tunic"], // 35
             [1, "cloth/legend_gambeson"], // 65
             [1, "cloth/legend_gambeson_common_color"], // 65
@@ -214,10 +212,9 @@ gt.Const.LegendMod.ArmorObjs.extend([
         Cloth = [
             [1, "cloth/legend_ancient_cloth"], // 30
             [1, "cloth/legend_ancient_cloth_restored"], // 35
-            [1, "cloth/legend_apron"], // 30
-            [1, "cloth/legend_apron_butcher"], // 40
-            [1, "cloth/legend_apron_smith"], // 45
-            [1, "cloth/legend_apron_taxidermist"], // 30
+            [1, "cloth/legend_apron_butcher"], // 30
+            [1, "cloth/legend_apron"], // 35
+
             [1, "cloth/legend_dark_tunic"], // 35
             [1, "cloth/legend_gambeson"], // 65
             [1, "cloth/legend_gambeson_common_color"], // 65
@@ -312,10 +309,9 @@ gt.Const.LegendMod.ArmorObjs.extend([
         Cloth = [
             [1, "cloth/legend_ancient_cloth"], // 30
             [1, "cloth/legend_ancient_cloth_restored"], // 35
-            [1, "cloth/legend_apron"], // 30
-            [1, "cloth/legend_apron_butcher"], // 40
-            [1, "cloth/legend_apron_smith"], // 45
-            [1, "cloth/legend_apron_taxidermist"], // 30
+            [1, "cloth/legend_apron_butcher"], // 30
+            [1, "cloth/legend_apron"], // 35
+
             [1, "cloth/legend_dark_tunic"], // 35
             [1, "cloth/legend_gambeson"], // 65
             [1, "cloth/legend_gambeson_common_color"], // 65
@@ -410,10 +406,9 @@ gt.Const.LegendMod.ArmorObjs.extend([
         Cloth = [
             [1, "cloth/legend_ancient_cloth"], // 30
             [1, "cloth/legend_ancient_cloth_restored"], // 35
-            [1, "cloth/legend_apron"], // 30
-            [1, "cloth/legend_apron_butcher"], // 40
-            [1, "cloth/legend_apron_smith"], // 45
-            [1, "cloth/legend_apron_taxidermist"], // 30
+            [1, "cloth/legend_apron_butcher"], // 30
+            [1, "cloth/legend_apron"], // 35
+
             [1, "cloth/legend_dark_tunic"], // 35
             [1, "cloth/legend_gambeson"], // 65
             [1, "cloth/legend_gambeson_common_color"], // 65
@@ -508,10 +503,9 @@ gt.Const.LegendMod.ArmorObjs.extend([
         Cloth = [
             [1, "cloth/legend_ancient_cloth"], // 30
             [1, "cloth/legend_ancient_cloth_restored"], // 35
-            [1, "cloth/legend_apron"], // 30
-            [1, "cloth/legend_apron_butcher"], // 40
-            [1, "cloth/legend_apron_smith"], // 45
-            [1, "cloth/legend_apron_taxidermist"], // 30
+            [1, "cloth/legend_apron_butcher"], // 30
+            [1, "cloth/legend_apron"], // 35
+
             [1, "cloth/legend_dark_tunic"], // 35
             [1, "cloth/legend_gambeson"], // 65
             [1, "cloth/legend_gambeson_common_color"], // 65
@@ -606,10 +600,9 @@ gt.Const.LegendMod.ArmorObjs.extend([
         Cloth = [
             [1, "cloth/legend_ancient_cloth"], // 30
             [1, "cloth/legend_ancient_cloth_restored"], // 35
-            [1, "cloth/legend_apron"], // 30
-            [1, "cloth/legend_apron_butcher"], // 40
-            [1, "cloth/legend_apron_smith"], // 45
-            [1, "cloth/legend_apron_taxidermist"], // 30
+            [1, "cloth/legend_apron_butcher"], // 30
+            [1, "cloth/legend_apron"], // 35
+
             [1, "cloth/legend_dark_tunic"], // 35
             [1, "cloth/legend_gambeson"], // 65
             [1, "cloth/legend_gambeson_common_color"], // 65
@@ -704,10 +697,9 @@ gt.Const.LegendMod.ArmorObjs.extend([
         Cloth = [
             [1, "cloth/legend_ancient_cloth"], // 30
             [1, "cloth/legend_ancient_cloth_restored"], // 35
-            [1, "cloth/legend_apron"], // 30
-            [1, "cloth/legend_apron_butcher"], // 40
-            [1, "cloth/legend_apron_smith"], // 45
-            [1, "cloth/legend_apron_taxidermist"], // 30
+            [1, "cloth/legend_apron_butcher"], // 30
+            [1, "cloth/legend_apron"], // 35
+
             [1, "cloth/legend_dark_tunic"], // 35
             [1, "cloth/legend_gambeson"], // 65
             [1, "cloth/legend_gambeson_common_color"], // 65
@@ -802,10 +794,9 @@ gt.Const.LegendMod.ArmorObjs.extend([
         Cloth = [
             [1, "cloth/legend_ancient_cloth"], // 30
             [1, "cloth/legend_ancient_cloth_restored"], // 35
-            [1, "cloth/legend_apron"], // 30
-            [1, "cloth/legend_apron_butcher"], // 40
-            [1, "cloth/legend_apron_smith"], // 45
-            [1, "cloth/legend_apron_taxidermist"], // 30
+            [1, "cloth/legend_apron_butcher"], // 30
+            [1, "cloth/legend_apron"], // 35
+
             [1, "cloth/legend_dark_tunic"], // 35
             [1, "cloth/legend_gambeson"], // 65
             [1, "cloth/legend_gambeson_common_color"], // 65
@@ -900,10 +891,9 @@ gt.Const.LegendMod.ArmorObjs.extend([
         Cloth = [
             [1, "cloth/legend_ancient_cloth"], // 30
             [1, "cloth/legend_ancient_cloth_restored"], // 35
-            [1, "cloth/legend_apron"], // 30
-            [1, "cloth/legend_apron_butcher"], // 40
-            [1, "cloth/legend_apron_smith"], // 45
-            [1, "cloth/legend_apron_taxidermist"], // 30
+            [1, "cloth/legend_apron_butcher"], // 30
+            [1, "cloth/legend_apron"], // 35
+
             [1, "cloth/legend_dark_tunic"], // 35
             [1, "cloth/legend_gambeson"], // 65
             [1, "cloth/legend_gambeson_common_color"], // 65
@@ -998,10 +988,8 @@ gt.Const.LegendMod.ArmorObjs.extend([
         Cloth = [
             [1, "cloth/legend_ancient_cloth"], // 30
             [1, "cloth/legend_ancient_cloth_restored"], // 35
-            [1, "cloth/legend_apron"], // 30
-            [1, "cloth/legend_apron_butcher"], // 40
-            [1, "cloth/legend_apron_smith"], // 45
-            [1, "cloth/legend_apron_taxidermist"], // 30
+            [1, "cloth/legend_apron_butcher"], // 30
+            [1, "cloth/legend_apron"], // 35
             [1, "cloth/legend_dark_tunic"], // 35
             [1, "cloth/legend_gambeson"], // 65
             [1, "cloth/legend_gambeson_common_color"], // 65
@@ -1096,10 +1084,8 @@ gt.Const.LegendMod.ArmorObjs.extend([
         Cloth = [
             [1, "cloth/legend_ancient_cloth"], // 30
             [1, "cloth/legend_ancient_cloth_restored"], // 35
-            [1, "cloth/legend_apron"], // 30
-            [1, "cloth/legend_apron_butcher"], // 40
-            [1, "cloth/legend_apron_smith"], // 45
-            [1, "cloth/legend_apron_taxidermist"], // 30
+            [1, "cloth/legend_apron_butcher"], // 30
+            [1, "cloth/legend_apron"], // 35
             [1, "cloth/legend_dark_tunic"], // 35
             [1, "cloth/legend_gambeson"], // 65
             [1, "cloth/legend_gambeson_common_color"], // 65
@@ -1194,10 +1180,9 @@ gt.Const.LegendMod.ArmorObjs.extend([
         Cloth = [
             [1, "cloth/legend_ancient_cloth"], // 30
             [1, "cloth/legend_ancient_cloth_restored"], // 35
-            [1, "cloth/legend_apron"], // 30
-            [1, "cloth/legend_apron_butcher"], // 40
-            [1, "cloth/legend_apron_smith"], // 45
-            [1, "cloth/legend_apron_taxidermist"], // 30
+            [1, "cloth/legend_apron_butcher"], // 30
+            [1, "cloth/legend_apron"], // 35
+
             [1, "cloth/legend_dark_tunic"], // 35
             [1, "cloth/legend_gambeson"], // 65
             [1, "cloth/legend_gambeson_common_color"], // 65
@@ -1294,8 +1279,7 @@ gt.Const.LegendMod.ArmorObjs.extend([
             [1, "cloth/legend_ancient_cloth_restored"], // 35
             [1, "cloth/legend_apron"], // 30
             [1, "cloth/legend_apron_butcher"], // 40
-            [1, "cloth/legend_apron_smith"], // 45
-            [1, "cloth/legend_apron_taxidermist"], // 30
+
             [1, "cloth/legend_dark_tunic"], // 35
             [1, "cloth/legend_gambeson"], // 65
             [1, "cloth/legend_gambeson_common_color"], // 65
@@ -1392,8 +1376,7 @@ gt.Const.LegendMod.ArmorObjs.extend([
             [1, "cloth/legend_ancient_cloth_restored"], // 35
             [1, "cloth/legend_apron"], // 30
             [1, "cloth/legend_apron_butcher"], // 40
-            [1, "cloth/legend_apron_smith"], // 45
-            [1, "cloth/legend_apron_taxidermist"], // 30
+
             [1, "cloth/legend_dark_tunic"], // 35
             [1, "cloth/legend_gambeson"], // 65
             [1, "cloth/legend_gambeson_common_color"], // 65
