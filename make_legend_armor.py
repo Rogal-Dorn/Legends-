@@ -32,7 +32,7 @@ layers = [
     "title" :  "", \
     "desc" :  "Truly fit for a knight, this mail hauberk is made from the highest quality materials and boasts precious decorations and ornaments.", \
     "adesc" : "Includes a mail hauberk made from the highest quality materials and boasts precious decorations and ornaments.", \
-    "named" : True, "rminStam" : 9, "rmaxStam": 13, "rminCond" : 125, "rmaxCond" : 150,  "names" : ['"Heraldic Mail"', '"Splendor"', '"Grandiosity"', '"Pageantry"', '"Swank"', '"Full Mail"', '"Mail Hauberk"', '"Chainmail"', '"Surcoat"', '"Duty"', '"Honor"', '"Noble Mail"']
+    "named" : True, "rminStam" : 9, "rmaxStam": 13, "rminCond" : 125, "rmaxCond" : 150,  "names" : ['Heraldic Mail', "Splendor", "Grandiosity", "Pageantry", "Swank", "Full Mail", "Mail Hauberk", "Chainmail", "Surcoat", "Duty", "Honor", "Noble Mail"]
 },
 {"name": "legend_armor_hauberk_sleevless",                "layer": "chain", "min": 1, "max": 1, "value" : 1250, "con" : 65, "stam" : -7, "impactSound" : "chain", "invSound" : "leather", \
     "title" :  "Sleeveless Hauberk", \
@@ -113,7 +113,7 @@ layers = [
 #     "title" :  "", \
 #     "desc" :  "A silk embroidered cloak made with the finest clothes. Those who wear it feel as if a king", \
 #     "adesc" : "Has a flowing embroidered cloak", \
-#     "named" : True, "rminStam" : 0, "rmaxStam": 0, "rminCond" : 30, "rmaxCond" : 40,  "names" : ['"Kingly"', '"Splendor"', '"Pageantry"', '"Swank"', '"Noble"', '"Undead"']
+#     "named" : True, "rminStam" : 0, "rmaxStam": 0, "rminCond" : 30, "rmaxCond" : 40,  "names" : ["Kingly", "Splendor", "Pageantry", "Swank", "Noble", "Undead"]
 # },
 # {"name": "legend_armor_hexe_leader_cloak_upgrade",        "layer": "cloak", "min": 1, "max": 1, "value" : 12000, "con" : 20, "stam" : 0, "impactSound" : "leather", "invSound" : "leather", \
 #     "title" :  "Hexen Redback Silk Cloak", \
@@ -169,7 +169,7 @@ layers = [
     "title" :  "", \
     "desc" :  "A master crafted heavy padded tunic that offers excellent protection.", \
     "adesc" :"", \
-    "named" : True, "rminStam" : 4, "rmaxStam": 6, "rminCond" : 75, "rmaxCond" : 90,  "names" : ['"Heraldic Gambeson"', '"Splendor"', '"Grandiosity"', '"Pageantry"', '"Swank"', '"Noble Surcoat"', '"Duty"', '"Honor"']
+    "named" : True, "rminStam" : 4, "rmaxStam": 6, "rminCond" : 75, "rmaxCond" : 90,  "names" : ["Heraldic Gambeson", "Splendor", "Grandiosity", "Pageantry", "Swank", "Noble Surcoat", "Duty", "Honor"]
 },
 {"name": "legend_gambeson_plain",                         "layer": "cloth", "min": 0, "max": 39, "value" : 250, "con" : 65, "stam" : -8, "impactSound" : "leather", "invSound" : "leather", "inherit" : "legend_gambeson",\
     "title" :  "Gambeson", \
@@ -265,7 +265,7 @@ layers = [
     "title" :  "", \
     "desc" :  "A rare thick leather brigandine studded with steel rivets for added protection. A piece of true craftsmanship!", \
     "adesc" : "Includes rare leather brigandine armor.", \
-    "named" : True, "rminStam" : 5, "rmaxStam": 7, "rminCond" : 80, "rmaxCond" : 100,  "names" : ['"Harness"', '"Ward"', '"Defense"', '"Barrier"', '"Studded Vest"', '"Lifesaver"', '"Skin"', '"Peel"', '"Guard"', '"Tarnished Harness"', '"Duty"', '"Honor"']
+    "named" : True, "rminStam" : 5, "rmaxStam": 7, "rminCond" : 80, "rmaxCond" : 100,  "names" : ["Harness", "Ward", "Defense", "Barrier", "Studded Vest", "Lifesaver", "Skin", "Peel", "Guard", "Tarnished Harness", "Duty", "Honor"]
 },
 {"name": "legend_armor_leather_jacket",                   "layer": "plate", "min": 1, "max": 9, "value" : 75, "con" : 25, "stam" : -3, "impactSound" : "leather", "invSound" : "leather", \
     "title" :  "Leather Jacket", \
@@ -276,13 +276,13 @@ layers = [
     "title" :  "", \
     "desc" :  "A well-crafted and hardened leather armor. Light to wear but very sturdy.", \
     "adesc" : "Includes a well-crafted and hardened leather armor. Light to wear but very sturdy.", \
-    "named" : True, "rminStam" : 1, "rmaxStam": 2, "rminCond" : 35, "rmaxCond" : 45,  "names" : ['"Leather Cuirass"', '"Leather Armor"', '"Skin"', '"Peel"', '"Guard"', '"Coat"', '"Nightcloak"', '"Black"', '"Dark Omen"', '"Toadskin"', '"Ogreskin"']
+    "named" : True, "rminStam" : 1, "rmaxStam": 2, "rminCond" : 35, "rmaxCond" : 45,  "names" : ["Leather Cuirass", "Leather Armor", "Skin", "Peel", "Guard", "Coat", "Nightcloak", "Black", "Dark Omen", "Toadskin", "Ogreskin"]
 },
 {"name": "legend_armor_leather_jacket_named_02",             "layer": "plate", "min": 1, "max": 17, "value" : 750, "con" : 30, "stam" : -3, "impactSound" : "leather", "invSound" : "leather", \
     "title" :  "", \
     "desc" :  "A well-crafted leather coated jacket. Light to wear but very sturdy.", \
     "adesc" : "Includes a well-crafted leather jacket. Light to wear but very sturdy.", \
-    "named" : True, "rminStam" : 1, "rmaxStam": 2, "rminCond" : 35, "rmaxCond" : 45,  "names" : ['"Leather Cuirass"', '"Leather Armor"', '"Skin"', '"Peel"', '"Guard"', '"Coat"', '"Nightcloak"', '"Black"', '"Dark Omen"', '"Toadskin"', '"Ogreskin"']
+    "named" : True, "rminStam" : 1, "rmaxStam": 2, "rminCond" : 35, "rmaxCond" : 45,  "names" : ["Leather Cuirass", "Leather Armor", "Skin", "Peel", "Guard", "Coat", "Nightcloak", "Black", "Dark Omen", "Toadskin", "Ogreskin"]
 },
 
 {"name": "legend_armor_leather_jacket_simple",            "layer": "plate", "min": 1, "max": 6, "value" : 30, "con" : 15, "stam" : -2, "impactSound" : "leather", "invSound" : "leather", \
@@ -314,7 +314,7 @@ layers = [
     "title" :  "", \
     "desc" :  "An extraordinarily well-crafted piece of lamellar armor. It is covered with beaten gold, which makes it truly stand out.", \
     "adesc" : "Includes an extraordinarily well-crafted piece of lamellar armor. It is covered with beaten gold, which makes it truly stand out.", \
-    "named" : True, "rminStam" : 19, "rmaxStam": 23, "rminCond" : 175, "rmaxCond" : 195,  "names" : ['"Harness"', '"Ward"', '"Defense"', '"Splendor"', '"Golden Lamellar"']
+    "named" : True, "rminStam" : 19, "rmaxStam": 23, "rminCond" : 175, "rmaxCond" : 195,  "names" : ["Harness", "Ward", "Defense", "Splendor", "Golden Lamellar"]
 },
 {"name": "legend_armor_leather_lamellar_reinforced",      "layer": "plate", "min": 1, "max": 1, "value" : 350, "con" : 55, "stam" : -7, "impactSound" : "leather", "invSound" : "leather", \
     "title" :  "Reinforced Leather Lamellar Armor", \
@@ -415,13 +415,13 @@ layers = [
     "title" :  "Full Coat Heavy Plate Armor", \
     "desc" :  "A full set of painted solid plated steel with greaves.", \
     "adesc" : "A masterfully crafted full set of painted solid plated steel with greaves.", \
-    "named" : True, "rminStam" : 23, "rmaxStam": 25, "rminCond" : 185, "rmaxCond" : 225,  "names" : ['"Glory"', '"Triumph"', '"Victory"', '"Joy"']
+    "named" : True, "rminStam" : 23, "rmaxStam": 25, "rminCond" : 185, "rmaxCond" : 225,  "names" : ["Glory", "Triumph", "Victory", "Joy"]
 },
 {"name": "legend_armor_plate_full_greaves_painted",       "layer": "plate", "min": 1, "max": 1, "value" : 10000, "con" : 170, "stam" : -26, "impactSound" : "leather", "invSound" : "leather", \
     "title" :  "Full Coat of Painted Heavy Plate Armor", \
     "desc" :  "A full set of painted solid plated steel with greaves.", \
     "adesc" : "A masterfully crafted full set of painted solid plated steel with greaves.", \
-    "named" : True, "rminStam" : 23, "rmaxStam": 25, "rminCond" : 185, "rmaxCond" : 225,  "names" : ['"Ward"', '"Death"', '"Barrier"', '"Plate Armor"', '"Dark Plated Armor"', '"Life Stealer"']
+    "named" : True, "rminStam" : 23, "rmaxStam": 25, "rminCond" : 185, "rmaxCond" : 225,  "names" : ["Ward", "Death", "Barrier", "Plate Armor", "Dark Plated Armor", "Life Stealer"]
 },
 {"name": "legend_armor_scale",                            "layer": "plate", "min": 1, "max": 1, "value" : 2250, "con" : 100, "stam" : -12, "impactSound" : "plate", "invSound" : "leather", \
     "title" :  "Scale Armor", \
@@ -437,7 +437,7 @@ layers = [
     "title" :  "", \
     "desc" :  "A scale armor made of small, interlocking metal scales. The style and craftsmanship hint at the armor coming from a far-away region.", \
     "adesc" : "Includes a scale armor made of small, interlocking metal scales. The style and craftsmanship hint at the armor coming from a far-away region.", \
-    "named" : True, "rminStam" : 10, "rmaxStam": 14, "rminCond" : 130, "rmaxCond" : 160,  "names" : ['"Scale Shirt"', '"Scale Armor"', '"Dragonskin"', '"Snakeskin"', '"Scales"', '"Wyrmskin"', '"Goldskin"', '"Scale Tunic"', '"Golden Armor"', '"Golden Reminder"']
+    "named" : True, "rminStam" : 10, "rmaxStam": 14, "rminCond" : 130, "rmaxCond" : 160,  "names" : ["Scale Shirt", "Scale Armor", "Dragonskin", "Snakeskin", "Scales", "Wyrmskin", "Goldskin", "Scale Tunic", "Golden Armor", "Golden Reminder"]
 },
 {"name": "legend_armor_scale_coat_rotten",                "layer": "plate", "min": 1, "max": 1, "value" : 600, "con" : 60, "stam" : -9, "impactSound" : "plate", "invSound" : "leather", \
     "title" :  "Decayed Coat of Scales", \
@@ -726,6 +726,12 @@ def main():
         if "vanilla" in d:
             brush = "bust_body"
 
+        namesL = []
+        if "names" in d:
+            namesL = "["
+            for n in d["names"]:
+                namesL += '"' + n + '", '
+            namesL += "]"
         opts = dict(
             test="true",
             inherit=inherit,
@@ -746,7 +752,7 @@ def main():
             icon = layer + "/" + d["name"],
             impactSound = impactsound,
             invSound = invsound,
-            names = d["names"] if "names" in d else [],
+            names = namesL,
             rminStam = d["rminStam"] if "rminStam" in d else 0,
             rmaxStam = d["rmaxStam"] if "rmaxStam" in d else 0,
             rminCond = d["rminCond"] if "rminCond" in d else 0,
@@ -757,7 +763,7 @@ def main():
         F.write(text)
         F.close()
 
-        #print('[0, "' + layer + '/' + fname + '"],')
+        #print('[0, " + layer + '/' + fname + "],')
 
 
     #Build Brushes
@@ -787,16 +793,16 @@ def main():
 
         for t in R:
             for name in names:
-                name = name.replace("legend_armor", "legend")
+                name = "bust_" + name.replace("legend_armor", "legend")
                 opts = dict(
                     name=name,
                     damaged=name + "_damaged",
                     dead=name + "_dead",
                     arrow=name + "_dead_arrows",
                     javelin=name + "_dead_javelin",
-                    name_path=os.path.join("entity", "legend_armor", d["layer"], "bust_" + name + ".png"),
-                    damaged_path=os.path.join("entity", "legend_armor", d["layer"], "bust_" + name + "_damaged.png"),
-                    dead_path=os.path.join("entity", "legend_armor", d["layer"], "bust_" + name + "_dead.png"),
+                    name_path=os.path.join("entity", "legend_armor", d["layer"], name + ".png"),
+                    damaged_path=os.path.join("entity", "legend_armor", d["layer"], name + "_damaged.png"),
+                    dead_path=os.path.join("entity", "legend_armor", d["layer"],  name + "_dead.png"),
                     arrow_path=os.path.join("..",  "dead_arrows.png"),
                     javelin_path=os.path.join("..", "dead_javelin.png")
                 )

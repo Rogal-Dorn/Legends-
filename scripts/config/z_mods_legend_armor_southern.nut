@@ -31,7 +31,6 @@ gt.Const.LegendMod.ArmorObjs.extend([
             [1, "cloth/legend_padded_surcoat"], // 55
             [1, "cloth/legend_peasant_dress"], // 25
             [1, "cloth/legend_robes"], // 25
-            [1, "cloth/legend_robes_herbalist"], // 27
             [1, "cloth/legend_robes_magic"], // 40
             [1, "cloth/legend_robes_nun"], // 22
             [1, "cloth/legend_robes_wizard"], // 40
@@ -128,7 +127,7 @@ gt.Const.LegendMod.ArmorObjs.extend([
             [1, "cloth/legend_padded_surcoat"], // 55
             [1, "cloth/legend_peasant_dress"], // 25
             [1, "cloth/legend_robes"], // 25
-            [1, "cloth/legend_robes_herbalist"], // 27
+
             [1, "cloth/legend_robes_magic"], // 40
             [1, "cloth/legend_robes_nun"], // 22
             [1, "cloth/legend_robes_wizard"], // 40
@@ -225,7 +224,7 @@ gt.Const.LegendMod.ArmorObjs.extend([
             [1, "cloth/legend_padded_surcoat"], // 55
             [1, "cloth/legend_peasant_dress"], // 25
             [1, "cloth/legend_robes"], // 25
-            [1, "cloth/legend_robes_herbalist"], // 27
+
             [1, "cloth/legend_robes_magic"], // 40
             [1, "cloth/legend_robes_nun"], // 22
             [1, "cloth/legend_robes_wizard"], // 40
@@ -322,7 +321,7 @@ gt.Const.LegendMod.ArmorObjs.extend([
             [1, "cloth/legend_padded_surcoat"], // 55
             [1, "cloth/legend_peasant_dress"], // 25
             [1, "cloth/legend_robes"], // 25
-            [1, "cloth/legend_robes_herbalist"], // 27
+
             [1, "cloth/legend_robes_magic"], // 40
             [1, "cloth/legend_robes_nun"], // 22
             [1, "cloth/legend_robes_wizard"], // 40
@@ -419,7 +418,7 @@ gt.Const.LegendMod.ArmorObjs.extend([
             [1, "cloth/legend_padded_surcoat"], // 55
             [1, "cloth/legend_peasant_dress"], // 25
             [1, "cloth/legend_robes"], // 25
-            [1, "cloth/legend_robes_herbalist"], // 27
+
             [1, "cloth/legend_robes_magic"], // 40
             [1, "cloth/legend_robes_nun"], // 22
             [1, "cloth/legend_robes_wizard"], // 40
@@ -516,7 +515,7 @@ gt.Const.LegendMod.ArmorObjs.extend([
             [1, "cloth/legend_padded_surcoat"], // 55
             [1, "cloth/legend_peasant_dress"], // 25
             [1, "cloth/legend_robes"], // 25
-            [1, "cloth/legend_robes_herbalist"], // 27
+
             [1, "cloth/legend_robes_magic"], // 40
             [1, "cloth/legend_robes_nun"], // 22
             [1, "cloth/legend_robes_wizard"], // 40
@@ -613,7 +612,7 @@ gt.Const.LegendMod.ArmorObjs.extend([
             [1, "cloth/legend_padded_surcoat"], // 55
             [1, "cloth/legend_peasant_dress"], // 25
             [1, "cloth/legend_robes"], // 25
-            [1, "cloth/legend_robes_herbalist"], // 27
+
             [1, "cloth/legend_robes_magic"], // 40
             [1, "cloth/legend_robes_nun"], // 22
             [1, "cloth/legend_robes_wizard"], // 40
@@ -710,7 +709,7 @@ gt.Const.LegendMod.ArmorObjs.extend([
             [1, "cloth/legend_padded_surcoat"], // 55
             [1, "cloth/legend_peasant_dress"], // 25
             [1, "cloth/legend_robes"], // 25
-            [1, "cloth/legend_robes_herbalist"], // 27
+
             [1, "cloth/legend_robes_magic"], // 40
             [1, "cloth/legend_robes_nun"], // 22
             [1, "cloth/legend_robes_wizard"], // 40
@@ -807,7 +806,7 @@ gt.Const.LegendMod.ArmorObjs.extend([
             [1, "cloth/legend_padded_surcoat"], // 55
             [1, "cloth/legend_peasant_dress"], // 25
             [1, "cloth/legend_robes"], // 25
-            [1, "cloth/legend_robes_herbalist"], // 27
+
             [1, "cloth/legend_robes_magic"], // 40
             [1, "cloth/legend_robes_nun"], // 22
             [1, "cloth/legend_robes_wizard"], // 40
@@ -904,7 +903,7 @@ gt.Const.LegendMod.ArmorObjs.extend([
             [1, "cloth/legend_padded_surcoat"], // 55
             [1, "cloth/legend_peasant_dress"], // 25
             [1, "cloth/legend_robes"], // 25
-            [1, "cloth/legend_robes_herbalist"], // 27
+
             [1, "cloth/legend_robes_magic"], // 40
             [1, "cloth/legend_robes_nun"], // 22
             [1, "cloth/legend_robes_wizard"], // 40
@@ -1000,7 +999,7 @@ gt.Const.LegendMod.ArmorObjs.extend([
             [1, "cloth/legend_padded_surcoat"], // 55
             [1, "cloth/legend_peasant_dress"], // 25
             [1, "cloth/legend_robes"], // 25
-            [1, "cloth/legend_robes_herbalist"], // 27
+
             [1, "cloth/legend_robes_magic"], // 40
             [1, "cloth/legend_robes_nun"], // 22
             [1, "cloth/legend_robes_wizard"], // 40
@@ -1096,7 +1095,7 @@ gt.Const.LegendMod.ArmorObjs.extend([
             [1, "cloth/legend_padded_surcoat"], // 55
             [1, "cloth/legend_peasant_dress"], // 25
             [1, "cloth/legend_robes"], // 25
-            [1, "cloth/legend_robes_herbalist"], // 27
+
             [1, "cloth/legend_robes_magic"], // 40
             [1, "cloth/legend_robes_nun"], // 22
             [1, "cloth/legend_robes_wizard"], // 40
@@ -1193,7 +1192,7 @@ gt.Const.LegendMod.ArmorObjs.extend([
             [1, "cloth/legend_padded_surcoat"], // 55
             [1, "cloth/legend_peasant_dress"], // 25
             [1, "cloth/legend_robes"], // 25
-            [1, "cloth/legend_robes_herbalist"], // 27
+
             [1, "cloth/legend_robes_magic"], // 40
             [1, "cloth/legend_robes_nun"], // 22
             [1, "cloth/legend_robes_wizard"], // 40
@@ -1290,7 +1289,7 @@ gt.Const.LegendMod.ArmorObjs.extend([
             [1, "cloth/legend_padded_surcoat"], // 55
             [1, "cloth/legend_peasant_dress"], // 25
             [1, "cloth/legend_robes"], // 25
-            [1, "cloth/legend_robes_herbalist"], // 27
+
             [1, "cloth/legend_robes_magic"], // 40
             [1, "cloth/legend_robes_nun"], // 22
             [1, "cloth/legend_robes_wizard"], // 40
@@ -1387,7 +1386,7 @@ gt.Const.LegendMod.ArmorObjs.extend([
             [1, "cloth/legend_padded_surcoat"], // 55
             [1, "cloth/legend_peasant_dress"], // 25
             [1, "cloth/legend_robes"], // 25
-            [1, "cloth/legend_robes_herbalist"], // 27
+
             [1, "cloth/legend_robes_magic"], // 40
             [1, "cloth/legend_robes_nun"], // 22
             [1, "cloth/legend_robes_wizard"], // 40

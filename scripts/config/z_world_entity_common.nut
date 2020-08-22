@@ -758,7 +758,7 @@ gt.Const.World.Common.pickArmor <- function (_armors)
 		return item;
 	}
 
-	if (!(armorID in this.Const.LegendsMod.Armors))
+	if (!(armorID in this.Const.LegendMod.Armors))
 	{
 		this.logError("Armor not defined in Legends Armor Obj : " + armorID);
 		return this.new("scripts/items/armor/" + armorID);

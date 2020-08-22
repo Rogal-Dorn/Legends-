@@ -546,6 +546,24 @@ gt.Const.LegendMod.ArmorObjs.extend([{
         ]
     }]
 },{
+    ID = "monk_robe",
+    Script = "",
+    Sets = [{
+        Cloth = [
+            [1, "cloth/legend_robes"],
+        ],
+        Chain = [
+        ],
+        Plate = [
+        ],
+        Cloak = [
+        ],
+        Tabard = [
+        ],
+        Attachments =[
+        ]
+    }]
+},{
     ID = "legend_maid_apron",
     Script = "",
     Sets = [{
