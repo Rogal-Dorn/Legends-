@@ -104,8 +104,6 @@ this.legends_coast_fort <- this.inherit("scripts/entity/world/settlements/legend
 			"raider_background",
 			"raider_background",
 			"retired_soldier_background",
-			  "female_butcher_background",
-			"female_butcher_background",
 			"fisherman_background",
 			"fisherman_background",
 			"houndmaster_background",
@@ -114,7 +112,6 @@ this.legends_coast_fort <- this.inherit("scripts/entity/world/settlements/legend
 			"militia_background",
 			"ratcatcher_background",
 			"witchhunter_background",
-			"female_adventurous_noble_background",
 			"bastard_background",
 			"deserter_background",
 			"raider_background",
@@ -152,7 +149,6 @@ this.legends_coast_fort <- this.inherit("scripts/entity/world/settlements/legend
 				"apprentice_background",
 			"caravan_hand_background",
 			"gambler_background",
-			"female_daytaler_background",
 			"fisherman_background",
 			"fisherman_background",
 			"fisherman_background",
@@ -164,11 +160,8 @@ this.legends_coast_fort <- this.inherit("scripts/entity/world/settlements/legend
 			"monk_background",
 			"peddler_background",
 			"ratcatcher_background",
-			"female_servant_background",
 			"vagabond_background",
 			"witchhunter_background",
-			"female_adventurous_noble_background",
-			"female_adventurous_noble_background",
 			"bastard_background",
 			"deserter_background",
 			"raider_background",
@@ -217,7 +210,6 @@ this.legends_coast_fort <- this.inherit("scripts/entity/world/settlements/legend
 			"caravan_hand_background",
 			"caravan_hand_background",
 			"gambler_background",
-			"female_daytaler_background",
 			"fisherman_background",
 			"fisherman_background",
 			"gravedigger_background",
@@ -228,11 +220,8 @@ this.legends_coast_fort <- this.inherit("scripts/entity/world/settlements/legend
 			"minstrel_background",
 			"ratcatcher_background",
 			"refugee_background",
-			"female_servant_background",
 			"vagabond_background",
 			"witchhunter_background",
-			"female_adventurous_noble_background",
-			"female_adventurous_noble_background",
 			"bastard_background",
 			"deserter_background",
 			"deserter_background",
@@ -246,6 +235,25 @@ this.legends_coast_fort <- this.inherit("scripts/entity/world/settlements/legend
 			"swordmaster_background",
 			"cripple_background",
 			"eunuch_background"
+		]];
+
+		this.m.FemaleDraftLists = [
+			[
+   			"female_butcher_background",
+			"female_butcher_background",
+			"female_adventurous_noble_background",
+			],
+			[
+			"female_daytaler_background",
+			"female_servant_background",
+			"female_adventurous_noble_background",
+			"female_adventurous_noble_background",
+			],
+			[
+			"female_daytaler_background",
+			"female_servant_background",
+			"female_adventurous_noble_background",
+			"female_adventurous_noble_background",
 		]];
 		this.m.StablesLists = [
 		[

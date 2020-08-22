@@ -21,7 +21,7 @@ this.legend_horserider <- this.inherit("scripts/skills/backgrounds/character_bac
 		this.m.Hairs = this.Const.Hair.None;
 		this.m.HairColors = this.Const.HairColors.None;
 		this.m.Beards = null
-		this.m.Body = "bust_naked_body_00";
+
 		this.m.IsFemaleBackground = false;
 		this.m.IsLowborn = false;
 		this.m.IsUntalented = true;

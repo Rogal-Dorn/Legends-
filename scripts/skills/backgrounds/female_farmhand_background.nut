@@ -23,7 +23,7 @@ this.female_farmhand_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsLowborn = true;
 		this.m.IsFemaleBackground = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.NeutralMax;
@@ -93,7 +93,7 @@ this.female_farmhand_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.Hairs = this.Const.Hair.CommonMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.Body = "bust_naked_body_01";
+
 		this.m.IsFemaleBackground = false;
 		this.m.BackgroundDescription = "Milkmen are used to physical labor.";
 		this.m.GoodEnding = "The former milkman, %name%, retired from the %companyname%. The money he made was put toward purchasing a bit of land. He spends the rest of his days happily farming and starting a family with way too many children.";
@@ -168,21 +168,6 @@ this.female_farmhand_background <- this.inherit("scripts/skills/backgrounds/char
 		return c;
 	}
 
-	function onAdded()
-	{
-		this.character_background.onAdded();
-		local actor = this.getContainer().getActor();
-
-		if(this.m.IsFemaleBackground == true)
-		{
-			actor.setName(this.Const.Strings.CharacterNamesFemale[this.Math.rand(0, this.Const.Strings.CharacterNamesFemale.len() - 1)]);
-		}
-		else
-		{
-			actor.setName(this.Const.Strings.CharacterNames[this.Math.rand(0, this.Const.Strings.CharacterNames.len() - 1)]);
-		}
-	}
-
 	function onAddEquipment()
 	{
 		local items = this.getContainer().getActor().getItems();
@@ -212,12 +197,15 @@ this.female_farmhand_background <- this.inherit("scripts/skills/backgrounds/char
 
 			if(this.m.IsFemaleBackground == true)
 			{
-				items.equip(this.new("scripts/items/armor/legend_maid_dress"));
+				items.equip(this.Const.World.Common.pickArmor([
+					[1, "legend_maid_dress"]
+				]))
 			}
 			else
 			{
-				local item = this.new("scripts/items/armor/linen_tunic");
-				item.setVariant(this.Math.rand(6, 7));
+				local item = this.Const.World.Common.pickArmor([
+					[1, "linen_tunic", this.Math.rand(6, 7)]
+				])
 				items.equip(item);
 			}
 
@@ -226,72 +214,22 @@ this.female_farmhand_background <- this.inherit("scripts/skills/backgrounds/char
 		{
 			if (this.m.IsFemaleBackground == true)
 			{
-				items.equip(this.new("scripts/items/armor/legend_maid_apron"));
+				items.equip(this.Const.World.Common.pickArmor([
+					[1, "legend_maid_apron"]
+				]))
 			}
 			else
 			{
-				local item = this.new("scripts/items/armor/linen_tunic");
-				item.setVariant(this.Math.rand(6, 7));
+				local item = this.Const.World.Common.pickArmor([
+					[1, "linen_tunic", this.Math.rand(6, 7)]
+				])
 				items.equip(item);
 			}
 		}
 
-		r = this.Math.rand(0, 2);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/straw_hat"));
-		}
-	}
-
-	function onAddLegendEquipment()
-	{
-		local items = this.getContainer().getActor().getItems();
-		local r = this.Math.rand(0, 6);
-
-		if (r == 1)
-		{
-			items.equip(this.new("scripts/items/weapons/pitchfork"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/weapons/legend_wooden_pitchfork"));
-		}
-		else if (r == 3)
-		{
-			items.equip(this.new("scripts/items/weapons/legend_shovel"));
-		}
-		else if (r == 4)
-		{
-			items.equip(this.new("scripts/items/weapons/wooden_flail"));
-		}
-
-		local cloths = [
-            [0, ""],
-			[0, "cloth/legend_gambeson"],
-			[0, "cloth/legend_gambeson_plain"],
-			[0, "cloth/legend_gambeson_wolf"],
-			[0, "cloth/legend_padded_surcoat"],
-			[0, "cloth/legend_robes"],
-			[0, "cloth/legend_apron_butcher"],
-			[0, "cloth/legend_robes_nun"],
-			[0, "cloth/legend_apron_smith"],
-			[0, "cloth/legend_robes_wizard"],
-			[1, "cloth/legend_sackcloth"],
-			[0, "cloth/legend_sackcloth_patched"],
-			[0, "cloth/legend_sackcloth_tattered"],
-			[1, "cloth/legend_tunic"],
-			[0, "cloth/legend_tunic_noble"],
-			[1, "cloth/legend_peasant_dress"]
-		];
-		local armor = this.Const.World.Common.pickLegendArmor(cloths)
-		items.equip(armor)
-
-		r = this.Math.rand(0, 2);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/straw_hat"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "straw_hat"],
+			[2, ""]
+		]));
 	}
 });

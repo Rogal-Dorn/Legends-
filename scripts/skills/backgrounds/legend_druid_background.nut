@@ -54,7 +54,8 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.Untidy;
 		this.m.BeardChance = 100;
-		this.m.Body = "bust_naked_body_04";
+		this.m.Bodies = this.Const.Bodies.LegendTattos;
+		this.m.Ethnicity = 2;
 		this.m.Level = 3;
 		this.m.IsCombatBackground = true;
 		this.m.IsLowborn = true;
@@ -134,7 +135,7 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsFemaleBackground = true;
 	}
 
@@ -178,31 +179,31 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 	{
 		local c = {
 			Hitpoints = [
-				10,
+				0,
 				15
 			],
 			Bravery = [
 				0,
-				0
+				5
 			],
 			Stamina = [
-				0,
+				-5,
 				5
 			],
 			MeleeSkill = [
-				5,
+				-5,
 				10
 			],
 			RangedSkill = [
-				0,
-				0
+				-15,
+				-5
 			],
 			MeleeDefense = [
-				10,
+				-10,
 				10
 			],
 			RangedDefense = [
-				0,
+				-10,
 				0
 			],
 			Initiative = [
@@ -213,20 +214,6 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 		return c;
 	}
 
-	function onAdded()
-	{
-		this.character_background.onAdded();
-		local actor = this.getContainer().getActor();
-
-		if (this.m.IsFemaleBackground == true)
-		{
-			actor.setName(this.Const.Strings.CharacterNamesFemaleNorse[this.Math.rand(0, this.Const.Strings.CharacterNamesFemaleNorse.len() - 1)]);
-		}
-		else
-		{
-			actor.setName(this.Const.Strings.BarbarianNames[this.Math.rand(0, this.Const.Strings.BarbarianNames.len() - 1)]);
-		}
-	}
 
 	function onSetAppearance()
 	{
@@ -255,16 +242,6 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 		}
 	}
 
-	function onAdded()
-	{
-
-		this.character_background.onAdded();
-		local actor = this.getContainer().getActor();
-		this.m.Container.add(this.new("scripts/skills/traits/deathwish_trait"));
-		//this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
-	}
-
-
 	function onAddEquipment()
 	{
 		local talents = this.getContainer().getActor().getTalents();
@@ -273,64 +250,13 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 		talents[this.Const.Attributes.Hitpoints] = 3;
 		this.getContainer().getActor().fillTalentValues(2, true);
 		local items = this.getContainer().getActor().getItems();
-		local stash = this.World.Assets.getStash()
-		stash.removeByID("supplies.ground_grains");
-		stash.removeByID("supplies.ground_grains");
-		items.equip(this.new("scripts/items/armor/barbarians/hide_and_bone_armor"));
-		items.equip(this.new("scripts/items/helmets/barbarians/bear_headpiece"));
-	}
-
-	function onAddLegendEquipment()
-	{
-		local talents = this.getContainer().getActor().getTalents();
-		talents.resize(this.Const.Attributes.COUNT, 0);
-		talents[this.Const.Attributes.MeleeSkill] = 3;
-		talents[this.Const.Attributes.Hitpoints] = 3;
-		this.getContainer().getActor().fillTalentValues(2, true);
-		local items = this.getContainer().getActor().getItems();
-		local stash = this.World.Assets.getStash()
-		stash.removeByID("supplies.ground_grains");
-		stash.removeByID("supplies.ground_grains");
-		stash.add(this.new("scripts/items/supplies/roots_and_berries_item"));
-		stash.add(this.new("scripts/items/supplies/medicine_item"));
-
-			local cloths = [
-            [0, ""],
-			[0, "cloth/legend_gambeson"],
-			[0, "cloth/legend_gambeson_plain"],
-			[0, "cloth/legend_gambeson_wolf"],
-			[0, "cloth/legend_padded_surcoat"],
-			[0, "cloth/legend_robes_herbalist"],
-			[0, "cloth/legend_apron_butcher"],
-			[0, "cloth/legend_robes_nun"],
-			[0, "cloth/legend_apron_smith"],
-			[0, "cloth/legend_robes_wizard"],
-			[1, "cloth/legend_robes_magic"],
-			[0, "cloth/legend_sackcloth"],
-			[0, "cloth/legend_sackcloth_patched"],
-			[0, "cloth/legend_sackcloth_tattered"],
-			[0, "cloth/legend_tunic"],
-			[0, "cloth/legend_tunic_noble"]
-		];
-		local armor = this.Const.World.Common.pickLegendArmor(cloths)
-		items.equip(armor)
-		local plates = [
-			[0, ""],
-			[1, "plate/legend_thick_furs_armor"],
-			[1, "plate/legend_animal_hide_armor"],
-			[1, "plate/legend_hide_and_bone_armor"],
-			[1, "plate/legend_reinforced_animal_hide_armor"],
-			[0, "plate/legend_scrap_metal_armor"],
-			[0, "plate/legend_rugged_scale_armor"],
-			[0, "plate/legend_heavy_iron_armor"],
-			[0, "plate/legend_thick_plated_barbarian_armor"]
-		]
-		local plate = this.Const.World.Common.pickLegendArmor(plates)
-		if (plate != null)
-		{
-			armor.setUpgrade(plate)
-		}
-		items.equip(this.new("scripts/items/helmets/barbarians/bear_headpiece"));
+		items.equip(this.Const.World.Common.pickArmor([
+			[1, "barbarians/hide_and_bone_armor"]
+		]));
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "barbarians/bear_headpiece"]
+		]));
+		this.getContainer().getActor().TherianthropeInfectionRandom();
 	}
 
 	function onSerialize( _out )

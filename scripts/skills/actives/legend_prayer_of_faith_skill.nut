@@ -4,7 +4,7 @@ this.legend_prayer_of_faith_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_prayer_of_faith";
 		this.m.Name = "Prayer of Faith";
-		this.m.Description = "Grant defense to your allies with your chant of holy scripture, granting +10% of their resolve as melee and ranged defense.";
+		this.m.Description = "Grant defense to your allies with your chant of holy scripture, granting +20% of their resolve as melee and ranged defense.";
 		this.m.Icon = "skills/prayer_purple_square.png";
 		this.m.IconDisabled = "skills/prayer_purple_square_bw.png";
 		this.m.Overlay = "prayer_purple";
@@ -23,7 +23,7 @@ this.legend_prayer_of_faith_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsAttack = false;
 		this.m.IsVisibleTileNeeded = false;
 		this.m.ActionPointCost = 6;
-		this.m.FatigueCost = 20;
+		this.m.FatigueCost = 30;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 1;
 	}

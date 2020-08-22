@@ -43,7 +43,7 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 		this.m.Hairs = this.Const.Hair.TidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Tidy;
-		this.m.Body = "bust_naked_body_02";
+
 		this.m.Level = 3;
 		this.m.IsCombatBackground = true;
 		this.m.IsUntalented = true;
@@ -200,7 +200,7 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsFemaleBackground = true;
 		this.m.GoodEnding = "While the %companyname% continued on with great success, %name% the ranger eventually saw fit to leave it all behind. She returned to the forests and fields, hunting deer and small game. She rarely showed the grim reality of hunting humans, but you have to imagine she\'d just rather stop doing it. As far as you know, she\'s doing well for herself these days. She purchased a bit of land and helps guide nobles on pricy hunting trips.";
 		this.m.BadEnding = "With the decline of the %companyname% readily obvious, %name% the ranger departed from the company and returned to game hunting. Unfortunately, a hunting trip with a nobleman went awry when the lord was gored through both cheeks by a boar. The hunter, feeling he\'d be blamed, shot by the nobleman and his guard and fled through the forests on her own. She has not been seen since.";
@@ -278,16 +278,6 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_guide_steps"));
 		//this.m.Container.add(this.new("scripts/skills/perks/perk_footwork"));
 
-		local actor = this.getContainer().getActor();
-
-		if (this.m.IsFemaleBackground == true)
-		{
-			actor.setName(this.Const.Strings.CharacterNamesFemale[this.Math.rand(0, this.Const.Strings.CharacterNamesFemale.len() - 1)]);
-		}
-		else
-		{
-			actor.setName(this.Const.Strings.CharacterNames[this.Math.rand(0, this.Const.Strings.CharacterNames.len() - 1)]);
-		}
 	}
 
 
@@ -323,63 +313,13 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 			items.addToBag(this.new("scripts/items/weapons/bludgeon"));
 		}
 
+		items.equip(this.Const.World.Common.pickArmor([
+			[1, "legend_armor_ranger"]
+		]));
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "hood"],
+			[1, "hunters_hat"]
+		]));
 
-		r = this.Math.rand(0, 1);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/hood"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/hunters_hat"));
-		}
 	}
-
-	function onAddLegendEquipment()
-	{
-		local talents = this.getContainer().getActor().getTalents();
-		talents.resize(this.Const.Attributes.COUNT, 0);
-		talents[this.Const.Attributes.RangedSkill] = 3;
-		talents[this.Const.Attributes.Fatigue] = 3;
-		this.getContainer().getActor().fillTalentValues(2, true);
-		local items = this.getContainer().getActor().getItems();
-
-
-		local r;
-		items.equip(this.new("scripts/items/weapons/hunting_bow"));
-		items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
-
-		local stash = this.World.Assets.getStash()
-		stash.add(this.new("scripts/items/ammo/quiver_of_arrows"));
-		stash.add(this.new("scripts/items/supplies/cured_venison_item"));
-		stash.removeByID("supplies.ground_grains");
-
-		items.equip(this.new("scripts/items/legend_armor/armor/legend_armor_ranger"));
-
-
-		r = this.Math.rand(0, 1);
-
-		if (r == 0)
-		{
-			items.addToBag(this.new("scripts/items/weapons/dagger"));
-		}
-		if (r == 1)
-		{
-			items.addToBag(this.new("scripts/items/weapons/bludgeon"));
-		}
-
-
-		r = this.Math.rand(0, 1);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/hood"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/hunters_hat"));
-		}
-	}
-
 });

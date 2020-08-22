@@ -38,7 +38,7 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		bros[0].m.PerkPointsSpent += 1;
 		local items = bros[0].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
-		items.equip(this.new("scripts/items/helmets/jesters_hat"));
+		items.equip(this.Const.World.Common.pickHelmet([[1, "jesters_hat"]]));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.equip(this.new("scripts/items/weapons/legend_staff"));
 		bros[1].setStartValuesEx([
@@ -52,7 +52,7 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		bros[1].m.PerkPointsSpent += 1;
 		local items = bros[1].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
-		items.equip(this.new("scripts/items/helmets/named/jugglers_hat"));
+		items.equip(this.Const.World.Common.pickHelmet([[1, "named/jugglers_hat"]]));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.equip(this.new("scripts/items/weapons/lute"));
 		bros[2].setStartValuesEx([
@@ -69,7 +69,7 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		bros[2].m.PerkPointsSpent += 1;
 		local items = bros[2].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
-		items.equip(this.new("scripts/items/helmets/named/jugglers_hat"));
+		items.equip(this.Const.World.Common.pickHelmet([[1, "named/jugglers_hat"]]));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.equip(this.new("scripts/items/weapons/legend_drum"));
 		bros[3].setStartValuesEx([
@@ -84,31 +84,9 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		bros[3].m.PerkPointsSpent += 1;
 		local items = bros[3].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
-		items.equip(this.new("scripts/items/helmets/named/jugglers_padded_hat"));
+		items.equip(this.Const.World.Common.pickHelmet([[1, "named/jugglers_padded_hat"]]));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.equip(this.new("scripts/items/weapons/legend_ranged_wooden_flail"));
-		foreach( bro in bros )
-		{
-			local val = this.World.State.addNewID(bro);
-			bro.m.CompanyID = val;
-		}
-		if (this.World.LegendsMod.Configs().RelationshipsEnabled())
-{
-    local avgAlignment = 0;
-    foreach (bro in this.World.getPlayerRoster().getAll())
-    {
-        if (bro.getAlignment() <= this.Const.LegendMod.Alignment.NeutralMin)
-        {
-            avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMin);
-        }
-        else if (bro.getAlignment() >= this.Const.LegendMod.Alignment.NeutralMax)
-        {
-            avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMax);
-        }
-    }
-    avgAlignment *= (10 / this.World.getPlayerRoster().getSize());
-    this.World.Assets.addMoralReputation(avgAlignment);
-}
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/legend_pie_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/mead_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/weapons/legend_drum"));
@@ -172,14 +150,6 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 			this.World.Events.fire("event.legend_troupe_scenario_intro");
 		}, null);
 
-		foreach (b in this.World.getPlayerRoster().getAll()) // todo: more efficient approach to this
-		{
-			foreach (add in this.World.getPlayerRoster().getAll())
-			{
-				b.changeActiveRelationship(add, this.Math.rand(0, 20));
-			}
-		}
-
 	}
 
 	function onInit()
@@ -225,7 +195,7 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		_tree[0].push(this.Const.Perks.PerkDefs.LegendLeap);
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 		if (_list.len() < 5)
 		{
@@ -241,7 +211,7 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 			_list.push("minstrel_background");
 			}
 			r = this.Math.rand(0, 6);
-			if (r == 0)
+			if (r == 0 && _gender)
 			{
 			_list.push("female_minstrel_background");
 			}
@@ -265,7 +235,7 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 			_list.push("minstrel_background");
 			}
 			r = this.Math.rand(0, 6);
-			if (r == 0)
+			if (r == 0 && _gender)
 			{
 			_list.push("female_minstrel_background");
 			}

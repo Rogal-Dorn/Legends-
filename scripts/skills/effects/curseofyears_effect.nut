@@ -77,10 +77,10 @@ this.curseofyears_effect <- this.inherit("scripts/skills/skill", {
 				hitInfo.BodyPart = this.Const.BodyPart.Body;
 				hitInfo.BodyDamageMult = 0.02 + this.getTurnsCurseofyears();
 				hitInfo.FatalityChanceMult = 0.0;
-				this.getContainer().getActor().onDamageReceived(this.getContainer().getActor(), this, hitInfo);	
+				this.getContainer().getActor().onDamageReceived(this.getContainer().getActor(), this, hitInfo);
                         }
 
-                        else 
+                        else
                         {
 				break
                         }
@@ -90,7 +90,7 @@ this.curseofyears_effect <- this.inherit("scripts/skills/skill", {
 	function onAdded()
 	{
 		local actor = this.getContainer().getActor();
-		actor.getTags().set("Curseofyears", true);
+		actor.getFlags().set("Curseofyears", true);
 		if (this.m.SoundOnUse.len() != 0)
 		{
 			this.Sound.play(this.m.SoundOnUse[this.Math.rand(0, this.m.SoundOnUse.len() - 1)], this.Const.Sound.Volume.RacialEffect * 1.0, this.getContainer().getActor().getPos());
@@ -138,7 +138,7 @@ this.curseofyears_effect <- this.inherit("scripts/skills/skill", {
 		{
 			actor.getSprite("status_stunned").Visible = false;
 		}
-		actor.getTags().set("curseofyears", false);
+		actor.getFlags().set("curseofyears", false);
 		actor.setDirty(true);
 	}
 

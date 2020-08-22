@@ -31,7 +31,7 @@ this.legend_blacksmith_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.m.Hairs = this.Const.Hair.CommonMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.Body = "bust_naked_body_01";
+
 		this.m.IsRangerRecruitBackground = true;
 		this.m.IsCrusaderRecruitBackground = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
@@ -136,13 +136,9 @@ this.legend_blacksmith_background <- this.inherit("scripts/skills/backgrounds/ch
 	{
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/weapons/legend_hammer"));
-		items.equip(this.new("scripts/items/armor/legend_blacksmith_apron"));
-	}
-
-	function onAddLegendEquipment()
-	{
-		local items = this.getContainer().getActor().getItems();
-		items.equip(this.new("scripts/items/weapons/legend_hammer"));
-		items.equip(this.new("scripts/items/legend_armor/cloth/legend_apron_smith"));
+		
+		items.equip(this.Const.World.Common.pickArmor([
+			[1, "legend_blacksmith_apron"]
+		]));
 	}
 })

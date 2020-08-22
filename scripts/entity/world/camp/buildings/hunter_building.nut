@@ -99,7 +99,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 			return false;
 		}
 
-		return !this.World.Tags.get("HasLegendCampHunting")
+		return !this.World.Flags.get("HasLegendCampHunting")
 	}
 
 	function getUpgraded()

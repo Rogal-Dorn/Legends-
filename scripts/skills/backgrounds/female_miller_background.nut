@@ -32,7 +32,7 @@ this.female_miller_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsFemaleBackground = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.NeutralMax;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
@@ -81,7 +81,7 @@ this.female_miller_background <- this.inherit("scripts/skills/backgrounds/charac
 			this.m.Hairs = this.Const.Hair.CommonMale;
 			this.m.HairColors = this.Const.HairColors.All;
 			this.m.Beards = this.Const.Beards.Untidy;
-			this.m.Body = "bust_naked_body_00";
+
 			this.m.IsFemaleBackground = false;
 			this.m.GoodEnding = "%name% the once-baker stayed with the %companyname% for a time, collecting enough crowns to start his own bakery. Last you heard, his sword-shaped desserts have been a hit with the nobility and he makes more money selling to them than he ever did with the company.";
 			this.m.BadEnding = "As the %companyname% fell on hard times, %name% the baker saw fit to go ahead and leave while he could still walk. He helped a nobleman test out a new way of grinding grains with mules and waterwheels working in tandem. Unfortunately, by \'helping\' he managed to fall into the contraption and was brutally crushed to death.";
@@ -155,20 +155,6 @@ this.female_miller_background <- this.inherit("scripts/skills/backgrounds/charac
 		return c;
 	}
 
-	function onAdded()
-	{
-		this.character_background.onAdded();
-		local actor = this.getContainer().getActor();
-
-		if (this.m.IsFemaleBackground == true)
-		{
-			actor.setName(this.Const.Strings.CharacterNamesFemale[this.Math.rand(0, this.Const.Strings.CharacterNamesFemale.len() - 1)]);
-		}
-		else
-		{
-			actor.setName(this.Const.Strings.CharacterNames[this.Math.rand(0, this.Const.Strings.CharacterNames.len() - 1)]);
-		}
-	}
 
 	function onAddEquipment()
 	{
@@ -189,63 +175,11 @@ this.female_miller_background <- this.inherit("scripts/skills/backgrounds/charac
 			items.equip(this.new("scripts/items/weapons/wooden_stick"));
 		}
 
-
-		r = this.Math.rand(0, 4);
-
-		if (r == 0 || r == 1)
-		{
-			items.equip(this.new("scripts/items/armor/legend_maid_apron"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/armor/legend_maid_dress"));
-		}
-		else
-		{
-			local item = this.new("scripts/items/armor/linen_tunic");
-			item.setVariant(this.Math.rand(6, 7));
-			items.equip(item);
-		}
+		items.equip(this.Const.World.Common.pickArmor([
+			[2, "legend_maid_apron"],
+			[1, "legend_maid_dress"],
+			[1, "linen_tunic", this.Math.rand(6, 7)]
+		]))
 	}
 
-	function onAddEquipment()
-	{
-		local items = this.getContainer().getActor().getItems();
-		local r;
-		r = this.Math.rand(0, 4);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/weapons/butchers_cleaver"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/weapons/legend_shovel"));
-		}
-		else if (r >= 2)
-		{
-			items.equip(this.new("scripts/items/weapons/wooden_stick"));
-		}
-
-		local cloths = [
-            [0, ""],
-			[0, "cloth/legend_gambeson"],
-			[0, "cloth/legend_gambeson_plain"],
-			[0, "cloth/legend_gambeson_wolf"],
-			[0, "cloth/legend_padded_surcoat"],
-			[0, "cloth/legend_robes"],
-			[0, "cloth/legend_apron_butcher"],
-			[0, "cloth/legend_robes_nun"],
-			[0, "cloth/legend_apron_smith"],
-			[0, "cloth/legend_robes_wizard"],
-			[0, "cloth/legend_sackcloth"],
-			[0, "cloth/legend_sackcloth_patched"],
-			[0, "cloth/legend_sackcloth_tattered"],
-			[1, "cloth/legend_tunic"],
-			[0, "cloth/legend_tunic_noble"]
-		];
-		local armor = this.Const.World.Common.pickLegendArmor(cloths)
-		items.equip(armor)
-
-	}
 });

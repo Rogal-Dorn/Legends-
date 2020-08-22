@@ -48,7 +48,7 @@ this.legend_degrading_effort_situation <- this.inherit("scripts/entity/world/set
 		this.situation.onDeserialize(_in);
 	}
 
-	function onUpdateDraftList( _draftList )
+	function onUpdateDraftList( _draftList, _gender )
 	{
 	}
 

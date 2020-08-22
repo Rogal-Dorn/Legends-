@@ -1,5 +1,12 @@
 this.legend_horse_kick <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		IsRestrained = false,
+		IsSpent = false
+	},
+	function setRestrained( _f )
+	{
+		this.m.IsRestrained = _f;
+	}
 	function create()
 	{
 		this.m.ID = "actives.legend_horse_kick";
@@ -127,7 +134,7 @@ this.legend_horse_kick <- this.inherit("scripts/skills/skill", {
 	function isUsable()
 	{
 		local mainhand = this.m.Container.getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		return mainhand == null && this.skill.isUsable();
+		return mainhand == null && this.skill.isUsable() && !this.m.IsSpent;
 	}
 
 	function isHidden()
@@ -182,8 +189,18 @@ this.legend_horse_kick <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
+		if (this.m.IsRestrained)
+		{
+			this.m.IsSpent = true;
+		}
 		return this.attackEntity(_user, _targetTile.getEntity());
 	}
+
+	function onTurnStart()
+	{
+		this.m.IsSpent = false;
+	}
+
 
 });
 

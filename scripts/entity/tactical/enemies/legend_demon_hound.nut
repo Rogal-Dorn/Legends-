@@ -40,8 +40,8 @@ this.legend_demon_hound <- this.inherit("scripts/entity/tactical/actor", {
 			"sounds/enemies/hollen_charge_05.wav"
 		];
 		this.m.SoundPitch = this.Math.rand(90, 110) * 0.01;
-		this.getTags().add("undead");
-		this.getTags().add("skeleton");
+		this.getFlags().add("undead");
+		this.getFlags().add("skeleton");
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/wardog_agent");
 		this.m.AIAgent.setActor(this);
 	}
@@ -55,12 +55,12 @@ this.legend_demon_hound <- this.inherit("scripts/entity/tactical/actor", {
 			return;
 		}
 
-		
+
 		// This actually doesn't really work I didn't realize when making this: If it body shots first before headshot it'll just teleport anyways, leaving here as a ujst in case eventually
 
 		// local BodyOrHeadShot = _hitInfo.BodyPart;
 		// local SkillID = _skill.getID();
-		// //Don't teleport if it was a headshot from split man attack, because we have to wait for body shot to teleport, otherwise it doesn't matter. 
+		// //Don't teleport if it was a headshot from split man attack, because we have to wait for body shot to teleport, otherwise it doesn't matter.
 		// if (SkillID == "actives.split_man" && BodyOrHeadShot == this.Const.BodyPart.Head) {
 		// 	return;
 		// }
@@ -502,7 +502,7 @@ this.legend_demon_hound <- this.inherit("scripts/entity/tactical/actor", {
 				{
 					local r = this.Math.rand(1, 100);
 					local loot;
-					
+
 					if (r <= 50)
 					{
 						loot = this.new("scripts/items/misc/legend_demon_hound_bones_item");
@@ -511,7 +511,7 @@ this.legend_demon_hound <- this.inherit("scripts/entity/tactical/actor", {
 					{
 						continue;
 					}
-					
+
 					loot.drop(_tile);
 				}
 			}

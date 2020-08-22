@@ -23,9 +23,10 @@ this.farmhand_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.Hairs = this.Const.Hair.CommonMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.Body = "bust_naked_body_01";
+
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.NeutralMax;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
+		this.m.Bodies = this.Const.Bodies.Muscular;
 		this.m.IsLowborn = true;
 		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[2];
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
@@ -91,7 +92,7 @@ this.farmhand_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
 		this.m.BeardChance = 1;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsFemaleBackground = true;
 		this.m.GoodEnding = "The former farmhand, %name%, retired from the %companyname%. The money she made was put toward purchasing a bit of land. she spends the rest of her days happily farming and starting a family with way too many children.";
 		this.m.BadEnding = "The former farmhand, %name%, soon left the %companyname%. She purchased a bit of land out {south | north | east | west} and was doing quite well for herself - until noble soldiers hanged her from a tree for refusing to hand over all her crops.";
@@ -166,20 +167,6 @@ this.farmhand_background <- this.inherit("scripts/skills/backgrounds/character_b
 		return c;
 	}
 
-	function onAdded()
-	{
-		this.character_background.onAdded();
-		local actor = this.getContainer().getActor();
-
-		if(this.m.IsFemaleBackground == true)
-		{
-			actor.setName(this.Const.Strings.CharacterNamesFemale[this.Math.rand(0, this.Const.Strings.CharacterNamesFemale.len() - 1)]);
-		}
-		else
-		{
-			actor.setName(this.Const.Strings.CharacterNames[this.Math.rand(0, this.Const.Strings.CharacterNames.len() - 1)]);
-		}
-	}
 
 	function onAddEquipment()
 	{
@@ -208,80 +195,15 @@ this.farmhand_background <- this.inherit("scripts/skills/backgrounds/character_b
 		items.equip(this.new("scripts/items/weapons/legend_wooden_pitchfork"));
 		}
 
-		r = this.Math.rand(0, 1);
+		items.equip(this.Const.World.Common.pickArmor([
+			[1, "sackcloth"],
+			[1, "linen_tunic", this.Math.rand(6, 7)]
+		]));
 
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/armor/sackcloth"));
-		}
-		else
-		{
-			local item = this.new("scripts/items/armor/linen_tunic");
-			item.setVariant(this.Math.rand(6, 7));
-			items.equip(item);
-		}
-
-		r = this.Math.rand(0, 2);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/straw_hat"));
-		}
-	}
-
-	function onAddLegendEquipment()
-	{
-		local items = this.getContainer().getActor().getItems();
-		local r;
-		r = this.Math.rand(0, 3);
-
-		if (r == 0)
-		{
-		items.equip(this.new("scripts/items/weapons/legend_scythe"));
-		}
-		else if (r == 1)
-		{
-		items.equip(this.new("scripts/items/weapons/wooden_flail"));
-		}
-		else if (r == 2)
-		{
-		items.equip(this.new("scripts/items/weapons/legend_hoe"));
-		}
-		else if (r == 3)
-		{
-		items.equip(this.new("scripts/items/weapons/pitchfork"));
-		}
-		else if (r == 4)
-		{
-		items.equip(this.new("scripts/items/weapons/legend_wooden_pitchfork"));
-		}
-
-		local cloths = [
-            [0, ""],
-			[0, "cloth/legend_gambeson"],
-			[0, "cloth/legend_gambeson_plain"],
-			[0, "cloth/legend_gambeson_wolf"],
-			[0, "cloth/legend_padded_surcoat"],
-			[0, "cloth/legend_robes"],
-			[0, "cloth/legend_apron_butcher"],
-			[0, "cloth/legend_robes_nun"],
-			[0, "cloth/legend_apron_smith"],
-			[0, "cloth/legend_robes_wizard"],
-			[1, "cloth/legend_sackcloth"],
-			[0, "cloth/legend_sackcloth_patched"],
-			[0, "cloth/legend_sackcloth_tattered"],
-			[1, "cloth/legend_tunic"],
-			[0, "cloth/legend_tunic_noble"]
-		];
-		local armor = this.Const.World.Common.pickLegendArmor(cloths)
-		items.equip(armor)
-
-		r = this.Math.rand(0, 2);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/straw_hat"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "straw_hat"],
+			[2, ""]
+		]));
 	}
 });
 

@@ -2,6 +2,8 @@ FILES=$(git diff --name-only `git merge-base origin/master HEAD`)
 while read -r line; do
     if [[ "$line" == *.sh ]]; then
         echo "skipping $line"
+    elif [[ "$line" == *.py ]]; then
+        echo "skipping $line"
     elif [[ "$line" == *.md ]]; then
         echo "skipping $line"
     elif [[ "$line" == unpacked* ]]; then
@@ -68,6 +70,20 @@ while read -r line; do
     fi
 done <<< "$FILES"
 
+echo "Building helmets..."
+rm -rf helmets
+mkdir -p "helmets"
+python make_legend_helmet_nuts.py
+cp -R helmets/. "c:\Steam\steamapps\common\Battle Brothers\data\scripts\items\legend_helmets"
+
+echo "Building armors..."
+rm -rf legend_armor
+mkdir -p "legend_armor"
+python make_legend_armor.py
+cp -R legend_armor/. "c:\Steam\steamapps\common\Battle Brothers\data\scripts\items\legend_armor"
+
+
+
 mkdir -p "brushes"
 cd ../bin
 ./bbrusher.exe pack --gfxPath "../Repo/" ../Repo/brushes/entity_blood.brush ../Repo/unpacked/entity_blood
@@ -78,10 +94,15 @@ cd ../bin
 ./bbrusher.exe pack --gfxPath "../Repo/" ../Repo/brushes/legend_world.brush ../Repo/unpacked/legend_world
 ./bbrusher.exe pack --gfxPath "../Repo/" ../Repo/brushes/legends_ui.brush ../Repo/unpacked/legends_ui
 ./bbrusher.exe pack --gfxPath "../Repo/" ../Repo/brushes/legend_horses.brush ../Repo/unpacked/legend_horses
-python ../Repo/unpacked/make_legend_armor.py
-./bbrusher.exe pack --gfxPath "../Repo/" ../Repo/brushes/legend_armor.brush ../Repo/unpacked/legend_armor
-./bbrusher.exe pack --gfxPath "../Repo/" ../Repo/brushes/legend_helmets.brush ../Repo/unpacked/legend_helmets
 ./bbrusher.exe pack --gfxPath "../Repo/" ../Repo/brushes/legend_objects.brush ../Repo/unpacked/legend_objects
+./bbrusher.exe pack --gfxPath "../Repo/" ../Repo/brushes/legend_armor.brush ../Repo/unpacked/legend_armor
+
+python ../Repo/unpacked/make_legend_helmets.py
+./bbrusher.exe pack --gfxPath "../Repo/" ../Repo/brushes/legend_helmets.brush ../Repo/unpacked/legend_helmets
+./bbrusher.exe pack --gfxPath "../Repo/" ../Repo/brushes/legend_helmets_0.brush ../Repo/unpacked/legend_helmets/0
+./bbrusher.exe pack --gfxPath "../Repo/" ../Repo/brushes/legend_helmets_1.brush ../Repo/unpacked/legend_helmets/1
+
+
 ./masscompile.bat "c:\Steam\steamapps\common\Battle Brothers\data\scripts"
 cd ../Repo
 

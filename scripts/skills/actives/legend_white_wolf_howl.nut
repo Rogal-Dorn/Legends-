@@ -49,7 +49,7 @@ this.legend_white_wolf_howl <- this.inherit("scripts/skills/skill", {
 
 	function raiseMorale( _actor, _tag )
 	{
-		if (_actor.getFaction() == _tag.Self.getFaction() && _actor.getTags().has("werewolf"))
+		if (_actor.getFaction() == _tag.Self.getFaction() && _actor.getFlags().has("werewolf"))
 		{
 			_actor.setMorale(_actor.getMorale() + 30);
 			_tag.Skill.spawnIcon("status_effect_06", _actor.getTile());

@@ -6,7 +6,7 @@ this.early_access_scenario <- this.inherit("scripts/scenarios/world/starting_sce
 		this.m.Name = "A New Company";
 		this.m.Description = "[p=c][img]gfx/ui/events/event_80.png[/img][/p][p]After years of bloodying your sword for meager pay, you\'ve saved enough crowns to start your very own mercenary company. With you are three experienced mercenaries with whom you\'ve fought side by side in the shieldwall before.\n\n[color=#bcad8c]A quick start into the world, without any particular advantages or disadvantages.[/color][/p]";
 		this.m.Difficulty = 1;
-		this.m.Order = 1;
+		this.m.Order = 10;
 	}
 
 	function onSpawnAssets()
@@ -49,29 +49,6 @@ this.early_access_scenario <- this.inherit("scripts/scenarios/world/starting_sce
 		bros[2].setPlaceInFormation(5);
 		bros[2].setVeteranPerks(2);
 
-		foreach( bro in bros )
-		{
-			local val = this.World.State.addNewID(bro);
-			bro.m.CompanyID = val;
-		}
-
-		if (this.World.LegendsMod.Configs().RelationshipsEnabled())
-{
-    local avgAlignment = 0;
-    foreach (bro in this.World.getPlayerRoster().getAll())
-    {
-        if (bro.getAlignment() <= this.Const.LegendMod.Alignment.NeutralMin)
-        {
-            avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMin);
-        }
-        else if (bro.getAlignment() >= this.Const.LegendMod.Alignment.NeutralMax)
-        {
-            avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMax);
-        }
-    }
-    avgAlignment *= (10 / this.World.getPlayerRoster().getSize());
-    this.World.Assets.addMoralReputation(avgAlignment);
-}
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
 		this.World.Assets.m.Money = this.World.Assets.m.Money * 2;
@@ -85,7 +62,7 @@ this.early_access_scenario <- this.inherit("scripts/scenarios/world/starting_sce
 		{
 			randomVillage = this.World.EntityManager.getSettlements()[i];
 
-			if (!randomVillage.isMilitary() && !randomVillage.isIsolatedFromRoads() && randomVillage.getSize() >= 3)
+			if (!randomVillage.isMilitary() && !randomVillage.isIsolatedFromRoads() && randomVillage.getSize() >= 3 && !randomVillage.isSouthern())
 			{
 				break;
 			}
@@ -134,13 +111,6 @@ this.early_access_scenario <- this.inherit("scripts/scenarios/world/starting_sce
 			this.Music.setTrackList(this.Const.Music.IntroTracks, this.Const.Music.CrossFadeTime);
 			this.World.Events.fire("event.early_access_scenario_intro");
 		}, null);
-		foreach (b in this.World.getPlayerRoster().getAll())
-		{
-			foreach (add in this.World.getPlayerRoster().getAll())
-			{
-				b.changeActiveRelationship(add, this.Math.rand(0, 10));
-			}
-		}
 	}
 
 });

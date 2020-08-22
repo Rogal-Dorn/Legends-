@@ -44,32 +44,10 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_pathfinder"));
 		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_footwork"));
 		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_roster_2"));
-		bros[0].getTags().set("IsPlayerCharacter", true);
+		bros[0].getFlags().set("IsPlayerCharacter", true);
 		bros[0].setPlaceInFormation(3);
 		bros[0].setVeteranPerks(2);
 
-		foreach( bro in bros )
-		{
-			local val = this.World.State.addNewID(bro);
-			bro.m.CompanyID = val;
-		}
-		if (this.World.LegendsMod.Configs().RelationshipsEnabled())
-{
-    local avgAlignment = 0;
-    foreach (bro in this.World.getPlayerRoster().getAll())
-    {
-        if (bro.getAlignment() <= this.Const.LegendMod.Alignment.NeutralMin)
-        {
-            avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMin);
-        }
-        else if (bro.getAlignment() >= this.Const.LegendMod.Alignment.NeutralMax)
-        {
-            avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMax);
-        }
-    }
-    avgAlignment *= (10 / this.World.getPlayerRoster().getSize());
-    this.World.Assets.addMoralReputation(avgAlignment);
-}
 	//	bros[1].setStartValuesEx([
 	//		"legend_ranger_background"
 	//	]);
@@ -161,13 +139,6 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 			this.Music.setTrackList(this.Const.Music.IntroTracks, this.Const.Music.CrossFadeTime);
 			this.World.Events.fire("event.legend_ranger_scenario_intro");
 		}, null);
-foreach (b in this.World.getPlayerRoster().getAll())
-		{
-			foreach (add in this.World.getPlayerRoster().getAll())
-			{
-				b.changeActiveRelationship(add, this.Math.rand(0, 10));
-			}
-		}
 	}
 
 	function onInit()
@@ -175,7 +146,7 @@ foreach (b in this.World.getPlayerRoster().getAll())
 		this.starting_scenario.onInit();
 		this.World.State.getPlayer().m.BaseMovementSpeed = 111;
 		this.World.Assets.m.BrothersMax = 3;
-		this.World.Tags.set("IsLegendsHunter", true);
+		this.World.Flags.set("IsLegendsHunter", true);
 	}
 
 	function onCombatFinished()
@@ -184,7 +155,7 @@ foreach (b in this.World.getPlayerRoster().getAll())
 
 		foreach( bro in roster )
 		{
-			if (bro.getTags().get("IsPlayerCharacter"))
+			if (bro.getFlags().get("IsPlayerCharacter"))
 			{
 				return true;
 			}
@@ -193,7 +164,7 @@ foreach (b in this.World.getPlayerRoster().getAll())
 		return false;
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 
 		local r;

@@ -41,7 +41,7 @@ this.female_minstrel_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Notorious;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.IsFemaleBackground = true;
@@ -135,37 +135,16 @@ this.female_minstrel_background <- this.inherit("scripts/skills/backgrounds/char
 	function onAddEquipment()
 	{
 		local items = this.getContainer().getActor().getItems();
-		local armor = this.new("scripts/items/armor/linen_tunic");
-		armor.setVariant(this.Math.rand(3, 4));
+		local armor = this.Const.World.Common.pickArmor([
+			[1, "linen_tunic", this.Math.rand(3, 4)]
+		])
 		items.equip(armor);
-		local r = this.Math.rand(0, 1);
 
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/feathered_hat"));
-		}
-
-		local r = this.Math.rand(0, 4);
-		if (r == 1)
-		{
-			items.equip(this.new("scripts/items/weapons/lute"));
-		}
-		if (r >= 2)
-		{
-			items.equip(this.new("scripts/items/weapons/legend_drum"));
-		}
-	}
-
-	function onAddLegendEquipment()
-	{
-		local items = this.getContainer().getActor().getItems();
-		items.equip(this.new("scripts/items/legend_armor/cloth/legend_tunic"));
-		local r = this.Math.rand(0, 1);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/feathered_hat"));
-		}
+		local item = this.Const.World.Common.pickHelmet([
+				[1, "feathered_hat"],
+				[1, ""]
+		])
+		items.equip(item);
 
 		local r = this.Math.rand(0, 4);
 		if (r == 1)

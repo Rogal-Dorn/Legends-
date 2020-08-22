@@ -51,7 +51,8 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Untidy;
-		this.m.Body = "bust_naked_body_00";
+
+		this.m.Bodies = this.Const.Bodies.Skinny;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Merciless;
 		this.m.IsOutlawBackground = true;
@@ -104,7 +105,7 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.HairColors = this.Const.HairColors.Old;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsFemaleBackground = true;
 
 	}
@@ -175,21 +176,6 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		return c;
 	}
 
-	function onAdded()
-	{
-		this.character_background.onAdded();
-		local actor = this.getContainer().getActor();
-
-		if (this.m.IsFemaleBackground == true)
-		{
-			actor.setName(this.Const.Strings.CharacterNamesFemale[this.Math.rand(0, this.Const.Strings.CharacterNamesFemale.len() - 1)]);
-		}
-		else
-		{
-			actor.setName(this.Const.Strings.CharacterNames[this.Math.rand(0, this.Const.Strings.CharacterNames.len() - 1)]);
-		}
-	}
-
 	function onSetAppearance()
 	{
 		if (this.m.IsFemaleBackground == false)
@@ -254,79 +240,6 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		{
 			if (this.Const.DLC.Wildmen)
 			{
-			items.equip(this.new("scripts/items/weapons/battle_whip"));
-			}
-			else if (!this.Const.DLC.Wildmen)
-			{
-			items.equip(this.new("scripts/items/weapons/legend_cat_o_nine_tails"));
-			}
-		}
-		else if (r >= 5)
-		{
-		 items.equip(this.new("scripts/items/weapons/legend_cat_o_nine_tails"));
-		}
-
-		r = this.Math.rand(0, 3);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/armor/tattered_sackcloth"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/armor/leather_wraps"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/armor/monk_robe"));
-		}
-		else if (r == 3)
-		{
-			items.equip(this.new("scripts/items/armor/cultist_leather_robe"));
-		}
-
-		r = this.Math.rand(0, 2);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/cultist_hood"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/cultist_leather_hood"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/helmets/hood"));
-		}
-	}
-
-	function onAddLegendEquipment()
-	{
-		local items = this.getContainer().getActor().getItems();
-		local r;
-		r = this.Math.rand(0, 3);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/weapons/legend_scythe"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/weapons/wooden_flail"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/weapons/legend_cat_o_nine_tails"));
-		}
-		else if (r == 3)
-		{
-			items.equip(this.new("scripts/items/weapons/legend_chain"));
-		}
-		else if (r == 4)
-		{
-			if (this.Const.DLC.Wildmen)
-			{
 				items.equip(this.new("scripts/items/weapons/battle_whip"));
 			}
 			else if (!this.Const.DLC.Wildmen)
@@ -334,41 +247,22 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 				items.equip(this.new("scripts/items/weapons/legend_cat_o_nine_tails"));
 			}
 		}
-
-		local cloths = [
-            [0, ""],
-			[0, "cloth/legend_gambeson"],
-			[0, "cloth/legend_gambeson_plain"],
-			[0, "cloth/legend_gambeson_wolf"],
-			[0, "cloth/legend_padded_surcoat"],
-			[1, "cloth/legend_robes"],
-			[0, "cloth/legend_apron_butcher"],
-			[0, "cloth/legend_robes_nun"],
-			[0, "cloth/legend_apron_smith"],
-			[0, "cloth/legend_robes_wizard"],
-			[1, "cloth/legend_sackcloth"],
-			[1, "cloth/legend_sackcloth_patched"],
-			[1, "cloth/legend_sackcloth_tattered"],
-			[0, "cloth/legend_tunic"],
-			[0, "cloth/legend_tunic_noble"]
-		];
-		local armor = this.Const.World.Common.pickLegendArmor(cloths)
-		items.equip(armor)
-
-		r = this.Math.rand(0, 2);
-
-		if (r == 0)
+		else if (r >= 5)
 		{
-			items.equip(this.new("scripts/items/helmets/cultist_hood"));
+		 items.equip(this.new("scripts/items/weapons/legend_cat_o_nine_tails"));
 		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/cultist_leather_hood"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/helmets/hood"));
-		}
+
+		items.equip(this.Const.World.Common.pickArmor([
+			[1, "tattered_sackcloth"],
+			[1, "leather_wraps"],
+			[1, "monk_robe"],
+			[1, "cultist_leather_robe"]
+		]));	
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "cultist_hood"],
+			[1, "hood"],
+			[1, "cultist_leather_hood"]
+		]));
 	}
 });
 

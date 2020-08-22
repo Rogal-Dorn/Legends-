@@ -14,19 +14,23 @@ this.perk_legend_spawn_skeleton_high <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = false;
 	}
 
+	function onUnlocked()
+	{
+		local stash = this.World.Assets.getStash()
+		stash.add(this.new("scripts/items/spawns/skeleton_item"));
+		stash.add(this.new("scripts/items/spawns/skeleton_item"));
+		stash.add(this.new("scripts/items/spawns/skeleton_item"));
+	}
+
 	function onAdded()
 	{
 		if (!this.m.Container.hasSkill("actives.legend_spawn_skeleton_high_skill"))
 		{
 			this.m.Container.add(this.new("scripts/skills/actives/legend_spawn_skeleton_high_skill"));
 			this.m.Container.add(this.new("scripts/skills/actives/legend_spawn_skeleton_high_archer_skill"));
-			local stash = this.World.Assets.getStash()
-			stash.add(this.new("scripts/items/spawns/skeleton_item"));
-			stash.add(this.new("scripts/items/spawns/skeleton_item"));
-			stash.add(this.new("scripts/items/spawns/skeleton_item"));
 		}
 	}
-	
+
 	function onRemoved()
 	{
 		this.m.Container.removeByID("actives.legend_spawn_skeleton_high_skill");

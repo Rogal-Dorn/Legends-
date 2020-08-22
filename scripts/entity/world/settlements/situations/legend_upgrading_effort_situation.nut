@@ -49,26 +49,46 @@ this.legend_upgrading_effort_situation <- this.inherit("scripts/entity/world/set
 		this.situation.onDeserialize(_in);
 	}
 
-	function onUpdateDraftList( _draftList )
+	function onUpdateDraftList( _draftList, _gender )
 	{
-		_draftList.push("lumberjack_background");
-		_draftList.push("lumberjack_background");
-		_draftList.push("mason_background");
-		_draftList.push("mason_background");
-		_draftList.push("daytaler_background");
-		_draftList.push("daytaler_background");
-		_draftList.push("daytaler_background");
-		_draftList.push("legend_blacksmith_background");
-		_draftList.push("legend_blacksmith_background");
-		_draftList.push("legend_blacksmith_background");
-		_draftList.push("legend_blacksmith_background");
-		_draftList.push("legend_blacksmith_background");
-		_draftList.push("legend_blacksmith_background");
-		_draftList.push("legend_inventor_background");
-		if (this.World.LegendsMod.Configs().LegendGenderEnabled())
+		if (this.m.IsSouthern)
 		{
-			_draftList.push("female_daytaler_background");
+			_draftList.push("daytaler_southern_background");
+			_draftList.push("daytaler_southern_background");
+			_draftList.push("daytaler_southern_background");
+			_draftList.push("daytaler_southern_background");
+			_draftList.push("slave_southern_background");
+			_draftList.push("slave_southern_background");
+			_draftList.push("slave_southern_background");
+			_draftList.push("slave_southern_background");
+			_draftList.push("slave_southern_background");
+			_draftList.push("slave_southern_background");
 		}
+		else
+		{
+			_draftList.push("lumberjack_background");
+			_draftList.push("lumberjack_background");
+			_draftList.push("mason_background");
+			_draftList.push("mason_background");
+			_draftList.push("daytaler_background");
+			_draftList.push("daytaler_background");
+			_draftList.push("daytaler_background");
+
+			_draftList.push("legend_inventor_background");
+
+			if (this.World.LegendsMod.Configs().LegendGenderEnabled())
+			{
+				_draftList.push("female_daytaler_background");
+			}
+		}
+
+		_draftList.push("legend_blacksmith_background");
+		_draftList.push("legend_blacksmith_background");
+		_draftList.push("legend_blacksmith_background");
+		_draftList.push("legend_blacksmith_background");
+		_draftList.push("legend_blacksmith_background");
+		_draftList.push("legend_blacksmith_background");
+
 	}
 
 });

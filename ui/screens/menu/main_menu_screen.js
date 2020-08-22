@@ -2,8 +2,8 @@
  *  @Project:		Battle Brothers
  *	@Company:		Overhype Studios
  *
- *	@Copyright:		(c) Overhype Studios | 2013 - 2017
- * 
+ *	@Copyright:		(c) Overhype Studios | 2013 - 2020
+ *
  *  @Author:		Overhype Studios
  *  @Date:			01.10.2017
  *  @Description:	Main Main Menu Screen JS
@@ -103,14 +103,7 @@ MainMenuScreen.prototype.createDIV = function (_parentDiv)
         _image.fitImageToParent();
     }, 'display-none');
 
-    this.mBackgroundImage.velocity("finish", true).velocity({ scaleX: 1.45, scaleY: 1.45, translateY: 50.0 },
-    {
-        duration: 0
-    }).velocity("finish", true).velocity({ scaleX: 1.0, scaleY: 1.0, translateY: 0.0 },
-    {
-        duration: 25000,
-        easing: 'ease-out'
-    });
+    //this.mBackgroundImage.velocity("finish", true).velocity({ scaleX: 1.3, scaleY: 1.3, translateY: 50.0 },
 
     this.mVersion = $('<div class="text-font-medium font-color-subtitle version"/>');
     this.mContainer.append(this.mVersion);
@@ -120,6 +113,13 @@ MainMenuScreen.prototype.createDIV = function (_parentDiv)
 
     this.mDLC = $('<div class="dlc-container"/>');
     this.mContainer.append(this.mDLC);
+
+    this.mLMOTDContainer = $('<div class="legends-motd-container display-none"/>');
+    this.mContainer.append(this.mLMOTDContainer);
+
+    this.mLMOTD = $('<div class="legends-motd text-font-medium font-color-subtitle"/>');
+    this.mLMOTDContainer.append(this.mLMOTD);
+
 
     this.mMOTDContainer = $('<div class="motd-container"/>');
     this.mContainer.append(this.mMOTDContainer);
@@ -249,8 +249,31 @@ MainMenuScreen.prototype.setScenarioDemoModus = function ()
     this.mMainMenuModule.setScenarioDemoModus();
 };
 
-MainMenuScreen.prototype.show = function ()
+MainMenuScreen.prototype.show = function (_animate)
 {
+    this.mMainMenuModule.showMainMenu(false);
+
+    this.mBackgroundImage.attr('src', Path.GFX + Asset.BACKGROUND_MAIN_MENU);
+    this.mContainer.removeClass('display-none').addClass('display-block');
+
+    if(_animate)
+    {
+        this.mBackgroundImage.velocity("finish", true).velocity({ scaleX: 1.3, scaleY: 1.3, translateX: 200.0, translateY: 50.0 },
+        {
+            duration: 0
+        }).velocity("finish", true).velocity({ scaleX: 1.0, scaleY: 1.0, translateX: 0.0, translateY: 0.0 },
+        {
+            duration: 25000,
+            easing: 'ease-out'
+        });
+    }
+
+    this.notifyBackendOnShown();
+};
+
+MainMenuScreen.prototype.noshow = function ()
+{
+    this.mMainMenuModule.setScenarioDemoModus();
     this.mMainMenuModule.showMainMenu(false);
 
     this.mBackgroundImage.attr('src', Path.GFX + Asset.BACKGROUND_MAIN_MENU);
@@ -376,6 +399,19 @@ MainMenuScreen.prototype.setMOTD = function (_data)
     });
 
     this.mMOTD.html(parsedDescriptionText.html);
+};
+
+MainMenuScreen.prototype.setLMOTD = function (_data)
+{
+    var parsedDescriptionText = XBBCODE.process({
+        text: _data,
+        removeMisalignedTags: false,
+        addInLineBreaks: true
+    });
+    this.mMOTDContainer.removeClass('display-block').addClass('display-none');
+    this.mLMOTDContainer.removeClass('display-none').addClass('display-block');
+
+    this.mLMOTD.html(parsedDescriptionText.html);
 };
 
 MainMenuScreen.prototype.getModule = function (_name)

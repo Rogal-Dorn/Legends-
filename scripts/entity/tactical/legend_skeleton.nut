@@ -101,8 +101,12 @@ this.legend_skeleton <- this.inherit("scripts/entity/tactical/skeleton", {
 		}
 
 		this.setSpriteOffset("hair", this.createVec(0, -3));
+		this.addSprite("helmet_vanity_lower");
 		this.addSprite("helmet");
 		this.addSprite("helmet_damage");
+		this.addSprite("helmet_helm");
+		this.addSprite("helmet_top");
+		this.addSprite("helmet_vanity");
 		local beard_top = this.addSprite("beard_top");
 
 		if (beard.HasBrush && this.doesBrushExist(beard.getBrush().Name + "_top"))
@@ -156,7 +160,7 @@ this.legend_skeleton <- this.inherit("scripts/entity/tactical/skeleton", {
 		local XPkiller = this.Math.floor(_actor.getXPValue() * this.Const.XP.XPForKillerPct);
 		local XPgroup = _actor.getXPValue() * (1.0 - this.Const.XP.XPForKillerPct);
 
-        local summoner = getTags().get("Summoner");
+        local summoner = getFlags().get("Summoner");
         if (summoner != null && "addXP" in summoner)
         {
             summoner.addXP(this.Math.floor(XPkiller * 0.50));

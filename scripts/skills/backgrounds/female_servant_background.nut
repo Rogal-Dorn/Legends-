@@ -38,7 +38,7 @@ this.female_servant_background <- this.inherit("scripts/skills/backgrounds/chara
 		this.m.HairColors = this.Const.HairColors.Old;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsOffendedByViolence = true;
 		this.m.IsFemaleBackground = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.NeutralMin;
@@ -148,23 +148,9 @@ this.female_servant_background <- this.inherit("scripts/skills/backgrounds/chara
 	function onAddEquipment()
 	{
 		local items = this.getContainer().getActor().getItems();
-		local r;
-		r = this.Math.rand(0, 1);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/armor/legend_maid_dress"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/armor/linen_tunic"));
-		}
+		items.equip(this.Const.World.Common.pickArmor([
+			[1, "linen_tunic"],
+			[1, "legend_maid_dress"]
+		]))
 	}
-
-	function onAddLegendEquipment()
-	{
-		local items = this.getContainer().getActor().getItems();
-		items.equip(this.new("scripts/items/legend_armor/cloth/legend_peasant_dress"));
-	}
-
 });

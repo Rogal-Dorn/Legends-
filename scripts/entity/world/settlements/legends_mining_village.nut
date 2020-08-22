@@ -117,9 +117,7 @@ this.legends_mining_village <- this.inherit("scripts/entity/world/settlements/le
 			"thief_background",
 			"poacher_background",
 			"apprentice_background",
-			"female_beggar_background",
 			"brawler_background",
-			"female_daytaler_background",
 			"graverobber_background",
 			"mason_background",
 			"messenger_background",
@@ -128,7 +126,6 @@ this.legends_mining_village <- this.inherit("scripts/entity/world/settlements/le
 			"miner_background",
 			"miner_background",
 			"peddler_background",
-			"female_thief_background",
 			"poacher_background"
 		],[
 			"apprentice_background",
@@ -152,12 +149,11 @@ this.legends_mining_village <- this.inherit("scripts/entity/world/settlements/le
 			"shepherd_background",
 			"thief_background",
 			"vagabond_background",
-						"apprentice_background",
+			"apprentice_background",
 			"apprentice_background",
 			"brawler_background",
 			"caravan_hand_background",
 			"gambler_background",
-			"female_daytaler_background",
 			"juggler_background",
 			"killer_on_the_run_background",
 			"mason_background",
@@ -169,9 +165,7 @@ this.legends_mining_village <- this.inherit("scripts/entity/world/settlements/le
 			"miner_background",
 			"peddler_background",
 			"ratcatcher_background",
-			"female_servant_background",
 			"shepherd_background",
-			"female_thief_background",
 			"vagabond_background"
 		],[
 			"apprentice_background",
@@ -195,12 +189,11 @@ this.legends_mining_village <- this.inherit("scripts/entity/world/settlements/le
 			"shepherd_background",
 			"thief_background",
 			"vagabond_background",
-						"apprentice_background",
+			"apprentice_background",
 			"apprentice_background",
 			"brawler_background",
 			"caravan_hand_background",
 			"gambler_background",
-			"female_daytaler_background",
 			"juggler_background",
 			"killer_on_the_run_background",
 			"mason_background",
@@ -212,10 +205,21 @@ this.legends_mining_village <- this.inherit("scripts/entity/world/settlements/le
 			"miner_background",
 			"peddler_background",
 			"ratcatcher_background",
-			"female_servant_background",
 			"shepherd_background",
-			"female_thief_background",
 			"vagabond_background"
+		]];
+		this.m.FemaleDraftLists = [[
+			"female_beggar_background",
+			"female_daytaler_background",
+			"female_thief_background",
+		],[
+			"female_daytaler_background",
+			"female_servant_background",
+			"female_thief_background",
+		],[
+			"female_daytaler_background",
+			"female_servant_background",
+			"female_thief_background",
 		]];
 		this.m.StablesLists = [[
 			"legend_donkey"

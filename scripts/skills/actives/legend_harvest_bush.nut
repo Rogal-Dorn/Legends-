@@ -70,6 +70,11 @@ this.legend_harvest_bush <- this.inherit("scripts/skills/skill", {
 
 	function onVerifyTarget( _originTile, _targetTile )
 	{
+		if (_targetTile.getEntity() == null)
+		{
+			return false;
+		}
+
 		if (_targetTile.getEntity().isBush())
 		{
 			return true;
@@ -87,7 +92,7 @@ this.legend_harvest_bush <- this.inherit("scripts/skills/skill", {
 	{
 		local item = _user.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
 		local condition = item.getCondition();
-		local damage = this.Math.random(4,8);
+		local damage = this.Math.rand(4,8);
 		this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectSlash);
 		return this.attackEntity(_user, _targetTile.getEntity());
 		item.setCondition(condition - damage);

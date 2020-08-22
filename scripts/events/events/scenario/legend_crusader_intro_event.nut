@@ -30,7 +30,7 @@ this.legend_crusader_intro_event <- this.inherit("scripts/events/event", {
 				this.logInfo("Making a noble house hate you");
 				//this.World.FactionManager.makeRandomNoblesUnfriendlyToPlayer();
 				this.logInfo("Unlocking scouting");
-				this.World.Tags.set("HasLegendCampScouting", true);							
+				this.World.Flags.set("HasLegendCampScouting", true);
 			}
 		});
 	}
@@ -49,7 +49,7 @@ this.legend_crusader_intro_event <- this.inherit("scripts/events/event", {
 	{
 		_vars.push([
 			"home",
-			this.World.Tags.get("HomeVillage")
+			this.World.Flags.get("HomeVillage")
 		]);
 	}
 

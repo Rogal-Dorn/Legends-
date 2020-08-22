@@ -12,7 +12,7 @@ this.legend_hunting_greenwood_schrats_action <- this.inherit("scripts/factions/f
 
 	function onUpdate( _faction )
 	{
-		
+
 
 		if (!this.Const.DLC.Unhold)
 		{
@@ -28,7 +28,7 @@ this.legend_hunting_greenwood_schrats_action <- this.inherit("scripts/factions/f
 		{
 			return;
 		}
-		
+
 		if (_faction.getSettlements()[0].isIsolated())
 		{
 			return;
@@ -42,9 +42,9 @@ this.legend_hunting_greenwood_schrats_action <- this.inherit("scripts/factions/f
 		}
 
 		local minResources = this.Const.World.LegendaryContract.GreenSchrat * this.Const.World.ContractCost.GreenSchrat + this.Const.World.ContractCost.GreenSchrat;
-		
-		local currentResources = this.getDifficultyMult() * this.getReputationToDifficultyMult() * this.Const.World.ContractCost.GreenSchrat;
-		
+
+		local currentResources = this.getDifficultyMult() * this.getScaledDifficultyMult() * this.Const.World.ContractCost.GreenSchrat;
+
 		if(currentResources < minResources)
 		{
 			return;

@@ -23,7 +23,7 @@ this.legend_animated_player_properties <- this.inherit("scripts/skills/skill", {
 		local actor = this.getContainer().getActor();
 		actor.m.MoraleState = this.Const.MoraleState.Ignore;
 
-		if (actor.getTags().has("PlayerZombie"))
+		if (actor.getFlags().has("PlayerZombie"))
 		{
 			actor.m.BloodType = this.Const.BloodType.Dark;
 			actor.m.Sound[this.Const.Sound.ActorEvent.NoDamageReceived] = [
@@ -79,7 +79,7 @@ this.legend_animated_player_properties <- this.inherit("scripts/skills/skill", {
 				"sounds/enemies/zombie_bite_03.wav"
 			];
 		}
-		else if (actor.getTags().has("PlayerSkeleton"))
+		else if (actor.getFlags().has("PlayerSkeleton"))
 		{
 			actor.m.BloodType = this.Const.BloodType.Bones;
 			actor.m.Sound[this.Const.Sound.ActorEvent.NoDamageReceived] = [

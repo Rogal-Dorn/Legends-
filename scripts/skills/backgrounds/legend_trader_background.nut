@@ -36,7 +36,7 @@ this.legend_trader_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.Hairs = this.Const.Hair.TidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Tidy;
-		this.m.Body = "bust_naked_body_02";
+
 				this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Chivalrous;
 		this.m.Level = 1;
@@ -134,7 +134,7 @@ this.legend_trader_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsFemaleBackground = true;
 
 	}
@@ -207,22 +207,18 @@ this.legend_trader_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
 		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_bribe"));
 
-		if (this.m.IsFemaleBackground == true)
-		{
-			actor.setName(this.Const.Strings.CharacterNamesFemale[this.Math.rand(0, this.Const.Strings.CharacterNamesFemale.len() - 1)]);
-		}
-		else
-		{
-			actor.setName(this.Const.Strings.CharacterNames[this.Math.rand(0, this.Const.Strings.CharacterNames.len() - 1)]);
-		}
 	}
 
 	function onAddEquipment()
 	{
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/weapons/legend_tipstaff"));
-		items.equip(this.new("scripts/items/armor/linen_tunic"));
-		items.equip(this.new("scripts/items/helmets/feathered_hat"));
+		items.equip(this.Const.World.Common.pickArmor([
+			[1, "linen_tunic"]
+		]));
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "feathered_hat"]
+		]));
 		// local stash = this.World.Assets.getStash()
 		// stash.removeByID("supplies.ground_grains");
 		// stash.removeByID("supplies.ground_grains");
@@ -239,33 +235,5 @@ this.legend_trader_background <- this.inherit("scripts/skills/backgrounds/charac
 		// stash.add(this.new("scripts/items/tents/tent_scout"));
 		// stash.add(this.new("scripts/items/tents/tent_scrap"));
 		// stash.add(this.new("scripts/items/tents/tent_train"));
-
-
-	}
-
-	function onAddLegendEquipment()
-	{
-		local items = this.getContainer().getActor().getItems();
-		items.equip(this.new("scripts/items/weapons/legend_tipstaff"));
-		items.equip(this.new("scripts/items/legend_armor/cloth/legend_tunic"));
-		items.equip(this.new("scripts/items/helmets/feathered_hat"));
-		// local stash = this.World.Assets.getStash()
-		// stash.removeByID("supplies.ground_grains");
-		// stash.removeByID("supplies.ground_grains");
-		// stash.add(this.new("scripts/items/trade/cloth_rolls_item"));
-		// stash.add(this.new("scripts/items/misc/snake_oil_item"));
-		// stash.add(this.new("scripts/items/supplies/dried_fruits_item"));
-		// stash.add(this.new("scripts/items/tents/tent_craft"));
-		// stash.add(this.new("scripts/items/tents/tent_enchant"));
-		// stash.add(this.new("scripts/items/tents/tent_fletcher"));
-		// stash.add(this.new("scripts/items/tents/tent_gather"));
-		// stash.add(this.new("scripts/items/tents/tent_heal"));
-		// stash.add(this.new("scripts/items/tents/tent_hunter"));
-		// stash.add(this.new("scripts/items/tents/tent_repair"));
-		// stash.add(this.new("scripts/items/tents/tent_scout"));
-		// stash.add(this.new("scripts/items/tents/tent_scrap"));
-		// stash.add(this.new("scripts/items/tents/tent_train"));
-
-
 	}
 });

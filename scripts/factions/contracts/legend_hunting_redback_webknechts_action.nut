@@ -12,7 +12,7 @@ this.legend_hunting_redback_webknechts_action <- this.inherit("scripts/factions/
 
 	function onUpdate( _faction )
 	{
-		
+
 
 		if (!this.Const.DLC.Unhold)
 		{
@@ -35,11 +35,11 @@ this.legend_hunting_redback_webknechts_action <- this.inherit("scripts/factions/
 		{
 			return;
 		}
-		
+
 		local minResources = this.Const.World.LegendaryContract.RedSpider * this.Const.World.ContractCost.RedSpider + this.Const.World.ContractCost.RedSpider;
-		
-		local currentResources = this.getDifficultyMult() * this.getReputationToDifficultyMult() * this.Const.World.ContractCost.RedSpider;
-		
+
+		local currentResources = this.getDifficultyMult() * this.getScaledDifficultyMult() * this.Const.World.ContractCost.RedSpider;
+
 		if(currentResources < minResources)
 		{
 			return;

@@ -30,7 +30,7 @@ this.legend_ironmonger_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.m.Hairs = this.Const.Hair.YoungMale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.Body = "bust_naked_body_01";
+
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.IsCrusaderRecruitBackground = true;
@@ -86,7 +86,7 @@ this.legend_ironmonger_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsFemaleBackground = true;
 		this.m.GoodEnding = "A more reliable sellsword than most, %name%\'s background as an ironmonger helped her to keep the %companyname%\'s equipment functioning. Having saved more than enough crowns, %name% retired and returned to blacksmithing, learning from a true master and becoming a paragon of the craft. Last you heard of her she was living in luxury, making custom weapons and armor for nobles.";
 		this.m.BadEnding = "%name% the ironmonger stayed with the %companyname% for some time after your departure, but after a particularly nasty stretch of bad luck she saw the rot for what it was and jumped ship. Bad luck seemed to follow her, however, and she never managed to settle down. She burned through her leftover crowns in a few years. She died in poverty one winter, freezing overnight.";
@@ -168,68 +168,16 @@ this.legend_ironmonger_background <- this.inherit("scripts/skills/backgrounds/ch
 		return c;
 	}
 
-	function onAdded()
-	{
-		this.character_background.onAdded();
-		local actor = this.getContainer().getActor();
-
-		if (this.m.IsFemaleBackground == true)
-		{
-			actor.setName(this.Const.Strings.CharacterNamesFemale[this.Math.rand(0, this.Const.Strings.CharacterNamesFemale.len() - 1)]);
-		}
-		else
-		{
-			actor.setName(this.Const.Strings.CharacterNames[this.Math.rand(0, this.Const.Strings.CharacterNames.len() - 1)]);
-		}
-	}
 
 	function onAddEquipment()
 	{
 		local items = this.getContainer().getActor().getItems();
-		local r;
-		r = this.Math.rand(0, 2);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/armor/leather_tunic"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/armor/linen_tunic"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/armor/apron"));
-		}
-		else if (r == 3)
-		{
-			items.equip(this.new("scripts/items/armor/legend_blacksmith_apron"));
-		}
-	}
-
-	function onAddLegendEquipment()
-	{
-		local items = this.getContainer().getActor().getItems();
-		local r = this.Math.rand(0, 1);
-
-		local cloths = [[1, "cloth/legend_apron_smith"]];
-		if (r == 0)
-		{
-			cloths = [[1, "cloth/legend_tunic"]]
-		}
-		local armor = this.Const.World.Common.pickLegendArmor(cloths)
-		local plates = [
-			[2, ""],
-			[1, "plate/legend_armor_leather_jacket"],
-			[1, "plate/legend_armor_leather_jacket_simple"]
-		]
-		local plate = this.Const.World.Common.pickLegendArmor(plates)
-		if (plate != null)
-		{
-			armor.setUpgrade(plate)
-		}
-
-		items.equip(armor);
+		items.equip(this.Const.World.Common.pickArmor([
+			[1, "apron"],
+			[1, "linen_tunic"],
+			[1, "leather_tunic"]
+			//, [1, "legend_blacksmith_apron"]
+		]));
 	}
 
 });

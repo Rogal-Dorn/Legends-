@@ -7,8 +7,8 @@ this.legend_drum <- this.inherit("scripts/items/weapons/weapon", {
 		this.weapon.create();
 		this.m.ID = "weapon.legend_drum";
 		this.m.Name = "Drum";
-		this.m.Description = "A musical instrument, can produce inspiring rythms, if you have the skill";
-		this.m.Categories = "Musical Instrument, Two-Handed";
+		this.m.Description = "A musical instrument, can produce inspiring rythms, if you have the skill. The drum sticks make short staves in a pinch.";
+		this.m.Categories = "Musical Instrument, Staff, Two-Handed";
 		this.m.IconLarge = "weapons/melee/drum_01.png";
 		this.m.Icon = "weapons/melee/drum_01_70x70.png";
 		this.m.BreakingSound = "sounds/combat/lute_break_01.wav";
@@ -20,20 +20,23 @@ this.legend_drum <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
 		this.m.ArmamentIcon = "icon_drum";
-		this.m.Value = 100;
-		this.m.Condition = 30.0;
-		this.m.ConditionMax = 30.0;
+		this.m.Value = 300;
+		this.m.Condition = 60.0;
+		this.m.ConditionMax = 60.0;
 		this.m.StaminaModifier = -4;
-		this.m.RegularDamage = 15;
-		this.m.RegularDamageMax = 20;
-		this.m.ArmorDamageMult = 0.1;
-		this.m.DirectDamageMult = 0.4;
+		this.m.RegularDamage = 20;
+		this.m.RegularDamageMax = 40;
+		this.m.ArmorDamageMult = 0.2;
+		this.m.DirectDamageMult = 0.5;
 	}
 
 	function onEquip()
 	{
 		this.weapon.onEquip();
-		this.addSkill(this.new("scripts/skills/actives/bash"));
+		this.addSkill(this.new("scripts/skills/actives/legend_staff_bash"));
+		local s = this.new("scripts/skills/actives/legend_staff_knock_out");
+		s.m.IsFromLute = true;
+		this.addSkill(s);
 	}
 
 	function onUpdateProperties( _properties )

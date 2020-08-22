@@ -35,7 +35,7 @@ this.legend_banshee <- this.inherit("scripts/entity/tactical/actor", {
 			"sounds/enemies/banshee_hit_02.wav",
 		];
 		this.m.SoundPitch = this.Math.rand(90, 110) * 0.01;
-		this.getTags().add("undead");
+		this.getFlags().add("undead");
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/ghost_agent");
 		this.m.AIAgent.setActor(this);
 	}
@@ -121,7 +121,7 @@ this.legend_banshee <- this.inherit("scripts/entity/tactical/actor", {
 			{
 				local r = this.Math.rand(1, 100);
 				local loot;
-				
+
 				if (r <= 50)
 				{
 					loot = this.new("scripts/items/misc/legend_banshee_essence_item");
@@ -130,7 +130,7 @@ this.legend_banshee <- this.inherit("scripts/entity/tactical/actor", {
 				{
 					continue;
 				}
-				
+
 				loot.drop(_tile);
 			}
 		}

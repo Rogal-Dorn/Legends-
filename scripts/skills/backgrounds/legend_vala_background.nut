@@ -11,6 +11,7 @@ this.legend_vala_background <- this.inherit("scripts/skills/backgrounds/characte
 		this.m.BadEnding = null;
 		this.m.HiringCost = 20000;
 		this.m.DailyCost = 24;
+		this.m.Ethnicity = 2;
 		this.m.Excluded = [
 			"trait.asthmatic",
 			"trait.clumsy",
@@ -31,7 +32,7 @@ this.legend_vala_background <- this.inherit("scripts/skills/backgrounds/characte
 		this.m.IsDruidRecruitBackground = true;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Body = this.Const.Bodies.AllFemale[this.Math.rand(0, this.Const.Bodies.AllFemale.len() - 1)];
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsFemaleBackground = true;
 		this.m.IsPerformingBackground = true;
 		this.m.IsUntalented = true;
@@ -111,7 +112,7 @@ this.legend_vala_background <- this.inherit("scripts/skills/backgrounds/characte
 				type = "text",
 				icon = "ui/icons/special.png",
 				text = "Most of the Vala\'s skills require her staff and scale in one way or another with the strength of her Resolve. Chants are sorcerous incantations delivered by song. These affect an area around the Vala and last until the start of her next turn. Trances are altered states entered into by the Vala. She will remain in these until her task is either completed or interrupted. Receiving damage of any kind, or becoming too fatigued to continue, will drop the Vala out of an active trance. "
-			}			
+			}
 		];
 	}
 
@@ -159,15 +160,6 @@ this.legend_vala_background <- this.inherit("scripts/skills/backgrounds/characte
 		return c;
 	}
 
-	function onAdded()
-	{
-		this.character_background.onAdded();
-		local actor = this.getContainer().getActor();
-		actor.setName(this.Const.Strings.CharacterNamesFemaleNorse[this.Math.rand(0, this.Const.Strings.CharacterNamesFemaleNorse.len() - 1)]);
-		actor.setTitle("the Vala");
-		//this.m.Container.add(this.new("scripts/skills/perks/legend_vala_information"));
-	}
-
 	function onAddEquipment()
 	{
 		local talents = this.getContainer().getActor().getTalents();
@@ -178,36 +170,9 @@ this.legend_vala_background <- this.inherit("scripts/skills/backgrounds/characte
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/weapons/legend_staff_vala"));
 
-		local r = this.Math.rand(0, 1);
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/armor/legend_vala_cloak"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/armor/legend_vala_dress"));
-		}
+		items.equip(this.Const.World.Common.pickArmor([
+			[1, "legend_vala_cloak"],
+			[1, "legend_vala_dress"]
+		]));
 	}
-
-		function onAddLegendEquipment()
-	{
-		local talents = this.getContainer().getActor().getTalents();
-		talents.resize(this.Const.Attributes.COUNT, 0);
-		talents[this.Const.Attributes.Bravery] = this.Math.rand(2, 3);
-		this.getContainer().getActor().fillTalentValues(2, true);
-
-		local items = this.getContainer().getActor().getItems();
-		items.equip(this.new("scripts/items/weapons/legend_staff_vala"));
-
-		local r = this.Math.rand(0, 1);
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/legend_armor/armor/legend_armor_vala_cloak"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/legend_armor/armor/legend_armor_vala_dress"));
-		}
-	}
-
 });

@@ -69,7 +69,7 @@ WorldObituaryScreen.prototype.createDIV = function (_parentDiv)
      _parentDiv.append(this.mContainer);
 
     // create: containers (init hidden!)
-    var dialogLayout = $('<div class="l-obiturary-dialog-container"/>');
+    var dialogLayout = $('<div class="l-obituary-dialog-container"/>');
     this.mContainer.append(dialogLayout);
     this.mDialogContainer = dialogLayout.createDialog('Obituary', '', '', true, 'dialog-1710-768');
 

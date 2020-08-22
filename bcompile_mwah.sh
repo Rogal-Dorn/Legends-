@@ -2,6 +2,8 @@ FILES=$(git diff --name-only `git merge-base origin/master HEAD`)
 while read -r line; do
     if [[ "$line" == *.sh ]]; then
         echo "skipping $line"
+    elif [[ "$line" == *.py ]]; then
+        echo "skipping $line"
     elif [[ "$line" == *.md ]]; then
         echo "skipping $line"
     elif [[ "$line" == unpacked* ]]; then
@@ -68,6 +70,19 @@ while read -r line; do
     fi
 done <<< "$FILES"
 
+echo "Building helmets..."
+rm -rf helmets
+mkdir -p "helmets"
+python make_legend_helmet_nuts.py
+cp -R helmets/. "c:\Program Files (x86)\Steam\steamapps\common\Battle Brothers\data\scripts\items\legend_helmets"
+
+echo "Building armors..."
+rm -rf legend_armor
+mkdir -p "legend_armor"
+python make_legend_armor.py
+cp -R legend_armor/. "c:\Program Files (x86)\Steam\steamapps\common\Battle Brothers\data\scripts\items\legend_armor"
+
+
 mkdir -p "brushes"
 cd ../bin
  echo "Building brushes..."
@@ -79,11 +94,19 @@ cd ../bin
 ./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/legend_world.brush ../battlebrothers/unpacked/legend_world
 ./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/legends_ui.brush ../battlebrothers/unpacked/legends_ui
 ./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/legend_horses.brush ../battlebrothers/unpacked/legend_horses
-./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/legend_helments.brush ../battlebrothers/unpacked/legend_helmets
+
+ echo "Building Legend Helmets metadata.xml..."
+python ../battlebrothers/unpacked/make_legend_helmets.py
+ echo "Building Legend Helmets brush..."
+./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/legend_helmets.brush ../battlebrothers/unpacked/legend_helmets
+./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/legend_helmets.brush ../battlebrothers/unpacked/legend_helmets/0
+./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/legend_helmets.brush ../battlebrothers/unpacked/legend_helmets/1
+
  echo "Building Legend Armor metadata.xml..."
 python ../battlebrothers/unpacked/make_legend_armor.py
  echo "Building Legend Armor brush..."
 ./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/legend_armor.brush ../battlebrothers/unpacked/legend_armor
+
  echo "Compiling all nut files..."
 ./masscompile.bat "c:\Program Files (x86)\Steam\steamapps\common\Battle Brothers\data\scripts"
 

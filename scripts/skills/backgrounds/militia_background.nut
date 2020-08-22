@@ -11,7 +11,7 @@ this.militia_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.GoodEnding = "A former militia recruit such as %name% eventually left the %companyname%. Traveling the lands, visiting villages and helping them establish credible militias with which to defend themselves. Finding success in an increasingly dangerous world, %name% eventually came to be a known name, called upon as a sort of \'fixer\' to come and ensure these villages would remain safe. Last you heard, %name% had purchased a plot of land and was raising a family far from the strife of the world.";
 		this.m.BadEnding = "%name% left the collapsing company and returned to the village. Back in the militia, it wasn\'t long until {greenskins | raiders} attacked and the militia was called to action. It\'s said that %name% stood tall, rallying the defense while slaying through countless enemies before succumbing to mortal wounds. When you visited the village, you found children playfighting beneath a statue made in the %name%\'s image.";
 		this.m.HiringCost = 85;
-		this.m.DailyCost = 9;
+		this.m.DailyCost = 10;
 		this.m.Excluded = [
 			"trait.hate_undead",
 			"trait.clubfooted",
@@ -25,7 +25,7 @@ this.militia_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Hairs = this.Const.Hair.CommonMale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.Body = "bust_naked_body_01";
+		this.m.Bodies = this.Const.Bodies.Skinny;
 		this.m.Level = this.Math.rand(1, 2);
 		this.m.IsCombatBackground = true;
 		this.m.IsLowborn = true;
@@ -78,7 +78,7 @@ this.militia_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Beards = null;
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.BeardChance = 0;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsFemaleBackground = true;
 	}
 
@@ -137,14 +137,6 @@ this.militia_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			actor.setTitle(this.Const.Strings.MilitiaTitles[this.Math.rand(0, this.Const.Strings.MilitiaTitles.len() - 1)]);
 		}
 
-		if (this.m.IsFemaleBackground == true)
-		{
-			actor.setName(this.Const.Strings.CharacterNamesFemale[this.Math.rand(0, this.Const.Strings.CharacterNamesFemale.len() - 1)]);
-		}
-		else
-		{
-			actor.setName(this.Const.Strings.CharacterNames[this.Math.rand(0, this.Const.Strings.CharacterNames.len() - 1)]);
-		}
 	}
 
 	function onAddEquipment()
@@ -173,192 +165,23 @@ this.militia_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			items.equip(this.new("scripts/items/shields/buckler_shield"));
 		}
 
-		r = this.Math.rand(0, 4);
+		items.equip(this.Const.World.Common.pickArmor([
+			[1, "leather_tunic"],
+			[1, "leather_lamellar"],
+			[1, "padded_surcoat"],
+			[1, "gambeson"],
+			[1, "linen_tunic"]
+		]))
 
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/armor/leather_tunic"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/armor/leather_lamellar"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/armor/padded_surcoat"));
-		}
-		else if (r == 3)
-		{
-			items.equip(this.new("scripts/items/armor/gambeson"));
-		}
-		else if (r == 4)
-		{
-			items.equip(this.new("scripts/items/armor/linen_tunic"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, ""],
+			[1, "aketon_cap"],
+			[1, "full_aketon_cap"],
+			[1, "open_leather_cap"],
+			[1, "full_leather_cap"],
+			[1, "straw_hat"]
+		]));
 
-		r = this.Math.rand(0, 6);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/aketon_cap"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/full_aketon_cap"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/helmets/open_leather_cap"));
-		}
-		else if (r == 3)
-		{
-			items.equip(this.new("scripts/items/helmets/full_leather_cap"));
-		}
-		else if (r == 4)
-		{
-			items.equip(this.new("scripts/items/helmets/straw_hat"));
-		}
 	}
-
-	function onAddLegendEquipment()
-	{
-		local items = this.getContainer().getActor().getItems();
-		local r;
-		local weapons = [
-			"weapons/hooked_blade",
-			"weapons/bludgeon",
-			"weapons/hand_axe",
-			"weapons/militia_spear",
-			"weapons/shortsword"
-		];
-
-		if (this.Const.DLC.Wildmen)
-		{
-			weapons.extend([
-				"weapons/warfork"
-			]);
-		}
-
-		items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
-
-		if (items.getItemAtSlot(this.Const.ItemSlot.Offhand) == null && this.Math.rand(1, 100) <= 50)
-		{
-			items.equip(this.new("scripts/items/shields/buckler_shield"));
-		}
-
-
-
-		local cloths = [
-            [0, ""],
-			[1, "cloth/legend_gambeson"],
-			[0, "cloth/legend_gambeson_plain"],
-			[0, "cloth/legend_gambeson_wolf"],
-			[1, "cloth/legend_padded_surcoat"],
-			[0, "cloth/legend_robes"],
-			[0, "cloth/legend_apron_butcher"],
-			[0, "cloth/legend_robes_nun"],
-			[0, "cloth/legend_apron_smith"],
-			[0, "cloth/legend_robes_wizard"],
-			[0, "cloth/legend_sackcloth"],
-			[0, "cloth/legend_sackcloth_patched"],
-			[0, "cloth/legend_sackcloth_tattered"],
-			[1, "cloth/legend_tunic"],
-			[0, "cloth/legend_tunic_noble"]
-		];
-		local armor = this.Const.World.Common.pickLegendArmor(cloths)
-
-		if (armor != null)
-		{
-			local chains = [
-                [0, ""],
-                [0, "chain/legend_armor_mail_shirt"],
-				[0, "chain/legend_armor_mail_shirt_simple"],
-				[0, "chain/legend_armor_rusty_mail_shirt"],
-				[0, "chain/legend_armor_ancient_double_mail"],
-				[0, "chain/legend_armor_ancient_mail"],
-				[0, "chain/legend_armor_basic_mail"],
-				[0, "chain/legend_armor_hauberk"],
-				[0, "chain/legend_armor_hauberk_full"],
-				[0, "chain/legend_armor_hauberk_sleevless"],
-				[0, "chain/legend_armor_reinforced_mail"],
-				[0, "chain/legend_armor_reinforced_mail_shirt"],
-				[0, "chain/legend_armor_reinforced_rotten_mail_shirt"],
-				[0, "chain/legend_armor_reinforced_worn_mail"],
-				[0, "chain/legend_armor_reinforced_worn_mail_shirt"],
-				[0, "chain/legend_armor_short_mail"]
-			]
-
-			local chain = this.Const.World.Common.pickLegendArmor(chains)
-			if (chain != null)
-			{
-				armor.setUpgrade(chain)
-			}
-
-			local plates = [
-                [0, ""],
-				[0, "plate/legend_armor_leather_brigandine"],
-				[0, "plate/legend_armor_leather_brigandine_hardened"],
-				[0, "plate/legend_armor_leather_brigandine_hardened_full"],
-				[1, "plate/legend_armor_leather_jacket"],
-				[1, "plate/legend_armor_leather_jacket_simple"],
-				[1, "plate/legend_armor_leather_lamellar"],
-				[0, "plate/legend_armor_leather_lamellar_harness_heavy"],
-				[0, "plate/legend_armor_leather_lamellar_harness_reinforced"],
-				[0, "plate/legend_armor_leather_lamellar_heavy"],
-				[0, "plate/legend_armor_leather_lamellar_reinforced"],
-				[0, "plate/legend_armor_leather_noble"],
-				[1, "plate/legend_armor_leather_padded"],
-				[0, "plate/legend_armor_leather_riveted"],
-				[0, "plate/legend_armor_leather_riveted_light"],
-				[0, "plate/legend_armor_leather_scale"],
-				[0, "plate/legend_armor_plate_ancient_chest"],
-				[0, "plate/legend_armor_plate_ancient_harness"],
-				[0, "plate/legend_armor_plate_ancient_mail"],
-				[0, "plate/legend_armor_plate_ancient_scale"],
-				[0, "plate/legend_armor_plate_ancient_scale_coat"],
-				[0, "plate/legend_armor_plate_ancient_scale_harness"],
-				[0, "plate/legend_armor_plate_chest"],
-				[0, "plate/legend_armor_plate_chest_rotten"],
-				[0, "plate/legend_armor_plate_cuirass"],
-				[0, "plate/legend_armor_plate_full"],
-				[0, "plate/legend_armor_scale"],
-				[0, "plate/legend_armor_scale_coat"],
-				[0, "plate/legend_armor_scale_coat_rotten"],
-				[0, "plate/legend_armor_scale_shirt"]
-			]
-			local plate = this.Const.World.Common.pickLegendArmor(plates)
-			if (plate != null)
-			{
-				armor.setUpgrade(plate)
-			}
-
-			items.equip(armor);
-		}
-
-
-		r = this.Math.rand(0, 6);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/aketon_cap"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/full_aketon_cap"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/helmets/open_leather_cap"));
-		}
-		else if (r == 3)
-		{
-			items.equip(this.new("scripts/items/helmets/full_leather_cap"));
-		}
-		else if (r == 4)
-		{
-			items.equip(this.new("scripts/items/helmets/straw_hat"));
-		}
-	}
-
 });
 
