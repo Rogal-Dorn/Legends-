@@ -125,11 +125,11 @@ layers = [
 #     "desc" :  "This flowing cloack is made from spider web, and offers excellent protection against ranged attacks.", \
 #     "adesc" : "A cloak of spider silk offers extra protection"
 # },
-{"name": "legend_armor_sash",                             "layer": "cloak", "min": 1, "max": 1, "value" : 150, "con" : 3, "stam" : -1, "impactSound" : "leather", "invSound" : "leather", \
-    "title" :  "Sash", \
-    "desc" :  "Sash.", \
-    "adesc" : "Has a flowing cloth sash"
-},
+# {"name": "legend_armor_sash",                             "layer": "cloak", "min": 1, "max": 1, "value" : 150, "con" : 3, "stam" : -1, "impactSound" : "leather", "invSound" : "leather", \
+#     "title" :  "Sash", \
+#     "desc" :  "Sash.", \
+#     "adesc" : "Has a flowing cloth sash"
+# },
 {"name": "legend_ancient_cloth",                          "layer": "cloth", "min": 1, "max": 1, "value" : 20, "con" : 30, "stam" : -5, "impactSound" : "leather", "invSound" : "cloth", \
     "title" :  "Ancient Cloth", \
     "desc" :  "An ancient cloth wrap, heavy and offering little protection", \
@@ -140,24 +140,14 @@ layers = [
     "desc" :  "A cloth wrap, heavy and offering small protection", \
     "adesc" :""
 },
-{"name": "legend_apron",                                  "layer": "cloth", "min": 1, "max": 7, "value" : 50, "con" : 30, "stam" : -2, "impactSound" : "leather", "invSound" : "cloth", \
-    "title" :  "Apron", \
-    "desc" :  "A leather apron worn by a craftsman", \
-    "adesc" :""
-},
-{"name": "legend_apron_butcher",                          "layer": "cloth", "min": 7, "max": 10, "value" : 60, "con" : 40, "stam" : -4, "impactSound" : "leather", "invSound" : "leather", \
+{"name": "legend_apron_butcher",                          "layer": "cloth", "min": 7, "max": 10, "value" : 50, "con" : 30, "stam" : -3, "impactSound" : "leather", "invSound" : "leather", \
     "title" :  "Butcher\'s Apron", \
     "desc" :  "A rugged apron worn by butchers to protect against accidental cuts.", \
     "adesc" :""
 },
-{"name": "legend_apron_smith",                            "layer": "cloth", "min": 1, "max": 4, "value" : 70, "con" : 45, "stam" : -5, "impactSound" : "leather", "invSound" : "leather", \
+{"name": "legend_apron",                            "layer": "cloth", "min": 1, "max": 6, "value" : 60, "con" : 35, "stam" : -4, "impactSound" : "leather", "invSound" : "leather", \
     "title" :  "Blacksmith Apron", \
     "desc" :  "A leather apron usually worn by a blacksmith", \
-    "adesc" :""
-},
-{"name": "legend_apron_taxidermist",                      "layer": "cloth", "min": 1, "max": 1, "value" : 50, "con" : 30, "stam" : -2, "impactSound" : "leather", "invSound" : "leather", "inherit" : "legend_apron", \
-    "title" :  "Taxidermist Apron", \
-    "desc" :  "A leather apron usually worn by a taxidermist", \
     "adesc" :""
 },
 {"name": "legend_dark_tunic",                             "layer": "cloth", "min": 1, "max": 2, "value" : 50, "con" : 35, "stam" : -4, "impactSound" : "leather", "invSound" : "cloth", \
@@ -165,12 +155,12 @@ layers = [
     "desc" :  "A heavy cloth tunic. bulky but offering some protection.", \
     "adesc" :""
 },
-{"name": "legend_gambeson",                               "layer": "cloth", "min": 0, "max": 39, "value" : 250, "con" : 65, "stam" : -8, "impactSound" : "leather", "invSound" : "cloth", \
+{"name": "legend_gambeson",                               "layer": "cloth", "min": 0, "max": 64, "value" : 250, "con" : 65, "stam" : -8, "impactSound" : "leather", "invSound" : "cloth", \
     "title" :  "Gambeson", \
     "desc" :  "A sturdy and heavy padded tunic that offers decent protection.", \
     "adesc" :""
 },
-{"name": "legend_gambeson_common_color",                  "layer": "cloth", "min": 0, "max": 34, "value" : 250, "con" : 65, "stam" : -8, "impactSound" : "leather", "invSound" : "cloth", "inherit" : "legend_gambeson", \
+{"name": "legend_gambeson_common_color",                  "layer": "cloth", "min": 0, "max": 39, "value" : 250, "con" : 65, "stam" : -8, "impactSound" : "leather", "invSound" : "cloth", "inherit" : "legend_gambeson", \
     "title" :  "Gambeson", \
     "desc" :  "A sturdy and heavy padded tunic that offers decent protection.", \
     "adesc" :""
@@ -181,7 +171,7 @@ layers = [
     "adesc" :"", \
     "named" : True, "rminStam" : 4, "rmaxStam": 6, "rminCond" : 75, "rmaxCond" : 90,  "names" : ['"Heraldic Gambeson"', '"Splendor"', '"Grandiosity"', '"Pageantry"', '"Swank"', '"Noble Surcoat"', '"Duty"', '"Honor"']
 },
-{"name": "legend_gambeson_plain",                         "layer": "cloth", "min": 0, "max": 34, "value" : 250, "con" : 65, "stam" : -8, "impactSound" : "leather", "invSound" : "leather", "inherit" : "legend_gambeson",\
+{"name": "legend_gambeson_plain",                         "layer": "cloth", "min": 0, "max": 39, "value" : 250, "con" : 65, "stam" : -8, "impactSound" : "leather", "invSound" : "leather", "inherit" : "legend_gambeson",\
     "title" :  "Gambeson", \
     "desc" :  "A sturdy and heavy padded tunic that offers decent protection.", \
     "adesc" :""
@@ -196,7 +186,7 @@ layers = [
     "desc" :  "A sturdy and heavy padded tunic that offers decent protection.", \
     "adesc" :""
 },
-{"name": "legend_padded_surcoat",                         "layer": "cloth", "min": 40, "max": 64, "value" : 150, "con" : 55, "stam" : -6, "impactSound" : "leather", "invSound" : "cloth", \
+{"name": "legend_padded_surcoat",                         "layer": "cloth", "min": 40, "max": 64, "value" : 150, "con" : 55, "stam" : -6, "impactSound" : "leather", "invSound" : "cloth", "inherit" : "legend_gambeson", \
     "title" :  "Padded Surcoat", \
     "desc" :  "A sturdy and heavy padded coat that offers decent protection.", \
     "adesc" :""
@@ -206,44 +196,39 @@ layers = [
     "desc" :  "A simple dress of rough fabric and common dye", \
     "adesc" :""
 },
-{"name": "legend_robes",                                  "layer": "cloth", "min": 1, "max": 18, "value" : 25, "con" : 25, "stam" : -2, "impactSound" : "leather", "invSound" : "cloth", \
+{"name": "legend_robes",                                  "layer": "cloth", "min": 9, "max": 18, "value" : 25, "con" : 25, "stam" : -2, "impactSound" : "leather", "invSound" : "cloth", \
     "title" :  "Monk\'s Robe", \
     "desc" :  "A rugged, large robe made of simple cloth usually worn by monks and similar individuals who don\'t care for fashion.", \
     "adesc" :""
 },
-{"name": "legend_robes_herbalist",                        "layer": "cloth", "min": 2, "max": 18, "value" : 25, "con" : 27, "stam" : -2, "impactSound" : "leather", "invSound" : "cloth", "inherit" : "legend_robes",\
-    "title" :  "Herbailist Robes", \
-    "desc" :  "Robes worn by herbalists.", \
-    "adesc" :""
-},
-{"name": "legend_robes_magic",                            "layer": "cloth", "min": 1, "max": 11, "value" : 1000, "con" : 40, "stam" : -1, "impactSound" : "leather", "invSound" : "cloth", \
+{"name": "legend_robes_magic",                            "layer": "cloth", "min": 1, "max": 1, "value" : 100, "con" : 40, "stam" : -1, "impactSound" : "leather", "invSound" : "cloth", \
     "title" :  "Magician\'s Robe", \
     "desc" :  "A soft shiny robe worn by practictioners of the arcane arts", \
     "adesc" :""
 },
-{"name": "legend_robes_nun",                              "layer": "cloth", "min": 6, "max": 7, "value" : 25, "con" : 22, "stam" : -1, "impactSound" : "leather", "invSound" : "cloth", "inherit" : "legend_robes",\
+{"name": "legend_robes_wizard",                            "layer": "cloth", "min": 1, "max": 12, "value" : 50, "con" : 30, "stam" : -1, "impactSound" : "leather", "invSound" : "cloth", \
+    "title" :  "Wizard\'s Robe", \
+    "desc" :  "A soft shiny robe worn by practictioners of the arcane arts", \
+    "adesc" :""
+},
+{"name": "legend_robes_nun",                              "layer": "cloth", "min": 1, "max": 2, "value" : 25, "con" : 22, "stam" : -1, "impactSound" : "leather", "invSound" : "cloth",\
     "title" :  "Nun\'s Robe", \
     "desc" :  "A rugged, large robe made of simple cloth usually worn by young nuns.", \
     "adesc" :""
 },
-{"name": "legend_robes_wizard",                           "layer": "cloth", "min": 1, "max": 1, "value" : 1000, "con" : 40, "stam" : -11, "impactSound" : "leather", "invSound" : "cloth", "inherit" : "legend_robes",\
-    "title" :  "Wizard\'s Robe", \
-    "desc" :  "A cloth robe coverd in all kinds of mystical ornaments and symbols.", \
+{"name": "legend_sackcloth_tattered",                     "layer": "cloth", "min": 12, "max": 18, "value" : 5, "con" : 5, "stam" : 0, "impactSound" : "leather", "invSound" : "cloth", \
+    "title" :  "Tattered Sackcloth", \
+    "desc" :  "Barely better than running naked.", \
     "adesc" :""
 },
-{"name": "legend_sackcloth",                              "layer": "cloth", "min": 1, "max": 12, "value" : 15, "con" : 10, "stam" : 0, "impactSound" : "leather", "invSound" : "cloth", \
+{"name": "legend_sackcloth",                              "layer": "cloth", "min": 3, "max": 12, "value" : 15, "con" : 10, "stam" : 0, "impactSound" : "leather", "invSound" : "cloth", \
     "title" :  "Sackcloth", \
     "desc" :  "Better than running naked.", \
     "adesc" :""
 },
-{"name": "legend_sackcloth_patched",                      "layer": "cloth", "min": 3, "max": 25, "value" : 20, "con" : 15, "stam" : -1, "impactSound" : "leather", "invSound" : "cloth", \
+{"name": "legend_sackcloth_patched",                      "layer": "cloth", "min": 1, "max": 8, "value" : 25, "con" : 15, "stam" : -1, "impactSound" : "leather", "invSound" : "cloth", \
     "title" :  "Leather Wraps", \
     "desc" :  "Various patches of rough leather sewn together.", \
-    "adesc" :""
-},
-{"name": "legend_sackcloth_tattered",                     "layer": "cloth", "min": 2, "max": 18, "value" : 5, "con" : 5, "stam" : 0, "impactSound" : "leather", "invSound" : "cloth", \
-    "title" :  "Tattered Sackcloth", \
-    "desc" :  "Barely better than running naked.", \
     "adesc" :""
 },
 {"name": "legend_thick_tunic",                            "layer": "cloth", "min": 1, "max": 24, "value" : 40, "con" : 30, "stam" : -3, "impactSound" : "leather", "invSound" : "cloth", \
@@ -260,11 +245,6 @@ layers = [
     "title" :  "Noble Tunic", \
     "desc" :  "A fine linen tunic of exquisite material, embroided with pleasing patterns. Fashionable but offering little in protection.", \
     "adesc" :""
-},
-{"name": "legend_animal_hide_armor",                      "layer": "plate", "min": 90, "max": 90, "value" : 100, "con" : 30, "stam" : -4, "impactSound" : "leather", "invSound" : "leather", \
-    "title" :  "Animal Hide Armor", \
-    "desc" :  "Heavy hides patched together to create a decent makeshift armor.", \
-    "adesc" : "Includes heavy hides patched together to create a decent makeshift armor."
 },
 {"name": "legend_armor_leather_brigandine",               "layer": "plate", "min": 1, "max": 1, "value" : 750, "con" : 65, "stam" : -8, "impactSound" : "leather", "invSound" : "leather", \
     "title" :  "Leather Brigandine Armor", \
@@ -292,12 +272,19 @@ layers = [
     "desc" :  "A leather jacket for minimal protection.", \
     "adesc" : "Includes a leather jacket for added protection."
 },
-{"name": "legend_armor_leather_jacket_named",             "layer": "plate", "min": 1, "max": 16, "value" : 750, "con" : 30, "stam" : -3, "impactSound" : "leather", "invSound" : "leather", \
+{"name": "legend_armor_leather_jacket_named",             "layer": "plate", "min": 1, "max": 1, "value" : 750, "con" : 30, "stam" : -3, "impactSound" : "leather", "invSound" : "leather", \
     "title" :  "", \
     "desc" :  "A well-crafted and hardened leather armor. Light to wear but very sturdy.", \
     "adesc" : "Includes a well-crafted and hardened leather armor. Light to wear but very sturdy.", \
     "named" : True, "rminStam" : 1, "rmaxStam": 2, "rminCond" : 35, "rmaxCond" : 45,  "names" : ['"Leather Cuirass"', '"Leather Armor"', '"Skin"', '"Peel"', '"Guard"', '"Coat"', '"Nightcloak"', '"Black"', '"Dark Omen"', '"Toadskin"', '"Ogreskin"']
 },
+{"name": "legend_armor_leather_jacket_named_02",             "layer": "plate", "min": 1, "max": 17, "value" : 750, "con" : 30, "stam" : -3, "impactSound" : "leather", "invSound" : "leather", \
+    "title" :  "", \
+    "desc" :  "A well-crafted leather coated jacket. Light to wear but very sturdy.", \
+    "adesc" : "Includes a well-crafted leather jacket. Light to wear but very sturdy.", \
+    "named" : True, "rminStam" : 1, "rmaxStam": 2, "rminCond" : 35, "rmaxCond" : 45,  "names" : ['"Leather Cuirass"', '"Leather Armor"', '"Skin"', '"Peel"', '"Guard"', '"Coat"', '"Nightcloak"', '"Black"', '"Dark Omen"', '"Toadskin"', '"Ogreskin"']
+},
+
 {"name": "legend_armor_leather_jacket_simple",            "layer": "plate", "min": 1, "max": 6, "value" : 30, "con" : 15, "stam" : -2, "impactSound" : "leather", "invSound" : "leather", \
     "title" :  "Simple Leather Jacket", \
     "desc" :  "A simple leather jacket for minimal protection.", \
@@ -462,37 +449,42 @@ layers = [
     "desc" :  "A sturdy yet flexible armor composed of small, overlapping metal scales.", \
     "adesc" : "Includes body vest with small overlapping metal scales."
 },
-{"name": "legend_heavy_iron_armor",                       "layer": "plate", "min": 95, "max": 95, "value" : 1000, "con" : 120, "stam" : -18, "impactSound" : "plate", "invSound" : "leather", \
+{"name": "legend_animal_hide_armor",                      "layer": "plate", "min": 90, "max": 90, "value" : 100, "con" : 30, "stam" : -4, "impactSound" : "leather", "invSound" : "leather", "vanilla" : True,\
+    "title" :  "Animal Hide Armor", \
+    "desc" :  "Heavy hides patched together to create a decent makeshift armor.", \
+    "adesc" : "Includes heavy hides patched together to create a decent makeshift armor."
+},
+{"name": "legend_heavy_iron_armor",                       "layer": "plate", "min": 95, "max": 95, "value" : 1000, "con" : 120, "stam" : -18, "impactSound" : "plate", "invSound" : "leather",  "vanilla" : True, \
     "title" :  "Heavy Iron Armor", \
     "desc" :  "This armor is made from heavy metal plates, scales and pieces of chainmal. The true armor of a northern warrior.", \
     "adesc" : "Includes is made from heavy metal plates, scales and pieces of chainmal. The true armor of a northern warrior."
 },
-{"name": "legend_hide_and_bone_armor",                    "layer": "plate", "min": 92, "max": 92, "value" : 350, "con" : 80, "stam" : -11, "impactSound" : "bone", "invSound" : "leather", \
+{"name": "legend_hide_and_bone_armor",                    "layer": "plate", "min": 92, "max": 92, "value" : 350, "con" : 80, "stam" : -11, "impactSound" : "bone", "invSound" : "leather", "vanilla" : True,\
     "title" :  "Hide and Bone Armor", \
     "desc" :  "Hide and bone are common materials in the northern regions. This armor is using both for decent protection.", \
     "adesc" : "Includes hide and bone armor that is decent protection."
 },
-{"name": "legend_reinforced_animal_hide_armor",           "layer": "plate", "min": 97, "max": 97, "value" : 175, "con" : 55, "stam" : -9, "impactSound" : "leather", "invSound" : "leather", \
+{"name": "legend_reinforced_animal_hide_armor",           "layer": "plate", "min": 97, "max": 97, "value" : 175, "con" : 55, "stam" : -9, "impactSound" : "leather", "invSound" : "leather", "vanilla" : True,\
     "title" :  "Reinforced Animal Hide Armor", \
     "desc" :  "A reinforced animal hide armor fashioned from thick leather pieces with added mail and metal scales.", \
     "adesc" : "Includes A reinforced animal hide armor fashioned from thick leather pieces with added mail and metal scales."
 },
-{"name": "legend_rugged_scale_armor",                     "layer": "plate", "min": 93, "max": 93, "value" : 700, "con" : 95, "stam" : -15, "impactSound" : "plate", "invSound" : "leather", \
+{"name": "legend_rugged_scale_armor",                     "layer": "plate", "min": 93, "max": 93, "value" : 700, "con" : 95, "stam" : -15, "impactSound" : "plate", "invSound" : "leather", "vanilla" : True,\
     "title" :  "Rugged Scale Armor", \
     "desc" :  "A heavy body armor made from thick iron scales.", \
     "adesc" : "Includes A heavy body armor made from thick iron scales."
 },
-{"name": "legend_scrap_metal_armor",                      "layer": "plate", "min": 94, "max": 94, "value" : 250, "con" : 65, "stam" : -10, "impactSound" : "chain", "invSound" : "leather", \
+{"name": "legend_scrap_metal_armor",                      "layer": "plate", "min": 94, "max": 94, "value" : 250, "con" : 65, "stam" : -10, "impactSound" : "chain", "invSound" : "leather", "vanilla" : True,\
     "title" :  "Scrap Metal Armor", \
     "desc" :  "This armor is pieced together from scavenged metal parts that are fixed to a crude leather tunic.", \
     "adesc" : "Includes armor that is pieced together from scavenged metal parts that are fixed to a crude leather tunic."
 },
-{"name": "legend_thick_furs_armor",                       "layer": "plate", "min": 91, "max": 91, "value" : 15, "con" : 10, "stam" : -1, "impactSound" : "leather", "invSound" : "leather", \
+{"name": "legend_thick_furs_armor",                       "layer": "plate", "min": 91, "max": 91, "value" : 15, "con" : 10, "stam" : -1, "impactSound" : "leather", "invSound" : "leather", "vanilla" : True,\
     "title" :  "Thick Furs", \
     "desc" :  "Thick furs that are crudely dried and tied together to protect from both the cold and any incoming blows.", \
     "adesc" : "Includes Thick furs that are crudely dried and tied together to protect from both the cold and any incoming blows."
 },
-{"name": "legend_thick_plated_barbarian_armor",           "layer": "plate", "min": 96, "max": 96, "value" : 1500, "con" : 155, "stam" : -26, "impactSound" : "plate", "invSound" : "leather", \
+{"name": "legend_thick_plated_barbarian_armor",           "layer": "plate", "min": 96, "max": 96, "value" : 1500, "con" : 155, "stam" : -26, "impactSound" : "plate", "invSound" : "leather", "vanilla" : True,\
     "title" :  "Thick Plated Barbarian Armor", \
     "desc" :  "A heavy armor that is made from mostly metal. Only one chosen by the ancestors will own a set like this.", \
     "adesc" : "Includes A heavy armor that is made from mostly metal. Only one chosen by the ancestors will own a set like this."
@@ -704,7 +696,7 @@ def main():
             temp = NamedUpgradeNut
 
         fname = d["name"]
-        dirpath = os.path.join(os.path.dirname(os.path.abspath(__file__)), "scripts", "items", "legend_armor", layer)
+        dirpath = os.path.join(os.path.dirname(os.path.abspath(__file__)),  "legend_armor", layer)
         if not os.path.exists(dirpath):
             os.makedirs(dirpath)
 
@@ -729,6 +721,11 @@ def main():
         elif d["impactSound"] == 'bone':
             impactsound = "this.Const.Sound.ArmorBoneImpact"
 
+
+        brush = "bust_" + d["name"].replace("legend_armor", "legend")
+        if "vanilla" in d:
+            brush = "bust_body"
+
         opts = dict(
             test="true",
             inherit=inherit,
@@ -743,7 +740,7 @@ def main():
             variants = variants,
             layer = layer,
             type= d["layer"].capitalize(),
-            brush = "bust_" + d["name"],
+            brush = brush,
             overlayLarge = layer + "/inventory_" + d["name"],
             overlay = layer + "/icon_" + d["name"],
             icon = layer + "/" + d["name"],
@@ -771,6 +768,13 @@ def main():
     LBase = [Layer, LayerDamaged, LayerDead, LayerArrow, LayerJavelin]
     for d in layers:
         R = L
+
+        if "inherit" in d:
+            continue
+
+        if "vanilla" in d:
+            continue
+
         if d["layer"] == "cloth":
             R = LBase
 
@@ -783,32 +787,33 @@ def main():
 
         for t in R:
             for name in names:
+                name = name.replace("legend_armor", "legend")
                 opts = dict(
                     name=name,
                     damaged=name + "_damaged",
                     dead=name + "_dead",
                     arrow=name + "_dead_arrows",
                     javelin=name + "_dead_javelin",
-                    name_path=os.path.join("entity", "legend_armor", d["layer"], name + ".png"),
-                    damaged_path=os.path.join("entity", "legend_armor", d["layer"], name + "_damaged.png"),
-                    dead_path=os.path.join("entity", "legend_armor", d["layer"], name + "_dead.png"),
-                    arrow_path=os.path.join("entity", "legend_armor", d["layer"], name + "_dead_arrows.png"),
-                    javelin_path=os.path.join("entity", "legend_armor", d["layer"], name + "_dead_javelin.png")
+                    name_path=os.path.join("entity", "legend_armor", d["layer"], "bust_" + name + ".png"),
+                    damaged_path=os.path.join("entity", "legend_armor", d["layer"], "bust_" + name + "_damaged.png"),
+                    dead_path=os.path.join("entity", "legend_armor", d["layer"], "bust_" + name + "_dead.png"),
+                    arrow_path=os.path.join("..",  "dead_arrows.png"),
+                    javelin_path=os.path.join("..", "dead_javelin.png")
                 )
                 s = Template(t)
                 text = s.substitute(opts)
                 text.replace("/", "\\")
                 F.write(text)
 
-                if "base" in d:
-                    srcF = os.path.join(os.path.dirname(os.path.abspath(__file__)), "dead_arrows.png")
-                    destF = os.path.join(os.path.dirname(os.path.abspath(__file__)), "legend_armor", opts["arrow_path"])
-                    if not os.path.exists(destF):
-                        copyfile(srcF, destF)
-                    srcF = os.path.join(os.path.dirname(os.path.abspath(__file__)), "dead_javelin.png")
-                    destF = os.path.join(os.path.dirname(os.path.abspath(__file__)), "legend_armor", opts["javelin_path"])
-                    if not os.path.exists(destF):
-                        copyfile(srcF, destF)
+                # if d["layer"] == "cloth":
+                #     srcF = os.path.join(os.path.dirname(os.path.abspath(__file__)), "unpacked", "dead_arrows.png")
+                #     destF = os.path.join(os.path.dirname(os.path.abspath(__file__)), "unpacked", "legend_armor", opts["arrow_path"])
+                #     if not os.path.exists(destF):
+                #         copyfile(srcF, destF)
+                #     srcF = os.path.join(os.path.dirname(os.path.abspath(__file__)), "unpacked", "dead_javelin.png")
+                #     destF = os.path.join(os.path.dirname(os.path.abspath(__file__)), "unpacked", "legend_armor", opts["javelin_path"])
+                #     if not os.path.exists(destF):
+                #         copyfile(srcF, destF)
 
     F.write('</brush>\n')
     F.close()
