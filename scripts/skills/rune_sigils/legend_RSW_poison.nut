@@ -32,7 +32,7 @@ this.legend_RSW_poison <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
-		if (_targetEntity.getTags().has("undead"))
+		if (_targetEntity.getFlags().has("undead"))
 		{
 			return;
 		}

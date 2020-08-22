@@ -34,20 +34,27 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 			{
 				this.logInfo("World rejected. Creating new one...");
 				this.clearWorld(_rect);
+				continue;
 			}
-			else
+
+			this.__ping();
+			this.buildElevation(_rect);
+			this.__ping();
+			this.__ping();
+			this.defragmentTerrain(_rect);
+			this.__ping();
+
+			if (this.Const.DLC.Desert && !this.isDesertAcceptable(_rect))
 			{
-				this.logInfo("World accepted.");
-				break;
+				this.logInfo("World rejected. Creating new one...");
+				this.clearWorld(_rect);
+				continue;
 			}
+
+			this.logInfo("World accepted.");
+			break;
 		}
 
-		this.__ping();
-		this.buildElevation(_rect);
-		this.__ping();
-		this.buildTerrain(_rect);
-		this.__ping();
-		this.defragmentTerrain(_rect);
 		this.__ping();
 		this.removeStraits(_rect);
 		this.__ping();
@@ -66,6 +73,13 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 		this.buildRoadSprites(_rect, _properties);
 		this.__ping();
 		this.buildLabels(_rect);
+		this.__ping();
+
+		if (this.Const.DLC.Desert)
+		{
+			this.buildAbandonedFortresses(_rect);
+		}
+
 		this.__ping();
 	}
 
@@ -94,6 +108,27 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 		return nonOcean * 1.0 / (ocean * 1.0) >= this.Const.World.Settings.MinLandToWaterRatio;
 	}
 
+	function isDesertAcceptable( _rect )
+	{
+		local desert = 0;
+
+		for( local x = _rect.X; x < _rect.X + _rect.W; x = ++x )
+		{
+			for( local y = _rect.Y; y < _rect.Y + _rect.H; y = ++y )
+			{
+				local tile = this.World.getTileSquare(x, y);
+
+				if (tile.Type == this.Const.World.TerrainType.Desert || tile.Type == this.Const.World.TerrainType.Oasis || tile.TacticalType == this.Const.World.TerrainTacticalType.DesertHills)
+				{
+					desert = ++desert;
+				}
+			}
+		}
+
+		this.logInfo("desert tiles: " + desert);
+		return desert >= this.Const.World.Settings.MinDesertTiles;
+	}
+
 	function clearWorld( _rect )
 	{
 		for( local x = _rect.X; x < _rect.X + _rect.W; x = ++x )
@@ -102,6 +137,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 			{
 				local tile = this.World.getTileSquare(x, y);
 				tile.Type = 0;
+				tile.Subregion = 0;
 			}
 		}
 	}
@@ -310,6 +346,9 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 				if (tile.Type == this.Const.World.TerrainType.Ocean)
 				{
 				}
+				else if (this.Const.DLC.Desert && y <= _rect.H * 0.17)
+				{
+				}
 				else
 				{
 					local chance = 9;
@@ -474,6 +513,550 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 							IsEmpty = true
 						}, null);
 					}
+				}
+			}
+		}
+	}
+
+	function buildTerrainDLC( _rect )
+	{
+		this.logInfo("Building terrain...");
+		local isAutumnLeft = this.Math.rand(0, 1) == 1;
+
+		for( local y = _rect.Y; y < _rect.Y + _rect.H * 0.2; y = ++y )
+		{
+			for( local x = _rect.X; x < _rect.X + _rect.W; x = ++x )
+			{
+				local tile = this.World.getTileSquare(x, y);
+
+				if (tile.Type != this.Const.World.TerrainType.Land)
+				{
+				}
+				else
+				{
+					local chance = 50;
+					chance = chance + y * -0.8;
+
+					if (y > _rect.Y + _rect.H * 0.19)
+					{
+						chance = chance * 0.25;
+					}
+
+					for( local i = 0; i < this.Const.Direction.COUNT; i = ++i )
+					{
+						if (!tile.hasNextTile(i))
+						{
+						}
+						else
+						{
+							local nextTile = tile.getNextTile(i);
+
+							if (nextTile.Type == this.Const.World.TerrainType.Swamp)
+							{
+								chance = 0;
+								break;
+							}
+
+							if (nextTile.Type == this.Const.World.TerrainType.Desert)
+							{
+								chance = chance + 50;
+							}
+							else if (nextTile.Type == this.Const.World.TerrainType.Steppe)
+							{
+								chance = chance + 25;
+							}
+						}
+					}
+
+					if (this.Math.rand(1, 100) <= chance)
+					{
+						tile.Type = 0;
+						this.m.Tiles[this.Const.World.TerrainType.Desert].fill({
+							X = x,
+							Y = y,
+							W = 1,
+							H = 1,
+							IsEmpty = true
+						}, null);
+					}
+				}
+			}
+		}
+
+		for( local y = _rect.Y + _rect.H * 0.15; y < _rect.Y + _rect.H * 0.6; y = ++y )
+		{
+			for( local x = _rect.X; x < _rect.X + _rect.W; x = ++x )
+			{
+				local tile = this.World.getTileSquare(x, y);
+
+				if (tile.Type != this.Const.World.TerrainType.Land)
+				{
+				}
+				else
+				{
+					local chance = 16;
+					chance = chance + y * -0.4;
+
+					for( local i = 0; i < this.Const.Direction.COUNT; i = ++i )
+					{
+						if (!tile.hasNextTile(i))
+						{
+						}
+						else
+						{
+							local nextTile = tile.getNextTile(i);
+
+							if (nextTile.Type == this.Const.World.TerrainType.Swamp)
+							{
+								chance = 0;
+								break;
+							}
+
+							if (nextTile.Type == this.Const.World.TerrainType.Steppe)
+							{
+								chance = chance + 50;
+							}
+							else if (nextTile.Type == this.Const.World.TerrainType.Desert)
+							{
+								chance = chance + 25;
+							}
+							else if (nextTile.Type == this.Const.World.TerrainType.Ocean)
+							{
+								chance = chance + 5;
+							}
+						}
+					}
+
+					if (this.Math.rand(1, 100) <= chance)
+					{
+						tile.Type = 0;
+						this.m.Tiles[this.Const.World.TerrainType.Steppe].fill({
+							X = x,
+							Y = y,
+							W = 1,
+							H = 1,
+							IsEmpty = true
+						}, null);
+					}
+				}
+			}
+		}
+
+		for( local x = _rect.X; x < _rect.X + _rect.W; x = ++x )
+		{
+			for( local y = _rect.Y + _rect.H * 0.3; y < _rect.Y + _rect.H * 0.8; y = ++y )
+			{
+				local tile = this.World.getTileSquare(x, y);
+
+				if (tile.Type != this.Const.World.TerrainType.Land)
+				{
+				}
+				else
+				{
+					local chance = y < _rect.H * 0.5 ? y : _rect.H - y;
+					chance = chance * 0.025;
+
+					for( local i = 0; i < this.Const.Direction.COUNT; i = ++i )
+					{
+						if (!tile.hasNextTile(i))
+						{
+						}
+						else
+						{
+							local nextTile = tile.getNextTile(i);
+
+							if (nextTile.Type == this.Const.World.TerrainType.Steppe)
+							{
+								chance = 0;
+								break;
+							}
+
+							if (nextTile.Type == this.Const.World.TerrainType.Swamp)
+							{
+								chance = chance + 30;
+							}
+							else if (nextTile.Type == this.Const.World.TerrainType.Ocean)
+							{
+								chance = chance + 10;
+							}
+						}
+					}
+
+					if (this.Math.rand(1, 100) <= chance)
+					{
+						tile.Type = 0;
+						this.m.Tiles[this.Const.World.TerrainType.Swamp].fill({
+							X = x,
+							Y = y,
+							W = 1,
+							H = 1,
+							IsEmpty = true
+						}, null);
+					}
+				}
+			}
+		}
+
+		for( local x = _rect.X + (isAutumnLeft ? _rect.W * 0.5 : 0); x < _rect.X + _rect.W * (isAutumnLeft ? 1.0 : 0.5); x = ++x )
+		{
+			for( local y = _rect.Y + _rect.H * 0.2; y < _rect.Y + _rect.H * 0.7; y = ++y )
+			{
+				local tile = this.World.getTileSquare(x, y);
+
+				if (tile.Type != this.Const.World.TerrainType.Land)
+				{
+				}
+				else
+				{
+					local chance = !isAutumnLeft ? _rect.W - x : x;
+					chance = chance * 0.025;
+
+					for( local i = 0; i < this.Const.Direction.COUNT; i = ++i )
+					{
+						if (!tile.hasNextTile(i))
+						{
+						}
+						else
+						{
+							local nextTile = tile.getNextTile(i);
+
+							if (nextTile.Type == this.Const.World.TerrainType.LeaveForest)
+							{
+								chance = chance + 30;
+							}
+							else if (nextTile.Type == this.Const.World.TerrainType.Ocean)
+							{
+								chance = chance - 10;
+							}
+						}
+					}
+
+					if (this.Math.rand(1, 100) <= chance)
+					{
+						tile.Type = 0;
+						this.m.Tiles[this.Const.World.TerrainType.LeaveForest].fill({
+							X = x,
+							Y = y,
+							W = 1,
+							H = 1,
+							IsEmpty = true
+						}, null);
+					}
+				}
+			}
+		}
+
+		for( local x = _rect.X + (isAutumnLeft ? 0 : _rect.W * 0.5); x < _rect.X + _rect.W * (isAutumnLeft ? 0.5 : 1.0); x = ++x )
+		{
+			for( local y = _rect.Y + _rect.H * 0.2; y < _rect.Y + _rect.H * 0.75; y = ++y )
+			{
+				local tile = this.World.getTileSquare(x, y);
+
+				if (tile.Type != this.Const.World.TerrainType.Land)
+				{
+				}
+				else
+				{
+					local chance = isAutumnLeft ? _rect.W - x : x;
+					chance = chance * 0.025;
+
+					for( local i = 0; i < this.Const.Direction.COUNT; i = ++i )
+					{
+						if (!tile.hasNextTile(i))
+						{
+						}
+						else
+						{
+							local nextTile = tile.getNextTile(i);
+
+							if (nextTile.Type == this.Const.World.TerrainType.Steppe)
+							{
+								chance = -100;
+								break;
+							}
+
+							if (nextTile.Type == this.Const.World.TerrainType.AutumnForest)
+							{
+								chance = chance + 30;
+							}
+							else if (nextTile.Type == this.Const.World.TerrainType.Ocean)
+							{
+								chance = chance - 10;
+							}
+						}
+					}
+
+					if (this.Math.rand(1, 100) <= chance)
+					{
+						tile.Type = 0;
+						this.m.Tiles[this.Const.World.TerrainType.AutumnForest].fill({
+							X = x,
+							Y = y,
+							W = 1,
+							H = 1,
+							IsEmpty = true
+						}, null);
+					}
+				}
+			}
+		}
+
+		for( local x = _rect.X; x < _rect.X + _rect.W; x = ++x )
+		{
+			for( local y = _rect.Y + _rect.H * 0.43; y < _rect.Y + _rect.H; y = ++y )
+			{
+				local tile = this.World.getTileSquare(x, y);
+
+				if (tile.Type != this.Const.World.TerrainType.Land)
+				{
+				}
+				else
+				{
+					local chance = y < _rect.H * 0.75 ? y : _rect.H - y;
+					chance = chance * 0.07;
+
+					if (y > _rect.H * this.Const.World.Settings.Snowline)
+					{
+						chance = chance * 5.0;
+					}
+
+					for( local i = 0; i < this.Const.Direction.COUNT; i = ++i )
+					{
+						if (!tile.hasNextTile(i))
+						{
+						}
+						else
+						{
+							local nextTile = tile.getNextTile(i);
+
+							if (nextTile.Type == this.Const.World.TerrainType.Steppe)
+							{
+								chance = -100;
+								break;
+							}
+
+							if (nextTile.Type == this.Const.World.TerrainType.Forest || nextTile.Type == this.Const.World.TerrainType.SnowyForest)
+							{
+								chance = chance + 30;
+							}
+							else if (nextTile.Type == this.Const.World.TerrainType.Ocean)
+							{
+								chance = chance - 20;
+							}
+						}
+					}
+
+					if (this.Math.rand(1, 100) <= chance)
+					{
+						tile.Type = 0;
+						this.m.Tiles[this.Const.World.TerrainType.Forest].fill({
+							X = x,
+							Y = y,
+							W = 1,
+							H = 1,
+							IsEmpty = true
+						}, null);
+					}
+				}
+			}
+		}
+
+		for( local x = _rect.X; x < _rect.X + _rect.W; x = ++x )
+		{
+			for( local y = _rect.H * this.Const.World.Settings.Snowline - 5; y < _rect.Y + _rect.H; y = ++y )
+			{
+				local tile = this.World.getTileSquare(x, y);
+
+				if (tile.Type != this.Const.World.TerrainType.Land)
+				{
+				}
+				else
+				{
+					local n = 0;
+
+					for( local i = 0; i < this.Const.Direction.COUNT; i = ++i )
+					{
+						if (!tile.hasNextTile(i))
+						{
+						}
+						else
+						{
+							local nextTile = tile.getNextTile(i);
+
+							if (nextTile.Type == this.Const.World.TerrainType.Snow)
+							{
+								n = ++n;
+							}
+						}
+					}
+
+					if (n >= 4 || y >= _rect.H * this.Const.World.Settings.Snowline - this.Math.rand(0, 5))
+					{
+						tile.Type = 0;
+						this.m.Tiles[this.Const.World.TerrainType.Snow].fill({
+							X = x,
+							Y = y,
+							W = 1,
+							H = 1,
+							IsEmpty = true
+						}, null);
+					}
+				}
+			}
+		}
+
+		for( local x = _rect.X; x < _rect.X + _rect.W; x = ++x )
+		{
+			for( local y = _rect.H * 0.7; y < _rect.Y + _rect.H; y = ++y )
+			{
+				local tile = this.World.getTileSquare(x, y);
+
+				if (tile.Type != this.Const.World.TerrainType.Land)
+				{
+				}
+				else
+				{
+					local chance = y;
+					chance = chance * 0.2;
+
+					for( local i = 0; i < this.Const.Direction.COUNT; i = ++i )
+					{
+						if (!tile.hasNextTile(i))
+						{
+						}
+						else
+						{
+							local nextTile = tile.getNextTile(i);
+
+							if (nextTile.Type == this.Const.World.TerrainType.Swamp)
+							{
+								chance = chance + -200;
+							}
+							else if (nextTile.Type == this.Const.World.TerrainType.Tundra)
+							{
+								chance = chance + 100;
+							}
+						}
+					}
+
+					if (this.Math.rand(1, 100) <= chance)
+					{
+						tile.Type = 0;
+						this.m.Tiles[this.Const.World.TerrainType.Tundra].fill({
+							X = x,
+							Y = y,
+							W = 1,
+							H = 1,
+							IsEmpty = true
+						}, null);
+					}
+				}
+			}
+		}
+
+		for( local x = _rect.X; x < _rect.X + _rect.W; x = ++x )
+		{
+			for( local y = _rect.Y; y < _rect.Y + _rect.H * 0.65; y = ++y )
+			{
+				local tile = this.World.getTileSquare(x, y);
+
+				if (tile.Type != this.Const.World.TerrainType.Desert)
+				{
+				}
+				else
+				{
+					local chance = -1;
+
+					for( local i = 0; i < this.Const.Direction.COUNT; i = ++i )
+					{
+						if (!tile.hasNextTile(i))
+						{
+						}
+						else
+						{
+							local nextTile = tile.getNextTile(i);
+
+							if (nextTile.Type == this.Const.World.TerrainType.Desert)
+							{
+								chance = chance + 1;
+
+								if (nextTile.Subregion == 99)
+								{
+									chance = chance + 17;
+								}
+							}
+						}
+					}
+
+					if (this.Math.rand(1, 100) <= chance)
+					{
+						tile.Subregion = 99;
+					}
+				}
+			}
+		}
+
+		for( local x = _rect.X; x < _rect.X + _rect.W; x = ++x )
+		{
+			for( local y = _rect.Y; y < _rect.Y + _rect.H * 0.65; y = ++y )
+			{
+				local tile = this.World.getTileSquare(x, y);
+
+				if (tile.Type != this.Const.World.TerrainType.Steppe)
+				{
+				}
+				else
+				{
+					local chance = -1;
+
+					for( local i = 0; i < this.Const.Direction.COUNT; i = ++i )
+					{
+						if (!tile.hasNextTile(i))
+						{
+						}
+						else
+						{
+							local nextTile = tile.getNextTile(i);
+
+							if (nextTile.Type == this.Const.World.TerrainType.Steppe)
+							{
+								chance = chance + 1;
+
+								if (nextTile.Subregion == 99)
+								{
+									chance = chance + 17;
+								}
+							}
+						}
+					}
+
+					if (this.Math.rand(1, 100) <= chance)
+					{
+						tile.Subregion = 99;
+					}
+				}
+			}
+		}
+
+		for( local x = _rect.X; x < _rect.X + _rect.W; x = ++x )
+		{
+			for( local y = _rect.Y; y < _rect.Y + _rect.H * 0.15; y = ++y )
+			{
+				local tile = this.World.getTileSquare(x, y);
+
+				if (tile.Type != this.Const.World.TerrainType.Plains)
+				{
+				}
+				else
+				{
+					tile.Type = 0;
+					this.m.Tiles[this.Const.World.TerrainType.Oasis].fill({
+						X = x,
+						Y = y,
+						W = 1,
+						H = 1,
+						IsEmpty = true
+					}, null);
 				}
 			}
 		}
@@ -1275,167 +1858,6 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 		}
 	}
 
-	function buildRivers( _rect, _numRivers )
-	{
-		this.logInfo("Building rivers...");
-		local roadCost = [
-			0,
-			10,
-			50,
-			10,
-			50,
-			30,
-			30,
-			30,
-			30,
-			0,
-			0,
-			0,
-			0,
-			0,
-			0,
-			10,
-			10,
-			0
-		];
-		local navSettings = this.World.getNavigator().createSettings();
-		navSettings.ActionPointCosts = roadCost;
-		navSettings.StopAtRoad = false;
-		local tries = 0;
-		tries = ++tries;
-
-		while (_numRivers > 0 && tries < 1000)
-		{
-			local x = this.Math.rand(_rect.X + _rect.W * 0.2, _rect.X + _rect.W * 0.8);
-			local y = this.Math.rand(_rect.Y + _rect.H * 0.2, _rect.Y + _rect.H * 0.8);
-			local start = this.World.getTileSquare(x, y);
-			x = x <= _rect.X + _rect.W * 0.5 ? 0 : _rect.X + _rect.W - 1;
-			y = 0;
-			local dest = this.World.getTileSquare(x, y);
-
-			if (start.Type != this.Const.World.TerrainType.Mountains && start.getNextTile(this.Const.Direction.S).Type == this.Const.World.TerrainType.Mountains)
-			{
-				local path = this.World.getNavigator().findPath(start, dest, navSettings, 0);
-
-				if (path.getSize() == 0)
-				{
-					continue;
-				}
-
-				_numRivers = --_numRivers;
-				local prevTile = start;
-				local riverTiles = [];
-				riverTiles.push(start);
-
-				while (path.getSize() != 0)
-				{
-					local tile = this.World.getTile(path.getCurrent());
-
-					if (tile.Type == this.Const.World.TerrainType.Ocean)
-					{
-						break;
-					}
-
-					riverTiles.push(tile);
-					path.pop();
-					local doBreak = false;
-
-					for( local i = 0; i < 6; i = ++i )
-					{
-						if (tile.hasNextTile(i) && tile.getNextTile(i).Type == this.Const.World.TerrainType.Ocean)
-						{
-							local doBreak = true;
-							break;
-						}
-					}
-
-					if (doBreak)
-					{
-						break;
-					}
-
-					if (!tile.HasRiver && path.getSize() >= 2 && !this.World.getTile(path.getCurrent()).HasRiver && !this.World.getTile(path.getNext()).HasRiver)
-					{
-						local nextTile = this.World.getTile(path.getCurrent());
-						local dir = tile.getDirectionTo(nextTile);
-
-						if (this.Math.rand(1, 100) <= 35)
-						{
-							local deviantDir = this.Math.rand(0, 1) == 0 ? (dir - 1 >= 0 ? dir - 1 : 5) : dir + 1 <= 5 ? dir + 1 : 0;
-
-							if (tile.hasNextTile(deviantDir))
-							{
-								local extraTile = tile.getNextTile(deviantDir);
-
-								if (!extraTile.HasRiver)
-								{
-									for( local i = 0; i < riverTiles.len(); i = ++i )
-									{
-										if (riverTiles[i].ID == extraTile.ID)
-										{
-											extraTile = null;
-											break;
-										}
-									}
-
-									if (extraTile != null)
-									{
-										riverTiles.push(extraTile);
-									}
-								}
-							}
-						}
-					}
-				}
-
-				for( local i = 0; i < riverTiles.len(); i = ++i )
-				{
-					local tile = riverTiles[i];
-					local breakAfter = tile.HasRiver;
-					local dirA = tile.getDirectionTo(prevTile);
-					local dirB = 6;
-
-					if (!tile.HasRiver && i < riverTiles.len() - 1)
-					{
-						dirB = tile.getDirectionTo(riverTiles[i + 1]);
-					}
-					else if (tile.SquareCoords.X == 0)
-					{
-						dirB = this.Const.Direction.W;
-					}
-					else if (tile.SquareCoords.Y == 0)
-					{
-						dirB = this.Const.Direction.S;
-					}
-
-					prevTile = tile;
-
-					if ((tile.RiverDirections & this.Const.DirectionBit[dirA]) != 0 || tile.Type == this.Const.World.TerrainType.Ocean)
-					{
-					}
-					else
-					{
-						local prevType = tile.Type;
-						tile.RiverDirections = tile.RiverDirections | this.Const.DirectionBit[dirA] | this.Const.DirectionBit[dirB];
-						tile.Type = this.Const.World.TerrainType.River;
-						tile.clear();
-						tile.spawnDetail(this.Const.World.RiverBrushes.get(tile.RiverDirections), this.Const.World.ZLevel.River, this.Const.World.DetailType.River, false);
-
-						if (tile.SquareCoords.X == 0 || tile.SquareCoords.X == _rect.W - 1 || tile.SquareCoords.Y == 0)
-						{
-							break;
-						}
-
-						if (breakAfter)
-						{
-							break;
-						}
-					}
-				}
-			}
-		}
-	}
-
 	function buildLabels( _rect )
 	{
 		this.logInfo("Building regions...");
@@ -1586,7 +2008,9 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 				Name = name,
 				Type = region.Type,
 				Size = region.Tiles.len(),
-				Center = tile
+				Center = tile,
+				Discovered = 0.0,
+				Tiles = region.Tiles
 			});
 
 			foreach( t in region.Tiles )
@@ -1627,22 +2051,30 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 			local num = list.Amount;
 			local tries = 0;
 			local used = [];
+			local ignoreSide = ("IgnoreSide" in list) && list.IgnoreSide;
 
-			while (num > 0 && tries++ < 1000)
+			while (num > 0 && tries++ < 3000)
 			{
 				local x;
 				local y;
 
-				if (isLeft)
+				if (!ignoreSide)
 				{
-					x = this.Math.rand(6, _rect.W * 0.6);
+					if (isLeft)
+					{
+						x = this.Math.rand(5, _rect.W * 0.6);
+					}
+					else
+					{
+						x = this.Math.rand(_rect.W * 0.4, _rect.W - 6);
+					}
 				}
 				else
 				{
-					x = this.Math.rand(_rect.W * 0.4, _rect.W - 6);
+					x = this.Math.rand(5, _rect.W - 6);
 				}
 
-				y = this.Math.rand(6, _rect.H * 0.95);
+				y = this.Math.rand(5, _rect.H * 0.95);
 				local tile = this.World.getTileSquare(x, y);
 
 				if (used.find(tile.ID) != null)
@@ -1655,7 +2087,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 
 				foreach( settlement in settlementTiles )
 				{
-					if (tile.getDistanceTo(settlement) < 12)
+					if (tile.getDistanceTo(settlement) < 12 + ("AdditionalSpace" in list ? list.AdditionalSpace : 0))
 					{
 						next = true;
 						break;
@@ -1691,14 +2123,14 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 
 				local type = candidates[this.Math.rand(0, candidates.len() - 1)];
 
-				if ((terrain.Region[this.Const.World.TerrainType.Ocean] >= 3 || terrain.Region[this.Const.World.TerrainType.Shore] >= 3) && !("IsCoastal" in type))
+				if ((terrain.Region[this.Const.World.TerrainType.Ocean] >= 3 || terrain.Region[this.Const.World.TerrainType.Shore] >= 3) && !("IsCoastal" in type) && !("IsFlexible" in type))
 				{
 					continue;
 				}
 
 				if (!("IsCoastal" in type))
 				{
-					local skip = true;
+					local skip = settlementTiles.len() != 0;
 					local navSettings = this.World.getNavigator().createSettings();
 
 					for( local i = settlementTiles.len() - 1; i >= 0; i = --i )
@@ -1950,7 +2382,9 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 			30,
 			10,
 			10,
-			0
+			0,
+			10,
+			10
 		];
 		local navSettings = this.World.getNavigator().createSettings();
 		navSettings.ActionPointCosts = roadCost;
@@ -2053,7 +2487,8 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 			30,
 			10,
 			10,
-			0
+			0,
+			10
 		];
 		local navSettings = this.World.getNavigator().createSettings();
 		navSettings.ActionPointCosts = roadCost;
@@ -2299,6 +2734,137 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 					tile.spawnDetail(this.Const.World.RoadBrushes.get(tile.RoadDirections), this.Const.World.ZLevel.Road, this.Const.World.DetailType.Road, false);
 				}
 			}
+		}
+	}
+
+	function buildAbandonedFortresses( _rect )
+	{
+		this.logInfo("Placing abandoned fortresses...");
+		local settlements = this.World.EntityManager.getSettlements();
+		local candidates = [];
+
+		for( local x = 5; x < _rect.X + _rect.W - 5; x = ++x )
+		{
+			for( local y = 28; y <= 38; y = ++y )
+			{
+				local tile = this.World.getTileSquare(x, y);
+
+				if (tile.IsOccupied)
+				{
+				}
+				else if (tile.Type != this.Const.World.TerrainType.Desert && tile.Type != this.Const.World.TerrainType.Steppe && tile.Type != this.Const.World.TerrainType.Hills)
+				{
+				}
+				else if (tile.HasRoad)
+				{
+				}
+				else
+				{
+					local tooFar = true;
+					local tooClose = false;
+
+					foreach( s in settlements )
+					{
+						local d = s.getTile().getDistanceTo(tile);
+
+						if (d < 8)
+						{
+							tooClose = true;
+							  // [084]  OP_JMP            0      7    0    0
+						}
+						else if (d <= 20)
+						{
+							tooFar = false;
+						}
+					}
+
+					if (tooFar || tooClose)
+					{
+					}
+					else
+					{
+						local score = 1;
+
+						for( local i = 0; i < 6; i = ++i )
+						{
+							if (!tile.hasNextTile(i))
+							{
+							}
+							else
+							{
+								local nextTile = tile.getNextTile(i);
+
+								if (nextTile.HasRoad)
+								{
+									score = score + 15;
+								}
+
+								if (tile.Type == this.Const.World.TerrainType.Mountains)
+								{
+									score = score + 20;
+								}
+								else if (tile.Type == this.Const.World.TerrainType.Hills)
+								{
+									score = score + 5;
+								}
+							}
+						}
+
+						candidates.push({
+							Tile = tile,
+							Score = score
+						});
+					}
+				}
+			}
+		}
+
+		candidates.sort(function ( _a, _b )
+		{
+			if (_a.Score > _b.Score)
+			{
+				return -1;
+			}
+			else if (_a.Score < _b.Score)
+			{
+				return 1;
+			}
+
+			return 0;
+		});
+		local tilesUsed = [];
+		local idx = 0;
+
+		for( local i = 0; i < 2; i = ++i )
+		{
+			for( local j = idx; j < candidates.len(); j = ++j )
+			{
+				idx = j;
+				local next = false;
+
+				foreach( t in tilesUsed )
+				{
+					if (t.getDistanceTo(candidates[idx].Tile) <= 12)
+					{
+						next = true;
+						break;
+					}
+				}
+
+				if (!next)
+				{
+					break;
+				}
+			}
+
+			if (idx >= candidates.len())
+			{
+				break;
+			}
+
+			local camp = this.World.spawnLocation("scripts/entity/world/locations/abandoned_fortress_location", candidates[idx].Tile.Coords);
+			tilesUsed.push(candidates[idx].Tile);
+			camp.onSpawned();
 		}
 	}
 

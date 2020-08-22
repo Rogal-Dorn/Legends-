@@ -62,6 +62,11 @@ this.new_campaign_menu_module <- this.inherit("scripts/ui/screens/ui_module", {
 		this.m.JSHandle.asyncCall("setStartingScenarios", _scenarios);
 	}
 
+	function setCrusadeCampaignAvailable( _available )
+	{
+		this.m.JSHandle.asyncCall("setCrusadeCampaignVisible", _available);
+	}
+
 	function onStartButtonPressed( _settings )
 	{
 		local settings = {
@@ -76,14 +81,15 @@ this.new_campaign_menu_module <- this.inherit("scripts/ui/screens/ui_module", {
 			Seed = _settings[8],
 			Width = _settings[9],
 			Height = _settings[10],
-			LandMassMult = (_settings[11] + 100) / 100.0 ,
-			WaterConnectivity = _settings[12] + 34,
-			MinLandToWaterRatio = _settings[13],
+			LandMassMult = _settings[11],
+			WaterConnectivity = _settings[12],
+			MinLandToWaterRatio = (_settings[13] + 10.0) / 10.0,
 			Snowline = _settings[14] / 100.0,
 			NumSettlements = _settings[15],
 			NumFactions = _settings[16],
 			//Vision = _settings[17],
 			FOW = _settings[17],
+			ExplorationMode = _settings[17],
 			ForestsMult = _settings[18] / 100.0,
 			SwampsMult = _settings[19] / 100.0 ,
 			MountainsMult = _settings[20] / 100.0,
@@ -104,7 +110,9 @@ this.new_campaign_menu_module <- this.inherit("scripts/ui/screens/ui_module", {
 			LegendBleedKiller = _settings[34],
 			LegendAllBlueprints = _settings[35],
 			LegendRelationship = _settings[36],
-			LegendWorldEconomy = _settings[37]
+			LegendWorldEconomy = _settings[37],
+			LegendIsHelmet = this.Const.DLC.Unhold ? 1 : 0
+			LegendTherian = _settings[38]
 		};
 
 		// local settings = {

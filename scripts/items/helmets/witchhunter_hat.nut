@@ -23,7 +23,7 @@ this.witchhunter_hat <- this.inherit("scripts/items/helmets/helmet", {
 
 
 
-	
+
 	function getTooltip()
 	{
 		local result = this.helmet.getTooltip();
@@ -35,7 +35,7 @@ this.witchhunter_hat <- this.inherit("scripts/items/helmets/helmet", {
 		});
 		return result;
 	}
-	
+
 	function onUpdateProperties( _properties )
 	{
 
@@ -48,7 +48,7 @@ this.witchhunter_hat <- this.inherit("scripts/items/helmets/helmet", {
 		_properties.Armor[this.Const.BodyPart.Head] += this.m.Condition;
 		_properties.ArmorMax[this.Const.BodyPart.Head] += this.m.ConditionMax;
 		_properties.Stamina += this.Math.ceil(this.m.StaminaModifier * staminaMult);
-		_properties.Vision += this.m.Vision;
+		_properties.Vision += this.getVision();
 		_properties.IsAffectedByNight = false;
 	}
 

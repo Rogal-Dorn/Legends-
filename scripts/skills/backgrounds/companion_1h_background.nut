@@ -10,6 +10,7 @@ this.companion_1h_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.DailyCost = 14;
 		this.m.DailyCostMult = 1.0;
 		this.m.Excluded = [
+			"trait.superstitious",
 			"trait.hate_undead",
 			"trait.hate_beasts",
 			"trait.hate_greenskins",
@@ -46,7 +47,7 @@ this.companion_1h_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.Hairs = this.Const.Hair.AllMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.Body = "bust_naked_body_01";
+		this.m.Bodies = this.Const.Bodies.Muscular;
 		this.m.IsCombatBackground = true;
 		this.m.IsUntalented = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
@@ -149,93 +150,21 @@ this.companion_1h_background <- this.inherit("scripts/skills/backgrounds/charact
 		talents[this.Const.Attributes.Fatigue] = 1;
 		talents[this.Const.Attributes.Bravery] = 1;
 		local items = this.getContainer().getActor().getItems();
-		local r;
 		items.equip(this.new("scripts/items/weapons/militia_spear"));
 		items.equip(this.new("scripts/items/shields/wooden_shield"));
-		r = this.Math.rand(0, 2);
+		items.equip(this.Const.World.Common.pickArmor([
+			[1, "ragged_surcoat"],
+			[1, "padded_surcoat"],
+			[1, "gambeson"]
+		]));
 
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/armor/ragged_surcoat"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/armor/padded_surcoat"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/armor/gambeson"));
-		}
-
-		r = this.Math.rand(0, 3);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/aketon_cap"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/open_leather_cap"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/helmets/full_aketon_cap"));
-		}
-		else if (r == 3)
-		{
-			items.equip(this.new("scripts/items/helmets/full_leather_cap"));
-		}
-	}
-
-	function onAddLegendEquipment()
-	{
-		local talents = this.getContainer().getActor().getTalents();
-		talents.resize(this.Const.Attributes.COUNT, 0);
-		talents[this.Const.Attributes.Hitpoints] = 2;
-		talents[this.Const.Attributes.Fatigue] = 1;
-		talents[this.Const.Attributes.Bravery] = 1;
-		local items = this.getContainer().getActor().getItems();
-		local r;
-		items.equip(this.new("scripts/items/weapons/militia_spear"));
-		items.equip(this.new("scripts/items/shields/wooden_shield"));
-		local cloths = [
-            [0, ""],
-			[1, "cloth/legend_gambeson"],
-			[0, "cloth/legend_gambeson_plain"],
-			[0, "cloth/legend_gambeson_wolf"],
-			[1, "cloth/legend_padded_surcoat"],
-			[0, "cloth/legend_robes"],
-			[0, "cloth/legend_apron_butcher"],
-			[0, "cloth/legend_robes_nun"],
-			[0, "cloth/legend_apron_smith"],
-			[0, "cloth/legend_robes_wizard"],
-			[0, "cloth/legend_sackcloth"],
-			[0, "cloth/legend_sackcloth_patched"],
-			[0, "cloth/legend_sackcloth_tattered"],
-			[0, "cloth/legend_tunic"],
-			[0, "cloth/legend_tunic_noble"]
-		];
-		local armor = this.Const.World.Common.pickLegendArmor(cloths)
-		items.equip(armor)
-
-		r = this.Math.rand(0, 3);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/aketon_cap"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/open_leather_cap"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/helmets/full_aketon_cap"));
-		}
-		else if (r == 3)
-		{
-			items.equip(this.new("scripts/items/helmets/full_leather_cap"));
-		}
+		local item = this.Const.World.Common.pickHelmet([
+				[1, "aketon_cap"],
+				[1, "open_leather_cap"],
+				[1, "full_aketon_cap"],
+				[1, "full_leather_cap"]
+		])
+		items.equip(item);
 	}
 });
 

@@ -84,7 +84,7 @@ this.throw_axe <- this.inherit("scripts/skills/skill", {
 			ret.push({
 				id = 8,
 				type = "text",
-				icon = "ui/icons/ranged_skill.png",
+				icon = "ui/icons/ammo.png",
 				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]" + ammo + "[/color] axes left"
 			});
 		}

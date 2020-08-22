@@ -37,7 +37,7 @@ this.goblin_whip <- this.inherit("scripts/skills/skill", {
 			return false;
 		}
 
-		if (_targetTile.getEntity().getMoraleState() == this.Const.MoraleState.Confident || !_targetTile.getEntity().getTags().has("goblin"))
+		if (_targetTile.getEntity().getMoraleState() == this.Const.MoraleState.Confident || !_targetTile.getEntity().getFlags().has("goblin"))
 		{
 			return false;
 		}

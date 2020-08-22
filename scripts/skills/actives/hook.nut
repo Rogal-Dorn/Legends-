@@ -29,7 +29,7 @@ this.hook <- this.inherit("scripts/skills/skill", {
 		this.m.IsWeaponSkill = true;
 		this.m.HitChanceBonus = 10;
 		this.m.ActionPointCost = 6;
-		this.m.FatigueCost = 30;
+		this.m.FatigueCost = 25;
 		this.m.MinRange = 2;
 		this.m.MaxRange = 2;
 	}
@@ -172,18 +172,18 @@ this.hook <- this.inherit("scripts/skills/skill", {
 
 		target.setCurrentMovementType(this.Const.Tactical.MovementType.Involuntary);
 		local damage = this.Math.max(0, this.Math.abs(pullToTile.Level - _targetTile.Level) - 1) * this.Const.Combat.FallingDamage;
+		local tag = {
+			Attacker = _user,
+			Skill = this,
+			HitInfo = clone this.Const.Tactical.HitInfo
+		};
 
 		if (damage == 0)
 		{
-			this.Tactical.getNavigator().teleport(target, pullToTile, null, null, true);
+			this.Tactical.getNavigator().teleport(_targetTile.getEntity(), pullToTile, this.onHookingComplete, tag, true);
 		}
 		else
 		{
-			local tag = {
-				Attacker = _user,
-				Skill = this,
-				HitInfo = clone this.Const.Tactical.HitInfo
-			};
 			tag.HitInfo.DamageRegular = damage;
 			tag.HitInfo.DamageFatigue = this.Const.Combat.FatigueReceivedPerHit;
 			tag.HitInfo.DamageDirect = 1.0;
@@ -205,6 +205,11 @@ this.hook <- this.inherit("scripts/skills/skill", {
 	function onPulledDown( _entity, _tag )
 	{
 		_entity.onDamageReceived(_tag.Attacker, _tag.Skill, _tag.HitInfo);
+	}
+
+	function onHookingComplete( _entity, _tag )
+	{
+		_tag.Attacker.setDirty(true);
 	}
 
 });

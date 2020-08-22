@@ -214,7 +214,7 @@
 {
     position: absolute;
     left: 42.0rem;
-    top: 48.0rem;
+    bottom: 0.0rem;
 }
 
 .world-town-screen > .l-main-dialog-container .contract-scroll

@@ -33,11 +33,11 @@ this.throw_acid_flask <- this.inherit("scripts/skills/skill", {
 		this.m.IsShowingProjectile = true;
 		this.m.IsUsingHitchance = false;
 		this.m.IsDoingForwardMove = true;
-		this.m.ActionPointCost = 4;
+		this.m.ActionPointCost = 5;
 		this.m.FatigueCost = 20;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 3;
-		this.m.MaxLevelDifference = 1;
+		this.m.MaxLevelDifference = 3;
 		this.m.ProjectileType = this.Const.ProjectileType.Flask;
 		this.m.ProjectileTimeScale = 1.5;
 		this.m.IsProjectileRotated = false;
@@ -63,12 +63,12 @@ this.throw_acid_flask <- this.inherit("scripts/skills/skill", {
 
 	function applyAcid( _target )
 	{
-		if (_target.getTags().has("lindwurm"))
+		if (_target.getFlags().has("lindwurm"))
 		{
 			return;
 		}
 
-		if ((_target.getTags().has("body_immune_to_acid") || _target.getArmor(this.Const.BodyPart.Body) <= 0) && (_target.getTags().has("head_immune_to_acid") || _target.getArmor(this.Const.BodyPart.Head) <= 0))
+		if ((_target.getFlags().has("body_immune_to_acid") || _target.getArmor(this.Const.BodyPart.Body) <= 0) && (_target.getFlags().has("head_immune_to_acid") || _target.getArmor(this.Const.BodyPart.Head) <= 0))
 		{
 			return;
 		}
@@ -85,6 +85,21 @@ this.throw_acid_flask <- this.inherit("scripts/skills/skill", {
 		}
 
 		this.spawnIcon("status_effect_78", _target.getTile());
+	}
+
+	function onVerifyTarget( _originTile, _targetTile )
+	{
+		if (!this.skill.onVerifyTarget(_originTile, _targetTile))
+		{
+			return false;
+		}
+
+		if (_originTile.Level + 1 < _targetTile.Level)
+		{
+			return false;
+		}
+
+		return true;
 	}
 
 	function onAfterUpdate( _properties )

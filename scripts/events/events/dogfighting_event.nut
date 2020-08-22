@@ -11,7 +11,7 @@ this.dogfighting_event <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 70.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_20.png[/img]%doghandler% asks you to enter %wardog% into a local dog fighting circle. That sounds like an awful idea, but the man goes on to explain that a lot of money stands to be made in dogfighting. All the doghandler needs is an ante of two hundred crowns.",
+			Text = "%townImage%%doghandler% asks you to enter %wardog% into a local dog fighting circle. That sounds like an awful idea, but the man goes on to explain that a lot of money stands to be made in dogfighting. All the doghandler needs is an ante of two hundred crowns.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -43,7 +43,7 @@ this.dogfighting_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "B",
-			Text = "[img]gfx/ui/events/event_20.png[/img]You take a purse of crowns and follow %doghandler% through a wind of darker and darker streets. Soon enough, there isn\'t much to see. Wet cobblestones, licked white by strobes of moonlight, lazily guide you into what depths the city hides from those who prefer the day. Suddenly, a torch flares up and a man\'s face, afloat and disembodied in the dark, speaks out to you.%SPEECH_ON%That dog here for da\'fights?%SPEECH_OFF%%doghandler% nods. The stranger tilts the torch forward.%SPEECH_ON%Alright then. Right this way, gen-teel-men. Watch yer step. All manner of piss goes downhill.%SPEECH_OFF%",
+			Text = "%townImage%You take a purse of crowns and follow %doghandler% through a wind of darker and darker streets. Soon enough, there isn\'t much to see. Wet cobblestones, licked white by strobes of moonlight, lazily guide you into what depths the city hides from those who prefer the day. Suddenly, a torch flares up and a man\'s face, afloat and disembodied in the dark, speaks out to you.%SPEECH_ON%That dog here for da\'fights?%SPEECH_OFF%%doghandler% nods. The stranger tilts the torch forward.%SPEECH_ON%Alright then. Right this way, gen-teel-men. Watch yer step. All manner of piss goes downhill.%SPEECH_OFF%",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -78,7 +78,7 @@ this.dogfighting_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "C",
-			Text = "[img]gfx/ui/events/event_20.png[/img]Following the man\'s torch through the dark, you come to a building with a sliding portal at its door. The stranger gives the door a pattern of knocks and it pops open as if commanded by the final rap. You are ushered in, leering faces watching from the side as you enter. Immediately, you hear the unsettling din of snarling and barking. This is what you are here for, right?\n\n Stairs lead you to the pits where a crowd huddles around a makeshift arena of dirt and wobbly fenceposts. The action can\'t be seen yet, but off to the side are a pile of dead dogs and beside them sit their killers, eyes wild, blood frothing mouths agape in horrified panting. As two dogs clash in the arena, you glance at %doghandler%.",
+			Text = "%townImage%Following the man\'s torch through the dark, you come to a building with a sliding portal at its door. The stranger gives the door a pattern of knocks and it pops open as if commanded by the final rap. You are ushered in, leering faces watching from the side as you enter. Immediately, you hear the unsettling din of snarling and barking. This is what you are here for, right?\n\n Stairs lead you to the pits where a crowd huddles around a makeshift arena of dirt and wobbly fenceposts. The action can\'t be seen yet, but off to the side are a pile of dead dogs and beside them sit their killers, eyes wild, blood frothing mouths agape in horrified panting. As two dogs clash in the arena, you glance at %doghandler%.",
 			Image = "",
 			List = [],
 			Characters = [],

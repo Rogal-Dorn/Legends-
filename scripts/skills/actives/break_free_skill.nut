@@ -74,6 +74,11 @@ this.break_free_skill <- this.inherit("scripts/skills/skill", {
 		];
 	}
 
+	function getChance()
+	{
+		return this.Math.min(100, this.getContainer().getActor().getCurrentProperties().getMeleeSkill() - 10 + this.m.ChanceBonus);
+	}
+
 	function isUsable()
 	{
 		return this.m.IsUsable && !this.isHidden();
@@ -169,6 +174,7 @@ this.break_free_skill <- this.inherit("scripts/skills/skill", {
 			this.getContainer().removeByID("effects.rooted");
 			this.getContainer().removeByID("effects.web");
 			this.getContainer().removeByID("effects.kraken_ensnare");
+			this.getContainer().removeByID("effects.serpent_ensnare");
 			this.removeSelf();
 			return true;
 		}

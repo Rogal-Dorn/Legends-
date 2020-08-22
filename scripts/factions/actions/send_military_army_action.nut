@@ -10,10 +10,15 @@ this.send_military_army_action <- this.inherit("scripts/factions/faction_action"
 
 	function onUpdate( _faction )
 	{
-	//	if (!this.World.FactionManager.isCivilWar())
-	//	{
-	//		return;
-	//	}
+		if (!this.World.FactionManager.isCivilWar() && !this.World.FactionManager.isHolyWar())
+		{
+			return;
+		}
+
+		if (this.World.FactionManager.isHolyWar() && !_faction.getFlags().get("IsHolyWarParticipant"))
+		{
+			return;
+		}
 
 		if (_faction.getUnits().len() >= 8)
 		{
@@ -79,12 +84,17 @@ this.send_military_army_action <- this.inherit("scripts/factions/faction_action"
 				continue;
 			}
 
-			if (s.getOwner().getID() == _faction.getID())
+			if (this.World.FactionManager.isAllied(_faction.getID(), s.getFaction()))
 			{
 				continue;
 			}
 
 			if (activeContract != null && (activeContract.getHome().getID() == s.getID() || activeContract.getOrigin().getID() == s.getID()))
+			{
+				continue;
+			}
+
+			if (this.World.FactionManager.isHolyWar() && s.getActiveAttachedLocations() == 0)
 			{
 				continue;
 			}
@@ -98,6 +108,22 @@ this.send_military_army_action <- this.inherit("scripts/factions/faction_action"
 
 			if (d <= lowest_distance && !s.isIsolatedFromLocation(origin))
 			{
+				local skip = true;
+
+				foreach( l in s.getAttachedLocations() )
+				{
+					if (l.isActive() && l.isUsable())
+					{
+						skip = false;
+						break;
+					}
+				}
+
+				if (skip)
+				{
+					continue;
+				}
+
 				lowest_distance = d;
 				best_settlement = s;
 			}
@@ -121,9 +147,11 @@ this.send_military_army_action <- this.inherit("scripts/factions/faction_action"
 
 		for( local i = 0; i != this.Math.min(2, spawnpoints.len()); i = ++i )
 		{
-			local party = this.getFaction().spawnEntity(spawnpoints[i], origin.getName() + " Company", true, this.Const.World.Spawn.Noble, this.Math.rand(80, 120) * this.getReputationToDifficultyMult());
+			local party = this.getFaction().spawnEntity(spawnpoints[i], origin.getName() + " Company", true, this.Const.World.Spawn.Noble, this.Math.rand(80, 120) * this.getScaledDifficultyMult());
 			party.getSprite("body").setBrush(party.getSprite("body").getBrush().Name + "_" + _faction.getBannerString());
 			party.setDescription("Professional soldiers in service to local lords.");
+			party.setFootprintType(this.Const.World.FootprintsType.Nobles);
+			party.getFlags().set("IsRandomlySpawned", true);
 			party.getLoot().Money = this.Math.rand(50, 200);
 			party.getLoot().ArmorParts = this.Math.rand(0, 25);
 			party.getLoot().Medicine = this.Math.rand(0, 5);
@@ -172,10 +200,10 @@ this.send_military_army_action <- this.inherit("scripts/factions/faction_action"
 				local move = this.new("scripts/ai/world/orders/move_order");
 				move.setDestination(target.getTile());
 				c.addOrder(move);
-				local destroy = this.new("scripts/ai/world/orders/conquer_order");
-				destroy.setTime(60.0);
-				destroy.setTargetTile(target.getTile());
-				c.addOrder(destroy);
+				local conquer = this.new("scripts/ai/world/orders/conquer_order");
+				conquer.setTime(60.0);
+				conquer.setTargetTile(target.getTile());
+				c.addOrder(conquer);
 				local despawn = this.new("scripts/ai/world/orders/despawn_order");
 				c.addOrder(despawn);
 			}

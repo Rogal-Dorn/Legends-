@@ -50,18 +50,6 @@ this.deserter_in_forest_event <- this.inherit("scripts/events/event", {
 						this.World.getPlayerRoster().add(_event.m.Dude);
 						this.World.getTemporaryRoster().clear();
 						_event.m.Dude.onHired();
-						//set relations
-						local brothers = this.World.getPlayerRoster().getAll();
-						foreach( bro in brothers )
-						{
-							if (bro.getBackground().getID() == "background.deserter")
-							{
-								local modifier1 = this.Math.rand(5, 10);
-								bro.changeActiveRelationship( _event.m.Dude, modifier1 );
-								local modifier2 = this.Math.rand(5, 10);
-								_event.m.Dude.changeActiveRelationship( bro, modifier2 );
-							}
-						}
 						return 0;
 					}
 
@@ -82,9 +70,9 @@ this.deserter_in_forest_event <- this.inherit("scripts/events/event", {
 				_event.m.Dude = roster.create("scripts/entity/tactical/player");
 					if (this.World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
 						{
-						_event.m.Dude.getTags().add("PlayerSkeleton");
-						_event.m.Dude.getTags().add("undead");
-						_event.m.Dude.getTags().add("skeleton");
+						_event.m.Dude.getFlags().add("PlayerSkeleton");
+						_event.m.Dude.getFlags().add("undead");
+						_event.m.Dude.getFlags().add("skeleton");
 						_event.m.Dude.setStartValuesEx([
 							"legend_cannibal_background"
 						]);
@@ -100,27 +88,6 @@ this.deserter_in_forest_event <- this.inherit("scripts/events/event", {
 				_event.m.Dude.getBackground().m.RawDescription = "You found %name% the deserter being chased through the forest. Though bounty hunters were hot on the trail, you elected to defend the fugitive and for that swore an oath to you.";
 				_event.m.Dude.getBackground().buildDescription(true);
 				this.Characters.push(_event.m.Dude.getImagePath());
-
-				if (this.World.LegendsMod.Configs().RelationshipsEnabled())
-				{
-					local brocount = 0;
-						foreach( bro in brothers )
-						{
-							if (bro.getBackground().getID() == "background.deserter")
-							{
-							++brocount;
-							}
-						}
-					if (brocount >= 2)
-					{
-					this.List.push({
-						id = 10,
-						icon = "ui/icons/relation.png",
-						text = "The deserters grow closer"
-					});
-					}
-				}
-
 			}
 
 		});

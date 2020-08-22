@@ -63,12 +63,12 @@ this.legend_nigredo <- this.inherit("scripts/skills/skill", {
 
 	function applyAcid( _target )
 	{
-		if (_target.getTags().has("lindwurm"))
+		if (_target.getFlags().has("lindwurm"))
 		{
 			return;
 		}
 
-		if ((_target.getTags().has("body_immune_to_acid") || _target.getArmor(this.Const.BodyPart.Body) <= 0) && (_target.getTags().has("head_immune_to_acid") || _target.getArmor(this.Const.BodyPart.Head) <= 0))
+		if ((_target.getFlags().has("body_immune_to_acid") || _target.getArmor(this.Const.BodyPart.Body) <= 0) && (_target.getFlags().has("head_immune_to_acid") || _target.getArmor(this.Const.BodyPart.Head) <= 0))
 		{
 			return;
 		}

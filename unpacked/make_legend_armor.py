@@ -26,7 +26,7 @@ layers = [
     {"name": "bust_ancient_cloth_restored",  "layer": "cloth", "min": 1, "max": 5, "base": True},
 	{"name": "bust_peasant_dress",  "layer": "cloth", "min": 1, "max": 11, "base": True},
 	{"name": "bust_wizard_robe",  "layer": "cloth", "min": 1, "max": 11, "base": True},
-	
+
     {"name": "bust_legend_ancient_double_mail", "layer": "chain"},
     {"name": "bust_legend_ancient_mail", "layer": "chain"},
     {"name": "bust_legend_basic_mail", "layer": "chain"},
@@ -76,6 +76,7 @@ layers = [
     {"name": "bust_legend_plate_cuirass", "layer": "plate"},
     {"name": "bust_legend_plate_full", "layer": "plate"},
     {"name": "bust_legend_plate_full_greaves", "layer": "plate"},
+    {"name": "bust_legend_plate_full_greaves_named", "layer": "plate", "min" : 1 , "max" : 3},
     {"name": "bust_legend_plate_full_greaves_painted", "layer": "plate"},
     {"name": "bust_legend_scale_coat_rotten", "layer": "plate"},
     {"name": "bust_legend_scale_coat", "layer": "plate"},
@@ -94,11 +95,6 @@ layers = [
 
     {"name": "bust_legend_runed", "layer": "rune"}
 ]
-
-
-helmets = r"""
-
-"""
 
 def main():
     mfile = os.path.join(os.path.dirname(os.path.abspath(__file__)), "legend_armor/metadata.xml")
@@ -146,8 +142,6 @@ def main():
                     destF = os.path.join(os.path.dirname(os.path.abspath(__file__)), "legend_armor", opts["javelin_path"])
                     if not os.path.exists(destF):
                         copyfile(srcF, destF)
-
-    F.write(helmets)
 
     F.write('</brush>\n')
     F.close()

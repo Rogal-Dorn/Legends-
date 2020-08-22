@@ -6,6 +6,7 @@ this.sergeant_ambition <- this.inherit("scripts/ambitions/ambition", {
 		this.m.ID = "ambition.sergeant";
 		this.m.Duration = 14.0 * this.World.getTime().SecondsPerDay;
 		this.m.ButtonText = "We fight well, but we need to be better organized in case things get dire.\nI shall name a sergeant to rally you on the battlefield.";
+		this.m.RewardTooltip = "You\'ll be awarded a unique accessory that grants the wearer additional resolve.";
 		this.m.UIText = "Have one man with the \'Rally the Troops\' perk";
 		this.m.TooltipText = "Have at least one man with the \'Rally the Troops\' perk. You\'ll also need space enough in your inventory for a new item.";
 		this.m.SuccessText = "[img]gfx/ui/events/event_64.png[/img]You were unsure at first about assigning %sergeantbrother% to this important task, for he was as committed to revelry and carousing as any other man. But %sergeantbrother% takes to his duties with a zeal that is at first admirable, and later worrying.\n\nScoffing at dawn as the rising hour of the cowardly and infirm, %sergeantbrother% decides that everyone must start the day much earlier. He runs the men through the usual sparring routines and checks their equipment for splits and wear, but to such light work he adds strict rules about setting up and breaking camp, formation drills, lessons on flanking, forced marches with stones in their packs, and a detailed punishment regime for anyone who dares fall behind.\n\nWords such as \'back-breaking\', \'cruel\', \'flint-hearted\' and \'merciless\', as well as dozens of saltier epithets, ring in the air whenever %sergeantbrother% is safely out of earshot, though never when he is sleeping. For the brothers have learned that %sergeantbrotherfull% never truly sleeps.";
@@ -24,7 +25,7 @@ this.sergeant_ambition <- this.inherit("scripts/ambitions/ambition", {
 			return;
 		}
 
-		this.m.Score = 2 + this.Math.rand(0, 5);
+		this.m.Score = 3 + this.Math.rand(0, 5);
 	}
 
 	function onCheckSuccess()

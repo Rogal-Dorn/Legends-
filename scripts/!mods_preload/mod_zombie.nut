@@ -22,8 +22,8 @@
 
 		local e = skill.getSwallowedEntity();
 		this.Tactical.addEntityToMap(e, _tile.Coords.X, _tile.Coords.Y);
-		e.getTags().set("Devoured", false);
-        if (e.getTags().has("IsSummoned"))
+		e.getFlags().set("Devoured", false);
+        if (e.getFlags().has("IsSummoned"))
         {
             return
         }

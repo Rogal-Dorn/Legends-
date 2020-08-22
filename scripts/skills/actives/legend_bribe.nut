@@ -65,7 +65,7 @@ this.legend_bribe <- this.inherit("scripts/skills/skill", {
 		this.m.Cost = this.Math.floor(this.Math.pow(xp, 1.3));
 		local money = this.World.Assets.getMoney();
 		this.m.Money = money;
-		if (!target.getTags().has("human"))
+		if (!target.getFlags().has("human"))
 		{
 			return false;
 		}

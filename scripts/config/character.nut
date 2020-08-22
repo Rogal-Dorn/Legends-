@@ -33,6 +33,14 @@ gt.Const.BusinessReputation <- [
 	8000,
 	14000
 ];
+gt.Const.FollowerSlotRequirements <- [
+	4,
+	6,
+	8,
+	10,
+	12,
+	14
+];
 gt.Const.LevelXP <- [
 	0,
 	200,
@@ -164,8 +172,12 @@ gt.Const.ShakeCharacterLayers <- [
 		"head",
 		"head_skin",
 		"injury",
+		"helmet_vanity_lower",
 		"helmet",
 		"helmet_damage",
+		"helmet_helm",
+		"helmet_top",
+		"helmet_vanity",
 		"dirt",
 		"tattoo_head",
 		"hair"
@@ -186,8 +198,12 @@ gt.Const.ShakeCharacterLayers <- [
 		"head",
 		"head_skin",
 		"injury",
+		"helmet_vanity_lower",
 		"helmet",
 		"helmet_damage",
+		"helmet_helm",
+		"helmet_top",
+		"helmet_vanity",
 		"dirt",
 		"tattoo_head",
 		"hair"
@@ -211,6 +227,7 @@ gt.Const.Morale <- {
 	OpponentsAdjacentMult = 3,
 	AlliesAdjacentMult = 3,
 	RallyBonusPerRound = 2,
+	RallyBonusPerRoundArena = 5,
 	MoraleUpIcon = "morale_up",
 	MoraleDownIcon = "morale_down"
 };
@@ -255,8 +272,8 @@ gt.Const.AttributesLevelUp <- [
 		Max = 3
 	},
 	{
-		Min = 1,
-		Max = 3
+		Min = 2,
+		Max = 4
 	}
 ];
 gt.Const.MoraleState <- {
@@ -320,6 +337,7 @@ gt.Const.ArmorStateName <- [
 	"Untouched"
 ];
 gt.Const.MoodChange <- {
+	DrunkAtTavern = 1.0,
 	NotPaid = 1.0,
 	NotPaidGreedy = 2.0,
 	NotEaten = 1.0,
@@ -328,10 +346,13 @@ gt.Const.MoodChange <- {
 	BrotherDied = 0.25,
 	BrotherDismissed = 0.5,
 	VeteranDismissed = 1.0,
+	SlaveCompensated = 0.35,
 	BattleWithoutMe = 0.2,
 	BattleWon = 0.35,
 	BattleLost = 0.45,
 	BattleRetreat = 0.25,
+	TooFewSlaves = 0.5,
+	TooFewSlavesInBattle = 1.0,
 	PermanentInjury = 1.35,
 	Injury = 0.15,
 	NearCity = 0.1,
@@ -475,7 +496,8 @@ gt.Const.BloodType <- {
 	Ash = 4,
 	Green = 5,
 	Wood = 6,
-	COUNT = 7
+	Sand = 7,
+	COUNT = 8
 };
 gt.Const.BloodDecals <- [
 	[],
@@ -530,7 +552,8 @@ gt.Const.BloodDecals <- [
 		"blood_wood_5",
 		"blood_wood_6",
 		"blood_wood_7"
-	]
+	],
+	[]
 ];
 gt.Const.BloodPoolDecals <- [
 	[],
@@ -551,6 +574,7 @@ gt.Const.BloodPoolDecals <- [
 		"bloodpool_green_03",
 		"bloodpool_green_04"
 	],
+	[],
 	[]
 ];
 gt.Const.BloodPoolTerrainAlpha <- [
@@ -581,48 +605,53 @@ gt.Const.ProjectileType <- {
 	Flask = 5,
 	Flask2 = 6,
 	Stone = 7,
-	Missile = 8,
-	Blood = 9,
-	COUNT = 10
+	Rock = 8,
+	Bomb1 = 9,
+	Bomb2 = 10,
+	Missile = 11,
+	Blood = 12,
+	COUNT = 13
 };
 gt.Const.ProjectileDecals <- [
-	[],
-	[
-		"arrow_missed_01",
-		"arrow_missed_02",
-		"arrow_missed_03",
-		"arrow_missed_04",
-		"arrow_missed_05",
-		"arrow_missed_06",
-		"arrow_missed_07",
-		"arrow_missed_08"
+ 	[],
+ 	[
+ 		"arrow_missed_01",
+ 		"arrow_missed_02",
+ 		"arrow_missed_03",
+ 		"arrow_missed_04",
+ 		"arrow_missed_05",
+ 		"arrow_missed_06",
+ 		"arrow_missed_07",
+ 		"arrow_missed_08"
+ 	],
+ 	[
+ 		"javelin_missed_10",
+ 		"javelin_missed_11",
+ 		"javelin_missed_12"
+ 	],
+ 	[
+ 		"balls_missed_01",
+ 		"balls_missed_02"
+ 	],
+ 	[
+ 		"axe_missed_01",
+ 		"axe_missed_02",
+ 		"axe_missed_03"
+ 	],
+ 	[],
+ 	[],
+ 	[
+ 		"detail_stone_00",
+ 		"detail_stone_01",
+ 		"detail_stone_02",
+ 		"detail_stone_03",
+ 		"detail_stone_04"
 	],
-	[
-		"javelin_missed_10",
-		"javelin_missed_11",
-		"javelin_missed_12"
-	],
-	[
-		"balls_missed_01",
-		"balls_missed_02"
-	],
-	[
-		"axe_missed_01",
-		"axe_missed_02",
-		"axe_missed_03"
-	],
 	[],
 	[],
 	[],
 	[],
-	[],
-	[
-		"detail_stone_00",
-		"detail_stone_01",
-		"detail_stone_02",
-		"detail_stone_03",
-		"detail_stone_04"
-	]
+	[]
 ];
 gt.Const.ProjectileSprite <- [
 	"",
@@ -633,6 +662,9 @@ gt.Const.ProjectileSprite <- [
 	"projectile_05",
 	"projectile_06",
 	"projectile_07",
+	"projectile_08",
+	"projectile_09",
+	"projectile_10",
 	"projectile_missile",
 	"projectile_blood"
 ];
@@ -654,7 +686,7 @@ gt.Const.DefaultMovementAPCost <- [
 	3,
 	4,
 	4,
-	4,
+	2,
 	4
 ];
 gt.Const.PathfinderMovementAPCost <- [
@@ -665,7 +697,7 @@ gt.Const.PathfinderMovementAPCost <- [
 	2,
 	3,
 	3,
-	3,
+	2,
 	3
 ];
 gt.Const.HorseMovementAPCost <- [
@@ -756,7 +788,7 @@ gt.Const.DefaultMovementFatigueCost <- [
 	6,
 	8,
 	14,
-	12,
+	6,
 	12
 ];
 gt.Const.PathfinderMovementFatigueCost <- [
@@ -764,10 +796,10 @@ gt.Const.PathfinderMovementFatigueCost <- [
 	2,
 	2,
 	3,
-	4,
+	3,
 	4,
 	7,
-	6,
+	3,
 	6
 ];
 gt.Const.HorseMovementFatigueCost <- [
@@ -865,6 +897,7 @@ gt.Const.CharacterProperties <- {
 	RangedDefense = 0,
 	RangedDefenseMult = 1.0,
 	Threat = 0,
+	ThreatOnHit = 0,
 	Vision = 7,
 	VisionMult = 1.0,
 	XPGainMult = 1.0,
@@ -909,6 +942,7 @@ gt.Const.CharacterProperties <- {
 	StartSurroundCountAt = 0,
 	SurroundedDefense = 0,
 	RerollDefenseChance = 0,
+	RerollMoraleChance = 0,
 	NegativeStatusEffectDuration = 0,
 	DamageAgainstMult = [
 		1.0,
@@ -946,11 +980,13 @@ gt.Const.CharacterProperties <- {
 	IsImmuneToStun = false,
 	IsImmuneToRoot = false,
 	IsImmuneToKnockBackAndGrab = false,
+	IsImmuneToRotation = false,
 	IsImmuneToDisarm = false,
 	IsImmuneToSurrounding = false,
 	IsImmuneToBleeding = false,
 	IsImmuneToPoison = false,
 	IsImmuneToDamageReflection = false,
+	IsImmuneToFire = false,
 	IsIgnoringArmorOnAttack = false,
 	IsRooted = false,
 	IsStunned = false,

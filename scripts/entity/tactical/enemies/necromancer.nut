@@ -74,126 +74,45 @@ this.necromancer <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Items.equip(this.new("scripts/items/weapons/scramasax"));
 		}
 
-		local armor;
-		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
-		{
-			local cloths = [
-				[0, ""],
-				[0, "cloth/legend_gambeson"],
-				[0, "cloth/legend_gambeson_plain"],
-				[0, "cloth/legend_gambeson_wolf"],
-				[0, "cloth/legend_padded_surcoat"],
-				[0, "cloth/legend_robes"],
-				[0, "cloth/legend_apron_butcher"],
-				[0, "cloth/legend_robes_nun"],
-				[0, "cloth/legend_apron_smith"],
-				[0, "cloth/legend_robes_wizard"],
-				[0, "cloth/legend_sackcloth"],
-				[0, "cloth/legend_sackcloth_patched"],
-				[0, "cloth/legend_sackcloth_tattered"],
-				[0, "cloth/legend_thick_tunic"],
-				[2, "cloth/legend_dark_tunic"],
-				[0, "cloth/legend_tunic"],
-				[0, "cloth/legend_tunic_noble"]
-			];
-			armor = this.Const.World.Common.pickLegendArmor(cloths)
+		local item = this.Const.World.Common.pickArmor([
+			[1, "ragged_dark_surcoac"],
+			[1, "thick_dark_tunic"]
+		]);
+		this.m.Items.equip(item);
+		
+		local item = this.Const.World.Common.pickHelmet([
+			[1, "witchhunter_hat"],
+			[1, "dark_cowl"],
+			[1, "hood", 63]
+		])
+		this.m.Items.equip(item);
+	}
 
-			if (armor != null)
-			{
-				local chains = [
-					[0, ""],
-					[0, "chain/legend_armor_mail_shirt"],
-					[0, "chain/legend_armor_mail_shirt_simple"],
-					[0, "chain/legend_armor_rusty_mail_shirt"],
-					[0, "chain/legend_armor_ancient_double_mail"],
-					[0, "chain/legend_armor_ancient_mail"],
-					[0, "chain/legend_armor_basic_mail"],
-					[0, "chain/legend_armor_hauberk"],
-					[0, "chain/legend_armor_hauberk_full"],
-					[0, "chain/legend_armor_hauberk_sleevless"],
-					[0, "chain/legend_armor_reinforced_mail"],
-					[0, "chain/legend_armor_reinforced_mail_shirt"],
-					[0, "chain/legend_armor_reinforced_rotten_mail_shirt"],
-					[0, "chain/legend_armor_reinforced_worn_mail"],
-					[0, "chain/legend_armor_reinforced_worn_mail_shirt"],
-					[0, "chain/legend_armor_short_mail"]
-				]
-
-				local chain = this.Const.World.Common.pickLegendArmor(chains)
-				if (chain != null)
-				{
-					armor.setUpgrade(chain)
-				}
-
-				local plates = [
-					[6, ""],
-					[0, "plate/legend_armor_leather_brigandine"],
-					[0, "plate/legend_armor_leather_brigandine_hardened"],
-					[0, "plate/legend_armor_leather_brigandine_hardened_full"],
-					[0, "plate/legend_armor_leather_jacket"],
-					[0, "plate/legend_armor_leather_jacket_simple"],
-					[0, "plate/legend_armor_leather_lamellar"],
-					[0, "plate/legend_armor_leather_lamellar_harness_heavy"],
-					[0, "plate/legend_armor_leather_lamellar_harness_reinforced"],
-					[0, "plate/legend_armor_leather_lamellar_heavy"],
-					[0, "plate/legend_armor_leather_lamellar_reinforced"],
-					[0, "plate/legend_armor_leather_noble"],
-					[0, "plate/legend_armor_leather_padded"],
-					[0, "plate/legend_armor_leather_riveted"],
-					[0, "plate/legend_armor_leather_riveted_light"],
-					[0, "plate/legend_armor_leather_scale"],
-					[0, "plate/legend_armor_plate_ancient_chest"],
-					[0, "plate/legend_armor_plate_ancient_harness"],
-					[0, "plate/legend_armor_plate_ancient_mail"],
-					[0, "plate/legend_armor_plate_ancient_scale"],
-					[0, "plate/legend_armor_plate_ancient_scale_coat"],
-					[0, "plate/legend_armor_plate_ancient_scale_harness"],
-					[0, "plate/legend_armor_plate_chest"],
-					[0, "plate/legend_armor_plate_chest_rotten"],
-					[0, "plate/legend_armor_plate_cuirass"],
-					[0, "plate/legend_armor_plate_full"],
-					[0, "plate/legend_armor_scale"],
-					[0, "plate/legend_armor_scale_coat"],
-					[0, "plate/legend_armor_scale_coat_rotten"],
-					[0, "plate/legend_armor_scale_shirt"]
-				]
-				local plate = this.Const.World.Common.pickLegendArmor(plates)
-				if (plate != null)
-				{
-					armor.setUpgrade(plate)
-				}
-				this.m.Items.equip(armor);
-			}
-		}
-		else
+	function makeMiniboss()
+	{
+		if (!this.actor.makeMiniboss())
 		{
-			r = this.Math.rand(1, 2);
+			return false;
+		}
 
-			if (r <= 1)
-			{
-				this.m.Items.equip(this.new("scripts/items/armor/ragged_dark_surcoat"));
-			}
-			else if (r == 2)
-			{
-				this.m.Items.equip(this.new("scripts/items/armor/thick_dark_tunic"));
-			}
-		}
-		local r = this.Math.rand(1, 3);
+		this.getSprite("miniboss").setBrush("bust_miniboss");
+		local weapons = [
+			"weapons/named/named_dagger"
+		];
 
-		if (r == 1)
+		if (this.Const.DLC.Desert)
 		{
-			this.m.Items.equip(this.new("scripts/items/helmets/witchhunter_hat"));
+			weapons.extend([
+				"weapons/named/named_dagger",
+				"weapons/named/named_qatal_dagger"
+			]);
 		}
-		else if (r == 2)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/dark_cowl"));
-		}
-		else if (r == 3)
-		{
-			local hood = this.new("scripts/items/helmets/hood");
-			hood.setVariant(63);
-			this.m.Items.equip(hood);
-		}
+
+		this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
+		this.m.ActionPoints = 9;
+		this.m.BaseProperties.ActionPoints = 9;
+		this.m.Skills.update();
+		return true;
 	}
 
 });

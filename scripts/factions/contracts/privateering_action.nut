@@ -26,7 +26,7 @@ this.privateering_action <- this.inherit("scripts/factions/faction_action", {
 			return;
 		}
 
-		if (this.Math.rand(1, 100) > 25)
+		if (this.Math.rand(1, 100) > 30)
 		{
 			return;
 		}
@@ -50,7 +50,7 @@ this.privateering_action <- this.inherit("scripts/factions/faction_action", {
 
 			foreach( s in h.getSettlements() )
 			{
-				if (s.isIsolated() || s.getActiveAttachedLocations().len() == 0)
+				if (s.isIsolated() || !s.isDiscovered() || s.getActiveAttachedLocations().len() == 0)
 				{
 					continue;
 				}

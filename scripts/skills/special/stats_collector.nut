@@ -2,6 +2,7 @@ this.stats_collector <- this.inherit("scripts/skills/skill", {
 	m = {
 		Frame = 0,
 		FrameKills = 0,
+		FrameHits = 0,
 		Round = 0,
 		RoundRangedKills = 0
 	},
@@ -74,6 +75,21 @@ this.stats_collector <- this.inherit("scripts/skills/skill", {
 		local stats = this.getContainer().getActor().getCombatStats();
 		stats.DamageDealtHitpoints += _damageInflictedHitpoints;
 		stats.DamageDealtArmor += _damageInflictedArmor;
+
+		if (this.Time.getFrame() == this.m.Frame)
+		{
+			++this.m.FrameHits;
+
+			if (this.m.FrameHits >= 4 && _skill != null && _skill.getID() == "actives.fire_handgonne")
+			{
+				this.updateAchievement("Barrage", 1, 1);
+			}
+		}
+		else
+		{
+			this.m.Frame = this.Time.getFrame();
+			this.m.FrameHits = 1;
+		}
 	}
 
 	function onDamageReceived( _attacker, _damageHitpoints, _damageArmor )
@@ -87,6 +103,7 @@ this.stats_collector <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.Frame = 0;
 		this.m.FrameKills = 0;
+		this.m.FrameHits = 0;
 		this.m.Round = 0;
 		this.m.RoundRangedKills = 0;
 	}

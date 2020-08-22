@@ -54,7 +54,7 @@ this.legend_demon_hound_bite <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
-		if (_targetEntity.getTags().has("undead"))
+		if (_targetEntity.getFlags().has("undead"))
 		{
 			return;
 		}

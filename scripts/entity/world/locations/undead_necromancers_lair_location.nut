@@ -10,6 +10,11 @@ this.undead_necromancers_lair_location <- this.inherit("scripts/entity/world/loc
 		this.location.create();
 		this.m.TypeID = "location.undead_necromancers_lair";
 		this.m.LocationType = this.Const.World.LocationType.Lair;
+		this.m.CombatLocation.Template[0] = "tactical.graveyard";
+		this.m.CombatLocation.Fortification = this.Const.Tactical.FortificationType.None;
+		this.m.CombatLocation.CutDownTrees = false;
+		this.m.CombatLocation.ForceLineBattle = true;
+		this.m.CombatLocation.AdditionalRadius = 5;
 		this.setDefenderSpawnList(this.Const.World.Spawn.Necromancer);
 		this.m.Resources = 150;
 		this.m.RoamerSpawnList = this.Const.World.Spawn.Zombies;

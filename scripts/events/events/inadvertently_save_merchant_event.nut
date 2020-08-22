@@ -6,10 +6,10 @@ this.inadvertently_save_merchant_event <- this.inherit("scripts/events/event", {
 	{
 		this.m.ID = "event.inadvertently_save_merchant";
 		this.m.Title = "At %townname%";
-		this.m.Cooldown = 99999.0 * this.World.getTime().SecondsPerDay;
+		this.m.Cooldown = 130.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_20.png[/img]Walking about %townname% with a few sellswords, you turn a corner to find an opulent man surrounded by thieves and bandits. They look over their shoulders and widen their eyes. One nicks the merchant on the cheek.%SPEECH_ON%Alright, we\'ll get you next time ya bastard!%SPEECH_OFF%The scoundrels quickly make their leave. A moment later and the merchant\'s heavily-armed guards appear. Nursing his wound, he starts yelling at them.%SPEECH_ON%What am I paying you for you sorry bastards? The second I get into trouble and you\'re nowhere to be seen? Look at this man here, that\'s who I should be paying! Hey, take this for your troubles, stranger.%SPEECH_OFF%The merchant throws you a satchel of crowns for your \'trouble,\' though all you did was turn a corner and run into a coincidence.",
+			Text = "%townImage%Walking about %townname% with a few sellswords, you turn a corner to find an opulent man surrounded by thieves and bandits. They look over their shoulders and widen their eyes. One nicks the merchant on the cheek.%SPEECH_ON%Alright, we\'ll get you next time ya bastard!%SPEECH_OFF%The scoundrels quickly make their leave. A moment later and the merchant\'s heavily-armed guards appear. Nursing his wound, he starts yelling at them.%SPEECH_ON%What am I paying you for you sorry bastards? The second I get into trouble and you\'re nowhere to be seen? Look at this man here, that\'s who I should be paying! Hey, take this for your troubles, stranger.%SPEECH_OFF%The merchant throws you a satchel of crowns for your \'trouble,\' though all you did was turn a corner and run into a coincidence.",
 			Image = "",
 			List = [],
 			Options = [

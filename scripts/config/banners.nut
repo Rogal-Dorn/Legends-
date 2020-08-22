@@ -20,7 +20,8 @@ gt.Const.PlayerBanners <- [
 	"banner_18",
 	"banner_19",
 	"banner_20",
-	"banner_21"
+	"banner_21",
+	"banner_27"
 ];
 gt.Const.BanditBanners <- [
 	"banner_bandits_01",
@@ -66,5 +67,10 @@ gt.Const.UndeadBanners <- [
 	"banner_skeletons_04",
 	"banner_skeletons_05",
 	"banner_skeletons_06"
+];
+gt.Const.NomadBanners <- [
+	"banner_nomads_01",
+	"banner_nomads_02",
+	"banner_nomads_03"
 ];
 

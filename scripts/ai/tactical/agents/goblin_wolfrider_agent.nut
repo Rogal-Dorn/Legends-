@@ -40,6 +40,15 @@ this.goblin_wolfrider_agent <- this.inherit("scripts/ai/tactical/agent", {
 	function onUpdate()
 	{
 		this.setEngageRangeBasedOnWeapon();
+
+		if (this.getStrategy().getStats().IsEngaged)
+		{
+			this.m.IsUsingHeat = false;
+		}
+		else
+		{
+			this.m.IsUsingHeat = true;
+		}
 	}
 
 });

@@ -47,6 +47,11 @@ this.schrat_exposition_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
+		if (currentTile.Type == this.Const.World.TerrainType.Desert || currentTile.Type == this.Const.World.TerrainType.Oasis || currentTile.TacticalType == this.Const.World.TerrainTacticalType.DesertHills)
+		{
+			return;
+		}
+
 		this.m.Score = 5;
 	}
 

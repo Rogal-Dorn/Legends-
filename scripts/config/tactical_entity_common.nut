@@ -6,6 +6,7 @@ if (!("Tactical" in gt.Const))
 }
 
 gt.Const.Tactical.Common <- {
+	LastAIBehaviorID = "",
 	function getRandomPlayerName()
 	{
 		return this.Const.Strings.CharacterNames[this.Math.rand(0, this.Const.Strings.CharacterNames.len() - 1)];
@@ -90,7 +91,7 @@ gt.Const.Tactical.Common <- {
 
 	function onApplyMiasma( _tile, _entity )
 	{
-		if (_entity.getTags().has("undead"))
+		if (_entity.getFlags().has("undead"))
 		{
 			return;
 		}
@@ -98,7 +99,7 @@ gt.Const.Tactical.Common <- {
 		this.Tactical.spawnIconEffect("status_effect_00", _tile, this.Const.Tactical.Settings.SkillIconOffsetX, this.Const.Tactical.Settings.SkillIconOffsetY, this.Const.Tactical.Settings.SkillIconScale, this.Const.Tactical.Settings.SkillIconFadeInDuration, this.Const.Tactical.Settings.SkillIconStayDuration, this.Const.Tactical.Settings.SkillIconFadeOutDuration, this.Const.Tactical.Settings.SkillIconMovement);
 		local sounds = [];
 
-		if (_entity.getTags().has("human"))
+		if (_entity.getFlags().has("human"))
 		{
 			sounds = [
 				"sounds/humans/human_coughing_01.wav",
@@ -126,126 +127,67 @@ gt.Const.Tactical.Common <- {
 		_tile.getEntity().onDamageReceived(_entity, null, hitInfo);
 	}
 
-
-
-	function onApplyFirefield( _tile, _entity )
+	function onApplyFire( _tile, _entity )
 	{
+		if (_entity.getCurrentProperties().IsImmuneToFire)
+		{
+			return;
+		}
 
-		this.Tactical.spawnIconEffect("fire_circle", _tile, this.Const.Tactical.Settings.SkillIconOffsetX, this.Const.Tactical.Settings.SkillIconOffsetY, this.Const.Tactical.Settings.SkillIconScale, this.Const.Tactical.Settings.SkillIconFadeInDuration, this.Const.Tactical.Settings.SkillIconStayDuration, this.Const.Tactical.Settings.SkillIconFadeOutDuration, this.Const.Tactical.Settings.SkillIconMovement);
+		this.Tactical.spawnIconEffect("status_effect_116", _tile, this.Const.Tactical.Settings.SkillIconOffsetX, this.Const.Tactical.Settings.SkillIconOffsetY, this.Const.Tactical.Settings.SkillIconScale, this.Const.Tactical.Settings.SkillIconFadeInDuration, this.Const.Tactical.Settings.SkillIconStayDuration, this.Const.Tactical.Settings.SkillIconFadeOutDuration, this.Const.Tactical.Settings.SkillIconMovement);
 		local sounds = [
-				"sounds/combat/fire_01.wav",
-				"sounds/combat/fire_02.wav",
-				"sounds/combat/fire_03.wav",
-				"sounds/combat/fire_04.wav",
-				"sounds/combat/fire_05.wav",
-				"sounds/combat/fire_06.wav"
-			];
-
+			"sounds/combat/dlc6/status_on_fire_01.wav",
+			"sounds/combat/dlc6/status_on_fire_02.wav",
+			"sounds/combat/dlc6/status_on_fire_03.wav"
+		];
 		this.Sound.play(sounds[this.Math.rand(0, sounds.len() - 1)], this.Const.Sound.Volume.Actor, _entity.getPos());
+		local damageMult = 1.0;
+
+		if (_entity.getType() == this.Const.EntityType.Schrat)
+		{
+			damageMult = 3.0;
+		}
+
+		if (_entity.getSkills().hasSkill("racial.skeleton"))
+		{
+			damageMult = 0.33;
+		}
+
+		if (_entity.getSkills().hasSkill("items.firearms_resistance") || _entity.getSkills().hasSkill("racial.serpent"))
+		{
+			damageMult = 0.66;
+		}
+
+		local damage = this.Math.rand(15, 30);
 		local hitInfo = clone this.Const.Tactical.HitInfo;
-		hitInfo.DamageRegular = this.Math.rand(10, 20);
-		hitInfo.DamageDirect = 1.0;
+		hitInfo.DamageRegular = damage * damageMult;
+		hitInfo.DamageArmor = damage;
+		hitInfo.DamageDirect = 0.1;
 		hitInfo.BodyPart = this.Const.BodyPart.Body;
 		hitInfo.BodyDamageMult = 1.0;
 		hitInfo.FatalityChanceMult = 0.0;
-		_tile.getEntity().onDamageReceived(_entity, null, hitInfo);
+		hitInfo.Injuries = this.Const.Injury.Burning;
+		hitInfo.IsPlayingArmorSound = false;
+		_entity.onDamageReceived(_entity, null, hitInfo);
+
+		if ((!_entity.isAlive() || _entity.isDying()) && !_entity.isPlayerControlled() && (_tile.Properties.Effect == null || _tile.Properties.Effect.IsByPlayer))
+		{
+			this.updateAchievement("BurnThemAll", 1, 1);
+		}
 	}
 
-	function onApplyHolyFlame( _tile, _entity )
+	function onApplySmoke( _tile, _entity )
 	{
-
-		this.Tactical.spawnIconEffect("bluefire_circle", _tile, this.Const.Tactical.Settings.SkillIconOffsetX, this.Const.Tactical.Settings.SkillIconOffsetY, this.Const.Tactical.Settings.SkillIconScale, this.Const.Tactical.Settings.SkillIconFadeInDuration, this.Const.Tactical.Settings.SkillIconStayDuration, this.Const.Tactical.Settings.SkillIconFadeOutDuration, this.Const.Tactical.Settings.SkillIconMovement);
-		local sounds = [
-				"sounds/combat/fire_01.wav",
-				"sounds/combat/fire_02.wav",
-				"sounds/combat/fire_03.wav",
-				"sounds/combat/fire_04.wav",
-				"sounds/combat/fire_05.wav",
-				"sounds/combat/fire_06.wav"
-			];
-
-		this.Sound.play(sounds[this.Math.rand(0, sounds.len() - 1)], this.Const.Sound.Volume.Actor, _entity.getPos());
-
-		if (_entity.isNonCombatant() )
+		if (_entity.isNonCombatant())
 		{
 			return;
 		}
 
-		if (_entity.getFaction() == this.Const.Faction.Player || _entity.getFaction() == this.Const.Faction.Civilian || _entity.getFaction() == this.Const.Faction.NobleHouse)
+		local smoke = _entity.getSkills().getSkillByID("effects.smoke");
+
+		if (smoke == null)
 		{
-			local sanctify = _entity.getSkills().getSkillByID("effects.legend_sanctified_effect");
-			if (sanctify != null)
-			{
-				sanctify.onRefresh();
-			}
-			else if (_entity.getBackground().isCultist())
-			{
-				local hitInfo = clone this.Const.Tactical.HitInfo;
-				hitInfo.DamageRegular = this.Math.rand(10, 20);
-				hitInfo.DamageDirect = 1.0;
-				hitInfo.BodyPart = this.Const.BodyPart.Body;
-				hitInfo.BodyDamageMult = 1.0;
-				hitInfo.FatalityChanceMult = 0.0;
-				_tile.getEntity().onDamageReceived(_entity, null, hitInfo);
-			}
-			else
-			{
-				_entity.getSkills().add(this.new("scripts/skills/effects/legend_sanctified_effect"));
-				_entity.getSkills().add(this.new("scripts/skills/effects/legend_prayer_of_life_effect"));
-				_entity.getSkills().add(this.new("scripts/skills/effects/legend_prayer_of_faith_effect"));
-			}
-		}
-
-		if (_entity.getFaction() == this.Const.Faction.Undead || _entity.getFaction() == this.Const.Faction.Zombies )
-		{
-			local consecrate = _entity.getSkills().getSkillByID("effects.legend_consecrated_effect");
-			if (consecrate != null)
-			{
-				consecrate.onRefresh();
-				local hitInfo = clone this.Const.Tactical.HitInfo;
-				hitInfo.DamageRegular = this.Math.rand(10, 20);
-				hitInfo.DamageDirect = 1.0;
-				hitInfo.BodyPart = this.Const.BodyPart.Body;
-				hitInfo.BodyDamageMult = 1.0;
-				hitInfo.FatalityChanceMult = 0.0;
-				_tile.getEntity().onDamageReceived(_entity, null, hitInfo);
-			}
-			else
-			{
-				_entity.getSkills().add(this.new("scripts/skills/effects/legend_consecrated_effect"));
-				_entity.getSkills().add(this.new("scripts/skills/effects/bleeding_effect"));
-				_entity.getSkills().add(this.new("scripts/skills/effects/zombie_poison_effect"));
-				local hitInfo = clone this.Const.Tactical.HitInfo;
-				hitInfo.DamageRegular = this.Math.rand(10, 20);
-				hitInfo.DamageDirect = 1.0;
-				hitInfo.BodyPart = this.Const.BodyPart.Body;
-				hitInfo.BodyDamageMult = 1.0;
-				hitInfo.FatalityChanceMult = 0.0;
-				_tile.getEntity().onDamageReceived(_entity, null, hitInfo);
-			}
-
-		}
-
-
-	}
-
-
-	function onApplyDust( _tile, _entity )
-	{
-		if (_entity.isNonCombatant() || _entity.getType() == this.Const.EntityType.Alp)
-		{
-			return;
-		}
-
-		local sleep = _entity.getSkills().getSkillByID("effects.sleeping");
-
-		if (sleep != null)
-		{
-			sleep.addDuration(1);
-		}
-		else
-		{
-			_entity.getSkills().add(this.new("scripts/skills/effects/sleeping_dust_effect"));
+			_entity.getSkills().add(this.new("scripts/skills/effects/smoke_effect"));
 		}
 	}
 
@@ -326,6 +268,106 @@ gt.Const.Tactical.Common <- {
 		{
 			local effect = this.new("scripts/skills/injury/sickness_injury");
 			_actor.getSkills().add(effect);
+			this.Sound.play("sounds/vomit_01.wav", this.Const.Sound.Volume.Actor);
+		}
+	}
+
+	function onApplyFirefield( _tile, _entity )
+	{
+		this.Tactical.spawnIconEffect("fire_circle", _tile, this.Const.Tactical.Settings.SkillIconOffsetX, this.Const.Tactical.Settings.SkillIconOffsetY, this.Const.Tactical.Settings.SkillIconScale, this.Const.Tactical.Settings.SkillIconFadeInDuration, this.Const.Tactical.Settings.SkillIconStayDuration, this.Const.Tactical.Settings.SkillIconFadeOutDuration, this.Const.Tactical.Settings.SkillIconMovement);
+		local sounds = [
+				"sounds/combat/fire_01.wav",
+				"sounds/combat/fire_02.wav",
+				"sounds/combat/fire_03.wav",
+				"sounds/combat/fire_04.wav",
+				"sounds/combat/fire_05.wav",
+				"sounds/combat/fire_06.wav"
+			];
+
+		this.Sound.play(sounds[this.Math.rand(0, sounds.len() - 1)], this.Const.Sound.Volume.Actor, _entity.getPos());
+		local hitInfo = clone this.Const.Tactical.HitInfo;
+		hitInfo.DamageRegular = this.Math.rand(10, 20);
+		hitInfo.DamageDirect = 1.0;
+		hitInfo.BodyPart = this.Const.BodyPart.Body;
+		hitInfo.BodyDamageMult = 1.0;
+		hitInfo.FatalityChanceMult = 0.0;
+		_tile.getEntity().onDamageReceived(_entity, null, hitInfo);
+	}
+
+	function onApplyHolyFlame( _tile, _entity )
+	{
+		this.Tactical.spawnIconEffect("bluefire_circle", _tile, this.Const.Tactical.Settings.SkillIconOffsetX, this.Const.Tactical.Settings.SkillIconOffsetY, this.Const.Tactical.Settings.SkillIconScale, this.Const.Tactical.Settings.SkillIconFadeInDuration, this.Const.Tactical.Settings.SkillIconStayDuration, this.Const.Tactical.Settings.SkillIconFadeOutDuration, this.Const.Tactical.Settings.SkillIconMovement);
+		local sounds = [
+				"sounds/combat/fire_01.wav",
+				"sounds/combat/fire_02.wav",
+				"sounds/combat/fire_03.wav",
+				"sounds/combat/fire_04.wav",
+				"sounds/combat/fire_05.wav",
+				"sounds/combat/fire_06.wav"
+			];
+
+		this.Sound.play(sounds[this.Math.rand(0, sounds.len() - 1)], this.Const.Sound.Volume.Actor, _entity.getPos());
+
+		if (_entity.isNonCombatant() )
+		{
+			return;
+		}
+
+		if (_entity.getFaction() == this.Const.Faction.Player || _entity.getFaction() == this.Const.Faction.Civilian || _entity.getFaction() == this.Const.Faction.NobleHouse)
+		{
+			local sanctify = _entity.getSkills().getSkillByID("effects.legend_sanctified_effect");
+			if (sanctify != null)
+			{
+				sanctify.onRefresh();
+			}
+			else if (_entity.getBackground().isCultist())
+			{
+				local hitInfo = clone this.Const.Tactical.HitInfo;
+				hitInfo.DamageRegular = this.Math.rand(10, 20);
+				hitInfo.DamageDirect = 1.0;
+				hitInfo.BodyPart = this.Const.BodyPart.Body;
+				hitInfo.BodyDamageMult = 1.0;
+				hitInfo.FatalityChanceMult = 0.0;
+				_tile.getEntity().onDamageReceived(_entity, null, hitInfo);
+			}
+			else
+			{
+
+				_entity.getSkills().add(this.new("scripts/skills/effects/legend_sanctified_effect"));
+				_entity.getSkills().add(this.new("scripts/skills/effects/legend_prayer_of_life_effect"));
+				_entity.getSkills().add(this.new("scripts/skills/effects/legend_prayer_of_faith_effect"));
+			}
+		}
+
+		if (_entity.getFaction() == this.Const.Faction.Undead || _entity.getFaction() == this.Const.Faction.Zombies )
+		{
+			local consecrate = _entity.getSkills().getSkillByID("effects.legend_consecrated_effect");
+			if (consecrate != null)
+			{
+				consecrate.onRefresh();
+				local hitInfo = clone this.Const.Tactical.HitInfo;
+				hitInfo.DamageRegular = this.Math.rand(10, 20);
+				hitInfo.DamageDirect = 1.0;
+				hitInfo.BodyPart = this.Const.BodyPart.Body;
+				hitInfo.BodyDamageMult = 1.0;
+				hitInfo.FatalityChanceMult = 0.0;
+				_tile.getEntity().onDamageReceived(_entity, null, hitInfo);
+			}
+			else
+			{
+				_entity.getSkills().add(this.new("scripts/skills/effects/legend_consecrated_effect"));
+				_entity.getSkills().add(this.new("scripts/skills/effects/holy_water_effect"));
+				_entity.getSkills().add(this.new("scripts/skills/effects/bleeding_effect"));
+				_entity.getSkills().add(this.new("scripts/skills/effects/zombie_poison_effect"));
+				local hitInfo = clone this.Const.Tactical.HitInfo;
+				hitInfo.DamageRegular = this.Math.rand(10, 20);
+				hitInfo.DamageDirect = 1.0;
+				hitInfo.BodyPart = this.Const.BodyPart.Body;
+				hitInfo.BodyDamageMult = 1.0;
+				hitInfo.FatalityChanceMult = 0.0;
+				_tile.getEntity().onDamageReceived(_entity, null, hitInfo);
+			}
+
 		}
 	}
 

@@ -15,7 +15,36 @@ this.iron_will_effect <- this.inherit("scripts/skills/skill", {
 
 	function getDescription()
 	{
-		return "I feel invincible! Well, feelings may betray this character, but as he doesn\'t feel any injuries suffered, he also won\'t be affected by them until after combat ends and the adrenaline fades.";
+		return "I feel invincible! Well, feelings may betray this character, but as he doesn\'t feel any injuries suffered, old or new, he also won\'t be affected by them until after combat ends and the adrenaline fades.";
+	}
+
+	function getTooltip()
+	{
+		local ret = [
+			{
+				id = 1,
+				type = "title",
+				text = this.getName()
+			},
+			{
+				id = 2,
+				type = "description",
+				text = this.getDescription()
+			},
+			{
+				id = 11,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Not affected by non-permanent injuries"
+			},
+			{
+				id = 7,
+				type = "hint",
+				icon = "ui/icons/action_points.png",
+				text = "Will be gone after 1 more battle"
+			}
+		];
+		return ret;
 	}
 
 	function onUpdate( _properties )

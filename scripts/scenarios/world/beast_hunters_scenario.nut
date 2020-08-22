@@ -4,7 +4,7 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	{
 		this.m.ID = "scenario.beast_hunters";
 		this.m.Name = "Beast Slayers";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_122.png[/img][/p][p]You and your men make your living by hunting down the many beasts that beset villages on the fringes of civilization. It\'s dangerous work, but it pays well enough, and there\'s always a bigger beast to slay and more crowns to earn.\n[color=#bcad8c]Beast Slayers:[/color] Start with three beast slayers and decent equipment, as well as some beast trophies.\n[color=#bcad8c]Expert Trackers:[/color] See tracks from further away, [color=#c90000]perks for hunting legendary beasts.[/color]\n[color=#bcad8c]Expert Skinners:[/color] Each beast you slay has a 50% chance to drop an additional trophy [color=#c90000]or runestone[/color].\n[color=#bcad8c]Prejudice:[/color] Most people don\'t trust your kind, so you get 10% worse prices.[/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_122.png[/img][/p][p]You and your men make your living by hunting down the many beasts that beset villages on the fringes of civilization. It\'s dangerous work, but it pays well enough, and there\'s always a bigger beast to slay and more crowns to earn.\n\n[color=#bcad8c]Beast Slayers:[/color] Start with three beast slayers and decent equipment, as well as some beast trophies.\n[color=#bcad8c]Expert Trackers:[/color] See tracks from further away.\n[color=#bcad8c]Expert Skinners:[/color] Each beast you slay has a 50% chance to drop an additional trophy.\n[color=#bcad8c]Prejudice:[/color] Most people don\'t trust your kind, so you get 10% worse prices.[/p]";
 		this.m.Difficulty = 2;
 		this.m.Order = 5;
 		this.m.IsFixedLook = true;
@@ -26,7 +26,7 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.improveMood(1.0, "Has slain a dangerous witch");
-			bro.worsenMood(3.0, "Lost most of the company in a betrayal");
+			bro.worsenMood(2.5, "Lost most of the company in a betrayal");
 
 			while (names.find(bro.getNameOnly()) != null)
 			{
@@ -98,38 +98,19 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 		foreach( bro in bros )
 		{
-			local val = this.World.State.addNewID(bro);
-			bro.m.CompanyID = val;
 			bro.m.PerkPoints = 1;
 			bro.m.LevelUps = 1;
 			bro.m.Level = 2;
 		}
 
-		if (this.World.LegendsMod.Configs().RelationshipsEnabled())
-{
-    local avgAlignment = 0;
-    foreach (bro in this.World.getPlayerRoster().getAll())
-    {
-        if (bro.getAlignment() <= this.Const.LegendMod.Alignment.NeutralMin)
-        {
-            avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMin);
-        }
-        else if (bro.getAlignment() >= this.Const.LegendMod.Alignment.NeutralMax)
-        {
-            avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMax);
-        }
-    }
-    avgAlignment *= (10 / this.World.getPlayerRoster().getSize());
-    this.World.Assets.addMoralReputation(avgAlignment);
-}
-
 		this.World.Assets.m.BusinessReputation = 200;
-		this.World.Tags.set("HasLegendCampCrafting", true);
+		this.World.Flags.set("HasLegendCampCrafting", true);
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/misc/witch_hair_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/misc/werewolf_pelt_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/misc/werewolf_pelt_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/tools/legend_broken_throwing_net"));
+		this.World.Assets.getStash().add(this.new("scripts/items/accessory/night_vision_elixir_item"));
 		this.World.Assets.m.Money = this.Math.round(this.World.Assets.m.Money * 0.75);
 	}
 
@@ -194,14 +175,6 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			this.Music.setTrackList(this.Const.Music.CivilianTracks, this.Const.Music.CrossFadeTime);
 			this.World.Events.fire("event.beast_hunters_scenario_intro");
 		}, null);
-
-		foreach( b in this.World.getPlayerRoster().getAll() )
-		{
-			foreach( add in this.World.getPlayerRoster().getAll() )
-			{
-				b.changeActiveRelationship(add, this.Math.rand(0, 10));
-			}
-		}
 	}
 
 	function onInit()
@@ -213,7 +186,7 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		this.World.Assets.m.FootprintVision = 1.5;
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 		if (_list.len() < 10)
 		{

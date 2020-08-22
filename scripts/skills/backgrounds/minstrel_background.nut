@@ -40,7 +40,7 @@ this.minstrel_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.Hairs = this.Const.Hair.TidyMale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.Tidy;
-		this.m.Body = "bust_naked_body_00";
+
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Notorious;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.IsCrusaderRecruitBackground = true;
@@ -66,6 +66,7 @@ this.minstrel_background <- this.inherit("scripts/skills/backgrounds/character_b
 			Class = [this.Const.Perks.BardClassTree],
 			Magic = []
 		}
+		this.m.Bodies = this.Const.Bodies.Skinny;
 	}
 
 	function getTooltip()
@@ -131,37 +132,15 @@ this.minstrel_background <- this.inherit("scripts/skills/backgrounds/character_b
 	function onAddEquipment()
 	{
 		local items = this.getContainer().getActor().getItems();
-		local armor = this.new("scripts/items/armor/linen_tunic");
-		armor.setVariant(this.Math.rand(3, 4));
-		items.equip(armor);
-		local r = this.Math.rand(0, 1);
+		items.equip(this.Const.World.Common.pickArmor([
+			[1, "linen_tunic", this.Math.rand(3,4)]
+		]))
+		local r;
 
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/feathered_hat"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "feathered_hat"]
+		]));
 
-		local r = this.Math.rand(0, 4);
-		if (r <= 2)
-		{
-			items.equip(this.new("scripts/items/weapons/lute"));
-		}
-		if (r == 3)
-		{
-			items.equip(this.new("scripts/items/weapons/legend_drum"));
-		}
-	}
-
-	function onAddLegendEquipment()
-	{
-		local items = this.getContainer().getActor().getItems();
-		items.equip(this.new("scripts/items/legend_armor/cloth/legend_tunic"));
-		local r = this.Math.rand(0, 1);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/feathered_hat"));
-		}
 
 		local r = this.Math.rand(0, 4);
 		if (r <= 2)

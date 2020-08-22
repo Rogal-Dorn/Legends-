@@ -2,12 +2,12 @@ this.orc_camp_wall <- this.inherit("scripts/entity/tactical/entity", {
 	m = {},
 	function getName()
 	{
-		return "TODO";
+		return "Palisade";
 	}
 
 	function getDescription()
 	{
-		return "TODO";
+		return "A wooden palisade.";
 	}
 
 	function setDirBasedOnCenter( _centerTile, _dist )
@@ -17,49 +17,50 @@ this.orc_camp_wall <- this.inherit("scripts/entity/tactical/entity", {
 
 		if (myTile.SquareCoords.X < _centerTile.SquareCoords.X)
 		{
-			if (myTile.SquareCoords.Y < _centerTile.SquareCoords.Y + _dist * 0.5 && myTile.SquareCoords.Y > _centerTile.SquareCoords.Y - _dist * 0.5)
+			if (myTile.SquareCoords.Y < _centerTile.SquareCoords.Y + _dist / 2 && myTile.SquareCoords.Y > _centerTile.SquareCoords.Y - _dist / 2 - 1)
 			{
-				b.setBrush("orc_camp_17_07");
+				b.setBrush("orc_palisade_29_07");
 			}
 			else if (myTile.SquareCoords.Y > _centerTile.SquareCoords.Y)
 			{
-				b.setBrush("orc_camp_17_01");
+				b.setBrush("orc_palisade_29_01");
 			}
 			else
 			{
-				b.setBrush("orc_camp_17_02");
+				b.setBrush("orc_palisade_29_02");
 			}
 		}
 		else if (myTile.SquareCoords.X > _centerTile.SquareCoords.X)
 		{
-			if (myTile.SquareCoords.Y < _centerTile.SquareCoords.Y + _dist * 0.5 && myTile.SquareCoords.Y > _centerTile.SquareCoords.Y - _dist * 0.5)
+			if (myTile.SquareCoords.Y < _centerTile.SquareCoords.Y + _dist / 2 && myTile.SquareCoords.Y > _centerTile.SquareCoords.Y - _dist / 2 - 1)
 			{
-				b.setBrush("orc_camp_17_06");
+				b.setBrush("orc_palisade_29_06");
 			}
 			else if (myTile.SquareCoords.Y > _centerTile.SquareCoords.Y)
 			{
-				b.setBrush("orc_camp_17_02");
+				b.setBrush("orc_palisade_29_02");
 			}
 			else
 			{
-				b.setBrush("orc_camp_17_01");
+				b.setBrush("orc_palisade_29_01");
 			}
 		}
 		else if (myTile.SquareCoords.Y < _centerTile.SquareCoords.Y)
 		{
-			b.setBrush("orc_camp_17_03");
+			b.setBrush("orc_palisade_29_03");
 		}
 		else
 		{
-			b.setBrush("orc_camp_17_05");
+			b.setBrush("orc_palisade_29_05");
 		}
 	}
 
 	function onInit()
 	{
 		local body = this.addSprite("body");
-		body.setBrush("orc_camp_17_0" + this.Math.rand(1, 7));
+		body.setBrush("orc_palisade_29_0" + this.Math.rand(1, 7));
 		body.IgnoreCameraFlip = true;
+		this.setBlockSight(false);
 	}
 
 });

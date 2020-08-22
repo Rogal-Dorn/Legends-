@@ -6,6 +6,7 @@ this.armor <- this.inherit("scripts/items/item", {
 		Sprite = null,
 		SpriteDamaged = null,
 		SpriteCorpse = null,
+		VariantString = "body",
 		ImpactSound = this.Const.Sound.ArmorLeatherImpact,
 		InventorySound = this.Const.Sound.ArmorLeatherImpact,
 		StaminaModifier = 0,
@@ -76,7 +77,7 @@ this.armor <- this.inherit("scripts/items/item", {
 
 	function setUpgrade( _upgrade )
 	{
-		if (!this.Const.DLC.Unhold && !this.Const.DLC.Wildmen)
+		if (!this.Const.DLC.Unhold && !this.Const.DLC.Wildmen && !this.Const.DLC.Desert)
 		{
 			return;
 		}
@@ -112,7 +113,6 @@ this.armor <- this.inherit("scripts/items/item", {
 	{
 		this.m.SlotType = this.Const.ItemSlot.Body;
 		this.m.ItemType = this.Const.Items.ItemType.Armor;
-		this.m.IsDroppedWhenDamaged = false;
 		this.m.ShowOnCharacter = true;
 	}
 
@@ -221,8 +221,10 @@ this.armor <- this.inherit("scripts/items/item", {
 		}
 
 		local isPlayer = this.m.LastEquippedByFaction == this.Const.Faction.Player || this.getContainer() != null && this.getContainer().getActor() != null && !this.getContainer().getActor().isNull() && this.isKindOf(this.getContainer().getActor().get(), "player");
-		local isLucky = !this.Tactical.State.isScenarioMode() && this.World.Assets.getOrigin().isDroppedAsLoot(this);
-		if (this.m.Condition > 10 && isPlayer || this.m.Condition > 30 && this.m.Condition / this.m.ConditionMax >= 0.25 || this.isItemType(this.Const.Items.ItemType.Named) || this.isItemType(this.Const.Items.ItemType.Legendary) || isLucky)
+		local isLucky = !this.Tactical.State.isScenarioMode() && !isPlayer && this.World.Assets.getOrigin().isDroppedAsLoot(this);
+		local isBlacksmithed = isPlayer && !this.Tactical.State.isScenarioMode() && this.World.Assets.m.IsBlacksmithed;
+
+		if (this.m.Condition > 10 && isPlayer || this.m.Condition > 30 && this.m.Condition / this.m.ConditionMax >= 0.25 || !isPlayer && this.isItemType(this.Const.Items.ItemType.Named) || this.isItemType(this.Const.Items.ItemType.Legendary) || isLucky || isBlacksmithed)
 		{
 			return true;
 		}
@@ -238,11 +240,11 @@ this.armor <- this.inherit("scripts/items/item", {
 	function updateVariant()
 	{
 		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
-		this.m.Sprite = "bust_body_" + variant;
-		this.m.SpriteDamaged = "bust_body_" + variant + "_damaged";
-		this.m.SpriteCorpse = "bust_body_" + variant + "_dead";
-		this.m.IconLarge = "armor/inventory_body_armor_" + variant + ".png";
-		this.m.Icon = "armor/icon_body_armor_" + variant + ".png";
+		this.m.Sprite = "bust_" + this.m.VariantString + "_" + variant;
+		this.m.SpriteDamaged = "bust_" + this.m.VariantString + "_" + variant + "_damaged";
+		this.m.SpriteCorpse = "bust_" + this.m.VariantString + "_" + variant + "_dead";
+		this.m.IconLarge = "armor/inventory_" + this.m.VariantString + "_armor_" + variant + ".png";
+		this.m.Icon = "armor/icon_" + this.m.VariantString + "_armor_" + variant + ".png";
 	}
 
 	function updateAppearance()
@@ -348,6 +350,11 @@ this.armor <- this.inherit("scripts/items/item", {
 		if (this.m.Condition == 0 && !this.m.IsIndestructible)
 		{
 			this.Tactical.EventLog.logEx(this.Const.UI.getColorizedEntityName(this.getContainer().getActor()) + "\'s " + this.getName() + " is hit for [b]" + this.Math.floor(_damage) + "[/b] damage and has been destroyed!");
+
+			if (_attacker != null && _attacker.isPlayerControlled() && !this.getContainer().getActor().isAlliedWithPlayer())
+			{
+				this.Tactical.Entities.addArmorParts(this.getArmorMax());
+			}
 		}
 		else
 		{
@@ -373,12 +380,12 @@ this.armor <- this.inherit("scripts/items/item", {
 
 		if (this.getContainer().getActor().getSkills().hasSkill("perk.brawny"))
 		{
-			staminaMult = 0.75;
+			staminaMult = 0.7;
 		}
 
 		_properties.Armor[this.Const.BodyPart.Body] += this.m.Condition;
 		_properties.ArmorMax[this.Const.BodyPart.Body] += this.m.ConditionMax;
-		_properties.Stamina += this.Math.ceil(this.m.StaminaModifier * staminaMult);
+		_properties.Stamina += this.Math.floor(this.m.StaminaModifier * staminaMult);
 
 		if (this.m.Upgrade != null)
 		{

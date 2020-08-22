@@ -14,19 +14,23 @@ this.perk_legend_spawn_zombie_med <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = false;
 	}
 
+	function onUnlocked()
+	{
+		local stash = this.World.Assets.getStash()
+		stash.add(this.new("scripts/items/spawns/zombie_item"));
+		stash.add(this.new("scripts/items/spawns/zombie_item"));
+		stash.add(this.new("scripts/items/spawns/zombie_item"));
+	}
+
 	function onAdded()
 	{
 		if (!this.m.Container.hasSkill("actives.legend_spawn_zombie_med_skill"))
 		{
 			this.m.Container.add(this.new("scripts/skills/actives/legend_spawn_zombie_med_skill"));
 			this.m.Container.add(this.new("scripts/skills/actives/legend_spawn_zombie_med_xbow_skill"));
-			local stash = this.World.Assets.getStash()
-			stash.add(this.new("scripts/items/spawns/zombie_item"));
-			stash.add(this.new("scripts/items/spawns/zombie_item"));
-			stash.add(this.new("scripts/items/spawns/zombie_item"));
 		}
 	}
-	
+
 	function onRemoved()
 	{
 		this.m.Container.removeByID("actives.legend_spawn_zombie_med_skill");

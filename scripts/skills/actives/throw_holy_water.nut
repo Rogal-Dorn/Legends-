@@ -33,11 +33,11 @@ this.throw_holy_water <- this.inherit("scripts/skills/skill", {
 		this.m.IsShowingProjectile = true;
 		this.m.IsUsingHitchance = false;
 		this.m.IsDoingForwardMove = true;
-		this.m.ActionPointCost = 4;
+		this.m.ActionPointCost = 5;
 		this.m.FatigueCost = 20;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 3;
-		this.m.MaxLevelDifference = 1;
+		this.m.MaxLevelDifference = 3;
 		this.m.ProjectileType = this.Const.ProjectileType.Flask2;
 		this.m.ProjectileTimeScale = 1.5;
 		this.m.IsProjectileRotated = false;
@@ -69,7 +69,7 @@ this.throw_holy_water <- this.inherit("scripts/skills/skill", {
 
 	function applyEffect( _target )
 	{
-		if (!_target.getTags().has("undead"))
+		if (!_target.getFlags().has("undead"))
 		{
 			return;
 		}
@@ -84,6 +84,21 @@ this.throw_holy_water <- this.inherit("scripts/skills/skill", {
 		{
 			poison.resetTime();
 		}
+	}
+
+	function onVerifyTarget( _originTile, _targetTile )
+	{
+		if (!this.skill.onVerifyTarget(_originTile, _targetTile))
+		{
+			return false;
+		}
+
+		if (_originTile.Level + 1 < _targetTile.Level)
+		{
+			return false;
+		}
+
+		return true;
 	}
 
 	function onAfterUpdate( _properties )

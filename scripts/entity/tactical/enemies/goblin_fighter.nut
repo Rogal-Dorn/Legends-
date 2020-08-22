@@ -113,23 +113,23 @@ this.goblin_fighter <- this.inherit("scripts/entity/tactical/goblin", {
 
 		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Body) == null)
 		{
-			local armor = [
-				"armor/greenskins/goblin_light_armor",
-				"armor/greenskins/goblin_medium_armor",
-				"armor/greenskins/goblin_heavy_armor"
-			];
-			this.m.Items.equip(this.new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]));
+			local item = this.Const.World.Common.pickArmor([
+				[1, "greenskins/goblin_light_armor"],
+				[1, "greenskins/goblin_medium_armor"],
+				[1, "greenskins/goblin_heavy_armor"]
+			])
+			this.m.Items.equip(item);
 		}
 
 		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Head) == null)
 		{
-			if (this.Math.rand(1, 100) <= 75)
+			local item = this.Const.World.Common.pickHelmet([
+				[75, "greenskins/goblin_light_helmet"],
+				[25, "greenskins/goblin_heavy_helmet"]
+			])
+			if (item != null)
 			{
-				this.m.Items.equip(this.new("scripts/items/helmets/greenskins/goblin_light_helmet"));
-			}
-			else
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/greenskins/goblin_heavy_helmet"));
+				this.m.Items.equip(item);
 			}
 		}
 	}
@@ -149,6 +149,9 @@ this.goblin_fighter <- this.inherit("scripts/entity/tactical/goblin", {
 		];
 		this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_dodge"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_relentless"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_nine_lives"));
 		return true;
 	}
 

@@ -78,8 +78,10 @@ this.barbarian_madman <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_recover"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_brawny"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_battering_ram"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_pathfinder"));
+
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
-			{
+		{
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_overwhelm"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_relentless"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_alert"));
@@ -89,7 +91,8 @@ this.barbarian_madman <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_last_stand"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_mastery_fist"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
-			}
+		}
+
 	}
 
 	function onDeath( _killer, _skill, _tile, _fatalityType )
@@ -174,21 +177,20 @@ this.barbarian_madman <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 		}
 
+		
+		
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Body))
 		{
-			local armor = [
-				"armor/barbarians/barbarian_ritual_armor"
-			];
-			local a = this.new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]);
-			this.m.Items.equip(a);
+			this.m.Items.equip(this.Const.World.Common.pickArmor([
+				[1, "barbarians/barbarian_ritual_armor"]
+			]));
 		}
 
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Head))
 		{
-			local helmet = [
-				"helmets/barbarians/barbarian_ritual_helmet"
-			];
-			this.m.Items.equip(this.new("scripts/items/" + helmet[this.Math.rand(0, helmet.len() - 1)]));
+			this.m.Items.equip(this.Const.World.Common.pickHelmet([
+				[1, "barbarians/barbarian_ritual_helmet"]
+			]));
 		}
 	}
 

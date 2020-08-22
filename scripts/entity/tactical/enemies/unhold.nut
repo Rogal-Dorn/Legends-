@@ -203,6 +203,12 @@ this.unhold <- this.inherit("scripts/entity/tactical/actor", {
 				local loot = this.new("scripts/items/supplies/strange_meat_item");
 				loot.drop(_tile);
 			}
+
+			if (this.Math.rand(1, 100) <= 20)
+			{
+				local loot = this.new("scripts/items/loot/deformed_valuables_item");
+				loot.drop(_tile);
+			}
 		}
 
 		this.actor.onDeath(_killer, _skill, _tile, _fatalityType);
@@ -214,6 +220,7 @@ this.unhold <- this.inherit("scripts/entity/tactical/actor", {
 		local b = this.m.BaseProperties;
 		b.setValues(this.Const.Tactical.Actor.Unhold);
 		b.IsImmuneToDisarm = true;
+		b.IsImmuneToRotation = true;
 
 		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 90)
 		{
@@ -271,6 +278,17 @@ this.unhold <- this.inherit("scripts/entity/tactical/actor", {
 			}
 
 
+	}
+
+	function onFactionChanged()
+	{
+		this.actor.onFactionChanged();
+		local flip = this.isAlliedWithPlayer();
+		this.getSprite("body").setHorizontalFlipping(flip);
+		this.getSprite("injury").setHorizontalFlipping(flip);
+		this.getSprite("armor").setHorizontalFlipping(flip);
+		this.getSprite("head").setHorizontalFlipping(flip);
+		this.getSprite("helmet").setHorizontalFlipping(flip);
 	}
 
 	function assignRandomEquipment()

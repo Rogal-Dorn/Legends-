@@ -98,7 +98,7 @@ this.ai_boost_morale <- this.inherit("scripts/ai/tactical/behavior", {
 			}
 
 			local score = 5.0;
-			local isEngaged = allyTile.hasZoneOfControlOtherThan(ally.getAlliedFactions());
+			local isEngaged = allyTile.hasZoneOfOccupationOtherThan(ally.getAlliedFactions());
 
 			if (ally.getMoraleState() == this.Const.MoraleState.Fleeing)
 			{

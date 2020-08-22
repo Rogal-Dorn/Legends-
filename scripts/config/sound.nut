@@ -33,6 +33,7 @@ gt.Const.Sound <- {
 		ActorNoDamage = 0.35,
 		TacticalMovement = 0.75,
 		Tactical = 1.0,
+		Arena = 0.6,
 		Inventory = 0.7,
 		RacialEffect = 0.75,
 		Ambience = 0.5,
@@ -99,6 +100,61 @@ gt.Const.Sound <- {
 		"sounds/new_round_01.wav",
 		"sounds/new_round_02.wav",
 		"sounds/new_round_03.wav"
+	],
+	ArenaNewRound = [
+		"sounds/combat/dlc6/arena/crowd_chant_01.wav",
+		"sounds/combat/dlc6/arena/crowd_chant_02.wav",
+		"sounds/combat/dlc6/arena/crowd_chant_03.wav",
+		"sounds/combat/dlc6/arena/crowd_chant_04.wav"
+	],
+	ArenaStart = [
+		"sounds/combat/dlc6/arena/announcer_start_match_01.wav",
+		"sounds/combat/dlc6/arena/announcer_start_match_02.wav"
+	],
+	ArenaEnd = [
+		"sounds/combat/dlc6/arena/announcer_end_match_01.wav",
+		"sounds/combat/dlc6/arena/announcer_end_match_02.wav"
+	],
+	ArenaOutro = [
+		"sounds/combat/dlc6/arena/crowd_end_match_01.wav",
+		"sounds/combat/dlc6/arena/crowd_end_match_02.wav",
+		"sounds/combat/dlc6/arena/crowd_end_match_03.wav"
+	],
+	ArenaHit = [
+		"sounds/combat/dlc6/arena/crowd_cheering_a_01.wav",
+		"sounds/combat/dlc6/arena/crowd_cheering_a_02.wav",
+		"sounds/combat/dlc6/arena/crowd_cheering_a_03.wav"
+	],
+	ArenaBigHit = [
+		"sounds/combat/dlc6/arena/crowd_cheering_b_01.wav",
+		"sounds/combat/dlc6/arena/crowd_cheering_b_02.wav",
+		"sounds/combat/dlc6/arena/crowd_cheering_b_03.wav"
+	],
+	ArenaKill = [
+		"sounds/combat/dlc6/arena/crowd_cheering_c_01.wav",
+		"sounds/combat/dlc6/arena/crowd_cheering_c_02.wav",
+		"sounds/combat/dlc6/arena/crowd_cheering_c_03.wav"
+	],
+	ArenaMiss = [
+		"sounds/combat/dlc6/arena/crowd_disappointed_a_01.wav",
+		"sounds/combat/dlc6/arena/crowd_disappointed_a_02.wav",
+		"sounds/combat/dlc6/arena/crowd_disappointed_a_03.wav"
+	],
+	ArenaBigMiss = [
+		"sounds/combat/dlc6/arena/crowd_disappointed_b_01.wav",
+		"sounds/combat/dlc6/arena/crowd_disappointed_b_02.wav",
+		"sounds/combat/dlc6/arena/crowd_disappointed_b_03.wav"
+	],
+	ArenaShock = [
+		"sounds/combat/dlc6/arena/crowd_shock_01.wav",
+		"sounds/combat/dlc6/arena/crowd_shock_02.wav",
+		"sounds/combat/dlc6/arena/crowd_shock_03.wav",
+		"sounds/combat/dlc6/arena/crowd_shock_04.wav"
+	],
+	ArenaFlee = [
+		"sounds/combat/dlc6/arena/crowd_disappointed_c_01.wav",
+		"sounds/combat/dlc6/arena/crowd_disappointed_c_02.wav",
+		"sounds/combat/dlc6/arena/crowd_disappointed_c_03.wav"
 	],
 	MoneyTransaction = [
 		"sounds/coins_01.wav",
@@ -170,6 +226,9 @@ gt.Const.Music <- {
 	IntroTracks = [
 		"music/worldmap_02.ogg"
 	],
+	SouthernIntroTracks = [
+		"music/worldmap_02.ogg"
+	],
 	WorldmapTracks = [
 		"music/worldmap_03.ogg",
 		"music/worldmap_04.ogg",
@@ -188,6 +247,20 @@ gt.Const.Music <- {
 		"music/worldmap_08.ogg",
 		"music/worldmap_09.ogg"
 	],
+	WorldmapTracksSouth = [
+		"music/worldmap_02.ogg",
+		"music/worldmap_03.ogg",
+		"music/worldmap_04.ogg",
+		"music/worldmap_05.ogg",
+		"music/worldmap_06.ogg"
+	],
+	WorldmapTracksGreaterEvilSouth = [
+		"music/worldmap_02.ogg",
+		"music/worldmap_03.ogg",
+		"music/worldmap_04.ogg",
+		"music/worldmap_05.ogg",
+		"music/worldmap_06.ogg"
+	],
 	VillageTracks = [
 		"music/village_01.ogg",
 		"music/retirement_01.ogg"
@@ -199,11 +272,17 @@ gt.Const.Music <- {
 	StrongholdTracks = [
 		"music/stronghold_01.ogg"
 	],
+	CityStateTracks = [
+		"music/city_03.ogg"
+	],
 	VictoryTracks = [
 		"music/victory_01.ogg"
 	],
 	DefeatTracks = [
 		"music/defeat_01.ogg"
+	],
+	CampfireTracks = [
+		"music/retirement_01.ogg"
 	],
 	BanditTracks = [
 		"music/bandits_01.ogg",
@@ -225,6 +304,13 @@ gt.Const.Music <- {
 		"music/beasts_01.ogg",
 		"music/beasts_02.ogg"
 	],
+	BeastsTracksSouth = [
+		"music/beasts_01.ogg",
+		"music/beasts_02.ogg"
+	],
+	ArenaTracks = [
+		"music/beasts_02.ogg"
+	],
 	BarbarianTracks = [
 		"music/barbarians_01.ogg",
 		"music/barbarians_02.ogg"
@@ -237,6 +323,14 @@ gt.Const.Music <- {
 	GoblinsTracks = [
 		"music/goblins_01.ogg",
 		"music/goblins_02.ogg"
+	],
+	OrientalCityStateTracks = [
+		"music/gilded_01.ogg",
+		"music/gilded_02.ogg"
+	],
+	OrientalBanditTracks = [
+		"music/gilded_01.ogg",
+		"music/beasts_04.ogg"
 	],
 	BattleTracks = [
 		[],
@@ -279,6 +373,14 @@ gt.Const.Music <- {
 		[
 			"music/barbarians_01.ogg",
 			"music/barbarians_02.ogg"
+		],
+		[
+			"music/barbarians_01.ogg",
+			"music/barbarians_02.ogg"
+		],
+		[
+			"music/barbarians_01.ogg",
+			"music/barbarians_02.ogg"
 		]
 	]
 };
@@ -308,6 +410,142 @@ gt.Const.SoundAmbience <- {
 			Pitch = 1.0,
 			Pan = false,
 			RandomVolume = false
+		}
+	],
+	ArenaBack = [
+		{
+			File = "combat/dlc6/arena/arena_ambience_01.wav",
+			Volume = 4.0,
+			Pitch = 1.0,
+			Pan = false,
+			RandomVolume = false
+		}
+	],
+	ArenaFront = [
+		{
+			File = "combat/dlc6/arena/crowd_applause_01.wav",
+			Volume = 1.5,
+			Pitch = 1.0,
+			Pan = false
+		},
+		{
+			File = "combat/dlc6/arena/crowd_applause_02.wav",
+			Volume = 1.5,
+			Pitch = 1.0,
+			Pan = false
+		},
+		{
+			File = "combat/dlc6/arena/crowd_applause_03.wav",
+			Volume = 1.5,
+			Pitch = 1.0,
+			Pan = false
+		},
+		{
+			File = "combat/dlc6/arena/crowd_applause_04.wav",
+			Volume = 1.5,
+			Pitch = 1.0,
+			Pan = false
+		},
+		{
+			File = "combat/dlc6/arena/crowd_applause_05.wav",
+			Volume = 1.5,
+			Pitch = 1.0,
+			Pan = false
+		},
+		{
+			File = "combat/dlc6/arena/crowd_hey_01.wav",
+			Volume = 0.5,
+			Pitch = 1.0
+		},
+		{
+			File = "combat/dlc6/arena/crowd_hey_02.wav",
+			Volume = 0.5,
+			Pitch = 1.0
+		},
+		{
+			File = "combat/dlc6/arena/crowd_laola_01.wav",
+			Volume = 1.25,
+			Pitch = 1.0
+		},
+		{
+			File = "combat/dlc6/arena/crowd_laola_02.wav",
+			Volume = 1.25,
+			Pitch = 1.0
+		},
+		{
+			File = "combat/dlc6/arena/crowd_laola_03.wav",
+			Volume = 1.25,
+			Pitch = 1.0
+		},
+		{
+			File = "combat/dlc6/arena/crowd_laola_04.wav",
+			Volume = 1.25,
+			Pitch = 1.0
+		},
+		{
+			File = "combat/dlc6/arena/crowd_ambience_01.wav",
+			Volume = 0.75,
+			Pitch = 1.0
+		},
+		{
+			File = "combat/dlc6/arena/crowd_ambience_02.wav",
+			Volume = 0.75,
+			Pitch = 1.0
+		},
+		{
+			File = "combat/dlc6/arena/crowd_ambience_03.wav",
+			Volume = 0.75,
+			Pitch = 1.0
+		},
+		{
+			File = "combat/dlc6/arena/crowd_ambience_04.wav",
+			Volume = 0.75,
+			Pitch = 1.0
+		},
+		{
+			File = "combat/dlc6/arena/crowd_ambience_05.wav",
+			Volume = 0.75,
+			Pitch = 1.0
+		},
+		{
+			File = "combat/dlc6/arena/crowd_ambience_06.wav",
+			Volume = 0.75,
+			Pitch = 1.0
+		},
+		{
+			File = "combat/dlc6/arena/crowd_ambience_07.wav",
+			Volume = 0.75,
+			Pitch = 1.0
+		},
+		{
+			File = "combat/dlc6/arena/crowd_ambience_08.wav",
+			Volume = 0.75,
+			Pitch = 1.0
+		},
+		{
+			File = "combat/dlc6/arena/crowd_ambience_09.wav",
+			Volume = 0.75,
+			Pitch = 1.0
+		},
+		{
+			File = "combat/dlc6/arena/crowd_ambience_10.wav",
+			Volume = 1.0,
+			Pitch = 1.0
+		},
+		{
+			File = "combat/dlc6/arena/crowd_ambience_11.wav",
+			Volume = 1.0,
+			Pitch = 1.0
+		},
+		{
+			File = "combat/dlc6/arena/crowd_ambience_12.wav",
+			Volume = 1.0,
+			Pitch = 1.0
+		},
+		{
+			File = "combat/dlc6/arena/crowd_ambience_13.wav",
+			Volume = 1.0,
+			Pitch = 1.0
 		}
 	],
 	GeneralSettlement = [
@@ -1530,6 +1768,31 @@ gt.Const.SoundAmbience <- {
 				File = "ambience/terrain/swamp_bird_01.wav",
 				Volume = 1.0,
 				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/raven_01.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/raven_02.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/raven_03.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/raven_04.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/raven_05.wav",
+				Volume = 1.0,
+				Pitch = 1.0
 			}
 		],
 		[
@@ -2653,6 +2916,228 @@ gt.Const.SoundAmbience <- {
 				Pitch = 1.0,
 				Pan = false
 			}
+		],
+		[
+			{
+				File = "ambience/terrain/dlc6/desert_grasshopper_01.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/desert_grasshopper_02.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/desert_grasshopper_03.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/desert_hawk_01.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/desert_hawk_02.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/desert_hawk_03.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/desert_hawk_04.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/desert_hawk_05.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/desert_hawk_06.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/desert_insects_01.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/desert_insects_02.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/desert_rattlesnake_01.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/desert_rattlesnake_02.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/desert_rattlesnake_03.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/desert_trickling_sand_01.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/desert_trickling_sand_02.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/desert_trickling_sand_03.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/sandstorm_long_soft_01.wav",
+				Volume = 1.0,
+				Pitch = 1.0,
+				Pan = false
+			},
+			{
+				File = "ambience/terrain/dlc6/sandstorm_long_soft_02.wav",
+				Volume = 1.0,
+				Pitch = 1.0,
+				Pan = false
+			},
+			{
+				File = "ambience/terrain/dlc6/sandstorm_long_soft_03.wav",
+				Volume = 1.0,
+				Pitch = 1.0,
+				Pan = false
+			}
+		],
+		[
+			{
+				File = "ambience/terrain/dlc6/desert_grasshopper_01.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/desert_grasshopper_02.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/desert_grasshopper_03.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/oasis_background_01.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/oasis_background_02.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/oasis_background_03.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/oasis_birds_01.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/oasis_birds_02.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/oasis_birds_03.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/oasis_birds_04.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/oasis_birds_05.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/oasis_birds_06.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/oasis_birds_07.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/oasis_birds_08.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/oasis_ibis_01.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/oasis_ibis_02.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/oasis_ibis_03.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/oasis_toad_01.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/oasis_toad_02.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/oasis_toad_03.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/oasis_water_birds_background_01.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/oasis_water_birds_background_02.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/oasis_water_birds_background_03.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			}
 		]
 	],
 	TerrainAtNight = [
@@ -3670,6 +4155,193 @@ gt.Const.SoundAmbience <- {
 				Volume = 1.0,
 				Pitch = 1.0,
 				Pan = false
+			}
+		],
+		[
+			{
+				File = "ambience/terrain/dlc6/desert_grasshopper_01.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/desert_grasshopper_02.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/desert_grasshopper_03.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/desert_insects_01.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/desert_insects_02.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/desert_rattlesnake_01.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/desert_rattlesnake_02.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/desert_rattlesnake_03.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/desert_trickling_sand_01.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/desert_trickling_sand_02.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/desert_trickling_sand_03.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/sandstorm_long_soft_01.wav",
+				Volume = 1.0,
+				Pitch = 1.0,
+				Pan = false
+			},
+			{
+				File = "ambience/terrain/dlc6/sandstorm_long_soft_02.wav",
+				Volume = 1.0,
+				Pitch = 1.0,
+				Pan = false
+			},
+			{
+				File = "ambience/terrain/dlc6/sandstorm_long_soft_03.wav",
+				Volume = 1.0,
+				Pitch = 1.0,
+				Pan = false
+			},
+			{
+				File = "ambience/terrain/dlc6/desert_night_insect_01.wav",
+				Volume = 0.8,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/desert_night_insect_02.wav",
+				Volume = 0.8,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/desert_night_insect_03.wav",
+				Volume = 0.8,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/desert_night_insect_04.wav",
+				Volume = 0.8,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/desert_night_owl.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			}
+		],
+		[
+			{
+				File = "ambience/terrain/dlc6/desert_grasshopper_01.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/desert_grasshopper_02.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/desert_grasshopper_03.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/oasis_toad_01.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/oasis_toad_02.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/oasis_toad_03.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/oasis_night_bird_01.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/oasis_night_bird_02.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/dlc6/oasis_night_bird_03.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/nighttime_cricket_00.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/nighttime_cricket_01.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/nighttime_cricket_00.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/nighttime_cricket_01.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/nighttime_cricket_00.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/nighttime_cricket_01.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/nighttime_cricket_00.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/terrain/nighttime_cricket_01.wav",
+				Volume = 1.0,
+				Pitch = 1.0
 			}
 		]
 	]

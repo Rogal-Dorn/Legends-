@@ -58,7 +58,7 @@ this.gold_mine_location <- this.inherit("scripts/entity/world/attached_location"
 		return r;
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 		if (!this.isActive())
 		{

@@ -30,35 +30,9 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 		bro.m.PerkPointsSpent += 3;
 		bro.setPlaceInFormation(4);
 		bro.setVeteranPerks(2);
-		bro.getTags().set("IsPlayerCharacter", true);
+		bro.getFlags().set("IsPlayerCharacter", true);
 		bro.getSprite("miniboss").setBrush("bust_miniboss_lone_wolf");
 		bro.m.HireTime = this.Time.getVirtualTimeF();
-		local val = this.World.State.addNewID(bro);
-		bro.m.CompanyID = val;
-
-
-		local val = this.World.State.addNewID(bro);
-		bro.m.CompanyID = val;
-
-
-		if (this.World.LegendsMod.Configs().RelationshipsEnabled())
-{
-    local avgAlignment = 0;
-    foreach (bro in this.World.getPlayerRoster().getAll())
-    {
-        if (bro.getAlignment() <= this.Const.LegendMod.Alignment.NeutralMin)
-        {
-            avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMin);
-        }
-        else if (bro.getAlignment() >= this.Const.LegendMod.Alignment.NeutralMax)
-        {
-            avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMax);
-        }
-    }
-    avgAlignment *= (10 / this.World.getPlayerRoster().getSize());
-    this.World.Assets.addMoralReputation(avgAlignment);
-}
-
 		this.World.Assets.addMoralReputation(20);
 		this.World.Assets.m.BusinessReputation = 100;
 		this.World.Assets.m.Ammo = 0;
@@ -126,13 +100,6 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 			], this.Const.Music.CrossFadeTime);
 			this.World.Events.fire("event.legend_crusader_scenario_intro");
 		}, null);
-foreach (b in this.World.getPlayerRoster().getAll())
-		{
-			foreach (add in this.World.getPlayerRoster().getAll())
-			{
-				b.changeActiveRelationship(add, this.Math.rand(0, 10));
-			}
-		}
 
 	}
 
@@ -140,7 +107,7 @@ foreach (b in this.World.getPlayerRoster().getAll())
 	{
 		this.starting_scenario.onInit();
 		this.World.Assets.m.BrothersMax = 2;
-		this.World.Tags.set("IsLegendsCrusader", true);
+		this.World.Flags.set("IsLegendsCrusader", true);
 	}
 
 	function onCombatFinished()
@@ -149,7 +116,7 @@ foreach (b in this.World.getPlayerRoster().getAll())
 
 		foreach( bro in roster )
 		{
-			if (bro.getTags().get("IsPlayerCharacter"))
+			if (bro.getFlags().get("IsPlayerCharacter"))
 			{
 				return true;
 			}
@@ -213,7 +180,7 @@ foreach (b in this.World.getPlayerRoster().getAll())
 		_tree[0].push(this.Const.Perks.PerkDefs.FortifiedMind);
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 		if (_list.len() < 5)
 		{
@@ -229,7 +196,7 @@ foreach (b in this.World.getPlayerRoster().getAll())
 			_list.push("monk_background");
 			}
 			r = this.Math.rand(0, 6);
-			if (r == 0)
+			if (r == 0 && _gender)
 			{
 			_list.push("legend_nun_background");
 			}

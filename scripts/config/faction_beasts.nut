@@ -66,6 +66,44 @@ gt.Const.Tactical.Actor.FrenziedDirewolf <- {
 		30
 	]
 };
+gt.Const.Tactical.Actor.Hyena <- {
+	XP = 200,
+	ActionPoints = 14,
+	Hitpoints = 120,
+	Bravery = 50,
+	Stamina = 180,
+	MeleeSkill = 60,
+	RangedSkill = 0,
+	MeleeDefense = 10,
+	RangedDefense = 10,
+	Initiative = 90,
+	FatigueEffectMult = 1.0,
+	MoraleEffectMult = 1.0,
+	FatigueRecoveryRate = 20,
+	Armor = [
+		20,
+		20
+	]
+};
+gt.Const.Tactical.Actor.FrenziedHyena <- {
+	XP = 250,
+	ActionPoints = 14,
+	Hitpoints = 140,
+	Bravery = 70,
+	Stamina = 180,
+	MeleeSkill = 65,
+	RangedSkill = 0,
+	MeleeDefense = 10,
+	RangedDefense = 10,
+	Initiative = 130,
+	FatigueEffectMult = 1.0,
+	MoraleEffectMult = 1.0,
+	FatigueRecoveryRate = 20,
+	Armor = [
+		20,
+		20
+	]
+};
 gt.Const.Tactical.Actor.Spider <- {
 	XP = 100,
 	ActionPoints = 11,
@@ -105,7 +143,7 @@ gt.Const.Tactical.Actor.SpiderEggs <- {
 	]
 };
 gt.Const.Tactical.Actor.Lindwurm <- {
-	XP = 750,
+	XP = 800,
 	ActionPoints = 7,
 	Hitpoints = 1100,
 	Bravery = 180,
@@ -182,14 +220,14 @@ gt.Const.Tactical.Actor.UnholdBog <- {
 };
 gt.Const.Tactical.Actor.Alp <- {
 	XP = 300,
-	ActionPoints = 9,
-	Hitpoints = 90,
+	ActionPoints = 10,
+	Hitpoints = 100,
 	Bravery = 100,
 	Stamina = 100,
 	MeleeSkill = 0,
 	RangedSkill = 0,
-	MeleeDefense = 5,
-	RangedDefense = 5,
+	MeleeDefense = 10,
+	RangedDefense = 10,
 	Initiative = 60,
 	FatigueEffectMult = 1.0,
 	MoraleEffectMult = 1.0,
@@ -198,7 +236,9 @@ gt.Const.Tactical.Actor.Alp <- {
 	Armor = [
 		0,
 		0
-	]
+	],
+	TeleportTargets = [],
+	TeleportFrame = 0
 };
 gt.Const.Tactical.Actor.AlpShadow <- {
 	XP = 0,
@@ -241,7 +281,7 @@ gt.Const.Tactical.Actor.Hexe <- {
 	]
 };
 gt.Const.Tactical.Actor.Schrat <- {
-	XP = 500,
+	XP = 600,
 	ActionPoints = 7,
 	Hitpoints = 600,
 	Bravery = 200,
@@ -286,8 +326,8 @@ gt.Const.Tactical.Actor.TricksterGod <- {
 	Stamina = 400,
 	MeleeSkill = 90,
 	RangedSkill = 0,
-	MeleeDefense = 10,
-	RangedDefense = 10,
+	MeleeDefense = 15,
+	RangedDefense = 15,
 	Initiative = 95,
 	FatigueEffectMult = 1.0,
 	MoraleEffectMult = 1.0,
@@ -301,7 +341,7 @@ gt.Const.Tactical.Actor.Kraken <- {
 	XP = 2500,
 	ActionPoints = 9,
 	Hitpoints = 4400,
-	Bravery = 999,
+	Bravery = 200,
 	Stamina = 999,
 	MeleeSkill = 999,
 	RangedSkill = 0,
@@ -320,7 +360,7 @@ gt.Const.Tactical.Actor.KrakenTentacle <- {
 	XP = 200,
 	ActionPoints = 9,
 	Hitpoints = 300,
-	Bravery = 999,
+	Bravery = 60,
 	Stamina = 999,
 	MeleeSkill = 80,
 	RangedSkill = 0,
@@ -333,6 +373,44 @@ gt.Const.Tactical.Actor.KrakenTentacle <- {
 	Armor = [
 		0,
 		0
+	]
+};
+gt.Const.Tactical.Actor.Serpent <- {
+	XP = 175,
+	ActionPoints = 9,
+	Hitpoints = 130,
+	Bravery = 100,
+	Stamina = 110,
+	MeleeSkill = 65,
+	RangedSkill = 0,
+	MeleeDefense = 10,
+	RangedDefense = 25,
+	Initiative = 50,
+	FatigueEffectMult = 1.0,
+	MoraleEffectMult = 1.0,
+	FatigueRecoveryRate = 15,
+	Armor = [
+		40,
+		40
+	]
+};
+gt.Const.Tactical.Actor.SandGolem <- {
+	XP = 150,
+	ActionPoints = 8,
+	Hitpoints = 110,
+	Bravery = 999,
+	Stamina = 400,
+	MeleeSkill = 65,
+	RangedSkill = 60,
+	MeleeDefense = -5,
+	RangedDefense = -5,
+	Initiative = 60,
+	FatigueEffectMult = 1.0,
+	MoraleEffectMult = 1.0,
+	FatigueRecoveryRate = 25,
+	Armor = [
+		110,
+		110
 	]
 };
 gt.Const.Tactical.Actor.LegendSkinGhoul <- {
@@ -487,6 +565,7 @@ gt.Const.Tactical.Actor.LegendGreenwoodSchrat <- {
 		0
 	]
 };
+
 gt.Const.Tactical.Actor.LegendGreenwoodSchratSmall <- {
 	XP = 100,
 	ActionPoints = 7,
@@ -558,9 +637,11 @@ gt.Const.Tactical.Actor.LegendHorse <- {
 	Initiative = 100,
 	FatigueEffectMult = 1.0,
 	MoraleEffectMult = 1.0,
+	FatigueRecoveryRate = 20,
 	Armor = [
 		0,
 		0
-	],
-	FatigueRecoveryRate = 20
+	]
 };
+
+

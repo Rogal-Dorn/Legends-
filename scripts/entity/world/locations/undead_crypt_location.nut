@@ -10,6 +10,11 @@ this.undead_crypt_location <- this.inherit("scripts/entity/world/location", {
 		this.location.create();
 		this.m.TypeID = "location.undead_crypt";
 		this.m.LocationType = this.Const.World.LocationType.Lair;
+		this.m.CombatLocation.Template[0] = "tactical.graveyard";
+		this.m.CombatLocation.Fortification = this.Const.Tactical.FortificationType.Walls;
+		this.m.CombatLocation.CutDownTrees = false;
+		this.m.CombatLocation.ForceLineBattle = true;
+		this.m.CombatLocation.AdditionalRadius = 5;
 		this.m.IsShowingDefenders = false;
 		local r = this.Math.rand(1, 2);
 
@@ -80,7 +85,16 @@ this.undead_crypt_location <- this.inherit("scripts/entity/world/location", {
 	{
 		this.location.onInit();
 		local body = this.addSprite("body");
-		body.setBrush("world_crypt_01");
+		local isSouthern = this.getTile().Type == this.Const.World.TerrainType.Desert || this.getTile().Type == this.Const.World.TerrainType.Steppe || this.getTile().Type == this.Const.World.TerrainType.Oasis || this.getTile().TacticalType == this.Const.World.TerrainTacticalType.DesertHills;
+
+		if (isSouthern)
+		{
+			body.setBrush("world_crypt_02");
+		}
+		else
+		{
+			body.setBrush("world_crypt_01");
+		}
 	}
 
 });

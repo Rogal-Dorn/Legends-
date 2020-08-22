@@ -208,11 +208,6 @@ this.pimp_vs_harlot_event <- this.inherit("scripts/events/event", {
 						this.World.getPlayerRoster().add(_event.m.Dude);
 						this.World.getTemporaryRoster().clear();
 						_event.m.Dude.onHired();
-						//set relations
-						local modifier1 = this.Math.rand(5, 10);
-						_event.m.Dude.changeActiveRelationship( _event.m.Monk, modifier1 );
-						local modifier2 = this.Math.rand(5, 10);
-						_event.m.Monk.changeActiveRelationship( _event.m.Dude, modifier2 );
 						_event.m.Dude = null;
 						return 0;
 					}
@@ -247,9 +242,9 @@ this.pimp_vs_harlot_event <- this.inherit("scripts/events/event", {
 				_event.m.Dude = roster.create("scripts/entity/tactical/player");
 					if (this.World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
 						{
-						_event.m.Dude.getTags().add("PlayerSkeleton");
-						_event.m.Dude.getTags().add("undead");
-						_event.m.Dude.getTags().add("skeleton");
+						_event.m.Dude.getFlags().add("PlayerSkeleton");
+						_event.m.Dude.getFlags().add("undead");
+						_event.m.Dude.getFlags().add("skeleton");
 							_event.m.Dude.setStartValuesEx([
 								"pimp_background"
 							]);
@@ -287,7 +282,7 @@ this.pimp_vs_harlot_event <- this.inherit("scripts/events/event", {
 
 		foreach( t in towns )
 		{
-			if (t.getSize() >= 2 && !t.isMilitary() && t.getTile().getDistanceTo(playerTile) <= 3 && t.isAlliedWithPlayer())
+			if (t.getSize() >= 2 && !t.isMilitary() && !t.isSouthern() && t.getTile().getDistanceTo(playerTile) <= 3 && t.isAlliedWithPlayer())
 			{
 				nearTown = true;
 				town = t;

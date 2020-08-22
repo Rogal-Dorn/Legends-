@@ -106,8 +106,6 @@ this.legends_snow_fort <- this.inherit("scripts/entity/world/settlements/legends
 			"Jarlsborg"
 		]];
 		this.m.DraftLists = [[
-			"legend_shieldmaiden_background",
-			"female_beggar_background",
 			"houndmaster_background",
 			"brawler_background",
 			"cultist_background",
@@ -123,13 +121,11 @@ this.legends_snow_fort <- this.inherit("scripts/entity/world/settlements/legends
 			"retired_soldier_background",
 			"retired_soldier_background"
 		],[
-			"legend_shieldmaiden_background",
 			"apprentice_background",
 			"houndmaster_background",
 			"brawler_background",
 			"brawler_background",
 			"cultist_background",
-			"female_daytaler_background",
 			"gravedigger_background",
 			"mason_background",
 			"messenger_background",
@@ -140,19 +136,15 @@ this.legends_snow_fort <- this.inherit("scripts/entity/world/settlements/legends
 			"refugee_background",
 			"vagabond_background",
 			"vagabond_background",
-			"wildwoman_background",
 			"wildman_background",
 			"wildman_background",
 			"witchhunter_background",
-			"female_adventurous_noble_background",
 			"deserter_background",
-			"female_disowned_noble_background",
 			"raider_background",
 			"retired_soldier_background"
 		],[
 			"apprentice_background",
 			"brawler_background",
-			"female_daytaler_background",
 			"gravedigger_background",
 			"graverobber_background",
 			"mason_background",
@@ -162,19 +154,14 @@ this.legends_snow_fort <- this.inherit("scripts/entity/world/settlements/legends
 			"militia_background",
 			"ratcatcher_background",
 			"refugee_background",
-			"female_servant_background",
 			"vagabond_background",
 			"vagabond_background",
 			"wildman_background",
-			"wildwoman_background",
 			"wildman_background",
 			"witchhunter_background",
 			"witchhunter_background",
-			"female_adventurous_noble_background",
 			"deserter_background",
 			"deserter_background",
-			"female_disowned_noble_background",
-			"female_disowned_noble_background",
 			"hedge_knight_background",
 			"hedge_knight_background",
 			"raider_background",
@@ -185,8 +172,24 @@ this.legends_snow_fort <- this.inherit("scripts/entity/world/settlements/legends
 			"sellsword_background",
 			"squire_background",
 			"cripple_background",
+		]];
+		this.m.FemaleDraftLists = [[
+			"female_beggar_background",
+		],[
+			"female_daytaler_background",
+			"wildwoman_background",
+			"female_adventurous_noble_background",
+			"female_disowned_noble_background",
+		],[
+			"female_daytaler_background",
+			"female_servant_background",
+			"wildwoman_background",
+			"female_adventurous_noble_background",
+			"female_disowned_noble_background",
+			"female_disowned_noble_background",
 			"legend_shieldmaiden_background"
 		]];
+
 		this.m.StablesLists = [
 			"legend_donkey",
 			"legend_horse_rouncey"

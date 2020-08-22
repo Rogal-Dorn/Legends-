@@ -17,7 +17,7 @@ this.defeat_mercenaries_ambition <- this.inherit("scripts/ambitions/ambition", {
 
 	function onPartyDestroyed( _party )
 	{
-		if (_party.getTags().has("IsMercenaries"))
+		if (_party.getFlags().has("IsMercenaries"))
 		{
 			++this.m.Defeated;
 			this.m.OtherMercs = _party.getName();

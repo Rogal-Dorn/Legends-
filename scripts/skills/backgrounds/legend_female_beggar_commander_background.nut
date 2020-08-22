@@ -50,7 +50,7 @@ this.legend_female_beggar_commander_background <- this.inherit("scripts/skills/b
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 
 		this.m.IsFemaleBackground = true;
 		this.m.GoodEnding = "Having enough of all the fighting, %name% the once-beggar retired from the %companyname%. You know the woman made a pretty crown in her time with the mercenary company, yet the other day you saw her out begging again. You asked if she\'d wasted all her money and she laughed. She said she\'d purchased land and was doing just fine. Then she held out his little tin and asked for a crown. You gave her two.";
@@ -181,13 +181,6 @@ this.legend_female_beggar_commander_background <- this.inherit("scripts/skills/b
 		return c;
 	}
 
-	function onAdded()
-	{
-		this.character_background.onAdded();
-		local actor = this.getContainer().getActor();
-		actor.setName(this.Const.Strings.CharacterNamesFemale[this.Math.rand(0, this.Const.Strings.CharacterNamesFemale.len() - 1)]);
-		
-	}
 
 	function onSetAppearance()
 	{
@@ -195,12 +188,6 @@ this.legend_female_beggar_commander_background <- this.inherit("scripts/skills/b
 		local dirt = actor.getSprite("dirt");
 		dirt.Visible = true;
 	}
-
-	/*function onAdded()
-	{
-		this.character_background.onAdded();
-		//this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
-	}*/
 
 	function onAddEquipment()
 	{
@@ -218,71 +205,16 @@ this.legend_female_beggar_commander_background <- this.inherit("scripts/skills/b
 			items.equip(this.new("scripts/items/weapons/wooden_stick"));
 		}
 
-		r = this.Math.rand(0, 1);
+		items.equip(this.Const.World.Common.pickArmor([
+			[1, "tattered_sackcloth"],
+			[1, "leather_wraps"]
+		]));
 
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/armor/tattered_sackcloth"));
-		}
+		local item = this.Const.World.Common.pickHelmet([
+			[3, ""],
+			[1, "hood", 38]
+		])
+		items.equip(item);
 
-		if (r == 1)
-		{
-			items.equip(this.new("scripts/items/armor/leather_wraps"));
-		}
-
-		r = this.Math.rand(0, 4);
-
-		if (r == 0)
-		{
-			local item = this.new("scripts/items/helmets/hood");
-			item.setVariant(38);
-			items.equip(item);
-		}
-	}
-
-	function onAddLegendEquipment()
-	{
-		this.World.Assets.addMoney(-208);
-		local items = this.getContainer().getActor().getItems();
-		local r;
-		r = this.Math.rand(0, 4);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/weapons/knife"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/weapons/wooden_stick"));
-		}
-
-		local cloths = [
-            [0, ""],
-			[0, "cloth/legend_gambeson"],
-			[0, "cloth/legend_gambeson_plain"],
-			[0, "cloth/legend_gambeson_wolf"],
-			[0, "cloth/legend_padded_surcoat"],
-			[0, "cloth/legend_robes"],
-			[0, "cloth/legend_apron_butcher"],
-			[0, "cloth/legend_robes_nun"],
-			[0, "cloth/legend_apron_smith"],
-			[0, "cloth/legend_robes_wizard"],
-			[1, "cloth/legend_sackcloth"],
-			[1, "cloth/legend_sackcloth_patched"],
-			[1, "cloth/legend_sackcloth_tattered"],
-			[0, "cloth/legend_tunic"],
-			[0, "cloth/legend_tunic_noble"]
-		];
-		local armor = this.Const.World.Common.pickLegendArmor(cloths)
-		items.equip(armor)
-
-		r = this.Math.rand(0, 4);
-
-		if (r == 0)
-		{
-			local item = this.new("scripts/items/helmets/hood");
-			item.setVariant(38);
-			items.equip(item);
-		}
 	}
 });

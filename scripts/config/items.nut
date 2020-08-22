@@ -41,13 +41,16 @@ gt.Const.Items.ItemType <- {
 	Supply = 262144,
 	Food = 524288,
 	TradeGood = 1048576,
-	MagicStaff = 2097152
+	MagicStaff = 2097152,
+	HorseArmor = 4194304,
+	HorseHelmet = 8388608
 };
 gt.Const.Items.ItemFilter <- {
 	Weapons = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.Accessory | this.Const.Items.ItemType.Tool | this.Const.Items.ItemType.Ammo | this.Const.Items.ItemType.MagicStaff,
 	Armor = this.Const.Items.ItemType.Armor | this.Const.Items.ItemType.Helmet | this.Const.Items.ItemType.Shield,
 	Misc = this.Const.Items.ItemType.Supply | this.Const.Items.ItemType.Food | this.Const.Items.ItemType.Misc | this.Const.Items.ItemType.TradeGood | this.Const.Items.ItemType.Loot | this.Const.Items.ItemType.Crafting,
 	Usable = this.Const.Items.ItemType.Usable,
+	HorseArmor = this.Const.Items.ItemType.HorseArmor,
 	All = 1 | 2 | 4 | 8 | 16 | 32 | 64 | 128 | 256 | 512 | 1024 | 2048 | 4096 | 8192 | 16384 | 32768 | 65536 | 131072 | 262144 | 524288 | 1048576 | 2097152
 };
 gt.Const.Items.AmmoType <- {
@@ -55,8 +58,9 @@ gt.Const.Items.AmmoType <- {
 	Arrows = 1,
 	Bolts = 2,
 	Spears = 4,
-	Pebbles = 8,
-	Rocks = 16
+	Powder = 8,
+	Pebbles = 16,
+	Rocks = 32
 };
 gt.Const.Items.Property <- {
 	None = 0,
@@ -111,6 +115,7 @@ gt.Const.Items.LegendNamedClothLayers <- [
 gt.Const.Items.LegendNamedPlateLayers <- [
 	"legend_armor/plate/legend_armor_plate_full_greaves_painted",
 	"legend_armor/plate/legend_armor_leather_jacket_named",
+	"legend_armor/plate/legend_armor_leather_jacket_named_02",
 	"legend_armor/plate/legend_armor_leather_lamellar_heavy_named",
 	"legend_armor/plate/legend_armor_leather_brigandine_named",
 	"legend_armor/plate/legend_armor_scale_coat_named"
@@ -154,6 +159,7 @@ gt.Const.Items.NamedUndeadShields <- [
 gt.Const.Items.NamedOrcShields <- [
 	"shields/named/named_orc_heavy_shield"
 ];
+gt.Const.Items.NamedSouthernShields <- [];
 gt.Const.Items.NamedOrcWeapons <- [
 	"weapons/named/named_orc_axe",
 	"weapons/named/named_orc_axe_2h",
@@ -213,6 +219,10 @@ gt.Const.Items.LegendNamedBarbarianArmors <- [
 	"legend_armor/named/legend_named_plated_fur_armor",
 	"legend_armor/named/legend_named_skull_and_chain_armor"
 ];
+gt.Const.Items.NamedSouthernWeapons <- [];
+gt.Const.Items.NamedSouthernMeleeWeapons <- [];
+gt.Const.Items.NamedSouthernHelmets <- [];
+gt.Const.Items.NamedSouthernArmors <- [];
 gt.Const.Items.NamedUndeadWeapons <- [
 	"weapons/named/named_bladed_pike",
 	"weapons/named/named_crypt_cleaver",
@@ -230,3 +240,9 @@ gt.Const.Items.ArmorUpgrades <- {
 	COUNT = 6
 }
 
+gt.Const.Items.HelmetUpgrades <- {
+	Helm = 0,
+	Top = 1,
+	Vanity = 2,
+	COUNT = 3
+}

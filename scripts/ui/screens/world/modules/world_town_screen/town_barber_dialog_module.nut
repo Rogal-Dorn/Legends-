@@ -155,7 +155,7 @@ this.town_barber_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 			}
 			else
 			{
-				this.changeIndexEx(this.Const.Hair.BarberMale, temp.getSprite("hair"), 0, "hair", color, "");
+				this.changeIndexEx(this.Const.Hair.Barber, temp.getSprite("hair"), 0, "hair", color, "");
 				this.changeIndexEx(this.Const.Beards.Barber, temp.getSprite("beard"), 0, "beard", color, "");
 			}
 
@@ -173,12 +173,12 @@ this.town_barber_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 			if (isFemale)
 			{
 				this.changeIndex(this.Const.Bodies.AllFemale, temp.getSprite("body"), _change);
-				this.changeIndexEx(this.Const.Tattoos.All, temp.getSprite("tattoo_body"), 0, "", "", temp.getSprite("body").getBrush().Name);			
+				this.changeIndexEx(this.Const.Tattoos.All, temp.getSprite("tattoo_body"), 0, "", "", temp.getSprite("body").getBrush().Name);
 			}
 			else
 			{
 				this.changeIndex(this.Const.Bodies.AllMale, temp.getSprite("body"), _change);
-				this.changeIndexEx(this.Const.Tattoos.All, temp.getSprite("tattoo_body"), 0, "", "", temp.getSprite("body").getBrush().Name);			
+				this.changeIndexEx(this.Const.Tattoos.All, temp.getSprite("tattoo_body"), 0, "", "", temp.getSprite("body").getBrush().Name);
 			}
 		}
 		else if (_layerID == "head")
@@ -200,7 +200,7 @@ this.town_barber_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 			}
 			else
 			{
-				this.changeIndexEx(this.Const.Hair.BarberMale, temp.getSprite("hair"), _change, "hair", color, "");
+				this.changeIndexEx(this.Const.Hair.Barber, temp.getSprite("hair"), _change, "hair", color, "");
 			}
 		}
 		else if (_layerID == "beard")

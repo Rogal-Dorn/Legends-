@@ -1,6 +1,6 @@
 local gt = this.getroottable();
 gt.Const.Serialization <- {
-	Version = 71
+	Version = 63
 };
 gt.Const.DLC <- {
 	Mask = 0,
@@ -11,6 +11,8 @@ gt.Const.DLC <- {
 	UnholdSupporter = false,
 	Wildmen = false,
 	WildmenSupporter = false,
+	Desert = false,
+	DesertSupporter = false,
 	function isCompatible( _meta )
 	{
 		local maskInSave = _meta.getInt("dlc");
@@ -45,6 +47,12 @@ this.Const.DLC.Info[4] = {
 	Icon = "ui/images/dlc_4.png",
 	IconDisabled = "ui/images/dlc_4_sw.png",
 	URL = this.isSteamBuild() ? "https://store.steampowered.com/app/1067690/Battle_Brothers__Warriors_of_the_North" : "https://www.gog.com/game/battle_brothers_warriors_of_the_north"
+};
+this.Const.DLC.Info[6] = {
+	Announce = true,
+	Icon = "ui/images/dlc_6.png",
+	IconDisabled = "ui/images/dlc_6_sw.png",
+	URL = this.isSteamBuild() ? "https://store.steampowered.com/app/1361280/Battle_Brothers__Blazing_Deserts" : "https://www.gog.com/game/battle_brothers_blazing_deserts"
 };
 gt.Const.Direction <- {
 	N = 0,
@@ -215,27 +223,27 @@ gt.Const.Difficulty <- {
 	MaxResources = [
 		{
 			Food = 300,
-			Ammo = 500,
-			Medicine = 200,
-			ArmorParts = 200
+			Ammo = 250,
+			Medicine = 100,
+			ArmorParts = 100
 		},
 		{
 			Food = 250,
-			Ammo = 300,
-			Medicine = 150,
-			ArmorParts = 150
+			Ammo = 150,
+			Medicine = 75,
+			ArmorParts = 75
 		},
 		{
 			Food = 200,
-			Ammo = 250,
-			Medicine = 100,
-			ArmorParts = 150
+			Ammo = 100,
+			Medicine = 50,
+			ArmorParts = 75
 		},
 		{
 			Food = 100,
-			Ammo = 150,
-			Medicine = 60,
-			ArmorParts = 80
+			Ammo = 75,
+			Medicine = 30,
+			ArmorParts = 50
 		}
 	]
 };
@@ -327,44 +335,72 @@ gt.Const.EntityType <- {
 	Warhound = 78,
 	TricksterGod = 79,
 	BarbarianMadman = 80,
-	BanditRabble = 81,
-	LegendCat = 82,
-	LegendOrcElite = 83,
-	LegendOrcBehemoth = 84,
-	LegendWhiteDirewolf = 85,
-	LegendSkinGhoul = 86,
-	LegendStollwurm = 87,
-	LegendRockUnhold = 88,
-	LegendRedbackSpider = 89,
-	LegendDemonAlp = 90,
-	LegendHexeLeader = 91,
-	LegendGreenwoodSchrat = 92,
-	LegendGreenwoodSchratSmall = 93,
-	LegendWhiteWarwolf = 94,
-	LegendBanshee = 95,
-	LegendDemonHound = 96,
-	LegendVampireLord = 97,
-	BanditVeteran = 98,
-	BanditWarlord = 99,
-	LegendPeasantButcher = 100,
-	LegendPeasantBlacksmith = 101,
-	LegendPeasantMonk = 102,
-	LegendPeasantFarmhand = 103,
-	LegendPeasantMinstrel = 104,
-	LegendPeasantPoacher = 105,
-	LegendPeasantWoodsman = 106,
-	LegendPeasantMiner = 107,
-	LegendPeasantSquire = 108,
-	LegendPeasantWitchHunter = 109,
-	LegendHalberdier = 110,
-	LegendSlinger = 111,
-	LegendFencer = 112,
-	BanditOutrider = 113,
-	LegendBear = 114,
-	LegendCatapult = 115,
-    LegendHorse = 116,
-	SkeletonGladiator = 117,
-	BanditRabblePoacher = 118,
+	Serpent = 81,
+	SandGolem = 82,
+	Hyena = 83,
+	Conscript = 84,
+	Gunner = 85,
+	Officer = 86,
+	Engineer = 87,
+	Assassin = 88,
+	Slave = 89,
+	Gladiator = 90,
+	Mortar = 91,
+	NomadCutthroat = 92,
+	NomadOutlaw = 93,
+	NomadSlinger = 94,
+	NomadArcher = 95,
+	NomadLeader = 96,
+	DesertStalker = 97,
+	Executioner = 98,
+	DesertDevil = 99,
+	PeasantSouthern = 100,
+	SkeletonLich = 101,
+	SkeletonLichMirrorImage = 102,
+	SkeletonPhylactery = 103,
+	ZombieTreasureHunter = 104,
+	FlyingSkull = 105,
+
+	BanditRabble = 106,
+	LegendCat = 107,
+	LegendOrcElite = 108,
+	LegendOrcBehemoth = 109,
+	LegendWhiteDirewolf = 110,
+	LegendSkinGhoul = 111,
+	LegendStollwurm = 112,
+	LegendRockUnhold = 113,
+	LegendRedbackSpider = 114,
+	LegendDemonAlp = 115,
+	LegendHexeLeader = 116,
+	LegendGreenwoodSchrat = 117,
+	LegendGreenwoodSchratSmall = 118,
+	LegendWhiteWarwolf = 119,
+	LegendBanshee = 120,
+	LegendDemonHound = 121,
+	LegendVampireLord = 122,
+	BanditVeteran = 123,
+	BanditWarlord = 124,
+	LegendPeasantButcher = 125,
+	LegendPeasantBlacksmith = 126,
+	LegendPeasantMonk = 127,
+	LegendPeasantFarmhand = 128,
+	LegendPeasantMinstrel = 129,
+	LegendPeasantPoacher = 130,
+	LegendPeasantWoodsman = 131,
+	LegendPeasantMiner = 132,
+	LegendPeasantSquire = 133,
+	LegendPeasantWitchHunter = 134,
+	LegendHalberdier = 135,
+	LegendSlinger = 136,
+	LegendFencer = 137,
+	BanditOutrider = 138,
+	LegendBear = 139,
+	LegendCatapult = 140,
+    LegendHorse = 141,
+	SkeletonGladiator = 142,
+	BanditRabblePoacher = 143,
+	BanditVermes = 144,
+
 	function convertOldToNew( _id )
 	{
 		switch(_id)
@@ -609,6 +645,32 @@ gt.Const.EntityIcon <- [
 	"dog_02_orientation",
 	"thing_orientation",
 	"wildman_06_orientation",
+	"serpent_orientation",
+	"sand_golem_orientation",
+	"hyena_orientation",
+	"conscript_orientation",
+	"gunner_orientation",
+	"officer_orientation",
+	"orientation_engineer",
+	"assassin_orientation",
+	"slave_orientation",
+	"gladiator_orientation",
+	"mortar_orientation",
+	"nomad_01_orientation",
+	"nomad_02_orientation",
+	"nomad_03_orientation",
+	"nomad_04_orientation",
+	"nomad_05_orientation",
+	"desert_stalker_orientation",
+	"executioner_orientation",
+	"desert_devil_orientation",
+	"peasant_orientation",
+	"skeleton_06_orientation",
+	"skeleton_07_orientation",
+	"phylactery_orientation",
+	"zombie_04_orientation",
+	"skeleton_08_orientation",
+
 	"rabble_orientation",
 	"cat_orientation",
 	"orc_elite_orientation",
@@ -646,6 +708,7 @@ gt.Const.EntityIcon <- [
 	"catapult_01_orientation",
 	"horse_orientation",
 	"gladiator_orientation",
-	"poacher_orientation"
+	"poacher_orientation",
+	"rabble2_orientation"
 ];
 

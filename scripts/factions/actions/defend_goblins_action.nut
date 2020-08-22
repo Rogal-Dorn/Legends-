@@ -97,6 +97,8 @@ this.defend_goblins_action <- this.inherit("scripts/factions/faction_action", {
 			local party = this.getFaction().spawnEntity(spawnpoints[i], "Goblins", false, this.Const.World.Spawn.GoblinDefenders, this.m.Settlement.getResources() * mult);
 			party.setDescription("A band of mischievous goblins, small but cunning and not to be underestimated.");
 			party.getSprite("banner").setBrush(this.m.Settlement.getBanner());
+			party.setFootprintType(this.Const.World.FootprintsType.Goblins);
+			party.getFlags().set("IsRandomlySpawned", true);
 			local c = party.getController();
 			local guard = this.new("scripts/ai/world/orders/guard_order");
 			guard.setTarget(spawnpoints[i]);

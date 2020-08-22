@@ -21,19 +21,5 @@ this.tree_trunk <- this.inherit("scripts/entity/tactical/entity", {
 		body.Scale = 0.7 + this.Math.rand(0, 30) / 100.0;
 	}
 
-	function onFinish()
-	{
-	}
-
-	function onSerialize( _out )
-	{
-		this.entity.onSerialize(_out);
-	}
-
-	function onDeserialize( _in )
-	{
-		this.entity.onDeserialize(_in);
-	}
-
 });
 

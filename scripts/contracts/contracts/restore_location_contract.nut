@@ -14,7 +14,7 @@ this.restore_location_contract <- this.inherit("scripts/contracts/contract", {
 		this.contract.create();
 		this.m.DifficultyMult = this.Math.rand(70, 90) * 0.01;
 		this.m.Type = "contract.restore_location";
-		this.m.Name = "Rebuilding";
+		this.m.Name = "Rebuilding Effort";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 	}
 
@@ -63,14 +63,13 @@ this.restore_location_contract <- this.inherit("scripts/contracts/contract", {
 			function end()
 			{
 				this.World.Assets.addMoney(this.Contract.m.Payment.getInAdvance());
-				local r = 70;
+				local r = this.Math.rand(1, 100);
 
 				if (r <= 15)
 				{
 					this.Flags.set("IsEmpty", true);
 				}
-
-				if (r <= 30)
+				else if (r <= 30)
 				{
 					this.Flags.set("IsRefugees", true);
 				}
@@ -279,7 +278,7 @@ this.restore_location_contract <- this.inherit("scripts/contracts/contract", {
 			ShowDifficulty = true,
 			Options = [
 				{
-					Text = "{Sounds easy enough | Let\'s talk crowns.}",
+					Text = "{Sounds easy enough. | Let\'s talk crowns.}",
 					function getResult()
 					{
 						return "Negotiation";
@@ -339,7 +338,11 @@ this.restore_location_contract <- this.inherit("scripts/contracts/contract", {
 						p.TerrainTemplate = "tactical.plains";
 						p.PlayerDeploymentType = this.Const.Tactical.DeploymentType.Line;
 						p.EnemyDeploymentType = this.Const.Tactical.DeploymentType.Line;
-						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.BanditScouts, 80 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.World.FactionManager.getFactionOfType(this.Const.FactionType.Bandits).getID());
+						p.LocationTemplate = clone this.Const.Tactical.LocationTemplate;
+						p.LocationTemplate.Template[0] = "tactical.human_camp";
+						p.LocationTemplate.Fortification = this.Const.Tactical.FortificationType.None;
+						p.LocationTemplate.CutDownTrees = true;
+						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.BanditScouts, 90 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult(), this.World.FactionManager.getFactionOfType(this.Const.FactionType.Bandits).getID());
 						this.World.Contracts.startScriptedCombat(p, false, true, true);
 						return 0;
 					}
@@ -350,7 +353,7 @@ this.restore_location_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Screens.push({
 			ID = "Spiders",
 			Title = "As you approach...",
-			Text = "[img]gfx/ui/events/event_110.png[/img]{The white limply twisting in the wind from the abodes of %location% looks like smoke, but the buildings are untouched. As you near the dwellings, pairs upon pairs of red eyes flare in the dark of their windows. The webknechts scuttle forth, their spiny legs clattering on the slats of wood and scratching the corrugated rooftops, the mass of black bodies fluttering out the window frame like the flakes of a smoldered dandelion. | You find %location% deserted, but there\'s a silky white film frosting every corner of the place, tendrils of it twisting limply in the wind. %sellsword% touches a tip of one and it stretches back with his arm and he has to cut himself free. Looking back ahead, you see the webknechts rushing toward you, their spiny legs scissoring as they cross ground with frightening speed, their mandibles clattering with hunger.}",
+			Text = "[img]gfx/ui/events/event_110.png[/img]{The white limply twisting in the wind from the abodes of %location% looks like smoke, but the buildings are untouched. As you near the dwellings, pairs upon pairs of red eyes flare in the dark of their windows. The webknechts scuttle forth, their spiny legs clattering on the slats of wood and scratching the corrugated rooftops, the mass of black bodies fluttering out the window frame like the flakes of a smoldered dandelion. | You find %location% deserted, but there\'s a silky white film frosting every corner of the place, tendrils of it twisting limply in the wind. %randombrother% touches a tip of one and it stretches back with his arm and he has to cut himself free. Looking back ahead, you see the webknechts rushing toward you, their spiny legs scissoring as they cross ground with frightening speed, their mandibles clattering with hunger.}",
 			Image = "",
 			List = [],
 			Options = [
@@ -367,7 +370,7 @@ this.restore_location_contract <- this.inherit("scripts/contracts/contract", {
 						p.TerrainTemplate = "tactical.plains";
 						p.PlayerDeploymentType = this.Const.Tactical.DeploymentType.Line;
 						p.EnemyDeploymentType = this.Const.Tactical.DeploymentType.Line;
-						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Spiders, 80 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID());
+						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Spiders, 90 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult(), this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID());
 						this.World.Contracts.startScriptedCombat(p, false, true, true);
 						return 0;
 					}
@@ -422,7 +425,7 @@ this.restore_location_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Screens.push({
 			ID = "Refugees3",
 			Title = "As you approach...",
-			Text = "[img]gfx/ui/events/event_59.png[/img]{You leave the refugees where they are. Might as well not return to %employer% because he won\'t be happy about this at all. | The men, women, and children look like they\'ve had enough of getting pushed around. You decide to leave them be.| These people have had enough of this world. You don\'t think they\'d survive another trip out into the wilds and decide to leave them where they\'ve settled. | The haggard and harried people don\'t deserve to be booted from this place. You figure to leave \'em be. They\'ll turn it into a workable area soon enough, although %employer% won\'t be happy not having his own people in the area. | %employer% wants his own people settled here, but you figure these folks got to it first. That, and they don\'t look like they could live any longer being put out into the wild.}",
+			Text = "[img]gfx/ui/events/event_59.png[/img]{You leave the refugees where they are. Might as well not return to %employer% because he won\'t be happy about this at all. | The men, women, and children look like they\'ve had enough of getting pushed around. You decide to leave them be. | These people have had enough of this world. You don\'t think they\'d survive another trip out into the wilds and decide to leave them where they\'ve settled. | The haggard and harried people don\'t deserve to be booted from this place. You figure to leave \'em be. They\'ll turn it into a workable area soon enough, although %employer% won\'t be happy not having his own people in the area. | %employer% wants his own people settled here, but you figure these folks got to it first. That, and they don\'t look like they could live any longer being put out into the wild.}",
 			Image = "",
 			List = [],
 			Options = [
@@ -561,6 +564,7 @@ this.restore_location_contract <- this.inherit("scripts/contracts/contract", {
 		party.getSprite("base").Visible = false;
 		party.setMirrored(true);
 		party.setDescription("A caravan of workers and building materials from " + this.m.Home.getName() + ".");
+		party.setFootprintType(this.Const.World.FootprintsType.Caravan);
 		party.setMovementSpeed(this.Const.World.MovementSettings.Speed * 0.5);
 		party.setLeaveFootprints(false);
 		local c = party.getController();

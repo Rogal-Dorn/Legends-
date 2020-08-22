@@ -5,7 +5,7 @@ this.stabbed_guts_injury <- this.inherit("scripts/skills/injury/injury", {
 		this.injury.create();
 		this.m.ID = "injury.stabbed_guts";
 		this.m.Name = "Stabbed Guts";
-		this.m.Description = "A wound at the intestines drains constitution, and the high chance of infection and the prospect of a slow and painful death doesn\'t help either.";
+		this.m.Description = "A wound at the intestines drains constitution, and the high chance of infection and the prospect of a slow and painful death don\'t help either.";
 		this.m.Type = this.m.Type | this.Const.SkillType.TemporaryInjury;
 		this.m.DropIcon = "injury_icon_39";
 		this.m.Icon = "ui/injury/injury_icon_39.png";
@@ -34,10 +34,38 @@ this.stabbed_guts_injury <- this.inherit("scripts/skills/injury/injury", {
 				type = "text",
 				icon = "ui/icons/health.png",
 				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-40%[/color] Hitpoints"
+			},
+			{
+				id = 7,
+				type = "text",
+				icon = "ui/icons/fatigue.png",
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-40%[/color] Max Fatigue"
 			}
 		];
 		this.addTooltipHint(ret);
 		return ret;
+	}
+
+	function onAdded()
+	{
+		this.injury.onAdded();
+
+		if (!("State" in this.Tactical) || this.Tactical.State == null)
+		{
+			return;
+		}
+
+		local p = this.getContainer().getActor().getCurrentProperties();
+
+		if (!p.IsAffectedByInjuries || this.m.IsFresh && !p.IsAffectedByFreshInjuries)
+		{
+			return;
+		}
+
+		if (this.getContainer().getActor().getHitpointsPct() > 0.6)
+		{
+			this.getContainer().getActor().setHitpoints(this.getContainer().getActor().getHitpointsMax() * 0.6);
+		}
 	}
 
 	function onUpdate( _properties )
@@ -53,6 +81,8 @@ this.stabbed_guts_injury <- this.inherit("scripts/skills/injury/injury", {
 		{
 			_properties.HitpointsMult *= 0.6;
 		}
+
+		_properties.StaminaMult *= 0.6;
 	}
 
 });

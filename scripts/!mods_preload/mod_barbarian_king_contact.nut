@@ -1,22 +1,36 @@
 ::mods_hookNewObject("scripts/contracts/contract/barbarian_king_contract", function(o) {
-    o.onClear <- function()
-	{
-		if (this.m.IsActive)
-		{
-			this.World.State.setCampingAllowed(true);
-			this.World.State.setEscortedEntity(null);
-			this.World.State.getPlayer().setVisible(true);
-			this.World.Assets.setUseProvisions(true);
 
-			if (!this.World.State.isPaused())
+
+	local csFn = o.createScreens;
+    o.createScreens = function()
+	{
+		csFn();
+		foreach (s in this.m.Screens)
+		{
+			if (s.ID != "AGreaterThreat5")
 			{
-				this.World.setSpeedMult(1.0);
+				continue;
 			}
 
-			this.World.State.m.LastWorldSpeedMult = 1.0;
-			this.m.Home.getSprite("selection").Visible = false;
+			s.start = function ()
+			{
+				if (this.Contract.m.Destination != null && !this.Contract.m.Destination.isNull() && this.Contract.m.Destination.isAlive())
+				{
+					this.Contract.m.Destination.die();
+					this.Contract.m.Destination = null;
+				}
+
+				local item = this.Const.World.Common.pickHelmet([[1, "barbarians/heavy_horned_plate_helmet"]]);
+				this.World.Assets.getStash().add(item);
+				this.List.push({
+					id = 10,
+					icon = "ui/items/" + item.getIcon(),
+					text = "You gain " + this.Const.Strings.getArticle(item.getName()) + item.getName()
+				});
+			}
+			break;
 		}
 	}
 
- 
+
 })

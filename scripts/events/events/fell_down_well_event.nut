@@ -167,7 +167,18 @@ this.fell_down_well_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
+		if (currentTile.SquareCoords.Y < this.World.getMapSize().Y * 0.2)
+		{
+			return;
+		}
+
 		local brothers = this.World.getPlayerRoster().getAll();
+
+		if (brothers.len() == 1)
+		{
+			return;
+		}
+
 		local candidates_strong = [];
 		local candidates_other = [];
 

@@ -2,7 +2,7 @@ this.sleeping_effect <- this.inherit("scripts/skills/skill", {
 	m = {
 		TurnsSleeping = 0,
 		TurnApplied = 0,
-		TurnsLeft = 3
+		TurnsLeft = 4
 	},
 	function getTurnsSleeping()
 	{
@@ -80,7 +80,7 @@ this.sleeping_effect <- this.inherit("scripts/skills/skill", {
 		this.m.Container.removeByID("effects.riposte");
 		this.m.Container.removeByID("effects.return_favor");
 		local actor = this.getContainer().getActor();
-		actor.getTags().set("Sleeping", true);
+		actor.getFlags().set("Sleeping", true);
 		this.Tactical.TurnSequenceBar.pushEntityBack(this.getContainer().getActor().getID());
 
 		if (this.m.SoundOnUse.len() != 0 && this.Math.rand(1, 100) <= 33)
@@ -131,7 +131,7 @@ this.sleeping_effect <- this.inherit("scripts/skills/skill", {
 			actor.getSprite("closed_eyes").Visible = false;
 		}
 
-		actor.getTags().set("Sleeping", false);
+		actor.getFlags().set("Sleeping", false);
 
 		if ("setEyesClosed" in actor.get())
 		{
@@ -153,7 +153,7 @@ this.sleeping_effect <- this.inherit("scripts/skills/skill", {
 
 		if (actor.hasSprite("status_stunned"))
 		{
-			actor.getSprite("status_stunned").setBrush("bust_sleep");
+			actor.getSprite("status_stunned").setBrush(actor.isAlliedWithPlayer() ? "bust_sleep" : "bust_sleep_mirrored");
 			actor.getSprite("status_stunned").Visible = true;
 
 			if (actor.hasSprite("closed_eyes"))

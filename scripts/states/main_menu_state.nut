@@ -6,7 +6,8 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 		SelectedCampaignFileName = null,
 		ScenarioManager = null,
 		NewCampaignSettings = null,
-		IsShown = false
+		IsShown = false,
+		IsBooting = true
 	},
 	function onInit()
 	{
@@ -59,6 +60,7 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 		this.m.MainMenuScreen.getNewCampaignMenuModule().setBanners(this.Const.PlayerBanners);
 		this.m.MainMenuScreen.getNewCampaignMenuModule().setConfigOpts(this.Const.World.NewCampaignOpts());
 		this.m.MainMenuScreen.getNewCampaignMenuModule().setStartingScenarios(this.m.ScenarioManager.getScenariosForUI());
+		this.m.MainMenuScreen.getNewCampaignMenuModule().setCrusadeCampaignAvailable(this.Const.DLC.Desert);
 	}
 
 	function onFinish()
@@ -75,7 +77,10 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 		this.Music.setTrackList(this.Const.Music.MenuTracks, this.Const.Music.CrossFadeTime + 2000);
 		this.World.getPlayerRoster().clear();
 		this.Cursor.setCursor(this.Const.UI.Cursor.Hand);
-		this.m.MainMenuScreen.show();
+		local vm = this.Settings.getVideoMode();
+		local animate = this.m.IsBooting && vm.Width >= 1920 && vm.Height >= 1080;
+		this.m.IsBooting = false;
+		this.m.MainMenuScreen.show(animate);
 		this.LoadingScreen.hide();
 
 		if (!this.m.IsShown)
@@ -544,7 +549,7 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 			{
 				id = 0,
 				name = "Combat Basics",
-				description = "[p=c][img]gfx/ui/events/event_28.png[/img][/p]\n[p=c]A simple scenario to teach combat basics. Easy.[/p]"
+				description = "[p=c][img]gfx/ui/events/event_28.png[/img][/p]\n[p=c]A simple scenario to learn combat basics. Easy.[/p]"
 			},
 			{
 				id = 1,

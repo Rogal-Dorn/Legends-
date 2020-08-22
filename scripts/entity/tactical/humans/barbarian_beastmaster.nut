@@ -55,14 +55,14 @@ this.barbarian_beastmaster <- this.inherit("scripts/entity/tactical/human", {
 		this.setAppearance();
 		this.getSprite("socket").setBrush("bust_base_wildmen_01");
 		this.m.Skills.add(this.new("scripts/skills/actives/barbarian_fury_skill"));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_dodge"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_anticipation"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_hold_out"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_recover"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_brawny"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_pathfinder"));
 		this.m.Skills.add(this.new("scripts/skills/actives/crack_the_whip_skill"));
-	 if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
-			{
+	 	if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+		{
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_overwhelm"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_relentless"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_alert"));
@@ -71,25 +71,25 @@ this.barbarian_beastmaster <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_backstabber"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_mastery_fist"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
-			}
+		}
+
+		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 30)
+		{
+			this.m.Skills.add(this.new("scripts/skills/effects/dodge_effect"));
+		}
 	}
 
 	function assignRandomEquipment()
 	{
 		this.m.Items.equip(this.new("scripts/items/weapons/barbarians/thorned_whip"));
+		
+		this.m.Items.equip(this.Const.World.Common.pickArmor([
+				[1, "barbarians/hide_and_bone_armor"]
+		]));
 
-		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
-		{
-			local armor = this.new("scripts/items/legend_armor/cloth/legend_sackcloth");
-			armor.setUpgrade(this.new("scripts/items/legend_armor/plate/legend_hide_and_bone_armor"));
-			this.m.Items.equip(armor);
-		}
-		else
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/barbarians/hide_and_bone_armor"));
-		}
-
-		this.m.Items.equip(this.new("scripts/items/helmets/barbarians/beastmasters_headpiece"));
+		this.m.Items.equip(this.Const.World.Common.pickHelmet([
+			[1, "barbarians/beastmasters_headpiece"]
+		]));
 	}
 
 });

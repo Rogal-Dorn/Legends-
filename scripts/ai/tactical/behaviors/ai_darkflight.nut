@@ -318,6 +318,12 @@ this.ai_darkflight <- this.inherit("scripts/ai/tactical/behavior", {
 				tileScoreMult = tileScoreMult * this.Const.AI.Behavior.DarkflightBadTerrainMult;
 			}
 
+			if (this.hasNegativeTileEffect(dest.Tile, _entity))
+			{
+				tileScore = tileScore - this.Const.AI.Behavior.EngageBadTerrainPenalty * this.getProperties().EngageOnBadTerrainPenaltyMult;
+				tileScoreMult = tileScoreMult * this.Const.AI.Behavior.DarkflightBadTerrainMult;
+			}
+
 			tileScore = tileScore + dest.Tile.TVTotal * this.Const.AI.Behavior.DarkflightTacticalValueMult * this.getProperties().EngageOnGoodTerrainBonusMult;
 			tileScoreMult = tileScoreMult + dest.Tile.TVTotal * this.Const.AI.Behavior.DarkflightTacticalValueMult * this.Const.AI.Behavior.DarkflightTacticalValueMult;
 			dest.DebugTV = tileScore - before;
@@ -350,7 +356,7 @@ this.ai_darkflight <- this.inherit("scripts/ai/tactical/behavior", {
 		{
 			score = score * this.Math.minf(this.Const.AI.Behavior.DarkflightScaleByDistMaxMult, distToDest / 4.0);
 		}
-		else if (distToDest < 2 && (potentialDestinations[0].Tile.Level <= myTile.Level || potentialDestinations[0].Tile.IsBadTerrain && !myTile.IsBadTerrain || potentialDestinations[0].Tile.IsBadTerrain && myTile.IsBadTerrain))
+		else if (distToDest < 2 && (potentialDestinations[0].Tile.Level <= myTile.Level || potentialDestinations[0].Tile.IsBadTerrain && !myTile.IsBadTerrain || potentialDestinations[0].Tile.IsBadTerrain && myTile.IsBadTerrain || this.hasNegativeTileEffect(potentialDestinations[0].Tile, _entity) && !this.hasNegativeTileEffect(myTile, _entity) || this.hasNegativeTileEffect(potentialDestinations[0].Tile, _entity) && this.hasNegativeTileEffect(myTile, _entity)))
 		{
 			score = score * (distToDest / 2.0);
 		}

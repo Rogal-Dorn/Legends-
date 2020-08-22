@@ -10,6 +10,7 @@ this.ai_attack_default <- this.inherit("scripts/ai/tactical/behavior", {
 			"actives.impale",
 			"actives.strike",
 			"actives.rupture",
+			"actives.crumble",
 			"actives.prong",
 			"actives.stab",
 			"actives.bash",
@@ -20,7 +21,7 @@ this.ai_attack_default <- this.inherit("scripts/ai/tactical/behavior", {
 			"actives.cudgel",
 			"actives.whip",
 			"actives.zombie_bite",
-			"actives.werewolf_claws",
+			"actives.hyena_bite",
 			"actives.werewolf_bite",
 			"actives.ghoul_claws",
 			"actives.ghastly_touch",
@@ -31,7 +32,6 @@ this.ai_attack_default <- this.inherit("scripts/ai/tactical/behavior", {
 			"actives.split_man",
 			"actives.lunge",
 			"actives.batter",
-			"actives.gash",
 			"actives.throw_javelin",
 			"actives.throw_axe",
 			"actives.throw_balls",
@@ -44,11 +44,12 @@ this.ai_attack_default <- this.inherit("scripts/ai/tactical/behavior", {
 			"actives.uproot_small",
 			"actives.kraken_bite",
 			"actives.kraken_devour",
-			"actives.ghost_overhead_strike"
+			"actives.ghost_overhead_strike",
+			"actives.headbutt",
+			"actives.serpent_bite"
 			//ADD Any new skills to the mod_ai_attack_default file
 		],
-		Skill = null,
-		Hitchance = 0
+		Skill = null
 	},
 	function create()
 	{
@@ -116,7 +117,7 @@ this.ai_attack_default <- this.inherit("scripts/ai/tactical/behavior", {
 		}
 
 		this.m.TargetTile = bestTarget.Target.getTile();
-		return this.Const.AI.Behavior.Score.Attack * bestTarget.Score * score;
+		return this.Math.max(0, this.Const.AI.Behavior.Score.Attack * bestTarget.Score * score);
 	}
 
 	function onExecute( _entity )

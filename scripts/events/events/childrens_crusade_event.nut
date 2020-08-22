@@ -302,6 +302,21 @@ this.childrens_crusade_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
+		if (this.Const.DLC.Desert && currentTile.SquareCoords.Y < this.World.getMapSize().Y * 0.2)
+		{
+			return;
+		}
+
+		local towns = this.World.EntityManager.getSettlements();
+
+		foreach( t in towns )
+		{
+			if (t.getTile().getDistanceTo(currentTile) <= 5)
+			{
+				return;
+			}
+		}
+
 		local brothers = this.World.getPlayerRoster().getAll();
 		local candidates_monk = [];
 		local candidates_traveller = [];

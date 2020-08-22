@@ -65,6 +65,7 @@ this.small_tundra_fort <- this.inherit("scripts/entity/world/settlement", {
 		this.m.Sprite = "world_stronghold_01";
 		this.m.Lighting = "world_stronghold_01_light";
 		this.m.Rumors = this.Const.Strings.RumorsTundraSettlement;
+		this.m.Culture = this.Const.World.Culture.Northern;
 		this.m.IsMilitary = true;
 		this.m.Size = 1;
 		this.m.HousesType = 1;

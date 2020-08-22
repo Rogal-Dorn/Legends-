@@ -45,12 +45,11 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		InReserves = false,
         StarWeights = [50,50,50,50,50,50,50,50],
         Alignment = null,
-        IsAlignmentAssigned = false,
-        ActiveRelationships = array(27, null),
         CompanyID = -1
 	},
 	function setName( _value )
 	{
+
 		this.m.Name = _value;
 
 		if (this.m.Background != null)
@@ -82,11 +81,6 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	function getXPValue()
 	{
 		return 100 + (this.m.Level - 1) * 30;
-	}
-
-	function getXPForNextLevel()
-	{
-		return this.m.Level < this.Const.LevelXP.len() ? this.Const.LevelXP[this.m.Level] : this.Const.LevelXP[this.Const.LevelXP.len() - 1];
 	}
 
 	function getLevel()
@@ -141,12 +135,12 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 	function getTryoutCost()
 	{
-		return this.Math.max(10, this.Math.min(this.m.HiringCost - 25, 25 + this.m.HiringCost * this.Const.Tryouts.CostMult));
+		return this.Math.ceil(this.Math.max(10, this.Math.min(this.m.HiringCost - 25, 25 + this.m.HiringCost * this.Const.Tryouts.CostMult) * this.World.Assets.m.TryoutPriceMult));
 	}
 
 	function getDailyCost()
 	{
-		local wageMult = this.m.CurrentProperties.DailyWageMult - this.World.State.getPlayer().getWageModifier();
+		local wageMult = (this.m.CurrentProperties.DailyWageMult * (("State" in this.World) && this.World.State != null ? this.World.Assets.m.DailyWageMult : 1.0)) - this.World.State.getPlayer().getWageModifier();
 		//local costAdj = this.Math.max(0, this.m.CurrentProperties.DailyWageMult * barterMult);
 		return this.Math.max(0, this.m.CurrentProperties.DailyWage * wageMult);
 	}
@@ -256,27 +250,6 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	{
 		return this.m.MoodChanges;
 	}
-
-	function getAlignmentMin()
-	{
-	        return this.m.Background.getAlignmentMin();
-	}
-
-	function SetAlignmentMin( _f )
-	{
-		this.m.Background.SetAlignmentMin( _f);
-	}
-
-	function getAlignmentMax()
-	{
-	        return this.m.Background.getAlignmentMax();
-	}
-
-	function SetAlignmentMax( _f )
-	{
-		this.m.Background.SetAlignmentMax( _f);
-	}
-
 
 	function improveMood( _a = 1.0, _reason = "" )
 	{
@@ -744,7 +717,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.getHitpoints() < this.getHitpointsMax())
 		{
-			local ht = this.Math.ceil((this.getHitpointsMax() - this.getHitpoints()) / this.Const.World.Assets.HitpointsPerHour / 24.0);
+			local ht = this.Math.ceil((this.getHitpointsMax() - this.getHitpoints()) / (this.Const.World.Assets.HitpointsPerHour * (("State" in this.World) && this.World.State != null ? this.World.Assets.m.HitpointsPerHourMult : 1.0)) / 24.0);
 
 			if (ht > 1)
 			{
@@ -799,7 +772,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	{
 		if (this.getHitpoints() < this.getHitpointsMax())
 		{
-			return this.Math.ceil((this.getHitpointsMax() - this.getHitpoints()) / this.Const.World.Assets.HitpointsPerHour / 24.0);
+			return this.Math.ceil((this.getHitpointsMax() - this.getHitpoints()) / (this.Const.World.Assets.HitpointsPerHour * (("State" in this.World) && this.World.State != null ? this.World.Assets.m.HitpointsPerHourMult : 1.0)) / 24.0);
 		}
 		else
 		{
@@ -878,9 +851,9 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Type = this.Const.EntityType.Player;
 		this.m.BloodType = this.Const.BloodType.Red;
 		this.human.create();
-		this.getTags().add("human");
-		this.getTags().set("PotionLastUsed", 0.0);
-		this.getTags().set("PotionsUsed", 0);
+		this.getFlags().add("human");
+		this.getFlags().set("PotionLastUsed", 0.0);
+		this.getFlags().set("PotionsUsed", 0);
 		this.m.AIAgent = this.new("scripts/ai/tactical/player_agent");
 		this.m.AIAgent.setActor(this);
 		this.m.Formations = this.new("scripts/entity/tactical/formations_container");
@@ -890,7 +863,23 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	function onHired()
 	{
 		this.m.HireTime = this.Time.getVirtualTimeF();
-		this.improveMood(1.5, "Joined a mercenary company");
+
+		if (this.getBackground().getID() != "background.slave")
+		{
+			this.improveMood(1.5, "Joined a mercenary company");
+		}
+
+		if (("State" in this.World) && this.World.State != null && this.World.Assets.getOrigin().getID() == "scenario.manhunters")
+		{
+			if (this.getBackground().getID() != "background.slave")
+			{
+				this.getSkills().add(this.new("scripts/skills/actives/whip_slave_skill"));
+			}
+			else
+			{
+				this.getSprite("miniboss").setBrush("bust_miniboss_indebted");
+			}
+		}
 
 		if (this.World.getPlayerRoster().getSize() >= 12)
 		{
@@ -904,20 +893,6 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 		this.World.Assets.getOrigin().onHiredByScenario(this);
         this.m.CompanyID = this.World.State.addNewID(this);
-
-		if (this.World.LegendsMod.Configs().RelationshipsEnabled())
-		{
-			foreach ( b in this.World.getPlayerRoster().getAll() ) //Set relations to others characters to this one
-			{
-				local relMod = (( (this.m.Alignment > b.getAlignment()) ? (this.m.Alignment - b.getAlignment()) : (b.getAlignment() - this.m.Alignment) + 1) * -2) + 10;
-				this.changeActiveRelationship(b, this.Math.rand(-1, 1) + relMod);
-			}
-			foreach ( b in this.World.getPlayerRoster().getAll() ) //Relations to this character to others
-			{
-				local relMod = (( (this.m.Alignment > b.getAlignment()) ? (this.m.Alignment - b.getAlignment()) : (b.getAlignment() - this.m.Alignment) + 1) * -2) + 10;
-				b.changeActiveRelationship(this, this.Math.rand(-1,1) + relMod);
-			}
-		}
 
 		if (this.getSkills().hasSkill("trait.intensive_training_trait") && this.getLevel() > 1 )
 		{
@@ -959,6 +934,8 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	{
 		this.actor.resetRenderEffects();
 		this.m.IsAlive = true;
+		this.m.IsDying = false;
+		this.m.IsAbleToDie = true;
 		this.m.Hitpoints = this.Math.max(1, this.m.Hitpoints);
 		this.m.MaxEnemiesThisTurn = 1;
 
@@ -969,10 +946,10 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 		this.resetBloodied(false);
 		this.getSprite("dirt").Visible = false;
-		this.getTags().set("Devoured", false);
-		this.getTags().set("Charmed", false);
-		this.getTags().set("Sleeping", false);
-		this.getTags().set("Nightmare", false);
+		this.getFlags().set("Devoured", false);
+		this.getFlags().set("Charmed", false);
+		this.getFlags().set("Sleeping", false);
+		this.getFlags().set("Nightmare", false);
 		this.m.Fatigue = 0;
 		this.m.ActionPoints = 0;
 		this.m.Items.onCombatFinished();
@@ -1003,7 +980,12 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			return true;
 		}
 
-		if (this.Math.rand(1, 100) > this.Const.Combat.SurviveWithInjuryChance * this.m.CurrentProperties.SurviveWithInjuryChanceMult)
+		if (this.isGuest())
+		{
+			return true;
+		}
+
+		if (this.Math.rand(1, 100) <= this.Const.Combat.SurviveWithInjuryChance * this.m.CurrentProperties.SurviveWithInjuryChanceMult || this.World.Assets.m.IsSurvivalGuaranteed && !this.m.Skills.hasSkillOfType(this.Const.SkillType.PermanentInjury) && (this.World.Assets.getOrigin().getID() != "scenario.manhunters" || this.getBackground().getID() != "background.slave"))
 		{
 			return true;
 		}
@@ -1076,9 +1058,9 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 			if (r == 0)
 			{
-				this.getTags().add("PlayerSkeleton");
-				this.getTags().add("undead");
-				this.getTags().add("skeleton");
+				this.getFlags().add("PlayerSkeleton");
+				this.getFlags().add("undead");
+				this.getFlags().add("skeleton");
 				local body = this.getSprite("body");
 				local skill = this.new("scripts/skills/injury_permanent/legend_fleshless");
 				this.m.Skills.add(skill);
@@ -1086,9 +1068,9 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			}
 			else
 			{
-				this.getTags().add("PlayerZombie");
-				this.getTags().add("undead");
-				this.getTags().add("zombie_minion");
+				this.getFlags().add("PlayerZombie");
+				this.getFlags().add("undead");
+				this.getFlags().add("zombie_minion");
 				local skill = this.new("scripts/skills/injury_permanent/legend_rotten_flesh");
 				this.m.Skills.add(skill);
 				this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_zombie_bite"));
@@ -1101,12 +1083,37 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.worsenMood(this.Const.MoodChange.PermanentInjury, "Suffered a permanent injury");
 		this.updateAchievement("ScarsForLife", 1, 1);
 
-		if (this.getTags().has("PlayerSkeleton") || this.getTags().has("PlayerZombie"))
+		if (this.getFlags().has("PlayerSkeleton") || this.getFlags().has("PlayerZombie"))
 		{
 			return false;
 		}
 
 		return false;
+	}
+
+	function onOtherActorDeath( _killer, _victim, _skill )
+	{
+		if (!this.m.IsAlive || this.m.IsDying)
+		{
+			return;
+		}
+
+		if (!this.isGuest() && _victim.getFaction() == this.getFaction() && ("getBackground" in _victim) && _victim.getBackground().getID() == "background.slave" && this.getBackground().getID() != "background.slave")
+		{
+			return;
+		}
+
+		this.actor.onOtherActorDeath(_killer, _victim, _skill);
+	}
+
+	function kill( _killer = null, _skill = null, _fatalityType = this.Const.FatalityType.None, _silent = false )
+	{
+		if (!this.Tactical.State.isScenarioMode() && this.World.Assets.m.IsSurvivalGuaranteed && !this.m.Skills.hasSkillOfType(this.Const.SkillType.PermanentInjury) && (this.World.Assets.getOrigin().getID() != "scenario.manhunters" || this.getBackground() != null && this.getBackground().getID() != "background.slave"))
+		{
+			_fatalityType = this.Const.FatalityType.None;
+		}
+
+		this.actor.kill(_killer, _skill, _fatalityType, _silent);
 	}
 
 	function onDeath( _killer, _skill, _tile, _fatalityType )
@@ -1284,7 +1291,6 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 						decal.Color = sprite_beard.Color;
 						decal.Saturation = sprite_beard.Saturation;
 					}
-					this.removeActiveRelationship();
 				}
 
 				if (appearance.CorpseArmorUpgradeFront != "")
@@ -1293,7 +1299,6 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 					decal.setBrush(appearance.CorpseArmorUpgradeFront);
 				}
 			}
-			this.removeActiveRelationship();
 		}
 
 		if (_tile != null)
@@ -1354,7 +1359,6 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				killedBy = killedBy + (" by " + _killer.getKilledName());
 			}
 
-			this.m.LifetimeStats.Battles += 1;
 			this.World.Statistics.addFallen(this, killedBy);
 		}
 	}
@@ -1370,7 +1374,6 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.add(this.new("scripts/skills/actives/break_ally_free_skill"));
 		this.m.Skills.add(this.new("scripts/skills/effects/realm_of_nightmares_effect"));
 		this.m.Skills.add(this.new("scripts/skills/special/legend_horserider_skill"));
-		// this.m.Skills.add(this.new("scripts/skills/special/relationship_check"));
 
 		if (this.Const.DLC.Unhold)
 		{
@@ -1443,6 +1446,10 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		{
 			_difficulty = _difficulty + (this.Math.rand(0, 1) == 0 ? 10 : -10);
 		}
+		else if (this.m.Skills.hasSkill("trait.mad"))
+		{
+			_difficulty = _difficulty + (this.Math.rand(0, 1) == 0 ? 15 : -15);
+		}
 
 		if (_change < 0 && _type == this.Const.MoraleCheckType.MentalAttack && this.m.Skills.hasSkill("trait.superstitious"))
 		{
@@ -1452,9 +1459,23 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		return this.actor.checkMorale(_change, _difficulty, _type, _showIconBeforeMoraleIcon, _noNewLine);
 	}
 
+	function getXPForNextLevel()
+	{
+		if (this.m.Level >= 7 && ("State" in this.World) && this.World.State != null && this.World.Assets.getOrigin().getID() == "scenario.manhunters" && this.getBackground().getID() == "background.slave")
+		{
+			return this.Const.LevelXP[6];
+		}
+		else
+		{
+			return this.m.Level < this.Const.LevelXP.len() ? this.Const.LevelXP[this.m.Level] : this.Const.LevelXP[this.Const.LevelXP.len() - 1];
+		}
+	}
+
 	function addXP( _xp, _scale = true )
 	{
-		if (this.m.Level >= this.Const.LevelXP.len() || this.isGuest())
+		local isScenarioMode = !(("State" in this.World) && this.World.State != null);
+
+		if (this.m.Level >= this.Const.LevelXP.len() || this.isGuest() || !isScenarioMode && this.World.Assets.getOrigin().getID() == "scenario.manhunters" && this.m.Level >= 7 && this.getBackground().getID() == "background.slave")
 		{
 			return;
 		}
@@ -1469,12 +1490,30 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			_xp = _xp * this.Const.Combat.GlobalXPVeteranLevelMult;
 		}
 
-		if (this.getTags().has("PlayerSkeleton"))
+		if (this.getFlags().has("PlayerSkeleton"))
 		{
 			_xp = _xp * 0.33;
 		}
 
-		if (this.getTags().has("PlayerZombie"))
+		if (!isScenarioMode)
+		{
+			if (_scale)
+			{
+				_xp = _xp * this.World.Assets.m.XPMult;
+
+				if (this.World.Retinue.hasFollower("follower.drill_sergeant"))
+				{
+					_xp = _xp * this.Math.maxf(1.0, 1.2 - 0.02 * (this.m.Level - 1));
+				}
+			}
+
+			if (this.World.getPlayerRoster().getSize() < 3)
+			{
+				_xp = _xp * (1.0 - (3 - this.World.getPlayerRoster().getSize()) * 0.15);
+			}
+		}
+
+		if (this.getFlags().has("PlayerZombie"))
 		{
 			_xp = _xp * 0.25;
 		}
@@ -1487,6 +1526,12 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		{
 			this.m.CombatStats.XPGained += this.Const.LevelXP[this.Const.LevelXP.len() - 1] - this.m.XP;
 			this.m.XP = this.Const.LevelXP[this.Const.LevelXP.len() - 1];
+			return;
+		}
+		else if (!isScenarioMode && this.World.Assets.getOrigin().getID() == "scenario.manhunters" && this.m.XP + _xp * this.m.CurrentProperties.XPGainMult >= this.Const.LevelXP[6] && this.getBackground().getID() == "background.slave")
+		{
+			this.m.CombatStats.XPGained += this.Const.LevelXP[6] - this.m.XP;
+			this.m.XP = this.Const.LevelXP[6];
 			return;
 		}
 
@@ -1516,9 +1561,10 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		++this.m.PerkPointsSpent;
 		local p = this.new(perk.Script);
 		this.m.Skills.add(p);
+		p.onUnlocked();
 		this.m.Skills.update();
 
-		if (this.m.Level >= 11 && _id == "perk.student")
+		if ((this.m.Level >= 11 || this.m.Level >= 7 && this.World.Assets.getOrigin().getID() == "scenario.manhunters" && this.getBackground().getID() == "background.slave") && _id == "perk.student")
 		{
 			++this.m.PerkPoints;
 		}
@@ -1585,7 +1631,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				++this.m.PerkPoints;
 			}
 
-			if (this.m.Level == 11 && this.m.Skills.hasSkill("perk.student"))
+			if ((this.m.Level == 11 || this.m.Level == 7 && this.World.Assets.getOrigin().getID() == "scenario.manhunters" && this.getBackground().getID() == "background.slave") && this.m.Skills.hasSkill("perk.student"))
 			{
 				++this.m.PerkPoints;
 			}
@@ -1624,205 +1670,66 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 	function assignRandomMeleeEquipment()
 	{
-		local r = this.Math.rand(1, 24);
 
-		if (r == 1)
+		this.m.Items.equip(this.Const.World.Common.pickArmor([
+			[1, "padded_surcoat"],
+			[1, "mail_shirt"],
+			[1, "coat_of_plates"],
+			[1, "gambeson"],
+			[1, "leather_tunic"],
+			[1, "lamellar_harness"],
+			[1, "sackcloth"],
+			[1, "heavy_lamellar_armor"],
+			[1, "basic_mail_shirt"],
+			[1, "scale_armor"],
+			[1, "coat_of_scales"],
+			[1, "linen_tunic"],
+			[1, "tattered_sackcloth"],
+			[1, "heraldic_mail"],
+			[1, "named/black_leather_armor"],
+			[1, "named/golden_scale_armor"],
+			[1, "named/blue_studded_mail_armor"],
+			[1, "named/brown_coat_of_plates_armor"],
+			[1, "named/green_coat_of_plates_armor"],
+			[1, "reinforced_mail_hauberk"],
+			[1, "mail_hauberk"],
+			[1, "leather_lamellar"],
+		]));
+
+		local item = this.Const.World.Common.pickHelmet([
+			[6, ""],
+			[1, "hood"],
+			[1, "mail_coif"],
+			[1, "closed_mail_coif"],
+			[1, "reinforced_mail_coif"],
+			[1, "kettle_hat"],
+			[1, "nasal_helmet"],
+			[1, "padded_nasal_helmet"],
+			[1, "nasal_helmet_with_mail"],
+			[1, "full_helm"],
+			[1, "flat_top_helmet"],
+			[1, "padded_flat_top_helmet"],
+			[1, "flat_top_with_mail"],
+			[1, "kettle_hat_with_mail"],
+			[1, "kettle_hat_with_closed_mail"],
+			[1, "closed_flat_top_with_neckguard"],
+			[1, "closed_flat_top_helmet"],
+			[1, "closed_flat_top_with_mail"],
+			[1, "witchhunter_hat"],
+			[1, "named/golden_feathers_helmet"],
+			[1, "named/heraldic_mail_helmet"],
+			[1, "named/nasal_feather_helmet"],
+			[1, "named/norse_helmet"],
+			[1, "named/sallet_green_helmet"],
+			[1, "named/wolf_helmet"]
+		])
+
+		if (item != null)
 		{
-			this.m.Items.equip(this.new("scripts/items/armor/padded_surcoat"));
-		}
-		else if (r == 2)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/mail_shirt"));
-		}
-		else if (r == 3)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/coat_of_plates"));
-		}
-		else if (r == 4)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/gambeson"));
-		}
-		else if (r == 5)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/leather_tunic"));
-		}
-		else if (r == 6)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/padded_leather"));
-		}
-		else if (r == 7)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/lamellar_harness"));
-		}
-		else if (r == 8)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/sackcloth"));
-		}
-		else if (r == 9)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/heavy_lamellar_armor"));
-		}
-		else if (r == 10)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/basic_mail_shirt"));
-		}
-		else if (r == 11)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/scale_armor"));
-		}
-		else if (r == 12)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/coat_of_scales"));
-		}
-		else if (r == 13)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/linen_tunic"));
-		}
-		else if (r == 14)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/tattered_sackcloth"));
-		}
-		else if (r == 15)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/heraldic_mail"));
-		}
-		else if (r == 16)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/named/black_leather_armor"));
-		}
-		else if (r == 17)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/named/golden_scale_armor"));
-		}
-		else if (r == 18)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/named/blue_studded_mail_armor"));
-		}
-		else if (r == 19)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/named/brown_coat_of_plates_armor"));
-		}
-		else if (r == 20)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/named/green_coat_of_plates_armor"));
-		}
-		else if (r == 21)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/ragged_surcoat"));
-		}
-		else if (r == 22)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/reinforced_mail_hauberk"));
-		}
-		else if (r == 23)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/mail_hauberk"));
-		}
-		else if (r == 24)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/leather_lamellar"));
+			this.m.Items.equip(item);
 		}
 
-		r = this.Math.rand(1, 30);
-
-		if (r == 1)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/hood"));
-		}
-		else if (r == 2)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/mail_coif"));
-		}
-		else if (r == 3)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/closed_mail_coif"));
-		}
-		else if (r == 4)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/reinforced_mail_coif"));
-		}
-		else if (r == 5)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/kettle_hat"));
-		}
-		else if (r == 6)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/nasal_helmet"));
-		}
-		else if (r == 7)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/padded_nasal_helmet"));
-		}
-		else if (r == 8)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/nasal_helmet_with_mail"));
-		}
-		else if (r == 9)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/full_helm"));
-		}
-		else if (r == 10)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/flat_top_helmet"));
-		}
-		else if (r == 11)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/padded_flat_top_helmet"));
-		}
-		else if (r == 12)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/flat_top_with_mail"));
-		}
-		else if (r == 13)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/kettle_hat_with_mail"));
-		}
-		else if (r == 14)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/kettle_hat_with_closed_mail"));
-		}
-		else if (r == 15)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/closed_flat_top_with_neckguard"));
-		}
-		else if (r == 16)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/closed_flat_top_helmet"));
-		}
-		else if (r == 17)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/closed_flat_top_with_mail"));
-		}
-		else if (r == 18)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/witchhunter_hat"));
-		}
-		else if (r == 19)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/named/golden_feathers_helmet"));
-		}
-		else if (r == 20)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/named/heraldic_mail_helmet"));
-		}
-		else if (r == 21)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/named/nasal_feather_helmet"));
-		}
-		else if (r == 22)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/named/norse_helmet"));
-		}
-		else if (r == 23)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/named/sallet_green_helmet"));
-		}
-		else if (r == 24)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/named/wolf_helmet"));
-		}
-
-		r = this.Math.rand(1, 17);
+		local r = this.Math.rand(1, 17);
 
 		if (r == 1)
 		{
@@ -1901,73 +1808,35 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 	function assignRandomRangedEquipment()
 	{
-		local r = this.Math.rand(1, 10);
+		this.m.Items.equip(this.Const.World.Common.pickArmor([
+			[1, "padded_surcoat"],
+			[1, "mail_shirt"],
+			[1, "padded_leather"],
+			[1, "gambeson"],
+			[1, "leather_tunic"],
+			[1, "sackcloth"],
+			[1, "linen_tunic"],
+			[1, "tattered_sackcloth"],
+			[1, "ragged_surcoat"],
+			[1, "thick_tunic"],
+		]));
 
-		if (r == 1)
+		local item = this.Const.World.Common.pickHelmet([
+			[2, ""],
+			[1, "hood"],
+			[1, "aketon_cap"],
+			[1, "full_aketon_cap"],
+			[1, "open_leather_cap"],
+			[1, "full_leather_cap"]
+		])
+
+		if (item != null)
 		{
-			this.m.Items.equip(this.new("scripts/items/armor/padded_surcoat"));
-		}
-		else if (r == 2)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/mail_shirt"));
-		}
-		else if (r == 3)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/padded_leather"));
-		}
-		else if (r == 4)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/gambeson"));
-		}
-		else if (r == 5)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/leather_tunic"));
-		}
-		else if (r == 6)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/sackcloth"));
-		}
-		else if (r == 7)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/linen_tunic"));
-		}
-		else if (r == 8)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/tattered_sackcloth"));
-		}
-		else if (r == 9)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/ragged_surcoat"));
-		}
-		else if (r == 10)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/thick_tunic"));
+			this.m.Items.equip(item);
 		}
 
-		r = this.Math.rand(1, 7);
 
-		if (r == 1)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/hood"));
-		}
-		else if (r == 2)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/aketon_cap"));
-		}
-		else if (r == 3)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/full_aketon_cap"));
-		}
-		else if (r == 4)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/open_leather_cap"));
-		}
-		else if (r == 5)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/full_leather_cap"));
-		}
-
-		r = this.Math.rand(1, 4);
+		local r = this.Math.rand(1, 4);
 
 		if (r == 1)
 		{
@@ -1993,54 +1862,27 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 	function assignRandomThrowingEquipment()
 	{
-		local r = this.Math.rand(1, 8);
+		this.m.Items.equip(this.Const.World.Common.pickArmor([
+			[1, "padded_surcoat"],
+			[1, "mail_shirt"],
+			[1, "padded_leather"],
+			[1, "gambeson"],
+			[1, "leather_tunic"],
+			[1, "sackcloth"],
+			[1, "linen_tunic"],
+			[1, "tattered_sackcloth"],
+		]));
 
-		if (r == 1)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/padded_surcoat"));
-		}
-		else if (r == 2)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/mail_shirt"));
-		}
-		else if (r == 3)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/padded_leather"));
-		}
-		else if (r == 4)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/gambeson"));
-		}
-		else if (r == 5)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/leather_tunic"));
-		}
-		else if (r == 6)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/sackcloth"));
-		}
-		else if (r == 7)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/linen_tunic"));
-		}
-		else if (r == 8)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/tattered_sackcloth"));
-		}
+		local item = this.Const.World.Common.pickHelmet([
+			[1, ""],
+			[1, "hood"],
+			[1, "aketon_cap"],
+			[1, "full_aketon_cap"]
+		])
 
-		r = this.Math.rand(1, 4);
-
-		if (r == 1)
+		if (item != null)
 		{
-			this.m.Items.equip(this.new("scripts/items/helmets/hood"));
-		}
-		else if (r == 2)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/aketon_cap"));
-		}
-		else if (r == 3)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/full_aketon_cap"));
+			this.m.Items.equip(item);
 		}
 
 		r = this.Math.rand(1, 2);
@@ -2088,19 +1930,19 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		}
 
 		local background = this.new("scripts/skills/backgrounds/" + _backgrounds[this.Math.rand(0, _backgrounds.len() - 1)]);
-		background.setGender(_gender);
+
+		if (this.World.LegendsMod.Configs().LegendGenderLevel() == 2)
+		{
+			background.setGender(_gender);
+		}
 		this.m.Skills.add(background);
+
+		/*Skill onAdded sets these values
 		this.m.Background = background;
-
-		if (this.m.Name.len() == 0 && background.isFemaleBackground() == false)
-		{
-			this.m.Name = this.Const.Tactical.Common.getRandomPlayerName();
-		}
-
-		if (this.m.Name.len() == 0 && background.isFemaleBackground() == true)
-		{
-			this.m.Name = this.Const.Tactical.Common.getRandomPlayerNameFemale();
-		}
+		this.m.Ethnicity = this.m.Background.getEthnicity();
+		background.buildAttributes();
+		*/
+		background.buildDescription();
 
 		if (background.isFemaleBackground())
 		{
@@ -2110,11 +1952,11 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		local attributes = background.buildPerkTree();
 		local maxTraits = 0;
 
-		if (this.getTags().has("PlayerZombie"))
+		if (this.getFlags().has("PlayerZombie"))
 		{
 			this.m.StarWeights = background.buildAttributes("zombie", attributes);
 		}
-		else if (this.getTags().has("PlayerSkeleton"))
+		else if (this.getFlags().has("PlayerSkeleton"))
 		{
 			this.m.StarWeights = background.buildAttributes("skeleton", attributes);
 		}
@@ -2185,11 +2027,11 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			background.addEquipment();
 		}
 
-		if (this.getTags().has("PlayerZombie"))
+		if (this.getFlags().has("PlayerZombie"))
 		{
 			background.setAppearance("zombie");
 		}
-		else if (this.getTags().has("PlayerSkeleton"))
+		else if (this.getFlags().has("PlayerSkeleton"))
 		{
 			background.setAppearance("skeleton");
 		}
@@ -2209,49 +2051,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			this.fillAttributeLevelUpValues(this.Const.XP.MaxLevelWithPerkpoints - 1);
 		}
 
-		if ( this.World.LegendsMod.Configs().RelationshipsEnabled() )
-		{
-        	this.setAlignment( null, background );
-		}
 	}
-
-	//Grants the frenemies & alignment skills
-	function setAlignment ( custom = null, background = null )
-	{
-		if ( background == null )
-		{
-			background = this.getBackground();
-		}
-		if ( this.m.IsAlignmentAssigned )
-		{
-			this.m.Skills.removeByID("trait.legend_alignment");
-		}
-		if ( custom != null )
-		{
-			if ( custom > this.Const.LegendMod.Alignment.Saintly )
-			{
-				this.m.Alignment = this.Const.LegendMod.Alignment.Saintly;
-			}
-			else if ( custom < this.Const.LegendMod.Alignment.Dreaded )
-			{
-				this.m.Alignment = this.Const.LegendMod.Alignment.Dreaded;
-			}
-			else
-			{
-				this.m.Alignment = custom;
-			}
-		}
-		else
-		{
-			this.m.Alignment = this.Math.rand(background.getAlignmentMin(), background.getAlignmentMax());
-		}
-
-		this.m.IsAlignmentAssigned = true;
-
-		this.m.Skills.add(this.new("scripts/skills/traits/legend_frenemies"));
-		this.m.Skills.add(this.new("scripts/skills/traits/legend_alignment"));
-	}
-
 
     function getAlignment()
     {
@@ -2270,165 +2070,6 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	{
 		this.m.CompanyID = _num;
 	}
-	//If we don't have an active relationship with the actor create one -> then change the Key by the amount
-	//Most of the time we just change the relation number as of now so defaulting to RelationNum
-	//otherwise if we want to change specific key by the amount do that here
-	//We use _set = false to just stack onto the old relationship modifier
-	//If it's true then we overwrite the old modifier
-	//i.e. if relnum = 10 and we do ( _actor, 15, true ) -> relNum trns into 15
-	//or we can do ( _actor, 5 ) -> relNum turns to 15 also
-	//To use non-numeric keys it's trcky but use the following
-	// bro.cAR(bro2, true, [anything for set], keyValue)
-	//	bro.cAR(bro2, false, [anything], keyVal)
-	function changeActiveRelationship( _actor, _amount, _key = "RelationNum", _set = false )
-	{
-		if ( !this.World.LegendsMod.Configs().RelationshipsEnabled() )
-		{
-			return;
-		}
-		if ( _actor == this )
-		{
-			return;
-		}
-		if ( !( this.hasActiveRelationshipWith(_actor) ) )
-		{
-
-			this.createActiveRelationship(_actor);
-		}
-
-		local arrIndex = _actor.getCompanyID();
-		if (arrIndex == -1)
-		{
-			return;
-		}
-		local amtType = typeof _amount;
-		if (_set || (amtType != "integer" && amtType != "float"))
-		{
-			this.m.ActiveRelationships[arrIndex][_key] <- _amount;
-		}
-		else
-		{
-			if (_key in this.m.ActiveRelationships[arrIndex])
-			{
-				this.m.ActiveRelationships[arrIndex][_key] += _amount;
-			}
-			else
-			{
-				this.m.ActiveRelationships[arrIndex][_key] <- _amount;
-			}
-		}
-
-
-	}
-
-	//If the array index isn't null anymore then we have a rel with
-	//It should only ever be null if the relationship was previously made null by removing
-	function hasActiveRelationshipWith( _actor )
-	{
-		if (_actor.getCompanyID() == -1)
-		{
-			return false;
-		}
-		if ( this.m.ActiveRelationships[_actor.getCompanyID()] == null )
-		{
-			return false;
-		}
-		return true;
-	}
-
-	//Simple rewrite of old relationship
-	//Cant have relationship on self
-	function createActiveRelationship( _actor )
-	{
-
-		if ( _actor == this )
-		{
-			return;
-		}
-
-		local newRelationship = {};
-		newRelationship.RelationNum <- 0;
-
-		if (_actor.getCompanyID() == -1)
-		{
-			return;
-		}
-
-		this.m.ActiveRelationships[_actor.getCompanyID()] = newRelationship;
-
-	}
-
-	//Quick null to relationship when the brother dies
-	//Can call with below in case needed
-	//	foreach (bro in roster)
-	//	{
-	//		bro.nullRelation( actorWhoDied );
-	//	}
-	function nullRelation( _id )
-	{
-		if (_id == -1)
-		{
-			return;
-		}
-		this.m.ActiveRelationships[_id] = null;
-	}
-
-	//Quick loop thru all brothers and null's according to company ID
-	function removeActiveRelationship()
-	{
-
-		local brothers = this.World.getPlayerRoster().getAll();
-		foreach ( b in brothers )
-		{
-			b.nullRelation(this.getCompanyID());
-		}
-		this.World.State.removeCompanyID(this.m.CompanyID);
-	}
-
-
-	//Call this function by doing
-	//		getARW( actor )
-	//Use by doing
-	//		local relTable = getARW ( actor )
-	//		if ( [key] in relTable ) -> do stuff
-	//			if ( FriendshipToNotHitBonus in relTable ) -> give bonus to not hit friend
-	function getActiveRelationshipWith( _actor )
-	{
-		if ( ! (_actor.getCompanyID() in this.m.ActiveRelationships) )
-		{
-			this.logInfo("Error: Attempted to grab active relationship from something that didn't exist. Returning null");
-			return null;
-		}
-		return this.m.ActiveRelationships[_actor.getCompanyID()];
-	}
-
-	//Used by the trait to get just a list of the characters relations
-	//Currently returns just the RelNum integer but can be changed to
-	//		return strings, i.e. "%actor% likes %other actor%"
-	function getActiveRelationshipsTraitText()
-	{
-		local returnString = "";
-		foreach ( index, relation in this.m.ActiveRelationships )
-		{
-			if ( relation != null )
-			{
-				returnString += "Relationship to " + this.World.State.getRefFromID(index).getNameOnly() + ": " + relation.RelationNum + "\n";
-			}
-		}
-		if (returnString == "")
-		{
-			returnString = this.getNameOnly() + " has no current relationships.";
-		}
-		return returnString;
-	}
-
-	//Returns the entire AR Array
-	function getActiveRelationships()
-	{
-		return this.m.ActiveRelationships;
-	}
-
-
 
 	function fillTalentValues( _num, _force = false )
 	{
@@ -2455,11 +2096,11 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				continue;
 			}
 
-			if (this.getTags().has("PlayerZombie") && (i == this.Const.Attributes.Bravery || i == this.Const.Attributes.Fatigue || i == this.Const.Attributes.Initiative))
+			if (this.getFlags().has("PlayerZombie") && (i == this.Const.Attributes.Bravery || i == this.Const.Attributes.Fatigue || i == this.Const.Attributes.Initiative))
 			{
 				continue;
 			}
-			else if (this.getTags().has("PlayerSkeleton") && (i == this.Const.Attributes.Bravery || i == this.Const.Attributes.Fatigue || i == this.Const.Attributes.Hitpoints))
+			else if (this.getFlags().has("PlayerSkeleton") && (i == this.Const.Attributes.Bravery || i == this.Const.Attributes.Fatigue || i == this.Const.Attributes.Hitpoints))
 			{
 				continue;
 			}
@@ -2703,6 +2344,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		}
 
 		this.m.IsTurnDone = true;
+		this.m.IsAbleToDie = false;
 		this.Tactical.getRetreatRoster().add(this);
 		this.removeFromMap();
 		this.Tactical.Entities.setLastCombatResult(this.Const.Tactical.CombatResult.PlayerRetreated);
@@ -2944,23 +2586,23 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.Sound.play(this.m.Sound[_type][this.Math.rand(0, this.m.Sound[_type].len() - 1)], volume, this.getPos(), _pitch);
 	}
 
-	function getRemoveLayerTooltip( _layer )
+	function getRemoveLayerTooltip(_slot, _layer)
 	{
-		local armor = this.getItems().getItemAtSlot(this.Const.ItemSlot.Body);
+		local armor = this.getItems().getItemAtSlot(_slot);
 		local title = "";
 
 		switch(_layer)
 		{
 		case 0:
-			title = "Chain Mail Layer";
+			title = _slot == this.Const.ItemSlot.Body ? "Chain Mail Layer" : "Helmet Layer";
 			break;
 
 		case 1:
-			title = "Plate Layer";
+			title = _slot == this.Const.ItemSlot.Body ? "Plate Layer" : "Top Layer";
 			break;
 
 		case 2:
-			title = "Tabard Layer";
+			title = _slot == this.Const.ItemSlot.Body ? "Tabard Layer" : "Vanity Layer";
 			break;
 
 		case 3:
@@ -2989,7 +2631,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			tt.push({
 				id = 2,
 				type = "description",
-				text = "A base piece of armor, such as a tunic or surcoat, needs to be worn in order to attach a layer"
+				text = _slot == this.Const.ItemSlot.Body ? "A base piece of armor, such as a tunic or surcoat, needs to be worn in order to attach a layer" : "A base piece of helmet, such as a hood or scarf, needs to be worn in order to attach a layer"
 			});
 			return tt;
 		}
@@ -2999,7 +2641,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			tt.push({
 				id = 2,
 				type = "description",
-				text = "The layer can not be attached to this piece of armor."
+				text = _slot == this.Const.ItemSlot.Body ? "The layer can not be attached to this piece of armor." : "The layer can not be attached to this helmet"
 			});
 			return tt;
 		}
@@ -3038,9 +2680,111 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		return tt;
 	}
 
+
+	function TherianthropeInfection(_killer)
+	{
+		if (!this.World.LegendsMod.Configs().LegendTherianthropyEnabled())
+		{
+			return;
+		}
+
+		local TherianthropyGroup = [
+							[this.Const.Perks.PerkDefs.LegendTrueForm],
+							[],
+							[this.Const.Perks.PerkDefs.LegendSurpressUrges],
+							[],
+							[this.Const.Perks.PerkDefs.LegendControlInstincts],
+							[],
+							[this.Const.Perks.PerkDefs.LegendMasterAnger]
+					];
+
+		if (_killer.getSkills().hasSkill("injury.legend_aperthropy") && !this.getSkills().hasSkill("injury.legend_aperthropy"))
+		{
+			this.getSkills().add(this.new("scripts/skills/injury_permanent/legend_aperthropy_injury"));
+			this.getBackground().addPerkGroup(TherianthropyGroup);
+			this.logDebug(this.getName() + " gained aperthropy");
+		}
+
+		if (_killer.getSkills().hasSkill("injury.legend_arborthropy") && !this.getSkills().hasSkill("injury.legend_arborthropy"))
+		{
+			this.getSkills().add(this.new("scripts/skills/injury_permanent/legend_arborthropy_injury"));
+			this.getBackground().addPerkGroup(TherianthropyGroup);
+			this.logDebug(this.getName() + " gained arborthropy");
+		}
+
+		if (_killer.getSkills().hasSkill("injury.legend_lycanthropy") && !this.getSkills().hasSkill("injury.legend_lycanthropy"))
+		{
+			this.getSkills().add(this.new("scripts/skills/injury_permanent/legend_lycanthropy_injury"));
+			this.getBackground().addPerkGroup(TherianthropyGroup);
+			this.logDebug(this.getName() + " gained lycanthropy");
+		}
+
+		if (_killer.getSkills().hasSkill("injury.legend_ursathropy") && !this.getSkills().hasSkill("injury.legend_ursathropy"))
+		{
+			this.getSkills().add(this.new("scripts/skills/injury_permanent/legend_ursathropy_injury"));
+			this.getBackground().addPerkGroup(TherianthropyGroup);
+			this.logDebug(this.getName() + " gained ursathropy");
+		}
+	}
+
+	function TherianthropeInfectionRandom()
+	{
+
+		if (!this.World.LegendsMod.Configs().LegendTherianthropyEnabled())
+		{
+			return;
+		}
+
+		local TherianthropyGroup = [
+							[this.Const.Perks.PerkDefs.LegendTrueForm],
+							[],
+							[this.Const.Perks.PerkDefs.LegendSurpressUrges],
+							[],
+							[this.Const.Perks.PerkDefs.LegendControlInstincts],
+							[],
+							[this.Const.Perks.PerkDefs.LegendMasterAnger]
+					];
+		local r = this.Math.rand(1,99);
+
+		if (r <= 50 && !this.getSkills().hasSkill("injury.legend_lycanthropy"))
+		{
+			this.getSkills().add(this.new("scripts/skills/injury_permanent/legend_lycanthropy_injury"));
+			this.getBackground().addPerkGroup(TherianthropyGroup);
+			this.logDebug(this.getName() + " gained lycanthropy");
+		}
+
+		if (r > 50 && r <= 75 && !this.getSkills().hasSkill("injury.legend_aperthropy"))
+		{
+			this.getSkills().add(this.new("scripts/skills/injury_permanent/legend_aperthropy_injury"));
+			this.getBackground().addPerkGroup(TherianthropyGroup);
+			this.logDebug(this.getName() + " gained aperthropy");
+		}
+
+		if (r > 75 && r <= 90 && !this.getSkills().hasSkill("injury.legend_arborthropy"))
+		{
+			this.getSkills().add(this.new("scripts/skills/injury_permanent/legend_arborthropy_injury"));
+			this.getBackground().addPerkGroup(TherianthropyGroup);
+			this.logDebug(this.getName() + " gained arborthropy");
+		}
+
+		if (r > 90 && r <= 98 && !this.getSkills().hasSkill("injury.legend_ursathropy"))
+		{
+			this.getSkills().add(this.new("scripts/skills/injury_permanent/legend_ursathropy_injury"));
+			this.getBackground().addPerkGroup(TherianthropyGroup);
+			this.logDebug(this.getName() + " gained ursathropy");
+		}
+
+		if (r == 99 && !this.getSkills().hasSkill("injury.legend_vermesthropy"))
+		{
+			this.getSkills().add(this.new("scripts/skills/injury_permanent/legend_vermesthropy_injury"));
+			this.getBackground().addPerkGroup(TherianthropyGroup);
+			this.logDebug(this.getName() + " gained vermesthropy");
+		}
+	}
+
 	function onSerialize( _out )
 	{
-		this.actor.onSerialize(_out);
+		this.human.onSerialize(_out);
 		_out.writeU8(this.m.Level);
 		_out.writeU8(this.m.PerkPoints);
 		_out.writeU8(this.m.PerkPointsSpent);
@@ -3093,42 +2837,21 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		_out.writeString(this.m.CampAssignment);
 		_out.writeF32(this.m.LastCampTime);
 		_out.writeBool(this.m.InReserves);
-
-		_out.writeBool( this.World.LegendsMod.Configs().RelationshipsEnabled() );
-		if ( this.World.LegendsMod.Configs().RelationshipsEnabled() )
-		{
-			_out.writeU8(this.m.Alignment);
-			_out.writeBool(this.m.IsAlignmentAssigned);
-		}
 		_out.writeU8(this.m.CompanyID);
-
-		//keys are just string values
-		if (this.World.LegendsMod.Configs().RelationshipsEnabled())
-		{
-			foreach (index, relation in this.m.ActiveRelationships)
-			{
-				if (relation != null)
-				{
-					_out.writeString("CharID");
-					_out.writeU16(index);
-
-					foreach (key, value in relation)
-				{
-					_out.writeString(key);//IF WE ADD ANY NON-INT KEYS YOU HAVE TO CHECK HERE WHAT TKEY STRING IS USING
-					_out.writeI16(value);// if ( key == __ ) THEN _out.WriteVARTYPE
-				}
-
-				}
-
-			}
-			//adds a string with STOP so we know when to stop reading in in onDeserialize(?) this should bechanged probably
-			_out.writeString("STOP");
-		}
 	}
 
 	function onDeserialize( _in )
 	{
-		this.actor.onDeserialize(_in);
+		if (_in.getMetaData().getVersion() >= 59)
+		{
+			this.human.onDeserialize(_in);
+		}
+		else
+		{
+			this.actor.onDeserialize(_in);
+		}
+
+		this.m.Surcoat = null;
 		this.m.Level = _in.readU8();
 		this.m.PerkPoints = _in.readU8();
 		this.m.PerkPointsSpent = _in.readU8();
@@ -3242,40 +2965,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		{
 			this.m.InReserves = _in.readBool();
 		}
-		//IF WE ADD ANY NON-INT KEYS YOU HAVE TO CHECK HERE WHAT TKEY STRING IS USING
-		// if ( keys == __ ) THEN _in.readVARTYPE
-		if (_in.getMetaData().getVersion() >= 65) //THIS SHOULD BE CHANGED TO ACTUAL NUMBER WHEN IN RELEASE BUILD
-		{
-
-			local relEnabled = (_in.getMetaData().getVersion() == 65 ? true : _in.readBool());
-
-			if (relEnabled)
-			{
-				this.m.Alignment = _in.readU8();
-				this.m.IsAlignmentAssigned = _in.readBool();
-			}
-			this.m.CompanyID = _in.readU8();
-			if (relEnabled)
-			{
-				local keys = _in.readString(); //puts STOP if we had norelations etc
-				local i = -1;
-				while ( keys != "STOP" )
-				{
-
-					if ( keys == "CharID" ) //new actor's relation
-					{
-						i = _in.readU16();
-						this.m.ActiveRelationships[i] = {};
-					}
-					else
-					{
-						this.m.ActiveRelationships[i][keys] <- _in.readI16();
-					}
-					keys = _in.readString();
-				}
-			}
-		}
-
+		this.m.CompanyID = _in.readU8();
 	}
 
 });

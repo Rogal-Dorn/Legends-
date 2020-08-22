@@ -6,7 +6,7 @@ this.shepherd_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.ID = "background.shepherd";
 		this.m.Name = "Shepherd";
 		this.m.Icon = "ui/backgrounds/background_44.png";
-		this.m.BackgroundDescription = "Shepherds are used to physical labor, and using a sling to scare away foxes";
+		this.m.BackgroundDescription = "Shepherds are used to physical labor and known to keep the occasional wolf at bay with a sling.";
 		this.m.GoodEnding = "It was unusual that a shepherd such as %name% ever found his way into a company of sellswords, but he did prove himself an able warrior. With injuries mounting, he eventually retired, returning to a meadow, staff in hand, and herding sheep until his final, peaceful days.";
 		this.m.BadEnding = "You\'d think a shepherd would have no place in the company of sellsword and, eventually, %name% agreed. He left the %companyname% not long after you and last you heard he was back to tending his sheep. While most men left the company in poor spirits, %name%\'s injuries did not bring down his docile lifestyle of staring at fluffy white critters about as dangerous as a bad dream.";
 		this.m.HiringCost = 80;
@@ -42,7 +42,7 @@ this.shepherd_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.Hairs = this.Const.Hair.CommonMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.Body = "bust_naked_body_00";
+		this.m.Bodies = this.Const.Bodies.Skinny;
 		this.m.IsOffendedByViolence = true;
 		this.m.IsLowborn = true;
 		this.m.IsCrusaderRecruitBackground = true;
@@ -130,30 +130,11 @@ this.shepherd_background <- this.inherit("scripts/skills/backgrounds/character_b
 			}
 		}
 
-		r = this.Math.rand(0, 2);
-
-		if (r == 0)
-		{
-			local item = this.new("scripts/items/armor/linen_tunic");
-			item.setVariant(this.Math.rand(6, 7));
-			items.equip(item);
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/armor/sackcloth"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/armor/leather_tunic"));
-		}
-
-		r = this.Math.rand(0, 0);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/straw_hat"));
-		}
-
+		items.equip(this.Const.World.Common.pickArmor([
+			[1, "sackcloth"],
+			[1, "leather_tunic"],
+			[1, "linen_tunic", this.Math.rand(6, 7)]
+		]))
 
 		r = this.Math.rand(0, 4);
 
@@ -166,61 +147,11 @@ this.shepherd_background <- this.inherit("scripts/skills/backgrounds/character_b
 			items.equip(this.new("scripts/items/weapons/legend_staff"));
 		}
 
-	}
-
-	function onAddLegendEquipment()
-	{
-		local items = this.getContainer().getActor().getItems();
-		local r;
-
-		if (this.Const.DLC.Wildmen)
-		{
-			if (this.Math.rand(1, 100) <= 66)
-			{
-				items.equip(this.new("scripts/items/weapons/legend_sling"));
-			}
-		}
-
-		local cloths = [
-            [0, ""],
-			[0, "cloth/legend_gambeson"],
-			[0, "cloth/legend_gambeson_plain"],
-			[0, "cloth/legend_gambeson_wolf"],
-			[0, "cloth/legend_padded_surcoat"],
-			[0, "cloth/legend_robes"],
-			[0, "cloth/legend_apron_butcher"],
-			[0, "cloth/legend_robes_nun"],
-			[0, "cloth/legend_apron_smith"],
-			[0, "cloth/legend_robes_wizard"],
-			[1, "cloth/legend_sackcloth"],
-			[0, "cloth/legend_sackcloth_patched"],
-			[0, "cloth/legend_sackcloth_tattered"],
-			[1, "cloth/legend_tunic"],
-			[0, "cloth/legend_tunic_noble"]
-		];
-		local armor = this.Const.World.Common.pickLegendArmor(cloths)
-		items.equip(armor)
-
-
-		r = this.Math.rand(0, 0);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/straw_hat"));
-		}
-
-
-		r = this.Math.rand(0, 4);
-
-		if (r <= 3)
-		{
-			items.equip(this.new("scripts/items/weapons/legend_sling"));
-		}
-		else if (r == 4)
-		{
-			items.equip(this.new("scripts/items/weapons/legend_staff"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "straw_hat"],
+		]));
 
 	}
+
 });
 

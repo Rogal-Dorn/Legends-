@@ -77,10 +77,6 @@ this.cultist_vs_uneducated_event <- this.inherit("scripts/events/event", {
 
 
 				//set relations
-				local modifier1 = this.Math.rand(10, 20);
-				_event.m.Uneducated.changeActiveRelationship( _event.m.Cultist, modifier1 );
-				local modifier2 = this.Math.rand(10, 20);
-				_event.m.Cultist.changeActiveRelationship( _event.m.Uneducated, modifier2 );
 				this.List = [
 					{
 						id = 13,
@@ -88,15 +84,6 @@ this.cultist_vs_uneducated_event <- this.inherit("scripts/events/event", {
 						text = _event.m.Uneducated.getName() + " has been converted to a Cultist"
 					}
 				];
-
-				if (this.World.LegendsMod.Configs().RelationshipsEnabled())
-				{
-					this.List.push({
-						id = 11,
-						icon = "ui/icons/relation.png",
-						text = _event.m.Cultist.getName() + " and " + _event.m.Uneducated.getName() + " grow closer"
-					});
-				}
 				_event.m.Cultist.getBaseProperties().Bravery += 2;
 				_event.m.Cultist.getSkills().update();
 				this.List.push({
@@ -169,7 +156,7 @@ this.cultist_vs_uneducated_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getFlags().get("IsSpecial"))
+			if (bro.getFlags().get("IsSpecial") || bro.getFlags().get("IsPlayerCharacter"))
 			{
 				continue;
 			}
@@ -218,11 +205,6 @@ this.cultist_vs_uneducated_event <- this.inherit("scripts/events/event", {
 			"uneducated",
 			this.m.Uneducated.getName()
 		]);
-	}
-
-	function onDetermineStartScreen()
-	{
-		return "A";
 	}
 
 	function onClear()

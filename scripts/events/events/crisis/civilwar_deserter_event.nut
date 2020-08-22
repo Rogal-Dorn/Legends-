@@ -82,19 +82,6 @@ this.civilwar_deserter_event <- this.inherit("scripts/events/event", {
 						this.World.getPlayerRoster().add(_event.m.Dude);
 						this.World.getTemporaryRoster().clear();
 						_event.m.Dude.onHired();
-
-						//set relations
-						local brothers = this.World.getPlayerRoster().getAll();
-						foreach( bro in brothers )
-						{
-							if (bro.getBackground().getID() == "background.deserter")
-							{
-								local modifier1 = this.Math.rand(5, 10);
-								bro.changeActiveRelationship( _event.m.Dude, modifier1 );
-								local modifier2 = this.Math.rand(5, 10);
-								_event.m.Dude.changeActiveRelationship( bro, modifier2 );
-							}
-						}
 						return 0;
 					}
 
@@ -115,28 +102,6 @@ this.civilwar_deserter_event <- this.inherit("scripts/events/event", {
 				_event.m.NobleHouse.addPlayerRelation(this.Const.World.Assets.RelationUnitKilled);
 				this.Characters.push(_event.m.Dude.getImagePath());
 
-
-				if (this.World.LegendsMod.Configs().RelationshipsEnabled())
-				{
-					local brocount = 0;
-							foreach( bro in brothers )
-							{
-								if (bro.getBackground().getID() == "background.deserter")
-								{
-								++brocount;
-								}
-							}
-					if (brocount >= 2)
-					{
-
-					this.List.push({
-						id = 10,
-						icon = "ui/icons/relation.png",
-						text = "relations increased between deserters"
-					});
-					}
-				}
-
 			}
 
 		});
@@ -154,21 +119,6 @@ this.civilwar_deserter_event <- this.inherit("scripts/events/event", {
 						this.World.getPlayerRoster().add(_event.m.Dude);
 						this.World.getTemporaryRoster().clear();
 						_event.m.Dude.onHired();
-
-
-						//set relations
-						local brothers = this.World.getPlayerRoster().getAll();
-						foreach( bro in brothers )
-						{
-							if (bro.getBackground().getID() == "background.deserter")
-							{
-								local modifier1 = this.Math.rand(5, 10);
-								bro.changeActiveRelationship( _event.m.Dude, modifier1 );
-								local modifier2 = this.Math.rand(5, 10);
-								_event.m.Dude.changeActiveRelationship( bro, modifier2 );
-							}
-						}
-
 						return 0;
 					}
 
@@ -240,7 +190,14 @@ this.civilwar_deserter_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
-		if (!this.World.State.getPlayer().getTile().HasRoad)
+		local currentTile = this.World.State.getPlayer().getTile();
+
+		if (!currentTile.HasRoad)
+		{
+			return;
+		}
+
+		if (this.Const.DLC.Desert && currentTile.SquareCoords.Y <= this.World.getMapSize().Y * 0.2)
 		{
 			return;
 		}
@@ -257,6 +214,11 @@ this.civilwar_deserter_event <- this.inherit("scripts/events/event", {
 
 		foreach( t in towns )
 		{
+			if (t.isSouthern())
+			{
+				continue;
+			}
+
 			local d = playerTile.getDistanceTo(t.getTile());
 
 			if (d <= bestDistance)

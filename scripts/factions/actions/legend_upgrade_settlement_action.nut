@@ -24,6 +24,11 @@ this.legend_upgrade_settlement_action <- this.inherit("scripts/factions/faction_
 
 		this.m.Settlement = _faction.getSettlements()[this.Math.rand(0, _faction.getSettlements().len() - 1)];
 
+		if (this.m.Settlement.isBuilding())
+		{
+			return;
+		}
+
 		//We can only upgrade a settlement once all the locations have been filled up.
 		if (this.m.Settlement.canBuildLocation())
 		{

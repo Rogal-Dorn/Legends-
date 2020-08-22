@@ -35,12 +35,12 @@ this.goblin_city_reminder_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
-		if (this.World.Tags.get("IsGoblinCityDestroyed"))
+		if (this.World.Flags.get("IsGoblinCityDestroyed"))
 		{
 			return;
 		}
 
-		if (this.World.Tags.get("IsGoblinCityOutposts") && this.World.Tags.get("GoblinCityCount") >= 5 || this.World.Tags.get("IsGoblinCityScouts") && this.World.Tags.get("GoblinCityCount") >= 10)
+		if (this.World.Flags.get("IsGoblinCityOutposts") && this.World.Flags.get("GoblinCityCount") >= 5 || this.World.Flags.get("IsGoblinCityScouts") && this.World.Flags.get("GoblinCityCount") >= 10)
 		{
 			this.m.Score = 500;
 		}

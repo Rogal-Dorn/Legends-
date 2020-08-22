@@ -42,7 +42,10 @@ gt.Const.Tactical.DetailFlag <- {
 	Loot = 1,
 	Corpse = 8,
 	SeveredHead = 16,
-	Effect = 32
+	Effect = 32,
+	Overlay = 64,
+	SpecialOverlay = 128,
+	Scorchmark = 256
 };
 gt.Const.Tactical.Settings <- {
 	MapBorderColor = "#666666",
@@ -73,7 +76,8 @@ gt.Const.Tactical.Settings <- {
 	CameraWaitForEventDelay = 500,
 	CameraNextEventDelay = 1000,
 	SwitchWeaponAPCost = 4,
-	SwitchItemAPCost = 4
+	SwitchItemAPCost = 4,
+	CampRadius = 7
 };
 gt.Const.Tactical.AmbientLightingColor <- {
 	Default = "#ffffff",
@@ -152,7 +156,14 @@ gt.Const.Tactical.TileBlendPriority <- {
 	Steppe5 = 29,
 	Steppe1 = 30,
 	Steppe2 = 31,
-	COUNT = 32
+	Desert5 = 32,
+	Desert6 = 33,
+	Desert1 = 34,
+	Desert2 = 35,
+	Desert7 = 36,
+	Desert3 = 37,
+	Desert4 = 38,
+	COUNT = 39
 };
 gt.Const.Tactical.TerrainType <- {
 	Impassable = 0,
@@ -242,7 +253,9 @@ gt.Const.Tactical.TerrainSubtype <- {
 	LightSnow = 14,
 	FlatStone = 15,
 	RoughStone = 16,
-	COUNT = 17
+	Desert = 17,
+	ShallowWater = 18,
+	COUNT = 19
 };
 gt.Const.Tactical.TerrainMovementSound <- [
 	[],
@@ -662,6 +675,70 @@ gt.Const.Tactical.TerrainMovementSound <- [
 			Volume = 1.0,
 			Pitch = 1.0
 		}
+	],
+	[
+		{
+			File = "movement/dlc6/movement_sand_01.wav",
+			Volume = 1.0,
+			Pitch = 1.0
+		},
+		{
+			File = "movement/dlc6/movement_sand_02.wav",
+			Volume = 1.0,
+			Pitch = 1.0
+		},
+		{
+			File = "movement/dlc6/movement_sand_03.wav",
+			Volume = 1.0,
+			Pitch = 1.0
+		},
+		{
+			File = "movement/dlc6/movement_sand_04.wav",
+			Volume = 1.0,
+			Pitch = 1.0
+		},
+		{
+			File = "movement/dlc6/movement_sand_05.wav",
+			Volume = 1.0,
+			Pitch = 1.0
+		},
+		{
+			File = "movement/dlc6/movement_sand_06.wav",
+			Volume = 1.0,
+			Pitch = 1.0
+		},
+		{
+			File = "movement/dlc6/movement_sand_07.wav",
+			Volume = 1.0,
+			Pitch = 1.0
+		},
+		{
+			File = "movement/dlc6/movement_sand_08.wav",
+			Volume = 1.0,
+			Pitch = 1.0
+		}
+	],
+	[
+		{
+			File = "movement/movement_shallow_water_00.wav",
+			Volume = 1.0,
+			Pitch = 1.0
+		},
+		{
+			File = "movement/movement_shallow_water_02.wav",
+			Volume = 1.0,
+			Pitch = 1.0
+		},
+		{
+			File = "movement/movement_shallow_water_03.wav",
+			Volume = 1.0,
+			Pitch = 1.0
+		},
+		{
+			File = "movement/movement_shallow_water_04.wav",
+			Volume = 1.0,
+			Pitch = 1.0
+		}
 	]
 ];
 gt.Const.Tactical.TerrainSubtypeAllowProjectileDecals <- [
@@ -681,8 +758,29 @@ gt.Const.Tactical.TerrainSubtypeAllowProjectileDecals <- [
 	true,
 	true,
 	true,
-	true
+	true,
+	true,
+	false
 ];
+gt.Const.Tactical.FortificationType <- {
+	None = 0,
+	Palisade = 1,
+	Walls = 2,
+	WallsAndPalisade = 3
+};
+gt.Const.Tactical.LocationTemplate <- {
+	OwnedByFaction = 0,
+	Template = [
+		null,
+		null
+	],
+	Fortification = this.Const.Tactical.FortificationType.None,
+	CutDownTrees = false,
+	ForceLineBattle = false,
+	ShiftX = 6,
+	ShiftY = 0,
+	AdditionalRadius = 0
+};
 gt.Const.Tactical.HitInfo <- {
 	DamageRegular = 0.0,
 	DamageArmor = 0.0,
@@ -696,17 +794,22 @@ gt.Const.Tactical.HitInfo <- {
 	DamageInflictedArmor = 0,
 	Injuries = null,
 	InjuryThresholdMult = 1.0,
-	Tile = null
+	Tile = null,
+	IsPlayingArmorSound = true
 };
 gt.Const.Tactical.DeploymentType <- {
 	Auto = 0,
 	Line = 1,
-	Pincer = 2,
-	Circle = 3,
-	Center = 4,
-	Edge = 5,
-	Random = 6,
-	Custom = 7
+	LineBack = 2,
+	LineForward = 3,
+	Pincer = 4,
+	Circle = 5,
+	Center = 6,
+	Edge = 7,
+	Camp = 8,
+	Random = 9,
+	Arena = 10,
+	Custom = 11
 };
 gt.Const.Tactical.CombatInfo <- {
 	TerrainTemplate = null,
@@ -716,6 +819,14 @@ gt.Const.Tactical.CombatInfo <- {
 	Players = [],
 	Parties = [],
 	Music = [],
+	Ambience = [
+		[],
+		[]
+	],
+	AmbienceMinDelay = [
+		this.Const.Sound.AmbienceMinDelay,
+		this.Const.Sound.AmbienceMinDelay
+	],
 	TemporaryEnemies = [],
 	AllyBanners = [],
 	EnemyBanners = [],
@@ -727,12 +838,17 @@ gt.Const.Tactical.CombatInfo <- {
 	BeforeDeploymentCallback = null,
 	AfterDeploymentCallback = null,
 	CombatID = "Default",
+	MapSeed = 0,
 	InCombatAlready = false,
 	IsPlayerInitiated = false,
 	IsAttackingLocation = false,
+	IsWithoutAmbience = false,
 	IsFleeingProhibited = false,
+	IsLootingProhibited = false,
 	IsAutoAssigningBases = true,
 	IsUsingSetPlayers = false,
+	IsFogOfWarVisible = true,
+	IsArenaMode = false,
 	function getClone()
 	{
 		local p = clone this;
@@ -746,6 +862,14 @@ gt.Const.Tactical.CombatInfo <- {
 		p.EnemyBanners = [];
 		p.Loot = [];
 		p.Players = [];
+		p.Ambience = [
+			[],
+			[]
+		];
+		p.AmbienceMinDelay = [
+			this.Const.Sound.AmbienceMinDelay,
+			this.Const.Sound.AmbienceMinDelay
+		];
 		return p;
 	}
 

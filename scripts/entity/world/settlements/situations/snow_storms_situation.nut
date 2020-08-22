@@ -7,6 +7,9 @@ this.snow_storms_situation <- this.inherit("scripts/entity/world/settlements/sit
 		this.m.Name = "Snow Storms";
 		this.m.Description = "Snow storms have more or less isolated this settlement from trade. Because few new goods have been coming in, the selection is lower and prices are higher.";
 		this.m.Icon = "ui/settlement_status/settlement_effect_20.png";
+		this.m.Rumors = [
+			"Bad weather out there towards %settlement%, looks like a full-blown blizzard."
+		];
 		this.m.IsStacking = false;
 		this.m.ValidDays = 3;
 	}

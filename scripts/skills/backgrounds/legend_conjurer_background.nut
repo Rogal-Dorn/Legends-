@@ -37,7 +37,7 @@ this.legend_conjurer_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsFemaleBackground = true;
 		this.m.IsPerformingBackground = true;
 		this.m.IsEducatedBackground = true;
@@ -98,7 +98,7 @@ this.legend_conjurer_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.Hairs = this.Const.Hair.CommonMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.Body = "bust_naked_body_01";
+
 		this.m.IsFemaleBackground = false;
 	}
 
@@ -170,20 +170,6 @@ this.legend_conjurer_background <- this.inherit("scripts/skills/backgrounds/char
 		return c;
 	}
 
-	function onAdded()
-	{
-		this.character_background.onAdded();
-
-		local actor = this.getContainer().getActor();
-		if (this.m.IsFemaleBackground == true)
-		{
-			actor.setName(this.Const.Strings.CharacterNamesFemale[this.Math.rand(0, this.Const.Strings.CharacterNamesFemale.len() - 1)]);
-		}
-		else
-		{
-			actor.setName(this.Const.Strings.CharacterNames[this.Math.rand(0, this.Const.Strings.CharacterNames.len() - 1)]);
-		}
-	}
 
 	function onAddEquipment()
 	{
@@ -192,29 +178,13 @@ this.legend_conjurer_background <- this.inherit("scripts/skills/backgrounds/char
 		talents[this.Const.Attributes.Fatigue] = 3;
 		this.getContainer().getActor().fillTalentValues(2, true);
 		local items = this.getContainer().getActor().getItems();
-		items.equip(this.new("scripts/items/armor/legend_seer_robes"));
+		items.equip(this.Const.World.Common.pickArmor([
+			[1, "legend_seer_robes"]
+		]));
 		items.equip(this.new("scripts/items/weapons/legend_mystic_staff"));
-		items.equip(this.new("scripts/items/helmets/legend_seer_hat"));
-		local stash = this.World.Assets.getStash()
-		stash.removeByID("supplies.ground_grains");
-		stash.removeByID("supplies.ground_grains");
-		// stash.add(this.new("scripts/items/supplies/black_marsh_stew_item"));
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "legend_seer_hat"],
+			[1, "magician_hat"]
+		]));
 	}
-
-	function onAddLegendEquipment()
-	{
-		local talents = this.getContainer().getActor().getTalents();
-		talents.resize(this.Const.Attributes.COUNT, 0);
-		talents[this.Const.Attributes.Fatigue] = 3;
-		this.getContainer().getActor().fillTalentValues(2, true);
-		local items = this.getContainer().getActor().getItems();
-		items.equip(this.new("scripts/items/legend_armor/cloth/legend_robes_magic"));
-		items.equip(this.new("scripts/items/weapons/legend_mystic_staff"));
-		items.equip(this.new("scripts/items/helmets/magician_hat"));
-		local stash = this.World.Assets.getStash()
-		stash.removeByID("supplies.ground_grains");
-		stash.removeByID("supplies.ground_grains");
-		// stash.add(this.new("scripts/items/supplies/black_marsh_stew_item"));
-	}
-
 });

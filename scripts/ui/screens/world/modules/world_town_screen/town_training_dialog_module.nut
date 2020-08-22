@@ -33,6 +33,11 @@ this.town_training_dialog_module <- this.inherit("scripts/ui/screens/ui_module",
 				continue;
 			}
 
+			if (b.getLevel() >= 7 && this.World.Assets.getOrigin().getID() == "scenario.manhunters" && b.getBackground().getID() == "background.slave")
+			{
+				continue;
+			}
+
 			if (b.getSkills().hasSkill("effects.trained"))
 			{
 				continue;
@@ -56,21 +61,21 @@ this.town_training_dialog_module <- this.inherit("scripts/ui/screens/ui_module",
 				icon = "skills/status_effect_75.png",
 				name = "Sparring Fight",
 				tooltip = "world-town-screen.training-dialog-module.Train1",
-				price = this.Math.round(settlement.getSellPriceMult() * (80 + 50 * b.getLevel()))
+				price = 80 + 50 * b.getLevel()
 			});
 			e.Training.push({
 				id = 1,
 				icon = "skills/status_effect_76.png",
 				name = "Veteran\'s Lessons",
 				tooltip = "world-town-screen.training-dialog-module.Train2",
-				price = this.Math.round(settlement.getSellPriceMult() * (100 + 60 * b.getLevel()))
+				price = 100 + 60 * b.getLevel()
 			});
 			e.Training.push({
 				id = 2,
 				icon = "skills/status_effect_77.png",
 				name = "Rigorous Schooling",
 				tooltip = "world-town-screen.training-dialog-module.Train3",
-				price = this.Math.round(settlement.getSellPriceMult() * (90 + 55 * b.getLevel()))
+				price = 90 + 55 * b.getLevel()
 			});
 			roster.push(e);
 		}
@@ -101,21 +106,21 @@ this.town_training_dialog_module <- this.inherit("scripts/ui/screens/ui_module",
 		switch(trainingID)
 		{
 		case 0:
-			price = this.Math.round(settlement.getSellPriceMult() * (80 + 50 * entity.getLevel()));
+			price = this.Math.round(80 + 50 * entity.getLevel());
 			effect.m.Duration = 1;
 			effect.m.XPGainMult = 1.5;
 			effect.m.Icon = "skills/status_effect_75.png";
 			break;
 
 		case 1:
-			price = this.Math.round(settlement.getSellPriceMult() * (100 + 60 * entity.getLevel()));
+			price = this.Math.round(100 + 60 * entity.getLevel());
 			effect.m.Duration = 3;
 			effect.m.XPGainMult = 1.35;
 			effect.m.Icon = "skills/status_effect_76.png";
 			break;
 
 		case 2:
-			price = this.Math.round(settlement.getSellPriceMult() * (90 + 55 * entity.getLevel()));
+			price = this.Math.round(90 + 55 * entity.getLevel());
 			effect.m.Duration = 5;
 			effect.m.XPGainMult = 1.2;
 			effect.m.Icon = "skills/status_effect_77.png";

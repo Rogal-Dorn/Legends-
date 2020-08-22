@@ -68,7 +68,7 @@ this.goat_herd_location <- this.inherit("scripts/entity/world/attached_location"
 		_list.push("supplies/goat_cheese_item");
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 		if (!this.isActive())
 		{
@@ -76,15 +76,19 @@ this.goat_herd_location <- this.inherit("scripts/entity/world/attached_location"
 		}
 
 		_list.push("butcher_background");
-		_list.push("female_daytaler_background");
 		_list.push("daytaler_background");
+		_list.push("farmhand_background");
+		_list.push("farmhand_background");
+		_list.push("farmhand_background");
+		_list.push("shepherd_background");
+		_list.push("shepherd_background");
+		_list.push("shepherd_background");
+		if (_gender)
+		{
+		_list.push("female_daytaler_background");
 		_list.push("female_farmhand_background");
-		_list.push("farmhand_background");
-		_list.push("farmhand_background");
-		_list.push("farmhand_background");
-		_list.push("shepherd_background");
-		_list.push("shepherd_background");
-		_list.push("shepherd_background");
+
+		}
 	}
 
 	function onUpdateShopList( _id, _list )

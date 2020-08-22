@@ -120,7 +120,7 @@ this.sleep_skill <- this.inherit("scripts/skills/skill", {
 		{
 			local bonus = this.m.MaxRange + 1 - myTile.getDistanceTo(target.getTile());
 
-			if (target.checkMorale(0, -25 * bonus, this.Const.MoraleCheckType.MentalAttack))
+			if (target.checkMorale(0, -35 * bonus, this.Const.MoraleCheckType.MentalAttack))
 			{
 				if (!_user.isHiddenToPlayer() && !target.isHiddenToPlayer())
 				{

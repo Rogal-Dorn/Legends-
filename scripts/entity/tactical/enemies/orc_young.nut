@@ -213,9 +213,14 @@ this.orc_young <- this.inherit("scripts/entity/tactical/actor", {
 		local b = this.m.BaseProperties;
 		b.setValues(this.Const.Tactical.Actor.OrcYoung);
 
-		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 150)
+		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 70)
 		{
-			b.RangedSkill += 5;
+			b.IsSpecializedInThrowing = true;
+
+			if (this.World.getTime().Days >= 150)
+			{
+				b.RangedSkill += 5;
+			}
 		}
 
 		b.IsSpecializedInAxes = true;
@@ -251,7 +256,7 @@ this.orc_young <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Skills.add(this.new("scripts/skills/special/double_grip"));
 		this.m.Skills.add(this.new("scripts/skills/actives/hand_to_hand"));
 		this.m.Skills.add(this.new("scripts/skills/actives/charge"));
-		
+
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 		{
 			b.MeleeSkill += 10;
@@ -355,38 +360,25 @@ this.orc_young <- this.inherit("scripts/entity/tactical/actor", {
 			this.m.Items.equip(this.new("scripts/items/shields/greenskins/orc_light_shield"));
 		}
 
-		r = this.Math.rand(1, 5);
+		local item = this.Const.World.Common.pickArmor([
+			[1, "greenskins/orc_young_very_light_armor"],
+			[1, "greenskins/orc_young_light_armor"],
+			[1, "greenskins/orc_young_medium_armor"],
+			[1, "greenskins/orc_young_heavy_armor"],
+			[1, ""]
+		]);
+		this.m.Items.equip(item);
+		
+		local item = this.Const.World.Common.pickHelmet([
+			[1, ""],
+			[1, "greenskins/orc_young_light_helmet"],
+			[1, "greenskins/orc_young_medium_helmet"],
+			[1, "greenskins/orc_young_heavy_helmet"]
+		])
 
-		if (r == 1)
+		if (item != null)
 		{
-			this.m.Items.equip(this.new("scripts/items/armor/greenskins/orc_young_very_light_armor"));
-		}
-		else if (r == 2)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/greenskins/orc_young_light_armor"));
-		}
-		else if (r == 3)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/greenskins/orc_young_medium_armor"));
-		}
-		else if (r == 4)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/greenskins/orc_young_heavy_armor"));
-		}
-
-		r = this.Math.rand(1, 4);
-
-		if (r == 1)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/greenskins/orc_young_light_helmet"));
-		}
-		else if (r == 2)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/greenskins/orc_young_medium_helmet"));
-		}
-		else if (r == 3)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/greenskins/orc_young_heavy_helmet"));
+			this.m.Items.equip(item);
 		}
 	}
 

@@ -14,6 +14,8 @@ this.unhold_frost <- this.inherit("scripts/entity/tactical/enemies/unhold", {
 		local b = this.m.BaseProperties;
 		b.setValues(this.Const.Tactical.Actor.UnholdFrost);
 		b.DamageTotalMult += 0.15;
+		b.IsImmuneToDisarm = true;
+		b.IsImmuneToRotation = true;
 
 		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 90)
 		{
@@ -64,6 +66,17 @@ this.unhold_frost <- this.inherit("scripts/entity/tactical/enemies/unhold", {
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
 			}
 
+	}
+
+	function onFactionChanged()
+	{
+		this.actor.onFactionChanged();
+		local flip = this.isAlliedWithPlayer();
+		this.getSprite("body").setHorizontalFlipping(flip);
+		this.getSprite("injury").setHorizontalFlipping(flip);
+		this.getSprite("armor").setHorizontalFlipping(flip);
+		this.getSprite("head").setHorizontalFlipping(flip);
+		this.getSprite("helmet").setHorizontalFlipping(flip);
 	}
 
 	function assignRandomEquipment()

@@ -17,15 +17,15 @@ this.defeat_civilwar_ambition <- this.inherit("scripts/ambitions/ambition", {
 		local f = this.World.FactionManager.getGreaterEvil().Strength / this.Const.Factions.GreaterEvilStartStrength;
 		local text;
 
-		if (f >= 1.0)
+		if (f >= 0.95)
 		{
 			text = "Just started";
 		}
-		else if (f >= 0.75)
+		else if (f >= 0.5)
 		{
 			text = "Raging";
 		}
-		else if (f >= 0.5)
+		else if (f >= 0.25)
 		{
 			text = "Dragging On";
 		}
@@ -45,6 +45,11 @@ this.defeat_civilwar_ambition <- this.inherit("scripts/ambitions/ambition", {
 		}
 
 		if (!this.World.Ambitions.getAmbition("ambition.make_nobles_aware").isDone())
+		{
+			return;
+		}
+
+		if (this.World.Assets.getBusinessReputation() < 1500)
 		{
 			return;
 		}

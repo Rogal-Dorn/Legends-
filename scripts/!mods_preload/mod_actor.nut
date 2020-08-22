@@ -18,7 +18,7 @@
 			return;
 		}
 
-		if (_victim.getXPValue() == 0)
+		if (_victim.getXPValue() <= 0)
 		{
 			return;
 		}
@@ -350,41 +350,6 @@
 					if (tile.getEntity().isAlliedWith(this))
 					{
 						numAlliesAdjacent = ++numAlliesAdjacent;
-
-						if (this.World.LegendsMod.Configs().RelationshipsEnabled())
-						{
-							if (this.getFaction() == this.Const.Faction.Player && tile.getEntity().getFaction() == this.Const.Faction.Player && tile.getEntity().isAlive())
-							{
-								// local relTab = this.getActiveRelationshipWith(tile.getEntity());
-								if (this.getCompanyID() == -1)
-								{
-									continue;
-								}
-
-								local relB = this.World.State.getRefFromID(this.getCompanyID())
-								if (relB == null)
-								{
-									continue;
-								}
-
-								local relTab = relB.getActiveRelationshipWith(tile.getEntity());
-								if (relTab == null)
-								{
-									continue; //onyl continues if someone dies and we check morale off of that
-								}
-
-								local relNum = relTab.RelationNum;
-								if ( relNum <= -10 )
-								{
-									bravery -= 5;
-								}
-								if ( relNum > 10 )
-								{
-									bravery += 5;
-								}
-							}
-						}
-
 					}
 					else
 					{
@@ -426,6 +391,66 @@
 	o.onAppearanceChanged = function( _appearance, _setDirty = true )
 	{
 		oacFn(_appearance, _setDirty);
+
+		if (this.hasSprite("helmet_vanity_lower"))
+		{
+			if (_appearance.HelmetLayerVanityLower.len() != 0 && !this.m.IsHidingHelmet)
+			{
+				local helmet = this.getSprite("helmet_vanity_lower");
+				helmet.setBrush(_appearance.HelmetLayerVanityLower);
+				helmet.Color = _appearance.HelmetColor;
+				helmet.Visible = true;
+			}
+			else
+			{
+				this.getSprite("helmet_vanity_lower").Visible = false;
+			}
+		}
+
+		if (this.hasSprite("helmet_helm"))
+		{
+			if (_appearance.HelmetLayerHelm.len() != 0 && !this.m.IsHidingHelmet)
+			{
+				local helmet = this.getSprite("helmet_helm");
+				helmet.setBrush(_appearance.HelmetLayerHelm);
+				helmet.Color = _appearance.HelmetColor;
+				helmet.Visible = true;
+			}
+			else
+			{
+				this.getSprite("helmet_helm").Visible = false;
+			}
+		}
+
+		if (this.hasSprite("helmet_top"))
+		{
+			if (_appearance.HelmetLayerTop.len() != 0 && !this.m.IsHidingHelmet)
+			{
+				local helmet = this.getSprite("helmet_top");
+				helmet.setBrush(_appearance.HelmetLayerTop);
+				helmet.Color = _appearance.HelmetColor;
+				helmet.Visible = true;
+			}
+			else
+			{
+				this.getSprite("helmet_top").Visible = false;
+			}
+		}
+
+		if (this.hasSprite("helmet_vanity"))
+		{
+			if (_appearance.HelmetLayerVanity.len() != 0 && !this.m.IsHidingHelmet)
+			{
+				local helmet = this.getSprite("helmet_vanity");
+				helmet.setBrush(_appearance.HelmetLayerVanity);
+				helmet.Color = _appearance.HelmetColor;
+				helmet.Visible = true;
+			}
+			else
+			{
+				this.getSprite("helmet_vanity").Visible = false;
+			}
+		}
 
 		if (this.hasSprite("armor_layer_chain"))
 		{
@@ -482,6 +507,8 @@
 				this.getSprite("armor_layer_cloak").Visible = false;
 			}
 		}
+
+
 	}
 
 	o.kill <- function (_killer = null, _skill = null, _fatalityType = this.Const.FatalityType.None, _silent = false)
@@ -506,6 +533,7 @@
 
 		if (!isReallyDead)
 		{
+			this.TherianthropeInfection( _killer );
 			_fatalityType = this.Const.FatalityType.Unconscious;
 			this.logDebug(this.getName() + " is unconscious.");
 		}
@@ -576,7 +604,7 @@
 				{
 					this.spawnDecapitateSplatters(tile, 1.0 * this.m.DecapitateBloodAmount);
 				}
-				else if (_fatalityType == this.Const.FatalityType.Smashed && (this.getTags().has("human") || this.getTags().has("zombie_minion")))
+				else if (_fatalityType == this.Const.FatalityType.Smashed && (this.getFlags().has("human") || this.getFlags().has("zombie_minion")))
 				{
 					this.spawnSmashSplatters(tile, 1.0);
 				}
@@ -604,7 +632,7 @@
 		this.m.IsTurnDone = true;
 		this.m.IsAlive = false;
 
-		if (this.m.WorldTroop != null && ("Party" in this.m.WorldTroop) && this.m.WorldTroop.Party != null)
+		if (this.m.WorldTroop != null && ("Party" in this.m.WorldTroop) && this.m.WorldTroop.Party != null && !this.m.WorldTroop.Party.isNull())
 		{
 			this.m.WorldTroop.Party.removeTroop(this.m.WorldTroop);
 		}
@@ -625,7 +653,6 @@
 				}
 				else
 				{
-					this.removeActiveRelationship();
 					this.World.getPlayerRoster().remove(this);
 				}
 			}
@@ -693,15 +720,15 @@
 	}
 
 
-	o.removeArmorUpgrade <- function ( _slot)
+	o.removeArmorUpgrade <- function ( _slot, _item)
 	{
-		local armor = this.getItems().getItemAtSlot(this.Const.ItemSlot.Body);
+		local armor = this.getItems().getItemAtSlot(_slot);
 		if (armor == null)
 		{
 			return null;
 		}
 
-		return armor.removeUpgrade( _slot );
+		return armor.removeUpgrade( _item );
 	}
 
 	o.setRiderID <- function ( _id)
@@ -733,6 +760,11 @@
 		if (this.m.AIAgent == null) return;
 
 		this.m.AIAgent.setPriorityTarget(_entity);
+	}
+
+	o.TherianthropeInfection <- function (_killer)
+	{
+		return;
 	}
 
 	local szFn = o.onSerialize

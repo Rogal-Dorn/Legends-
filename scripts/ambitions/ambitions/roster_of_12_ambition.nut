@@ -5,7 +5,7 @@ this.roster_of_12_ambition <- this.inherit("scripts/ambitions/ambition", {
 		this.ambition.create();
 		this.m.ID = "ambition.roster_of_12";
 		this.m.Duration = 21.0 * this.World.getTime().SecondsPerDay;
-		this.m.ButtonText = "We shall get the company strength back to a dozen men! It will make us\na formidable force again and will allow us to take on more profitable work.";
+		this.m.ButtonText = "We shall get the company strength to a dozen men! It will make us\na formidable force and will allow us to take on more profitable work.";
 		this.m.UIText = "Have a roster of at least 12 men";
 		this.m.TooltipText = "Hire enough men to have a full roster of at least 12 men. Visit settlements across the lands to find recruits that suit your needs. Having a full roster will allow you to take on more dangerous and better paying contracts.";
 		this.m.SuccessText = "[img]gfx/ui/events/event_80.png[/img]Having finally gathered the coin and equipment, you manage to assemble a full complement of twelve able fighters. When next you walk down %currenttown%\'s main street, the men break into a full-throated marching song. A few of the townsfolk mutter under their breath about dirty mercenaries taking over the town, but others walk alongside and shout the words with you. %SPEECH_ON%Stand tall, brothers. People can see this is a real mercenary company now, and not a handful of wandering vagabonds.%SPEECH_OFF%%highestexperience_brother% declares.%SPEECH_ON%We trade in strength, and now that our numbers have gone up, so will our price.%SPEECH_OFF%It appears he has the right of it. You notice one particularly fat nobleman sizing up the company as if he already has a task in mind. The %companyname% are now a force to be reckoned with. Once the men have settled in for a celebratory drink, perhaps you should take another stroll through town to see if any more lucrative contracts may be available.";
@@ -15,6 +15,11 @@ this.roster_of_12_ambition <- this.inherit("scripts/ambitions/ambition", {
 	function onUpdateScore()
 	{
 		if (this.World.Assets.getOrigin().getID() == "scenario.militia")
+		{
+			return;
+		}
+
+		if (this.World.Ambitions.getDone() < 1 && this.World.Assets.getOrigin().getID() != "scenario.deserters" && this.World.Assets.getOrigin().getID() != "scenario.raiders")
 		{
 			return;
 		}

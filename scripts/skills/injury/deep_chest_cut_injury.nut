@@ -5,7 +5,7 @@ this.deep_chest_cut_injury <- this.inherit("scripts/skills/injury/injury", {
 		this.injury.create();
 		this.m.ID = "injury.deep_chest_cut";
 		this.m.Name = "Deep Chest Cut";
-		this.m.Description = "A deep, bleeding cut into the chest and pectoral muscle makes it hard to keep standing.";
+		this.m.Description = "A deep, bleeding cut into the chest and pectoral muscle makes it hard to keep standing, let alone use a weapon.";
 		this.m.Type = this.m.Type | this.Const.SkillType.TemporaryInjury;
 		this.m.DropIcon = "injury_icon_09";
 		this.m.Icon = "ui/injury/injury_icon_09.png";
@@ -33,17 +33,51 @@ this.deep_chest_cut_injury <- this.inherit("scripts/skills/injury/injury", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/health.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-30%[/color] Hitpoints"
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-35%[/color] Hitpoints"
 			},
 			{
 				id = 7,
 				type = "text",
 				icon = "ui/icons/fatigue.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-30%[/color] Max Fatigue"
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-35%[/color] Max Fatigue"
+			},
+			{
+				id = 6,
+				type = "text",
+				icon = "ui/icons/melee_skill.png",
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-35%[/color] Melee Skill"
+			},
+			{
+				id = 7,
+				type = "text",
+				icon = "ui/icons/ranged_skill.png",
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-35%[/color] Ranged Skill"
 			}
 		];
 		this.addTooltipHint(ret);
 		return ret;
+	}
+
+	function onAdded()
+	{
+		this.injury.onAdded();
+
+		if (!("State" in this.Tactical) || this.Tactical.State == null)
+		{
+			return;
+		}
+
+		local p = this.getContainer().getActor().getCurrentProperties();
+
+		if (!p.IsAffectedByInjuries || this.m.IsFresh && !p.IsAffectedByFreshInjuries)
+		{
+			return;
+		}
+
+		if (this.getContainer().getActor().getHitpointsPct() > 0.65)
+		{
+			this.getContainer().getActor().setHitpoints(this.getContainer().getActor().getHitpointsMax() * 0.65);
+		}
 	}
 
 	function onUpdate( _properties )
@@ -57,10 +91,12 @@ this.deep_chest_cut_injury <- this.inherit("scripts/skills/injury/injury", {
 
 		if (this.m.IsShownOutOfCombat)
 		{
-			_properties.HitpointsMult *= 0.7;
+			_properties.HitpointsMult *= 0.65;
 		}
 
-		_properties.StaminaMult *= 0.7;
+		_properties.StaminaMult *= 0.65;
+		_properties.MeleeSkillMult *= 0.65;
+		_properties.RangedSkillMult *= 0.65;
 	}
 
 });

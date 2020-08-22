@@ -331,22 +331,21 @@ this.goblin_wolfrider <- this.inherit("scripts/entity/tactical/goblin", {
 			this.m.Items.equip(this.new("scripts/items/weapons/greenskins/goblin_falchion"));
 		}
 
-		if (this.Math.rand(1, 100) <= 75)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/greenskins/goblin_medium_armor"));
-		}
-		else
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/greenskins/goblin_heavy_armor"));
-		}
+		local item = this.Const.World.Common.pickArmor([
+			[3, "greenskins/goblin_medium_armor"],
+			[1, "greenskins/goblin_heavy_armor"]
+		])
+		this.m.Items.equip(item);
 
-		if (this.Math.rand(1, 100) <= 75)
+		
+
+		local item = this.Const.World.Common.pickHelmet([
+			[75, "greenskins/goblin_light_helmet"],
+			[25, "greenskins/goblin_heavy_helmet"]
+		])
+		if (item != null)
 		{
-			this.m.Items.equip(this.new("scripts/items/helmets/greenskins/goblin_light_helmet"));
-		}
-		else
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/greenskins/goblin_heavy_helmet"));
+			this.m.Items.equip(item);
 		}
 	}
 

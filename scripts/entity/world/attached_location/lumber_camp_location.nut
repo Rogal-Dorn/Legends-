@@ -93,7 +93,7 @@ this.lumber_camp_location <- this.inherit("scripts/entity/world/attached_locatio
 		return true;
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 		if (!this.isActive())
 		{
@@ -222,7 +222,7 @@ this.lumber_camp_location <- this.inherit("scripts/entity/world/attached_locatio
 				S = "misc/ancient_wood_item"
 			});
 		}
-		else if (_id == "building.weaponsmith")
+		else if (_id == "building.weaponsmith" || _id == "building.weaponsmith_oriental")
 		{
 			_list.push({
 				R = 20,

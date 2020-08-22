@@ -89,19 +89,18 @@ this.starting_scenario <- {
 	function onInit()
 	{
 		this.m.StaticRelationsToFaction.resize(this.Const.FactionType.len());
-		this.World.State.getPlayer().calculateModifiers();
-		//local roster = this.World.getPlayerRoster().getAll();
-		//foreach (bro in roster)
-		//{
-		//	bro.getBackground().buildPerkTree();
-		//}
+		if (this.World.State.getPlayer() != null)
+		{
+			this.World.State.getPlayer().calculateModifiers();
+		}
+
 	}
 
 	function onUpdateHiringRoster( _roster )
 	{
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 	}
 

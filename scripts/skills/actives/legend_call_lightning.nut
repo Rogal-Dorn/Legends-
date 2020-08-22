@@ -33,8 +33,8 @@ this.legend_call_lightning <- this.inherit("scripts/skills/skill", {
 		this.m.InjuriesOnBody = this.Const.Injury.CuttingBody;
 		this.m.InjuriesOnHead = this.Const.Injury.CuttingHead;
 		this.m.IsAttack = true;
-		this.m.ActionPointCost = 6;
-		this.m.FatigueCost = 20;
+		this.m.ActionPointCost = 8;
+		this.m.FatigueCost = 50;
 		this.m.MinRange = 0;
 		this.m.MaxRange = 0;
 	}

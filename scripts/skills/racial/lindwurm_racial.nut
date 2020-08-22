@@ -34,12 +34,12 @@ this.lindwurm_racial <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
-		if (_attacker.getTags().has("lindwurm"))
+		if (_attacker.getFlags().has("lindwurm"))
 		{
 			return;
 		}
 
-		if ((_attacker.getTags().has("body_immune_to_acid") || _attacker.getArmor(this.Const.BodyPart.Body) <= 0) && (_attacker.getTags().has("head_immune_to_acid") || _attacker.getArmor(this.Const.BodyPart.Head) <= 0))
+		if ((_attacker.getFlags().has("body_immune_to_acid") || _attacker.getArmor(this.Const.BodyPart.Body) <= 0) && (_attacker.getFlags().has("head_immune_to_acid") || _attacker.getArmor(this.Const.BodyPart.Head) <= 0))
 		{
 			return;
 		}

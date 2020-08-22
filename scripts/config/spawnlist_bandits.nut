@@ -705,3 +705,28 @@ gt.Const.World.Spawn.BanditsDisguisedAsDirewolves <-
 		}
 	]
 }
+
+gt.Const.World.Spawn.BanditVermes <-
+{
+	Name = "BanditsVermes",
+	IsDynamic = true,
+	MovementSpeedMult = 1.0,
+	VisibilityMult = 1.0,
+	VisionMult = 1.0,
+	Body = "figure_werewolf_01",
+	Fixed = [],
+	//MinR = 75,
+	MaxR = 475,
+	Troops =
+	[
+		{
+			Weight = 100,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.BanditVermes,
+					Cost = 5
+				}
+			]
+		}
+	]
+}

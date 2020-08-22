@@ -61,7 +61,7 @@ this.marauding_greenskins_contract <- this.inherit("scripts/contracts/contract",
 
 		foreach( s in settlements )
 		{
-			if (s.isMilitary())
+			if (s.isMilitary() || s.isSouthern() || !s.isDiscovered())
 			{
 				continue;
 			}
@@ -150,7 +150,7 @@ this.marauding_greenskins_contract <- this.inherit("scripts/contracts/contract",
 
 				if (this.Flags.get("IsOrcs"))
 				{
-					party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Orcs).spawnEntity(tile, "Orc Marauders", false, this.Const.World.Spawn.OrcRaiders, 110 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
+					party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Orcs).spawnEntity(tile, "Orc Marauders", false, this.Const.World.Spawn.OrcRaiders, 110 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult());
 					party.setDescription("A band of menacing orcs, greenskinned and towering any man.");
 					party.getLoot().ArmorParts = this.Math.rand(0, 25);
 					party.getLoot().Ammo = this.Math.rand(0, 10);
@@ -160,7 +160,7 @@ this.marauding_greenskins_contract <- this.inherit("scripts/contracts/contract",
 				}
 				else
 				{
-					party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Goblins).spawnEntity(tile, "Goblin Raiders", false, this.Const.World.Spawn.GoblinRaiders, 110 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
+					party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Goblins).spawnEntity(tile, "Goblin Raiders", false, this.Const.World.Spawn.GoblinRaiders, 110 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult());
 					party.setDescription("A band of mischievous goblins, small but cunning and not to be underestimated.");
 					party.getLoot().ArmorParts = this.Math.rand(0, 10);
 					party.getLoot().Medicine = this.Math.rand(0, 2);

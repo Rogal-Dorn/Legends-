@@ -67,7 +67,7 @@ this.pessimist_won_battle_event <- this.inherit("scripts/events/event", {
 
 	function onUpdateScore()
 	{
-		if (this.World.Statistics.get().LastCombatResult != 1)
+		if (this.World.Statistics.getFlags().getAsInt("LastCombatResult") != 1)
 		{
 			return;
 		}
@@ -88,7 +88,7 @@ this.pessimist_won_battle_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getSkills().hasSkill("trait.pessimist") && !bro.getSkills().hasSkill("trait.dumb") && bro.getLifetimeStats().Battles >= 1)
+			if (bro.getSkills().hasSkill("trait.pessimist") && !bro.getSkills().hasSkill("trait.dumb") && bro.getBackground().getID() != "background.slave" && bro.getLifetimeStats().Battles >= 1)
 			{
 				candidates.push(bro);
 			}

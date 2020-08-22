@@ -88,9 +88,9 @@ this.black_monolith_location <- this.inherit("scripts/entity/world/location", {
 	function onDiscovered()
 	{
 		this.location.onDiscovered();
-		this.World.Tags.increment("LegendaryLocationsDiscovered", 1);
+		this.World.Flags.increment("LegendaryLocationsDiscovered", 1);
 
-		if (this.World.Tags.get("LegendaryLocationsDiscovered") >= 10)
+		if (this.World.Flags.get("LegendaryLocationsDiscovered") >= 10)
 		{
 			this.updateAchievement("FamedExplorer", 1, 1);
 		}
@@ -168,15 +168,10 @@ this.black_monolith_location <- this.inherit("scripts/entity/world/location", {
 			"loot/ancient_gold_coins_item",
 			"misc/legend_ancient_scroll_item"
 		], _lootTable);
-		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
-		{
-			_lootTable.push(this.new("scripts/items/legend_armor/legendary/legend_emperors_armor"));
-		}
-		else
-		{
-			_lootTable.push(this.new("scripts/items/armor/legendary/emperors_armor"));
-		}
 
+		_lootTable.push(this.Const.World.Common.pickArmor([
+			[1, "legendary/emperors_armor"],
+		]))
 	}
 
 	function onInit()

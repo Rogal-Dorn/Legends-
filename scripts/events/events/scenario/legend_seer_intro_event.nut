@@ -24,9 +24,9 @@ this.legend_seer_intro_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				this.logInfo("Unlocking gathering");
-				this.World.Tags.set("HasLegendCampGathering", true);
+				this.World.Flags.set("HasLegendCampGathering", true);
 				this.logInfo("Unlocking training");
-				this.World.Tags.set("HasLegendCampTraining", true);				
+				this.World.Flags.set("HasLegendCampTraining", true);
 			}
 		});
 	}
@@ -45,7 +45,7 @@ this.legend_seer_intro_event <- this.inherit("scripts/events/event", {
 	{
 		_vars.push([
 			"home",
-			this.World.Tags.get("HomeVillage")
+			this.World.Flags.get("HomeVillage")
 		]);
 	}
 

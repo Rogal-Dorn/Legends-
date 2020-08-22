@@ -271,10 +271,19 @@ this.legend_orc_behemoth <- this.inherit("scripts/entity/tactical/actor", {
 			{
 				this.m.Items.equip(this.new("scripts/items/weapons/greenskins/legend_skullbreaker"));
 			}
-		
 
-			this.m.Items.equip(this.new("scripts/items/armor/greenskins/legend_orc_behemoth_armor"));
-			this.m.Items.equip(this.new("scripts/items/helmets/greenskins/legend_orc_behemoth_helmet"));
+			local item = this.Const.World.Common.pickArmor([
+				[1, "greenskins/legend_orc_behemoth_armor"]
+			]);
+			this.m.Items.equip(item);
+
+			local item = this.Const.World.Common.pickHelmet([
+				[1, "greenskins/legend_orc_behemoth_helmet"]
+			])
+			if (item != null)
+			{
+				this.m.Items.equip(item);
+			}
 	
 	}
 

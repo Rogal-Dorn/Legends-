@@ -15,7 +15,7 @@ this.wool_spinner_location <- this.inherit("scripts/entity/world/attached_locati
 		_list.push("trade/cloth_rolls_item");
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 		if (!this.isActive())
 		{
@@ -25,9 +25,13 @@ this.wool_spinner_location <- this.inherit("scripts/entity/world/attached_locati
 		_list.push("apprentice_background");
 		_list.push("caravan_hand_background");
 		_list.push("tailor_background");
-		_list.push("female_tailor_background");
 		_list.push("tailor_background");
 		_list.push("shepherd_background");
+		if (_gender)
+		{
+		_list.push("female_tailor_background");
+
+		}
 		if(this.World.LegendsMod.Configs().LegendMagicEnabled())
 		{
 			_list.push("legend_enchanter_background");
@@ -114,11 +118,6 @@ this.wool_spinner_location <- this.inherit("scripts/entity/world/attached_locati
 				R = 20,
 				P = 1.0,
 				S = "legend_armor/cloth/legend_thick_tunic"
-			});
-			_list.push({
-				R = 20,
-				P = 1.0,
-				S = "legend_armor/cloth/legend_robes_herbalist"
 			});
 			_list.push({
 				R = 40,

@@ -133,7 +133,7 @@ this.ai_charm <- this.inherit("scripts/ai/tactical/behavior", {
 			local distanceToTarget = myTile.getDistanceTo(opponentTile);
 			local isRangedOpponent = this.isRangedUnit(target);
 
-			if (target.getMoraleState() == this.Const.MoraleState.Fleeing || target.getCurrentProperties().IsStunned)
+			if (target.getMoraleState() == this.Const.MoraleState.Fleeing || target.getCurrentProperties().IsStunned || !target.getCurrentProperties().IsAbleToUseWeaponSkills)
 			{
 				continue;
 			}
@@ -170,12 +170,12 @@ this.ai_charm <- this.inherit("scripts/ai/tactical/behavior", {
 			score = score + targets * this.Const.AI.Behavior.CharmHelpOther;
 			score = score * this.Math.maxf(0.2, 1.0 - this.Const.AI.Behavior.CharmBraveryMult * target.getBravery() * 0.01);
 
-			if (target.getCurrentProperties().IsRooted && opponentTile.getZoneOfControlCount(target.getFaction()) == 0 && !target.isArmedWithRangedWeapon())
+			if (target.getCurrentProperties().IsRooted && opponentTile.getZoneOfOccupationCount(target.getFaction()) == 0 && !target.isArmedWithRangedWeapon())
 			{
 				score = score * this.Const.AI.Behavior.CharmRootedMult;
 			}
 
-			if (target.isArmedWithRangedWeapon() && opponentTile.getZoneOfControlCount(target.getFaction()) != 0)
+			if (target.isArmedWithRangedWeapon() && opponentTile.getZoneOfOccupationCount(target.getFaction()) != 0)
 			{
 				score = score * this.Const.AI.Behavior.CharmRangedWouldBeInZOCMult;
 			}
@@ -238,9 +238,13 @@ this.ai_charm <- this.inherit("scripts/ai/tactical/behavior", {
 				score = score * this.Const.AI.Behavior.CharmEasierToKillMult;
 			}
 
-			if (!target.isTurnDone())
+			if (target.isAbleToWait() && !target.isTurnDone())
 			{
 				score = score * this.Const.AI.Behavior.CharmStillToActMult;
+			}
+			else if (!target.isAbleToWait() && target.getActionPoints() < target.getActionPointsMax())
+			{
+				score = score * this.Const.AI.Behavior.CharmAlreadyWaitedMult;
 			}
 
 			if (!target.isArmed() && target.getTile().Items.len() == 0)
@@ -334,15 +338,15 @@ this.ai_charm <- this.inherit("scripts/ai/tactical/behavior", {
 	{
 		local d = this.queryActorTurnsNearTarget(_actor, _target, _entity);
 
-		if (d.Turns <= this.Const.AI.Behavior.RangedEngageKeepMinTurnsAway && d.InZonesOfControl <= 2)
+		if (d.Turns <= this.Const.AI.Behavior.RangedEngageKeepMinTurnsAway && d.InZonesOfControl < 2)
 		{
-			if (d.InZonesOfControl != 0 || _actor.getCurrentProperties().IsStunned || _actor.getCurrentProperties().IsRooted)
+			if (d.InZonesOfOccupation != 0 || _actor.getCurrentProperties().IsRooted)
 			{
 				return 1.0;
 			}
 			else
 			{
-				return 3.0;
+				return (1.0 - d.Turns) * 6.0;
 			}
 		}
 		else

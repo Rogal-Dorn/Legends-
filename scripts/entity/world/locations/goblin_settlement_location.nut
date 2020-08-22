@@ -10,6 +10,9 @@ this.goblin_settlement_location <- this.inherit("scripts/entity/world/location",
 		this.location.create();
 		this.m.TypeID = "location.goblin_settlement";
 		this.m.LocationType = this.Const.World.LocationType.Lair;
+		this.m.CombatLocation.Template[0] = "tactical.goblin_camp";
+		this.m.CombatLocation.Fortification = this.Const.Tactical.FortificationType.Walls;
+		this.m.CombatLocation.CutDownTrees = true;
 		this.m.IsDespawningDefenders = false;
 		this.setDefenderSpawnList(this.Const.World.Spawn.GoblinBoss);
 		this.m.Resources = 350;

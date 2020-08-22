@@ -25,7 +25,7 @@ this.mason_background <- this.inherit("scripts/skills/backgrounds/character_back
 		this.m.Hairs = this.Const.Hair.CommonMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.Body = "bust_naked_body_00";
+
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.NeutralMax;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[1];
@@ -52,6 +52,7 @@ this.mason_background <- this.inherit("scripts/skills/backgrounds/character_back
 			Class = [],
 			Magic = []
 		}
+		this.m.Bodies = this.Const.Bodies.Skinny;
 	}
 
 	function getTooltip()
@@ -134,13 +135,9 @@ this.mason_background <- this.inherit("scripts/skills/backgrounds/character_back
 	function onAddEquipment()
 	{
 		local items = this.getContainer().getActor().getItems();
-		items.equip(this.new("scripts/items/armor/linen_tunic"));
-	}
-
-	function onAddLegendEquipment()
-	{
-		local items = this.getContainer().getActor().getItems();
-		items.equip(this.new("scripts/items/legend_armor/cloth/legend_tunic"));
+		items.equip(this.Const.World.Common.pickArmor([
+			[1, "linen_tunic"]
+		]))
 	}
 
 	function onUpdate( _properties )

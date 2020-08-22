@@ -27,7 +27,7 @@ this.knock_back <- this.inherit("scripts/skills/skill", {
 		this.m.IsAttack = true;
 		this.m.IsIgnoredAsAOO = true;
 		this.m.ActionPointCost = 4;
-		this.m.FatigueCost = 25;
+		this.m.FatigueCost = 20;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 1;
 	}
@@ -189,7 +189,7 @@ this.knock_back <- this.inherit("scripts/skills/skill", {
 
 		this.applyFatigueDamage(target, 10);
 
-		if (target.getCurrentProperties().IsImmuneToKnockBackAndGrab)
+		if (target.getCurrentProperties().IsImmuneToKnockBackAndGrab || target.getCurrentProperties().IsRooted)
 		{
 			return false;
 		}

@@ -244,28 +244,6 @@
 <sprite id="bust_naked_body_10_dead_javelin" offsetX="6" offsetY="10" f="64FB" ic="FF111632" width="131" height="154" img="entity\bodies\bust_naked_body_10_dead_javelin.png" left="-25" right="21" top="-4" bottom="72" />
 <sprite id="bust_naked_body_10_injured" offsetY="35" ic="FF0E0E50" width="104" height="142" img="entity\bodies\bust_naked_body_10_injured.png" left="-41" right="39" top="-50" bottom="10" />
 
-<sprite id="beard_black_18" offsetY="35" ic="FF353638" width="104" height="142" img="entity\heads\beard_black_18.png" left="-19" right="33" top="-46" bottom="36" />
-<sprite id="beard_black_18_dead" offsetX="6" offsetY="10" f="64EE" f1="-15" f2="-15" ic="FF353638" width="131" height="125" img="entity\heads\beard_black_18_dead.png" left="-34" right="28" top="-58" bottom="18" />
-<sprite id="beard_blonde_18" offsetY="35" ic="FF353638" width="104" height="142" img="entity\heads\beard_blonde_18.png" left="-19" right="33" top="-46" bottom="36" />
-<sprite id="beard_blonde_18_dead" offsetX="6" offsetY="10" f="64EE" f1="-15" f2="-15" ic="FF353638" width="131" height="125" img="entity\heads\beard_blonde_18_dead.png" left="-34" right="28" top="-58" bottom="18" />
-<sprite id="beard_brown_18" offsetY="35" ic="FF353638" width="104" height="142" img="entity\heads\beard_brown_18.png" left="-19" right="33" top="-46" bottom="36" />
-<sprite id="beard_brown_18_dead" offsetX="6" offsetY="10" f="64EE" f1="-15" f2="-15" ic="FF353638" width="131" height="125" img="entity\heads\beard_brown_18_dead.png" left="-34" right="28" top="-58" bottom="18" />
-<sprite id="beard_red_18" offsetY="35" ic="FF353638" width="104" height="142" img="entity\heads\beard_red_18.png" left="-19" right="33" top="-46" bottom="36" />
-<sprite id="beard_red_18_dead" offsetX="6" offsetY="10" f="64EE" f1="-15" f2="-15" ic="FF353638" width="131" height="125" img="entity\heads\beard_red_18_dead.png" left="-34" right="28" top="-58" bottom="18" />
-<sprite id="beard_grey_18" offsetY="35" ic="FF353638" width="104" height="142" img="entity\heads\beard_grey_18.png" left="-19" right="33" top="-46" bottom="36" />
-<sprite id="beard_grey_18_dead" offsetX="6" offsetY="10" f="64EE" f1="-15" f2="-15" ic="FF353638" width="131" height="125" img="entity\heads\beard_grey_18_dead.png" left="-34" right="28" top="-58" bottom="18" />
-
-<sprite id="beard_black_19" offsetY="35" ic="FF353638" width="104" height="142" img="entity\heads\beard_black_19.png" left="-19" right="33" top="-46" bottom="36" />
-<sprite id="beard_black_19_dead" offsetX="6" offsetY="10" f="64EE" f1="-15" f2="-15" ic="FF353638" width="131" height="125" img="entity\heads\beard_black_19_dead.png" left="-34" right="28" top="-58" bottom="18" />
-<sprite id="beard_blonde_19" offsetY="35" ic="FF353638" width="104" height="142" img="entity\heads\beard_blonde_19.png" left="-19" right="33" top="-46" bottom="36" />
-<sprite id="beard_blonde_19_dead" offsetX="6" offsetY="10" f="64EE" f1="-15" f2="-15" ic="FF353638" width="131" height="125" img="entity\heads\beard_blonde_19_dead.png" left="-34" right="28" top="-58" bottom="18" />
-<sprite id="beard_brown_19" offsetY="35" ic="FF353638" width="104" height="142" img="entity\heads\beard_brown_19.png" left="-19" right="33" top="-46" bottom="36" />
-<sprite id="beard_brown_19_dead" offsetX="6" offsetY="10" f="64EE" f1="-15" f2="-15" ic="FF353638" width="131" height="125" img="entity\heads\beard_brown_19_dead.png" left="-34" right="28" top="-58" bottom="18" />
-<sprite id="beard_red_19" offsetY="35" ic="FF353638" width="104" height="142" img="entity\heads\beard_red_19.png" left="-19" right="33" top="-46" bottom="36" />
-<sprite id="beard_red_19_dead" offsetX="6" offsetY="10" f="64EE" f1="-15" f2="-15" ic="FF353638" width="131" height="125" img="entity\heads\beard_red_19_dead.png" left="-34" right="28" top="-58" bottom="18" />
-<sprite id="beard_grey_19" offsetY="35" ic="FF353638" width="104" height="142" img="entity\heads\beard_grey_19.png" left="-19" right="33" top="-46" bottom="36" />
-<sprite id="beard_grey_19_dead" offsetX="6" offsetY="10" f="64EE" f1="-15" f2="-15" ic="FF353638" width="131" height="125" img="entity\heads\beard_grey_19_dead.png" left="-34" right="28" top="-58" bottom="18" />
-
 <sprite id="bust_body_501" offsetY="35" ic="FF25324A" width="104" height="142" img="entity\bodies\bust_body_501.png" top="-56" bottom="14" />
 <sprite id="bust_body_501_damaged" offsetY="35" ic="FF222E44" width="104" height="142" img="entity\bodies\bust_body_501_damaged.png" left="-52" right="42" top="-67" bottom="13" />
 <sprite id="bust_body_501_dead" offsetX="6" offsetY="10" f="64FE" ic="FF202A3B" width="131" height="125" img="entity\bodies\bust_body_501_dead.png" left="-57" right="59" top="-54" bottom="58" />
@@ -566,5 +544,57 @@
 <sprite id="cloak_red" offsetY="35" ic="FF2F424E" width="140" height="248" img="entity\armor_upgrades\cloak_red.png" left="-45" right="63" top="-95" bottom="7" />
 <sprite id="cloak_red_damaged" offsetY="35" ic="FF2F414E" width="140" height="248" img="entity\armor_upgrades\cloak_red_damaged.png" left="-45" right="63" top="-95" bottom="7" />
 <sprite id="cloak_red_dead" offsetX="6" offsetY="10" f="64FD" ic="FF2A3A45" width="191" height="185" img="entity\armor_upgrades\cloak_red_dead.png" left="-54" right="64" top="-53" bottom="49" />
+
+ <sprite id="wolfsbane_necklace" offsetY="35" ic="FF253745" width="104" height="142" img="entity\details\wolfsbane_necklace.png" left="-33" right="43" top="-55" bottom="9" />
+<sprite id="wolfsbane_necklace_dead" offsetX="6" offsetY="10" f="64FD" ic="FF233542" width="191" height="185" img="entity\details\wolfsbane_necklace_dead.png" left="-48" right="26" top="-49" bottom="21" />
+
+<sprite id="bust_naked_southern_female_01" offsetY="35" ic="FF4D719A" width="104" height="142" img="entity\bodies\bust_naked_southern_female_01.png" top="-48" bottom="10" />
+<sprite id="bust_naked_southern_female_01_dead" offsetX="6" offsetY="10" ic="FF374D76" width="131" height="114" img="entity\bodies\bust_naked_southern_female_01_dead.png" left="-65" right="66" top="-57" bottom="53" />
+<sprite id="bust_naked_southern_female_01_dead_arrows" offsetX="6" offsetY="10" f="64FB" ic="FF494D50" width="131" height="134" img="entity\bodies\bust_naked_body_04_dead_arrow.png" left="-28" right="8" top="-9" bottom="39" />
+<sprite id="bust_naked_southern_female_01_dead_javelin" offsetX="6" offsetY="10" f="64FB" ic="FF111632" width="131" height="154" img="entity\bodies\bust_naked_body_04_dead_javelin.png" left="-25" right="21" top="-4" bottom="72" />
+<sprite id="bust_naked_southern_female_01_injured" offsetY="35" ic="FF0E0E50" width="104" height="142" img="entity\bodies\bust_naked_body_04_injured.png" left="-41" right="39" top="-50" bottom="10" />
+
+<sprite id="bust_head_southern_female_01" offsetY="35" ic="FF5B7CAD" width="104" height="142" img="entity\heads\arabfem1.png" left="-21" right="29" top="-21" bottom="47" />
+<sprite id="bust_head_southern_female_01_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4F6C9D" width="131" height="125" img="entity\heads\arabfem1dead.png" left="-45" right="15" top="-56" bottom="0" />
+<sprite id="bust_head_southern_female_02" offsetY="35" ic="FF5B7CAD" width="104" height="142" img="entity\heads\arabfem2.png" left="-21" right="29" top="-21" bottom="47" />
+<sprite id="bust_head_southern_female_02_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4F6C9D" width="131" height="125" img="entity\heads\arabfem2dead.png" left="-45" right="15" top="-56" bottom="0" />
+<sprite id="bust_head_southern_female_03" offsetY="35" ic="FF5B7CAD" width="104" height="142" img="entity\heads\arabfem3.png" left="-21" right="29" top="-21" bottom="47" />
+<sprite id="bust_head_southern_female_03_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4F6C9D" width="131" height="125" img="entity\heads\arabfem3dead.png" left="-45" right="15" top="-56" bottom="0" />
+<sprite id="bust_head_southern_female_04" offsetY="35" ic="FF5B7CAD" width="104" height="142" img="entity\heads\arabfem4.png" left="-21" right="29" top="-21" bottom="47" />
+<sprite id="bust_head_southern_female_04_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4F6C9D" width="131" height="125" img="entity\heads\arabfem4dead.png" left="-45" right="15" top="-56" bottom="0" />
+<sprite id="bust_head_southern_female_05" offsetY="35" ic="FF5B7CAD" width="104" height="142" img="entity\heads\arabfem5.png" left="-21" right="29" top="-21" bottom="47" />
+<sprite id="bust_head_southern_female_05_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4F6C9D" width="131" height="125" img="entity\heads\arabfem5dead.png" left="-45" right="15" top="-56" bottom="0" />
+<sprite id="bust_head_southern_female_06" offsetY="35" ic="FF5B7CAD" width="104" height="142" img="entity\heads\arabfem6.png" left="-21" right="29" top="-21" bottom="47" />
+<sprite id="bust_head_southern_female_06_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4F6C9D" width="131" height="125" img="entity\heads\arabfem6dead.png" left="-45" right="15" top="-56" bottom="0" />
+<sprite id="bust_head_southern_female_07" offsetY="35" ic="FF5B7CAD" width="104" height="142" img="entity\heads\arabfem7.png" left="-21" right="29" top="-21" bottom="47" />
+<sprite id="bust_head_southern_female_07_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4F6C9D" width="131" height="125" img="entity\heads\arabfem7dead.png" left="-45" right="15" top="-56" bottom="0" />
+<sprite id="bust_head_southern_female_07" offsetY="35" ic="FF5B7CAD" width="104" height="142" img="entity\heads\arabfem8.png" left="-21" right="29" top="-21" bottom="47" />
+<sprite id="bust_head_southern_female_08_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4F6C9D" width="131" height="125" img="entity\heads\arabfem8dead.png" left="-45" right="15" top="-56" bottom="0" />
+<sprite id="bust_head_southern_female_09" offsetY="35" ic="FF5B7CAD" width="104" height="142" img="entity\heads\arabfem9.png" left="-21" right="29" top="-21" bottom="47" />
+<sprite id="bust_head_southern_female_09_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4F6C9D" width="131" height="125" img="entity\heads\arabfem9dead.png" left="-45" right="15" top="-56" bottom="0" />
+
+
+<sprite id="beard_black_legends_01" offsetY="35" ic="FF5877A6" width="104" height="142" img="entity\heads\beard_black_01.png" left="-20" right="30" top="-21" bottom="47" />
+<sprite id="beard_black_legends_01_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4F699A" width="131" height="125" img="entity\heads\beard_black_01.png" left="-44" right="14" top="-56" bottom="0" />
+<sprite id="beard_grey_legends_01" offsetY="35" ic="FF5877A6" width="104" height="142" img="entity\heads\beard_grey_01.png" left="-20" right="30" top="-21" bottom="47" />
+<sprite id="beard_grey_legends_01_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4F699A" width="131" height="125" img="entity\heads\beard_grey_01.png" left="-44" right="14" top="-56" bottom="0" />
+<sprite id="beard_red_legends_01" offsetY="35" ic="FF5877A6" width="104" height="142" img="entity\heads\beard_red_01.png" left="-20" right="30" top="-21" bottom="47" />
+<sprite id="beard_red_legends_01_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4F699A" width="131" height="125" img="entity\heads\beard_red_01.png" left="-44" right="14" top="-56" bottom="0" />
+<sprite id="beard_brown_legends_01" offsetY="35" ic="FF5877A6" width="104" height="142" img="entity\heads\beard_brown_01.png" left="-20" right="30" top="-21" bottom="47" />
+<sprite id="beard_brown_legends_01_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4F699A" width="131" height="125" img="entity\heads\beard_brown_01.png" left="-44" right="14" top="-56" bottom="0" />
+<sprite id="beard_blonde_legends_01" offsetY="35" ic="FF5877A6" width="104" height="142" img="entity\heads\beard_blonde_01.png" left="-20" right="30" top="-21" bottom="47" />
+<sprite id="beard_blonde_legends_01_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4F699A" width="131" height="125" img="entity\heads\beard_blonde_01.png" left="-44" right="14" top="-56" bottom="0" />
+
+
+<sprite id="beard_black_legends_02" offsetY="35" ic="FF353638" width="104" height="142" img="entity\heads\beard_black_18.png" left="-19" right="33" top="-46" bottom="36" />
+<sprite id="beard_black_legends_02_dead" offsetX="6" offsetY="10" f="64EE" f1="-15" f2="-15" ic="FF353638" width="131" height="125" img="entity\heads\beard_black_18_dead.png" left="-34" right="28" top="-58" bottom="18" />
+<sprite id="beard_blonde_legends_02" offsetY="35" ic="FF353638" width="104" height="142" img="entity\heads\beard_blonde_18.png" left="-19" right="33" top="-46" bottom="36" />
+<sprite id="beard_blonde_legends_02_dead" offsetX="6" offsetY="10" f="64EE" f1="-15" f2="-15" ic="FF353638" width="131" height="125" img="entity\heads\beard_blonde_18_dead.png" left="-34" right="28" top="-58" bottom="18" />
+<sprite id="beard_brown_legends_02" offsetY="35" ic="FF353638" width="104" height="142" img="entity\heads\beard_brown_18.png" left="-19" right="33" top="-46" bottom="36" />
+<sprite id="beard_brown_legends_02_dead" offsetX="6" offsetY="10" f="64EE" f1="-15" f2="-15" ic="FF353638" width="131" height="125" img="entity\heads\beard_brown_18_dead.png" left="-34" right="28" top="-58" bottom="18" />
+<sprite id="beard_red_legends_02" offsetY="35" ic="FF353638" width="104" height="142" img="entity\heads\beard_red_18.png" left="-19" right="33" top="-46" bottom="36" />
+<sprite id="beard_red_legends_02_dead" offsetX="6" offsetY="10" f="64EE" f1="-15" f2="-15" ic="FF353638" width="131" height="125" img="entity\heads\beard_red_18_dead.png" left="-34" right="28" top="-58" bottom="18" />
+<sprite id="beard_grey_legends_02" offsetY="35" ic="FF353638" width="104" height="142" img="entity\heads\beard_grey_18.png" left="-19" right="33" top="-46" bottom="36" />
+<sprite id="beard_grey_legends_02_dead" offsetX="6" offsetY="10" f="64EE" f1="-15" f2="-15" ic="FF353638" width="131" height="125" img="entity\heads\beard_grey_18_dead.png" left="-34" right="28" top="-58" bottom="18" />
 
 </brush>

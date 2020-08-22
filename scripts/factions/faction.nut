@@ -67,6 +67,11 @@ this.faction <- {
 		return "";
 	}
 
+	function getPartyBanner()
+	{
+		return this.m.BannerPrefix + (this.m.Banner < 10 ? "0" + this.m.Banner : this.m.Banner);
+	}
+
 	function getTacticalBase()
 	{
 		return this.m.TacticalBase;
@@ -268,11 +273,11 @@ this.faction <- {
 
 		if (this.m.PlayerRelation > 50.0)
 		{
-			this.setPlayerRelation(this.Math.maxf(50.0, this.m.PlayerRelation - this.m.RelationDecayPerDay));
+			this.setPlayerRelation(this.Math.maxf(50.0, this.m.PlayerRelation - this.m.RelationDecayPerDay * this.World.Assets.m.RelationDecayGoodMult));
 		}
 		else if (this.m.PlayerRelation < 50.0)
 		{
-			this.setPlayerRelation(this.Math.minf(50.0, this.m.PlayerRelation + this.m.RelationDecayPerDay));
+			this.setPlayerRelation(this.Math.minf(50.0, this.m.PlayerRelation + this.m.RelationDecayPerDay * this.World.Assets.m.RelationDecayBadMult));
 		}
 
 		if (this.m.PlayerRelationChanges.len() != 0 && this.m.PlayerRelationChanges[this.m.PlayerRelationChanges.len() - 1].Time + this.Const.World.Assets.RelationTimeOut < this.Time.getVirtualTimeF())
@@ -636,7 +641,7 @@ this.faction <- {
 		this.addAlly(0);
 	}
 
-	function update( _ignoreDelay = false )
+	function update( _ignoreDelay = false, _isNewCampaign = false )
 	{
 		if (!this.m.IsActive)
 		{
@@ -653,15 +658,24 @@ this.faction <- {
 			return;
 		}
 
-		this.m.LastActionTime = this.Time.getVirtualTimeF();
+		if (!_ignoreDelay)
+		{
+			this.m.LastActionTime = this.Time.getVirtualTimeF();
+		}
+
 		this.onUpdateRoster();
 		this.onUpdate();
 
-		if (!_ignoreDelay && this.m.Settlements.len() != 0)
+		foreach( u in this.m.Units )
 		{
-			foreach( u in this.m.Units )
+			if (u.getTroops().len() == 0)
 			{
-				if (u.getTags().has("IsMercenaries"))
+				u.die();
+			}
+
+			if (!_ignoreDelay && this.m.Settlements.len() != 0)
+			{
+				if (u.getFlags().has("IsMercenaries"))
 				{
 					continue;
 				}
@@ -683,7 +697,7 @@ this.faction <- {
 
 		for( local i = 0; i < this.m.Deck.len(); i = ++i )
 		{
-			this.m.Deck[i].update(_ignoreDelay);
+			this.m.Deck[i].update(_isNewCampaign);
 
 			if (this.m.Deck[i].getScore() <= 0)
 			{
@@ -724,7 +738,7 @@ this.faction <- {
 			return;
 		}
 
-		actionToFire.execute(_ignoreDelay);
+		actionToFire.execute(_isNewCampaign);
 	}
 
 	function onUpdate()

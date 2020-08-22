@@ -53,8 +53,17 @@ this.goblin_shaman <- this.inherit("scripts/entity/tactical/goblin", {
 	{
 		local r;
 		this.m.Items.equip(this.new("scripts/items/weapons/greenskins/goblin_staff"));
-		this.m.Items.equip(this.new("scripts/items/armor/greenskins/goblin_shaman_armor"));
-		this.m.Items.equip(this.new("scripts/items/helmets/greenskins/goblin_shaman_helmet"));
+		local item = this.Const.World.Common.pickArmor([
+			[1, "greenskins/goblin_shaman_armor"]
+		])
+		this.m.Items.equip(item);
+		local item = this.Const.World.Common.pickHelmet([
+			[1, "greenskins/goblin_shaman_helmet"]
+		])
+		if (item != null)
+		{
+			this.m.Items.equip(item);
+		}	
 	}
 
 });

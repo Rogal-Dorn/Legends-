@@ -9,6 +9,10 @@ this.rebuilding_effort_situation <- this.inherit("scripts/entity/world/settlemen
 		this.m.Name = "Rebuilding Effort";
 		this.m.Description = "In an effort to rebuild a nearby site, building materials are in high demand and low supply.";
 		this.m.Icon = "ui/settlement_status/settlement_effect_15.png";
+		this.m.Rumors = [
+			"Finally they\'re starting to rebuild around %settlement%. That place was in ruins for long enough.",
+			"I heard they\'re bringing in wood to %settlement% with wagons now. The new Burgomeister is surely trying to fix things up over there."
+		];
 		this.m.IsStacking = false;
 		this.m.ValidDays = 5;
 	}
@@ -105,18 +109,46 @@ this.rebuilding_effort_situation <- this.inherit("scripts/entity/world/settlemen
 		this.m.Target = _in.readString();
 	}
 
-
-	function onUpdateDraftList( _draftList )
+	function onUpdateDraftList( _draftList, _gender )
 	{
-		_draftList.push("lumberjack_background");
-		_draftList.push("lumberjack_background");
-		_draftList.push("mason_background");
-		_draftList.push("mason_background");
-		_draftList.push("daytaler_background");
-		_draftList.push("daytaler_background");
-		_draftList.push("daytaler_background");
-		_draftList.push("daytaler_background");
+		if (this.m.IsSouthern)
+		{
+			_draftList.push("daytaler_southern_background");
+			_draftList.push("daytaler_southern_background");
+			_draftList.push("daytaler_southern_background");
+			_draftList.push("daytaler_southern_background");
+			_draftList.push("slave_southern_background");
+			_draftList.push("slave_southern_background");
+			_draftList.push("slave_southern_background");
+			_draftList.push("slave_southern_background");
+			_draftList.push("slave_southern_background");
+			_draftList.push("slave_southern_background");
+
+		}
+		else
+		{
+			_draftList.push("lumberjack_background");
+			_draftList.push("lumberjack_background");
+			_draftList.push("mason_background");
+			_draftList.push("mason_background");
+			_draftList.push("daytaler_background");
+			_draftList.push("daytaler_background");
+			_draftList.push("daytaler_background");
+
+			_draftList.push("legend_inventor_background");
+
+			if (_gender)
+			{
+				_draftList.push("female_daytaler_background");
+			}
+		}
+
+		_draftList.push("legend_blacksmith_background");
+		_draftList.push("legend_blacksmith_background");
+		_draftList.push("legend_blacksmith_background");
+
 	}
+
 
 });
 

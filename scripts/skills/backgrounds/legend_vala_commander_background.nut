@@ -11,6 +11,7 @@ this.legend_vala_commander_background <- this.inherit("scripts/skills/background
 		this.m.BadEnding = null;
 		this.m.HiringCost = 240;
 		this.m.DailyCost = 0;
+		this.m.Ethnicity = 2;
 		this.m.Excluded = [
 			"trait.asthmatic",
 			"trait.clumsy",
@@ -30,7 +31,7 @@ this.legend_vala_commander_background <- this.inherit("scripts/skills/background
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Body = this.Const.Bodies.AllFemale[this.Math.rand(0, this.Const.Bodies.AllFemale.len() - 1)];
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsFemaleBackground = true;
 		this.m.IsUntalented = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
@@ -227,16 +228,6 @@ this.legend_vala_commander_background <- this.inherit("scripts/skills/background
 		return c;
 	}
 
-	function onAdded()
-	{
-		this.character_background.onAdded();
-		local actor = this.getContainer().getActor();
-		actor.setName(this.Const.Strings.CharacterNamesFemaleNorse[this.Math.rand(0, this.Const.Strings.CharacterNamesFemaleNorse.len() - 1)]);
-		actor.setTitle("the Vala");
-		//this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
-		//this.m.Container.add(this.new("scripts/skills/perks/legend_vala_information"));
-		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_1"));
-	}
 
 	function onAddEquipment()
 	{
@@ -247,35 +238,9 @@ this.legend_vala_commander_background <- this.inherit("scripts/skills/background
 
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/weapons/legend_staff_vala"));
-		local r = this.Math.rand(0, 1);
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/armor/legend_vala_cloak"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/armor/legend_vala_dress"));
-		}
-	}
-
-	function onAddLegendEquipment()
-	{
-		local talents = this.getContainer().getActor().getTalents();
-		talents.resize(this.Const.Attributes.COUNT, 0);
-		talents[this.Const.Attributes.Bravery] = this.Math.rand(2, 3);
-		this.getContainer().getActor().fillTalentValues(2, true);
-
-		local items = this.getContainer().getActor().getItems();
-		items.equip(this.new("scripts/items/weapons/legend_staff_vala"));
-
-		local r = this.Math.rand(0, 1);
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/legend_armor/armor/legend_armor_vala_cloak"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/legend_armor/armor/legend_armor_vala_dress"));
-		}
+		items.equip(this.Const.World.Common.pickArmor([
+			[1, "legend_vala_cloak"],
+			[1, "legend_vala_dress"]
+		]));
 	}
 });

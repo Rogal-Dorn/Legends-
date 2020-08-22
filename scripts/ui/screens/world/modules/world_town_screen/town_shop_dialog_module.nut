@@ -148,6 +148,7 @@ this.town_shop_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 			Item = this.UIDataHelper.convertItemToUIData(item, true, this.Const.UI.ItemOwner.Stash),
 			Assets = this.m.Parent.queryAssetsInformation()
 		};
+		this.World.Statistics.getFlags().increment("ItemsRepaired");
 		return result;
 	}
 
@@ -296,6 +297,11 @@ this.town_shop_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 						this.Stash.insert(sourceItem.item, targetItemIdx);
 						shopStash.removeByIndex(sourceItemIdx);
 						sourceItem.item.setBought(true);
+
+						if (sourceItem.item.isItemType(this.Const.Items.ItemType.TradeGood))
+						{
+							this.World.Statistics.getFlags().increment("TradeGoodsBought");
+						}
 					}
 					else if (this.Stash.hasEmptySlot())
 					{
@@ -303,6 +309,11 @@ this.town_shop_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 						this.Stash.add(sourceItem.item);
 						shopStash.removeByIndex(sourceItemIdx);
 						sourceItem.item.setBought(true);
+
+						if (sourceItem.item.isItemType(this.Const.Items.ItemType.TradeGood))
+						{
+							this.World.Statistics.getFlags().increment("TradeGoodsBought");
+						}
 					}
 					else
 					{
@@ -320,6 +331,11 @@ this.town_shop_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 					this.Stash.add(sourceItem.item);
 					shopStash.removeByIndex(sourceItemIdx);
 					sourceItem.item.setBought(true);
+
+					if (sourceItem.item.isItemType(this.Const.Items.ItemType.TradeGood))
+					{
+						this.World.Statistics.getFlags().increment("TradeGoodsBought");
+					}
 				}
 				else
 				{

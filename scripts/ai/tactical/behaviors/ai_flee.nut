@@ -100,6 +100,12 @@ this.ai_flee <- this.inherit("scripts/ai/tactical/behavior", {
 
 				local movement = navigator.getCostForPath(_entity, settings, _entity.getActionPoints(), _entity.getFatigueMax() - _entity.getFatigue());
 				this.m.Agent.adjustCameraToDestination(movement.End);
+
+				if (this.Tactical.State.getStrategicProperties() != null && this.Tactical.State.getStrategicProperties().IsArenaMode)
+				{
+					this.Sound.play(this.Const.Sound.ArenaFlee[this.Math.rand(0, this.Const.Sound.ArenaFlee.len() - 1)], this.Const.Sound.Volume.Tactical * this.Const.Sound.Volume.Arena);
+				}
+
 				this.m.IsFirstExecuted = false;
 			}
 

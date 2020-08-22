@@ -29,7 +29,7 @@ this.flagellants_wounds_heal_event <- this.inherit("scripts/events/event", {
 				local hitpoints = this.Math.rand(4, 6);
 				_event.m.Flagellant.getBaseProperties().Hitpoints += hitpoints;
 				_event.m.Flagellant.getSkills().update();
-				_event.m.Flagellant.getTags().add("wounds_scarred_over");
+				_event.m.Flagellant.getFlags().add("wounds_scarred_over");
 				this.List = [
 					{
 						id = 17,
@@ -54,7 +54,7 @@ this.flagellants_wounds_heal_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getTags().has("wounds_scarred_over"))
+			if (bro.getFlags().has("wounds_scarred_over"))
 			{
 				continue;
 			}

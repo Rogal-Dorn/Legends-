@@ -24,11 +24,11 @@ this.legend_ranger_intro_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				this.logInfo("Unlocking fletching");
-				this.World.Tags.set("HasLegendCampFletching", true);
+				this.World.Flags.set("HasLegendCampFletching", true);
 				this.logInfo("Unlocking hunting");
-				this.World.Tags.set("HasLegendCampHunting", true);
+				this.World.Flags.set("HasLegendCampHunting", true);
 				this.logInfo("Unlocking scouting");
-				this.World.Tags.set("HasLegendCampScouting", true);					
+				this.World.Flags.set("HasLegendCampScouting", true);
 			}
 		});
 	}
@@ -47,7 +47,7 @@ this.legend_ranger_intro_event <- this.inherit("scripts/events/event", {
 	{
 		_vars.push([
 			"home",
-			this.World.Tags.get("HomeVillage")
+			this.World.Flags.get("HomeVillage")
 		]);
 	}
 

@@ -132,7 +132,7 @@ this.ai_sleep <- this.inherit("scripts/ai/tactical/behavior", {
 
 			local score = 10;
 			score = score + (this.m.Skill.getMaxRange() - myTile.getDistanceTo(targetTile));
-			score = score + this.Const.AI.Behavior.SleepZOCBonus * targetTile.getZoneOfControlCountOtherThan(target.getAlliedFactions());
+			score = score + this.Const.AI.Behavior.SleepZOCBonus * targetTile.getZoneOfOccupationCountOtherThan(target.getAlliedFactions());
 			score = score * this.queryTargetValue(_entity, target, null);
 
 			if (!target.isTurnDone())

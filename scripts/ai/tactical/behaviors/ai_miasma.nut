@@ -11,13 +11,12 @@ this.ai_miasma <- this.inherit("scripts/ai/tactical/behavior", {
 	{
 		this.m.ID = this.Const.AI.Behavior.ID.Miasma;
 		this.m.Order = this.Const.AI.Behavior.Order.Miasma;
-		this.m.IsThreaded = true;
+		this.m.IsThreaded = false;
 		this.behavior.create();
 	}
 
 	function onEvaluate( _entity )
 	{
-		// Function is a generator.
 		this.m.Skill = null;
 		this.m.TargetTile = null;
 		this.m.TargetScore = 0;
@@ -46,13 +45,7 @@ this.ai_miasma <- this.inherit("scripts/ai/tactical/behavior", {
 		}
 
 		score = score * this.getFatigueScoreMult(this.m.Skill);
-		local opponents = this.getAgent().getKnownOpponents();
-		local func = this.findBestTarget(_entity, opponents);
-
-		while (resume func == null)
-		{
-			yield null;
-		}
+		this.selectBestTarget(_entity.getTile(), _entity, this.m.Skill);
 
 		if (this.m.TargetTile == null)
 		{
@@ -90,44 +83,28 @@ this.ai_miasma <- this.inherit("scripts/ai/tactical/behavior", {
 		return true;
 	}
 
-	function findBestTarget( _entity, _targets )
+	function selectBestTarget( _myTile, _entity, _skill )
 	{
-		// Function is a generator.
-		local myTile = _entity.getTile();
 		local bestScore = -9000.0;
 		local bestTarget;
-		local knownAllies = this.getAgent().getKnownAllies();
-		local time = this.Time.getExactTime();
+		local potentialTiles = [];
+		local usedIDs = [];
+		local opponents = this.getAgent().getKnownOpponents();
 
-		foreach( o in _targets )
+		foreach( o in opponents )
 		{
 			local opponentTile = o.Actor.getTile();
 
-			if (opponentTile.Properties.Effect != null)
+			if (_myTile.getDistanceTo(opponentTile) > _skill.getMaxRange() + 1)
 			{
 				continue;
 			}
 
-			if (myTile.getDistanceTo(opponentTile) > this.m.Skill.getMaxRange())
+			if (usedIDs.find(opponentTile.ID) == null)
 			{
-				continue;
+				potentialTiles.push(opponentTile);
+				usedIDs.push(opponentTile.ID);
 			}
-
-			if (!this.m.Skill.isUsableOn(opponentTile))
-			{
-				continue;
-			}
-
-			if (this.isAllottedTimeReached(time))
-			{
-				yield null;
-				time = this.Time.getExactTime();
-			}
-
-			local score = 0.0;
-			local targets = [
-				o.Actor
-			];
 
 			for( local i = 0; i < 6; i = ++i )
 			{
@@ -138,32 +115,75 @@ this.ai_miasma <- this.inherit("scripts/ai/tactical/behavior", {
 				{
 					local adjacentTile = opponentTile.getNextTile(i);
 
-					if (!adjacentTile.IsOccupiedByActor)
+					if (_myTile.getDistanceTo(opponentTile) > _skill.getMaxRange() + 1)
 					{
 					}
-					else if (adjacentTile.Properties.Effect != null)
+					else if (usedIDs.find(opponentTile.ID) == null)
 					{
+						potentialTiles.push(adjacentTile);
+						usedIDs.push(adjacentTile.ID);
 					}
-					else
-					{
-						local entity = adjacentTile.getEntity();
+				}
+			}
+		}
 
-						if (entity.isAlliedWith(_entity))
-						{
-						}
-						else
-						{
-							targets.push(entity);
-						}
+		if (potentialTiles.len() == 0)
+		{
+			return 0.0;
+		}
+
+		foreach( tile in potentialTiles )
+		{
+			if (!_skill.isInRange(tile, _myTile) || !_skill.onVerifyTarget(_myTile, tile))
+			{
+				continue;
+			}
+
+			local targets = [];
+
+			if (tile.IsOccupiedByActor)
+			{
+				targets.push(tile.getEntity());
+			}
+
+			local score = 0.0;
+			local numAffected = 0;
+
+			for( local i = 0; i < 6; i = ++i )
+			{
+				if (!tile.hasNextTile(i))
+				{
+				}
+				else
+				{
+					local nextTile = tile.getNextTile(i);
+
+					if (nextTile.Properties.Effect != null && nextTile.Properties.Effect.Timeout - this.Time.getRound() >= 2)
+					{
+					}
+					else if (nextTile.IsOccupiedByActor)
+					{
+						targets.push(tile.getNextTile(i).getEntity());
 					}
 				}
 			}
 
-			local numAffected = 0;
+			if (targets.len() == 0)
+			{
+				continue;
+			}
 
 			foreach( target in targets )
 			{
-				local target_score = this.m.Skill.getMaxRange() - myTile.getDistanceTo(opponentTile);
+				local targetTile = target.getTile();
+
+				if (_entity.isAlliedWith(target) && !target.getFlags().get("undead"))
+				{
+					score = score - 1.0;
+					continue;
+				}
+
+				local target_score = _skill.getMaxRange() - _myTile.getDistanceTo(target.getTile());
 				target_score = target_score + this.Const.AI.Behavior.MiasmaZOCBonus * target.getTile().getZoneOfControlCountOtherThan(target.getAlliedFactions());
 
 				if (target.getHitpoints() <= 10)
@@ -171,7 +191,23 @@ this.ai_miasma <- this.inherit("scripts/ai/tactical/behavior", {
 					target_score = target_score + this.Const.AI.Behavior.MiasmaAlmostDeadBonus;
 				}
 
+				if (target.getCurrentProperties().IsStunned || target.getCurrentProperties().IsRooted)
+				{
+					target_score = target_score + this.Const.AI.Behavior.MiasmaStunnedBonus;
+				}
+
 				target_score = target_score * target.getCurrentProperties().TargetAttractionMult;
+
+				if (targetTile.Properties.Effect != null && targetTile.Properties.Effect.Type == "miasma" && targetTile.Properties.Effect.Timeout - this.Time.getRound() == 1)
+				{
+					target_score = target_score * this.Const.AI.Behavior.MiasmaOneTurnLeftMult;
+				}
+
+				if (!target.getCurrentProperties().IsStunned && !target.getCurrentProperties().IsRooted && !target.getTile().hasZoneOfControlOtherThan(target.getAlliedFactions()) && !target.isAbleToWait())
+				{
+					target_score = target_score * this.Const.AI.Behavior.MiasmaVSWaitMult;
+				}
+
 				score = score + target_score;
 				numAffected = ++numAffected;
 			}
@@ -184,17 +220,20 @@ this.ai_miasma <- this.inherit("scripts/ai/tactical/behavior", {
 			if (score > bestScore)
 			{
 				bestScore = score;
-				bestTarget = o.Actor;
+				bestTarget = tile;
 			}
 		}
 
 		if (bestTarget != null)
 		{
-			this.m.TargetTile = bestTarget.getTile();
+			this.m.TargetTile = bestTarget;
 			this.m.TargetScore = bestScore;
+			return this.Math.maxf(0.1, bestScore * 0.1);
 		}
-
-		return true;
+		else
+		{
+			return 0.0;
+		}
 	}
 
 });

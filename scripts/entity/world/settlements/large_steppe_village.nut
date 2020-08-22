@@ -81,6 +81,17 @@ this.large_steppe_village <- this.inherit("scripts/entity/world/settlement", {
 			this.m.DraftList.push("beast_hunter_background");
 		}
 
+		if (this.Const.DLC.Desert)
+		{
+			this.m.DraftList.extend([
+				"nomad_background",
+				"caravan_hand_southern_background",
+				"peddler_southern_background",
+				"beggar_southern_background",
+				"cripple_southern_background"
+			]);
+		}
+
 		this.m.UIDescription = "A large city thriving on trade and fine arts";
 		this.m.Description = "A large city thriving in the southern steppe by trading and producing valuable goods and fine arts.";
 		this.m.UIBackgroundCenter = "ui/settlements/townhall_03";
@@ -91,6 +102,7 @@ this.large_steppe_village <- this.inherit("scripts/entity/world/settlement", {
 		this.m.Sprite = "world_townhall_03";
 		this.m.Lighting = "world_townhall_03_light";
 		this.m.Rumors = this.Const.Strings.RumorsSteppeSettlement;
+		this.m.Culture = this.Const.World.Culture.Neutral;
 		this.m.IsMilitary = false;
 		this.m.Size = 3;
 		this.m.HousesType = 3;

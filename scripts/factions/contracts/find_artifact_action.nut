@@ -31,7 +31,7 @@ this.find_artifact_action <- this.inherit("scripts/factions/faction_action", {
 			return;
 		}
 
-		if (this.Math.rand(1, 100) > 25)
+		if (this.Math.rand(1, 100) > 30)
 		{
 			return;
 		}

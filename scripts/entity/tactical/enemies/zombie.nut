@@ -60,8 +60,8 @@ this.zombie <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Sound[this.Const.Sound.ActorEvent.Move] = this.m.Sound[this.Const.Sound.ActorEvent.Idle];
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.Move] = 0.1;
 		this.m.SoundPitch = this.Math.rand(70, 120) * 0.01;
-		this.getTags().add("undead");
-		this.getTags().add("zombie_minion");
+		this.getFlags().add("undead");
+		this.getFlags().add("zombie_minion");
 
 		if (this.m.IsCreatingAgent)
 		{
@@ -121,6 +121,13 @@ this.zombie <- this.inherit("scripts/entity/tactical/actor", {
 			if (this.m.Surcoat != null)
 			{
 				decal = _tile.spawnDetail("surcoat_" + (this.m.Surcoat < 10 ? "0" + this.m.Surcoat : this.m.Surcoat) + "_dead", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
+				decal.Scale = 0.9;
+				decal.setBrightness(0.9);
+			}
+
+			if (appearance.CorpseArmorUpgradeBack != "")
+			{
+				decal = _tile.spawnDetail(appearance.CorpseArmorUpgradeBack, this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
 				decal.Scale = 0.9;
 				decal.setBrightness(0.9);
 			}
@@ -321,6 +328,13 @@ this.zombie <- this.inherit("scripts/entity/tactical/actor", {
 				decal.setBrightness(0.85);
 			}
 
+			if (appearance.CorpseArmorUpgradeFront != "")
+			{
+				decal = _tile.spawnDetail(appearance.CorpseArmorUpgradeFront, this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
+				decal.Scale = 0.9;
+				decal.setBrightness(0.9);
+			}
+
 			this.spawnTerrainDropdownEffect(_tile);
 			this.spawnFlies(_tile);
 			local custom = {
@@ -334,7 +348,8 @@ this.zombie <- this.inherit("scripts/entity/tactical/actor", {
 				HairColor = sprite_hair.Color,
 				HairSaturation = sprite_hair.Saturation,
 				Beard = sprite_beard.HasBrush ? sprite_beard.getBrush().Name : null,
-				Surcoat = this.m.Surcoat
+				Surcoat = this.m.Surcoat,
+				Ethnicity = 0
 			};
 			local corpse = clone this.Const.Corpse;
 			corpse.Type = this.m.ResurrectWithScript;
@@ -412,6 +427,11 @@ this.zombie <- this.inherit("scripts/entity/tactical/actor", {
 				head.varySaturation(0.2);
 				head.Color = this.createColor("#c1ddaa");
 				head.varyColor(0.05, 0.05, 0.05);
+
+				if (_info.Custom.Ethnicity == 1)
+				{
+					head.setBrightness(1.25);
+				}
 			}
 			else
 			{
@@ -580,6 +600,7 @@ this.zombie <- this.inherit("scripts/entity/tactical/actor", {
 		this.getSprite("armor_layer_tabbard").setHorizontalFlipping(flip);
 		this.getSprite("armor_layer_cloak").setHorizontalFlipping(flip);
 		this.getSprite("armor_upgrade_back").setHorizontalFlipping(flip);
+		this.getSprite("armor_upgrade_front").setHorizontalFlipping(flip);
 		this.getSprite("head").setHorizontalFlipping(flip);
 		this.getSprite("tattoo_head").setHorizontalFlipping(flip);
 		this.getSprite("injury").setHorizontalFlipping(flip);
@@ -587,6 +608,10 @@ this.zombie <- this.inherit("scripts/entity/tactical/actor", {
 		this.getSprite("hair").setHorizontalFlipping(flip);
 		this.getSprite("helmet").setHorizontalFlipping(flip);
 		this.getSprite("helmet_damage").setHorizontalFlipping(flip);
+		this.getSprite("helmet_vanity_lower").setHorizontalFlipping(flip);
+		this.getSprite("helmet_helm").setHorizontalFlipping(flip);
+		this.getSprite("helmet_top").setHorizontalFlipping(flip);
+		this.getSprite("helmet_vanity").setHorizontalFlipping(flip);
 		this.getSprite("beard_top").setHorizontalFlipping(flip);
 		this.getSprite("body_blood").setHorizontalFlipping(flip);
 		this.getSprite("dirt").setHorizontalFlipping(flip);
@@ -603,6 +628,12 @@ this.zombie <- this.inherit("scripts/entity/tactical/actor", {
 		b.IsAffectedByInjuries = false;
 		b.IsImmuneToBleeding = true;
 		b.IsImmuneToPoison = true;
+
+		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 90)
+		{
+			b.DamageTotalMult += 0.1;
+		}
+
 		this.m.ActionPoints = b.ActionPoints;
 		this.m.Hitpoints = b.Hitpoints;
 			 if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
@@ -642,6 +673,7 @@ this.zombie <- this.inherit("scripts/entity/tactical/actor", {
 		this.addSprite("armor_layer_cloak").setHorizontalFlipping(true);
 		this.addSprite("armor_upgrade_back").setHorizontalFlipping(true);
 		this.addSprite("surcoat");
+		this.addSprite("armor_upgrade_front");
 		local body_blood_always = this.addSprite("body_blood_always");
 		body_blood_always.setBrush("bust_body_bloodied_01");
 		this.addSprite("shaft");
@@ -684,8 +716,13 @@ this.zombie <- this.inherit("scripts/entity/tactical/actor", {
 			hair.setBrush("hair_" + hairColor + "_" + this.Const.Hair.Zombie[this.Math.rand(0, this.Const.Hair.Zombie.len() - 1)]);
 		}
 
+		this.addSprite("helmet_vanity_lower").setHorizontalFlipping(true);
 		this.addSprite("helmet").setHorizontalFlipping(true);
 		this.addSprite("helmet_damage").setHorizontalFlipping(true);
+		this.addSprite("helmet_helm").setHorizontalFlipping(true);
+		this.addSprite("helmet_top").setHorizontalFlipping(true);
+		this.addSprite("helmet_vanity").setHorizontalFlipping(true);
+
 		local beard_top = this.addSprite("beard_top");
 		beard_top.setHorizontalFlipping(true);
 
@@ -695,6 +732,7 @@ this.zombie <- this.inherit("scripts/entity/tactical/actor", {
 			beard_top.Color = beard.Color;
 		}
 
+		// this.addSprite("armor_upgrade_front"); already doing this above
 		local body_blood = this.addSprite("body_blood");
 		body_blood.setBrush("bust_body_bloodied_02");
 		body_blood.setHorizontalFlipping(true);
@@ -783,137 +821,19 @@ this.zombie <- this.inherit("scripts/entity/tactical/actor", {
 
 		}
 
-		local armor;
-		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
-		{
-			local cloths = [
-				[0, ""],
-				[0, "cloth/legend_gambeson"],
-				[0, "cloth/legend_gambeson_plain"],
-				[0, "cloth/legend_gambeson_wolf"],
-				[0, "cloth/legend_padded_surcoat"],
-				[1, "cloth/legend_robes"],
-				[1, "cloth/legend_apron_butcher"],
-				[0, "cloth/legend_robes_nun"],
-				[1, "cloth/legend_apron_smith"],
-				[0, "cloth/legend_robes_wizard"],
-				[1, "cloth/legend_sackcloth"],
-				[1, "cloth/legend_sackcloth_patched"],
-				[1, "cloth/legend_sackcloth_tattered"],
-				[1, "cloth/legend_thick_tunic"],
-				[1, "cloth/legend_dark_tunic"],
-				[2, "cloth/legend_tunic"],
-				[0, "cloth/legend_tunic_noble"]
-			];
-			armor = this.Const.World.Common.pickLegendArmor(cloths)
 
-			if (armor != null)
-			{
-				local chains = [
-					[0, ""],
-					[0, "chain/legend_armor_mail_shirt"],
-					[0, "chain/legend_armor_mail_shirt_simple"],
-					[0, "chain/legend_armor_rusty_mail_shirt"],
-					[0, "chain/legend_armor_ancient_double_mail"],
-					[0, "chain/legend_armor_ancient_mail"],
-					[0, "chain/legend_armor_basic_mail"],
-					[0, "chain/legend_armor_hauberk"],
-					[0, "chain/legend_armor_hauberk_full"],
-					[0, "chain/legend_armor_hauberk_sleevless"],
-					[0, "chain/legend_armor_reinforced_mail"],
-					[0, "chain/legend_armor_reinforced_mail_shirt"],
-					[0, "chain/legend_armor_reinforced_rotten_mail_shirt"],
-					[0, "chain/legend_armor_reinforced_worn_mail"],
-					[0, "chain/legend_armor_reinforced_worn_mail_shirt"],
-					[0, "chain/legend_armor_short_mail"]
-				]
-
-				local chain = this.Const.World.Common.pickLegendArmor(chains)
-				if (chain != null)
-				{
-					armor.setUpgrade(chain)
-				}
-
-				local plates = [
-					[6, ""],
-					[0, "plate/legend_armor_leather_brigandine"],
-					[0, "plate/legend_armor_leather_brigandine_hardened"],
-					[0, "plate/legend_armor_leather_brigandine_hardened_full"],
-					[1, "plate/legend_armor_leather_jacket"],
-					[1, "plate/legend_armor_leather_jacket_simple"],
-					[0, "plate/legend_armor_leather_lamellar"],
-					[0, "plate/legend_armor_leather_lamellar_harness_heavy"],
-					[0, "plate/legend_armor_leather_lamellar_harness_reinforced"],
-					[0, "plate/legend_armor_leather_lamellar_heavy"],
-					[0, "plate/legend_armor_leather_lamellar_reinforced"],
-					[0, "plate/legend_armor_leather_noble"],
-					[0, "plate/legend_armor_leather_padded"],
-					[0, "plate/legend_armor_leather_riveted"],
-					[0, "plate/legend_armor_leather_riveted_light"],
-					[0, "plate/legend_armor_leather_scale"],
-					[0, "plate/legend_armor_plate_ancient_chest"],
-					[0, "plate/legend_armor_plate_ancient_harness"],
-					[0, "plate/legend_armor_plate_ancient_mail"],
-					[0, "plate/legend_armor_plate_ancient_scale"],
-					[0, "plate/legend_armor_plate_ancient_scale_coat"],
-					[0, "plate/legend_armor_plate_ancient_scale_harness"],
-					[0, "plate/legend_armor_plate_chest"],
-					[0, "plate/legend_armor_plate_chest_rotten"],
-					[0, "plate/legend_armor_plate_cuirass"],
-					[0, "plate/legend_armor_plate_full"],
-					[0, "plate/legend_armor_scale"],
-					[0, "plate/legend_armor_scale_coat"],
-					[0, "plate/legend_armor_scale_coat_rotten"],
-					[0, "plate/legend_armor_scale_shirt"]
-				]
-				local plate = this.Const.World.Common.pickLegendArmor(plates)
-				if (plate != null)
-				{
-					armor.setUpgrade(plate)
-				}
-			}
-		}
-		else
-		{
-			r = this.Math.rand(1, 9);
-			if (r == 1)
-			{
-				armor = this.new("scripts/items/armor/leather_tunic");
-			}
-			else if (r == 2)
-			{
-				armor = this.new("scripts/items/armor/linen_tunic");
-			}
-			else if (r == 3)
-			{
-				armor = this.new("scripts/items/armor/linen_tunic");
-			}
-			else if (r == 4)
-			{
-				armor = this.new("scripts/items/armor/sackcloth");
-			}
-			else if (r == 5)
-			{
-				armor = this.new("scripts/items/armor/tattered_sackcloth");
-			}
-			else if (r == 6)
-			{
-				armor = this.new("scripts/items/armor/leather_wraps");
-			}
-			else if (r == 7)
-			{
-				armor = this.new("scripts/items/armor/apron");
-			}
-			else if (r == 8)
-			{
-				armor = this.new("scripts/items/armor/butcher_apron");
-			}
-			else if (r == 9)
-			{
-				armor = this.new("scripts/items/armor/monk_robe");
-			}
-
-		}
+		local aList = [
+			[1, "leather_tunic"],
+			[1, "linen_tunic"],
+			[1, "linen_tunic"],
+			[1, "sackcloth"],
+			[1, "tattered_sackcloth"],
+			[1, "leather_wraps"],
+			[1, "apron"],
+			[1, "butcher_apron"],
+			[1, "monk_robe"]
+		];
+		local armor = this.Const.World.Common.pickArmor(armor);
 
 		if (this.Math.rand(1, 100) <= 50)
 		{
@@ -924,36 +844,23 @@ this.zombie <- this.inherit("scripts/entity/tactical/actor", {
 
 		if (this.Math.rand(1, 100) <= 33)
 		{
-			r = this.Math.rand(1, 5);
-			local helmet;
-
-			if (r == 1)
+			local item = this.Const.World.Common.pickHelmet([
+				[1, "aketon_cap"],
+				[1, "full_aketon_cap"],
+				[1, "kettle_hat"],
+				[1, "padded_kettle_hat"],
+				[1, "full_leather_cap"]
+			])
+			if (item != null)
 			{
-				helmet = this.new("scripts/items/helmets/hood");
-			}
-			else if (r == 2)
-			{
-				helmet = this.new("scripts/items/helmets/aketon_cap");
-			}
-			else if (r == 3)
-			{
-				helmet = this.new("scripts/items/helmets/full_aketon_cap");
-			}
-			else if (r == 4)
-			{
-				helmet = this.new("scripts/items/helmets/open_leather_cap");
-			}
-			else if (r == 5)
-			{
-				helmet = this.new("scripts/items/helmets/full_leather_cap");
+				if (this.Math.rand(1, 100) <= 50)
+				{
+					item.setArmor(item.getArmorMax() / 2 - 1);
+				}
+				this.m.Items.equip(item);
 			}
 
-			if (this.Math.rand(1, 100) <= 50)
-			{
-				helmet.setArmor(helmet.getArmorMax() / 2 - 1);
-			}
-
-			this.m.Items.equip(helmet);
+			this.m.Items.equip(item);
 		}
 	}
 

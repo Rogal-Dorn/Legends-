@@ -5,7 +5,7 @@ this.legend_hunting_skin_ghouls_contract <- this.inherit("scripts/contracts/cont
 		IsPlayerAttacking = false,
 		MinStrength = 100,
 		Perk = "perk.legend_favoured_enemy_ghoul",
-		ValidTypes = this.Const.LegendMod.FavoriteGhoul		
+		ValidTypes = this.Const.LegendMod.FavoriteGhoul
 	},
 	function create()
 	{
@@ -73,7 +73,7 @@ this.legend_hunting_skin_ghouls_contract <- this.inherit("scripts/contracts/cont
 				local tile = this.Contract.getTileToSpawnLocation(playerTile, 5, 10);
 
 				local party;
-				party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).spawnEntity(tile, "Skin Ghouls", false, this.Const.World.Spawn.LegendSkinGhouls, 200 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
+				party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).spawnEntity(tile, "Skin Ghouls", false, this.Const.World.Spawn.LegendSkinGhouls, 200 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult());
 				party.setDescription("A horde of terrorizing skin ghouls.");
 				party.setAttackableByAI(false);
 				party.setFootprintSizeOverride(0.75);
@@ -134,7 +134,7 @@ this.legend_hunting_skin_ghouls_contract <- this.inherit("scripts/contracts/cont
 					this.Flags.set("IsBanterShown", true);
 					this.Contract.setScreen("Banter");
 					this.World.Contracts.showActiveContract();
-		
+
 				}
 			}
 
@@ -348,7 +348,7 @@ this.legend_hunting_skin_ghouls_contract <- this.inherit("scripts/contracts/cont
 			}
 
 			local stats = this.Const.LegendMod.GetFavoriteEnemyStats(bro, this.m.ValidTypes);
-			if (stats.Strength >= this.m.MinStrength) 
+			if (stats.Strength >= this.m.MinStrength)
 			{
 				return true;
 			}

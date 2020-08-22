@@ -54,7 +54,7 @@ this.spider_poison_coat_effect <- this.inherit("scripts/skills/skill", {
 			this.removeSelf();
 		}
 
-		if (_targetEntity.getCurrentProperties().IsImmuneToPoison || _damageInflictedHitpoints <= this.Const.Combat.PoisonEffectMinDamage || _targetEntity.getHitpoints() <= 0)
+		if (_targetEntity.getCurrentProperties().IsImmuneToPoison || _damageInflictedHitpoints < this.Const.Combat.PoisonEffectMinDamage || _targetEntity.getHitpoints() <= 0)
 		{
 			return;
 		}
@@ -64,7 +64,7 @@ this.spider_poison_coat_effect <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
-		if (_targetEntity.getTags().has("undead"))
+		if (_targetEntity.getFlags().has("undead"))
 		{
 			return;
 		}

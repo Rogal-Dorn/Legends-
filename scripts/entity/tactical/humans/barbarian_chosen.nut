@@ -70,8 +70,18 @@ this.barbarian_chosen <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_hold_out"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_recover"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_brawny"));
-		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_pathfinder"));
+
+		if ("LegendsMod" in this.World && this.World.LegendsMod != null && this.World.LegendsMod.Configs().LegendTherianthropyEnabled())
+		{
+			if(this.Math.rand(1, 10) == 1)
 			{
+				this.m.Skills.add(this.new("scripts/skills/injury_permanent/legend_ursathropy_injury"));
+			}
+		}
+
+		if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+		{
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_overwhelm"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_relentless"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_alert"));
@@ -81,7 +91,8 @@ this.barbarian_chosen <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_backstabber"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_mastery_fist"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
-			}
+		}
+
 	}
 
 	function onDeath( _killer, _skill, _tile, _fatalityType )
@@ -89,6 +100,11 @@ this.barbarian_chosen <- this.inherit("scripts/entity/tactical/human", {
 		if (!this.Tactical.State.isScenarioMode() && _killer != null && _killer.isPlayerControlled())
 		{
 			this.updateAchievement("KingOfTheNorth", 1, 1);
+		}
+		if ((_killer == null || _killer.getFaction() == this.Const.Faction.Player || _killer.getFaction() == this.Const.Faction.PlayerAnimals) && this.m.Skills.hasSkill("injury_permanent.legend_ursathropy_injury"))
+		{
+			local loot = this.new("scripts/items/misc/legend_werehand_item");
+			loot.drop(_tile);
 		}
 
 		this.human.onDeath(_killer, _skill, _tile, _fatalityType);
@@ -107,66 +123,17 @@ this.barbarian_chosen <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Body))
 		{
-			if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
-			{
-				local cloths = [
-					[1, "cloth/legend_dark_tunic"]
-				];
-				local armor = this.Const.World.Common.pickLegendArmor(cloths)
-
-
-				if (armor != null)
-				{
-					local chains = [
-						[1, "chain/legend_armor_rusty_mail_shirt"]
-					]
-					local chain = this.Const.World.Common.pickLegendArmor(chains)
-					if (chain != null)
-					{
-						armor.setUpgrade(chain)
-					}
-
-					local plates = [
-						[0, ""],
-						[0, "plate/legend_animal_hide_armor"],
-						[0, "plate/legend_heavy_iron_armor"],
-						[0, "plate/legend_hide_and_bone_armor"],
-						[0, "plate/legend_reinforced_animal_hide_armor"],
-						[0, "plate/legend_rugged_scale_armor"],
-						[0, "plate/legend_scrap_metal_armor"],
-						[0, "plate/legend_thick_furs_armor"],
-						[1, "plate/legend_thick_plated_barbarian_armor"],
-					]
-					local plate = this.Const.World.Common.pickLegendArmor(plates)
-					if (plate != null)
-					{
-						armor.setUpgrade(plate)
-					}
-
-					local u = this.new("scripts/items/legend_armor/armor_upgrades/legend_barbarian_horn_upgrade");
-					armor.setUpgrade(u);
-
-					this.m.Items.equip(armor);
-				}
-			}
-			else
-			{
-				local armor = [
-					"armor/barbarians/thick_plated_barbarian_armor"
-				];
-				local a = this.new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]);
-				local u = this.new("scripts/items/armor_upgrades/barbarian_horn_upgrade");
-				a.setUpgrade(u);
-				this.m.Items.equip(a);
-			}
+			this.m.Items.equip(this.Const.World.Common.pickArmor([
+				[1, "barbarians/thick_plated_barbarian_armor"]
+			]));
 		}
+		
 
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Head))
 		{
-			local helmet = [
-				"helmets/barbarians/heavy_horned_plate_helmet"
-			];
-			this.m.Items.equip(this.new("scripts/items/" + helmet[this.Math.rand(0, helmet.len() - 1)]));
+			this.m.Items.equip(this.Const.World.Common.pickHelmet([
+				[1, "barbarians/heavy_horned_plate_helmet"]
+			]));
 		}
 	}
 
@@ -180,7 +147,7 @@ this.barbarian_chosen <- this.inherit("scripts/entity/tactical/human", {
 		this.getSprite("miniboss").setBrush("bust_miniboss");
 		local weapons = this.Const.Items.NamedBarbarianWeapons;
 		this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
-		this.m.Skills.add(this.new("scripts/skills/actives/indomitable"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_fearsome"));
 		return true;
 	}
 

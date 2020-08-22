@@ -65,7 +65,7 @@ this.legend_possess_undead_skill <- this.inherit("scripts/skills/skill", {
 
 		local target = _targetTile.getEntity();
 
-		if (!target.getTags().has("zombie_minion"))
+		if (!target.getFlags().has("zombie_minion"))
 		{
 			return false;
 		}

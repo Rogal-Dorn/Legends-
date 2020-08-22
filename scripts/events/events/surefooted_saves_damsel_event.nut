@@ -27,7 +27,12 @@ this.surefooted_saves_damsel_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				this.Characters.push(_event.m.Surefooted.getImagePath());
-				_event.m.Town.getFactionOfType(this.Const.FactionType.Settlement).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractSuccess, "One of your men got a reputation with the ladies");
+
+				if (!_event.m.Town.isSouthern())
+				{
+					_event.m.Town.getFactionOfType(this.Const.FactionType.Settlement).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractSuccess, "One of your men got a reputation with the ladies");
+				}
+
 				_event.m.Surefooted.improveMood(2.0, "Had a bit of a partie carree");
 
 				if (_event.m.Surefooted.getMoodState() >= this.Const.MoodState.Neutral)

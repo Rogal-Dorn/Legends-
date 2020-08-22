@@ -29,7 +29,7 @@ this.defeat_kraken_ambition <- this.inherit("scripts/ambitions/ambition", {
 			return;
 		}
 
-		if (this.World.Tags.get("IsKrakenDefeated"))
+		if (this.World.Flags.get("IsKrakenDefeated"))
 		{
 			this.m.IsDone = true;
 			return;
@@ -40,7 +40,7 @@ this.defeat_kraken_ambition <- this.inherit("scripts/ambitions/ambition", {
 
 	function onCheckSuccess()
 	{
-		if (this.World.Tags.get("IsKrakenDefeated"))
+		if (this.World.Flags.get("IsKrakenDefeated"))
 		{
 			return true;
 		}

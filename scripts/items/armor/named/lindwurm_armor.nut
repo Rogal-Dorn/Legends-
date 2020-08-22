@@ -44,7 +44,7 @@ this.lindwurm_armor <- this.inherit("scripts/items/armor/named/named_armor", {
 
 		if (c != null && c.getActor() != null && !c.getActor().isNull())
 		{
-			this.m.Container.getActor().getTags().add("body_immune_to_acid");
+			this.m.Container.getActor().getFlags().add("body_immune_to_acid");
 		}
 	}
 
@@ -54,7 +54,7 @@ this.lindwurm_armor <- this.inherit("scripts/items/armor/named/named_armor", {
 
 		if (c != null && c.getActor() != null && !c.getActor().isNull())
 		{
-			this.m.Container.getActor().getTags().remove("body_immune_to_acid");
+			this.m.Container.getActor().getFlags().remove("body_immune_to_acid");
 		}
 
 		this.armor.onUnequip();

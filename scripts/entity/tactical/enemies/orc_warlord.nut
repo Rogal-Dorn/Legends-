@@ -333,12 +333,21 @@ this.orc_warlord <- this.inherit("scripts/entity/tactical/actor", {
 
 		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Body) == null)
 		{
-			this.m.Items.equip(this.new("scripts/items/armor/greenskins/orc_warlord_armor"));
+			local item = this.Const.World.Common.pickArmor([
+				[1, "greenskins/orc_warlord_armor"]
+			]);
+			this.m.Items.equip(item);
 		}
 
 		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Head) == null)
 		{
-			this.m.Items.equip(this.new("scripts/items/helmets/greenskins/orc_warlord_helmet"));
+			local item = this.Const.World.Common.pickHelmet([
+				[1, "greenskins/orc_warlord_helmet"]
+			])
+			if (item != null)
+			{
+				this.m.Items.equip(item);
+			}
 		}
 	}
 

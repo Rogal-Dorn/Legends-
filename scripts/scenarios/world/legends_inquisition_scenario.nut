@@ -48,7 +48,7 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 		bros[1].m.PerkPointsSpent += 1;
 		local items = bros[1].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
-		items.equip(this.new("scripts/items/helmets/barbarians/leather_helmet"));
+		items.equip(this.Const.World.Common.pickHelmet([[1, "barbarians/leather_helmet"]]));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
 		items.equip(this.new("scripts/items/armor/cultist_leather_robe"));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
@@ -58,7 +58,7 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 		]);
 		local items = bros[2].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
-		items.equip(this.new("scripts/items/helmets/witchhunter_hat"));
+		items.equip(this.Const.World.Common.pickHelmet([[1, "witchhunter_hat"]]));
 		items.equip(this.new("scripts/items/weapons/greenskins/goblin_crossbow"));
 		bros[2].getBackground().m.RawDescription = "{%name% has seen well the damage magic can bring to the world. The witches who steal the minds of men, the nightmares that end lives, and the necromancers who bring them back again. Hunting these foul creatures is the duty of all who serve the good of the gods. If the war is to be won, %name% will need a witch hunter army.}";
 		bros[2].improveMood(1.0, "Recently purged the unworthy");
@@ -184,32 +184,12 @@ local cloths = [
 			}
 			items.equip(armor);
 		}
-		foreach( bro in bros )
-		{
-			local val = this.World.State.addNewID(bro);
-			bro.m.CompanyID = val;
-		}
 
-		if (this.World.LegendsMod.Configs().RelationshipsEnabled())
-{
-    local avgAlignment = 0;
-    foreach (bro in this.World.getPlayerRoster().getAll())
-    {
-        if (bro.getAlignment() <= this.Const.LegendMod.Alignment.NeutralMin)
-        {
-            avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMin);
-        }
-        else if (bro.getAlignment() >= this.Const.LegendMod.Alignment.NeutralMax)
-        {
-            avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMax);
-        }
-    }
-    avgAlignment *= (10 / this.World.getPlayerRoster().getSize());
-    this.World.Assets.addMoralReputation(avgAlignment);
-}
 
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/bread_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/wine_item"));
+		this.World.Assets.getStash().add(this.new("scripts/items/accessory/legend_wolfsbane_necklace_item"));
+		this.World.Assets.getStash().add(this.new("scripts/items/tools/holy_water_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/weapons/legend_wooden_stake"));
 		this.World.Assets.getStash().add(this.new("scripts/items/weapons/legend_wooden_stake"))
 		this.World.Assets.getStash().add(this.new("scripts/items/weapons/legend_wooden_stake"));
@@ -272,14 +252,6 @@ local cloths = [
 			], this.Const.Music.CrossFadeTime);
 			this.World.Events.fire("event.legend_inquisition_scenario_intro");
 		}, null);
-
-		foreach (b in this.World.getPlayerRoster().getAll()) // todo: more efficient approach to this
-		{
-			foreach (add in this.World.getPlayerRoster().getAll())
-			{
-				b.changeActiveRelationship(add, this.Math.rand(0, 20));
-			}
-		}
 
 	}
 
@@ -346,7 +318,7 @@ local cloths = [
 		_tree[0].push(this.Const.Perks.PerkDefs.LegendMindOverBody);
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 		if (_list.len() < 5)
 		{
@@ -362,7 +334,7 @@ local cloths = [
 			_list.push("monk_background");
 			}
 			r = this.Math.rand(0, 6);
-			if (r == 0)
+			if (r == 0 && _gender)
 			{
 			_list.push("legend_nun_background");
 			}
@@ -391,7 +363,7 @@ local cloths = [
 				_list.push("monk_background");
 			}
 			r = this.Math.rand(0, 4);
-			if (r == 0)
+			if (r == 0 && _gender)
 			{
 				_list.push("legend_nun_background");
 			}

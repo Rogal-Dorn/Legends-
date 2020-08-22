@@ -145,7 +145,7 @@ this.kraken <- this.inherit("scripts/entity/tactical/actor", {
 
 		foreach( i, t in this.m.Tentacles )
 		{
-			if (t.isDying() || !t.isAlive())
+			if (t.isNull() || t.isDying() || !t.isAlive())
 			{
 				this.m.Tentacles.remove(i);
 				break;
@@ -283,7 +283,7 @@ this.kraken <- this.inherit("scripts/entity/tactical/actor", {
 
 		if (!this.Tactical.State.isScenarioMode())
 		{
-			if (!this.World.Tags.get("IsKrakenDefeated"))
+			if (!this.World.Flags.get("IsKrakenDefeated"))
 			{
 				this.setName("Beast of Beasts");
 			}

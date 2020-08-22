@@ -40,7 +40,7 @@ this.female_tailor_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Good;
 		this.m.IsFemaleBackground = true;
@@ -119,42 +119,15 @@ this.female_tailor_background <- this.inherit("scripts/skills/backgrounds/charac
 	function onAddEquipment()
 	{
 		local items = this.getContainer().getActor().getItems();
-		local r;
-		r = this.Math.rand(0, 2);
+		items.equip(this.Const.World.Common.pickArmor([
+			[1, "linen_tunic"],
+			[1, "legend_maid_dress"],
+			[1, "legend_maid_apron"]
+		]))
 
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/armor/linen_tunic"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/armor/legend_maid_dress"));
-		}
-			else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/armor/legend_maid_apron"));
-		}
-
-
-		r = this.Math.rand(0, 1);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/feathered_hat"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+				[1, "feathered_hat"],
+				[1, ""]
+		]))
 	}
-
-	function onAddLegendEquipment()
-	{
-		local items = this.getContainer().getActor().getItems();
-		items.equip(this.new("scripts/items/legend_armor/cloth/legend_peasant_dress"));
-
-		local r = this.Math.rand(0, 1);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/feathered_hat"));
-		}
-	}
-
 });

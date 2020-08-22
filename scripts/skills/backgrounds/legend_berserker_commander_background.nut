@@ -56,9 +56,9 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 		this.m.Hairs = this.Const.Hair.Berserker;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.Berserker;
+		this.m.Bodies = this.Const.Bodies.LegendTattos;
+		this.m.Ethnicity = 2;
 		this.m.BeardChance = 100;
-		this.m.Body = "bust_naked_body_04";
-
 		this.m.Level = 3;
 		this.m.IsCombatBackground = true;
 		this.m.IsLowborn = true;
@@ -201,7 +201,7 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsFemaleBackground = true;
 	}
 
@@ -280,21 +280,6 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 		return c;
 	}
 
-	function onAdded()
-	{
-		this.character_background.onAdded();
-		local actor = this.getContainer().getActor();
-
-		if (this.m.IsFemaleBackground == true)
-		{
-			actor.setName(this.Const.Strings.CharacterNamesFemaleNorse[this.Math.rand(0, this.Const.Strings.CharacterNamesFemaleNorse.len() - 1)]);
-		}
-		else
-		{
-			actor.setName(this.Const.Strings.BarbarianNames[this.Math.rand(0, this.Const.Strings.BarbarianNames.len() - 1)]);
-		}
-	}
-
 	function onSetAppearance()
 	{
 		local actor = this.getContainer().getActor();
@@ -350,61 +335,12 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 		stash.add(this.new("scripts/items/supplies/roots_and_berries_item"));
 		stash.add(this.new("scripts/items/supplies/medicine_item"));
 		stash.add(this.new("scripts/items/weapons/throwing_axe"));
-		items.equip(this.new("scripts/items/armor/werewolf_hide_armor"));
-		local r;
+		
+		items.equip(this.Const.World.Common.pickArmor([
+			[1, "werewolf_hide_armor"]
+		]));
 
-
-			r = this.Math.rand(0, 5);
-
-			if (r == 0)
-			{
-				items.equip(this.new("scripts/items/weapons/ancient/rhomphaia"));
-			}
-			else if (r == 1)
-			{
-				items.equip(this.new("scripts/items/weapons/warbrand"));
-			}
-			else if (r == 2)
-			{
-				items.equip(this.new("scripts/items/weapons/ancient/crypt_cleaver"));
-			}
-
-			else if (r == 3)
-			{
-				items.equip(this.new("scripts/items/weapons/greenskins/orc_flail_2h"));
-			}
-			else if (r == 4)
-			{
-				items.equip(this.new("scripts/items/weapons/greenskins/orc_axe_2h"));
-			}
-			else if (r == 5)
-			{
-				items.equip(this.new("scripts/items/weapons/legend_infantry_axe"));
-			}
-
-	}
-
-	function onAddLegendEquipment()
-	{
-		local talents = this.getContainer().getActor().getTalents();
-		talents.resize(this.Const.Attributes.COUNT, 0);
-		talents[this.Const.Attributes.MeleeSkill] = 3;
-		talents[this.Const.Attributes.Hitpoints] = 3;
-		this.getContainer().getActor().fillTalentValues(2, true);
-		local items = this.getContainer().getActor().getItems();
-		local stash = this.World.Assets.getStash()
-		stash.removeByID("supplies.ground_grains");
-		stash.removeByID("supplies.ground_grains");
-		stash.add(this.new("scripts/items/accessory/berserker_mushrooms_item"));
-		stash.add(this.new("scripts/items/accessory/berserker_mushrooms_item"));
-		stash.add(this.new("scripts/items/supplies/roots_and_berries_item"));
-		stash.add(this.new("scripts/items/supplies/medicine_item"));
-		stash.add(this.new("scripts/items/weapons/throwing_axe"));
-
-		items.equip(this.new("scripts/items/legend_armor/armor/legend_armor_werewolf_mail"));
-
-		local r;
-		r = this.Math.rand(0, 5);
+		local r = this.Math.rand(0, 5);
 
 		if (r == 0)
 		{

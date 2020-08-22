@@ -16,7 +16,7 @@ this.amber_collector_location <- this.inherit("scripts/entity/world/attached_loc
 		_list.push("trade/amber_shards_item");
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 		if (!this.isActive())
 		{
@@ -29,6 +29,7 @@ this.amber_collector_location <- this.inherit("scripts/entity/world/attached_loc
 		_list.push("peddler_background");
 		_list.push("caravan_hand_background");
 		_list.push("thief_background");
+
 
 		if(this.World.LegendsMod.Configs().LegendMagicEnabled())
 		{

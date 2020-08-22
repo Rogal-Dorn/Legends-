@@ -141,11 +141,7 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		bros[11].improveMood(1.0, "Managed to get away from his wife");
 		bros[11].setVeteranPerks(3);
 		bros[11].getSkills().add(this.new("scripts/skills/traits/hate_nobles_trait"));
-		foreach( bro in bros )
-		{
-			local val = this.World.State.addNewID(bro);
-			bro.m.CompanyID = val;
-		}
+
 		this.World.Assets.m.BusinessReputation = -100;
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
@@ -156,23 +152,6 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		this.World.Assets.m.ArmorParts = this.World.Assets.m.ArmorParts / 2;
 		this.World.Assets.m.Medicine = this.World.Assets.m.Medicine / 2;
 		this.World.Assets.m.Ammo = this.World.Assets.m.Ammo / 2;
-		if (this.World.LegendsMod.Configs().RelationshipsEnabled())
-{
-    local avgAlignment = 0;
-    foreach (bro in this.World.getPlayerRoster().getAll())
-    {
-        if (bro.getAlignment() <= this.Const.LegendMod.Alignment.NeutralMin)
-        {
-            avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMin);
-        }
-        else if (bro.getAlignment() >= this.Const.LegendMod.Alignment.NeutralMax)
-        {
-            avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMax);
-        }
-    }
-    avgAlignment *= (10 / this.World.getPlayerRoster().getSize());
-    this.World.Assets.addMoralReputation(avgAlignment);
-}
 	}
 
 	function onSpawnPlayer()
@@ -190,7 +169,7 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		}
 
 		local randomVillageTile = randomVillage.getTile();
-		this.World.Tags.set("HomeVillage", randomVillage.getName());
+		this.World.Flags.set("HomeVillage", randomVillage.getName());
 		local navSettings = this.World.getNavigator().createSettings();
 		navSettings.ActionPointCosts = this.Const.World.TerrainTypeNavCost_Flat;
 
@@ -240,14 +219,6 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 			], this.Const.Music.CrossFadeTime);
 			this.World.Events.fire("event.militia_scenario_intro");
 		}, null);
-foreach (b in this.World.getPlayerRoster().getAll())
-		{
-			foreach (add in this.World.getPlayerRoster().getAll())
-			{
-				b.changeActiveRelationship(add, this.Math.rand(0, 10));
-			}
-		}
-
 	}
 
 	function onInit()

@@ -33,14 +33,14 @@ this.iron_lungs_trait <- this.inherit("scripts/skills/traits/character_trait", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/fatigue.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+4[/color] Fatigue Recovery per turn"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] Fatigue Recovery per turn"
 			}
 		];
 	}
 
 	function onUpdate( _properties )
 	{
-		_properties.FatigueRecoveryRate += 4;
+		_properties.FatigueRecoveryRate += 3;
 	}
 
 });

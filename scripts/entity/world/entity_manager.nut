@@ -352,9 +352,9 @@ this.entity_manager <- {
 				this.updateAchievement("RestInPieces", 1, 1);
 			}
 
-			this.World.Statistics.get().LastLocationDestroyedName = _entity.getName();
-			this.World.Statistics.get().LastLocationDestroyedFaction = _entity.getFaction();
-			this.World.Statistics.get().LastLocationDestroyedForContract = _entity.getSprite("selection").Visible;
+			this.World.Statistics.getFlags().set("LastLocationDestroyedName", _entity.getName());
+			this.World.Statistics.getFlags().set("LastLocationDestroyedFaction", _entity.getFaction());
+			this.World.Statistics.getFlags().set("LastLocationDestroyedForContract", _entity.getSprite("selection").Visible);
 
 			if (this.World.FactionManager.isGreaterEvil())
 			{
@@ -374,11 +374,11 @@ this.entity_manager <- {
 				}
 			}
 
-			if (this.World.Tags.get("IsGoblinCityOutposts"))
+			if (this.World.Flags.get("IsGoblinCityOutposts"))
 			{
 				if (_entity.getTypeID() == "location.goblin_camp" || _entity.getTypeID() == "location.goblin_hideout" || _entity.getTypeID() == "location.goblin_outpost" || _entity.getTypeID() == "location.goblin_ruins" || _entity.getTypeID() == "location.goblin_settlement")
 				{
-					this.World.Tags.increment("GoblinCityCount", 1);
+					this.World.Flags.increment("GoblinCityCount", 1);
 				}
 			}
 
@@ -392,7 +392,7 @@ this.entity_manager <- {
 				this.updateAchievement("NotSoNoble", 1, 1);
 			}
 
-			if (_entity.getTags().get("IsMercenaries"))
+			if (_entity.getFlags().get("IsMercenaries"))
 			{
 				this.updateAchievement("KingOfTheHill", 1, 1);
 			}
@@ -413,13 +413,17 @@ this.entity_manager <- {
 				{
 					this.World.FactionManager.addGreaterEvilStrength(this.Const.Factions.GreaterEvilStrengthOnPartyDestroyed);
 				}
+				else if (this.World.FactionManager.isHolyWar() && f != null && (f.getType() == this.Const.FactionType.NobleHouse || f.getType() == this.Const.FactionType.OrientalCityState))
+				{
+					this.World.FactionManager.addGreaterEvilStrength(this.Const.Factions.GreaterEvilStrengthOnPartyDestroyed);
+				}
 			}
 
-			if (this.World.Tags.get("IsGoblinCityScouts"))
+			if (this.World.Flags.get("IsGoblinCityScouts"))
 			{
 				if (this.World.FactionManager.getFaction(_entity.getFaction()).getType() == this.Const.FactionType.Goblins)
 				{
-					this.World.Tags.increment("GoblinCityCount", 1);
+					this.World.Flags.increment("GoblinCityCount", 1);
 				}
 			}
 
@@ -478,9 +482,10 @@ this.entity_manager <- {
 			local party = this.World.spawnEntity("scripts/entity/world/party", start.getTile().Coords);
 			party.setPos(this.createVec(party.getPos().X - 50, party.getPos().Y - 50));
 			party.setDescription("A free mercenary company travelling the lands and lending their swords to the highest bidder.");
-			party.getTags().set("IsMercenaries", true);
+			party.setFootprintType(this.Const.World.FootprintsType.Mercenaries);
+			party.getFlags().set("IsMercenaries", true);
 
-			if (start.isMilitary())
+			if (start.getFactions().len() == 1)
 			{
 				party.setFaction(start.getOwner().getID());
 			}

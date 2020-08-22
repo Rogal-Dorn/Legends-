@@ -445,9 +445,6 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		}
 
 		this.m.Upgrades[_upgrade.getType()] = _upgrade;
-
-
-
 		this.m.Upgrades[_upgrade.getType()].setArmor(this);
 		this.m.Upgrades[_upgrade.getType()].onAdded();
 		this.updateAppearance();
@@ -825,10 +822,9 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 			}
 		}
 
-		this.updateAppearance();
-
 		if (this.m.Condition == 0)
 		{
+			this.updateAppearance();
 			return;
 		}
 
@@ -842,6 +838,7 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		{
 			this.Tactical.EventLog.logEx(this.Const.UI.getColorizedEntityName(this.getContainer().getActor()) + "\'s " + this.makeName() + " is hit for [b]" + this.Math.floor(_damage) + "[/b] damage");
 		}
+		this.updateAppearance();
 	}
 
 	function onUpdateProperties( _properties )
@@ -938,39 +935,39 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		}
 	}
 
-	function getBuyPrice()
-	{
-		local basePrice = this.armor.getBuyPrice();
+	// function getBuyPrice()
+	// {
+	// 	local basePrice = this.armor.getBuyPrice();
 
-		foreach( u in this.m.Upgrades )
-		{
-			if (u == null)
-			{
-				continue;
-			}
+	// 	foreach( u in this.m.Upgrades )
+	// 	{
+	// 		if (u == null)
+	// 		{
+	// 			continue;
+	// 		}
 
-			basePrice = basePrice + u.getBuyPrice();
-		}
+	// 		basePrice = basePrice + u.getBuyPrice();
+	// 	}
 
-		return basePrice;
-	}
+	// 	return basePrice;
+	// }
 
-	function getSellPrice()
-	{
-		local basePrice = this.armor.getSellPrice();
+	// function getSellPrice()
+	// {
+	// 	local basePrice = this.armor.getSellPrice();
 
-		foreach( u in this.m.Upgrades )
-		{
-			if (u == null)
-			{
-				continue;
-			}
+	// 	foreach( u in this.m.Upgrades )
+	// 	{
+	// 		if (u == null)
+	// 		{
+	// 			continue;
+	// 		}
 
-			basePrice = basePrice + u.getSellPrice();
-		}
+	// 		basePrice = basePrice + u.getSellPrice();
+	// 	}
 
-		return basePrice;
-	}
+	// 	return basePrice;
+	// }
 
 	function onSerialize( _out )
 	{

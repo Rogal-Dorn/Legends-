@@ -46,7 +46,7 @@ this.legend_noble_shield <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.Hairs = this.Const.Hair.AllMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.Body = "bust_naked_body_01";
+
 		this.m.IsCombatBackground = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
@@ -105,7 +105,7 @@ this.legend_noble_shield <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsFemaleBackground = true;
 		this.m.GoodEnding = "Supporting your cause from the start, %name% was with you in retirement, leaving the company not long after you did. Though she was a lowly peasant, she proved herself in battle after battle and slowly became as trusted and valued a friend as one can have in a mercenary company.";
 		this.m.BadEnding = "A supporter of your cause from the start, %name% was as loyal as she was talented. She stayed with the company for a time before eventually leaving to forge out a path for himself. The other day, you received a letter from the mercenary stating that she had started her own company and was in dire need of help. Unfortunately, the message was dated to nearly a full year ago. When you investigated the existence of her company, you learned that it had been completely annihilated in a battle between nobles.";
@@ -192,179 +192,25 @@ this.legend_noble_shield <- this.inherit("scripts/skills/backgrounds/character_b
 		{
 			actor.setTitle(this.Const.Strings.SellswordTitles[this.Math.rand(0, this.Const.Strings.SellswordTitles.len() - 1)]);
 		}
-
-		if (this.m.IsFemaleBackground == true)
-		{
-			actor.setName(this.Const.Strings.CharacterNamesFemale[this.Math.rand(0, this.Const.Strings.CharacterNamesFemale.len() - 1)]);
-		}
-		else
-		{
-			actor.setName(this.Const.Strings.CharacterNames[this.Math.rand(0, this.Const.Strings.CharacterNames.len() - 1)]);
-		}
 	}
 
 	function onAddEquipment()
 	{
 		local items = this.getContainer().getActor().getItems();
-		local r;
+
 		items.equip(this.new("scripts/items/weapons/militia_spear"));
 		items.equip(this.new("scripts/items/shields/buckler_shield"));
-		r = this.Math.rand(0, 2);
+		
+		items.equip(this.Const.World.Common.pickArmor([
+			[1, "thick_tunic"],
+			[1, "leather_tunic"],
+			[1, "linen_tunic"]
+		]));
 
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/armor/thick_tunic"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/armor/leather_tunic"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/armor/linen_tunic"));
-		}
-
-		r = this.Math.rand(0, 3);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/headscarf"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/straw_hat"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/helmets/hood"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "aketon_cap"],
+			[1, "open_leather_cap"]
+		]));
 	}
-
-	function onAddLegendEquipment()
-	{
-		local items = this.getContainer().getActor().getItems();
-		local r;
-		items.equip(this.new("scripts/items/weapons/militia_spear"));
-		items.equip(this.new("scripts/items/shields/wooden_shield"));
-		local cloths = [
-			[
-				0,
-				""
-			],
-			[
-				0,
-				"cloth/legend_gambeson"
-			],
-			[
-				0,
-				"cloth/legend_gambeson_plain"
-			],
-			[
-				0,
-				"cloth/legend_gambeson_wolf"
-			],
-			[
-				1,
-				"cloth/legend_padded_surcoat"
-			],
-			[
-				0,
-				"cloth/legend_robes"
-			],
-			[
-				0,
-				"cloth/legend_apron_butcher"
-			],
-			[
-				0,
-				"cloth/legend_robes_nun"
-			],
-			[
-				0,
-				"cloth/legend_apron_smith"
-			],
-			[
-				0,
-				"cloth/legend_robes_wizard"
-			],
-			[
-				0,
-				"cloth/legend_sackcloth"
-			],
-			[
-				0,
-				"cloth/legend_sackcloth_patched"
-			],
-			[
-				0,
-				"cloth/legend_sackcloth_tattered"
-			],
-			[
-				1,
-				"cloth/legend_thick_tunic"
-			],
-			[
-				1,
-				"cloth/legend_tunic"
-			],
-			[
-				0,
-				"cloth/legend_tunic_noble"
-			]
-		];
-		local armor = this.Const.World.Common.pickLegendArmor(cloths);
-
-					local plates = [
-                [1, ""],
-				[0, "plate/legend_armor_leather_brigandine"],
-				[0, "plate/legend_armor_leather_brigandine_hardened"],
-				[0, "plate/legend_armor_leather_brigandine_hardened_full"],
-				[1, "plate/legend_armor_leather_jacket"],
-				[2, "plate/legend_armor_leather_jacket_simple"],
-				[0, "plate/legend_armor_leather_lamellar"],
-				[0, "plate/legend_armor_leather_lamellar_harness_heavy"],
-				[0, "plate/legend_armor_leather_lamellar_harness_reinforced"],
-				[0, "plate/legend_armor_leather_lamellar_heavy"],
-				[0, "plate/legend_armor_leather_lamellar_reinforced"],
-				[0, "plate/legend_armor_leather_noble"],
-				[1, "plate/legend_armor_leather_padded"],
-				[0, "plate/legend_armor_leather_riveted"],
-				[0, "plate/legend_armor_leather_riveted_light"],
-				[0, "plate/legend_armor_leather_scale"],
-				[0, "plate/legend_armor_plate_ancient_chest"],
-				[0, "plate/legend_armor_plate_ancient_harness"],
-				[0, "plate/legend_armor_plate_ancient_mail"],
-				[0, "plate/legend_armor_plate_ancient_scale"],
-				[0, "plate/legend_armor_plate_ancient_scale_coat"],
-				[0, "plate/legend_armor_plate_ancient_scale_harness"],
-				[0, "plate/legend_armor_plate_chest"],
-				[0, "plate/legend_armor_plate_chest_rotten"],
-				[0, "plate/legend_armor_plate_cuirass"],
-				[0, "plate/legend_armor_plate_full"],
-				[0, "plate/legend_armor_scale"],
-				[0, "plate/legend_armor_scale_coat"],
-				[0, "plate/legend_armor_scale_coat_rotten"],
-				[0, "plate/legend_armor_scale_shirt"]
-			]
-			local plate = this.Const.World.Common.pickLegendArmor(plates)
-			if (plate != null)
-			{
-				armor.setUpgrade(plate)
-			}
-
-
-		items.equip(armor);
-		r = this.Math.rand(0, 1);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/aketon_cap"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/open_leather_cap"));
-		}
-	}
-
 });
 

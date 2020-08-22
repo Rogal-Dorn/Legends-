@@ -60,6 +60,8 @@ this.patrol_roads_action <- this.inherit("scripts/factions/faction_action", {
 		local party = this.getFaction().spawnEntity(waypoints[0].getTile(), waypoints[0].getName() + " Company", true, this.Const.World.Spawn.Noble, this.Math.rand(120, 250) * this.getReputationToDifficultyLightMult());
 		party.getSprite("body").setBrush(party.getSprite("body").getBrush().Name + "_" + _faction.getBannerString());
 		party.setDescription("Professional soldiers in service to local lords.");
+		party.setFootprintType(this.Const.World.FootprintsType.Nobles);
+		party.getFlags().set("IsRandomlySpawned", true);
 		party.getLoot().Money = this.Math.rand(50, 200);
 		party.getLoot().ArmorParts = this.Math.rand(0, 25);
 		party.getLoot().Medicine = this.Math.rand(0, 5);

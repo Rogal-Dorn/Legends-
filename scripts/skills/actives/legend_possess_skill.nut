@@ -65,7 +65,7 @@ this.legend_possess_skill <- this.inherit("scripts/skills/skill", {
 
 		local target = _targetTile.getEntity();
 
-		if (!target.getTags().has("IsSummoned"))
+		if (!target.getFlags().has("IsSummoned"))
 		{
 			return false;
 		}

@@ -112,8 +112,9 @@ this.hunting_webknechts_contract <- this.inherit("scripts/contracts/contract", {
 
 				local tile = this.Contract.getTileToSpawnLocation(playerTile, numWoods >= 12 ? 6 : 3, 9, disallowedTerrain);
 				local party;
-				party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).spawnEntity(tile, "Webknechts", false, this.Const.World.Spawn.Spiders, 110 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
+				party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).spawnEntity(tile, "Webknechts", false, this.Const.World.Spawn.Spiders, 110 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult());
 				party.setDescription("A swarm of webknechts skittering about.");
+				party.setFootprintType(this.Const.World.FootprintsType.Spiders);
 				party.setAttackableByAI(false);
 				party.setFootprintSizeOverride(0.75);
 
@@ -123,7 +124,7 @@ this.hunting_webknechts_contract <- this.inherit("scripts/contracts/contract", {
 
 					if (nearTile != null)
 					{
-						this.Const.World.Common.addFootprintsFromTo(nearTile, party.getTile(), this.Const.BeastFootprints, 0.75);
+						this.Const.World.Common.addFootprintsFromTo(nearTile, party.getTile(), this.Const.BeastFootprints, this.Const.World.FootprintsType.Spiders, 0.75);
 					}
 				}
 
@@ -301,7 +302,7 @@ this.hunting_webknechts_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Screens.push({
 			ID = "Victory",
 			Title = "After the battle...",
-			Text = "[img]gfx/ui/events/event_123.png[/img]{The last of the webknechts is dealt with, its legs gating itself in as though to eternally clutch at the weapon which had slain it. You nod at the company\'s good work then order the whole place torched. Fires rapidly run the length of the webs, breaking bridges of filament apart and sending fiery doom to their connectors. The whole nest is consumed in the inferno and somewhere deep in its bedding you hear the shrill cry of spiderlings set alight. | You step close to the last of the webknechts and stare at its grisly maw. It carries a vicious set of mandibles for a sort of gum guard, the mouth itself a slit lined with razor sharp teeth pointed counter-current as to shred anything that tried to escape.\n\n You order the whole nest put to the torch. As the flames rise, there comes the cry of spiderlings somewhere in their warrens. | You ready a return to %employer%, but first have the nest torched entirely. The company stands before the flames listening to the shrill cries of spiderlings and at times laughing at the little mites scuttling around like tiny fireballs on legs. | The spiders defeated, you have the whole godsforsaken place burned and ready a return to %employer%. As the fires rise, tiny spiderlings come running out with their bodies aflame like fireflies in the night. A few sellswords take up an impromptu game of seeing who can squash the most, an affair which ends with a particularly ambitious spiderling almost setting a mercenary\'s pants alight.}",
+			Text = "[img]gfx/ui/events/event_123.png[/img]{The last of the webknechts is dealt with, its legs gating itself as though to eternally clutch at the weapon which had slain it. You nod at the company\'s good work then order the whole place torched. Fires rapidly run the length of the webs, breaking bridges of filament apart and sending fiery doom to their connectors. The whole nest is consumed in the inferno and somewhere deep in its bedding you hear the shrill cry of spiderlings set alight. | You step close to the last of the webknechts and stare at its grisly maw. It carries a vicious set of mandibles for a sort of gum guard, the mouth itself a slit lined with razor sharp teeth pointed counter-current as to shred anything that tried to escape.\n\n You order the whole nest put to the torch. As the flames rise, there comes the cry of spiderlings somewhere in their warrens. | You ready a return to %employer%, but first have the nest torched entirely. The company stands before the flames listening to the shrill cries of spiderlings and at times laughing at the little mites scuttling around like tiny fireballs on legs. | The spiders defeated, you have the whole godsforsaken place burned and ready a return to %employer%. As the fires rise, tiny spiderlings come running out with their bodies aflame like fireflies in the night. A few sellswords take up an impromptu game of seeing who can squash the most, an affair which ends with a particularly ambitious spiderling almost setting a mercenary\'s pants alight.}",
 			Image = "",
 			List = [],
 			Options = [
@@ -333,33 +334,10 @@ this.hunting_webknechts_contract <- this.inherit("scripts/contracts/contract", {
 			],
 			function start()
 			{
-				local item;
-				local r = this.Math.rand(1, 2);
-
-				if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
-				{
-					if (r == 1)
-					{
-						item = this.new("scripts/items/legend_armor/plate/legend_armor_plate_chest_rotten");
-					}
-					else if (r == 2)
-					{
-						item = this.new("scripts/items/legend_armor/plate/legend_armor_scale_coat_rotten");
-					}
-				}
-				else
-				{
-					if (r == 1)
-					{
-						item = this.new("scripts/items/armor/decayed_reinforced_mail_hauberk");
-					}
-					else if (r == 2)
-					{
-						item = this.new("scripts/items/armor/decayed_coat_of_scales");
-					}
-				}
-
-
+				local item = this.Const.World.Common.pickArmor([
+					[1, "decayed_reinforced_mail_hauberk"],
+					[1, "decayed_coat_of_scales"],
+				]);
 				this.World.Assets.getStash().add(item);
 				this.List.push({
 					id = 10,
@@ -446,7 +424,7 @@ this.hunting_webknechts_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Screens.push({
 			ID = "Success",
 			Title = "On your return...",
-			Text = "[img]gfx/ui/events/event_85.png[/img]{%employer% meets you at the town entrance and there\'s a crowd of folks beside him. He welcomes you warmly, stating he had a scout following you who saw the whole battle unfold. After he hands you your reward, the townsfolk come forward one by one, many of which are reluctant to stare a sellsword in the eyes, but they offer a few gifts as thanks for relieving them of the webknecht horrors. | You have to track down %employer%, ultimately finding the man in a stable livery with a peasant girl. He saws upward from the hay, startling the horses which whinny and stamp their feet. Half-dressed, the man states he already has your pay and forks it over. Eyeing you eyeing the girl, he then starts to grab whatever\'s in reach, including from the saddlebags of stabled mounts, and hands them over.%SPEECH_ON%The, uh, townsfolk also sought to pitch in. You know, as thanks.%SPEECH_OFF%Right. For further \'thanks\' you ask if he\'ll give you whatever\'s in a nearby satchel. | %employer% welcomes you back with a great clap and rub of his hands, as though you\'d just brought in a turkey and not the horrifying evidence of your victory. After paying you the agreed reward, you hear some surprising news. The mayor states that the estate of a lost townsman could not be properly divvied up and, as further thanks, you\'re free to take what\'s left of it.}",
+			Text = "[img]gfx/ui/events/event_85.png[/img]{%employer% meets you at the town entrance and there\'s a crowd of folks beside him. He welcomes you warmly, stating he had a scout following you who saw the whole battle unfold. After he hands you your reward, the townsfolk come forward one by one, many of them reluctant to stare a sellsword in the eyes, but they offer a few gifts as thanks for relieving them of the webknecht horrors. | You have to track down %employer%, ultimately finding the man in a stable livery with a peasant girl. He saws upward from the hay, startling the horses which whinny and stamp their feet. Half-dressed, the man states he already has your pay and forks it over. Eyeing you eyeing the girl, he then starts to grab whatever\'s in reach, including from the saddlebags of stabled mounts, and hands them over.%SPEECH_ON%The, uh, townsfolk also sought to pitch in. You know, as thanks.%SPEECH_OFF%Right. For further \'thanks\' you ask if he\'ll give you whatever\'s in a nearby satchel. | %employer% welcomes you back with a great clap and rub of his hands, as though you\'d just brought in a turkey and not the horrifying evidence of your victory. After paying you the agreed reward, you hear some surprising news. The mayor states that the estate of a lost townsman could not be properly divvied up and, as further thanks, you\'re free to take what\'s left of it.}",
 			Image = "",
 			Characters = [],
 			List = [],

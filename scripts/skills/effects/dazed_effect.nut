@@ -37,19 +37,19 @@ this.dazed_effect <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/regular_damage.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-35%[/color] Damage"
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-25%[/color] Damage"
 			},
 			{
 				id = 12,
 				type = "text",
 				icon = "ui/icons/fatigue.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-35%[/color] Max Fatigue"
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-25%[/color] Max Fatigue"
 			},
 			{
 				id = 12,
 				type = "text",
 				icon = "ui/icons/initiative.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-35%[/color] Initiative"
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-25%[/color] Initiative"
 			}
 		];
 	}
@@ -80,9 +80,9 @@ this.dazed_effect <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		local actor = this.getContainer().getActor();
-		_properties.DamageTotalMult *= 0.65;
-		_properties.InitiativeMult *= 0.65;
-		_properties.StaminaMult *= 0.65;
+		_properties.DamageTotalMult *= 0.75;
+		_properties.InitiativeMult *= 0.75;
+		_properties.StaminaMult *= 0.75;
 
 		if (actor.hasSprite("status_stunned") && !this.getContainer().hasSkill("effects.stunned"))
 		{

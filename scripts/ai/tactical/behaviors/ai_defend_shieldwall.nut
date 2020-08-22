@@ -92,7 +92,7 @@ this.ai_defend_shieldwall <- this.inherit("scripts/ai/tactical/behavior", {
 					continue;
 				}
 
-				if (this.isRangedUnit(t) && t.isArmedWithRangedWeapon() || t.getCurrentProperties().IsStunned || t.getMoraleState() == this.Const.MoraleState.Fleeing || t.isFatigued())
+				if (this.isRangedUnit(t) && t.isArmedWithRangedWeapon() || t.getCurrentProperties().IsStunned || t.getSkills().hasSkill("effects.dazed") || t.getSkills().hasSkill("effects.distracted") || t.getMoraleState() == this.Const.MoraleState.Fleeing || t.isFatigued())
 				{
 					dontUseShieldwallCount = ++dontUseShieldwallCount;
 					continue;
@@ -138,7 +138,7 @@ this.ai_defend_shieldwall <- this.inherit("scripts/ai/tactical/behavior", {
 
 			if (dontUseShieldwallCount > 0)
 			{
-				score = score * this.Const.AI.Behavior.ShieldwallInMeleeWithRangedUnitMult;
+				score = score * this.Math.pow(this.Const.AI.Behavior.ShieldwallInMeleeWithRangedUnitMult, dontUseShieldwallCount);
 			}
 		}
 		else
@@ -203,7 +203,7 @@ this.ai_defend_shieldwall <- this.inherit("scripts/ai/tactical/behavior", {
 					if (!tile.IsOccupiedByActor || this.Math.abs(tile.Level - declaredTargetTile.Level) > 1)
 					{
 					}
-					else if (!tile.getEntity().isAlliedWith(_entity) && !tile.hasZoneOfControlOtherThan(tile.getEntity().getAlliedFactions()) && tile.getEntity().getSkills().hasSkill("effects.spearwall"))
+					else if (!tile.getEntity().isAlliedWith(_entity) && (tile.getEntity().getCurrentProperties().IsAttackingOnZoneOfControlAlways || !tile.hasZoneOfControlOtherThan(tile.getEntity().getAlliedFactions())) && tile.getEntity().getSkills().hasSkill("effects.spearwall"))
 					{
 						willRunIntoSpearwalls = ++willRunIntoSpearwalls;
 					}
@@ -234,6 +234,11 @@ this.ai_defend_shieldwall <- this.inherit("scripts/ai/tactical/behavior", {
 			}
 			else
 			{
+				if (this.getProperties().EngageTileLimit != 0 && _entity.getActionPoints() == _entity.getActionPointsMax() && !this.getStrategy().getStats().IsEngaged)
+				{
+					return this.Const.AI.Behavior.Score.Zero;
+				}
+
 				if (_entity.getActionPoints() >= this.m.Skill.getActionPointCost() * 2)
 				{
 					score = score * this.Const.AI.Behavior.ShieldwallLowPriorityMult;

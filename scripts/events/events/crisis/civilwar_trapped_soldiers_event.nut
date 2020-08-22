@@ -196,6 +196,13 @@ this.civilwar_trapped_soldiers_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
+		local currentTile = this.World.State.getPlayer().getTile();
+
+		if (!currentTile.HasRoad)
+		{
+			return;
+		}
+
 		local brothers = this.World.getPlayerRoster().getAll();
 
 		if (brothers.len() < 3)
@@ -210,7 +217,7 @@ this.civilwar_trapped_soldiers_event <- this.inherit("scripts/events/event", {
 
 		foreach( t in towns )
 		{
-			if (t.isMilitary() || t.getSize() > 2)
+			if (t.isMilitary() || t.isSouthern() || t.getSize() > 2)
 			{
 				continue;
 			}

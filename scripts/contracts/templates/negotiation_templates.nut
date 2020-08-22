@@ -90,8 +90,12 @@ gt.Const.Contracts.NegotiationDefault <- [
 				Text = "We need to be paid more for this.",
 				function getResult()
 				{
-					this.World.FactionManager.getFaction(this.Contract.getFaction()).addPlayerRelationEx(-0.5);
-					this.Contract.m.Payment.Annoyance += this.Math.rand(this.Const.Contracts.Settings.NegotiationAnnoyanceGainMin, this.Const.Contracts.Settings.NegotiationAnnoyanceGainMax);
+					if (!this.World.Retinue.hasFollower("follower.negotiator"))
+					{
+						this.World.FactionManager.getFaction(this.Contract.getFaction()).addPlayerRelationEx(-0.5);
+					}
+
+					this.Contract.m.Payment.Annoyance += this.Math.maxf(1.0, this.Math.rand(this.Const.Contracts.Settings.NegotiationAnnoyanceGainMin, this.Const.Contracts.Settings.NegotiationAnnoyanceGainMax) * this.World.Assets.m.NegotiationAnnoyanceMult);
 
 					if (this.Contract.m.Payment.Annoyance > this.Const.Contracts.Settings.NegotiationMaxAnnoyance)
 					{
@@ -104,6 +108,7 @@ gt.Const.Contracts.NegotiationDefault <- [
 					}
 					else
 					{
+						this.Contract.m.Payment.IsFinal = false;
 						this.Contract.m.Payment.Pool = this.Contract.m.Payment.Pool * (1.0 + this.Math.rand(3, 10) * 0.01);
 					}
 
@@ -118,9 +123,9 @@ gt.Const.Contracts.NegotiationDefault <- [
 					Text = this.Contract.m.Payment.Advance == 0 ? "We need payment in advance." : "We need more payment in advance.",
 					function getResult()
 					{
-						this.Contract.m.Payment.Annoyance += this.Math.rand(this.Const.Contracts.Settings.NegotiationAnnoyanceGainMin, this.Const.Contracts.Settings.NegotiationAnnoyanceGainMax);
+						this.Contract.m.Payment.Annoyance += this.Math.maxf(1.0, this.Math.rand(this.Const.Contracts.Settings.NegotiationAnnoyanceGainMin, this.Const.Contracts.Settings.NegotiationAnnoyanceGainMax) * this.World.Assets.m.NegotiationAnnoyanceMult);
 
-						if (this.Contract.m.Payment.Advance >= 0.5 || this.Contract.m.Payment.Annoyance > this.Const.Contracts.Settings.NegotiationMaxAnnoyance)
+						if (this.Contract.m.Payment.Advance >= this.World.Assets.m.AdvancePaymentCap || this.Contract.m.Payment.Annoyance > this.Const.Contracts.Settings.NegotiationMaxAnnoyance)
 						{
 							return "Negotiation.Fail";
 						}
@@ -131,6 +136,7 @@ gt.Const.Contracts.NegotiationDefault <- [
 						}
 						else
 						{
+							this.Contract.m.Payment.IsFinal = false;
 							this.Contract.m.Payment.Advance = this.Math.minf(1.0, this.Contract.m.Payment.Advance + 0.25);
 							this.Contract.m.Payment.Completion = this.Math.maxf(0.0, this.Contract.m.Payment.Completion - 0.25);
 						}
@@ -147,7 +153,7 @@ gt.Const.Contracts.NegotiationDefault <- [
 					Text = this.Contract.m.Payment.Completion == 0 ? "We need payment once the work is done." : "We need more payment once the work is done.",
 					function getResult()
 					{
-						this.Contract.m.Payment.Annoyance += this.Math.rand(this.Const.Contracts.Settings.NegotiationAnnoyanceGainMin, this.Const.Contracts.Settings.NegotiationAnnoyanceGainMax);
+						this.Contract.m.Payment.Annoyance += this.Math.maxf(1.0, this.Math.rand(this.Const.Contracts.Settings.NegotiationAnnoyanceGainMin, this.Const.Contracts.Settings.NegotiationAnnoyanceGainMax) * this.World.Assets.m.NegotiationAnnoyanceMult);
 
 						if (this.Contract.m.Payment.Annoyance > this.Const.Contracts.Settings.NegotiationMaxAnnoyance)
 						{
@@ -160,6 +166,7 @@ gt.Const.Contracts.NegotiationDefault <- [
 						}
 						else
 						{
+							this.Contract.m.Payment.IsFinal = false;
 							this.Contract.m.Payment.Advance = this.Math.maxf(0.0, this.Contract.m.Payment.Advance - 0.25);
 							this.Contract.m.Payment.Completion = this.Math.minf(1.0, this.Contract.m.Payment.Completion + 0.25);
 						}
@@ -188,12 +195,11 @@ gt.Const.Contracts.NegotiationDefault <- [
 			}
 			else if (this.Contract.m.Payment.IsFinal)
 			{
-				this.Text = "[img]gfx/ui/events/event_04.png[/img]{%SPEECH_ON%No, this is my final offer.  | %SPEECH_ON%Who do you think you are? I tell you how you\'re getting paid.  | He just looks at you sternly and shakes his head.%SPEECH_ON% | %SPEECH_ON%No way!%SPEECH_OFF%He shouts, bursting with anger.%SPEECH_ON% | %SPEECH_ON%No, you are already getting more than you\'re worth.  | %SPEECH_ON%No. Do not push me too far!  | %SPEECH_ON%I don\'t think you quite understand how this works. We need to come to terms if you want to be paid for this. My offer still stands. }";
-				this.Contract.m.Payment.IsFinal = false;
+				this.Text = "[img]gfx/ui/events/event_04.png[/img]{%SPEECH_START%I refuse to pay any more for this.  | %SPEECH_START%Be reasonable.  | %SPEECH_START%No, no, no.  | %SPEECH_START%Who do you think you are? I tell you how you\'re getting paid.  | He just looks at you sternly and shakes his head.%SPEECH_ON% | %SPEECH_START%No way!%SPEECH_OFF%He shouts, bursting with anger.%SPEECH_ON% | %SPEECH_START%No, you are already getting more than you\'re worth.  | %SPEECH_START%No. Do not push me too far!  | %SPEECH_START%I don\'t think you quite understand how this works. We need to come to terms if you want to be paid for this. My offer still stands. }";
 			}
 			else
 			{
-				this.Text = "[img]gfx/ui/events/event_04.png[/img]{%SPEECH_ON%This is it then?  | He takes a deep breath.%SPEECH_ON% | He sighs.%SPEECH_ON% | %SPEECH_ON%Fair enough.  | %SPEECH_ON%Fine, fine.  | %SPEECH_ON%If it must be.  | %SPEECH_ON%Fine. How about this?  | %SPEECH_ON%Sure, sure, I understand.  | %SPEECH_ON%Reasonable.  | %SPEECH_ON%Interesting. I think this would be more appropiate then.  | %SPEECH_ON%Would you take this instead?  | %SPEECH_ON%Let me make the following offer.  | %SPEECH_ON%Fair. Would you accept this instead?  | %SPEECH_ON%Very well. Given your demands I offer you this.  | %SPEECH_ON%Let\'s get this over with quickly. Here is my new offer.  | %SPEECH_ON%We\'re all friends here, aren\'t we? Let\'s see... }";
+				this.Text = "[img]gfx/ui/events/event_04.png[/img]{%SPEECH_START%This is it then?  | He takes a deep breath.%SPEECH_ON% | He sighs.%SPEECH_ON% | %SPEECH_START%Fair enough.  | %SPEECH_START%Fine, fine.  | %SPEECH_START%If it must be.  | %SPEECH_START%Fine. How about this?  | %SPEECH_START%Sure, sure, I understand.  | %SPEECH_START%Reasonable.  | %SPEECH_START%Interesting. I think this would be more appropiate then.  | %SPEECH_START%Would you take this instead?  | %SPEECH_START%Let me make the following offer.  | %SPEECH_ON%Fair. Would you accept this instead?  | %SPEECH_START%Very well. Given your demands I offer you this.  | %SPEECH_START%Let\'s get this over with quickly. Here is my new offer.  | %SPEECH_START%We\'re all friends here, aren\'t we? Let\'s see... }";
 			}
 
 			if (this.Contract.m.Payment.Completion != 0 && this.Contract.m.Payment.Advance == 0)
@@ -218,7 +224,7 @@ gt.Const.Contracts.NegotiationDefault <- [
 	{
 		ID = "Negotiation.Fail",
 		Title = "Negotiations",
-		Text = "[img]gfx/ui/events/event_74.png[/img]{%SPEECH_ON%You act as if you were the only ones to hold a sword for coin. I think I\'ll look elsewhere for the men I need. Good day.%SPEECH_OFF% | %SPEECH_ON%My patience has limits, too, and I think I\'m wasting my time here.%SPEECH_OFF% | %SPEECH_ON%I\'ve had enough of this! I\'m sure I\'ll find someone else to do the job!%SPEECH_OFF% | %SPEECH_ON%Do not insult my intelligence! Forget about this contract. We\'re done.%SPEECH_OFF% | He\'s face turns red with anger.%SPEECH_ON%Get out of here, I\'m not in the habit of making deals with greedy devils!%SPEECH_OFF% | He sighs. %SPEECH_ON%Just... forget it. I shouldn\'t have trusted you in the first place. Leave me so I can look for other, more sensible men.%SPEECH_OFF% | %SPEECH_ON%I really thought we had a good relationship here. But know that I can only be pushed so far. I don\'t think this is working out. I\'ll take my leave.%SPEECH_OFF% | %SPEECH_ON%This has been an utter waste of time for me. Don\'t bother coming back until you learned some reason.%SPEECH_OFF%}",
+		Text = "[img]gfx/ui/events/event_74.png[/img]{%SPEECH_START%You act as if you were the only ones to hold a sword for coin. I think I\'ll look elsewhere for the men I need. Good day.%SPEECH_OFF% | %SPEECH_START%My patience has limits, too, and I think I\'m wasting my time here.%SPEECH_OFF% | %SPEECH_START%I\'ve had enough of this! I\'m sure I\'ll find someone else to do the job!%SPEECH_OFF% | %SPEECH_START%Do not insult my intelligence! Forget about this contract. We\'re done.%SPEECH_OFF% | He\'s face turns red with anger.%SPEECH_ON%Get out of here, I\'m not in the habit of making deals with greedy devils!%SPEECH_OFF% | He sighs. %SPEECH_ON%Just... forget it. I shouldn\'t have trusted you in the first place. Leave me so I can look for other, more sensible men.%SPEECH_OFF% | %SPEECH_START%I really thought we had a good relationship here. But know that I can only be pushed so far. I don\'t think this is working out. I\'ll take my leave.%SPEECH_OFF% | %SPEECH_ON%This has been an utter waste of time for me. Don\'t bother coming back until you learned some reason.%SPEECH_OFF%}",
 		Image = "",
 		List = [],
 		ShowEmployer = true,
@@ -279,8 +285,12 @@ gt.Const.Contracts.NegotiationPerHead <- [
 				Text = "We need to be paid more for this.",
 				function getResult()
 				{
-					this.World.FactionManager.getFaction(this.Contract.getFaction()).addPlayerRelationEx(-0.5);
-					this.Contract.m.Payment.Annoyance += this.Math.rand(this.Const.Contracts.Settings.NegotiationAnnoyanceGainMin, this.Const.Contracts.Settings.NegotiationAnnoyanceGainMax);
+					if (!this.World.Retinue.hasFollower("follower.negotiator"))
+					{
+						this.World.FactionManager.getFaction(this.Contract.getFaction()).addPlayerRelationEx(-0.5);
+					}
+
+					this.Contract.m.Payment.Annoyance += this.Math.maxf(1.0, this.Math.rand(this.Const.Contracts.Settings.NegotiationAnnoyanceGainMin, this.Const.Contracts.Settings.NegotiationAnnoyanceGainMax) * this.World.Assets.m.NegotiationAnnoyanceMult);
 
 					if (this.Contract.m.Payment.Annoyance > this.Const.Contracts.Settings.NegotiationMaxAnnoyance)
 					{
@@ -293,6 +303,7 @@ gt.Const.Contracts.NegotiationPerHead <- [
 					}
 					else
 					{
+						this.Contract.m.Payment.IsFinal = false;
 						this.Contract.m.Payment.Pool = this.Contract.m.Payment.Pool * (1.0 + this.Math.rand(3, 10) * 0.01);
 					}
 
@@ -307,7 +318,7 @@ gt.Const.Contracts.NegotiationPerHead <- [
 					Text = this.Contract.m.Payment.Count == 0 ? "We need to be paid per head we return with." : "We need to be paid more per head we return with.",
 					function getResult()
 					{
-						this.Contract.m.Payment.Annoyance += this.Math.rand(this.Const.Contracts.Settings.NegotiationAnnoyanceGainMin, this.Const.Contracts.Settings.NegotiationAnnoyanceGainMax);
+						this.Contract.m.Payment.Annoyance += this.Math.maxf(1.0, this.Math.rand(this.Const.Contracts.Settings.NegotiationAnnoyanceGainMin, this.Const.Contracts.Settings.NegotiationAnnoyanceGainMax) * this.World.Assets.m.NegotiationAnnoyanceMult);
 
 						if (this.Contract.m.Payment.Annoyance > this.Const.Contracts.Settings.NegotiationMaxAnnoyance)
 						{
@@ -320,6 +331,8 @@ gt.Const.Contracts.NegotiationPerHead <- [
 						}
 						else
 						{
+							this.Contract.m.Payment.IsFinal = false;
+
 							if (this.Contract.m.Payment.Completion > 0 && this.Contract.m.Payment.Advance > 0)
 							{
 								this.Contract.m.Payment.Advance = this.Math.maxf(0.0, this.Contract.m.Payment.Advance - 0.125);
@@ -349,19 +362,21 @@ gt.Const.Contracts.NegotiationPerHead <- [
 					Text = this.Contract.m.Payment.Advance == 0 ? "We need payment in advance." : "We need more payment in advance.",
 					function getResult()
 					{
-						this.Contract.m.Payment.Annoyance += this.Math.rand(this.Const.Contracts.Settings.NegotiationAnnoyanceGainMin, this.Const.Contracts.Settings.NegotiationAnnoyanceGainMax);
+						this.Contract.m.Payment.Annoyance += this.Math.maxf(1.0, this.Math.rand(this.Const.Contracts.Settings.NegotiationAnnoyanceGainMin, this.Const.Contracts.Settings.NegotiationAnnoyanceGainMax) * this.World.Assets.m.NegotiationAnnoyanceMult);
 
 						if (this.Contract.m.Payment.Annoyance > this.Const.Contracts.Settings.NegotiationMaxAnnoyance)
 						{
 							return "Negotiation.Fail";
 						}
 
-						if (this.Contract.m.Payment.Advance >= 0.5 || this.Math.rand(1, 100) <= this.Const.Contracts.Settings.NegotiationRefuseChance * this.Contract.m.Payment.Annoyance)
+						if (this.Contract.m.Payment.Advance >= this.World.Assets.m.AdvancePaymentCap || this.Math.rand(1, 100) <= this.Const.Contracts.Settings.NegotiationRefuseChance * this.Contract.m.Payment.Annoyance)
 						{
 							this.Contract.m.Payment.IsFinal = true;
 						}
 						else
 						{
+							this.Contract.m.Payment.IsFinal = false;
+
 							if (this.Contract.m.Payment.Completion > 0 && this.Contract.m.Payment.Count > 0)
 							{
 								this.Contract.m.Payment.Completion = this.Math.maxf(0.0, this.Contract.m.Payment.Completion - 0.125);
@@ -391,7 +406,7 @@ gt.Const.Contracts.NegotiationPerHead <- [
 					Text = this.Contract.m.Payment.Completion == 0 ? "We need payment once the work is done." : "We need more payment once the work is done.",
 					function getResult()
 					{
-						this.Contract.m.Payment.Annoyance += this.Math.rand(this.Const.Contracts.Settings.NegotiationAnnoyanceGainMin, this.Const.Contracts.Settings.NegotiationAnnoyanceGainMax);
+						this.Contract.m.Payment.Annoyance += this.Math.maxf(1.0, this.Math.rand(this.Const.Contracts.Settings.NegotiationAnnoyanceGainMin, this.Const.Contracts.Settings.NegotiationAnnoyanceGainMax) * this.World.Assets.m.NegotiationAnnoyanceMult);
 
 						if (this.Contract.m.Payment.Annoyance > this.Const.Contracts.Settings.NegotiationMaxAnnoyance)
 						{
@@ -404,6 +419,8 @@ gt.Const.Contracts.NegotiationPerHead <- [
 						}
 						else
 						{
+							this.Contract.m.Payment.IsFinal = false;
+
 							if (this.Contract.m.Payment.Advance > 0 && this.Contract.m.Payment.Count > 0)
 							{
 								this.Contract.m.Payment.Advance = this.Math.maxf(0.0, this.Contract.m.Payment.Advance - 0.125);
@@ -445,12 +462,11 @@ gt.Const.Contracts.NegotiationPerHead <- [
 			}
 			else if (this.Contract.m.Payment.IsFinal)
 			{
-				this.Text = "[img]gfx/ui/events/event_04.png[/img]{%SPEECH_ON%No, this is my final offer.  | %SPEECH_ON%Who do you think you are? I tell you how you\'re getting paid.  | He just looks at you sternly and shakes his head.%SPEECH_ON% | %SPEECH_ON%No way!%SPEECH_OFF%He shouts, bursting with anger.%SPEECH_ON% | %SPEECH_ON%No, you are already getting more than you\'re worth.  | %SPEECH_ON%No. Do not push me too far!  | %SPEECH_ON%I don\'t think you quite understand how this works. We need to come to terms if you want to be paid for this. My offer still stands. }";
-				this.Contract.m.Payment.IsFinal = false;
+				this.Text = "[img]gfx/ui/events/event_04.png[/img]{%SPEECH_START%I refuse to pay any more for this.  | %SPEECH_START%Be reasonable.  | %SPEECH_START%No, no, no.  | %SPEECH_START%Who do you think you are? I tell you how you\'re getting paid.  | He just looks at you sternly and shakes his head.%SPEECH_ON% | %SPEECH_START%No way!%SPEECH_OFF%He shouts, bursting with anger.%SPEECH_ON% | %SPEECH_START%No, you are already getting more than you\'re worth.  | %SPEECH_START%No. Do not push me too far!  | %SPEECH_START%I don\'t think you quite understand how this works. We need to come to terms if you want to be paid for this. My offer still stands. }";
 			}
 			else
 			{
-				this.Text = "[img]gfx/ui/events/event_04.png[/img]{%SPEECH_ON%This is it then?  | He takes a deep breath.%SPEECH_ON% | He sighs.%SPEECH_ON% | %SPEECH_ON%Fair enough.  | %SPEECH_ON%Fine, fine.  | %SPEECH_ON%If it must be.  | %SPEECH_ON%Fine. How about this?  | %SPEECH_ON%Sure, sure, I understand.  | %SPEECH_ON%Reasonable.  | %SPEECH_ON%Interesting. I think this would be more appropiate then.  | %SPEECH_ON%Would you take this instead?  | %SPEECH_ON%Let me make the following offer.  | %SPEECH_ON%Fair. Would you accept this instead?  | %SPEECH_ON%Very well. Given your demands I offer you this.  | %SPEECH_ON%Let\'s get this over with quickly. Here is my new offer.  | %SPEECH_ON%We\'re all friends here, aren\'t we? Let\'s see... }";
+				this.Text = "[img]gfx/ui/events/event_04.png[/img]{%SPEECH_START%This is it then?  | He takes a deep breath.%SPEECH_ON% | He sighs.%SPEECH_ON% | %SPEECH_START%Fair enough.  | %SPEECH_START%Fine, fine.  | %SPEECH_START%If it must be.  | %SPEECH_START%Fine. How about this?  | %SPEECH_START%Sure, sure, I understand.  | %SPEECH_START%Reasonable.  | %SPEECH_START%Interesting. I think this would be more appropiate then.  | %SPEECH_START%Would you take this instead?  | %SPEECH_START%Let me make the following offer.  | %SPEECH_ON%Fair. Would you accept this instead?  | %SPEECH_START%Very well. Given your demands I offer you this.  | %SPEECH_START%Let\'s get this over with quickly. Here is my new offer.  | %SPEECH_START%We\'re all friends here, aren\'t we? Let\'s see... }";
 			}
 
 			if (this.Contract.m.Payment.Completion != 0 && this.Contract.m.Payment.Advance == 0 && this.Contract.m.Payment.Count == 0)
@@ -491,7 +507,7 @@ gt.Const.Contracts.NegotiationPerHead <- [
 	{
 		ID = "Negotiation.Fail",
 		Title = "Negotiations",
-		Text = "[img]gfx/ui/events/event_74.png[/img]{%SPEECH_ON%You act as if you were the only ones to hold a sword for coin. I think I\'ll look elsewhere for the men I need. Good day.%SPEECH_OFF% | %SPEECH_ON%My patience has limits, too, and I think I\'m wasting my time here.%SPEECH_OFF% | %SPEECH_ON%I\'ve had enough of this! I\'m sure I\'ll find someone else to do the job!%SPEECH_OFF% | %SPEECH_ON%Do not insult my intelligence! Forget about this contract. We\'re done.%SPEECH_OFF% | He\'s face turns red with anger.%SPEECH_ON%Get out of here, I\'m not in the habit of making deals with greedy devils!%SPEECH_OFF% | He sighs. %SPEECH_ON%Just... forget it. I shouldn\'t have trusted you in the first place. Leave me so I can look for other, more sensible men.%SPEECH_OFF% | %SPEECH_ON%I really thought we had a good relationship here. But know that I can only be pushed so far. I don\'t think this is working out. I\'ll take my leave.%SPEECH_OFF% | %SPEECH_ON%This has been an utter waste of time for me. Don\'t bother coming back until you learned some reason.%SPEECH_OFF%}",
+		Text = "[img]gfx/ui/events/event_74.png[/img]{%SPEECH_START%You act as if you were the only ones to hold a sword for coin. I think I\'ll look elsewhere for the men I need. Good day.%SPEECH_OFF% | %SPEECH_START%My patience has limits, too, and I think I\'m wasting my time here.%SPEECH_OFF% | %SPEECH_START%I\'ve had enough of this! I\'m sure I\'ll find someone else to do the job!%SPEECH_OFF% | %SPEECH_START%Do not insult my intelligence! Forget about this contract. We\'re done.%SPEECH_OFF% | He\'s face turns red with anger.%SPEECH_ON%Get out of here, I\'m not in the habit of making deals with greedy devils!%SPEECH_OFF% | He sighs. %SPEECH_ON%Just... forget it. I shouldn\'t have trusted you in the first place. Leave me so I can look for other, more sensible men.%SPEECH_OFF% | %SPEECH_START%I really thought we had a good relationship here. But know that I can only be pushed so far. I don\'t think this is working out. I\'ll take my leave.%SPEECH_OFF% | %SPEECH_START%This has been an utter waste of time for me. Don\'t bother coming back until you learned some reason.%SPEECH_OFF%}",
 		Image = "",
 		List = [],
 		ShowEmployer = true,
@@ -552,8 +568,12 @@ gt.Const.Contracts.NegotiationPerHeadAtDestination <- [
 				Text = "We need to be paid more for this.",
 				function getResult()
 				{
-					this.World.FactionManager.getFaction(this.Contract.getFaction()).addPlayerRelationEx(-0.5);
-					this.Contract.m.Payment.Annoyance += this.Math.rand(this.Const.Contracts.Settings.NegotiationAnnoyanceGainMin, this.Const.Contracts.Settings.NegotiationAnnoyanceGainMax);
+					if (!this.World.Retinue.hasFollower("follower.negotiator"))
+					{
+						this.World.FactionManager.getFaction(this.Contract.getFaction()).addPlayerRelationEx(-0.5);
+					}
+
+					this.Contract.m.Payment.Annoyance += this.Math.maxf(1.0, this.Math.rand(this.Const.Contracts.Settings.NegotiationAnnoyanceGainMin, this.Const.Contracts.Settings.NegotiationAnnoyanceGainMax) * this.World.Assets.m.NegotiationAnnoyanceMult);
 
 					if (this.Contract.m.Payment.Annoyance > this.Const.Contracts.Settings.NegotiationMaxAnnoyance)
 					{
@@ -566,6 +586,7 @@ gt.Const.Contracts.NegotiationPerHeadAtDestination <- [
 					}
 					else
 					{
+						this.Contract.m.Payment.IsFinal = false;
 						this.Contract.m.Payment.Pool = this.Contract.m.Payment.Pool * (1.0 + this.Math.rand(3, 10) * 0.01);
 					}
 
@@ -580,7 +601,7 @@ gt.Const.Contracts.NegotiationPerHeadAtDestination <- [
 					Text = this.Contract.m.Payment.Count == 0 ? "We need to be paid per head we arrive with." : "We need to be paid more per head we arrive with.",
 					function getResult()
 					{
-						this.Contract.m.Payment.Annoyance += this.Math.rand(this.Const.Contracts.Settings.NegotiationAnnoyanceGainMin, this.Const.Contracts.Settings.NegotiationAnnoyanceGainMax);
+						this.Contract.m.Payment.Annoyance += this.Math.maxf(1.0, this.Math.rand(this.Const.Contracts.Settings.NegotiationAnnoyanceGainMin, this.Const.Contracts.Settings.NegotiationAnnoyanceGainMax) * this.World.Assets.m.NegotiationAnnoyanceMult);
 
 						if (this.Contract.m.Payment.Annoyance > this.Const.Contracts.Settings.NegotiationMaxAnnoyance)
 						{
@@ -593,6 +614,8 @@ gt.Const.Contracts.NegotiationPerHeadAtDestination <- [
 						}
 						else
 						{
+							this.Contract.m.Payment.IsFinal = false;
+
 							if (this.Contract.m.Payment.Completion > 0 && this.Contract.m.Payment.Advance > 0)
 							{
 								this.Contract.m.Payment.Advance = this.Math.maxf(0.0, this.Contract.m.Payment.Advance - 0.125);
@@ -622,19 +645,21 @@ gt.Const.Contracts.NegotiationPerHeadAtDestination <- [
 					Text = this.Contract.m.Payment.Advance == 0 ? "We need payment in advance." : "We need more payment in advance.",
 					function getResult()
 					{
-						this.Contract.m.Payment.Annoyance += this.Math.rand(this.Const.Contracts.Settings.NegotiationAnnoyanceGainMin, this.Const.Contracts.Settings.NegotiationAnnoyanceGainMax);
+						this.Contract.m.Payment.Annoyance += this.Math.maxf(1.0, this.Math.rand(this.Const.Contracts.Settings.NegotiationAnnoyanceGainMin, this.Const.Contracts.Settings.NegotiationAnnoyanceGainMax) * this.World.Assets.m.NegotiationAnnoyanceMult);
 
 						if (this.Contract.m.Payment.Annoyance > this.Const.Contracts.Settings.NegotiationMaxAnnoyance)
 						{
 							return "Negotiation.Fail";
 						}
 
-						if (this.Contract.m.Payment.Advance >= 0.5 || this.Math.rand(1, 100) <= this.Const.Contracts.Settings.NegotiationRefuseChance * this.Contract.m.Payment.Annoyance)
+						if (this.Contract.m.Payment.Advance >= this.World.Assets.m.AdvancePaymentCap || this.Math.rand(1, 100) <= this.Const.Contracts.Settings.NegotiationRefuseChance * this.Contract.m.Payment.Annoyance)
 						{
 							this.Contract.m.Payment.IsFinal = true;
 						}
 						else
 						{
+							this.Contract.m.Payment.IsFinal = false;
+
 							if (this.Contract.m.Payment.Completion > 0 && this.Contract.m.Payment.Count > 0)
 							{
 								this.Contract.m.Payment.Completion = this.Math.maxf(0.0, this.Contract.m.Payment.Completion - 0.125);
@@ -664,7 +689,7 @@ gt.Const.Contracts.NegotiationPerHeadAtDestination <- [
 					Text = this.Contract.m.Payment.Completion == 0 ? "We need payment once the work is done." : "We need more payment once the work is done.",
 					function getResult()
 					{
-						this.Contract.m.Payment.Annoyance += this.Math.rand(this.Const.Contracts.Settings.NegotiationAnnoyanceGainMin, this.Const.Contracts.Settings.NegotiationAnnoyanceGainMax);
+						this.Contract.m.Payment.Annoyance += this.Math.maxf(1.0, this.Math.rand(this.Const.Contracts.Settings.NegotiationAnnoyanceGainMin, this.Const.Contracts.Settings.NegotiationAnnoyanceGainMax) * this.World.Assets.m.NegotiationAnnoyanceMult);
 
 						if (this.Contract.m.Payment.Annoyance > this.Const.Contracts.Settings.NegotiationMaxAnnoyance)
 						{
@@ -677,6 +702,8 @@ gt.Const.Contracts.NegotiationPerHeadAtDestination <- [
 						}
 						else
 						{
+							this.Contract.m.Payment.IsFinal = false;
+
 							if (this.Contract.m.Payment.Advance > 0 && this.Contract.m.Payment.Count > 0)
 							{
 								this.Contract.m.Payment.Advance = this.Math.maxf(0.0, this.Contract.m.Payment.Advance - 0.125);
@@ -718,12 +745,11 @@ gt.Const.Contracts.NegotiationPerHeadAtDestination <- [
 			}
 			else if (this.Contract.m.Payment.IsFinal)
 			{
-				this.Text = "[img]gfx/ui/events/event_04.png[/img]{%SPEECH_ON%No, this is my final offer.  | %SPEECH_ON%Who do you think you are? I tell you how you\'re getting paid.  | He just looks at you sternly and shakes his head.%SPEECH_ON% | %SPEECH_ON%No way!%SPEECH_OFF%He shouts, bursting with anger.%SPEECH_ON% | %SPEECH_ON%No, you are already getting more than you\'re worth.  | %SPEECH_ON%No. Do not push me too far!  | %SPEECH_ON%I don\'t think you quite understand how this works. We need to come to terms if you want to be paid for this. My offer still stands. }";
-				this.Contract.m.Payment.IsFinal = false;
+				this.Text = "[img]gfx/ui/events/event_04.png[/img]{%SPEECH_START%I refuse to pay any more for this.  | %SPEECH_START%Be reasonable.  | %SPEECH_START%No, no, no.  | %SPEECH_START%Who do you think you are? I tell you how you\'re getting paid.  | He just looks at you sternly and shakes his head.%SPEECH_ON% | %SPEECH_START%No way!%SPEECH_OFF%He shouts, bursting with anger.%SPEECH_ON% | %SPEECH_START%No, you are already getting more than you\'re worth.  | %SPEECH_START%No. Do not push me too far!  | %SPEECH_START%I don\'t think you quite understand how this works. We need to come to terms if you want to be paid for this. My offer still stands. }";
 			}
 			else
 			{
-				this.Text = "[img]gfx/ui/events/event_04.png[/img]{%SPEECH_ON%This is it then?  | He takes a deep breath.%SPEECH_ON% | He sighs.%SPEECH_ON% | %SPEECH_ON%Fair enough.  | %SPEECH_ON%Fine, fine.  | %SPEECH_ON%If it must be.  | %SPEECH_ON%Fine. How about this?  | %SPEECH_ON%Sure, sure, I understand.  | %SPEECH_ON%Reasonable.  | %SPEECH_ON%Interesting. I think this would be more appropiate then.  | %SPEECH_ON%Would you take this instead?  | %SPEECH_ON%Let me make the following offer.  | %SPEECH_ON%Fair. Would you accept this instead?  | %SPEECH_ON%Very well. Given your demands I offer you this.  | %SPEECH_ON%Let\'s get this over with quickly. Here is my new offer.  | %SPEECH_ON%We\'re all friends here, aren\'t we? Let\'s see... }";
+				this.Text = "[img]gfx/ui/events/event_04.png[/img]{%SPEECH_START%This is it then?  | He takes a deep breath.%SPEECH_ON% | He sighs.%SPEECH_ON% | %SPEECH_START%Fair enough.  | %SPEECH_START%Fine, fine.  | %SPEECH_START%If it must be.  | %SPEECH_START%Fine. How about this?  | %SPEECH_START%Sure, sure, I understand.  | %SPEECH_START%Reasonable.  | %SPEECH_START%Interesting. I think this would be more appropiate then.  | %SPEECH_START%Would you take this instead?  | %SPEECH_START%Let me make the following offer.  | %SPEECH_ON%Fair. Would you accept this instead?  | %SPEECH_START%Very well. Given your demands I offer you this.  | %SPEECH_START%Let\'s get this over with quickly. Here is my new offer.  | %SPEECH_START%We\'re all friends here, aren\'t we? Let\'s see... }";
 			}
 
 			if (this.Contract.m.Payment.Completion != 0 && this.Contract.m.Payment.Advance == 0 && this.Contract.m.Payment.Count == 0)
@@ -764,7 +790,7 @@ gt.Const.Contracts.NegotiationPerHeadAtDestination <- [
 	{
 		ID = "Negotiation.Fail",
 		Title = "Negotiations",
-		Text = "[img]gfx/ui/events/event_74.png[/img]{%SPEECH_ON%You act as if you were the only ones to hold a sword for coin. I think I\'ll look elsewhere for the men I need. Good day.%SPEECH_OFF% | %SPEECH_ON%My patience has limits, too, and I think I\'m wasting my time here.%SPEECH_OFF% | %SPEECH_ON%I\'ve had enough of this! I\'m sure I\'ll find someone else to do the job!%SPEECH_OFF% | %SPEECH_ON%Do not insult my intelligence! Forget about this contract. We\'re done.%SPEECH_OFF% | He\'s face turns red with anger.%SPEECH_ON%Get out of here, I\'m not in the habit of making deals with greedy devils!%SPEECH_OFF% | He sighs. %SPEECH_ON%Just... forget it. I shouldn\'t have trusted you in the first place. Leave me so I can look for other, more sensible men.%SPEECH_OFF% | %SPEECH_ON%I really thought we had a good relationship here. But know that I can only be pushed so far. I don\'t think this is working out. I\'ll take my leave.%SPEECH_OFF% | %SPEECH_ON%This has been an utter waste of time for me. Don\'t bother coming back until you learned some reason.%SPEECH_OFF%}",
+		Text = "[img]gfx/ui/events/event_74.png[/img]{%SPEECH_START%You act as if you were the only ones to hold a sword for coin. I think I\'ll look elsewhere for the men I need. Good day.%SPEECH_OFF% | %SPEECH_START%My patience has limits, too, and I think I\'m wasting my time here.%SPEECH_OFF% | %SPEECH_START%I\'ve had enough of this! I\'m sure I\'ll find someone else to do the job!%SPEECH_OFF% | %SPEECH_START%Do not insult my intelligence! Forget about this contract. We\'re done.%SPEECH_OFF% | He\'s face turns red with anger.%SPEECH_ON%Get out of here, I\'m not in the habit of making deals with greedy devils!%SPEECH_OFF% | He sighs. %SPEECH_ON%Just... forget it. I shouldn\'t have trusted you in the first place. Leave me so I can look for other, more sensible men.%SPEECH_OFF% | %SPEECH_START%I really thought we had a good relationship here. But know that I can only be pushed so far. I don\'t think this is working out. I\'ll take my leave.%SPEECH_OFF% | %SPEECH_START%This has been an utter waste of time for me. Don\'t bother coming back until you learned some reason.%SPEECH_OFF%}",
 		Image = "",
 		List = [],
 		ShowEmployer = true,

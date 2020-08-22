@@ -34,7 +34,7 @@ this.pimp_background <- this.inherit("scripts/skills/backgrounds/character_backg
 		this.m.Hairs = this.Const.Hair.TidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Tidy;
-		this.m.Body = "bust_naked_body_02";
+
 		this.m.IsOutlawBackground = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Notorious;
@@ -63,6 +63,7 @@ this.pimp_background <- this.inherit("scripts/skills/backgrounds/character_backg
 			Class = [this.Const.Perks.FistsClassTree],
 			Magic = []
 		}
+		this.m.Bodies = this.Const.Bodies.Thick;
 	}
 
 	function getTooltip()
@@ -125,24 +126,16 @@ this.pimp_background <- this.inherit("scripts/skills/backgrounds/character_backg
 		return c;
 	}
 
-	function onAdded()
-	{
-		this.character_background.onAdded();
-	}
-
 	function onAddEquipment()
 	{
 		local items = this.getContainer().getActor().getItems();
-		local r;
-		items.equip(this.new("scripts/items/armor/noble_tunic"));
-		items.equip(this.new("scripts/items/helmets/feathered_hat"));
+		items.equip(this.Const.World.Common.pickArmor([
+			[1, "noble_tunic"]
+		]))
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "feathered_hat"]
+		]));
 	}
 
-	function onAddLegendEquipment()
-	{
-		local items = this.getContainer().getActor().getItems();
-		items.equip(this.new("scripts/items/legend_armor/cloth/legend_tunic_noble"));
-		items.equip(this.new("scripts/items/helmets/feathered_hat"));
-	}
 });
 

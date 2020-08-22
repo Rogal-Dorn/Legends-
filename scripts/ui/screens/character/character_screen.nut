@@ -162,6 +162,11 @@ this.character_screen <- {
 		}
 	}
 
+	function resetInventoryFilter()
+	{
+		this.m.InventoryFilter = this.Const.Items.ItemFilter.All;
+	}
+
 	function setStashMode()
 	{
 		this.m.InventoryMode = this.Const.CharacterScreen.InventoryMode.Stash;
@@ -309,9 +314,37 @@ this.character_screen <- {
 
 		if (bro != null)
 		{
+			this.World.Statistics.getFlags().increment("BrosDismissed");
+
+			if (bro.getSkills().hasSkillOfType(this.Const.SkillType.PermanentInjury) && bro.getBackground().getID() != "background.slave")
+			{
+				this.World.Statistics.getFlags().increment("BrosWithPermanentInjuryDismissed");
+			}
+
 			if (payCompensation)
 			{
 				this.World.Assets.addMoney(-10 * this.Math.max(1, bro.getDaysWithCompany()));
+
+				if (bro.getBackground().getID() == "background.slave")
+				{
+					local playerRoster = this.World.getPlayerRoster().getAll();
+
+					foreach( other in playerRoster )
+					{
+						if (bro.getID() == other.getID())
+						{
+							continue;
+						}
+
+						if (other.getBackground().getID() == "background.slave")
+						{
+							other.improveMood(this.Const.MoodChange.SlaveCompensated, "Glad to see " + bro.getName() + " get reparations for his time");
+						}
+					}
+				}
+			}
+			else if (bro.getBackground().getID() == "background.slave")
+			{
 			}
 			else if (bro.getLevel() >= 11 && !this.World.Statistics.hasNews("dismiss_legend") && this.World.getPlayerRoster().getSize() > 1)
 			{
@@ -352,8 +385,6 @@ this.character_screen <- {
 					}
 				}
 			}
-
-			bro.removeActiveRelationship();
 			bro.getItems().transferToStash(this.World.Assets.getStash());
 			this.World.getPlayerRoster().remove(bro);
 			this.loadData();
@@ -404,7 +435,8 @@ this.character_screen <- {
 			this.m.PerkTreesLoaded = true;
 			result.perkTrees <- this.onQueryPerkTrees();
 		}
-		//this.logDebug("Generating stash list info :" + result.stashSpaceUsed + " : " + result.stashSpaceMax)
+		if ("stashSpaceUsed" in result)
+			this.logDebug("Generating stash list info :" + result.stashSpaceUsed + " : " + result.stashSpaceMax)
 
 		return result;
 	}
@@ -2397,17 +2429,26 @@ this.character_screen <- {
 		this.loadData();
 	}
 
-	function onRemoveArmorUpgrade( _data )
+	function removeUpgrade( _slot, _data)
 	{
-		local slotId = _data[0];
 		local bro = this.Tactical.getEntityByID(_data[1]);
-		local upgrade = bro.removeArmorUpgrade(_data[0]);
+		local upgrade = bro.removeArmorUpgrade(_slot, _data[0]);
 		if (upgrade != null && !upgrade.isDestroyedOnRemove())
 		{
 			this.World.Assets.getStash().add(upgrade);
 		}
 		bro.getSkills().update();
 		return this.UIDataHelper.convertStashAndEntityToUIData(bro, null, false, this.m.InventoryFilter);
+	}
+
+	function onRemoveArmorUpgrade( _data )
+	{
+		return this.removeUpgrade(this.Const.ItemSlot.Body, _data);
+	}
+
+	function onRemoveHelmetUpgrade( _data )
+	{
+		return this.removeUpgrade(this.Const.ItemSlot.Head, _data);
 	}
 
 	function onUpdateFormationName( _data )

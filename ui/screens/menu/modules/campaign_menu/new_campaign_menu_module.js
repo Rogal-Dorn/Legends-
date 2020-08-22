@@ -67,7 +67,10 @@ var NewCampaignMenuModule = function () {
 	this.mEvilGreenskinsCheckbox = null;
 	this.mEvilGreenskinsLabel = null;
 	this.mEvilUndeadCheckbox = null;
-	this.mEvilUndeadLabel = null;
+    this.mEvilUndeadLabel = null;
+    this.mEvilCrusadeCheckbox = null;
+    this.mEvilCrusadeLabel = null;
+    this.mEvilCrusadeControl = null;
 	this.mEvilNoneCheckbox = null;
 	this.mEvilNoneLabel = null;
 	this.mEvilNoDesctructionCheckbox = null;
@@ -98,6 +101,8 @@ var NewCampaignMenuModule = function () {
 	this.mSelectedScenario = 0;
 	this.mScenarioContainer = null;
 	this.mScenarioScrollContainer = null;
+
+	this.mGenderLevel = 2;
 
 	// Map config
 	this.mMapOptions = {
@@ -245,8 +250,8 @@ var NewCampaignMenuModule = function () {
 	this.mLegendBleedKillerCheckboxLabel = null;
 	this.mLegendAllBlueprintsCheckbox = null;
 	this.mLegendAllBlueprintsCheckboxLabel = null;
-	this.mLegendRelationshipCheckbox = null;
-	this.mLegendRelationshipCheckboxLabel = null;
+	this.mLegendTherianCheckbox = null;
+	this.mLegendTherianCheckboxLabel = null;
 	this.mLegendWorldEconomyCheckbox = null;
 	this.mLegendWorldEconomyCheckboxLabel = null;
 	// generics
@@ -334,7 +339,7 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv) {
 		row.append(evilWarControl);
 		this.mEvilWarCheckbox = $('<input type="radio" id="cb-evil-war" name="evil"/>');
 		evilWarControl.append(this.mEvilWarCheckbox);
-		this.mEvilWarLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-evil-war">War</label>');
+		this.mEvilWarLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-evil-war">Nobles at War</label>');
 		evilWarControl.append(this.mEvilWarLabel);
 		this.mEvilWarCheckbox.iCheck({
 			checkboxClass: 'icheckbox_flat-orange',
@@ -376,7 +381,27 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv) {
 		this.mEvilUndeadCheckbox.on('ifChecked', null, this, function (_event) {
 			var self = _event.data;
 			self.mEvil = 3;
-		});
+        });
+
+        this.mEvilCrusadeControl = $('<div class="control"></div>');
+        row.append(this.mEvilCrusadeControl);
+        this.mEvilCrusadeCheckbox = $('<input type="radio" id="cb-evil-crusade" name="evil"/>');
+        this.mEvilCrusadeControl.append(this.mEvilCrusadeCheckbox);
+        this.mEvilCrusadeLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-evil-crusade">Holy War</label>');
+        this.mEvilCrusadeControl.append(this.mEvilCrusadeLabel);
+        this.mEvilCrusadeCheckbox.iCheck({
+            checkboxClass: 'icheckbox_flat-orange',
+            radioClass: 'iradio_flat-orange',
+            increaseArea: '30%'
+        });
+        this.mEvilCrusadeCheckbox.on('ifChecked', null, this, function (_event)
+        {
+            var self = _event.data;
+            self.mEvil = 4;
+        });
+
+        var space = $('<div class="control permanent-destruction-control"/>');
+        row.append(space);
 
 		var extraLateControl = $('<div class="control permanent-destruction-control"/>');
 		row.append(extraLateControl);
@@ -905,7 +930,7 @@ NewCampaignMenuModule.prototype.buildMapConfig = function () {
 	this.createSliderControlDIV(this.mMapOptions.Width, 'Map Width', leftColumn);
 	this.createSliderControlDIV(this.mMapOptions.Height, 'Map Height', leftColumn);
 	this.createSliderControlDIV(this.mMapOptions.LandMassMult, 'Land Mass Ratio', leftColumn);
-	this.createSliderControlDIV(this.mMapOptions.WaterConnectivity, 'Water Connectivity', leftColumn);
+	this.createSliderControlDIV(this.mMapOptions.WaterConnectivity, 'Water', leftColumn);
 	//this.createSliderControlDIV(this.mMapOptions.MinLandToWaterRatio, 'Land To Water Ratio', leftColumn);
 	this.createSliderControlDIV(this.mMapOptions.Snowline, 'Snowline', leftColumn);
 	//this.createSliderControlDIV(this.mMapOptions.MountainsMult, 'Mountain Density', rightColumn);
@@ -934,7 +959,7 @@ NewCampaignMenuModule.prototype.buildMapConfig = function () {
 	row.append(control);
 	this.mFogofWarCheckbox = $('<input type="checkbox" id="cb-fog-of-war"/>');
 	control.append(this.mFogofWarCheckbox);
-	this.mFogofWarCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-fog-of-war">Settlements start hidden</label>');
+	this.mFogofWarCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-fog-of-war">Unexplored Map</label>');
 	control.append(this.mFogofWarCheckboxLabel);
 	this.mFogofWarCheckbox.iCheck({
 		checkboxClass: 'icheckbox_flat-orange',
@@ -1003,6 +1028,60 @@ NewCampaignMenuModule.prototype.buildConfigPage = function () {
 	var rightColumn = $('<div class="column"></div>');
 	this.mConfigPanel.append(rightColumn);
 
+	var row = $('<div class="row" />');
+	leftColumn.append(row);
+	var title = $('<div class="title title-font-big font-color-title">Battle Sisters</div>');
+	row.append(title);
+
+	var offGenderControl = $('<div class="control"></div>');
+	row.append(offGenderControl);
+	this.offGenderControlCheckbox = $('<input type="radio" id="cb-gender-off" name="gender-control" />');
+	offGenderControl.append(this.offGenderControlCheckbox);
+	this.offGenderControlLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-gender-off">Disabled</label>');
+	offGenderControl.append(this.offGenderControlLabel);
+	this.offGenderControlCheckbox.iCheck({
+		checkboxClass: 'icheckbox_flat-orange',
+		radioClass: 'iradio_flat-orange',
+		increaseArea: '30%'
+	});
+	this.offGenderControlCheckbox.on('ifChecked', null, this, function (_event) {
+		var self = _event.data;
+		self.mGenderLevel = 0;
+	});
+
+	var lowGenderControl = $('<div class="control"></div>');
+	row.append(lowGenderControl);
+	this.lowGenderControlCheckbox = $('<input type="radio" id="cb-gender-low" name="gender-control" />');
+	lowGenderControl.append(this.lowGenderControlCheckbox);
+	this.lowGenderControlLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-gender-low">Specific</label>');
+	lowGenderControl.append(this.lowGenderControlLabel);
+	this.lowGenderControlCheckbox.iCheck({
+		checkboxClass: 'icheckbox_flat-orange',
+		radioClass: 'iradio_flat-orange',
+		increaseArea: '30%'
+	});
+	this.lowGenderControlCheckbox.on('ifChecked', null, this, function (_event) {
+		var self = _event.data;
+		self.mGenderLevel = 1;
+	});
+
+	var highGenderControl = $('<div class="control"></div>');
+	row.append(highGenderControl);
+	this.highGenderControlCheckbox = $('<input type="radio" id="cb-gender-high" name="gender-control" checked />');
+	highGenderControl.append(this.highGenderControlCheckbox);
+	this.highGenderControlLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-gender-high">All</label>');
+	highGenderControl.append(this.highGenderControlLabel);
+	this.highGenderControlCheckbox.iCheck({
+		checkboxClass: 'icheckbox_flat-orange',
+		radioClass: 'iradio_flat-orange',
+		increaseArea: '30%'
+	});
+	this.highGenderControlCheckbox.on('ifChecked', null, this, function (_event) {
+		var self = _event.data;
+		self.mGenderLevel = 2;
+	});
+
+
 	var row = $('<div class="row"></div>');
 	leftColumn.append(row);
 	var title = $('<div class="title title-font-big font-color-title">Configuration Options</div>');
@@ -1020,20 +1099,20 @@ NewCampaignMenuModule.prototype.buildConfigPage = function () {
 	});
 	this.mLegendPerkTreesCheckbox.iCheck('check');
 
-	var row = $('<div class="row"></div>');
-	leftColumn.append(row);
-	var control = $('<div class="control"/>');
-	row.append(control);
-	this.mLegendGenderEqualityCheckbox = $('<input type="checkbox" id="cb-legendgenderequality"/>');
-	control.append(this.mLegendGenderEqualityCheckbox);
-	this.mLegendGenderEqualityCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendgenderequality">Battle Sisters</label>');
-	control.append(this.mLegendGenderEqualityCheckboxLabel);
-	this.mLegendGenderEqualityCheckbox.iCheck({
-		checkboxClass: 'icheckbox_flat-orange',
-		radioClass: 'iradio_flat-orange',
-		increaseArea: '30%'
-	});
-	this.mLegendGenderEqualityCheckbox.iCheck('check');
+	// var row = $('<div class="row"></div>');
+	// leftColumn.append(row);
+	// var control = $('<div class="control"/>');
+	// row.append(control);
+	// this.mLegendGenderEqualityCheckbox = $('<input type="checkbox" id="cb-legendgenderequality"/>');
+	// control.append(this.mLegendGenderEqualityCheckbox);
+	// this.mLegendGenderEqualityCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendgenderequality">Battle Sisters</label>');
+	// control.append(this.mLegendGenderEqualityCheckboxLabel);
+	// this.mLegendGenderEqualityCheckbox.iCheck({
+	// 	checkboxClass: 'icheckbox_flat-orange',
+	// 	radioClass: 'iradio_flat-orange',
+	// 	increaseArea: '30%'
+	// });
+	// this.mLegendGenderEqualityCheckbox.iCheck('check');
 
 	var row = $('<div class="row"></div>');
 	leftColumn.append(row);
@@ -1096,7 +1175,7 @@ NewCampaignMenuModule.prototype.buildConfigPage = function () {
 	this.mLegendCampUnlockCheckbox.iCheck('check');
 
 	var row = $('<div class="row"></div>');
-	leftColumn.append(row);
+	rightColumn.append(row);
 	var control = $('<div class="control"/>');
 	row.append(control);
 	this.mLegendRecruitScalingCheckbox = $('<input type="checkbox" id="cb-legendrecruitscaling"/>');
@@ -1111,7 +1190,7 @@ NewCampaignMenuModule.prototype.buildConfigPage = function () {
     this.mLegendRecruitScalingCheckbox.iCheck('check');
 
 	var row = $('<div class="row"></div>');
-	leftColumn.append(row);
+	rightColumn.append(row);
 	var control = $('<div class="control"/>');
 	row.append(control);
 	this.mLegendBleedKillerCheckbox = $('<input type="checkbox" id="cb-legendbleedkiller"/>');
@@ -1126,7 +1205,7 @@ NewCampaignMenuModule.prototype.buildConfigPage = function () {
 	this.mLegendBleedKillerCheckbox.iCheck('check');
 
 	var row = $('<div class="row"></div>');
-	leftColumn.append(row);
+	rightColumn.append(row);
 	var control = $('<div class="control"/>');
 	row.append(control);
 	this.mLegendWorldEconomyCheckbox = $('<input type="checkbox" id="cb-legendworldeconomy"/>');
@@ -1168,19 +1247,34 @@ NewCampaignMenuModule.prototype.buildConfigPage = function () {
 		increaseArea: '30%'
 	});
 
+	// var row = $('<div class="row"></div>');
+	// rightColumn.append(row);
+	// var control = $('<div class="control"/>');
+	// row.append(control);
+	// this.mLegendTherianCheckbox = $('<input type="checkbox" id="cb-legendrelationship"/>');
+	// control.append(this.mLegendTherianCheckbox);
+	// this.mLegendTherianCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendrelationship">Relationships</label>');
+	// control.append(this.mLegendTherianCheckboxLabel);
+	// this.mLegendTherianCheckbox.iCheck({
+	// 	checkboxClass: 'icheckbox_flat-orange',
+	// 	radioClass: 'iradio_flat-orange',
+	// 	increaseArea: '30%'
+	// });
+
 	var row = $('<div class="row"></div>');
 	rightColumn.append(row);
 	var control = $('<div class="control"/>');
 	row.append(control);
-	this.mLegendRelationshipCheckbox = $('<input type="checkbox" id="cb-legendrelationship"/>');
-	control.append(this.mLegendRelationshipCheckbox);
-	this.mLegendRelationshipCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendrelationship">Relationships</label>');
-	control.append(this.mLegendRelationshipCheckboxLabel);
-	this.mLegendRelationshipCheckbox.iCheck({
+	this.mLegendTherianCheckbox = $('<input type="checkbox" id="cb-legendtherian"/>');
+	control.append(this.mLegendTherianCheckbox);
+	this.mLegendTherianCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendtherian">Therianthropy</label>');
+	control.append(this.mLegendTherianCheckboxLabel);
+	this.mLegendTherianCheckbox.iCheck({
 		checkboxClass: 'icheckbox_flat-orange',
 		radioClass: 'iradio_flat-orange',
 		increaseArea: '30%'
 	});
+
 
 };
 
@@ -1459,14 +1553,14 @@ NewCampaignMenuModule.prototype.bindTooltips = function () {
 		elementId: 'mapconfig.height'
 	});
 
-	this.mMapOptions.LandMassMult.Control.bindTooltip({
-		contentType: 'ui-element',
-		elementId: 'mapconfig.landmass'
-	});
-	this.mMapOptions.LandMassMult.Title.bindTooltip({
-		contentType: 'ui-element',
-		elementId: 'mapconfig.landmass'
-	});
+	// this.mMapOptions.LandMassMult.Control.bindTooltip({
+	// 	contentType: 'ui-element',
+	// 	elementId: 'mapconfig.landmass'
+	// });
+	// this.mMapOptions.LandMassMult.Title.bindTooltip({
+	// 	contentType: 'ui-element',
+	// 	elementId: 'mapconfig.landmass'
+	// });
 
 	this.mMapOptions.WaterConnectivity.Control.bindTooltip({
 		contentType: 'ui-element',
@@ -1515,11 +1609,11 @@ NewCampaignMenuModule.prototype.bindTooltips = function () {
 
 	this.mFogofWarCheckbox.bindTooltip({
 		contentType: 'ui-element',
-		elementId: 'mapconfig.fow'
+		elementId: TooltipIdentifier.MenuScreen.NewCampaign.Exploration
 	});
 	this.mFogofWarCheckboxLabel.bindTooltip({
 		contentType: 'ui-element',
-		elementId: 'mapconfig.fow'
+		elementId: TooltipIdentifier.MenuScreen.NewCampaign.Exploration
 	});
 
 	this.mStackCitadelsCheckbox.bindTooltip({
@@ -1549,14 +1643,42 @@ NewCampaignMenuModule.prototype.bindTooltips = function () {
 		elementId: 'mapconfig.legendperktrees'
 	});
 
-	this.mLegendGenderEqualityCheckbox.bindTooltip({
+	// this.mLegendGenderEqualityCheckbox.bindTooltip({
+	// 	contentType: 'ui-element',
+	// 	elementId: 'mapconfig.legendgenderequality'
+	// });
+	// this.mLegendGenderEqualityCheckboxLabel.bindTooltip({
+	// 	contentType: 'ui-element',
+	// 	elementId: 'mapconfig.legendgenderequality'
+	// });
+
+	this.offGenderControlCheckbox.bindTooltip({
 		contentType: 'ui-element',
-		elementId: 'mapconfig.legendgenderequality'
+		elementId: 'mapconfig.legendgenderequality_off'
 	});
-	this.mLegendGenderEqualityCheckboxLabel.bindTooltip({
+	this.offGenderControlLabel.bindTooltip({
 		contentType: 'ui-element',
-		elementId: 'mapconfig.legendgenderequality'
+		elementId: 'mapconfig.legendgenderequality_off'
 	});
+
+	this.lowGenderControlCheckbox.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.legendgenderequality_low'
+	});
+	this.lowGenderControlLabel.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.legendgenderequality_low'
+	});
+
+	this.highGenderControlCheckbox.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.legendgenderequality_high'
+	});
+	this.highGenderControlLabel.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.legendgenderequality_high'
+	});
+
 
 	this.mLegendMagicCheckbox.bindTooltip({
 		contentType: 'ui-element',
@@ -1639,14 +1761,20 @@ NewCampaignMenuModule.prototype.bindTooltips = function () {
 		elementId: 'mapconfig.legendallblueprints'
 	});
 
-	this.mLegendRelationshipCheckbox.bindTooltip({
+	this.mLegendTherianCheckbox.bindTooltip({
 		contentType: 'ui-element',
-		elementId: 'mapconfig.legendrelationship'
+		elementId: 'mapconfig.legendtherian'
 	});
-	this.mLegendRelationshipCheckboxLabel.bindTooltip({
+	this.mLegendTherianCheckboxLabel.bindTooltip({
 		contentType: 'ui-element',
-		elementId: 'mapconfig.legendrelationship'
+		elementId: 'mapconfig.legendtherian'
 	});
+
+	this.mEvilUndeadLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.EvilUndead });
+    this.mEvilUndeadCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.EvilUndead });
+
+    this.mEvilCrusadeLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.EvilCrusade });
+    this.mEvilCrusadeCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.EvilCrusade });
 
 	this.mLegendWorldEconomyCheckbox.bindTooltip({
 		contentType: 'ui-element',
@@ -1656,6 +1784,13 @@ NewCampaignMenuModule.prototype.bindTooltips = function () {
 		contentType: 'ui-element',
 		elementId: 'mapconfig.legendworldeconomy'
 	});
+
+    //this.mExplorationCheckboxLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.Exploration });
+    //this.mExplorationCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.Exploration });
+
+	this.mEconomicDifficultyEasyLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.EconomicDifficultyEasy });
+	this.mEconomicDifficultyEasyCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.EconomicDifficultyEasy });
+
 };
 
 NewCampaignMenuModule.prototype.unbindTooltips = function () {
@@ -1702,10 +1837,11 @@ NewCampaignMenuModule.prototype.unbindTooltips = function () {
 	this.mIronmanCheckboxLabel.unbindTooltip();
 	this.mIronmanCheckbox.unbindTooltip();
 
-
 	this.mAutosaveCheckboxLabel.unbindTooltip();
 	this.mAutosaveCheckbox.unbindTooltip();
 
+    //this.mExplorationCheckboxLabel.unbindTooltip();
+    //this.mExplorationCheckbox.unbindTooltip();
 
 	this.mEvilRandomLabel.unbindTooltip();
 	this.mEvilRandomCheckbox.unbindTooltip();
@@ -1720,7 +1856,10 @@ NewCampaignMenuModule.prototype.unbindTooltips = function () {
 	this.mEvilGreenskinsCheckbox.unbindTooltip();
 
 	this.mEvilUndeadLabel.unbindTooltip();
-	this.mEvilUndeadCheckbox.unbindTooltip();
+    this.mEvilUndeadCheckbox.unbindTooltip();
+
+    this.mEvilCrusadeLabel.unbindTooltip();
+    this.mEvilCrusadeCheckbox.unbindTooltip();
 
 	this.mEvilPermanentDestructionLabel.unbindTooltip();
 	this.mEvilPermanentDestructionCheckbox.unbindTooltip();
@@ -1731,8 +1870,8 @@ NewCampaignMenuModule.prototype.unbindTooltips = function () {
 	this.mMapOptions.Height.Control.unbindTooltip();
 	this.mMapOptions.Height.Title.unbindTooltip();
 
-	this.mMapOptions.LandMassMult.Control.unbindTooltip();
-	this.mMapOptions.LandMassMult.Title.unbindTooltip();
+	// this.mMapOptions.LandMassMult.Control.unbindTooltip();
+	// this.mMapOptions.LandMassMult.Title.unbindTooltip();
 
 	this.mMapOptions.WaterConnectivity.Control.unbindTooltip();
 	this.mMapOptions.WaterConnectivity.Title.unbindTooltip();
@@ -1767,8 +1906,18 @@ NewCampaignMenuModule.prototype.unbindTooltips = function () {
 	this.mLegendPerkTreesCheckbox.unbindTooltip();
 	this.mLegendPerkTreesCheckboxLabel.unbindTooltip();
 
-	this.mLegendGenderEqualityCheckbox.unbindTooltip();
-	this.mLegendGenderEqualityCheckboxLabel.unbindTooltip();
+	// this.mLegendGenderEqualityCheckbox.unbindTooltip();
+	// this.mLegendGenderEqualityCheckboxLabel.unbindTooltip();
+
+
+	this.offGenderControlCheckbox.unbindTooltip();
+	this.offGenderControlLabel.unbindTooltip();
+
+	this.lowGenderControlCheckbox.unbindTooltip();
+	this.lowGenderControlLabel.unbindTooltip();
+
+	this.highGenderControlCheckbox.unbindTooltip();
+	this.highGenderControlLabel.unbindTooltip();
 
 	this.mLegendMagicCheckbox.unbindTooltip();
 	this.mLegendMagicCheckboxLabel.unbindTooltip();
@@ -1797,8 +1946,8 @@ NewCampaignMenuModule.prototype.unbindTooltips = function () {
 	this.mLegendAllBlueprintsCheckbox.unbindTooltip();
 	this.mLegendAllBlueprintsCheckboxLabel.unbindTooltip();
 
-	this.mLegendRelationshipCheckbox.unbindTooltip();
-	this.mLegendRelationshipCheckboxLabel.unbindTooltip();
+	this.mLegendTherianCheckbox.unbindTooltip();
+	this.mLegendTherianCheckboxLabel.unbindTooltip();
 };
 
 
@@ -1965,9 +2114,21 @@ NewCampaignMenuModule.prototype.setStartingScenarios = function (_data) {
 	}
 }
 
+NewCampaignMenuModule.prototype.setCrusadeCampaignVisible = function (_data)
+{
+    if(_data)
+    {
+        this.mEvilCrusadeControl.addClass('display-block').removeClass('display-none');
+    }
+    else
+    {
+        this.mEvilCrusadeControl.removeClass('display-block').addClass('display-none');
+    }
+}
 
-NewCampaignMenuModule.prototype.addStartingScenario = function (_index, _data, _row) {
-	var self = this;
+NewCampaignMenuModule.prototype.addStartingScenario = function (_index, _data, _row)
+{
+    var self = this;
 
 	var control = $('<div class="control"></div>');
 	_row.append(control);
@@ -2102,7 +2263,7 @@ NewCampaignMenuModule.prototype.collectSettings = function () {
 	settings.push(this.mDifficulty);
 	settings.push(this.mEconomicDifficulty);
 	settings.push(this.mBudgetDifficulty);
-	settings.push(this.mIronmanCheckbox.is(':checked'));
+    settings.push(this.mIronmanCheckbox.is(':checked'));
 	settings.push(this.mEvil);
 	settings.push(this.mEvilPermanentDestructionCheckbox.is(':checked'));
 	settings.push(this.mSeed.getInputText());
@@ -2114,6 +2275,7 @@ NewCampaignMenuModule.prototype.collectSettings = function () {
 	settings.push(this.mMapOptions.Snowline.Value);
 	settings.push(this.mMapOptions.NumSettlements.Value);
 	settings.push(this.mMapOptions.NumFactions.Value);
+	//settings.push(this.mExplorationCheckbox.is(':checked'));
 	settings.push(this.mFogofWarCheckbox.is(':checked'));
 	settings.push(this.mMapOptions.ForestsMult.Value);
 	settings.push(this.mMapOptions.SwampsMult.Value);
@@ -2122,7 +2284,8 @@ NewCampaignMenuModule.prototype.collectSettings = function () {
 	settings.push(this.mAllTradeLocationsCheckbox.is(':checked'));
 	settings.push(this.mScenarios[this.mSelectedScenario].ID);
 	settings.push(this.mLegendPerkTreesCheckbox.is(":checked"));
-	settings.push(this.mLegendGenderEqualityCheckbox.is(":checked"));
+	//settings.push(this.mLegendGenderEqualityCheckbox.is(":checked"));
+	settings.push(this.mGenderLevel);
 	settings.push(this.mLegendMagicCheckbox.is(":checked"));
 	settings.push(this.mLegendArmorCheckbox.is(":checked"));
 	settings.push(this.mDebugCheckbox.is(":checked"));
@@ -2133,8 +2296,9 @@ NewCampaignMenuModule.prototype.collectSettings = function () {
 	settings.push(this.mLegendRecruitScalingCheckbox.is(":checked"));
 	settings.push(this.mLegendBleedKillerCheckbox.is(":checked"));
 	settings.push(this.mLegendAllBlueprintsCheckbox.is(":checked"));
-	settings.push(this.mLegendRelationshipCheckbox.is(":checked"));
+	settings.push(false); //settings.push(this.mLegendRelationshipCheckbox.is(":checked"));
 	settings.push(this.mLegendWorldEconomyCheckbox.is(":checked"));
+	settings.push(this.mLegendTherianCheckbox.is(":checked"));
 
 	return settings;
 }

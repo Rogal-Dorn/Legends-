@@ -390,3 +390,27 @@ gt.Const.World.Spawn.Militia <-
 		}
 	]
 }
+
+gt.Const.World.Spawn.PeasantsSouthern <-
+{
+	Name = "PeasantsSouthern",
+	IsDynamic = true,
+	MovementSpeedMult = 0.75,
+	VisibilityMult = 1.0,
+	VisionMult = 0.75,
+	Body = "figure_civilian_06",
+	MaxR = 160,
+	Troops = 
+	[
+		{
+			Weight = 100,
+			Types =
+			[
+				{
+					Type = this.Const.World.Spawn.Troops.SouthernPeasant,
+					Cost = 10
+				}
+			]
+		}
+	]
+};

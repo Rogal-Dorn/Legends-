@@ -110,7 +110,7 @@ this.contract <- {
 
 	function getPaymentMult()
 	{
-		return this.m.PaymentMult * this.m.DifficultyMult;
+		return this.m.PaymentMult * this.m.DifficultyMult * this.World.Assets.m.ContractPaymentMult;
 	}
 
 	function getPayment()
@@ -465,6 +465,7 @@ this.contract <- {
 		local brother1;
 		local brother2;
 		local notnagel;
+		local slaves = [];
 
 		for( local i = 0; i < brothers.len(); i = ++i )
 		{
@@ -476,8 +477,11 @@ this.contract <- {
 				{
 					brothers.remove(i);
 				}
-
-				break;
+			}
+			else if (brothers.len() > 1 && brothers[i].getBackground().getID() == "background.slave")
+			{
+				slaves.push(brothers[i]);
+				brothers.remove(i);
 			}
 		}
 
@@ -488,6 +492,10 @@ this.contract <- {
 		if (brothers.len() != 0)
 		{
 			brother2 = brothers[this.Math.rand(0, brothers.len() - 1)].getName();
+		}
+		else if (slaves.len() != 0)
+		{
+			brother2 = slaves[this.Math.rand(0, slaves.len() - 1)].getName();
 		}
 		else if (notnagel != null)
 		{
@@ -512,6 +520,10 @@ this.contract <- {
 			[
 				"SPEECH_ON",
 				"\n\n[color=#bcad8c]\""
+			],
+			[
+				"SPEECH_START",
+				"[color=#bcad8c]\""
 			],
 			[
 				"SPEECH_OFF",
@@ -555,7 +567,7 @@ this.contract <- {
 			],
 			[
 				"employer",
-				this.Tactical.getEntityByID(this.m.EmployerID).getName()
+				this.m.EmployerID != 0 ? this.Tactical.getEntityByID(this.m.EmployerID).getName() : ""
 			],
 			[
 				"faction",
@@ -996,7 +1008,7 @@ this.contract <- {
 		}
 	}
 
-	function getReputationToDifficultyMult()
+	function getScaledDifficultyMult()
 	{
 		local s = this.Math.maxf(0.75, 0.94 * this.Math.pow(0.01 * this.World.State.getPlayer().getStrength(), 0.89));
 		local d = this.Math.minf(5.0, s);
@@ -1005,7 +1017,7 @@ this.contract <- {
 
 	function getReputationToPaymentMult()
 	{
-		local r = this.Math.minf(2.7, this.Math.maxf(1.35, this.Math.pow(this.Math.maxf(0, 0.003 * this.World.Assets.getBusinessReputation()), 0.39)));
+		local r = this.Math.minf(2.5999999, this.Math.maxf(1.35, this.Math.pow(this.Math.maxf(0, 0.003 * this.World.Assets.getBusinessReputation()), 0.39)));
 		return r * this.Const.Difficulty.PaymentMult[this.World.Assets.getEconomicDifficulty()];
 	}
 
@@ -1040,6 +1052,26 @@ this.contract <- {
 	function isEntityAt( _entity, _location )
 	{
 		return this.getVecDistance(_location.getPos(), _entity.getPos()) <= 175;
+	}
+
+	function isEnemyPartyNear( _entity, _distance )
+	{
+		local parties = this.World.getAllEntitiesAtPos(_entity.getPos(), _distance);
+
+		foreach( party in parties )
+		{
+			if (party.isLocation())
+			{
+				continue;
+			}
+
+			if (!party.isAlliedWithPlayer() || !party.isAlliedWith(this.getFaction()))
+			{
+				return true;
+			}
+		}
+
+		return false;
 	}
 
 	function getDaysRequiredToTravel( _numTiles, _speed, _onRoadOnly )
@@ -1211,8 +1243,9 @@ this.contract <- {
 		local mapSize = this.World.getMapSize();
 		local tries = 0;
 		local myTile = _pivot;
-		local minDistToLocations = this.Math.min(4, _minDist - 1);
+		local minDistToLocations = _minDist == 0 ? 0 : this.Math.min(4, _minDist - 1);
 		local used = [];
+		local pathDistanceMult = 2;
 
 		while (1)
 		{
@@ -1222,6 +1255,11 @@ this.contract <- {
 			{
 				_maxDist = _maxDist * 2;
 				_minDist = _minDist / 2;
+			}
+			else if (_needsLandConnection && tries == 2000)
+			{
+				used = [];
+				pathDistanceMult = 4;
 			}
 
 			local x = this.Math.rand(myTile.SquareCoords.X - _maxDist, myTile.SquareCoords.X + _maxDist);
@@ -1266,6 +1304,22 @@ this.contract <- {
 				continue;
 			}
 
+			local abort = false;
+
+			foreach( t in _notOnTerrain )
+			{
+				if (t == tile.Type)
+				{
+					abort = true;
+					break;
+				}
+			}
+
+			if (abort)
+			{
+				continue;
+			}
+
 			if (!_allowRoad)
 			{
 				local hasRoad = false;
@@ -1283,22 +1337,6 @@ this.contract <- {
 				{
 					continue;
 				}
-			}
-
-			local abort = false;
-
-			foreach( t in _notOnTerrain )
-			{
-				if (t == tile.Type)
-				{
-					abort = true;
-					break;
-				}
-			}
-
-			if (abort)
-			{
-				continue;
 			}
 
 			local settlements = this.World.EntityManager.getSettlements();
@@ -1319,22 +1357,25 @@ this.contract <- {
 				continue;
 			}
 
-			local locations = this.World.EntityManager.getLocations();
-
-			foreach( v in locations )
+			if (minDistToLocations > 0)
 			{
-				local d = tile.getDistanceTo(v.getTile());
+				local locations = this.World.EntityManager.getLocations();
 
-				if (d < minDistToLocations)
+				foreach( v in locations )
 				{
-					abort = true;
-					break;
-				}
-			}
+					local d = tile.getDistanceTo(v.getTile());
 
-			if (abort)
-			{
-				continue;
+					if (d < minDistToLocations)
+					{
+						abort = true;
+						break;
+					}
+				}
+
+				if (abort)
+				{
+					continue;
+				}
 			}
 
 			if (_needsLandConnection)
@@ -1348,7 +1389,7 @@ this.contract <- {
 					continue;
 				}
 
-				for( ; path.getSize() > _maxDist * 2;  )
+				for( ; path.getSize() > _maxDist * pathDistanceMult;  )
 				{
 				}
 			}
@@ -1380,6 +1421,8 @@ this.contract <- {
 		if (_factionType == this.Const.FactionType.Bandits)
 		{
 			party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Bandits).spawnEntity(enemyBase.getTile(), "Brigands", false, this.Const.World.Spawn.BanditRaiders, _resources);
+			party.setDescription("A rough and tough band of brigands out to hunt for food.");
+			party.setFootprintType(this.Const.World.FootprintsType.Brigands);
 			party.getLoot().Money = this.Math.rand(50, 100);
 			party.getLoot().ArmorParts = this.Math.rand(0, 10);
 			party.getLoot().Medicine = this.Math.rand(0, 2);
@@ -1410,6 +1453,8 @@ this.contract <- {
 		else if (_factionType == this.Const.FactionType.Goblins)
 		{
 			party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Goblins).spawnEntity(enemyBase.getTile(), "Goblin Raiders", false, this.Const.World.Spawn.GoblinRaiders, _resources);
+			party.setDescription("A band of mischievous goblins, small but cunning and not to be underestimated.");
+			party.setFootprintType(this.Const.World.FootprintsType.Goblins);
 			party.getLoot().ArmorParts = this.Math.rand(0, 10);
 			party.getLoot().Medicine = this.Math.rand(0, 2);
 			party.getLoot().Ammo = this.Math.rand(0, 30);
@@ -1437,6 +1482,8 @@ this.contract <- {
 		else if (_factionType == this.Const.FactionType.Orcs)
 		{
 			party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Orcs).spawnEntity(enemyBase.getTile(), "Orc Marauders", false, this.Const.World.Spawn.OrcRaiders, _resources);
+			party.setDescription("A band of menacing orcs, greenskinned and towering any man.");
+			party.setFootprintType(this.Const.World.FootprintsType.Orcs);
 			party.getLoot().ArmorParts = this.Math.rand(0, 25);
 			party.getLoot().Ammo = this.Math.rand(0, 10);
 			party.addToInventory("supplies/strange_meat_item");
@@ -1444,12 +1491,16 @@ this.contract <- {
 		else if (_factionType == this.Const.FactionType.Undead)
 		{
 			party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Undead).spawnEntity(enemyBase.getTile(), "Undead", false, this.Const.World.Spawn.UndeadArmy, _resources);
+			party.setDescription("A legion of walking dead, back to claim from the living what was once theirs.");
+			party.setFootprintType(this.Const.World.FootprintsType.Undead);
 			party.getLoot().ArmorParts = this.Math.rand(0, 10);
 			party.getLoot().Ammo = this.Math.rand(0, 5);
 		}
 		else if (_factionType == this.Const.FactionType.Zombies)
 		{
 			party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Zombies).spawnEntity(enemyBase.getTile(), "Undead", false, this.Const.World.Spawn.Necromancer, _resources);
+			party.setDescription("Something seems wrong.");
+			party.setFootprintType(this.Const.World.FootprintsType.Undead);
 			party.getLoot().ArmorParts = this.Math.rand(0, 10);
 			party.getLoot().Ammo = this.Math.rand(0, 5);
 		}

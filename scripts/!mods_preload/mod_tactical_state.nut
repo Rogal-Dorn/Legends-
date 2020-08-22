@@ -33,25 +33,36 @@
 
 				this.World.Contracts.onCombatVictory(this.m.StrategicProperties != null ? this.m.StrategicProperties.CombatID : "");
 				this.World.Events.onCombatVictory(this.m.StrategicProperties != null ? this.m.StrategicProperties.CombatID : "");
-				this.World.Statistics.get().LastEnemiesDefeatedCount = this.m.MaxHostiles;
-				this.World.Statistics.get().LastCombatResult = 1;
-				local playerRoster = this.World.getPlayerRoster().getAll();
+				this.World.Statistics.getFlags().set("LastEnemiesDefeatedCount", this.m.MaxHostiles);
+				this.World.Statistics.getFlags().set("LastCombatResult", 1);
+				if (this.World.Statistics.getFlags().getAsInt("LastCombatFaction") == this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID())
+				{
+					this.World.Statistics.getFlags().increment("BeastsDefeated");
+				}
 
+				local playerRoster = this.World.getPlayerRoster().getAll();
 				foreach( bro in playerRoster )
 				{
-					if (bro.getPlaceInFormation() <= 26 && !bro.isPlacedOnMap() && bro.getTags().get("Devoured") == true)
+					if (bro.getPlaceInFormation() <= 26 && !bro.isPlacedOnMap() && bro.getFlags().get("Devoured") == true)
 					{
 						bro.onDeath(null, null, null, this.Const.FatalityType.Devoured);
 						this.World.getPlayerRoster().remove(bro);
 					}
-					else if (bro.isPlacedOnMap())
+					else if (this.m.StrategicProperties.IsUsingSetPlayers && bro.isPlacedOnMap())
 					{
 						bro.getLifetimeStats().BattlesWithoutMe = 0;
-						bro.improveMood(this.Const.MoodChange.BattleWon, "Won a battle");
+
+						if (this.m.StrategicProperties.IsArenaMode)
+						{
+							bro.improveMood(this.Const.MoodChange.BattleWon, "Won a fight in the arena");
+						}
+						else
+						{
+							bro.improveMood(this.Const.MoodChange.BattleWon, "Won a battle");
+						}
 					}
 					else if (bro.getSkills().hasSkill("perk.legend_pacifist"))
 					{
-
 						local r = this.Math.rand(1, 10);
 						local levelRequired = 10 - bro.getLevel();
 
@@ -59,18 +70,25 @@
 						{
 							bro.worsenMood(this.Const.MoodChange.BattleWithoutMe, "Forced into battle against their wishes");
 						}
-
 					}
-
-					else if (bro.getMoodState() > this.Const.MoodState.Concerned && !bro.getCurrentProperties().IsContentWithBeingInReserve)
+					else if (!this.m.StrategicProperties.IsUsingSetPlayers)
 					{
-						++bro.getLifetimeStats().BattlesWithoutMe;
-
-						if (bro.getLifetimeStats().BattlesWithoutMe > this.Math.max(2, 6 - bro.getLevel()))
+						if (bro.isPlacedOnMap())
 						{
-							bro.worsenMood(this.Const.MoodChange.BattleWithoutMe, "Felt useless in reserve");
+							bro.getLifetimeStats().BattlesWithoutMe = 0;
+							bro.improveMood(this.Const.MoodChange.BattleWon, "Won a battle");
+						}
+						else if (bro.getMoodState() > this.Const.MoodState.Concerned && !bro.getCurrentProperties().IsContentWithBeingInReserve && !this.World.Assets.m.IsDisciplined)
+						{
+							++bro.getLifetimeStats().BattlesWithoutMe;
+
+							if (bro.getLifetimeStats().BattlesWithoutMe > this.Math.max(2, 6 - bro.getLevel()))
+							{
+								bro.worsenMood(this.Const.MoodChange.BattleWithoutMe, "Felt useless in reserve");
+							}
 						}
 					}
+					bro.getFlags().remove("TemporaryRider");
 				}
 			}
 		}
@@ -84,7 +102,7 @@
 
 				foreach( bro in playerRoster )
 				{
-					if (bro.getPlaceInFormation() <= 26 && !bro.isPlacedOnMap() && bro.getTags().get("Devoured") == true)
+					if (bro.getPlaceInFormation() <= 26 && !bro.isPlacedOnMap() && bro.getFlags().get("Devoured") == true)
 					{
 						if (bro.isAlive())
 						{
@@ -92,7 +110,7 @@
 							this.World.getPlayerRoster().remove(bro);
 						}
 					}
-					else if (bro.isPlacedOnMap() && (bro.getTags().get("Charmed") == true || bro.getTags().get("Sleeping") == true || bro.getTags().get("Nightmare") == true))
+					else if (bro.isPlacedOnMap() && (bro.getFlags().get("Charmed") == true || bro.getFlags().get("Sleeping") == true || bro.getFlags().get("Nightmare") == true))
 					{
 						if (bro.isAlive())
 						{
@@ -107,12 +125,12 @@
 						{
 							bro.worsenMood(this.Const.MoodChange.BattleLost, "Lost a battle");
 						}
-						else
+						else if (this.World.Assets.getOrigin().getID() != "scenario.deserters")
 						{
 							bro.worsenMood(this.Const.MoodChange.BattleRetreat, "Retreated from battle");
 						}
 					}
-					else if (bro.getMoodState() > this.Const.MoodState.Concerned && !bro.getCurrentProperties().IsContentWithBeingInReserve)
+					else if (bro.getMoodState() > this.Const.MoodState.Concerned && !bro.getCurrentProperties().IsContentWithBeingInReserve && (!bro.getFlags().has("TemporaryRider") || !bro.getFlags().has("IsHorse")))
 					{
 						++bro.getLifetimeStats().BattlesWithoutMe;
 
@@ -121,6 +139,7 @@
 							bro.worsenMood(this.Const.MoodChange.BattleWithoutMe, "Felt useless in reserve");
 						}
 					}
+					bro.getFlags().remove("TemporaryRider");
 				}
 
 				if (this.World.getPlayerRoster().getSize() != 0)
@@ -128,10 +147,19 @@
 					this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnLoss);
 					this.World.Contracts.onRetreatedFromCombat(this.m.StrategicProperties != null ? this.m.StrategicProperties.CombatID : "");
 					this.World.Events.onRetreatedFromCombat(this.m.StrategicProperties != null ? this.m.StrategicProperties.CombatID : "");
-					this.World.Statistics.get().LastEnemiesDefeatedCount = 0;
-					this.World.Statistics.get().LastCombatResult = 2;
+					this.World.Statistics.getFlags().set("LastEnemiesDefeatedCount", 0)
+					this.World.Statistics.getFlags().set("LastCombatResult", 2);
 				}
 			}
+		}
+
+		if (this.m.StrategicProperties != null && this.m.StrategicProperties.IsArenaMode)
+		{
+			this.Sound.play(this.Const.Sound.ArenaEnd[this.Math.rand(0, this.Const.Sound.ArenaEnd.len() - 1)], this.Const.Sound.Volume.Tactical);
+			this.Time.scheduleEvent(this.TimeUnit.Real, 4500, function ( _t )
+			{
+				this.Sound.play(this.Const.Sound.ArenaOutro[this.Math.rand(0, this.Const.Sound.ArenaOutro.len() - 1)], this.Const.Sound.Volume.Tactical);
+			}, null);
 		}
 
 		this.gatherBrothers(isVictory);
@@ -150,7 +178,7 @@
 			{
 				if (this.m.TacticalCombatResultScreen != null)
 				{
-					if (_isVictory && !this.Tactical.State.isScenarioMode() && this.Settings.getGameplaySettings().AutoLoot && "Assets" in this.World && this.World.Assets != null)
+					if (_isVictory && !this.Tactical.State.isScenarioMode() && this.m.StrategicProperties != null && (!this.m.StrategicProperties.IsLootingProhibited || this.m.StrategicProperties.IsArenaMode && !this.m.CombatResultLoot.isEmpty()) && this.Settings.getGameplaySettings().AutoLoot)
 					{
 						this.m.TacticalCombatResultScreen.onLootAllItemsButtonPressed();
 						this.World.Assets.consumeItems();
@@ -182,6 +210,18 @@
 		foreach( bro in this.m.CombatResultRoster )
 		{
 			playerKills = playerKills + bro.getCombatStats().Kills;
+		}
+
+		if (!this.isScenarioMode())
+		{
+			this.World.Statistics.getFlags().set("LastCombatKills", playerKills);
+		}
+
+		local isArena = !this.isScenarioMode() && this.m.StrategicProperties != null && this.m.StrategicProperties.IsArenaMode;
+
+		if (!isArena && !this.isScenarioMode() && this.m.StrategicProperties != null && this.m.StrategicProperties.IsLootingProhibited)
+		{
+			return;
 		}
 
 		local EntireCompanyRoster = this.World.getPlayerRoster().getAll();
@@ -254,6 +294,11 @@
 				{
 					foreach( item in tile.Items )
 					{
+						if (isArena && item.getLastEquippedByFaction() != 1)
+						{
+							continue;
+						}
+
 						item.onCombatFinished();
 						loot.push(item);
 					}
@@ -308,6 +353,12 @@
 
 					foreach( item in items )
 					{
+
+						if (isArena && item.getLastEquippedByFaction() != 1)
+						{
+							continue;
+						}
+
 						item.onCombatFinished();
 						if (!item.isChangeableInBattle(null) && item.isDroppedAsLoot())
 						{
@@ -318,14 +369,18 @@
 							}
 
 							item.removeFromContainer();
-							loot.push(item);
+							foreach (i in item.getLootLayers())
+							{
+								loot.push(i);
+							}
+
 						}
 					}
 				}
 			}
 		}
 
-		if (this.m.StrategicProperties != null)
+		if (!isArena && this.m.StrategicProperties != null)
 		{
 			local player = this.World.State.getPlayer();
 
@@ -340,6 +395,35 @@
 			foreach( item in this.m.StrategicProperties.Loot )
 			{
 				loot.push(this.new(item));
+			}
+		}
+
+		if (!isArena && !this.isScenarioMode())
+		{
+			if (this.Tactical.Entities.getAmmoSpent() > 0 && this.World.Assets.m.IsRecoveringAmmo)
+			{
+				local amount = this.Math.max(1, this.Tactical.Entities.getAmmoSpent() * 0.2);
+				amount = this.Math.rand(amount / 2, amount);
+
+				if (amount > 0)
+				{
+					local ammo = this.new("scripts/items/supplies/ammo_item");
+					ammo.setAmount(amount);
+					loot.push(ammo);
+				}
+			}
+
+			if (this.Tactical.Entities.getArmorParts() > 0 && this.World.Assets.m.IsRecoveringArmor)
+			{
+				local amount = this.Math.min(60, this.Math.max(1, this.Tactical.Entities.getArmorParts() * this.Const.World.Assets.ArmorPartsPerArmor * 0.15));
+				amount = this.Math.rand(amount / 2, amount);
+
+				if (amount > 0)
+				{
+					local parts = this.new("scripts/items/supplies/armor_parts_item");
+					parts.setAmount(amount);
+					loot.push(parts);
+				}
 			}
 		}
 
@@ -369,8 +453,9 @@
 		local dead = this.Tactical.getCasualtyRoster().getAll();
 		local survivor = this.Tactical.getSurvivorRoster().getAll();
 		local retreated = this.Tactical.getRetreatRoster().getAll();
+		local isArena = this.m.StrategicProperties != null && this.m.StrategicProperties.IsArenaMode;
 
-		if (_isVictory)
+		if (_isVictory || isArena)
 		{
 			foreach( s in survivor )
 			{
@@ -394,6 +479,15 @@
 		{
 			foreach( bro in survivor )
 			{
+				local fallen = {
+					Name = bro.getName(),
+					Time = this.World.getTime().Days,
+					TimeWithCompany = this.Math.max(1, bro.getDaysWithCompany()),
+					Kills = bro.getLifetimeStats().Kills,
+					Battles = bro.getLifetimeStats().Battles,
+					KilledBy = "Left to die",
+					Expendable = bro.getBackground().getID() == "background.slave"
+				};
 				this.World.Statistics.addFallen(bro);
 				this.World.getPlayerRoster().remove(bro);
 				bro.die();
@@ -421,7 +515,7 @@
 
 	o.executeEntitySkill = function ( _activeEntity, _targetTile )
 	{
-		local skill = _activeEntity.getSkills().getSkillByID(this.m.SelectedSkillId);
+		local skill = _activeEntity.getSkills().getSkillByID(this.m.SelectedSkillID);
 
 		if (skill != null && skill.isUsable() && skill.isAffordable())
 		{
@@ -463,7 +557,7 @@
 				this.Tactical.TurnSequenceBar.deselectActiveSkill();
 				this.Tactical.getHighlighter().clear();
 				this.m.CurrentActionState = null;
-				this.m.SelectedSkillId = null;
+				this.m.SelectedSkillID = null;
 				this.updateCursorAndTooltip();
 			}
 			else
@@ -474,184 +568,184 @@
 		}
 	}
 
-	o.updateCursorAndTooltip = function ( _skillSelected = false )
-	{
-		local cursorX = this.Cursor.getX();
-		local cursorY = this.Cursor.getY();
+	// o.updateCursorAndTooltip = function ( _skillSelected = false )
+	// {
+	// 	local cursorX = this.Cursor.getX();
+	// 	local cursorY = this.Cursor.getY();
 
-		if (this.Cursor.isOverUI())
-		{
-			if (this.m.LastTileHovered != null)
-			{
-				this.m.LastTileHovered = null;
-				this.m.LastTileHoveredHadEntity = false;
-			}
+	// 	if (this.Cursor.isOverUI())
+	// 	{
+	// 		if (this.m.LastTileHovered != null)
+	// 		{
+	// 			this.m.LastTileHovered = null;
+	// 			this.m.LastTileHoveredHadEntity = false;
+	// 		}
 
-			if (!this.Cursor.wasOverUI())
-			{
-				this.Cursor.setCursor(this.Const.UI.Cursor.Hand);
-			}
+	// 		if (!this.Cursor.wasOverUI())
+	// 		{
+	// 			this.Cursor.setCursor(this.Const.UI.Cursor.Hand);
+	// 		}
 
-			return;
-		}
+	// 		return;
+	// 	}
 
-		if (this.isInCameraMovementMode())
-		{
-			return;
-		}
+	// 	if (this.isInCameraMovementMode())
+	// 	{
+	// 		return;
+	// 	}
 
-		local isValidSkill = false;
-		local hoveredTile = this.Tactical.getTile(this.Tactical.screenToTile(cursorX, cursorY));
-		local entity = this.Tactical.TurnSequenceBar.getActiveEntity();
+	// 	local isValidSkill = false;
+	// 	local hoveredTile = this.Tactical.getTile(this.Tactical.screenToTile(cursorX, cursorY));
+	// 	local entity = this.Tactical.TurnSequenceBar.getActiveEntity();
 
-		if (this.m.CurrentActionState == null && entity != null && entity.isPlayerControlled())
-		{
-			local cursorSet = false;
+	// 	if (this.m.CurrentActionState == null && entity != null && entity.isPlayerControlled())
+	// 	{
+	// 		local cursorSet = false;
 
-			if (!hoveredTile.IsEmpty && hoveredTile.IsDiscovered)
-			{
-				local tileEntity = hoveredTile.getEntity();
+	// 		if (!hoveredTile.IsEmpty && hoveredTile.IsDiscovered)
+	// 		{
+	// 			local tileEntity = hoveredTile.getEntity();
 
-				if (!tileEntity.isHiddenToPlayer())
-				{
-					this.Cursor.setCursor(this.Const.UI.Cursor.Denied);
-					cursorSet = true;
-				}
-			}
+	// 			if (!tileEntity.isHiddenToPlayer())
+	// 			{
+	// 				this.Cursor.setCursor(this.Const.UI.Cursor.Denied);
+	// 				cursorSet = true;
+	// 			}
+	// 		}
 
-			if (!cursorSet)
-			{
-				this.Cursor.setCursor(this.Const.UI.Cursor.Hand);
-			}
-		}
-		else
-		{
-			switch(this.m.CurrentActionState)
-			{
-			case this.Const.Tactical.ActionState.SkillSelected:
-				if (!hoveredTile.IsEmpty && entity != null)
-				{
-					local tileEntity = hoveredTile.getEntity();
-					local skill = entity.getSkills().getSkillByID(this.m.SelectedSkillId);
+	// 		if (!cursorSet)
+	// 		{
+	// 			this.Cursor.setCursor(this.Const.UI.Cursor.Hand);
+	// 		}
+	// 	}
+	// 	else
+	// 	{
+	// 		switch(this.m.CurrentActionState)
+	// 		{
+	// 		case this.Const.Tactical.ActionState.SkillSelected:
+	// 			if (!hoveredTile.IsEmpty && entity != null)
+	// 			{
+	// 				local tileEntity = hoveredTile.getEntity();
+	// 				local skill = entity.getSkills().getSkillByID(this.m.SelectedSkillID);
 
-					if (skill == null || !skill.isUsable() || !skill.isAffordable() || !skill.onVerifyTarget(entity.getTile(), hoveredTile) || !skill.isInRange(hoveredTile) || !hoveredTile.IsVisibleForEntity)
-					{
-						this.Cursor.setCursor(this.Const.UI.Cursor.Denied);
-					}
-					else
-					{
-						this.Cursor.setCursor(skill.getCursorForTile(hoveredTile));
-						isValidSkill = true;
-					}
-				}
-				else
-				{
-					this.Cursor.setCursor(this.Const.UI.Cursor.Sword);
-				}
+	// 				if (skill == null || !skill.isUsable() || !skill.isAffordable() || !skill.onVerifyTarget(entity.getTile(), hoveredTile) || !skill.isInRange(hoveredTile) || !hoveredTile.IsVisibleForEntity)
+	// 				{
+	// 					this.Cursor.setCursor(this.Const.UI.Cursor.Denied);
+	// 				}
+	// 				else
+	// 				{
+	// 					this.Cursor.setCursor(skill.getCursorForTile(hoveredTile));
+	// 					isValidSkill = true;
+	// 				}
+	// 			}
+	// 			else
+	// 			{
+	// 				this.Cursor.setCursor(this.Const.UI.Cursor.Sword);
+	// 			}
 
-				break;
+	// 			break;
 
-			case this.Const.Tactical.ActionState.ComputePath:
-				if ((hoveredTile.IsEmpty || !hoveredTile.IsVisibleForPlayer && this.isKindOf(hoveredTile.getEntity(), "actor")) && hoveredTile.Type != this.Const.Tactical.TerrainType.Impassable)
-				{
-					this.Cursor.setCursor(this.Const.UI.Cursor.Boot);
-				}
-				else
-				{
-					this.Cursor.setCursor(this.Const.UI.Cursor.Denied);
-				}
+	// 		case this.Const.Tactical.ActionState.ComputePath:
+	// 			if ((hoveredTile.IsEmpty || !hoveredTile.IsVisibleForPlayer && this.isKindOf(hoveredTile.getEntity(), "actor")) && hoveredTile.Type != this.Const.Tactical.TerrainType.Impassable)
+	// 			{
+	// 				this.Cursor.setCursor(this.Const.UI.Cursor.Boot);
+	// 			}
+	// 			else
+	// 			{
+	// 				this.Cursor.setCursor(this.Const.UI.Cursor.Denied);
+	// 			}
 
-				break;
+	// 			break;
 
-			case this.Const.Tactical.ActionState.TravelPath:
-				this.Cursor.setCursor(this.Const.UI.Cursor.Hourglass);
-				break;
+	// 		case this.Const.Tactical.ActionState.TravelPath:
+	// 			this.Cursor.setCursor(this.Const.UI.Cursor.Hourglass);
+	// 			break;
 
-			default:
-				this.Cursor.setCursor(this.Const.UI.Cursor.Hand);
-				break;
-			}
-		}
+	// 		default:
+	// 			this.Cursor.setCursor(this.Const.UI.Cursor.Hand);
+	// 			break;
+	// 		}
+	// 	}
 
-		if (this.m.LastTileHovered == null || this.m.LastTileHovered.ID != hoveredTile.ID && !this.isInCameraMovementMode())
-		{
-			this.Tactical.TurnSequenceBar.deselectEntity();
+	// 	if (this.m.LastTileHovered == null || this.m.LastTileHovered.ID != hoveredTile.ID && !this.isInCameraMovementMode())
+	// 	{
+	// 		this.Tactical.TurnSequenceBar.deselectEntity();
 
-			if (!hoveredTile.IsEmpty)
-			{
-				local tileEntity = hoveredTile.getEntity();
+	// 		if (!hoveredTile.IsEmpty)
+	// 		{
+	// 			local tileEntity = hoveredTile.getEntity();
 
-				if (!tileEntity.isHiddenToPlayer() && this.isKindOf(tileEntity, "actor"))
-				{
-					this.Tactical.TurnSequenceBar.selectEntity(tileEntity);
-				}
-			}
-		}
+	// 			if (!tileEntity.isHiddenToPlayer() && this.isKindOf(tileEntity, "actor"))
+	// 			{
+	// 				this.Tactical.TurnSequenceBar.selectEntity(tileEntity);
+	// 			}
+	// 		}
+	// 	}
 
-		if (this.m.LastTileHoveredHadEntity != null && this.m.LastTileHovered != null)
-		{
-			if (this.m.LastTileHoveredHadEntity == false && !this.m.LastTileHovered.IsEmpty || this.m.LastTileHoveredHadEntity != false && this.m.LastTileHovered.IsEmpty)
-			{
-				this.m.LastTileHovered = null;
-				this.Tooltip.mouseLeaveTile();
-			}
-		}
+	// 	if (this.m.LastTileHoveredHadEntity != null && this.m.LastTileHovered != null)
+	// 	{
+	// 		if (this.m.LastTileHoveredHadEntity == false && !this.m.LastTileHovered.IsEmpty || this.m.LastTileHoveredHadEntity != false && this.m.LastTileHovered.IsEmpty)
+	// 		{
+	// 			this.m.LastTileHovered = null;
+	// 			this.Tooltip.mouseLeaveTile();
+	// 		}
+	// 	}
 
-		if ((this.m.LastTileHovered == null || !this.m.LastTileHovered.isSameTileAs(hoveredTile)) && !this.isInCameraMovementMode())
-		{
-			this.Tooltip.mouseLeaveTile();
+	// 	if ((this.m.LastTileHovered == null || !this.m.LastTileHovered.isSameTileAs(hoveredTile)) && !this.isInCameraMovementMode())
+	// 	{
+	// 		this.Tooltip.mouseLeaveTile();
 
-			if (this.m.CurrentActionState == this.Const.Tactical.ActionState.SkillSelected)
-			{
-				local skill = entity.getSkills().getSkillByID(this.m.SelectedSkillId);
+	// 		if (this.m.CurrentActionState == this.Const.Tactical.ActionState.SkillSelected)
+	// 		{
+	// 			local skill = entity.getSkills().getSkillByID(this.m.SelectedSkillID);
 
-				if (skill != null)
-				{
-					skill.onTargetDeselected();
-				}
-			}
+	// 			if (skill != null)
+	// 			{
+	// 				skill.onTargetDeselected();
+	// 			}
+	// 		}
 
-			this.m.LastTileHovered = hoveredTile;
+	// 		this.m.LastTileHovered = hoveredTile;
 
-			if (this.m.CurrentActionState == this.Const.Tactical.ActionState.SkillSelected && isValidSkill)
-			{
-				local skill = entity.getSkills().getSkillByID(this.m.SelectedSkillId);
-				skill.onTargetSelected(hoveredTile);
-			}
+	// 		if (this.m.CurrentActionState == this.Const.Tactical.ActionState.SkillSelected && isValidSkill)
+	// 		{
+	// 			local skill = entity.getSkills().getSkillByID(this.m.SelectedSkillID);
+	// 			skill.onTargetSelected(hoveredTile);
+	// 		}
 
-			if (!this.m.LastTileHovered.IsEmpty)
-			{
-				this.m.LastTileHoveredHadEntity = true;
-				local tileEntity = this.m.LastTileHovered.getEntity();
+	// 		if (!this.m.LastTileHovered.IsEmpty)
+	// 		{
+	// 			this.m.LastTileHoveredHadEntity = true;
+	// 			local tileEntity = this.m.LastTileHovered.getEntity();
 
-				if (!tileEntity.isHiddenToPlayer() && this.isKindOf(tileEntity, "actor"))
-				{
-					this.Tooltip.mouseEnterTile(cursorX, cursorY, tileEntity.getID());
-				}
-				else
-				{
-					this.Tooltip.mouseEnterTile(cursorX, cursorY);
-				}
-			}
-			else
-			{
-				this.m.LastTileHoveredHadEntity = false;
-				this.Tooltip.mouseEnterTile(cursorX, cursorY);
-			}
-		}
-		else
-		{
-			if (!this.isInCameraMovementMode())
-			{
-				this.Tooltip.mouseHoverTile(cursorX, cursorY);
-			}
+	// 			if (!tileEntity.isHiddenToPlayer() && this.isKindOf(tileEntity, "actor"))
+	// 			{
+	// 				this.Tooltip.mouseEnterTile(cursorX, cursorY, tileEntity.getID());
+	// 			}
+	// 			else
+	// 			{
+	// 				this.Tooltip.mouseEnterTile(cursorX, cursorY);
+	// 			}
+	// 		}
+	// 		else
+	// 		{
+	// 			this.m.LastTileHoveredHadEntity = false;
+	// 			this.Tooltip.mouseEnterTile(cursorX, cursorY);
+	// 		}
+	// 	}
+	// 	else
+	// 	{
+	// 		if (!this.isInCameraMovementMode())
+	// 		{
+	// 			this.Tooltip.mouseHoverTile(cursorX, cursorY);
+	// 		}
 
-			if (this.m.CurrentActionState == this.Const.Tactical.ActionState.SkillSelected && isValidSkill && _skillSelected)
-			{
-				local skill = entity.getSkills().getSkillByID(this.m.SelectedSkillId);
-				skill.onTargetSelected(hoveredTile);
-			}
-		}
-	}
+	// 		if (this.m.CurrentActionState == this.Const.Tactical.ActionState.SkillSelected && isValidSkill && _skillSelected)
+	// 		{
+	// 			local skill = entity.getSkills().getSkillByID(this.m.SelectedSkillID);
+	// 			skill.onTargetSelected(hoveredTile);
+	// 		}
+	// 	}
+	// }
 
 })

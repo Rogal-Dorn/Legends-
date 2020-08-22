@@ -137,7 +137,7 @@ this.ai_nightmare <- this.inherit("scripts/ai/tactical/behavior", {
 				}
 			}
 
-			if (opponentTile.getZoneOfControlCount(opponent.Actor.getFaction()) == 0)
+			if (opponentTile.getZoneOfOccupationCount(opponent.Actor.getFaction()) == 0)
 			{
 				score = score + this.Const.AI.Behavior.NightmareIsolatedBonus;
 			}
@@ -165,7 +165,7 @@ this.ai_nightmare <- this.inherit("scripts/ai/tactical/behavior", {
 				}
 			}
 
-			if (opponentTile.hasZoneOfControlOtherThan(target.getAlliedFactions()))
+			if (opponentTile.hasZoneOfOccupationOtherThan(target.getAlliedFactions()))
 			{
 				score = score * this.Const.AI.Behavior.NightmareEngagedMult;
 			}

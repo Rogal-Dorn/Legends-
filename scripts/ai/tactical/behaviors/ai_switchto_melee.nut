@@ -70,7 +70,7 @@ this.ai_switchto_melee <- this.inherit("scripts/ai/tactical/behavior", {
 					{
 						this.logInfo("switching to melee weapon - noone to hit from here!");
 						isGoodReason = true;
-						scoreMult = scoreMult * this.Const.AI.Behavior.SwitchToOutOfAmmoMult;
+						scoreMult = scoreMult * this.Const.AI.Behavior.SwitchToEnemyInRangeMult;
 					}
 				}
 			}

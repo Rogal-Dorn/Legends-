@@ -91,89 +91,37 @@ this.lucky_finds_something_event <- this.inherit("scripts/events/event", {
 		}
 		else if (r == 2)
 		{
-			if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
-			{
-				item = this.new("scripts/items/armor/patched_mail_shirt");
-			}
-			else
-			{
-				item = this.new("scripts/items/armor/patched_mail_shirt");
-			}
-
+			item = this.Const.World.Common.pickArmor([
+				[1, "patched_mail_shirt"],
+			]);
 		}
 		else if (r == 3)
 		{
-			item = this.new("scripts/items/helmets/dented_nasal_helmet");
+			item = this.Const.World.Common.pickHelmet([[1, "dented_nasal_helmet"]]);
 		}
 		else if (r == 4)
 		{
-			item = this.new("scripts/items/helmets/mail_coif");
+			item = this.Const.World.Common.pickHelmet([[1, "mail_coif"]]);
 		}
 		else if (r == 5)
 		{
-			item = this.new("scripts/items/helmets/cultist_hood");
+			item = this.Const.World.Common.pickHelmet([[1, "cultist_hood"]]);
 		}
 		else if (r == 6)
 		{
-			item = this.new("scripts/items/helmets/full_leather_cap");
+			item = this.Const.World.Common.pickHelmet([[1, "full_leather_cap"]]);
 		}
 		else if (r == 7)
 		{
-			if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
-			{
-				local cloths = [
-					[0, ""],
-					[1, "cloth/legend_gambeson"],
-					[0, "cloth/legend_gambeson_plain"],
-					[0, "cloth/legend_gambeson_wolf"],
-					[1, "cloth/legend_padded_surcoat"],
-					[1, "cloth/legend_robes"],
-					[0, "cloth/legend_apron_butcher"],
-					[0, "cloth/legend_robes_nun"],
-					[1, "cloth/legend_apron_smith"],
-					[0, "cloth/legend_robes_wizard"],
-					[1, "cloth/legend_sackcloth"],
-					[1, "cloth/legend_sackcloth_patched"],
-					[0, "cloth/legend_sackcloth_tattered"],
-					[1, "cloth/legend_tunic"],
-					[1, "cloth/legend_tunic_noble"]
-				];
-				item = this.Const.World.Common.pickLegendArmor(cloths)
-			}
-			else
-			{
-				item = this.new("scripts/items/armor/ragged_surcoat");
-			}
-
+			item = this.Const.World.Common.pickArmor([
+				[1, "ragged_surcoat"],
+			]);
 		}
 		else if (r == 8)
 		{
-			if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
-			{
-				local cloths = [
-					[0, ""],
-					[1, "cloth/legend_gambeson"],
-					[0, "cloth/legend_gambeson_plain"],
-					[0, "cloth/legend_gambeson_wolf"],
-					[1, "cloth/legend_padded_surcoat"],
-					[1, "cloth/legend_robes"],
-					[0, "cloth/legend_apron_butcher"],
-					[0, "cloth/legend_robes_nun"],
-					[1, "cloth/legend_apron_smith"],
-					[0, "cloth/legend_robes_wizard"],
-					[1, "cloth/legend_sackcloth"],
-					[1, "cloth/legend_sackcloth_patched"],
-					[0, "cloth/legend_sackcloth_tattered"],
-					[1, "cloth/legend_tunic"],
-					[1, "cloth/legend_tunic_noble"]
-				];
-				item = this.Const.World.Common.pickLegendArmor(cloths)
-			}
-			else
-			{
-				item = this.new("scripts/items/armor/noble_tunic");
-			}
-
+			item = this.Const.World.Common.pickArmor([
+				[1, "noble_tunic"],
+			]);
 		}
 		else if (r == 9)
 		{
@@ -217,31 +165,9 @@ this.lucky_finds_something_event <- this.inherit("scripts/events/event", {
 		}
 		else if (r == 17)
 		{
-			if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
-			{
-				local cloths = [
-					[0, ""],
-					[1, "cloth/legend_gambeson"],
-					[0, "cloth/legend_gambeson_plain"],
-					[0, "cloth/legend_gambeson_wolf"],
-					[1, "cloth/legend_padded_surcoat"],
-					[1, "cloth/legend_robes"],
-					[0, "cloth/legend_apron_butcher"],
-					[0, "cloth/legend_robes_nun"],
-					[1, "cloth/legend_apron_smith"],
-					[0, "cloth/legend_robes_wizard"],
-					[1, "cloth/legend_sackcloth"],
-					[1, "cloth/legend_sackcloth_patched"],
-					[0, "cloth/legend_sackcloth_tattered"],
-					[1, "cloth/legend_tunic"],
-					[1, "cloth/legend_tunic_noble"]
-				];
-				item = this.Const.World.Common.pickLegendArmor(cloths)
-			}
-			else
-			{
-				item = this.new("scripts/items/armor/thick_dark_tunic");
-			}
+			item = this.Const.World.Common.pickArmor([
+				[1, "thick_dark_tunic"],
+			]);
 		}
 		else if (r == 18)
 		{

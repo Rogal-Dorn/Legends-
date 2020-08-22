@@ -5,7 +5,7 @@ this.legend_camp_unlock_hunt <- this.inherit("scripts/events/event", {
 	function create()
 	{
 		this.m.ID = "event.legend_camp_unlock_hunt";
-		this.m.Title = "Along the way...";		
+		this.m.Title = "Along the way...";
 		this.m.Screens.push({
 			ID = "A",
 			Text = "[img]gfx/ui/events/legend_camp_hunt.png[/img]",
@@ -17,7 +17,7 @@ this.legend_camp_unlock_hunt <- this.inherit("scripts/events/event", {
 					Text = "Hunting unlocked in camp",
 					function getResult( _event )
 					{
-						this.World.Tags.set("HasLegendCampHunting", true);
+						this.World.Flags.set("HasLegendCampHunting", true);
 					}
 
 				}

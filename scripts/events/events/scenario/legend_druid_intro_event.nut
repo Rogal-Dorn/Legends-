@@ -24,7 +24,7 @@ this.legend_druid_intro_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				this.logInfo("Unlocking healing");
-				this.World.Tags.set("HasLegendCampHealing", true);				
+				this.World.Flags.set("HasLegendCampHealing", true);
 			}
 		});
 	}
@@ -36,14 +36,14 @@ this.legend_druid_intro_event <- this.inherit("scripts/events/event", {
 
 	function onPrepare()
 	{
-		this.m.Title = "The Troupe";
+		this.m.Title = "The Druid";
 	}
 
 	function onPrepareVariables( _vars )
 	{
 		_vars.push([
 			"home",
-			this.World.Tags.get("HomeVillage")
+			this.World.Flags.get("HomeVillage")
 		]);
 	}
 

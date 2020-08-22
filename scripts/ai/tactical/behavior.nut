@@ -282,11 +282,19 @@ this.behavior <- {
 			}
 		}
 
-		if (_skill == null && _target.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) != null && _target.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).isItemType(this.Const.Items.ItemType.TwoHanded))
+		if (_skill == null && _target.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) != null && _target.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).isItemType(this.Const.Items.ItemType.TwoHanded) && !_target.getCurrentProperties().IsImmuneToStun)
 		{
-			if (_entity.getSkills().hasSkill("actives.knock_out") || _entity.getSkills().hasSkill("actives.strike_down") || _entity.getSkills().hasSkill("actives.charge") || _entity.getSkills().hasSkill("actives.disarm"))
+			if (_entity.getSkills().hasSkill("actives.knock_out") || _entity.getSkills().hasSkill("actives.strike_down") || _entity.getSkills().hasSkill("actives.knock_over") || _entity.getSkills().hasSkill("actives.charge") || _entity.getSkills().hasSkill("actives.disarm"))
 			{
 				score = score + 0.1;
+			}
+		}
+
+		if (this.getProperties().TargetPriorityDebilitatedMult != 1.0)
+		{
+			if (_target.getSkills().hasSkill("effects.dazed") || _entity.getSkills().hasSkill("effects.stunned") || _entity.getSkills().hasSkill("effects.sleeping"))
+			{
+				score = score * this.getProperties().TargetPriorityDebilitatedMult;
 			}
 		}
 
@@ -297,7 +305,11 @@ this.behavior <- {
 
 		if (!_target.isNonCombatant())
 		{
-			if (expectedDamage.HitpointDamage + expectedDamage.DirectDamage * this.getProperties().TargetPriorityFinishTreshhold >= _target.getHitpoints())
+			if ((expectedDamage.HitpointDamage + expectedDamage.DirectDamage) * this.getProperties().TargetPriorityFinishTreshhold >= _target.getHitpoints())
+			{
+				score = score * (_skill != null ? this.getProperties().TargetPriorityFinishOpponentMult : this.Math.maxf(1.0, this.getProperties().TargetPriorityFinishOpponentMult * 0.66));
+			}
+			else if (_target.getHitpoints() <= 10 && (_target.getArmor(this.Const.BodyPart.Body) == 0 || _target.getArmor(this.Const.BodyPart.Head)))
 			{
 				score = score * (_skill != null ? this.getProperties().TargetPriorityFinishOpponentMult : this.Math.maxf(1.0, this.getProperties().TargetPriorityFinishOpponentMult * 0.66));
 			}
@@ -322,11 +334,11 @@ this.behavior <- {
 
 		if (this.getAgent().getForcedOpponent() != null && this.getAgent().getForcedOpponent().getID() == _target.getID())
 		{
-			score = score * 100.0;
+			score = score * 1000.0;
 		}
 		else if (_target.isPlayerControlled())
 		{
-			if (_target.getLevel() <= 2 && this.getStrategy().getAveragePlayerLevel() >= 6 && _target.getArmorMax(this.Const.BodyPart.Body) + _target.getArmorMax(this.Const.BodyPart.Head) <= this.getStrategy().getAveragePlayerArmor() * 0.33)
+			if ((_target.getLevel() <= 2 && this.getStrategy().getAveragePlayerLevel() >= 6 || _target.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand) == null) && _target.getArmorMax(this.Const.BodyPart.Body) + _target.getArmorMax(this.Const.BodyPart.Head) <= this.getStrategy().getAveragePlayerArmor() * 0.33)
 			{
 				score = score * this.Const.AI.Behavior.LikelyPlayerBaitMult;
 			}
@@ -448,7 +460,7 @@ this.behavior <- {
 				}
 			}
 
-			if (this.getProperties().TargetPriorityHittingAlliesMult >= 1.0 || alliesAdjacent > this.Const.AI.Behavior.AttackRangedMaxAlliesAdjacent)
+			if (this.getProperties().TargetPriorityHittingAlliesMult < 1.0 && alliesAdjacent > this.Const.AI.Behavior.AttackRangedMaxAlliesAdjacent)
 			{
 				continue;
 			}
@@ -509,7 +521,7 @@ this.behavior <- {
 
 	function onQueryTargetInMeleeRange( _actor, _tag )
 	{
-		if (!_actor.isAlive())
+		if (!_actor.isAlive() || !_actor.isAttackable())
 		{
 			return;
 		}
@@ -529,7 +541,7 @@ this.behavior <- {
 
 	function onQueryAllyInMeleeRange( _actor, _tag )
 	{
-		if (!_actor.isAlive())
+		if (!_actor.isAlive() || !_actor.isAttackable())
 		{
 			return;
 		}
@@ -549,7 +561,7 @@ this.behavior <- {
 
 	function onQueryEnemyInMeleeRange( _actor, _tag )
 	{
-		if (!_actor.isAlive())
+		if (!_actor.isAlive() || !_actor.isAttackable())
 		{
 			return;
 		}
@@ -567,7 +579,7 @@ this.behavior <- {
 		_tag.Targets.push(_actor);
 	}
 
-	function queryDestinationsInMeleeRange( _targetTile, _minRange, _maxRange )
+	function queryDestinationsInRange( _targetTile, _minRange, _maxRange, _maxLevelDifference = 1 )
 	{
 		if (_minRange == 1 && _maxRange == 1)
 		{
@@ -597,7 +609,7 @@ this.behavior <- {
 				TargetTile = _targetTile,
 				Destinations = []
 			};
-			this.Tactical.queryTilesInRange(_targetTile, _minRange, _maxRange, true, [], this.onQueryDestinationInMeleeRange, result);
+			this.Tactical.queryTilesInRange(_targetTile, _minRange, _maxRange, true, [], _maxLevelDifference == 1 ? this.onQueryDestinationInMeleeRange : this.onQueryDestinationInRange, result);
 			return result.Destinations;
 		}
 	}
@@ -609,6 +621,11 @@ this.behavior <- {
 			return;
 		}
 
+		_tag.Destinations.push(_tile);
+	}
+
+	function onQueryDestinationInRange( _tile, _tag )
+	{
 		_tag.Destinations.push(_tile);
 	}
 
@@ -773,7 +790,8 @@ this.behavior <- {
 		local ret = {
 			Turns = 9000.0,
 			TurnsWithAttack = 9000.0,
-			InZonesOfControl = actorTile.getZoneOfControlCountOtherThan(_actor.getAlliedFactions())
+			InZonesOfControl = actorTile.getZoneOfControlCountOtherThan(_actor.getAlliedFactions()),
+			InZonesOfOccupation = actorTile.getZoneOfOccupationCountOtherThan(_actor.getAlliedFactions())
 		};
 
 		if (_actor.isNonCombatant())
@@ -789,7 +807,7 @@ this.behavior <- {
 			ret.TurnsWithAttack = 0.0;
 			return ret;
 		}
-		else if (distance >= 12)
+		else if (distance >= 10)
 		{
 			return ret;
 		}
@@ -800,14 +818,13 @@ this.behavior <- {
 		settings.ActionPointCostPerLevel = _actor.getLevelActionPointCost();
 		settings.FatigueCostFactor = 0.0;
 		settings.AllowZoneOfControlPassing = true;
-		settings.ZoneOfControlCost = 1;
+		settings.ZoneOfControlCost = 2;
 		settings.AlliedFactions = _actor.getAlliedFactions();
 		settings.Faction = _actor.getFaction();
 		settings.TileToConsiderEmpty = entityTile;
 
 		if (navigator.findPath(actorTile, _target, settings, 1))
 		{
-			settings.ZoneOfControlCost = 2;
 			ret.Turns = navigator.getTurnsRequiredForPath(_actor, settings, _actor.getActionPointsMax(), entityTile, _entity.getFaction());
 			ret.TurnsWithAttack = ret.Turns + 1.0 / this.Math.maxf(1.0, _actor.getActionPointsMax()) * 4;
 			return ret;
@@ -828,7 +845,7 @@ this.behavior <- {
 				continue;
 			}
 
-			if (t.Actor.getMoraleState() != this.Const.MoraleState.Fleeing && !t.Actor.getCurrentProperties().IsStunned && !t.Actor.isNonCombatant() && (_includeRanged || !this.isRangedUnit(t.Actor)) && t.Actor.getHitpoints() / t.Actor.getHitpointsMax() >= this.Const.AI.Behavior.MinDangerHitpointsPct && t.Actor.getTile().getZoneOfControlCountOtherThan(t.Actor.getAlliedFactions()) < this.Const.AI.Behavior.IgnoreDangerMinZones)
+			if (t.Actor.getMoraleState() != this.Const.MoraleState.Fleeing && !t.Actor.getCurrentProperties().IsStunned && !t.Actor.getCurrentProperties().IsRooted && !t.Actor.isNonCombatant() && (_includeRanged || !this.isRangedUnit(t.Actor)) && t.Actor.getHitpoints() / t.Actor.getHitpointsMax() >= this.Const.AI.Behavior.MinDangerHitpointsPct && t.Actor.getTile().getZoneOfControlCountOtherThan(t.Actor.getAlliedFactions()) < this.Const.AI.Behavior.IgnoreDangerMinZones)
 			{
 				potentialDanger.push(t.Actor.get());
 			}
@@ -911,6 +928,11 @@ this.behavior <- {
 		}
 
 		return false;
+	}
+
+	function hasNegativeTileEffect( _tile, _entity )
+	{
+		return _tile.Properties.Effect != null && !_tile.Properties.Effect.IsPositive && _tile.Properties.Effect.Applicable(_entity);
 	}
 
 };

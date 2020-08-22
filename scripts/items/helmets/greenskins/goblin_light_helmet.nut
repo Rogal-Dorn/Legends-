@@ -41,7 +41,7 @@ this.goblin_light_helmet <- this.inherit("scripts/items/helmets/helmet", {
 		_properties.Armor[this.Const.BodyPart.Head] += this.m.Condition;
 		_properties.ArmorMax[this.Const.BodyPart.Head] += this.m.ConditionMax;
 		_properties.Stamina += this.Math.ceil(this.m.StaminaModifier * staminaMult);
-		_properties.Vision += this.m.Vision;
+		_properties.Vision += this.getVision();
 		_properties.IsAffectedByRain = false;
 	}
 });

@@ -50,7 +50,7 @@ this.ghost_knight <- this.inherit("scripts/entity/tactical/actor", {
 		];
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.DamageReceived] = 0.5;
 		this.m.SoundPitch = 80 * 0.01;
-		this.getTags().add("undead");
+		this.getFlags().add("undead");
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/zombie_agent");
 		this.m.AIAgent.setActor(this);
 	}
@@ -144,6 +144,7 @@ this.ghost_knight <- this.inherit("scripts/entity/tactical/actor", {
 		b.IsImmuneToStun = true;
 		b.IsImmuneToRoot = true;
 		b.IsImmuneToDisarm = true;
+		b.IsImmuneToFire = true;
 		b.IsIgnoringArmorOnAttack = true;
 		b.IsAffectedByNight = false;
 		b.IsAffectedByInjuries = false;

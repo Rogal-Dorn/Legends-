@@ -16,7 +16,7 @@ this.ijirok_3_event <- this.inherit("scripts/events/event", {
 					Text = "All sorts of strange in these wastes.",
 					function getResult( _event )
 					{
-						this.World.Tags.set("IjirokStage", 3);
+						this.World.Flags.set("IjirokStage", 3);
 						local locations = this.World.EntityManager.getLocations();
 
 						foreach( v in locations )
@@ -47,7 +47,7 @@ this.ijirok_3_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
-		if (!this.World.Tags.has("IjirokStage") || this.World.Tags.get("IjirokStage") == 0 || this.World.Tags.get("IjirokStage") >= 4)
+		if (!this.World.Flags.has("IjirokStage") || this.World.Flags.get("IjirokStage") == 0 || this.World.Flags.get("IjirokStage") >= 4)
 		{
 			return;
 		}

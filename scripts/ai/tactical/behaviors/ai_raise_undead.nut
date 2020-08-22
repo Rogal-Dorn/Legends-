@@ -98,6 +98,11 @@ this.ai_raise_undead <- this.inherit("scripts/ai/tactical/behavior", {
 				continue;
 			}
 
+			if (this.m.Skill.isInRange(c) && !this.m.Skill.onVerifyTarget(myTile, c))
+			{
+				continue;
+			}
+
 			if (this.isAllottedTimeReached(time))
 			{
 				yield null;
@@ -122,7 +127,7 @@ this.ai_raise_undead <- this.inherit("scripts/ai/tactical/behavior", {
 			local mag = this.queryOpponentMagnitude(c, this.Const.AI.Behavior.RaiseUndeadMagnitudeMaxRange);
 			score = score + mag.Opponents * (1.0 - mag.AverageDistanceScore) * this.Math.maxf(0.5, 1.0 - mag.AverageEngaged) * this.Const.AI.Behavior.RaiseUndeadOpponentValue;
 
-			if (c.hasZoneOfControlOtherThan(alliedFactions))
+			if (c.hasZoneOfOccupationOtherThan(alliedFactions))
 			{
 				if (dist <= 2)
 				{
@@ -142,7 +147,7 @@ this.ai_raise_undead <- this.inherit("scripts/ai/tactical/behavior", {
 					{
 						local tile = c.getNextTile(i);
 
-						if (tile.IsOccupiedByActor && !tile.hasZoneOfControlOtherThan(tile.getEntity().getAlliedFactions()))
+						if (tile.IsOccupiedByActor && !tile.hasZoneOfOccupationOtherThan(tile.getEntity().getAlliedFactions()))
 						{
 							if (dist <= 2)
 							{
@@ -151,6 +156,11 @@ this.ai_raise_undead <- this.inherit("scripts/ai/tactical/behavior", {
 							else
 							{
 								score = score + this.Const.AI.Behavior.RaiseUndeadNearFreeEnemyValue;
+							}
+
+							if (tile.Properties.IsMarkedForImpact || this.hasNegativeTileEffect(tile, tile.getEntity()))
+							{
+								score = score + this.Const.AI.Behavior.RaiseUndeadLockIntoNegativeEffect;
 							}
 						}
 					}

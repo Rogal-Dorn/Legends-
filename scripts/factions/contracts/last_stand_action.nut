@@ -33,7 +33,7 @@ this.last_stand_action <- this.inherit("scripts/factions/faction_action", {
 			return;
 		}
 
-		if (this.Math.rand(1, 100) > 25)
+		if (this.Math.rand(1, 100) > 30)
 		{
 			return;
 		}
@@ -51,7 +51,7 @@ this.last_stand_action <- this.inherit("scripts/factions/faction_action", {
 
 		foreach( s in settlements )
 		{
-			if (s.isMilitary() || s.isIsolated())
+			if (s.isMilitary() || s.isIsolated() || !s.isDiscovered())
 			{
 				continue;
 			}

@@ -50,7 +50,7 @@ this.ore_smelters_location <- this.inherit("scripts/entity/world/attached_locati
 		return r;
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 		if (!this.isActive())
 		{

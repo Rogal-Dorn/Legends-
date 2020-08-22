@@ -34,10 +34,10 @@ this.miner_background <- this.inherit("scripts/skills/backgrounds/character_back
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Untidy;
-		this.m.Body = "bust_naked_body_00";
+		this.m.Bodies = this.Const.Bodies.Skinny;
 		this.m.IsLowborn = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
-		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;	
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[2];
 		this.m.Modifiers.Salvage = this.Const.LegendMod.ResourceModifiers.Salvage[2];
 		this.m.Modifiers.ToolConsumption = this.Const.LegendMod.ResourceModifiers.ToolConsumption[1];
@@ -154,36 +154,17 @@ this.miner_background <- this.inherit("scripts/skills/backgrounds/character_back
 	function onAddEquipment()
 	{
 		local items = this.getContainer().getActor().getItems();
-		local r;
+
 		items.equip(this.new("scripts/items/weapons/pickaxe"));
-		r = this.Math.rand(0, 0);
 
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/armor/sackcloth"));
-		}
+		items.equip(this.Const.World.Common.pickArmor([
+			[1, "sackcloth"]
+		]))
 
-		r = this.Math.rand(0, 1);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/mouth_piece"));
-		}
-	}
-
-	function onAddLegendEquipment()
-	{
-		local items = this.getContainer().getActor().getItems();
-		local r;
-		items.equip(this.new("scripts/items/weapons/pickaxe"));
-		items.equip(this.new("scripts/items/legend_armor/cloth/legend_sackcloth"));
-
-		r = this.Math.rand(0, 1);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/mouth_piece"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, ""],
+			[1, "mouth_piece"]
+		]));
 	}
 
 });

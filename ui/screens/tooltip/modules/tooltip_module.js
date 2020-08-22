@@ -956,6 +956,25 @@ TooltipModule.prototype.buildFromData = function(_data, _shouldBeUpdated, _conte
 				hasHeader = true;
 			} break;
 
+            case 'header':
+			{
+                var element = null;
+
+                if (!shouldBeUpdated)
+				{
+                    element = this.addHeaderContentTextDiv(rightContentContainer, data, false, false);
+				}
+				else
+				{
+                    element = this.updateHeaderContentTextDiv(rightContentContainer, data, false, false);
+                }
+
+                if (element !== null)
+				{
+					hasContent = true;
+				}
+			} break;
+
 			case 'headerText':
 			{
 				if (!shouldBeUpdated)
@@ -1111,7 +1130,9 @@ TooltipModule.prototype.buildFromData = function(_data, _shouldBeUpdated, _conte
 		{
 			this.mContainer.addClass('is-full-width is-status-effect-content');
 		} break;
-		case 'ui-element':
+        case 'ui-element':
+        case 'verbatim':
+        case 'company-perk':
 		{
 			this.mContainer.addClass('is-full-width is-ui-element-content');
 		} break;
@@ -1119,7 +1140,7 @@ TooltipModule.prototype.buildFromData = function(_data, _shouldBeUpdated, _conte
 		{
 			this.mContainer.addClass('is-full-width is-ui-item-content');
 		} break;
-        case 'ui-perk':
+        case 'follower':
         {
             this.mContainer.addClass('is-full-width is-ui-element-content');
         } break;
@@ -1306,6 +1327,112 @@ TooltipModule.prototype.updateHeaderDescriptionDiv = function(_parentDIV, _data)
 		}
 
 		// TODO: update  - if needed by the game
+
+		return container;
+	}
+};
+
+
+TooltipModule.prototype.addHeaderContentTextDiv = function(_parentDIV, _data, _isChildRow, _isParentFullWidth)
+{
+	if (!('text' in _data) || typeof(_data.text) !== 'string' || _data.text.length === 0)
+	{
+		return null;
+	}
+
+	var container = null;
+	if (!_isChildRow)
+	{
+		container = $('<div class="row content-container"></div>');
+		container.attr('id', 'tooltip-module-content-text-container-' + _data.id);
+	}
+	else
+	{
+		container = $('<div class="row content-child-container"></div>');
+		container.attr('id', 'tooltip-module-content-child-container-' + _data.id);
+		if (_isParentFullWidth)
+		{
+			container.addClass('is-full-width');
+		}
+	}
+	_parentDIV.append(container);
+
+	var useFullWidth = true;
+
+	// add text
+	var rightColumn = $('<div class="l-right-column"></div>');
+	container.append(rightColumn);
+	
+	// full with?
+	if (useFullWidth || (_isChildRow && _isParentFullWidth))
+	{
+		rightColumn.addClass('is-full-width');
+	}
+
+    var text = $('<div class="title title-font-normal font-bold font-color-ink"></div>');
+	text.attr('id', 'tooltip-module-content-text-' + _data.id);
+	rightColumn.append(text);
+
+	if (typeof(_data.text) == 'string')
+	{
+		var parsedText = XBBCODE.process({
+			text: _data.text,
+			removeMisalignedTags: false,
+			addInLineBreaks: true
+		});
+	
+		text.html(parsedText.html);
+	}
+
+    container.addClass('ui-control-tooltip-module-bottom-devider');
+
+	return container;
+};
+
+TooltipModule.prototype.updateHeaderContentTextDiv = function(_parentDIV, _data, _isChildRow)
+{
+	var container = _parentDIV.find('#tooltip-module-content-text-container-' + _data.id + ':first');
+	
+	var flags = this.extractDataFlags(_data);
+	if (this.flagsContain(flags, 'remove'))
+	{
+		if (container.length > 0)
+		{
+			container.remove();
+		}
+		return null;
+	}
+	else
+	{
+		if (container.length === 0)
+		{
+			return this.addContentTextDiv(_parentDIV, _data, _isChildRow);
+		}
+
+
+		// TODO: update label - if needed by the game
+
+		// update text
+		if ('text' in _data)
+		{
+			var text = container.find('#tooltip-module-content-text-' + _data.id + ':first');
+			if (text.length === 0)
+			{
+				console.error('ERROR: Failed to find "tooltip-module-content-text-' + _data.id + '" element while interpreting tooltip data.');
+				return null;
+			}
+
+			if (typeof(_data.text) == 'string')
+			{
+				var parsedText = XBBCODE.process({
+					text: _data.text,
+					removeMisalignedTags: false,
+					addInLineBreaks: true
+				});
+			
+				text.html(parsedText.html);
+			}
+		}
 
 		return container;
 	}
@@ -2124,6 +2251,17 @@ TooltipModule.prototype.notifyBackendQueryTooltipData = function (_data, _callba
                     SQ.call(this.mSQHandle, 'onQueryUIPerkTooltipData', [_data.entityId, _data.perkId], _callback);
                 }
             } break;
+            case 'follower':
+            {
+                if ('followerId' in _data)
+                {
+                    SQ.call(this.mSQHandle, 'onQueryFollowerTooltipData', _data.followerId, _callback);
+                }
+            } break;
+            case 'verbatim':
+			{
+                _callback(_data.tooltip);
+			} break;
 		}
 	}
 };

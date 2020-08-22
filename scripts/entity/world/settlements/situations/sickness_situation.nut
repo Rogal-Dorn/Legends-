@@ -7,6 +7,11 @@ this.sickness_situation <- this.inherit("scripts/entity/world/settlements/situat
 		this.m.Name = "Sickness";
 		this.m.Description = "A sickness has struck down many folks in this settlement. There are fewer recruits available, and food and medical supplies are scarce.";
 		this.m.Icon = "ui/settlement_status/settlement_effect_23.png";
+		this.m.Rumors = [
+			"Don\'t go near %settlement%! A sickness struck that poor town and the folks are dying like flies over there...",
+			"We had some folks coming here from %settlement%, but had to send them away at the gates. Everybody knows that a cruel disease is spreading in that cursed town.",
+			"Fancy my herbal necklace? It protects me against even the most pestilent disease. You better get yourself one, too, if you\'re planning to ahead on towards %settlement%."
+		];
 		this.m.IsStacking = false;
 	}
 
@@ -37,16 +42,21 @@ this.sickness_situation <- this.inherit("scripts/entity/world/settlements/situat
 		_modifiers.RecruitsMult *= 0.25;
 	}
 
-	function onUpdateDraftList( _draftList )
+	function onUpdateDraftList( _draftList, _gender )
 	{
 		_draftList.push("cripple_background");
 		_draftList.push("cripple_background");
 		_draftList.push("beggar_background");
 		_draftList.push("beggar_background");
+		_draftList.push("monk_background");
+
+		if (_gender)
+		{
 		_draftList.push("female_beggar_background");
 		_draftList.push("legend_nun_background");
 		_draftList.push("legend_herbalist_background");
-		_draftList.push("monk_background");
+
+		}
 
 		if(this.World.LegendsMod.Configs().LegendMagicEnabled())
 		{

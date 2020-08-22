@@ -58,20 +58,21 @@ this.goblin_fighter_low <- this.inherit("scripts/entity/tactical/enemies/goblin_
 			}
 		}
 
-		r = this.Math.rand(1, 2);
-
-		if (r == 1)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/greenskins/goblin_light_armor"));
-		}
-		else if (r == 2)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/greenskins/goblin_medium_armor"));
-		}
+		local item = this.Const.World.Common.pickArmor([
+			[1, "greenskins/goblin_light_armor"],
+			[1, "greenskins/goblin_medium_armor"]
+		])
+		this.m.Items.equip(item);
 
 		if (this.Math.rand(1, 100) <= 50)
 		{
-			this.m.Items.equip(this.new("scripts/items/helmets/greenskins/goblin_light_helmet"));
+			local item = this.Const.World.Common.pickHelmet([
+				[1, "greenskins/goblin_light_helmet"]
+			])
+			if (item != null)
+			{
+				this.m.Items.equip(item);
+			}
 		}
 	}
 

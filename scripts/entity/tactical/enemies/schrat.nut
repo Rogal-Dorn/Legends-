@@ -163,6 +163,12 @@ this.schrat <- this.inherit("scripts/entity/tactical/actor", {
 						token.drop(_tile);
 					}
 				}
+
+				if (this.Math.rand(1, 100) <= 25)
+				{
+					local loot = this.new("scripts/items/loot/ancient_amber_item");
+					loot.drop(_tile);
+				}
 			}
 		}
 

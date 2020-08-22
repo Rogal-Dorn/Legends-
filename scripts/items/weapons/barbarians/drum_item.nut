@@ -7,7 +7,7 @@ this.drum_item <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Name = "Drum";
 		this.m.Description = "";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
-		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon | this.Const.Items.ItemType.TwoHanded;
+		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon | this.Const.Items.ItemType.TwoHanded | this.Const.Items.ItemType.Misc;
 		this.m.IsDoubleGrippable = true;
 		this.m.IsDroppedAsLoot = false;
 		this.m.AddGenericSkill = true;

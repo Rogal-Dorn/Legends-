@@ -9,9 +9,12 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		Hairs = null,
 		HairColors = null,
 		Beards = null,
-		Body = null,
+		Bodies = this.Const.Bodies.AllMale,
+		Ethnicity = 0,
 		Level = 1,
 		BeardChance = 60,
+		Names = [],
+		LastNames = [],
 		Titles = [],
 		RawDescription = "",
 		BackgroundDescription = "",
@@ -215,6 +218,11 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		this.addPerkGroup(cultistGroup);
 	}
 
+	function getEthnicity()
+	{
+		return this.m.Ethnicity;
+	}
+
 	function getExcludedTalents()
 	{
 		return this.m.ExcludedTalents;
@@ -233,26 +241,6 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 	function getModifiers()
 	{
 		return this.m.Modifiers;
-	}
-
-	function getAlignmentMin()
-	{
-		return this.m.AlignmentMin;
-	}
-
-	function SetAlignmentMin( _f )
-	{
-		this.m.AlignmentMin = _f;
-	}
-
-	function getAlignmentMax()
-	{
-		return this.m.AlignmentMax;
-	}
-
-	function SetAlignmentMax( _f )
-	{
-		this.m.AlignmentMax = _f;
 	}
 
 	function create()
@@ -535,6 +523,21 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		}
 
 		local villages = this.World.EntityManager.getSettlements();
+		local citystates = [];
+		local northern = [];
+
+		for( local i = 0; i < villages.len(); i = ++i )
+		{
+			if (this.isKindOf(villages[i], "city_state"))
+			{
+				citystates.push(villages[i]);
+			}
+			else
+			{
+				northern.push(villages[i]);
+			}
+		}
+
 		local brother = this.World.getPlayerRoster().getAll();
 		brother = brother.len() != 0 ? brother[this.Math.rand(0, brother.len() - 1)].getName() : "";
 		local vars = [
@@ -544,11 +547,15 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			],
 			[
 				"randomtown",
-				villages[this.Math.rand(0, villages.len() - 1)].getNameOnly()
+				northern[this.Math.rand(0, northern.len() - 1)].getNameOnly()
 			],
 			[
 				"randomcity",
-				villages[0].getNameOnly()
+				northern[0].getNameOnly()
+			],
+			[
+				"randomcitystate",
+				citystates.len() != 0 ? citystates[this.Math.rand(0, citystates.len() - 1)].getNameOnly() : ""
 			],
 			[
 				"randomname",
@@ -585,6 +592,10 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		vars.push([
 			"fullname",
 			this.getContainer().getActor().getName()
+		]);
+		vars.push([
+			"title",
+			this.getContainer().getActor().getTitle()
 		]);
 		this.m.Description = this.buildTextFromTemplate(this.m.RawDescription, vars);
 	}
@@ -965,7 +976,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		if (this.getContainer().hasSkill("trait.player"))
+		if (this.m.DailyCost == 0 || this.getContainer().hasSkill("trait.player"))
 		{
 			_properties.DailyWage = 0;
 		}
@@ -1018,7 +1029,8 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			local hairColor = this.Const.HairColors.Zombie[this.Math.rand(0, this.Const.HairColors.Zombie.len() - 1)];
 
 			local body = actor.getSprite("body");
-			body.setBrush(this.m.Body);
+			local b = this.m.Bodies[this.Math.rand(0, this.m.Bodies.len() - 1)];
+			body.setBrush(b);
 			body.Saturation = 0.5;
 			body.varySaturation(0.2);
 			body.Color = this.createColor("#c1ddaa");
@@ -1129,10 +1141,24 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 				}
 			}
 
-			if (this.m.Body != null)
+			if (this.m.Bodies != null)
 			{
-				actor.getSprite("body").setBrush(this.m.Body);
-				actor.getSprite("injury_body").setBrush(this.m.Body + "_injured");
+				local body = this.m.Bodies[this.Math.rand(0, this.m.Bodies.len() - 1)];
+				actor.getSprite("body").setBrush(body);
+				actor.getSprite("injury_body").setBrush(body + "_injured");
+			}
+
+			if (this.m.Ethnicity == 1 && hairColor != "grey")
+			{
+				local hair = actor.getSprite("hair");
+				hair.Saturation = 0.8;
+				hair.setBrightness(0.4);
+				local beard = actor.getSprite("beard");
+				beard.Color = hair.Color;
+				beard.Saturation = hair.Saturation;
+				local beard_top = actor.getSprite("beard_top");
+				beard_top.Color = hair.Color;
+				beard_top.Saturation = hair.Saturation;
 			}
 		}
 
@@ -1170,90 +1196,93 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			return broLevel - 1;
 	}
 
-	function calculateAdditionalReputationLevels()
+	function onAdded()
 	{
-		if(this.World.LegendsMod.Configs().LegendRecruitScalingEnabled())
+		if (this.m.DailyCost > 0)
 		{
-			if (!this.World.LegendsMod.Configs().RelationshipsEnabled())
-			{
-				return this.calculateAdditionalRecruitmentLevels();
-			}
-			//When we do alignment checks if our reputation isn't beating the required morality, then we return 0
-			local actor = this.getContainer().getActor();
-			local broAlignmentMin = actor.m.Background.getAlignmentMin();
-			local broAlignmentMax = actor.m.Background.getAlignmentMax();
+			this.m.DailyCost += 1;
+		}
 
-			local currentReputation = this.World.Assets.getMoralReputation();
+		local actor = this.getContainer().getActor();
+		actor.m.Background = this;
+		actor.m.Ethnicity = this.m.Ethnicity;
 
-			//Take care of cases where we have Saintly or Deaded as a Max or Min, meaning we only have to check a > or < respectively
-			if ( broAlignmentMax == this.Const.LegendMod.Alignment.Saintly )
+		if (!this.m.IsNew)
+		{
+			return;
+		}
+
+		if (("State" in this.Tactical) && this.Tactical.State != null && this.Tactical.State.isScenarioMode())
+		{
+			return;
+		}
+
+		this.m.IsNew = false;
+
+		if (this.m.LastNames.len() == 0 && this.m.Ethnicity == 1)
+		{
+			this.m.LastNames = this.Const.Strings.SouthernNamesLast;
+		}
+
+		if (actor.getTitle() == "" && this.m.LastNames.len() != 0 && this.Math.rand(0, 1) == 1)
+		{
+			actor.setTitle(this.m.LastNames[this.Math.rand(0, this.m.LastNames.len() - 1)]);
+		}
+
+		if (actor.getTitle() == "" && this.m.Titles.len() != 0 && this.Math.rand(0, 3) == 3)
+		{
+			actor.setTitle(this.m.Titles[this.Math.rand(0, this.m.Titles.len() - 1)]);
+		}
+
+		if (actor.getNameOnly() == "")
+		{
+			local names = this.m.Names;
+
+			if (names == null || this.m.Names.len() == 0)
 			{
-				//If it's dreaded it always gets level up so just skip, otherwise check if our currentRep is > min required
-				if ( !( broAlignmentMin == this.Const.LegendMod.Alignment.Dreaded ) )
+				names = this.Const.Strings.CharacterNames;
+				if (this.m.Ethnicity == 1)
 				{
-					if ( !( currentReputation > (broAlignmentMin * 10) + 1 ) )
+					names = this.Const.Strings.SouthernNames;
+				}
+				else if (this.m.Ethnicity == 2)
+				{
+					names = this.Const.Strings.BarbarianNames
+				}
+
+				if (this.m.IsFemaleBackground)
+				{
+					names = this.Const.Strings.CharacterNamesFemale;
+					if (this.m.Ethnicity == 1)
 					{
-						return 0;
+						names = this.Const.Strings.SouthernFemaleNames;
+					}
+					else if (this.m.Ethnicity == 2)
+					{
+						names = this.Const.Strings.CharacterNamesFemaleNorse;
 					}
 				}
 			}
-			else if ( broAlignmentMin == this.Const.LegendMod.Alignment.Dreaded )
-			{
-				//Check if rep is < max rep
-				if ( !( currentReputation <= (broAlignmentMax + 1) * 10) )
-				{
-					return 0;
-				}
 
-			}
-			else ( !( currentReputation > (broAlignmentMin * 10) + 1 ) && !( currentReputation <= (broAlignmentMax + 1) * 10) )
-			{
-				return 0;
-			}
-
-			return this.calculateAdditionalRecruitmentLevels();
+			actor.setName(names[this.Math.rand(0, names.len() - 1)]);
 		}
-		else
+
+		this.m.Level += actor.m.Background.calculateAdditionalRecruitmentLevels();
+
+		if (this.m.Level != 1)
 		{
-			return 0;
+			actor.m.PerkPoints = this.m.Level - 1;
+			actor.m.LevelUps = this.m.Level - 1;
+			actor.m.Level = this.m.Level;
+			actor.m.XP = this.Const.LevelXP[this.m.Level - 1];
 		}
-	}
-
-	function onAdded()
-	{
-		this.m.DailyCost += 1;
-		local actor = this.getContainer().getActor();
-		actor.m.Background = this;
-
-		if (this.m.IsNew && !(("State" in this.Tactical) && this.Tactical.State != null && this.Tactical.State.isScenarioMode()))
-		{
-			this.m.IsNew = false;
-
-			if (actor.getTitle() == "" && this.m.Titles.len() != 0 && this.Math.rand(0, 3) == 3)
-			{
-				actor.setTitle(this.m.Titles[this.Math.rand(0, this.m.Titles.len() - 1)]);
-			}
-
-			//get normal recruitment levels and then possibly get extra moral reputation levels
-			this.m.Level += actor.m.Background.calculateAdditionalRecruitmentLevels();
-			this.m.Level += actor.m.Background.calculateAdditionalReputationLevels();
-
-			if (this.m.Level != 1)
-			{
-				actor.m.PerkPoints = this.m.Level - 1;
-				actor.m.LevelUps = this.m.Level - 1;
-				actor.m.Level = this.m.Level;
-				actor.m.XP = this.Const.LevelXP[this.m.Level - 1];
-			}
-
-		}
-
 	}
 
 	function onBuildDescription()
 	{
 		return "";
 	}
+
 
 	function onCombatStarted()
 	{
@@ -1390,43 +1419,28 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			this.m.DailyCostMult = 1.0;
 		}
 
-		if (_in.getMetaData().getVersion() >= 61)
+		this.m.IsFemaleBackground = _in.readBool();
+		if (this.m.IsFemaleBackground)
 		{
-			this.m.IsFemaleBackground = _in.readBool();
+			this.setGender(1);
+		}
+		else
+		{
+			this.setGender(0);
 		}
 
-		if (_in.getMetaData().getVersion() >= 64)
+		this.m.IsConverted = _in.readBool();
+		this.m.CustomPerkTree = [];
+		local numRows = _in.readU8();
+		for( local i = 0; i < numRows; i = ++i )
 		{
-			if (this.m.IsFemaleBackground)
+			local numPerks = _in.readU8();
+			local perks = [];
+			for( local j = 0; j < numPerks; j = ++j )
 			{
-				this.setGender(1);
+				perks.push(_in.readU16())
 			}
-			else
-			{
-				this.setGender(0);
-			}
-		}
-
-		// Not sure what number this should be set to
-		if (_in.getMetaData().getVersion() >= 68)
-		{
-			this.m.IsConverted = _in.readBool();
-		}
-
-		if (_in.getMetaData().getVersion() >= 57)
-		{
-			this.m.CustomPerkTree = [];
-			local numRows = _in.readU8();
-			for( local i = 0; i < numRows; i = ++i )
-	        {
-				local numPerks = _in.readU8();
-				local perks = [];
-				for( local j = 0; j < numPerks; j = ++j )
-				{
-					perks.push(_in.readU16())
-				}
-				this.m.CustomPerkTree.push(perks);
-			}
+			this.m.CustomPerkTree.push(perks);
 		}
 
 		if (this.m.CustomPerkTree != null)

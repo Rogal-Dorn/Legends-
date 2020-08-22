@@ -7,6 +7,7 @@ this.legends_druid_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		this.m.Description = "[p=c][img]gfx/ui/events/event_25.png[/img][/p][p]The druids of the wild woods are wary of humans, prefering the company of beasts \n\n[color=#bcad8c]Wildform:[/color] Can take on the form of beasts in battle.\n[color=#bcad8c]Solitary:[/color] The Druid hates nearly all humans except wildlings, herbalists and practictioners of wild magic \n[color=#bcad8c]Avatar:[/color] If your druid dies, its game over.[/p]";
 		this.m.Difficulty = 3;
 		this.m.Order = 27;
+		this.m.IsFixedLook = true;
 	}
 
 	function isValid()
@@ -40,37 +41,48 @@ this.legends_druid_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		]);
 		bros[0].getBackground().m.RawDescription = "%name% has only ever known the wild woods, the worlds of men are strange and disgusting";
 		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
-		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_bearform"));
-		bros[0].getTags().set("IsPlayerCharacter", true);
+		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_surpress_urges"));
+		local r = this.Math.rand(1,99);
+
+		if (r <= 50 )
+		{
+			bros[0].getSkills().add(this.new("scripts/skills/injury_permanent/legend_lycanthropy_injury"));
+			this.logDebug(this.getName() + " gained lycanthropy");
+		}
+
+		if (r > 50 && r <= 80)
+		{
+			bros[0].getSkills().add(this.new("scripts/skills/injury_permanent/legend_aperthropy_injury"));
+			this.logDebug(this.getName() + " gained aperthropy");
+		}
+
+		if (r > 80 && r <= 95)
+		{
+			bros[0].getSkills().add(this.new("scripts/skills/injury_permanent/legend_ursathropy_injury"));
+			this.logDebug(this.getName() + " gained ursathropy");
+		}
+
+		if (r > 95 && r <= 98)
+		{
+			bros[0].getSkills().add(this.new("scripts/skills/injury_permanent/legend_arborthropy_injury"));
+			this.logDebug(this.getName() + " gained arborthropy");
+		}
+
+		if (r == 99)
+		{
+			bros[0].getSkills().add(this.new("scripts/skills/injury_permanent/legend_vermesthropy_injury"));
+			this.logDebug(this.getName() + " gained vermesthropy");
+		}
+
+
+		bros[0].getFlags().set("IsPlayerCharacter", true);
 		bros[0].setPlaceInFormation(3);
 		bros[0].setVeteranPerks(2);
 
-		foreach( bro in bros )
-		{
-			local val = this.World.State.addNewID(bro);
-			bro.m.CompanyID = val;
-		}
-
-		if (this.World.LegendsMod.Configs().RelationshipsEnabled())
-{
-    local avgAlignment = 0;
-    foreach (bro in this.World.getPlayerRoster().getAll())
-    {
-        if (bro.getAlignment() <= this.Const.LegendMod.Alignment.NeutralMin)
-        {
-            avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMin);
-        }
-        else if (bro.getAlignment() >= this.Const.LegendMod.Alignment.NeutralMax)
-        {
-            avgAlignment += (bro.getAlignment() - this.Const.LegendMod.Alignment.NeutralMax);
-        }
-    }
-    avgAlignment *= (10 / this.World.getPlayerRoster().getSize());
-    this.World.Assets.addMoralReputation(avgAlignment);
-}
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/legend_fresh_fruit_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/roots_and_berries_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/accessory/legend_apothecary_mushrooms_item"));
+		this.World.Assets.getStash().add(this.new("scripts/items/accessory/legend_wolfsbane_necklace_item"));
 	}
 
 	function onSpawnPlayer()
@@ -143,13 +155,6 @@ this.legends_druid_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			this.Music.setTrackList(this.Const.Music.IntroTracks, this.Const.Music.CrossFadeTime);
 			this.World.Events.fire("event.legend_druid_scenario_intro");
 		}, null);
-foreach (b in this.World.getPlayerRoster().getAll())
-		{
-			foreach (add in this.World.getPlayerRoster().getAll())
-			{
-				b.changeActiveRelationship(add, this.Math.rand(0, 10));
-			}
-		}
 	}
 
 	function onInit()
@@ -157,7 +162,7 @@ foreach (b in this.World.getPlayerRoster().getAll())
 		this.starting_scenario.onInit();
 		this.World.State.getPlayer().m.BaseMovementSpeed = 111;
 		this.World.Assets.m.BrothersMax = 27;
-		this.World.Tags.set("IsLegendsDruid", true);
+		this.World.Flags.set("IsLegendsDruid", true);
 	}
 
 	function onCombatFinished()
@@ -166,7 +171,7 @@ foreach (b in this.World.getPlayerRoster().getAll())
 
 		foreach( bro in roster )
 		{
-			if (bro.getTags().get("IsPlayerCharacter"))
+			if (bro.getFlags().get("IsPlayerCharacter"))
 			{
 				return true;
 			}
@@ -175,7 +180,7 @@ foreach (b in this.World.getPlayerRoster().getAll())
 		return false;
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender)
 	{
 
 		local r;

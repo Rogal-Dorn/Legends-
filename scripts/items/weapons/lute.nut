@@ -8,7 +8,7 @@ this.lute <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.lute";
 		this.m.Name = "Lute";
 		this.m.Description = "A musical instrument that, if in the right hands, is capable of producing pleasant sounds with its vibrating strings.";
-		this.m.Categories = "Musical Instrument, Two-Handed";
+		this.m.Categories = "Musical Instrument, Staff, Two-Handed";
 		this.m.IconLarge = "weapons/melee/lute_01.png";
 		this.m.Icon = "weapons/melee/lute_01_70x70.png";
 		this.m.BreakingSound = "sounds/combat/lute_break_01.wav";
@@ -20,12 +20,12 @@ this.lute <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
 		this.m.ArmamentIcon = "icon_lute";
-		this.m.Value = 120;
-		this.m.Condition = 20.0;
-		this.m.ConditionMax = 20.0;
-		this.m.StaminaModifier = -4;
+		this.m.Value = 50;
+		this.m.Condition = 30.0;
+		this.m.ConditionMax = 30.0;
+		this.m.StaminaModifier = -2;
 		this.m.RegularDamage = 10;
-		this.m.RegularDamageMax = 15;
+		this.m.RegularDamageMax = 30;
 		this.m.ArmorDamageMult = 0.1;
 		this.m.DirectDamageMult = 0.4;
 	}
@@ -33,8 +33,8 @@ this.lute <- this.inherit("scripts/items/weapons/weapon", {
 	function onEquip()
 	{
 		this.weapon.onEquip();
-		this.addSkill(this.new("scripts/skills/actives/bash"));
-		local s = this.new("scripts/skills/actives/knock_out");
+		this.addSkill(this.new("scripts/skills/actives/legend_staff_bash"));
+		local s = this.new("scripts/skills/actives/legend_staff_knock_out");
 		s.m.IsFromLute = true;
 		s.m.Icon = "skills/active_88.png";
 		s.m.IconDisabled = "skills/active_88_sw.png";

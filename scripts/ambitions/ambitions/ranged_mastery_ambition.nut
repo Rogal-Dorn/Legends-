@@ -12,6 +12,11 @@ this.ranged_mastery_ambition <- this.inherit("scripts/ambitions/ambition", {
 		this.m.SuccessButtonText = "This will serve us well.";
 	}
 
+	function getUIText()
+	{
+		return this.m.UIText + " (" + this.Math.min(3, this.getBrosWithMastery()) + "/3)";
+	}
+
 	function getBrosWithMastery()
 	{
 		local brothers = this.World.getPlayerRoster().getAll();
@@ -32,7 +37,7 @@ this.ranged_mastery_ambition <- this.inherit("scripts/ambitions/ambition", {
 			else if (p.IsSpecializedInSlings)
 			{
 				count = ++count;
-			}			
+			}
 		}
 
 		return count;

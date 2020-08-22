@@ -22,8 +22,8 @@ this.named_lute <- this.inherit("scripts/items/weapons/named/named_weapon", {
 		this.m.Condition = 80.0;
 		this.m.ConditionMax = 80.0;
 		this.m.StaminaModifier = -10;
-		this.m.RegularDamage = 35;
-		this.m.RegularDamageMax = 55;
+		this.m.RegularDamage = 40;
+		this.m.RegularDamageMax = 60;
 		this.m.ArmorDamageMult = 1.1;
 		this.m.DirectDamageMult = 0.4;
 		this.randomizeValues();
@@ -38,9 +38,14 @@ this.named_lute <- this.inherit("scripts/items/weapons/named/named_weapon", {
 
 	function onEquip()
 	{
-		this.named_weapon.onEquip();
-		this.addSkill(this.new("scripts/skills/actives/bash"));
-		this.addSkill(this.new("scripts/skills/actives/knock_out"));
+		this.weapon.onEquip();
+		this.addSkill(this.new("scripts/skills/actives/legend_staff_bash"));
+		local s = this.new("scripts/skills/actives/legend_staff_knock_out");
+		s.m.IsFromLute = true;
+		s.m.Icon = "skills/active_88.png";
+		s.m.IconDisabled = "skills/active_88_sw.png";
+		s.m.Overlay = "active_88";
+		this.addSkill(s);
 	}
 
 });

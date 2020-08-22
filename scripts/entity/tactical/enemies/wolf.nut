@@ -5,6 +5,19 @@ this.wolf <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Type = this.Const.EntityType.Wolf;
 		this.m.XP = this.Const.Tactical.Actor.Wolf.XP;
 		this.m.BloodType = this.Const.BloodType.Red;
+		this.m.ExcludedInjuries = [
+			"injury.fractured_hand",
+			"injury.crushed_finger",
+			"injury.fractured_elbow",
+			"injury.smashed_hand",
+			"injury.broken_arm",
+			"injury.cut_arm_sinew",
+			"injury.cut_arm",
+			"injury.split_hand",
+			"injury.pierced_hand",
+			"injury.pierced_arm_muscles",
+			"injury.burnt_hands"
+		];
 		this.actor.create();
 		this.m.IsActingImmediately = true;
 		this.m.BloodSplatterOffset = this.createVec(0, 0);

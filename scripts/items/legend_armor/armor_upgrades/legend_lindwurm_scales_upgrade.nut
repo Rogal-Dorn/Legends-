@@ -61,23 +61,23 @@ this.legend_lindwurm_scales_upgrade <- this.inherit("scripts/items/legend_armor/
 
 	function onEquip()
 	{
-		this.item.onEquip();
+		this.legend_armor_upgrade.onEquip();
 		local c = this.m.Armor.getContainer();
 
 		if (c != null && c.getActor() != null && !c.getActor().isNull())
 		{
-			c.getActor().getTags().add("body_immune_to_acid");
+			c.getActor().getFlags().add("body_immune_to_acid");
 		}
 	}
 
 	function onUnequip()
 	{
-		this.item.onUnequip();
+		this.legend_armor_upgrade.onUnequip();
 		local c = this.m.Armor.getContainer();
 
 		if (c != null && c.getActor() != null && !c.getActor().isNull())
 		{
-			c.getActor().getTags().remove("body_immune_to_acid");
+			c.getActor().getFlags().remove("body_immune_to_acid");
 		}
 	}
 
@@ -88,18 +88,18 @@ this.legend_lindwurm_scales_upgrade <- this.inherit("scripts/items/legend_armor/
 
 		if (c != null && c.getActor() != null && !c.getActor().isNull())
 		{
-			c.getActor().getTags().add("body_immune_to_acid");
+			c.getActor().getFlags().add("body_immune_to_acid");
 		}
 	}
 
 	function onRemoved(_app)
 	{
-		
+
 		local c = this.m.Armor.getContainer();
 
 		if (c != null && c.getActor() != null && !c.getActor().isNull())
 		{
-			c.getActor().getTags().remove("body_immune_to_acid");
+			c.getActor().getFlags().remove("body_immune_to_acid");
 		}
 		this.legend_armor_upgrade.onRemoved(_app);
 	}

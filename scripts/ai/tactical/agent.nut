@@ -240,7 +240,7 @@ this.agent <- {
 			}
 		}
 
-		if (!_evaluateOnly && (this.isReady() || this.m.ActiveBehavior != null && this.m.ActiveBehavior.getID() == this.Const.AI.Behavior.ID.Idle && this.m.Actor.getActionPoints() == this.m.Actor.getActionPointsMax()))
+		if (!_evaluateOnly && (this.isReady() || this.m.ActiveBehavior != null && this.m.ActiveBehavior.getID() == this.Const.AI.Behavior.ID.Idle && this.m.Actor.getActionPoints() == this.m.Actor.getActionPointsMax() || !this.Tactical.TurnSequenceBar.isLastEntityPlayerControlled() && this.m.ActiveBehavior != null && this.m.ActiveBehavior.getID() == this.Const.AI.Behavior.ID.Idle && (this.Const.Tactical.Common.LastAIBehaviorID == this.Const.AI.Behavior.ID.EngageMelee || this.Const.Tactical.Common.LastAIBehaviorID == this.Const.AI.Behavior.ID.EngageRanged)))
 		{
 			this.m.IsEvaluating = this.execute(this.m.Actor);
 
@@ -369,6 +369,11 @@ this.agent <- {
 	{
 		if (this.m.ActiveBehavior != null)
 		{
+			if (this.m.ActiveBehavior.getID() != this.Const.AI.Behavior.ID.Idle)
+			{
+				this.Const.Tactical.Common.LastAIBehaviorID = this.m.ActiveBehavior.getID();
+			}
+
 			return this.m.ActiveBehavior.execute(_entity);
 		}
 	}
@@ -674,7 +679,7 @@ this.agent <- {
 			this.m.Properties.EngageRangeIdeal = 1;
 		}
 
-		if (this.m.Actor.getSkills().hasSkill("actives.split"))
+		if (this.m.Actor.getSkills().hasSkill("actives.split") || this.m.Actor.getSkills().hasSkill("actives.split_axe") || this.m.Actor.getSkills().hasSkill("actives.ignite_firelance") && this.m.Actor.getSkills().getSkillByID("actives.ignite_firelance").getAmmo() > 0)
 		{
 			this.m.Properties.EngageEnemiesInLinePreference = 2;
 		}

@@ -24,8 +24,8 @@ this.named_goblin_heavy_bow <- this.inherit("scripts/items/weapons/named/named_w
 		this.m.RangeMin = 2;
 		this.m.RangeMax = 7;
 		this.m.RangeIdeal = 7;
-		this.m.RegularDamage = 25;
-		this.m.RegularDamageMax = 40;
+		this.m.RegularDamage = 30;
+		this.m.RegularDamageMax = 50;
 		this.m.ArmorDamageMult = 0.6;
 		this.m.DirectDamageMult = 0.35;
 		this.m.DirectDamageAdd = 0.1;
@@ -42,6 +42,11 @@ this.named_goblin_heavy_bow <- this.inherit("scripts/items/weapons/named/named_w
 	function getAmmoID()
 	{
 		return "ammo.arrows";
+	}
+
+	function getAdditionalRange( _actor )
+	{
+		return _actor.getCurrentProperties().IsSpecializedInBows ? 1 : 0;
 	}
 
 	function onEquip()

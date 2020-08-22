@@ -24,7 +24,7 @@ this.tundra_elk_destroyed_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
-				this.World.Tags.set("IjirokStage", 5);
+				this.World.Flags.set("IjirokStage", 5);
 				local stash = this.World.Assets.getStash().getItems();
 
 				foreach( i, item in stash )
@@ -42,7 +42,7 @@ this.tundra_elk_destroyed_event <- this.inherit("scripts/events/event", {
 				}
 
 				this.World.Assets.getStash().makeEmptySlots(2);
-				local item = this.new("scripts/items/helmets/legendary/ijirok_helmet");
+				local item = this.Const.World.Common.pickHelmet([[1, "legendary/ijirok_helmet"]]);
 				this.World.Assets.getStash().add(item);
 				this.List.push({
 					id = 10,
@@ -50,15 +50,9 @@ this.tundra_elk_destroyed_event <- this.inherit("scripts/events/event", {
 					text = "You gain " + item.getName()
 				});
 
-				if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
-				{
-					item = this.new("scripts/items/legend_armor/legendary/legend_ijirok_armor");
-				}
-				else
-				{
-					item = this.new("scripts/items/armor/legendary/ijirok_armor");
-				}
-
+				item = this.Const.World.Common.pickArmor([
+					[1, "legendary/ijirok_armor"],
+				]);
 
 				this.World.Assets.getStash().add(item);
 				this.List.push({
@@ -87,7 +81,7 @@ this.tundra_elk_destroyed_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
-				this.World.Tags.set("IjirokStage", 5);
+				this.World.Flags.set("IjirokStage", 5);
 			}
 
 		});

@@ -66,7 +66,8 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.Untidy;
 		this.m.BeardChance = 100;
-		this.m.Body = "bust_naked_body_04";
+		this.m.Bodies = this.Const.Bodies.LegendTattos;
+		this.m.Ethnicity = 2;
 		this.m.Level = 3;
 		this.m.IsCombatBackground = true;
 		this.m.IsLowborn = true;
@@ -107,6 +108,7 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.LegendBackToBasics,
 				this.Const.Perks.PerkDefs.LegendSpecStaffSkill,
 				this.Const.Perks.PerkDefs.LegendAlert,
+				this.Const.Perks.PerkDefs.LegendTrueForm,
 				this.Const.Perks.PerkDefs.LegendGatherer,
 				this.Const.Perks.PerkDefs.LegendRoots
 			],
@@ -121,6 +123,7 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.LegendSmackdown,
 				this.Const.Perks.PerkDefs.LegendOnslaught,
 				this.Const.Perks.PerkDefs.LegendKick,
+				this.Const.Perks.PerkDefs.LegendScryTrance,
 				this.Const.Perks.PerkDefs.LegendSummonFalcon
 			],
 			[
@@ -132,17 +135,20 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.LegendSpecStaffStun,
 				this.Const.Perks.PerkDefs.LegendGrapple,
 				this.Const.Perks.PerkDefs.LegendSecondWind,
-				this.Const.Perks.PerkDefs.LegendWolfform,
+				this.Const.Perks.PerkDefs.LegendSurpressUrges,
 				this.Const.Perks.PerkDefs.LegendPrayerOfLife
 
 			],
 			[
 				this.Const.Perks.PerkDefs.LegendSummonWolf,
-				this.Const.Perks.PerkDefs.LegendBearform,
 				this.Const.Perks.PerkDefs.LegendMasteryStaves,
 				this.Const.Perks.PerkDefs.LegendSpecFists,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyOrk,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyGoblin,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyBandit,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyNoble
 				this.Const.Perks.PerkDefs.LegendPoisonImmunity,
-				this.Const.Perks.PerkDefs.LegendPotionBrewer
+				this.Const.Perks.PerkDefs.LegendPotionBrewer,
 				this.Const.Perks.PerkDefs.SpecThrowing
 			],
 			[
@@ -152,11 +158,8 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.LegendBattleheart,
 				this.Const.Perks.PerkDefs.LegendChoke,
 				this.Const.Perks.PerkDefs.LegendSummonStorm,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyOrk,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyGoblin,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyBandit,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyNoble
-
+				this.Const.Perks.PerkDefs.LegendControlInstincts,
+				this.Const.Perks.PerkDefs.LegendReadOmensTrance
 			],
 			[
 				this.Const.Perks.PerkDefs.Berserk,
@@ -167,6 +170,7 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.LegendInsects,
 				this.Const.Perks.PerkDefs.LegendMuscularity,
 				this.Const.Perks.PerkDefs.LegendDrumsOfLife,
+				this.Const.Perks.PerkDefs.LegendDistantVisions,
 				this.Const.Perks.PerkDefs.LegendSummonBear
 			],
 			[
@@ -176,9 +180,8 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.BattleFlow,
 				this.Const.Perks.PerkDefs.Stalwart,
 				this.Const.Perks.PerkDefs.LegendFreedomOfMovement,
-				this.Const.Perks.PerkDefs.LegendTreeform,
 				this.Const.Perks.PerkDefs.LegendDrumsOfLife,
-				this.Const.Perks.PerkDefs.LegendTrueForm
+				this.Const.Perks.PerkDefs.LegendMasterAnger
 			]
 		];
 
@@ -191,7 +194,7 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 		local r = _gender;
 		if (_gender == -1)
 		{
-			r = 0;
+			r = this.Math.rand(0, 9);
 			if (this.World.LegendsMod.Configs().LegendGenderEnabled())
 			{
 				r = this.Math.rand(0, 1);
@@ -200,14 +203,14 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 
 		if (r != 1)
 		{
-			return
+			return;
 		}
 		this.m.Faces = this.Const.Faces.PrettyFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
-		this.m.HairColors = this.Const.HairColors.Young;
+		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsFemaleBackground = true;
 	}
 
@@ -251,31 +254,31 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 	{
 		local c = {
 			Hitpoints = [
-				20,
+				10,
 				25
 			],
 			Bravery = [
-				0,
-				0
+				-5,
+				5
 			],
 			Stamina = [
 				5,
 				10
 			],
 			MeleeSkill = [
-				10,
-				15
+				5,
+				10
 			],
 			RangedSkill = [
-				0,
+				-10,
 				0
 			],
 			MeleeDefense = [
-				15,
+				5,
 				15
 			],
 			RangedDefense = [
-				5,
+				-5,
 				5
 			],
 			Initiative = [
@@ -284,21 +287,6 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 			]
 		};
 		return c;
-	}
-
-	function onAdded()
-	{
-		this.character_background.onAdded();
-		local actor = this.getContainer().getActor();
-
-		if (this.m.IsFemaleBackground == true)
-		{
-			actor.setName(this.Const.Strings.CharacterNamesFemaleNorse[this.Math.rand(0, this.Const.Strings.CharacterNamesFemaleNorse.len() - 1)]);
-		}
-		else
-		{
-			actor.setName(this.Const.Strings.BarbarianNames[this.Math.rand(0, this.Const.Strings.BarbarianNames.len() - 1)]);
-		}
 	}
 
 	function onSetAppearance()
@@ -334,8 +322,8 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 		this.character_background.onAdded();
 		local actor = this.getContainer().getActor();
 		actor.setTitle("The Druid");
-		this.m.Container.add(this.new("scripts/skills/traits/deathwish_trait"));
-		//this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
+
+
 	}
 
 
@@ -350,68 +338,19 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");
 		stash.removeByID("supplies.ground_grains");
-		stash.add(this.new("scripts/items/accessory/legend_apothecary_mushrooms_item"));
-		stash.add(this.new("scripts/items/accessory/antidote_item"));
-		stash.add(this.new("scripts/items/accessory/legend_warbear_item"));
-		stash.add(this.new("scripts/items/supplies/roots_and_berries_item"));
-		stash.add(this.new("scripts/items/supplies/legend_fresh_fruit_item"));
-		stash.add(this.new("scripts/items/supplies/medicine_item"));
-
-
-	}
-
-	function onAddLegendEquipment()
-	{
-		local talents = this.getContainer().getActor().getTalents();
-		talents.resize(this.Const.Attributes.COUNT, 0);
-		talents[this.Const.Attributes.MeleeSkill] = 3;
-		talents[this.Const.Attributes.Hitpoints] = 3;
-		this.getContainer().getActor().fillTalentValues(2, true);
-		local items = this.getContainer().getActor().getItems();
-		local stash = this.World.Assets.getStash()
-		stash.removeByID("supplies.ground_grains");
-		stash.removeByID("supplies.ground_grains");
-		stash.add(this.new("scripts/items/accessory/berserker_mushrooms_item"));
 		stash.add(this.new("scripts/items/supplies/roots_and_berries_item"));
 		stash.add(this.new("scripts/items/supplies/medicine_item"));
 
-			local cloths = [
-            [0, ""],
-			[0, "cloth/legend_gambeson"],
-			[0, "cloth/legend_gambeson_plain"],
-			[0, "cloth/legend_gambeson_wolf"],
-			[0, "cloth/legend_padded_surcoat"],
-			[0, "cloth/legend_robes_herbalist"],
-			[0, "cloth/legend_apron_butcher"],
-			[0, "cloth/legend_robes_nun"],
-			[0, "cloth/legend_apron_smith"],
-			[0, "cloth/legend_robes_wizard"],
-			[1, "cloth/legend_robes_magic"],
-			[0, "cloth/legend_sackcloth"],
-			[0, "cloth/legend_sackcloth_patched"],
-			[0, "cloth/legend_sackcloth_tattered"],
-			[0, "cloth/legend_tunic"],
-			[0, "cloth/legend_tunic_noble"]
-		];
-		local armor = this.Const.World.Common.pickLegendArmor(cloths)
-		items.equip(armor)
-		local plates = [
-			[0, ""],
-			[1, "plate/legend_thick_furs_armor"],
-			[1, "plate/legend_animal_hide_armor"],
-			[1, "plate/legend_hide_and_bone_armor"],
-			[1, "plate/legend_reinforced_animal_hide_armor"],
-			[0, "plate/legend_scrap_metal_armor"],
-			[0, "plate/legend_rugged_scale_armor"],
-			[0, "plate/legend_heavy_iron_armor"],
-			[0, "plate/legend_thick_plated_barbarian_armor"]
-		]
-		local plate = this.Const.World.Common.pickLegendArmor(plates)
-		if (plate != null)
-		{
-			armor.setUpgrade(plate)
-		}
-		items.equip(this.new("scripts/items/helmets/barbarians/bear_headpiece"));
+		items.equip(this.Const.World.Common.pickArmor([
+			[1, "barbarians/hide_and_bone_armor"]
+		]));
+
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "barbarians/bear_headpiece"]
+		]));
+
+		items.equip(this.new("scripts/items/accessory/legend_wolfsbane_necklace_item"));
+
 	}
 
 	function onSerialize( _out )

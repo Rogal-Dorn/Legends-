@@ -32,7 +32,7 @@ this.female_adventurous_noble_background <- this.inherit("scripts/skills/backgro
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsFemaleBackground = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
@@ -92,7 +92,7 @@ this.female_adventurous_noble_background <- this.inherit("scripts/skills/backgro
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.All;
 		this.m.BeardChance = 50;
-		this.m.Body = "bust_naked_body_01";
+
 		this.m.IsFemaleBackground = false;
 		this.m.BackgroundDescription = "Adventurous Nobles tend to have high resolve and ranged skills, but often neglect ranged defense.";
 		this.m.GoodEnding = "Adventurousness never leaves the soul of a man like %name%. {Instead of returning to his noble family, he left the %companyname% and headed east in search of rare beasts. Word has it he returned to town with the head of what looked like a giant lizard, but you don\'t believe such fantastical tripe. | He departed the %companyname% and ventured west, sailing across the oceans to unseen lands. There\'s no telling where he is these days, but you\'ve little doubt that he\'ll be coming back with stories to tell. | He retired from the %companyname% and, instead of returning to his noble family, headed south. Word has it he fought in a great noble civil war, killed an orc warlord, climbed the highest mountain in the land, and is currently writing an epic about his travels. | The nobleman left the %companyname% and, preferring the life of adventure to noble boredom, he headed north. Word has it that he\'s currently marching a troop of explorers to the furthest reaches of the world.}";
@@ -167,21 +167,6 @@ this.female_adventurous_noble_background <- this.inherit("scripts/skills/backgro
 		return c;
 	}
 
-	function onAdded()
-	{
-		this.character_background.onAdded();
-		local actor = this.getContainer().getActor();
-
-		if (this.m.IsFemaleBackground == true)
-		{
-			actor.setName(this.Const.Strings.LadyNames[this.Math.rand(0, this.Const.Strings.LadyNames.len() - 1)]);
-		}
-		else
-		{
-			actor.setName(this.Const.Strings.KnightNames[this.Math.rand(0, this.Const.Strings.KnightNames.len() - 1)]);
-		}
-	}
-
 	function onAddEquipment()
 	{
 		local items = this.getContainer().getActor().getItems();
@@ -203,169 +188,18 @@ this.female_adventurous_noble_background <- this.inherit("scripts/skills/backgro
 			items.equip(this.new("scripts/items/weapons/pike"));
 		}
 
-		r = this.Math.rand(0, 1);
+		items.equip(this.Const.World.Common.pickArmor([
+			[1, "mail_shirt"],
+			[1, "basic_mail_shirt"],
+			[1, "mail_hauberk"]
+		]))
 
-
-		r = this.Math.rand(0, 2);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/armor/mail_shirt"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/armor/basic_mail_shirt"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/armor/mail_hauberk"));
-		}
-
-		r = this.Math.rand(0, 4);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/nasal_helmet"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/padded_nasal_helmet"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/helmets/nasal_helmet_with_mail"));
-		}
-		else if (r == 3)
-		{
-			items.equip(this.new("scripts/items/helmets/mail_coif"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "nasal_helmet"],
+			[1, "padded_nasal_helmet"],
+			[1, "nasal_helmet_with_mail"],
+			[1, "mail_coif"],
+			[1, ""]
+		]));
 	}
-
-	function onAddLegendEquipment()
-	{
-		local items = this.getContainer().getActor().getItems();
-		local r;
-		r = this.Math.rand(0, 2);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/weapons/hunting_bow"));
-			items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/weapons/crossbow"));
-			items.equip(this.new("scripts/items/ammo/quiver_of_bolts"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/weapons/pike"));
-		}
-
-
-		local cloths = [
-			[2, "cloth/legend_gambeson"],
-			[0, "cloth/legend_gambeson_plain"],
-			[0, "cloth/legend_gambeson_wolf"],
-			[2, "cloth/legend_padded_surcoat"],
-			[0, "cloth/legend_robes"],
-			[0, "cloth/legend_apron_butcher"],
-			[0, "cloth/legend_robes_nun"],
-			[0, "cloth/legend_apron_smith"],
-			[0, "cloth/legend_robes_wizard"],
-			[0, "cloth/legend_sackcloth"],
-			[0, "cloth/legend_sackcloth_patched"],
-			[0, "cloth/legend_sackcloth_tattered"],
-			[2, "cloth/legend_tunic"],
-			[1, "cloth/legend_tunic_noble"]
-		];
-		local armor = this.Const.World.Common.pickLegendArmor(cloths)
-
-		if (armor != null)
-		{
-			local chains = [
-				[0, "chain/legend_armor_ancient_double_mail"],
-				[0, "chain/legend_armor_ancient_mail"],
-				[1, "chain/legend_armor_basic_mail"],
-				[1, "chain/legend_armor_hauberk"],
-				[0, "chain/legend_armor_hauberk_full"],
-				[1, "chain/legend_armor_hauberk_sleevless"],
-				[1, "chain/legend_armor_mail_shirt"],
-				[1, "chain/legend_armor_mail_shirt_simple"],
-				[1, "chain/legend_armor_reinforced_mail"],
-				[1, "chain/legend_armor_reinforced_mail_shirt"],
-				[0, "chain/legend_armor_reinforced_rotten_mail_shirt"],
-				[0, "chain/legend_armor_reinforced_worn_mail"],
-				[0, "chain/legend_armor_reinforced_worn_mail_shirt"],
-				[0, "chain/legend_armor_rusty_mail_shirt"],
-				[1, "chain/legend_armor_short_mail"]
-			]
-
-			local chain = this.Const.World.Common.pickLegendArmor(chains)
-			if (chain != null)
-			{
-				armor.setUpgrade(chain)
-			}
-
-			local plates = [
-				[3, ""],
-				[1, "plate/legend_armor_leather_brigandine"],
-				[0, "plate/legend_armor_leather_brigandine_hardened"],
-				[0, "plate/legend_armor_leather_brigandine_hardened_full"],
-				[0, "plate/legend_armor_leather_jacket"],
-				[0, "plate/legend_armor_leather_jacket_simple"],
-				[0, "plate/legend_armor_leather_lamellar"],
-				[0, "plate/legend_armor_leather_lamellar_harness_heavy"],
-				[0, "plate/legend_armor_leather_lamellar_harness_reinforced"],
-				[0, "plate/legend_armor_leather_lamellar_heavy"],
-				[0, "plate/legend_armor_leather_lamellar_reinforced"],
-				[0, "plate/legend_armor_leather_noble"],
-				[0, "plate/legend_armor_leather_padded"],
-				[0, "plate/legend_armor_leather_riveted"],
-				[0, "plate/legend_armor_leather_riveted_light"],
-				[0, "plate/legend_armor_leather_scale"],
-				[0, "plate/legend_armor_plate_ancient_chest"],
-				[0, "plate/legend_armor_plate_ancient_harness"],
-				[0, "plate/legend_armor_plate_ancient_mail"],
-				[0, "plate/legend_armor_plate_ancient_scale"],
-				[0, "plate/legend_armor_plate_ancient_scale_coat"],
-				[0, "plate/legend_armor_plate_ancient_scale_harness"],
-				[0, "plate/legend_armor_plate_chest"],
-				[0, "plate/legend_armor_plate_chest_rotten"],
-				[0, "plate/legend_armor_plate_cuirass"],
-				[0, "plate/legend_armor_plate_full"],
-				[0, "plate/legend_armor_scale"],
-				[0, "plate/legend_armor_scale_coat"],
-				[0, "plate/legend_armor_scale_coat_rotten"],
-				[0, "plate/legend_armor_scale_shirt"]
-			]
-			local plate = this.Const.World.Common.pickLegendArmor(plates)
-			if (plate != null)
-			{
-				armor.setUpgrade(plate)
-			}
-
-			items.equip(armor);
-		}
-
-		r = this.Math.rand(0, 4);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/nasal_helmet"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/padded_nasal_helmet"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/helmets/nasal_helmet_with_mail"));
-		}
-		else if (r == 3)
-		{
-			items.equip(this.new("scripts/items/helmets/mail_coif"));
-		}
-	}
-
 });

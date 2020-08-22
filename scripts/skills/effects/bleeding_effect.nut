@@ -50,7 +50,9 @@ this.bleeding_effect <- this.inherit("scripts/skills/skill", {
 		{
 			return this.getContainer().getActor();
 		}
-
+		local rareCrash = this.m.Actor;
+		local rareCrashType = typeof this.m.Actor; //
+		local isAlive = rareCrash.isAlive();
 		if (this.m.Actor != this.getContainer().getActor())
 		{
 			// Must be alive to get the credit, to stop crashes
@@ -66,7 +68,7 @@ this.bleeding_effect <- this.inherit("scripts/skills/skill", {
 		 		return this.getContainer().getActor();
 			 }
 
-			 if (this.m.Actor.getTags().get("Devoured") == true)
+			 if (this.m.Actor.getFlags().get("Devoured") == true)
 			 {
 		 		return this.getContainer().getActor();
 			 }

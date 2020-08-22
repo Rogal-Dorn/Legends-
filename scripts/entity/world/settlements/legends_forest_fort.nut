@@ -92,12 +92,9 @@ this.legends_forest_fort <- this.inherit("scripts/entity/world/settlements/legen
 			"Fichtenwall"
 		]];
 		this.m.DraftLists = [[
-			"legend_shieldmaiden_background",
 			"apprentice_background",
 			"houndmaster_background",
-			"female_bowyer_background",
 			"brawler_background",
-			"female_daytaler_background",
 			"hunter_background",
 			"hunter_background",
 			"lumberjack_background",
@@ -110,13 +107,9 @@ this.legends_forest_fort <- this.inherit("scripts/entity/world/settlements/legen
 			"retired_soldier_background",
 			"retired_soldier_background"
 		],[
-			"legend_shieldmaiden_background",
 			"apprentice_background",
 			"houndmaster_background",
-			"female_bowyer_background",
-			"female_bowyer_background",
 			"brawler_background",
-			"female_butcher_background",
 			"daytaler_background",
 			"gravedigger_background",
 			"hunter_background",
@@ -126,20 +119,13 @@ this.legends_forest_fort <- this.inherit("scripts/entity/world/settlements/legen
 			"militia_background",
 			"militia_background",
 			"wildman_background",
-			"wildwoman_background",
 			"witchhunter_background",
 			"bastard_background",
 			"deserter_background",
-			"female_disowned_noble_background",
-			"female_disowned_noble_background",
 			"retired_soldier_background",
 			"squire_background"
 		],[
 		 	"apprentice_background",
-			"female_beggar_background",
-			"female_bowyer_background",
-			"female_bowyer_background",
-			"female_bowyer_background",
 			"brawler_background",
 			"gambler_background",
 			"gravedigger_background",
@@ -154,13 +140,10 @@ this.legends_forest_fort <- this.inherit("scripts/entity/world/settlements/legen
 			"ratcatcher_background",
 			"refugee_background",
 			"wildman_background",
-			"wildwoman_background",
 			"witchhunter_background",
 			"bastard_background",
 			"deserter_background",
 			"deserter_background",
-			"female_disowned_noble_background",
-			"female_disowned_noble_background",
 			"hedge_knight_background",
 			"raider_background",
 			"raider_background",
@@ -171,9 +154,31 @@ this.legends_forest_fort <- this.inherit("scripts/entity/world/settlements/legen
 			"squire_background",
 			"swordmaster_background",
 			"cripple_background",
+		]];
+		this.m.FemaleDraftLists = [[
+			"legend_shieldmaiden_background",
+			"female_bowyer_background",
+			"female_daytaler_background",
+		],[
+			"legend_shieldmaiden_background",
+			"female_bowyer_background",
+			"female_bowyer_background",
+			"female_butcher_background",
+			"wildwoman_background",
+			"female_disowned_noble_background",
+			"female_disowned_noble_background",
+		],[
+			"female_beggar_background",
+			"female_bowyer_background",
+			"female_bowyer_background",
+			"female_bowyer_background",
+			"wildwoman_background",
+			"female_disowned_noble_background",
+			"female_disowned_noble_background",
 			"legend_shieldmaiden_background",
 			"legend_shieldmaiden_background"
 		]];
+
 		this.m.StablesLists = [[
 			"legend_donkey",
 			"legend_horse_rouncey"

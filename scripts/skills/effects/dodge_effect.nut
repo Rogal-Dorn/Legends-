@@ -1,8 +1,5 @@
 this.dodge_effect <- this.inherit("scripts/skills/skill", {
-	m = {
-		IsEnabled = true,
-		LastDamageTakenInRound = 0
-	},
+	m = {},
 	function create()
 	{
 		this.m.ID = "effects.dodge";
@@ -46,12 +43,9 @@ this.dodge_effect <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		if (this.m.IsEnabled)
-		{
-			local initiative = this.Math.floor(this.getContainer().getActor().getInitiative() * 0.15);
-			_properties.MeleeDefense += this.Math.max(0, initiative);
-			_properties.RangedDefense += this.Math.max(0, initiative);
-		}
+		local initiative = this.Math.floor(this.getContainer().getActor().getInitiative() * 0.15);
+		_properties.MeleeDefense += this.Math.max(0, initiative);
+		_properties.RangedDefense += this.Math.max(0, initiative);
 	}
 
 });

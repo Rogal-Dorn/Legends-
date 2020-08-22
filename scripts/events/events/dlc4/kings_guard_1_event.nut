@@ -37,14 +37,14 @@ this.kings_guard_1_event <- this.inherit("scripts/events/event", {
 				_event.m.Dude = roster.create("scripts/entity/tactical/player");
 					if (this.World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
 							{
-							_event.m.Dude.getTags().add("PlayerSkeleton");
-							_event.m.Dude.getTags().add("undead");
-							_event.m.Dude.getTags().add("skeleton");
+							_event.m.Dude.getFlags().add("PlayerSkeleton");
+							_event.m.Dude.getFlags().add("undead");
+							_event.m.Dude.getFlags().add("skeleton");
 							_event.m.Dude.setStartValuesEx([
 								"cripple_background"
 							], false);
 							_event.m.Dude.getSkills().add(this.new("scripts/skills/racial/skeleton_racial"));
-							_event.m.Dude.getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));								
+							_event.m.Dude.getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));
 							}
 					else
 						{
@@ -73,7 +73,7 @@ this.kings_guard_1_event <- this.inherit("scripts/events/event", {
 				_event.m.Dude.getItems().unequip(_event.m.Dude.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand));
 				_event.m.Dude.getItems().unequip(_event.m.Dude.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand));
 				_event.m.Dude.worsenMood(1.5, "Got taken by barbarians and left to die in the cold");
-				_event.m.Dude.getTags().set("IsKingsGuard", true);
+				_event.m.Dude.getFlags().set("IsKingsGuard", true);
 				this.Characters.push(_event.m.Dude.getImagePath());
 			}
 

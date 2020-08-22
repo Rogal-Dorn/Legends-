@@ -44,6 +44,11 @@ this.player_is_sent_for_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
+		if (this.Const.DLC.Desert && currentTile.SquareCoords.Y <= this.World.getMapSize().Y * 0.2)
+		{
+			return;
+		}
+
 		if (this.World.Contracts.getActiveContract() != null)
 		{
 			return;
@@ -55,6 +60,11 @@ this.player_is_sent_for_event <- this.inherit("scripts/events/event", {
 
 		foreach( t in towns )
 		{
+			if (t.isSouthern())
+			{
+				continue;
+			}
+
 			local d = t.getTile().getDistanceTo(currentTile) + this.Math.rand(0, 10);
 
 			if (d < nearestDist && t.isAlliedWithPlayer() && this.World.FactionManager.getFaction(t.getFaction()).getContracts().len() != 0)

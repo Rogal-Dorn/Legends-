@@ -20,7 +20,7 @@ this.imprisoned_wildman_event <- this.inherit("scripts/events/event", {
 					Text = "What do you need help with?",
 					function getResult( _event )
 					{
-						return "B";
+						return this.World.Assets.getOrigin().getID() != "scenario.manhunters" ? "B" : "B2";
 					}
 
 				},
@@ -71,6 +71,58 @@ this.imprisoned_wildman_event <- this.inherit("scripts/events/event", {
 				{
 					this.Options.push({
 						Text = "Our holy one seems a little disturbed by this.",
+						function getResult( _event )
+						{
+							return "Monk";
+						}
+
+					});
+				}
+
+				this.Options.push({
+					Text = "I won\'t put the life of my men at risk for this.",
+					function getResult( _event )
+					{
+						return "E";
+					}
+
+				});
+			}
+
+		});
+		this.m.Screens.push({
+			ID = "B2",
+			Text = "[img]gfx/ui/events/event_100.png[/img]The animal tamer leads you to a carriage. You immediately see why his hired hands quit: a frenzied and mercurial wildman is sitting inside the cage. Raw wrists bleed against his shackles, signs of attempted escapes. Half-starved, the wildman gnaws on sticks poking out from a tumbleweed of a beard. The animal tamer grins, ivory for teeth.%SPEECH_ON%Cityfolk have gotten wind of the \'uncivilized\' wildmen and wish to see them up close. I am only fulfilling this new demand as any businessman would. Now, all I need help with is to get that dead body out of the cage.%SPEECH_OFF%He points toward a corpse in the corner of the cage. The wildman rears back, snarling, and goes to protectively sit on the body. The animal tamer shakes his head.%SPEECH_ON%One of my helpers got too close and, well, yeah. I can\'t go into town with that mess in there so I thought maybe you could help me fish it out. I\'ll pay plenty, of course. A pouch of 250 crowns sound good to you? Just reach on in there and yank that garbage out.%SPEECH_OFF%",
+			Image = "",
+			List = [],
+			Options = [],
+			function start( _event )
+			{
+				this.Options.push({
+					Text = "Alright, I\'ll send a man in.",
+					function getResult( _event )
+					{
+						return this.Math.rand(1, 100) <= 80 ? "C" : "D";
+					}
+
+				});
+
+				if (_event.m.Wildman != null)
+				{
+					this.Options.push({
+						Text = "We got our own wildman who could help.",
+						function getResult( _event )
+						{
+							return "Wildman";
+						}
+
+					});
+				}
+
+				if (_event.m.Monk != null)
+				{
+					this.Options.push({
+						Text = "Our monk seems a little disturbed by this.",
 						function getResult( _event )
 						{
 							return "Monk";
@@ -242,9 +294,9 @@ this.imprisoned_wildman_event <- this.inherit("scripts/events/event", {
 				_event.m.Dude = roster.create("scripts/entity/tactical/player");
 					if (this.World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
 						{
-						_event.m.Dude.getTags().add("PlayerSkeleton");
-						_event.m.Dude.getTags().add("undead");
-						_event.m.Dude.getTags().add("skeleton");
+						_event.m.Dude.getFlags().add("PlayerSkeleton");
+						_event.m.Dude.getFlags().add("undead");
+						_event.m.Dude.getFlags().add("skeleton");
 							local r;
 							r = this.Math.rand(0, 2);
 							if (r == 0)
@@ -260,7 +312,7 @@ this.imprisoned_wildman_event <- this.inherit("scripts/events/event", {
 									]);
 								}
 						_event.m.Dude.getSkills().add(this.new("scripts/skills/racial/skeleton_racial"));
-						_event.m.Dude.getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));								
+						_event.m.Dude.getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));
 						}
 					else
 					{
@@ -278,8 +330,8 @@ this.imprisoned_wildman_event <- this.inherit("scripts/events/event", {
 							"wildman_background"
 						]);
 					}
-					}	
-				
+					}
+
 
 				_event.m.Dude.setTitle("the Animal");
 				_event.m.Dude.getBackground().m.RawDescription = "%name% was \'saved\' by you during a confrontation with an animal tamer-turned-enslaver. A sense of gratitude and debt overcomes any language barriers: the once imprisoned wildling serves the company loyally for the rescue.";
@@ -327,7 +379,7 @@ this.imprisoned_wildman_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "Monk",
-			Text = "[img]gfx/ui/events/event_100.png[/img]%monk% the monk steps forward, hands clasped, head borrowed forward. The embodiment of a sermon, the posture of good morals, or misguided ones. %monk% pulls the tamer aside.%SPEECH_ON%The old gods would frown upon what you have done here.%SPEECH_OFF%The animal tamer laughs and leans against the cage, smugly crossing his arms. He states that the old gods consider slavery a part of the natural order. The holy on continues.%SPEECH_ON%True and it is by their grace that we are to make good use of our slaves. But this wildling is not kin to our way of life. You wish to enslave it by means of his being an outsider. It does not understand the relationship which makes it especially grievous and improper. My suggestion is to have it work for you and learn from you. Make it a friend and you will have a friend for life-%SPEECH_OFF%The imprisoned wildling\'s hands dart through the bars and digs its fingers into his eyeballs. His face is ripped apart like a loaf of old bread, a couple of coathangers for a jawbone, a tongue lolling like an uprooted snake. %monk% vomits as their face is doused in blood. %otherbrother% shakes their head.%SPEECH_ON%I\'d say it\'d fit right in with the %companyname%...%SPEECH_OFF%",
+			Text = "[img]gfx/ui/events/event_100.png[/img]%monk% the monk steps forward, hands clasped, head borrowed forward. The embodiment of a sermon, the posture of good morals, or misguided ones. He pulls the tamer aside.%SPEECH_ON%The old gods would frown upon what you have done here.%SPEECH_OFF%The animal tamer laughs and leans against the cage, smugly crossing his arms. He states that in the south they consider slavery a part of the natural order. The monk continues.%SPEECH_ON%True, but neither you nor this wildman are kin to their way of life. You wish to enslave him by means of his being an outsider. He does not understand the relationship which makes it especially grievous and improper. My suggestion is to have him work for you and learn from you. Make him a friend and you will have a friend for life-%SPEECH_OFF%The imprisoned wildman\'s hands dart through the bars and digs his fingers into his eyeballs. His face is ripped apart like a loaf of old bread, a couple of coathangers for a jawbone, a tongue lolling like an uprooted snake. %monk% vomits as his face is doused in blood. %otherbrother% shakes his head.%SPEECH_ON%I\'d say he\'d fit right in with the %companyname%...%SPEECH_OFF%",
 			Image = "",
 			List = [],
 			Characters = [],

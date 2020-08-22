@@ -41,7 +41,7 @@ this.marauding_greenskins_action <- this.inherit("scripts/factions/faction_actio
 
 		foreach( s in settlements )
 		{
-			if (s.isMilitary() || s.isIsolated())
+			if (s.isMilitary() || s.isIsolated() || !s.isDiscovered())
 			{
 				continue;
 			}

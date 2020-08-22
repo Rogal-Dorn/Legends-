@@ -285,18 +285,13 @@ this.greenskins_pet_goblin_event <- this.inherit("scripts/events/event", {
 				}
 				else if (r == 3)
 				{
-					item = this.new("scripts/items/helmets/named/wolf_helmet");
+					item = this.Const.World.Common.pickHelmet([[1, "named/wolf_helmet"]]);
 				}
 				else if (r == 4)
 				{
-					if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
-					{
-						item = this.new("scripts/items/legend_armor/named/legend_black_leather_armor");
-					}
-					else
-					{
-						item = this.new("scripts/items/armor/named/black_leather_armor");
-					}
+					item = this.Const.World.Common.pickArmor([
+						[1, "named/black_leather_armor"],
+					]);
 				}
 
 				this.World.Assets.getStash().add(item);

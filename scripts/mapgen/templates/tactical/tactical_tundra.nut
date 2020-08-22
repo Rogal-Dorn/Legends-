@@ -129,5 +129,77 @@ this.tactical_tundra <- this.inherit("scripts/mapgen/tactical_template", {
 		this.makeBordersImpassable(_rect);
 	}
 
+	function campify( _rect, _properties )
+	{
+		local tundraTile2 = this.MapGen.get("tactical.tile.tundra2");
+		local tundraTile3 = this.MapGen.get("tactical.tile.tundra3");
+		local centerTile = this.Tactical.getTileSquare(_rect.X + _rect.W / 2 + _properties.ShiftX, _rect.Y + _rect.H / 2 + _properties.ShiftY);
+		local radius = this.Const.Tactical.Settings.CampRadius + _properties.AdditionalRadius;
+
+		for( local x = _rect.X; x < _rect.X + _rect.W; x = ++x )
+		{
+			for( local y = _rect.Y; y < _rect.Y + _rect.H; y = ++y )
+			{
+				local tile = this.Tactical.getTileSquare(x, y);
+				local d = centerTile.getDistanceTo(tile);
+
+				if (d <= radius)
+				{
+					tile.Level = 0;
+
+					if (this.Math.rand(1, 100) <= 50)
+					{
+						tile.Type = 0;
+						tile.clear();
+						local r = this.Math.rand(1, 2);
+
+						if (r == 1)
+						{
+							tundraTile2.fill({
+								X = x,
+								Y = y,
+								W = 1,
+								H = 1,
+								IsEmpty = false
+							}, null);
+						}
+						else if (r == 2)
+						{
+							tundraTile3.fill({
+								X = x,
+								Y = y,
+								W = 1,
+								H = 1,
+								IsEmpty = false
+							}, null);
+						}
+					}
+				}
+
+				if (_properties.CutDownTrees && tile.IsEmpty && d < 15 && this.Math.rand(1, 100) <= 4)
+				{
+					local alone = true;
+
+					for( local i = 0; i < 6; i = ++i )
+					{
+						if (!tile.hasNextTile(i))
+						{
+						}
+						else if (!tile.getNextTile(i).IsEmpty)
+						{
+							alone = false;
+							break;
+						}
+					}
+
+					if (alone)
+					{
+						tile.spawnObject("entity/tactical/objects/tree_stump2");
+					}
+				}
+			}
+		}
+	}
+
 });
 

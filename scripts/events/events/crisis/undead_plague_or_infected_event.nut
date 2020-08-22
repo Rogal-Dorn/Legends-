@@ -172,9 +172,9 @@ this.undead_plague_or_infected_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
-		local playerTile = this.World.State.getPlayer().getTile();
+		local currentTile = this.World.State.getPlayer().getTile();
 
-		if (!playerTile.HasRoad)
+		if (!currentTile.HasRoad)
 		{
 			return;
 		}
@@ -190,7 +190,12 @@ this.undead_plague_or_infected_event <- this.inherit("scripts/events/event", {
 
 		foreach( t in towns )
 		{
-			local d = playerTile.getDistanceTo(t.getTile());
+			if (t.isSouthern())
+			{
+				continue;
+			}
+
+			local d = currentTile.getDistanceTo(t.getTile());
 
 			if (d <= 4)
 			{

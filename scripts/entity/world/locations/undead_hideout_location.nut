@@ -10,6 +10,10 @@ this.undead_hideout_location <- this.inherit("scripts/entity/world/location", {
 		this.location.create();
 		this.m.TypeID = "location.undead_hideout";
 		this.m.LocationType = this.Const.World.LocationType.Lair | this.Const.World.LocationType.Passive;
+		this.m.CombatLocation.Template[0] = "tactical.ruins";
+		this.m.CombatLocation.Fortification = this.Const.Tactical.FortificationType.None;
+		this.m.CombatLocation.CutDownTrees = false;
+		this.m.CombatLocation.ForceLineBattle = true;
 		this.m.IsDespawningDefenders = false;
 		this.m.IsShowingBanner = false;
 		local r = this.Math.rand(1, 2);
@@ -57,6 +61,15 @@ this.undead_hideout_location <- this.inherit("scripts/entity/world/location", {
 		this.location.onInit();
 		local body = this.addSprite("body");
 		body.setBrush("world_homestead_01");
+		local isSouthern = this.getTile().Type == this.Const.World.TerrainType.Desert || this.getTile().Type == this.Const.World.TerrainType.Steppe || this.getTile().Type == this.Const.World.TerrainType.Oasis || this.getTile().TacticalType == this.Const.World.TerrainTacticalType.DesertHills;
+
+		if (isSouthern)
+		{
+			if (this.Const.DLC.Desert)
+			{
+				this.m.CombatLocation.Template[0] = "tactical.southern_ruins";
+			}
+		}
 	}
 
 });

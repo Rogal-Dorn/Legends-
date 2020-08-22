@@ -16,7 +16,7 @@ this.orc_berserker_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.m.Properties.OverallDefensivenessMult = 0.33;
 		this.m.Properties.OverallFormationMult = 0.0;
 		this.m.Properties.OverallMagnetismMult = 0.0;
-		this.m.Properties.EngageFlankingMult = 1.75;
+		this.m.Properties.EngageFlankingMult = 1.5;
 		this.m.Properties.EngageTargetMultipleOpponentsMult = 0.75;
 		this.m.Properties.EngageTargetArmedWithRangedWeaponMult = 1.5;
 		this.m.Properties.EngageTargetAlreadyBeingEngagedMult = 1.5;

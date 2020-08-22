@@ -57,7 +57,7 @@ this.swallow_whole_skill <- this.inherit("scripts/skills/skill", {
 		{
 			return false;
 		}
-		if (target.getTags().has("IsSummoned"))
+		if (target.getFlags().has("IsSummoned"))
 		{
 			return false;
 		}
@@ -83,7 +83,7 @@ this.swallow_whole_skill <- this.inherit("scripts/skills/skill", {
 		skills.removeByID("effects.legend_vala_chant_senses_effect");
 		skills.removeByID("effects.legend_vala_currently_chanting");
 		skills.removeByID("effects.legend_vala_in_trance");
-		
+
 
 		if (target.getMoraleState() != this.Const.MoraleState.Ignore)
 		{
@@ -91,7 +91,7 @@ this.swallow_whole_skill <- this.inherit("scripts/skills/skill", {
 		}
 
 		this.m.SwallowedEntity = target;
-		this.m.SwallowedEntity.getTags().set("Devoured", true);
+		this.m.SwallowedEntity.getFlags().set("Devoured", true);
 		this.m.SwallowedEntity.setHitpoints(this.Math.max(5, this.m.SwallowedEntity.getHitpoints() - this.Math.rand(10, 20)));
 		target.removeFromMap();
 		_user.getSprite("body").setBrush("bust_ghoul_body_04");

@@ -12,28 +12,6 @@ this.ghoul_brain_item <- this.inherit("scripts/items/item", {
 		this.m.Value = 200;
 	}
 
-	function getTooltip()
-	{
-		local result = [
-			{
-				id = 1,
-				type = "title",
-				text = this.getName()
-			},
-			{
-				id = 2,
-				type = "description",
-				text = this.getDescription()
-			}
-		];
-		result.push({
-			id = 66,
-			type = "text",
-			text = this.getValueString()
-		});
-		return result;
-	}
-
 	function playInventorySound( _eventType )
 	{
 		this.Sound.play("sounds/enemies/unhold_regenerate_01.wav", this.Const.Sound.Volume.Inventory);
