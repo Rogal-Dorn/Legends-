@@ -113,7 +113,6 @@ this.noble_footman <- this.inherit("scripts/entity/tactical/human", {
 			[1, ""],
 			[1, "mail_hauberk", 28],
 			[1, "mail_shirt"],
-			[1, "gambeson"],
 			[1, "basic_mail_shirt"]
 		]));
 

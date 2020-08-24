@@ -118,7 +118,7 @@ this.ai_throw_bomb <- this.inherit("scripts/ai/tactical/behavior", {
 		}
 		else
 		{
-			_entity.getItems().setActionCost(this.Const.Tactical.Settings.SwitchItemAPCost);
+			_entity.getItems().payForAction([]);
 			_entity.getItems().equip(this.new(this.m.Selection.Item));
 			++this.m.BombsUsed;
 		}
@@ -166,24 +166,24 @@ this.ai_throw_bomb <- this.inherit("scripts/ai/tactical/behavior", {
 		{
 			if (_skill.getID() == "actives.throw_fire_bomb")
 			{
-				return this.evaluateFireBomb(_entity, tiles);
+				return this.evaluateFireBomb(_entity, tiles, _skill);
 			}
 
 			if (_skill.getID() == "actives.throw_daze_bomb")
 			{
-				return this.evaluateDazeBomb(_entity, tiles);
+				return this.evaluateDazeBomb(_entity, tiles, _skill);
 			}
 
 			if (_skill.getID() == "actives.throw_smoke_bomb")
 			{
-				return this.evaluateSmokeBomb(_entity, tiles);
+				return this.evaluateSmokeBomb(_entity, tiles, _skill);
 			}
 
 			return null;
 		}
 	}
 
-	function evaluateFireBomb( _entity, _tiles )
+	function evaluateFireBomb( _entity, _tiles, _skill = null )
 	{
 		local ret = {
 			Score = 0,
@@ -195,6 +195,11 @@ this.ai_throw_bomb <- this.inherit("scripts/ai/tactical/behavior", {
 		foreach( tile in _tiles )
 		{
 			if (myTile.Level + 1 < tile.Level)
+			{
+				continue;
+			}
+
+			if (_skill != null && !_skill.isUsableOn(tile))
 			{
 				continue;
 			}
@@ -278,7 +283,7 @@ this.ai_throw_bomb <- this.inherit("scripts/ai/tactical/behavior", {
 		return ret;
 	}
 
-	function evaluateDazeBomb( _entity, _tiles )
+	function evaluateDazeBomb( _entity, _tiles, _skill = null )
 	{
 		local ret = {
 			Score = 0,
@@ -290,6 +295,11 @@ this.ai_throw_bomb <- this.inherit("scripts/ai/tactical/behavior", {
 		foreach( tile in _tiles )
 		{
 			if (myTile.Level + 1 < tile.Level)
+			{
+				continue;
+			}
+
+			if (_skill != null && !_skill.isUsableOn(tile))
 			{
 				continue;
 			}

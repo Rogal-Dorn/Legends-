@@ -529,7 +529,7 @@
 		}
 
 		this.m.IsDying = true;
-		local isReallyDead = _killer == this || this.isReallyKilled(_fatalityType);
+		local isReallyDead = this.isReallyKilled(_fatalityType);
 
 		if (!isReallyDead)
 		{
