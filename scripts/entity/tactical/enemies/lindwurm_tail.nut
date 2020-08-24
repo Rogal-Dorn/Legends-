@@ -474,6 +474,7 @@ this.lindwurm_tail <- this.inherit("scripts/entity/tactical/actor", {
 		b.IsImmuneToStun = true;
 		b.IsMovable = false;
 		b.IsImmuneToDisarm = true;
+		b.IsImmuneToRoot = true;
 
 		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 180)
 		{

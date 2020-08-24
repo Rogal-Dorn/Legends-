@@ -89,6 +89,11 @@ this.kraken <- this.inherit("scripts/entity/tactical/actor", {
 
 			foreach( t in this.m.Tentacles )
 			{
+				if (t.isNull())
+				{
+					continue;
+				}
+
 				t.setParent(null);
 
 				if (t.isPlacedOnMap())

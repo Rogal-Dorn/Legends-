@@ -95,7 +95,7 @@ this.noble_footman <- this.inherit("scripts/entity/tactical/human", {
 
 		shield.setFaction(banner);
 		this.m.Items.equip(shield);
-		r = this.Math.rand(1, 5);
+		r = this.Math.rand(1, 3);
 
 		if (r == 1)
 		{
@@ -106,10 +106,6 @@ this.noble_footman <- this.inherit("scripts/entity/tactical/human", {
 		else if (r == 2)
 		{
 			this.m.Items.equip(this.new("scripts/items/armor/mail_shirt"));
-		}
-		else if (r == 3)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/gambeson"));
 		}
 		else
 		{

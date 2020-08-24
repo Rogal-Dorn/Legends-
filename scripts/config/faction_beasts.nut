@@ -321,7 +321,7 @@ gt.Const.Tactical.Actor.Kraken <- {
 	XP = 2500,
 	ActionPoints = 9,
 	Hitpoints = 4400,
-	Bravery = 200,
+	Bravery = 500,
 	Stamina = 999,
 	MeleeSkill = 999,
 	RangedSkill = 0,
