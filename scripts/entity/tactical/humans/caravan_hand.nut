@@ -84,13 +84,11 @@ this.caravan_hand <- this.inherit("scripts/entity/tactical/human", {
 		}
 
 		local item = this.Const.World.Common.pickArmor([
-			[1, "leather_tunic"],
+			[1, "leather_tunic", this.Math.rand(6,7)],
 			[1, "padded_leather"],
 			[1, "padded_surcoat"],
 			[1, "leather_lamellar"]
 		]);
-		if (item.getID() == "armor.body.linen_tunic")
-			item.setVariant(this.Math.rand(6,7))
 		this.m.Items.equip(item);
 
 		if (this.Math.rand(1, 100) <= 33)

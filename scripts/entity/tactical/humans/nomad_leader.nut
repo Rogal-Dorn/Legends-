@@ -127,7 +127,7 @@ this.nomad_leader <- this.inherit("scripts/entity/tactical/human", {
 
 			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 		}
-		
+
 		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Body) == null)
 		{
 			this.m.Items.equip(this.Const.World.Common.pickArmor([
@@ -135,7 +135,7 @@ this.nomad_leader <- this.inherit("scripts/entity/tactical/human", {
 				[1, "oriental/southern_long_mail_with_padding"]
 			]));
 		}
-		
+
 
 		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Head) == null)
 		{
@@ -176,7 +176,7 @@ this.nomad_leader <- this.inherit("scripts/entity/tactical/human", {
 		}
 		else
 		{
-			this.m.Items.equip(this.Const.World.Common.pickArmor(
+			this.m.Items.equip(this.Const.World.Common.pickHelmet(
 				this.Const.World.convNameToList(
 					this.Const.Items.NamedSouthernHelmets
 				)

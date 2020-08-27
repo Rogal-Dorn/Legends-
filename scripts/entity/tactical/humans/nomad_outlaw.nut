@@ -140,6 +140,7 @@ this.nomad_outlaw <- this.inherit("scripts/entity/tactical/human", {
 			[1, "oriental/plated_nomad_mail"],
 			[1, "oriental/leather_nomad_robe"]
 		]));
+
 		local helmet = [
 			[1, "oriental/nomad_leather_cap"],
 			[1, "oriental/nomad_light_helmet"],
