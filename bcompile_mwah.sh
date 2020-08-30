@@ -102,8 +102,6 @@ python ../battlebrothers/unpacked/make_legend_helmets.py
 ./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/legend_helmets.brush ../battlebrothers/unpacked/legend_helmets/0
 ./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/legend_helmets.brush ../battlebrothers/unpacked/legend_helmets/1
 
- echo "Building Legend Armor metadata.xml..."
-python ../battlebrothers/unpacked/make_legend_armor.py
  echo "Building Legend Armor brush..."
 ./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/legend_armor.brush ../battlebrothers/unpacked/legend_armor
 
