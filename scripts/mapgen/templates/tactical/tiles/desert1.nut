@@ -101,8 +101,31 @@ this.desert1 <- this.inherit("scripts/mapgen/tactical_template", {
 		tile.Subtype = this.Const.Tactical.TerrainSubtype.Desert;
 		tile.BlendPriority = this.Const.Tactical.TileBlendPriority.Desert1;
 		tile.IsBadTerrain = false;
+		
+		 local random = this.Math.rand(1, 100);
+		 
+		if (random <= 20)
+		{
 		tile.setBrush("tile_desert_01");
-
+		}
+		else if (random >= 21 && random <=40)
+		{
+		tile.setBrush("tile_legend_desert_01");
+		}
+		else if (random >= 41 && random <=60)
+		{
+		tile.setBrush("tile_legend_desert_02");
+		}		
+		else if (random >= 61 && random <=80)
+		{
+		tile.setBrush("tile_legend_desert_03");
+		}
+		else 
+		{
+		tile.setBrush("tile_legend_desert_04");
+		}
+		
+		
 		if (_rect.IsEmpty)
 		{
 			return;
