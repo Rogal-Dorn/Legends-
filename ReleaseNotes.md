@@ -3896,3 +3896,36 @@ https://drive.google.com/file/d/136wvQKhe-u6H6VQHsaQJ66cVszzwu9Oy/view?usp=shari
 
 **Changes**
 World Economy for city states - unlike northern settlements, ciy states can continue to grow their locations indefinitly.
+
+15.0.0.1  Conquering Fashion Siblings 
+
+**Layered Helmets**
+Made up of under layer, helmet, faceplate and decoration
+Over 750 variants to play with 
+Balance is still being worked on 
+
+ 
+**Layered Southern armor**
+all the new armors split into layers
+Many existing armors gain new colour pallets
+dozens of alignment issues fixed 
+Brings the number of layer variants to over 800 
+
+**Attacking Settlements** 
+It is now possible to attack human settlements 
+As legion you can take over human settlements, turning them undead 
+If allied with an enemy faction you can enter their locations to trade 
+Still in early development, a lot of balance and art work needed. 
+
+
+**Other changes**
+Adds southern females 
+Adds dozens of variants to nomad camp objects 
+Arena spectators can be female 
+Lich drops legends scrolls 
+
+**fixes**
+legends camp objects showing up instead of DLC objects 
+
+
+
