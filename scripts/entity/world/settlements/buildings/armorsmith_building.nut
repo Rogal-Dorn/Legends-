@@ -680,7 +680,7 @@ this.armorsmith_building <- this.inherit("scripts/entity/world/settlements/build
 		   [85, 1.0, "cloak/legend_armor_cloak_noble"],
 		   [50, 1.0, "cloak/legend_armor_cloak_heavy"],
 		   [65, 1.0, "tabard/legend_armor_tabard"],
-		   [99, 2.0, "tabard/legend_armor_named_tabard"]
+		   [99, 2.0, "named/legend_armor_named_tabard"]
 		]
 
 		foreach( a in armorsL)
