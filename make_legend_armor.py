@@ -1086,9 +1086,9 @@ def main():
 
         if "vanilla" in d:
             brush = "bust_" + d["vanilla"]
-            overlayLarge = "inventory_" + d["vanilla"],
-            overlay = "icon_" + d["vanilla"],
-            icon = d["vanilla"],
+            overlayLarge = "inventory_" + d["vanilla"]
+            overlay = "icon_" + d["vanilla"]
+            icon = d["vanilla"]
 
         namesL = []
         if "names" in d:
