@@ -3923,6 +3923,7 @@ Adds southern females
 Adds dozens of variants to nomad camp objects ( no more repeating carpets) 
 Arena spectators can be female 
 Lich drops legends scrolls 
+Increases the number of tactical sand tiles from 3 to 28 
 
 **fixes**
 legends camp objects showing up instead of DLC objects 
