@@ -874,28 +874,28 @@ def main():
         F.close()
 
         # print('[1, "' + layer + '/' + fname + '"], //' + str(d["con"]))
-        WR = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "temp.nut"), "w")
-        F = open("search.txt")
-        WR.write("gt.Const.LegendMod.HelmetObjs <- [")
-        while True: 
-            line1 = F.readline()
-            line2 = F.readline()
-            whitespace = F.readline()
-            if not line2: break
-            line1 = line1.split("\\")
-            if line1[-2] != 'helmets':
-                line1 = line1[-2] + "\\" + line1[-1]
-            else:
-                line1 = line1[-1]
-            line1 = line1[:-6]
-            line2 = line2.rsplit(" ")
-            line2 = line2[-1]
-            line2 = line2[:-2]
-            s = Template(HelmObj)
-            text = s.substitute(dict(id=line1, value=line2))
-            WR.write(text)
-        WR.write("]")
-        WR.close()
+        # WR = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "temp.nut"), "w")
+        # F = open("search.txt")
+        # WR.write("gt.Const.LegendMod.HelmetObjs <- [")
+        # while True:
+        #     line1 = F.readline()
+        #     line2 = F.readline()
+        #     whitespace = F.readline()
+        #     if not line2: break
+        #     line1 = line1.split("\\")
+        #     if line1[-2] != 'helmets':
+        #         line1 = line1[-2] + "\\" + line1[-1]
+        #     else:
+        #         line1 = line1[-1]
+        #     line1 = line1[:-6]
+        #     line2 = line2.rsplit(" ")
+        #     line2 = line2[-1]
+        #     line2 = line2[:-2]
+        #     s = Template(HelmObj)
+        #     text = s.substitute(dict(id=line1, value=line2))
+        #     WR.write(text)
+        # WR.write("]")
+        # WR.close()
 
     # filepath = os.path.join(os.path.dirname(os.path.abspath(__file__)), "temp.nut")
     # F = open(filepath, "w")

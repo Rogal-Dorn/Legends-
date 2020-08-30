@@ -17,6 +17,7 @@ gfx/*.png
 !gfx/ui*
 *.cnut
 *.DS_Store
+temp.nut
 
 unpacked/**/*dead_arrows.png
 unpacked/**/*dead_javelin.png
