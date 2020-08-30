@@ -3920,7 +3920,7 @@ Still in early development, a lot of balance and art work needed.
 
 **Other changes**
 Adds southern females 
-Adds dozens of variants to nomad camp objects 
+Adds dozens of variants to nomad camp objects ( no more repeating carpets) 
 Arena spectators can be female 
 Lich drops legends scrolls 
 
