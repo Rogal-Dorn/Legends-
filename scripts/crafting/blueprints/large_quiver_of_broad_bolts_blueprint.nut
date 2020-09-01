@@ -1,11 +1,11 @@
-this.quiver_of_large_piercing_bolts_blueprint <- this.inherit("scripts/crafting/blueprint", {
+this.large_quiver_of_broad_bolts_blueprint <- this.inherit("scripts/crafting/blueprint", {
 	m = {},
 	function create()
 	{
 		this.blueprint.create();
-		this.m.ID = "blueprint.large_quiver_of_broad_arrows";
+		this.m.ID = "blueprint.large_quiver_of_broad_bolts";
 		this.m.Type = this.Const.Items.ItemType.Accessory;
-		this.m.PreviewCraftable = this.new("scripts/items/ammo/legend_large_armor_piercing_bolts");
+		this.m.PreviewCraftable = this.new("scripts/items/ammo/legend_large_broad_head_bolts");
 		this.m.Cost = 250;
 		local ingredients = [
 			{
@@ -25,7 +25,7 @@ this.quiver_of_large_piercing_bolts_blueprint <- this.inherit("scripts/crafting/
 
 	function onCraft( _stash )
 	{
-		_stash.add(this.new("scripts/items/ammo/legend_large_armor_piercing_bolts"));
+		_stash.add(this.new("scripts/items/ammo/legend_large_broad_head_bolts"));
 
 	}
 
