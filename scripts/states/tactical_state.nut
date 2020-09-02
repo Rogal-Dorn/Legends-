@@ -2002,6 +2002,12 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 	function onBattleEndedDelayed( _isVictory )
 	{
+		if (this.m.MenuStack.hasBacksteps())
+		{
+			this.Time.scheduleEvent(this.TimeUnit.Real, 50, this.onBattleEndedDelayed.bindenv(this), _isVictory);
+			return;
+		}
+
 		if (this.m.IsGameFinishable)
 		{
 			this.Tooltip.hide();
@@ -2349,6 +2355,11 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 	function showDialogPopup( _title, _text, _okCallback, _cancelCallback )
 	{
+		if (this.m.TacticalDialogScreen.isVisible() || this.m.TacticalDialogScreen.isAnimating())
+		{
+			return;
+		}
+
 		if (!this.DialogScreen.isVisible() && !this.DialogScreen.isAnimating())
 		{
 			this.DialogScreen.show(_title, _text, this.onDialogHidden.bindenv(this), _okCallback, _cancelCallback);
@@ -2357,7 +2368,11 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 			this.m.MenuStack.push(function ()
 			{
 				this.DialogScreen.hide();
-				this.m.TacticalScreen.show();
+
+				if (!this.isBattleEnded())
+				{
+					this.m.TacticalScreen.show();
+				}
 			}, function ()
 			{
 				return !this.DialogScreen.isAnimating();
@@ -3045,7 +3060,7 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 			if (this.m.LastTileHovered != null && this.m.LastTileHovered.IsEmpty)
 			{
-				local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/kraken");
+				local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/zombie_yeoman");
 				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Undead : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Undead).getID());
 				e.assignRandomEquipment();
 			}

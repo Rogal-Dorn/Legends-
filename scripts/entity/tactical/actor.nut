@@ -52,8 +52,6 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 		RenderAnimationSpeed = 1.0,
 		RenderAnimationDistanceMult = 1.0,
 		OnMovementFinishCallback = null,
-		ExertingZoneOfOccupationOn = null,
-		ExertingZoneOfControlOn = null,
 		IsControlledByPlayer = false,
 		IsTurnStarted = false,
 		IsTurnDone = false,
@@ -62,6 +60,9 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 		IsDying = false,
 		IsAbleToDie = true,
 		IsUsingZoneOfControl = true,
+		IsExertingZoneOfOccupation = false,
+		IsExertingZoneOfControl = false,
+		IsMoving = false,
 		IsCorpseFlipped = false,
 		IsRaisingShield = false,
 		IsLoweringShield = false,
@@ -603,10 +604,10 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 		{
 			this.setZoneOfControl(this.getTile(), false);
 
-			if (this.m.ExertingZoneOfOccupationOn != null)
+			if (this.m.IsExertingZoneOfOccupation)
 			{
-				this.m.ExertingZoneOfOccupationOn.removeZoneOfOccupation(this.getFaction());
-				this.m.ExertingZoneOfOccupationOn = null;
+				this.getTile().removeZoneOfOccupation(this.getFaction());
+				this.m.IsExertingZoneOfOccupation = false;
 			}
 
 			this.Tactical.Entities.removeInstance(this, true);
@@ -619,7 +620,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 			this.Tactical.Entities.addInstance(this);
 			this.setZoneOfControl(this.getTile(), this.hasZoneOfControl());
 			this.getTile().addZoneOfOccupation(this.getFaction());
-			this.m.ExertingZoneOfOccupationOn = this.getTile();
+			this.m.IsExertingZoneOfOccupation = true;
 		}
 
 		if (this.m.Items != null)
@@ -1798,7 +1799,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 
 	function isExertingZoneOfControl()
 	{
-		return this.m.ExertingZoneOfControlOn != null;
+		return this.m.IsExertingZoneOfControl;
 	}
 
 	function setZoneOfControl( _t, _f )
@@ -1808,21 +1809,21 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 			return;
 		}
 
-		if (_f && this.m.ExertingZoneOfControlOn == null && this.hasZoneOfControl())
+		if (_f && !this.m.IsExertingZoneOfControl && this.hasZoneOfControl())
 		{
 			_t.addZoneOfControl(this.getFaction());
-			this.m.ExertingZoneOfControlOn = _t;
+			this.m.IsExertingZoneOfControl = true;
 		}
-		else if (!_f && this.m.ExertingZoneOfControlOn != null)
+		else if (!_f && this.m.IsExertingZoneOfControl)
 		{
-			this.m.ExertingZoneOfControlOn.removeZoneOfControl(this.getFaction());
-			this.m.ExertingZoneOfControlOn = null;
+			_t.removeZoneOfControl(this.getFaction());
+			this.m.IsExertingZoneOfControl = false;
 		}
 	}
 
 	function onSkillsUpdated()
 	{
-		if (this.isPlacedOnMap() && !this.m.IsDying && !this.Tactical.getNavigator().isTravelling(this))
+		if (this.isPlacedOnMap() && !this.m.IsDying && !this.m.IsMoving && !this.Tactical.getNavigator().isTravelling(this))
 		{
 			this.setZoneOfControl(this.getTile(), this.hasZoneOfControl());
 		}
@@ -2145,8 +2146,8 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 		this.m.IsAlive = true;
 		this.m.IsDying = false;
 		this.m.RiposteSkillCounter = 0;
-		this.m.ExertingZoneOfOccupationOn = null;
-		this.m.ExertingZoneOfControlOn = null;
+		this.m.IsExertingZoneOfOccupation = false;
+		this.m.IsExertingZoneOfControl = false;
 
 		if (this.getFaction() == this.Const.Faction.Player || tile.IsVisibleForPlayer)
 		{
@@ -2157,10 +2158,10 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 		this.Tactical.Entities.addInstance(this);
 		this.setZoneOfControl(tile, this.hasZoneOfControl());
 
-		if (this.m.ExertingZoneOfOccupationOn == null)
+		if (!this.m.IsExertingZoneOfOccupation)
 		{
 			tile.addZoneOfOccupation(this.getFaction());
-			this.m.ExertingZoneOfOccupationOn = tile;
+			this.m.IsExertingZoneOfOccupation = true;
 		}
 
 		if (this.Const.Tactical.TerrainEffect[tile.Type].len() > 0 && !this.m.Skills.hasSkill(this.Const.Tactical.TerrainEffectID[tile.Type]))
@@ -2224,10 +2225,10 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 			this.Tactical.getShaker().cancel(this);
 			this.setZoneOfControl(this.getTile(), false);
 
-			if (this.m.ExertingZoneOfOccupationOn != null)
+			if (this.m.IsExertingZoneOfOccupation)
 			{
-				this.m.ExertingZoneOfOccupationOn.removeZoneOfOccupation(this.getFaction());
-				this.m.ExertingZoneOfOccupationOn = null;
+				this.getTile().removeZoneOfOccupation(this.getFaction());
+				this.m.IsExertingZoneOfOccupation = false;
 			}
 
 			this.Tactical.Entities.removeInstance(this);
@@ -2460,12 +2461,13 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 
 	function onMovementStart( _tile, _numTiles )
 	{
+		this.m.IsMoving = true;
 		this.setZoneOfControl(_tile, false);
 
-		if (this.m.ExertingZoneOfOccupationOn != null)
+		if (this.m.IsExertingZoneOfOccupation)
 		{
-			this.m.ExertingZoneOfOccupationOn.removeZoneOfOccupation(this.getFaction());
-			this.m.ExertingZoneOfOccupationOn = null;
+			_tile.removeZoneOfOccupation(this.getFaction());
+			this.m.IsExertingZoneOfOccupation = false;
 		}
 
 		if (this.Const.Tactical.TerrainEffectID[_tile.Type].len() > 0)
@@ -2482,10 +2484,13 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 		{
 			this.playSound(this.Const.Sound.ActorEvent.Move, this.Const.Sound.Volume.Actor * this.m.SoundVolume[this.Const.Sound.ActorEvent.Move] * this.m.SoundVolumeOverall * (this.Math.rand(50, 100) * 0.01) * (_tile.IsVisibleForPlayer ? 1.0 : 0.5));
 		}
+
+		this.m.IsMoving = false;
 	}
 
 	function onMovementFinish( _tile )
 	{
+		this.m.IsMoving = true;
 		this.updateVisibility(_tile, this.m.CurrentProperties.getVision(), this.getFaction());
 
 		if (this.Tactical.TurnSequenceBar.getActiveEntity() != null && this.Tactical.TurnSequenceBar.getActiveEntity().getID() != this.getID())
@@ -2495,10 +2500,10 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 
 		this.setZoneOfControl(_tile, this.hasZoneOfControl());
 
-		if (this.m.ExertingZoneOfOccupationOn == null)
+		if (!this.m.IsExertingZoneOfOccupation)
 		{
 			_tile.addZoneOfOccupation(this.getFaction());
-			this.m.ExertingZoneOfOccupationOn = _tile;
+			this.m.ExertingZoneOfOccupationOn = true;
 		}
 
 		if (this.Const.Tactical.TerrainEffect[_tile.Type].len() > 0 && !this.m.Skills.hasSkill(this.Const.Tactical.TerrainEffectID[_tile.Type]))
@@ -2579,6 +2584,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 		this.m.Skills.update();
 		this.m.Items.onMovementFinished();
 		this.setDirty(true);
+		this.m.IsMoving = false;
 	}
 
 	function onMovementInZoneOfControl( _entity, _isOnEnter )
@@ -2588,7 +2594,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 			return false;
 		}
 
-		if (!this.m.IsUsingZoneOfControl || this.m.ExertingZoneOfControlOn == null)
+		if (!this.m.IsUsingZoneOfControl || !this.m.IsExertingZoneOfControl)
 		{
 			return false;
 		}
@@ -2623,7 +2629,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 			return false;
 		}
 
-		if (!this.m.IsUsingZoneOfControl || this.m.ExertingZoneOfControlOn == null)
+		if (!this.m.IsUsingZoneOfControl || !this.m.IsExertingZoneOfControl)
 		{
 			return false;
 		}
@@ -3773,7 +3779,15 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 			{
 				local isViable = false;
 
-				if (it.getAmmoMax() == 0)
+				if (it.getAmmoMax() == 0 && it.getAmmoID() == "")
+				{
+					isViable = true;
+				}
+				else if (it.getAmmo() > 0)
+				{
+					isViable = true;
+				}
+				else if (it.getAmmoMax() == 0)
 				{
 					local ammo = this.m.Items.getItemAtSlot(this.Const.ItemSlot.Ammo);
 
@@ -3789,10 +3803,6 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 							isViable = true;
 						}
 					}
-				}
-				else if (it.getAmmo() > 0)
-				{
-					isViable = true;
 				}
 
 				if (isViable)

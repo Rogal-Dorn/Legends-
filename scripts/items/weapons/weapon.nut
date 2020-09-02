@@ -546,7 +546,7 @@ this.weapon <- this.inherit("scripts/items/item", {
 
 	function onDelayedRemoveSelf( _tag )
 	{
-		this.removeSelf();
+		this.drop();
 	}
 
 	function lowerCondition( _value = this.Const.Combat.WeaponDurabilityLossOnHit )

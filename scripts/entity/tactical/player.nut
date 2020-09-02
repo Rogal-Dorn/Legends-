@@ -774,8 +774,6 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.m.IsAbleToDie = true;
 		this.m.Hitpoints = this.Math.max(1, this.m.Hitpoints);
 		this.m.MaxEnemiesThisTurn = 1;
-		this.m.ExertingZoneOfControlOn = null;
-		this.m.ExertingZoneOfOccupationOn = null;
 
 		if (this.m.MoraleState != this.Const.MoraleState.Ignore)
 		{

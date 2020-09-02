@@ -115,7 +115,7 @@ gt.Const.TipOfTheDay <- [
 	"A 95% chance to hit is also a 5% chance to miss.",
 	"The \'Lone Wolf\' perk is not affected by nearby dogs or allies that are not part of your company.",
 	"The \'Fast Adaptation\' perk reduces variance of randomness.",
-	"Consider that enemy encampments on hills are harder to asssault, especially if they are fortified."
+	"Consider that enemy encampments on hills are harder to assault, especially if they are fortified."
 ];
 gt.Const.LoadingScreens <- [
 	"ui/screens/loading_screen_01.jpg",
