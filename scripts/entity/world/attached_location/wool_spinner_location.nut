@@ -177,7 +177,7 @@ this.wool_spinner_location <- this.inherit("scripts/entity/world/attached_locati
 			_list.push({
 				R = 50,
 				P = 1.0,
-				S = "legend_armor/tabard/legend_armor_tabard"
+				S = "legend_armor/tabard/legend_common_tabard"
 			});
 			_list.push({
 				R = 99,

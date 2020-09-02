@@ -54,12 +54,12 @@ layers = [
     "adesc" :"", \
     "named" : True, "rminStam" : 4, "rmaxStam": 6, "rminCond" : 75, "rmaxCond" : 90,  "names" : ["Heraldic Gambeson", "Splendor", "Grandiosity", "Pageantry", "Swank", "Noble Surcoat", "Duty", "Honor"]
 },
-{"name": "legend_padded_surcoat",                         "layer": "cloth", "min": 40, "max": 70, "value" : 150, "con" : 55, "stam" : -6, "impactSound" : "leather", "invSound" : "cloth", "inherit" : "legend_gambeson", \
+{"name": "legend_padded_surcoat",                         "layer": "cloth", "min": 40, "max": 70, "value" : 150, "con" : 55, "stam" : -6, "impactSound" : "leather", "invSound" : "cloth", "brush" : "legend_gambeson", \
     "title" :  "Padded Surcoat", \
     "desc" :  "A sturdy and heavy padded coat that offers decent protection.", \
     "adesc" :""
 },
-{"name": "legend_padded_surcoat_plain",                   "layer": "cloth", "min": 0, "max": 0, "value" : 150, "con" : 55, "stam" : -6, "impactSound" : "leather", "invSound" : "cloth", "inherit" : "legend_gambeson", "variants" : [40,65,66,67,68,69,70], \
+{"name": "legend_padded_surcoat_plain",                   "layer": "cloth", "min": 0, "max": 0, "value" : 150, "con" : 55, "stam" : -6, "impactSound" : "leather", "invSound" : "cloth", "inherit" : "legend_padded_surcoat", "variants" : [40,65,66,67,68,69,70], \
     "title" :  "Padded Surcoat", \
     "desc" :  "A sturdy and heavy padded coat that offers decent protection.", \
     "adesc" :""
@@ -677,11 +677,11 @@ layers = [
     "desc" :  "A flowing cloth covering for armor, to show allegiance to a noble house. Offers minimal protection and small boost to morale.", \
     "adesc" : "Has a flowing noble tabard"
 },
-{"name": "legend_tattered_tabard",           "layer": "tabard", "min": 11, "max": 20, "value" : 50, "con" : 2, "stam" : 0, "bravery" : 0, "impactSound" : "leather", "invSound" : "cloth", "brush" : "legend_tabard",\
-    "title" :  "Tabard", \
-    "desc" :  "A tattered cloth covering for armor.", \
-    "adesc" : "Has a tattered tabard"
-},
+# {"name": "legend_tattered_tabard",           "layer": "tabard", "min": 11, "max": 20, "value" : 50, "con" : 2, "stam" : 0, "bravery" : 0, "impactSound" : "leather", "invSound" : "cloth", "brush" : "legend_tabard",\
+#     "title" :  "Tabard", \
+#     "desc" :  "A tattered cloth covering for armor.", \
+#     "adesc" : "Has a tattered tabard"
+# },
 {"name": "legend_southern_wrap_right",           "layer": "tabard", "min": 1, "max": 12, "value" : 50, "con" : 2, "stam" : 0, "bravery" : 0, "impactSound" : "leather", "invSound" : "cloth", "brush" : "southern_wrap_right",\
     "title" :  "Right Sided Wrap", \
     "desc" :  "A southern wrapped cloth wrapped around the right shoulder", \
@@ -972,7 +972,7 @@ TabardNut = '''
 this.$name <- this.inherit("scripts/items/legend_armor/legend_armor_tabard", {
 	function create()
 	{
-		this.legend_armor_cloak.create();
+		this.legend_armor_tabard.create();
 		this.m.ID = "$id";
 		this.m.Name = "$title";
 		this.m.Description = "$desc";
@@ -1080,15 +1080,15 @@ def main():
             brushName = d["brush"]
 
         brush = "bust_" + brushName
-        overlayLarge = "legend_armor/" + layer + "/inventory_" + brushName
-        overlay = "legend_armor/" + layer + "/icon_" + brushName
-        icon = "legend_armor/" + layer + "/" + brushName
+        overlayLarge = "legend_armor/inventory_" + brushName
+        overlay = "legend_armor/icon_" + brushName
+        icon = "legend_armor/icon_" + brushName
 
         if "vanilla" in d:
             brush = "bust_" + d["vanilla"]
-            overlayLarge = "inventory_" + d["vanilla"]
-            overlay = "icon_" + d["vanilla"]
-            icon = d["vanilla"]
+            overlayLarge = "armor/inventory_" + d["vanilla"] + "_armor"
+            overlay = "armor/icon_" + d["vanilla"]  + "_armor"
+            icon = "armor/icon_" + d["vanilla"]  + "_armor"
 
         namesL = []
         if "names" in d:
@@ -1133,7 +1133,8 @@ def main():
         F.write(text)
         F.close()
 
-        print('[1, "' + layer + '/' + fname + '"],' + "// " + str(d["con"]))
+        #print('[1, "' + layer + '/' + fname + '"],' + "// " + str(d["con"]))
+        #print('"' + layer + '/' + fname +'",')
 
         if "inherit" in d:
             continue

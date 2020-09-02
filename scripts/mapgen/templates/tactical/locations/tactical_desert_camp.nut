@@ -136,8 +136,8 @@ this.tactical_desert_camp <- this.inherit("scripts/mapgen/tactical_template", {
 						else
 						{
 						tile.clear();
-						tile.spawnObject("entity/tactical/objects/desert_camp_ottoman");						
-						
+						tile.spawnObject("entity/tactical/objects/desert_camp_ottoman");
+
 						}
 					}
 					else if (d >= 6 && this.Math.rand(1, 100) <= 1)
@@ -152,11 +152,11 @@ this.tactical_desert_camp <- this.inherit("scripts/mapgen/tactical_template", {
 					}
 					else if (d <= 7 && this.Math.rand(1, 100) <= (hasPalisade ? 12 : 6))
 					{
-					
+
 						local rand = this.Math.rand(1, 100);
 					     if (rand <= 20)
 						 {
-						
+
 							local deco = [
 								"01",
 								"02",
@@ -167,7 +167,11 @@ this.tactical_desert_camp <- this.inherit("scripts/mapgen/tactical_template", {
 								"07",
 								"08",
 								"09",
-								"10"
+								"10",
+								"11",
+								"12",
+								"13",
+								"14"
 							];
 							tile.clear();
 							tile.spawnDetail("desert_camp_chair" + deco[this.Math.rand(0, deco.len() - 1)]);
@@ -185,18 +189,18 @@ this.tactical_desert_camp <- this.inherit("scripts/mapgen/tactical_template", {
 								"08",
 								"09",
 								"10",
-			
+
 							];
 							tile.clear();
-							tile.spawnDetail("desert_camp_rug" + deco[this.Math.rand(0, deco.len() - 1)]);
+							tile.spawnDetail("desert_camp_rug_" + deco[this.Math.rand(0, deco.len() - 1)]);
 						}
 						else
 						{
 						tile.clear();
-						tile.spawnDetail("desert_camp_rug" + this.Math.rand(11,60);
-						
+						tile.spawnDetail("desert_camp_rug_" + this.Math.rand(11,60));
+
 						}
-						
+
 					}
 					else if (d <= 7 && this.Math.rand(1, 100) <= (hasPalisade ? 10 : 6))
 					{

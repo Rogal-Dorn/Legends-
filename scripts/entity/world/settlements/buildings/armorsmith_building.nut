@@ -679,7 +679,7 @@ this.armorsmith_building <- this.inherit("scripts/entity/world/settlements/build
 		   [99, 2.0, "named/legend_armor_cloak_rich"],
 		   [85, 1.0, "cloak/legend_armor_cloak_noble"],
 		   [50, 1.0, "cloak/legend_armor_cloak_heavy"],
-		   [65, 1.0, "tabard/legend_armor_tabard"],
+		   [65, 1.0, "tabard/legend_common_tabard"],
 		   [99, 2.0, "named/legend_armor_named_tabard"]
 		]
 

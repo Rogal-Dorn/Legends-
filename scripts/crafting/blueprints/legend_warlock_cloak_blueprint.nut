@@ -48,7 +48,7 @@ this.legend_warlock_cloak_blueprint <- this.inherit("scripts/crafting/blueprint"
 
 	function isQualified()
 	{
-		return true;
+		return this.World.LegendsMod.Configs().LegendArmorsEnabled()
 	}
 
 	function onCraft( _stash )
