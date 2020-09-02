@@ -3938,7 +3938,8 @@ Lich drops legends scrolls
 Increases the number of tactical sand tiles from 3 to 28 
 
 **fixes**
-legends camp objects showing up instead of DLC objects 
-
+legends camp tactical objects showing up instead of DLC objects 
+inventor icon showing up on gladiators 
+Adds a background for camping in the desert 
 
 
