@@ -778,10 +778,7 @@
 	o.onDeserialize = function( _in )
 	{
 		dszFn(_in)
-		if (_in.getMetaData().getVersion() >= 59)
-		{
-			this.m.RiderID = _in.readString();
-		}
+		this.m.RiderID = _in.readString();
 	}
 
 
