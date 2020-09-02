@@ -1811,7 +1811,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		this.World.Assets.getOrigin().onUpdateStablesList(draftList);
 
 		//TODO this currently being used to disable any horses from being added to the game.
-		//draftList = ["legend_donkey"];
+		draftList = ["legend_donkey"];
 
 		while (maxRecruits > current.len())
 		{
