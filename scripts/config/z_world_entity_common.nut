@@ -760,7 +760,6 @@ gt.Const.World.Common.pickArmor <- function (_armors)
 
 	if (!(armorID in this.Const.LegendMod.Armors))
 	{
-		this.logError("Armor not defined in Legends Armor Obj : " + armorID);
 		return this.new("scripts/items/armor/" + armorID);
 	}
 
@@ -779,7 +778,7 @@ gt.Const.World.Common.pickArmor <- function (_armors)
 
 	if (faction != null)
 	{
-		item.setupArmor(faction);
+		armor.setupArmor(faction);
 	}
 
 	local chain = this.Const.World.Common.pickLegendArmor(set.Chain);

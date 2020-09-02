@@ -962,15 +962,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 
 	function addEquipment()
 	{
-		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
-		{
-			this.onAddLegendEquipment()
-		}
-		else
-		{
-			this.onAddEquipment();
-		}
-
+		this.onAddEquipment();
 		this.adjustHiringCostBasedOnEquipment();
 	}
 
@@ -1166,10 +1158,6 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 	}
 
 	function onAddEquipment()
-	{
-	}
-
-	function onAddLegendEquipment()
 	{
 	}
 

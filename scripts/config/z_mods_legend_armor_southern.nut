@@ -124,7 +124,7 @@ gt.Const.LegendMod.ArmorObjs.extend([
             [0, "plate/legend_southern_padded"],// 155
             [10, "plate/legend_southern_arm_guards"],// 155
             [0, "plate/legend_southern_strips"],// 155
-            [0, "plate/legend_southern_leather_jacket"],// 155
+            [0, "plate/legend_southern_leather_jacket"],// 40
             [0, "plate/legend_southern_leather_plates"],// 155
             [0, "plate/legend_southern_leather_scale"],// 155
             [0, "plate/legend_southern_scale"],// 155
@@ -271,7 +271,7 @@ gt.Const.LegendMod.ArmorObjs.extend([
             [0, "plate/legend_southern_padded"],// 155
             [0, "plate/legend_southern_arm_guards"],// 155
             [0, "plate/legend_southern_strips"],// 155
-            [0, "plate/legend_southern_leather_jacket"],// 155
+            [0, "plate/legend_southern_leather_jacket"],// 40
             [0, "plate/legend_southern_leather_plates"],// 155
             [0, "plate/legend_southern_leather_scale"],// 155
             [0, "plate/legend_southern_scale"],// 155
@@ -418,7 +418,7 @@ gt.Const.LegendMod.ArmorObjs.extend([
             [0, "plate/legend_southern_padded"],// 155
             [0, "plate/legend_southern_arm_guards"],// 155
             [0, "plate/legend_southern_strips"],// 155
-            [0, "plate/legend_southern_leather_jacket"],// 155
+            [0, "plate/legend_southern_leather_jacket"],// 40
             [0, "plate/legend_southern_leather_plates"],// 155
             [0, "plate/legend_southern_leather_scale"],// 155
             [0, "plate/legend_southern_scale"],// 155
@@ -458,106 +458,15 @@ gt.Const.LegendMod.ArmorObjs.extend([
     Script = "",
     Sets = [{
         Cloth = [
-            [0, "cloth/legend_ancient_cloth"],// 30
-            [0, "cloth/legend_ancient_cloth_restored"],// 35
-            [0, "cloth/legend_apron_butcher"],// 30
-            [0, "cloth/legend_apron"],// 35
-            [0, "cloth/legend_gambeson"],// 65
-            [0, "cloth/legend_gambeson_plain"],// 65
-            [0, "cloth/legend_gambeson_wolf"],// 70
-            [0, "cloth/legend_gambeson_named"],// 70
-            [0, "cloth/legend_padded_surcoat"],// 55
-            [0, "cloth/legend_padded_surcoat_plain"],// 55
-            [0, "cloth/legend_peasant_dress"],// 25
-            [0, "cloth/legend_robes"],// 25
-            [0, "cloth/legend_robes_magic"],// 40
-            [0, "cloth/legend_robes_wizard"],// 30
-            [0, "cloth/legend_robes_nun"],// 22
-            [0, "cloth/legend_sackcloth_tattered"],// 5
-            [0, "cloth/legend_sackcloth"],// 10
-            [0, "cloth/legend_sackcloth_patched"],// 15
-            [0, "cloth/legend_thick_tunic"],// 30
-            [0, "cloth/legend_tunic"],// 20
-            [0, "cloth/legend_tunic_wrap"],// 20
-            [0, "cloth/legend_tunic_collar_thin"],// 20
-            [0, "cloth/legend_tunic_collar_deep"],// 20
-            [0, "cloth/legend_dark_tunic"],// 35
-            [0, "cloth/legend_tunic_noble"],// 40
-            [0, "cloth/legend_tunic_noble_named"],// 40
-            [0, "cloth/legend_southern_robe"],// 25
-            [0, "cloth/legend_southern_gambeson"],// 65
-            [0, "cloth/legend_southern_split_gambeson"],// 65
-            [0, "cloth/legend_southern_tunic"],// 25
-            [0, "cloth/legend_southern_noble_surcoat"],// 55
+            [1, "cloth/legend_southern_robe"],// 25
+            [1, "cloth/legend_southern_tunic"],// 25
         ],
         Chain = [
-           [0, "chain/legend_armor_ancient_mail"],// 35
-            [0, "chain/legend_armor_basic_mail"],// 85
-            [0, "chain/legend_armor_hauberk"],// 95
-            [0, "chain/legend_armor_hauberk_full"],// 115
-            [0, "chain/legend_armor_hauberk_full_named"],// 120
-            [0, "chain/legend_armor_hauberk_sleevless"],// 65
-            [0, "chain/legend_armor_mail_shirt"],// 50
-            [0, "chain/legend_armor_mail_shirt_simple"],// 25
-            [0, "chain/legend_armor_reinforced_mail"],// 110
-            [0, "chain/legend_armor_reinforced_mail_shirt"],// 80
-            [0, "chain/legend_armor_reinforced_rotten_mail_shirt"],// 45
-            [0, "chain/legend_armor_reinforced_worn_mail"],// 105
-            [0, "chain/legend_armor_reinforced_worn_mail_shirt"],// 65
-            [0, "chain/legend_armor_rusty_mail_shirt"],// 20
-            [0, "chain/legend_armor_short_mail"],// 60
             [0, "chain/legend_southern_cloth"],// 30
             [0, "chain/legend_southern_padded_chest"],// 45
             [0, "chain/legend_southern_mail"],// 100
         ],
         Plate = [
-            [0, "plate/legend_armor_leather_brigandine"],// 65
-            [0, "plate/legend_armor_leather_brigandine_hardened"],// 110
-            [0, "plate/legend_armor_leather_brigandine_hardened_full"],// 140
-            [0, "plate/legend_armor_leather_brigandine_named"],// 75
-            [0, "plate/legend_armor_leather_jacket"],// 25
-            [0, "plate/legend_armor_leather_jacket_named"],// 30
-            [0, "plate/legend_armor_leather_studded_jacket_named"],// 30
-            [0, "plate/legend_armor_leather_jacket_simple"],// 15
-            [0, "plate/legend_armor_leather_lamellar"],// 50
-            [0, "plate/legend_armor_leather_lamellar_harness_heavy"],// 130
-            [0, "plate/legend_armor_leather_lamellar_harness_reinforced"],// 150
-            [0, "plate/legend_armor_leather_lamellar_heavy"],// 165
-            [0, "plate/legend_armor_leather_lamellar_heavy_named"],// 140
-            [0, "plate/legend_armor_leather_lamellar_reinforced"],// 55
-            [0, "plate/legend_armor_leather_noble"],// 65
-            [0, "plate/legend_armor_leather_padded"],// 40
-            [0, "plate/legend_armor_leather_riveted"],// 95
-            [0, "plate/legend_armor_leather_riveted_light"],// 80
-            [0, "plate/legend_armor_leather_scale"],// 70
-            [0, "plate/legend_armor_plate_ancient_chest"],// 105
-            [0, "plate/legend_armor_plate_ancient_chest_restored"],// 110
-            [0, "plate/legend_armor_plate_ancient_gladiator"],// 35
-            [0, "plate/legend_armor_plate_ancient_harness"],// 115
-            [0, "plate/legend_armor_plate_ancient_mail"],// 45
-            [0, "plate/legend_armor_plate_ancient_scale"],// 105
-            [0, "plate/legend_armor_plate_ancient_scale_coat"],// 140
-            [0, "plate/legend_armor_plate_ancient_scale_harness"],// 75
-            [0, "plate/legend_armor_plate_chest"],// 125
-            [0, "plate/legend_armor_plate_chest_rotten"],// 100
-            [0, "plate/legend_armor_plate_cuirass"],// 150
-            [0, "plate/legend_armor_plate_full"],// 160
-            [0, "plate/legend_armor_plate_full_greaves"],// 170
-            [0, "plate/legend_armor_plate_full_greaves_named"],// 170
-            [0, "plate/legend_armor_plate_full_greaves_painted"],// 170
-            [0, "plate/legend_armor_scale"],// 100
-            [0, "plate/legend_armor_scale_coat"],// 120
-            [0, "plate/legend_armor_scale_coat_named"],// 160
-            [0, "plate/legend_armor_scale_coat_rotten"],// 60
-            [0, "plate/legend_armor_scale_shirt"],// 85
-            [0, "plate/legend_animal_hide_armor"],// 30
-            [0, "plate/legend_heavy_iron_armor"],// 120
-            [0, "plate/legend_hide_and_bone_armor"],// 80
-            [0, "plate/legend_reinforced_animal_hide_armor"],// 55
-            [0, "plate/legend_rugged_scale_armor"],// 95
-            [0, "plate/legend_scrap_metal_armor"],// 65
-            [0, "plate/legend_thick_furs_armor"],// 10
-            [0, "plate/legend_thick_plated_barbarian_armor"],// 155
             [0, "plate/legend_southern_named_golden_plates"],// 155
             [0, "plate/legend_southern_named_plates"],// 155
             [0, "plate/legend_southern_plate_full"],// 155
@@ -565,7 +474,7 @@ gt.Const.LegendMod.ArmorObjs.extend([
             [0, "plate/legend_southern_padded"],// 155
             [0, "plate/legend_southern_arm_guards"],// 155
             [0, "plate/legend_southern_strips"],// 155
-            [0, "plate/legend_southern_leather_jacket"],// 155
+            [1, "plate/legend_southern_leather_jacket"],// 40
             [0, "plate/legend_southern_leather_plates"],// 155
             [0, "plate/legend_southern_leather_scale"],// 155
             [0, "plate/legend_southern_scale"],// 155
@@ -712,7 +621,7 @@ gt.Const.LegendMod.ArmorObjs.extend([
             [0, "plate/legend_southern_padded"],// 155
             [0, "plate/legend_southern_arm_guards"],// 155
             [0, "plate/legend_southern_strips"],// 155
-            [0, "plate/legend_southern_leather_jacket"],// 155
+            [0, "plate/legend_southern_leather_jacket"],// 40
             [5, "plate/legend_southern_leather_plates"],// 155
             [0, "plate/legend_southern_leather_scale"],// 155
             [0, "plate/legend_southern_scale"],// 155
@@ -859,7 +768,7 @@ gt.Const.LegendMod.ArmorObjs.extend([
             [0, "plate/legend_southern_padded"],// 155
             [0, "plate/legend_southern_arm_guards"],// 155
             [0, "plate/legend_southern_strips"],// 155
-            [0, "plate/legend_southern_leather_jacket"],// 155
+            [0, "plate/legend_southern_leather_jacket"],// 40
             [0, "plate/legend_southern_leather_plates"],// 155
             [0, "plate/legend_southern_leather_scale"],// 155
             [0, "plate/legend_southern_scale"],// 155
@@ -1006,7 +915,7 @@ gt.Const.LegendMod.ArmorObjs.extend([
             [0, "plate/legend_southern_padded"],// 155
             [0, "plate/legend_southern_arm_guards"],// 155
             [0, "plate/legend_southern_strips"],// 155
-            [5, "plate/legend_southern_leather_jacket"],// 155
+            [5, "plate/legend_southern_leather_jacket"],// 40
             [0, "plate/legend_southern_leather_plates"],// 155
             [0, "plate/legend_southern_leather_scale"],// 155
             [0, "plate/legend_southern_scale"],// 155
@@ -1153,7 +1062,7 @@ gt.Const.LegendMod.ArmorObjs.extend([
             [0, "plate/legend_southern_padded"],// 155
             [0, "plate/legend_southern_arm_guards"],// 155
             [0, "plate/legend_southern_strips"],// 155
-            [0, "plate/legend_southern_leather_jacket"],// 155
+            [0, "plate/legend_southern_leather_jacket"],// 40
             [0, "plate/legend_southern_leather_plates"],// 155
             [0, "plate/legend_southern_leather_scale"],// 155
             [0, "plate/legend_southern_scale"],// 155
@@ -1300,7 +1209,7 @@ gt.Const.LegendMod.ArmorObjs.extend([
             [0, "plate/legend_southern_padded"],// 155
             [0, "plate/legend_southern_arm_guards"],// 155
             [0, "plate/legend_southern_strips"],// 155
-            [0, "plate/legend_southern_leather_jacket"],// 155
+            [0, "plate/legend_southern_leather_jacket"],// 40
             [0, "plate/legend_southern_leather_plates"],// 155
             [0, "plate/legend_southern_leather_scale"],// 155
             [0, "plate/legend_southern_scale"],// 155
@@ -1447,7 +1356,7 @@ gt.Const.LegendMod.ArmorObjs.extend([
             [0, "plate/legend_southern_padded"],// 155
             [0, "plate/legend_southern_arm_guards"],// 155
             [0, "plate/legend_southern_strips"],// 155
-            [0, "plate/legend_southern_leather_jacket"],// 155
+            [0, "plate/legend_southern_leather_jacket"],// 40
             [0, "plate/legend_southern_leather_plates"],// 155
             [5, "plate/legend_southern_leather_scale"],// 155
             [0, "plate/legend_southern_scale"],// 155
@@ -1587,7 +1496,7 @@ gt.Const.LegendMod.ArmorObjs.extend([
             [0, "plate/legend_southern_padded"],// 155
             [0, "plate/legend_southern_arm_guards"],// 155
             [0, "plate/legend_southern_strips"],// 155
-            [0, "plate/legend_southern_leather_jacket"],// 155
+            [0, "plate/legend_southern_leather_jacket"],// 40
             [0, "plate/legend_southern_leather_plates"],// 155
             [0, "plate/legend_southern_leather_scale"],// 155
             [0, "plate/legend_southern_scale"],// 155
@@ -1737,7 +1646,7 @@ gt.Const.LegendMod.ArmorObjs.extend([
             [5, "plate/legend_southern_padded"],// 155
             [0, "plate/legend_southern_arm_guards"],// 155
             [0, "plate/legend_southern_strips"],// 155
-            [0, "plate/legend_southern_leather_jacket"],// 155
+            [0, "plate/legend_southern_leather_jacket"],// 40
             [0, "plate/legend_southern_leather_plates"],// 155
             [0, "plate/legend_southern_leather_scale"],// 155
             [0, "plate/legend_southern_scale"],// 155
@@ -1884,7 +1793,7 @@ gt.Const.LegendMod.ArmorObjs.extend([
             [0, "plate/legend_southern_padded"],// 155
             [0, "plate/legend_southern_arm_guards"],// 155
             [0, "plate/legend_southern_strips"],// 155
-            [0, "plate/legend_southern_leather_jacket"],// 155
+            [0, "plate/legend_southern_leather_jacket"],// 40
             [5, "plate/legend_southern_leather_plates"],// 155
             [0, "plate/legend_southern_leather_scale"],// 155
             [0, "plate/legend_southern_scale"],// 155
@@ -2035,7 +1944,7 @@ gt.Const.LegendMod.ArmorObjs.extend([
             [0, "plate/legend_southern_padded"],// 155
             [0, "plate/legend_southern_arm_guards"],// 155
             [0, "plate/legend_southern_strips"],// 155
-            [0, "plate/legend_southern_leather_jacket"],// 155
+            [0, "plate/legend_southern_leather_jacket"],// 40
             [0, "plate/legend_southern_leather_plates"],// 155
             [0, "plate/legend_southern_leather_scale"],// 155
             [0, "plate/legend_southern_scale"],// 155
@@ -2186,7 +2095,7 @@ gt.Const.LegendMod.ArmorObjs.extend([
             [0, "plate/legend_southern_padded"],// 155
             [0, "plate/legend_southern_arm_guards"],// 155
             [0, "plate/legend_southern_strips"],// 155
-            [0, "plate/legend_southern_leather_jacket"],// 155
+            [0, "plate/legend_southern_leather_jacket"],// 40
             [0, "plate/legend_southern_leather_plates"],// 155
             [0, "plate/legend_southern_leather_scale"],// 155
             [0, "plate/legend_southern_scale"],// 155
