@@ -50,7 +50,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		 	bro.setVeteranPerks(2);
 		 }
 
-		this.World.Assets.getStash().resize(600);
+		this.World.Assets.getStash().resize(2000);
 
 		local bros = roster.getAll();
 
