@@ -580,10 +580,10 @@ layers = [
     "desc" :  "", \
     "adesc" : ""
 },
-{"name": "legend_southern_leather_jacket",           "layer": "plate", "min": 1, "max": 6, "value" : 1500, "con" : 155, "stam" : -26, "impactSound" : "plate", "invSound" : "leather", "brush" : "southern_leather_jacket",\
-    "title" :  "", \
-    "desc" :  "", \
-    "adesc" : ""
+{"name": "legend_southern_leather_jacket",           "layer": "plate", "min": 1, "max": 6, "value" : 110, "con" : 40, "stam" : -6, "impactSound" : "leather", "invSound" : "leather", "brush" : "southern_leather_jacket",\
+    "title" :  "Nomad Leather Jacket", \
+    "desc" :  "A jacket of patched leather of southern origin", \
+    "adesc" : "Has a jacket of southern leather"
 },
 {"name": "legend_southern_leather_plates",           "layer": "plate", "min": 1, "max": 10, "value" : 1500, "con" : 155, "stam" : -26, "impactSound" : "plate", "invSound" : "leather", "brush" : "southern_leather_plates",\
     "title" :  "", \
@@ -1182,15 +1182,16 @@ def main():
             brushName = d["brush"]
 
         variants = []
+        names = [brushName]
         if "variants" in d:
             variants = d["variants"]
         elif "min" in d:
+            names = []
             for x in range(d["min"], d["max"] + 1):
                 variants.append(x)
 
-        names = [brushName]
+
         for i in variants:
-            names = []
             ind = "0" + str(i) if i < 10 else str(i)
             names.append(brushName + "_" + ind)
 
