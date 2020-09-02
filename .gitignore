@@ -14,7 +14,7 @@ scripts/items/legend_armor/tabard/
 
 gfx/*.png
 !gfx/skills*
-!gfx/ui*
+!gfx/ui**
 *.cnut
 *.DS_Store
 temp.nut
