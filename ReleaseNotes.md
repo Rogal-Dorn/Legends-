@@ -3917,6 +3917,18 @@ As legion you can take over human settlements, turning them undead
 If allied with an enemy faction you can enter their locations to trade 
 Still in early development, a lot of balance and art work needed. 
 
+**gender changes** 
+There are now three gender start options, vanilla, defined backgrounds or gender equality 
+Gladiators can be women 
+Gladiators gain perk trees for polearm, swords, throwing, daggers, heavy armor and nets 
+Gladiator events are gender neutral,
+Slavers and slaves can be women 
+The player no longer tell penis jokes to sword eaters 
+Belly dancers are now more feminine 
+When fighting about cultural differences, the company fights over marriage instead of women 
+
+
+
 
 **Other changes**
 Adds southern females 
