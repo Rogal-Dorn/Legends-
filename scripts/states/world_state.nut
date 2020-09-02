@@ -2558,6 +2558,11 @@ this.world_state <- this.inherit("scripts/states/state", {
 
 	function showTownScreen()
 	{
+		if (this.m.MenuStack.hasBacksteps())
+		{
+			return;
+		}
+
 		if (this.m.LastEnteredTown == null)
 		{
 			return;
@@ -3740,14 +3745,8 @@ this.world_state <- this.inherit("scripts/states/state", {
 				return true;
 
 			case 95:
-				if (this.m.MenuStack.hasBacksteps())
-				{
-				}
-				else
-				{
-					this.m.IsForcingAttack = false;
-					return true;
-				}
+				this.m.IsForcingAttack = false;
+				return true;
 			}
 		}
 

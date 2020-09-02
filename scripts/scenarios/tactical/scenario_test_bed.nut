@@ -75,7 +75,6 @@ this.scenario_test_bed <- this.inherit("scripts/scenarios/tactical/scenario_temp
 
 
 			local r = this.Math.rand(1, 3);
-			items.equip(this.new("scripts/items/weapons/battle_whip"));
 			local a = this.new("scripts/items/armor/oriental/gladiator_harness");
 			local u;
 			r = this.Math.rand(1, 2);
@@ -91,7 +90,8 @@ this.scenario_test_bed <- this.inherit("scripts/scenarios/tactical/scenario_temp
 
 			a.setUpgrade(u);
 			items.equip(a);
-			items.equip(this.new("scripts/items/shields/wooden_shield"));
+			items.equip(this.new("scripts/items/ammo/powder_bag"));
+			items.equip(this.new("scripts/items/weapons/oriental/handgonne"));
 		}
 
 		local entity = this.spawnEntity("scripts/entity/tactical/enemies/orc_berserker");
