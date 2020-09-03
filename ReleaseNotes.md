@@ -3938,4 +3938,54 @@ https://drive.google.com/file/d/136wvQKhe-u6H6VQHsaQJ66cVszzwu9Oy/view?usp=shari
 
 **Changes**
 World Economy for city states - unlike northern settlements, ciy states can continue to grow their locations indefinitly.
+<<<<<<< HEAD
 >>>>>>> 1f16b12b6e7970000cb087274d79802f039f9eee
+=======
+
+15.0.0.1  Conquering Fashion Siblings 
+
+**Layered Helmets**
+Made up of under layer, helmet, faceplate and decoration
+Over 750 variants to play with 
+Balance is still being worked on 
+
+ 
+**Layered Southern armor**
+all the new armors split into layers
+Many existing armors gain new colour pallets
+dozens of alignment issues fixed 
+Brings the number of layer variants to over 800 
+
+**Attacking Settlements** 
+It is now possible to attack human settlements 
+As legion you can take over human settlements, turning them undead 
+If allied with an enemy faction you can enter their locations to trade 
+Still in early development, a lot of balance and art work needed. 
+
+**gender changes** 
+There are now three gender start options, vanilla, defined backgrounds or gender equality 
+Gladiators can be women 
+Gladiators gain perk trees for polearm, swords, throwing, daggers, heavy armor and nets 
+Gladiator events are gender neutral,
+Slavers and slaves can be women 
+The player no longer tell penis jokes to sword eaters 
+Belly dancers are now more feminine 
+When fighting about cultural differences, the company fights over marriage instead of women 
+
+
+
+
+**Other changes**
+Adds southern females 
+Adds dozens of variants to nomad camp objects ( no more repeating carpets) 
+Arena spectators can be female 
+Lich drops legends scrolls 
+Increases the number of tactical sand tiles from 3 to 28 
+
+**fixes**
+legends camp tactical objects showing up instead of DLC objects 
+inventor icon showing up on gladiators 
+Adds a background for camping in the desert 
+
+
+>>>>>>> cf1a6155a08deb1ee6ee7e31f87b9cce2666691b

@@ -76,6 +76,13 @@ mkdir -p "helmets"
 python make_legend_helmet_nuts.py
 cp -R helmets/. "c:\Steam\steamapps\common\Battle Brothers\data\scripts\items\legend_helmets"
 
+echo "Building armors..."
+rm -rf legend_armor
+mkdir -p "legend_armor"
+python make_legend_armor.py
+cp -R legend_armor/. "c:\Steam\steamapps\common\Battle Brothers\data\scripts\items\legend_armor"
+
+
 rm -rf brushes
 mkdir -p "brushes"
 cd ../bin
@@ -88,6 +95,7 @@ cd ../bin
 ./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/legend_world.brush ../battlebrothers/unpacked/legend_world
 ./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/legends_ui.brush ../battlebrothers/unpacked/legends_ui
 ./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/legend_horses.brush ../battlebrothers/unpacked/legend_horses
+./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/terrain.brush ../battlebrothers/unpacked/terrain
 
  echo "Building Legend Helmets metadata.xml..."
 python ../battlebrothers/unpacked/make_legend_helmets.py
@@ -96,8 +104,6 @@ echo "Building Legend Helmets brush..."
 ./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/legend_helmets_0.brush ../battlebrothers/unpacked/legend_helmets/0
 ./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/legend_helmets_1.brush ../battlebrothers/unpacked/legend_helmets/1
 
- echo "Building Legend Armor metadata.xml..."
-python ../battlebrothers/unpacked/make_legend_armor.py
  echo "Building Legend Armor brush..."
 ./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/legend_armor.brush ../battlebrothers/unpacked/legend_armor
 

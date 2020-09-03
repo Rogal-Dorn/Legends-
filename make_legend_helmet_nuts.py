@@ -144,7 +144,7 @@ vanilla = [
 ]
 
 HelmObj = '''{
-    ID = "$id",
+    ID = "$id", //$value
     Script = "",
     Sets = [{
         Hoods = [
@@ -298,12 +298,16 @@ layers = [
     {"name": "padded_cap",          "layer": "hood", "min": 1, "max": 1, "base": True, "value" : 95, "con" : 40, "stam" : -1, "vis" : 0,  "hair" : "true", "beard" :"false" },
     {"name": "leather_hood",        "layer": "hood", "min": 1, "max": 5, "base": True, "value" : 115, "con" : 45, "stam" : -2, "vis" : 0,  "hair" : "true", "beard" :"false" },
     {"name": "padded_hood",         "layer": "hood", "min": 1, "max": 3, "base": True, "value" : 140, "con" : 50, "stam" : -2, "vis" : 0,  "hair" : "true", "beard" :"false" },
-
+    {"name": "southern_cap",        "layer": "hood", "min": 1, "max": 5, "base": True, "value" : 20, "con" : 15, "stam" : 0, "vis" : 0,  "hair" : "true", "beard" :"false" },
+    {"name": "southern_turban_light_hood",     "layer": "hood", "min": 1, "max": 6, "base": True, "value" : 95, "con" : 40, "stam" : -1, "vis" : 0,  "hair" : "true", "beard" :"false" },
+    {"name": "southern_niqaab",     "layer": "hood", "min": 1, "max": 4, "base": True, "value" : 95, "con" : 40, "stam" : -1, "vis" : 0,  "hair" : "true", "beard" :"false" },
     {"name": "open_chain_hood",     "layer": "hood", "min": 1, "max": 3, "base": True, "value" : 200, "con" : 65, "stam" : -3, "vis" : 0,  "hair" : "true", "beard" :"false" },
     {"name": "chain_scarf",         "layer": "hood", "min": 1, "max": 5, "base": True, "value" : 250, "con" : 70, "stam" : -4, "vis" : 0,  "hair" : "false", "beard" :"true" },
     {"name": "chain_hood",          "layer": "hood", "min": 1, "max": 4, "base": True, "value" : 310, "con" : 80, "stam" : -4, "vis" : -1,  "hair" : "true", "beard" :"false" },
     {"name": "chain_hood_full",     "layer": "hood", "min": 1, "max": 6, "base": True, "value" : 375, "con" : 90, "stam" : -6, "vis" : -2,  "hair" : "true", "beard" :"true" },
     {"name": "bronze_chain",        "layer": "hood", "min": 1, "max": 1, "base": True, "value" : 450, "con" : 100, "stam" : -7, "vis" : 0,  "hair" : "false", "beard" :"false" },
+    {"name": "southern_chain_hood",          "layer": "hood", "min": 1, "max": 1, "base": True, "value" : 310, "con" : 85, "stam" : -5, "vis" : -1,  "hair" : "true", "beard" :"false" },
+    {"name": "southern_open_chain_hood",     "layer": "hood", "min": 1, "max": 3, "base": True, "value" : 200, "con" : 65, "stam" : -3, "vis" : 0,  "hair" : "true", "beard" :"false" },
 
 
     {"name": "ancient_conic_helm",                  "layer": "helm", "min": 1, "max": 1, "value" : 100, "con" : 15, "stam" : -3, "vis" : -1,  "hair" : "true", "beard" :"false" },
@@ -334,6 +338,11 @@ layers = [
     {"name": "heavy_spiked_helm",                   "layer": "helm", "min": 1, "max": 1, "value" : 5000, "con" : 150, "stam" : -9, "vis" : -2,  "hair" : "true", "beard" :"true", \
          "named" : True, "rminViz" : -1, "rmaxViz" : -2, "rminStam" : -7, "rmaxStam": -9, "rminCond" : 150, "rmaxCond" : 175,  "names" : []},
 
+    {"name": "southern_leather_helm",               "layer": "helm", "min": 1, "max": 5, "value" : 60, "con" : 25, "stam" : -1, "vis" : 0,  "hair" : "true", "beard" :"false" },
+    {"name": "southern_studded_leather_helm",       "layer": "helm", "min": 1, "max": 4, "value" : 110, "con" : 30, "stam" : -1, "vis" : 0,  "hair" : "true", "beard" :"false" },
+    {"name": "southern_cap_smooth",                 "layer": "helm", "min": 1, "max": 1, "value" : 140, "con" : 40, "stam" : -2, "vis" : 0,  "hair" : "true", "beard" :"false" },
+    {"name": "southern_cap_spiked",                 "layer": "helm", "min": 1, "max": 1, "value" : 140, "con" : 40, "stam" : -2, "vis" : 0,  "hair" : "true", "beard" :"false" },
+
     {"name": "viking_helm",                         "layer": "helm", "min": 1, "max": 6, "value" : 500, "con" : 45, "stam" : -2, "vis" : -1,  "hair" : "true", "beard" :"false" },
     {"name": "norman_helm",                         "layer": "helm", "min": 1, "max": 5, "value" : 550, "con" : 50, "stam" : -2, "vis" : -1,  "hair" : "true", "beard" :"false" },
     {"name": "flat_top_helm",                       "layer": "helm", "min": 1, "max": 6, "value" : 800, "con" : 70, "stam" : -3, "vis" : 0,  "hair" : "true", "beard" :"false" },
@@ -350,6 +359,16 @@ layers = [
     {"name": "great_helm",                          "layer": "helm", "min": 1, "max": 6, "value" : 3500, "con" : 220, "stam" : -12, "vis" : -3,  "hair" : "true", "beard" :"false" },
     {"name": "legend_armet",                        "layer": "helm", "min": 1, "max": 1, "value" : 6000, "con" : 260, "stam" : -13, "vis" : -2,  "hair" : "true", "beard" :"true" },
     {"name": "legend_frogmouth",                    "layer": "helm", "min": 1, "max": 1, "value" : 6000, "con" : 265, "stam" : -13, "vis" : -3,  "hair" : "true", "beard" :"true" },
+    {"name": "southern_gladiator_helm_crested",     "layer": "helm", "min": 1, "max": 13, "value" : 2000, "con" : 130, "stam" : -5, "vis" : -3,  "hair" : "true", "beard" :"true" },
+    {"name": "southern_gladiator_helm_split",       "layer": "helm", "min": 1, "max": 13, "value" : 2000, "con" : 130, "stam" : -5, "vis" : -3,  "hair" : "true", "beard" :"true" },
+    {"name": "southern_gladiator_helm_masked",      "layer": "helm", "min": 1, "max": 13, "value" : 2000, "con" : 130, "stam" : -5, "vis" : -3,  "hair" : "true", "beard" :"true" },
+    {"name": "southern_helmet_nasal",               "layer": "helm", "min": 1, "max": 8, "value" : 2500, "con" : 180, "stam" : -10, "vis" : -1,  "hair" : "true", "beard" :"false" },
+    {"name": "southern_conic_helm",                 "layer": "helm", "min": 1, "max": 1, "value" : 550, "con" : 50, "stam" : -2, "vis" : -1,  "hair" : "true", "beard" :"false" },
+    {"name": "southern_named_conic",                "layer": "helm", "min": 1, "max": 1, "value" : 2000, "con" : 130, "stam" : -5, "vis" : -3,  "hair" : "true", "beard" :"false" },
+    {"name": "southern_peaked_helm",                "layer": "helm", "min": 1, "max": 1, "value" : 1250, "con" : 120, "stam" : -4, "vis" : -2,  "hair" : "true", "beard" :"false" },
+    {"name": "southern_peaked_nasal_helm",          "layer": "helm", "min": 1, "max": 1, "value" : 3500, "con" : 220, "stam" : -12, "vis" : -3,  "hair" : "true", "beard" :"false" },
+
+
 
     {"name": "legend_ancient_gladiator",            "layer": "helm", "min": 1, "max": 1, "value" : 1300, "con" : 115, "stam" : -6, "vis" : -3,  "hair" : "true", "beard" :"true" },
     {"name": "legend_ancient_legionaire_restored",  "layer": "helm", "min": 1, "max": 1, "value" : 2000, "con" : 60, "stam" : -3, "vis" : -2,  "hair" : "true", "beard" :"false" },
@@ -405,6 +424,10 @@ layers = [
     {"name": "faceplate_pointed",       "layer": "top", "min": 1, "max": 1, "value" : 1320, "con" : 95, "stam" : -7, "vis" : -2,  "hair" : "false", "beard" :"true" },
     {"name": "faceplate_pointed_slit",  "layer": "top", "min": 1, "max": 1, "value" : 1430, "con" : 100, "stam" : -7, "vis" : -2,  "hair" : "false", "beard" :"false" },
     {"name": "faceplate_full",          "layer": "top", "min": 1, "max": 1, "value" : 1700, "con" : 110, "stam" : -9, "vis" : -3,  "hair" : "false", "beard" :"true" },
+    {"name": "southern_faceplate",      "layer": "top", "min": 1, "max": 1, "value" : 450, "con" : 50, "stam" : -3, "vis" : -2,  "hair" : "false", "beard" :"true" },
+    {"name": "southern_faceplate_bearded",      "layer": "top", "min": 1, "max": 1, "value" : 450, "con" : 50, "stam" : -3, "vis" : -2,  "hair" : "false", "beard" :"true" },
+    {"name": "faceplate_full_breaths",      "layer": "top", "min": 1, "max": 1, "value" : 1700, "con" : 105, "stam" : -8, "vis" : -2,  "hair" : "false", "beard" :"true" },
+
 
 
     {"name": "faceplate_gold",          "layer": "top", "min": 1, "max": 1, "value" : 1551, "con" : 105, "stam" : -8, "vis" : -2,  "hair" : "false", "beard" :"true", \
@@ -422,8 +445,15 @@ layers = [
     {"name": "warlock_skull",           "layer": "top", "min": 1, "max": 3, "value" : 2000, "con" : 90, "stam" : -4, "vis" : 0,  "hair" : "false", "beard" :"true", \
         "named" : True, "rminViz" : 0, "rmaxViz" : 0, "rminStam" : -4, "rmaxStam": -3, "rminCond" : 90, "rmaxCond" : 115,  "names" : []},
 
+    {"name": "southern_noble_crown",                "layer": "vanity", "min": 1, "max": 1, "value" : 400, "con" : 40, "stam" : -2, "vis" : 0,  "hair" : "true", "beard" :"false" },
+    {"name": "southern_noble_hat",                "layer": "vanity", "min": 1, "max": 1, "value" : 400, "con" : 40, "stam" : -2, "vis" : 0,  "hair" : "true", "beard" :"false" },
+     {"name": "southern_noble_turban",                "layer": "vanity", "min": 1, "max": 1, "value" : 400, "con" : 40, "stam" : -2, "vis" : 0,  "hair" : "true", "beard" :"false" },
 
-
+    {"name": "southern_noble_crown",                "layer": "vanity", "min": 1, "max": 1, "value" : 400, "con" : 40, "stam" : -2, "vis" : 0,  "hair" : "true", "beard" :"false" },
+    {"name": "southern_helm_tailed",   "layer": "vanity", "min": 1, "max": 6, "value" : 50, "con" : 10, "stam" : -1, "vis" : 0,  "hair" : "true", "beard" :"false" },
+    {"name": "southern_silk_headscarf",   "layer": "vanity", "min": 1, "max": 13, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0,  "hair" : "true", "beard" :"false" },
+    {"name": "southern_feathered_turban",   "layer": "vanity", "min": 1, "max": 1, "value" : 60, "con" : 10, "stam" : -1, "vis" : 0,  "hair" : "true", "beard" :"false" },
+    {"name": "southern_turban_open",   "layer": "vanity", "min": 1, "max": 1, "value" : 60, "con" : 30, "stam" : -1, "vis" : 0,  "hair" : "true", "beard" :"false" },
     {"name": "hood_cloth_square",   "layer": "vanity", "min": 1, "max": 1, "value" : 60, "con" : 30, "stam" : -1, "vis" : 0,  "hair" : "true", "beard" :"false" },
     {"name": "sack",                "layer": "vanity", "min": 1, "max": 12, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0,  "hair" : "true", "beard" :"true" },
     {"name": "antler",              "layer": "vanity", "min": 1, "max": 1, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0,  "hair" : "false", "beard" :"false" },
@@ -454,6 +484,17 @@ layers = [
     {"name": "ponytail",            "layer": "vanity", "min": 1, "max": 4, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0,  "hair" : "false", "beard" :"false" },
     {"name": "ram_horns",           "layer": "vanity", "min": 1, "max": 1, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0,  "hair" : "false", "beard" :"false" },
     {"name": "side_feather",        "layer": "vanity", "min": 1, "max": 5, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0,  "hair" : "false", "beard" :"false" },
+    {"name": "southern_headband",   "layer": "vanity", "min": 1, "max": 1, "value" : 10, "con" : 5, "stam" : 0, "vis" : 0,  "hair" : "false", "beard" :"false" },
+    {"name": "southern_patterned_headband",   "layer": "vanity", "min": 1, "max": 6, "value" : 10, "con" : 5, "stam" : 0, "vis" : 0,  "hair" : "false", "beard" :"false" },
+    {"name": "southern_patterned_headwrap",   "layer": "vanity", "min": 1, "max": 10, "value" : 10, "con" : 5, "stam" : 0, "vis" : 0,  "hair" : "false", "beard" :"false" },
+    {"name": "southern_turban_open",   "layer": "vanity", "min": 1, "max": 1, "value" : 10, "con" : 5, "stam" : 0, "vis" : 0,  "hair" : "false", "beard" :"false" },
+    {"name": "southern_turban_full",   "layer": "vanity", "min": 1, "max": 4, "value" : 10, "con" : 5, "stam" : 0, "vis" : 0,  "hair" : "false", "beard" :"false" },
+
+    {"name": "southern_turban_light",   "layer": "vanity", "min": 1, "max": 6, "value" : 10, "con" : 5, "stam" : 0, "vis" : 0,  "hair" : "false", "beard" :"false" },
+    {"name": "southern_turban_feather",   "layer": "vanity", "min": 1, "max": 1, "value" : 10, "con" : 5, "stam" : 0, "vis" : 0,  "hair" : "false", "beard" :"false" },
+
+    {"name": "southern_top_tail",   "layer": "vanity", "min": 1, "max": 1, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0,  "hair" : "false", "beard" :"false" },
+
     {"name": "straw_hat",           "layer": "vanity", "min": 1, "max": 1, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0,  "hair" : "true", "beard" :"false" },
     {"name": "top_feather",         "layer": "vanity", "min": 1, "max": 5, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0,  "hair" : "false", "beard" :"false" },
     {"name": "witchhunter_helm",    "layer": "vanity", "min": 1, "max": 7, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0,  "hair" : "true", "beard" :"false" },
@@ -491,6 +532,10 @@ titles = {
     "patched_hood" :         "Patched Hood",
     "rotten_chain_scarf" :   "Rotten Aventail",
     "simple_hood" :          "Simple Hood",
+    "southern_cap" :         "Southern Cap",
+    "southern_turban_light_hood" : "Southern light hood",
+    "southern_niqaab" :      "Niqaab",
+
     "padded_cap" :           "Aketon Cap",
     "hood_cloth_round" :     "Round Hood Cloth",
     "hood_cloth_square" :    "Square Hood Cloth",
@@ -499,6 +544,8 @@ titles = {
     "cloth_bandana" :        "Headscarf",
     "leather_cap" :          "Leather Cap",
     "open_chain_hood" : "Chain Mail Hood",
+    "southern_chain_hood" : "Southern Mail Hood",
+    "southern_open_chain_hood" : "Southern Chain Mail Hood",
 
     "ancient_beard_mask" :                  "Ancient Bearded Mask",
     "ancient_conic_helm" :                  "Ancient Conic Helm",
@@ -530,7 +577,7 @@ titles = {
     "golden_helm" :                         "Golden Helm",
     "great_helm" :                           "Great Helm",
     "heavy_plate_helm" :                     "Heavy Plate Helm",
-    "heavy_plate_helm_named" : "",
+    "heavy_plate_helm_named" :                "Famed Heavy Plate Helm",
     "heavy_spiked_helm" :                   "Heavy Spiked Helm",
     "horsetail" :                            "Steppe Helm",
     "kettle_helm" :                          "Kettle Helm",
@@ -552,6 +599,18 @@ titles = {
     "rotten_great_helm" :           "Rotten Great Helm",
     "sallet" :                        "Sallet",
     "skin_helm" :                   "Glimpse of Davkul",
+     "southern_cap_smooth" :          "Southern Smooth Cap",
+     "southern_cap_spiked" :          "Southern Spiked Cap",
+    "southern_conic_helm" :          "Southern Conic Helm",
+     "southern_named_conic" :          "Southern Conic",
+    "southern_helmet_nasal" :  "Heavy Lamellar Helmet",
+    "southern_gladiator_helm_crested" :  "Crested Gladiator Helm",
+    "southern_gladiator_helm_masked" :  "Masked Gladiator Helm",
+    "southern_gladiator_helm_split" :  "Split Gladiator Helm",
+    "southern_leather_helm" :  "Leather helm",
+    "southern_studded_leather_helm" :  "Nomad Leather Cap",
+    "southern_peaked_helm" :          "Southern Peaked Helmet",
+    "southern_peaked_nasal_helm" :    "Turban Helmet",
     "stag_helm" :                   "Stag Helm",
     "swan_helm" :                   "Swan Helm",
     "tailed_conic" :                "Feathered Nasal Helmet",
@@ -564,7 +623,9 @@ titles = {
     "cult_hood" :                "Cult Hood",
     "eyemask" :                  "Eyemask",
     "facemask" :                 "Facemask",
+
     "faceplate_full" :           "Full Faceplate",
+    "faceplate_full_breaths" :   "Breathed Faceplate",
     "faceplate_full_01_named" :  "Full Faceplate",
     "faceplate_gold" :           "Gold Faceplate",
     "faceplate_long" :           "Long Faceplate",
@@ -579,6 +640,9 @@ titles = {
     "headband_side" :            "Headband Side",
     "leather_hood_barb" :        "Leather Hood Barb",
     "nose_plate" :               "Nose Plate",
+     "southern_faceplate" :       "Southern Faceplate",
+    "southern_faceplate_bearded" : "Southern Bearded Faceplate",
+    "southern_helm_tailed" : "Southern Tailed Helmet",
 
     "antler" :               "Antlers",
     "bear_head" :            "Bear Headpiece",
@@ -608,6 +672,19 @@ titles = {
     "ponytail" :             "Ponytail",
     "ram_horns" :            "Ram Horns",
     "side_feather" :         "Side Feather",
+    "southern_silk_headscarf" : "Southern Headscarf",
+    "southern_headband" :    "Southern Headband",
+    "southern_patterned_headband" :   "Patterned Headband",
+    "southern_patterned_headwrap" :   "Patterned Headwrap",
+    "southern_top_tail" :    "Southern Top Tail",
+    "southern_turban_open" : "Open Turban",
+    "southern_turban_full" : "Full Turban",
+    "southern_turban_light" : "Light Turban",
+    "southern_turban_feather" : "Southern Head Wrap",
+    "southern_feathered_turban" : "Feathered Turban",
+    "southern_noble_crown" : "Vizier Peak",
+    "southern_noble_hat" : "Vizier Hat",
+    "southern_noble_turban" : "Vizier Turban",
     "straw_hat" :            "Straw Hat",
     "top_feather" :          "Top Feather",
     "witchhunter_helm" :     "Witchhunter Helm",
@@ -654,6 +731,9 @@ descriptions = {
     "goblin_scarf" :        "Goblin Scarf",
     "leather_hood" :        "A closed leather cap that protects the head and neck. Padded for extra protection.",
     "padded_hood" :         "A large padded cloth cap also covering the neck.",
+    "southern_cap" :        "A simple cap of rough fibres",
+    "southern_niqaab" :      "A headwrap, protects from the sun and light blows",
+    "southern_turban_light_hood" :  "A southern hood made of light materials",
     "patched_hood" :         "Patched Hood",
     "rotten_chain_scarf" :   "A rotten mail aventail that extends from below the eyeline to cover the neck",
     "simple_hood" :          "A simple hood to protect against weather and scratches.",
@@ -665,6 +745,8 @@ descriptions = {
     "cloth_bandana" :        "A thick piece of cloth wrapped around the head.",
     "leather_cap" :          "A sturdy leather cap that is not covering the ears and neck.",
     "open_chain_hood" : "A hood made of chainmail. Offer good protection and visibiliy.",
+    "southern_chain_hood" : "A Mail Hood of southern design",
+    "southern_open_chain_hood" : "An open mail hood of southern design",
 
     "ancient_beard_mask" :                  "Bearded Mask of an ancient honor guard",
     "ancient_conic_helm" :                  "Conic Helm of an ancient household guard",
@@ -718,6 +800,19 @@ descriptions = {
     "rotten_great_helm" :           "Rotten Great Helm",
     "sallet" :                        "A metal sallet helmet with an extended neckguard, a design uncommon in these lands. It is well crafted to offer maximum protection with minimum weight, and without impairing vision.",
     "skin_helm" :                   "The Glimpse of Davkul is a gift bestowed upon man by ancient and dark powers, a helmet merged with human skin and bones through the most unspeakable of rituals. A glimpse of a future where man shall become one with creations from a realm beyond. It shall never break, but instead keep regrowing its scarred skin on the spot.",
+     "southern_cap_smooth" :          "A smooth metal cap",
+     "southern_cap_spiked" :          "A metal skull cap with a fashionable spike",
+    "southern_conic_helm" :          "A conic helm from the south",
+    "southern_named_conic" :          "an expertly crafted southern helm",
+    "southern_leather_helm" :    "A traditional southern leather helm",
+    "southern_studded_leather_helm" :  "A light nomad leather cap.",
+    "southern_helmet_nasal" :    "A heavy helmet made from overlapping metal plates.",
+    "southern_gladiator_helm_crested" :  "An impressive metal helmet crafted to intimidate the opponents of pit fighters in arenas of the southern city states",
+    "southern_gladiator_helm_masked" :  "An impressive metal helmet crafted to intimidate the opponents of pit fighters in arenas of the southern city states",
+    "southern_gladiator_helm_split" :  "An impressive metal helmet crafted to intimidate the opponents of pit fighters in arenas of the southern city states",
+    "southern_peaked_helm" :          "A southern metal helmet usually worn with a mail coif to protect the neck.",
+    "southern_peaked_nasal_helm" :    "A full helmet crafted from overlapping long metal splints in the shape of a traditional southern head wrap.",
+
     "stag_helm" :                   "The helm of a noble house champion bearing the design of the stag, unparralled craftmanship but quite unweildy",
     "swan_helm" :                   "The helm of a noble house champion bearing the design of the swan, beautiful design but quite impractical",
     "tailed_conic" :                "A hardened nasal helmet with a unique neckguard made from leather scales.",
@@ -730,6 +825,9 @@ descriptions = {
     "cult_hood" :                "Cult Hood",
     "eyemask" :                  "Eyemask",
     "facemask" :                 "Facemask",
+    "southern_faceplate" :       "A faceplate in the southern style",
+    "southern_faceplate_bearded" : "A faceplate in the southern bearded style",
+    "faceplate_full_breaths" :   "A faceplate filled with breathes for easy breathing and increased sight",
     "faceplate_full" :           "Full Faceplate",
     "faceplate_full_01_named" :  "Full Faceplate",
     "faceplate_gold" :           "Gold Faceplate",
@@ -774,6 +872,19 @@ descriptions = {
     "ponytail" :             "A long tail of hair used to adorn helms",
     "ram_horns" :            "The horns of a wild beast, used as a sign of competency in northern tribes.",
     "side_feather" :         "A decorative feather used on hats",
+    "southern_turban_light" : "A turban made of light materials, perfect for desert heat",
+    "southern_silk_headscarf" :  "A headscarf made of exotic materials",
+    "southern_headband" :    "Southern Headband",
+    "southern_patterned_headband" :   "Patterned Headband",
+    "southern_patterned_headwrap" :   "Patterned Headwrap",
+    "southern_top_tail" :    "A decorative tail made of desert animal hair",
+    "southern_turban_open" : "An open Turban",
+    "southern_turban_full" : "A full turban",
+    "southern_turban_feather" : "A southern feathered head wrap",
+    "southern_feathered_turban" : "A feathered blade dancer turban",
+    "southern_noble_crown" : "Vizier Peak",
+    "southern_noble_hat" : "Vizier Hat",
+    "southern_noble_turban" : "Vizier Turban",
     "straw_hat" :            "A simple straw hat, often used by farmers and peasants",
     "top_feather" :          "A decorative feather used on hats",
     "witchhunter_helm" :     "A tough leather hat that provides decent protection against scratches.",
@@ -807,7 +918,9 @@ descriptions = {
     "mountain_helm" : "A helmet crafted from the skin and skull of a mighty rock unhold, the beast may be dead, but it continues to mend itself even after death",
     "demon_alp_helm" : "A trophy made from the face of a demon",
     "warlock_hood" : "Warlock Hood",
-    "top_plume" : "Top Plume"
+    "top_plume" : "Top Plume",
+
+    "southern_helm_tailed": "TODO"
 }
 
 def main():
@@ -873,8 +986,29 @@ def main():
         F.write(text)
         F.close()
 
-        #print('[0, "' + layer + '/' + fname + '"],')
-
+        # print('[1, "' + layer + '/' + fname + '"], //' + str(d["con"]))
+        # WR = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "temp.nut"), "w")
+        # F = open("search.txt")
+        # WR.write("gt.Const.LegendMod.HelmetObjs <- [")
+        # while True:
+        #     line1 = F.readline()
+        #     line2 = F.readline()
+        #     whitespace = F.readline()
+        #     if not line2: break
+        #     line1 = line1.split("\\")
+        #     if line1[-2] != 'helmets':
+        #         line1 = line1[-2] + "\\" + line1[-1]
+        #     else:
+        #         line1 = line1[-1]
+        #     line1 = line1[:-6]
+        #     line2 = line2.rsplit(" ")
+        #     line2 = line2[-1]
+        #     line2 = line2[:-2]
+        #     s = Template(HelmObj)
+        #     text = s.substitute(dict(id=line1, value=line2))
+        #     WR.write(text)
+        # WR.write("]")
+        # WR.close()
 
     # filepath = os.path.join(os.path.dirname(os.path.abspath(__file__)), "temp.nut")
     # F = open(filepath, "w")
@@ -891,170 +1025,332 @@ main()
 
 
 '''
-[0, "hood/legend_helmet_goblin_scarf"],
-[0, "hood/legend_helmet_barb_chain_scarf"],
-[0, "hood/legend_helmet_rotten_chain_scarf"],
+[1, "hood/legend_helmet_goblin_scarf"], //5
+[1, "hood/legend_helmet_barb_chain_scarf"], //55
+[1, "hood/legend_helmet_rotten_chain_scarf"], //60
+[1, "hood/legend_helmet_cloth_scarf"], //10
+[1, "hood/legend_helmet_cloth_bandana"], //15
+[1, "hood/legend_helmet_patched_hood"], //25
+[1, "hood/legend_helmet_simple_hood"], //30
+[1, "hood/legend_helmet_hood_cloth_round"], //30
+[1, "hood/legend_helmet_hood_cloth_wide"], //30
+[1, "hood/legend_helmet_cloth_long_hood"], //30
+[1, "hood/legend_helmet_leather_cap"], //35
+[1, "hood/legend_helmet_padded_cap"], //40
+[1, "hood/legend_helmet_leather_hood"], //45
+[1, "hood/legend_helmet_padded_hood"], //50
+[1, "hood/legend_helmet_open_chain_hood"], //65
+[1, "hood/legend_helmet_chain_scarf"], //70
+[1, "hood/legend_helmet_chain_hood"], //80
+[1, "hood/legend_helmet_chain_hood_full"], //90
+[1, "hood/legend_helmet_bronze_chain"], //100
 
-[0, "hood/legend_helmet_cloth_scarf"],
-[0, "hood/legend_helmet_cloth_bandana"],
-[0, "hood/legend_helmet_patched_hood"],
-[0, "hood/legend_helmet_simple_hood"],
-[0, "hood/legend_helmet_hood_cloth_round"],
-[0, "hood/legend_helmet_hood_cloth_wide"],
-[0, "hood/legend_helmet_cloth_long_hood"],
-[0, "hood/legend_helmet_leather_cap"],
-[0, "hood/legend_helmet_padded_cap"],
-[0, "hood/legend_helmet_leather_hood"],
-[0, "hood/legend_helmet_padded_hood"],
+[1, "helm/legend_helmet_ancient_conic_helm"], //15
+[1, "helm/legend_helmet_ancient_kettle"], //15
+[1, "helm/legend_helmet_ancient_dome"], //15
+[1, "helm/legend_helmet_ancient_dome_tailed"], //15
+[1, "helm/legend_helmet_ancient_face_plate"], //50
+[1, "helm/legend_helmet_ancient_legionaire"], //50
+[1, "helm/legend_helmet_ancient_side_hawk"], //50
+[1, "helm/legend_helmet_ancient_tailed_conic_helm"], //50
+[1, "helm/legend_helmet_ancient_beard_mask"], //100
+[1, "helm/legend_helmet_ancient_crested"], //100
+[1, "helm/legend_helmet_ancient_lion_mask"], //100
+[1, "helm/legend_helmet_ancient_mask"], //100
+[1, "helm/legend_helmet_ancient_face_helm"], //100
+[1, "helm/legend_helmet_orc_strapped_helm"], //160
+[1, "helm/legend_helmet_orc_double_helm"], //220
+[1, "helm/legend_helmet_orc_great_helm"], //420
+[1, "helm/legend_helmet_crude_metal_helm"], //65
+[1, "helm/legend_helmet_crude_cylinder_helm"], //110
+[1, "helm/legend_helmet_heavy_plate_helm"], //170
+[1, "helm/legend_helmet_heavy_plate_helm_named"], //170
+[1, "helm/legend_helmet_crude_skull_helm"], //130
+[1, "helm/legend_helmet_heavy_spiked_helm"], //150
+[1, "helm/legend_helmet_viking_helm"], //45
+[1, "helm/legend_helmet_norman_helm"], //50
+[1, "helm/legend_helmet_flat_top_helm"], //70
+[1, "helm/legend_helmet_barbute"], //110
+[1, "helm/legend_helmet_horsetail"], //120
+[1, "helm/legend_helmet_basinet"], //130
+[1, "helm/legend_helmet_kettle_helm"], //130
+[1, "helm/legend_helmet_flat_top_face_plate"], //130
+[1, "helm/legend_helmet_carthaginian"], //160
+[1, "helm/legend_helmet_conic_helm"], //170
+[1, "helm/legend_helmet_sallet"], //185
+[1, "helm/legend_helmet_nordic_helm"], //185
+[1, "helm/legend_helmet_bronze_helm"], //190
+[1, "helm/legend_helmet_great_helm"], //220
+[1, "helm/legend_helmet_legend_armet"], //260
+[1, "helm/legend_helmet_legend_frogmouth"], //265
+[1, "helm/legend_helmet_legend_ancient_gladiator"], //115
+[1, "helm/legend_helmet_legend_ancient_legionaire_restored"], //60
+[1, "helm/legend_helmet_dentist_helmet"], //160
+[1, "helm/legend_helmet_tailed_conic"], //185
+[1, "helm/legend_helmet_legend_armet_01_named"], //260
+[1, "helm/legend_helmet_stag_helm"], //230
+[1, "helm/legend_helmet_swan_helm"], //230
+[1, "helm/legend_helmet_skin_helm"], //190
+[1, "helm/legend_helmet_rotten_flat_top_face_mask"], //150
+[1, "helm/legend_helmet_rotten_great_helm"], //160
 
-[0, "hood/legend_helmet_open_chain_hood"],
-[0, "hood/legend_helmet_chain_scarf"],
-[0, "hood/legend_helmet_chain_hood"],
-[0, "hood/legend_helmet_chain_hood_full"],
+[1, "top/legend_helmet_orc_leather_mask"], //35
+[1, "top/legend_helmet_orc_horn_mask"], //60
+[1, "top/legend_helmet_orc_metal_mask"], //120
+[1, "top/legend_helmet_goblin_leaves"], //5
+[1, "top/legend_helmet_goblin_leaf_helm"], //10
+[1, "top/legend_helmet_goblin_gillie"], //25
+[1, "top/legend_helmet_goblin_leather_mask"], //40
+[1, "top/legend_helmet_goblin_leather_helm"], //45
+[1, "top/legend_helmet_goblin_chain_helm"], //70
+[1, "top/legend_helmet_goblin_spiked_helm"], //90
+[1, "top/legend_helmet_vampire_crown"], //30
+[1, "top/legend_helmet_ancient_crown"], //80
+[1, "top/legend_helmet_leather_hood_barb"], //105
+[1, "top/legend_helmet_nose_plate"], //15
+[1, "top/legend_helmet_headband_side"], //20
+[1, "top/legend_helmet_headband_nose"], //30
+[1, "top/legend_helmet_eyemask"], //35
+[1, "top/legend_helmet_chain_attachment"], //40
+[1, "top/legend_helmet_faceplate_flat"], //45
+[1, "top/legend_helmet_faceplate_curved"], //50
+[1, "top/legend_helmet_faceplate_short"], //60
+[1, "top/legend_helmet_cult_hood"], //65
+[1, "top/legend_helmet_faceplate_long"], //65
+[1, "top/legend_helmet_faceplate_winged"], //70
+[1, "top/legend_helmet_faceplate_snub_nose"], //75
+[1, "top/legend_helmet_faceplate_snub_slit"], //80
+[1, "top/legend_helmet_faceplate_sharp"], //85
+[1, "top/legend_helmet_facemask"], //90
+[1, "top/legend_helmet_faceplate_pointed"], //95
+[1, "top/legend_helmet_faceplate_pointed_slit"], //100
+[1, "top/legend_helmet_faceplate_full"], //110
+[1, "top/legend_helmet_faceplate_gold"], //105
+[1, "top/legend_helmet_faceplate_full_gold"], //115
+[1, "top/legend_helmet_golden_helm"], //80
+[1, "top/legend_helmet_faceplate_raised"], //55
+[1, "top/legend_helmet_faceplate_full_01_named"], //110
+[1, "top/legend_helmet_golden_mask"], //100
+[1, "top/legend_helmet_warlock_skull"], //90
 
-[0, "hood/legend_helmet_bronze_chain"],
+[1, "vanity/legend_helmet_hood_cloth_square"], //30
+[1, "vanity/legend_helmet_sack"], //80
+[1, "vanity/legend_helmet_antler"], //10
+[1, "vanity/legend_helmet_bear_head"], //10
+[1, "vanity/legend_helmet_beret"], //10
+[1, "vanity/legend_helmet_bull_horns"], //10
+[1, "vanity/legend_helmet_crown"], //10
+[1, "vanity/legend_helmet_faction_helmet"], //10
+[1, "vanity/legend_helmet_faction_helmet_2"], //10
+[1, "vanity/legend_helmet_feather_band"], //10
+[1, "vanity/legend_helmet_feathered_hat"], //10
+[1, "vanity/legend_helmet_fencer_hat"], //10
+[1, "vanity/legend_helmet_goat_horns"], //10
+[1, "vanity/legend_helmet_headband"], //10
+[1, "vanity/legend_helmet_horn_decorations"], //10
+[1, "vanity/legend_helmet_hunter_cap"], //10
+[1, "vanity/legend_helmet_impaled_head"], //10
+[1, "vanity/legend_helmet_jester_hat"], //10
+[1, "vanity/legend_helmet_metal_bird"], //10
+[1, "vanity/legend_helmet_noble_buckle"], //10
+[1, "vanity/legend_helmet_noble_feather"], //10
+[1, "vanity/legend_helmet_noble_floppy_hat"], //10
+[1, "vanity/legend_helmet_noble_hat"], //10
+[1, "vanity/legend_helmet_noble_hood"], //10
+[1, "vanity/legend_helmet_wreath"], //10
+[1, "vanity/legend_helmet_orc_bones"], //10
+[1, "vanity/legend_helmet_plait"], //10
+[1, "vanity/legend_helmet_ponytail"], //10
+[1, "vanity/legend_helmet_ram_horns"], //10
+[1, "vanity/legend_helmet_side_feather"], //10
+[1, "vanity/legend_helmet_straw_hat"], //10
+[1, "vanity/legend_helmet_top_feather"], //10
+[1, "vanity/legend_helmet_witchhunter_helm"], //10
+[1, "vanity/legend_helmet_wizard_cowl"], //10
+[1, "vanity/legend_helmet_wolf_helm"], //10
+[1, "vanity/legend_helmet_white_wolf_helm"], //10
+[1, "vanity/legend_helmet_royal_hood"], //10
+[1, "vanity/legend_helmet_lindwurm_helm"], //10
+[1, "vanity/legend_helmet_redback_helm"], //10
+[1, "vanity/legend_helmet_nun_habit"], //10
+[1, "vanity/legend_helmet_nach_helm"], //10
+[1, "vanity/legend_helmet_mountain_helm"], //10
+[1, "vanity/legend_helmet_demon_alp_helm"], //10
+[1, "vanity/legend_helmet_warlock_hood"], //10
+[1, "vanity_lower/legend_helmet_back_crest"], //10
+[1, "vanity_lower/legend_helmet_back_feathers"], //10
+[1, "vanity_lower/legend_helmet_feather_crest"], //10
+[1, "vanity_lower/legend_helmet_knotted_tail"], //10
+[1, "vanity_lower/legend_helmet_orc_tail"], //10
+[1, "vanity_lower/legend_helmet_top_plume"], //10
+[1, "vanity_lower/legend_helmet_wings"], //10
 
-[0, "helm/legend_helmet_ancient_conic_helm"],
-[0, "helm/legend_helmet_ancient_kettle"],
-[0, "helm/legend_helmet_ancient_dome"],
-[0, "helm/legend_helmet_ancient_dome_tailed"],
-[0, "helm/legend_helmet_ancient_face_plate"],
-[0, "helm/legend_helmet_ancient_legionaire"],
-[0, "helm/legend_helmet_ancient_side_hawk"],
-[0, "helm/legend_helmet_ancient_tailed_conic_helm"],
-[0, "helm/legend_helmet_ancient_beard_mask"],
-[0, "helm/legend_helmet_ancient_crested"],
-[0, "helm/legend_helmet_ancient_lion_mask"],
-[0, "helm/legend_helmet_ancient_mask"],
-[0, "helm/legend_helmet_ancient_face_helm"],
-
-
-[0, "helm/legend_helmet_orc_strapped_helm"],
-[0, "helm/legend_helmet_orc_double_helm"],
-[0, "helm/legend_helmet_orc_great_helm"],
-
-[0, "helm/legend_helmet_crude_metal_helm"],
-[0, "helm/legend_helmet_crude_cylinder_helm"],
-[0, "helm/legend_helmet_heavy_plate_helm"],
-
-[0, "helm/legend_helmet_heavy_plate_helm_named"],
-[0, "helm/legend_helmet_crude_skull_helm"],
-[0, "helm/legend_helmet_heavy_spiked_helm"],
-
-[0, "helm/legend_helmet_viking_helm"],
-[0, "helm/legend_helmet_norman_helm"],
-[0, "helm/legend_helmet_flat_top_helm"],
-[0, "helm/legend_helmet_barbute"],
-[0, "helm/legend_helmet_horsetail"],
-[0, "helm/legend_helmet_basinet"],
-[0, "helm/legend_helmet_kettle_helm"],
-[0, "helm/legend_helmet_flat_top_face_plate"],
-[0, "helm/legend_helmet_carthaginian"],
-[0, "helm/legend_helmet_conic_helm"],
-[0, "helm/legend_helmet_sallet"],
-[0, "helm/legend_helmet_nordic_helm"],
-[0, "helm/legend_helmet_bronze_helm"],
-[0, "helm/legend_helmet_great_helm"],
-[0, "helm/legend_helmet_legend_armet"],
-[0, "helm/legend_helmet_legend_frogmouth"],
-
-[0, "helm/legend_helmet_legend_ancient_gladiator"],
-[0, "helm/legend_helmet_legend_ancient_legionaire_restored"],
-[0, "helm/legend_helmet_dentist_helmet"],
-[0, "helm/legend_helmet_tailed_conic"],
-[0, "helm/legend_helmet_legend_armet_01_named"],
-[0, "helm/legend_helmet_stag_helm"],
-[0, "helm/legend_helmet_swan_helm"],
-[0, "helm/legend_helmet_skin_helm"],
-[0, "helm/legend_helmet_rotten_flat_top_face_mask"],
-[0, "helm/legend_helmet_rotten_great_helm"],
-[0, "top/legend_helmet_orc_leather_mask"],
-[0, "top/legend_helmet_orc_horn_mask"],
-[0, "top/legend_helmet_orc_metal_mask"],
-[0, "top/legend_helmet_goblin_leaves"],
-[0, "top/legend_helmet_goblin_leaf_helm"],
-[0, "top/legend_helmet_goblin_gillie"],
-[0, "top/legend_helmet_goblin_leather_mask"],
-[0, "top/legend_helmet_goblin_leather_helm"],
-[0, "top/legend_helmet_goblin_chain_helm"],
-[0, "top/legend_helmet_goblin_spiked_helm"],
-[0, "top/legend_helmet_vampire_crown"],
-[0, "top/legend_helmet_ancient_crown"],
-[0, "top/legend_helmet_leather_hood_barb"],
-[0, "top/legend_helmet_nose_plate"],
-[0, "top/legend_helmet_headband_side"],
-[0, "top/legend_helmet_headband_nose"],
-[0, "top/legend_helmet_eyemask"],
-[0, "top/legend_helmet_chain_attachment"],
-[0, "top/legend_helmet_faceplate_flat"],
-[0, "top/legend_helmet_faceplate_curved"],
-[0, "top/legend_helmet_faceplate_short"],
-[0, "top/legend_helmet_cult_hood"],
-[0, "top/legend_helmet_faceplate_long"],
-[0, "top/legend_helmet_faceplate_winged"],
-[0, "top/legend_helmet_faceplate_snub_nose"],
-[0, "top/legend_helmet_faceplate_snub_slit"],
-[0, "top/legend_helmet_faceplate_sharp"],
-[0, "top/legend_helmet_facemask"],
-[0, "top/legend_helmet_faceplate_pointed"],
-[0, "top/legend_helmet_faceplate_pointed_slit"],
-[0, "top/legend_helmet_faceplate_full"],
-[0, "top/legend_helmet_faceplate_gold"],
-[0, "top/legend_helmet_faceplate_full_gold"],
-[0, "top/legend_helmet_golden_helm"],
-[0, "top/legend_helmet_faceplate_raised"],
-[0, "top/legend_helmet_faceplate_full_01_named"],
-[0, "top/legend_helmet_golden_mask"],
-[0, "top/legend_helmet_warlock_skull"],
-[0, "vanity/legend_helmet_hood_cloth_square"],
-[0, "vanity/legend_helmet_sack"],
-[0, "vanity/legend_helmet_antler"],
-[0, "vanity/legend_helmet_bear_head"],
-[0, "vanity/legend_helmet_beret"],
-[0, "vanity/legend_helmet_bull_horns"],
-[0, "vanity/legend_helmet_crown"],
-[0, "vanity/legend_helmet_faction_helmet"],
-[0, "vanity/legend_helmet_faction_helmet_2"],
-[0, "vanity/legend_helmet_feather_band"],
-[0, "vanity/legend_helmet_feathered_hat"],
-[0, "vanity/legend_helmet_fencer_hat"],
-[0, "vanity/legend_helmet_goat_horns"],
-[0, "vanity/legend_helmet_headband"],
-[0, "vanity/legend_helmet_horn_decorations"],
-[0, "vanity/legend_helmet_hunter_cap"],
-[0, "vanity/legend_helmet_impaled_head"],
-[0, "vanity/legend_helmet_jester_hat"],
-[0, "vanity/legend_helmet_metal_bird"],
-[0, "vanity/legend_helmet_noble_buckle"],
-[0, "vanity/legend_helmet_noble_feather"],
-[0, "vanity/legend_helmet_noble_floppy_hat"],
-[0, "vanity/legend_helmet_noble_hat"],
-[0, "vanity/legend_helmet_noble_hood"],
-[0, "vanity/legend_helmet_wreath"],
-[0, "vanity/legend_helmet_orc_bones"],
-[0, "vanity/legend_helmet_plait"],
-[0, "vanity/legend_helmet_ponytail"],
-[0, "vanity/legend_helmet_ram_horns"],
-[0, "vanity/legend_helmet_side_feather"],
-[0, "vanity/legend_helmet_straw_hat"],
-[0, "vanity/legend_helmet_top_feather"],
-[0, "vanity/legend_helmet_witchhunter_helm"],
-[0, "vanity/legend_helmet_wizard_cowl"],
-[0, "vanity/legend_helmet_wolf_helm"],
-[0, "vanity/legend_helmet_white_wolf_helm"],
-[0, "vanity/legend_helmet_royal_hood"],
-[0, "vanity/legend_helmet_lindwurm_helm"],
-[0, "vanity/legend_helmet_redback_helm"],
-[0, "vanity/legend_helmet_nun_habit"],
-[0, "vanity/legend_helmet_nach_helm"],
-[0, "vanity/legend_helmet_mountain_helm"],
-[0, "vanity/legend_helmet_demon_alp_helm"],
-[0, "vanity/legend_helmet_warlock_hood"],
-[0, "vanity_lower/legend_helmet_back_crest"],
-[0, "vanity_lower/legend_helmet_back_feathers"],
-[0, "vanity_lower/legend_helmet_feather_crest"],
-[0, "vanity_lower/legend_helmet_knotted_tail"],
-[0, "vanity_lower/legend_helmet_orc_tail"],
-[0, "vanity_lower/legend_helmet_top_plume"],
-[0, "vanity_lower/legend_helmet_wings"],
+'''
+'''
+Sets = [{
+    Hoods = [
+        [1, "hood/legend_helmet_goblin_scarf"], //5
+        [1, "hood/legend_helmet_barb_chain_scarf"], //55
+        [1, "hood/legend_helmet_rotten_chain_scarf"], //60
+        [1, "hood/legend_helmet_cloth_scarf"], //10
+        [1, "hood/legend_helmet_cloth_bandana"], //15
+        [1, "hood/legend_helmet_patched_hood"], //25
+        [1, "hood/legend_helmet_simple_hood"], //30
+        [1, "hood/legend_helmet_hood_cloth_round"], //30
+        [1, "hood/legend_helmet_hood_cloth_wide"], //30
+        [1, "hood/legend_helmet_cloth_long_hood"], //30
+        [1, "hood/legend_helmet_leather_cap"], //35
+        [1, "hood/legend_helmet_padded_cap"], //40
+        [1, "hood/legend_helmet_leather_hood"], //45
+        [1, "hood/legend_helmet_padded_hood"], //50
+        [1, "hood/legend_helmet_open_chain_hood"], //65
+        [1, "hood/legend_helmet_chain_scarf"], //70
+        [1, "hood/legend_helmet_chain_hood"], //80
+        [1, "hood/legend_helmet_chain_hood_full"], //90
+        [1, "hood/legend_helmet_bronze_chain"], //100
+    ],
+    Helms = [
+        [1, "helm/legend_helmet_ancient_conic_helm"], //15
+        [1, "helm/legend_helmet_ancient_kettle"], //15
+        [1, "helm/legend_helmet_ancient_dome"], //15
+        [1, "helm/legend_helmet_ancient_dome_tailed"], //15
+        [1, "helm/legend_helmet_ancient_face_plate"], //50
+        [1, "helm/legend_helmet_ancient_legionaire"], //50
+        [1, "helm/legend_helmet_ancient_side_hawk"], //50
+        [1, "helm/legend_helmet_ancient_tailed_conic_helm"], //50
+        [1, "helm/legend_helmet_ancient_beard_mask"], //100
+        [1, "helm/legend_helmet_ancient_crested"], //100
+        [1, "helm/legend_helmet_ancient_lion_mask"], //100
+        [1, "helm/legend_helmet_ancient_mask"], //100
+        [1, "helm/legend_helmet_ancient_face_helm"], //100
+        [1, "helm/legend_helmet_orc_strapped_helm"], //160
+        [1, "helm/legend_helmet_orc_double_helm"], //220
+        [1, "helm/legend_helmet_orc_great_helm"], //420
+        [1, "helm/legend_helmet_crude_metal_helm"], //65
+        [1, "helm/legend_helmet_crude_cylinder_helm"], //110
+        [1, "helm/legend_helmet_heavy_plate_helm"], //170
+        [1, "helm/legend_helmet_heavy_plate_helm_named"], //170
+        [1, "helm/legend_helmet_crude_skull_helm"], //130
+        [1, "helm/legend_helmet_heavy_spiked_helm"], //150
+        [1, "helm/legend_helmet_viking_helm"], //45
+        [1, "helm/legend_helmet_norman_helm"], //50
+        [1, "helm/legend_helmet_flat_top_helm"], //70
+        [1, "helm/legend_helmet_barbute"], //110
+        [1, "helm/legend_helmet_horsetail"], //120
+        [1, "helm/legend_helmet_basinet"], //130
+        [1, "helm/legend_helmet_kettle_helm"], //130
+        [1, "helm/legend_helmet_flat_top_face_plate"], //130
+        [1, "helm/legend_helmet_carthaginian"], //160
+        [1, "helm/legend_helmet_conic_helm"], //170
+        [1, "helm/legend_helmet_sallet"], //185
+        [1, "helm/legend_helmet_nordic_helm"], //185
+        [1, "helm/legend_helmet_bronze_helm"], //190
+        [1, "helm/legend_helmet_great_helm"], //220
+        [1, "helm/legend_helmet_legend_armet"], //260
+        [1, "helm/legend_helmet_legend_frogmouth"], //265
+        [1, "helm/legend_helmet_legend_ancient_gladiator"], //115
+        [1, "helm/legend_helmet_legend_ancient_legionaire_restored"], //60
+        [1, "helm/legend_helmet_dentist_helmet"], //160
+        [1, "helm/legend_helmet_tailed_conic"], //185
+        [1, "helm/legend_helmet_legend_armet_01_named"], //260
+        [1, "helm/legend_helmet_stag_helm"], //230
+        [1, "helm/legend_helmet_swan_helm"], //230
+        [1, "helm/legend_helmet_skin_helm"], //190
+        [1, "helm/legend_helmet_rotten_flat_top_face_mask"], //150
+        [1, "helm/legend_helmet_rotten_great_helm"], //160
+    ],
+    Tops = [
+        [1, "top/legend_helmet_orc_leather_mask"], //35
+        [1, "top/legend_helmet_orc_horn_mask"], //60
+        [1, "top/legend_helmet_orc_metal_mask"], //120
+        [1, "top/legend_helmet_goblin_leaves"], //5
+        [1, "top/legend_helmet_goblin_leaf_helm"], //10
+        [1, "top/legend_helmet_goblin_gillie"], //25
+        [1, "top/legend_helmet_goblin_leather_mask"], //40
+        [1, "top/legend_helmet_goblin_leather_helm"], //45
+        [1, "top/legend_helmet_goblin_chain_helm"], //70
+        [1, "top/legend_helmet_goblin_spiked_helm"], //90
+        [1, "top/legend_helmet_vampire_crown"], //30
+        [1, "top/legend_helmet_ancient_crown"], //80
+        [1, "top/legend_helmet_leather_hood_barb"], //105
+        [1, "top/legend_helmet_nose_plate"], //15
+        [1, "top/legend_helmet_headband_side"], //20
+        [1, "top/legend_helmet_headband_nose"], //30
+        [1, "top/legend_helmet_eyemask"], //35
+        [1, "top/legend_helmet_chain_attachment"], //40
+        [1, "top/legend_helmet_faceplate_flat"], //45
+        [1, "top/legend_helmet_faceplate_curved"], //50
+        [1, "top/legend_helmet_faceplate_short"], //60
+        [1, "top/legend_helmet_cult_hood"], //65
+        [1, "top/legend_helmet_faceplate_long"], //65
+        [1, "top/legend_helmet_faceplate_winged"], //70
+        [1, "top/legend_helmet_faceplate_snub_nose"], //75
+        [1, "top/legend_helmet_faceplate_snub_slit"], //80
+        [1, "top/legend_helmet_faceplate_sharp"], //85
+        [1, "top/legend_helmet_facemask"], //90
+        [1, "top/legend_helmet_faceplate_pointed"], //95
+        [1, "top/legend_helmet_faceplate_pointed_slit"], //100
+        [1, "top/legend_helmet_faceplate_full"], //110
+        [1, "top/legend_helmet_faceplate_gold"], //105
+        [1, "top/legend_helmet_faceplate_full_gold"], //115
+        [1, "top/legend_helmet_golden_helm"], //80
+        [1, "top/legend_helmet_faceplate_raised"], //55
+        [1, "top/legend_helmet_faceplate_full_01_named"], //110
+        [1, "top/legend_helmet_golden_mask"], //100
+        [1, "top/legend_helmet_warlock_skull"], //90
+    ],
+    Vanity = [
+        [1, "vanity/legend_helmet_hood_cloth_square"], //30
+        [1, "vanity/legend_helmet_sack"], //80
+        [1, "vanity/legend_helmet_antler"], //10
+        [1, "vanity/legend_helmet_bear_head"], //10
+        [1, "vanity/legend_helmet_beret"], //10
+        [1, "vanity/legend_helmet_bull_horns"], //10
+        [1, "vanity/legend_helmet_crown"], //10
+        [1, "vanity/legend_helmet_faction_helmet"], //10
+        [1, "vanity/legend_helmet_faction_helmet_2"], //10
+        [1, "vanity/legend_helmet_feather_band"], //10
+        [1, "vanity/legend_helmet_feathered_hat"], //10
+        [1, "vanity/legend_helmet_fencer_hat"], //10
+        [1, "vanity/legend_helmet_goat_horns"], //10
+        [1, "vanity/legend_helmet_headband"], //10
+        [1, "vanity/legend_helmet_horn_decorations"], //10
+        [1, "vanity/legend_helmet_hunter_cap"], //10
+        [1, "vanity/legend_helmet_impaled_head"], //10
+        [1, "vanity/legend_helmet_jester_hat"], //10
+        [1, "vanity/legend_helmet_metal_bird"], //10
+        [1, "vanity/legend_helmet_noble_buckle"], //10
+        [1, "vanity/legend_helmet_noble_feather"], //10
+        [1, "vanity/legend_helmet_noble_floppy_hat"], //10
+        [1, "vanity/legend_helmet_noble_hat"], //10
+        [1, "vanity/legend_helmet_noble_hood"], //10
+        [1, "vanity/legend_helmet_wreath"], //10
+        [1, "vanity/legend_helmet_orc_bones"], //10
+        [1, "vanity/legend_helmet_plait"], //10
+        [1, "vanity/legend_helmet_ponytail"], //10
+        [1, "vanity/legend_helmet_ram_horns"], //10
+        [1, "vanity/legend_helmet_side_feather"], //10
+        [1, "vanity/legend_helmet_straw_hat"], //10
+        [1, "vanity/legend_helmet_top_feather"], //10
+        [1, "vanity/legend_helmet_witchhunter_helm"], //10
+        [1, "vanity/legend_helmet_wizard_cowl"], //10
+        [1, "vanity/legend_helmet_wolf_helm"], //10
+        [1, "vanity/legend_helmet_white_wolf_helm"], //10
+        [1, "vanity/legend_helmet_royal_hood"], //10
+        [1, "vanity/legend_helmet_lindwurm_helm"], //10
+        [1, "vanity/legend_helmet_redback_helm"], //10
+        [1, "vanity/legend_helmet_nun_habit"], //10
+        [1, "vanity/legend_helmet_nach_helm"], //10
+        [1, "vanity/legend_helmet_mountain_helm"], //10
+        [1, "vanity/legend_helmet_demon_alp_helm"], //10
+        [1, "vanity/legend_helmet_warlock_hood"], //10
+        [1, "vanity_lower/legend_helmet_back_crest"], //10
+        [1, "vanity_lower/legend_helmet_back_feathers"], //10
+        [1, "vanity_lower/legend_helmet_feather_crest"], //10
+        [1, "vanity_lower/legend_helmet_knotted_tail"], //10
+        [1, "vanity_lower/legend_helmet_orc_tail"], //10
+        [1, "vanity_lower/legend_helmet_top_plume"], //10
+        [1, "vanity_lower/legend_helmet_wings"], //10
+    ]
+}]
 '''

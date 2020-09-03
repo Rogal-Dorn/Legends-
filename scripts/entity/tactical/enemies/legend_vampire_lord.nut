@@ -311,7 +311,10 @@ this.legend_vampire_lord <- this.inherit("scripts/entity/tactical/actor", {
 	function assignRandomEquipment()
 	{
 
-		this.m.Items.equip(this.new("scripts/items/armor/legend_vampire_lord_armor"));
+		local item = this.Const.World.Common.pickArmor([
+			[1, "legend_vampire_lord_armor"]
+		]);
+		this.m.Items.equip(item);
 		local item = this.Const.World.Common.pickHelmet([
 			[66, "legend_vampire_lord_helmet"]
 		])

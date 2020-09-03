@@ -39,11 +39,11 @@ if (!("Desert" in gt.Const.DLC) || !this.Const.DLC.Desert)
 			"Training your new recruits takes too long? Hire a drill sergeant to have them gain experience faster.",
 			"Facing too few enemy champions? Hire a bounty hunter to find more and even earn a bounty for every one you kill.",
 			"Paying too much in wages? Hire a paymaster to reduce the wages you have to pay.",
-			"Wonder who went there? Hire a Lookout and get more information on any footprints on the world map.",
+			"Wondering who went there? Hire a Lookout and get more information on any footprints on the world map.",
 			"Always out of ammo and tools? Hire a scavenger to reclaim ammo you spent and gather tools from armor you destroyed.",
 			"Inventory full? Buy carts and wagons for your company in the Retinue screen.",
 			"You unlock slots for your retinue of non-combat followers by gaining Renown.",
-			"Ferocious hyenas roam the southen deserts, with strong jaws that can crush even metal armor und inflict bleeding wounds.",
+			"Ferocious hyenas roam the southern deserts, with strong jaws that can crush even metal armor und inflict bleeding wounds.",
 			"Try out different retinue followers to find those that complement your playstyle and chosen company origin."
 		];
 		this.Const.TipOfTheDay.extend(tips);

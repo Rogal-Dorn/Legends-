@@ -8,7 +8,7 @@ this.legend_warlock_cloak_blueprint <- this.inherit("scripts/crafting/blueprint"
 		this.m.PreviewCraftable = this.new("scripts/items/armor/named/legend_named_warlock_cloak");
 		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
-			this.m.PreviewCraftable = this.new("scripts/items/legend_armor/named/legend_armor_named_warlock_cloak");
+			this.m.PreviewCraftable = this.new("scripts/items/legend_armor/legendary/legend_armor_named_warlock_cloak");
 		}
 		this.m.Cost = 2000;
 		local ingredients = [
@@ -48,7 +48,7 @@ this.legend_warlock_cloak_blueprint <- this.inherit("scripts/crafting/blueprint"
 
 	function isQualified()
 	{
-		return true;
+		return this.World.LegendsMod.Configs().LegendArmorsEnabled()
 	}
 
 	function onCraft( _stash )
@@ -56,7 +56,7 @@ this.legend_warlock_cloak_blueprint <- this.inherit("scripts/crafting/blueprint"
 		local item
 		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
-			item = this.new("scripts/items/legend_armor/named/legend_armor_named_warlock_cloak");
+			item = this.new("scripts/items/legend_armor/legendary/legend_armor_named_warlock_cloak");
 		}
 		else
 		{
