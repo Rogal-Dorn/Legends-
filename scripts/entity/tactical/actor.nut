@@ -2503,7 +2503,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 		if (!this.m.IsExertingZoneOfOccupation)
 		{
 			_tile.addZoneOfOccupation(this.getFaction());
-			this.m.ExertingZoneOfOccupationOn = true;
+			this.m.IsExertingZoneOfOccupation = true;
 		}
 
 		if (this.Const.Tactical.TerrainEffect[_tile.Type].len() > 0 && !this.m.Skills.hasSkill(this.Const.Tactical.TerrainEffectID[_tile.Type]))

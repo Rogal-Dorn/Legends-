@@ -47,12 +47,12 @@ this.tile_mountains <- this.inherit("scripts/mapgen/map_template", {
 			if (_rect.Y < this.Const.World.Settings.SizeY * this.Const.World.Settings.Snowline)
 			{
 				local n = this.Math.rand(3, 4);
-				local m = tile.spawnDetail("world_mountain_0" + n, this.Const.World.ZLevel.Terrain - 1, 0, false);
+				local m = tile.spawnDetail("world_mountain_0" + n, this.Const.World.ZLevel.Terrain, 0, false);
 			}
 			else
 			{
 				local n = this.Math.rand(1, 2);
-				local m = tile.spawnDetail("world_mountain_snow_0" + n, this.Const.World.ZLevel.Terrain - 1, 0, false);
+				local m = tile.spawnDetail("world_mountain_snow_0" + n, this.Const.World.ZLevel.Terrain, 0, false);
 			}
 
 			tile.Subregion = 100;
