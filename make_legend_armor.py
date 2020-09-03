@@ -585,7 +585,7 @@ layers = [
     "adesc" : "Has a jacket of southern leather"
 },
 {"name": "legend_southern_leather_plates",           "layer": "plate", "min": 1, "max": 10, "value" : 200, "con" : 50, "stam" : -5, "impactSound" : "plate", "invSound" : "leather", "brush" : "southern_leather_plates",\
-    "title" :  "Stitched Nomad Armo", \
+    "title" :  "Stitched Nomad Armor", \
     "desc" :  "A leather nomad armor stitched together from various hides and scraps", \
     "adesc" : "Plates of leather hide and scraps"
 },
@@ -598,11 +598,6 @@ layers = [
     "title" :  "Heavy Southern Lamellar", \
     "desc" :  "A heavy lamellar plated harness", \
     "adesc" : "Has heavy lamellar plated harness"
-},
-{"name": "legend_southern_leather_plates",           "layer": "plate", "min": 1, "max": 10, "value" : 140, "con" : 50, "stam" : -6, "impactSound" : "leather", "invSound" : "leather", "brush" : "southern_leather_plates",\
-    "title" :  "Linothorax", \
-    "desc" :  "A breastplate made of several layers of linen.", \
-    "adesc" : "Has a breastplate made of several layers of linen."
 },
 
 
