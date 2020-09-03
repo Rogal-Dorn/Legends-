@@ -591,19 +591,19 @@ layers = [
     "adesc" : ""
 },
 {"name": "legend_southern_leather_scale",           "layer": "plate", "min": 1, "max": 4, "value" : 1500, "con" : 155, "stam" : -26, "impactSound" : "plate", "invSound" : "leather", "brush" : "southern_leather_scale",\
-    "title" :  "", \
-    "desc" :  "", \
+    "title" :  "Plated Nomad Mail", \
+    "desc" :  "A slightly worn-down, thin and light mail with additional metal plates grafted onto it.", \
     "adesc" : ""
 },
-{"name": "legend_southern_scale",                  "layer": "plate", "min": 1, "max": 1, "value" : 1500, "con" : 155, "stam" : -26, "impactSound" : "plate", "invSound" : "leather", "brush" : "southern_scale",\
-    "title" :  "", \
-    "desc" :  "", \
-    "adesc" : ""
+{"name": "legend_southern_scale",                  "layer": "plate", "min": 1, "max": 1, "value" : 300, "con" : 70, "stam" : -10, "impactSound" : "chain", "invSound" : "chain", "brush" : "southern_scale",\
+    "title" :  "Heavy Southern Lamellar", \
+    "desc" :  "A heavy lamellar plated harness", \
+    "adesc" : "Has heavy lamellar plated harness"
 },
-{"name": "legend_southern_leather_plates",           "layer": "plate", "min": 1, "max": 10, "value" : 1500, "con" : 155, "stam" : -26, "impactSound" : "plate", "invSound" : "leather", "brush" : "southern_leather_plates",\
-    "title" :  "", \
-    "desc" :  "", \
-    "adesc" : ""
+{"name": "legend_southern_leather_plates",           "layer": "plate", "min": 1, "max": 10, "value" : 140, "con" : 50, "stam" : -6, "impactSound" : "leather", "invSound" : "leather", "brush" : "southern_leather_plates",\
+    "title" :  "Linothorax", \
+    "desc" :  "A breastplate made of several layers of linen.", \
+    "adesc" : "Has a breastplate made of several layers of linen."
 },
 
 
