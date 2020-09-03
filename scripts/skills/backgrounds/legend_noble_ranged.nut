@@ -211,8 +211,8 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 		items.addToBag(this.new("scripts/items/weapons/legend_shiv"));
 		
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "legend_rabble_tunic"],
-			[1, "linen_tunic"]
+			[2, "padded_surcoat"],
+			[1, "basic_mail_shirt"]
 		]));
 	}
 

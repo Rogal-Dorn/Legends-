@@ -201,8 +201,8 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 					local tabard = this.Const.World.Common.pickLegendArmor(tabards)
 					if (tabard != null && armor != null)
 					{
-						tabard.setFaction(banner);
 						armor.setUpgrade(tabard)
+						armor.setVariant(banner)
 					}
 			}
 		}
