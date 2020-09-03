@@ -444,13 +444,13 @@ layers = [
         "named" : True, "rminViz" : 0, "rmaxViz" : 0, "rminStam" : -6, "rmaxStam": -5, "rminCond" : 100, "rmaxCond" : 125,  "names" : []},
     {"name": "warlock_skull",           "layer": "top", "min": 1, "max": 3, "value" : 2000, "con" : 90, "stam" : -4, "vis" : 0,  "hair" : "false", "beard" :"true", \
         "named" : True, "rminViz" : 0, "rmaxViz" : 0, "rminStam" : -4, "rmaxStam": -3, "rminCond" : 90, "rmaxCond" : 115,  "names" : []},
-  
+
     {"name": "southern_noble_crown",                "layer": "vanity", "min": 1, "max": 1, "value" : 400, "con" : 40, "stam" : -2, "vis" : 0,  "hair" : "true", "beard" :"false" },
     {"name": "southern_noble_hat",                "layer": "vanity", "min": 1, "max": 1, "value" : 400, "con" : 40, "stam" : -2, "vis" : 0,  "hair" : "true", "beard" :"false" },
      {"name": "southern_noble_turban",                "layer": "vanity", "min": 1, "max": 1, "value" : 400, "con" : 40, "stam" : -2, "vis" : 0,  "hair" : "true", "beard" :"false" },
- 
+
     {"name": "southern_noble_crown",                "layer": "vanity", "min": 1, "max": 1, "value" : 400, "con" : 40, "stam" : -2, "vis" : 0,  "hair" : "true", "beard" :"false" },
-    {"name": "southern_helm_tailed",   "layer": "vanity", "min": 1, "max": 6, "value" : 50, "con" : 10, "stam" : -1, "vis" : 0,  "hair" : "true", "beard" :"false" },     
+    {"name": "southern_helm_tailed",   "layer": "vanity", "min": 1, "max": 6, "value" : 50, "con" : 10, "stam" : -1, "vis" : 0,  "hair" : "true", "beard" :"false" },
     {"name": "southern_silk_headscarf",   "layer": "vanity", "min": 1, "max": 13, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0,  "hair" : "true", "beard" :"false" },
     {"name": "southern_feathered_turban",   "layer": "vanity", "min": 1, "max": 1, "value" : 60, "con" : 10, "stam" : -1, "vis" : 0,  "hair" : "true", "beard" :"false" },
     {"name": "southern_turban_open",   "layer": "vanity", "min": 1, "max": 1, "value" : 60, "con" : 30, "stam" : -1, "vis" : 0,  "hair" : "true", "beard" :"false" },
@@ -489,7 +489,7 @@ layers = [
     {"name": "southern_patterned_headwrap",   "layer": "vanity", "min": 1, "max": 10, "value" : 10, "con" : 5, "stam" : 0, "vis" : 0,  "hair" : "false", "beard" :"false" },
     {"name": "southern_turban_open",   "layer": "vanity", "min": 1, "max": 1, "value" : 10, "con" : 5, "stam" : 0, "vis" : 0,  "hair" : "false", "beard" :"false" },
     {"name": "southern_turban_full",   "layer": "vanity", "min": 1, "max": 4, "value" : 10, "con" : 5, "stam" : 0, "vis" : 0,  "hair" : "false", "beard" :"false" },
- 
+
     {"name": "southern_turban_light",   "layer": "vanity", "min": 1, "max": 6, "value" : 10, "con" : 5, "stam" : 0, "vis" : 0,  "hair" : "false", "beard" :"false" },
     {"name": "southern_turban_feather",   "layer": "vanity", "min": 1, "max": 1, "value" : 10, "con" : 5, "stam" : 0, "vis" : 0,  "hair" : "false", "beard" :"false" },
 
@@ -528,14 +528,14 @@ titles = {
     "cloth_scarf" :         "Cloth Scarf",
     "goblin_scarf" :        "Goblin Scarf",
     "leather_hood" :        "Leather Hood",
-    "padded_hood" :         "Full Aketon Cap",  
+    "padded_hood" :         "Full Aketon Cap",
     "patched_hood" :         "Patched Hood",
     "rotten_chain_scarf" :   "Rotten Aventail",
     "simple_hood" :          "Simple Hood",
     "southern_cap" :         "Southern Cap",
     "southern_turban_light_hood" : "Southern light hood",
     "southern_niqaab" :      "Niqaab",
-   
+
     "padded_cap" :           "Aketon Cap",
     "hood_cloth_round" :     "Round Hood Cloth",
     "hood_cloth_square" :    "Square Hood Cloth",
@@ -642,6 +642,7 @@ titles = {
     "nose_plate" :               "Nose Plate",
      "southern_faceplate" :       "Southern Faceplate",
     "southern_faceplate_bearded" : "Southern Bearded Faceplate",
+    "southern_helm_tailed" : "Southern Tailed Helmet",
 
     "antler" :               "Antlers",
     "bear_head" :            "Bear Headpiece",
@@ -808,9 +809,9 @@ descriptions = {
     "southern_helmet_nasal" :    "A heavy helmet made from overlapping metal plates.",
     "southern_gladiator_helm_crested" :  "An impressive metal helmet crafted to intimidate the opponents of pit fighters in arenas of the southern city states",
     "southern_gladiator_helm_masked" :  "An impressive metal helmet crafted to intimidate the opponents of pit fighters in arenas of the southern city states",
-    "southern_gladiator_helm_split" :  "An impressive metal helmet crafted to intimidate the opponents of pit fighters in arenas of the southern city states", 
+    "southern_gladiator_helm_split" :  "An impressive metal helmet crafted to intimidate the opponents of pit fighters in arenas of the southern city states",
     "southern_peaked_helm" :          "A southern metal helmet usually worn with a mail coif to protect the neck.",
-    "southern_peaked_nasal_helm" :    "A full helmet crafted from overlapping long metal splints in the shape of a traditional southern head wrap.",  
+    "southern_peaked_nasal_helm" :    "A full helmet crafted from overlapping long metal splints in the shape of a traditional southern head wrap.",
 
     "stag_helm" :                   "The helm of a noble house champion bearing the design of the stag, unparralled craftmanship but quite unweildy",
     "swan_helm" :                   "The helm of a noble house champion bearing the design of the swan, beautiful design but quite impractical",
@@ -917,7 +918,9 @@ descriptions = {
     "mountain_helm" : "A helmet crafted from the skin and skull of a mighty rock unhold, the beast may be dead, but it continues to mend itself even after death",
     "demon_alp_helm" : "A trophy made from the face of a demon",
     "warlock_hood" : "Warlock Hood",
-    "top_plume" : "Top Plume"
+    "top_plume" : "Top Plume",
+
+    "southern_helm_tailed": "TODO"
 }
 
 def main():
