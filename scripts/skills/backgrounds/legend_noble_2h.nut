@@ -209,7 +209,8 @@ this.legend_noble_2h <- this.inherit("scripts/skills/backgrounds/character_backg
 		]));
 
 		items.equip(this.Const.World.Common.pickHelmet([
-			[1, "greatsword_hat"]
+			[1, "aketon_cap"],
+			[1, "open_leather_cap"]
 		]));
 
 	}
