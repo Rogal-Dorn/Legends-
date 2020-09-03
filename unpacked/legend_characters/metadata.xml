@@ -568,7 +568,7 @@
 <sprite id="bust_head_southern_female_06_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4F6C9D" width="131" height="125" img="entity\heads\arabfem6dead.png" left="-45" right="15" top="-56" bottom="0" />
 <sprite id="bust_head_southern_female_07" offsetY="35" ic="FF5B7CAD" width="104" height="142" img="entity\heads\arabfem7.png" left="-21" right="29" top="-21" bottom="47" />
 <sprite id="bust_head_southern_female_07_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4F6C9D" width="131" height="125" img="entity\heads\arabfem7dead.png" left="-45" right="15" top="-56" bottom="0" />
-<sprite id="bust_head_southern_female_07" offsetY="35" ic="FF5B7CAD" width="104" height="142" img="entity\heads\arabfem8.png" left="-21" right="29" top="-21" bottom="47" />
+<sprite id="bust_head_southern_female_08" offsetY="35" ic="FF5B7CAD" width="104" height="142" img="entity\heads\arabfem8.png" left="-21" right="29" top="-21" bottom="47" />
 <sprite id="bust_head_southern_female_08_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4F6C9D" width="131" height="125" img="entity\heads\arabfem8dead.png" left="-45" right="15" top="-56" bottom="0" />
 <sprite id="bust_head_southern_female_09" offsetY="35" ic="FF5B7CAD" width="104" height="142" img="entity\heads\arabfem9.png" left="-21" right="29" top="-21" bottom="47" />
 <sprite id="bust_head_southern_female_09_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4F6C9D" width="131" height="125" img="entity\heads\arabfem9dead.png" left="-45" right="15" top="-56" bottom="0" />
