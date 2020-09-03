@@ -543,52 +543,51 @@ layers = [
     "adesc" : "Includes A heavy armor that is made from mostly metal. Only one chosen by the ancestors will own a set like this."
 },
 
-{"name": "legend_southern_named_golden_plates",           "layer": "plate", "min": 1, "max": 1, "value" : 1500, "con" : 155, "stam" : -26, "impactSound" : "plate", "invSound" : "leather", "brush" : "named_southern_gold_plates",\
-    "title" :  "", \
-    "desc" :  "", \
-    "adesc" : "",
-    "named" : True, "rminStam" : 10, "rmaxStam": 14, "rminCond" : 130, "rmaxCond" : 160,  "names" : ["Scale Shirt", "Scale Armor", "Dragonskin", "Snakeskin", "Scales", "Wyrmskin", "Goldskin", "Scale Tunic", "Golden Armor", "Golden Reminder"]
+{"name": "legend_southern_named_golden_plates",           "layer": "plate", "min": 1, "max": 1, "value" : 5600, "con" : 200, "stam" : -36, "impactSound" : "plate", "invSound" : "leather", "brush" : "named_southern_gold_plates",\
+    "title" :  "composite lamellar plates", \
+    "desc" :  "A heavy composite armor consisting of padding and lamellar elements", \
+    "adesc" : "Includes composite lamellar elements",
 },
-{"name": "legend_southern_named_plates",                  "layer": "plate", "min": 1, "max": 1, "value" : 1500, "con" : 155, "stam" : -26, "impactSound" : "plate", "invSound" : "leather", "brush" : "southern_named_plate",\
-    "title" :  "", \
-    "desc" :  "", \
-    "adesc" : "",
-    "named" : True, "rminStam" : 10, "rmaxStam": 14, "rminCond" : 130, "rmaxCond" : 160,  "names" : ["Scale Shirt", "Scale Armor", "Dragonskin", "Snakeskin", "Scales", "Wyrmskin", "Goldskin", "Scale Tunic", "Golden Armor", "Golden Reminder"]
+{"name": "legend_southern_named_plates",                  "layer": "plate", "min": 1, "max": 1, "value" : 9000, "con" : 210, "stam" : -25, "impactSound" : "plate", "invSound" : "leather", "brush" : "southern_named_plate",\
+    "title" :  "Famed Southern plates", \
+    "desc" :  "Ancient knowledge has been used when smithing this unique set of armor. Its light mail overlapped with golden splints offers high protection with manageable encumberment.", \
+    "adesc" : "overlapped with golden splints offering high protection with manageable encumberment.",
+    "named" : True, "rminStam" : 23, "rmaxStam": 26, "rminCond" : 210, "rmaxCond" : 230,  "names" : ["Gilder\'s Shining Ward", "Gilder\'s Skin", "Suncloak", "Snakeskin", "Blazing Mail", "Suntouched Harness", "Shining Hauberk", "Armor of the Scorpion King"]
 },
-{"name": "legend_southern_plate_full",                 "layer": "plate", "min": 1, "max": 2, "value" : 1500, "con" : 155, "stam" : -26, "impactSound" : "plate", "invSound" : "leather", "brush" : "southern_plate_full",\
-    "title" :  "", \
-    "desc" :  "", \
-    "adesc" : ""
+{"name": "legend_southern_plate_full",                 "layer": "plate", "min": 1, "max": 2, "value" : 750, "con" : 75, "stam" : -12, "impactSound" : "plate", "invSound" : "leather", "brush" : "southern_plate_full",\
+    "title" :  "Mail with Lamellar Plating", \
+    "desc" :  "A lamellar shirt made from interlapping metal plates worn atop a mail shirt.", \
+    "adesc" : "interlapped with metal plates."
 },
 {"name": "legend_southern_plate",                    "layer": "plate", "min": 1, "max": 2, "value" : 1500, "con" : 155, "stam" : -26, "impactSound" : "plate", "invSound" : "leather", "brush" : "southern_plate",\
-    "title" :  "", \
-    "desc" :  "", \
-    "adesc" : ""
+    "title" :  "Southern Long Mail Shirt with Padding", \
+    "desc" :  "A long and heavy chest of metal plates", \
+    "adesc" : "overlapped with metal plates."
 },
-{"name": "legend_southern_padded",                     "layer": "plate", "min": 1, "max": 12, "value" : 1500, "con" : 155, "stam" : -26, "impactSound" : "plate", "invSound" : "leather", "brush" : "southern_padded",\
-    "title" :  "", \
-    "desc" :  "", \
-    "adesc" : ""
+{"name": "legend_southern_padded",                     "layer": "plate", "min": 1, "max": 12, "value" : 400, "con" : 65, "stam" : -7, "impactSound" : "plate", "invSound" : "leather", "brush" : "southern_padded",\
+    "title" :  "Southern padded shirt", \
+    "desc" :  "A padded shirt fashioned from slightly thinner and lighter leather than that used in the north", \
+    "adesc" : "Covered in a padded shirt"
 },
-{"name": "legend_southern_arm_guards",                "layer": "plate", "min": 1, "max": 1, "value" : 1500, "con" : 155, "stam" : -26, "impactSound" : "plate", "invSound" : "leather", "brush" : "southern_arm_gaurds",\
-    "title" :  "", \
-    "desc" :  "", \
-    "adesc" : ""
+{"name": "legend_southern_arm_guards",                "layer": "plate", "min": 1, "max": 1, "value" : 300, "con" : 30, "stam" : -26, "impactSound" : "plate", "invSound" : "leather", "brush" : "southern_arm_gaurds",\
+    "title" :  "Southern arm gaurds", \
+    "desc" :  "Leather arm gaurds worn by southern assassins", \
+    "adesc" : "has leathered arm gaurds"
 },
-{"name": "legend_southern_strips",                   "layer": "plate", "min": 1, "max": 4, "value" : 1500, "con" : 155, "stam" : -26, "impactSound" : "plate", "invSound" : "leather", "brush" : "southern_strips",\
-    "title" :  "", \
-    "desc" :  "", \
-    "adesc" : ""
+{"name": "legend_southern_strips",                   "layer": "plate", "min": 1, "max": 4, "value" : 180, "con" : 40, "stam" : -4, "impactSound" : "plate", "invSound" : "leather", "brush" : "southern_strips",\
+    "title" :  "Linothorax", \
+    "desc" :  "A breastplate made of several layers of linen.", \
+    "adesc" : "Has a breastplate made of several layers of linen."
 },
-{"name": "legend_southern_leather_jacket",           "layer": "plate", "min": 1, "max": 6, "value" : 110, "con" : 40, "stam" : -6, "impactSound" : "leather", "invSound" : "leather", "brush" : "southern_leather_jacket",\
+{"name": "legend_southern_leather_jacket",           "layer": "plate", "min": 1, "max": 6, "value" : 110, "con" : 30, "stam" : -3, "impactSound" : "leather", "invSound" : "leather", "brush" : "southern_leather_jacket",\
     "title" :  "Nomad Leather Jacket", \
     "desc" :  "A jacket of patched leather of southern origin", \
     "adesc" : "Has a jacket of southern leather"
 },
-{"name": "legend_southern_leather_plates",           "layer": "plate", "min": 1, "max": 10, "value" : 1500, "con" : 155, "stam" : -26, "impactSound" : "plate", "invSound" : "leather", "brush" : "southern_leather_plates",\
-    "title" :  "", \
-    "desc" :  "", \
-    "adesc" : ""
+{"name": "legend_southern_leather_plates",           "layer": "plate", "min": 1, "max": 10, "value" : 200, "con" : 50, "stam" : -5, "impactSound" : "plate", "invSound" : "leather", "brush" : "southern_leather_plates",\
+    "title" :  "Stitched Nomad Armo", \
+    "desc" :  "A leather nomad armor stitched together from various hides and scraps", \
+    "adesc" : "Plates of leather hide and scraps"
 },
 {"name": "legend_southern_leather_scale",           "layer": "plate", "min": 1, "max": 4, "value" : 1500, "con" : 155, "stam" : -26, "impactSound" : "plate", "invSound" : "leather", "brush" : "southern_leather_scale",\
     "title" :  "", \
