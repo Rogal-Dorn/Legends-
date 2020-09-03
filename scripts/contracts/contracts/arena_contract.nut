@@ -502,7 +502,7 @@ this.arena_contract <- this.inherit("scripts/contracts/contract", {
 					this.Text += "He pauses.%SPEECH_ON%We expect important guests for this bout, so everything is set up for you to die proper bloody this time, got it? And if you can\'t do that, then have your lot dispatch their opponents in the most spectacular way to please the crowd. Do that, and I\'ll hand you a proper piece of gladiator gear ontop of the coin.%SPEECH_OFF%";
 				}
 
-				this.Text += "The points to some strange looking collars and continues.%SPEECH_ON%When you\'re ready, put these on the three men who\'ll be doing the fighting. This lets us know who to take into the pits. Anyone not wearing these will not be allowed in, not you, not the Vizier, dare I say even the Gilder may be turned down.%SPEECH_OFF%";
+				this.Text += "He points to some strange looking collars and continues.%SPEECH_ON%When you\'re ready, put these on the three men who\'ll be doing the fighting. This lets us know who to take into the pits. Anyone not wearing these will not be allowed in, not you, not the Vizier, dare I say even the Gilder may be turned down.%SPEECH_OFF%";
 			}
 
 		});
@@ -810,6 +810,7 @@ this.arena_contract <- this.inherit("scripts/contracts/contract", {
 			function start()
 			{
 				local roster = this.World.getPlayerRoster().getAll();
+				local n = 0;
 
 				foreach( bro in roster )
 				{
@@ -853,6 +854,13 @@ this.arena_contract <- this.inherit("scripts/contracts/contract", {
 								text = bro.getName() + " is now " + this.Const.Strings.getArticle(skill.getName()) + skill.getName()
 							});
 						}
+
+						n = ++n;
+					}
+
+					if (n >= 3)
+					{
+						break;
 					}
 				}
 
@@ -882,15 +890,15 @@ this.arena_contract <- this.inherit("scripts/contracts/contract", {
 					switch(r)
 					{
 					case 1:
-						if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
-						{
-							//todo legends armor
-						}
-						else {
-							a = this.new("scripts/items/armor/oriental/gladiator_harness");
-							u = this.new("scripts/items/armor_upgrades/light_gladiator_upgrade");
-							a.setUpgrade(u);
-						}
+
+						a = this.Const.World.Common.pickArmor([
+								[1, "oriental/gladiator_harness"],
+						]);
+						u = this.Const.World.Common.pickArmor([
+								[1, "oriental/light_gladiator_upgrade"],
+						]);
+						a.setUpgrade(u);
+
 						this.List.push({
 							id = 12,
 							icon = "ui/items/armor_upgrades/upgrade_24.png",
@@ -899,15 +907,12 @@ this.arena_contract <- this.inherit("scripts/contracts/contract", {
 						break;
 
 					case 2:
-						if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
-						{
-							//todo legends armor
-						}
-						else {
-							a = this.new("scripts/items/armor/oriental/gladiator_harness");
-							u = this.new("scripts/items/armor_upgrades/heavy_gladiator_upgrade");
-							a.setUpgrade(u);
-						}
+						a = this.Const.World.Common.pickArmor([
+								[1, "oriental/gladiator_harness"],
+						]);
+						a.setUpgrade(this.new("scripts/items/" +
+							(this.World.LegendsMod.Configs().LegendArmorsEnabled() ? "legend_armor/armor_upgrades/legend_heavy_gladiator_upgrade" : "armor_upgrades/heavy_gladiator_upgrade")
+						))
 						this.List.push({
 							id = 12,
 							icon = "ui/items/armor_upgrades/upgrade_25.png",
@@ -947,6 +952,7 @@ this.arena_contract <- this.inherit("scripts/contracts/contract", {
 					function getResult()
 					{
 						local roster = this.World.getPlayerRoster().getAll();
+						local n = 0;
 
 						foreach( bro in roster )
 						{
@@ -955,6 +961,12 @@ this.arena_contract <- this.inherit("scripts/contracts/contract", {
 							if (item != null && item.getID() == "accessory.arena_collar")
 							{
 								bro.getFlags().increment("ArenaFights", 1);
+								n = ++n;
+							}
+
+							if (n >= 3)
+							{
+								break;
 							}
 						}
 
@@ -1138,6 +1150,7 @@ this.arena_contract <- this.inherit("scripts/contracts/contract", {
 		if (this.m.IsActive)
 		{
 			this.m.Home.getSprite("selection").Visible = false;
+			this.m.Home.getBuilding("building.arena").refreshCooldown();
 			local roster = this.World.getPlayerRoster().getAll();
 
 			foreach( bro in roster )

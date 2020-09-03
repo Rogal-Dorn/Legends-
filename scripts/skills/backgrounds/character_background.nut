@@ -962,15 +962,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 
 	function addEquipment()
 	{
-		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
-		{
-			this.onAddLegendEquipment()
-		}
-		else
-		{
-			this.onAddEquipment();
-		}
-
+		this.onAddEquipment();
 		this.adjustHiringCostBasedOnEquipment();
 	}
 
@@ -982,6 +974,9 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		}
 		else
 		{
+			if(isCultist()) {
+				this.m.DailyCost = 4; // Converted cultists only cost 4, this is instead of saving the value for all bros.
+			}
 			local level = this.getContainer().getActor().getLevel();
 			local wage = this.Math.round(this.m.DailyCost * this.m.DailyCostMult);
 			_properties.DailyWage += wage * this.Math.pow(1.1, this.Math.min(10, level - 1));
@@ -1163,10 +1158,6 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 	}
 
 	function onAddEquipment()
-	{
-	}
-
-	function onAddLegendEquipment()
 	{
 	}
 

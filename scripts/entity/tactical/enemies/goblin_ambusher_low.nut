@@ -29,7 +29,11 @@ this.goblin_ambusher_low <- this.inherit("scripts/entity/tactical/enemies/goblin
 		}
 
 		this.m.Items.addToBag(this.new("scripts/items/weapons/greenskins/goblin_notched_blade"));
-		this.m.Items.equip(this.new("scripts/items/armor/greenskins/goblin_skirmisher_armor"));
+		local item = this.Const.World.Common.pickArmor([
+				[1, "greenskins/goblin_skirmisher_armor"]
+			])
+			this.m.Items.equip(item);
+
 		local item = this.Const.World.Common.pickHelmet([
 			[1, "greenskins/goblin_skirmisher_helmet"]
 		])

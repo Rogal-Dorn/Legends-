@@ -1628,8 +1628,8 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			6,
 			9
 		];
-		local rosterMin = minRosterSizes[this.m.Size] + this.World.Assets.m.RosterSizeAdditionalMin + (this.isSouthern() ? 2 : 0);
-		local rosterMax = minRosterSizes[this.m.Size] + activeLocations + this.World.Assets.m.RosterSizeAdditionalMax + (this.isSouthern() ? 1 : 0);
+		local rosterMin = minRosterSizes[this.m.Size] + (this.isSouthern() ? 2 : 0);
+		local rosterMax = minRosterSizes[this.m.Size] + activeLocations + (this.isSouthern() ? 1 : 0);
 
 		if (this.World.FactionManager.getFaction(this.m.Factions[0]).getPlayerRelation() < 50)
 		{
@@ -1639,6 +1639,8 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 		rosterMin = rosterMin * this.m.Modifiers.RecruitsMult;
 		rosterMax = rosterMax * this.m.Modifiers.RecruitsMult;
+		rosterMin = rosterMin + this.World.Assets.m.RosterSizeAdditionalMin;
+		rosterMax = rosterMax + this.World.Assets.m.RosterSizeAdditionalMax;
 
 		if (iterations < 7)
 		{
@@ -1809,7 +1811,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		this.World.Assets.getOrigin().onUpdateStablesList(draftList);
 
 		//TODO this currently being used to disable any horses from being added to the game.
-		//draftList = ["legend_donkey"];
+		draftList = ["legend_donkey"];
 
 		while (maxRecruits > current.len())
 		{

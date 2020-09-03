@@ -58,7 +58,7 @@ this.intercept_raiding_parties_contract <- this.inherit("scripts/contracts/contr
 			return 0;
 		});
 		this.m.Destination = this.WeakTableRef(towns[this.Math.rand(0, this.Math.min(1, towns.len() - 1))]);
-		this.m.Payment.Pool = 1250 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult();
+		this.m.Payment.Pool = 1300 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult();
 		local r = this.Math.rand(1, 2);
 
 		if (r == 1)
@@ -141,7 +141,9 @@ this.intercept_raiding_parties_contract <- this.inherit("scripts/contracts/contr
 					this.Contract.m.Objectives.push(locations[r].getID());
 				}
 
-				for( local i = 0; i < 3; i = ++i )
+				local g = this.Contract.getDifficultyMult() > 1.1 ? 3 : 2;
+
+				for( local i = 0; i < g; i = ++i )
 				{
 					local tile = this.Contract.getTileToSpawnLocation(this.World.getTileSquare(this.Contract.m.Destination.getTile().SquareCoords.X, this.Contract.m.Destination.getTile().SquareCoords.Y - 12), 0, 10);
 					local party;
@@ -702,7 +704,29 @@ this.intercept_raiding_parties_contract <- this.inherit("scripts/contracts/contr
 			return false;
 		}
 
-		return true;
+		local f = this.World.FactionManager.getFaction(this.getFaction());
+
+		foreach( s in f.getSettlements() )
+		{
+			if (s.isIsolated() || s.isCoastal() || s.isMilitary() || !s.isDiscovered())
+			{
+				continue;
+			}
+
+			if (s.getActiveAttachedLocations().len() < 2)
+			{
+				continue;
+			}
+
+			if (this.World.getTileSquare(s.getTile().SquareCoords.X, s.getTile().SquareCoords.Y - 12).Type == this.Const.World.TerrainType.Ocean)
+			{
+				continue;
+			}
+
+			return true;
+		}
+
+		return false;
 	}
 
 	function onSerialize( _out )

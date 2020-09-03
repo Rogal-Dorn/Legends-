@@ -98,8 +98,8 @@ gt.Const.AI <- {
 		ConsiderBehaviorsCutoff = 0.25,
 		ActionDelay = 900,
 		MinorActionDelay = 400,
-		NewTurnDelay = 900,
-		NewTurnDelayWithFasterMovement = 250,
+		NewTurnDelay = 800,
+		NewTurnDelayWithFasterMovement = 200,
 		NewEvaluationDelay = 800,
 		CameraAdditionalDelay = 400,
 		DefaultOpponentTTL = 9000,
@@ -240,7 +240,8 @@ gt.Const.AI <- {
 			Wither = 81,
 			Explode = 82,
 			MoveToMerge = 83,
-			COUNT = 84
+			Howl = 84,
+			COUNT = 85
 		},
 		Name = [
 			"None",
@@ -326,7 +327,8 @@ gt.Const.AI <- {
 			"LightningStorm",
 			"Wither",
 			"Explode",
-			"MoveToMerge"
+			"MoveToMerge",
+			"Howl"
 		],
 		Order = {
 			Retreat = 2,
@@ -391,6 +393,7 @@ gt.Const.AI <- {
 			Explode = 39,
 			SwallowWhole = 50,
 			Terror = 50,
+			Howl = 50,
 			CommandUndead = 50,
 			RaiseUndead = 50,
 			PossessUndead = 50,
@@ -428,6 +431,7 @@ gt.Const.AI <- {
 			Distract = 50,
 			SwarmOfInsects = 60,
 			Disengage = 60,
+			Howl = 60,
 			CrushArmor = 80,
 			SplitShield = 80,
 			Defend = 90,
@@ -750,6 +754,9 @@ gt.Const.AI <- {
 		SwitchToCurrentlyUnarmedMult = 20.0,
 		SwitchWeaponBecauseDisarmedMult = 2.0,
 		SwitchToBeingKitedMult = 0.75,
+		HowlMaxMoraleRatio = 2.5,
+		HowlMinAlliesInRange = 1,
+		SwitchToCounterDisarm = 3.0,
 		DarkflightMeleeHitpointsMult = 0.2,
 		DarkflightStayOnTileBonus = 2.5,
 		DarkflightRangedTargetMult = 1.1,
@@ -952,6 +959,7 @@ gt.Const.AI <- {
 		CharmSkillMult = 0.25,
 		CharmDefenseSkillMult = 0.5,
 		CharmStillToActMult = 1.25,
+		CharmAlreadyWaitedMult = 0.5,
 		CharmTargetsMult = 4.0,
 		CharmTargetLockdownMult = 0.25,
 		CharmMeleeDangerMult = 7.0,

@@ -53,14 +53,10 @@ this.skeleton_boss <- this.inherit("scripts/entity/tactical/skeleton", {
 			this.m.Items.equip(this.new("scripts/items/shields/ancient/tower_shield"));
 		}
 
-		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
-		{
-			this.m.Items.equip(this.new("scripts/items/legend_armor/legendary/legend_emperors_armor_fake"));;
-		}
-		else
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/legendary/emperors_armor_fake"));
-		}
+		local item = this.Const.World.Common.pickArmor([
+			[1, "legendary/emperors_armor_fake"] //legend_emperors_armor_fake
+		]);
+		this.m.Items.equip(item);
 
 		local item = this.Const.World.Common.pickHelmet([
 			[66, "ancient/ancient_laurels"]

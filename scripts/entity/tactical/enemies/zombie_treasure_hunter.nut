@@ -47,21 +47,14 @@ this.zombie_treasure_hunter <- this.inherit("scripts/entity/tactical/enemies/zom
 
 			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 		}
-
-		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
-		{
-			//todo legend armors
-		}
-		else
-		{
-			local armor = [
-				"armor/oriental/stitched_nomad_armor",
-				"armor/oriental/leather_nomad_robe",
-				"armor/oriental/nomad_robe",
-				"armor/oriental/thick_nomad_robe"
-			];
-			this.m.Items.equip(this.new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]));
-		}
+		local aList = [
+			[1 "oriental/stitched_nomad_armor"],
+			[1 "oriental/leather_nomad_robe"],
+			[1 "oriental/nomad_robe"],
+			[1 "oriental/thick_nomad_robe"]
+		];
+		local armor = this.Const.World.Common.pickArmor(aList);
+		this.m.Items.equip(armor);
 		local helmet = [
 			[1, "oriental/nomad_head_wrap"]
 		];

@@ -62,6 +62,8 @@ this.cultist_origin_vs_uneducated_event <- this.inherit("scripts/events/event", 
 				_event.m.Uneducated.getBackground().Convert();
 				_event.m.Uneducated.getBackground().m.RawDescription += " " + _event.m.Cultist.getName() + " helped " + _event.m.Uneducated.getName() + " see the darkness.";
 				_event.m.Uneducated.getBackground().buildDescription(true);
+				_event.m.Uneducated.getBaseProperties().DailyWage -= _event.m.Uneducated.getDailyCost() / 2;
+				_event.m.Uneducated.getSkills().update();
 
 				this.List = [
 					{
@@ -140,7 +142,7 @@ this.cultist_origin_vs_uneducated_event <- this.inherit("scripts/events/event", 
 
 		foreach( bro in brothers )
 		{
-			if (bro.getFlags().get("IsSpecial"))
+			if (bro.getFlags().get("IsSpecial") || bro.getFlags().get("IsPlayerCharacter") || bro.getBackground().getID() == "background.slave")
 			{
 				continue;
 			}

@@ -241,12 +241,12 @@ this.strategy <- {
 				local allyTile = ally.Entity.getTile();
 				local d = entityTile.getDistanceTo(allyTile);
 
-				if (d <= rangedInfo.Range + this.Math.max(0, entityTile.Level - allyTile.Level))
+				if (d <= this.Math.min(rangedInfo.Range + this.Math.max(0, entityTile.Level - allyTile.Level), rangedInfo.RangeWithLevel))
 				{
 					canHit = true;
 				}
 
-				if (d <= ally.Range + this.Math.max(0, allyTile.Level - entityTile.Level))
+				if (d <= this.Math.min(ally.Range + this.Math.max(0, allyTile.Level - entityTile.Level), ally.RangeWithLevel))
 				{
 					canBeHit = true;
 				}
@@ -289,12 +289,12 @@ this.strategy <- {
 				local enemyTile = enemy.Entity.getTile();
 				local d = entityTile.getDistanceTo(enemyTile);
 
-				if (d <= rangedInfo.Range + this.Math.max(0, entityTile.Level - enemyTile.Level))
+				if (d <= this.Math.min(rangedInfo.Range + this.Math.max(0, entityTile.Level - enemyTile.Level), rangedInfo.RangeWithLevel))
 				{
 					canHit = true;
 				}
 
-				if (d <= enemy.Range + this.Math.max(0, enemyTile.Level - entityTile.Level))
+				if (d <= this.Math.min(enemy.Range + this.Math.max(0, enemyTile.Level - entityTile.Level), enemy.RangeWithLevel))
 				{
 					canBeHit = true;
 				}
@@ -498,7 +498,7 @@ this.strategy <- {
 		}
 
 		local enemiesVSallies = this.m.Stats.EnemiesVSAlliesRatio;
-		local rangedAlliesVSEnemies = this.m.Stats.RangedAlliedVSEnemies;
+		local rangedAlliesVSEnemies = this.m.Stats.DefensiveBiasAverage >= 1.0 ? this.m.Stats.RangedAlliedVSEnemies : this.Math.minf(1.0, this.m.Stats.RangedAlliedVSEnemies);
 		local defensiveAlliesRatio = this.m.Stats.DefensiveAlliesRatio * 4.0;
 		local fleeingEnemiesRatio = 1.0 - this.m.Stats.FleeingEnemiesRatio;
 		local engagedAlliesRatio = 1.0 - this.m.Stats.EngagedAlliesRatio;
@@ -514,6 +514,10 @@ this.strategy <- {
 		{
 			defensiveThreshold = defensiveThreshold * 0.5;
 		}
+
+		this.logInfo("defensive score: " + defensiveScore);
+		this.logInfo("defensive threshold: " + defensiveThreshold);
+		this.logInfo("defending camp: " + this.isDefendingCamp());
 
 		if (defensiveScore < defensiveThreshold)
 		{

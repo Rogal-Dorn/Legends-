@@ -731,9 +731,14 @@ this.marketplace_building <- this.inherit("scripts/entity/world/settlements/buil
 
 		local armorsL = [
 		   [15, 1.0, "cloth/legend_tunic"],
+		   [15, 1.0, "cloth/legend_tunic_collar_thin"],
+		   [15, 1.0, "cloth/legend_tunic_wrap"],
 		   [40, 1.0, "cloth/legend_thick_tunic"],
 		   [15, 1.0, "cloth/legend_robes"],
+		   [15, 1.0, "cloth/legend_robes"],
+		   [15, 1.0, "cloth/legend_robes"],
            [10, 1.0, "cloth/legend_sackcloth"],
+		   [10, 1.0, "cloth/legend_sackcloth"],
            [10, 1.0, "cloth/legend_sackcloth_patched"],
            [10, 1.0, "cloth/legend_sackcloth_tattered"],
 		   [40, 1.0, "cloak/legend_armor_cloak_common"]

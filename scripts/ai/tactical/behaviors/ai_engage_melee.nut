@@ -115,7 +115,7 @@ this.ai_engage_melee <- this.inherit("scripts/ai/tactical/behavior", {
 			return this.Const.AI.Behavior.Score.Zero;
 		}
 
-		if (inZonesOfControl > 1 && (this.m.Skill == null || !this.m.Skill.isDisengagement()))
+		if (inZonesOfControl > 2 && (this.m.Skill == null || !this.m.Skill.isDisengagement()))
 		{
 			return this.Const.AI.Behavior.Score.Zero;
 		}
@@ -204,7 +204,7 @@ this.ai_engage_melee <- this.inherit("scripts/ai/tactical/behavior", {
 		{
 			foreach( a in knownAllies )
 			{
-				if (this.isRangedUnit(a) || a.getIdealRange() == 2)
+				if (this.isRangedUnit(a) || a.getIdealRange() == 2 || a.getID() == _entity.getID())
 				{
 					continue;
 				}
@@ -367,7 +367,8 @@ this.ai_engage_melee <- this.inherit("scripts/ai/tactical/behavior", {
 				}
 			}
 		}
-		else
+
+		if (potentialDestinations.len() == 0)
 		{
 			foreach( t in targets )
 			{
@@ -485,7 +486,7 @@ this.ai_engage_melee <- this.inherit("scripts/ai/tactical/behavior", {
 					local scoreMult = 1.0;
 					local isSkillUsable = false;
 
-					if (AlreadyEngagedWithNum != 0)
+					if (this.m.Skill == null && AlreadyEngagedWithNum != 0 || this.m.Skill != null && inZonesOfControl != 0)
 					{
 						if (tile.Level < myTile.Level || tile.IsBadTerrain && !myTile.IsBadTerrain)
 						{

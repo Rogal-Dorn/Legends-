@@ -138,16 +138,6 @@ this.dye_maker_location <- this.inherit("scripts/entity/world/attached_location"
 				P = 1.0,
 				S = "helmets/jesters_hat"
 			});
-		_list.push({
-				R = 10,
-				P = 1.0,
-				S = "legend_armor/cloth/legend_tunic"
-			});
-			_list.push({
-				R = 30,
-				P = 1.0,
-				S = "legend_armor/cloth/legend_robes_herbalist"
-			});
 			_list.push({
 				R = 20,
 				P = 1.0,
@@ -164,34 +154,44 @@ this.dye_maker_location <- this.inherit("scripts/entity/world/attached_location"
 				S = "legend_armor/cloth/legend_robes_nun"
 			});
 			_list.push({
-				R = 70,
+				R = 90,
 				P = 1.0,
 				S = "legend_armor/cloth/legend_robes_magic"
 			});
 			_list.push({
-				R = 40,
+				R = 10,
+				P = 1.0,
+				S = "legend_armor/cloth/legend_tunic"
+			});
+			_list.push({
+				R = 10,
+				P = 1.0,
+				S = "legend_armor/cloth/legend_tunic_collar_thin"
+			});
+			_list.push({
+				R = 65,
 				P = 1.0,
 				S = "legend_armor/cloth/legend_tunic_noble"
 			});
 			_list.push({
+				R = 10,
+				P = 1.0,
+				S = "legend_armor/cloth/legend_tunic_wrap"
+			});
+			_list.push({
+				R = 10,
+				P = 1.0,
+				S = "legend_armor/cloth/legend_tunic_collar_deep"
+			});
+			_list.push({
 				R = 30,
 				P = 1.0,
-				S = "legend_armor/cloth/legend_gambeson_rare_color"
+				S = "legend_armor/cloth/legend_gambesonr"
 			});
 		 _list.push({
 				R = 50,
 				P = 1.0,
 				S = "helmets/named/jugglers_hat"
-			});
-		   _list.push({
-				R = 30,
-				P = 1.0,
-				S = "legend_armor/cloth/legend_gambeson_rare_color"
-			});
-		   _list.push({
-				R = 50,
-				P = 1.0,
-				S = "legend_armor/cloth/legend_robes_magic"
 			});
 			_list.push({
 				R = 60,

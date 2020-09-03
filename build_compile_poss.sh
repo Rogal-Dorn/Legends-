@@ -76,6 +76,13 @@ mkdir -p "helmets"
 python make_legend_helmet_nuts.py
 cp -R helmets/. "c:\Steam\steamapps\common\Battle Brothers\data\scripts\items\legend_helmets"
 
+echo "Building armors..."
+rm -rf legend_armor
+mkdir -p "legend_armor"
+python make_legend_armor.py
+cp -R legend_armor/. "c:\Steam\steamapps\common\Battle Brothers\data\scripts\items\legend_armor"
+
+
 
 mkdir -p "brushes"
 cd ../bin
@@ -88,9 +95,8 @@ cd ../bin
 ./bbrusher.exe pack --gfxPath "../Repo/" ../Repo/brushes/legends_ui.brush ../Repo/unpacked/legends_ui
 ./bbrusher.exe pack --gfxPath "../Repo/" ../Repo/brushes/legend_horses.brush ../Repo/unpacked/legend_horses
 ./bbrusher.exe pack --gfxPath "../Repo/" ../Repo/brushes/legend_objects.brush ../Repo/unpacked/legend_objects
-
-python ../Repo/unpacked/make_legend_armor.py
 ./bbrusher.exe pack --gfxPath "../Repo/" ../Repo/brushes/legend_armor.brush ../Repo/unpacked/legend_armor
+./bbrusher.exe pack --gfxPath "../Repo/" ../Repo/brushes/terrain.brush ../Repo/unpacked/terrain
 
 python ../Repo/unpacked/make_legend_helmets.py
 ./bbrusher.exe pack --gfxPath "../Repo/" ../Repo/brushes/legend_helmets.brush ../Repo/unpacked/legend_helmets

@@ -92,6 +92,7 @@ this.desert7 <- this.inherit("scripts/mapgen/tactical_template", {
 		t.setBrush(this.Const.Direction.SW, "transition_desert_07_SW");
 		t.setBrush(this.Const.Direction.NW, "transition_desert_07_NW");
 		t.setSocket("socket_desert");
+
 		this.Tactical.setTransitions("tile_desert_07", t);
 	}
 
@@ -108,7 +109,80 @@ this.desert7 <- this.inherit("scripts/mapgen/tactical_template", {
 		tile.Subtype = this.Const.Tactical.TerrainSubtype.Desert;
 		tile.BlendPriority = this.Const.Tactical.TileBlendPriority.Desert7;
 		tile.IsBadTerrain = false;
+		
+		local random = this.Math.rand(1, 100);
+		if (random <= 10)
+		{
 		tile.setBrush("tile_desert_07");
+		}
+		else if (random >= 11 && random <=15)
+		{
+		tile.setBrush("tile_legend_desert_09");
+		}
+		else if (random >= 16 && random <=20)
+		{
+		tile.setBrush("tile_legend_desert_10");
+		}
+		else if (random >= 21 && random <= 25)
+		{
+		tile.setBrush("tile_legend_desert_11");
+		}
+		else if (random >= 26 && random <=30)
+		{
+		tile.setBrush("tile_legend_desert_12");
+		}
+		else if (random >= 31 && random <=35)
+		{
+		tile.setBrush("tile_legend_desert_13");
+		}
+		else if (random >= 36 && random <=40)
+		{
+		tile.setBrush("tile_legend_desert_14");
+		}
+		else if (random >= 41 && random <=45)
+		{
+		tile.setBrush("tile_legend_desert_15");
+		}
+		else if (random >= 46 && random <=50)
+		{
+		tile.setBrush("tile_legend_desert_16");
+		}
+		else if (random >= 51 && random <=60)
+		{
+		tile.setBrush("tile_legend_desert_17");
+		}
+		else if (random >= 61 && random <=65)
+		{
+		tile.setBrush("tile_legend_desert_18");
+		}
+		else if (random >= 66 && random <=70)
+		{
+		tile.setBrush("tile_legend_desert_19");
+		}
+		else if (random >= 71 && random <=75)
+		{
+		tile.setBrush("tile_legend_desert_20");
+		}
+		else if (random >= 76 && random <=80)
+		{
+		tile.setBrush("tile_legend_desert_21");
+		}
+		else if (random >= 81 && random <= 85)
+		{
+		tile.setBrush("tile_legend_desert_22");
+		}
+		else if (random >= 86 && random <= 90)
+		{
+		tile.setBrush("tile_legend_desert_23");
+		}
+		else if (random >= 91 && random <= 95)
+		{
+		tile.setBrush("tile_legend_desert_24");
+		}
+		else 
+		{
+		tile.setBrush("tile_legend_desert_25");
+		}
 
 		if (_rect.IsEmpty)
 		{

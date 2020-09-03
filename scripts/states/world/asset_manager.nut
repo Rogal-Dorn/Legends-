@@ -1861,7 +1861,10 @@ this.asset_manager <- {
 					continue;
 				}
 
-				this.m.Stash.add(item);
+				if (this.m.Stash.add(item) == null)
+				{
+					bro.getItems().addToBag(item);
+				}
 			}
 		}
 
@@ -1927,6 +1930,13 @@ this.asset_manager <- {
 				data.Text += this.addBrotherEnding(brothers, excludedBackgrounds, true);
 				data.Text += this.addBrotherEnding(brothers, excludedBackgrounds, true);
 				data.Text += "\n\n{Nowadays, you spend a good deal of time wondering if you should add a second story to your cabin, or whether that\'s too much work. You could always pay someone else to help, but it just feels strange contracting someone else to the task. And, as far as the %companyname% is concerned, you\'ve heard that it is doing splendidly well to this day. | You spend your days flirting with the neighbor. She\'s married, but that\'s what makes it more fun. The constable came by to speak to you about your newfound proclivities. This is about the height of the drama in your life now. It isn\'t dodging orcs or putting undead souls back into the grave, but it has its own unique sense of fun. You don\'t miss the old life at all. Instead, you can happily sit back and hear of the %companyname%\'s successes.}";
+			}
+			else if (this.World.FactionManager.getGreaterEvil().LastType == this.Const.World.GreaterEvilType.HolyWar)
+			{
+				data.Text = "{Commanding the %companyname%, you thought it might play the part of sellsword with a dash of brigandage. Little did you realize that the whole world would be embroiled in religious turmoil. When the north and south turned on each other with their holy furies, you captained the company to opulent ends. If the old gods\' followers asked for your sword, you brought the might and main of the northern mountains. If the Gilded asked for light, you brought the sun. | It is said that the godlier the man, the more human the god. When the religious shatterbelt between north and south exploded, all manner of religious chiselers washed across the holy transom. The sacred sort deified their own spirits, sharpening the utility of war as if it were the gods themselves which commanded it. Perhaps they did, but ultimately all you were concerned about was that the %companyname% serve itself. Gilder? Old gods? All you cared about were your own pockets and by the end of all that holy nonsense they were quite full indeed.}";
+				data.Text += this.addBrotherEnding(brothers, excludedBackgrounds, true);
+				data.Text += this.addBrotherEnding(brothers, excludedBackgrounds, true);
+				data.Text += "\n\n{Few sellsword bands survive, and even fewer yet arrive in the annals of history. You believe that the %companyname%, through action in the holy war, very well may have earned itself a proper footnote. The thought amuses you, for how much can one or two sentences really say about all that you have done and experienced? | With retirement from the %companyname%, you actually find yourself with proper time to mull over these old gods and the Gilder. Maybe there is some truth to one or the other? Perhaps they are both correct. Or, and you weigh these thoughts gingerly, perhaps neither is right. But these faiths are not alone it seems. Religious uprisings are springing up everywhere, cast out in the debris of the religious wars no doubt, and just the other day, a third major entrant arrived, one you\'ve come to be all too knowledgeable about: a Disciple of Davkul. As he professed his thoughts on the dark and the arcane, you shut the door on his face. Maybe another time. You\'ve wood to chop and a sock drawer to organize.}";
 			}
 		}
 		else if (this.m.BusinessReputation >= 1100 && this.World.Ambitions.getAmbition("ambition.make_nobles_aware").isDone())

@@ -289,12 +289,13 @@ this.orc_warrior <- this.inherit("scripts/entity/tactical/actor", {
 		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Body) == null)
 		{
 			local armor = [
-				"armor/greenskins/orc_warrior_light_armor",
-				"armor/greenskins/orc_warrior_medium_armor",
-				"armor/greenskins/orc_warrior_heavy_armor",
-				"armor/greenskins/orc_warrior_heavy_armor"
+				[1, "greenskins/orc_warrior_light_armor"],
+				[1, "greenskins/orc_warrior_medium_armor"],
+				[1, "greenskins/orc_warrior_heavy_armor"],
+				[1, "greenskins/orc_warrior_heavy_armor"]
 			];
-			this.m.Items.equip(this.new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]));
+			local item = this.Const.World.Common.pickArmor(armor);
+			this.m.Items.equip(item);
 		}
 
 		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Head) == null)
