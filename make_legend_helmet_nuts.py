@@ -364,6 +364,7 @@ layers = [
     {"name": "southern_gladiator_helm_masked",      "layer": "helm", "min": 1, "max": 13, "value" : 2000, "con" : 130, "stam" : -5, "vis" : -3,  "hair" : "true", "beard" :"true" },
     {"name": "southern_helmet_nasal",               "layer": "helm", "min": 1, "max": 8, "value" : 2500, "con" : 180, "stam" : -10, "vis" : -1,  "hair" : "true", "beard" :"false" },
     {"name": "southern_conic_helm",                 "layer": "helm", "min": 1, "max": 1, "value" : 550, "con" : 50, "stam" : -2, "vis" : -1,  "hair" : "true", "beard" :"false" },
+    {"name": "southern_named_conic",                "layer": "helm", "min": 1, "max": 1, "value" : 2000, "con" : 130, "stam" : -5, "vis" : -3,  "hair" : "true", "beard" :"false" },
     {"name": "southern_peaked_helm",                "layer": "helm", "min": 1, "max": 1, "value" : 1250, "con" : 120, "stam" : -4, "vis" : -2,  "hair" : "true", "beard" :"false" },
     {"name": "southern_peaked_nasal_helm",          "layer": "helm", "min": 1, "max": 1, "value" : 3500, "con" : 220, "stam" : -12, "vis" : -3,  "hair" : "true", "beard" :"false" },
 
@@ -601,6 +602,7 @@ titles = {
      "southern_cap_smooth" :          "Southern Smooth Cap",
      "southern_cap_spiked" :          "Southern Spiked Cap",
     "southern_conic_helm" :          "Southern Conic Helm",
+     "southern_named_conic" :          "Southern Conic",
     "southern_helmet_nasal" :  "Heavy Lamellar Helmet",
     "southern_gladiator_helm_crested" :  "Crested Gladiator Helm",
     "southern_gladiator_helm_masked" :  "Masked Gladiator Helm",
@@ -800,6 +802,7 @@ descriptions = {
      "southern_cap_smooth" :          "A smooth metal cap",
      "southern_cap_spiked" :          "A metal skull cap with a fashionable spike",
     "southern_conic_helm" :          "A conic helm from the south",
+    "southern_named_conic" :          "an expertly crafted southern helm",
     "southern_leather_helm" :    "A traditional southern leather helm",
     "southern_studded_leather_helm" :  "A light nomad leather cap.",
     "southern_helmet_nasal" :    "A heavy helmet made from overlapping metal plates.",
