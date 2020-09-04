@@ -669,7 +669,7 @@ gt.Const.World.Common.pickHelmet <- function (_helms)
 	local layersObj = this.Const.LegendMod.Helmets[helm];
 	if (layersObj.Script != "")
 	{
-		return this.new(layersObjs.Script);
+		return this.new(layersObj.Script);
 	}
 
 	local set = layersObj.Sets[this.Math.rand(0, layersObj.Sets.len() -1)]
@@ -766,7 +766,7 @@ gt.Const.World.Common.pickArmor <- function (_armors)
 	local layersObj = this.Const.LegendMod.Armors[armorID];
 	if (layersObj.Script != "")
 	{
-		return this.new(layersObjs.Script);
+		return this.new(layersObj.Script);
 	}
 
 	local set = layersObj.Sets[this.Math.rand(0, layersObj.Sets.len() -1)]
