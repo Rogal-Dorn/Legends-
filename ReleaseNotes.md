@@ -3938,6 +3938,10 @@ Brand new Named Heavy Mace for southern regions
 New gold, iron and tin ingots trade items
 Gold mine locations will now have chance to spawn on mining villages.
 
+**World Economy**
+Selling trade goods to a settlement will now directly increase that settlements wealth rating.
+City states can not grow or shrink in settlement size, but unlike northern settlements, they can potentially grow and add an unlimited number of new attached locations.
+
 **Other changes**
 Adds southern females
 Adds dozens of variants to nomad camp objects ( no more repeating carpets)

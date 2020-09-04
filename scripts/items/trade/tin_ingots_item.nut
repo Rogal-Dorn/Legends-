@@ -12,6 +12,7 @@ this.tin_ingots_item <- this.inherit("scripts/items/trade/trading_good_item", {
 			"attached_location.trapper"
 		];
 		this.m.Value = 420;
+		this.m.ResourceValue = 2;
 	}
 
 });
