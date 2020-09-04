@@ -23,6 +23,11 @@ layers = [
     "desc" :  "A leather apron usually worn by a blacksmith", \
     "adesc" :""
 },
+{"name": "legend_gladiator_harness",                       "layer": "cloth", "min": 11, "max": 11, "value" : 150, "con" : 40, "stam" : -4, "impactSound" : "leather", "invSound" : "cloth", "brush" : "bust_body_southern",  \
+    "title" :  "Gladiator Harness", \
+    "desc" :  "A leather harness commonly worn by pit fighters in arenas of the southern city states.", \
+    "adesc" :""
+},
 {"name": "legend_gambeson",                               "layer": "cloth", "min": 0, "max": 39, "value" : 250, "con" : 65, "stam" : -8, "impactSound" : "leather", "invSound" : "cloth", \
     "title" :  "Gambeson", \
     "desc" :  "A sturdy and heavy padded tunic that offers decent protection.", \
