@@ -111,7 +111,25 @@ this.building <- {
 			{
 				local p = this.Math.rand(0, 100) * rarityMult;
 				local item;
-				local IsHelm = false;
+				local isHelm = false;
+				local isArmor = false;
+				local script = i.S;
+
+				if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+				{
+					local index = script.find("helmets/");
+					if (index != null)
+					{
+						isHelm = true;
+						script = script.slice(index + "helmets/".len());
+					}
+					index = script.find("armor/");
+					if (index != null)
+					{
+						isArmor = true;
+						script = script.slice(index + "armor/".len());
+					}
+				}
 
 				// if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 				// {
@@ -138,7 +156,7 @@ this.building <- {
 
 				// 		if (r == -1)
 				// 		{
-				// 			break; //sell full piece if -1, means that no upgrades were found OR we rolled on sell the full piece 
+				// 			break; //sell full piece if -1, means that no upgrades were found OR we rolled on sell the full piece
 				// 		}
 				// 		else if (r == 0)
 				// 		{
@@ -162,13 +180,29 @@ this.building <- {
 				// }
 				if (p >= r)
 				{
-					if (!IsHelm)
+					if (isHelm)
+					{
+						item = this.Const.World.Common.pickHelmet([
+							[1, script]
+						]);
+					}
+					else if (isArmor)
+					{
+						item = this.Const.World.Common.pickArmor([
+							[1, script]
+						]);
+					}
+					else
+					{
 						item = this.new("scripts/items/" + i.S);
+					}
+
 
 					if (item == null)
 					{
 						break;
 					}
+
 					local isFood = item.isItemType(this.Const.Items.ItemType.Food);
 					local isMedicine = item.getID() == "supplies.medicine";
 					local isMineral = item.getID() == "misc.uncut_gems" || item.getID() == "misc.copper_ingots";
