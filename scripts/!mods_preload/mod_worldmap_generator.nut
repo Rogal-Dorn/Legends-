@@ -232,7 +232,7 @@
 	{
 		local tries = 0;
 
-		while (tries++ < 9000)
+		while (tries++ < 3000)
 		{
 			local x;
 			local y;
@@ -263,12 +263,12 @@
 
 			local next = false;
 			local distance = 12 + additionalSpace;
-			if (tries > 3000) {
-				distance -= 4;
-			}
-			if (tries > 6000) {
-				distance -= 8;
-			}
+			// if (tries > 3000) {
+			// 	distance -= 4;
+			// }
+			// if (tries > 6000) {
+			// 	distance -= 8;
+			// }
 
 			foreach( settlement in settlementTiles )
 			{
@@ -589,7 +589,7 @@
 		{
 			o.guaranteeAllLocations();
 		}
-		gasFn();
+		gasFn(_rect, _properties);
 
 	}
 
