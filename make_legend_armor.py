@@ -23,7 +23,7 @@ layers = [
     "desc" :  "A leather apron usually worn by a blacksmith", \
     "adesc" :""
 },
-{"name": "legend_gladiator_harness",                       "layer": "cloth", "min": 11, "max": 11, "value" : 150, "con" : 40, "stam" : -4, "impactSound" : "leather", "invSound" : "cloth", "brush" : "bust_body_southern",  \
+{"name": "legend_gladiator_harness",                       "layer": "cloth", "min": 11, "max": 11, "value" : 150, "con" : 40, "stam" : -4, "impactSound" : "leather", "invSound" : "cloth", "vanilla" : "body_southern",  \
     "title" :  "Gladiator Harness", \
     "desc" :  "A leather harness commonly worn by pit fighters in arenas of the southern city states.", \
     "adesc" :""
@@ -139,13 +139,11 @@ layers = [
     "desc" :  "A heavy cloth tunic. bulky but offering some protection.", \
     "adesc" :""
 },
-
 {"name": "legend_tunic_noble",                            "layer": "cloth", "min": 1, "max": 10, "value" : 500, "con" : 40, "stam" : -2, "impactSound" : "leather", "invSound" : "cloth", "brush" : "legend_tunic_collar_wide", \
     "title" :  "Noble Tunic", \
     "desc" :  "A fine linen tunic of exquisite material, embroided with pleasing patterns. Fashionable but offering little in protection.", \
     "adesc" :""
 },
-
 {"name": "legend_tunic_noble_named",                      "layer": "cloth", "min": 1, "max": 1, "value" : 1500, "con" : 40, "stam" : -2, "impactSound" : "leather", "invSound" : "cloth", "brush" : "legend_tunic_collar_gold", \
     "title" :  "Noble Tunic", \
     "desc" :  "A fine linen tunic of exquisite material, embroided with pleasing patterns. Fashionable but offering little in protection.", \
