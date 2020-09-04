@@ -219,7 +219,9 @@ gt.Const.Items.LegendNamedBarbarianArmors <- [
 	"legend_armor/named/legend_named_plated_fur_armor",
 	"legend_armor/named/legend_named_skull_and_chain_armor"
 ];
-gt.Const.Items.NamedSouthernWeapons <- [];
+gt.Const.Items.NamedSouthernWeapons <- [
+	"weapons/named/named_heavy_southern_mace"
+];
 gt.Const.Items.NamedSouthernMeleeWeapons <- [];
 gt.Const.Items.NamedSouthernHelmets <- [];
 gt.Const.Items.NamedSouthernArmors <- [];
