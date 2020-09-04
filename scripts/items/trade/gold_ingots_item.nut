@@ -12,6 +12,7 @@ this.gold_ingots_item <- this.inherit("scripts/items/trade/trading_good_item", {
 			"attached_location.gold_mine"
 		];
 		this.m.Value = 720;
+		this.m.ResourceValue = 3;
 	}
 
 });
