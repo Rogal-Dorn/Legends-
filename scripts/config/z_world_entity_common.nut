@@ -742,7 +742,7 @@ gt.Const.World.Common.pickArmor <- function (_armors)
 
 	if (armorID == "")
 	{
-		return null
+		return null;
 	}
 
 	if (!this.World.LegendsMod.Configs().LegendArmorsEnabled())
