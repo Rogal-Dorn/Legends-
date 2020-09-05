@@ -5,7 +5,8 @@ this.noble_sun_tabard_blueprint <- this.inherit("scripts/crafting/blueprint", {
 		this.blueprint.create();
 		this.m.ID = "blueprint.noble_sun_tabard_blueprint";
 		this.m.Type = this.Const.Items.ArmorUpgrades.Tabbard;
-		this.m.PreviewCraftable = this.new("scripts/items/legend_armor/tabard/legend_armor_sun_tabard");
+		this.m.PreviewCraftable = this.new("scripts/items/legend_armor/tabard/legend_noble_tabard");
+		this.m.PreviewCraftable.setVariant(9)
 		this.m.Cost = 2000;
 		local ingredients = [
 			{
@@ -30,8 +31,9 @@ this.noble_sun_tabard_blueprint <- this.inherit("scripts/crafting/blueprint", {
 
 	function onCraft( _stash )
 	{
-		local item = this.new("scripts/items/legend_armor/tabard/legend_armor_sun_tabard");
+		local item = this.new("scripts/items/legend_armor/tabard/legend_noble_tabard");
 		item.m.Name = "Sun Tabard";
+		item.setVariant(9)
 		_stash.add(item);
 	}
 

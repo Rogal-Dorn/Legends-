@@ -3896,3 +3896,68 @@ https://drive.google.com/file/d/136wvQKhe-u6H6VQHsaQJ66cVszzwu9Oy/view?usp=shari
 
 **Changes**
 World Economy for city states - unlike northern settlements, ciy states can continue to grow their locations indefinitly.
+
+
+
+15.0.0.1  Conquering Fashion Siblings
+
+**Layered Helmets**
+Made up of under layer, helmet, faceplate and decoration
+Over 750 variants to play with
+Balance is still being worked on
+
+
+**Layered Southern armor**
+all the new armors split into layers
+Many existing armors gain new colour pallets
+dozens of alignment issues fixed
+Brings the number of layer variants to over 800
+
+**Attacking Settlements**
+It is now possible to attack human settlements
+As legion you can take over human settlements, turning them undead
+If allied with an enemy faction you can enter their locations to trade
+Still in early development, a lot of balance and art work needed.
+
+**gender changes**
+There are now three gender start options, vanilla, defined backgrounds or gender equality
+Gladiators can be women
+Gladiators gain perk trees for polearm, swords, throwing, daggers, heavy armor and nets
+Gladiator events are gender neutral,
+Slavers and slaves can be women
+The player no longer tell penis jokes to sword eaters
+Belly dancers are now more feminine
+When fighting about cultural differences, the company fights over marriage instead of women
+
+
+**Weapons**
+New Named Axe and Named Great Axe Variants
+Brand new Named Heavy Mace for southern regions
+
+**Trade Goods**
+New gold, iron and tin ingots trade items
+Gold mine locations will now have chance to spawn on mining villages.
+
+**World Economy**
+Selling trade goods to a settlement will now directly increase that settlements wealth rating.
+City states can not grow or shrink in settlement size, but unlike northern settlements, they can potentially grow and add an unlimited number of new attached locations.
+
+**Other changes**
+Adds southern females
+Adds dozens of variants to nomad camp objects ( no more repeating carpets)
+Arena spectators can be female
+Lich drops legends scrolls
+Increases the number of tactical sand tiles from 3 to 28
+
+**fixes**
+legends camp tactical objects showing up instead of DLC objects
+inventor icon showing up on gladiators
+Adds a background for camping in the desert
+
+
+
+15.0.0.4
+
+**Fixes**
+Tumble no longer makes Lunge cost 0ap, and also correctly reduces fat if you have both perks.
+Unpredictable bros no longer go against their nature & become predictable.

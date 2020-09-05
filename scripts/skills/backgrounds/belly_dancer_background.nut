@@ -40,6 +40,28 @@ this.belly_dancer_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.Ethnicity = 1;
 		this.m.IsFemaleBackground = true;
 		this.m.IsCombatBackground = false;
+		this.m.PerkTreeDynamic = {
+			Weapon = [
+				this.Const.Perks.SwordTree,
+				this.Const.Perks.GreatSwordTree,
+				this.Const.Perks.PolearmTree,
+				this.Const.Perks.DaggerTree,
+				this.Const.Perks.ThrowingTree
+			],
+			Defense = [
+				this.Const.Perks.LightArmorTree,
+			],
+			Traits = [
+				this.Const.Perks.TrainedTree,
+				this.Const.Perks.FitTree,
+				this.Const.Perks.FastTree,
+				this.Const.Perks.AgileTree,
+				this.Const.Perks.DeviousTree
+			],
+			Enemy = [this.Const.Perks.SwordmastersTree],
+			Class = [],
+			Magic = []
+		}
 	}
 
 	function getTooltip()
@@ -75,7 +97,7 @@ this.belly_dancer_background <- this.inherit("scripts/skills/backgrounds/charact
 			],
 			MeleeSkill = [
 				10,
-				10
+				15
 			],
 			RangedSkill = [
 				5,
