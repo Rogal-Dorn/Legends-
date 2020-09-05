@@ -857,7 +857,7 @@ gt.Const.World.Common.pickArmorUpgrade <- function (_armors)
 		{
 			return null;
 		}
-		local item = this.new("scripts/items/armor_upgrade/" + armorID);
+		local item = this.new("scripts/items/armor_upgrades/" + armorID);
 		if (faction != null)
 		{
 			item.setFaction(faction);
@@ -871,7 +871,7 @@ gt.Const.World.Common.pickArmorUpgrade <- function (_armors)
 
 	if (!(armorID in this.Const.LegendMod.Armors))
 	{
-		return this.new("scripts/items/armor_upgrade/" + armorID);
+		return this.new("scripts/items/armor_upgrades/" + armorID);
 	}
 
 	local layersObj = this.Const.LegendMod.Armors[armorID];
@@ -880,49 +880,7 @@ gt.Const.World.Common.pickArmorUpgrade <- function (_armors)
 		return this.new(layersObj.Script);
 	}
 
-	local set = layersObj.Sets[this.Math.rand(0, layersObj.Sets.len() -1)]
-	local armor = this.Const.World.Common.pickLegendArmor(set.Cloth);
-	if (armor == null)
-	{
-		return this.new("scripts/items/armor/" + armorID);
-	}
-
-	if (faction != null)
-	{
-		armor.setupArmor(faction);
-	}
-
-	local chain = this.Const.World.Common.pickLegendArmor(set.Chain);
-	if (chain != null)
-	{
-		armor.setUpgrade(chain)
-	}
-
-	local plate = this.Const.World.Common.pickLegendArmor(set.Plate);
-	if (plate != null)
-	{
-		armor.setUpgrade(plate)
-	}
-
-	local cloak = this.Const.World.Common.pickLegendArmor(set.Cloak);
-	if (cloak != null)
-	{
-		armor.setUpgrade(cloak)
-	}
-
-	local tab = this.Const.World.Common.pickLegendArmor(set.Tabard);
-	if (tab != null)
-	{
-		armor.setUpgrade(tab)
-	}
-
-	local att = this.Const.World.Common.pickLegendArmor(set.Attachments);
-	if (att != null)
-	{
-		armor.setUpgrade(att)
-	}
-
-	return armor;
+	return null;
 }
 
 gt.Const.World.Common.convNameToList <- function ( _named )
