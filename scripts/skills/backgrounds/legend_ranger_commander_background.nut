@@ -299,8 +299,6 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 		stash.add(this.new("scripts/items/ammo/quiver_of_arrows"));
 		stash.add(this.new("scripts/items/supplies/cured_venison_item"));
 		stash.removeByID("supplies.ground_grains");
-		items.equip(this.new("scripts/items/armor/legend_ranger_armor"));
-
 
 		r = this.Math.rand(0, 1);
 
@@ -314,7 +312,7 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 		}
 
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "legend_armor_ranger"]
+			[1, "legend_ranger_armor"]
 		]));
 		items.equip(this.Const.World.Common.pickHelmet([
 			[1, "hood"],
