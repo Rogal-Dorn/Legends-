@@ -529,7 +529,7 @@
 		}
 
 		this.m.IsDying = true;
-		local isReallyDead = _killer == this || this.isReallyKilled(_fatalityType);
+		local isReallyDead = this.isReallyKilled(_fatalityType);
 
 		if (!isReallyDead)
 		{
@@ -778,10 +778,7 @@
 	o.onDeserialize = function( _in )
 	{
 		dszFn(_in)
-		if (_in.getMetaData().getVersion() >= 59)
-		{
-			this.m.RiderID = _in.readString();
-		}
+		this.m.RiderID = _in.readString();
 	}
 
 

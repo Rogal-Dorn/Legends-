@@ -10,7 +10,8 @@ this.shield <- this.inherit("scripts/items/item", {
 		MeleeDefense = 0,
 		RangedDefense = 0,
 		StaminaModifier = 0,
-		FatigueOnSkillUse = 0
+		FatigueOnSkillUse = 0,
+		IsIndestructible = false
 	},
 	function isAmountShown()
 	{

@@ -39,6 +39,7 @@ this.item <- {
 		RuneBonus1 = 0,
 		RuneBonus2 = 0,
 		IsToBeSalvaged = false,
+		ResourceValue = 0,
 		Type = -1
 	},
 
@@ -1259,6 +1260,11 @@ this.item <- {
 	function getLootLayers()
 	{
 		return [this];
+	}
+
+	function getResourceValue()
+	{
+		return this.m.ResourceValue;
 	}
 
 	function onPaint( _color )

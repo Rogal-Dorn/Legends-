@@ -156,7 +156,7 @@ this.cultist_vs_uneducated_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getFlags().get("IsSpecial") || bro.getFlags().get("IsPlayerCharacter"))
+			if (bro.getFlags().get("IsSpecial") || bro.getFlags().get("IsPlayerCharacter") || bro.getBackground().getID() == "background.slave")
 			{
 				continue;
 			}

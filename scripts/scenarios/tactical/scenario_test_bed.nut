@@ -90,8 +90,8 @@ this.scenario_test_bed <- this.inherit("scripts/scenarios/tactical/scenario_temp
 
 			a.setUpgrade(u);
 			items.equip(a);
-			items.equip(this.new("scripts/items/shields/wooden_shield"));
-			entity.getItems().equip(this.new("scripts/items/weapons/boar_spear"));
+			items.equip(this.new("scripts/items/ammo/powder_bag"));
+			items.equip(this.new("scripts/items/weapons/oriental/handgonne"));
 		}
 
 		local entity = this.spawnEntity("scripts/entity/tactical/enemies/orc_berserker");

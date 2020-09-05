@@ -55,7 +55,7 @@ this.defend_holy_site_contract <- this.inherit("scripts/contracts/contract", {
 
 		this.m.Destination = this.WeakTableRef(target);
 		this.m.Destination.setVisited(true);
-		this.m.Payment.Pool = 1200 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult();
+		this.m.Payment.Pool = 1250 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult();
 		local r = this.Math.rand(1, 2);
 
 		if (r == 1)
@@ -1143,6 +1143,14 @@ this.defend_holy_site_contract <- this.inherit("scripts/contracts/contract", {
 					}
 				}
 			}
+		}
+
+		if (tiles.len() == 0)
+		{
+			tiles.push({
+				Tile = this.m.Destination.getTile(),
+				Score = 0
+			});
 		}
 
 		tiles.sort(function ( _a, _b )

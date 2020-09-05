@@ -52,6 +52,27 @@ this.skeleton_lich <- this.inherit("scripts/entity/tactical/skeleton", {
 		}
 
 		this.skeleton.onDeath(_killer, _skill, _tile, _fatalityType);
+		
+			if (_killer == null || _killer.getFaction() == this.Const.Faction.Player || _killer.getFaction() == this.Const.Faction.PlayerAnimals)
+			{
+				local n = 1 + (!this.Tactical.State.isScenarioMode() && this.Math.rand(1, 100) <= this.World.Assets.getExtraLootChance() ? 1 : 0);
+
+				for( local i = 0; i < n; i = ++i )
+				{
+
+					local loot = this.new("scripts/items/misc/legend_ancient_scroll_item");
+					loot.drop(_tile);
+					local loot = this.new("scripts/items/misc/legend_ancient_scroll_item");
+					loot.drop(_tile);
+					local loot = this.new("scripts/items/misc/legend_ancient_scroll_item");
+					loot.drop(_tile);
+					local loot = this.new("scripts/items/misc/legend_ancient_scroll_item");
+					loot.drop(_tile);
+					local loot = this.new("scripts/items/misc/legend_ancient_scroll_item");
+					loot.drop(_tile);
+
+				}
+			}		
 
 		if (phylacteries.len() != 0)
 		{

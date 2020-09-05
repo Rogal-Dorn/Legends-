@@ -143,6 +143,7 @@ this.town_shop_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 
 		this.World.Assets.addMoney(-price);
 		item.setArmor(item.getRepairMax());
+		item.setToBeRepaired(false);
 		this.Sound.play("sounds/ambience/buildings/blacksmith_hammering_0" + this.Math.rand(0, 6) + ".wav", 1.0);
 		local result = {
 			Item = this.UIDataHelper.convertItemToUIData(item, true, this.Const.UI.ItemOwner.Stash),
@@ -214,6 +215,12 @@ this.town_shop_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 							if (sourceItem.item.isItemType(this.Const.Items.ItemType.TradeGood))
 							{
 								this.World.Statistics.getFlags().increment("TradeGoodsSold");
+
+								if (this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
+								{
+									this.m.Parent.m.Town.setResources(this.m.Parent.m.Town.getResources() + sourceItem.item.getResourceValue());
+								}
+
 							}
 						}
 						else
@@ -237,6 +244,12 @@ this.town_shop_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 					if (removedItem.isItemType(this.Const.Items.ItemType.TradeGood))
 					{
 						this.World.Statistics.getFlags().increment("TradeGoodsSold");
+
+						if (this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
+						{
+							this.m.Parent.m.Town.setResources(this.m.Parent.m.Town.getResources() + sourceItem.item.getResourceValue());
+						}
+
 					}
 				}
 			}
