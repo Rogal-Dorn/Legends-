@@ -129,7 +129,7 @@ this.noble_footman <- this.inherit("scripts/entity/tactical/human", {
 			{
 				helmet = this.Const.World.Common.pickHelmet([
 					[1, "flat_top"],
-					[1, "padded_flat_top"],
+					[1, "padded_flat_top_helmet"],
 					[1, "flat_top_with_mail"],
 					[1, "mail_coif"]
 				])

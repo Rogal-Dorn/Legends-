@@ -740,12 +740,13 @@ gt.Const.World.Common.pickArmor <- function (_armors)
 		break;
 	}
 
+	if (armorID == "")
+	{
+		return null
+	}
+
 	if (!this.World.LegendsMod.Configs().LegendArmorsEnabled())
 	{
-		if (armorID == "")
-		{
-			return null;
-		}
 		local item = this.new("scripts/items/armor/" + armorID);
 		if (faction != null)
 		{
