@@ -669,7 +669,7 @@ gt.Const.World.Common.pickHelmet <- function (_helms)
 	local layersObj = this.Const.LegendMod.Helmets[helm];
 	if (layersObj.Script != "")
 	{
-		return this.new(layersObjs.Script);
+		return this.new(layersObj.Script);
 	}
 
 	local set = layersObj.Sets[this.Math.rand(0, layersObj.Sets.len() -1)]
@@ -766,7 +766,7 @@ gt.Const.World.Common.pickArmor <- function (_armors)
 	local layersObj = this.Const.LegendMod.Armors[armorID];
 	if (layersObj.Script != "")
 	{
-		return this.new(layersObjs.Script);
+		return this.new(layersObj.Script);
 	}
 
 	local set = layersObj.Sets[this.Math.rand(0, layersObj.Sets.len() -1)]
@@ -812,6 +812,75 @@ gt.Const.World.Common.pickArmor <- function (_armors)
 	}
 
 	return armor;
+}
+
+gt.Const.World.Common.pickArmorUpgrade <- function (_armors)
+{
+	local candidates = [];
+	local totalWeight = 0;
+	foreach (t in _armors)
+	{
+		if (t[0] == 0)
+		{
+			continue;
+		}
+		candidates.push(t);
+		totalWeight += t[0];
+	}
+
+	local r = this.Math.rand(0, totalWeight);
+	local armorID = "";
+	local variant = null;
+	local faction = null;
+	foreach (t in candidates)
+	{
+		r = r - t[0];
+		if (r > 0)
+		{
+			continue;
+		}
+		armorID = t[1];
+		if (t.len() == 3)
+		{
+			variant = t[2];
+		}
+		if (t.len() == 4)
+		{
+			faction = t[3];
+		}
+		break;
+	}
+
+	if (!this.World.LegendsMod.Configs().LegendArmorsEnabled())
+	{
+		if (armorID == "")
+		{
+			return null;
+		}
+		local item = this.new("scripts/items/armor_upgrades/" + armorID);
+		if (faction != null)
+		{
+			item.setFaction(faction);
+		}
+		else if (variant != null)
+		{
+			item.setVariant(variant);
+		}
+		return item;
+	}
+
+	if (!(armorID in this.Const.LegendMod.Armors))
+	{
+		return this.new("scripts/items/armor_upgrades/" + armorID);
+	}
+
+	local layersObj = this.Const.LegendMod.Armors[armorID];
+	if (layersObj.Script != "")
+	{
+		return this.new(layersObj.Script);
+	}
+
+	return null;
 }
 
 gt.Const.World.Common.convNameToList <- function ( _named )

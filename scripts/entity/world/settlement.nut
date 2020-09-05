@@ -1883,7 +1883,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			{
 				if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 				{
-					building.onUpdateLegendShopList();
+					building.onUpdateShopList();
 				}
 				else
 				{
@@ -2218,7 +2218,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			{
 				if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 				{
-					loc.onUpdateLegendShopList(_id, _list);
+					loc.onUpdateShopList(_id, _list);
 				}
 				else
 				{

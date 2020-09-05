@@ -135,6 +135,21 @@ this.armorsmith_oriental_building <- this.inherit("scripts/entity/world/settleme
 			}
 		];
 
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+		{
+			foreach( i in this.Const.Items.LegendNamedSouthernArmorLayers )
+			{
+				if (this.Math.rand(1, 100) <= 33)
+				{
+					list.push({
+						R = 99,
+						P = 2.0,
+						S = i
+					});
+				}
+			}
+		}
+
 		foreach( i in this.Const.Items.NamedArmors )
 		{
 			if (this.Math.rand(1, 100) <= 33)

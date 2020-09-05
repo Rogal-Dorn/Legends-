@@ -110,7 +110,6 @@ this.noble_footman <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Items.equip(shield);
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
-			[1, ""],
 			[1, "mail_hauberk", 28],
 			[1, "mail_shirt"],
 			[1, "basic_mail_shirt"]

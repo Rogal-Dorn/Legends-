@@ -23,6 +23,11 @@ layers = [
     "desc" :  "A leather apron usually worn by a blacksmith", \
     "adesc" :""
 },
+{"name": "legend_gladiator_harness",                       "layer": "cloth", "min": 11, "max": 11, "value" : 150, "con" : 40, "stam" : -4, "impactSound" : "leather", "invSound" : "cloth", "vanilla" : "body_southern",  \
+    "title" :  "Gladiator Harness", \
+    "desc" :  "A leather harness commonly worn by pit fighters in arenas of the southern city states.", \
+    "adesc" :""
+},
 {"name": "legend_gambeson",                               "layer": "cloth", "min": 0, "max": 39, "value" : 250, "con" : 65, "stam" : -8, "impactSound" : "leather", "invSound" : "cloth", \
     "title" :  "Gambeson", \
     "desc" :  "A sturdy and heavy padded tunic that offers decent protection.", \
@@ -134,13 +139,11 @@ layers = [
     "desc" :  "A heavy cloth tunic. bulky but offering some protection.", \
     "adesc" :""
 },
-
 {"name": "legend_tunic_noble",                            "layer": "cloth", "min": 1, "max": 10, "value" : 500, "con" : 40, "stam" : -2, "impactSound" : "leather", "invSound" : "cloth", "brush" : "legend_tunic_collar_wide", \
     "title" :  "Noble Tunic", \
     "desc" :  "A fine linen tunic of exquisite material, embroided with pleasing patterns. Fashionable but offering little in protection.", \
     "adesc" :""
 },
-
 {"name": "legend_tunic_noble_named",                      "layer": "cloth", "min": 1, "max": 1, "value" : 1500, "con" : 40, "stam" : -2, "impactSound" : "leather", "invSound" : "cloth", "brush" : "legend_tunic_collar_gold", \
     "title" :  "Noble Tunic", \
     "desc" :  "A fine linen tunic of exquisite material, embroided with pleasing patterns. Fashionable but offering little in protection.", \
@@ -723,6 +726,7 @@ layers = [
 brush_only_layers = [
     {"name": "legend_runed", "layer": "rune"},
     {"name": "cloak_spider", "layer": "cloak"},
+    {"name" :"named_emperors_cloak", "min" : 1, "max" : 1, "layer" : "cloak"},
     {"name": "cloak_rich", "min" : 1, "max" : 5, "layer": "cloak"},
     {"name": "tabard_named", "min" : 1, "max" : 26, "layer": "tabard"}
 ]

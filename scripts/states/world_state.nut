@@ -1158,7 +1158,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 			Y = 0,
 			W = minX,
 			H = minY
-		}, null);
+		}, this.m.CampaignSettings);
 		// local tries = 200;
 		// while (tries > 0)
 		// {

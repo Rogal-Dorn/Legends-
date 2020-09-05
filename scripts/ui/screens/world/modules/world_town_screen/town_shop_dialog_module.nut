@@ -215,6 +215,12 @@ this.town_shop_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 							if (sourceItem.item.isItemType(this.Const.Items.ItemType.TradeGood))
 							{
 								this.World.Statistics.getFlags().increment("TradeGoodsSold");
+
+								if (this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
+								{
+									this.m.Parent.m.Town.setResources(this.m.Parent.m.Town.getResources() + sourceItem.item.getResourceValue());
+								}
+
 							}
 						}
 						else
@@ -238,6 +244,12 @@ this.town_shop_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 					if (removedItem.isItemType(this.Const.Items.ItemType.TradeGood))
 					{
 						this.World.Statistics.getFlags().increment("TradeGoodsSold");
+
+						if (this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
+						{
+							this.m.Parent.m.Town.setResources(this.m.Parent.m.Town.getResources() + sourceItem.item.getResourceValue());
+						}
+
 					}
 				}
 			}
