@@ -25,6 +25,7 @@ this.skill <- {
 		Container = null,
 		Item = null,
 		ActionPointCost = 0,
+		ActionPointCostMult = 1.0,
 		FatigueCost = 0,
 		FatigueCostMult = 1.0,
 		MinRange = 0,
@@ -310,11 +311,11 @@ this.skill <- {
 		}
 		else if (this.m.Container.getActor().getCurrentProperties().IsSkillUseHalfCost && this.m.ActionPointCost != 0)
 		{
-			return this.Math.max(1, this.Math.floor(this.m.ActionPointCost / 2));
+			return this.Math.max(1, this.Math.floor(this.m.ActionPointCost * this.m.ActionPointCostMult / 2));
 		}
 		else
 		{
-			return this.m.ActionPointCost;
+			return this.m.ActionPointCost * this.m.ActionPointCostMult;
 		}
 	}
 
