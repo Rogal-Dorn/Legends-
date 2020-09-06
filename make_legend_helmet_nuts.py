@@ -282,6 +282,11 @@ this.$name <- this.inherit("scripts/items/legend_helmets/legend_named_helmet_upg
 });
 '''
 
+aLayer = '''
+$stats
+    "title" :  "$title", \
+    "desc" :  "$desc" },
+'''
 layers = [
     {"name": "goblin_scarf",        "layer": "hood", "min": 1, "max": 4, "base": True, "value" : 5, "con" : 5, "stam" : 0, "vis" : 0,  "hair" : "true", "beard" :"false" },
     {"name": "barb_chain_scarf",    "layer": "hood", "min": 1, "max": 5, "base": True, "value" : 165, "con" : 55, "stam" : -2, "vis" : 0,  "hair" : "false", "beard" :"true" },
@@ -308,7 +313,7 @@ layers = [
     {"name": "bronze_chain",        "layer": "hood", "min": 1, "max": 1, "base": True, "value" : 450, "con" : 100, "stam" : -7, "vis" : 0,  "hair" : "false", "beard" :"false" },
     {"name": "southern_chain_hood",          "layer": "hood", "min": 1, "max": 1, "base": True, "value" : 310, "con" : 85, "stam" : -5, "vis" : -1,  "hair" : "true", "beard" :"false" },
     {"name": "southern_open_chain_hood",     "layer": "hood", "min": 1, "max": 3, "base": True, "value" : 200, "con" : 65, "stam" : -3, "vis" : 0,  "hair" : "true", "beard" :"false" },
-
+    {"name": "southern_open_hood",     "layer": "hood", "min": 1, "max": 1, "base": True, "value" : 95, "con" : 40, "stam" : -1, "vis" : 0,  "hair" : "true", "beard" :"false" },
 
     {"name": "ancient_conic_helm",                  "layer": "helm", "min": 1, "max": 1, "value" : 100, "con" : 15, "stam" : -3, "vis" : -1,  "hair" : "true", "beard" :"false" },
     {"name": "ancient_kettle",                      "layer": "helm", "min": 1, "max": 3, "value" : 100, "con" : 15, "stam" : -3, "vis" : -1,  "hair" : "true", "beard" :"false" },
@@ -534,6 +539,7 @@ titles = {
     "simple_hood" :          "Simple Hood",
     "southern_cap" :         "Southern Cap",
     "southern_turban_light_hood" : "Southern light hood",
+    "southern_open_hood" : "Southern Hood",
     "southern_niqaab" :      "Niqaab",
 
     "padded_cap" :           "Aketon Cap",
@@ -734,6 +740,7 @@ descriptions = {
     "southern_cap" :        "A simple cap of rough fibres",
     "southern_niqaab" :      "A headwrap, protects from the sun and light blows",
     "southern_turban_light_hood" :  "A southern hood made of light materials",
+    "southern_open_hood" : "A southern hood made of cloth that wraps around the head.",
     "patched_hood" :         "Patched Hood",
     "rotten_chain_scarf" :   "A rotten mail aventail that extends from below the eyeline to cover the neck",
     "simple_hood" :          "A simple hood to protect against weather and scratches.",
