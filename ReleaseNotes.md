@@ -3894,18 +3894,16 @@ To REPEAT! Looking for crashes or any errors in log files.
 https://drive.google.com/file/d/136wvQKhe-u6H6VQHsaQJ66cVszzwu9Oy/view?usp=sharing
 
 
-**Changes**
-World Economy for city states - unlike northern settlements, ciy states can continue to grow their locations indefinitly.
+15.0.0.5  Sand Storm
+**Requires ALL DLC and build 1.4.0.41 of BB**
 
+This is our first general test build release of the blazing sands DLC support for Legends Mod. Please expect this build to have instabilities. There's lots of balance and work to do still (We haven't started work on the retinue system, so it is still vanilla - this WILL change, we have plans...), but hopefully this should build will let you all play with Legends with the new DLC content.
 
-
-15.0.0.1  Conquering Fashion Siblings
 
 **Layered Helmets**
 Made up of under layer, helmet, faceplate and decoration
 Over 750 variants to play with
 Balance is still being worked on
-
 
 **Layered Southern armor**
 all the new armors split into layers
@@ -3929,7 +3927,6 @@ The player no longer tell penis jokes to sword eaters
 Belly dancers are now more feminine
 When fighting about cultural differences, the company fights over marriage instead of women
 
-
 **Weapons**
 New Named Axe and Named Great Axe Variants
 Brand new Named Heavy Mace for southern regions
@@ -3940,7 +3937,7 @@ Gold mine locations will now have chance to spawn on mining villages.
 
 **World Economy**
 Selling trade goods to a settlement will now directly increase that settlements wealth rating.
-City states can not grow or shrink in settlement size, but unlike northern settlements, they can potentially grow and add an unlimited number of new attached locations.
+World Economy for city states - unlike northern settlements, ciy states can continue to grow their locations indefinitly.
 
 **Other changes**
 Adds southern females
@@ -3953,5 +3950,5 @@ Increases the number of tactical sand tiles from 3 to 28
 legends camp tactical objects showing up instead of DLC objects
 inventor icon showing up on gladiators
 Adds a background for camping in the desert
-
-
+Tumble no longer makes Lunge cost 0ap, and also correctly reduces fat if you have both perks.
+Unpredictable bros no longer go against their nature & become predictable.
