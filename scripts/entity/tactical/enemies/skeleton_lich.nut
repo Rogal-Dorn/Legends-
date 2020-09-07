@@ -229,8 +229,8 @@ this.skeleton_lich <- this.inherit("scripts/entity/tactical/skeleton", {
 		local armor = [
 			[1, "ancient/ancient_lich_attire"]
 		];
-		local item = this.Const.World.Common.pickArmor(armor);
-		this.m.Items.equip(armor);
+		local item = this.Const.World.Common.pickArmor(armor); 		
+		this.m.Items.equip(item);
 		local helmet = [
 			[1, "helmets/ancient/ancient_lich_headpiece"]
 		];
