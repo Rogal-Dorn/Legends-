@@ -188,7 +188,6 @@ this.knight <- this.inherit("scripts/entity/tactical/human", {
 		}
 		else
 		{
-			this.m.Items.equip(this.new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]));
 			local h = this.Const.World.Common.pickArmor(
 				this.Const.World.Common.convNameToList(
 					armor
