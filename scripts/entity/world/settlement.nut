@@ -1881,15 +1881,15 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		{
 			if (building != null)
 			{
-				if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
-				{
-					building.onUpdateShopList();
-				}
-				else
-				{
-					building.onUpdateShopList();
-				}
-
+				// if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+				// {
+				// 	building.onUpdateShopList();
+				// }
+				// else
+				// {
+				// 	building.onUpdateShopList();
+				// }
+				building.onUpdateShopList();
 				if (building.getStash() != null)
 				{
 					foreach( s in this.m.Situations )
