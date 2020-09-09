@@ -136,7 +136,7 @@ this.houndmaster_background <- this.inherit("scripts/skills/backgrounds/characte
 		{
 			if(this.Math.rand(1, 50) == 1)
 			{
-				this.getContainer().getSkills().add(this.new("scripts/skills/injury_permanent/legend_lycanthropy_injury"));
+				this.getContainer().add(this.new("scripts/skills/injury_permanent/legend_lycanthropy_injury"));
 			}
 		}
 	}
