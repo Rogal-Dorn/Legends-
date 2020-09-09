@@ -1272,10 +1272,10 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.setupWeather();
 		this.updateDayTime();
 		local bros = this.World.getPlayerRoster().getAll();
-		foreach (bro in bros)
-		{
-			this.m.IDToRef[bro.getCompanyID()] = this.WeakTableRef(bro);
-		}
+		// foreach (bro in bros)
+		// {
+		// 	this.m.IDToRef[bro.getCompanyID()] = this.WeakTableRef(bro);
+		// }
 		this.setWorldmapMusic(false);
 		this.setPause(true);
 	}
