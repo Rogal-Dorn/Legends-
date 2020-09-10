@@ -750,10 +750,10 @@
 		return null;
 	}
 
-	o.getCompanyID <- function()
-	{
-		return -1;
-	}
+	// o.getCompanyID <- function()
+	// {
+	// 	return -1;
+	// }
 
 	o.setTarget <- function (_entity)
 	{
