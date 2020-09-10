@@ -86,6 +86,10 @@ this.desert2 <- this.inherit("scripts/mapgen/tactical_template", {
 		local t = this.createTileTransition();
 		t.setSocket("socket_desert");
 		this.Tactical.setTransitions("tile_desert_02", t);
+		this.Tactical.setTransitions("tile_legend_desert_05", t);
+		this.Tactical.setTransitions("tile_legend_desert_06", t);
+		this.Tactical.setTransitions("tile_legend_desert_07", t);
+		this.Tactical.setTransitions("tile_legend_desert_08", t);
 	}
 
 	function onFirstPass( _rect )
