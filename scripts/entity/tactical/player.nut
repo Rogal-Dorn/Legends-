@@ -2962,7 +2962,12 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		{
 			this.m.InReserves = _in.readBool();
 		}
-		// this.m.CompanyID = _in.readU8();
+		if (_in.getMetaData().getVersion() <= 63)
+		{
+			// this.m.CompanyID = _in.readU8();
+			local cID = _in.readU8();
+		}
+		
 	}
 
 });
