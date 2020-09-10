@@ -893,7 +893,7 @@ gt.Const.World.Common.convNameToList <- function ( _named )
 	{
 		if (list[0].find(search) != null ) //was this list
 		{
-			foreach( item in ilst )
+			foreach( item in list )
 			{
 				retArr.push(
 					[1, item.slice(item.find(search) + search.len())]

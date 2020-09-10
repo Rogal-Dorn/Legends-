@@ -52,7 +52,7 @@ this.skeleton_lich <- this.inherit("scripts/entity/tactical/skeleton", {
 		}
 
 		this.skeleton.onDeath(_killer, _skill, _tile, _fatalityType);
-		
+
 			if (_killer == null || _killer.getFaction() == this.Const.Faction.Player || _killer.getFaction() == this.Const.Faction.PlayerAnimals)
 			{
 				local n = 1 + (!this.Tactical.State.isScenarioMode() && this.Math.rand(1, 100) <= this.World.Assets.getExtraLootChance() ? 1 : 0);
@@ -72,7 +72,7 @@ this.skeleton_lich <- this.inherit("scripts/entity/tactical/skeleton", {
 					loot.drop(_tile);
 
 				}
-			}		
+			}
 
 		if (phylacteries.len() != 0)
 		{
@@ -149,6 +149,11 @@ this.skeleton_lich <- this.inherit("scripts/entity/tactical/skeleton", {
 		this.m.BloodSaturation = body.Saturation;
 		this.addSprite("body_injury").setBrush("bust_skeleton_body_injured");
 		this.addSprite("armor");
+		this.addSprite("armor_layer_chain");
+		this.addSprite("armor_layer_plate");
+		this.addSprite("armor_layer_tabbard");
+		this.addSprite("armor_layer_cloak");
+		this.addSprite("armor_upgrade_back");
 		local head = this.addSprite("head");
 		head.setBrush("bust_skeleton_head");
 		head.Color = body.Color;
@@ -159,8 +164,12 @@ this.skeleton_lich <- this.inherit("scripts/entity/tactical/skeleton", {
 		local face = this.addSprite("face");
 		face.setBrush("bust_skeleton_face_03");
 		local hair = this.addSprite("hair");
+		this.addSprite("helmet_vanity_lower");
 		this.addSprite("helmet");
 		this.addSprite("helmet_damage");
+		this.addSprite("helmet_helm");
+		this.addSprite("helmet_top");
+		this.addSprite("helmet_vanity");
 		local beard_top = this.addSprite("beard_top");
 		local body_blood = this.addSprite("body_blood");
 		body_blood.setBrush("bust_body_bloodied_02");
@@ -229,10 +238,10 @@ this.skeleton_lich <- this.inherit("scripts/entity/tactical/skeleton", {
 		local armor = [
 			[1, "ancient/ancient_lich_attire"]
 		];
-		local item = this.Const.World.Common.pickArmor(armor); 		
+		local item = this.Const.World.Common.pickArmor(armor);
 		this.m.Items.equip(item);
 		local helmet = [
-			[1, "helmets/ancient/ancient_lich_headpiece"]
+			[1, "ancient/ancient_lich_headpiece"]
 		];
 		this.m.Items.equip(this.Const.World.Common.pickHelmet(helmet));
 	}
