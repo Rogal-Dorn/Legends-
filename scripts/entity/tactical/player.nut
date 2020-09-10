@@ -45,7 +45,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		InReserves = false,
         StarWeights = [50,50,50,50,50,50,50,50]
         // Alignment = null,
-        // CompanyID = -1
+        CompanyID = 0
 	},
 	function setName( _value )
 	{
@@ -2834,7 +2834,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		_out.writeString(this.m.CampAssignment);
 		_out.writeF32(this.m.LastCampTime);
 		_out.writeBool(this.m.InReserves);
-		// _out.writeU8(this.m.CompanyID);
+		_out.writeU8(this.m.CompanyID);
 	}
 
 	function onDeserialize( _in )
@@ -2962,12 +2962,8 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		{
 			this.m.InReserves = _in.readBool();
 		}
-		if (_in.getMetaData().getVersion() <= 63)
-		{
-			// this.m.CompanyID = _in.readU8();
-			local cID = _in.readU8();
-		}
-		
+
+		this.m.CompanyID = _in.readU8();
 	}
 
 });
