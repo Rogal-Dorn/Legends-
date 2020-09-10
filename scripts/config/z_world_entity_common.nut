@@ -888,7 +888,7 @@ gt.Const.World.Common.convNameToList <- function ( _named )
 {
 	local findString = ["helmets/", "armor/", "legend_armor/"];
 	local list = clone _named; //iirc we have to clone this because this is the actual array & we don't want to edit it
-	local retArr;
+	local retArr = [];
 	foreach( search in findString )
 	{
 		if (list[0].find(search) != null ) //was this list
