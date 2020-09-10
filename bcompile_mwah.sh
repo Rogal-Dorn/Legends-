@@ -73,7 +73,7 @@ done <<< "$FILES"
 echo "Building helmets..."
 rm -rf helmets
 mkdir -p "helmets"
-python make_legend_helmet_nuts.py
+python make_legend_helmets.py
 cp -R helmets/. "c:\Program Files (x86)\Steam\steamapps\common\Battle Brothers\data\scripts\items\legend_helmets"
 
 echo "Building armors..."
@@ -110,6 +110,13 @@ cd ../bin
 
 cd ../battlebrothers
 
+echo "cp sounds"
 cp -R sounds/. "c:\Program Files (x86)\Steam\steamapps\common\Battle Brothers\data\sounds"
+
+echo "cp gfx"
 cp -R gfx/. "c:\Program Files (x86)\Steam\steamapps\common\Battle Brothers\data\gfx"
+
+echo "cp brushes"
 cp -R brushes/. "c:\Program Files (x86)\Steam\steamapps\common\Battle Brothers\data\brushes"
+
+read -p "Enter"
