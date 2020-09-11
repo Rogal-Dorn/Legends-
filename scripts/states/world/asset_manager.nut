@@ -1535,6 +1535,12 @@ this.asset_manager <- {
 
 		foreach( b in roster )
 		{
+			if (b.getPlaceInFormation() == 255)
+			{
+				this.logError("Bro has invalid place in formation! :: " + b.m.Name)
+				continue;
+			}
+
 			ret[b.getPlaceInFormation()] = b;
 		}
 
