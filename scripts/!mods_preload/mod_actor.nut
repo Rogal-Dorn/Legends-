@@ -768,13 +768,18 @@
 	}
 
 
-	o.getSurroundedCount <- function ()
+	o.getSurroundedCount = function ()
 	{
 		local tile = this.getTile();
 		local c = 0;
 
 		for( local i = 0; i != 6; i = ++i )
 		{
+			if (tile == null)
+			{
+				continue
+			}
+
 			if (!tile.hasNextTile(i))
 			{
 				continue
