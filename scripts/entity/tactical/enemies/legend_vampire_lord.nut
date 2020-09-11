@@ -123,9 +123,6 @@ this.legend_vampire_lord <- this.inherit("scripts/entity/tactical/actor", {
 
 	function onUpdateInjuryLayer()
 	{
-
-
-
 		local p = this.getHitpointsPct();
 		local bodyBrush = this.getSprite("body").getBrush().Name;
 		local headBrush = this.getSprite("head").getBrush().Name;
@@ -236,9 +233,20 @@ this.legend_vampire_lord <- this.inherit("scripts/entity/tactical/actor", {
 
 		if (this.Math.rand(1, 100) <= 25)
 		{
-			this.getSprite("body").setBrush("bust_vampire_lady_body_01");
-			this.getSprite("head").setBrush("bust_vampire_lady_head_01");
-			this.getSprite("hair").setBrush("hair_black_25");
+			if (this.Math.rand(1,100) <= 50)
+			{
+				this.getSprite("body").setBrush("bust_vampire_lady_body_01");
+				this.getSprite("head").setBrush("bust_vampire_lady_head_01");
+			}
+			else
+			{
+				this.getSprite("body").setBrush("bust_vampire_lady_body_02");
+				this.getSprite("head").setBrush("bust_vampire_lady_head_02");
+			}
+			if (this.Math.rand(1, 100) <= 60)
+			{
+				hair.setBrush("hair_black_25")
+			}
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_terrifying_visage"));
 			this.m.IsLady = true;
 		}
