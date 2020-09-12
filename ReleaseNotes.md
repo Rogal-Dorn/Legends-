@@ -3897,7 +3897,7 @@ https://drive.google.com/file/d/136wvQKhe-u6H6VQHsaQJ66cVszzwu9Oy/view?usp=shari
 15.0.0.5  Sand Storm
 **Requires ALL DLC and build 1.4.0.41 of BB**
 
-This is our first general test build release of the blazing sands DLC support for Legends Mod. Please expect this build to have instabilities. There's lots of balance and work to do still (We haven't started work on the retinue system, so it is still vanilla - this WILL change, we have plans...), but hopefully this should build will let you all play with Legends with the new DLC content.
+This is our first general test build release of the blazing sands DLC support for Legends Mod. Please expect this build to have instabilities. There's lots of balance and work to do still (We haven't started work on the retinue system, so it is still vanilla - this WILL change, we have plans...), but hopefully this build will let you all play with Legends with the new DLC content.
 
 
 **Layered Helmets**
