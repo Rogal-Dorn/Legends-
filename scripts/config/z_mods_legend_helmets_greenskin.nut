@@ -122,6 +122,7 @@ gt.Const.LegendMod.HelmObjs.extend([ //gob heavy helmet
         [1, "top/legend_helmet_orc_metal_mask"] //120
     ],
     Vanity = [ //+10
+        [3, ""], //33% no vanity
         [1, "vanity/legend_helmet_bull_horns"], //10
         [1, "vanity/legend_helmet_orc_bones"], //10
         [1, "vanity/legend_helmet_ram_horns"], //10
@@ -177,7 +178,7 @@ gt.Const.LegendMod.HelmObjs.extend([ //gob heavy helmet
     ],
     //note while helms averages correctly its a pretty big swing to be able to hit 600 and also hit like 300, maybe tweak?
     Helms = [ //avg 320 need 130
-        [1, "helm/legend_helmet_orc_great_helm"], //420
+        [4, "helm/legend_helmet_orc_great_helm"], //420
         [1, "helm/legend_helmet_orc_double_helm"] //220
     ],
     Tops = [ //need 140
@@ -210,10 +211,11 @@ gt.Const.LegendMod.HelmObjs.extend([ //gob heavy helmet
         [1, "top/legend_helmet_orc_metal_mask"] //120
     ],
     Vanity = [
-         [1, "vanity/legend_helmet_bull_horns"], //10
+        [5, ""],
+        [1, "vanity/legend_helmet_bull_horns"], //10
         [1, "vanity/legend_helmet_orc_bones"], //10
         [1, "vanity/legend_helmet_ram_horns"], //10
-        [1, "vanity/legend_helmet_ponytail"], //10
+        [0, "vanity/legend_helmet_ponytail"], //10
         [1, "vanity_lower/legend_helmet_orc_tail"], //10
         [1, "vanity_lower/legend_helmet_knotted_tail"] //10
     ]

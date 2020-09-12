@@ -397,7 +397,10 @@ layers = [
  "title" :  "Southern Hood", \
  "desc" :  "A southern hood made of cloth that wraps around the head." \
 },
-
+{"name" : "cloth_cap"                     , "layer" : "hood", "min" : 1, "max" : 1, "base" : True, "value" : 20, "con" : 10, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
+ "title" :  "Cloth Cap", \
+ "desc" :  "A piece of cloth covering the top of the head." \
+},
 
 
 
