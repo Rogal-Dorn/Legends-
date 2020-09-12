@@ -220,7 +220,7 @@ gt.Const.LegendMod.HelmetObjs <- [{
     Helms = [],
     Tops = [],
     Vanity = [
-        [4, ""]
+        [4, ""],
         [1, "vanity/legend_helmet_witchhunter_helm"]
     ]
 }]
