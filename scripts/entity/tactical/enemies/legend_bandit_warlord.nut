@@ -184,14 +184,14 @@ this.legend_bandit_warlord <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.Math.rand(1, 100) > 50)
 		{
-			local named = this.Const.Items.NamedArmors[this.Math.rand(0, this.Const.Items.NamedArmors.len() - 1)];
+			local named = this.Const.Items.NamedArmors;
 			local weightName = this.Const.World.Common.convNameToList(named);
 			this.m.Items.equip(this.Const.World.Common.pickArmor(weightName));
 			
 		}		
 		else
 		{
-			local named = this.Const.Items.NamedHelmets[this.Math.rand(0, this.Const.Items.NamedArmors.len() - 1)];
+			local named = this.Const.Items.NamedHelmets;
 			local weightName = this.Const.World.Common.convNameToList(named);
 			this.m.Items.equip(this.Const.World.Common.pickArmor(weightName));
 		}

@@ -43,10 +43,10 @@ this.legend_armor_cloak_emperors <- this.inherit("scripts/items/legend_armor/leg
 		this.m.SpriteBack = "bust_named_emperors_cloak_" + variant + "";
 		this.m.SpriteDamagedBack = "bust_named_emperors_cloak_" + variant + "_damaged";
 		this.m.SpriteCorpseBack = "bust_named_emperors_cloak_" + variant + "_dead";
-		this.m.Icon = "legend_armor/icon_named_emperors_cloak_" + variant + ".png";
+		this.m.Icon = "legend_armor/icon_named_emporers_cloak_" + variant + ".png";
 		this.m.IconLarge = this.m.Icon;
-		this.m.OverlayIcon = "legend_armor/icon_named_emperors_cloak" + variant + ".png";
-		this.m.OverlayIconLarge = "legend_armor/inventory_named_emperors_cloak_" + variant + ".png";
+		this.m.OverlayIcon = "legend_armor/icon_named_emporers_cloak_" + variant + ".png";
+		this.m.OverlayIconLarge = "legend_armor/inventory_named_emporers_cloak_" + variant + ".png";
 	}
 
 	function getTooltip()
