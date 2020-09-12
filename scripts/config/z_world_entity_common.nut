@@ -740,12 +740,13 @@ gt.Const.World.Common.pickArmor <- function (_armors)
 		break;
 	}
 
+	if (armorID == "")
+	{
+		return null;
+	}
+
 	if (!this.World.LegendsMod.Configs().LegendArmorsEnabled())
 	{
-		if (armorID == "")
-		{
-			return null;
-		}
 		local item = this.new("scripts/items/armor/" + armorID);
 		if (faction != null)
 		{
@@ -887,12 +888,12 @@ gt.Const.World.Common.convNameToList <- function ( _named )
 {
 	local findString = ["helmets/", "armor/", "legend_armor/"];
 	local list = clone _named; //iirc we have to clone this because this is the actual array & we don't want to edit it
-	local retArr;
+	local retArr = [];
 	foreach( search in findString )
 	{
 		if (list[0].find(search) != null ) //was this list
 		{
-			foreach( item in ilst )
+			foreach( item in list )
 			{
 				retArr.push(
 					[1, item.slice(item.find(search) + search.len())]

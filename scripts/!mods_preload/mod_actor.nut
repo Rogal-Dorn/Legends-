@@ -750,10 +750,10 @@
 		return null;
 	}
 
-	o.getCompanyID <- function()
-	{
-		return -1;
-	}
+	// o.getCompanyID <- function()
+	// {
+	// 	return -1;
+	// }
 
 	o.setTarget <- function (_entity)
 	{
@@ -765,6 +765,39 @@
 	o.TherianthropeInfection <- function (_killer)
 	{
 		return;
+	}
+
+
+	o.getSurroundedCount = function ()
+	{
+		local tile = this.getTile();
+		local c = 0;
+
+		for( local i = 0; i != 6; i = ++i )
+		{
+			if (tile == null)
+			{
+				continue
+			}
+
+			if (!tile.hasNextTile(i))
+			{
+				continue
+			}
+
+			local next = tile.getNextTile(i);
+			if (next.getEntity() == null)
+			{
+				continue
+			}
+
+			if (next.IsOccupiedByActor && this.Math.abs(next.Level - tile.Level) <= 1 && !next.getEntity().isAlliedWith(this) && !next.getEntity().getCurrentProperties().IsStunned && !next.getEntity().isArmedWithRangedWeapon())
+			{
+				c = ++c;
+			}
+		}
+
+		return this.Math.max(0, c - 1 - this.m.CurrentProperties.StartSurroundCountAt);
 	}
 
 	local szFn = o.onSerialize

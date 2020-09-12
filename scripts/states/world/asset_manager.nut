@@ -228,7 +228,40 @@ this.asset_manager <- {
 
 	function getBrothersMax()
 	{
-		return this.m.BrothersMax;
+		local max = this.m.BrothersMax;
+		foreach( bro in this.World.getPlayerRoster().getAll() )
+		{
+			if (bro.getSkills().hasSkill("perk.legend_roster_1"))
+			{
+				max += 1;
+			}
+			if (bro.getSkills().hasSkill("perk.legend_roster_2"))
+			{
+				max += 2;
+			}
+			if (bro.getSkills().hasSkill("perk.legend_roster_3"))
+			{
+				max += 3;
+			}
+			if (bro.getSkills().hasSkill("perk.legend_roster_4"))
+			{
+				max += 4;
+			}
+			if (bro.getSkills().hasSkill("perk.legend_roster_5"))
+			{
+				max += 5;
+			}
+			if (bro.getSkills().hasSkill("perk.legend_roster_6"))
+			{
+				max += 6;
+			}
+			if (bro.getSkills().hasSkill("perk.legend_roster_7"))
+			{
+				max += 7;
+			}
+
+		}
+		return  this.Math.min(27, max);
 	}
 
 	function getBrothersMaxInCombat()
@@ -308,10 +341,6 @@ this.asset_manager <- {
 	{
 		this.m.IsCamping = _c;
 		this.World.State.getPlayer().setCamping(_c);
-	}
-	function setBrothersMax( _v )
-	{
-		this.m.BrothersMax = this.Math.min(27, _v);
 	}
 
 	function setUseProvisions( _p )
@@ -456,8 +485,8 @@ this.asset_manager <- {
 
 		foreach( bro in bros )
 		{
-			local val = this.World.State.addNewID(bro);
-			bro.m.CompanyID = val;
+			// local val = this.World.State.addNewID(bro);
+			// bro.m.CompanyID = val;
 			bro.getBackground().buildDescription(true);
 			bro.m.XP = this.Const.LevelXP[bro.m.Level - 1];
 			bro.m.Attributes = [];
@@ -1506,6 +1535,12 @@ this.asset_manager <- {
 
 		foreach( b in roster )
 		{
+			if (b.getPlaceInFormation() == 255)
+			{
+				this.logError("Bro has invalid place in formation! :: " + b.m.Name)
+				continue;
+			}
+
 			ret[b.getPlaceInFormation()] = b;
 		}
 
@@ -2487,7 +2522,7 @@ this.asset_manager <- {
 				this.setFormationName(i, _in.readString())
 			}
 		}
-		this.m.BrothersMax = _in.readU8();
+		local maxBros = _in.readU8(); //Deprecated, but kept for backwards save compatibility. It is now dynamically calculated
 		this.m.LastDayResourcesUpdated = _in.readU16();
 		this.m.IsExplorationMode = _in.readBool();
 
@@ -2495,7 +2530,6 @@ this.asset_manager <- {
 		this.updateFood();
 		this.updateFormation();
 		this.m.Origin.onInit();
-		this.World.Assets.m.BrothersMax = this.m.BrothersMax;
 	}
 
 };

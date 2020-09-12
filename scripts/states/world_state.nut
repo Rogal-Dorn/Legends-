@@ -1140,7 +1140,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.setAutoPause(true);
 		this.Time.setVirtualTime(0);
 		this.m.IsRunningUpdatesWhilePaused = true;
-		this.setPause(true);
+		//this.setPause(true);
 		this.Math.seedRandomString(this.m.CampaignSettings.Seed);
 		this.World.LegendsMod.Configs().Update(this.m.CampaignSettings);
 		this.Const.World.SettingsUpdate(this.m.CampaignSettings);
@@ -1272,10 +1272,10 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.setupWeather();
 		this.updateDayTime();
 		local bros = this.World.getPlayerRoster().getAll();
-		foreach (bro in bros)
-		{
-			this.m.IDToRef[bro.getCompanyID()] = this.WeakTableRef(bro);
-		}
+		// foreach (bro in bros)
+		// {
+		// 	this.m.IDToRef[bro.getCompanyID()] = this.WeakTableRef(bro);
+		// }
 		this.setWorldmapMusic(false);
 		this.setPause(true);
 	}

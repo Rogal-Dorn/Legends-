@@ -125,7 +125,7 @@ this.building <- {
 						script = script.slice(index + "helmets/".len());
 					}
 					index = script.find("armor/");
-					if (index != null)
+					if (index != null && script.find("legend_armor") == null)
 					{
 						isArmor = true;
 						script = script.slice(index + "armor/".len());
@@ -193,7 +193,9 @@ this.building <- {
 												continue;
 											}
 
-											items.push(item.getUpgrade(i))
+											local upgrade = item.getUpgrade(i)
+											upgrade.m.Armor = null;
+											items.push(upgrade);
 											item.m.Upgrades[i] = null;
 										}
 									}

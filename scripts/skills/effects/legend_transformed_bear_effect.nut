@@ -126,7 +126,7 @@ this.legend_transformed_bear_effect <- this.inherit("scripts/skills/skill", {
 
 		actor.getSprite("body").setBrush("were_bear_body");
 		actor.getSprite("head").setBrush("were_bear_head");
-		actor.getSprite("injury").setBrush("were_bear_injured");
+		actor.getSprite("injury").setBrush("were_bear_body_injured");
 		if (!actor.isPlayerControlled())
 		{
 			actor.getSprite("body").setHorizontalFlipping(0);

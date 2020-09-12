@@ -43,9 +43,9 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		CampHealing = 0,
 		LastCampTime = 0,
 		InReserves = false,
-        StarWeights = [50,50,50,50,50,50,50,50],
-        Alignment = null,
-        CompanyID = -1
+        StarWeights = [50,50,50,50,50,50,50,50]
+        // Alignment = null,
+        CompanyID = 0
 	},
 	function setName( _value )
 	{
@@ -892,7 +892,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		}
 
 		this.World.Assets.getOrigin().onHiredByScenario(this);
-        this.m.CompanyID = this.World.State.addNewID(this);
+        // this.m.CompanyID = this.World.State.addNewID(this);
 
 		if (this.getSkills().hasSkill("trait.intensive_training_trait") && this.getLevel() > 1 )
 		{
@@ -2058,18 +2058,15 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
         return this.m.Alignment;
     }
 
-    function getCompanyID()
-    {
-        return this.m.CompanyID;
-    }
+    // function getCompanyID()
+    // {
+    //     return this.m.CompanyID;
+    // }
 
-	//Only used occaisionally, shouldn't call this specifically
-	//Probably would be unused function
-	//Check world_state::addNewID and in this_file::onHired to see how w add company IDs to brothers
-	function setCompanyID( _num )
-	{
-		this.m.CompanyID = _num;
-	}
+	// function setCompanyID( _num )
+	// {
+	// 	this.m.CompanyID = _num;
+	// }
 
 	function fillTalentValues( _num, _force = false )
 	{
@@ -2965,6 +2962,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		{
 			this.m.InReserves = _in.readBool();
 		}
+
 		this.m.CompanyID = _in.readU8();
 	}
 

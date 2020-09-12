@@ -201,11 +201,17 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 					local tabard = this.Const.World.Common.pickLegendArmor(tabards)
 					if (tabard != null && armor != null)
 					{
+						tabard.setVariant(banner)
 						armor.setUpgrade(tabard)
-						armor.setVariant(banner)
 					}
 			}
 		}
+
+		//noble start actually doesnt go thru the generalized place for this and i'm too lazy to change it to do so because then i'd have to redo aarmor equips because there's no banner stuff etc
+		// foreach (bro in this.World.getPlayerRoster().getAll())
+		// {
+		// 	bro.setCompanyID(this.World.State.addNewID(bro));
+		// }
 
 
 		this.Time.scheduleEvent(this.TimeUnit.Real, 1000, function ( _tag )

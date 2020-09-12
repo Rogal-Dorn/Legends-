@@ -174,7 +174,7 @@ this.tactical_desert_camp <- this.inherit("scripts/mapgen/tactical_template", {
 								"14"
 							];
 							tile.clear();
-							tile.spawnDetail("desert_camp_chair" + deco[this.Math.rand(0, deco.len() - 1)]);
+							tile.spawnDetail("desert_camp_chair_" + deco[this.Math.rand(0, deco.len() - 1)]);
 						}
 						else if (rand >= 21 && rand <= 30)
 						{

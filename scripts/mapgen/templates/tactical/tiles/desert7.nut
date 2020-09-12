@@ -94,6 +94,23 @@ this.desert7 <- this.inherit("scripts/mapgen/tactical_template", {
 		t.setSocket("socket_desert");
 
 		this.Tactical.setTransitions("tile_desert_07", t);
+		this.Tactical.setTransitions("tile_legend_desert_09", t);
+		this.Tactical.setTransitions("tile_legend_desert_10", t);
+		this.Tactical.setTransitions("tile_legend_desert_11", t);
+		this.Tactical.setTransitions("tile_legend_desert_12", t);
+		this.Tactical.setTransitions("tile_legend_desert_13", t);
+		this.Tactical.setTransitions("tile_legend_desert_14", t);
+		this.Tactical.setTransitions("tile_legend_desert_15", t);
+		this.Tactical.setTransitions("tile_legend_desert_16", t);
+		this.Tactical.setTransitions("tile_legend_desert_17", t);
+		this.Tactical.setTransitions("tile_legend_desert_18", t);
+		this.Tactical.setTransitions("tile_legend_desert_19", t);
+		this.Tactical.setTransitions("tile_legend_desert_20", t);
+		this.Tactical.setTransitions("tile_legend_desert_21", t);
+		this.Tactical.setTransitions("tile_legend_desert_22", t);
+		this.Tactical.setTransitions("tile_legend_desert_23", t);
+		this.Tactical.setTransitions("tile_legend_desert_24", t);
+		this.Tactical.setTransitions("tile_legend_desert_25", t);
 	}
 
 	function onFirstPass( _rect )
