@@ -3953,3 +3953,11 @@ inventor icon showing up on gladiators
 Adds a background for camping in the desert
 Tumble no longer makes Lunge cost 0ap, and also correctly reduces fat if you have both perks.
 Unpredictable bros no longer go against their nature & become predictable.
+
+
+15.0.0.X
+
+**Fixes**
+Fixes mispelled background causing infinite load time on random character starts
+Fixes ancient armor drop in treasure event
+Possibly fixes summoning of zombies for necromancer
