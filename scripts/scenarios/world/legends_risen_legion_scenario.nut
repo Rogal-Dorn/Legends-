@@ -1,4 +1,4 @@
-this.legends_risen_legion <- this.inherit("scripts/scenarios/world/starting_scenario", {
+this.legends_risen_legion_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 	m = {},
 	function create()
 	{
