@@ -272,16 +272,18 @@ this.legends_risen_legion_scenario <- this.inherit("scripts/scenarios/world/star
 		}
 
 		local nobles = this.World.FactionManager.getFactionsOfType(this.Const.FactionType.NobleHouse);
-
 		foreach( n in nobles )
 		{
-
 			n.addPlayerRelation(-400.0, "You are the undead, to be despised");
+		}
 
+		local oriental = this.World.FactionManager.getFactionsOfType(this.Const.FactionType.OrientalCityState);
+		foreach( n in oriental )
+		{
+			n.addPlayerRelation(-400.0, "You are the undead, to be despised");
 		}
 
 		local skellies = this.World.FactionManager.getFactionsOfType(this.Const.FactionType.Undead);
-
 		foreach( n in skellies )
 		{
 
