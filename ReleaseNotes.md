@@ -3964,3 +3964,4 @@ Possibly fixes summoning of zombies for necromancer
   Fixes other, possibly related zombie bugs
 Possibly fixes rare crash with Nacho's swallow skill
 Fixes some enemies causing infinite loading screens when they have named helmet or armor
+Fixes armoursmith spawning non-layered armor upgrades, e.g. leather shoulderguards, while armor layers are on
