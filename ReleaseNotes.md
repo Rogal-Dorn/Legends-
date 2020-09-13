@@ -3961,3 +3961,4 @@ Unpredictable bros no longer go against their nature & become predictable.
 Fixes mispelled background causing infinite load time on random character starts
 Fixes ancient armor drop in treasure event
 Possibly fixes summoning of zombies for necromancer
+Possibly fixes rare crash with Nacho's swallow skill
