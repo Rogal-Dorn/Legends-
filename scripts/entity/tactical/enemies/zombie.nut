@@ -600,10 +600,7 @@ this.zombie <- this.inherit("scripts/entity/tactical/actor", {
 		this.getSprite("armor_layer_tabbard").setHorizontalFlipping(flip);
 		this.getSprite("armor_layer_cloak").setHorizontalFlipping(flip);
 		this.getSprite("armor_upgrade_back").setHorizontalFlipping(flip);
-		if (this.hasSprite("armor_upgrade_front")) //this is a really shoddy fix for a_u_f not existing on zombies, there's gotta be a different problem but I'm not sure what it is. If more are missing after this then it might indicate sprites vanishing for no reason(?), not certain. Bad temporary fix I hopefully
-		{
-			this.getSprite("armor_upgrade_front").setHorizontalFlipping(flip);
-		}
+		this.getSprite("armor_upgrade_front").setHorizontalFlipping(flip);
 		this.getSprite("head").setHorizontalFlipping(flip);
 		this.getSprite("tattoo_head").setHorizontalFlipping(flip);
 		this.getSprite("injury").setHorizontalFlipping(flip);

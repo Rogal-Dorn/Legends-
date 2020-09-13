@@ -60,6 +60,7 @@ this.legend_zombie <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 		this.addSprite("armor_layer_tabbard").setHorizontalFlipping(true);
 		this.addSprite("armor_layer_cloak").setHorizontalFlipping(true);
 		this.addSprite("armor_upgrade_back").setHorizontalFlipping(true);
+		this.addSprite("armor_upgrade_front").setHorizontalFlipping(true);
 		this.addSprite("surcoat");
 		local body_blood_always = this.addSprite("body_blood_always");
 		body_blood_always.setBrush("bust_body_bloodied_01");
