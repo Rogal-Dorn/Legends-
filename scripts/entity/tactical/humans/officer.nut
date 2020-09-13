@@ -146,7 +146,7 @@ this.officer <- this.inherit("scripts/entity/tactical/human", {
 		else if (r == 3)
 		{
 			this.m.Items.equip(this.Const.World.Common.pickArmor(
-				this.Const.World.convNameToList(
+				this.Const.World.Common.convNameToList(
 					this.Const.Items.NamedSouthernArmors
 				)
 			));
@@ -154,7 +154,7 @@ this.officer <- this.inherit("scripts/entity/tactical/human", {
 		else
 		{
 			this.m.Items.equip(this.Const.World.Common.pickArmor(
-				this.Const.World.convNameToList(
+				this.Const.World.Common.convNameToList(
 					this.Const.Items.NamedSouthernHelmets
 				)
 			));
