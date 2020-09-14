@@ -299,3 +299,85 @@
 		return true;
 	}
 });
+
+::mods_hookNewObject("ai/tactical/behaviors/ai_attack_split", function(o) {
+	o.onExecute = function ( _entity )
+	{
+		if (this.m.IsFirstExecuted)
+		{
+			this.getAgent().adjustCameraToTarget(this.m.TargetTile);
+			this.m.IsFirstExecuted = false;
+			return false;
+		}
+
+		if (this.m.TargetTile != null)
+		{
+			if (this.Const.AI.VerboseMode)
+			{
+				this.logInfo("* " + _entity.getName() + ": Using Split!");
+			}
+
+			this.m.Skill.use(this.m.TargetTile);
+
+			if (_entity.isAlive())
+			{
+				local delay = this.m.Skill.getDelay()
+				if (this.m.Skill.m.ID == "actives.ignite_firelance")
+				{
+					delay = 500;
+				}
+				this.getAgent().declareAction(delay);
+				this.getAgent().declareEvaluationDelay(1000);
+			}
+
+			this.m.TargetTile = null;
+		}
+
+		return true;
+	}
+});
+
+
+::mods_hookNewObject("ai/tactical/behaviors/ai_attack_split", function(o) {
+	o.onExecute = function ( _entity )
+	{
+		if (this.m.IsFirstExecuted)
+		{
+			if (this.m.TargetTile.getEntity().isPlayerControlled() && _entity.isHiddenToPlayer())
+			{
+				_entity.setDiscovered(true);
+				_entity.getTile().addVisibilityForFaction(this.Const.Faction.Player);
+			}
+
+			this.getAgent().adjustCameraToTarget(this.m.TargetTile, this.m.SelectedSkill.getDelay());
+			this.m.IsFirstExecuted = false;
+			return false;
+		}
+
+		if (this.m.TargetTile != null && this.m.TargetTile.IsOccupiedByActor)
+		{
+			if (this.Const.AI.VerboseMode)
+			{
+				this.logInfo("* " + _entity.getName() + ": Using " + this.m.SelectedSkill.getName() + " against " + this.m.TargetTile.getEntity().getName() + "!");
+			}
+
+			this.m.SelectedSkill.use(this.m.TargetTile);
+
+			if (_entity.isAlive() && (!_entity.isHiddenToPlayer() || this.m.TargetTile.IsVisibleForPlayer))
+			{
+				local delay = this.m.SelectedSkill.getDelay();
+				if (this.m.SelectedSkill.m.ID == "actives.aimed_shot")
+				{
+					delay = 1000;
+				}
+				this.getAgent().declareAction();
+				this.getAgent().declareEvaluationDelay(delay + 750);
+			}
+
+			this.m.TargetTile = null;
+			this.m.SelectedSkill = null;
+		}
+
+		return true;
+	}
+});
