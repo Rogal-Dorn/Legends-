@@ -404,10 +404,3 @@ gt.Const.LegendMod.ArmorObjs.extend([
     }]
 }]);
 
-gt.Const.LegendMod.Armors <- {};
-
-foreach( i, v in gt.Const.LegendMod.ArmorObjs )
-{
-	gt.Const.LegendMod.Armors[v.ID] <- v;
-}
-

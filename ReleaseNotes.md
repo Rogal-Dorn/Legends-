@@ -3960,10 +3960,11 @@ Unpredictable bros no longer go against their nature & become predictable.
 **Fixes**
 Fixes mispelled background causing infinite load time on random character starts (mwah)
 Fixes ancient armor drop in treasure event (mwah)
-Possibly fixes summoning of zombies for necromancer (mwah)
-  Fixes other, possibly related zombie bugs (mwah)
-Possibly fixes rare crash with Nacho's swallow skill (mwah)
+Fixes summoning of zombies for necromancer (mwah)
+Fixes rare crash with Nacho's swallow skill (mwah)
 Fixes some enemies causing infinite loading screens when they have named helmet or armor (mwah)
 Fixes armoursmith spawning non-layered armor upgrades, e.g. leather shoulderguards, while armor layers are on (mwah)
 Legion now starts hostile to southern cities (mwah)
 Fixes infinite loading screen with nomad zombies (mwah)
+Fixes crash when AI uses Ignite skill
+Adds some missing skill icons and inventory icons
