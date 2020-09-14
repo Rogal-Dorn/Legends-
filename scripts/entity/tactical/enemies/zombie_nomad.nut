@@ -63,7 +63,7 @@ this.zombie_nomad <- this.inherit("scripts/entity/tactical/enemies/zombie_yeoman
 
 		if (this.Math.rand(1, 100) <= 66)
 		{
-			helm.setArmor(helmet.getArmorMax() / 2 - 1);
+			helm.setArmor(helm.getArmorMax() / 2 - 1);
 		}
 
 		this.m.Items.equip(helm);
