@@ -3955,7 +3955,7 @@ Tumble no longer makes Lunge cost 0ap, and also correctly reduces fat if you hav
 Unpredictable bros no longer go against their nature & become predictable.
 
 
-15.0.0.X
+15.0.0.9
 
 **Fixes**
 Fixes mispelled background causing infinite load time on random character starts (mwah)
@@ -3966,5 +3966,6 @@ Fixes some enemies causing infinite loading screens when they have named helmet 
 Fixes armoursmith spawning non-layered armor upgrades, e.g. leather shoulderguards, while armor layers are on (mwah)
 Legion now starts hostile to southern cities (mwah)
 Fixes infinite loading screen with nomad zombies (mwah)
+Hopefully fixes bleeding issue for dead brothers (mwah)
 Fixes crash when AI uses Ignite skill
 Adds some missing skill icons and inventory icons
