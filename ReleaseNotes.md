@@ -3977,4 +3977,5 @@ Adds some missing skill icons and inventory icons
 Fixes error with cravan guards skill checks on legendary difficulty
 Fixes the backpacks not correclty updating stash size when unequipping
 Fixes more missing armor images
+Adds nomad sling to legend sling specialist perks
 
