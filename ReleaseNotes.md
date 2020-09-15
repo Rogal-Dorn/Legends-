@@ -3978,4 +3978,5 @@ Fixes error with cravan guards skill checks on legendary difficulty
 Fixes the backpacks not correclty updating stash size when unequipping
 Fixes more missing armor images
 Adds nomad sling to legend sling specialist perks
+Fixes legend food items crash on events and inventory access
 
