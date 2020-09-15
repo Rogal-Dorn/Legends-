@@ -9,6 +9,7 @@ this.entity <- {
 		IsTree = false,
 		IsSticks = false,
 		IsBush = false,
+		IsSupplies = false,
 		IsSummoned = false,
 		IsHidden = false
 	},
