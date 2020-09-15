@@ -3969,3 +3969,8 @@ Fixes infinite loading screen with nomad zombies (mwah)
 Hopefully fixes bleeding issue for dead brothers (mwah)
 Fixes crash when AI uses Ignite skill
 Adds some missing skill icons and inventory icons
+
+15.0.0.10
+
+**Fixes**
+Fixes error with cravan guards on legendary difficulty
