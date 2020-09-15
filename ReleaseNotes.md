@@ -3976,9 +3976,11 @@ Adds some missing skill icons and inventory icons
 **Fixes**
 Fixes error with cravan guards skill checks on legendary difficulty
 Fixes the backpacks not correclty updating stash size when unequipping
-Fixes more missing armor images
+Fixes missing armor images
 Adds nomad sling to legend sling specialist perks
 Fixes legend food items crash on events and inventory access
 Fixes crashes when AI tries to use buckler_bash
+DLC craftable items are displayed when all crafting items visible is enabled - They will still not be craftable if there is a retinue requirement for them though!
+Fixes numerous blueprint tooltip issues
 
 

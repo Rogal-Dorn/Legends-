@@ -62,6 +62,11 @@ this.blueprint <- {
 
 	function getTooltipForComponent( _idx )
 	{
+		if (_idx > this.m.PreviewComponents.len() - 1)
+		{
+			this.logError("Out of bound error on blueprint :: " + this.m.ID);
+			return null
+		}
 		return this.m.PreviewComponents[_idx].Instance.getTooltip();
 	}
 
