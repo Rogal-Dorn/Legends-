@@ -3984,3 +3984,8 @@ DLC craftable items are displayed when all crafting items visible is enabled - T
 Fixes numerous blueprint tooltip issues
 
 
+15.0.0.11
+
+fixes southern armor, shields and banners going invisible when runed 
+
+improves intensive training description, fixes stats on southern mail 
