@@ -1946,5 +1946,137 @@
   <sprite id="runed_icon_legend_flail_ranged_02" offsetY="35" ic="FF424B55" width="124" height="142" img="icons\runed_icon_legend_flail_ranged_02.png" left="-62" right="22" />
   <sprite id="runed_icon_legend_flail_ranged_02_bloodied" offsetY="35" ic="FF343B4F" width="124" height="142" img="icons\runed_icon_legend_flail_ranged_02_bloodied.png" left="-62" right="22" />
 
+  <sprite id="runed_icon_firelance_01" offsetY="35" ic="FF44566A" width="130" height="142" img="icons\runed_icon_firelance_01.png" left="-36" right="64" top="-59" bottom="-11" />
+  <sprite id="runed_icon_firelance_01_empty" offsetY="35" ic="FF303D4E" width="130" height="142" img="icons\runed_icon_firelance_01_empty.png" left="-34" right="64" top="-53" bottom="-11" />
+  <sprite id="runed_icon_handgonne_01_empty" offsetY="35" ic="FF354153" width="200" height="142" img="icons\runed_icon_handgonne_01_empty.png" left="-48" right="80" top="-47" bottom="-13" />
+  <sprite id="runed_icon_handgonne_01_loaded" offsetY="35" ic="FF354253" width="200" height="142" img="icons\runed_icon_handgonne_01_loaded.png" left="-48" right="80" top="-50" bottom="-8" />
+  <sprite id="runed_icon_heavy_southern_mace_01" offsetY="35" ic="FF424C5E" width="130" height="142" img="icons\runed_icon_heavy_southern_mace_01.png" left="3" right="45" top="-51" bottom="7" />
+  <sprite id="runed_icon_heavy_southern_mace_01_bloodied" offsetY="35" ic="FF353E56" width="130" height="142" img="icons\runed_icon_heavy_southern_mace_01_bloodied.png" left="3" right="45" top="-51" bottom="7" />
+  <sprite id="runed_icon_light_southern_mace_01" offsetY="35" ic="FF3C4351" width="130" height="142" img="icons\runed_icon_light_southern_mace_01.png" left="2" right="48" top="-50" bottom="10" />
+  <sprite id="runed_icon_light_southern_mace_01_bloodied" offsetY="35" ic="FF373E4F" width="130" height="142" img="icons\runed_icon_light_southern_mace_01_bloodied.png" left="2" right="48" top="-50" bottom="10" />
+  <sprite id="runed_icon_nomad_mace_01" offsetY="35" ic="FF414C5D" width="130" height="142" img="icons\runed_icon_nomad_mace_01.png" left="1" right="45" top="-54" bottom="8" />
+  <sprite id="runed_icon_nomad_mace_01_bloodied" offsetY="35" ic="FF3C475B" width="130" height="142" img="icons\runed_icon_nomad_mace_01_bloodied.png" left="1" right="45" top="-54" bottom="8" />
+  <sprite id="runed_icon_polemace_01" offsetY="35" ic="FF394359" width="130" height="142" img="icons\runed_icon_polemace_01.png" left="-63" right="3" top="-55" bottom="65" />
+  <sprite id="runed_icon_polemace_01_bloodied" offsetY="35" ic="FF333D56" width="130" height="142" img="icons\runed_icon_polemace_01_bloodied.png" left="-63" right="3" top="-55" bottom="65" />
+  <sprite id="runed_icon_qatal_dagger" offsetY="35" ic="FF495460" width="130" height="142" img="icons\runed_icon_qatal_dagger.png" left="6" right="40" top="-56" bottom="8" />
+  <sprite id="runed_icon_qatal_dagger_bloodied" offsetY="35" ic="FF404A5C" width="130" height="142" img="icons\runed_icon_qatal_dagger_bloodied.png" left="6" right="40" top="-56" bottom="8" />
+  <sprite id="runed_icon_sling_02" offsetY="35" ic="FF2F405A" width="130" height="142" img="icons\runed_icon_sling_02.png" left="-50" right="12" top="-48" bottom="26" />
+  <sprite id="runed_icon_southern_short_sword_01" offsetY="35" ic="FF464C58" width="160" height="142" img="icons\runed_icon_southern_short_sword_01.png" left="-3" right="41" top="-58" bottom="8" />
+  <sprite id="runed_icon_southern_short_sword_01_bloodied" offsetY="35" ic="FF3C4153" width="160" height="142" img="icons\runed_icon_southern_short_sword_01_bloodied.png" left="-3" right="41" top="-58" bottom="8" />
+  <sprite id="runed_icon_swordlance_01" offsetY="35" ic="FF3E4556" width="130" height="142" img="icons\runed_icon_swordlance_01.png" left="-64" right="0" top="-55" bottom="71" />
+  <sprite id="runed_icon_two_handed_scimitar_01" offsetY="35" ic="FF636D7A" width="160" height="142" img="icons\runed_icon_two_handed_scimitar_01.png" left="-75" right="13" top="-61" bottom="45" />
+  <sprite id="runed_icon_two_handed_scimitar_01_bloodied" offsetY="35" ic="FF5A6474" width="160" height="142" img="icons\runed_icon_two_handed_scimitar_01_bloodied.png" left="-75" right="13" top="-61" bottom="45" />
+  <sprite id="runed_icon_swordlance_01_bloodied" offsetY="35" ic="FF383E52" width="130" height="142" img="icons\runed_icon_swordlance_01_bloodied.png" left="-64" right="0" top="-55" bottom="71" />
+  <sprite id="runed_icon_composite_bow_01" offsetY="35" ic="FF313F54" width="130" height="142" img="icons\runed_icon_composite_bow_01.png" left="-3" right="53" top="-70" bottom="10" />
+  <sprite id="runed_icon_daze_bomb_01" offsetY="35" ic="FF34495F" width="130" height="142" img="icons\runed_icon_daze_bomb_01.png" left="10" right="44" top="-53" bottom="-15" />
+  <sprite id="runed_icon_fire_bomb_01" offsetY="35" ic="FF323743" width="130" height="142" img="icons\runed_icon_fire_bomb_01.png" left="12" right="52" top="-53" bottom="-13" />
+  <sprite id="runed_icon_smoke_bomb_01" offsetY="35" ic="FF495E75" width="130" height="142" img="icons\runed_icon_smoke_bomb_01.png" left="10" right="46" top="-52" bottom="-18" />
+  <sprite id="runed_shield_metal_round_01" offsetY="35" ic="FF4E575E" width="130" height="142" img="icons\runed_shield_metal_round_01.png" left="4" right="56" top="-60" bottom="4" />
+  <sprite id="runed_shield_metal_round_01_damaged" offsetY="35" ic="FF4A5258" width="130" height="142" img="icons\runed_shield_metal_round_01_damaged.png" left="4" right="56" top="-60" bottom="4" />
+  <sprite id="runed_shield_metal_round_01_destroyed" offsetX="30" offsetY="3" f="6404" ic="FF474F55" width="70" height="68" img="icons\runed_shield_metal_round_01_destroyed.png" top="-31" bottom="27" />
+  <sprite id="runed_shield_metal_round_02" offsetY="35" ic="FF2F3E50" width="130" height="142" img="icons\runed_shield_metal_round_02.png" left="4" right="56" top="-61" bottom="3" />
+  <sprite id="runed_shield_metal_round_02_damaged" offsetY="35" ic="FF2C3A4A" width="130" height="142" img="icons\runed_shield_metal_round_02_damaged.png" left="4" right="56" top="-60" bottom="4" />
+  <sprite id="runed_shield_metal_round_02_destroyed" offsetX="30" offsetY="-3" f="6404" ic="FF2B3847" width="70" height="68" img="icons\runed_shield_metal_round_02_destroyed.png" top="-31" bottom="25" />
+  <sprite id="runed_shield_metal_round_03" offsetY="35" ic="FF305979" width="130" height="142" img="icons\runed_shield_metal_round_03.png" left="4" right="56" top="-61" bottom="5" />
+  <sprite id="runed_shield_metal_round_03_damaged" offsetY="35" ic="FF2E5472" width="130" height="142" img="icons\runed_shield_metal_round_03_damaged.png" left="4" right="56" top="-61" bottom="5" />
+  <sprite id="runed_shield_metal_round_03_destroyed" offsetX="30" offsetY="-3" f="6404" ic="FF2D526F" width="70" height="68" img="icons\runed_shield_metal_round_03_destroyed.png" top="-33" bottom="25" />
+  <sprite id="runed_shield_adarga_01" offsetY="35" ic="FF243368" width="130" height="142" img="icons\runed_shield_adarga_01.png" left="2" right="58" top="-63" bottom="5" />
+  <sprite id="runed_shield_adarga_01_damaged" offsetY="35" ic="FF213064" width="130" height="142" img="icons\runed_shield_adarga_01_damaged.png" left="2" right="58" top="-63" bottom="5" />
+  <sprite id="runed_shield_adarga_01_destroyed" offsetX="-16" offsetY="-4" f="6403" ic="FF223164" width="70" height="68" img="icons\runed_shield_adarga_01_destroyed.png" top="-34" bottom="28" />
+  <sprite id="runed_shield_adarga_02" offsetY="35" ic="FF426985" width="130" height="142" img="icons\runed_shield_adarga_02.png" left="2" right="58" top="-62" bottom="6" />
+  <sprite id="runed_shield_adarga_02_damaged" offsetY="35" ic="FF406681" width="130" height="142" img="icons\runed_shield_adarga_02_damaged.png" left="2" right="58" top="-62" bottom="6" />
+  <sprite id="runed_shield_adarga_02_destroyed" offsetX="-16" offsetY="-4" f="6403" ic="FF406681" width="70" height="68" img="icons\runed_shield_adarga_02_destroyed.png" top="-34" bottom="28" />
+  <sprite id="runed_shield_adarga_03" offsetY="35" ic="FF27344C" width="130" height="142" img="icons\runed_shield_adarga_03.png" left="2" right="58" top="-62" bottom="6" />
+  <sprite id="runed_shield_adarga_03_damaged" offsetY="35" ic="FF253148" width="130" height="142" img="icons\runed_shield_adarga_03_damaged.png" left="2" right="58" top="-63" bottom="5" />
+  <sprite id="runed_shield_adarga_03_destroyed" offsetX="-18" offsetY="30" f="640C" ic="FF253148" width="70" height="68" img="icons\runed_shield_adarga_03_destroyed.png" top="-34" bottom="28" />
+  <sprite id="runed_icon_handgonne_01_named_01_empty" offsetY="35" ic="FF39495F" width="200" height="142" img="icons\runed_icon_handgonne_01_named_01_empty.png" left="-47" right="79" top="-47" bottom="-15" />
+  <sprite id="runed_icon_handgonne_01_named_01_loaded" offsetY="35" ic="FF364559" width="200" height="142" img="icons\runed_icon_handgonne_01_named_01_loaded.png" left="-47" right="79" top="-50" bottom="-10" />
+  <sprite id="runed_icon_handgonne_01_named_02_empty" offsetY="35" ic="FF323A50" width="200" height="142" img="icons\runed_icon_handgonne_01_named_02_empty.png" left="-47" right="81" top="-48" bottom="-14" />
+  <sprite id="runed_icon_handgonne_01_named_02_loaded" offsetY="35" ic="FF323D51" width="200" height="142" img="icons\runed_icon_handgonne_01_named_02_loaded.png" left="-48" right="80" top="-52" bottom="-12" />
+  <sprite id="runed_icon_polemace_01_named_01" offsetY="35" ic="FF365471" width="130" height="142" img="icons\runed_icon_polemace_01_named_01.png" left="-63" right="3" top="-56" bottom="66" />
+  <sprite id="runed_icon_polemace_01_named_01_bloodied" offsetY="35" ic="FF34506D" width="130" height="142" img="icons\runed_icon_polemace_01_named_01_bloodied.png" left="-63" right="3" top="-56" bottom="66" />
+  <sprite id="runed_icon_polemace_01_named_02" offsetY="35" ic="FF252F3B" width="130" height="142" img="icons\runed_icon_polemace_01_named_02.png" left="-63" right="3" top="-58" bottom="64" />
+  <sprite id="runed_icon_polemace_01_named_02_bloodied" offsetY="35" ic="FF20293A" width="130" height="142" img="icons\runed_icon_polemace_01_named_02_bloodied.png" left="-63" right="3" top="-58" bottom="64" />
+  <sprite id="runed_icon_qatal_dagger_named_02" offsetY="35" ic="FF415567" width="130" height="142" img="icons\runed_icon_qatal_dagger_named_01.png" left="5" right="39" top="-55" bottom="9" />
+  <sprite id="runed_icon_qatal_dagger_named_02_bloodied" offsetY="35" ic="FF33475F" width="130" height="142" img="icons\runed_icon_qatal_dagger_named_01_bloodied.png" left="5" right="39" top="-55" bottom="9" />
+  <sprite id="runed_icon_qatal_dagger_named_01" offsetY="35" ic="FF5A5E63" width="130" height="142" img="icons\runed_icon_qatal_dagger_named_02.png" left="5" right="39" top="-56" bottom="8" />
+  <sprite id="runed_icon_qatal_dagger_named_01_bloodied" offsetY="35" ic="FF4D505D" width="130" height="142" img="icons\runed_icon_qatal_dagger_named_02_bloodied.png" left="5" right="39" top="-56" bottom="8" />
+  <sprite id="runed_icon_swordlance_01_named_01" offsetY="35" ic="FF464D55" width="130" height="142" img="icons\runed_icon_swordlance_01_named_01.png" left="-64" right="0" top="-51" bottom="71" />
+  <sprite id="runed_icon_swordlance_01_named_01_bloodied" offsetY="35" ic="FF3A414E" width="130" height="142" img="icons\runed_icon_swordlance_01_named_01_bloodied.png" left="-64" right="0" top="-51" bottom="71" />
+  <sprite id="runed_icon_swordlance_01_named_02" offsetY="35" ic="FF4D5968" width="130" height="142" img="icons\runed_icon_swordlance_01_named_02.png" left="-64" right="0" top="-53" bottom="69" />
+  <sprite id="runed_icon_swordlance_01_named_02_bloodied" offsetY="35" ic="FF475265" width="130" height="142" img="icons\runed_icon_swordlance_01_named_02_bloodied.png" left="-64" right="0" top="-53" bottom="69" />
+  <sprite id="runed_icon_two_handed_scimitar_01_named_01" offsetY="35" ic="FF636A72" width="130" height="142" img="icons\runed_icon_two_handed_scimitar_01_named_01.png" left="-65" right="17" />
+  <sprite id="runed_icon_two_handed_scimitar_01_named_01_bloodied" offsetY="35" ic="FF525967" width="130" height="142" img="icons\runed_icon_two_handed_scimitar_01_named_01_bloodied.png" left="-65" right="17" />
+  <sprite id="runed_icon_two_handed_scimitar_01_named_02" offsetY="35" ic="FF636E7D" width="130" height="142" img="icons\runed_icon_two_handed_scimitar_01_named_02.png" left="-65" right="13" top="-53" bottom="55" />
+  <sprite id="runed_icon_two_handed_scimitar_01_named_02_bloodied" offsetY="35" ic="FF4E596E" width="130" height="142" img="icons\runed_icon_two_handed_scimitar_01_named_02_bloodied.png" left="-65" right="13" top="-53" bottom="55" />
+  <sprite id="runed_shield_metal_round_03_named_01" offsetY="35" ic="FF3A4340" width="130" height="142" img="icons\runed_shield_metal_round_03_named_01.png" left="4" right="60" top="-61" bottom="9" />
+  <sprite id="runed_shield_metal_round_03_named_01_damaged" offsetY="35" ic="FF363F3E" width="130" height="142" img="icons\runed_shield_metal_round_03_named_01_damaged.png" left="3" right="59" top="-60" bottom="8" />
+  <sprite id="runed_shield_metal_round_03_named_01_destroyed" offsetX="30" offsetY="-3" f="6404" ic="FF363F3E" width="70" height="68" img="icons\runed_shield_metal_round_03_named_01_destroyed.png" top="-33" bottom="27" />
+  <sprite id="runed_shield_metal_round_03_named_02" offsetY="35" ic="FF1E3F6C" width="130" height="142" img="icons\runed_shield_metal_round_03_named_02.png" left="3" right="57" top="-61" bottom="7" />
+  <sprite id="runed_shield_metal_round_03_named_02_damaged" offsetY="35" ic="FF1C3760" width="130" height="142" img="icons\runed_shield_metal_round_03_named_02_damaged.png" left="3" right="57" top="-61" bottom="7" />
+  <sprite id="runed_shield_metal_round_03_named_02_destroyed" offsetX="30" offsetY="-3" f="6404" ic="FF1C3860" width="70" height="68" img="icons\runed_shield_metal_round_03_named_02_destroyed.png" top="-32" bottom="26" />
+  <sprite id="runed_shield_heater_38" offsetY="35" ic="FF2D6577" width="130" height="142" img="icons\runed_shield_heater_38.png" left="7" right="55" top="-71" bottom="3" />
+  <sprite id="runed_shield_heater_38_damaged" offsetY="35" ic="FF285869" width="130" height="142" img="icons\runed_shield_heater_38_damaged.png" left="8" right="56" top="-71" bottom="5" />
+  <sprite id="runed_shield_heater_38_destroyed" offsetY="26" f="640A" ic="FF285869" width="95" height="71" img="icons\runed_shield_heater_38_destroyed.png" left="-39" right="41" top="-29" bottom="23" />
+  <sprite id="runed_shield_heater_39" offsetY="35" ic="FF206A56" width="130" height="142" img="icons\runed_shield_heater_39.png" left="8" right="54" top="-71" bottom="5" />
+  <sprite id="runed_shield_heater_39_damaged" offsetY="35" ic="FF1E584E" width="130" height="142" img="icons\runed_shield_heater_39_damaged.png" left="8" right="54" top="-71" bottom="5" />
+  <sprite id="runed_shield_heater_39_destroyed" offsetY="26" f="640A" ic="FF1E584E" width="95" height="71" img="icons\runed_shield_heater_39_destroyed.png" left="-39" right="41" top="-28" bottom="24" />
+  <sprite id="runed_shield_heater_40" offsetY="35" ic="FF2D6863" width="130" height="142" img="icons\runed_shield_heater_40.png" left="8" right="54" top="-71" bottom="5" />
+  <sprite id="runed_shield_heater_40_damaged" offsetY="35" ic="FF2A5854" width="130" height="142" img="icons\runed_shield_heater_40_damaged.png" left="8" right="54" top="-71" bottom="5" />
+  <sprite id="runed_shield_heater_40_destroyed" offsetY="26" f="640A" ic="FF2A5854" width="95" height="71" img="icons\runed_shield_heater_40_destroyed.png" left="-39" right="41" top="-30" bottom="22" />
+  <sprite id="runed_shield_heater_41" offsetY="35" ic="FF23535D" width="130" height="142" img="icons\runed_shield_heater_41.png" left="9" right="55" top="-71" bottom="5" />
+  <sprite id="runed_shield_heater_41_damaged" offsetY="35" ic="FF224852" width="130" height="142" img="icons\runed_shield_heater_41_damaged.png" left="8" right="54" top="-71" bottom="5" />
+  <sprite id="runed_shield_heater_41_destroyed" offsetY="26" f="640A" ic="FF224852" width="95" height="71" img="icons\runed_shield_heater_41_destroyed.png" left="-39" right="41" top="-29" bottom="23" />
+  <sprite id="runed_shield_heater_42" offsetY="35" ic="FF255C6B" width="130" height="142" img="icons\runed_shield_heater_42.png" left="7" right="53" top="-71" bottom="5" />
+  <sprite id="runed_shield_heater_42_damaged" offsetY="35" ic="FF225261" width="130" height="142" img="icons\runed_shield_heater_42_damaged.png" left="7" right="53" top="-71" bottom="5" />
+  <sprite id="runed_shield_heater_42_destroyed" offsetY="26" f="640A" ic="FF225261" width="95" height="71" img="icons\runed_shield_heater_42_destroyed.png" left="-39" right="41" top="-29" bottom="23" />
+  <sprite id="runed_shield_kite_38" offsetY="35" ic="FF2C5A67" width="130" height="142" img="icons\runed_shield_kite_38.png" left="4" right="64" top="-70" bottom="24" />
+  <sprite id="runed_shield_kite_38_damaged" offsetY="35" ic="FF28515F" width="130" height="142" img="icons\runed_shield_kite_38_damaged.png" left="6" right="58" top="-70" bottom="24" />
+  <sprite id="runed_shield_kite_38_destroyed" offsetX="-18" offsetY="30" f="640A" ic="FF28515F" width="98" height="61" img="icons\runed_shield_kite_38_destroyed.png" left="-49" right="47" top="-30" bottom="24" />
+  <sprite id="runed_shield_kite_39" offsetY="35" ic="FF205B4C" width="130" height="142" img="icons\runed_shield_kite_39.png" left="5" right="61" top="-71" bottom="23" />
+  <sprite id="runed_shield_kite_39_damaged" offsetY="35" ic="FF1E4E46" width="130" height="142" img="icons\runed_shield_kite_39_damaged.png" left="6" right="58" top="-71" bottom="23" />
+  <sprite id="runed_shield_kite_39_destroyed" offsetX="-18" offsetY="30" f="640A" ic="FF1E4E46" width="98" height="61" img="icons\runed_shield_kite_39_destroyed.png" left="-49" right="47" top="-30" bottom="24" />
+  <sprite id="runed_shield_kite_40" offsetY="35" ic="FF2F5E56" width="130" height="142" img="icons\runed_shield_kite_40.png" left="4" right="62" top="-70" bottom="24" />
+  <sprite id="runed_shield_kite_40_damaged" offsetY="35" ic="FF2B4F4A" width="130" height="142" img="icons\runed_shield_kite_40_damaged.png" left="6" right="62" top="-70" bottom="24" />
+  <sprite id="runed_shield_kite_40_destroyed" offsetX="-18" offsetY="30" f="640A" ic="FF2B4F4A" width="98" height="61" img="icons\runed_shield_kite_40_destroyed.png" left="-49" right="47" top="-31" bottom="29" />
+  <sprite id="runed_shield_kite_41" offsetY="35" ic="FF234B59" width="130" height="142" img="icons\runed_shield_kite_41.png" left="2" right="60" top="-71" bottom="23" />
+  <sprite id="runed_shield_kite_41_damaged" offsetY="35" ic="FF1D4254" width="130" height="142" img="icons\runed_shield_kite_41_damaged.png" left="6" right="54" top="-71" bottom="23" />
+  <sprite id="runed_shield_kite_41_destroyed" offsetX="-18" offsetY="30" f="640A" ic="FF1D4254" width="98" height="61" img="icons\runed_shield_kite_41_destroyed.png" left="-47" right="50" top="-30" bottom="22" />
+  <sprite id="runed_shield_kite_42" offsetY="35" ic="FF29555D" width="130" height="142" img="icons\runed_shield_kite_42.png" left="4" right="62" top="-70" bottom="24" />
+  <sprite id="runed_shield_kite_42_damaged" offsetY="35" ic="FF254A55" width="130" height="142" img="icons\runed_shield_kite_42_damaged.png" left="5" right="57" top="-69" bottom="25" />
+  <sprite id="runed_shield_kite_42_destroyed" offsetX="-18" offsetY="30" f="640A" ic="FF254A55" width="98" height="61" img="icons\runed_shield_kite_42_destroyed.png" left="-49" right="47" top="-28" bottom="24" />
+  <sprite id="runed_shield_round_37" offsetY="35" ic="FF30586D" width="130" height="142" img="icons\runed_shield_round_37.png" left="7" right="55" top="-58" bottom="2" />
+  <sprite id="runed_shield_round_37_damaged" offsetY="35" ic="FF30566D" width="130" height="142" img="icons\runed_shield_round_37_damaged.png" left="7" right="55" top="-58" bottom="2" />
+  <sprite id="runed_shield_round_37_destroyed" offsetY="2" f="6405" ic="FF30576E" width="70" height="68" img="icons\runed_shield_round_37_destroyed.png" top="-30" bottom="24" />
+  <sprite id="runed_shield_round_38" offsetY="35" ic="FF285A4F" width="130" height="142" img="icons\runed_shield_round_38.png" left="7" right="55" top="-58" bottom="2" />
+  <sprite id="runed_shield_round_38_damaged" offsetY="35" ic="FF27564D" width="130" height="142" img="icons\runed_shield_round_38_damaged.png" left="7" right="55" top="-58" bottom="2" />
+  <sprite id="runed_shield_round_38_destroyed" offsetY="2" f="6405" ic="FF27564D" width="70" height="68" img="icons\runed_shield_round_38_destroyed.png" top="-30" bottom="24" />
+  <sprite id="runed_shield_round_39" offsetY="35" ic="FF2C5D63" width="130" height="142" img="icons\runed_shield_round_39.png" left="7" right="55" top="-58" bottom="2" />
+  <sprite id="runed_shield_round_39_damaged" offsetY="35" ic="FF2B575E" width="130" height="142" img="icons\runed_shield_round_39_damaged.png" left="7" right="55" top="-58" bottom="2" />
+  <sprite id="runed_shield_round_39_destroyed" offsetY="2" f="6405" ic="FF2B575F" width="70" height="68" img="icons\runed_shield_round_39_destroyed.png" top="-30" bottom="24" />
+  <sprite id="runed_shield_round_40" offsetY="35" ic="FF21556C" width="130" height="142" img="icons\runed_shield_round_40.png" left="7" right="55" top="-58" bottom="2" />
+  <sprite id="runed_shield_round_40_damaged" offsetY="35" ic="FF205067" width="130" height="142" img="icons\runed_shield_round_40_damaged.png" left="7" right="55" top="-59" bottom="1" />
+  <sprite id="runed_shield_round_40_destroyed" offsetY="2" f="6405" ic="FF215168" width="70" height="68" img="icons\runed_shield_round_40_destroyed.png" top="-30" bottom="24" />
+  <sprite id="runed_shield_round_41" offsetY="35" ic="FF2B4E55" width="130" height="142" img="icons\runed_shield_round_41.png" left="7" right="55" top="-58" bottom="2" />
+  <sprite id="runed_shield_round_41_damaged" offsetY="35" ic="FF284B55" width="130" height="142" img="icons\runed_shield_round_41_damaged.png" left="7" right="55" top="-58" bottom="2" />
+  <sprite id="runed_shield_round_41_destroyed" offsetY="2" f="6405" ic="FF284B56" width="70" height="68" img="icons\runed_shield_round_41_destroyed.png" top="-30" bottom="24" />
+  <sprite id="runed_player_banner_27" offsetY="35" ic="FF254364" width="200" height="230" img="icons\player_banner\runed_player_banner_28.png" left="-52" right="50" top="-57" bottom="115" />
+  <sprite id="runed_player_banner_27_shaft" offsetY="35" ic="FF1F273B" width="200" height="230" img="icons\player_banner\runed_player_banner_28_shaft.png" left="18" right="46" top="-56" bottom="0" />
+  <sprite id="runed_player_banner_28" offsetY="35" ic="FF194C45" width="200" height="230" img="icons\player_banner\runed_player_banner_29.png" left="-69" right="33" top="-27" bottom="115" />
+  <sprite id="runed_player_banner_28_shaft" offsetY="35" ic="FF121819" width="200" height="230" img="icons\player_banner\runed_player_banner_29_shaft.png" left="23" right="39" top="-45" bottom="7" />
+  <sprite id="runed_player_banner_29" offsetY="35" ic="FF2D686D" width="200" height="230" img="icons\player_banner\runed_player_banner_30.png" left="-79" right="33" top="-1" bottom="115" />
+  <sprite id="runed_player_banner_29_shaft" offsetY="35" ic="FF1B343B" width="200" height="230" img="icons\player_banner\runed_player_banner_30_shaft.png" left="-78" right="44" top="-60" bottom="0" />
+  <sprite id="runed_player_banner_30" offsetY="35" ic="FF2D4952" width="200" height="230" img="icons\player_banner\runed_player_banner_31.png" left="-97" right="33" top="-33" bottom="115" />
+  <sprite id="runed_player_banner_30_shaft" offsetY="35" ic="FF272B3A" width="200" height="230" img="icons\player_banner\runed_player_banner_31_shaft.png" left="22" right="42" top="-36" bottom="4" />
+  <sprite id="runed_player_banner_31" offsetY="35" ic="FF1F627E" width="200" height="230" img="icons\player_banner\runed_player_banner_32.png" left="-50" right="52" top="-31" bottom="115" />
+  <sprite id="runed_player_banner_31_shaft" offsetY="35" ic="FF17495C" width="200" height="230" img="icons\player_banner\runed_player_banner_32_shaft.png" left="18" right="42" top="-51" bottom="-1" />
+  <sprite id="runed_icon_two_handed_saif_01" offsetY="35" ic="FF5C6673" width="130" height="142" img="icons\runed_icon_two_handed_saif_01.png" left="-64" right="12" top="-56" bottom="52" />
+  <sprite id="runed_icon_two_handed_saif_01_bloodied" offsetY="35" ic="FF4C5568" width="130" height="142" img="icons\runed_icon_two_handed_saif_01_bloodied.png" left="-64" right="12" top="-56" bottom="52" />
+  <sprite id="runed_icon_necronomicon" offsetY="35" ic="FF2A3D4F" width="130" height="142" img="icons\runed_icon_necronomicon.png" left="9" right="63" top="-60" bottom="10" />
+  <sprite id="runed_shield_legendary_01" offsetY="35" ic="FF38769C" width="130" height="142" img="icons\runed_shield_legendary_01.png" left="5" right="61" top="-62" bottom="8" />
+  <sprite id="runed_shield_legendary_01_damaged" offsetY="35" ic="FF336D94" width="130" height="142" img="icons\runed_shield_legendary_01_damaged.png" left="5" right="61" top="-61" bottom="9" />
+  <sprite id="runed_shield_legendary_01_destroyed" offsetX="30" offsetY="3" f="6404" ic="FF336D94" width="70" height="68" img="icons\runed_shield_legendary_01_destroyed.png" top="-34" bottom="28" />
+
+
 
 </brush>
