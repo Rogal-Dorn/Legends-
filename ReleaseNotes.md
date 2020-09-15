@@ -3970,7 +3970,11 @@ Hopefully fixes bleeding issue for dead brothers (mwah)
 Fixes crash when AI uses Ignite skill
 Adds some missing skill icons and inventory icons
 
+
 15.0.0.10
 
 **Fixes**
-Fixes error with cravan guards on legendary difficulty
+Fixes error with cravan guards skill checks on legendary difficulty
+Fixes the backpacks not correclty updating stash size when unequipping
+Fixes more missing armor images
+
