@@ -3986,6 +3986,12 @@ Fixes numerous blueprint tooltip issues
 
 15.0.0.11
 
+Walls can now be smashed with harvest skills 
+southern trees can be harvested 
+supplies on the battlefield can be smashed for a small chance at finding goods 
+
+
+
 fixes southern armor, shields and banners going invisible when runed 
 
 improves intensive training description, fixes stats on southern mail 
