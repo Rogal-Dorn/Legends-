@@ -3967,3 +3967,8 @@ Fixes some enemies causing infinite loading screens when they have named helmet 
 Fixes armoursmith spawning non-layered armor upgrades, e.g. leather shoulderguards, while armor layers are on (mwah)
 Legion now starts hostile to southern cities (mwah)
 Fixes infinite loading screen with nomad zombies (mwah)
+
+15.0.0.11
+
+**Fixes**
+Bandit Warlords can have named helmets again (typo where helmets were accidentally treated as body armor)
