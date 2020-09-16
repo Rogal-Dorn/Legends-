@@ -3984,14 +3984,20 @@ DLC craftable items are displayed when all crafting items visible is enabled - T
 Fixes numerous blueprint tooltip issues
 
 
-15.0.0.11
+15.0.0.11 smashing politely
 
 Walls can now be smashed with harvest skills 
 southern trees can be harvested 
 supplies on the battlefield can be smashed for a small chance at finding goods 
-
-
-
 fixes southern armor, shields and banners going invisible when runed 
 
 improves intensive training description, fixes stats on southern mail 
+Fixes mispelled background causing infinite load time on random character starts (mwah)
+Fixes ancient armor drop in treasure event (mwah)
+Possibly fixes summoning of zombies for necromancer (mwah)
+  Fixes other, possibly related zombie bugs (mwah)
+Possibly fixes rare crash with Nacho's swallow skill (mwah)
+Fixes some enemies causing infinite loading screens when they have named helmet or armor (mwah)
+Fixes armoursmith spawning non-layered armor upgrades, e.g. leather shoulderguards, while armor layers are on (mwah)
+Legion now starts hostile to southern cities (mwah)
+Fixes infinite loading screen with nomad zombies (mwah)
