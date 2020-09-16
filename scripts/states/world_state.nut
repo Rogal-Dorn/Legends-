@@ -2086,6 +2086,8 @@ this.world_state <- this.inherit("scripts/states/state", {
 		local entities = [];
 		local allyBanners = [];
 		local enemyBanners = [];
+		local hasOpponents = false;
+		local listEntities = _isCombatantsVisible && (_isPlayerInitiated || this.World.Assets.getOrigin().getID() == "scenario.rangers" || this.Const.World.TerrainTypeLineBattle[this.m.Player.getTile().Type] && this.World.getTime().IsDaytime);
 
 		if (_pos == null)
 		{
@@ -2113,181 +2115,198 @@ this.world_state <- this.inherit("scripts/states/state", {
 			_allowFormationPicking = false;
 		}
 
-		if (_isCombatantsVisible && (_isPlayerInitiated || this.World.Assets.getOrigin().getID() == "scenario.rangers" || this.Const.World.TerrainTypeLineBattle[this.m.Player.getTile().Type] && this.World.getTime().IsDaytime))
-		{
-			local champions = [];
-			local entityTypes = [];
-			entityTypes.resize(this.Const.EntityType.len(), 0);
+		local champions = [];
+		local entityTypes = [];
+		entityTypes.resize(this.Const.EntityType.len(), 0);
 
-			if (_properties != null)
+		if (_properties != null)
+		{
+			_properties.IsPlayerInitiated = _isPlayerInitiated;
+		}
+
+		if (_properties == null)
+		{
+			local parties = this.World.getAllEntitiesAtPos(_pos, this.Const.World.CombatSettings.CombatPlayerDistance);
+			local isAtUniqueLocation = false;
+
+			if (parties.len() <= 1)
 			{
-				_properties.IsPlayerInitiated = _isPlayerInitiated;
+				this.m.EngageCombatPos = null;
+				return;
 			}
 
-			if (_properties == null)
+			foreach( party in parties )
 			{
-				local parties = this.World.getAllEntitiesAtPos(_pos, this.Const.World.CombatSettings.CombatPlayerDistance);
-				local isAtUniqueLocation = false;
-
-				if (parties.len() <= 1)
+				if (!party.isAlive() || party.isPlayerControlled())
 				{
-					this.m.EngageCombatPos = null;
-					return;
+					continue;
 				}
 
-				foreach( party in parties )
+				if (!party.isAttackable() || party.getFaction() == 0 || party.getVisibilityMult() == 0)
 				{
-					if (!party.isAlive() || party.isPlayerControlled())
-					{
-						continue;
-					}
-
-					if (!party.isAttackable() || party.getFaction() == 0 || party.getVisibilityMult() == 0)
-					{
-						continue;
-					}
-
-					if (party.isLocation() && party.isShowingDefenders() && party.getCombatLocation().Template[0] != null && party.getCombatLocation().Fortification != 0 && !party.getCombatLocation().ForceLineBattle)
-					{
-						entities.push({
-							Name = "Fortifications",
-							Icon = "palisade_01_orientation",
-							Overlay = null
-						});
-					}
-
-					if (party.isLocation() && party.isLocationType(this.Const.World.LocationType.Unique))
-					{
-						isAtUniqueLocation = true;
-						break;
-					}
-
-					if (party.isInCombat())
-					{
-						parties = this.World.getAllEntitiesAtPos(_pos, this.Const.World.CombatSettings.CombatPlayerDistance * 2.0);
-						break;
-					}
+					continue;
 				}
 
-				foreach( party in parties )
+				if (party.isLocation() && party.isShowingDefenders() && party.getCombatLocation().Template[0] != null && party.getCombatLocation().Fortification != 0 && !party.getCombatLocation().ForceLineBattle)
 				{
-					if (!party.isAlive() || party.isPlayerControlled())
+					entities.push({
+						Name = "Fortifications",
+						Icon = "palisade_01_orientation",
+						Overlay = null
+					});
+				}
+
+				if (party.isLocation() && party.isLocationType(this.Const.World.LocationType.Unique))
+				{
+					isAtUniqueLocation = true;
+					break;
+				}
+
+				if (party.isInCombat())
+				{
+					parties = this.World.getAllEntitiesAtPos(_pos, this.Const.World.CombatSettings.CombatPlayerDistance * 2.0);
+					break;
+				}
+			}
+
+			foreach( party in parties )
+			{
+				if (!party.isAlive() || party.isPlayerControlled())
+				{
+					continue;
+				}
+
+				if (!party.isAttackable() || party.getFaction() == 0 || party.getVisibilityMult() == 0)
+				{
+					continue;
+				}
+
+				if (isAtUniqueLocation && (!party.isLocation() || !party.isLocationType(this.Const.World.LocationType.Unique)))
+				{
+					continue;
+				}
+
+				if (party.isAlliedWithPlayer())
+				{
+					if (party.getTroops().len() != 0 && allyBanners.find(party.getBanner()) == null)
 					{
-						continue;
+						allyBanners.push(party.getBanner());
 					}
 
-					if (!party.isAttackable() || party.getFaction() == 0 || party.getVisibilityMult() == 0)
-					{
-						continue;
-					}
+					continue;
+				}
+				else
+				{
+					hasOpponents = true;
 
-					if (isAtUniqueLocation && (!party.isLocation() || !party.isLocationType(this.Const.World.LocationType.Unique)))
-					{
-						continue;
-					}
-
-					if (party.isAlliedWithPlayer())
-					{
-						if (party.getTroops().len() != 0 && allyBanners.find(party.getBanner()) == null)
-						{
-							allyBanners.push(party.getBanner());
-						}
-
-						continue;
-					}
-					else if (!party.isLocation() || party.isShowingDefenders())
+					if (!party.isLocation() || party.isShowingDefenders())
 					{
 						if (party.getTroops().len() != 0 && enemyBanners.find(party.getBanner()) == null)
 						{
 							enemyBanners.push(party.getBanner());
 						}
 					}
+				}
 
-					if (party.isLocation() && !party.isShowingDefenders())
+				if (party.isLocation() && !party.isShowingDefenders())
+				{
+					entityTypes.resize(this.Const.EntityType.len(), 0);
+					break;
+				}
+
+				party.onBeforeCombatStarted();
+				local troops = party.getTroops();
+
+				foreach( t in troops )
+				{
+					if (t.Script.len() != "")
 					{
-						entityTypes.resize(this.Const.EntityType.len(), 0);
-						break;
-					}
-
-					party.onBeforeCombatStarted();
-					local troops = party.getTroops();
-
-					foreach( t in troops )
-					{
-						if (t.Script.len() != "")
+						if (t.Variant != 0 && this.Const.DLC.Wildmen)
 						{
-							if (t.Variant != 0 && this.Const.DLC.Wildmen)
-							{
-								champions.push(t);
-							}
-							else
-							{
-								++entityTypes[t.ID];
-							}
+							champions.push(t);
+						}
+						else
+						{
+							++entityTypes[t.ID];
 						}
 					}
 				}
 			}
-			else
+		}
+		else
+		{
+			foreach( t in _properties.Entities )
 			{
-				foreach( t in _properties.Entities )
+				if (!hasOpponents && !this.World.FactionManager.isAlliedWithPlayer(t.Faction))
 				{
-					if (t.Variant != 0 && this.Const.DLC.Wildmen)
-					{
-						champions.push(t);
-					}
-					else
-					{
-						++entityTypes[t.ID];
-					}
+					hasOpponents = true;
 				}
-			}
 
-			foreach( c in champions )
-			{
-				entities.push({
-					Name = c.Name,
-					Icon = this.Const.EntityIcon[c.ID],
-					Overlay = "icons/miniboss.png"
-				});
-			}
-
-			for( local i = 0; i < entityTypes.len(); i = ++i )
-			{
-				if (entityTypes[i] > 0)
+				if (t.Variant != 0 && this.Const.DLC.Wildmen)
 				{
-					if (entityTypes[i] == 1)
-					{
-						local start = this.isFirstCharacter(this.Const.Strings.EntityName[i], [
-							"A",
-							"E",
-							"I",
-							"O",
-							"U"
-						]) ? "An " : "A ";
-						entities.push({
-							Name = start + this.removeFromBeginningOfText("The ", this.Const.Strings.EntityName[i]),
-							Icon = this.Const.EntityIcon[i],
-							Overlay = null
-						});
-					}
-					else
-					{
-						local num = this.Const.Strings.EngageEnemyNumbers[this.Math.max(0, this.Math.floor(this.Math.minf(1.0, entityTypes[i] / 14.0) * (this.Const.Strings.EngageEnemyNumbers.len() - 1)))];
-						entities.push({
-							Name = num + " " + this.Const.Strings.EntityNamePlural[i],
-							Icon = this.Const.EntityIcon[i],
-							Overlay = null
-						});
-					}
+					champions.push(t);
+				}
+				else
+				{
+					++entityTypes[t.ID];
 				}
 			}
 		}
 
+		foreach( c in champions )
+		{
+			entities.push({
+				Name = c.Name,
+				Icon = this.Const.EntityIcon[c.ID],
+				Overlay = "icons/miniboss.png"
+			});
+		}
+
+		for( local i = 0; i < entityTypes.len(); i = ++i )
+		{
+			if (entityTypes[i] > 0)
+			{
+				if (entityTypes[i] == 1)
+				{
+					local start = this.isFirstCharacter(this.Const.Strings.EntityName[i], [
+						"A",
+						"E",
+						"I",
+						"O",
+						"U"
+					]) ? "An " : "A ";
+					entities.push({
+						Name = start + this.removeFromBeginningOfText("The ", this.Const.Strings.EntityName[i]),
+						Icon = this.Const.EntityIcon[i],
+						Overlay = null
+					});
+				}
+				else
+				{
+					local num = this.Const.Strings.EngageEnemyNumbers[this.Math.max(0, this.Math.floor(this.Math.minf(1.0, entityTypes[i] / 14.0) * (this.Const.Strings.EngageEnemyNumbers.len() - 1)))];
+					entities.push({
+						Name = num + " " + this.Const.Strings.EntityNamePlural[i],
+						Icon = this.Const.EntityIcon[i],
+						Overlay = null
+					});
+				}
+			}
+		}
+
+		if (!hasOpponents)
+		{
+			this.m.EngageCombatPos = null;
+			return;
+		}
+
 		local text = "";
 
-		if (!_isCombatantsVisible || entities.len() == 0)
+		if (!listEntities || entities.len() == 0)
 		{
+			entities = [];
+			allyBanners = [];
+			enemyBanners = [];
+
 			if (!_isPlayerInitiated)
 			{
 				text = "You can\'t make out who is attacking you in time.<br/>You have to defend yourself!";
@@ -2497,6 +2516,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 			}
 
 			this.Cursor.setCursor(this.Const.UI.Cursor.Hand);
+			this.m.IsForcingAttack = false;
 			this.setAutoPause(true);
 			this.m.AutoUnpauseFrame = this.Time.getFrame() + 1;
 		}, function ()

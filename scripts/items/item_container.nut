@@ -635,11 +635,11 @@ this.item_container <- {
 				}
 				else if (this.m.Items[i][j].isChangeableInBattle() || emergency)
 				{
-					if (IsDroppingLoot)
+					if (IsDroppingLoot || this.m.Items[i][j].isItemType(this.Const.Items.ItemType.Legendary))
 					{
 						this.m.Items[i][j].drop(_tile);
 					}
-					else if (!this.m.Items[i][j].isItemType(this.Const.Items.ItemType.Legendary))
+					else
 					{
 						this.m.Items[i][j].m.IsDroppedAsLoot = false;
 					}

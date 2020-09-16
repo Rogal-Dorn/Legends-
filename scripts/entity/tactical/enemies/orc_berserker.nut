@@ -258,6 +258,12 @@ this.orc_berserker <- this.inherit("scripts/entity/tactical/actor", {
 			this.Tactical.Entities.addCorpse(_tile);
 		}
 
+		if (_tile != null && this.Math.rand(1, 100) <= 10)
+		{
+			local loot = this.new("scripts/items/accessory/berserker_mushrooms_item");
+			loot.drop(_tile);
+		}
+
 		this.getItems().dropAll(_tile, _killer, flip);
 		this.actor.onDeath(_killer, _skill, _tile, _fatalityType);
 	}
@@ -408,11 +414,6 @@ this.orc_berserker <- this.inherit("scripts/entity/tactical/actor", {
 		if (r == 1)
 		{
 			this.m.Items.equip(this.new("scripts/items/helmets/greenskins/orc_berserker_helmet"));
-		}
-
-		if (this.Math.rand(1, 100) <= 10)
-		{
-			this.m.Items.addToBag(this.new("scripts/items/accessory/berserker_mushrooms_item"));
 		}
 	}
 

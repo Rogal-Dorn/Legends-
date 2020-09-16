@@ -178,7 +178,7 @@ this.bandit_leader <- this.inherit("scripts/entity/tactical/human", {
 
 		if (r == 1)
 		{
-			this.m.Items.equip(this.new("scripts/items/" + this.Const.Items.NamedWeapons[this.Math.rand(0, this.Const.Items.NamedWeapons.len() - 1)]));
+			this.m.Items.equip(this.new("scripts/items/" + this.Const.Items.NamedMeleeWeapons[this.Math.rand(0, this.Const.Items.NamedMeleeWeapons.len() - 1)]));
 		}
 		else if (r == 2)
 		{
