@@ -3986,6 +3986,7 @@ Fixes numerous blueprint tooltip issues
 
 15.0.0.11 smashing politely
 
+updates to BB 1.4.0.42
 Walls, graves, furniture, southern trees an, rocks and bushes , can now be smashed with harvest skills 
 Supplies on the battlefield can be smashed for a small chance at finding goods 
 
