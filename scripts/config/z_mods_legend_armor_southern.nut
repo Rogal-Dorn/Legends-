@@ -490,9 +490,9 @@ gt.Const.LegendMod.ArmorObjs.extend([
             [0, "plate/legend_southern_plate"],// 155
             [0, "plate/legend_southern_padded"],// 155
             [0, "plate/legend_southern_arm_guards"],// 155
-            [0, "plate/legend_southern_strips"],// 155
+            [5, "plate/legend_southern_strips"],// 155
             [0, "plate/legend_southern_leather_jacket"],// 40
-            [5, "plate/legend_southern_leather_plates"],// 155
+            [0, "plate/legend_southern_leather_plates"],// 155
             [0, "plate/legend_southern_leather_scale"],// 155
             [0, "plate/legend_southern_scale"],// 155
             [0, "plate/legend_southern_leather_plates"],// 155
