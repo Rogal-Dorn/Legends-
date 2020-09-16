@@ -83,7 +83,7 @@ this.spearwall <- this.inherit("scripts/skills/skill", {
 		if (_properties.IsSpecializedInSpearWall )
 		{
 		this.m.FatigueCostMult *= 0.5;
-		this.m.ActionPointCost = 3;
+		this.m.ActionPointCostMult *= 0.75;
 		}
 
 		
