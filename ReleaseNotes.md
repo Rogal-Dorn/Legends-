@@ -3986,14 +3986,14 @@ Fixes numerous blueprint tooltip issues
 
 15.0.0.11 smashing politely
 
-updates to BB 1.4.0.42
+Updates to BB 1.4.0.42
 Walls, graves, furniture, southern trees an, rocks and bushes , can now be smashed with harvest skills 
 Supplies on the battlefield can be smashed for a small chance at finding goods 
 
 Fixes: 
 Pets are immune to disarm 
 Fixes southern armor, shields and banners going invisible when runed 
-Improves intensive training description, fixes stats on southern mail 
+Improves intensive training description, Ffixes stats on southern mail 
 Fixes mispelled background causing infinite load time on random character starts (mwah)
 Fixes ancient armor drop in treasure event (mwah)
 Possibly fixes summoning of zombies for necromancer (mwah)
@@ -4003,3 +4003,5 @@ Fixes some enemies causing infinite loading screens when they have named helmet 
 Fixes armoursmith spawning non-layered armor upgrades, e.g. leather shoulderguards, while armor layers are on (mwah)
 Legion now starts hostile to southern cities (mwah)
 Fixes infinite loading screen with nomad zombies (mwah)
+spearwaller  reduces AP by 25% rather than setting to 3 (salty)
+Heavy trait precludes light (salty)
