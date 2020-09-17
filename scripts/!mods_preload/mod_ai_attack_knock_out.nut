@@ -14,7 +14,7 @@
                 Target = null,
                 Score = 0.0
             };
-            return true;
+            return this.Const.AI.Behavior.Score.Zero;
         }
 
         return fn(_entity, _skill, _targets)
