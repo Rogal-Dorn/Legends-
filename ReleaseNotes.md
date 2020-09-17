@@ -3972,7 +3972,6 @@ Fixes infinite loading screen with nomad zombies (mwah)
 **Fixes**
 Bandit Warlords can have named helmets again (typo where helmets were accidentally treated as body armor)
 Drums of Life changes: Can't heal people above max HP, now always heals people below max HP, doesn't rely on people being fatigued.
-=======
 Hopefully fixes bleeding issue for dead brothers (mwah)
 Fixes crash when AI uses Ignite skill
 Adds some missing skill icons and inventory icons
