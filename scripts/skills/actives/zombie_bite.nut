@@ -7,7 +7,7 @@ this.zombie_bite <- this.inherit("scripts/skills/skill", {
 		this.m.Description = "A vicious bite with a 15% increased chance to hit the head. Infects on legendary difficulty";
 		this.m.KilledString = "Bitten";
 		this.m.Icon = "skills/active_24.png";
-		this.m.IconDisabled = "skills/active_24_sw.png";
+		this.m.IconDisabled = "skills/active_24_bw.png";
 		this.m.Overlay = "active_24";
 		this.m.SoundOnUse = [
 			"sounds/enemies/zombie_bite_01.wav",
@@ -64,7 +64,7 @@ this.zombie_bite <- this.inherit("scripts/skills/skill", {
 					local effect = this.new("scripts/skills/effects/zombie_poison_effect");
 					target.getSkills().add(effect);
 				}
-		
+
 		return success;
 		}
 	}
