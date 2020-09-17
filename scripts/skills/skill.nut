@@ -1193,7 +1193,7 @@ this.skill <- {
 
 	function getHitchance( _targetEntity )
 	{
-		if (!_targetEntity.isAttackable() && !_targetEntity.isRock() && !_targetEntity.isTree() && !_targetEntity.isBush())
+		if (!_targetEntity.isAttackable() && !_targetEntity.isRock() && !_targetEntity.isTree() && !_targetEntity.isBush() && !_targetEntity.isSupplies())
 		{
 			return 0;
 		}
@@ -1323,6 +1323,78 @@ this.skill <- {
 			this.Tactical.getTile(x,y).removeObject();
 			return true;
 		}
+		
+		if (_targetEntity.isSupplies())
+		{
+			local r = this.Math.rand(0, 99);
+			if (r == 1)
+			{
+				local loot = this.new("scripts/items/supplies/ammo_small_item");
+				loot.drop(_targetEntity.getTile());
+			}
+			if (r == 2)
+			{
+				local loot = this.new("scripts/items/supplies/armor_parts_small_item");
+				loot.drop(_targetEntity.getTile());
+			}
+			if (r == 3)
+			{
+				local loot = this.new("scripts/items/supplies/medicine_small_item");
+				loot.drop(_targetEntity.getTile());
+			}
+			if (r >= 4 && r < 6)
+			{
+				local loot = this.new("scripts/items/supplies/ground_grains_item");
+				loot.drop(_targetEntity.getTile());
+			}
+			if (r >= 7 && r < 9)
+			{
+				local loot = this.new("scripts/items/supplies/legend_cooking_spices_item");
+				loot.drop(_targetEntity.getTile());
+			}
+			if (r == 10)
+			{
+				local loot = this.new("scripts/items/supplies/legend_fresh_fruit_item");
+				loot.drop(_targetEntity.getTile());
+			}
+			if (r == 11)
+			{
+				local loot = this.new("scripts/items/supplies/strange_meat_item");
+				loot.drop(_targetEntity.getTile());
+			}
+			if (r == 12)
+			{
+				local loot = this.new("scripts/items/supplies/legend_human_parts");
+				loot.drop(_targetEntity.getTile());
+			}
+			if (r == 13)
+			{
+				local loot = this.new("scripts/items/supplies/legend_fresh_meat_item");
+				loot.drop(_targetEntity.getTile());
+			}
+			if (r == 14)
+			{
+				local loot = this.new("scripts/items/supplies/beer_item");
+				loot.drop(_targetEntity.getTile());
+			}
+			if (r == 15)
+			{
+				local loot = this.new("scripts/items/supplies/bandage_item");
+				loot.drop(_targetEntity.getTile());
+			}
+			if (this.m.SoundOnHit.len() != 0)
+			{
+				this.Time.scheduleEvent(this.TimeUnit.Virtual, this.m.SoundOnHitDelay, this.onPlayHitSound.bindenv(this), {
+					Sound = this.m.SoundOnHit[this.Math.rand(0, this.m.SoundOnHit.len() - 1)],
+					Pos = _targetEntity.getPos()
+				});
+			}
+			local tile = _targetEntity.getTile();
+			local x = tile.X;
+			local y = tile.Y;
+			this.Tactical.getTile(x,y).removeObject();
+			return true;
+		}		
 
 		if (_targetEntity.isTree())
 		{

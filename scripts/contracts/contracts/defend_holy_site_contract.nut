@@ -1171,6 +1171,8 @@ this.defend_holy_site_contract <- this.inherit("scripts/contracts/contract", {
 
 		foreach( s in f.getSettlements() )
 		{
+			this.logInfo("name: " + s.getName());
+
 			if (s.isMilitary())
 			{
 				candidates.push(s);

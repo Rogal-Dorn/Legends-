@@ -362,7 +362,7 @@ this.intercept_raiding_parties_contract <- this.inherit("scripts/contracts/contr
 
 					if (alive == 0)
 					{
-						this.Contract.setScreen("Failure");
+						this.Contract.setScreen("Lost");
 					}
 					else if (alive == 1)
 					{

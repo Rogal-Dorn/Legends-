@@ -193,7 +193,7 @@ this.legend_bandit_warlord <- this.inherit("scripts/entity/tactical/human", {
 		{
 			local named = this.Const.Items.NamedHelmets;
 			local weightName = this.Const.World.Common.convNameToList(named);
-			this.m.Items.equip(this.Const.World.Common.pickArmor(weightName));
+			this.m.Items.equip(this.Const.World.Common.pickHelmet(weightName));
 		}
 
 		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Body) == null)

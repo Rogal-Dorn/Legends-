@@ -9,6 +9,7 @@ this.entity <- {
 		IsTree = false,
 		IsSticks = false,
 		IsBush = false,
+		IsSupplies = false,
 		IsSummoned = false,
 		IsHidden = false
 	},
@@ -77,6 +78,11 @@ this.entity <- {
 	}
 
 	function isBush()
+	{
+		return this.m.IsBush;
+	}
+	
+	function isSupplies()
 	{
 		return this.m.IsBush;
 	}

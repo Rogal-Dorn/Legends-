@@ -82,6 +82,11 @@ this.city_state <- this.inherit("scripts/entity/world/settlement", {
 		this.m.AttachedLocationsMax = 6;
 	}
 
+	function getSpriteName()
+	{
+		return this.m.Sprite;
+	}
+
 	function isSouthern()
 	{
 		return true;

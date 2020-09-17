@@ -89,7 +89,7 @@ gt.Const.CharacterVillageBackgrounds <- [
 	"refugee_background",
 	"butcher_background",
 	"female_butcher_background",
-	"rat_catcher_background",
+	"ratcatcher_background",
 	"servant_background",
 	"female_servant_background",
 	"mason_background",

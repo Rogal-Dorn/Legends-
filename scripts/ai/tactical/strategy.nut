@@ -515,10 +515,6 @@ this.strategy <- {
 			defensiveThreshold = defensiveThreshold * 0.5;
 		}
 
-		this.logInfo("defensive score: " + defensiveScore);
-		this.logInfo("defensive threshold: " + defensiveThreshold);
-		this.logInfo("defending camp: " + this.isDefendingCamp());
-
 		if (defensiveScore < defensiveThreshold)
 		{
 			this.m.IsOffensiveLastTurn = true;

@@ -293,7 +293,7 @@ layers = [
     "desc" :  "A thick cloth vest padded with dense wool to protect against blunt hits.", \
     "adesc" : "Includes a thick cloth vest."
 },
-{"name": "legend_southern_mail",                       "layer": "chain", "min": 1, "max": 1, "value" : 1400, "con" : 100, "stam" : -3, "impactSound" : "chain", "invSound" : "chain", "brush" : "southern_mail", \
+{"name": "legend_southern_mail",                       "layer": "chain", "min": 1, "max": 1, "value" : 1400, "con" : 100, "stam" : -13, "impactSound" : "chain", "invSound" : "chain", "brush" : "southern_mail", \
     "title" :  "Southern Mail", \
     "desc" :  "A long and heavy mail shirt of southern design made with with slightly thinner and lighter metal rings than those used in the north", \
     "adesc" : "Includes a long southern mail shirt."

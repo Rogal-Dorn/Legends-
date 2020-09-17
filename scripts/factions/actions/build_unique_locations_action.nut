@@ -484,7 +484,7 @@ this.build_unique_locations_action <- this.inherit("scripts/factions/faction_act
 				}
 			}
 
-			local tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries * 100, disallowedTerrain, 20, 50, 1001, distanceToOthers, distanceToOthers);
+			local tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries * 100, disallowedTerrain, 18, 50, 1001, distanceToOthers, distanceToOthers);
 
 			if (tile != null)
 			{

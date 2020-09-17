@@ -4008,4 +4008,59 @@ Adds a background for camping in the desert
 =======
 Tumble no longer makes Lunge cost 0ap, and also correctly reduces fat if you have both perks.
 Unpredictable bros no longer go against their nature & become predictable.
+<<<<<<< HEAD
 >>>>>>> 98b4ea405c3651ad02b6d6d8f2a951e3ad0107b9
+=======
+
+
+15.0.0.9
+
+**Fixes**
+Fixes mispelled background causing infinite load time on random character starts (mwah)
+Fixes ancient armor drop in treasure event (mwah)
+Fixes summoning of zombies for necromancer (mwah)
+Fixes rare crash with Nacho's swallow skill (mwah)
+Fixes some enemies causing infinite loading screens when they have named helmet or armor (mwah)
+Fixes armoursmith spawning non-layered armor upgrades, e.g. leather shoulderguards, while armor layers are on (mwah)
+Legion now starts hostile to southern cities (mwah)
+Fixes infinite loading screen with nomad zombies (mwah)
+Hopefully fixes bleeding issue for dead brothers (mwah)
+Fixes crash when AI uses Ignite skill
+Adds some missing skill icons and inventory icons
+
+
+15.0.0.10
+
+**Fixes**
+Fixes error with cravan guards skill checks on legendary difficulty
+Fixes the backpacks not correclty updating stash size when unequipping
+Fixes missing armor images
+Adds nomad sling to legend sling specialist perks
+Fixes legend food items crash on events and inventory access
+Fixes crashes when AI tries to use buckler_bash
+DLC craftable items are displayed when all crafting items visible is enabled - They will still not be craftable if there is a retinue requirement for them though!
+Fixes numerous blueprint tooltip issues
+
+
+15.0.0.11 smashing politely
+
+Updates to BB 1.4.0.42
+Walls, graves, furniture, southern trees an, rocks and bushes , can now be smashed with harvest skills 
+Supplies on the battlefield can be smashed for a small chance at finding goods 
+
+Fixes: 
+Pets are immune to disarm 
+Fixes southern armor, shields and banners going invisible when runed 
+Improves intensive training description, Ffixes stats on southern mail 
+Fixes mispelled background causing infinite load time on random character starts (mwah)
+Fixes ancient armor drop in treasure event (mwah)
+Possibly fixes summoning of zombies for necromancer (mwah)
+Fixes other, possibly related zombie bugs (mwah)
+Possibly fixes rare crash with Nacho's swallow skill (mwah)
+Fixes some enemies causing infinite loading screens when they have named helmet or armor (mwah)
+Fixes armoursmith spawning non-layered armor upgrades, e.g. leather shoulderguards, while armor layers are on (mwah)
+Legion now starts hostile to southern cities (mwah)
+Fixes infinite loading screen with nomad zombies (mwah)
+spearwaller  reduces AP by 25% rather than setting to 3 (salty)
+Heavy trait precludes light (salty)
+>>>>>>> 891489a51fadcc835662e80bba6a9aae65fea065

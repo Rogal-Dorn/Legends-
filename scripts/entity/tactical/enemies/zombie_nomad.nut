@@ -45,14 +45,11 @@ this.zombie_nomad <- this.inherit("scripts/entity/tactical/enemies/zombie_yeoman
 			[1, "oriental/thick_nomad_robe"]
 		];
 		local armor = this.Const.World.Common.pickArmor(aList);
-		this.m.Items.equip(armor);
-
-
 		if (this.Math.rand(1, 100) <= 66)
 		{
-			this.m.Items.getItemAtSlot(this.Const.ItemSlot.Body).setArmor(armor.getArmorMax() / 2 - 1);
+			armor.setArmor(armor.getArmorMax() / 2 - 1);
 		}
-
+		this.m.Items.equip(armor);
 
 		local helmet = [
 			[1, "oriental/nomad_leather_cap"],
@@ -66,7 +63,7 @@ this.zombie_nomad <- this.inherit("scripts/entity/tactical/enemies/zombie_yeoman
 
 		if (this.Math.rand(1, 100) <= 66)
 		{
-			helm.setArmor(helmet.getArmorMax() / 2 - 1);
+			helm.setArmor(helm.getArmorMax() / 2 - 1);
 		}
 
 		this.m.Items.equip(helm);
