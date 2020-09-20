@@ -43,7 +43,10 @@ this.gladiator_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.LastNames = this.Const.Strings.SouthernNamesLast;
 		this.m.Level = this.Math.rand(2, 4);
 		this.m.IsCombatBackground = true;
-
+		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[0];
+		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[0];
+		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[0];
+		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[3];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.PolearmTree,
