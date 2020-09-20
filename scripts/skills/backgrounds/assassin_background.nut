@@ -46,7 +46,7 @@ this.assassin_background <- this.inherit("scripts/skills/backgrounds/character_b
 			"trait.drunkard",
 			"trait.disloyal",
 			"trait.loyal",
-			"treat.dumb"
+			"trait.dumb"
 		];
 		this.m.ExcludedTalents = [
 			this.Const.Attributes.Hitpoints,
