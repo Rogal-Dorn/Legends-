@@ -3976,3 +3976,4 @@ Hopefully fixes bleeding issue for dead brothers (mwah)
 Fixes crash when AI uses Ignite skill
 Adds some missing skill icons and inventory icons
 High Tier Zombie from Necromancer skill spawns with armor now
+Spellings

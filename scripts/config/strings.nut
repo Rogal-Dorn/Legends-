@@ -2130,7 +2130,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendMasteryStaves = "Master the art of fighting with staves. Use 25% less fatigue when using Staff Bash or Staff Knock Out, increases the daze chance when using Staves. Also reduces costs for Missile, Revolt, Entice, Chain Lightning and Firefield. \n[color=#0b0084]From the Staff perk group[/color]",
 	LegendGruesomeFeast = "Taste of the forbidden flesh. Devour a recently departed corpse to gain strength and restore your own health by [color=" + this.Const.UI.Color.PositiveValue + "]50[/color] ",
 	LegendRelax = "Sooth an ally, halving their fatigue",
-	LegendUberNimble = "Gain another stack of nimble when not wearing armour or helmet, real berserkers don\'t need pants",
+	LegendUberNimble = "Gain another stack of nimble when not wearing both armour and a helmet, real berserkers don\'t need pants",
 	LegendMuscularity = "Put your full weight into every blow and gain [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] of your current hitpoints as additional maximum damage, up to 50. \n[color=#0b0084]From the Large perk group[/color]",
 	LegendBattleheart = "Wade into the thick of battle, dodging blades from behind and above, aware of all around you at the heart of the battle. Being surrounded no longer effects this character\'s defences at all. Upgraded version of underdog, immune to Backstabber",
 	LegendTrueBeliever = "Lesser men may cower and flee, but you are unassuageable in your commitment. Allies fleeing or dying no longer lowers this character\'s morale. This character gains 5% resolve for every fleeing character on the field, friend or foe.  Also grants the Optimist trait. \n[color=#0b0084]From the Devious perk group[/color]",
@@ -2351,7 +2351,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendScryTrance = "Scries an area of 12 tiles around the user. The user will be unable to move or act during the trance until cancelled. Minimum of 1 turn channel.",
 	LegendReadOmensTrance = "The user enters a trance, telling all allies of their future. Grants [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] chance to have any attacker require two successful attack rolls in order to hit",
 	LegendDistantVisions = "This character spends a lot of time alone outside camp, staring into the distance and smoking strange bark. Allows the user to have distant visions of towns.  Each morning this character is in reserves grants you insight into a specific town's current events and buildings.",
-	LegendScrollIngredients = "Allows the user to identify Ancient Scrolls. These tomes a specific effect whereas an Ancient Scroll gives any random effect.",
+	LegendScrollIngredients = "Allows the user to identify Ancient Scrolls. These tomes grant a specific effect, whereas an Ancient Scroll gives any random effect.",
 	LegendScholar = "Allows the user to be counted as educated for events, regardless if other conditions are met."
 	LegendCitrinitas = "A powerful cocktail of ingredients provides a trance like state, granting the banner effect, and drums of war effects to everyone in the company at the end of the user\'s turn",
 	LegendAlbedo = "A concoction of secret materials that allows the user to restore up to 25 armor to a target",
