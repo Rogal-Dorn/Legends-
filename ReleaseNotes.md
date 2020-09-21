@@ -3981,3 +3981,4 @@ Weiderganger favored enemy now signifies Fallen Heroes rather than Weiderganger 
 Player character can't be selected for the lawmen after a criminal event
 Second wind can only proc in batte now instead of out of battle
 Demon Alp AI tweak to not just crash
+Fixes problem with upgraded gatherer's tent
