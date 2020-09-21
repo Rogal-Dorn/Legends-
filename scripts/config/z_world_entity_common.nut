@@ -650,7 +650,7 @@ gt.Const.World.Common.pickHelmet <- function (_helms)
 	{
 		return null;
 	}
-	// return this.new("scripts/items/helmets/" + helm);
+	return this.new("scripts/items/helmets/" + helm);
 
 	if (!this.World.LegendsMod.Configs().LegendArmorsEnabled())
 	{
@@ -678,7 +678,8 @@ gt.Const.World.Common.pickHelmet <- function (_helms)
 	{
 		if (variant != null)
 		{
-			helmet.setupArmor(variant);
+			if (helm == "greatsword_faction_helm") //this doesn't set variant properly for things like [1, "hood", 63] in cripple_background file
+				helmet.setupArmor(variant);
 		}
 
          local helm = this.Const.World.Common.pickLegendHelmet(set.Helms);
