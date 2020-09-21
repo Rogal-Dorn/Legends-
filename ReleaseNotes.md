@@ -3976,4 +3976,7 @@ Hopefully fixes bleeding issue for dead brothers (mwah)
 Fixes crash when AI uses Ignite skill
 Adds some missing skill icons and inventory icons
 High Tier Zombie from Necromancer skill spawns with armor now
-Spellings
+Spelling/grammer fixes
+Weiderganger favored enemy now signifies Fallen Heroes rather than Weiderganger Champion
+Player character can't be selected for the lawmen after a criminal event
+Second wind can only proc in batte now instead of out of battle
