@@ -56,8 +56,10 @@ this.nomad_background <- this.inherit("scripts/skills/backgrounds/character_back
 		this.m.LastNames = this.Const.Strings.SouthernNamesLast;
 		this.m.Level = this.Math.rand(2, 4);
 		this.m.IsCombatBackground = true;
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.NeutralMin;		
 		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[1];
-		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[3];
+		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[2];
 		this.m.Modifiers.Terrain = [
 				0.0, // ?
 				0.0, //ocean
