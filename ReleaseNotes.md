@@ -3955,7 +3955,7 @@ Tumble no longer makes Lunge cost 0ap, and also correctly reduces fat if you hav
 Unpredictable bros no longer go against their nature & become predictable.
 
 
-15.0.0.9
+## 15.0.0.9
 
 **Fixes**
 Fixes mispelled background causing infinite load time on random character starts (mwah)
@@ -3967,7 +3967,7 @@ Fixes armoursmith spawning non-layered armor upgrades, e.g. leather shoulderguar
 Legion now starts hostile to southern cities (mwah)
 Fixes infinite loading screen with nomad zombies (mwah)
 
-15.0.0.12
+## 15.0.0.12
 
 **Fixes**
 Bandit Warlords can have named helmets again (typo where helmets were accidentally treated as body armor)
@@ -3980,3 +3980,4 @@ Spelling/grammer fixes
 Weiderganger favored enemy now signifies Fallen Heroes rather than Weiderganger Champion
 Player character can't be selected for the lawmen after a criminal event
 Second wind can only proc in batte now instead of out of battle
+Demon Alp AI tweak to not just crash
