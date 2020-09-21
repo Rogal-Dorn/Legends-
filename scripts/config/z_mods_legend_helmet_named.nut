@@ -1,3 +1,4 @@
+
 local gt = this.getroottable();
 
 if (!("LegendMod" in gt.Const))
@@ -266,6 +267,7 @@ gt.Const.LegendMod.HelmObjs.extend([
     Sets = [{
     Hoods = [
         [1, "hood/legend_helmet_padded_cap"] //40
+    ]
     Helms = [],
     Tops = [],
     Vanity = [
@@ -521,6 +523,7 @@ gt.Const.LegendMod.HelmObjs.extend([
     ],
     Helms = [
         [1, "helm/legend_helmet_viking_helm"] //45
+    ]
     Tops = [],
     Vanity = [ //missing like 15 s i'm gonna just give it a nice vanity (:
         [1, "vanity/legend_helmet_antler"], //10

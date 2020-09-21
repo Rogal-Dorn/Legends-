@@ -1,3 +1,4 @@
+
 local gt = this.getroottable();
 
 if (!("LegendMod" in gt.Const))
