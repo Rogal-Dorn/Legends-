@@ -987,108 +987,109 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.Math.rand(1, 100) <= this.Const.Combat.SurviveWithInjuryChance * this.m.CurrentProperties.SurviveWithInjuryChanceMult || this.World.Assets.m.IsSurvivalGuaranteed && !this.m.Skills.hasSkillOfType(this.Const.SkillType.PermanentInjury) && (this.World.Assets.getOrigin().getID() != "scenario.manhunters" || this.getBackground().getID() != "background.slave"))
 		{
-			return true;
-		}
-
-		local potential = [];
-		local injuries = this.Const.Injury.Permanent;
-		local numPermInjuries = 0;
-
-		foreach (inj in injuries)
-		{
-			if (inj.ID == "injury.broken_elbow_joint" && !this.m.Skills.hasSkill("injury.broken_elbow_joint") && !this.m.Skills.hasSkill("trait.legend_prosthetic_forearm"))
+				
+	
+			local potential = [];
+			local injuries = this.Const.Injury.Permanent;
+			local numPermInjuries = 0;
+	
+			foreach (inj in injuries)
 			{
-				potential.push(inj);
+				if (inj.ID == "injury.broken_elbow_joint" && !this.m.Skills.hasSkill("injury.broken_elbow_joint") && !this.m.Skills.hasSkill("trait.legend_prosthetic_forearm"))
+				{
+					potential.push(inj);
+				}
+				else if (inj.ID == "injury.broken_knee" && !this.m.Skills.hasSkill("injury.broken_knee") && !this.m.Skills.hasSkill("trait.legend_prosthetic_leg"))
+				{
+					potential.push(inj);
+				}
+				else if (inj.ID == "injury.maimed_foot" && !this.m.Skills.hasSkill("injury.maimed_foot") && !this.m.Skills.hasSkill("trait.legend_prosthetic_foot"))
+				{
+					potential.push(inj);
+				}
+				else if (inj.ID == "injury.missing_ear" && !this.m.Skills.hasSkill("injury.missing_ear") && !this.m.Skills.hasSkill("trait.legend_prosthetic_ear"))
+				{
+					potential.push(inj);
+				}
+				else if (inj.ID == "injury.missing_eye" && !this.m.Skills.hasSkill("injury.missing_eye") && !this.m.Skills.hasSkill("trait.legend_prosthetic_eye"))
+				{
+					potential.push(inj);
+				}
+				else if (inj.ID == "injury.missing_finger" && !this.m.Skills.hasSkill("injury.missing_finger") && !this.m.Skills.hasSkill("trait.legend_prosthetic_finger"))
+				{
+					potential.push(inj);
+				}
+				else if (inj.ID == "injury.missing_hand" && !this.m.Skills.hasSkill("injury.missing_hand") && !this.m.Skills.hasSkill("trait.legend_prosthetic_hand"))
+				{
+					potential.push(inj);
+				}
+				else if (inj.ID == "injury.missing_nose" && !this.m.Skills.hasSkill("injury.missing_nose") && !this.m.Skills.hasSkill("trait.legend_prosthetic_nose"))
+				{
+					potential.push(inj);
+				}
+				else if (inj.ID != "injury.broken_elbow_joint" && inj.ID != "injury.broken_knee" && inj.ID != "injury.maimed_foot" && inj.ID != "injury.missing_ear" && inj.ID != "injury.missing_eye" && inj.ID != "injury.missing_finger" && inj.ID != "injury.missing_hand" && inj.ID != "injury.missing_nose" && !this.m.Skills.hasSkill(inj.ID))
+				{
+					potential.push(inj);
+				}
+				else
+				{
+					numPermInjuries = ++numPermInjuries;
+	
+				}
 			}
-			else if (inj.ID == "injury.broken_knee" && !this.m.Skills.hasSkill("injury.broken_knee") && !this.m.Skills.hasSkill("trait.legend_prosthetic_leg"))
+	
+			if (potential.len() == 0)
 			{
-				potential.push(inj);
+				return true;
 			}
-			else if (inj.ID == "injury.maimed_foot" && !this.m.Skills.hasSkill("injury.maimed_foot") && !this.m.Skills.hasSkill("trait.legend_prosthetic_foot"))
+	
+			if (numPermInjuries + 1 >= 3)
 			{
-				potential.push(inj);
+				this.updateAchievement("HardToKill", 1, 1);
 			}
-			else if (inj.ID == "injury.missing_ear" && !this.m.Skills.hasSkill("injury.missing_ear") && !this.m.Skills.hasSkill("trait.legend_prosthetic_ear"))
+	
+			local skill = this.new("scripts/skills/" + potential[this.Math.rand(0, potential.len() - 1)].Script);
+			this.m.Skills.add(skill);
+	
+			if (this.m.CurrentProperties.SurvivesAsUndead)
 			{
-				potential.push(inj);
+				local r = this.Math.rand(0, 1);
+	
+				if (r == 0)
+				{
+					this.getFlags().add("PlayerSkeleton");
+					this.getFlags().add("undead");
+					this.getFlags().add("skeleton");
+					local body = this.getSprite("body");
+					local skill = this.new("scripts/skills/injury_permanent/legend_fleshless");
+					this.m.Skills.add(skill);
+					this.m.Skills.add(this.new("scripts/skills/racial/skeleton_racial"));
+				}
+				else
+				{
+					this.getFlags().add("PlayerZombie");
+					this.getFlags().add("undead");
+					this.getFlags().add("zombie_minion");
+					local skill = this.new("scripts/skills/injury_permanent/legend_rotten_flesh");
+					this.m.Skills.add(skill);
+					this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_zombie_bite"));
+					this.m.Skills.add(this.new("scripts/skills/perks/perk_nine_lives"));
+				}
 			}
-			else if (inj.ID == "injury.missing_eye" && !this.m.Skills.hasSkill("injury.missing_eye") && !this.m.Skills.hasSkill("trait.legend_prosthetic_eye"))
+	
+			this.Tactical.getSurvivorRoster().add(this);
+			this.m.IsDying = false;
+			this.worsenMood(this.Const.MoodChange.PermanentInjury, "Suffered a permanent injury");
+			this.updateAchievement("ScarsForLife", 1, 1);
+	
+			if (this.getFlags().has("PlayerSkeleton") || this.getFlags().has("PlayerZombie"))
 			{
-				potential.push(inj);
+				return false;
 			}
-			else if (inj.ID == "injury.missing_finger" && !this.m.Skills.hasSkill("injury.missing_finger") && !this.m.Skills.hasSkill("trait.legend_prosthetic_finger"))
-			{
-				potential.push(inj);
-			}
-			else if (inj.ID == "injury.missing_hand" && !this.m.Skills.hasSkill("injury.missing_hand") && !this.m.Skills.hasSkill("trait.legend_prosthetic_hand"))
-			{
-				potential.push(inj);
-			}
-			else if (inj.ID == "injury.missing_nose" && !this.m.Skills.hasSkill("injury.missing_nose") && !this.m.Skills.hasSkill("trait.legend_prosthetic_nose"))
-			{
-				potential.push(inj);
-			}
-			else if (inj.ID != "injury.broken_elbow_joint" && inj.ID != "injury.broken_knee" && inj.ID != "injury.maimed_foot" && inj.ID != "injury.missing_ear" && inj.ID != "injury.missing_eye" && inj.ID != "injury.missing_finger" && inj.ID != "injury.missing_hand" && inj.ID != "injury.missing_nose" && !this.m.Skills.hasSkill(inj.ID))
-			{
-				potential.push(inj);
-			}
-			else
-			{
-				numPermInjuries = ++numPermInjuries;
-
-			}
-		}
-
-		if (potential.len() == 0)
-		{
-			return true;
-		}
-
-		if (numPermInjuries + 1 >= 3)
-		{
-			this.updateAchievement("HardToKill", 1, 1);
-		}
-
-		local skill = this.new("scripts/skills/" + potential[this.Math.rand(0, potential.len() - 1)].Script);
-		this.m.Skills.add(skill);
-
-		if (this.m.CurrentProperties.SurvivesAsUndead)
-		{
-			local r = this.Math.rand(0, 1);
-
-			if (r == 0)
-			{
-				this.getFlags().add("PlayerSkeleton");
-				this.getFlags().add("undead");
-				this.getFlags().add("skeleton");
-				local body = this.getSprite("body");
-				local skill = this.new("scripts/skills/injury_permanent/legend_fleshless");
-				this.m.Skills.add(skill);
-				this.m.Skills.add(this.new("scripts/skills/racial/skeleton_racial"));
-			}
-			else
-			{
-				this.getFlags().add("PlayerZombie");
-				this.getFlags().add("undead");
-				this.getFlags().add("zombie_minion");
-				local skill = this.new("scripts/skills/injury_permanent/legend_rotten_flesh");
-				this.m.Skills.add(skill);
-				this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_zombie_bite"));
-				this.m.Skills.add(this.new("scripts/skills/perks/perk_nine_lives"));
-			}
-		}
-
-		this.Tactical.getSurvivorRoster().add(this);
-		this.m.IsDying = false;
-		this.worsenMood(this.Const.MoodChange.PermanentInjury, "Suffered a permanent injury");
-		this.updateAchievement("ScarsForLife", 1, 1);
-
-		if (this.getFlags().has("PlayerSkeleton") || this.getFlags().has("PlayerZombie"))
-		{
+	
 			return false;
 		}
-
-		return false;
+		return true;
 	}
 
 	function onOtherActorDeath( _killer, _victim, _skill )
