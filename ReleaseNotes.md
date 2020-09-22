@@ -3897,7 +3897,7 @@ https://drive.google.com/file/d/136wvQKhe-u6H6VQHsaQJ66cVszzwu9Oy/view?usp=shari
 15.0.0.5  Sand Storm
 **Requires ALL DLC and build 1.4.0.41 of BB**
 
-This is our first general test build release of the blazing sands DLC support for Legends Mod. Please expect this build to have instabilities. There's lots of balance and work to do still (We haven't started work on the retinue system, so it is still vanilla - this WILL change, we have plans...), but hopefully this should build will let you all play with Legends with the new DLC content.
+This is our first general test build release of the blazing sands DLC support for Legends Mod. Please expect this build to have instabilities. There's lots of balance and work to do still (We haven't started work on the retinue system, so it is still vanilla - this WILL change, we have plans...), but hopefully this build will let you all play with Legends with the new DLC content.
 
 
 **Layered Helmets**
@@ -3945,6 +3945,7 @@ Adds dozens of variants to nomad camp objects ( no more repeating carpets)
 Arena spectators can be female
 Lich drops legends scrolls
 Increases the number of tactical sand tiles from 3 to 28
+Adds 2000+ new character names
 
 **fixes**
 legends camp tactical objects showing up instead of DLC objects
@@ -3952,3 +3953,33 @@ inventor icon showing up on gladiators
 Adds a background for camping in the desert
 Tumble no longer makes Lunge cost 0ap, and also correctly reduces fat if you have both perks.
 Unpredictable bros no longer go against their nature & become predictable.
+
+
+## 15.0.0.9
+
+**Fixes**
+Fixes mispelled background causing infinite load time on random character starts (mwah)
+Fixes ancient armor drop in treasure event (mwah)
+Fixes summoning of zombies for necromancer (mwah)
+Fixes rare crash with Nacho's swallow skill (mwah)
+Fixes some enemies causing infinite loading screens when they have named helmet or armor (mwah)
+Fixes armoursmith spawning non-layered armor upgrades, e.g. leather shoulderguards, while armor layers are on (mwah)
+Legion now starts hostile to southern cities (mwah)
+Fixes infinite loading screen with nomad zombies (mwah)
+
+## 15.0.0.12
+
+**Fixes**
+Bandit Warlords can have named helmets again (typo where helmets were accidentally treated as body armor)
+Drums of Life changes: Can't heal people above max HP, now always heals people below max HP, doesn't rely on people being fatigued.
+Hopefully fixes bleeding issue for dead brothers (mwah)
+Fixes crash when AI uses Ignite skill
+Adds some missing skill icons and inventory icons
+High Tier Zombie from Necromancer skill spawns with armor now
+Spelling/grammer fixes
+Weiderganger favored enemy now signifies Fallen Heroes rather than Weiderganger Champion
+Player character can't be selected for the lawmen after a criminal event
+Second wind can only proc in batte now instead of out of battle
+Demon Alp AI tweak to not just crash
+Fixes problem with upgraded gatherer's tent
+You don't have a higher chance of dying when you have high chance of surviving with injury. (Big thanks to Surrealistik)
