@@ -397,7 +397,10 @@ layers = [
  "title" :  "Southern Hood", \
  "desc" :  "A southern hood made of cloth that wraps around the head." \
 },
-
+{"name" : "cloth_cap"                     , "layer" : "hood", "min" : 1, "max" : 1, "base" : True, "value" : 20, "con" : 10, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
+ "title" :  "Cloth Cap", \
+ "desc" :  "A piece of cloth covering the top of the head." \
+},
 
 
 
@@ -714,6 +717,10 @@ layers = [
  "title" :  "Headband Nose", \
  "desc" :  "A rough leather headband with a small nose protection" \
 },
+# {"name" : "eyemask"                     , "layer" : "helm", "min" : 1, "max" : 2, "value" : 250, "con" : 35, "stam" : -3, "vis" : -1, "hair" : "false", "beard" : "false",  \
+#  "title" :  "Eyemask", \
+#  "desc" :  "A metal mask covering the eyes and nose from blows" \
+# },
 {"name" : "eyemask"                     , "layer" : "top", "min" : 1, "max" : 2, "value" : 250, "con" : 35, "stam" : -3, "vis" : -1, "hair" : "false", "beard" : "false",  \
  "title" :  "Eyemask", \
  "desc" :  "A metal mask covering the eyes and nose from blows" \
@@ -898,10 +905,14 @@ layers = [
  "title" :  "Feathered Hat", \
  "desc" :  "A feathered hat as is the latest fashion among the courtisans" \
 },
-{"name" : "fencer_hat"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
- "title" :  "Fencer Hat", \
- "desc" :  "The floppy hat of a swordsman" \
+{"name" : "fencer_hat"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 200, "con" : 60, "stam" : -3, "vis" : 0, "hair" : "true", "beard" : "false",  \
+"title" :  "Fencer Hat", \
+"desc" :  "The floppy hat of a swordsman" \
 },
+# {"name" : "fencer_hat"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
+#  "title" :  "Fencer Hat", \
+#  "desc" :  "The floppy hat of a swordsman" \
+# },
 {"name" : "goat_horns"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Goat Horns", \
  "desc" :  "The tall horns of a barbarian beastmaster" \
