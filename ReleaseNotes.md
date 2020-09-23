@@ -3982,3 +3982,7 @@ Player character can't be selected for the lawmen after a criminal event
 Second wind can only proc in batte now instead of out of battle
 Demon Alp AI tweak to not just crash
 Fixes problem with upgraded gatherer's tent
+Fixes rare healer building bug that didn't cause crashes
+Should fix repairs not working in town
+Should fix transform effects crashing on combat end 
+Fixes Seer's aoe fire skill causing AI freezes

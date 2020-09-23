@@ -118,7 +118,7 @@ this.town_shop_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 		return result;
 	}
 
-	function onRepairItem( _itemIndex )
+	function onRepairItem( _itemIndex, _callback )
 	{
 		if (!this.m.Shop.isRepairOffered())
 		{
