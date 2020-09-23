@@ -35,6 +35,11 @@ this.double_strike_effect <- this.inherit("scripts/skills/skill", {
 		{
 			return;
 		}
+
+		if (_targetEntity == this.getContainer().getActor())
+		{
+			return;
+		}
 		
 		if (this.m.Used == 1)
 		{

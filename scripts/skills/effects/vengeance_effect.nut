@@ -29,7 +29,14 @@ this.vengeance_effect <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
-		if (!this.m.IsGarbage && !_targetEntity.isAlliedWith(this.getContainer().getActor()))
+		local actor = this.getContainer().getActor();
+
+		if (_targetEntity == actor)
+		{
+			return;
+		}
+
+		if (!this.m.IsGarbage && !_targetEntity.isAlliedWith(actor))
 		{
 			this.removeSelf();
 		}
