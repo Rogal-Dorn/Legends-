@@ -1337,7 +1337,7 @@ this.skill <- {
 			local x = tile.X;
 			local y = tile.Y;
 			this.Tactical.getTile(x,y).removeObject();
-			this.Tactical.getTile(x,y).spawnObject(entity/tactical/objects/tree_sticks)
+			this.Tactical.getTile(x,y).spawnObject("entity/tactical/objects/tree_sticks")
 			return true;
 		}
 

@@ -3987,3 +3987,4 @@ Should fix repairs not working in town
 Should fix transform effects crashing on combat end 
 Fixes Seer's aoe fire skill causing AI freezes
 Fixes cart upgrade on reload
+Fixes sticks not dropping from harvest wood skill
