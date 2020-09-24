@@ -146,7 +146,7 @@ this.knight <- this.inherit("scripts/entity/tactical/human", {
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Head))
 		{
 			this.m.Items.equip(this.Const.World.Common.pickHelmet([
-				[45, "feathered_hat"],
+				[45, "full_helm"],
 				[44, "faction_helm", banner],
 				[6, "legend_frogmouth_helm"],
 				[1, "legend_frogmouth_helm_crested"]
