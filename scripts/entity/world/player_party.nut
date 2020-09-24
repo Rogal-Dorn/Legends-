@@ -523,6 +523,7 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 	{
 		local s = this.Const.LegendMod.MaxResources[this.World.Assets.getEconomicDifficulty()].Stash
 		s += this.World.Assets.getOrigin().getStashModifier();
+		s += this.World.Retinue.getInventoryUpgrades() * 27;
 
 		foreach( bro in this.World.getPlayerRoster().getAll())
 		{

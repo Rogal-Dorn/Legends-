@@ -3986,3 +3986,4 @@ Fixes rare healer building bug that didn't cause crashes
 Should fix repairs not working in town
 Should fix transform effects crashing on combat end 
 Fixes Seer's aoe fire skill causing AI freezes
+Fixes cart upgrade on reload
