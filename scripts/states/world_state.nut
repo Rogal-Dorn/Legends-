@@ -1656,6 +1656,8 @@ this.world_state <- this.inherit("scripts/states/state", {
 
 			foreach( party in this.m.PartiesInCombat )
 			{
+				local partyNameOnCrash = party.getName();
+				local partyIDOnCrash = party.getID();
 				if (party.isLocation() && !party.isAlliedWithPlayer())
 				{
 					nonLocationBattle = false;
