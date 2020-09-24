@@ -3989,3 +3989,4 @@ Fixes Seer's aoe fire skill causing AI freezes
 Fixes cart upgrade on reload
 Fixes sticks not dropping from harvest wood skill
 Fixes harvest tree not being able to chop sticks
+Knights no longer have the 30 durability feathered hat and actually have their normal hemlets back
