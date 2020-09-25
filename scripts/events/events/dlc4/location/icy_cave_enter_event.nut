@@ -216,6 +216,7 @@ this.icy_cave_enter_event <- this.inherit("scripts/events/event", {
 				}
 
 				this.Characters.push(_event.m.Champion.getImagePath());
+				this.World.Assets.getStash().makeEmptySlots(1);
 				local item = this.new("scripts/items/special/broken_ritual_armor_item");
 				this.World.Assets.getStash().add(item);
 				this.List.push({

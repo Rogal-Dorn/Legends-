@@ -652,6 +652,7 @@ this.free_greenskin_prisoners_contract <- this.inherit("scripts/contracts/contra
 					item = this.new("scripts/items/weapons/greenskins/named_orc_axe");
 				}
 
+				this.World.Assets.getStash().makeEmptySlots(1);
 				this.World.Assets.getStash().add(item);
 				this.List.push({
 					id = 10,

@@ -293,6 +293,7 @@ this.greenskins_pet_goblin_event <- this.inherit("scripts/events/event", {
 					item = this.new("scripts/items/armor/named/black_leather_armor");
 				}
 
+				this.World.Assets.getStash().makeEmptySlots(1);
 				this.World.Assets.getStash().add(item);
 				this.List.push({
 					id = 10,

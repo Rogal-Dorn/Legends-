@@ -606,6 +606,8 @@ this.asset_manager <- {
 	{
 		this.m.Stash.clear();
 		this.m.SeedString = "";
+		this.m.IsCamping = false;
+		this.m.IsUsingProvisions = true;
 		this.resetToDefaults();
 	}
 
