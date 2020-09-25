@@ -4031,4 +4031,14 @@ Fixes cart upgrade on reload
 Fixes sticks not dropping from harvest wood skill
 Fixes harvest tree not being able to chop sticks
 Knights no longer have the 30 durability feathered hat and actually have their normal hemlets back
+Fixes wolfspane check on arborthropy injuries
+
+**Background changes**
+Southern Assassin get new Dynamic perk tree. Adds scout modifiers
+Belly Dancer: Get Barter modifiers
+Gladiator: Get Ammo, ArmorPars, Meds, Training modifiers
+Manhunter: Get Barter and Injury modifiers
+Nomad: Gets new Dynamic perk tree. Adds Ammo and Scout and Terrain movement modifiers.
+
+
 
