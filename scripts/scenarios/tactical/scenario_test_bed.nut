@@ -27,18 +27,6 @@ this.scenario_test_bed <- this.inherit("scripts/scenarios/tactical/scenario_temp
 		locationTemplate.Fortification = this.Const.Tactical.FortificationType.Palisade;
 		locationTemplate.CutDownTrees = true;
 		locationTemplate.ShiftX = 0;
-		testMap.campify({
-			X = 0,
-			Y = 0,
-			W = minX,
-			H = minY
-		}, locationTemplate);
-		this.MapGen.get(locationTemplate.Template[0]).fill({
-			X = 0,
-			Y = 0,
-			W = minX,
-			H = minY
-		}, locationTemplate);
 	}
 
 	function initEntities( _numPlayer, _numEnemy )

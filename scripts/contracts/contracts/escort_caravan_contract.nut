@@ -666,6 +666,9 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 						p.TemporaryEnemies = [
 							this.Contract.m.NobleHouseID
 						];
+						p.EnemyBanners = [
+							this.World.FactionManager.getFaction(this.Contract.m.NobleHouseID).getPartyBanner()
+						];
 
 						foreach( e in p.Entities )
 						{

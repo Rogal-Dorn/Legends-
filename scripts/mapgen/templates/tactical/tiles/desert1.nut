@@ -66,15 +66,10 @@ this.desert1 <- this.inherit("scripts/mapgen/tactical_template", {
 			"entity/tactical/objects/tree_desert_large",
 			"entity/tactical/objects/tree_desert_large",
 			"entity/tactical/objects/desert_cactus1",
-			"entity/tactical/objects/desert_cactus2",
 			"entity/tactical/objects/desert_cactus1",
-			"entity/tactical/objects/desert_cactus2",
 			"entity/tactical/objects/desert_cactus1",
-			"entity/tactical/objects/desert_cactus2",
 			"entity/tactical/objects/desert_cactus1",
-			"entity/tactical/objects/desert_cactus2",
-			"entity/tactical/objects/desert_cactus2",
-			"entity/tactical/objects/desert_cactus2"
+			"entity/tactical/objects/desert_cactus1"
 		],
 		ChanceToSpawnObject = 1
 	},

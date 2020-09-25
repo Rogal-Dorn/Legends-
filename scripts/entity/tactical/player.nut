@@ -987,12 +987,12 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.Math.rand(1, 100) <= this.Const.Combat.SurviveWithInjuryChance * this.m.CurrentProperties.SurviveWithInjuryChanceMult || this.World.Assets.m.IsSurvivalGuaranteed && !this.m.Skills.hasSkillOfType(this.Const.SkillType.PermanentInjury) && (this.World.Assets.getOrigin().getID() != "scenario.manhunters" || this.getBackground().getID() != "background.slave"))
 		{
-				
-	
+
+
 			local potential = [];
 			local injuries = this.Const.Injury.Permanent;
 			local numPermInjuries = 0;
-	
+
 			foreach (inj in injuries)
 			{
 				if (inj.ID == "injury.broken_elbow_joint" && !this.m.Skills.hasSkill("injury.broken_elbow_joint") && !this.m.Skills.hasSkill("trait.legend_prosthetic_forearm"))
@@ -1034,27 +1034,27 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				else
 				{
 					numPermInjuries = ++numPermInjuries;
-	
+
 				}
 			}
-	
+
 			if (potential.len() == 0)
 			{
 				return true;
 			}
-	
+
 			if (numPermInjuries + 1 >= 3)
 			{
 				this.updateAchievement("HardToKill", 1, 1);
 			}
-	
+
 			local skill = this.new("scripts/skills/" + potential[this.Math.rand(0, potential.len() - 1)].Script);
 			this.m.Skills.add(skill);
-	
+
 			if (this.m.CurrentProperties.SurvivesAsUndead)
 			{
 				local r = this.Math.rand(0, 1);
-	
+
 				if (r == 0)
 				{
 					this.getFlags().add("PlayerSkeleton");
@@ -1076,17 +1076,17 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 					this.m.Skills.add(this.new("scripts/skills/perks/perk_nine_lives"));
 				}
 			}
-	
+
 			this.Tactical.getSurvivorRoster().add(this);
 			this.m.IsDying = false;
 			this.worsenMood(this.Const.MoodChange.PermanentInjury, "Suffered a permanent injury");
 			this.updateAchievement("ScarsForLife", 1, 1);
-	
+
 			if (this.getFlags().has("PlayerSkeleton") || this.getFlags().has("PlayerZombie"))
 			{
 				return false;
 			}
-	
+
 			return false;
 		}
 		return true;
