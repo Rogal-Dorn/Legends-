@@ -104,7 +104,9 @@ echo "Building Legend Helmets brush..."
 ./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/legend_helmets_1.brush ../battlebrothers/unpacked/legend_helmets/1
 
  echo "Building Legend Armor brush..."
-./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/legend_armor.brush ../battlebrothers/unpacked/legend_armor
+./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/legend_armor_0.brush ../battlebrothers/unpacked/legend_armor/0
+./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/legend_armor_1.brush ../battlebrothers/unpacked/legend_armor/1
+./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/legend_armor_2.brush ../battlebrothers/unpacked/legend_armor/2
 
  echo "Compiling all nut files..."
 ./masscompile.bat "c:\Steam\steamapps\common\Battle Brothers\data\scripts"
