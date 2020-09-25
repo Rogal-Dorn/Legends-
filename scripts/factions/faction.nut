@@ -535,6 +535,7 @@ this.faction <- {
 	{
 		local party = this.World.spawnEntity("scripts/entity/world/party", _tile.Coords);
 		party.setFaction(this.getID());
+		this.logInfo("Spawning Party with name: " + _name + " :: Party ID is set to: " + party.getID());
 
 		if (_uniqueName)
 		{

@@ -4009,6 +4009,8 @@ Heavy trait precludes light (salty)
 
 15.0.0.12
 
+Updates to BB 1.4.0.43
+
 **Fixes**
 Bandit Warlords can have named helmets again (typo where helmets were accidentally treated as body armor)
 Drums of Life changes: Can't heal people above max HP, now always heals people below max HP, doesn't rely on people being fatigued.
@@ -4021,4 +4023,12 @@ Second wind can only proc in batte now instead of out of battle
 Demon Alp AI tweak to not just crash
 Fixes problem with upgraded gatherer's tent
 You don't have a higher chance of dying when you have high chance of surviving with injury. (Big thanks to Surrealistik)
+Fixes rare healer building bug that didn't cause crashes
+Should fix repairs not working in town
+Should fix transform effects crashing on combat end
+Fixes Seer's aoe fire skill causing AI freezes
+Fixes cart upgrade on reload
+Fixes sticks not dropping from harvest wood skill
+Fixes harvest tree not being able to chop sticks
+Knights no longer have the 30 durability feathered hat and actually have their normal hemlets back
 
