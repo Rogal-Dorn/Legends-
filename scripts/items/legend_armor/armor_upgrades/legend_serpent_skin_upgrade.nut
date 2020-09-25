@@ -80,9 +80,9 @@ this.legend_serpent_skin_upgrade <- this.inherit("scripts/items/legend_armor/leg
 		}
 	}
 
-	function onRemoved()
+	function onRemoved( _app )
 	{
-		this.legend_armor_upgrade.onRemoved();
+		this.legend_armor_upgrade.onRemoved(_app);
 		local c = this.m.Armor.getContainer();
 
 		if (c != null && c.getActor() != null && !c.getActor().isNull())

@@ -43,7 +43,7 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 			"trait.drunkard",
 			"trait.disloyal",
 			"trait.loyal",
-			"treat.dumb"
+			"trait.dumb"
 		];
 		this.m.Titles = [
 			"the Assassin",
