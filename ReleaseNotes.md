@@ -4013,7 +4013,7 @@ Unpredictable bros no longer go against their nature & become predictable.
 =======
 
 
-15.0.0.9
+## 15.0.0.9
 
 **Fixes**
 Fixes mispelled background causing infinite load time on random character starts (mwah)
@@ -4045,13 +4045,13 @@ Fixes numerous blueprint tooltip issues
 15.0.0.11 smashing politely
 
 Updates to BB 1.4.0.42
-Walls, graves, furniture, southern trees an, rocks and bushes , can now be smashed with harvest skills 
-Supplies on the battlefield can be smashed for a small chance at finding goods 
+Walls, graves, furniture, southern trees an, rocks and bushes , can now be smashed with harvest skills
+Supplies on the battlefield can be smashed for a small chance at finding goods
 
-Fixes: 
-Pets are immune to disarm 
-Fixes southern armor, shields and banners going invisible when runed 
-Improves intensive training description, Ffixes stats on southern mail 
+Fixes:
+Pets are immune to disarm
+Fixes southern armor, shields and banners going invisible when runed
+Improves intensive training description, Ffixes stats on southern mail
 Fixes mispelled background causing infinite load time on random character starts (mwah)
 Fixes ancient armor drop in treasure event (mwah)
 Possibly fixes summoning of zombies for necromancer (mwah)
@@ -4063,4 +4063,44 @@ Legion now starts hostile to southern cities (mwah)
 Fixes infinite loading screen with nomad zombies (mwah)
 spearwaller  reduces AP by 25% rather than setting to 3 (salty)
 Heavy trait precludes light (salty)
+<<<<<<< HEAD
 >>>>>>> 891489a51fadcc835662e80bba6a9aae65fea065
+=======
+
+
+15.0.0.12
+
+Updates to BB 1.4.0.43
+
+**Fixes**
+Bandit Warlords can have named helmets again (typo where helmets were accidentally treated as body armor)
+Drums of Life changes: Can't heal people above max HP, now always heals people below max HP, doesn't rely on people being fatigued.
+Hopefully fixes bleeding issue for dead brothers (mwah)
+High Tier Zombie from Necromancer skill spawns with armor now
+Spelling/grammer fixes
+Weiderganger favored enemy now signifies Fallen Heroes rather than Weiderganger Champion
+Player character can't be selected for the lawmen after a criminal event
+Second wind can only proc in batte now instead of out of battle
+Demon Alp AI tweak to not just crash
+Fixes problem with upgraded gatherer's tent
+You don't have a higher chance of dying when you have high chance of surviving with injury. (Big thanks to Surrealistik)
+Fixes rare healer building bug that didn't cause crashes
+Should fix repairs not working in town
+Should fix transform effects crashing on combat end
+Fixes Seer's aoe fire skill causing AI freezes
+Fixes cart upgrade on reload
+Fixes sticks not dropping from harvest wood skill
+Fixes harvest tree not being able to chop sticks
+Knights no longer have the 30 durability feathered hat and actually have their normal hemlets back
+Fixes wolfspane check on arborthropy injuries
+
+**Background changes**
+Southern Assassin get new Dynamic perk tree. Adds scout modifiers
+Belly Dancer: Get Barter modifiers
+Gladiator: Get Ammo, ArmorPars, Meds, Training modifiers
+Manhunter: Get Barter and Injury modifiers
+Nomad: Gets new Dynamic perk tree. Adds Ammo and Scout and Terrain movement modifiers.
+
+
+
+>>>>>>> 29f8ec5ea8a7090eb540291408291f519afdd757

@@ -105,6 +105,7 @@ this.legend_firefield_skill <- this.inherit("scripts/skills/skill", {
 		local p = {
 			Type = "legend_firefield",
 			Tooltip = "Fire lingers here, burning all who enter",
+			IsPositive = false,
 			IsAppliedAtRoundStart = false,
 			IsAppliedAtTurnEnd = true,
 			IsAppliedOnMovement = false,
