@@ -241,7 +241,8 @@ gt.Const.AI <- {
 			Explode = 82,
 			MoveToMerge = 83,
 			Howl = 84,
-			COUNT = 85
+			SpawnShadow = 85,
+			COUNT = 86
 		},
 		Name = [
 			"None",
@@ -328,7 +329,8 @@ gt.Const.AI <- {
 			"Wither",
 			"Explode",
 			"MoveToMerge",
-			"Howl"
+			"Howl",
+			"SpawnShadow"
 		],
 		Order = {
 			Retreat = 2,
@@ -391,6 +393,7 @@ gt.Const.AI <- {
 			Hex = 39,
 			Teleport = 39,
 			Explode = 39,
+			SpawnShadow = 39,
 			SwallowWhole = 50,
 			Terror = 50,
 			Howl = 50,
@@ -494,6 +497,7 @@ gt.Const.AI <- {
 			Retreat = 2000,
 			Protect = 2000,
 			Drag = 2000,
+			SpawnShadow = 2000,
 			Teleport = 4000,
 			AlwaysUse = 4000,
 			Merge = 4000,
@@ -1016,4 +1020,3 @@ gt.Const.AI <- {
 		MoveToMergeMaxAttempts = 32
 	}
 };
-
