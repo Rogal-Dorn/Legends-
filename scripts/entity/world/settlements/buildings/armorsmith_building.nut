@@ -490,46 +490,92 @@ this.armorsmith_building <- this.inherit("scripts/entity/world/settlements/build
 				P = 1.0,
 				S = "misc/paint_white_green_yellow_item"
 			});
-			list.push({
-				R = 85,
-				P = 1.25,
-				S = "armor_upgrades/metal_plating_upgrade"
-			});
-			list.push({
-				R = 85,
-				P = 1.25,
-				S = "armor_upgrades/metal_pauldrons_upgrade"
-			});
-			list.push({
-				R = 85,
-				P = 1.25,
-				S = "armor_upgrades/mail_patch_upgrade"
-			});
-			list.push({
-				R = 85,
-				P = 1.25,
-				S = "armor_upgrades/leather_shoulderguards_upgrade"
-			});
-			list.push({
-				R = 85,
-				P = 1.25,
-				S = "armor_upgrades/leather_neckguard_upgrade"
-			});
-			list.push({
-				R = 85,
-				P = 1.25,
-				S = "armor_upgrades/joint_cover_upgrade"
-			});
-			list.push({
-				R = 85,
-				P = 1.25,
-				S = "armor_upgrades/heraldic_plates_upgrade"
-			});
-			list.push({
-				R = 85,
-				P = 1.25,
-				S = "armor_upgrades/double_mail_upgrade"
-			});
+			if (!this.World.LegendsMod.Configs().LegendArmorsEnabled())
+			{
+				list.push({
+					R = 85,
+					P = 1.25,
+					S = "armor_upgrades/metal_plating_upgrade"
+				});
+				list.push({
+					R = 85,
+					P = 1.25,
+					S = "armor_upgrades/metal_pauldrons_upgrade"
+				});
+				list.push({
+					R = 85,
+					P = 1.25,
+					S = "armor_upgrades/mail_patch_upgrade"
+				});
+				list.push({
+					R = 85,
+					P = 1.25,
+					S = "armor_upgrades/leather_shoulderguards_upgrade"
+				});
+				list.push({
+					R = 85,
+					P = 1.25,
+					S = "armor_upgrades/leather_neckguard_upgrade"
+				});
+				list.push({
+					R = 85,
+					P = 1.25,
+					S = "armor_upgrades/joint_cover_upgrade"
+				});
+				list.push({
+					R = 85,
+					P = 1.25,
+					S = "armor_upgrades/heraldic_plates_upgrade"
+				});
+				list.push({
+					R = 85,
+					P = 1.25,
+					S = "armor_upgrades/double_mail_upgrade"
+				});
+			}
+			else
+			{
+				list.push({
+					R = 85,
+					P = 1.25,
+					S = "legend_armor/armor_upgrades/legend_metal_plating_upgrade"
+				});
+				list.push({
+					R = 85,
+					P = 1.25,
+					S = "legend_armor/armor_upgrades/legend_metal_pauldrons_upgrade"
+				});
+				list.push({
+					R = 85,
+					P = 1.25,
+					S = "legend_armor/armor_upgrades/legend_mail_patch_upgrade"
+				});
+				list.push({
+					R = 85,
+					P = 1.25,
+					S = "legend_armor/armor_upgrades/legend_leather_shoulderguards_upgrade"
+				});
+				list.push({
+					R = 85,
+					P = 1.25,
+					S = "legend_armor/armor_upgrades/legend_leather_neckguard_upgrade"
+				});
+				list.push({
+					R = 85,
+					P = 1.25,
+					S = "legend_armor/armor_upgrades/legend_joint_cover_upgrade"
+				});
+				list.push({
+					R = 85,
+					P = 1.25,
+					S = "legend_armor/armor_upgrades/legend_heraldic_plates_upgrade"
+				});
+				list.push({
+					R = 85,
+					P = 1.25,
+					S = "legend_armor/armor_upgrades/legend_double_mail_upgrade"
+				});
+			}
 		}
 
 		if (this.Const.DLC.Wildmen && this.m.Settlement.getTile().SquareCoords.Y > this.World.getMapSize().Y * 0.7)
