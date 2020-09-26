@@ -4050,3 +4050,5 @@ Fixes vanilla armor attatchments (e.g. leather shoulderguards) from spawning wit
 More fixes to demon alp ai
 Should prevent the buckler bandits from freezing the game (Massive thanks to Proman)
 Removes bear form from berserker
+Should fix end of combat wardog causing freezes
+Fixes shoot stake error
