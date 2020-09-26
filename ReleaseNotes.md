@@ -4042,3 +4042,7 @@ Nomad: Gets new Dynamic perk tree. Adds Ammo and Scout and Terrain movement modi
 
 
 
+15.0.0.13
+
+**Fixes**
+Fixes serpent skin armor upgrade
