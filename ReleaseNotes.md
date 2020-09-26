@@ -4046,3 +4046,4 @@ Nomad: Gets new Dynamic perk tree. Adds Ammo and Scout and Terrain movement modi
 
 **Fixes**
 Fixes serpent skin armor upgrade
+Fixes vanilla armor attatchments (e.g. leather shoulderguards) from spawning with armor layer system on
