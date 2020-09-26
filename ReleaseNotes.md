@@ -4049,3 +4049,4 @@ Fixes serpent skin armor upgrade
 Fixes vanilla armor attatchments (e.g. leather shoulderguards) from spawning with armor layer system on
 More fixes to demon alp ai
 Should prevent the buckler bandits from freezing the game (Massive thanks to Proman)
+Removes bear form from berserker
