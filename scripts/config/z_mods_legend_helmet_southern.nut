@@ -1,3 +1,4 @@
+
 local gt = this.getroottable();
 
 if (!("LegendMod" in gt.Const))
@@ -35,7 +36,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "hood/legend_helmet_chain_hood"], //80
         [0, "hood/legend_helmet_chain_hood_full"], //90
         [0, "hood/legend_helmet_bronze_chain"], //100
-		[1, "hood/legend_helmet_southern_niqaab"], //100
+		[1, "hood/legend_helmet_southern_niqaab"] //100
     ],
     Helms = [
         [0, "helm/legend_helmet_ancient_conic_helm"], //15
@@ -85,7 +86,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "helm/legend_helmet_swan_helm"], //230
         [0, "helm/legend_helmet_skin_helm"], //190
         [0, "helm/legend_helmet_rotten_flat_top_face_mask"], //150
-        [0, "helm/legend_helmet_rotten_great_helm"], //160
+        [0, "helm/legend_helmet_rotten_great_helm"] //160
     ],
     Tops = [
         [0, "top/legend_helmet_orc_leather_mask"], //35
@@ -126,7 +127,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "top/legend_helmet_faceplate_raised"], //55
         [0, "top/legend_helmet_faceplate_full_01_named"], //110
         [0, "top/legend_helmet_golden_mask"], //100
-        [0, "top/legend_helmet_warlock_skull"], //90
+        [0, "top/legend_helmet_warlock_skull"] //90
     ],
     Vanity = [
         [0, "vanity/legend_helmet_hood_cloth_square"], //30
@@ -180,7 +181,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "vanity_lower/legend_helmet_knotted_tail"], //10
         [0, "vanity_lower/legend_helmet_orc_tail"], //10
         [0, "vanity_lower/legend_helmet_top_plume"], //10
-        [0, "vanity_lower/legend_helmet_wings"], //10
+        [0, "vanity_lower/legend_helmet_wings"] //10
     ]
 }]
 },{
@@ -257,7 +258,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "helm/legend_helmet_swan_helm"], //230
         [0, "helm/legend_helmet_skin_helm"], //190
         [0, "helm/legend_helmet_rotten_flat_top_face_mask"], //150
-        [0, "helm/legend_helmet_rotten_great_helm"], //160
+        [0, "helm/legend_helmet_rotten_great_helm"] //160
     ],
     Tops = [
         [0, "top/legend_helmet_orc_leather_mask"], //35
@@ -297,7 +298,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "top/legend_helmet_faceplate_raised"], //55
         [0, "top/legend_helmet_faceplate_full_01_named"], //110
         [0, "top/legend_helmet_golden_mask"], //100
-        [0, "top/legend_helmet_warlock_skull"], //90
+        [0, "top/legend_helmet_warlock_skull"] //90
     ],
     Vanity = [
         [0, "vanity/legend_helmet_hood_cloth_square"], //30
@@ -351,7 +352,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "vanity_lower/legend_helmet_knotted_tail"], //10
         [0, "vanity_lower/legend_helmet_orc_tail"], //10
         [0, "vanity_lower/legend_helmet_top_plume"], //10
-        [0, "vanity_lower/legend_helmet_wings"], //10
+        [0, "vanity_lower/legend_helmet_wings"] //10
     ]
 }]
 },{
@@ -428,7 +429,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "helm/legend_helmet_swan_helm"], //230
         [0, "helm/legend_helmet_skin_helm"], //190
         [0, "helm/legend_helmet_rotten_flat_top_face_mask"], //150
-        [0, "helm/legend_helmet_rotten_great_helm"], //160
+        [0, "helm/legend_helmet_rotten_great_helm"] //160
     ],
     Tops = [
         [0, "top/legend_helmet_orc_leather_mask"], //35
@@ -468,7 +469,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "top/legend_helmet_faceplate_raised"], //55
         [0, "top/legend_helmet_faceplate_full_01_named"], //110
         [0, "top/legend_helmet_golden_mask"], //100
-        [0, "top/legend_helmet_warlock_skull"], //90
+        [0, "top/legend_helmet_warlock_skull"] //90
     ],
     Vanity = [
         [0, "vanity/legend_helmet_hood_cloth_square"], //30
@@ -522,7 +523,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "vanity_lower/legend_helmet_knotted_tail"], //10
         [0, "vanity_lower/legend_helmet_orc_tail"], //10
         [0, "vanity_lower/legend_helmet_top_plume"], //10
-        [0, "vanity_lower/legend_helmet_wings"], //10
+        [0, "vanity_lower/legend_helmet_wings"] //10
     ]
 }]
 },{
@@ -599,7 +600,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "helm/legend_helmet_swan_helm"], //230
         [0, "helm/legend_helmet_skin_helm"], //190
         [0, "helm/legend_helmet_rotten_flat_top_face_mask"], //150
-        [0, "helm/legend_helmet_rotten_great_helm"], //160
+        [0, "helm/legend_helmet_rotten_great_helm"] //160
     ],
     Tops = [
         [0, "top/legend_helmet_orc_leather_mask"], //35
@@ -639,7 +640,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "top/legend_helmet_faceplate_raised"], //55
         [0, "top/legend_helmet_faceplate_full_01_named"], //110
         [0, "top/legend_helmet_golden_mask"], //100
-        [0, "top/legend_helmet_warlock_skull"], //90
+        [0, "top/legend_helmet_warlock_skull"] //90
     ],
     Vanity = [
         [0, "vanity/legend_helmet_hood_cloth_square"], //30
@@ -693,7 +694,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "vanity_lower/legend_helmet_knotted_tail"], //10
         [0, "vanity_lower/legend_helmet_orc_tail"], //10
         [0, "vanity_lower/legend_helmet_top_plume"], //10
-        [0, "vanity_lower/legend_helmet_wings"], //10
+        [0, "vanity_lower/legend_helmet_wings"] //10
     ]
 }]
 },{
@@ -771,7 +772,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "helm/legend_helmet_swan_helm"], //230
         [0, "helm/legend_helmet_skin_helm"], //190
         [0, "helm/legend_helmet_rotten_flat_top_face_mask"], //150
-        [0, "helm/legend_helmet_rotten_great_helm"], //160
+        [0, "helm/legend_helmet_rotten_great_helm"] //160
     ],
     Tops = [
         [0, "top/legend_helmet_orc_leather_mask"], //35
@@ -811,7 +812,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "top/legend_helmet_faceplate_raised"], //55
         [0, "top/legend_helmet_faceplate_full_01_named"], //110
         [0, "top/legend_helmet_golden_mask"], //100
-        [0, "top/legend_helmet_warlock_skull"], //90
+        [0, "top/legend_helmet_warlock_skull"] //90
     ],
     Vanity = [
         [0, "vanity/legend_helmet_hood_cloth_square"], //30
@@ -865,7 +866,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "vanity_lower/legend_helmet_knotted_tail"], //10
         [0, "vanity_lower/legend_helmet_orc_tail"], //10
         [0, "vanity_lower/legend_helmet_top_plume"], //10
-        [0, "vanity_lower/legend_helmet_wings"], //10
+        [0, "vanity_lower/legend_helmet_wings"] //10
     ]
 }]
 },{
@@ -945,7 +946,7 @@ gt.Const.LegendMod.HelmObjs.extend([
 		[1, "helm/legend_helmet_southern_gladiator_helm_split"], //130
 		[1, "helm/legend_helmet_southern_gladiator_helm_masked"], //130
         [0, "helm/legend_helmet_rotten_flat_top_face_mask"], //150
-        [0, "helm/legend_helmet_rotten_great_helm"], //160
+        [0, "helm/legend_helmet_rotten_great_helm"] //160
     ],
     Tops = [
         [0, "top/legend_helmet_orc_leather_mask"], //35
@@ -985,7 +986,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "top/legend_helmet_faceplate_raised"], //55
         [0, "top/legend_helmet_faceplate_full_01_named"], //110
         [0, "top/legend_helmet_golden_mask"], //100
-        [0, "top/legend_helmet_warlock_skull"], //90
+        [0, "top/legend_helmet_warlock_skull"] //90
     ],
     Vanity = [
         [0, "vanity/legend_helmet_hood_cloth_square"], //30
@@ -1038,7 +1039,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "vanity_lower/legend_helmet_knotted_tail"], //10
         [0, "vanity_lower/legend_helmet_orc_tail"], //10
         [0, "vanity_lower/legend_helmet_top_plume"], //10
-        [0, "vanity_lower/legend_helmet_wings"], //10
+        [0, "vanity_lower/legend_helmet_wings"] //10
     ]
 }]
 },{
@@ -1115,7 +1116,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "helm/legend_helmet_swan_helm"], //230
         [0, "helm/legend_helmet_skin_helm"], //190
         [0, "helm/legend_helmet_rotten_flat_top_face_mask"], //150
-        [0, "helm/legend_helmet_rotten_great_helm"], //160
+        [0, "helm/legend_helmet_rotten_great_helm"] //160
     ],
     Tops = [
         [0, "top/legend_helmet_orc_leather_mask"], //35
@@ -1155,7 +1156,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "top/legend_helmet_faceplate_raised"], //55
         [0, "top/legend_helmet_faceplate_full_01_named"], //110
         [0, "top/legend_helmet_golden_mask"], //100
-        [0, "top/legend_helmet_warlock_skull"], //90
+        [0, "top/legend_helmet_warlock_skull"] //90
     ],
     Vanity = [
         [0, "vanity/legend_helmet_hood_cloth_square"], //30
@@ -1209,7 +1210,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "vanity_lower/legend_helmet_knotted_tail"], //10
         [0, "vanity_lower/legend_helmet_orc_tail"], //10
         [0, "vanity_lower/legend_helmet_top_plume"], //10
-        [0, "vanity_lower/legend_helmet_wings"], //10
+        [0, "vanity_lower/legend_helmet_wings"] //10
     ]
 }]
 },{
@@ -1287,7 +1288,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "helm/legend_helmet_swan_helm"], //230
         [0, "helm/legend_helmet_skin_helm"], //190
         [0, "helm/legend_helmet_rotten_flat_top_face_mask"], //150
-        [0, "helm/legend_helmet_rotten_great_helm"], //160
+        [0, "helm/legend_helmet_rotten_great_helm"] //160
     ],
     Tops = [
         [0, "top/legend_helmet_orc_leather_mask"], //35
@@ -1327,7 +1328,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "top/legend_helmet_faceplate_raised"], //55
         [0, "top/legend_helmet_faceplate_full_01_named"], //110
         [0, "top/legend_helmet_golden_mask"], //100
-        [0, "top/legend_helmet_warlock_skull"], //90
+        [0, "top/legend_helmet_warlock_skull"] //90
     ],
     Vanity = [
 		[1, ""], //30
@@ -1382,7 +1383,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "vanity_lower/legend_helmet_knotted_tail"], //10
         [0, "vanity_lower/legend_helmet_orc_tail"], //10
         [0, "vanity_lower/legend_helmet_top_plume"], //10
-        [0, "vanity_lower/legend_helmet_wings"], //10
+        [0, "vanity_lower/legend_helmet_wings"] //10
     ]
 }]
 },{
@@ -1460,7 +1461,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "helm/legend_helmet_swan_helm"], //230
         [0, "helm/legend_helmet_skin_helm"], //190
         [0, "helm/legend_helmet_rotten_flat_top_face_mask"], //150
-        [0, "helm/legend_helmet_rotten_great_helm"], //160
+        [0, "helm/legend_helmet_rotten_great_helm"] //160
     ],
     Tops = [
         [0, "top/legend_helmet_orc_leather_mask"], //35
@@ -1501,7 +1502,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "top/legend_helmet_faceplate_raised"], //55
         [0, "top/legend_helmet_faceplate_full_01_named"], //110
         [0, "top/legend_helmet_golden_mask"], //100
-        [0, "top/legend_helmet_warlock_skull"], //90
+        [0, "top/legend_helmet_warlock_skull"] //90
     ],
     Vanity = [
         [0, "vanity/legend_helmet_hood_cloth_square"], //30
@@ -1556,7 +1557,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "vanity_lower/legend_helmet_knotted_tail"], //10
         [0, "vanity_lower/legend_helmet_orc_tail"], //10
         [0, "vanity_lower/legend_helmet_top_plume"], //10
-        [0, "vanity_lower/legend_helmet_wings"], //10
+        [0, "vanity_lower/legend_helmet_wings"] //10
     ]
 }]
 },{
@@ -1583,7 +1584,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "hood/legend_helmet_chain_hood"], //80
         [0, "hood/legend_helmet_chain_hood_full"], //90
         [0, "hood/legend_helmet_bronze_chain"], //100
-		[1, "hood/legend_helmet_southern_turban_light_hood"], //100
+		[1, "hood/legend_helmet_southern_turban_light_hood"] //100
     ],
     Helms = [
         [0, "helm/legend_helmet_ancient_conic_helm"], //15
@@ -1633,7 +1634,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "helm/legend_helmet_swan_helm"], //230
         [0, "helm/legend_helmet_skin_helm"], //190
         [0, "helm/legend_helmet_rotten_flat_top_face_mask"], //150
-        [0, "helm/legend_helmet_rotten_great_helm"], //160
+        [0, "helm/legend_helmet_rotten_great_helm"] //160
     ],
     Tops = [
         [0, "top/legend_helmet_orc_leather_mask"], //35
@@ -1673,7 +1674,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "top/legend_helmet_faceplate_raised"], //55
         [0, "top/legend_helmet_faceplate_full_01_named"], //110
         [0, "top/legend_helmet_golden_mask"], //100
-        [0, "top/legend_helmet_warlock_skull"], //90
+        [0, "top/legend_helmet_warlock_skull"] //90
     ],
     Vanity = [
         [0, "vanity/legend_helmet_hood_cloth_square"], //30
@@ -1727,7 +1728,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "vanity_lower/legend_helmet_knotted_tail"], //10
         [0, "vanity_lower/legend_helmet_orc_tail"], //10
         [0, "vanity_lower/legend_helmet_top_plume"], //10
-        [0, "vanity_lower/legend_helmet_wings"], //10
+        [0, "vanity_lower/legend_helmet_wings"] //10
     ]
 }]
 },{
@@ -1804,7 +1805,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "helm/legend_helmet_swan_helm"], //230
         [0, "helm/legend_helmet_skin_helm"], //190
         [0, "helm/legend_helmet_rotten_flat_top_face_mask"], //150
-        [0, "helm/legend_helmet_rotten_great_helm"], //160
+        [0, "helm/legend_helmet_rotten_great_helm"] //160
     ],
     Tops = [
         [0, "top/legend_helmet_orc_leather_mask"], //35
@@ -1844,7 +1845,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "top/legend_helmet_faceplate_raised"], //55
         [0, "top/legend_helmet_faceplate_full_01_named"], //110
         [0, "top/legend_helmet_golden_mask"], //100
-        [0, "top/legend_helmet_warlock_skull"], //90
+        [0, "top/legend_helmet_warlock_skull"] //90
     ],
     Vanity = [
         [0, "vanity/legend_helmet_hood_cloth_square"], //30
@@ -1900,7 +1901,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "vanity_lower/legend_helmet_wings"], //10
         [1, "vanity/legend_helmet_headband"], //10
 		[4, "vanity/legend_helmet_southern_headband"], //15
-		[15, "vanity/legend_helmet_southern_patterned_headband"], //15
+		[15, "vanity/legend_helmet_southern_patterned_headband"] //15
     ]
 }]
 },{
@@ -1928,7 +1929,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "hood/legend_helmet_chain_hood_full"], //90
         [0, "hood/legend_helmet_bronze_chain"], //100
 		[1, "hood/legend_helmet_southern_cap"], //100
-		[3, "hood/legend_helmet_southern_turban_light_hood"], //100
+		[3, "hood/legend_helmet_southern_turban_light_hood"] //100
 		
     ],
     Helms = [
@@ -1981,7 +1982,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "helm/legend_helmet_rotten_flat_top_face_mask"], //150
         [0, "helm/legend_helmet_rotten_great_helm"], //160
 		[5, "helm/legend_helmet_southern_cap_smooth"], //160
-		[1, "helm/legend_helmet_southern_cap_spiked"], //160
+		[1, "helm/legend_helmet_southern_cap_spiked"] //160
 
     ],
     Tops = [
@@ -2022,7 +2023,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "top/legend_helmet_faceplate_raised"], //55
         [0, "top/legend_helmet_faceplate_full_01_named"], //110
         [0, "top/legend_helmet_golden_mask"], //100
-        [0, "top/legend_helmet_warlock_skull"], //90
+        [0, "top/legend_helmet_warlock_skull"] //90
     ],
     Vanity = [
         [0, "vanity/legend_helmet_hood_cloth_square"], //30
@@ -2075,7 +2076,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "vanity_lower/legend_helmet_orc_tail"], //10
         [0, "vanity_lower/legend_helmet_top_plume"], //10
         [0, "vanity_lower/legend_helmet_wings"], //10
-		[1, "vanity/legend_helmet_southern_turban_full"], //10
+		[1, "vanity/legend_helmet_southern_turban_full"] //10
 
     ]
 }]
@@ -2103,7 +2104,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "hood/legend_helmet_chain_hood"], //80
         [0, "hood/legend_helmet_chain_hood_full"], //90
         [0, "hood/legend_helmet_bronze_chain"], //100
-		[1, "hood/legend_helmet_southern_open_chain_hood"], //65
+		[1, "hood/legend_helmet_southern_open_chain_hood"] //65
     ],
     Helms = [
         [0, "helm/legend_helmet_ancient_conic_helm"], //15
@@ -2154,7 +2155,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "helm/legend_helmet_skin_helm"], //190
         [0, "helm/legend_helmet_rotten_flat_top_face_mask"], //150
         [0, "helm/legend_helmet_rotten_great_helm"], //160
-		[0, "helm/legend_helmet_southern_conic_helm"], //170
+		[0, "helm/legend_helmet_southern_conic_helm"] //170
     ],
     Tops = [
         [0, "top/legend_helmet_orc_leather_mask"], //35
@@ -2194,7 +2195,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "top/legend_helmet_faceplate_raised"], //55
         [0, "top/legend_helmet_faceplate_full_01_named"], //110
         [0, "top/legend_helmet_golden_mask"], //100
-        [0, "top/legend_helmet_warlock_skull"], //90
+        [0, "top/legend_helmet_warlock_skull"] //90
     ],
     Vanity = [
         [0, "vanity/legend_helmet_hood_cloth_square"], //30
@@ -2326,7 +2327,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "helm/legend_helmet_swan_helm"], //230
         [0, "helm/legend_helmet_skin_helm"], //190
         [0, "helm/legend_helmet_rotten_flat_top_face_mask"], //150
-        [0, "helm/legend_helmet_rotten_great_helm"], //160
+        [0, "helm/legend_helmet_rotten_great_helm"] //160
     ],
     Tops = [
         [0, "top/legend_helmet_orc_leather_mask"], //35
@@ -2366,7 +2367,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "top/legend_helmet_faceplate_raised"], //55
         [0, "top/legend_helmet_faceplate_full_01_named"], //110
         [0, "top/legend_helmet_golden_mask"], //100
-        [0, "top/legend_helmet_warlock_skull"], //90
+        [0, "top/legend_helmet_warlock_skull"] //90
     ],
     Vanity = [
         [0, "vanity/legend_helmet_hood_cloth_square"], //30
@@ -2420,7 +2421,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "vanity_lower/legend_helmet_orc_tail"], //10
         [0, "vanity_lower/legend_helmet_top_plume"], //10
         [0, "vanity_lower/legend_helmet_wings"], //10
-		[1, "vanity_lower/legend_helmet_southern_turban_feather"], //10
+		[1, "vanity_lower/legend_helmet_southern_turban_feather"] //10
     ]
 }]
 },{
@@ -2447,7 +2448,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "hood/legend_helmet_chain_hood"], //80
         [0, "hood/legend_helmet_chain_hood_full"], //90
         [0, "hood/legend_helmet_bronze_chain"], //100
-		[1, "hood/legend_helmet_southern_open_chain_hood"], //6
+		[1, "hood/legend_helmet_southern_open_chain_hood"] //6
     ],
     Helms = [
         [0, "helm/legend_helmet_ancient_conic_helm"], //15
@@ -2498,7 +2499,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "helm/legend_helmet_skin_helm"], //190
         [0, "helm/legend_helmet_rotten_flat_top_face_mask"], //150
         [0, "helm/legend_helmet_rotten_great_helm"], //160
-		[1, "helm/legend_helmet_southern_peaked_helm"], //170
+		[1, "helm/legend_helmet_southern_peaked_helm"] //170
     ],
     Tops = [
         [0, "top/legend_helmet_orc_leather_mask"], //35
@@ -2538,7 +2539,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "top/legend_helmet_faceplate_raised"], //55
         [0, "top/legend_helmet_faceplate_full_01_named"], //110
         [0, "top/legend_helmet_golden_mask"], //100
-        [0, "top/legend_helmet_warlock_skull"], //90
+        [0, "top/legend_helmet_warlock_skull"] //90
     ],
     Vanity = [
         [0, "vanity/legend_helmet_hood_cloth_square"], //30
@@ -2591,7 +2592,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "vanity_lower/legend_helmet_knotted_tail"], //10
         [0, "vanity_lower/legend_helmet_orc_tail"], //10
         [0, "vanity_lower/legend_helmet_top_plume"], //10
-        [0, "vanity_lower/legend_helmet_wings"], //10
+        [0, "vanity_lower/legend_helmet_wings"] //10
     ]
 }]
 },{
@@ -2618,7 +2619,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "hood/legend_helmet_chain_hood"], //80
         [0, "hood/legend_helmet_chain_hood_full"], //90
         [0, "hood/legend_helmet_bronze_chain"], //100
-		[1, "hood/legend_helmet_southern_open_chain_hood"], //6
+		[1, "hood/legend_helmet_southern_open_chain_hood"] //6
     ],
     Helms = [
         [0, "helm/legend_helmet_ancient_conic_helm"], //15
@@ -2670,7 +2671,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "helm/legend_helmet_rotten_flat_top_face_mask"], //150
         [0, "helm/legend_helmet_rotten_great_helm"], //160
 		[1, "helm/legend_helmet_southern_cap_smooth"], //160
-		[5, "helm/legend_helmet_southern_cap_spiked"], //160
+		[5, "helm/legend_helmet_southern_cap_spiked"] //160
     ],
     Tops = [
         [0, "top/legend_helmet_orc_leather_mask"], //35
@@ -2710,7 +2711,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "top/legend_helmet_faceplate_raised"], //55
         [0, "top/legend_helmet_faceplate_full_01_named"], //110
         [0, "top/legend_helmet_golden_mask"], //100
-        [0, "top/legend_helmet_warlock_skull"], //90
+        [0, "top/legend_helmet_warlock_skull"] //90
     ],
     Vanity = [
         [0, "vanity/legend_helmet_hood_cloth_square"], //30
@@ -2763,7 +2764,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "vanity_lower/legend_helmet_knotted_tail"], //10
         [0, "vanity_lower/legend_helmet_orc_tail"], //10
         [0, "vanity_lower/legend_helmet_top_plume"], //10
-        [0, "vanity_lower/legend_helmet_wings"], //10
+        [0, "vanity_lower/legend_helmet_wings"] //10
     ]
 }]
 },{
@@ -2840,7 +2841,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "helm/legend_helmet_skin_helm"], //190
         [0, "helm/legend_helmet_rotten_flat_top_face_mask"], //150
         [0, "helm/legend_helmet_rotten_great_helm"], //160
-		[1, "helm/legend_helmet_southern_peaked_nasal_helm"], //160
+		[1, "helm/legend_helmet_southern_peaked_nasal_helm"] //160
     ],
     Tops = [
         [0, "top/legend_helmet_orc_leather_mask"], //35
@@ -2880,7 +2881,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "top/legend_helmet_faceplate_raised"], //55
         [0, "top/legend_helmet_faceplate_full_01_named"], //110
         [0, "top/legend_helmet_golden_mask"], //100
-        [0, "top/legend_helmet_warlock_skull"], //90
+        [0, "top/legend_helmet_warlock_skull"] //90
     ],
     Vanity = [
         [0, "vanity/legend_helmet_hood_cloth_square"], //30
@@ -2933,7 +2934,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "vanity_lower/legend_helmet_knotted_tail"], //10
         [0, "vanity_lower/legend_helmet_orc_tail"], //10
         [0, "vanity_lower/legend_helmet_top_plume"], //10
-        [0, "vanity_lower/legend_helmet_wings"], //10
+        [0, "vanity_lower/legend_helmet_wings"] //10
     ]
 }]
 },{
@@ -2961,7 +2962,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "hood/legend_helmet_chain_hood_full"], //90
         [0, "hood/legend_helmet_bronze_chain"], //100
 		[3, "hood/legend_helmet_southern_niqaab"], //100
-		[1, "hood/legend_helmet_southern_turban_light_hood"], //100
+		[1, "hood/legend_helmet_southern_turban_light_hood"] //100
     ],
     Helms = [
         [0, "helm/legend_helmet_ancient_conic_helm"], //15
@@ -3011,7 +3012,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "helm/legend_helmet_swan_helm"], //230
         [0, "helm/legend_helmet_skin_helm"], //190
         [0, "helm/legend_helmet_rotten_flat_top_face_mask"], //150
-        [0, "helm/legend_helmet_rotten_great_helm"], //160
+        [0, "helm/legend_helmet_rotten_great_helm"] //160
     ],
     Tops = [
         [0, "top/legend_helmet_orc_leather_mask"], //35
@@ -3051,7 +3052,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "top/legend_helmet_faceplate_raised"], //55
         [0, "top/legend_helmet_faceplate_full_01_named"], //110
         [0, "top/legend_helmet_golden_mask"], //100
-        [0, "top/legend_helmet_warlock_skull"], //90
+        [0, "top/legend_helmet_warlock_skull"] //90
     ],
     Vanity = [
         [0, "vanity/legend_helmet_hood_cloth_square"], //30
@@ -3107,7 +3108,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "vanity_lower/legend_helmet_wings"], //10
 		[1, "vanity/legend_helmet_southern_noble_crown"], //10
 		[1, "vanity/legend_helmet_southern_noble_hat"], //10
-		[1, "vanity/legend_helmet_southern_noble_turban"], //10
+		[1, "vanity/legend_helmet_southern_noble_turban"] //10
     ]
 }]
 },{
@@ -3185,7 +3186,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "helm/legend_helmet_rotten_flat_top_face_mask"], //150
         [0, "helm/legend_helmet_rotten_great_helm"], //160
 		[5, "helm/legend_helmet_southern_cap_smooth"], //160
-		[1, "helm/legend_helmet_southern_cap_spiked"], //160
+		[1, "helm/legend_helmet_southern_cap_spiked"] //160
     ],
     Tops = [
         [0, "top/legend_helmet_orc_leather_mask"], //35
@@ -3225,7 +3226,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "top/legend_helmet_faceplate_raised"], //55
         [0, "top/legend_helmet_faceplate_full_01_named"], //110
         [0, "top/legend_helmet_golden_mask"], //100
-        [0, "top/legend_helmet_warlock_skull"], //90
+        [0, "top/legend_helmet_warlock_skull"] //90
     ],
     Vanity = [
         [0, "vanity/legend_helmet_hood_cloth_square"], //30
@@ -3278,7 +3279,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "vanity_lower/legend_helmet_knotted_tail"], //10
         [0, "vanity_lower/legend_helmet_orc_tail"], //10
         [0, "vanity_lower/legend_helmet_top_plume"], //10
-        [0, "vanity_lower/legend_helmet_wings"], //10
+        [0, "vanity_lower/legend_helmet_wings"] //10
     ]
 }]
 }])

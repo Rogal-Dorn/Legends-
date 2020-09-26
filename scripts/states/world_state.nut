@@ -1656,6 +1656,8 @@ this.world_state <- this.inherit("scripts/states/state", {
 
 			foreach( party in this.m.PartiesInCombat )
 			{
+				local partyNameOnCrash = party.getName();
+				local partyIDOnCrash = party.getID();
 				if (party.isLocation() && !party.isAlliedWithPlayer())
 				{
 					nonLocationBattle = false;
@@ -2360,7 +2362,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 		{
 			foreach( t in _properties.Entities )
 			{
-				if (!hasOpponents && !this.World.FactionManager.isAlliedWithPlayer(t.Faction))
+				if (!hasOpponents && (!this.World.FactionManager.isAlliedWithPlayer(t.Faction) || _properties.TemporaryEnemies.find(t.Faction) != null))
 				{
 					hasOpponents = true;
 				}

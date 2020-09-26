@@ -33,7 +33,7 @@ this.legend_arborthropy_injury <- this.inherit("scripts/skills/injury_permanent/
 			}
 		];
 		this.addTooltipHint(ret);
-		
+
 		if (month == monthfloor)
 		{
 			ret.push({
@@ -42,8 +42,8 @@ this.legend_arborthropy_injury <- this.inherit("scripts/skills/injury_permanent/
 				icon = "ui/icons/special.png",
 				text = "it is currently a full moon, the transformation will happen during any battle today"
 			});
-		}	
-		
+		}
+
 		return ret;
 	}
 
@@ -66,25 +66,25 @@ function onTurnStart()
 				local day = this.World.getTime().Days;
 				local month = day / 28;
 				local monthfloor = this.Math.floor(month);
-				
+
 				if (r == 1 && this.World.getTime().IsDaytime && month != monthfloor)
 				{
 
 					actor.getSkills().add(this.new("scripts/skills/effects/legend_transformed_tree_effect"));
 				}
-				
+
 				if (r <= 2 && !this.World.getTime().IsDaytime && month != monthfloor)
 				{
 
 					actor.getSkills().add(this.new("scripts/skills/effects/legend_transformed_tree_effect"));
-				}	
-				
-				if (month == monthfloor)	
+				}
+
+				if (month == monthfloor)
 				{
 
 					actor.getSkills().add(this.new("scripts/skills/effects/legend_transformed_tree_effect"));
 
-				}	
+				}
 			}
 			else
 			{

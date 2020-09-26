@@ -1001,25 +1001,34 @@ this.$name <- this.inherit("scripts/items/legend_armor/legend_armor_tabard", {
 });
 '''
 
-Layer = '<sprite id="$name" offsetY="35" ic="FF242D3A" width="104" height="142" img="$name_path" left="-44" right="50" top="-53" bottom="13" />\n'
-LayerDamaged = '<sprite id="$damaged" offsetY="35" ic="FF242C39" width="104" height="142" img="$damaged_path" left="-47" right="45" top="-64" bottom="14" />\n'
-LayerDead = '<sprite id="$dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="$dead_path" left="-57" right="59" top="-53" bottom="55" />\n'
-LayerArrow = '<sprite id="$arrow" offsetX="6" offsetY="10" f="64FB" ic="FF495055" width="131" height="114" img="$arrow_path" left="0" right="28" top="-8" bottom="30" />\n'
-LayerJavelin = '<sprite id="$javelin" offsetX="6" offsetY="10" f="64FB" ic="FF151C29" width="131" height="134" img="$javelin_path" left="-11" right="35" top="-5" bottom="67" />\n'
+Layer = '<sprite id="$name" offsetY="35" ic="$ic" width="104" height="142" img="$name_path" left="-44" right="50" top="-53" bottom="13" />\n'
+LayerDamaged = '<sprite id="$damaged" offsetY="35" ic="$ic" width="104" height="142" img="$damaged_path" left="-47" right="45" top="-64" bottom="14" />\n'
+LayerDead = '<sprite id="$dead" offsetX="6" offsetY="10" f="64FE" ic="$ic" width="131" height="125" img="$dead_path" left="-57" right="59" top="-53" bottom="55" />\n'
+LayerArrow = '<sprite id="$arrow" offsetX="6" offsetY="10" f="64FB" ic="$ic" width="131" height="114" img="$arrow_path" left="0" right="28" top="-8" bottom="30" />\n'
+LayerJavelin = '<sprite id="$javelin" offsetX="6" offsetY="10" f="64FB" ic="$ic" width="131" height="134" img="$javelin_path" left="-11" right="35" top="-5" bottom="67" />\n'
 
 
-MetaData = '''
-'''
 
+def makeSheet(num):
+    dirpath = os.path.join(os.path.dirname(os.path.abspath(__file__)), "unpacked", "legend_armor", "" + str(num))
+    if not os.path.exists(dirpath):
+        os.makedirs(dirpath)
+
+    filepath = os.path.join(dirpath, "metadata.xml")
+    F = open(filepath, "w")
+    F.write('<brush name="gfx/legend_armor_' + str(num) + '.png" version="17">\n')
+    return F
 
 def main():
 
     #Build Brushes
-    mfile = os.path.join(os.path.dirname(os.path.abspath(__file__)), "unpacked/legend_armor/metadata.xml")
-    Brush = open(mfile, "w")
-    Brush.write('<brush name="gfx/legend_armor.png" version="17">\n')
+    fileCount = 0
+    imageCount = 0
+    Brush = makeSheet(fileCount)
     L = [Layer, LayerDamaged, LayerDead]
     LBase = [Layer, LayerDamaged, LayerDead, LayerArrow, LayerJavelin]
+
+    IC = 4280560954
 
     #Build Nuts
     for d in layers:
@@ -1152,23 +1161,31 @@ def main():
         for t in R:
             for name in names:
                 name = "bust_" + name
+                IC += 1
                 opts = dict(
+                    ic=hex(IC).upper().lstrip('0X'),
                     name=name,
                     damaged=name + "_damaged",
                     dead=name + "_dead",
                     arrow=name + "_dead_arrows",
                     javelin=name + "_dead_javelin",
-                    name_path=os.path.join("entity", "legend_armor", name + ".png"),
-                    damaged_path=os.path.join("entity", "legend_armor", name + "_damaged.png"),
-                    dead_path=os.path.join("entity", "legend_armor", name + "_dead.png"),
-                    arrow_path=os.path.join("..",  "dead_arrows.png"),
-                    javelin_path=os.path.join("..", "dead_javelin.png")
+                    name_path=os.path.join("..", "entity", "legend_armor", name + ".png"),
+                    damaged_path=os.path.join("..", "entity", "legend_armor", name + "_damaged.png"),
+                    dead_path=os.path.join("..", "entity", "legend_armor", name + "_dead.png"),
+                    arrow_path=os.path.join("..", "..",  "dead_arrows.png"),
+                    javelin_path=os.path.join("..", "..", "dead_javelin.png")
                 )
                 s = Template(t)
                 text = s.substitute(opts)
                 text.replace("/", "\\")
                 Brush.write(text)
-
+                imageCount += 1
+                if (imageCount > 1000):
+                    Brush.write('</brush>\n')
+                    Brush.close()
+                    imageCount = 0
+                    fileCount += 1
+                    Brush = makeSheet(fileCount)
 
     for d in brush_only_layers:
         R = L
@@ -1196,25 +1213,33 @@ def main():
         for t in R:
             for name in names:
                 name = "bust_" + name
+                IC += 1
                 opts = dict(
+                    ic=hex(IC).upper().lstrip('0X'),
                     name=name,
                     damaged=name + "_damaged",
                     dead=name + "_dead",
                     arrow=name + "_dead_arrows",
                     javelin=name + "_dead_javelin",
-                    name_path=os.path.join("entity", "legend_armor", name + ".png"),
-                    damaged_path=os.path.join("entity", "legend_armor", name + "_damaged.png"),
-                    dead_path=os.path.join("entity", "legend_armor", name + "_dead.png"),
-                    arrow_path=os.path.join("..",  "dead_arrows.png"),
-                    javelin_path=os.path.join("..", "dead_javelin.png")
+                    name_path=os.path.join("..", "entity", "legend_armor", name + ".png"),
+                    damaged_path=os.path.join("..", "entity", "legend_armor", name + "_damaged.png"),
+                    dead_path=os.path.join("..", "entity", "legend_armor", name + "_dead.png"),
+                    arrow_path=os.path.join("..", "..",  "dead_arrows.png"),
+                    javelin_path=os.path.join("..", "..", "dead_javelin.png")
                 )
                 s = Template(t)
                 text = s.substitute(opts)
                 text.replace("/", "\\")
                 Brush.write(text)
+                imageCount += 1
+                if (imageCount > 1000):
+                    Brush.write('</brush>\n')
+                    Brush.close()
+                    imageCount = 0
+                    fileCount += 1
+                    Brush = makeSheet(fileCount)
 
 
-    Brush.write(MetaData)
     Brush.write('</brush>\n')
     Brush.close()
 
