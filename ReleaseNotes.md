@@ -4053,3 +4053,4 @@ Removes bear form from berserker
 Should fix end of combat wardog causing freezes
 Fixes shoot stake error
 Fixes debilitate tooltip to correctly read 75% damage total vs 50% damage total
+Should fix rare crash on killing an enemy with smite skill
