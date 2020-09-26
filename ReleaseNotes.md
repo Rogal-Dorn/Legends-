@@ -4052,3 +4052,4 @@ Should prevent the buckler bandits from freezing the game (Massive thanks to Pro
 Removes bear form from berserker
 Should fix end of combat wardog causing freezes
 Fixes shoot stake error
+Fixes debilitate tooltip to correctly read 75% damage total vs 50% damage total
