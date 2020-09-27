@@ -4058,3 +4058,5 @@ Fixes supplies on southern maps not being attackable
 Piercing shot and bolt tooltip grammar
 Piercing shot and bolt don't hit something behind target if the main shot misses
 Weiderganger's bite applies poison with the same rules as spider poison (min of 6 damage to hitpoints)
+Fixes gruesome feast error
+Fixes fire pot for seer
