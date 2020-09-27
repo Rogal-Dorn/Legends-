@@ -114,7 +114,7 @@ this.legend_firefield_skill <- this.inherit("scripts/skills/skill", {
 			Callback = this.Const.Tactical.Common.onApplyFirefield,
 			function Applicable( _a )
 			{
-				return !_a.getFlags().has("undead");
+				return true;
 			}
 		};
 
