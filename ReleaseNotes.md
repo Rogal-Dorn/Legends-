@@ -4061,3 +4061,4 @@ Weiderganger's bite applies poison with the same rules as spider poison (min of 
 Fixes gruesome feast error
 Fixes fire pot for seer
 Fixes barbarian madman spawning without armor
+Should fix miasma skill
