@@ -55,11 +55,12 @@ this.zombie_bite <- this.inherit("scripts/skills/skill", {
 	{
 
 		local target = _targetTile.getEntity();
+		local hp = target.getHitpoints();
 		local success = this.attackEntity(_user, _targetTile.getEntity());
 
 		if (success)
 		{
-			if (!target.getCurrentProperties().IsImmuneToPoison && "Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+			if (!target.getCurrentProperties().IsImmuneToPoison && "Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary && hp - target.getHitpoints() >= this.Const.Combat.MinDamageToApplyBleeding)
 				{
 					local effect = this.new("scripts/skills/effects/zombie_poison_effect");
 					target.getSkills().add(effect);

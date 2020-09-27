@@ -214,6 +214,11 @@ this.legend_piercing_shot <- this.inherit("scripts/skills/skill", {
 		local ownTile = _tag.User.getTile();
 		local dir = ownTile.getDirectionTo(_tag.TargetTile);
 
+		if (!ret)
+		{
+			return ret
+		}
+
 		if (!_tag.TargetTile.hasNextTile(dir))
 		{
 			return ret
