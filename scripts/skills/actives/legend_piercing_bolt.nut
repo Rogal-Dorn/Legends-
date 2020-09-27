@@ -180,6 +180,12 @@ this.legend_piercing_bolt <- this.inherit("scripts/skills/skill", {
 
 		local ownTile = _user.getTile();
 		local dir = ownTile.getDirectionTo(_targetTile);
+		
+		if (!ret)
+		{
+			return ret
+		}
+
 		if (!_targetTile.hasNextTile(dir))
 		{
 			return ret
