@@ -64,7 +64,7 @@ this.legend_piercing_bolt <- this.inherit("scripts/skills/skill", {
 			id = 5,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "If bolt hits its target, it will continue through and damage any target behind, dealing %50 damage."
+			text = "If the bolt hits its target, it will continue through and damage any target behind, dealing 50% damage."
 		});
 
 		ret.push({
