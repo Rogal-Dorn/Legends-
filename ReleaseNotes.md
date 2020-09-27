@@ -4055,3 +4055,4 @@ Fixes shoot stake error
 Fixes debilitate tooltip to correctly read 75% damage total vs 50% damage total
 Should fix rare crash on killing an enemy with smite skill
 Fixes supplies on southern maps not being attackable
+Piercing shot and bolt tooltip grammar 
