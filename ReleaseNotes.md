@@ -4062,3 +4062,4 @@ Fixes gruesome feast error
 Fixes fire pot for seer
 Fixes barbarian madman spawning without armor
 Should fix miasma skill
+Fixes some of the noble scenario starting items back to previous (& intended) items
