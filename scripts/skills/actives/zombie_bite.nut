@@ -60,7 +60,7 @@ this.zombie_bite <- this.inherit("scripts/skills/skill", {
 
 		if (success)
 		{
-			if (!target.getCurrentProperties().IsImmuneToPoison && "Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary && hp - target.getHitpoints() >= this.Const.Combat.MinDamageToApplyBleeding)
+			if (!target.getCurrentProperties().IsImmuneToPoison && "Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary && hp - target.getHitpoints() >= this.Const.Combat.PoisonEffectMinDamage)
 				{
 					local effect = this.new("scripts/skills/effects/zombie_poison_effect");
 					target.getSkills().add(effect);
