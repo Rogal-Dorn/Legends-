@@ -57,6 +57,13 @@ this.accessory_dog <- this.inherit("scripts/items/accessory/accessory", {
 		//this function again, we can check actor and set it to false if not perk
 		//is present
 		local act = _actor;
+		
+		if ( typeof act == "instance" )
+		{
+			act = act.get()
+			this.logInfo("Getting accessory_dog typeof was instance -> should not be anymore?")
+		}
+
 		if (act == null && this.getContainer() == null)
 		{
 			return true;
@@ -67,11 +74,7 @@ this.accessory_dog <- this.inherit("scripts/items/accessory/accessory", {
 			act = this.getContainer().getActor();
 		}
 
-		if ( typeof act == "instance" )
-		{
-			act = act.get()
-			this.logInfo("Getting accessory_dog typeof was instance -> should not be anymore?")
-		}
+		
 
 		if (act.getSkills().hasSkill("perk.legend_packleader"))
 		{
