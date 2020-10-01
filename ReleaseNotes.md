@@ -3983,3 +3983,8 @@ Second wind can only proc in batte now instead of out of battle
 Demon Alp AI tweak to not just crash
 Fixes problem with upgraded gatherer's tent
 You don't have a higher chance of dying when you have high chance of surviving with injury. (Big thanks to Surrealistik)
+
+
+## 15.0.0.13
+Fixed Brawny incorrect value on some layers and helmets. (Thanks Leonion)
+Updated description of Bloody harvest to specify "All melee attacks"
