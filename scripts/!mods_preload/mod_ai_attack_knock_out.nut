@@ -8,14 +8,15 @@
     o.getBestTarget = function ( _entity, _skill, _targets )
 	{
 		local attackSkill = _entity.getSkills().getAttackOfOpportunity();
-        if (attackSkill == null)
-        {
-            this.m.BestTarget = {
-                Target = null,
-                Score = 0.0
-            };
-            return this.Const.AI.Behavior.Score.Zero;
-        }
+
+		if (attackSkill == null)
+		{
+			this.m.BestTarget = {
+				Target = null,
+				Score = 0.0
+			};
+			return null;
+		}
 
         return fn(_entity, _skill, _targets)
 	}

@@ -3726,22 +3726,6 @@ Zombie poison effect on legendary doesn't scale up fix
 Resilient/HoldOut tooltip fix, currently states -1 turn on debuffs, but gives -5
 Clears the mustering troops on legendary bandit contract completion
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-https://drive.google.com/file/d/1OWY9rIZfGYBW40LZk0poZLrEs125E81T/view?usp=sharing
-
-14.0.0.16b
-
-Quick update that fixes using config options when starting a new game
-
-https://drive.google.com/file/d/15C7nyBk8OMkrcIk9SQ4Tqh7u6kwe9eP3/view?usp=sharing
-
-
-
-14.0.0.16c
-=======
-=======
->>>>>>> 1f16b12b6e7970000cb087274d79802f039f9eee
 https://drive.google.com/file/d/1eScbaKttem93gLfFNLFPhJ2c1S6qaTXn/view?usp=sharing
 
 
@@ -3800,10 +3784,6 @@ Rumours of man sized rats in this update are clearly the ravings of madmen
 * Horses slightly less broken
 * Stun immunity works against more attacks
 * staff perk melee defense works on slingstaff
-<<<<<<< HEAD
->>>>>>> d299c1d87b0f32e6da0e8eca601d2575c6d3953c
-=======
->>>>>>> 1f16b12b6e7970000cb087274d79802f039f9eee
 
 **Fixes**
 
@@ -3817,15 +3797,7 @@ prong skill tooltip updated to correctly show impact of thrust master
 fixed crash from Fell down well event while playing a solo avatar
 Intensive training trait is hidden until relevant
 Fixed. Armor layers parts will now repair when not attached to a base armor piece.
-<<<<<<< HEAD
-Zombie poison scales from 1 not 10 now on legendary when you have resilient
-<<<<<<< HEAD
 
-https://drive.google.com/file/d/1cHL80DD5DQvWlKIQlAw4bsSL2lb5JkXT/view?usp=sharing
-=======
-=======
-
->>>>>>> 1f16b12b6e7970000cb087274d79802f039f9eee
 Ranger now has fixed worldmap look (Thanks Leonion)
 Miasma skill should now prperly get removed if perk is removed.  (Thanks Leonion)
 Rune of power should now correctly display it's effect  (Thanks Leonion)
@@ -3841,13 +3813,6 @@ Cultist AI fixed to use ninetails
 AI fixed to not hit parrying daggers as much
 Descriptions updated for Quickhands,  bags and belts, and rally the troops
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-
->>>>>>> d299c1d87b0f32e6da0e8eca601d2575c6d3953c
-=======
-14.0.0.17.XYZ
-=======
 14.0.0.18
 
 **Troupe **
@@ -3878,7 +3843,6 @@ Fixes random transformation
 Fixes not getting perks
 
 
->>>>>>> 4461206f596c203dc8284ecf52065ad62c23edb3
 **Fixes**
 Chance for certain backgrounds to be infected when hired
 It is possible for certain infections to spread through your company via an event
@@ -3913,14 +3877,8 @@ Wolfsbane necklace can now be unequipped
 Fixes some spelling and capitalization on the Wolfsbane necklace's effect
 Misclicking the bush doesn't crash to desktop when you use harvest bush skill
 Fixes uncommon error with transforms crashing
-<<<<<<< HEAD
->>>>>>> 692b0b22b1950f2d69c97f562004ec873e763d66
-=======
 Fixes Vermin Ending of roaming beast contract
 Fixes loading of save game when player has warlock perks selected (maxMedicine issues)
-<<<<<<< HEAD
->>>>>>> 4461206f596c203dc8284ecf52065ad62c23edb3
-=======
 
 
 
@@ -3936,16 +3894,8 @@ To REPEAT! Looking for crashes or any errors in log files.
 https://drive.google.com/file/d/136wvQKhe-u6H6VQHsaQJ66cVszzwu9Oy/view?usp=sharing
 
 
-<<<<<<< HEAD
-**Changes**
-World Economy for city states - unlike northern settlements, ciy states can continue to grow their locations indefinitly.
-<<<<<<< HEAD
->>>>>>> 1f16b12b6e7970000cb087274d79802f039f9eee
-=======
-=======
 15.0.0.5  Sand Storm
 **Requires ALL DLC and build 1.4.0.41 of BB**
->>>>>>> 98b4ea405c3651ad02b6d6d8f2a951e3ad0107b9
 
 This is our first general test build release of the blazing sands DLC support for Legends Mod. Please expect this build to have instabilities. There's lots of balance and work to do still (We haven't started work on the retinue system, so it is still vanilla - this WILL change, we have plans...), but hopefully this build will let you all play with Legends with the new DLC content.
 
@@ -4001,16 +3951,8 @@ Adds 2000+ new character names
 legends camp tactical objects showing up instead of DLC objects
 inventor icon showing up on gladiators
 Adds a background for camping in the desert
-<<<<<<< HEAD
-
-
->>>>>>> cf1a6155a08deb1ee6ee7e31f87b9cce2666691b
-=======
 Tumble no longer makes Lunge cost 0ap, and also correctly reduces fat if you have both perks.
 Unpredictable bros no longer go against their nature & become predictable.
-<<<<<<< HEAD
->>>>>>> 98b4ea405c3651ad02b6d6d8f2a951e3ad0107b9
-=======
 
 
 ## 15.0.0.9
@@ -4063,9 +4005,6 @@ Legion now starts hostile to southern cities (mwah)
 Fixes infinite loading screen with nomad zombies (mwah)
 spearwaller  reduces AP by 25% rather than setting to 3 (salty)
 Heavy trait precludes light (salty)
-<<<<<<< HEAD
->>>>>>> 891489a51fadcc835662e80bba6a9aae65fea065
-=======
 
 
 15.0.0.12
@@ -4103,4 +4042,3 @@ Nomad: Gets new Dynamic perk tree. Adds Ammo and Scout and Terrain movement modi
 
 
 
->>>>>>> 29f8ec5ea8a7090eb540291408291f519afdd757

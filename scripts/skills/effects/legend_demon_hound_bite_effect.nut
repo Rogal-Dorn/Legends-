@@ -19,6 +19,11 @@ this.legend_demon_hound_bite_effect <- this.inherit("scripts/skills/skill", {
 		return "This character has been bitten by a Höllenhund and has [color=" + this.Const.UI.Color.NegativeValue + "] -30% [/color]Fatigue recovery for [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.TurnsLeft + "[/color] more turn(s).";
 	}
 
+	function onAdded()
+	{
+		this.m.TurnsLeft = this.Math.max(1, 3 + this.getContainer().getActor().getCurrentProperties().NegativeStatusEffectDuration);
+	}
+
 	function onUpdate( _properties )
 	{
 		_properties.FatigueRecoveryRateMult *= 0.30;
@@ -35,7 +40,8 @@ this.legend_demon_hound_bite_effect <- this.inherit("scripts/skills/skill", {
 
 	function resetTime()
 	{
-		this.m.TurnsLeft = 3;
+		this.m.TurnsLeft = this.Math.max(1, 3 + this.getContainer().getActor().getCurrentProperties().NegativeStatusEffectDuration);
+		//this.m.TurnsLeft = 3;
 	}
 
 });
