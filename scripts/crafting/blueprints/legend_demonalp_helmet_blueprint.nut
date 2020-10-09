@@ -18,7 +18,7 @@ this.legend_demonalp_helmet_blueprint <- this.inherit("scripts/crafting/blueprin
 			},
 			{
 				Script = "scripts/items/helmets/bascinet_with_mail",
-				Num = 1,
+				Num = 1
 			}
 		];
 		this.init(ingredients);
@@ -32,7 +32,12 @@ this.legend_demonalp_helmet_blueprint <- this.inherit("scripts/crafting/blueprin
 
 	function isQualified()
 	{
-		return !this.World.LegendsMod.Configs().LegendArmorsEnabled();
+		if (!this.World.LegendsMod.Configs().LegendArmorsEnabled())
+		{
+			return false;
+		}
+
+		return this.blueprint.isQualified();
 	}
 
 	function onCraft( _stash )
