@@ -101,8 +101,8 @@ this.potion_of_oblivion_item <- this.inherit("scripts/items/item", {
 		_actor.m.PerkPoints = 0;
 		_actor.m.PerkPointsSpent = 0;
 		_actor.getSkills().removeByType(this.Const.SkillType.Perk);
-		
-		
+
+
 		switch(this.World.Assets.getOrigin().getID()) {
 		case "scenario.legends_rangers":
 			if (_actor.getBackground().getID() == "background.legend_commander_ranger")
@@ -150,7 +150,7 @@ this.potion_of_oblivion_item <- this.inherit("scripts/items/item", {
 				freePerkPointsSpentFromOrigin = 1;
 			}
 			break;
-		case "scenario.legends_crusader"
+		case "scenario.legends_crusader":
 			if (_actor.getBackground().getID() == "background.legend_commander_crusader")
 			{
 				_actor.getSkills().add(this.new("scripts/skills/perks/perk_fortified_mind"));
@@ -192,7 +192,7 @@ this.potion_of_oblivion_item <- this.inherit("scripts/items/item", {
 					perks = perks - 2;
 					freePerkPointsSpentFromOrigin = 3;
 				}
-				
+
 			}
 			else if (_actor.getSkills().hasSkill("injury.legend_rotten_flesh"))
 			{
@@ -247,7 +247,7 @@ this.potion_of_oblivion_item <- this.inherit("scripts/items/item", {
 					perks = perks - 1;
 					freePerkPointsSpentFromOrigin = 3;
 				}
-				
+
 			}
 			if (_actor.getLevel() < 11)
 			{
@@ -286,18 +286,18 @@ this.potion_of_oblivion_item <- this.inherit("scripts/items/item", {
 			break;
 		default:
 		}
-		
-		// Witch gets 
+
+		// Witch gets
 		if (_actor.getBackground().getID() == "background.legend_witch" && this.World.LegendsMod.Configs().LegendMagicEnabled())
 		{
 			_actor.getSkills().add(this.new("scripts/skills/perks/perk_legend_magic_missile"));
 			perks = perks - 1;
 		}
-		
-		
-		
-		
-		
+
+
+
+
+
 		//_actor.m.PerkPointsSpent += freePerkPointsSpentFromOrigin; // We leave this commented out for now
 		_actor.m.PerkPoints = perks;
 

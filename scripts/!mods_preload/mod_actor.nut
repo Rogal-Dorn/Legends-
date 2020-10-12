@@ -166,8 +166,8 @@
 		this.m.PerkPoints = 0;
 		this.m.PerkPointsSpent = 0;
 		this.getSkills().removeByType(this.Const.SkillType.Perk);
-		
-		
+
+
 		switch(this.World.Assets.getOrigin().getID()) {
 		case "scenario.legends_rangers":
 			if (this.getBackground().getID() == "background.legend_commander_ranger")
@@ -215,7 +215,7 @@
 				freePerkPointsSpentFromOrigin = 1;
 			}
 			break;
-		case "scenario.legends_crusader"
+		case "scenario.legends_crusader":
 			if (this.getBackground().getID() == "background.legend_commander_crusader")
 			{
 				this.getSkills().add(this.new("scripts/skills/perks/perk_fortified_mind"));
@@ -257,7 +257,7 @@
 					perks = perks - 2;
 					freePerkPointsSpentFromOrigin = 3;
 				}
-				
+
 			}
 			else if (this.getSkills().hasSkill("injury.legend_rotten_flesh"))
 			{
@@ -312,7 +312,7 @@
 					perks = perks - 1;
 					freePerkPointsSpentFromOrigin = 3;
 				}
-				
+
 			}
 			if (this.getLevel() < 11)
 			{
@@ -351,18 +351,18 @@
 			break;
 		default:
 		}
-		
-		// Witch gets 
+
+		// Witch gets
 		if (this.getBackground().getID() == "background.legend_witch" && this.World.LegendsMod.Configs().LegendMagicEnabled())
 		{
 			this.getSkills().add(this.new("scripts/skills/perks/perk_legend_magic_missile"));
 			perks = perks - 1;
 		}
-		
-		
-		
-		
-		
+
+
+
+
+
 		//this.m.PerkPointsSpent += freePerkPointsSpentFromOrigin; // We leave this commented out for now
 		this.m.PerkPoints = perks;
 
