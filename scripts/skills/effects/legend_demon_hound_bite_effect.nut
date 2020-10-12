@@ -14,6 +14,11 @@ this.legend_demon_hound_bite_effect <- this.inherit("scripts/skills/skill", {
 		this.m.IsRemovedAfterBattle = true;
 	}
 
+	function onAdded()
+	{
+		this.m.TurnsLeft = this.Math.max(1, 3 + this.getContainer().getActor().getCurrentProperties().NegativeStatusEffectDuration);
+	}
+
 	function getDescription()
 	{
 		return "This character has been bitten by a Höllenhund and has [color=" + this.Const.UI.Color.NegativeValue + "] -30% [/color]Fatigue recovery for [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.TurnsLeft + "[/color] more turn(s).";
@@ -41,7 +46,10 @@ this.legend_demon_hound_bite_effect <- this.inherit("scripts/skills/skill", {
 	function resetTime()
 	{
 		this.m.TurnsLeft = this.Math.max(1, 3 + this.getContainer().getActor().getCurrentProperties().NegativeStatusEffectDuration);
+<<<<<<< HEAD
 		//this.m.TurnsLeft = 3;
+=======
+>>>>>>> 65e72546ed000fcef107f3cea76ff8563a53c073
 	}
 
 });

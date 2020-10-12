@@ -330,7 +330,11 @@ gt.Const.AI <- {
 			"Explode",
 			"MoveToMerge",
 			"Howl",
+<<<<<<< HEAD
 			"SpawnShadow",
+=======
+			"SpawnShadow"
+>>>>>>> 65e72546ed000fcef107f3cea76ff8563a53c073
 		],
 		Order = {
 			Retreat = 2,
@@ -1020,4 +1024,3 @@ gt.Const.AI <- {
 		MoveToMergeMaxAttempts = 32
 	}
 };
-
