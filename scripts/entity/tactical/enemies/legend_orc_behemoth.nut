@@ -250,6 +250,26 @@ this.legend_orc_behemoth <- this.inherit("scripts/entity/tactical/actor", {
 		this.actor.onFinish();
 	}
 
+	function makeMiniboss()
+	{
+		if (!this.actor.makeMiniboss())
+		{
+			return false;
+		}
+
+		this.getSprite("miniboss").setBrush("bust_miniboss_greenskins");
+		local weapons = [
+			"weapons/named/named_orc_axe_2h",
+			"weapons/named/named_orc_flail_2h"
+		];
+
+		this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
+
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_adrenalin"));  // idk what perks to add
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_true_believer"));
+		return true;
+	}
+
 	function assignRandomEquipment()
 	{
 		local r;
@@ -284,7 +304,12 @@ this.legend_orc_behemoth <- this.inherit("scripts/entity/tactical/actor", {
 			if (item != null)
 			{
 				this.m.Items.equip(item);
+<<<<<<< HEAD
 			}	
+=======
+			}
+
+>>>>>>> 65e72546ed000fcef107f3cea76ff8563a53c073
 	}
 	
 	function makeMiniboss()
