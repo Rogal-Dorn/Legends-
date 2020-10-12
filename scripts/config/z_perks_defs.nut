@@ -2058,6 +2058,15 @@ gt.Const.Perks.PerkDefObjects <- [
 		IconDisabled = "ui/perks/favoured_caravan_bw.png",
 		Const = "LegendFavouredEnemyCaravan"
 	},
+ 	{
+		ID = "perk.legend_favoured_enemy_southerner",
+		Script = "scripts/skills/perks/perk_legend_favoured_enemy_southerner",
+		Name = this.Const.Strings.PerkName.LegendFavouredEnemySoutherner,
+		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemySoutherner,
+		Icon = "ui/perks/favoured_southerner_01.png",
+		IconDisabled = "ui/perks/favoured_southerner_bw.png",
+		Const = "LegendFavouredEnemySoutherner"
+	},
 	{
 		ID = "perk.mastery.greatsword",
 		Script = "scripts/skills/perks/perk_mastery_greatsword",
