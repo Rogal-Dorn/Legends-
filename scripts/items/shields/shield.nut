@@ -108,9 +108,9 @@ this.shield <- this.inherit("scripts/items/item", {
 			id = 4,
 			type = "progressbar",
 			icon = "ui/icons/asset_supplies.png",
-			value = this.m.Condition,
-			valueMax = this.m.ConditionMax,
-			text = "" + this.m.Condition + " / " + this.m.ConditionMax + "",
+			value = this.getCondition(),
+			valueMax = this.getConditionMax(),
+			text = "" + this.getCondition() + " / " + this.getConditionMax() + "",
 			style = "armor-head-slim"
 		});
 

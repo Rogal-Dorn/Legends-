@@ -217,7 +217,7 @@ this.march_wear_and_tear_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "Thief",
-			Text = "%terrainImage%{%thief% the thief sidles up to you. Stepping away and putting your hands in your pockets, you ask what he wants. He smirks and answers.%SPEECH_ON%Alright I\'ll be honest with you captain. Last time we stopped in town I helped myself to a blind peacemaker\'s wares. What? I\'d a sore tooth. No reason to pay to fix what the old gods gave me. Anyway, I fixed my tooth. See? What a smile, right? But then I thought I felt some aches, man, aches all over the place! So I visited the peacemaker again and...%SPEECH_OFF%You interrupt the man and ask just how much he stole. He produces a sack of medicinal goods. He proudly puts his hands to his hips and stare out at the world with his crooked grin.%SPEECH_ON%Suffice it to say I ain\'t hurtin\' no more.%SPEECH_OFF%} ",
+			Text = "%terrainImage%{%thief% the thief sidles up to you. Stepping away and putting your hands in your pockets, you ask what he wants. He smirks and answers.%SPEECH_ON%Alright I\'ll be honest with you, captain. Last time we stopped in town I helped myself to a blind peacemaker\'s wares. What? I\'d a sore tooth. No reason to pay to fix what the old gods gave me. Anyway, I fixed my tooth. See? What a smile, right? But then I thought I felt some aches, man, aches all over the place! So I visited the peacemaker again and...%SPEECH_OFF%You interrupt the man and ask just how much he stole. He produces a sack of medicinal goods. He proudly puts his hands to his hips and stare out at the world with his crooked grin.%SPEECH_ON%Suffice it to say I ain\'t hurtin\' no more.%SPEECH_OFF%} ",
 			Image = "",
 			List = [],
 			Characters = [],

@@ -65,6 +65,7 @@ this.drive_away_barbarians_contract <- this.inherit("scripts/contracts/contract"
 			function end()
 			{
 				this.World.Assets.addMoney(this.Contract.m.Payment.getInAdvance());
+				this.Contract.m.Destination.setLastSpawnTimeToNow();
 				this.Contract.m.Destination.clearTroops();
 
 				if (this.Contract.getDifficultyMult() <= 1.15 && !this.Contract.m.Destination.getFlags().get("IsEventLocation"))
@@ -76,7 +77,6 @@ this.drive_away_barbarians_contract <- this.inherit("scripts/contracts/contract"
 				this.Contract.m.Destination.setLootScaleBasedOnResources(110 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult());
 				this.Contract.m.Destination.setResources(this.Math.min(this.Contract.m.Destination.getResources(), 70 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult()));
 				this.Contract.m.Destination.setDiscovered(true);
-				this.Contract.m.Destination.setLastSpawnTimeToNow();
 				this.World.uncoverFogOfWar(this.Contract.m.Destination.getTile().Pos, 500.0);
 				local r = this.Math.rand(1, 100);
 

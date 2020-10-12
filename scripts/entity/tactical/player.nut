@@ -1605,7 +1605,81 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Items.equip(this.new("scripts/items/helmets/named/wolf_helmet"));
 		}
 
-		this.m.Items.equip(this.new("scripts/items/weapons/greatsword"));
+		r = this.Math.rand(1, 17);
+
+		if (r == 1)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/noble_sword"));
+			this.m.Items.equip(this.new("scripts/items/shields/heater_shield"));
+		}
+		else if (r == 2)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/shortsword"));
+		}
+		else if (r == 3)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/greatsword"));
+		}
+		else if (r == 4)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/bludgeon"));
+		}
+		else if (r == 5)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/winged_mace"));
+			this.m.Items.equip(this.new("scripts/items/shields/kite_shield"));
+		}
+		else if (r == 6)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/winged_mace"));
+		}
+		else if (r == 7)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/boar_spear"));
+			this.m.Items.equip(this.new("scripts/items/shields/wooden_shield"));
+		}
+		else if (r == 8)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/hand_axe"));
+			this.m.Items.equip(this.new("scripts/items/shields/wooden_shield"));
+		}
+		else if (r == 9)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/fighting_axe"));
+		}
+		else if (r == 10)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/dagger"));
+		}
+		else if (r == 11)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/billhook"));
+		}
+		else if (r == 12)
+		{
+			this.m.Items.equip(this.new("scripts/items/shields/heater_shield"));
+			this.m.Items.equip(this.new("scripts/items/weapons/warhammer"));
+		}
+		else if (r == 13)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/military_cleaver"));
+		}
+		else if (r == 14)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/flail"));
+		}
+		else if (r == 15)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/pike"));
+		}
+		else if (r == 16)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/two_handed_hammer"));
+		}
+		else if (r == 17)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/warbrand"));
+		}
 	}
 
 	function assignRandomRangedEquipment()
