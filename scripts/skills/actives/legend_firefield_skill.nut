@@ -109,8 +109,13 @@ this.legend_firefield_skill <- this.inherit("scripts/skills/skill", {
 			IsAppliedAtRoundStart = false,
 			IsAppliedAtTurnEnd = true,
 			IsAppliedOnMovement = false,
+			IsByPlayer = _user.isPlayerControlled(),
 			Timeout = this.Time.getRound() + 2,
-			Callback = this.Const.Tactical.Common.onApplyFirefield
+			Callback = this.Const.Tactical.Common.onApplyFirefield,
+			function Applicable( _a )
+			{
+				return true;
+			}
 		};
 
 		foreach( tile in targets )

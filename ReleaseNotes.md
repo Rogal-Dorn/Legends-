@@ -4042,3 +4042,25 @@ Nomad: Gets new Dynamic perk tree. Adds Ammo and Scout and Terrain movement modi
 
 
 
+15.0.0.13
+
+**Fixes**
+Fixes serpent skin armor upgrade
+Fixes vanilla armor attatchments (e.g. leather shoulderguards) from spawning with armor layer system on
+More fixes to demon alp ai
+Should prevent the buckler bandits from freezing the game (Massive thanks to Proman)
+Removes bear form from berserker
+Should fix end of combat wardog causing freezes
+Fixes shoot stake error
+Fixes debilitate tooltip to correctly read 75% damage total vs 50% damage total
+Should fix rare crash on killing an enemy with smite skill
+Fixes supplies on southern maps not being attackable
+Piercing shot and bolt tooltip grammar
+Piercing shot and bolt don't hit something behind target if the main shot misses
+Weiderganger's bite applies poison with the same rules as spider poison (min of 6 damage to hitpoints)
+Fixes gruesome feast error
+Fixes fire pot for seer
+Fixes barbarian madman spawning without armor
+Should fix miasma skill
+Fixes some of the noble scenario starting items back to previous (& intended) items
+Minor tweak to beast spawns : Serpents resource-per-unit upped along with Ifrits. (e.g. where you'd previously see 20 serpents you'd now see 16)

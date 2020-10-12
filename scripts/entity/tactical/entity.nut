@@ -84,7 +84,7 @@ this.entity <- {
 	
 	function isSupplies()
 	{
-		return this.m.IsBush;
+		return this.m.IsSupplies;
 	}
 
 	function setIsAlive( _f )

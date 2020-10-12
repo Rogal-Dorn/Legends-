@@ -14,7 +14,7 @@ if (!("HelmObjs" in gt.Const.LegendMod))
 gt.Const.LegendMod.HelmObjs.extend([
 {
     ID = "barbarians/barbarian_ritual_helmet", //300
-    Script = "",
+    Script = "scripts/items/helmet/barbarians/barbarian_ritual_helmet",
     Sets = [{
     Hoods = [
         [1, "hood/legend_helmet_barb_chain_scarf"], //55

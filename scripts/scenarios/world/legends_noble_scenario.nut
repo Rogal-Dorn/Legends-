@@ -122,7 +122,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[1].setStartValuesEx([
 		"legend_noble_shield"
 		]);
-		local items = bros[3].getItems();
+		local items = bros[1].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Offhand));
 		local r = this.Math.rand(1, 2);
 		local shield;
