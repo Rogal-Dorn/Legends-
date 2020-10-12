@@ -4072,5 +4072,6 @@ fix hollenhound curse neglecting resilience
 fix missing non-layered alp helmet
 fix champion behemoths ai and champion sets
 Adds southern enemy classes to favorite enemy perks
+fixes noble fencer spawn crash on legendary difficulty.
 
 
