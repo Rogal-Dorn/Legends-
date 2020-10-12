@@ -1481,7 +1481,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 		}
 
 		damage = damage * _hitInfo.BodyDamageMult;
-		damage = this.Math.max(0, this.Math.max(damage, this.Math.min(_hitInfo.DamageMinimum, _hitInfo.DamageMinimum * p.DamageReceivedTotalMult)));
+		damage = this.Math.max(0, this.Math.max(this.Math.round(damage), this.Math.min(this.Math.round(_hitInfo.DamageMinimum), this.Math.round(_hitInfo.DamageMinimum * p.DamageReceivedTotalMult))));
 		_hitInfo.DamageInflictedHitpoints = damage;
 		this.m.Skills.onDamageReceived(_attacker, _hitInfo.DamageInflictedHitpoints, _hitInfo.DamageInflictedArmor);
 
@@ -2542,7 +2542,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 							if (otherActor.m.MaxEnemiesThisTurn < numEnemies && !otherActor.isAlliedWith(this))
 							{
 								local difficulty = this.Math.maxf(10.0, 50.0 - this.getXPValue() * 0.1);
-								otherActor.checkMorale(-1, difficulty - this.getCurrentProperties().ThreatOnHit);
+								otherActor.checkMorale(-1, difficulty);
 								otherActor.m.MaxEnemiesThisTurn = numEnemies;
 							}
 						}
