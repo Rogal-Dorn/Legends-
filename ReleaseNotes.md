@@ -4044,6 +4044,8 @@ Nomad: Gets new Dynamic perk tree. Adds Ammo and Scout and Terrain movement modi
 
 15.0.0.13
 
+Update to BB 1.4.0.44
+
 **Fixes**
 Fixes serpent skin armor upgrade
 Fixes vanilla armor attatchments (e.g. leather shoulderguards) from spawning with armor layer system on
@@ -4064,3 +4066,6 @@ Fixes barbarian madman spawning without armor
 Should fix miasma skill
 Fixes some of the noble scenario starting items back to previous (& intended) items
 Minor tweak to beast spawns : Serpents resource-per-unit upped along with Ifrits. (e.g. where you'd previously see 20 serpents you'd now see 16)
+Fixed Brawny incorrect value on some layers and helmets. (Thanks Leonion)
+Updated description of Bloody harvest to specify "All melee attacks"
+
