@@ -4078,3 +4078,4 @@ fixes noble fencer spawn crash on legendary difficulty.
 
 **Fixes**
 Added correct tags to some named Weapons that were missing them (Thanks Grobocop!)
+Fixed freedom of movement
