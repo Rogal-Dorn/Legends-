@@ -11,7 +11,7 @@ this.legend_grisly_scythe <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Icon = "weapons/melee/legend_scythe_02_70x70.png";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
-		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;
+		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.Legendary | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;
 		this.m.IsAgainstShields = true;
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
@@ -36,6 +36,10 @@ this.legend_grisly_scythe <- this.inherit("scripts/items/weapons/weapon", {
 		cleave.m.FatigueCost = 15;
 		this.addSkill(cleave);
 		this.addSkill(this.new("scripts/skills/actives/reap_skill"));
+		if (this.World.LegendsMod.Configs().LegendMagicEnabled())
+		{
+			this.m.Container.add(this.new("scripts/skills/actives/curseofyears_skill"));
+		}		
 	}
 
 	function onDamageDealt( _target, _skill, _hitInfo )
