@@ -73,7 +73,7 @@ this.curseofyears_skill <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Curse of Years has [color=" + this.Const.UI.Color.DamageValue + "]4[/color] turn cooldwon"
+				text = "Decrepify has a cooldown of [color=" + this.Const.UI.Color.DamageValue + "]4[/color] turns."
 			}
 		];
 		return ret;
