@@ -75,7 +75,9 @@ this.nomad_background <- this.inherit("scripts/skills/backgrounds/character_back
 				0.0, // badlands
 				0.0, //highlands
 				0.2, //stepps
-				0.0 //ocean
+				0.0, //ocean
+				0.2, //desert
+				0.2 //oasis				
 			];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
