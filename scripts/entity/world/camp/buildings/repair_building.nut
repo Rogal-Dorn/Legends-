@@ -398,7 +398,7 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
             if (this.World.Assets.isConsumingAssets())
             {
                 local consumed = needed * modifiers.Consumption;
-                this.m.ToolsUsed += consumed * perkMod;;
+                this.m.ToolsUsed += consumed * perkMod;
                 this.World.Assets.addArmorPartsF(consumed * -1.0);
             }
 
