@@ -1161,7 +1161,7 @@ this.asset_manager <- {
 			 	{
 			 		if (item.getRepair() < item.getRepairMax())
 			 		{
-						local d = this.Math.minf(this.Math.ceil(this.Math.minf(this.Const.World.Assets.ArmorPerHour * this.m.RepairSpeedMult * this.Const.Difficulty.RepairMult[this.World.Assets.getEconomicDifficulty()], item.getRepairMax() - item.getRepair())), stashmaxrepairpotential);
+						local d = this.Math.ceil(this.Math.minf(stashmaxrepairpotential, item.getRepairMax() - item.getRepair()));
 						item.onRepair(item.getRepair() + d); 
 						this.m.ArmorParts = this.Math.maxf(0, this.m.ArmorParts - d * this.m.ArmorPartsPerArmor); // * this.Const.Difficulty.RepairMult[this.World.Assets.getEconomicDifficulty()]
 						stashmaxrepairpotential = stashmaxrepairpotential - d;

@@ -304,18 +304,7 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 	}
 
 	function getUpdateText()
-	{
-		this.m.PointsNeeded = 0;
-		foreach( i, r in this.m.Repairs ) //have to recalculate it each time to take into account outside repairs from asset_manager
-		{
-			if (r == null)
-			{
-				continue;
-			}
-
-			this.m.PointsNeeded += r.Item.getRepairMax() - r.Item.getRepair();
-		}
-		this.m.PointsNeeded = this.m.PointsNeeded + this.m.PointsRepaired; //to see pre-repair value	
+	{	
         if (this.m.PointsNeeded == 0)
         {
             return "No repairs queued";
@@ -338,7 +327,6 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 
     function update ()
     {
-		this.m.PointsRepaired = 0; //have to reset for correct counting
         if (this.m.Repairs == null)
 		{
 			this.init();
