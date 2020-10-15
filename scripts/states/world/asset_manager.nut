@@ -1074,11 +1074,16 @@ this.asset_manager <- {
 
 			 }
 
-			 local perkMod = 1;
+			 //local perkMod = 1;
 
 			 foreach( bro in roster )
 			 {
-			 	if (this.m.ArmorParts == 0)
+				local perkMod = 1.0; // should be here, not outside foreach, otherwise it works like inconsistent mess
+				if (this.m.ArmorParts == 0)
+				{
+					break;
+				}
+				if (this.isCamping()) //disable in camp, otherwise mess
 			 	{
 			 		break;
 			 	}
@@ -1095,7 +1100,7 @@ this.asset_manager <- {
 					local skill = bro.getSkills().getSkillByID(s);
 					if (skill != null)
 					{
-						perkMod *= 1 - (skill.getModifier() / 100);
+						perkMod = perkMod * (1 - skill.getModifier() * 0.01); // /100 won't work in Squirrel, also should probably be buffed since it only works on the bro's own equipment and only outside of camp
 					}
 				}
 
@@ -1103,10 +1108,10 @@ this.asset_manager <- {
 			 	{
 			 		if (item.getRepair() < item.getRepairMax())
 			 		{
-			 			local d = this.Math.minf(this.Const.World.Assets.ArmorPerHour * this.m.RepairSpeedMult * this.Const.Difficulty.RepairMult[this.World.Assets.getEconomicDifficulty()] * this.m.RepairSpeedMult, item.getRepairMax() - item.getRepair());
-			 			item.onRepair(item.getRepair() + d);
-			 			this.m.ArmorParts = this.Math.maxf(0, this.m.ArmorParts - d * this.m.ArmorPartsPerArmor * perkMod * this.Const.Difficulty.RepairMult[this.World.Assets.getEconomicDifficulty()]);
-			 			updateBro = true;
+						local d = this.Math.ceil(this.Math.minf(this.Const.World.Assets.ArmorPerHour * this.Const.Difficulty.RepairMult[this.World.Assets.getEconomicDifficulty()] * this.m.RepairSpeedMult, item.getRepairMax() - item.getRepair())); //rounding is crucial because otherwise it repairs nothing but eats tools if below 1, and in any case repair value has to be a round value
+						item.onRepair(item.getRepair() + d); 
+						this.m.ArmorParts = this.Math.maxf(0, this.m.ArmorParts - d * this.m.ArmorPartsPerArmor * perkMod); // * this.Const.Difficulty.RepairMult[this.World.Assets.getEconomicDifficulty()] - doesn't make sense here, it was already used when calculating d
+						updateBro = true;
 			 		}
 
 			 		if (item.getRepair() >= item.getRepairMax())
@@ -1118,6 +1123,11 @@ this.asset_manager <- {
 			 		{
 			 			break;
 			 		}
+					
+					if (updateBro)
+					{
+						break; //so each bro only repairs 1 item at a time, otherwise too good, makes camp redundant
+					}					
 			 	}
 
 			 	if (updateBro)
@@ -1127,14 +1137,21 @@ this.asset_manager <- {
 			 }
 
 			 local items = this.m.Stash.getItems();
-
+			 local stashmaxrepairpotential = this.Math.ceil(roster.len() * this.Const.Difficulty.RepairMult[this.World.Assets.getEconomicDifficulty()] * this.m.RepairSpeedMult * this.Const.World.Assets.ArmorPerHour); //otherwise fixed version will be too good
 			 foreach( item in items )
 			 {
+				if (this.isCamping()) //disable in camp, otherwise mess
+				{
+					break;
+				}			 
 			 	if (this.m.ArmorParts == 0)
 			 	{
 			 		break;
 			 	}
-
+				if (stashmaxrepairpotential <= 0)
+				{
+					break;
+				}
 			 	if (item == null)
 			 	{
 			 		continue;
@@ -1144,9 +1161,10 @@ this.asset_manager <- {
 			 	{
 			 		if (item.getRepair() < item.getRepairMax())
 			 		{
-			 			local d = this.Math.minf(this.Const.World.Assets.ArmorPerHour * this.m.RepairSpeedMult * this.Const.Difficulty.RepairMult[this.World.Assets.getEconomicDifficulty()], item.getRepairMax() - item.getRepair());
-			 			item.onRepair(item.getRepair() + d);
-						this.m.ArmorParts = this.Math.maxf(0, this.m.ArmorParts - d * this.m.ArmorPartsPerArmor * this.Const.Difficulty.RepairMult[this.World.Assets.getEconomicDifficulty()]);
+						local d = this.Math.minf(this.Math.ceil(this.Math.minf(this.Const.World.Assets.ArmorPerHour * this.m.RepairSpeedMult * this.Const.Difficulty.RepairMult[this.World.Assets.getEconomicDifficulty()], item.getRepairMax() - item.getRepair())), stashmaxrepairpotential);
+						item.onRepair(item.getRepair() + d); 
+						this.m.ArmorParts = this.Math.maxf(0, this.m.ArmorParts - d * this.m.ArmorPartsPerArmor); // * this.Const.Difficulty.RepairMult[this.World.Assets.getEconomicDifficulty()]
+						stashmaxrepairpotential = stashmaxrepairpotential - d;
 			 		}
 
 			 		if (item.getRepair() >= item.getRepairMax())
