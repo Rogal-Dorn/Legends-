@@ -2369,7 +2369,7 @@ this.asset_manager <- {
 			Brothers = []
 		}
 
-		for (local i=0; i < 9; i=++i)
+		for (local i=0; i < 11; i=++i)
 		{
 			ret.TerrainModifiers.push(["", 0]);
 		}
@@ -2403,6 +2403,12 @@ this.asset_manager <- {
 
 			ret.TerrainModifiers[8][0] = "Stepps";
 			ret.TerrainModifiers[8][1] += terrains[15] * 100.0;
+			
+			ret.TerrainModifiers[9][0] = "Deserts";
+			ret.TerrainModifiers[9][1] += terrains[17] * 100.0;
+
+			ret.TerrainModifiers[10][0] = "Oases";
+			ret.TerrainModifiers[10][1] += terrains[18] * 100.0;			
 
 			ret.Brothers.push({
 				Name = bro.getName(),
