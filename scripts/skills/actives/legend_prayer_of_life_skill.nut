@@ -82,8 +82,9 @@ this.legend_prayer_of_life_skill <- this.inherit("scripts/skills/skill", {
 				a.getSkills().add(this.new("scripts/skills/effects/legend_prayer_of_life_effect"));
 				}
 			}
-
-			if (a.getFaction() == this.Const.Faction.Undead ||  a.getFaction() == this.Const.Faction.Zombies)
+			
+			local skills = a.getSkills();
+			if (skills.hasSkill("racial.skeleton") || skills.hasSkill("actives.zombie_bite") || skills.hasSkill("racial.vampire") || skills.hasSkill("racial.ghost"))
 			{
 				a.getSkills().add(this.new("scripts/skills/effects/disintegrating_effect"));
 			}
