@@ -74,7 +74,6 @@ this.legend_prayer_of_faith_skill <- this.inherit("scripts/skills/skill", {
 				continue;
 			}
 
-
 			if (a.getFaction() == _user.getFaction())
 			{
 				if (!a.getBackground().isCultist())
@@ -83,7 +82,8 @@ this.legend_prayer_of_faith_skill <- this.inherit("scripts/skills/skill", {
 				}
 			}
 
-			if (a.getFaction() == this.Const.Faction.Undead ||  a.getFaction() == this.Const.Faction.Zombies)
+			local skills = a.getSkills();
+			if (skills.hasSkill("racial.skeleton") || skills.hasSkill("actives.zombie_bite") || skills.hasSkill("racial.vampire") || skills.hasSkill("racial.ghost"))
 			{
 				a.getSkills().add(this.new("scripts/skills/effects/legend_baffled_effect"));
 			}
