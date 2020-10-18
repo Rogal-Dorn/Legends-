@@ -1025,6 +1025,27 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
+		local normalfaces = [
+			"bust_head_01", //normal
+			"bust_head_02", //angry
+			"bust_head_03", //grinning
+			"bust_head_04", //sullen
+			"bust_head_05", //boy
+			"bust_head_06", //...cunning
+			"bust_head_07", //iron jaw
+			"bust_head_08", //redneck
+			"bust_head_09", //old, sad
+			"bust_head_10", //thug
+			"bust_head_12", //normal
+			"bust_head_13", //prince charming
+			"bust_head_14", //iron jaw 2
+			"bust_head_15", //pig
+			"bust_head_16", //thug
+			"bust_head_18", //simpleton
+			"bust_head_50", //duckface
+			"bust_head_51", //old
+		];
+			
 		if (_tag == "zombie")
 		{
 			local actor = this.getContainer().getActor();
@@ -1101,6 +1122,14 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		{
 			local actor = this.getContainer().getActor();
 			local hairColor = this.m.HairColors[this.Math.rand(0, this.m.HairColors.len() - 1)];
+			
+			if (this.m.Ethnicity != 1 && this.m.Ethnicity != 2 && (!this.m.IsFemaleBackground || !this.World.LegendsMod.Configs().LegendGenderEnabled()))
+			{
+				if (this.m.Faces != null && this.m.Faces != this.Const.Faces.SmartMale && this.m.Faces != this.Const.Faces.NecromancerMale && this.m.Faces != this.Const.Faces.Necromancer && this.m.Faces != this.Const.Faces.Vampire && this.m.Faces != this.Const.Faces.WildMale)
+				{
+					this.m.Faces = normalfaces;
+				}
+			}			
 
 			if (this.m.Faces != null)
 			{
