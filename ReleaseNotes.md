@@ -4064,3 +4064,5 @@ Fixes barbarian madman spawning without armor
 Should fix miasma skill
 Fixes some of the noble scenario starting items back to previous (& intended) items
 Minor tweak to beast spawns : Serpents resource-per-unit upped along with Ifrits. (e.g. where you'd previously see 20 serpents you'd now see 16)
+
+Fixes the decoded scrolls [the recipe historians are part of] not saving what they are when the game reloads and just becoming useless
