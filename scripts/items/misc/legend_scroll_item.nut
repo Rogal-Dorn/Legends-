@@ -57,7 +57,7 @@ this.legend_scroll_item <- this.inherit("scripts/items/item", {
 		result.push({
 			id = 65,
 			type = "text",
-			text = "Right-click to use on a character. Studying may lead to headaches and irritability. Who wants to study?"
+			text = "Right-click to use on a character. Studying may lead to headaches and irritability. What mercenary wants to study?"
 		});
 		return result;
 	}
