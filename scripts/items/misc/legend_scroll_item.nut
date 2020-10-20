@@ -59,6 +59,11 @@ this.legend_scroll_item <- this.inherit("scripts/items/item", {
 			type = "text",
 			text = "Right-click to use on a character. Studying may lead to headaches and irritability. What mercenary wants to study?"
 		});
+		result.push({
+			id = 67,
+			type = "text",
+			text = "Every brother may use up to 1 scroll. Being bright increases this to 2 scrolls, and being dumb decreases this to 0 scrolls."
+		});
 		return result;
 	}
 
