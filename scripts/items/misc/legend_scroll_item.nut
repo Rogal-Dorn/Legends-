@@ -172,5 +172,44 @@ this.legend_scroll_item <- this.inherit("scripts/items/item", {
 		return true;
 	}
 
+	function setupTooltip(r)
+	{
+		switch(r) {
+			case 1:
+				this.m.Description = "Use the scroll on a character to grant them 1 free perk from their own tree";
+				this.m.Name = "Random Perk Scroll";
+				break;
+			case 2:
+				this.m.Description = "Use the scroll on a character to increase experience gains by +50% for the next 3 battles. This will override any other current trained effects.";
+				this.m.Name = "Battle Scroll";
+				break;
+			case 3:
+				this.m.Description = "Use the scroll to add a perk group to one character's tree";
+				this.m.Name = "Scroll of Technique";
+				break;
+			case 4:
+				this.m.Description = "Use the scroll to grant a character a max-stat roll similar to gifted";
+				this.m.Name = "Scroll of Natural Talent";
+				break;
+			case 5:
+				this.m.Description = "After a bit of labor the scroll seems to just be gibberish, nothing meaningful could be translated";
+				this.m.Name = "Scroll of .Nut'in"
+				this.m.Value = 0;
+				break;
+		}
+	}
+
+	function onSerialize(_out)
+	{
+		this.item.onSerialize(_out);
+		_out.writeU8(this.m.Selection);
+	}
+
+	function onDeserialize(_in)
+	{
+		this.item.onDeserialize(_in);
+		this.m.Selection = (_in);
+		this.setupTooltip(this.m.Selection);
+	}
 });
 
