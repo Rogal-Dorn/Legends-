@@ -73,6 +73,7 @@ this.destroy_orc_camp_contract <- this.inherit("scripts/contracts/contract", {
 			{
 				this.World.Assets.addMoney(this.Contract.m.Payment.getInAdvance());
 				this.Contract.m.Destination.clearTroops();
+				this.Contract.m.Destination.setLastSpawnTimeToNow();
 
 				if (this.Contract.getDifficultyMult() < 1.15 && !this.Contract.m.Destination.getFlags().get("IsEventLocation"))
 				{
@@ -83,7 +84,6 @@ this.destroy_orc_camp_contract <- this.inherit("scripts/contracts/contract", {
 				this.Contract.m.Destination.setLootScaleBasedOnResources(115 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult());
 				this.Contract.m.Destination.setResources(this.Math.min(this.Contract.m.Destination.getResources(), 100 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult()));
 				this.Contract.m.Destination.setDiscovered(true);
-				this.Contract.m.Destination.setLastSpawnTimeToNow();
 				this.World.uncoverFogOfWar(this.Contract.m.Destination.getTile().Pos, 500.0);
 				this.Flags.set("HeadsCollected", 0);
 
