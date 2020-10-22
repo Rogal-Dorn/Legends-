@@ -131,7 +131,7 @@ this.building <- {
 						script = script.slice(index + "armor/".len());
 					}
 					index = script.find("armor_upgrades/");
-					if (index != null)
+					if (index != null && script.find("legend_armor") == null)
 					{
 						isUpgrade = true;
 						script = script.slice(index + "armor_upgrades/".len());

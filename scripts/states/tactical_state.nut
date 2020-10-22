@@ -189,6 +189,7 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 		tsb.setOnEntityMouseEnterListener(this.turnsequencebar_onEntityMouseEnter.bindenv(this));
 		tsb.setOnEntityMouseLeaveListener(this.turnsequencebar_onEntityMouseLeave.bindenv(this));
 		tsb.setOnOpenInventoryButtonPressed(this.showCharacterScreen.bindenv(this));
+		tsb.setCheckEnemyRetreatListener(this.turnsequencebar_onCheckEnemyRetreat.bindenv(this));
 		local ri = this.m.TacticalScreen.getTopbarRoundInformationModule();
 		ri.setOnQueryRoundInformationListener(this.topbar_round_information_onQueryRoundInformation.bindenv(this));
 		local ob = this.m.TacticalScreen.getTopbarOptionsModule();
@@ -1964,7 +1965,7 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 							bro.worsenMood(this.Const.MoodChange.BattleRetreat, "Retreated from battle");
 						}
 					}
-					else if (bro.getMoodState() > this.Const.MoodState.Concerned && !bro.getCurrentProperties().IsContentWithBeingInReserve)
+					else if (bro.getMoodState() > this.Const.MoodState.Concerned && !bro.getCurrentProperties().IsContentWithBeingInReserve && !this.World.Assets.m.IsDisciplined)
 					{
 						++bro.getLifetimeStats().BattlesWithoutMe;
 
@@ -2266,8 +2267,11 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 		this.Tactical.Entities.updateTileEffects();
 		this.Tactical.TopbarRoundInformation.update();
 		this.m.MaxHostiles = this.Math.max(this.m.MaxHostiles, this.Tactical.Entities.getHostilesNum());
+	}
 
-		if (_round > 1 && !this.Tactical.Entities.isCombatFinished() && !this.m.IsAutoRetreat)
+	function turnsequencebar_onCheckEnemyRetreat()
+	{
+		if (this.Time.getRound() >= 2 && !this.Tactical.Entities.isCombatFinished() && !this.m.IsAutoRetreat)
 		{
 			this.Tactical.Entities.checkEnemyRetreating();
 
@@ -2276,6 +2280,14 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 				this.m.IsEnemyRetreatDialogShown = true;
 				this.showRetreatScreen();
 			}
+			else
+			{
+				this.Tactical.TurnSequenceBar.setBusy(false);
+			}
+		}
+		else
+		{
+			this.Tactical.TurnSequenceBar.setBusy(false);
 		}
 	}
 
@@ -2562,6 +2574,7 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 			this.Cursor.setCursor(this.Const.UI.Cursor.Hand);
 			this.m.IsShowingFleeScreen = false;
 			this.setPause(false);
+			this.Tactical.TurnSequenceBar.setBusy(false);
 		}, function ()
 		{
 			return !this.m.TacticalDialogScreen.isAnimating();

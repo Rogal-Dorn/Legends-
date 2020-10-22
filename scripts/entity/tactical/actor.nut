@@ -1481,7 +1481,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 		}
 
 		damage = damage * _hitInfo.BodyDamageMult;
-		damage = this.Math.max(0, this.Math.max(damage, this.Math.min(_hitInfo.DamageMinimum, _hitInfo.DamageMinimum * p.DamageReceivedTotalMult)));
+		damage = this.Math.max(0, this.Math.max(this.Math.round(damage), this.Math.min(this.Math.round(_hitInfo.DamageMinimum), this.Math.round(_hitInfo.DamageMinimum * p.DamageReceivedTotalMult))));
 		_hitInfo.DamageInflictedHitpoints = damage;
 		this.m.Skills.onDamageReceived(_attacker, _hitInfo.DamageInflictedHitpoints, _hitInfo.DamageInflictedArmor);
 
@@ -2276,7 +2276,12 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 		{
 			local p = (this.Time.getVirtualTimeF() - this.m.RenderAnimationStartTime) / this.Const.Items.Default.LowerWeaponDuration;
 
-			if (this.m.Items.getAppearance().TwoHanded)
+			if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand).m.ID == "weapon.legend_named_swordstaff" || this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand).m.ID == "weapon.legend_swordstaff" || this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand).m.ID == "weapon.legend_mage_swordstaff")
+			{
+				this.getSprite("arms_icon").Rotation = this.Math.minf(1.0, p) * -70.0;
+				this.moveSpriteOffset("arms_icon", this.getSpriteOffset("arms_icon"), this.createVec(46 * this.Math.minf(1.0, p), -33 * this.Math.minf(1.0, p)), this.Const.Items.Default.LowerWeaponDuration, this.m.RenderAnimationStartTime);
+			}
+			else if (this.m.Items.getAppearance().TwoHanded)
 			{
 				this.getSprite("arms_icon").Rotation = this.Math.minf(1.0, p) * -70.0;
 			}
@@ -2299,7 +2304,13 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 		{
 			local p = (this.Time.getVirtualTimeF() - this.m.RenderAnimationStartTime) / this.Const.Items.Default.RaiseWeaponDuration;
 
-			if (this.m.Items.getAppearance().TwoHanded)
+			if (this.getSpriteOffset("arms_icon").X != 0 || this.getSpriteOffset("arms_icon").Y != 0)
+			{
+				this.getSprite("arms_icon").Rotation = (1.0 - this.Math.minf(1.0, p)) * -70.0;
+				this.moveSpriteOffset("arms_icon", this.getSpriteOffset("arms_icon"), this.createVec(46 * (1-this.Math.minf(1.0, p)), -33 * (1-this.Math.minf(1.0, p))), this.Const.Items.Default.LowerWeaponDuration, this.m.RenderAnimationStartTime);
+				//this.logDebug("hey there calls");
+			}
+			else if (this.m.Items.getAppearance().TwoHanded)
 			{
 				this.getSprite("arms_icon").Rotation = (1.0 - this.Math.minf(1.0, p)) * -70.0;
 			}
@@ -2542,7 +2553,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 							if (otherActor.m.MaxEnemiesThisTurn < numEnemies && !otherActor.isAlliedWith(this))
 							{
 								local difficulty = this.Math.maxf(10.0, 50.0 - this.getXPValue() * 0.1);
-								otherActor.checkMorale(-1, difficulty - this.getCurrentProperties().ThreatOnHit);
+								otherActor.checkMorale(-1, difficulty);
 								otherActor.m.MaxEnemiesThisTurn = numEnemies;
 							}
 						}

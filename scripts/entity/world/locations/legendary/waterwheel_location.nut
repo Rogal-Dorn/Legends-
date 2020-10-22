@@ -61,7 +61,6 @@ this.waterwheel_location <- this.inherit("scripts/entity/world/location", {
 	function onDeserialize( _in )
 	{
 		this.location.onDeserialize(_in);
-		this.m.IsVisited = false;
 	}
 
 });
