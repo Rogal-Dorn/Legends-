@@ -35,6 +35,7 @@ this.manhunters_scenario <- this.inherit("scripts/scenarios/world/starting_scena
 		bros[0].setTitle("the Stoic");
 		bros[0].getBackground().m.RawDescription = "{In a sense, you don\'t particularly care for %name%. He\'s not hateful nor forgiving toward the prisoners of war, criminals, and the like. He just handles his business. But he\'s also this calm, unwavering way with you, and it\'s a bit bothersome. The man has so much potential, which is why you have him onboard for the %companyname%, but you just wished he showed some passion now and again.}";
 		bros[0].setPlaceInFormation(12);
+		bros[0].setVeteranPerks(2);
 		local items = bros[0].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
@@ -62,6 +63,7 @@ this.manhunters_scenario <- this.inherit("scripts/scenarios/world/starting_scena
 		bros[1].setTitle("the Whip");
 		bros[1].getBackground().m.RawDescription = "{%name% is one of the worst people you have ever come to know. He is relentlessly brutal on the indebted, even by your measure, and is responsible for outright killing a few of your catches. That said, his mean streak will serve the company well. And given that you\'ve already whipped him a time or three for losing inventory, you know he can take a hit as well as he can give it.}";
 		bros[1].setPlaceInFormation(13);
+		bros[1].setVeteranPerks(2);
 		local items = bros[1].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Offhand));
