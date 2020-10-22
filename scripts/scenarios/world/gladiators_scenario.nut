@@ -42,6 +42,7 @@ this.gladiators_scenario <- this.inherit("scripts/scenarios/world/starting_scena
 			bro.m.Level = 3;
 			bro.m.Talents = [];
 			bro.m.Attributes = [];
+			bro.setVeteranPerks(2);
 		}
 
 		local bros = roster.getAll();
