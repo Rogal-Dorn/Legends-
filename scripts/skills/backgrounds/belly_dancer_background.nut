@@ -41,11 +41,6 @@ this.belly_dancer_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.IsFemaleBackground = true;
 		this.m.IsCombatBackground = false;
 		this.m.IsPerformingBackground = true;
-<<<<<<< HEAD
-		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Notorious;
-		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;		
-=======
->>>>>>> 29f8ec5ea8a7090eb540291408291f519afdd757
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[1];
 		this.m.PerkTreeDynamic = {
 			Weapon = [

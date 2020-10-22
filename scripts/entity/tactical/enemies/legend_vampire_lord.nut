@@ -340,7 +340,6 @@ this.legend_vampire_lord <- this.inherit("scripts/entity/tactical/actor", {
 		if (r <= 2)
 		{
 			this.m.Items.equip(this.new("scripts/items/weapons/named/named_crypt_cleaver"));
-			this.m.Items.equip(this.new("scripts/items/accessory/recover_ring_item"));
 		}
 		else if (r <= 4)
 		{

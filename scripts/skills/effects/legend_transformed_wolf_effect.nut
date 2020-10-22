@@ -212,15 +212,6 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 
 	function onRemoved()
 	{
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> d299c1d87b0f32e6da0e8eca601d2575c6d3953c
-=======
-=======
->>>>>>> 1f16b12b6e7970000cb087274d79802f039f9eee
 		this.removeEffect();
 	}
 	function onCombatFinished()
@@ -257,10 +248,6 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 
 	function removeEffect()
 	{
-<<<<<<< HEAD
->>>>>>> 692b0b22b1950f2d69c97f562004ec873e763d66
-=======
->>>>>>> 1f16b12b6e7970000cb087274d79802f039f9eee
 		local actor = this.getContainer().getActor();
 
 		//reset AI

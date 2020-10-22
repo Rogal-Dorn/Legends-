@@ -7,7 +7,6 @@
 	local fn = o.getBestTarget;
 	o.getBestTarget = function ( _entity, _skill, _targets )
 	{
-		// Function is a generator.
 		local attackSkill = _entity.getSkills().getAttackOfOpportunity();
 
 		if (attackSkill == null)
@@ -21,17 +20,6 @@
 		}
 
 		local gBT = fn(_entity, _skill, _targets);
-<<<<<<< HEAD
-
-		while (resume gBT == null)
-		{
-			yield null;
-		}
-
-		return gBT;
-	};
-});
-=======
 		
 		while( resume gBT == null)
 		{
@@ -41,4 +29,3 @@
 		return gBT;
 	};
 });
->>>>>>> 65e72546ed000fcef107f3cea76ff8563a53c073

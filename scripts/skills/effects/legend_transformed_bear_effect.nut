@@ -177,66 +177,6 @@ this.legend_transformed_bear_effect <- this.inherit("scripts/skills/skill", {
 
 	function onRemoved()
 	{
-<<<<<<< HEAD
-		local actor = this.getContainer().getActor();
-		
-		//reset AI
-		if (this.m.OriginalAgent != null)
-		{
-			actor.setAIAgent(this.m.OriginalAgent);
-		}
-		actor.setFaction(this.m.OriginalFaction);
-		actor.getSprite("socket").setBrush(this.m.OriginalSocket);
-		actor.setDirty(true);
-		
-		//change appearance 		
-		actor.getSprite("body").setBrush(this.m.Body);
-		actor.getSprite("head").setBrush(this.m.Head);
-		actor.getSprite("armor").Alpha = 255;
-		actor.getSprite("helmet_bottom").Alpha = 255;
-		actor.getSprite("helmet").Alpha = 255;
-		actor.getSprite("helmet_damage").Alpha = 255;
-		actor.getSprite("helmet_top").Alpha = 255;
-		actor.getSprite("shield_icon").Alpha = 255;
-		actor.getSprite("armor_layer_chain").Alpha = 255;
-		actor.getSprite("armor_layer_plate").Alpha = 255;
-		actor.getSprite("armor_layer_tabbard").Alpha = 255;
-		actor.getSprite("armor_layer_cloak").Alpha = 255;
-		actor.getSprite("hair").Alpha = 255;
-		actor.getSprite("beard").Alpha = 255;
-		actor.getSprite("tattoo_head").Alpha = 255;
-		actor.getSprite("tattoo_body").Alpha = 255;
-		actor.getSprite("quiver").Alpha = 255;
-		actor.getSprite("arms_icon").Alpha = 255;
-		actor.getSprite("dirt").Alpha = 255;
-		actor.getSprite("accessory").Alpha = 255;
-		actor.getSprite("surcoat").Alpha = 255;
-		actor.getSprite("armor_upgrade_back").Alpha = 255;
-		actor.getSprite("armor_upgrade_front").Alpha = 255;
-		actor.getSprite("socket").Alpha = 255;
-		actor.getSprite("body").setHorizontalFlipping(0);
-		actor.getSprite("head").setHorizontalFlipping(0);
-		actor.getSprite("injury").setHorizontalFlipping(0);
-
-		if (("State" in this.Tactical) && this.Tactical.State != null) {
-			if (actor.getTile().IsVisibleForPlayer)
-			{
-				if (this.Const.Tactical.TransformParticles.len() != 0)
-				{
-					for( local i = 0; i < this.Const.Tactical.TransformParticles.len(); i = ++i )
-					{
-						this.Tactical.spawnParticleEffect(false, this.Const.Tactical.TransformParticles[i].Brushes, actor.getTile(), this.Const.Tactical.TransformParticles[i].Delay, this.Const.Tactical.TransformParticles[i].Quantity, this.Const.Tactical.TransformParticles[i].LifeTimeQuantity, this.Const.Tactical.TransformParticles[i].SpawnRate, this.Const.Tactical.TransformParticles[i].Stages);
-					}
-				}
-			}
-		}
-
-		actor.getSkills().removeByID("actives.legend_bear_claws");
-		actor.getSkills().removeByID("actives.legend_bear_bite");
-		local items = actor.getItems();
-		items.getData()[this.Const.ItemSlot.Offhand][0] = null;
-		items.getData()[this.Const.ItemSlot.Mainhand][0] = null;
-=======
 		this.removeEffect();
 	}
 
@@ -244,7 +184,6 @@ this.legend_transformed_bear_effect <- this.inherit("scripts/skills/skill", {
 	{
 		this.removeSelf();
 		this.removeEffect();
->>>>>>> 692b0b22b1950f2d69c97f562004ec873e763d66
 	}
 
 	function onUpdate( _properties )
@@ -286,16 +225,12 @@ this.legend_transformed_bear_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("body").setBrush(this.m.Body);
 		actor.getSprite("head").setBrush(this.m.Head);
 		actor.getSprite("armor").Alpha = 255;
-<<<<<<< HEAD
-		actor.getSprite("helmet").Alpha = 255;
-=======
 		actor.getSprite("helmet_vanity_lower").Alpha = 255;
 		actor.getSprite("helmet").Alpha = 255;
 		actor.getSprite("helmet_damage").Alpha = 255;
 		actor.getSprite("helmet_helm").Alpha = 255;
 		actor.getSprite("helmet_top").Alpha = 255;
 		actor.getSprite("helmet_vanity").Alpha = 255;
->>>>>>> 1f16b12b6e7970000cb087274d79802f039f9eee
 		actor.getSprite("shield_icon").Alpha = 255;
 		actor.getSprite("armor_layer_chain").Alpha = 255;
 		actor.getSprite("armor_layer_plate").Alpha = 255;

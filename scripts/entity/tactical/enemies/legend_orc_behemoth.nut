@@ -236,9 +236,8 @@ this.legend_orc_behemoth <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_berserk"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_assured_conquest"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_taste_the_pain"));
-
-		if (("Assets" in this.World) && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
-		{
+		 if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+			{
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_last_stand"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_second_wind"));
@@ -304,32 +303,8 @@ this.legend_orc_behemoth <- this.inherit("scripts/entity/tactical/actor", {
 			if (item != null)
 			{
 				this.m.Items.equip(item);
-<<<<<<< HEAD
-			}	
-=======
 			}
 
->>>>>>> 65e72546ed000fcef107f3cea76ff8563a53c073
 	}
-	
-	function makeMiniboss()
-	{
-		if (!this.actor.makeMiniboss())
-		{
-			return false;
-		}
-
-		this.getSprite("miniboss").setBrush("bust_miniboss_greenskins");
-		local weapons = [
-			"weapons/named/named_orc_axe_2h",
-			"weapons/named/named_orc_flail_2h"
-		];
-
-		this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
-
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_adrenalin"));  // idk what perks to add
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_true_believer"));
-		return true;
-	}	
 
 });

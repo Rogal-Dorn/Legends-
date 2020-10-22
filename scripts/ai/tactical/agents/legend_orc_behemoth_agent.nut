@@ -40,11 +40,7 @@ this.legend_orc_behemoth_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_crush_armor"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_decapitate"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_thresh"));
-<<<<<<< HEAD
-		
-=======
 
->>>>>>> 65e72546ed000fcef107f3cea76ff8563a53c073
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_adrenaline"));
 	}
 
