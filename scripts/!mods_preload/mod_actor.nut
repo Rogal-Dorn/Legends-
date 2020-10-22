@@ -388,10 +388,11 @@
 
 		if (oldMoraleState == this.Const.MoraleState.Fleeing && this.m.IsActingEachTurn)
 		{
-			if (this.m.IsUsingZoneOfControl)
-			{
-				this.getTile().addZoneOfControl(this.getFaction());
-			}
+			// if (this.m.IsUsingZoneOfControl)
+			// {
+			// 	this.getTile().addZoneOfControl(this.getFaction());
+			// }
+			this.setZoneOfControl(this.getTile(), this.hasZoneOfControl());
 
 			if (this.isPlayerControlled() || !this.isHiddenToPlayer())
 			{
@@ -407,11 +408,12 @@
 		}
 		else if (this.m.MoraleState == this.Const.MoraleState.Fleeing)
 		{
-			if (this.m.IsActingEachTurn && this.m.IsUsingZoneOfControl)
-			{
-				this.getTile().removeZoneOfControl(this.getFaction());
-			}
-
+			// if (this.m.IsActingEachTurn && this.m.IsUsingZoneOfControl)
+			// {
+			// 	this.getTile().removeZoneOfControl(this.getFaction());
+			// }
+			this.setZoneOfControl(this.getTile(), this.hasZoneOfControl());
+			
 			this.m.Skills.removeByID("effects.shieldwall");
 			this.m.Skills.removeByID("effects.spearwall");
 			this.m.Skills.removeByID("effects.riposte");
