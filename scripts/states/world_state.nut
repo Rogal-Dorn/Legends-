@@ -413,7 +413,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 
 	function showEventScreen( _event, _isContract = false, _playSound = true )
 	{
-		if (this.m.EventScreen.isVisible() || this.m.EventScreen.isAnimating())
+		if (this.m.EventScreen.isVisible() || this.m.EventScreen.isAnimating() || this.m.MenuStack.hasBacksteps())
 		{
 			return false;
 		}
