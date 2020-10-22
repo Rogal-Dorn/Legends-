@@ -194,8 +194,13 @@ gt.Const.LegendMod.FavoriteNoble <- [
 
 gt.Const.LegendMod.FavoriteMercenary <- [
 	this.Const.EntityType.Wardog,
+	this.Const.EntityType.ArmoredWardog,
 	this.Const.EntityType.Mercenary,
-	this.Const.EntityType.BountyHunter
+	this.Const.EntityType.MercenaryRanged,
+	this.Const.EntityType.BountyHunter,
+	this.Const.EntityType.Swordmaster,
+	this.Const.EntityType.HedgeKnight,
+	this.Const.EntityType.MasterArcher	
 ];
 
 gt.Const.LegendMod.FavoriteSoutherners <- [
@@ -463,6 +468,69 @@ gt.Const.LegendMod.GetFavoriteEnemyValue <- function ( _type )
 		case "this.Const.EntityType.BarbarianBeastmaster":
 		value = 5;
 		break;
+		case "this.Const.EntityType.BarbarianMadman":
+		value = 1;
+		break;
+		case "this.Const.EntityType.Conscript":
+		value = 5;
+		break;
+		case "this.Const.EntityType.Gunner":
+		value = 5;
+		break;
+		case "this.Const.EntityType.Officer":
+		value = 3;
+		break;
+		case "this.Const.EntityType.Engineer":
+		value = 15;
+		break;
+		case "this.Const.EntityType.Assassin":
+		value = 3;
+		break;
+		case "this.Const.EntityType.Slave":
+		value = 30;
+		break;
+		case "this.Const.EntityType.Gladiator":
+		value = 3;
+		break;
+		case "this.Const.EntityType.NomadCutthroat":
+		value = 15;
+		break;
+		case "this.Const.EntityType.NomadOutlaw":
+		value = 5;
+		break;
+		case "this.Const.EntityType.NomadSlinger":
+		value = 12;
+		break;
+		case "this.Const.EntityType.NomadArcher":
+		value = 7;
+		break;
+		case "this.Const.EntityType.NomadLeader":
+		value = 3;
+		break;
+		case "this.Const.EntityType.DesertStalker":
+		value = 2;
+		break;
+		case "this.Const.EntityType.Executioner":
+		value = 2;
+		break;
+		case "this.Const.EntityType.DesertDevil":
+		value = 2;
+		break;
+		case "this.Const.EntityType.PeasantSouthern":
+		value = 25;
+		break;
+		case "this.Const.EntityType.SkeletonLich":
+		value = 0.3;
+		break;
+		case "this.Const.EntityType.SkeletonLichMirrorImage":
+		value = 0.5;
+		break;
+		case "this.Const.EntityType.SkeletonPhylactery":
+		value = 5;
+		break;
+		case "this.Const.EntityType.ZombieTreasureHunter":
+		value = 2;
+		break;		
 		default:
 		value = 10;
 	}

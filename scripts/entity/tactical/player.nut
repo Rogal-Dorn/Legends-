@@ -43,7 +43,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		CampHealing = 0,
 		LastCampTime = 0,
 		InReserves = false,
-        StarWeights = [50,50,50,50,50,50,50,50]
+        StarWeights = [50,50,50,50,50,50,50,50],
         // Alignment = null,
         CompanyID = 0
 	},
@@ -906,6 +906,10 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			addSkills = this.Math.min(addSkills, inTraining.getMaxSkillsCanBeAdded() - 1);
 			inTraining.addRandomSkills(this, addSkills);
 		}
+		if (this.World.State.getPlayer() != null)
+		{
+			this.World.State.getPlayer().calculateModifiers();
+		}
 	}
 
 	function onCombatStart()
@@ -1051,7 +1055,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			local skill = this.new("scripts/skills/" + potential[this.Math.rand(0, potential.len() - 1)].Script);
 			this.m.Skills.add(skill);
 
-			if (this.m.CurrentProperties.SurvivesAsUndead)
+			if (this.m.CurrentProperties.SurvivesAsUndead && !this.getFlags().has("PlayerZombie") && !this.getFlags().has("PlayerSkeleton"))
 			{
 				local r = this.Math.rand(0, 1);
 
@@ -1886,7 +1890,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Items.equip(item);
 		}
 
-		r = this.Math.rand(1, 2);
+		local r = this.Math.rand(1, 2);
 
 		if (r == 1)
 		{
@@ -2381,7 +2385,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				this.logInfo("setFormation::Items; could not find item for " + itemId);
 				continue;
 			}
-			eTransfer.push(item)
+			eTransfer.push(item);
 
 			//this.m.Items.equip(item);
 		}
@@ -2400,7 +2404,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 			bTransfer.push(item);
 		}
-		return [eTransfer, bTransfer]
+		return [eTransfer, bTransfer];
 	}
 
 	function getStashModifier()
@@ -2574,11 +2578,11 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			{
 				this.m.VoiceSet = this.Math.rand(0, this.Const.WomanSounds.len() - 1);
 			}
-			volume *= this.Const.WomanSounds[this.m.VoiceSet].Volume
+			volume *= this.Const.WomanSounds[this.m.VoiceSet].Volume;
 		}
 		else
 		{
-			volume *= this.Const.HumanSounds[this.m.VoiceSet].Volume
+			volume *= this.Const.HumanSounds[this.m.VoiceSet].Volume;
 		}
 
 		this.Sound.play(this.m.Sound[_type][this.Math.rand(0, this.m.Sound[_type].len() - 1)], volume, this.getPos(), _pitch);
