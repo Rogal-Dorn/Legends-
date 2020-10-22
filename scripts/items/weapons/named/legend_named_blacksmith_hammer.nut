@@ -28,6 +28,7 @@ this.legend_named_blacksmith_hammer <- this.inherit("scripts/items/weapons/named
 		this.randomizeValues();
 	}
 
+
 	function onEquip()
 	{
 		this.weapon.onEquip();

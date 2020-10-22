@@ -11,13 +11,8 @@ gt.Const.LegendMod.FavoriteZombies <- [
 	this.Const.EntityType.ZombieBetrayer,
 	this.Const.EntityType.ZombieBoss,
 	this.Const.EntityType.ZombieKnight,
-<<<<<<< HEAD
-	this.Const.EntityType.ZombieTreasureHunter,
-	this.Const.EntityType.Necromancer
-=======
 	this.Const.EntityType.Necromancer,
 	this.Const.EntityType.ZombieTreasureHunter,
->>>>>>> 65e72546ed000fcef107f3cea76ff8563a53c073
 ];
 
 gt.Const.LegendMod.FavoriteAlps <- [
@@ -81,12 +76,7 @@ gt.Const.LegendMod.FavoriteSkeleton <- [
 	this.Const.EntityType.SkeletonLich,
 	this.Const.EntityType.SkeletonLichMirrorImage,
 	this.Const.EntityType.SkeletonPhylactery,
-<<<<<<< HEAD
-	this.Const.EntityType.SkeletonGladiator	
-];
-=======
 	this.Const.EntityType.SkeletonGladiator	];
->>>>>>> 65e72546ed000fcef107f3cea76ff8563a53c073
 
 gt.Const.LegendMod.FavoriteSpider <- [
 	this.Const.EntityType.Spider,
@@ -125,13 +115,8 @@ gt.Const.LegendMod.FavoriteSwordmaster <- [
 	this.Const.EntityType.Gladiator,
 	this.Const.EntityType.Assassin,
 	this.Const.EntityType.NomadLeader,
-<<<<<<< HEAD
-	this.Const.EntityType.Executioner,
-	this.Const.EntityType.DesertDevil	
-=======
     this.Const.EntityType.Executioner,
 	this.Const.EntityType.DesertDevil
->>>>>>> 65e72546ed000fcef107f3cea76ff8563a53c073
 ];
 
 gt.Const.LegendMod.FavoriteArcher <- [
@@ -193,6 +178,7 @@ gt.Const.LegendMod.FavoriteCaravan <- [
 	this.Const.EntityType.PeasantSouthern
 ];
 
+
 gt.Const.LegendMod.FavoriteNoble <- [
 	this.Const.EntityType.Footman,
 	this.Const.EntityType.Greatsword,
@@ -204,25 +190,6 @@ gt.Const.LegendMod.FavoriteNoble <- [
 	this.Const.EntityType.LegendHalberdier,
 	this.Const.EntityType.LegendSlinger,
 	this.Const.EntityType.Knight
-];
-
-gt.Const.LegendMod.FavoriteSoutherners <- [
-	this.Const.EntityType.Conscript,
-	this.Const.EntityType.Gunner,
-	this.Const.EntityType.Officer,
-	this.Const.EntityType.Engineer,
-	this.Const.EntityType.Assassin,
-	this.Const.EntityType.Slave,
-	this.Const.EntityType.Gladiator,
-	this.Const.EntityType.NomadCutthroat,
-	this.Const.EntityType.NomadOutlaw,
-	this.Const.EntityType.NomadSlinger,
-	this.Const.EntityType.NomadArcher,
-	this.Const.EntityType.NomadLeader,
-	this.Const.EntityType.DesertStalker,
-	this.Const.EntityType.Executioner,
-	this.Const.EntityType.DesertDevil,
-	this.Const.EntityType.PeasantSouthern,
 ];
 
 gt.Const.LegendMod.FavoriteMercenary <- [
@@ -421,9 +388,6 @@ gt.Const.LegendMod.GetFavoriteEnemyValue <- function ( _type )
 		case "this.Const.EntityType.Wardog":
 		value = 12;
 		break;
-		case "this.Const.EntityType.ArmoredWardog":
-		value = 10;
-		break;		
 		case "this.Const.EntityType.Mercenary":
 		value = 4;
 		break;

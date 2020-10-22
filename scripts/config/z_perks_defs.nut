@@ -2068,15 +2068,6 @@ gt.Const.Perks.PerkDefObjects <- [
 		Const = "LegendFavouredEnemySoutherner"
 	},
 	{
-		ID = "perk.legend_favoured_enemy_southerner",
-		Script = "scripts/skills/perks/perk_legend_favoured_enemy_southerner",
-		Name = this.Const.Strings.PerkName.LegendFavouredEnemySoutherner,
-		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemySoutherner,
-		Icon = "ui/perks/favoured_southerner_01.png",
-		IconDisabled = "ui/perks/favoured_southerner_bw.png",
-		Const = "LegendFavouredEnemySoutherner"
-	},	
-	{
 		ID = "perk.mastery.greatsword",
 		Script = "scripts/skills/perks/perk_mastery_greatsword",
 		Name = this.Const.Strings.PerkName.LegendSpecGreatSword,
@@ -3035,26 +3026,32 @@ gt.Const.Perks.PerkDefObjects <- [
 		Script = "scripts/skills/perks/perk_legend_citrinitas",
 		Name = this.Const.Strings.PerkName.LegendCitrinitas,
 		Tooltip = this.Const.Strings.PerkName.LegendCitrinitas,
-		Icon = "ui/perks/citrinitas_circle.png",
-		IconDisabled = "ui/perks/citrinitas_circle_bw.png",
+		//Icon = "ui/perks/citrinitas_circle.png",
+		//IconDisabled = "ui/perks/citrinitas_circle_bw.png",
+		Icon = "ui/perks/perk_34.png",
+		IconDisabled = "ui/perks/perk_34_sw.png",		
 		Const = "LegendCitrinitas"
 	},
 	{
 		ID = "perk.legend_albedo",
-		Script = "scripts/skills/perks/perk_legend_citrinitas",
+		Script = "scripts/skills/perks/perk_legend_albedo",
 		Name = this.Const.Strings.PerkName.LegendAlbedo,
 		Tooltip = this.Const.Strings.PerkName.LegendAlbedo,
-		Icon = "ui/perks/albedo_circle.png",
-		IconDisabled = "ui/perks/albedo_circle_bw.png",
+		//Icon = "ui/perks/albedo_circle.png",
+		//IconDisabled = "ui/perks/albedo_circle_bw.png",
+		Icon = "ui/perks/MaxToolsT1.png",
+		IconDisabled = "ui/perks/MaxToolsT1_bw.png",		
 		Const = "LegendAlbedo"
 	},
 	{
 		ID = "perk.legend_nigredo",
-		Script = "scripts/skills/perks/perk_legend_citrinitas",
+		Script = "scripts/skills/perks/perk_legend_nigredo",
 		Name = this.Const.Strings.PerkName.LegendNigredo,
 		Tooltip = this.Const.Strings.PerkName.LegendNigredo,
-		Icon = "ui/perks/nigredo_circle.png",
-		IconDisabled = "ui/perks/nigredo_circle_bw.png",
+		//Icon = "ui/perks/nigredo_circle.png",
+		//IconDisabled = "ui/perks/nigredo_circle_bw.png",
+		Icon = "ui/perks/MaxToolsT1.png",
+		IconDisabled = "ui/perks/MaxToolsT1_bw.png",		
 		Const = "LegendNigredo"
 	},
 	{

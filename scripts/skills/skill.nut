@@ -410,8 +410,11 @@ this.skill <- {
 		];
 		local damage_regular_min = this.Math.floor(p.DamageRegularMin * p.DamageRegularMult * p.DamageTotalMult * (this.m.IsRanged ? p.RangedDamageMult : p.MeleeDamageMult) * p.DamageTooltipMinMult);
 		local damage_regular_max = this.Math.floor(p.DamageRegularMax * p.DamageRegularMult * p.DamageTotalMult * (this.m.IsRanged ? p.RangedDamageMult : p.MeleeDamageMult) * p.DamageTooltipMaxMult);
-		local damage_direct_min = this.Math.floor(damage_regular_min * this.Math.minf(1.0, this.m.DirectDamageMult + p.DamageDirectAdd));
-		local damage_direct_max = this.Math.floor(damage_regular_max * this.Math.minf(1.0, this.m.DirectDamageMult + p.DamageDirectAdd));
+		local damage_direct_min = this.Math.floor(damage_regular_min * this.Math.minf(1.0, p.DamageDirectMult * (this.m.DirectDamageMult + p.DamageDirectAdd)));
+		local damage_direct_max = this.Math.floor(damage_regular_max * this.Math.minf(1.0, p.DamageDirectMult * (this.m.DirectDamageMult + p.DamageDirectAdd)));
+		//this.logDebug("dirdam "+this.m.DirectDamageMult+" damadd "+p.DamageDirectAdd);
+		
+		
 		local damage_armor_min = this.Math.floor(p.DamageRegularMin * p.DamageArmorMult * p.DamageTotalMult * (this.m.IsRanged ? p.RangedDamageMult : p.MeleeDamageMult) * p.DamageTooltipMinMult);
 		local damage_armor_max = this.Math.floor(p.DamageRegularMax * p.DamageArmorMult * p.DamageTotalMult * (this.m.IsRanged ? p.RangedDamageMult : p.MeleeDamageMult) * p.DamageTooltipMaxMult);
 
@@ -1205,6 +1208,7 @@ this.skill <- {
 			return 100;
 		}
 
+		local allowDiversion = this.m.IsRanged && this.m.MaxRangeBonus > 1;
 		local defenderProperties = _targetEntity.getSkills().buildPropertiesForDefense(user, this);
 		local skill = this.m.IsRanged ? properties.RangedSkill * properties.RangedSkillMult : properties.MeleeSkill * properties.MeleeSkillMult;
 		local defense = _targetEntity.getDefense(user, this, defenderProperties);
@@ -1246,7 +1250,7 @@ this.skill <- {
 		toHit = toHit + this.Math.max(0, 100 - toHit) * (1.0 - defenderProperties.TotalDefenseToHitMult);
 		local userTile = user.getTile();
 
-		if (this.m.IsRanged && userTile.getDistanceTo(_targetEntity.getTile()) > 1)
+		if (allowDiversion && this.m.IsRanged && userTile.getDistanceTo(_targetEntity.getTile()) > 1)
 		{
 			local blockedTiles = this.Const.Tactical.Common.getBlockedTiles(userTile, _targetEntity.getTile(), user.getFaction(), true);
 
@@ -1408,7 +1412,7 @@ this.skill <- {
 			local x = tile.X;
 			local y = tile.Y;
 			this.Tactical.getTile(x,y).removeObject();
-			this.Tactical.getTile(x,y).spawnObject("entity/tactical/objects/tree_sticks")
+			this.Tactical.getTile(x,y).spawnObject("entity/tactical/objects/tree_sticks");
 			return true;
 		}
 
@@ -1628,7 +1632,7 @@ this.skill <- {
 			if(!isHit) {
 				this.Tactical.EventLog.logEx(this.Const.UI.getColorizedEntityName(_targetEntity) + " got lucky.");
 			} else {
-				this.Tactical.EventLog.logEx(this.Const.UI.getColorizedEntityName(_targetEntity) + " wasn't lucky enough.");
+				this.Tactical.EventLog.logEx(this.Const.UI.getColorizedEntityName(_targetEntity) + " wasn\'t lucky enough.");
 			}
 		}
 

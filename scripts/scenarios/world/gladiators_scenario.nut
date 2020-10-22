@@ -70,6 +70,7 @@ this.gladiators_scenario <- this.inherit("scripts/scenarios/world/starting_scena
 		bros[0].getItems().equip(this.new("scripts/items/weapons/scimitar"));
 		bros[0].getItems().equip(this.new("scripts/items/tools/throwing_net"));
 		bros[0].improveMood(0.75, "Eager to prove himself outside the arena");
+		bros[0].setVeteranPerks(2);
 		bros[1].setTitle("the Bear");
 		bros[1].getSkills().add(this.new("scripts/skills/traits/glorious_endurance_trait"));
 		bros[1].getTalents().resize(this.Const.Attributes.COUNT, 0);
@@ -91,6 +92,7 @@ this.gladiators_scenario <- this.inherit("scripts/scenarios/world/starting_scena
 		bros[1].getItems().equip(this.new("scripts/items/weapons/oriental/heavy_southern_mace"));
 		bros[1].getItems().equip(this.new("scripts/items/shields/oriental/metal_round_shield"));
 		bros[1].improveMood(0.75, "Eager to prove himself outside the arena");
+		bros[1].setVeteranPerks(2);
 		bros[2].setTitle("the Viper");
 		bros[2].getSkills().add(this.new("scripts/skills/traits/glorious_quickness_trait"));
 		bros[2].getTalents().resize(this.Const.Attributes.COUNT, 0);
@@ -112,6 +114,7 @@ this.gladiators_scenario <- this.inherit("scripts/scenarios/world/starting_scena
 		bros[2].getItems().equip(this.new("scripts/items/weapons/oriental/qatal_dagger"));
 		bros[2].getItems().equip(this.new("scripts/items/tools/throwing_net"));
 		bros[2].improveMood(0.75, "Eager to prove himself outside the arena");
+		bros[2].setVeteranPerks(2);
 		bros[0].getBackground().m.RawDescription = "{%fullname% thinks muscles make for glory. Wrong. Captain, it is I, " + bros[2].getName() + ", who commands the ladies of this realm. Need not ask me how. Behold! Look at it! Look at the size of it! Yeah. That\'s what I thought. Fools, train all you want, you can\'t have this!}";
 		bros[0].getBackground().buildDescription(true);
 		bros[1].getBackground().m.RawDescription = "{%fullname% is not the best warrior here, let\'s be clear. Captain, look at my muscles, is it not I, " + bros[0].getName() + ", who commands the greatest reward of life: the fear of one\'s own enemies! Look, if I lather a little and catch the light, the muscles gleam. Would it not be that the heavens were mistakened for above, when all the women say they find them right here, particularly here, upon my glorious pecs?}";

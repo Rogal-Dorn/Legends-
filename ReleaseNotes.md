@@ -4073,9 +4073,10 @@ fix missing non-layered alp helmet
 fix champion behemoths ai and champion sets
 Adds southern enemy classes to favorite enemy perks
 fixes noble fencer spawn crash on legendary difficulty.
-
-15.0.0.15
-
-**Fixes**
-Added correct tags to some named Weapons that were missing them (Thanks Grobocop!)
-Fixed freedom of movement
+Fixes the decoded scrolls [the recipe historians are part of] not saving what they are when the game reloads and just becoming useless
+Adds how many scrolls a character can use to each scroll's tooltip
+Fixes the EXP Reward DISPLAY (doesn't change the actual given amount) at the end of some contracts (caravan, delivery, etc)
+  [These numbers are a percentage of the gold reward multiplied by .85: Deliver Item/Money: 25% , Escort Caravan: 50% , Discover Location: 10%]
+Should fix smite skill rarely crashing game when killing an enemy at the very end of the round
+Bounty hunter now actually gives money for killing an enemy champion
+Possibly fixes AI units semi-randomly not having Zones of Control [being able to shoot bows next to them, can't shoot by dead body/air, etc]

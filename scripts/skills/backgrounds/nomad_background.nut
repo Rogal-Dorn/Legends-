@@ -56,19 +56,11 @@ this.nomad_background <- this.inherit("scripts/skills/backgrounds/character_back
 		this.m.LastNames = this.Const.Strings.SouthernNamesLast;
 		this.m.Level = this.Math.rand(2, 4);
 		this.m.IsCombatBackground = true;
-<<<<<<< HEAD
-		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
-		this.m.AlignmentMax = this.Const.LegendMod.Alignment.NeutralMin;		
-		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[1];
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[2];
-=======
-		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[1];
-		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[3];
->>>>>>> 29f8ec5ea8a7090eb540291408291f519afdd757
 		this.m.Modifiers.Terrain = [
 				0.0, // ?
 				0.0, //ocean
-				0.2,//plains
+				0.1,//plains
 				0.0, //swamp
 				0.0, //hills
 				0.0, //forest
@@ -81,13 +73,11 @@ this.nomad_background <- this.inherit("scripts/skills/backgrounds/character_back
 				0.0, // snow
 				0.0, // badlands
 				0.0, //highlands
-				0.2, //stepps
-				0.0 //ocean
-<<<<<<< HEAD
-			];		
-=======
+				0.1, //stepps
+				0.0, //ocean
+				0.1, //desert
+				0.1 //oasis				
 			];
->>>>>>> 29f8ec5ea8a7090eb540291408291f519afdd757
 		this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.SwordTree,
@@ -111,11 +101,7 @@ this.nomad_background <- this.inherit("scripts/skills/backgrounds/character_back
 			],
 			Class = [],
 			Magic = []
-<<<<<<< HEAD
-		}		
-=======
 		}
->>>>>>> 29f8ec5ea8a7090eb540291408291f519afdd757
 	}
 
 	function getTooltip()

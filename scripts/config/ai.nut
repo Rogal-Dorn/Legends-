@@ -330,11 +330,7 @@ gt.Const.AI <- {
 			"Explode",
 			"MoveToMerge",
 			"Howl",
-<<<<<<< HEAD
-			"SpawnShadow",
-=======
 			"SpawnShadow"
->>>>>>> 65e72546ed000fcef107f3cea76ff8563a53c073
 		],
 		Order = {
 			Retreat = 2,
@@ -573,11 +569,11 @@ gt.Const.AI <- {
 		EngageLevelDisadvantageMult = 0.9,
 		EngageAvoidDisadvantageBonus = 2,
 		EngageNotIdealRangePenalty = 12,
-		EngageAllyFormationMaxDistance = 3.0,
-		EngageFormationBonus = 8.0,
-		EngageTargetValueMult = 20.0,
-		EngageLineTargetValueMult = 10.0,
-		EngageWhenAlreadyInRangeMult = 0.1,
+		EngageAllyFormationMaxDistance = 3.00000000,
+		EngageFormationBonus = 8.00000000,
+		EngageTargetValueMult = 20.00000000,
+		EngageLineTargetValueMult = 10.00000000,
+		EngageWhenAlreadyInRangeMult = 0.10000000,
 		EngageEndTurnHiddenBonus = 4,
 		EngageWithSkillBonus = 8,
 		EngageWithSkillNextTimeBonus = 4,
@@ -805,8 +801,8 @@ gt.Const.AI <- {
 		RaiseUndeadMoveToBadTerrainPenalty = 4,
 		RaiseUndeadLowDangerPenalty = 2,
 		RaiseUndeadHighDangerPenalty = 5,
-		RaiseUndeadStrengthMult = 0.75,
-		RaiseUndeadMaxDanger = 3.0,
+		RaiseUndeadStrengthMult = 0.75000000,
+		RaiseUndeadMaxDanger = 3.00000000,
 		RaiseUndeadOnBadTerrainPenalty = 2,
 		RaiseUndeadNearEnemyValue = 1,
 		RaiseUndeadNearEnemyNearMeValue = 4,
@@ -1008,7 +1004,7 @@ gt.Const.AI <- {
 		AdrenalineBeingKitedMult = 2.0,
 		IndomitableSurrounded = 0.1,
 		IndomitableScoreCutoff = 2.5,
-		SleepTurnDoneMult = 0.1,
+		SleepTurnDoneMult = 0.1
 		GashTargetUninjuredMult = 1.25,
 		GashHeavyInjuryInsteadOfNoneMult = 1.5,
 		GashMaxInjuries = 4,

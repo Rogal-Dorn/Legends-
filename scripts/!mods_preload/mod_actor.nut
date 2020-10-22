@@ -388,10 +388,11 @@
 
 		if (oldMoraleState == this.Const.MoraleState.Fleeing && this.m.IsActingEachTurn)
 		{
-			if (this.m.IsUsingZoneOfControl)
-			{
-				this.getTile().addZoneOfControl(this.getFaction());
-			}
+			// if (this.m.IsUsingZoneOfControl)
+			// {
+			// 	this.getTile().addZoneOfControl(this.getFaction());
+			// }
+			this.setZoneOfControl(this.getTile(), this.hasZoneOfControl());
 
 			if (this.isPlayerControlled() || !this.isHiddenToPlayer())
 			{
@@ -407,11 +408,12 @@
 		}
 		else if (this.m.MoraleState == this.Const.MoraleState.Fleeing)
 		{
-			if (this.m.IsActingEachTurn && this.m.IsUsingZoneOfControl)
-			{
-				this.getTile().removeZoneOfControl(this.getFaction());
-			}
-
+			// if (this.m.IsActingEachTurn && this.m.IsUsingZoneOfControl)
+			// {
+			// 	this.getTile().removeZoneOfControl(this.getFaction());
+			// }
+			this.setZoneOfControl(this.getTile(), this.hasZoneOfControl());
+			
 			this.m.Skills.removeByID("effects.shieldwall");
 			this.m.Skills.removeByID("effects.spearwall");
 			this.m.Skills.removeByID("effects.riposte");
@@ -739,6 +741,11 @@
 		if (this.m.IsMiniboss && !this.Tactical.State.isScenarioMode() && _killer != null && _killer.isPlayerControlled())
 		{
 			this.updateAchievement("GiveMeThat", 1, 1);
+
+			if (!this.Tactical.State.isScenarioMode() && this.World.Retinue.hasFollower("follower.bounty_hunter"))
+			{
+				this.World.Retinue.getFollower("follower.bounty_hunter").onChampionKilled(this);
+			}
 		}
 
 		this.m.IsDying = true;
@@ -854,6 +861,18 @@
 		{
 			this.World.Contracts.onActorKilled(this, _killer, this.Tactical.State.getStrategicProperties().CombatID);
 			this.World.Events.onActorKilled(this, _killer, this.Tactical.State.getStrategicProperties().CombatID);
+			
+			if (this.Tactical.State.getStrategicProperties() != null && this.Tactical.State.getStrategicProperties().IsArenaMode)
+			{
+				if (_killer == null || _killer.getID() == this.getID())
+				{
+					this.Sound.play(this.Const.Sound.ArenaFlee[this.Math.rand(0, this.Const.Sound.ArenaFlee.len() - 1)], this.Const.Sound.Volume.Tactical * this.Const.Sound.Volume.Arena);
+				}
+				else
+				{
+					this.Sound.play(this.Const.Sound.ArenaKill[this.Math.rand(0, this.Const.Sound.ArenaKill.len() - 1)], this.Const.Sound.Volume.Tactical * this.Const.Sound.Volume.Arena);
+				}
+			}
 		}
 
 		if (this.isPlayerControlled())
@@ -902,7 +921,10 @@
 				{
 					if (bro.isAlive() && !bro.isDying() && bro.getCurrentProperties().IsAffectedByDyingAllies)
 					{
-						bro.worsenMood(this.Const.MoodChange.BrotherDied, this.getName() + " died in battle");
+						if (this.World.Assets.getOrigin().getID() != "scenario.manhunters" || this.getBackground().getID() != "background.slave" || bro.getBackground().getID() == "background.slave")
+						{
+							bro.worsenMood(this.Const.MoodChange.BrotherDied, this.getName() + " died in battle");
+						}
 					}
 				}
 			}

@@ -51,11 +51,6 @@ this.manhunter_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.Names = this.Const.Strings.SouthernNames;
 		this.m.LastNames = this.Const.Strings.SouthernNamesLast;
 		this.m.IsLowborn = true;
-<<<<<<< HEAD
-		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
-		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Merciless;		
-=======
->>>>>>> 29f8ec5ea8a7090eb540291408291f519afdd757
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[1];
 		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[1];
 		this.m.PerkTreeDynamic = {
