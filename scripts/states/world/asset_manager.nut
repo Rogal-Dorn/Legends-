@@ -36,6 +36,7 @@ this.asset_manager <- {
 		RelationDecayBadMult = 1.0,
 		NegotiationAnnoyanceMult = 1.0,
 		AdvancePaymentCap = 0.5,
+		VisionRadiusMult = 1.0,
 		AmmoMaxAdditional = 0,
 		MedicineMaxAdditional = 0,
 		ArmorPartsMaxAdditional = 0,
@@ -643,6 +644,7 @@ this.asset_manager <- {
 		this.m.RelationDecayBadMult = 1.0;
 		this.m.NegotiationAnnoyanceMult = 1.0;
 		this.m.AdvancePaymentCap = 0.5;
+		this.m.VisionRadiusMult = 1.0;
 		this.m.AmmoMaxAdditional = 0;
 		this.m.MedicineMaxAdditional = 0;
 		this.m.ArmorPartsMaxAdditional = 0;
