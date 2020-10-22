@@ -4079,3 +4079,4 @@ Fixes the EXP Reward DISPLAY (doesn't change the actual given amount) at the end
   [These numbers are a percentage of the gold reward multiplied by .85: Deliver Item/Money: 25% , Escort Caravan: 50% , Discover Location: 10%]
 Should fix smite skill rarely crashing game when killing an enemy at the very end of the round
 Bounty hunter now actually gives money for killing an enemy champion
+Possibly fixes AI units semi-randomly not having Zones of Control [being able to shoot bows next to them, can't shoot by dead body/air, etc]
