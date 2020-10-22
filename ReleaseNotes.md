@@ -4065,7 +4065,7 @@ Should fix miasma skill
 Fixes some of the noble scenario starting items back to previous (& intended) items
 Minor tweak to beast spawns : Serpents resource-per-unit upped along with Ifrits. (e.g. where you'd previously see 20 serpents you'd now see 16)
 
-15.0.0.4
+15.0.0.5
 
 **Fixes**
 Fixes the decoded scrolls [the recipe historians are part of] not saving what they are when the game reloads and just becoming useless
@@ -4073,3 +4073,4 @@ Adds how many scrolls a character can use to each scroll's tooltip
 Fixes the EXP Reward DISPLAY (doesn't change the actual given amount) at the end of some contracts (caravan, delivery, etc)
   [These numbers are a percentage of the gold reward multiplied by .85: Deliver Item/Money: 25% , Escort Caravan: 50% , Discover Location: 10%]
 Should fix smite skill rarely crashing game when killing an enemy at the very end of the round
+Bounty hunter now actually gives money for killing an enemy champion
