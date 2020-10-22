@@ -4042,7 +4042,9 @@ Nomad: Gets new Dynamic perk tree. Adds Ammo and Scout and Terrain movement modi
 
 
 
-15.0.0.13
+15.0.0.14
+
+Update to BB 1.4.0.44
 
 **Fixes**
 Fixes serpent skin armor upgrade
@@ -4064,10 +4066,13 @@ Fixes barbarian madman spawning without armor
 Should fix miasma skill
 Fixes some of the noble scenario starting items back to previous (& intended) items
 Minor tweak to beast spawns : Serpents resource-per-unit upped along with Ifrits. (e.g. where you'd previously see 20 serpents you'd now see 16)
-
-15.0.0.5
-
-**Fixes**
+Fixed Brawny incorrect value on some layers and helmets. (Thanks Leonion)
+Updated description of Bloody harvest to specify "All melee attacks"
+fix hollenhound curse neglecting resilience
+fix missing non-layered alp helmet
+fix champion behemoths ai and champion sets
+Adds southern enemy classes to favorite enemy perks
+fixes noble fencer spawn crash on legendary difficulty.
 Fixes the decoded scrolls [the recipe historians are part of] not saving what they are when the game reloads and just becoming useless
 Adds how many scrolls a character can use to each scroll's tooltip
 Fixes the EXP Reward DISPLAY (doesn't change the actual given amount) at the end of some contracts (caravan, delivery, etc)
