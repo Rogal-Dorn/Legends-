@@ -1029,7 +1029,7 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 			function start()
 			{
 				local money = this.Contract.m.Payment.getOnCompletion() + this.Contract.m.Payment.getPerCount() * this.Flags.get("HeadsCollected");
-				local xpGained = this.Math.round(money * 0.10 * this.Const.Combat.GlobalXPMult);
+				local xpGained = this.Math.round(money * 0.50 * this.Const.Combat.GlobalXPMult);
 				this.List.push({
 					id = 10,
 					icon = "ui/icons/asset_money.png",

@@ -4075,3 +4075,14 @@ Adds southern enemy classes to favorite enemy perks
 fixes noble fencer spawn crash on legendary difficulty.
 
 
+=======
+
+15.0.0.4
+
+**Fixes**
+Fixes the decoded scrolls [the recipe historians are part of] not saving what they are when the game reloads and just becoming useless
+Adds how many scrolls a character can use to each scroll's tooltip
+Fixes the EXP Reward DISPLAY (doesn't change the actual given amount) at the end of some contracts (caravan, delivery, etc)
+  [These numbers are a percentage of the gold reward multiplied by .85: Deliver Item/Money: 25% , Escort Caravan: 50% , Discover Location: 10%]
+Should fix smite skill rarely crashing game when killing an enemy at the very end of the round
+
