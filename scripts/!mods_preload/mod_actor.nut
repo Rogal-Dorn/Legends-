@@ -132,6 +132,7 @@
 		this.m.Skills.onMissed(_attacker, _skill);
 	}
 
+
     o.resetPerks <- function ()
     {
         local perks =  0;
