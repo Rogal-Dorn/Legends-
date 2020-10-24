@@ -435,6 +435,11 @@ this.ai_defend_rotation <- this.inherit("scripts/ai/tactical/behavior", {
 		{
 			this.logInfo("* " + _entity.getName() + ": Using Rotation!");
 		}
+		
+		if (this.m.TargetTile == null || this.m.Skill == null)
+		{
+			return true;
+		}
 
 		this.m.Skill.use(this.m.TargetTile);
 
