@@ -880,7 +880,17 @@ this.skill <- {
 
 	function onVerifyTarget( _originTile, _targetTile )
 	{
-		if (this.m.IsTargetingActor && (_targetTile.IsEmpty || !_targetTile.getEntity().isAttackable() || !_targetTile.getEntity().isAlive() || _targetTile.getEntity().isDying()))
+		if (this.m.IsTargetingActor && (_targetTile.IsEmpty))
+		{
+			return false;
+		}
+
+		if (_targetTile.getEntity().isSupplies() && _originTile.getEntity().isPlayerControlled() && !this.m.IsRanged)
+		{
+			return true;
+		}
+
+		if (!_targetTile.getEntity().isAttackable() || !_targetTile.getEntity().isAlive() || _targetTile.getEntity().isDying()) //chopped from isEmpty/isAttackable line to fit a return true on isSupplies between, sloppy i think but works
 		{
 			return false;
 		}
@@ -1329,7 +1339,7 @@ this.skill <- {
 		
 		if (_targetEntity.isSupplies())
 		{
-			local r = this.Math.rand(0, 99);
+			local r = this.Math.rand(1, 100);
 			if (r == 1)
 			{
 				local loot = this.new("scripts/items/supplies/ammo_small_item");
