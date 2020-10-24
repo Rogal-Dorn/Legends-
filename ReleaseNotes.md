@@ -4106,6 +4106,7 @@ Fix mutual skeleton/zombie on the same character (wuxiangjinxing)
 Fix some named weapons not counted as named (grobocop)
 Fix incorrect codes in albedo, nigredo and citrinitas (wuxiangjinxing)
 Fix darkvul armor not correctly generated (wuxiangjinxing)
+Fix some incorrect codes in the tame-white-wolf event (Leonion)
 Remove non-existing skills from AI definitions (grobocop)
 
 
