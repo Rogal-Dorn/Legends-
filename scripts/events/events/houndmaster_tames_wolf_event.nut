@@ -48,7 +48,7 @@ this.houndmaster_tames_wolf_event <- this.inherit("scripts/events/event", {
 	{
 		local currentTile = this.World.State.getPlayer().getTile();
 
-		if (currentTile.Type != (this.Const.World.TerrainType.Forest || this.Const.World.TerrainType.AutumnForest || this.Const.World.TerrainType.LeaveForest))
+		if (currentTile.Type != this.Const.World.TerrainType.Forest && currentTile.Type != this.Const.World.TerrainType.AutumnForest && currentTile.Type != this.Const.World.TerrainType.LeaveForest)
 		{
 			return;
 		}
