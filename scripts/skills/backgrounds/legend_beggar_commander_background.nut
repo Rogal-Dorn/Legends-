@@ -68,7 +68,8 @@ this.legend_beggar_commander_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.PerkDefs.Pathfinder,
 				this.Const.Perks.PerkDefs.Adrenalin,
 				this.Const.Perks.PerkDefs.Recover,
-				this.Const.Perks.PerkDefs.Student
+				this.Const.Perks.PerkDefs.Student,
+				this.Const.Perks.PerkDefs.LegendRoster2
 			],
 			[
 				this.Const.Perks.PerkDefs.CoupDeGrace,
@@ -79,7 +80,7 @@ this.legend_beggar_commander_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.PerkDefs.SteelBrow,
 				this.Const.Perks.PerkDefs.QuickHands,
 				this.Const.Perks.PerkDefs.Gifted,
-				this.Const.Perks.PerkDefs.LegendRoster2
+				this.Const.Perks.PerkDefs.LegendRoster3
 			],
 			[
 				this.Const.Perks.PerkDefs.Backstabber,
@@ -90,7 +91,7 @@ this.legend_beggar_commander_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.PerkDefs.Rotation,
 				this.Const.Perks.PerkDefs.RallyTheTroops,
 				this.Const.Perks.PerkDefs.Taunt,
-				this.Const.Perks.PerkDefs.LegendRoster3
+				this.Const.Perks.PerkDefs.LegendRoster4
 			],
 			[
 				this.Const.Perks.PerkDefs.SpecMace,
@@ -105,8 +106,7 @@ this.legend_beggar_commander_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.PerkDefs.SpecSpear,
 				this.Const.Perks.PerkDefs.SpecCrossbow,
 				this.Const.Perks.PerkDefs.SpecBow,
-				this.Const.Perks.PerkDefs.SpecThrowing,
-				this.Const.Perks.PerkDefs.LegendRoster4,
+				this.Const.Perks.PerkDefs.SpecThrowing
 			],
 			[
 				this.Const.Perks.PerkDefs.Underdog,
@@ -199,27 +199,27 @@ this.legend_beggar_commander_background <- this.inherit("scripts/skills/backgrou
 			],
 			Bravery = [
 				-20,
-				-20
+				-15
 			],
 			Stamina = [
 				-20,
 				-20
 			],
 			MeleeSkill = [
-				-10,
-				-10
+				-5,
+				-5
 			],
 			RangedSkill = [
-				-10,
-				-10
+				-5,
+				-5
 			],
 			MeleeDefense = [
-				-10,
-				-10
+				-5,
+				-5
 			],
 			RangedDefense = [
-				-10,
-				-10
+				-5,
+				-5
 			],
 			Initiative = [
 				20,
