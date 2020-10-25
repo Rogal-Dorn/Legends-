@@ -32,28 +32,13 @@ this.legend_beggar_commander_background <- this.inherit("scripts/skills/backgrou
 			this.Const.Attributes.Bravery
 		];
 		this.m.Titles = [
-			"the Dirty",
-			"the Poor",
-			"the Ragged",
-			"the Sick",
-			"the Liar",
-			"the Idle",
-			"the Sloth",
-			"the Useless",
-			"the Beggar",
-			"the Weasel",
-			"the Skunk",
-			"the Sluggard",
-			"the Homeless"
+			"the Desolated"
 		];
 		this.m.Faces = this.Const.Faces.AllMale;
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Untidy;
-
-
 		this.m.IsLowborn = true;
-		this.m.Level = 1;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[0];
@@ -75,40 +60,72 @@ this.legend_beggar_commander_background <- this.inherit("scripts/skills/backgrou
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[0];
 		this.m.CustomPerkTree = [
 			[
-				this.Const.Perks.PerkDefs.Adrenalin,
+				this.Const.Perks.PerkDefs.FastAdaption,
+				this.Const.Perks.PerkDefs.CripplingStrikes,
+				this.Const.Perks.PerkDefs.Colossus,
+				this.Const.Perks.PerkDefs.BagsAndBelts,
 				this.Const.Perks.PerkDefs.NineLives,
+				this.Const.Perks.PerkDefs.Pathfinder,
+				this.Const.Perks.PerkDefs.Adrenalin,
 				this.Const.Perks.PerkDefs.Recover,
-				this.Const.Perks.PerkDefs.BagsAndBelts
+				this.Const.Perks.PerkDefs.Student
 			],
 			[
+				this.Const.Perks.PerkDefs.CoupDeGrace,
+				this.Const.Perks.PerkDefs.Bullseye,
 				this.Const.Perks.PerkDefs.Dodge,
+				this.Const.Perks.PerkDefs.FortifiedMind,
 				this.Const.Perks.PerkDefs.HoldOut,
+				this.Const.Perks.PerkDefs.SteelBrow,
 				this.Const.Perks.PerkDefs.QuickHands,
+				this.Const.Perks.PerkDefs.Gifted,
 				this.Const.Perks.PerkDefs.LegendRoster2
 			],
 			[
+				this.Const.Perks.PerkDefs.Backstabber,
 				this.Const.Perks.PerkDefs.Anticipation,
+				this.Const.Perks.PerkDefs.ShieldExpert,
+				this.Const.Perks.PerkDefs.Brawny,
+				this.Const.Perks.PerkDefs.Relentless,
 				this.Const.Perks.PerkDefs.Rotation,
+				this.Const.Perks.PerkDefs.RallyTheTroops,
 				this.Const.Perks.PerkDefs.Taunt,
 				this.Const.Perks.PerkDefs.LegendRoster3
 			],
 			[
+				this.Const.Perks.PerkDefs.SpecMace,
+				this.Const.Perks.PerkDefs.SpecFlail,
+				this.Const.Perks.PerkDefs.SpecHammer,
+				this.Const.Perks.PerkDefs.SpecAxe,
+				this.Const.Perks.PerkDefs.SpecCleaver,
+				this.Const.Perks.PerkDefs.SpecSword,
+				this.Const.Perks.PerkDefs.LegendSpecGreatSword,
 				this.Const.Perks.PerkDefs.SpecDagger,
+				this.Const.Perks.PerkDefs.SpecPolearm,
+				this.Const.Perks.PerkDefs.SpecSpear,
+				this.Const.Perks.PerkDefs.SpecCrossbow,
+				this.Const.Perks.PerkDefs.SpecBow,
 				this.Const.Perks.PerkDefs.SpecThrowing,
 				this.Const.Perks.PerkDefs.LegendRoster4,
 			],
 			[
-				this.Const.Perks.PerkDefs.LoneWolf,
 				this.Const.Perks.PerkDefs.Underdog,
-				this.Const.Perks.PerkDefs.Footwork,
+				this.Const.Perks.PerkDefs.LoneWolf,
+				this.Const.Perks.PerkDefs.ReachAdvantage,
+				this.Const.Perks.PerkDefs.Overwhelm,
 				this.Const.Perks.PerkDefs.LegendRoster5
 			],
 			[
+				this.Const.Perks.PerkDefs.HeadHunter,
+				this.Const.Perks.PerkDefs.Berserk,
 				this.Const.Perks.PerkDefs.Nimble,
 				this.Const.Perks.PerkDefs.LegendRoster6
 			],
 			[
 				this.Const.Perks.PerkDefs.Fearsome,
+				this.Const.Perks.PerkDefs.Duelist,
+				this.Const.Perks.PerkDefs.KillingFrenzy,
+				this.Const.Perks.PerkDefs.Indomitable
 				this.Const.Perks.PerkDefs.LegendRoster7
 			],
 			[],
@@ -144,7 +161,6 @@ this.legend_beggar_commander_background <- this.inherit("scripts/skills/backgrou
 		this.m.IsFemaleBackground = true;
 		this.m.GoodEnding = "Having enough of all the fighting, %name% the once-beggar retired from the %companyname%. You know the woman made a pretty crown in her time with the mercenary company, yet the other day you saw her out begging again. You asked if she\'d wasted all her money and she laughed. She said she\'d purchased land and was doing just fine. Then she held out his little tin and asked for a crown. You gave her two.";
 		this.m.BadEnding = "The fighting life is a rough one, and %name% the once-beggar saw fit to retire from it before it became a deadly one. Unfortunately, she went back to beggaring. Word has it that a nobleman cleaned a city of riff-raff and sent them marching north despite it being winter. Cold and hungry, %name% died on the side of a road, a tin cup frozen to her finger.";
-
 	}
 
 	function getTooltip()
@@ -219,7 +235,6 @@ this.legend_beggar_commander_background <- this.inherit("scripts/skills/backgrou
 		local dirt = actor.getSprite("dirt");
 		dirt.Visible = true;
 	}
-
 
 	function onAddEquipment()
 	{
