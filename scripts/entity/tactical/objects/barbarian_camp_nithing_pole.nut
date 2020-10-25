@@ -1,7 +1,7 @@
 this.barbarian_camp_nithing_pole <- this.inherit("scripts/entity/tactical/entity", {
 	m = {
-		IsSupplies = true,
-		IsAttackable = true	
+		IsSupplies = true//,
+		// IsAttackable = true	s
 	},
 	function getName()
 	{
@@ -34,7 +34,7 @@ this.barbarian_camp_nithing_pole <- this.inherit("scripts/entity/tactical/entity
 		top.setHorizontalFlipping(flip);
 		this.setSpriteOcclusion("top", 1, 2, -3);
 		this.setBlockSight(false);
-		this.m.IsAttackable = true;
+		// this.m.IsAttackable = true;
 	}
 
 });

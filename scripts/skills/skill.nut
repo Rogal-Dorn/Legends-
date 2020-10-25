@@ -880,20 +880,19 @@ this.skill <- {
 
 	function onVerifyTarget( _originTile, _targetTile )
 	{
-		if (this.m.IsTargetingActor && (_targetTile.IsEmpty))
+		if (this.m.IsTargetingActor && (_targetTile.IsEmpty || !_targetTile.getEntity().isAttackable() || !_targetTile.getEntity().isAlive() || _targetTile.getEntity().isDying()))
 		{
 			return false;
 		}
 
-		if (_targetTile.getEntity().isSupplies() && _originTile.getEntity().isPlayerControlled() && !this.m.IsRanged)
-		{
-			return true;
-		}
+		// if (_targetTile.getEntity().isSupplies() && _originTile.getEntity().isPlayerControlled())
+		// {
+		// 	if (!this.m.IsRanged)
+		// 		return true;
+		// 	else
+		// 		return false;
+		// }
 
-		if (!_targetTile.getEntity().isAttackable() || !_targetTile.getEntity().isAlive() || _targetTile.getEntity().isDying()) //chopped from isEmpty/isAttackable line to fit a return true on isSupplies between, sloppy i think but works
-		{
-			return false;
-		}
 
 		if (this.m.IsAttack && this.m.IsTargetingActor && this.m.Container.getActor().isAlliedWith(_targetTile.getEntity()))
 		{
@@ -1406,7 +1405,7 @@ this.skill <- {
 			local x = tile.X;
 			local y = tile.Y;
 			this.Tactical.getTile(x,y).removeObject();
-			return true;
+			return false; //if we don't return false it counts as a success for skills like cleave which try to apply bleed etc afterwards -> 
 		}		
 
 		if (_targetEntity.isTree())
