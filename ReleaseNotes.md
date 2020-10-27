@@ -4109,6 +4109,6 @@ Fix incorrect codes in albedo, nigredo and citrinitas (wuxiangjinxing)
 Fix darkvul armor not correctly generated (wuxiangjinxing)
 Fix some incorrect codes in the tame-white-wolf event (Leonion)
 Remove non-existing skills from AI definitions (grobocop)
-Add new icons for hate/fear noble traits (Von)
+Replace some icon place-holders(Von)
 
 
