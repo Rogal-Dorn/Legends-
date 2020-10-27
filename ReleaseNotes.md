@@ -4079,9 +4079,10 @@ fixes noble fencer spawn crash on legendary difficulty.
 
 15.0.0.5
 
-**QOL**
-Updated to 1.4.0.45 (Poss)
+**Changes**
+Updated to BB 1.4.0.45 (Poss)
 Rebalance civilian enemies to give more XP and to have less HP (wuxiangjinxing)
+Beggar origin avatar can gain stats and perks by defeating enemies (wuxiangjinxing)
 
 **Fixes**
 Fixes the decoded scrolls [the recipe historians are part of] not saving what they are when the game reloads and just becoming useless (mwah)
