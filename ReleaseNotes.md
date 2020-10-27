@@ -4108,6 +4108,7 @@ Fix some named weapons not counted as named (grobocop)
 Fix incorrect codes in albedo, nigredo and citrinitas (wuxiangjinxing)
 Fix darkvul armor not correctly generated (wuxiangjinxing)
 Fix some incorrect codes in the tame-white-wolf event (Leonion)
+Fix knife-specialist not working for qatal dagger (wuxiangjinxing)
 Remove non-existing skills from AI definitions (grobocop)
 Replace some icon place-holders(Von)
 
