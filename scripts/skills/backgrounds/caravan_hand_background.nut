@@ -17,7 +17,8 @@ this.caravan_hand_background <- this.inherit("scripts/skills/backgrounds/charact
 			"trait.gluttonous",
 			"trait.bright",
 			"trait.asthmatic",
-			"trait.fat"
+			"trait.fat",
+			"trait.unpredictable"
 		];
 		this.m.Faces = this.Const.Faces.AllMale;
 		this.m.Hairs = this.Const.Hair.UntidyMale;

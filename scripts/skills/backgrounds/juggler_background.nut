@@ -26,7 +26,8 @@ this.juggler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			"trait.insecure",
 			"trait.asthmatic",
 			"trait.bloodthirsty",
-			"trait.pragmatic"
+			"trait.pragmatic",
+			"trait.predictable"
 		];
 		this.m.Titles = [
 			"the Juggler",

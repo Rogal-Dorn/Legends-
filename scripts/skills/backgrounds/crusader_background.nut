@@ -37,6 +37,7 @@ this.crusader_background <- this.inherit("scripts/skills/backgrounds/character_b
 			"trait.dastard",
 			"trait.insecure",
 			"trait.asthmatic",
+			"trait.light",
 			"trait.double_tongued"
 		];
 		this.m.ExcludedTalents = [

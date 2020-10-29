@@ -28,7 +28,8 @@ this.refugee_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			"trait.deathwish",
 			"trait.greedy",
 			"trait.bloodthirsty",
-			"trait.aggressive"
+			"trait.aggressive",
+			"trait.natural"
 		];
 		this.m.Titles = [
 			"the Refugee",

@@ -33,6 +33,7 @@ this.legend_crusader_background <- this.inherit("scripts/skills/backgrounds/char
 			"trait.dastard",
 			"trait.insecure",
 			"trait.asthmatic",
+			"trait.light",
 			"trait.double_tongued",
 			"trait.disloyal",
 			"trait.loyal"

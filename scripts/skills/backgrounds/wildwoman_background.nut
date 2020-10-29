@@ -41,7 +41,9 @@ this.wildwoman_background <- this.inherit("scripts/skills/backgrounds/character_
 			"trait.bright",
 			"trait.cocky",
 			"trait.dastard",
-			"trait.drunkard"
+			"trait.drunkard",
+			"trait.frail",
+			"trait.predictable"
 		];
 		this.m.Titles = [
 			"the Savage",

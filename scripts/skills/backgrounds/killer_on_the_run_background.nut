@@ -29,7 +29,8 @@ this.killer_on_the_run_background <- this.inherit("scripts/skills/backgrounds/ch
 			"trait.craven",
 			"trait.fearless",
 			"trait.optimist",
-			"trait.gift_of_people"
+			"trait.gift_of_people",
+			"trait.pragmatic"
 		];
 		this.m.Titles = [
 			"Darkhearted",

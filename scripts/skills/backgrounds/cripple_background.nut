@@ -26,7 +26,8 @@ this.cripple_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			"trait.quick",
 			"trait.swift",
 			"trait.dexterous",
-			"trait.ambitious"
+			"trait.ambitious",
+			"trait.natural"
 		];
 		this.m.ExcludedTalents = [
 			this.Const.Attributes.Hitpoints,

@@ -26,6 +26,7 @@ this.legend_beggar_commander_background <- this.inherit("scripts/skills/backgrou
 			"trait.greedy",
 			"trait.athletic",
 			"trait.aggressive",
+			"trait.natural",
 			"trait.disloyal",
 			"trait.loyal"
 		];

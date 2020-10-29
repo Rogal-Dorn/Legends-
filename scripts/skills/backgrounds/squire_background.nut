@@ -30,7 +30,8 @@ this.squire_background <- this.inherit("scripts/skills/backgrounds/character_bac
 			"trait.clumsy",
 			"trait.pessimist",
 			"trait.greedy",
-			"trait.bleeder"
+			"trait.bleeder",
+			"trait.slack"
 		];
 		this.m.Faces = this.Const.Faces.AllMale;
 		this.m.Hairs = this.Const.Hair.YoungMale;

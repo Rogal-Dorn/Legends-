@@ -25,7 +25,8 @@ this.beggar_background <- this.inherit("scripts/skills/backgrounds/character_bac
 			"trait.deathwish",
 			"trait.greedy",
 			"trait.athletic",
-			"trait.aggressive"
+			"trait.aggressive",
+			"trait.natural"
 		];
 		this.m.ExcludedTalents = [
 			this.Const.Attributes.Hitpoints,
