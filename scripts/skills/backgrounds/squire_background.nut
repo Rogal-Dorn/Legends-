@@ -16,6 +16,7 @@ this.squire_background <- this.inherit("scripts/skills/backgrounds/character_bac
 			"trait.fear_undead",
 			"trait.fear_beasts",
 			"trait.fear_greenskins",
+			"trait.fear_nobles",
 			"trait.clubfooted",
 			"trait.irrational",
 			"trait.disloyal",

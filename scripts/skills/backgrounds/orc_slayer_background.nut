@@ -15,6 +15,7 @@ this.orc_slayer_background <- this.inherit("scripts/skills/backgrounds/character
 			"trait.hate_greenskins",
 			"trait.hate_beasts",
 			"trait.hate_undead",
+			"trait.hate_nobles",
 			"trait.paranoid",
 			"trait.night_blind",
 			"trait.swift",
@@ -36,7 +37,8 @@ this.orc_slayer_background <- this.inherit("scripts/skills/backgrounds/character
 			"trait.bleeder",
 			"trait.dastard",
 			"trait.insecure",
-			"trait.asthmatic"
+			"trait.asthmatic",
+			"trait.light"
 		];
 		this.m.ExcludedTalents = [
 			this.Const.Attributes.RangedSkill,

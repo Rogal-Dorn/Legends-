@@ -14,9 +14,11 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Excluded = [
 			"trait.teamplayer",
 			"trait.fear_undead",
+			"trait.fear_nobles",
 			"trait.hate_beasts",
 			"trait.hate_undead",
 			"trait.hate_greenskins",
+			"trait.hate_nobles",
 			"trait.night_blind",
 			"trait.lucky",
 			"trait.athletic",

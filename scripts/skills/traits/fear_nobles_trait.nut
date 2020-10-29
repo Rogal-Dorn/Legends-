@@ -13,6 +13,10 @@ this.fear_nobles_trait <- this.inherit("scripts/skills/traits/character_trait", 
 			"trait.determined",
 			"trait.cocky",
 			"trait.bloodthirsty",
+			"trait.aggressive",
+			"trait.ambitious",
+			"trait.natural",
+			"trait.pragmatic",
 			"trait.hate_nobles"
 		];
 	}
