@@ -18,7 +18,10 @@ this.legend_horse <- this.inherit("scripts/skills/backgrounds/character_backgrou
 			"trait.clubfooted",
 			"trait.bright",
 			"trait.asthmatic",
-			"trait.ambitious"
+			"trait.ambitious",
+			"trait.seductive",
+			"trait.gift_of_people",
+			"trait.double_tongued"			
 		];
 		this.m.Variant = this.Math.rand(1, 7)
 		this.m.Faces = this.Const.Faces.Horse;
