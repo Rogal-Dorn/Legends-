@@ -6,7 +6,7 @@ this.double_tongued_trait <- this.inherit("scripts/skills/traits/character_trait
 		this.m.ID = "trait.double_tongued";
 		this.m.Name = "Double tongued";
 		this.m.Icon = "ui/traits/trait_double_tongued.png";
-		this.m.Description = "Words have the power to wound, this one not only understands this, but wields it for their own gain.";
+		this.m.Description = "The nature of humanity brings out the destructive side in many, however this one appears to be worse than the usual.";
 		this.m.Excluded = [
 			"trait.optimist",
 			"trait.teamplayer",
