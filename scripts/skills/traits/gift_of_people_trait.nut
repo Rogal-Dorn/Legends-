@@ -4,7 +4,7 @@ this.gift_of_people_trait <- this.inherit("scripts/skills/traits/character_trait
 	{
 		this.character_trait.create();
 		this.m.ID = "trait.gift_of_people";
-		this.m.Name = "Gift of people";
+		this.m.Name = "Charming";
 		this.m.Icon = "ui/traits/trait_gift_of_people.png";
 		this.m.Description = "Some say you can get almost anywhere with a trustworthy demenor and a warm smile.";
 		this.m.Excluded = [

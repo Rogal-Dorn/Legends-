@@ -295,6 +295,10 @@ gt.Const.CharacterTraits <- [
 	[
 		"trait.double_tongued",
 		"scripts/skills/traits/double_tongued_trait"
-	],	
+	],
+	[
+		"trait.seductive",
+		"scripts/skills/traits/seductive_trait"
+	]	
 ];
 
