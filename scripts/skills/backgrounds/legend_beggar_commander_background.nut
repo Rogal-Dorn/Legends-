@@ -76,6 +76,10 @@ this.legend_beggar_commander_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.PerkDefs.Rotation,
 				this.Const.Perks.PerkDefs.RallyTheTroops,
 				this.Const.Perks.PerkDefs.Taunt,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyGhoul,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyDirewolf,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemySpider,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyCaravan,
 				this.Const.Perks.PerkDefs.LegendRoster4
 			],
 			[
@@ -98,6 +102,12 @@ this.legend_beggar_commander_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.PerkDefs.LoneWolf,
 				this.Const.Perks.PerkDefs.ReachAdvantage,
 				this.Const.Perks.PerkDefs.Overwhelm,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemySkeleton,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyZombie,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyOrk,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyGoblin,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyMercenary,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyBandit,
 				this.Const.Perks.PerkDefs.LegendRoster5
 			],
 			[
@@ -105,6 +115,14 @@ this.legend_beggar_commander_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.PerkDefs.Berserk,
 				this.Const.Perks.PerkDefs.Nimble,
 				this.Const.Perks.PerkDefs.BattleForged,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyLindwurm,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemySchrat,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyUnhold,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyNoble,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyBarbarian,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyArcher,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemySwordmaster,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemySoutherner,
 				this.Const.Perks.PerkDefs.LegendRoster6
 			],
 			[
@@ -112,6 +130,9 @@ this.legend_beggar_commander_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.PerkDefs.Duelist,
 				this.Const.Perks.PerkDefs.KillingFrenzy,
 				this.Const.Perks.PerkDefs.Indomitable,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyHexen,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyAlps,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyVampire,
 				this.Const.Perks.PerkDefs.LegendRoster7
 			],
 			[],
@@ -220,32 +241,6 @@ this.legend_beggar_commander_background <- this.inherit("scripts/skills/backgrou
 		local actor = this.getContainer().getActor();
 		local dirt = actor.getSprite("dirt");
 		dirt.Visible = true;
-	}
-
-	function onAddEquipment()
-	{
-		local items = this.getContainer().getActor().getItems();
-		
-		local r = this.Math.rand(0, 4);
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/weapons/knife"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/weapons/wooden_stick"));
-		}
-
-		items.equip(this.Const.World.Common.pickArmor([
-			[1, "tattered_sackcloth"],
-			[1, "leather_wraps"]
-		]));
-
-		local item = this.Const.World.Common.pickHelmet([
-			[3, ""],
-			[1, "hood", 38]
-		])
-		items.equip(item);
 	}
 	
 	function onTargetKilled( _targetEntity, _skill )
