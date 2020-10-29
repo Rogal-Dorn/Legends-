@@ -56,12 +56,10 @@ this.legends_beggar_scenario <- this.inherit("scripts/scenarios/world/starting_s
 
 		this.World.Assets.m.BusinessReputation = -200;
 		this.World.Assets.getStash().resize(this.World.Assets.getStash().getCapacity() + 9);
-		this.World.Assets.m.Money = this.World.Assets.m.Money / 2;
-		this.World.Assets.m.ArmorParts = this.World.Assets.m.ArmorParts / 2;
-		this.World.Assets.m.Medicine = this.World.Assets.m.Medicine / 2;
-		this.World.Assets.m.Ammo = this.World.Assets.m.Ammo / 2;
-
-
+		this.World.Assets.m.Money = (this.World.Assets.m.Money / 2) + 2;
+		this.World.Assets.m.ArmorParts = 0;	//this.World.Assets.m.ArmorParts / 2;
+		this.World.Assets.m.Medicine = 0;	//this.World.Assets.m.Medicine / 2;
+		this.World.Assets.m.Ammo = 0;	//this.World.Assets.m.Ammo / 2;
 	}
 
 	function onSpawnPlayer()
