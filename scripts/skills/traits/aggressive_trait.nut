@@ -24,6 +24,7 @@ this.aggressive_trait <- this.inherit("scripts/skills/traits/character_trait", {
 			"trait.fear_beasts",
 			"trait.fear_undead",
 			"trait.fear_greenskins",
+			"trait.fear_nobles",
 			"trait.slack",
 			"trait.pragmatic"
 		];

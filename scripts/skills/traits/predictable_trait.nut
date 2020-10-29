@@ -8,7 +8,6 @@ this.predictable_trait <- this.inherit("scripts/skills/traits/character_trait", 
 		this.m.Icon = "ui/traits/predictable_trait.png";
 		this.m.Description = "Guess where he\'s gonna hit.";
 		this.m.Excluded = [
-			"trait.natural",
 			"trait.bright",
 			"trait.dexterous",
 			"trait.swift",

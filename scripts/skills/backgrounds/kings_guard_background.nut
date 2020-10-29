@@ -62,6 +62,8 @@ this.kings_guard_background <- this.inherit("scripts/skills/backgrounds/characte
 		this.character_background.onAdded();
 		local actor = this.getContainer().getActor();
 		actor.setTitle("the Kingsguard");
+		this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
+		this.m.Container.add(this.new("scripts/skills/traits/fearless_trait"));		
 	}
 
 });

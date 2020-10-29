@@ -17,6 +17,7 @@ this.wildman_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			"trait.weasel",
 			"trait.teamplayer",
 			"trait.fear_beasts",
+			"trait.fear_nobles",
 			"trait.hate_undead",
 			"trait.paranoid",
 			"trait.night_blind",

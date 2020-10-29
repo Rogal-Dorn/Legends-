@@ -24,6 +24,7 @@ this.legend_female_beggar_commander_background <- this.inherit("scripts/skills/b
 			"trait.deathwish",
 			"trait.greedy",
 			"trait.athletic",
+			"trait.aggressive",
 			"trait.disloyal",
 			"trait.loyal"
 		];

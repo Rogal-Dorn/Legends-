@@ -4,7 +4,7 @@ this.natural_trait <- this.inherit("scripts/skills/traits/character_trait", {
 	{
 		this.character_trait.create();
 		this.m.ID = "trait.natural";
-		this.m.Name = "Natural";
+		this.m.Name = "Talented";
 		this.m.Icon = "ui/traits/natural_trait.png";
 		this.m.Description = "Has natural skills, talents and abilities. Born to be successful";
 		this.m.Titles = [
@@ -24,6 +24,7 @@ this.natural_trait <- this.inherit("scripts/skills/traits/character_trait", {
 			"trait.fear_beasts",
 			"trait.fear_undead",
 			"trait.fear_greenskins",
+			"trait.fear_nobles",
 			"trait.slack",
 			"trait.pessimist",
 			"trait.dumb",

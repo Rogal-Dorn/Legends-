@@ -12,7 +12,6 @@ this.seductive_trait <- this.inherit("scripts/skills/traits/character_trait", {
 		this.m.Excluded = [
 			"trait.paranoid",
 			"trait.cocky",
-			"trait.drunkard",
 		];
 	}
 

@@ -15,7 +15,8 @@ this.hate_greenskins_trait <- this.inherit("scripts/skills/traits/character_trai
 			"trait.craven",
 			"trait.dastard",
 			"trait.fainthearted",
-			"trait.fear_greenskins"
+			"trait.fear_greenskins",
+			"trait.legend_peaceful"
 		];
 	}
 

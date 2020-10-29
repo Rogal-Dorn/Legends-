@@ -13,13 +13,14 @@ this.pragmatic_trait <- this.inherit("scripts/skills/traits/character_trait", {
 			"trait.dastard",
 			"trait.fainthearted",
 			"trait.paranoid",
+			"trait.insecure",
+			"trait.superstitious",
+			"trait.cocky",
 			"trait.fear_beasts",
 			"trait.fear_undead",
 			"trait.fear_greenskins",
-			"trait.slack",
-			"trait.insecure",
-			"trait.superstitious",
-			"trait.cocky"
+			"trait.fear_nobles",			
+			"trait.aggressive"
 		];
 	}
 

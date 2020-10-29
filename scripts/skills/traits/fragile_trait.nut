@@ -15,7 +15,8 @@ this.fragile_trait <- this.inherit("scripts/skills/traits/character_trait", {
 			"trait.gluttonous",
 			"trait.brute",
 			"trait.iron_jaw",
-			"trait.heavy"
+			"trait.heavy",
+			"trait.firm"
 		];
 	}
 

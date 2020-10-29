@@ -16,7 +16,6 @@ this.light_trait <- this.inherit("scripts/skills/traits/character_trait", {
 			"trait.huge",
 			"trait.strong",
 			"trait.tough",
-			"trait.pugilist",
 			"trait.brute",
 			"trait.iron_jaw",
 			"trait.hesitant",
