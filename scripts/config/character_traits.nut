@@ -283,6 +283,10 @@ gt.Const.CharacterTraits <- [
 	[
 		"trait.ambitious",
 		"scripts/skills/traits/ambitious_trait"
-	]
+	],
+	[
+		"trait.aggressive",
+		"scripts/skills/traits/aggressive_trait"
+	]	
 ];
 

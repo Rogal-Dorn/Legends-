@@ -53,7 +53,13 @@ this.aggressive_trait <- this.inherit("scripts/skills/traits/character_trait", {
 				type = "text",
 				icon = "ui/icons/melee_defense.png",
 				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-5[/color] Melee Defense"
-			}
+			},
+			{
+				id = 12,
+				type = "text",
+				icon = "ui/icons/morale.png",
+				text = "Will never start combat at wavering morale"
+			},			
 		];
 	}
 
@@ -62,6 +68,16 @@ this.aggressive_trait <- this.inherit("scripts/skills/traits/character_trait", {
 		_properties.MeleeSkill += 5;
 		_properties.MeleeDefense -= 5;
 	}
+	
+	function onCombatStarted()
+	{
+		local actor = this.getContainer().getActor();
+
+		if (actor.getMoraleState() < this.Const.MoraleState.Steady)
+		{
+			actor.setMoraleState(this.Const.MoraleState.Steady);
+		}
+	}	
 
 });
 
