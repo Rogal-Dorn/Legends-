@@ -34,6 +34,7 @@ this.hedge_knight_background <- this.inherit("scripts/skills/backgrounds/charact
 			"trait.insecure",
 			"trait.asthmatic",
 			"trait.light",
+			"trait.frail",
 			"trait.seductive"
 		];
 		this.m.ExcludedTalents = [

@@ -32,7 +32,11 @@ this.barbarian_background <- this.inherit("scripts/skills/backgrounds/character_
 			"trait.craven",
 			"trait.bleeder",
 			"trait.dastard",
-			"trait.insecure"
+			"trait.insecure",
+			"trait.slack",
+			"trait.frail",
+			"trait.gift_of_people",
+			"trait.seductive"
 		];
 		this.m.Titles = this.Const.Strings.BarbarianTitles;
 		this.m.Faces = this.Const.Faces.WildMale;

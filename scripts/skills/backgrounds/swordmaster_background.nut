@@ -40,6 +40,7 @@ this.swordmaster_background <- this.inherit("scripts/skills/backgrounds/characte
 			"trait.strong",
 			"trait.bloodthirsty",
 			"trait.double_tongued",
+			"trait.slack",
 			"trait.seductive"
 		];
 		this.m.ExcludedTalents = [

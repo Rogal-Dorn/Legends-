@@ -19,7 +19,8 @@ this.female_beggar_background <- this.inherit("scripts/skills/backgrounds/charac
 			"trait.fat",
 			"trait.bright",
 			"trait.greedy",
-			"trait.athletic"
+			"trait.athletic",
+			"trait.natural"
 		];
 		this.m.ExcludedTalents = [
 			this.Const.Attributes.Hitpoints,
