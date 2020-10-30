@@ -41,7 +41,7 @@ this.pragmatic_trait <- this.inherit("scripts/skills/traits/character_trait", {
 				id = 10,
 				type = "text",
 				icon = "ui/icons/melee_skill.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] Melee Skill"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] Melee Skill"
 			},
 			{
 				id = 11,
@@ -55,7 +55,7 @@ this.pragmatic_trait <- this.inherit("scripts/skills/traits/character_trait", {
 	function onUpdate( _properties )
 	{
 		_properties.HitChance[this.Const.BodyPart.Head] -= 10;
-		_properties.MeleeSkill += 5;
+		_properties.MeleeSkillMult *= 1.1;
 	}
 
 });
