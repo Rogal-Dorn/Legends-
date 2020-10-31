@@ -4,7 +4,7 @@ this.legends_beggar_scenario <- this.inherit("scripts/scenarios/world/starting_s
 	{
 		this.m.ID = "scenario.legends_beggar";
 		this.m.Name = "Beggar Challenge";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_70.png[/img][/p][p]A lowly unskilled beggar, you witnessed something in an alley and now a noble house wants you dead. This is a challenge run only. \n\n[color=#bcad8c]Knows Too Much:[/color] All noble houses hate you.\n[color=#bcad8c]Begin alone Avatar[/color]:  If the beggar dies, the campaign ends.\n[color=#bcad8c]Dirty Peasant[/color]: You can only hire lowerborn backgrounds.[/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_70.png[/img][/p][p]A lowly unskilled beggar, you witnessed something in an alley and now a noble house wants you dead. This is a challenge run with a very weak starting character, can you arouse the true power of your avatar? \n\n[color=#bcad8c]Knows Too Much:[/color] All noble houses hate you.\n[color=#bcad8c]Learning in battles[/color]:  The beggar can gain stats and perks by defeating enemies.\n[color=#bcad8c]Begin alone Avatar[/color]:  If the beggar dies, the campaign ends.\n[color=#bcad8c]Dirty Peasant[/color]: You can only hire lowerborn backgrounds.[/p]";
 		this.m.Difficulty = 3;
 		this.m.Order = 6;
 	}
@@ -56,12 +56,10 @@ this.legends_beggar_scenario <- this.inherit("scripts/scenarios/world/starting_s
 
 		this.World.Assets.m.BusinessReputation = -200;
 		this.World.Assets.getStash().resize(this.World.Assets.getStash().getCapacity() + 9);
-		this.World.Assets.m.Money = this.World.Assets.m.Money / 2;
-		this.World.Assets.m.ArmorParts = this.World.Assets.m.ArmorParts / 2;
-		this.World.Assets.m.Medicine = this.World.Assets.m.Medicine / 2;
-		this.World.Assets.m.Ammo = this.World.Assets.m.Ammo / 2;
-
-
+		this.World.Assets.m.Money = (this.World.Assets.m.Money / 2) + 2;
+		this.World.Assets.m.ArmorParts = 0;	//this.World.Assets.m.ArmorParts / 2;
+		this.World.Assets.m.Medicine = 0;	//this.World.Assets.m.Medicine / 2;
+		this.World.Assets.m.Ammo = 0;	//this.World.Assets.m.Ammo / 2;
 	}
 
 	function onSpawnPlayer()
@@ -159,8 +157,11 @@ this.legends_beggar_scenario <- this.inherit("scripts/scenarios/world/starting_s
 
 	function onHiredByScenario( bro )
 	{
-		bro.getSkills().add(this.new("scripts/skills/injury/sickness_injury"));
-		bro.worsenMood(1.0, "Fell sick after joining you");
+		if (!bro.getBackground().isLowborn())
+		{
+			bro.getSkills().add(this.new("scripts/skills/injury/sickness_injury"));
+			bro.worsenMood(1.0, "Fell sick after joining you");
+		}
 	}
 
 	function onUpdateHiringRoster( _roster )

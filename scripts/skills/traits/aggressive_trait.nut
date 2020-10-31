@@ -24,6 +24,7 @@ this.aggressive_trait <- this.inherit("scripts/skills/traits/character_trait", {
 			"trait.fear_beasts",
 			"trait.fear_undead",
 			"trait.fear_greenskins",
+			"trait.fear_nobles",
 			"trait.slack",
 			"trait.pragmatic"
 		];
@@ -45,23 +46,39 @@ this.aggressive_trait <- this.inherit("scripts/skills/traits/character_trait", {
 			{
 				id = 10,
 				type = "text",
-				icon = "ui/icons/melee_skill.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] Melee Skill"
+				icon = "ui/icons/regular_damage.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+15%[/color] Melee Damage"
 			},
 			{
 				id = 11,
 				type = "text",
 				icon = "ui/icons/melee_defense.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-5[/color] Melee Defense"
-			}
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-5[/color] Defense from each surrounding enemy"
+			},
+			{
+				id = 12,
+				type = "text",
+				icon = "ui/icons/morale.png",
+				text = "Will never start combat at wavering morale"
+			},			
 		];
 	}
 
 	function onUpdate( _properties )
 	{
-		_properties.MeleeSkill += 5;
-		_properties.MeleeDefense -= 5;
+		_properties.MeleeDamageMult *= 1.15;
+		_properties.SurroundedDefense -= 5;
 	}
+	
+	function onCombatStarted()
+	{
+		local actor = this.getContainer().getActor();
+
+		if (actor.getMoraleState() < this.Const.MoraleState.Steady)
+		{
+			actor.setMoraleState(this.Const.MoraleState.Steady);
+		}
+	}	
 
 });
 

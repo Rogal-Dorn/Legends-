@@ -16,6 +16,7 @@ this.gladiator_background <- this.inherit("scripts/skills/backgrounds/character_
 			"trait.fear_beasts",
 			"trait.fear_greenskins",
 			"trait.fear_undead",
+			"trait.fear_nobles",
 			"trait.weasel",
 			"trait.night_blind",
 			"trait.ailing",

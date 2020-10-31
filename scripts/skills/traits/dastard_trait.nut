@@ -22,10 +22,12 @@ this.dastard_trait <- this.inherit("scripts/skills/traits/character_trait", {
 			"trait.hate_greenskins",
 			"trait.hate_undead",
 			"trait.hate_beasts",
+			"trait.hate_nobles",
 			"trait.aggressive",
 			"trait.pragmatic",
 			"trait.ambitious",
-			"trait.natural"
+			"trait.natural",
+			"trait.gift_of_people"
 		];
 	}
 

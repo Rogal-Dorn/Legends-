@@ -18,7 +18,10 @@ this.legend_donkey <- this.inherit("scripts/skills/backgrounds/character_backgro
 			"trait.greedy",
 			"trait.clubfooted",
 			"trait.bright",
-			"trait.asthmatic"
+			"trait.asthmatic",
+			"trait.seductive",
+			"trait.gift_of_people",
+			"trait.double_tongued"
 		];
 		this.m.Faces = this.Const.Faces.Donkey;
 		this.m.Hairs = this.Const.Hair.None;

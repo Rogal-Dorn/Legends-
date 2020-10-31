@@ -12,7 +12,8 @@ this.hate_undead_trait <- this.inherit("scripts/skills/traits/character_trait", 
 			"trait.craven",
 			"trait.dastard",
 			"trait.fainthearted",
-			"trait.fear_undead"
+			"trait.fear_undead",
+			"trait.legend_peaceful"
 		];
 	}
 

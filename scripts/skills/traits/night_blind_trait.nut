@@ -37,7 +37,7 @@ this.night_blind_trait <- this.inherit("scripts/skills/traits/character_trait", 
 
 	function onUpdate( _properties )
 	{
-		if (this.getContainer().hasSkill("special.night"))
+		if (this.getContainer().hasSkill("special.night") && _properties.IsAffectedByNight == true)
 		{
 			_properties.Vision -= 1;
 		}

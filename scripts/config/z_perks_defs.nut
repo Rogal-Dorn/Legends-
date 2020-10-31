@@ -1685,8 +1685,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Script = "scripts/skills/perks/perk_legend_brink_of_death",
 		Name = this.Const.Strings.PerkName.LegendBrinkOfDeath,
 		Tooltip = this.Const.Strings.PerkDescription.LegendBrinkOfDeath,
-		Icon = "ui/perks/perk_04.png",
-		IconDisabled = "ui/perks/perk_04_sw.png",
+		Icon = "ui/perks/perk_bod.png",
+		IconDisabled = "ui/perks/perk_bod_sw.png",
 		Const = "LegendBrinkOfDeath"
 	},
 	{

@@ -32,6 +32,7 @@ this.legend_healer_background <- this.inherit("scripts/skills/backgrounds/charac
 			"trait.hate_greenskins",
 			"trait.hate_beasts",
 			"trait.hate_undead",
+			"trait.hate_nobles",
 			"trait.paranoid",
 			"trait.night_blind",
 			"trait.swift",

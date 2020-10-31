@@ -283,6 +283,22 @@ gt.Const.CharacterTraits <- [
 	[
 		"trait.ambitious",
 		"scripts/skills/traits/ambitious_trait"
-	]
+	],
+	[
+		"trait.aggressive",
+		"scripts/skills/traits/aggressive_trait"
+	],
+	[
+		"trait.gift_of_people",
+		"scripts/skills/traits/gift_of_people_trait"
+	],
+	[
+		"trait.double_tongued",
+		"scripts/skills/traits/double_tongued_trait"
+	],
+	[
+		"trait.seductive",
+		"scripts/skills/traits/seductive_trait"
+	]	
 ];
 
