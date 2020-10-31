@@ -24,7 +24,8 @@ this.female_adventurous_noble_background <- this.inherit("scripts/skills/backgro
 			"trait.fragile",
 			"trait.insecure",
 			"trait.asthmatic",
-			"trait.spartan"
+			"trait.spartan",
+			"trait.hate_nobles"
 		];
 
 		this.m.Faces = this.Const.Faces.PrettyFemale;

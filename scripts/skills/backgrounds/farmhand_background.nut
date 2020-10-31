@@ -16,7 +16,8 @@ this.farmhand_background <- this.inherit("scripts/skills/backgrounds/character_b
 			"trait.fear_undead",
 			"trait.hate_undead",
 			"trait.clubfooted",
-			"trait.asthmatic"
+			"trait.asthmatic",
+			"trait.unpredictable"
 		];
 
 		this.m.Faces = this.Const.Faces.AllMale;

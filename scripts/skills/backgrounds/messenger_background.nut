@@ -23,7 +23,9 @@ this.messenger_background <- this.inherit("scripts/skills/backgrounds/character_
 			"trait.dumb",
 			"trait.fat",
 			"trait.gluttonous",
-			"trait.brute"
+			"trait.brute",
+			"trait.heavy",
+			"trait.unpredictable"
 		];
 		this.m.Titles = [
 			"the Messenger",

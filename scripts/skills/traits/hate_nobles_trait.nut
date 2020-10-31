@@ -5,14 +5,15 @@ this.hate_nobles_trait <- this.inherit("scripts/skills/traits/character_trait", 
 		this.character_trait.create();
 		this.m.ID = "trait.hate_nobles";
 		this.m.Name = "Hate for Nobles";
-		this.m.Icon = "ui/backgrounds/background_06.png";
+		this.m.Icon = "ui/traits/hatenobles.png";
 		this.m.Description = "Some past event in this character\'s life has fueled a burning hatred for all things upper class";
 		this.m.Excluded = [
 			"trait.weasel",
 			"trait.craven",
 			"trait.dastard",
 			"trait.fainthearted",
-			"trait.fear_nobles"
+			"trait.fear_nobles",
+			"trait.legend_peaceful"
 		];
 	}
 

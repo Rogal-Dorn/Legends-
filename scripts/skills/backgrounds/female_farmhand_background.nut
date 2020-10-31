@@ -16,7 +16,8 @@ this.female_farmhand_background <- this.inherit("scripts/skills/backgrounds/char
 			"trait.fear_undead",
 			"trait.hate_undead",
 			"trait.clubfooted",
-			"trait.asthmatic"
+			"trait.asthmatic",
+			"trait.unpredictable"
 		];
 		this.m.Faces = this.Const.Faces.AllFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;

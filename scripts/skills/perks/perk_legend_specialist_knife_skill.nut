@@ -30,7 +30,7 @@ this.perk_legend_specialist_knife_skill <- this.inherit("scripts/skills/skill", 
 		{
 			_properties.MeleeSkill += 3;
 			_properties.DamageDirectMult += 0.1;
-		}
+		}	
 	}
 
 });

@@ -26,7 +26,8 @@ this.bowyer_background <- this.inherit("scripts/skills/backgrounds/character_bac
 			"trait.cocky",
 			"trait.dumb",
 			"trait.brute",
-			"trait.bloodthirsty"
+			"trait.bloodthirsty",
+			"trait.firm"
 		];
 		this.m.ExcludedTalents = [
 			this.Const.Attributes.MeleeSkill
