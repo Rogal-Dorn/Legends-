@@ -107,7 +107,7 @@ this.smite_skill <- this.inherit("scripts/skills/skill", {
 			return success;
 		}
 
-		if (success && _targetTile.IsOccupiedByActor && !target.isNonCombatant() && !target.IsDying())
+		if (success && _targetTile.IsOccupiedByActor && !target.isNonCombatant() && target.isAlive())
 		{
 			target.getSkills().add(this.new("scripts/skills/effects/staggered_effect"));
 
