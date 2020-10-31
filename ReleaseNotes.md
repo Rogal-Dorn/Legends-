@@ -4083,6 +4083,7 @@ fixes noble fencer spawn crash on legendary difficulty.
 Updated to BB 1.4.0.45 (Poss)
 Rebalance civilian enemies to give more XP and to have less HP (wuxiangjinxing)
 Beggar origin avatar can gain stats and perks by defeating enemies (wuxiangjinxing)
+Add some new traits (Von & wuxiangjinxing)
 
 **Fixes**
 Fixes the decoded scrolls [the recipe historians are part of] not saving what they are when the game reloads and just becoming useless (mwah)
@@ -4109,7 +4110,8 @@ Fix incorrect codes in albedo, nigredo and citrinitas (wuxiangjinxing)
 Fix darkvul armor not correctly generated (wuxiangjinxing)
 Fix some incorrect codes in the tame-white-wolf event (Leonion)
 Fix knife-specialist not working for qatal dagger (wuxiangjinxing)
+Fix FOM not working properly with 0 fatigue (wuxiangjinxing)
 Remove non-existing skills from AI definitions (grobocop)
-Replace some icon place-holders(Von)
+Replace some icon place-holders (Von)
 
 
