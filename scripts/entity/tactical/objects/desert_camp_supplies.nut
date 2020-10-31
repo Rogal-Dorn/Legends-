@@ -1,6 +1,7 @@
 this.desert_camp_supplies <- this.inherit("scripts/entity/tactical/entity", {
 	m = {
-		IsSupplies = true
+		IsSupplies = true//,
+		// IsAttackable = true	
 	},
 	function getName()
 	{
@@ -20,6 +21,7 @@ this.desert_camp_supplies <- this.inherit("scripts/entity/tactical/entity", {
 		];
 		local body = this.addSprite("body");
 		body.setBrush("desert_camp_" + variants[this.Math.rand(0, variants.len() - 1)]);
+		// this.m.IsAttackable = true;
 	}
 
 });

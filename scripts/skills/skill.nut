@@ -885,6 +885,15 @@ this.skill <- {
 			return false;
 		}
 
+		// if (_targetTile.getEntity().isSupplies() && _originTile.getEntity().isPlayerControlled())
+		// {
+		// 	if (!this.m.IsRanged)
+		// 		return true;
+		// 	else
+		// 		return false;
+		// }
+
+
 		if (this.m.IsAttack && this.m.IsTargetingActor && this.m.Container.getActor().isAlliedWith(_targetTile.getEntity()))
 		{
 			return false;
@@ -1329,7 +1338,7 @@ this.skill <- {
 		
 		if (_targetEntity.isSupplies())
 		{
-			local r = this.Math.rand(0, 99);
+			local r = this.Math.rand(1, 100);
 			if (r == 1)
 			{
 				local loot = this.new("scripts/items/supplies/ammo_small_item");
@@ -1396,7 +1405,7 @@ this.skill <- {
 			local x = tile.X;
 			local y = tile.Y;
 			this.Tactical.getTile(x,y).removeObject();
-			return true;
+			return false; //if we don't return false it counts as a success for skills like cleave which try to apply bleed etc afterwards -> 
 		}		
 
 		if (_targetEntity.isTree())
