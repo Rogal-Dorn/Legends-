@@ -19,7 +19,8 @@ this.apprentice_background <- this.inherit("scripts/skills/backgrounds/character
 			"trait.asthmatic",
 			"trait.athletic",
 			"trait.brute",
-			"trait.bloodthirsty"
+			"trait.bloodthirsty",
+			"trait.aggressive"
 		];
 		this.m.Titles = [
 			"the Learner",

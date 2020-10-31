@@ -29,7 +29,7 @@ this.perk_legend_specialist_knife_skill <- this.inherit("scripts/skills/skill", 
 			_properties.DamageDirectMult += 0.4;
 		}
 
-	if (item != null && item.getID() == "weapon.dagger" )
+		if (item != null && item.getID() == "weapon.dagger" )
 		{
 			_properties.MeleeSkill += 3;
 			_properties.DamageDirectMult += 0.1;
@@ -63,6 +63,11 @@ this.perk_legend_specialist_knife_skill <- this.inherit("scripts/skills/skill", 
 			_properties.MeleeSkill += 3;
 			_properties.DamageDirectMult += 0.1;
 		}
+		if (item != null && (item.getID() == "weapon.qatal_dagger" || item.getID() == "weapon.named_qatal_dagger"))
+		{
+			_properties.MeleeSkill += 3;
+			_properties.DamageDirectMult += 0.1;
+		}		
 	}
 
 });

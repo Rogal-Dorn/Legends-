@@ -24,7 +24,8 @@ this.legend_noble_event_background <- this.inherit("scripts/skills/backgrounds/c
 			"trait.fragile",
 			"trait.insecure",
 			"trait.asthmatic",
-			"trait.spartan"
+			"trait.spartan",
+			"trait.double_tongued"
 		];
 		this.m.Faces = this.Const.Faces.AllMale;
 		this.m.Hairs = this.Const.Hair.TidyMale;

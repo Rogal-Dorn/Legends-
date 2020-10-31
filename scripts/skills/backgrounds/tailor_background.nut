@@ -26,7 +26,9 @@ this.tailor_background <- this.inherit("scripts/skills/backgrounds/character_bac
 			"trait.cocky",
 			"trait.dumb",
 			"trait.brute",
-			"trait.bloodthirsty"
+			"trait.bloodthirsty",
+			"trait.aggressive",
+			"trait.firm"
 		];
 		this.m.Titles = [
 			"the Peculiar",

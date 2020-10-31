@@ -4066,8 +4066,6 @@ Fixes barbarian madman spawning without armor
 Should fix miasma skill
 Fixes some of the noble scenario starting items back to previous (& intended) items
 Minor tweak to beast spawns : Serpents resource-per-unit upped along with Ifrits. (e.g. where you'd previously see 20 serpents you'd now see 16)
-<<<<<<< HEAD
-
 15.0.0.4
 
 **Fixes**
@@ -4077,6 +4075,21 @@ Fixes the EXP Reward DISPLAY (doesn't change the actual given amount) at the end
   [These numbers are a percentage of the gold reward multiplied by .85: Deliver Item/Money: 25% , Escort Caravan: 50% , Discover Location: 10%]
 Should fix smite skill rarely crashing game when killing an enemy at the very end of the round
 
+
+
+15.0.0.5
+
+**Changes**
+Updated to BB 1.4.0.45 (Poss)
+Rebalance civilian enemies to give more XP and to have less HP (wuxiangjinxing)
+Beggar origin avatar can gain stats and perks by defeating enemies (wuxiangjinxing)
+Add some new traits (Von & wuxiangjinxing)
+
+**Fixes**
+Fixes the decoded scrolls [the recipe historians are part of] not saving what they are when the game reloads and just becoming useless (mwah)
+Adds how many scrolls a character can use to each scroll's tooltip (mwah)
+Fixes the EXP Reward DISPLAY (doesn't change the actual given amount) at the end of some contracts (caravan, delivery, etc) (mwah)
+  [These numbers are a percentage of the gold reward multiplied by .85: Deliver Item/Money: 25% , Escort Caravan: 50% , Discover Location: 10%]
 Fixed Brawny incorrect value on some layers and helmets. (Thanks Leonion)
 Updated description of Bloody harvest to specify "All melee attacks"
 fix hollenhound curse neglecting resilience
@@ -4084,3 +4097,26 @@ fix missing non-layered alp helmet
 fix champion behemoths ai and champion sets
 Adds southern enemy classes to favorite enemy perks
 fixes noble fencer spawn crash on legendary difficulty.
+Should fix smite skill rarely crashing game when killing an enemy at the very end of the round (mwah)
+Fix misplaced image when using spearwall with a swordstaff (Leonion)
+Fix smite skill not checking if target is dying to apply staggered effect (mwah)
+Fix for modifiers not being recalculated on time (Leonion)
+Fix balance not getting updated when removing body armor (wuxiangjinxing)
+Fix some skills not working due to not getting factions correctly (Leonion)
+Fix special ammos not working correctly (Leonion)
+Only necromancers can use the special effects of grisly scythes (wuxiangjinxing)
+Fix push-advantage not counting new debuff introduced in Legend (grobocop)
+Fix tumble incorrectly reducing AP (wuxiangjinxing)
+Add desert and oasis terrain speed modifier (wuxiangjinxing)
+Fix double-strike not getting removed correctly (Leonion)
+Fix various problems related to repairing (wuxiangjinxing)
+Fix grammar and unclear codes for the 'curse of year' skill (wuxiangjinxing)
+Fix mutual skeleton/zombie on the same character (wuxiangjinxing)
+Fix some named weapons not counted as named (grobocop)
+Fix incorrect codes in albedo, nigredo and citrinitas (wuxiangjinxing)
+Fix darkvul armor not correctly generated (wuxiangjinxing)
+Fix some incorrect codes in the tame-white-wolf event (Leonion)
+Fix knife-specialist not working for qatal dagger (wuxiangjinxing)
+Fix FOM not working properly with 0 fatigue (wuxiangjinxing)
+Remove non-existing skills from AI definitions (grobocop)
+Replace some icon place-holders (Von)

@@ -17,6 +17,7 @@ this.female_thief_background <- this.inherit("scripts/skills/backgrounds/charact
 			"trait.hate_undead",
 			"trait.hate_greenskins",
 			"trait.hate_beasts",
+			"trait.hate_nobles",
 			"trait.paranoid",
 			"trait.night_blind",
 			"trait.clubfooted",
