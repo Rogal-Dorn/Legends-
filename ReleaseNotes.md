@@ -4081,6 +4081,4 @@ Should fix smite skill rarely crashing game when killing an enemy at the very en
 Bounty hunter now actually gives money for killing an enemy champion
 Possibly fixes AI units semi-randomly not having Zones of Control [being able to shoot bows next to them, can't shoot by dead body/air, etc]
 Multiple typos, notably Donkey background correctly displays given stash/etc modifiers & Prayer of faith perk description correctly states it gives +20% bonus vs +10% bonus
-Can break Supplies in camps using any non-ranged attack skill -> The targeting shows a red X however you should be able to target & break supplies anyways
-  -> Supplies have a 15% chance to drop something, these include things like small ammo items, cooking spices, and bandages
 Fixes the specialist perks for Knives to work with Qatal Dagger
