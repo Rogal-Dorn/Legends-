@@ -31,6 +31,11 @@ this.perk_legend_specialist_knife_damage <- this.inherit("scripts/skills/skill",
 			_properties.DamageRegularMin += 1;
 			_properties.DamageRegularMax += 4;
 		}
+		if (item != null && (item.getID() == "weapon.qatal_dagger" || item.getID() == "weapon.named_qatal_dagger"))
+		{
+			_properties.DamageRegularMin += 1;
+			_properties.DamageRegularMax += 4;
+		}		
 	}
 
 });

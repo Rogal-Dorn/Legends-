@@ -76,7 +76,9 @@ gt.Const.LegendMod.FavoriteSkeleton <- [
 	this.Const.EntityType.SkeletonLich,
 	this.Const.EntityType.SkeletonLichMirrorImage,
 	this.Const.EntityType.SkeletonPhylactery,
-	this.Const.EntityType.SkeletonGladiator	];
+	this.Const.EntityType.SkeletonGladiator,
+	this.Const.EntityType.FlyingSkull
+];
 
 gt.Const.LegendMod.FavoriteSpider <- [
 	this.Const.EntityType.Spider,
@@ -530,6 +532,9 @@ gt.Const.LegendMod.GetFavoriteEnemyValue <- function ( _type )
 		break;
 		case "this.Const.EntityType.ZombieTreasureHunter":
 		value = 2;
+		break;
+		case "this.Const.EntityType.FlyingSkull":
+		value = 30;
 		break;		
 		default:
 		value = 10;

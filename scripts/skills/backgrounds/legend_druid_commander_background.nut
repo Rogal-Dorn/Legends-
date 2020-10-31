@@ -320,14 +320,11 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 
 	function onAdded()
 	{
-
 		this.character_background.onAdded();
 		local actor = this.getContainer().getActor();
 		actor.setTitle("The Druid");
-
-
+		this.m.Container.add(this.new("scripts/skills/traits/tough_trait"));
 	}
-
 
 	function onAddEquipment()
 	{

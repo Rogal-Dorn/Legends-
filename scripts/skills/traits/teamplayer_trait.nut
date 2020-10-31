@@ -14,7 +14,8 @@ this.teamplayer_trait <- this.inherit("scripts/skills/traits/character_trait", {
 			"trait.drunkard",
 			"trait.dumb",
 			"trait.impatient",
-			"trait.slack"
+			"trait.slack",
+			"trait.double_tongued"
 		];
 	}
 

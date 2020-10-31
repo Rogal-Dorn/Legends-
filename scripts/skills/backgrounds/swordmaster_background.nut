@@ -17,6 +17,7 @@ this.swordmaster_background <- this.inherit("scripts/skills/backgrounds/characte
 			"trait.fear_undead",
 			"trait.fear_beasts",
 			"trait.fear_greenskins",
+			"trait.fear_nobles",
 			"trait.paranoid",
 			"trait.impatient",
 			"trait.clubfooted",
@@ -37,7 +38,10 @@ this.swordmaster_background <- this.inherit("scripts/skills/backgrounds/characte
 			"trait.iron_lungs",
 			"trait.tough",
 			"trait.strong",
-			"trait.bloodthirsty"
+			"trait.bloodthirsty",
+			"trait.double_tongued",
+			"trait.slack",
+			"trait.seductive"
 		];
 		this.m.ExcludedTalents = [
 			this.Const.Attributes.RangedSkill,

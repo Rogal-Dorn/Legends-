@@ -11,11 +11,9 @@ this.unpredictable_trait <- this.inherit("scripts/skills/traits/character_trait"
 			"the Dicey"
 		];
 		this.m.Excluded = [
-			"trait.frail",
 			"trait.pessimist",
 			"trait.hesitant",
 			"trait.dumb",
-			"trait.slack",
 			"trait.predictable"
 		];
 	}

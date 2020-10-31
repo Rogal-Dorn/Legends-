@@ -15,7 +15,8 @@ this.female_disowned_noble_background <- this.inherit("scripts/skills/background
 			"trait.teamplayer",
 			"trait.clumsy",
 			"trait.spartan",
-			"trait.clubfooted"
+			"trait.clubfooted",
+			"trait.hate_nobles"
 		];
 		this.m.Titles = [
 			"the Disowned",
