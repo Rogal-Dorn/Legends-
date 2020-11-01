@@ -54,7 +54,7 @@ this.legend_knockback_prepared_effect<- this.inherit("scripts/skills/skill", {
 				this.removeSelf();
 			}
 
-
+		local user = this.getContainer().getActor();
 		local knockToTile = this.findTileToKnockBackTo(user.getTile(), targetTile);
 
 		if (knockToTile == null)
