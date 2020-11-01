@@ -94,6 +94,7 @@
 					this.setRenderCallbackEnabled(false);
 				}
 			}
+		}
 	}
 
 	o.onOtherActorDeath <- function ( _killer, _victim, _skill )
