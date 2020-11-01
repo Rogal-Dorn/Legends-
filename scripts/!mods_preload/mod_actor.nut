@@ -11,6 +11,92 @@
 		o.m.PercentOnKillOtherActorModifier <- 1.0;
     }
 
+	o.onRender <- function ()
+	{
+		if (this.m.IsRaisingShield)
+		{
+			if (this.moveSpriteOffset("shield_icon", this.createVec(0, 0), this.Const.Items.Default.RaiseShieldOffset, this.Const.Items.Default.RaiseShieldDuration, this.m.RenderAnimationStartTime))
+			{
+				this.m.IsRaisingShield = false;
+
+				if (!this.m.IsUsingCustomRendering)
+				{
+					this.setRenderCallbackEnabled(false);
+				}
+			}
+		}
+		else if (this.m.IsLoweringShield)
+		{
+			if (this.moveSpriteOffset("shield_icon", this.Const.Items.Default.RaiseShieldOffset, this.createVec(0, 0), this.Const.Items.Default.LowerShieldDuration, this.m.RenderAnimationStartTime))
+			{
+				this.m.IsLoweringShield = false;
+
+				if (!this.m.IsUsingCustomRendering)
+				{
+					this.setRenderCallbackEnabled(false);
+				}
+			}
+		}
+
+		if (this.m.IsLoweringWeapon)
+		{
+			local p = (this.Time.getVirtualTimeF() - this.m.RenderAnimationStartTime) / this.Const.Items.Default.LowerWeaponDuration;
+
+			if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand).m.ID == "weapon.legend_named_swordstaff" || this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand).m.ID == "weapon.legend_swordstaff" || this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand).m.ID == "weapon.legend_mage_swordstaff")
+			{
+				this.getSprite("arms_icon").Rotation = this.Math.minf(1.0, p) * -70.0;
+				this.moveSpriteOffset("arms_icon", this.getSpriteOffset("arms_icon"), this.createVec(46 * this.Math.minf(1.0, p), -33 * this.Math.minf(1.0, p)), this.Const.Items.Default.LowerWeaponDuration, this.m.RenderAnimationStartTime);
+			}
+			else if (this.m.Items.getAppearance().TwoHanded)
+			{
+				this.getSprite("arms_icon").Rotation = this.Math.minf(1.0, p) * -70.0;
+			}
+			else
+			{
+				this.getSprite("arms_icon").Rotation = this.Math.minf(1.0, p) * -33.0;
+			}
+
+			if (p >= 1.0)
+			{
+				this.m.IsLoweringWeapon = false;
+
+				if (!this.m.IsUsingCustomRendering)
+				{
+					this.setRenderCallbackEnabled(false);
+				}
+			}
+		}
+		else if (this.m.IsRaisingWeapon)
+		{
+			local p = (this.Time.getVirtualTimeF() - this.m.RenderAnimationStartTime) / this.Const.Items.Default.RaiseWeaponDuration;
+
+			if (this.getSpriteOffset("arms_icon").X != 0 || this.getSpriteOffset("arms_icon").Y != 0)
+			{
+				this.getSprite("arms_icon").Rotation = (1.0 - this.Math.minf(1.0, p)) * -70.0;
+				this.moveSpriteOffset("arms_icon", this.getSpriteOffset("arms_icon"), this.createVec(46 * (1-this.Math.minf(1.0, p)), -33 * (1-this.Math.minf(1.0, p))), this.Const.Items.Default.LowerWeaponDuration, this.m.RenderAnimationStartTime);
+				//this.logDebug("hey there calls");
+			}
+			else if (this.m.Items.getAppearance().TwoHanded)
+			{
+				this.getSprite("arms_icon").Rotation = (1.0 - this.Math.minf(1.0, p)) * -70.0;
+			}
+			else
+			{
+				this.getSprite("arms_icon").Rotation = (1.0 - this.Math.minf(1.0, p)) * -33.0;
+			}
+
+			if (p >= 1.0)
+			{
+				this.m.IsRaisingWeapon = false;
+
+				if (!this.m.IsUsingCustomRendering)
+				{
+					this.setRenderCallbackEnabled(false);
+				}
+			}
+		}
+	}
+
 	o.onOtherActorDeath <- function ( _killer, _victim, _skill )
 	{
 		if (!this.m.IsAlive || this.m.IsDying)

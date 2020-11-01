@@ -1,29 +1,25 @@
 this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 	m = {
-        ToolsCreated = 0,
-        PointsNeeded = 0,
-        PointsSalvaged = 0,
+		ToolsCreated = 0,
+		PointsNeeded = 0,
+		PointsSalvaged = 0,
 		ItemsDestroyed = 0,
-        Stash = null,
-        Salvage = null,
-        Capacity = 0,
-        NumBros = 0
+		Stash = null,
+		Salvage = null,
+		Capacity = 0,
+		NumBros = 0
 	},
-    function create()
-    {
-        this.camp_building.create();
-        this.m.BaseCraft = 10;
-        this.m.Conversion = 15.0;
-        this.m.ModName = "Salvage";
-        this.m.ID = this.Const.World.CampBuildings.Workshop;
-        this.m.Slot = "scrap";
-        this.m.Name = "Workshop";
-        this.m.Description = "Turn scrap into useable parts";
-        this.m.BannerImage = "ui/buttons/banner_scrap.png";
-		// this.m.UIImage = "ui/settlements/scrap_day_empty";
-		// this.m.UIImageNight =  "ui/settlements/scrap_night_empty";
-		// this.m.UIImageFull = "ui/settlements/scrap_day_full";
-		// this.m.UIImageNightFull =  "ui/settlements/scrap_night_full";
+	function create()
+	{
+		this.camp_building.create();
+		this.m.BaseCraft = 10;
+		this.m.Conversion = 15.0;
+		this.m.ModName = "Salvage";
+		this.m.ID = this.Const.World.CampBuildings.Workshop;
+		this.m.Slot = "scrap";
+		this.m.Name = "Workshop";
+		this.m.Description = "Turn scrap into useable parts";
+		this.m.BannerImage = "ui/buttons/banner_scrap.png";
 		this.m.Sounds = [
 			{
 				File = "ambience/camp/camp_scrap_01.wav",
@@ -57,7 +53,7 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
 			}
 		];
 		this.m.SoundsAtNight = [
-					{
+			{
 				File = "ambience/camp/camp_scrap_01.wav",
 				Volume = 1.0,
 				Pitch = 1.0
@@ -88,31 +84,32 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
 				Pitch = 1.0
 			}
 		];
-    }
+	}
 
 	function getTitle()
 	{
 		if (this.getUpgraded())
 		{
-			return this.m.Name + " *Upgraded*"
+			return this.m.Name + " *Upgraded*";
 		}
-		return this.m.Name +  " *Not Upgraded*"
+
+		return this.m.Name + " *Not Upgraded*";
 	}
 
 	function getDescription()
 	{
 		local desc = "";
-		desc += "Repairing equipment takes supplies. Break down and reuse equipment in your stash to help repair existing gear. "
-		desc += "Each brother assigned to the tent salvages an amount of durability each hour and converts it into tools. "
-        desc += "Once an item reaches zero durability, it will be consumed and destroyed. Every 15 durability equals a tool."
-		desc += "The more people assigned to the tent, the quicker items will be salvaged."
-		desc += "\n\n"
-		desc += "The salvage tent can be upgraded by purchasing a salvage cart from a settlement merchant. An upgraded tent has a 15% increase in salvage speed and every 10 durability equals a tool."
+		desc = desc + "Repairing equipment takes supplies. Break down and reuse equipment in your stash to help repair existing gear. ";
+		desc = desc + "Each brother assigned to the tent salvages an amount of durability each hour and converts it into tools. ";
+		desc = desc + "Once an item reaches zero durability, it will be consumed and destroyed. Every 15 durability equals a tool.";
+		desc = desc + "The more people assigned to the tent, the quicker items will be salvaged.";
+		desc = desc + "\n\n";
+		desc = desc + "The salvage tent can be upgraded by purchasing a salvage cart from a settlement merchant. An upgraded tent has a 15% increase in salvage speed and every 10 durability equals a tool.";
 		return desc;
 	}
 
 	function getModifierToolip()
-    {
+	{
 		this.init();
 		local mod = this.getModifiers();
 		local ret = [
@@ -136,38 +133,41 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
 			}
 		];
 		local id = 6;
-		foreach (bro in mod.Modifiers)
+
+		foreach( bro in mod.Modifiers )
 		{
 			ret.push({
 				id = id,
 				type = "hint",
 				icon = "ui/icons/special.png",
 				text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + bro[0] + "[/color] units/hour " + bro[1] + " (" + bro[2] + ")"
-			})
-			++id;
+			});
+			id = ++id;
+			id = id;
 		}
+
 		return ret;
 	}
 
 	function isHidden()
 	{
-
 		if (this.World.LegendsMod.Configs().LegendCampUnlockEnabled())
 		{
 			return false;
 		}
 
-		return !this.World.Flags.get("HasLegendCampScraping")
+		return !this.World.Flags.get("HasLegendCampScraping");
 	}
 
 	function getUpgraded()
 	{
-        return this.Stash.hasItem("tent.scrap_tent")
+		return this.Stash.hasItem("tent.scrap_tent");
 	}
 
 	function getLevel()
 	{
 		local pro = "dude";
+
 		if (this.getUpgraded())
 		{
 			pro = "tent";
@@ -175,139 +175,154 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
 
 		local sub = "empty";
 
-		if (this.getAssignedBros() > 0) {
-			sub =  "full";
+		if (this.getAssignedBros() > 0)
+		{
+			sub = "full";
 		}
+
 		return pro + "_" + sub;
 	}
 
-    function init()
-    {
-        this.onInit();
-        this.m.ToolsCreated = 0;
-        this.m.PointsSalvaged = 0;
+	function init()
+	{
+		this.onInit();
+		this.m.ToolsCreated = 0;
+		this.m.PointsSalvaged = 0;
 		this.m.ItemsDestroyed = 0;
-        local mod = this.getModifiers();
-        this.m.NumBros = mod.Assigned;
-        this.m.PointsNeeded = 0;
-        foreach (i, r in this.m.Salvage)
-        {
-            if (r == null)
-            {
-                continue;
-            }
+		local mod = this.getModifiers();
+		this.m.NumBros = mod.Assigned;
+		this.m.PointsNeeded = 0;
 
-            this.m.PointsNeeded += r.Item.getRepair();
-        }
-    }
+		foreach( i, r in this.m.Salvage )
+		{
+			if (r == null)
+			{
+				continue;
+			}
 
-    function onInit()
-    {
-        local items = this.getListOfEquipment()
-        this.m.Stash = items.Stash;
-        this.m.Salvage = items.Items;
-        local capacity =  this.m.Salvage.len() + this.m.Stash.len();
-        this.m.Capacity = capacity;
-        while (this.m.Stash.len() < capacity)
-        {
-            this.m.Stash.push(null);
-        }
-        while (this.m.Salvage.len() < capacity)
-        {
-            this.m.Salvage.push(null);
-        }
-    }
+			this.m.PointsNeeded += r.Item.getRepair();
+		}
+	}
 
-    function getConversionRate()
-    {
-        return this.m.Conversion;
-    }
+	function onInit()
+	{
+		local items = this.getListOfEquipment();
+		this.m.Stash = items.Stash;
+		this.m.Salvage = items.Items;
+		local capacity = this.m.Salvage.len() + this.m.Stash.len();
+		this.m.Capacity = capacity;
 
-    function getStash()
-    {
-        return this.m.Stash;
-    }
+		while (this.m.Stash.len() < capacity)
+		{
+			this.m.Stash.push(null);
+		}
 
-    function getRepairs()
-    {
-        return this.m.Salvage;
-    }
+		while (this.m.Salvage.len() < capacity)
+		{
+			this.m.Salvage.push(null);
+		}
+	}
 
-    function getCapacity()
-    {
-        return this.m.Capacity;
-    }
+	function getConversionRate()
+	{
+		return this.m.Conversion;
+	}
 
-    function getResults()
-    {
-        if (this.m.ToolsCreated == 0)
-        {
-            return [];
-        }
+	function getStash()
+	{
+		return this.m.Stash;
+	}
 
-        return [{
+	function getRepairs()
+	{
+		return this.m.Salvage;
+	}
+
+	function getCapacity()
+	{
+		return this.m.Capacity;
+	}
+
+	function getResults()
+	{
+		if (this.m.ToolsCreated == 0)
+		{
+			return [];
+		}
+
+		return [
+			{
 				id = 11,
 				icon = "ui/icons/asset_supplies.png",
 				text = "You created [color=" + this.Const.UI.Color.PositiveEventValue + "]" + this.Math.floor(this.m.ToolsCreated) + "[/color] units of tools and salvaged [color=" + this.Const.UI.Color.NegativeEventValue + "]" + this.m.ItemsDestroyed + "[/color] pieces of equipment."
-			}];
-    }
+			}
+		];
+	}
 
-    function getModifiers()
-    {
-        local ret = this.camp_building.getModifiers();
-        if (this.getUpgraded())
-        {
-            ret.Consumption = 1.0 / 10.0
-        }
-        return ret;
-    }
+	function getModifiers()
+	{
+		local ret = this.camp_building.getModifiers();
 
-    function getRequiredSupplies()
-    {
-        local points = 0;
-        foreach (i, r in this.m.Salvage)
-        {
-            if (r == null)
-            {
-                continue;
-            }
+		if (this.getUpgraded())
+		{
+			ret.Consumption = 1.0 / 10.0;
+		}
 
-            points += r.Item.getRepair()
-        }
-        local modifiers = this.getModifiers();
-        return this.Math.ceil(points * modifiers.Consumption);
-    }
+		return ret;
+	}
 
-    function getRequiredTime()
-    {
-        local points = 0;
-        if (this.m.Salvage == null)
-        {
-            return 0;
-        }
+	function getRequiredSupplies()
+	{
+		local points = 0;
 
-        foreach (i, r in this.m.Salvage)
-        {
-            if (r == null)
-            {
-                continue;
-            }
+		foreach( i, r in this.m.Salvage )
+		{
+			if (r == null)
+			{
+				continue;
+			}
 
-            points += r.Item.getRepair()
-        }
-        local modifiers = this.getModifiers();
+			points = points + r.Item.getRepair();
+		}
+
+		local modifiers = this.getModifiers();
+		return this.Math.ceil(points * modifiers.Consumption);
+	}
+
+	function getRequiredTime()
+	{
+		local points = 0;
+
+		if (this.m.Salvage == null)
+		{
+			return 0;
+		}
+
+		foreach( i, r in this.m.Salvage )
+		{
+			if (r == null)
+			{
+				continue;
+			}
+
+			points = points + r.Item.getRepair();
+		}
+
+		local modifiers = this.getModifiers();
+
 		if (modifiers.Craft <= 0)
 		{
 			return 0;
 		}
-        return this.Math.ceil(points / modifiers.Craft);
-    }
 
-    function getAssignedBros()
-    {
-        local mod = this.getModifiers();
-        return mod.Assigned;
-    }
+		return this.Math.ceil(points / modifiers.Craft);
+	}
+
+	function getAssignedBros()
+	{
+		local mod = this.getModifiers();
+		return mod.Assigned;
+	}
 
 	function getResourceImage()
 	{
@@ -321,12 +336,13 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
 
 	function getUpdateText()
 	{
-        if (this.m.PointsNeeded == 0)
-        {
-            return "No salvage queued";
-        }
+		if (this.m.PointsNeeded == 0)
+		{
+			return "No salvage queued";
+		}
 
-		local percent = (this.m.PointsSalvaged / this.m.PointsNeeded) * 100.0;
+		local percent = this.m.PointsSalvaged / this.m.PointsNeeded * 100.0;
+
 		if (percent >= 100)
 		{
 			return "Salvaged ... 100%";
@@ -334,67 +350,70 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
 
 		local text = "Salvaged ... " + percent + "%";
 
-        if (this.World.Assets.getArmorPartsF() == this.World.Assets.getMaxArmorParts())
-        {
-            return text + " (At max tools!)";
-        }
-        return text;
+		if (this.World.Assets.getArmorPartsF() == this.World.Assets.getMaxArmorParts())
+		{
+			return text + " (At max tools!)";
+		}
+
+		return text;
 	}
 
-    function update ()
-    {
-        if (this.World.Assets.getArmorPartsF() >= this.World.Assets.getMaxArmorParts())
-        {
-            return this.getUpdateText();
-        }
+	function update()
+	{
+		if (this.World.Assets.getArmorPartsF() >= this.World.Assets.getMaxArmorParts())
+		{
+			return this.getUpdateText();
+		}
 
-        if (this.m.Salvage == null) //has a chance to error without reallye ffecting anything if u do salvage.len and its null
-        {
-            return this.getUpdateText();
-        }
+		if (this.m.Salvage == null)
+		{
+			return this.getUpdateText();
+		}
 
-        if (this.m.Salvage.len() == 0)
-        {
-            return this.getUpdateText();
-        }
+		if (this.m.Salvage.len() == 0)
+		{
+			return this.getUpdateText();
+		}
 
-        local modifiers = this.getModifiers();
-        foreach (i, r in this.m.Salvage)
-        {
-            if (r == null)
-            {
-                continue;
-            }
+		local modifiers = this.getModifiers();
 
-            if ( this.World.Assets.getArmorPartsF() >= this.World.Assets.getMaxArmorParts())
-            {
-                break;
-            }
+		foreach( i, r in this.m.Salvage )
+		{
+			if (r == null)
+			{
+				continue;
+			}
+
+			if (this.World.Assets.getArmorPartsF() >= this.World.Assets.getMaxArmorParts())
+			{
+				break;
+			}
 
 			if (modifiers.Craft <= 0)
-            {
-                break
-            }
+			{
+				break;
+			}
 
-            local consumed = r.Item.getRepair()
-            if (modifiers.Craft < consumed)
-            {
-                consumed = modifiers.Craft;
-            }
-            r.Item.setArmor(r.Item.getRepair() - consumed);
-            modifiers.Craft -= consumed;
-            this.m.PointsSalvaged += consumed;
+			local consumed = r.Item.getRepair();
+
+			if (modifiers.Craft < consumed)
+			{
+				consumed = modifiers.Craft;
+			}
+
+			r.Item.setArmor(r.Item.getRepair() - consumed);
+			modifiers.Craft -= consumed;
+			this.m.PointsSalvaged += consumed;
 			local created = consumed * modifiers.Consumption;
 			this.m.ToolsCreated += created;
 			this.World.Assets.addArmorPartsF(created);
 
-            if (r.Item.getRepair() <= 0)
-            {
-                this.m.ItemsDestroyed += 1
+			if (r.Item.getRepair() <= 0)
+			{
+				this.m.ItemsDestroyed += 1;
+				local myItem = this.World.Assets.getStash().getItemByInstanceID(r.Item.getInstanceID()).item;
 
-                // Salvages runes
-                local myItem = this.World.Assets.getStash().getItemByInstanceID(r.Item.getInstanceID()).item;
-				if(myItem.getRuneVariant() != 0)
+				if (myItem.getRuneVariant() != 0)
 				{
 					if (this.World.LegendsMod.Configs().LegendArmorsEnabled() && (myItem.getRuneVariant() == 21 || myItem.getRuneVariant() == 22 || myItem.getRuneVariant() == 23))
 					{
@@ -434,15 +453,13 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
 
 				this.World.Assets.getStash().remove(r.Item);
 				this.m.Salvage[i] = null;
-            }
-        }
+			}
+		}
 
-        return this.getUpdateText();
+		return this.getUpdateText();
+	}
 
-    }
-
-
-    function sortSalvageQueue( _f1, _f2 )
+	function sortSalvageQueue( _f1, _f2 )
 	{
 		if (_f1.Item.isToBeSalvagedQ() > _f2.Item.isToBeSalvagedQ())
 		{
@@ -458,135 +475,154 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		}
 	}
 
-    function getListOfEquipment()
-    {
-        local items = [];
-        local stash = [];
-        local roster = this.World.getPlayerRoster().getAll()
-        local stashItems = this.Stash.getItems();
-        foreach( item in stashItems)
-        {
-            if (item == null)
-            {
-                continue;
-            }
+	function getListOfEquipment()
+	{
+		local items = [];
+		local stash = [];
+		local roster = this.World.getPlayerRoster().getAll();
+		local stashItems = this.Stash.getItems();
+
+		foreach( item in stashItems )
+		{
+			if (item == null)
+			{
+				continue;
+			}
 
 			if (item.isIndestructible())
 			{
 				continue;
 			}
 
-            if (item.getCondition() <= 0)
-            {
-                continue;
-            }
-
-            if (item.isToBeRepaired())
-            {
+			if (item.getCondition() <= 0)
+			{
 				continue;
-            }
+			}
 
-            if (!item.canBeSalvaged())
-            {
-                continue
-            }
+			if (item.isToBeRepaired())
+			{
+				continue;
+			}
 
-            if (item.isToBeSalvaged())
-            {
-                items.push({
-                    Bro = null,
-                    Item = item
-                });
-            }
-            else
-            {
-                stash.push({
-                    Bro = null,
-                    Item = item
-                });
-            }
-        }
-        items.sort(this.sortSalvageQueue);
-        return {Items = items, Stash = stash};
-    }
+			if (!item.canBeSalvaged())
+			{
+				continue;
+			}
 
-    function assignAll( _filter = 0 )
-    {
-        if (_filter == 0)
+			if (item.isToBeSalvaged())
+			{
+				items.push({
+					Bro = null,
+					Item = item
+				});
+			}
+			else
+			{
+				stash.push({
+					Bro = null,
+					Item = item
+				});
+			}
+		}
+
+		items.sort(this.sortSalvageQueue);
+		return {
+			Items = items,
+			Stash = stash
+		};
+	}
+
+	function assignAll( _filter = 0 )
+	{
+		if (_filter == 0)
 		{
 			_filter = this.Const.Items.ItemFilter.All;
 		}
 
-        local index = 0
-        foreach (i, s in this.m.Stash)
-        {
-            if (s == null)
-            {
-                continue
-            }
+		local index = 0;
 
-            if (_filter == 99 && s.Bro != null)
-            {
-                continue;
-            }
-            else if ((s.Item.getItemType() & _filter) == 0)
-            {
-                continue;
-            }
+		foreach( i, s in this.m.Stash )
+		{
+			if (s == null)
+			{
+				continue;
+			}
 
-            for (index; index < this.m.Salvage.len(); index = ++index)
-            {
-                if (this.m.Salvage[index] == null)
-                {
-                    break;
-                }
-            }
+			if (_filter == 99 && s.Bro != null)
+			{
+				continue;
+			}
+			else if ((s.Item.getItemType() & _filter) == 0)
+			{
+				continue;
+			}
 
-            s.Item.setToBeSalvaged(true, index);
-            if (index >= this.m.Salvage.len())
-            {
-                this.m.Salvage.push(s);
-            }
-            else
-            {
-                this.m.Salvage[index] = s;
-            }
-            s.Item.playInventorySound(this.Const.Items.InventoryEventType.PlacedInBag)
-            this.m.Stash[i] = null;
-        }
-    }
+			while (index < this.m.Salvage.len())
+			{
+				if (this.m.Salvage[index] == null)
+				{
+					break;
+				}
 
-    function removeAll()
-    {
-        local index = 0;
-        foreach (i, s in this.m.Salvage)
-        {
-            if (s == null)
-            {
-                continue
-            }
+				index = ++index;
+				index = index;
+				index = index;
+			}
 
-            for (index; index < this.m.Salvage.len(); index = ++index)
-            {
-                if (this.m.Stash[index] == null)
-                {
-                    break;
-                }
-            }
+			s.Item.setToBeSalvaged(true, index);
 
-            s.Item.setToBeSalvaged(false, 0);
-            if (index >= this.m.Stash.len())
-            {
-                this.m.Stash.push(s);
-            }
-            else
-            {
-                this.m.Stash[index] = s;
-            }
-            s.Item.playInventorySound(this.Const.Items.InventoryEventType.PlacedInBag)
-            this.m.Salvage[i] = null;
-        }
-    }
+			if (index >= this.m.Salvage.len())
+			{
+				this.m.Salvage.push(s);
+			}
+			else
+			{
+				this.m.Salvage[index] = s;
+			}
+
+			s.Item.playInventorySound(this.Const.Items.InventoryEventType.PlacedInBag);
+			this.m.Stash[i] = null;
+		}
+	}
+
+	function removeAll()
+	{
+		local index = 0;
+
+		foreach( i, s in this.m.Salvage )
+		{
+			if (s == null)
+			{
+				continue;
+			}
+
+			while (index < this.m.Salvage.len())
+			{
+				if (this.m.Stash[index] == null)
+				{
+					break;
+				}
+
+				index = ++index;
+				index = index;
+				index = index;
+			}
+
+			s.Item.setToBeSalvaged(false, 0);
+
+			if (index >= this.m.Stash.len())
+			{
+				this.m.Stash.push(s);
+			}
+			else
+			{
+				this.m.Stash[index] = s;
+			}
+
+			s.Item.playInventorySound(this.Const.Items.InventoryEventType.PlacedInBag);
+			this.m.Salvage[i] = null;
+		}
+	}
 
 	function swapItems( sourceItemOwner, sourceItemIdx, targetItemOwner, targetItemIdx )
 	{
@@ -596,107 +632,116 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
 			return false;
 		}
 
-        if (sourceItemOwner == targetItemOwner && sourceItemIdx == targetItemIdx)
-        {
-            return false
-        }
+		if (sourceItemOwner == targetItemOwner && sourceItemIdx == targetItemIdx)
+		{
+			return false;
+		}
 
-        local sourceList = null;
-        local targetList = null;
-        local isRepair = false
+		local sourceList;
+		local targetList;
+		local isRepair = false;
+
 		switch(sourceItemOwner)
 		{
 		case "camp-screen-workshop-dialog-module.stash":
-            sourceList = this.m.Stash
-            if (sourceItemOwner == targetItemOwner)
-            {
-                targetList = this.m.Stash;
-            }
-            else
-            {
-                targetList = this.m.Salvage;
-                isRepair = true;
-            }
-            break;
+			sourceList = this.m.Stash;
+
+			if (sourceItemOwner == targetItemOwner)
+			{
+				targetList = this.m.Stash;
+			}
+			else
+			{
+				targetList = this.m.Salvage;
+				isRepair = true;
+			}
+
+			break;
 
 		case "camp-screen-workshop-dialog-module.shop":
-            sourceList = this.m.Salvage
-            if (sourceItemOwner == targetItemOwner)
-            {
-                targetList = this.m.Salvage;
-                isRepair = true
-            }
-            else
-            {
-                targetList = this.m.Stash;
-            }
-            break;
-        }
+			sourceList = this.m.Salvage;
 
-        local sourceItem = sourceList[sourceItemIdx];
+			if (sourceItemOwner == targetItemOwner)
+			{
+				targetList = this.m.Salvage;
+				isRepair = true;
+			}
+			else
+			{
+				targetList = this.m.Stash;
+			}
 
-        if (sourceItem == null)
-        {
-            this.logError("onSwapItem(stash) #2");
-            return false;
-        }
+			break;
+		}
 
-        //We've picked a spot to drop it
-        if (targetItemIdx != null)
-        {
-            //Make sure array is big enough for target spot
-            while (targetItemIdx > targetList.len() - 1)
-            {
-                targetList.push(null)
-            }
-            sourceList[sourceItemIdx] = targetList[targetItemIdx];
-            targetList[targetItemIdx] = sourceItem;
-            sourceItem.Item.playInventorySound(this.Const.Items.InventoryEventType.PlacedInBag)
-            local index = 0
-            if (isRepair)
-            {
-                index = targetItemIdx
-            }
-            sourceItem.Item.setToBeSalvaged(isRepair, index);
-            return true
-        }
+		local sourceItem = sourceList[sourceItemIdx];
 
-        //didn't pick a spot to drop, find the first null spot
-        foreach (i,r in targetList)
-        {
-            if (r != null)
-            {
-                continue
-            }
-            targetList[i] = sourceItem;
-            sourceList[sourceItemIdx] = null;
-            sourceItem.Item.playInventorySound(this.Const.Items.InventoryEventType.PlacedInBag)
-            local index = 0
-            if (isRepair)
-            {
-                index = i
-            }
-            sourceItem.Item.setToBeSalvaged(isRepair, index);
-            return true
-        }
+		if (sourceItem == null)
+		{
+			this.logError("onSwapItem(stash) #2");
+			return false;
+		}
 
-        //No null spot, push to the end
-        targetList.push(sourceItem);
-        sourceList[sourceItemIdx] = null;
-        sourceItem.Item.playInventorySound(this.Const.Items.InventoryEventType.PlacedInBag)
-        local index = 0
-        if (isRepair)
-        {
-            index = targetList.len() - 1
-        }
-        sourceItem.Item.setToBeSalvaged(isRepair, index);
-        return true
+		if (targetItemIdx != null)
+		{
+			while (targetItemIdx > targetList.len() - 1)
+			{
+				targetList.push(null);
+			}
+
+			sourceList[sourceItemIdx] = targetList[targetItemIdx];
+			targetList[targetItemIdx] = sourceItem;
+			sourceItem.Item.playInventorySound(this.Const.Items.InventoryEventType.PlacedInBag);
+			local index = 0;
+
+			if (isRepair)
+			{
+				index = targetItemIdx;
+			}
+
+			sourceItem.Item.setToBeSalvaged(isRepair, index);
+			return true;
+		}
+
+		foreach( i, r in targetList )
+		{
+			if (r != null)
+			{
+				continue;
+			}
+
+			targetList[i] = sourceItem;
+			sourceList[sourceItemIdx] = null;
+			sourceItem.Item.playInventorySound(this.Const.Items.InventoryEventType.PlacedInBag);
+			local index = 0;
+
+			if (isRepair)
+			{
+				index = i;
+			}
+
+			sourceItem.Item.setToBeSalvaged(isRepair, index);
+			return true;
+		}
+
+		targetList.push(sourceItem);
+		sourceList[sourceItemIdx] = null;
+		sourceItem.Item.playInventorySound(this.Const.Items.InventoryEventType.PlacedInBag);
+		local index = 0;
+
+		if (isRepair)
+		{
+			index = targetList.len() - 1;
+		}
+
+		sourceItem.Item.setToBeSalvaged(isRepair, index);
+		return true;
 	}
 
 	function onClicked( _campScreen )
 	{
-        _campScreen.showWorkshopDialog();
-        this.camp_building.onClicked(_campScreen);
+		_campScreen.showWorkshopDialog();
+		this.camp_building.onClicked(_campScreen);
 	}
 
 	function onSerialize( _out )
@@ -710,3 +755,4 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
 	}
 
 });
+
