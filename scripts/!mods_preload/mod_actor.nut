@@ -95,6 +95,66 @@
 				}
 			}
 		}
+
+		if (this.m.IsRaising)
+		{
+			local p = (this.Time.getVirtualTimeF() - this.m.RenderAnimationStartTime) / (this.Const.Combat.ResurrectAnimationTime * this.m.RenderAnimationSpeed);
+
+			if (p >= 1.0)
+			{
+				this.setPos(this.createVec(0, 0));
+				this.setAlpha(255);
+				this.m.IsRaising = false;
+				this.m.IsAttackable = true;
+
+				if (!this.m.IsUsingCustomRendering)
+				{
+					this.setRenderCallbackEnabled(false);
+				}
+			}
+			else
+			{
+				this.setPos(this.createVec(0, this.Const.Combat.ResurrectAnimationDistance * this.m.RenderAnimationDistanceMult * (1.0 - p)));
+			}
+		}
+		else if (this.m.IsSinking)
+		{
+			local p = (this.Time.getVirtualTimeF() - this.m.RenderAnimationStartTime) / (this.Const.Combat.ResurrectAnimationTime * this.m.RenderAnimationSpeed);
+
+			if (p >= 1.0)
+			{
+				this.setPos(this.createVec(0, this.Const.Combat.ResurrectAnimationDistance * this.m.RenderAnimationDistanceMult));
+				this.m.IsSinking = false;
+				this.m.IsAttackable = true;
+
+				if (!this.m.IsUsingCustomRendering)
+				{
+					this.setRenderCallbackEnabled(false);
+				}
+			}
+			else
+			{
+				this.setPos(this.createVec(0, this.Const.Combat.ResurrectAnimationDistance * this.m.RenderAnimationDistanceMult * p));
+			}
+		}
+
+		if (this.m.IsRaisingRooted)
+		{
+			local from = this.createVec(this.m.RenderAnimationOffset.X, this.m.RenderAnimationOffset.Y - 100);
+			this.moveSpriteOffset("status_rooted_back", from, this.m.RenderAnimationOffset, this.Const.Combat.RootedAnimationTime, this.m.RenderAnimationStartTime);
+
+			if (this.moveSpriteOffset("status_rooted", from, this.m.RenderAnimationOffset, this.Const.Combat.RootedAnimationTime, this.m.RenderAnimationStartTime))
+			{
+				this.m.IsRaisingRooted = false;
+
+				if (!this.m.IsUsingCustomRendering)
+				{
+					this.setRenderCallbackEnabled(false);
+				}
+
+				this.setDirty(true);
+			}
+		}
 	}
 
 	o.onOtherActorDeath <- function ( _killer, _victim, _skill )
