@@ -4143,7 +4143,6 @@ Fix some incorrect codes in the tame-white-wolf event (Leonion)
 Fix knife-specialist not working for qatal dagger (wuxiangjinxing)
 Fix FOM not working properly with 0 fatigue (wuxiangjinxing)
 Remove non-existing skills from AI definitions (grobocop)
-<<<<<<< HEAD
 Replace some icon place-holders (Von)
 Bounty hunter now actually gives money for killing an enemy champion
 Possibly fixes AI units semi-randomly not having Zones of Control [being able to shoot bows next to them, can't shoot by dead body/air, etc]
