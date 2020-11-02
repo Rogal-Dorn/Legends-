@@ -22,8 +22,11 @@ this.lookout_follower <- this.inherit("scripts/retinue/follower", {
 
 	function onUpdate()
 	{
-		this.World.Assets.m.VisionRadiusMult = 1.25;
-		this.World.Assets.m.IsShowingExtendedFootprints = true;
+		if (VisionRadiusMult in this.World.Assets.m) //doesn't actually fix the problem but retinue will be removed later so i'm not too pressed, if we keep retinue this should be tweaked
+		{
+			this.World.Assets.m.VisionRadiusMult = 1.25;
+			this.World.Assets.m.IsShowingExtendedFootprints = true;
+		}
 	}
 
 	function onEvaluate()

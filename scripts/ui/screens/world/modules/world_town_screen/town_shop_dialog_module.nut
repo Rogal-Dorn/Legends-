@@ -118,7 +118,7 @@ this.town_shop_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 		return result;
 	}
 
-	function onRepairItem( _itemIndex, _callback )
+	function onRepairItem( _itemIndex )
 	{
 		if (!this.m.Shop.isRepairOffered())
 		{
@@ -127,13 +127,13 @@ this.town_shop_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 
 		local item = this.Stash.getItemAtIndex(_itemIndex).item;
 
-		if (item.getRepairMax() <= 1 || item.getRepair() >= item.getRepairMax())
+		if (item.getConditionMax() <= 1 || item.getCondition() >= item.getConditionMax())
 		{
 			return null;
 		}
 
-		local price = (item.getRepairMax() - item.getRepair()) * this.Const.World.Assets.CostToRepairPerPoint;
-		local value = item.m.Value * (1.0 - item.getRepair() / item.getRepairMax()) * 0.2 * this.World.State.getCurrentTown().getPriceMult() * this.Const.Difficulty.SellPriceMult[this.World.Assets.getEconomicDifficulty()];
+		local price = (item.getConditionMax() - item.getCondition()) * this.Const.World.Assets.CostToRepairPerPoint;
+		local value = item.m.Value * (1.0 - item.getCondition() / item.getConditionMax()) * 0.2 * this.World.State.getCurrentTown().getPriceMult() * this.Const.Difficulty.SellPriceMult[this.World.Assets.getEconomicDifficulty()];
 		price = this.Math.max(price, value);
 
 		if (this.World.Assets.getMoney() < price)
@@ -142,7 +142,7 @@ this.town_shop_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 		}
 
 		this.World.Assets.addMoney(-price);
-		item.setArmor(item.getRepairMax());
+		item.setCondition(item.getConditionMax());
 		item.setToBeRepaired(false, 0);
 		this.Sound.play("sounds/ambience/buildings/blacksmith_hammering_0" + this.Math.rand(0, 6) + ".wav", 1.0);
 		local result = {
@@ -220,7 +220,6 @@ this.town_shop_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 								{
 									this.m.Parent.m.Town.setResources(this.m.Parent.m.Town.getResources() + sourceItem.item.getResourceValue());
 								}
-
 							}
 						}
 						else
@@ -249,7 +248,6 @@ this.town_shop_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 						{
 							this.m.Parent.m.Town.setResources(this.m.Parent.m.Town.getResources() + sourceItem.item.getResourceValue());
 						}
-
 					}
 				}
 			}

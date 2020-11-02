@@ -4066,6 +4066,11 @@ Fixes barbarian madman spawning without armor
 Should fix miasma skill
 Fixes some of the noble scenario starting items back to previous (& intended) items
 Minor tweak to beast spawns : Serpents resource-per-unit upped along with Ifrits. (e.g. where you'd previously see 20 serpents you'd now see 16)
+<<<<<<< HEAD
+15.0.0.4
+
+**Fixes**
+=======
 Fixed Brawny incorrect value on some layers and helmets. (Thanks Leonion)
 Updated description of Bloody harvest to specify "All melee attacks"
 fix hollenhound curse neglecting resilience
@@ -4073,11 +4078,30 @@ fix missing non-layered alp helmet
 fix champion behemoths ai and champion sets
 Adds southern enemy classes to favorite enemy perks
 fixes noble fencer spawn crash on legendary difficulty.
+<<<<<<< HEAD
+>>>>>>> v15MwahBugfixes
+=======
+<<<<<<< HEAD
+>>>>>>> v15MwahBugfixes
+Fixes the decoded scrolls [the recipe historians are part of] not saving what they are when the game reloads and just becoming useless
+Adds how many scrolls a character can use to each scroll's tooltip
+Fixes the EXP Reward DISPLAY (doesn't change the actual given amount) at the end of some contracts (caravan, delivery, etc)
+  [These numbers are a percentage of the gold reward multiplied by .85: Deliver Item/Money: 25% , Escort Caravan: 50% , Discover Location: 10%]
+Should fix smite skill rarely crashing game when killing an enemy at the very end of the round
+<<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
+Bounty hunter now actually gives money for killing an enemy champion
+Possibly fixes AI units semi-randomly not having Zones of Control [being able to shoot bows next to them, can't shoot by dead body/air, etc]
+Multiple typos, notably Donkey background correctly displays given stash/etc modifiers & Prayer of faith perk description correctly states it gives +20% bonus vs +10% bonus
+Fixes the specialist perks for Knives to work with Qatal Dagger
+=======
+>>>>>>> v15MwahBugfixes
 
-15.0.0.5
+
+15.0.0.15
 
 **Changes**
 Updated to BB 1.4.0.45 (Poss)
@@ -4090,6 +4114,13 @@ Fixes the decoded scrolls [the recipe historians are part of] not saving what th
 Adds how many scrolls a character can use to each scroll's tooltip (mwah)
 Fixes the EXP Reward DISPLAY (doesn't change the actual given amount) at the end of some contracts (caravan, delivery, etc) (mwah)
   [These numbers are a percentage of the gold reward multiplied by .85: Deliver Item/Money: 25% , Escort Caravan: 50% , Discover Location: 10%]
+Fixed Brawny incorrect value on some layers and helmets. (Thanks Leonion)
+Updated description of Bloody harvest to specify "All melee attacks"
+fix hollenhound curse neglecting resilience
+fix missing non-layered alp helmet
+fix champion behemoths ai and champion sets
+Adds southern enemy classes to favorite enemy perks
+fixes noble fencer spawn crash on legendary difficulty.
 Should fix smite skill rarely crashing game when killing an enemy at the very end of the round (mwah)
 Fix misplaced image when using spearwall with a swordstaff (Leonion)
 Fix smite skill not checking if target is dying to apply staggered effect (mwah)
@@ -4113,5 +4144,10 @@ Fix knife-specialist not working for qatal dagger (wuxiangjinxing)
 Fix FOM not working properly with 0 fatigue (wuxiangjinxing)
 Remove non-existing skills from AI definitions (grobocop)
 Replace some icon place-holders (Von)
-
-
+Bounty hunter now actually gives money for killing an enemy champion
+Possibly fixes AI units semi-randomly not having Zones of Control [being able to shoot bows next to them, can't shoot by dead body/air, etc]
+Multiple typos, notably Donkey background correctly displays given stash/etc modifiers & Prayer of faith perk description correctly states it gives +20% bonus vs +10% bonus
+Fixes the specialist perks for Knives to work with Qatal Dagger
+Cannibal recruitment text updated
+Sisterhood scenario event text updated
+Replace some icon place-holders (Von)

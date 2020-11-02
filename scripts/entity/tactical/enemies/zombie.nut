@@ -857,7 +857,6 @@ this.zombie <- this.inherit("scripts/entity/tactical/actor", {
 				{
 					item.setArmor(item.getArmorMax() / 2 - 1);
 				}
-				this.m.Items.equip(item);
 			}
 
 			this.m.Items.equip(item);
