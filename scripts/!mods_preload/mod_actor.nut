@@ -11,6 +11,152 @@
 		o.m.PercentOnKillOtherActorModifier <- 1.0;
     }
 
+	o.onRender <- function ()
+	{
+		if (this.m.IsRaisingShield)
+		{
+			if (this.moveSpriteOffset("shield_icon", this.createVec(0, 0), this.Const.Items.Default.RaiseShieldOffset, this.Const.Items.Default.RaiseShieldDuration, this.m.RenderAnimationStartTime))
+			{
+				this.m.IsRaisingShield = false;
+
+				if (!this.m.IsUsingCustomRendering)
+				{
+					this.setRenderCallbackEnabled(false);
+				}
+			}
+		}
+		else if (this.m.IsLoweringShield)
+		{
+			if (this.moveSpriteOffset("shield_icon", this.Const.Items.Default.RaiseShieldOffset, this.createVec(0, 0), this.Const.Items.Default.LowerShieldDuration, this.m.RenderAnimationStartTime))
+			{
+				this.m.IsLoweringShield = false;
+
+				if (!this.m.IsUsingCustomRendering)
+				{
+					this.setRenderCallbackEnabled(false);
+				}
+			}
+		}
+
+		if (this.m.IsLoweringWeapon)
+		{
+			local p = (this.Time.getVirtualTimeF() - this.m.RenderAnimationStartTime) / this.Const.Items.Default.LowerWeaponDuration;
+
+			if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand).m.ID == "weapon.legend_named_swordstaff" || this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand).m.ID == "weapon.legend_swordstaff" || this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand).m.ID == "weapon.legend_mage_swordstaff")
+			{
+				this.getSprite("arms_icon").Rotation = this.Math.minf(1.0, p) * -70.0;
+				this.moveSpriteOffset("arms_icon", this.getSpriteOffset("arms_icon"), this.createVec(46 * this.Math.minf(1.0, p), -33 * this.Math.minf(1.0, p)), this.Const.Items.Default.LowerWeaponDuration, this.m.RenderAnimationStartTime);
+			}
+			else if (this.m.Items.getAppearance().TwoHanded)
+			{
+				this.getSprite("arms_icon").Rotation = this.Math.minf(1.0, p) * -70.0;
+			}
+			else
+			{
+				this.getSprite("arms_icon").Rotation = this.Math.minf(1.0, p) * -33.0;
+			}
+
+			if (p >= 1.0)
+			{
+				this.m.IsLoweringWeapon = false;
+
+				if (!this.m.IsUsingCustomRendering)
+				{
+					this.setRenderCallbackEnabled(false);
+				}
+			}
+		}
+		else if (this.m.IsRaisingWeapon)
+		{
+			local p = (this.Time.getVirtualTimeF() - this.m.RenderAnimationStartTime) / this.Const.Items.Default.RaiseWeaponDuration;
+
+			if (this.getSpriteOffset("arms_icon").X != 0 || this.getSpriteOffset("arms_icon").Y != 0)
+			{
+				this.getSprite("arms_icon").Rotation = (1.0 - this.Math.minf(1.0, p)) * -70.0;
+				this.moveSpriteOffset("arms_icon", this.getSpriteOffset("arms_icon"), this.createVec(46 * (1-this.Math.minf(1.0, p)), -33 * (1-this.Math.minf(1.0, p))), this.Const.Items.Default.LowerWeaponDuration, this.m.RenderAnimationStartTime);
+				//this.logDebug("hey there calls");
+			}
+			else if (this.m.Items.getAppearance().TwoHanded)
+			{
+				this.getSprite("arms_icon").Rotation = (1.0 - this.Math.minf(1.0, p)) * -70.0;
+			}
+			else
+			{
+				this.getSprite("arms_icon").Rotation = (1.0 - this.Math.minf(1.0, p)) * -33.0;
+			}
+
+			if (p >= 1.0)
+			{
+				this.m.IsRaisingWeapon = false;
+
+				if (!this.m.IsUsingCustomRendering)
+				{
+					this.setRenderCallbackEnabled(false);
+				}
+			}
+		}
+
+		if (this.m.IsRaising)
+		{
+			local p = (this.Time.getVirtualTimeF() - this.m.RenderAnimationStartTime) / (this.Const.Combat.ResurrectAnimationTime * this.m.RenderAnimationSpeed);
+
+			if (p >= 1.0)
+			{
+				this.setPos(this.createVec(0, 0));
+				this.setAlpha(255);
+				this.m.IsRaising = false;
+				this.m.IsAttackable = true;
+
+				if (!this.m.IsUsingCustomRendering)
+				{
+					this.setRenderCallbackEnabled(false);
+				}
+			}
+			else
+			{
+				this.setPos(this.createVec(0, this.Const.Combat.ResurrectAnimationDistance * this.m.RenderAnimationDistanceMult * (1.0 - p)));
+			}
+		}
+		else if (this.m.IsSinking)
+		{
+			local p = (this.Time.getVirtualTimeF() - this.m.RenderAnimationStartTime) / (this.Const.Combat.ResurrectAnimationTime * this.m.RenderAnimationSpeed);
+
+			if (p >= 1.0)
+			{
+				this.setPos(this.createVec(0, this.Const.Combat.ResurrectAnimationDistance * this.m.RenderAnimationDistanceMult));
+				this.m.IsSinking = false;
+				this.m.IsAttackable = true;
+
+				if (!this.m.IsUsingCustomRendering)
+				{
+					this.setRenderCallbackEnabled(false);
+				}
+			}
+			else
+			{
+				this.setPos(this.createVec(0, this.Const.Combat.ResurrectAnimationDistance * this.m.RenderAnimationDistanceMult * p));
+			}
+		}
+
+		if (this.m.IsRaisingRooted)
+		{
+			local from = this.createVec(this.m.RenderAnimationOffset.X, this.m.RenderAnimationOffset.Y - 100);
+			this.moveSpriteOffset("status_rooted_back", from, this.m.RenderAnimationOffset, this.Const.Combat.RootedAnimationTime, this.m.RenderAnimationStartTime);
+
+			if (this.moveSpriteOffset("status_rooted", from, this.m.RenderAnimationOffset, this.Const.Combat.RootedAnimationTime, this.m.RenderAnimationStartTime))
+			{
+				this.m.IsRaisingRooted = false;
+
+				if (!this.m.IsUsingCustomRendering)
+				{
+					this.setRenderCallbackEnabled(false);
+				}
+
+				this.setDirty(true);
+			}
+		}
+	}
+
 	o.onOtherActorDeath <- function ( _killer, _victim, _skill )
 	{
 		if (!this.m.IsAlive || this.m.IsDying)
@@ -131,6 +277,7 @@
 
 		this.m.Skills.onMissed(_attacker, _skill);
 	}
+
 
     o.resetPerks <- function ()
     {
@@ -388,10 +535,11 @@
 
 		if (oldMoraleState == this.Const.MoraleState.Fleeing && this.m.IsActingEachTurn)
 		{
-			if (this.m.IsUsingZoneOfControl)
-			{
-				this.getTile().addZoneOfControl(this.getFaction());
-			}
+			// if (this.m.IsUsingZoneOfControl)
+			// {
+			// 	this.getTile().addZoneOfControl(this.getFaction());
+			// }
+			this.setZoneOfControl(this.getTile(), this.hasZoneOfControl());
 
 			if (this.isPlayerControlled() || !this.isHiddenToPlayer())
 			{
@@ -407,11 +555,12 @@
 		}
 		else if (this.m.MoraleState == this.Const.MoraleState.Fleeing)
 		{
-			if (this.m.IsActingEachTurn && this.m.IsUsingZoneOfControl)
-			{
-				this.getTile().removeZoneOfControl(this.getFaction());
-			}
-
+			// if (this.m.IsActingEachTurn && this.m.IsUsingZoneOfControl)
+			// {
+			// 	this.getTile().removeZoneOfControl(this.getFaction());
+			// }
+			this.setZoneOfControl(this.getTile(), this.hasZoneOfControl());
+			
 			this.m.Skills.removeByID("effects.shieldwall");
 			this.m.Skills.removeByID("effects.spearwall");
 			this.m.Skills.removeByID("effects.riposte");
@@ -739,6 +888,11 @@
 		if (this.m.IsMiniboss && !this.Tactical.State.isScenarioMode() && _killer != null && _killer.isPlayerControlled())
 		{
 			this.updateAchievement("GiveMeThat", 1, 1);
+
+			if (!this.Tactical.State.isScenarioMode() && this.World.Retinue.hasFollower("follower.bounty_hunter"))
+			{
+				this.World.Retinue.getFollower("follower.bounty_hunter").onChampionKilled(this);
+			}
 		}
 
 		this.m.IsDying = true;
@@ -854,6 +1008,18 @@
 		{
 			this.World.Contracts.onActorKilled(this, _killer, this.Tactical.State.getStrategicProperties().CombatID);
 			this.World.Events.onActorKilled(this, _killer, this.Tactical.State.getStrategicProperties().CombatID);
+			
+			if (this.Tactical.State.getStrategicProperties() != null && this.Tactical.State.getStrategicProperties().IsArenaMode)
+			{
+				if (_killer == null || _killer.getID() == this.getID())
+				{
+					this.Sound.play(this.Const.Sound.ArenaFlee[this.Math.rand(0, this.Const.Sound.ArenaFlee.len() - 1)], this.Const.Sound.Volume.Tactical * this.Const.Sound.Volume.Arena);
+				}
+				else
+				{
+					this.Sound.play(this.Const.Sound.ArenaKill[this.Math.rand(0, this.Const.Sound.ArenaKill.len() - 1)], this.Const.Sound.Volume.Tactical * this.Const.Sound.Volume.Arena);
+				}
+			}
 		}
 
 		if (this.isPlayerControlled())
@@ -902,7 +1068,10 @@
 				{
 					if (bro.isAlive() && !bro.isDying() && bro.getCurrentProperties().IsAffectedByDyingAllies)
 					{
-						bro.worsenMood(this.Const.MoodChange.BrotherDied, this.getName() + " died in battle");
+						if (this.World.Assets.getOrigin().getID() != "scenario.manhunters" || this.getBackground().getID() != "background.slave" || bro.getBackground().getID() == "background.slave")
+						{
+							bro.worsenMood(this.Const.MoodChange.BrotherDied, this.getName() + " died in battle");
+						}
 					}
 				}
 			}
