@@ -4161,3 +4161,7 @@ Fixes saves failing with some retinue members, namely Lookout
   -> As a note, this doesn't necessarily fix in game errors with retinue members, just loading saves
 Female gambler no longer referred to as an "Adventurous Lady"
 Game pauses on new campaign again
+
+**Spelling/Typos**
+White Wolf Contract
+Southerner Favoured Enemy Description
