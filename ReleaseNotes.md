@@ -4157,7 +4157,7 @@ Replace some icon place-holders (Von)
 **Fixes**
 Some missing helmets (oops)
 Zombie resurrection no longer causes them to be untargetable (mwah fixed it but also caused it...)
-Fixes saves failing with some retinue members, namely Lookout (mwah)
+Fixes saves failing with some retinue members, namely Lookout
   -> As a note, this doesn't necessarily fix in game errors with retinue members, just loading saves
 Female gambler no longer referred to as an "Adventurous Lady"
 Game pauses on new campaign again
