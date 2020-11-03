@@ -27,7 +27,8 @@ this.bounty_hunter_follower <- this.inherit("scripts/retinue/follower", {
 
 	function onUpdate()
 	{
-		this.World.Assets.m.ChampionChanceAdditional = 3;
+		if ("ChampionChanceAdditional" in this.World.Assets.m)
+			this.World.Assets.m.ChampionChanceAdditional = 3;
 	}
 
 	function onEvaluate()

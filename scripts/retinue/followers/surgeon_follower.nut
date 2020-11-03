@@ -22,7 +22,8 @@ this.surgeon_follower <- this.inherit("scripts/retinue/follower", {
 
 	function onUpdate()
 	{
-		this.World.Assets.m.IsSurvivalGuaranteed = true;
+		if ("IsSurvivalGuaranteed" in this.World.Assets.m)
+			this.World.Assets.m.IsSurvivalGuaranteed = true;
 	}
 
 	function onEvaluate()

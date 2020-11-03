@@ -4157,3 +4157,4 @@ Replace some icon place-holders (Von)
 **Fixes**
 Some missing helmets (oops)
 Zombie resurrection no longer causes them to be untargetable (mwah fixed it but also caused it...)
+Fixes saves failing with some retinue members, namely Lookout (mwah)

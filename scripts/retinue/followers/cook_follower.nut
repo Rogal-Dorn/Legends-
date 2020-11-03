@@ -22,8 +22,10 @@ this.cook_follower <- this.inherit("scripts/retinue/follower", {
 
 	function onUpdate()
 	{
-		this.World.Assets.m.FoodAdditionalDays = 3;
-		this.World.Assets.m.HitpointsPerHourMult = 1.33;
+		if ("FoodAdditionalDays" in this.World.Assets.m)
+			this.World.Assets.m.FoodAdditionalDays = 3;
+		if ("HitpointsPerHourMult" in this.World.Assets.m)
+			this.World.Assets.m.HitpointsPerHourMult = 1.33;
 	}
 
 	function onEvaluate()
