@@ -22,8 +22,10 @@ this.scavenger_follower <- this.inherit("scripts/retinue/follower", {
 
 	function onUpdate()
 	{
-		this.World.Assets.m.IsRecoveringAmmo = true;
-		this.World.Assets.m.IsRecoveringArmor = true;
+		if ("IsRecoveringAmmo" in this.World.Assets.m)
+			this.World.Assets.m.IsRecoveringAmmo = true;
+		if ("IsRecoveringArmor" in this.World.Assets.m)
+			this.World.Assets.m.IsRecoveringArmor = true;
 	}
 
 	function onEvaluate()
