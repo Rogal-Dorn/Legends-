@@ -4167,3 +4167,4 @@ Wind Up causing crashes
 **Spelling/Typos**
 White Wolf Contract
 Southerner Favoured Enemy Description
+Hold out Perk signifies +6 hp again
