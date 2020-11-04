@@ -1140,7 +1140,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.setAutoPause(true);
 		this.Time.setVirtualTime(0);
 		this.m.IsRunningUpdatesWhilePaused = true;
-		//this.setPause(true);
+		this.setPause(true);
 		this.Math.seedRandomString(this.m.CampaignSettings.Seed);
 		this.World.LegendsMod.Configs().Update(this.m.CampaignSettings);
 		this.Const.World.SettingsUpdate(this.m.CampaignSettings);
