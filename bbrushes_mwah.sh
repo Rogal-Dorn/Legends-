@@ -9,14 +9,15 @@ cd ../bin
 # ./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/legends_ui.brush ../battlebrothers/unpacked/legends_ui
 # ./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/legend_horses.brush ../battlebrothers/unpacked/legend_horses
 # ./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/terrain.brush ../battlebrothers/unpacked/terrain
-python ../battlebrothers/unpacked/make_legend_helmets.py
+python ../battlebrothers/make_legend_helmets.py
 ./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/legend_helmets.brush ../battlebrothers/unpacked/legend_helmets
 ./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/legend_helmets_0.brush ../battlebrothers/unpacked/legend_helmets/0
 ./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/legend_helmets_1.brush ../battlebrothers/unpacked/legend_helmets/1
 
-python ../battlebrothers/unpacked/make_legend_armor.py
-./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/legend_armor.brush ../battlebrothers/unpacked/legend_armor
-cd ../battlebrothers
+python ../battlebrothers/make_legend_armor.py
+./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/legend_armor_0.brush ../battlebrothers/unpacked/legend_armor/0
+./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/legend_armor_1.brush ../battlebrothers/unpacked/legend_armor/1
+./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/legend_armor_2.brush ../battlebrothers/unpacked/legend_armor/2
 
 cp -R gfx/*.png "c:\Program Files (x86)\Steam\steamapps\common\Battle Brothers\data\gfx"
 cp -R brushes/. "c:\Program Files (x86)\Steam\steamapps\common\Battle Brothers\data\brushes"

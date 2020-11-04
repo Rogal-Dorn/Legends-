@@ -22,8 +22,10 @@ this.blacksmith_follower <- this.inherit("scripts/retinue/follower", {
 
 	function onUpdate()
 	{
-		this.World.Assets.m.RepairSpeedMult *= 1.33;
-		this.World.Assets.m.IsBlacksmithed = true;
+		if ("RepairSpeedMult" in this.World.Assets.m)
+			this.World.Assets.m.RepairSpeedMult *= 1.33;
+		if ("IsBlacksmithed" in this.World.Assets.m)
+			this.World.Assets.m.IsBlacksmithed = true;
 	}
 
 	function onEvaluate()

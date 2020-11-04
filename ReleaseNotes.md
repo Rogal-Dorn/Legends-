@@ -4151,3 +4151,20 @@ Fixes the specialist perks for Knives to work with Qatal Dagger
 Cannibal recruitment text updated
 Sisterhood scenario event text updated
 Replace some icon place-holders (Von)
+
+15.0.0.16
+
+**Fixes**
+Some missing helmets (oops)
+Zombie resurrection no longer causes them to be untargetable (mwah fixed it but also caused it...)
+Fixes saves failing with some retinue members, namely Lookout
+  -> As a note, this doesn't necessarily fix in game errors with retinue members, just loading saves
+Female gambler no longer referred to as an "Adventurous Lady"
+Game pauses on new campaign again
+Halberd smite causing crashes
+Wind Up causing crashes
+
+**Spelling/Typos**
+White Wolf Contract
+Southerner Favoured Enemy Description
+Hold out Perk signifies +6 hp again
