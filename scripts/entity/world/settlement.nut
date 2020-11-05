@@ -2396,15 +2396,15 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		{
 			eventID = "event.legend_camp_unlock_barber";
 		}
-		else if (!this.World.Flags.get("HasLegendCampCrafting") && this.hasBuilding("building.taxidermist"))
+		else if (!this.World.Flags.get("HasLegendCampCrafting") && (this.hasBuilding("building.taxidermist") || this.hasBuilding("building.taxidermist_oriental")))
 		{
 			eventID = "event.legend_camp_unlock_crafting";
 		}
-		else if (!this.World.Flags.get("HasLegendCampFletching") && (this.hasAttachedLocation("attached_location.fletchers_hut") || this.hasBuilding("building.weaponsmith")))
+		else if (!this.World.Flags.get("HasLegendCampFletching") && (this.hasAttachedLocation("attached_location.fletchers_hut") || this.hasBuilding("building.weaponsmith") || this.hasBuilding("building.weaponsmith_oriental")))
 		{
 			eventID = "event.legend_camp_unlock_fletching";
 		}
-		else if (!this.World.Flags.get("HasLegendCampGathering") && (this.hasAttachedLocation("attached_location.gatherers_hut") || this.hasAttachedLocation("attached_location.herbalists_grove")))
+		else if (!this.World.Flags.get("HasLegendCampGathering") && (this.hasAttachedLocation("attached_location.gatherers_hut") || this.hasAttachedLocation("attached_location.herbalists_grove") || this.hasAttachedLocation("attached_location.plantation")))
 		{
 			eventID = "event.legend_camp_unlock_gather";
 		}
@@ -2412,7 +2412,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		{
 			eventID = "event.legend_camp_unlock_hunt";
 		}
-		else if (!this.World.Flags.get("HasLegendCampScraping") &&  (this.hasAttachedLocation("attached_location.workshop") || this.hasBuilding("building.armorsmith")))
+		else if (!this.World.Flags.get("HasLegendCampScraping") &&  (this.hasAttachedLocation("attached_location.workshop") || this.hasBuilding("building.armorsmith") || this.hasBuilding("building.armorsmith_oriental")))
 		{
 			eventID = "event.legend_camp_unlock_scrap";
 		}
