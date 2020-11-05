@@ -148,11 +148,6 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
 				continue;
 			}
 
-			if (this.isTrained(bro))
-			{
-				continue;
-			}
-
 			++this.m.UnTrained;
 		}
 	}
@@ -256,19 +251,11 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		});
 	}
 
-	function isTrained( bro )
-	{
-		return bro.getSkills().hasSkill("effects.trained");
-	}
-
 	function getTrained( bro )
 	{
 		local inTraining = bro.getSkills().getSkillByID("trait.intensive_training_trait");
-		local effect = this.new("scripts/skills/effects_world/new_trained_effect");
-		effect.m.Duration = 1;
-		effect.m.XPGainMult = 1.2 + (inTraining == null ? 0 : inTraining.getBonusXP());
-		effect.m.Icon = "skills/status_effect_75.png";
-		bro.getSkills().add(effect);
+		local XPbonus = this.Math.floor(this.m.Camp.getCampTimeHours() * (this.getUpgraded() ? 10 : 5) * (inTraining == null ? 1 : (1 + inTraining.getBonusXP())));
+		bro.addXP(XPbonus);
 		local mod = this.getModifiers();
 		local adjectives = [
 			bro.getName() + " learned a new move",
@@ -338,10 +325,9 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
 			adjectives.push(bro.getName() + " remembers that you can move your legs as well as your arms");
 		}
 
-		local xpInPercent = effect.m.XPGainMult * 100 - 100;
 		this.m.Results.push({
-			Icon = effect.getIcon(),
-			Text = adjectives[this.Math.rand(0, adjectives.len() - 1)] + " and gains a [color=" + this.Const.UI.Color.PositiveEventValue + "]" + xpInPercent + "%[/color] xp increase for the next battle."
+			Icon = "ui/icons/xp_received.png",
+			Text = adjectives[this.Math.rand(0, adjectives.len() - 1)] + " and gains [color=" + this.Const.UI.Color.PositiveEventValue + "]" + XPbonus + "[/color] XP."
 		});
 		return true;
 	}
@@ -475,24 +461,17 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
 				continue;
 			}
 
-			local training = false;
+			local r = this.Math.min(95, 100 * this.Math.pow(this.m.Camp.getCampTimeHours() / 12.0, 0.6 + 0.1 * bro.getLevel()));
 
-			if (!this.isTrained(bro))
+			if (this.Math.rand(1, 100) < r)
 			{
-				training = true;
-				local r = this.Math.min(95, 100 * this.Math.pow(this.m.Camp.getCampTimeHours() / 12.0, 0.6 + 0.1 * bro.getLevel()));
-
-				if (this.Math.rand(1, 100) < r)
-				{
-					this.getTrained(bro);
-				}
+				this.getTrained(bro);
 			}
 
 			local injuryMin = 5;
 
 			if (this.getUpgraded())
 			{
-				training = true;
 				injuryMin = 1;
 				local mod = this.getModifiers();
 
@@ -510,11 +489,6 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
 						break;
 					}
 				}
-			}
-
-			if (!training)
-			{
-				continue;
 			}
 
 			local r = this.Math.min(injuryMin, 4 * this.Math.pow(this.m.Camp.getCampTimeHours(), 0.5) - bro.getLevel());
