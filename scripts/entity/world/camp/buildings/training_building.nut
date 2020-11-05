@@ -256,6 +256,7 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		local inTraining = bro.getSkills().getSkillByID("trait.intensive_training_trait");
 		local XPbonus = this.Math.floor(this.m.Camp.getCampTimeHours() * (this.getUpgraded() ? 10 : 5) * (inTraining == null ? 1 : (1 + inTraining.getBonusXP())));
 		bro.addXP(XPbonus);
+		bro.updateLevel();
 		local mod = this.getModifiers();
 		local adjectives = [
 			bro.getName() + " learned a new move",
