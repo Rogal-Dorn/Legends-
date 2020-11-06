@@ -1812,6 +1812,7 @@ this.asset_manager <- {
 
 	function restoreEquipment()
 	{
+		this.World.State.m.AppropriateTimeToRecalc = 0;	//Leonion's fix
 		foreach( s in this.m.RestoreEquipment )
 		{
 			local bro = this.Tactical.getEntityByID(s.ID);
@@ -1926,6 +1927,8 @@ this.asset_manager <- {
 		}
 
 		this.m.RestoreEquipment = [];
+		this.World.State.m.AppropriateTimeToRecalc = 1;	//Leonion's fix
+		this.World.State.getPlayer().calculateModifiers();	//Leonion's fix
 	}
 
 	function getGameFinishData( _gameWon )
