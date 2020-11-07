@@ -17,7 +17,7 @@ this.legend_armor_mountain <- this.inherit("scripts/items/legend_armor/legend_ar
 		this.m.Value = 10000;
 		this.m.Condition = 400;
 		this.m.ConditionMax = 400;
-		this.m.StaminaModifier = -42;
+		this.m.StaminaModifier = -33;
 		this.m.ItemType = this.m.ItemType | this.Const.Items.ItemType.Legendary;
 		this.blockUpgrades();
 		this.m.Blocked[ this.Const.Items.ArmorUpgrades.Attachment] = false

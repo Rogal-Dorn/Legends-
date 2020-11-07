@@ -13,7 +13,7 @@ this.legend_skin_helmet_blueprint <- this.inherit("scripts/crafting/blueprint", 
 				Num = 3
 			},
 			{
-				Script = "scripts/items/helmets/bascinet_with_mail",
+				Script = "scripts/items/helmets/barbarians/crude_faceguard_helmet",
 				Num = 1
 			}
 		];

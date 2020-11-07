@@ -20,7 +20,7 @@ this.legend_warlock_cloak_blueprint <- this.inherit("scripts/crafting/blueprint"
 				Script = "scripts/items/misc/parched_skin_item",
 				Num = 2
 			},
-		{
+			{
 				Script = "scripts/items/supplies/strange_meat_item",
 				Num = 1
 			}
@@ -35,7 +35,11 @@ this.legend_warlock_cloak_blueprint <- this.inherit("scripts/crafting/blueprint"
 			Num = 1,
 			LegendsArmor = true
 		})
-
+		ingredients.push({
+			Script = "scripts/items/armor/thick_dark_tunic",
+			Num = 1,
+			LegendsArmor = false
+		})
 		this.init(ingredients);
 		local skills = [
 			{
