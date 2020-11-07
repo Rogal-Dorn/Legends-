@@ -50,7 +50,14 @@ this.legend_lindwurm_armor_blueprint <- this.inherit("scripts/crafting/blueprint
 
 	function onCraft( _stash )
 	{
-		_stash.add(this.new("scripts/items/legend_armor/legendary/legend_lindwurm_armor"));
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+		{
+			_stash.add(this.new("scripts/items/legend_armor/legendary/legend_lindwurm_armor"));
+		}
+		else
+		{
+			_stash.add(this.new("scripts/items/armor/named/lindwurm_armor"));
+		}		
 	}
 
 });

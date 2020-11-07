@@ -48,10 +48,10 @@ this.legend_warlock_cloak_blueprint <- this.inherit("scripts/crafting/blueprint"
 
 	function isQualified()
 	{
-		if (!this.World.LegendsMod.Configs().LegendArmorsEnabled())
-		{
-			return false
-		}
+		//if (!this.World.LegendsMod.Configs().LegendArmorsEnabled())
+		//{
+		//	return false
+		//}
 
 		return this.blueprint.isQualified()
 	}

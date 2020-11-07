@@ -26,7 +26,7 @@ this.legend_redback_helmet_blueprint <- this.inherit("scripts/crafting/blueprint
 
 	function isQualified()
 	{
-		if (!this.World.LegendsMod.Configs().LegendArmorsEnabled())
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			return false;
 		}
