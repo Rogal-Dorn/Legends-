@@ -37,7 +37,7 @@ this.legend_mountain_helmet_blueprint <- this.inherit("scripts/crafting/blueprin
 
 	function isQualified()
 	{
-		if (!this.World.LegendsMod.Configs().LegendArmorsEnabled())
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			return false;
 		}
