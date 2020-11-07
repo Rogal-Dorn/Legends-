@@ -23,7 +23,7 @@ this.legend_stollwurm_blood_flask_blueprint <- this.inherit("scripts/crafting/bl
 
 	function isQualified()
 	{
-		return true;
+		return this.blueprint.isQualified();
 	}
 	
 	function onCraft( _stash )

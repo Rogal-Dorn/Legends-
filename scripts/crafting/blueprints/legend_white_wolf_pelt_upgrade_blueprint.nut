@@ -18,7 +18,7 @@ this.legend_white_wolf_pelt_upgrade_blueprint <- this.inherit("scripts/crafting/
 
 	function isQualified()
 	{
-		return true;
+		return this.blueprint.isQualified();
 	}
 
 	function onCraft( _stash )

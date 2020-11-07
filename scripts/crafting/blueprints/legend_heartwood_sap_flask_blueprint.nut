@@ -23,7 +23,7 @@ this.legend_heartwood_sap_flask_blueprint <- this.inherit("scripts/crafting/blue
 
 	function isQualified()
 	{
-		return true;
+		return this.blueprint.isQualified();
 	}
 	
 	function onCraft( _stash )
