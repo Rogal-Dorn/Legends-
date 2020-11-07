@@ -18,7 +18,7 @@ this.legend_restored_ancient_chest <- this.inherit("scripts/crafting/blueprint",
 
 	function isQualified()
 	{
-		return true;
+		return this.World.LegendsMod.Configs().LegendArmorsEnabled() && this.blueprint.isQualified();
 	}
 
 	function onCraft( _stash )
