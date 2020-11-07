@@ -17,7 +17,7 @@ this.legend_mountain_armor <- this.inherit("scripts/items/armor/armor", {
 		this.m.Value = 10000;
 		this.m.Condition = 400;
 		this.m.ConditionMax = 400;
-		this.m.StaminaModifier = -33;
+		this.m.StaminaModifier = -42;
 		this.m.ItemType = this.m.ItemType | this.Const.Items.ItemType.Legendary;
 	}
 
