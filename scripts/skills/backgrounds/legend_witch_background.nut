@@ -6,8 +6,8 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.ID = "background.legend_witch";
 		this.m.Icon = "ui/backgrounds/background_wizard_4.png";
 		this.m.Name = "Evoker";
-		this.m.HiringCost = 4000;
-		this.m.DailyCost = 40;
+		this.m.HiringCost = 2000;
+		this.m.DailyCost = 25;
 		this.m.Excluded = [
 			"trait.brave",
 			"trait.athletic",
