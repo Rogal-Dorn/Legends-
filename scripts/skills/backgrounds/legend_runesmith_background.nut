@@ -6,8 +6,8 @@ this.legend_runesmith_background <- this.inherit("scripts/skills/backgrounds/cha
 		this.m.ID = "background.legend_runesmith";
 		this.m.Icon = "ui/backgrounds/background_wizard_3.png";
 		this.m.Name = "Rune Smith";
-		this.m.HiringCost = 10000;
-		this.m.DailyCost = 100;
+		this.m.HiringCost = 1000;
+		this.m.DailyCost = 20;
 		this.m.Titles = [
 			"Stonespeaker",
 			"Crystal Singer",

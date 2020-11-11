@@ -16,13 +16,13 @@ this.legend_redback_dagger <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
 		this.m.ArmamentIcon = "icon_legend_redback_dagger";
-		this.m.Condition = 32.0;
-		this.m.ConditionMax = 32.0;
+		this.m.Condition = 70.0;
+		this.m.ConditionMax = 70.0;
 		this.m.Value = 3800;
-		this.m.RegularDamage = 20;
-		this.m.RegularDamageMax = 40;
-		this.m.ArmorDamageMult = 0.6;
-		this.m.DirectDamageMult = 0.2;
+		this.m.RegularDamage = 26;
+		this.m.RegularDamageMax = 52;
+		this.m.ArmorDamageMult = 0.7;
+		this.m.DirectDamageMult = 0.36;
 	}
 
 	function getTooltip()

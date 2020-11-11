@@ -13,7 +13,7 @@ this.legend_skin_helmet_blueprint <- this.inherit("scripts/crafting/blueprint", 
 				Num = 3
 			},
 			{
-				Script = "scripts/items/helmets/bascinet_with_mail",
+				Script = "scripts/items/helmets/barbarians/crude_faceguard_helmet",
 				Num = 1
 			}
 		];
@@ -28,12 +28,7 @@ this.legend_skin_helmet_blueprint <- this.inherit("scripts/crafting/blueprint", 
 
 	function isQualified()
 	{
-		if (!this.World.LegendsMod.Configs().LegendArmorsEnabled())
-		{
-			return false;
-		}
-
-		return this.blueprint.isQualified();
+		return (!this.World.LegendsMod.Configs().LegendArmorsEnabled()) && this.blueprint.isQualified();
 	}
 
 	function onCraft( _stash )
