@@ -24,8 +24,8 @@ this.legend_armor_mountain_named <- this.inherit("scripts/items/legend_armor/leg
 		this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorHalfplateImpact;
 		this.m.Value = 10000;
-		this.m.Condition = 300;
-		this.m.ConditionMax = 300;
+		this.m.Condition = 320;
+		this.m.ConditionMax = 320;
 		this.m.StaminaModifier = -42;
 		this.m.ItemType = this.m.ItemType | this.Const.Items.ItemType.Legendary;
 		this.blockUpgrades();

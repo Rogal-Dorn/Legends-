@@ -47,7 +47,7 @@ this.legend_favoured_enemy_skill <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/damage_dealt.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + (stats.HitMult - 1.0) * 100.0 + "%[/color] Max Damage due to being a favored enemy"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.Math.floor((stats.HitMult - 1.0) * 100.0) + "%[/color] Max Damage due to being a favored enemy"
 			}
 		];
 		if (this.m.BraveryMult > 1)
@@ -56,7 +56,7 @@ this.legend_favoured_enemy_skill <- this.inherit("scripts/skills/skill", {
 				id = 15,
 				type = "text",
 				icon = "ui/icons/bravery.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + (this.m.BraveryMult - 1.0) * 100.0 + "%[/color] Resolve due to being a favored enemy"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.Math.floor((this.m.BraveryMult - 1.0) * 100.0) + "%[/color] Resolve due to being a favored enemy"
 			})
 		}
 		resp.push({

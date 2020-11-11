@@ -84,7 +84,8 @@ this.world_state <- this.inherit("scripts/states/state", {
 		LegendsMod = null,
 		Camp = null,
 		IDToRef = array(27, -1),
-		DistantVisionBonus = false
+		DistantVisionBonus = false,
+		AppropriateTimeToRecalc = 1 //Leonion's fix
 	},
 
 	function getPlayer()
@@ -3998,6 +3999,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 
 	function onDeserialize( _in )
 	{
+		this.World.State.m.AppropriateTimeToRecalc = 0;	//Leonion's fix
 		this.Sound.stopAmbience();
 		this.m.Player = this.World.getPlayerEntity();
 
@@ -4117,7 +4119,8 @@ this.world_state <- this.inherit("scripts/states/state", {
 			this.World.Camp.clear();
 			this.World.Camp.onDeserialize(_in);
 		}
-
+		this.World.State.m.AppropriateTimeToRecalc = 1;	//Leonion's fix
+		this.World.State.getPlayer().calculateModifiers(); //Leonion's fix
 	}
 
 });

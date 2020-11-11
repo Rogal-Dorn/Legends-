@@ -6,8 +6,8 @@ this.legend_necrosavant_background <- this.inherit("scripts/skills/backgrounds/c
 		this.m.ID = "background.legend_necrosavant";
 		this.m.Icon = "ui/backgrounds/background_vampire.png";
 		this.m.Name = "Necrosavant";
-		this.m.HiringCost = 2000;
-		this.m.DailyCost = 50;
+		this.m.HiringCost = 1000;
+		this.m.DailyCost = 20;
 		this.m.Excluded = [
 			"trait.brave",
 			"trait.athletic",

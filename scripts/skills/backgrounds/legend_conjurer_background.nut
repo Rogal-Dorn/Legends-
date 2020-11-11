@@ -6,7 +6,7 @@ this.legend_conjurer_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.ID = "background.legend_conjurer";
 		this.m.Icon = "ui/backgrounds/background_wizard_2.png";
 		this.m.Name = "Conjurer";
-		this.m.HiringCost = 500;
+		this.m.HiringCost = 1000;
 		this.m.DailyCost = 20;
 		this.m.Excluded = [
 			"trait.brave",
