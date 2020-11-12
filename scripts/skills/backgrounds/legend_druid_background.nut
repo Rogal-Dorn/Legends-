@@ -110,7 +110,8 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 
 				],
 			Magic = [
-				this.Const.Perks.DruidMagicTree
+				this.Const.Perks.DruidMagicTree,
+				this.Const.Perks.DruidTransformTree
 			]
 		}
 	}
@@ -265,16 +266,6 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 		items.equip(this.Const.World.Common.pickHelmet([
 			[1, "barbarians/bear_headpiece"]
 		]));
-		local TherianthropyGroup = [
-							[this.Const.Perks.PerkDefs.LegendTrueForm],
-							[],
-							[this.Const.Perks.PerkDefs.LegendBearform],
-							[],
-							[this.Const.Perks.PerkDefs.LegendWolfform],
-							[],
-							[this.Const.Perks.PerkDefs.LegendTreeform]
-					];
-		this.getContainer().getActor().getBackground().addPerkGroup(TherianthropyGroup);
 		//this.getContainer().getActor().TherianthropeInfectionRandom();
 	}
 
