@@ -300,6 +300,8 @@ this.legend_berserker_background <- this.inherit("scripts/skills/backgrounds/cha
 		{
 			items.equip(this.new("scripts/items/weapons/greenskins/orc_axe_2h"));
 		}
+		
+		this.getContainer().getActor().TherianthropeInfectionRandom();
 	}
 	
 	function onSerialize( _out )
