@@ -244,6 +244,13 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 		}
 	}
 
+	function onAdded()
+	{
+		this.character_background.onAdded();
+		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_surpress_urges"));
+		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_control_instincts"));
+	}
+
 	function onAddEquipment()
 	{
 		local talents = this.getContainer().getActor().getTalents();
@@ -258,7 +265,17 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 		items.equip(this.Const.World.Common.pickHelmet([
 			[1, "barbarians/bear_headpiece"]
 		]));
-		this.getContainer().getActor().TherianthropeInfectionRandom();
+		local TherianthropyGroup = [
+							[this.Const.Perks.PerkDefs.LegendTrueForm],
+							[],
+							[this.Const.Perks.PerkDefs.LegendBearform],
+							[],
+							[this.Const.Perks.PerkDefs.LegendWolfform],
+							[],
+							[this.Const.Perks.PerkDefs.LegendTreeform]
+					];
+		this.getContainer().getActor().getBackground().addPerkGroup(TherianthropyGroup);
+		//this.getContainer().getActor().TherianthropeInfectionRandom();
 	}
 
 	function onSerialize( _out )
