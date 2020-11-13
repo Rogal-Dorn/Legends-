@@ -60,7 +60,7 @@ this.legend_possession_skill <- this.inherit("scripts/skills/skill", {
 
 		local target = _targetTile.getEntity();
 
-		if (!target.getFlags().has("IsSummoned"))
+		if (!target.getFlags().has("IsSummoned") && !target.getFlags().has("PlayerZombie") && !target.getFlags().has("PlayerSkeleton") && !target.getFlags().has("zombie_minion"))
 		{
 			return false;
 		}
