@@ -83,9 +83,9 @@ this.legend_raise_undead <- this.inherit("scripts/skills/skill", {
 		p.Faction = _user.getFaction();
 		if (p.Faction == this.Const.Faction.Player)
 		{
-			p.Faction = this.Const.Faction.Player;
+			p.Faction = this.Const.Faction.PlayerAnimals;
 		}
-		local e = this.Tactical.Entities.onResurrect(p);
+		local e = this.Tactical.Entities.onResurrect(p, true);
 
 		if (e != null)
 		{

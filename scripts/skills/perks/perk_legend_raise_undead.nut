@@ -15,15 +15,15 @@ this.perk_legend_raise_undead <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
-		if (!this.m.Container.hasSkill("actives.raise_undead"))
+		if (!this.m.Container.hasSkill("actives.legend_raise_undead"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/raise_undead"));
+			this.m.Container.add(this.new("scripts/skills/actives/legend_raise_undead"));
 		}
 	}
 
 	function onRemoved()
 	{
-		this.m.Container.removeByID("actives.raise_undead");
+		this.m.Container.removeByID("actives.legend_raise_undead");
 	}
 
 });
