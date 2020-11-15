@@ -25,7 +25,7 @@ this.legend_gruesome_feast <- this.inherit("scripts/skills/skill", {
 		this.m.IsIgnoredAsAOO = true;
 		this.m.IsAudibleWhenHidden = false;
 		this.m.IsUsingActorPitch = true;
-		this.m.ActionPointCost = 6;
+		this.m.ActionPointCost = 4;
 		this.m.FatigueCost = 25;
 		this.m.MinRange = 0;
 		this.m.MaxRange = 0;
@@ -114,20 +114,6 @@ this.legend_gruesome_feast <- this.inherit("scripts/skills/skill", {
 		_tag.Properties.remove("IsSpawningFlies");
 	}
 
-	function onFeasted( _effect )
-	{
-		local actor = _effect.getContainer().getActor();
-		_effect.addFeastStack();
-		_effect.getContainer().update();
-		actor.setHitpoints(this.Math.min(actor.getHitpoints() + 50, actor.getHitpointsMax()));
-		local skills = _effect.getContainer().getAllSkillsOfType(this.Const.SkillType.Injury);
-
-		foreach( s in skills )
-		{
-			s.removeSelf();
-		}
-	}
-
 	function onUse( _user, _targetTile )
 	{
 		_targetTile = _user.getTile();
@@ -158,23 +144,13 @@ this.legend_gruesome_feast <- this.inherit("scripts/skills/skill", {
 		}
 
 		this.spawnBloodbath(_targetTile);
-		_user.setHitpoints(_user.getHitpointsMax());
+		_user.setHitpoints(this.Math.min(_user.getHitpoints() + 50, _user.getHitpointsMax()));
+		local skills = _user.getSkills().getAllSkillsOfType(this.Const.SkillType.Injury);
+		foreach( s in skills )
+		{
+			s.removeSelf();
+		}		
 		_user.onUpdateInjuryLayer();
-		local effect = _user.getSkills().getSkillByID("effects.gruesome_feast");
-		if (effect == null)
-		{
-			_user.getSkills().add("scripts/skills/effects/gruesome_feast_effect");
-		}
-
-		if (!_user.isHiddenToPlayer())
-		{
-			this.Time.scheduleEvent(this.TimeUnit.Virtual, 500, this.onFeasted, effect);
-		}
-		else
-		{
-			this.onFeasted(effect);
-		}
-
 		return true;
 	}
 
