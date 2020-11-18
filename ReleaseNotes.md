@@ -4154,7 +4154,7 @@ Replace some icon place-holders (Von)
 
 15.0.0.16
 
-**Fixes**
+**Fixes/Tweaks**
 Some missing helmets (oops)
 Zombie resurrection no longer causes them to be untargetable (mwah fixed it but also caused it...)
 Fixes saves failing with some retinue members, namely Lookout
@@ -4168,6 +4168,7 @@ Vengeance active/effect doesn't remove itself when attacked a second time ; prop
 Southern assassin is now considered an outlaw background
 Prayer of Hope effect/skill name fixed ; perk description updated to indicate 20%
 Cultist's specialist hood/armor skills tweaked to give bonuses after all other perks have gone ; should now work with things like fort. mind consistently rather than sometimes working and sometimes not
+the Hide skill now displays the amount of rounds the character will be hidden in the active skill & turns remaining in the effect icon that's applied
 
 **Spelling/Typos**
 White Wolf Contract
