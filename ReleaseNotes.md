@@ -4163,6 +4163,7 @@ Female gambler no longer referred to as an "Adventurous Lady"
 Game pauses on new campaign again
 Halberd smite causing crashes
 Wind Up causing crashes
+Dog accessory crashing game when character dies with his dog out
 
 **Spelling/Typos**
 White Wolf Contract
