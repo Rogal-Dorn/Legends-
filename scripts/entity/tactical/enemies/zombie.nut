@@ -519,7 +519,7 @@ this.zombie <- this.inherit("scripts/entity/tactical/actor", {
 
 					if (otherActor.m.MaxEnemiesThisTurn < numEnemies && !otherActor.isAlliedWith(this))
 					{
-						local difficulty = this.Math.maxf(10.0, 50.0 - this.getXPValue() * 0.1);
+						local difficulty = this.Math.maxf(10.0, 50.0 - this.getXPValue() * 0.2);
 						otherActor.checkMorale(-1, difficulty);
 						otherActor.m.MaxEnemiesThisTurn = numEnemies;
 					}

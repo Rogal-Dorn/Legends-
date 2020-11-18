@@ -224,7 +224,7 @@ this.the_horseman_event <- this.inherit("scripts/events/event", {
 				this.List.push({
 					id = 16,
 					icon = "ui/icons/fatigue.png",
-					text = _event.m.Flagellant.getName() + " gains [color=" + this.Const.UI.Color.PositiveEventValue + "]+" + this.resolve + "[/color] Max Fatigue"
+					text = _event.m.Flagellant.getName() + " gains [color=" + this.Const.UI.Color.PositiveEventValue + "]+" + fatigue + "[/color] Max Fatigue"
 				});
 			}
 

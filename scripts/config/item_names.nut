@@ -486,7 +486,7 @@ gt.Const.Strings.TwoHandedMaceNames <- [
 	"Cudgel",
 	"Bludgeon",
 	"Pillar",
-	"Wacker",
+	"Whacker",
 	"Warmace",
 	"Giant\'s Mace",
 	"Stonefist",

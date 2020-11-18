@@ -10,7 +10,7 @@ this.merge_golem_skill <- this.inherit("scripts/skills/skill", {
 		this.m.Overlay = "active_194";
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.NonTargeted;
-		this.m.Delay = 500;
+		this.m.Delay = 550;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
 		this.m.IsTargeted = false;
