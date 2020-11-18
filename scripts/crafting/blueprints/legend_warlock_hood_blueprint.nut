@@ -37,7 +37,7 @@ this.legend_warlock_hood_blueprint <- this.inherit("scripts/crafting/blueprint",
 
 	function isQualified()
 	{
-		return true;
+		return this.blueprint.isQualified();
 	}
 
 	function onCraft( _stash )

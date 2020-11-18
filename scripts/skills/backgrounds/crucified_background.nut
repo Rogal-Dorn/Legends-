@@ -23,7 +23,8 @@ this.crucified_background <- this.inherit("scripts/skills/backgrounds/character_
 			"trait.craven",
 			"trait.bleeder",
 			"trait.dastard",
-			"trait.insecure"
+			"trait.insecure",
+			"trait.light"
 		];
 		this.m.Faces = this.Const.Faces.AllMale;
 		this.m.Hairs = this.Const.Hair.AllMale;

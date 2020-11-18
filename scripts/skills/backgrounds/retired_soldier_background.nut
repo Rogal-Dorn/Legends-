@@ -30,7 +30,8 @@ this.retired_soldier_background <- this.inherit("scripts/skills/backgrounds/char
 			"trait.iron_lungs",
 			"trait.tough",
 			"trait.strong",
-			"trait.bloodthirsty"
+			"trait.bloodthirsty",
+			"trait.slack"
 		];
 		this.m.Titles = [
 			"the Oldguard",

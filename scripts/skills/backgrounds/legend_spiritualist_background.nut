@@ -7,7 +7,7 @@ this.legend_spiritualist_background <- this.inherit("scripts/skills/backgrounds/
 		this.m.Icon = "ui/backgrounds/background_wizard_4.png";
 		this.m.Name = "Medium";
 		this.m.HiringCost = 1000;
-		this.m.DailyCost = 25;
+		this.m.DailyCost = 20;
 		this.m.Titles = [
 			"Spirit Talker",
 			"Death Speaker",

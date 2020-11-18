@@ -22,8 +22,10 @@ this.lookout_follower <- this.inherit("scripts/retinue/follower", {
 
 	function onUpdate()
 	{
-		this.World.Assets.m.VisionRadiusMult = 1.25;
-		this.World.Assets.m.IsShowingExtendedFootprints = true;
+		if ("VisionRadiusMult" in this.World.Assets.m)
+			this.World.Assets.m.VisionRadiusMult = 1.25;
+		if ("IsShowingExtendedFootprints" in this.World.Assets.m)
+			this.World.Assets.m.IsShowingExtendedFootprints = true;
 	}
 
 	function onEvaluate()

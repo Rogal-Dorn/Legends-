@@ -28,9 +28,9 @@ this.perk_legend_mind_over_body <- this.inherit("scripts/skills/skill", {
 		}
 
 		local resolve = actor.getCurrentProperties().getBravery();
-		local fraction = resolve / 60;
+		local fraction = resolve / 60.0;
 		local normal = this.Math.floor(fraction * 100);
-		local bonus = normal / 100;
+		local bonus = normal * 0.01;
 
 		return bonus;
 	}

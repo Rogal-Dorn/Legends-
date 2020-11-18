@@ -3,7 +3,7 @@ this.legend_prayer_of_life_effect <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.ID = "effects.legend_prayer_of_life";
-		this.m.Name = "Prayer of Life";
+		this.m.Name = "Prayer of Hope";
 		this.m.Description = "This character is being restored by a holy chant";
 		this.m.Icon = "ui/perks/prayer_green.png";
 		this.m.Overlay = "prayer_green";
