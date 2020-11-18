@@ -19,6 +19,7 @@ this.paranoid_trait <- this.inherit("scripts/skills/traits/character_trait", {
 			"trait.cocky",
 			"trait.bloodthirsty",
 			"trait.ambitious",
+			"trait.seductive",
 			"trait.natural"
 		];
 	}

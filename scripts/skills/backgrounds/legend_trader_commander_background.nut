@@ -29,6 +29,7 @@ this.legend_trader_commander_background <- this.inherit("scripts/skills/backgrou
 			"trait.dumb",
 			"trait.deathwish",
 			"trait.bloodthirsty",
+			"trait.firm",
 			"trait.disloyal",
 			"trait.loyal"
 		];

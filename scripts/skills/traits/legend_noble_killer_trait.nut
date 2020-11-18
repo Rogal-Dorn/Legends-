@@ -5,7 +5,7 @@ this.legend_noble_killer_trait <- this.inherit("scripts/skills/traits/character_
 		this.character_trait.create();
 		this.m.ID = "trait.noble_killer";
 		this.m.Name = "Noble Killer";
-		this.m.Icon = "ui/traits/trait_icon_55.png";
+		this.m.Icon = "ui/traits/hatenobles.png";
 		this.m.Description = "This character has learned from birth how to fight noble houses";
 		this.m.Excluded = [
 			"trait.weasel",

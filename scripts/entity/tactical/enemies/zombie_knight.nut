@@ -165,18 +165,12 @@ this.zombie_knight <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Head) == null && this.Math.rand(1, 100) <= 90)
 		{
 			local helmet = [
-				"helmets/decayed_closed_flat_top_with_sack",
-				"helmets/decayed_closed_flat_top_with_mail",
-				"helmets/decayed_closed_flat_top_with_mail",
-				"helmets/decayed_closed_flat_top_with_mail",
-				"helmets/decayed_full_helm",
-				"helmets/decayed_full_helm",
-				"helmets/decayed_full_helm",
-				"helmets/decayed_great_helm",
-				"helmets/decayed_great_helm",
-				"helmets/decayed_great_helm"
+				[1, "decayed_closed_flat_top_with_sack"],
+				[3, "decayed_closed_flat_top_with_mail"],
+				[3, "decayed_full_helm"],
+				[3, "decayed_great_helm"]
 			];
-			local h = this.new("scripts/items/" + helmet[this.Math.rand(0, helmet.len() - 1)]);
+			local h = this.Const.World.Common.pickHelmet(helmet);
 
 			if (this.Math.rand(1, 100) <= 33)
 			{

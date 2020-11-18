@@ -6,8 +6,8 @@ this.legend_death_summoner_background <- this.inherit("scripts/skills/background
 		this.m.ID = "background.legend_death_summoner";
 		this.m.Icon = "ui/backgrounds/background_zombie.png";
 		this.m.Name = "Weidermancer";
-		this.m.HiringCost = 2000;
-		this.m.DailyCost = 50;
+		this.m.HiringCost = 1000;
+		this.m.DailyCost = 20;
 		this.m.Excluded = [
 			"trait.brave",
 			"trait.athletic",

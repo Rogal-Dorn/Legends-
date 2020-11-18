@@ -31,7 +31,8 @@ this.gambler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			"trait.hesitant",
 			"trait.strong",
 			"trait.tough",
-			"trait.bloodthirsty"
+			"trait.bloodthirsty",
+			"trait.pragmatic"
 		];
 		this.m.Titles = [
 			"Deuces",
@@ -90,7 +91,7 @@ this.gambler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		{
 			return;
 		}
-		this.m.Name = "Adventurous Lady";
+		this.m.Name = "Gambler";
 		this.m.Faces = this.Const.Faces.AllFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.Young;

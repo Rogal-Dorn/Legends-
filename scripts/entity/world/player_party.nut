@@ -430,13 +430,16 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 
 	function calculateModifiers()
 	{
-		this.calculateBarterMult();
-		this.calculateWageModifier();
-		this.calculateFoodModifier();
-		this.calculateAmmoModifier();
-		this.calculateArmorPartsModifier();
-		this.calculateMedsModifier();
-		this.calculateStashModifier();
+		if (this.World.State.m.AppropriateTimeToRecalc == 1)	//Leonion's fix
+		{
+			this.calculateBarterMult();
+			this.calculateWageModifier();
+			this.calculateFoodModifier();
+			this.calculateAmmoModifier();
+			this.calculateArmorPartsModifier();
+			this.calculateMedsModifier();
+			this.calculateStashModifier();
+		}
 	}
 
 
@@ -521,18 +524,21 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 
 	function calculateStashModifier()
 	{
-		local s = this.Const.LegendMod.MaxResources[this.World.Assets.getEconomicDifficulty()].Stash
-		s += this.World.Assets.getOrigin().getStashModifier();
-		s += this.World.Retinue.getInventoryUpgrades() * 27;
-
-		foreach( bro in this.World.getPlayerRoster().getAll())
+		if (this.World.State.m.AppropriateTimeToRecalc == 1)	////Leonion's fix
 		{
-			s += bro.getStashModifier();
-		}
-
-		if (s != this.Stash.getCapacity())
-		{
-			this.Stash.resize(s);
+			local s = this.Const.LegendMod.MaxResources[this.World.Assets.getEconomicDifficulty()].Stash
+			s += this.World.Assets.getOrigin().getStashModifier();
+			s += this.World.Retinue.getInventoryUpgrades() * 27;
+	
+			foreach( bro in this.World.getPlayerRoster().getAll())
+			{
+				s += bro.getStashModifier();
+			}
+	
+			if (s != this.Stash.getCapacity())
+			{
+				this.Stash.resize(s);
+			}
 		}
 	}
 

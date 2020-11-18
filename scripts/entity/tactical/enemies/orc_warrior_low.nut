@@ -12,6 +12,18 @@ this.orc_warrior_low <- this.inherit("scripts/entity/tactical/enemies/orc_warrio
 		this.m.Skills.update();
 	}
 
+	// function onFactionChanged()
+	// {
+	// 	this.actor.onFactionChanged();
+	// 	local flip = !this.isAlliedWithPlayer();
+	// 	this.getSprite("helmet").setHorizontalFlipping(flip);
+	// 	this.getSprite("helmet_damaged").setHorizontalFlipping(flip)
+	// 	this.getSprite("helmet_vanity_lower").setHorizontalFlipping(flip);
+	// 	this.getSprite("helmet_helm").setHorizontalFlipping(flip);
+	// 	this.getSprite("helmet_top").setHorizontalFlipping(flip);
+	// 	this.getSprite("helmet_vanity").setHorizontalFlipping(flip);
+	// }
+
 	function onFinish()
 	{
 		this.actor.onFinish();

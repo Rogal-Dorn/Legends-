@@ -27,7 +27,7 @@ this.legend_hexen_ichor_potion_blueprint <- this.inherit("scripts/crafting/bluep
 
 	function isQualified()
 	{
-		return true;
+		return this.blueprint.isQualified();
 	}
 	
 	function onCraft( _stash )

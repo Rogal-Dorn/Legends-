@@ -17,7 +17,8 @@ this.pessimist_trait <- this.inherit("scripts/skills/traits/character_trait", {
 			"trait.pragmatic",
 			"trait.ambitious",
 			"trait.unpredictable",
-			"trait.natural"
+			"trait.natural",
+			"trait.gift_of_people"
 		];
 	}
 

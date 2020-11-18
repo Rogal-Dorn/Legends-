@@ -8,7 +8,7 @@ this.legend_enchanter_background <- this.inherit("scripts/skills/backgrounds/cha
 		local r = this.Math.rand(0, 3);
 		this.m.Name = "Enchanter";
 		this.m.HiringCost = 1000;
-		this.m.DailyCost = 25;
+		this.m.DailyCost = 20;
 		this.m.Excluded = [
 			"trait.impatient",
 			"trait.iron_jaw",

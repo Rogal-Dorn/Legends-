@@ -2500,11 +2500,17 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 	function getBarterModifier()
 	{
+		local bg = this.getBackground()
+		if (bg == null)
+		{
+			return 0;
+		}
 		local mod = this.getBackground().getModifiers().Barter;
 		local skills = [
 			"perk.legend_barter_trustworthy",
 			"perk.legend_barter_convincing",
-			"perk.legend_barter_greed"
+			"perk.legend_barter_greed",
+			"trait.seductive"
 		];
 
 		foreach( s in skills )

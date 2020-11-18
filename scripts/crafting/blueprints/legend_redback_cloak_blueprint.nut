@@ -6,6 +6,10 @@ this.legend_redback_cloak_blueprint <- this.inherit("scripts/crafting/blueprint"
 		this.m.ID = "blueprint.legend_redback_cloak";
 		this.m.Type = this.Const.Items.ItemType.Armor;
 		this.m.PreviewCraftable = this.new("scripts/items/armor_upgrades/legend_redback_cloak_upgrade");
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+		{
+			this.m.PreviewCraftable = this.new("scripts/items/legend_armor/armor/legend_armor_redback_cloak_upgrade");
+		}		
 		this.m.Cost = 2500;
 		local ingredients = [
 			{
@@ -29,7 +33,7 @@ this.legend_redback_cloak_blueprint <- this.inherit("scripts/crafting/blueprint"
 
 	function isQualified()
 	{
-		return true;
+		return this.blueprint.isQualified();
 	}
 
 	function onCraft( _stash )

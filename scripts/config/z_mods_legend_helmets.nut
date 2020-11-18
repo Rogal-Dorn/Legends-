@@ -317,7 +317,7 @@ gt.Const.LegendMod.HelmObjs.extend([
     }]
     },{
         ID = "faction_helm",
-        Script = "scripts/items/legend_helments/helmets/legend_faction_helmet",
+        Script = "scripts/items/legend_helmets/helmets/legend_faction_helmet",
         Sets = [{
         Hoods = [
         ],
@@ -433,7 +433,7 @@ gt.Const.LegendMod.HelmObjs.extend([
     }]
     },{
         ID = "greatsword_faction_helm", //160
-        Script = "scripts/items/legend_helmets/hemlets/legend_faction_helmet",
+        Script = "scripts/items/legend_helmets/helmets/legend_faction_helmet",
         Sets = [{
         Hoods = [
             [1, "hood/legend_helmet_padded_cap"] //40

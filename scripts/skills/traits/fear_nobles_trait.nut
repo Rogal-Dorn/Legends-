@@ -5,7 +5,7 @@ this.fear_nobles_trait <- this.inherit("scripts/skills/traits/character_trait", 
 		this.character_trait.create();
 		this.m.ID = "trait.fear_nobles";
 		this.m.Name = "Fear of Nobles";
-		this.m.Icon = "ui/backgrounds/background_08.png";
+		this.m.Icon = "ui/traits/noblefear.png";
 		this.m.Description = "Some past event or particularly convincing story in this character\'s life has left him scared of what nobles are capable of, making him less reliable when facing them on the battlefield.";
 		this.m.Excluded = [
 			"trait.fearless",
@@ -13,6 +13,10 @@ this.fear_nobles_trait <- this.inherit("scripts/skills/traits/character_trait", 
 			"trait.determined",
 			"trait.cocky",
 			"trait.bloodthirsty",
+			"trait.aggressive",
+			"trait.ambitious",
+			"trait.natural",
+			"trait.pragmatic",
 			"trait.hate_nobles"
 		];
 	}

@@ -6,6 +6,10 @@ this.legend_skin_armor_blueprint <- this.inherit("scripts/crafting/blueprint", {
 		this.m.ID = "blueprint.legend_skin_armor";
 		this.m.Type = this.Const.Items.ItemType.Armor;
 		this.m.PreviewCraftable = this.new("scripts/items/armor/legendary/legend_skin_armor");
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+		{
+			this.m.PreviewCraftable = this.new("scripts/items/legend_armor/legendary/legend_armor_skin");
+		}		
 		this.m.Cost = 2500;
 		local ingredients = [
 			{
@@ -41,7 +45,7 @@ this.legend_skin_armor_blueprint <- this.inherit("scripts/crafting/blueprint", {
 
 	function isQualified()
 	{
-		return true;
+		return this.blueprint.isQualified();
 	}
 
 	function onCraft( _stash )

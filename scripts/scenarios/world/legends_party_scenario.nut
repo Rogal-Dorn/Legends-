@@ -62,7 +62,7 @@ this.legends_party_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[4].setStartValuesEx([
 			"legend_noble_commander_background"
 		]);
-		bros[4].getBackground().m.RawDescription = "You can tell %name% is nobleborn from a thousand yards. The way he holds himself, his upper class mannerisms, and his uncanny ability to never get dirty as the rest of the party. He is also a coniving selfish liar with a silver tongue, like any noble. Despite this, he denies all connections to nobility and claims he is a commoner like everyone else.";
+		bros[4].getBackground().m.RawDescription = "You can tell %name% is nobleborn from a thousand yards. The way he holds himself, his upper class mannerisms, and his uncanny ability to never get dirty as the rest of the party. He is also a conniving selfish liar with a silver tongue, like any noble. Despite this, he denies all connections to nobility and claims he is a commoner like everyone else.";
 		bros[4].setPlaceInFormation(13);
 		bros[4].setVeteranPerks(2);
 		bros[5].setStartValuesEx([
