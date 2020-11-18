@@ -11,6 +11,7 @@ this.iron_will_effect <- this.inherit("scripts/skills/skill", {
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;
 		this.m.IsRemovedAfterBattle = true;
+		this.m.IsStacking = false;
 	}
 
 	function getDescription()

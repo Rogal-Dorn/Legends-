@@ -163,6 +163,12 @@ this.hook <- this.inherit("scripts/skills/skill", {
 		skills.removeByID("effects.shieldwall");
 		skills.removeByID("effects.spearwall");
 		skills.removeByID("effects.riposte");
+
+		if (this.m.SoundOnHit.len() != 0)
+		{
+			this.Sound.play(this.m.SoundOnHit[this.Math.rand(0, this.m.SoundOnHit.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
+		}
+
 		target.getSkills().add(this.new("scripts/skills/effects/staggered_effect"));
 
 		if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
