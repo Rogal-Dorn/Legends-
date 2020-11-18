@@ -137,7 +137,7 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.LegendSpecStaffStun,
 				this.Const.Perks.PerkDefs.LegendGrapple,
 				this.Const.Perks.PerkDefs.LegendSecondWind,
-				this.Const.Perks.PerkDefs.LegendSurpressUrges,
+				this.Const.Perks.PerkDefs.LegendBearform,	//LegendSurpressUrges,
 				this.Const.Perks.PerkDefs.LegendPrayerOfLife
 
 			],
@@ -160,7 +160,7 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.LegendBattleheart,
 				this.Const.Perks.PerkDefs.LegendChoke,
 				this.Const.Perks.PerkDefs.LegendSummonStorm,
-				this.Const.Perks.PerkDefs.LegendControlInstincts,
+				this.Const.Perks.PerkDefs.LegendWolfform,	//LegendControlInstincts,
 				this.Const.Perks.PerkDefs.LegendReadOmensTrance
 			],
 			[
@@ -183,7 +183,7 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.Stalwart,
 				this.Const.Perks.PerkDefs.LegendFreedomOfMovement,
 				this.Const.Perks.PerkDefs.LegendDrumsOfLife,
-				this.Const.Perks.PerkDefs.LegendMasterAnger
+				this.Const.Perks.PerkDefs.LegendTreeform	//LegendMasterAnger
 			]
 		];
 
@@ -324,6 +324,8 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 		local actor = this.getContainer().getActor();
 		actor.setTitle("The Druid");
 		this.m.Container.add(this.new("scripts/skills/traits/tough_trait"));
+		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_surpress_urges"));
+		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_control_instincts"));
 	}
 
 	function onAddEquipment()
@@ -348,8 +350,7 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 			[1, "barbarians/bear_headpiece"]
 		]));
 
-		items.equip(this.new("scripts/items/accessory/legend_wolfsbane_necklace_item"));
-
+		//items.equip(this.new("scripts/items/accessory/legend_wolfsbane_necklace_item"));
 	}
 
 	function onSerialize( _out )
