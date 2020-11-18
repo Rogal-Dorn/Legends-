@@ -4175,3 +4175,4 @@ White Wolf Contract
 Southerner Favoured Enemy Description
 Hold out Perk signifies +6 hp again
 Fixes War Chant + Drums of Life tooltips ; each giving 5 fatigue and 4 hp respectively
+Cannibal Event tubles to tumbles
