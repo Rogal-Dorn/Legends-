@@ -4164,6 +4164,7 @@ Game pauses on new campaign again
 Halberd smite causing crashes
 Wind Up causing crashes
 Dog accessory crashing game when character dies with his dog out
+Vengeance active/effect doesn't remove itself when attacked a second time ; properly checks to not stack by accident which could cause rare crash
 
 **Spelling/Typos**
 White Wolf Contract
