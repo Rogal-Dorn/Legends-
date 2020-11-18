@@ -4169,3 +4169,4 @@ Dog accessory crashing game when character dies with his dog out
 White Wolf Contract
 Southerner Favoured Enemy Description
 Hold out Perk signifies +6 hp again
+Fixes War Chant + Drums of Life tooltips ; each giving 5 fatigue and 4 hp respectively
