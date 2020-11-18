@@ -458,6 +458,7 @@ this.hunting_serpents_contract <- this.inherit("scripts/contracts/contract", {
 		{
 			if (this.m.Target != null && !this.m.Target.isNull())
 			{
+				this.m.Target.setAttackableByAI(true);
 				this.m.Target.getSprite("selection").Visible = false;
 				this.m.Target.setOnCombatWithPlayerCallback(null);
 			}

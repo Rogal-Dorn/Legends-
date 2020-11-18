@@ -2,7 +2,7 @@ this.waterwheel_location <- this.inherit("scripts/entity/world/location", {
 	m = {},
 	function getDescription()
 	{
-		return "A small watermill with a stony house at it\'s side. It looks like someone might be living here.";
+		return "A small watermill with a stony house at its side. It looks like someone might be living here.";
 	}
 
 	function create()
