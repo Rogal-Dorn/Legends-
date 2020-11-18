@@ -4166,6 +4166,8 @@ Wind Up causing crashes
 Dog accessory crashing game when character dies with his dog out
 Vengeance active/effect doesn't remove itself when attacked a second time ; properly checks to not stack by accident which could cause rare crash
 Southern assassin is now considered an outlaw background
+Prayer of Hope effect/skill name fixed ; perk description updated to indicate 20%
+Cultist's specialist hood/armor skills tweaked to give bonuses after all other perks have gone ; should now work with things like fort. mind consistently rather than sometimes working and sometimes not
 
 **Spelling/Typos**
 White Wolf Contract
