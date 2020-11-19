@@ -110,7 +110,8 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 
 				],
 			Magic = [
-				this.Const.Perks.DruidMagicTree
+				this.Const.Perks.DruidMagicTree,
+				this.Const.Perks.DruidTransformTree
 			]
 		}
 	}
@@ -244,6 +245,13 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 		}
 	}
 
+	function onAdded()
+	{
+		this.character_background.onAdded();
+		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_surpress_urges"));
+		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_control_instincts"));
+	}
+
 	function onAddEquipment()
 	{
 		local talents = this.getContainer().getActor().getTalents();
@@ -258,7 +266,7 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 		items.equip(this.Const.World.Common.pickHelmet([
 			[1, "barbarians/bear_headpiece"]
 		]));
-		this.getContainer().getActor().TherianthropeInfectionRandom();
+		//this.getContainer().getActor().TherianthropeInfectionRandom();
 	}
 
 	function onSerialize( _out )
