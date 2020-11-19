@@ -658,7 +658,7 @@ gt.Const.World.Spawn.Troops <- {
 		Script = "scripts/entity/tactical/humans/mercenary_low"
 	},
 	MercenaryRanged = {
-		ID = this.Const.EntityType.Mercenary,
+		ID = this.Const.EntityType.MercenaryRanged,
 		Variant = 0,
 		Strength = 25,
 		Cost = 25,
