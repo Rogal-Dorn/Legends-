@@ -1,5 +1,8 @@
 this.legend_hidden_skill <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		Duration = 4,
+		DurationUntouchable = 6
+	},
 	function create()
 	{
 		this.m.ID = "actives.legend_hidden";
@@ -61,6 +64,23 @@ this.legend_hidden_skill <- this.inherit("scripts/skills/skill", {
 			});
 		}
 
+		if (this.m.Container.hasSkill("perk.legend_untouchable")) 
+		{
+			ret.push({
+				id = 8,
+				type = "text",
+				text = "Will last for " + this.m.DurationUntouchable + " end of rounds"
+			})
+		}
+		else
+		{
+			ret.push({
+				id = 8,
+				type = "text",
+				text = "Will last for " + this.m.Duration + " end of rounds"
+			})
+		}
+		
 		return ret;
 	}
 
@@ -101,18 +121,22 @@ this.legend_hidden_skill <- this.inherit("scripts/skills/skill", {
 	function onUse( _user, _targetTile )
 	{
 
-			_user.setHidden(true);
-		this.m.Container.add(this.new("scripts/skills/effects/legend_hidden_effect"));
-			if (_user.getTile().IsVisibleForPlayer)
+		_user.setHidden(true);
+		local effect = this.new("scripts/skills/effects/legend_hidden_effect");
+		effect.m.TurnsLeft = (this.m.Container.hasSkill("perk.legend_untouchable")) ? this.m.DurationUntouchable : this.m.Duration;
+		this.m.Container.add(effect);
+
+
+		if (_user.getTile().IsVisibleForPlayer)
+		{
+			if (this.Const.Tactical.HideParticles.len() != 0)
 			{
-				if (this.Const.Tactical.HideParticles.len() != 0)
+				for( local i = 0; i < this.Const.Tactical.HideParticles.len(); i = ++i )
 				{
-					for( local i = 0; i < this.Const.Tactical.HideParticles.len(); i = ++i )
-					{
-						this.Tactical.spawnParticleEffect(false, this.Const.Tactical.HideParticles[i].Brushes, _user.getTile(), this.Const.Tactical.HideParticles[i].Delay, this.Const.Tactical.HideParticles[i].Quantity, this.Const.Tactical.HideParticles[i].LifeTimeQuantity, this.Const.Tactical.HideParticles[i].SpawnRate, this.Const.Tactical.HideParticles[i].Stages);
-					}
+					this.Tactical.spawnParticleEffect(false, this.Const.Tactical.HideParticles[i].Brushes, _user.getTile(), this.Const.Tactical.HideParticles[i].Delay, this.Const.Tactical.HideParticles[i].Quantity, this.Const.Tactical.HideParticles[i].LifeTimeQuantity, this.Const.Tactical.HideParticles[i].SpawnRate, this.Const.Tactical.HideParticles[i].Stages);
 				}
 			}
+		}
 
 		if (!_user.isHiddenToPlayer())
 		{
