@@ -56,7 +56,7 @@ this.hedge_knight_background <- this.inherit("scripts/skills/backgrounds/charact
 			"the Hedge Knight"
 		];
 		this.m.Faces = this.Const.Faces.AllWhiteMale;
-		this.m.Hairs = this.Const.Hair.AllWhiteMale;
+		this.m.Hairs = this.Const.Hair.AllMale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.All;
 

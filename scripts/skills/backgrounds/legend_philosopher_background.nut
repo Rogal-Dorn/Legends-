@@ -14,7 +14,7 @@ this.legend_philosopher_background <- this.inherit("scripts/skills/backgrounds/c
 			"the Thinker"
 		];
 		this.m.Faces = this.Const.Faces.AllWhiteMale;
-		this.m.Hairs = this.Const.Hair.AllWhiteMale;
+		this.m.Hairs = this.Const.Hair.AllMale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.All;
 
