@@ -4154,6 +4154,9 @@ Replace some icon place-holders (Von)
 
 15.0.0.16
 
+**Changes**
+Updated to BB 1.4.0.46
+
 **Fixes**
 Some missing helmets (oops)
 Zombie resurrection no longer causes them to be untargetable (mwah fixed it but also caused it...)
@@ -4168,6 +4171,7 @@ Vengeance active/effect doesn't remove itself when attacked a second time ; prop
 Southern assassin is now considered an outlaw background
 Prayer of Hope effect/skill name fixed ; perk description updated to indicate 20%
 Cultist's specialist hood/armor skills tweaked to give bonuses after all other perks have gone ; should now work with things like fort. mind consistently rather than sometimes working and sometimes not
+Fixes variance of Dynamic spawn lists when troop cost is equal (Thanks to Proman for pointing this out)
 
 **Spelling/Typos**
 White Wolf Contract
