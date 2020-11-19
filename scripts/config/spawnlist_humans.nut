@@ -44,48 +44,49 @@ gt.Const.World.Spawn.Peasants <-
 	MinR = 30,
 	Troops = [
 		{
-			Weight = 90,
+			Weight = 85,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Peasant,
 					Cost = 5
 				}
 			]
-		}
-	{
-			Weight = 10,
+		},
+		{
+			Weight = 12,
 			MinR = 0.50 * 160,
 			Types =
 			[
 				{
 					Type = this.Const.World.Spawn.Troops.LegendPeasantButcher,
 					Cost = 15,
-					Roll = true
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendPeasantMinstrel,
 					Cost = 15,
-					Roll = true
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendPeasantWoodsman,
 					Cost = 15,
-					Roll = true
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendPeasantMiner,
 					Cost = 15,
-					Roll = true
-				},
-				{
-					Type = this.Const.World.Spawn.Troops.LegendPeasantMonk,
-					Cost = 20,
-					Roll = true
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendPeasantFarmhand,
 					Cost = 15,
-					Roll = true
+				}
+			]
+		},
+		{
+			Weight = 3,
+			MinR = 0.50 * 160,
+			Types =
+			[
+				{
+					Type = this.Const.World.Spawn.Troops.LegendPeasantMonk,
+					Cost = 20
 				}
 			]
 		}
@@ -350,7 +351,7 @@ gt.Const.World.Spawn.Militia <-
 					Cost = 20
 				}
 			]
-		}
+		},
 		{
 			Weight = 1,
 			MinR = 0.50 * 585,
@@ -359,32 +360,26 @@ gt.Const.World.Spawn.Militia <-
 				{
 					Type = this.Const.World.Spawn.Troops.LegendPeasantButcher,
 					Cost = 15,
-					Roll = true
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendPeasantMinstrel,
 					Cost = 15,
-					Roll = true
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendPeasantWoodsman,
 					Cost = 15,
-					Roll = true
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendPeasantMiner,
 					Cost = 15,
-					Roll = true
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendPeasantMonk,
 					Cost = 20,
-					Roll = true
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendPeasantFarmhand,
 					Cost = 15,
-					Roll = true
 				}
 			]
 		}
@@ -400,7 +395,7 @@ gt.Const.World.Spawn.PeasantsSouthern <-
 	VisionMult = 0.75,
 	Body = "figure_civilian_06",
 	MaxR = 160,
-	Troops = 
+	Troops =
 	[
 		{
 			Weight = 100,
