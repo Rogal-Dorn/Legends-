@@ -4178,3 +4178,8 @@ Cannibal Event tubles to tumbles
 
 **Spelling/Writing**
 Troupe Scenario Event (Thanks Luft)
+
+15.0.0.17
+
+**Small Fixes/Tweaks**
+Mercenary Favorite Enemy no longer errors out after you kill a ranged mercenary
