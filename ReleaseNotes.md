@@ -4139,7 +4139,7 @@ Cannibal recruitment text updated
 Sisterhood scenario event text updated
 Replace some icon place-holders (Von)
 
-15.0.0.16
+15.0.0.16b
 
 **Changes**
 Updated to BB 1.4.0.46
@@ -4164,7 +4164,10 @@ Southern assassin is now considered an outlaw background
 Prayer of Hope effect/skill name fixed ; perk description updated to indicate 20%
 Cultist's specialist hood/armor skills tweaked to give bonuses after all other perks have gone ; should now work with things like fort. mind consistently rather than sometimes working and sometimes not
 the Hide skill now displays the amount of rounds the character will be hidden in the active skill & turns remaining in the effect icon that's applied
-
+Backgrounds no longer spawn with mixed southern/northern heads/bodies
+Skin Ghoul Event Icon now exists but it's technically a dead icon for what should be alive 
+Tabard Icons now show up (Thanks Leo)
+Rich Cloaks now aren't randomly invisible (Also thanks Leo)
 
 **Spelling/Typos**
 White Wolf Contract
@@ -4172,17 +4175,6 @@ Southerner Favoured Enemy Description
 Hold out Perk signifies +6 hp again
 Fixes War Chant + Drums of Life tooltips ; each giving 5 fatigue and 4 hp respectively
 Cannibal Event tubles to tumbles
-
-
-15.0.0.16b
-
-**Small Fixes/Tweaks**
-Backgrounds no longer spawn with mixed southern/northern heads/bodies
-Skin Ghoul Event Icon now exists but it's technically a dead icon for what should be alive 
-Tabard Icons now show up (Thanks Leo)
-Rich Cloaks now aren't randomly invisible (Also thanks Leo)
-
-
 
 **Spelling/Writing**
 Troupe Scenario Event (Thanks Luft)
