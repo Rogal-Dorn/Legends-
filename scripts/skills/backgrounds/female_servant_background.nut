@@ -36,7 +36,7 @@ this.female_servant_background <- this.inherit("scripts/skills/backgrounds/chara
 			"trait.aggressive"
 		];
 		this.m.Faces = this.Const.Faces.AllWhiteFemale;
-		this.m.Hairs = this.Const.Hair.AllWhiteFemale;
+		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.Old;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;

@@ -265,7 +265,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 			return
 		}
 		this.m.Faces = this.Const.Faces.NecromancerFemale;
-		this.m.Hairs = this.Const.Hair.AllWhiteFemale;
+		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.Zombie;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
