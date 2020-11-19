@@ -26,7 +26,7 @@ this.flagellant_background <- this.inherit("scripts/skills/backgrounds/character
 			"trait.greedy",
 			"trait.gluttonous"
 		];
-		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Untidy;
@@ -142,11 +142,11 @@ this.flagellant_background <- this.inherit("scripts/skills/backgrounds/character
 		}
 
 		this.m.Faces = this.Const.Faces.OldFemale;
-		this.m.Hairs = this.Const.Hair.AllFemale;
+		this.m.Hairs = this.Const.Hair.AllWhiteFemale;
 		this.m.HairColors = this.Const.HairColors.Old;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Bodies = this.Const.Bodies.AllFemale;
+		this.m.Bodies = this.Const.Bodies.AllWhiteFemale;
 		this.m.IsFemaleBackground = true;
 
 	}

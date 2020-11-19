@@ -21,7 +21,7 @@ this.militia_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			"trait.craven",
 			"trait.asthmatic"
 		];
-		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.CommonMale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.All;
@@ -74,11 +74,11 @@ this.militia_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		{
 			return;
 		}
-		this.m.Faces = this.Const.Faces.AllFemale;
+		this.m.Faces = this.Const.Faces.AllWhiteFemale;
 		this.m.Beards = null;
-		this.m.Hairs = this.Const.Hair.AllFemale;
+		this.m.Hairs = this.Const.Hair.AllWhiteFemale;
 		this.m.BeardChance = 0;
-		this.m.Bodies = this.Const.Bodies.AllFemale;
+		this.m.Bodies = this.Const.Bodies.AllWhiteFemale;
 		this.m.IsFemaleBackground = true;
 	}
 

@@ -23,7 +23,7 @@ this.poacher_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			"trait.bright",
 			"trait.seductive"
 		];
-		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Untidy;
@@ -104,11 +104,11 @@ this.poacher_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			return
 		}
 		this.m.Faces = this.Const.Faces.PrettyFemale;
-		this.m.Hairs = this.Const.Hair.AllFemale;
+		this.m.Hairs = this.Const.Hair.AllWhiteFemale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Bodies = this.Const.Bodies.AllFemale;
+		this.m.Bodies = this.Const.Bodies.AllWhiteFemale;
 		this.m.IsFemaleBackground = true;
 		this.m.GoodEnding = "%name%, former poacher, eventually saved enough money to leave the %companyname%. You learned she found a bit of mountain land and works it for a local nobleman. Ironically, her job is to hunt down poachers.";
 		this.m.BadEnding = "No longer seeing the point in risking her life for so few crowns, %name% the former poacher put down the sellsword\'s life and returned to unlawfully hunting deer in the woods. A nobleman once offered you a good satchel of crowns to specifically hunt the woman down. You declined the offer, but the writing was on the wall: her days are numbered.";

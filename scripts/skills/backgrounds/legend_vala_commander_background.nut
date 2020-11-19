@@ -26,12 +26,12 @@ this.legend_vala_commander_background <- this.inherit("scripts/skills/background
 		this.m.Titles = [
 			"the Vala"
 		];
-		this.m.Faces = this.Const.Faces.AllFemale;
-		this.m.Hairs = this.Const.Hair.AllFemale;
+		this.m.Faces = this.Const.Faces.AllWhiteFemale;
+		this.m.Hairs = this.Const.Hair.AllWhiteFemale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Bodies = this.Const.Bodies.AllFemale;
+		this.m.Bodies = this.Const.Bodies.AllWhiteFemale;
 		this.m.IsFemaleBackground = true;
 		this.m.IsUntalented = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;

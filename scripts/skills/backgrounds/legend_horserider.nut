@@ -17,7 +17,7 @@ this.legend_horserider <- this.inherit("scripts/skills/backgrounds/character_bac
 			"trait.bright",
 			"trait.asthmatic"
 		];
-		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.None;
 		this.m.HairColors = this.Const.HairColors.None;
 		this.m.Beards = null

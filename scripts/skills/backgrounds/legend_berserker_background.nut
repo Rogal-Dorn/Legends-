@@ -52,7 +52,7 @@ this.legend_berserker_background <- this.inherit("scripts/skills/backgrounds/cha
 			"the Wild",
 			"the Barbarian"
 		];
-		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.WildMale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.Wild;
@@ -138,12 +138,12 @@ this.legend_berserker_background <- this.inherit("scripts/skills/backgrounds/cha
 		{
 			return
 		}
-		this.m.Faces = this.Const.Faces.AllFemale;
-		this.m.Hairs = this.Const.Hair.AllFemale;
+		this.m.Faces = this.Const.Faces.AllWhiteFemale;
+		this.m.Hairs = this.Const.Hair.AllWhiteFemale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Bodies = this.Const.Bodies.AllFemale;
+		this.m.Bodies = this.Const.Bodies.AllWhiteFemale;
 		this.m.IsFemaleBackground = true;
 
 	}

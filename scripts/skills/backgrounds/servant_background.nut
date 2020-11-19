@@ -35,7 +35,7 @@ this.servant_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			"trait.bloodthirsty",
 			"trait.aggressive"
 		];
-		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.TidyMale;
 		this.m.HairColors = this.Const.HairColors.Old;
 		this.m.Beards = this.Const.Beards.Tidy;

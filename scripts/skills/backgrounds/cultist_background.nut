@@ -49,7 +49,7 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			"the Zealot"
 		];
 
-		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Untidy;
@@ -103,11 +103,11 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		}
 
 		this.m.Faces = this.Const.Faces.OldFemale;
-		this.m.Hairs = this.Const.Hair.AllFemale;
+		this.m.Hairs = this.Const.Hair.AllWhiteFemale;
 		this.m.HairColors = this.Const.HairColors.Old;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Bodies = this.Const.Bodies.AllFemale;
+		this.m.Bodies = this.Const.Bodies.AllWhiteFemale;
 		this.m.IsFemaleBackground = true;
 
 	}

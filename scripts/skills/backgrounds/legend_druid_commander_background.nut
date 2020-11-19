@@ -61,7 +61,7 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 			"The Wolf",
 			"The Sapling"
 		];
-		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.Untidy;
@@ -208,11 +208,11 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 			return;
 		}
 		this.m.Faces = this.Const.Faces.PrettyFemale;
-		this.m.Hairs = this.Const.Hair.AllFemale;
+		this.m.Hairs = this.Const.Hair.AllWhiteFemale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Bodies = this.Const.Bodies.AllFemale;
+		this.m.Bodies = this.Const.Bodies.AllWhiteFemale;
 		this.m.IsFemaleBackground = true;
 	}
 

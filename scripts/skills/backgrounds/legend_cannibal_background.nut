@@ -19,8 +19,8 @@ this.legend_cannibal_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.Titles = [
 			"the Cannibal"
 		];
-		this.m.Faces = this.Const.Faces.AllMale;
-		this.m.Hairs = this.Const.Hair.AllMale;
+		this.m.Faces = this.Const.Faces.AllWhiteMale;
+		this.m.Hairs = this.Const.Hair.AllWhiteMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;

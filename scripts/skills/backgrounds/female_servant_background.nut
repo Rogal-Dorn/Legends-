@@ -35,12 +35,12 @@ this.female_servant_background <- this.inherit("scripts/skills/backgrounds/chara
 			"trait.bloodthirsty",
 			"trait.aggressive"
 		];
-		this.m.Faces = this.Const.Faces.AllFemale;
-		this.m.Hairs = this.Const.Hair.AllFemale;
+		this.m.Faces = this.Const.Faces.AllWhiteFemale;
+		this.m.Hairs = this.Const.Hair.AllWhiteFemale;
 		this.m.HairColors = this.Const.HairColors.Old;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Bodies = this.Const.Bodies.AllFemale;
+		this.m.Bodies = this.Const.Bodies.AllWhiteFemale;
 		this.m.IsOffendedByViolence = true;
 		this.m.IsFemaleBackground = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.NeutralMin;

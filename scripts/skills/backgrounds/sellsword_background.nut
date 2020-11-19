@@ -29,8 +29,8 @@ this.sellsword_background <- this.inherit("scripts/skills/backgrounds/character_
 			"trait.dastard",
 			"trait.insecure"
 		];
-		this.m.Faces = this.Const.Faces.AllMale;
-		this.m.Hairs = this.Const.Hair.AllMale;
+		this.m.Faces = this.Const.Faces.AllWhiteMale;
+		this.m.Hairs = this.Const.Hair.AllWhiteMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
 
@@ -90,12 +90,12 @@ this.sellsword_background <- this.inherit("scripts/skills/backgrounds/character_
 		{
 			return
 		}
-		this.m.Faces = this.Const.Faces.AllFemale;
-		this.m.Hairs = this.Const.Hair.AllFemale;
+		this.m.Faces = this.Const.Faces.AllWhiteFemale;
+		this.m.Hairs = this.Const.Hair.AllWhiteFemale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;
 		this.m.BeardChance = 1;
-		this.m.Bodies = this.Const.Bodies.AllFemale;
+		this.m.Bodies = this.Const.Bodies.AllWhiteFemale;
 		this.m.IsFemaleBackground = true;
 		this.m.BackgroundDescription = "Sellswords are expensive, but a life of warfare has forged them into skilled fighters.";
 		this.m.GoodEnding = "%name% the sellsword left the %companyname% and started her own mercenary company. As far as you know, it\'s a very successful venture and she often buddies up with the mercenaries of the %companyname% to work together.";

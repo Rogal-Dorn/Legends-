@@ -45,7 +45,7 @@ this.crusader_background <- this.inherit("scripts/skills/backgrounds/character_b
 			this.Const.Attributes.RangedDefense
 		];
 		this.m.Faces = this.Const.Faces.SmartMale;
-		this.m.Hairs = this.Const.Hair.AllMale;
+		this.m.Hairs = this.Const.Hair.AllWhiteMale;
 		this.m.HairColors = this.Const.HairColors.Old;
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Bodies = this.Const.Bodies.Muscular;

@@ -32,11 +32,11 @@ this.legend_premonitionist_background <- this.inherit("scripts/skills/background
 			"the Clairvoyant",
 			"the Diviner"
 		];
-		this.m.Faces = this.Const.Faces.AllFemale;
-		this.m.Hairs = this.Const.Hair.AllFemale;
+		this.m.Faces = this.Const.Faces.AllWhiteFemale;
+		this.m.Hairs = this.Const.Hair.AllWhiteFemale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
-		this.m.Bodies = this.Const.Bodies.AllFemale;
+		this.m.Bodies = this.Const.Bodies.AllWhiteFemale;
 		this.m.IsFemaleBackground = true;
 
 		this.m.IsEducatedBackground = true;
@@ -92,7 +92,7 @@ this.legend_premonitionist_background <- this.inherit("scripts/skills/background
 			return;
 		}
 
-		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.CommonMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;

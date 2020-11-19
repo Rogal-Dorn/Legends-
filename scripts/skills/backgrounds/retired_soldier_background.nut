@@ -40,7 +40,7 @@ this.retired_soldier_background <- this.inherit("scripts/skills/backgrounds/char
 			"the Veteran",
 			"the Soldier"
 		];
-		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.CommonMale;
 		this.m.HairColors = this.Const.HairColors.Old;
 		this.m.Beards = this.Const.Beards.All;
