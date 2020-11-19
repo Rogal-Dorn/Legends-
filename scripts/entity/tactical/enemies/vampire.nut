@@ -104,7 +104,7 @@ this.vampire <- this.inherit("scripts/entity/tactical/actor", {
 		this.getSprite("beard").setHorizontalFlipping(flip);
 		this.getSprite("hair").setHorizontalFlipping(flip);
 		this.getSprite("helmet").setHorizontalFlipping(flip);
-		this.getSprite("helmet_damage").setHorizontalFlipping(flip);
+		// this.getSprite("helmet_damage").setHorizontalFlipping(flip);
 		// this.getSprite("helmet_vanity_lower").setHorizontalFlipping(flip);
 		// this.getSprite("helmet_helm").setHorizontalFlipping(flip);
 		// this.getSprite("helmet_top").setHorizontalFlipping(flip);
