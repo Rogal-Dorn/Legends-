@@ -178,7 +178,6 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 					this.Const.Perks.PerkDefs.LegendPrepareBleed,
 					this.Const.Perks.PerkDefs.LegendPrepareGraze,
 					this.Const.Perks.PerkDefs.LegendMedPackages,
-					this.Const.Perks.PerkDefs.LegendPrepareBleed,
 					this.Const.Perks.PerkDefs.LegendRoster1
 				],
 				[

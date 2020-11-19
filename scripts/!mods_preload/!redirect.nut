@@ -50,7 +50,7 @@ local wrapInstance = function(o)
       if (i < funcs.len() && funcs[i] == func) i++; // only increment if the hook didn't remove itself
     }
   }
-
+  
   return null;
 }
 
@@ -275,7 +275,7 @@ World.getRoster = function(id)
       local mo = ::mods_callHook("new", scriptName, o);
       if(mo) o = mo;
     }
-
+  
     return o;
   }
 });
@@ -294,20 +294,23 @@ World.getRoster = function(id)
 });
 
 ::mods_addHook("onCampaignLoaded", function(worldState) {
-  local parties = World.getAllEntitiesAtPos(worldState.getPlayer().getPos(), 1.0e9);
-  foreach(e in parties) ::mods_callHook("onEntityLoaded", e);
+  foreach(e in World.getAllEntitiesAtPos(worldState.getPlayer().getPos(), 1.0e9))
+  {
+    if(e.ClassName == "party" || e.ClassName == "player_party")
+      ::mods_callHook("new", "scripts/entity/world/" + e.ClassName, e);
+  }
+
+  foreach(loc in World.EntityManager.getSettlements())
+  {
+    local roster = World.getRoster(loc.getID());
+    if(roster != null)
+    {
+      foreach(e in roster.getAll()) ::mods_callHook("new", "scripts/entity/tactical/" + e.ClassName, e);
+    }
+  }
+
   foreach(e in World.getPlayerRoster().getAll())
     ::mods_callHook("new", "scripts/entity/tactical/" + e.ClassName, e);
-});
-
-::mods_addHook("onEntityLoaded", function(e) {
-  if(e.ClassName == "party" || e.ClassName == "player_party")
-    ::mods_callHook("new", "scripts/entity/world/" + e.ClassName, e);
-
-  if(::mods_isClass(e, "world_entity"))
-  {
-    foreach(t in e.getTroops()) ::mods_callHook("new", t.Script, t);
-  }
 });
 
 ::mods_hookNewObjectOnce("ui/screens/menu/main_menu_screen", function(o) {
@@ -326,12 +329,12 @@ World.getRoster = function(id)
   }
 });
 
-::mods_registerCSS <- function(path)
+::mods_registerCSS <- function(path) 
 {
   g_cssFiles.append("mods/" + path);
 }
 
-::mods_registerJS <- function(path)
+::mods_registerJS <- function(path) 
 {
   g_jsFiles.append("mods/" + path);
 }
@@ -527,12 +530,12 @@ local g_exprRe = regexp("^([!<>])?(\\w+)(?:\\(([<>]=?|=|!=)?(\\d+(?:\\.\\d*)?|\\
       y = y ^ (y<<5);
       y = y ^ (y>>>7);
       y = y ^ (y<<22);
-
+      
       local t = z + w + c;
       z  = w;
       c  = t >>> 31; // c = (signed)t < 0 ? 1 : 0
       w  = t & 0x7FFFFFFF;
-
+      
       return (x + y + w) & 0x7FFFFFFF;
     },
     nextFloat = function()
@@ -557,4 +560,4 @@ local g_exprRe = regexp("^([!<>])?(\\w+)(?:\\(([<>]=?|=|!=)?(\\d+(?:\\.\\d*)?|\\
 
 ::rng <- ::rng_new();
 
-::mods_registerMod("mod_hooks", 16, "modding script hooks");
+::mods_registerMod("mod_hooks", 18, "modding script hooks");

@@ -32,11 +32,6 @@ this.ai_defend_spearwall <- this.inherit("scripts/ai/tactical/behavior", {
 			return this.Const.AI.Behavior.Score.Zero;
 		}
 
-		if (!this.getAgent().hasKnownOpponent())
-		{
-			return this.Const.AI.Behavior.Score.Zero;
-		}
-
 		local targets = this.queryTargetsInMeleeRange();
 
 		if (targets.len() != 0)
