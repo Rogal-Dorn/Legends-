@@ -237,22 +237,22 @@ gt.Const.World.Common.dynamicSelectTroop <- function (_list, _resources, _scale,
 	local T = [];
 	local totalWeight = 0;
 	local dateToSkip = 0
-	// switch (this.World.Assets.getCombatDifficulty())
-	// {
-	// 	case this.Const.Difficulty.Easy:
-	// 		dateToSkip = 120;
-	// 		break;
-	// 	case this.Const.Difficulty.Normal:
-	// 		dateToSkip = 90
-	// 		break;
-	// 	case this.Const.Difficulty.Hard:
-	// 		dateToSkip = 60
-	// 		break;
-	// 	case this.Const.Difficulty.Legendary:
-	// 		dateToSkip = 30
-	// 		break;
-	// }
-	// dateToSkip = 90;
+	switch (this.World.Assets.getCombatDifficulty())
+	{
+		case this.Const.Difficulty.Easy:
+			dateToSkip = 120;
+			break;
+		case this.Const.Difficulty.Normal:
+			dateToSkip = 90
+			break;
+		case this.Const.Difficulty.Hard:
+			dateToSkip = 60
+			break;
+		case this.Const.Difficulty.Legendary:
+			dateToSkip = 30
+			break;
+	}
+	dateToSkip = 90;
 
 	//Go through each Item in the spawn list (which are structures defining enemies)
 	foreach (t in _list)
@@ -669,7 +669,7 @@ gt.Const.World.Common.pickHelmet <- function (_helms)
 	{
 		return null;
 	}
-	return this.new("scripts/items/helmets/" + helm);
+	//return this.new("scripts/items/helmets/" + helm);
 
 	if (!this.World.LegendsMod.Configs().LegendArmorsEnabled())
 	{
