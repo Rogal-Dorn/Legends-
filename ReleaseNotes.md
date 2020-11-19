@@ -4172,3 +4172,9 @@ Southerner Favoured Enemy Description
 Hold out Perk signifies +6 hp again
 Fixes War Chant + Drums of Life tooltips ; each giving 5 fatigue and 4 hp respectively
 Cannibal Event tubles to tumbles
+
+15.0.0.17
+
+**Small Fixes/Tweaks**
+Backgrounds no longer spawn with mixed southern/northern heads/bodies
+Skin Ghoul Event Icon now exists but it's technically a dead icon for what should be alive 
