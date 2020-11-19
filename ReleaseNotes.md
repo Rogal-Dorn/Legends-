@@ -4178,3 +4178,6 @@ Cannibal Event tubles to tumbles
 **Small Fixes/Tweaks**
 Backgrounds no longer spawn with mixed southern/northern heads/bodies
 Skin Ghoul Event Icon now exists but it's technically a dead icon for what should be alive 
+
+**Spelling/Writing**
+Troupe Scenario Event (Thanks Luft)
