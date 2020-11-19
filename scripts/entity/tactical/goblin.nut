@@ -198,18 +198,18 @@ this.goblin <- this.inherit("scripts/entity/tactical/actor", {
 		injury.setBrush("bust_goblin_01_head_injured");
 		this.addSprite("helmet");
 		
-		// this.addSprite("helmet_vanity_lower");
-		// this.addSprite("helmet_helm");
-		// this.addSprite("helmet_top");
-		// this.addSprite("helmet_vanity");
-		// this.addSprite("helmet_damage");
-		// local v = -10;
-		// this.setSpriteOffset("helmet", this.createVec(0, v));
-		// this.setSpriteOffset("helmet_vanity_lower", this.createVec(0, v));
-		// this.setSpriteOffset("helmet_helm", this.createVec(0, v));
-		// this.setSpriteOffset("helmet_top", this.createVec(0, v));
-		// this.setSpriteOffset("helmet_vanity", this.createVec(0, v));
-		// this.setSpriteOffset("helmet_damage", this.createVec(0, v));
+		this.addSprite("helmet_vanity_lower");
+		this.addSprite("helmet_helm");
+		this.addSprite("helmet_top");
+		this.addSprite("helmet_vanity");
+		this.addSprite("helmet_damage");
+		local v = -10;
+		this.setSpriteOffset("helmet", this.createVec(0, v));
+		this.setSpriteOffset("helmet_vanity_lower", this.createVec(0, v));
+		this.setSpriteOffset("helmet_helm", this.createVec(0, v));
+		this.setSpriteOffset("helmet_top", this.createVec(0, v));
+		this.setSpriteOffset("helmet_vanity", this.createVec(0, v));
+		this.setSpriteOffset("helmet_damage", this.createVec(0, v));
 
 		local body_blood = this.addSprite("body_blood");
 		body_blood.Visible = false;
