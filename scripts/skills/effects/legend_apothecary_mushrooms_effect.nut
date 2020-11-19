@@ -15,7 +15,7 @@ this.legend_apothecary_mushrooms_effect <- this.inherit("scripts/skills/skill", 
 		this.m.Type = this.Const.SkillType.StatusEffect | this.Const.SkillType.DrugEffect;
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;
-		this.m.IsStacking = true;
+		this.m.IsStacking = false;
 		this.m.IsRemovedAfterBattle = true;
 	}
 
