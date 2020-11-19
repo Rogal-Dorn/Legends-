@@ -22,7 +22,7 @@ this.legend_demon_banshee_trophy_blueprint <- this.inherit("scripts/crafting/blu
 
 	function isQualified()
 	{
-		return true;
+		return this.blueprint.isQualified();
 	}
 
 	function onCraft( _stash )

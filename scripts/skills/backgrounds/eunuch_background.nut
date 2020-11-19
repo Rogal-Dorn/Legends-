@@ -25,7 +25,7 @@ this.eunuch_background <- this.inherit("scripts/skills/backgrounds/character_bac
 			"the Eunuch",
 			"the Gelding"
 		];
-		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.YoungMale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;

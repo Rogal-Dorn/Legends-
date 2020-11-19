@@ -11,8 +11,8 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.BackgroundDescription = "Druids are from the wild lands, defenders of nature.";
 		// this.m.GoodEnding = "While the %companyname% visited a town for rest and recuperation, a local princess took a shine to %name% the wildman. He was \'purchased\' for a large sum of gold and given to the noblewoman. You went and visited the man recently. For dinner, he sat at a kingly table, grinning goofily and mimicking the nobles around him as best he could. His new and inexplicable wife adored him, and him her. When you said your goodbyes, he offered you a heavy golden crown off the top of his head. It weighed heavy with traditions and ancient histories. You said it\'d be best if he kept it. The wildman shrugged and walked off, spinning the circlet around a finger.";
 		// this.m.BadEnding = "%name% the wildman stayed with the fragmenting %companyname% for a time and then, just like that, he was gone. The company went out looking for him in a forest, eventually finding some sort of crude note: an enormous pile of crowns next to a dirt-drawing of the %companyname% and some of its members, all of them being hugged by a big, literal stick figure with a goofy smile on its face. There was also an offering of a dead, half-eaten rabbit.";
-		this.m.HiringCost = 5000;
-		this.m.DailyCost = 0;
+		this.m.HiringCost = 2000;
+		this.m.DailyCost = 25;
 		this.m.Excluded = [
 			"trait.fear_beasts",
 			"trait.hate_undead",
@@ -49,7 +49,7 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 			"The Wolf",
 			"The Sapling"
 		];
-		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.Untidy;
@@ -110,7 +110,8 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 
 				],
 			Magic = [
-				this.Const.Perks.DruidMagicTree
+				this.Const.Perks.DruidMagicTree,
+				this.Const.Perks.DruidTransformTree
 			]
 		}
 	}
@@ -244,6 +245,13 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 		}
 	}
 
+	function onAdded()
+	{
+		this.character_background.onAdded();
+		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_surpress_urges"));
+		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_control_instincts"));
+	}
+
 	function onAddEquipment()
 	{
 		local talents = this.getContainer().getActor().getTalents();
@@ -258,7 +266,7 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 		items.equip(this.Const.World.Common.pickHelmet([
 			[1, "barbarians/bear_headpiece"]
 		]));
-		this.getContainer().getActor().TherianthropeInfectionRandom();
+		//this.getContainer().getActor().TherianthropeInfectionRandom();
 	}
 
 	function onSerialize( _out )

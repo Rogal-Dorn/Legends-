@@ -27,7 +27,8 @@ this.raider_background <- this.inherit("scripts/skills/backgrounds/character_bac
 			"trait.craven",
 			"trait.bleeder",
 			"trait.dastard",
-			"trait.insecure"
+			"trait.insecure",
+			"trait.gift_of_people"
 		];
 		this.m.Titles = [
 			"the Raider",
@@ -41,7 +42,7 @@ this.raider_background <- this.inherit("scripts/skills/backgrounds/character_bac
 			"the Pillager",
 			"the Menace"
 		];
-		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Raider;

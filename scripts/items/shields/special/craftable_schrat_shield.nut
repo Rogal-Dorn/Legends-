@@ -34,7 +34,7 @@ this.craftable_schrat_shield <- this.inherit("scripts/items/shields/shield", {
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Regenerates itself by [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] points of durability each turn."
+			text = "Regenerates itself by [color=" + this.Const.UI.Color.PositiveValue + "]20[/color] points of durability each turn."
 		});
 		return result;
 	}
@@ -48,7 +48,7 @@ this.craftable_schrat_shield <- this.inherit("scripts/items/shields/shield", {
 
 	function onTurnStart()
 	{
-		this.m.Condition = this.Math.min(this.m.ConditionMax, this.m.Condition + 4);
+		this.m.Condition = this.Math.min(this.m.ConditionMax, this.m.Condition + 20);
 		this.updateAppearance();
 	}
 

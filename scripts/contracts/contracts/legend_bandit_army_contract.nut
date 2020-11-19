@@ -101,7 +101,7 @@ this.legend_bandit_army_contract <- this.inherit("scripts/contracts/contract", {
 			function start()
 			{
 				this.Contract.m.BulletpointsObjectives = [
-					"Investigate supossed army of bandits"
+					"Investigate supposed army of bandits"
 				];
 
 				if (this.Math.rand(1, 100) <= this.Const.Contracts.Settings.IntroChance)

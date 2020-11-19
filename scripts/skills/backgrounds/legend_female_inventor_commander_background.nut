@@ -28,7 +28,7 @@ this.legend_female_inventor_commander_background <- this.inherit("scripts/skills
 			"the Eclectic",
 			"the Tinkerer"
 		];
-		this.m.Faces = this.Const.Faces.AllFemale;
+		this.m.Faces = this.Const.Faces.AllWhiteFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;

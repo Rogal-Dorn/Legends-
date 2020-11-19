@@ -17,7 +17,7 @@ this.perk_last_stand <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		local maxHP = this.getContainer().getActor().getHitpointsMax();
-		local percentHP = maxHP / 100;
+		local percentHP = maxHP * 0.01;
 		local currentHP = this.getContainer().getActor().getHitpoints();
 		local currentPercent = currentHP / percentHP;
 		local missingPercent = (100 - currentPercent);
@@ -25,7 +25,7 @@ this.perk_last_stand <- this.inherit("scripts/skills/skill", {
 		
 		if( missingPercent >= 34)
 		{
-			bonus = this.Math.floor(missingPercent - 34) / 2;
+			bonus = this.Math.floor(missingPercent - 34) / 2.0;
 		}
 
 		if( missingPercent >= 66)

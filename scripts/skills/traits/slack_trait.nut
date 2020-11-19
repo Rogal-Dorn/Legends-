@@ -18,7 +18,9 @@ this.slack_trait <- this.inherit("scripts/skills/traits/character_trait", {
 			"trait.quick",
 			"trait.teamplayer",
 			"trait.impatient",
-			"trait.ambitious"
+			"trait.ambitious",
+			"trait.aggressive",
+			"trait.natural",
 		];
 	}
 

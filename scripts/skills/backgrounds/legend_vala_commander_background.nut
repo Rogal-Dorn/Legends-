@@ -26,7 +26,7 @@ this.legend_vala_commander_background <- this.inherit("scripts/skills/background
 		this.m.Titles = [
 			"the Vala"
 		];
-		this.m.Faces = this.Const.Faces.AllFemale;
+		this.m.Faces = this.Const.Faces.AllWhiteFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;

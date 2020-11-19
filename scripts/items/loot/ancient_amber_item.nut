@@ -4,7 +4,7 @@ this.ancient_amber_item <- this.inherit("scripts/items/item", {
 	{
 		this.m.ID = "misc.ancient_amber";
 		this.m.Name = "Ancient Amber";
-		this.m.Description = "Particularly old schrats grow small splinters of extremely pure amber on their bork. These sell for quite a price to a trader.";
+		this.m.Description = "Particularly old schrats grow small splinters of extremely pure amber on their bark. These sell for quite a price to a trader.";
 		this.m.Icon = "loot/southern_09.png";
 		this.m.SlotType = this.Const.ItemSlot.None;
 		this.m.ItemType = this.Const.Items.ItemType.Misc | this.Const.Items.ItemType.Loot;

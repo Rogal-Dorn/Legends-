@@ -1,19 +1,5 @@
 this.zombie_player <- this.inherit("scripts/entity/tactical/enemies/zombie", {
-	m = {
-		IsResurrected = false
-	},
-	function getXPValue()
-	{
-		if (!this.m.IsResurrected)
-		{
-			return this.m.XP;
-		}
-		else
-		{
-			return 0;
-		}
-	}
-
+	m = {},
 	function create()
 	{
 		this.zombie.create();

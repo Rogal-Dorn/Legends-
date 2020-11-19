@@ -38,21 +38,24 @@ this.perk_legend_freedom_of_movement <- this.inherit("scripts/skills/skill", {
 
 	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
 	{
-		local ourFatigue = this.getContainer().getActor().getFatigue();
-		local ourFatigueMax = this.getContainer().getActor().getFatigueMax();
-		local ourFatiguePercent = ourFatigueMax / 100;
-		local ourFatiguePercentCurrent = ourFatigue / ourFatiguePercent;
+		//local ourFatigue = this.getContainer().getActor().getFatigue();
+		//local ourFatigueMax = this.getContainer().getActor().getFatigueMax();
+		//local ourFatiguePercent = ourFatigueMax / 100;
+		//local ourFatiguePercentCurrent = ourFatigue / ourFatiguePercent;
+		//
+		//local enemyFatigue = _attacker.getFatigue();
+		//local enemyFatigueMax = _attacker.getFatigueMax();
+		//local enemyFatiguePercent = enemyFatigueMax / 100;
+		//local enemyFatiguePercentCurrent = enemyFatigue / enemyFatiguePercent;
 
-		local enemyFatigue = _attacker.getFatigue();
-		local enemyFatigueMax = _attacker.getFatigueMax();
-		local enemyFatiguePercent = enemyFatigueMax / 100;
-		local enemyFatiguePercentCurrent = enemyFatigue / enemyFatiguePercent;
-
-		if (_attacker != null && _attacker.getID() == this.getContainer().getActor().getID() || _skill == null || !_skill.isAttack() || !_skill.isUsingHitchance())
+		if (_attacker == null || (_attacker != null && _attacker.getID() == this.getContainer().getActor().getID()) || _skill == null || !_skill.isAttack() || !_skill.isUsingHitchance())
 		{
 			return;
 		}
 
+		local ourFatiguePercentCurrent = this.getContainer().getActor().getFatiguePct();
+		local enemyFatiguePercentCurrent = _attacker.getFatiguePct();
+		
 		local bonus = 1;
 
 		if (ourFatiguePercentCurrent < enemyFatiguePercentCurrent)

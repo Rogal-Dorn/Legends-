@@ -38,7 +38,7 @@ this.legend_herbalist_background <- this.inherit("scripts/skills/backgrounds/cha
 			"the Calm",
 			"the Apothecary"
 		];
-		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.Monk;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Monk;
@@ -122,7 +122,7 @@ this.legend_herbalist_background <- this.inherit("scripts/skills/backgrounds/cha
 		{
 			return
 		}
-		this.m.Faces = this.Const.Faces.AllFemale;
+		this.m.Faces = this.Const.Faces.AllWhiteFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;

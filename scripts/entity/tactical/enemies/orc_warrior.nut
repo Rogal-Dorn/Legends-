@@ -200,6 +200,18 @@ this.orc_warrior <- this.inherit("scripts/entity/tactical/actor", {
 		this.actor.onDeath(_killer, _skill, _tile, _fatalityType);
 	}
 
+	// function onFactionChanged()
+	// {
+	// 	this.actor.onFactionChanged();
+	// 	local flip = !this.isAlliedWithPlayer();
+	// 	this.getSprite("helmet").setHorizontalFlipping(flip);
+	// 	this.getSprite("helmet_damaged").setHorizontalFlipping(flip)
+	// 	this.getSprite("helmet_vanity_lower").setHorizontalFlipping(flip);
+	// 	this.getSprite("helmet_helm").setHorizontalFlipping(flip);
+	// 	this.getSprite("helmet_top").setHorizontalFlipping(flip);
+	// 	this.getSprite("helmet_vanity").setHorizontalFlipping(flip);
+	// }
+
 	function onInit()
 	{
 		this.actor.onInit();
@@ -237,6 +249,19 @@ this.orc_warrior <- this.inherit("scripts/entity/tactical/actor", {
 		injury.Visible = false;
 		injury.setBrush("bust_orc_03_head_injured");
 		this.addSprite("helmet");
+		// this.addSprite("helmet_vanity_lower");
+		// this.addSprite("helmet_helm");
+		// this.addSprite("helmet_top");
+		// this.addSprite("helmet_vanity");
+		// this.addSprite("helmet_damaged");
+		// local v = 1;
+		// local v2 = -6;
+		// this.setSpriteOffset("helmet", this.createVec(v2, v));
+		// this.setSpriteOffset("helmet_vanity_lower", this.createVec(v2, v));
+		// this.setSpriteOffset("helmet_helm", this.createVec(v2, v));
+		// this.setSpriteOffset("helmet_top", this.createVec(v2, v));
+		// this.setSpriteOffset("helmet_vanity", this.createVec(v2, v));
+		// this.setSpriteOffset("helmet_damaged", this.createVec(v2, v)); //please work :)
 		local body_blood = this.addSprite("body_blood");
 		body_blood.setBrush("bust_orc_03_body_bloodied");
 		body_blood.Visible = false;
@@ -301,11 +326,12 @@ this.orc_warrior <- this.inherit("scripts/entity/tactical/actor", {
 		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Head) == null)
 		{
 			local helmet = [
-				"helmets/greenskins/orc_warrior_light_helmet",
-				"helmets/greenskins/orc_warrior_medium_helmet",
-				"helmets/greenskins/orc_warrior_heavy_helmet"
+				[1, "greenskins/orc_warrior_light_helmet"],
+				[1, "greenskins/orc_warrior_medium_helmet"],
+				[1, "greenskins/orc_warrior_heavy_helmet"]
 			];
-			this.m.Items.equip(this.new("scripts/items/" + helmet[this.Math.rand(0, helmet.len() - 1)]));
+			local item = this.Const.World.Common.pickHelmet(helmet);
+			this.m.Items.equip(item);
 		}
 	}
 

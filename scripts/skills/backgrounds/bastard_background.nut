@@ -20,9 +20,10 @@ this.bastard_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			"trait.hesitant",
 			"trait.bleeder",
 			"trait.dastard",
-			"trait.asthmatic"
+			"trait.asthmatic",
+			"trait.hate_nobles",
 		];
-		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.TidyMale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.Tidy;

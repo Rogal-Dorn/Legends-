@@ -33,7 +33,7 @@ this.legend_transmuter_background <- this.inherit("scripts/skills/backgrounds/ch
 			"the Clairvoyant",
 			"the Diviner"
 		];
-		this.m.Faces = this.Const.Faces.AllFemale;
+		this.m.Faces = this.Const.Faces.AllWhiteFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
@@ -96,7 +96,7 @@ this.legend_transmuter_background <- this.inherit("scripts/skills/backgrounds/ch
 			return;
 		}
 
-		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.CommonMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;

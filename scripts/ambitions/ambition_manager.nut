@@ -92,10 +92,10 @@ this.ambition_manager <- {
 			return false;
 		}
 
-		if (this.Time.getVirtualTimeF() - this.World.Events.getLastBattleTime() < 3.0)
-		{
-			return false;
-		}
+		//if (this.Time.getVirtualTimeF() - this.World.Events.getLastBattleTime() < 3.0)
+		//{
+		//	return false;
+		//}
 
 		if (this.Time.getVirtualTimeF() < this.m.DelayUntil)
 		{
@@ -107,25 +107,25 @@ this.ambition_manager <- {
 			return false;
 		}
 
-		if (this.m.Thread == null && this.m.Selection == null && this.Time.getVirtualTimeF() - this.m.LastTime < 1.0 * this.World.getTime().SecondsPerHour)
-		{
-			return false;
-		}
+		//if (this.m.Thread == null && this.m.Selection == null && this.Time.getVirtualTimeF() - this.m.LastTime < 1.0 * this.World.getTime().SecondsPerHour)
+		//{
+		//	return false;
+		//}
 
 		if (this.World.Contracts.getActiveContract() != null && this.World.Contracts.getActiveContract().getType() == "contract.tutorial")
 		{
 			return false;
 		}
 
-		local parties = this.World.getAllEntitiesAtPos(this.World.State.getPlayer().getPos(), 400.0);
-
-		foreach( party in parties )
-		{
-			if (!party.isAlliedWithPlayer())
-			{
-				return false;
-			}
-		}
+		//local parties = this.World.getAllEntitiesAtPos(this.World.State.getPlayer().getPos(), 400.0);
+		//
+		//foreach( party in parties )
+		//{
+		//	if (!party.isAlliedWithPlayer())
+		//	{
+		//		return false;
+		//	}
+		//}
 
 		return true;
 	}
@@ -262,7 +262,7 @@ this.ambition_manager <- {
 		{
 			this.m.ActiveAmbition = _ambition;
 			this.m.ActiveAmbition.activate();
-			this.setDelay(4);
+			this.setDelay(0);
 			this.World.TopbarAmbitionModule.setText(_ambition.getUIText());
 		}
 	}

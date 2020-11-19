@@ -235,6 +235,25 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 			});
 		}
 
+		if (this.m.Vision < 0)
+		{
+			result.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/vision.png",
+				text = "Vision [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.Vision + "[/color]"
+			});
+		}
+		else if (this.m.Vision > 0)
+		{
+			result.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/vision.png",
+				text = "Vision [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.Vision + "[/color]"
+			});
+		}
+
 		return result;
 	}
 

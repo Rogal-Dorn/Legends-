@@ -41,38 +41,38 @@ this.legends_druid_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		]);
 		bros[0].getBackground().m.RawDescription = "%name% has only ever known the wild woods, the worlds of men are strange and disgusting";
 		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
-		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_surpress_urges"));
-		local r = this.Math.rand(1,99);
-
-		if (r <= 50 )
-		{
-			bros[0].getSkills().add(this.new("scripts/skills/injury_permanent/legend_lycanthropy_injury"));
-			this.logDebug(this.getName() + " gained lycanthropy");
-		}
-
-		if (r > 50 && r <= 80)
-		{
-			bros[0].getSkills().add(this.new("scripts/skills/injury_permanent/legend_aperthropy_injury"));
-			this.logDebug(this.getName() + " gained aperthropy");
-		}
-
-		if (r > 80 && r <= 95)
-		{
-			bros[0].getSkills().add(this.new("scripts/skills/injury_permanent/legend_ursathropy_injury"));
-			this.logDebug(this.getName() + " gained ursathropy");
-		}
-
-		if (r > 95 && r <= 98)
-		{
-			bros[0].getSkills().add(this.new("scripts/skills/injury_permanent/legend_arborthropy_injury"));
-			this.logDebug(this.getName() + " gained arborthropy");
-		}
-
-		if (r == 99)
-		{
-			bros[0].getSkills().add(this.new("scripts/skills/injury_permanent/legend_vermesthropy_injury"));
-			this.logDebug(this.getName() + " gained vermesthropy");
-		}
+		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_roots"));
+		//local r = this.Math.rand(1,99);
+		//
+		//if (r <= 50 )
+		//{
+		//	bros[0].getSkills().add(this.new("scripts/skills/injury_permanent/legend_lycanthropy_injury"));
+		//	this.logDebug(this.getName() + " gained lycanthropy");
+		//}
+		//
+		//if (r > 50 && r <= 80)
+		//{
+		//	bros[0].getSkills().add(this.new("scripts/skills/injury_permanent/legend_aperthropy_injury"));
+		//	this.logDebug(this.getName() + " gained aperthropy");
+		//}
+		//
+		//if (r > 80 && r <= 95)
+		//{
+		//	bros[0].getSkills().add(this.new("scripts/skills/injury_permanent/legend_ursathropy_injury"));
+		//	this.logDebug(this.getName() + " gained ursathropy");
+		//}
+		//
+		//if (r > 95 && r <= 98)
+		//{
+		//	bros[0].getSkills().add(this.new("scripts/skills/injury_permanent/legend_arborthropy_injury"));
+		//	this.logDebug(this.getName() + " gained arborthropy");
+		//}
+		//
+		//if (r == 99)
+		//{
+		//	bros[0].getSkills().add(this.new("scripts/skills/injury_permanent/legend_vermesthropy_injury"));
+		//	this.logDebug(this.getName() + " gained vermesthropy");
+		//}
 
 
 		bros[0].getFlags().set("IsPlayerCharacter", true);
@@ -160,7 +160,10 @@ this.legends_druid_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	function onInit()
 	{
 		this.starting_scenario.onInit();
-		this.World.State.getPlayer().m.BaseMovementSpeed = 111;
+		if (this.World.State.getPlayer() != null)
+		{
+			this.World.State.getPlayer().m.BaseMovementSpeed = 111;
+		}
 		this.World.Assets.m.BrothersMax = 27;
 		this.World.Flags.set("IsLegendsDruid", true);
 	}

@@ -22,7 +22,8 @@ this.drill_sergeant_follower <- this.inherit("scripts/retinue/follower", {
 
 	function onUpdate()
 	{
-		this.World.Assets.m.IsDisciplined = true;
+		if ("IsDisciplined" in this.World.Assets.m)
+			this.World.Assets.m.IsDisciplined = true;
 	}
 
 	function onEvaluate()

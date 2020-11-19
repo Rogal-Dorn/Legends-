@@ -30,7 +30,10 @@ this.assassin_southern_background <- this.inherit("scripts/skills/backgrounds/ch
 			"trait.short_sighted",
 			"trait.brute",
 			"trait.strong",
-			"trait.bloodthirsty"
+			"trait.bloodthirsty",
+			"trait.fear_nobles",
+			"trait.pragmatic",
+			"trait.predictable"			
 		];
 		this.m.ExcludedTalents = [
 			this.Const.Attributes.Hitpoints,
@@ -55,6 +58,7 @@ this.assassin_southern_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.m.Names = this.Const.Strings.SouthernNames;
 		this.m.LastNames = this.Const.Strings.SouthernNamesLast;
 		this.m.IsCombatBackground = true;
+		this.m.IsOutlawBackground = true;
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[3];
 		this.m.PerkTreeDynamic = {
 			Weapon = [

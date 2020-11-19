@@ -26,9 +26,10 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 			"trait.asthmatic",
 			"trait.spartan",
 			"trait.disloyal",
-			"trait.loyal"
+			"trait.loyal",
+			"trait.double_tongued"
 		];
-		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.TidyMale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.All;
@@ -182,7 +183,7 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 		{
 			return
 		}
-		this.m.Faces = this.Const.Faces.AllFemale;
+		this.m.Faces = this.Const.Faces.AllWhiteFemale;
 		this.m.Beards = null;
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.BeardChance = 0;

@@ -27,7 +27,7 @@ this.legend_demon_alp_trophy_blueprint <- this.inherit("scripts/crafting/bluepri
 
 	function isQualified()
 	{
-		return true;
+		return this.blueprint.isQualified();
 	}
 	
 	function onCraft( _stash )

@@ -13,9 +13,11 @@ this.pimp_background <- this.inherit("scripts/skills/backgrounds/character_backg
 			"trait.fear_undead",
 			"trait.fear_beasts",
 			"trait.fear_greenskins",
+			"trait.fear_nobles",
 			"trait.hate_undead",
 			"trait.hate_greenskins",
 			"trait.hate_beasts",
+			"trait.hate_nobles",
 			"trait.iron_jaw",
 			"trait.clubfooted",
 			"trait.insecure",
@@ -30,7 +32,7 @@ this.pimp_background <- this.inherit("scripts/skills/backgrounds/character_backg
 			"trait.deathwish",
 			"trait.bloodthirsty"
 		];
-		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.TidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Tidy;

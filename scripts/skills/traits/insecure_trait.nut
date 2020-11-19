@@ -21,7 +21,8 @@ this.insecure_trait <- this.inherit("scripts/skills/traits/character_trait", {
 			"trait.aggressive",
 			"trait.pragmatic",
 			"trait.ambitious",
-			"trait.natural"
+			"trait.natural",
+			"trait.gift_of_people"
 		];
 	}
 

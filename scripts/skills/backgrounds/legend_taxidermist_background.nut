@@ -28,7 +28,7 @@ this.legend_taxidermist_background <- this.inherit("scripts/skills/backgrounds/c
 			"the Trinket Maker",
 			"the Collector"
 		];
-		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.TidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Tidy;

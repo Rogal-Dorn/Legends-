@@ -43,7 +43,7 @@ this.legend_armor_named_tabard <- this.inherit("scripts/items/legend_armor/legen
 		this.m.SpriteBack = "bust_tabard_named_" + variant;
 		this.m.SpriteDamagedBack = "bust_tabard_named_" + variant + "_damaged";
 		this.m.SpriteCorpseBack = "bust_tabard_named_" + variant + "_dead";
-		this.m.Icon = "legend_armor/tabard_named_" + variant + ".png";
+		this.m.Icon = "legend_armor/icon_tabard_named_" + variant + ".png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "legend_armor/icon_tabard_named_" + variant + ".png";
 		this.m.OverlayIconLarge = "legend_armor/inventory_tabard_named_" + variant + ".png";
@@ -91,4 +91,3 @@ this.legend_armor_named_tabard <- this.inherit("scripts/items/legend_armor/legen
 	}
 
 });
-

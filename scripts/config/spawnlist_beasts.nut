@@ -375,7 +375,7 @@ gt.Const.World.Spawn.HexenAndMore <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.UnholdBog,
-					Cost = 51
+					Cost = 50
 				}
 			]
 		},
@@ -539,7 +539,7 @@ gt.Const.World.Spawn.HexenAndNoSpiders <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.UnholdBog,
-					Cost = 51
+					Cost = 50
 				}
 			]
 		},
@@ -700,7 +700,7 @@ gt.Const.World.Spawn.LegendHexeLeader <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.UnholdBog,
-					Cost = 51
+					Cost = 50
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendRockUnhold,

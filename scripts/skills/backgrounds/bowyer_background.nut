@@ -26,7 +26,8 @@ this.bowyer_background <- this.inherit("scripts/skills/backgrounds/character_bac
 			"trait.cocky",
 			"trait.dumb",
 			"trait.brute",
-			"trait.bloodthirsty"
+			"trait.bloodthirsty",
+			"trait.firm"
 		];
 		this.m.ExcludedTalents = [
 			this.Const.Attributes.MeleeSkill
@@ -37,7 +38,7 @@ this.bowyer_background <- this.inherit("scripts/skills/backgrounds/character_bac
 			"the Arrowmaker",
 			"the Patient"
 		];
-		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.TidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Tidy;
@@ -91,7 +92,7 @@ this.bowyer_background <- this.inherit("scripts/skills/backgrounds/character_bac
 		{
 			return;
 		}
-		this.m.Faces = this.Const.Faces.AllFemale;
+		this.m.Faces = this.Const.Faces.AllWhiteFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;

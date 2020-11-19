@@ -87,33 +87,27 @@ gt.Const.World.Spawn.BanditRoamers <-
 			[
 				{
 					Type = this.Const.World.Spawn.Troops.LegendPeasantButcher,
-					Cost = 15,
-					Roll = true
+					Cost = 20
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendPeasantMinstrel,
-					Cost = 15,
-					Roll = true
+					Cost = 15
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendPeasantWoodsman,
-					Cost = 15,
-					Roll = true
+					Cost = 15
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendPeasantMiner,
-					Cost = 15,
-					Roll = true
+					Cost = 20
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendPeasantMonk,
-					Cost = 20,
-					Roll = true
+					Cost = 20
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendPeasantFarmhand,
-					Cost = 15,
-					Roll = true
+					Cost = 15
 				}
 			]
 		},
@@ -204,33 +198,27 @@ gt.Const.World.Spawn.BanditScouts <-
 			[
 				{
 					Type = this.Const.World.Spawn.Troops.LegendPeasantButcher,
-					Cost = 15,
-					Roll = true
+					Cost = 15
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendPeasantMinstrel,
-					Cost = 15,
-					Roll = true
+					Cost = 15
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendPeasantWoodsman,
-					Cost = 15,
-					Roll = true
+					Cost = 15
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendPeasantMiner,
-					Cost = 15,
-					Roll = true
+					Cost = 20
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendPeasantMonk,
-					Cost = 20,
-					Roll = true
+					Cost = 20
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendPeasantFarmhand,
-					Cost = 15,
-					Roll = true
+					Cost = 15
 				}
 			]
 		},
@@ -364,33 +352,27 @@ gt.Const.World.Spawn.BanditRaiders <-
 			[
 				{
 					Type = this.Const.World.Spawn.Troops.LegendPeasantButcher,
-					Cost = 20,
-					Roll = true
+					Cost = 20
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendPeasantMinstrel,
-					Cost = 15,
-					Roll = true
+					Cost = 15
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendPeasantWoodsman,
-					Cost = 20,
-					Roll = true
+					Cost = 20
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendPeasantMiner,
-					Cost = 15,
-					Roll = true
+					Cost = 15
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendPeasantMonk,
-					Cost = 20,
-					Roll = true
+					Cost = 20
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendPeasantFarmhand,
-					Cost = 15,
-					Roll = true
+					Cost = 15
 				}
 			]
 		},
@@ -499,33 +481,27 @@ gt.Const.World.Spawn.BanditDefenders <-
 			[
 				{
 					Type = this.Const.World.Spawn.Troops.LegendPeasantButcher,
-					Cost = 20,
-					Roll = true
+					Cost = 20
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendPeasantMinstrel,
-					Cost = 15,
-					Roll = true
+					Cost = 15
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendPeasantWoodsman,
-					Cost = 20,
-					Roll = true
+					Cost = 20
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendPeasantMiner,
-					Cost = 15,
-					Roll = true
+					Cost = 15
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendPeasantMonk,
-					Cost = 25,
-					Roll = true
+					Cost = 25
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendPeasantFarmhand,
-					Cost = 15,
-					Roll = true
+					Cost = 15
 				}
 			]
 		},

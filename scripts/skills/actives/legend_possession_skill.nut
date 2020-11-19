@@ -58,9 +58,15 @@ this.legend_possession_skill <- this.inherit("scripts/skills/skill", {
 			return false;
 		}
 
-		local target = _targetTile.getEntity();
+		local target = _targetTile.getEntity();		
+		local actor = this.getContainer().getActor();
 
-		if (!target.getFlags().has("IsSummoned"))
+		if (!actor.isAlliedWith(target))
+		{
+			return false;
+		}		
+
+		if (!target.getFlags().has("IsSummoned") && !target.getFlags().has("PlayerZombie") && !target.getFlags().has("PlayerSkeleton") && !target.getFlags().has("zombie_minion"))
 		{
 			return false;
 		}

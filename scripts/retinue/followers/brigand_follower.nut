@@ -21,7 +21,8 @@ this.brigand_follower <- this.inherit("scripts/retinue/follower", {
 
 	function onUpdate()
 	{
-		this.World.Assets.m.IsBrigand = true;
+		if ("IsBrigand" in this.World.Assets.m)
+			this.World.Assets.m.IsBrigand = true;
 	}
 
 	function onEvaluate()

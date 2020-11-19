@@ -19,7 +19,8 @@ this.apprentice_background <- this.inherit("scripts/skills/backgrounds/character
 			"trait.asthmatic",
 			"trait.athletic",
 			"trait.brute",
-			"trait.bloodthirsty"
+			"trait.bloodthirsty",
+			"trait.aggressive"
 		];
 		this.m.Titles = [
 			"the Learner",
@@ -32,7 +33,7 @@ this.apprentice_background <- this.inherit("scripts/skills/backgrounds/character
 			"the Kid",
 			"the Bright"
 		];
-		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.YoungMale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.All;
@@ -88,7 +89,7 @@ this.apprentice_background <- this.inherit("scripts/skills/backgrounds/character
 			return;
 		}
 
-		this.m.Faces = this.Const.Faces.AllFemale;
+		this.m.Faces = this.Const.Faces.AllWhiteFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;

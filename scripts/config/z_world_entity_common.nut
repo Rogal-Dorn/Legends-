@@ -231,7 +231,6 @@ gt.Const.World.Common.addUnitsToCombat = function( _into, _partyList, _resources
 	}
 }
 
-
 gt.Const.World.Common.dynamicSelectTroop <- function (_list, _resources, _scale, _map, _credits)
 {
 	local candidates = [];
@@ -253,7 +252,7 @@ gt.Const.World.Common.dynamicSelectTroop <- function (_list, _resources, _scale,
 			dateToSkip = 30
 			break;
 	}
-	// dateToSkip = 90;
+	dateToSkip = 90;
 
 	//Go through each Item in the spawn list (which are structures defining enemies)
 	foreach (t in _list)
@@ -430,41 +429,44 @@ gt.Const.World.Common.dynamicSelectTroop <- function (_list, _resources, _scale,
 			return _credits;
 		}
 
-		if (!("Types" in troop))
+		if (!("SortedTypes" in troop))
 		{
 			continue;
 		}
 
-		local points = troop.Types[0].Cost;
-		if (troop.Types.len() > 1)
+		local points = troop.SortedTypes[0].Cost;
+		if (troop.SortedTypes.len() > 1)
 		{
 			local meanScaled = troop.MinMean + _scale * (troop.MaxMean - troop.MinMean)
 			points = this.Math.max(points, this.Const.LegendMod.BoxMuller.BoxMuller(meanScaled, troop.Deviation));
 			//this.logInfo(cat + " Mean " + meanScaled + " : Deviation " + troops.Deviation + " : Points " + points)
 		}
+
 		//Always purchase the most expensive unit we can
-		for (local i = troop.Types.len() - 1; i >= 0; i = --i)
+		for (local i = troop.SortedTypes.len() - 1; i >= 0; i = --i)
 		{
-			if (troop.Types[i].Cost > points)
+			if (troop.SortedTypes[i].Cost > points)
 			{
 				continue;
 			}
 
-			if ("MaxR" in troop.Types[i] && _resources > troop.Types[i].MaxR)
+			local index = this.Math.rand(0, troop.SortedTypes[i].Types.len() - 1);
+
+			if ("MaxR" in troop.SortedTypes[i].Types[index] && _resources > troop.SortedTypes[i].Types[index].MaxR)
 			{
 				continue;
 			}
 
-			if ("MinR" in  troop.Types[i])
+			if ("MinR" in  troop.SortedTypes[i].Types[index])
 			{
 				local minr = 0;
-				if (typeof(troop.Types[i].MinR) == "function")
+				if (typeof(troop.SortedTypes[i].Types[index].MinR) == "function")
 				{
-					minr = troop.Types[i].MinR()
+					minr = troop.SortedTypes[i].Types[index].MinR()
 				}
 				else
 				{
-					minr = troop.Types[i].MinR;
+					minr = troop.SortedTypes[i].Types[index].MinR;
 				}
 
 				if (_resources < minr && this.World.getTime().Days <= dateToSkip)
@@ -473,11 +475,11 @@ gt.Const.World.Common.dynamicSelectTroop <- function (_list, _resources, _scale,
 				}
 			}
 
-			local key = troop.Types[i].Type.Script;
+			local key = troop.SortedTypes[i].Types[index].Type.Script;
 			if (!(key in _map))
 			{
 				_map[key] <- {
-					Type = troop.Types[i].Type,
+					Type = troop.SortedTypes[i].Types[index].Type,
 					Num = 0
 				}
 			}
@@ -499,15 +501,32 @@ gt.Const.World.Common.dynamicSelectTroop <- function (_list, _resources, _scale,
 						continue;
 					}
 				}
+			} else if ("Roll" in troop.SortedTypes[i].Types[index]) {
+				if (typeof(troop.SortedTypes[i].Types[index].Roll) == "function")
+				{
+					if (!troop.SortedTypes[i].Types[index].Roll(_map[key].Num))
+					{
+						continue;
+					}
+				}
+				else
+				{
+					local chance = 1.0 / (1.0 + this.Math.pow(_map[key].Num, 0.5)) * 100
+					if (this.Math.rand(1, 100) > chance)
+					{
+						continue;
+					}
+				}
 			}
 
 
-			_credits -= troop.Types[i].Cost;
+
+			_credits -= troop.SortedTypes[i].Types[index].Cost;
 			_map[key].Num += 1
 
-			if ("Guards" in troop.Types[i])
+			if ("Guards" in troop.SortedTypes[i].Types[index])
 			{
-				_credits = this.Const.World.Common.dynamicSelectTroop(troop.Types[i].Guards, _resources, _scale, _map, _credits)
+				_credits = this.Const.World.Common.dynamicSelectTroop(troop.SortedTypes[i].Types[index].Guards, _resources, _scale, _map, _credits)
 			}
 			break;
 		}
@@ -985,37 +1004,56 @@ foreach(k,v in this.Const.World.Spawn)
 	//this.logInfo("Calculating costs for " + k)
 	foreach (i, _t in v.Troops)
 	{
-		if (_t.Types.len() == 1)
+		local costMap = {}
+		foreach (tt in _t.Types) {
+			if (!(tt.Cost in costMap)) {
+				costMap[tt.Cost] <- []
+			}
+			costMap[tt.Cost].append(tt)
+		}
+
+		_t.SortedTypes <- []
+
+		foreach (k,v in costMap) {
+			_t.SortedTypes.append({
+				Cost = k,
+				Types = v
+			})
+		}
+
+		if (_t.SortedTypes.len() == 1)
 		{
 			continue;
 		}
 
-		v.Troops[i].Types.sort(this.onCostCompare)
+		_t.SortedTypes.sort(this.onCostCompare)
+
+		//v.Troops[i].SortedTypes.sort(this.onCostCompare)
 
 		local mean = 0;
 		local variance = 0;
 		local deviation = 0;
 
-		foreach (o in v.Troops[i].Types)
+		foreach (o in v.Troops[i].SortedTypes)
 		{
 			mean += o.Cost;
 		}
-		mean = (mean * 1.0) / ( v.Troops[i].Types.len() * 1.0)
+		mean = (mean * 1.0) / ( v.Troops[i].SortedTypes.len() * 1.0)
 
-		foreach (o in v.Troops[i].Types)
+		foreach (o in v.Troops[i].SortedTypes)
 		{
 			local d = o.Cost - mean;
 			variance += (d * d);
 		}
-		variance = (variance * 1.0) / ( v.Troops[i].Types.len() * 1.0)
+		variance = (variance * 1.0) / ( v.Troops[i].SortedTypes.len() * 1.0)
 		deviation = this.Math.pow(variance, 0.5)
 
 
 		v.Troops[i].Mean <- mean;
 		v.Troops[i].Variance <- variance;
 		v.Troops[i].Deviation <- deviation;
-		v.Troops[i].MinMean <- v.Troops[i].Types[0].Cost - deviation;
-		v.Troops[i].MaxMean <-  v.Troops[i].Types[v.Troops[i].Types.len() - 1].Cost + deviation;
+		v.Troops[i].MinMean <- v.Troops[i].SortedTypes[0].Cost - deviation;
+		v.Troops[i].MaxMean <-  v.Troops[i].Types[v.Troops[i].SortedTypes.len() - 1].Cost + deviation;
 		//this.logInfo(" mean  " + mean + " variance " + variance + " deviation " + deviation + " min " + v.Troops[i].MinMean + " max " + v.Troops[i].MaxMean)
 	}
 
@@ -1057,10 +1095,10 @@ foreach(k,v in this.Const.World.Spawn)
 // 	}
 // }
 
-// local weight = [100, 300, 600];
+// local weight = [30, 100, 160, 200];
 // local pList = [
 
-// 	this.Const.World.Spawn.Southern
+// 	this.Const.World.Spawn.Peasants
 
 // ];
 // foreach ( p in pList )

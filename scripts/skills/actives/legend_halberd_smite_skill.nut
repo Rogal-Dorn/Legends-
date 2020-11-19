@@ -107,7 +107,7 @@ this.legend_halberd_smite_skill <- this.inherit("scripts/skills/skill", {
 			return success;
 		}
 
-		if (success && _targetTile.IsOccupiedByActor && !target.isNonCombatant())
+		if (success && _targetTile.IsOccupiedByActor && !target.isNonCombatant() && target.isAlive() && !target.isDying())
 		{
 			target.getSkills().add(this.new("scripts/skills/effects/staggered_effect"));
 

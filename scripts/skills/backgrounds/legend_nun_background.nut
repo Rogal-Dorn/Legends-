@@ -27,7 +27,9 @@ this.legend_nun_background <- this.inherit("scripts/skills/backgrounds/character
 			"trait.iron_lungs",
 			"trait.craven",
 			"trait.greedy",
-			"trait.bloodthirsty"
+			"trait.bloodthirsty",
+			"trait.aggressive",
+			"trait.double_tongued"
 		];
 		this.m.Titles = [
 			"the Pious",
@@ -38,7 +40,7 @@ this.legend_nun_background <- this.inherit("scripts/skills/backgrounds/character
 			"the Quiet",
 			"the Calm"
 		];
-		this.m.Faces = this.Const.Faces.AllFemale;
+		this.m.Faces = this.Const.Faces.AllWhiteFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;

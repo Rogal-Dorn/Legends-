@@ -23,14 +23,16 @@ this.messenger_background <- this.inherit("scripts/skills/backgrounds/character_
 			"trait.dumb",
 			"trait.fat",
 			"trait.gluttonous",
-			"trait.brute"
+			"trait.brute",
+			"trait.heavy",
+			"trait.unpredictable"
 		];
 		this.m.Titles = [
 			"the Messenger",
 			"the Courier",
 			"the Runner"
 		];
-		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.CommonMale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.Tidy;

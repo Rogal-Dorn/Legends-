@@ -43,7 +43,9 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 			"trait.drunkard",
 			"trait.disloyal",
 			"trait.loyal",
-			"trait.dumb"
+			"trait.dumb",
+			"trait.pragmatic",
+			"trait.predictable"			
 		];
 		this.m.Titles = [
 			"the Assassin",
@@ -51,7 +53,7 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 			"the Rogue",
 			"the Sly"
 		];
-		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.TidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Tidy;

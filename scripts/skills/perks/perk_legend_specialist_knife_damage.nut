@@ -17,52 +17,25 @@ this.perk_legend_specialist_knife_damage <- this.inherit("scripts/skills/skill",
 	{
 		local actor = this.getContainer().getActor();
 		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		if (item != null && item.getID() == "weapon.knife")
+		if (item == null) return;
+		local id = item.getID();
+
+		if (id == "weapon.knife" || id == "weapon.legend_shiv")
 		{
 			_properties.DamageRegularMin += 4;
 			_properties.DamageRegularMax += 12;
 		}
 
-		if (item != null && item.getID() == "weapon.legend_shiv")
-		{
-			_properties.DamageRegularMin += 4;
-			_properties.DamageRegularMax += 12;
-		}
-
-		if (item != null && item.getID() == "weapon.dagger" )
+		if (id == "weapon.dagger" || id == "weapon.rondel_dagger" || id == "weapon.named_dagger" || id == "weapon.obsidian_dagger" || id == "weapon.legend_redback_dagger" || id == "weapon.goblin_notched_blade" || id == "weapon.qatal_dagger" || id == "weapon.named_qatal_dagger")
 		{
 			_properties.DamageRegularMin += 1;
 			_properties.DamageRegularMax += 4;
 		}
-
-		if (item != null && item.getID() == "weapon.rondel_dagger" )
+		if (item != null && (item.getID() == "weapon.qatal_dagger" || item.getID() == "weapon.named_qatal_dagger"))
 		{
 			_properties.DamageRegularMin += 1;
 			_properties.DamageRegularMax += 4;
-		}
-
-		if (item != null && item.getID() == "weapon.named_dagger" )
-		{
-			_properties.DamageRegularMin += 1;
-			_properties.DamageRegularMax += 4;
-		}
-
-		if (item != null && item.getID() == "weapon.obsidian_dagger" )
-		{
-			_properties.DamageRegularMin += 1;
-			_properties.DamageRegularMax += 4;
-		}
-
-		if (item != null && item.getID() == "weapon.legend_redback_dagger" )
-		{
-			_properties.DamageRegularMin += 1;
-			_properties.DamageRegularMax += 4;
-		}
-		if (item != null && item.getID() == "weapon.goblin_notched_blade" )
-		{
-			_properties.DamageRegularMin += 1;
-			_properties.DamageRegularMax += 4;
-		}
+		}		
 	}
 
 });

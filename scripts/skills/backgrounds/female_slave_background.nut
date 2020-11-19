@@ -45,13 +45,16 @@ this.female_slave_background <- this.inherit("scripts/skills/backgrounds/charact
 			"trait.athletic",
 			"trait.hate_beasts",
 			"trait.hate_undead",
-			"trait.hate_greenskins"
+			"trait.hate_greenskins",
+			"trait.hate_nobles",
+			"trait.aggressive",
+			"trait.ambitious"
 		];
 		this.m.ExcludedTalents = [
 			this.Const.Attributes.Hitpoints,
 			this.Const.Attributes.Bravery
 		];
-		this.m.Faces = this.Const.Faces.AllFemale;
+		this.m.Faces = this.Const.Faces.AllWhiteFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;

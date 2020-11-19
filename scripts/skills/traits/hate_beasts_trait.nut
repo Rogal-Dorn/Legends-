@@ -12,7 +12,8 @@ this.hate_beasts_trait <- this.inherit("scripts/skills/traits/character_trait", 
 			"trait.craven",
 			"trait.dastard",
 			"trait.fainthearted",
-			"trait.fear_beasts"
+			"trait.fear_beasts",
+			"trait.legend_peaceful"
 		];
 	}
 

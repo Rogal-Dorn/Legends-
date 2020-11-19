@@ -42,6 +42,12 @@ this.unhold_frost <- this.inherit("scripts/entity/tactical/enemies/unhold", {
 		head.Saturation = body.Saturation;
 		head.Color = body.Color;
 		this.addSprite("helmet");
+		// this.addSprite("helmet_damage");
+		// this.addSprite("helmet_helm");
+		// this.addSprite("helmet_top");
+		// this.addSprite("helmet_vanity");
+		// this.addSprite("accessory");
+		// this.addSprite("accessory_special");
 		this.addDefaultStatusSprites();
 		this.getSprite("status_rooted").Scale = 0.65;
 		this.setSpriteOffset("status_rooted", this.createVec(-10, 16));
@@ -57,27 +63,32 @@ this.unhold_frost <- this.inherit("scripts/entity/tactical/enemies/unhold", {
 		this.m.Skills.add(this.new("scripts/skills/actives/sweep_zoc_skill"));
 		this.m.Skills.add(this.new("scripts/skills/actives/fling_back_skill"));
 		this.m.Skills.add(this.new("scripts/skills/actives/unstoppable_charge_skill"));
-				 if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
-			{
+		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+		{
 			b.MeleeSkill += 10;
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_muscularity"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_battleheart"));
 			this.m.Hitpoints = 2 * b.Hitpoints;
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
-			}
+		}
 
 	}
 
-	function onFactionChanged()
-	{
-		this.actor.onFactionChanged();
-		local flip = this.isAlliedWithPlayer();
-		this.getSprite("body").setHorizontalFlipping(flip);
-		this.getSprite("injury").setHorizontalFlipping(flip);
-		this.getSprite("armor").setHorizontalFlipping(flip);
-		this.getSprite("head").setHorizontalFlipping(flip);
-		this.getSprite("helmet").setHorizontalFlipping(flip);
-	}
+	// function onFactionChanged()
+	// {
+	// 	this.actor.onFactionChanged();
+	// 	local flip = this.isAlliedWithPlayer();
+	// 	this.getSprite("body").setHorizontalFlipping(flip);
+	// 	this.getSprite("injury").setHorizontalFlipping(flip);
+	// 	this.getSprite("armor").setHorizontalFlipping(flip);
+	// 	this.getSprite("head").setHorizontalFlipping(flip);
+	// 	this.getSprite("helmet").setHorizontalFlipping(flip);
+	// 	this.getSprite("helmet_damage").setHorizontalFlipping(flip);
+	// 	this.getSprite("helmet_vanity_lower").setHorizontalFlipping(flip);
+	// 	this.getSprite("helmet_helm").setHorizontalFlipping(flip);
+	// 	this.getSprite("helmet_top").setHorizontalFlipping(flip);
+	// 	this.getSprite("helmet_vanity").setHorizontalFlipping(flip);
+	// }
 
 	function assignRandomEquipment()
 	{

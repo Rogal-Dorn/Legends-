@@ -6,8 +6,8 @@ this.legend_warlock_background <- this.inherit("scripts/skills/backgrounds/chara
 		this.m.ID = "background.legend_warlock";
 		this.m.Icon = "ui/backgrounds/warlock_02.png";
 		this.m.Name = "Warlock";
-		this.m.HiringCost = 2000;
-		this.m.DailyCost = 50;
+		this.m.HiringCost = 1000;
+		this.m.DailyCost = 20;
 		this.m.Excluded = [
 			"trait.brave",
 			"trait.athletic",

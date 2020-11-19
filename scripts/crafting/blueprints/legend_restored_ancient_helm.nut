@@ -18,7 +18,7 @@ this.legend_restored_ancient_helm <- this.inherit("scripts/crafting/blueprint", 
 
 	function isQualified()
 	{
-		return true;
+		return this.blueprint.isQualified();
 	}
 
 	function onCraft( _stash )

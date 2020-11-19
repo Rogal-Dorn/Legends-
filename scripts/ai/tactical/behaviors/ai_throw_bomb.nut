@@ -164,17 +164,17 @@ this.ai_throw_bomb <- this.inherit("scripts/ai/tactical/behavior", {
 		}
 		else
 		{
-			if (_skill.getID() == "actives.throw_fire_bomb")
+			if (this.m.IsFireBombAvailable && _skill.getID() == "actives.throw_fire_bomb")
 			{
 				return this.evaluateFireBomb(_entity, tiles, _skill);
 			}
 
-			if (_skill.getID() == "actives.throw_daze_bomb")
+			if (this.m.IsDazeBombAvailable && _skill.getID() == "actives.throw_daze_bomb")
 			{
 				return this.evaluateDazeBomb(_entity, tiles, _skill);
 			}
 
-			if (_skill.getID() == "actives.throw_smoke_bomb")
+			if (this.m.IsSmokeBombAvailable && _skill.getID() == "actives.throw_smoke_bomb")
 			{
 				return this.evaluateSmokeBomb(_entity, tiles, _skill);
 			}

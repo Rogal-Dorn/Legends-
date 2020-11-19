@@ -27,7 +27,7 @@ this.houndmaster_background <- this.inherit("scripts/skills/backgrounds/characte
 			"the Kennelmaster",
 			"the Dogkeeper"
 		];
-		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.AllMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;

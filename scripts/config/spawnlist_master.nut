@@ -1694,6 +1694,17 @@ function calculateCosts( _p )
 	_p.sort(this.onCostCompare);
 }
 
+this.calculateCosts(this.Const.World.Spawn.CaravanEscort);
+this.calculateCosts(this.Const.World.Spawn.CaravanSouthernEscort);
+
+
+local spawnMap = {};
+foreach (t in gt.Const.World.Spawn.Troops)
+{
+	spawnMap[t.ID] <- t;
+}
+gt.Const.World.Spawn.TroopsMap <- spawnMap;
+
 // function validateToopsMap()
 // {
 // 	foreach (t in this.Const.EntityType)
@@ -1703,7 +1714,7 @@ function calculateCosts( _p )
 // 			continue;
 // 		}
 
-// 		// if (!t in this.Const.World.Spawn.TroopsMap)
+// 		if (!t in this.Const.World.Spawn.TroopsMap)
 // 		{
 // 			this.logInfo("**** NOT IN TROOPSMAP " + t)
 // 		}
@@ -1711,14 +1722,5 @@ function calculateCosts( _p )
 
 // 	}
 // }
-
-this.calculateCosts(this.Const.World.Spawn.CaravanEscort);
-
-local spawnMap = {};
-foreach (t in gt.Const.World.Spawn.Troops)
-{
-	spawnMap[t.ID] <- t;
-}
-gt.Const.World.Spawn.TroopsMap <- spawnMap;
 
 // this.validateToopsMap();

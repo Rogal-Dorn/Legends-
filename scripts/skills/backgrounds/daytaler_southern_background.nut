@@ -15,7 +15,8 @@ this.daytaler_southern_background <- this.inherit("scripts/skills/backgrounds/da
 			"trait.fear_undead",
 			"trait.hate_beasts",
 			"trait.hate_undead",
-			"trait.hate_greenskins"
+			"trait.hate_greenskins",
+			"trait.hate_nobles",
 		];
 		this.m.Names = this.Const.Strings.SouthernNames;
 		this.m.LastNames = this.Const.Strings.SouthernNamesLast;

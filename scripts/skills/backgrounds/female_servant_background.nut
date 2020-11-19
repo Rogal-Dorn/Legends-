@@ -16,6 +16,7 @@ this.female_servant_background <- this.inherit("scripts/skills/backgrounds/chara
 			"trait.hate_undead",
 			"trait.hate_greenskins",
 			"trait.hate_beasts",
+			"trait.hate_nobles",
 			"trait.impatient",
 			"trait.iron_jaw",
 			"trait.brute",
@@ -31,9 +32,10 @@ this.female_servant_background <- this.inherit("scripts/skills/backgrounds/chara
 			"trait.determined",
 			"trait.greedy",
 			"trait.sure_footing",
-			"trait.bloodthirsty"
+			"trait.bloodthirsty",
+			"trait.aggressive"
 		];
-		this.m.Faces = this.Const.Faces.AllFemale;
+		this.m.Faces = this.Const.Faces.AllWhiteFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.Old;
 		this.m.Beards = null;

@@ -639,6 +639,7 @@ this.hunting_lindwurms_contract <- this.inherit("scripts/contracts/contract", {
 		{
 			if (this.m.Target != null && !this.m.Target.isNull())
 			{
+				this.m.Target.setAttackableByAI(true);
 				this.m.Target.getSprite("selection").Visible = false;
 				this.m.Target.setOnCombatWithPlayerCallback(null);
 				this.m.Target.getController().getBehavior(this.Const.World.AI.Behavior.ID.Flee).setEnabled(true);

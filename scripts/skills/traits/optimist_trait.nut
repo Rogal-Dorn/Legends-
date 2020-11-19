@@ -13,7 +13,8 @@ this.optimist_trait <- this.inherit("scripts/skills/traits/character_trait", {
 			"trait.insecure",
 			"trait.dastard",
 			"trait.paranoid",
-			"trait.irrational"
+			"trait.irrational",
+			"trait.double_tongued"
 		];
 	}
 

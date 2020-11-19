@@ -24,12 +24,7 @@ this.noble_fish_helm_layered_blueprint <- this.inherit("scripts/crafting/bluepri
 
 	function isQualified()
 	{
-		if (!this.World.LegendsMod.Configs().LegendArmorsEnabled())
-		{
-			return false
-		}
-
-		return this.blueprint.isQualified()
+		return this.World.LegendsMod.Configs().LegendArmorsEnabled() && this.blueprint.isQualified();
 	}
 
 
