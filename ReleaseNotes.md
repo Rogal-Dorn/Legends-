@@ -4185,3 +4185,4 @@ Troupe Scenario Event (Thanks Luft)
 Mercenary Favorite Enemy no longer errors out after you kill a ranged mercenary
 Favoured Enemy skills hide when in combat and there is no enemy of that type (e.g. a fight vs Nomads doesn't display Direwolf anymore)
   -> These still all show up on the main inventory/character screen
+Scrolls don't error the game out when trying to load then
