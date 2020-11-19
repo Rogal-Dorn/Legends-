@@ -116,7 +116,7 @@ this.hedge_knight_background <- this.inherit("scripts/skills/backgrounds/charact
 		}
 
 		this.m.Faces = this.Const.Faces.AllWhiteFemale;
-		this.m.Hairs = this.Const.Hair.AllWhiteFemale;
+		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;
 		this.m.BeardChance = 1;

@@ -89,7 +89,7 @@ this.refugee_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		}
 		this.m.Faces = this.Const.Faces.AllWhiteFemale;
 		this.m.Beards = null;
-		this.m.Hairs = this.Const.Hair.AllWhiteFemale;
+		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.BeardChance = 0;
 		this.m.Bodies = this.Const.Bodies.AllWhiteFemale;
 		this.m.IsFemaleBackground = true;

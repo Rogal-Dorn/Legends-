@@ -19,7 +19,7 @@ this.female_daytaler_background <- this.inherit("scripts/skills/backgrounds/char
 			"trait.hate_nobles",
 		];
 		this.m.Faces = this.Const.Faces.AllWhiteFemale;
-		this.m.Hairs = this.Const.Hair.AllWhiteFemale;
+		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;

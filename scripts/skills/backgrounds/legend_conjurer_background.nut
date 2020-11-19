@@ -34,7 +34,7 @@ this.legend_conjurer_background <- this.inherit("scripts/skills/backgrounds/char
 			"The wild"
 		];
 		this.m.Faces = this.Const.Faces.AllWhiteFemale;
-		this.m.Hairs = this.Const.Hair.AllWhiteFemale;
+		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
 		this.m.Bodies = this.Const.Bodies.AllWhiteFemale;

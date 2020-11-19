@@ -142,7 +142,7 @@ this.flagellant_background <- this.inherit("scripts/skills/backgrounds/character
 		}
 
 		this.m.Faces = this.Const.Faces.OldFemale;
-		this.m.Hairs = this.Const.Hair.AllWhiteFemale;
+		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.Old;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;

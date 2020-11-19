@@ -104,7 +104,7 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 			return
 		}
 		this.m.Faces = this.Const.Faces.AllWhiteFemale;
-		this.m.Hairs = this.Const.Hair.AllWhiteFemale;
+		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
