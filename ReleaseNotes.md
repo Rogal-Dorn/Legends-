@@ -4169,6 +4169,7 @@ Southern assassin is now considered an outlaw background
 Prayer of Hope effect/skill name fixed ; perk description updated to indicate 20%
 Cultist's specialist hood/armor skills tweaked to give bonuses after all other perks have gone ; should now work with things like fort. mind consistently rather than sometimes working and sometimes not
 the Hide skill now displays the amount of rounds the character will be hidden in the active skill & turns remaining in the effect icon that's applied
+No longer lose items randomly for having bags or retinue carts (Thanks Leonion)
 
 **Spelling/Typos**
 White Wolf Contract
