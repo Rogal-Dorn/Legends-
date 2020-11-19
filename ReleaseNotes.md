@@ -4161,6 +4161,7 @@ Cultist's specialist hood/armor skills tweaked to give bonuses after all other p
 Fixes variance of Dynamic spawn lists when troop cost is equal (Thanks to Proman for pointing this out)
 the Hide skill now displays the amount of rounds the character will be hidden in the active skill & turns remaining in the effect icon that's applied
 No longer lose items randomly for having bags or retinue carts (Thanks Leonion)
+Should no longer see non layered named armors
 
 **Spelling/Typos**
 White Wolf Contract
