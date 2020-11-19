@@ -9,7 +9,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		Hairs = null,
 		HairColors = null,
 		Beards = null,
-		Bodies = this.Const.Bodies.AllWhiteMale,
+		Bodies = this.Const.Bodies.AllMale,
 		Ethnicity = 0,
 		Level = 1,
 		BeardChance = 60,
