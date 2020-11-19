@@ -391,6 +391,7 @@ gt.Const.LegendMod.GetFavoriteEnemyValue <- function ( _type )
 		value = 12;
 		break;
 		case "this.Const.EntityType.Mercenary":
+		case "this.Const.EntityType.MercenaryRanged":
 		value = 4;
 		break;
 		case "this.Const.EntityType.HedgeKnight":
@@ -424,7 +425,6 @@ gt.Const.LegendMod.GetFavoriteEnemyValue <- function ( _type )
 		value = 2;
 		break;
 		case "this.Const.EntityType.BanditRabble":
-		value = 30;
 		case "this.Const.EntityType.BanditRabblePoacher":
 		value = 30;
 		break;
