@@ -53,7 +53,7 @@ this.female_thief_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Bodies = this.Const.Bodies.AllWhiteFemale;
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.NeutralMin;
 		this.m.IsFemaleBackground = true;

@@ -23,7 +23,7 @@ this.female_daytaler_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Bodies = this.Const.Bodies.AllWhiteFemale;
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsLowborn = true;
 		this.m.IsFemaleBackground = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Notorious;
