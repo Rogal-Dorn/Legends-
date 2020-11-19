@@ -19,7 +19,8 @@ this.female_beggar_background <- this.inherit("scripts/skills/backgrounds/charac
 			"trait.fat",
 			"trait.bright",
 			"trait.greedy",
-			"trait.athletic"
+			"trait.athletic",
+			"trait.natural"
 		];
 		this.m.ExcludedTalents = [
 			this.Const.Attributes.Hitpoints,
@@ -92,7 +93,7 @@ this.female_beggar_background <- this.inherit("scripts/skills/backgrounds/charac
 			return;
 		}
 		this.m.IsFemaleBackground = false;
-		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.TidyMale;
 		this.m.HairColors = this.Const.HairColors.Old;
 		this.m.Beards = this.Const.Beards.All;

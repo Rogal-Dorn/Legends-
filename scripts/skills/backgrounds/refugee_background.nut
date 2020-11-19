@@ -27,7 +27,9 @@ this.refugee_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			"trait.determined",
 			"trait.deathwish",
 			"trait.greedy",
-			"trait.bloodthirsty"
+			"trait.bloodthirsty",
+			"trait.aggressive",
+			"trait.natural"
 		];
 		this.m.Titles = [
 			"the Refugee",
@@ -36,7 +38,7 @@ this.refugee_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			"the Derelict",
 			"the Surbated"
 		];
-		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Untidy;
@@ -85,7 +87,7 @@ this.refugee_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		{
 			return
 		}
-		this.m.Faces = this.Const.Faces.AllFemale;
+		this.m.Faces = this.Const.Faces.AllWhiteFemale;
 		this.m.Beards = null;
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.BeardChance = 0;

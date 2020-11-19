@@ -25,7 +25,7 @@ this.gravedigger_background <- this.inherit("scripts/skills/backgrounds/characte
 			"trait.iron_lungs",
 			"trait.optimist"
 		];
-		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.CommonMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;

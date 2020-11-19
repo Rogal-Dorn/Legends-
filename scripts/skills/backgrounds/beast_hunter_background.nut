@@ -28,7 +28,8 @@ this.beast_hunter_background <- this.inherit("scripts/skills/backgrounds/charact
 			"trait.gluttonous",
 			"trait.asthmatic",
 			"trait.craven",
-			"trait.dastard"
+			"trait.dastard",
+			"trait.seductive"
 		];
 		this.m.Titles = [
 			"the Beasthunter",
@@ -38,7 +39,7 @@ this.beast_hunter_background <- this.inherit("scripts/skills/backgrounds/charact
 			"the Trophyhunter",
 			"the Hunter"
 		];
-		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Untidy;
@@ -123,7 +124,7 @@ this.beast_hunter_background <- this.inherit("scripts/skills/backgrounds/charact
 		{
 			return;
 		}
-		this.m.Faces = this.Const.Faces.AllFemale;
+		this.m.Faces = this.Const.Faces.AllWhiteFemale;
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;

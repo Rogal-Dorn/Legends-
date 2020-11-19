@@ -16,14 +16,15 @@ this.disowned_noble_background <- this.inherit("scripts/skills/backgrounds/chara
 			"trait.clumsy",
 			"trait.fragile",
 			"trait.spartan",
-			"trait.clubfooted"
+			"trait.clubfooted",
+			"trait.hate_nobles"
 		];
 		this.m.Titles = [
 			"the Disowned",
 			"the Exiled",
 			"the Disgraced"
 		];
-		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.AllMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;

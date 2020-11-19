@@ -23,7 +23,7 @@ this.legend_skin_ghoul_blood_flask_blueprint <- this.inherit("scripts/crafting/b
 
 	function isQualified()
 	{
-		return true;
+		return this.blueprint.isQualified();
 	}
 
 	function onCraft( _stash )

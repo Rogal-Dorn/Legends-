@@ -18,7 +18,10 @@ this.legend_donkey <- this.inherit("scripts/skills/backgrounds/character_backgro
 			"trait.greedy",
 			"trait.clubfooted",
 			"trait.bright",
-			"trait.asthmatic"
+			"trait.asthmatic",
+			"trait.seductive",
+			"trait.gift_of_people",
+			"trait.double_tongued"
 		];
 		this.m.Faces = this.Const.Faces.Donkey;
 		this.m.Hairs = this.Const.Hair.None;
@@ -151,7 +154,7 @@ this.legend_donkey <- this.inherit("scripts/skills/backgrounds/character_backgro
 				id = 13,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Donkeys provide [color=" + this.Const.UI.Color.PositiveValue + "]+30[/color] stash space, [color=" + this.Const.UI.Color.PositiveValue + "]+50[/color] maximum ammunition storage, [color=" + this.Const.UI.Color.PositiveValue + "]+30[/color] maximum medicine capacity,  [color=" + this.Const.UI.Color.PositiveValue + "]+30[/color] maximum armor parts. These can be increased with perks (may take a moment for the increases to register). "
+				text = "Donkeys provide [color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.Modifiers.Stash + "[/color] stash space, [color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.Modifiers.Ammo + "[/color] maximum ammunition storage, [color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.Modifiers.Meds + "[/color] maximum medicine capacity,  [color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.Modifiers.ArmorParts + "[/color] maximum armor parts. These can be increased with perks (may take a moment for the increases to register). "
 			}
 		];
 

@@ -6,8 +6,8 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.ID = "background.legend_witch";
 		this.m.Icon = "ui/backgrounds/background_wizard_4.png";
 		this.m.Name = "Evoker";
-		this.m.HiringCost = 4000;
-		this.m.DailyCost = 40;
+		this.m.HiringCost = 2000;
+		this.m.DailyCost = 25;
 		this.m.Excluded = [
 			"trait.brave",
 			"trait.athletic",
@@ -33,7 +33,7 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 			"the Clairvoyant",
 			"the Diviner"
 		];
-		this.m.Faces = this.Const.Faces.AllFemale;
+		this.m.Faces = this.Const.Faces.AllWhiteFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
@@ -91,7 +91,7 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 			return;
 		}
 
-		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.CommonMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;

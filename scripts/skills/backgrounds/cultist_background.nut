@@ -14,9 +14,11 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Excluded = [
 			"trait.teamplayer",
 			"trait.fear_undead",
+			"trait.fear_nobles",
 			"trait.hate_beasts",
 			"trait.hate_undead",
 			"trait.hate_greenskins",
+			"trait.hate_nobles",
 			"trait.night_blind",
 			"trait.lucky",
 			"trait.athletic",
@@ -47,7 +49,7 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			"the Zealot"
 		];
 
-		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Untidy;

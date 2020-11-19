@@ -24,7 +24,8 @@ this.female_adventurous_noble_background <- this.inherit("scripts/skills/backgro
 			"trait.fragile",
 			"trait.insecure",
 			"trait.asthmatic",
-			"trait.spartan"
+			"trait.spartan",
+			"trait.hate_nobles"
 		];
 
 		this.m.Faces = this.Const.Faces.PrettyFemale;
@@ -86,7 +87,7 @@ this.female_adventurous_noble_background <- this.inherit("scripts/skills/backgro
 			return;
 		}
 
-		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Name = "Adventurous Lord";
 		this.m.Hairs = this.Const.Hair.TidyMale;
 		this.m.HairColors = this.Const.HairColors.Young;

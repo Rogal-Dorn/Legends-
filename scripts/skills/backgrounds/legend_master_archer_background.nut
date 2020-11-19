@@ -9,8 +9,8 @@ this.legend_master_archer_background <- this.inherit("scripts/skills/backgrounds
 		this.m.BackgroundDescription = "Master Archers have spent years honing their craft, in hunting, in sport, in war. ";
 		this.m.GoodEnding = "While the %companyname% continued on with great success, %name% the hunter eventually saw fit to leave it all behind. They returned to the life of an archer, working for who ever paid the best. %name% rarely showed the grim reality of hunting humans, but you have to imagine they\'d just rather stop doing it. As far as you know, %name% is doing well these days. The archer purchased a bit of land and helps guide nobles on pricy hunting trips.";
 		this.m.BadEnding = "With the decline of the %companyname% readily obvious, %name% the master archer departed from the company and returned to archery contests. Unfortunately, a shoot off went awry while shooting apples off each other\'s heads. The master archer was the better shot, but being better does not help if you\'re dead.";
-		this.m.HiringCost = 8000;
-		this.m.DailyCost = 120;
+		this.m.HiringCost = 1000;
+		this.m.DailyCost = 20;
 		this.m.Excluded = [
 			"trait.weasel",
 			"trait.fear_undead",
@@ -37,7 +37,7 @@ this.legend_master_archer_background <- this.inherit("scripts/skills/backgrounds
 			"One Shot",
 			"Eagle Eye"
 		];
-		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.Untidy;

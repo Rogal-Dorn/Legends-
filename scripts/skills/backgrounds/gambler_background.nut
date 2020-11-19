@@ -31,7 +31,8 @@ this.gambler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			"trait.hesitant",
 			"trait.strong",
 			"trait.tough",
-			"trait.bloodthirsty"
+			"trait.bloodthirsty",
+			"trait.pragmatic"
 		];
 		this.m.Titles = [
 			"Deuces",
@@ -41,7 +42,7 @@ this.gambler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			"the Cardsharper",
 			"the Gambler"
 		];
-		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.CommonMale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.All;
@@ -90,8 +91,8 @@ this.gambler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		{
 			return;
 		}
-		this.m.Name = "Adventurous Lady";
-		this.m.Faces = this.Const.Faces.AllFemale;
+		this.m.Name = "Gambler";
+		this.m.Faces = this.Const.Faces.AllWhiteFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;

@@ -2584,8 +2584,6 @@ While in character screen, press "S" to toggle reserve status
 PSA:  the "A" and "D" keys on the character screen cycle through the bros.
 
 
-
-=======
 https://drive.google.com/open?id=19eUTQMARiH3mRLl5e97g6NPAWPacFjvm
 
 13.0.0 RC 2
@@ -3091,7 +3089,7 @@ Adventurous nobles spawn again (wuxiang)
 Porridge effect works correctly (wuxiang)
 Recruitable Crusader gets stars correctly (wuxiang)
 
-=======
+
 Offhand Puncture nolonger uses main hand dmg (Salty)
 Cultist Sacrifice now has 50% chance to rank up the cultist again (Salty)
 Buckler Bash should nolonger cost 1 fat with mastery (Salty)
@@ -4066,6 +4064,10 @@ Fixes barbarian madman spawning without armor
 Should fix miasma skill
 Fixes some of the noble scenario starting items back to previous (& intended) items
 Minor tweak to beast spawns : Serpents resource-per-unit upped along with Ifrits. (e.g. where you'd previously see 20 serpents you'd now see 16)
+15.0.0.4
+
+**Fixes**
+
 Fixed Brawny incorrect value on some layers and helmets. (Thanks Leonion)
 Updated description of Bloody harvest to specify "All melee attacks"
 fix hollenhound curse neglecting resilience
@@ -4073,10 +4075,106 @@ fix missing non-layered alp helmet
 fix champion behemoths ai and champion sets
 Adds southern enemy classes to favorite enemy perks
 fixes noble fencer spawn crash on legendary difficulty.
+
 Fixes the decoded scrolls [the recipe historians are part of] not saving what they are when the game reloads and just becoming useless
 Adds how many scrolls a character can use to each scroll's tooltip
 Fixes the EXP Reward DISPLAY (doesn't change the actual given amount) at the end of some contracts (caravan, delivery, etc)
   [These numbers are a percentage of the gold reward multiplied by .85: Deliver Item/Money: 25% , Escort Caravan: 50% , Discover Location: 10%]
 Should fix smite skill rarely crashing game when killing an enemy at the very end of the round
+
 Bounty hunter now actually gives money for killing an enemy champion
 Possibly fixes AI units semi-randomly not having Zones of Control [being able to shoot bows next to them, can't shoot by dead body/air, etc]
+Multiple typos, notably Donkey background correctly displays given stash/etc modifiers & Prayer of faith perk description correctly states it gives +20% bonus vs +10% bonus
+Fixes the specialist perks for Knives to work with Qatal Dagger
+
+
+15.0.0.15
+
+**Changes**
+Updated to BB 1.4.0.45 (Poss)
+Rebalance civilian enemies to give more XP and to have less HP (wuxiangjinxing)
+Beggar origin avatar can gain stats and perks by defeating enemies (wuxiangjinxing)
+Add some new traits (Von & wuxiangjinxing)
+
+**Fixes**
+Fixes the decoded scrolls [the recipe historians are part of] not saving what they are when the game reloads and just becoming useless (mwah)
+Adds how many scrolls a character can use to each scroll's tooltip (mwah)
+Fixes the EXP Reward DISPLAY (doesn't change the actual given amount) at the end of some contracts (caravan, delivery, etc) (mwah)
+  [These numbers are a percentage of the gold reward multiplied by .85: Deliver Item/Money: 25% , Escort Caravan: 50% , Discover Location: 10%]
+Fixed Brawny incorrect value on some layers and helmets. (Thanks Leonion)
+Updated description of Bloody harvest to specify "All melee attacks"
+fix hollenhound curse neglecting resilience
+fix missing non-layered alp helmet
+fix champion behemoths ai and champion sets
+Adds southern enemy classes to favorite enemy perks
+fixes noble fencer spawn crash on legendary difficulty.
+Should fix smite skill rarely crashing game when killing an enemy at the very end of the round (mwah)
+Fix misplaced image when using spearwall with a swordstaff (Leonion)
+Fix smite skill not checking if target is dying to apply staggered effect (mwah)
+Fix for modifiers not being recalculated on time (Leonion)
+Fix balance not getting updated when removing body armor (wuxiangjinxing)
+Fix some skills not working due to not getting factions correctly (Leonion)
+Fix special ammos not working correctly (Leonion)
+Only necromancers can use the special effects of grisly scythes (wuxiangjinxing)
+Fix push-advantage not counting new debuff introduced in Legend (grobocop)
+Fix tumble incorrectly reducing AP (wuxiangjinxing)
+Add desert and oasis terrain speed modifier (wuxiangjinxing)
+Fix double-strike not getting removed correctly (Leonion)
+Fix various problems related to repairing (wuxiangjinxing)
+Fix grammar and unclear codes for the 'curse of year' skill (wuxiangjinxing)
+Fix mutual skeleton/zombie on the same character (wuxiangjinxing)
+Fix some named weapons not counted as named (grobocop)
+Fix incorrect codes in albedo, nigredo and citrinitas (wuxiangjinxing)
+Fix darkvul armor not correctly generated (wuxiangjinxing)
+Fix some incorrect codes in the tame-white-wolf event (Leonion)
+Fix knife-specialist not working for qatal dagger (wuxiangjinxing)
+Fix FOM not working properly with 0 fatigue (wuxiangjinxing)
+Remove non-existing skills from AI definitions (grobocop)
+Replace some icon place-holders (Von)
+Bounty hunter now actually gives money for killing an enemy champion
+Possibly fixes AI units semi-randomly not having Zones of Control [being able to shoot bows next to them, can't shoot by dead body/air, etc]
+Multiple typos, notably Donkey background correctly displays given stash/etc modifiers & Prayer of faith perk description correctly states it gives +20% bonus vs +10% bonus
+Fixes the specialist perks for Knives to work with Qatal Dagger
+Cannibal recruitment text updated
+Sisterhood scenario event text updated
+Replace some icon place-holders (Von)
+
+15.0.0.16b
+
+**Changes**
+Updated to BB 1.4.0.46
+
+**Big Fixes/Tweaks**
+Some missing helmets (oops)
+Game pauses on new campaign again
+Zombie resurrection no longer causes them to be untargetable (mwah fixed it but also caused it...)
+Fixes saves failing with some retinue members, namely Lookout
+  -> As a note, this doesn't necessarily fix in game errors with retinue members, just loading saves
+Fixes variance of Dynamic spawn lists when troop cost is equal (Thanks to Proman for pointing this out)
+Should no longer see non layered named armors
+No longer lose items randomly for having bags or retinue carts (Thanks Leonion)
+
+**Small Fixes/Tweaks**
+Female gambler no longer referred to as an "Adventurous Lady"
+Halberd smite causing crashes
+Wind Up causing crashes
+Dog accessory crashing game when character dies with his dog out
+Vengeance active/effect doesn't remove itself when attacked a second time ; properly checks to not stack by accident which could cause rare crash
+Southern assassin is now considered an outlaw background
+Prayer of Hope effect/skill name fixed ; perk description updated to indicate 20%
+Cultist's specialist hood/armor skills tweaked to give bonuses after all other perks have gone ; should now work with things like fort. mind consistently rather than sometimes working and sometimes not
+the Hide skill now displays the amount of rounds the character will be hidden in the active skill & turns remaining in the effect icon that's applied
+Backgrounds no longer spawn with mixed southern/northern heads/bodies
+Skin Ghoul Event Icon now exists but it's technically a dead icon for what should be alive 
+Tabard Icons now show up (Thanks Leo)
+Rich Cloaks now aren't randomly invisible (Also thanks Leo)
+
+**Spelling/Typos**
+White Wolf Contract
+Southerner Favoured Enemy Description
+Hold out Perk signifies +6 hp again
+Fixes War Chant + Drums of Life tooltips ; each giving 5 fatigue and 4 hp respectively
+Cannibal Event tubles to tumbles
+
+**Spelling/Writing**
+Troupe Scenario Event (Thanks Luft)

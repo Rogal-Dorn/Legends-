@@ -22,9 +22,12 @@ this.quartermaster_follower <- this.inherit("scripts/retinue/follower", {
 
 	function onUpdate()
 	{
-		this.World.Assets.m.AmmoMaxAdditional = 100;
-		this.World.Assets.m.MedicineMaxAdditional = 50;
-		this.World.Assets.m.ArmorPartsMaxAdditional = 50;
+		if ("AmmoMaxAdditional" in this.World.Assets.m)
+			this.World.Assets.m.AmmoMaxAdditional = 100;
+		if ("MedicineMaxAdditional" in this.World.Assets.m)
+			this.World.Assets.m.MedicineMaxAdditional  = 50;
+		if ("ArmorPartsMaxAdditional" in this.World.Assets.m)
+			this.World.Assets.m.ArmorPartsMaxAdditional = 50;
 	}
 
 	function onEvaluate()

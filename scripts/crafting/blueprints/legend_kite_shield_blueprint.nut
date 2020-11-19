@@ -3,7 +3,7 @@ this.legend_kite_shield_blueprint <- this.inherit("scripts/crafting/blueprint", 
 	function create()
 	{
 		this.blueprint.create();
-		this.m.ID = "blueprint.legend_wood_blueprint";
+		this.m.ID = "blueprint.legend_kite_shield_blueprint";
 		this.m.Type = this.Const.Items.ItemType.Shield;
 		this.m.PreviewCraftable = this.new("scripts/items/shields/kite_shield")
 		this.m.Cost = 10;

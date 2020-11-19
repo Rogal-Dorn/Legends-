@@ -6,7 +6,7 @@ this.legend_illusionist_background <- this.inherit("scripts/skills/backgrounds/c
 		this.m.ID = "background.legend_illusionist";
 		this.m.Icon = "ui/backgrounds/background_wizard.png";
 		this.m.Name = "Illusionist";
-		this.m.HiringCost = 2000;
+		this.m.HiringCost = 1000;
 		this.m.DailyCost = 20;
 		this.m.Excluded = [
 			"trait.brave",
@@ -33,7 +33,7 @@ this.legend_illusionist_background <- this.inherit("scripts/skills/backgrounds/c
 			"the Clairvoyant",
 			"the Diviner"
 		];
-		this.m.Faces = this.Const.Faces.AllFemale;
+		this.m.Faces = this.Const.Faces.AllWhiteFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
@@ -93,7 +93,7 @@ this.legend_illusionist_background <- this.inherit("scripts/skills/backgrounds/c
 			return;
 		}
 
-		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.CommonMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;

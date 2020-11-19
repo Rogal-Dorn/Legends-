@@ -24,6 +24,8 @@ this.legend_female_beggar_commander_background <- this.inherit("scripts/skills/b
 			"trait.deathwish",
 			"trait.greedy",
 			"trait.athletic",
+			"trait.aggressive",
+			"trait.natural",
 			"trait.disloyal",
 			"trait.loyal"
 		];
@@ -46,7 +48,7 @@ this.legend_female_beggar_commander_background <- this.inherit("scripts/skills/b
 			"the Sluggard",
 			"the Homeless"
 		];
-		this.m.Faces = this.Const.Faces.AllFemale;
+		this.m.Faces = this.Const.Faces.AllWhiteFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;

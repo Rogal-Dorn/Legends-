@@ -6,7 +6,7 @@ this.legend_conjurer_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.ID = "background.legend_conjurer";
 		this.m.Icon = "ui/backgrounds/background_wizard_2.png";
 		this.m.Name = "Conjurer";
-		this.m.HiringCost = 500;
+		this.m.HiringCost = 1000;
 		this.m.DailyCost = 20;
 		this.m.Excluded = [
 			"trait.brave",
@@ -33,7 +33,7 @@ this.legend_conjurer_background <- this.inherit("scripts/skills/backgrounds/char
 			"Beastfolk",
 			"The wild"
 		];
-		this.m.Faces = this.Const.Faces.AllFemale;
+		this.m.Faces = this.Const.Faces.AllWhiteFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
@@ -94,7 +94,7 @@ this.legend_conjurer_background <- this.inherit("scripts/skills/backgrounds/char
 			return;
 		}
 
-		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.CommonMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;

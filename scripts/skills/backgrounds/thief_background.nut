@@ -17,6 +17,7 @@ this.thief_background <- this.inherit("scripts/skills/backgrounds/character_back
 			"trait.hate_undead",
 			"trait.hate_greenskins",
 			"trait.hate_beasts",
+			"trait.hate_nobles",
 			"trait.paranoid",
 			"trait.night_blind",
 			"trait.clubfooted",
@@ -32,7 +33,8 @@ this.thief_background <- this.inherit("scripts/skills/backgrounds/character_back
 			"trait.short_sighted",
 			"trait.brute",
 			"trait.strong",
-			"trait.bloodthirsty"
+			"trait.bloodthirsty",
+			"trait.heavy"
 		];
 		this.m.Titles = [
 			"the Shadow",
@@ -46,7 +48,7 @@ this.thief_background <- this.inherit("scripts/skills/backgrounds/character_back
 			"Quickfingers",
 			"the Thief"
 		];
-		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.CommonMale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.All;

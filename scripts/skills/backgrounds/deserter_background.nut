@@ -24,7 +24,9 @@ this.deserter_background <- this.inherit("scripts/skills/backgrounds/character_b
 			"trait.determined",
 			"trait.fragile",
 			"trait.optimist",
-			"trait.bloodthirsty"
+			"trait.bloodthirsty",
+			"trait.firm",
+			"trait.aggressive"
 		];
 		this.m.ExcludedTalents = [
 			this.Const.Attributes.Bravery
@@ -37,7 +39,7 @@ this.deserter_background <- this.inherit("scripts/skills/backgrounds/character_b
 			"the Dog",
 			"the Worm"
 		];
-		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.CommonMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
@@ -94,7 +96,7 @@ this.deserter_background <- this.inherit("scripts/skills/backgrounds/character_b
 		{
 			return;
 		}
-		this.m.Faces = this.Const.Faces.AllFemale;
+		this.m.Faces = this.Const.Faces.AllWhiteFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;

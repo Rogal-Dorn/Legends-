@@ -27,7 +27,7 @@ this.female_miller_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.Titles = [
 			"the Baker"
 		];
-		this.m.Faces = this.Const.Faces.AllFemale;
+		this.m.Faces = this.Const.Faces.AllWhiteFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
@@ -77,7 +77,7 @@ this.female_miller_background <- this.inherit("scripts/skills/backgrounds/charac
 
 		if (r == 0)
 		{
-			this.m.Faces = this.Const.Faces.AllMale;
+			this.m.Faces = this.Const.Faces.AllWhiteMale;
 			this.m.Hairs = this.Const.Hair.CommonMale;
 			this.m.HairColors = this.Const.HairColors.All;
 			this.m.Beards = this.Const.Beards.Untidy;

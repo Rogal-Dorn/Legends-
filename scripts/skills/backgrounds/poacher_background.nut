@@ -20,9 +20,10 @@ this.poacher_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			"trait.fat",
 			"trait.fearless",
 			"trait.brave",
-			"trait.bright"
+			"trait.bright",
+			"trait.seductive"
 		];
-		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Untidy;

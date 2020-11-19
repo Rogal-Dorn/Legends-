@@ -26,7 +26,9 @@ this.tailor_background <- this.inherit("scripts/skills/backgrounds/character_bac
 			"trait.cocky",
 			"trait.dumb",
 			"trait.brute",
-			"trait.bloodthirsty"
+			"trait.bloodthirsty",
+			"trait.aggressive",
+			"trait.firm"
 		];
 		this.m.Titles = [
 			"the Peculiar",
@@ -35,7 +37,7 @@ this.tailor_background <- this.inherit("scripts/skills/backgrounds/character_bac
 			"the Fine",
 			"Silkworm"
 		];
-		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.TidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Tidy;

@@ -25,7 +25,9 @@ this.cripple_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			"trait.impatient",
 			"trait.quick",
 			"trait.swift",
-			"trait.dexterous"
+			"trait.dexterous",
+			"trait.ambitious",
+			"trait.natural"
 		];
 		this.m.ExcludedTalents = [
 			this.Const.Attributes.Hitpoints,
@@ -37,7 +39,7 @@ this.cripple_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			"the Broken",
 			"the Grotesque"
 		];
-		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Untidy;

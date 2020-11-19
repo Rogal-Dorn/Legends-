@@ -25,14 +25,16 @@ this.juggler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			"trait.deathwish",
 			"trait.insecure",
 			"trait.asthmatic",
-			"trait.bloodthirsty"
+			"trait.bloodthirsty",
+			"trait.pragmatic",
+			"trait.predictable"
 		];
 		this.m.Titles = [
 			"the Juggler",
 			"the Jester",
 			"the Fool"
 		];
-		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.CommonMale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.All;

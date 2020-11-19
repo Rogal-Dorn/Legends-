@@ -17,6 +17,7 @@ this.hedge_knight_background <- this.inherit("scripts/skills/backgrounds/charact
 			"trait.fear_undead",
 			"trait.fear_beasts",
 			"trait.fear_greenskins",
+			"trait.fear_nobles",
 			"trait.ailing",
 			"trait.swift",
 			"trait.clubfooted",
@@ -31,7 +32,10 @@ this.hedge_knight_background <- this.inherit("scripts/skills/backgrounds/charact
 			"trait.bleeder",
 			"trait.dastard",
 			"trait.insecure",
-			"trait.asthmatic"
+			"trait.asthmatic",
+			"trait.light",
+			"trait.frail",
+			"trait.seductive"
 		];
 		this.m.ExcludedTalents = [
 			this.Const.Attributes.Initiative,
@@ -51,7 +55,7 @@ this.hedge_knight_background <- this.inherit("scripts/skills/backgrounds/charact
 			"the Knightslayer",
 			"the Hedge Knight"
 		];
-		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.AllMale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.All;
@@ -111,7 +115,7 @@ this.hedge_knight_background <- this.inherit("scripts/skills/backgrounds/charact
 			return;
 		}
 
-		this.m.Faces = this.Const.Faces.AllFemale;
+		this.m.Faces = this.Const.Faces.AllWhiteFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;

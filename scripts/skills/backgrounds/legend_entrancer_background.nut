@@ -8,7 +8,7 @@ this.legend_entrancer_background <- this.inherit("scripts/skills/backgrounds/cha
 		local r = this.Math.rand(0, 3);
 		this.m.Name = "Entrancer";
 		this.m.HiringCost = 1000;
-		this.m.DailyCost = 25;
+		this.m.DailyCost = 20;
 		this.m.Excluded = [
 			"trait.impatient",
 			"trait.iron_jaw",
@@ -30,7 +30,7 @@ this.legend_entrancer_background <- this.inherit("scripts/skills/backgrounds/cha
 			"the Dreamer",
 			"the Haunted"
 		];
-		this.m.Faces = this.Const.Faces.AllFemale;
+		this.m.Faces = this.Const.Faces.AllWhiteFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;

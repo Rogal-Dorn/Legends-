@@ -45,13 +45,16 @@ this.slave_background <- this.inherit("scripts/skills/backgrounds/character_back
 			"trait.athletic",
 			"trait.hate_beasts",
 			"trait.hate_undead",
-			"trait.hate_greenskins"
+			"trait.hate_greenskins",
+			"trait.hate_nobles",
+			"trait.aggressive",
+			"trait.ambitious"
 		];
 		this.m.ExcludedTalents = [
 			this.Const.Attributes.Hitpoints,
 			this.Const.Attributes.Bravery
 		];
-		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Untidy;
@@ -143,7 +146,7 @@ this.slave_background <- this.inherit("scripts/skills/backgrounds/character_back
 			return
 		}
 
-		this.m.Faces = this.Const.Faces.AllFemale;
+		this.m.Faces = this.Const.Faces.AllWhiteFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;

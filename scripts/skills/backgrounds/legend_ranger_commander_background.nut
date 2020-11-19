@@ -39,7 +39,7 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 			"One Shot",
 			"Eagle Eye"
 		];
-		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.TidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Tidy;

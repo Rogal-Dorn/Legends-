@@ -14,6 +14,7 @@ this.killer_on_the_run_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.m.Excluded = [
 			"trait.teamplayer",
 			"trait.hate_undead",
+			"trait.fear_nobles",
 			"trait.lucky",
 			"trait.clubfooted",
 			"trait.cocky",
@@ -27,7 +28,9 @@ this.killer_on_the_run_background <- this.inherit("scripts/skills/backgrounds/ch
 			"trait.fainthearted",
 			"trait.craven",
 			"trait.fearless",
-			"trait.optimist"
+			"trait.optimist",
+			"trait.gift_of_people",
+			"trait.pragmatic"
 		];
 		this.m.Titles = [
 			"Darkhearted",
@@ -37,7 +40,7 @@ this.killer_on_the_run_background <- this.inherit("scripts/skills/backgrounds/ch
 			"the Wanted",
 			"the Murderer"
 		];
-		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Untidy;
@@ -93,7 +96,7 @@ this.killer_on_the_run_background <- this.inherit("scripts/skills/backgrounds/ch
 		{
 			return
 		}
-		this.m.Faces = this.Const.Faces.AllFemale;
+		this.m.Faces = this.Const.Faces.AllWhiteFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;

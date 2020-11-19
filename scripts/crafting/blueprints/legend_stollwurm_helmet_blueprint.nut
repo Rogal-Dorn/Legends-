@@ -28,12 +28,7 @@ this.legend_stollwurm_helmet_blueprint <- this.inherit("scripts/crafting/bluepri
 
 	function isQualified()
 	{
-		if (!this.World.LegendsMod.Configs().LegendArmorsEnabled())
-		{
-			return false;
-		}
-
-		return this.blueprint.isQualified();
+		return (!this.World.LegendsMod.Configs().LegendArmorsEnabled()) && this.blueprint.isQualified();
 	}
 
 	function onCraft( _stash )
