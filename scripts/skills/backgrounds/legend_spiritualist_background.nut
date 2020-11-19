@@ -16,11 +16,11 @@ this.legend_spiritualist_background <- this.inherit("scripts/skills/backgrounds/
 			"the Medium",
 			"the Channel"
 		];
-		this.m.Faces = this.Const.Faces.AllFemale;
-		this.m.Hairs = this.Const.Hair.AllFemale;
+		this.m.Faces = this.Const.Faces.AllWhiteFemale;
+		this.m.Hairs = this.Const.Hair.AllWhiteFemale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
-		this.m.Bodies = this.Const.Bodies.AllFemale;
+		this.m.Bodies = this.Const.Bodies.AllWhiteFemale;
 		this.m.IsFemaleBackground = true;
 		this.m.IsPerformingBackground = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;

@@ -13,8 +13,8 @@ this.legend_astrologist_background <- this.inherit("scripts/skills/backgrounds/c
 			"the Surveyer",
 			"the Science Guy"
 		];
-		this.m.Faces = this.Const.Faces.AllMale;
-		this.m.Hairs = this.Const.Hair.AllMale;
+		this.m.Faces = this.Const.Faces.AllWhiteMale;
+		this.m.Hairs = this.Const.Hair.AllWhiteMale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.All;
 

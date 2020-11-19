@@ -41,7 +41,7 @@ this.monk_background <- this.inherit("scripts/skills/backgrounds/character_backg
 			"the Calm",
 			"the Faithful"
 		];
-		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.Monk;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Monk;

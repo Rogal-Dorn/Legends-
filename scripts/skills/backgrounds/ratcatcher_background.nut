@@ -34,7 +34,7 @@ this.ratcatcher_background <- this.inherit("scripts/skills/backgrounds/character
 			"trait.aggressive",
 			"trait.heavy"
 		];
-		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Untidy;

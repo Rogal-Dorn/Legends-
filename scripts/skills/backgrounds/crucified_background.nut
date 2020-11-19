@@ -26,8 +26,8 @@ this.crucified_background <- this.inherit("scripts/skills/backgrounds/character_
 			"trait.insecure",
 			"trait.light"
 		];
-		this.m.Faces = this.Const.Faces.AllMale;
-		this.m.Hairs = this.Const.Hair.AllMale;
+		this.m.Faces = this.Const.Faces.AllWhiteMale;
+		this.m.Hairs = this.Const.Hair.AllWhiteMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.WildExtended;
 		this.m.Bodies = this.Const.Bodies.Muscular;
