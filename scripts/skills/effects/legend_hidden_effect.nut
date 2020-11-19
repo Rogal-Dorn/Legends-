@@ -1,6 +1,6 @@
 this.legend_hidden_effect <- this.inherit("scripts/skills/skill", {
 	m = {
-	TurnsLeft = 4
+		TurnsLeft = 4
 	},
 	function create()
 	{
@@ -37,8 +37,11 @@ this.legend_hidden_effect <- this.inherit("scripts/skills/skill", {
 			]);
 		}
 
-
-
+		ret.push({
+			id = 13,
+			type = "text",
+			text = "Will last for " + this.m.TurnsLeft + " more end of rounds"
+		})
 
 		return ret;
 
@@ -70,17 +73,17 @@ this.legend_hidden_effect <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
-		local actor = this.getContainer().getActor();
-			if (actor.getTile().IsVisibleForPlayer)
+	local actor = this.getContainer().getActor();
+		if (actor.getTile().IsVisibleForPlayer)
+		{
+			if (this.Const.Tactical.HideParticles.len() != 0)
 			{
-				if (this.Const.Tactical.HideParticles.len() != 0)
+				for( local i = 0; i < this.Const.Tactical.HideParticles.len(); i = ++i )
 				{
-					for( local i = 0; i < this.Const.Tactical.HideParticles.len(); i = ++i )
-					{
-						this.Tactical.spawnParticleEffect(false, this.Const.Tactical.HideParticles[i].Brushes, actor.getTile(), this.Const.Tactical.HideParticles[i].Delay, this.Const.Tactical.HideParticles[i].Quantity, this.Const.Tactical.HideParticles[i].LifeTimeQuantity, this.Const.Tactical.HideParticles[i].SpawnRate, this.Const.Tactical.HideParticles[i].Stages);
-					}
+					this.Tactical.spawnParticleEffect(false, this.Const.Tactical.HideParticles[i].Brushes, actor.getTile(), this.Const.Tactical.HideParticles[i].Delay, this.Const.Tactical.HideParticles[i].Quantity, this.Const.Tactical.HideParticles[i].LifeTimeQuantity, this.Const.Tactical.HideParticles[i].SpawnRate, this.Const.Tactical.HideParticles[i].Stages);
 				}
 			}
+		}
 		actor.getSprite("armor").Alpha = 10;
 		actor.getSprite("helmet_vanity_lower").Alpha = 10;
 		actor.getSprite("helmet").Alpha = 10;
@@ -108,12 +111,6 @@ this.legend_hidden_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("armor_upgrade_back").Alpha = 10;
 		actor.getSprite("armor_upgrade_front").Alpha = 10;
 		actor.getSprite("socket").Alpha = 10;
-		this.m.TurnsLeft = 4;
-
-		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_untouchable"))
-		{
-		this.m.TurnsLeft = 6;
-		}
 	}
 
 	function onRemoved()
@@ -147,16 +144,16 @@ this.legend_hidden_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("armor_upgrade_front").Alpha = 255;
 		actor.getSprite("socket").Alpha = 255;
 		local actor = this.getContainer().getActor();
-			if (actor.getTile().IsVisibleForPlayer)
+		if (actor.getTile().IsVisibleForPlayer)
+		{
+			if (this.Const.Tactical.HideParticles.len() != 0)
 			{
-				if (this.Const.Tactical.HideParticles.len() != 0)
+				for( local i = 0; i < this.Const.Tactical.HideParticles.len(); i = ++i )
 				{
-					for( local i = 0; i < this.Const.Tactical.HideParticles.len(); i = ++i )
-					{
-						this.Tactical.spawnParticleEffect(false, this.Const.Tactical.HideParticles[i].Brushes, actor.getTile(), this.Const.Tactical.HideParticles[i].Delay, this.Const.Tactical.HideParticles[i].Quantity, this.Const.Tactical.HideParticles[i].LifeTimeQuantity, this.Const.Tactical.HideParticles[i].SpawnRate, this.Const.Tactical.HideParticles[i].Stages);
-					}
+					this.Tactical.spawnParticleEffect(false, this.Const.Tactical.HideParticles[i].Brushes, actor.getTile(), this.Const.Tactical.HideParticles[i].Delay, this.Const.Tactical.HideParticles[i].Quantity, this.Const.Tactical.HideParticles[i].LifeTimeQuantity, this.Const.Tactical.HideParticles[i].SpawnRate, this.Const.Tactical.HideParticles[i].Stages);
 				}
 			}
+		}
 	}
 
 	function onUpdate( _properties )
