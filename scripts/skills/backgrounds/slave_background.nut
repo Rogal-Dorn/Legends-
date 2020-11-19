@@ -151,7 +151,7 @@ this.slave_background <- this.inherit("scripts/skills/backgrounds/character_back
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Bodies = this.Const.Bodies.AllWhiteFemale;
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsFemaleBackground = true;
 		this.m.GoodEnding = "%name% the indebted has had a rough life and you\'ve both contributed to that and helped alleviate it in some way. You found her as a slave in the south, far from family and home. You \'hired\' her essentially for free and worked her as an enslaved sellsword. After you left the %companyname%, her name was removed from the ledger of indebted and she was for all intents and purposes a free woman. She stayed with the company and has been rising through its ranks ever since. You stand at an odd relation to the woman. She\'s never thanked you, nor has she expressed ill.";
 		this.m.BadEnding = "With your retiring from the unsuccessful %companyname%, %name% the indebted from the north carried on with the company for a time. You got wind that the mercenary band ran into financial troubles and was selling off \'man and material\' to make ends meet. It seems %name%\'s time with the company presumably ended sometime there, and her time as a slave started again.";
