@@ -4144,13 +4144,18 @@ Replace some icon place-holders (Von)
 **Changes**
 Updated to BB 1.4.0.46
 
-**Fixes/Tweaks**
+**Big Fixes/Tweaks**
 Some missing helmets (oops)
+Game pauses on new campaign again
 Zombie resurrection no longer causes them to be untargetable (mwah fixed it but also caused it...)
 Fixes saves failing with some retinue members, namely Lookout
   -> As a note, this doesn't necessarily fix in game errors with retinue members, just loading saves
+Fixes variance of Dynamic spawn lists when troop cost is equal (Thanks to Proman for pointing this out)
+Should no longer see non layered named armors
+No longer lose items randomly for having bags or retinue carts (Thanks Leonion)
+
+**Small Fixes/Tweaks**
 Female gambler no longer referred to as an "Adventurous Lady"
-Game pauses on new campaign again
 Halberd smite causing crashes
 Wind Up causing crashes
 Dog accessory crashing game when character dies with his dog out
@@ -4158,10 +4163,8 @@ Vengeance active/effect doesn't remove itself when attacked a second time ; prop
 Southern assassin is now considered an outlaw background
 Prayer of Hope effect/skill name fixed ; perk description updated to indicate 20%
 Cultist's specialist hood/armor skills tweaked to give bonuses after all other perks have gone ; should now work with things like fort. mind consistently rather than sometimes working and sometimes not
-Fixes variance of Dynamic spawn lists when troop cost is equal (Thanks to Proman for pointing this out)
 the Hide skill now displays the amount of rounds the character will be hidden in the active skill & turns remaining in the effect icon that's applied
-No longer lose items randomly for having bags or retinue carts (Thanks Leonion)
-Should no longer see non layered named armors
+
 
 **Spelling/Typos**
 White Wolf Contract
