@@ -4188,3 +4188,5 @@ Favoured Enemy skills hide when in combat and there is no enemy of that type (e.
 Scrolls don't error the game out when trying to load then
 Vampires no longer crash the game when loading into a fight with them
 Magic Missile Perk icon fixed
+
+15.0.0.18
