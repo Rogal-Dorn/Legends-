@@ -202,7 +202,7 @@ this.legend_white_direwolf <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.FatigueCosts = this.Const.DefaultMovementFatigueCost;
 		this.addSprite("socket").setBrush("bust_base_beasts");
 		local body = this.addSprite("body");
-		body.setBrush("bust_direwolf_white_01");
+		body.setBrush("bust_direwolf_white_01_body");
 
 		if (this.Math.rand(0, 100) < 90)
 		{
