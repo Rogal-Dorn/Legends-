@@ -38,7 +38,7 @@
   <sprite id="bust_warden_01" offsetY="35" b7="0" ic="FFBF9151" width="104" height="142" img="entity\undead\bust_warden_01.png" left="-50" right="52" top="-69" bottom="45" />
   <sprite id="bust_banshee_01" offsetY="35" b7="0" ic="FFBF9151" width="104" height="142" img="entity\undead\bust_banshee_01.png" left="-37" right="65" top="-56" bottom="58" />
 
-  <sprite id="bust_direwolf_white_01" offsetY="35" ic="FF1B2126" width="104" height="142" img="entity\beasts\bust_direwolf_white_01.png" top="-62" bottom="38" />
+  <sprite id="bust_direwolf_white_01_body" offsetY="35" ic="FF1B2126" width="104" height="142" img="entity\beasts\bust_direwolf_white_01_body.png" top="-62" bottom="38" />
   <sprite id="bust_direwolf_white_01_body_dead" offsetX="4" offsetY="24" f="6403" ic="FF1B1E2A" width="179" height="154" img="entity\beasts\bust_direwolf_white_01_body_dead.png" left="-84" right="82" top="-61" bottom="59" />
   <sprite id="bust_direwolf_white_01_head" offsetY="35" ic="FF242930" width="104" height="142" img="entity\beasts\bust_direwolf_white_01_head.png" left="-52" right="24" top="-46" bottom="40" />
   <sprite id="bust_direwolf_white_01_head_dead" offsetX="4" offsetY="24" f="6401" ic="FF222630" width="179" height="154" img="entity\beasts\bust_direwolf_white_01_head_dead.png" left="-41" right="35" top="-61" bottom="7" />

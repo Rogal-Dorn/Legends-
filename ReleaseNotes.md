@@ -4191,3 +4191,4 @@ Magic Missile Perk icon fixed
 
 15.0.0.18
 Hunter Camp Building no longer errors out when it fails to create "Dried Fruit" and "Cured Venison" food items
+Fixes freeze when white direwolf pet dies
