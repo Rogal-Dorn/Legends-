@@ -4190,3 +4190,4 @@ Vampires no longer crash the game when loading into a fight with them
 Magic Missile Perk icon fixed
 
 15.0.0.18
+Hunter Camp Building no longer errors out when it fails to create "Dried Fruit" and "Cured Venison" food items
