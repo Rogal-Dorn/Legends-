@@ -430,7 +430,8 @@ gt.Const.Hair.Barber <- [
 	"18",
 	"19",
 	"20",
-	"21"
+	"21",
+	"31"
 ];
 
 gt.Const.Hair.AllMale <- [
@@ -453,6 +454,7 @@ gt.Const.Hair.AllMale <- [
 	"20",
 	"21",
 	"22",
+	"31",
 	"southern_01",
 	"southern_02",
 	"southern_03",
