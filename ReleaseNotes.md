@@ -4191,12 +4191,15 @@ Magic Missile Perk icon fixed
 
 15.0.0.18
 
-**New Art, Big thanks to Von Krolock**
+**Art, Big thanks again to Von Krolock**
 Adds 2 new gender-neutral hair styles to the pool
   -> 1 is Kinda like long dreads while the other is a mane
 
 Adds 1 new male beard
   -> Although.. There aren't female beards
+
+Improves southern & northern female heads
+Improves some hairs
 
 **Fixes/Tweaks**
 Hunter Camp Building no longer errors out when it fails to create "Dried Fruit" and "Cured Venison" food items
