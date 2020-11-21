@@ -187,6 +187,10 @@ this.legend_white_warwolf <- this.inherit("scripts/entity/tactical/actor", {
 		}
 	}
 
+	function setVariant( _v )
+	{
+	}
+	
 	function onInit()
 	{
 		this.actor.onInit();
