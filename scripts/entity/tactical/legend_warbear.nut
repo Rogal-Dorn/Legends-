@@ -173,10 +173,6 @@ this.legend_warbear <- this.inherit("scripts/entity/tactical/actor", {
 		}
 	}
 
-	function setVariant( _v )
-	{
-	}
-	
 	function onInit()
 	{
 		this.actor.onInit();
