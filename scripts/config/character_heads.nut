@@ -431,7 +431,8 @@ gt.Const.Hair.Barber <- [
 	"19",
 	"20",
 	"21",
-	"31"
+	"31",
+	"32"
 ];
 
 gt.Const.Hair.AllMale <- [
@@ -455,6 +456,7 @@ gt.Const.Hair.AllMale <- [
 	"21",
 	"22",
 	"31",
+	"32",
 	"southern_01",
 	"southern_02",
 	"southern_03",
@@ -498,7 +500,8 @@ gt.Const.Hair.BarberFemale <- [
 	"28",
 	"29",
 	"30",
-	"31"
+	"31",
+	"32"
 ];
 
 
@@ -523,7 +526,8 @@ gt.Const.Hair.AllFemale <- [
 	"28",
 	"29",
 	"30",
-	"31"
+	"31",
+	"32"
 ];
 
 
@@ -583,6 +587,8 @@ gt.Const.Hair.WildMale <- [
 	"08",
 	"18",
 	"21",
+	"31",
+	"32",
 	"shaved"
 ];
 gt.Const.Hair.YoungMale <- [
@@ -1018,5 +1024,6 @@ gt.Const.Hair.SouthernFemale <- [
 	"27",
 	"28",
 	"30",
-	"31"
+	"31",
+	"32"
 ]
