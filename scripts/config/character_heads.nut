@@ -711,7 +711,8 @@ gt.Const.Beards.Barber <- [
 	"16",
 	"17",
 	"legends_01",
-	"legends_02"
+	"legends_02",
+	"19"
 ];
 gt.Const.Beards.All <- [
 	"01",
@@ -732,7 +733,8 @@ gt.Const.Beards.All <- [
 	"16",
 	"17",
 	"legends_01",
-	"legends_02"
+	"legends_02",
+	"19"
 ];
 
 gt.Const.Beards.Berserker <- [
@@ -770,7 +772,8 @@ gt.Const.Beards.Untidy <- [
 	"14",
 	"17",
 	"legends_01",
-	"legends_02"
+	"legends_02",
+	"19"
 ];
 gt.Const.Beards.SouthernUntidy <- [
 	"southern_01",
@@ -808,7 +811,8 @@ gt.Const.Beards.WildExtended <- [
 	"13",
 	"14",
 	"15",
-	"17"
+	"17",
+	"19"
 ];
 gt.Const.Beards.Monk <- [
 	"01",
