@@ -5,7 +5,7 @@ this.perk_legend_magic_missile <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "perk.perk_legend_magic_missile";
 		this.m.Name = this.Const.Strings.PerkName.LegendMagicMissile;
 		this.m.Description = this.Const.Strings.PerkDescription.LegendMagicMissile;
-		this.m.Icon = "ui/perks/misile_circle.png";
+		this.m.Icon = "ui/perks/missile_circle.png";
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;

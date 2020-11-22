@@ -204,7 +204,7 @@ this.legend_white_warwolf <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Items.getAppearance().Body = "bust_direwolf_white_tame_01";
 		this.addSprite("socket").setBrush("bust_base_player");
 		local body = this.addSprite("body");
-		body.setBrush("bust_direwolf_white_01");
+		body.setBrush("bust_direwolf_white_01_body");
 		body.varySaturation(0.15);
 		body.varyColor(0.07, 0.07, 0.07);
 		local head = this.addSprite("head");
