@@ -430,7 +430,9 @@ gt.Const.Hair.Barber <- [
 	"18",
 	"19",
 	"20",
-	"21"
+	"21",
+	"31",
+	"32"
 ];
 
 gt.Const.Hair.AllMale <- [
@@ -453,6 +455,8 @@ gt.Const.Hair.AllMale <- [
 	"20",
 	"21",
 	"22",
+	"31",
+	"32",
 	"southern_01",
 	"southern_02",
 	"southern_03",
@@ -495,7 +499,9 @@ gt.Const.Hair.BarberFemale <- [
 	"27",
 	"28",
 	"29",
-	"30"
+	"30",
+	"31",
+	"32"
 ];
 
 
@@ -519,7 +525,9 @@ gt.Const.Hair.AllFemale <- [
 	"27",
 	"28",
 	"29",
-	"30"
+	"30",
+	"31",
+	"32"
 ];
 
 
@@ -579,6 +587,8 @@ gt.Const.Hair.WildMale <- [
 	"08",
 	"18",
 	"21",
+	"31",
+	"32",
 	"shaved"
 ];
 gt.Const.Hair.YoungMale <- [
@@ -701,7 +711,8 @@ gt.Const.Beards.Barber <- [
 	"16",
 	"17",
 	"legends_01",
-	"legends_02"
+	"legends_02",
+	"19"
 ];
 gt.Const.Beards.All <- [
 	"01",
@@ -722,7 +733,8 @@ gt.Const.Beards.All <- [
 	"16",
 	"17",
 	"legends_01",
-	"legends_02"
+	"legends_02",
+	"19"
 ];
 
 gt.Const.Beards.Berserker <- [
@@ -760,7 +772,8 @@ gt.Const.Beards.Untidy <- [
 	"14",
 	"17",
 	"legends_01",
-	"legends_02"
+	"legends_02",
+	"19"
 ];
 gt.Const.Beards.SouthernUntidy <- [
 	"southern_01",
@@ -798,7 +811,8 @@ gt.Const.Beards.WildExtended <- [
 	"13",
 	"14",
 	"15",
-	"17"
+	"17",
+	"19"
 ];
 gt.Const.Beards.Monk <- [
 	"01",

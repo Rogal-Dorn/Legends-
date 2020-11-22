@@ -4190,5 +4190,18 @@ Vampires no longer crash the game when loading into a fight with them
 Magic Missile Perk icon fixed
 
 15.0.0.18
+
+**Art, Big thanks again to Von Krolock**
+Adds 2 new gender-neutral hair styles to the pool
+  -> 1 is Kinda like long dreads while the other is a mane
+
+Adds 1 new male beard
+  -> Although.. There aren't female beards
+
+Improves southern & northern female heads
+Improves some hairs
+
+**Fixes/Tweaks**
 Hunter Camp Building no longer errors out when it fails to create "Dried Fruit" and "Cured Venison" food items
 Fixes freeze when white direwolf pet dies
+Redback Spider + Hexen Leader Cloak layers have icons/brushes again (Thanks Leo)
