@@ -104,7 +104,7 @@ this.vampire <- this.inherit("scripts/entity/tactical/actor", {
 		this.getSprite("beard").setHorizontalFlipping(flip);
 		this.getSprite("hair").setHorizontalFlipping(flip);
 		this.getSprite("helmet").setHorizontalFlipping(flip);
-		// this.getSprite("helmet_damage").setHorizontalFlipping(flip);
+		this.getSprite("helmet_damage").setHorizontalFlipping(flip);
 		// this.getSprite("helmet_vanity_lower").setHorizontalFlipping(flip);
 		// this.getSprite("helmet_helm").setHorizontalFlipping(flip);
 		// this.getSprite("helmet_top").setHorizontalFlipping(flip);
@@ -228,7 +228,7 @@ this.vampire <- this.inherit("scripts/entity/tactical/actor", {
 
 		this.setSpriteOffset("hair", this.createVec(0, -3));
 		this.addSprite("helmet");
-		// this.addSprite("helmet_damaged");
+		this.addSprite("helmet_damage");
 		// this.addSprite("helmet_helm");
 		// this.addSprite("helmet_top");
 		// this.addSprite("helmet_vanity");

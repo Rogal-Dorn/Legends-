@@ -375,7 +375,7 @@ gt.Const.Perks.ClassTrees <- {
 		local L = [];
 		foreach (i, t in this.Tree)
 		{
-			if (_exclude.find(t.ID))
+			if (_exclude != null && _exclude.find(t.ID))
 			{
 				continue;
 			}
@@ -388,7 +388,7 @@ gt.Const.Perks.ClassTrees <- {
 
 	function getRandomPerk()
 	{
-		local tree = this.getRandom();
+		local tree = this.getRandom(null);
 		local L = [];
 		foreach (row in tree.Tree)
 		{

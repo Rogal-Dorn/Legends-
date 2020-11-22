@@ -17,6 +17,58 @@ this.legend_favoured_enemy_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = false;
 	}
 
+	function isHidden()
+	{
+		return this.inBattleHiddenCheck();
+	}
+
+	function inBattleHiddenCheck()
+	{
+		if (!("State" in this.Tactical) || this.Tactical.State == null) //don't bother hiding the skill when it's not in combat
+		{
+			return false;
+		}
+
+		if (!("Entities" in this.Tactical))
+		{
+			return false;
+		}
+
+		if (this.Tactical.Entities == null)
+		{
+			return false;
+		}
+		
+		local instances = this.Tactical.Entities.getAllInstancesAsArray();
+		local myFaction = this.getContainer().getActor().getFaction();
+
+		foreach( idx in instances )
+		{
+			if (idx == null)
+			{
+				continue;
+			}
+
+			if (idx.getFaction() == myFaction)
+			{
+				continue;
+			}
+
+			if (idx.getTile() == null)
+			{
+				continue;
+			}
+
+			if (this.m.ValidTypes.find(idx.getType()) != null)
+			{
+				return false;
+			}
+		}
+
+		return true; //should only hide/reach here if no entity in the valid type is on the tactical map
+		
+	}
+
 	function getTooltip()
 	{
 		local stats = this.getTotalKillStats()

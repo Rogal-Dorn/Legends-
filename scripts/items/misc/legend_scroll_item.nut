@@ -213,7 +213,7 @@ this.legend_scroll_item <- this.inherit("scripts/items/item", {
 	function onDeserialize(_in)
 	{
 		this.item.onDeserialize(_in);
-		this.m.Selection = (_in);
+		this.m.Selection = _in.readU8();
 		this.setupTooltip(this.m.Selection);
 	}
 });
