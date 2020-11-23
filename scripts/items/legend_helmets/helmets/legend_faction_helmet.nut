@@ -7,7 +7,7 @@ this.legend_faction_helmet <- this.inherit("scripts/items/legend_helmets/hood/le
 		this.m.Name = "Chain Hood";
 		this.m.Description = "Chain Hood";
 		this.m.Variants = [1, 2, 3, 4];
-        this.m.Variant = this.Math.rand(0, this.m.Variants.len() - 1);
+        this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;

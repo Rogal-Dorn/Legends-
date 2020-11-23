@@ -31,20 +31,23 @@ this.legend_helmet_demon_alp_helm <- this.inherit("scripts/items/legend_helmets/
     function onAdded()
 	{
 		this.legend_helmet_upgrade.onAdded();
-        local hasPerk = this.getContainer.getSkills().hasSkill("perk.legend_horrify");
-        if (!hasPerk && !this.getContainer.getSkills().hasSkill("actives.legend_horrific_scream"))
+		local skills = this.getContainer().getActor().getSkills();
+        local hasPerk = skills.hasSkill("perk.legend_horrify");
+        if (!hasPerk && !skills.hasSkill("actives.legend_horrific_scream"))
         {
-		    this.addSkill(this.new("scripts/skills/actives/legend_horrific_scream"));
+		   	skills.add(this.new("scripts/skills/actives/legend_horrific_scream"));
         }
 	}
 
-    function onRemoved()
+    function onRemoved(_app)
     {
-        local hasPerk = this.getContainer.getSkills().hasSkill("perk.legend_horrify");
+		local skills = this.getContainer().getActor().getSkills();
+        local hasPerk = skills.hasSkill("perk.legend_horrify");
         if (!hasPerk)
         {
-            this.getContainer().getSkills().removeByID("actives.legend_horrific_scream");
+            skills.removeByID("actives.legend_horrific_scream");
         }
+		this.legend_helmet_upgrade.onRemoved(_app);
     }
 
 	function updateVariant()
