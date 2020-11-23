@@ -7,6 +7,15 @@ this.legend_helmet_redback_helm <- this.inherit("scripts/items/legend_helmets/le
 		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_redback_helm";
 		this.m.Name = "Redback Helm";
+		// this.m.NameList = [
+		// 	"Redback carapace",
+		// 	"Helm of the spider",
+		// 	"Arachnid Crown",
+		// 	"Spider Queen Helm",
+		// 	"Redback Crown",
+		// 	"Poison Crown"
+		// ];
+		// this.m.Name = this.m.NameList[this.Math.rand(0, this.m.NameList.len())];
 		this.m.Description = "A sturdy yet light helmet made from the carapace of a redback spider.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variants = [1];
@@ -37,7 +46,7 @@ this.legend_helmet_redback_helm <- this.inherit("scripts/items/legend_helmets/le
 			id = 7,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Grants Web Cast"
+			text = "Grants the Web Cast active skill"
 		});
 		return result;
 	}

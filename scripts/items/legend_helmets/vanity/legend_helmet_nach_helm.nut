@@ -9,6 +9,15 @@ this.legend_helmet_nach_helm <- this.inherit("scripts/items/legend_helmets/legen
 		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_nach_helm";
 		this.m.Name = "Nacho Helm";
+		// this.m.NameList = [
+		// 	"Rotten visage",
+		// 	"Helm of the ghoul",
+		// 	"Ghoul Crown",
+		// 	"Ghoul Helm",
+		// 	"Ghoul Crown",
+		// 	"Skin Crown"
+		// ];
+		// this.m.Name = this.m.NameList[this.Math.rand(0, this.m.NameList.len())];
 		this.m.Description = "A trophy made from the face of a skin ghoul.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variants = [1];
@@ -33,7 +42,7 @@ this.legend_helmet_nach_helm <- this.inherit("scripts/items/legend_helmets/legen
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Grants gruesome feast"
+			text = "Grants the Gruesome Feast active skill"
 		});
 		return result;
 	}
