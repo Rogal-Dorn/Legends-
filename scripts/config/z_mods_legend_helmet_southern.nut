@@ -721,8 +721,9 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "hood/legend_helmet_chain_hood"], //80
         [0, "hood/legend_helmet_chain_hood_full"], //90
         [0, "hood/legend_helmet_bronze_chain"], //100
-		[1, "hood/legend_helmet_southern_cap"], //100
-		
+        [1, "hood/legend_helmet_southern_cap"], //100
+        [1, "hood/legend_helmet_southern_cap_dark"] //100
+
     ],
     Helms = [
         [0, "helm/legend_helmet_ancient_conic_helm"], //15
@@ -1066,7 +1067,8 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "hood/legend_helmet_chain_hood"], //80
         [0, "hood/legend_helmet_chain_hood_full"], //90
         [0, "hood/legend_helmet_bronze_chain"], //100
-		[1, "hood/legend_helmet_southern_cap"], //100
+        [1, "hood/legend_helmet_southern_cap"], //100
+        [1, "hood/legend_helmet_southern_cap_dark"] //100
     ],
     Helms = [
         [0, "helm/legend_helmet_ancient_conic_helm"], //15
@@ -1410,7 +1412,8 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "hood/legend_helmet_chain_hood"], //80
         [0, "hood/legend_helmet_chain_hood_full"], //90
         [0, "hood/legend_helmet_bronze_chain"], //100
-		[1, "hood/legend_helmet_southern_cap"], //100
+        [1, "hood/legend_helmet_southern_cap"], //100
+        [1, "hood/legend_helmet_southern_cap_dark"] //100
     ],
     Helms = [
         [0, "helm/legend_helmet_ancient_conic_helm"], //15
@@ -1755,7 +1758,8 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "hood/legend_helmet_chain_hood"], //80
         [0, "hood/legend_helmet_chain_hood_full"], //90
         [0, "hood/legend_helmet_bronze_chain"], //100
-		[1, "hood/legend_helmet_southern_cap"], //100
+        [1, "hood/legend_helmet_southern_cap"], //100
+        [1, "hood/legend_helmet_southern_cap_dark"] //100
     ],
     Helms = [
         [0, "helm/legend_helmet_ancient_conic_helm"], //15
@@ -1928,9 +1932,10 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "hood/legend_helmet_chain_hood"], //80
         [0, "hood/legend_helmet_chain_hood_full"], //90
         [0, "hood/legend_helmet_bronze_chain"], //100
-		[1, "hood/legend_helmet_southern_cap"], //100
-		[3, "hood/legend_helmet_southern_turban_light_hood"] //100
-		
+        [1, "hood/legend_helmet_southern_cap"], //100
+        [1, "hood/legend_helmet_southern_cap_dark"], //100
+        [4, "hood/legend_helmet_southern_turban_light_hood"] //100
+
     ],
     Helms = [
         [0, "helm/legend_helmet_ancient_conic_helm"], //15
@@ -2277,7 +2282,8 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "hood/legend_helmet_chain_hood"], //80
         [0, "hood/legend_helmet_chain_hood_full"], //90
         [0, "hood/legend_helmet_bronze_chain"], //100
-		[1, "hood/legend_helmet_southern_cap"], //100
+        [1, "hood/legend_helmet_southern_cap"], //100
+        [1, "hood/legend_helmet_southern_cap_dark"] //100
     ],
     Helms = [
         [0, "helm/legend_helmet_ancient_conic_helm"], //15
