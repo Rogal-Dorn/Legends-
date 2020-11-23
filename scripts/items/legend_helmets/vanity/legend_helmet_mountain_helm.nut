@@ -27,6 +27,26 @@ this.legend_helmet_mountain_helm <- this.inherit("scripts/items/legend_helmets/l
 		this.m.HideBeard = false;
 	}
 
+	function getTooltip()
+	{
+		local result = this.legend_helmet_upgrade.getTooltip();
+		this.onArmorTooltip(result)
+		return result;
+	}
+
+	function onArmorTooltip( result )
+	{
+		result.push({
+			id = 6,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "Restores 10% helmet armor each turn"
+		});
+		return result;
+	}
+
+
+
     function onCombatFinished()
 	{
 		this.m.Condition = this.m.ConditionMax;

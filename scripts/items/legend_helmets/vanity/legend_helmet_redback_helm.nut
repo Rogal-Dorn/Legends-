@@ -33,9 +33,15 @@ this.legend_helmet_redback_helm <- this.inherit("scripts/items/legend_helmets/le
 		this.m.HideBeard = false;
 	}
 
-    function getTooltip()
+	function getTooltip()
 	{
 		local result = this.legend_helmet_upgrade.getTooltip();
+		this.onArmorTooltip(result)
+		return result;
+	}
+
+	function onArmorTooltip( result )
+	{
 		result.push({
 			id = 6,
 			type = "text",
