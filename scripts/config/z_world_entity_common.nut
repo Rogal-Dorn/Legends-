@@ -669,7 +669,7 @@ gt.Const.World.Common.pickHelmet <- function (_helms)
 	{
 		return null;
 	}
-	return this.new("scripts/items/helmets/" + helm);
+	// return this.new("scripts/items/helmets/" + helm);
 
 	if (!this.World.LegendsMod.Configs().LegendArmorsEnabled())
 	{
