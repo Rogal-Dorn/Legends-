@@ -349,7 +349,7 @@ layers = [
  "title" :  "Full Aketon Cap", \
  "desc" :  "A large padded cloth cap also covering the neck." \
 },
-{"name" : "southern_cap"                     , "layer" : "hood", "min" : 1, "max" : 4, "base" : True, "value" : 20, "con" : 15, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
+{"name" : "southern_cap"                     , "layer" : "hood", "min" : 1, "max" : 8, "base" : True, "value" : 20, "con" : 15, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Southern Cap", \
  "desc" :  "A simple cap of rough fibres" \
 },
@@ -1864,6 +1864,10 @@ def main():
             lower = "true"
 
         fname = "legend_helmet_" + d["name"]
+
+        # print('"' + layer + '/' + fname + '",')
+        # continue
+
         dirpath = os.path.join(os.path.dirname(os.path.abspath(__file__)), "helmets", layer)
         if not os.path.exists(dirpath):
             os.makedirs(dirpath)
