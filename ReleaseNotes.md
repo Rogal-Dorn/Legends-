@@ -4181,6 +4181,7 @@ Troupe Scenario Event (Thanks Luft)
 
 15.0.0.17
 
+
 **Fixes/Tweaks**
 Mercenary Favorite Enemy no longer errors out after you kill a ranged mercenary
 Favoured Enemy skills hide when in combat and there is no enemy of that type (e.g. a fight vs Nomads doesn't display Direwolf anymore)
@@ -4190,6 +4191,12 @@ Vampires no longer crash the game when loading into a fight with them
 Magic Missile Perk icon fixed
 
 15.0.0.18
+
+**Helmet Layers**
+Enabled Baby :sunglasses:
+
+FEEDBACK WANTED FOR HELMET LAYERS!
+Weight Alignment, Balance Tweaks, Enemy X should get layer Y in its pool, etc
 
 **Art, Big thanks again to Von Krolock**
 Adds 2 new gender-neutral hair styles to the pool
