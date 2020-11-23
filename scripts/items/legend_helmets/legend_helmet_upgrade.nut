@@ -103,6 +103,11 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 		this.m.Armor = this.WeakTableRef(_a);
 	}
 
+	function getContainer()
+	{
+		return this.m.Armor == null ? null : this.m.Armor.getContainer();
+	}
+
 	function getArmorDescription()
 	{
 		return this.m.ArmorDescription;

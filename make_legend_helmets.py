@@ -925,18 +925,18 @@ layers = [
  "title" :  "Horn Decorations", \
  "desc" :  "Decorative horns, fashionable in the northern tribes" \
 },
-{"name" : "hunter_cap"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
- "title" :  "Hunter Cap", \
- "desc" :  "The distinctive hat of a game hunter" \
-},
+# {"name" : "hunter_cap"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
+#  "title" :  "Hunter Cap", \
+#  "desc" :  "The distinctive hat of a game hunter" \
+# },
 {"name" : "impaled_head"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Impaled Head", \
  "desc" :  "A rotting and withered human head, quite disgusting" \
 },
-{"name" : "jester_hat"                     , "layer" : "vanity", "min" : 1, "max" : 65, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
- "title" :  "Jester Hat", \
- "desc" :  "The quintisential hat of performing folk in noble court" \
-},
+# {"name" : "jester_hat"                     , "layer" : "vanity", "min" : 1, "max" : 65, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
+#  "title" :  "Jester Hat", \
+#  "desc" :  "The quintisential hat of performing folk in noble court" \
+# },
 {"name" : "metal_bird"                     , "layer" : "vanity", "min" : 1, "max" : 2, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Metal Bird", \
  "desc" :  "An ancient metal bird statue" \
@@ -1025,10 +1025,10 @@ layers = [
  "title" :  "Top Feather", \
  "desc" :  "A decorative feather used on hats" \
 },
-{"name" : "witchhunter_helm"                     , "layer" : "vanity", "min" : 1, "max" : 7, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
- "title" :  "Witchhunter Helm", \
- "desc" :  "A tough leather hat that provides decent protection against scratches." \
-},
+# {"name" : "witchhunter_helm"                     , "layer" : "vanity", "min" : 1, "max" : 7, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
+#  "title" :  "Witchhunter Helm", \
+#  "desc" :  "A tough leather hat that provides decent protection against scratches." \
+# },
 {"name" : "wizard_cowl"                     , "layer" : "vanity", "min" : 1, "max" : 20, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Wizard Cowl", \
  "desc" :  "A pointy hat with a broad rim." \
@@ -1037,38 +1037,38 @@ layers = [
  "title" :  "Wolf Helm", \
  "desc" :  "An impressive wolf head covering" \
 },
-{"name" : "white_wolf_helm"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
- "title" :  "White Wolf Helm", \
- "desc" :  "The trophy of a white wolf head." \
-},
+# {"name" : "white_wolf_helm"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
+#  "title" :  "White Wolf Helm", \
+#  "desc" :  "The trophy of a white wolf head." \
+# },
 {"name" : "royal_hood"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Royal Hood", \
  "desc" :  "The ornate hood of distant royalty, made from the finest materials." \
 },
-{"name" : "lindwurm_helm"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
- "title" :  "Lindwurm Helm", \
- "desc" :  "Lindwurm Helm" \
-},
-{"name" : "redback_helm"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
- "title" :  "Redback Helm", \
- "desc" :  "A sturdy yet light helmet made from the carapace of a redback spider." \
-},
+# {"name" : "lindwurm_helm"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
+#  "title" :  "Lindwurm Helm", \
+#  "desc" :  "Lindwurm Helm" \
+# },
+# {"name" : "redback_helm"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
+#  "title" :  "Redback Helm", \
+#  "desc" :  "A sturdy yet light helmet made from the carapace of a redback spider." \
+# },
 {"name" : "nun_habit"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Nun Habit", \
  "desc" :  "A characteristic head covering of the convent" \
 },
-{"name" : "nach_helm"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
- "title" :  "Nacho Helm", \
- "desc" :  "A trophy made from the face of a skin ghoul." \
-},
-{"name" : "mountain_helm"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
- "title" :  "Mountain Helm", \
- "desc" :  "A helmet crafted from the skin and skull of a mighty rock unhold, the beast may be dead, but it continues to mend itself even after death" \
-},
-{"name" : "demon_alp_helm"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
- "title" :  "Demon Alp Helm", \
- "desc" :  "A trophy made from the face of a demon" \
-},
+# {"name" : "nach_helm"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
+#  "title" :  "Nacho Helm", \
+#  "desc" :  "A trophy made from the face of a skin ghoul." \
+# },
+# {"name" : "mountain_helm"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
+#  "title" :  "Mountain Helm", \
+#  "desc" :  "A helmet crafted from the skin and skull of a mighty rock unhold, the beast may be dead, but it continues to mend itself even after death" \
+# },
+# {"name" : "demon_alp_helm"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
+#  "title" :  "Demon Alp Helm", \
+#  "desc" :  "A trophy made from the face of a demon" \
+# },
 {"name" : "warlock_hood"                     , "layer" : "vanity", "min" : 1, "max" : 4, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Warlock Hood", \
  "desc" :  "Warlock Hood" \
