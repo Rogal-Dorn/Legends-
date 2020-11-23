@@ -42,20 +42,23 @@ this.legend_helmet_nach_helm <- this.inherit("scripts/items/legend_helmets/legen
     function onAdded()
 	{
 		this.legend_helmet_upgrade.onAdded();
-        local hasPerk = this.getContainer.getSkills().hasSkill("perk.legend_gruesome_feast");
-        if (!hasPerk && !this.getContainer.getSkills().hasSkill("actives.legend_gruesome_feast"))
+		local skills = this.getContainer().getActor().getSkills();
+        local hasPerk = skills.hasSkill("perk.legend_gruesome_feast");
+        if (!hasPerk && !skills.hasSkill("actives.legend_gruesome_feast"))
         {
-		    this.addSkill(this.new("scripts/skills/actives/legend_gruesome_feast"));
+		    skills.add(this.new("scripts/skills/actives/legend_gruesome_feast"));
         }
 	}
 
-    function onRemoved()
+    function onRemoved(_app)
     {
-        local hasPerk = this.getContainer.getSkills().hasSkill("perk.legend_gruesome_feast");
+		local skills = this.getContainer().getActor().getSkills();
+        local hasPerk = skills.hasSkill("perk.legend_gruesome_feast");
         if (!hasPerk)
         {
-            this.getContainer().getSkills().removeByID("actives.legend_gruesome_feast");
+            skills.removeByID("actives.legend_gruesome_feast");
         }
+		this.legend_helmet_upgrade.onRemoved(_app);
     }
 
 	function updateVariant()
