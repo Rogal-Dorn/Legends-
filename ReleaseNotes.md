@@ -4205,3 +4205,4 @@ Improves some hairs
 Hunter Camp Building no longer errors out when it fails to create "Dried Fruit" and "Cured Venison" food items
 Fixes freeze when white direwolf pet dies
 Redback Spider + Hexen Leader Cloak layers have icons/brushes again (Thanks Leo)
+Nets now properly use net casting mastery & net mastery
