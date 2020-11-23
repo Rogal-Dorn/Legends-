@@ -2252,15 +2252,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		this.m.CurrentBuilding = null;
 		this.updateSituations();
 		this.updateRoster();
-		if (this.World.LegendsMod.Configs().LegendHelmetEnabled())
-    	{
-			this.updateLegendShop();
-    	}
-		else
-		{
-			this.updateShop();
-		}
-
+		this.updateShop();
 		this.Math.seedRandom(this.Time.getRealTime());
 		return true;
 	}
