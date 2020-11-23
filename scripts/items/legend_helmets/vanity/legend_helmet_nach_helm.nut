@@ -35,15 +35,22 @@ this.legend_helmet_nach_helm <- this.inherit("scripts/items/legend_helmets/legen
 		this.m.HideBeard = false;
 	}
 
-    function getTooltip()
+	function getTooltip()
 	{
 		local result = this.legend_helmet_upgrade.getTooltip();
+		this.onArmorTooltip(result)
+		return result;
+	}
+
+	function onArmorTooltip( result )
+	{
 		result.push({
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
 			text = "Grants the Gruesome Feast active skill"
 		});
+
 		return result;
 	}
 
