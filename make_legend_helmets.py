@@ -291,10 +291,10 @@ brush_only_layers = [
     {"name": "jester_hat", "min" : 1, "max" : 65, "layer": "vanity"},
     {"name": "witchhunter_helm", "min" : 1, "max" : 7, "layer" : "vanity"},
     {"name": "white_wolf_helm", "min" : 1, "max" : 1, "layer": "vanity"},
-    {"name": "lindwurm_helm", "min" : 1, "max" : 1, "layer": "vanity"}
-    {"name": "redback_helm", "min" : 1, "max" : 1, "layer": "vanity"}
-    {"name": "nach_helm", "min" : 1, "max" : 1, "layer": "vanity"}
-    {"name": "mountain_helm", "min" : 1, "max" : 1, "layer": "vanity"}
+    {"name": "lindwurm_helm", "min" : 1, "max" : 1, "layer": "vanity"},
+    {"name": "redback_helm", "min" : 1, "max" : 1, "layer": "vanity"},
+    {"name": "nach_helm", "min" : 1, "max" : 1, "layer": "vanity"},
+    {"name": "mountain_helm", "min" : 1, "max" : 1, "layer": "vanity"},
     {"name": "demon_alp_helm", "min" : 1, "max" : 1, "layer": "vanity"}
 ]
 
