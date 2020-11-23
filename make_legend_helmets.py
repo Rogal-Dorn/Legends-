@@ -1836,7 +1836,7 @@ def makeBrushes():
                 text.replace("/", "\\")
                 F.write(text)
                 imageCount += 1
-                if (imageCount > 1000):
+                if (imageCount > 500):
                     F.write('</brush>\n')
                     F.close()
                     imageCount = 0

@@ -102,6 +102,8 @@ cd ../bin
 ./bbrusher.exe pack --gfxPath "../Repo/" ../Repo/brushes/legend_helmets.brush ../Repo/unpacked/legend_helmets
 ./bbrusher.exe pack --gfxPath "../Repo/" ../Repo/brushes/legend_helmets_0.brush ../Repo/unpacked/legend_helmets/0
 ./bbrusher.exe pack --gfxPath "../Repo/" ../Repo/brushes/legend_helmets_1.brush ../Repo/unpacked/legend_helmets/1
+./bbrusher.exe pack --gfxPath "../Repo/" ../Repo/brushes/legend_helmets_2.brush ../Repo/unpacked/legend_helmets/2
+./bbrusher.exe pack --gfxPath "../Repo/" ../Repo/brushes/legend_helmets_3.brush ../Repo/unpacked/legend_helmets/3
 
 
 ./masscompile.bat "c:\Steam\steamapps\common\Battle Brothers\data\scripts"
