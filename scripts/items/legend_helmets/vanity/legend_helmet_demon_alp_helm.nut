@@ -39,13 +39,19 @@ this.legend_helmet_demon_alp_helm <- this.inherit("scripts/items/legend_helmets/
 	function getTooltip()
 	{
 		local result = this.legend_helmet_upgrade.getTooltip();
+		this.onArmorTooltip(result)
+		return result;
+	}
+
+	function onArmorTooltip( result )
+	{
 		result.push({
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
 			text = "Grants the Horrific Scream active skill"
 		});
-		return result;
+		return result
 	}
 
     //only remove & add the scream if we don't have the horrify perk already

@@ -33,9 +33,15 @@ this.legend_helmet_lindwurm_helm <- this.inherit("scripts/items/legend_helmets/l
 		this.m.HideBeard = false;
 	}
 
-    function getTooltip()
+	function getTooltip()
 	{
 		local result = this.legend_helmet_upgrade.getTooltip();
+		this.onArmorTooltip(result)
+		return result;
+	}
+
+	function onArmorTooltip( result )
+	{
 		result.push({
 			id = 6,
 			type = "text",
@@ -54,7 +60,7 @@ this.legend_helmet_lindwurm_helm <- this.inherit("scripts/items/legend_helmets/l
 			icon = "ui/icons/special.png",
 			text = "No fatigue penalties from melee damage"
 		});
-		return result;
+		return result
 	}
 
 	function onUpdateProperties( _properties )
