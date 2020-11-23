@@ -286,6 +286,17 @@ BLayer = '<sprite id="$name" offsetY="35" ic="FF4E5053" width="184" height="222"
 BLayerDamaged = '<sprite id="$damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="$damaged_path" left="-67" right="68" top="-40" bottom="108" />\n'
 BLayerDead = '<sprite id="$dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="$dead_path" left="-57" right="59" top="-53" bottom="55" />\n'
 
+brush_only_layers = [
+    {"name": "hunter_cap", "min" : 1, "max" : 1, "layer": "vanity"},
+    {"name": "jester_hat", "min" : 1, "max" : 65, "layer": "vanity"},
+    {"name": "witchhunter_helm", "min" : 1, "max" : 7, "layer" : "vanity"},
+    {"name": "white_wolf_helm", "min" : 1, "max" : 1, "layer": "vanity"},
+    {"name": "lindwurm_helm", "min" : 1, "max" : 1, "layer": "vanity"}
+    {"name": "redback_helm", "min" : 1, "max" : 1, "layer": "vanity"}
+    {"name": "nach_helm", "min" : 1, "max" : 1, "layer": "vanity"}
+    {"name": "mountain_helm", "min" : 1, "max" : 1, "layer": "vanity"}
+    {"name": "demon_alp_helm", "min" : 1, "max" : 1, "layer": "vanity"}
+]
 
 aLayer = '''$stats
  "title" :  "$title", \\
@@ -1836,12 +1847,49 @@ def makeBrushes():
                 text.replace("/", "\\")
                 F.write(text)
                 imageCount += 1
-                if (imageCount > 500):
+                if (imageCount > 1000):
                     F.write('</brush>\n')
                     F.close()
                     imageCount = 0
                     fileCount += 1
                     F = makeSheet(fileCount)
+
+    for d in brush_only_layers:
+        R = L
+        names = [d["name"]]
+        if "min" in d:
+            names = []
+            for i in range(d["min"], d["max"] + 1):
+                ind = "0" + str(i) if i < 10 else str(i)
+                names.append(d["name"] + "_" + ind)
+
+        layer = d["layer"]
+
+        if "lowervanity" in d:
+            layer += "_lower"
+
+        for t in R:
+            for name in names:
+                opts = dict(
+                    name="legendhelms_" + name,
+                    damaged= "legendhelms_" + name + "_damaged",
+                    dead= "legendhelms_" + name + "_dead",
+                    name_path=os.path.join("..", "entity", "legend_helmets", "layers", name + ".png"),
+                    damaged_path=os.path.join("..", "entity", "legend_helmets", "layers", name + "_damaged.png"),
+                    dead_path=os.path.join("..", "entity", "legend_helmets", "layers", name + "_dead.png")
+                )
+                s = Template(t)
+                text = s.substitute(opts)
+                text.replace("/", "\\")
+                F.write(text)
+                imageCount += 1
+                if (imageCount > 1000):
+                    F.write('</brush>\n')
+                    F.close()
+                    imageCount = 0
+                    fileCount += 1
+                    F = makeSheet(fileCount)
+        
 
     F.write('</brush>\n')
     F.close()
