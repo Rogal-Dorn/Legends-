@@ -1011,6 +1011,20 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 
 	}
 
+	function onTurnStart()
+	{
+		this.helmet.onTurnStart();
+		
+		foreach( u in this.m.Upgrades )
+		{
+			if (u == null)
+			{
+				continue;
+			}
+			u.onTurnStart();
+		}
+	}
+
 	function onTotalArmorChanged()
 	{
 		foreach( u in this.m.Upgrades )
