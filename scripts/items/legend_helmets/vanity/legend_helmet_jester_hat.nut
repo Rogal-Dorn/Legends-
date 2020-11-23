@@ -30,15 +30,27 @@ this.legend_helmet_jester_hat <- this.inherit("scripts/items/legend_helmets/lege
 		// this.m.BonusHeadChance = this.Math.rand(this.m.HCMin, this.m.HCMax);
 	}
 
-    function getTooltip()
+	function getTooltip()
 	{
 		local result = this.legend_helmet_upgrade.getTooltip();
+		this.onArmorTooltip(result)
+		return result;
+	}
+
+	function onArmorTooltip( result )
+	{
 		result.push({
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
 			text = "Grants the wearer a +" + this.m.BonusHeadChance +"% chance to hit the head"
 		});
+		return result
+	}
+
+	function getArmorTooltip( result )
+	{
+		result.extend(this.getTooltip())
 		return result;
 	}
 
