@@ -1,6 +1,10 @@
 
 this.legend_helmet_jester_hat <- this.inherit("scripts/items/legend_helmets/legend_helmet_upgrade", {
-	m = {},
+	m = {
+		BonusHeadChance = 10,
+		HCMin = 10,
+		HCMax = 30
+	},
 	function create()
 	{
 		this.legend_helmet_upgrade.create();
@@ -22,6 +26,8 @@ this.legend_helmet_jester_hat <- this.inherit("scripts/items/legend_helmets/lege
 		this.m.IsLowerVanity = false;
 		this.m.HideHair = true;
 		this.m.HideBeard = false;
+		//option for bhc range
+		// this.m.BonusHeadChance = this.Math.rand(this.m.HCMin, this.m.HCMax);
 	}
 
     function getTooltip()
@@ -31,7 +37,7 @@ this.legend_helmet_jester_hat <- this.inherit("scripts/items/legend_helmets/lege
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Grants the wearer a +10% chance to hit the head"
+			text = "Grants the wearer a +" + this.m.BonusHeadChance +"% chance to hit the head"
 		});
 		return result;
 	}
@@ -39,7 +45,7 @@ this.legend_helmet_jester_hat <- this.inherit("scripts/items/legend_helmets/lege
     function onUpdateProperties(_properties)
     {
         this.legend_helmet_upgrade.onUpdateProperties(_properties);
-        _properties.HitChance[this.Const.BodyPart.Head] += 10;
+        _properties.HitChance[this.Const.BodyPart.Head] += this.m.BonusHeadChance;
     }
 
 	function updateVariant()

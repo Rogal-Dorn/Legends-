@@ -7,6 +7,15 @@ this.legend_helmet_lindwurm_helm <- this.inherit("scripts/items/legend_helmets/l
 		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_lindwurm_helm";
 		this.m.Name = "Lindwurm Helm";
+		// this.m.NameList = [
+		// 	"Wurms visage",
+		// 	"Helm of the wurm",
+		// 	"Wurm Crown",
+		// 	"Wurm Helm",
+		// 	"Digging Crown",
+		// 	"Burrowers Crown"
+		// ];
+		// this.m.Name = this.m.NameList[this.Math.rand(0, this.m.NameList.len())];
 		this.m.Description = "Lindwurm Helm";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variants = [1];

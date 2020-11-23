@@ -9,6 +9,15 @@ this.legend_helmet_white_wolf_helm <- this.inherit("scripts/items/legend_helmets
 		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_white_wolf_helm";
 		this.m.Name = "White Wolf Helm";
+		// this.m.NameList = [
+		// 	"Crown of the king of beasts",
+		// 	"Helmet of the White Wolf",
+		// 	"Wulfserker Coif",
+		// 	"Wolf Kings Helm",
+		// 	"White Wolf Crown",
+		// 	"Predator Crown"
+		// ];
+		// this.m.Name = this.m.NameList[this.Math.rand(0, this.m.NameList.len())];
 		this.m.Description = "The trophy of a white wolf head.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variants = [1];
