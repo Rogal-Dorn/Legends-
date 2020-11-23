@@ -16,8 +16,8 @@ this.legend_frogmouth_helm_crested <- this.inherit("scripts/items/helmets/helmet
 		this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorHalfplateImpact;
 		this.m.Value = 8000;
-		this.m.Condition = 330;
-		this.m.ConditionMax = 340;
+		this.m.Condition = 345;
+		this.m.ConditionMax = 345;
 		this.m.StaminaModifier = -25;
 		this.m.Vision = -2;
 	}

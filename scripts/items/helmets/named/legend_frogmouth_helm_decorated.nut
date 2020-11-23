@@ -25,7 +25,7 @@ this.legend_frogmouth_helm_decorated <- this.inherit("scripts/items/helmets/name
 		this.m.Value = 7000;
 		this.m.Condition = 330;
 		this.m.ConditionMax = 330;
-		this.m.StaminaModifier = -23;
+		this.m.StaminaModifier = -24;
 		this.m.Vision = -2;
 		this.randomizeValues();
 	}

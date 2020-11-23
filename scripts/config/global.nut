@@ -360,7 +360,6 @@ gt.Const.EntityType <- {
 	SkeletonPhylactery = 103,
 	ZombieTreasureHunter = 104,
 	FlyingSkull = 105,
-
 	BanditRabble = 106,
 	LegendCat = 107,
 	LegendOrcElite = 108,
