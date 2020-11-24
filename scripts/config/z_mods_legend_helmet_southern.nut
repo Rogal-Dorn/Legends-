@@ -2427,7 +2427,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [0, "vanity_lower/legend_helmet_orc_tail"], //10
         [0, "vanity_lower/legend_helmet_top_plume"], //10
         [0, "vanity_lower/legend_helmet_wings"], //10
-		[1, "vanity_lower/legend_helmet_southern_turban_feather"] //10
+		[1, "vanity/legend_helmet_southern_turban_feather"] //10
     ]
 }]
 },{
