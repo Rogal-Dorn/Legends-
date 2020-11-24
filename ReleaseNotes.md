@@ -4223,6 +4223,7 @@ Should fix helmets showing up backwards on orcs/goblins/vampires
 Vampires no longer missing vanity sprites
 Fixes failure to enter town
 
+
 **Helmet Layer Balance Changes**
 [Con, Fat, Viz]
 
