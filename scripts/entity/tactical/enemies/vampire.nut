@@ -232,6 +232,7 @@ this.vampire <- this.inherit("scripts/entity/tactical/actor", {
 		this.addSprite("helmet_helm");
 		this.addSprite("helmet_top");
 		this.addSprite("helmet_vanity");
+		this.addSprite("helmet_vanity_lower");
 		this.addSprite("accessory");
 		this.addSprite("accessory_special");
 		local beard_top = this.addSprite("beard_top");

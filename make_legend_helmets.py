@@ -388,7 +388,7 @@ layers = [
  "title" :  "Mail Coif", \
  "desc" :  "A sturdy chain hood" \
 },
-{"name" : "chain_hood_full"                     , "layer" : "hood", "min" : 1, "max" : 6, "base" : True, "value" : 375, "con" : 90, "stam" : -6, "vis" : -2, "hair" : "true", "beard" : "true",  \
+{"name" : "chain_hood_full"                     , "layer" : "hood", "min" : 1, "max" : 6, "base" : True, "value" : 375, "con" : 90, "stam" : -6, "vis" : -1, "hair" : "true", "beard" : "true",  \
  "title" :  "Full Mail Coif", \
  "desc" :  "A mail coif that also protects the neck." \
 },
@@ -530,15 +530,15 @@ layers = [
  "title" :  "Viking Helm", \
  "desc" :  "A nordic helmet guarding face and neck with additional metal plates" \
 },
-{"name" : "norman_helm"                     , "layer" : "helm", "min" : 1, "max" : 5, "value" : 550, "con" : 50, "stam" : -2, "vis" : -1, "hair" : "true", "beard" : "false",  \
+{"name" : "norman_helm"                     , "layer" : "helm", "min" : 1, "max" : 5, "value" : 550, "con" : 50, "stam" : -2, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Nasal Helmet", \
  "desc" :  "A metal helmet with added noseguard." \
 },
-{"name" : "flat_top_helm"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 800, "con" : 70, "stam" : -3, "vis" : 0, "hair" : "true", "beard" : "false",  \
+{"name" : "flat_top_helm"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 800, "con" : 70, "stam" : -3, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Flat Top Helm", \
  "desc" :  "A flat full-metal helmet with noseguard." \
 },
-{"name" : "barbute"                     , "layer" : "helm", "min" : 1, "max" : 7, "value" : 2600, "con" : 110, "stam" : -3, "vis" : -2, "hair" : "true", "beard" : "false",  \
+{"name" : "barbute"                     , "layer" : "helm", "min" : 1, "max" : 7, "value" : 2600, "con" : 110, "stam" : -3, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Barbute", \
  "desc" :  "A sturdy yet light barbute helmet, a design uncommon in these lands, made from especially light and durable steel." \
 },
@@ -546,7 +546,7 @@ layers = [
  "title" :  "Steppe Helm", \
  "desc" :  "A nasal helmet witch an attached mail neck guard fashioned in the way of the steppe folks." \
 },
-{"name" : "basinet"                     , "layer" : "helm", "min" : 1, "max" : 7, "value" : 1400, "con" : 130, "stam" : -7, "vis" : -2, "hair" : "true", "beard" : "false",  \
+{"name" : "basinet"                     , "layer" : "helm", "min" : 1, "max" : 7, "value" : 1400, "con" : 130, "stam" : -7, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Basinet", \
  "desc" :  "A well made metal bascinet" \
 },
@@ -738,23 +738,23 @@ layers = [
 #  "title" :  "Eyemask", \
 #  "desc" :  "A metal mask covering the eyes and nose from blows" \
 # },
-{"name" : "eyemask"                     , "layer" : "top", "min" : 1, "max" : 2, "value" : 250, "con" : 35, "stam" : -3, "vis" : -1, "hair" : "false", "beard" : "false",  \
+{"name" : "eyemask"                     , "layer" : "top", "min" : 1, "max" : 2, "value" : 250, "con" : 35, "stam" : -2, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Eyemask", \
  "desc" :  "A metal mask covering the eyes and nose from blows" \
 },
-{"name" : "chain_attachment"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 310, "con" : 40, "stam" : -3, "vis" : -1, "hair" : "false", "beard" : "true",  \
+{"name" : "chain_attachment"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 310, "con" : 40, "stam" : -3, "vis" : 0, "hair" : "false", "beard" : "true",  \
  "title" :  "Chain Attachment", \
  "desc" :  "A piece of mail used for hanging over the mouth and nose" \
 },
-{"name" : "faceplate_flat"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 375, "con" : 45, "stam" : -3, "vis" : -2, "hair" : "false", "beard" : "false",  \
+{"name" : "faceplate_flat"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 375, "con" : 45, "stam" : -3, "vis" : -1, "hair" : "false", "beard" : "false",  \
  "title" :  "Flat Faceplate", \
  "desc" :  "Flat Faceplate" \
 },
-{"name" : "faceplate_curved"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 450, "con" : 50, "stam" : -3, "vis" : -2, "hair" : "false", "beard" : "false",  \
+{"name" : "faceplate_curved"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 450, "con" : 50, "stam" : -3, "vis" : -1, "hair" : "false", "beard" : "false",  \
  "title" :  "Curved Faceplate", \
  "desc" :  "Curved Faceplate" \
 },
-{"name" : "faceplate_short"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 610, "con" : 60, "stam" : -4, "vis" : -2, "hair" : "false", "beard" : "true",  \
+{"name" : "faceplate_short"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 610, "con" : 60, "stam" : -4, "vis" : -1, "hair" : "false", "beard" : "true",  \
  "title" :  "Short Faceplate", \
  "desc" :  "A short squat faceplate" \
 },
@@ -762,39 +762,39 @@ layers = [
  "title" :  "Cult Hood", \
  "desc" :  "A hood used in cultist ceremonies" \
 },
-{"name" : "faceplate_long"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 700, "con" : 65, "stam" : -5, "vis" : -2, "hair" : "false", "beard" : "true",  \
+{"name" : "faceplate_long"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 700, "con" : 65, "stam" : -5, "vis" : -1, "hair" : "false", "beard" : "true",  \
  "title" :  "Long Faceplate", \
  "desc" :  "A long faceplate" \
 },
-{"name" : "faceplate_winged"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 780, "con" : 70, "stam" : -5, "vis" : -2, "hair" : "false", "beard" : "true",  \
+{"name" : "faceplate_winged"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 780, "con" : 70, "stam" : -5, "vis" : -1, "hair" : "false", "beard" : "true",  \
  "title" :  "Winged Faceplate", \
  "desc" :  "A glorious faceplate formed into the shape of wings" \
 },
-{"name" : "faceplate_snub_nose"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 880, "con" : 75, "stam" : -6, "vis" : -2, "hair" : "false", "beard" : "true",  \
+{"name" : "faceplate_snub_nose"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 880, "con" : 75, "stam" : -6, "vis" : -1, "hair" : "false", "beard" : "true",  \
  "title" :  "Snub Nose Faceplate", \
  "desc" :  "A round nosed faceplate" \
 },
-{"name" : "faceplate_snub_slit"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 980, "con" : 80, "stam" : -6, "vis" : -2, "hair" : "false", "beard" : "false",  \
+{"name" : "faceplate_snub_slit"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 980, "con" : 80, "stam" : -6, "vis" : -1, "hair" : "false", "beard" : "false",  \
  "title" :  "Slitted Snub Faceplate", \
  "desc" :  "Slitted Snub Faceplate" \
 },
-{"name" : "faceplate_sharp"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 1090, "con" : 85, "stam" : -7, "vis" : -2, "hair" : "false", "beard" : "false",  \
+{"name" : "faceplate_sharp"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 1090, "con" : 85, "stam" : -7, "vis" : -1, "hair" : "false", "beard" : "false",  \
  "title" :  "Sharp Faceplate", \
  "desc" :  "Sharp Faceplate" \
 },
-{"name" : "facemask"                     , "layer" : "top", "min" : 1, "max" : 6, "value" : 1200, "con" : 90, "stam" : -7, "vis" : -2, "hair" : "false", "beard" : "true",  \
+{"name" : "facemask"                     , "layer" : "top", "min" : 1, "max" : 6, "value" : 1200, "con" : 90, "stam" : -7, "vis" : -1, "hair" : "false", "beard" : "true",  \
  "title" :  "Facemask", \
  "desc" :  "A metal faceplate in the shape of a mask" \
 },
-{"name" : "faceplate_pointed"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 1320, "con" : 95, "stam" : -7, "vis" : -2, "hair" : "false", "beard" : "true",  \
+{"name" : "faceplate_pointed"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 1320, "con" : 95, "stam" : -7, "vis" : -1, "hair" : "false", "beard" : "true",  \
  "title" :  "Pointed Faceplate", \
  "desc" :  "A long nosed faceplate designed to deflect glancing blows" \
 },
-{"name" : "faceplate_pointed_slit"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 1430, "con" : 100, "stam" : -7, "vis" : -2, "hair" : "false", "beard" : "false",  \
+{"name" : "faceplate_pointed_slit"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 1430, "con" : 100, "stam" : -7, "vis" : -1, "hair" : "false", "beard" : "false",  \
  "title" :  "Slit Pointed Faceplate", \
  "desc" :  "Slit Pointed Faceplate" \
 },
-{"name" : "faceplate_full"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 1700, "con" : 110, "stam" : -9, "vis" : -3, "hair" : "false", "beard" : "true",  \
+{"name" : "faceplate_full"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 1700, "con" : 110, "stam" : -9, "vis" : -2, "hair" : "false", "beard" : "true",  \
  "title" :  "Full Faceplate", \
  "desc" :  "A very well crafted full faceplate" \
 },
@@ -802,11 +802,11 @@ layers = [
 #  "title" :  "Southern Faceplate", \
 #  "desc" :  "A faceplate in the southern style" \
 # },
-{"name" : "southern_faceplate_bearded"                     , "layer" : "top", "min" : 1, "max" : 2, "value" : 450, "con" : 50, "stam" : -3, "vis" : -2, "hair" : "false", "beard" : "true",  \
+{"name" : "southern_faceplate_bearded"                     , "layer" : "top", "min" : 1, "max" : 2, "value" : 450, "con" : 50, "stam" : -1, "vis" : -2, "hair" : "false", "beard" : "true",  \
  "title" :  "Southern Bearded Faceplate", \
  "desc" :  "A faceplate in the southern bearded style" \
 },
-{"name" : "faceplate_full_breaths"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 1700, "con" : 105, "stam" : -8, "vis" : -2, "hair" : "false", "beard" : "true",  \
+{"name" : "faceplate_full_breaths"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 1700, "con" : 105, "stam" : -8, "vis" : -1, "hair" : "false", "beard" : "true",  \
  "title" :  "Breathed Faceplate", \
  "desc" :  "A faceplate filled with breathes for easy breathing and increased sight" \
 },
