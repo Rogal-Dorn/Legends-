@@ -4226,7 +4226,7 @@ Fixes some vanity layers not spawning
 
 
 **Helmet Layer Balance Changes**
-[Con, Fat, Viz]
+[Durability, Fatigue, Vision]
 
 Nasal Helm: [50, -2, 0] from [50, -2, -1]
 Flat Top Helm: [70, -3, -1] from [70, -3, -2]
