@@ -4224,15 +4224,19 @@ Vampires no longer missing vanity sprites
 Fixes failure to enter town
 Fixes some vanity layers not spawning
 
+
 **Helmet Layer Balance Changes**
-Nasal Helm to -0 vision [from -1]
-Flat Top to -1 vision [from 0]
-Full Mail Coif to -1 vision [from -2]
-Mail Coif stays -1 vision [Aventails are 70dura 4fat, so the tradeoff becomes -1 vision]
-  -> FMC to MC is a difference of 10fat for 2 durability extra
-Chain Attatchment -0 vision [from -1]
-Barbute -1 vision [from -2]
-[Faceplates] -1 vision [from -2]
-EXCEPT Full Faceplate -> -2 vision [from -3]
-Eyemask -0 Vision -2 stam [from -1 vis -3 stam]
-Basinet -1 Vision [from -2]
+[Con, Fat, Viz]
+
+Nasal Helm: [50, -2, 0] from [50, -2, -1]
+Flat Top Helm: [70, -3, -1] from [70, -3, -2]
+Chain Mail Hood: [60, -3, 0] from [65, -3, 0]
+Mail Coif: [80, -5, 0] from [80, -4, -1]
+Full Mail Coif: [90, -6, 0] from [90, -6, -1]
+Southern Mail Hood: [85, -5, 0] from [80, -5, -1]
+Chain Attatchment: [40, -3, 0] from [40, -3, -1]
+Barbute: [110, -3, -1] from [110, -3, -2]
+Faceplates (All): -1 vision [from -2]
+  EXCEPT Full Faceplate -> -2 vision [from -3]
+Eyemask: [35, -2, 0] from [35, -3, -2]
+Basinet: [130, -7, -1] from [130, -7, -2]
