@@ -492,6 +492,11 @@ layers = [
  "title" :  "Heavy Plate Helm", \
  "desc" :  "This heavy helmet usually is worn as a sign of high standing and reputation within barbarian warbands." \
 },
+{"name" : "barb_ritual_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 6600, "con" : 220, "stam" : -24, "vis" : -3, "hair" : "true", "beard" : "true",  \
+ "title" :  "Leather helm", \
+ "desc" :  "A traditional southern leather helm" \
+},
+
 {"name" : "heavy_plate_helm_named"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1300, "con" : 170, "stam" : -15, "vis" : -3, "hair" : "true", "beard" : "false", "named" : True, "rminViz" : -2, "rmaxViz" : -3, "rminStam" : -13, "rmaxStam" : -15, "rminCond" : 170, "rmaxCond" : 195, "names" : [],  \
  "title" :  "Famed Heavy Plate Helm", \
  "desc" :  "This heavy helmet has ornamental horns attached and is of exceptional quality among the barbarian clans. This is a sign of high standing and reputation within barbarian warbands." \
@@ -504,6 +509,7 @@ layers = [
  "title" :  "Heavy Spiked Helm", \
  "desc" :  "his helmet must have belonged to a distinct warrior of the barbarians. Its size and design appear alien to all southern folks." \
 },
+
 {"name" : "southern_leather_helm"                     , "layer" : "helm", "min" : 1, "max" : 5, "value" : 60, "con" : 25, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Leather helm", \
  "desc" :  "A traditional southern leather helm" \
@@ -892,7 +898,7 @@ layers = [
  "title" :  "Beret", \
  "desc" :  "A beret typically worn by nobles" \
 },
-{"name" : "bull_horns"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "false", "beard" : "false",  \
+{"name" : "bull_horns"                     , "layer" : "vanity", "min" : 1, "max" : 2, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Bull Horns", \
  "desc" :  "The horns of a wild beast, used as a sign of prowess in northern tribes." \
 },
@@ -1024,7 +1030,7 @@ layers = [
  "title" :  "Southern Head Wrap", \
  "desc" :  "A southern feathered head wrap" \
 },
-{"name" : "southern_top_tail"                     , "layer" : "vanity", "min" : 2, "max" : 2, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "false", "beard" : "false",  \
+{"name" : "southern_top_tail"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Southern Top Tail", \
  "desc" :  "A decorative tail made of desert animal hair" \
 },
