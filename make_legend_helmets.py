@@ -480,11 +480,11 @@ layers = [
  "title" :  "Orc Great Helm", \
  "desc" :  "The distinctive helm of an orc warlord" \
 },
-{"name" : "crude_metal_helm"                     , "layer" : "helm", "min" : 1, "max" : 3, "value" : 550, "con" : 65, "stam" : -6, "vis" : -1, "hair" : "true", "beard" : "false",  \
+{"name" : "crude_metal_helm"                     , "layer" : "helm", "min" : 1, "max" : 3, "value" : 550, "con" : 65, "stam" : -6, "vis" : -1, "hair" : "true", "beard" : "true",  \
  "title" :  "Crude Metal Helm", \
  "desc" :  "Although crudely made and rusty, this metal helmet is a durable and sturdy piece of armor." \
 },
-{"name" : "crude_cylinder_helm"                     , "layer" : "helm", "min" : 1, "max" : 2, "value" : 800, "con" : 110, "stam" : -10, "vis" : -2, "hair" : "true", "beard" : "false",  \
+{"name" : "crude_cylinder_helm"                     , "layer" : "helm", "min" : 1, "max" : 2, "value" : 800, "con" : 110, "stam" : -10, "vis" : -2, "hair" : "true", "beard" : "true",  \
  "title" :  "Crude Cylinder Helm", \
  "desc" :  "This heavy metal helmet also protects the wearers face, albeit at the cost of visibility." \
 },
@@ -1089,6 +1089,10 @@ layers = [
 {"name" : "warlock_hood"                     , "layer" : "vanity", "min" : 1, "max" : 4, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Warlock Hood", \
  "desc" :  "Warlock Hood" \
+},
+{"name" : "goblin_bones"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 550, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
+ "title" :  "Goblin Bones", \
+ "desc" :  "Skull ornament used by greenskin shamans" \
 },
 {"name" : "back_crest"                     , "layer" : "vanity", "lowervanity" : True, "min" : 1, "max" : 4, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Crest", \

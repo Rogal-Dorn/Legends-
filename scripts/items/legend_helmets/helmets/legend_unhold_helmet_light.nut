@@ -9,7 +9,7 @@ this.legend_unhold_helmet_light <- this.inherit("scripts/items/helmets/barbarian
 
 	function getLootLayers()
 	{
-		return [this.new("scripts/items/legend_helmets/top/unhold_head_chain")];
+		return [this.new("scripts/items/legend_helmets/top/legend_helmet_unhold_head_chain")];
 	}
 
 });

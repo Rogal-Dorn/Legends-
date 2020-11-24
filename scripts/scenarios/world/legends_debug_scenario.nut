@@ -542,6 +542,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"vanity/legend_helmet_mountain_helm",
 			"vanity/legend_helmet_demon_alp_helm",
 			"vanity/legend_helmet_warlock_hood",
+			"vanity/legend_helmet_goblin_bones",
 			"vanity_lower/legend_helmet_back_crest",
 			"vanity_lower/legend_helmet_back_feathers",
 			"vanity_lower/legend_helmet_feather_crest",
