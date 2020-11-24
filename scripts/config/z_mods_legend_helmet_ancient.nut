@@ -77,16 +77,7 @@ gt.Const.LegendMod.HelmObjs.extend([
 },{
     ID = "ancient/ancient_laurels",
     Script = "scripts/items/legend_helmets/helmets/legend_ancient_laurels",
-    Sets = [{
-        Hoods = [
-        ],
-        Helms = [
-        ],
-        Tops = [
-        ],
-        Vanity = [
-        ]
-    }]
+    Sets = []
 },{
     ID = "ancient/ancient_legionary_helmet",
     Script = "",
@@ -109,17 +100,7 @@ gt.Const.LegendMod.HelmObjs.extend([
 },{
     ID = "ancient/ancient_priest_diadem",
     Script = "scripts/items/legend_helmets/helmets/legend_ancient_priest_diadem",
-    Sets = [{
-    Hoods = [
-    ],
-    Helms = [
-    ],
-    Tops = [
-
-    ],
-    Vanity = [
-    ]
-}]
+    Sets = []
 },{
     ID = "ancient/legend_ancient_legionary_helmet_restored",
     Script = "",
