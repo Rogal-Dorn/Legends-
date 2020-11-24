@@ -24,13 +24,8 @@ gt.Const.LegendMod.HelmObjs.extend([ //gob heavy helmet
     Helms = [
     ],
     Tops = [
-        [0, "top/legend_helmet_goblin_leaves"], //5
-        [0, "top/legend_helmet_goblin_leaf_helm"], //10
-        [0, "top/legend_helmet_goblin_gillie"], //25
-        [0, "top/legend_helmet_goblin_leather_mask"], //40
         [2, "top/legend_helmet_goblin_leather_helm"], //45
         [8, "top/legend_helmet_goblin_chain_helm"], //70
-        [0, "top/legend_helmet_goblin_spiked_helm"] //90
     ],
     Vanity = [
         [1, "vanity/legend_helmet_ponytail"]//10
@@ -38,17 +33,8 @@ gt.Const.LegendMod.HelmObjs.extend([ //gob heavy helmet
 }]
 },{ //gob leader helmet
     ID = "greenskins/goblin_leader_helmet", //120
-    Script = "scripts/items/helmets/greenskins/goblin_leader_helmet",
-    Sets = [{
-    Hoods = [
-    ],
-    Helms = [
-    ],
-    Tops = [
-    ],
-    Vanity = [
-    ]
-}]
+    Script = "scripts/items/legend_helmets/helmets/legend_goblin_leader_helmet",
+    Sets = []
 },{ //gob light helmet
     ID = "greenskins/goblin_light_helmet", //40
     Script = "",
