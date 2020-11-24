@@ -494,7 +494,15 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 							helmets.extend(this.m.NamedHelmetsList);
 						}
 
-						this.m.Loot.add(this.new("scripts/items/" + helmets[this.Math.rand(0, helmets.len() - 1)]));
+						if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+						{
+							local weightName = this.Const.World.Common.convNameToList(named);
+							this.m.Loot.add(this.Const.World.Common.pickHelmet(weightName));
+						}
+						else
+						{
+							this.m.Loot.add(this.new("scripts/items/" + helmets[this.Math.rand(0, helmets.len() - 1)]));
+						}
 					}
 					else if (type <= 100)
 					{
