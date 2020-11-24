@@ -4214,3 +4214,11 @@ Fixes freeze when white direwolf pet dies
 Redback Spider + Hexen Leader Cloak layers have icons/brushes again (Thanks Leo)
 Nets now properly use net casting mastery & net mastery
 Fixes corrupt saves when saving a new campaign before unpausing
+
+
+15.0.0.19
+
+**Fixes/Tweaks**
+Should fix helmets showing up backwards on orcs/goblins/vampires
+Vampires no longer missing vanity sprites
+Fixes failure to enter town
