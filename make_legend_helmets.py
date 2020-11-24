@@ -372,7 +372,7 @@ layers = [
  "title" :  "Southern light hood", \
  "desc" :  "A southern hood made of light materials" \
 },
-{"name" : "southern_niqaab"                     , "layer" : "hood", "min" : 1, "max" : 1, "base" : True, "value" : 95, "con" : 40, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
+{"name" : "southern_niqaab"                     , "layer" : "hood", "min" : 1, "max" : 4, "base" : True, "value" : 115, "con" : 50, "stam" : -2, "vis" : 0, "hair" : "true", "beard" : "true",  \
  "title" :  "Niqaab", \
  "desc" :  "A headwrap, protects from the sun and light blows" \
 },
@@ -846,21 +846,17 @@ layers = [
  "title" :  "Warlock Skill Helm", \
  "desc" :  "Warlock Skill Helm" \
 },
-{"name" : "southern_noble_crown"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 400, "con" : 40, "stam" : -2, "vis" : 0, "hair" : "true", "beard" : "false",  \
+{"name" : "southern_noble_crown"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 400, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Vizier Peak", \
  "desc" :  "The crown of a southern vizier" \
 },
-{"name" : "southern_noble_hat"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 400, "con" : 40, "stam" : -2, "vis" : 0, "hair" : "true", "beard" : "false",  \
+{"name" : "southern_noble_hat"                     , "layer" : "vanity", "min" : 1, "max" : 7, "value" : 400, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Vizier Hat", \
  "desc" :  "The hat of a southern vizier" \
 },
-{"name" : "southern_noble_turban"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 400, "con" : 40, "stam" : -2, "vis" : 0, "hair" : "true", "beard" : "false",  \
+{"name" : "southern_noble_turban"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 400, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Vizier Turban", \
  "desc" :  "The turban of a southern vizier" \
-},
-{"name" : "southern_noble_crown"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 400, "con" : 40, "stam" : -2, "vis" : 0, "hair" : "true", "beard" : "false",  \
- "title" :  "Vizier Peak", \
- "desc" :  "The crown of a southern vizier" \
 },
 {"name" : "southern_helm_tailed"                     , "layer" : "vanity", "min" : 1, "max" : 6, "value" : 50, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Southern Tailed Helmet", \
@@ -2010,6 +2006,139 @@ def main():
 
 main()
 
+
+'''
+
+"helm/legend_helmet_ancient_crested",
+"helm/legend_helmet_southern_leather_helm",
+"helm/legend_helmet_southern_studded_leather_helm",
+"helm/legend_helmet_carthaginian",
+"helm/legend_helmet_bronze_helm",
+
+
+"helm/legend_helmet_great_helm",
+"helm/legend_helmet_legend_armet",
+"helm/legend_helmet_legend_frogmouth",
+"helm/legend_helmet_southern_gladiator_helm_crested",
+"helm/legend_helmet_southern_gladiator_helm_split",
+"helm/legend_helmet_southern_gladiator_helm_masked",
+"helm/legend_helmet_southern_helmet_nasal",
+"helm/legend_helmet_southern_conic_helm",
+"helm/legend_helmet_southern_named_conic",
+"helm/legend_helmet_southern_peaked_helm",
+"helm/legend_helmet_southern_peaked_nasal_helm",
+"helm/legend_helmet_legend_ancient_gladiator",
+"helm/legend_helmet_legend_ancient_legionaire_restored",
+"helm/legend_helmet_dentist_helmet",
+"helm/legend_helmet_tailed_conic",
+"helm/legend_helmet_legend_armet_01_named",
+"helm/legend_helmet_stag_helm",
+"helm/legend_helmet_swan_helm",
+"helm/legend_helmet_skin_helm",
+"helm/legend_helmet_rotten_flat_top_face_mask",
+"helm/legend_helmet_rotten_great_helm",
+"top/legend_helmet_orc_leather_mask",
+"top/legend_helmet_orc_horn_mask",
+"top/legend_helmet_orc_metal_mask",
+"top/legend_helmet_goblin_leaves",
+"top/legend_helmet_goblin_leaf_helm",
+"top/legend_helmet_goblin_gillie",
+"top/legend_helmet_goblin_leather_mask",
+"top/legend_helmet_goblin_leather_helm",
+"top/legend_helmet_goblin_chain_helm",
+"top/legend_helmet_goblin_spiked_helm",
+"top/legend_helmet_vampire_crown",
+"top/legend_helmet_ancient_crown",
+"top/legend_helmet_leather_hood_barb",
+"top/legend_helmet_nose_plate",
+"top/legend_helmet_headband_side",
+"top/legend_helmet_headband_nose",
+"top/legend_helmet_eyemask",
+"top/legend_helmet_chain_attachment",
+"top/legend_helmet_faceplate_flat",
+"top/legend_helmet_faceplate_curved",
+"top/legend_helmet_faceplate_short",
+"top/legend_helmet_cult_hood",
+"top/legend_helmet_faceplate_long",
+"top/legend_helmet_faceplate_winged",
+"top/legend_helmet_faceplate_snub_nose",
+"top/legend_helmet_faceplate_snub_slit",
+"top/legend_helmet_faceplate_sharp",
+"top/legend_helmet_facemask",
+"top/legend_helmet_faceplate_pointed",
+"top/legend_helmet_faceplate_pointed_slit",
+"top/legend_helmet_faceplate_full",
+"top/legend_helmet_southern_faceplate_bearded",
+"top/legend_helmet_faceplate_full_breaths",
+"top/legend_helmet_unhold_head_chain",
+"top/legend_helmet_unhold_head_spike",
+"top/legend_helmet_faceplate_gold",
+"top/legend_helmet_faceplate_full_gold",
+"top/legend_helmet_golden_helm",
+"top/legend_helmet_faceplate_raised",
+"top/legend_helmet_faceplate_full_01_named",
+"top/legend_helmet_golden_mask",
+"top/legend_helmet_warlock_skull",
+"vanity/legend_helmet_southern_noble_crown",
+"vanity/legend_helmet_southern_noble_hat",
+"vanity/legend_helmet_southern_noble_turban",
+"vanity/legend_helmet_southern_noble_crown",
+"vanity/legend_helmet_southern_helm_tailed",
+"vanity/legend_helmet_southern_silk_headscarf",
+"vanity/legend_helmet_southern_feathered_turban",
+"vanity/legend_helmet_southern_turban_open",
+"vanity/legend_helmet_hood_cloth_square",
+"vanity/legend_helmet_sack",
+"vanity/legend_helmet_antler",
+"vanity/legend_helmet_bear_head",
+"vanity/legend_helmet_beret",
+"vanity/legend_helmet_bull_horns",
+"vanity/legend_helmet_crown",
+"vanity/legend_helmet_faction_helmet",
+"vanity/legend_helmet_faction_helmet_2",
+"vanity/legend_helmet_feather_band",
+"vanity/legend_helmet_feathered_hat",
+"top/legend_helmet_fencer_hat",
+"vanity/legend_helmet_goat_horns",
+"vanity/legend_helmet_headband",
+"vanity/legend_helmet_horn_decorations",
+"vanity/legend_helmet_impaled_head",
+"vanity/legend_helmet_metal_bird",
+"vanity/legend_helmet_noble_buckle",
+"vanity/legend_helmet_noble_feather",
+"vanity/legend_helmet_noble_floppy_hat",
+"vanity/legend_helmet_noble_hat",
+"vanity/legend_helmet_noble_hood",
+"vanity/legend_helmet_wreath",
+"vanity/legend_helmet_orc_bones",
+"vanity/legend_helmet_plait",
+"vanity/legend_helmet_ponytail",
+"vanity/legend_helmet_ram_horns",
+"vanity/legend_helmet_side_feather",
+"vanity/legend_helmet_southern_headband",
+"vanity/legend_helmet_southern_patterned_headband",
+"vanity/legend_helmet_southern_patterned_headwrap",
+"vanity/legend_helmet_southern_turban_open",
+"vanity/legend_helmet_southern_turban_full",
+"vanity/legend_helmet_southern_turban_light",
+"vanity/legend_helmet_southern_turban_feather",
+"vanity/legend_helmet_southern_top_tail",
+"vanity/legend_helmet_straw_hat",
+"vanity/legend_helmet_top_feather",
+"vanity/legend_helmet_wizard_cowl",
+"vanity/legend_helmet_wolf_helm",
+"vanity/legend_helmet_royal_hood",
+"vanity/legend_helmet_nun_habit",
+"vanity/legend_helmet_warlock_hood",
+"vanity/legend_helmet_goblin_bones",
+"vanity_lower/legend_helmet_back_crest",
+"vanity_lower/legend_helmet_back_feathers",
+"vanity_lower/legend_helmet_feather_crest",
+"vanity_lower/legend_helmet_knotted_tail",
+"vanity_lower/legend_helmet_orc_tail",
+"vanity_lower/legend_helmet_top_plume",
+"vanity_lower/legend_helmet_wings",
+'''
 
 '''
 [1, "hood/legend_helmet_goblin_scarf"], //5

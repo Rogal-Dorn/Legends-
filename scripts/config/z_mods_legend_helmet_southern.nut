@@ -47,7 +47,8 @@ gt.Const.LegendMod.HelmObjs.extend([
     Script = "",
     Sets = [{
     Hoods = [
-		[1, "hood/legend_helmet_southern_niqaab"], //100
+		[3, "hood/legend_helmet_southern_niqaab"], //100
+        [1, "hood/legend_helmet_southern_open_hood"] //40
     ],
     Helms = [
     ],
@@ -62,7 +63,8 @@ gt.Const.LegendMod.HelmObjs.extend([
     Script = "",
     Sets = [{
     Hoods = [
-		[1, "hood/legend_helmet_southern_niqaab"], //100
+		[3, "hood/legend_helmet_southern_niqaab"], //100
+        [1, "hood/legend_helmet_southern_open_hood"] //40
     ],
     Helms = [
     ],
@@ -304,6 +306,7 @@ gt.Const.LegendMod.HelmObjs.extend([
     Sets = [{
     Hoods = [
 		[3, "hood/legend_helmet_southern_niqaab"], //100
+        [1, "hood/legend_helmet_southern_open_hood"], //40
 		[1, "hood/legend_helmet_southern_turban_light_hood"] //100
     ],
     Helms = [
@@ -317,15 +320,16 @@ gt.Const.LegendMod.HelmObjs.extend([
     ]
 }]
 },{
-    ID = "oriental/wrapped_southern_helmet", //10
+    ID = "oriental/wrapped_southern_helmet", //105
     Script = "",
     Sets = [{
     Hoods = [
-        [3, "hood/legend_helmet_southern_niqaab"], //100
+        [1, "hood/legend_helmet_southern_niqaab"], //40
+        [1, "hood/legend_helmet_southern_open_hood"] //40
     ],
     Helms = [
-		[5, "helm/legend_helmet_southern_cap_smooth"], //160
-		[1, "helm/legend_helmet_southern_cap_spiked"] //160
+		[5, "helm/legend_helmet_southern_cap_smooth"], //40
+		[1, "helm/legend_helmet_southern_cap_spiked"] //40
     ],
     Tops = [
     ],
