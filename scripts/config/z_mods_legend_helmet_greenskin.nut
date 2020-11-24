@@ -56,17 +56,8 @@ gt.Const.LegendMod.HelmObjs.extend([ //gob heavy helmet
 }]
 },{ //gob shaman
     ID = "greenskins/goblin_shaman_helmet", //35
-    Script = "scripts/items/helmets/greenskins/goblin_shaman_helmet",
-    Sets = [{
-    Hoods = [
-    ],
-    Helms = [
-    ],
-    Tops = [
-    ],
-    Vanity = [
-    ]
-}]
+    Script = "scripts/items/legend_helmets/helmets/legend_goblin_shaman_helmet",
+    Sets = []
 },{ //gob skirmisher
     ID = "greenskins/goblin_skirmisher_helmet", //25
     Script = "",
