@@ -14,42 +14,17 @@ if (!("HelmObjs" in gt.Const.LegendMod))
 gt.Const.LegendMod.HelmObjs.extend([
 {
     ID = "barbarians/barbarian_ritual_helmet", //300
-    Script = "scripts/items/helmet/barbarians/barbarian_ritual_helmet",
+    Script = "",
     Sets = [{
     Hoods = [
-        [1, "hood/legend_helmet_barb_chain_scarf"], //55
-        [1, "hood/legend_helmet_rotten_chain_scarf"], //60
-        [1, "hood/legend_helmet_patched_hood"], //25
-        [1, "hood/legend_helmet_leather_cap"], //35
-        [1, "hood/legend_helmet_leather_hood"], //45
-        [1, "hood/legend_helmet_open_chain_hood"], //65
+        [1, "hood/legend_helmet_chain_scarf"], //70
     ],
     Helms = [
-        [1, "helm/legend_helmet_crude_cylinder_helm"], //110
+        [1, "helm/legend_helmet_barb_ritual_helm"], //220
     ],
-    Tops = [
-        [1, "top/legend_helmet_orc_leather_mask"], //35
-        [1, "top/legend_helmet_orc_horn_mask"], //60
-        [1, "top/legend_helmet_orc_metal_mask"], //120
-        [1, "top/legend_helmet_goblin_leather_mask"], //40
-        [1, "top/legend_helmet_goblin_leather_helm"], //45
-        [1, "top/legend_helmet_goblin_chain_helm"], //70
-        [1, "top/legend_helmet_headband_side"], //20
-        [1, "top/legend_helmet_headband_nose"], //30
-		[1, "top/unhold_head_spike"], //100
-		[1, "top/unhold_head_chain"], //100
-  
-    ],
+    Tops = [],
     Vanity = [
-        [5, "vanity/legend_helmet_antler"], //10
-        [1, "vanity/legend_helmet_bear_head"], //10
         [1, "vanity/legend_helmet_bull_horns"], //10
-        [1, "vanity/legend_helmet_goat_horns"], //10
-        [1, "vanity/legend_helmet_horn_decorations"], //10
-        [1, "vanity/legend_helmet_orc_bones"], //10
-        [1, "vanity/legend_helmet_ponytail"], //10
-        [1, "vanity/legend_helmet_ram_horns"], //10
-        [1, "vanity/legend_helmet_wolf_helm"], //10
     ]
 }]
 },{
@@ -119,7 +94,7 @@ gt.Const.LegendMod.HelmObjs.extend([
     ],
     Tops = [
         [1, ""], //35
- 
+
     ],
     Vanity = [
         [1, "vanity/legend_helmet_antler"], //10
@@ -248,36 +223,10 @@ gt.Const.LegendMod.HelmObjs.extend([
 }]
 },{
     ID = "barbarians/unhold_helmet_heavy", //400
-    Script = "",
-    Sets = [{
-    Hoods = [
-        [1, "hood/legend_helmet_leather_cap"], //35
-    ],
-    Helms = [
-        [1, ""], //160
-    ],
-    Tops = [
-		 [1, "top/unhold_head_spike"], //100
-    ],
-    Vanity = [
-        [1, ""], //10
-    ]
-}]
+    Script = "scripts/items/legend_helmets/helmets/legend_unhold_helmet_heavy",
+    Sets = []
 },{
     ID = "barbarians/unhold_helmet_light", //35
-    Script = "",
-    Sets = [{
-    Hoods = [
-		[1, "hood/legend_helmet_leather_cap"], //35
-    ],
-    Helms = [
-		[1, ""], //160
-    ],
-    Tops = [
-			[1, "top/unhold_head_chain"], //35
-    ],
-    Vanity = [
-        [1, ""], //10
-    ]
-}]
+    Script = "scripts/items/legend_helmets/helmets/legend_unhold_helmet_light",
+    Sets = []
 }])
