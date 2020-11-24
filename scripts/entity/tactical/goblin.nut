@@ -203,7 +203,7 @@ this.goblin <- this.inherit("scripts/entity/tactical/actor", {
 		this.addSprite("helmet_top");
 		this.addSprite("helmet_vanity");
 		this.addSprite("helmet_damage");
-		for helmet layers
+		// for helmet layers
 		local v = -10;
 		this.setSpriteOffset("helmet", this.createVec(0, v));
 		this.setSpriteOffset("helmet_vanity_lower", this.createVec(0, v));
