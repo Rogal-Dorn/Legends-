@@ -252,6 +252,12 @@ this.unhold <- this.inherit("scripts/entity/tactical/actor", {
 		head.Saturation = body.Saturation;
 		head.Color = body.Color;
 		this.addSprite("helmet");
+		this.addSprite("helmet_damage");
+		this.addSprite("helmet_helm");
+		this.addSprite("helmet_top");
+		this.addSprite("helmet_vanity");
+		this.addSprite("accessory");
+		this.addSprite("accessory_special");
 		this.addDefaultStatusSprites();
 		this.getSprite("status_rooted").Scale = 0.65;
 		this.setSpriteOffset("status_rooted", this.createVec(-10, 16));
@@ -289,6 +295,11 @@ this.unhold <- this.inherit("scripts/entity/tactical/actor", {
 		this.getSprite("armor").setHorizontalFlipping(flip);
 		this.getSprite("head").setHorizontalFlipping(flip);
 		this.getSprite("helmet").setHorizontalFlipping(flip);
+		this.getSprite("helmet_damage").setHorizontalFlipping(flip);
+		this.getSprite("helmet_vanity_lower").setHorizontalFlipping(flip);
+		this.getSprite("helmet_helm").setHorizontalFlipping(flip);
+		this.getSprite("helmet_top").setHorizontalFlipping(flip);
+		this.getSprite("helmet_vanity").setHorizontalFlipping(flip);
 	}
 
 	function assignRandomEquipment()
