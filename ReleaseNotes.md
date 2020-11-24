@@ -4222,6 +4222,7 @@ Fixes corrupt saves when saving a new campaign before unpausing
 Should fix helmets showing up backwards on orcs/goblins/vampires
 Vampires no longer missing vanity sprites
 Fixes failure to enter town
+Fixes some vanity layers not spawning
 
 **Helmet Layer Balance Changes**
 Nasal Helm to -0 vision [from -1]
