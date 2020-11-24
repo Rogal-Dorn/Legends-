@@ -493,8 +493,8 @@ layers = [
  "desc" :  "This heavy helmet usually is worn as a sign of high standing and reputation within barbarian warbands." \
 },
 {"name" : "barb_ritual_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 6600, "con" : 220, "stam" : -24, "vis" : -3, "hair" : "true", "beard" : "true",  \
- "title" :  "Leather helm", \
- "desc" :  "A traditional southern leather helm" \
+ "title" :  "Northern Ritual Helmet", \
+ "desc" :  "This menacing and heavy full faced mask of solid iron is used during barbarian warbands rituals for reasons unknown." \
 },
 
 {"name" : "heavy_plate_helm_named"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1300, "con" : 170, "stam" : -15, "vis" : -3, "hair" : "true", "beard" : "false", "named" : True, "rminViz" : -2, "rmaxViz" : -3, "rminStam" : -13, "rmaxStam" : -15, "rminCond" : 170, "rmaxCond" : 195, "names" : [],  \
