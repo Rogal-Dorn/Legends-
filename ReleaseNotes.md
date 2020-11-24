@@ -4219,7 +4219,11 @@ Fixes corrupt saves when saving a new campaign before unpausing
 15.0.0.19
 
 **Fixes/Tweaks**
-Should fix helmets showing up backwards on orcs/goblins/vampires
+Should fix helmets showing up backwards on the following:
+  - Orcs
+  - Goblins
+  - Necrosavans
+  - Armored Unholds
 Vampires no longer missing vanity sprites
 Fixes failure to enter town
 Fixes some vanity layers not spawning
