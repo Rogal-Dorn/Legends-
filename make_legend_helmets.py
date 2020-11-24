@@ -376,7 +376,7 @@ layers = [
  "title" :  "Niqaab", \
  "desc" :  "A headwrap, protects from the sun and light blows" \
 },
-{"name" : "open_chain_hood"                     , "layer" : "hood", "min" : 1, "max" : 3, "base" : True, "value" : 200, "con" : 65, "stam" : -3, "vis" : 0, "hair" : "true", "beard" : "false",  \
+{"name" : "open_chain_hood"                     , "layer" : "hood", "min" : 1, "max" : 3, "base" : True, "value" : 200, "con" : 60, "stam" : -3, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Chain Mail Hood", \
  "desc" :  "A hood made of chainmail. Offer good protection and visibiliy." \
 },
@@ -384,11 +384,11 @@ layers = [
  "title" :  "Aventail", \
  "desc" :  "A mail aventail that extends from below the eyeline to cover the neck" \
 },
-{"name" : "chain_hood"                     , "layer" : "hood", "min" : 1, "max" : 4, "base" : True, "value" : 310, "con" : 80, "stam" : -4, "vis" : -1, "hair" : "true", "beard" : "false",  \
+{"name" : "chain_hood"                     , "layer" : "hood", "min" : 1, "max" : 4, "base" : True, "value" : 310, "con" : 80, "stam" : -5, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Mail Coif", \
  "desc" :  "A sturdy chain hood" \
 },
-{"name" : "chain_hood_full"                     , "layer" : "hood", "min" : 1, "max" : 6, "base" : True, "value" : 375, "con" : 90, "stam" : -6, "vis" : -1, "hair" : "true", "beard" : "true",  \
+{"name" : "chain_hood_full"                     , "layer" : "hood", "min" : 1, "max" : 6, "base" : True, "value" : 375, "con" : 90, "stam" : -6, "vis" : 0, "hair" : "true", "beard" : "true",  \
  "title" :  "Full Mail Coif", \
  "desc" :  "A mail coif that also protects the neck." \
 },
@@ -396,7 +396,7 @@ layers = [
  "title" :  "Bronze Chain", \
  "desc" :  "Bronze Chain" \
 },
-{"name" : "southern_chain_hood"                     , "layer" : "hood", "min" : 1, "max" : 1, "base" : True, "value" : 310, "con" : 85, "stam" : -5, "vis" : -1, "hair" : "true", "beard" : "false",  \
+{"name" : "southern_chain_hood"                     , "layer" : "hood", "min" : 1, "max" : 1, "base" : True, "value" : 310, "con" : 85, "stam" : -5, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Southern Mail Hood", \
  "desc" :  "A Mail Hood of southern design" \
 },
