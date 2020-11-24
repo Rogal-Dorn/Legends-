@@ -4222,3 +4222,16 @@ Fixes corrupt saves when saving a new campaign before unpausing
 Should fix helmets showing up backwards on orcs/goblins/vampires
 Vampires no longer missing vanity sprites
 Fixes failure to enter town
+
+**Helmet Layer Balance Changes**
+Nasal Helm to -0 vision [from -1]
+Flat Top to -1 vision [from 0]
+Full Mail Coif to -1 vision [from -2]
+Mail Coif stays -1 vision [Aventails are 70dura 4fat, so the tradeoff becomes -1 vision]
+  -> FMC to MC is a difference of 10fat for 2 durability extra
+Chain Attatchment -0 vision [from -1]
+Barbute -1 vision [from -2]
+[Faceplates] -1 vision [from -2]
+EXCEPT Full Faceplate -> -2 vision [from -3]
+Eyemask -0 Vision -2 stam [from -1 vis -3 stam]
+Basinet -1 Vision [from -2]
