@@ -4227,6 +4227,7 @@ Should fix helmets showing up backwards on the following:
 Vampires no longer missing vanity sprites
 Fixes failure to enter town
 Fixes some vanity layers not spawning
+Locations shouldn't randomly spawn non layered famed helmets
 
 
 **Helmet Layer Balance Changes**
