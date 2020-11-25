@@ -13,14 +13,14 @@ if (!("HelmObjs" in gt.Const.LegendMod))
 
 gt.Const.LegendMod.HelmObjs.extend([
 {
-    ID = "ancient/ancient_gladiator_helmet",
+    ID = "ancient/ancient_gladiator_helmet", //195, -11, -2,  1300
     Script = "",
     Sets = [{
         Hoods = [
-            [1, "hood/legend_helmet_leather_cap"]
+            [1, "hood/legend_helmet_leather_cap"] //35, -1, 0
         ],
         Helms = [
-            [1, "helm/legend_helmet_legend_ancient_gladiator"]
+            [1, "helm/legend_helmet_legend_ancient_gladiator"] //160, -10, -2
         ],
         Tops = [
         ],
@@ -28,14 +28,14 @@ gt.Const.LegendMod.HelmObjs.extend([
         ]
     }]
 },{
-    ID = "ancient/ancient_honorguard_helmet",
+    ID = "ancient/ancient_honorguard_helmet", //180, -13, -3   1000
     Script = "",
     Sets = [{
         Hoods = [
-            [1, "hood/legend_helmet_leather_cap"]
+            [1, "hood/legend_helmet_leather_cap"] //35, -1, 0
         ],
         Helms = [
-            [1, "helm/legend_helmet_ancient_beard_mask"],
+            [1, "helm/legend_helmet_ancient_beard_mask"], //145, -12, -3
             [1, "helm/legend_helmet_ancient_lion_mask"],
             [1, "helm/legend_helmet_ancient_mask"]
         ],
@@ -45,12 +45,12 @@ gt.Const.LegendMod.HelmObjs.extend([
         ]
     },{
         Hoods = [
-            [1, "hood/legend_helmet_rotten_chain_scarf"],
-            [1, "hood/legend_helmet_barb_chain_scarf"],
-            [1, "hood/legend_helmet_leather_cap"]
+            [1, "hood/legend_helmet_rotten_chain_scarf"], //60, -2, 0
+            [1, "hood/legend_helmet_barb_chain_scarf"], //55, -2, 0
+            [1, "hood/legend_helmet_leather_cap"] // 35, -1, 0
         ],
         Helms = [
-            [1, "helm/legend_helmet_ancient_face_helm"]
+            [1, "helm/legend_helmet_ancient_face_helm"] //125, -11, -2
         ],
         Tops = [
         ],
@@ -58,16 +58,17 @@ gt.Const.LegendMod.HelmObjs.extend([
         ]
     }]
 },{
-    ID = "ancient/ancient_household_helmet",
+    ID = "ancient/ancient_household_helmet", //95, -8, -1
     Script = "",
     Sets = [{
         Hoods = [
-            [1, "hood/legend_helmet_leather_cap"]
+            [1, "hood/legend_helmet_leather_cap"] //35, -1, 0
         ],
         Helms = [
             [1, "helm/legend_helmet_ancient_conic_helm"],
             [1, "helm/legend_helmet_ancient_kettle"],
-            [1, "helm/legend_helmet_ancient_dome"]
+            [1, "helm/legend_helmet_ancient_dome"],
+            [1, "helm/legend_helmet_ancient_crested"]
         ],
         Tops = [
         ],
@@ -79,11 +80,11 @@ gt.Const.LegendMod.HelmObjs.extend([
     Script = "scripts/items/legend_helmets/helmets/legend_ancient_laurels",
     Sets = []
 },{
-    ID = "ancient/ancient_legionary_helmet",
+    ID = "ancient/ancient_legionary_helmet", // 130, -10, -2
     Script = "",
     Sets = [{
         Hoods = [
-            [1, "hood/legend_helmet_leather_cap"]
+            [1, "hood/legend_helmet_leather_cap"] //35, -1, 0
         ],
         Helms = [
             [1, "helm/legend_helmet_ancient_dome_tailed"],
@@ -102,14 +103,14 @@ gt.Const.LegendMod.HelmObjs.extend([
     Script = "scripts/items/legend_helmets/helmets/legend_ancient_priest_diadem",
     Sets = []
 },{
-    ID = "ancient/legend_ancient_legionary_helmet_restored",
+    ID = "ancient/legend_ancient_legionary_helmet_restored", //140, -8, -1
     Script = "",
     Sets = [{
         Hoods = [
-            [1, "hood/legend_helmet_leather_cap"]
+            [1, "hood/legend_helmet_leather_cap"] //35, -1, 0
         ],
         Helms = [
-            [1, "helm/legend_helmet_legend_ancient_legionaire_restored"]
+            [1, "helm/legend_helmet_legend_ancient_legionaire_restored"] // 105, -7, -1
         ],
         Tops = [
         ],
