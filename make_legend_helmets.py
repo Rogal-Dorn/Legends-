@@ -1093,6 +1093,10 @@ layers = [
  "title" :  "Goblin Bones", \
  "desc" :  "Skull ornament used by greenskin shamans" \
 },
+{"name" : "ancient_priest_hat"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 1000, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "false", "beard" : "false",  \
+ "title" :  "Ancient Lich Crown", \
+ "desc" :  "Cermonial crown of an ancient Lich Priests" \
+},
 {"name" : "back_crest"                     , "layer" : "vanity", "lowervanity" : True, "min" : 1, "max" : 4, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Crest", \
  "desc" :  "A huge crest of feathers arrayed behind a helm" \
