@@ -250,58 +250,7 @@ gt.Const.LegendMod.HelmObjs.extend([
     Tops = [
     ],
     Vanity = [
-        [0, "vanity/legend_helmet_hood_cloth_square"], //30
-        [0, "vanity/legend_helmet_sack"], //80
-        [0, "vanity/legend_helmet_antler"], //10
-        [0, "vanity/legend_helmet_bear_head"], //10
-        [0, "vanity/legend_helmet_beret"], //10
-        [0, "vanity/legend_helmet_bull_horns"], //10
-        [0, "vanity/legend_helmet_crown"], //10
-        [0, "vanity/legend_helmet_faction_helmet"], //10
-        [0, "vanity/legend_helmet_faction_helmet_2"], //10
-        [0, "vanity/legend_helmet_feather_band"], //10
-        [0, "vanity/legend_helmet_feathered_hat"], //10
-        [0, "vanity/legend_helmet_fencer_hat"], //10
-        [0, "vanity/legend_helmet_goat_horns"], //10
-        [0, "vanity/legend_helmet_headband"], //10
-        [0, "vanity/legend_helmet_horn_decorations"], //10
-        [0, "vanity/legend_helmet_hunter_cap"], //10
-        [0, "vanity/legend_helmet_impaled_head"], //10
-        [0, "vanity/legend_helmet_jester_hat"], //10
-        [0, "vanity/legend_helmet_metal_bird"], //10
-        [0, "vanity/legend_helmet_noble_buckle"], //10
-        [0, "vanity/legend_helmet_noble_feather"], //10
-        [0, "vanity/legend_helmet_noble_floppy_hat"], //10
-        [0, "vanity/legend_helmet_noble_hat"], //10
-        [0, "vanity/legend_helmet_noble_hood"], //10
-        [0, "vanity/legend_helmet_wreath"], //10
-        [0, "vanity/legend_helmet_orc_bones"], //10
-        [0, "vanity/legend_helmet_plait"], //10
-        [0, "vanity/legend_helmet_ponytail"], //10
-        [0, "vanity/legend_helmet_ram_horns"], //10
-        [0, "vanity/legend_helmet_side_feather"], //10
-        [0, "vanity/legend_helmet_straw_hat"], //10
-        [0, "vanity/legend_helmet_top_feather"], //10
-        [0, "vanity/legend_helmet_witchhunter_helm"], //10
-        [0, "vanity/legend_helmet_wizard_cowl"], //10
-        [0, "vanity/legend_helmet_wolf_helm"], //10
-        [0, "vanity/legend_helmet_white_wolf_helm"], //10
-        [0, "vanity/legend_helmet_royal_hood"], //10
-        [0, "vanity/legend_helmet_lindwurm_helm"], //10
-        [0, "vanity/legend_helmet_redback_helm"], //10
-        [0, "vanity/legend_helmet_nun_habit"], //10
-        [0, "vanity/legend_helmet_nach_helm"], //10
-        [0, "vanity/legend_helmet_mountain_helm"], //10
-        [0, "vanity/legend_helmet_demon_alp_helm"], //10
-        [0, "vanity/legend_helmet_warlock_hood"], //10
-        [0, "vanity_lower/legend_helmet_back_crest"], //10
-        [0, "vanity_lower/legend_helmet_back_feathers"], //10
-        [0, "vanity_lower/legend_helmet_feather_crest"], //10
-        [0, "vanity_lower/legend_helmet_knotted_tail"], //10
-        [0, "vanity_lower/legend_helmet_orc_tail"], //10
-        [0, "vanity_lower/legend_helmet_top_plume"], //10
-        [0, "vanity_lower/legend_helmet_wings"], //10
-		    [1, "vanity/legend_helmet_southern_turban_feather"] //10
+		[1, "vanity/legend_helmet_southern_turban_feather"] //10
     ]
 }]
 },{
