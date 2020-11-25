@@ -496,7 +496,7 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 
 						if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 						{
-							local weightName = this.Const.World.Common.convNameToList(named);
+							local weightName = this.Const.World.Common.convNameToList(helmets);
 							this.m.Loot.add(this.Const.World.Common.pickHelmet(weightName));
 						}
 						else
