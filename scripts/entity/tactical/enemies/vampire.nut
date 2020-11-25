@@ -235,6 +235,14 @@ this.vampire <- this.inherit("scripts/entity/tactical/actor", {
 		this.addSprite("helmet_vanity_lower");
 		this.addSprite("accessory");
 		this.addSprite("accessory_special");
+		local v = -3;
+		local v2 = 0;
+		this.setSpriteOffset("helmet", this.createVec(v2, v));
+		this.setSpriteOffset("helmet_vanity_lower", this.createVec(v2, v));
+		this.setSpriteOffset("helmet_helm", this.createVec(v2, v));
+		this.setSpriteOffset("helmet_top", this.createVec(v2, v));
+		this.setSpriteOffset("helmet_vanity", this.createVec(v2, v));
+		this.setSpriteOffset("helmet_damage", this.createVec(v2, v)); //please work :)
 		local beard_top = this.addSprite("beard_top");
 
 		if (beard.HasBrush && this.doesBrushExist(beard.getBrush().Name + "_top"))
@@ -244,7 +252,7 @@ this.vampire <- this.inherit("scripts/entity/tactical/actor", {
 		}
 
 		local body_blood = this.addSprite("body_blood");
-		body_blood.setBrush("bust_body_bloodied_02");
+		body_blood.setBrush("bust_body_bloodied_02"); 
 		body_blood.setHorizontalFlipping(true);
 		body_blood.Visible = false;
 		local body_dirt = this.addSprite("dirt");
