@@ -119,6 +119,6 @@ gt.Const.LegendMod.HelmObjs.extend([
     }]
 },{
     ID = "ancient/ancient_lich_headpiece",
-    Script= "scripts/items/helmets/ancient/items",
+    Script = "scripts/items/legend_helmets/helmets/legend_ancient_lich_headpiece",
     Sets = []
 }])
