@@ -881,7 +881,7 @@ layers = [
  "title" :  "Square Hood Cloth", \
  "desc" :  "A simple hood to protect against weather and scratches." \
 },
-{"name" : "sack"                     , "layer" : "vanity", "min" : 1, "max" : 12, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0, "hair" : "true", "beard" : "true",  \
+{"name" : "sack"                     , "layer" : "vanity", "min" : 1, "max" : 12, "value" : 200, "con" : 30, "stam" : -2, "vis" : 0, "hair" : "true", "beard" : "true",  \
  "title" :  "Sack", \
  "desc" :  "A rough hewn hession sack" \
 },
