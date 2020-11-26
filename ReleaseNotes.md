@@ -4229,6 +4229,7 @@ Fixes failure to enter town
 Fixes some vanity layers not spawning
 Locations shouldn't randomly spawn non layered famed helmets
 Loading into sunken library doesn't freeze now
+Fixes Cultist Hood perk not working with layered armor
 
 
 **Helmet Layer Balance Changes**
