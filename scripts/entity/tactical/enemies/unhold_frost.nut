@@ -42,6 +42,11 @@ this.unhold_frost <- this.inherit("scripts/entity/tactical/enemies/unhold", {
 		head.Saturation = body.Saturation;
 		head.Color = body.Color;
 		this.addSprite("helmet");
+		this.addSprite("helmet_damage");
+		this.addSprite("helmet_vanity_lower");
+		this.addSprite("helmet_helm");
+		this.addSprite("helmet_top");
+		this.addSprite("helmet_vanity");
 		this.addDefaultStatusSprites();
 		this.getSprite("status_rooted").Scale = 0.65;
 		this.setSpriteOffset("status_rooted", this.createVec(-10, 16));
