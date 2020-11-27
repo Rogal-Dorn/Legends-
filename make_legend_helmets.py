@@ -312,7 +312,7 @@ layers = [
  "title" :  "Rusted Aventail", \
  "desc" :  "A rusty mail aventail that still offers good protection - it leaves horrible stains though." \
 },
-{"name" : "rotten_chain_scarf"                     , "layer" : "hood", "min" : 1, "max" : 5, "base" : True, "value" : 190, "con" : 60, "stam" : -2, "vis" : 0, "hair" : "false", "beard" : "true",  \
+{"name" : "rotten_chain_scarf"                     , "layer" : "hood", "min" : 1, "max" : 5, "base" : True, "value" : 190, "con" : 60, "stam" : -3, "vis" : 0, "hair" : "false", "beard" : "true",  \
  "title" :  "Rotten Aventail", \
  "desc" :  "A rotten mail aventail that extends from below the eyeline to cover the neck" \
 },
@@ -332,18 +332,8 @@ layers = [
  "title" :  "Simple Hood", \
  "desc" :  "A simple hood to protect against weather and scratches." \
 },
-{"name" : "hood_cloth_round"                     , "layer" : "hood", "min" : 1, "max" : 1, "base" : True, "value" : 60, "con" : 30, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
- "title" :  "Round Hood Cloth", \
- "desc" :  "A simple hood to protect against weather and scratches." \
-},
-{"name" : "hood_cloth_wide"                     , "layer" : "hood", "min" : 1, "max" : 2, "base" : True, "value" : 60, "con" : 30, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
- "title" :  "Wide Hood Cloth", \
- "desc" :  "A simple hood to protect against weather and scratches." \
-},
-{"name" : "cloth_long_hood"                     , "layer" : "hood", "min" : 1, "max" : 4, "base" : True, "value" : 60, "con" : 30, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
- "title" :  "Cloth Long Hood", \
- "desc" :  "A simple hood to protect against weather and scratches." \
-},
+
+
 {"name" : "leather_cap"                     , "layer" : "hood", "min" : 1, "max" : 1, "base" : True, "value" : 80, "con" : 35, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Leather Cap", \
  "desc" :  "A sturdy leather cap that is not covering the ears and neck." \
@@ -569,7 +559,7 @@ layers = [
  "title" :  "Conic Helm", \
  "desc" :  "A heavy conic helmet" \
 },
-{"name" : "sallet"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 7000, "con" : 185, "stam" : -9, "vis" : -1, "hair" : "true", "beard" : "false",  \
+{"name" : "sallet"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 1200, "con" : 110, "stam" : -5, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Sallet", \
  "desc" :  "A metal sallet helmet with an extended neckguard, a design uncommon in these lands. It is well crafted to offer maximum protection with minimum weight, and without impairing vision." \
 },
@@ -657,7 +647,7 @@ layers = [
  "title" :  "Glimpse of Davkul", \
  "desc" :  "The Glimpse of Davkul is a gift bestowed upon man by ancient and dark powers, a helmet merged with human skin and bones through the most unspeakable of rituals. A glimpse of a future where man shall become one with creations from a realm beyond. It shall never break, but instead keep regrowing its scarred skin on the spot." \
 },
-{"name" : "rotten_flat_top_face_mask"                     , "layer" : "helm", "min" : 1, "max" : 5, "value" : 1250, "con" : 150, "stam" : -12, "vis" : -3, "hair" : "true", "beard" : "true",  \
+{"name" : "rotten_flat_top_face_mask"                     , "layer" : "helm", "min" : 1, "max" : 5, "value" : 1250, "con" : 150, "stam" : -14, "vis" : -3, "hair" : "true", "beard" : "true",  \
  "title" :  "Rotten Flat Top Face Mask", \
  "desc" :  "Rotten Flat Top Face Mask" \
 },
@@ -672,6 +662,22 @@ layers = [
 
 
 
+{"name" : "hood_cloth_round"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 60, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
+ "title" :  "Round Hood Cloth", \
+ "desc" :  "A simple hood to protect against weather and scratches." \
+},
+{"name" : "hood_cloth_wide"                     , "layer" : "top", "min" : 1, "max" : 2,  "value" : 60, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
+ "title" :  "Wide Hood Cloth", \
+ "desc" :  "A simple hood to protect against weather and scratches." \
+},
+{"name" : "hood_cloth_square"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 60, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
+ "title" :  "Square Hood Cloth", \
+ "desc" :  "A simple hood to protect against weather and scratches." \
+},
+{"name" : "cloth_long_hood"                     , "layer" : "top", "min" : 1, "max" : 4, "value" : 60, "con" : 30, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
+ "title" :  "Cloth Long Hood", \
+ "desc" :  "A simple hood to protect against weather and scratches." \
+},
 
 {"name" : "orc_leather_mask"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 100, "con" : 35, "stam" : -5, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Orc Leather Mask", \
@@ -761,9 +767,9 @@ layers = [
  "title" :  "Short Faceplate", \
  "desc" :  "A short squat faceplate" \
 },
-{"name" : "cult_hood"                     , "layer" : "top", "min" : 1, "max" : 7, "value" : 600, "con" : 65, "stam" : -3, "vis" : -1, "hair" : "true", "beard" : "false",  \
- "title" :  "Cult Hood", \
- "desc" :  "A hood used in cultist ceremonies" \
+{"name" : "cult_hood"                     , "layer" : "top", "min" : 1, "max" : 7, "value" : 120, "con" : 50, "stam" : -3, "vis" : -1, "hair" : "true", "beard" : "false",  \
+ "title" :  "Cult Leather Hood", \
+ "desc" :  "A leather hood used in cultist ceremonies" \
 },
 {"name" : "faceplate_long"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 700, "con" : 65, "stam" : -5, "vis" : -1, "hair" : "false", "beard" : "true",  \
  "title" :  "Long Faceplate", \
@@ -849,6 +855,10 @@ layers = [
  "title" :  "Warlock Skill Helm", \
  "desc" :  "Warlock Skill Helm" \
 },
+{"name" : "fencer_hat"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 200, "con" : 60, "stam" : -3, "vis" : 0, "hair" : "true", "beard" : "false",  \
+"title" :  "Fencer Hat", \
+"desc" :  "The floppy hat of a swordsman" \
+},
 {"name" : "southern_noble_crown"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 400, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Vizier Peak", \
  "desc" :  "The crown of a southern vizier" \
@@ -877,13 +887,9 @@ layers = [
  "title" :  "Open Turban", \
  "desc" :  "A turban with open face" \
 },
-{"name" : "hood_cloth_square"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 60, "con" : 30, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
- "title" :  "Square Hood Cloth", \
- "desc" :  "A simple hood to protect against weather and scratches." \
-},
-{"name" : "sack"                     , "layer" : "vanity", "min" : 1, "max" : 12, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0, "hair" : "true", "beard" : "true",  \
+{"name" : "sack"                     , "layer" : "vanity", "min" : 1, "max" : 12, "value" : 200, "con" : 20, "stam" : 0, "vis" : -1, "hair" : "true", "beard" : "true",  \
  "title" :  "Sack", \
- "desc" :  "A rough hewn hession sack" \
+ "desc" :  "A rough hewn hession sack with two holes in it" \
 },
 {"name" : "antler"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Antlers", \
@@ -921,14 +927,6 @@ layers = [
  "title" :  "Feathered Hat", \
  "desc" :  "A feathered hat as is the latest fashion among the courtisans" \
 },
-{"name" : "fencer_hat"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 200, "con" : 60, "stam" : -3, "vis" : 0, "hair" : "true", "beard" : "false",  \
-"title" :  "Fencer Hat", \
-"desc" :  "The floppy hat of a swordsman" \
-},
-# {"name" : "fencer_hat"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
-#  "title" :  "Fencer Hat", \
-#  "desc" :  "The floppy hat of a swordsman" \
-# },
 {"name" : "goat_horns"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Goat Horns", \
  "desc" :  "The tall horns of a barbarian beastmaster" \

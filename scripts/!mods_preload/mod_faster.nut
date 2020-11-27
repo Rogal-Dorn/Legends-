@@ -114,8 +114,9 @@
 
 			if (_entity.isAlive() && (!_entity.isHiddenToPlayer() || this.m.TargetTile.IsVisibleForPlayer))
 			{
-				this.getAgent().declareAction(this.Const.AI.Agent.ActionDelay * 2);
-				this.getAgent().declareEvaluationDelay(this.m.SelectedSkill.getDelay() * 2);
+				this.getAgent().declareAction(900);
+				local delay = this.Math.maxf(800, this.m.SelectedSkill.getDelay() + 750);
+				this.getAgent().declareEvaluationDelay(delay);
 			}
 
 			this.m.TargetTile = null;
@@ -187,17 +188,8 @@
 
 		if (!_entity.isHiddenToPlayer() || this.m.TargetTile.IsVisibleForPlayer)
 		{
-
-			if (this.m.Skill.getID() == "actives.fling_back")
-			{
-				this.getAgent().declareEvaluationDelay(this.Const.AI.Agent.NewEvaluationDelay * 2);
-				this.getAgent().declareAction(this.Const.AI.Agent.ActionDelay * 2);
-			}
-			else
-			{
-				this.getAgent().declareEvaluationDelay();
-				this.getAgent().declareAction();
-			}
+			this.getAgent().declareEvaluationDelay(800);
+			this.getAgent().declareAction(900);
 		}
 
 		this.m.TargetTile = null;
@@ -225,8 +217,8 @@
 
 		if (!_entity.isHiddenToPlayer() || this.m.TargetTile.IsVisibleForPlayer)
 		{
-			this.getAgent().declareEvaluationDelay(2000);
-			this.getAgent().declareAction(this.Const.AI.Agent.ActionDelay * 2);
+			this.getAgent().declareEvaluationDelay(1000);
+			this.getAgent().declareAction(900);
 		}
 
 		this.m.TargetTile = null;
@@ -258,8 +250,8 @@
 
 		if (!_entity.isHiddenToPlayer())
 		{
-			this.getAgent().declareEvaluationDelay(this.Const.AI.Agent.NewEvaluationDelay * 2);
-			this.getAgent().declareAction(this.Const.AI.Agent.ActionDelay * 2);
+			this.getAgent().declareEvaluationDelay(800);
+			this.getAgent().declareAction(900);
 		}
 
 		this.m.Skill = null;
@@ -294,11 +286,13 @@
 
 			if (_entity.isAlive())
 			{
-				this.getAgent().declareAction(this.Const.AI.Agent.ActionDelay * 2)
+				local delay = this.Math.maxf(900, this.m.this.m.Skill.getDelay());
+				this.getAgent().declareAction(delay)
 
 				if (this.m.Skill.getDelay() != 0)
 				{
-					this.getAgent().declareEvaluationDelay(this.m.Skill.getDelay() + 500);
+					delay = this.Math.maxf(800, this.m.this.m.Skill.getDelay());
+					this.getAgent().declareEvaluationDelay(delay);
 				}
 			}
 
@@ -330,13 +324,9 @@
 
 			if (_entity.isAlive())
 			{
-				local delay = this.m.Skill.getDelay()
-				if (this.m.Skill.m.ID == "actives.ignite_firelance")
-				{
-					delay *= 2;
-				}
+				local delay = this.Math.maxf(900, this.m.this.m.Skill.getDelay());
 				this.getAgent().declareAction(delay);
-				this.getAgent().declareEvaluationDelay(delay);
+				this.getAgent().declareEvaluationDelay(1000);
 			}
 
 			this.m.TargetTile = null;

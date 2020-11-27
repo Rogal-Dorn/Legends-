@@ -4229,6 +4229,8 @@ Fixes failure to enter town
 Fixes some vanity layers not spawning
 Locations shouldn't randomly spawn non layered famed helmets
 Loading into sunken library doesn't freeze now
+Fixes weapons brush being too large (causing color squares of death)
+Tweaks to Faster AI to hopefully prevent the faster AI crashes
 
 
 **Helmet Layer Balance Changes**
@@ -4246,3 +4248,6 @@ Faceplates (All): -1 vision [from -2]
   EXCEPT Full Faceplate -> -2 vision [from -3]
 Eyemask: [35, -2, 0] from [35, -3, -2]
 Basinet: [130, -7, -1] from [130, -7, -2]
+Cultist Hood: [50, -3, -1] from [65, -3, -1]
+Cloth Sack: [20, 0, -1] from [80, -4, 0]
+Sallet: [110, -5, 0] from [185, -9, -1]
