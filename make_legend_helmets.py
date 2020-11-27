@@ -523,11 +523,11 @@ layers = [
  "title" :  "Viking Helm", \
  "desc" :  "A nordic helmet guarding face and neck with additional metal plates" \
 },
-{"name" : "norman_helm"                     , "layer" : "helm", "min" : 1, "max" : 5, "value" : 550, "con" : 50, "stam" : -2, "vis" : 0, "hair" : "true", "beard" : "false",  \
+{"name" : "norman_helm"                     , "layer" : "helm", "min" : 1, "max" : 5, "value" : 300, "con" : 60, "stam" : -4, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Nasal Helmet", \
  "desc" :  "A metal helmet with added noseguard." \
 },
-{"name" : "flat_top_helm"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 800, "con" : 70, "stam" : -3, "vis" : -1, "hair" : "true", "beard" : "false",  \
+{"name" : "flat_top_helm"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 450, "con" : 75, "stam" : -5, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Flat Top Helm", \
  "desc" :  "A flat full-metal helmet with noseguard." \
 },
@@ -571,7 +571,7 @@ layers = [
  "title" :  "Bronze Helm", \
  "desc" :  "Bronze Helm" \
 },
-{"name" : "great_helm"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 3500, "con" : 220, "stam" : -12, "vis" : -3, "hair" : "true", "beard" : "false",  \
+{"name" : "great_helm"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 3000, "con" : 220, "stam" : -15, "vis" : -3, "hair" : "true", "beard" : "false",  \
  "title" :  "Great Helm", \
  "desc" :  "A closed metal helm with breathing holes. Great in the way of protection but hard to breathe in and limiting the field of view." \
 },
@@ -651,7 +651,7 @@ layers = [
  "title" :  "Rotten Flat Top Face Mask", \
  "desc" :  "Rotten Flat Top Face Mask" \
 },
-{"name" : "rotten_great_helm"                     , "layer" : "helm", "min" : 1, "max" : 4, "value" : 1500, "con" : 160, "stam" : -13, "vis" : -3, "hair" : "true", "beard" : "true",  \
+{"name" : "rotten_great_helm"                     , "layer" : "helm", "min" : 1, "max" : 4, "value" : 1500, "con" : 160, "stam" : -15, "vis" : -3, "hair" : "true", "beard" : "true",  \
  "title" :  "Rotten Great Helm", \
  "desc" :  "Rotten Great Helm" \
 },
@@ -751,7 +751,7 @@ layers = [
  "title" :  "Eyemask", \
  "desc" :  "A metal mask covering the eyes and nose from blows" \
 },
-{"name" : "chain_attachment"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 310, "con" : 40, "stam" : -3, "vis" : 0, "hair" : "false", "beard" : "true",  \
+{"name" : "chain_attachment"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 410, "con" : 50, "stam" : -4, "vis" : -1, "hair" : "false", "beard" : "true",  \
  "title" :  "Chain Attachment", \
  "desc" :  "A piece of mail used for hanging over the mouth and nose" \
 },
@@ -911,9 +911,13 @@ layers = [
  "title" :  "Crown", \
  "desc" :  "An ornately designed symbol of authority" \
 },
-{"name" : "faction_helmet"                     , "layer" : "vanity", "min" : 1, "max" : 12, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
- "title" :  "Faction Helmet", \
- "desc" :  "The helmet of a noble house" \
+{"name" : "faction_helmet"                     , "layer" : "vanity", "min" : 1, "max" : 10, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
+ "title" :  "Faction Helmet Ornament", \
+ "desc" :  "Ornament top of a noble house" \
+},
+{"name" : "faction_decayed_helmet"                     , "layer" : "vanity", "min" : 1, "max" : 2, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
+ "title" :  "Decayed Faction Helmet Ornament", \
+ "desc" :  "Decayed ornament top of a noble house" \
 },
 {"name" : "faction_helmet_2"                     , "layer" : "vanity", "min" : 1, "max" : 10, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Faction Helmet", \
