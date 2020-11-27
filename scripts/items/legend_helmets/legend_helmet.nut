@@ -177,6 +177,25 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 		// return "legend_armor/runed_armor.png";
 	}
 
+	function getIDAsArray()
+	{
+		local slots = [];
+
+		foreach( i, u in this.m.Upgrades )
+		{
+			if (this.m.Blocked[i] || u == null)
+			{
+				slots.push(null);
+			}
+			else
+			{
+				slots.push(u.getID());
+			}
+		}
+
+		return slots;
+	}
+
 	function getIconOverlay()
 	{
 		local L = [];
