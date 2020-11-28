@@ -123,8 +123,8 @@ this.hedge_knight <- this.inherit("scripts/entity/tactical/human", {
 				armor
 			));
 		}
-		
-		
+
+
 
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Head))
 		{
@@ -132,7 +132,7 @@ this.hedge_knight <- this.inherit("scripts/entity/tactical/human", {
 				[1, "full_helm"],
 				[1, "closed_flat_top_with_mail"]
 			];
-			this.m.Items.equip(this.Const.World.Common.pickArmor(
+			this.m.Items.equip(this.Const.World.Common.pickHelmet(
 				helmet
 			));
 		}
@@ -177,7 +177,7 @@ this.hedge_knight <- this.inherit("scripts/entity/tactical/human", {
 			"shields/named/named_bandit_kite_shield",
 			"shields/named/named_bandit_heater_shield"
 		]);
-	
+
 		//we just dont give these guys famed items? dno, just uncomment this if we decide to do so
 		// this.m.Items.equip(this.Const.World.Common.pickArmor([
 		// 	[1, "named/brown_coat_of_plates_armor"],

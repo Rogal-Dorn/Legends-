@@ -287,13 +287,13 @@
 
 			if (_entity.isAlive())
 			{
-				local delay = this.Math.maxf(900, this.m.Skill.getDelay());
-				this.getAgent().declareAction(delay)
+				//local delay = this.Math.maxf(900, this.m.Skill.getDelay());
+				this.getAgent().declareAction(900)
 
 				if (this.m.Skill.getDelay() != 0)
 				{
-					delay = this.Math.maxf(800, this.m.Skill.getDelay());
-					this.getAgent().declareEvaluationDelay(delay);
+					//delay = this.Math.maxf(800, this.m.Skill.getDelay());
+					this.getAgent().declareEvaluationDelay(1000);
 				}
 			}
 
@@ -303,6 +303,8 @@
 		return true;
 	}
 });
+
+
 
 ::mods_hookNewObject("ai/tactical/behaviors/ai_attack_split", function(o) {
 	o.onExecute = function ( _entity )
