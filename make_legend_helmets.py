@@ -258,6 +258,7 @@ this.$name <- this.inherit("scripts/items/legend_helmets/legend_named_helmet_upg
 		this.m.IsLowerVanity = $lower;
 		this.m.HideHair = $hair;
 		this.m.HideBeard = $beard;
+        this.randomizeValues();
 	}
 
 	function updateVariant()
