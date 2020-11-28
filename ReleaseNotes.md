@@ -4257,3 +4257,4 @@ Sallet: [110, -5, 0] from [185, -9, -1]
 
 **Fixes/Tweaks**
 Actually fixes armored unholds' helmets
+Hedge Knights no longer have vanilla helmets when playing on layered system
