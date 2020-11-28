@@ -7,3 +7,4 @@ gt.Const.World.SpeedSettings.LudicrousSpeedMult <- 8.0; // 8x when the 4 key is 
 // reduce some combat delays
 foreach(v in ["Action","MinorAction"]) gt.Const.AI.Agent[v + "Delay"] *= 0.5;
 foreach(v in ["NewEvaluation","CameraAdditional"]) gt.Const.AI.Agent[v + "Delay"] *= 0.25;
+

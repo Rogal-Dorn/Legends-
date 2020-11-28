@@ -14,6 +14,7 @@
     }
   }
 
+
   local keyHandler = o.helper_handleContextualKeyInput;
   o.helper_handleContextualKeyInput = function(key)
   {
@@ -286,12 +287,12 @@
 
 			if (_entity.isAlive())
 			{
-				local delay = this.Math.maxf(900, this.m.this.m.Skill.getDelay());
+				local delay = this.Math.maxf(900, this.m.Skill.getDelay());
 				this.getAgent().declareAction(delay)
 
 				if (this.m.Skill.getDelay() != 0)
 				{
-					delay = this.Math.maxf(800, this.m.this.m.Skill.getDelay());
+					delay = this.Math.maxf(800, this.m.Skill.getDelay());
 					this.getAgent().declareEvaluationDelay(delay);
 				}
 			}
@@ -324,7 +325,7 @@
 
 			if (_entity.isAlive())
 			{
-				local delay = this.Math.maxf(900, this.m.this.m.Skill.getDelay());
+				local delay = this.Math.maxf(900, this.m.Skill.getDelay());
 				this.getAgent().declareAction(delay);
 				this.getAgent().declareEvaluationDelay(1000);
 			}
