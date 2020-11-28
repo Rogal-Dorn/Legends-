@@ -4217,6 +4217,9 @@ Fixes corrupt saves when saving a new campaign before unpausing
 
 
 15.0.0.19
+https://drive.google.com/file/d/1iSV9jTJ3u8yJYPmmqhW-2VSeUteZyD0R/view?usp=sharing
+
+Helmet layer balacning is still WIP, continuing to balance...
 
 **Fixes/Tweaks**
 Should fix helmets showing up backwards on the following:
@@ -4250,8 +4253,9 @@ Faceplates (All): -1 vision [from -2]
   EXCEPT Full Faceplate -> -2 vision [from -3]
 Eyemask: [35, -2, 0] from [35, -3, -2]
 Basinet: [130, -7, -1] from [130, -7, -2]
-<<<<<<< HEAD
 Cultist Hood: [50, -3, -1] from [65, -3, -1]
 Cloth Sack: [20, 0, -1] from [80, -4, 0]
 Sallet: [110, -5, 0] from [185, -9, -1]
++More
+
 
