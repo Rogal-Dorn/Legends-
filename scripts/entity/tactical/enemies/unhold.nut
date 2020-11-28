@@ -253,6 +253,7 @@ this.unhold <- this.inherit("scripts/entity/tactical/actor", {
 		head.Color = body.Color;
 		this.addSprite("helmet");
 		this.addSprite("helmet_damage");
+		this.addSprite("helmet_vanity_lower");
 		this.addSprite("helmet_helm");
 		this.addSprite("helmet_top");
 		this.addSprite("helmet_vanity");

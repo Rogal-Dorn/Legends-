@@ -129,10 +129,12 @@ this.hedge_knight <- this.inherit("scripts/entity/tactical/human", {
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Head))
 		{
 			local helmet = [
-				"helmets/full_helm",
-				"helmets/closed_flat_top_with_mail"
+				[1, "full_helm"],
+				[1, "closed_flat_top_with_mail"]
 			];
-			this.m.Items.equip(this.new("scripts/items/" + helmet[this.Math.rand(0, helmet.len() - 1)]));
+			this.m.Items.equip(this.Const.World.Common.pickArmor(
+				helmet
+			));
 		}
 	}
 

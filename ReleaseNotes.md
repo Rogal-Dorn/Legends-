@@ -4232,7 +4232,6 @@ Fixes failure to enter town
 Fixes some vanity layers not spawning
 Locations shouldn't randomly spawn non layered famed helmets
 Loading into sunken library doesn't freeze now
-<<<<<<< HEAD
 Fixes weapons brush being too large (causing color squares of death)
 Tweaks to Faster AI to hopefully prevent the faster AI crashes
 Fixes Cultist Hood perk not working with layered armor
@@ -4259,3 +4258,10 @@ Sallet: [110, -5, 0] from [185, -9, -1]
 +More
 
 
+15.0.0.20
+
+**Fixes/Tweaks**
+Actually fixes armored unholds' helmets
+Hedge Knights no longer have vanilla helmets when playing on layered system
+Arena contracts that give euqipment should give layered equipment now
+Named helmet layers now randomize their values
