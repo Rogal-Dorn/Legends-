@@ -4265,3 +4265,9 @@ Actually fixes armored unholds' helmets
 Hedge Knights no longer have vanilla helmets when playing on layered system
 Arena contracts that give euqipment should give layered equipment now
 Named helmet layers now randomize their values
+
+**Slingstaff Changes**
+Raw stats of slingstaff: 35-45 dmg, 75% armpen, 110% armor damage (nomad sling - 35-50/35%/60% for 4 AP, old pre-nerf slingstaff 45-60/80%/150% for 8 AP)
+"Heavy rocks" increases damage of "Sling Heavy Stone" by 15-30 but increases AP cost by 1 and FAT cost by 4, has no effect on slingstaff bash.
+"Slinger's spins" increases armor damage of "Sling Heavy Stone" by 50% but increases AP cost by 1 and FAT cost by 4, has no effect on slingstaff bash.
+Fully buffed with minor perks Sling Heavy Stone pre-nerf: 49-72/80%/188% for 8 AP, now: 50-75/75%/165% for 7 AP, unbuffed 70-90/75%/110% for 10 AP (5*2). 
