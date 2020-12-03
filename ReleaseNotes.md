@@ -4273,6 +4273,7 @@ Veteran level recruits (12+) don't spawn with too many perk points now
 Improves 2 of the heads already added by the mod
 Adds 2 new facial tattoos & 2 new body tattoos
 Updates female bodies
+Updates were-Boar/Bear/Wolf heads and bodies
 
 **Slingstaff Changes**
 Raw stats of slingstaff: 35-45 dmg, 75% armpen, 110% armor damage (nomad sling - 35-50/35%/60% for 4 AP, old pre-nerf slingstaff 45-60/80%/150% for 8 AP)
