@@ -584,7 +584,7 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 
 		local item = this.m.Upgrades[_slot];
 		local app = null;
-		if (this.getContainer() != null) 
+		if (this.getContainer() != null)
 		{
 			app = this.getContainer().getAppearance();
 		}
@@ -1033,7 +1033,7 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 	function onTurnStart()
 	{
 		this.helmet.onTurnStart();
-		
+
 		foreach( u in this.m.Upgrades )
 		{
 			if (u == null)

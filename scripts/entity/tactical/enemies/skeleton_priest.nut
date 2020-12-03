@@ -74,7 +74,7 @@ this.skeleton_priest <- this.inherit("scripts/entity/tactical/skeleton", {
 		];
 		local item = this.Const.World.Common.pickArmor(armor);
 		this.m.Items.equip(item);
-		
+
 		local item = this.Const.World.Common.pickHelmet([
 			[99, "ancient/ancient_priest_diadem"]
 		])
@@ -82,6 +82,18 @@ this.skeleton_priest <- this.inherit("scripts/entity/tactical/skeleton", {
 		{
 			this.m.Items.equip(item);
 		}
+	}
+
+	function onFactionChanged()
+	{
+		this.skeleton.onFactionChanged();
+		local flip = this.isAlliedWithPlayer();
+		this.getSprite("helmet").setHorizontalFlipping(flip);
+		this.getSprite("helmet_damage").setHorizontalFlipping(flip);
+		this.getSprite("helmet_vanity_lower").setHorizontalFlipping(flip);
+		this.getSprite("helmet_helm").setHorizontalFlipping(flip);
+		this.getSprite("helmet_top").setHorizontalFlipping(flip);
+		this.getSprite("helmet_vanity").setHorizontalFlipping(flip);
 	}
 
 });

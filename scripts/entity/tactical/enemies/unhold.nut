@@ -283,8 +283,6 @@ this.unhold <- this.inherit("scripts/entity/tactical/actor", {
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_last_stand"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
 			}
-
-
 	}
 
 	function onFactionChanged()

@@ -103,15 +103,15 @@ this.vampire <- this.inherit("scripts/entity/tactical/actor", {
 		this.getSprite("injury").setHorizontalFlipping(flip);
 		this.getSprite("beard").setHorizontalFlipping(flip);
 		this.getSprite("hair").setHorizontalFlipping(flip);
-		this.getSprite("helmet").setHorizontalFlipping(flip);
-		this.getSprite("helmet_damage").setHorizontalFlipping(flip);
-		this.getSprite("helmet_vanity_lower").setHorizontalFlipping(flip);
-		this.getSprite("helmet_helm").setHorizontalFlipping(flip);
-		this.getSprite("helmet_top").setHorizontalFlipping(flip);
-		this.getSprite("helmet_vanity").setHorizontalFlipping(flip);
 		this.getSprite("beard_top").setHorizontalFlipping(flip);
 		this.getSprite("body_blood").setHorizontalFlipping(flip);
 		this.getSprite("dirt").setHorizontalFlipping(flip);
+		this.getSprite("helmet").setHorizontalFlipping(!flip);
+		this.getSprite("helmet_damage").setHorizontalFlipping(!flip);
+		this.getSprite("helmet_vanity_lower").setHorizontalFlipping(!flip);
+		this.getSprite("helmet_helm").setHorizontalFlipping(!flip);
+		this.getSprite("helmet_top").setHorizontalFlipping(!flip);
+		this.getSprite("helmet_vanity").setHorizontalFlipping(!flip);
 	}
 
 	function onDamageReceived( _attacker, _skill, _hitInfo )
@@ -252,7 +252,7 @@ this.vampire <- this.inherit("scripts/entity/tactical/actor", {
 		}
 
 		local body_blood = this.addSprite("body_blood");
-		body_blood.setBrush("bust_body_bloodied_02"); 
+		body_blood.setBrush("bust_body_bloodied_02");
 		body_blood.setHorizontalFlipping(true);
 		body_blood.Visible = false;
 		local body_dirt = this.addSprite("dirt");
