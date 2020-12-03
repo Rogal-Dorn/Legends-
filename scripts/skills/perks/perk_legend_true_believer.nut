@@ -56,17 +56,9 @@ this.perk_legend_true_believer <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
-		if (this.m.Container.hasSkill("trait.pessimist"))
+		if (this.m.Container.hasSkill("trait.superstitious"))
 		{
-			this.m.Container.removeByID("trait.pessimist");
-		}
-		if (this.m.Container.hasSkill("trait.irrational"))
-		{
-			this.m.Container.removeByID("trait.irrational");
-		}
-		if (!this.m.Container.hasSkill("trait.optimist"))
-		{
-			this.m.Container.add(this.new("scripts/skills/traits/optimist_trait"));
+			this.m.Container.removeByID("trait.superstitious");
 		}
 	}
 });
