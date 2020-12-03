@@ -62,7 +62,9 @@ this.legend_transformed_bear_effect <- this.inherit("scripts/skills/skill", {
 
 		if (actor.isPlayerControlled())
 		{
-			if (this.m.Container.hasSkill("perk.legend_surpress_urges") && !this.m.Container.hasSkill("perk.legend_control_instincts"))
+			if (!this.m.Container.hasSkill(injury.legend_ursathropy))
+			{}
+			else if (this.m.Container.hasSkill("perk.legend_surpress_urges") && !this.m.Container.hasSkill("perk.legend_control_instincts"))
 			{
 				this.logDebug(this.getName() + " AI set to bear");
 				actor.setAIAgent(this.new("scripts/ai/tactical/agents/bear_agent"));
