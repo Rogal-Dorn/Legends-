@@ -4265,4 +4265,21 @@ Actually fixes armored unholds' helmets
 Hedge Knights no longer have vanilla helmets when playing on layered system
 Arena contracts that give euqipment should give layered equipment now
 Named helmet layers now randomize their values
+Entice skill requires the correct staff mastery now, rather than polearm
+Bandit Leaders correctly can roll named helmets
+Veteran level recruits (12+) don't spawn with too many perk points now
+Were-monsters shouldn't have hair/beards anymore when transformed
 Fixed alignment on gobo wolfrider helmets
+
+**Art**
+Improves 2 of the heads already added by the mod
+Adds 2 new facial tattoos & 2 new body tattoos
+Updates female bodies
+Updates were-Boar/Bear/Wolf heads and bodies
+
+**Slingstaff Changes**
+Raw stats of slingstaff: 35-45 dmg, 75% armpen, 110% armor damage (nomad sling - 35-50/35%/60% for 4 AP, old pre-nerf slingstaff 45-60/80%/150% for 8 AP)
+"Heavy rocks" increases damage of "Sling Heavy Stone" by 15-30 but increases AP cost by 1 and FAT cost by 4, has no effect on slingstaff bash.
+"Slinger's spins" increases armor damage of "Sling Heavy Stone" by 50% but increases AP cost by 1 and FAT cost by 4, has no effect on slingstaff bash.
+Fully buffed with minor perks Sling Heavy Stone pre-nerf: 49-72/80%/188% for 8 AP, now: 50-75/75%/165% for 7 AP, unbuffed 70-90/75%/110% for 10 AP (5*2).
+
