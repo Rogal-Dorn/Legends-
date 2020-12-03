@@ -4268,6 +4268,7 @@ Named helmet layers now randomize their values
 Entice skill requires the correct staff mastery now, rather than polearm
 Bandit Leaders correctly can roll named helmets
 Veteran level recruits (12+) don't spawn with too many perk points now
+Were-monsters shouldn't have hair/beards anymore when transformed
 
 **Art**
 Improves 2 of the heads already added by the mod
