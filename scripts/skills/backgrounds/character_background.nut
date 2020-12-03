@@ -1278,6 +1278,22 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 
 		if (this.m.Level != 1)
 		{
+			if (this.m.Level <= 11)
+			{
+				actor.m.PerkPoints = this.m.Level - 1;
+			}
+			else 
+			{
+				local vetPerk = this.getContainer().getActor().getVeteranPerks();
+				if (vetPerk == 0)
+				{
+					actor.m.PerkPoints = 10;
+				}
+				else
+				{
+					actor.m.PerkPoints = 10 + this.Math.floor((this.m.Level - 11) / this.getContainer().getActor().getVeteranPerks());
+				}
+			}
 			actor.m.PerkPoints = this.m.Level - 1;
 			actor.m.LevelUps = this.m.Level - 1;
 			actor.m.Level = this.m.Level;
