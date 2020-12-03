@@ -80,7 +80,9 @@ this.legend_transformed_rat_effect <- this.inherit("scripts/skills/skill", {
 		
 		if (actor.isPlayerControlled())
 		{
-			if (this.m.Container.hasSkill("perk.legend_surpress_urges") && !this.m.Container.hasSkill("perk.legend_control_instincts"))
+			if (!this.m.Container.hasSkill(injury.legend_vermesthropy))
+			{}		
+			else if (this.m.Container.hasSkill("perk.legend_surpress_urges") && !this.m.Container.hasSkill("perk.legend_control_instincts"))
 			{
 				this.logDebug(this.getName() + " AI set to wardog");
 				actor.setAIAgent(this.new("scripts/ai/tactical/agents/wardog_agent"));
