@@ -806,6 +806,15 @@ layers = [
  "title" :  "Southern Bearded Faceplate", \
  "desc" :  "A faceplate in the southern bearded style" \
 },
+{"name" : "mummy_mask"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 450, "con" : 50, "stam" : -3, "vis" : -2, "hair" : "false", "beard" : "true",  \
+ "title" :  "Ancient Southern Facemask", \
+ "desc" :  "A facemask from a long dead civilisation" \
+},
+{"name" : "mummy_beard"                     , "layer" : "top", "min" : 1, "max" : 3, "value" : 450, "con" : 35, "stam" : -1, "vis" : 0, "hair" : "false", "beard" : "true",  \
+ "title" :  "Ancient Southern Beard", \
+ "desc" :  "A beard cover from a long dead civilisation" \
+},
+
 {"name" : "faceplate_full_breaths"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 1700, "con" : 105, "stam" : -8, "vis" : -2, "hair" : "false", "beard" : "true",  \
  "title" :  "Breathed Faceplate", \
  "desc" :  "A faceplate filled with breathes for easy breathing and increased sight" \
@@ -826,6 +835,7 @@ layers = [
  "title" :  "Golden Full Faceplate", \
  "desc" :  "Golden Full Faceplate" \
 },
+
 {"name" : "golden_helm"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 200, "con" : 80, "stam" : -4, "vis" : 0, "hair" : "true", "beard" : "true", "named" : True, "rminViz" : -1, "rmaxViz" : 0, "rminStam" : -4, "rmaxStam" : -3, "rminCond" : 80, "rmaxCond" : 100, "names" : [],  \
  "title" :  "Golden Helm", \
  "desc" :  "A golden helmet and facemask, showing the visage of an emperor from an age long past, imbued with mystical energies. When you hold it into the light, it almost looks as if the face were moving and making expressions of disgust." \
@@ -1061,6 +1071,14 @@ layers = [
 {"name" : "royal_hood"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Royal Hood", \
  "desc" :  "The ornate hood of distant royalty, made from the finest materials." \
+},
+{"name" : "mummy_crown"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 500, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
+ "title" :  "Ancient Southern Crown", \
+ "desc" :  "A tall crown of a long dead civilisation" \
+},
+{"name" : "mummy_headband"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
+ "title" :  "Ancient Southern Headband", \
+ "desc" :  "A serpent headband from a long dead civlisation" \
 },
 # {"name" : "lindwurm_helm"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
 #  "title" :  "Lindwurm Helm", \
