@@ -101,6 +101,8 @@ this.legend_hidden_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("body").Alpha = 10;
 		actor.getSprite("hair").Alpha = 10;
 		actor.getSprite("beard").Alpha = 10;
+		actor.getSprite("hair").Visible = false;
+		actor.getSprite("beard").Visible = false;
 		actor.getSprite("tattoo_head").Alpha = 10;
 		actor.getSprite("tattoo_body").Alpha = 10;
 		actor.getSprite("quiver").Alpha = 10;
@@ -133,6 +135,8 @@ this.legend_hidden_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("body").Alpha = 255;
 		actor.getSprite("hair").Alpha = 255;
 		actor.getSprite("beard").Alpha = 255;
+		actor.getSprite("hair").Visible = true;
+		actor.getSprite("beard").Visible = true;
 		actor.getSprite("tattoo_head").Alpha = 255;
 		actor.getSprite("tattoo_body").Alpha = 255;
 		actor.getSprite("quiver").Alpha = 255;
@@ -177,6 +181,8 @@ this.legend_hidden_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("body").Alpha = 10;
 		actor.getSprite("hair").Alpha = 10;
 		actor.getSprite("beard").Alpha = 10;
+		actor.getSprite("hair").Visible = false;
+		actor.getSprite("beard").Visible = false;
 		actor.getSprite("tattoo_head").Alpha = 10;
 		actor.getSprite("tattoo_body").Alpha = 10;
 		actor.getSprite("quiver").Alpha = 10;
