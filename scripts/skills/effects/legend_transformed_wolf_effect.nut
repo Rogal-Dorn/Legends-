@@ -77,7 +77,7 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 
 		if (actor.isPlayerControlled())
 		{
-			if (!this.m.Container.hasSkill(injury.legend_lycanthropy))
+			if (!this.m.Container.hasSkill("injury.legend_lycanthropy"))
 			{}		
 			else if (this.m.Container.hasSkill("perk.legend_surpress_urges") && !this.m.Container.hasSkill("perk.legend_control_instincts"))
 			{

@@ -69,7 +69,7 @@ this.legend_transformed_tree_effect <- this.inherit("scripts/skills/skill", {
 
 		if (actor.isPlayerControlled())
 		{
-			if (!this.m.Container.hasSkill(injury.legend_arborthropy))
+			if (!this.m.Container.hasSkill("injury.legend_arborthropy"))
 			{}		
 			else if (this.m.Container.hasSkill("perk.legend_surpress_urges") && !this.m.Container.hasSkill("perk.legend_control_instincts"))
 			{
