@@ -4265,6 +4265,7 @@ Actually fixes armored unholds' helmets
 Hedge Knights no longer have vanilla helmets when playing on layered system
 Arena contracts that give euqipment should give layered equipment now
 Named helmet layers now randomize their values
+Entice skill requires the correct staff mastery now, rather than polearm
 
 **Slingstaff Changes**
 Raw stats of slingstaff: 35-45 dmg, 75% armpen, 110% armor damage (nomad sling - 35-50/35%/60% for 4 AP, old pre-nerf slingstaff 45-60/80%/150% for 8 AP)
