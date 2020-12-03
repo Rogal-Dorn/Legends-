@@ -64,6 +64,9 @@ this.perk_legend_true_believer <- this.inherit("scripts/skills/skill", {
 		{
 			this.m.Container.removeByID("trait.irrational");
 		}
-		this.m.Container.add(this.new("scripts/skills/traits/optimist_trait"));
+		if (!this.m.Container.hasSkill("trait.optimist"))
+		{
+			this.m.Container.add(this.new("scripts/skills/traits/optimist_trait"));
+		}
 	}
 });
