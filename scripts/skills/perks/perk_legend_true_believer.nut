@@ -60,5 +60,13 @@ this.perk_legend_true_believer <- this.inherit("scripts/skills/skill", {
 		{
 			this.m.Container.removeByID("trait.superstitious");
 		}
+		if (this.m.Container.hasSkill("trait.dastard"))
+		{
+			this.m.Container.removeByID("trait.dastard");
+		}
+		if (this.m.Container.hasSkill("trait.insecure"))
+		{
+			this.m.Container.removeByID("trait.insecure");
+		}		
 	}
 });
