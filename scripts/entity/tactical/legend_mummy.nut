@@ -432,7 +432,7 @@ this.legend_mummy <- this.inherit("scripts/entity/tactical/actor", {
 
 		if (this.Math.rand(1, 2) == 1)
 		{
-			body.setBrush("bust_skeleton_body_03";
+			body.setBrush("bust_skeleton_body_03");
 		}
 		else
 		{
