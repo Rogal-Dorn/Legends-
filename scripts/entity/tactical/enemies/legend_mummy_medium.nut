@@ -1,11 +1,11 @@
-this.legend_mummy_heavy <- this.inherit("scripts/entity/tactical/legend_mummy", {
+this.legend_mummy_medium <- this.inherit("scripts/entity/tactical/legend_mummy", {
 	m = {},
 	function create()
 	{
-		this.m.Type = this.Const.EntityType.LegendMummyLight;
-		this.m.XP = this.Const.Tactical.Actor.LegendMummyLight.XP;
-		this.m.ResurrectionValue = 2.0;
-		this.m.ResurrectWithScript = "scripts/entity/tactical/enemies/legend_mummy_light";
+		this.m.Type = this.Const.EntityType.LegendMummyMedium;
+		this.m.XP = this.Const.Tactical.Actor.LegendMummyMedium.XP;
+		this.m.ResurrectionValue = 4.0;
+		this.m.ResurrectWithScript = "scripts/entity/tactical/enemies/legend_mummy_medium";
 		this.skeleton.create();
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/skeleton_melee_agent");
 		this.m.AIAgent.setActor(this);
@@ -15,7 +15,7 @@ this.legend_mummy_heavy <- this.inherit("scripts/entity/tactical/legend_mummy", 
 	{
 		this.skeleton.onInit();
 		local b = this.m.BaseProperties;
-		b.setValues(this.Const.Tactical.Actor.LegendMummyLight);
+		b.setValues(this.Const.Tactical.Actor.LegendMummyMedium);
 		b.IsAffectedByNight = false;
 		b.IsAffectedByInjuries = false;
 		b.IsImmuneToBleeding = true;
@@ -25,9 +25,10 @@ this.legend_mummy_heavy <- this.inherit("scripts/entity/tactical/legend_mummy", 
 		this.m.CurrentProperties = clone b;
 		this.m.ActionPointCosts = this.Const.DefaultMovementAPCost;
 		this.m.FatigueCosts = this.Const.DefaultMovementFatigueCost;
-		 if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 			{
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_shield_expert"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_crippling_strikes"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_coup_de_grace"));
 			}
@@ -36,38 +37,33 @@ this.legend_mummy_heavy <- this.inherit("scripts/entity/tactical/legend_mummy", 
 
 	function assignRandomEquipment()
 	{
-		local r = this.Math.rand(1, 3);
+		local r = this.Math.rand(1, 4);
 
 		if (r == 1)
 		{
 			this.m.Items.equip(this.new("scripts/items/weapons/ancient/broken_ancient_sword"));
 		}
-		else if (r == 2)
+		else
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/falx"));
-		}
-		else if (r == 3)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/ancient_spear"));
+			this.m.Items.equip(this.new("scripts/items/weapons/ancient/ancient_sword"));
 		}
 
-		if (this.Math.rand(1, 100) <= 66)
+		if (this.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand) == null)
 		{
-			this.m.Items.equip(this.new("scripts/items/shields/ancient/legend_mummy_shield"));
+
+			this.m.Items.equip(this.new("scripts/items/shields/ancient/legend_mummy_tower_shield"));
+
 		}
 
 		local armor = [
-			[5, "ancient/ancient_ripped_cloth"],
-			[1, ""]
+			[1, "ancient/legend_mummy_bandages"],
+			[4, "ancient/legend_mummy_plate"]
 		];
 		local item = this.Const.World.Common.pickArmor(armor);
 		this.m.Items.equip(item);
 
-
-
-		item = this.Const.World.Common.pickHelmet([
-			[66, "mummy_headband"],
-			[34, ""]
+		local item = this.Const.World.Common.pickHelmet([
+			[99, "mummy_headband"]
 		])
 		if (item != null)
 		{
