@@ -1080,6 +1080,43 @@ layers = [
  "title" :  "Ancient Southern Headband", \
  "desc" :  "A serpent headband from a long dead civlisation" \
 },
+{"name" : "mummy_crown_king"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 500, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
+ "title" :  "Ancient Southern Crested Crown", \
+ "desc" :  "A crested crown of a long dead civilisation" \
+},
+{"name" : "mummy_headress"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 500, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
+ "title" :  "Ancient Southern Headress", \
+ "desc" :  "A headress of a long dead civilisation" \
+},
+{"name" : "southern_cloth_headress"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 100, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
+ "title" :  "Southern Cloth Headress", \
+ "desc" :  "A southern headress made of soft fabrics" \
+},
+{"name" : "southern_veil"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 10, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
+ "title" :  "Southern Veil", \
+ "desc" :  "A thin wispy southern veil" \
+},
+
+{"name" : "southern_veil_coin"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 500, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
+ "title" :  "Southern Coin Veil", \
+ "desc" :  "A southern veil made of coins threaded togther" \
+},
+{"name" : "southern_earings"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 20, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
+ "title" :  "Southern Earings", \
+ "desc" :  "Delicate southern metal earings" \
+},
+
+{"name" : "southern_headband_coin"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 20, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
+ "title" :  "Southern Coin Headband", \
+ "desc" :  "A southern headband of coins strung together" \
+},
+
+{"name" : "southern_headress_coin"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 30, "con" : 10, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
+ "title" :  "Southern Coin Headress", \
+ "desc" :  "A southern headress of coins strung together" \
+},
+
+
 # {"name" : "lindwurm_helm"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
 #  "title" :  "Lindwurm Helm", \
 #  "desc" :  "Lindwurm Helm" \
