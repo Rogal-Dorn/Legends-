@@ -23,7 +23,7 @@ this.agent_follower <- this.inherit("scripts/retinue/follower", {
 	function onUpdate()
 	{
 		if ("RelationDecayGoodMult" in this.World.Assets.m)
-			this.World.Assets.m.RelationDecayGoodMult = 0,9;
+			this.World.Assets.m.RelationDecayGoodMult = 0.9;
 		if ("RelationDecayBadMult" in this.World.Assets.m)
 			this.World.Assets.m.RelationDecayBadMult = 1.1;
 	}
