@@ -417,7 +417,7 @@ this.sato_find_slave_after_battle_event <- this.inherit("scripts/events/event", 
 		local UndeadSlaveText3 = "A man runs out from behind a gravestone yelling and raving madly. You almost cut him down in surprise, but as he gets near he throws himself at your feet and starts sobbing out thanks. It takes several minutes for him to calm down enough to form coherent sentences. He speaks of dark things, of profane experiments performed on both the living and the dead by a man in black. The man before you is the sole survivor, claiming he escaped the fate of the others by hiding under a pile of corpses deemed too rotten to be of use. That part of his tale, at least, is lent credence by his appearance.\n\nWhile the man is thoroughly wretched and obviously abused, he clearly has resourcefulness and tenacity that would serve him well in a mercenary outfit. Perhaps he has a place in the %companyname%?";
 		this.m.Screens.push({
 			ID = "Undead",
-			Text = "[img]gfx/ui/events/event_53.png[/img]{" + UndeadSlaveText1 + " | " + UndeadSlaveText2 + " | " + UndeadSlaveText3 + "}",
+			Text = "[img]gfx/ui/events/legend_undead_slave.png[/img]{" + UndeadSlaveText1 + " | " + UndeadSlaveText2 + " | " + UndeadSlaveText3 + "}",
 			Image = "",
 			List = [],
 			Characters = [],
