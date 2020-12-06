@@ -4260,6 +4260,19 @@ Sallet: [110, -5, 0] from [185, -9, -1]
 
 15.0.0.20
 
+**Armor Tweaks**
+Name: [v19 Fatigue] -> [v20 Fatigue]
+Short Faceplate: [-5] -> [-6]
+Long Faceplate: [-5] -> [-6]
+Winged Faceplate: [-6] -> [-7]
+Snub Nose Faceplate: [-6] -> [-7]
+Slitted Snub Faceplate: [-6] -> [-8]
+Sharp Faceplate: [-7] -> [-8]
+Facemask: [-7] -> [-9]
+Pointed Faceplate: [-7] -> [-9]
+Slit Pointed Faceplate: [-7] -> [-9]
+Full Faceplate: [-9] -> [-12]
+
 **Fixes/Tweaks**
 Actually fixes armored unholds' helmets
 Hedge Knights no longer have vanilla helmets when playing on layered system

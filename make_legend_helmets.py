@@ -764,7 +764,7 @@ layers = [
  "title" :  "Curved Faceplate", \
  "desc" :  "Curved Faceplate" \
 },
-{"name" : "faceplate_short"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 610, "con" : 60, "stam" : -4, "vis" : -1, "hair" : "false", "beard" : "true",  \
+{"name" : "faceplate_short"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 610, "con" : 60, "stam" : -6, "vis" : -1, "hair" : "false", "beard" : "true",  \
  "title" :  "Short Faceplate", \
  "desc" :  "A short squat faceplate" \
 },
@@ -772,39 +772,39 @@ layers = [
  "title" :  "Cult Leather Hood", \
  "desc" :  "A leather hood used in cultist ceremonies" \
 },
-{"name" : "faceplate_long"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 700, "con" : 65, "stam" : -5, "vis" : -1, "hair" : "false", "beard" : "true",  \
+{"name" : "faceplate_long"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 700, "con" : 65, "stam" : -6, "vis" : -1, "hair" : "false", "beard" : "true",  \
  "title" :  "Long Faceplate", \
  "desc" :  "A long faceplate" \
 },
-{"name" : "faceplate_winged"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 780, "con" : 70, "stam" : -5, "vis" : -1, "hair" : "false", "beard" : "true",  \
+{"name" : "faceplate_winged"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 780, "con" : 70, "stam" : -6, "vis" : -1, "hair" : "false", "beard" : "true",  \
  "title" :  "Winged Faceplate", \
  "desc" :  "A glorious faceplate formed into the shape of wings" \
 },
-{"name" : "faceplate_snub_nose"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 880, "con" : 75, "stam" : -6, "vis" : -1, "hair" : "false", "beard" : "true",  \
+{"name" : "faceplate_snub_nose"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 880, "con" : 75, "stam" : -7, "vis" : -1, "hair" : "false", "beard" : "true",  \
  "title" :  "Snub Nose Faceplate", \
  "desc" :  "A round nosed faceplate" \
 },
-{"name" : "faceplate_snub_slit"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 980, "con" : 80, "stam" : -6, "vis" : -1, "hair" : "false", "beard" : "false",  \
+{"name" : "faceplate_snub_slit"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 980, "con" : 80, "stam" : -7, "vis" : -1, "hair" : "false", "beard" : "false",  \
  "title" :  "Slitted Snub Faceplate", \
  "desc" :  "Slitted Snub Faceplate" \
 },
-{"name" : "faceplate_sharp"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 1090, "con" : 85, "stam" : -7, "vis" : -1, "hair" : "false", "beard" : "false",  \
+{"name" : "faceplate_sharp"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 1090, "con" : 85, "stam" : -8, "vis" : -1, "hair" : "false", "beard" : "false",  \
  "title" :  "Sharp Faceplate", \
  "desc" :  "Sharp Faceplate" \
 },
-{"name" : "facemask"                     , "layer" : "top", "min" : 1, "max" : 6, "value" : 1200, "con" : 90, "stam" : -7, "vis" : -1, "hair" : "false", "beard" : "true",  \
+{"name" : "facemask"                     , "layer" : "top", "min" : 1, "max" : 6, "value" : 1200, "con" : 90, "stam" : -8, "vis" : -1, "hair" : "false", "beard" : "true",  \
  "title" :  "Facemask", \
  "desc" :  "A metal faceplate in the shape of a mask" \
 },
-{"name" : "faceplate_pointed"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 1320, "con" : 95, "stam" : -7, "vis" : -1, "hair" : "false", "beard" : "true",  \
+{"name" : "faceplate_pointed"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 1320, "con" : 95, "stam" : -9, "vis" : -1, "hair" : "false", "beard" : "true",  \
  "title" :  "Pointed Faceplate", \
  "desc" :  "A long nosed faceplate designed to deflect glancing blows" \
 },
-{"name" : "faceplate_pointed_slit"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 1430, "con" : 100, "stam" : -7, "vis" : -1, "hair" : "false", "beard" : "false",  \
+{"name" : "faceplate_pointed_slit"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 1430, "con" : 100, "stam" : -9, "vis" : -1, "hair" : "false", "beard" : "false",  \
  "title" :  "Slit Pointed Faceplate", \
  "desc" :  "Slit Pointed Faceplate" \
 },
-{"name" : "faceplate_full"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 1700, "con" : 110, "stam" : -9, "vis" : -2, "hair" : "false", "beard" : "true",  \
+{"name" : "faceplate_full"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 1700, "con" : 110, "stam" : -12, "vis" : -2, "hair" : "false", "beard" : "true",  \
  "title" :  "Full Faceplate", \
  "desc" :  "A very well crafted full faceplate" \
 },
