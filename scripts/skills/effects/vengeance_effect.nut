@@ -22,7 +22,7 @@ this.vengeance_effect <- this.inherit("scripts/skills/skill", {
 		_properties.DamageTotalMult *= 2.0;
 	}	
 
-	function onAnySkillUsed( _skill, _targetEntity, _properties )
+/* 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
 		if (_targetEntity == null)
 		{
@@ -40,8 +40,29 @@ this.vengeance_effect <- this.inherit("scripts/skills/skill", {
 		{
 			this.removeSelf();
 		}
-	}
+	} */
 
+	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
+	{
+		//this.logDebug("onTargetHit amIstillhere ");
+		if (_targetEntity == null)
+		{
+			return;
+		}
+
+		local actor = this.getContainer().getActor();
+
+		if (_targetEntity == actor)
+		{
+			return;
+		}
+
+		if (!this.m.IsGarbage && !_targetEntity.isAlliedWith(actor))
+		{
+			this.removeSelf();
+		}
+	}
+	
 	function onTargetMissed( _skill, _targetEntity )
 	{
 		this.removeSelf();
