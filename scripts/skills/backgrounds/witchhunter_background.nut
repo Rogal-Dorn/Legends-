@@ -95,6 +95,35 @@ this.witchhunter_background <- this.inherit("scripts/skills/backgrounds/characte
 			Magic = []
 		}
 	}
+	
+	
+		//Default Male
+	function setGender(_gender = -1)
+	{
+		local r = _gender;
+		if (_gender == -1)
+		{
+			r = 0;
+			if (this.World.LegendsMod.Configs().LegendGenderEnabled())
+			{
+				r = this.Math.rand(0, 1);
+			}
+		}
+
+		if (r != 1)
+		{
+			return
+		}
+		this.m.Faces = this.Const.Faces.AllFemale;
+		this.m.Beards = null;
+		this.m.Hairs = this.Const.Hair.AllFemale;
+		this.m.BeardChance = 0;
+		this.m.Bodies = this.Const.Bodies.FemaleMuscular;
+		this.m.IsFemaleBackground = true;
+		this.m.GoodEnding = "%name% the witchhunter eventually heard word of evil spreading in northern villages. She departed the %companyname% and has been burning those witches at the stake ever since.";
+		this.m.BadEnding = "Word of evil spreading in the north drew %name% the witchhunter from the company. She departed with stakes, vials of strange liquids, and a lot of kindling. A month later a peasant found her wandering the northern wastes with her eyes gouged out and her mouth sewn shut. She had a strange symbol ironed into her chest and when the peasant touched it both of them exploded.";
+
+	}
 
 	function getTooltip()
 	{
@@ -120,7 +149,16 @@ this.witchhunter_background <- this.inherit("scripts/skills/backgrounds/characte
 
 	function onBuildDescription()
 	{
+	
+		if(this.m.IsFemaleBackground == true)
+		{
+		return "{%name% appeared one day in %townname%, some say upon request {of the local council | of a local priest}. | %name% has a reputation of showing up where things out of the ordinary happen and being out and about at the darkest part of the night. | Being a quiet and grim woman, %name% has the tendency to make other people feel uncomfortable around her, even afraid. | The name of %name% is known in many a village, for she has travelled the land to wherever her talents are needed the most.} {A Witchhunter she calls herelf. With her assortment of exotic tools she has a great deal of experience in getting people to confess in agony their sinful liaisons with demons and devils under terrible torture. | She refers to herself as a Witchhunter, but only superstitious fools would believe this and fall for her preposterous tales. | A Witchhunter she calls himself, and she claims to have seen horrors from beyond that would drive a lesser mind insane. | After her arrival in %townname%, rumors spread that she was on the hunt for devil worshippers and creatures of the night, but no one knew what the real purpose of her visit was. | In %townname% she killed an elderly woman and was thrown into the dungeon. As it turned out, the woman was responsible for the abduction and death of 3 infants, and so she was set free again. | For nights on end she sat in %townname%\'s pub, silently studying every patron like a bird of prey circling above, her crossbow never far away. It didn\'t sit well with the residents  but they didn\'t dare approach her.} {By now most of the local folks want %name% to be gone rather sooner than later and would happily see her join a travelling mercenary company. | It seems that whatever her mission was is now accomplished and so %name% offers her service as a mercenary. | It is somewhat obvious that %name% is not easily scared and she also knows how to handle a crossbow. Nobody was therefore surprised as she approached a mercenary company that was hiring. | Now, a mercenary company would be just the tool she needed to fulfill her personal quest against the evil from the world beyond. | Most people would be glad to get rid of her.}";
+		}
+		else
+		{
 		return "{%name% appeared one day in %townname%, some say upon request {of the local council | of a local priest}. | %name% has a reputation of showing up where things out of the ordinary happen and being out and about at the darkest part of the night. | Being a quiet and grim man, %name% has the tendency to make other people feel uncomfortable around him, even afraid. | The name of %name% is known in many a village, for he has travelled the land to wherever his talents are needed the most.} {A Witchhunter he calls himself. With his assortment of exotic tools he has a great deal of experience in getting people to confess in agony their sinful liaisons with demons and devils under terrible torture. | He refers to himself as a Witchhunter, but only superstitious fools would believe this and fall for his preposterous tales. | A Witchhunter he calls himself, and he claims to have seen horrors from beyond that would drive a lesser man insane. | After his arrival in %townname%, rumors spread that he was on the hunt for devil worshippers and creatures of the night, but no one knew what the real purpose of his visit was. | In %townname% he killed an elderly woman and was thrown into the dungeon. As it turned out, the woman was responsible for the abduction and death of 3 infants, and so he was set free again. | For nights on end he sat in %townname%\'s pub, silently studying every patron like a bird of prey circling above, his crossbow never far away. It didn\'t sit well with the residents  but they didn\'t dare approach him.} {By now most of the local folks want %name% to be gone rather sooner than later and would happily see him join a travelling mercenary company. | It seems that whatever his mission was is now accomplished and so %name% offers his service as a mercenary. | It is somewhat obvious that %name% is not easily scared and he also knows how to handle a crossbow. Nobody was therefore surprised as he approached a mercenary company that was hiring. | Now, a mercenary company would be just the tool he needed to fulfill his personal quest against the evil from the world beyond. | Most people would be glad to get rid of him.}";
+		}	
+	
 	}
 
 	function setGender(_gender = -1)
