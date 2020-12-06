@@ -4272,6 +4272,9 @@ Facemask: [-7] -> [-9]
 Pointed Faceplate: [-7] -> [-9]
 Slit Pointed Faceplate: [-7] -> [-9]
 Full Faceplate: [-9] -> [-12]
+Flat Top Face Plate: [-4] -> [-12]
+Southern Conic: [-5] -> [-10]
+Southern Peaked Helmet: [-4] -> [-12]
 
 **Fixes/Tweaks**
 Actually fixes armored unholds' helmets
@@ -4289,6 +4292,7 @@ Fixes vengeance similar to double strike, no longer disappears after enemy misse
 Trances such as Read Omens & Scry no longer require a full turn duration
 Scry now gives the vision effect when used and the beginning of every turn channeled (can now be toggled off to simulate the same as a regular Bird item)
 Read omens now can stack with multiple users & won't screw up when you try to channel it with two separate characters & end both trances
+Some champion barbs no longer have non-layered helmets + armors
 
 **Art**
 Improves 2 of the heads already added by the mod

@@ -548,7 +548,7 @@ layers = [
  "title" :  "Kettle Helm", \
  "desc" :  "A full-metal helmet with a broad rim." \
 },
-{"name" : "flat_top_face_plate"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 2000, "con" : 130, "stam" : -4, "vis" : -2, "hair" : "true", "beard" : "true",  \
+{"name" : "flat_top_face_plate"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 2000, "con" : 130, "stam" : -12, "vis" : -2, "hair" : "true", "beard" : "true",  \
  "title" :  "Flat Top Face Plate", \
  "desc" :  "A flat full-metal helmet with faceplate." \
 },
@@ -604,11 +604,11 @@ layers = [
  "title" :  "Southern Conic Helm", \
  "desc" :  "A conic helm from the south" \
 },
-{"name" : "southern_named_conic"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 2000, "con" : 130, "stam" : -5, "vis" : -3, "hair" : "true", "beard" : "false",  \
+{"name" : "southern_named_conic"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 2000, "con" : 130, "stam" : -10, "vis" : -3, "hair" : "true", "beard" : "false",  \
  "title" :  "Southern Conic", \
  "desc" :  "an expertly crafted southern helm" \
 },
-{"name" : "southern_peaked_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1250, "con" : 120, "stam" : -4, "vis" : -2, "hair" : "true", "beard" : "false",  \
+{"name" : "southern_peaked_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1250, "con" : 120, "stam" : -12, "vis" : -2, "hair" : "true", "beard" : "false",  \
  "title" :  "Southern Peaked Helmet", \
  "desc" :  "A southern metal helmet usually worn with a mail coif to protect the neck." \
 },
