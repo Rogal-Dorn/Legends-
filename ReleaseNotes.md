@@ -4270,6 +4270,12 @@ Bandit Leaders correctly can roll named helmets
 Veteran level recruits (12+) don't spawn with too many perk points now
 Were-monsters shouldn't have hair/beards anymore when transformed
 Fixes tent sell-price determining for Fletching & Gathering tent
+Bags and belts tooltip fix
+Shield's knock back skill can no longer reach 1 fatigue cost 
+Fixes vengeance similar to double strike, no longer disappears after enemy misses 
+Trances such as Read Omens & Scry no longer require a full turn duration
+Scry now gives the vision effect when used and the beginning of every turn channeled (can now be toggled off to simulate the same as a regular Bird item)
+Read omens now can stack with multiple users & won't screw up when you try to channel it with two separate characters & end both trances
 
 **Art**
 Improves 2 of the heads already added by the mod
