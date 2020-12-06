@@ -112,7 +112,7 @@ this.gladiator_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Bodies = this.Const.Bodies.SouthernFemale;
+		this.m.Bodies = this.Const.Bodies.SouthernFemaleMuscular;
 		this.m.IsFemaleBackground = true;
 	}
 

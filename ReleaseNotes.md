@@ -4214,3 +4214,27 @@ Fixes freeze when white direwolf pet dies
 Redback Spider + Hexen Leader Cloak layers have icons/brushes again (Thanks Leo)
 Nets now properly use net casting mastery & net mastery
 Fixes corrupt saves when saving a new campaign before unpausing
+
+
+15.0.0.18  Mummy's darling
+
+New Enemy - Mummies 
+Similar to skeletons, with more health, but less resistence to ranged weapons and no bonus bleed.  
+When they die, they curse any of your troops within 2 tiles for the rest of the battle. 
+The curse stacks, and causes you to take 20% more damage 
+There are four types of mummy to encounter, with many kinds of armor, shields and helmets 
+
+
+Female bodies - There are now six total versions of female bodies. Three each of southern and normal in thin, fit and thick  (von krolock)
+jewelry - There is now a variety of southern jewelry, with several kinds of veils, headresses and earings. 
+Female backgrounds - with gender equality enambled womean can now be criples, gamblers, raiders, houndmasters, hunters and ratcatcher. Text updated for several backgrounds.
+
+
+
+
+
+
+
+
+
+

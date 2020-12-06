@@ -59,7 +59,7 @@ this.female_slave_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Bodies = this.Const.Bodies.AllFemale;
+		this.m.Bodies = this.Const.Bodies.FemaleSkinny;
 		this.m.IsFemaleBackground = true;
 		this.m.IsLowborn = true;
 	}

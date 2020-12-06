@@ -5,7 +5,7 @@ this.female_slave_southern_background <- this.inherit("scripts/skills/background
 		this.slave_background.create();
 		this.m.GoodEnding = "You purchased %name% as an indebted for almost no gold and continued to pay her a \'slave\'s wage\' for her stay as a sellsword. She did make herself an effective fighter, no doubt believing it was better to be paid nothing and fight to stay alive than be paid nothing and give up and rot. After your departure, you heard that the %companyname% traveled south on a campaign and the indebted got a good chance to exact a fair bit of revenge on a number of enemies in her past. Thankfully, she does not consider you one such person despite having keeping her in an enslaved stead.";
 		this.m.BadEnding = "You purchased %name% as an indebted and after your retiring, she went on with the %companyname%. Word of the mercenary band\'s problems have trickled in, but nothing about the indebted\'s current situation. Knowing how this world works, she has either been put into the vanguard as fodder or perhaps even been sold off to recoup profits. Either way, the world isn\'t easy on a sellsword, and it isn\'t easy on an indebted, and the woman is unfortunately both.";
-		this.m.Bodies = this.Const.Bodies.SouthernFemale;
+		this.m.Bodies = this.Const.Bodies.SouthernFemaleSkinny;
 		this.m.Faces = this.Const.Faces.SouthernFemale;
 		this.m.Hairs = this.Const.Hair.SouthernFemale;
 		this.m.HairColors = this.Const.HairColors.Southern;
@@ -74,6 +74,22 @@ this.female_slave_southern_background <- this.inherit("scripts/skills/background
 	}
 
 	//no need to do legendsequipment here because it inherits from slave_background
+
+	function onAddEquipment()
+	{
+		local items = this.getContainer().getActor().getItems();
+		items.equip(this.Const.World.Common.pickArmor([
+			[1, "tattered_sackcloth"],
+			[1, "leather_wraps"],
+			[3, "oriental/cloth_sash"],
+			[2, ""]
+		]))
+		
+			items.equip(this.Const.World.Common.pickHelmet([
+			[1, ""],
+			[2, "southern_jewelry"]
+		]));
+	}
 
 });
 

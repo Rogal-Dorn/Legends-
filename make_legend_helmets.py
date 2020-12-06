@@ -1106,7 +1106,7 @@ layers = [
  "desc" :  "Delicate southern metal earings" \
 },
 
-{"name" : "southern_headband_coin"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 20, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
+{"name" : "southern_headband_coin"                     , "layer" : "hood", "min" : 1, "max" : 1, "value" : 20, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Southern Coin Headband", \
  "desc" :  "A southern headband of coins strung together" \
 },

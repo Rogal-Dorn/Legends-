@@ -2774,6 +2774,27 @@ gt.Const.LegendMod.HelmObjs.extend([
     ]
 }]
 },{
+    ID = "oriental/southern_jewelry", //125
+    Script = "",
+    Sets = [{
+    Hoods = [
+        [1, "hood/southern_headband_coin"]
+    ],
+    Helms = [
+        [0, "helm/legend_helmet_ancient_conic_helm"]
+    ],
+    Tops = [
+        [10, "top/southern_veil"], //35
+        [1, "top/southern_veil_coin
+
+    ],
+    Vanity = [
+        [5, "vanity/southern_earings"], //30
+        [1, "vanity/southern_headress_coin"], //80
+		[4, "vanity/southern_cloth_headress"] //80
+    ]
+}]
+},{
     ID = "oriental/turban_helmet", //290
     Script = "",
     Sets = [{
