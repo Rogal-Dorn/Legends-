@@ -22,10 +22,20 @@ this.agent_follower <- this.inherit("scripts/retinue/follower", {
 
 	function onUpdate()
 	{
-		if ("RelationDecayGoodMult" in this.World.Assets.m)
-			this.World.Assets.m.RelationDecayGoodMult = 0,9;
-		if ("RelationDecayBadMult" in this.World.Assets.m)
-			this.World.Assets.m.RelationDecayBadMult = 1.1;
+		if ("RelationDecayGoodMult" in this.World.Assets.m) {
+			if (this.World.Assets.getOrigin().getID() == "scenario.sato_escaped_slaves") {
+				this.World.Assets.m.RelationDecayGoodMult = 1.05;
+			} else {
+				this.World.Assets.m.RelationDecayGoodMult = 0.9;
+			}
+		}
+		if ("RelationDecayBadMult" in this.World.Assets.m) {
+			if (this.World.Assets.getOrigin().getID() == "scenario.sato_escaped_slaves") {
+				this.World.Assets.m.RelationDecayBadMult = 0.95;
+			} else {
+				this.World.Assets.m.RelationDecayBadMult = 1.1;
+			}
+		}
 	}
 
 	function onEvaluate()
