@@ -4295,6 +4295,7 @@ Read omens now can stack with multiple users & won't screw up when you try to ch
 Some champion barbs no longer have non-layered helmets + armors
 Violent Decomposition shouldn't crash when exploding anymore
 *Maybe* fixes Krakens that spawn out in the wild
+Fixes slaughterer tooltip
 
 **Art**
 Improves 2 of the heads already added by the mod
