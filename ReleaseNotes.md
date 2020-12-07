@@ -4294,6 +4294,7 @@ Scry now gives the vision effect when used and the beginning of every turn chann
 Read omens now can stack with multiple users & won't screw up when you try to channel it with two separate characters & end both trances
 Some champion barbs no longer have non-layered helmets + armors
 Violent Decomposition shouldn't crash when exploding anymore
+*Maybe* fixes Krakens that spawn out in the wild
 
 **Art**
 Improves 2 of the heads already added by the mod
