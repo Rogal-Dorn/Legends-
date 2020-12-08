@@ -122,7 +122,6 @@ this.ratcatcher_background <- this.inherit("scripts/skills/backgrounds/character
 		}
 	}	
 	
-	}
 
 	function onChangeAttributes()
 	{

@@ -2774,7 +2774,7 @@ gt.Const.LegendMod.HelmObjs.extend([
     ]
 }]
 },{
-    ID = "oriental/southern_jewelry", //125
+    ID = "oriental/southern_jewelry", 
     Script = "",
     Sets = [{
     Hoods = [
@@ -2785,8 +2785,7 @@ gt.Const.LegendMod.HelmObjs.extend([
     ],
     Tops = [
         [10, "top/southern_veil"], //35
-        [1, "top/southern_veil_coin
-
+        [1, "top/southern_veil_coin"]
     ],
     Vanity = [
         [5, "vanity/southern_earings"], //30

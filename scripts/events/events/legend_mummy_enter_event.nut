@@ -132,7 +132,7 @@ this.legend_mummy_enter_event <- this.inherit("scripts/events/event", {
 									}
 									else
 									{
-										local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/legend_mummy_light, tile.Coords);
+										local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/legend_mummy_light", tile.Coords);
 										e.setFaction(f);
 										light = --light;
 										light_tiles.push(tile);
