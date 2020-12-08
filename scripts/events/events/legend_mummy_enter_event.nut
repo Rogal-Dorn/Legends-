@@ -42,7 +42,7 @@ this.legend_mummy_enter_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "B",
-			Text = "[img]gfx/ui/events/event_89.png[/img]{As you slowly pace inside the main monolith the temperature dramatically drops to a more comfortable level. The shade makes your skin writhe with comfort from the heat outside. /n/n The room is mostly blank, the only distinguishing feature aside from the inscribed walls are stone caskets of varying quality — some depict great battles, a figure whipping servants and others who are partaking in a form of ritual that has been purposely defaced with a weapon or chisel. Others remain blank — either not important enough to be worth more time of the craftsmen or simply unfinished. }",
+			Text = "[img]gfx/ui/events/event_89.png[/img]{As you slowly pace inside the main monolith the temperature dramatically drops to a more comfortable level. The shade makes your skin writhe with comfort from the heat outside. \n\n The room is mostly blank, the only distinguishing feature aside from the inscribed walls are stone caskets of varying quality — some depict great battles, a figure whipping servants and others who are partaking in a form of ritual that has been purposely defaced with a weapon or chisel. Others remain blank — either not important enough to be worth more time of the craftsmen or simply unfinished. }",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -63,7 +63,7 @@ this.legend_mummy_enter_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "C",
-			Text = "[img]gfx/ui/events/event_89.png[/img]{As you inch closer you begin to realise that fingers have smudged and flailed against the inside enclosure of the sarcophagus, some caskets have been opened from inside, while others had outside assistance. /n/n However, all of them are empty. /n/n The air begins to feel warm again suddenly, there is more in this chamber than you suspected. A figure of a man catches your eye, it opens it\'s mouth as it plods from the darkness. /n/n Words do not come, only a trickle of sand and skin.}",
+			Text = "[img]gfx/ui/events/event_89.png[/img]{As you inch closer you begin to realise that fingers have smudged and flailed against the inside enclosure of the sarcophagus, some caskets have been opened from inside, while others had outside assistance. \n\n However, all of them are empty. \n\n The air begins to feel warm again suddenly, there is more in this chamber than you suspected. A figure of a man catches your eye, it opens it\'s mouth as it plods from the darkness. /n/n Words do not come, only a trickle of sand and skin.}",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -133,7 +133,7 @@ this.legend_mummy_enter_event <- this.inherit("scripts/events/event", {
 									else
 									{
 										local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/legend_mummy_light", tile.Coords);
-										e.setFaction(f);
+										//e.setFaction(f);
 										light = --light;
 										light_tiles.push(tile);
 									}
@@ -145,8 +145,8 @@ this.legend_mummy_enter_event <- this.inherit("scripts/events/event", {
 
 							do
 							{
-								local r = this.Math.rand(0, phylactery_tiles.len() - 1);
-								local p = phylactery_tiles[r];
+								local r = this.Math.rand(0, light_tiles.len() - 1);
+								local p = light_tiles[r];
 
 								if (p.SquareCoords.X > 14)
 								{
@@ -154,9 +154,9 @@ this.legend_mummy_enter_event <- this.inherit("scripts/events/event", {
 									toRise = --toRise;
 								}
 
-								phylactery_tiles.remove(r);
+								light_tiles.remove(r);
 							}
-							while (toRise > 0 && phylactery_tiles.len() > 0);
+							while (toRise > 0 && light_tiles.len() > 0);
 
 							local queen = 1;
 
@@ -172,8 +172,8 @@ this.legend_mummy_enter_event <- this.inherit("scripts/events/event", {
 								else
 								{
 									local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/legend_mummy_queen", tile.Coords);
-									e.setFaction(f);
-									e.assignRandomEquipment();
+								//	e.setFaction(f);
+								//	e.assignRandomEquipment();
 									queen = --queen;
 								}
 							}
@@ -193,8 +193,8 @@ this.legend_mummy_enter_event <- this.inherit("scripts/events/event", {
 								else
 								{
 									local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/legend_vampire_lord", tile.Coords);
-									e.setFaction(f);
-									e.assignRandomEquipment();
+								//	e.setFaction(f);
+								//	e.assignRandomEquipment();
 									treasureHunters = --treasureHunters;
 								}
 							}
@@ -214,8 +214,8 @@ this.legend_mummy_enter_event <- this.inherit("scripts/events/event", {
 								else
 								{
 									local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/legend_mummy_medium", tile.Coords);
-									e.setFaction(f);
-									e.assignRandomEquipment();
+								//	e.setFaction(f);
+								//	e.assignRandomEquipment();
 									medium = --medium;
 								}
 							}
@@ -235,8 +235,8 @@ this.legend_mummy_enter_event <- this.inherit("scripts/events/event", {
 								else
 								{
 									local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/legend_mummy_heavy", tile.Coords);
-									e.setFaction(f);
-									e.assignRandomEquipment();
+								//	e.setFaction(f);
+								//	e.assignRandomEquipment();
 									heavy = --heavy;
 								}
 							}

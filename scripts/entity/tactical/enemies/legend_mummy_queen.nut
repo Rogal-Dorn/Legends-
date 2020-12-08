@@ -1,5 +1,7 @@
 this.legend_mummy_queen <- this.inherit("scripts/entity/tactical/legend_mummy", {
-	m = {},
+	m = {
+	WasInjured = false
+	},
 	function create()
 	{
 		this.m.Type = this.Const.EntityType.LegendMummyQueen;
@@ -7,14 +9,14 @@ this.legend_mummy_queen <- this.inherit("scripts/entity/tactical/legend_mummy", 
 		this.m.ResurrectionValue = 15.0;
 		this.m.ResurrectWithScript = "scripts/entity/tactical/enemies/legend_mummy_queen";
 		this.m.IsGeneratingKillName = false;
-		this.skeleton.create();
+		this.legend_mummy.create();
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/vampire_agent");
 		this.m.AIAgent.setActor(this);
 	}
 
 	function onInit()
 	{
-		this.skeleton.onInit();
+		this.legend_mummy.onInit();
 		local b = this.m.BaseProperties;
 		b.setValues(this.Const.Tactical.Actor.LegendMummyQueen);
 		b.IsAffectedByNight = false;
@@ -127,12 +129,12 @@ function onUpdateInjuryLayer()
 		this.m.Items.equip(this.new("scripts/items/weapons/named/named_legend_great_khopesh"));
 
 		local item = this.Const.World.Common.pickArmor([
-			[1, "legend_mummy_dress"] 
+			[1, "ancient/legend_mummy_dress"] 
 		]);
 		this.m.Items.equip(item);
 
 		local item = this.Const.World.Common.pickHelmet([
-			[66, "mummy_crown"]
+			[66, ancient/mummy_crown"]
 		])
 		if (item != null)
 		{

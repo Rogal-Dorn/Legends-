@@ -6,14 +6,14 @@ this.legend_mummy_medium <- this.inherit("scripts/entity/tactical/legend_mummy",
 		this.m.XP = this.Const.Tactical.Actor.LegendMummyMedium.XP;
 		this.m.ResurrectionValue = 4.0;
 		this.m.ResurrectWithScript = "scripts/entity/tactical/enemies/legend_mummy_medium";
-		this.skeleton.create();
+		this.legend_mummy.create();
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/skeleton_melee_agent");
 		this.m.AIAgent.setActor(this);
 	}
 
 	function onInit()
 	{
-		this.skeleton.onInit();
+		this.legend_mummy.onInit();
 		local b = this.m.BaseProperties;
 		b.setValues(this.Const.Tactical.Actor.LegendMummyMedium);
 		b.IsAffectedByNight = false;

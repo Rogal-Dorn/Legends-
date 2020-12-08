@@ -118,6 +118,11 @@
 <sprite id="slinger_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\slinger_orientation.png" />
 <sprite id="fencer_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\fencer_orientation.png" />
 <sprite id="halberdier_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\halberdier_orientation.png" />
+<sprite id="mummy_light_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\mummy_light_orientation.png" />
+<sprite id="mummy_medium_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\mummy_medium_orientation.png" />
+<sprite id="mummy_heavy_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\mummy_heavy_orientation.png" />
+<sprite id="mummy_queen_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\mummy_queen_orientation.png" />
+
 <sprite id="demon_hound_flame_01" ic="FF23165B" img="skills\demon_hound_flame_01.png" />
 <sprite id="demon_hound_bite" ic="FF23165B" img="skills\demon_hound_bite.png" />
 <sprite id="mini_graze_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_graze_circle.png" />
