@@ -4214,3 +4214,24 @@ Fixes freeze when white direwolf pet dies
 Redback Spider + Hexen Leader Cloak layers have icons/brushes again (Thanks Leo)
 Nets now properly use net casting mastery & net mastery
 Fixes corrupt saves when saving a new campaign before unpausing
+
+15.0.0.XX
+
+Sato's Escaped Slaves Origin 
+
+
+Start with five escapped slaves. More will seek out your conmpany, and you can rescue them after battles 
+Your escaped slaves gain +1 resolve, attack and defense for each other escaped slave in battle 
+Good relations decay 15% faster and bad relations recover 15% slower 
+Start hostile to the city state you escaped from, and be mbushed by their manhunters. A new enemy type. 
+
+Slaves now grant carrying bonuses and a slight salvage bonus .
+Slaves grant a small movement bonus in desert, farmland and mountains. 
+Slaves are gauranteed perks for fists, hammers, axes slings and light armor .
+Barbarian slaves  have the perks of barbarians 
+Runaway harem can now join the escaped slaves or sisterhood. 
+New art for escaped slave events by Dwarf 
+
+
+
+
