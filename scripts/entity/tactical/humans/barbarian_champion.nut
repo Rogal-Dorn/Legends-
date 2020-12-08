@@ -157,11 +157,13 @@ this.barbarian_champion <- this.inherit("scripts/entity/tactical/human", {
 		}
 		else if (r == 2)
 		{
-			this.m.Items.equip(this.new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]));
+			local weightName = this.Const.World.Common.convNameToList(armor);
+			this.m.Items.equip(this.Const.World.Common.pickArmor(weightName));
 		}
 		else
 		{
-			this.m.Items.equip(this.new("scripts/items/" + helmets[this.Math.rand(0, helmets.len() - 1)]));
+			local weightName = this.Const.World.Common.convNameToList(helmets);
+			this.m.Items.equip(this.Const.World.Common.pickHelmet(weightName));
 		}
 
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_fearsome"));

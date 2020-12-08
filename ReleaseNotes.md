@@ -4260,6 +4260,22 @@ Sallet: [110, -5, 0] from [185, -9, -1]
 
 15.0.0.20
 
+**Armor Tweaks**
+Name: [v19 Fatigue] -> [v20 Fatigue]
+Short Faceplate: [-5] -> [-6]
+Long Faceplate: [-5] -> [-6]
+Winged Faceplate: [-6] -> [-7]
+Snub Nose Faceplate: [-6] -> [-7]
+Slitted Snub Faceplate: [-6] -> [-8]
+Sharp Faceplate: [-7] -> [-8]
+Facemask: [-7] -> [-9]
+Pointed Faceplate: [-7] -> [-9]
+Slit Pointed Faceplate: [-7] -> [-9]
+Full Faceplate: [-9] -> [-12]
+Flat Top Face Plate: [-4] -> [-12]
+Southern Conic: [-5] -> [-10]
+Southern Peaked Helmet: [-4] -> [-12]
+
 **Fixes/Tweaks**
 Actually fixes armored unholds' helmets
 Hedge Knights no longer have vanilla helmets when playing on layered system
@@ -4271,11 +4287,25 @@ Veteran level recruits (12+) don't spawn with too many perk points now
 Were-monsters shouldn't have hair/beards anymore when transformed
 Fixed alignment on gobo wolfrider helmets
 
+Fixes tent sell-price determining for Fletching & Gathering tent
+Bags and belts tooltip fix
+Shield's knock back skill can no longer reach 1 fatigue cost
+Fixes vengeance similar to double strike, no longer disappears after enemy misses
+Trances such as Read Omens & Scry no longer require a full turn duration
+Scry now gives the vision effect when used and the beginning of every turn channeled (can now be toggled off to simulate the same as a regular Bird item)
+Read omens now can stack with multiple users & won't screw up when you try to channel it with two separate characters & end both trances
+Some champion barbs no longer have non-layered helmets + armors
+Violent Decomposition shouldn't crash when exploding anymore
+*Maybe* fixes Krakens that spawn out in the wild
+Fixes slaughterer tooltip
+roots only affects one tile
+
 **Art**
 Improves 2 of the heads already added by the mod
 Adds 2 new facial tattoos & 2 new body tattoos
 Updates female bodies
 Updates were-Boar/Bear/Wolf heads and bodies
+New icons for traits: Ambitious, Light
 
 **Slingstaff Changes**
 Raw stats of slingstaff: 35-45 dmg, 75% armpen, 110% armor damage (nomad sling - 35-50/35%/60% for 4 AP, old pre-nerf slingstaff 45-60/80%/150% for 8 AP)

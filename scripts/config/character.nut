@@ -1037,7 +1037,9 @@ gt.Const.CharacterProperties <- {
 	IsContentWithBeingInReserve = false,
 	DamageInitiativeMin = 0,
 	DamageInitiativeMax = 0,
-	DamageInitiativeCutoff = 100
+	DamageInitiativeCutoff = 100,
+	FlatOnKillOtherActorModifier = 0,
+	PercentOnKillOtherActorModifier = 1.0
 
 
 	DailyWage = 0,
