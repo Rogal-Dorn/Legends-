@@ -1,4 +1,5 @@
 <brush name="gfx/legend_world.png" version="17">
+ <sprite id="legend_mastaba" ic="FF3E525F" img="world_entity\location\legend_mastaba.png" />
 <sprite id="legend_berserker_cave" ic="FF3E525F" img="world_entity\location\berserker_cave.png" />
  <sprite id="legend_necromancer_swamp" ic="FF3E525F" img="world_entity\location\necromancer_swamp.png" />
  <sprite id="legend_ranger_tower" ic="FF3E525F" img="world_entity\location\ranger_tower.png" />
@@ -53,6 +54,7 @@
   <sprite id="Battlesite_Undead_Orcs" ic="FF293742" img="world_entity\location\Battlesite_Undead_Orcs.png" />
   <sprite id="Battlesite_Undead_Orcs2" ic="FF293742" img="world_entity\location\Battlesite_Undead_Orcs2.png" />
   <sprite id="Battlesite_Undead_Undead" ic="FF293742" img="world_entity\location\Battlesite_Undead_Undead.png" />
+  	<sprite id="figure_mummy_01" offsetY="20" ic="FF7687A4" width="68" height="106" img="world_entity\party\figure_mummy_01.png" left="-21" right="25" top="-43" bottom="5" />
 	<sprite id="figure_demonalp_01" offsetY="20" ic="FF7687A4" width="68" height="106" img="world_entity\party\figure_demonalp_01.png" left="-21" right="25" top="-43" bottom="5" />
 	<sprite id="figure_hexe_leader_01" offsetY="20" ic="FF384556" width="68" height="106" img="world_entity\party\figure_hexe_leader_01.png" left="-18" right="22" top="-40" bottom="4" />
 	<sprite id="figure_rock_unhold_01" offsetY="20" ic="FF13384A" width="68" height="106" img="world_entity\party\figure_rock_unhold_01.png" left="-28" right="30" top="-50" bottom="12" />
