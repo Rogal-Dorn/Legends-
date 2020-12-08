@@ -216,3 +216,55 @@ gt.Const.World.Spawn.VampiresAndSkeletons <-
 		}
 	]
 }
+
+gt.Const.World.Spawn.Mummies <-
+{
+	Name = "Mummies",
+	IsDynamic = true,
+	MovementSpeedMult = 1.0,
+	VisibilityMult = 1.0,
+	VisionMult = 1.0,
+	Body = "figure_vampire_01",
+	MaxR = 521,
+	MinR = 108,
+	Troops = [
+		{
+			Weight = 65,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendMummyLight,
+					Cost = 13
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendMummynMedium,
+					MinR = 200,
+					Cost = 20
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendMummyHeavy,
+					MinR = 600,
+					Cost = 35
+				}
+			]
+		},
+		{
+			Weight = 30,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.VampireLOW,
+					Cost = 30
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.Vampire,
+					MinR = 400,
+					Cost = 40
+				},
+				{
+					MinR = 1200,
+					Type = this.Const.World.Spawn.Troops.LegendMummyQueen,
+					Cost = 70
+				}
+			]
+		}
+	]
+}

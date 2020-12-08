@@ -16,7 +16,8 @@ this.build_unique_locations_action <- this.inherit("scripts/factions/faction_act
 		BuildSunkenLibrary = true,
 		BuildHolySite1 = true,
 		BuildHolySite2 = true,
-		BuildHolySite3 = true
+		BuildHolySite3 = true,
+		BuildMummySite = true
 	},
 	function create()
 	{
@@ -113,6 +114,11 @@ this.build_unique_locations_action <- this.inherit("scripts/factions/faction_act
 			if (!this.Const.DLC.Desert || v.getTypeID() == "location.holy_site.vulcano")
 			{
 				this.m.BuildHolySite3 = false;
+			}
+			
+			if (!this.Const.DLC.Desert || v.getTypeID() == "location.legend_mummy")
+			{
+				this.m.BuildMummySite = false;
 			}
 		}
 	}
@@ -570,6 +576,33 @@ this.build_unique_locations_action <- this.inherit("scripts/factions/faction_act
 			if (tile != null)
 			{
 				camp = this.World.spawnLocation("scripts/entity/world/locations/legendary/vulcano_location", tile.Coords);
+			}
+
+			if (camp != null)
+			{
+				camp.onSpawned();
+			}
+		}
+		else if (this.m.BuildLegendMummy)
+		{
+			local disallowedTerrain = [];
+
+			for( local i = 0; i < this.Const.World.TerrainType.COUNT; i = ++i )
+			{
+				if (i == this.Const.World.TerrainType.Desert)
+				{
+				}
+				else
+				{
+					disallowedTerrain.push(i);
+				}
+			}
+
+			local tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries * 100, disallowedTerrain, 8, 25, 1001, 8, 8, null, 0.1);
+
+			if (tile != null)
+			{
+				camp = this.World.spawnLocation("scripts/entity/world/locations/legendary/legend_mummy_location", tile.Coords);
 			}
 
 			if (camp != null)
