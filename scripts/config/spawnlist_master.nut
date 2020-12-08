@@ -1410,6 +1410,50 @@ gt.Const.World.Spawn.Troops <- {
 		Cost = 5,
 		Row = 0,
 		Script = "scripts/entity/tactical/humans/peasant_armed_infected"
+	},
+	KoboldFighter = {
+		ID = this.Const.EntityType.KoboldFighter,
+		Variant = 0,
+		Strength = 3,
+		Cost = 3,
+		Row = 0,
+		Script = "scripts/entity/tactical/enemies/kobold_fighter"
+	}	
+	LegendMummyLight = {
+		ID = this.Const.EntityType.LegendMummyLight,
+		Variant = 0,
+		Strength = 21,
+		Cost = 21,
+		Row = 0,
+		Script = "scripts/entity/tactical/enemies/legend_mummy_light"
+	},
+	LegendMummyMedium = {
+		ID = this.Const.EntityType.LegendMummyMedium,
+		Variant = 0,
+		Strength = 30,
+		Cost = 30,
+		Row = 0,
+		Script = "scripts/entity/tactical/enemies/legend_mummy_medium"
+	},
+	LegendMummyHeavy = {
+		ID = this.Const.EntityType.LegendMummyHeavy,
+		Variant = 1,
+		Strength = 45,
+		Cost = 45,
+		Row = 0,
+		Script = "scripts/entity/tactical/enemies/legend_mummy_heavy",
+		NameList = this.Const.Strings.AncientSouthernNames,
+		TitleList = null
+	},
+	LegendMummyQueen = {
+		ID = this.Const.EntityType.LegendMummyQueen,
+		Variant = 1,
+		Strength = 90,
+		Cost = 90,
+		Row = 2,
+		NameList = this.Const.Strings.SouthernFemaleNames,
+		TitleList = this.Const.Strings.FallenHeroTitles,
+		Script = "scripts/entity/tactical/enemies/legend_mummy_queen"
 	}
 };
 

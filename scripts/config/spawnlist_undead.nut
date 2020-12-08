@@ -236,7 +236,7 @@ gt.Const.World.Spawn.Mummies <-
 					Cost = 13
 				},
 				{
-					Type = this.Const.World.Spawn.Troops.LegendMummynMedium,
+					Type = this.Const.World.Spawn.Troops.LegendMummyMedium,
 					MinR = 200,
 					Cost = 20
 				},

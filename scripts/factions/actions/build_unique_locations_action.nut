@@ -583,7 +583,7 @@ this.build_unique_locations_action <- this.inherit("scripts/factions/faction_act
 				camp.onSpawned();
 			}
 		}
-		else if (this.m.BuildLegendMummy)
+		else if (this.m.BuildMummySite)
 		{
 			local disallowedTerrain = [];
 

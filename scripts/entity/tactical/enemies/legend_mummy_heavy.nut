@@ -6,14 +6,14 @@ this.legend_mummy_heavy <- this.inherit("scripts/entity/tactical/legend_mummy", 
 		this.m.XP = this.Const.Tactical.Actor.LegendMummyHeavy.XP;
 		this.m.ResurrectionValue = 5.0;
 		this.m.ResurrectWithScript = "scripts/entity/tactical/enemies/legend_mummy_heavy_polearm";
-		this.skeleton.create();
+		this.legend_mummy.create();
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/skeleton_melee_agent");
 		this.m.AIAgent.setActor(this);
 	}
 
 	function onInit()
 	{
-		this.skeleton.onInit();
+		this.legend_mummy.onInit();
 		local b = this.m.BaseProperties;
 		b.setValues(this.Const.Tactical.Actor.LegendMummyHeavy);
 		b.Initiative -= 20;
@@ -79,9 +79,9 @@ this.legend_mummy_heavy <- this.inherit("scripts/entity/tactical/legend_mummy", 
 		this.m.Items.equip(item);
 
 		local item = this.Const.World.Common.pickHelmet([
-			[34, "mummy_headress"],
-			[60, "mummy_crown_king"],
-			[6, "mummy_beard"]
+			[34, "ancient/mummy_headress"],
+			[60, "ancient/mummy_crown_king"],
+			[6, "ancient/mummy_beard"]
 		])
 		if (item != null)
 		{
