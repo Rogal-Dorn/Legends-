@@ -4296,6 +4296,7 @@ Some champion barbs no longer have non-layered helmets + armors
 Violent Decomposition shouldn't crash when exploding anymore
 *Maybe* fixes Krakens that spawn out in the wild
 Fixes slaughterer tooltip
+roots only affects one tile
 
 **Art**
 Improves 2 of the heads already added by the mod
