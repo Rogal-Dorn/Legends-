@@ -479,7 +479,7 @@ this.sato_escaped_slaves_scenario <- this.inherit("scripts/scenarios/world/start
 		{
 			bro.getSkills().add(this.new("scripts/skills/traits/sato_brothers_in_chains_trait"));
 			bro.getSprite("miniboss").setBrush("bust_miniboss_indebted");
-			bro.improveMood(1.5, "Joined a mercenary company");
+			bro.improveMood(1.5, "Joined a mercenary company of freed slaves");
 
 			this.setRetireText(bro);
 		}

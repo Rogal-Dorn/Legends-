@@ -90,7 +90,7 @@ this.runaway_harem_event <- this.inherit("scripts/events/event", {
 		
 		this.m.Screens.push({
 			ID = "E",
-			Text = "[img]gfx/ui/events/event_157.png[/img]{ You draw your sword and tell the Vizier\'s men to get lost, hoping it works because any violence with them will not be without a good amount of bloodshed. Thankfully, they retreat. The lieutenant bows mockingly.%SPEECH_ON%The womenfolk are free, but with their debts to the Gilder left unpaid, they shall burn in pits of burning sand, a hell from which there will never be escape!%SPEECH_OFF%Laughing, you thank him for the imagery. The nomads also thank you, as do the freed harem. One woman steps forward %SPEECH_ON% You have shown bravery stranger. We hate that man of the Vizier. He lies, and worse. If you have set your blade against him, then i wish to join you.%SPEECH_OFF%}",
+			Text = "[img]gfx/ui/events/legend_harem_slave.png[/img]{ You draw your sword and tell the Vizier\'s men to lose themselves before they lose their lives. The declaration shifts the balance of power in favour of the nomads, and the vizier\'s men retreat.  The nomads thank you, as do the freed harem. One woman steps forward %SPEECH_ON% You have shown bravery stranger. We hate that man of the Vizier. He lies, and worse. If you have set your blade against him, then i wish to join you. I have a score to settle. %SPEECH_OFF%}",
 			Banner = "",
 			List = [],
 			Characters = [],
@@ -127,13 +127,20 @@ this.runaway_harem_event <- this.inherit("scripts/events/event", {
 				_event.m.Dude.setStartValuesEx([
 					"female_slave_southern_background"
 				]);
-				_event.m.Dude.setTitle("the Sailor");
-				_event.m.Dude.getBackground().m.RawDescription = "You rescued %name% from a life in slavery after she was forced into the vizier\'s harem";
+				_event.m.Dude.setTitle("of the dance");
+				_event.m.Dude.getBackground().m.RawDescription = "You rescued %name% from a life in slavery after she was forced into the vizier\'s harem. She seeks revenge on the vizier.";
 				_event.m.Dude.getBackground().buildDescription(true);
 				_event.m.Dude.getItems().unequip(_event.m.Dude.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand));
 				_event.m.Dude.getItems().unequip(_event.m.Dude.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand));
-				_event.m.Dude.worsenMood(2.0, "Got taken captive by manhunters");
-				_event.m.Dude.improveMood(0.5, "Got saved from a life in slavery");
+				_event.m.Dude.getItems().equip(this.new("scripts/items/weapons/oriental/qatal_dagger"));
+				_event.m.Dude.getTalents().talents[this.Const.Attributes.MeleeSkill] = 3;
+				_event.m.Dude.getTalents().talents[this.Const.Attributes.Bravery] = 3;
+				_event.m.Dude.getSkills().add(this.new("scripts/skills/perks/perk_coup_de_grace"));
+				_event.m.Dude.getSkills().add(this.new("scripts/skills/perks/perk_legend_favoured_enemy_southerner"));
+				_event.m.Dude.getSkills().add(this.new("scripts/skills/traits/natural_trait"));
+				_event.m.Dude.getSkills().add(this.new("scripts/skills/traits/pragmatic_trait"));
+				_event.m.Dude.worsenMood(1.0, "Got taken captive by manhunters");
+				_event.m.Dude.improveMood(2.0, "Got saved from a life in slavery");
 				this.Characters.push(_event.m.Dude.getImagePath());
 				local cityStates = this.World.FactionManager.getFactionsOfType(this.Const.FactionType.OrientalCityState);
 
