@@ -87,7 +87,7 @@ this.sato_find_slave_after_battle_event <- this.inherit("scripts/events/event", 
 		local BanditSoutherner3 = "A southerner comes running at you from out of nowhere and prostrates before you. Before you can say a word the stranger begins thanking you profusely and proclaiming your arrival to be a work of the Gilder. You manage to glean from this babbling that the stranger was held by the brigands as a prisoner and forced to do their nasty duties around camp against. As you calm the situation down, you wonder if there is thanks enough to fight for the %companyname%.";
 		this.m.Screens.push({
 			ID = "BanditsSoutherner",
-			Text = "[img]gfx/ui/events/event_53.png[/img]{" + BanditSoutherner1 + " | " + BanditSoutherner2 + " | " + BanditSoutherner3 + "}",
+			Text = "[img]gfx/ui/events/legend_slave_southern.png[/img]{" + BanditSoutherner1 + " | " + BanditSoutherner2 + " | " + BanditSoutherner3 + "}",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -218,7 +218,7 @@ this.sato_find_slave_after_battle_event <- this.inherit("scripts/events/event", 
 		local BarbNorthernerText3 = "The din of battle fading, you hear a truly impressive tirade of profanity coming from further in the camp. The sound leads you to a prisoner thrashing and struggling against the ropes binding hands and feet, all the while howling and wailing and cursing with language that would make hardened killers blush. Noticing you, the prisoner frantically inchworms closer.\n\nOi! You there! Thank the Old Gods, some educated folk at last! Quick, get me out of these ropes so I can go throttle those savages, those filthy beasts, those, those, those farkin whoresons! Quickly now, they\'ll get away!%SPEECH_OFF%You say the barbarians have already been slain and the raving prisoner breaks into an unintelligible stream of muttered insults and invectives. While you wouldn\'t want those words with you in a contract negotiation, you can\'t deny the spirit to fight. Maybe that could put it to use in the %companyname%?";
 		this.m.Screens.push({
 			ID = "BarbariansNortherner",
-			Text = "[img]gfx/ui/events/event_53.png[/img]{" + BarbNorthernerText1 + " | " + BarbNorthernerText2 + " | " + BarbNorthernerText3 + "}",
+			Text = "[img]gfx/ui/events/legend_slave_northern.png[/img]{" + BarbNorthernerText1 + " | " + BarbNorthernerText2 + " | " + BarbNorthernerText3 + "}",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -284,7 +284,7 @@ this.sato_find_slave_after_battle_event <- this.inherit("scripts/events/event", 
 		local NomadSouthernerText3 = "You enter one of the nomads tents and are greeted with a most curious sight. A half naked human, wide-eyed in surprise, stands frozen over the body of a dead nomad. A leg of lamb hangs from their mouth by a sinewy thread, the meat dangerously close to falling. The figure glances down their nose at it, then at you, then at the nomad corpse, then at this precarious meal again. You say they\'d better grab the food before its wasted, and the slave practically melts in relief and complies. You gather that the nomads captured this wretch as a slave, clearly they\'d attempted to use the confusion of the battle to escape - had just killed the guard and was grabbing provisions when you walked in. You think so, anyhow - mouthfuls of lamb did abilities as a storyteller no favors.\n\nRegardless of table manners, it remains clear that the slave is if nothing else able to kill for survival. Might those skills be put to better use in the %companyname%?";
 		this.m.Screens.push({
 			ID = "Nomads",
-			Text = "[img]gfx/ui/events/event_53.png[/img]{" + NomadSouthernerText1 + " | " + NomadSouthernerText2 + " | " + NomadSouthernerText3 + "}",
+			Text = "[img]gfx/ui/events/legend_slave_northern.png[/img]{" + NomadSouthernerText1 + " | " + NomadSouthernerText2 + " | " + NomadSouthernerText3 + "}",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -417,7 +417,7 @@ this.sato_find_slave_after_battle_event <- this.inherit("scripts/events/event", 
 		local UndeadSlaveText3 = "A figure runs out from behind a gravestone yelling and raving madly. You almost cut it down in surprise, but the person gets near and throws themself at your feet and starts sobbing out thanks. It takes several minutes for the pitiful moans to calm down enough to form coherent sentences. The words speak of dark things, of profane experiments performed on both the living and the dead by a man in black. The captive before you is the sole survivor, escaping the fate of the others by hiding under a pile of corpses deemed too rotten to be of use. That part of the tale, at least, is lent credence by appearance.\n\nWhile the survivor is thoroughly wretched and obviously abused, they clearly have resourcefulness and tenacity that would serve well in a mercenary outfit. Perhaps there is a place in the %companyname%?";
 		this.m.Screens.push({
 			ID = "Undead",
-			Text = "[img]gfx/ui/events/legend_undead_slave.png[/img]{" + UndeadSlaveText1 + " | " + UndeadSlaveText2 + " | " + UndeadSlaveText3 + "}",
+			Text = "[img]gfx/ui/events/legend_slave_undead.png[/img]{" + UndeadSlaveText1 + " | " + UndeadSlaveText2 + " | " + UndeadSlaveText3 + "}",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -430,6 +430,68 @@ this.sato_find_slave_after_battle_event <- this.inherit("scripts/events/event", 
 						this.World.getTemporaryRoster().clear();
 						_event.m.Dude.onHired();
 						_event.m.Dude.m.MoodChanges = [];
+						local r = this.Math.rand(0, 99);
+						if (r == 1)
+						{
+						_event.m.Dude.getSkills().add(this.new("scripts/skills/perks/perk_legend_gruesome_feast"));
+						}
+						if (r == 2)
+						{
+						_event.m.Dude.getSkills().add(this.new("scripts/skills/perks/legend_inventor_anatomy"));
+						}
+						if (r == 3)
+						{
+						_event.m.Dude.getSkills().add(this.new("scripts/skills/injury_permanent/traumatized_injury"));
+						}
+						if (r == 4)
+						{
+						_event.m.Dude.getSkills().add(this.new("scripts/skills/traits/fear_undead_trait"));
+						}
+						if (r == 5)
+						{
+						_event.m.Dude.getSkills().add(this.new("scripts/skills/perks/perk_legend_raise_undead"));
+						}
+						if (r == 6)
+						{
+						_event.m.Dude.getSkills().add(this.new("scripts/skills/traits/hate_undead_trait"));
+						}
+						if (r == 7)
+						{
+						_event.m.Dude.getSkills().add(this.new("scripts/skills/traits/cultist_fanatic_trait"));
+						}
+						if (r == 8)
+						{
+						_event.m.Dude.getSkills().add(this.new("scripts/skills/traits/legend_deathly_spectre_trait"));
+						}
+						if (r == 9)
+						{
+						_event.m.Dude.getSkills().add(this.new("scripts/skills/traits/paranoid_trait"));
+						}
+						if (r == 10)
+						{
+						_event.m.Dude.getSkills().add(this.new("scripts/skills/traits/legend_undead_killer_trait"));
+						}
+						if (r == 11)
+						{
+						_event.m.Dude.getSkills().add(this.new("scripts/skills/traits/fearless_trait"));
+						}
+						if (r == 12)
+						{
+						_event.m.Dude.getSkills().add(this.new("scripts/skills/traits/deathwish_trait"));
+						}
+						if (r == 13)
+						{
+						_event.m.Dude.getSkills().add(this.new("scripts/skills/traits/mad_trait"));
+						}
+						if (r == 14)
+						{
+						_event.m.Dude.getSkills().add(this.new("scripts/skills/perk/perk_legend_mastery_bandage"));
+						}
+						if (r == 15)
+						{
+						_event.m.Dude.getSkills().add(this.new("scripts/skills/perk/perk_legend_favoured_enemy_zombie"));
+						}
+						
 						_event.m.Dude.improveMood(2.0, "Was rescued from captivity");
 						_event.m.Dude = null;
 						return 0;
