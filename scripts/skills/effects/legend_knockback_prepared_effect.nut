@@ -50,11 +50,23 @@ this.legend_knockback_prepared_effect<- this.inherit("scripts/skills/skill", {
 		--this.m.AttacksLeft;
 
 		if (this.m.AttacksLeft <= 0)
-			{
-				this.removeSelf();
-			}
+		{
+			this.removeSelf();
+		}
+
+		if (!_targetEntity.isAlive() || _targetEntity.isDying())
+		{
+			return;
+		}
 
 		local user = this.getContainer().getActor();
+		local targetTile = _targetEntity.getTile();
+
+		if (targetTile == null)
+		{
+			return;
+		}
+
 		local knockToTile = this.findTileToKnockBackTo(user.getTile(), targetTile);
 
 		if (knockToTile == null)
