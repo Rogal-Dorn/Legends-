@@ -4318,3 +4318,26 @@ Raw stats of slingstaff: 35-45 dmg, 75% armpen, 110% armor damage (nomad sling -
 "Slinger's spins" increases armor damage of "Sling Heavy Stone" by 50% but increases AP cost by 1 and FAT cost by 4, has no effect on slingstaff bash.
 Fully buffed with minor perks Sling Heavy Stone pre-nerf: 49-72/80%/188% for 8 AP, now: 50-75/75%/165% for 7 AP, unbuffed 70-90/75%/110% for 10 AP (5*2).
 
+
+
+
+Retinue now requires specific  backgrounds and perks.  Gold cost halved 
+
+Agent = eunuch, messenger assassin + allied town 
+Alchemist = Taxidermist, Herbalist or Druid  + 10 crafting 
+Blacksmith = "Field Repairs Perk" Blacksmith, Ironmonger, Crusader
+Bounty Hunter = Witch Hunter, Beast Slayer, Manhunter  + 1 famed item 
+Brigand = Barbarian, Raider, Deserter 
+Catographer = Historian, Adventurous Noble, Philosopher + 1 legendary location 
+Cook = "Camp Cook perk" Baker, Fishwife, Butcher 
+Drill Seargent = Retired Soldier, Gladiator, Swordmaster or Sellsword with injury 
+Lookout = "lookout perk" Nomad, Thief, Poacher 
+Minstrel = "Entice perk" Minstrel, Troubadour, Juggler 
+Negotiator = "pacifist perk"  Widow, Inventor, tailor
+Paymaster = "paymaster perk" Peddler, Servant, Eunuch 
+Quartermaster = "skillfull stacking perk" donkey, vagabond, Miller 
+Recruiter = "inspiring presence perk" cultists, pimps retired soldiers
+Scavenger = beggar, cripple, refugee  slave 
+Scout = Hunter, wildman, lumberjack, ranger 
+Surgeon = "Field triage perk" Monk, Nun, Maid 
+Trader = Caravan Hand. Peddler, trader  + trade requirement
