@@ -4276,6 +4276,10 @@ Flat Top Face Plate: [-4] -> [-12]
 Southern Conic: [-5] -> [-10]
 Southern Peaked Helmet: [-4] -> [-12]
 
+**New Armors to Enemies**
+From fashion-show added:
+"Southern-based" armor to barbarian reavers by Kamy  
+
 **Fixes/Tweaks**
 Actually fixes armored unholds' helmets
 Hedge Knights no longer have vanilla helmets when playing on layered system
@@ -4299,6 +4303,7 @@ Violent Decomposition shouldn't crash when exploding anymore
 *Maybe* fixes Krakens that spawn out in the wild
 Fixes slaughterer tooltip
 roots only affects one tile
+Fixes double jester hat showing up in tooltips
 
 **Art**
 Improves 2 of the heads already added by the mod
