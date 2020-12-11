@@ -25,9 +25,20 @@ this.trader_follower <- this.inherit("scripts/retinue/follower", {
 
 	function onEvaluate()
 	{
-		this.m.Requirements[0].Text = "Sold " + this.Math.min(25, this.World.Statistics.getFlags().getAsInt("TradeGoodsSold")) + "/25 trade goods";
+	
+		local hasTrader = 0;
+		local brothers = this.World.getPlayerRoster().getAll();
+		foreach( bro in brothers )
+		{
+			if (bro.getBackground().getID() == "background.caravan_hand" || bro.getBackground().getID() == "background.legend_trader"  || bro.getBackground().getID() == "background.legend_commander_trader"  || bro.getBackground().getID() == "background.legend_donkey" )
+			{
+			hasTrader++;
+			}
 
-		if (this.World.Statistics.getFlags().getAsInt("TradeGoodsSold") >= 25)
+		}	
+		this.m.Requirements[0].Text = "Sold " + this.Math.min(25, this.World.Statistics.getFlags().getAsInt("TradeGoodsSold")) + "/25 trade goods. Have a Caravan Hand, Trader or Donkey in your company";
+
+		if (this.World.Statistics.getFlags().getAsInt("TradeGoodsSold") >= 25 && hasTrader >= 1)
 		{
 			this.m.Requirements[0].IsSatisfied = true;
 		}
