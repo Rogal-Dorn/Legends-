@@ -4304,6 +4304,7 @@ Violent Decomposition shouldn't crash when exploding anymore
 Fixes slaughterer tooltip
 roots only affects one tile
 Fixes double jester hat showing up in tooltips
+Fixes mountain helmet layer
 
 **Art**
 Improves 2 of the heads already added by the mod
