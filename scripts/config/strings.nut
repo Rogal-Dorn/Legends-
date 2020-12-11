@@ -277,7 +277,14 @@ gt.Const.Strings.EntityName <- [
 	"Catapult",
 	"Horse",
 	"Ancient Gladiator",
-	"Bandit Rabble Poacher"
+	"Bandit Rabble Poacher",
+	"Bandit Vermes",
+	"Embalmed Slave",
+	"Embalmed Soldier",
+	"Embalmed Noble",
+	"Embalmed Queen",
+	"Kobold Fighter"
+	
 ];
 gt.Const.Strings.EntityNamePlural <- [
 	"Necromancers",
@@ -424,7 +431,13 @@ gt.Const.Strings.EntityNamePlural <- [
 	"Catapults",
 	"Horses",
 	"Ancient Gladiators",
-	"Bandit Rabble Poachers"
+	"Bandit Rabble Poachers",
+	"Bandit Vermes",
+	"Embalmed Slaves",
+	"Embalmed Soldiers",
+	"Embalmed Nobles",
+	"Embalmed Queens",
+	"Kobold Fighters"
 ];
 gt.Const.Strings.Tactical.EntityName <- {
 	Boulder = "Boulder",
