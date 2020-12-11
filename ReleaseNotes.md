@@ -4290,6 +4290,7 @@ Bandit Leaders correctly can roll named helmets
 Veteran level recruits (12+) don't spawn with too many perk points now
 Were-monsters shouldn't have hair/beards anymore when transformed
 Fixed alignment on gobo wolfrider helmets
+Fixes camp having low res ground in desert environments
 
 Fixes tent sell-price determining for Fletching & Gathering tent
 Bags and belts tooltip fix
