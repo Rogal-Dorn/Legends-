@@ -9,7 +9,7 @@ this.legend_blacksmith_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.m.BackgroundDescription = "Blacksmiths tend to be strong and are skilled at repairing equipment.";
 		this.m.GoodEnding = "Perhaps one of the strongest men you\'ve ever met, %name% the blacksmith was a vital asset in the %companyname%, repairing both his own equipment and that of his comrades with practiced hands. With plenty of crowns stored, he retired from fighting and blacksmithing both. Last you heard he was living out his years comfortably on the coast.";
 		this.m.BadEnding = "%name% the blacksmith was a strong and capable sellsword in the %companyname%. He held out until the bitter end, sticking with the company as it lurched from one disaster to the next. Perhaps, had he been born in a different time he would have gone on to do great things, making legendary weapons for regal kings. Instead, many wars, invasions, and plagues spreading across the land ultimately ensured %name% and many other talented men went to total waste.";
-		this.m.HiringCost = 250;
+		this.m.HiringCost = 2500;
 		this.m.DailyCost = 25;
 		this.m.Excluded = [
 			"trait.asthmatic",
