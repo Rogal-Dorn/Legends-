@@ -41,6 +41,7 @@ this.minstrel_follower <- this.inherit("scripts/retinue/follower", {
 			}
 
 		}
+	}
 
 });
 

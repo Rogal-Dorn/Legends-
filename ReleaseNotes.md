@@ -4275,21 +4275,20 @@ The embalmed have:
 * roman gladius and egyptian fan axe 
 * 6 helmet layers, 2 shields and 4 armors 
 
-
 **New Origin - Escaped Slaves** 
 Integrates Sato's escaped slaves mod
 Start with five escapped slaves. More will seek out your conmpany, and you can rescue them after battles 
 Your escaped slaves gain +1 resolve, attack and defense for each other escaped slave in battle 
 Good relations decay 15% faster and bad relations recover 15% slower 
-Start hostile to the city state you escaped from, and be ambushed by a new enemy type Manhunters 
+Start hostile to the city state you escaped from, and be ambushed by a new enemy type, the Manhunters 
+New art for escaped slave events by Dwarf 
 
 **Slave changes** 
-Slaves now grant carrying bonuses and a slight salvage bonus .
-Slaves grant a small movement bonus in desert, farmland and mountains. 
+Slaves now grant carrying bonuses,a slight salvage bonus and movement bonus in desert, farmland and mountains. 
 Slaves are gauranteed perks for fists, hammers, axes slings and light armor .
 Barbarian slaves  have the perks of barbarians 
 Runaway harem can now join the escaped slaves or sisterhood. 
-New art for escaped slave events by Dwarf 
+
 
 **Gender equality** 
 Female backgrounds - with gender equality enambled womean can now be criples, gamblers, raiders, houndmasters, hunters and ratcatcher. Text updated for several backgrounds.
@@ -4301,7 +4300,7 @@ All faceplates rebalanced with half as much durability, as well as much lower fa
 a dozen faceplate layers added to spawnpools for knights, and at armorsmiths near blast furnaces. 
 four noble hats added to the spawnpool for nobles, adventurous nobkles and at markets near dye makers
 two southern noble hats added to viziers and southern peddlers 
-jewelry - There is now a variety of southern jewelry, with several kinds of veils, headresses and earings. These are found on female southerners and in southern markets 
+jewelry - There is now a variety of southern jewelry, with several kinds of veils, headresses and earings. These are found on female southerners and in southern markets  Art by Von Krolock
 
 **Retinue Changes**
 Retinue now requires specific backgrounds and perks.  Gold cost halved 
