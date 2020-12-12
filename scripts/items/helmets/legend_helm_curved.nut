@@ -19,9 +19,9 @@ this.legend_helm_curved <- this.inherit("scripts/items/helmets/helmet", {
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorHalfplateImpact;
-		this.m.Value = 4000;
-		this.m.Condition = 320;
-		this.m.ConditionMax = 320;
+		this.m.Value = 3200;
+		this.m.Condition = 325;
+		this.m.ConditionMax = 325;
 		this.m.StaminaModifier = -21;
 		this.m.Vision = -4;
 	}

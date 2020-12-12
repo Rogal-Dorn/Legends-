@@ -19,11 +19,11 @@ this.legend_helm_point <- this.inherit("scripts/items/helmets/helmet", {
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorHalfplateImpact;
-		this.m.Value = 4500;
-		this.m.Condition = 330;
-		this.m.ConditionMax = 330;
-		this.m.StaminaModifier = -21;
-		this.m.Vision = -3;
+		this.m.Value = 3500;
+		this.m.Condition = 350;
+		this.m.ConditionMax = 350;
+		this.m.StaminaModifier = -23;
+		this.m.Vision = -4;
 	}
 
 	function updateVariant()

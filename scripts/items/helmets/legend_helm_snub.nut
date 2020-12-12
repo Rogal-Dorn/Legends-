@@ -5,7 +5,7 @@ this.legend_helm_snub <- this.inherit("scripts/items/helmets/helmet", {
 		this.helmet.create();
 		this.m.ID = "armor.head.legend_helm_point";
 		this.m.Name = "Snub Helm";
-		this.m.Description = "A closed metal helm with a snub nose. Provides more breathing than great helms";
+		this.m.Description = "A closed metal helm with a snub nose. Provides more breathing than full helms";
 		this.m.ShowOnCharacter = true;
 		this.m.HideCharacterHead = true;
 		this.m.HideCorpseHead = true;
@@ -19,11 +19,11 @@ this.legend_helm_snub <- this.inherit("scripts/items/helmets/helmet", {
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorHalfplateImpact;
-		this.m.Value = 4500;
-		this.m.Condition = 310;
-		this.m.ConditionMax = 310;
-		this.m.StaminaModifier = -20;
-		this.m.Vision = -2;
+		this.m.Value = 3500;
+		this.m.Condition = 340;
+		this.m.ConditionMax = 340;
+		this.m.StaminaModifier = -22;
+		this.m.Vision = -4;
 	}
 
 	function updateVariant()
