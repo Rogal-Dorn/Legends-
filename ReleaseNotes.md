@@ -4218,11 +4218,17 @@ Fixes corrupt saves when saving a new campaign before unpausing
 
 15.0.0.18  Mummy's darling
 
-New Enemy - Mummies 
-Similar to skeletons, with more health, but less resistence to ranged weapons and no bonus bleed.  
+New Enemy - The Embalmed
+Far out in the desert lies an ancient Mastaba, in its dry depths lie  the desicated corpses of the embalmed
+These undead have laid still for millenia and those who disturb them shall suffer their curse  
 When they die, they curse any of your troops within 2 tiles for the rest of the battle. 
-The curse stacks, and causes you to take 20% more damage 
-There are four types of mummy to encounter, with many kinds of armor, shields and helmets 
+The curse stacks, and causes you to take 20% more damage per stack 
+There are four types of embalmed
+* Embalmed slaves - small shields, bandages and ancient weapons 
+* Embalmed soldiers - new tower shields, light plate, a new gladius short sword
+* Embalmed noble - heavier plate and helm, a new fan axe with a deadly round swing 
+* The Embalmed queen - her ancient slumber has been disturbed, she needs to feast. 
+
 
 
 Female bodies - There are now six total versions of female bodies. Three each of southern and normal in thin, fit and thick  (von krolock)

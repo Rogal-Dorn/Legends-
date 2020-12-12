@@ -40,7 +40,7 @@ this.legend_mummy_heavy <- this.inherit("scripts/entity/tactical/legend_mummy", 
 
 		if (r == 1)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/broken_ancient_sword"));
+			this.m.Items.equip(this.new("scripts/items/weapons/ancient/ancient_sword"));
 		}
 		else if (r == 2)
 		{
@@ -57,7 +57,8 @@ this.legend_mummy_heavy <- this.inherit("scripts/entity/tactical/legend_mummy", 
 		}
 
 		local armor = [
-			[5, "ancient/ancient_ripped_cloth"],
+			[2, "ancient/ancient_ripped_cloth"],
+			[3, "ancient/legend_mummy_bandages"],
 			[1, ""]
 		];
 		local item = this.Const.World.Common.pickArmor(armor);
@@ -66,7 +67,7 @@ this.legend_mummy_heavy <- this.inherit("scripts/entity/tactical/legend_mummy", 
 
 
 		item = this.Const.World.Common.pickHelmet([
-			[66, "mummy_headband"],
+			[66, "ancient/legend_mummy_headband"],
 			[34, ""]
 		])
 		if (item != null)
