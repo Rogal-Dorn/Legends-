@@ -662,7 +662,15 @@ layers = [
  "title" :  "Rotten Great Helm", \
  "desc" :  "Rotten Great Helm" \
 },
+{"name" : "mummy_crown"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1600, "con" : 180, "stam" : -14, "vis" : 0, "hair" : "true", "beard" : "false",  \
+ "title" :  "Ancient Southern Crown", \
+ "desc" :  "A tall crown of a long dead civilisation" \
+},
 
+{"name" : "mummy_crown_king"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 2000, "con" : 200, "stam" : -18, "vis" : 0, "hair" : "true", "beard" : "false",  \
+ "title" :  "Ancient Southern Crested Crown", \
+ "desc" :  "A crested crown of a long dead civilisation" \
+},
 
 
 
@@ -809,6 +817,10 @@ layers = [
 {"name" : "mummy_mask"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 450, "con" : 50, "stam" : -3, "vis" : -2, "hair" : "false", "beard" : "true",  \
  "title" :  "Ancient Southern Facemask", \
  "desc" :  "A facemask from a long dead civilisation" \
+},
+{"name" : "mummy_bandage"                     , "layer" : "hood", "min" : 1, "max" : 1, "value" : 5, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "true",  \
+ "title" :  "Ancient Southern Facemask", \
+ "desc" :  "Wrappings from a long dead embalmed corpse" \
 },
 {"name" : "mummy_beard"                     , "layer" : "top", "min" : 1, "max" : 3, "value" : 450, "con" : 35, "stam" : -1, "vis" : 0, "hair" : "false", "beard" : "true",  \
  "title" :  "Ancient Southern Beard", \
@@ -1072,21 +1084,13 @@ layers = [
  "title" :  "Royal Hood", \
  "desc" :  "The ornate hood of distant royalty, made from the finest materials." \
 },
-{"name" : "mummy_crown"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 500, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
- "title" :  "Ancient Southern Crown", \
- "desc" :  "A tall crown of a long dead civilisation" \
+{"name" : "mummy_headress"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 500, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
+ "title" :  "Ancient Southern Headress", \
+ "desc" :  "A headress of a long dead civilisation" \
 },
 {"name" : "mummy_headband"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Ancient Southern Headband", \
  "desc" :  "A serpent headband from a long dead civlisation" \
-},
-{"name" : "mummy_crown_king"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 500, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
- "title" :  "Ancient Southern Crested Crown", \
- "desc" :  "A crested crown of a long dead civilisation" \
-},
-{"name" : "mummy_headress"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 500, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
- "title" :  "Ancient Southern Headress", \
- "desc" :  "A headress of a long dead civilisation" \
 },
 {"name" : "southern_cloth_headress"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 100, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Southern Cloth Headress", \
