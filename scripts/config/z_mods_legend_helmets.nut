@@ -429,6 +429,152 @@ gt.Const.LegendMod.HelmObjs.extend([
         Vanity = []
     }]
     },{
+        ID = "legend_helm_wings", //340, -24, -2, 3500
+        Script = "",
+        Sets = [{
+        Hoods = [
+            [1, "hood/legend_helmet_chain_hood"] //80, -5, 0, 310
+        ],
+        Helms = [
+            [1, "helm/legend_helmet_great_helm"] //220, -15, -3, 3000
+        ],
+        Tops = [
+			[1, "top/legend_faceplate_winged"], //70, -6, -1
+			
+		],
+        Vanity = []
+    }]
+    },{
+        ID = "legend_helm_snub", //320, -21, -3, 3500
+        Script = "",
+        Sets = [{
+        Hoods = [
+            [1, "hood/legend_helmet_chain_hood"] //80, -5, 0, 310
+        ],
+        Helms = [
+            [1, "helm/legend_helmet_great_helm"] //220, -15, -3, 3000
+        ],
+        Tops = [
+			[3, "top/legend_faceplate_snub_nose"], //20, -1, -1
+			[1, "top/legend_faceplate_snub_slit"] //40, -2, -1
+		],
+        Vanity = []
+    }]
+    },{
+        ID = "legend_helm_short", //320, -22, -2, 3500
+        Script = "",
+        Sets = [{
+        Hoods = [
+            [1, "hood/legend_helmet_chain_hood"] //80, -5, 0, 310
+        ],
+        Helms = [
+            [1, "helm/legend_helmet_great_helm"] //220, -15, -3, 3000
+        ],
+        Tops = [
+			[1, "top/legend_faceplate_short"] //20, -2, 0
+		],
+        Vanity = []
+    }]
+    },{
+        ID = "legend_helm_point", //350, -21, -3, 3500
+        Script = "",
+        Sets = [{
+        Hoods = [
+            [1, "hood/legend_helmet_chain_hood"] //80, -5, 0, 310
+        ],
+        Helms = [
+            [1, "helm/legend_helmet_great_helm"] //220, -15, -3, 3000
+        ],
+        Tops = [
+			[1, "top/faceplate_pointed"], //25, -1, -1
+			[1, "faceplate_pointed_slit"] //35, -1, -2
+		],
+        Vanity = []
+    }]
+    },{
+        ID = "legend_helm_full", //350, -21, -3, 3500
+        Script = "",
+        Sets = [{
+        Hoods = [
+            [1, "hood/legend_helmet_chain_hood"] //80, -5, 0, 310
+        ],
+        Helms = [
+            [1, "helm/legend_helmet_great_helm"] //220, -15, -3, 3000
+        ],
+        Tops = [
+			[1, "top/legend_faceplate_full"], //57, -1, -1
+		],
+        Vanity = [
+			[1, "vanity/legend_noble_feather"], //10
+			[1, "vanity/legend_noble_buckle"], //10
+			[1, ""] //10
+		]
+    }]
+    },{
+        ID = "legend_helm_full_named", //350, -21, -3, 3500
+        Script = "",
+        Sets = [{
+        Hoods = [
+            [1, "hood/legend_helmet_chain_hood"] //80, -5, 0, 310
+        ],
+        Helms = [
+            [1, "helm/legend_helmet_great_helm"] //220, -15, -3, 3000
+        ],
+        Tops = [
+			[1, "top/legend_faceplate_full_gold"], //57, -1, -1
+		],
+        Vanity = [
+			[1, "vanity/legend_noble_feather"], //10
+			[1, "vanity/legend_noble_buckle"], //10
+			[3, ""] //10
+		]
+    }]
+    },{
+        ID = "legend_helm_curved", //325, -21, -3, 3500
+        Script = "",
+        Sets = [{
+        Hoods = [
+            [1, "hood/legend_helmet_chain_hood"] //80, -5, 0, 310
+        ],
+        Helms = [
+            [1, "helm/legend_helmet_great_helm"] //220, -15, -3, 3000
+        ],
+        Tops = [
+			[1, "top/faceplate_curved"], //25, -4, -2
+		],
+        Vanity = []
+    }]
+    },{
+        ID = "legend_helm_breathed", //320, -21, -3, 3500
+        Script = "",
+        Sets = [{
+        Hoods = [
+            [1, "hood/legend_helmet_chain_hood"] //80, -5, 0, 310
+        ],
+        Helms = [
+            [1, "helm/legend_helmet_great_helm"] //220, -15, -3, 3000
+        ],
+        Tops = [
+			[1, "top/faceplate_curved"], //25, 0, -1
+		],
+        Vanity = []
+    }]
+    },{
+        ID = "legend_helm_bearded", //320, -21, -3, 3500
+        Script = "",
+        Sets = [{
+        Hoods = [
+            [1, "hood/legend_helmet_chain_hood"] //80, -5, 0, 310
+        ],
+        Helms = [
+            [1, "helm/legend_helmet_great_helm"] //220, -15, -3, 3000
+        ],
+        Tops = [
+			[1, "top/faceplate_southern_faceplate_bearded"], //50, -1, -2
+		],
+        Vanity = []
+    }]
+    },{
         ID = "full_leather_cap", //45
         Script = "",
         Sets = [{
@@ -1150,6 +1296,86 @@ gt.Const.LegendMod.HelmObjs.extend([
         ],
         Vanity = [
             [1, "vanity/legend_helmet_witchhunter_helm"] //10
+        ]
+    }]
+    },{
+        ID = "legend_noble_crown", //70
+        Script = "",
+        Sets = [{
+        Hoods = [
+            [1, "hood/legend_helmet_cloth_bandana"], //15,
+            [2, "hood/legend_cloth_cap"] //10
+        ],
+        Helms = [
+        ],
+        Tops = [
+        ],
+        Vanity = [
+          [1, "vanity/legend_noble_crown"] //10
+        ]
+    }]
+    },{
+        ID = "legend_noble_hat", //70
+        Script = "",
+        Sets = [{
+        Hoods = [
+            [1, "hood/legend_helmet_cloth_bandana"], //15,
+            [2, "hood/legend_cloth_cap"] //10
+        ],
+        Helms = [
+        ],
+        Tops = [
+       ],
+        Vanity = [
+          [1, "vanity/legend_noble_hat"] //10
+        ]
+    }]
+    },{
+        ID = "legend_noble_floppy_hat", //70
+        Script = "",
+        Sets = [{
+        Hoods = [
+            [1, "hood/legend_helmet_cloth_bandana"], //15,
+            [2, "hood/legend_cloth_cap"] //10
+        ],
+        Helms = [
+        ],
+        Tops = [
+       ],
+        Vanity = [
+          [1, "vanity/legend_noble_hat"] //10
+        ]
+    }]
+    },{
+        ID = "legend_noble_southern_crown", //70
+        Script = "",
+        Sets = [{
+        Hoods = [
+            [1, "hood/legend_helmet_cloth_bandana"], //15,
+            [2, "hood/legend_cloth_cap"] //10
+        ],
+        Helms = [
+        ],
+        Tops = [        
+		],
+        Vanity = [
+          [1, "vanity/legend_noble_southern_crown"] //10
+        ]
+    }]
+    },{
+        ID = "legend_noble_southern_hat", //70
+        Script = "",
+        Sets = [{
+        Hoods = [
+            [1, "hood/legend_helmet_cloth_bandana"], //15,
+            [2, "hood/legend_cloth_cap"] //10
+        ],
+        Helms = [
+        ],
+        Tops = [        
+		],
+        Vanity = [
+          [1, "vanity/legend_noble_southern_hat"] //10
         ]
     }]
     },{

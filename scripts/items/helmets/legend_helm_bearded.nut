@@ -19,11 +19,11 @@ this.legend_helm_bearded <- this.inherit("scripts/items/helmets/helmet", {
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorHalfplateImpact;
-		this.m.Value = 4000;
+		this.m.Value = 3600;
 		this.m.Condition = 350;
 		this.m.ConditionMax = 350;
-		this.m.StaminaModifier = -22;
-		this.m.Vision = -4;
+		this.m.StaminaModifier = -23;
+		this.m.Vision = -5;
 	}
 
 	function updateVariant()

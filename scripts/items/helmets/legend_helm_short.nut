@@ -19,9 +19,9 @@ this.legend_helm_short <- this.inherit("scripts/items/helmets/helmet", {
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorHalfplateImpact;
-		this.m.Value = 4000;
-		this.m.Condition = 320;
-		this.m.ConditionMax = 320;
+		this.m.Value = 3250;
+		this.m.Condition = 330;
+		this.m.ConditionMax = 330;
 		this.m.StaminaModifier = -22;
 		this.m.Vision = -2;
 	}

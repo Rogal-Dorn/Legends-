@@ -153,7 +153,11 @@ this.noble <- this.inherit("scripts/entity/tactical/human", {
 		if (withHelmet && this.Math.rand(1, 100) <= 50)
 		{
 			this.Const.World.Common.pickHelmet([
-					[1, "noble_headgear"]
+					[1, "noble_headgear"],
+					[1, "legend_noble_floppy_hat"],
+					[1, "legend_noble_hat"],
+					[1, "legend_noble_hood"],
+					[1, "legend_noble_crown"]
 			])
 		}
 	}

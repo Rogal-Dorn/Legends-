@@ -4313,3 +4313,9 @@ Raw stats of slingstaff: 35-45 dmg, 75% armpen, 110% armor damage (nomad sling -
 "Slinger's spins" increases armor damage of "Sling Heavy Stone" by 50% but increases AP cost by 1 and FAT cost by 4, has no effect on slingstaff bash.
 Fully buffed with minor perks Sling Heavy Stone pre-nerf: 49-72/80%/188% for 8 AP, now: 50-75/75%/165% for 7 AP, unbuffed 70-90/75%/110% for 10 AP (5*2).
 
+
+**faceplates and noble hats**
+Rebalances faceplates to reduce total armor values and increase visibility 
+Faceplates now spawn on knights and in armorsmiths near blast furnaces 
+Noble hats now spawn on nobles, adventurous nobles and at marketplaces near dye makers 
+noble southern hats now spawn on viziers and southern peddlers 
