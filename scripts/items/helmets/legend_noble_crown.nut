@@ -26,11 +26,11 @@ this.legend_noble_crown <- this.inherit("scripts/items/helmets/helmet", {
 		function updateVariant()
 	{
 		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
-		this.m.Sprite = "noble_crown_0" + variant;
-		this.m.SpriteDamaged = "noble_crown_0" + variant + "_damaged";
-		this.m.SpriteCorpse = "noble_crown_0" + variant + "_dead"";
-		this.m.IconLarge = "legend_helmets/noble_crown_0" + variant + ".png";
-		this.m.Icon = "legend_helmets/noble_crown_0" + variant + ".png";
+		this.m.Sprite = "noble_crown_" + variant;
+		this.m.SpriteDamaged = "noble_crown_" + variant + "_damaged";
+		this.m.SpriteCorpse = "noble_crown_" + variant + "_dead";
+		this.m.IconLarge = "legend_helmets/noble_crown_" + variant + ".png";
+		this.m.Icon = "legend_helmets/noble_crown_" + variant + ".png";
 	}
 
 });
