@@ -42,7 +42,6 @@ this.lookout_follower <- this.inherit("scripts/retinue/follower", {
 
 		}
 
-	}
 		
 	}
 
