@@ -31,11 +31,11 @@ this.legend_noble_southern_hat <- this.inherit("scripts/items/helmets/helmet", {
 		function updateVariant()
 	{
 		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
-		this.m.Sprite = "southern_noble_hat_0" + variant;
-		this.m.SpriteDamaged = "southern_noble_hat_0" + variant + "_damaged";
-		this.m.SpriteCorpse = "southern_noble_hat_0" + variant + "_dead"";
-		this.m.IconLarge = "legend_helmets/southern_noble_hat_0" + variant + ".png";
-		this.m.Icon = "legend_helmets/southern_noble_hat_0" + variant + ".png";
+		this.m.Sprite = "southern_noble_hat_" + variant;
+		this.m.SpriteDamaged = "southern_noble_hat_" + variant + "_damaged";
+		this.m.SpriteCorpse = "southern_noble_hat_" + variant + "_dead";
+		this.m.IconLarge = "legend_helmets/southern_noble_hat_" + variant + ".png";
+		this.m.Icon = "legend_helmets/southern_noble_hat_" + variant + ".png";
 	}
 
 });
