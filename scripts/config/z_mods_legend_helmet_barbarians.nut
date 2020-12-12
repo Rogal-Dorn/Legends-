@@ -175,6 +175,22 @@ gt.Const.LegendMod.HelmObjs.extend([
     ]
 }]
 },{
+    ID = "barbarians/rusted_heavy_plate_helmet", //250
+    Script = "",
+    Sets = [{
+    Hoods = [
+        [1, "hood/legend_helmet_rusted_aventail"] //
+    ],
+    Helms = [
+        [1, "helm/legend_helmet_heavy_plate_helm"], //170
+    ],
+    Tops = [
+    ],
+    Vanity = [
+        [1, "vanity/legend_helmet_bear_head"]
+    ]
+}]
+},{
     ID = "barbarians/leather_headband", //30
     Script = "",
     Sets = [{
