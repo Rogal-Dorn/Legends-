@@ -399,6 +399,8 @@ gt.Const.EntityType <- {
 	SkeletonGladiator = 142,
 	BanditRabblePoacher = 143,
 	BanditVermes = 144,
+	SatoManhunter = 145,
+	SatoManhunterVeteran = 146,
 
 	function convertOldToNew( _id )
 	{
