@@ -2774,22 +2774,93 @@ gt.Const.LegendMod.HelmObjs.extend([
     ]
 }]
 },{
-    ID = "oriental/southern_jewelry", 
+    ID = "legend_earings", 
     Script = "",
     Sets = [{
     Hoods = [
         [1, "hood/southern_headband_coin"]
     ],
     Helms = [
-        [0, "helm/legend_helmet_ancient_conic_helm"]
     ],
     Tops = [
-        [10, "top/southern_veil"], //35
-        [1, "top/southern_veil_coin"]
     ],
     Vanity = [
         [5, "vanity/southern_earings"], //30
+    ]
+}]
+},{
+    ID = "legend_headband_coin", 
+    Script = "",
+    Sets = [{
+    Hoods = [
+        [1, "hood/southern_headband_coin"]
+    ],
+    Helms = [
+    ],
+    Tops = [
+    ],
+    Vanity = [
+    ]
+}]
+},{
+    ID = "legend_headress_coin", 
+    Script = "",
+    Sets = [{
+    Hoods = [
+        [1, "hood/southern_headband_coin"]
+    ],
+    Helms = [
+    ],
+    Tops = [
+    ],
+    Vanity = [
         [1, "vanity/southern_headress_coin"], //80
+    ]
+}]
+},{
+    ID = "legend_southern_veil_coin", 
+    Script = "",
+    Sets = [{
+    Hoods = [
+        [1, "hood/southern_headband_coin"]
+    ],
+    Helms = [
+    ],
+    Tops = [
+        [1, "top/southern_veil_coin"]
+    ],
+    Vanity = [
+    ]
+}]
+},{
+    ID = "legend_southern_veil", 
+    Script = "",
+    Sets = [{
+    Hoods = [
+        [1, "hood/southern_headband_coin"]
+    ],
+    Helms = [
+    ],
+    Tops = [
+        [10, "top/southern_veil"], //35
+    ],
+    Vanity = [
+        [1, "vanity/southern_earings"], //30
+        [5, ""], //80
+    ]
+}]
+},{
+    ID = "oriental/southern_cloth_headress", 
+    Script = "",
+    Sets = [{
+    Hoods = [
+        [1, "hood/southern_headband_coin"]
+    ],
+    Helms = [
+    ],
+    Tops = [
+    ],
+    Vanity = [
 		[4, "vanity/southern_cloth_headress"] //80
     ]
 }]

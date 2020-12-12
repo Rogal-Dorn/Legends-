@@ -28,6 +28,83 @@ gt.Const.LegendMod.HelmObjs.extend([
         ]
     }]
 },{
+    ID = "ancient/legend_mummy_bandages",
+    Script = "",
+    Sets = [{
+        Hoods = [
+            [1, "hood/legend_mummy_bandages"]
+        ],
+        Helms = [
+        ],
+        Tops = [
+        ],
+        Vanity = [
+        ]
+    }]
+},{
+    ID = "ancient/legend_mummy_crown",
+    Script = "",
+    Sets = [{
+        Hoods = [
+            [1, "hood/legend_mummy_bandages"]
+        ],
+        Helms = [
+		[1, "hood/legend_mummy_crown"]
+        ],
+        Tops = [
+		[1, "hood/legend_mummy_mask"]
+        ],
+        Vanity = [
+        ]
+    }]
+},{
+    ID = "ancient/legend_mummy_crown_king",
+    Script = "",
+    Sets = [{
+        Hoods = [
+            [1, "hood/legend_mummy_bandages"]
+        ],
+        Helms = [
+			[1, "hood/legend_mummy_crown_king"]
+        ],
+        Tops = [
+			[1, "hood/legend_mummy_beard"]
+        ],
+        Vanity = [
+        ]
+    }]
+},{
+    ID = "ancient/legend_mummy_headband",
+    Script = "",
+    Sets = [{
+        Hoods = [
+            [1, "hood/legend_mummy_bandages"]
+        ],
+        Helms = [
+        ],
+        Tops = [
+        ],
+        Vanity = [
+			[1, "hood/legend_mummy_headband"]
+        ]
+    }]
+},{
+    ID = "ancient/legend_mummy_beard",
+    Script = "",
+    Sets = [{
+        Hoods = [
+            [1, "hood/legend_mummy_bandages"]
+        ],
+        Helms = [
+        ],
+        Tops = [
+			[1, "hood/legend_mummy_beard"]
+        ],
+        Vanity = [
+			
+        ]
+    }]
+},{
     ID = "ancient/ancient_honorguard_helmet",
     Script = "",
     Sets = [{

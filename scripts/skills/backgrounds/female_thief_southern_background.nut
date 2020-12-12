@@ -32,7 +32,8 @@ this.female_thief_southern_background <- this.inherit("scripts/skills/background
 		]));
 
 		local helm = this.Const.World.Common.pickHelmet([
-			[1, "oriental/nomad_head_wrap"]
+			[1, "oriental/nomad_head_wrap"],
+			[1, "legend_southern_cloth_headress"]
 		]);
 		items.equip(helm);
 	}
