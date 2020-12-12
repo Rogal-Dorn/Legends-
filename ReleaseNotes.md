@@ -4278,7 +4278,8 @@ Southern Peaked Helmet: [-4] -> [-12]
 
 **New Armors to Enemies**
 From fashion-show added:
-"Southern-based" armor to barbarian reavers by Kamy  
+Few barbarian armors & southern armors by Kamy
+
 
 **Fixes/Tweaks**
 Actually fixes armored unholds' helmets
