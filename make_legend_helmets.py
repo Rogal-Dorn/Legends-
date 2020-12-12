@@ -275,8 +275,8 @@ this.$name <- this.inherit("scripts/items/legend_helmets/legend_named_helmet_upg
 
 	function randomizeValues()
 	{
-        this.m.Vision = this.Math.rand($rminViz, $rmaxViz);
-		this.m.StaminaModifier = this.Math.rand($rminStam, $rmaxStam) * -1;
+        this.m.Vision = this.Math.rand($rmaxViz, $rminViz);
+		this.m.StaminaModifier = this.Math.rand($rmaxStam, $rminStam);
 		this.m.Condition = this.Math.rand($rminCond, $rmaxCond);
 		this.m.ConditionMax = this.m.Condition;
 	}
