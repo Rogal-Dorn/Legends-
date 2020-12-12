@@ -24,9 +24,9 @@ this.legend_mummy_dress <- this.inherit("scripts/items/armor/armor", {
 	function updateVariant()
 	{
 		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
-		this.m.Sprite = "mummy_dress_0" + variant;
-		this.m.SpriteDamaged = "mummy_dress_0" + variant + "_damaged";
-		this.m.SpriteCorpse = "mummy_dress_0" + variant + "_dead";
+		this.m.Sprite = "mummy_dress_" + variant;
+		this.m.SpriteDamaged = "mummy_dress_" + variant + "_damaged";
+		this.m.SpriteCorpse = "mummy_dress_" + variant + "_dead";
 		// this.m.IconLarge = "armor/inventory_body_armor_" + variant + ".png";
 		// this.m.Icon = "armor/icon_body_armor_" + variant + ".png";
 	}
