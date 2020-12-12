@@ -20,16 +20,32 @@ this.perk_legend_specialist_cult_hood <- this.inherit("scripts/skills/skill", {
 		local resolve = actor.getCurrentProperties().Bravery;
 		if (item != null)
 		{
-			switch (item.getID())
+			if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 			{
-				case "armor.head.cultist_hood":
-				case "armor.head.cultist_leather_hood":
-				case "armor.head.leather_helmet" :
-				case "armor.head.decayed_closed_flat_top_with_sack":
-				case "armor.head.mask_of_davkul":
-					_properties.MeleeDefense += this.Math.floor(resolve * 0.10);
-					_properties.RangedDefense += this.Math.floor(resolve * 0.10);
-					break;
+				local layers = item.getIDAsArray();
+				foreach(l in layers)
+				{
+					if (l != null && (l == "armor.head.legend_helmet_sack" || l == "armor.head.legend_helmet_cult_hood"))
+					{
+						_properties.MeleeDefense += this.Math.floor(resolve * 0.10);
+						_properties.RangedDefense += this.Math.floor(resolve * 0.10);
+						return;
+					}
+				}
+			}
+			else
+			{
+				switch (item.getID())
+				{
+					case "armor.head.cultist_hood":
+					case "armor.head.cultist_leather_hood":
+					case "armor.head.leather_helmet" :
+					case "armor.head.decayed_closed_flat_top_with_sack":
+					case "armor.head.mask_of_davkul":
+						_properties.MeleeDefense += this.Math.floor(resolve * 0.10);
+						_properties.RangedDefense += this.Math.floor(resolve * 0.10);
+						break;
+				}
 			}
 		}
 	}

@@ -54,9 +54,9 @@ this.legend_sling_heavy_stone_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsDoingForwardMove = false;
 		this.m.InjuriesOnBody = this.Const.Injury.BluntBody;
 		this.m.InjuriesOnHead = this.Const.Injury.BluntHead;
-		this.m.DirectDamageMult = 0.35;
-		this.m.ActionPointCost = 8;
-		this.m.FatigueCost = 25;
+		this.m.DirectDamageMult = 0.75;
+		this.m.ActionPointCost = 5;
+		this.m.FatigueCost = 17;
 		this.m.MinRange = 3;
 		this.m.MaxRange = 9;
 		this.m.MaxLevelDifference = 8;
@@ -79,19 +79,17 @@ this.legend_sling_heavy_stone_skill <- this.inherit("scripts/skills/skill", {
 				text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]" + this.getMaxRange() + "[/color] tiles on even ground, more if shooting downhill"
 			}
 		]);
-
 		ret.push({
-				id = 7,
-				type = "text",
-				icon = "ui/icons/hitchance.png",
-				text = "Has [color=" + this.Const.UI.Color.NegativeValue + "]" + (this.m.AdditionalAccuracy) + "%[/color] chance to hit, and [color=" + this.Const.UI.Color.PositiveValue + "]+" + (this.m.AdditionalHitChance) + "%[/color] per tile of distance"
+			id = 7,
+			type = "text",
+			icon = "ui/icons/hitchance.png",
+			text = "Has [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.AdditionalAccuracy + "%[/color] chance to hit, and [color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.AdditionalHitChance + "%[/color] per tile of distance"
 		});
-
 		ret.push({
 			id = 7,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Has a [color=" + this.Const.UI.Color.NegativeValue + "]100%[/color] chance to daze a target on a hit to the head"
+			text = "Has a [color=" + this.Const.UI.Color.NegativeValue + "]100%[/color] chance to daze a target on a hit to the head and always staggers the target"
 		});
 
 		if (this.Tactical.isActive() && this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions()))
@@ -114,12 +112,21 @@ this.legend_sling_heavy_stone_skill <- this.inherit("scripts/skills/skill", {
 
 	function onAfterUpdate( _properties )
 	{
-		this.m.MaxRange = this.m.Item.getRangeMax() + (_properties.IsSpecializedInSlings ? 1 : 0);	
+		this.m.MaxRange = this.m.Item.getRangeMax() + (_properties.IsSpecializedInSlings ? 1 : 0);
 		this.m.AdditionalAccuracy = _properties.IsSpecializedInSlings ? -35 : -40;
 		this.m.AdditionalHitChance = _properties.IsSpecializedInSlings ? 5 : 0;
 		this.m.FatigueCostMult = _properties.IsSpecializedInSlings ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
+		if (this.getContainer().hasSkill("perk.legend_specialist_sling_damage") && this.getContainer().hasSkill("perk.legend_specialist_sling_skill"))
+		{
+			this.m.ActionPointCost = 7;
+			this.m.FatigueCost = 25;
+		}
+		else if (this.getContainer().hasSkill("perk.legend_specialist_sling_damage") || this.getContainer().hasSkill("perk.legend_specialist_sling_skill"))
+		{
+			this.m.ActionPointCost = 6;
+			this.m.FatigueCost = 21;
+		}
 	}
-
 
 	function onUse( _user, _targetTile )
 	{
@@ -158,11 +165,26 @@ this.legend_sling_heavy_stone_skill <- this.inherit("scripts/skills/skill", {
 		{
 			_properties.RangedSkill += -20 + this.m.AdditionalAccuracy;
 			_properties.HitChanceAdditionalWithEachTile += 3 + this.m.AdditionalHitChance;
+			if (this.getContainer().hasSkill("perk.legend_specialist_sling_damage"))
+			{
+				_properties.DamageRegularMin += 15;
+				_properties.DamageRegularMax += 30;
+				//_properties.DamageDirectAdd += 0.2;
+			}
+			if (this.getContainer().hasSkill("perk.legend_specialist_sling_skill"))
+			{
+				_properties.DamageArmorMult *= 1.5;
+			}
 		}
 	}
 
 	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
+		if (_skill == this && _targetEntity.isAlive() && !_targetEntity.isDying())
+		{
+			_targetEntity.getSkills().add(this.new("scripts/skills/effects/staggered_effect"));
+		}
+		
 		if (_skill == this && _targetEntity.isAlive() && !_targetEntity.isDying() && !_targetEntity.getCurrentProperties().IsImmuneToStun)
 		{
 			local targetTile = _targetEntity.getTile();
@@ -179,6 +201,5 @@ this.legend_sling_heavy_stone_skill <- this.inherit("scripts/skills/skill", {
 			}
 		}
 	}
-
 });
 

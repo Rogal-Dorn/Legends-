@@ -166,6 +166,8 @@ this.legend_transformed_boar_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("armor_layer_tabbard").Alpha = 10;
 		actor.getSprite("hair").Alpha = 10;
 		actor.getSprite("beard").Alpha = 10;
+		actor.getSprite("hair").Visible = false;
+		actor.getSprite("beard").Visible = false;
 		actor.getSprite("tattoo_head").Alpha = 10;
 		actor.getSprite("tattoo_body").Alpha = 10;
 		actor.getSprite("quiver").Alpha = 10;
@@ -255,6 +257,8 @@ this.legend_transformed_boar_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("armor_layer_cloak").Alpha = 255;
 		actor.getSprite("hair").Alpha = 255;
 		actor.getSprite("beard").Alpha = 255;
+		actor.getSprite("hair").Visible = true;
+		actor.getSprite("beard").Visible = true;
 		actor.getSprite("tattoo_head").Alpha = 255;
 		actor.getSprite("tattoo_body").Alpha = 255;
 		actor.getSprite("quiver").Alpha = 255;
