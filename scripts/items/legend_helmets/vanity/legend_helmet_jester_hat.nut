@@ -48,12 +48,6 @@ this.legend_helmet_jester_hat <- this.inherit("scripts/items/legend_helmets/lege
 		return result
 	}
 
-	function getArmorTooltip( result )
-	{
-		result.extend(this.getTooltip())
-		return result;
-	}
-
     function onUpdateProperties(_properties)
     {
         this.legend_helmet_upgrade.onUpdateProperties(_properties);

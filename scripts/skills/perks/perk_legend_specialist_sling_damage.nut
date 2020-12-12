@@ -17,7 +17,8 @@ this.perk_legend_specialist_sling_damage <- this.inherit("scripts/skills/skill",
 	{
 		local actor = this.getContainer().getActor();
 		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		if (item != null && (item.getID() == "weapon.legend_sling" || item.getID() == "weapon.legend_slingstaff" || item.getID() == "weapon.staff_sling" || item.getID() == "weapon.nomad_sling"))
+
+		if (item != null && (item.getID() == "weapon.legend_sling" || item.getID() == "weapon.staff_sling" || item.getID() == "weapon.nomad_sling")) // || item.getID() == "weapon.legend_slingstaff"
 		{
 			_properties.DamageRegularMin += 4;
 			_properties.DamageRegularMax += 12;
@@ -25,3 +26,4 @@ this.perk_legend_specialist_sling_damage <- this.inherit("scripts/skills/skill",
 	}
 
 });
+
