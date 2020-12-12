@@ -4232,7 +4232,7 @@ There are four types of embalmed
 
 
 Female bodies - There are now six total versions of female bodies. Three each of southern and normal in thin, fit and thick  (von krolock)
-jewelry - There is now a variety of southern jewelry, with several kinds of veils, headresses and earings. 
+jewelry - There is now a variety of southern jewelry, with several kinds of veils, headresses and earings. These are found on female southerners and in southern markets 
 Female backgrounds - with gender equality enambled womean can now be criples, gamblers, raiders, houndmasters, hunters and ratcatcher. Text updated for several backgrounds.
 
 
