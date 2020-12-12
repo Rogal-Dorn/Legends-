@@ -572,7 +572,7 @@ layers = [
     "desc" :  "A padded shirt fashioned from slightly thinner and lighter leather than that used in the north", \
     "adesc" : "Covered in a padded shirt"
 },
-{"name": "legend_southern_arm_guards",                "layer": "plate", "min": 1, "max": 1, "value" : 300, "con" : 30, "stam" : -26, "impactSound" : "plate", "invSound" : "leather", "brush" : "southern_arm_gaurds",\
+{"name": "legend_southern_arm_guards",                "layer": "plate", "min": 1, "max": 1, "value" : 300, "con" : 30, "stam" : -2, "impactSound" : "plate", "invSound" : "leather", "brush" : "southern_arm_gaurds",\
     "title" :  "Southern arm gaurds", \
     "desc" :  "Leather arm gaurds worn by southern assassins", \
     "adesc" : "has leathered arm gaurds"

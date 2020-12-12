@@ -1410,6 +1410,42 @@ gt.Const.World.Spawn.Troops <- {
 		Cost = 5,
 		Row = 0,
 		Script = "scripts/entity/tactical/humans/peasant_armed_infected"
+	},	
+	SatoManhunter = {
+		ID = this.Const.EntityType.SatoManhunter,
+		Variant = 0,
+		Strength = 20,
+		Cost = 15,
+		Row = 0,
+		Script = "scripts/entity/tactical/humans/sato_manhunter"
+	},
+	SatoManhunterVeteran = {
+		ID = this.Const.EntityType.SatoManhunterVeteran,
+		Variant = 0,
+		Strength = 25,
+		Cost = 20,
+		Row = 0,
+		Script = "scripts/entity/tactical/humans/sato_manhunter_veteran"
+		NameList = this.Const.Strings.SouthernNames,
+		TitleList = this.Const.Strings.SatoManhunterVeteranTitles
+	},
+	SatoManhunterRanged = {
+		ID = this.Const.EntityType.SatoManhunter,
+		Variant = 0,
+		Strength = 20,
+		Cost = 20,
+		Row = 1,
+		Script = "scripts/entity/tactical/humans/sato_manhunter_ranged"
+	},
+	SatoManhunterVeteranRanged = {
+		ID = this.Const.EntityType.SatoManhunterVeteran,
+		Variant = 0,
+		Strength = 25,
+		Cost = 28,
+		Row = 1,
+		Script = "scripts/entity/tactical/humans/sato_manhunter_veteran_ranged",
+		NameList = this.Const.Strings.SouthernNames,
+		TitleList = this.Const.Strings.SatoManhunterVeteranTitles
 	},
 	KoboldFighter = {
 		ID = this.Const.EntityType.KoboldFighter,

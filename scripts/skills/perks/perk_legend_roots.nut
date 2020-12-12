@@ -16,14 +16,14 @@ this.perk_legend_roots <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
-		if (!this.m.Container.hasSkill("actives.root"))
+		if (!this.m.Container.hasSkill("actives.legend_root"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/root_skill"));
+			this.m.Container.add(this.new("scripts/skills/actives/legend_root_skill"));
 		}
 	}
 		function onRemoved()
 	{
-		this.m.Container.removeByID("actives.root");
+		this.m.Container.removeByID("actives.legend_root");
 	}
 
 });

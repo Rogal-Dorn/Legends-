@@ -641,7 +641,99 @@
 <sprite id="warpaint_01_bust_naked_body_03" offsetY="35" width="104" height="142" img="entity\details\warpaint_01_body_03.png" left="-41" right="35" top="-49" bottom="5" />
 <sprite id="warpaint_01_bust_naked_body_03_dead" offsetX="6" offsetY="10" f="64FF" width="131" height="125" img="entity\details\warpaint_01_body_03_dead.png" left="-49" right="43" top="-48" bottom="16" />
 
-  <sprite id="bust_female_southern_body_00" offsetY="35" ic="FF4D719A" width="104" height="142" img="entity\bodies\bust_female_southern_body_00.png" top="-48" bottom="10" />
+<sprite id="tattoo_07_body_00"      offsetY="35" ic="FF7082AF" width="160" height="112" img="entity\details\tattoo_07_body_00.png" 
+top="-48" bottom="6" />
+<sprite id="tattoo_07_body_00_dead" offsetX="6" offsetY="10" f="64FF" ic="FF7588B1" width="172" height="116" img="entity\details\tattoo_07_body_00_dead.png" left="-35" right="51" top="-43" bottom="15" />
+
+<sprite id="tattoo_07_body_01"      offsetY="35" ic="FF7082AF" width="160" height="92" img="entity\details\tattoo_07_body_01.png" 
+top="-48" bottom="6" />
+<sprite id="tattoo_07_body_01_dead" offsetX="6" offsetY="10" f="64FF" ic="FF7588B1" width="172" height="116" img="entity\details\tattoo_07_body_01_dead.png" left="-35" right="51" top="-43" bottom="15" />
+
+<sprite id="tattoo_07_body_02"      offsetY="35" ic="FF7082AF" width="160" height="92" img="entity\details\tattoo_07_body_02.png" 
+top="-48" bottom="6" />
+<sprite id="tattoo_07_body_02_dead" offsetX="6" offsetY="10" f="64FF" ic="FF7588B1" width="172" height="116" img="entity\details\tattoo_07_body_02_dead.png" left="-35" right="51" top="-43" bottom="15" />
+
+<sprite id="tattoo_07_body_03"      offsetY="35" ic="FF7082AF" width="160" height="112" img="entity\details\tattoo_07_body_03.png" 
+top="-52" bottom="2" />
+<sprite id="tattoo_07_body_03_dead" offsetX="6" offsetY="10" f="64FF" ic="FF7588B1" width="172" height="116" img="entity\details\tattoo_07_body_03_dead.png" left="-35" right="51" top="-48" bottom="10" />
+
+<sprite id="tattoo_08_body_00"      offsetY="35" ic="FF7082AF" width="160" height="112" img="entity\details\tattoo_08_body_00.png" 
+top="-48" bottom="6" />
+<sprite id="tattoo_08_body_00_dead" offsetX="6" offsetY="10" f="64FF" ic="FF7588B1" width="172" height="116" img="entity\details\tattoo_08_body_00_dead.png" left="-35" right="51" top="-43" bottom="15" />
+
+<sprite id="tattoo_08_body_01"      offsetY="35" ic="FF7082AF" width="160" height="92" img="entity\details\tattoo_08_body_01.png" 
+top="-48" bottom="6" />
+<sprite id="tattoo_08_body_01_dead" offsetX="6" offsetY="10" f="64FF" ic="FF7588B1" width="172" height="116" img="entity\details\tattoo_08_body_01_dead.png" left="-35" right="51" top="-43" bottom="15" />
+
+<sprite id="tattoo_08_body_02"      offsetY="35" ic="FF7082AF" width="160" height="92" img="entity\details\tattoo_08_body_02.png" 
+top="-48" bottom="6" />
+<sprite id="tattoo_08_body_02_dead" offsetX="6" offsetY="10" f="64FF" ic="FF7588B1" width="172" height="116" img="entity\details\tattoo_08_body_02_dead.png" left="-35" right="51" top="-43" bottom="15" />
+
+<sprite id="tattoo_08_body_03"      offsetY="35" ic="FF7082AF" width="160" height="112" img="entity\details\tattoo_08_body_03.png" 
+top="-52" bottom="2" />
+<sprite id="tattoo_08_body_03_dead" offsetX="6" offsetY="10" f="64FF" ic="FF7588B1" width="172" height="116" img="entity\details\tattoo_08_body_03_dead.png" left="-35" right="51" top="-48" bottom="10" />
+
+<sprite id="tattoo_07_head" offsetY="35" ic="FF5B7CAD" width="100" height="136" img="entity\details\tattoo_07_head.png" left="-21" right="29" top="-21" bottom="47"/>
+<sprite id="tattoo_08_head" offsetY="35" ic="FF5B7CAD" width="100" height="136" img="entity\details\tattoo_08_head.png" left="-21" right="29" top="-21" bottom="47"/>
+
+<sprite id="tattoo_07_head_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4D6796" width="131" height="125" img="entity\details\tattoo_07_head_dead.png" left="-45" right="15" top="-59" bottom="1" />
+<sprite id="tattoo_08_head_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4D6796" width="131" height="125" img="entity\details\tattoo_08_head_dead.png" left="-45" right="15" top="-59" bottom="1" />
+
+<sprite id="bust_helmet_04_bearded" offsetY="35" ic="FF464950" width="104" height="142" img="entity\helmets\bust_helmet_04_bearded.png" left="-28" right="32" top="-29" bottom="51" />
+<sprite id="bust_helmet_04_bearded_damaged" offsetY="35" ic="FF41454D" width="104" height="142" img="entity\helmets\bust_helmet_04_bearded_damaged.png" left="-28" right="32" top="-29" bottom="51" />
+<sprite id="bust_helmet_04_bearded_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444850" width="131" height="125" img="entity\helmets\bust_helmet_04_bearded_dead.png" left="-51" right="19" top="-63" bottom="3" />
+<sprite id="runed_bust_helmet_04_bearded" offsetY="35" ic="FF464950" width="104" height="142" img="entity\helmets\runed_bust_helmet_04_bearded.png" left="-28" right="32" top="-29" bottom="51" />
+<sprite id="runed_bust_helmet_04_bearded_damaged" offsetY="35" ic="FF41454D" width="104" height="142" img="entity\helmets\runed_bust_helmet_04_bearded_damaged.png" left="-28" right="32" top="-29" bottom="51" />
+<sprite id="runed_bust_helmet_04_bearded_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444850" width="131" height="125" img="entity\helmets\runed_bust_helmet_04_bearded_dead.png" left="-51" right="19" top="-63" bottom="3" />
+<sprite id="bust_helmet_04_breaths" offsetY="35" ic="FF464950" width="104" height="142" img="entity\helmets\bust_helmet_04_breaths.png" left="-28" right="32" top="-29" bottom="51" />
+<sprite id="bust_helmet_04_breaths_damaged" offsetY="35" ic="FF41454D" width="104" height="142" img="entity\helmets\bust_helmet_04_breaths_damaged.png" left="-28" right="32" top="-29" bottom="51" />
+<sprite id="bust_helmet_04_breaths_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444850" width="131" height="125" img="entity\helmets\bust_helmet_04_breaths_dead.png" left="-51" right="19" top="-63" bottom="3" />
+<sprite id="runed_bust_helmet_04_breaths" offsetY="35" ic="FF464950" width="104" height="142" img="entity\helmets\runed_bust_helmet_04_breaths.png" left="-28" right="32" top="-29" bottom="51" />
+<sprite id="runed_bust_helmet_04_breaths_damaged" offsetY="35" ic="FF41454D" width="104" height="142" img="entity\helmets\runed_bust_helmet_04_breaths_damaged.png" left="-28" right="32" top="-29" bottom="51" />
+<sprite id="runed_bust_helmet_04_breaths_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444850" width="131" height="125" img="entity\helmets\runed_bust_helmet_04_breaths_dead.png" left="-51" right="19" top="-63" bottom="3" />
+<sprite id="bust_helmet_04_curved" offsetY="35" ic="FF464950" width="104" height="142" img="entity\helmets\bust_helmet_04_curved.png" left="-28" right="32" top="-29" bottom="51" />
+<sprite id="bust_helmet_04_curved_damaged" offsetY="35" ic="FF41454D" width="104" height="142" img="entity\helmets\bust_helmet_04_curved_damaged.png" left="-28" right="32" top="-29" bottom="51" />
+<sprite id="bust_helmet_04_curved_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444850" width="131" height="125" img="entity\helmets\bust_helmet_04_curved_dead.png" left="-51" right="19" top="-63" bottom="3" />
+<sprite id="runed_bust_helmet_04_curved" offsetY="35" ic="FF464950" width="104" height="142" img="entity\helmets\runed_bust_helmet_04_curved.png" left="-28" right="32" top="-29" bottom="51" />
+<sprite id="runed_bust_helmet_04_curved_damaged" offsetY="35" ic="FF41454D" width="104" height="142" img="entity\helmets\runed_bust_helmet_04_curved_damaged.png" left="-28" right="32" top="-29" bottom="51" />
+<sprite id="runed_bust_helmet_04_curved_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444850" width="131" height="125" img="entity\helmets\runed_bust_helmet_04_curved_dead.png" left="-51" right="19" top="-63" bottom="3" />
+<sprite id="bust_helmet_04_full" offsetY="35" ic="FF464950" width="104" height="142" img="entity\helmets\bust_helmet_04_full.png" left="-28" right="32" top="-29" bottom="51" />
+<sprite id="bust_helmet_04_full_damaged" offsetY="35" ic="FF41454D" width="104" height="142" img="entity\helmets\bust_helmet_04_full_damaged.png" left="-28" right="32" top="-29" bottom="51" />
+<sprite id="bust_helmet_04_full_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444850" width="131" height="125" img="entity\helmets\bust_helmet_04_full_dead.png" left="-51" right="19" top="-63" bottom="3" />
+<sprite id="runed_bust_helmet_04_full" offsetY="35" ic="FF464950" width="104" height="142" img="entity\helmets\runed_bust_helmet_04_full.png" left="-28" right="32" top="-29" bottom="51" />
+<sprite id="runed_bust_helmet_04_full_damaged" offsetY="35" ic="FF41454D" width="104" height="142" img="entity\helmets\runed_bust_helmet_04_full_damaged.png" left="-28" right="32" top="-29" bottom="51" />
+<sprite id="runed_bust_helmet_04_full_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444850" width="131" height="125" img="entity\helmets\runed_bust_helmet_04_full_dead.png" left="-51" right="19" top="-63" bottom="3" />
+<sprite id="bust_helmet_04_full_named" offsetY="35" ic="FF464950" width="104" height="142" img="entity\helmets\bust_helmet_04_full_named.png" left="-28" right="32" top="-29" bottom="51" />
+<sprite id="bust_helmet_04_full_named_damaged" offsetY="35" ic="FF41454D" width="104" height="142" img="entity\helmets\bust_helmet_04_full_named_damaged.png" left="-28" right="32" top="-29" bottom="51" />
+<sprite id="bust_helmet_04_full_named_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444850" width="131" height="125" img="entity\helmets\bust_helmet_04_full_named_dead.png" left="-51" right="19" top="-63" bottom="3" />
+<sprite id="runed_bust_helmet_04_full_named" offsetY="35" ic="FF464950" width="104" height="142" img="entity\helmets\runed_bust_helmet_04_full_named.png" left="-28" right="32" top="-29" bottom="51" />
+<sprite id="runed_bust_helmet_04_full_named_damaged" offsetY="35" ic="FF41454D" width="104" height="142" img="entity\helmets\runed_bust_helmet_04_full_named_damaged.png" left="-28" right="32" top="-29" bottom="51" />
+<sprite id="runed_bust_helmet_04_full_named_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444850" width="131" height="125" img="entity\helmets\runed_bust_helmet_04_full_named_dead.png" left="-51" right="19" top="-63" bottom="3" />
+<sprite id="bust_helmet_04_point" offsetY="35" ic="FF464950" width="104" height="142" img="entity\helmets\bust_helmet_04_point.png" left="-28" right="32" top="-29" bottom="51" />
+<sprite id="bust_helmet_04_point_damaged" offsetY="35" ic="FF41454D" width="104" height="142" img="entity\helmets\bust_helmet_04_point_damaged.png" left="-28" right="32" top="-29" bottom="51" />
+<sprite id="bust_helmet_04_point_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444850" width="131" height="125" img="entity\helmets\bust_helmet_04_point_dead.png" left="-51" right="19" top="-63" bottom="3" />
+<sprite id="runed_bust_helmet_04_point" offsetY="35" ic="FF464950" width="104" height="142" img="entity\helmets\runed_bust_helmet_04_point.png" left="-28" right="32" top="-29" bottom="51" />
+<sprite id="runed_bust_helmet_04_point_damaged" offsetY="35" ic="FF41454D" width="104" height="142" img="entity\helmets\runed_bust_helmet_04_point_damaged.png" left="-28" right="32" top="-29" bottom="51" />
+<sprite id="runed_bust_helmet_04_point_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444850" width="131" height="125" img="entity\helmets\runed_bust_helmet_04_point_dead.png" left="-51" right="19" top="-63" bottom="3" />
+<sprite id="bust_helmet_04_snub" offsetY="35" ic="FF464950" width="104" height="142" img="entity\helmets\bust_helmet_04_snub.png" left="-28" right="32" top="-29" bottom="51" />
+<sprite id="bust_helmet_04_snub_damaged" offsetY="35" ic="FF41454D" width="104" height="142" img="entity\helmets\bust_helmet_04_snub_damaged.png" left="-28" right="32" top="-29" bottom="51" />
+<sprite id="bust_helmet_04_snub_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444850" width="131" height="125" img="entity\helmets\bust_helmet_04_snub_dead.png" left="-51" right="19" top="-63" bottom="3" />
+<sprite id="runed_bust_helmet_04_snub" offsetY="35" ic="FF464950" width="104" height="142" img="entity\helmets\runed_bust_helmet_04_snub.png" left="-28" right="32" top="-29" bottom="51" />
+<sprite id="runed_bust_helmet_04_snub_damaged" offsetY="35" ic="FF41454D" width="104" height="142" img="entity\helmets\runed_bust_helmet_04_snub_damaged.png" left="-28" right="32" top="-29" bottom="51" />
+<sprite id="runed_bust_helmet_04_snub_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444850" width="131" height="125" img="entity\helmets\runed_bust_helmet_04_snub_dead.png" left="-51" right="19" top="-63" bottom="3" />
+<sprite id="bust_helmet_04_wings" offsetY="35" ic="FF464950" width="104" height="142" img="entity\helmets\bust_helmet_04_wings.png" left="-28" right="32" top="-29" bottom="51" />
+<sprite id="bust_helmet_04_wings_damaged" offsetY="35" ic="FF41454D" width="104" height="142" img="entity\helmets\bust_helmet_04_wings_damaged.png" left="-28" right="32" top="-29" bottom="51" />
+<sprite id="bust_helmet_04_wings_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444850" width="131" height="125" img="entity\helmets\bust_helmet_04_wings_dead.png" left="-51" right="19" top="-63" bottom="3" />
+<sprite id="runed_bust_helmet_04_wings" offsetY="35" ic="FF464950" width="104" height="142" img="entity\helmets\runed_bust_helmet_04_wings.png" left="-28" right="32" top="-29" bottom="51" />
+<sprite id="runed_bust_helmet_04_wings_damaged" offsetY="35" ic="FF41454D" width="104" height="142" img="entity\helmets\runed_bust_helmet_04_wings_damaged.png" left="-28" right="32" top="-29" bottom="51" />
+<sprite id="runed_bust_helmet_04_wings_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444850" width="131" height="125" img="entity\helmets\runed_bust_helmet_04_wings_dead.png" left="-51" right="19" top="-63" bottom="3" />
+<sprite id="bust_helmet_04_wings_named" offsetY="35" ic="FF464950" width="104" height="142" img="entity\helmets\bust_helmet_04_wings_named.png" left="-28" right="32" top="-29" bottom="51" />
+<sprite id="bust_helmet_04_wings_named_damaged" offsetY="35" ic="FF41454D" width="104" height="142" img="entity\helmets\bust_helmet_04_wings_named_damaged.png" left="-28" right="32" top="-29" bottom="51" />
+<sprite id="bust_helmet_04_wings_named_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444850" width="131" height="125" img="entity\helmets\bust_helmet_04_wings_named_dead.png" left="-51" right="19" top="-63" bottom="3" />
+<sprite id="runed_bust_helmet_04_wings_named" offsetY="35" ic="FF464950" width="104" height="142" img="entity\helmets\runed_bust_helmet_04_wings_named.png" left="-28" right="32" top="-29" bottom="51" />
+<sprite id="runed_bust_helmet_04_wings_named_damaged" offsetY="35" ic="FF41454D" width="104" height="142" img="entity\helmets\runed_bust_helmet_04_wings_named_damaged.png" left="-28" right="32" top="-29" bottom="51" />
+<sprite id="runed_bust_helmet_04_wings_named_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444850" width="131" height="125" img="entity\helmets\runed_bust_helmet_04_wings_named_dead.png" left="-51" right="19" top="-63" bottom="3" />
+ <sprite id="bust_female_southern_body_00" offsetY="35" ic="FF4D719A" width="104" height="142" img="entity\bodies\bust_female_southern_body_00.png" top="-48" bottom="10" />
   <sprite id="bust_female_southern_body_00_dead" offsetX="6" offsetY="10" ic="FF374D76" width="131" height="114" img="entity\bodies\bust_female_southern_body_00_dead.png" left="-65" right="66" top="-57" bottom="53" />
   <sprite id="bust_female_southern_body_00_dead_arrows" offsetX="6" offsetY="10" f="64FB" ic="FF494D50" width="131" height="134" img="entity\bodies\bust_naked_body_00_dead_arrows.png" left="-28" right="8" top="-9" bottom="39" />
   <sprite id="bust_female_southern_body_00_dead_javelin" offsetX="6" offsetY="10" f="64FB" ic="FF111632" width="131" height="154" img="entity\bodies\bust_naked_body_00_dead_javelin.png" left="-25" right="21" top="-4" bottom="72" />

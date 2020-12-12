@@ -56,7 +56,21 @@ this.dye_maker_location <- this.inherit("scripts/entity/world/attached_location"
 				P = 1.0,
 				S = "helmets/jesters_hat"
 			});
-
+			_list.push({
+				R = 80,
+				P = 1.0,
+				S = "helmets/legend_noble_floppy_hat"
+			});
+			_list.push({
+				R = 80,
+				P = 1.0,
+				S = "helmets/legend_nobley_hat"
+			});
+			_list.push({
+				R = 80,
+				P = 1.0,
+				S = "helmets/legend_noble_hood"
+			});
 			if (this.Const.DLC.Unhold)
 			{
 				_list.push({

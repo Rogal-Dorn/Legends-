@@ -200,7 +200,11 @@ this.female_adventurous_noble_background <- this.inherit("scripts/skills/backgro
 			[1, "padded_nasal_helmet"],
 			[1, "nasal_helmet_with_mail"],
 			[1, "mail_coif"],
-			[1, ""]
+			[1, "legend_noble_floppy_hat"],
+			[1, "legend_noble_hat"],
+			[1, "legend_noble_hood"],
+			[1, "legend_noble_crown"],
+			[2, ""]
 		]));
 	}
 });

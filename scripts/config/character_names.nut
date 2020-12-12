@@ -1681,3 +1681,21 @@ gt.Const.Strings.VampireLordNames <- [
 	"Mohar",
 	"Abdamelek"
 ]
+
+gt.Const.Strings.SatoManhunterVeteranTitles <- [
+	"the Blight",
+	"the Iron Shackle",
+	"the Steel Shackle",
+	"the Reclaimer",
+	"the Relentless",
+	"the Hyena",
+	"the Gilder\'s Watchdog",
+	"the Tracker",
+	"the Pursuer",
+	"the Cruel",
+	"the Gilder\'s Chain",
+	"the Slave Catcher",
+	"the Brute",
+	"the Silver Manacle",
+	"the Dog"
+]

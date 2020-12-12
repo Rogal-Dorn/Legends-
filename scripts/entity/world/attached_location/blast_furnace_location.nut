@@ -207,6 +207,36 @@ this.blast_furnace_location <- this.inherit("scripts/entity/world/attached_locat
 				S = "helmets/full_helm"
 			});
 			_list.push({
+				R = 90,
+				P = 1.0,
+				S = "helmets/legend_helm_breathed"
+			});
+			_list.push({
+				R = 95,
+				P = 1.0,
+				S = "helmets/legend_helm_full"
+			});
+			_list.push({
+				R = 90,
+				P = 1.0,
+				S = "helmets/legend_helm_point"
+			});
+			_list.push({
+				R = 85,
+				P = 1.0,
+				S = "helmets/legend_helm_snub"
+			});
+			_list.push({
+				R = 95,
+				P = 1.0,
+				S = "helmets/legend_helm_wings"
+			});
+			_list.push({
+				R = 80,
+				P = 1.0,
+				S = "helmets/legend_helm_curved"
+			});
+			_list.push({
 				R = 35,
 				P = 1.0,
 				S = "shields/heater_shield"

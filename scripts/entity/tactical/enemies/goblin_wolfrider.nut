@@ -90,8 +90,14 @@ this.goblin_wolfrider <- this.inherit("scripts/entity/tactical/goblin", {
 		this.setSpriteOffset("armor", offset);
 		this.setSpriteOffset("head", offset);
 		this.setSpriteOffset("injury", offset);
-		this.setSpriteOffset("helmet", offset);
-		this.setSpriteOffset("helmet_damage", offset);
+		local hoffset = this.createVec(8, 6);
+		this.setSpriteOffset("helmet", hoffset);
+		this.setSpriteOffset("helmet_vanity_lower", hoffset);
+		this.setSpriteOffset("helmet_helm", hoffset);
+		this.setSpriteOffset("helmet_top", hoffset);
+		this.setSpriteOffset("helmet_vanity", hoffset);
+		this.setSpriteOffset("helmet_damage", hoffset);
+
 		this.setSpriteOffset("body_blood", offset);
 		local variant = this.Math.rand(1, 2);
 		local wolf = this.addSprite("wolf");
@@ -337,7 +343,7 @@ this.goblin_wolfrider <- this.inherit("scripts/entity/tactical/goblin", {
 		])
 		this.m.Items.equip(item);
 
-		
+
 
 		local item = this.Const.World.Common.pickHelmet([
 			[75, "greenskins/goblin_light_helmet"],

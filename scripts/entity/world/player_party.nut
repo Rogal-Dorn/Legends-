@@ -379,6 +379,9 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 				case 115:
 					image = "figure_player_druid";
 					break;
+				case 116:
+					image = "figure_player_slave";
+					break;
 			}
 		}
 		else if ( _version > 9)
@@ -445,6 +448,11 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 
 	function calculateFoodModifier()
 	{
+		if (this.World.State.m.AppropriateTimeToRecalc == 0)
+		{
+			return;
+		}
+
 		foreach( bro in this.World.getPlayerRoster().getAll() )
 		{
 			if (!bro.getSkills().hasSkill("perk.legend_quartermaster"))
@@ -459,6 +467,11 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 
 	function calculateWageModifier()
 	{
+		if (this.World.State.m.AppropriateTimeToRecalc == 0)
+		{
+			return;
+		}
+
 		foreach( bro in this.World.getPlayerRoster().getAll() )
 		{
 			if (!bro.getSkills().hasSkill("perk.legend_barter_paymaster"))
@@ -473,6 +486,11 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 
 	function calculateBarterMult()
 	{
+		if (this.World.State.m.AppropriateTimeToRecalc == 0)
+		{
+			return;
+		}
+
 		local barterMult = 0.0;
 		local greed = 1;
 		foreach (bro in this.World.getPlayerRoster().getAll())
@@ -494,6 +512,11 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 
 	function calculateAmmoModifier()
 	{
+		if (this.World.State.m.AppropriateTimeToRecalc == 0)
+		{
+			return;
+		}
+
 		local s = 0;
 		foreach( bro in this.World.getPlayerRoster().getAll() )
 		{
@@ -504,6 +527,11 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 
 	function calculateArmorPartsModifier()
 	{
+		if (this.World.State.m.AppropriateTimeToRecalc == 0)
+		{
+			return;
+		}
+
 		local s = 0;
 		foreach( bro in this.World.getPlayerRoster().getAll() )
 		{
@@ -514,6 +542,11 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 
 	function calculateMedsModifier()
 	{
+		if (this.World.State.m.AppropriateTimeToRecalc == 0)
+		{
+			return;
+		}
+
 		local s = 0;
 		foreach( bro in this.World.getPlayerRoster().getAll() )
 		{

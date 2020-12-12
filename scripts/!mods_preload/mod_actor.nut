@@ -7,8 +7,6 @@
         o.m.DeathBloodAmount = 1.5;
         o.m.BloodPoolScale = 1.25;
 		o.m.RiderID <- "";
-		o.m.FlatOnKillOtherActorModifier <- 0;
-		o.m.PercentOnKillOtherActorModifier <- 1.0;
     }
 
 	o.onRender <- function ()
@@ -193,20 +191,14 @@
 
 	o.getPercentOnKillOtherActorModifier <- function ()
 	{
-		return this.m.PercentOnKillOtherActorModifier;
+		return this.getCurrentProperties().PercentOnKillOtherActorModifier;
 	}
-	o.modifyPercentOnKillOtherActorModifier <- function ( _value )
-	{
-		this.m.PercentOnKillOtherActorModifier *= _value;
-	}
+	
 	o.getFlatOnKillOtherActorModifier <- function ()
 	{
-		return this.m.FlatOnKillOtherActorModifier;
+		return this.getCurrentProperties().FlatOnKillOtherActorModifier;
 	}
-	o.modifyFlatOnKillOtherActorModifier <- function ( _value )
-	{
-		this.m.FlatOnKillOtherActorModifier += _value;
-	}
+	
 
 	o.isStabled <- function ()
 	{

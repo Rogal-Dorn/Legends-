@@ -58,7 +58,8 @@ this.peddler_southern_background <- this.inherit("scripts/skills/backgrounds/ped
 		]);
 		items.equip(armor)
 		local helm = this.Const.World.Common.pickHelmet([
-			[1, "oriental/southern_head_wrap"],
+			[2, "oriental/southern_head_wrap"],
+			[1, "legend_noble_southern_hat"],
 			[3, ""]
 		]);
 		items.equip(helm)

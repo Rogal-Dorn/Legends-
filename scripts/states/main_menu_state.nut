@@ -489,17 +489,17 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 			{
 				id = 39,
 				name = "Höllenhunds (Legendary)",
-				description = "[p=c][img]gfx/ui/events/legend_demonalp.png[/img][/p]\n[p=c]Undead demon hounds[/p]"
+				description = "[p=c][img]gfx/ui/events/event_57.png[/img][/p]\n[p=c]Undead demon hounds[/p]"
 			},
 			{
 				id = 38,
 				name = "Necrosavant Lords (Legendary)",
-				description = "[p=c][img]gfx/ui/events/legend_demonalp.png[/img][/p]\n[p=c]Necrosavant Lords[/p]"
+				description = "[p=c][img]gfx/ui/events/legend_vampire.png[/img][/p]\n[p=c]Necrosavant Lords[/p]"
 			},
 			{
 				id = 37,
 				name = "Banshees (Legendary)",
-				description = "[p=c][img]gfx/ui/events/legend_demonalp.png[/img][/p]\n[p=c]Nightmares become reality[/p]"
+				description = "[p=c][img]gfx/ui/events/event_09.png[/img][/p]\n[p=c]Nightmares become reality[/p]"
 			},
 			{
 				id = 30,

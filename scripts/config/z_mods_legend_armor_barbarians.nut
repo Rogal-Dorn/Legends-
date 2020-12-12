@@ -129,6 +129,28 @@ gt.Const.LegendMod.ArmorObjs.extend([
         ]
     }]
 },{
+},{
+    ID = "barbarians/legend_barbarian_southern_armor", // 70 ; from Kamy in fashion-show
+    Script = "",
+    Sets = [{
+        Cloth = [
+            [1, "cloth/legend_thick_tunic"] //30
+        ],
+        Chain = [
+        ],
+        Plate = [
+            [1, "plate/legend_southern_arm_guards"], // 30
+        ],
+        Cloak = [
+        ],
+        Tabard = [
+            [1, "tabard/legend_southern_overcloth"] //10
+        ],
+        Attachments = [
+            [1, "armor_upgrades/legend_leather_shoulderguards_upgrade"]
+        ]
+    }]
+},{
     ID = "barbarians/scrap_metal_armor", // 75
     Script = "",
     Sets = [{

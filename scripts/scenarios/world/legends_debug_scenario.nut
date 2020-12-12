@@ -357,9 +357,9 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"hood/legend_helmet_cloth_bandana",
 			"hood/legend_helmet_patched_hood",
 			"hood/legend_helmet_simple_hood",
-			"hood/legend_helmet_hood_cloth_round",
-			"hood/legend_helmet_hood_cloth_wide",
-			"hood/legend_helmet_cloth_long_hood",
+			"top/legend_helmet_hood_cloth_round",
+			"top/legend_helmet_hood_cloth_wide",
+			"top/legend_helmet_cloth_long_hood",
 			"hood/legend_helmet_leather_cap",
 			"hood/legend_helmet_padded_cap",
 			"hood/legend_helmet_leather_hood",
@@ -482,6 +482,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"top/legend_helmet_golden_mask",
 			"top/legend_helmet_warlock_skull",
 			"top/legend_helmet_fencer_hat",
+			"top/legend_helmet_hood_cloth_square",
 
 			"vanity/legend_helmet_southern_noble_crown",
 			"vanity/legend_helmet_southern_noble_hat",
@@ -491,7 +492,6 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"vanity/legend_helmet_southern_silk_headscarf",
 			"vanity/legend_helmet_southern_feathered_turban",
 			"vanity/legend_helmet_southern_turban_open",
-			"vanity/legend_helmet_hood_cloth_square",
 			"vanity/legend_helmet_sack",
 			"vanity/legend_helmet_antler",
 			"vanity/legend_helmet_bear_head",
@@ -542,6 +542,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"vanity/legend_helmet_mountain_helm",
 			"vanity/legend_helmet_demon_alp_helm",
 			"vanity/legend_helmet_warlock_hood",
+			"vanity/legend_helmet_goblin_bones",
 			"vanity_lower/legend_helmet_back_crest",
 			"vanity_lower/legend_helmet_back_feathers",
 			"vanity_lower/legend_helmet_feather_crest",
@@ -576,6 +577,11 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		local asloots = [
 		"helmets/legend_ancient_laurels",
 		"helmets/legend_ancient_priest_diadem",
+		"helmets/legend_ancient_lich_headpiece",
+		"helmets/legend_goblin_leader_helmet",
+		"helmets/legend_goblin_shaman_helmet",
+		"helmets/legend_unhold_helmet_heavy",
+		"helmets/legend_unhold_helmet_light"
 		]
 
 		foreach(h in asloots)
@@ -587,22 +593,24 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 				this.logInfo("Adding " + h);
 				local layers = item.getLootLayers()
 				foreach (l in layers) {
-					this.World.Assets.getStash().add(item);
+					this.World.Assets.getStash().add(l);
 				}
 
 				continue;
+			} else {
+				for( local i = 0; i < item.m.Variants.len(); i = ++i )
+				{
+					this.logInfo("Adding " + h + " :: " + i);
+					local vitem =  this.new("scripts/items/legend_helmets/" + h);
+					vitem.setVariant(item.m.Variants[i]);
+					local layers = vitem.getLootLayers()
+					foreach (l in layers) {
+						this.World.Assets.getStash().add(l);
+					}
+				}
+
 			}
 
-			for( local i = 0; i < item.m.Variants.len(); i = ++i )
-			{
-				this.logInfo("Adding " + h + " :: " + i);
-				local vitem =  this.new("scripts/items/legend_helmets/" + h);
-				vitem.setVariant(item.m.Variants[i]);
-				local layers = item.getLootLayers()
-				foreach (l in layers) {
-					this.World.Assets.getStash().add(vitem);
-				}
-			}
 		}
 
 	}

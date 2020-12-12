@@ -268,17 +268,17 @@ this.orc_berserker <- this.inherit("scripts/entity/tactical/actor", {
 		this.actor.onDeath(_killer, _skill, _tile, _fatalityType);
 	}
 
-	// function onFactionChanged()
-	// {
-	// 	this.actor.onFactionChanged();
-	// 	local flip = !this.isAlliedWithPlayer();
-	// 	this.getSprite("helmet").setHorizontalFlipping(flip);
-	// 	this.getSprite("helmet_damaged").setHorizontalFlipping(flip)
-	// 	this.getSprite("helmet_vanity_lower").setHorizontalFlipping(flip);
-	// 	this.getSprite("helmet_helm").setHorizontalFlipping(flip);
-	// 	this.getSprite("helmet_top").setHorizontalFlipping(flip);
-	// 	this.getSprite("helmet_vanity").setHorizontalFlipping(flip);
-	// }
+	function onFactionChanged()
+	{
+		this.actor.onFactionChanged();
+		local flip = !this.isAlliedWithPlayer();
+		this.getSprite("helmet").setHorizontalFlipping(flip);
+		this.getSprite("helmet_damage").setHorizontalFlipping(flip)
+		this.getSprite("helmet_vanity_lower").setHorizontalFlipping(flip);
+		this.getSprite("helmet_helm").setHorizontalFlipping(flip);
+		this.getSprite("helmet_top").setHorizontalFlipping(flip);
+		this.getSprite("helmet_vanity").setHorizontalFlipping(flip);
+	}
 
 	function onInit()
 	{
@@ -334,19 +334,19 @@ this.orc_berserker <- this.inherit("scripts/entity/tactical/actor", {
 		injury.Visible = false;
 		injury.setBrush("bust_orc_02_head_injured");
 		this.addSprite("helmet");
-		// this.addSprite("helmet_vanity_lower");
-		// this.addSprite("helmet_helm");
-		// this.addSprite("helmet_top");
-		// this.addSprite("helmet_vanity");
-		// this.addSprite("helmet_damaged");
-		// local v = 3;
-		// local v2 = -5;
-		// this.setSpriteOffset("helmet", this.createVec(v2, v));
-		// this.setSpriteOffset("helmet_vanity_lower", this.createVec(v2, v));
-		// this.setSpriteOffset("helmet_helm", this.createVec(v2, v));
-		// this.setSpriteOffset("helmet_top", this.createVec(v2, v));
-		// this.setSpriteOffset("helmet_vanity", this.createVec(v2, v));
-		// this.setSpriteOffset("helmet_damage", this.createVec(v2, v));
+		this.addSprite("helmet_vanity_lower");
+		this.addSprite("helmet_helm");
+		this.addSprite("helmet_top");
+		this.addSprite("helmet_vanity");
+		this.addSprite("helmet_damage");
+		local v = 3;
+		local v2 = -5;
+		this.setSpriteOffset("helmet", this.createVec(v2, v));
+		this.setSpriteOffset("helmet_vanity_lower", this.createVec(v2, v));
+		this.setSpriteOffset("helmet_helm", this.createVec(v2, v));
+		this.setSpriteOffset("helmet_top", this.createVec(v2, v));
+		this.setSpriteOffset("helmet_vanity", this.createVec(v2, v));
+		this.setSpriteOffset("helmet_damage", this.createVec(v2, v));
 		local body_rage = this.addSprite("body_rage");
 		body_rage.Visible = false;
 		body_rage.Alpha = 220;
