@@ -29,10 +29,10 @@ this.legend_mummy_headress <- this.inherit("scripts/items/helmets/helmet", {
 	function updateVariant()
 	{
 		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
-		this.m.Sprite = "mummy_headress_0" + variant;
-		this.m.SpriteDamaged = "mummy_headress_0" + variant + "_damaged";
-		this.m.SpriteCorpse = "mummy_headress_0" + variant + "_dead";
-		// this.m.IconLarge = "armor/inventory_body_armor_" + variant + ".png";
+		this.m.Sprite = "mummy_headress_" + variant;
+		this.m.SpriteDamaged = "mummy_headress_" + variant + "_damaged";
+		this.m.SpriteCorpse = "mummy_headress_" + variant + "_dead";
+		// this.m.IconLarge = "armor/inventory_mummy_headress_" + variant + ".png";
 		// this.m.Icon = "armor/icon_body_armor_" + variant + ".png";
 	}
 

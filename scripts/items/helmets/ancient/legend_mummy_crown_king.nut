@@ -4,8 +4,8 @@ this.legend_mummy_crown_king <- this.inherit("scripts/items/helmets/helmet", {
 	{
 		this.helmet.create();
 		this.m.ID = "armor.head.legend_mummy_crown_king";
-		this.m.Name = "";
-		this.m.Description = "";
+		this.m.Name = "Embalmed Headress";
+		this.m.Description = "the headress of an ancient embalmed corpse";
 		this.m.ShowOnCharacter = true;
 		this.m.IsDroppedAsLoot = false;
 		this.m.HideHair = false;
@@ -29,10 +29,10 @@ this.legend_mummy_crown_king <- this.inherit("scripts/items/helmets/helmet", {
 	function updateVariant()
 	{
 		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
-		this.m.Sprite = "mummy_crown_king_0" + variant;
-		this.m.SpriteDamaged = "mummy_crown_king_0" + variant + "_damaged";
-		this.m.SpriteCorpse = "mummy_crown_king_0" + variant + "_dead";
-		// this.m.IconLarge = "armor/inventory_body_armor_" + variant + ".png";
+		this.m.Sprite = "mummy_crown_king_" + variant;
+		this.m.SpriteDamaged = "mummy_crown_king_" + variant + "_damaged";
+		this.m.SpriteCorpse = "mummy_crown_king_" + variant + "_dead";
+		this.m.IconLarge = "armor/inventory_mummy_crown_king_" + variant + ".png";
 		// this.m.Icon = "armor/icon_body_armor_" + variant + ".png";
 	}
 
