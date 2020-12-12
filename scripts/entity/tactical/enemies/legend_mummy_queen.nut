@@ -38,6 +38,7 @@ this.legend_mummy_queen <- this.inherit("scripts/entity/tactical/legend_mummy", 
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_berserk"));
 		this.m.Skills.add(this.new("scripts/skills/special/double_grip"));
 		this.m.Skills.add(this.new("scripts/skills/racial/vampire_racial"));
+		this.m.Skills.add(this.new("scripts/skills/racial/alp_racial"));
 		this.m.Skills.add(this.new("scripts/skills/actives/darkflight"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_anticipation"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_head_hunter"));
@@ -126,7 +127,7 @@ function onUpdateInjuryLayer()
 
 	function assignRandomEquipment()
 	{
-		this.m.Items.equip(this.new("scripts/items/weapons/named/named_legend_great_khopesh"));
+		this.m.Items.equip(this.new("scripts/items/weapons/named/legend_named_swordstaff"));
 
 		local item = this.Const.World.Common.pickArmor([
 			[1, "ancient/legend_mummy_dress"] 
@@ -134,7 +135,7 @@ function onUpdateInjuryLayer()
 		this.m.Items.equip(item);
 
 		local item = this.Const.World.Common.pickHelmet([
-			[66, ancient/mummy_crown"]
+			[66, "ancient/legend_mummy_crown"]
 		])
 		if (item != null)
 		{

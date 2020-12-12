@@ -1,0 +1,42 @@
+this.ancient_sword <- this.inherit("scripts/items/weapons/weapon", {
+	m = {},
+	function create()
+	{
+		this.weapon.create();
+		this.m.ID = "weapon.ancient_sword";
+		this.m.Name = "Ancient Gladius";
+		this.m.Description = "A straight blade of ancient origin. The grip and pomel are very plain, from a simpler time.";
+		this.m.Categories = "Sword, One-Handed";
+		this.m.IconLarge = "weapons/melee/legend_gladius_01.png";
+		this.m.Icon = "weapons/melee/alegend_gladius_01_70x70.png";
+		this.m.SlotType = this.Const.ItemSlot.Mainhand;
+		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
+		this.m.IsDoubleGrippable = true;
+		this.m.AddGenericSkill = true;
+		this.m.ShowQuiver = false;
+		this.m.ShowArmamentIcon = true;
+		this.m.ArmamentIcon = "icon_legend_gladius_01";
+		this.m.Value = 950;
+		this.m.Condition = 54.0;
+		this.m.ConditionMax = 54.0;
+		this.m.StaminaModifier = -8;
+		this.m.RegularDamage = 43;
+		this.m.RegularDamageMax = 48;
+		this.m.ArmorDamageMult = 0.8;
+		this.m.DirectDamageMult = 0.2;
+	}
+
+	function onEquip()
+	{
+		this.weapon.onEquip();
+		this.addSkill(this.new("scripts/skills/actives/slash"));
+		this.addSkill(this.new("scripts/skills/actives/riposte"));
+	}
+
+	function onUpdateProperties( _properties )
+	{
+		this.weapon.onUpdateProperties(_properties);
+	}
+
+});
+

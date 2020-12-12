@@ -41,7 +41,7 @@ this.legend_mummy_medium <- this.inherit("scripts/entity/tactical/legend_mummy",
 
 		if (r == 1)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/broken_ancient_sword"));
+			this.m.Items.equip(this.new("scripts/items/weapons/ancient/legend_gladius"));
 		}
 		else
 		{
@@ -63,7 +63,7 @@ this.legend_mummy_medium <- this.inherit("scripts/entity/tactical/legend_mummy",
 		this.m.Items.equip(item);
 
 		local item = this.Const.World.Common.pickHelmet([
-			[99, "mummy_headband"]
+			[99, "ancient/legend_mummy_headband"]
 		])
 		if (item != null)
 		{
