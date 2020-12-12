@@ -192,10 +192,15 @@ this.adventurous_noble_background <- this.inherit("scripts/skills/backgrounds/ch
 		]))
 
 		items.equip(this.Const.World.Common.pickHelmet([
-			[1, "nasal_helmet"],
-			[1, "padded_nasal_helmet"],
+			[2, "nasal_helmet"],
+			[2, "padded_nasal_helmet"],
 			[1, "nasal_helmet_with_mail"],
-			[1, "mail_coif"]
+			[1, "legend_noble_floppy_hat"],
+			[1, "legend_noble_hat"],
+			[1, "legend_noble_hood"],
+			[1, "legend_noble_crown"],
+			[1, "mail_coif"],
+			[2, ""]
 		]))
 	}
 

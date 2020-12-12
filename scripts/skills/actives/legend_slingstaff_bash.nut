@@ -30,7 +30,7 @@ this.legend_slingstaff_bash <- this.inherit("scripts/skills/skill", {
 		this.m.InjuriesOnHead = this.Const.Injury.BluntHead;
 		this.m.DirectDamageMult = 0.4;
 		this.m.ActionPointCost = 4;
-		this.m.FatigueCost = 25;
+		this.m.FatigueCost = 14;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 2;
 		this.m.ChanceDecapitate = 0;
@@ -53,16 +53,16 @@ this.legend_slingstaff_bash <- this.inherit("scripts/skills/skill", {
 	{
 		this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectBash);
 		return this.attackEntity(_user, _targetTile.getEntity());
-
-
 	}
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
 		if (_skill == this)
 		{
-			_properties.DamageRegularMult *= 0.5;
+			_properties.DamageArmorMult *= 0.5;
+			_properties.DamageRegularMult *= 0.75;
 		}
 	}
 
 });
+

@@ -18,10 +18,11 @@ gt.Const.World.Spawn.Kraken <-
 	VisibilityMult = 0.5,
 	VisionMult = 1.0,
 	Body = "figure_kraken_01",
+	MaxR = 1,
 	Fixed = [
 		{
 			Type = this.Const.World.Spawn.Troops.Kraken
-			Cost = 9999
+			Cost = 1
 		}
 	],
 	Troops = []

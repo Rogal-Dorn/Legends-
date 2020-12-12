@@ -1,5 +1,8 @@
 this.legend_scry_trance_skill <- this.inherit("scripts/skills/actives/legend_trance_abstract", {
-	m = {},
+	m = {
+		BaseFatigueCost = 15,
+		BaseAPCost = 3,
+	},
 	function create()
 	{
 		this.legend_trance_abstract.create();
@@ -20,6 +23,12 @@ this.legend_scry_trance_skill <- this.inherit("scripts/skills/actives/legend_tra
 
 	function doTranceStartTurn()
 	{
+		this.Tactical.queryTilesInRange( this.getContainer().getActor().getTile(), 1, 12, false, [], this.onQueryTile, this.getContainer().getActor().getFaction());
+	}
+
+	function onUse()
+	{
+		this.legend_trance_abstract.onUse();
 		this.Tactical.queryTilesInRange( this.getContainer().getActor().getTile(), 1, 12, false, [], this.onQueryTile, this.getContainer().getActor().getFaction());
 	}
 

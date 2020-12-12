@@ -60,7 +60,6 @@ gt.Const.LegendMod.HelmObjs.extend([
         [1, "hood/legend_helmet_leather_cap"], //35
         [1, "hood/legend_helmet_leather_hood"], //45
         [1, "hood/legend_helmet_open_chain_hood"], //65
-        [0, "hood/legend_helmet_bronze_chain"], //100
     ],
     Helms = [
 		[1, ""], //45

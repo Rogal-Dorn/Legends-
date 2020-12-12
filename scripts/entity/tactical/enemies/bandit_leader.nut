@@ -222,7 +222,7 @@ this.bandit_leader <- this.inherit("scripts/entity/tactical/human", {
 		{
 			local named = this.Const.Items.NamedHelmets;
 			local weightName = this.Const.World.Common.convNameToList(named);
-			this.m.Items.equip(this.Const.World.Common.pickArmor(weightName));
+			this.m.Items.equip(this.Const.World.Common.pickHelmet(weightName));
 		}
 
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_underdog"));

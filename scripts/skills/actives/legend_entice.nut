@@ -4,7 +4,7 @@ this.legend_entice <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_entice";
 		this.m.Name = "Entice";
-		this.m.Description = "With a trick of the light, captivate your target in such a way that they can’t help but approach you. ";
+		this.m.Description = "With a trick of the light, captivate your target in such a way that they can\'t help but approach you. ";
 		this.m.Icon = "skills/entice.png";
 		this.m.IconDisabled = "skills/entice_bw.png";
 		this.m.Overlay = "entice";
@@ -107,8 +107,8 @@ this.legend_entice <- this.inherit("scripts/skills/skill", {
 
 	function onAfterUpdate( _properties )
 	{
-		this.m.FatigueCostMult = _properties.IsSpecializedInPolearms ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
-		this.m.ActionPointCost = _properties.IsSpecializedInPolearms ? 5 : 6;
+		this.m.FatigueCostMult = _properties.IsSpecializedInStaves ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
+		this.m.ActionPointCost = _properties.IsSpecializedInStaves ? 5 : 6;
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )

@@ -49,6 +49,7 @@ this.goblin_shaman <- this.inherit("scripts/entity/tactical/goblin", {
 		this.goblin.onDeath(_killer, _skill, _tile, _fatalityType);
 	}
 
+
 	function assignRandomEquipment()
 	{
 		local r;
@@ -60,10 +61,19 @@ this.goblin_shaman <- this.inherit("scripts/entity/tactical/goblin", {
 		local item = this.Const.World.Common.pickHelmet([
 			[1, "greenskins/goblin_shaman_helmet"]
 		])
-		if (item != null)
-		{
-			this.m.Items.equip(item);
-		}	
+		this.m.Items.equip(item);
+	}
+
+	function onFactionChanged()
+	{
+		this.goblin.onFactionChanged();
+		local flip = this.isAlliedWithPlayer();
+		this.getSprite("helmet").setHorizontalFlipping(flip);
+		this.getSprite("helmet_damage").setHorizontalFlipping(flip);
+		this.getSprite("helmet_vanity_lower").setHorizontalFlipping(flip);
+		this.getSprite("helmet_helm").setHorizontalFlipping(flip);
+		this.getSprite("helmet_top").setHorizontalFlipping(flip);
+		this.getSprite("helmet_vanity").setHorizontalFlipping(flip);
 	}
 
 });

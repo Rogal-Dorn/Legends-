@@ -264,6 +264,8 @@ this.knock_back <- this.inherit("scripts/skills/skill", {
 
 	function onAfterUpdate( _properties )
 	{
+		this.m.FatigueCostMult = 1.0; //swap around to resetting the fatiguecostmult & only changing that with shield_bash perk ; this way our specialist stacks alongside shield bash but doesn't go reach limit of 0 fatigue eventually
+
 		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_specialist_shield_push"))
 		{
 			this.m.FatigueCostMult = this.Const.Combat.WeaponSpecFatigueMult;
@@ -272,7 +274,7 @@ this.knock_back <- this.inherit("scripts/skills/skill", {
 
 		if (this.getContainer().getActor().getSkills().hasSkill("perk.shield_bash"))
 		{
-			this.m.FatigueCost *= 0.9;
+			this.m.FatigueCostMult *= 0.9;
 		}
 	}
 

@@ -18,8 +18,8 @@ this.heavy_gladiator_upgrade <- this.inherit("scripts/items/armor_upgrades/armor
 		this.m.SpriteCorpseFront = "upgrade_25_front_dead";
 		this.m.SpriteCorpseBack = null;
 		this.m.Value = 800;
-		this.m.ConditionModifier = 115;
-		this.m.StaminaModifier = 10;
+		this.m.ConditionModifier = 55;
+		this.m.StaminaModifier = 5;
 	}
 
 	function getTooltip()
@@ -29,13 +29,13 @@ this.heavy_gladiator_upgrade <- this.inherit("scripts/items/armor_upgrades/armor
 			id = 14,
 			type = "text",
 			icon = "ui/icons/armor_body.png",
-			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+115[/color] Durability"
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+55[/color] Durability"
 		});
 		result.push({
 			id = 14,
 			type = "text",
 			icon = "ui/icons/fatigue.png",
-			text = "[color=" + this.Const.UI.Color.NegativeValue + "]-10[/color] Maximum Fatigue"
+			text = "[color=" + this.Const.UI.Color.NegativeValue + "]-5[/color] Maximum Fatigue"
 		});
 		return result;
 	}
