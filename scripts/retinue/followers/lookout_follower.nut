@@ -15,7 +15,7 @@ this.lookout_follower <- this.inherit("scripts/retinue/follower", {
 		this.m.Requirements = [
 			{
 				IsSatisfied = false,
-				Text = ""
+				Text = "Have someone with the Lookout perk, available on Thief, Poacher, Nomad and many others"
 			}
 		];
 	}
@@ -30,12 +30,20 @@ this.lookout_follower <- this.inherit("scripts/retinue/follower", {
 
 	function onEvaluate()
 	{
-		this.m.Requirements[0].Text = "Discovered " + this.Math.min(10, this.World.Statistics.getFlags().getAsInt("LocationsDiscovered")) + "/10 locations on your own";
 
-		if (this.World.Statistics.getFlags().getAsInt("LocationsDiscovered") >= 10)
+		local brothers = this.World.getPlayerRoster().getAll();
+		
+		foreach( bro in brothers )
 		{
+			if (bro.getSkills().hasSkill("perk.lookout"))
+			{
 			this.m.Requirements[0].IsSatisfied = true;
+			}
+
 		}
+
+	}
+		
 	}
 
 });

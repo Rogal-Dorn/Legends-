@@ -4303,6 +4303,27 @@ four noble hats added to the spawnpool for nobles, adventurous nobkles and at ma
 two southern noble hats added to viziers and southern peddlers 
 jewelry - There is now a variety of southern jewelry, with several kinds of veils, headresses and earings. These are found on female southerners and in southern markets 
 
+**Retinue Changes**
+Retinue now requires specific backgrounds and perks.  Gold cost halved 
+
+Agent = eunuch, messenger or assassin + allied town 
+Alchemist = Taxidermist, Herbalist or Druid  + 10 crafting 
+Blacksmith = "Field Repairs Perk" Blacksmith, Ironmonger, Crusader
+Bounty Hunter = Witch Hunter, Beast Slayer, Manhunter  + 1 famed item 
+Brigand = Barbarian, Raider, Deserter 
+Catographer = Historian, Adventurous Noble, Philosopher + 1 legendary location 
+Cook = "Camp Cook perk" Baker, Fishwife, Butcher 
+Drill Seargent = Retired Soldier, Gladiator, Swordmaster or Sellsword with injury 
+Lookout = "lookout perk" Nomad, Thief, Poacher 
+Minstrel = "Entice perk" Minstrel, Troubadour, Juggler 
+Negotiator = "pacifist perk"  Widow, Inventor, tailor
+Paymaster = "paymaster perk" Peddler, Servant, Eunuch 
+Quartermaster = "skillfull stacking perk" donkey, vagabond, Miller 
+Recruiter = "inspiring presence perk" cultists, pimps retired soldiers
+Scavenger = beggar, cripple, refugee  slave 
+Scout = Hunter, wildman, lumberjack, ranger 
+Surgeon = "Field triage perk" Monk, Nun, Maid 
+Trader = Caravan Hand. Peddler, trader  + trade requirement
 
 **Fixes/Tweaks**
 Actually fixes armored unholds' helmets
@@ -4344,15 +4365,6 @@ Raw stats of slingstaff: 35-45 dmg, 75% armpen, 110% armor damage (nomad sling -
 "Heavy rocks" increases damage of "Sling Heavy Stone" by 15-30 but increases AP cost by 1 and FAT cost by 4, has no effect on slingstaff bash.
 "Slinger's spins" increases armor damage of "Sling Heavy Stone" by 50% but increases AP cost by 1 and FAT cost by 4, has no effect on slingstaff bash.
 Fully buffed with minor perks Sling Heavy Stone pre-nerf: 49-72/80%/188% for 8 AP, now: 50-75/75%/165% for 7 AP, unbuffed 70-90/75%/110% for 10 AP (5*2).
-
-
-
-
-
-
-
-
-
 
 
 
