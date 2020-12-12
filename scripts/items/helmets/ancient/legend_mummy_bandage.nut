@@ -30,9 +30,9 @@ this.legend_mummy_bandage <- this.inherit("scripts/items/helmets/helmet", {
 	function updateVariant()
 	{
 		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
-		this.m.Sprite = "mummy_bandage_0" + variant;
-		this.m.SpriteDamaged = "mummy_bandage_0" + variant + "_damaged";
-		this.m.SpriteCorpse = "mummy_bandage_0" + variant + "_dead";
+		this.m.Sprite = "mummy_bandage_" + variant;
+		this.m.SpriteDamaged = "mummy_bandage_" + variant + "_damaged";
+		this.m.SpriteCorpse = "mummy_bandage_" + variant + "_dead";
 		this.m.IconLarge = "armor/inventory_mummy_bandage_" + variant + ".png";
 		// this.m.Icon = "armor/icon_mummy_bandage_" + variant + ".png";
 	}
