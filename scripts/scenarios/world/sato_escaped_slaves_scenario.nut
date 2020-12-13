@@ -229,159 +229,71 @@ this.sato_escaped_slaves_scenario <- this.inherit("scripts/scenarios/world/start
 	}
 
 	function addRandomEquipment(items, shieldSpecific = false) {
-		local equipmentRoll = this.Math.rand(1, 100);
-		local getsArmor = equipmentRoll <= 50 ? true : false;
-		local getsWeapon = equipmentRoll > 50 ? true : false;
 
-		local equipLowHelmet = false;
-		local equipLowArmor = false;
-		local equipLowWeapon = false;
-		local equipHighHelmet = false;
-		local equipHighArmor = false;
-		local equipHighWeapon = false;
-		local equipAnyHelmet = false;
-		local equipAnyArmor = false;
-		local equipAnyWeapon = false;
-
-		if (getsArmor) {
-			local weaponRoll = this.Math.rand(1, 100);
-			if (weaponRoll <= 33) {
-				if (this.Math.rand(1,100) <= 50) {
-					equipAnyArmor = true;
-					equipLowWeapon = true;
-				} else if (this.Math.rand(1,100) <= 33) {
-					equipAnyHelmet = true;
-					equipLowWeapon = true;
-				} else {
-					equipLowHelmet = true;
-					equipLowArmor = true;
-					equipLowWeapon = true;
-				}
-			} else {
-				equipHighHelmet = true;
-				equipHighArmor = true;
-			}
-		}
-		else {
-			local armorRoll = this.Math.rand(1, 100);
-			if (armorRoll <= 33) {
-				if (this.Math.rand(1,100) <= 50) {
-					equipAnyWeapon = true;
-					equipLowArmor = true;
-				} else {
-					equipAnyWeapon = true;
-					equipLowHelmet = true;
-				}
-			} else {
-				equipHighWeapon = true;
-			}
-		}
-
-		local armors = [];
-		if (equipHighArmor) {
-			armors.extend([
-				"armor/oriental/stitched_nomad_armor",
-				"armor/oriental/plated_nomad_mail",
-				"armor/oriental/linothorax",
-				"armor/oriental/southern_mail_shirt"
-			]);
-		} else if (equipAnyArmor) {
-			armors.extend([
-				"armor/oriental/nomad_robe",
-				"armor/oriental/thick_nomad_robe",
-				"armor/oriental/padded_vest",
-				"armor/oriental/stitched_nomad_armor",
-				"armor/oriental/plated_nomad_mail",
-				"armor/oriental/linothorax",
-				"armor/oriental/southern_mail_shirt"
-			]);
-		} else if (equipLowArmor) {
-			armors.extend([
-				"armor/oriental/nomad_robe",
-				"armor/oriental/thick_nomad_robe",
-				"armor/oriental/padded_vest"
-			]);
-		}
-
-		local helmets = [];
-		if (equipHighHelmet) {
-			helmets.extend([
-				"helmets/oriental/nomad_reinforced_helmet",
-				"helmets/oriental/wrapped_southern_helmet",
-				"helmets/oriental/spiked_skull_cap_with_mail"
-			]);
-		} else if (equipAnyHelmet) {
-			helmets.extend([
-				"helmets/oriental/nomad_head_wrap",
-				"helmets/oriental/nomad_leather_cap",
-				"helmets/oriental/nomad_light_helmet",
-				"helmets/oriental/nomad_reinforced_helmet",
-				"helmets/oriental/wrapped_southern_helmet",
-				"helmets/oriental/spiked_skull_cap_with_mail"
-			]);
-		} else if (equipLowHelmet) {
-			helmets.extend([
-				"helmets/oriental/leather_head_wrap",
-				"helmets/oriental/nomad_leather_cap",
-				"helmets/oriental/nomad_light_helmet"
-			]);
-		}
-
-		local weapons = []
-		if (equipHighWeapon) {
-			weapons.extend([
-				"shields/oriental/metal_round_shield",
-				"weapons/scimitar",
-				"weapons/boar_spear",
-				"weapons/pitchfork",
-				"weapons/oriental/light_southern_mace",
-				"weapons/oriental/firelance"
-			]);
-		} else if (equipAnyWeapon) {
-			weapons.extend([
-				"shields/oriental/southern_light_shield",
-				"shields/oriental/metal_round_shield",
-				"weapons/oriental/saif",
-				"weapons/scimitar",
-				"weapons/militia_spear",
-				"weapons/boar_spear",
-				"weapons/pitchfork",
-				"weapons/oriental/nomad_mace",
-				"weapons/oriental/light_southern_mace",
-				"weapons/oriental/firelance"
-			]);
-		} else if (equipLowWeapon) {
-			weapons.extend([
-				"shields/oriental/southern_light_shield",
-				"weapons/oriental/saif",
-				"weapons/militia_spear",
-				"weapons/oriental/nomad_mace",
-			]);
-		}
-
-		if (helmets.len() != 0) {
-			local helmet = this.new("scripts/items/" + helmets[this.Math.rand(0, helmets.len() - 1)]);
-			helmet.setCondition(this.Math.rand(helmet.getConditionMax() * 0.4, helmet.getConditionMax()) * 1.0);
-			items.equip(helmet);
-		}
-
-		if (armors.len() != 0) {
-			items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
-			local armor = this.new("scripts/items/" + armors[this.Math.rand(0, armors.len() - 1)]);
+	//Set the probability for each armor
+			items.equip(this.Const.World.Common.pickArmor([
+				[50, ""],
+				[10, "oriental/nomad_robe"],
+				[10, "oriental/thick_nomad_robe"],
+				[10, "oriental/padded_vest"],
+				[5, "oriental/stitched_nomad_armor"],
+				[5, "oriental/plated_nomad_mail"],
+				[5, "oriental/linothorax"],
+			]))
+	//Damage the armor 
+			local armor = items.getItemAtSlot(this.Const.ItemSlot.Body);
+			if (armor != null)
+			{
 			armor.setCondition(this.Math.rand(armor.getConditionMax() * 0.4, armor.getConditionMax()) * 1.0);
-			items.equip(armor);
+			}
+			
+	//Set the probability for each helmet	
+			items.equip(this.Const.World.Common.pickHelmet([
+				[50, ""],
+				[5, "oriental/nomad_reinforced_helmet"],
+				[5, "oriental/wrapped_southern_helmet"],
+				[5, "oriental/spiked_skull_cap_with_mail"],
+				[12, "oriental/nomad_head_wrap"],
+				[12, "oriental/nomad_leather_cap"],
+				[12, "oriental/nomad_light_helmet"]
+			]));
+	//Damage the armor 
+			local helmet = items.getItemAtSlot(this.Const.ItemSlot.Head);
+			if (helmet != null)
+			{
+			helmet.setCondition(this.Math.rand(helmet.getConditionMax() * 0.4, helmet.getConditionMax()) * 1.0);
+			}
+		
+	//Set the probability for each weapon
+		local weaponRoll = this.Math.rand(1, 100);
+		local weapons = []
+		if (weaponRoll <= 5) {
+			weapons.extend([
+				"shields/oriental/metal_round_shield",
+				"weapons/scimitar",
+				"weapons/boar_spear",
+				"weapons/pitchfork",
+				"weapons/oriental/light_southern_mace",
+				"weapons/oriental/firelance"
+			]);
+		} 
+		else if ( weaponRoll >= 6 && weaponRoll <= 50 ) {
+			weapons.extend([
+					"shields/oriental/southern_light_shield",
+					"weapons/oriental/saif",
+					"weapons/militia_spear",
+					"weapons/oriental/nomad_mace",
+				]);	
 		}
+	//Damage and equip the weapon 
 
 		if (weapons.len() != 0) {
-			items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
-			items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Offhand));
-			if (shieldSpecific) {
-				items.equip(this.new("scripts/items/shields/oriental/metal_round_shield"));
-			} else {
-				local weapon = this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]);
-				weapon.setCondition(this.Math.rand(weapon.getConditionMax() * 0.4, weapon.getConditionMax()) * 1.0);
-				items.equip(weapon);
-			}
+            items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
+            items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Offhand));
+			local weapon = this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]);
+			weapon.setCondition(this.Math.rand(weapon.getConditionMax() * 0.4, weapon.getConditionMax()) * 1.0);
+			items.equip(weapon);
+
 		}
 	}
 
