@@ -421,7 +421,14 @@ layers = [
  "desc" :  "A piece of cloth covering the top of the head." \
 },
 
-
+{"name" : "southern_headband_coin"                     , "layer" : "hood", "min" : 1, "max" : 1, "base" : True, "value" : 20, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
+ "title" :  "Southern Coin Headband", \
+ "desc" :  "A southern headband of coins strung together" \
+},
+{"name" : "mummy_bandage"                     , "layer" : "hood", "min" : 1, "max" : 1, "base" : True, "value" : 5, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "true",  \
+ "title" :  "Ancient Southern Facemask", \
+ "desc" :  "Wrappings from a long dead embalmed corpse" \
+},
 
 
 {"name" : "ancient_conic_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 200, "con" : 60, "stam" : -6, "vis" : -1, "hair" : "true", "beard" : "false",  \
@@ -845,10 +852,7 @@ layers = [
  "title" :  "Ancient Southern Facemask", \
  "desc" :  "A facemask from a long dead civilisation" \
 },
-{"name" : "mummy_bandage"                     , "layer" : "hood", "min" : 1, "max" : 1, "value" : 5, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "true",  \
- "title" :  "Ancient Southern Facemask", \
- "desc" :  "Wrappings from a long dead embalmed corpse" \
-},
+
 {"name" : "mummy_beard"                     , "layer" : "top", "min" : 1, "max" : 3, "value" : 450, "con" : 35, "stam" : -1, "vis" : 0, "hair" : "false", "beard" : "true",  \
  "title" :  "Ancient Southern Beard", \
  "desc" :  "A beard cover from a long dead civilisation" \
@@ -1129,10 +1133,7 @@ layers = [
  "desc" :  "Delicate southern metal earings" \
 },
 
-{"name" : "southern_headband_coin"                     , "layer" : "hood", "min" : 1, "max" : 1, "value" : 20, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
- "title" :  "Southern Coin Headband", \
- "desc" :  "A southern headband of coins strung together" \
-},
+
 
 {"name" : "southern_headress_coin"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 30, "con" : 10, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Southern Coin Headress", \
