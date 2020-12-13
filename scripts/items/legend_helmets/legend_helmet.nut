@@ -421,7 +421,7 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 				continue;
 			}
 
-			delta = u.setCondition(delta);
+			delta = u.onRepair(delta);
 
 			if (delta <= 0)
 			{

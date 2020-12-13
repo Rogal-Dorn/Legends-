@@ -123,17 +123,35 @@ this.barbarian_chosen <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Body))
 		{
-			this.m.Items.equip(this.Const.World.Common.pickArmor([
+			local armor = [
 				[1, "barbarians/thick_plated_barbarian_armor"]
-			]));
+			];
+
+			if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+			{
+				armor.push(
+					[1, "barbarians/reinforced_heavy_iron_armor"]
+				);
+			}
+
+			this.m.Items.equip(this.Const.World.Common.pickArmor(armor));
 		}
 		
 
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Head))
 		{
-			this.m.Items.equip(this.Const.World.Common.pickHelmet([
+			local helmet = [
 				[1, "barbarians/heavy_horned_plate_helmet"]
-			]));
+			];
+
+			if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+			{
+				helmet.push(
+					[1, "barbarians/rusted_heavy_plate_helmet"]
+				);
+			}
+
+			this.m.Items.equip(this.Const.World.Common.pickHelmet(helmet));
 		}
 	}
 

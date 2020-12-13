@@ -4324,6 +4324,28 @@ Scout = Hunter, wildman, lumberjack, ranger
 Surgeon = "Field triage perk" Monk, Nun, Maid 
 Trader = Caravan Hand. Peddler, trader  + trade requirement
 
+
+**Armor Tweaks**
+Name: [v19 Fatigue] -> [v20 Fatigue]
+Short Faceplate: [-5] -> [-6]
+Long Faceplate: [-5] -> [-6]
+Winged Faceplate: [-6] -> [-7]
+Snub Nose Faceplate: [-6] -> [-7]
+Slitted Snub Faceplate: [-6] -> [-8]
+Sharp Faceplate: [-7] -> [-8]
+Facemask: [-7] -> [-9]
+Pointed Faceplate: [-7] -> [-9]
+Slit Pointed Faceplate: [-7] -> [-9]
+Full Faceplate: [-9] -> [-12]
+Flat Top Face Plate: [-4] -> [-12]
+Southern Conic: [-5] -> [-10]
+Southern Peaked Helmet: [-4] -> [-12]
+
+**New Armors to Enemies**
+From fashion-show added:
+Few barbarian armors & southern armors by Kamy
+
+
 **Fixes/Tweaks**
 
 Actually fixes armored unholds' helmets
@@ -4354,6 +4376,10 @@ Fixes slaughterer tooltip
 roots only affects one tile
 Fixes double jester hat showing up in tooltips
 Fixes mountain helmet layer
+Fixes transform-into-boar active
+Should fix characters instantly fleeing from battle on therianthropy transform (This won't stop them from running to the edge of the map)
+Fixes infinite repair/salvage of helmets granting/taking unlimited tools
+
 
 **Art**
 Improves 2 of the heads already added by the mod
