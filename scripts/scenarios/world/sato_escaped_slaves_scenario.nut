@@ -4,7 +4,7 @@ this.sato_escaped_slaves_scenario <- this.inherit("scripts/scenarios/world/start
 	{
 		this.m.ID = "scenario.sato_escaped_slaves";
 		this.m.Name = "Escaped Slaves";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_166.png[/img][/p][p]You lead a group of slaves trying to escape their cruel fate, but you can't run forever. Can you keep your band intact and start a new life as mercenaries?\n\n[color=#bcad8c]Escapees:[/color] Start with five escaped Indebted, and find others held in captivity.\n[color=#bcad8c]Brothers in Chains:[/color] Your Indebted brothers are stronger together and gain skill based on how many you field.\n[color=#bcad8c]Downtrodden and Discarded:[/color] Good relations with any faction decay 15% faster, and bad relations recover 15% slower.[/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_166.png[/img][/p][p]You lead a group of slaves trying to escape their cruel fate, but you can't run forever. Can you keep your band intact and start a new life as mercenaries?\n\n[color=#bcad8c]Escapees:[/color] Start with five escaped Indebted, and find others held in captivity.\n[color=#bcad8c]Brothers in Chains:[/color] Your newfound family of Indebted are stronger together and gain skill based on how many you field.\n[color=#bcad8c]Downtrodden and Discarded:[/color] Good relations with any faction decay 15% faster, and bad relations recover 15% slower.[/p]";
 		this.m.Difficulty = 3;
 		this.m.Order = 87;
 	}
@@ -29,7 +29,7 @@ this.sato_escaped_slaves_scenario <- this.inherit("scripts/scenarios/world/start
 		bros[0].setStartValuesEx([
 			"slave_background"
 		]);
-		bros[0].getBackground().m.RawDescription = "%name% was a sellsword like yourself before he was enslaved and made a pit fighter. The arena was where you first met him, the two of you saving each other several times in a bout against an unhold. You\'ve been as close as brothers ever since. When you escaped, he was the first to pick up arms and follow. You know he\'ll be the last to put them down, too.";
+		bros[0].getBackground().m.RawDescription = "%name% was a sellsword like yourself before being enslaved and made a pit fighter. The arena was where you first met, the two of you saving each other several times in a bout against an unhold. You\'ve been as close as siblings ever since. When you escaped, %name% was the first to pick up arms and follow, and you know %name% will be the last to put them down, too.";
 		bros[0].getBackground().buildDescription(true);
 		bros[0].setPlaceInFormation(1);
 		bros[0].addLightInjury();
@@ -129,7 +129,7 @@ this.sato_escaped_slaves_scenario <- this.inherit("scripts/scenarios/world/start
 		bros[2].setStartValuesEx([
 			"slave_southern_background"
 		]);
-		bros[2].getBackground().m.RawDescription = "Formerly a gunner in a city-state regiment, %name% has never quite fit in with the rest of the Indebted. Cast out of the army and branded a heretic for some religious slight he refuses to talk about, the man has never managed to truly lose his disdain for the social strata he now finds himself in. Regardless, he is one of you now, and the man shows enough talent that you\'re willing to overlook his personality.";
+		bros[2].getBackground().m.RawDescription = "Formerly a gunner in a city-state regiment, %name% has never quite fit in with the rest of the Indebted. Cast out of the army and branded a heretic for some religious slight %name% refuses to talk about. The gunner was relegated to a disdained social strata never managed to truly lose that distaste. Regardless, %name% is one of you now, and shows enough talent that you\'re willing to overlook that personality.";
 		bros[2].getBackground().buildDescription(true);
 		bros[2].setPlaceInFormation(3);
 		bros[2].addLightInjury();
@@ -146,7 +146,7 @@ this.sato_escaped_slaves_scenario <- this.inherit("scripts/scenarios/world/start
 		talents[this.Const.Attributes.Bravery] = 2;
 		talents[this.Const.Attributes.RangedSkill] = 2;
 
-		bros[2].worsenMood(0.5, "Misses his life in the army");
+		bros[2].worsenMood(0.5, "Misses life in the army");
 		bros[2].improveMood(2.5, "Escaped a life of slavery");
 
 		local items = bros[2].getItems();
@@ -157,7 +157,7 @@ this.sato_escaped_slaves_scenario <- this.inherit("scripts/scenarios/world/start
 		bros[3].setStartValuesEx([
 			"slave_southern_background"
 		]);
-		bros[3].getBackground().m.RawDescription = "If you had to describe %name% in one word, it would be \'ornery.\' Bitter about his life before he was indebted, bitter about his life as a slave, and now bitter about his life on the run. Perhaps that bitterness is what compels him to cling to life so. %name% has taken enough lashings and beatings for three men, endured punishments meant to kill, and even gotten back up after catching an ifrit toss square in the chest. He\'s pretty bitter about that one, too.";
+		bros[3].getBackground().m.RawDescription = "If you had to describe %name% in one word, it would be \'ornery.\' Bitter about life before becoming indebted, bitter about life as a slave, and now bitter about life on the run. Perhaps that bitterness is what compels %name% to cling to life so, having taken enough lashings and beatings for three men, endured punishments meant to kill, and even gotten back up after catching an ifrit toss square in the chest. %name%\'s pretty bitter about that one, too.";
 		bros[3].getBackground().buildDescription(true);
 		bros[3].setPlaceInFormation(4);
 		bros[3].addInjury(this.Const.Injury.Brawl);
@@ -178,7 +178,7 @@ this.sato_escaped_slaves_scenario <- this.inherit("scripts/scenarios/world/start
 		bros[4].setStartValuesEx([
 			"slave_southern_background"
 		]);
-		bros[4].getBackground().m.RawDescription = "A scholar in his previous life, %name% was cast into slavery for research that was deemed offensive to the Gilder. The man accepted his new life with a grace few can muster. When the opportunity came to escape with you, however, he took it without hesitation, simply stating that this was the next path he was meant to take. It doesn\'t really make sense to you, but you don\'t care to debate him after seeing how he killed the conscript whose equipment he now wears.";
+		bros[4].getBackground().m.RawDescription = "A scholar in a previous life, %name% was cast into slavery for research that was deemed offensive to the Gilder. The scholar accepted a new life with a grace few can muster. When the opportunity came to escape with you, however, there was no hesitation, simply stating that this was the next fated path to take. It doesn\'t really make sense to you, but you don\'t care to debate after seeing the gruesome death of the conscript whose equipment %name% now wears.";
 		bros[4].setTitle("the Sage");
 		bros[4].getBackground().buildDescription(true);
 		bros[4].setPlaceInFormation(5);
@@ -229,159 +229,71 @@ this.sato_escaped_slaves_scenario <- this.inherit("scripts/scenarios/world/start
 	}
 
 	function addRandomEquipment(items, shieldSpecific = false) {
-		local equipmentRoll = this.Math.rand(1, 100);
-		local getsArmor = equipmentRoll <= 50 ? true : false;
-		local getsWeapon = equipmentRoll > 50 ? true : false;
 
-		local equipLowHelmet = false;
-		local equipLowArmor = false;
-		local equipLowWeapon = false;
-		local equipHighHelmet = false;
-		local equipHighArmor = false;
-		local equipHighWeapon = false;
-		local equipAnyHelmet = false;
-		local equipAnyArmor = false;
-		local equipAnyWeapon = false;
-
-		if (getsArmor) {
-			local weaponRoll = this.Math.rand(1, 100);
-			if (weaponRoll <= 33) {
-				if (this.Math.rand(1,100) <= 50) {
-					equipAnyArmor = true;
-					equipLowWeapon = true;
-				} else if (this.Math.rand(1,100) <= 33) {
-					equipAnyHelmet = true;
-					equipLowWeapon = true;
-				} else {
-					equipLowHelmet = true;
-					equipLowArmor = true;
-					equipLowWeapon = true;
-				}
-			} else {
-				equipHighHelmet = true;
-				equipHighArmor = true;
-			}
-		}
-		else {
-			local armorRoll = this.Math.rand(1, 100);
-			if (armorRoll <= 33) {
-				if (this.Math.rand(1,100) <= 50) {
-					equipAnyWeapon = true;
-					equipLowArmor = true;
-				} else {
-					equipAnyWeapon = true;
-					equipLowHelmet = true;
-				}
-			} else {
-				equipHighWeapon = true;
-			}
-		}
-
-		local armors = [];
-		if (equipHighArmor) {
-			armors.extend([
-				"armor/oriental/stitched_nomad_armor",
-				"armor/oriental/plated_nomad_mail",
-				"armor/oriental/linothorax",
-				"armor/oriental/southern_mail_shirt"
-			]);
-		} else if (equipAnyArmor) {
-			armors.extend([
-				"armor/oriental/nomad_robe",
-				"armor/oriental/thick_nomad_robe",
-				"armor/oriental/padded_vest",
-				"armor/oriental/stitched_nomad_armor",
-				"armor/oriental/plated_nomad_mail",
-				"armor/oriental/linothorax",
-				"armor/oriental/southern_mail_shirt"
-			]);
-		} else if (equipLowArmor) {
-			armors.extend([
-				"armor/oriental/nomad_robe",
-				"armor/oriental/thick_nomad_robe",
-				"armor/oriental/padded_vest"
-			]);
-		}
-
-		local helmets = [];
-		if (equipHighHelmet) {
-			helmets.extend([
-				"helmets/oriental/nomad_reinforced_helmet",
-				"helmets/oriental/wrapped_southern_helmet",
-				"helmets/oriental/spiked_skull_cap_with_mail"
-			]);
-		} else if (equipAnyHelmet) {
-			helmets.extend([
-				"helmets/oriental/nomad_head_wrap",
-				"helmets/oriental/nomad_leather_cap",
-				"helmets/oriental/nomad_light_helmet",
-				"helmets/oriental/nomad_reinforced_helmet",
-				"helmets/oriental/wrapped_southern_helmet",
-				"helmets/oriental/spiked_skull_cap_with_mail"
-			]);
-		} else if (equipLowHelmet) {
-			helmets.extend([
-				"helmets/oriental/leather_head_wrap",
-				"helmets/oriental/nomad_leather_cap",
-				"helmets/oriental/nomad_light_helmet"
-			]);
-		}
-
-		local weapons = []
-		if (equipHighWeapon) {
-			weapons.extend([
-				"shields/oriental/metal_round_shield",
-				"weapons/scimitar",
-				"weapons/boar_spear",
-				"weapons/pitchfork",
-				"weapons/oriental/light_southern_mace",
-				"weapons/oriental/firelance"
-			]);
-		} else if (equipAnyWeapon) {
-			weapons.extend([
-				"shields/oriental/southern_light_shield",
-				"shields/oriental/metal_round_shield",
-				"weapons/oriental/saif",
-				"weapons/scimitar",
-				"weapons/militia_spear",
-				"weapons/boar_spear",
-				"weapons/pitchfork",
-				"weapons/oriental/nomad_mace",
-				"weapons/oriental/light_southern_mace",
-				"weapons/oriental/firelance"
-			]);
-		} else if (equipLowWeapon) {
-			weapons.extend([
-				"shields/oriental/southern_light_shield",
-				"weapons/oriental/saif",
-				"weapons/militia_spear",
-				"weapons/oriental/nomad_mace",
-			]);
-		}
-
-		if (helmets.len() != 0) {
-			local helmet = this.new("scripts/items/" + helmets[this.Math.rand(0, helmets.len() - 1)]);
-			helmet.setCondition(this.Math.rand(helmet.getConditionMax() * 0.4, helmet.getConditionMax()) * 1.0);
-			items.equip(helmet);
-		}
-
-		if (armors.len() != 0) {
-			items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
-			local armor = this.new("scripts/items/" + armors[this.Math.rand(0, armors.len() - 1)]);
+	//Set the probability for each armor
+			items.equip(this.Const.World.Common.pickArmor([
+				[50, ""],
+				[10, "oriental/nomad_robe"],
+				[10, "oriental/thick_nomad_robe"],
+				[10, "oriental/padded_vest"],
+				[5, "oriental/stitched_nomad_armor"],
+				[5, "oriental/plated_nomad_mail"],
+				[5, "oriental/linothorax"],
+			]))
+	//Damage the armor 
+			local armor = items.getItemAtSlot(this.Const.ItemSlot.Body);
+			if (armor != null)
+			{
 			armor.setCondition(this.Math.rand(armor.getConditionMax() * 0.4, armor.getConditionMax()) * 1.0);
-			items.equip(armor);
+			}
+			
+	//Set the probability for each helmet	
+			items.equip(this.Const.World.Common.pickHelmet([
+				[50, ""],
+				[5, "oriental/nomad_reinforced_helmet"],
+				[5, "oriental/wrapped_southern_helmet"],
+				[5, "oriental/spiked_skull_cap_with_mail"],
+				[12, "oriental/nomad_head_wrap"],
+				[12, "oriental/nomad_leather_cap"],
+				[12, "oriental/nomad_light_helmet"]
+			]));
+	//Damage the armor 
+			local helmet = items.getItemAtSlot(this.Const.ItemSlot.Head);
+			if (helmet != null)
+			{
+			helmet.setCondition(this.Math.rand(helmet.getConditionMax() * 0.4, helmet.getConditionMax()) * 1.0);
+			}
+		
+	//Set the probability for each weapon
+		local weaponRoll = this.Math.rand(1, 100);
+		local weapons = []
+		if (weaponRoll <= 5) {
+			weapons.extend([
+				"shields/oriental/metal_round_shield",
+				"weapons/scimitar",
+				"weapons/boar_spear",
+				"weapons/pitchfork",
+				"weapons/oriental/light_southern_mace",
+				"weapons/oriental/firelance"
+			]);
+		} 
+		else if ( weaponRoll >= 6 && weaponRoll <= 50 ) {
+			weapons.extend([
+					"shields/oriental/southern_light_shield",
+					"weapons/oriental/saif",
+					"weapons/militia_spear",
+					"weapons/oriental/nomad_mace",
+				]);	
 		}
+	//Damage and equip the weapon 
 
 		if (weapons.len() != 0) {
-			items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
-			items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Offhand));
-			if (shieldSpecific) {
-				items.equip(this.new("scripts/items/shields/oriental/metal_round_shield"));
-			} else {
-				local weapon = this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]);
-				weapon.setCondition(this.Math.rand(weapon.getConditionMax() * 0.4, weapon.getConditionMax()) * 1.0);
-				items.equip(weapon);
-			}
+            items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
+            items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Offhand));
+			local weapon = this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]);
+			weapon.setCondition(this.Math.rand(weapon.getConditionMax() * 0.4, weapon.getConditionMax()) * 1.0);
+			items.equip(weapon);
+
 		}
 	}
 
@@ -466,10 +378,10 @@ this.sato_escaped_slaves_scenario <- this.inherit("scripts/scenarios/world/start
     function setRetireText( bro ) {
         if (bro.getBackground().getEthnicity() == 1) {
             bro.getBackground().m.GoodEnding = "You freed the indebted %name% and helped them find a new life as a sellsword. %name% did become an effective fighter, no doubt believing it was better to fight and live free than to fight and die. After your departure, you heard that the %companyname% traveled south on a campaign and the indebted got a good chance to exact a fair bit of revenge on a number of enemies from the past. You count yourself lucky to have served in the same company.";
-            bro.getBackground().m.BadEnding = "You found %name% as an indebted and after your retiring, he went on with the %companyname%. Word of the mercenary band\'s problems have trickled in, but nothing about the indebted\'s current situation. Knowing how this world works, he has either been put into the vanguard as fodder or forced out to distract manhunters on the company\'s trail. Either way, the world isn\'t easy on a sellsword, and it isn\'t easy on an indebted, and the man is unfortunately both.";
+            bro.getBackground().m.BadEnding = "You found %name% as an indebted and after your retiring, they went on with the %companyname%. Word of the mercenary band\'s problems have trickled in, but nothing about the indebted\'s current situation. Knowing how this world works, the slave has either been put into the vanguard as fodder or forced out to distract manhunters on the company\'s trail. Either way, the world isn\'t easy on a sellsword, and it isn\'t easy on an indebted, and this mercenary is unfortunately both.";
         } else if (bro.getBackground().getEthnicity() != 1) {
-            bro.getBackground().m.GoodEnding = "%name% the indebted has had a rough life and you\'ve both contributed to that and helped alleviate it in some way. You found him as a slave, far from family and home, and put him to work as a sellsword. After you left the %companyname%, he stayed on and has been rising through its ranks ever since. You hear he was so ferocious in a battle with manhunters that the city-states have reconsidered sending men after the company at all, fearing what might happen if he took the fight to them more directly.";
-            bro.getBackground().m.BadEnding = "With your retiring from the unsuccessful %companyname%, %name% the indebted from the north carried on with the company for a time. You got wind that the mercenary band ran into troubles with manhunters and had to leave behind both \'man and material\' to escape. %name%\'s time with the company presumably ended sometime there. You hope his time as a slave never started again.";
+            bro.getBackground().m.GoodEnding = "%name% the indebted has had a rough life and you\'ve both contributed to that and helped alleviate it in some way. You found them as a slave, far from family and home, and put them to work as a sellsword. After you left the %companyname%, they stayed on and has been rising through its ranks ever since. You hear they were so ferocious in a battle with manhunters that the city-states have reconsidered sending men after the company at all, fearing what might happen if %name% took the fight to them more directly.";
+            bro.getBackground().m.BadEnding = "With your retiring from the unsuccessful %companyname%, %name% the indebted from the north carried on with the company for a time. You got wind that the mercenary band ran into troubles with manhunters and had to leave behind both \'man and material\' to escape. %name%\'s time with the company presumably ended sometime there. You hope %name%\'s time as a slave never started again.";
         }
     }
 
