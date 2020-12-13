@@ -4308,6 +4308,7 @@ roots only affects one tile
 Fixes double jester hat showing up in tooltips
 Fixes mountain helmet layer
 Fixes transform-into-boar active
+Should fix characters instantly fleeing from battle on therianthropy transform (This won't stop them from running to the edge of the map)
 
 **Art**
 Improves 2 of the heads already added by the mod
