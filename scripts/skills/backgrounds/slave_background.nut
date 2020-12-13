@@ -181,7 +181,7 @@ this.slave_background <- this.inherit("scripts/skills/backgrounds/character_back
 			r = 0;
 			if (this.World.LegendsMod.Configs().LegendGenderEnabled())
 			{
-				r = this.Math.rand(0, 4);
+				r = this.Math.rand(0, 19);
 			}
 		}
 
