@@ -290,14 +290,14 @@ gt.Const.LegendMod.HelmObjs.extend([
     Script = "",
     Sets = [{
     Hoods = [
-        [1, "hood/southern_headband_coin"]
+        [1, "hood/legend_helmet_southern_headband_coin"]
     ],
     Helms = [
     ],
     Tops = [
     ],
     Vanity = [
-        [5, "vanity/southern_earings"], //30
+        [5, "vanity/legend_helmet_southern_earings"], //30
     ]
 }]
 },{
@@ -305,7 +305,7 @@ gt.Const.LegendMod.HelmObjs.extend([
     Script = "",
     Sets = [{
     Hoods = [
-        [1, "hood/southern_headband_coin"]
+        [1, "hood/legend_helmet_southern_headband_coin"]
     ],
     Helms = [
     ],
@@ -319,14 +319,14 @@ gt.Const.LegendMod.HelmObjs.extend([
     Script = "",
     Sets = [{
     Hoods = [
-        [1, "hood/southern_headband_coin"]
+        [1, "hood/legend_helmet_southern_headband_coin"]
     ],
     Helms = [
     ],
     Tops = [
     ],
     Vanity = [
-        [1, "vanity/southern_headress_coin"], //80
+        [1, "vanity/legend_helmet_southern_headress_coin"], //80
     ]
 }]
 },{
@@ -334,12 +334,12 @@ gt.Const.LegendMod.HelmObjs.extend([
     Script = "",
     Sets = [{
     Hoods = [
-        [1, "hood/southern_headband_coin"]
+        [1, "hood/legend_helmet_southern_headband_coin"]
     ],
     Helms = [
     ],
     Tops = [
-        [1, "top/southern_veil_coin"]
+        [1, "top/legend_helmet_southern_veil_coin"]
     ],
     Vanity = [
     ]
@@ -349,16 +349,16 @@ gt.Const.LegendMod.HelmObjs.extend([
     Script = "",
     Sets = [{
     Hoods = [
-        [1, "hood/southern_headband_coin"]
+        [1, "hood/legend_helmet_southern_headband_coin"]
     ],
     Helms = [
     ],
     Tops = [
-        [10, "top/southern_veil"], //35
+        [10, "top/legend_helmet_southern_veil"], //5
     ],
     Vanity = [
-        [1, "vanity/southern_earings"], //30
-        [5, ""], //80
+        [1, "vanity/legend_helmet_southern_earings"], //5
+        [5, ""], //0
     ]
 }]
 },{
@@ -366,14 +366,14 @@ gt.Const.LegendMod.HelmObjs.extend([
     Script = "",
     Sets = [{
     Hoods = [
-        [1, "hood/southern_headband_coin"]
+        [1, "hood/legend_helmet_southern_headband_coin"]
     ],
     Helms = [
     ],
     Tops = [
     ],
     Vanity = [
-		[4, "vanity/southern_cloth_headress"] //80
+		[4, "vanity/legend_helmet_southern_cloth_headress"] //5
     ]
 }]
 },{

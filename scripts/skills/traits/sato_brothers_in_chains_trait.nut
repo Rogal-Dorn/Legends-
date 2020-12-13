@@ -4,7 +4,7 @@ this.sato_brothers_in_chains_trait <- this.inherit("scripts/skills/traits/charac
 	{
 		this.character_trait.create();
 		this.m.ID = "trait.sato_brothers_in_chains";
-		this.m.Name = "Brothers in Chains";
+		this.m.Name = "United in Chains";
 		this.m.Icon = "ui/settlement_status/settlement_effect_40.png";
 		this.m.Description = "This character has formed a bond with other former slaves. For every other Indebted on the field, this character gets [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] Melee Skill, Ranged Skill, Melee Defense, Ranged Defense, and Resolve.";
 		this.m.Order = this.Const.SkillOrder.Trait - 1;

@@ -119,12 +119,12 @@ this.female_slave_southern_background <- this.inherit("scripts/skills/background
 		
 			items.equip(this.Const.World.Common.pickHelmet([
 			[1, ""],
-			[1, "legend_helmet_outhern_headband_coin"],
-			[1, "legend_helmet_southern_headress_coin"],
-			[1, "legend_helmet_southern_earings"],
-			[5, "legend_helmet_southern_veil"],
-			[1, "legend_helmet_southern_veil_coin"],
-			[1, "legend_helmet_southern_cloth_headress"]
+			[1, "legend_southern_headband_coin"],
+			[1, "legend_southern_headress_coin"],
+			[1, "legend_southern_earings"],
+			[5, "legend_southern_veil"],
+			[1, "legend_southern_veil_coin"],
+			[1, "legend_southern_cloth_headress"]
 		]));
 	}
 
