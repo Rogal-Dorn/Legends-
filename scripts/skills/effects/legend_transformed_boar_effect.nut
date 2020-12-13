@@ -74,7 +74,7 @@ this.legend_transformed_boar_effect <- this.inherit("scripts/skills/skill", {
 			this.logDebug(this.getName() + " has surpress urges, AI set to boar on added");
 			actor.setAIAgent(this.new("scripts/ai/tactical/agents/boar_agent"));
 			actor.getAIAgent().setActor(actor);			
-			
+			actor.getAIAgent().removeBehavior(this.Const.AI.Behavior.ID.Retreat);
 			}
 			else if (this.m.Container.hasSkill("perk.legend_surpress_urges") && this.m.Container.hasSkill("perk.legend_control_instincts"))
 			{
@@ -86,6 +86,7 @@ this.legend_transformed_boar_effect <- this.inherit("scripts/skills/skill", {
 			actor.setFaction(this.Const.Faction.Beasts);		
 			actor.setAIAgent(this.new("scripts/ai/tactical/agents/boar_agent"));
 			actor.getAIAgent().setActor(actor);
+			actor.getAIAgent().removeBehavior(this.Const.AI.Behavior.ID.Retreat);
 			}
 
 		}

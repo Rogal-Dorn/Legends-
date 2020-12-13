@@ -73,6 +73,7 @@ this.legend_transformed_tree_effect <- this.inherit("scripts/skills/skill", {
 			{
 			actor.setAIAgent(this.new("scripts/ai/tactical/agents/schrat_agent"));
 			actor.getAIAgent().setActor(actor);
+			actor.getAIAgent().removeBehavior(this.Const.AI.Behavior.ID.Retreat);
 			}
 			else if (this.m.Container.hasSkill("perk.legend_surpress_urges") && this.m.Container.hasSkill("perk.legend_control_instincts"))
 			{
@@ -82,6 +83,7 @@ this.legend_transformed_tree_effect <- this.inherit("scripts/skills/skill", {
 			actor.setFaction(this.Const.Faction.Beasts);
 			actor.setAIAgent(this.new("scripts/ai/tactical/agents/schrat_agent"));
 			actor.getAIAgent().setActor(actor);
+			actor.getAIAgent().removeBehavior(this.Const.AI.Behavior.ID.Retreat);
 			}
 
 		}
