@@ -90,8 +90,8 @@ this.vizier <- this.inherit("scripts/entity/tactical/human", {
 		{
 			local helmet = [
 				[5, "oriental/vizier_headgear"],
-				[1, "legend_noble_southern_crown"],
-				[1, "legend_noble_southern_hat"]
+				//[1, "legend_helmet_noble_southern_crown"],
+				//[1, "legend_helmet_noble_southern_hat"]
 			];
 			this.m.Items.equip(this.Const.World.Common.pickHelmet(helmet));
 		}

@@ -4,7 +4,7 @@ this.sato_escaped_slaves_scenario <- this.inherit("scripts/scenarios/world/start
 	{
 		this.m.ID = "scenario.sato_escaped_slaves";
 		this.m.Name = "Escaped Slaves";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_166.png[/img][/p][p]You lead a group of slaves trying to escape their cruel fate, but you can't run forever. Can you keep your band intact and start a new life as mercenaries?\n\n[color=#bcad8c]Escapees:[/color] Start with five escaped Indebted, and find others held in captivity.\n[color=#bcad8c]Brothers in Chains:[/color] Your Indebted brothers are stronger together and gain skill based on how many you field.\n[color=#bcad8c]Downtrodden and Discarded:[/color] Good relations with any faction decay 15% faster, and bad relations recover 15% slower.[/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_166.png[/img][/p][p]You lead a group of slaves trying to escape their cruel fate, but you can't run forever. Can you keep your band intact and start a new life as mercenaries?\n\n[color=#bcad8c]Escapees:[/color] Start with five escaped Indebted, and find others held in captivity.\n[color=#bcad8c]Brothers in Chains:[/color] Your newfound family of Indebted are stronger together and gain skill based on how many you field.\n[color=#bcad8c]Downtrodden and Discarded:[/color] Good relations with any faction decay 15% faster, and bad relations recover 15% slower.[/p]";
 		this.m.Difficulty = 3;
 		this.m.Order = 87;
 	}
@@ -29,7 +29,7 @@ this.sato_escaped_slaves_scenario <- this.inherit("scripts/scenarios/world/start
 		bros[0].setStartValuesEx([
 			"slave_background"
 		]);
-		bros[0].getBackground().m.RawDescription = "%name% was a sellsword like yourself before he was enslaved and made a pit fighter. The arena was where you first met him, the two of you saving each other several times in a bout against an unhold. You\'ve been as close as brothers ever since. When you escaped, he was the first to pick up arms and follow. You know he\'ll be the last to put them down, too.";
+		bros[0].getBackground().m.RawDescription = "%name% was a sellsword like yourself before being enslaved and made a pit fighter. The arena was where you first met, the two of you saving each other several times in a bout against an unhold. You\'ve been as close as siblings ever since. When you escaped, %name% was the first to pick up arms and follow, and you know %name% will be the last to put them down, too.";
 		bros[0].getBackground().buildDescription(true);
 		bros[0].setPlaceInFormation(1);
 		bros[0].addLightInjury();
@@ -129,7 +129,7 @@ this.sato_escaped_slaves_scenario <- this.inherit("scripts/scenarios/world/start
 		bros[2].setStartValuesEx([
 			"slave_southern_background"
 		]);
-		bros[2].getBackground().m.RawDescription = "Formerly a gunner in a city-state regiment, %name% has never quite fit in with the rest of the Indebted. Cast out of the army and branded a heretic for some religious slight he refuses to talk about, the man has never managed to truly lose his disdain for the social strata he now finds himself in. Regardless, he is one of you now, and the man shows enough talent that you\'re willing to overlook his personality.";
+		bros[2].getBackground().m.RawDescription = "Formerly a gunner in a city-state regiment, %name% has never quite fit in with the rest of the Indebted. Cast out of the army and branded a heretic for some religious slight %name% refuses to talk about. The gunner was relegated to a disdained social strata never managed to truly lose that distaste. Regardless, %name% is one of you now, and shows enough talent that you\'re willing to overlook that personality.";
 		bros[2].getBackground().buildDescription(true);
 		bros[2].setPlaceInFormation(3);
 		bros[2].addLightInjury();
@@ -146,7 +146,7 @@ this.sato_escaped_slaves_scenario <- this.inherit("scripts/scenarios/world/start
 		talents[this.Const.Attributes.Bravery] = 2;
 		talents[this.Const.Attributes.RangedSkill] = 2;
 
-		bros[2].worsenMood(0.5, "Misses his life in the army");
+		bros[2].worsenMood(0.5, "Misses life in the army");
 		bros[2].improveMood(2.5, "Escaped a life of slavery");
 
 		local items = bros[2].getItems();
@@ -157,7 +157,7 @@ this.sato_escaped_slaves_scenario <- this.inherit("scripts/scenarios/world/start
 		bros[3].setStartValuesEx([
 			"slave_southern_background"
 		]);
-		bros[3].getBackground().m.RawDescription = "If you had to describe %name% in one word, it would be \'ornery.\' Bitter about his life before he was indebted, bitter about his life as a slave, and now bitter about his life on the run. Perhaps that bitterness is what compels him to cling to life so. %name% has taken enough lashings and beatings for three men, endured punishments meant to kill, and even gotten back up after catching an ifrit toss square in the chest. He\'s pretty bitter about that one, too.";
+		bros[3].getBackground().m.RawDescription = "If you had to describe %name% in one word, it would be \'ornery.\' Bitter about life before becoming indebted, bitter about life as a slave, and now bitter about life on the run. Perhaps that bitterness is what compels %name% to cling to life so, having taken enough lashings and beatings for three men, endured punishments meant to kill, and even gotten back up after catching an ifrit toss square in the chest. %name%\'s pretty bitter about that one, too.";
 		bros[3].getBackground().buildDescription(true);
 		bros[3].setPlaceInFormation(4);
 		bros[3].addInjury(this.Const.Injury.Brawl);
@@ -178,7 +178,7 @@ this.sato_escaped_slaves_scenario <- this.inherit("scripts/scenarios/world/start
 		bros[4].setStartValuesEx([
 			"slave_southern_background"
 		]);
-		bros[4].getBackground().m.RawDescription = "A scholar in his previous life, %name% was cast into slavery for research that was deemed offensive to the Gilder. The man accepted his new life with a grace few can muster. When the opportunity came to escape with you, however, he took it without hesitation, simply stating that this was the next path he was meant to take. It doesn\'t really make sense to you, but you don\'t care to debate him after seeing how he killed the conscript whose equipment he now wears.";
+		bros[4].getBackground().m.RawDescription = "A scholar in a previous life, %name% was cast into slavery for research that was deemed offensive to the Gilder. The scholar accepted a new life with a grace few can muster. When the opportunity came to escape with you, however, there was no hesitation, simply stating that this was the next fated path to take. It doesn\'t really make sense to you, but you don\'t care to debate after seeing the gruesome death of the conscript whose equipment %name% now wears.";
 		bros[4].setTitle("the Sage");
 		bros[4].getBackground().buildDescription(true);
 		bros[4].setPlaceInFormation(5);
@@ -466,10 +466,10 @@ this.sato_escaped_slaves_scenario <- this.inherit("scripts/scenarios/world/start
     function setRetireText( bro ) {
         if (bro.getBackground().getEthnicity() == 1) {
             bro.getBackground().m.GoodEnding = "You freed the indebted %name% and helped them find a new life as a sellsword. %name% did become an effective fighter, no doubt believing it was better to fight and live free than to fight and die. After your departure, you heard that the %companyname% traveled south on a campaign and the indebted got a good chance to exact a fair bit of revenge on a number of enemies from the past. You count yourself lucky to have served in the same company.";
-            bro.getBackground().m.BadEnding = "You found %name% as an indebted and after your retiring, he went on with the %companyname%. Word of the mercenary band\'s problems have trickled in, but nothing about the indebted\'s current situation. Knowing how this world works, he has either been put into the vanguard as fodder or forced out to distract manhunters on the company\'s trail. Either way, the world isn\'t easy on a sellsword, and it isn\'t easy on an indebted, and the man is unfortunately both.";
+            bro.getBackground().m.BadEnding = "You found %name% as an indebted and after your retiring, they went on with the %companyname%. Word of the mercenary band\'s problems have trickled in, but nothing about the indebted\'s current situation. Knowing how this world works, the slave has either been put into the vanguard as fodder or forced out to distract manhunters on the company\'s trail. Either way, the world isn\'t easy on a sellsword, and it isn\'t easy on an indebted, and this mercenary is unfortunately both.";
         } else if (bro.getBackground().getEthnicity() != 1) {
-            bro.getBackground().m.GoodEnding = "%name% the indebted has had a rough life and you\'ve both contributed to that and helped alleviate it in some way. You found him as a slave, far from family and home, and put him to work as a sellsword. After you left the %companyname%, he stayed on and has been rising through its ranks ever since. You hear he was so ferocious in a battle with manhunters that the city-states have reconsidered sending men after the company at all, fearing what might happen if he took the fight to them more directly.";
-            bro.getBackground().m.BadEnding = "With your retiring from the unsuccessful %companyname%, %name% the indebted from the north carried on with the company for a time. You got wind that the mercenary band ran into troubles with manhunters and had to leave behind both \'man and material\' to escape. %name%\'s time with the company presumably ended sometime there. You hope his time as a slave never started again.";
+            bro.getBackground().m.GoodEnding = "%name% the indebted has had a rough life and you\'ve both contributed to that and helped alleviate it in some way. You found them as a slave, far from family and home, and put them to work as a sellsword. After you left the %companyname%, they stayed on and has been rising through its ranks ever since. You hear they were so ferocious in a battle with manhunters that the city-states have reconsidered sending men after the company at all, fearing what might happen if %name% took the fight to them more directly.";
+            bro.getBackground().m.BadEnding = "With your retiring from the unsuccessful %companyname%, %name% the indebted from the north carried on with the company for a time. You got wind that the mercenary band ran into troubles with manhunters and had to leave behind both \'man and material\' to escape. %name%\'s time with the company presumably ended sometime there. You hope %name%\'s time as a slave never started again.";
         }
     }
 

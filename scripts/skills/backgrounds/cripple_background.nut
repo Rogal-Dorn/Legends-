@@ -6,8 +6,8 @@ this.cripple_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.ID = "background.cripple";
 		this.m.Name = "Cripple";
 		this.m.Icon = "ui/backgrounds/background_51.png";
-		this.m.BackgroundDescription = "The only thing swift about a cripple is his expected demise in a real battle.";
-		this.m.GoodEnding = "It\'s shocking that a man of %name%\'s stature survived at all, but the cripple did retire from the %companyname% with a sizeable stack of crowns. He runs an orphanage these days, spending his crowns to help the world\'s broken and abandoned children. That, or it\'s just a front for cheap labor. Can\'t be too sure these days.";
+		this.m.BackgroundDescription = "The only thing swift about a cripple is their expected demise in a real battle.";
+		this.m.GoodEnding = "It\'s shocking that a person of %name%\'s stature survived at all, but the cripple did retire from the %companyname% with a sizeable stack of crowns. He runs an orphanage these days, spending his crowns to help the world\'s broken and abandoned children. That, or it\'s just a front for cheap labor. Can\'t be too sure these days.";
 		this.m.BadEnding = "When you left the %companyname%, there was one thing you were almost certain of: that damned cripple, %name%, wouldn\'t last long. Despite all odds, he did survive. Long enough in fact to retire himself, albeit departing with about as many crowns as he had when he joined up. You\'ve no idea what became of him, but surely he\'s dead by now. Surely, right?";
 		this.m.HiringCost = 30;
 		this.m.DailyCost = 3;

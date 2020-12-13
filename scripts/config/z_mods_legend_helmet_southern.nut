@@ -362,7 +362,7 @@ gt.Const.LegendMod.HelmObjs.extend([
     ]
 }]
 },{
-    ID = "oriental/southern_cloth_headress", 
+    ID = "legend_southern_cloth_headress", 
     Script = "",
     Sets = [{
     Hoods = [

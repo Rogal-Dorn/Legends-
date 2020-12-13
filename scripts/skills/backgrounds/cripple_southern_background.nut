@@ -26,8 +26,6 @@ this.cripple_southern_background <- this.inherit("scripts/skills/backgrounds/cri
 		{
 			return;
 		}
-		this.m.GoodEnding = "It\'s shocking that a woman of %name%\'s stature survived at all, but the cripple did retire from the %companyname% with a sizeable stack of crowns. She runs an orphanage these days, spending her crowns to help the world\'s broken and abandoned children. That, or it\'s just a front for cheap labor. Can\'t be too sure these days.";
-		this.m.BadEnding = "When you left the %companyname%, there was one thing you were almost certain of: that damned cripple, %name%, wouldn\'t last long. Despite all odds, she did survive. Long enough in fact to retire herself, albeit departing with about as many crowns as she had when she joined up. You\'ve no idea what became of her, but surely she\'s dead by now. Surely, right?";
 		this.m.Faces = this.Const.Faces.SouthernFemale;
 		this.m.Hairs = this.Const.Hair.SouthernFemale;
 		this.m.HairColors = this.Const.HairColors.Young;
@@ -50,6 +48,31 @@ this.cripple_southern_background <- this.inherit("scripts/skills/backgrounds/cri
 		}		
 	
 	}
+	
+	//Default Male
+	function setGender(_gender = -1)
+	{
+		local r = _gender;
+		if (_gender == -1)
+		{
+			r = this.Math.rand(0, 1);
+		}
+
+		if (r == 0)
+		{
+			return;
+		}
+		this.m.GoodEnding = "It\'s shocking that a woman of %name%\'s stature survived at all, but the cripple did retire from the %companyname% with a sizeable stack of crowns. She runs an orphanage these days, spending her crowns to help the world\'s broken and abandoned children. That, or it\'s just a front for cheap labor. Can\'t be too sure these days.";
+		this.m.BadEnding = "When you left the %companyname%, there was one thing you were almost certain of: that damned cripple, %name%, wouldn\'t last long. Despite all odds, she did survive. Long enough in fact to retire herself, albeit departing with about as many crowns as she had when she joined up. You\'ve no idea what became of her, but surely she\'s dead by now. Surely, right?";
+		this.m.Faces = this.Const.Faces.AllWhiteFemale;
+		this.m.Hairs = this.Const.Hair.AllFemale;
+		this.m.HairColors = this.Const.HairColors.Young;
+		this.m.Beards = null;
+		this.m.BeardChance = 0;
+		this.m.Bodies = this.Const.Bodies.FemaleSkinny;
+		this.m.IsFemaleBackground = true;
+
+	}	
 
 	function onAddEquipment()
 	{
