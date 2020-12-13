@@ -610,7 +610,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         Sets = [{
         Hoods = [
             [1, "hood/legend_helmet_cloth_bandana"], //15,
-            [2, "hood/legend_cloth_cap"] //10
+            [2, "hood/legend_helmet_cloth_cap"] //10
         ],
         Helms = [
         ],
@@ -1304,7 +1304,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         Sets = [{
         Hoods = [
             [1, "hood/legend_helmet_cloth_bandana"], //15,
-            [2, "hood/legend_cloth_cap"] //10
+            [2, "hood/legend_helmet_cloth_cap"] //10
         ],
         Helms = [
         ],
@@ -1320,7 +1320,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         Sets = [{
         Hoods = [
             [1, "hood/legend_helmet_cloth_bandana"], //15,
-            [2, "hood/legend_cloth_cap"] //10
+            [2, "hood/legend_helmet_cloth_cap"] //10
         ],
         Helms = [
         ],
@@ -1336,7 +1336,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         Sets = [{
         Hoods = [
             [1, "hood/legend_helmet_cloth_bandana"], //15,
-            [2, "hood/legend_cloth_cap"] //10
+            [2, "hood/legend_helmet_cloth_cap"] //10
         ],
         Helms = [
         ],
@@ -1352,7 +1352,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         Sets = [{
         Hoods = [
             [1, "hood/legend_helmet_cloth_bandana"], //15,
-            [2, "hood/legend_cloth_cap"] //10
+            [2, "hood/legend_helmet_cloth_cap"] //10
         ],
         Helms = [
         ],
@@ -1368,7 +1368,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         Sets = [{
         Hoods = [
             [1, "hood/legend_helmet_cloth_bandana"], //15,
-            [2, "hood/legend_cloth_cap"] //10
+            [2, "hood/legend_helmet_cloth_cap"] //10
         ],
         Helms = [
         ],
