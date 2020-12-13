@@ -12,7 +12,7 @@ vanilla = [
     "ancient/ancient_legionary_helmet",
     "ancient/ancient_priest_diadem",
     "ancient/legend_ancient_legionary_helmet_restored",
-     "ancient/legend_legend_mummy_beard",
+    "ancient/legend_legend_mummy_beard",
     "ancient/legend_legend_mummy_bandage",
     "ancient/legend_legend_mummy_crown_king",
     "ancient/legend_legend_mummy_crown",
@@ -825,7 +825,7 @@ layers = [
  "title" :  "Pointed Faceplate", \
  "desc" :  "A long nosed faceplate designed to deflect glancing blows" \
 },
-{"name" : "faceplate_pointed_slit"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 450, "con" : 50 "stam" : -3, "vis" : -2, "hair" : "false", "beard" : "false",  \
+{"name" : "faceplate_pointed"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 450, "con" : 50, "stam" : -3, "vis" : -2, "hair" : "false", "beard" : "true",  \
  "title" :  "Slit Pointed Faceplate", \
  "desc" :  "Slit Pointed Faceplate" \
 },
