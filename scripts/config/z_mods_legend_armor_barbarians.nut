@@ -150,7 +150,6 @@ gt.Const.LegendMod.ArmorObjs.extend([
         ]
     }]
 },{
-},{
     ID = "barbarians/legend_barbarian_southern_armor", // 70 ; from Kamy in fashion-show
     Script = "",
     Sets = [{
