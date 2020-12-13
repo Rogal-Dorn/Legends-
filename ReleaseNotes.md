@@ -4325,6 +4325,7 @@ Surgeon = "Field triage perk" Monk, Nun, Maid
 Trader = Caravan Hand. Peddler, trader  + trade requirement
 
 **Fixes/Tweaks**
+
 Actually fixes armored unholds' helmets
 Hedge Knights no longer have vanilla helmets when playing on layered system
 Arena contracts that give euqipment should give layered equipment now
@@ -4335,6 +4336,8 @@ Veteran level recruits (12+) don't spawn with too many perk points now
 Were-monsters shouldn't have hair/beards anymore when transformed
 Fixed alignment on gobo wolfrider helmets
 Fixes camp having low res ground in desert environments
+Updates skeleton gladiator AI and stats 
+Southern beasts cont toward favoured enemy perks, hyenas with direwolves, serpents with lindwurms and golems with schrats. 
 "Southern-based" armor to barbarian reavers by Kamy  
 
 Fixes tent sell-price determining for Fletching & Gathering tent

@@ -431,15 +431,15 @@ gt.Const.Tactical.Actor.LegendDemonHound <- {
 };
 
 gt.Const.Tactical.Actor.SkeletonGladiator <- {
-	XP = 200,
-	ActionPoints = 9,
-	Hitpoints = 65,
+	XP = 300,
+	ActionPoints = 12,
+	Hitpoints = 120,
 	Bravery = 100,
 	Stamina = 100,
-	MeleeSkill = 55,
-	RangedSkill = 65,
-	MeleeDefense = 0,
-	RangedDefense = 0,
+	MeleeSkill = 65,
+	RangedSkill = 75,
+	MeleeDefense = 10,
+	RangedDefense = 30,
 	Initiative = 65,
 	FatigueEffectMult = 0.0,
 	MoraleEffectMult = 0.0,
