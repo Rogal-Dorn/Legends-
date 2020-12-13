@@ -444,6 +444,11 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 		return 0.0;
 	}
 
+	function onRepair(_a)
+	{
+		return this.setCondition(_a);
+	}
+
 	function onArmorTooltip( _result )
 	{
 	}
