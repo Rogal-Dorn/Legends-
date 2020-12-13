@@ -96,12 +96,12 @@ gt.Const.LegendMod.HelmObjs.extend([
     Script = "",
     Sets = [{
     Hoods = [
-		[1, "hood/legend_helmet_padded_cap"], //40
+		  [1, "hood/legend_helmet_padded_cap"], //40
     ],
     Helms = [
-		[4, "helm/legend_helmet_southern_gladiator_helm_crested"], //130
-		[1, "helm/legend_helmet_southern_gladiator_helm_split"], //130
-		[1, "helm/legend_helmet_southern_gladiator_helm_masked"], //130
+      [1, "helm/legend_helmet_southern_gladiator_helm_crested"], //130
+      [1, "helm/legend_helmet_southern_gladiator_helm_split"], //130
+      [1, "helm/legend_helmet_southern_gladiator_helm_masked"], //130
     ],
     Tops = [
     ],

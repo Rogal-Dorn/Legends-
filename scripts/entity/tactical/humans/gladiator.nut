@@ -117,7 +117,7 @@ this.gladiator <- this.inherit("scripts/entity/tactical/human", {
 		]));
 
 		local helm = this.Const.World.Common.pickHelmet([
-			[1, "oriental/gladiator_helmet"],
+			[1, "oriental/gladiator_helmet", this.Math.rand(13, 15)],
 			[1, ""]
 		])
 		this.m.Items.equip(helm);
