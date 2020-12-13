@@ -85,6 +85,7 @@ this.legend_transformed_rat_effect <- this.inherit("scripts/skills/skill", {
 				this.logDebug(this.getName() + " AI set to wardog");
 				actor.setAIAgent(this.new("scripts/ai/tactical/agents/wardog_agent"));
 				actor.getAIAgent().setActor(actor);
+				actor.getAIAgent().removeBehavior(this.Const.AI.Behavior.ID.Retreat);
 			}
 			else if (this.m.Container.hasSkill("perk.legend_surpress_urges") && this.m.Container.hasSkill("perk.legend_control_instincts"))
 			{}
@@ -93,6 +94,7 @@ this.legend_transformed_rat_effect <- this.inherit("scripts/skills/skill", {
 				actor.setFaction(this.Const.Faction.Beasts);		
 				actor.setAIAgent(this.new("scripts/ai/tactical/agents/direwolf_agent"));
 				actor.getAIAgent().setActor(actor);
+				actor.getAIAgent().removeBehavior(this.Const.AI.Behavior.ID.Retreat);
 			}
 
 		}
