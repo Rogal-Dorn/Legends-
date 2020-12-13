@@ -4307,6 +4307,7 @@ Fixes slaughterer tooltip
 roots only affects one tile
 Fixes double jester hat showing up in tooltips
 Fixes mountain helmet layer
+Fixes transform-into-boar active
 
 **Art**
 Improves 2 of the heads already added by the mod
