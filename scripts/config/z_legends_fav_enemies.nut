@@ -22,6 +22,7 @@ gt.Const.LegendMod.FavoriteAlps <- [
 ];
 
 gt.Const.LegendMod.FavoriteDirewolf <- [
+	this.Const.EntityType.Hyena,
 	this.Const.EntityType.Direwolf,
 	this.Const.EntityType.Wolf,
 	this.Const.EntityType.GoblinWolfrider,
@@ -47,6 +48,7 @@ gt.Const.LegendMod.FavoriteHexe <- [
 ];
 
 gt.Const.LegendMod.FavoriteLindwurm <- [
+	this.Const.EntityType.Serpent,
 	this.Const.EntityType.Lindwurm,
 	this.Const.EntityType.LegendStollwurm
 ];
@@ -61,6 +63,7 @@ gt.Const.LegendMod.FavoriteOrc <- [
 ];
 
 gt.Const.LegendMod.FavoriteSchrat <- [
+	this.Const.EntityType.SandGolem,
 	this.Const.EntityType.Schrat,
 	this.Const.EntityType.SchratSmall,
 	this.Const.EntityType.LegendGreenwoodSchrat,
@@ -231,6 +234,9 @@ gt.Const.LegendMod.GetFavoriteEnemyValue <- function ( _type )
 		case "this.Const.EntityType.Lindwurm":
 		value = 1;
 		break;
+		case "this.Const.EntityType.Serpent":
+		value = 4;
+		break;
 		case "this.Const.EntityType.LegendStollwurm":
 		value = 0.3;
 		break;
@@ -245,6 +251,9 @@ gt.Const.LegendMod.GetFavoriteEnemyValue <- function ( _type )
 		break;
 		case "this.Const.EntityType.LegendGreenwoodSchratSmall":
 		value = 5;
+		break;
+		case "this.Const.EntityType.SandGolem":
+		value = 1;
 		break;
 		case "this.Const.EntityType.Schrat":
 		value = 1;
@@ -281,6 +290,9 @@ gt.Const.LegendMod.GetFavoriteEnemyValue <- function ( _type )
 		break;
 		case "this.Const.EntityType.LegendSkinGhoul":
 		value = 2;
+		break;
+		case "this.Const.EntityType.Hyena":
+		value = 4;
 		break;
 		case "this.Const.EntityType.Direwolf":
 		value = 6;

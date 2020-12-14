@@ -140,6 +140,8 @@ gt.Const.Strings.BarbarianTitles <- [
 
 gt.Const.Strings.SouthernNames <- ["Jamil","Uthman","Sayid","Radwan","Yazid","Sahir","Wahib","Amira","Aslam","Atiq","Sadan","Ayman","Hakan","Hafas","Sawar","Shuyab","Husan","Hamdun","Ayshun","Jabir","Zuhri","Jifri","Galib","Tamim","Jaquba","Zawahir","Shurayd","Walid","Musa","Ubaid","Harad","Tariq","Wasi","Fariss","Abani","Mutar","Tawid","Zahiri","Milad","Nuh","Abdari","Junaid","Malik","Naser","Jahaf","Yazir","Talha","Sabti","Harun","Firi","Rashid","Hamdin","Rasil","Hayan","Askari","Barkud","Husni","Omar","Aarôn","Abdul-Hazeem","Anisse","Mufawwiz","Ugwistan","Zaia","Relip","Wilen","Abarran","Zorion","Abu-Bakr","Aarif","Abdul-Gafur","Abdul-Jaleel","Abdul-Qadir","Abdul-Wahab","Abdul","Abdullah","Aghlab","Akin","Ali","Alim","Aram","Azam","Bahir","Burhanaddin","Fadil","Fadl","Faruk","Ghalib","Hafiz","Halil","Hasan","Husam","Hussayn","Ibrahim","Idris","Isa","Jalil","Jibril","Khaireddin","Khalil","Mahdi","Mahmud","Mansur","Mirza","Mubarak","Muhammad","Mukhtar","Murad","Muslihiddin","Muzaffaraddin","Najib","Nasr","Nizam","Qawurd","Ramadan","Sadiq","Sami","Samir","Shaiban","Shamir","Shujah","Sulayman","Talib","Ubayd","Uways","Yahya","Youkhanna","Yusuf","Zeyd","Abdul-Azeem","Abdul-Hamid","Abdul-Lateef","Abdul-Razzaq","Abdul-Wahad","Adhid","Adil","Akab","Amir","Ashraf","Aziz","Bashar","Boutros","Faisal","Fayiz","Ghazi","Hakam","Hamdan","Hashmaddin","Imamaddin","Ismat","Jahan","Kamran","Khalid","Khudayar","Majid","Muaddam","Muhsin","Muzaffar","Nasraddin","Nuraddin","Nuri","Radhi","Rasul","Salahaddin","Seyfullah","Sharaf","Sirhan","Taimur","Tawfiq","Umaya","Wahid","Yasar","Zahir","Aaron","Abanoub","Abderahman","Abdul-Aziz","Abdul-Haq","Abdul-Madjid","Abdul-Salaam","Abianos","Abisalom","Ablarion","Abraam","Adnan","Agathon","Agathonikos","Agathos","Ahmad","Akbar","Alam","Amr","Androus","Anthinos","Arsenios","Asim","Athanasios","Badr","Bashir","Biktor","Binyamin","Bishoi","Danyal","Dawlat","Ezra","Farhan","Firuz","Georgios","Ghiyasaddin","Habil","Hammud","Hanri","Haroun","Hisham","Ilyas","Izzaddin","Jalaaladdin","Jawdat","Jerjer","Kemaladdin","Krystafer","Latif","Lot","Matta","Mehtar","Mikail","Mikhael","Mina","Muammar","Murshid","Nabil","Nasir","Nassib","Pamin","Qadir","Rafiq","Ridwan","Sabah","Salim","Sharif","Suhail","Tadros","Tajaddin","Tayyib","Touma","Usama","Yared","Yassir","Youssef","Zakariyah","Abbad","Abbas","Abdallah","Abdul-Hakam","Abdul-Hasan","Abdul-Hazm","Abdul-Rahman","Abu","Adfuns","Ayyub","Balashk","Bilal","Fath","Galind","Garsiya","Hilal","Jyad","Lubb","Mubashir","Mundir","Muyahid","Raf","Rasiq","Sanyo","Siddray","Suleyman","Tifilwit","Umar","Utman","Wannaqo","Yahaff","Aden","Zainuddin","Zulfiqar",];
 
+gt.Const.Strings.AncientSouthernNames <- ["Aahotepre","Achillas","Addaya","Agathocies","Ebana","Ahmose","Amenmose","Amenemhat","Ankhkherednefer","Ankhmakis","Ankherfenedjef","Ankhreshet","Amenemhatankh","Ahmose","Sapair","Amenemhat","Amenemopet","Amenhotep","Amunherkhepeshef","Ankhhaf","Meritamon","Nebetta","Tumerisy","Henutemipet","Sitamun","Tasherit","Anen","Pairy","Huy","Aperei","Amethu","Bay Irsu","Bakenkhonsu","Baqet","Babaef","Bebi","Bakenrenef","Charmian","Duaenre","Djau","Dagi","Djaty","Djedefhor","Djedi","Duaenhor","Djediufankh","Dedi","Djehuty","Gemenefkhonsbak","Harkhebi","Harwa","Hui","Hannu","Herihor","Harkhuf","Hapuseneb","Haremakhet","Harsiese","Hori","Hsekiu","Horbaef","Hornakht","Hakor","Hunefer","Hepu","Hewernef","Ineni","Intef","Isesi","Iuput","Ini Menkhepere","Inkaef","Isu","Itisen","Iunre","Iynefer","Ibiaw","Ibi","Iunmin","Iuty","Iymeru","Kaaper","Kagemni","Khabash","Khabekhnet","Mentuherkhopshef","Mentuhotep","Menna","Merneptah","Minmose","Nahkt","Nakhtmin","Nakhtpaaten",];
+
 gt.Const.Strings.SouthernNamesLast <- [
 	"Ibn Sahr",
 	"Al-Dani",
@@ -1583,6 +1585,8 @@ gt.Const.Strings.FallenHeroTitles <- [
 	"the Soulless",
 	"the Vessel"
 ];
+
+
 gt.Const.Strings.NecromancerNames <- [
 	"King of Worms",
 	"%randomname% the Undying",
@@ -1676,4 +1680,22 @@ gt.Const.Strings.VampireLordNames <- [
 	"Smento",
 	"Mohar",
 	"Abdamelek"
+]
+
+gt.Const.Strings.SatoManhunterVeteranTitles <- [
+	"the Blight",
+	"the Iron Shackle",
+	"the Steel Shackle",
+	"the Reclaimer",
+	"the Relentless",
+	"the Hyena",
+	"the Gilder\'s Watchdog",
+	"the Tracker",
+	"the Pursuer",
+	"the Cruel",
+	"the Gilder\'s Chain",
+	"the Slave Catcher",
+	"the Brute",
+	"the Silver Manacle",
+	"the Dog"
 ]

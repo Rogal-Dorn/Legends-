@@ -61,6 +61,35 @@ this.houndmaster_background <- this.inherit("scripts/skills/backgrounds/characte
 			Magic = []
 		}
 	}
+	
+	//Default Male
+	function setGender(_gender = -1)
+	{
+		local r = _gender;
+		if (_gender == -1)
+		{
+			r = 0;
+			if (this.World.LegendsMod.Configs().LegendGenderEnabled())
+			{
+				r = this.Math.rand(0, 1);
+			}
+		}
+
+		if (r != 1)
+		{
+			return
+		}
+		this.m.Faces = this.Const.Faces.AllWhiteFemale;
+		this.m.Hairs = this.Const.Hair.AllFemmale;
+		this.m.HairColors = this.Const.HairColors.All;
+		this.m.Beards = null;
+		this.m.BeardChance = 0;
+		this.m.Bodies = this.Const.Bodies.FemaleSkinny;
+		this.m.IsFemaleBackground = true;
+		this.m.GoodEnding = "Dogs were not simply \'hounds\' to %name%, despite her title as \'houndmaster.\' To her, they were the most loyal friends of her life. After leaving the company, she discovered an ingenious way to breed the animals specifically tailored to the desires of the nobility. Wanted a brutish beast for a guard dog? She could do it. Wanted something small and cuddly for the children? She could do that, too. The former mercenary now earns an incredible earning doing what she loves - working with dogs.";
+		this.m.BadEnding = "What\'s merely a hound to some folks is a loyal beast to %name%. After leaving the company, the houndmaster went out to work for the nobility. Unfortunately, she refused to let hundreds of her dogs be used as a battle vanguard to be thrown away for some short-lived tactical advantage. She was hanged for her \'traitorous ideals\'.";
+
+	}
 
 	function getTooltip()
 	{
@@ -86,7 +115,14 @@ this.houndmaster_background <- this.inherit("scripts/skills/backgrounds/characte
 
 	function onBuildDescription()
 	{
-		return "{%name%\'s fondness for dogs started after his father won a pup in a shooting contest. | When a dog saved him from a bear, %name% dedicated his life to the canine lot. | Seeing a dog stave off a would-be robber, %name%\'s fondness for the mutts only grew. | A young, bird-hunting %name% quickly saw the honor, loyalty, and workmanship of a dog. | Once bitten by a wild dog, %name% confronted his fear of canines by learning to train them.} {The houndmaster spent many years working for a local lord. He gave up the post after the liege struck a dog down just for sport. | Quick with training his mongrels, the houndmaster put his dogs into a lucrative traveling tradeshow. | The man made a great deal of money on the dog-fighting circuits, his mutts renowned for their easily commanded - and unleashed - ferocity. | Employed by lawmen, the houndmaster used his strong-nosed dogs to hunt down many a criminal element. | Used by a local lord, many of the houndmaster\'s dogs found their way onto the battlefield. | For many years, the houndmaster used his dogs to help lift the spirits of orphaned children and the crippled.} {Now, though, %name% seeks a change of vocation. | When he heard word of a mercenary\'s pay, %name% decided to try his hand at being a sellsword. | Approached by a sellsword to buy one of his dogs, %name% became more interested in the prospect of he, himself, becoming a mercenary. | Tired of training dogs for this purpose or that, %name% seeks to train himself for... well, this purpose or that. | An interesting prospect, you can only hope %name% is as loyal as the dogs he once commanded.}";
+		if(this.m.IsFemaleBackground == true)
+		{
+			return "{%name%\'s fondness for dogs started after her father won a pup in a shooting contest. | When a dog saved her from a bear, %name% dedicated her life to the canine lot. | Seeing a dog stave off a would-be robber, %name%\'s fondness for the mutts only grew. | A young, bird-hunting %name% quickly saw the honor, loyalty, and workmanship of a dog. | Once bitten by a wild dog, %name% confronted her fear of canines by learning to train them.} {The houndmaster spent many years working for a local lord. She gave up the post after the liege struck a dog down just for sport. | Quick with training her mongrels, the houndmaster put her dogs into a lucrative traveling tradeshow. | The woman made a great deal of money on the dog-fighting circuits, her mutts renowned for their easily commanded - and unleashed - ferocity. | Employed by lawmen, the houndmaster used her strong-nosed dogs to hunt down many a criminal element. | Used by a local lord, many of the houndmaster\'s dogs found their way onto the battlefield. | For many years, the houndmaster used her dogs to help lift the spirits of orphaned children and the crippled.} {Now, though, %name% seeks a change of vocation. | When she heard word of a mercenary\'s pay, %name% decided to try her hand at being a sellsword. | Approached by a sellsword to buy one of her dogs, %name% became more interested in the prospect of she, herself, becoming a mercenary. | Tired of training dogs for this purpose or that, %name% seeks to train herself for... well, this purpose or that. | An interesting prospect, you can only hope %name% is as loyal as the dogs she once commanded.}";
+		}
+		else
+		{
+			return "{%name%\'s fondness for dogs started after his father won a pup in a shooting contest. | When a dog saved him from a bear, %name% dedicated his life to the canine lot. | Seeing a dog stave off a would-be robber, %name%\'s fondness for the mutts only grew. | A young, bird-hunting %name% quickly saw the honor, loyalty, and workmanship of a dog. | Once bitten by a wild dog, %name% confronted his fear of canines by learning to train them.} {The houndmaster spent many years working for a local lord. He gave up the post after the liege struck a dog down just for sport. | Quick with training his mongrels, the houndmaster put his dogs into a lucrative traveling tradeshow. | The man made a great deal of money on the dog-fighting circuits, his mutts renowned for their easily commanded - and unleashed - ferocity. | Employed by lawmen, the houndmaster used his strong-nosed dogs to hunt down many a criminal element. | Used by a local lord, many of the houndmaster\'s dogs found their way onto the battlefield. | For many years, the houndmaster used his dogs to help lift the spirits of orphaned children and the crippled.} {Now, though, %name% seeks a change of vocation. | When he heard word of a mercenary\'s pay, %name% decided to try his hand at being a sellsword. | Approached by a sellsword to buy one of his dogs, %name% became more interested in the prospect of he, himself, becoming a mercenary. | Tired of training dogs for this purpose or that, %name% seeks to train himself for... well, this purpose or that. | An interesting prospect, you can only hope %name% is as loyal as the dogs he once commanded.}";
+		}	
 	}
 
 	function onChangeAttributes()
