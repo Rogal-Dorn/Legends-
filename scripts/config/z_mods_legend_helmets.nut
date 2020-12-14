@@ -1315,6 +1315,22 @@ gt.Const.LegendMod.HelmObjs.extend([
         ]
     }]
     },{
+        ID = "legend_noble_hood", //70
+        Script = "",
+        Sets = [{
+        Hoods = [
+            [1, "hood/legend_helmet_cloth_bandana"], //15,
+            [2, "hood/legend_helmet_cloth_cap"] //10
+        ],
+        Helms = [
+        ],
+        Tops = [
+        ],
+        Vanity = [
+          [1, "vanity/legend_helmet_noble_hood"] //10
+        ]
+    }]
+    },{
         ID = "legend_noble_hat", //70
         Script = "",
         Sets = [{

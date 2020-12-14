@@ -759,7 +759,7 @@ top="-52" bottom="2" />
   <sprite id="bust_female_northern_body_01_dead_arrows" offsetX="6" offsetY="10" f="64FB" ic="FF494D50" width="131" height="134" img="entity\bodies\bust_naked_body_00_dead_arrows.png" left="-28" right="8" top="-9" bottom="39" />
   <sprite id="bust_female_northern_body_01_dead_javelin" offsetX="6" offsetY="10" f="64FB" ic="FF111632" width="131" height="154" img="entity\bodies\bust_naked_body_00_dead_javelin.png" left="-25" right="21" top="-4" bottom="72" />
   <sprite id="bust_female_northern_body_01_injured" offsetY="35" ic="FF0E0E50" width="104" height="142" img="entity\bodies\bust_female_northern_body_01_injured.png" left="-40" right="38" top="-48" bottom="10" />
-  <sprite id="bust_female_northern_body_02" offsetY="35" ic="FF4D719B" width="104" height="142" img="entity\bodies\bust_female_southern_body_02.png" left="-42" right="40" top="-50" bottom="10" />
+  <sprite id="bust_female_northern_body_02" offsetY="35" ic="FF4D719B" width="104" height="142" img="entity\bodies\bust_female_northern_body_02.png" left="-42" right="40" top="-50" bottom="10" />
   <sprite id="bust_female_northern_body_02_dead" offsetX="6" offsetY="10" ic="FF374D76" width="131" height="114" img="entity\bodies\bust_female_northern_body_00_dead.png" left="-65" right="66" top="-57" bottom="53" />
   <sprite id="bust_female_northern_body_02_dead_arrows" offsetX="6" offsetY="10" f="64FB" ic="FF494D50" width="131" height="134" img="entity\bodies\bust_naked_body_00_dead_arrows.png" left="-28" right="8" top="-9" bottom="39" />
   <sprite id="bust_female_northern_body_02_dead_javelin" offsetX="6" offsetY="10" f="64FB" ic="FF111632" width="131" height="154" img="entity\bodies\bust_naked_body_00_dead_javelin.png" left="-25" right="21" top="-4" bottom="72" />
