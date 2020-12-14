@@ -240,5 +240,74 @@ gt.Const.LegendMod.ArmorObjs.extend([
         Attachments =[
         ]
     }]
+},{
+    ID = "ancient/legend_mummy_dress", // 10
+    Script = "scripts/items/armor/ancient/legend_mummy_dress",
+    Sets = [{
+        Cloth = [
+        ],
+        Chain = [
+        ],
+        Plate = [
+        ],
+        Cloak = [
+        ],
+        Tabard = [
+        ],
+        Attachments =[
+        ]
+    }]
+},{
+    ID = "ancient/legend_mummy_plate", // 10
+    Script = "scripts/items/armor/ancient/legend_mummy_plate",
+    Sets = [{
+        Cloth = [
+        ],
+        Chain = [
+        ],
+        Plate = [
+        ],
+        Cloak = [
+        ],
+        Tabard = [
+        ],
+        Attachments =[
+        ]
+    }]
+},{
+    ID = "ancient/legend_mummy_bandages", // 10
+    Script = "scripts/items/armor/ancient/legend_mummy_bandages",
+    Sets = [{
+        Cloth = [
+        ],
+        Chain = [
+        ],
+        Plate = [
+        ],
+        Cloak = [
+        ],
+        Tabard = [
+        ],
+        Attachments =[
+        ]
+    }]
+}
+{
+    ID = "ancient/legend_mummy_royal_plate", // 10
+    Script = "scripts/items/armor/ancient/legend_mummy_royal_plate",
+    Sets = [{
+        Cloth = [
+        ],
+        Chain = [
+        ],
+        Plate = [
+        ],
+        Cloak = [
+        ],
+        Tabard = [
+        ],
+        Attachments =[
+        ]
+    }]
 }
 ])
