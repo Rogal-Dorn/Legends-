@@ -1,9 +1,9 @@
-this.ancient_sword <- this.inherit("scripts/items/weapons/weapon", {
+this.legend_gladius <- this.inherit("scripts/items/weapons/weapon", {
 	m = {},
 	function create()
 	{
 		this.weapon.create();
-		this.m.ID = "weapon.ancient_sword";
+		this.m.ID = "weapon.legend_gladius";
 		this.m.Name = "Ancient Gladius";
 		this.m.Description = "A straight blade of ancient origin. The grip and pomel are very plain, from a simpler time.";
 		this.m.Categories = "Sword, One-Handed";
