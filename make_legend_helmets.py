@@ -425,7 +425,7 @@ layers = [
  "title" :  "Southern Coin Headband", \
  "desc" :  "A southern headband of coins strung together" \
 },
-{"name" : "mummy_bandage"                     , "layer" : "hood", "min" : 1, "max" : 1, "base" : True, "value" : 5, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "true",  \
+{"name" : "mummy_bandage"                     , "layer" : "hood", "min" : 1, "max" : 2, "base" : True, "value" : 5, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "true",  \
  "title" :  "Ancient Southern Facemask", \
  "desc" :  "Wrappings from a long dead embalmed corpse" \
 },
