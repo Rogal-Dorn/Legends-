@@ -27,12 +27,20 @@ this.brigand_follower <- this.inherit("scripts/retinue/follower", {
 
 	function onEvaluate()
 	{
-		this.m.Requirements[0].Text = "Raided " + this.Math.min(4, this.World.Statistics.getFlags().getAsInt("CaravansRaided")) + "/4 caravans";
-
-		if (this.World.Statistics.getFlags().getAsInt("CaravansRaided") >= 4)
+		this.m.Requirements[0].Text = "Have a Raider, Barbarian or Deserter in your company";
+		
+		local hasRaider = 0;
+		local brothers = this.World.getPlayerRoster().getAll();
+		foreach( bro in brothers )
 		{
-			this.m.Requirements[0].IsSatisfied = true;
-		}
+			if (bro.getBackground().getID() == "background.raider" || bro.getBackground().getID() == "background.barbarian" || bro.getBackground().getID() == "background.deserter" )
+			{
+		this.m.Requirements[0].IsSatisfied = true;
+			}
+
+		}	
+
+
 	}
 
 });

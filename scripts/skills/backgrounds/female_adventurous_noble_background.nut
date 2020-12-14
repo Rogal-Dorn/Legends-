@@ -33,7 +33,7 @@ this.female_adventurous_noble_background <- this.inherit("scripts/skills/backgro
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Bodies = this.Const.Bodies.AllFemale;
+		this.m.Bodies = this.Const.Bodies.FemaleMuscular;
 		this.m.IsFemaleBackground = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
@@ -200,7 +200,11 @@ this.female_adventurous_noble_background <- this.inherit("scripts/skills/backgro
 			[1, "padded_nasal_helmet"],
 			[1, "nasal_helmet_with_mail"],
 			[1, "mail_coif"],
-			[1, ""]
+			[1, "legend_helmet_noble_floppy_hat"],
+			[1, "legend_helmet_noble_hat"],
+			[1, "legend_helmet_noble_hood"],
+			[1, "legend_helmet_noble_crown"],
+			[2, ""]
 		]));
 	}
 });
