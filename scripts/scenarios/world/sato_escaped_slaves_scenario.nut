@@ -152,7 +152,9 @@ this.sato_escaped_slaves_scenario <- this.inherit("scripts/scenarios/world/start
 		local items = bros[2].getItems();
 		this.addRandomEquipment(items);
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
-		items.equip(this.new("scripts/items/helmets/oriental/gunner_hat"));
+		items.equip(this.Const.World.Common.pickHelmet([
+			[5, "oriental/gunner_hat"]
+		]));
 
 		bros[3].setStartValuesEx([
 			"slave_southern_background"
