@@ -134,6 +134,7 @@ this.legend_mummy_enter_event <- this.inherit("scripts/events/event", {
 									{
 										local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/legend_mummy_light", tile.Coords);
 										e.setFaction(f);
+										e.assignRandomEquipment();
 										light = --light;
 										light_tiles.push(tile);
 									}
@@ -173,7 +174,7 @@ this.legend_mummy_enter_event <- this.inherit("scripts/events/event", {
 								{
 									local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/legend_mummy_queen", tile.Coords);
 									e.setFaction(f);
-								//	e.assignRandomEquipment();
+									e.assignRandomEquipment();
 									queen = --queen;
 								}
 							}
@@ -194,7 +195,7 @@ this.legend_mummy_enter_event <- this.inherit("scripts/events/event", {
 								{
 									local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/legend_vampire_lord", tile.Coords);
 									e.setFaction(f);
-								//	e.assignRandomEquipment();
+									e.assignRandomEquipment();
 									treasureHunters = --treasureHunters;
 								}
 							}
@@ -215,7 +216,7 @@ this.legend_mummy_enter_event <- this.inherit("scripts/events/event", {
 								{
 									local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/legend_mummy_medium", tile.Coords);
 									e.setFaction(f);
-								//	e.assignRandomEquipment();
+									e.assignRandomEquipment();
 									medium = --medium;
 								}
 							}
@@ -236,7 +237,7 @@ this.legend_mummy_enter_event <- this.inherit("scripts/events/event", {
 								{
 									local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/legend_mummy_heavy", tile.Coords);
 									e.setFaction(f);
-								//	e.assignRandomEquipment();
+									e.assignRandomEquipment();
 									heavy = --heavy;
 								}
 							}
