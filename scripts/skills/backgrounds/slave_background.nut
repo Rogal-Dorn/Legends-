@@ -60,6 +60,50 @@ this.slave_background <- this.inherit("scripts/skills/backgrounds/character_back
 		this.m.Beards = this.Const.Beards.Untidy;
 		this.m.Bodies = this.Const.Bodies.Skinny;
 		this.m.IsLowborn = true;
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Good;
+		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[3];
+		this.m.Modifiers.Salvage = this.Const.LegendMod.ResourceModifiers.Salvage[1];
+		this.m.Modifiers.Terrain =  [
+				0.0, // ?
+				0.0, //ocean
+				0.0,//plains
+				0.0, //swamp
+				0.01, //hills
+				0.01, //forest
+				0.01, //forest
+				0.0, //forest_leaves
+				0.0, //autumn_forest
+				0.01, //mountains
+				0.0, // ?
+				0.01, //farmland
+				0.0, // snow
+				0.0, // badlands
+				0.0, //highlands
+				0.0, //stepps
+				0.0, //ocean
+				0.01, //desert
+				0.01 //oasis				
+			];
+		this.m.PerkTreeDynamic = {
+			Weapon = [
+				this.Const.Perks.HammerTree,
+				this.Const.Perks.AxeTree,
+				this.Const.Perks.SlingsTree
+			],
+			Defense = [
+				this.Const.Perks.LightArmorTree
+			],
+			Traits = [
+				this.Const.Perks.FitTree,
+				this.Const.Perks.SturdyTree,
+				this.Const.Perks.LargeTree,
+				this.Const.Perks.IndestructibleTree
+			],
+			Enemy = [],
+			Class = [this.Const.Perks.FistsClassTree],
+			Magic = []
+		}
 	}
 
 	function getTooltip()
@@ -137,7 +181,7 @@ this.slave_background <- this.inherit("scripts/skills/backgrounds/character_back
 			r = 0;
 			if (this.World.LegendsMod.Configs().LegendGenderEnabled())
 			{
-				r = this.Math.rand(0, 4);
+				r = this.Math.rand(0, 19);
 			}
 		}
 

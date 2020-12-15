@@ -33,9 +33,41 @@ this.peddler_southern_background <- this.inherit("scripts/skills/backgrounds/ped
 		this.m.LastNames = this.Const.Strings.SouthernNamesLast;
 	}
 
+
+	//Default Male
+	function setGender(_gender = -1)
+	{
+		local r = _gender;
+		if (_gender == -1)
+		{
+			r = 0;
+			if (this.World.LegendsMod.Configs().LegendGenderEnabled())
+			{
+				r = this.Math.rand(0, 1);
+			}
+		}
+
+		if (r != 1)
+		{
+			return
+		}
+		this.m.GoodEnding = "A lover of the sale, %name% the peddler couldn\'t stay fighting for long. She eventually left the %companyname% to go out and start her own business. Recently, you got word that she was selling trinkets with the company\'s sigil on them. You specifically told her to do whatever they wanted except just this one thing, but apparently your warning merely fostered the idea. When you went to tell her to stop, she slammed a crown-bulging satchel on a rather ornate table, saying it was your \'cut.\' She sells those trinkets to this day.";
+		this.m.BadEnding = "With hard times hitting the %companyname%, many brothers saw fit to return to their old lives. %name% the peddler was no different. Last you heard she got the tar beaten out of her trying to sell stolen wares that \'fell off the wagon\' to the very merchant which they originally belonged.";
+
+		this.m.Bodies = this.Const.Bodies.SouthernFemale;
+		this.m.Faces = this.Const.Faces.SouthernFemale;
+		this.m.Hairs = this.Const.Hair.SouthernFemale;
+		this.m.HairColors = this.Const.HairColors.Southern;
+		this.m.Beards = null;
+		this.m.BeardChance = 0;
+		this.m.Bodies = this.Const.Bodies.FemaleThick;
+		this.m.IsFemaleBackground = true;
+
+	}
+	
 	function onBuildDescription()
 	{
-		return "{House to house, | Once a proud merchant, now | An annoyance to most, | In tough times, everyone has to scrape by somehow, hence why | Not a man of the trades, but instead of trade itself,} %name% is a mere peddler. {He\'ll dance, he\'ll sing, he\'ll boast and he\'ll act a king, anything to make that sale. | Pushy and unrelenting, his tenacity is admirable. | He\'ll try to sell off a rusty bucket for a helm once worn by kings. This man will sell anything. | This man will make you crave things you never knew you wanted. No refunds, though. | He used to make a decent living selling {used carts | pots, pans and jars}, until fierce competition drove him out of business - by breaking his arm.} {Marketing himself is what this frail man does best, though few believe his pitch about having \'Great swordsmanship and resolute bravery\'. | He supposedly handed out \'coupons\' for his services, whatever those are. He\'s chippy, though, and any outfit these days could use a warm body no matter its real value. | If hired, he promises, you\'ll get a special discount on a virility enhancing potion. | The man lowers his voice and tells you he\'s got a great deal on rusted arrow tips, just for you. He looks disappointed at your lack of interest. | This man knows a man who knows a man who knows a man. All three strangers potentially better at fighting than him. | A shame a man can\'t fight with his words these days. %name% would be unstoppable.}";
+		return "{House to house, | Once a proud merchant, now | An annoyance to most, | In tough times, everyone has to scrape by somehow, hence why | Not of the trades, but instead of trade itself,} %name% is a mere peddler. {dancing, singing, boasting and acting like a king, anything to make that sale. | Pushy and unrelenting, that tenacity is admirable. | %name%\'ll try to sell off a rusty bucket for a helm once worn by kings. This peddler will sell anything. | This peddler will make you crave things you never knew you wanted. No refunds, though. | %name% used to make a decent living selling {used carts | pots, pans and jars}, until fierce competition drove down business - by breaking arms.} {Marketing is what this frail peddler does best, though few believe the pitch about having \'Great swordsmanship and resolute bravery\'. | %name% supposedly handed out \'coupons\' for services, whatever those are. %name%\'s chippy, though, and any outfit these days could use a warm body no matter its real value. | If hired, %name% promises, you\'ll get a special discount on a virility enhancing potion. | The merchant lowers their voice and tells you the\'ve got a great deal on rusted arrow tips, just for you. %name% looks disappointed at your lack of interest. | This merchant knows a man who knows a man who knows a man. All three strangers potentially better at fighting. | A shame a war can\'t be fought with words these days. %name% would be unstoppable.}";
 	}
 
 	function onAddEquipment()
@@ -58,7 +90,8 @@ this.peddler_southern_background <- this.inherit("scripts/skills/backgrounds/ped
 		]);
 		items.equip(armor)
 		local helm = this.Const.World.Common.pickHelmet([
-			[1, "oriental/southern_head_wrap"],
+			[2, "oriental/southern_head_wrap"],
+			[1, "legend_noble_southern_hat"],
 			[3, ""]
 		]);
 		items.equip(helm)

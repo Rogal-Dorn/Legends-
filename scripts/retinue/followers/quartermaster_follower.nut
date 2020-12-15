@@ -7,7 +7,7 @@ this.quartermaster_follower <- this.inherit("scripts/retinue/follower", {
 		this.m.Name = "The Quartermaster";
 		this.m.Description = "With years of experience from traveling with caravans, the Quartermaster is able to squeeze and rotate any piece of gear, luggage or armor into the perfect spot to use space as efficiently as possible.";
 		this.m.Image = "ui/campfire/quartermaster_01";
-		this.m.Cost = 3000;
+		this.m.Cost = 1500;
 		this.m.Effects = [
 			"Increases the amount of ammunition you can carry by 100",
 			"Increases the amount of medical supplies and tools you can carry by 50 each"
@@ -15,7 +15,7 @@ this.quartermaster_follower <- this.inherit("scripts/retinue/follower", {
 		this.m.Requirements = [
 			{
 				IsSatisfied = false,
-				Text = ""
+				Text = "Have someone with the Skillful Stacking perk, available on Vagabons, Millers, Donkeys and many others"
 			}
 		];
 	}
@@ -32,11 +32,16 @@ this.quartermaster_follower <- this.inherit("scripts/retinue/follower", {
 
 	function onEvaluate()
 	{
-		this.m.Requirements[0].Text = "Completed " + this.Math.min(5, this.World.Statistics.getFlags().getAsInt("EscortCaravanContractsDone")) + "/5 caravan escort contracts";
 
-		if (this.World.Statistics.getFlags().getAsInt("EscortCaravanContractsDone") >= 5)
+		local brothers = this.World.getPlayerRoster().getAll();
+		
+		foreach( bro in brothers )
 		{
+			if (bro.getSkills().hasSkill("perk.legend_skillful_stacking"))
+			{
 			this.m.Requirements[0].IsSatisfied = true;
+			}
+
 		}
 	}
 
