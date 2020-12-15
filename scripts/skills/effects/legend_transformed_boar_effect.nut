@@ -65,7 +65,9 @@ this.legend_transformed_boar_effect <- this.inherit("scripts/skills/skill", {
 		
 		if (actor.isPlayerControlled())
 		{
-			if (this.m.Container.hasSkill("perk.legend_surpress_urges") && !this.m.Container.hasSkill("perk.legend_control_instincts"))
+			if (!this.m.Container.hasSkill("injury.legend_aperthropy"))
+			{}
+			else if (this.m.Container.hasSkill("perk.legend_surpress_urges") && !this.m.Container.hasSkill("perk.legend_control_instincts"))
 			{
 			// this.logDebug(this.getName() + " AI set to boar");
 			// actor.setAIAgent(this.new("scripts/ai/tactical/agents/boar_agent"));
