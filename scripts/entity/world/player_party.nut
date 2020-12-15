@@ -379,6 +379,9 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 				case 115:
 					image = "figure_player_druid";
 					break;
+				case 116:
+					image = "figure_player_slave";
+					break;
 			}
 		}
 		else if ( _version > 9)

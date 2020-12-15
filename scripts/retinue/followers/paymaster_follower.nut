@@ -34,12 +34,19 @@ this.paymaster_follower <- this.inherit("scripts/retinue/follower", {
 
 	function onEvaluate()
 	{
-		this.m.Requirements[0].Text = "Have a roster of " + this.Math.min(16, this.World.getPlayerRoster().getSize()) + "/16 men";
+		this.m.Requirements[0].Text = "Have a mercenary who has taken the Paymaster perk, available on Peddlers, Eunuchs and Servants";
 
-		if (this.World.getPlayerRoster().getSize() >= 16)
+		local brothers = this.World.getPlayerRoster().getAll();
+		
+		foreach( bro in brothers )
 		{
+			if (bro.getSkills().hasSkill("perk.legend_barter_paymaster"))
+			{
 			this.m.Requirements[0].IsSatisfied = true;
+			}
+
 		}
+
 	}
 
 });

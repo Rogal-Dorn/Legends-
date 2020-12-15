@@ -431,15 +431,15 @@ gt.Const.Tactical.Actor.LegendDemonHound <- {
 };
 
 gt.Const.Tactical.Actor.SkeletonGladiator <- {
-	XP = 200,
-	ActionPoints = 9,
-	Hitpoints = 65,
+	XP = 300,
+	ActionPoints = 12,
+	Hitpoints = 120,
 	Bravery = 100,
 	Stamina = 100,
-	MeleeSkill = 55,
-	RangedSkill = 65,
-	MeleeDefense = 0,
-	RangedDefense = 0,
+	MeleeSkill = 65,
+	RangedSkill = 75,
+	MeleeDefense = 10,
+	RangedDefense = 30,
 	Initiative = 65,
 	FatigueEffectMult = 0.0,
 	MoraleEffectMult = 0.0,
@@ -447,4 +447,78 @@ gt.Const.Tactical.Actor.SkeletonGladiator <- {
 		0,
 		0
 	]
+};
+
+gt.Const.Tactical.Actor.LegendMummyLight <- {
+	XP = 200,
+	ActionPoints = 9,
+	Hitpoints = 90,
+	Bravery = 60,
+	Stamina = 100,
+	MeleeSkill = 55,
+	RangedSkill = 0,
+	MeleeDefense = 10,
+	RangedDefense = 5,
+	Initiative = 65,
+	FatigueEffectMult = 0.0,
+	MoraleEffectMult = 0.0,
+	Armor = [
+		0,
+		0
+	]
+};
+gt.Const.Tactical.Actor.LegendMummyMedium <- {
+	XP = 350,
+	ActionPoints = 9,
+	Hitpoints = 110,
+	Bravery = 80,
+	Stamina = 100,
+	MeleeSkill = 65,
+	RangedSkill = 0,
+	MeleeDefense = 20,
+	RangedDefense = 10,
+	Initiative = 65,
+	FatigueEffectMult = 0.0,
+	MoraleEffectMult = 0.0,
+	Armor = [
+		0,
+		0
+	]
+};
+gt.Const.Tactical.Actor.LegendMummyHeavy <- {
+	XP = 500,
+	ActionPoints = 9,
+	Hitpoints = 130,
+	Bravery = 100,
+	Stamina = 100,
+	MeleeSkill = 75,
+	RangedSkill = 0,
+	MeleeDefense = 40,
+	RangedDefense = 20,
+	Initiative = 70,
+	FatigueEffectMult = 0.0,
+	MoraleEffectMult = 0.0,
+	Armor = [
+		0,
+		0
+	]
+};
+gt.Const.Tactical.Actor.LegendMummyQueen <- {
+	XP = 1500,
+	ActionPoints = 9,
+	Hitpoints = 450,
+	Bravery = 130,
+	Stamina = 100,
+	MeleeSkill = 90,
+	RangedSkill = 0,
+	MeleeDefense = 40,
+	RangedDefense = 20,
+	Initiative = 90,
+	FatigueEffectMult = 0.0,
+	MoraleEffectMult = 0.0,
+	Armor = [
+		0,
+		0
+	],
+	DamageTotalMult = 1.35
 };

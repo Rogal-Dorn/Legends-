@@ -55,7 +55,7 @@ this.pimp_background <- this.inherit("scripts/skills/backgrounds/character_backg
 			],
 			Traits = [
 				this.Const.Perks.ViciousTree,
-				this.Const.Perks.OrganisedTree,
+				this.Const.Perks.InspirationalTree,
 				this.Const.Perks.DeviousTree
 			],
 			Enemy = [

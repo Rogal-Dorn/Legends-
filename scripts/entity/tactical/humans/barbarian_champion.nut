@@ -121,11 +121,20 @@ this.barbarian_champion <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 		}
 
-		this.m.Items.equip(this.Const.World.Common.pickArmor([
-				[1, "barbarians/rugged_scale_armor"],
-				[1, "barbarians/heavy_iron_armor"],
-				[1, "barbarians/thick_plated_barbarian_armor"]
-		]));
+		local armor = [
+				[33, "barbarians/rugged_scale_armor"],
+				[34, "barbarians/heavy_iron_armor"],
+				[33, "barbarians/thick_plated_barbarian_armor"]
+		];
+
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+		{
+			armor.push(
+				[5, "barbarians/reinforced_heavy_iron_armor"]
+			);
+		}
+
+		this.m.Items.equip(this.Const.World.Common.pickArmor(armor));
 
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Head))
 		{

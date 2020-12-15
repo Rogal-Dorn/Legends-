@@ -7,7 +7,7 @@ this.cook_follower <- this.inherit("scripts/retinue/follower", {
 		this.m.Name = "The Cook";
 		this.m.Description = "A good warm meal goes a long way towards healing body and mind. The Cook makes sure that no provisions go to waste, and provides the men with invigorating meals.";
 		this.m.Image = "ui/campfire/cook_01";
-		this.m.Cost = 2000;
+		this.m.Cost = 1000;
 		this.m.Effects = [
 			"Makes all provisions last 3 extra days",
 			"Increases hitpoint healing rate by 33%"
@@ -31,12 +31,19 @@ this.cook_follower <- this.inherit("scripts/retinue/follower", {
 	function onEvaluate()
 	{
 		local uniqueProvisions = this.getAmountOfUniqueProvisions();
-		this.m.Requirements[0].Text = "Have " + this.Math.min(8, uniqueProvisions) + "/8 different types of provisions";
+		this.m.Requirements[0].Text = "Have someone with the Camp Cook perk, available from a Baker, Fishwife or Butcher";
 
-		if (uniqueProvisions >= 8)
+		local brothers = this.World.getPlayerRoster().getAll();
+		
+		foreach( bro in brothers )
 		{
+			if (bro.getSkills().hasSkill("perk.legend_camp_cook"))
+			{
 			this.m.Requirements[0].IsSatisfied = true;
+			}
+
 		}
+
 	}
 
 	function getAmountOfUniqueProvisions()

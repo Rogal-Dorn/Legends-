@@ -179,6 +179,36 @@ this.marketplace_oriental_building <- this.inherit("scripts/entity/world/settlem
 				R = 20,
 				P = 1.0,
 				S = "tools/throwing_net"
+			},
+			{
+				R = 60,
+				P = 1.0,
+				S = "helmets/legend_earings"
+			},
+			{
+				R = 60,
+				P = 1.0,
+				S = "helmets/legend_headband_coin"
+			},
+			{
+				R = 50,
+				P = 1.0,
+				S = "helmets/legend_southern_cloth_headress"
+			},
+			{
+				R = 40,
+				P = 1.0,
+				S = "helmets/legend_southern_veil"
+			},
+			{
+				R = 80,
+				P = 1.0,
+				S = "helmets/legend_southern_veil_coin"
+			},
+			{
+				R = 70,
+				P = 1.0,
+				S = "helmets/legend_headress_coin"
 			}
 		];
 

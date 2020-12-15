@@ -8,8 +8,8 @@ this.peddler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Icon = "ui/backgrounds/background_19.png";
 		//gender neutral description
 		this.m.BackgroundDescription = "Peddlers are not used to hard physical labor or warfare, but they do excel at haggling for good prices.";
-		this.m.GoodEnding = "A lover of the sale, %name% the peddler couldn\'t stay fighting for long. They eventually left the %companyname% to go out and start their own business. Recently, you got word that they were selling trinkets with the company\'s sigil on them. You specifically told them to do whatever they wanted except just this one thing, but apparently your warning merely fostered the idea. When you went to tell them to stop, they slammed a crown-bulging satchel on a rather ornate table, saying it was your \'cut.\' They sell those trinkets to this day.";
-		this.m.BadEnding = "With hard times hitting the %companyname%, many brothers saw fit to return to their old lives. %name% the peddler was no different. Last you heard they got the tar beaten out of them trying to sell stolen wares that \'fell off the wagon\' to the very merchant which they originally belonged.";
+		this.m.GoodEnding = "A lover of the sale, %name% the peddler couldn\'t stay fighting for long. He eventually left the %companyname% to go out and start his own business. Recently,you got word that he was selling trinkets with the company\'s sigil on them. You specifically told him to do whatever they wanted except just this one thing, but apparently your warning merely fostered the idea. When you went to tell him to stop, he slammed a crown-bulging satchel on a rather ornate table, saying it was your \'cut.\' He sells those trinkets to this day.";
+		this.m.BadEnding = "With hard times hitting the %companyname%, many brothers saw fit to return to their old lives. %name% the peddler was no different. Last you heard he got the tar beaten out of him trying to sell stolen wares that \'fell off the wagon\' to the very merchant which they originally belonged.";
 		this.m.HiringCost = 60;
 		this.m.DailyCost = 6;
 		this.m.Excluded = [
@@ -85,12 +85,15 @@ this.peddler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		{
 			return
 		}
+		this.m.GoodEnding = "A lover of the sale, %name% the peddler couldn\'t stay fighting for long. She eventually left the %companyname% to go out and start her own business. Recently, you got word that she was selling trinkets with the company\'s sigil on them. You specifically told her to do whatever they wanted except just this one thing, but apparently your warning merely fostered the idea. When you went to tell her to stop, she slammed a crown-bulging satchel on a rather ornate table, saying it was your \'cut.\' She sells those trinkets to this day.";
+		this.m.BadEnding = "With hard times hitting the %companyname%, many brothers saw fit to return to their old lives. %name% the peddler was no different. Last you heard she got the tar beaten out of her trying to sell stolen wares that \'fell off the wagon\' to the very merchant which they originally belonged.";
+
 		this.m.Faces = this.Const.Faces.AllWhiteFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Bodies = this.Const.Bodies.AllFemale;
+		this.m.Bodies = this.Const.Bodies.FemaleThick;
 		this.m.IsFemaleBackground = true;
 
 	}

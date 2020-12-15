@@ -96,12 +96,12 @@ gt.Const.LegendMod.HelmObjs.extend([
     Script = "",
     Sets = [{
     Hoods = [
-		[1, "hood/legend_helmet_padded_cap"], //40
+		  [1, "hood/legend_helmet_padded_cap"], //40
     ],
     Helms = [
-		[4, "helm/legend_helmet_southern_gladiator_helm_crested"], //130
-		[1, "helm/legend_helmet_southern_gladiator_helm_split"], //130
-		[1, "helm/legend_helmet_southern_gladiator_helm_masked"], //130
+      [1, "helm/legend_helmet_southern_gladiator_helm_crested"], //130
+      [1, "helm/legend_helmet_southern_gladiator_helm_split"], //130
+      [1, "helm/legend_helmet_southern_gladiator_helm_masked"], //130
     ],
     Tops = [
     ],
@@ -195,6 +195,37 @@ gt.Const.LegendMod.HelmObjs.extend([
     ]
 }]
 },{
+    ID = "oriental/light_janissary_helmet", //65
+    Script = "",
+    Sets = [{
+    Hoods = [
+      [1, "hood/legend_helmet_southern_cap"]
+    ],
+    Helms = [
+    ],
+    Tops = [
+    ],
+    Vanity = [
+      [1, "vanity/legend_helmet_southern_silk_headscarf"]
+    ]
+}]
+},{
+    ID = "oriental/janissary_helmet", //205
+    Script = "",
+    Sets = [{
+    Hoods = [
+        [1, "hood/legend_helmet_southern_cap"]
+    ],
+    Helms = [
+      [1, "helm/legend_helmet_southern_helmet_nasal"], //185
+    ],
+    Tops = [
+    ],
+    Vanity = [
+      [1, "vanity/legend_helmet_southern_silk_headscarf"]
+    ]
+}]
+},{
     ID = "oriental/nomad_light_helmet", //70
     Script = "",
     Sets = [{
@@ -283,6 +314,97 @@ gt.Const.LegendMod.HelmObjs.extend([
     Tops = [
     ],
     Vanity = [
+    ]
+}]
+},{
+    ID = "legend_earings", 
+    Script = "",
+    Sets = [{
+    Hoods = [
+        [1, "hood/legend_helmet_southern_headband_coin"]
+    ],
+    Helms = [
+    ],
+    Tops = [
+    ],
+    Vanity = [
+        [5, "vanity/legend_helmet_southern_earings"], //30
+    ]
+}]
+},{
+    ID = "legend_headband_coin", 
+    Script = "",
+    Sets = [{
+    Hoods = [
+        [1, "hood/legend_helmet_southern_headband_coin"]
+    ],
+    Helms = [
+    ],
+    Tops = [
+    ],
+    Vanity = [
+    ]
+}]
+},{
+    ID = "legend_headress_coin", 
+    Script = "",
+    Sets = [{
+    Hoods = [
+        [1, "hood/legend_helmet_southern_headband_coin"]
+    ],
+    Helms = [
+    ],
+    Tops = [
+    ],
+    Vanity = [
+        [1, "vanity/legend_helmet_southern_headress_coin"], //80
+    ]
+}]
+},{
+    ID = "legend_southern_veil_coin", 
+    Script = "",
+    Sets = [{
+    Hoods = [
+        [1, "hood/legend_helmet_southern_headband_coin"]
+    ],
+    Helms = [
+    ],
+    Tops = [
+        [1, "top/legend_helmet_southern_veil_coin"]
+    ],
+    Vanity = [
+    ]
+}]
+},{
+    ID = "legend_southern_veil", 
+    Script = "",
+    Sets = [{
+    Hoods = [
+        [1, "hood/legend_helmet_southern_headband_coin"]
+    ],
+    Helms = [
+    ],
+    Tops = [
+        [10, "top/legend_helmet_southern_veil"], //5
+    ],
+    Vanity = [
+        [1, "vanity/legend_helmet_southern_earings"], //5
+        [5, ""], //0
+    ]
+}]
+},{
+    ID = "legend_southern_cloth_headress", 
+    Script = "",
+    Sets = [{
+    Hoods = [
+        [1, "hood/legend_helmet_southern_headband_coin"]
+    ],
+    Helms = [
+    ],
+    Tops = [
+    ],
+    Vanity = [
+		[4, "vanity/legend_helmet_southern_cloth_headress"] //5
     ]
 }]
 },{
