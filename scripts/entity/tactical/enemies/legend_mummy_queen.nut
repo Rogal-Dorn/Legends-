@@ -7,7 +7,7 @@ this.legend_mummy_queen <- this.inherit("scripts/entity/tactical/legend_mummy", 
 		this.m.ResurrectionValue = 5.0;
 		this.m.ResurrectWithScript = "scripts/entity/tactical/enemies/legend_mummy_queen";
 		this.legend_mummy.create();
-		this.m.AIAgent = this.new("scripts/ai/tactical/agents/skeleton_melee_agent");
+		this.m.AIAgent = this.new("scripts/ai/tactical/agents/vampire_agent");
 		this.m.AIAgent.setActor(this);
 	}
 
