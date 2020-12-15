@@ -4,7 +4,7 @@ this.legend_gruesome_feast <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_gruesome_feast";
 		this.m.Name = "Gruesome Feast";
-		this.m.Description = "Feast on a corpse to regain health and cure injuries";
+		this.m.Description = "Feast on a corpse to regain health and cure injuries. Will daze and disgust any ally within four tiles.";
 		this.m.Icon = "skills/gruesome_square.png";
 		this.m.IconDisabled = "skills/gruesome_square_bw.png";
 		this.m.Overlay = "gruesome_square";
@@ -25,8 +25,8 @@ this.legend_gruesome_feast <- this.inherit("scripts/skills/skill", {
 		this.m.IsIgnoredAsAOO = true;
 		this.m.IsAudibleWhenHidden = false;
 		this.m.IsUsingActorPitch = true;
-		this.m.ActionPointCost = 4;
-		this.m.FatigueCost = 25;
+		this.m.ActionPointCost = 7;
+		this.m.FatigueCost = 40;
 		this.m.MinRange = 0;
 		this.m.MaxRange = 0;
 		this.m.MaxLevelDifference = 4;
@@ -150,6 +150,29 @@ this.legend_gruesome_feast <- this.inherit("scripts/skills/skill", {
 		{
 			s.removeSelf();
 		}		
+		
+		local actors = this.Tactical.Entities.getInstancesOfFaction(_user.getFaction());
+		foreach( a in actors )
+		{
+			if (a.getID() == _user.getID())
+			{
+				continue;
+			}
+
+			if (myTile.getDistanceTo(a.getTile()) > 4)
+			{
+				continue;
+			}
+
+			if (a.getFaction() != _user.getFaction())
+			{
+				continue;
+			}	
+			
+			a.getSkills().add(this.new("scripts/skills/effects/legend_dazed_effect"));
+			a.worsenMood(2.0, "Witnessed someone eat a corpse");
+		}
+		
 		_user.onUpdateInjuryLayer();
 		return true;
 	}

@@ -7,7 +7,7 @@ this.recruiter_follower <- this.inherit("scripts/retinue/follower", {
 		this.m.Name = "The Recruiter";
 		this.m.Description = "The Recruiter is a sleazy jawsmith that tricks desperate people into joining a mercenary company to escape their poor lives, only to find their demise. Quite useful for anyone running a mercenary company.";
 		this.m.Image = "ui/campfire/recruiter_01";
-		this.m.Cost = 3000;
+		this.m.Cost = 1500;
 		this.m.Effects = [
 			"Makes you pay 10% less up front for hiring new men, and 50% less for tryouts",
 			"Makes between 2 and 4 additional men available to recruit in every settlement"
@@ -34,11 +34,17 @@ this.recruiter_follower <- this.inherit("scripts/retinue/follower", {
 
 	function onEvaluate()
 	{
-		this.m.Requirements[0].Text = "Recruited " + this.Math.min(12, this.World.Statistics.getFlags().getAsInt("BrosHired")) + "/12 men";
+		this.m.Requirements[0].Text = "Have a mercenary who has taken the Inspiring Presence perk, available from Cultists, Pimps, Retired Soldiers and many others.";
 
-		if (this.World.Statistics.getFlags().getAsInt("BrosHired") >= 12)
+		local brothers = this.World.getPlayerRoster().getAll();
+		
+		foreach( bro in brothers )
 		{
+			if (bro.getSkills().hasSkill("perk.inspiring_presence"))
+			{
 			this.m.Requirements[0].IsSatisfied = true;
+			}
+
 		}
 	}
 

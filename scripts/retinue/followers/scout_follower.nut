@@ -7,7 +7,7 @@ this.scout_follower <- this.inherit("scripts/retinue/follower", {
 		this.m.Name = "The Scout";
 		this.m.Description = "The Scout is an expert in finding mountain passes, navigating through treacherous swamps, and guiding anyone safely through the darkest of forests.";
 		this.m.Image = "ui/campfire/scout_01";
-		this.m.Cost = 2500;
+		this.m.Cost = 1250;
 		this.m.Effects = [
 			"Makes the company travel 15% faster on any terrain",
 			"Prevents sickness and accidents due to terrain"
@@ -15,7 +15,7 @@ this.scout_follower <- this.inherit("scripts/retinue/follower", {
 		this.m.Requirements = [
 			{
 				IsSatisfied = false,
-				Text = ""
+				Text = "Have a Wildling, Hunter, Lumberjack or Ranger"
 			}
 		];
 	}
@@ -32,12 +32,18 @@ this.scout_follower <- this.inherit("scripts/retinue/follower", {
 
 	function onEvaluate()
 	{
-		this.m.Requirements[0].Text = "Won " + this.Math.min(5, this.World.Statistics.getFlags().getAsInt("BeastsDefeated")) + "/5 battles against beasts";
-
-		if (this.World.Statistics.getFlags().getAsInt("BeastsDefeated") >= 5)
+		this.m.Requirements[0].Text = "Have a Raider, Barbarian or Deserter in your company";
+		
+		local hasRaider = 0;
+		local brothers = this.World.getPlayerRoster().getAll();
+		foreach( bro in brothers )
 		{
-			this.m.Requirements[0].IsSatisfied = true;
-		}
+			if (bro.getBackground().getID() == "background.wildman" ||bro.getBackground().getID() == "background.wildwoman" || bro.getBackground().getID() == "background.hunter" || bro.getBackground().getID() == "background.lumberjack" || bro.getBackground().getID() == "background.legend_ranger"  || bro.getBackground().getID() == "background.legend_commander_ranger")
+			{
+		this.m.Requirements[0].IsSatisfied = true;
+			}
+
+		}	
 	}
 
 });

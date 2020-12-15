@@ -35,7 +35,7 @@ this.scout_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 		desc += "Make sure someone is on patrol in order to have eyes and ears and the local landscape."
 		desc += "The more men assigned on patrol, the faster and further your visibility grows."
 		desc += "\n\n"
-		desc += "The Patrol station be upgraded by purchasing a patrol cart from a settlement merchant. An upgraded tent has a 15% increase in patrol speed. "
+		desc += "The Patrol station can be upgraded by purchasing a patrol cart from a settlement merchant. An upgraded tent has a 15% increase in patrol speed. "
 		desc += "Additionally, while on patrol there's a chance that the location of enemy outposts can be determined."
 		return desc;
 	}
