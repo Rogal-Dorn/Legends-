@@ -4396,3 +4396,9 @@ Fully buffed with minor perks Sling Heavy Stone pre-nerf: 49-72/80%/188% for 8 A
 
 
 
+
+
+15.0.0.21
+
+**Fixes**
+Fixes manhunter fight event as escaped indebted
