@@ -48,37 +48,39 @@ this.mummy_racial <- this.inherit("scripts/skills/skill", {
 	function onDeath()
 	{
 	
-		local user = this.getContainer();
+		local user = this.getContainer().getActor();
 		local myTile = user.getTile();
 		local actors = this.Tactical.Entities.getAllInstances();
 		
-		local actors = this.Tactical.Entities.getInstancesOfFaction(_user.getFaction());
+		// local actors = this.Tactical.Entities.getInstancesOfFaction(user.getFaction());
 		
-		foreach( a in actors )
+		foreach( act in actors )
 		{
-			if (a.getID() == user.getID())
+			foreach (a in act)
 			{
-				continue;
-			}
 
-			if (myTile.getDistanceTo(a.getTile()) > 2)
-			{
-				continue;
-			}
+				if (a.getID() == user.getID())
+				{
+					continue;
+				}
 
-			if (a.getFaction() == user.getFaction())
-			{
-				continue;
-			}
-	
-			a.getSkills().add(this.new("scripts/skills/effects/mummy_curse_effect"));
+				if (myTile.getDistanceTo(a.getTile()) > 2)
+				{
+					continue;
+				}
+
+				if (a.getFaction() == user.getFaction())
+				{
+					continue;
+				}
 		
-			
+				a.getSkills().add(this.new("scripts/skills/effects/mummy_curse_effect"));
+			}
 		}	
 		
 		
-		this.Sound.play(this.m.SoundOnUse[this.Math.rand(0, this.m.SoundOnUse.len() - 1)], this.Const.Sound.Volume.Skill);
-		this.Time.scheduleEvent(this.TimeUnit.Virtual, 30, this.teleport.bindenv(this), null);
+		// this.Sound.play(this.m.SoundOnUse[this.Math.rand(0, this.m.SoundOnUse.len() - 1)], this.Const.Sound.Volume.Skill);
+		// this.Time.scheduleEvent(this.TimeUnit.Virtual, 30, this.teleport.bindenv(this), null);
 	}	
 
 });

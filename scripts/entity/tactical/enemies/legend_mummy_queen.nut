@@ -55,16 +55,6 @@ this.legend_mummy_queen <- this.inherit("scripts/entity/tactical/legend_mummy", 
 
 	}
 
-	function onDeath( _killer, _skill, _tile, _fatalityType )
-	{
-		if (!this.Tactical.State.isScenarioMode() && _killer != null && _killer.isPlayerControlled())
-		{
-			this.updateAchievement("WalkingStatue", 1, 1);
-		}
-
-		this.skeleton.onDeath(_killer, _skill, _tile, _fatalityType);
-	}
-
 	function assignRandomEquipment()
 	{
 

@@ -66,7 +66,7 @@ this.legend_mummy <- this.inherit("scripts/entity/tactical/actor", {
 
 		if (_tile != null)
 		{
-			local decal = _tile.spawnDetail(sprite_body.getBrush().Name + "_dead", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
+			local decal = _tile.spawnDetail("bust_skeleton_vampire_dead", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
 			decal.Color = sprite_body.Color;
 			decal.Saturation = sprite_body.Saturation;
 			decal.Scale = 0.9;
