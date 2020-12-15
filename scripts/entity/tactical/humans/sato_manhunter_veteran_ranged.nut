@@ -142,16 +142,16 @@ this.sato_manhunter_veteran_ranged <- this.inherit("scripts/entity/tactical/huma
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Head))
 		{
 			local helmets = [
-				[1, "helmets/oriental/wrapped_southern_helmet"],
-				[1, "helmets/oriental/spiked_skull_cap_with_mail"],
-				[1, "helmets/oriental/southern_helmet_with_coif"],
-				[1, "helmets/oriental/heavy_lamellar_helmet"]
+				[1, "oriental/wrapped_southern_helmet"],
+				[1, "oriental/spiked_skull_cap_with_mail"],
+				[1, "oriental/southern_helmet_with_coif"],
+				[1, "oriental/heavy_lamellar_helmet"]
 			];
 
 			if (this.Const.DLC.Wildmen)
 			{
 				helmets.extend([
-					[1, "helmets/conic_helmet_with_closed_mail"]
+					[1, "conic_helmet_with_closed_mail"]
 				]);
 			}
 
