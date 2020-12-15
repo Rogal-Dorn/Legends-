@@ -1,15 +1,17 @@
 this.mummy_curse_effect <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+	},
 	function create()
 	{
 		this.m.ID = "effects.mummy_curse";
-		this.m.Name = "Curse of the mummy";
+		this.m.Name = "Curse of the Mummy";
 		this.m.Icon = "skills/icon_mummy_curse.png";
 		this.m.IconMini = "mini_icon_mummy_curse";
 		this.m.Overlay = "mummy_curse";
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
 		this.m.IsRemovedAfterBattle = true;
+		this.m.IsStacking = true;
 	}
 
 	function getDescription()
