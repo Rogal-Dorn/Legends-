@@ -309,9 +309,13 @@ layers = [
  "title" :  "Goblin Scarf", \
  "desc" :  "Goblin Scarf" \
 },
-{"name" : "barb_chain_scarf"                     , "layer" : "hood", "min" : 1, "max" : 5, "base" : True, "value" : 165, "con" : 55, "stam" : -2, "vis" : 0, "hair" : "false", "beard" : "true",  \
+{"name" : "barb_chain_scarf"                     , "layer" : "hood", "min" : 1, "max" : 6, "base" : True, "value" : 165, "con" : 55, "stam" : -2, "vis" : 0, "hair" : "false", "beard" : "true",  \
  "title" :  "Rusted Aventail", \
  "desc" :  "A rusty mail aventail that still offers good protection - it leaves horrible stains though." \
+},
+{"name" : "barb_open_chain"                     , "layer" : "hood", "min" : 1, "max" : 1, "base" : True, "value" : 250, "con" : 65, "stam" : -3, "vis" : 0, "hair" : "true", "beard" : "false",  \
+ "title" :  "Rusted Open Chain", \
+ "desc" :  "A rusty open faced mail chain patched together by the northern tribes." \
 },
 {"name" : "rotten_chain_scarf"                     , "layer" : "hood", "min" : 1, "max" : 5, "base" : True, "value" : 190, "con" : 60, "stam" : -3, "vis" : 0, "hair" : "false", "beard" : "true",  \
  "title" :  "Rotten Aventail", \
@@ -403,7 +407,10 @@ layers = [
  "title" :  "Cloth Cap", \
  "desc" :  "A piece of cloth covering the top of the head." \
 },
-
+{"name" : "barb_leather_cap"                     , "layer" : "hood", "min" : 1, "max" : 1, "base" : True, "value" : 20, "con" : 15, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
+ "title" :  "Patched Leather Cap", \
+ "desc" :  "A piece of patched leather covering the top of the head." \
+},
 
 
 
@@ -474,15 +481,15 @@ layers = [
  "title" :  "Orc Great Helm", \
  "desc" :  "The distinctive helm of an orc warlord" \
 },
-{"name" : "crude_metal_helm"                     , "layer" : "helm", "min" : 1, "max" : 3, "value" : 550, "con" : 65, "stam" : -6, "vis" : -1, "hair" : "true", "beard" : "true",  \
+{"name" : "crude_metal_helm"                     , "layer" : "helm", "min" : 1, "max" : 3, "value" :350, "con" : 100, "stam" : -10, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Crude Metal Helm", \
  "desc" :  "Although crudely made and rusty, this metal helmet is a durable and sturdy piece of armor." \
 },
-{"name" : "crude_cylinder_helm"                     , "layer" : "helm", "min" : 1, "max" : 2, "value" : 800, "con" : 110, "stam" : -10, "vis" : -2, "hair" : "true", "beard" : "true",  \
+{"name" : "crude_cylinder_helm"                     , "layer" : "helm", "min" : 1, "max" : 2, "value" : 600, "con" : 135, "stam" : -15, "vis" : -2, "hair" : "true", "beard" : "true",  \
  "title" :  "Crude Cylinder Helm", \
  "desc" :  "This heavy metal helmet also protects the wearers face, albeit at the cost of visibility." \
 },
-{"name" : "heavy_plate_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1300, "con" : 170, "stam" : -15, "vis" : -3, "hair" : "true", "beard" : "false",  \
+{"name" : "heavy_plate_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 900, "con" : 185, "stam" : -20, "vis" : -3, "hair" : "true", "beard" : "false",  \
  "title" :  "Heavy Plate Helm", \
  "desc" :  "This heavy helmet usually is worn as a sign of high standing and reputation within barbarian warbands." \
 },
@@ -656,6 +663,10 @@ layers = [
  "title" :  "Rotten Great Helm", \
  "desc" :  "Rotten Great Helm" \
 },
+{"name" : "barb_metal_cap"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 150, "con" : 50, "stam" : -3, "vis" : 0, "hair" : "true", "beard" : "false",  \
+ "title" :  "Rusted Metal Helm", \
+ "desc" :  "A rusted and dented metal cap that provides protection against bumps to the head" \
+},
 
 
 
@@ -680,11 +691,11 @@ layers = [
  "desc" :  "A simple hood to protect against weather and scratches." \
 },
 
-{"name" : "orc_leather_mask"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 100, "con" : 35, "stam" : -5, "vis" : 0, "hair" : "true", "beard" : "false",  \
+{"name" : "orc_leather_mask"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 100, "con" : 35, "stam" : -2, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Orc Leather Mask", \
  "desc" :  "A basic leather mask worn by young orcs" \
 },
-{"name" : "orc_horn_mask"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 300, "con" : 60, "stam" : -7, "vis" : 0, "hair" : "true", "beard" : "false",  \
+{"name" : "orc_horn_mask"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 300, "con" : 35, "stam" : -2, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Orc Horn Mask", \
  "desc" :  "A rough horned facemask worn by young orcs" \
 },
@@ -728,7 +739,7 @@ layers = [
  "title" :  "Ancient Diadem", \
  "desc" :  "An ancient crown from ages past" \
 },
-{"name" : "leather_hood_barb"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 720, "con" : 105, "stam" : -12, "vis" : -3, "hair" : "true", "beard" : "false",  \
+{"name" : "leather_hood_barb"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 200, "con" : 50, "stam" : -4, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Leather Hood Barb", \
  "desc" :  "The crude padded leather hood of a barbarian, it is heavy and surprisingly protective" \
 },
@@ -736,11 +747,11 @@ layers = [
  "title" :  "Nose Plate", \
  "desc" :  "A strip of metal tied on with a leather band, used for protecting the face from frontal blows" \
 },
-{"name" : "headband_side"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 95, "con" : 20, "stam" : -2, "vis" : 0, "hair" : "false", "beard" : "false",  \
+{"name" : "headband_side"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 30, "con" : 20, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Headband Side", \
  "desc" :  "A rugged leather headband" \
 },
-{"name" : "headband_nose"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 190, "con" : 30, "stam" : -2, "vis" : 0, "hair" : "false", "beard" : "false",  \
+{"name" : "headband_nose"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 30, "con" : 25, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Headband Nose", \
  "desc" :  "A rough leather headband with a small nose protection" \
 },
