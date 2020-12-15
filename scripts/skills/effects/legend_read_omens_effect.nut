@@ -1,5 +1,15 @@
 this.legend_read_omens_effect <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		Actor = null
+	},
+	function setActor(_a)
+	{
+		this.m.Actor = _a;
+	}
+	function getActor()
+	{
+		return this.m.Actor;
+	}
 	function create()
 	{
 		this.m.ID = "effects.legend_read_omens";
@@ -10,6 +20,7 @@ this.legend_read_omens_effect <- this.inherit("scripts/skills/skill", {
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
 		this.m.IsRemovedAfterBattle = true;
+		this.m.IsStacking = true;
 	}
 
 	function getDescription()
@@ -19,7 +30,7 @@ this.legend_read_omens_effect <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{		
-		_properties.RerollDefenseChance += 10;
+		_properties.RerollDefenseChance += 15;
 	}
 });
 

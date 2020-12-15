@@ -4216,7 +4216,13 @@ Nets now properly use net casting mastery & net mastery
 Fixes corrupt saves when saving a new campaign before unpausing
 
 
+
+=======
+
 15.0.0.19
+https://drive.google.com/file/d/1iSV9jTJ3u8yJYPmmqhW-2VSeUteZyD0R/view?usp=sharing
+
+Helmet layer balacning is still WIP, continuing to balance...
 
 **Fixes/Tweaks**
 Should fix helmets showing up backwards on the following:
@@ -4252,8 +4258,141 @@ Basinet: [130, -7, -1] from [130, -7, -2]
 Cultist Hood: [50, -3, -1] from [65, -3, -1]
 Cloth Sack: [20, 0, -1] from [80, -4, 0]
 Sallet: [110, -5, 0] from [185, -9, -1]
++More
 
-15.0.0.20
+
+15.0.0.20  Mummy's Free 
+
+**New Legendary Location - Mastaba**
+Far out in the desert lies an ancient Mastaba, in its dry depths lie  the desicated corpses of the embalmed
+Art by Von Krolock, Writing by Luft
+**New Enemies - The Embalmed** 
+These undead have laid still for millenia and those who disturb them shall suffer their curse  
+When they die, they curse any of your troops within 2 tiles for the rest of the battle. 
+The curse stacks, and causes you to take 20% more damage per stack 
+The embalmed have: 
+* four different variants 
+* roman gladius and egyptian fan axe 
+* 6 helmet layers, 2 shields and 4 armors 
+
+**New Origin - Escaped Slaves** 
+Integrates Sato's escaped slaves mod
+Start with five escapped slaves. More will seek out your conmpany, and you can rescue them after battles 
+Your escaped slaves gain +1 resolve, attack and defense for each other escaped slave in battle 
+Good relations decay 15% faster and bad relations recover 15% slower 
+Start hostile to the city state you escaped from, and be ambushed by a new enemy type, the Manhunters 
+New art for escaped slave events by Dwarf 
+
+**Slave changes** 
+Slaves now grant carrying bonuses,a slight salvage bonus and movement bonus in desert, farmland and mountains. 
+Slaves are gauranteed perks for fists, hammers, axes slings and light armor .
+Barbarian slaves  have the perks of barbarians 
+Runaway harem can now join the escaped slaves or sisterhood. 
+
+
+**Gender equality** 
+Female backgrounds - with gender equality enambled womean can now be criples, gamblers, raiders, houndmasters, hunters and ratcatcher. Text updated for several backgrounds.
+Female bodies - There are now six total versions of female bodies. Three each of southern and normal in thin, fit and thick  (von krolock)
+
+
+**New Hats**
+All faceplates rebalanced with half as much durability, as well as much lower fatigue and vision penalties
+a dozen faceplate layers added to spawnpools for knights, and at armorsmiths near blast furnaces. 
+four noble hats added to the spawnpool for nobles, adventurous nobkles and at markets near dye makers
+two southern noble hats added to viziers and southern peddlers 
+jewelry - There is now a variety of southern jewelry, with several kinds of veils, headresses and earings. These are found on female southerners and in southern markets  Art by Von Krolock
+
+**Retinue Changes**
+Retinue now requires specific backgrounds and perks.  Gold cost halved 
+
+Agent = eunuch, messenger or assassin + allied town 
+Alchemist = Taxidermist, Herbalist or Druid  + 10 crafting 
+Blacksmith = "Field Repairs Perk" Blacksmith, Ironmonger, Crusader
+Bounty Hunter = Witch Hunter, Beast Slayer, Manhunter  + 1 famed item 
+Brigand = Barbarian, Raider, Deserter 
+Catographer = Historian, Adventurous Noble, Philosopher + 1 legendary location 
+Cook = "Camp Cook perk" Baker, Fishwife, Butcher 
+Drill Seargent = Retired Soldier, Gladiator, Swordmaster or Sellsword with injury 
+Lookout = "lookout perk" Nomad, Thief, Poacher 
+Minstrel = "Entice perk" Minstrel, Troubadour, Juggler 
+Negotiator = "pacifist perk"  Widow, Inventor, tailor
+Paymaster = "paymaster perk" Peddler, Servant, Eunuch 
+Quartermaster = "skillfull stacking perk" donkey, vagabond, Miller 
+Recruiter = "inspiring presence perk" cultists, pimps retired soldiers
+Scavenger = beggar, cripple, refugee  slave 
+Scout = Hunter, wildman, lumberjack, ranger 
+Surgeon = "Field triage perk" Monk, Nun, Maid 
+Trader = Caravan Hand. Peddler, trader  + trade requirement
+
+
+**Armor Tweaks**
+Name: [v19 Fatigue] -> [v20 Fatigue]
+Short Faceplate: [-5] -> [-6]
+Long Faceplate: [-5] -> [-6]
+Winged Faceplate: [-6] -> [-7]
+Snub Nose Faceplate: [-6] -> [-7]
+Slitted Snub Faceplate: [-6] -> [-8]
+Sharp Faceplate: [-7] -> [-8]
+Facemask: [-7] -> [-9]
+Pointed Faceplate: [-7] -> [-9]
+Slit Pointed Faceplate: [-7] -> [-9]
+Full Faceplate: [-9] -> [-12]
+Flat Top Face Plate: [-4] -> [-12]
+Southern Conic: [-5] -> [-10]
+Southern Peaked Helmet: [-4] -> [-12]
+
+**New Armors to Enemies**
+From fashion-show added:
+Few barbarian armors & southern armors by Kamy
+
 
 **Fixes/Tweaks**
+
 Actually fixes armored unholds' helmets
+Hedge Knights no longer have vanilla helmets when playing on layered system
+Arena contracts that give euqipment should give layered equipment now
+Named helmet layers now randomize their values
+Entice skill requires the correct staff mastery now, rather than polearm
+Bandit Leaders correctly can roll named helmets
+Veteran level recruits (12+) don't spawn with too many perk points now
+Were-monsters shouldn't have hair/beards anymore when transformed
+Fixed alignment on gobo wolfrider helmets
+Fixes camp having low res ground in desert environments
+Updates skeleton gladiator AI and stats 
+Southern beasts cont toward favoured enemy perks, hyenas with direwolves, serpents with lindwurms and golems with schrats. 
+"Southern-based" armor to barbarian reavers by Kamy  
+
+Fixes tent sell-price determining for Fletching & Gathering tent
+Bags and belts tooltip fix
+Shield's knock back skill can no longer reach 1 fatigue cost
+Fixes vengeance similar to double strike, no longer disappears after enemy misses
+Trances such as Read Omens & Scry no longer require a full turn duration
+Scry now gives the vision effect when used and the beginning of every turn channeled (can now be toggled off to simulate the same as a regular Bird item)
+Read omens now can stack with multiple users & won't screw up when you try to channel it with two separate characters & end both trances
+Some champion barbs no longer have non-layered helmets + armors
+Violent Decomposition shouldn't crash when exploding anymore
+*Maybe* fixes Krakens that spawn out in the wild
+Fixes slaughterer tooltip
+roots only affects one tile
+Fixes double jester hat showing up in tooltips
+Fixes mountain helmet layer
+Fixes transform-into-boar active
+Should fix characters instantly fleeing from battle on therianthropy transform (This won't stop them from running to the edge of the map)
+Fixes infinite repair/salvage of helmets granting/taking unlimited tools
+
+
+**Art**
+Improves 2 of the heads already added by the mod
+Adds 2 new facial tattoos & 2 new body tattoos
+Updates female bodies
+Updates were-Boar/Bear/Wolf heads and bodies
+New icons for traits: Ambitious, Light
+
+**Slingstaff Changes**
+Raw stats of slingstaff: 35-45 dmg, 75% armpen, 110% armor damage (nomad sling - 35-50/35%/60% for 4 AP, old pre-nerf slingstaff 45-60/80%/150% for 8 AP)
+"Heavy rocks" increases damage of "Sling Heavy Stone" by 15-30 but increases AP cost by 1 and FAT cost by 4, has no effect on slingstaff bash.
+"Slinger's spins" increases armor damage of "Sling Heavy Stone" by 50% but increases AP cost by 1 and FAT cost by 4, has no effect on slingstaff bash.
+Fully buffed with minor perks Sling Heavy Stone pre-nerf: 49-72/80%/188% for 8 AP, now: 50-75/75%/165% for 7 AP, unbuffed 70-90/75%/110% for 10 AP (5*2).
+
+
+

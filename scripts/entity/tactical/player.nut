@@ -191,6 +191,11 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.m.VeteranPerks = _f;
 	}
 
+	function getVeteranPerks()
+	{
+		return this.m.VeteranPerks;
+	}
+
 	function isLeveled()
 	{
 		return (this.m.PerkPoints != 0 || this.m.LevelUps != 0) && !this.m.IsGuest;

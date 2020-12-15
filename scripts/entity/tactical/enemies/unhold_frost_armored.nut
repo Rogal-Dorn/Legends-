@@ -25,7 +25,7 @@ this.unhold_frost_armored <- this.inherit("scripts/entity/tactical/enemies/unhol
 	{
 		this.m.Items.equip(this.new("scripts/items/armor/barbarians/unhold_armor_heavy"));
 		local item = this.Const.World.Common.pickHelmet([
-			[99, "barbarians/unhold_helmet_heavy"]
+			[1, "barbarians/unhold_helmet_heavy"]
 		])
 		if (item != null)
 		{
@@ -35,7 +35,7 @@ this.unhold_frost_armored <- this.inherit("scripts/entity/tactical/enemies/unhol
 
 	function onTurnStart()
 	{
-		this.actor.onTurnStart();
+		this.unhold_frost.onTurnStart();
 
 		if (this.Time.getRound() >= 2 && !this.m.HasTurned && !this.m.HasBeenWhipped && !this.Tactical.State.isAutoRetreat())
 		{

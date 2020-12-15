@@ -52,7 +52,7 @@ this.legend_transform_into_boar <- this.inherit("scripts/skills/skill", {
 
 	  function isHidden()
     {
-        return this.m.IsHidden || !this.getContainer().getActor().getItems().hasEmptySlot(this.Const.ItemSlot.Mainhand) || !this.isUsable();
+        return this.m.IsHidden || !this.getContainer().getActor().getItems().hasEmptySlot(this.Const.ItemSlot.Mainhand);
     }
 
 

@@ -48,13 +48,8 @@ this.legend_trance_abstract <- this.inherit("scripts/skills/skill", {
     function onCombatFinished()
 	{
 		this.m.IsInTrance = false;
-        this.m.IsSameTurn = false;
 	}
-    
-	function isUsable()
-	{
-		return this.skill.isUsable() && !this.m.IsSameTurn;
-	}
+
 
     function doTranceEndTurn() {} //Put trances that toggle end of turn here
     function doTranceStartTurn() {} //Put trances that toggle start of turn here
@@ -75,7 +70,6 @@ this.legend_trance_abstract <- this.inherit("scripts/skills/skill", {
 			this.doTranceStartTurn();
 			this.getContainer().getActor().setActionPoints(0);
 		}
-		this.m.IsSameTurn = false;
 	}
 
     function onUse( _user, _targetTile )
@@ -100,7 +94,6 @@ this.legend_trance_abstract <- this.inherit("scripts/skills/skill", {
 			{
 				this.swapOff();
 				this.removeAll();
-				this.m.IsSameTurn = false;
 			}
 		}
 	}
@@ -111,7 +104,6 @@ this.legend_trance_abstract <- this.inherit("scripts/skills/skill", {
         this.getContainer().getActor().setActionPoints(0);
 		this.m.FatigueCost = 0;
 		this.m.ActionPointCost = 0;
-		this.m.IsSameTurn = true;
     }
 
     function swapOff()

@@ -22,6 +22,15 @@ gt.Const.World.Spawn.GoblinRoamers <-
 	MinR = 50,
 	Troops = [
 		{
+			Weight = 1,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.KoboldFighter,
+					Cost = 5
+				}
+			]
+		},
+		{
 			Weight = 20,
 			Types = [
 				{
@@ -50,7 +59,7 @@ gt.Const.World.Spawn.GoblinRoamers <-
 			]
 		},
 		{
-			Weight = 50,
+			Weight = 49,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.GoblinWolfrider,

@@ -606,16 +606,16 @@ this.zombie <- this.inherit("scripts/entity/tactical/actor", {
 		this.getSprite("injury").setHorizontalFlipping(flip);
 		this.getSprite("beard").setHorizontalFlipping(flip);
 		this.getSprite("hair").setHorizontalFlipping(flip);
+		this.getSprite("beard_top").setHorizontalFlipping(flip);
+		this.getSprite("body_blood").setHorizontalFlipping(flip);
+		this.getSprite("dirt").setHorizontalFlipping(flip);
+		this.getSprite("status_rage").setHorizontalFlipping(flip);
 		this.getSprite("helmet").setHorizontalFlipping(flip);
 		this.getSprite("helmet_damage").setHorizontalFlipping(flip);
 		this.getSprite("helmet_vanity_lower").setHorizontalFlipping(flip);
 		this.getSprite("helmet_helm").setHorizontalFlipping(flip);
 		this.getSprite("helmet_top").setHorizontalFlipping(flip);
 		this.getSprite("helmet_vanity").setHorizontalFlipping(flip);
-		this.getSprite("beard_top").setHorizontalFlipping(flip);
-		this.getSprite("body_blood").setHorizontalFlipping(flip);
-		this.getSprite("dirt").setHorizontalFlipping(flip);
-		this.getSprite("status_rage").setHorizontalFlipping(flip);
 	}
 
 	function onInit()

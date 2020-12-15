@@ -921,7 +921,7 @@ this.arena_contract <- this.inherit("scripts/contracts/contract", {
 
 					case 3:
 						local helmet = [
-							[1, "oriental/gladiator_helmet"]
+							[1, "oriental/gladiator_helmet", this.Math.rand(13, 15)]
 						];
 						a = this.Const.World.Common.pickHelmet(helmet);
 						this.List.push({

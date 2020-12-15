@@ -49,8 +49,7 @@ this.legend_helmet_mountain_helm <- this.inherit("scripts/items/legend_helmets/l
 
     function onCombatFinished()
 	{
-		this.m.Condition = this.m.ConditionMax;
-		this.updateAppearance();
+		this.setCondition(this.m.ConditionMax);
 	}
 
     function onTurnStart()

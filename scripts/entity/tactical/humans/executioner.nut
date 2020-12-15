@@ -82,18 +82,30 @@ this.executioner <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 		}
 
-		this.m.Items.equip(this.Const.World.Common.pickArmor([
-			[1, "lamellar_harness"],
-			[1, "heavy_lamellar_armor"]
-		]));
-		
+
+		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Body))
+		{
+			this.m.Items.equip(this.Const.World.Common.pickArmor([
+				[1, "lamellar_harness"],
+				[1, "heavy_lamellar_armor"]
+			]));
+		}
+
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Head))
 		{
 			local helm =this.Const.World.Common.pickHelmet([
-				[1, "oriental/nomad_reinforced_helmet"],
-				[1, "oriental/southern_helmet_with_coif"],
-				[1, "oriental/turban_helmet"]
+				[3, "oriental/nomad_reinforced_helmet"],
+				[3, "oriental/southern_helmet_with_coif"],
+				[3, "oriental/turban_helmet"]
 			]) 
+
+			if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+			{
+				helm.push(
+					[1, "oriental/janissary_helmet"]
+				);
+			}
+
 			this.m.Items.equip(helm);
 		}
 	}

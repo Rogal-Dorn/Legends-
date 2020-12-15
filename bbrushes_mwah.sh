@@ -27,3 +27,5 @@ cd ../battlebrothers
 
 cp -R gfx/*.png "c:\Program Files (x86)\Steam\steamapps\common\Battle Brothers\data\gfx"
 cp -R brushes/. "c:\Program Files (x86)\Steam\steamapps\common\Battle Brothers\data\brushes"
+
+read -p "Enter"

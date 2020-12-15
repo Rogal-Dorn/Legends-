@@ -305,7 +305,6 @@ gt.Const.LegendMod.HelmObjs.extend([
         [1, "vanity/legend_helmet_bull_horns"], //10
         [1, "vanity/legend_helmet_feather_band"], //10
         [1, "vanity/legend_helmet_feathered_hat"], //10
-        [1, "vanity/legend_helmet_fencer_hat"], //10
         [1, "vanity/legend_helmet_headband"], //10
         [1, "vanity/legend_helmet_plait"], //10
         [1, "vanity/legend_helmet_ponytail"], //10

@@ -10,7 +10,7 @@ this.unhold_frost <- this.inherit("scripts/entity/tactical/enemies/unhold", {
 
 	function onInit()
 	{
-		this.actor.onInit();
+		this.unhold.onInit();
 		local b = this.m.BaseProperties;
 		b.setValues(this.Const.Tactical.Actor.UnholdFrost);
 		b.DamageTotalMult += 0.15;

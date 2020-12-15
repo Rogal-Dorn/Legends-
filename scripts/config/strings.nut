@@ -277,7 +277,16 @@ gt.Const.Strings.EntityName <- [
 	"Catapult",
 	"Horse",
 	"Ancient Gladiator",
-	"Bandit Rabble Poacher"
+	"Bandit Rabble Poacher",
+	"Bandit Vermes",
+	"Manhunter",
+	"Manhunter Veteran"	
+	"Embalmed Slave",
+	"Embalmed Soldier",
+	"Embalmed Noble",
+	"Embalmed Queen",
+	"Kobold Fighter"
+	
 ];
 gt.Const.Strings.EntityNamePlural <- [
 	"Necromancers",
@@ -424,7 +433,16 @@ gt.Const.Strings.EntityNamePlural <- [
 	"Catapults",
 	"Horses",
 	"Ancient Gladiators",
-	"Bandit Rabble Poachers"
+	"Bandit Rabble Poachers",
+	"Bandit Vermes",
+	"Manhunters",
+	"Manhunter Veterans"
+	"Embalmed Slaves",
+	"Embalmed Soldiers",
+	"Embalmed Nobles",
+	"Embalmed Queens",
+	"Kobold Fighters"
+
 ];
 gt.Const.Strings.Tactical.EntityName <- {
 	Boulder = "Boulder",
@@ -1912,7 +1930,7 @@ gt.Const.Strings.PerkName <- {
 	LegendClarity = "Clarity",
 	LegendAlert = "Alert",
 	LegendBloodbath = "Bloodbath",
-	LegendTerrifyingVisage = "TerrifyingVisage",
+	LegendTerrifyingVisage = "Terrifying Visage",
 	LegendFreedomOfMovement = "Freedom of Movement",
 	LegendOnslaught = "Onslaught",
 	LegendBackToBasics = "Back to Basics",
@@ -2041,7 +2059,7 @@ gt.Const.Strings.PerkDescription <- {
 	Bullseye = "Nailed it! The penalty to hitchance when shooting at a target you have no clear line of fire to is reduced from [color=" + this.Const.UI.Color.NegativeValue + "]75%[/color] to [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] for ranged weapons.  \n[color=#0b0084]From the Bow perk group[/color]",
 	Ballistics = "The range penalty to hitchance is reduced by [color=" + this.Const.UI.Color.NegativeValue + "]-1[/color] per tile. \n[color=#0b0084]From the Crossbow perk group[/color]",
 	Berserk = "RAAARGH! Once per turn, upon killing an enemy, [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] Action Points are immediately regained. Characters can not regain more than their maximum Action Points and no more than 4 for a single attack. \n[color=#0b0084]From the Vicious perk group[/color]",
-	Slaughterer = "Melee kills always are fatalities and have a [color=" + this.Const.UI.Color.NegativeValue + "]-15[/color] penalty to enemy Resolve checks. A gruesome display, enemies are more likely to suffer from hits to morale as their allies get carved up and split in two.",
+	Slaughterer = "Melee kills always are fatalities and have a [color=" + this.Const.UI.Color.NegativeValue + "]-5[/color] penalty to enemy Resolve checks. A gruesome display, enemies are more likely to suffer from hits to morale as their allies get carved up and split in two.",
 	BetweenTheEyes = "The chance to hit the head for critical damage is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] for all attacks.",
 	BattleFlow = "Once per turn, killing an opponent reduces current fatigue by [color=" + this.Const.UI.Color.NegativeValue + "]-10%[/color] of the base maximum fatigue (before penalties due to armor are applied). [color=#0b0084]From the Flail perk group[/color]",
 	DevastatingStrikes = "All damage inflicted is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] for any weapon used. What could stand before you now?",
@@ -2059,7 +2077,7 @@ gt.Const.Strings.PerkDescription <- {
 	BatteringRam = "Immunity against being stunned.",
 	LastStand = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] additional Melee and Ranged Defense for every 2% of missing hitpoints below 66%. When below 33% health this character becomes immune to the effects of fresh injuries, and is not upset by health losses. \n[color=#0b0084]From the Martyr perk group[/color]",
 	Ironside = "All damage received is reduced by [color=" + this.Const.UI.Color.NegativeValue + "]-5%[/color] for every opponent adjacent and in melee range, up to a [color=" + this.Const.UI.Color.NegativeValue + "]-30%[/color] total damage reduction.",
-	BagsAndBelts = "Unlock two extra bag slots to carry all your favorite things. Items placed in bags no longer give a penalty to Maximum Fatigue. \n[color=#0b0084]From the Organised perk group[/color]",
+	BagsAndBelts = "Unlock two extra bag slots to carry all your favorite things. Non-two-handed items placed in bags no longer give a penalty to Maximum Fatigue. \n[color=#0b0084]From the Organised perk group[/color]",
 	Rebound = "Fatigue regeneration is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] per turn while over 90% fatigued. \n[color=#0b0084]From the Fit perk group[/color]",
 	Feint = "If an attack misses, it costs [color=" + this.Const.UI.Color.NegativeValue + "]-20%[/color] less fatigue than normal and you leave your opponent parried, lowering their defenses by 10. \n[color=#0b0084]From the One Handed Sword perk group[/color]",
 	Student = "Everything can be learned if you put your mind to it. Gain additional [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color] experience from battle. At the eleventh character level, you gain an additional perk point and this perk becomes inert.\n\nPlaying the \'Manhunters\' origin, your indebted get the perk point refunded at the seventh character level.\n[color=#0b0084]From the Intelligent perk group[/color]",
@@ -2206,8 +2224,8 @@ gt.Const.Strings.PerkDescription <- {
 	LegendSpecialistWoodaxeSkill = "Allows axes to cut down any tree during battle. Gain [color=" + this.Const.UI.Color.PositiveValue + "]+12[/color] melee skill while using a Woodcutter\'s Axe or Saw, or [color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] melee skill using any other axe \n[color=#0b0084]From the Lumberjack perk group[/color]",
 	LegendSpecialistSickleDamage = "Allows sickles and one handed swords to harvest supplies while destroying bushes in battle. Gain [color=" + this.Const.UI.Color.PositiveValue + "]+4-12[/color] damage while using a Sickle or Notched Blade, or[color=" + this.Const.UI.Color.PositiveValue + "]+1-3[/color] damage while using other one handed swords.  \n[color=#0b0084]From the Sickle perk group[/color]",
 	LegendSpecialistSickleSkill = "Allows sickles and one handed swords to destroy bushes during battle. Gain [color=" + this.Const.UI.Color.PositiveValue + "]+12[/color] melee skill and [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] armor piercing while using a Sickle or Notched Blade. 25% of this skill applies to one handed swords. Allows Sickles and Notched Blades to cut down and harvest bushes during battles. \n[color=#0b0084]From the Sickle perk group[/color] ",
-	LegendSpecialistSlingDamage = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+4-12[/color] damage while using a sling or sling staff. \n[color=#0b0084]From the Sling perk group[/color]. ",
-	LegendSpecialistSlingSkill = "Gain[color=" + this.Const.UI.Color.PositiveValue + "]+12[/color] ranged skill and [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] armor damage while using a sling or sling staff. \n[color=#0b0084]From the Sling perk group[/color].",
+	LegendSpecialistSlingDamage = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+4-12[/color] damage while using a sling.\n[color=" + this.Const.UI.Color.PositiveValue + "]+15-30[/color] damage while using a slingstaff at a range (but increases the AP cost of Sling Heavy Stone by 1 and Fatigue cost by 4). \n[color=#0b0084]From the Sling perk group[/color].",
+	LegendSpecialistSlingSkill = "Gain[color=" + this.Const.UI.Color.PositiveValue + "]+12[/color] ranged skill and [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] armor damage while using a sling.\n[color=" + this.Const.UI.Color.PositiveValue + "]+12[/color] ranged skill and [color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color] armor damage while using a slingstaff at a range (but increases the AP cost of Sling Heavy Stone by 1 and Fatigue cost by 4). \n[color=#0b0084]From the Sling perk group[/color].",
 	LegendBigGameHunter = "When targeting an enemy with more health than you, gain damage equal to their current hitpoints divided by your current hitpoints",
 	LegendSecondWind = "When falling below 50% health for the first time in each combat, will fully refresh your fatigue, grant +10 fatigue recovery for four turns and remove any Stun, Daze, Stagger, Baffle, Charmed or Sleeping status. Only occurs once per combat. \n[color=#0b0084]From the Large perk group[/color]",
 	LegendMarkTarget = "Mark a target, reducing their ranged defense by [color=" + this.Const.UI.Color.PositiveValue + "]-20[/color] for 3 turns. ",
@@ -2236,10 +2254,10 @@ gt.Const.Strings.PerkDescription <- {
 	LegendFavouredEnemyHexen = "Understanding the techniques of the malevolent crones gives you protection against their coven.  Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] bonus to melee skill, ranged skill and resolve while fighting hexe. Bonus increases the more Hexe you kill at a rate of [color=" + this.Const.UI.Color.PositiveValue + "]+0.5%[/color] per Hexe you kill. Taking this perk unlocks a difficult legendary contract to hunt a coven leader",
 	LegendFavouredEnemyAlps = "Preparing for the nightmare creepers gives you techniques against their haggard curses.  Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] bonus to melee skill, ranged skill and resolve while fighting alps. Bonus increases the more Alps you kill, at a rate of [color=" + this.Const.UI.Color.PositiveValue + "]+0.35%[/color] per Alp you kill. Taking this perk unlocks an extremely difficult legendary contract to hunt a fire breathing nightmare demon.",
 	LegendFavouredEnemyUnhold = "These gigantic ravenous creatures are dangerous but stupid, that can be used to your advantage. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] bonus to melee skill, ranged skill and maximum damage while fighting unholds. Bonus increases the more Unholds you kill at a rate of [color=" + this.Const.UI.Color.PositiveValue + "]+0.5%[/color] damage per unhold killed. Taking this perk unlocks an extremely difficult legendary contract to hunt a stone skinned Mountain Unhold.",
-	LegendFavouredEnemyLindwurm = "Understanding the morphology of these noxious serpents opens up weak spots in their scales. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] bonus to melee skill, ranged skill and maximum damage while fighting lindwurms. Bonus increases the more Lindwurm you kill at a rate of [color=" + this.Const.UI.Color.PositiveValue + "]+0.9%[/color] damage per Lindwurm killed. Taking this perk unlocks an extremely difficult legendary contract to hunt a burrowing Stollwurm",
-	LegendFavouredEnemyDirewolf = "The vicious jaws of a direwolf can tear limbs assunder. In the heat of their blood soaked frenzy, they leave themselves open for counter attack. Understanding these weaknesses grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] bonus to melee skill, ranged skill and maximum damage while fighting direwolves. Bonus increases the more wolfs you kill at a rate of [color=" + this.Const.UI.Color.PositiveValue + "]+0.15%[/color] damage per direwolf. Taking this perk unlocks an extremely difficult legendary contract to hunt the great white wolf",
+	LegendFavouredEnemyLindwurm = "Understanding the morphology of these noxious serpents opens up weak spots in their scales. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] bonus to melee skill, ranged skill and maximum damage while fighting lindwurms or serpents. Bonus increases the more Lindwurm you kill at a rate of [color=" + this.Const.UI.Color.PositiveValue + "]+0.9%[/color] damage per Lindwurm killed. Taking this perk unlocks an extremely difficult legendary contract to hunt a burrowing Stollwurm",
+	LegendFavouredEnemyDirewolf = "The vicious jaws of a direwolf can tear limbs assunder. In the heat of their blood soaked frenzy, they leave themselves open for counter attack. Understanding these weaknesses grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] bonus to melee skill, ranged skill and maximum damage while fighting direwolves or hyenas. Bonus increases the more wolfs you kill at a rate of [color=" + this.Const.UI.Color.PositiveValue + "]+0.15%[/color] damage per direwolf. Taking this perk unlocks an extremely difficult legendary contract to hunt the great white wolf",
 	LegendFavouredEnemySpider = "These skittering deadly bugs can be bested by studying the behaviour of arachnids. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] bonus to melee skill, ranged skill and maximum damage while fighting webnechts. Bonus increases the more webnechts you kill at a rate of [color=" + this.Const.UI.Color.PositiveValue + "]+0.12%[/color] per webnecht you kill. Taking this perk unlocks a legendary contract to hunt extremely poisonous Redback Webnecht",
-	LegendFavouredEnemySchrat = "The strong branches of a living tree are deadly foes, but trees can be felled with the right knowledge. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] bonus to melee skill, ranged skill and maximum damage while fighting schrats. Bonus increases at a rate of [color=" + this.Const.UI.Color.PositiveValue + "]+0.7%[/color] per schrat you kill. Taking this perk unlocks a legendary contract to hunt an endlessly multiplying Heartwood Schrat",
+	LegendFavouredEnemySchrat = "The strong branches of a living tree are deadly foes, but trees can be felled with the right knowledge. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] bonus to melee skill, ranged skill and maximum damage while fighting schrats or golems. Bonus increases at a rate of [color=" + this.Const.UI.Color.PositiveValue + "]+0.7%[/color] per schrat you kill. Taking this perk unlocks a legendary contract to hunt an endlessly multiplying Heartwood Schrat",
 	LegendFavouredEnemyOrk = "These marauding brutes are a force to be reckoned with, though their fighting style lacks finesse and can be countered with the right techniques. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] bonus to melee skill, ranged skill and maximum damage while fighting orcs.  Also increases spawn rate of orc champions. Bonus increases the more Orcs you kill, the rate depends on how powerful the orc is, between [color=" + this.Const.UI.Color.PositiveValue + "]+0.14%[/color] per orc young, and [color=" + this.Const.UI.Color.PositiveValue + "]+0.8%[/color] per Orc Behemoth you kill",
 	LegendFavouredEnemyGoblin = "Forces may be gathering to take over the world, but ask someone else, I have no interest in anything but goblins. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] bonus to melee skill, ranged skill and maximum damage while fighting goblins. Also increases spawn rate of goblin champions. Bonus increases the more Goblins you kill, the rate depends on how powerful the goblin is, between [color=" + this.Const.UI.Color.PositiveValue + "]+0.15%[/color] per goblin fighter, and [color=" + this.Const.UI.Color.PositiveValue + "]+0.35%[/color] per Goblin Overseer you kill",
 	LegendFavouredEnemyVampire = "The terrifying abilities of the Necrosavants are developed over time beyond memory. Their techniques are honed to perfection, but that also makes them predictable. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] bonus to melee skill, ranged skill and maximum damage while fighting Necrosavants. Bonus increases at a rate of [color=" + this.Const.UI.Color.PositiveValue + "]+0.3% to +0.4%[/color] per necrosavant killed.",

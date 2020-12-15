@@ -69,6 +69,27 @@ gt.Const.LegendMod.ArmorObjs.extend([
         ]
     }]
 },{
+    ID = "barbarians/reinforced_heavy_iron_armor", // 235
+    Script = "",
+    Sets = [{
+        Cloth = [
+            [1, "cloth/legend_sackcloth"], // 10
+            [1, "cloth/legend_sackcloth_patched"], // 15
+        ],
+        Chain = [
+            [1, "chain/legend_armor_reinforced_worn_mail"] //105
+        ],
+        Plate = [
+            [1, "plate/legend_heavy_iron_armor"], // 120
+        ],
+        Cloak = [
+        ],
+        Tabard = [
+        ],
+        Attachments =[
+        ]
+    }]
+},{
     ID = "barbarians/hide_and_bone_armor", // 95
     Script = "",
     Sets = [{
@@ -126,6 +147,27 @@ gt.Const.LegendMod.ArmorObjs.extend([
         Tabard = [
         ],
         Attachments =[
+        ]
+    }]
+},{
+    ID = "barbarians/legend_barbarian_southern_armor", // 70 ; from Kamy in fashion-show
+    Script = "",
+    Sets = [{
+        Cloth = [
+            [1, "cloth/legend_thick_tunic"] //30
+        ],
+        Chain = [
+        ],
+        Plate = [
+            [1, "plate/legend_southern_arm_guards"], // 30
+        ],
+        Cloak = [
+        ],
+        Tabard = [
+            [1, "tabard/legend_southern_overcloth"] //10
+        ],
+        Attachments = [
+            [1, "armor_upgrades/legend_leather_shoulderguards_upgrade"]
         ]
     }]
 },{

@@ -36,7 +36,7 @@ this.belly_dancer_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.Faces = this.Const.Faces.SouthernFemale;
 		this.m.Hairs = this.Const.Hair.SouthernFemale;
 		this.m.HairColors = this.Const.HairColors.SouthernYoung;
-		this.m.BeardChance = 0;
+		this.m.BeardChance = 1;
 		this.m.Ethnicity = 1;
 		this.m.IsFemaleBackground = true;
 		this.m.IsCombatBackground = false;
@@ -130,6 +130,16 @@ this.belly_dancer_background <- this.inherit("scripts/skills/backgrounds/charact
 
 	function onAddEquipment()
 	{
+		local items = this.getContainer().getActor().getItems();
+		items.equip(this.Const.World.Common.pickArmor([
+			[3, "oriental/cloth_sash"],
+			[1, ""]
+		]))
+		
+			items.equip(this.Const.World.Common.pickHelmet([
+			[1, ""],
+			[4, "southern_jewelry"]
+		]));
 	}
 });
 
