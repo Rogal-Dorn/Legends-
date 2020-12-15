@@ -1,4 +1,4 @@
-this.legend_mummy_heavy <- this.inherit("scripts/entity/tactical/legend_mummy", {
+this.legend_mummy_light <- this.inherit("scripts/entity/tactical/legend_mummy", {
 	m = {},
 	function create()
 	{

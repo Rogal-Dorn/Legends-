@@ -64,7 +64,7 @@ this.dye_maker_location <- this.inherit("scripts/entity/world/attached_location"
 			_list.push({
 				R = 80,
 				P = 1.0,
-				S = "helmets/legend_nobley_hat"
+				S = "helmets/legend_noble_hat"
 			});
 			_list.push({
 				R = 80,
