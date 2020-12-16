@@ -33,7 +33,7 @@ this.legend_trader_background <- this.inherit("scripts/skills/backgrounds/charac
 			"trait.disloyal",
 			"trait.loyal"
 		];
-		this.m.Faces = this.Const.Faces.AllWhiteMale;
+		this.m.Faces = this.Const.Faces.SmartMale;
 		this.m.Hairs = this.Const.Hair.TidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Tidy;
@@ -41,7 +41,6 @@ this.legend_trader_background <- this.inherit("scripts/skills/backgrounds/charac
 				this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Chivalrous;
 		this.m.Level = 1;
-		this.m.IsUntalented = true;
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[4];
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[4];
 		this.m.CustomPerkTree = [

@@ -13,14 +13,14 @@ if (!("HelmObjs" in gt.Const.LegendMod))
 
 gt.Const.LegendMod.HelmObjs.extend([
 {
-    ID = "barbarians/barbarian_ritual_helmet", //300
+    ID = "barbarians/barbarian_ritual_helmet", //300, -28, -3,
     Script = "",
     Sets = [{
     Hoods = [
         [1, "hood/legend_helmet_chain_scarf"], //70
     ],
     Helms = [
-        [1, "helm/legend_helmet_barb_ritual_helm"], //220
+        [1, "helm/legend_helmet_barb_ritual_helm"], //220, -24, -3
     ],
     Tops = [],
     Vanity = [
@@ -28,212 +28,159 @@ gt.Const.LegendMod.HelmObjs.extend([
     ]
 }]
 },{
-    ID = "barbarians/bear_headpiece", //50
+    ID = "barbarians/bear_headpiece", //50, -3, 0, 100
     Script = "",
     Sets = [{
     Hoods = [
-        [1, "hood/legend_helmet_barb_chain_scarf"], //55
-        [1, "hood/legend_helmet_rotten_chain_scarf"], //60
-        [1, "hood/legend_helmet_patched_hood"], //25
-        [1, "hood/legend_helmet_leather_cap"], //35
-        [1, "hood/legend_helmet_leather_hood"], //45
-        [1, "hood/legend_helmet_open_chain_hood"], //65
-
+        [1, "hood/legend_helmet_leather_cap"], //35, 0, 80
+        [1, "hood/legend_helmet_padded_cap"], //40, 0
+        [1, "hood/legend_helmet_chain_scarf"], //55, 0
     ],
     Helms = [
-        [1, ""], //15
     ],
     Tops = [
-        [1, ""], //35
     ],
     Vanity = [
         [1, "vanity/legend_helmet_bear_head"], //10
     ]
 }]
 },{
-    ID = "barbarians/beastmasters_headpiece", //130
+    ID = "barbarians/beastmasters_headpiece", //130, -8, -1, 350
     Script = "",
     Sets = [{
     Hoods = [
-        [1, "hood/legend_helmet_barb_chain_scarf"], //55
-        [1, "hood/legend_helmet_rotten_chain_scarf"], //60
-        [1, "hood/legend_helmet_leather_cap"], //35
-        [1, "hood/legend_helmet_leather_hood"], //45
-        [1, "hood/legend_helmet_open_chain_hood"], //65
+        [1, "hood/legend_helmet_barb_open_chain"], //65, -3, 0
+        [1, "hood/legend_helmet_barb_chain_scarf"], //55, -2, 0
     ],
     Helms = [
-		[1, ""], //45
-        [1, "helm/legend_helmet_viking_helm"], //45
-        [1, "helm/legend_helmet_norman_helm"], //50
+        [1, "helm/legend_helmet_barb_metal_cap"], //50, -3, 0
     ],
     Tops = [
         [5, ""], //35
-		[1, "top/legend_helmet_orc_leather_mask"], //35
-		[1, "top/legend_helmet_orc_horn_mask"], //35
-
+		[1, "top/legend_helmet_orc_leather_mask"], //35, -2, -1
+		[1, "top/legend_helmet_orc_horn_mask"], //35, -2, -1
     ],
     Vanity = [
         [1, "vanity/legend_helmet_goat_horns"], //10
     ]
 }]
 },{
-    ID = "barbarians/closed_scrap_metal_helmet", //190
+    ID = "barbarians/closed_scrap_metal_helmet", //190, -18, -2, 800
     Script = "",
     Sets = [{
     Hoods = [
-        [1, "hood/legend_helmet_barb_chain_scarf"], //55
-        [1, "hood/legend_helmet_rotten_chain_scarf"], //60
-        [1, "hood/legend_helmet_patched_hood"], //25
-        [1, "hood/legend_helmet_leather_cap"], //35
-        [1, "hood/legend_helmet_leather_hood"], //45
-        [1, "hood/legend_helmet_open_chain_hood"], //65
+        [1, "hood/legend_helmet_barb_chain_scarf"], //55, -2, 0
+        [1, "hood/legend_helmet_rotten_chain_scarf"], //60, -3, 0
+        [1, "hood/legend_helmet_barb_open_chain"], //65, -3, 0
     ],
     Helms = [
-        [1, "helm/legend_helmet_crude_cylinder_helm"], //110
+        [1, "helm/legend_helmet_crude_cylinder_helm"], //135, -15, -2
     ],
     Tops = [
-        [1, ""], //35
-
     ],
     Vanity = [
-        [1, "vanity/legend_helmet_antler"], //10
+        [1, ""],
+        [1, "vanity/legend_helmet_bull_horns"], //10
+        [1, "vanity/legend_helmet_ram_horns"], //10
+        [2, "vanity/legend_helmet_antler"], //10
 
     ]
 }]
 },{
-    ID = "barbarians/crude_faceguard_helmet", //160
+    ID = "barbarians/crude_faceguard_helmet", //160, -15, -2, 650
     Script = "",
     Sets = [{
     Hoods = [
-        [1, "hood/legend_helmet_barb_chain_scarf"], //55
-        [1, "hood/legend_helmet_rotten_chain_scarf"], //60
-        [1, "hood/legend_helmet_open_chain_hood"], //65
+        [1, "hood/legend_helmet_barb_chain_scarf"], //55, -2
+        [1, "hood/legend_helmet_rotten_chain_scarf"], //60, -3
+        [1, "hood/legend_helmet_barb_open_chain"], //65, -3, 0
     ],
     Helms = [
-
-        [1, "helm/legend_helmet_crude_metal_helm"], //65
+        [1, "helm/legend_helmet_crude_metal_helm"], //100, -10, -1
     ],
     Tops = [
-        [1, ""], //35
     ],
     Vanity = [
-        [1, ""], //10
     ]
 }]
 },{
-    ID = "barbarians/crude_metal_helmet", //145
+    ID = "barbarians/crude_metal_helmet", //145, -11, -1
     Script = "",
     Sets = [{
     Hoods = [
-        [1, "hood/legend_helmet_patched_hood"], //25
-        [1, "hood/legend_helmet_leather_cap"], //35
-        [1, "hood/legend_helmet_leather_hood"], //45
+        [1, "hood/legend_helmet_barb_leather_cap"], //20
+        [1, "hood/legend_helmet_leather_cap"], //35, -1
     ],
     Helms = [
-        [1, "helm/legend_helmet_crude_metal_helm"], //65
+        [1, "helm/legend_helmet_crude_metal_helm"], //100, -10, -1
     ],
     Tops = [
-        [1, ""], //35
-
     ],
     Vanity = [
-        [1, ""], //10
     ]
 }]
 },{
-    ID = "barbarians/heavy_horned_plate_helmet", //250
+    ID = "barbarians/heavy_horned_plate_helmet", //250, -23, -3, 1300
     Script = "",
     Sets = [{
     Hoods = [
-		[1, "hood/legend_helmet_barb_chain_scarf"], //55
-        [1, "hood/legend_helmet_rotten_chain_scarf"], //60
-        [1, "hood/legend_helmet_open_chain_hood"], //65
-        [1, "hood/legend_helmet_chain_scarf"], //70
-        [1, "hood/legend_helmet_chain_hood"], //80
-        [1, "hood/legend_helmet_chain_hood_full"], //90
+		[1, "hood/legend_helmet_barb_chain_scarf"], //55, -2, 0
     ],
     Helms = [
-        [1, "helm/legend_helmet_heavy_plate_helm"], //170
+        [1, "helm/legend_helmet_heavy_plate_helm"], //185, -20, -3
     ],
     Tops = [
-        [1, "top/legend_helmet_orc_leather_mask"], //35
-        [1, "top/legend_helmet_orc_horn_mask"], //60
-        [1, "top/legend_helmet_orc_metal_mask"], //120
-        [1, "top/legend_helmet_leather_hood_barb"], //105
-        [1, "top/legend_helmet_headband_side"], //20
-        [1, "top/legend_helmet_headband_nose"], //30
+        [2, ""], //10
+        [1, "top/legend_helmet_leather_hood_barb"], //50, -4, -1
+        [2, "top/legend_helmet_headband_side"], //20
+        [2, "top/legend_helmet_headband_nose"], //25
     ],
     Vanity = [
         [1, "vanity/legend_helmet_antler"], //10
         [1, "vanity/legend_helmet_bear_head"], //10
-        [10, "vanity/legend_helmet_bull_horns"], //10
+        [5, "vanity/legend_helmet_bull_horns"], //10
         [1, "vanity/legend_helmet_goat_horns"], //10
-        [1, "vanity/legend_helmet_headband"], //10
-        [1, "vanity/legend_helmet_horn_decorations"], //10
         [1, "vanity/legend_helmet_ram_horns"], //10
 		[1, ""], //10
     ]
 }]
 },{
-    ID = "barbarians/rusted_heavy_plate_helmet", //250
+    ID = "barbarians/leather_headband", //30, 0 ,0
     Script = "",
     Sets = [{
     Hoods = [
-        [1, "hood/legend_helmet_rusted_aventail"] //
+        [1, "hood/legend_helmet_barb_leather_cap"], //15, 0
     ],
     Helms = [
-        [1, "helm/legend_helmet_heavy_plate_helm"], //170
-    ],
-    Tops = [
-    ],
-    Vanity = [
-        [1, "vanity/legend_helmet_bear_head"]
-    ]
-}]
-},{
-    ID = "barbarians/leather_headband", //30
-    Script = "",
-    Sets = [{
-    Hoods = [
-        [1, "hood/legend_helmet_cloth_scarf"], //10
-        [1, "hood/legend_helmet_cloth_bandana"], //15
-        [1, "hood/legend_helmet_patched_hood"], //25
-        [1, "hood/legend_helmet_simple_hood"], //30
-        [1, "hood/legend_helmet_leather_cap"], //35
-    ],
-    Helms = [
-        [1, ""], //15
-
     ],
     Tops = [
         [1, "top/legend_helmet_headband_side"], //20
-        [1, "top/legend_helmet_headband_nose"], //30
+        [1, "top/legend_helmet_headband_nose"], //25
     ],
     Vanity = [
-        [1, ""], //10
     ]
 }]
 },{
-    ID = "barbarians/leather_helmet", //105
+    ID = "barbarians/leather_helmet", //105, -6, -1, 320
     Script = "",
     Sets = [{
     Hoods = [
-        [1, "hood/legend_helmet_cloth_scarf"], //10
-        [1, "hood/legend_helmet_cloth_bandana"], //15
         [1, "hood/legend_helmet_leather_cap"], //35
-        [1, "hood/legend_helmet_padded_cap"], //40
-        [1, "hood/legend_helmet_leather_hood"], //45
-
+        [1, "hood/legend_helmet_padded_cap"], //40, -1
+        [1, "hood/legend_helmet_chain_scarf"], //55, -2
     ],
     Helms = [
-        [1, "helm/legend_helmet_viking_helm"], //45
-        [1, "helm/legend_helmet_norman_helm"], //50
+        [1, "helm/legend_helmet_barb_metal_cap"], //50, -3, 0
     ],
     Tops = [
-        [1, "top/legend_helmet_leather_hood_barb"], //105
+        [1, "top/legend_helmet_leather_hood_barb"], //50, -4, -1, 200
     ],
     Vanity = [
-        [1, ""], //30
+        [1, "vanity/legend_helmet_bull_horns"], //10
+        [1, "vanity/legend_helmet_ram_horns"], //10
+        [1, "vanity/legend_helmet_ponytail"], //10
+        [1, "vanity/legend_helmet_bear_head"], //10
+        [10, ""], //30
     ]
 }]
 },{

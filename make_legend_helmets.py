@@ -326,9 +326,13 @@ layers = [
  "title" :  "Goblin Scarf", \
  "desc" :  "Goblin Scarf" \
 },
-{"name" : "barb_chain_scarf"                     , "layer" : "hood", "min" : 1, "max" : 5, "base" : True, "value" : 165, "con" : 55, "stam" : -2, "vis" : 0, "hair" : "false", "beard" : "true",  \
+{"name" : "barb_chain_scarf"                     , "layer" : "hood", "min" : 1, "max" : 6, "base" : True, "value" : 165, "con" : 55, "stam" : -2, "vis" : 0, "hair" : "false", "beard" : "true",  \
  "title" :  "Rusted Aventail", \
  "desc" :  "A rusty mail aventail that still offers good protection - it leaves horrible stains though." \
+},
+{"name" : "barb_open_chain"                     , "layer" : "hood", "min" : 1, "max" : 1, "base" : True, "value" : 250, "con" : 65, "stam" : -3, "vis" : 0, "hair" : "true", "beard" : "false",  \
+ "title" :  "Rusted Open Chain", \
+ "desc" :  "A rusty open faced mail chain patched together by the northern tribes." \
 },
 {"name" : "rotten_chain_scarf"                     , "layer" : "hood", "min" : 1, "max" : 5, "base" : True, "value" : 190, "con" : 60, "stam" : -3, "vis" : 0, "hair" : "false", "beard" : "true",  \
  "title" :  "Rotten Aventail", \
@@ -420,7 +424,10 @@ layers = [
  "title" :  "Cloth Cap", \
  "desc" :  "A piece of cloth covering the top of the head." \
 },
-
+{"name" : "barb_leather_cap"                     , "layer" : "hood", "min" : 1, "max" : 1, "base" : True, "value" : 20, "con" : 15, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
+ "title" :  "Patched Leather Cap", \
+ "desc" :  "A piece of patched leather covering the top of the head." \
+},
 {"name" : "southern_headband_coin"                     , "layer" : "hood", "min" : 1, "max" : 1, "base" : True, "value" : 20, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Southern Coin Headband", \
  "desc" :  "A southern headband of coins strung together" \
@@ -498,15 +505,15 @@ layers = [
  "title" :  "Orc Great Helm", \
  "desc" :  "The distinctive helm of an orc warlord" \
 },
-{"name" : "crude_metal_helm"                     , "layer" : "helm", "min" : 1, "max" : 3, "value" : 550, "con" : 65, "stam" : -6, "vis" : -1, "hair" : "true", "beard" : "true",  \
+{"name" : "crude_metal_helm"                     , "layer" : "helm", "min" : 1, "max" : 3, "value" :350, "con" : 100, "stam" : -10, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Crude Metal Helm", \
  "desc" :  "Although crudely made and rusty, this metal helmet is a durable and sturdy piece of armor." \
 },
-{"name" : "crude_cylinder_helm"                     , "layer" : "helm", "min" : 1, "max" : 2, "value" : 800, "con" : 110, "stam" : -10, "vis" : -2, "hair" : "true", "beard" : "true",  \
+{"name" : "crude_cylinder_helm"                     , "layer" : "helm", "min" : 1, "max" : 2, "value" : 600, "con" : 135, "stam" : -15, "vis" : -2, "hair" : "true", "beard" : "true",  \
  "title" :  "Crude Cylinder Helm", \
  "desc" :  "This heavy metal helmet also protects the wearers face, albeit at the cost of visibility." \
 },
-{"name" : "heavy_plate_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1300, "con" : 170, "stam" : -15, "vis" : -3, "hair" : "true", "beard" : "false",  \
+{"name" : "heavy_plate_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 900, "con" : 185, "stam" : -20, "vis" : -3, "hair" : "true", "beard" : "false",  \
  "title" :  "Heavy Plate Helm", \
  "desc" :  "This heavy helmet usually is worn as a sign of high standing and reputation within barbarian warbands." \
 },
@@ -680,11 +687,14 @@ layers = [
  "title" :  "Rotten Great Helm", \
  "desc" :  "Rotten Great Helm" \
 },
+{"name" : "barb_metal_cap"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 150, "con" : 50, "stam" : -3, "vis" : 0, "hair" : "true", "beard" : "false",  \
+ "title" :  "Rusted Metal Helm", \
+ "desc" :  "A rusted and dented metal cap that provides protection against bumps to the head" \
+},
 {"name" : "mummy_crown"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1600, "con" : 180, "stam" : -14, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Ancient Southern Crown", \
  "desc" :  "A tall crown of a long dead civilisation" \
 },
-
 {"name" : "mummy_crown_king"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 2000, "con" : 200, "stam" : -18, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Ancient Southern Crested Crown", \
  "desc" :  "A crested crown of a long dead civilisation" \
@@ -724,7 +734,7 @@ layers = [
  "title" :  "Orc Metal Plated Mask", \
  "desc" :  "A simple construction of metal plates, worn by young orcs" \
 },
-{"name" : "goblin_leaves"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 5, "con" : 3, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
+{"name" : "goblin_leaves"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 5, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Goblin Leaves", \
  "desc" :  "A set of leaves used by goblins to disguise themselves" \
 },
@@ -732,7 +742,7 @@ layers = [
  "title" :  "Goblin Leaf Helm", \
  "desc" :  "A goblin helm made for blending in with cover" \
 },
-{"name" : "goblin_gillie"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 45, "con" : 12, "stam" : -2, "vis" : 0, "hair" : "true", "beard" : "false",  \
+{"name" : "goblin_gillie"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 45, "con" : 15, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Goblin Gillie", \
  "desc" :  "Helmet camouflague used by goblin ambushers" \
 },
@@ -740,15 +750,15 @@ layers = [
  "title" :  "Leather Goblin Mask", \
  "desc" :  "A simple goblin face covering" \
 },
-{"name" : "goblin_leather_helm"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 105, "con" : 22, "stam" : -2, "vis" : 0, "hair" : "true", "beard" : "false",  \
+{"name" : "goblin_leather_helm"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 175, "con" : 35, "stam" : -2, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Leather Goblin Helm", \
  "desc" :  "A basic leather helm of goblin design" \
 },
-{"name" : "goblin_chain_helm"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 375, "con" : 40, "stam" : -4, "vis" : -1, "hair" : "true", "beard" : "false",  \
+{"name" : "goblin_chain_helm"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 375, "con" : 70, "stam" : -4, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Goblin Chain Helm", \
  "desc" :  "A chainlink helm of goblin design." \
 },
-{"name" : "goblin_spiked_helm"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 400, "con" : 45, "stam" : -6, "vis" : -2, "hair" : "true", "beard" : "false",  \
+{"name" : "goblin_spiked_helm"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 275, "con" : 45, "stam" : -3, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Spiked Goblin Helm", \
  "desc" :  "The distinctive spiked helm of a goblin overseer" \
 },
@@ -760,7 +770,7 @@ layers = [
  "title" :  "Ancient Diadem", \
  "desc" :  "An ancient crown from ages past" \
 },
-{"name" : "leather_hood_barb"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 590, "con" : 55, "stam" : -3, "vis" : -2, "hair" : "true", "beard" : "false",  \
+{"name" : "leather_hood_barb"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 200, "con" : 50, "stam" : -4, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Leather Hood Barb", \
  "desc" :  "The crude padded leather hood of a barbarian, it is heavy and surprisingly protective" \
 },
