@@ -26,10 +26,23 @@ this.sato_destroyed_caravan_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
                 local items = [];
-                items.push(this.new("scripts/items/armor/oriental/cloth_sash"));
-                items.push(this.new("scripts/items/armor/oriental/cloth_sash"));
-                items.push(this.new("scripts/items/helmets/oriental/gunner_hat"));
+
+                items.push(this.Const.World.Common.pickArmor([
+					[1, "oriental/cloth_sash"]
+				]));
+                items.push(this.Const.World.Common.pickArmor([
+					[1, "oriental/cloth_sash"]
+				]));
+                items.push(this.Const.World.Common.pickHelmet([
+					[1, "oriental/gunner_hat"]
+				]));
+
                 items.push(this.new("scripts/items/weapons/oriental/nomad_mace"));
+
+				
+				
+				
+
 
                 local r = this.Math.rand(1, 2);
                 if (r == 1)
@@ -72,9 +85,17 @@ this.sato_destroyed_caravan_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
                 local items = [];
-                items.push(this.new("scripts/items/armor/linen_tunic"));
-                items.push(this.new("scripts/items/armor/wizard_robe"));
-                items.push(this.new("scripts/items/helmets/wizard_hat"));
+
+				items.push(this.Const.World.Common.pickArmor([
+					[1, "linen_tunic"]
+				]));
+                items.push(this.Const.World.Common.pickArmor([
+					[1, "wizard_robe"]
+				]));
+                items.push(this.Const.World.Common.pickHelmet([
+					[1, "wizard_hat"]
+				]));
+
                 items.push(this.new("scripts/items/weapons/bludgeon"));
 
                 local r = this.Math.rand(1, 2);
@@ -118,8 +139,17 @@ this.sato_destroyed_caravan_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
                 local items = [];
-                items.push(this.new("scripts/items/armor/noble_tunic"));
-                items.push(this.new("scripts/items/armor/barbarians/hide_and_bone_armor"));
+
+				items.push(this.Const.World.Common.pickArmor([
+					[1, "noble_tunic"]
+				]));
+                items.push(this.Const.World.Common.pickArmor([
+					[1, "barbarians/hide_and_bone_armor"]
+				]));
+                items.push(this.Const.World.Common.pickHelmet([
+					[1, "wizard_hat"]
+				]));
+
                 items.push(this.new("scripts/items/weapons/barbarians/axehammer"));
                 items.push(this.new("scripts/items/misc/frost_unhold_fur_item"));
 
