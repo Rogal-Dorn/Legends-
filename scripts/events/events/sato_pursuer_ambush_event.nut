@@ -260,8 +260,8 @@ this.sato_pursuer_ambush_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
-		local maxSlaveModifier = this.Math.max(candidates.len(), 10);
-		this.m.Score = maxSlaveModifier * 5;
+		local maxSlaveModifier = this.Math.min(candidates.len(), 10);
+		this.m.Score = maxSlaveModifier * 6;
 	}
 
 	function onDetermineStartScreen()
