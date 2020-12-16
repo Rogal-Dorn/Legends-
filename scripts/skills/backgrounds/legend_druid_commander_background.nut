@@ -182,7 +182,6 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.BattleFlow,
 				this.Const.Perks.PerkDefs.Stalwart,
 				this.Const.Perks.PerkDefs.LegendFreedomOfMovement,
-				this.Const.Perks.PerkDefs.LegendDrumsOfLife,
 				this.Const.Perks.PerkDefs.LegendTreeform	//LegendMasterAnger
 			]
 		];
@@ -324,8 +323,6 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 		local actor = this.getContainer().getActor();
 		actor.setTitle("The Druid");
 		this.m.Container.add(this.new("scripts/skills/traits/tough_trait"));
-		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_surpress_urges"));
-		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_control_instincts"));
 	}
 
 	function onAddEquipment()

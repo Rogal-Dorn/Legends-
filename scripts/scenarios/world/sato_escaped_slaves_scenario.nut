@@ -227,45 +227,47 @@ this.sato_escaped_slaves_scenario <- this.inherit("scripts/scenarios/world/start
 		this.World.Assets.m.BusinessReputation = 0;
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/rice_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/rice_item"));
-		this.World.Assets.m.Money = this.World.Assets.m.Money - 600;
+		this.World.Assets.m.Money = this.World.Assets.m.Money - 500;
 	}
 
 	function addRandomEquipment(items, shieldSpecific = false) {
 
 	//Set the probability for each armor
 			items.equip(this.Const.World.Common.pickArmor([
-				[50, ""],
+				[40, ""],
 				[10, "oriental/nomad_robe"],
 				[10, "oriental/thick_nomad_robe"],
 				[10, "oriental/padded_vest"],
 				[5, "oriental/stitched_nomad_armor"],
 				[5, "oriental/plated_nomad_mail"],
 				[5, "oriental/linothorax"],
+				[5, "legend_rabble_fur"],
+				[5, "legend_rabble_tunic"]
 			]))
-	//Damage the armor 
+	//Damage the armor
 			local armor = items.getItemAtSlot(this.Const.ItemSlot.Body);
 			if (armor != null)
 			{
 			armor.setCondition(this.Math.rand(armor.getConditionMax() * 0.4, armor.getConditionMax()) * 1.0);
 			}
-			
-	//Set the probability for each helmet	
+
+	//Set the probability for each helmet
 			items.equip(this.Const.World.Common.pickHelmet([
-				[50, ""],
+				[40, ""],
 				[5, "oriental/nomad_reinforced_helmet"],
 				[5, "oriental/wrapped_southern_helmet"],
 				[5, "oriental/spiked_skull_cap_with_mail"],
-				[12, "oriental/nomad_head_wrap"],
-				[12, "oriental/nomad_leather_cap"],
-				[12, "oriental/nomad_light_helmet"]
+				[20, "oriental/nomad_head_wrap"],
+				[15, "oriental/nomad_leather_cap"],
+				[15, "oriental/nomad_light_helmet"]
 			]));
-	//Damage the armor 
+	//Damage the armor
 			local helmet = items.getItemAtSlot(this.Const.ItemSlot.Head);
 			if (helmet != null)
 			{
 			helmet.setCondition(this.Math.rand(helmet.getConditionMax() * 0.4, helmet.getConditionMax()) * 1.0);
 			}
-		
+
 	//Set the probability for each weapon
 		local weaponRoll = this.Math.rand(1, 100);
 		local weapons = []
@@ -278,16 +280,29 @@ this.sato_escaped_slaves_scenario <- this.inherit("scripts/scenarios/world/start
 				"weapons/oriental/light_southern_mace",
 				"weapons/oriental/firelance"
 			]);
-		} 
+		}
 		else if ( weaponRoll >= 6 && weaponRoll <= 50 ) {
 			weapons.extend([
 					"shields/oriental/southern_light_shield",
 					"weapons/oriental/saif",
 					"weapons/militia_spear",
 					"weapons/oriental/nomad_mace",
-				]);	
+					"weapons/legend_chain"
+				]);
 		}
-	//Damage and equip the weapon 
+		else if (weaponRoll >= 51 && weaponRoll <= 90 ) {
+			weapons.extend([
+					"weapons/legend_shovel",
+					"weapons/legend_shiv",
+					"weapons/legend_hoe",
+					"weapons/legend_saw",
+					"weapons/legend_hammer",
+					"weapons/legend_wooden_pitchfork",
+					"weapons/legend_wooden_spear",
+					"weapons/legend_chain"
+				]);
+		}
+	//Damage and equip the weapon
 
 		if (weapons.len() != 0) {
             items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));

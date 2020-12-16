@@ -43,8 +43,8 @@ this.mummy_curse_effect <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		_properties.DamageReceivedTotalMult *= 1.25;
-		_properties.TargetAttractionMult *= 1.25;
+		_properties.DamageReceivedTotalMult *= 1.20;
+		_properties.TargetAttractionMult *= 1.20;
 	}
 
 	function onCombatFinished()
