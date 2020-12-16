@@ -4398,6 +4398,10 @@ Fully buffed with minor perks Sling Heavy Stone pre-nerf: 49-72/80%/188% for 8 A
 
 15.0.0.21
 
-
 **Armor Tweaks**
 Rebalance all barbarian helmet layers (+ adds a few new layers)
+
+**Fixes**
+Fixes manhunter fight event as escaped indebted
+Fixes Houndmaster background spawn
+Fixes sato destroyed caravan event giving nonlayered armor

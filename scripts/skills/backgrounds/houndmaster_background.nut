@@ -80,7 +80,7 @@ this.houndmaster_background <- this.inherit("scripts/skills/backgrounds/characte
 			return
 		}
 		this.m.Faces = this.Const.Faces.AllWhiteFemale;
-		this.m.Hairs = this.Const.Hair.AllFemmale;
+		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
