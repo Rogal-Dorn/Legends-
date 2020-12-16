@@ -29,7 +29,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [8, "top/legend_helmet_goblin_chain_helm"], //70
     ],
     Vanity = [
-        [1, ""]//10
+        [1, ""],//10
         [4, "vanity/legend_helmet_ponytail"]//10
     ]
 }]
