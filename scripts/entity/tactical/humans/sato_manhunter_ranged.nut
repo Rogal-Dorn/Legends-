@@ -105,9 +105,9 @@ this.sato_manhunter_ranged <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Items.equip(this.Const.World.Common.pickArmor(armor));
 
 		local helmet = [
-			[1, "helmets/oriental/southern_head_wrap"],
-			[1, "helmets/oriental/nomad_leather_cap"],
-			[1, "helmets/oriental/nomad_light_helmet"]
+			[1, "oriental/southern_head_wrap"],
+			[1, "oriental/nomad_leather_cap"],
+			[1, "oriental/nomad_light_helmet"]
 		];
 		this.m.Items.equip(this.Const.World.Common.pickHelmet(helmet));
 	}
