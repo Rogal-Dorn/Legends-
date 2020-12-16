@@ -4403,3 +4403,4 @@ Fully buffed with minor perks Sling Heavy Stone pre-nerf: 49-72/80%/188% for 8 A
 **Fixes**
 Fixes manhunter fight event as escaped indebted
 Fixes Houndmaster background spawn
+Fixes sato destroyed caravan event giving nonlayered armor
