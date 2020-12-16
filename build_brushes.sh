@@ -1,4 +1,4 @@
-BBDir="${1-"c:\\Steam\\steamapps\\common\\Battle Brothers\\data\\"}"
+BBDir="${1-"c:\\Steam\\steamapps\\common\\Battle Brothers\\data"}"
 RepoDir="${2-"battlebrothers"}"
 
 

@@ -1,4 +1,4 @@
-BBDir="${1-"c:\\Steam\\steamapps\\common\\Battle Brothers\\data\\"}"
+BBDir="${1-"c:\\Steam\\steamapps\\common\\Battle Brothers\\data"}"
 RepoDir="${2-"battlebrothers"}"
 
 function checkForCompileError() {
@@ -46,13 +46,13 @@ while read -r line; do
             mkdir -p "helmets"
             python make_legend_helmets.py
             handleExit
-            cp -R helmets/. "$BBDir\scripts\items\legend_helmets"
+            cp -R helmets/. "$BBDir\\scripts\items\legend_helmets"
         elif [[ "$xpath" == make_legend_armor.py ]]; then
             rm -rf legend_armor
             mkdir -p "legend_armor"
             python make_legend_armor.py
             handleExit
-            cp -R legend_armor/. "$BBDir\scripts\items\legend_armor"
+            cp -R legend_armor/. "$BBDir\\scripts\items\legend_armor"
         elif [[ "$xpath" == *.py ]]; then
             :
             #echo "skipping $line"
@@ -77,7 +77,7 @@ while read -r line; do
 done <<< "$FILES"
 
 cd ../bin
-o=$(./masscompile.bat "$BBDir\scripts")
+o=$(./masscompile.bat "$BBDir\\scripts")
 cd ../"$RepoDir"
 checkForCompileError "$o"
 if [ $? -ne "0" ]
