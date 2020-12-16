@@ -1119,12 +1119,12 @@ layers = [
  "title" :  "Southern Cloth Headress", \
  "desc" :  "A southern headress made of soft fabrics" \
 },
-{"name" : "southern_veil"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 10, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
+{"name" : "southern_veil"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 10, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "true",  \
  "title" :  "Southern Veil", \
  "desc" :  "A thin wispy southern veil" \
 },
 
-{"name" : "southern_veil_coin"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 500, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
+{"name" : "southern_veil_coin"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 500, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "true",  \
  "title" :  "Southern Coin Veil", \
  "desc" :  "A southern veil made of coins threaded togther" \
 },
