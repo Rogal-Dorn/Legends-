@@ -734,7 +734,7 @@ layers = [
  "title" :  "Orc Metal Plated Mask", \
  "desc" :  "A simple construction of metal plates, worn by young orcs" \
 },
-{"name" : "goblin_leaves"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 5, "con" : 3, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
+{"name" : "goblin_leaves"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 5, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Goblin Leaves", \
  "desc" :  "A set of leaves used by goblins to disguise themselves" \
 },
@@ -742,7 +742,7 @@ layers = [
  "title" :  "Goblin Leaf Helm", \
  "desc" :  "A goblin helm made for blending in with cover" \
 },
-{"name" : "goblin_gillie"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 45, "con" : 12, "stam" : -2, "vis" : 0, "hair" : "true", "beard" : "false",  \
+{"name" : "goblin_gillie"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 45, "con" : 15, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Goblin Gillie", \
  "desc" :  "Helmet camouflague used by goblin ambushers" \
 },
@@ -750,15 +750,15 @@ layers = [
  "title" :  "Leather Goblin Mask", \
  "desc" :  "A simple goblin face covering" \
 },
-{"name" : "goblin_leather_helm"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 105, "con" : 22, "stam" : -2, "vis" : 0, "hair" : "true", "beard" : "false",  \
+{"name" : "goblin_leather_helm"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 175, "con" : 35, "stam" : -2, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Leather Goblin Helm", \
  "desc" :  "A basic leather helm of goblin design" \
 },
-{"name" : "goblin_chain_helm"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 375, "con" : 40, "stam" : -4, "vis" : -1, "hair" : "true", "beard" : "false",  \
+{"name" : "goblin_chain_helm"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 375, "con" : 70, "stam" : -4, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Goblin Chain Helm", \
  "desc" :  "A chainlink helm of goblin design." \
 },
-{"name" : "goblin_spiked_helm"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 400, "con" : 45, "stam" : -6, "vis" : -2, "hair" : "true", "beard" : "false",  \
+{"name" : "goblin_spiked_helm"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 275, "con" : 45, "stam" : -3, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Spiked Goblin Helm", \
  "desc" :  "The distinctive spiked helm of a goblin overseer" \
 },
