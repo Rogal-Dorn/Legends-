@@ -19,9 +19,9 @@ gt.tnf_debug.getAttributesValues <- function (character, levelup = true, perk = 
     MeleeDefense  = 0,
     RangedDefense = 0
   };
-  
+
   local properties = character.getCurrentProperties();
-  
+
   attributes.Hitpoints = character.getHitpointsMax();
   attributes.Bravery = character.getBravery();
   attributes.Fatigue = character.getFatigueMax();
@@ -30,7 +30,7 @@ gt.tnf_debug.getAttributesValues <- function (character, levelup = true, perk = 
   attributes.RangedSkill = properties.getRangedSkill();
   attributes.MeleeDefense = properties.getMeleeDefense();
   attributes.RangedDefense = properties.getRangedDefense();
-  
+
   if (levelup) {
     foreach (attribute, index in gt.Const.Attributes) { //table w/ HP = 0, RES = 1, etc.
       if (index > 7) continue; //only 8 attributes
@@ -40,7 +40,7 @@ gt.tnf_debug.getAttributesValues <- function (character, levelup = true, perk = 
       //this.logInfo("TNF | " + character.getName() + " current and level up value for " + attribute + " = " + attributes[attribute]);
     }
   }
-  
+
   if (perk) {
     local skills = character.getSkills();
     if (skills.hasSkill("trait.iron_lungs")) attributes.Fatigue += 20;
@@ -48,7 +48,7 @@ gt.tnf_debug.getAttributesValues <- function (character, levelup = true, perk = 
     if (skills.hasSkill("trait.athletic")) attributes.Fatigue += 10;
     if (skills.hasSkill("trait.clubfooted")) attributes.Fatigue -= 10;
   }
-  
+
   return attributes;
 };
 
@@ -114,7 +114,7 @@ gt.tnf_debug.getActorFaction <- function(actor) {
 /***************************************************/
 
 //gt.tnf_debug. <- function() {
-//  
+//
 //};
 
 /***************************************************/
@@ -206,6 +206,16 @@ gt.tnf_debug.factions <- [
 ];
 
 gt.tnf_debug.actors <- {
+  //M for MONSTER                Summons a random enemy from list
+  M = [
+    "GoblinSkirmisher",
+    "GoblinSkirmisherLOW",
+    "GoblinAmbusher",
+    "GoblinAmbusherLOW",
+    "GoblinShaman",
+    "GoblinOverseer",
+    "GoblinWolfrider"
+  ],
   Bandits = [
     "Wardog",
     "BanditThug",
@@ -214,7 +224,14 @@ gt.tnf_debug.actors <- {
     "BanditRaider",
     "BanditRaiderLOW",
     "BanditRaiderWolf",
-    "BanditLeader"
+    "BanditLeader",
+    "SatoManhunter",
+    "SatoManhunterVeteran",
+    "BanditVermes",
+    "BanditRabblePoacher",
+    "BanditOutrider",
+    "BanditWarlord",
+    "BanditVeteran",
   ],
   Barbarians = [
     "Warhound",
@@ -227,6 +244,7 @@ gt.tnf_debug.actors <- {
     //"BarbarianUnholdFrost",
     "BarbarianBeastmaster"
   ],
+
   Beasts = [
     "BarbarianUnhold",
     "BarbarianUnholdFrost",
@@ -246,7 +264,16 @@ gt.tnf_debug.actors <- {
     "Hexe",
     "Schrat",
     "Kraken",
-    "TricksterGod"
+    "TricksterGod",
+    "LegendWhiteWarwolf",
+    "LegendGreenwoodSchratSmall",
+    "LegendGreenwoodSchrat",
+    "LegendHexeLeader",
+    "LegendDemonAlp",
+    "LegendRedbackSpider",
+    "LegendRockUnhold",
+    "LegendStollwurm",
+    "LegendWhiteDirewolf",
   ],
   Settlement = [
     "Militia",
@@ -268,6 +295,17 @@ gt.tnf_debug.actors <- {
     "CaravanHand",
     "CaravanGuard",
     //"CaravanDonkey"
+    "LegendPeasantWitchHunter",
+    "LegendPeasantSquire",
+    "LegendPeasantMiner"
+    "LegendPeasantWoodsman"
+    "LegendPeasantPoacher"
+    "LegendPeasantMinstrel",
+    "LegendPeasantFarmhand",
+    "LegendPeasantMonk",
+    "LegendPeasantBlacksmith",
+    "LegendPeasantButcher",
+    "BanditRabble",
   ],
   Goblins = [
     //"GreenskinCatapult",
@@ -285,7 +323,9 @@ gt.tnf_debug.actors <- {
     "OrcBerserker",
     "OrcWarrior",
     "OrcWarriorLOW",
-    "OrcWarlord"
+    "OrcWarlord",
+    "LegendOrcBehemoth",
+    "LegendOrcElite",
   ],
   NobleHouse = [
     "ArmoredWardog",
@@ -296,6 +336,10 @@ gt.tnf_debug.actors <- {
     "StandardBearer",
     "Sergeant",
     "Knight",
+    "LegendFencer",
+    "LegendSlinger",
+    "LegendHalberdier"
+
     //"MilitaryDonkey"
   ],
   Undead = [
@@ -308,7 +352,10 @@ gt.tnf_debug.actors <- {
     "SkeletonPriest",
     "SkeletonBoss",
     "Vampire",
-    "VampireLOW"
+    "VampireLOW",
+    "LegendVampireLord",
+    "SkeletonGladiator",
+
   ],
   Zombies = [
     "Necromancer",
@@ -320,7 +367,14 @@ gt.tnf_debug.actors <- {
     "ZombieKnightBodyguard",
     "ZombieBetrayer",
     "ZombieBoss",
-    "Ghost"
+    "Ghost",
+    "LegendDemonHound",
+    "LegendBanshee",
+    "LegendMummyLight",
+    "LegendMummyMedium",
+    "LegendMummyHeavy",
+    "LegendMummyQueen"
+
   ]
 };
 
@@ -1037,19 +1091,19 @@ gt.tnf_debug.logSeedFertility <- function() {
   foreach (character in this.World.getPlayerRoster().getAll()) {
     local attributesValuesMin = gt.tnf_debug.getAttributesValues(character, false, false); //current values
     local attributesValuesMax = gt.tnf_debug.getAttributesValues(character, true, false); //current + level up values
-    
+
     rosterLog += "> ";
     foreach (attribute, index in gt.Const.Attributes) {
       if (index == 8) continue;
       rosterLog += gt.tnf_debug.attributeAbbr[attribute] + " [" + attributesValuesMin[attribute] + "-" + attributesValuesMax[attribute] + "]";
       if (index < 7) rosterLog += ", ";
     }
-    
+
     local traits = character.getSkills().getAllSkillsOfType(this.Const.SkillType.Trait);
     foreach (trait in traits) {
-      if (trait.isType(this.Const.SkillType.Background) || trait.isType(this.Const.SkillType.Special)) continue;    
+      if (trait.isType(this.Const.SkillType.Background) || trait.isType(this.Const.SkillType.Special)) continue;
       rosterLog += " " + trait.getName() + " +";
-    }    
+    }
     if (traits.len() > 2) rosterLog = rosterLog.slice(0, rosterLog.len() - 2); //trim
     rosterLog += " (" + character.getNameOnly() + ")";
     rosterLog += "\n";
@@ -1057,7 +1111,7 @@ gt.tnf_debug.logSeedFertility <- function() {
   rosterLog = rosterLog.slice(0, rosterLog.len() - 1); //trim
   this.logDebug("tnf_debugMode | Roster [min-max] attributes values up to veteran level:");
   this.logInfo(rosterLog);
-  
+
   //// NAMED ITEMS ////
   local itemsNum = 0, weaponsNum = 0, shieldsNum = 0, armorsNum = 0, helmetsNum = 0;
   local weaponsLog = "", shieldsLog = "", armorsLog = "", helmetsLog = "";
@@ -1073,7 +1127,7 @@ gt.tnf_debug.logSeedFertility <- function() {
             weaponsNum++;
             local weapon = item.m.ID.slice(gt.tnf_debug.prefixes.named_weapon.len());
             weaponsLog += weaponsNum + "° [" + weapon.slice(0, 1).toupper() + weapon.slice(1) + "]";
-            
+
             if (item.m.ConditionMax != gt.tnf_debug.itemStats.weapons[weapon].condition && !(weapon == "throwing_axe" || weapon == "javelin")) {
               bonus = 1.0 * item.m.ConditionMax / gt.tnf_debug.itemStats.weapons[weapon].condition;
               bonus = format("%.2f", bonus);
@@ -1100,7 +1154,7 @@ gt.tnf_debug.logSeedFertility <- function() {
               weaponsLog += " shield damage (x" + bonus + "),";
             }
             if (item.m.ChanceToHitHead != gt.tnf_debug.itemStats.weapons[weapon].head) {
-              bonus = item.m.ChanceToHitHead - gt.tnf_debug.itemStats.weapons[weapon].head;                  
+              bonus = item.m.ChanceToHitHead - gt.tnf_debug.itemStats.weapons[weapon].head;
               weaponsLog += " critical hit chance (+" + bonus + "%),";
             }
             if (item.m.StaminaModifier != gt.tnf_debug.itemStats.weapons[weapon].fat) {
@@ -1121,7 +1175,7 @@ gt.tnf_debug.logSeedFertility <- function() {
             weaponsLog = weaponsLog.slice(0, weaponsLog.len() - 1);
             weaponsLog += "\n";
           } //weapons
-          
+
           else if (item.m.ID.find("body") != null) {
             armorsNum++;
             local armor = item.m.ID.slice(gt.tnf_debug.prefixes.named_armor.len());
@@ -1133,7 +1187,7 @@ gt.tnf_debug.logSeedFertility <- function() {
             armorsLog += item.m.StaminaModifier + " Fatigue (+" + bonus + ")";
             armorsLog += "\n";
           } //armors
-          
+
           else if (item.m.ID.find("head") != null) {
             helmetsNum++;
             local helmet = item.m.ID.slice(gt.tnf_debug.prefixes.named_helmet.len());
@@ -1145,7 +1199,7 @@ gt.tnf_debug.logSeedFertility <- function() {
             helmetsLog += item.m.StaminaModifier + " Fatigue (+" + bonus + ")";
             helmetsLog += "\n";
           } //helmets
-          
+
           else if (item.m.ID.find("shield") != null) {
             shieldsNum++;
             local shield = item.m.ID.slice(gt.tnf_debug.prefixes.named_shield.len());
@@ -1180,7 +1234,7 @@ gt.tnf_debug.logSeedFertility <- function() {
       } //items
     }
   } //locations
-  
+
   this.logDebug("tnf_debugMode | Found (" + itemsNum + ") named items!");
   if (weaponsNum > 0) {
     this.logDebug("Weapons (" + weaponsNum + "):");

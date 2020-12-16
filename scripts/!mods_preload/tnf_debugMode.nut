@@ -54,6 +54,7 @@ P for PRIMITIVES & PIRATES   Summons a random enemy Barbarian or Brigand
 U for UNDEAD                 Summons a random enemy Undead
 V for VETERANS               Summons a random enemy militia, soldier or mercenary
 X for XBOW                   Summons a henchman to fight for you
+Z for debug enemy list
 */
 
 
@@ -796,7 +797,7 @@ o.helper_handleContextualKeyInput = function(_key)
     case 23: //M for MONSTER
       if (this.m.LastTileHovered != null && this.m.LastTileHovered.IsEmpty)
 			{
-        local actor = gt.tnf_debug.getRandomActor("Beasts");
+        local actor = gt.tnf_debug.getRandomActor("M");
         local script = this.Const.World.Spawn.Troops[actor[1]].Script;
 				local entity = this.Tactical.spawnEntity(script);
 				entity.setFaction(this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID());
