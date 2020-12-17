@@ -14,7 +14,7 @@ this.cartographer_follower <- this.inherit("scripts/retinue/follower", {
 		this.m.Requirements = [
 			{
 				IsSatisfied = false,
-				Text = "Discovered a legendary location"
+				Text = "Discovered a legendary location. Requires an adventurous noble, historian or philosopher. "
 			}
 		];
 	}
@@ -30,7 +30,7 @@ this.cartographer_follower <- this.inherit("scripts/retinue/follower", {
 		local brothers = this.World.getPlayerRoster().getAll();
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.adventurous_noble" || bro.getBackground().getID() == "background.historian" || bro.getBackground().getID() == "background.legend_philosopher" )
+			if (bro.getBackground().getID() == "background.adventurous_noble" || bro.getBackground().getID() == "background.historian" || bro.getBackground().getID() == "background.legend_philosopher" || bro.getBackground().getID() == "background.female_adventurous_noble" )
 			{
 			hasHistorian++;
 			}
