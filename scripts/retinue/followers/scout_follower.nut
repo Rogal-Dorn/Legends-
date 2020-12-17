@@ -32,7 +32,7 @@ this.scout_follower <- this.inherit("scripts/retinue/follower", {
 
 	function onEvaluate()
 	{
-		this.m.Requirements[0].Text = "Have a Raider, Barbarian or Deserter in your company";
+		this.m.Requirements[0].Text = "Have a Wildling, Hunter, Lumberjack or Ranger";
 		
 		local hasRaider = 0;
 		local brothers = this.World.getPlayerRoster().getAll();
