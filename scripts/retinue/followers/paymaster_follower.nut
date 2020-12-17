@@ -20,12 +20,7 @@ this.paymaster_follower <- this.inherit("scripts/retinue/follower", {
 			}
 		];
 	}
-
-	function isVisible()
-	{
-		return this.World.Assets.getBrothersMax() >= 16;
-	}
-
+	
 	function onUpdate()
 	{
 		if ("DailyWageMult" in this.World.Assets.m)
