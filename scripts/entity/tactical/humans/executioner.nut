@@ -93,11 +93,11 @@ this.executioner <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Head))
 		{
-			local helm =this.Const.World.Common.pickHelmet([
+			local helm = [
 				[3, "oriental/nomad_reinforced_helmet"],
 				[3, "oriental/southern_helmet_with_coif"],
 				[3, "oriental/turban_helmet"]
-			]) 
+			];
 
 			if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 			{
@@ -106,7 +106,7 @@ this.executioner <- this.inherit("scripts/entity/tactical/human", {
 				);
 			}
 
-			this.m.Items.equip(helm);
+			this.m.Items.equip(this.Const.World.Common.pickHelmet(helm));
 		}
 	}
 
