@@ -15,7 +15,7 @@ this.drill_sergeant_follower <- this.inherit("scripts/retinue/follower", {
 		this.m.Requirements = [
 			{
 				IsSatisfied = false,
-				Text = "Have a Retired Soldier, Swordmaster, Sellsword or Gladiator with an injury in your company"
+				Text = "Have a Retired Soldier, Militia, Swordmaster, Sellsword or Gladiator with an injury in your company"
 			}
 		];
 	}
@@ -41,7 +41,7 @@ this.drill_sergeant_follower <- this.inherit("scripts/retinue/follower", {
 			hasInjury++;
 			}
 			
-			if (bro.getBackground().getID() == "background.retired_soldier" || bro.getBackground().getID() == "background.swordmaster"  || bro.getBackground().getID() == "background.swordmaster" || bro.getBackground().getID() == "background.gladiator" )
+			if (bro.getBackground().getID() == "background.retired_soldier" || bro.getBackground().getID() == "background.swordmaster"  || bro.getBackground().getID() == "background.swordmaster" || bro.getBackground().getID() == "background.gladiator" || bro.getBackground().getID() == "background.militia")
 			{
 			 hasSergeant++;
 			}
