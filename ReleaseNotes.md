@@ -4397,20 +4397,18 @@ Fully buffed with minor perks Sling Heavy Stone pre-nerf: 49-72/80%/188% for 8 A
 
 
 15.0.0.21
-**Only add this if we uncommented the thing in `scripts/config/z_perks_trees`**
-Fixes perks going off the side of the perk tree by either pushing them down the tree, or if not possible pushing them up
 
+
+**Changes**
 retinue tweaked to have more lowborns.
-Widows can be an agent 
-Militia can be a drill sergeant 
-Houndmaster can be bounty hunter 
+Widows can be an agent
+Militia can be a drill sergeant
+Houndmaster can be bounty hunter
 ironmonger is now lowborn
-fishwife is lowborn 
-
-
+fishwife is lowborn
 Peaceful perk now called "peaceable", grants 20 resolve and 5% experience gain in excgange for -20 melee and ranged skill
-Peaceful trait now grants +10 resolve and -5 melee skill 
-Pacifist perk now grants +10% resolve, does not count toward scaling Grows unhappy if in commbat more than once a week, 
+Peaceful trait now grants +10 resolve and -5 melee skill
+Pacifist perk now grants +10% resolve, does not count toward scaling Grows unhappy if in commbat more than once a week,
 
 
 **Armor Tweaks**
@@ -4422,3 +4420,4 @@ Fixes Houndmaster background spawn
 Fixes sato destroyed caravan event giving nonlayered armor
 Fixes executioner fights not loading in
 Fixes arena contract dropping an item with a named layer and not named base not giving the item
+Fixes perks going off screen. Bumped to the next perk level.
