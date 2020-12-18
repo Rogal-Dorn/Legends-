@@ -37,7 +37,7 @@ this.charmed_effect <- this.inherit("scripts/skills/skill", {
 
 	function getDescription()
 	{
-		return "This character has been charmed. He no longer has any control over his actions and is a puppet that has no choice but to obey his master. Wears off in [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.TurnsLeft + "[/color] turn(s).\n\nThe higher a character\'s resolve, the higher the chance to resist being charmed.";
+		return "This character has been charmed, and no longer has any control over their actions and is a puppet that has no choice but to obey a master. Wears off in [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.TurnsLeft + "[/color] turn(s).\n\nThe higher a character\'s resolve, the higher the chance to resist being charmed.";
 	}
 
 	function addTurns( _t )
@@ -56,6 +56,7 @@ this.charmed_effect <- this.inherit("scripts/skills/skill", {
 			actor.setAIAgent(this.new("scripts/ai/tactical/agents/charmed_player_agent"));
 			actor.getAIAgent().setActor(actor);
 		}
+
 
 		this.m.OriginalFaction = actor.getFaction();
 		actor.setFaction(this.m.MasterFaction);

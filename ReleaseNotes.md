@@ -4398,6 +4398,19 @@ Fully buffed with minor perks Sling Heavy Stone pre-nerf: 49-72/80%/188% for 8 A
 
 15.0.0.21
 
+retinue tweaked to have more lowborns.
+Widows can be an agent 
+Militia can be a drill sergeant 
+Houndmaster can be bounty hunter 
+ironmonger is now lowborn
+fishwife is lowborn 
+
+
+Peaceful perk now called "peaceable", grants 20 resolve and 5% experience gain in excgange for -20 melee and ranged skill
+Peaceful trait now grants +10 resolve and -5 melee skill 
+Pacifist perk now grants +10% resolve, does not count toward scaling Grows unhappy if in commbat more than once a week, 
+
+
 **Armor Tweaks**
 Rebalance all barbarian helmet layers (+ adds a few new layers)
 

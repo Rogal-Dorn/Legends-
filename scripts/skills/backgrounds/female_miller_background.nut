@@ -6,7 +6,7 @@ this.female_miller_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.ID = "background.female_miller";
 		this.m.Name = "Baker";
 		this.m.Icon = "ui/backgrounds/baker.png";
-		this.m.BackgroundDescription = "A baker is used to working the oven and grinding the grain.";
+		this.m.BackgroundDescription = "A baker is used to working the oven and kneading the bread.";
 		this.m.GoodEnding = "%name% the once-baker stayed with the %companyname% for a time, collecting enough crowns to start her own bakery. Last you heard, her sword-shaped desserts have been a hit with the nobility and she makes more money selling to them than she ever did with the company.";
 		this.m.BadEnding = "As the %companyname% fell on hard times, %name% the baker saw fit to go ahead and leave while she could still walk. She helped a nobleman test out a new way of grinding grains with mules and waterwheels working in tandem. Unfortunately, by \'helping\' she managed to fall into the contraption and was brutally crushed to death.";
 		this.m.HiringCost = 65;
