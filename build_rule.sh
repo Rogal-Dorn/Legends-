@@ -1,7 +1,7 @@
 BBDir="${1-"c:\\Steam\\steamapps\\common\\Battle Brothers\\data"}"
 RepoDir="${2-"battlebrothers"}"
 
-mv "$BBDir\\gfx\\fonts" .\
+rm -rf  "$BBDir\\brushes" "$BBDir\\gfx" "$BBDir\\preload" "$BBDir\\scripts" "$BBDir\\sounds" "$BBDir\\ui"
 
 ./build_legends_mod.sh "$BBDir" "$RepoDir"
 resp="$?"
@@ -17,4 +17,4 @@ rm -rf "$BBDir\\mod_legends.zip"
 "C:\Program Files\7-Zip\7z.exe" a "$BBDir\\mod_legends.zip" "$BBDir\\brushes" "$BBDir\\gfx" "$BBDir\\preload" "$BBDir\\scripts" "$BBDir\\sounds" "$BBDir\\ui"
 echo "Cleaning up ..."
 rm -rf  "$BBDir\\brushes" "$BBDir\\gfx" "$BBDir\\preload" "$BBDir\\scripts" "$BBDir\\sounds" "$BBDir\\ui"
-mv fonts "$BBDir\\gfx"
+cp -R ../fonts "$BBDir\\gfx\\fonts"
