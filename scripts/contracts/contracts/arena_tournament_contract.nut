@@ -49,6 +49,7 @@ this.arena_tournament_contract <- this.inherit("scripts/contracts/contract", {
 			this.m.Flags.set("PrizeName", item.getName())
 		}
 		this.m.Flags.set("PrizeScript", item.ClassNameHash);
+		this.m.Flags.set("PrizeIDX", idx);
 
 		if (item.isItemType(this.Const.Items.ItemType.Weapon))
 		{
@@ -887,7 +888,10 @@ this.arena_tournament_contract <- this.inherit("scripts/contracts/contract", {
 
 				this.World.Assets.getStash().makeEmptySlots(1);
 				local item = this.new(this.IO.scriptFilenameByHash(this.Flags.get("PrizeScript")));
-				item.setName(this.Flags.get("PrizeName"));
+				if (this.Flags.get("PrizeIDX") == 1)
+				{
+					item.setName(this.Flags.get("PrizeName"));
+				}
 				this.World.Assets.getStash().add(item);
 				this.List.push({
 					id = 12,
