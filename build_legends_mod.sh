@@ -5,7 +5,7 @@ function checkForCompileError() {
 code=0
 while read -r line; do
     if [[ $line == *" error"* ]]; then
-        echo "$line"
+        #echo "$line"
         code=1
     fi
 done <<< "$1"
