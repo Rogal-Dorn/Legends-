@@ -18,6 +18,11 @@ this.perk_legend_peaceful <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		_properties.IsContentWithBeingInReserve = true;
+		_properties.Bravery += 20;
+		_properties.MeleeSkill += -20;
+		_properties.RangedSkill += -20;
+		_properties.XPGainMult *= 1.05;
+			
 	}
 
 
