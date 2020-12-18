@@ -991,7 +991,7 @@ this.asset_manager <- {
 					local currentTime =  this.World.getTime().Time;
 					local servedTime = currentTime - hireTime;
 					local servedDays = servedTime / this.World.getTime().SecondsPerDay;
-					if ((servedDays / 7) < bro.getLifetimeStats().Kills)
+					if ((servedDays * 7) < bro.getLifetimeStats().Kills)
 						{
 							bro.worsenMood(this.Const.MoodChange.BattleWithoutMe, "Remembers being forced to kill against their wishes");
 						}

@@ -18,6 +18,7 @@ this.perk_legend_pacifist <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		_properties.IsContentWithBeingInReserve = true;
+		_properties.BraveryMult *= 1.1;
 	}
 
 

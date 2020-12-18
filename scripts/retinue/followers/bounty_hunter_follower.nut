@@ -34,13 +34,13 @@ this.bounty_hunter_follower <- this.inherit("scripts/retinue/follower", {
 	function onEvaluate()
 	{
 		local namedItems = this.getNumberOfNamedItems();
-		this.m.Requirements[0].Text = "Have " + this.Math.min(1, namedItems) + "/1 named or legendary items in your possession, and a Manhunter, Witch Hunter or Beast Slayer in your company";
+		this.m.Requirements[0].Text = "Have " + this.Math.min(1, namedItems) + "/1 named or legendary items in your possession, and a Manhunter, Witch Hunter, Houndmaster or Beast Slayer in your company";
 		
 		local hasHunter = 0;
 		local brothers = this.World.getPlayerRoster().getAll();
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.witchhunter" || bro.getBackground().getID() == "background.beast_slayer" || bro.getBackground().getID() == "background.manhunter")
+			if (bro.getBackground().getID() == "background.witchhunter" || bro.getBackground().getID() == "background.beast_slayer" || bro.getBackground().getID() == "background.manhunter" || bro.getBackground().getID() == "background.houndmaster")
 			{
 			hasHunter++;
 			}
