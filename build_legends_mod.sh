@@ -4,8 +4,8 @@ RepoDir="${2-"battlebrothers"}"
 function checkForCompileError() {
 code=0
 while read -r line; do
-    if [[ $line == *"error"* ]]; then
-        #echo "$line"
+    if [[ $line == *" error"* ]]; then
+        echo "$line"
         code=1
     fi
 done <<< "$1"
@@ -37,7 +37,7 @@ echo "Copying gfx to $BBDir\\gfx ..."
 cp -R gfx/. "$BBDir\\gfx"
 handleExit
 echo "Copying mod script files to $BBDir\\scripts ..."
-FILES=$(git diff --name-only `git merge-base origin/master HEAD`)
+FILES=$(git diff --name-only `git merge-base origin/master HEAD` | grep '.nut\|.txt\|.css\|.js\|.html')
 while read -r line; do
     if [[ "$line" == *.sh ]]; then
         :
@@ -91,6 +91,8 @@ while read -r line; do
         :
     elif [ "$line" == "scripts/ai/tactical/behaviors/ai_defend_rotation.nut" ]; then
         :
+    elif [ "$line" == "scripts/ai/tactical/behaviors/ai_attack_terror.nut" ]; then
+        :
     elif [ "$line" == "scripts/contracts/contracts/barbarian_king_contract" ]; then
         :
     elif [ "$line" == "scripts/factions/faction_action.nut" ]; then
@@ -117,7 +119,9 @@ o=$(./masscompile.bat "$BBDir\\scripts")
 cd ../"$RepoDir"
 
 checkForCompileError "$o"
-if [ $? -ne "0" ]
+resp="$?"
+echo $resp
+if [ $resp -ne "0" ]
 then
     echo "Failed to build Legends!"
     exit 1
