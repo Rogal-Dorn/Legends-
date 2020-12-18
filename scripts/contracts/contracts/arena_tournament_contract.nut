@@ -40,15 +40,32 @@ this.arena_tournament_contract <- this.inherit("scripts/contracts/contract", {
 			);
 		}
 		
+		local cnh;
 		if (idx == 1)
 		{
 			this.m.Flags.set("PrizeName", item.createRandomName());
+			cnh = item.ClassNameHash;
 		}
 		else
 		{
+			local nameList = [];
+			if (item.isItemType(this.Const.Items.ItemType.Named)) //if base layer named
+			{
+				nameList.push(item)
+			}
+			foreach(u in item.getUpgrades()) //if upgrade named
+			{
+				if (u.isItemType(this.Const.Items.ItemType.Named))
+				{
+					nameList.push(u)
+				}
+			}
+			local idx = this.Math.rand(0, nameList.len() - 1);
+			local item = nameList[idx];
 			this.m.Flags.set("PrizeName", item.getName())
+			cnh = item.ClassNameHash;
 		}
-		this.m.Flags.set("PrizeScript", item.ClassNameHash);
+		this.m.Flags.set("PrizeScript", cnh);
 
 		if (item.isItemType(this.Const.Items.ItemType.Weapon))
 		{

@@ -337,8 +337,44 @@ gt.Const.Perks.GetDynamicPerkTree <- function (_mins, _map)
 		{
 			foreach (i, row in mT.Tree)
 			{
-				foreach(p in row)
+				foreach(j, p in row)
 				{
+					/*
+					if (j > 13) //max perks in a row before it overflows is 14
+					{
+						local k = i + 1; //start on next possible row
+						local added = false; //can't 'continue' inside of that while loop so have to break out of while & continue for
+						while (k <= 6)
+						{
+							if (tree[k].len() < 13) //if 12 or less perks in next row then add
+							{
+								tree[k].push(p)
+								added = true;
+								break;
+							}
+							k++;
+						}
+						if (added)
+						{
+							continue;
+						}
+						k = i - 1; //start on previous possible row
+						while (k >= 0)
+						{
+							if (tree[k].len() < 13) //if 12 or less perks in prev row then add
+							{
+								tree[k].push(p)
+								added = true;
+								break;
+							}
+							k--;
+						}
+						if (added)
+						{
+							continue;
+						}
+					}
+					*/
 					tree[i].push(p);
 				}
 			}
