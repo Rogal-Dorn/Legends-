@@ -6,11 +6,11 @@ this.legend_peaceful_trait <- this.inherit("scripts/skills/traits/character_trai
 		this.m.ID = "trait.legend_peaceful";
 		this.m.Name = "Peaceful";
 		this.m.Icon = "ui/traits/trait_icon_38.png";
-		this.m.Description = "This character is not fond of fighting, and will prefer to be in reserve. Consumes half rations while in reserve. Mood will occassionally improve while in reserve.";
+		this.m.Description = "This character is not fond of fighting, and will prefer to be in reserve.";
 		this.m.Titles = [
 			"the Peaceful",
-			"the Content",
-			"the Calm"
+			"the Mild",
+			"the Gentle"
 		];
 		this.m.Excluded = [
 			"trait.bloodthirsty",
@@ -39,6 +39,12 @@ this.legend_peaceful_trait <- this.inherit("scripts/skills/traits/character_trai
 				text = this.getDescription()
 			},
 			{
+				id = 10,
+				type = "text",
+				icon = "ui/icons/bravery.png",
+				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] resolve, [color=" + this.Const.UI.Color.NegativeValue + "]-5[/color] melee skill and [color=" + this.Const.UI.Color.NegativeValue + "]-5[/color] ranged skill"
+			},
+			{
 				id = 16,
 				type = "text",
 				icon = "ui/icons/special.png",
@@ -50,6 +56,9 @@ this.legend_peaceful_trait <- this.inherit("scripts/skills/traits/character_trai
 	function onUpdate( _properties )
 	{
 		_properties.IsContentWithBeingInReserve = true;
+		_properties.Bravery += 10;
+		_properties.MeleeSkill += -5;
+		_properties.RangedSkill += -5;
 	}
 
 });
