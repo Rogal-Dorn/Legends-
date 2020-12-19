@@ -331,53 +331,48 @@ gt.Const.Perks.GetDynamicPerkTree <- function (_mins, _map)
 		}
 	}
 
+	local _totals = {}
+	local _overflows = {}
 	foreach (v in _localMap)
 	{
 		foreach(mT in v)
 		{
 			foreach (i, row in mT.Tree)
 			{
+				if (!(i in _totals)) {
+					_totals[i] <- 0
+					_overflows[i] <- []
+				}
+
 				foreach(j, p in row)
 				{
-					/*
-					if (j > 13) //max perks in a row before it overflows is 14
+					if (_totals[i] >= 13)
 					{
-						local k = i + 1; //start on next possible row
-						local added = false; //can't 'continue' inside of that while loop so have to break out of while & continue for
-						while (k <= 6)
-						{
-							if (tree[k].len() < 13) //if 12 or less perks in next row then add
-							{
-								tree[k].push(p)
-								added = true;
-								break;
-							}
-							k++;
-						}
-						if (added)
-						{
-							continue;
-						}
-						k = i - 1; //start on previous possible row
-						while (k >= 0)
-						{
-							if (tree[k].len() < 13) //if 12 or less perks in prev row then add
-							{
-								tree[k].push(p)
-								added = true;
-								break;
-							}
-							k--;
-						}
-						if (added)
-						{
-							continue;
-						}
+						_overflows[i].push(p)
+						continue
 					}
-					*/
+					_totals[i]++
 					tree[i].push(p);
 				}
 			}
+		}
+	}
+
+	//Handle overlow of perks in a row
+	local _direction = 1
+	foreach (index, L in _overflows)
+	{
+		local nextIndex = index
+		for (local i = 0; i < L.len(); i = ++i)
+		{
+			while (_totals[nextIndex] >= 13) {
+				nextIndex++
+				if (nextIndex > 6) {
+					_totals[nextIndex] <- 0
+				}
+			}
+			tree[nextIndex].push(L[i])
+			_totals[nextIndex]++
 		}
 	}
 

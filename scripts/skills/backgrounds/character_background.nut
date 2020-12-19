@@ -417,7 +417,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		val = terrains[18] * 100.0;
 		if (val > 0) {
 			ttext += "\nOases +" + val +"%"
-		}		
+		}
 
 		if (ttext != "")
 		{
@@ -941,6 +941,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 				{
 					mins = this.m.PerkTreeDynamicMinsMagic;
 				}
+
 				local result  = this.Const.Perks.GetDynamicPerkTree(mins, this.m.PerkTreeDynamic);
 				this.m.CustomPerkTree = result.Tree
 				a = result.Attributes;
@@ -1282,7 +1283,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			{
 				actor.m.PerkPoints = this.m.Level - 1;
 			}
-			else 
+			else
 			{
 				local vetPerk = this.getContainer().getActor().getVeteranPerks();
 				if (vetPerk == 0)

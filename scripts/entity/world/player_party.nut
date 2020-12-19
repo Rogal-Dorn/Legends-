@@ -38,6 +38,11 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 			{
 				break;
 			}
+			
+			if (bro.getSkills().hasSkill("perk.legend_pacifist"))
+			{
+				break;
+			}			
 
 			if (bro.getSkills().hasSkill("perk.legend_spawn_zombie_high"))
 			{
