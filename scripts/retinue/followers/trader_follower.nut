@@ -52,7 +52,7 @@ this.trader_follower <- this.inherit("scripts/retinue/follower", {
 
 		this.m.Requirements[0].Text = "Sold " + this.Math.min(25, this.World.Statistics.getFlags().getAsInt("TradeGoodsSold")) + "/25 trade goods.";
 
-		if (this.World.Statistics.getFlags().getAsInt("TradeGoodsSold") >= 25 && hasTrader >= 1)
+		if (this.World.Statistics.getFlags().getAsInt("TradeGoodsSold") >= 25)
 		{
 			this.m.Requirements[0].IsSatisfied = true;
 		}

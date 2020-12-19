@@ -69,7 +69,7 @@ this.agent_follower <- this.inherit("scripts/retinue/follower", {
 
 		foreach( n in nobles )
 		{
-			if (n.getPlayerRelation() >= 90.0 && hasAgent >=1)
+			if (n.getPlayerRelation() >= 90.0 )
 			{
 				this.m.Requirements[0].IsSatisfied = true;
 				return;
@@ -80,7 +80,7 @@ this.agent_follower <- this.inherit("scripts/retinue/follower", {
 
 		foreach( c in citystates )
 		{
-			if (c.getPlayerRelation() >= 90.0 && hasAgent >=1)
+			if (c.getPlayerRelation() >= 90.0)
 			{
 				this.m.Requirements[0].IsSatisfied = true;
 				return;
