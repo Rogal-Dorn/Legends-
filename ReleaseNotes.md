@@ -4409,3 +4409,4 @@ Fixes Houndmaster background spawn
 Fixes sato destroyed caravan event giving nonlayered armor
 Fixes executioner fights not loading in
 Fixes arena contract dropping an item with a named layer and not named base not giving the item
+Fixes buckler bash and tower shield fortify from reaching a limit of 0 fatigue cost
