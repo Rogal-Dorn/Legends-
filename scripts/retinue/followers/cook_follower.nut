@@ -15,7 +15,7 @@ this.cook_follower <- this.inherit("scripts/retinue/follower", {
 		this.m.Requirements = [
 			{
 				IsSatisfied = false,
-				Text = ""
+				Text = "Have someone with the Camp Cook perk. Guaranteed on Bakers, Fishwives and Butchers"
 			}
 		];
 	}
@@ -30,40 +30,38 @@ this.cook_follower <- this.inherit("scripts/retinue/follower", {
 
 	function onEvaluate()
 	{
-		local uniqueProvisions = this.getAmountOfUniqueProvisions();
-		this.m.Requirements[0].Text = "Have someone with the Camp Cook perk, available from a Baker, Fishwife or Butcher";
-
+		// local uniqueProvisions = this.getAmountOfUniqueProvisions();
 		local brothers = this.World.getPlayerRoster().getAll();
 		
 		foreach( bro in brothers )
 		{
 			if (bro.getSkills().hasSkill("perk.legend_camp_cook"))
 			{
-			this.m.Requirements[0].IsSatisfied = true;
+				this.m.Requirements[0].IsSatisfied = true;
+				return;
 			}
-
 		}
 
 	}
 
-	function getAmountOfUniqueProvisions()
-	{
-		local provisions = [];
-		local items = this.World.Assets.getStash().getItems();
+	// function getAmountOfUniqueProvisions()
+	// {
+	// 	local provisions = [];
+	// 	local items = this.World.Assets.getStash().getItems();
 
-		foreach( item in items )
-		{
-			if (item != null && item.isItemType(this.Const.Items.ItemType.Food))
-			{
-				if (provisions.find(item.getID()) == null)
-				{
-					provisions.push(item.getID());
-				}
-			}
-		}
+	// 	foreach( item in items )
+	// 	{
+	// 		if (item != null && item.isItemType(this.Const.Items.ItemType.Food))
+	// 		{
+	// 			if (provisions.find(item.getID()) == null)
+	// 			{
+	// 				provisions.push(item.getID());
+	// 			}
+	// 		}
+	// 	}
 
-		return provisions.len();
-	}
+	// 	return provisions.len();
+	// }
 
 });
 

@@ -15,7 +15,7 @@ this.scout_follower <- this.inherit("scripts/retinue/follower", {
 		this.m.Requirements = [
 			{
 				IsSatisfied = false,
-				Text = "Have a Wildling, Hunter, Lumberjack or Ranger"
+				Text = "Have at least one of the following backgrounds: Wildman/Wildwoman, Hunter, Lumberjack, Ranger"
 			}
 		];
 	}
@@ -32,18 +32,27 @@ this.scout_follower <- this.inherit("scripts/retinue/follower", {
 
 	function onEvaluate()
 	{
-		this.m.Requirements[0].Text = "Have a Raider, Barbarian or Deserter in your company";
-		
-		local hasRaider = 0;
 		local brothers = this.World.getPlayerRoster().getAll();
+
+		local availableBGs = [
+			"background.wildman",
+			"background.wildwoman",
+			"background.hunter",
+			"background.lumberjack",
+			"background.legend_ranger",
+			"background.legend_commander_ranger"
+		];
+
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.wildman" ||bro.getBackground().getID() == "background.wildwoman" || bro.getBackground().getID() == "background.hunter" || bro.getBackground().getID() == "background.lumberjack" || bro.getBackground().getID() == "background.legend_ranger"  || bro.getBackground().getID() == "background.legend_commander_ranger")
+			local id = bro.getBackground().getID();
+			
+			if (availableBGs.find(id))
 			{
-		this.m.Requirements[0].IsSatisfied = true;
+				this.m.Requirements[0].IsSatisfied = true;
+				return;
 			}
-
-		}	
+		}			
 	}
 
 });
