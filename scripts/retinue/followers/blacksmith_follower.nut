@@ -15,7 +15,7 @@ this.blacksmith_follower <- this.inherit("scripts/retinue/follower", {
 		this.m.Requirements = [
 			{
 				IsSatisfied = false,
-				Text = ""
+				Text = "Have a mercenary who has taken the Field Repairs perk. Guaranteed on Blacksmiths, Ironmongers, and Crusaders"
 			}
 		];
 	}
@@ -30,17 +30,15 @@ this.blacksmith_follower <- this.inherit("scripts/retinue/follower", {
 
 	function onEvaluate()
 	{
-		this.m.Requirements[0].Text = "Have a mercenary who has taken the Field Repairs perk, available on Blacksmiths, Ironmongers and Crusaders";
-
 		local brothers = this.World.getPlayerRoster().getAll();
 		
 		foreach( bro in brothers )
 		{
 			if (bro.getSkills().hasSkill("perk.legend_field_repairs"))
 			{
-			this.m.Requirements[0].IsSatisfied = true;
+				this.m.Requirements[0].IsSatisfied = true;
+				return;
 			}
-
 		}
 
 	}

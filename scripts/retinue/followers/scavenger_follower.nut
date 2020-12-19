@@ -15,7 +15,7 @@ this.scavenger_follower <- this.inherit("scripts/retinue/follower", {
 		this.m.Requirements = [
 			{
 				IsSatisfied = false,
-				Text = "Have a beggar, cripple, refugee or slave in your company "
+				Text = "Have at least one of the following backgrounds: Beggar, Cripple, Refugee, Slave"
 			}
 		];
 	}
@@ -30,18 +30,25 @@ this.scavenger_follower <- this.inherit("scripts/retinue/follower", {
 
 	function onEvaluate()
 	{
-	
-		local hasRaider = 0;
 		local brothers = this.World.getPlayerRoster().getAll();
+
+		local availableBGs = [
+			"background.beggar",
+			"background.cripple",
+			"background.refugee",
+			"background.slave"
+		];
+
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.beggar" || bro.getBackground().getID() == "background.cripple" || bro.getBackground().getID() == "background.refugee" || bro.getBackground().getID() == "background.slave" )
+			local id = bro.getBackground().getID();
+			
+			if (availableBGs.find(id))
 			{
-			hasRaider++;
+				this.m.Requirements[0].IsSatisfied = true;
+				return;
 			}
-
-		}		
-		this.m.Requirements[0].IsSatisfied = true;
+		}			
 	}
 
 });

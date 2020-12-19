@@ -15,7 +15,7 @@ this.drill_sergeant_follower <- this.inherit("scripts/retinue/follower", {
 		this.m.Requirements = [
 			{
 				IsSatisfied = false,
-				Text = "Have a Retired Soldier, Swordmaster, Sellsword or Gladiator with an injury in your company"
+				Text = "Have a Retired Soldier, Swordmaster, Sellsword, or Gladiator with an injury in your company"
 			}
 		];
 	}
@@ -28,33 +28,28 @@ this.drill_sergeant_follower <- this.inherit("scripts/retinue/follower", {
 
 	function onEvaluate()
 	{
-	
-		local hasSergeant = 0;
-		local hasInjury = 0;
 		local brothers = this.World.getPlayerRoster().getAll();
+
+		local availableBGs = [
+			"background.retired_soldier",
+			"background.swordmaster",
+			"background.sellsword",
+			"background.gladiator"
+		];
+
 		foreach( bro in brothers )
 		{
-			hasSergeant == 0;
-			hasInjury == 0;
-			if (bro.getSkills().hasSkillOfType(this.Const.SkillType.PermanentInjury) || bro.getSkills().hasSkillOfType(this.Const.SkillType.Injury))
-			{
-			hasInjury++;
-			}
+			local id = bro.getBackground().getID();
 			
-			if (bro.getBackground().getID() == "background.retired_soldier" || bro.getBackground().getID() == "background.swordmaster"  || bro.getBackground().getID() == "background.swordmaster" || bro.getBackground().getID() == "background.gladiator" )
+			if (availableBGs.find(id))
 			{
-			 hasSergeant++;
+				if (bro.getSkills().hasSkillOfType(this.Const.SkillType.PermanentInjury) || bro.getSkills().hasSkillOfType(this.Const.SkillType.Injury))
+				{
+					this.m.Requirements[0].IsSatisfied = true;
+					return;
+				}
 			}
-			
-			if (hasInjury >=1 && hasSergeant >=1)
-			{
-			this.m.Requirements[0].IsSatisfied = true;
-			}
-
 		}	
-
-	
-
 	}
 
 });

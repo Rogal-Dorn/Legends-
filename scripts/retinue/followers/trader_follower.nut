@@ -15,6 +15,10 @@ this.trader_follower <- this.inherit("scripts/retinue/follower", {
 			{
 				IsSatisfied = false,
 				Text = ""
+			},
+			{
+				IsSatisfied = false,
+				Text = "Have at least one of the following backgrounds: Caravan Hand, Peddler, Trader, Donkey"
 			}
 		];
 	}
@@ -25,18 +29,28 @@ this.trader_follower <- this.inherit("scripts/retinue/follower", {
 
 	function onEvaluate()
 	{
-	
-		local hasTrader = 0;
 		local brothers = this.World.getPlayerRoster().getAll();
+
+		local availableBGs = [
+			"background.caravan_hand",
+			"background.legend_trader",
+			"background.legend_commander_trader",
+			"background.legend_donkey",
+			"background.peddler"
+		];
+
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.caravan_hand" || bro.getBackground().getID() == "background.legend_trader"  || bro.getBackground().getID() == "background.legend_commander_trader"  || bro.getBackground().getID() == "background.legend_donkey" )
+			local id = bro.getBackground().getID();
+			
+			if (availableBGs.find(id))
 			{
-			hasTrader++;
+				this.m.Requirements[1].IsSatisfied = true;
+				break;
 			}
+		}			
 
-		}	
-		this.m.Requirements[0].Text = "Sold " + this.Math.min(25, this.World.Statistics.getFlags().getAsInt("TradeGoodsSold")) + "/25 trade goods. Have a Caravan Hand, Trader or Donkey in your company";
+		this.m.Requirements[0].Text = "Sold " + this.Math.min(25, this.World.Statistics.getFlags().getAsInt("TradeGoodsSold")) + "/25 trade goods.";
 
 		if (this.World.Statistics.getFlags().getAsInt("TradeGoodsSold") >= 25 && hasTrader >= 1)
 		{

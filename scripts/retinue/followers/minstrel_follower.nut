@@ -15,7 +15,7 @@ this.minstrel_follower <- this.inherit("scripts/retinue/follower", {
 		this.m.Requirements = [
 			{
 				IsSatisfied = false,
-				Text = "Have someone with the Entice perk, available on Minstrels and Troubadours"
+				Text = "Have someone with the Entice perk. Guaranteed on Minstrels and Troubadours"
 			}
 		];
 	}
@@ -30,16 +30,14 @@ this.minstrel_follower <- this.inherit("scripts/retinue/follower", {
 
 	function onEvaluate()
 	{
-
 		local brothers = this.World.getPlayerRoster().getAll();
 		
 		foreach( bro in brothers )
 		{
 			if (bro.getSkills().hasSkill("perk.legend_entice"))
 			{
-			this.m.Requirements[0].IsSatisfied = true;
+				this.m.Requirements[0].IsSatisfied = true;
 			}
-
 		}
 	}
 

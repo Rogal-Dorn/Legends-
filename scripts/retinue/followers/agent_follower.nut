@@ -15,7 +15,11 @@ this.agent_follower <- this.inherit("scripts/retinue/follower", {
 		this.m.Requirements = [
 			{
 				IsSatisfied = false,
-				Text = "Have allied relations with a noble house or city state, and have a Eunuch, Messenger or Assassin in your company"
+				Text = "Have allied relations with a noble house or city state"
+			},
+			{
+				IsSatisfied = false,
+				Text = "Have at least one of the following backgrounds: Eunuch, Messenger, Assassin (Southern or Northern)"
 			}
 		];
 	}
@@ -42,14 +46,23 @@ this.agent_follower <- this.inherit("scripts/retinue/follower", {
 	{
 		local allied = false;
 		local nobles = this.World.FactionManager.getFactionsOfType(this.Const.FactionType.NobleHouse);
-		local hasAgent = 0;
+
+		local availableBGs = [
+			"background.eunuch",
+			"background.messenger",
+			"background.assassin",
+			"background.assassin_southern"
+		];
 		
 		local brothers = this.World.getPlayerRoster().getAll();
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.eunuch" || bro.getBackground().getID() == "background.messenger" || bro.getBackground().getID() == "background.assassin"  || bro.getBackground().getID() == "background.assassin_southern")
+			
+			local id = bro.getBackground().getID();
+			if (availableBGs.find(id))
 			{
-			hasAgent++;
+				this.m.Requirements[1].IsSatisfied = true;
+				break;
 			}
 
 		}	

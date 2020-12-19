@@ -15,7 +15,7 @@ this.quartermaster_follower <- this.inherit("scripts/retinue/follower", {
 		this.m.Requirements = [
 			{
 				IsSatisfied = false,
-				Text = "Have someone with the Skillful Stacking perk, available on Vagabons, Millers, Donkeys and many others"
+				Text = "Have someone with the Skillful Stacking perk. Guaranteed on Vagabonds, Millers, Donkeys and many others"
 			}
 		];
 	}
@@ -32,16 +32,14 @@ this.quartermaster_follower <- this.inherit("scripts/retinue/follower", {
 
 	function onEvaluate()
 	{
-
 		local brothers = this.World.getPlayerRoster().getAll();
 		
 		foreach( bro in brothers )
 		{
 			if (bro.getSkills().hasSkill("perk.legend_skillful_stacking"))
 			{
-			this.m.Requirements[0].IsSatisfied = true;
+				this.m.Requirements[0].IsSatisfied = true;
 			}
-
 		}
 	}
 

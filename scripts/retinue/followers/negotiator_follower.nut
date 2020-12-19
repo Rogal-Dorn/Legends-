@@ -14,7 +14,7 @@ this.negotiator_follower <- this.inherit("scripts/retinue/follower", {
 		this.m.Requirements = [
 			{
 				IsSatisfied = false,
-				Text = "Have someone with the Pacifist perk, available on Widow, Inventor, Tailor and many others"
+				Text = "Have someone with the Pacifist perk. Guaranteed on Widow, Inventor, Tailor and many others"
 			}
 		];
 	}
@@ -40,9 +40,8 @@ this.negotiator_follower <- this.inherit("scripts/retinue/follower", {
 		{
 			if (bro.getSkills().hasSkill("perk.legend_pacifist"))
 			{
-			this.m.Requirements[0].IsSatisfied = true;
+				this.m.Requirements[0].IsSatisfied = true;
 			}
-
 		}
 	}
 
