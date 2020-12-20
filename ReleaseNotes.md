@@ -4415,7 +4415,7 @@ Pacifist perk now grants +10% resolve, does not count toward scaling Grows unhap
 Rebalance all barbarian helmet layers (+ adds a few new layers)
 
 **Fixes**
-Fixes manhunter fight event as escaped indebted
+Fixes manhunter fight event as escaped indebted (both the load in and them being shirtless)
 Fixes Houndmaster background spawn
 Fixes sato destroyed caravan event giving nonlayered armor
 Fixes executioner fights not loading in
