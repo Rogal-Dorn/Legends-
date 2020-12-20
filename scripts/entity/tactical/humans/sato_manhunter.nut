@@ -100,15 +100,15 @@ this.sato_manhunter <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Items.equip(this.new("scripts/items/tools/throwing_net"));
 
 		local armor = [
-			[1, "armor/leather_lamellar"],
-			[1, "armor/oriental/plated_nomad_mail"],
-			[1, "armor/oriental/southern_mail_shirt"]
+			[1, "leather_lamellar"],
+			[1, "oriental/plated_nomad_mail"],
+			[1, "oriental/southern_mail_shirt"]
 		];
 
 		if (this.World.getTime().Days > 18)
 		{
 			armor.extend([
-				[1, "armor/oriental/mail_and_lamellar_plating"]
+				[1, "oriental/mail_and_lamellar_plating"]
 			]);
 		}
 		this.m.Items.equip(this.Const.World.Common.pickArmor(armor));
