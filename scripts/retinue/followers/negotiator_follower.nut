@@ -7,14 +7,14 @@ this.negotiator_follower <- this.inherit("scripts/retinue/follower", {
 		this.m.Name = "The Negotiator";
 		this.m.Description = "The Negotiator is home to noble courts and fancy halls, and not used to travelling with a band of sellswords with muddy boots, but he is an expert on negotiating for the best prices and conditions when it comes to contracts.";
 		this.m.Image = "ui/campfire/negotiator_01";
-		this.m.Cost = 3000;
+		this.m.Cost = 1500;
 		this.m.Effects = [
 			"Allows for more rounds of contract negotiations with your potential employers before they abort, and without any hit to relations"
 		];
 		this.m.Requirements = [
 			{
 				IsSatisfied = false,
-				Text = ""
+				Text = "Have someone with the Pacifist perk. Guaranteed on Widow, Inventor, Tailor and many others"
 			}
 		];
 	}
@@ -34,11 +34,14 @@ this.negotiator_follower <- this.inherit("scripts/retinue/follower", {
 
 	function onEvaluate()
 	{
-		this.m.Requirements[0].Text = "Completed " + this.Math.min(15, this.World.Contracts.getContractsFinished()) + "/15 contracts";
-
-		if (this.World.Contracts.getContractsFinished() >= 15)
+		local brothers = this.World.getPlayerRoster().getAll();
+		
+		foreach( bro in brothers )
 		{
-			this.m.Requirements[0].IsSatisfied = true;
+			if (bro.getSkills().hasSkill("perk.legend_pacifist"))
+			{
+				this.m.Requirements[0].IsSatisfied = true;
+			}
 		}
 	}
 

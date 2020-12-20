@@ -331,17 +331,48 @@ gt.Const.Perks.GetDynamicPerkTree <- function (_mins, _map)
 		}
 	}
 
+	local _totals = {}
+	local _overflows = {}
 	foreach (v in _localMap)
 	{
 		foreach(mT in v)
 		{
 			foreach (i, row in mT.Tree)
 			{
-				foreach(p in row)
+				if (!(i in _totals)) {
+					_totals[i] <- 0
+					_overflows[i] <- []
+				}
+
+				foreach(j, p in row)
 				{
+					if (_totals[i] >= 13)
+					{
+						_overflows[i].push(p)
+						continue
+					}
+					_totals[i]++
 					tree[i].push(p);
 				}
 			}
+		}
+	}
+
+	//Handle overlow of perks in a row
+	local _direction = 1
+	foreach (index, L in _overflows)
+	{
+		local nextIndex = index
+		for (local i = 0; i < L.len(); i = ++i)
+		{
+			while (_totals[nextIndex] >= 13) {
+				nextIndex++
+				if (nextIndex > 6) {
+					_totals[nextIndex] <- 0
+				}
+			}
+			tree[nextIndex].push(L[i])
+			_totals[nextIndex]++
 		}
 	}
 

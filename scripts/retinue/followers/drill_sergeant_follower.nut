@@ -5,9 +5,9 @@ this.drill_sergeant_follower <- this.inherit("scripts/retinue/follower", {
 		this.follower.create();
 		this.m.ID = "follower.drill_sergeant";
 		this.m.Name = "The Drill Sergeant";
-		this.m.Description = "The Drill Sergeant was a mercenary once, but an injury ended his career prematurely. Now he drills discipline into your men and yells a lot to make sure that everyone learns from their mistakes.";
+		this.m.Description = "The Drill Sergeant was a mercenary until their career was cut short by an injury. Now he drills discipline into your men and yells a lot to make sure that everyone learns from their mistakes.";
 		this.m.Image = "ui/campfire/drill_01";
-		this.m.Cost = 3500;
+		this.m.Cost = 1750;
 		this.m.Effects = [
 			"Makes your men gain 20% more experience at level 1, with 2% less at each further level",
 			"Makes men in reserve never lose mood from not taking part in battles"
@@ -15,7 +15,7 @@ this.drill_sergeant_follower <- this.inherit("scripts/retinue/follower", {
 		this.m.Requirements = [
 			{
 				IsSatisfied = false,
-				Text = "Retired a man with a permanent injury that isn\'t indebted"
+				Text = "Have a Retired Soldier, Swordmaster, Sellsword, or Gladiator with an injury in your company"
 			}
 		];
 	}
@@ -28,10 +28,28 @@ this.drill_sergeant_follower <- this.inherit("scripts/retinue/follower", {
 
 	function onEvaluate()
 	{
-		if (this.World.Statistics.getFlags().getAsInt("BrosWithPermanentInjuryDismissed") > 0)
+		local brothers = this.World.getPlayerRoster().getAll();
+
+		local availableBGs = [
+			"background.retired_soldier",
+			"background.swordmaster",
+			"background.sellsword",
+			"background.gladiator"
+		];
+
+		foreach( bro in brothers )
 		{
-			this.m.Requirements[0].IsSatisfied = true;
-		}
+			local id = bro.getBackground().getID();
+			
+			if (availableBGs.find(id))
+			{
+				if (bro.getSkills().hasSkillOfType(this.Const.SkillType.PermanentInjury) || bro.getSkills().hasSkillOfType(this.Const.SkillType.Injury))
+				{
+					this.m.Requirements[0].IsSatisfied = true;
+					return;
+				}
+			}
+		}	
 	}
 
 });

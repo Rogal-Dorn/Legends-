@@ -7,7 +7,7 @@ this.cartographer_follower <- this.inherit("scripts/retinue/follower", {
 		this.m.Name = "The Cartographer";
 		this.m.Description = "The Cartographer is a man of culture and knowledge, but he also realizes that traveling in the company of well-armed mercenaries is one of the best ways to safely see the world and explore places that few visited before.";
 		this.m.Image = "ui/campfire/cartographer_01";
-		this.m.Cost = 2500;
+		this.m.Cost = 1250;
 		this.m.Effects = [
 			"Pays you between 100 and 400 crowns for every location you discover on your own. The further away from civilization, the more you\'re paid. Legendary locations pay double."
 		];
@@ -15,6 +15,10 @@ this.cartographer_follower <- this.inherit("scripts/retinue/follower", {
 			{
 				IsSatisfied = false,
 				Text = "Discovered a legendary location"
+			},
+			{
+				IsSatisfied = false,
+				Text = "Have at least one of the following backgrounds: Adventurous Noble/Lady, Noble Commander, Philosopher, Historian"
 			}
 		];
 	}
@@ -25,6 +29,28 @@ this.cartographer_follower <- this.inherit("scripts/retinue/follower", {
 
 	function onEvaluate()
 	{
+	
+		local hasHistorian = false;
+		local brothers = this.World.getPlayerRoster().getAll();
+		local availableBGs = [
+			"background.adventurous_noble",
+			"background.historian",
+			"background.legend_philosopher",
+			"background.female_adventurous_noble",
+			"background.legend_commander_noble"
+		];
+
+		foreach( bro in brothers )
+		{
+			local id = bro.getBackground().getID();
+			
+			if (availableBGs.find(id))
+			{
+				this.m.Requirements[1].IsSatisfied = true;
+				break;
+			}
+		}	
+		
 		if (this.World.Flags.getAsInt("LegendaryLocationsDiscovered") >= 1)
 		{
 			this.m.Requirements[0].IsSatisfied = true;

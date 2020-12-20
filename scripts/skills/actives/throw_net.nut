@@ -58,7 +58,7 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Hit chance may be inacurate. Hit chance determined by your ranged skill. Hitchance doubled by the Net Casting Perk."
+				text = "Hit chance may be inaccurate. Hit chance determined by your ranged skill. Hitchance doubled by the Net Casting Perk."
 			}
 		]);
 		return ret;
@@ -66,7 +66,12 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 
 	function onAfterUpdate( _properties )
 	{
-		this.m.FatigueCostMult = _properties.IsSpecializedInThrowing ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
+		this.m.FatigueCostMult = (_properties.IsSpecializedInNetCasting) ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
+		if (_properties.IsSpecializedInNets)
+		{
+			this.m.MaxRange = 4;
+			this.m.ActionPointCost = 3;
+		}
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )
@@ -103,15 +108,15 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 
 		if (_user.getSkills().hasSkill("perk.legend_net_casting"))
 		{
+			r = r * 0.5;
 		}
 
-		r = r * 0.5;
+		
 
 		if (_user.getSkills().hasSkill("perk.legend_net_repair"))
 		{
+			r = r * 0.75;
 		}
-
-		r = r * 0.75;
 
 		if (r > this.getHitchance(_targetTile.getEntity()))
 		{

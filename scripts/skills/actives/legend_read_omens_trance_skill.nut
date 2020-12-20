@@ -1,5 +1,8 @@
 this.legend_read_omens_trance_skill <- this.inherit("scripts/skills/actives/legend_trance_abstract", {
-	m = {},
+	m = {
+		BaseFatigueCost = 30,
+		BaseAPCost = 4,
+	},
 	function create()
 	{
 		this.legend_trance_abstract.create();
@@ -13,16 +16,22 @@ this.legend_read_omens_trance_skill <- this.inherit("scripts/skills/actives/lege
 			"sounds/combat/hawk_02.wav"
 		];*/
 
-		this.m.Description = "Toggle Read Omens On (+10% reroll on hit)";
+		this.m.Description = "Toggle Read Omens On (+15% reroll on hit)";
 		this.m.ToggleOnDescription = this.m.Description;
 		this.m.ToggleOffDescription = "Toggle Read Omens Off";
 	}
 
 	function removeAll()
 	{
+		local act = this.getContainer().getActor();
 		foreach( bro in this.World.getPlayerRoster().getAll() )
 		{
-			bro.getSkills().removeByID("effects.legend_read_omens");
+			local skills = bro.getSkills();
+			local omens = skills.getSkillByID("effects.legend_read_omens");
+			if (omens != null && omens.getActor() != null && omens.getActor == act)
+			{
+				bro.getSkills().removeByID("effects.legend_read_omens");	
+			}
 		}
 	}
 
@@ -30,9 +39,12 @@ this.legend_read_omens_trance_skill <- this.inherit("scripts/skills/actives/lege
 	function swapOn()
 	{
 		this.legend_trance_abstract.swapOn();
+		local act = this.getContainer().getActor();
 		foreach( bro in this.World.getPlayerRoster().getAll() )
 		{
-			bro.getSkills().add(this.new("scripts/skills/effects/legend_read_omens_effect"));
+			local effect = this.new("scripts/skills/effects/legend_read_omens_effect");
+			effect.setActor(act);
+			bro.getSkills().add(effect);
 		}
 	}
 

@@ -4165,7 +4165,7 @@ Prayer of Hope effect/skill name fixed ; perk description updated to indicate 20
 Cultist's specialist hood/armor skills tweaked to give bonuses after all other perks have gone ; should now work with things like fort. mind consistently rather than sometimes working and sometimes not
 the Hide skill now displays the amount of rounds the character will be hidden in the active skill & turns remaining in the effect icon that's applied
 Backgrounds no longer spawn with mixed southern/northern heads/bodies
-Skin Ghoul Event Icon now exists but it's technically a dead icon for what should be alive 
+Skin Ghoul Event Icon now exists but it's technically a dead icon for what should be alive
 Tabard Icons now show up (Thanks Leo)
 Rich Cloaks now aren't randomly invisible (Also thanks Leo)
 
@@ -4181,5 +4181,245 @@ Troupe Scenario Event (Thanks Luft)
 
 15.0.0.17
 
-**Small Fixes/Tweaks**
+
+**Fixes/Tweaks**
 Mercenary Favorite Enemy no longer errors out after you kill a ranged mercenary
+Favoured Enemy skills hide when in combat and there is no enemy of that type (e.g. a fight vs Nomads doesn't display Direwolf anymore)
+  -> These still all show up on the main inventory/character screen
+Scrolls don't error the game out when trying to load then
+Vampires no longer crash the game when loading into a fight with them
+Magic Missile Perk icon fixed
+
+15.0.0.18
+
+**Helmet Layers**
+Enabled Baby :sunglasses:
+
+FEEDBACK WANTED FOR HELMET LAYERS!
+Weight Alignment, Balance Tweaks, Enemy X should get layer Y in its pool, etc
+
+**Art, Big thanks again to Von Krolock**
+Adds 2 new gender-neutral hair styles to the pool
+  -> 1 is Kinda like long dreads while the other is a mane
+
+Adds 1 new male beard
+  -> Although.. There aren't female beards
+
+Improves southern & northern female heads
+Improves some hairs
+
+**Fixes/Tweaks**
+Hunter Camp Building no longer errors out when it fails to create "Dried Fruit" and "Cured Venison" food items
+Fixes freeze when white direwolf pet dies
+Redback Spider + Hexen Leader Cloak layers have icons/brushes again (Thanks Leo)
+Nets now properly use net casting mastery & net mastery
+Fixes corrupt saves when saving a new campaign before unpausing
+
+
+
+=======
+
+15.0.0.19
+https://drive.google.com/file/d/1iSV9jTJ3u8yJYPmmqhW-2VSeUteZyD0R/view?usp=sharing
+
+Helmet layer balacning is still WIP, continuing to balance...
+
+**Fixes/Tweaks**
+Should fix helmets showing up backwards on the following:
+  - Orcs
+  - Goblins
+  - Necrosavans
+  - Armored Unholds
+Vampires no longer missing vanity sprites
+Fixes failure to enter town
+Fixes some vanity layers not spawning
+Locations shouldn't randomly spawn non layered famed helmets
+Loading into sunken library doesn't freeze now
+Fixes weapons brush being too large (causing color squares of death)
+Tweaks to Faster AI to hopefully prevent the faster AI crashes
+Fixes Cultist Hood perk not working with layered armor
+
+
+**Helmet Layer Balance Changes**
+[Durability, Fatigue, Vision]
+
+Nasal Helm: [50, -2, 0] from [50, -2, -1]
+Flat Top Helm: [70, -3, -1] from [70, -3, -2]
+Chain Mail Hood: [60, -3, 0] from [65, -3, 0]
+Mail Coif: [80, -5, 0] from [80, -4, -1]
+Full Mail Coif: [90, -6, 0] from [90, -6, -1]
+Southern Mail Hood: [85, -5, 0] from [80, -5, -1]
+Chain Attatchment: [40, -3, 0] from [40, -3, -1]
+Barbute: [110, -3, -1] from [110, -3, -2]
+Faceplates (All): -1 vision [from -2]
+  EXCEPT Full Faceplate -> -2 vision [from -3]
+Eyemask: [35, -2, 0] from [35, -3, -2]
+Basinet: [130, -7, -1] from [130, -7, -2]
+Cultist Hood: [50, -3, -1] from [65, -3, -1]
+Cloth Sack: [20, 0, -1] from [80, -4, 0]
+Sallet: [110, -5, 0] from [185, -9, -1]
++More
+
+
+15.0.0.20  Mummy's Free
+
+**New Legendary Location - Mastaba**
+Far out in the desert lies an ancient Mastaba, in its dry depths lie  the desicated corpses of the embalmed
+Art by Von Krolock, Writing by Luft
+**New Enemies - The Embalmed**
+These undead have laid still for millenia and those who disturb them shall suffer their curse
+When they die, they curse any of your troops within 2 tiles for the rest of the battle.
+The curse stacks, and causes you to take 20% more damage per stack
+The embalmed have:
+* four different variants
+* roman gladius and egyptian fan axe
+* 6 helmet layers, 2 shields and 4 armors
+
+**New Origin - Escaped Slaves**
+Integrates Sato's escaped slaves mod
+Start with five escapped slaves. More will seek out your conmpany, and you can rescue them after battles
+Your escaped slaves gain +1 resolve, attack and defense for each other escaped slave in battle
+Good relations decay 15% faster and bad relations recover 15% slower
+Start hostile to the city state you escaped from, and be ambushed by a new enemy type, the Manhunters
+New art for escaped slave events by Dwarf
+
+**Slave changes**
+Slaves now grant carrying bonuses,a slight salvage bonus and movement bonus in desert, farmland and mountains.
+Slaves are gauranteed perks for fists, hammers, axes slings and light armor .
+Barbarian slaves  have the perks of barbarians
+Runaway harem can now join the escaped slaves or sisterhood.
+
+
+**Gender equality**
+Female backgrounds - with gender equality enambled womean can now be criples, gamblers, raiders, houndmasters, hunters and ratcatcher. Text updated for several backgrounds.
+Female bodies - There are now six total versions of female bodies. Three each of southern and normal in thin, fit and thick  (von krolock)
+
+
+**New Hats**
+All faceplates rebalanced with half as much durability, as well as much lower fatigue and vision penalties
+a dozen faceplate layers added to spawnpools for knights, and at armorsmiths near blast furnaces.
+four noble hats added to the spawnpool for nobles, adventurous nobkles and at markets near dye makers
+two southern noble hats added to viziers and southern peddlers
+jewelry - There is now a variety of southern jewelry, with several kinds of veils, headresses and earings. These are found on female southerners and in southern markets  Art by Von Krolock
+
+**Retinue Changes**
+Retinue now requires specific backgrounds and perks.  Gold cost halved
+
+Agent = eunuch, messenger or assassin + allied town
+Alchemist = Taxidermist, Herbalist or Druid  + 10 crafting
+Blacksmith = "Field Repairs Perk" Blacksmith, Ironmonger, Crusader
+Bounty Hunter = Witch Hunter, Beast Slayer, Manhunter  + 1 famed item
+Brigand = Barbarian, Raider, Deserter
+Catographer = Historian, Adventurous Noble, Philosopher + 1 legendary location
+Cook = "Camp Cook perk" Baker, Fishwife, Butcher
+Drill Seargent = Retired Soldier, Gladiator, Swordmaster or Sellsword with injury
+Lookout = "lookout perk" Nomad, Thief, Poacher
+Minstrel = "Entice perk" Minstrel, Troubadour, Juggler
+Negotiator = "pacifist perk"  Widow, Inventor, tailor
+Paymaster = "paymaster perk" Peddler, Servant, Eunuch
+Quartermaster = "skillfull stacking perk" donkey, vagabond, Miller
+Recruiter = "inspiring presence perk" cultists, pimps retired soldiers
+Scavenger = beggar, cripple, refugee  slave
+Scout = Hunter, wildman, lumberjack, ranger
+Surgeon = "Field triage perk" Monk, Nun, Maid
+Trader = Caravan Hand. Peddler, trader  + trade requirement
+
+
+**Armor Tweaks**
+Name: [v19 Fatigue] -> [v20 Fatigue]
+Short Faceplate: [-5] -> [-6]
+Long Faceplate: [-5] -> [-6]
+Winged Faceplate: [-6] -> [-7]
+Snub Nose Faceplate: [-6] -> [-7]
+Slitted Snub Faceplate: [-6] -> [-8]
+Sharp Faceplate: [-7] -> [-8]
+Facemask: [-7] -> [-9]
+Pointed Faceplate: [-7] -> [-9]
+Slit Pointed Faceplate: [-7] -> [-9]
+Full Faceplate: [-9] -> [-12]
+Flat Top Face Plate: [-4] -> [-12]
+Southern Conic: [-5] -> [-10]
+Southern Peaked Helmet: [-4] -> [-12]
+
+**New Armors to Enemies**
+From fashion-show added:
+Few barbarian armors & southern armors by Kamy
+
+
+**Fixes/Tweaks**
+
+Actually fixes armored unholds' helmets
+Hedge Knights no longer have vanilla helmets when playing on layered system
+Arena contracts that give euqipment should give layered equipment now
+Named helmet layers now randomize their values
+Entice skill requires the correct staff mastery now, rather than polearm
+Bandit Leaders correctly can roll named helmets
+Veteran level recruits (12+) don't spawn with too many perk points now
+Were-monsters shouldn't have hair/beards anymore when transformed
+Fixed alignment on gobo wolfrider helmets
+Fixes camp having low res ground in desert environments
+Updates skeleton gladiator AI and stats
+Southern beasts cont toward favoured enemy perks, hyenas with direwolves, serpents with lindwurms and golems with schrats.
+"Southern-based" armor to barbarian reavers by Kamy
+
+Fixes tent sell-price determining for Fletching & Gathering tent
+Bags and belts tooltip fix
+Shield's knock back skill can no longer reach 1 fatigue cost
+Fixes vengeance similar to double strike, no longer disappears after enemy misses
+Trances such as Read Omens & Scry no longer require a full turn duration
+Scry now gives the vision effect when used and the beginning of every turn channeled (can now be toggled off to simulate the same as a regular Bird item)
+Read omens now can stack with multiple users & won't screw up when you try to channel it with two separate characters & end both trances
+Some champion barbs no longer have non-layered helmets + armors
+Violent Decomposition shouldn't crash when exploding anymore
+*Maybe* fixes Krakens that spawn out in the wild
+Fixes slaughterer tooltip
+roots only affects one tile
+Fixes double jester hat showing up in tooltips
+Fixes mountain helmet layer
+Fixes transform-into-boar active
+Should fix characters instantly fleeing from battle on therianthropy transform (This won't stop them from running to the edge of the map)
+Fixes infinite repair/salvage of helmets granting/taking unlimited tools
+
+
+**Art**
+Improves 2 of the heads already added by the mod
+Adds 2 new facial tattoos & 2 new body tattoos
+Updates female bodies
+Updates were-Boar/Bear/Wolf heads and bodies
+New icons for traits: Ambitious, Light
+
+**Slingstaff Changes**
+Raw stats of slingstaff: 35-45 dmg, 75% armpen, 110% armor damage (nomad sling - 35-50/35%/60% for 4 AP, old pre-nerf slingstaff 45-60/80%/150% for 8 AP)
+"Heavy rocks" increases damage of "Sling Heavy Stone" by 15-30 but increases AP cost by 1 and FAT cost by 4, has no effect on slingstaff bash.
+"Slinger's spins" increases armor damage of "Sling Heavy Stone" by 50% but increases AP cost by 1 and FAT cost by 4, has no effect on slingstaff bash.
+Fully buffed with minor perks Sling Heavy Stone pre-nerf: 49-72/80%/188% for 8 AP, now: 50-75/75%/165% for 7 AP, unbuffed 70-90/75%/110% for 10 AP (5*2).
+
+
+
+15.0.0.21
+
+
+**Changes**
+retinue tweaked to have more lowborns.
+Widows can be an agent
+Militia can be a drill sergeant
+Houndmaster can be bounty hunter
+ironmonger is now lowborn
+fishwife is lowborn
+Peaceful perk now called "peaceable", grants 20 resolve and 5% experience gain in excgange for -20 melee and ranged skill
+Peaceful trait now grants +10 resolve and -5 melee skill
+Pacifist perk now grants +10% resolve, does not count toward scaling Grows unhappy if in commbat more than once a week,
+
+
+**Armor Tweaks**
+Rebalance all barbarian helmet layers (+ adds a few new layers)
+
+**Fixes**
+Fixes manhunter fight event as escaped indebted
+Fixes Houndmaster background spawn
+Fixes sato destroyed caravan event giving nonlayered armor
+Fixes executioner fights not loading in
+Fixes arena contract dropping an item with a named layer and not named base not giving the item
+Fixes buckler bash and tower shield fortify from reaching a limit of 0 fatigue cost
+Fixes some retinue follower requirements being wrong
+Fixes perks going off screen. Bumped to the next perk level.

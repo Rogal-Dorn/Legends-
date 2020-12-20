@@ -16,13 +16,56 @@ this.arena_tournament_contract <- this.inherit("scripts/contracts/contract", {
 
 	function start()
 	{
-		local items = [];
-		items.extend(this.Const.Items.NamedWeapons);
-		items.extend(this.Const.Items.NamedHelmets);
-		items.extend(this.Const.Items.NamedArmors); //todo legend armors  : not sure how to do this one honestly but the todo is here 
-		local item = this.new("scripts/items/" + items[this.Math.rand(0, items.len() - 1)]);
-		this.m.Flags.set("PrizeName", item.createRandomName());
-		this.m.Flags.set("PrizeScript", item.ClassNameHash);
+		local item;
+		local idx = this.Math.rand(1, 3);
+		if (idx == 1)
+		{
+			local items = clone this.Const.Items.NamedWeapons;
+			item = this.new("scripts/items/" + items[this.Math.rand(0, items.len() - 1)]);
+		}
+		else if (idx == 2)
+		{
+			item = this.Const.World.Common.pickHelmet(
+				this.Const.World.Common.convNameToList(
+					this.Const.Items.NamedHelmets
+				)
+			);
+		}
+		else if (idx == 3)
+		{
+			item = this.Const.World.Common.pickArmor(
+				this.Const.World.Common.convNameToList(
+					this.Const.Items.NamedArmors
+				)
+			);
+		}
+		
+		local cnh;
+		if (idx == 1)
+		{
+			this.m.Flags.set("PrizeName", item.createRandomName());
+			cnh = item.ClassNameHash;
+		}
+		else
+		{
+			local nameList = [];
+			if (item.isItemType(this.Const.Items.ItemType.Named)) //if base layer named
+			{
+				nameList.push(item)
+			}
+			foreach(u in item.getUpgrades()) //if upgrade named
+			{
+				if (u.isItemType(this.Const.Items.ItemType.Named))
+				{
+					nameList.push(u)
+				}
+			}
+			local idx = this.Math.rand(0, nameList.len() - 1);
+			local item = nameList[idx];
+			this.m.Flags.set("PrizeName", item.getName())
+			cnh = item.ClassNameHash;
+		}
+		this.m.Flags.set("PrizeScript", cnh);
 
 		if (item.isItemType(this.Const.Items.ItemType.Weapon))
 		{

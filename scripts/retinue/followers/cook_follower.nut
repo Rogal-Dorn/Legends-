@@ -7,7 +7,7 @@ this.cook_follower <- this.inherit("scripts/retinue/follower", {
 		this.m.Name = "The Cook";
 		this.m.Description = "A good warm meal goes a long way towards healing body and mind. The Cook makes sure that no provisions go to waste, and provides the men with invigorating meals.";
 		this.m.Image = "ui/campfire/cook_01";
-		this.m.Cost = 2000;
+		this.m.Cost = 1000;
 		this.m.Effects = [
 			"Makes all provisions last 3 extra days",
 			"Increases hitpoint healing rate by 33%"
@@ -15,7 +15,7 @@ this.cook_follower <- this.inherit("scripts/retinue/follower", {
 		this.m.Requirements = [
 			{
 				IsSatisfied = false,
-				Text = ""
+				Text = "Have someone with the Camp Cook perk. Guaranteed on Bakers, Fishwives and Butchers"
 			}
 		];
 	}
@@ -30,33 +30,38 @@ this.cook_follower <- this.inherit("scripts/retinue/follower", {
 
 	function onEvaluate()
 	{
-		local uniqueProvisions = this.getAmountOfUniqueProvisions();
-		this.m.Requirements[0].Text = "Have " + this.Math.min(8, uniqueProvisions) + "/8 different types of provisions";
-
-		if (uniqueProvisions >= 8)
+		// local uniqueProvisions = this.getAmountOfUniqueProvisions();
+		local brothers = this.World.getPlayerRoster().getAll();
+		
+		foreach( bro in brothers )
 		{
-			this.m.Requirements[0].IsSatisfied = true;
-		}
-	}
-
-	function getAmountOfUniqueProvisions()
-	{
-		local provisions = [];
-		local items = this.World.Assets.getStash().getItems();
-
-		foreach( item in items )
-		{
-			if (item != null && item.isItemType(this.Const.Items.ItemType.Food))
+			if (bro.getSkills().hasSkill("perk.legend_camp_cook"))
 			{
-				if (provisions.find(item.getID()) == null)
-				{
-					provisions.push(item.getID());
-				}
+				this.m.Requirements[0].IsSatisfied = true;
+				return;
 			}
 		}
 
-		return provisions.len();
 	}
+
+	// function getAmountOfUniqueProvisions()
+	// {
+	// 	local provisions = [];
+	// 	local items = this.World.Assets.getStash().getItems();
+
+	// 	foreach( item in items )
+	// 	{
+	// 		if (item != null && item.isItemType(this.Const.Items.ItemType.Food))
+	// 		{
+	// 			if (provisions.find(item.getID()) == null)
+	// 			{
+	// 				provisions.push(item.getID());
+	// 			}
+	// 		}
+	// 	}
+
+	// 	return provisions.len();
+	// }
 
 });
 

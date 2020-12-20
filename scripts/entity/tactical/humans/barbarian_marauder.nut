@@ -160,11 +160,20 @@ this.barbarian_marauder <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Items.equip(this.new("scripts/items/shields/wooden_shield_old"));
 		}
 
-		this.m.Items.equip(this.Const.World.Common.pickArmor([
-			[1, "barbarians/scrap_metal_armor"],
-			[1, "barbarians/hide_and_bone_armor"],
-			[1, "barbarians/reinforced_animal_hide_armor"]
-		]));
+		local armor = [
+			[33, "barbarians/scrap_metal_armor"],
+			[34, "barbarians/hide_and_bone_armor"],
+			[33, "barbarians/reinforced_animal_hide_armor"]
+		];
+
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+		{
+			armor.push(
+				[5, "barbarians/legend_barbarian_southern_armor"]
+			);
+		}
+
+		this.m.Items.equip(this.Const.World.Common.pickArmor(armor));
 		
 		local item = this.Const.World.Common.pickHelmet([
 			[1, "barbarians/leather_headband"],

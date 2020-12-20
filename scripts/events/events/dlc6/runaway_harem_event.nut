@@ -34,14 +34,24 @@ this.runaway_harem_event <- this.inherit("scripts/events/event", {
 					Text = "The women are free to go wherever they choose.",
 					function getResult( _event )
 					{
+					
+						if (this.World.Assets.getOrigin().getID() == "scenario.sato_escaped_slaves" || this.World.Assets.getOrigin().getID() == "scenario.legends_sisterhood")
+						{
+						return "E";
+						}
+						else
+						{
 						return "B";
+						}
 					}
 
 				}
 			],
 			function start( _event )
 			{
+	
 				this.Banner = _event.m.Citystate.getUIBannerSmall();
+
 			}
 
 		});
@@ -77,6 +87,71 @@ this.runaway_harem_event <- this.inherit("scripts/events/event", {
 			}
 
 		});
+		
+		this.m.Screens.push({
+			ID = "E",
+			Text = "[img]gfx/ui/events/legend_harem_slave.png[/img]{ You draw your sword and tell the Vizier\'s men to lose themselves before they lose their lives. The declaration shifts the balance of power in favour of the nomads, and the vizier\'s men retreat.  The nomads thank you, as do the freed harem. One woman steps forward %SPEECH_ON% You have shown bravery stranger. We hate that man of the Vizier. He lies, and worse. If you have set your blade against him, then i wish to join you. I have a score to settle. %SPEECH_OFF%}",
+			Banner = "",
+			List = [],
+			Characters = [],
+			Options = [
+				{
+					Text = "Welcome. I hope you know how to use a weapon.",
+					function getResult( _event )
+					{
+						this.World.getPlayerRoster().add(_event.m.Dude);
+						this.World.getTemporaryRoster().clear();
+						_event.m.Dude.onHired();
+						_event.m.Dude = null;
+						return 0;
+					}
+
+				},
+				{
+					Text = "We don\'t have room for another",
+					function getResult( _event )
+					{
+						this.World.getTemporaryRoster().clear();
+						_event.m.Dude = null;
+						return 0;
+					}
+
+				}
+			],
+			function start( _event )
+			{
+				this.Characters.push(_event.m.Fisherman.getImagePath());
+				this.World.Assets.addMoralReputation(2);
+				local roster = this.World.getTemporaryRoster();
+				_event.m.Dude = roster.create("scripts/entity/tactical/player");
+				_event.m.Dude.setStartValuesEx([
+					"female_slave_southern_background"
+				]);
+				_event.m.Dude.setTitle("of the dance");
+				_event.m.Dude.getBackground().m.RawDescription = "You rescued %name% from a life in slavery after she was forced into the vizier\'s harem. She seeks revenge on the vizier.";
+				_event.m.Dude.getBackground().buildDescription(true);
+				_event.m.Dude.getItems().unequip(_event.m.Dude.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand));
+				_event.m.Dude.getItems().unequip(_event.m.Dude.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand));
+				_event.m.Dude.getItems().equip(this.new("scripts/items/weapons/oriental/qatal_dagger"));
+				_event.m.Dude.getTalents().talents[this.Const.Attributes.MeleeSkill] = 3;
+				_event.m.Dude.getTalents().talents[this.Const.Attributes.Bravery] = 3;
+				_event.m.Dude.getSkills().add(this.new("scripts/skills/perks/perk_coup_de_grace"));
+				_event.m.Dude.getSkills().add(this.new("scripts/skills/perks/perk_legend_favoured_enemy_southerner"));
+				_event.m.Dude.getSkills().add(this.new("scripts/skills/traits/natural_trait"));
+				_event.m.Dude.getSkills().add(this.new("scripts/skills/traits/pragmatic_trait"));
+				_event.m.Dude.worsenMood(1.0, "Got taken captive by manhunters");
+				_event.m.Dude.improveMood(2.0, "Got saved from a life in slavery");
+				this.Characters.push(_event.m.Dude.getImagePath());
+				local cityStates = this.World.FactionManager.getFactionsOfType(this.Const.FactionType.OrientalCityState);
+
+				foreach( c in cityStates )
+				{
+					c.addPlayerRelation(this.Const.World.Assets.RelationNobleContractFail, "You aided in the escape of a Vizier\'s harem");
+				}
+			}
+
+		});
+		
 		this.m.Screens.push({
 			ID = "C",
 			Text = "[img]gfx/ui/events/event_170.png[/img]{You know a good payday when you see one, and by payday you mean an ambassador of a Vizier. Drawing your sword, you jump between the nomads and the women, telling the former to back off and return to the deserts. The nomads draw bows and raise spears, but their leader quiets them.%SPEECH_ON%No, the interloper has intervened in a manner he finds most suitable, and certainly the Gilder has chosen him as an arbiter in this matter for good reason. Take the women, then, and the dispute is settled.%SPEECH_OFF%The Vizier\'s men gather the harem back into their ranks. A heavy bag is brought to you by the lieutenant.%SPEECH_ON%Payment, Crownling. This was not your task, but that does not mean it carries no reward. You have saved these indebted women from the Gilder\'s hellfire. May our generosity be a constant reminder going forward, yes?%SPEECH_OFF%}",

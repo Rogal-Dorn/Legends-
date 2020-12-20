@@ -146,8 +146,16 @@ this.knight <- this.inherit("scripts/entity/tactical/human", {
 		{
 			this.m.Items.equip(this.Const.World.Common.pickHelmet([
 				[45, "full_helm"],
-				[44, "faction_helm", banner],
-				[6, "legend_frogmouth_helm"],
+				[5, "legend_helm_breathed"],
+				[5, "legend_helm_full"],
+				[5, "legend_helm_bearded"],
+				[5, "legend_helm_point"],
+				[5, "legend_helm_snub"],
+				[5, "legend_helm_wings"],
+				[5, "legend_helm_short"],
+				[5, "legend_helm_curved"],
+				[5, "faction_helm", banner],
+				[5, "legend_frogmouth_helm"],
 				[1, "legend_frogmouth_helm_crested"]
 			]))
 		}
@@ -195,7 +203,8 @@ this.knight <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Items.equip(h);
 		}
 		this.m.Items.equip(this.Const.World.Common.pickHelmet([
-			[1, "named/legend_frogmouth_helm_crested_painted"]
+			[3, "named/legend_frogmouth_helm_crested_painted"],
+			[1, "named/legend_helm_full_named"]
 		]))
 
 

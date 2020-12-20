@@ -28,7 +28,7 @@ gt.Const.LegendMod.ArmorObjs.extend([
         ],
         Cloak = [
             [0, "cloak/legend_shoulder_cloth"], //5
-            [0, "cloak/legend_noble_shawl"], //10 
+            [0, "cloak/legend_noble_shawl"], //10
             [1, "cloak/legend_dark_wooly_cloak"], //15
             [1, "cloak/legend_armor_cloak_common"], //10
             [1, "cloak/legend_armor_cloak_heavy"], //30
@@ -72,7 +72,7 @@ gt.Const.LegendMod.ArmorObjs.extend([
         ],
         Cloak = [ //grabbed 2 southern layers cuz they look cool ; have avg of 17 ish want 3
             [0, "cloak/legend_shoulder_cloth"], //5
-            [0, "cloak/legend_noble_shawl"], //10 
+            [0, "cloak/legend_noble_shawl"], //10
             [0, "cloak/legend_dark_wooly_cloak"], //15
             [1, "cloak/legend_armor_cloak_common"], //10
             [1, "cloak/legend_armor_cloak_heavy"], //30
@@ -116,7 +116,7 @@ gt.Const.LegendMod.ArmorObjs.extend([
         ],
         Cloak = [
             [0, "cloak/legend_shoulder_cloth"], //5
-            [0, "cloak/legend_noble_shawl"], //10 
+            [0, "cloak/legend_noble_shawl"], //10
             [0, "cloak/legend_dark_wooly_cloak"], //15
             [0, "cloak/legend_armor_cloak_common"], //10
             [0, "cloak/legend_armor_cloak_heavy"], //30
@@ -167,7 +167,7 @@ gt.Const.LegendMod.ArmorObjs.extend([
         ],
         Cloak = [
             [1, "cloak/legend_shoulder_cloth"], //5
-            [1, "cloak/legend_noble_shawl"], //10 
+            [1, "cloak/legend_noble_shawl"], //10
             [1, "cloak/legend_dark_wooly_cloak"], //15
             [1, "cloak/legend_armor_cloak_common"], //10
             [1, "cloak/legend_armor_cloak_heavy"], //30
@@ -217,7 +217,7 @@ gt.Const.LegendMod.ArmorObjs.extend([
         ],
         Cloak = [
             [1, "cloak/legend_shoulder_cloth"], //5
-            [1, "cloak/legend_noble_shawl"], //10 
+            [1, "cloak/legend_noble_shawl"], //10
             [1, "cloak/legend_dark_wooly_cloak"], //15
             [1, "cloak/legend_armor_cloak_common"], //10
             [1, "cloak/legend_armor_cloak_heavy"], //30
@@ -267,7 +267,7 @@ gt.Const.LegendMod.ArmorObjs.extend([
         ],
         Cloak = [
             [1, "cloak/legend_shoulder_cloth"], //5
-            [1, "cloak/legend_noble_shawl"], //10 
+            [1, "cloak/legend_noble_shawl"], //10
             [1, "cloak/legend_dark_wooly_cloak"], //15
             [1, "cloak/legend_armor_cloak_common"], //10
             [1, "cloak/legend_armor_cloak_heavy"], //30
@@ -314,7 +314,7 @@ gt.Const.LegendMod.ArmorObjs.extend([
         ],
         Cloak = [
             [0, "cloak/legend_shoulder_cloth"], //5
-            [0, "cloak/legend_noble_shawl"], //10 
+            [0, "cloak/legend_noble_shawl"], //10
             [0, "cloak/legend_dark_wooly_cloak"], //15
             [0, "cloak/legend_armor_cloak_common"], //10
             [0, "cloak/legend_armor_cloak_heavy"], //30
@@ -357,11 +357,11 @@ gt.Const.LegendMod.ArmorObjs.extend([
             [1, "chain/legend_southern_mail"]
         ],
         Plate = [
-            [1, "plate/legend_southern_named_plates"] 
+            [1, "plate/legend_southern_named_plates"]
         ],
         Cloak = [
             [0, "cloak/legend_shoulder_cloth"], //5
-            [0, "cloak/legend_noble_shawl"], //10 
+            [0, "cloak/legend_noble_shawl"], //10
             [0, "cloak/legend_dark_wooly_cloak"], //15
             [0, "cloak/legend_armor_cloak_common"], //10
             [0, "cloak/legend_armor_cloak_heavy"], //30
@@ -405,7 +405,7 @@ gt.Const.LegendMod.ArmorObjs.extend([
         ],
         Cloak = [
             [0, "cloak/legend_shoulder_cloth"], //5
-            [0, "cloak/legend_noble_shawl"], //10 
+            [0, "cloak/legend_noble_shawl"], //10
             [0, "cloak/legend_dark_wooly_cloak"], //15
             [0, "cloak/legend_armor_cloak_common"], //10
             [0, "cloak/legend_armor_cloak_heavy"], //30
@@ -449,7 +449,7 @@ gt.Const.LegendMod.ArmorObjs.extend([
         ],
         Cloak = [
             [0, "cloak/legend_shoulder_cloth"], //5
-            [0, "cloak/legend_noble_shawl"], //10 
+            [0, "cloak/legend_noble_shawl"], //10
             [0, "cloak/legend_dark_wooly_cloak"], //15
             [0, "cloak/legend_armor_cloak_common"], //10
             [0, "cloak/legend_armor_cloak_heavy"], //30
@@ -493,7 +493,7 @@ gt.Const.LegendMod.ArmorObjs.extend([
         ],
         Cloak = [
             [0, "cloak/legend_shoulder_cloth"], //5
-            [0, "cloak/legend_noble_shawl"], //10 
+            [0, "cloak/legend_noble_shawl"], //10
             [0, "cloak/legend_dark_wooly_cloak"], //15
             [0, "cloak/legend_armor_cloak_common"], //10
             [1, "cloak/legend_armor_cloak_heavy"], //30
@@ -515,7 +515,7 @@ gt.Const.LegendMod.ArmorObjs.extend([
             [0, "tabard/legend_southern_wrap"],
             [0, "tabard/legend_southern_shoulder_cloth"],
             [0, "tabard/legend_southern_overcloth"],
-            [01, "tabard/legend_southern_tabard"]
+            [1, "tabard/legend_southern_tabard"]
         ],
         Attachments =[
         ]
@@ -537,7 +537,7 @@ gt.Const.LegendMod.ArmorObjs.extend([
         ],
         Cloak = [
             [0, "cloak/legend_shoulder_cloth"], //5
-            [0, "cloak/legend_noble_shawl"], //10 
+            [0, "cloak/legend_noble_shawl"], //10
             [0, "cloak/legend_dark_wooly_cloak"], //15
             [0, "cloak/legend_armor_cloak_common"], //10
             [0, "cloak/legend_armor_cloak_heavy"], //30
@@ -591,7 +591,7 @@ gt.Const.LegendMod.ArmorObjs.extend([
         ],
         Cloak = [
             [0, "cloak/legend_shoulder_cloth"], //5
-            [0, "cloak/legend_noble_shawl"], //10 
+            [0, "cloak/legend_noble_shawl"], //10
             [0, "cloak/legend_dark_wooly_cloak"], //15
             [0, "cloak/legend_armor_cloak_common"], //10
             [0, "cloak/legend_armor_cloak_heavy"], //30
@@ -637,7 +637,7 @@ gt.Const.LegendMod.ArmorObjs.extend([
         ],
         Cloak = [
             [0, "cloak/legend_shoulder_cloth"], //5
-            [0, "cloak/legend_noble_shawl"], //10 
+            [0, "cloak/legend_noble_shawl"], //10
             [4, "cloak/legend_dark_wooly_cloak"], //15
             [0, "cloak/legend_armor_cloak_common"], //10
             [0, "cloak/legend_armor_cloak_heavy"], //30

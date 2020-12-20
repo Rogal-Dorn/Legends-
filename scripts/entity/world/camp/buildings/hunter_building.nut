@@ -248,7 +248,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		{
 			item = this.new("scripts/items/supplies/roots_and_berries_item");
 			secondary = [
-				"scripts/items/supplies/cured_vension_item"
+				"scripts/items/supplies/cured_venison_item"
 
 			];
 		}
@@ -256,7 +256,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		{
 			item = this.new("scripts/items/supplies/legend_fresh_fruit_item");
 				secondary = [
-				"scripts/items/supplies/dried_fruit_item"
+				"scripts/items/supplies/dried_fruits_item"
 
 			];
 		}
@@ -266,8 +266,8 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		if (cheflevels >= 1 && cheflevels <= 15)
 		{
 			secondary.extend([
-				"scripts/items/supplies/dried_fruit_item",
-				"scripts/items/supplies/cured_vension_item",
+				"scripts/items/supplies/dried_fruits_item",
+				"scripts/items/supplies/cured_venison_item",
 				"scripts/items/supplies/legend_porridge_item",
 				"scripts/items/supplies/legend_pudding_item",
 				"scripts/items/supplies/ground_grains_item",

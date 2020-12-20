@@ -430,7 +430,9 @@ gt.Const.Hair.Barber <- [
 	"18",
 	"19",
 	"20",
-	"21"
+	"21",
+	"31",
+	"32"
 ];
 
 gt.Const.Hair.AllMale <- [
@@ -453,6 +455,8 @@ gt.Const.Hair.AllMale <- [
 	"20",
 	"21",
 	"22",
+	"31",
+	"32",
 	"southern_01",
 	"southern_02",
 	"southern_03",
@@ -495,7 +499,9 @@ gt.Const.Hair.BarberFemale <- [
 	"27",
 	"28",
 	"29",
-	"30"
+	"30",
+	"31",
+	"32"
 ];
 
 
@@ -519,7 +525,9 @@ gt.Const.Hair.AllFemale <- [
 	"27",
 	"28",
 	"29",
-	"30"
+	"30",
+	"31",
+	"32"
 ];
 
 
@@ -579,6 +587,8 @@ gt.Const.Hair.WildMale <- [
 	"08",
 	"18",
 	"21",
+	"31",
+	"32",
 	"shaved"
 ];
 gt.Const.Hair.YoungMale <- [
@@ -701,7 +711,8 @@ gt.Const.Beards.Barber <- [
 	"16",
 	"17",
 	"legends_01",
-	"legends_02"
+	"legends_02",
+	"19"
 ];
 gt.Const.Beards.All <- [
 	"01",
@@ -722,7 +733,8 @@ gt.Const.Beards.All <- [
 	"16",
 	"17",
 	"legends_01",
-	"legends_02"
+	"legends_02",
+	"19"
 ];
 
 gt.Const.Beards.Berserker <- [
@@ -760,7 +772,8 @@ gt.Const.Beards.Untidy <- [
 	"14",
 	"17",
 	"legends_01",
-	"legends_02"
+	"legends_02",
+	"19"
 ];
 gt.Const.Beards.SouthernUntidy <- [
 	"southern_01",
@@ -798,7 +811,8 @@ gt.Const.Beards.WildExtended <- [
 	"13",
 	"14",
 	"15",
-	"17"
+	"17",
+	"19"
 ];
 gt.Const.Beards.Monk <- [
 	"01",
@@ -873,7 +887,9 @@ gt.Const.Beards.ZombieExtended <- [
 gt.Const.Tattoos.All <- [
 	"",
 	"tattoo_01",
-	"warpaint_01"
+	"warpaint_01",
+	"tattoo_07",
+	"tattoo_08"
 ];
 
 gt.Const.Hair.HorseBody <- [
@@ -926,20 +942,38 @@ gt.Const.Bodies.SouthernMale <- [
 gt.Const.Bodies.Skinny <- [
 	"bust_naked_body_00"
 ];
+gt.Const.Bodies.FemaleSkinny <- [
+	"bust_female_northern_body_00"
+];
 gt.Const.Bodies.SouthernSkinny <- [
 	"bust_naked_body_southern_00"
+];
+gt.Const.Bodies.SouthernFemaleSkinny <- [
+	"bust_female_southern_body_00"
 ];
 gt.Const.Bodies.Muscular <- [
 	"bust_naked_body_01"
 ];
+gt.Const.Bodies.FemaleMuscular <- [
+	"bust_female_northern_body_01"
+];
 gt.Const.Bodies.SouthernMuscular <- [
 	"bust_naked_body_southern_01"
+];
+gt.Const.Bodies.SouthernFemaleMuscular <- [
+	"bust_female_southern_body_01"
 ];
 gt.Const.Bodies.Thick <- [
 	"bust_naked_body_02"
 ];
+gt.Const.Bodies.FemaleThick <- [
+	"bust_female_northern_body_02"
+];
 gt.Const.Bodies.SouthernThick <- [
 	"bust_naked_body_southern_01"
+];
+gt.Const.Bodies.SouthernFemaleThick <- [
+	"bust_female_southern_body_02"
 ];
 gt.Const.Bodies.Gladiator <- [
 	"bust_naked_body_southern_01",
@@ -953,7 +987,25 @@ gt.Const.Bodies.NorthernSlave <- [
 ];
 
 gt.Const.Bodies.AllFemale <- [
-	"bust_naked_body_03"
+	"bust_naked_body_03",
+	"bust_female_southern_body_00",
+	"bust_female_southern_body_01",
+	"bust_female_southern_body_02",
+	"bust_female_northern_body_00",
+	"bust_female_northern_body_01",
+	"bust_female_northern_body_02"
+];
+
+gt.Const.Bodies.SouthernFemale <- [
+	"bust_female_southern_body_00",
+	"bust_female_southern_body_01",
+	"bust_female_southern_body_02"
+];
+
+gt.Const.Bodies.NorthernFemale <- [
+	"bust_female_northern_body_00",
+	"bust_female_northern_body_01",
+	"bust_female_northern_body_02"
 ];
 
 
@@ -976,11 +1028,6 @@ gt.Const.Bodies.Donkeys <- [
 gt.Const.Bodies.LegendTattos <- [
 	"bust_naked_body_04"
 ]
-
-
-gt.Const.Bodies.SouthernFemale <- [
-	"bust_naked_southern_female_01"
-];
 
 gt.Const.Faces.SouthernFemale <- [
 	"bust_head_southern_female_01",

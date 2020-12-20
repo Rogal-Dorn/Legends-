@@ -16,16 +16,11 @@ this.paymaster_follower <- this.inherit("scripts/retinue/follower", {
 		this.m.Requirements = [
 			{
 				IsSatisfied = false,
-				Text = ""
+				Text = "Have a mercenary who has taken the Paymaster perk. Guaranteed on Peddlers, Eunuchs and Servants"
 			}
 		];
 	}
-
-	function isVisible()
-	{
-		return this.World.Assets.getBrothersMax() >= 16;
-	}
-
+	
 	function onUpdate()
 	{
 		if ("DailyWageMult" in this.World.Assets.m)
@@ -34,11 +29,14 @@ this.paymaster_follower <- this.inherit("scripts/retinue/follower", {
 
 	function onEvaluate()
 	{
-		this.m.Requirements[0].Text = "Have a roster of " + this.Math.min(16, this.World.getPlayerRoster().getSize()) + "/16 men";
-
-		if (this.World.getPlayerRoster().getSize() >= 16)
+		local brothers = this.World.getPlayerRoster().getAll();
+		
+		foreach( bro in brothers )
 		{
-			this.m.Requirements[0].IsSatisfied = true;
+			if (bro.getSkills().hasSkill("perk.legend_barter_paymaster"))
+			{
+				this.m.Requirements[0].IsSatisfied = true;
+			}
 		}
 	}
 

@@ -26,6 +26,35 @@ this.slave_barbarian_background <- this.inherit("scripts/skills/backgrounds/slav
 			"the Shackled",
 			"the Bound"
 		];
+		this.m.ExcludedTalents = [
+			this.Const.Attributes.Bravery
+		];
+		this.m.PerkTreeDynamic = {
+			Weapon = [
+				this.Const.Perks.GreatSwordTree,
+				this.Const.Perks.AxeTree,
+				this.Const.Perks.HammerTree,
+				this.Const.Perks.MaceTree,
+				this.Const.Perks.CleaverTree,
+				this.Const.Perks.ThrowingTree
+			],
+			Defense = [
+				this.Const.Perks.LightArmorTree
+			],
+			Traits = [
+				this.Const.Perks.ViciousTree,
+				this.Const.Perks.TrainedTree,
+				this.Const.Perks.LargeTree,
+				this.Const.Perks.SturdyTree,
+				this.Const.Perks.FitTree
+			],
+			Enemy = [
+				this.Const.Perks.CaravanTree,
+				this.Const.Perks.NoblesTree
+				],
+			Class = [],
+			Magic = []
+		}
 	}
 
 	function onChangeAttributes()

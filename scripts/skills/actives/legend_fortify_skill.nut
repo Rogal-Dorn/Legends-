@@ -101,6 +101,9 @@ this.legend_fortify_skill <- this.inherit("scripts/skills/skill", {
 
 	function onAfterUpdate( _properties )
 	{
+
+		this.m.FatigueCostMult = 1.0;
+
 		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_specialist_shield_push"))
 		{
 			this.m.FatigueCostMult = this.Const.Combat.WeaponSpecFatigueMult;
@@ -109,7 +112,7 @@ this.legend_fortify_skill <- this.inherit("scripts/skills/skill", {
 
 		if (this.getContainer().getActor().getSkills().hasSkill("perk.shield_bash"))
 		{
-			this.m.FatigueCost *= 0.9;
+			this.m.FatigueCostMult *= 0.9;
 		}
 	}
 

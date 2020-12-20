@@ -79,6 +79,18 @@ this.slave_uprising_contract <- this.inherit("scripts/contracts/contract", {
 				}
 
 				this.Contract.setScreen("Overview");
+
+				if (this.World.Assets.getOrigin().getID() == "scenario.sato_escaped_slaves")
+				{
+					local brothers = this.World.getPlayerRoster().getAll();
+					foreach( bro in brothers )
+					{
+						if (bro.getBackground().getID() == "background.slave")
+						{
+							bro.worsenMood(3.0, "You took a contract to put down a slave uprising");
+						}
+					}
+				}
 				this.World.Contracts.setActiveContract(this.Contract);
 			}
 
