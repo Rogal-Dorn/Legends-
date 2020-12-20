@@ -4,9 +4,9 @@ this.frail_trait <- this.inherit("scripts/skills/traits/character_trait", {
 	{
 		this.character_trait.create();
 		this.m.ID = "trait.frail";
-		this.m.Name = "Frail";
+		this.m.Name = "Flabby";
 		this.m.Icon = "ui/traits/frail_trait.png";
-		this.m.Description = "Weak and fragile. Has to work hard to become a real warrior.";
+		this.m.Description = "Weak and loose. Has to work hard to become a real warrior.";
 		this.m.Titles = [
 			"the Weak",
 			"the Feeble"

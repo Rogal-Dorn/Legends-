@@ -112,7 +112,7 @@ this.gladiator_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Bodies = this.Const.Bodies.SouthernFemale;
+		this.m.Bodies = this.Const.Bodies.SouthernFemaleMuscular;
 		this.m.IsFemaleBackground = true;
 	}
 
@@ -277,7 +277,7 @@ this.gladiator_background <- this.inherit("scripts/skills/backgrounds/character_
 		items.equip(a);
 
 		items.equip(this.Const.World.Common.pickHelmet([
-			[1, "oriental/gladiator_helmet"],
+			[1, "oriental/gladiator_helmet", this.Math.rand(13, 15)],
 			[1, ""]
 		]));
 

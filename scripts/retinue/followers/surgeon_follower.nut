@@ -7,7 +7,7 @@ this.surgeon_follower <- this.inherit("scripts/retinue/follower", {
 		this.m.Name = "The Surgeon";
 		this.m.Description = "The Surgeon is a walking tome of anatomical knowledge. A mercenary company seems the perfect place both to apply that knowledge in healing, but also to learn more about how the insides of men are made up.";
 		this.m.Image = "ui/campfire/surgeon_01";
-		this.m.Cost = 3500;
+		this.m.Cost = 1750;
 		this.m.Effects = [
 			"Makes every man without a permanent injury guaranteed to survive an otherwise fatal blow",
 			"Makes every injury take one less day to heal"
@@ -15,7 +15,7 @@ this.surgeon_follower <- this.inherit("scripts/retinue/follower", {
 		this.m.Requirements = [
 			{
 				IsSatisfied = false,
-				Text = ""
+				Text = "Have someone with the Field Triage perk. Guaranteed on Monks and Nuns"
 			}
 		];
 	}
@@ -28,11 +28,15 @@ this.surgeon_follower <- this.inherit("scripts/retinue/follower", {
 
 	function onEvaluate()
 	{
-		this.m.Requirements[0].Text = "Treated " + this.Math.min(5, this.World.Statistics.getFlags().getAsInt("InjuriesTreatedAtTemple")) + "/5 men with injuries at a temple";
-
-		if (this.World.Statistics.getFlags().getAsInt("InjuriesTreatedAtTemple") >= 5)
+		local brothers = this.World.getPlayerRoster().getAll();
+		
+		foreach( bro in brothers )
 		{
-			this.m.Requirements[0].IsSatisfied = true;
+			if (bro.getSkills().hasSkill("perk.legend_field_triage"))
+			{
+				this.m.Requirements[0].IsSatisfied = true;
+				return;
+			}
 		}
 	}
 

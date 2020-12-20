@@ -8,13 +8,13 @@ this.legend_armor_redback_cloak_upgrade <- this.inherit("scripts/items/legend_ar
 		this.m.Name = "Redback Silk Cloak";
 		this.m.Description = "This flowing cloack is made from spider web, and offers excellent protection against ranged attacks.";
 		this.m.ArmorDescription = "A cloak of spider silk offers extra protection";
-		this.m.SpriteBack = "cloak_spider";
-		this.m.SpriteDamagedBack = "cloak_spider_damaged";
-		this.m.SpriteCorpseBack = "cloak_spider_dead";
-		this.m.Icon = "legend_armor/cloak/cloak_spider.png";
+		this.m.SpriteBack = "bust_cloak_spider";
+		this.m.SpriteDamagedBack = "bust_cloak_spider_damaged";
+		this.m.SpriteCorpseBack = "bust_cloak_spider_dead";
+		this.m.Icon = "legend_armor/icon_cloak_spider.png";
 		this.m.IconLarge = this.m.Icon;
-		this.m.OverlayIcon = "legend_armor/cloak/icon_cloak_spider.png";
-		this.m.OverlayIconLarge = "legend_armor/cloak/inventory_cloak_spider.png";
+		this.m.OverlayIcon = "legend_armor/icon_cloak_spider.png";
+		this.m.OverlayIconLarge = "legend_armor/inventory_cloak_spider.png";
 		this.m.Value = 7500;
 		this.m.Condition = 35;
 		this.m.ConditionMax = 35;
@@ -52,4 +52,3 @@ this.legend_armor_redback_cloak_upgrade <- this.inherit("scripts/items/legend_ar
 	}
 
 });
-

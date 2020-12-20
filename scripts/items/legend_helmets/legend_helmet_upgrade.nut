@@ -103,6 +103,11 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 		this.m.Armor = this.WeakTableRef(_a);
 	}
 
+	function getContainer()
+	{
+		return this.m.Armor == null ? null : this.m.Armor.getContainer();
+	}
+
 	function getArmorDescription()
 	{
 		return this.m.ArmorDescription;
@@ -437,6 +442,11 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 
 		this.m.Condition = this.Math.max(0, this.m.Condition - _damage) * 1.0;
 		return 0.0;
+	}
+
+	function onRepair(_a)
+	{
+		return this.setCondition(_a);
 	}
 
 	function onArmorTooltip( _result )

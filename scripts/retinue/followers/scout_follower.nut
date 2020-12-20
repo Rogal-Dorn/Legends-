@@ -7,7 +7,7 @@ this.scout_follower <- this.inherit("scripts/retinue/follower", {
 		this.m.Name = "The Scout";
 		this.m.Description = "The Scout is an expert in finding mountain passes, navigating through treacherous swamps, and guiding anyone safely through the darkest of forests.";
 		this.m.Image = "ui/campfire/scout_01";
-		this.m.Cost = 2500;
+		this.m.Cost = 1250;
 		this.m.Effects = [
 			"Makes the company travel 15% faster on any terrain",
 			"Prevents sickness and accidents due to terrain"
@@ -15,7 +15,7 @@ this.scout_follower <- this.inherit("scripts/retinue/follower", {
 		this.m.Requirements = [
 			{
 				IsSatisfied = false,
-				Text = ""
+				Text = "Have at least one of the following backgrounds: Wildman/Wildwoman, Hunter, Lumberjack, Ranger"
 			}
 		];
 	}
@@ -32,12 +32,27 @@ this.scout_follower <- this.inherit("scripts/retinue/follower", {
 
 	function onEvaluate()
 	{
-		this.m.Requirements[0].Text = "Won " + this.Math.min(5, this.World.Statistics.getFlags().getAsInt("BeastsDefeated")) + "/5 battles against beasts";
+		local brothers = this.World.getPlayerRoster().getAll();
 
-		if (this.World.Statistics.getFlags().getAsInt("BeastsDefeated") >= 5)
+		local availableBGs = [
+			"background.wildman",
+			"background.wildwoman",
+			"background.hunter",
+			"background.lumberjack",
+			"background.legend_ranger",
+			"background.legend_commander_ranger"
+		];
+
+		foreach( bro in brothers )
 		{
-			this.m.Requirements[0].IsSatisfied = true;
-		}
+			local id = bro.getBackground().getID();
+			
+			if (availableBGs.find(id))
+			{
+				this.m.Requirements[0].IsSatisfied = true;
+				return;
+			}
+		}			
 	}
 
 });

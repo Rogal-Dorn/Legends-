@@ -50,6 +50,7 @@ this.legend_crusader_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Good;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.Level = 1;
+		this.m.IsCrusaderRecruitBackground = true;
 		this.m.IsCombatBackground = true;
 		this.m.IsOffendedByViolence = true;
 		this.m.IsUntalented = true;

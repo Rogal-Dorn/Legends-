@@ -16,6 +16,10 @@ this.bounty_hunter_follower <- this.inherit("scripts/retinue/follower", {
 			{
 				IsSatisfied = false,
 				Text = ""
+			},
+			{
+				IsSatisfied = false,
+				Text = "Have at least one of the following backgrounds: Manhunter, Witch Hunter, Beast Slayer"
 			}
 		];
 	}
@@ -34,12 +38,34 @@ this.bounty_hunter_follower <- this.inherit("scripts/retinue/follower", {
 	function onEvaluate()
 	{
 		local namedItems = this.getNumberOfNamedItems();
-		this.m.Requirements[0].Text = "Have " + this.Math.min(3, namedItems) + "/3 named or legendary items in your possession";
+		this.m.Requirements[0].Text = "Have " + this.Math.min(1, namedItems) + "/1 named or legendary items in your possession";
+		
 
-		if (namedItems >= 3)
+
+		local brothers = this.World.getPlayerRoster().getAll();
+		local availableBGs = [
+			"background.witchhunter",
+			"background.beast_slayer",
+			"background.manhunter"
+		];
+
+		foreach( bro in brothers )
+		{
+			local id = bro.getBackground().getID();
+			
+			if (availableBGs.find(id))
+			{
+				this.m.Requirements[1].IsSatisfied = true;
+				break;
+			}
+		}	
+
+		if (namedItems >= 1)
 		{
 			this.m.Requirements[0].IsSatisfied = true;
 		}
+		
+	
 	}
 
 	function onChampionKilled( _champion )

@@ -12,7 +12,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 	function isValid()
 	{
-		return true //this.Const.LegendMod.DebugMode;
+		return this.Const.LegendMod.DebugMode;
 	}
 
 	function onSpawnAssets()
@@ -295,7 +295,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			if (item.m.Variants.len() == 0)
 			{
 				this.logInfo("Adding " + a);
-				this.World.Assets.getStash().add(item);
+				//this.World.Assets.getStash().add(item);
 				continue;
 			}
 
@@ -304,7 +304,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 				this.logInfo("Adding " + a + " :: " + i);
 				local vitem =  this.new("scripts/items/legend_armor/" + a);
 				vitem.setVariant(item.m.Variants[i]);
-				this.World.Assets.getStash().add(vitem);
+				//this.World.Assets.getStash().add(vitem);
 			}
 		}
 
@@ -349,178 +349,269 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		// 	this.World.Assets.getStash().add(pla);
 		// }
 
-		// local helmets = [
-		// 	"hood/legend_helmet_barb_chain_scarf",
-		// 	"hood/legend_helmet_chain_hood",
-		// 	"hood/legend_helmet_chain_hood_full",
-		// 	"hood/legend_helmet_chain_scarf",
-		// 	"hood/legend_helmet_cloth_scarf",
-		// 	"hood/legend_helmet_goblin_scarf",
-		// 	"hood/legend_helmet_leather_hood",
-		// 	"hood/legend_helmet_padded_hood",
-		// 	"hood/legend_helmet_patched_hood",
-		// 	"hood/legend_helmet_rotten_chain_scarf",
-		// 	"hood/legend_helmet_simple_hood",
-		// 	"hood/legend_helmet_padded_cap",
-		// 	"hood/legend_helmet_hood_cloth_round",
-		// 	"hood/legend_helmet_hood_cloth_square",
-		// 	"hood/legend_helmet_hood_cloth_wide",
-		// 	"hood/legend_helmet_cloth_long_hood",
-		// 	"hood/legend_helmet_cloth_bandana",
-		// 	"hood/legend_helmet_leather_cap",
-		// 	"hood/legend_helmet_bronze_chain",
-		// 	"helm/legend_helmet_ancient_beard_mask",
-		// 	"helm/legend_helmet_ancient_conic_helm",
-		// 	"helm/legend_helmet_ancient_crested",
-		// 	"helm/legend_helmet_ancient_dome",
-		// 	"helm/legend_helmet_ancient_dome_tailed",
-		// 	"helm/legend_helmet_ancient_face_helm",
-		// 	"helm/legend_helmet_ancient_face_plate",
-		// 	"helm/legend_helmet_ancient_kettle",
-		// 	"helm/legend_helmet_ancient_legionaire",
-		// 	"helm/legend_helmet_ancient_lion_mask",
-		// 	"helm/legend_helmet_ancient_mask",
-		// 	"helm/legend_helmet_ancient_side_hawk",
-		// 	"helm/legend_helmet_ancient_tailed_conic_helm",
-		// 	"helm/legend_helmet_barbute",
-		// 	"helm/legend_helmet_basinet",
-		// 	"helm/legend_helmet_carthaginian",
-		// 	"helm/legend_helmet_conic_helm",
-		// 	"helm/legend_helmet_crude_cylinder_helm",
-		// 	"helm/legend_helmet_crude_metal_helm",
-		// 	"helm/legend_helmet_crude_skull_helm",
-		// 	"helm/legend_helmet_flat_top_face_plate",
-		// 	"helm/legend_helmet_flat_top_helm",
-		// 	"helm/legend_helmet_goblin_chain_helm",
-		// 	"helm/legend_helmet_goblin_leather_helm",
-		// 	"helm/legend_helmet_goblin_leather_mask",
-		// 	"helm/legend_helmet_goblin_spiked_helm",
-		// 	"helm/legend_helmet_great_helm",
-		// 	"helm/legend_helmet_heavy_plate_helm",
-		// 	"helm/legend_helmet_heavy_spiked_helm",
-		// 	"helm/legend_helmet_horsetail",
-		// 	"helm/legend_helmet_kettle_helm",
-		// 	"helm/legend_helmet_legend_ancient_gladiator",
-		// 	"helm/legend_helmet_legend_ancient_legionaire_restored",
-		// 	"helm/legend_helmet_legend_frogmouth",
-		// 	"helm/legend_helmet_nordic_helm",
-		// 	"helm/legend_helmet_norman_helm",
-		// 	"helm/legend_helmet_orc_double_helm",
-		// 	"helm/legend_helmet_orc_great_helm",
-		// 	"helm/legend_helmet_orc_horn_mask",
-		// 	"helm/legend_helmet_orc_leather_mask",
-		// 	"helm/legend_helmet_orc_metal_mask",
-		// 	"helm/legend_helmet_orc_strapped_helm",
-		// 	"helm/legend_helmet_cult_hood",
-		// 	"helm/legend_helmet_rotten_flat_top_face_mask",
-		// 	"helm/legend_helmet_rotten_great_helm",
-		// 	"helm/legend_helmet_sallet",
-		// 	"helm/legend_helmet_skin_helm",
-		// 	"helm/legend_helmet_stag_helm",
-		// 	"helm/legend_helmet_swan_helm",
-		// 	"helm/legend_helmet_tailed_conic",
-		// 	"helm/legend_helmet_viking_helm",
-		// 	"helm/legend_helmet_sack",
-		// 	"helm/legend_helmet_leather_hood_barb",
-		// 	"helm/legend_helmet_bronze_helm",
-		// 	"helm/legend_helmet_dentist_helmet",
-		// 	"top/legend_helmet_golden_helm",
-		// 	"top/legend_helmet_ancient_crown",
-		// 	"top/legend_helmet_goblin_leaf_helm",
-		// 	"top/legend_helmet_vampire_crown",
-		// 	"top/legend_helmet_chain_attachment",
-		// 	"top/legend_helmet_eyemask",
-		// 	"top/legend_helmet_facemask",
-		// 	"top/legend_helmet_faceplate_full",
-		// 	"top/legend_helmet_faceplate_gold",
-		// 	"top/legend_helmet_faceplate_long",
-		// 	"top/legend_helmet_faceplate_pointed",
-		// 	"top/legend_helmet_faceplate_raised",
-		// 	"top/legend_helmet_faceplate_short",
-		// 	"top/legend_helmet_faceplate_snub_nose",
-		// 	"top/legend_helmet_faceplate_winged",
-		// 	"top/legend_helmet_goblin_gillie",
-		// 	"top/legend_helmet_goblin_leaves",
-		// 	"top/legend_helmet_headband_nose",
-		// 	"top/legend_helmet_headband_side",
-		// 	"top/legend_helmet_nose_plate",
-		// 	"vanity/legend_helmet_antler",
-		// 	"vanity/legend_helmet_bear_head",
-		// 	"vanity/legend_helmet_beret",
-		// 	"vanity/legend_helmet_bull_horns",
-		// 	"vanity/legend_helmet_crown",
-		// 	"vanity/legend_helmet_faction_helmet",
-		// 	"vanity/legend_helmet_faction_helmet_2",
-		// 	"vanity/legend_helmet_feather_band",
-		// 	"vanity/legend_helmet_feathered_hat",
-		// 	"vanity/legend_helmet_fencer_hat",
-		// 	"vanity/legend_helmet_goat_horns",
-		// 	"vanity/legend_helmet_headband",
-		// 	"vanity/legend_helmet_horn_decorations",
-		// 	"vanity/legend_helmet_hunter_cap",
-		// 	"vanity/legend_helmet_impaled_head",
-		// 	"vanity/legend_helmet_jester_hat",
-		// 	"vanity/legend_helmet_metal_bird",
-		// 	"vanity/legend_helmet_noble_buckle",
-		// 	"vanity/legend_helmet_noble_feather",
-		// 	"vanity/legend_helmet_noble_floppy_hat",
-		// 	"vanity/legend_helmet_noble_hat",
-		// 	"vanity/legend_helmet_noble_hood",
-		// 	"vanity/legend_helmet_wreath",
-		// 	"vanity/legend_helmet_orc_bones",
-		// 	"vanity/legend_helmet_plait",
-		// 	"vanity/legend_helmet_ponytail",
-		// 	"vanity/legend_helmet_ram_horns",
-		// 	"vanity/legend_helmet_side_feather",
-		// 	"vanity/legend_helmet_straw_hat",
-		// 	"vanity/legend_helmet_top_feather",
-		// 	"vanity/legend_helmet_witchhunter_helm",
-		// 	"vanity/legend_helmet_wizard_cowl",
-		// 	"vanity/legend_helmet_wolf_helm",
-		// 	"vanity_lower/legend_helmet_back_crest",
-		// 	"vanity_lower/legend_helmet_back_feathers",
-		// 	"vanity_lower/legend_helmet_feather_crest",
-		// 	"vanity_lower/legend_helmet_knotted_tail",
-		// 	"vanity_lower/legend_helmet_orc_tail",
-		// 	"vanity_lower/legend_helmet_wings",
-		// 	"top/legend_helmet_faceplate_curved",
-		// 	"top/legend_helmet_faceplate_flat",
-		// 	"top/legend_helmet_faceplate_full_gold",
-		// 	"top/legend_helmet_faceplate_pointed_slit",
-		// 	"top/legend_helmet_faceplate_sharp",
-		// 	"top/legend_helmet_faceplate_snub_slit",
-		// 	"top/legend_helmet_golden_mask",
-		// 	"top/legend_helmet_warlock_skull",
-		// 	"vanity/legend_helmet_white_wolf_helm",
-		// 	"vanity/legend_helmet_royal_hood",
-		// 	"vanity/legend_helmet_lindwurm_helm",
-		// 	"vanity/legend_helmet_redback_helm",
-		// 	"vanity/legend_helmet_nun_habit",
-		// 	"vanity/legend_helmet_nach_helm",
-		// 	"vanity/legend_helmet_mountain_helm",
-		// 	"vanity/legend_helmet_demon_alp_helm",
-		// 	"vanity/legend_helmet_warlock_hood",
-		// ]
+		local helmets = [
+			"hood/legend_helmet_goblin_scarf",
+			"hood/legend_helmet_barb_chain_scarf",
+			"hood/legend_helmet_rotten_chain_scarf",
+			"hood/legend_helmet_cloth_scarf",
+			"hood/legend_helmet_cloth_bandana",
+			"hood/legend_helmet_patched_hood",
+			"hood/legend_helmet_simple_hood",
+			"top/legend_helmet_hood_cloth_round",
+			"top/legend_helmet_hood_cloth_wide",
+			"top/legend_helmet_cloth_long_hood",
+			"hood/legend_helmet_leather_cap",
+			"hood/legend_helmet_padded_cap",
+			"hood/legend_helmet_leather_hood",
+			"hood/legend_helmet_padded_hood",
+			"hood/legend_helmet_southern_cap",
+			"hood/legend_helmet_southern_cap_dark",
+			"hood/legend_helmet_southern_turban_light_hood",
+			"hood/legend_helmet_southern_niqaab",
+			"hood/legend_helmet_open_chain_hood",
+			"hood/legend_helmet_chain_scarf",
+			"hood/legend_helmet_chain_hood",
+			"hood/legend_helmet_chain_hood_full",
+			"hood/legend_helmet_bronze_chain",
+			"hood/legend_helmet_southern_chain_hood",
+			"hood/legend_helmet_southern_open_chain_hood",
+			"hood/legend_helmet_southern_open_hood",
+			"hood/legend_helmet_cloth_cap",
 
-		// foreach(h in helmets)
-		// {
-		// 	local item = this.new("scripts/items/legend_helmets/" + h);
+			"helm/legend_helmet_ancient_conic_helm",
+			"helm/legend_helmet_ancient_kettle",
+			"helm/legend_helmet_ancient_dome",
+			"helm/legend_helmet_ancient_dome_tailed",
+			"helm/legend_helmet_ancient_face_plate",
+			"helm/legend_helmet_ancient_legionaire",
+			"helm/legend_helmet_ancient_side_hawk",
+			"helm/legend_helmet_ancient_tailed_conic_helm",
+			"helm/legend_helmet_ancient_beard_mask",
+			"helm/legend_helmet_ancient_crested",
+			"helm/legend_helmet_ancient_lion_mask",
+			"helm/legend_helmet_ancient_mask",
+			"helm/legend_helmet_ancient_face_helm",
+			"helm/legend_helmet_orc_strapped_helm",
+			"helm/legend_helmet_orc_double_helm",
+			"helm/legend_helmet_orc_great_helm",
+			"helm/legend_helmet_crude_metal_helm",
+			"helm/legend_helmet_crude_cylinder_helm",
+			"helm/legend_helmet_heavy_plate_helm",
+			"helm/legend_helmet_heavy_plate_helm_named",
+			"helm/legend_helmet_crude_skull_helm",
+			"helm/legend_helmet_heavy_spiked_helm",
+			"helm/legend_helmet_southern_leather_helm",
+			"helm/legend_helmet_southern_studded_leather_helm",
+			"helm/legend_helmet_southern_cap_smooth",
+			"helm/legend_helmet_southern_cap_spiked",
+			"helm/legend_helmet_viking_helm",
+			"helm/legend_helmet_norman_helm",
+			"helm/legend_helmet_flat_top_helm",
+			"helm/legend_helmet_barbute",
+			"helm/legend_helmet_horsetail",
+			"helm/legend_helmet_basinet",
+			"helm/legend_helmet_kettle_helm",
+			"helm/legend_helmet_flat_top_face_plate",
+			"helm/legend_helmet_carthaginian",
+			"helm/legend_helmet_conic_helm",
+			"helm/legend_helmet_sallet",
+			"helm/legend_helmet_nordic_helm",
+			"helm/legend_helmet_bronze_helm",
+			"helm/legend_helmet_great_helm",
+			"helm/legend_helmet_legend_armet",
+			"helm/legend_helmet_legend_frogmouth",
+			"helm/legend_helmet_southern_gladiator_helm_crested",
+			"helm/legend_helmet_southern_gladiator_helm_split",
+			"helm/legend_helmet_southern_gladiator_helm_masked",
+			"helm/legend_helmet_southern_helmet_nasal",
+			"helm/legend_helmet_southern_conic_helm",
+			"helm/legend_helmet_southern_named_conic",
+			"helm/legend_helmet_southern_peaked_helm",
+			"helm/legend_helmet_southern_peaked_nasal_helm",
+			"helm/legend_helmet_legend_ancient_gladiator",
+			"helm/legend_helmet_legend_ancient_legionaire_restored",
+			"helm/legend_helmet_dentist_helmet",
+			"helm/legend_helmet_tailed_conic",
+			"helm/legend_helmet_legend_armet_01_named",
+			"helm/legend_helmet_stag_helm",
+			"helm/legend_helmet_swan_helm",
+			"helm/legend_helmet_skin_helm",
+			"helm/legend_helmet_rotten_flat_top_face_mask",
+			"helm/legend_helmet_rotten_great_helm",
 
-		// 	if (item.m.Variants.len() == 0)
-		// 	{
-		// 		this.logInfo("Adding " + h);
-		// 		this.World.Assets.getStash().add(item);
-		// 		continue;
-		// 	}
+			"top/legend_helmet_orc_leather_mask",
+			"top/legend_helmet_orc_horn_mask",
+			"top/legend_helmet_orc_metal_mask",
+			"top/legend_helmet_goblin_leaves",
+			"top/legend_helmet_goblin_leaf_helm",
+			"top/legend_helmet_goblin_gillie",
+			"top/legend_helmet_goblin_leather_mask",
+			"top/legend_helmet_goblin_leather_helm",
+			"top/legend_helmet_goblin_chain_helm",
+			"top/legend_helmet_goblin_spiked_helm",
+			"top/legend_helmet_vampire_crown",
+			"top/legend_helmet_ancient_crown",
+			"top/legend_helmet_leather_hood_barb",
+			"top/legend_helmet_nose_plate",
+			"top/legend_helmet_headband_side",
+			"top/legend_helmet_headband_nose",
+			"top/legend_helmet_eyemask",
+			"top/legend_helmet_chain_attachment",
+			"top/legend_helmet_faceplate_flat",
+			"top/legend_helmet_faceplate_curved",
+			"top/legend_helmet_faceplate_short",
+			"top/legend_helmet_cult_hood",
+			"top/legend_helmet_faceplate_long",
+			"top/legend_helmet_faceplate_winged",
+			"top/legend_helmet_faceplate_snub_nose",
+			"top/legend_helmet_faceplate_snub_slit",
+			"top/legend_helmet_faceplate_sharp",
+			"top/legend_helmet_facemask",
+			"top/legend_helmet_faceplate_pointed",
+			"top/legend_helmet_faceplate_pointed_slit",
+			"top/legend_helmet_faceplate_full",
+			"top/legend_helmet_southern_faceplate_bearded",
+			"top/legend_helmet_faceplate_full_breaths",
+			"top/legend_helmet_unhold_head_chain",
+			"top/legend_helmet_unhold_head_spike",
+			"top/legend_helmet_faceplate_gold",
+			"top/legend_helmet_faceplate_full_gold",
+			"top/legend_helmet_golden_helm",
+			"top/legend_helmet_faceplate_raised",
+			"top/legend_helmet_faceplate_full_01_named",
+			"top/legend_helmet_golden_mask",
+			"top/legend_helmet_warlock_skull",
+			"top/legend_helmet_fencer_hat",
+			"top/legend_helmet_hood_cloth_square",
 
-		// 	for( local i = 0; i < item.m.Variants.len(); i = ++i )
-		// 	{
-		// 		this.logInfo("Adding " + h + " :: " + i);
-		// 		local vitem =  this.new("scripts/items/legend_helmets/" + h);
-		// 		vitem.setVariant(item.m.Variants[i]);
-		// 		this.World.Assets.getStash().add(vitem);
-		// 	}
-		// }
+			"vanity/legend_helmet_southern_noble_crown",
+			"vanity/legend_helmet_southern_noble_hat",
+			"vanity/legend_helmet_southern_noble_turban",
+			"vanity/legend_helmet_southern_noble_crown",
+			"vanity/legend_helmet_southern_helm_tailed",
+			"vanity/legend_helmet_southern_silk_headscarf",
+			"vanity/legend_helmet_southern_feathered_turban",
+			"vanity/legend_helmet_southern_turban_open",
+			"vanity/legend_helmet_sack",
+			"vanity/legend_helmet_antler",
+			"vanity/legend_helmet_bear_head",
+			"vanity/legend_helmet_beret",
+			"vanity/legend_helmet_bull_horns",
+			"vanity/legend_helmet_crown",
+			"vanity/legend_helmet_faction_helmet",
+			"vanity/legend_helmet_faction_helmet_2",
+			"vanity/legend_helmet_feather_band",
+			"vanity/legend_helmet_feathered_hat",
+			"vanity/legend_helmet_goat_horns",
+			"vanity/legend_helmet_headband",
+			"vanity/legend_helmet_horn_decorations",
+			"vanity/legend_helmet_hunter_cap",
+			"vanity/legend_helmet_impaled_head",
+			"vanity/legend_helmet_jester_hat",
+			"vanity/legend_helmet_metal_bird",
+			"vanity/legend_helmet_noble_buckle",
+			"vanity/legend_helmet_noble_feather",
+			"vanity/legend_helmet_noble_floppy_hat",
+			"vanity/legend_helmet_noble_hat",
+			"vanity/legend_helmet_noble_hood",
+			"vanity/legend_helmet_wreath",
+			"vanity/legend_helmet_orc_bones",
+			"vanity/legend_helmet_plait",
+			"vanity/legend_helmet_ponytail",
+			"vanity/legend_helmet_ram_horns",
+			"vanity/legend_helmet_side_feather",
+			"vanity/legend_helmet_southern_headband",
+			"vanity/legend_helmet_southern_patterned_headband",
+			"vanity/legend_helmet_southern_patterned_headwrap",
+			"vanity/legend_helmet_southern_turban_open",
+			"vanity/legend_helmet_southern_turban_full",
+			"vanity/legend_helmet_southern_turban_light",
+			"vanity/legend_helmet_southern_turban_feather",
+			"vanity/legend_helmet_southern_top_tail",
+			"vanity/legend_helmet_straw_hat",
+			"vanity/legend_helmet_top_feather",
+			"vanity/legend_helmet_witchhunter_helm",
+			"vanity/legend_helmet_wizard_cowl",
+			"vanity/legend_helmet_wolf_helm",
+			"vanity/legend_helmet_white_wolf_helm",
+			"vanity/legend_helmet_royal_hood",
+			"vanity/legend_helmet_lindwurm_helm",
+			"vanity/legend_helmet_redback_helm",
+			"vanity/legend_helmet_nun_habit",
+			"vanity/legend_helmet_nach_helm",
+			"vanity/legend_helmet_mountain_helm",
+			"vanity/legend_helmet_demon_alp_helm",
+			"vanity/legend_helmet_warlock_hood",
+			"vanity/legend_helmet_goblin_bones",
+			"vanity_lower/legend_helmet_back_crest",
+			"vanity_lower/legend_helmet_back_feathers",
+			"vanity_lower/legend_helmet_feather_crest",
+			"vanity_lower/legend_helmet_knotted_tail",
+			"vanity_lower/legend_helmet_orc_tail",
+			"vanity_lower/legend_helmet_top_plume",
+			"vanity_lower/legend_helmet_wings",
+
+			"helmets/legend_faction_helmet"
+		]
+
+		foreach(h in helmets)
+		{
+			local item = this.new("scripts/items/legend_helmets/" + h);
+
+			if (item.m.Variants.len() == 0)
+			{
+				this.logInfo("Adding " + h);
+				this.World.Assets.getStash().add(item);
+				continue;
+			}
+
+			for( local i = 0; i < item.m.Variants.len(); i = ++i )
+			{
+				this.logInfo("Adding " + h + " :: " + i);
+				local vitem =  this.new("scripts/items/legend_helmets/" + h);
+				vitem.setVariant(item.m.Variants[i]);
+				this.World.Assets.getStash().add(vitem);
+			}
+		}
+
+		local asloots = [
+		"helmets/legend_ancient_laurels",
+		"helmets/legend_ancient_priest_diadem",
+		"helmets/legend_ancient_lich_headpiece",
+		"helmets/legend_goblin_leader_helmet",
+		"helmets/legend_goblin_shaman_helmet",
+		"helmets/legend_unhold_helmet_heavy",
+		"helmets/legend_unhold_helmet_light"
+		]
+
+		foreach(h in asloots)
+		{
+			local item = this.new("scripts/items/legend_helmets/" + h);
+
+			if (item.m.Variants.len() == 0)
+			{
+				this.logInfo("Adding " + h);
+				local layers = item.getLootLayers()
+				foreach (l in layers) {
+					this.World.Assets.getStash().add(l);
+				}
+
+				continue;
+			} else {
+				for( local i = 0; i < item.m.Variants.len(); i = ++i )
+				{
+					this.logInfo("Adding " + h + " :: " + i);
+					local vitem =  this.new("scripts/items/legend_helmets/" + h);
+					vitem.setVariant(item.m.Variants[i]);
+					local layers = vitem.getLootLayers()
+					foreach (l in layers) {
+						this.World.Assets.getStash().add(l);
+					}
+				}
+
+			}
+
+		}
 
 	}
 

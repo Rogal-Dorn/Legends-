@@ -5,9 +5,9 @@ this.blacksmith_follower <- this.inherit("scripts/retinue/follower", {
 		this.follower.create();
 		this.m.ID = "follower.blacksmith";
 		this.m.Name = "The Blacksmith";
-		this.m.Description = "Mercenaries are good at getting arms and armor destroyed, but not at maintaining them. The Blacksmith will take care of this tedious task quickly and efficiently, and can mend even equipment otherwise thought lost.";
+		this.m.Description = "Mercenaries are good at getting arms and armor destroyed, but not at maintaining them. Promoting someone to the Blacksmith role will take care of this tedious task quickly and efficiently, and can mend even equipment otherwise thought lost.";
 		this.m.Image = "ui/campfire/blacksmith_01";
-		this.m.Cost = 3000;
+		this.m.Cost = 1500;
 		this.m.Effects = [
 			"Repairs all armor, helmets, weapons and shields worn by your men even if they\'re broken or lost because your man died",
 			"Increases repair speed by 33%"
@@ -15,7 +15,7 @@ this.blacksmith_follower <- this.inherit("scripts/retinue/follower", {
 		this.m.Requirements = [
 			{
 				IsSatisfied = false,
-				Text = ""
+				Text = "Have a mercenary who has taken the Field Repairs perk. Guaranteed on Blacksmiths, Ironmongers, and Crusaders"
 			}
 		];
 	}
@@ -30,12 +30,17 @@ this.blacksmith_follower <- this.inherit("scripts/retinue/follower", {
 
 	function onEvaluate()
 	{
-		this.m.Requirements[0].Text = "Had " + this.Math.min(5, this.World.Statistics.getFlags().getAsInt("ItemsRepaired")) + "/5 items repaired at a town\'s smith";
-
-		if (this.World.Statistics.getFlags().getAsInt("ItemsRepaired") >= 5)
+		local brothers = this.World.getPlayerRoster().getAll();
+		
+		foreach( bro in brothers )
 		{
-			this.m.Requirements[0].IsSatisfied = true;
+			if (bro.getSkills().hasSkill("perk.legend_field_repairs"))
+			{
+				this.m.Requirements[0].IsSatisfied = true;
+				return;
+			}
 		}
+
 	}
 
 });
