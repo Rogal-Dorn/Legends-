@@ -65,7 +65,6 @@ this.assassin_background <- this.inherit("scripts/skills/backgrounds/character_b
 		];
 
 		this.m.Faces = this.Const.Faces.AllWhiteMale;
-
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Merciless;
 		this.m.Hairs = this.Const.Hair.CommonMale;
@@ -76,6 +75,7 @@ this.assassin_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.IsOutlawBackground = true;
 		this.m.IsUntalented = true;
 		this.m.IsCombatBackground = true;
+		this.m.IsRangerRecruitBackground = true;
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[3];
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[1];
 		this.m.PerkTreeDynamic = {

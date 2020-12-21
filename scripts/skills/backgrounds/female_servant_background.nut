@@ -41,6 +41,7 @@ this.female_servant_background <- this.inherit("scripts/skills/backgrounds/chara
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
 		this.m.Bodies = this.Const.Bodies.FemaleSkinny;
+		this.m.IsLowborn = true;
 		this.m.IsOffendedByViolence = true;
 		this.m.IsFemaleBackground = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.NeutralMin;
