@@ -210,7 +210,11 @@ this.orc_young <- this.inherit("scripts/entity/tactical/actor", {
 	function onFactionChanged()
 	{
 		this.actor.onFactionChanged();
-		local flip = !this.isAlliedWithPlayer();
+		local flip = this.isAlliedWithPlayer()
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+		{
+			flip = !flip
+		}
 		this.getSprite("helmet").setHorizontalFlipping(flip);
 		this.getSprite("helmet_damage").setHorizontalFlipping(flip)
 		this.getSprite("helmet_vanity_lower").setHorizontalFlipping(flip);
@@ -393,7 +397,7 @@ this.orc_young <- this.inherit("scripts/entity/tactical/actor", {
 			[1, ""]
 		]);
 		this.m.Items.equip(item);
-		
+
 		local item = this.Const.World.Common.pickHelmet([
 			[1, ""],
 			[1, "greenskins/orc_young_light_helmet"],

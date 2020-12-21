@@ -493,18 +493,32 @@ layers = [
  "desc" :  "A helm of an ancient honor guard" \
 },
 
-{"name" : "orc_strapped_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1000, "con" : 160, "stam" : -27, "vis" : 0, "hair" : "true", "beard" : "false",  \
+{"name" : "orc_strapped_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 650, "con" : 180, "stam" : -13, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Orc Looted Nasal Helm", \
  "desc" :  "An orc helm made of a looted nasal helm" \
 },
-{"name" : "orc_double_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1600, "con" : 220, "stam" : -20, "vis" : -3, "hair" : "true", "beard" : "false",  \
- "title" :  "Orc Looted Kettle Hat", \
- "desc" :  "A simplistic orc helm made from two kettle hats tied together" \
+{"name" : "orc_double_helm"                     , "layer" : "helm", "min" : 1, "max" : 2, "value" :900, "con" : 240, "stam" : -24, "vis" : -2, "hair" : "true", "beard" : "false",  \
+ "title" : "Orc Looted Kettle Hat", \
+ "desc" :  "A simplistic orc helm made from two kettle hats tied together and reinforced with additional chain" \
 },
-{"name" : "orc_great_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 3000, "con" : 420, "stam" : -35, "vis" : -4, "hair" : "true", "beard" : "false",  \
+{"name" : "orc_elite_double_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1500, "con" : 400, "stam" : -40, "vis" : -2, "hair" : "true", "beard" : "false",  \
+ "title" :  "Orc Reinforced Looted Kettle Hat", \
+ "desc" :  "An orc helm made from two kettle hats tied together and reinforced with additional chain. Craftsmanship is exceptional for orc armor." \
+},
+{"name" : "orc_scale_helm"                     , "layer" : "helm", "min" : 1, "max" : 2, "value" : 1100, "con" : 300, "stam" : -30, "vis" : -2, "hair" : "true", "beard" : "false",  \
+ "title" :  "Orc Looted Scale Plate Helm", \
+ "desc" :  "An orc helm made from looted heavy plated helmets, patched and forged together" \
+},
+{"name" : "orc_great_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1500, "con" : 420, "stam" : -42, "vis" : -2, "hair" : "true", "beard" : "false",  \
  "title" :  "Orc Great Helm", \
  "desc" :  "The distinctive helm of an orc warlord" \
 },
+{"name" : "orc_behemoth_helmet"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 550, "con" : 230, "stam" : -23, "vis" : -2, "hair" : "true", "beard" : "false",  \
+ "title" :  "Orc Behemoth Helm", \
+ "desc" :  "The distinctive helm of an orc behemoth" \
+},
+
+
 {"name" : "crude_metal_helm"                     , "layer" : "helm", "min" : 1, "max" : 3, "value" :350, "con" : 100, "stam" : -10, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Crude Metal Helm", \
  "desc" :  "Although crudely made and rusty, this metal helmet is a durable and sturdy piece of armor." \
@@ -722,18 +736,19 @@ layers = [
  "desc" :  "A simple hood to protect against weather and scratches." \
 },
 
-{"name" : "orc_leather_mask"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 150, "con" : 35, "stam" : -5, "vis" : 0, "hair" : "true", "beard" : "false",  \
+{"name" : "orc_leather_mask"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 60, "con" : 20, "stam" : 0, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Orc Leather Mask", \
  "desc" :  "A basic leather mask worn by young orcs" \
 },
-{"name" : "orc_horn_mask"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 100, "con" : 30, "stam" : -3, "vis" : -1, "hair" : "true", "beard" : "false",  \
+{"name" : "orc_horn_mask"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 80, "con" : 40, "stam" : -5, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Orc Horn Mask", \
  "desc" :  "A rough horned facemask worn by young orcs" \
 },
-{"name" : "orc_metal_mask"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 340, "con" : 60, "stam" : -8, "vis" : -2, "hair" : "true", "beard" : "false",  \
+{"name" : "orc_metal_mask"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 120, "con" : 60, "stam" : -8, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Orc Metal Plated Mask", \
  "desc" :  "A simple construction of metal plates, worn by young orcs" \
 },
+
 {"name" : "goblin_leaves"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 5, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Goblin Leaves", \
  "desc" :  "A set of leaves used by goblins to disguise themselves" \
@@ -1040,6 +1055,10 @@ layers = [
 {"name" : "orc_bones"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Orc Bones", \
  "desc" :  "Decorative bones, fashionable among orcs" \
+},
+{"name" : "orc_great_horns"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "false", "beard" : "false",  \
+ "title" :  "Orc Great Horns", \
+ "desc" :  "The horns of a massive beast, worn by the largest of orcs" \
 },
 {"name" : "plait"                     , "layer" : "vanity", "min" : 1, "max" : 12, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Plait", \

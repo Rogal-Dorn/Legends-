@@ -185,7 +185,11 @@ this.legend_orc_behemoth <- this.inherit("scripts/entity/tactical/actor", {
 	function onFactionChanged()
 	{
 		this.actor.onFactionChanged();
-		local flip = !this.isAlliedWithPlayer();
+		local flip = this.isAlliedWithPlayer()
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+		{
+			flip = !flip
+		}
 		this.getSprite("helmet").setHorizontalFlipping(flip);
 		this.getSprite("helmet_damage").setHorizontalFlipping(flip)
 		this.getSprite("helmet_vanity_lower").setHorizontalFlipping(flip);

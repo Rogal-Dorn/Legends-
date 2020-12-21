@@ -4413,6 +4413,7 @@ Pacifist perk now grants +10% resolve, does not count toward scaling Grows unhap
 
 **Armor Tweaks**
 Rebalance all barbarian helmet layers (+ adds a few new layers)
+Rebalance all orc and goblin helmet layers (+ adds a few nre layers)
 
 **Fixes**
 Fixes manhunter fight event as escaped indebted
