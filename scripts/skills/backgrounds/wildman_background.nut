@@ -63,6 +63,7 @@ this.wildman_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.IsCombatBackground = true;
 		this.m.IsOutlawBackground = true;
 		this.m.IsDruidRecruitBackground = true;
+		this.m.IsRangerRecruitBackground = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Good;
 		this.m.Modifiers.MedConsumption = this.Const.LegendMod.ResourceModifiers.MedConsumption[1];

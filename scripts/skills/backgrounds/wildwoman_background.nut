@@ -64,6 +64,7 @@ this.wildwoman_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.IsOutlawBackground = true;
 		this.m.IsFemaleBackground = true;
 		this.m.IsDruidRecruitBackground = true;
+		this.m.IsRangerRecruitBackground = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Good;
 		this.m.Modifiers.MedConsumption = this.Const.LegendMod.ResourceModifiers.MedConsumption[1];
