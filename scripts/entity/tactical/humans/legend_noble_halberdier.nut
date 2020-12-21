@@ -99,17 +99,21 @@ this.legend_noble_halberdier <- this.inherit("scripts/entity/tactical/human", {
 			[1, "lamellar_harness"]
 		]));
 
-		if (this.Math.rand(1, 100) <= 33)
+		if (this.Math.rand(1, 100) <= 90)
 		{
 			local helmet;
 
 			if (banner <= 4)
 			{
 				this.m.Items.equip(this.Const.World.Common.pickHelmet([
-					[1, "kettle_hat"],
-					[1, "padded_kettle_hat"],
-					[1, "kettle_hat_with_mail"],
-					[1, "mail_coif"]
+					[1, "flat_top_helmet"],
+					[1, "padded_flat_top_helmet"],
+					[1, "flat_top_with_mail"],
+					[1, "mail_coif"],
+					[1, "legend_enclave_vanilla_armet_01"],
+					[1, "legend_enclave_vanilla_armet_02"],
+					[1, "legend_enclave_vanilla_great_bascinet_01"],
+					[1, "legend_enclave_vanilla_great_bascinet_03"]
 				]))
 			}
 			else if (banner <= 7)
@@ -118,7 +122,11 @@ this.legend_noble_halberdier <- this.inherit("scripts/entity/tactical/human", {
 					[1, "flat_top_helmet"],
 					[1, "padded_flat_top_helmet"],
 					[1, "flat_top_with_mail"],
-					[1, "mail_coif"]
+					[1, "mail_coif"],
+					[1, "legend_enclave_vanilla_armet_01"],
+					[1, "legend_enclave_vanilla_armet_02"],
+					[1, "legend_enclave_vanilla_great_bascinet_02"],
+					[1, "legend_enclave_vanilla_great_bascinet_03"]
 				]))
 			}
 			else
@@ -127,7 +135,11 @@ this.legend_noble_halberdier <- this.inherit("scripts/entity/tactical/human", {
 					[1, "nasal_helmet"],
 					[1, "padded_nasal_helmet"],
 					[1, "nasal_helmet_with_mail"],
-					[1, "mail_coif"]
+					[1, "mail_coif"],
+					[1, "legend_enclave_vanilla_armet_01"],
+					[1, "legend_enclave_vanilla_armet_02"],
+					[1, "legend_enclave_vanilla_great_bascinet_01"],
+					[1, "legend_enclave_vanilla_great_bascinet_02"]				
 				]))
 			}
 
@@ -138,9 +150,7 @@ this.legend_noble_halberdier <- this.inherit("scripts/entity/tactical/human", {
 		{
 			this.m.Items.equip(this.Const.World.Common.pickHelmet([
 				[2, "aketon_cap"],
-				[1, "full_aketon_cap"],
-				[1, "headscarf"],
-				[1, ""]
+				[1, "full_aketon_cap"]
 			]))
 		}
 	}
