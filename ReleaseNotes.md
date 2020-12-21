@@ -4400,7 +4400,7 @@ Fully buffed with minor perks Sling Heavy Stone pre-nerf: 49-72/80%/188% for 8 A
 
 
 **Changes**
-retinue tweaked to have more lowborns.
+retinue tweaks to have more lowborns. and outlaws 
 Widows can be an agent
 Militia can be a drill sergeant
 Houndmaster can be bounty hunter
@@ -4409,6 +4409,11 @@ fishwife is lowborn
 Peaceful perk now called "peaceable", grants 20 resolve and 5% experience gain in excgange for -20 melee and ranged skill
 Peaceful trait now grants +10 resolve and -5 melee skill
 Pacifist perk now grants +10% resolve, does not count toward scaling Grows unhappy if in commbat more than once a week,
+Assasin, wildlings and druid are now ranger recruits
+Crucified crusader is a crusader recruit
+Housemaid is lowborn 
+Assassin commander is a combat background 
+Mason is now educated and intelligent, instead of fast 
 
 
 **Armor Tweaks**
