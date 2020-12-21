@@ -408,6 +408,10 @@ layers = [
  "title" :  "Bronze Chain", \
  "desc" :  "Bronze Chain" \
 },
+{"name" : "enclave_bevor"                     , "layer" : "hood", "min" : 1, "max" : 1, "base" : True, "value" : 450, "con" : 100, "stam" : -7, "vis" : 0, "hair" : "false", "beard" : "false",  \
+ "title" :  "Bevor", \
+ "desc" :  "A solid metal bevor" \
+},
 {"name" : "southern_chain_hood"                     , "layer" : "hood", "min" : 1, "max" : 1, "base" : True, "value" : 310, "con" : 85, "stam" : -5, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Southern Mail Hood", \
  "desc" :  "A Mail Hood of southern design" \
@@ -428,7 +432,7 @@ layers = [
  "title" :  "Patched Leather Cap", \
  "desc" :  "A piece of patched leather covering the top of the head." \
 },
-{"name" : "southern_headband_coin"                     , "layer" : "hood", "min" : 1, "max" : 1, "base" : True, "value" : 20, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
+{"name" : "southern_headband_coin"                     , "layer" : "hood", "min" : 1, "max" : 1, "base" : True, "value" : 20, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Southern Coin Headband", \
  "desc" :  "A southern headband of coins strung together" \
 },
@@ -589,11 +593,19 @@ layers = [
  "title" :  "Basinet", \
  "desc" :  "A well made metal bascinet" \
 },
+{"name" : "enclave_basinet"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 2800, "con" : 260, "stam" : -13, "vis" : -2, "hair" : "true", "beard" : "false",  \
+ "title" :  "Peaked Basinet", \
+ "desc" :  "A well made peaked bascinet" \
+},
 {"name" : "kettle_helm"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 1600, "con" : 130, "stam" : -6, "vis" : -2, "hair" : "true", "beard" : "false",  \
  "title" :  "Kettle Helm", \
  "desc" :  "A full-metal helmet with a broad rim." \
 },
-{"name" : "flat_top_face_plate"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 2000, "con" : 130, "stam" : -12, "vis" : -2, "hair" : "true", "beard" : "true",  \
+{"name" : "enclave_kettle"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1900, "con" : 140, "stam" : -7, "vis" : -2, "hair" : "true", "beard" : "false",  \
+ "title" :  "Kettle Sallet", \
+ "desc" :  "A full-metal sallet with a broad rim." \
+},
+{"name" : "flat_top_face_plate"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 2000, "con" : 130, "stam" : -7, "vis" : -2, "hair" : "true", "beard" : "true",  \
  "title" :  "Flat Top Face Plate", \
  "desc" :  "A flat full-metal helmet with faceplate." \
 },
@@ -622,6 +634,10 @@ layers = [
  "desc" :  "A closed metal helm with breathing holes. Great in the way of protection but hard to breathe in and limiting the field of view." \
 },
 {"name" : "legend_armet"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 6000, "con" : 260, "stam" : -13, "vis" : -2, "hair" : "true", "beard" : "true",  \
+ "title" :  "Armet", \
+ "desc" :  "A finely crafted close helm of outstanding workmanship" \
+},
+{"name" : "enclave_armet"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 3000, "con" : 130, "stam" : -6, "vis" : -1, "hair" : "true", "beard" : "true",  \
  "title" :  "Armet", \
  "desc" :  "A finely crafted close helm of outstanding workmanship" \
 },
@@ -848,6 +864,10 @@ layers = [
 {"name" : "faceplate_sharp"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 375, "con" : 40, "stam" : -2, "vis" : -1, "hair" : "false", "beard" : "false",  \
  "title" :  "Sharp Faceplate", \
  "desc" :  "Sharp Faceplate" \
+},
+{"name" : "enclave_great_jaw"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 375, "con" : 40, "stam" : -3, "vis" : 0, "hair" : "false", "beard" : "false",  \
+ "title" :  "A rough metal bevor", \
+ "desc" :  "A rough metal bevor" \
 },
 {"name" : "facemask"                     , "layer" : "top", "min" : 1, "max" : 6, "value" : 420, "con" : 45, "stam" : -2, "vis" : -1, "hair" : "false", "beard" : "true",  \
  "title" :  "Facemask", \

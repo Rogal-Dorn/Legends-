@@ -39,8 +39,8 @@ this.legend_southern_cloth_headress <- this.inherit("scripts/items/helmets/helme
 		this.m.Sprite = "southern_cloth_headress_0" + variant;
 		this.m.SpriteDamaged = "southern_cloth_headress_0" + variant + "_damaged";
 		this.m.SpriteCorpse = "southern_cloth_headress_0" + variant + "_dead";
-		this.m.IconLarge = "armor/inventory_southern_cloth_headress_0" + variant + ".png";
-		// this.m.Icon = "armor/icon_southern_cloth_headress_0" + variant + ".png";
+		this.m.IconLarge = "";
+		this.m.Icon = "helmets/icon_southern_cloth_headress_0" + variant + ".png";
 	}
 
 });
