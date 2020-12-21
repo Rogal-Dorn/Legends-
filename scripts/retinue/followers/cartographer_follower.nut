@@ -14,7 +14,11 @@ this.cartographer_follower <- this.inherit("scripts/retinue/follower", {
 		this.m.Requirements = [
 			{
 				IsSatisfied = false,
-				Text = "Discovered a legendary location. Requires an adventurous noble, historian or philosopher. "
+				Text = "Discovered a legendary location"
+			},
+			{
+				IsSatisfied = false,
+				Text = "Have at least one of the following backgrounds: Adventurous Noble/Lady, Noble Commander, Philosopher, Historian"
 			}
 		];
 	}
@@ -26,18 +30,28 @@ this.cartographer_follower <- this.inherit("scripts/retinue/follower", {
 	function onEvaluate()
 	{
 	
-		local hasHistorian = 0;
+		local hasHistorian = false;
 		local brothers = this.World.getPlayerRoster().getAll();
+		local availableBGs = [
+			"background.adventurous_noble",
+			"background.historian",
+			"background.legend_philosopher",
+			"background.female_adventurous_noble",
+			"background.legend_commander_noble"
+		];
+
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.adventurous_noble" || bro.getBackground().getID() == "background.historian" || bro.getBackground().getID() == "background.legend_philosopher" || bro.getBackground().getID() == "background.female_adventurous_noble" )
+			local id = bro.getBackground().getID();
+			
+			if (availableBGs.find(id))
 			{
-			hasHistorian++;
+				this.m.Requirements[1].IsSatisfied = true;
+				break;
 			}
-
 		}	
 		
-		if (this.World.Flags.getAsInt("LegendaryLocationsDiscovered") >= 1 && hasHistorian >= 1)
+		if (this.World.Flags.getAsInt("LegendaryLocationsDiscovered") >= 1)
 		{
 			this.m.Requirements[0].IsSatisfied = true;
 		}

@@ -14,7 +14,7 @@ this.brigand_follower <- this.inherit("scripts/retinue/follower", {
 		this.m.Requirements = [
 			{
 				IsSatisfied = false,
-				Text = ""
+				Text = "Have at least one of the following backgrounds: Raider, Barbarian, Deserter"
 			}
 		];
 	}
@@ -26,20 +26,25 @@ this.brigand_follower <- this.inherit("scripts/retinue/follower", {
 	}
 
 	function onEvaluate()
-	{
-		this.m.Requirements[0].Text = "Have a Raider, Barbarian or Deserter in your company";
-		
-		local hasRaider = 0;
+	{		
+
 		local brothers = this.World.getPlayerRoster().getAll();
+		local availableBGs = [
+			"background.raider",
+			"background.barbarian",
+			"background.deserter"
+		];
+
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.raider" || bro.getBackground().getID() == "background.barbarian" || bro.getBackground().getID() == "background.deserter" )
+			local id = bro.getBackground().getID();
+			
+			if (availableBGs.find(id))
 			{
-		this.m.Requirements[0].IsSatisfied = true;
+				this.m.Requirements[0].IsSatisfied = true;
+				break;
 			}
-
 		}	
-
 
 	}
 

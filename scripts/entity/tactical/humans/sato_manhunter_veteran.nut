@@ -125,28 +125,28 @@ this.sato_manhunter_veteran <- this.inherit("scripts/entity/tactical/human", {
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Body))
 		{
 			local armors = [
-				[1, "armor/oriental/southern_long_mail_with_padding"],
-				[1, "armor/mail_hauberk"],
-				[1, "armor/reinforced_mail_hauberk"],
-				[1, "armor/lamellar_harness"]
+				[1, "oriental/southern_long_mail_with_padding"],
+				[1, "mail_hauberk"],
+				[1, "reinforced_mail_hauberk"],
+				[1, "lamellar_harness"]
 			];
 
 			if (this.Const.DLC.Unhold)
 			{
 				armors.extend([
-					[1, "armor/leather_scale_armor"],
-					[1, "armor/footman_armor"]
+					[1, "leather_scale_armor"],
+					[1, "footman_armor"]
 				]);
 			}
 
 			if (this.World.getTime().Days <= 50) {
 				armors.extend([
-					[1, "armor/oriental/southern_long_mail_with_padding"]
+					[1, "oriental/southern_long_mail_with_padding"]
 				]);
 			} else {
 				armors.extend([
-					[1, "armor/heavy_lamellar_armor"],
-					[1, "armor/oriental/padded_mail_and_lamellar_hauberk"]
+					[1, "heavy_lamellar_armor"],
+					[1, "oriental/padded_mail_and_lamellar_hauberk"]
 				]);
 			}
 

@@ -16,6 +16,10 @@ this.alchemist_follower <- this.inherit("scripts/retinue/follower", {
 			{
 				IsSatisfied = false,
 				Text = ""
+			},
+			{
+				IsSatisfied = false,
+				Text = "Have at least one of the following backgrounds: Herbalist, Taxidermist, Druid"
 			}
 		];
 	}
@@ -31,20 +35,28 @@ this.alchemist_follower <- this.inherit("scripts/retinue/follower", {
 
 	function onEvaluate()
 	{
-		this.m.Requirements[0].Text = "Crafted " + this.Math.min(15, this.World.Statistics.getFlags().getAsInt("ItemsCrafted")) + "/10 items, and have a Taxidermist, Herbalist or Druid in your company";
+		this.m.Requirements[0].Text = "Crafted " + this.Math.min(15, this.World.Statistics.getFlags().getAsInt("ItemsCrafted")) + "/10 items";
 
-		local hasAlchemy = 0;
 		local brothers = this.World.getPlayerRoster().getAll();
+		local availableBGs = [
+			"background.legend_herbalist",
+			"background.legend_taxidermist",
+			"background.legend_druid",
+			"background.legend_commander_druid"
+		];
+
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.legend_herbalist" || bro.getBackground().getID() == "background.legend_taxidermist" || bro.getBackground().getID() == "background.legend_druid"  || bro.getBackground().getID() == "background.legend_commander_druid")
+			local id = bro.getBackground().getID();
+			
+			if (availableBGs.find(id))
 			{
-			hasAlchemy++;
+				this.m.Requirements[1].IsSatisfied = true;
+				break;
 			}
-
 		}	
 
-		if (this.World.Statistics.getFlags().getAsInt("ItemsCrafted") >= 10 && hasAlchemy >=1)
+		if (this.World.Statistics.getFlags().getAsInt("ItemsCrafted") >= 10)
 		{
 			this.m.Requirements[0].IsSatisfied = true;
 		}
