@@ -32,8 +32,8 @@ this.legend_headband_coin <- this.inherit("scripts/items/helmets/helmet", {
 		this.m.Sprite = "headband_coin_0" + variant;
 		this.m.SpriteDamaged = "headband_coin_0" + variant + "_damaged";
 		this.m.SpriteCorpse = "headband_coin_0" + variant + "_dead";
-		this.m.IconLarge = "armor/inventory_headband_coin_0" + variant + ".png";
-		// this.m.Icon = "armor/icon_headband_coin_0" + variant + ".png";
+		this.m.IconLarge = "";
+		this.m.Icon = "helmets/icon_headband_coin_0" + variant + ".png";
 	}
 
 });
