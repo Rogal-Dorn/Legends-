@@ -40,7 +40,7 @@ this.bounty_hunter_follower <- this.inherit("scripts/retinue/follower", {
 		local namedItems = this.getNumberOfNamedItems();
 		local BGs = 0;
 		this.m.Requirements[0].Text = "Have " + this.Math.min(1, namedItems) + "/1 named or legendary items in your possession ";
-		
+
 
 
 		local brothers = this.World.getPlayerRoster().getAll();
@@ -53,22 +53,22 @@ this.bounty_hunter_follower <- this.inherit("scripts/retinue/follower", {
 		foreach( bro in brothers )
 		{
 			local id = bro.getBackground().getID();
-			
+
 			if (availableBGs.find(id))
 			{
-				BGs += 1;		
+				BGs += 1;
 			}
-		}	
-	
+		}
+
 		if (namedItems >= 1 && BGs >= 1)
 		{
 			this.m.Requirements[1].IsSatisfied = true;
 		}
-		else 
-		(
+		else
+		{
 			this.m.Requirements[1].IsSatisfied = false;
 		}
-	
+
 	}
 
 	function onChampionKilled( _champion )

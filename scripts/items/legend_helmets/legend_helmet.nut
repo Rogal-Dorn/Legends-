@@ -75,48 +75,46 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 
 	function getIconLargeOverlayNamed()
 	{
-		return "";
-		// if (this.isItemType(this.Const.Items.ItemType.Named))
-		// {
-		// 	return "legend_armor/inventory_named_armor.png";
-		// }
+		if (this.isItemType(this.Const.Items.ItemType.Named))
+		{
+			return "legend_helmets/inventory_named_helmet.png";
+		}
 
-		// if (this.isItemType(this.Const.Items.ItemType.Legendary))
-		// {
-		// 	return "legend_armor/inventory_named_armor.png";
-		// }
+		if (this.isItemType(this.Const.Items.ItemType.Legendary))
+		{
+			return "legend_helmets/inventory_named_helmet.png";
+		}
 
-		// foreach( u in this.m.Upgrades )
-		// {
-		// 	if (u == null)
-		// 	{
-		// 		continue;
-		// 	}
+		foreach( u in this.m.Upgrades )
+		{
+			if (u == null)
+			{
+				continue;
+			}
 
-		// 	if (u.isItemType(this.Const.Items.ItemType.Named))
-		// 	{
-		// 		return "legend_armor/inventory_named_armor.png";
-		// 	}
+			if (u.isItemType(this.Const.Items.ItemType.Named))
+			{
+				return "legend_helmets/inventory_named_helmet.png";
+			}
 
-		// 	if (u.isItemType(this.Const.Items.ItemType.Legendary))
-		// 	{
-		// 		return "legend_armor/inventory_named_armor.png";
-		// 	}
-		// }
+			if (u.isItemType(this.Const.Items.ItemType.Legendary))
+			{
+				return "legend_helmets/inventory_named_helmet.png";
+			}
+		}
 
-		// return ""
+		return ""
 	}
 
 	function getIconLargeOverlayRuned()
 	{
-		return "";
-		// local rune = this.getUpgrade(this.Const.Items.ArmorUpgrades.Rune)
-		// if (rune == null)
-		// {
-		// 	return ""
-		// }
+		local rune = this.getUpgrade(this.Const.Items.HelmetUpgrades.Rune)
+		if (rune == null)
+		{
+			return ""
+		}
 
-		// return "legend_armor/inventory_runed_armor.png";
+		return "legend_helmets/inventory_runed_helmet.png";
 	}
 
 	function getIconNamed()
