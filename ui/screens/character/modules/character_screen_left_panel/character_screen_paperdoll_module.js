@@ -1463,6 +1463,9 @@ CharacterScreenPaperdollModule.prototype.assignEquipment = function (
     var text = "X";
     if (_upgrades !== undefined && _upgrades !== '' && _upgrades.length > 0) {
       var tLabel = index + 1;
+      if (tLabel === 4) {
+        tLabel = "R";
+      }
       switch (_upgrades[index]) {
         case 0:
           text = "" + tLabel;

@@ -4400,7 +4400,7 @@ Fully buffed with minor perks Sling Heavy Stone pre-nerf: 49-72/80%/188% for 8 A
 
 
 **Changes**
-retinue tweaks to have more lowborns. and outlaws 
+retinue tweaks to have more lowborns. and outlaws
 Widows can be an agent
 Militia can be a drill sergeant
 Houndmaster can be bounty hunter
@@ -4411,14 +4411,15 @@ Peaceful trait now grants +10 resolve and -5 melee skill
 Pacifist perk now grants +10% resolve, does not count toward scaling Grows unhappy if in commbat more than once a week,
 Assasin, wildlings and druid are now ranger recruits
 Crucified crusader is a crusader recruit
-Housemaid is lowborn 
-Assassin commander is a combat background 
-Mason is now educated and intelligent, instead of fast 
-
+Housemaid is lowborn
+Assassin commander is a combat background
+Mason is now educated and intelligent, instead of fast
 
 **Armor Tweaks**
+Added rune layers for helmets (same as armors)
+Helmet layers now have a visual for named layer
 Rebalance all barbarian helmet layers (+ adds a few new layers)
-Rebalance all orc and goblin helmet layers (+ adds a few nre layers)
+Rebalance all orc and goblin helmet layers (+ adds a few new layers)
 
 **Fixes**
 Fixes manhunter fight event as escaped indebted (both the load in and them being shirtless)
