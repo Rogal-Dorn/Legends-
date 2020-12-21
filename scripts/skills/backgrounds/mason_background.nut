@@ -25,7 +25,7 @@ this.mason_background <- this.inherit("scripts/skills/backgrounds/character_back
 		this.m.Hairs = this.Const.Hair.CommonMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
-
+		this.m.IsEducatedBackground = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.NeutralMax;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[1];
@@ -45,7 +45,7 @@ this.mason_background <- this.inherit("scripts/skills/backgrounds/character_back
 			Traits = [
 				this.Const.Perks.AgileTree,
 				this.Const.Perks.LargeTree,
-				this.Const.Perks.FastTree,
+				this.Const.Perks.IntelligentTree,
 				this.Const.Perks.FitTree
 			],
 			Enemy = [],
@@ -90,8 +90,8 @@ this.mason_background <- this.inherit("scripts/skills/backgrounds/character_back
 				0
 			],
 			Bravery = [
-				0,
-				0
+				3,
+				3
 			],
 			Stamina = [
 				5,

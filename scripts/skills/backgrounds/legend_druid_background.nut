@@ -61,6 +61,7 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.IsLowborn = true;
 		this.m.IsUntalented = true;
 		this.m.IsDruidRecruitBackground = true;
+		this.m.IsRangerRecruitBackground = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Good;
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[2];
