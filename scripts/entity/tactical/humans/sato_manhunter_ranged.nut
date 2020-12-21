@@ -98,9 +98,9 @@ this.sato_manhunter_ranged <- this.inherit("scripts/entity/tactical/human", {
 		}
 
 		local armor = [
-			[1, "armor/oriental/linothorax"],
-			[1, "armor/oriental/stitched_nomad_armor"],
-			[1, "armor/leather_lamellar"]
+			[1, "oriental/linothorax"],
+			[1, "oriental/stitched_nomad_armor"],
+			[1, "leather_lamellar"]
 		];
 		this.m.Items.equip(this.Const.World.Common.pickArmor(armor));
 

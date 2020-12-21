@@ -121,18 +121,18 @@ this.sato_manhunter_veteran_ranged <- this.inherit("scripts/entity/tactical/huma
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Body))
 		{
 			local armors = [
-				[1, "armor/oriental/mail_and_lamellar_plating"],
-				[1, "armor/oriental/southern_long_mail_with_padding"],
-				[1, "armor/mail_hauberk"],
-				[1, "armor/reinforced_mail_hauberk"],
-				[1, "armor/lamellar_harness"]
+				[1, "oriental/mail_and_lamellar_plating"],
+				[1, "oriental/southern_long_mail_with_padding"],
+				[1, "mail_hauberk"],
+				[1, "reinforced_mail_hauberk"],
+				[1, "lamellar_harness"]
 			];
 
 			if (this.Const.DLC.Unhold)
 			{
 				armors.extend([
-					[1, "armor/leather_scale_armor"],
-					[1, "armor/footman_armor"]
+					[1, "leather_scale_armor"],
+					[1, "footman_armor"]
 				]);
 			}
 
@@ -181,10 +181,10 @@ this.sato_manhunter_veteran_ranged <- this.inherit("scripts/entity/tactical/huma
 		];
 		local armors = this.Const.Items.NamedSouthernArmors;
 
-		armors.push("armor/named/golden_scale_armor");
+		armors.push("named/golden_scale_armor");
 		if (this.Const.DLC.Wildmen)
 		{
-			armors.push("armor/named/named_golden_lamellar_armor");
+			armors.push("named/named_golden_lamellar_armor");
 		}
 
 		local helmets = this.Const.Items.NamedSouthernHelmets;

@@ -4416,9 +4416,11 @@ Rebalance all barbarian helmet layers (+ adds a few new layers)
 Rebalance all orc and goblin helmet layers (+ adds a few nre layers)
 
 **Fixes**
-Fixes manhunter fight event as escaped indebted
+Fixes manhunter fight event as escaped indebted (both the load in and them being shirtless)
 Fixes Houndmaster background spawn
 Fixes sato destroyed caravan event giving nonlayered armor
 Fixes executioner fights not loading in
 Fixes arena contract dropping an item with a named layer and not named base not giving the item
+Fixes buckler bash and tower shield fortify from reaching a limit of 0 fatigue cost
+Fixes some retinue follower requirements being wrong
 Fixes perks going off screen. Bumped to the next perk level.
