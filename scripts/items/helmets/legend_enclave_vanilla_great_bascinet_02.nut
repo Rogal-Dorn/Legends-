@@ -24,11 +24,11 @@ this.legend_enclave_vanilla_great_bascinet_02 <- this.inherit("scripts/items/hel
 
 	function updateVariant()
 	{
-		this.m.Sprite = "enclave_vanilla_great_bascinet_01";
-		this.m.SpriteDamaged = "enclave_vanilla_great_bascinet_01_damaged";
-		this.m.SpriteCorpse = "enclave_vanilla_great_bascinet_01_dead";
+		this.m.Sprite = "enclave_vanilla_great_bascinet_02";
+		this.m.SpriteDamaged = "enclave_vanilla_great_bascinet_02_damaged";
+		this.m.SpriteCorpse = "enclave_vanilla_great_bascinet_02_dead";
 		this.m.IconLarge = "";
-		this.m.Icon = "helmets/inventory_enclave_vanilla_great_bascinet_01.png";
+		this.m.Icon = "helmets/inventory_enclave_vanilla_great_bascinet_02.png";
 	}
 
 });

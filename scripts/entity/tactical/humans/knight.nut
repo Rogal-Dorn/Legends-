@@ -159,6 +159,9 @@ this.knight <- this.inherit("scripts/entity/tactical/human", {
 				[2, "legend_enclave_vanilla_great_bascinet_01"],
 				[2, "legend_enclave_vanilla_great_bascinet_02"],
 				[2, "legend_enclave_vanilla_great_bascinet_03"],
+				[2, "legend_enclave_vanilla_kettle_sallet_01"],
+				[2, "legend_enclave_vanilla_kettle_sallet_02"],
+				[2, "legend_enclave_vanilla_kettle_sallet_03"],
 				[15, "faction_helm", banner],
 				[5, "legend_frogmouth_helm"],
 				[1, "legend_frogmouth_helm_crested"]

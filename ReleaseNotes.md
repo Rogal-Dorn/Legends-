@@ -4416,6 +4416,7 @@ Assassin commander is a combat background
 Mason is now educated and intelligent, instead of fast
 
 **Armor Tweaks**
+Adds Enclave's Armor mod into Legends (added to layer system aswell)
 Added rune layers for helmets (same as armors)
 Helmet layers now have a visual for named layer
 Rebalance all barbarian helmet layers (+ adds a few new layers)

@@ -142,7 +142,10 @@ this.hedge_knight <- this.inherit("scripts/entity/tactical/human", {
 				[2, "legend_enclave_vanilla_armet_02"],
 				[2, "legend_enclave_vanilla_great_bascinet_01"],
 				[2, "legend_enclave_vanilla_great_bascinet_02"],
-				[2, "legend_enclave_vanilla_great_bascinet_03"]
+				[2, "legend_enclave_vanilla_great_bascinet_03"],
+				[2, "legend_enclave_vanilla_kettle_sallet_01"],
+				[2, "legend_enclave_vanilla_kettle_sallet_02"],
+				[2, "legend_enclave_vanilla_kettle_sallet_03"]
 			];
 			this.m.Items.equip(this.Const.World.Common.pickHelmet(
 				helmet

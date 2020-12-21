@@ -381,6 +381,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"hood/legend_helmet_southern_open_chain_hood",
 			"hood/legend_helmet_southern_open_hood",
 			"hood/legend_helmet_cloth_cap",
+			"hood/legend_helmet_enclave_bevor",
 
 			"helm/legend_helmet_ancient_conic_helm",
 			"helm/legend_helmet_ancient_kettle",
@@ -443,6 +444,13 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"helm/legend_helmet_rotten_flat_top_face_mask",
 			"helm/legend_helmet_rotten_great_helm",
 
+			"helm/legend_helmet_enclave_great_bascinet",
+			"helm/legend_helmet_enclave_kettle",
+			"helm/legend_helmet_enclave_skullcap",
+			"helm/legend_helmet_enclave_armet",
+
+			"top/legend_helmet_enclave_great_jaw",
+
 			"top/legend_helmet_orc_leather_mask",
 			"top/legend_helmet_orc_horn_mask",
 			"top/legend_helmet_orc_metal_mask",
@@ -488,10 +496,10 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"top/legend_helmet_fencer_hat",
 			"top/legend_helmet_hood_cloth_square",
 
-			"vanity/legend_helmet_southern_noble_crown",
-			"vanity/legend_helmet_southern_noble_hat",
+
+			//"vanity/legend_helmet_southern_noble_hat",
 			"vanity/legend_helmet_southern_noble_turban",
-			"vanity/legend_helmet_southern_noble_crown",
+			//"vanity/legend_helmet_southern_noble_crown",
 			"vanity/legend_helmet_southern_helm_tailed",
 			"vanity/legend_helmet_southern_silk_headscarf",
 			"vanity/legend_helmet_southern_feathered_turban",

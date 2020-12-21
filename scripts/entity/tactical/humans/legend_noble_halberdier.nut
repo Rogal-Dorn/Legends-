@@ -113,7 +113,9 @@ this.legend_noble_halberdier <- this.inherit("scripts/entity/tactical/human", {
 					[1, "legend_enclave_vanilla_armet_01"],
 					[1, "legend_enclave_vanilla_armet_02"],
 					[1, "legend_enclave_vanilla_great_bascinet_01"],
-					[1, "legend_enclave_vanilla_great_bascinet_03"]
+					[1, "legend_enclave_vanilla_great_bascinet_03"],
+					[1, "legend_enclave_vanilla_kettle_sallet_01"],
+					[1, "legend_enclave_vanilla_kettle_sallet_03"]
 				]))
 			}
 			else if (banner <= 7)
@@ -126,7 +128,10 @@ this.legend_noble_halberdier <- this.inherit("scripts/entity/tactical/human", {
 					[1, "legend_enclave_vanilla_armet_01"],
 					[1, "legend_enclave_vanilla_armet_02"],
 					[1, "legend_enclave_vanilla_great_bascinet_02"],
-					[1, "legend_enclave_vanilla_great_bascinet_03"]
+					[1, "legend_enclave_vanilla_great_bascinet_03"],
+					[1, "legend_enclave_vanilla_kettle_sallet_02"],
+					[1, "legend_enclave_vanilla_kettle_sallet_03"]
+
 				]))
 			}
 			else
@@ -139,7 +144,10 @@ this.legend_noble_halberdier <- this.inherit("scripts/entity/tactical/human", {
 					[1, "legend_enclave_vanilla_armet_01"],
 					[1, "legend_enclave_vanilla_armet_02"],
 					[1, "legend_enclave_vanilla_great_bascinet_01"],
-					[1, "legend_enclave_vanilla_great_bascinet_02"]				
+					[1, "legend_enclave_vanilla_great_bascinet_02"],
+					[1, "legend_enclave_vanilla_kettle_sallet_01"],
+					[1, "legend_enclave_vanilla_kettle_sallet_02"]
+
 				]))
 			}
 
