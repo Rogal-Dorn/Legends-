@@ -10,13 +10,15 @@ this.legend_rune_luck <- this.inherit("scripts/items/legend_helmets/legend_helme
 		this.m.ArmorDescription = "Includes An inscribed rock that grants additional vision and XP bonuses.";
 		this.m.Icon = "rune_sigils/rune_stone_2.png";
 		this.m.IconLarge = this.m.Icon;
-		this.m.OverlayIcon = "";
-		this.m.OverlayIconLarge = "";
+		this.m.OverlayIcon = "layers/glow_runed_icon.png";
+		this.m.OverlayIconLarge = "layers/glow_runed_icon.png";
 		this.m.Sprite = "bust_legend_helmet_runed";
-
 		this.m.Value = 1200;
 	}
 
+	function updateVariant()
+	{
+	}
 
 	function getTooltip()
 	{

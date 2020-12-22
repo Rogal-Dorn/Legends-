@@ -52,7 +52,7 @@ var CharacterScreenPaperdollModule = function (_parent, _dataSource) {
   };
 
   this.mUpgradeButtons = [null, null, null, null, null, null];
-  this.mHelmetUpgradeButtons = [null, null, null];
+  this.mHelmetUpgradeButtons = [null, null, null, null];
 
   this.mRightEquipmentSlots = {
     Ammo: {
@@ -124,9 +124,20 @@ CharacterScreenPaperdollModule.prototype.createDIV = function (_parentDiv) {
   var layout = $('<div class="l-button h-remove3"/>');
   middleEquipmentColumn.append(layout);
   this.mHelmetUpgradeButtons[2] = layout.createTextButton(
-    "R",
+    "3",
     function (_event) {
       self.mDataSource.notifyBackendRemoveHelmetUpgrade(2);
+    },
+    "display-block",
+    11
+  );
+
+  var layout = $('<div class="l-button h-remove4"/>');
+  middleEquipmentColumn.append(layout);
+  this.mHelmetUpgradeButtons[3] = layout.createTextButton(
+    "R",
+    function (_event) {
+      self.mDataSource.notifyBackendRemoveHelmetUpgrade(3);
     },
     "display-block",
     11
