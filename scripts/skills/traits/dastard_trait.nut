@@ -6,7 +6,7 @@ this.dastard_trait <- this.inherit("scripts/skills/traits/character_trait", {
 		this.m.ID = "trait.dastard";
 		this.m.Name = "Dastard";
 		this.m.Icon = "ui/traits/trait_icon_38.png";
-		this.m.Description = "This character will turn tail on the first possible occasion. Better have an eye on him!";
+		this.m.Description = "This character will turn tail on the first possible occasion. Better have an eye on them!";
 		this.m.Titles = [
 			"the Coward",
 			"the Craven",

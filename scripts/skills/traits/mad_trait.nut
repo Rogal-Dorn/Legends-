@@ -6,7 +6,7 @@ this.mad_trait <- this.inherit("scripts/skills/traits/character_trait", {
 		this.m.ID = "trait.mad";
 		this.m.Name = "Mad";
 		this.m.Icon = "ui/traits/trait_icon_76.png";
-		this.m.Description = "This character has gazed into the abyss, and the abyss has gazed right back at him, turning him quite mad. He often rambles unintelligibly, and his cryptic mind has become inaccessible both to his peers and to the enemy.";
+		this.m.Description = "This character has gazed into the abyss, and the abyss has gazed right back at them, turning them quite mad. This character often rambles unintelligibly, and their cryptic mind has become inaccessible both to peers and to the enemy.";
 	}
 
 	function getTooltip()

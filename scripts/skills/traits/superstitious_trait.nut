@@ -6,7 +6,7 @@ this.superstitious_trait <- this.inherit("scripts/skills/traits/character_trait"
 		this.m.ID = "trait.superstitious";
 		this.m.Name = "Superstitious";
 		this.m.Icon = "ui/traits/trait_icon_26.png";
-		this.m.Description = "It\'s cursed! This character is highly superstitious and therefore more vulnerable to skills that directly attack his Resolve.";
+		this.m.Description = "It\'s cursed! This character is highly superstitious and therefore more vulnerable to skills that directly attack their Resolve.";
 		this.m.Excluded = [
 			"trait.fearless",
 			"trait.brave",

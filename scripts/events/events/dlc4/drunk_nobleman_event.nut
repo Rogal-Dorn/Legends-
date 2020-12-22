@@ -3,6 +3,8 @@ this.drunk_nobleman_event <- this.inherit("scripts/events/event", {
 		Other = null,
 		Servant = null,
 		Thief = null,
+		Noble = null,
+		Dude = null,
 		Townname = null
 	},
 	function create()
@@ -47,6 +49,18 @@ this.drunk_nobleman_event <- this.inherit("scripts/events/event", {
 						function getResult( _event )
 						{
 							return "H";
+						}
+
+					});
+				}
+				
+				if (_event.m.Noble != null)
+				{
+					this.Options.push({
+						Text = "Hey that\'s %noble%\'s cousin.",
+						function getResult( _event )
+						{
+							return "I";
 						}
 
 					});
@@ -334,6 +348,46 @@ this.drunk_nobleman_event <- this.inherit("scripts/events/event", {
 			}
 
 		});
+		this.m.Screens.push({
+			ID = "H",
+			Text = "%terrainImage%{As you approach the drunkard, he immediately recognises %noble% and runs up sobbing. %SPEECH_ON%Cousin! Oh my gentile and cultured cousin, my favourite second cousin, you would not believe the outrageous injustice perpetrated against one\'s self!%SPEECH_OFF%You look on sceptically as the obviously drunken and slightly bedraggled nobleman continues %SPEECH_ON%I was due to be wed you see, to the love of my life. It was to the richest, wealthiest, prosperous, bountiful, most affluent, most.. well endowed..%SPEECH_OFF% The noble\'s mind wanders off, as if in fantasy. You prompt again and the speach continues somewhat more deflated %SPEECH_ON%Alas it was not to be, they discovered that (I am not a marquess from the border lands but only a viscount heir.| My winnings at the table were not as grand as perhaps I had let on | My horrible father disowned me for having too much fun with wine and women ).  They turned me out on the road, perhaps I could come on a travelling adventure with you? %SPEECH_OFF%} ",
+			Image = "",
+			List = [],
+			Characters = [],
+			Options = [
+				{
+					Text = "Welcome to the %companyname%.",
+					function getResult( _event )
+					{
+						this.World.getPlayerRoster().add(_event.m.Dude);
+						this.World.getTemporaryRoster().clear();
+						_event.m.Dude.onHired();
+						_event.m.Dude = null;
+						return 0;
+					}
+				},
+				{
+					Text = "A pauper is no cousin of mine",
+					function getResult( _event )
+					{
+						this.World.getTemporaryRoster().clear();
+						_event.m.Dude = null;
+						return 0;
+					}
+				}
+			],
+			function start( _event )
+			{
+				local roster = this.World.getTemporaryRoster();
+				_event.m.Dude = roster.create("scripts/entity/tactical/player");
+				_event.m.Dude.setStartValuesEx(["legend_noble_background"]);
+				_event.m.Vala.getSkills().add(this.new("scripts/skills/traits/addict_trait"));
+				_event.m.Vala.getSkills().add(this.new("scripts/skills/effects_world/drunk_effect"));
+				this.Characters.push(_event.m.Dude.getImagePath());
+			}
+
+		});
+
 	}
 
 	function onUpdateScore()
@@ -363,22 +417,27 @@ this.drunk_nobleman_event <- this.inherit("scripts/events/event", {
 		local brothers = this.World.getPlayerRoster().getAll();
 		local candidates_servant = [];
 		local candidates_thief = [];
+		local candidates_noble = [];
 		local candidates_other = [];
 
 		foreach( bro in brothers )
 		{
-			if (bro.getSkills().hasSkill("trait.player"))
-			{
-				continue;
-			}
-
-			if (bro.getBackground().getID() == "background.servant" || bro.getBackground().getID() == "background.female_servant" || bro.getBackground().getID() == "background.juggler")
+            if (bro.getSkills().hasSkill("trait.player") && bro.getBackground().getID() != "background.legend_commander_noble")
+            {
+                continue;
+            }
+			
+			if (bro.getBackground().getID() == "background.servant" || bro.getBackground().getID() == "background.female_servant" || bro.getBackground().getID() == "background.slave")
 			{
 				candidates_servant.push(bro);
 			}
 			else if (bro.getBackground().getID() == "background.thief" || bro.getBackground().getID() == "background.female_thief")
 			{
 				candidates_thief.push(bro);
+			}
+			else if (bro.getBackground().getID() == "background.legend_commander_noble")
+			{
+				candidates_noble.push(bro);
 			}
 			else
 			{
@@ -401,6 +460,11 @@ this.drunk_nobleman_event <- this.inherit("scripts/events/event", {
 		if (candidates_thief.len() != 0)
 		{
 			this.m.Thief = candidates_thief[this.Math.rand(0, candidates_thief.len() - 1)];
+		}
+		
+		if (candidates_noble.len() != 0)
+		{
+			this.m.Noble = candidates_noble[this.Math.rand(0, candidates_noble.len() - 1)];
 		}
 
 		this.m.Score = 10;
@@ -442,6 +506,10 @@ this.drunk_nobleman_event <- this.inherit("scripts/events/event", {
 			this.m.Thief ? this.m.Thief.getNameOnly() : ""
 		]);
 		_vars.push([
+			"noble",
+			this.m.Noble ? this.m.Noble.getNameOnly() : ""
+		]);
+		_vars.push([
 			"townname",
 			this.m.Townname
 		]);
@@ -452,6 +520,8 @@ this.drunk_nobleman_event <- this.inherit("scripts/events/event", {
 		this.m.Other = null;
 		this.m.Servant = null;
 		this.m.Thief = null;
+		this.m.Noble = null;
+		this.m.Dude = null;
 		this.m.Townname;
 	}
 
