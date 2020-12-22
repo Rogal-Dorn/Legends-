@@ -92,9 +92,42 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 		return slots;
 	}
 
+	function isArmorNamed()
+	{
+		if (this.isNamed()) {
+			return true;
+		}
+
+		foreach( u in this.m.Upgrades )
+		{
+			if (u == null)
+			{
+				continue;
+			}
+
+			if (u.isNamed()) {
+				return true
+			}
+		}
+
+		return false
+	}
+
+	function getIcon()
+	{
+		if (this.isArmorNamed()) {
+			return "layers/named_icon_glow.png"
+		}
+		return this.m.Icon;
+	}
+
 	function getIconOverlay()
 	{
 		local L = [];
+
+		if (this.isArmorNamed()) {
+			L.push(this.m.Icon)
+		}
 
 		foreach( u in this.m.Upgrades )
 		{
@@ -116,19 +149,22 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 		return L;
 	}
 
-	function getIcon()
-	{
-		return this.m.Icon;
-	}
-
 	function getIconLarge()
 	{
-		return this.getIcon();
+		if (this.isArmorNamed()) {
+			return "layers/named_icon_glow.png"
+		}
+
+		return this.m.IconLarge != "" ? this.m.IconLarge : null;
 	}
 
 	function getIconLargeOverlay()
 	{
 		local L = [];
+
+		if (this.isArmorNamed()) {
+			L.push(this.m.IconLarge)
+		}
 
 		foreach( u in this.m.Upgrades )
 		{
@@ -427,11 +463,33 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 		return item;
 	}
 
+	function getUpgradesNamed() {
+
+		foreach( u in this.m.Upgrades )
+		{
+			if (u == null)
+			{
+				continue;
+			}
+
+			if (u.isNamed()) {
+				return u.getName()
+			}
+		}
+
+		return ""
+	}
+
 	function makeName()
 	{
 		local NAME = this.getName();
 
-		if (this.getUpgrade(1) != null)
+		local uname = this.getUpgradesNamed()
+
+		if (uname != "") {
+			NAME = uname + " " + this.getName();
+		}
+		else if (this.getUpgrade(1) != null)
 		{
 			NAME = this.getUpgrade(1).getName() + " on " + this.getName();
 
@@ -443,6 +501,11 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 		else if (this.getUpgrade(0) != null)
 		{
 			NAME = this.getUpgrade(0).getName() + " on " + this.getName();
+		}
+
+		if (this.getUpgrade(5) != null)
+		{
+			NAME = "[color=" + this.Const.UI.Color.RuneColor + "] (Runed)[/color]" + NAME;
 		}
 
 		return NAME;

@@ -77,8 +77,8 @@ this.legend_helmet_lindwurm_helm <- this.inherit("scripts/items/legend_helmets/l
 		this.m.Sprite = "legendhelms_lindwurm_helm" + "_" + variant;
 		this.m.SpriteDamaged = "legendhelms_lindwurm_helm" + "_" + variant + "_damaged";
 		this.m.SpriteCorpse = "legendhelms_lindwurm_helm" + "_" + variant + "_dead";
-		this.m.IconLarge = "";
 		this.m.Icon = "legend_helmets/inventory_lindwurm_helm" + "_" + variant + ".png";
+		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = this.m.Icon;
 		this.m.OverlayIconLarge = this.m.OverlayIcon;
 	}
