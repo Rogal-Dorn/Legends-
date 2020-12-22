@@ -6,7 +6,7 @@ this.fear_beasts_trait <- this.inherit("scripts/skills/traits/character_trait", 
 		this.m.ID = "trait.fear_beasts";
 		this.m.Name = "Fear of Beasts";
 		this.m.Icon = "ui/traits/trait_icon_48.png";
-		this.m.Description = "Some past event or particularly convincing story in this character\'s life has left him scared of what the monstrous beasts of the wild are capable of, making him less reliable when facing them on the battlefield.";
+		this.m.Description = "Some past event or particularly convincing story in this character\'s life has left them scared of what the monstrous beasts of the wild are capable of, making this character less reliable when facing beasts on the battlefield.";
 		this.m.Excluded = [
 			"trait.fearless",
 			"trait.brave",

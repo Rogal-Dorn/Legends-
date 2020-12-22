@@ -6,7 +6,7 @@ this.craven_trait <- this.inherit("scripts/skills/traits/character_trait", {
 		this.m.ID = "trait.craven";
 		this.m.Name = "Craven";
 		this.m.Icon = "ui/traits/trait_icon_40.png";
-		this.m.Description = "Run for your lives! This character is a craven and will run at the slightest sign of the odds turning against him.";
+		this.m.Description = "Run for your lives! This character is a craven and will run at the slightest sign of the odds turning against them.";
 		this.m.Titles = [
 			"the Coward",
 			"the Craven",

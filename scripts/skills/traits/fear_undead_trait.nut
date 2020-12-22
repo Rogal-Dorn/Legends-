@@ -6,7 +6,7 @@ this.fear_undead_trait <- this.inherit("scripts/skills/traits/character_trait", 
 		this.m.ID = "trait.fear_undead";
 		this.m.Name = "Fear of Undead";
 		this.m.Icon = "ui/traits/trait_icon_47.png";
-		this.m.Description = "Some past event or particularly convincing story in this character\'s life has left him scared of what the walking dead are capable of, making him less reliable when facing them on the battlefield.";
+		this.m.Description = "Some past event or particularly convincing story in this character\'s life has left them scared of what the walking dead are capable of, making this character less reliable when facing the undead on the battlefield.";
 		this.m.Excluded = [
 			"trait.fearless",
 			"trait.brave",

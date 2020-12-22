@@ -6,7 +6,7 @@ this.iron_jaw_trait <- this.inherit("scripts/skills/traits/character_trait", {
 		this.m.ID = "trait.iron_jaw";
 		this.m.Name = "Iron Jaw";
 		this.m.Icon = "ui/traits/trait_icon_44.png";
-		this.m.Description = "This character shakes off hits that would cripple a lesser man.";
+		this.m.Description = "This character shakes off hits that would cripple a lesser character.";
 		this.m.Titles = [
 			"Ironjaw",
 			"the Rock",

@@ -6,7 +6,7 @@ this.drunkard_trait <- this.inherit("scripts/skills/traits/character_trait", {
 		this.m.ID = "trait.drunkard";
 		this.m.Name = "Drunkard";
 		this.m.Icon = "ui/traits/trait_icon_29.png";
-		this.m.Description = "There\'s no question what this character spends his crowns on. Expect him to drink heavily before any battle, in secret if need be. ";
+		this.m.Description = "There\'s no question what this character spends their crowns on. Expect them to drink heavily before any battle, in secret if need be. ";
 		this.m.Titles = [
 			"the Drunk",
 			"the Drunkard"

@@ -6,7 +6,7 @@ this.bloodthirsty_trait <- this.inherit("scripts/skills/traits/character_trait",
 		this.m.ID = "trait.bloodthirsty";
 		this.m.Name = "Bloodthirsty";
 		this.m.Icon = "ui/traits/trait_icon_42.png";
-		this.m.Description = "This character is prone to excessive violence and cruelty towards his enemies. An opponent isn\'t good enough dead, his head needs to be on a spike!";
+		this.m.Description = "This character is prone to excessive violence and cruelty towards enemies. An opponent isn\'t good enough dead, their head needs to be on a spike!";
 		this.m.Titles = [
 			"the Butcher",
 			"the Mad",

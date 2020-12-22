@@ -6,7 +6,7 @@ this.cultist_zealot_trait <- this.inherit("scripts/skills/traits/character_trait
 		this.m.ID = "trait.cultist_zealot";
 		this.m.Name = "Zealot of Davkul";
 		this.m.Icon = "ui/traits/trait_icon_65.png";
-		this.m.Description = "This character is a zealous follower of Davkul, so much so that he has come to embrace physical pain as bringing him closer to salvation.";
+		this.m.Description = "This character is a zealous follower of Davkul, so much so that they have come to embrace physical pain as bringing them closer to salvation.";
 		this.m.Order = this.Const.SkillOrder.Trait - 1;
 	}
 

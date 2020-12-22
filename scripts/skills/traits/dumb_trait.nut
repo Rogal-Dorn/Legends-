@@ -6,7 +6,7 @@ this.dumb_trait <- this.inherit("scripts/skills/traits/character_trait", {
 		this.m.ID = "trait.dumb";
 		this.m.Name = "Dumb";
 		this.m.Icon = "ui/traits/trait_icon_17.png";
-		this.m.Description = "Umm, what? This character isn\'t the brightest, and new concepts take a while to really stick with him.";
+		this.m.Description = "Umm, what? This character isn\'t the brightest, and new concepts take a while to really stick with them.";
 		this.m.Titles = [
 			"the Slow",
 			"the Idiot",

@@ -6,7 +6,7 @@ this.strong_trait <- this.inherit("scripts/skills/traits/character_trait", {
 		this.m.ID = "trait.strong";
 		this.m.Name = "Strong";
 		this.m.Icon = "ui/traits/trait_icon_15.png";
-		this.m.Description = "Well fed and buffed to the max.";
+		this.m.Description = "This character is exceptionally muscled and capable of impressive feats of strength";
 		this.m.Titles = [
 			"the Strong",
 			"the Bull",

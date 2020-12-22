@@ -6,7 +6,7 @@ this.arena_pit_fighter_trait <- this.inherit("scripts/skills/traits/character_tr
 		this.m.ID = "trait.pit_fighter";
 		this.m.Name = "Pit Fighter";
 		this.m.Icon = "ui/traits/trait_icon_73.png";
-		this.m.Description = "This character has just dipped his toes into the brutal profession of arena fighting and did so without dying.";
+		this.m.Description = "This character has just dipped their toes into the brutal profession of arena fighting and did so without dying.";
 		this.m.Order = this.Const.SkillOrder.Trait - 1;
 	}
 

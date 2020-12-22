@@ -6,7 +6,7 @@ this.cultist_fanatic_trait <- this.inherit("scripts/skills/traits/character_trai
 		this.m.ID = "trait.cultist_fanatic";
 		this.m.Name = "Fanatic of Davkul";
 		this.m.Icon = "ui/traits/trait_icon_64.png";
-		this.m.Description = "This character is a fanatic follower of Davkul, believing that Davkul embraces man in death.";
+		this.m.Description = "This character is a fanatic follower of Davkul, believing that Davkul embraces all in death.";
 		this.m.Order = this.Const.SkillOrder.Trait - 1;
 	}
 

@@ -13,7 +13,7 @@ this.glorious_endurance_trait <- this.inherit("scripts/skills/traits/character_t
 
 	function getDescription()
 	{
-		return "Forged in the arenas of the south, this character has fought many a battle, and every blow will only strengthen his indomitable will and endurance. His fabulous lifestyle demands high pay, but he\'ll never desert you and can\'t be dismissed. If all three original members should die, your campaign ends.";
+		return "Forged in the arenas of the south, this character has fought many a battle, and every blow will only strengthen their indomitable will and endurance. This fabulous lifestyle demands high pay, but they\'ll never desert you and can\'t be dismissed. If all three original members should die, your campaign ends.";
 	}
 
 	function getTooltip()

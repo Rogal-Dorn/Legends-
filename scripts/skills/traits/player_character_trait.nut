@@ -6,7 +6,7 @@ this.player_character_trait <- this.inherit("scripts/skills/traits/character_tra
 		this.m.ID = "trait.player";
 		this.m.Name = "Player Character";
 		this.m.Icon = "ui/traits/trait_icon_63.png";
-		this.m.Description = "This is your player character, or in other words, yourself. If he dies, your campaign ends. You can\'t dismiss them, they\'re immune to charm effects, and they\'ll never desert you.";
+		this.m.Description = "This is your player character, or in other words, yourself. If they die, your campaign ends. You can\'t dismiss them, they\'re immune to charm effects, and they\'ll never desert you.";
 		this.m.Order = this.Const.SkillOrder.Trait - 1;
 		this.m.Type = this.m.Type;
 		this.m.Titles = [];
