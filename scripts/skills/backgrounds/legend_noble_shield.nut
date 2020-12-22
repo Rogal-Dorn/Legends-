@@ -211,7 +211,13 @@ this.legend_noble_shield <- this.inherit("scripts/skills/backgrounds/character_b
 
 		items.equip(this.Const.World.Common.pickHelmet([
 			[1, "aketon_cap"],
-			[1, "open_leather_cap"]
+			[1, "open_leather_cap"],
+			[1, "kettle_hat"],
+			[1, "padded_kettle_hat"],
+			[1, "kettle_hat_with_mail"],
+			[1, "mail_coif"],
+			[1, "legend_enclave_vanilla_armet_02"],
+			[1, "legend_enclave_skullcap_01"]
 		]));
 	}
 });

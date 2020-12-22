@@ -4414,6 +4414,12 @@ Crucified crusader is a crusader recruit
 Housemaid is lowborn
 Assassin commander is a combat background
 Mason is now educated and intelligent, instead of fast
+All traits are now gender neutral
+
+**Noble scenario**
+Noble commander is now a drunkard with low hitpoints and poor armor 
+Each of the company has background text, updated helms and traits 
+Can recruit in the drunken noble event 
 
 **Armor Tweaks**
 Adds Enclave's Armor mod into Legends (added to layer system aswell)
