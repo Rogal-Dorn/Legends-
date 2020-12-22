@@ -10,8 +10,8 @@ this.legend_rune_safety <- this.inherit("scripts/items/legend_armor/legend_armor
 		this.m.ArmorDescription = "Includes An inscribed rock that grants additional safety bonuses.";
 		this.m.Icon = "rune_sigils/rune_stone_3.png";
 		this.m.IconLarge = this.m.Icon;
-		this.m.OverlayIcon = "";
-		this.m.OverlayIconLarge = "";
+		this.m.OverlayIcon = "layers/glow_runed_icon.png";
+		this.m.OverlayIconLarge = "layers/glow_runed_inventory.png";
 		this.m.SpriteFront = "bust_legend_runed";
 		this.m.SpriteBack = "bust_legend_runed";
 		this.m.SpriteDamagedFront = "";

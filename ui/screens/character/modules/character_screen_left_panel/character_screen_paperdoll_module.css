@@ -299,16 +299,20 @@
 	left: -0.5rem;
 }
 
+.character-screen-container .paperdoll-module .l-button.h-remove4 {
+	top: -0.3rem;
+}
+
 .character-screen-container .paperdoll-module .l-button.h-remove3 {
-	top: -0.2rem;
+	top: 1.9rem;
 }
 
 .character-screen-container .paperdoll-module .l-button.h-remove2 {
-	top: 2.2rem;
+	top: 4.1rem;
 }
 
 .character-screen-container .paperdoll-module .l-button.h-remove1 {
-	top: 4.6rem;
+	top: 6.3rem;
 }
 
 .character-screen-container .paperdoll-module .l-button.remove6 {

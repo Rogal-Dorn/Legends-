@@ -73,108 +73,6 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 
 	}
 
-	function getIconLargeOverlayNamed()
-	{
-		if (this.isItemType(this.Const.Items.ItemType.Named))
-		{
-			return "legend_helmets/inventory_named_helmet.png";
-		}
-
-		if (this.isItemType(this.Const.Items.ItemType.Legendary))
-		{
-			return "legend_helmets/inventory_named_helmet.png";
-		}
-
-		foreach( u in this.m.Upgrades )
-		{
-			if (u == null)
-			{
-				continue;
-			}
-
-			if (u.isItemType(this.Const.Items.ItemType.Named))
-			{
-				return "legend_helmets/inventory_named_helmet.png";
-			}
-
-			if (u.isItemType(this.Const.Items.ItemType.Legendary))
-			{
-				return "legend_helmets/inventory_named_helmet.png";
-			}
-		}
-
-		return ""
-	}
-
-	function getIconLargeOverlayRuned()
-	{
-		local rune = this.getUpgrade(this.Const.Items.HelmetUpgrades.Rune)
-		if (rune == null)
-		{
-			return ""
-		}
-
-		return "legend_helmets/inventory_runed_helmet.png";
-	}
-
-	function getIconNamed()
-	{
-		if (this.isItemType(this.Const.Items.ItemType.Named))
-		{
-			return "";
-		}
-
-		if (this.isItemType(this.Const.Items.ItemType.Legendary))
-		{
-			return "";
-		}
-
-		return "";
-
-		// foreach( u in this.m.Upgrades )
-		// {
-		// 	if (u == null)
-		// 	{
-		// 		continue;
-		// 	}
-
-		// 	if (u.isItemType(this.Const.Items.ItemType.Named))
-		// 	{
-		// 		return "legend_armor/named_armor.png";
-		// 	}
-
-		// 	if (u.isItemType(this.Const.Items.ItemType.Legendary))
-		// 	{
-		// 		return "legend_armor/named_armor.png";
-		// 	}
-		// }
-
-		// return "";
-	}
-
-	function getIconRuned()
-	{
-		if (this.isItemType(this.Const.Items.ItemType.Named))
-		{
-			return "";
-		}
-
-		if (this.isItemType(this.Const.Items.ItemType.Legendary))
-		{
-			return "";
-		}
-
-		return "";
-
-		// local rune = this.getUpgrade(this.Const.Items.HelmetUpgrades.Rune)
-		// if (rune == null)
-		// {
-		// 	return ""
-		// }
-
-		// return "legend_armor/runed_armor.png";
-	}
-
 	function getIDAsArray()
 	{
 		local slots = [];
@@ -198,19 +96,6 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 	{
 		local L = [];
 
-		local named = this.getIconNamed()
-		local runed = this.getIconRuned()
-
-		if (named != "" && runed != "")
-		{
-			L.push(runed);
-		}
-
-		if (named != "" || runed != "")
-		{
-			L.push(this.m.Icon);
-		}
-
 		foreach( u in this.m.Upgrades )
 		{
 			if (u == null)
@@ -233,67 +118,17 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 
 	function getIcon()
 	{
-		local named = this.getIconNamed();
-		local runed = this.getIconRuned();
-
-		if (named != "")
-		{
-			return named;
-		}
-
-		if (runed != "")
-		{
-			return runed;
-		}
-
 		return this.m.Icon;
 	}
 
 	function getIconLarge()
 	{
-		local named = this.getIconLargeOverlayNamed();
-		local runed = this.getIconLargeOverlayRuned();
-
-		if (named != "")
-		{
-			return named;
-		}
-
-		if (runed != "")
-		{
-			return runed;
-		}
-
 		return this.getIcon();
-
-		// local items = this.getIconLargeOverlay();
-		// foreach (i in items)
-		// {
-		// 	if (i != "")
-		// 	{
-		// 		return i;
-		// 	}
-		// }
-
-		return this.m.IconLarge != "" ? this.m.IconLarge : null;
 	}
 
 	function getIconLargeOverlay()
 	{
 		local L = [];
-
-		local named = this.getIconLargeOverlayNamed()
-		local runed = this.getIconLargeOverlayRuned()
-
-		if (named != "" && runed != "")
-		{
-			L.push(runed);
-		}
-
-		if (named != "" || runed != "")
-		{
-			L.push(this.m.IconLarge);
-		}
 
 		foreach( u in this.m.Upgrades )
 		{
