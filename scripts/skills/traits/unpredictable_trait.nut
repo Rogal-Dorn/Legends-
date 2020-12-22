@@ -6,7 +6,7 @@ this.unpredictable_trait <- this.inherit("scripts/skills/traits/character_trait"
 		this.m.ID = "trait.unpredictable";
 		this.m.Name = "Unpredictable";
 		this.m.Icon = "ui/traits/unpredictable_trait.png";
-		this.m.Description = "Able to make some unpredictable moves.";
+		this.m.Description = "It is unclear what this character will ever do next, often dodging, faking and feinting moves. This makes it easier to score good hits.";
 		this.m.Titles = [
 			"the Dicey"
 		];
