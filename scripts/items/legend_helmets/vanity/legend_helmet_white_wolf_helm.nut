@@ -65,8 +65,8 @@ this.legend_helmet_white_wolf_helm <- this.inherit("scripts/items/legend_helmets
 		this.m.Sprite = "legendhelms_white_wolf_helm" + "_" + variant;
 		this.m.SpriteDamaged = "legendhelms_white_wolf_helm" + "_" + variant + "_damaged";
 		this.m.SpriteCorpse = "legendhelms_white_wolf_helm" + "_" + variant + "_dead";
-		this.m.IconLarge = "";
 		this.m.Icon = "legend_helmets/inventory_white_wolf_helm" + "_" + variant + ".png";
+		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = this.m.Icon;
 		this.m.OverlayIconLarge = this.m.OverlayIcon;
 	}

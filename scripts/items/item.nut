@@ -1267,6 +1267,22 @@ this.item <- {
 		return this.m.ResourceValue;
 	}
 
+	function isNamed()
+	{
+		if (this.isItemType(this.Const.Items.ItemType.Named))
+		{
+			return true;
+		}
+
+		if (this.isItemType(this.Const.Items.ItemType.Legendary))
+		{
+			return true;
+		}
+
+		return false
+	}
+
+
 	function onPaint( _color )
 	{
 	}

@@ -120,7 +120,14 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 
 	function getIconOverlay()
 	{
-		local L = [this.m.Icon];
+		local L = [];
+
+		if (this.isNamed()) {
+			L.push("layers/named_icon_glow.png")
+		}
+
+		L.push(this.m.Icon)
+
 		switch (this.m.Type)
 		{
 			case this.Const.Items.HelmetUpgrades.Helm:
@@ -146,7 +153,14 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 
 	function getIconLargeOverlay()
 	{
-		local L = [this.m.Icon];
+		local L = [];
+
+		if (this.isNamed()) {
+			L.push("layers/named_icon_glow.png")
+		}
+
+		L.push(this.m.Icon)
+
 		switch (this.m.Type)
 		{
 			case this.Const.Items.HelmetUpgrades.Helm:
