@@ -115,7 +115,7 @@ this.legend_bandit_veteran <- this.inherit("scripts/entity/tactical/human", {
 
 				if (r == 0)
 				{
-					this.m.Items.equip(this.new("scripts/items/weapons/woodcutters_axe"));
+					this.m.Items.equip(this.new("scripts/items/weapons/legend_infantry_axe"));
 					this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_smashing_shields"));
 
 					if (("Assets" in this.World) && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
@@ -220,7 +220,7 @@ this.legend_bandit_veteran <- this.inherit("scripts/entity/tactical/human", {
 
 				if (r == 0)
 				{
-					this.m.Items.equip(this.new("scripts/items/weapons/woodcutters_axe"));
+					this.m.Items.equip(this.new("scripts/items/weapons/legend_infantry_axe"));
 				}
 				else if (r == 1)
 				{
@@ -401,7 +401,7 @@ this.legend_bandit_veteran <- this.inherit("scripts/entity/tactical/human", {
 			[1, "basic_mail_shirt"]
 		])
 		this.m.Items.equip(item);
-		
+
 		if (this.Math.rand(1, 100) <= 85)
 		{
 			local item = this.Const.World.Common.pickHelmet([

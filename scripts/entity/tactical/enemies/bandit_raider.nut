@@ -86,7 +86,7 @@ this.bandit_raider <- this.inherit("scripts/entity/tactical/human", {
 
 				if (r == 0)
 				{
-					this.m.Items.equip(this.new("scripts/items/weapons/woodcutters_axe"));
+					this.m.Items.equip(this.new("scripts/items/weapons/legend_infantry_axe"));
 
 					if (("Assets" in this.World) && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 					{
