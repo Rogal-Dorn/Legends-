@@ -125,7 +125,7 @@ this.noble_footman <- this.inherit("scripts/entity/tactical/human", {
 					[1, "mail_coif"],
 					[1, "legend_enclave_vanilla_armet_01"],
 					[1, "legend_enclave_vanilla_armet_02"],
-					[1, "legend_enclave_skullcap_01"]
+					[1, "legend_enclave_vanilla_skullcap_01"]
 				])
 			}
 			else if (banner <= 7)
@@ -137,7 +137,7 @@ this.noble_footman <- this.inherit("scripts/entity/tactical/human", {
 					[1, "mail_coif"],
 					[1, "legend_enclave_vanilla_armet_01"],
 					[1, "legend_enclave_vanilla_armet_02"],
-					[1, "legend_enclave_skullcap_01"]
+					[1, "legend_enclave_vanilla_skullcap_01"]
 				])
 			}
 			else
@@ -149,7 +149,7 @@ this.noble_footman <- this.inherit("scripts/entity/tactical/human", {
 					[1, "mail_coif"],
 					[1, "legend_enclave_vanilla_armet_01"],
 					[1, "legend_enclave_vanilla_armet_02"],
-					[1, "legend_enclave_skullcap_01"]
+					[1, "legend_enclave_vanilla_skullcap_01"]
 				])
 			}
 
