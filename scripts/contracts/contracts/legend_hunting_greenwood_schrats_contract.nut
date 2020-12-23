@@ -421,7 +421,7 @@ this.legend_hunting_greenwood_schrats_contract <- this.inherit("scripts/contract
 			function start()
 			{
 				local item;
-				local r = this.Math.rand(1, 4);
+				local r = this.Math.rand(1, 5);
 
 				if (r == 1)
 				{
@@ -439,6 +439,11 @@ this.legend_hunting_greenwood_schrats_contract <- this.inherit("scripts/contract
 				{
 					item = this.new("scripts/items/weapons/greataxe");
 				}
+				else if (r == 5)
+				{
+					item = this.new("scripts/items/weapons/legend_infantry_axe");
+				}
+
 
 				this.World.Assets.getStash().add(item);
 				this.List.push({
