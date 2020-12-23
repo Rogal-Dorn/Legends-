@@ -766,7 +766,7 @@ top="-52" bottom="2" />
   <sprite id="bust_female_northern_body_02_injured" offsetY="35" ic="FF0E0E50" width="104" height="142" img="entity\bodies\bust_female_northern_body_02_injured.png" left="-41" right="39" top="-50" bottom="10" />
 
 
-  <sprite id="enclave_vanilla_skullcap_01" offsetY="35" ic="FF383D5F" width="104" height="142" img="entity\helmets\enclave_vanilla_skullcap_01" left="-24" right="32" top="-21" bottom="52" />
+  <sprite id="enclave_vanilla_skullcap_01" offsetY="35" ic="FF383D5F" width="104" height="142" img="entity\helmets\enclave_vanilla_skullcap_01.png" left="-24" right="32" top="-21" bottom="52" />
   <sprite id="enclave_vanilla_skullcap_01_damaged" offsetY="35" ic="FF353857" width="104" height="142" img="entity\helmets\enclave_vanilla_skullcap_01_damaged.png" left="-25" right="33" top="-21" bottom="52" />
   <sprite id="enclave_vanilla_skullcap_01_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF353957" width="131" height="125" img="entity\helmets\enclave_vanilla_skullcap_01_dead.png" left="-52" right="19" top="-58" bottom="7" />
   <sprite id="enclave_vanilla_great_bascinet_01" offsetY="35" ic="FF383D5F" width="104" height="142" img="entity\helmets\great_bascinet_1.png" left="-24" right="36" top="-23" bottom="56" />
