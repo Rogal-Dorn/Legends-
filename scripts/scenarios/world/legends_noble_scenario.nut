@@ -287,7 +287,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 	function onHiredByScenario( bro )
 	{
-		if (bro.getBackground().isNoble()))
+		if (bro.getBackground().isNoble())
 		{
 			bro.improveMood(0.5, "Supports your cause as a usurper, will cost less to maintain.");
 		}
