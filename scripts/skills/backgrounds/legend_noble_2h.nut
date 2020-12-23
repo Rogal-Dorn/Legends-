@@ -214,7 +214,7 @@ this.legend_noble_2h <- this.inherit("scripts/skills/backgrounds/character_backg
 
 		items.equip(this.Const.World.Common.pickHelmet([
 			[1, "legend_enclave_vanilla_armet_01"],
-			[1, "legend_enclave_skullcap_01"],
+			[1, "legend_enclave_vanilla_skullcap_01"],
 			[1, "greatsword_hat"]
 		]));
 

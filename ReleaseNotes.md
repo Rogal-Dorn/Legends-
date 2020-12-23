@@ -4398,7 +4398,6 @@ Fully buffed with minor perks Sling Heavy Stone pre-nerf: 49-72/80%/188% for 8 A
 
 15.0.0.21
 
-
 **Changes**
 retinue tweaks to have more lowborns. and outlaws
 Widows can be an agent
