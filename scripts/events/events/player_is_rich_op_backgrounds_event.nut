@@ -256,6 +256,11 @@ this.player_is_rich_op_backgrounds_event <- this.inherit("scripts/events/event",
 		{
 			return;
 		}
+		
+		if (this.World.Retinue.hasFollower("follower.paymaster"))
+		{
+			return;
+		}
 
 		local brothers = this.World.getPlayerRoster().getAll();
 		local candidate_opbackground = [];
