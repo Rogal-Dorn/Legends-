@@ -137,7 +137,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		}
 		shield.setFaction(banner);
 		items.equip(shield);
-		
+
 		bros[1].getBackground().m.RawDescription = "Though a lowly footman %name% has one of the most upbeat outlooks on life you\'ve ever encountered. Unfortunately that extends to an over evaluation of self worth, expecting more pay than most.";
 		bros[1].getBackground().buildDescription(true);
 		bros[3].getSkills().add(this.new("scripts/skills/traits/optimist_trait"));
@@ -287,7 +287,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 	function onHiredByScenario( bro )
 	{
-		if (bro.getBackground().isNoble()))
+		if (bro.getBackground().isNoble())
 		{
 			bro.improveMood(0.5, "Supports your cause as a usurper, will cost less to maintain.");
 		}
@@ -316,8 +316,8 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost  * 1.5);
 				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 1.5);
 
-			}		
-			if (bro.getBackground()isOutlawBackground())
+			}
+			if (bro.getBackground().isOutlawBackground())
 			{
 				garbage.push(bro);
 			}
