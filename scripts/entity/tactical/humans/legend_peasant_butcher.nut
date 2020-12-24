@@ -33,37 +33,38 @@ this.legend_peasant_butcher <- this.inherit("scripts/entity/tactical/human", {
 		dirt.Alpha = this.Math.rand(0, 255);
 		this.getSprite("socket").setBrush("bust_base_militia");
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_bloodbath"));
-
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_butcher_skill"));
-
 		this.m.Skills.add(this.new("scripts/skills/actives/legend_prepare_bleed_skill"));
+
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
-			{
+		{
 			this.m.Hitpoints = b.Hitpoints * 1.5;
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_lacerate"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_slaughter"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_butcher_damage"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
-			}
+		}
 
 	}
 
 	function assignRandomEquipment()
 	{
-		local r;
-		r = this.Math.rand(1, 5);
+		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Mainhand))
+		{
+			local r = this.Math.rand(1, 5);
 
-		if (r <= 3)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/butchers_cleaver"));
-		}
-		else if (r == 4)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/knife"));
-		}
-		else if (r == 5)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/military_cleaver"));
+			if (r <= 3)
+			{
+				this.m.Items.equip(this.new("scripts/items/weapons/butchers_cleaver"));
+			}
+			else if (r == 4)
+			{
+				this.m.Items.equip(this.new("scripts/items/weapons/knife"));
+			}
+			else if (r == 5)
+			{
+				this.m.Items.equip(this.new("scripts/items/weapons/military_cleaver"));
+			}
 		}
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
@@ -71,15 +72,37 @@ this.legend_peasant_butcher <- this.inherit("scripts/entity/tactical/human", {
 			[1, "leather_wraps"]
 		]));
 
-		if (this.Math.rand(1, 100) <= 33)
+
+		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Head))
+		{
+			if (this.Math.rand(1, 100) <= 33)
+			{
+				this.m.Items.equip(this.Const.World.Common.pickHelmet([
+					[1, "headscarf"],
+					[1, "hood"],
+					[1, "headscarf"],
+					[1, "feathered_hat"]
+				]))
+			}
+		}
+	}
+
+	function makeMiniboss()
+	{
+		if (!this.actor.makeMiniboss())
+		{
+			return false;
+		}
+
+		this.m.Items.equip(this.new("scripts/items/weapons/butchers_cleaver"));
+		
+		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			this.m.Items.equip(this.Const.World.Common.pickHelmet([
-				[1, "headscarf"],
-				[1, "hood"],
-				[1, "headscarf"],
-				[1, "feathered_hat"]
+				[1, "legend_champion_butcher_helmet"]
 			]))
 		}
+
 	}
 
 });

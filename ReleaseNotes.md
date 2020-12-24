@@ -4405,7 +4405,7 @@ Militia can be a drill sergeant
 Houndmaster can be bounty hunter
 ironmonger is now lowborn
 fishwife is lowborn
-Peaceful perk now called "peaceable", grants 20 resolve and 5% experience gain in excgange for -20 melee and ranged skill
+Peaceful perk now called "peaceable", grants 20 resolve and 5% experience gain in exchange for -20 melee and ranged skill
 Peaceful trait now grants +10 resolve and -5 melee skill
 Pacifist perk now grants +10% resolve, does not count toward scaling Grows unhappy if in commbat more than once a week,
 Assasin, wildlings and druid are now ranger recruits
@@ -4427,6 +4427,10 @@ Added rune layers for helmets (same as armors)
 Helmet layers now have a visual for named layer
 Rebalance all barbarian helmet layers (+ adds a few new layers)
 Rebalance all orc and goblin helmet layers (+ adds a few new layers)
+
+**Enemy Tweaks**
+Adds a *very* low chance for peasant butchers to be champions, based roughly on Bubblelord's post here: https://discord.com/channels/547043336465154049/784023165382426664/788395515846590484
+Rabble Poachers now start behind enemy units, the same as regular Poachers. (As opposed to in the same row as Thugs/Rabble)
 
 **Fixes**
 Fixes manhunter fight event as escaped indebted (both the load in and them being shirtless)
