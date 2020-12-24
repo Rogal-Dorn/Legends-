@@ -1699,3 +1699,14 @@ gt.Const.Strings.SatoManhunterVeteranTitles <- [
 	"the Silver Manacle",
 	"the Dog"
 ]
+
+gt.Const.Strings.PeasantButcherNames <- [ //todo: peasant butcher names
+	"Mark",
+	"Timothy",
+	"Jackson"
+]
+gt.Const.Strings.PeasantButcherTitles <- [ //todo: peasant butcher names
+	"the Slasher",
+	"the Ripper",
+	"the Hash-Slinging Slasher"
+]

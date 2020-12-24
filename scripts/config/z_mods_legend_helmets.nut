@@ -587,21 +587,21 @@ gt.Const.LegendMod.HelmObjs.extend([
         ID = "greatsword_faction_helm", //160
         Script = "scripts/items/legend_helmets/helmets/legend_faction_helmet",
         Sets = [{
-        Hoods = [
-            [1, "hood/legend_helmet_padded_cap"] //40
-        ],
-        Helms = [
-            [1, "helm/legend_helmet_norman_helm"] //50
-        ],
-        Tops = [
-            [1, "top/legend_helmet_fencer_hat"] //60
-        ],
-        Vanity = [
-            [1, "vanity/legend_helmet_plait"], //10
-            [1, "vanity/legend_helmet_faction_helmet_2"] //10
+            Hoods = [
+                [1, "hood/legend_helmet_padded_cap"] //40
+            ],
+            Helms = [
+                [1, "helm/legend_helmet_norman_helm"] //50
+            ],
+            Tops = [
+                [1, "top/legend_helmet_fencer_hat"] //60
+            ],
+            Vanity = [
+                [1, "vanity/legend_helmet_plait"], //10
+                [1, "vanity/legend_helmet_faction_helmet_2"] //10
 
-        ]
-    }]
+            ]
+        }]
     },{
         ID = "greatsword_hat", //70
         Script = "",
@@ -1695,7 +1695,25 @@ gt.Const.LegendMod.HelmObjs.extend([
         Vanity = [
         ]
     }]
-}])
+    },
+    {
+        ID = "legend_champion_butcher_helmet", //approx 130, -7,
+        Script = "",
+        Sets = [{
+            Hoods = [
+                [1, "hood/legend_helmet_chain_scarf"], //70, -4
+            ],
+            Helms = [
+            ],
+            Tops = [
+                [1, "top/legend_helmet_facemask"], //60, -2, -1
+                [1, "top/legend_helmet_faceplate_flat"] //57, -4, -2
+            ],
+            Vanity = [
+            ]
+        }]
+    }
+])
 
 gt.Const.LegendMod.Helmets <- {};
 
