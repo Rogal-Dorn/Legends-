@@ -388,6 +388,24 @@ this.sato_pursuer_ambush_event <- this.inherit("scripts/events/event", {
 			this.m.ChampionChance = 1;
 			this.m.DifficultyMult = this.Math.rand(115, 135) * 0.01;
 		}
+
+		this.m.ChampionChance += getAdditionalChampionChance();
+	}
+
+	function getAdditionalChampionChance()
+	{
+		if (this.World.getTime().Days < 50)
+		{
+			return 0;
+		}
+		else if (this.World.getTime().Days < 90)
+		{
+			return 1;
+		}
+		else
+		{
+			return 3;
+		}
 	}
 
 	function getScaledDifficultyMult()
