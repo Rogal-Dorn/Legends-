@@ -4430,6 +4430,13 @@ Noble commander is now a drunkard with low hitpoints and poor armor
 Each of the company has background text, updated helms and traits
 Can recruit in the drunken noble event
 
+**Sato's escaped salve scenario**
+Manhunter equipment got another pass
+Manhunter ambush scaling should be a little easier earlier on and scale better later on
+Manhunter champions are a thing
+The "visit every settlement" ambition is removed from the pool for the origin
+You can no longer start with negative money
+
 **Armor Tweaks**
 Adds Enclave's Armor mod into Legends (added to layer system aswell)
 Added rune layers for helmets (similiar to rune system on armors)
