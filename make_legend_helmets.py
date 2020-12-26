@@ -781,8 +781,8 @@ layers = [
  "desc" :  "A set of leaves used by goblins to disguise themselves" \
 },
 {"name" : "goblin_leaf_helm"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 10, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
- "title" :  "Goblin Leaf Helm", \
- "desc" :  "A goblin helm made for blending in with cover" \
+ "title" :  "Goblin Leaf Mask", \
+ "desc" :  "A goblin mask made for blending in with cover" \
 },
 {"name" : "goblin_gillie"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 45, "con" : 15, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Goblin Gillie", \
@@ -1264,6 +1264,10 @@ layers = [
 {"name" : "wings"                     , "layer" : "vanity", "lowervanity" : True, "min" : 1, "max" : 6, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Wings", \
  "desc" :  "A set of feathers arrayed on supports to form wings" \
+},
+{"name" : "goblin_tail"                     , "layer" : "vanity", "lowervanity" : True, "min" : 1, "max" : 1, "value" : 50, "con" : 10, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",  \
+ "title" :  "Goblin Tail", \
+ "desc" :  "A knotted tail of hair used as decoration by an goblin" \
 }
 ]
 

@@ -25,21 +25,18 @@ this.legend_named_sickle <- this.inherit("scripts/items/weapons/named/named_weap
 		this.m.RegularDamageMax = 55;
 		this.m.ArmorDamageMult = 0.9;
 		this.m.DirectDamageMult = 0.2;
+		this.m.ChanceToHitHead = 5;
 		this.randomizeValues();
 	}
 
 	function onEquip()
 	{
-		this.weapon.onEquip();
+		this.named_weapon.onEquip();
 		this.addSkill(this.new("scripts/skills/actives/slash"));
 		this.addSkill(this.new("scripts/skills/actives/hook"));
 		this.addSkill(this.new("scripts/skills/actives/legend_harvest_bush"));
 	}
 
-	function onUpdateProperties( _properties )
-	{
-		this.weapon.onUpdateProperties(_properties);
-	}
 
 });
 
