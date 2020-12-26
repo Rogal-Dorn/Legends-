@@ -88,16 +88,29 @@ this.sato_manhunter_veteran_ranged <- this.inherit("scripts/entity/tactical/huma
 
 			if (r == 1)
 			{
-				this.m.Items.equip(this.new("scripts/items/weapons/throwing_axe"));
-			}
-			else if (r == 2)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/greenskins/goblin_spiked_balls"));
-			}
-			else if (r == 3)
-			{
 				this.m.Items.equip(this.new("scripts/items/weapons/oriental/handgonne"));
 				this.m.Items.equip(this.new("scripts/items/ammo/powder_bag"));
+			}
+			else
+			{
+				local weapons = [
+					"weapons/throwing_axe"
+					"weapons/throwing_axe"
+					"weapons/javelin"
+				];
+
+				if (this.World.getTime().Days < 80)
+				{
+					weapons.extend([
+						"weapons/greenskins/goblin_spiked_balls"
+					]);
+				}
+
+				weapons.extend([
+					"weapons/greenskins/goblin_spiked_balls"
+				]);
+
+				this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 			}
 		}
 
@@ -110,7 +123,6 @@ this.sato_manhunter_veteran_ranged <- this.inherit("scripts/entity/tactical/huma
 		{
 			local backupWeapons = [
 				"weapons/hooked_blade",
-				"weapons/goedendag",
 				"weapons/warbrand",
 				"weapons/oriental/two_handed_saif",
 				"weapons/warfork"
@@ -144,15 +156,20 @@ this.sato_manhunter_veteran_ranged <- this.inherit("scripts/entity/tactical/huma
 			local helmets = [
 				[1, "oriental/wrapped_southern_helmet"],
 				[1, "oriental/spiked_skull_cap_with_mail"],
-				[1, "oriental/southern_helmet_with_coif"],
-				[1, "oriental/heavy_lamellar_helmet"]
+				[1, "oriental/southern_helmet_with_coif"]
 			];
 
-			if (this.Const.DLC.Wildmen)
-			{
+			if (this.World.getTime().Days > 50) {
 				helmets.extend([
-					[1, "conic_helmet_with_closed_mail"]
+					[1, "oriental/heavy_lamellar_helmet"]
 				]);
+
+				if (this.Const.DLC.Wildmen)
+				{
+					helmets.extend([
+						[1, "conic_helmet_with_closed_mail"]
+					]);
+				}
 			}
 
 			this.m.Items.equip(this.Const.World.Common.pickHelmet(helmets));
