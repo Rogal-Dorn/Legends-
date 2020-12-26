@@ -4436,6 +4436,7 @@ Added rune layers for helmets (similiar to rune system on armors)
 Helmet layers now have a visual for named layer
 Rebalance all barbarian helmet layers (+ adds a few new layers)
 Rebalance all orc and goblin helmet layers (+ adds a few new layers)
+Adds in a few dozen new names for named weapons and armors (Thanks to our local skin ghoul mascot)
 
 **Enemy Tweaks**
 Adds a *very* low chance for peasant butchers to be champions, based roughly on Bubblelord's post here: https://discord.com/channels/547043336465154049/784023165382426664/788395515846590484
