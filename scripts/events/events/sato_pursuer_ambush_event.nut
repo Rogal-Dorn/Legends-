@@ -4,7 +4,8 @@ this.sato_pursuer_ambush_event <- this.inherit("scripts/events/event", {
 		DifficultyMult = 0.0,
 		DifficultyMultScale = 0.0,
 		ChampionChance = 0,
-		NemesisCityState = null
+		NemesisCityState = null,
+		ResourceBoost = 0
 	},
 	function create()
 	{
