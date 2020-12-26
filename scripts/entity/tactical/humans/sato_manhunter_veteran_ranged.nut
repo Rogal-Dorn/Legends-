@@ -176,7 +176,7 @@ this.sato_manhunter_veteran_ranged <- this.inherit("scripts/entity/tactical/huma
 			],
 			[
 				"weapons/named/named_handgonne",
-				"items/ammo/powder_bag"
+				"ammo/powder_bag"
 			]
 		];
 		local armors = this.Const.Items.NamedSouthernArmors;
@@ -213,7 +213,7 @@ this.sato_manhunter_veteran_ranged <- this.inherit("scripts/entity/tactical/huma
 			));
 		}
 
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_berserk"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_duelist"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_killing_frenzy"));
 		return true;
 	}
