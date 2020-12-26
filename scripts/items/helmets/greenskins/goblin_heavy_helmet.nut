@@ -3,6 +3,7 @@ this.goblin_heavy_helmet <- this.inherit("scripts/items/helmets/helmet", {
 	function create()
 	{
 		this.helmet.create();
+		this.m.Variant = this.Math.rand(20,26)
 		this.updateVariant();
 		this.m.ID = "armor.head.goblin_heavy_helmet";
 		this.m.Name = "Helmet";
@@ -18,9 +19,10 @@ this.goblin_heavy_helmet <- this.inherit("scripts/items/helmets/helmet", {
 
 	function updateVariant()
 	{
-		this.m.Sprite = "bust_goblin_01_helmet_02";
-		this.m.SpriteDamaged = "bust_goblin_01_helmet_02_damaged";
-		this.m.SpriteCorpse = "bust_goblin_01_helmet_02_dead";
+		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
+		this.m.Sprite = "bust_goblin_02_helmet_" + variant;
+		this.m.SpriteDamaged = "bust_goblin_02_helmet_" + variant + "_damaged";
+		this.m.SpriteCorpse = "bust_goblin_02_helmet_" + variant + "_dead";
 	}
 
 });

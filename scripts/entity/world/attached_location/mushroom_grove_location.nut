@@ -109,6 +109,11 @@ this.mushroom_grove_location <- this.inherit("scripts/entity/world/attached_loca
 				P = 1.0,
 				S = "weapons/named/legend_named_sickle"
 			});
+			_list.push({
+				R = 30,
+				P = 1.0,
+				S = "weapons/named/legend_named_shovel"
+			});
 		}
 
 		}

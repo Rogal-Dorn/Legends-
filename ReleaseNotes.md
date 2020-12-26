@@ -4416,6 +4416,15 @@ Mason is now educated and intelligent, instead of fast
 All traits are now gender neutral
 Raiders and Veterans now have a chance to spawn with infantry axe
 
+**Weapons**
+New named Infantry Axe (@GRIBABAS)
+New named Parrying dagger (@GRIBABAS)
+New named Shovel (@GRIBABAS)
+New named Noble sword variant (@GRIBABAS)
+New named Great sword variant (@GRIBABAS)
+New hammer graphics (@GRIBABAS)
+New sickle graphics (@GRIBABAS)
+
 **Noble scenario**
 Noble commander is now a drunkard with low hitpoints and poor armor
 Each of the company has background text, updated helms and traits
@@ -4423,7 +4432,7 @@ Can recruit in the drunken noble event
 
 **Armor Tweaks**
 Adds Enclave's Armor mod into Legends (added to layer system aswell)
-Added rune layers for helmets (same as armors)
+Added rune layers for helmets (similiar to rune system on armors)
 Helmet layers now have a visual for named layer
 Rebalance all barbarian helmet layers (+ adds a few new layers)
 Rebalance all orc and goblin helmet layers (+ adds a few new layers)

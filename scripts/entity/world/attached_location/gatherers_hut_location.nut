@@ -125,6 +125,11 @@ this.gatherers_hut_location <- this.inherit("scripts/entity/world/attached_locat
 				P = 1.0,
 				S = "weapons/named/legend_named_sickle"
 			});
+			_list.push({
+				R = 0,
+				P = 1.0,
+				S = "weapons/named/legend_named_shovel"
+			});
 		}
 	}
 

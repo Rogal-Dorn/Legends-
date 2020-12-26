@@ -116,6 +116,11 @@ this.herbalists_grove_location <- this.inherit("scripts/entity/world/attached_lo
 				P = 1.0,
 				S = "weapons/named/legend_named_sickle"
 			});
+			_list.push({
+				R = 0,
+				P = 1.0,
+				S = "weapons/named/legend_named_shovel"
+			});
 		}
 		else if (_id == "building.armorsmith")
 		{

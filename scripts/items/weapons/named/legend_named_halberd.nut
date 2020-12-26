@@ -34,7 +34,7 @@ this.legend_named_halberd <- this.inherit("scripts/items/weapons/named/named_wea
 
 	function onEquip()
 	{
-		this.weapon.onEquip();
+		this.named_weapon.onEquip();
 		local impale = this.new("scripts/skills/actives/impale");
 		impale.m.Icon = "skills/active_54.png";
 		impale.m.IconDisabled = "skills/active_54_sw.png";

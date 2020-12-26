@@ -21,7 +21,7 @@
 	o.m.PossibleSkills.push("actives.legend_boar_gore");
 	o.m.PossibleSkills.push("actives.legend_rat_claws");
 	o.m.PossibleSkills.push("actives.legend_rat_bite");
-
+	o.m.PossibleSkills.push("actives.legend_en_garde");
 });
 
 ::mods_hookNewObject("ai/tactical/behaviors/ai_attack_bow", function(o) {
@@ -122,4 +122,8 @@
 
 ::mods_hookNewObject("ai/tactical/behaviors/ai_move_tentacle", function(o) {
     o.m.PossibleSkills.push("actives.legend_stollwurm_move");
+})
+
+::mods_hookNewObject("ai/tactical/behaviors/ai_attack_puncture", function(o) {
+    o.m.PossibleSkills.push("actives.puncture_parry_dagger");
 })

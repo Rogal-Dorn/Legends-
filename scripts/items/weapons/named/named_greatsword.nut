@@ -5,7 +5,7 @@ this.named_greatsword <- this.inherit("scripts/items/weapons/named/named_weapon"
 	function create()
 	{
 		this.named_weapon.create();
-		this.m.Variant = this.Math.rand(1, 3);
+		this.m.Variant = this.Math.rand(1, 4);
 		this.updateVariant();
 		this.m.ID = "weapon.named_greatsword";
 		this.m.NameList = this.Const.Strings.GreatswordNames;

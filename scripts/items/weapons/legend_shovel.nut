@@ -28,7 +28,7 @@ this.legend_shovel <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ArmorDamageMult = 0.45;
 		this.m.DirectDamageMult = 0.4;
 		this.m.DirectDamageAdd = -0.2;
-		this.m.ChanceToHitHead = 10;
+		this.m.ChanceToHitHead = 5;
 	}
 
 	function onEquip()
@@ -39,16 +39,10 @@ this.legend_shovel <- this.inherit("scripts/items/weapons/weapon", {
 		b.m.IconDisabled = "skills/shovel_bash_bw.png";
 		this.addSkill(b);
 
-		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_specialist_shovel_skill")) 
+		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_specialist_shovel_skill"))
 		{
 			this.addSkill(this.new("scripts/skills/actives/knock_out"));
 		}
-	}
-
-	function onUpdateProperties( _properties )
-	{
-		this.weapon.onUpdateProperties(_properties);
-		_properties.HitChance[this.Const.BodyPart.Head] += 5;
 	}
 
 });
