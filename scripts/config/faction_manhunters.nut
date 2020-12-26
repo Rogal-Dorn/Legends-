@@ -13,7 +13,7 @@ if (!("Actor" in gt.Const.Tactical))
 gt.Const.Tactical.Actor.SatoManhunter <- {
 	XP = 225,
 	ActionPoints = 9,
-	Hitpoints = 75,
+	Hitpoints = 80,
 	Bravery = 60,
 	Stamina = 110,
 	MeleeSkill = 75,
@@ -33,7 +33,7 @@ gt.Const.Tactical.Actor.SatoManhunter <- {
 gt.Const.Tactical.Actor.SatoManhunterVeteran <- {
 	XP = 350,
 	ActionPoints = 9,
-	Hitpoints = 95,
+	Hitpoints = 105,
 	Bravery = 70,
 	Stamina = 115,
 	MeleeSkill = 75,

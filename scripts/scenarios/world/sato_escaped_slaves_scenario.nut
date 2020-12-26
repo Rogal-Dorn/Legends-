@@ -227,7 +227,7 @@ this.sato_escaped_slaves_scenario <- this.inherit("scripts/scenarios/world/start
 		this.World.Assets.m.BusinessReputation = 0;
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/rice_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/rice_item"));
-		this.World.Assets.m.Money = this.World.Assets.m.Money - 500;
+		this.World.Assets.m.Money = this.Math.max(this.World.Assets.m.Money - 600, 0);
 	}
 
 	function addRandomEquipment(items, shieldSpecific = false) {

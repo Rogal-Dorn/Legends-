@@ -89,6 +89,7 @@ this.sato_manhunter <- this.inherit("scripts/entity/tactical/human", {
         {
             weapons.extend([
 				"weapons/scimitar",
+				"weapons/scimitar",
 				"weapons/oriental/light_southern_mace",
 				"weapons/oriental/light_southern_mace",
                 "weapons/battle_whip"
@@ -108,6 +109,7 @@ this.sato_manhunter <- this.inherit("scripts/entity/tactical/human", {
 		if (this.World.getTime().Days > 18)
 		{
 			armor.extend([
+				[1, "mail_shirt"],
 				[1, "oriental/mail_and_lamellar_plating"]
 			]);
 		}

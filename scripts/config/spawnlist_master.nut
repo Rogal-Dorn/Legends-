@@ -1424,7 +1424,7 @@ gt.Const.World.Spawn.Troops <- {
 	},
 	SatoManhunterVeteran = {
 		ID = this.Const.EntityType.SatoManhunterVeteran,
-		Variant = 0,
+		Variant = 1,
 		Strength = 25,
 		Cost = 20,
 		Row = 0,
@@ -1442,7 +1442,7 @@ gt.Const.World.Spawn.Troops <- {
 	},
 	SatoManhunterVeteranRanged = {
 		ID = this.Const.EntityType.SatoManhunterVeteran,
-		Variant = 0,
+		Variant = 1,
 		Strength = 25,
 		Cost = 28,
 		Row = 1,
