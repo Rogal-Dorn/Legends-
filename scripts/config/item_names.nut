@@ -970,7 +970,7 @@ gt.Const.Strings.LegendCatNames <- [
 	"Tomboy"
 ];
 
-gt.Const.Strings.LegendArmorLayers = [
+gt.Const.Strings.LegendArmorLayers <- [
 "Beast",
 "Berserker",
 "Wolf",
