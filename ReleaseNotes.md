@@ -4415,6 +4415,7 @@ Assassin commander is a combat background
 Mason is now educated and intelligent, instead of fast
 All traits are now gender neutral
 Raiders and Veterans now have a chance to spawn with infantry axe
+Adds new names for settlements (Luft)
 
 **Weapons**
 New named Infantry Axe (@GRIBABAS)

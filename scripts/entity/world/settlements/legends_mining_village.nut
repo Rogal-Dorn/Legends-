@@ -11,6 +11,9 @@ this.legends_mining_village <- this.inherit("scripts/entity/world/settlements/le
 			"Gronenberg",
 			"Eisenstein",
 			"Fuchsberg",
+                        "Dunkelspitzen,"
+                        "Hochland,"
+                        "Felsig,"
 			"Reinberg",
 			"Kaltenhof",
 			"Jaderberg",
