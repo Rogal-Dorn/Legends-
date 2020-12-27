@@ -36,18 +36,10 @@ this.blacksmith_follower <- this.inherit("scripts/retinue/follower", {
 		{
 			if (bro.getSkills().hasSkill("perk.legend_field_repairs"))
 			{
-                BGs += 1;
+                this.m.Requirements[0].IsSatisfied = true;
+				return;
 			}
 		}
-        if (BGs >= 1)
-        {
-            this.m.Requirements[0].IsSatisfied = true;
-
-        }
-        else {
-            this.m.Requirements[1].IsSatisfied = false;
-		}
-
 	}
 
 });

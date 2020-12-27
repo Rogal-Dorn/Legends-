@@ -41,6 +41,7 @@ this.recruiter_follower <- this.inherit("scripts/retinue/follower", {
 			if (bro.getSkills().hasSkill("perk.inspiring_presence"))
 			{
 				this.m.Requirements[0].IsSatisfied = true;
+				return;
 			}
 		}
 	}

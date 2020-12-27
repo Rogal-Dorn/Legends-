@@ -37,6 +37,7 @@ this.minstrel_follower <- this.inherit("scripts/retinue/follower", {
 			if (bro.getSkills().hasSkill("perk.legend_entice"))
 			{
 				this.m.Requirements[0].IsSatisfied = true;
+				return;
 			}
 		}
 	}

@@ -39,6 +39,7 @@ this.quartermaster_follower <- this.inherit("scripts/retinue/follower", {
 			if (bro.getSkills().hasSkill("perk.legend_skillful_stacking"))
 			{
 				this.m.Requirements[0].IsSatisfied = true;
+				return;
 			}
 		}
 	}
