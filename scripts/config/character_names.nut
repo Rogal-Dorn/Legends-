@@ -1700,13 +1700,39 @@ gt.Const.Strings.SatoManhunterVeteranTitles <- [
 	"the Dog"
 ]
 
-gt.Const.Strings.PeasantButcherNames <- [ //todo: peasant butcher names
-	"Mark",
-	"Timothy",
-	"Jackson"
+gt.Const.Strings.PeasantButcherNames <- [
+	"Frederick",
+	"Jason",
+	"Candyman",
+	"Strapface",
+	"Slappy",
+	"Creepshow",
+	"Elmer",
+	"Chucky",
+	"Bates",
+	"Igor",
+	"Ebriah",
+	"Billy",
+	"Patrick",
+	"Cady",
+	"Chapman"
 ]
-gt.Const.Strings.PeasantButcherTitles <- [ //todo: peasant butcher names
-	"the Slasher",
-	"the Ripper",
-	"the Hash-Slinging Slasher"
+gt.Const.Strings.PeasantButcherTitles <- [
+	"The Psycho",
+	"The Thirteenth",
+	"The Peeper",
+	"The Scream",
+	"The Massacre",
+	"The Intruder",
+	"The Burning",
+	"The Savage",
+	"The Terror",
+	"Valentine",
+	"The Sleeper",
+	"The Maddened",
+	"The Dawn",
+	"The Protege",
+	"The Prowler",
+	"The Pint-Sized Slasher",
+	"The Hash-Slinging Slasher"
 ]
