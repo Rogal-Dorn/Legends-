@@ -1,5 +1,24 @@
-<brush name="gfx/legend_enemies.png" version="17">
 
+from string import Template
+from shutil import copyfile
+import os
+
+Normal = '<sprite id="$name" offsetY="$offsetY" ic="FF4E5053" width="$w" height="$h" img="$name_path" left="$left" right="$right" top="$top" bottom="$bottom" />\n'
+Damaged = '<sprite id="$damaged" offsetY="$offsetY" ic="FF4E5053" width="$w" height="$h" img="$damaged_path" left="$left" right="$right" top="$top" bottom="$bottom" />\n'
+Dead = '<sprite id="$dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="$dead_path" left="-10" right="46" top="-46" bottom="4" />\n'
+
+GoblinHelms = [Normal, Damaged, Dead]
+
+#Moving Brush:
+#DOWN :  bigger negative
+#UP : smaller negative
+brush_only_layers = [
+    {"template": GoblinHelms, "entity":"goblins", "name": "bust_goblin_04_helmet", "min" : 4, "max" : 15, "w": 60, "h": 80,  "left": -36, "right" :24, "top": -28, "bottom": 52, "offsetY" : 35},
+    {"template": GoblinHelms, "entity":"goblins", "name": "bust_goblin_01_helmet", "min" : 4, "max" : 20, "w": 60, "h": 80,  "left": -36, "right" :24, "top": -28, "bottom": 52, "offsetY" : 35},
+    {"template": GoblinHelms, "entity":"goblins", "name": "bust_goblin_02_helmet", "min" : 20, "max" : 26, "w": 60, "h": 80,  "left": -36, "right" :24, "top": -28, "bottom": 52, "offsetY" : 35}
+]
+
+enemies = r"""
 
   <sprite id="legend_orc_behemoth_body_01" offsetX="-5" offsetY="35" ic="FF555758" width="174" height="214" img="entity\orcs\legend_orc_behemoth_body_01.png" left="-68" right="82" top="-81" bottom="90" />
   <sprite id="legend_orc_behemoth_body_01_bloodied" offsetX="-5" offsetY="35" ic="FF171844" width="174" height="214" img="entity\orcs\legend_orc_behemoth_body_01_bloodied.png" left="-68" right="82" top="-81" bottom="90" />
@@ -339,112 +358,55 @@
   <sprite id="mummy_royal_plate_01_damaged" offsetY="35" ic="FF19222C" width="104" height="142" img="entity\undead\armor\mummy_royal_plate_01_damaged.png" left="-42" right="44" top="-50" bottom="10" />
   <sprite id="mummy_royal_plate_01_dead" offsetX="6" offsetY="10" f="64FE" ic="FF1B252F" width="191" height="185" img="entity\undead\armor\mummy_royal_plate_01_dead.png" left="-41" right="43" top="-45" bottom="11" />
 
-<sprite id="bust_goblin_04_helmet_04" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_04_helmet_04.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_04_helmet_05" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_04_helmet_05.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_04_helmet_06" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_04_helmet_06.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_04_helmet_07" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_04_helmet_07.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_04_helmet_08" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_04_helmet_08.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_04_helmet_09" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_04_helmet_09.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_04_helmet_10" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_04_helmet_10.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_04_helmet_11" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_04_helmet_11.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_04_helmet_12" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_04_helmet_12.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_04_helmet_13" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_04_helmet_13.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_04_helmet_14" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_04_helmet_14.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_04_helmet_15" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_04_helmet_15.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_04_helmet_04_damaged" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_04_helmet_04_damaged.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_04_helmet_05_damaged" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_04_helmet_05_damaged.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_04_helmet_06_damaged" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_04_helmet_06_damaged.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_04_helmet_07_damaged" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_04_helmet_07_damaged.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_04_helmet_08_damaged" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_04_helmet_08_damaged.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_04_helmet_09_damaged" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_04_helmet_09_damaged.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_04_helmet_10_damaged" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_04_helmet_10_damaged.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_04_helmet_11_damaged" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_04_helmet_11_damaged.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_04_helmet_12_damaged" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_04_helmet_12_damaged.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_04_helmet_13_damaged" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_04_helmet_13_damaged.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_04_helmet_14_damaged" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_04_helmet_14_damaged.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_04_helmet_15_damaged" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_04_helmet_15_damaged.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_04_helmet_04_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_04_helmet_05_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_04_helmet_06_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_04_helmet_07_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_04_helmet_08_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_04_helmet_09_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_04_helmet_10_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_04_helmet_11_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_04_helmet_12_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_04_helmet_13_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_04_helmet_14_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_04_helmet_15_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_01_helmet_04" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_01_helmet_04.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_01_helmet_05" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_01_helmet_05.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_01_helmet_06" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_01_helmet_06.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_01_helmet_07" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_01_helmet_07.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_01_helmet_08" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_01_helmet_08.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_01_helmet_09" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_01_helmet_09.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_01_helmet_10" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_01_helmet_10.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_01_helmet_11" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_01_helmet_11.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_01_helmet_12" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_01_helmet_12.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_01_helmet_13" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_01_helmet_13.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_01_helmet_14" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_01_helmet_14.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_01_helmet_15" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_01_helmet_15.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_01_helmet_16" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_01_helmet_16.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_01_helmet_17" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_01_helmet_17.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_01_helmet_18" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_01_helmet_18.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_01_helmet_19" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_01_helmet_19.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_01_helmet_20" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_01_helmet_20.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_01_helmet_04_damaged" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_01_helmet_04_damaged.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_01_helmet_05_damaged" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_01_helmet_05_damaged.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_01_helmet_06_damaged" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_01_helmet_06_damaged.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_01_helmet_07_damaged" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_01_helmet_07_damaged.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_01_helmet_08_damaged" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_01_helmet_08_damaged.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_01_helmet_09_damaged" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_01_helmet_09_damaged.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_01_helmet_10_damaged" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_01_helmet_10_damaged.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_01_helmet_11_damaged" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_01_helmet_11_damaged.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_01_helmet_12_damaged" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_01_helmet_12_damaged.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_01_helmet_13_damaged" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_01_helmet_13_damaged.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_01_helmet_14_damaged" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_01_helmet_14_damaged.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_01_helmet_15_damaged" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_01_helmet_15_damaged.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_01_helmet_16_damaged" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_01_helmet_16_damaged.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_01_helmet_17_damaged" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_01_helmet_17_damaged.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_01_helmet_18_damaged" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_01_helmet_18_damaged.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_01_helmet_19_damaged" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_01_helmet_19_damaged.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_01_helmet_20_damaged" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_01_helmet_20_damaged.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_01_helmet_04_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_01_helmet_05_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_01_helmet_06_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_01_helmet_07_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_01_helmet_08_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_01_helmet_09_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_01_helmet_10_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_01_helmet_11_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_01_helmet_12_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_01_helmet_13_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_01_helmet_14_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_01_helmet_15_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_01_helmet_16_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_01_helmet_17_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_01_helmet_18_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_01_helmet_19_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_01_helmet_20_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_02_helmet_20" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_02_helmet_20.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_02_helmet_21" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_02_helmet_21.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_02_helmet_22" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_02_helmet_22.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_02_helmet_23" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_02_helmet_23.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_02_helmet_24" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_02_helmet_24.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_02_helmet_25" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_02_helmet_25.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_02_helmet_26" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_02_helmet_26.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_02_helmet_20_damaged" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_02_helmet_20_damaged.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_02_helmet_21_damaged" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_02_helmet_21_damaged.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_02_helmet_22_damaged" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_02_helmet_22_damaged.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_02_helmet_23_damaged" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_02_helmet_23_damaged.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_02_helmet_24_damaged" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_02_helmet_24_damaged.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_02_helmet_25_damaged" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_02_helmet_25_damaged.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_02_helmet_26_damaged" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_02_helmet_26_damaged.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_02_helmet_20_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_02_helmet_21_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_02_helmet_22_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_02_helmet_23_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_02_helmet_24_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_02_helmet_25_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_02_helmet_26_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-</brush>
+"""
+
+def makeBrushes():
+    dirpath = os.path.join(os.path.dirname(os.path.abspath(__file__)), "unpacked", "legend_enemies")
+    if not os.path.exists(dirpath):
+        os.makedirs(dirpath)
+
+    filepath = os.path.join(dirpath, "metadata.xml")
+    F = open(filepath, "w")
+    F.write('<brush name="gfx/legend_enemies.png" version="17">\n')
+    F.write(enemies)
+
+    for d in brush_only_layers:
+        names = [d["name"]]
+        if "min" in d:
+            names = []
+            for i in range(d["min"], d["max"] + 1):
+                ind = "0" + str(i) if i < 10 else str(i)
+                names.append(d["name"] + "_" + ind)
+
+        for t in d["template"]:
+            for name in names:
+                opts = dict(
+                    name=name,
+                    damaged= name + "_damaged",
+                    dead= name + "_dead",
+                    w=d["w"],
+                    h=d["h"],
+                    left=d["left"],
+                    right=d["right"],
+                    top=d["top"],
+                    bottom=d["bottom"],
+                    offsetY=d["offsetY"],
+                    name_path=os.path.join("entity", d["entity"], name + ".png"),
+                    damaged_path=os.path.join("entity", d["entity"], name + "_damaged.png"),
+                    dead_path=os.path.join("entity", d["entity"], "bust_goblin_04_helmet_00_dead.png")
+                    #dead_path=os.path.join("..", "entity", "goblins", name + "_dead.png")
+                )
+                s = Template(t)
+                text = s.substitute(opts)
+                text.replace("/", "\\")
+                F.write(text)
+    F.write('</brush>')
+    F.close()
+
+def main():
+    makeBrushes()
+
+main()
+
+
+
