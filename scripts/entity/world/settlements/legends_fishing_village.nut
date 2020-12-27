@@ -7,6 +7,10 @@ this.legends_fishing_village <- this.inherit("scripts/entity/world/settlements/l
 			"Seedorf",
 			"Kielseng",
 			"Meierwik",
+                        "Fischschlachten,"
+                        "Schiffdrucken,"
+                        "Schiffbauen,"
+                        "Nassort,"
 			"Sanddorf",
 			"Sandwik",
 			"Holnis",
