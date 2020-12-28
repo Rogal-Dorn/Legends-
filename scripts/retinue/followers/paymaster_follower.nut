@@ -36,6 +36,7 @@ this.paymaster_follower <- this.inherit("scripts/retinue/follower", {
 			if (bro.getSkills().hasSkill("perk.legend_barter_paymaster"))
 			{
 				this.m.Requirements[0].IsSatisfied = true;
+				return;
 			}
 		}
 	}

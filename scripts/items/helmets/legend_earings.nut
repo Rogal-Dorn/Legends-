@@ -3,7 +3,7 @@ this.legend_earings <- this.inherit("scripts/items/helmets/helmet", {
 	function create()
 	{
 		this.helmet.create();
-		this.m.ID = "armor.head.legend_southern_veil";
+		this.m.ID = "armor.head.legend_earings";
 		this.m.Name = "Earings";
 		this.m.Description = "Earings made of delicate metal";
 		this.m.ShowOnCharacter = true;
@@ -32,8 +32,8 @@ this.legend_earings <- this.inherit("scripts/items/helmets/helmet", {
 		this.m.Sprite = "earings_0" + variant;
 		this.m.SpriteDamaged = "earings_0" + variant + "_damaged";
 		this.m.SpriteCorpse = "earings_0" + variant + "_dead";
-		this.m.IconLarge = "armor/inventory_earings_0" + variant + ".png";
-		// this.m.Icon = "armor/icon_earings_0" + variant + ".png";
+		this.m.IconLarge = "";
+		this.m.Icon = "helmets/icon_earings_0" + variant + ".png";
 	}
 
 });

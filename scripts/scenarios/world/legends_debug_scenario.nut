@@ -295,7 +295,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			if (item.m.Variants.len() == 0)
 			{
 				this.logInfo("Adding " + a);
-				//this.World.Assets.getStash().add(item);
+				this.World.Assets.getStash().add(item);
 				continue;
 			}
 
@@ -304,7 +304,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 				this.logInfo("Adding " + a + " :: " + i);
 				local vitem =  this.new("scripts/items/legend_armor/" + a);
 				vitem.setVariant(item.m.Variants[i]);
-				//this.World.Assets.getStash().add(vitem);
+				this.World.Assets.getStash().add(vitem);
 			}
 		}
 
@@ -350,6 +350,10 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		// }
 
 		local helmets = [
+			"runes/legend_rune_bravery",
+			"runes/legend_rune_clarity",
+			"runes/legend_rune_luck",
+
 			"hood/legend_helmet_goblin_scarf",
 			"hood/legend_helmet_barb_chain_scarf",
 			"hood/legend_helmet_rotten_chain_scarf",
@@ -377,6 +381,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"hood/legend_helmet_southern_open_chain_hood",
 			"hood/legend_helmet_southern_open_hood",
 			"hood/legend_helmet_cloth_cap",
+			"hood/legend_helmet_enclave_bevor",
 
 			"helm/legend_helmet_ancient_conic_helm",
 			"helm/legend_helmet_ancient_kettle",
@@ -439,6 +444,13 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"helm/legend_helmet_rotten_flat_top_face_mask",
 			"helm/legend_helmet_rotten_great_helm",
 
+			"helm/legend_helmet_enclave_great_bascinet",
+			"helm/legend_helmet_enclave_kettle",
+			"helm/legend_helmet_enclave_skullcap",
+			"helm/legend_helmet_enclave_armet",
+
+			"top/legend_helmet_enclave_great_jaw",
+
 			"top/legend_helmet_orc_leather_mask",
 			"top/legend_helmet_orc_horn_mask",
 			"top/legend_helmet_orc_metal_mask",
@@ -484,10 +496,10 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"top/legend_helmet_fencer_hat",
 			"top/legend_helmet_hood_cloth_square",
 
-			"vanity/legend_helmet_southern_noble_crown",
-			"vanity/legend_helmet_southern_noble_hat",
+
+			//"vanity/legend_helmet_southern_noble_hat",
 			"vanity/legend_helmet_southern_noble_turban",
-			"vanity/legend_helmet_southern_noble_crown",
+			//"vanity/legend_helmet_southern_noble_crown",
 			"vanity/legend_helmet_southern_helm_tailed",
 			"vanity/legend_helmet_southern_silk_headscarf",
 			"vanity/legend_helmet_southern_feathered_turban",
@@ -581,7 +593,8 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		"helmets/legend_goblin_leader_helmet",
 		"helmets/legend_goblin_shaman_helmet",
 		"helmets/legend_unhold_helmet_heavy",
-		"helmets/legend_unhold_helmet_light"
+		"helmets/legend_unhold_helmet_light",
+		"helmets/legend_orc_berserker_helmet"
 		]
 
 		foreach(h in asloots)

@@ -45,8 +45,10 @@ mkdir -p "$BBDir\scripts\\items\\legend_armor"
 cp -R legend_armor/. "$BBDir\\scripts\\items\\legend_armor"
 handleExit
 
-rm -rf brushes
-mkdir -p "brushes"
+echo "Building enemies..."
+python make_legend_enemies.py
+handleExit
+
 declare -a BRUSHES=(
 "entity_blood"
 "legend_characters"

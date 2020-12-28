@@ -83,8 +83,8 @@ this.legend_helmet_nach_helm <- this.inherit("scripts/items/legend_helmets/legen
 		this.m.Sprite = "legendhelms_nach_helm" + "_" + variant;
 		this.m.SpriteDamaged = "legendhelms_nach_helm" + "_" + variant + "_damaged";
 		this.m.SpriteCorpse = "legendhelms_nach_helm" + "_" + variant + "_dead";
-		this.m.IconLarge = "";
 		this.m.Icon = "legend_helmets/inventory_nach_helm" + "_" + variant + ".png";
+		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = this.m.Icon;
 		this.m.OverlayIconLarge = this.m.OverlayIcon;
 	}

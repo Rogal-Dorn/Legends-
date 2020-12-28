@@ -401,7 +401,7 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
 				consumed = modifiers.Craft;
 			}
 
-			r.Item.setArmor(r.Item.getRepair() - consumed);
+			r.Item.onRepair(r.Item.getRepair() - consumed);
 			modifiers.Craft -= consumed;
 			this.m.PointsSalvaged += consumed;
 			local created = consumed * modifiers.Consumption;
@@ -415,12 +415,25 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
 
 				if (myItem.getRuneVariant() != 0)
 				{
-					if (this.World.LegendsMod.Configs().LegendArmorsEnabled() && (myItem.getRuneVariant() == 21 || myItem.getRuneVariant() == 22 || myItem.getRuneVariant() == 23))
+
+					if (this.World.LegendsMod.Configs().LegendArmorsEnabled() && (myItem.getRuneVariant() == 21 || myItem.getRuneVariant() == 22 || myItem.getRuneVariant() == 23 || myItem.getRuneVariant() == 11 || myItem.getRuneVariant() == 12 || myItem.getRuneVariant() == 13))
 					{
 						local rune;
 
 						switch(myItem.getRuneVariant())
 						{
+						case 11:
+							rune = this.new("scripts/items/legend_helmets/runes/legend_rune_clarity");
+							break;
+
+						case 12:
+							rune = this.new("scripts/items/legend_helmets/runes/legend_rune_bravery");
+							break
+
+						case 13:
+							rune = this.new("scripts/items/legend_helmets/runes/legend_rune_luck");
+							break
+
 						case 21:
 							rune = this.new("scripts/items/legend_armor/runes/legend_rune_endurance");
 							break;
@@ -565,8 +578,6 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
 				}
 
 				index = ++index;
-				index = index;
-				index = index;
 			}
 
 			s.Item.setToBeSalvaged(true, index);
@@ -604,8 +615,6 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
 				}
 
 				index = ++index;
-				index = index;
-				index = index;
 			}
 
 			s.Item.setToBeSalvaged(false, 0);

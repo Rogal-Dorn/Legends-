@@ -32,7 +32,7 @@ this.legend_named_voulge <- this.inherit("scripts/items/weapons/named/named_weap
 
 	function onEquip()
 	{
-		this.weapon.onEquip();
+		this.named_weapon.onEquip();
 		this.addSkill(this.new("scripts/skills/actives/legend_voulge_cleave"));
 		this.addSkill(this.new("scripts/skills/actives/legend_voulge_decapitate"));
 	}

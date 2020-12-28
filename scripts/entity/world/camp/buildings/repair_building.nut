@@ -304,7 +304,7 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 	}
 
 	function getUpdateText()
-	{	
+	{
         if (this.m.PointsNeeded == 0)
         {
             return "No repairs queued";
@@ -344,10 +344,10 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 
         local modifiers = this.getModifiers();
 		modifiers.Craft = this.Math.round(modifiers.Craft); //important
-		
+
 		local roster = this.World.getPlayerRoster().getAll(); // so that repair perks have effect while camping too
-		local perkMod = 1.0; 
-		
+		local perkMod = 1.0;
+
 		foreach( bro in roster )
 		{
 			local items = bro.getItems().getAllItems();
@@ -365,7 +365,7 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 					perkMod = this.Math.maxf(perkMod - skill.getModifier() * 0.003, 0.5);
 				}
 			}
-		}		
+		}
         foreach (i, r in this.m.Repairs)
         {
             if (r == null)

@@ -112,7 +112,7 @@ this.sato_manhunter_veteran <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 		}
 
-		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Offhand))
+		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Offhand) && this.Math.rand(1, 100) <= 90)
 		{
 			this.m.Items.equip(this.new("scripts/items/tools/throwing_net"));
 		}
@@ -125,28 +125,28 @@ this.sato_manhunter_veteran <- this.inherit("scripts/entity/tactical/human", {
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Body))
 		{
 			local armors = [
-				[1, "armor/oriental/southern_long_mail_with_padding"],
-				[1, "armor/mail_hauberk"],
-				[1, "armor/reinforced_mail_hauberk"],
-				[1, "armor/lamellar_harness"]
+				[1, "oriental/southern_long_mail_with_padding"],
+				[1, "mail_hauberk"],
+				[1, "reinforced_mail_hauberk"],
+				[1, "lamellar_harness"]
 			];
 
 			if (this.Const.DLC.Unhold)
 			{
 				armors.extend([
-					[1, "armor/leather_scale_armor"],
-					[1, "armor/footman_armor"]
+					[1, "leather_scale_armor"],
+					[1, "footman_armor"]
 				]);
 			}
 
 			if (this.World.getTime().Days <= 50) {
 				armors.extend([
-					[1, "armor/oriental/southern_long_mail_with_padding"]
+					[1, "oriental/southern_long_mail_with_padding"]
 				]);
 			} else {
 				armors.extend([
-					[1, "armor/heavy_lamellar_armor"],
-					[1, "armor/oriental/padded_mail_and_lamellar_hauberk"]
+					[1, "heavy_lamellar_armor"],
+					[1, "oriental/padded_mail_and_lamellar_hauberk"]
 				]);
 			}
 
@@ -156,11 +156,16 @@ this.sato_manhunter_veteran <- this.inherit("scripts/entity/tactical/human", {
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Head))
 		{
 			local helmets = [
-				[1, "oriental/spiked_skull_cap_with_mail"],
-				[1, "oriental/southern_helmet_with_coif"],
-				[1, "oriental/heavy_lamellar_helmet"],
-				[1, "oriental/turban_helmet"]
+				[2, "oriental/spiked_skull_cap_with_mail"],
+				[2, "oriental/southern_helmet_with_coif"]
 			];
+
+			if (this.World.getTime().Days > 50) {
+				helmets.extend([
+					[1, "oriental/heavy_lamellar_helmet"],
+					[1, "oriental/turban_helmet"]
+				]);
+			}
 
 			if (this.Const.DLC.Wildmen)
 			{
