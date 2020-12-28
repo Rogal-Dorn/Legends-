@@ -74,17 +74,16 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		return value;
 	}
 
-	function setArmor( _a )
+	function addArmor( _a)
 	{
-		if (_a <= this.m.ConditionMax)
+		if (_a + this.m.Condition <= this.m.ConditionMax)
 		{
-			this.m.Condition = _a;
-			this.updateAppearance();
-			return;
+			this.m.Condition += _a
+			return
 		}
 
-		local delta = _a - this.m.ConditionMax;
 		this.m.Condition = this.m.ConditionMax;
+		local delta = _a - (this.m.ConditionMax - this.m.Condition);
 
 		foreach( u in this.m.Upgrades )
 		{
@@ -93,7 +92,26 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 				continue;
 			}
 
-			delta = u.onRepair(delta);
+			delta = u.addArmor(delta);
+
+			if (delta <= 0)
+			{
+				break;
+			}
+		}
+	}
+
+	function removeArmor( _a)
+	{
+		local delta = _a
+		for (local i = this.Const.Items.ArmorUpgrades.COUNT - 1; i >= 0; i = --i)
+		{
+			if (this.m.Upgrades[i] == null)
+			{
+				continue;
+			}
+
+			delta = this.m.Upgrades[i].removeArmor(delta);
 
 			if (delta <= 0)
 			{
@@ -101,7 +119,37 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 			}
 		}
 
+		if (delta > 0)
+		{
+			this.m.Condition = this.Math.maxf(0, this.m.Condition - delta);
+		}
+	}
+
+	function setCondition( _a )
+	{
+		local oldValue = this.getArmor()
+		//Adding armor
+		if (oldValue <= _a)
+		{
+			this.addArmor(_a - oldValue);
+		}
+		else
+		{
+			this.removeArmor(oldValue - _a)
+		}
+
 		this.updateAppearance();
+	}
+
+	function setArmor( _a )
+	{
+		this.setCondition( _a)
+	}
+
+	function onRepair( _a)
+	{
+		this.setArmor(_a);
+		return 0;
 	}
 
 	function isAmountShown()

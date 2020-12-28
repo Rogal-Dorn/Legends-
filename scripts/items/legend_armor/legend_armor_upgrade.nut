@@ -226,28 +226,49 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 		this.Sound.play(this.m.ImpactSound[0], this.Const.Sound.Volume.Inventory);
 	}
 
-	function onRepair(_a)
+	function addArmor( _a)
 	{
-		return this.setCondition(_a);
+		if (_a + this.m.Condition <= this.m.ConditionMax)
+		{
+			this.m.Condition += _a
+			return 0
+		}
+
+		this.m.Condition = this.m.ConditionMax;
+		return _a - (this.m.ConditionMax - this.m.Condition);
+	}
+
+	function removeArmor( _a)
+	{
+		if (this.m.Condition - _a >= 0)
+		{
+			this.m.Condition -= _a
+			return 0
+		}
+		local delta = _a - this.m.Condition
+		this.m.Condition = 0;
+		return delta;
+	}
+
+	function onRepair( _a)
+	{
+		this.setCondition(_a);
 	}
 
 	function setCondition( _a )
 	{
-		local delta = 0;
-
-		if (_a > this.m.ConditionMax)
+		if (this.m.Condition <= _a)
 		{
-			this.m.Condition = this.m.ConditionMax;
-			delta = _a - this.m.ConditionMax;
+			this.addArmor(_a - this.m.Condition);
 		}
 		else
 		{
-			this.m.Condition = _a;
+			this.removeArmor(this.m.Condition - _a)
 		}
 
 		if (this.m.Armor == null)
 		{
-			return delta;
+			return
 		}
 
 		if (this.m.Armor.getContainer() != null && this.m.Armor.isEquipped())
@@ -255,8 +276,6 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 			local app = this.m.Armor.getContainer().getAppearance();
 			this.updateAppearance(app);
 		}
-
-		return delta;
 	}
 
 	function getRepair()
