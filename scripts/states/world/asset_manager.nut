@@ -1111,7 +1111,7 @@ this.asset_manager <- {
 			 		if (item.getRepair() < item.getRepairMax())
 			 		{
 						local d = this.Math.ceil(this.Math.minf(this.Const.World.Assets.ArmorPerHour * this.Const.Difficulty.RepairMult[this.World.Assets.getEconomicDifficulty()] * this.m.RepairSpeedMult, item.getRepairMax() - item.getRepair())); //rounding is crucial because otherwise it repairs nothing but eats tools if below 1, and in any case repair value has to be a round value
-						item.onRepair(item.getRepair() + d); 
+						item.onRepair(item.getRepair() + d);
 						this.m.ArmorParts = this.Math.maxf(0, this.m.ArmorParts - d * this.m.ArmorPartsPerArmor * perkMod); // * this.Const.Difficulty.RepairMult[this.World.Assets.getEconomicDifficulty()] - doesn't make sense here, it was already used when calculating d
 						updateBro = true;
 			 		}
@@ -1125,11 +1125,11 @@ this.asset_manager <- {
 			 		{
 			 			break;
 			 		}
-					
+
 					if (updateBro)
 					{
 						break; //so each bro only repairs 1 item at a time, otherwise too good, makes camp redundant
-					}					
+					}
 			 	}
 
 			 	if (updateBro)
@@ -1145,7 +1145,7 @@ this.asset_manager <- {
 				if (this.isCamping()) //disable in camp, otherwise mess
 				{
 					break;
-				}			 
+				}
 			 	if (this.m.ArmorParts == 0)
 			 	{
 			 		break;
@@ -1164,7 +1164,7 @@ this.asset_manager <- {
 			 		if (item.getRepair() < item.getRepairMax())
 			 		{
 						local d = this.Math.ceil(this.Math.minf(stashmaxrepairpotential, item.getRepairMax() - item.getRepair()));
-						item.onRepair(item.getRepair() + d); 
+						item.onRepair(item.getRepair() + d);
 						this.m.ArmorParts = this.Math.maxf(0, this.m.ArmorParts - d * this.m.ArmorPartsPerArmor); // * this.Const.Difficulty.RepairMult[this.World.Assets.getEconomicDifficulty()]
 						stashmaxrepairpotential = stashmaxrepairpotential - d;
 			 		}
@@ -2408,12 +2408,12 @@ this.asset_manager <- {
 
 			ret.TerrainModifiers[8][0] = "Stepps";
 			ret.TerrainModifiers[8][1] += terrains[15] * 100.0;
-			
+
 			ret.TerrainModifiers[9][0] = "Deserts";
 			ret.TerrainModifiers[9][1] += terrains[17] * 100.0;
 
 			ret.TerrainModifiers[10][0] = "Oases";
-			ret.TerrainModifiers[10][1] += terrains[18] * 100.0;			
+			ret.TerrainModifiers[10][1] += terrains[18] * 100.0;
 
 			ret.Brothers.push({
 				Name = bro.getName(),

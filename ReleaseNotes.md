@@ -4459,3 +4459,5 @@ Fixes arena contract dropping an item with a named layer and not named base not 
 Fixes buckler bash and tower shield fortify from reaching a limit of 0 fatigue cost
 Fixes some retinue follower requirements being wrong
 Fixes perks going off screen. Bumped to the next perk level.
+Fixes camp repair and salvage infinite bugs
+Updates Faster Mod to fix reported faster mod crashes

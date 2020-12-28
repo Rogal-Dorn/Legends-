@@ -116,7 +116,7 @@
 			if (_entity.isAlive() && (!_entity.isHiddenToPlayer() || this.m.TargetTile.IsVisibleForPlayer))
 			{
 				this.getAgent().declareAction(900);
-				local delay = this.Math.maxf(800, this.m.SelectedSkill.getDelay() + 750);
+				local delay = this.Math.maxf(800, this.m.SelectedSkill.getDelay() + 750 + 850);
 				this.getAgent().declareEvaluationDelay(delay);
 			}
 
@@ -128,47 +128,6 @@
 	}
 });
 
-//TNF
-//UNHOLD FIX
-::mods_hookNewObject("ai/tactical/behaviors/ai_attack_swing", function(o) {
-	o.onExecute = function( _entity )
-	{
-		if (this.m.IsFirstExecuted)
-		{
-			this.getAgent().adjustCameraToTarget(this.m.TargetTile);
-			this.m.IsFirstExecuted = false;
-			return false;
-		}
-
-		if (this.m.TargetTile != null && this.m.TargetTile.IsOccupiedByActor)
-		{
-			if (this.Const.AI.VerboseMode && !this.m.TargetTile.IsEmpty)
-			{
-				this.logInfo("* " + _entity.getName() + ": Using Swing against " + this.m.TargetTile.getEntity().getName() + "!");
-			}
-
-			this.m.Skill.use(this.m.TargetTile);
-
-			if (_entity.isAlive() && this.m.Skill.getDelay() != 0)
-			{
-				local delayMult = 1;
-				if (this.m.Skill.getID() == "actives.sweep") delayMult = 2;
-				this.getAgent().declareEvaluationDelay(this.m.Skill.getDelay() * delayMult);
-			}
-
-			if (_entity.isAlive() && (!_entity.isHiddenToPlayer() || this.m.TargetTile.IsVisibleForPlayer))
-			{
-				local delayMult = 0;
-				if (this.m.Skill.getID() == "actives.sweep") delayMult = this.Const.AI.Agent.ActionDelay * 2;
-				this.getAgent().declareAction(delayMult);
-			}
-
-			this.m.TargetTile = null;
-		}
-
-		return true;
-	}
-});
 
 ::mods_hookNewObject("ai/tactical/behaviors/ai_line_breaker", function(o) {
 	o.onExecute = function( _entity )
@@ -229,81 +188,6 @@
 
 });
 
-//ALP FIX
-::mods_hookNewObject("ai/tactical/behaviors/ai_sleep", function(o) {
-	o.onExecute = function( _entity )
-	{
-		if (this.m.IsFirstExecuted)
-		{
-			this.getAgent().adjustCameraToTarget(this.m.TargetTile);
-			this.m.IsFirstExecuted = false;
-
-			if (this.m.TargetTile.IsVisibleForPlayer && _entity.isHiddenToPlayer())
-			{
-				_entity.setDiscovered(true);
-				_entity.getTile().addVisibilityForFaction(this.Const.Faction.Player);
-			}
-
-			return false;
-		}
-
-		this.m.Skill.use(this.m.TargetTile);
-
-		if (!_entity.isHiddenToPlayer())
-		{
-			this.getAgent().declareEvaluationDelay(800);
-			this.getAgent().declareAction(900);
-		}
-
-		this.m.Skill = null;
-		this.m.TargetTile = null;
-		return true;
-	}
-});
-
-// HACK: a similar problem exists for golems merging
-::mods_hookNewObject("ai/tactical/behaviors/ai_merge", function(o) {
-  o.onExecute = function( _entity )
-	{
-		if (this.m.IsWaiting)
-		{
-			if (this.Tactical.TurnSequenceBar.entityWaitTurn(_entity))
-			{
-				if (this.Const.AI.VerboseMode)
-				{
-					this.logInfo("* " + _entity.getName() + ": Waiting for others to act!");
-				}
-
-				return true;
-			}
-			else
-			{
-				this.m.IsWaiting = false;
-			}
-		}
-		else
-		{
-			this.m.Skill.use(_entity.getTile());
-
-			if (_entity.isAlive())
-			{
-				//local delay = this.Math.maxf(900, this.m.Skill.getDelay());
-				this.getAgent().declareAction(900)
-
-				if (this.m.Skill.getDelay() != 0)
-				{
-					//delay = this.Math.maxf(800, this.m.Skill.getDelay());
-					this.getAgent().declareEvaluationDelay(1000);
-				}
-			}
-
-			this.m.Skill = null;
-		}
-
-		return true;
-	}
-});
-
 
 
 ::mods_hookNewObject("ai/tactical/behaviors/ai_attack_split", function(o) {
@@ -339,3 +223,37 @@
 	}
 });
 
+// HACK: reportedly there is a similar problem for Nachzehrers when they feast
+::mods_hookNewObject("ai/tactical/behaviors/ai_gruesome_feast", function(o) {
+o.useSkill = function(_entity)
+	{
+	if (this.Const.AI.VerboseMode)
+	{
+		this.logInfo("* " + _entity.getName() + ": Using Gruesome Feast!");
+	}
+
+	if (this.m.Skill.use(this.m.TargetTile))
+	{
+		if (!_entity.isHiddenToPlayer() || this.m.TargetTile.IsVisibleForPlayer)
+		{
+			this.getAgent().declareAction();
+			this.getAgent().declareEvaluationDelay(1200);
+		}
+	}
+
+	this.m.Skill = null;
+	this.m.TargetTile = null;
+	}
+});
+
+// HACK: a similar problem for golems (ifrits) merging. in this case since the behavior has only one skill,
+// which players can't use, we can just adjust the skill's delay rather than overriding the behavior
+::mods_hookNewObject("skills/actives/merge_golem_skill", function(o) { o.m.Delay *= 2; });
+
+
+// HACK: ditto for the alp sleep attack
+::mods_hookNewObject("skills/actives/sleep_skill", function(o) { o.m.Delay *= 2; });
+
+// HACK: and for the unhold sweep attack (and the fling attack)
+::mods_hookNewObject("skills/actives/fling_back_skill", function(o) { o.m.Delay *= 2; });
+::mods_hookNewObject("skills/actives/sweep_skill", function(o) { o.m.Delay *= 2; });

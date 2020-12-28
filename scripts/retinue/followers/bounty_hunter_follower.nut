@@ -39,8 +39,15 @@ this.bounty_hunter_follower <- this.inherit("scripts/retinue/follower", {
 	{
 		local namedItems = this.getNumberOfNamedItems();
 		local BGs = 0;
-		this.m.Requirements[0].Text = "Have " + this.Math.min(1, namedItems) + "/1 named or legendary items in your possession ";
+		this.m.Requirements[0].IsSatisfied = false
+		this.m.Requirements[1].IsSatisfied = false
 
+		this.m.Requirements[0].Text = "Have " + this.Math.min(1, namedItems) + "/1 named or legendary items in your possession ";
+		if (namedItems >= 1) {
+			this.m.Requirements[0].IsSatisfied = true
+		} else {
+			return
+		}
 
 
 		local brothers = this.World.getPlayerRoster().getAll();
@@ -56,19 +63,10 @@ this.bounty_hunter_follower <- this.inherit("scripts/retinue/follower", {
 
 			if (availableBGs.find(id))
 			{
-				BGs += 1;
+				this.m.Requirements[1].IsSatisfied = true;
+				break;
 			}
 		}
-
-		if (namedItems >= 1 && BGs >= 1)
-		{
-			this.m.Requirements[1].IsSatisfied = true;
-		}
-		else
-		{
-			this.m.Requirements[1].IsSatisfied = false;
-		}
-
 	}
 
 	function onChampionKilled( _champion )
