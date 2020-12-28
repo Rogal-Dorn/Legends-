@@ -198,10 +198,10 @@ this.sato_manhunter_veteran_ranged <- this.inherit("scripts/entity/tactical/huma
 		];
 		local armors = this.Const.Items.NamedSouthernArmors;
 
-		armors.push("named/golden_scale_armor");
+		armors.push("armor/named/golden_scale_armor");
 		if (this.Const.DLC.Wildmen)
 		{
-			armors.push("named/named_golden_lamellar_armor");
+			armors.push("armor/named/named_golden_lamellar_armor");
 		}
 
 		local helmets = this.Const.Items.NamedSouthernHelmets;

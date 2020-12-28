@@ -4461,3 +4461,8 @@ Fixes some retinue follower requirements being wrong
 Fixes perks going off screen. Bumped to the next perk level.
 Fixes camp repair and salvage infinite bugs
 Updates Faster Mod to fix reported faster mod crashes
+
+15.0.0.22
+
+**Fixes**
+Fixes the "Veteran/ranged manhunter" from causing errors when it spawns with a named armor
