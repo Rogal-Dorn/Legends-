@@ -7,7 +7,7 @@ this.legend_drums_of_life_skill <- this.inherit("scripts/skills/skill", {
 		this.m.Description = "Push allies on with your music, restoring the health of all allies within 8 tiles by 4 hp. Must be holding a musical instrument or empty handed to use.";
 		this.m.Icon = "ui/perks/drums_of_life_square.png";
 		this.m.IconDisabled = "ui/perks/drums_of_life_square_bw.png";
-		this.m.Overlay = "active_163";
+		this.m.Overlay = "drums_of_life_square";
 		this.m.SoundOnUse = [
 			"sounds/enemies/dlc4/wardrums_01.wav",
 			"sounds/enemies/dlc4/wardrums_02.wav",
