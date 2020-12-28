@@ -214,12 +214,6 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 		return this.Math.floor(this.m.ConditionMax);
 	}
 
-	function setCondition( _a )
-	{
-		this.m.Condition = _a;
-		this.updateAppearance();
-	}
-
 	function getVision()
 	{
 		local value = this.m.Vision;
@@ -271,17 +265,27 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 		return value;
 	}
 
-	function setArmor( _a )
+	function setArmor(_a)
 	{
-		if (_a <= this.m.ConditionMax)
+		this.setCondition( _a)
+	}
+
+	function onRepair(_a)
+	{
+		this.setArmor(_a);
+		return 0;
+	}
+
+	function addArmor(_a)
+	{
+		if (_a + this.m.Condition <= this.m.ConditionMax)
 		{
-			this.m.Condition = _a;
-			this.updateAppearance();
-			return;
+			this.m.Condition += _a
+			return
 		}
 
-		local delta = _a - this.m.ConditionMax;
 		this.m.Condition = this.m.ConditionMax;
+		local delta = _a - (this.m.ConditionMax - this.m.Condition);
 
 		foreach( u in this.m.Upgrades )
 		{
@@ -290,12 +294,57 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 				continue;
 			}
 
-			delta = u.onRepair(delta);
+			delta = u.addArmor(delta);
 
 			if (delta <= 0)
 			{
 				break;
 			}
+		}
+	}
+
+	function removeArmor(_a)
+	{
+		local delta = _a
+		for (local i = this.Const.Items.HelmetUpgrades.COUNT - 1; i >= 0; i = --i)
+		{
+			if (this.m.Upgrades[i] == null)
+			{
+				continue;
+			}
+
+			delta = this.m.Upgrades[i].removeArmor(delta);
+
+			if (delta <= 0)
+			{
+				break;
+			}
+		}
+
+		if (delta > 0)
+		{
+			this.m.Condition = this.Math.maxf(0, this.m.Condition - delta);
+		}
+	}
+
+	function setArmor( _a )
+	{
+		this.setCondition( _a)
+	}
+
+
+	function setCondition( _a )
+	{
+		local oldValue = this.getArmor()
+
+		//Adding armor
+		if (_a >= oldValue)
+		{
+			this.addArmor(_a - oldValue);
+		}
+		else
+		{
+			this.removeArmor(oldValue - _a)
 		}
 
 		this.updateAppearance();
