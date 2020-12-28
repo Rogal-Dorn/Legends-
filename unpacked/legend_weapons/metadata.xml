@@ -102,6 +102,10 @@
   <sprite id="icon_legend_shovel_01_bloodied" offsetY="35" ic="FF3D4758" width="130" height="142" img="icons\icon_legend_shovel_01_bloodied.png" left="-52" right="12" top="-64" bottom="52" />
   <sprite id="runed_icon_legend_shovel_01" offsetY="35" ic="FF4E5860" width="104" height="142" img="icons\runed_icon_legend_shovel_01.png" left="-52" right="12" top="-64" bottom="54" />
   <sprite id="runed_icon_legend_shovel_01_bloodied" offsetY="35" ic="FF3D4758" width="130" height="142" img="icons\runed_icon_legend_shovel_01_bloodied.png" left="-52" right="12" top="-64" bottom="52" />
+  <sprite id="icon_legend_shovel_02" offsetY="35" ic="FF4E5860" width="104" height="142" img="icons\icon_legend_shovel_02.png" left="-52" right="12" top="-64" bottom="54" />
+  <sprite id="icon_legend_shovel_02_bloodied" offsetY="35" ic="FF3D4758" width="130" height="142" img="icons\icon_legend_shovel_02_bloodied.png" left="-52" right="12" top="-64" bottom="52" />
+  <sprite id="runed_icon_legend_shovel_02" offsetY="35" ic="FF4E5860" width="104" height="142" img="icons\runed_icon_legend_shovel_02.png" left="-52" right="12" top="-64" bottom="54" />
+  <sprite id="runed_icon_legend_shovel_02_bloodied" offsetY="35" ic="FF3D4758" width="130" height="142" img="icons\runed_icon_legend_shovel_02_bloodied.png" left="-52" right="12" top="-64" bottom="52" />
 
  <sprite id="icon_legend_hoe_01" offsetY="35" ic="FF4E5860" width="104" height="142" img="icons\icon_legend_hoe_01.png" left="-52" right="12" top="-64" bottom="54" />
   <sprite id="icon_legend_hoe_01_bloodied" offsetY="35" ic="FF3D4758" width="130" height="142" img="icons\icon_legend_hoe_01_bloodied.png" left="-52" right="12" top="-64" bottom="52" />
@@ -686,78 +690,98 @@
   <sprite id="icon_heavy_southern_mace_01_named_02" offsetY="35" ic="FF2D5879" width="130" height="142" img="icons\icon_heavy_southern_mace_01_named_02.png" left="-8" right="60" top="-59" bottom="23" />
   <sprite id="icon_heavy_southern_mace_01_named_02_bloodied" offsetY="35" ic="FF294F71" width="130" height="142" img="icons\icon_heavy_southern_mace_01_named_02_bloodied.png" left="-8" right="60" top="-59" bottom="23" />
 
-  
+
   <sprite id="mummy_shield_01" offsetY="35" ic="FF39424C" width="130" height="142" img="icons\mummy_shield_01.png" left="15" right="53" top="-65" bottom="11" />
-  <sprite id="mummy_shield_01_damaged" offsetY="35" ic="FF343B43" width="130" height="142" img="icons\mummy_shield_01_damaged.png" left="14" right="52" top="-65" bottom="11" /> 
+  <sprite id="mummy_shield_01_damaged" offsetY="35" ic="FF343B43" width="130" height="142" img="icons\mummy_shield_01_damaged.png" left="14" right="52" top="-65" bottom="11" />
   <sprite id="mummy_shield_01_destroyed" f="6404" ic="FF333B43" width="98" height="61" img="icons\mummy_shield_01_destroyed.png" left="-41" right="39" top="-26" bottom="18" />
   <sprite id="mummy_shield_02" offsetY="35" ic="FF39424C" width="130" height="142" img="icons\mummy_shield_02.png" left="15" right="53" top="-65" bottom="11" />
-  <sprite id="mummy_shield_02_damaged" offsetY="35" ic="FF343B43" width="130" height="142" img="icons\mummy_shield_02_damaged.png" left="14" right="52" top="-65" bottom="11" /> 
+  <sprite id="mummy_shield_02_damaged" offsetY="35" ic="FF343B43" width="130" height="142" img="icons\mummy_shield_02_damaged.png" left="14" right="52" top="-65" bottom="11" />
   <sprite id="mummy_shield_02_destroyed" f="6404" ic="FF333B43" width="98" height="61" img="icons\mummy_shield_02_destroyed.png" left="-41" right="39" top="-26" bottom="18" />
   <sprite id="mummy_shield_03" offsetY="35" ic="FF39424C" width="130" height="142" img="icons\mummy_shield_03.png" left="15" right="53" top="-65" bottom="11" />
-  <sprite id="mummy_shield_03_damaged" offsetY="35" ic="FF343B43" width="130" height="142" img="icons\mummy_shield_03_damaged.png" left="14" right="52" top="-65" bottom="11" /> 
+  <sprite id="mummy_shield_03_damaged" offsetY="35" ic="FF343B43" width="130" height="142" img="icons\mummy_shield_03_damaged.png" left="14" right="52" top="-65" bottom="11" />
   <sprite id="mummy_shield_03_destroyed" f="6404" ic="FF333B43" width="98" height="61" img="icons\mummy_shield_03_destroyed.png" left="-41" right="39" top="-26" bottom="18" />
   <sprite id="mummy_shield_04" offsetY="35" ic="FF39424C" width="130" height="142" img="icons\mummy_shield_04.png" left="15" right="53" top="-65" bottom="11" />
-  <sprite id="mummy_shield_04_damaged" offsetY="35" ic="FF343B43" width="130" height="142" img="icons\mummy_shield_04_damaged.png" left="14" right="52" top="-65" bottom="11" /> 
+  <sprite id="mummy_shield_04_damaged" offsetY="35" ic="FF343B43" width="130" height="142" img="icons\mummy_shield_04_damaged.png" left="14" right="52" top="-65" bottom="11" />
   <sprite id="mummy_shield_04_destroyed" f="6404" ic="FF333B43" width="98" height="61" img="icons\mummy_shield_04_destroyed.png" left="-41" right="39" top="-26" bottom="18" />
   <sprite id="mummy_shield_05" offsetY="35" ic="FF39424C" width="130" height="142" img="icons\mummy_shield_05.png" left="15" right="53" top="-65" bottom="11" />
-  <sprite id="mummy_shield_05_damaged" offsetY="35" ic="FF343B43" width="130" height="142" img="icons\mummy_shield_05_damaged.png" left="14" right="52" top="-65" bottom="11" /> 
+  <sprite id="mummy_shield_05_damaged" offsetY="35" ic="FF343B43" width="130" height="142" img="icons\mummy_shield_05_damaged.png" left="14" right="52" top="-65" bottom="11" />
   <sprite id="mummy_shield_05_destroyed" f="6404" ic="FF333B43" width="98" height="61" img="icons\mummy_shield_05_destroyed.png" left="-41" right="39" top="-26" bottom="18" />
   <sprite id="runed_mummy_shield_01" offsetY="35" ic="FF39424C" width="130" height="142" img="icons\runed_mummy_shield_01.png" left="15" right="53" top="-65" bottom="11" />
-  <sprite id="runed_mummy_shield_01_damaged" offsetY="35" ic="FF343B43" width="130" height="142" img="icons\runed_mummy_shield_01_damaged.png" left="14" right="52" top="-65" bottom="11" /> 
+  <sprite id="runed_mummy_shield_01_damaged" offsetY="35" ic="FF343B43" width="130" height="142" img="icons\runed_mummy_shield_01_damaged.png" left="14" right="52" top="-65" bottom="11" />
   <sprite id="runed_mummy_shield_01_destroyed" f="6404" ic="FF333B43" width="98" height="61" img="icons\runed_mummy_shield_01_destroyed.png" left="-41" right="39" top="-26" bottom="18" />
   <sprite id="runed_mummy_shield_02" offsetY="35" ic="FF39424C" width="130" height="142" img="icons\runed_mummy_shield_02.png" left="15" right="53" top="-65" bottom="11" />
-  <sprite id="runed_mummy_shield_02_damaged" offsetY="35" ic="FF343B43" width="130" height="142" img="icons\runed_mummy_shield_02_damaged.png" left="14" right="52" top="-65" bottom="11" /> 
+  <sprite id="runed_mummy_shield_02_damaged" offsetY="35" ic="FF343B43" width="130" height="142" img="icons\runed_mummy_shield_02_damaged.png" left="14" right="52" top="-65" bottom="11" />
   <sprite id="runed_mummy_shield_02_destroyed" f="6404" ic="FF333B43" width="98" height="61" img="icons\runed_mummy_shield_02_destroyed.png" left="-41" right="39" top="-26" bottom="18" />
   <sprite id="runed_mummy_shield_03" offsetY="35" ic="FF39424C" width="130" height="142" img="icons\runed_mummy_shield_03.png" left="15" right="53" top="-65" bottom="11" />
-  <sprite id="runed_mummy_shield_03_damaged" offsetY="35" ic="FF343B43" width="130" height="142" img="icons\runed_mummy_shield_03_damaged.png" left="14" right="52" top="-65" bottom="11" /> 
+  <sprite id="runed_mummy_shield_03_damaged" offsetY="35" ic="FF343B43" width="130" height="142" img="icons\runed_mummy_shield_03_damaged.png" left="14" right="52" top="-65" bottom="11" />
   <sprite id="runed_mummy_shield_03_destroyed" f="6404" ic="FF333B43" width="98" height="61" img="icons\runed_mummy_shield_03_destroyed.png" left="-41" right="39" top="-26" bottom="18" />
   <sprite id="runed_mummy_shield_04" offsetY="35" ic="FF39424C" width="130" height="142" img="icons\runed_mummy_shield_04.png" left="15" right="53" top="-65" bottom="11" />
-  <sprite id="runed_mummy_shield_04_damaged" offsetY="35" ic="FF343B43" width="130" height="142" img="icons\runed_mummy_shield_04_damaged.png" left="14" right="52" top="-65" bottom="11" /> 
+  <sprite id="runed_mummy_shield_04_damaged" offsetY="35" ic="FF343B43" width="130" height="142" img="icons\runed_mummy_shield_04_damaged.png" left="14" right="52" top="-65" bottom="11" />
   <sprite id="runed_mummy_shield_04_destroyed" f="6404" ic="FF333B43" width="98" height="61" img="icons\runed_mummy_shield_04_destroyed.png" left="-41" right="39" top="-26" bottom="18" />
   <sprite id="runed_mummy_shield_05" offsetY="35" ic="FF39424C" width="130" height="142" img="icons\runed_mummy_shield_05.png" left="15" right="53" top="-65" bottom="11" />
-  <sprite id="runed_mummy_shield_05_damaged" offsetY="35" ic="FF343B43" width="130" height="142" img="icons\runed_mummy_shield_05_damaged.png" left="14" right="52" top="-65" bottom="11" /> 
+  <sprite id="runed_mummy_shield_05_damaged" offsetY="35" ic="FF343B43" width="130" height="142" img="icons\runed_mummy_shield_05_damaged.png" left="14" right="52" top="-65" bottom="11" />
   <sprite id="runed_mummy_shield_05_destroyed" f="6404" ic="FF333B43" width="98" height="61" img="icons\runed_mummy_shield_05_destroyed.png" left="-41" right="39" top="-26" bottom="18" />
 
   <sprite id="mummy_towershield_01" offsetY="35" ic="FF39424C" width="130" height="142" img="icons\mummy_towershield_01.png" left="15" right="53" top="-65" bottom="11" />
-  <sprite id="mummy_towershield_01_damaged" offsetY="35" ic="FF343B43" width="130" height="142" img="icons\mummy_towershield_01_damaged.png" left="14" right="52" top="-65" bottom="11" /> 
+  <sprite id="mummy_towershield_01_damaged" offsetY="35" ic="FF343B43" width="130" height="142" img="icons\mummy_towershield_01_damaged.png" left="14" right="52" top="-65" bottom="11" />
   <sprite id="mummy_towershield_01_destroyed" f="6404" ic="FF333B43" width="98" height="61" img="icons\mummy_towershield_01_destroyed.png" left="-41" right="39" top="-26" bottom="18" />
   <sprite id="mummy_towershield_02" offsetY="35" ic="FF39424C" width="130" height="142" img="icons\mummy_towershield_02.png" left="15" right="53" top="-65" bottom="11" />
-  <sprite id="mummy_towershield_02_damaged" offsetY="35" ic="FF343B43" width="130" height="142" img="icons\mummy_towershield_02_damaged.png" left="14" right="52" top="-65" bottom="11" /> 
+  <sprite id="mummy_towershield_02_damaged" offsetY="35" ic="FF343B43" width="130" height="142" img="icons\mummy_towershield_02_damaged.png" left="14" right="52" top="-65" bottom="11" />
   <sprite id="mummy_towershield_02_destroyed" f="6404" ic="FF333B43" width="98" height="61" img="icons\mummy_towershield_02_destroyed.png" left="-41" right="39" top="-26" bottom="18" />
   <sprite id="mummy_towershield_03" offsetY="35" ic="FF39424C" width="130" height="142" img="icons\mummy_towershield_03.png" left="15" right="53" top="-65" bottom="11" />
-  <sprite id="mummy_towershield_03_damaged" offsetY="35" ic="FF343B43" width="130" height="142" img="icons\mummy_towershield_03_damaged.png" left="14" right="52" top="-65" bottom="11" /> 
+  <sprite id="mummy_towershield_03_damaged" offsetY="35" ic="FF343B43" width="130" height="142" img="icons\mummy_towershield_03_damaged.png" left="14" right="52" top="-65" bottom="11" />
   <sprite id="mummy_towershield_03_destroyed" f="6404" ic="FF333B43" width="98" height="61" img="icons\mummy_towershield_03_destroyed.png" left="-41" right="39" top="-26" bottom="18" />
   <sprite id="mummy_towershield_04" offsetY="35" ic="FF39424C" width="130" height="142" img="icons\mummy_towershield_04.png" left="15" right="53" top="-65" bottom="11" />
-  <sprite id="mummy_towershield_04_damaged" offsetY="35" ic="FF343B43" width="130" height="142" img="icons\mummy_towershield_04_damaged.png" left="14" right="52" top="-65" bottom="11" /> 
+  <sprite id="mummy_towershield_04_damaged" offsetY="35" ic="FF343B43" width="130" height="142" img="icons\mummy_towershield_04_damaged.png" left="14" right="52" top="-65" bottom="11" />
   <sprite id="mummy_towershield_04_destroyed" f="6404" ic="FF333B43" width="98" height="61" img="icons\mummy_towershield_04_destroyed.png" left="-41" right="39" top="-26" bottom="18" />
   <sprite id="mummy_towershield_05" offsetY="35" ic="FF39424C" width="130" height="142" img="icons\mummy_towershield_05.png" left="15" right="53" top="-65" bottom="11" />
-  <sprite id="mummy_towershield_05_damaged" offsetY="35" ic="FF343B43" width="130" height="142" img="icons\mummy_towershield_05_damaged.png" left="14" right="52" top="-65" bottom="11" /> 
+  <sprite id="mummy_towershield_05_damaged" offsetY="35" ic="FF343B43" width="130" height="142" img="icons\mummy_towershield_05_damaged.png" left="14" right="52" top="-65" bottom="11" />
   <sprite id="mummy_towershield_05_destroyed" f="6404" ic="FF333B43" width="98" height="61" img="icons\mummy_towershield_05_destroyed.png" left="-41" right="39" top="-26" bottom="18" />
   <sprite id="runed_mummy_towershield_01" offsetY="35" ic="FF39424C" width="130" height="142" img="icons\runed_mummy_towershield_01.png" left="15" right="53" top="-65" bottom="11" />
-  <sprite id="runed_mummy_towershield_01_damaged" offsetY="35" ic="FF343B43" width="130" height="142" img="icons\runed_mummy_towershield_01_damaged.png" left="14" right="52" top="-65" bottom="11" /> 
+  <sprite id="runed_mummy_towershield_01_damaged" offsetY="35" ic="FF343B43" width="130" height="142" img="icons\runed_mummy_towershield_01_damaged.png" left="14" right="52" top="-65" bottom="11" />
   <sprite id="runed_mummy_towershield_01_destroyed" f="6404" ic="FF333B43" width="98" height="61" img="icons\runed_mummy_towershield_01_destroyed.png" left="-41" right="39" top="-26" bottom="18" />
   <sprite id="runed_mummy_towershield_02" offsetY="35" ic="FF39424C" width="130" height="142" img="icons\runed_mummy_towershield_02.png" left="15" right="53" top="-65" bottom="11" />
-  <sprite id="runed_mummy_towershield_02_damaged" offsetY="35" ic="FF343B43" width="130" height="142" img="icons\runed_mummy_towershield_02_damaged.png" left="14" right="52" top="-65" bottom="11" /> 
+  <sprite id="runed_mummy_towershield_02_damaged" offsetY="35" ic="FF343B43" width="130" height="142" img="icons\runed_mummy_towershield_02_damaged.png" left="14" right="52" top="-65" bottom="11" />
   <sprite id="runed_mummy_towershield_02_destroyed" f="6404" ic="FF333B43" width="98" height="61" img="icons\runed_mummy_towershield_02_destroyed.png" left="-41" right="39" top="-26" bottom="18" />
   <sprite id="runed_mummy_towershield_03" offsetY="35" ic="FF39424C" width="130" height="142" img="icons\runed_mummy_towershield_03.png" left="15" right="53" top="-65" bottom="11" />
-  <sprite id="runed_mummy_towershield_03_damaged" offsetY="35" ic="FF343B43" width="130" height="142" img="icons\runed_mummy_towershield_03_damaged.png" left="14" right="52" top="-65" bottom="11" /> 
+  <sprite id="runed_mummy_towershield_03_damaged" offsetY="35" ic="FF343B43" width="130" height="142" img="icons\runed_mummy_towershield_03_damaged.png" left="14" right="52" top="-65" bottom="11" />
   <sprite id="runed_mummy_towershield_03_destroyed" f="6404" ic="FF333B43" width="98" height="61" img="icons\runed_mummy_towershield_03_destroyed.png" left="-41" right="39" top="-26" bottom="18" />
   <sprite id="runed_mummy_towershield_04" offsetY="35" ic="FF39424C" width="130" height="142" img="icons\runed_mummy_towershield_04.png" left="15" right="53" top="-65" bottom="11" />
-  <sprite id="runed_mummy_towershield_04_damaged" offsetY="35" ic="FF343B43" width="130" height="142" img="icons\runed_mummy_towershield_04_damaged.png" left="14" right="52" top="-65" bottom="11" /> 
+  <sprite id="runed_mummy_towershield_04_damaged" offsetY="35" ic="FF343B43" width="130" height="142" img="icons\runed_mummy_towershield_04_damaged.png" left="14" right="52" top="-65" bottom="11" />
   <sprite id="runed_mummy_towershield_04_destroyed" f="6404" ic="FF333B43" width="98" height="61" img="icons\runed_mummy_towershield_04_destroyed.png" left="-41" right="39" top="-26" bottom="18" />
   <sprite id="runed_mummy_towershield_05" offsetY="35" ic="FF39424C" width="130" height="142" img="icons\runed_mummy_towershield_05.png" left="15" right="53" top="-65" bottom="11" />
-  <sprite id="runed_mummy_towershield_05_damaged" offsetY="35" ic="FF343B43" width="130" height="142" img="icons\runed_mummy_towershield_05_damaged.png" left="14" right="52" top="-65" bottom="11" /> 
+  <sprite id="runed_mummy_towershield_05_damaged" offsetY="35" ic="FF343B43" width="130" height="142" img="icons\runed_mummy_towershield_05_damaged.png" left="14" right="52" top="-65" bottom="11" />
   <sprite id="runed_mummy_towershield_05_destroyed" f="6404" ic="FF333B43" width="98" height="61" img="icons\runed_mummy_towershield_05_destroyed.png" left="-41" right="39" top="-26" bottom="18" />
 
   <sprite id="icon_legend_fan_axe_01" offsetY="35" ic="FF3B404A" width="150" height="160" img="icons\icon_legend_fan_axe_01.png" left="-68" right="20" top="-56" bottom="48" />
   <sprite id="icon_legend_fan_axe_01_bloodied" offsetY="35" ic="FF303547" width="150" height="160" img="icons\icon_legend_fan_axe_01_bloodied.png" left="-68" right="20" top="-56" bottom="48" />
   <sprite id="runed_icon_legend_fan_axe_01" offsetY="35" ic="FF3B404A" width="150" height="160" img="icons\runed_icon_legend_fan_axe_01.png" left="-68" right="20" top="-56" bottom="48" />
   <sprite id="runed_icon_legend_fan_axe_01_bloodied" offsetY="35" ic="FF303547" width="150" height="160" img="icons\runed_icon_legend_fan_axe_01_bloodied.png" left="-68" right="20" top="-56" bottom="48" />
- 
+
   <sprite id="icon_legend_gladius_01" offsetY="35" f1="20" f2="-45" ic="FF4D535A" width="130" height="142" img="icons\icon_legend_gladius_01.png" left="-6" right="50" top="-60" bottom="14" />
   <sprite id="icon_legend_gladius_01_bloodied" offsetY="35" f1="20" f2="-45" ic="FF4D535A" width="130" height="142" img="icons\icon_legend_gladius_01_bloodied.png" left="-6" right="50" top="-60" bottom="14" />
   <sprite id="runed_icon_legend_gladius_01" offsetY="35" f1="20" f2="-45" ic="FF4D535A" width="130" height="142" img="icons\runed_icon_legend_gladius_01.png" left="-6" right="50" top="-60" bottom="14" />
   <sprite id="runed_icon_legend_gladius_01_bloodied" offsetY="35" f1="20" f2="-45" ic="FF4D535A" width="130" height="142" img="icons\runed_icon_legend_gladius_01_bloodied.png" left="-6" right="50" top="-60" bottom="14" />
 
- 
+  <sprite id="icon_legend_footman_axe_02" offsetY="35" ic="FF4E5860" width="104" height="142" img="icons\icon_legend_footman_axe_02.png" left="-52" right="12" top="-64" bottom="54" />
+  <sprite id="icon_legend_footman_axe_02_bloodied" offsetY="35" ic="FF3D4758" width="130" height="142" img="icons\icon_legend_footman_axe_02_bloodied.png" left="-52" right="12" top="-64" bottom="52" />
+  <sprite id="runed_icon_legend_footman_axe_02" offsetY="35" ic="FF4E5860" width="104" height="142" img="icons\icon_legend_footman_axe_02.png" left="-52" right="12" top="-64" bottom="54" />
+  <sprite id="runed_icon_legend_footman_axe_02_bloodied" offsetY="35" ic="FF3D4758" width="130" height="142" img="icons\icon_legend_footman_axe_02_bloodied.png" left="-52" right="12" top="-64" bottom="52" />
+
+  <sprite id="icon_legend_parrying_dagger_02" offsetY="35" f1="20" f2="-45" ic="FF4D535A" width="130" height="142" img="icons\icon_legend_parrying_dagger_02.png" left="-6" right="50" top="-60" bottom="14" />
+  <sprite id="icon_legend_parrying_dagger_02_bloodied" offsetY="35" f1="20" f2="-45" ic="FF4D535A" width="130" height="142" img="icons\icon_legend_parrying_dagger_02_bloodied.png" left="-6" right="50" top="-60" bottom="14" />
+  <sprite id="runed_icon_legend_parrying_dagger_02" offsetY="35" f1="20" f2="-45" ic="FF4D535A" width="130" height="142" img="icons\runed_icon_legend_parrying_dagger_02.png" left="-6" right="50" top="-60" bottom="14" />
+  <sprite id="runed_icon_legend_parrying_dagger_02_bloodied" offsetY="35" f1="20" f2="-45" ic="FF4D535A" width="130" height="142" img="icons\runed_icon_legend_parrying_dagger_02_bloodied.png" left="-6" right="50" top="-60" bottom="14" />
+
+  <sprite id="icon_named_sword_06" offsetY="35" ic="FF687279" width="104" height="142" img="icons\icon_named_sword_06.png" left="-3" right="47" top="-63" bottom="17" />
+  <sprite id="icon_named_sword_06_bloodied" offsetY="35" ic="FF4F5A6A" width="104" height="142" img="icons\icon_named_sword_06_bloodied.png" left="-3" right="47" top="-63" bottom="17" />
+  <sprite id="runed_icon_named_sword_06" offsetY="35" ic="FF687279" width="104" height="142" img="icons\runed_icon_named_sword_06.png" left="-3" right="47" top="-63" bottom="17" />
+  <sprite id="runed_icon_named_sword_06_bloodied" offsetY="35" ic="FF4F5A6A" width="104" height="142" img="icons\runed_icon_named_sword_06_bloodied.png" left="-3" right="47" top="-63" bottom="17" />
+
+  <sprite id="icon_named_greatsword_04" offsetY="35" ic="FF58595C" width="130" height="142" img="icons\icon_named_greatsword_04.png" left="-62" right="32" top="-64" bottom="50" />
+  <sprite id="icon_named_greatsword_04_bloodied" offsetY="35" ic="FF4E4F5A" width="130" height="142" img="icons\icon_named_greatsword_04_bloodied.png" left="-62" right="32" top="-64" bottom="50" />
+  <sprite id="runed_icon_named_greatsword_04" offsetY="35" ic="FF58595C" width="130" height="142" img="icons\runed_icon_named_greatsword_04.png" left="-62" right="32" top="-64" bottom="50" />
+  <sprite id="runed_icon_named_greatsword_04_bloodied" offsetY="35" ic="FF4E4F5A" width="130" height="142" img="icons\runed_icon_named_greatsword_04_bloodied.png" left="-62" right="32" top="-64" bottom="50" />
+
+
  </brush>

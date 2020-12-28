@@ -6,7 +6,7 @@ this.weasel_trait <- this.inherit("scripts/skills/traits/character_trait", {
 		this.m.ID = "trait.weasel";
 		this.m.Name = "Weasel";
 		this.m.Icon = "ui/traits/trait_icon_60.png";
-		this.m.Description = "This character is swift as a weasel. Unfortunately, he seems to only be able to call on this ability when running to save his hide.";
+		this.m.Description = "This character is swift as a weasel. Unfortunately, they seem to only be able to call on this ability when running to save their own hide.";
 		this.m.Titles = [
 			"the Coward",
 			"the Weasel",

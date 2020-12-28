@@ -31,16 +31,15 @@ this.blacksmith_follower <- this.inherit("scripts/retinue/follower", {
 	function onEvaluate()
 	{
 		local brothers = this.World.getPlayerRoster().getAll();
-		
+		local BGs = 0;
 		foreach( bro in brothers )
 		{
 			if (bro.getSkills().hasSkill("perk.legend_field_repairs"))
 			{
-				this.m.Requirements[0].IsSatisfied = true;
+                this.m.Requirements[0].IsSatisfied = true;
 				return;
 			}
 		}
-
 	}
 
 });

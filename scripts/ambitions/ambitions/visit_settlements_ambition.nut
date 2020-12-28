@@ -53,7 +53,7 @@ this.visit_settlements_ambition <- this.inherit("scripts/ambitions/ambition", {
 
 	function onUpdateScore()
 	{
-		if (this.World.Ambitions.getDone() == 0 && (this.World.Assets.getOrigin().getID() != "scenario.deserters" || this.World.Assets.getOrigin().getID() != "scenario.raiders"))
+		if (this.World.Ambitions.getDone() == 0 && (this.World.Assets.getOrigin().getID() != "scenario.deserters" || this.World.Assets.getOrigin().getID() != "scenario.raiders" || this.World.Assets.getOrigin().getID() != "scenario.sato_escaped_slaves"))
 		{
 			return;
 		}

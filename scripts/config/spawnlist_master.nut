@@ -830,7 +830,7 @@ gt.Const.World.Spawn.Troops <- {
 		Variant = 0,
 		Strength = 5,
 		Cost = 5,
-		Row = 0,
+		Row = 1,
 		Script = "scripts/entity/tactical/enemies/bandit_rabble_poacher"
 	},
 	BanditThug = {
@@ -1277,10 +1277,13 @@ gt.Const.World.Spawn.Troops <- {
 	},
 	LegendPeasantButcher = {
 		ID = this.Const.EntityType.LegendPeasantButcher,
-		Variant = 0,
+		Variant = 1,
+		DieRoll = 300,
 		Strength = 5,
 		Cost = 10,
 		Row = -1,
+		NameList = this.Const.Strings.PeasantButcherNames,
+		TitleList = this.Const.Strings.PeasantButcherTitles,
 		Script = "scripts/entity/tactical/humans/legend_peasant_butcher"
 	},
 	LegendPeasantBlacksmith = {
@@ -1421,7 +1424,7 @@ gt.Const.World.Spawn.Troops <- {
 	},
 	SatoManhunterVeteran = {
 		ID = this.Const.EntityType.SatoManhunterVeteran,
-		Variant = 0,
+		Variant = 1,
 		Strength = 25,
 		Cost = 20,
 		Row = 0,
@@ -1439,7 +1442,7 @@ gt.Const.World.Spawn.Troops <- {
 	},
 	SatoManhunterVeteranRanged = {
 		ID = this.Const.EntityType.SatoManhunterVeteran,
-		Variant = 0,
+		Variant = 1,
 		Strength = 25,
 		Cost = 28,
 		Row = 1,

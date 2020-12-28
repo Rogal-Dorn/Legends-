@@ -6,7 +6,7 @@ this.huge_trait <- this.inherit("scripts/skills/traits/character_trait", {
 		this.m.ID = "trait.huge";
 		this.m.Name = "Huge";
 		this.m.Icon = "ui/traits/trait_icon_61.png";
-		this.m.Description = "Being particularly huge and burly, this character\'s strikes hurt plenty, but he\'s also a bigger target than most.";
+		this.m.Description = "Being particularly huge and burly, this character\'s strikes hurt plenty, but they\'re also a bigger target than most.";
 		this.m.Titles = [
 			"the Mountain",
 			"the Ox",

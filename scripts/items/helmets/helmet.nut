@@ -52,6 +52,12 @@ this.helmet <- this.inherit("scripts/items/item", {
 		return this.Math.floor(this.m.ConditionMax);
 	}
 
+	function onRepair( _a)
+	{
+		this.setArmor(_a);
+		return 0;
+	}
+
 	function setArmor( _a )
 	{
 		this.m.Condition = _a;

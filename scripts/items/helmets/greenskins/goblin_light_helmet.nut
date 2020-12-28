@@ -3,12 +3,12 @@ this.goblin_light_helmet <- this.inherit("scripts/items/helmets/helmet", {
 	function create()
 	{
 		this.helmet.create();
-		local variants = [
-			1,
-			1,
-			3
-		];
-		this.m.Variant = variants[this.Math.rand(0, variants.len() - 1)];
+		// local variants = [
+		// 	1,
+		// 	1,
+		// 	3
+		// ];
+		this.m.Variant = this.Math.rand(4,20)
 		this.updateVariant();
 		this.m.ID = "armor.head.goblin_light_helmet";
 		this.m.Name = "Light Helmet";
@@ -24,9 +24,10 @@ this.goblin_light_helmet <- this.inherit("scripts/items/helmets/helmet", {
 
 	function updateVariant()
 	{
-		this.m.Sprite = "bust_goblin_01_helmet_0" + this.m.Variant;
-		this.m.SpriteDamaged = "bust_goblin_01_helmet_0" + this.m.Variant + "_damaged";
-		this.m.SpriteCorpse = "bust_goblin_01_helmet_0" + this.m.Variant + "_dead";
+		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
+		this.m.Sprite = "bust_goblin_01_helmet_" + variant;
+		this.m.SpriteDamaged = "bust_goblin_01_helmet_" + variant + "_damaged";
+		this.m.SpriteCorpse = "bust_goblin_01_helmet_" + variant + "_dead";
 	}
 
 	function onUpdateProperties( _properties )

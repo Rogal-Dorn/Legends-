@@ -129,8 +129,23 @@ this.hedge_knight <- this.inherit("scripts/entity/tactical/human", {
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Head))
 		{
 			local helmet = [
-				[1, "full_helm"],
-				[1, "closed_flat_top_with_mail"]
+				[30, "full_helm"],
+				[10, "closed_flat_top_with_mail"],
+				[5, "legend_helm_breathed"],
+				[5, "legend_helm_full"],
+				[5, "legend_helm_bearded"],
+				[5, "legend_helm_point"],
+				[5, "legend_helm_snub"],
+				[5, "legend_helm_short"],
+				[5, "legend_helm_curved"],
+				[2, "legend_enclave_vanilla_armet_01"],
+				[2, "legend_enclave_vanilla_armet_02"],
+				[2, "legend_enclave_vanilla_great_bascinet_01"],
+				[2, "legend_enclave_vanilla_great_bascinet_02"],
+				[2, "legend_enclave_vanilla_great_bascinet_03"],
+				[2, "legend_enclave_vanilla_kettle_sallet_01"],
+				[2, "legend_enclave_vanilla_kettle_sallet_02"],
+				[2, "legend_enclave_vanilla_kettle_sallet_03"]
 			];
 			this.m.Items.equip(this.Const.World.Common.pickHelmet(
 				helmet

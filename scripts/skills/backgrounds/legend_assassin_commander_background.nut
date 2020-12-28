@@ -63,6 +63,7 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 
 		this.m.Level = 3;
 		this.m.IsOutlawBackground = true;
+		this.m.IsCombatBackground = true;
 		this.m.IsUntalented = true;
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[3];
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[1];

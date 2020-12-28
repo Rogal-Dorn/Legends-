@@ -4,9 +4,9 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 	{
 		this.character_background.create();
 		this.m.ID = "background.legend_commander_noble";
-		this.m.Name = "Captain";
+		this.m.Name = "Noble usurper";
 		this.m.Icon = "ui/backgrounds/noble_02.png";
-		this.m.BackgroundDescription = "A captain of the gaurd, well trained in the arts of war";
+		this.m.BackgroundDescription = "A noble with a birthright claim to authority";
 		this.m.GoodEnding = "Adventurousness never leaves the soul of a man like %name%. {Instead of returning to the armed services, he left the %companyname% and headed east in search of rare beasts. Word has it he returned to town with the head of what looked like a giant lizard, but you don\'t believe such fantastical tripe. | He departed the %companyname% and ventured west, sailing across the oceans to unseen lands. There\'s no telling where he is these days, but you\'ve little doubt that he\'ll be coming back with stories to tell. | He retired from the %companyname% and, instead of returning to his noble family, headed south. Word has it he fought in a great noble civil war, killed an orc warlord, climbed the highest mountain in the land, and is currently writing an epic about his travels. | The nobleman left the %companyname% and, preferring the life of adventure to noble boredom, he headed north. Word has it that he\'s currently marching a troop of explorers to the furthest reaches of the world.}";
 		this.m.BadEnding = "%name% departed the %companyname% and continued his adventuring elsewhere. {He headed east, hoping to discover the source of the greenskins, but the nobleman has not been heard from since. | He headed north into the snowy wastes. Word has it he was seen a week ago, marching south this time, looking rather pale and shuffling moreso than walking. | He headed south into brutal marshlands. Word has it that a mysterious flame appeared in the fog and he walked toward it. The men who saw this said he disappeared into the mist and never returned. | He headed west and sailed the open sea. Despite having no experience at sea, he saw fit to make himself captain of the boat. They say pieces of his ship and dead sailors kept washing ashore for weeks.}";
 		this.m.HiringCost = 25000;
@@ -229,8 +229,8 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 	{
 		local c = {
 			Hitpoints = [
-				0,
-				0
+				-20,
+				-20
 			],
 			Bravery = [
 				20,
@@ -245,20 +245,20 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 				10
 			],
 			RangedSkill = [
-				-10,
-				-10
+				 0,
+				 0
 			],
 			MeleeDefense = [
 				5,
 				5
 			],
 			RangedDefense = [
-				0,
-				0
+				5,
+				5
 			],
 			Initiative = [
-				-5,
-				-5
+				-20,
+				-20
 			]
 		};
 		return c;
@@ -272,8 +272,9 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_4"));
 		//this.m.Container.add(this.new("scripts/skills/perks/perk_rally_the_troops"));
 		//this.m.Container.add(this.new("scripts/skills/perks/perk_fortified_mind"));
-		this.m.Container.add(this.new("scripts/skills/traits/determined_trait"));
-
+		this.m.Container.add(this.new("scripts/skills/traits/drunkard_trait"));
+		this.m.Container.add(this.new("scripts/skills/traits/legend_noble_killer_trait"));
+		this.m.Container.add(this.new("scripts/skills/effects_world/drunk_effect"));
 		if (this.m.IsFemaleBackground == true)
 		{
 			actor.setName(this.Const.Strings.LadyNames[this.Math.rand(0, this.Const.Strings.LadyNames.len() - 1)]);
@@ -293,10 +294,13 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 		this.getContainer().getActor().fillTalentValues(2, true);
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "mail_shirt"]
+			[1, "noble_tunic"]
 		]));
 		items.equip(this.Const.World.Common.pickHelmet([
-			[1, "greatsword_hat"]
+			[1, "legend_noble_hat"],
+			[1, "legend_noble_crown"],
+			[1, "legend_noble_floppy_hat"],
+			[1, "legend_noble_hood"]
 		]));
 		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");

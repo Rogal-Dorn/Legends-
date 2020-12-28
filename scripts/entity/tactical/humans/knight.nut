@@ -145,7 +145,7 @@ this.knight <- this.inherit("scripts/entity/tactical/human", {
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Head))
 		{
 			this.m.Items.equip(this.Const.World.Common.pickHelmet([
-				[45, "full_helm"],
+				[30, "full_helm"],
 				[5, "legend_helm_breathed"],
 				[5, "legend_helm_full"],
 				[5, "legend_helm_bearded"],
@@ -154,7 +154,14 @@ this.knight <- this.inherit("scripts/entity/tactical/human", {
 				[5, "legend_helm_wings"],
 				[5, "legend_helm_short"],
 				[5, "legend_helm_curved"],
-				[5, "faction_helm", banner],
+				[2, "legend_enclave_vanilla_great_helm_01"],
+				[2, "legend_enclave_vanilla_great_bascinet_01"],
+				[2, "legend_enclave_vanilla_great_bascinet_02"],
+				[2, "legend_enclave_vanilla_great_bascinet_03"],
+				[2, "legend_enclave_vanilla_kettle_sallet_01"],
+				[2, "legend_enclave_vanilla_kettle_sallet_02"],
+				[2, "legend_enclave_vanilla_kettle_sallet_03"],
+				[15, "faction_helm", banner],
 				[5, "legend_frogmouth_helm"],
 				[1, "legend_frogmouth_helm_crested"]
 			]))

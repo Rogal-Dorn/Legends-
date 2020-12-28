@@ -6,7 +6,7 @@ this.cultist_prophet_trait <- this.inherit("scripts/skills/traits/character_trai
 		this.m.ID = "trait.cultist_prophet";
 		this.m.Name = "Prophet of Davkul";
 		this.m.Icon = "ui/traits/trait_icon_69.png";
-		this.m.Description = "This character is a prophet of Davkul, the fleshen conduit of his will and the earthen voice speaking his truth. Other believers listen to his every word and feel compelled to go above and beyond their physical limits on his behest.";
+		this.m.Description = "This character is a prophet of Davkul, the fleshen conduit of his will and the earthen voice speaking his truth. Other believers listen to every word and feel compelled to go above and beyond their physical limits at the behest of this character.";
 		this.m.Order = this.Const.SkillOrder.Trait - 1;
 	}
 

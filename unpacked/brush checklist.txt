@@ -20,7 +20,7 @@ Brush arrow
 Brush javelin
 ideally all the tattoos and dirt layers
 
-**How to Rune**
+**How to Rune**  940cf5
 Apply layer style:
 outer glow
 mode screen

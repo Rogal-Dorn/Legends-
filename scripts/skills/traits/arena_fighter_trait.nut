@@ -6,7 +6,7 @@ this.arena_fighter_trait <- this.inherit("scripts/skills/traits/character_trait"
 		this.m.ID = "trait.arena_fighter";
 		this.m.Name = "Arena Fighter";
 		this.m.Icon = "ui/traits/trait_icon_74.png";
-		this.m.Description = "Hearing a crowd chant your name can be addicting. This character is starting to enjoy the deadly fights of the arena and dispatching his opponents in a way that entertains the crowds.";
+		this.m.Description = "Hearing a crowd chant your name can be addicting. This character is starting to enjoy the deadly fights of the arena and dispatching opponents in a way that entertains the crowds.";
 		this.m.Order = this.Const.SkillOrder.Trait - 1;
 	}
 

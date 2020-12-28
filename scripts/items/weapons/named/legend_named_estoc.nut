@@ -31,7 +31,7 @@ this.legend_named_estoc <- this.inherit("scripts/items/weapons/named/named_weapo
 
 	function onEquip()
 	{
-		this.weapon.onEquip();
+		this.named_weapon.onEquip();
 		this.addSkill(this.new("scripts/skills/actives/slash"));
 		this.addSkill(this.new("scripts/skills/actives/lunge_skill"));
 		this.addSkill(this.new("scripts/skills/actives/riposte"));

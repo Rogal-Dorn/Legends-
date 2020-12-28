@@ -30,7 +30,7 @@ this.legend_named_warhammer <- this.inherit("scripts/items/weapons/named/named_w
 
 	function onEquip()
 	{
-		this.weapon.onEquip();
+		this.named_weapon.onEquip();
 		this.addSkill(this.new("scripts/skills/actives/hammer"));
 		this.addSkill(this.new("scripts/skills/actives/crush_armor"));
 		this.addSkill(this.new("scripts/skills/actives/legend_harvest_rock"));

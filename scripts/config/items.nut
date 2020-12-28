@@ -162,7 +162,8 @@ gt.Const.Items.NamedShields <- [
 ];
 gt.Const.Items.NamedBanditShields <- [
 	"shields/named/named_bandit_kite_shield",
-	"shields/named/named_bandit_heater_shield"
+	"shields/named/named_bandit_heater_shield",
+	"weapons/named/legend_named_parrying_dagger"
 ];
 gt.Const.Items.NamedUndeadShields <- [
 	"shields/named/named_undead_heater_shield",
@@ -209,7 +210,9 @@ gt.Const.Items.NamedMeleeWeapons <- [
 	"weapons/named/legend_named_voulge",
 	"weapons/named/legend_named_blacksmith_hammer",
 	"weapons/named/legend_named_sickle",
-	"weapons/named/legend_named_flail"
+	"weapons/named/legend_named_shovel",
+	"weapons/named/legend_named_flail",
+	"weapons/named/legend_named_infantry_axe"
 ];
 gt.Const.Items.NamedRangedWeapons <- [
 	"weapons/named/named_crossbow",
@@ -249,5 +252,6 @@ gt.Const.Items.HelmetUpgrades <- {
 	Helm = 0,
 	Top = 1,
 	Vanity = 2,
-	COUNT = 3
+	Rune = 3,
+	COUNT = 4
 }

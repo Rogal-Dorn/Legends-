@@ -6,7 +6,7 @@ this.addict_trait <- this.inherit("scripts/skills/traits/character_trait", {
 		this.m.ID = "trait.addict";
 		this.m.Name = "Addict";
 		this.m.Icon = "ui/traits/trait_icon_62.png";
-		this.m.Description = "This character has developed a substance addiction. If not provided with a regular supply, he may suffer symptoms of withdrawal.";
+		this.m.Description = "This character has developed a substance addiction. If not provided with a regular supply, they may suffer symptoms of withdrawal.";
 		this.m.Excluded = [];
 	}
 

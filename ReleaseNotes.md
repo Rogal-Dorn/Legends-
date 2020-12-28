@@ -4398,24 +4398,60 @@ Fully buffed with minor perks Sling Heavy Stone pre-nerf: 49-72/80%/188% for 8 A
 
 15.0.0.21
 
-
 **Changes**
-retinue tweaked to have more lowborns.
+retinue tweaks to have more lowborns. and outlaws
 Widows can be an agent
 Militia can be a drill sergeant
 Houndmaster can be bounty hunter
 ironmonger is now lowborn
 fishwife is lowborn
-Peaceful perk now called "peaceable", grants 20 resolve and 5% experience gain in excgange for -20 melee and ranged skill
+Peaceful perk now called "peaceable", grants 20 resolve and 5% experience gain in exchange for -20 melee and ranged skill
 Peaceful trait now grants +10 resolve and -5 melee skill
 Pacifist perk now grants +10% resolve, does not count toward scaling Grows unhappy if in commbat more than once a week,
+Assasin, wildlings and druid are now ranger recruits
+Crucified crusader is a crusader recruit
+Housemaid is lowborn
+Assassin commander is a combat background
+Mason is now educated and intelligent, instead of fast
+All traits are now gender neutral
+Raiders and Veterans now have a chance to spawn with infantry axe
+Adds new names for settlements (Luft)
 
+**Weapons**
+New named Infantry Axe (@GRIBABAS)
+New named Parrying dagger (@GRIBABAS)
+New named Shovel (@GRIBABAS)
+New named Noble sword variant (@GRIBABAS)
+New named Great sword variant (@GRIBABAS)
+New hammer graphics (@GRIBABAS)
+New sickle graphics (@GRIBABAS)
+
+**Noble scenario**
+Noble commander is now a drunkard with low hitpoints and poor armor
+Each of the company has background text, updated helms and traits
+Can recruit in the drunken noble event
+
+**Sato's escaped salve scenario**
+Manhunter equipment got another pass
+Manhunter ambush scaling should be a little easier earlier on and scale better later on
+Manhunter champions are a thing
+The "visit every settlement" ambition is removed from the pool for the origin
+You can no longer start with negative money
 
 **Armor Tweaks**
+Adds Enclave's Armor mod into Legends (added to layer system aswell)
+Added rune layers for helmets (similiar to rune system on armors)
+Helmet layers now have a visual for named layer
 Rebalance all barbarian helmet layers (+ adds a few new layers)
+Rebalance all orc and goblin helmet layers (+ adds a few new layers)
+Adds in a few dozen new names for named weapons and armors (Thanks to our local skin ghoul mascot)
+
+**Enemy Tweaks**
+Adds a *very* low chance for peasant butchers to be champions, based roughly on Bubblelord's post here: https://discord.com/channels/547043336465154049/784023165382426664/788395515846590484
+Rabble Poachers now start behind enemy units, the same as regular Poachers. (As opposed to in the same row as Thugs/Rabble)
 
 **Fixes**
-Fixes manhunter fight event as escaped indebted
+Fixes manhunter fight event as escaped indebted (both the load in and them being shirtless)
 Fixes Houndmaster background spawn
 Fixes sato destroyed caravan event giving nonlayered armor
 Fixes executioner fights not loading in
@@ -4423,3 +4459,12 @@ Fixes arena contract dropping an item with a named layer and not named base not 
 Fixes buckler bash and tower shield fortify from reaching a limit of 0 fatigue cost
 Fixes some retinue follower requirements being wrong
 Fixes perks going off screen. Bumped to the next perk level.
+Fixes camp repair and salvage infinite bugs
+Updates Faster Mod to fix reported faster mod crashes
+
+15.0.0.22
+
+**Fixes**
+Fixes the "Veteran/ranged manhunter" from causing errors when it spawns with a named armor
+Fixes the gladius icon
+Fixes peaceable tooltip

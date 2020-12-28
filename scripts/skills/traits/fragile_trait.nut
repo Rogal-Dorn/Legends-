@@ -6,7 +6,7 @@ this.fragile_trait <- this.inherit("scripts/skills/traits/character_trait", {
 		this.m.ID = "trait.fragile";
 		this.m.Name = "Fragile";
 		this.m.Icon = "ui/traits/trait_icon_04.png";
-		this.m.Description = "With a physique like an eggshell, this guy is not the natural born brawler.";
+		this.m.Description = "With a physique like an eggshell, this character is not the natural born brawler.";
 		this.m.Excluded = [
 			"trait.huge",
 			"trait.tough",

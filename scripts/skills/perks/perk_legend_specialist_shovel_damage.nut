@@ -19,15 +19,32 @@ this.perk_legend_specialist_shovel_damage <- this.inherit("scripts/skills/skill"
 		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
 		if (item != null)
 		{
-			if(item.getID() == "weapon.legend_shovel")
+
+			local ids = [
+				"weapon.legend_shovel",
+				"weapon.legend_named_shovel"
+			]
+
+			if (item.getID() in ids)
 			{
-			_properties.DamageRegularMin += 4;
-			_properties.DamageRegularMax += 12;
+				_properties.DamageRegularMin += 4;
+				_properties.DamageRegularMax += 12;
 			}
-			if(item.getID() == "weapon.two_handed_mace" || item.getID() == "weapon.two_handed_flanged_mace" || item.getID() == "weapon.named_two_handed_mace" || item.getID() == "weapon.named_two_handed_spiked_mace" || item.getID() == "weapon.goedendag" || item.getID() == "weapon.legend_military_goedendag" || item.getID() == "weapon.legend_two_handed_club" || item.getID() == "weapon.two_handed_spiked_mace")
+
+			ids = [
+				"weapon.two_handed_mace",
+				"weapon.two_handed_flanged_mace",
+				"weapon.named_two_handed_mace",
+				"weapon.named_two_handed_spiked_mace",
+				"weapon.goedendag",
+				"weapon.legend_military_goedendag",
+				"weapon.legend_two_handed_club",
+				"weapon.two_handed_spiked_mace"
+			]
+			if (item.getID() in ids)
 			{
-			_properties.DamageRegularMin += 1;
-			_properties.DamageRegularMax += 3;
+				_properties.DamageRegularMin += 1;
+				_properties.DamageRegularMax += 3;
 			}
 		}
 	}

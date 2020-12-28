@@ -41,6 +41,7 @@ this.negotiator_follower <- this.inherit("scripts/retinue/follower", {
 			if (bro.getSkills().hasSkill("perk.legend_pacifist"))
 			{
 				this.m.Requirements[0].IsSatisfied = true;
+				return;
 			}
 		}
 	}

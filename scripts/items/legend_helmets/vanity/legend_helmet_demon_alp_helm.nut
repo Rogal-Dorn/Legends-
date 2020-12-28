@@ -83,8 +83,8 @@ this.legend_helmet_demon_alp_helm <- this.inherit("scripts/items/legend_helmets/
 		this.m.Sprite = "legendhelms_demon_alp_helm" + "_" + variant;
 		this.m.SpriteDamaged = "legendhelms_demon_alp_helm" + "_" + variant + "_damaged";
 		this.m.SpriteCorpse = "legendhelms_demon_alp_helm" + "_" + variant + "_dead";
-		this.m.IconLarge = "";
 		this.m.Icon = "legend_helmets/inventory_demon_alp_helm" + "_" + variant + ".png";
+		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = this.m.Icon;
 		this.m.OverlayIconLarge = this.m.OverlayIcon;
 	}

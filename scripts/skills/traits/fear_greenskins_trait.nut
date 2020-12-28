@@ -6,7 +6,7 @@ this.fear_greenskins_trait <- this.inherit("scripts/skills/traits/character_trai
 		this.m.ID = "trait.fear_greenskins";
 		this.m.Name = "Fear of Greenskins";
 		this.m.Icon = "ui/traits/trait_icon_49.png";
-		this.m.Description = "Some past event or particularly convincing story in this character\'s life has left him scared of what greenskins are capable of, making him less reliable when facing them on the battlefield.";
+		this.m.Description = "Some past event or particularly convincing story in this character\'s life has left them scared of what greenskins are capable of, making this character less reliable when facing greenskins on the battlefield.";
 		this.m.Excluded = [
 			"trait.fearless",
 			"trait.brave",

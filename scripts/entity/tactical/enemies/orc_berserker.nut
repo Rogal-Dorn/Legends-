@@ -271,7 +271,8 @@ this.orc_berserker <- this.inherit("scripts/entity/tactical/actor", {
 	function onFactionChanged()
 	{
 		this.actor.onFactionChanged();
-		local flip = !this.isAlliedWithPlayer();
+		//Doesn't use helmet layer, don't flip
+		local flip = this.isAlliedWithPlayer();
 		this.getSprite("helmet").setHorizontalFlipping(flip);
 		this.getSprite("helmet_damage").setHorizontalFlipping(flip)
 		this.getSprite("helmet_vanity_lower").setHorizontalFlipping(flip);

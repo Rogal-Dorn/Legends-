@@ -122,7 +122,10 @@ this.noble_footman <- this.inherit("scripts/entity/tactical/human", {
 					[1, "kettle_hat"],
 					[1, "padded_kettle_hat"],
 					[1, "kettle_hat_with_mail"],
-					[1, "mail_coif"]
+					[1, "mail_coif"],
+					[1, "legend_enclave_vanilla_armet_01"],
+					[1, "legend_enclave_vanilla_armet_02"],
+					[1, "legend_enclave_vanilla_skullcap_01"]
 				])
 			}
 			else if (banner <= 7)
@@ -131,7 +134,10 @@ this.noble_footman <- this.inherit("scripts/entity/tactical/human", {
 					[1, "flat_top_helmet"],
 					[1, "padded_flat_top_helmet"],
 					[1, "flat_top_with_mail"],
-					[1, "mail_coif"]
+					[1, "mail_coif"],
+					[1, "legend_enclave_vanilla_armet_01"],
+					[1, "legend_enclave_vanilla_armet_02"],
+					[1, "legend_enclave_vanilla_skullcap_01"]
 				])
 			}
 			else
@@ -140,7 +146,10 @@ this.noble_footman <- this.inherit("scripts/entity/tactical/human", {
 					[1, "nasal_helmet"],
 					[1, "padded_nasal_helmet"],
 					[1, "nasal_helmet_with_mail"],
-					[1, "mail_coif"]
+					[1, "mail_coif"],
+					[1, "legend_enclave_vanilla_armet_01"],
+					[1, "legend_enclave_vanilla_armet_02"],
+					[1, "legend_enclave_vanilla_skullcap_01"]
 				])
 			}
 
