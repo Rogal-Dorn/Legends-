@@ -4466,3 +4466,4 @@ Updates Faster Mod to fix reported faster mod crashes
 
 **Fixes**
 Fixes the "Veteran/ranged manhunter" from causing errors when it spawns with a named armor
+Fixes the gladius icon
