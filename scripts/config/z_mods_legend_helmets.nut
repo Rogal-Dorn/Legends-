@@ -72,7 +72,6 @@ gt.Const.LegendMod.HelmObjs.extend([
         Hoods = [
             [4, "hood/legend_helmet_simple_hood"], //30
             [1, "hood/legend_helmet_padded_cap"], //40
-            [1, "hood/legend_helmet_hood_cloth_wide"], //30
             [1, "hood/legend_helmet_padded_cap"], //40
         ],
         Helms = [
