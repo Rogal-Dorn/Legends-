@@ -6,14 +6,14 @@ this.kobold_fighter <- this.inherit("scripts/entity/tactical/kobold", {
 	{
 		this.m.Type = this.Const.EntityType.KoboldFighter;
 		this.m.XP = this.Const.Tactical.Actor.KoboldFighter.XP;
-		this.goblin.create();
+		this.kobold.create();
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/goblin_ranged_agent");
 		this.m.AIAgent.setActor(this);
 	}
 
 	function onInit()
 	{
-		this.goblin.onInit();
+		this.kobold.onInit();
 		local b = this.m.BaseProperties;
 		b.setValues(this.Const.Tactical.Actor.KoboldFighter);
 		b.DamageDirectMult = 1.4;
