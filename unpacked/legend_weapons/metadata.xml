@@ -782,6 +782,12 @@
   <sprite id="icon_named_greatsword_04_bloodied" offsetY="35" ic="FF4E4F5A" width="130" height="142" img="icons\icon_named_greatsword_04_bloodied.png" left="-62" right="32" top="-64" bottom="50" />
   <sprite id="runed_icon_named_greatsword_04" offsetY="35" ic="FF58595C" width="130" height="142" img="icons\runed_icon_named_greatsword_04.png" left="-62" right="32" top="-64" bottom="50" />
   <sprite id="runed_icon_named_greatsword_04_bloodied" offsetY="35" ic="FF4E4F5A" width="130" height="142" img="icons\runed_icon_named_greatsword_04_bloodied.png" left="-62" right="32" top="-64" bottom="50" />
-
+  
+  <sprite id="icon_named_longsword_01" offsetY="35" ic="FF3B404A" width="128" height="172" img="icons\icon_named_longsword_01.png" left="-68" right="30" top="-60" bottom="69" />
+  <sprite id="icon_named_longsword_01_bloodied" offsetY="35" ic="FF3B404A" width="128" height="172" img="icons\icon_named_longsword_01_bloodied.png" left="-68" right="30" top="-60" bottom="69" />
+  <sprite id="icon_named_sword_07" offsetY="35" ic="FF3B404A" width="65" height="160" img="icons\icon_named_sword_07.png" left="1" right="50" top="-58" bottom="63" />
+  <sprite id="icon_named_sword_07_bloodied" offsetY="35" ic="FF3B404A" width="65" height="160" img="icons\icon_named_sword_07_bloodied.png" left="1" right="50" top="-58" bottom="63" />
+  <sprite id="icon_legend_halberd_named_02" offsetY="35" ic="FF3B404A" width="80" height="197" img="icons\icon_legend_halberd_named_02.png" left="-60" right="0" top="-58" bottom="90" />
+  <sprite id="icon_legend_halberd_named_02_bloodied" offsetY="35" ic="FF3B404A" width="80" height="197" img="icons\icon_legend_halberd_named_02_bloodied.png" left="-60" right="0" top="-58" bottom="90" />
 
  </brush>

@@ -650,7 +650,7 @@ layers = [
 },
 {"name" : "enclave_armet"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 3000, "con" : 130, "stam" : -6, "vis" : -1, "hair" : "true", "beard" : "true",  \
  "title" :  "Armet", \
- "desc" :  "A finely crafted close helm of outstanding workmanship" \
+ "desc" :  "A finely crafted armet of outstanding workmanship" \
 },
 {"name" : "legend_frogmouth"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 6000, "con" : 265, "stam" : -13, "vis" : -3, "hair" : "true", "beard" : "true",  \
  "title" :  "Frogmouth", \
