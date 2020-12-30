@@ -3,20 +3,37 @@ from string import Template
 from shutil import copyfile
 import os
 
-Normal = '<sprite id="$name" offsetY="$offsetY" ic="FF4E5053" width="$w" height="$h" img="$name_path" left="$left" right="$right" top="$top" bottom="$bottom" />\n'
-Damaged = '<sprite id="$damaged" offsetY="$offsetY" ic="FF4E5053" width="$w" height="$h" img="$damaged_path" left="$left" right="$right" top="$top" bottom="$bottom" />\n'
-Dead = '<sprite id="$dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="$dead_path" left="-10" right="46" top="-46" bottom="4" />\n'
-
-GoblinHelms = [Normal, Damaged, Dead]
+Normal = '<sprite id="$name" offsetY="$offsetY" ic="FF4E5053" width="$w" height="$h" img="$img" left="$left" right="$right" top="$top" bottom="$bottom" />\n'
+Full = '<sprite id="$name" offsetX="$offsetX" offsetY="$offsetY" f="64F6" f1="$f1" f2="$f2" ic="FF313D49" width="$w" height="$h" img="$img" left="$left" right="$right" top="$top" bottom="$bottom" />\n'
 
 #Moving Brush:
 #DOWN :  bigger negative
 #UP : smaller negative
 brush_only_layers = [
-    {"template": GoblinHelms, "entity":"goblins", "name": "bust_goblin_04_helmet", "min" : 4, "max" : 15, "w": 60, "h": 80,  "left": -36, "right" :24, "top": -28, "bottom": 52, "offsetY" : 35},
-    {"template": GoblinHelms, "entity":"goblins", "name": "bust_goblin_01_helmet", "min" : 4, "max" : 20, "w": 60, "h": 80,  "left": -36, "right" :24, "top": -28, "bottom": 52, "offsetY" : 35},
-    {"template": GoblinHelms, "entity":"goblins", "name": "bust_goblin_02_helmet", "min" : 20, "max" : 26, "w": 60, "h": 80,  "left": -36, "right" :24, "top": -28, "bottom": 52, "offsetY" : 35}
+    {"template": [Normal], "entity":"goblins", "name": "bust_goblin_04_helmet",                      "min" : 4, "max" : 15, "w": 60, "h": 80,  "left": -36, "right" :24, "top": -28, "bottom": 52, "offsetY" : 35},
+    {"template": [Normal], "entity":"goblins", "name": "bust_goblin_04_helmet", "suffix": "damaged", "min" : 4, "max" : 15, "w": 60, "h": 80,  "left": -36, "right" :24, "top": -28, "bottom": 52, "offsetY" : 35},
+    {"template": [Normal], "entity":"goblins", "name": "bust_goblin_04_helmet", "suffix": "dead", "img":"bust_goblin_04_helmet_00_dead", "min" : 4, "max" : 15, "w": 125, "h": 114,  "left": -10, "right" :46, "top": -46, "bottom": 4, "offsetY" : 15},
+
+    {"template": [Normal], "entity":"goblins", "name": "bust_goblin_01_helmet",                      "min" : 4, "max" : 20, "w": 60, "h": 80,  "left": -36, "right" :24, "top": -28, "bottom": 52, "offsetY" : 35},
+    {"template": [Normal], "entity":"goblins", "name": "bust_goblin_01_helmet", "suffix": "damaged", "min" : 4, "max" : 20, "w": 60, "h": 80,  "left": -36, "right" :24, "top": -28, "bottom": 52, "offsetY" : 35},
+    {"template": [Normal], "entity":"goblins", "name": "bust_goblin_01_helmet", "suffix": "dead", "img":"bust_goblin_04_helmet_00_dead", "min" : 4, "max" : 20, "w": 125, "h": 114,  "left": -10, "right" :46, "top": -46, "bottom": 4, "offsetY" : 15},
+
+    {"template": [Normal], "entity":"goblins", "name": "bust_goblin_02_helmet",                      "min" : 20, "max" : 26, "w": 60, "h": 80,  "left": -36, "right" :24, "top": -28, "bottom": 52, "offsetY" : 35},
+    {"template": [Normal], "entity":"goblins", "name": "bust_goblin_02_helmet", "suffix": "damaged", "min" : 20, "max" : 26, "w": 60, "h": 80,  "left": -36, "right" :24, "top": -28, "bottom": 52, "offsetY" : 35},
+    {"template": [Normal], "entity":"goblins", "name": "bust_goblin_02_helmet", "suffix": "dead", "img":"bust_goblin_04_helmet_00_dead", "min" : 20, "max" : 26, "w": 125, "h": 114,  "left": -10, "right" :46, "top": -46, "bottom": 4, "offsetY" : 15},
+
+    {"template": [Normal], "entity":"undead", "name": "mummy_head",                   "min" : 1, "max" : 9, "w": 104, "h": 142, "left": -17, "right" :29, "top": -14, "bottom": 48, "offsetY" : 35},
+    {"template": [Full],   "entity":"undead", "name": "mummy_head", "suffix": "dead", "min" : 1, "max" : 9, "w": 191, "h": 185, "left": -45, "right" :11, "top": -53, "bottom": 3, "offsetY" : 10, "offsetX" : 6, "f1":-15, "f2": -15},
+
+    {"template": [Normal], "entity":"goblins", "name": "bust_kobold",                      "min" : 1, "max" : 5, "w": 66, "h": 68, "left": -33, "right" :33, "top": -44, "bottom": 24, "offsetY" : 35},
+    {"template": [Normal], "entity":"goblins", "name": "bust_kobold", "suffix": "damaged", "min" : 1, "max" : 5, "w": 66, "h": 66, "left": -33, "right" :33, "top": -44, "bottom": 24, "offsetY" : 35},
+    {"template": [Normal], "entity":"goblins", "name": "bust_kobold", "suffix": "dead",    "min" : 1, "max" : 5, "w": 118, "h": 94, "left": -33, "right" :35, "top": -46, "bottom": 20, "offsetY" : 35},
+
+    {"template": [Normal], "entity":"goblins", "name": "head_kobold",                      "min" : 1, "max" : 5, "w": 82, "h": 64, "left": -41, "right" :41, "top": -32, "bottom": 32, "offsetY" : 35},
+    {"template": [Normal], "entity":"goblins", "name": "head_kobold", "suffix": "dead",    "min" : 1, "max" : 5, "w": 82, "h": 64, "left": -41, "right" :41, "top": -32, "bottom": 32, "offsetY" : 35},
+
 ]
+
 
 enemies = r"""
 
@@ -242,17 +259,6 @@ enemies = r"""
   <sprite id="legend_catapult_dead_arrows" offsetY="30" f="6402" ic="FF444B4F" width="169" height="139" img="entity\catapult_dead_arrows.png" left="-19" right="53" top="-19" bottom="37" />
   <sprite id="legend_catapult_dead_javelin" offsetY="30" f="6402" ic="FF141B29" width="169" height="139" img="entity\catapult_dead_javelin.png" left="-14" right="78" top="-2" bottom="54" />
 
-  <sprite id="bust_kobold_01" offsetY="35" ic="FF3C5049" width="104" height="142" img="entity\goblins\bust_kobold_01.png" left="-33" right="35" top="-46" bottom="20" />
-  <sprite id="bust_kobold_02" offsetY="35" ic="FF3C5049" width="104" height="142" img="entity\goblins\bust_kobold_02.png" left="-33" right="35" top="-46" bottom="20" />
-  <sprite id="bust_kobold_03" offsetY="35" ic="FF3C5049" width="104" height="142" img="entity\goblins\bust_kobold_03.png" left="-33" right="35" top="-46" bottom="20" />
-  <sprite id="bust_kobold_04" offsetY="35" ic="FF3C5049" width="104" height="142" img="entity\goblins\bust_kobold_04.png" left="-33" right="35" top="-46" bottom="20" />
-  <sprite id="bust_kobold_05" offsetY="35" ic="FF3C5049" width="104" height="142" img="entity\goblins\bust_kobold_05.png" left="-33" right="35" top="-46" bottom="20" />
-  <sprite id="head_kobold_01" offsetY="35" ic="FF4D5F5E" width="104" height="142" img="entity\goblins\head_kobold_01.png" left="-42" right="40" top="-25" bottom="39" />
-  <sprite id="head_kobold_02" offsetY="35" ic="FF4D5F5E" width="104" height="142" img="entity\goblins\head_kobold_02.png" left="-42" right="40" top="-25" bottom="39" />
-  <sprite id="head_kobold_03" offsetY="35" ic="FF4D5F5E" width="104" height="142" img="entity\goblins\head_kobold_03.png" left="-42" right="40" top="-25" bottom="39" />
-  <sprite id="head_kobold_04" offsetY="35" ic="FF4D5F5E" width="104" height="142" img="entity\goblins\head_kobold_04.png" left="-42" right="40" top="-25" bottom="39" />
-  <sprite id="head_kobold_05" offsetY="35" ic="FF4D5F5E" width="104" height="142" img="entity\goblins\head_kobold_05.png" left="-42" right="40" top="-25" bottom="39" />
-
    <sprite id="bust_schrat_body_01_injured" offsetX="-5" offsetY="35" ic="FF36586C" width="174" height="214" img="entity\beasts\bust_schrat_body_01_injured.png" left="-32" right="50" top="-47" bottom="23" />
 
   <sprite id="were_boar_body" offsetY="35" ic="FF2F3435" width="174" height="214" img="entity\beasts\were_boar_body.png" left="-47" right="61" top="-65" bottom="31" />
@@ -319,25 +325,6 @@ enemies = r"""
   <sprite id="bust_nacht_head_01" offsetX="-5" offsetY="35" ic="FF203653" width="174" height="214" img="entity\beasts\natchheadadapt1.png" left="-58" right="38" top="-16" bottom="98" />
   <sprite id="bust_nacht_head_02" offsetX="-5" offsetY="35" ic="FF203653" width="174" height="214" img="entity\beasts\natchheadadapt2.png" left="-58" right="38" top="-16" bottom="98" />
 
-  <sprite id="mummy_head_01" offsetY="35" ic="FF323E47" width="104" height="142" img="entity\undead\mummy_head_01.png" left="-17" right="29" top="-14" bottom="48" />
-  <sprite id="mummy_head_01_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF313D49" width="191" height="185" img="entity\undead\mummy_head_01_dead.png" left="-45" right="11" top="-53" bottom="3" />
-  <sprite id="mummy_head_02" offsetY="35" ic="FF323E47" width="104" height="142" img="entity\undead\mummy_head_02.png" left="-17" right="29" top="-14" bottom="48" />
-  <sprite id="mummy_head_02_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF313D49" width="191" height="185" img="entity\undead\mummy_head_02_dead.png" left="-45" right="11" top="-53" bottom="3" />
-  <sprite id="mummy_head_03" offsetY="35" ic="FF323E47" width="104" height="142" img="entity\undead\mummy_head_03.png" left="-17" right="29" top="-14" bottom="48" />
-  <sprite id="mummy_head_03_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF313D49" width="191" height="185" img="entity\undead\mummy_head_03_dead.png" left="-45" right="11" top="-53" bottom="3" />
-  <sprite id="mummy_head_04" offsetY="35" ic="FF323E47" width="104" height="142" img="entity\undead\mummy_head_04.png" left="-17" right="29" top="-14" bottom="48" />
-  <sprite id="mummy_head_04_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF313D49" width="191" height="185" img="entity\undead\mummy_head_04_dead.png" left="-45" right="11" top="-53" bottom="3" />
-  <sprite id="mummy_head_05" offsetY="35" ic="FF323E47" width="104" height="142" img="entity\undead\mummy_head_05.png" left="-17" right="29" top="-14" bottom="48" />
-  <sprite id="mummy_head_05_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF313D49" width="191" height="185" img="entity\undead\mummy_head_05_dead.png" left="-45" right="11" top="-53" bottom="3" />
-  <sprite id="mummy_head_06" offsetY="35" ic="FF323E47" width="104" height="142" img="entity\undead\mummy_head_06.png" left="-17" right="29" top="-14" bottom="48" />
-  <sprite id="mummy_head_06_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF313D49" width="191" height="185" img="entity\undead\mummy_head_06_dead.png" left="-45" right="11" top="-53" bottom="3" />
-  <sprite id="mummy_head_07" offsetY="35" ic="FF323E47" width="104" height="142" img="entity\undead\mummy_head_07.png" left="-17" right="29" top="-14" bottom="48" />
-  <sprite id="mummy_head_07_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF313D49" width="191" height="185" img="entity\undead\mummy_head_07_dead.png" left="-45" right="11" top="-53" bottom="3" />
-  <sprite id="mummy_head_08" offsetY="35" ic="FF323E47" width="104" height="142" img="entity\undead\mummy_head_08.png" left="-17" right="29" top="-14" bottom="48" />
-  <sprite id="mummy_head_08_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF313D49" width="191" height="185" img="entity\undead\mummy_head_08_dead.png" left="-45" right="11" top="-53" bottom="3" />
-  <sprite id="mummy_head_09" offsetY="35" ic="FF323E47" width="104" height="142" img="entity\undead\mummy_head_09.png" left="-17" right="29" top="-14" bottom="48" />
-  <sprite id="mummy_head_09_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF313D49" width="191" height="185" img="entity\undead\mummy_head_09_dead.png" left="-45" right="11" top="-53" bottom="3" />
-
 
   <sprite id="mummy_bandages_01" offsetY="35" ic="FF1A242E" width="104" height="142" img="entity\undead\armor\mummy_bandages_01.png" left="-42" right="44" top="-50" bottom="10" />
   <sprite id="mummy_bandages_01_damaged" offsetY="35" ic="FF19222C" width="104" height="142" img="entity\undead\armor\mummy_bandages_01_damaged.png" left="-42" right="44" top="-50" bottom="10" />
@@ -380,10 +367,27 @@ def makeBrushes():
 
         for t in d["template"]:
             for name in names:
+                if "suffix" in d:
+                    name = name + "_" + d["suffix"]
+
+                img = name
+                if "img" in d :
+                    img = d["img"]
+
+                offsetX = 0
+                if "offsetX" in d:
+                    offsetX = d["offsetX"]
+
+                f1 = 0
+                if "f1" in d:
+                    f1 = d["f1"]
+
+                f2 = 0
+                if "f2" in d:
+                    f2 = d["f2"]
+
                 opts = dict(
                     name=name,
-                    damaged= name + "_damaged",
-                    dead= name + "_dead",
                     w=d["w"],
                     h=d["h"],
                     left=d["left"],
@@ -391,9 +395,10 @@ def makeBrushes():
                     top=d["top"],
                     bottom=d["bottom"],
                     offsetY=d["offsetY"],
-                    name_path=os.path.join("entity", d["entity"], name + ".png"),
-                    damaged_path=os.path.join("entity", d["entity"], name + "_damaged.png"),
-                    dead_path=os.path.join("entity", d["entity"], "bust_goblin_04_helmet_00_dead.png")
+                    offsetX=offsetX,
+                    f1=f1,
+                    f2=f2,
+                    img=os.path.join("entity", d["entity"], img + ".png")
                     #dead_path=os.path.join("..", "entity", "goblins", name + "_dead.png")
                 )
                 s = Template(t)

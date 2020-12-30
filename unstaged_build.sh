@@ -17,6 +17,16 @@ else
 fi
 }
 
+function checkForError() {
+if [[ $1 == *"ERROR"* ]]; then
+    while read -r line; do
+        echo "$line"
+    done <<< "$1"
+    echo "Failed to build Legends brush $2"
+    exit 1;
+fi
+}
+
 function handleExit() {
     # Get exit code of the previous command, instead of echo
     exitCode=$?
@@ -26,6 +36,31 @@ function handleExit() {
         exit 1
     fi
 }
+
+function copyBrushes() {
+echo "Copying brushes to $BBDir\\brushes ..."
+mkdir -p "$BBDir\\brushes"
+cp -R brushes/. "$BBDir\\brushes"
+handleExit
+mkdir -p "$BBDir\\gfx"
+cp -R gfx/*.png "$BBDir\\gfx"
+handleExit
+}
+
+
+declare -a ArmorBrushes=(
+"legend_armor/0"
+"legend_armor/1"
+"legend_armor/2"
+)
+
+declare -a HelmetBrushes=(
+"legend_helmets"
+"legend_helmets/0"
+"legend_helmets/1"
+"legend_helmets/2"
+"legend_helmets/3"
+)
 
 FILES=$(git status -s)
 while read -r line; do
@@ -47,12 +82,45 @@ while read -r line; do
             python make_legend_helmets.py
             handleExit
             cp -R helmets/. "$BBDir\\scripts\items\legend_helmets"
+
+            for i in "${HelmetBrushes[@]}"
+            do
+                echo "Building $i brush..."
+                cd ../bin
+                brush=${i//[\/]/_}
+                o=$(./bbrusher.exe pack --gfxPath "../$RepoDir/" ../$RepoDir/brushes/$brush.brush ../$RepoDir/unpacked/$i)
+                cd ../"$RepoDir"
+                checkForError "$o" "$i"
+            done
+            copyBrushes
+
         elif [[ "$xpath" == make_legend_armor.py ]]; then
             rm -rf legend_armor
             mkdir -p "legend_armor"
             python make_legend_armor.py
             handleExit
             cp -R legend_armor/. "$BBDir\\scripts\items\legend_armor"
+            for i in "${ArmorBrushes[@]}"
+            do
+                echo "Building $i brush..."
+                cd ../bin
+                brush=${i//[\/]/_}
+                o=$(./bbrusher.exe pack --gfxPath "../$RepoDir/" ../$RepoDir/brushes/$brush.brush ../$RepoDir/unpacked/$i)
+                cd ../"$RepoDir"
+                checkForError "$o" "$i"
+            done
+            copyBrushes
+
+        elif [[ "$xpath" == make_legend_enemies.py ]]; then
+            python make_legend_enemies.py
+            handleExit
+            echo "Building legend_enemies brush..."
+            cd ../bin
+            o=$(./bbrusher.exe pack --gfxPath "../$RepoDir/" ../$RepoDir/brushes/legend_enemies.brush ../$RepoDir/unpacked/legend_enemies)
+            cd ../"$RepoDir"
+            checkForError "$o" "$i"
+            copyBrushes
+
         elif [[ "$xpath" == *.py ]]; then
             :
             #echo "skipping $line"
