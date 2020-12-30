@@ -64,8 +64,9 @@ this.kobold_fighter <- this.inherit("scripts/entity/tactical/kobold", {
 		// 	}
 		// }
 
-		//this.m.Items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
-		this.m.Items.equip(this.new("scripts/items/weapons/greenskins/goblin_notched_blade"));
+		this.m.Items.addToBag(this.new("scripts/items/weapons/goblin_notched_blade"));
+		this.m.Items.equip(this.new("scripts/items/weapons/legend_blowgun"));
+		this.m.Items.equip(this.new("scripts/items/ammo/legend_darts"));
 
 		if (this.Math.rand(1, 100) <= 10)
 		{

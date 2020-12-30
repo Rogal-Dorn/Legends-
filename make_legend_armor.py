@@ -1220,7 +1220,7 @@ def main():
             temp = NamedUpgradeNut
 
         fname = d["name"]
-        dirpath = os.path.join(os.path.dirname(os.path.abspath(__file__)),  "legend_armor", layer)
+        dirpath = os.path.join(os.path.dirname(os.path.abspath(__file__)),  "legend_armor_scripts", layer)
         if not os.path.exists(dirpath):
             os.makedirs(dirpath)
 
