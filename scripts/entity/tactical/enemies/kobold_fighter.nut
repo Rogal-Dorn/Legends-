@@ -11,6 +11,7 @@ this.kobold_fighter <- this.inherit("scripts/entity/tactical/kobold", {
 		this.m.AIAgent.setActor(this);
 	}
 
+
 	function onInit()
 	{
 		this.kobold.onInit();
@@ -24,7 +25,7 @@ this.kobold_fighter <- this.inherit("scripts/entity/tactical/kobold", {
 		this.m.ActionPointCosts = this.Const.DefaultMovementAPCost;
 		this.m.FatigueCosts = this.Const.DefaultMovementFatigueCost;
 		this.getSprite("head").setBrush("head_kobold_0" + this.Math.rand(1, 5));
-		this.getSprite("quiver").Visible = true;
+		//this.getSprite("quiver").Visible = true;
 		this.addDefaultStatusSprites();
 
 		if (!this.m.IsLow)
@@ -49,22 +50,22 @@ this.kobold_fighter <- this.inherit("scripts/entity/tactical/kobold", {
 
 	function assignRandomEquipment()
 	{
-		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand) == null)
-		{
-			local r = this.Math.rand(1, 2);
+		// if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand) == null)
+		// {
+		// 	local r = this.Math.rand(1, 2);
 
-			if (r == 1)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/greenskins/goblin_bow"));
-			}
-			else if (r == 2)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/greenskins/goblin_heavy_bow"));
-			}
-		}
+		// 	if (r == 1)
+		// 	{
+		// 		this.m.Items.equip(this.new("scripts/items/weapons/greenskins/goblin_bow"));
+		// 	}
+		// 	else if (r == 2)
+		// 	{
+		// 		this.m.Items.equip(this.new("scripts/items/weapons/greenskins/goblin_heavy_bow"));
+		// 	}
+		// }
 
-		this.m.Items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
-		this.m.Items.addToBag(this.new("scripts/items/weapons/greenskins/goblin_notched_blade"));
+		//this.m.Items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
+		this.m.Items.equip(this.new("scripts/items/weapons/greenskins/goblin_notched_blade"));
 
 		if (this.Math.rand(1, 100) <= 10)
 		{
