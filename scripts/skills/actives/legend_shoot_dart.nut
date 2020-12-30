@@ -60,7 +60,7 @@ this.legend_shoot_dart <- this.inherit("scripts/skills/skill", {
 		this.m.MinRange = 1;
 		this.m.MaxRange = 5;
 		this.m.MaxLevelDifference = 4;
-		this.m.ProjectileType = this.Const.ProjectileType.Stone;
+		this.m.ProjectileType = this.Const.ProjectileType.Darts;
 		this.m.ProjectileTimeScale = 1.2;
 		this.m.IsProjectileRotated = true;
 		this.m.ChanceDecapitate = 0;
@@ -122,7 +122,7 @@ this.legend_shoot_dart <- this.inherit("scripts/skills/skill", {
 
 	function onAfterUpdate( _properties )
 	{
-		this.m.MaxRange = this.m.Item.getRangeMax() + (_properties.IsSpecializedInSlings ? 1 : 0);	
+		this.m.MaxRange = this.m.Item.getRangeMax() + (_properties.IsSpecializedInSlings ? 1 : 0);
 		this.m.AdditionalAccuracy = _properties.IsSpecializedInSlings ? (this.m.Item.getAdditionalAccuracy() + 5) : this.m.Item.getAdditionalAccuracy();
 		this.m.FatigueCostMult = _properties.IsSpecializedInSlings ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
 	}

@@ -25,9 +25,9 @@ brush_only_layers = [
     {"template": [Normal], "entity":"undead", "name": "mummy_head",                   "min" : 1, "max" : 9, "w": 104, "h": 142, "left": -17, "right" :29, "top": -14, "bottom": 48, "offsetY" : 35},
     {"template": [Full],   "entity":"undead", "name": "mummy_head", "suffix": "dead", "min" : 1, "max" : 9, "w": 191, "h": 185, "left": -45, "right" :11, "top": -53, "bottom": 3, "offsetY" : 10, "offsetX" : 6, "f1":-15, "f2": -15},
 
-    {"template": [Normal], "entity":"goblins", "name": "bust_kobold",                      "min" : 1, "max" : 5, "w": 66, "h": 68, "left": -33, "right" :33, "top": -44, "bottom": 24, "offsetY" : 35},
-    {"template": [Normal], "entity":"goblins", "name": "bust_kobold", "suffix": "damaged", "min" : 1, "max" : 5, "w": 66, "h": 66, "left": -33, "right" :33, "top": -44, "bottom": 24, "offsetY" : 35},
-    {"template": [Normal], "entity":"goblins", "name": "bust_kobold", "suffix": "dead",    "min" : 1, "max" : 5, "w": 118, "h": 94, "left": -33, "right" :35, "top": -46, "bottom": 20, "offsetY" : 35},
+    {"template": [Normal], "entity":"goblins", "name": "bust_kobold",                      "min" : 1, "max" : 5, "w": 66, "h": 68, "left": -33, "right" :33, "top": -51, "bottom": 17, "offsetY" : 35},
+    {"template": [Normal], "entity":"goblins", "name": "bust_kobold", "suffix": "damaged", "min" : 1, "max" : 5, "w": 66, "h": 66, "left": -33, "right" :33, "top": -51, "bottom": 17, "offsetY" : 35},
+    {"template": [Normal], "entity":"goblins", "name": "bust_kobold", "suffix": "dead",    "min" : 1, "max" : 5, "w": 118, "h": 94, "left": -59, "right" :59, "top": -47, "bottom": 47, "offsetY" : 35},
 
     {"template": [Normal], "entity":"goblins", "name": "head_kobold",                      "min" : 1, "max" : 5, "w": 82, "h": 64, "left": -41, "right" :41, "top": -32, "bottom": 32, "offsetY" : 35},
     {"template": [Normal], "entity":"goblins", "name": "head_kobold", "suffix": "dead",    "min" : 1, "max" : 5, "w": 82, "h": 64, "left": -41, "right" :41, "top": -32, "bottom": 32, "offsetY" : 35},

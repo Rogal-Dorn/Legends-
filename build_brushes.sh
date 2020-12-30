@@ -42,7 +42,7 @@ handleExit
 python make_legend_armor.py
 handleExit
 mkdir -p "$BBDir\scripts\\items\\legend_armor"
-cp -R legend_armor/. "$BBDir\\scripts\\items\\legend_armor"
+cp -R legend_armor_scripts/. "$BBDir\\scripts\\items\\legend_armor"
 handleExit
 
 echo "Building enemies..."
