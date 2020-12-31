@@ -4469,7 +4469,7 @@ Kobolds
 
 **changes**
 Slaves are now gauranteed perks for cleavers and flails instead of hammers and axes, to reflect their intimate experience on the receiving end of chains and whips
-Most helm vanity layers changed to have lower durability, cost and fatigue. No more heavy protective feather, or 200 gold straw hats.  This in turn lowers the defense of some enemies and the cost of some rescruits
+
 
 **Fixes**
 Scenarios now work again
@@ -4487,3 +4487,4 @@ Added a named sword variant
 Added milanese plate armor variant
 Added layered version of enclave's great helm and venitian bascinet
 Added armet visor, great bascinet visor, venitian bascinet visor
+Most helm vanity layers changed to have lower durability, cost and fatigue. No more heavy protective feather, or 200 gold straw hats.  This in turn lowers the defense of some enemies and the cost of some rescruits
