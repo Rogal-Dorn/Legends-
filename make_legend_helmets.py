@@ -603,6 +603,10 @@ layers = [
  "title" :  "Peaked Bascinet", \
  "desc" :  "A well made peaked bascinet" \
 },
+{"name" : "enclave_venitian_bascinet"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 2800, "con" : 260, "stam" : -13, "vis" : -2, "hair" : "true", "beard" : "false",  \
+ "title" :  "Great Bascinet", \
+ "desc" :  "A tall helm composed of a peaked bascinet and riveted cheek protection." \
+},
 {"name" : "kettle_helm"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 1600, "con" : 130, "stam" : -6, "vis" : -2, "hair" : "true", "beard" : "false",  \
  "title" :  "Kettle Helm", \
  "desc" :  "A full-metal helmet with a broad rim." \
@@ -896,9 +900,13 @@ layers = [
  "title" :  "Armet Visor", \
  "desc" :  "A visor that fits on the armet, protecting the lower jaw while leaving a slit for eyesight." \
 },
+{"name" : "enclave_venitian_bascinet_visor"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 450, "con" : 45, "stam" : -3, "vis" : -1, "hair" : "false", "beard" : "true",  \
+ "title" :  "Great Bascinet Visor", \
+ "desc" :  "A visor that fits on the great bascinet, covering the the only hole for the face, it increases the wearer's defense greatly." \
+},
 {"name" : "enclave_great_bascinet_visor"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 450, "con" : 50, "stam" : -3, "vis" : -2, "hair" : "false", "beard" : "true",  \
  "title" :  "Great Bascinet Visor", \
- "desc" :  "Visor made for the Great Bascinet. Provides much protection to the wearer's face, but limits vision." \
+ "desc" :  "Visor made for the great bascinet. Provides much protection to the wearer's face, but limits vision." \
 },
 {"name" : "faceplate_pointed_slit"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 450, "con" : 50, "stam" : -3, "vis" : -2, "hair" : "false", "beard" : "true",  \
  "title" :  "Slit Pointed Faceplate", \
