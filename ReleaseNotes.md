@@ -4487,3 +4487,4 @@ Added a named sword variant
 Added milanese plate armor variant
 Added layered version of enclave's great helm and venitian bascinet
 Added armet visor, great bascinet visor, venitian bascinet visor
+Added Italo-norman helm
