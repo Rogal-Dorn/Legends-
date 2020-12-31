@@ -4464,7 +4464,11 @@ Updates Faster Mod to fix reported faster mod crashes
 
 15.0.0.22
 
+**New Enemies**
+Kobolds
+
 **Fixes**
+Scenarios now work again
 Fixes the "Veteran/ranged manhunter" from causing errors when it spawns with a named armor
 Fixes the gladius icon
 Fixes peaceable tooltip

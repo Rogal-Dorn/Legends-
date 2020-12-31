@@ -1413,7 +1413,7 @@ gt.Const.World.Spawn.Troops <- {
 		Cost = 5,
 		Row = 0,
 		Script = "scripts/entity/tactical/humans/peasant_armed_infected"
-	},	
+	},
 	SatoManhunter = {
 		ID = this.Const.EntityType.SatoManhunter,
 		Variant = 0,
@@ -1457,7 +1457,15 @@ gt.Const.World.Spawn.Troops <- {
 		Cost = 3,
 		Row = 0,
 		Script = "scripts/entity/tactical/enemies/kobold_fighter"
-	}	
+	},
+	KoboldWolfrider = {
+		ID = this.Const.EntityType.KoboldWolfrider,
+		Variant = 0,
+		Strength = 20,
+		Cost = 20,
+		Row = 1,
+		Script = "scripts/entity/tactical/enemies/kobold_wolfrider"
+	},
 	LegendMummyLight = {
 		ID = this.Const.EntityType.LegendMummyLight,
 		Variant = 0,

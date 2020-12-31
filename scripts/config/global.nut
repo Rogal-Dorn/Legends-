@@ -397,16 +397,20 @@ gt.Const.EntityType <- {
 	LegendCatapult = 140,
     LegendHorse = 141,
 	SkeletonGladiator = 142,
+
 	BanditRabblePoacher = 143,
 	BanditVermes = 144,
+
 	SatoManhunter = 145,
 	SatoManhunterVeteran = 146,
+
 	LegendMummyLight = 147,
 	LegendMummyMedium = 148,
 	LegendMummyHeavy = 149,
 	LegendMummyQueen = 150,
 	KoboldFighter = 151,
-	
+	KoboldWolfrider = 152
+
 	function convertOldToNew( _id )
 	{
 		switch(_id)
@@ -714,14 +718,18 @@ gt.Const.EntityIcon <- [
 	"catapult_01_orientation",
 	"horse_orientation",
 	"gladiator_orientation",
+
+	"rabble_poacher_orientation",
+	"bandit_raider_wolf",
+
 	"poacher_orientation",
 	"officer_orientation",
-	"nomad_02_orientation",	
-	"rabble2_orientation",
+
 	"mummy_light_orientation",
 	"mummy_medium_orientation",
 	"mummy_heavy_orientation",
 	"mummy_queen_orientation",
-	"kobold_fighter_orientation"
+	"kobold_fighter_orientation",
+	"kobold_wolfrider_orientation"
 ];
 

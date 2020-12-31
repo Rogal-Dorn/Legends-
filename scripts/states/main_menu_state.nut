@@ -150,9 +150,9 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_line_battle_goblins"));
 					break;
 
-				case 11:
-					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_line_battle_kobold"));
-					break;
+				// case 11:
+				// 	tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_line_battle_kobolds"));
+				// 	break;
 
 				case 13:
 					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_wolfriders"));
@@ -576,11 +576,11 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 				name = "Line Battle (Goblins)",
 				description = "[p=c][img]gfx/ui/events/event_48.png[/img][/p]\n[p=c]Featuring two battle lines pitted against each other in close combat from the start. Difficult.[/p]"
 			},
-			{
-				id = 11,
-				name = "Line Battle (Kobolds)",
-				description = "[p=c][img]gfx/ui/events/event_48.png[/img][/p]\n[p=c]Featuring two battle lines pitted against each other in close combat from the start. Difficult.[/p]"
-			},
+			// {
+			// 	id = 11,
+			// 	name = "Line Battle (Kobolds)",
+			// 	description = "[p=c][img]gfx/ui/events/event_48.png[/img][/p]\n[p=c]Featuring two battle lines pitted against each other in close combat from the start. Difficult.[/p]"
+			// },
 			{
 				id = 13,
 				name = "Wolfriders",
