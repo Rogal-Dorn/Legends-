@@ -435,21 +435,21 @@
 <sprite id="mummy_head_07_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF313D49" width="191" height="185" img="entity\undead\mummy_head_07_dead.png" left="-45" right="11" top="-53" bottom="3" />
 <sprite id="mummy_head_08_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF313D49" width="191" height="185" img="entity\undead\mummy_head_08_dead.png" left="-45" right="11" top="-53" bottom="3" />
 <sprite id="mummy_head_09_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF313D49" width="191" height="185" img="entity\undead\mummy_head_09_dead.png" left="-45" right="11" top="-53" bottom="3" />
-<sprite id="bust_kobold_01" offsetY="35" ic="FF4E5053" width="66" height="68" img="entity\goblins\bust_kobold_01.png" left="-33" right="33" top="-44" bottom="24" />
-<sprite id="bust_kobold_02" offsetY="35" ic="FF4E5053" width="66" height="68" img="entity\goblins\bust_kobold_02.png" left="-33" right="33" top="-44" bottom="24" />
-<sprite id="bust_kobold_03" offsetY="35" ic="FF4E5053" width="66" height="68" img="entity\goblins\bust_kobold_03.png" left="-33" right="33" top="-44" bottom="24" />
-<sprite id="bust_kobold_04" offsetY="35" ic="FF4E5053" width="66" height="68" img="entity\goblins\bust_kobold_04.png" left="-33" right="33" top="-44" bottom="24" />
-<sprite id="bust_kobold_05" offsetY="35" ic="FF4E5053" width="66" height="68" img="entity\goblins\bust_kobold_05.png" left="-33" right="33" top="-44" bottom="24" />
-<sprite id="bust_kobold_01_damaged" offsetY="35" ic="FF4E5053" width="66" height="66" img="entity\goblins\bust_kobold_01_damaged.png" left="-33" right="33" top="-44" bottom="24" />
-<sprite id="bust_kobold_02_damaged" offsetY="35" ic="FF4E5053" width="66" height="66" img="entity\goblins\bust_kobold_02_damaged.png" left="-33" right="33" top="-44" bottom="24" />
-<sprite id="bust_kobold_03_damaged" offsetY="35" ic="FF4E5053" width="66" height="66" img="entity\goblins\bust_kobold_03_damaged.png" left="-33" right="33" top="-44" bottom="24" />
-<sprite id="bust_kobold_04_damaged" offsetY="35" ic="FF4E5053" width="66" height="66" img="entity\goblins\bust_kobold_04_damaged.png" left="-33" right="33" top="-44" bottom="24" />
-<sprite id="bust_kobold_05_damaged" offsetY="35" ic="FF4E5053" width="66" height="66" img="entity\goblins\bust_kobold_05_damaged.png" left="-33" right="33" top="-44" bottom="24" />
-<sprite id="bust_kobold_01_dead" offsetY="35" ic="FF4E5053" width="118" height="94" img="entity\goblins\bust_kobold_01_dead.png" left="-33" right="35" top="-46" bottom="20" />
-<sprite id="bust_kobold_02_dead" offsetY="35" ic="FF4E5053" width="118" height="94" img="entity\goblins\bust_kobold_02_dead.png" left="-33" right="35" top="-46" bottom="20" />
-<sprite id="bust_kobold_03_dead" offsetY="35" ic="FF4E5053" width="118" height="94" img="entity\goblins\bust_kobold_03_dead.png" left="-33" right="35" top="-46" bottom="20" />
-<sprite id="bust_kobold_04_dead" offsetY="35" ic="FF4E5053" width="118" height="94" img="entity\goblins\bust_kobold_04_dead.png" left="-33" right="35" top="-46" bottom="20" />
-<sprite id="bust_kobold_05_dead" offsetY="35" ic="FF4E5053" width="118" height="94" img="entity\goblins\bust_kobold_05_dead.png" left="-33" right="35" top="-46" bottom="20" />
+<sprite id="bust_kobold_01" offsetY="35" ic="FF4E5053" width="66" height="68" img="entity\goblins\bust_kobold_01.png" left="-33" right="33" top="-51" bottom="17" />
+<sprite id="bust_kobold_02" offsetY="35" ic="FF4E5053" width="66" height="68" img="entity\goblins\bust_kobold_02.png" left="-33" right="33" top="-51" bottom="17" />
+<sprite id="bust_kobold_03" offsetY="35" ic="FF4E5053" width="66" height="68" img="entity\goblins\bust_kobold_03.png" left="-33" right="33" top="-51" bottom="17" />
+<sprite id="bust_kobold_04" offsetY="35" ic="FF4E5053" width="66" height="68" img="entity\goblins\bust_kobold_04.png" left="-33" right="33" top="-51" bottom="17" />
+<sprite id="bust_kobold_05" offsetY="35" ic="FF4E5053" width="66" height="68" img="entity\goblins\bust_kobold_05.png" left="-33" right="33" top="-51" bottom="17" />
+<sprite id="bust_kobold_01_damaged" offsetY="35" ic="FF4E5053" width="66" height="66" img="entity\goblins\bust_kobold_01_damaged.png" left="-33" right="33" top="-51" bottom="17" />
+<sprite id="bust_kobold_02_damaged" offsetY="35" ic="FF4E5053" width="66" height="66" img="entity\goblins\bust_kobold_02_damaged.png" left="-33" right="33" top="-51" bottom="17" />
+<sprite id="bust_kobold_03_damaged" offsetY="35" ic="FF4E5053" width="66" height="66" img="entity\goblins\bust_kobold_03_damaged.png" left="-33" right="33" top="-51" bottom="17" />
+<sprite id="bust_kobold_04_damaged" offsetY="35" ic="FF4E5053" width="66" height="66" img="entity\goblins\bust_kobold_04_damaged.png" left="-33" right="33" top="-51" bottom="17" />
+<sprite id="bust_kobold_05_damaged" offsetY="35" ic="FF4E5053" width="66" height="66" img="entity\goblins\bust_kobold_05_damaged.png" left="-33" right="33" top="-51" bottom="17" />
+<sprite id="bust_kobold_01_dead" offsetY="35" ic="FF4E5053" width="118" height="94" img="entity\goblins\bust_kobold_01_dead.png" left="-59" right="59" top="-47" bottom="47" />
+<sprite id="bust_kobold_02_dead" offsetY="35" ic="FF4E5053" width="118" height="94" img="entity\goblins\bust_kobold_02_dead.png" left="-59" right="59" top="-47" bottom="47" />
+<sprite id="bust_kobold_03_dead" offsetY="35" ic="FF4E5053" width="118" height="94" img="entity\goblins\bust_kobold_03_dead.png" left="-59" right="59" top="-47" bottom="47" />
+<sprite id="bust_kobold_04_dead" offsetY="35" ic="FF4E5053" width="118" height="94" img="entity\goblins\bust_kobold_04_dead.png" left="-59" right="59" top="-47" bottom="47" />
+<sprite id="bust_kobold_05_dead" offsetY="35" ic="FF4E5053" width="118" height="94" img="entity\goblins\bust_kobold_05_dead.png" left="-59" right="59" top="-47" bottom="47" />
 <sprite id="head_kobold_01" offsetY="35" ic="FF4E5053" width="82" height="64" img="entity\goblins\head_kobold_01.png" left="-41" right="41" top="-32" bottom="32" />
 <sprite id="head_kobold_02" offsetY="35" ic="FF4E5053" width="82" height="64" img="entity\goblins\head_kobold_02.png" left="-41" right="41" top="-32" bottom="32" />
 <sprite id="head_kobold_03" offsetY="35" ic="FF4E5053" width="82" height="64" img="entity\goblins\head_kobold_03.png" left="-41" right="41" top="-32" bottom="32" />

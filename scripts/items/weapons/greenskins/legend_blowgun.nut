@@ -6,7 +6,7 @@ this.legend_blowgun <- this.inherit("scripts/items/weapons/weapon", {
 		this.weapon.create();
 		this.m.ID = "weapon.legend_blowgun";
 		this.m.Name = "Blowgun";
-		this.m.Description = "A flimsy blowgun for shooting toxic substances";
+		this.m.Description = "A hollowed out reed used to shoot (toxic) darts.";
 		this.m.Categories = "Crossbow, One-Handed";
 		this.m.IconLarge = "weapons/ranged/blowgun_01.png";
 		this.m.Icon = "weapons/ranged/blowgun_01_70x70.png";
@@ -17,11 +17,11 @@ this.legend_blowgun <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = true;
 		this.m.ShowArmamentIcon = true;
-		this.m.ArmamentIcon = "icon_blowgun_01";
+		this.m.ArmamentIcon = "icon_legend_blowgun_01";
 		this.m.Value = 30;
 		this.m.RangeMin = 1;
 		this.m.RangeMax = 5;
-		this.m.RangeIdeal = 5;
+		this.m.RangeIdeal = 4;
 		this.m.StaminaModifier = -6;
 		this.m.Condition = 20.0;
 		this.m.ConditionMax = 20.0;
@@ -33,7 +33,7 @@ this.legend_blowgun <- this.inherit("scripts/items/weapons/weapon", {
 
 	function getAmmoID()
 	{
-		return "ammo.bolts";
+		return "ammo.legend_darts";
 	}
 
 	function getTooltip()
