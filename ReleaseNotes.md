@@ -4477,3 +4477,13 @@ Fixes the "Veteran/ranged manhunter" from causing errors when it spawns with a n
 Fixes the gladius icon
 Fixes peaceable tooltip
 Fixes rare missing wide cloth helmet bug
+
+**Weapons**
+Added two new named halberd variants
+Added a named longsword
+Added a named sword variant
+
+**Armor Tweaks**
+Added milanese plate armor variant
+Added layered version of enclave's great helm and venitian bascinet
+Added armet visor, great bascinet visor, venitian bascinet visor
