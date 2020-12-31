@@ -4467,9 +4467,10 @@ Updates Faster Mod to fix reported faster mod crashes
 **New Enemies**
 Kobolds
 
-**changes**
+**Changes**
 Slaves are now gauranteed perks for cleavers and flails instead of hammers and axes, to reflect their intimate experience on the receiving end of chains and whips
-Most helm vanity layers changed to have lower durability, cost and fatigue. No more heavy protective feather, or 200 gold straw hats.  This in turn lowers the defense of some enemies and the cost of some rescruits
+Named Legend Warhammers should spawn now
+More weapon spawn varieties for Bandit Leaders, Bandit Raiders, Bandit Thuds, Bandit Veterans, Bandit Warlords, Zombie Knights, Bounty Hunters, Gladiators, Hedge Knights, Knights, Mercenairies, Swordmasters
 
 **Fixes**
 Scenarios now work again
@@ -4482,9 +4483,13 @@ Fixes rare missing wide cloth helmet bug
 Added two new named halberd variants
 Added a named longsword
 Added a named sword variant
+Added two new estoc variants (@GRIBABAS)
+Replaced legend flail art (@GRIBABAS)
+
 
 **Armor Tweaks**
 Added milanese plate armor variant
 Added layered version of enclave's great helm and venitian bascinet
 Added armet visor, great bascinet visor, venitian bascinet visor
+Most helm vanity layers changed to have lower durability, cost and fatigue. No more heavy protective feather, or 200 gold straw hats.  This in turn lowers the defense of some enemies and the cost of some rescruits
 Added Italo-norman helm

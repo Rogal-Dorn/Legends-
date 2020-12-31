@@ -37,16 +37,18 @@ this.legend_named_flail <- this.inherit("scripts/items/weapons/named/named_weapo
 	function onEquip()
 	{
 		this.named_weapon.onEquip();
-		local flail = this.new("scripts/skills/actives/legend_ranged_flail_skill");
-		flail.m.Icon = "skills/active_65.png";
-		flail.m.IconDisabled = "skills/active_65_sw.png";
-		flail.m.Overlay = "active_65";
-		this.addSkill(flail);
-		local lash = this.new("scripts/skills/actives/legend_ranged_lash_skill");
-		lash.m.Icon = "skills/active_92.png";
-		lash.m.IconDisabled = "skills/active_92_sw.png";
-		lash.m.Overlay = "active_92";
-		this.addSkill(lash);
+		this.addSkill(this.new("scripts/skills/actives/legend_ranged_flail_skill"));
+		this.addSkill(this.new("scripts/skills/actives/legend_ranged_lash_skill"));
+		// local flail = this.new("scripts/skills/actives/legend_ranged_flail_skill");
+		// flail.m.Icon = "skills/active_65.png";
+		// flail.m.IconDisabled = "skills/active_65_sw.png";
+		// flail.m.Overlay = "active_65";
+		// this.addSkill(flail);
+		// local lash = this.new("scripts/skills/actives/legend_ranged_lash_skill");
+		// lash.m.Icon = "skills/active_92.png";
+		// lash.m.IconDisabled = "skills/active_92_sw.png";
+		// lash.m.Overlay = "active_92";
+		// this.addSkill(lash);
 	}
 
 	function onUpdateProperties( _properties )
