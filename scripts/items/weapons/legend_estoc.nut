@@ -6,6 +6,8 @@ this.legend_estoc <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.legend_estoc";
 		this.m.Name = "Estoc";
 		this.m.Description = "A light and elegant two handed blade, favoring a swift and mobile fighting style.";
+		this.m.Variant = this.Math.rand(1, 4);
+		this.updateVariant();
 		this.m.Categories = "Sword, Two-Handed";
 		this.m.IconLarge = "weapons/melee/legend_estoc_01.png";
 		this.m.Icon = "weapons/melee/legend_estoc_01_70x70.png";
@@ -25,6 +27,13 @@ this.legend_estoc <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ArmorDamageMult = 1.0;
 		this.m.DirectDamageMult = 0.2;
 		this.m.DirectDamageAdd = 0.2;
+	}
+
+	function updateVariant()
+	{
+		this.m.IconLarge = "weapons/melee/legend_estoc_0" + this.m.Variant + ".png";
+		this.m.Icon = "weapons/melee/legend_estoc_0" + this.m.Variant + "_70x70.png";
+		this.m.ArmamentIcon = "icon_legend_estoc_0" + this.m.Variant;
 	}
 
 	function onEquip()

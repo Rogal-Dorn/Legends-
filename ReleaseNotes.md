@@ -4482,6 +4482,9 @@ Fixes rare missing wide cloth helmet bug
 Added two new named halberd variants
 Added a named longsword
 Added a named sword variant
+Added two new estoc variants (@GRIBABAS)
+Replaced legend flail art (@GRIBABAS)
+
 
 **Armor Tweaks**
 Added milanese plate armor variant
