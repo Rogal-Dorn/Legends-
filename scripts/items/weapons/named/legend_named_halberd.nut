@@ -3,7 +3,7 @@ this.legend_named_halberd <- this.inherit("scripts/items/weapons/named/named_wea
 	function create()
 	{
 		this.named_weapon.create();
-		this.m.Variant = this.Math.rand(1, 2);
+		this.m.Variant = this.Math.rand(1, 3);
 		this.updateVariant();
 		this.m.ID = "weapon.legend_named_halberd";
 		this.m.NameList = this.Const.Strings.BillNames;
