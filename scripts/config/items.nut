@@ -60,7 +60,8 @@ gt.Const.Items.AmmoType <- {
 	Spears = 4,
 	Powder = 8,
 	Pebbles = 16,
-	Rocks = 32
+	Rocks = 32,
+	Darts = 64
 };
 gt.Const.Items.Property <- {
 	None = 0,

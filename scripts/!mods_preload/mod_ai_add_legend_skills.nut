@@ -29,6 +29,7 @@
     //o.m.PossibleSkills.push("actives.legend_aimed_pebble");
 	o.m.PossibleSkills.push("actives.legend_catapult_boulder");
     o.m.PossibleSkills.push("actives.legend_sling_heavy_stone");
+	o.m.PossibleSkills.push("actives.legend_shoot_dart");
 })
 
 ::mods_hookNewObject("ai/tactical/behaviors/ai_adrenaline", function(o) {
@@ -110,6 +111,7 @@
 	o.m.PossibleSkills.push("actives.legend_magic_missile");
 	o.m.PossibleSkills.push("actives.legend_catapult_boulder");
 	o.m.PossibleSkills.push("actives.legend_sling_heavy_stone");
+	o.m.PossibleSkills.push("actives.legend_shoot_dart");
 });
 
 ::mods_hookNewObject("ai/tactical/behaviors/ai_line_breaker", function(o) {
