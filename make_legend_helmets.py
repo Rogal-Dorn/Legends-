@@ -600,7 +600,7 @@ layers = [
  "desc" :  "A well made metal bascinet" \
 },
 {"name" : "enclave_great_bascinet"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 2800, "con" : 260, "stam" : -13, "vis" : -2, "hair" : "true", "beard" : "false",  \
- "title" :  "Peaked Basinet", \
+ "title" :  "Peaked Bascinet", \
  "desc" :  "A well made peaked bascinet" \
 },
 {"name" : "kettle_helm"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 1600, "con" : 130, "stam" : -6, "vis" : -2, "hair" : "true", "beard" : "false",  \
@@ -641,6 +641,10 @@ layers = [
  "desc" :  "Bronze Helm" \
 },
 {"name" : "great_helm"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 3000, "con" : 220, "stam" : -15, "vis" : -3, "hair" : "true", "beard" : "false",  \
+ "title" :  "Great Helm", \
+ "desc" :  "A closed metal helm with breathing holes. Great in the way of protection but hard to breathe in and limiting the field of view." \
+},
+{"name" : "enclave_great_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 3000, "con" : 220, "stam" : -15, "vis" : -3, "hair" : "true", "beard" : "false",  \
  "title" :  "Great Helm", \
  "desc" :  "A closed metal helm with breathing holes. Great in the way of protection but hard to breathe in and limiting the field of view." \
 },
@@ -887,6 +891,14 @@ layers = [
 {"name" : "faceplate_pointed"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 450, "con" : 47, "stam" : -3, "vis" : -1, "hair" : "false", "beard" : "true",  \
  "title" :  "Pointed Faceplate", \
  "desc" :  "A long nosed faceplate designed to deflect glancing blows" \
+},
+{"name" : "enclave_armet_visor"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 450, "con" : 40, "stam" : -3, "vis" : -1, "hair" : "false", "beard" : "true",  \
+ "title" :  "Armet Visor", \
+ "desc" :  "A visor that fits on the armet, protecting the lower jaw while leaving a slit for eyesight." \
+},
+{"name" : "enclave_great_bascinet_visor"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 450, "con" : 50, "stam" : -3, "vis" : -2, "hair" : "false", "beard" : "true",  \
+ "title" :  "Great Bascinet Visor", \
+ "desc" :  "Visor made for the Great Bascinet. Provides much protection to the wearer's face, but limits vision." \
 },
 {"name" : "faceplate_pointed_slit"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 450, "con" : 50, "stam" : -3, "vis" : -2, "hair" : "false", "beard" : "true",  \
  "title" :  "Slit Pointed Faceplate", \
