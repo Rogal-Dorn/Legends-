@@ -4467,9 +4467,10 @@ Updates Faster Mod to fix reported faster mod crashes
 **New Enemies**
 Kobolds
 
-**changes**
+**Changes**
 Slaves are now gauranteed perks for cleavers and flails instead of hammers and axes, to reflect their intimate experience on the receiving end of chains and whips
-
+Named Legend Warhammers should spawn now
+More weapon spawn varieties for Bandit Leaders, Bandit Raiders, Bandit Thuds, Bandit Veterans, Bandit Warlords, Zombie Knights, Bounty Hunters, Gladiators, Hedge Knights, Knights, Mercenairies, Swordmasters
 
 **Fixes**
 Scenarios now work again
