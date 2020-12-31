@@ -9,9 +9,9 @@ this.legend_shoot_dart <- this.inherit("scripts/skills/skill", {
 		this.m.Name = "Shoot Dart";
 		this.m.Description = "a quick puff of air to propel a dart";
 		this.m.KilledString = "Darted";
-		this.m.Icon = "skills/active_12.png";
-		this.m.IconDisabled = "skills/active_12_sw.png";
-		this.m.Overlay = "active_12";
+		this.m.Icon = "skills/active_17.png";
+		this.m.IconDisabled = "skills/active_17_sw.png";
+		this.m.Overlay = "active_17";
 		this.m.SoundOnUse = [
 			"sounds/combat/dlc4/sling_use_01.wav",
 			"sounds/combat/dlc4/sling_use_02.wav",
@@ -52,20 +52,20 @@ this.legend_shoot_dart <- this.inherit("scripts/skills/skill", {
 		this.m.IsShowingProjectile = true;
 		this.m.IsWeaponSkill = true;
 		this.m.IsDoingForwardMove = false;
-		this.m.InjuriesOnBody = this.Const.Injury.BluntBody;
-		this.m.InjuriesOnHead = this.Const.Injury.BluntHead;
+		this.m.InjuriesOnBody = this.Const.Injury.PiercingBody;
+		this.m.InjuriesOnHead = this.Const.Injury.PiercingHead;
 		this.m.DirectDamageMult = 0.35;
 		this.m.ActionPointCost = 4;
 		this.m.FatigueCost = 15;
 		this.m.MinRange = 1;
-		this.m.MaxRange = 5;
+		this.m.MaxRange = 3;
 		this.m.MaxLevelDifference = 4;
 		this.m.ProjectileType = this.Const.ProjectileType.Dart;
 		this.m.ProjectileTimeScale = 1.2;
 		this.m.IsProjectileRotated = true;
 		this.m.ChanceDecapitate = 0;
 		this.m.ChanceDisembowel = 0;
-		this.m.ChanceSmash = 25;
+		this.m.ChanceSmash = 0;
 	}
 
 	function getTooltip()

@@ -409,7 +409,7 @@ gt.Const.EntityType <- {
 	LegendMummyHeavy = 149,
 	LegendMummyQueen = 150,
 	KoboldFighter = 151,
-	KoboldWolfrider = 152
+	KoboldWolfrider = 152,
 
 	function convertOldToNew( _id )
 	{

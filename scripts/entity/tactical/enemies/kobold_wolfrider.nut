@@ -129,6 +129,8 @@ this.kobold_wolfrider <- this.inherit("scripts/entity/tactical/kobold", {
 		this.m.Skills.add(wolf_bite);
 		this.m.Skills.add(this.new("scripts/skills/racial/goblin_ambusher_racial"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_backstabber"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_pathfinder"));
+
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 		{
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_fast_adaption"));

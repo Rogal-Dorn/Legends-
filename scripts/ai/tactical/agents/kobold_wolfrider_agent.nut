@@ -1,4 +1,4 @@
-this.goblin_wolfrider_agent <- this.inherit("scripts/ai/tactical/agent", {
+this.kobold_wolfrider_agent <- this.inherit("scripts/ai/tactical/agent", {
 	m = {},
 	function create()
 	{
@@ -17,7 +17,7 @@ this.goblin_wolfrider_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.m.Properties.TargetPriorityArmorMult = 0.75;
 		this.m.Properties.OverallDefensivenessMult = 0.9;
 		this.m.Properties.OverallFormationMult = 0.1;
-		this.m.Properties.EngageFlankingMult = 5.0;
+		this.m.Properties.EngageFlankingMult = 8.0;
 		this.m.Properties.EngageTargetMultipleOpponentsMult = 2.5;
 		this.m.Properties.EngageTargetAlreadyBeingEngagedMult = 0.5;
 		this.m.Properties.EngageTargetArmedWithRangedWeaponMult = 2.0;

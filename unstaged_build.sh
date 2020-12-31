@@ -111,12 +111,45 @@ while read -r line; do
             done
             copyBrushes
 
+
         elif [[ "$xpath" == make_legend_enemies.py ]]; then
             python make_legend_enemies.py
             handleExit
             echo "Building legend_enemies brush..."
             cd ../bin
             o=$(./bbrusher.exe pack --gfxPath "../$RepoDir/" ../$RepoDir/brushes/legend_enemies.brush ../$RepoDir/unpacked/legend_enemies)
+            cd ../"$RepoDir"
+            checkForError "$o" "$i"
+            copyBrushes
+
+        elif [[ "$xpath" == unpacked/legend_weapons/metadata.xml ]]; then
+            echo "Building legend_weapons brush..."
+            cd ../bin
+            o=$(./bbrusher.exe pack --gfxPath "../$RepoDir/" ../$RepoDir/brushes/legend_weapons.brush ../$RepoDir/unpacked/legend_weapons)
+            cd ../"$RepoDir"
+            checkForError "$o" "$i"
+            copyBrushes
+
+        elif [[ "$xpath" == unpacked/legend_characters/metadata.xml ]]; then
+            echo "Building legend_weapons brush..."
+            cd ../bin
+            o=$(./bbrusher.exe pack --gfxPath "../$RepoDir/" ../$RepoDir/brushes/legend_characters.brush ../$RepoDir/unpacked/legend_characters)
+            cd ../"$RepoDir"
+            checkForError "$o" "$i"
+            copyBrushes
+
+        elif [[ "$xpath" == unpacked/legend_objects/metadata.xml ]]; then
+            echo "Building legend_weapons brush..."
+            cd ../bin
+            o=$(./bbrusher.exe pack --gfxPath "../$RepoDir/" ../$RepoDir/brushes/legend_objects.brush ../$RepoDir/unpacked/legend_objects)
+            cd ../"$RepoDir"
+            checkForError "$o" "$i"
+            copyBrushes
+
+        elif [[ "$xpath" == unpacked/legends_ui/metadata.xml ]]; then
+            echo "Building legend_weapons brush..."
+            cd ../bin
+            o=$(./bbrusher.exe pack --gfxPath "../$RepoDir/" ../$RepoDir/brushes/legends_ui.brush ../$RepoDir/unpacked/legends_ui)
             cd ../"$RepoDir"
             checkForError "$o" "$i"
             copyBrushes

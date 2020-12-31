@@ -280,13 +280,14 @@ gt.Const.Strings.EntityName <- [
 	"Bandit Rabble Poacher",
 	"Bandit Vermes",
 	"Manhunter",
-	"Manhunter Veteran"	
+	"Manhunter Veteran"
 	"Embalmed Slave",
 	"Embalmed Soldier",
 	"Embalmed Noble",
 	"Embalmed Queen",
-	"Kobold Fighter"
-	
+	"Kobold Fighter",
+	"Kobold Wolfrider"
+
 ];
 gt.Const.Strings.EntityNamePlural <- [
 	"Necromancers",
@@ -441,7 +442,8 @@ gt.Const.Strings.EntityNamePlural <- [
 	"Embalmed Soldiers",
 	"Embalmed Nobles",
 	"Embalmed Queens",
-	"Kobold Fighters"
+	"Kobold Fighters",
+	"Kobold Wolfriders"
 
 ];
 gt.Const.Strings.Tactical.EntityName <- {
