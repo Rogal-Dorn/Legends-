@@ -165,7 +165,8 @@ this.legend_bandit_warlord <- this.inherit("scripts/entity/tactical/human", {
 					"weapons/greataxe",
 					"weapons/legend_swordstaff",
 					"weapons/legend_bastardsword",
-					"weapons/warbrand"
+					"weapons/warbrand",
+					"weapons/legend_estoc"
 				]);
 			}
 
@@ -187,8 +188,8 @@ this.legend_bandit_warlord <- this.inherit("scripts/entity/tactical/human", {
 			local named = this.Const.Items.NamedArmors;
 			local weightName = this.Const.World.Common.convNameToList(named);
 			this.m.Items.equip(this.Const.World.Common.pickArmor(weightName));
-			
-		}		
+
+		}
 		else
 		{
 			local named = this.Const.Items.NamedHelmets;
@@ -208,7 +209,7 @@ this.legend_bandit_warlord <- this.inherit("scripts/entity/tactical/human", {
 				[1, "light_scale_armor"],
 				[1, "lamellar_harness"]
 			];
-		
+
 			local item = this.Const.World.Common.pickArmor(armor);
 			this.m.Items.equip(item);
 		}

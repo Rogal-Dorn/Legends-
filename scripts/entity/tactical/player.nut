@@ -143,7 +143,11 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		if (!("State" in this.World)) {
 			return 0
 		}
+<<<<<<< HEAD
 		local wageMult = (this.m.CurrentProperties.DailyWageMult * (this.World.State != null ? this.World.Assets.m.DailyWageMult : 1.0)) - (this.World.State != null ? this.World.State.getPlayer().getWageModifier() : 0.0);
+=======
+		local wageMult = (this.m.CurrentProperties.DailyWageMult * (this.World.State != null ? this.World.Assets.m.DailyWageMult : 1.0)) - (this.World.State != null ? this.World.State.getPlayer().getWageModifier() : 0.0)
+>>>>>>> 01b0580c18153988a06b708eb20e262c3f8e6afb
 		//local costAdj = this.Math.max(0, this.m.CurrentProperties.DailyWageMult * barterMult);
 		return this.Math.max(0, this.m.CurrentProperties.DailyWage * wageMult);
 	}

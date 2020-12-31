@@ -70,7 +70,7 @@ this.bandit_thug <- this.inherit("scripts/entity/tactical/human", {
 
 	function assignRandomEquipment()
 	{
-		local r = this.Math.rand(1, 13);
+		local r = this.Math.rand(1, 15);
 
 		if (r == 1)
 		{
@@ -220,11 +220,26 @@ this.bandit_thug <- this.inherit("scripts/entity/tactical/human", {
 			else if (r == 13)
 			{
 				this.m.Items.equip(this.new("scripts/items/weapons/legend_militia_glaive"));
-						this.m.Items.equip(this.new("scripts/items/weapons/legend_tipstaff"));
-						if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
-						{
-							this.m.Skills.add(this.new("scripts/skills/perks/perk_killing_frenzy"));
-						}
+				if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+				{
+					this.m.Skills.add(this.new("scripts/skills/perks/perk_killing_frenzy"));
+				}
+			}
+			else if (r == 14)
+			{
+				this.m.Items.equip(this.new("scripts/items/weapons/legend_tipstaff"));
+				if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+				{
+					this.m.Skills.add(this.new("scripts/skills/perks/perk_killing_frenzy"));
+				}
+			}
+			else if (r == 15)
+			{
+				this.m.Items.equip(this.new("scripts/items/weapons/legend_ranged_wooden_flail"));
+				if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+				{
+					this.m.Skills.add(this.new("scripts/skills/perks/perk_killing_frenzy"));
+				}
 			}
 
 			local chance = 33;
@@ -250,7 +265,7 @@ this.bandit_thug <- this.inherit("scripts/entity/tactical/human", {
 		local item;
 		if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 		{
-			
+
 			 item = this.Const.World.Common.pickArmor([
 				[20, "blotched_gambeson"],
 				[20, "ragged_surcoat"],
@@ -274,7 +289,7 @@ this.bandit_thug <- this.inherit("scripts/entity/tactical/human", {
 		}
 		this.m.Items.equip(item);
 
-		
+
 
 		local chance = 40;
 		if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)

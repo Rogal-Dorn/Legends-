@@ -106,16 +106,12 @@ this.knight <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Mainhand))
 		{
-			r = this.Math.rand(1, 2);
+			local weapons = [
+				"weapons/fighting_axe",
+				"weapons/noble_sword"
+			];
+			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 
-			if (r == 1)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/fighting_axe"));
-			}
-			else if (r == 2)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/noble_sword"));
-			}
 		}
 
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Offhand))

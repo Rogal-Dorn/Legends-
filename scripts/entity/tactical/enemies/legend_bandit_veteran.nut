@@ -175,7 +175,12 @@ this.legend_bandit_veteran <- this.inherit("scripts/entity/tactical/human", {
 				}
 				else if (r == 6)
 				{
-					this.m.Items.equip(this.new("scripts/items/weapons/two_handed_wooden_flail"));
+					local weapons = [
+						"weapons/two_handed_wooden_flail",
+						"weapons/legend_reinforced_flail",
+					];
+
+					this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 					this.m.Skills.add(this.new("scripts/skills/perks/perk_head_hunter"));
 
 					if (("Assets" in this.World) && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)

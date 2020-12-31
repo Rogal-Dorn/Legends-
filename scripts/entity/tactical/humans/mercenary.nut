@@ -83,7 +83,8 @@ this.mercenary <- this.inherit("scripts/entity/tactical/human", {
 				"weapons/falchion",
 				"weapons/arming_sword",
 				"weapons/flail",
-				"weapons/military_pick"
+				"weapons/military_pick",
+				"weapons/legend_ranged_flail"
 			];
 
 			if (this.Const.DLC.Unhold)
