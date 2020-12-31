@@ -4464,6 +4464,11 @@ Updates Faster Mod to fix reported faster mod crashes
 
 15.0.0.22
 
+**changes**
+slaves are now gauranteed perks for cleavers and flails instead of hammers and axes, to reflect their intimate experience on the receiving end of chains and whips 
+Most helm vanity layers changed to have lower durability, cost and fatigue. No more heavy protective feather, or 200 gold straw hats.  This in turn lowers the defense of some enemies and the cost of some rescruits 
+
+
 **Fixes**
 Fixes the "Veteran/ranged manhunter" from causing errors when it spawns with a named armor
 Fixes the gladius icon
