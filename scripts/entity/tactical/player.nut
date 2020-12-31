@@ -140,7 +140,10 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 	function getDailyCost()
 	{
-		local wageMult = (this.m.CurrentProperties.DailyWageMult * (("State" in this.World) && this.World.State != null ? this.World.Assets.m.DailyWageMult : 1.0)) - this.World.State.getPlayer().getWageModifier();
+		if (!("State" in this.World)) {
+			return 0
+		}
+		local wageMult = (this.m.CurrentProperties.DailyWageMult * (this.World.State != null ? this.World.Assets.m.DailyWageMult : 1.0)) - this.World.State != null ? this.World.State.getPlayer().getWageModifier() : 0.0;
 		//local costAdj = this.Math.max(0, this.m.CurrentProperties.DailyWageMult * barterMult);
 		return this.Math.max(0, this.m.CurrentProperties.DailyWage * wageMult);
 	}

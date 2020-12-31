@@ -1091,9 +1091,12 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 		this.m.Condition = this.Math.minf(this.m.ConditionMax, _in.readF32());
 		local count = _in.readU8();
 		this.m.Upgrades = [];
-		for( local i = 0; i < count; i = ++i )
+		for( local i = 0; i < this.Const.Items.HelmetUpgrades.COUNT; i = ++i )
 		{
 			this.m.Upgrades.push(null);
+		}
+		for( local i = 0; i < count; i = ++i )
+		{
 			local hasItem = _in.readBool();
 
 			if (!hasItem)

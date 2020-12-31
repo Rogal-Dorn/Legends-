@@ -4464,8 +4464,27 @@ Updates Faster Mod to fix reported faster mod crashes
 
 15.0.0.22
 
+**New Enemies**
+Kobolds
+
+**changes**
+Slaves are now gauranteed perks for cleavers and flails instead of hammers and axes, to reflect their intimate experience on the receiving end of chains and whips
+
+
 **Fixes**
+Scenarios now work again
 Fixes the "Veteran/ranged manhunter" from causing errors when it spawns with a named armor
 Fixes the gladius icon
 Fixes peaceable tooltip
 Fixes rare missing wide cloth helmet bug
+
+**Weapons**
+Added two new named halberd variants
+Added a named longsword
+Added a named sword variant
+
+**Armor Tweaks**
+Added milanese plate armor variant
+Added layered version of enclave's great helm and venitian bascinet
+Added armet visor, great bascinet visor, venitian bascinet visor
+Most helm vanity layers changed to have lower durability, cost and fatigue. No more heavy protective feather, or 200 gold straw hats.  This in turn lowers the defense of some enemies and the cost of some rescruits

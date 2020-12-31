@@ -671,7 +671,7 @@ gt.Const.World.Common.pickHelmet <- function (_helms)
 	}
 	// return this.new("scripts/items/helmets/" + helm);
 
-	if (!this.World.LegendsMod.Configs().LegendArmorsEnabled())
+	if ( !("LegendsMod" in this.World) || !this.World.LegendsMod.Configs().LegendArmorsEnabled())
 	{
 		if (helm == "")
 		{
@@ -765,7 +765,7 @@ gt.Const.World.Common.pickArmor <- function (_armors)
 		return null;
 	}
 
-	if (!this.World.LegendsMod.Configs().LegendArmorsEnabled())
+	if ( !("LegendsMod" in this.World) || !this.World.LegendsMod.Configs().LegendArmorsEnabled())
 	{
 		local item = this.new("scripts/items/armor/" + armorID);
 		if (faction != null)
@@ -872,7 +872,7 @@ gt.Const.World.Common.pickArmorUpgrade <- function (_armors)
 		break;
 	}
 
-	if (!this.World.LegendsMod.Configs().LegendArmorsEnabled())
+	if ( !("LegendsMod" in this.World) || !this.World.LegendsMod.Configs().LegendArmorsEnabled())
 	{
 		if (armorID == "")
 		{

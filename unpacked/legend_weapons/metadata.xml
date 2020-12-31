@@ -2,6 +2,7 @@
   <sprite id="projectile_blood" ic="FF445660" width="32" height="64" img="effects\projectile_blood.png" left="-8" right="14" top="-31" bottom="29" />
   <sprite id="projectile_missile" ic="FF445660" width="32" height="64" img="effects\projectile_missile.png" left="-8" right="14" top="-31" bottom="29" />
   <sprite id="projectile_pebble" ic="FF445660" width="32" height="64" img="effects\projectile_pebble.png" left="-8" right="14" top="-31" bottom="29" />
+  <sprite id="projectile_dart" ic="FF445660" width="32" height="64" img="effects\projectile_dart.png" left="-8" right="14" top="-31" bottom="29" />
   <sprite id="icon_legend_shiv_01" offsetY="35" ic="FF6B6B74" width="104" height="142" img="icons\icon_legend_shiv_01.png" left="-6" right="30" top="-55" bottom="-15" />
   <sprite id="icon_legend_shiv_01_bloodied" offsetY="35" ic="FF58596A" width="104" height="142" img="icons\icon_legend_shiv_01_bloodied.png" left="-6" right="30" top="-55" bottom="-15" />
   <sprite id="icon_legend_hammer_01" offsetY="35" ic="FF484F57" width="104" height="142" img="icons\icon_legend_hammer_01.png" left="0" right="48" top="-56" bottom="8" />
@@ -783,5 +784,26 @@
   <sprite id="runed_icon_named_greatsword_04" offsetY="35" ic="FF58595C" width="130" height="142" img="icons\runed_icon_named_greatsword_04.png" left="-62" right="32" top="-64" bottom="50" />
   <sprite id="runed_icon_named_greatsword_04_bloodied" offsetY="35" ic="FF4E4F5A" width="130" height="142" img="icons\runed_icon_named_greatsword_04_bloodied.png" left="-62" right="32" top="-64" bottom="50" />
 
+  
 
+=======
+
+  <sprite id="icon_legend_blowgun_01" offsetY="35" ic="FF4E5860" width="104" height="142" img="icons\icon_legend_blowgun_01.png" left="-52" right="12" top="-64" bottom="54" />
+  <sprite id="icon_legend_blowgun_01_bloodied" offsetY="35" ic="FF3D4758" width="130" height="142" img="icons\icon_legend_blowgun_01.png" left="-52" right="12" top="-64" bottom="52" />
+  <sprite id="runed_icon_legend_blowgun_01" offsetY="35" ic="FF4E5860" width="104" height="142" img="icons\runed_icon_legend_blowgun_01.png" left="-52" right="12" top="-64" bottom="54" />
+  <sprite id="runed_icon_legend_blowgun_01_bloodied" offsetY="35" ic="FF3D4758" width="130" height="142" img="icons\runed_icon_legend_blowgun_01.png" left="-52" right="12" top="-64" bottom="52" />
+=======
+  <sprite id="icon_legend_blowgun_01" offsetY="35" ic="FF4E5860" width="130" height="142" img="icons\icon_legend_blowgun_01.png" left="-14" right="38" top="-76" bottom="0" />
+  <sprite id="runed_icon_legend_blowgun_01" offsetY="35" ic="FF4E5860" width="130" height="142" img="icons\runed_icon_legend_blowgun_01.png" left="-4" right="48" top="-66" bottom="10" />
+>>>>>>> 52fe76a509ef1c9681c61e623461b2159b6f2aa0
+
+>>>>>>> 65b7736d648d72b2fde4157eec7b850c01315f8a
+  <sprite id="icon_named_longsword_01" offsetY="35" ic="FF3B404A" width="128" height="172" img="icons\icon_named_longsword_01.png" left="-68" right="30" top="-60" bottom="69" />
+  <sprite id="icon_named_longsword_01_bloodied" offsetY="35" ic="FF3B404A" width="128" height="172" img="icons\icon_named_longsword_01_bloodied.png" left="-68" right="30" top="-60" bottom="69" />
+  <sprite id="icon_named_sword_07" offsetY="35" ic="FF3B404A" width="65" height="160" img="icons\icon_named_sword_07.png" left="1" right="50" top="-58" bottom="63" />
+  <sprite id="icon_named_sword_07_bloodied" offsetY="35" ic="FF3B404A" width="65" height="160" img="icons\icon_named_sword_07_bloodied.png" left="1" right="50" top="-58" bottom="63" />
+  <sprite id="icon_legend_halberd_named_02" offsetY="35" ic="FF3B404A" width="80" height="197" img="icons\icon_legend_halberd_named_02.png" left="-60" right="0" top="-58" bottom="90" />
+  <sprite id="icon_legend_halberd_named_02_bloodied" offsetY="35" ic="FF3B404A" width="80" height="197" img="icons\icon_legend_halberd_named_02_bloodied.png" left="-60" right="0" top="-58" bottom="90" />
+  <sprite id="icon_legend_halberd_named_03" offsetY="35" ic="FF3B404A" width="72" height="205" img="icons\icon_legend_halberd_named_03.png" left="-54" right="0" top="-62" bottom="102" />
+  <sprite id="icon_legend_halberd_named_03_bloodied" offsetY="35" ic="FF3B404A" width="72" height="205" img="icons\icon_legend_halberd_named_03_bloodied.png" left="-54" right="0" top="-62" bottom="102" />
  </brush>

@@ -49,7 +49,7 @@ function getTooltip()
 		];
 		return ret;
 	}
-	
+
 	function isUsable()
 	{
 		local mainhand = this.m.Container.getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);

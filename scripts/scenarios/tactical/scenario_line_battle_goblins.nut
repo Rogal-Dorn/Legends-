@@ -169,10 +169,10 @@ this.scenario_line_battle_goblins <- this.inherit("scripts/scenarios/tactical/sc
 		entity = this.spawnEntity("scripts/entity/tactical/enemies/goblin_ambusher", 20, 20, 16, 16);
 		entity.setFaction(this.Const.Faction.Goblins);
 		entity.assignRandomEquipment();
-		entity = this.spawnEntity("scripts/entity/tactical/enemies/goblin_ambusher", 20, 20, 17, 17);
+		entity = this.spawnEntity("scripts/entity/tactical/enemies/goblin_fighter", 20, 20, 17, 17);
 		entity.setFaction(this.Const.Faction.Goblins);
 		entity.assignRandomEquipment();
-		entity = this.spawnEntity("scripts/entity/tactical/enemies/goblin_ambusher", 20, 20, 18, 18);
+		entity = this.spawnEntity("scripts/entity/tactical/enemies/goblin_fighter", 20, 20, 18, 18);
 		entity.setFaction(this.Const.Faction.Goblins);
 		entity.assignRandomEquipment();
 	}

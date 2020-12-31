@@ -223,17 +223,6 @@
   <sprite id="legend_catapult_dead_arrows" offsetY="30" f="6402" ic="FF444B4F" width="169" height="139" img="entity\catapult_dead_arrows.png" left="-19" right="53" top="-19" bottom="37" />
   <sprite id="legend_catapult_dead_javelin" offsetY="30" f="6402" ic="FF141B29" width="169" height="139" img="entity\catapult_dead_javelin.png" left="-14" right="78" top="-2" bottom="54" />
 
-  <sprite id="bust_kobold_01" offsetY="35" ic="FF3C5049" width="104" height="142" img="entity\goblins\bust_kobold_01.png" left="-33" right="35" top="-46" bottom="20" />
-  <sprite id="bust_kobold_02" offsetY="35" ic="FF3C5049" width="104" height="142" img="entity\goblins\bust_kobold_02.png" left="-33" right="35" top="-46" bottom="20" />
-  <sprite id="bust_kobold_03" offsetY="35" ic="FF3C5049" width="104" height="142" img="entity\goblins\bust_kobold_03.png" left="-33" right="35" top="-46" bottom="20" />
-  <sprite id="bust_kobold_04" offsetY="35" ic="FF3C5049" width="104" height="142" img="entity\goblins\bust_kobold_04.png" left="-33" right="35" top="-46" bottom="20" />
-  <sprite id="bust_kobold_05" offsetY="35" ic="FF3C5049" width="104" height="142" img="entity\goblins\bust_kobold_05.png" left="-33" right="35" top="-46" bottom="20" />
-  <sprite id="head_kobold_01" offsetY="35" ic="FF4D5F5E" width="104" height="142" img="entity\goblins\head_kobold_01.png" left="-42" right="40" top="-25" bottom="39" />
-  <sprite id="head_kobold_02" offsetY="35" ic="FF4D5F5E" width="104" height="142" img="entity\goblins\head_kobold_02.png" left="-42" right="40" top="-25" bottom="39" />
-  <sprite id="head_kobold_03" offsetY="35" ic="FF4D5F5E" width="104" height="142" img="entity\goblins\head_kobold_03.png" left="-42" right="40" top="-25" bottom="39" />
-  <sprite id="head_kobold_04" offsetY="35" ic="FF4D5F5E" width="104" height="142" img="entity\goblins\head_kobold_04.png" left="-42" right="40" top="-25" bottom="39" />
-  <sprite id="head_kobold_05" offsetY="35" ic="FF4D5F5E" width="104" height="142" img="entity\goblins\head_kobold_05.png" left="-42" right="40" top="-25" bottom="39" />
-
    <sprite id="bust_schrat_body_01_injured" offsetX="-5" offsetY="35" ic="FF36586C" width="174" height="214" img="entity\beasts\bust_schrat_body_01_injured.png" left="-32" right="50" top="-47" bottom="23" />
 
   <sprite id="were_boar_body" offsetY="35" ic="FF2F3435" width="174" height="214" img="entity\beasts\were_boar_body.png" left="-47" right="61" top="-65" bottom="31" />
@@ -300,25 +289,6 @@
   <sprite id="bust_nacht_head_01" offsetX="-5" offsetY="35" ic="FF203653" width="174" height="214" img="entity\beasts\natchheadadapt1.png" left="-58" right="38" top="-16" bottom="98" />
   <sprite id="bust_nacht_head_02" offsetX="-5" offsetY="35" ic="FF203653" width="174" height="214" img="entity\beasts\natchheadadapt2.png" left="-58" right="38" top="-16" bottom="98" />
 
-  <sprite id="mummy_head_01" offsetY="35" ic="FF323E47" width="104" height="142" img="entity\undead\mummy_head_01.png" left="-17" right="29" top="-14" bottom="48" />
-  <sprite id="mummy_head_01_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF313D49" width="191" height="185" img="entity\undead\mummy_head_01_dead.png" left="-45" right="11" top="-53" bottom="3" />
-  <sprite id="mummy_head_02" offsetY="35" ic="FF323E47" width="104" height="142" img="entity\undead\mummy_head_02.png" left="-17" right="29" top="-14" bottom="48" />
-  <sprite id="mummy_head_02_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF313D49" width="191" height="185" img="entity\undead\mummy_head_02_dead.png" left="-45" right="11" top="-53" bottom="3" />
-  <sprite id="mummy_head_03" offsetY="35" ic="FF323E47" width="104" height="142" img="entity\undead\mummy_head_03.png" left="-17" right="29" top="-14" bottom="48" />
-  <sprite id="mummy_head_03_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF313D49" width="191" height="185" img="entity\undead\mummy_head_03_dead.png" left="-45" right="11" top="-53" bottom="3" />
-  <sprite id="mummy_head_04" offsetY="35" ic="FF323E47" width="104" height="142" img="entity\undead\mummy_head_04.png" left="-17" right="29" top="-14" bottom="48" />
-  <sprite id="mummy_head_04_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF313D49" width="191" height="185" img="entity\undead\mummy_head_04_dead.png" left="-45" right="11" top="-53" bottom="3" />
-  <sprite id="mummy_head_05" offsetY="35" ic="FF323E47" width="104" height="142" img="entity\undead\mummy_head_05.png" left="-17" right="29" top="-14" bottom="48" />
-  <sprite id="mummy_head_05_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF313D49" width="191" height="185" img="entity\undead\mummy_head_05_dead.png" left="-45" right="11" top="-53" bottom="3" />
-  <sprite id="mummy_head_06" offsetY="35" ic="FF323E47" width="104" height="142" img="entity\undead\mummy_head_06.png" left="-17" right="29" top="-14" bottom="48" />
-  <sprite id="mummy_head_06_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF313D49" width="191" height="185" img="entity\undead\mummy_head_06_dead.png" left="-45" right="11" top="-53" bottom="3" />
-  <sprite id="mummy_head_07" offsetY="35" ic="FF323E47" width="104" height="142" img="entity\undead\mummy_head_07.png" left="-17" right="29" top="-14" bottom="48" />
-  <sprite id="mummy_head_07_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF313D49" width="191" height="185" img="entity\undead\mummy_head_07_dead.png" left="-45" right="11" top="-53" bottom="3" />
-  <sprite id="mummy_head_08" offsetY="35" ic="FF323E47" width="104" height="142" img="entity\undead\mummy_head_08.png" left="-17" right="29" top="-14" bottom="48" />
-  <sprite id="mummy_head_08_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF313D49" width="191" height="185" img="entity\undead\mummy_head_08_dead.png" left="-45" right="11" top="-53" bottom="3" />
-  <sprite id="mummy_head_09" offsetY="35" ic="FF323E47" width="104" height="142" img="entity\undead\mummy_head_09.png" left="-17" right="29" top="-14" bottom="48" />
-  <sprite id="mummy_head_09_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF313D49" width="191" height="185" img="entity\undead\mummy_head_09_dead.png" left="-45" right="11" top="-53" bottom="3" />
-
 
   <sprite id="mummy_bandages_01" offsetY="35" ic="FF1A242E" width="104" height="142" img="entity\undead\armor\mummy_bandages_01.png" left="-42" right="44" top="-50" bottom="10" />
   <sprite id="mummy_bandages_01_damaged" offsetY="35" ic="FF19222C" width="104" height="142" img="entity\undead\armor\mummy_bandages_01_damaged.png" left="-42" right="44" top="-50" bottom="10" />
@@ -363,18 +333,18 @@
 <sprite id="bust_goblin_04_helmet_13_damaged" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_04_helmet_13_damaged.png" left="-36" right="24" top="-28" bottom="52" />
 <sprite id="bust_goblin_04_helmet_14_damaged" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_04_helmet_14_damaged.png" left="-36" right="24" top="-28" bottom="52" />
 <sprite id="bust_goblin_04_helmet_15_damaged" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_04_helmet_15_damaged.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_04_helmet_04_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_04_helmet_05_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_04_helmet_06_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_04_helmet_07_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_04_helmet_08_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_04_helmet_09_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_04_helmet_10_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_04_helmet_11_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_04_helmet_12_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_04_helmet_13_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_04_helmet_14_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_04_helmet_15_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
+<sprite id="bust_goblin_04_helmet_04_dead" offsetY="15" ic="FF4E5053" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
+<sprite id="bust_goblin_04_helmet_05_dead" offsetY="15" ic="FF4E5053" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
+<sprite id="bust_goblin_04_helmet_06_dead" offsetY="15" ic="FF4E5053" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
+<sprite id="bust_goblin_04_helmet_07_dead" offsetY="15" ic="FF4E5053" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
+<sprite id="bust_goblin_04_helmet_08_dead" offsetY="15" ic="FF4E5053" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
+<sprite id="bust_goblin_04_helmet_09_dead" offsetY="15" ic="FF4E5053" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
+<sprite id="bust_goblin_04_helmet_10_dead" offsetY="15" ic="FF4E5053" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
+<sprite id="bust_goblin_04_helmet_11_dead" offsetY="15" ic="FF4E5053" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
+<sprite id="bust_goblin_04_helmet_12_dead" offsetY="15" ic="FF4E5053" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
+<sprite id="bust_goblin_04_helmet_13_dead" offsetY="15" ic="FF4E5053" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
+<sprite id="bust_goblin_04_helmet_14_dead" offsetY="15" ic="FF4E5053" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
+<sprite id="bust_goblin_04_helmet_15_dead" offsetY="15" ic="FF4E5053" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
 <sprite id="bust_goblin_01_helmet_04" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_01_helmet_04.png" left="-36" right="24" top="-28" bottom="52" />
 <sprite id="bust_goblin_01_helmet_05" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_01_helmet_05.png" left="-36" right="24" top="-28" bottom="52" />
 <sprite id="bust_goblin_01_helmet_06" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_01_helmet_06.png" left="-36" right="24" top="-28" bottom="52" />
@@ -409,23 +379,23 @@
 <sprite id="bust_goblin_01_helmet_18_damaged" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_01_helmet_18_damaged.png" left="-36" right="24" top="-28" bottom="52" />
 <sprite id="bust_goblin_01_helmet_19_damaged" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_01_helmet_19_damaged.png" left="-36" right="24" top="-28" bottom="52" />
 <sprite id="bust_goblin_01_helmet_20_damaged" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_01_helmet_20_damaged.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_01_helmet_04_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_01_helmet_05_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_01_helmet_06_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_01_helmet_07_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_01_helmet_08_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_01_helmet_09_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_01_helmet_10_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_01_helmet_11_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_01_helmet_12_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_01_helmet_13_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_01_helmet_14_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_01_helmet_15_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_01_helmet_16_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_01_helmet_17_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_01_helmet_18_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_01_helmet_19_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_01_helmet_20_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
+<sprite id="bust_goblin_01_helmet_04_dead" offsetY="15" ic="FF4E5053" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
+<sprite id="bust_goblin_01_helmet_05_dead" offsetY="15" ic="FF4E5053" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
+<sprite id="bust_goblin_01_helmet_06_dead" offsetY="15" ic="FF4E5053" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
+<sprite id="bust_goblin_01_helmet_07_dead" offsetY="15" ic="FF4E5053" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
+<sprite id="bust_goblin_01_helmet_08_dead" offsetY="15" ic="FF4E5053" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
+<sprite id="bust_goblin_01_helmet_09_dead" offsetY="15" ic="FF4E5053" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
+<sprite id="bust_goblin_01_helmet_10_dead" offsetY="15" ic="FF4E5053" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
+<sprite id="bust_goblin_01_helmet_11_dead" offsetY="15" ic="FF4E5053" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
+<sprite id="bust_goblin_01_helmet_12_dead" offsetY="15" ic="FF4E5053" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
+<sprite id="bust_goblin_01_helmet_13_dead" offsetY="15" ic="FF4E5053" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
+<sprite id="bust_goblin_01_helmet_14_dead" offsetY="15" ic="FF4E5053" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
+<sprite id="bust_goblin_01_helmet_15_dead" offsetY="15" ic="FF4E5053" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
+<sprite id="bust_goblin_01_helmet_16_dead" offsetY="15" ic="FF4E5053" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
+<sprite id="bust_goblin_01_helmet_17_dead" offsetY="15" ic="FF4E5053" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
+<sprite id="bust_goblin_01_helmet_18_dead" offsetY="15" ic="FF4E5053" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
+<sprite id="bust_goblin_01_helmet_19_dead" offsetY="15" ic="FF4E5053" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
+<sprite id="bust_goblin_01_helmet_20_dead" offsetY="15" ic="FF4E5053" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
 <sprite id="bust_goblin_02_helmet_20" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_02_helmet_20.png" left="-36" right="24" top="-28" bottom="52" />
 <sprite id="bust_goblin_02_helmet_21" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_02_helmet_21.png" left="-36" right="24" top="-28" bottom="52" />
 <sprite id="bust_goblin_02_helmet_22" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_02_helmet_22.png" left="-36" right="24" top="-28" bottom="52" />
@@ -440,11 +410,54 @@
 <sprite id="bust_goblin_02_helmet_24_damaged" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_02_helmet_24_damaged.png" left="-36" right="24" top="-28" bottom="52" />
 <sprite id="bust_goblin_02_helmet_25_damaged" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_02_helmet_25_damaged.png" left="-36" right="24" top="-28" bottom="52" />
 <sprite id="bust_goblin_02_helmet_26_damaged" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_02_helmet_26_damaged.png" left="-36" right="24" top="-28" bottom="52" />
-<sprite id="bust_goblin_02_helmet_20_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_02_helmet_21_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_02_helmet_22_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_02_helmet_23_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_02_helmet_24_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_02_helmet_25_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
-<sprite id="bust_goblin_02_helmet_26_dead" offsetY="15" ic="FF4B4D51" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
+<sprite id="bust_goblin_02_helmet_20_dead" offsetY="15" ic="FF4E5053" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
+<sprite id="bust_goblin_02_helmet_21_dead" offsetY="15" ic="FF4E5053" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
+<sprite id="bust_goblin_02_helmet_22_dead" offsetY="15" ic="FF4E5053" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
+<sprite id="bust_goblin_02_helmet_23_dead" offsetY="15" ic="FF4E5053" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
+<sprite id="bust_goblin_02_helmet_24_dead" offsetY="15" ic="FF4E5053" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
+<sprite id="bust_goblin_02_helmet_25_dead" offsetY="15" ic="FF4E5053" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
+<sprite id="bust_goblin_02_helmet_26_dead" offsetY="15" ic="FF4E5053" width="125" height="114" img="entity\goblins\bust_goblin_04_helmet_00_dead.png" left="-10" right="46" top="-46" bottom="4" />
+<sprite id="mummy_head_01" offsetY="35" ic="FF4E5053" width="104" height="142" img="entity\undead\mummy_head_01.png" left="-17" right="29" top="-14" bottom="48" />
+<sprite id="mummy_head_02" offsetY="35" ic="FF4E5053" width="104" height="142" img="entity\undead\mummy_head_02.png" left="-17" right="29" top="-14" bottom="48" />
+<sprite id="mummy_head_03" offsetY="35" ic="FF4E5053" width="104" height="142" img="entity\undead\mummy_head_03.png" left="-17" right="29" top="-14" bottom="48" />
+<sprite id="mummy_head_04" offsetY="35" ic="FF4E5053" width="104" height="142" img="entity\undead\mummy_head_04.png" left="-17" right="29" top="-14" bottom="48" />
+<sprite id="mummy_head_05" offsetY="35" ic="FF4E5053" width="104" height="142" img="entity\undead\mummy_head_05.png" left="-17" right="29" top="-14" bottom="48" />
+<sprite id="mummy_head_06" offsetY="35" ic="FF4E5053" width="104" height="142" img="entity\undead\mummy_head_06.png" left="-17" right="29" top="-14" bottom="48" />
+<sprite id="mummy_head_07" offsetY="35" ic="FF4E5053" width="104" height="142" img="entity\undead\mummy_head_07.png" left="-17" right="29" top="-14" bottom="48" />
+<sprite id="mummy_head_08" offsetY="35" ic="FF4E5053" width="104" height="142" img="entity\undead\mummy_head_08.png" left="-17" right="29" top="-14" bottom="48" />
+<sprite id="mummy_head_09" offsetY="35" ic="FF4E5053" width="104" height="142" img="entity\undead\mummy_head_09.png" left="-17" right="29" top="-14" bottom="48" />
+<sprite id="mummy_head_01_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF313D49" width="191" height="185" img="entity\undead\mummy_head_01_dead.png" left="-45" right="11" top="-53" bottom="3" />
+<sprite id="mummy_head_02_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF313D49" width="191" height="185" img="entity\undead\mummy_head_02_dead.png" left="-45" right="11" top="-53" bottom="3" />
+<sprite id="mummy_head_03_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF313D49" width="191" height="185" img="entity\undead\mummy_head_03_dead.png" left="-45" right="11" top="-53" bottom="3" />
+<sprite id="mummy_head_04_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF313D49" width="191" height="185" img="entity\undead\mummy_head_04_dead.png" left="-45" right="11" top="-53" bottom="3" />
+<sprite id="mummy_head_05_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF313D49" width="191" height="185" img="entity\undead\mummy_head_05_dead.png" left="-45" right="11" top="-53" bottom="3" />
+<sprite id="mummy_head_06_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF313D49" width="191" height="185" img="entity\undead\mummy_head_06_dead.png" left="-45" right="11" top="-53" bottom="3" />
+<sprite id="mummy_head_07_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF313D49" width="191" height="185" img="entity\undead\mummy_head_07_dead.png" left="-45" right="11" top="-53" bottom="3" />
+<sprite id="mummy_head_08_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF313D49" width="191" height="185" img="entity\undead\mummy_head_08_dead.png" left="-45" right="11" top="-53" bottom="3" />
+<sprite id="mummy_head_09_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF313D49" width="191" height="185" img="entity\undead\mummy_head_09_dead.png" left="-45" right="11" top="-53" bottom="3" />
+<sprite id="bust_kobold_01" offsetY="35" ic="FF4E5053" width="66" height="68" img="entity\goblins\bust_kobold_01.png" left="-33" right="33" top="-51" bottom="17" />
+<sprite id="bust_kobold_02" offsetY="35" ic="FF4E5053" width="66" height="68" img="entity\goblins\bust_kobold_02.png" left="-33" right="33" top="-51" bottom="17" />
+<sprite id="bust_kobold_03" offsetY="35" ic="FF4E5053" width="66" height="68" img="entity\goblins\bust_kobold_03.png" left="-33" right="33" top="-51" bottom="17" />
+<sprite id="bust_kobold_04" offsetY="35" ic="FF4E5053" width="66" height="68" img="entity\goblins\bust_kobold_04.png" left="-33" right="33" top="-51" bottom="17" />
+<sprite id="bust_kobold_05" offsetY="35" ic="FF4E5053" width="66" height="68" img="entity\goblins\bust_kobold_05.png" left="-33" right="33" top="-51" bottom="17" />
+<sprite id="bust_kobold_01_damaged" offsetY="35" ic="FF4E5053" width="66" height="66" img="entity\goblins\bust_kobold_01_damaged.png" left="-33" right="33" top="-51" bottom="17" />
+<sprite id="bust_kobold_02_damaged" offsetY="35" ic="FF4E5053" width="66" height="66" img="entity\goblins\bust_kobold_02_damaged.png" left="-33" right="33" top="-51" bottom="17" />
+<sprite id="bust_kobold_03_damaged" offsetY="35" ic="FF4E5053" width="66" height="66" img="entity\goblins\bust_kobold_03_damaged.png" left="-33" right="33" top="-51" bottom="17" />
+<sprite id="bust_kobold_04_damaged" offsetY="35" ic="FF4E5053" width="66" height="66" img="entity\goblins\bust_kobold_04_damaged.png" left="-33" right="33" top="-51" bottom="17" />
+<sprite id="bust_kobold_05_damaged" offsetY="35" ic="FF4E5053" width="66" height="66" img="entity\goblins\bust_kobold_05_damaged.png" left="-33" right="33" top="-51" bottom="17" />
+<sprite id="bust_kobold_01_dead" offsetY="35" ic="FF4E5053" width="118" height="94" img="entity\goblins\bust_kobold_01_dead.png" left="-59" right="59" top="-67" bottom="27" />
+<sprite id="bust_kobold_02_dead" offsetY="35" ic="FF4E5053" width="118" height="94" img="entity\goblins\bust_kobold_02_dead.png" left="-59" right="59" top="-67" bottom="27" />
+<sprite id="bust_kobold_03_dead" offsetY="35" ic="FF4E5053" width="118" height="94" img="entity\goblins\bust_kobold_03_dead.png" left="-59" right="59" top="-67" bottom="27" />
+<sprite id="bust_kobold_04_dead" offsetY="35" ic="FF4E5053" width="118" height="94" img="entity\goblins\bust_kobold_04_dead.png" left="-59" right="59" top="-67" bottom="27" />
+<sprite id="bust_kobold_05_dead" offsetY="35" ic="FF4E5053" width="118" height="94" img="entity\goblins\bust_kobold_05_dead.png" left="-59" right="59" top="-67" bottom="27" />
+<sprite id="head_kobold_01" offsetY="35" ic="FF4E5053" width="82" height="64" img="entity\goblins\head_kobold_01.png" left="-41" right="41" top="-32" bottom="32" />
+<sprite id="head_kobold_02" offsetY="35" ic="FF4E5053" width="82" height="64" img="entity\goblins\head_kobold_02.png" left="-41" right="41" top="-32" bottom="32" />
+<sprite id="head_kobold_03" offsetY="35" ic="FF4E5053" width="82" height="64" img="entity\goblins\head_kobold_03.png" left="-41" right="41" top="-32" bottom="32" />
+<sprite id="head_kobold_04" offsetY="35" ic="FF4E5053" width="82" height="64" img="entity\goblins\head_kobold_04.png" left="-41" right="41" top="-32" bottom="32" />
+<sprite id="head_kobold_05" offsetY="35" ic="FF4E5053" width="82" height="64" img="entity\goblins\head_kobold_05.png" left="-41" right="41" top="-32" bottom="32" />
+<sprite id="head_kobold_01_dead" offsetY="35" ic="FF4E5053" width="82" height="64" img="entity\goblins\head_kobold_01_dead.png" left="-41" right="41" top="-32" bottom="32" />
+<sprite id="head_kobold_02_dead" offsetY="35" ic="FF4E5053" width="82" height="64" img="entity\goblins\head_kobold_02_dead.png" left="-41" right="41" top="-32" bottom="32" />
+<sprite id="head_kobold_03_dead" offsetY="35" ic="FF4E5053" width="82" height="64" img="entity\goblins\head_kobold_03_dead.png" left="-41" right="41" top="-32" bottom="32" />
+<sprite id="head_kobold_04_dead" offsetY="35" ic="FF4E5053" width="82" height="64" img="entity\goblins\head_kobold_04_dead.png" left="-41" right="41" top="-32" bottom="32" />
+<sprite id="head_kobold_05_dead" offsetY="35" ic="FF4E5053" width="82" height="64" img="entity\goblins\head_kobold_05_dead.png" left="-41" right="41" top="-32" bottom="32" />
 </brush>

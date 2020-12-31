@@ -624,6 +624,11 @@ layers = [
     "desc" :  "A body vest of solid plated steel.", \
     "adesc" : "Includes a body vest of solid plated steel."
 },
+{"name": "legend_armor_plate_milanese",               "layer": "plate", "min": 1, "max": 1, "value" : 5000, "con" : 170, "stam" : -26, "impactSound" : "leather", "invSound" : "leather", \
+    "title" :  "Full Harness of Plate Armor", \
+    "desc" :  "A complete harness of steel plate armor.", \
+    "adesc" : "Includes a full set of solid plated steel with greaves."
+},
 {"name": "legend_armor_plate_full",                       "layer": "plate", "min": 1, "max": 1, "value" : 4500, "con" : 160, "stam" : -22, "impactSound" : "leather", "invSound" : "leather", \
     "title" :  "Full Coat of Plate Armor", \
     "desc" :  "A full set of solid plated steel.", \
@@ -1220,7 +1225,7 @@ def main():
             temp = NamedUpgradeNut
 
         fname = d["name"]
-        dirpath = os.path.join(os.path.dirname(os.path.abspath(__file__)),  "legend_armor", layer)
+        dirpath = os.path.join(os.path.dirname(os.path.abspath(__file__)),  "legend_armor_scripts", layer)
         if not os.path.exists(dirpath):
             os.makedirs(dirpath)
 

@@ -136,7 +136,7 @@ this.barbarian_chosen <- this.inherit("scripts/entity/tactical/human", {
 
 			this.m.Items.equip(this.Const.World.Common.pickArmor(armor));
 		}
-		
+
 
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Head))
 		{

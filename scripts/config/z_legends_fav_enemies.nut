@@ -26,6 +26,7 @@ gt.Const.LegendMod.FavoriteDirewolf <- [
 	this.Const.EntityType.Direwolf,
 	this.Const.EntityType.Wolf,
 	this.Const.EntityType.GoblinWolfrider,
+	this.Const.EntityType.KoboldWolfrider,
 	this.Const.EntityType.LegendWhiteDirewolf
 ];
 
@@ -39,7 +40,9 @@ gt.Const.LegendMod.FavoriteGoblin <- [
 	this.Const.EntityType.GoblinAmbusher,
 	this.Const.EntityType.GoblinLeader,
 	this.Const.EntityType.GoblinShaman,
-	this.Const.EntityType.GoblinWolfrider
+	this.Const.EntityType.GoblinWolfrider,
+	this.Const.EntityType.KoboldWolfrider,
+	this.Const.EntityType.KoboldFighter
 ];
 
 gt.Const.LegendMod.FavoriteHexe <- [
@@ -205,7 +208,7 @@ gt.Const.LegendMod.FavoriteMercenary <- [
 	this.Const.EntityType.BountyHunter,
 	this.Const.EntityType.Swordmaster,
 	this.Const.EntityType.HedgeKnight,
-	this.Const.EntityType.MasterArcher	
+	this.Const.EntityType.MasterArcher
 ];
 
 gt.Const.LegendMod.FavoriteSoutherners <- [
@@ -547,7 +550,7 @@ gt.Const.LegendMod.GetFavoriteEnemyValue <- function ( _type )
 		break;
 		case "this.Const.EntityType.FlyingSkull":
 		value = 30;
-		break;		
+		break;
 		default:
 		value = 10;
 	}
