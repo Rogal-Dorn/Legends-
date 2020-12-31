@@ -463,7 +463,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			return this.m.PerkTree;
 		}
 
-		local pT = this.Const.Perks.getPerksTree(this.getID());
+		local pT = this.Const.Perks.PerksTreeTemplate
 		if (pT == null)
 		{
 			return [];

@@ -151,7 +151,7 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 					break;
 
 				case 11:
-					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_line_battle_kobold"));
+					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_line_battle_kobolds"));
 					break;
 
 				case 13:

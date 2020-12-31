@@ -62,7 +62,7 @@ this.kobold <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.DamageReceived] = 0.5;
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.Idle] = 1.25;
 		this.m.SoundPitch = this.Math.rand(150, 160) * 0.01;
-		this.m.Tags.add("goblin");
+		this.m.Flags.add("goblin");
 	}
 
 	function onDeath( _killer, _skill, _tile, _fatalityType )

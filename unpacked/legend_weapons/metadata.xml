@@ -792,6 +792,10 @@
   <sprite id="icon_legend_blowgun_01_bloodied" offsetY="35" ic="FF3D4758" width="130" height="142" img="icons\icon_legend_blowgun_01.png" left="-52" right="12" top="-64" bottom="52" />
   <sprite id="runed_icon_legend_blowgun_01" offsetY="35" ic="FF4E5860" width="104" height="142" img="icons\runed_icon_legend_blowgun_01.png" left="-52" right="12" top="-64" bottom="54" />
   <sprite id="runed_icon_legend_blowgun_01_bloodied" offsetY="35" ic="FF3D4758" width="130" height="142" img="icons\runed_icon_legend_blowgun_01.png" left="-52" right="12" top="-64" bottom="52" />
+=======
+  <sprite id="icon_legend_blowgun_01" offsetY="35" ic="FF4E5860" width="130" height="142" img="icons\icon_legend_blowgun_01.png" left="-14" right="38" top="-76" bottom="0" />
+  <sprite id="runed_icon_legend_blowgun_01" offsetY="35" ic="FF4E5860" width="130" height="142" img="icons\runed_icon_legend_blowgun_01.png" left="-4" right="48" top="-66" bottom="10" />
+>>>>>>> 52fe76a509ef1c9681c61e623461b2159b6f2aa0
 
 >>>>>>> 65b7736d648d72b2fde4157eec7b850c01315f8a
   <sprite id="icon_named_longsword_01" offsetY="35" ic="FF3B404A" width="128" height="172" img="icons\icon_named_longsword_01.png" left="-68" right="30" top="-60" bottom="69" />
