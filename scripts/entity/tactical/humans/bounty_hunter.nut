@@ -83,7 +83,8 @@ this.bounty_hunter <- this.inherit("scripts/entity/tactical/human", {
 				"weapons/falchion",
 				"weapons/arming_sword",
 				"weapons/flail",
-				"weapons/dagger"
+				"weapons/dagger",
+				"weapons/legend_ranged_flail"
 			];
 
 			if (this.Const.DLC.Unhold)

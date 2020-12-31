@@ -36,10 +36,8 @@ this.legend_ranged_wooden_flail <- this.inherit("scripts/items/weapons/weapon", 
 	function onEquip()
 	{
 		this.weapon.onEquip();
-		local flail = this.new("scripts/skills/actives/legend_ranged_flail_skill");
-		this.addSkill(flail);
-		local lash = this.new("scripts/skills/actives/legend_ranged_lash_skill");
-		this.addSkill(lash);
+		this.addSkill(this.new("scripts/skills/actives/legend_ranged_flail_skill"));
+		this.addSkill(this.new("scripts/skills/actives/legend_ranged_lash_skill"));
 	}
 
 	function onUpdateProperties( _properties )

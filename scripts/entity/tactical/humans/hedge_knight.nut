@@ -80,7 +80,8 @@ this.hedge_knight <- this.inherit("scripts/entity/tactical/human", {
 					"weapons/greatsword",
 					"weapons/greataxe",
 					"weapons/warbrand",
-					"weapons/two_handed_hammer"
+					"weapons/two_handed_hammer",
+					"weapons/legend_estoc"
 				]);
 			}
 
