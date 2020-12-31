@@ -133,7 +133,7 @@ this.scenario_line_battle_kobolds <- this.inherit("scripts/scenarios/tactical/sc
 		entity = this.spawnEntity("scripts/entity/tactical/enemies/kobold_fighter", 19, 19, 11, 11);
 		entity.setFaction(this.Const.Faction.Goblins);
 		entity.assignRandomEquipment();
-		entity = this.spawnEntity("scripts/entity/tactical/enemies/kobold_fighter", 19, 19, 12, 12);
+		entity = this.spawnEntity("scripts/entity/tactical/enemies/goblin_fighter", 19, 19, 12, 12);
 		entity.setFaction(this.Const.Faction.Goblins);
 		entity.assignRandomEquipment();
 		entity = this.spawnEntity("scripts/entity/tactical/enemies/goblin_fighter", 19, 19, 13, 13);
@@ -142,13 +142,13 @@ this.scenario_line_battle_kobolds <- this.inherit("scripts/scenarios/tactical/sc
 		entity = this.spawnEntity("scripts/entity/tactical/enemies/goblin_fighter", 19, 19, 14, 14);
 		entity.setFaction(this.Const.Faction.Goblins);
 		entity.assignRandomEquipment();
-		entity = this.spawnEntity("scripts/entity/tactical/enemies/kobold_fighter", 19, 19, 15, 15);
+		entity = this.spawnEntity("scripts/entity/tactical/enemies/goblin_fighter", 19, 19, 15, 15);
 		entity.setFaction(this.Const.Faction.Goblins);
 		entity.assignRandomEquipment();
-		entity = this.spawnEntity("scripts/entity/tactical/enemies/kobold_fighter", 19, 19, 16, 16);
+		entity = this.spawnEntity("scripts/entity/tactical/enemies/goblin_fighter", 19, 19, 16, 16);
 		entity.setFaction(this.Const.Faction.Goblins);
 		entity.assignRandomEquipment();
-		entity = this.spawnEntity("scripts/entity/tactical/enemies/kobold_fighter", 19, 19, 17, 17);
+		entity = this.spawnEntity("scripts/entity/tactical/enemies/goblin_fighter", 19, 19, 17, 17);
 		entity.setFaction(this.Const.Faction.Goblins);
 		entity.assignRandomEquipment();
 		entity = this.spawnEntity("scripts/entity/tactical/enemies/goblin_ambusher", 20, 20, 11, 11);
@@ -157,7 +157,7 @@ this.scenario_line_battle_kobolds <- this.inherit("scripts/scenarios/tactical/sc
 		entity = this.spawnEntity("scripts/entity/tactical/enemies/goblin_ambusher", 20, 20, 12, 12);
 		entity.setFaction(this.Const.Faction.Goblins);
 		entity.assignRandomEquipment();
-		entity = this.spawnEntity("scripts/entity/tactical/enemies/kobold_fighter", 20, 20, 13, 13);
+		entity = this.spawnEntity("scripts/entity/tactical/enemies/goblin_fighter", 20, 20, 13, 13);
 		entity.setFaction(this.Const.Faction.Goblins);
 		entity.assignRandomEquipment();
 		entity = this.spawnEntity("scripts/entity/tactical/enemies/goblin_leader", 20, 20, 14, 14);
@@ -169,10 +169,10 @@ this.scenario_line_battle_kobolds <- this.inherit("scripts/scenarios/tactical/sc
 		entity = this.spawnEntity("scripts/entity/tactical/enemies/goblin_ambusher", 20, 20, 16, 16);
 		entity.setFaction(this.Const.Faction.Goblins);
 		entity.assignRandomEquipment();
-		entity = this.spawnEntity("scripts/entity/tactical/enemies/kobold_fighter", 20, 20, 17, 17);
+		entity = this.spawnEntity("scripts/entity/tactical/enemies/goblin_fighter", 20, 20, 17, 17);
 		entity.setFaction(this.Const.Faction.Goblins);
 		entity.assignRandomEquipment();
-		entity = this.spawnEntity("scripts/entity/tactical/enemies/goblin_ambusher", 20, 20, 18, 18);
+		entity = this.spawnEntity("scripts/entity/tactical/enemies/kobold_fighter", 20, 20, 18, 18);
 		entity.setFaction(this.Const.Faction.Goblins);
 		entity.assignRandomEquipment();
 	}

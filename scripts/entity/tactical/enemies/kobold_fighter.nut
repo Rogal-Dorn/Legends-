@@ -39,10 +39,10 @@ this.kobold_fighter <- this.inherit("scripts/entity/tactical/kobold", {
 		}
 
 		this.m.Skills.add(this.new("scripts/skills/racial/goblin_ambusher_racial"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_pathfinder"));
 		if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 			{
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_ballistics"));
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_pathfinder"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_crippling_strikes"));
 			}
 
@@ -64,35 +64,21 @@ this.kobold_fighter <- this.inherit("scripts/entity/tactical/kobold", {
 		// 	}
 		// }
 
-		this.m.Items.addToBag(this.new("scripts/items/weapons/goblin_notched_blade"));
-		this.m.Items.equip(this.new("scripts/items/weapons/legend_blowgun"));
+		this.m.Items.addToBag(this.new("scripts/items/weapons/greenskins/goblin_notched_blade"));
+		this.m.Items.equip(this.new("scripts/items/weapons/greenskins/legend_blowgun"));
 		this.m.Items.equip(this.new("scripts/items/ammo/legend_darts"));
 
-		if (this.Math.rand(1, 100) <= 10)
-		{
-			this.m.Items.addToBag(this.new("scripts/items/accessory/poison_item"));
-		}
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
-			{
-			this.m.Items.addToBag(this.new("scripts/items/accessory/poison_item"));
-			}
-
-	}
-
-	function makeMiniboss()
-	{
-		if (!this.actor.makeMiniboss())
 		{
-			return false;
+			this.m.Items.addToBag(this.new("scripts/items/accessory/poison_item"));
 		}
-
-		this.getSprite("miniboss").setBrush("bust_miniboss");
-		local weapons = [
-			"weapons/named/named_goblin_heavy_bow"
-		];
-		this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_overwhelm"));
-		return true;
+		else
+		{
+			if (this.Math.rand(1, 100) <= 90)
+			{
+				this.m.Items.addToBag(this.new("scripts/items/accessory/poison_item"));
+			}
+		}
 	}
 
 });
