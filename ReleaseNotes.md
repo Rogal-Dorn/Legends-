@@ -4484,7 +4484,9 @@ Added two new named halberd variants
 Added a named longsword
 Added a named sword variant
 Added two new estoc variants (@GRIBABAS)
+Added new Footmans Axe named and regular variants (@GRIBABAS)
 Replaced legend flail art (@GRIBABAS)
+Added new named Gladius (@GRIBABAS)
 
 
 **Armor Tweaks**

@@ -22,28 +22,17 @@ this.legends_skeleton_high <- this.inherit("scripts/entity/tactical/legend_skele
 
 	function assignRandomEquipment()
 	{
-		local r = this.Math.rand(1, 5);
 
-		if (r == 1)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/ancient_sword"));
-		}
-		else if (r == 2)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/crypt_cleaver"));
-		}
-		else if (r == 3)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/rhomphaia"));
-		}
-		else if (r == 4)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/khopesh"));
-		}
-		else if (r == 5)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/warscythe"));
-		}
+		local weapons = [
+			"weapons/ancient/ancient_sword",
+			"weapons/ancient/crypt_cleaver",
+			"weapons/ancient/rhomphaia",
+			"weapons/ancient/khopesh",
+			"weapons/ancient/warscythe",
+			"weapons/ancient/legend_gladius",
+		];
+
+		this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 
 		if (this.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand) == null)
 		{
