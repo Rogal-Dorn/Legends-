@@ -19,41 +19,25 @@ this.legends_skeleton_med <- this.inherit("scripts/entity/tactical/legend_skelet
 
 	function assignRandomEquipment()
 	{
-		local r = this.Math.rand(1, 4);
+		local weapons = [
+			"weapons/ancient/ancient_sword",
+			"weapons/ancient/broken_ancient_sword",
+			"weapons/ancient/falx",
+			"weapons/ancient/ancient_spear",
+			"weapons/ancient/legend_gladius",
+		];
 
-		if (r == 1)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/broken_ancient_sword"));
-		}
-		else if (r == 2)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/falx"));
-		}
-		else if (r == 3)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/ancient_sword"));
-		}
-		else if (r == 4)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/ancient_spear"));
-		}
+		this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 
 		if (this.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand) == null)
 		{
-
-			r = this.Math.rand(1, 4);
-			if (r == 1)
-			{
-				this.m.Items.equip(this.new("scripts/items/shields/ancient/auxiliary_shield"));
-			}
-			else if (r == 2)
-			{
-				this.m.Items.equip(this.new("scripts/items/shields/ancient/coffin_shield"));
-			}
-			else if (r == 3)
-			{
-				this.m.Items.equip(this.new("scripts/items/shields/ancient/tower_shield"));
-			}
+			local shields = [
+				[1, ""],
+				[1, "shields/ancient/auxiliary_shield"],
+				[1, "shields/ancient/coffin_shield"],
+				[1, "shields/ancient/tower_shield"],
+			];
+			this.m.Items.equip(this.Const.World.Common.pickItem(shields, "scripts/items/"))
 		}
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([

@@ -4462,10 +4462,9 @@ Fixes perks going off screen. Bumped to the next perk level.
 Fixes camp repair and salvage infinite bugs
 Updates Faster Mod to fix reported faster mod crashes
 
-15.0.0.22
 
-**New Enemies**
-Kobolds
+
+15.0.0.22
 
 **Changes**
 Slaves are now gauranteed perks for cleavers and flails instead of hammers and axes, to reflect their intimate experience on the receiving end of chains and whips
@@ -4475,24 +4474,28 @@ More weapon spawn varieties for Bandit Leaders, Bandit Raiders, Bandit Thuds, Ba
 **Fixes**
 Scenarios now work again
 Fixes the "Veteran/ranged manhunter" from causing errors when it spawns with a named armor
+Fixes the difficulty level of Sato's manhunter enemy parties
 Fixes the gladius icon
 Fixes peaceable tooltip
 Fixes rare missing wide cloth helmet bug
+Some more tweaks to faster mod to catch potential crashes
 
 **Weapons**
 Added two new named halberd variants
 Added a named longsword
 Added a named sword variant
 Added two new estoc variants (@GRIBABAS)
+Added new Footmans Axe named and regular variants (@GRIBABAS)
 Replaced legend flail art (@GRIBABAS)
-
+Added new named Gladius (@GRIBABAS)
+Added a named voulge variant
 
 **Armor Tweaks**
 Added milanese plate armor variant
 Added layered version of enclave's great helm and venitian bascinet
 Added armet visor, great bascinet visor, venitian bascinet visor
 Most helm vanity layers changed to have lower durability, cost and fatigue. No more heavy protective feather, or 200 gold straw hats.  This in turn lowers the defense of some enemies and the cost of some rescruits
-
+Added Italo-norman helm
 
 
 
@@ -4500,13 +4503,11 @@ Most helm vanity layers changed to have lower durability, cost and fatigue. No m
 
 
 **New legendary location**
-The Grand Tournament is an exclusive location only accessible when you have at least three mercenaries who have become arena veterans. 
+The Grand Tournament is an exclusive location only accessible when you have at least three mercenaries who have become arena veterans.
 The rules of the Melee are simple:
 * fight as many battles in a row as you can, without limit.
 * The prize begins at 1000 gold, each battle the prize will double and the difficulty will gradually increase exponentially.
 * You fight procedurally generated parties made up of both humans and beasts of all kinds
-* The tournament map is procedurally generated from terrain of all kinds 
-* You get to keep the loot from each battle 
-* If you die it is game over 
- 
- 
+* The tournament map is procedurally generated from terrain of all kinds
+* You get to keep the loot from each battle
+* If you die it is game over
