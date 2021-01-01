@@ -27,7 +27,7 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 
-				
+
 			}
 
 		});
@@ -50,7 +50,7 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 
-				
+
 			}
 
 		});
@@ -73,7 +73,7 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 
-				
+
 			}
 
 		});
@@ -145,7 +145,7 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 						};
 						_event.registerToShowAfterCombat("F", "G");
 						this.World.State.startScriptedCombat(p, false, false, false);
-						
+
 						return 0;
 					}
 
@@ -161,12 +161,12 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
-			
-				
+
+
 			}
 
 		});
-		
+
 		this.m.Screens.push({
 			ID = "F",
 			Text = "[img]gfx/ui/events/legend_tournament.png[/img]{After the battle you fall back to an antechamber off the main tourney grounds. Artemisia offers you a choice to keep going or take your prize}",
@@ -179,7 +179,7 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 					function getResult( _event )
 					{
 						local round = this.World.Flags.get("LegendTournamentRound");
-						local roundDifficulty = 1 + (round / 10); 
+						local roundDifficulty = 1 + (round / 10);
 						local p = this.Const.Tactical.CombatInfo.getClone();
 						p.TerrainTemplate = "tactical.legend_tournament";
 						p.LocationTemplate.Template[0] = "tactical.legend_tournament_floor";
@@ -206,7 +206,7 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 						};
 						_event.registerToShowAfterCombat("F", "0");
 						this.World.State.startScriptedCombat(p, false, false, false);
-						
+
 						return 0;
 					}
 
@@ -215,7 +215,7 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 					Text = "That is enough",
 					function getResult( _event )
 					{
-						return "H";
+						return "G";
 					}
 
 				}
@@ -223,12 +223,12 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 
-				
+
 			}
 
-		});		
+		});
 		this.m.Screens.push({
-			ID = "F",
+			ID = "G",
 			Text = "[img]gfx/ui/events/legend_tournament.png[/img]{Having completed the gauntlet you are led as champions from the field. Artemisia presents your reward and walks you out to the door %SPEECH_ON% Well fought! I hope we see you in the tournament again, though I imagine you need some rest after that performance. %SPEECH_OFF%}",
 			Image = "",
 			List = [],
@@ -250,7 +250,7 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 				local payment = 1000;
 				for( local i = 0; i < round && i < 5; i = ++i )
 				{
-					payment *= 2; 
+					payment *= 2;
 				}
 				this.World.Assets.addMoney(payment);
 			}
@@ -264,42 +264,35 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 	function onPrepare()
 	{
 
-	
+
 	}
 
 	function onDetermineStartScreen()
 	{
-	local candidate_arena = [];
-	local bros = 0;
-	local veterans = 0;
-		
-		foreach( bro in brothers )
+		local candidate_veteran = [];
+
+		foreach (bro in this.World.getPlayerRoster().getAll())
 		{
-			bros += 1;
-			
 			if (bro.getSkills().hasSkill("trait.arena_veteran"))
 			{
-				veterans += 1;
-				candidate_arena.push(bro);
+				candidate_veteran.push(bro);
 			}
 		}
 
-		if (veterans == 0)
+		if (candidate_veteran.len() == 0)
 		{
 			return "A";
-		}
-		
-		if ( veterans >= 3 )
-		{
-			return "A";
-		}
-	
-		if (candidate_wildman.len() != 0)
-		{
-			this.m.Veteran = candidate_veteran[this.Math.rand(0, candidate_veteran.len() - 1)]
+
 		}
 
-	
+		this.m.Veteran = candidate_veteran[this.Math.rand(0, candidate_veteran.len() - 1)]
+
+		if ( veterans < 3 )
+		{
+			return "B";
+		}
+
+		return "C"
 	}
 
 	function onPrepareVariables( _vars )
@@ -307,8 +300,8 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 		_vars.push([
 			"veteran",
 			this.m.Veteran != null ? this.m.Veteran.getNameOnly() : ""
-		]);	
-	
+		]);
+
 	}
 
 	function onClear()
