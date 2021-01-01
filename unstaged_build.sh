@@ -154,6 +154,14 @@ while read -r line; do
             checkForError "$o" "$i"
             copyBrushes
 
+        elif [[ "$xpath" == unpacked/legend_world/metadata.xml ]]; then
+            echo "Building legend_world brush..."
+            cd ../bin
+            o=$(./bbrusher.exe pack --gfxPath "../$RepoDir/" ../$RepoDir/brushes/legend_world.brush ../$RepoDir/unpacked/legend_world)
+            cd ../"$RepoDir"
+            checkForError "$o" "$i"
+            copyBrushes
+
         elif [[ "$xpath" == *.py ]]; then
             :
             #echo "skipping $line"

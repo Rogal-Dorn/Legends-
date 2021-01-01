@@ -17,7 +17,8 @@ this.build_unique_locations_action <- this.inherit("scripts/factions/faction_act
 		BuildHolySite1 = true,
 		BuildHolySite2 = true,
 		BuildHolySite3 = true,
-		BuildMummySite = true
+		BuildMummySite = true,
+		BuildTournamentSite = true
 	},
 	function create()
 	{
@@ -115,12 +116,12 @@ this.build_unique_locations_action <- this.inherit("scripts/factions/faction_act
 			{
 				this.m.BuildHolySite3 = false;
 			}
-			
+
 			if (!this.Const.DLC.Desert || v.getTypeID() == "location.legend_mummy")
 			{
 				this.m.BuildMummySite = false;
 			}
-			
+
 			if (!this.Const.DLC.Desert || v.getTypeID() == "location.legend_tournament")
 			{
 				this.m.BuildTournamentSite = false;
@@ -613,9 +614,10 @@ this.build_unique_locations_action <- this.inherit("scripts/factions/faction_act
 			if (camp != null)
 			{
 				camp.onSpawned();
+				this.logInfo("Built Legends Ancient Mastaba location")
 			}
 		}
-		else if (this.m.BuildGoblinCity)
+		else if (this.m.BuildTournamentSite)
 		{
 			local disallowedTerrain = [];
 
@@ -640,6 +642,7 @@ this.build_unique_locations_action <- this.inherit("scripts/factions/faction_act
 			if (camp != null)
 			{
 				camp.onSpawned();
+				this.logInfo("Built Legends Tournament location")
 			}
 		}
 		else

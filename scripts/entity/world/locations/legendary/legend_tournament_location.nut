@@ -29,7 +29,7 @@ this.legend_tournament_location <- this.inherit("scripts/entity/world/location",
 	{
 		this.location.onInit();
 		local body = this.addSprite("body");
-		body.setBrush("stronghold_01");
+		body.setBrush("legend_tournament");
 		local banner = this.addSprite("banner");
 		banner.setOffset(this.createVec(-60, 50));
 	}
