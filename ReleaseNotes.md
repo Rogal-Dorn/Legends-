@@ -4485,6 +4485,7 @@ Added a named longsword
 Added a named sword variant
 Added two new estoc variants (@GRIBABAS)
 Replaced legend flail art (@GRIBABAS)
+Added a named voulge variant
 
 
 **Armor Tweaks**
