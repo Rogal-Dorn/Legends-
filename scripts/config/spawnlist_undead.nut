@@ -57,7 +57,7 @@ gt.Const.World.Spawn.UndeadArmy <-
 					Type = this.Const.World.Spawn.Troops.SkeletonGladiator,
 					MinR = 1200,
 					Cost = 40
-				},
+				}
 			]
 		},
 		{

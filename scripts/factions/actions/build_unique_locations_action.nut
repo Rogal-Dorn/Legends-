@@ -120,6 +120,11 @@ this.build_unique_locations_action <- this.inherit("scripts/factions/faction_act
 			{
 				this.m.BuildMummySite = false;
 			}
+			
+			if (!this.Const.DLC.Desert || v.getTypeID() == "location.legend_tournament")
+			{
+				this.m.BuildTournamentSite = false;
+			}
 		}
 	}
 
@@ -603,6 +608,33 @@ this.build_unique_locations_action <- this.inherit("scripts/factions/faction_act
 			if (tile != null)
 			{
 				camp = this.World.spawnLocation("scripts/entity/world/locations/legendary/legend_mummy_location", tile.Coords);
+			}
+
+			if (camp != null)
+			{
+				camp.onSpawned();
+			}
+		}
+		else if (this.m.BuildGoblinCity)
+		{
+			local disallowedTerrain = [];
+
+			for( local i = 0; i < this.Const.World.TerrainType.COUNT; i = ++i )
+			{
+				if (i == this.Const.World.TerrainType.Hills || i == this.Const.World.TerrainType.Mountains)
+				{
+				}
+				else
+				{
+					disallowedTerrain.push(i);
+				}
+			}
+
+			local tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries * 100, disallowedTerrain, 30, 1000, 1001, distanceToOthers, distanceToOthers);
+
+			if (tile != null)
+			{
+				camp = this.World.spawnLocation("scripts/entity/world/locations/legendary/legend_tournament_location", tile.Coords);
 			}
 
 			if (camp != null)

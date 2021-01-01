@@ -237,7 +237,7 @@ gt.Const.World.Spawn.Alps <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
-					Cost = 800
+					Cost = 200
 				}
 			]
 		}
@@ -719,7 +719,7 @@ gt.Const.World.Spawn.LegendHexeLeader <-
 				{
 					Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
 					Cost = 400
-				},
+				}
 			]
 		},
 		{

@@ -4492,3 +4492,21 @@ Added milanese plate armor variant
 Added layered version of enclave's great helm and venitian bascinet
 Added armet visor, great bascinet visor, venitian bascinet visor
 Most helm vanity layers changed to have lower durability, cost and fatigue. No more heavy protective feather, or 200 gold straw hats.  This in turn lowers the defense of some enemies and the cost of some rescruits
+
+
+
+
+15.?.?.?
+
+
+**New legendary location**
+The Grand Tournament is an exclusive location only accessible when you have at least three mercenaries who have become arena veterans. 
+The rules of the Melee are simple:
+* fight as many battles in a row as you can, without limit.
+* The prize begins at 1000 gold, each battle the prize will double and the difficulty will gradually increase exponentially.
+* You fight procedurally generated parties made up of both humans and beasts of all kinds
+* The tournament map is procedurally generated from terrain of all kinds 
+* You get to keep the loot from each battle 
+* If you die it is game over 
+ 
+ 
