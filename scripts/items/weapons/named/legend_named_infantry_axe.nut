@@ -7,8 +7,8 @@ this.legend_named_infantry_axe <- this.inherit("scripts/items/weapons/named/name
 		this.m.Name = "Infantry Axe";
 		this.m.Description = "A long, exceptionally well crafted two-handed axe used by footmen in the noble wars";
 		this.m.Categories = "Axe, Two-Handed";
-		this.m.IconLarge = "weapons/melee/legend_footman_axe_02.png";
-		this.m.Icon = "weapons/melee/legend_footman_axe_02_70x70.png";
+		this.m.Variant = this.Math.rand(2, 3);
+		this.updateVariant()
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;
@@ -17,7 +17,6 @@ this.legend_named_infantry_axe <- this.inherit("scripts/items/weapons/named/name
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
-		this.m.ArmamentIcon = "icon_legend_footman_axe_02";
 		this.m.Value = 5400;
 		this.m.ShieldDamage = 55;
 		this.m.Condition = 75.0;
@@ -29,6 +28,13 @@ this.legend_named_infantry_axe <- this.inherit("scripts/items/weapons/named/name
 		this.m.DirectDamageMult = 0.4;
 		this.m.ChanceToHitHead = 5;
 		this.randomizeValues();
+	}
+
+	function updateVariant()
+	{
+		this.m.IconLarge = "weapons/melee/legend_footman_axe_0" + this.m.Variant + ".png";
+		this.m.Icon = "weapons/melee/legend_footman_axe_0" + this.m.Variant + "_70x70.png";
+		this.m.ArmamentIcon = "icon_legend_footman_axe_0" + this.m.Variant;
 	}
 
 	function onEquip()
