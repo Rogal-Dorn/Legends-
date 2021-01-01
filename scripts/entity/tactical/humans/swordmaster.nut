@@ -74,14 +74,13 @@ this.swordmaster <- this.inherit("scripts/entity/tactical/human", {
 		{
 			local weapons = [
 				"weapons/noble_sword",
-				"weapons/arming_sword"
+				"weapons/arming_sword",
+				"weapons/legend_estoc"
 			];
 
 			if (this.Const.DLC.Wildmen || this.Const.DLC.Desert)
 			{
 				weapons.extend([
-					"weapons/noble_sword",
-					"weapons/arming_sword",
 					"weapons/shamshir"
 				]);
 			}
@@ -98,7 +97,7 @@ this.swordmaster <- this.inherit("scripts/entity/tactical/human", {
 				[1, "footman_armor"],
 				[1, "leather_scale_armor"],
 				[1, "light_scale_armor"]
-			]));			
+			]));
 		}
 
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Head) && this.Math.rand(1, 100) <= 90)
@@ -123,7 +122,8 @@ this.swordmaster <- this.inherit("scripts/entity/tactical/human", {
 
 		this.getSprite("miniboss").setBrush("bust_miniboss");
 		local weapons = [
-			"weapons/named/named_sword"
+			"weapons/named/named_sword",
+			"weapons/named/legend_named_estoc"
 		];
 
 		if (this.Const.DLC.Wildmen || this.Const.DLC.Desert)

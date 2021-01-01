@@ -124,7 +124,8 @@ this.zombie_knight <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 				weapons.extend([
 					"weapons/longsword",
 					"weapons/legend_bastardsword",
-					"weapons/greataxe"
+					"weapons/greataxe",
+					"weapons/legend_reinforced_flail",
 				]);
 			}
 

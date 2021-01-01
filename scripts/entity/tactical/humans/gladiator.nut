@@ -71,7 +71,8 @@ this.gladiator <- this.inherit("scripts/entity/tactical/human", {
 					"weapons/oriental/swordlance",
 					"weapons/oriental/polemace",
 					"weapons/two_handed_hammer",
-					"weapons/greataxe"
+					"weapons/greataxe",
+					"weapons/legend_ranged_flail"
 				]);
 			}
 

@@ -60,6 +60,7 @@ this.skeleton_heavy <- this.inherit("scripts/entity/tactical/skeleton", {
 		{
 			local weapons = [
 				"weapons/ancient/ancient_sword",
+				"weapons/ancient/legend_gladius",
 				"weapons/ancient/khopesh"
 			];
 
