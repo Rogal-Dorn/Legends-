@@ -680,11 +680,19 @@ layers = [
  "title" :  "Heavy Lamellar Helmet", \
  "desc" :  "A heavy helmet made from overlapping metal plates." \
 },
+{"name" : "italo_norman_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1500, "con" : 180, "stam" : -10, "vis" : -1, "hair" : "true", "beard" : "true",  \
+ "title" :  "Conic Helm", \
+ "desc" :  "A pointed conic helm with a very large bill-shaped faceplate." \
+},
+{"name" : "italo_norman_helm_named"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 3000, "con" : 220, "stam" : -10, "vis" : -1, "hair" : "true", "beard" : "true", "named" : True, "rminViz" : 0, "rmaxViz" : -1, "rminStam" : -7, "rmaxStam" : -10, "rminCond" : 220, "rmaxCond" : 245, "names" : Names,  \
+ "title" :  "Conic Helm", \
+ "desc" :  "A well-built and lavishly decorated pointed conic helm. It has a large duck-bill shaped faceplate covering the front." \
+},
 {"name" : "southern_conic_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 550, "con" : 50, "stam" : -2, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Southern Conic Helm", \
  "desc" :  "A conic helm from the south" \
 },
-{"name" : "southern_named_conic"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 2000, "con" : 130, "stam" : -10, "vis" : -3, "hair" : "true", "beard" : "false",  \
+{"name" : "southern_named_conic"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 2000, "con" : 130, "stam" : -10, "vis" : -3, "hair" : "true", "beard" : "false", "named" : True, "rminViz" : -1, "rmaxViz" : -3, "rminStam" : -7, "rmaxStam" : -10, "rminCond" : 130, "rmaxCond" : 155, "names" : Names,  \
  "title" :  "Southern Conic", \
  "desc" :  "an expertly crafted southern helm" \
 },

@@ -6,7 +6,7 @@ this.legend_named_shovel <- this.inherit("scripts/items/weapons/named/named_weap
 	{
 		this.named_weapon.create();
 		this.m.ID = "weapon.legend_named_shovel";
-		this.m.Name = "Shovel";
+		this.m.NameList = this.Const.Strings.CleaverNames;
 		this.m.Description = "A ritualisticly engraved tool made for maiming men, not digging holes. A shovel\'s wide blade lends accuracy when aiming for the head, but almost anything else would be better.";
 		this.m.Categories = "Mace, Two-Handed";
 		this.m.IconLarge = "weapons/melee/legend_shovel_02.png";

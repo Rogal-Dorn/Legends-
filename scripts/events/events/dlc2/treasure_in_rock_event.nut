@@ -143,7 +143,12 @@ this.treasure_in_rock_event <- this.inherit("scripts/events/event", {
 					icon = "ui/items/" + item.getIcon(),
 					text = "You gain an " + item.getName()
 				});
-				item = this.new("scripts/items/weapons/ancient/ancient_sword");
+
+				local weapons = [
+					[2, "weapons/ancient/ancient_sword"],
+					[1, "weapons/ancient/legend_gladius"],
+				];
+				item = this.Const.World.Common.pickItem(weapons, "scripts/items/")
 				this.World.Assets.getStash().add(item);
 				this.List.push({
 					id = 10,

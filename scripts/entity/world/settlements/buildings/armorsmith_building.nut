@@ -598,6 +598,11 @@ this.armorsmith_building <- this.inherit("scripts/entity/world/settlements/build
 			list.push({
 				R = 75,
 				P = 1.0,
+				S = "helmets/conic_helmet_with_closed_mail"
+			});
+			list.push({
+				R = 75,
+				P = 1.0,
 				S = "helmets/nordic_helmet_with_closed_mail"
 			});
 			list.push({
@@ -605,6 +610,24 @@ this.armorsmith_building <- this.inherit("scripts/entity/world/settlements/build
 				P = 1.0,
 				S = "helmets/conic_helmet_with_faceguard"
 			});
+
+			if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+			{
+				list.push({
+					R = 80,
+					P = 1.0,
+					S = "helmets/italo_norman_helm"
+				});
+
+				if (this.Math.rand(1, 100) <= 33)
+				{
+					list.push({
+						R = 99,
+						P = 2.0,
+						S = "helmets/italo_norman_helm_named"
+					});
+				}
+			}
 		}
 		else
 		{
@@ -624,6 +647,8 @@ this.armorsmith_building <- this.inherit("scripts/entity/world/settlements/build
 				S = "helmets/flat_top_with_closed_mail"
 			});
 		}
+
+
 
 		this.m.Settlement.onUpdateShopList(this.m.ID, list);
 		this.fillStash(list, this.m.Stash, 1.25, false);
