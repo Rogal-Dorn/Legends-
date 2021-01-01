@@ -67,7 +67,7 @@ gt.Const.World.Spawn.Ghouls <-
 	MinR = 30,
 	Troops = [
 		{
-			Weight = 80,
+			Weight = 90,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.GhoulLOW,
@@ -80,12 +80,13 @@ gt.Const.World.Spawn.Ghouls <-
 			]
 		},
 		{
-			Weight = 20,
-			MinR = 0.15 * 535,
+			Weight = 10,
+			MinR = 0.60 * 535,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.GhoulHIGH,
-					Cost = 30
+					Cost = 35,
+					Roll = true
 				}
 			]
 		}
@@ -362,7 +363,8 @@ gt.Const.World.Spawn.HexenAndMore <-
 				{
 					Type = this.Const.World.Spawn.Troops.GhoulHIGH,
 					MinR = 0.6 * 500,
-					Cost = 30
+					Cost = 35,
+					Roll = true
 				}
 			]
 		},
@@ -526,7 +528,8 @@ gt.Const.World.Spawn.HexenAndNoSpiders <-
 				{
 					Type = this.Const.World.Spawn.Troops.GhoulHIGH,
 					MinR = 0.6 * 500,
-					Cost = 30
+					Cost = 35,
+					Roll = true
 				}
 			]
 		},
@@ -688,7 +691,8 @@ gt.Const.World.Spawn.LegendHexeLeader <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.GhoulHIGH,
-					Cost = 30
+					Cost = 35,
+					Roll = true
 				}
 			]
 		},
@@ -853,7 +857,8 @@ gt.Const.World.Spawn.LegendSkinGhouls <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendSkinGhoulHIGH,
-					Cost = 200
+					Cost = 200,
+					Roll = true
 				}
 			]
 		}

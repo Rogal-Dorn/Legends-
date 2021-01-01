@@ -925,6 +925,24 @@ gt.Const.World.Common.convNameToList <- function ( _named )
 	return retArr;
 }
 
+gt.Const.World.Common.getArenaBros <- function()
+{
+	local ret = [];
+	local roster = this.World.getPlayerRoster().getAll();
+
+	foreach( bro in roster )
+	{
+		local item = bro.getItems().getItemAtSlot(this.Const.ItemSlot.Accessory);
+
+		if (item != null && item.getID() == "accessory.legend_arena_collar")
+		{
+			ret.push(bro);
+		}
+	}
+
+	return ret;
+}
+
 if (!("LegendMod" in gt.Const))
 {
 	gt.Const.LegendMod <- {};
