@@ -4462,10 +4462,9 @@ Fixes perks going off screen. Bumped to the next perk level.
 Fixes camp repair and salvage infinite bugs
 Updates Faster Mod to fix reported faster mod crashes
 
-15.0.0.22
 
-**New Enemies**
-Kobolds
+
+15.0.0.22
 
 **Changes**
 Slaves are now gauranteed perks for cleavers and flails instead of hammers and axes, to reflect their intimate experience on the receiving end of chains and whips
@@ -4475,9 +4474,11 @@ More weapon spawn varieties for Bandit Leaders, Bandit Raiders, Bandit Thuds, Ba
 **Fixes**
 Scenarios now work again
 Fixes the "Veteran/ranged manhunter" from causing errors when it spawns with a named armor
+Fixes the difficulty level of Sato's manhunter enemy parties
 Fixes the gladius icon
 Fixes peaceable tooltip
 Fixes rare missing wide cloth helmet bug
+Some more tweaks to faster mod to catch potential crashes
 
 **Weapons**
 Added two new named halberd variants
