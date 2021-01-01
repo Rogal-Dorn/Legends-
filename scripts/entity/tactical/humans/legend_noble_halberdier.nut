@@ -74,23 +74,13 @@ this.legend_noble_halberdier <- this.inherit("scripts/entity/tactical/human", {
 			this.getSprite("surcoat").setBrush("surcoat_" + (banner < 10 ? "0" + banner : banner));
 		}
 
+		local weapons = [
+			"weapons/legend_halberd",
+			"weapons/legend_voulge",
+			"weapons/legend_military_voulge",
+		];
 
-		r = this.Math.rand(0, 3);
-
-		if (r <= 1)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/legend_halberd"));
-
-		}
-		else if (r == 2)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/legend_voulge"));
-		}
-		else if (r == 3)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/legend_military_voulge"));
-		}
-
+		this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
 			[1, "heavy_lamellar_armor"],

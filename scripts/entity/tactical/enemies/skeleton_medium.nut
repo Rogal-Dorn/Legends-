@@ -37,16 +37,12 @@ this.skeleton_medium <- this.inherit("scripts/entity/tactical/skeleton", {
 
 	function assignRandomEquipment()
 	{
-		local r = this.Math.rand(1, 4);
-
-		if (r == 1)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/broken_ancient_sword"));
-		}
-		else
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/ancient_sword"));
-		}
+		local weapons = [
+			[1, "weapons/ancient/broken_ancient_sword"],
+			[2, "weapons/ancient/ancient_sword"],
+			[1, "weapons/ancient/legend_gladius"],
+		];
+		this.m.Items.equip(this.Const.World.Common.pickItem(weapons, "scripts/items/"))
 
 		if (this.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand) == null)
 		{

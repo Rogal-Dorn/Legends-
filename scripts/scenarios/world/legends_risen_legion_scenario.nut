@@ -95,7 +95,7 @@ this.legends_risen_legion_scenario <- this.inherit("scripts/scenarios/world/star
 				items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
 				items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Ammo));
 				items.equip(this.Const.World.Common.pickHelmet([[1, "ancient/ancient_gladiator_helmet"]]));
-				items.equip(this.new("scripts/items/weapons/ancient/ancient_sword"));
+				items.equip(this.new("scripts/items/weapons/ancient/legend_gladius"));
 				items.equip(this.new("scripts/items/tools/throwing_net"));
 				items.addToBag(this.new("scripts/items/tools/throwing_net"));
 				items.addToBag(this.new("scripts/items/tools/throwing_net"));

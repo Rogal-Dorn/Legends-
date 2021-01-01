@@ -73,36 +73,21 @@ this.noble_billman <- this.inherit("scripts/entity/tactical/human", {
 			this.getSprite("surcoat").setBrush("surcoat_" + (banner < 10 ? "0" + banner : banner));
 		}
 
-		if (this.Const.DLC.Unhold && this.Math.rand(1, 100) <= 50)
-		{
-			r = this.Math.rand(0, 3);
+		local weapons = [
+			"weapons/billhook",
+			"weapons/pike",
+			"weapons/legend_military_voulge",
+			"weapons/legend_halberd"
+		];
 
-			if (r <= 1)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/billhook"));
-			}
-			else if (r == 2)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/pike"));
-			}
-			else if (r == 3)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/polehammer"));
-			}
-		}
-		else
+		if (this.Const.DLC.Unhold)
 		{
-			r = this.Math.rand(1, 2);
-
-			if (r == 1)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/billhook"));
-			}
-			else if (r == 2)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/pike"));
-			}
+			weapons.extend([
+				"weapons/polehammer"
+			]);
 		}
+
+		this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
 			[1, "padded_surcoat"],
