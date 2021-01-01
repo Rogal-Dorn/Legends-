@@ -34,5 +34,11 @@ this.legend_tournament_location <- this.inherit("scripts/entity/world/location",
 		banner.setOffset(this.createVec(-60, 50));
 	}
 
+	function onEnter()
+	{
+		this.World.Events.fire(this.m.OnEnter);
+	}
+
+
 });
 
