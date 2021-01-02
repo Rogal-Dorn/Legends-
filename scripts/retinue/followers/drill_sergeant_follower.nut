@@ -41,7 +41,7 @@ this.drill_sergeant_follower <- this.inherit("scripts/retinue/follower", {
 		{
 			local id = bro.getBackground().getID();
 			
-			if (availableBGs.find(id))
+			if (availableBGs.find(id) != null)
 			{
 				if (bro.getSkills().hasSkillOfType(this.Const.SkillType.PermanentInjury) || bro.getSkills().hasSkillOfType(this.Const.SkillType.Injury))
 				{

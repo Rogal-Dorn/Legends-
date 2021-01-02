@@ -38,13 +38,15 @@ this.bounty_hunter_follower <- this.inherit("scripts/retinue/follower", {
 	function onEvaluate()
 	{
 		local namedItems = this.getNumberOfNamedItems();
-		local BGs = 0;
 
 		this.m.Requirements[0].Text = "Have " + this.Math.min(1, namedItems) + "/1 named or legendary items in your possession ";
-		if (namedItems >= 1) {
-			this.m.Requirements[0].IsSatisfied = true
-		} else {
-			return
+		if (namedItems >= 1) 
+		{
+			this.m.Requirements[0].IsSatisfied = true;
+		} 
+		else 
+		{
+			return;
 		}
 
 
@@ -58,8 +60,7 @@ this.bounty_hunter_follower <- this.inherit("scripts/retinue/follower", {
 		foreach( bro in brothers )
 		{
 			local id = bro.getBackground().getID();
-
-			if (availableBGs.find(id))
+			if (availableBGs.find(id) != null)
 			{
 				this.m.Requirements[1].IsSatisfied = true;
 				break;
