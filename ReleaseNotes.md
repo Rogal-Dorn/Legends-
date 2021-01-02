@@ -4503,11 +4503,28 @@ Added Italo-norman helm
 
 
 **New legendary location**
-The Grand Tournament is an exclusive location only accessible when you have at least three mercenaries who have become arena veterans.
-The rules of the Melee are simple:
-* fight as many battles in a row as you can, without limit.
-* The prize begins at 1000 gold, each battle the prize will double and the difficulty will gradually increase exponentially.
+The Grand Tournament is a  exclusive location only accessible when you have at least three mercenaries who have become arena veterans.
+There are three events in the tournament.  Grand Melee, Gauntlet and Show Match.
+In all three modes you fight as many battles in a row as you can, without limit. 
+each battle the prize will double and the difficulty will gradually increase exponentially.
+ The tournament map is procedurally generated from terrain of all kinds
+The rules of the Grand Melee are: 
+* The prize begins at 1000 gold, 
 * You fight procedurally generated parties made up of both humans and beasts of all kinds
-* The tournament map is procedurally generated from terrain of all kinds
 * You get to keep the loot from each battle
-* If you die it is game over
+The Gauntlet :
+The prize begins at 500 gold 
+you fight procedural parties made up of all human enemies
+Show matches: 
+Prize begins at 100 gold 
+You fight against set parties of your own choosing 
+
+
+**Changes**
+Drunkard event - you can now try to talk the drunkard out of their addiction, it has a low chance 
+Adds southern backgrounds to random party 
+Coven leaders can have southern beasts 
+Mummies can spawn in the Undead Crises 
+Bandit Raiders always have a hat 
+Militia Veterans no longer spawn naked 
+

@@ -100,7 +100,7 @@ this.militia_veteran <- this.inherit("scripts/entity/tactical/human", {
 			[1, "gambeson"],
 			[1, "padded_leather"],
 			[1, "padded_surcoat"],
-			[1, "leather_lamelar"],
+			[1, "leather_lamellar"],
 			[1, "thick_tunic"]
 		]));
 

@@ -649,6 +649,15 @@ gt.Const.World.Spawn.LegendHexeLeader <-
 				{
 					Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
 					Cost = 200
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.Hyena,
+					Cost = 15
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.HyenaHIGH,
+					MinR = 400,
+					Cost = 20
 				}
 			]
 		},
@@ -662,6 +671,10 @@ gt.Const.World.Spawn.LegendHexeLeader <-
 				{
 					Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
 					Cost = 200
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.Serpent,
+					Cost = 25
 				}
 			]
 		},
@@ -723,6 +736,15 @@ gt.Const.World.Spawn.LegendHexeLeader <-
 				{
 					Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
 					Cost = 400
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.SandGolem,
+					Cost = 18
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.SandGolemMEDIUM,
+					MinR = 200,
+					Cost = 40
 				}
 			]
 		},

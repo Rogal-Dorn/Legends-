@@ -12,7 +12,7 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 		this.m.IsSpecial = true;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/legend_tournament.png[/img]{ You approach a large metal door set into a huge defensive wall. There is clearly only one way in. A gaurd calls down from the battlements %SPEECH_ON% Here for the tournament? Never heard of you. Prove yourselves in the southern arena before you tread these hallowed grounds.%SPEECH_OFF%}",
+			Text = "[img]gfx/ui/events/legend_tournament.png[/img]{ You approach a large metal door set into a huge defensive wall. There is clearly only one way in. A gaurd calls down from the battlements %SPEECH_ON%Here for the tournament? Never heard of you. Prove yourselves in the southern arena before you tread these hallowed grounds.%SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -35,7 +35,7 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "B",
-			Text = "[img]gfx/ui/events/legend_tournament.png[/img]{ You approach a large metal door set into a huge defensive wall. There is clearly only one way in. A gaurd calls down from the battlements gesturing towards your arena veteran %SPEECH_ON% Hail %veteran%! I heard of your performance in the arena, but who are these welps with you? Your party will need at least three veterans before we can let you in to the grand tournament. Teach them your ways and come back, we look forward to seeing you in the tourney. %SPEECH_OFF%}",
+			Text = "[img]gfx/ui/events/legend_tournament.png[/img]{ You approach a large metal door set into a huge defensive wall. There is clearly only one way in. A gaurd calls down from the battlements gesturing towards your arena veteran %SPEECH_ON%Hail %veteran%! I heard of your performance in the arena, but who are these welps with you? Your party will need at least three veterans before we can let you in to the grand tournament. Teach them your ways and come back, we look forward to seeing you in the tourney. %SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -58,7 +58,7 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "C",
-			Text = "[img]gfx/ui/events/legend_tournament.png[/img]{ You approach the huge defensive wall, the metal door opens without a guard in sight. As you pass through the gates a round of trumpets call out, and voice echoes %SPEECH_ON% Welcome %companyname% to the grand tournment!%SPEECH_OFF%. A scattered round of applause follows the announcement and you head into the entrance hall.}",
+			Text = "[img]gfx/ui/events/legend_tournament.png[/img]{ You approach the huge defensive wall, the metal door opens without a guard in sight. As you pass through the gates a round of trumpets call out, and voice echoes %SPEECH_ON%Welcome %companyname% to the grand tournment!%SPEECH_OFF% A scattered round of applause follows the announcement and you head into the entrance hall.}",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -81,13 +81,13 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "D",
-			Text = "[img]gfx/ui/events/legend_tournament.png[/img]{A door opens and a confident woman strides up to you. The trumpets sound again and a voice announces Artemisia, marshal of the grand tournament. She carries herself with the bearing of a fighter, she wears a gambeson, a full scabard and a welcoming smile. %SPEECH_ON% Good to see the renowned %companyname%, it is great to see you all could join the other greatest fighters for bragging rights and coin. %SPEECH_OFF%. She leads you to a window that looks down on an large grassy arena where rich patrons watch on as warriors are sparring with one another. %SPEECH_ON% We have a variety of events to compete in, would you like to compete today? %SPEECH_OFF%}",
+			Text = "[img]gfx/ui/events/legend_tournament.png[/img]{A door opens and a confident woman strides up to you. The trumpets sound again and a voice announces Artemisia, marshal of the grand tournament. She carries herself with the bearing of a fighter, wearing a gambeson, a full scabard and a welcoming smile. %SPEECH_ON%Good to see the renowned %companyname%, I am glad to see among the ranks of the greatest fighters. Have you come for bragging rights, or coin? No matter, you shall find both here%SPEECH_OFF% She leads you to a window that looks down on an large grassy arena where rich patrons watch on as warriors are sparring with one another. %SPEECH_ON%We have three events to compete in today, a Show Match against a specific foe of your choosing, The Gauntlet against endless waves of humans, or The Grand Melee against a mix of all foes. Would you like to compete today? %SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "Tell me of the events",
+					Text = "Tell me of the Grand Melee",
 					function getResult( _event )
 					{
 						return "E";
@@ -95,7 +95,60 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 
 				},
 				{
+					Text = "Tell me of the Gauntlet",
+					function getResult( _event )
+					{
+						return "H";
+					}
+
+				},
+				{
+					Text = "I\'m interested in a Show Match",
+					function getResult( _event )
+					{
+						return "J";
+					}
+
+				},
+				{
 					Text = "Not today",
+					function getResult( _event )
+					{
+						return 0;
+					}
+
+				}
+			],
+			function start( _event )
+			{
+			}
+
+		});
+		this.m.Screens.push({
+			ID = "D2",
+			Text = "[img]gfx/ui/events/legend_tournament.png[/img]{You return to the main hall and find Artemesia talking with a ground of foreign fighters while they watch a bout of the Grand Melee through the viewing windows.  She see\'s you return, sks her leave from the fighters and greets you with a smile. %SPEECH_ON% So the %companyname% is not satisfied with mere Show Matches. I thought I saw a spark of something more in you. Which will it be, the Grand Melee or the Gauntlet? %SPEECH_OFF% }",
+			Image = "",
+			List = [],
+			Characters = [],
+			Options = [
+				{
+					Text = "Tell me of the Grand Melee",
+					function getResult( _event )
+					{
+						return "E";
+					}
+
+				},
+				{
+					Text = "Tell me of the Gauntlet",
+					function getResult( _event )
+					{
+						return "H";
+					}
+
+				},
+				{
+					Text = "Sorry, I am looking for the way out",
 					function getResult( _event )
 					{
 						return 0;
@@ -110,19 +163,35 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "E",
-			Text = "[img]gfx/ui/events/legend_tournament.png[/img]{Artemisia gives a well practiced recital %SPEECH_ON% The rules of the Melee are simple, fight as many battles in a row as you can. The prize begins at 1000 gold, and each battle the difficulty will increase and the prize will double. You will fight both humans and beasts of all kinds.%SPEECH_OFF%}",
+			Text = "[img]gfx/ui/events/legend_tournament.png[/img]{Artemisia smiles and excitedly recites the rules of the Grand Melee %SPEECH_ON%These are the mandated rules of the Grand Melee, \n\n 1. Your company will fight round after round, of both humans and beasts of all kinds, without combat rules.  \n\n 2. The prize begins at 1000 gold, each battle the difficulty will increase and the prize will double. \n\n 3. You may keep any loot you find after the battle.%SPEECH_OFF% \n\n She smiles again, with genuine interest. %SPEECH_ON%This is the most glorious of the tournament events and I am delighted to personally watch your performance.%SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "Lets begin",
+					Text = "The Grand Melee is for us, lets begin at once",
 					function getResult( _event )
 					{
-						local p = _event.selectFight(_event.getReputationToDifficultyLightMult())
-						_event.registerToShowAfterCombat("F", null);
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.GrandMelee, false)
+						_event.registerToShowAfterCombat("F", "F");
 						this.World.State.startScriptedCombat(p, false, false, false);
 						return 0;
+					}
+
+				},
+				{
+					Text = "Tell me of the Gauntlet instead",
+					function getResult( _event )
+					{
+						return "H";
+					}
+
+				},
+				{
+					Text = "What can you tell me of the Show Matches",
+					function getResult( _event )
+					{
+						return "J";
 					}
 
 				},
@@ -141,10 +210,9 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 			}
 
 		});
-
 		this.m.Screens.push({
 			ID = "F",
-			Text = "[img]gfx/ui/events/legend_tournament.png[/img]{After the battle you fall back to an antechamber off the main tourney grounds. Artemisia offers you a choice to keep going or take your prize}",
+			Text = "[img]gfx/ui/events/legend_tournament.png[/img]{After the battle you fall back to a private antechamber off the main tourney grounds. Artemisia congratulates you on a round well fought and offers you a choice to keep going with the Melee or take your prize}",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -153,8 +221,8 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 					Text = "Another round",
 					function getResult( _event )
 					{
-						local p = _event.selectFight(_event.getReputationToDifficultyLightMult())
-						_event.registerToShowAfterCombat("F", null);
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.GrandMelee, false)
+						_event.registerToShowAfterCombat("F", "F");
 						this.World.State.startScriptedCombat(p, false, false, false);
 						return 0;
 					}
@@ -175,10 +243,42 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 
 		});
 
+		this.m.Screens.push({
+			ID = "F2",
+			Text = "[img]gfx/ui/events/legend_tournament.png[/img]{After the battle you are led to the warrior hall where you are congratulated by the other warriors. A tournament official congratulates you on a round well fought and offers you a choice to keep going with the Gauntlet or take your prize}",
+			Image = "",
+			List = [],
+			Characters = [],
+			Options = [
+				{
+					Text = "Another round",
+					function getResult( _event )
+					{
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.GrandGauntlet, true)
+						_event.registerToShowAfterCombat("F2", "F2");
+						this.World.State.startScriptedCombat(p, false, false, false);
+						return 0;
+					}
 
+				},
+				{
+					Text = "That is enough",
+					function getResult( _event )
+					{
+						return "G2";
+					}
+
+				}
+			],
+			function start( _event )
+			{
+			}
+
+		});
+		
 		this.m.Screens.push({
 			ID = "G",
-			Text = "[img]gfx/ui/events/legend_tournament.png[/img]{Having completed the gauntlet you are led as champions from the field. Artemisia presents your reward and walks you out to the door %SPEECH_ON% Well fought! I hope we see you in the tournament again, though I imagine you need some rest after that performance. %SPEECH_OFF%}",
+			Text = "[img]gfx/ui/events/event_04.png[/img]{Having completed the Melee you are led as champions from the field. Artemisia personally brings you a chest full of your rewards and walks you out to the door %SPEECH_ON%What an excellent performance, I do hope we see you again soon! Take your rest well weary warrior, you have earned your place in these halls.%SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -202,35 +302,909 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 					payment *= 2;
 				}
 				this.World.Assets.addMoney(payment);
+					this.List.push({
+					id = 10,
+					icon = "ui/icons/asset_money.png",
+					text = payment + " crowns as reward"
+				});
 			}
+		});
+
+		this.m.Screens.push({
+			ID = "G2",
+			Text = "[img]gfx/ui/events/event_04.png[/img]{Having completed the Gauntlet you are led through the main hall. Artemisia throws you a bag of coins. %SPEECH_ON%Well fought! I hope we see you in the tournament again, though I imagine you need some rest after that performance. %SPEECH_OFF%}",
+			Image = "",
+			List = [],
+			Characters = [],
+			Options = [
+
+				{
+					Text = "Fare well",
+					function getResult( _event )
+					{
+						return 0;
+					}
+
+				}
+			],
+			function start( _event )
+			{
+				local round = this.World.Flags.get("LegendTournamentRound");
+				local payment = 500;
+				for( local i = 0; i < round && i < 5; i = ++i )
+				{
+					payment *= 2;
+				}
+				this.World.Assets.addMoney(payment);
+					this.List.push({
+					id = 10,
+					icon = "ui/icons/asset_money.png",
+					text = payment + " crowns as reward"
+				});
+			}
+		});
+		this.m.Screens.push({
+			ID = "G3",
+			Text = "[img]gfx/ui/events/event_04.png[/img]{The attendant guides you to a tournament official who checks a large ledger of fight results.  %SPEECH_ON% Ah yes, here you are. The %companyname%, took part in a small Show Match. Here is your reward.%SPEECH_OFF% The official hands a pouch to you, and the attendant leads you back out through the main door of the tournament.}",
+			Image = "",
+			List = [],
+			Characters = [],
+			Options = [
+
+				{
+					Text = "Fare well",
+					function getResult( _event )
+					{
+						return 0;
+					}
+
+				}
+			],
+			function start( _event )
+			{
+				local round = this.World.Flags.get("LegendTournamentRound");
+				local payment = 250;
+				for( local i = 0; i < round && i < 5; i = ++i )
+				{
+					payment *= 2;
+				}
+				this.World.Assets.addMoney(payment);
+					this.List.push({
+					id = 10,
+					icon = "ui/icons/asset_money.png",
+					text = payment + " crowns as reward"
+				});
+			}
+		});	
+		this.m.Screens.push({
+			ID = "H",
+			Text = "[img]gfx/ui/events/legend_tournament.png[/img]{Artemisia sighs a little before repeating a speech she has clearly given many times %SPEECH_ON%The rules of the Gauntlet are simple, \n\n 1. fight as many battles in a row as you can. \n\n 2. You will fight a mix of human competitors from across the lands without combat rules \n\n 2. The prize begins at 250 gold, each battle the difficulty will increase and the prize will double.  %SPEECH_OFF%}",
+			Image = "",
+			List = [],
+			Characters = [],
+			Options = [
+				{
+					Text = "Lets begin the Gauntlet",
+					function getResult( _event )
+					{
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.GrandGauntlet, true)
+						_event.registerToShowAfterCombat("F2", "F2");
+						this.World.State.startScriptedCombat(p, false, false, false);
+						return 0;
+					}
+
+				},
+				{
+					Text = "Tell me of the Grand Melee instead",
+					function getResult( _event )
+					{
+						return "E";
+					}
+
+				},
+				{
+					Text = "Perhaps just a Show Match",
+					function getResult( _event )
+					{
+						return "I";
+					}
+
+				},
+				{
+					Text = "Not today",
+					function getResult( _event )
+					{
+						return 0;
+					}
+
+				}
+			],
+			function start( _event )
+			{
+
+			}
+
+		});
+
+
+		this.m.Screens.push({
+			ID = "I",
+			Text = "[img]gfx/ui/events/legend_tournament.png[/img]{Artermisia nods at your choice, though you detect some disapointment. %SPEECH_ON%Show Matches are our most basic format, \n\n 1. fight as many battles in a row as you can.  \n\n  2. Each round you choose what kind of enemy you\'ll fight against \n\n 3. The prize begins at 100 gold, each battle the difficulty will increase and the prize will double. \n\n 4. No looting %SPEECH_OFF%}",
+			Image = "",
+			List = [],
+			Characters = [],
+			Options = [
+				{
+					Text = "Sounds easy, I\'m in",
+					function getResult( _event )
+					{
+						return "J";
+					}
+
+				},
+				{
+					Text = "Sounds too predictable, tell me of the Gauntlet instead",
+					function getResult( _event )
+					{
+						return "H";
+					}
+
+				},
+				{
+					Text = "Sounds far too boring, tell me of the Grand Melee instead",
+					function getResult( _event )
+					{
+						return "E";
+					}
+
+				},
+				{
+					Text = "I think we might need to leave and prepare",
+					function getResult( _event )
+					{
+						return 0;
+					}
+
+				}
+			],
+			function start( _event )
+			{
+
+			}
+		});
+		
+		this.m.Screens.push({
+			ID = "J",
+			Text = "[img]gfx/ui/events/legend_tournament.png[/img]{Artemisia leads you to one of the smaller tournament fields, she seems distracted or perhaps a little bored.%SPEECH_ON%Good luck with your Show, I must return to the Grand Melee, I will leave you in the capable hands of an attendent.%SPEECH_OFF% \n\n She turns quickly and heads back to the grand hall towards the cheering crowds. An attendant had been standing so still by the wall you had not noticed them, they step forward with the neutral expression of one long wearied by a repeatitive task and asks very matter of factly.%SPEECH_ON% Which enemy would you like to fight?%SPEECH_OFF%}",
+			Image = "",
+			List = [],
+			Characters = [],
+			Options = [
+				{
+					Text = "Let me pick",
+					function getResult( _event )
+					{
+						return "K";
+					}
+				},
+				{
+					Text = "Just choose for me",
+					function getResult( _event )
+					{
+					
+					local spawnlists = [
+						this.Const.World.Spawn.Noble,
+						this.Const.World.Spawn.BanditBoss,
+						this.Const.World.Spawn.Barbarians,
+						this.Const.World.Spawn.Southern,
+						this.Const.World.Spawn.NomadRaiders,
+						this.Const.World.Spawn.Mercenaries,
+						this.Const.World.Spawn.Militia,
+						this.Const.World.Spawn.GoblinBoss,
+						this.Const.World.Spawn.OrcBoss,
+						this.Const.World.Spawn.Ghouls,
+						this.Const.World.Spawn.LegendHexeLeader,
+						this.Const.World.Spawn.LegendRockUnhold,
+						this.Const.World.Spawn.LegendSkinGhouls,
+						this.Const.World.Spawn.LegendWhiteDirewolf,
+						this.Const.World.Spawn.LegendRedbackSpider,
+						this.Const.World.Spawn.LegendDemonAlp,
+						this.Const.World.Spawn.LegendStollwurm,
+						this.Const.World.Spawn.LegendGreenwoodSchrat,
+						this.Const.World.Spawn.SandGolems,
+						this.Const.World.Spawn.Serpents,
+						this.Const.World.Spawn.Hyenas,
+						this.Const.World.Spawn.UndeadArmy,
+						this.Const.World.Spawn.Vampires,
+						this.Const.World.Spawn.Mummies,
+						this.Const.World.Spawn.Zombies,
+						this.Const.World.Spawn.Ghosts,
+						this.Const.World.Spawn.Necromancer,
+						this.Const.World.Spawn.BountyHunters,
+						this.Const.World.Spawn.GreenskinHorde
+					]
+						local SpawnGroup = spawnlists[this.Math.rand(0, spawnlists.len() - 1)];
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), SpawnGroup, true)
+						_event.registerToShowAfterCombat("J3", "J3");
+						this.World.State.startScriptedCombat(p, false, false, false);
+						return 0;
+					}
+				},
+				{
+					Text = "I\'d prefer to return to Artemisia",
+					function getResult( _event )
+					{
+						return "D2";
+					}
+				}
+			],
+			function start( _event )
+			{
+
+			}
+		});
+
+		this.m.Screens.push({
+			ID = "J2",
+			Text = "[img]gfx/ui/events/legend_tournament.png[/img]{The attendant is unphased by your decision and merely repeats %SPEECH_ON% Which enemy would you like to fight?%SPEECH_OFF%}",
+			Image = "",
+			List = [],
+			Characters = [],
+			Options = [
+				{
+					Text = "Greenskins",
+					function getResult( _event )
+					{
+						return "K";
+					}
+				},
+				{
+					Text = "The Undead",
+					function getResult( _event )
+					{
+						return "L";
+					}
+
+				},
+				{
+					Text = "Beasts",
+					function getResult( _event )
+					{
+						return "M";
+					}
+
+				},
+				{
+					Text = "Humans",
+					function getResult( _event )
+					{
+						return "N";
+					}
+
+				},
+				{
+					Text = "I\'d prefer to return to Artemisia",
+					function getResult( _event )
+					{
+						return "D2";
+					}
+
+				}
+			],
+			function start( _event )
+			{
+
+			}
+		});
+		this.m.Screens.push({
+			ID = "J3",
+			Text = "[img]gfx/ui/events/legend_tournament.png[/img]{After the match you are lead back to a small room, the attendant asks if you\'d like another Show Match or have your reward.}",
+			Image = "",
+			List = [],
+			Characters = [],
+			Options = [
+				{
+					Text = "Let me pick",
+					function getResult( _event )
+					{
+						return "K";
+					}
+
+				},
+				{
+					Text = "Just choose for me",
+					function getResult( _event )
+					{
+					local r = this.Math.rand(1, 29);	
+					switch(r){
+					case 1:					
+						local SpawnGroup = this.Const.World.Spawn.Noble;
+						return;
+					case 2:					
+						local SpawnGroup = this.Const.World.Spawn.BanditBoss;
+						return;
+					case 3:					
+						local SpawnGroup = this.Const.World.Spawn.Barbarians;
+						return;
+					case 4:					
+						local SpawnGroup = this.Const.World.Spawn.Southern;
+						return;
+					case 5:					
+						local SpawnGroup = this.Const.World.Spawn.NomadRaiders;
+						return;
+					case 6:					
+						local SpawnGroup = this.Const.World.Spawn.Mercenaries;
+						return;
+					case 7:					
+						local SpawnGroup = this.Const.World.Spawn.Militia;
+						return;
+					case 8:					
+						local SpawnGroup = this.Const.World.Spawn.GoblinBoss;
+						return;
+					case 9:					
+						local SpawnGroup = this.Const.World.Spawn.OrcBoss;
+						return;
+					case 10:					
+						local SpawnGroup = this.Const.World.Spawn.Ghouls;
+						return;
+					case 11:					
+						local SpawnGroup = this.Const.World.Spawn.LegendHexeLeader;
+						return;
+					case 12:					
+						local SpawnGroup = this.Const.World.Spawn.LegendRockUnhold;
+						return;
+					case 13:					
+						local SpawnGroup = this.Const.World.Spawn.LegendSkinGhouls;
+						return;
+					case 14:					
+						local SpawnGroup = this.Const.World.Spawn.LegendWhiteDirewolf;
+						return;
+					case 15:					
+						local SpawnGroup = this.Const.World.Spawn.LegendRedbackSpider;
+						return;
+					case 16:					
+						local SpawnGroup = this.Const.World.Spawn.LegendDemonAlp;
+						return;
+					case 17:					
+						local SpawnGroup = this.Const.World.Spawn.LegendStollwurm;
+						return;
+					case 18:					
+						local SpawnGroup = this.Const.World.Spawn.LegendGreenwoodSchrat;
+						return;
+					case 19:					
+						local SpawnGroup = this.Const.World.Spawn.SandGolems;
+						return;
+					case 20:					
+						local SpawnGroup = this.Const.World.Spawn.Serpents;
+						return;
+					case 21:					
+						local SpawnGroup = this.Const.World.Spawn.Hyenas;
+						return;
+					case 22:					
+						local SpawnGroup = this.Const.World.Spawn.UndeadArmy;
+						return;
+					case 23:					
+						local SpawnGroup = this.Const.World.Spawn.Vampires;
+						return;
+					case 24:					
+						local SpawnGroup = this.Const.World.Spawn.Mummies;
+						return;
+					case 25:					
+						local SpawnGroup = this.Const.World.Spawn.Zombies;
+						return;
+					case 26:					
+						local SpawnGroup = this.Const.World.Spawn.Ghosts;
+						return;
+					case 27:					
+						local SpawnGroup = this.Const.World.Spawn.Necromancer;
+						return;
+					case 28:					
+						local SpawnGroup = this.Const.World.Spawn.BountyHunters;
+						return;
+					case 29:					
+						local SpawnGroup = this.Const.World.Spawn.GreenskinHorde;
+						return;
+					}
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), SpawnGroup, true)
+						_event.registerToShowAfterCombat("J3", "J3");
+						this.World.State.startScriptedCombat(p, false, false, false);
+						return 0;
+					}
+
+				},
+				{
+					Text = "We're done here",
+					function getResult( _event )
+					{
+						return "G2";
+					}
+
+				}
+			],
+			function start( _event )
+			{
+
+			}
+		});
+		
+		this.m.Screens.push({
+			ID = "K",
+			Text = "[img]gfx/ui/events/legend_tournament.png[/img]{The attendant appears unmoved by your choice %SPEECH_ON%Very good, any preference to the kind of Greenskins?%SPEECH_OFF%}",
+			Image = "",
+			List = [],
+			Characters = [],
+			Options = [
+				{
+					Text = "Goblins",
+					function getResult( _event )
+					{
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.GoblinBoss, true)
+						_event.registerToShowAfterCombat("J3", "J3");
+						this.World.State.startScriptedCombat(p, false, false, false);
+						return 0;
+					}
+
+				},
+				{
+					Text = "Berserkers",
+					function getResult( _event )
+					{
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.BerserkersOnly, true)
+						_event.registerToShowAfterCombat("J3", "J3");
+						this.World.State.startScriptedCombat(p, false, false, false);
+						return 0;
+					}
+
+				},
+				{
+					Text = "Warriors",
+					function getResult( _event )
+					{
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.OrcBoss, true)
+						_event.registerToShowAfterCombat("J3", "J3");
+						this.World.State.startScriptedCombat(p, false, false, false);
+						return 0;
+					}
+
+				},
+				{
+					Text = "You decide, any will do",
+					function getResult( _event )
+					{
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.GreenskinHorde, true)
+						_event.registerToShowAfterCombat("J3", "J3");
+						this.World.State.startScriptedCombat(p, false, false, false);
+						return 0;
+					}
+
+				},
+				{
+					Text = "On second thought, perhaps not Greenskins",
+					function getResult( _event )
+					{
+						return "J2";
+					}
+
+				}
+			],
+			function start( _event )
+			{
+
+			}
+
+		});
+		this.m.Screens.push({
+			ID = "L",
+			Text = "[img]gfx/ui/events/legend_tournament.png[/img]{The attendant does not react to your ghoulish request. %SPEECH_ON%Very good, any preference to the kind of abomination?%SPEECH_OFF%}",
+			Image = "",
+			List = [],
+			Characters = [],
+			Options = [
+				{
+					Text = "Ancient Legions",
+					function getResult( _event )
+					{
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.UndeadArmy, true)
+						_event.registerToShowAfterCombat("J3", "J3");
+						this.World.State.startScriptedCombat(p, false, false, false);
+						return 0;
+					}
+
+				},
+				{
+					Text = "Wiedergangers",
+					function getResult( _event )
+					{
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.Necromancer, true)
+						_event.registerToShowAfterCombat("J3", "J3");
+						this.World.State.startScriptedCombat(p, false, false, false);
+						return 0;
+					}
+
+				},
+				{
+					Text = "The Embalmed",
+					function getResult( _event )
+					{
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.Mummies, true)
+						_event.registerToShowAfterCombat("J3", "J3");
+						this.World.State.startScriptedCombat(p, false, false, false);
+						return 0;
+					}
+
+				},
+				{
+					Text = "You decide, any will do",
+					function getResult( _event )
+					{
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.UndeadScourge, true)
+						_event.registerToShowAfterCombat("J3", "J3");
+						this.World.State.startScriptedCombat(p, false, false, false);
+						return 0;
+					}
+
+				},
+				{
+					Text = "Perhaps not the undead",
+					function getResult( _event )
+					{
+						return "J2";
+					}
+
+				}
+			],
+			function start( _event )
+			{
+
+			}
+		});
+		this.m.Screens.push({
+			ID = "M",
+			Text = "[img]gfx/ui/events/legend_tournament.png[/img]{The attendant does not skip a beat. %SPEECH_ON%Very well, what kind of of beast?%SPEECH_OFF%}",
+			Image = "",
+			List = [],
+			Characters = [],
+			Options = [
+				{
+					Text = "An unhold",
+					function getResult( _event )
+					{
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.LegendRockUnhold, true)
+						_event.registerToShowAfterCombat("J3", "J3");
+						this.World.State.startScriptedCombat(p, false, false, false);
+						return 0;
+					}
+
+				},
+				{
+					Text = "A spider",
+					function getResult( _event )
+					{
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.LegendRedbackSpider, true)
+						_event.registerToShowAfterCombat("J3", "J3");
+						this.World.State.startScriptedCombat(p, false, false, false);
+						return 0;
+					}
+
+				},
+				{
+					Text = "A wolf",
+					function getResult( _event )
+					{
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.LegendWhiteDirewolf, true)
+						_event.registerToShowAfterCombat("J3", "J3");
+						this.World.State.startScriptedCombat(p, false, false, false);
+						return 0;
+					}
+
+				},
+				{
+					Text = "A wyrm",
+					function getResult( _event )
+					{
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.LegendStollwurm, true)
+						_event.registerToShowAfterCombat("J3", "J3");
+						this.World.State.startScriptedCombat(p, false, false, false);
+						return 0;
+					}
+
+				},
+				{
+					Text = "You decide, any will do",
+					function getResult( _event )
+					{
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.LegendHexeLeader, true)
+						_event.registerToShowAfterCombat("J3", "J3");
+						this.World.State.startScriptedCombat(p, false, false, false);
+						return 0;
+					}
+
+				},
+				{
+					Text = "Perhaps not a beast",
+					function getResult( _event )
+					{
+						return "J2";
+					}
+
+				}
+			],
+			function start( _event )
+			{
+
+			}
+
+		});
+		this.m.Screens.push({
+			ID = "N",
+			Text = "[img]gfx/ui/events/legend_tournament.png[/img]{The attendant barely moves %SPEECH_ON%Not a problem, any preference to which humans you fight?%SPEECH_OFF%}",
+			Image = "",
+			List = [],
+			Characters = [],
+			Options = [
+				{
+					Text = "Civilised folk",
+					function getResult( _event )
+					{
+						return "O";
+					}
+
+				},
+				{
+					Text = "Outlaws",
+					function getResult( _event )
+					{
+						return "P";
+					}
+
+				},
+				{
+					Text = "You decide",
+					function getResult( _event )
+					{
+					local r = this.Math.rand(1, 5);	
+					switch(r){
+					case 1:					
+						local SpawnGroup = this.Const.World.Spawn.Noble;
+						return;
+					case 2:					
+						local SpawnGroup = this.Const.World.Spawn.Southern;
+						return;
+					case 3:					
+						local SpawnGroup = this.Const.World.Spawn.Mercenaries;
+						return;
+					case 4:					
+						local SpawnGroup = this.Const.World.Spawn.Militia;
+						return;
+					case 5:					
+						local SpawnGroup = this.Const.World.Spawn.BountyHunters;
+						return;
+					}
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), SpawnGroup, true)
+						_event.registerToShowAfterCombat("J3", null);
+						this.World.State.startScriptedCombat(p, false, false, false);
+						return 0;
+					}
+
+				},
+				{
+					Text = "On second thought, perhaps something else",
+					function getResult( _event )
+					{
+						return "J2";
+					}
+
+				}
+			],
+			function start( _event )
+			{
+
+			}
+		});
+		this.m.Screens.push({
+			ID = "O",
+			Text = "[img]gfx/ui/events/legend_tournament.png[/img]{The attendant barely moves %SPEECH_ON%Not a problem, any preference to which humans you fight?%SPEECH_OFF%}",
+			Image = "",
+			List = [],
+			Characters = [],
+			Options = [
+				{
+					Text = "A Noble House",
+					function getResult( _event )
+					{
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.Noble, true)
+						_event.registerToShowAfterCombat("J3", "J3");
+						this.World.State.startScriptedCombat(p, false, false, false);
+						return 0;
+					}
+
+				},
+				{
+					Text = "A City State",
+					function getResult( _event )
+					{
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.Southern, true)
+						_event.registerToShowAfterCombat("J3", "J3");
+						this.World.State.startScriptedCombat(p, false, false, false);
+						return 0;
+					}
+
+				},
+				{
+					Text = "Mercenaries",
+					function getResult( _event )
+					{
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.Mercenaries, true)
+						_event.registerToShowAfterCombat("J3", "J3");
+						this.World.State.startScriptedCombat(p, false, false, false);
+						return 0;
+					}
+
+				},
+				{
+					Text = "Just choose for me",
+					function getResult( _event )
+					{
+					local r = this.Math.rand(1, 8);	
+					switch(r){
+					case 1:					
+						local SpawnGroup = this.Const.World.Spawn.Noble;
+						return;
+					case 2:					
+						local SpawnGroup = this.Const.World.Spawn.Southern;
+						return;
+					case 3:					
+						local SpawnGroup = this.Const.World.Spawn.Mercenaries;
+						return;
+					case 4:					
+						local SpawnGroup = this.Const.World.Spawn.Militia;
+						return;
+					case 5:					
+						local SpawnGroup = this.Const.World.Spawn.BountyHunters;
+						return;
+					case 6:					
+						local SpawnGroup = this.Const.World.Spawn.BanditBoss;
+						return;
+					case 7:					
+						local SpawnGroup = this.Const.World.Spawn.Barbarians;
+						return;
+					case 8:					
+						local SpawnGroup = this.Const.World.Spawn.NomadDefenders;
+						return;
+					}
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), SpawnGroup, true)
+						_event.registerToShowAfterCombat("J3", null);
+						this.World.State.startScriptedCombat(p, false, false, false);
+						return 0;
+					}
+
+				},
+				{
+					Text = "On second thought, perhaps something else",
+					function getResult( _event )
+					{
+						return "J2";
+					}
+
+				}
+			],
+			function start( _event )
+			{
+
+			}
+		});
+		this.m.Screens.push({
+			ID = "P",
+			Text = "[img]gfx/ui/events/legend_tournament.png[/img]{The attendant shifts slightly but says nothing. %SPEECH_ON%Not a problem, any preference to the kind of Outlaw Human?%SPEECH_OFF%}",
+			Image = "",
+			List = [],
+			Characters = [],
+			Options = [
+				{
+					Text = "A Bandit Gang",
+					function getResult( _event )
+					{
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.BanditBoss, true)
+						_event.registerToShowAfterCombat("J3", "J3");
+						this.World.State.startScriptedCombat(p, false, false, false);
+						return 0;
+					}
+
+				},
+				{
+					Text = "A Barbarian Tribe",
+					function getResult( _event )
+					{
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.Barbarians, true)
+						_event.registerToShowAfterCombat("J3", "J3");
+						this.World.State.startScriptedCombat(p, false, false, false);
+						return 0;
+					}
+
+				},
+				{
+					Text = "A Nomad Tribe",
+					function getResult( _event )
+					{
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.NomadDefenders, true)
+						_event.registerToShowAfterCombat("J3", "J3");
+						this.World.State.startScriptedCombat(p, false, false, false);
+						return 0;
+					}
+
+				},
+				{
+					Text = "Just choose for me",
+					function getResult( _event )
+					{
+					local r = this.Math.rand(1, 3);	
+					switch(r){
+					case 1:					
+						local SpawnGroup = this.Const.World.Spawn.BanditBoss;
+						return;
+					case 2:					
+						local SpawnGroup = this.Const.World.Spawn.Barbarians;
+						return;
+					case 3:					
+						local SpawnGroup = this.Const.World.Spawn.NomadDefenders;
+						return;
+					}
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), SpawnGroup)
+						_event.registerToShowAfterCombat("J3", "J3");
+						this.World.State.startScriptedCombat(p, false, false, false);
+						return 0;
+					}
+
+				},
+				{
+					Text = "On second thought, perhaps something else",
+					function getResult( _event )
+					{
+						return "J2";
+					}
+
+				}
+			],
+			function start( _event )
+			{
+
+			}
+
 		});
 	}
 
- 	function selectFight(scale)
+ 	function selectFight(scale, type, lootingStopped)
 	{
 		local round = this.World.Flags.get("LegendTournamentRound");
-		local roundDifficulty = 1 + (round / 10);
+		local roundDifficulty = 0.8 + (round * 0.1);
 		this.World.Flags.increment("LegendTournamentRound", 1);
 		local p = this.Const.Tactical.CombatInfo.getClone();
 		p.LocationTemplate = clone this.Const.Tactical.LocationTemplate;
-		p.TerrainTemplate = "tactical.arena";
-		p.LocationTemplate.Template[0] = "tactical.arena_floor";
-		// p.TerrainTemplate = "tactical.legend_tournament";
-		// p.LocationTemplate.Template[0] = "tactical.legend_tournament_floor";
+		//p.TerrainTemplate = "tactical.arena";
+		p.TerrainTemplate = "tactical.tournament";
+		//p.LocationTemplate.Template[0] = "tactical.legend_tournament_floor";
+		//p.LocationTemplate.Template[0] = "tactical.arena_floor";
 		p.CombatID = "Legend Tournament";
 		p.Music = this.Const.Music.UndeadTracks;
 		p.PlayerDeploymentType = this.Const.Tactical.DeploymentType.Arena;
 		p.EnemyDeploymentType = this.Const.Tactical.DeploymentType.Arena;
 		p.IsUsingSetPlayers = false;
 		p.IsFleeingProhibited = true;
-		p.IsLootingProhibited = false;
+		//if (lootingStopped == true)
+		//	{
+			p.IsLootingProhibited = true;
+		//	}
+		//else
+		//	{
+		//	p.IsLootingProhibited = false;
+		//	}
 		p.IsWithoutAmbience = true;
 		p.IsFogOfWarVisible = false;
 		p.IsArenaMode = true;
 		p.IsAutoAssigningBases = false;
 		p.Players = [];
 		p.Entities = [];
-		this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.GrandMelee, this.Math.rand(90, 110) * (this.Math.pow(scale,roundDifficulty)), this.Const.Faction.Enemy);
+		this.Const.World.Common.addUnitsToCombat(p.Entities, type, (this.Math.pow(scale,roundDifficulty)), this.Const.Faction.Enemy);
 		p.AfterDeploymentCallback = function ()
 		{
 			this.Tactical.getWeather().setAmbientLightingPreset(1);

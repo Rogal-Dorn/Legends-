@@ -233,17 +233,17 @@ gt.Const.World.Spawn.Mummies <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendMummyLight,
-					Cost = 13
+					Cost = 23
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendMummyMedium,
 					MinR = 200,
-					Cost = 20
+					Cost = 30
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendMummyHeavy,
 					MinR = 600,
-					Cost = 35
+					Cost = 45
 				}
 			]
 		},

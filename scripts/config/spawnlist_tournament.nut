@@ -11,7 +11,7 @@ if (!("Spawn" in gt.Const.World))
 }
 
 
-gt.Const.World.Spawn.GrandTournament <-
+gt.Const.World.Spawn.GrandGauntlet <-
 {
 	Name = "Tournament competitors",
 	IsDynamic = true,
@@ -23,7 +23,7 @@ gt.Const.World.Spawn.GrandTournament <-
 	MinR = 97,
 	Troops = [
 		{
-			Weight = 75,
+			Weight = 80,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRabble,
@@ -181,49 +181,7 @@ gt.Const.World.Spawn.GrandTournament <-
 			]
 		},
 		{
-			Weight = 5,
-			Types = [
-				{
-					Type = this.Const.World.Spawn.Troops.Wardog,
-					Cost = 8
-				},
-				{
-					Type = this.Const.World.Spawn.Troops.Warhound,
-					Cost = 10
-				},
-				{
-					Type = this.Const.World.Spawn.Troops.ArmoredWardog,
-					Cost = 12
-				},
-				{
-					Type = this.Const.World.Spawn.Troops.BarbarianBeastmaster,
-					Cost = 15,
-					MinGuards = 1,
-					MaxGuards = 2,
-					MaxGuardsWeight = 50,
-					Guards = [
-						{
-							Type = this.Const.World.Spawn.Troops.BarbarianUnhold,
-							Cost = 50,
-							function Weight(scale) {
-								local c = 100 - (scale * 100)
-								return this.Math.max(20, c);
-							}
-						},
-						{
-							Type = this.Const.World.Spawn.Troops.BarbarianUnholdFrost,
-							Cost = 70,
-							function Weight(scale) {
-								local c = 100 - ((1.0 - scale) * 100)
-								return this.Math.min(80, c);
-							}
-						}
-					]
-				}
-			]
-		},
-		{
-			Weight = 15,
+			Weight = 20,
 			Types =
 			[
 				{
