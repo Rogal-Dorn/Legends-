@@ -131,7 +131,7 @@ while read -r line; do
             copyBrushes
 
         elif [[ "$xpath" == unpacked/legend_characters/metadata.xml ]]; then
-            echo "Building legend_weapons brush..."
+            echo "Building legend_characters brush..."
             cd ../bin
             o=$(./bbrusher.exe pack --gfxPath "../$RepoDir/" ../$RepoDir/brushes/legend_characters.brush ../$RepoDir/unpacked/legend_characters)
             cd ../"$RepoDir"
@@ -139,7 +139,7 @@ while read -r line; do
             copyBrushes
 
         elif [[ "$xpath" == unpacked/legend_objects/metadata.xml ]]; then
-            echo "Building legend_weapons brush..."
+            echo "Building legend_objects brush..."
             cd ../bin
             o=$(./bbrusher.exe pack --gfxPath "../$RepoDir/" ../$RepoDir/brushes/legend_objects.brush ../$RepoDir/unpacked/legend_objects)
             cd ../"$RepoDir"
@@ -147,9 +147,17 @@ while read -r line; do
             copyBrushes
 
         elif [[ "$xpath" == unpacked/legends_ui/metadata.xml ]]; then
-            echo "Building legend_weapons brush..."
+            echo "Building legends_ui brush..."
             cd ../bin
             o=$(./bbrusher.exe pack --gfxPath "../$RepoDir/" ../$RepoDir/brushes/legends_ui.brush ../$RepoDir/unpacked/legends_ui)
+            cd ../"$RepoDir"
+            checkForError "$o" "$i"
+            copyBrushes
+
+        elif [[ "$xpath" == unpacked/legend_world/metadata.xml ]]; then
+            echo "Building legend_world brush..."
+            cd ../bin
+            o=$(./bbrusher.exe pack --gfxPath "../$RepoDir/" ../$RepoDir/brushes/legend_world.brush ../$RepoDir/unpacked/legend_world)
             cd ../"$RepoDir"
             checkForError "$o" "$i"
             copyBrushes
