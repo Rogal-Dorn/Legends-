@@ -119,7 +119,10 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 					Text = "Lets begin",
 					function getResult( _event )
 					{
-						return "ECollar";
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult())
+						_event.registerToShowAfterCombat("F", null);
+						this.World.State.startScriptedCombat(p, false, false, false);
+						return 0;
 					}
 
 				},
@@ -135,80 +138,6 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 
-			}
-
-		});
-
-		this.m.Screens.push({
-			ID = "ECollar",
-			Text = "[img]gfx/ui/events/legend_tournament.png[/img]{Artemisia exclaims %SPEECH_ON% Excellent! Here are 5 collars. Place them on your choosen champions and return. %SPEECH_OFF%}",
-			Image = "",
-			List = [],
-			Characters = [],
-			Options = [
-				{
-					Text = "Choose 5 you say?",
-					function getResult( _event )
-					{
-						return 0;
-					}
-				},
-			],
-			function start( _event )
-			{
-				this.World.Flags.set("LegendTournamentRound", 1);
-				this.World.Assets.getStash().add(this.new("scripts/items/accessory/special/legend_arena_collar_item"));
-				this.World.Assets.getStash().add(this.new("scripts/items/accessory/special/legend_arena_collar_item"));
-				this.World.Assets.getStash().add(this.new("scripts/items/accessory/special/legend_arena_collar_item"));
-				this.World.Assets.getStash().add(this.new("scripts/items/accessory/special/legend_arena_collar_item"));
-				this.World.Assets.getStash().add(this.new("scripts/items/accessory/special/legend_arena_collar_item"));
-			}
-
-		});
-
-		this.m.Screens.push({
-			ID = "ChooseCollar",
-			Text = "[img]gfx/ui/events/legend_tournament.png[/img]{Choose your champions from the character screen by placing collars in the accessory slots of the chosen. Return when ready to fight.}",
-			Image = "",
-			List = [],
-			Characters = [],
-			Options = [
-				{
-					Text = "Pick your champions",
-					function getResult( _event )
-					{
-						return 0;
-					}
-				},
-			],
-			function start( _event )
-			{
-			}
-
-		});
-
-		this.m.Screens.push({
-			ID = "WelcomeBack",
-			Text = "[img]gfx/ui/events/legend_tournament.png[/img]Artemisia welcomes you back and quickly leads your chosen champions to the pits to ready for the fight",
-			Image = "",
-			List = [],
-			Characters = [],
-			Options = [
-				{
-					Text = "Lets Fight!",
-					function getResult( _event )
-					{
-						local p = _event.selectFight(_event.getReputationToDifficultyLightMult())
-						_event.registerToShowAfterCombat("F", null);
-						this.World.State.startScriptedCombat(p, false, false, false);
-						return 0;
-					}
-
-				}
-			],
-			function start( _event )
-			{
-				_event.m.IsActive = true;
 			}
 
 		});
@@ -273,7 +202,6 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 					payment *= 2;
 				}
 				this.World.Assets.addMoney(payment);
-				this.World.Flags.set("LegendTournamentRound", 0);
 			}
 		});
 	}
@@ -285,16 +213,22 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 		this.World.Flags.increment("LegendTournamentRound", 1);
 		local p = this.Const.Tactical.CombatInfo.getClone();
 		p.LocationTemplate = clone this.Const.Tactical.LocationTemplate;
-		p.TerrainTemplate = "tactical.legend_tournament";
-		p.LocationTemplate.Template[0] = "tactical.legend_tournament_floor";
+		p.TerrainTemplate = "tactical.arena";
+		p.LocationTemplate.Template[0] = "tactical.arena_floor";
+		// p.TerrainTemplate = "tactical.legend_tournament";
+		// p.LocationTemplate.Template[0] = "tactical.legend_tournament_floor";
 		p.CombatID = "Legend Tournament";
 		p.Music = this.Const.Music.UndeadTracks;
 		p.PlayerDeploymentType = this.Const.Tactical.DeploymentType.Arena;
 		p.EnemyDeploymentType = this.Const.Tactical.DeploymentType.Arena;
+		p.IsUsingSetPlayers = false;
 		p.IsFleeingProhibited = true;
+		p.IsLootingProhibited = false;
+		p.IsWithoutAmbience = true;
 		p.IsFogOfWarVisible = false;
 		p.IsArenaMode = true;
-		p.Players.extend(this.Const.World.Common.getArenaBros())
+		p.IsAutoAssigningBases = false;
+		p.Players = [];
 		p.Entities = [];
 		this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.GrandMelee, this.Math.rand(90, 110) * (this.Math.pow(scale,roundDifficulty)), this.Const.Faction.Enemy);
 		p.AfterDeploymentCallback = function ()
@@ -302,6 +236,7 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 			this.Tactical.getWeather().setAmbientLightingPreset(1);
 			this.Tactical.getWeather().setAmbientLightingSaturation(1.1);
 		};
+		return p
 	}
 
 	function onUpdateScore()
@@ -314,15 +249,7 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 
 	function onDetermineStartScreen()
 	{
-		local round = this.World.Flags.get("LegendTournamentRound");
-		if (round == 1) {
-			if (this.Const.World.Common.getArenaBros().len() <= 0) {
-				return "ChooseCollar"
-			}
-
-			return "WelcomeBack"
-		}
-
+		this.World.Flags.set("LegendTournamentRound", 1);
 		local candidate_veteran = [];
 
 		foreach (bro in this.World.getPlayerRoster().getAll())
@@ -361,30 +288,6 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 
 	function onClear()
 	{
-		if (this.m.IsActive)
-		{
-			local roster = this.World.getPlayerRoster().getAll();
-
-			foreach( bro in roster )
-			{
-				local item = bro.getItems().getItemAtSlot(this.Const.ItemSlot.Accessory);
-
-				if (item != null && item.getID() == "accessory.legend_arena_collar")
-				{
-					bro.getItems().unequip(item);
-				}
-			}
-
-			local items = this.World.Assets.getStash().getItems();
-
-			foreach( i, item in items )
-			{
-				if (item != null && item.getID() == "accessory.legend_arena_collar")
-				{
-					items[i] = null;
-				}
-			}
-		}
 	}
 
 });
