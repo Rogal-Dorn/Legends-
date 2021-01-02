@@ -2118,7 +2118,7 @@ def main():
 
         fname = "legend_helmet_" + d["name"]
 
-        # print('"' + layer + '/' + fname + '",')
+        #print('"' + layer + '/' + fname + '",')
         # continue
 
         dirpath = os.path.join(os.path.dirname(os.path.abspath(__file__)), "helmets", layer)

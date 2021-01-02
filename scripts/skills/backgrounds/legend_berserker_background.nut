@@ -254,7 +254,7 @@ this.legend_berserker_background <- this.inherit("scripts/skills/backgrounds/cha
 		this.character_background.onAdded();
 		local actor = this.getContainer().getActor();
 		actor.setTitle("The Berserker");
-		
+
 		//this.m.Container.add(this.new("scripts/skills/perks/perk_berserk"));
 
 	}
@@ -277,7 +277,7 @@ this.legend_berserker_background <- this.inherit("scripts/skills/backgrounds/cha
 			[1, "barbarians/hide_and_bone_armor"]
 		]));
 		local item = this.Const.World.Common.pickHelmet([
-			[1, ""barbarians/leather_helmet"]
+			[1, "barbarians/leather_helmet"]
 		])
 		local r = this.Math.rand(0, 4);
 
@@ -302,10 +302,10 @@ this.legend_berserker_background <- this.inherit("scripts/skills/backgrounds/cha
 		{
 			items.equip(this.new("scripts/items/weapons/greenskins/orc_axe_2h"));
 		}
-		
+
 		this.getContainer().getActor().TherianthropeInfectionRandom();
 	}
-	
+
 	function onSerialize( _out )
 	{
 		this.character_background.onSerialize(_out);
