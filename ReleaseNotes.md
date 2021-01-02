@@ -4496,3 +4496,8 @@ Added layered version of enclave's great helm and venitian bascinet
 Added armet visor, great bascinet visor, venitian bascinet visor
 Most helm vanity layers changed to have lower durability, cost and fatigue. No more heavy protective feather, or 200 gold straw hats.  This in turn lowers the defense of some enemies and the cost of some rescruits
 Added Italo-norman helm
+
+15.0.0.23
+
+**Armor Tweaks**
+Added three named helms (named bascinet, named kettle helm, named barbute)
