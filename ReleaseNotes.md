@@ -4524,3 +4524,4 @@ Sureshot changed from +5 ranged still to +10% ranged damage and -5 ranged defens
 **Fixes**
 Swordmasters no longer drop unlayered helmets 
 sraw hat vanity layer buffed to 5 durability 
+Fixes a slew of retinue followers not being able to properly find backgrounds

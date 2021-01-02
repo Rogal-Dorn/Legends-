@@ -47,7 +47,7 @@ this.scout_follower <- this.inherit("scripts/retinue/follower", {
 		{
 			local id = bro.getBackground().getID();
 			
-			if (availableBGs.find(id))
+			if (availableBGs.find(id) != null)
 			{
 				this.m.Requirements[0].IsSatisfied = true;
 				return;
