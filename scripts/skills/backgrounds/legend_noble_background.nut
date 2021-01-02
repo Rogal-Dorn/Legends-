@@ -20,7 +20,7 @@ this.legend_noble_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.All;
 
-		this.m.Level = 1;
+		this.m.Level = 2;
 		this.m.IsCombatBackground = true;
 		this.m.IsNoble = true;
 		this.m.IsUntalented = true;
@@ -155,8 +155,8 @@ this.legend_noble_background <- this.inherit("scripts/skills/backgrounds/charact
 				-10
 			],
 			Bravery = [
-				15,
-				15
+				20,
+				20
 			],
 			Stamina = [
 				-10,
@@ -167,8 +167,8 @@ this.legend_noble_background <- this.inherit("scripts/skills/backgrounds/charact
 				10
 			],
 			RangedSkill = [
-				-10,
-				-10
+				-5,
+				-5
 			],
 			MeleeDefense = [
 				5,
@@ -179,8 +179,8 @@ this.legend_noble_background <- this.inherit("scripts/skills/backgrounds/charact
 				0
 			],
 			Initiative = [
-				-10,
-				-10
+				-5,
+				-5
 			]
 		};
 		return c;
