@@ -275,7 +275,7 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 			}
 
 		});
-		
+
 		this.m.Screens.push({
 			ID = "G",
 			Text = "[img]gfx/ui/events/event_04.png[/img]{Having completed the Melee you are led as champions from the field. Artemisia personally brings you a chest full of your rewards and walks you out to the door %SPEECH_ON%What an excellent performance, I do hope we see you again soon! Take your rest well weary warrior, you have earned your place in these halls.%SPEECH_OFF%}",
@@ -378,7 +378,7 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 				});
 				this.World.Flags.set("LegendTournamentRound", 1);
 			}
-		});	
+		});
 		this.m.Screens.push({
 			ID = "H",
 			Text = "[img]gfx/ui/events/legend_tournament.png[/img]{Artemisia sighs a little before repeating a speech she has clearly given many times %SPEECH_ON%The rules of the Gauntlet are simple, \n\n 1. fight as many battles in a row as you can. \n\n 2. You will fight a mix of human competitors from across the lands without combat rules \n\n 2. The prize begins at 250 gold, each battle the difficulty will increase and the prize will double.  %SPEECH_OFF%}",
@@ -475,7 +475,7 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 
 			}
 		});
-		
+
 		this.m.Screens.push({
 			ID = "J",
 			Text = "[img]gfx/ui/events/legend_tournament.png[/img]{Artemisia leads you to one of the smaller tournament fields, she seems distracted or perhaps a little bored.%SPEECH_ON%Good luck with your Show, I must return to the Grand Melee, I will leave you in the capable hands of an attendent.%SPEECH_OFF% \n\n She turns quickly and heads back to the grand hall towards the cheering crowds. An attendant had been standing so still by the wall you had not noticed them, they step forward with the neutral expression of one long wearied by a repeatitive task and asks very matter of factly.%SPEECH_ON% Which enemy would you like to fight?%SPEECH_OFF%}",
@@ -494,40 +494,38 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 					Text = "Just choose for me",
 					function getResult( _event )
 					{
-					
-					local spawnlists = [
-						this.Const.World.Spawn.Noble,
-						this.Const.World.Spawn.BanditBoss,
-						this.Const.World.Spawn.Barbarians,
-						this.Const.World.Spawn.Southern,
-						this.Const.World.Spawn.NomadRaiders,
-						this.Const.World.Spawn.Mercenaries,
-						this.Const.World.Spawn.Militia,
-						this.Const.World.Spawn.GoblinBoss,
-						this.Const.World.Spawn.OrcBoss,
-						this.Const.World.Spawn.Ghouls,
-						this.Const.World.Spawn.LegendHexeLeader,
-						this.Const.World.Spawn.LegendRockUnhold,
-						this.Const.World.Spawn.LegendSkinGhouls,
-						this.Const.World.Spawn.LegendWhiteDirewolf,
-						this.Const.World.Spawn.LegendRedbackSpider,
-						this.Const.World.Spawn.LegendDemonAlp,
-						this.Const.World.Spawn.LegendStollwurm,
-						this.Const.World.Spawn.LegendGreenwoodSchrat,
-						this.Const.World.Spawn.SandGolems,
-						this.Const.World.Spawn.Serpents,
-						this.Const.World.Spawn.Hyenas,
-						this.Const.World.Spawn.UndeadArmy,
-						this.Const.World.Spawn.Vampires,
-						this.Const.World.Spawn.Mummies,
-						this.Const.World.Spawn.Zombies,
-						this.Const.World.Spawn.Ghosts,
-						this.Const.World.Spawn.Necromancer,
-						this.Const.World.Spawn.BountyHunters,
-						this.Const.World.Spawn.GreenskinHorde
-					]
-						local SpawnGroup = spawnlists[this.Math.rand(0, spawnlists.len() - 1)];
-						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), SpawnGroup, true)
+						local SpawnGroups = [
+							this.Const.World.Spawn.Noble,
+							this.Const.World.Spawn.BanditBoss,
+							this.Const.World.Spawn.Barbarians,
+							this.Const.World.Spawn.Southern,
+							this.Const.World.Spawn.NomadRaiders,
+							this.Const.World.Spawn.Mercenaries,
+							this.Const.World.Spawn.Militia,
+							this.Const.World.Spawn.GoblinBoss,
+							this.Const.World.Spawn.OrcBoss,
+							this.Const.World.Spawn.Ghouls,
+							this.Const.World.Spawn.LegendHexeLeader,
+							this.Const.World.Spawn.LegendRockUnhold,
+							this.Const.World.Spawn.LegendSkinGhouls,
+							this.Const.World.Spawn.LegendWhiteDirewolf,
+							this.Const.World.Spawn.LegendRedbackSpider,
+							this.Const.World.Spawn.LegendDemonAlp,
+							this.Const.World.Spawn.LegendStollwurm,
+							this.Const.World.Spawn.LegendGreenwoodSchrat,
+							this.Const.World.Spawn.SandGolems,
+							this.Const.World.Spawn.Serpents,
+							this.Const.World.Spawn.Hyenas,
+							this.Const.World.Spawn.UndeadArmy,
+							this.Const.World.Spawn.Vampires,
+							this.Const.World.Spawn.Mummies,
+							this.Const.World.Spawn.Zombies,
+							this.Const.World.Spawn.Ghosts,
+							this.Const.World.Spawn.Necromancer,
+							this.Const.World.Spawn.BountyHunters,
+							this.Const.World.Spawn.GreenskinHorde
+						]
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), SpawnGroups[this.Math.rand(0, SpawnGroups.len() -1)], true)
 						_event.registerToShowAfterCombat("J3", "null");
 						this.World.State.startScriptedCombat(p, false, false, false);
 						return 0;
@@ -618,102 +616,43 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 					Text = "Just choose for me",
 					function getResult( _event )
 					{
-					local r = this.Math.rand(1, 29);	
-					switch(r){
-					case 1:					
-						local SpawnGroup = this.Const.World.Spawn.Noble;
-						return;
-					case 2:					
-						local SpawnGroup = this.Const.World.Spawn.BanditBoss;
-						return;
-					case 3:					
-						local SpawnGroup = this.Const.World.Spawn.Barbarians;
-						return;
-					case 4:					
-						local SpawnGroup = this.Const.World.Spawn.Southern;
-						return;
-					case 5:					
-						local SpawnGroup = this.Const.World.Spawn.NomadRaiders;
-						return;
-					case 6:					
-						local SpawnGroup = this.Const.World.Spawn.Mercenaries;
-						return;
-					case 7:					
-						local SpawnGroup = this.Const.World.Spawn.Militia;
-						return;
-					case 8:					
-						local SpawnGroup = this.Const.World.Spawn.GoblinBoss;
-						return;
-					case 9:					
-						local SpawnGroup = this.Const.World.Spawn.OrcBoss;
-						return;
-					case 10:					
-						local SpawnGroup = this.Const.World.Spawn.Ghouls;
-						return;
-					case 11:					
-						local SpawnGroup = this.Const.World.Spawn.LegendHexeLeader;
-						return;
-					case 12:					
-						local SpawnGroup = this.Const.World.Spawn.LegendRockUnhold;
-						return;
-					case 13:					
-						local SpawnGroup = this.Const.World.Spawn.LegendSkinGhouls;
-						return;
-					case 14:					
-						local SpawnGroup = this.Const.World.Spawn.LegendWhiteDirewolf;
-						return;
-					case 15:					
-						local SpawnGroup = this.Const.World.Spawn.LegendRedbackSpider;
-						return;
-					case 16:					
-						local SpawnGroup = this.Const.World.Spawn.LegendDemonAlp;
-						return;
-					case 17:					
-						local SpawnGroup = this.Const.World.Spawn.LegendStollwurm;
-						return;
-					case 18:					
-						local SpawnGroup = this.Const.World.Spawn.LegendGreenwoodSchrat;
-						return;
-					case 19:					
-						local SpawnGroup = this.Const.World.Spawn.SandGolems;
-						return;
-					case 20:					
-						local SpawnGroup = this.Const.World.Spawn.Serpents;
-						return;
-					case 21:					
-						local SpawnGroup = this.Const.World.Spawn.Hyenas;
-						return;
-					case 22:					
-						local SpawnGroup = this.Const.World.Spawn.UndeadArmy;
-						return;
-					case 23:					
-						local SpawnGroup = this.Const.World.Spawn.Vampires;
-						return;
-					case 24:					
-						local SpawnGroup = this.Const.World.Spawn.Mummies;
-						return;
-					case 25:					
-						local SpawnGroup = this.Const.World.Spawn.Zombies;
-						return;
-					case 26:					
-						local SpawnGroup = this.Const.World.Spawn.Ghosts;
-						return;
-					case 27:					
-						local SpawnGroup = this.Const.World.Spawn.Necromancer;
-						return;
-					case 28:					
-						local SpawnGroup = this.Const.World.Spawn.BountyHunters;
-						return;
-					case 29:					
-						local SpawnGroup = this.Const.World.Spawn.GreenskinHorde;
-						return;
-					}
-						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), SpawnGroup, true)
+						local SpawnGroups = [
+							this.Const.World.Spawn.Noble,
+							this.Const.World.Spawn.BanditBoss,
+							this.Const.World.Spawn.Barbarians,
+							this.Const.World.Spawn.Southern,
+							this.Const.World.Spawn.NomadRaiders,
+							this.Const.World.Spawn.Mercenaries,
+							this.Const.World.Spawn.Militia,
+							this.Const.World.Spawn.GoblinBoss,
+							this.Const.World.Spawn.OrcBoss,
+							this.Const.World.Spawn.Ghouls,
+							this.Const.World.Spawn.LegendHexeLeader,
+							this.Const.World.Spawn.LegendRockUnhold,
+							this.Const.World.Spawn.LegendSkinGhouls,
+							this.Const.World.Spawn.LegendWhiteDirewolf,
+							this.Const.World.Spawn.LegendRedbackSpider,
+							this.Const.World.Spawn.LegendDemonAlp,
+							this.Const.World.Spawn.LegendStollwurm,
+							this.Const.World.Spawn.LegendGreenwoodSchrat,
+							this.Const.World.Spawn.SandGolems,
+							this.Const.World.Spawn.Serpents,
+							this.Const.World.Spawn.Hyenas,
+							this.Const.World.Spawn.UndeadArmy,
+							this.Const.World.Spawn.Vampires,
+							this.Const.World.Spawn.Mummies,
+							this.Const.World.Spawn.Zombies,
+							this.Const.World.Spawn.Ghosts,
+							this.Const.World.Spawn.Necromancer,
+							this.Const.World.Spawn.BountyHunters,
+							this.Const.World.Spawn.GreenskinHorde
+						];
+
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), SpawnGroups[this.Math.rand(0, SpawnGroups.len() -1)], true)
 						_event.registerToShowAfterCombat("J3", "null");
 						this.World.State.startScriptedCombat(p, false, false, false);
 						return 0;
 					}
-
 				},
 				{
 					Text = "We're done here",
@@ -729,7 +668,7 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 
 			}
 		});
-		
+
 		this.m.Screens.push({
 			ID = "K",
 			Text = "[img]gfx/ui/events/legend_tournament.png[/img]{The attendant appears unmoved by your choice %SPEECH_ON%Very good, any preference to the kind of Greenskins?%SPEECH_OFF%}",
@@ -965,25 +904,14 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 					Text = "You decide",
 					function getResult( _event )
 					{
-					local r = this.Math.rand(1, 5);	
-					switch(r){
-					case 1:					
-						local SpawnGroup = this.Const.World.Spawn.Noble;
-						return;
-					case 2:					
-						local SpawnGroup = this.Const.World.Spawn.Southern;
-						return;
-					case 3:					
-						local SpawnGroup = this.Const.World.Spawn.Mercenaries;
-						return;
-					case 4:					
-						local SpawnGroup = this.Const.World.Spawn.Militia;
-						return;
-					case 5:					
-						local SpawnGroup = this.Const.World.Spawn.BountyHunters;
-						return;
-					}
-						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), SpawnGroup, true)
+						local SpawnGroups = [
+							this.Const.World.Spawn.Noble,
+							this.Const.World.Spawn.Southern,
+							this.Const.World.Spawn.Mercenaries,
+							this.Const.World.Spawn.Militia,
+							this.Const.World.Spawn.BountyHunters,
+						]
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), SpawnGroups[this.Math.rand(0, SpawnGroups.len() -1)], true)
 						_event.registerToShowAfterCombat("J3", "null");
 						this.World.State.startScriptedCombat(p, false, false, false);
 						return 0;
@@ -1048,34 +976,17 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 					Text = "Just choose for me",
 					function getResult( _event )
 					{
-					local r = this.Math.rand(1, 8);	
-					switch(r){
-					case 1:					
-						local SpawnGroup = this.Const.World.Spawn.Noble;
-						return;
-					case 2:					
-						local SpawnGroup = this.Const.World.Spawn.Southern;
-						return;
-					case 3:					
-						local SpawnGroup = this.Const.World.Spawn.Mercenaries;
-						return;
-					case 4:					
-						local SpawnGroup = this.Const.World.Spawn.Militia;
-						return;
-					case 5:					
-						local SpawnGroup = this.Const.World.Spawn.BountyHunters;
-						return;
-					case 6:					
-						local SpawnGroup = this.Const.World.Spawn.BanditBoss;
-						return;
-					case 7:					
-						local SpawnGroup = this.Const.World.Spawn.Barbarians;
-						return;
-					case 8:					
-						local SpawnGroup = this.Const.World.Spawn.NomadDefenders;
-						return;
-					}
-						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), SpawnGroup, true)
+						local SpawnGroups = [
+							this.Const.World.Spawn.Noble,
+							this.Const.World.Spawn.Southern,
+							this.Const.World.Spawn.Mercenaries,
+							this.Const.World.Spawn.Militia,
+							this.Const.World.Spawn.BountyHunters,
+							this.Const.World.Spawn.BanditBoss,
+							this.Const.World.Spawn.Barbarians,
+							this.Const.World.Spawn.NomadDefenders
+						]
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), SpawnGroups[this.Math.rand(0, SpawnGroups.len() -1)], true)
 						_event.registerToShowAfterCombat("J3", "null");
 						this.World.State.startScriptedCombat(p, false, false, false);
 						return 0;
@@ -1140,19 +1051,12 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 					Text = "Just choose for me",
 					function getResult( _event )
 					{
-					local r = this.Math.rand(1, 3);	
-					switch(r){
-					case 1:					
-						local SpawnGroup = this.Const.World.Spawn.BanditBoss;
-						return;
-					case 2:					
-						local SpawnGroup = this.Const.World.Spawn.Barbarians;
-						return;
-					case 3:					
-						local SpawnGroup = this.Const.World.Spawn.NomadDefenders;
-						return;
-					}
-						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), SpawnGroup)
+						local SpawnGroups = [
+							this.Const.World.Spawn.BanditBoss,
+							this.Const.World.Spawn.Barbarians,
+							this.Const.World.Spawn.NomadDefenders
+						]
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), SpawnGroups[this.Math.rand(0, SpawnGroups.len() -1)], true);
 						_event.registerToShowAfterCombat("J3", "null");
 						this.World.State.startScriptedCombat(p, false, false, false);
 						return 0;
@@ -1188,9 +1092,9 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 		//p.LocationTemplate.Template[0] = "tactical.legend_tournament_floor";
 		p.LocationTemplate.Template[0] = "tactical.arena_floor";
 		p.CombatID = "Legend Tournament";
-		
+
 		local tracks = [
-			this.Const.Music.OrcTracks,
+			this.Const.Music.OrcsTracks,
 			this.Const.Music.NobleTracks,
 			this.Const.Music.UndeadTracks,
 			this.Const.Music.BanditTracks,
@@ -1200,20 +1104,13 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 			this.Const.Music.OrientalBanditTracks,
 			this.Const.Music.OrientalCityStateTracks,
 			this.Const.Music.BarbarianTracks
-		]		
+		]
 		p.Music = tracks[this.Math.rand(0, tracks.len() - 1)];
 		p.PlayerDeploymentType = this.Const.Tactical.DeploymentType.Arena;
 		p.EnemyDeploymentType = this.Const.Tactical.DeploymentType.Arena;
 		p.IsUsingSetPlayers = false;
 		p.IsFleeingProhibited = true;
-		if (lootingStopped == true)
-			{
-			p.IsLootingProhibited = true;
-			}
-		else
-			{
-			p.IsLootingProhibited = false;
-			}
+		p.IsLootingProhibited = lootingStopped;
 		p.IsWithoutAmbience = true;
 		p.IsFogOfWarVisible = false;
 		p.IsArenaMode = true;
