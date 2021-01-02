@@ -398,6 +398,10 @@ layers = [
  "title" :  "Aventail", \
  "desc" :  "A mail aventail that extends from below the eyeline to cover the neck" \
 },
+{"name" : "aventail"                     , "layer" : "hood", "min" : 1, "max" : 1, "base" : True, "value" : 250, "con" : 70, "stam" : -4, "vis" : 0, "hair" : "false", "beard" : "true",  \
+ "title" :  "Aventail", \
+ "desc" :  "A mail aventail that extends from below the eyeline to cover the neck and lower face" \
+},
 {"name" : "chain_hood"                     , "layer" : "hood", "min" : 1, "max" : 4, "base" : True, "value" : 310, "con" : 80, "stam" : -5, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Mail Coif", \
  "desc" :  "A sturdy chain hood" \
@@ -591,6 +595,10 @@ layers = [
  "title" :  "Barbute", \
  "desc" :  "A sturdy yet light barbute helmet, a design uncommon in these lands, made from especially light and durable steel." \
 },
+{"name" : "barbute_named"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 3000, "con" : 200, "stam" : -12, "vis" : -2, "hair" : "true", "beard" : "true", "named" : True, "rminViz" : -1, "rmaxViz" : -2, "rminStam" : -9, "rmaxStam" : -12, "rminCond" : 200, "rmaxCond" : 225, "names" : Names,  \
+ "title" :  "Barbute", \
+ "desc" :  "A superb barbute helmet of foreign origin, this helmet has been blackened and polished to a dark shine. " \
+},
 {"name" : "horsetail"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 1250, "con" : 120, "stam" : -4, "vis" : -2, "hair" : "true", "beard" : "false",  \
  "title" :  "Steppe Helm", \
  "desc" :  "A nasal helmet witch an attached mail neck guard fashioned in the way of the steppe folks." \
@@ -598,6 +606,10 @@ layers = [
 {"name" : "basinet"                     , "layer" : "helm", "min" : 1, "max" : 7, "value" : 1400, "con" : 130, "stam" : -7, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Basinet", \
  "desc" :  "A well made metal bascinet" \
+},
+{"name" : "bascinet_named"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 3000, "con" : 190, "stam" : -10, "vis" : -1, "hair" : "true", "beard" : "false", "named" : True, "rminViz" : 0, "rmaxViz" : -1, "rminStam" : -7, "rmaxStam" : -10, "rminCond" : 190, "rmaxCond" : 215, "names" : Names,  \
+ "title" :  "Bascinet", \
+ "desc" :  "A heavy and durable bascinet. This one has a pointed head and is blackened." \
 },
 {"name" : "enclave_great_bascinet"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 2800, "con" : 260, "stam" : -13, "vis" : -2, "hair" : "true", "beard" : "false",  \
  "title" :  "Peaked Bascinet", \
@@ -610,6 +622,10 @@ layers = [
 {"name" : "kettle_helm"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 1600, "con" : 130, "stam" : -6, "vis" : -2, "hair" : "true", "beard" : "false",  \
  "title" :  "Kettle Helm", \
  "desc" :  "A full-metal helmet with a broad rim." \
+},
+{"name" : "kettle_helm_named"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 2300, "con" : 160, "stam" : -6, "vis" : -2, "hair" : "true", "beard" : "false", "named" : True, "rminViz" : -1, "rmaxViz" : -2, "rminStam" : -3, "rmaxStam" : -6, "rminCond" : 160, "rmaxCond" : 185, "names" : Names, \
+ "title" :  "Kettle Helm", \
+ "desc" :  "An exceptional and sturdy kettle helm. Blackened and polished, it has a gilded point." \
 },
 {"name" : "enclave_kettle"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1900, "con" : 140, "stam" : -7, "vis" : -2, "hair" : "true", "beard" : "false",  \
  "title" :  "Kettle Sallet", \
@@ -923,6 +939,10 @@ layers = [
 {"name" : "faceplate_full"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 630, "con" : 57, "stam" : -4, "vis" : -2, "hair" : "false", "beard" : "true",  \
  "title" :  "Full Faceplate", \
  "desc" :  "A very well crafted full faceplate" \
+},
+{"name" : "bascinet_visor_named"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 1500, "con" : 80, "stam" : -4, "vis" : -2, "hair" : "false", "beard" : "true", "named" : True, "rminViz" : -1, "rmaxViz" : -2, "rminStam" : -2, "rmaxStam" : -4, "rminCond" : 80, "rmaxCond" : 105, "names" : Names,  \
+ "title" :  "Pointed Visor", \
+ "desc" :  "A gilded visor with a pointed snout and plenty of holes to breath through." \
 },
 # {"name" : "southern_faceplate"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 450, "con" : 50, "stam" : -3, "vis" : -2, "hair" : "false", "beard" : "true",  \
 #  "title" :  "Southern Faceplate", \

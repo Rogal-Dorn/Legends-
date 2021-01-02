@@ -4501,27 +4501,29 @@ Added Italo-norman helm
 15.0.0.23
 
 **Changes**
+Huge changed from +10% damage to melee, to +5% damage to both melee and ranged.  reduction to defenses remains
+Pragmatic changed from +10% melee skill and -10% chance to hit head, to +5% to both melee and ranged skill, and -20 chance to hit head.
+Sureshot changed from +5 ranged still to +10% ranged damage and -5 ranged defense
+
 **Adventuring Party**
-Undoes some of the previous nerfs to background stat ranges, though the backgrounds also cost more. This also affects these characters when hired in other scenarios 
-* Berserker has more bravery and defense, other stats are more consistently high, but with lower peak values. Has better armor and helmet. No longer loyal. bastard sword instead of orc flail. Cost increased to 35/3500. 
-* Crusader hitpoints and ranged defence increased, initiative decreased. cost increased. 
+Undoes some of the previous nerfs to background stat ranges, though the backgrounds also cost more. This also affects these characters when hired in other scenarios
+* Berserker has more bravery and defense, other stats are more consistently high, but with lower peak values. Has better armor and helmet. No longer loyal. bastard sword instead of orc flail. Cost increased to 35/3500.
+* Crusader hitpoints and ranged defence increased, initiative decreased. cost increased.
 * Seer stamina, melee, defense all made a bit better. peak init decreased. starts at level 2, cost increased.
-* Assassin has the proper assassin perks, and increased stats. cost increased 
-Each character now comes traits that reflect their background story. 
-* berserker is mad and has a deathwish 
-* assassin is agressive and unpredicatable 
-* crusader is superstitious and an undead killer 
-* seer is bright and light 
-* noble is cocky and a weasle. no longer a drunkard in party, thought still drunk in noble scenario 
-* ranger is a pragmatic and a sureshot. 
-
-Trait changes: 
-Huge changed from +10% damage to melee, to +5% damage to both melee and ranged.  reduction to defenses remains 
-Pragmatic changed from +10% melee skill and -10% chance to hit head, to +5% to both melee and ranged skill, and -20 chance to hit head. 
-Sureshot changed from +5 ranged still to +10% ranged damage and -5 ranged defense 
-
+* Assassin has the proper assassin perks, and increased stats. cost increased
+Each character now comes traits that reflect their background story.
+* berserker is mad and has a deathwish
+* assassin is agressive and unpredicatable
+* crusader is superstitious and an undead killer
+* seer is bright and light
+* noble is cocky and a weasle. no longer a drunkard in party, thought still drunk in noble scenario
+* ranger is a pragmatic and a sureshot.
 
 **Fixes**
-Swordmasters no longer drop unlayered helmets 
-sraw hat vanity layer buffed to 5 durability 
+Swordmasters no longer drop unlayered helmets
+straw hat vanity layer buffed to 5 durability
 Fixes a slew of retinue followers not being able to properly find backgrounds
+
+**Armor Tweaks**
+Added three named helms (named bascinet, named kettle helm, named barbute)
+
