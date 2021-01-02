@@ -272,9 +272,7 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_4"));
 		//this.m.Container.add(this.new("scripts/skills/perks/perk_rally_the_troops"));
 		//this.m.Container.add(this.new("scripts/skills/perks/perk_fortified_mind"));
-		this.m.Container.add(this.new("scripts/skills/traits/drunkard_trait"));
-		this.m.Container.add(this.new("scripts/skills/traits/legend_noble_killer_trait"));
-		this.m.Container.add(this.new("scripts/skills/effects_world/drunk_effect"));
+
 		if (this.m.IsFemaleBackground == true)
 		{
 			actor.setName(this.Const.Strings.LadyNames[this.Math.rand(0, this.Const.Strings.LadyNames.len() - 1)]);

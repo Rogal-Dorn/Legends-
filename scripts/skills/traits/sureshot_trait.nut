@@ -6,7 +6,7 @@ this.sureshot_trait <- this.inherit("scripts/skills/traits/character_trait", {
 		this.m.ID = "trait.sureshot";
 		this.m.Name = "Sureshot";
 		this.m.Icon = "ui/traits/sureshot_trait.png";
-		this.m.Description = "Has a knack for hitting hitting targets";
+		this.m.Description = "Takes time to hit the exact right spot on a target, this in turn makes them an easier target";
 		this.m.Titles = [
 			"Sureshot",
 			"the Patient"
@@ -35,14 +35,15 @@ this.sureshot_trait <- this.inherit("scripts/skills/traits/character_trait", {
 				id = 10,
 				type = "text",
 				icon = "ui/icons/ranged_skill.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] Ranged Skill"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] Ranged Damage"
 			}
 		];
 	}
 
 	function onUpdate( _properties )
 	{
-		_properties.RangedSkill += 5;
+		_properties.RangedDamageMult *= 1.1;
+		_properties.RangedDefense -= 5;
 	}
 
 });

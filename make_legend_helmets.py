@@ -1167,7 +1167,7 @@ layers = [
  "title" :  "Southern Top Tail", \
  "desc" :  "A decorative tail made of desert animal hair" \
 },
-{"name" : "straw_hat"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 20, "con" : 2, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
+{"name" : "straw_hat"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 20, "con" : 5, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Straw Hat", \
  "desc" :  "A simple straw hat, often used by farmers and peasants" \
 },

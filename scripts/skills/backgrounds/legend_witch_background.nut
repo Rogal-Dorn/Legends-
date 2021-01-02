@@ -6,8 +6,8 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.ID = "background.legend_witch";
 		this.m.Icon = "ui/backgrounds/background_wizard_4.png";
 		this.m.Name = "Evoker";
-		this.m.HiringCost = 2000;
-		this.m.DailyCost = 25;
+		this.m.HiringCost = 3000;
+		this.m.DailyCost = 30;
 		this.m.Excluded = [
 			"trait.brave",
 			"trait.athletic",
@@ -42,7 +42,7 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 
 		this.m.IsEducatedBackground = true;
 		this.m.IsUntalented = true;
-		this.m.Level = 1;
+		this.m.Level = 2;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Good;
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[3];
@@ -132,7 +132,7 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 	{
 		local c = {
 			Hitpoints = [
-				-15,
+				-10,
 				-10
 			],
 			Bravery = [
@@ -140,28 +140,28 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 				0
 			],
 			Stamina = [
-				10,
+				15,
 				15
 			],
 			MeleeSkill = [
-				-10,
-				-10
+				-5,
+				-5
 			],
 			RangedSkill = [
 				10,
 				15
 			],
 			MeleeDefense = [
-				-10,
-				-10
+				-5,
+				-5
 			],
 			RangedDefense = [
-				-10,
-				-10
+				-5,
+				-5
 			],
 			Initiative = [
 				15,
-				20
+				15
 			]
 		};
 		return c;
