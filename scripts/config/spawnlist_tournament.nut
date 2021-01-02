@@ -35,7 +35,7 @@ gt.Const.World.Spawn.GrandGauntlet <-
 					Cost = 5
 				},
 				{
-					Type = this.Const.World.Spawn.Troops.Slave, 
+					Type = this.Const.World.Spawn.Troops.Slave,
 					Cost = 7
 				},
 				{
@@ -296,7 +296,6 @@ gt.Const.World.Spawn.GrandGauntlet <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.BarbarianChosen,
-					Weight = 0,
 					Cost = 50
 				},
 				{
@@ -345,7 +344,7 @@ gt.Const.World.Spawn.GrandMelee <-
 					Cost = 5
 				},
 				{
-					Type = this.Const.World.Spawn.Troops.Slave, 
+					Type = this.Const.World.Spawn.Troops.Slave,
 					Cost = 7
 				},
 				{
@@ -654,7 +653,6 @@ gt.Const.World.Spawn.GrandMelee <-
 		 			Type = this.Const.World.Spawn.Troops.KoboldFighter,
 		 			Cost = 15
 		 		},
-
 				{
 					Type = this.Const.World.Spawn.Troops.Direwolf,
 					Cost = 20
@@ -881,7 +879,7 @@ gt.Const.World.Spawn.GrandMelee <-
 							}
 						}
 					]
-				},	
+				},
 				{
 					Type = this.Const.World.Spawn.Troops.SkeletonPriest,
 					Cost = 40,
@@ -966,6 +964,7 @@ gt.Const.World.Spawn.GrandMelee <-
 				{
 					Type = this.Const.World.Spawn.Troops.LegendOrcElite,
 					MinR = 400,
+					Cost = 60
 
 				}
 			]
