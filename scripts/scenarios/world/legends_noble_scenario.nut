@@ -119,6 +119,9 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_roster_2"));
 		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_roster_4"));
 		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_rally_the_troops"));
+		bros[0].getSkills().add(this.new("scripts/skills/traits/drunkard_trait"));
+		bros[0].getSkills().add(this.new("scripts/skills/traits/legend_noble_killer_trait"));
+		bros[0].getSkills().add(this.new("scripts/skills/effects_world/drunk_effect"));
 		bros[1].setStartValuesEx([
 		"legend_noble_shield"
 		]);
