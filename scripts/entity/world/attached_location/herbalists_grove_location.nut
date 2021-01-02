@@ -112,12 +112,12 @@ this.herbalists_grove_location <- this.inherit("scripts/entity/world/attached_lo
 		else if (_id == "building.weaponsmith")
 		{
 			_list.push({
-				R = 0,
+				R = 99,
 				P = 1.0,
 				S = "weapons/named/legend_named_sickle"
 			});
 			_list.push({
-				R = 0,
+				R = 99,
 				P = 1.0,
 				S = "weapons/named/legend_named_shovel"
 			});

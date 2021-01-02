@@ -17,7 +17,8 @@ this.build_unique_locations_action <- this.inherit("scripts/factions/faction_act
 		BuildHolySite1 = true,
 		BuildHolySite2 = true,
 		BuildHolySite3 = true,
-		BuildMummySite = true
+		BuildMummySite = true,
+		BuildTournamentSite = true
 	},
 	function create()
 	{
@@ -115,10 +116,15 @@ this.build_unique_locations_action <- this.inherit("scripts/factions/faction_act
 			{
 				this.m.BuildHolySite3 = false;
 			}
-			
+
 			if (!this.Const.DLC.Desert || v.getTypeID() == "location.legend_mummy")
 			{
 				this.m.BuildMummySite = false;
+			}
+
+			if (!this.Const.DLC.Desert || v.getTypeID() == "location.legend_tournament")
+			{
+				this.m.BuildTournamentSite = false;
 			}
 		}
 	}
@@ -608,6 +614,35 @@ this.build_unique_locations_action <- this.inherit("scripts/factions/faction_act
 			if (camp != null)
 			{
 				camp.onSpawned();
+				this.logInfo("Built Legends Ancient Mastaba location")
+			}
+		}
+		else if (this.m.BuildTournamentSite)
+		{
+			local disallowedTerrain = [];
+
+			for( local i = 0; i < this.Const.World.TerrainType.COUNT; i = ++i )
+			{
+				if (i == this.Const.World.TerrainType.Hills || i == this.Const.World.TerrainType.Mountains)
+				{
+				}
+				else
+				{
+					disallowedTerrain.push(i);
+				}
+			}
+
+			local tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries * 100, disallowedTerrain, 30, 1000, 1001, distanceToOthers, distanceToOthers);
+
+			if (tile != null)
+			{
+				camp = this.World.spawnLocation("scripts/entity/world/locations/legendary/legend_tournament_location", tile.Coords);
+			}
+
+			if (camp != null)
+			{
+				camp.onSpawned();
+				this.logInfo("Built Legends Tournament location")
 			}
 		}
 		else

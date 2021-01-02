@@ -104,7 +104,7 @@
 <sprite id="minstrel_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\minstrel_orientation.png" />
 <sprite id="monk_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\monk_orientation.png" />
 <sprite id="poacher_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\poacher_orientation.png" />
-<sprite id="woodcuter_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\woodcutter_orientation.png" />
+<sprite id="woodcutter_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\woodcutter_orientation.png" />
 <sprite id="werebear_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\werebear_orientation.png" />
 <sprite id="miner_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\miner_orientation.png" />
 <sprite id="squire_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\squire_orientation.png" />

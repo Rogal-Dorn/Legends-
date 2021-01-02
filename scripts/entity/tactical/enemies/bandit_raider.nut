@@ -359,19 +359,17 @@ this.bandit_raider <- this.inherit("scripts/entity/tactical/human", {
 		])
 		this.m.Items.equip(item);
 
-		if (this.Math.rand(1, 100) <= 85)
+
+		local item = this.Const.World.Common.pickHelmet([
+			[1, "nasal_helmet"],
+			[1, "dented_nasal_helmet"],
+			[1, "rusty_mail_coif"],
+			[1, "headscarf"],
+			[1, "nasal_helmet_with_rusty_mail"]
+		])
+		if (item != null)
 		{
-			local item = this.Const.World.Common.pickHelmet([
-				[1, "nasal_helmet"],
-				[1, "dented_nasal_helmet"],
-				[1, "rusty_mail_coif"],
-				[1, "headscarf"],
-				[1, "nasal_helmet_with_rusty_mail"]
-			])
-			if (item != null)
-			{
-				this.m.Items.equip(item);
-			}
+			this.m.Items.equip(item);
 		}
 	}
 

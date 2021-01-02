@@ -78,7 +78,7 @@ gt.Const.World.Spawn.UndeadScourge <-
 			]
 		},
 		{
-			Weight = 30,
+			Weight = 25,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Zombie,
@@ -110,6 +110,11 @@ gt.Const.World.Spawn.UndeadScourge <-
 					MinR = 600,
 					Type = this.Const.World.Spawn.Troops.LegendVampireLord,
 					Cost = 60
+				},
+				{
+					MinR = 1200,
+					Type = this.Const.World.Spawn.Troops.LegendMummyQueen,
+					Cost = 70
 				}
 			]
 		},
@@ -124,6 +129,25 @@ gt.Const.World.Spawn.UndeadScourge <-
 					MinR = 350,
 					Type = this.Const.World.Spawn.Troops.LegendBanshee,
 					Cost = 70
+				}
+			]
+		},
+		{
+			Weight = 5
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendMummyLight,
+					Cost = 23
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendMummyMedium,
+					MinR = 200,
+					Cost = 30
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendMummyHeavy,
+					MinR = 600,
+					Cost = 45
 				}
 			]
 		},

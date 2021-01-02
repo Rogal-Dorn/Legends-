@@ -117,7 +117,7 @@ gt.Const.World.Spawn.PeasantsArmed <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendPeasantButcher,
-					Cost = 15
+					Cost = 16
 				}
 			]
 		},
@@ -153,7 +153,7 @@ gt.Const.World.Spawn.PeasantsArmed <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendPeasantMinstrel,
-					Cost = 15
+					Cost = 12
 				}
 			]
 		},
@@ -162,7 +162,7 @@ gt.Const.World.Spawn.PeasantsArmed <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendPeasantPoacher,
-					Cost = 20
+					Cost = 18
 				}
 			]
 		},

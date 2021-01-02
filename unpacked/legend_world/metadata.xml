@@ -4,6 +4,7 @@
  <sprite id="legend_necromancer_swamp" ic="FF3E525F" img="world_entity\location\necromancer_swamp.png" />
  <sprite id="legend_ranger_tower" ic="FF3E525F" img="world_entity\location\ranger_tower.png" />
  <sprite id="legend_seer_tower" ic="FF3E525F" img="world_entity\location\seer_tower.png" />
+ <sprite id="legend_tournament" ic="FF3E525F" img="world_entity\location\legend_tournament.png" />
  <sprite id="figure_player_berserker" offsetY="20" ic="FF334959" width="68" height="106" img="world_entity\party\figure_player_berserker.png" left="-18" right="24" top="-39" bottom="9" />
   <sprite id="figure_player_crusader" offsetY="20" ic="FF334959" width="68" height="106" img="world_entity\party\figure_player_crusader.png" left="-18" right="24" top="-39" bottom="9" />
   <sprite id="figure_player_ranger" offsetY="20" ic="FF334959" width="68" height="106" img="world_entity\party\figure_player_ranger.png" left="-18" right="24" top="-39" bottom="9" />
