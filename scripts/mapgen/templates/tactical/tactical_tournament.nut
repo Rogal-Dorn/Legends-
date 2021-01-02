@@ -60,7 +60,7 @@ this.tactical_tournament <- this.inherit("scripts/mapgen/tactical_template", {
 			this.MapGen.get("tactical.tile.tundra2"),
 			this.MapGen.get("tactical.tile.tundra3"),
 			this.MapGen.get("tactical.tile.tundra4"),
-			this.MapGen.get("tactical.tile.tundra5"),
+			this.MapGen.get("tactical.tile.tundra5")
 		]
 
 		local Tile1 = tiles[this.Math.rand(0, tiles.len() - 1)];
