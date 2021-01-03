@@ -165,10 +165,7 @@ this.legend_tournament_spectator <- this.inherit("scripts/entity/tactical/entity
 		body.varySaturation(0.1);
 		local armor = this.addSprite("armor");
 
-		if (this.Math.rand(1, 100) <= 95)
-		{
-			armor.setBrush(armors[this.Math.rand(0, armors.len() - 1)]);
-		}
+		armor.setBrush(armors[this.Math.rand(0, armors.len() - 1)]);
 
 		local head = this.addSprite("head");
 		head.setBrush(heads[this.Math.rand(0, heads.len() - 1)]);

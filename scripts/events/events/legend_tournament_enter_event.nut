@@ -1089,8 +1089,8 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 		p.LocationTemplate = clone this.Const.Tactical.LocationTemplate;
 		//p.TerrainTemplate = "tactical.arena";
 		p.TerrainTemplate = "tactical.tournament";
-		//p.LocationTemplate.Template[0] = "tactical.legend_tournament_floor";
-		p.LocationTemplate.Template[0] = "tactical.arena_floor";
+		p.LocationTemplate.Template[0] = "tactical.legend_tournament_floor";
+		//p.LocationTemplate.Template[0] = "tactical.arena_floor";
 		p.CombatID = "Legend Tournament";
 
 		local tracks = [
@@ -1099,11 +1099,12 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 			this.Const.Music.UndeadTracks,
 			this.Const.Music.BanditTracks,
 			this.Const.Music.CivilianTracks,
-			this.Const.Music.BeastTracks,
-			this.Const.Music.GoblinTracks,
+			this.Const.Music.BeastsTracks,
+			this.Const.Music.GoblinsTracks,
 			this.Const.Music.OrientalBanditTracks,
 			this.Const.Music.OrientalCityStateTracks,
-			this.Const.Music.BarbarianTracks
+			this.Const.Music.BarbarianTracks,
+			this.Const.Music.BattleTracks
 		]
 		p.Music = tracks[this.Math.rand(0, tracks.len() - 1)];
 		p.PlayerDeploymentType = this.Const.Tactical.DeploymentType.Arena;
