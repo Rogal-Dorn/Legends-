@@ -7,7 +7,8 @@ this.legend_military_goedendag <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Name = "Military Goedendag";
 		this.m.Description = "A military grade metal-reinforced club with a spike at the top. Can be used to thrust at the enemy, or pummel them into submission.";
 		this.m.Categories = "Spear/Mace, Two-Handed";
-		this.m.Variant = this.Math.rand(1, 2);
+		this.m.Variants = [1,2]
+		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() -1)];
 		this.updateVariant();
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;

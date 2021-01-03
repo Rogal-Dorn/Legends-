@@ -60,6 +60,7 @@ declare -a HelmetBrushes=(
 "legend_helmets/1"
 "legend_helmets/2"
 "legend_helmets/3"
+"legend_helmets/4"
 )
 
 FILES=$(git status -s)
@@ -81,6 +82,7 @@ while read -r line; do
             mkdir -p "helmets"
             python make_legend_helmets.py
             handleExit
+            mkdir -p "$BBDir\\scripts\items\legend_helmets"
             cp -R helmets/. "$BBDir\\scripts\items\legend_helmets"
 
             for i in "${HelmetBrushes[@]}"
@@ -99,6 +101,7 @@ while read -r line; do
             mkdir -p "legend_armor"
             python make_legend_armor.py
             handleExit
+            mkdir -p "$BBDir\\scripts\items\legend_armor"
             cp -R legend_armor/. "$BBDir\\scripts\items\legend_armor"
             for i in "${ArmorBrushes[@]}"
             do
@@ -158,6 +161,14 @@ while read -r line; do
             echo "Building legend_world brush..."
             cd ../bin
             o=$(./bbrusher.exe pack --gfxPath "../$RepoDir/" ../$RepoDir/brushes/legend_world.brush ../$RepoDir/unpacked/legend_world)
+            cd ../"$RepoDir"
+            checkForError "$o" "$i"
+            copyBrushes
+
+        elif [[ "$xpath" == unpacked/legend_runed/metadata.xml ]]; then
+            echo "Building legend_runed brush..."
+            cd ../bin
+            o=$(./bbrusher.exe pack --gfxPath "../$RepoDir/" ../$RepoDir/brushes/legend_runed.brush ../$RepoDir/unpacked/legend_runed)
             cd ../"$RepoDir"
             checkForError "$o" "$i"
             copyBrushes

@@ -6,7 +6,8 @@ this.legend_estoc <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.legend_estoc";
 		this.m.Name = "Estoc";
 		this.m.Description = "A light and elegant two handed blade, favoring a swift and mobile fighting style.";
-		this.m.Variant = this.Math.rand(1, 4);
+		this.m.Variants = [1,2,3,4]
+		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() -1)];
 		this.updateVariant();
 		this.m.Categories = "Sword, Two-Handed";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;

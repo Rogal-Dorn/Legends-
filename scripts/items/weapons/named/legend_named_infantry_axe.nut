@@ -7,7 +7,8 @@ this.legend_named_infantry_axe <- this.inherit("scripts/items/weapons/named/name
 		this.m.NameList = this.Const.Strings.LongaxeNames;
 		this.m.Description = "A long, exceptionally well crafted two-handed axe used by footmen in the noble wars";
 		this.m.Categories = "Axe, Two-Handed";
-		this.m.Variant = this.Math.rand(2, 3);
+		this.m.Variants = [2,3]
+		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() -1)];
 		this.updateVariant()
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;

@@ -3,7 +3,8 @@ this.legend_named_halberd <- this.inherit("scripts/items/weapons/named/named_wea
 	function create()
 	{
 		this.named_weapon.create();
-		this.m.Variant = this.Math.rand(1, 3);
+		this.m.Variants = [1,2,3]
+		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() -1)];
 		this.updateVariant();
 		this.m.ID = "weapon.legend_named_halberd";
 		this.m.NameList = this.Const.Strings.BillNames;
@@ -30,7 +31,7 @@ this.legend_named_halberd <- this.inherit("scripts/items/weapons/named/named_wea
 		this.m.ChanceToHitHead = 5;
 		this.randomizeValues();
 	}
-	
+
 	function updateVariant()
 	{
 		this.m.IconLarge = "weapons/melee/legend_halberd_01_named_0" + this.m.Variant + ".png";
