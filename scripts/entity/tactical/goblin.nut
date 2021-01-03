@@ -86,17 +86,23 @@ this.goblin <- this.inherit("scripts/entity/tactical/actor", {
 				if (!this.getItems().getAppearance().HideCorpseHead)
 				{
 					decal = _tile.spawnDetail(this.getSprite("head").getBrush().Name + "_dead", this.Const.Tactical.DetailFlag.Corpse, flip);
-					decal.Color = skin.Color;
-					decal.Saturation = skin.Saturation;
-					decal.setBrightness(0.9);
-					decal.Scale = 0.95;
+					if (decal != null)
+					{
+						decal.Color = skin.Color;
+						decal.Saturation = skin.Saturation;
+						decal.setBrightness(0.9);
+						decal.Scale = 0.95;
+					}
 				}
 
 				if (this.getItems().getAppearance().HelmetCorpse != "")
 				{
 					decal = _tile.spawnDetail(this.getItems().getAppearance().HelmetCorpse, this.Const.Tactical.DetailFlag.Corpse, flip);
-					decal.setBrightness(0.9);
-					decal.Scale = 0.95;
+					if (decal != null)
+					{
+						decal.setBrightness(0.9);
+						decal.Scale = 0.95;
+					}
 				}
 			}
 			else if (_fatalityType == this.Const.FatalityType.Decapitated)
