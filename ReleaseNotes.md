@@ -4542,21 +4542,16 @@ Mummies can spawn in the Undead Crises
 Bandit Raiders always have a hat
 Militia Veterans no longer spawn naked
 
-
 **Fixes**
 Swordmasters no longer drop unlayered helmets
-straw hat vanity layer buffed to 5 durability
 Fixes a slew of retinue followers not being able to properly find backgrounds
-
+fixes incorrectly applied traits on noble servant
 
 **Armor Tweaks**
 Added three named helms (named bascinet, named kettle helm, named barbute)
-fixed kettle helms giving too much armor  in the early game 
-goblin chain helm and spike helm values swapped 
-fixes incorrectly applied traits on noble servant 
-Adds low and high variants to flat tops, nordic, norman and kettle helms to mimic vanilla armor variabilitiy by unit type.  These will reduce the average head armor of zombies, footmen, militia . Inceases average armor on bandit raiders, veterans and warlords, swordmasters and halberdiers 
-
-
-
-
+Fixed kettle helms giving too much armor  in the early game
+Goblin chain helm and spike helm values swapped
+Straw hat vanity layer buffed to 5 durability
+Adds low and high variants to flat tops, nordic, norman and kettle helms to mimic vanilla armor variabilitiy by unit type.  These will reduce the average head armor of zombies, footmen, militia . Inceases average armor on bandit raiders, veterans and warlords, swordmasters and halberdiers
+Added Wallace Sallet, with a named variant (painted version)
 
