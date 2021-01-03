@@ -166,7 +166,7 @@ this.tactical_legend_tournament <- this.inherit("scripts/mapgen/tactical_templat
 			
 			}	
 
-		local r = this.Math.rand(1, 10);	
+		local r = this.Math.rand(1, 9);	
 		switch(r){
 			case 1:
 				local WetPatch = this.MapGen.get("tactical.patch.autumn_brushes");
@@ -178,7 +178,7 @@ this.tactical_legend_tournament <- this.inherit("scripts/mapgen/tactical_templat
 				local WetPatch = this.MapGen.get("tactical.patch.flower_sea");
 				return;
 			case 4:
-				local WetPatch = this.MapGen.get("tactical.patch.forest_fern_sea");
+				local WetPatch = this.MapGen.get("tactical.patch.oasis");
 				return;
 			case 5:
 				local WetPatch = this.MapGen.get("tactical.patch.forest_leaves_thick");
@@ -195,8 +195,10 @@ this.tactical_legend_tournament <- this.inherit("scripts/mapgen/tactical_templat
 			case 9:
 				local WetPatch = this.MapGen.get("tactical.patch.snow");
 				return;
-			case 10:
-				local WetPatch = this.MapGen.get("tactical.patch.oasis");
+			// has the same isSmallTree issue as mushrooms
+			// case 10:
+			//	local WetPatch = this.MapGen.get("tactical.patch.forest_fern_sea");
+				
 				return;
 			}	
 		
