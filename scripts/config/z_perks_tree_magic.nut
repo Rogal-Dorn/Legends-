@@ -278,13 +278,13 @@ gt.Const.Perks.DruidMagicTree <- {
 		"druidic arts"
 	],
 	Tree = [
+		[gt.Const.Perks.PerkDefs.LegendWither],
 		[gt.Const.Perks.PerkDefs.LegendRoots],
-		[],
 		[gt.Const.Perks.PerkDefs.LegendPrayerOfLife],
 		[],
 		[gt.Const.Perks.PerkDefs.LegendSummonStorm],
 		[gt.Const.Perks.PerkDefs.LegendDrumsOfLife],
-		[]
+		[gt.Const.Perks.PerkDefs.LegendInsects]
 	]
 };
 
@@ -299,7 +299,7 @@ gt.Const.Perks.DruidTransformTree <- {
 		[],
 		[gt.Const.Perks.PerkDefs.LegendWolfform],
 		[gt.Const.Perks.PerkDefs.LegendBearform],
-		[gt.Const.Perks.PerkDefs.LegendTreeform],
+		[],
 		[gt.Const.Perks.PerkDefs.LegendTrueForm]
 	]
 };
@@ -313,7 +313,7 @@ gt.Const.Perks.TransmutationMagicTree <- {
 	Tree = [
 		[],
 		[gt.Const.Perks.PerkDefs.LegendGatherer],
-		[gt.Const.Perks.PerkDefs.LegendLevitate],
+		[],
 		[],
 		[gt.Const.Perks.PerkDefs.LegendPotionBrewer],
 		[gt.Const.Perks.PerkDefs.LegendRoots],

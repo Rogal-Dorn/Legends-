@@ -66,7 +66,7 @@ this.cultist_vs_uneducated_event <- this.inherit("scripts/events/event", {
 				this.Characters.push(_event.m.Cultist.getImagePath());
 				this.Characters.push(_event.m.Uneducated.getImagePath());
 
-				_event.m.Uneducated.getBackground().Convert()
+				_event.m.Uneducated.getBackground().Convert();
 				_event.m.Uneducated.getBackground().m.RawDescription += " " + _event.m.Cultist.getName() + " helped " + _event.m.Uneducated.getName() + " see the darkness.";
 				_event.m.Uneducated.getBackground().buildDescription(true);
 				

@@ -700,7 +700,7 @@ gt.Const.World.Spawn.BanditVermes <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.BanditVermes,
-					Cost = 5
+					Cost = 7
 				}
 			]
 		}

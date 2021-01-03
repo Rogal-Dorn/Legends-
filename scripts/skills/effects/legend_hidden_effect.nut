@@ -19,22 +19,43 @@ this.legend_hidden_effect <- this.inherit("scripts/skills/skill", {
 	function getTooltip()
 	{
 		local ret = this.getDefaultTooltip();
-		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_assassinate"))
+		local actor = this.getContainer().getActor();
+		if (actor.getSkills().hasSkill("perk.legend_assassinate"))
 		{
 			ret.extend([
 				{
 					id = 11,
 					type = "text",
 					icon = "ui/icons/regular_damage.png",
-					text = "[color=" + this.Const.UI.Color.PositiveValue + "]+100%[/color] Minimum Damage from the Assassinate perk"
+					text = "[color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color] Minimum Damage from the Assassinate perk"
 				},
 				{
 					id = 12,
 					type = "text",
 					icon = "ui/icons/regular_damage.png",
-					text = "[color=" + this.Const.UI.Color.PositiveValue + "]+100%[/color] Maximum Damage from the Assassinate perk"
-				},
+					text = "[color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color] Maximum Damage from the Assassinate perk"
+				}
 			]);
+			
+			if (actor.getSkills().hasSkill("background.legend_assassin") || actor.getSkills().hasSkill("background.assassin") || actor.getSkills().hasSkill("background.assassin_southern"))
+			{
+					{
+						id = 13,
+						type = "text",
+						icon = "ui/icons/regular_damage.png",
+						text = "[color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color] Maximum Damage from being an assassin"
+					}
+			}
+					
+			if (actor.getSkills().hasSkill("bbackground.legend_commander_assassin"))
+			{
+					{
+						id = 13,
+						type = "text",
+						icon = "ui/icons/regular_damage.png",
+						text = "[color=" + this.Const.UI.Color.PositiveValue + "]+100%[/color] Maximum Damage from being an assassin"
+					}
+			}			
 		}
 
 		ret.push({
@@ -165,9 +186,19 @@ this.legend_hidden_effect <- this.inherit("scripts/skills/skill", {
 		local actor = this.getContainer().getActor();
 		if (actor.getSkills().hasSkill("perk.legend_assassinate"))
 		{
-			_properties.DamageRegularMin *= 2;
-			_properties.DamageRegularMax *= 2;
+			_properties.DamageRegularMin *= 1.5;
+			_properties.DamageRegularMax *= 1.5;
+			
+			if (actor.getSkills().hasSkill("background.legend_assassin") || actor.getSkills().hasSkill("background.assassin") || actor.getSkills().hasSkill("background.assassin_southern"))
+			{
+			_properties.DamageRegularMax *= 1.5;
+			}	
+			if (actor.getSkills().hasSkill("bbackground.legend_commander_assassin"))
+			{
+			_properties.DamageRegularMax *= 2.0;
+			}	
 		}
+		
 		_properties.TargetAttractionMult *= 0.5;
 
 		actor.getSprite("armor").Alpha = 10;
