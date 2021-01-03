@@ -4549,6 +4549,7 @@ Transformation changes:
 *Wolf grants +100% health and melee defense, movement costs are decreased by 1 per tile and mvoement fatigue costs are decreased 
 *Rat grants 3 action points, poisoned bites, and 25 melee defense while retreating. it also inflicts -50% Resolve 
 
+
 Taking the perks to control your transformation now gradually grants the ability to use some items
 * bears can use a bag once they Master Anger 
 * boars can use their bag at Control Instincts and use a mainhand weapon at Master Anger
@@ -4572,6 +4573,7 @@ Militia Veterans no longer spawn naked
 
 
 **Fixes**
+Transformations no longer get beards on death, instead they revert to human
 Swordmasters no longer drop unlayered helmets
 straw hat vanity layer buffed to 5 durability
 Fixes a slew of retinue followers not being able to properly find backgrounds
