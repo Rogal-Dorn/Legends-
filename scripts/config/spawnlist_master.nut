@@ -1407,10 +1407,10 @@ gt.Const.World.Spawn.Troops <- {
 		Script = "scripts/entity/tactical/enemies/legend_skeleton_gladiator"
 	},
 	BanditVermes = {
-		ID = this.Const.EntityType.Direwolf,
+		ID = this.Const.EntityType.BanditVermes,
 		Variant = 0,
-		Strength = 5,
-		Cost = 5,
+		Strength = 7,
+		Cost = 7,
 		Row = 0,
 		Script = "scripts/entity/tactical/humans/peasant_armed_infected"
 	},

@@ -71,13 +71,6 @@ this.barbarian_champion <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_onslaught"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_pathfinder"));
 
-		if ("LegendsMod" in this.World && this.World.LegendsMod != null && this.World.LegendsMod.Configs().LegendTherianthropyEnabled())
-		{
-			if(this.Math.rand(1, 10) == 1)
-			{
-				this.m.Skills.add(this.new("scripts/skills/injury_permanent/legend_arborthropy_injury"));
-			}
-		}
 
 	 	if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 		{

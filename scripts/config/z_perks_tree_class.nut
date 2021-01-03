@@ -43,8 +43,8 @@ gt.Const.Perks.HealerClassTree <- {
 		"healing"
 	],
 	Tree = [
-		[],
 		[gt.Const.Perks.PerkDefs.LegendMedIngredients],
+		[],
 		[],
 		[gt.Const.Perks.PerkDefs.LegendSpecBandage],
 		[],
@@ -151,7 +151,7 @@ gt.Const.Perks.KnifeClassTree <- {
 		[],
 		[],
 		[gt.Const.Perks.PerkDefs.LegendHidden],
-		[gt.Const.Perks.PerkDefs.LegendUntouchable]
+		[gt.Const.Perks.PerkDefs.LegendAssassinate]
 	]
 };
 

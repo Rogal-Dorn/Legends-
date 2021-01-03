@@ -278,7 +278,7 @@ gt.Const.Strings.EntityName <- [
 	"Horse",
 	"Ancient Gladiator",
 	"Bandit Rabble Poacher",
-	"Bandit Vermes",
+	"Infected Bandit",
 	"Manhunter",
 	"Manhunter Veteran"
 	"Embalmed Slave",
@@ -2309,7 +2309,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendPrepareGraze = "Long slow deep rending scratches can leave many bleeding grazes. Grants the active skill Prepare to Bleed that primes your next strike to inflict weak but long lasting bleeding.",
 	LegendSlaughter = "If it bleeds, we can kill it. An existing injury can open up avenues of attack for the final slaughter. Gain [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] damage when attacking a bleeding enemy.",
 	LegendUntouchable = "Staying hidden is about more than just clever disguise, one must be prepared to avoid stray blows and arrows in the heat of battle. Extends your camouflage by two turns. ",
-	LegendAssassinate = "Becoming invisible is impressive, but it is what you do with this power that really count.  Striking from the shadows allows you to bypass enemy defenses and strike for their unfended weak points. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+200%[/color] damage while hidden",
+	LegendAssassinate = "Becoming invisible is impressive, but it is what you do with this power that really count.  Striking from the shadows allows you to bypass enemy defenses and strike for their unfended weak points. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color] maximum and minimum damage while hidden. Grants an additional [color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color] damage to Assassin backgrounds while hidden",
 	LegendMealPreperation = "A good company chef can make a meal from whatever can be scrounged up, and have it in your belly before camp breaks. Unlocks a chance to get better food rewards when this character hunts in camp. The chance and rewards increase as you level up. Includes porridge, pies and puddings. [color=#0b0084]From the Chef perk group[/color] ",
 	LegendAlcoholBrewing = "Any camp worth its salt will have an alcohol still fashioned out of whatever can be pulled together. Unlocks a chance to get alcohol as a reward when this character hunts in camp. The rewards increase as you level up. Includes beer, wine and mead. Also allows alcohol crafting in the crafting tent. [color=#0b0084]From the Chef perk group[/color]",
 	LegendHorseCharge = "Use the great weight and speed of the horse to charge forward. Move up to four spaces and attack an enemy",

@@ -30,7 +30,7 @@ this.legend_boar_gore <- this.inherit("scripts/skills/skill", {
 		this.m.InjuriesOnBody = this.Const.Injury.BluntBody;
 		this.m.InjuriesOnHead = this.Const.Injury.BluntHead;
 		this.m.DirectDamageMult = 0.5;
-		this.m.ActionPointCost = 3;
+		this.m.ActionPointCost = 4;
 		this.m.FatigueCost = 15;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 1;
@@ -41,12 +41,54 @@ this.legend_boar_gore <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		local p = this.getContainer().buildPropertiesForUse(this, null);
-		local damage_regular_min = this.Math.floor(p.DamageRegularMin * p.DamageRegularMult * p.DamageTotalMult * p.MeleeDamageMult);
-		local damage_regular_max = this.Math.floor(p.DamageRegularMax * p.DamageRegularMult * p.DamageTotalMult * p.MeleeDamageMult);
-		local damage_Armor_min = this.Math.floor(p.DamageRegularMin * p.DamageArmorMult * p.DamageTotalMult * p.MeleeDamageMult);
-		local damage_Armor_max = this.Math.floor(p.DamageRegularMax * p.DamageArmorMult * p.DamageTotalMult * p.MeleeDamageMult);
-		local damage_direct_max = this.Math.floor(damage_regular_max * (this.m.DirectDamageMult + p.DamageDirectAdd));
+	local p = actor.getCurrentProperties();
+		local mult = p.MeleeDamageMult;
+		local bodyHealth = actor.getHitpointsMax();
+		local average = (actor.getInitiative() +  bodyHealth) / 4;
+		local damageMin = 5;
+		local damageMax = 10;
+		local avgMin = average - 100;
+		local avgMax = average - 90;
+
+		if ((average - 100) > 0)
+		{
+			damageMin += avgMin;
+		}
+
+		if ((average - 90) > 0)
+		{
+			damageMax += avgMax;
+		}
+
+		if (this.getContainer().hasSkill("background.brawler") || this.getContainer().hasSkill("background.legend_commander_berserker") || this.getContainer().hasSkill("background.legend_berserker") )
+		{
+			damageMin = damageMin * 1.25;
+			damageMax = damageMax * 1.25;
+		}
+
+		local damage_regular_min = this.Math.floor(damageMin * p.DamageRegularMult * p.DamageTotalMult);
+		local damage_regular_max = this.Math.floor(damageMax * p.DamageRegularMult * p.DamageTotalMult);
+		local damage_Armor_min = this.Math.floor(damageMin * p.DamageArmorMult * p.DamageTotalMult);
+		local damage_Armor_max = this.Math.floor(damageMax * p.DamageArmorMult * p.DamageTotalMult);
+		local damage_direct_max = this.Math.floor(damageMax * this.m.DirectDamageMult);
+
+		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_muscularity"))
+		{
+			local muscularity = this.Math.floor(bodyHealth * 0.1);
+			 damage_regular_max += muscularity;
+			 damage_Armor_max += muscularity;
+			 damage_direct_max += muscularity;
+		}
+
+		if (mult != 1.0)
+		{
+			damage_regular_min = this.Math.floor(damage_regular_min * mult);
+			damage_regular_max = this.Math.floor(damage_regular_max * mult);
+			damage_Armor_min = this.Math.floor(damage_Armor_min * mult);
+			damage_Armor_max = this.Math.floor(damage_Armor_max * mult);
+			damage_direct_max = this.Math.floor(damage_direct_max * mult);
+		}
+
 		local ret = [
 			{
 				id = 1,
@@ -68,7 +110,7 @@ this.legend_boar_gore <- this.inherit("scripts/skills/skill", {
 			id = 4,
 			type = "text",
 			icon = "ui/icons/regular_damage.png",
-			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + damage_regular_min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + damage_regular_max + "[/color] damage to hitpoints, of which [color=" + this.Const.UI.Color.DamageValue + "]0[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + damage_direct_max + "[/color] can ignore armor"
+			text = "Inflicts damage based on hitpoints and initiative [color=" + this.Const.UI.Color.DamageValue + "]" + damage_regular_min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + damage_regular_max + "[/color] damage, up to [color=" + this.Const.UI.Color.DamageValue + "]" + damage_direct_max + "[/color] damage can ignore armor"
 		});
 
 		if (damage_Armor_max > 0)
@@ -77,15 +119,15 @@ this.legend_boar_gore <- this.inherit("scripts/skills/skill", {
 				id = 5,
 				type = "text",
 				icon = "ui/icons/armor_damage.png",
-				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + damage_Armor_min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + damage_Armor_max + "[/color] damage to armor"
+				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + damage_Armor_min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + damage_Armor_max + "[/color] armor damage"
 			});
 		}
 
 		ret.push({
-			id = 7,
+			id = 6,
 			type = "text",
-			icon = "ui/icons/special.png",
-			text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]100%[/color] chance to stagger on a hit"
+			icon = "ui/icons/hitchance.png",
+			text = "Has [color=" + this.Const.UI.Color.NegativeValue + "]-10%[/color] chance to hit"
 		});
 		return ret;
 	}
@@ -123,8 +165,59 @@ this.legend_boar_gore <- this.inherit("scripts/skills/skill", {
 	{
 		if (_skill == this)
 		{
-			_properties.DamageRegularMin += 20;
-			_properties.DamageRegularMax += 20;
+			local actor = this.getContainer().getActor();
+			local bodyHealth = actor.getHitpointsMax();
+			local average = (actor.getInitiative() +  bodyHealth) / 4;
+			local damageMin = 5;
+			local damageMax = 10;
+			local avgMin = average - 100;
+			local avgMax = average - 90;
+
+			if ((average - 100) > 0)
+			{
+				damageMin += avgMin;
+			}
+
+			if ((average - 90) > 0)
+			{
+				damageMax += avgMax;
+			}
+
+
+			if (damageMin > 50)
+			{
+			local minMod = (damageMin - 50);
+			local minFalloff = this.Math.pow(minMod, 0.5);
+			damageMin = 50 + minFalloff;
+			}
+
+			if (damageMax > 50)
+			{
+			local maxMod = (damageMax - 50);
+			local maxFalloff = this.Math.pow(maxMod, 0.5);
+			damageMax = 50 + maxFalloff;
+			}
+
+			
+
+
+			if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_muscularity"))
+			{
+				local muscularity = this.Math.floor(bodyHealth * 0.1);
+				damageMax += muscularity;
+			}
+
+			if (this.getContainer().hasSkill("background.brawler") || this.getContainer().hasSkill("background.legend_commander_berserker" || this.getContainer().hasSkill("background.legend_berserker")) )
+			{
+				damageMin = damageMin * 1.25;
+				damageMax = damageMax * 1.25;
+			}
+			_properties.DamageRegularMin += this.Math.floor(damageMin);
+			_properties.DamageRegularMax += this.Math.floor(damageMax);
+			_properties.MeleeSkill += _properties.IsSpecializedInFists ? 10 : -10;
+
+
+			this.m.DirectDamageMult = _properties.IsSpecializedInFists ? 0.5 : 0.1;
 		}
 	}
 

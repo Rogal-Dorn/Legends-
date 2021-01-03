@@ -43,7 +43,7 @@ this.legend_transformed_rat_effect <- this.inherit("scripts/skills/skill", {
 					id = 11,
 					type = "text",
 					icon = "ui/icons/special.png",
-					text = "This character has lost control of themselves and may attack randomly. May still need your help to end their turn. "
+					text = "This character is infected with vermesthropy and has become a rat. If out of control they may still need your help to end their turn. "
 				}
 			]);
 		}
@@ -104,38 +104,46 @@ this.legend_transformed_rat_effect <- this.inherit("scripts/skills/skill", {
 		this.m.OriginalSocket = actor.getSprite("socket").getBrush().Name;
 		actor.getSprite("socket").setBrush("bust_base_beasts");
 		actor.setDirty(true);
-		
-		// remove items 
+
 		this.logDebug(this.getName() + " removing items");
 		local items = actor.getItems();
-		if (items.getItemAtSlot(this.Const.ItemSlot.Mainhand))
+		
+		if (!this.m.Container.hasSkill("perk.legend_control_instincts"))
 		{
-			local item = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
-			items.unequip(item);
-			this.m.Items.push(item);
+		// remove items
+
+			if (items.getItemAtSlot(this.Const.ItemSlot.Mainhand))
+			{
+				local item = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
+				items.unequip(item);
+				this.m.Items.push(item);
+			}
+			if (items.getItemAtSlot(this.Const.ItemSlot.Offhand))
+			{
+				local item = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
+				items.unequip(item);
+				this.m.Items.push(item);
+			}
+			foreach (i in items.getAllItemsAtSlot(this.Const.ItemSlot.Bag))
+			{
+				items.unequip(i);
+				this.m.Items.push(i);
+			}
 		}
-		if (items.getItemAtSlot(this.Const.ItemSlot.Offhand))
+		if (!this.m.Container.hasSkill("perk.legend_master_anger"))
 		{
-			local item = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
-			items.unequip(item);
-			this.m.Items.push(item);
-		}
-		if (items.getItemAtSlot(this.Const.ItemSlot.Body))
-		{
-			local item = items.getItemAtSlot(this.Const.ItemSlot.Body);
-			items.unequip(item);
-			this.m.Items.push(item);
-		}
-		if (items.getItemAtSlot(this.Const.ItemSlot.Head))
-		{
-			local item = items.getItemAtSlot(this.Const.ItemSlot.Head);
-			items.unequip(item);
-			this.m.Items.push(item);
-		}
-		foreach (i in items.getAllItemsAtSlot(this.Const.ItemSlot.Bag))
-		{
-			items.unequip(i);
-			this.m.Items.push(i);
+			if (items.getItemAtSlot(this.Const.ItemSlot.Body))
+			{
+				local item = items.getItemAtSlot(this.Const.ItemSlot.Body);
+				items.unequip(item);
+				this.m.Items.push(item);
+			}
+			if (items.getItemAtSlot(this.Const.ItemSlot.Head))
+			{
+				local item = items.getItemAtSlot(this.Const.ItemSlot.Head);
+				items.unequip(item);
+				this.m.Items.push(item);
+			}
 		}
 
 		foreach( i in this.m.Items )
@@ -210,6 +218,11 @@ this.legend_transformed_rat_effect <- this.inherit("scripts/skills/skill", {
 		this.removeEffect();
 	}
 	
+	function onDeath()
+	{
+		this.onRemoved();
+	}
+	
 	function onCombatFinished()
 	{
 	  	this.removeSelf();
@@ -218,11 +231,23 @@ this.legend_transformed_rat_effect <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		_properties.ActionPoints = this.Math.floor(_properties.ActionPoints * 1.25);
-		_properties.MeleeSkillMult *= 1.25;
-		_properties.BraveryMult *= 0.75;
-	}
+		_properties.ActionPoints += 3;
+		_properties.BraveryMult *= 0.5;
 
+	}
+	
+	function onBeingAttacked( _attacker, _skill, _properties )
+	{
+		if (("State" in this.Tactical) && this.Tactical.State != null && this.Tactical.State.isScenarioMode())
+		{
+			return;
+		}
+
+		if (this.getContainer().getActor().isPlacedOnMap() && this.Tactical.State.isAutoRetreat() && this.Tactical.TurnSequenceBar.getActiveEntity() != null && this.Tactical.TurnSequenceBar.getActiveEntity().getID() == this.getContainer().getActor().getID())
+		{
+			_properties.MeleeDefense += 25;
+		}
+	}
 
 	function onTurnEnd()
 	{
