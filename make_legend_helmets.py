@@ -554,11 +554,11 @@ layers = [
  "title" :  "Famed Heavy Plate Helm", \
  "desc" :  "This heavy helmet has ornamental horns attached and is of exceptional quality among the barbarian clans. This is a sign of high standing and reputation within barbarian warbands." \
 },
-{"name" : "crude_skull_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 5000, "con" : 130, "stam" : -7, "vis" : -2, "hair" : "true", "beard" : "false", "named" : True, "rminViz" : -1, "rmaxViz" : -2, "rminStam" : -5, "rmaxStam" : -7, "rminCond" : 130, "rmaxCond" : 155, "names" : Names,  \
+{"name" : "crude_skull_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 3000, "con" : 130, "stam" : -7, "vis" : -2, "hair" : "true", "beard" : "false", "named" : True, "rminViz" : -1, "rmaxViz" : -2, "rminStam" : -5, "rmaxStam" : -7, "rminCond" : 130, "rmaxCond" : 155, "names" : Names,  \
  "title" :  "Crude Skull Helm", \
  "desc" :  "A heavy helmet typical of the northern barbarians with a skull-like facemask. This piece is as massive as it is impressive." \
 },
-{"name" : "heavy_spiked_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 5000, "con" : 150, "stam" : -9, "vis" : -2, "hair" : "true", "beard" : "true", "named" : True, "rminViz" : -1, "rmaxViz" : -2, "rminStam" : -7, "rmaxStam" : -9, "rminCond" : 150, "rmaxCond" : 175, "names" : Names,  \
+{"name" : "heavy_spiked_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 3000, "con" : 150, "stam" : -10, "vis" : -2, "hair" : "true", "beard" : "true", "named" : True, "rminViz" : -1, "rmaxViz" : -2, "rminStam" : -7, "rmaxStam" : -9, "rminCond" : 150, "rmaxCond" : 175, "names" : Names,  \
  "title" :  "Heavy Spiked Helm", \
  "desc" :  "his helmet must have belonged to a distinct warrior of the barbarians. Its size and design appear alien to all southern folks." \
 },
@@ -587,9 +587,17 @@ layers = [
  "title" :  "Nasal Helmet", \
  "desc" :  "A metal helmet with added noseguard." \
 },
+{"name" : "flat_top_helm_low"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 450, "con" : 45, "stam" : -3, "vis" : -1, "hair" : "true", "beard" : "false",  \
+ "title" :  "Rusted Flat Top Helm", \
+ "desc" :  "A flat top helm that is worn out, rusted, dented and will never be fully repairable" \
+},
 {"name" : "flat_top_helm"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 450, "con" : 75, "stam" : -5, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Flat Top Helm", \
  "desc" :  "A flat full-metal helmet with noseguard." \
+},
+{"name" : "flat_top_helm_polished"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 450, "con" : 150, "stam" : -10, "vis" : -1, "hair" : "true", "beard" : "false",  \
+ "title" :  "Flat Top Helm", \
+ "desc" :  "A outstandingly well made and maintained flat full-metal helmet with noseguard." \
 },
 {"name" : "barbute"                     , "layer" : "helm", "min" : 1, "max" : 7, "value" : 2600, "con" : 110, "stam" : -3, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Barbute", \
@@ -619,15 +627,19 @@ layers = [
  "title" :  "Great Bascinet", \
  "desc" :  "A tall helm composed of a peaked bascinet and riveted cheek protection." \
 },
-{"name" : "kettle_helm"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 390, "con" : 85, "stam" : -9, "vis" : -2, "hair" : "true", "beard" : "false",  \
+{"name" : "kettle_helm_low"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 390, "con" : 85, "stam" : -9, "vis" : -2, "hair" : "true", "beard" : "false",  \
+ "title" :  "Rusted Kettle Helm", \
+ "desc" :  "A full-metal helmet with a broad rim, it has been poorly maintained and is now rusted, dented and will never be fulyl repaired." \
+},
+{"name" : "kettle_helm"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 1600, "con" : 160, "stam" : -12, "vis" : -2, "hair" : "true", "beard" : "false",  \
  "title" :  "Kettle Helm", \
  "desc" :  "A full-metal helmet with a broad rim." \
 },
-{"name" : "kettle_helm_named"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 2300, "con" : 160, "stam" : -15, "vis" : -2, "hair" : "true", "beard" : "false", "named" : True, "rminViz" : -1, "rmaxViz" : -2, "rminStam" : -3, "rmaxStam" : -6, "rminCond" : 160, "rmaxCond" : 185, "names" : Names, \
+{"name" : "kettle_helm_named"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 2500, "con" : 180, "stam" : -16, "vis" : -2, "hair" : "true", "beard" : "false", "named" : True, "rminViz" : -1, "rmaxViz" : -2, "rminStam" : -3, "rmaxStam" : -6, "rminCond" : 160, "rmaxCond" : 185, "names" : Names, \
  "title" :  "Kettle Helm", \
  "desc" :  "An exceptional and sturdy kettle helm. Blackened and polished, it has a gilded point." \
 },
-{"name" : "enclave_kettle"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1600, "con" : 130, "stam" : -12, "vis" : -2, "hair" : "true", "beard" : "false",  \
+{"name" : "enclave_kettle"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 2100, "con" : 160, "stam" : -15, "vis" : -2, "hair" : "true", "beard" : "false",  \
  "title" :  "Kettle Sallet", \
  "desc" :  "A full-metal sallet with a broad rim." \
 },
@@ -652,9 +664,17 @@ layers = [
  "title" :  "Sallet", \
  "desc" :  "A metal sallet helmet with an extended neckguard, a design uncommon in these lands. It is well crafted to offer maximum protection with minimum weight, and without impairing vision." \
 },
-{"name" : "nordic_helm"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 2600, "con" : 185, "stam" : -10, "vis" : -1, "hair" : "true", "beard" : "false",  \
+{"name" : "nordic_helm_low"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 460, "con" : 95, "stam" : -7, "vis" : -1, "hair" : "true", "beard" : "false",  \
+ "title" :  "Rusted Nordic Helm", \
+ "desc" :  "A poorly maintained nordic helmet guarding face and neck with additional metal plates. It is rusted, dented, bent and will never be fully repaired." \
+},
+{"name" : "nordic_helm"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 2250, "con" : 175, "stam" : -12, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Nordic Helm", \
  "desc" :  "A nordic helmet guarding face and neck with additional metal plates." \
+},
+{"name" : "nordic_helm_high"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 4000, "con" : 195, "stam" : -15, "vis" : -1, "hair" : "true", "beard" : "false",  \
+ "title" :  "Nordic Helm", \
+ "desc" :  "A spectacularly well constructed and maintained nordic helmet guarding face and neck with additional metal plates." \
 },
 {"name" : "bronze_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 2400, "con" : 190, "stam" : -9, "vis" : -2, "hair" : "true", "beard" : "false",  \
  "title" :  "Bronze Helm", \
@@ -696,11 +716,11 @@ layers = [
  "title" :  "Heavy Lamellar Helmet", \
  "desc" :  "A heavy helmet made from overlapping metal plates." \
 },
-{"name" : "italo_norman_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1500, "con" : 180, "stam" : -10, "vis" : -1, "hair" : "true", "beard" : "true",  \
- "title" :  "Conic Helm", \
- "desc" :  "A pointed conic helm with a very large bill-shaped faceplate." \
+{"name" : "italo_norman_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1500, "con" : 120, "stam" : -10, "vis" : -1, "hair" : "true", "beard" : "true",  \
+ "title" :  "Italio Norman Helm", \
+ "desc" :  "A curved metal helm in a distinctive style. It has a large duck-bill shaped faceplate covering the front" \
 },
-{"name" : "italo_norman_helm_named"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 3000, "con" : 220, "stam" : -10, "vis" : -1, "hair" : "true", "beard" : "true", "named" : True, "rminViz" : 0, "rmaxViz" : -1, "rminStam" : -7, "rmaxStam" : -10, "rminCond" : 220, "rmaxCond" : 245, "names" : Names,  \
+{"name" : "italo_norman_helm_named"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 3000, "con" : 180, "stam" : -10, "vis" : -1, "hair" : "true", "beard" : "true", "named" : True, "rminViz" : 0, "rmaxViz" : -1, "rminStam" : -7, "rmaxStam" : -10, "rminCond" : 220, "rmaxCond" : 245, "names" : Names,  \
  "title" :  "Conic Helm", \
  "desc" :  "A well-built and lavishly decorated pointed conic helm. It has a large duck-bill shaped faceplate covering the front." \
 },
