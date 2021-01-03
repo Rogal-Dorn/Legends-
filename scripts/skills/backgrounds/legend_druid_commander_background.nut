@@ -105,21 +105,20 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.Colossus,
 				this.Const.Perks.PerkDefs.NineLives,
 				this.Const.Perks.PerkDefs.Pathfinder,
-				this.Const.Perks.PerkDefs.Steadfast,
 				this.Const.Perks.PerkDefs.Recover,
-				this.Const.Perks.PerkDefs.LegendBackToBasics,
 				this.Const.Perks.PerkDefs.LegendSpecStaffSkill,
 				this.Const.Perks.PerkDefs.LegendAlert,
 				this.Const.Perks.PerkDefs.LegendTrueForm,
 				this.Const.Perks.PerkDefs.LegendGatherer,
-				this.Const.Perks.PerkDefs.LegendRoots
+				this.Const.Perks.PerkDefs.LegendMedIngredients,
+				this.Const.Perks.PerkDefs.LegendWither
+				
 			],
 			[
 				this.Const.Perks.PerkDefs.CoupDeGrace,
 				this.Const.Perks.PerkDefs.Dodge,
 				this.Const.Perks.PerkDefs.HoldOut,
 				this.Const.Perks.PerkDefs.LegendComposure,
-				this.Const.Perks.PerkDefs.SteelBrow,
 				this.Const.Perks.PerkDefs.QuickHands,
 				this.Const.Perks.PerkDefs.FortifiedMind,
 				this.Const.Perks.PerkDefs.LegendSmackdown,
@@ -129,7 +128,6 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.LegendSummonFalcon
 			],
 			[
-				this.Const.Perks.PerkDefs.Brawny,
 				this.Const.Perks.PerkDefs.Rotation,
 				this.Const.Perks.PerkDefs.Taunt,
 				this.Const.Perks.PerkDefs.Feint,
@@ -137,30 +135,34 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.LegendSpecStaffStun,
 				this.Const.Perks.PerkDefs.LegendGrapple,
 				this.Const.Perks.PerkDefs.LegendSecondWind,
-				this.Const.Perks.PerkDefs.LegendBearform,	//LegendSurpressUrges,
+				this.Const.Perks.PerkDefs.LegendRoots,
 				this.Const.Perks.PerkDefs.LegendPrayerOfLife
 
 			],
 			[
 				this.Const.Perks.PerkDefs.LegendSummonWolf,
+				this.Const.Perks.PerkDefs.SpecThrowing,
 				this.Const.Perks.PerkDefs.LegendMasteryStaves,
 				this.Const.Perks.PerkDefs.LegendSpecFists,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyOrk,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyGoblin,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyBandit,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyNoble
+				this.Const.Perks.PerkDefs.LegendSpecBandage,
 				this.Const.Perks.PerkDefs.LegendPoisonImmunity,
-				this.Const.Perks.PerkDefs.LegendPotionBrewer,
-				this.Const.Perks.PerkDefs.SpecThrowing
+				this.Const.Perks.PerkDefs.LegendSpecPoison,
+				this.Const.Perks.PerkDefs.LegendPotionBrewer
+	
+				
 			],
 			[
 				this.Const.Perks.PerkDefs.LoneWolf,
 				this.Const.Perks.PerkDefs.Footwork,
 				this.Const.Perks.PerkDefs.Vengeance,
 				this.Const.Perks.PerkDefs.LegendBattleheart,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyOrk,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyNoble
 				this.Const.Perks.PerkDefs.LegendChoke,
 				this.Const.Perks.PerkDefs.LegendSummonStorm,
-				this.Const.Perks.PerkDefs.LegendWolfform,	//LegendControlInstincts,
+				this.Const.Perks.PerkDefs.LegendInsects,
 				this.Const.Perks.PerkDefs.LegendReadOmensTrance
 			],
 			[
@@ -181,8 +183,11 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.KillingFrenzy,
 				this.Const.Perks.PerkDefs.BattleFlow,
 				this.Const.Perks.PerkDefs.Stalwart,
-				this.Const.Perks.PerkDefs.LegendFreedomOfMovement,
-				this.Const.Perks.PerkDefs.LegendTreeform	//LegendMasterAnger
+				this.Const.Perks.PerkDefs.LegendUberNimble,
+				this.Const.Perks.PerkDefs.LegendMiasma,
+				this.Const.Perks.PerkDefs.LegendFieldTriage,
+				this.Const.Perks.PerkDefs.LegendFreedomOfMovement
+			
 			]
 		];
 

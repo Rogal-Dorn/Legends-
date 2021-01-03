@@ -113,17 +113,32 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 		// remove items
 		this.logDebug(this.getName() + " removing items");
 		local items = actor.getItems();
-		if (items.getItemAtSlot(this.Const.ItemSlot.Mainhand))
+
+		if (!this.m.Container.hasSkill("perk.legend_surpress_urges"))
 		{
-			local item = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
-			items.unequip(item);
-			this.m.Items.push(item);
+			foreach (i in items.getAllItemsAtSlot(this.Const.ItemSlot.Bag))
+			{
+				items.unequip(i);
+				this.m.Items.push(i);
+			}
 		}
-		if (items.getItemAtSlot(this.Const.ItemSlot.Offhand))
+		if (!this.m.Container.hasSkill("perk.legend_control_instincts"))
 		{
-			local item = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
-			items.unequip(item);
-			this.m.Items.push(item);
+			if (items.getItemAtSlot(this.Const.ItemSlot.Mainhand))
+			{
+				local item = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
+				items.unequip(item);
+				this.m.Items.push(item);
+			}
+		}
+		if (this.m.Container.hasSkill("perk.legend_master_anger"))
+		{
+			if (items.getItemAtSlot(this.Const.ItemSlot.Offhand))
+			{
+				local item = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
+				items.unequip(item);
+				this.m.Items.push(item);
+			}
 		}
 		if (items.getItemAtSlot(this.Const.ItemSlot.Body))
 		{
@@ -137,11 +152,7 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 			items.unequip(item);
 			this.m.Items.push(item);
 		}
-		foreach (i in items.getAllItemsAtSlot(this.Const.ItemSlot.Bag))
-		{
-			items.unequip(i);
-			this.m.Items.push(i);
-		}
+
 		foreach( i in this.m.Items )
 			i.drop(this.getContainer().getActor().getTile());
 		foreach( i in this.m.Items )
@@ -230,7 +241,7 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 	{
 		_properties.MovementAPCostAdditional += -1;
 		_properties.MovementFatigueCostMult *= 0.5;
-		_properties.HitpointsMult *= 1.5;
+		_properties.HitpointsMult *= 2.0;
 		_properties.MeleeDefenseMult *= 2.0;
 	}
 

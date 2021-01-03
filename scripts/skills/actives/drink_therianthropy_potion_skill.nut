@@ -56,7 +56,7 @@ this.drink_therianthropy_potion_skill <- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Will inflict a permanent therianthropic injury on the drinker"
+				text = "Will inflict a permanent therianthropic injury on the drinker, allowing them to transform into a beast"
 			}
 		];
 

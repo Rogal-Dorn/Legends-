@@ -29,7 +29,13 @@ this.legend_ursathropy_injury <- this.inherit("scripts/skills/injury_permanent/p
 				id = 16,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "This character is cursed to transform into a werebear"
+				text = "When transformed you will lose control of them, they will drop all their items and turn into a rat, with a poisonous Bite and Claws. They will gain 2 action points, and they will gain 25 melee defense while retreating, but their resolve will halve."
+			},
+			{
+				id = 17,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "The infection has unlocked a new set of perks which help manage the disease. These perks will give you control over their transformations, and let them carry items in their bag while transformed."
 			}
 		];
 		this.addTooltipHint(ret);

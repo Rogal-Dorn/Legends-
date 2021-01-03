@@ -107,12 +107,12 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 			Enemy = [],
 			Class = [
 				this.Const.Perks.FistsClassTree,
+				this.Const.Perks.HealerClassTree,
 				this.Const.Perks.SickleClassTree
 
 				],
 			Magic = [
-				this.Const.Perks.DruidMagicTree,
-				this.Const.Perks.DruidTransformTree
+				this.Const.Perks.DruidMagicTree
 			]
 		}
 	}
