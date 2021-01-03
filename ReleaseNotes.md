@@ -4550,5 +4550,5 @@ Fixes a slew of retinue followers not being able to properly find backgrounds
 
 **Armor Tweaks**
 Added three named helms (named bascinet, named kettle helm, named barbute)
-
+Added Wallace Sallet, with a named variant (painted version)
 
