@@ -260,7 +260,6 @@ this.$name <- this.inherit("scripts/items/legend_helmets/legend_named_helmet_upg
 		this.legend_named_helmet_upgrade.create();
 		this.m.Type = this.Const.Items.HelmetUpgrades.$type;
 		this.m.ID = "$id";
-		this.m.Name = "$title";
         this.m.NameList = $names;
 		this.m.Description = "$desc";
 		this.m.ArmorDescription = this.m.Description;
