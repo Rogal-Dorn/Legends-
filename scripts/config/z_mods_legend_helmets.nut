@@ -1811,6 +1811,60 @@ gt.Const.LegendMod.HelmObjs.extend([
             [1, "vanity/legend_helmet_top_feather"],
         ]
     }]
+    },
+	{
+        ID = "wallace_sallet", //170, -10, -2, 1000
+        Script = "",
+        Sets = [{
+        Hoods = [
+            [1, "hood/legend_helmet_padded_hood"], //50, -2, 0
+            [1, "hood/legend_helmet_chain_hood_full"], //90, -6, 0
+            [1, "hood/legend_helmet_southern_chain_hood"] //90, -6, 0
+        ],
+        Helms = [
+             [1, "helm/legend_helmet_wallace_sallet"] //140, -7, -2
+        ],
+        Tops = [
+               [1, "top/legend_helmet_wallace_sallet_visor"] //60, -2, -1
+        ],
+        Vanity = [
+            [10, ""],
+            [1, "vanity/legend_helmet_noble_feather"],
+            [1, "vanity/legend_helmet_side_feather"],
+            [1, "vanity/legend_helmet_plait"], //10
+            [1, "vanity/legend_helmet_noble_feather"],
+            [1, "vanity/legend_helmet_side_wings"],
+            [1, "vanity/legend_helmet_side_wings_gold"],
+            [1, "vanity/legend_helmet_top_feather"],
+        ]
+    }]
+    },
+	{
+        ID = "wallace_sallet_named", //170, -10, -2, 1000
+        Script = "",
+        Sets = [{
+        Hoods = [
+            [1, "hood/legend_helmet_padded_hood"], //50, -2, 0
+            [1, "hood/legend_helmet_chain_hood_full"], //90, -6, 0
+            [1, "hood/legend_helmet_southern_chain_hood"] //90, -6, 0
+        ],
+        Helms = [
+             [1, "helm/legend_helmet_wallace_sallet_named"] //140, -7, -2
+        ],
+        Tops = [
+               [1, "top/legend_helmet_wallace_sallet_visor_named"] //60, -2, -1
+        ],
+        Vanity = [
+            [10, ""],
+            [1, "vanity/legend_helmet_noble_feather"],
+            [1, "vanity/legend_helmet_side_feather"],
+            [1, "vanity/legend_helmet_plait"], //10
+            [1, "vanity/legend_helmet_noble_feather"],
+            [1, "vanity/legend_helmet_side_wings"],
+            [1, "vanity/legend_helmet_side_wings_gold"],
+            [1, "vanity/legend_helmet_top_feather"],
+        ]
+    }]
     }
 ])
 

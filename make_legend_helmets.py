@@ -647,7 +647,14 @@ layers = [
  "title" :  "Metal Skullcap", \
  "desc" :  "A metal cap that covers the head." \
 },
-
+{"name" : "wallace_sallet"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1900, "con" : 140, "stam" : -7, "vis" : -1, "hair" : "true", "beard" : "false",  \
+ "title" :  "Sallet", \
+ "desc" :  "A deep sallet covering the head protectively." \
+},
+{"name" : "wallace_sallet_named"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 3200, "con" : 180, "stam" : -7, "vis" : -1, "hair" : "true", "beard" : "false", "named" : True, "rminViz" : -0, "rmaxViz" : -1, "rminStam" : -4, "rmaxStam" : -7, "rminCond" : 180, "rmaxCond" : 205, "names" : Names, \
+ "title" :  "Sallet", \
+ "desc" :  "A skillfully painted sallet. It is made of strong steel and should protect one's skull from all kinds of trauma." \
+},
 {"name" : "flat_top_face_plate"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 2000, "con" : 130, "stam" : -7, "vis" : -2, "hair" : "true", "beard" : "true",  \
  "title" :  "Flat Top Face Plate", \
  "desc" :  "A flat full-metal helmet with faceplate." \
@@ -943,6 +950,14 @@ layers = [
 {"name" : "enclave_armet_visor"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 450, "con" : 40, "stam" : -3, "vis" : -1, "hair" : "false", "beard" : "true",  \
  "title" :  "Armet Visor", \
  "desc" :  "A visor that fits on the armet, protecting the lower jaw while leaving a slit for eyesight." \
+},
+{"name" : "wallace_sallet_visor"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 450, "con" : 40, "stam" : -3, "vis" : -2, "hair" : "false", "beard" : "true",  \
+ "title" :  "Sallet Visor", \
+ "desc" :  "A visor made for sallets. It has two eye-slits as well as a few breathing holes in the center." \
+},
+{"name" : "wallace_sallet_visor_named"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 450, "con" : 60, "stam" : -3, "vis" : -2, "hair" : "false", "beard" : "true", "named" : True, "rminViz" : -1, "rmaxViz" : -2, "rminStam" : -2, "rmaxStam" : -3, "rminCond" : 60, "rmaxCond" : 85, "names" : Names, \
+ "title" :  "Sallet Visor", \
+ "desc" :  "This visor bears an exquisite caricature of a beast's face on the front, putting terror into any who gaze upon it." \
 },
 {"name" : "enclave_venitian_bascinet_visor"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 450, "con" : 45, "stam" : -3, "vis" : -1, "hair" : "false", "beard" : "true",  \
  "title" :  "Great Bascinet Visor", \
