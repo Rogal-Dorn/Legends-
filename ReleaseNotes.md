@@ -4548,7 +4548,13 @@ Swordmasters no longer drop unlayered helmets
 straw hat vanity layer buffed to 5 durability
 Fixes a slew of retinue followers not being able to properly find backgrounds
 
+
 **Armor Tweaks**
 Added three named helms (named bascinet, named kettle helm, named barbute)
+fixed kettle helms giving too much armor  in the early game 
+goblin chain helm and spike helm values swapped 
+fixes incorrectly applied traits on noble servant 
+
+
 
 

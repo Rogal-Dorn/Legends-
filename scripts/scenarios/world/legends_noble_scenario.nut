@@ -211,11 +211,11 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[5].setStartValuesEx([
 		"legend_noble_ranged"
 		]);
-		bros[4].getBackground().m.RawDescription = "%name% has one the house archery contest several years running, but never shuts up about it. The constant stream of narration, makes the great aim easy to dodge.";
-		bros[4].getBackground().buildDescription(true);
-		bros[4].getSkills().add(this.new("scripts/skills/traits/sureshot_trait"));
-		bros[4].getSkills().add(this.new("scripts/skills/traits/teamplayer_trait"));
-		bros[4].getSkills().add(this.new("scripts/skills/traits/predictable_trait"));
+		bros[5].getBackground().m.RawDescription = "%name% has one the house archery contest several years running, but never shuts up about it. The constant stream of narration, makes the great aim easy to dodge.";
+		bros[5].getBackground().buildDescription(true);
+		bros[5].getSkills().add(this.new("scripts/skills/traits/sureshot_trait"));
+		bros[5].getSkills().add(this.new("scripts/skills/traits/teamplayer_trait"));
+		bros[5].getSkills().add(this.new("scripts/skills/traits/predictable_trait"));
 		if (bros[4].getBaseProperties().RangedSkill  <= 60) {
 			bros[4].getBaseProperties().RangedSkill  += 5;
 		}
