@@ -13,7 +13,7 @@ this.therianthropy_potion_item <- this.inherit("scripts/items/accessory/accessor
 		this.m.IconLarge = "";
 		this.m.Icon = "consumables/potion_therianthropy.png";
 		this.m.StaminaModifier = -4;
-		this.m.Value = 50000;
+		this.m.Value = 500;
 	}
 
 	function getTooltip()
