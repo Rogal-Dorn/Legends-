@@ -9,231 +9,86 @@ this.tactical_legend_tournament <- this.inherit("scripts/mapgen/tactical_templat
 
 	function fill( _rect, _properties, _pass = 1 )
 	{
-	
-		
-		
-		
-		local r = this.Math.rand(1, 5);	
-		switch(r){
-		case 1:
-			//steppe theme
-			local Tile1 = this.MapGen.get("tactical.tile.steppe1");
-			local Tile2 = this.MapGen.get("tactical.tile.steppe2");
-			local Tile3 = this.MapGen.get("tactical.tile.steppe3");
-			local Tile4 = this.MapGen.get("tactical.tile.steppe4");
-			return;
-		case 2:
-			//autumn theme
-			local Tile1 = this.MapGen.get("tactical.tile.autumn1");
-			local Tile2 = this.MapGen.get("tactical.tile.autumn2");
-			local Tile3 = this.MapGen.get("tactical.tile.autumn3");
-			local Tile4 = this.MapGen.get("tactical.tile.autumn4");
-			return;
-		case 3:
-			//forest theme
-			local Tile1 = this.MapGen.get("tactical.tile.forest1");
-			local Tile2 = this.MapGen.get("tactical.tile.forest2");
-			local Tile3 = this.MapGen.get("tactical.tile.moss1");
-			local Tile4 = this.MapGen.get("tactical.tile.moss2");
-		case 4:
-			//swamp theme
-			local Tile1 = this.MapGen.get("tactical.tile.swamp1");
-			local Tile2 = this.MapGen.get("tactical.tile.swamp2");
-			local Tile3 = this.MapGen.get("tactical.tile.swamp3");
-			local Tile4 = this.MapGen.get("tactical.tile.swamp4");	
-			return;
-		case 5:
-			//desert theme
-			local Tile1 = this.MapGen.get("tactical.tile.desert1");
-			local Tile2 = this.MapGen.get("tactical.tile.desert2");
-			local Tile3 = this.MapGen.get("tactical.tile.desert3");
-			local Tile4 = this.MapGen.get("tactical.tile.desert4");	
-			return;
-		case 6:
-			//snow theme
-			local Tile1 = this.MapGen.get("tactical.tile.snow1");
-			local Tile2 = this.MapGen.get("tactical.tile.snow2");
-			local Tile3 = this.MapGen.get("tactical.tile.snow3");
-			local Tile4 = this.MapGen.get("tactical.tile.snow4");	
-			return;
-		case 7:
-			//grass theme
-			local Tile1 = this.MapGen.get("tactical.tile.grass1");
-			local Tile2 = this.MapGen.get("tactical.tile.grass2");
-			local Tile3 = this.MapGen.get("tactical.tile.earth1");
-			local Tile4 = this.MapGen.get("tactical.tile.earth2");	
-			return;
-		case 8:
-			//moss theme
-			local Tile1 = this.MapGen.get("tactical.tile.moss1");
-			local Tile2 = this.MapGen.get("tactical.tile.moss2");
-			local Tile3 = this.MapGen.get("tactical.tile.forest1");
-			local Tile4 = this.MapGen.get("tactical.tile.forest2");	
-			return;
-		case 8:
-			//stone theme
-			local Tile1 = this.MapGen.get("tactical.tile.stone1");
-			local Tile2 = this.MapGen.get("tactical.tile.stone2");
-			local Tile3 = this.MapGen.get("tactical.tile.stone3");
-			local Tile4 = this.MapGen.get("tactical.tile.earth1");	
-			return;
-		case 9:
-			//tundra theme
-			local Tile1 = this.MapGen.get("tactical.tile.tundra1");
-			local Tile2 = this.MapGen.get("tactical.tile.tundra2");
-			local Tile3 = this.MapGen.get("tactical.tile.tundra3");
-			local Tile4 = this.MapGen.get("tactical.tile.tundra4");	
-			return;
-		case 10:
-			//dirt theme
-			local Tile1 = this.MapGen.get("tactical.tile.earth1");
-			local Tile2 = this.MapGen.get("tactical.tile.earth2");
-			local Tile3 = this.MapGen.get("tactical.tile.grass1");
-			local Tile4 = this.MapGen.get("tactical.tile.grass2");	
-			return;
-		}
-		
+
 		this.addRoads(_rect, _properties);
+
+		local patches = [
+			["tactical.tile.steppe1", "tactical.tile.steppe2", "tactical.tile.steppe3", "tactical.tile.steppe4"],
+			["tactical.tile.autumn1", "tactical.tile.autumn2", "tactical.tile.autumn3", "tactical.tile.autumn4"],
+			["tactical.tile.forest1", "tactical.tile.forest2", "tactical.tile.moss1", "tactical.tile.moss2"],
+			["tactical.tile.swamp1", "tactical.tile.swamp2", "tactical.tile.swamp3", "tactical.tile.swamp4"],
+			["tactical.tile.desert1", "tactical.tile.desert2", "tactical.tile.desert3", "tactical.tile.desert4"],
+			["tactical.tile.snow1", "tactical.tile.snow2", "tactical.tile.snow3", "tactical.tile.snow4"],
+			["tactical.tile.grass1", "tactical.tile.grass2", "tactical.tile.earth3", "tactical.tile.earth4"],
+			["tactical.tile.moss1", "tactical.tile.moss2", "tactical.tile.forest1", "tactical.tile.forest2"],
+			["tactical.tile.stone1", "tactical.tile.stone2", "tactical.tile.stone3", "tactical.tile.earth1"],
+			["tactical.tile.tundra1", "tactical.tile.tundra2", "tactical.tile.tundra3", "tactical.tile.tundra4"],
+			["tactical.tile.earth1", "tactical.tile.earth2", "tactical.tile.grass1", "tactical.tile.grass2"],
+		];
+
+		local p =  patches[this.Math.rand(0, patches.len() -1)];
+		local Tile1 = this.MapGen.get(p[0]);
+		local Tile2 = this.MapGen.get(p[1]);
+		local Tile3 = this.MapGen.get(p[2]);
+		local Tile4 = this.MapGen.get(p[3]);
+
 		local templates = [];
-		
-		local r = this.Math.rand(1, 9);	
-		switch(r){
-			case 1:
-				local StandardPatch = this.MapGen.get("tactical.patch.steppe");
-				return;
-			case 2:
-				local StandardPatch = this.MapGen.get("tactical.patch.clearing");
-				return;
-			case 3:
-				local StandardPatch = this.MapGen.get("tactical.patch.clearing_leveled");
-				return;
-			case 4:
-				local StandardPatch = this.MapGen.get("tactical.patch.tundra");
-				return;
-			case 5:
-				local StandardPatch = this.MapGen.get("tactical.patch.forest");
-				return;
-			case 6:
-				local StandardPatch = this.MapGen.get("tactical.patch.swamp");
-				return;
-			case 7:
-				local StandardPatch = this.MapGen.get("tactical.patch.tundra_grass");
-				return;
-			case 8:
-				local StandardPatch = this.MapGen.get("tactical.patch.desert");
-				return;
-			case 9:
-				local StandardPatch = this.MapGen.get("tactical.patch.autumn_grass");
-				return;
-			}		
-		
-		local r = this.Math.rand(1, 9);	
-		switch(r){
-			case 1:
-				DryPatch = this.MapGen.get("tactical.patch.stone_sea");
-				return;
-			case 2:
-				local DryPatch = this.MapGen.get("tactical.patch.dry");
-				return;
-			case 3:
-				local DryPatch = this.MapGen.get("tactical.patch.bones");
-				return;
-			case 4:
-				local DryPatch = this.MapGen.get("tactical.patch.forest_leaves");
-				return;
-			case 5:
-				local DryPatch = this.MapGen.get("tactical.patch.arena");
-				return;
-			case 6:
-				local DryPatch = this.MapGen.get("tactical.patch.tundra_stony");
-				return;
-			case 7:
-				local DryPatch = this.MapGen.get("tactical.patch.autumn_stony");
-				return;
-			case 8:
-				local DryPatch = this.MapGen.get("tactical.patch.snow_less");
-				return;
-				
-			// causes an error trying to set null 
-			//case 9:
-			//	local local DryPatch = this.MapGen.get("tactical.tactical.patch.stone_circle");
-			//	return;
-			
-			// causes an error when looking for isSmallTree
-			//case 10:
-			//	local DryPatch = this.MapGen.get("tactical.patch.forest_mushrooms");
-			//	return;
-			
-			}	
 
-		local r = this.Math.rand(1, 9);	
-		switch(r){
-			case 1:
-				local WetPatch = this.MapGen.get("tactical.patch.autumn_brushes");
-				return;
-			case 2:
-				local WetPatch = this.MapGen.get("tactical.patch.clover_sea");
-				return;
-			case 3:
-				local WetPatch = this.MapGen.get("tactical.patch.flower_sea");
-				return;
-			case 4:
-				local WetPatch = this.MapGen.get("tactical.patch.oasis");
-				return;
-			case 5:
-				local WetPatch = this.MapGen.get("tactical.patch.forest_leaves_thick");
-				return;
-			case 6:
-				local WetPatch = this.MapGen.get("tactical.patch.forest_thick");
-				return;
-			case 7:
-				local WetPatch = this.MapGen.get("tactical.patch.swamp_pond");
-				return;
-			case 8:
-				local WetPatch = this.MapGen.get("tactical.patch.tundra_brushes");
-				return;
-			case 9:
-				local WetPatch = this.MapGen.get("tactical.patch.snow");
-				return;
-			// has the same isSmallTree issue as mushrooms
-			// case 10:
-			//	local WetPatch = this.MapGen.get("tactical.patch.forest_fern_sea");
-				
-				return;
-			}	
-		
+		local patch = [
+			"tactical.patch.steppe",
+			"tactical.patch.clearing",
+			"tactical.patch.clearing_leveled",
+			"tactical.patch.tundra",
+			"tactical.patch.forest",
+			"tactical.patch.swamp",
+			"tactical.patch.tundra_grass",
+			"tactical.patch.desert",
+			"tactical.patch.autumn_grass"
+		]
+		local StandardPatch = this.MapGen.get(patch[this.Math.rand(0, patch.len() -1)]);
 
-		local r = this.Math.rand(1, 9);	
-		switch(r){
-			case 1:
-				local HillPatch = this.MapGen.get("tactical.patch.hill_steppe");
-				return;
-			case 2:
-				local HillPatch = this.MapGen.get("tactical.patch.hill_snow");
-				return;
-			case 3:
-				local HillPatch = this.MapGen.get("tactical.patch.hill_desert");
-				return;
-			case 4:
-				local HillPatch = this.MapGen.get("tactical.patch.hill_tundra");
-				return;
-			case 5:
-				local HillPatch = this.MapGen.get("tactical.patch.mountain");
-				return;
-			case 6:
-				local HillPatch = this.MapGen.get("tactical.patch.mound");
-				return;
-			case 7:
-				local HillPatch = this.MapGen.get("tactical.patch.hill");
-				return;
-			case 8:
-				local HillPatch = this.MapGen.get("tactical.patch.ritual_site");
-				return;
-			case 9:
-				local HillPatch = this.MapGen.get("tactical.patch.forest_snow");
-				return;
-			}			
-		
+		patch = [
+			"tactical.patch.stone_sea",
+			"tactical.patch.dry",
+			"tactical.patch.bones",
+			"tactical.patch.forest_leaves",
+			"tactical.patch.arena",
+			"tactical.patch.tundra_stony",
+			"tactical.patch.autumn_stony",
+			"tactical.patch.snow_less",
+			"tactical.patch.forest_mushrooms"
+			"tactical.patch.stone_circle"
+		]
+		local DryPatch = this.MapGen.get(patch[this.Math.rand(0, patch.len() -1)]);
+
+		patch = [
+			"tactical.patch.autumn_brushes",
+			"tactical.patch.clover_sea",
+			"tactical.patch.flower_sea",
+			"tactical.patch.oasis",
+			"tactical.patch.arena",
+			"tactical.patch.forest_leaves_thick",
+			"tactical.patch.forest_thick",
+			"tactical.patch.swamp_pond",
+			"tactical.patch.tundra_brushes"
+			"tactical.patch.snow",
+			"tactical.patch.forest_fern_sea"
+		]
+		local WetPatch = this.MapGen.get(patch[this.Math.rand(0, patch.len() -1)]);
+
+		patch = [
+			"tactical.patch.hill_steppe",
+			"tactical.patch.hill_snow",
+			"tactical.patch.hill_desert",
+			"tactical.patch.hill_tundra",
+			"tactical.patch.mountain",
+			"tactical.patch.mound",
+			"tactical.patch.hill",
+			"tactical.patch.ritual_site",
+			"tactical.patch.forest_snow",
+		]
+		local HillPatch = this.MapGen.get(patch[this.Math.rand(0, patch.len() -1)]);
+
 		templates.push(StandardPatch);
 		templates.push(StandardPatch);
 		templates.push(StandardPatch);
