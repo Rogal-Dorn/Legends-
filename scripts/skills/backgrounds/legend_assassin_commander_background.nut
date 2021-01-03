@@ -209,32 +209,32 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 	{
 		local c = {
 			Hitpoints = [
-				-5,
-				-5
+				10,
+				10
 			],
 			Bravery = [
 				10,
 				10
 			],
 			Stamina = [
-				-5,
-				-5
+				10,
+				10
 			],
 			MeleeSkill = [
 				25,
-				25
-			],
-			RangedSkill = [
-				10,
 				15
 			],
+			RangedSkill = [
+				8,
+				16
+			],
 			MeleeDefense = [
-				5,
-				12
+				12,
+				8
 			],
 			RangedDefense = [
-				0,
-				0
+				4,
+				8
 			],
 			Initiative = [
 				20,

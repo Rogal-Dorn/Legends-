@@ -204,7 +204,9 @@ this.legends_assassin_scenario <- this.inherit("scripts/scenarios/world/starting
 			bro.improveMood(1.0, "Is excited at becoming part of outlaw company");
 		}
 		bro.improveMood(0.5, "Learned a new skill");
+		bro.getBackground().LearnKnifeSkills();
 		bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_hidden"));
+		
 	}
 
 	function onBuildPerkTree( _tree )

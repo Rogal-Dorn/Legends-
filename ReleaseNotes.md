@@ -4498,7 +4498,7 @@ Most helm vanity layers changed to have lower durability, cost and fatigue. No m
 Added Italo-norman helm
 
 
-15.0.0.23
+15.0.0.23 The Grand Tournament
 
 **New legendary location**
 The Grand Tournament is a  exclusive location only accessible when you have at least three mercenaries who have become arena veterans.
@@ -4531,7 +4531,36 @@ Each character now comes traits that reflect their background story.
 * noble is cocky and a weasle. no longer a drunkard in party, thought still drunk in noble scenario
 * ranger is a pragmatic and a sureshot.
 
+**Assassin** 
+commander stats increased. to avoid negative stats. 
+Recruits have the entire knife perk group, not just hidden. 
+Knife perk group now grants assassinate perk rather than untouchable, which is still granted by the devious group. 
+Assassinate perk now only grants +50% damage while hidden. Though it grants another 50% if used by an assassin background and another 50% if used by the commander. 
+
+**Druid** 
+Druids no longer have transform skills, instead they have healing and debuff abilities
+Scenario begins with a therianthropic potion that lets you inflict a random therianthropic injury on one person 
+Commander perk tree reworked to give a good option at each level for four build directions, heal, debuff, unarmed and staff 
+
+**Therianthropy** 
+Transformation changes:
+*Bear grants +200% health, +50% melee defense. Its abilities damage still scale with health and initiative
+*Boar grants +100% Stamina, and fatigue recovery +100% hitpoints and +25% Resolve. Gore now scales with health and initiative 
+*Wolf grants +100% health and melee defense, movement costs are decreased by 1 per tile and mvoement fatigue costs are decreased 
+*Rat grants 3 action points, poisoned bites, and 25 melee defense while retreating. it also inflicts -50% Resolve 
+
+
+Taking the perks to control your transformation now gradually grants the ability to use some items
+* bears can use a bag once they Master Anger 
+* boars can use their bag at Control Instincts and use a mainhand weapon at Master Anger
+* wolves can use their bag at Surpress Urges, mainhand at Control Instincts and offhand at Master Anger 
+* rats can use their bag at Surpress Urges, mainhand and offhand at Control Instincts and armor at Master Anger 
+Tooltips for each injury updated to explain the injury a bit better. 
+Barbarian champions can no longer turn into schrats, there should be no way to get this ability now. 
+
+
 **Changes**
+Devious perk group now grants untouchable 
 Huge changed from +10% damage to melee, to +5% damage to both melee and ranged.  reduction to defenses remains
 Pragmatic changed from +10% melee skill and -10% chance to hit head, to +5% to both melee and ranged skill, and -20 chance to hit head.
 Sureshot changed from +5 ranged still to +10% ranged damage and -5 ranged defense
@@ -4544,6 +4573,7 @@ Militia Veterans no longer spawn naked
 Adds named Goedendag variant
 
 **Fixes**
+Transformations no longer get beards on death, instead they revert to human
 Swordmasters no longer drop unlayered helmets
 Fixes a slew of retinue followers not being able to properly find backgrounds
 fixes incorrectly applied traits on noble servant
