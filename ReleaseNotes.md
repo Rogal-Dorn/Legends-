@@ -4587,3 +4587,8 @@ Straw hat vanity layer buffed to 5 durability
 Adds low and high variants to flat tops, nordic, norman and kettle helms to mimic vanilla armor variabilitiy by unit type.  These will reduce the average head armor of zombies, footmen, militia . Inceases average armor on bandit raiders, veterans and warlords, swordmasters and halberdiers
 Added Wallace Sallet, with a named variant (painted version)
 
+
+15.0.0.24
+
+**New Scenarios**
+Adds @BobPenguin Mage Scenario submod

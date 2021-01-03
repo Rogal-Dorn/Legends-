@@ -2020,9 +2020,28 @@ gt.Const.Strings.PerkName <- {
 	LegendWoodworking = "Woodworking",
 	LegendSurpressUrges = "Surpress Urges",
 	LegendControlInstincts = "Control Instincts",
-	LegendMasterAnger = "Master Anger"
-
+	LegendMasterAnger = "Master Anger",
+	MageLegendMagicBurningHands = "Burning Hands",
+	MageLegendMagicChainLightning = "Chain Lightning",
+	MageLegendMagicCircleOfProtection = "Circle of Protection",
+	MageLegendMagicDaze = "Daze",
+	MageLegendMagicHailstone = "Hailstone",
+	MageLegendMagicHealingWind = "Healing Wind",
+	MageLegendMagicImbue = "Imbue",
+	MageLegendMagicLevitate = "Levitate",
+	MageLegendMagicMissile = "Magic Missile",
+	MageLegendMagicPsybeam = "Psybeam",
+	MageLegendMagicSleep = "Sleep",
+	MageLegendMagicSoothingWind = "Soothing Wind",
+	MageLegendMagicTeleport = "Teleport",
+	MageLegendMagicWebBolt = "Web Bolt",
+	MageLegendMasteryBurningHands = "Intense Flames",
+	MageLegendMasteryChainLightning = "Polarized",
+	MageLegendMasteryHailstone = "Dense Ice",
+	MageLegendMasteryMagicMissileFocus = "Magic Missile Focus",
+	MageLegendMasteryMagicMissileMastery = "Magic Missile Mastery"
 };
+
 gt.Const.Strings.PerkDescription <- {
 	Relentless = "Don\'t slow down! At all times your Initiative is reduced only by [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] of your accumulated Fatigue, instead of all of it. In addition, using the \'Wait\' command will no longer give you a penalty to Initiative in the next round.\n[color=#0b0084]From the Fit perk group[/color]",
 	ReturnFavor = "Unlocks the \'Return Favor\' skill which when active has a [color=" + this.Const.UI.Color.PositiveValue + "]75%[/color] chance to stun and stagger any opponent missing a melee attack against this character in retaliation. Immunities and resistances against being stunned still apply. [color=#0b0084]From the Mace perk group[/color]",
@@ -2383,6 +2402,25 @@ gt.Const.Strings.PerkDescription <- {
 	LegendSurpressUrges = "Allows this character to control shapeshifting to some extent, no longer deliberately striking allies while transformed by effects like lycanthropy [color=#0b0084]From the Therianthropy perk group[/color]",
 	LegendControlInstincts = "Further improves this character\'s self control while transformed, no longer deliberately striking allies while transformed [color=#0b0084]From the Therianthropy perk group[/color]",
 	LegendMasterAnger = "Allows the character to transform at will, no longer randomly transforming during battle [color=#0b0084]From the Therianthropy perk group[/color]"
+	MageLegendMagicBurningHands = "Unleash a cone of blistering heat from your palms.",
+	MageLegendMagicChainLightning = "Fire a bolt of lightning at an enemy that can arc to two adjacent enemies.",
+	MageLegendMagicCircleOfProtection = "A magic circle that protects all allies within at casting. Leaving the circle breaks the protection.",
+	MageLegendMagicDaze = "Assault the senses of your target with a conjured flurry of colorful sparks, whirs, and pops. Such an astonishing display is sure to leave anyone too bewildered to fight effectively. Does no damage.",
+	MageLegendMagicHailstone = "Conjure a heavy ball of ice to crush your enemies.",
+	MageLegendMagicHealingWind = "Restore the health of all allies within 8 tiles. Must be holding a magic staff to use.",
+	MageLegendMagicImbue = "Imbue someone with magical power, temporarily increasing accuracy and damage.",
+	MageLegendMagicLevitate = "Levitate someone off the ground, granting them the ability to move freely across all terrain for a short duration.",
+	MageLegendMagicMissile = "A burst of force, leaping forward into a foe.",
+	MageLegendMagicPsybeam = "Launch a mental attack in the form of a ray at an enemy to stun or daze them. Does no damage.",
+	MageLegendMagicSleep = "Use soothing vapours to lull an enemy to sleep. The chance of success is determined by the resolves of the user and target.",
+	MageLegendMagicSoothingWind = "Restore the fatigue of all allies within 8 tiles. Must be holding a magic staff to use.",
+	MageLegendMagicTeleport = "Teleport a short distance away.",
+	MageLegendMagicWebBolt = "Send a web of silk out to ensnare an opponent, rooting them in place halving their damage, defenses and initiative",
+	MageLegendMasteryBurningHands = "Base damage of Burning Hands increases by 20.",
+	MageLegendMasteryChainLightning = "Lightning gains +10% chance to hit and +1 range.",
+	MageLegendMasteryHailstone = "Hailstone can now ignore 65% of armor and inflicts 125% damage to armor.",
+	MageLegendMasteryMagicMissileFocus = "Reduce AP cost of Magic Missile by 1.",
+	MageLegendMasteryMagicMissileMastery = "Reduce AP and cost of Magic Missile by 1. Reduce the base fatigue cost of Magic Missile from 16 to 10."
 
 };
 gt.Const.Strings.Tooltip <- {
