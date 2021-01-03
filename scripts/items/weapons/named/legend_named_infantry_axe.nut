@@ -4,7 +4,7 @@ this.legend_named_infantry_axe <- this.inherit("scripts/items/weapons/named/name
 	{
 		this.named_weapon.create();
 		this.m.ID = "weapon.legend_named_infantry_axe";
-		this.m.Name = "Infantry Axe";
+		this.m.NameList = this.Const.Strings.LongaxeNames;
 		this.m.Description = "A long, exceptionally well crafted two-handed axe used by footmen in the noble wars";
 		this.m.Categories = "Axe, Two-Handed";
 		this.m.Variant = this.Math.rand(2, 3);

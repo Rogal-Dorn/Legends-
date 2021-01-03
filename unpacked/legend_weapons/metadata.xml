@@ -653,8 +653,8 @@
   <sprite id="icon_legend_voulge_01_bloodied" offsetY="35" ic="FF3B3E4C" width="130" height="142" img="icons\icon_legend_voulge_01_bloodied.png" left="-64" right="14" top="-64" bottom="58" />
   <sprite id="icon_legend_voulge_01_named_01" offsetY="35" ic="FF484B50" width="130" height="142" img="icons\icon_legend_voulge_01_named_01.png" left="-65" right="15" top="-70" bottom="60" />
   <sprite id="icon_legend_voulge_01_named_01_bloodied" offsetY="35" ic="FF3E424C" width="130" height="142" img="icons\icon_legend_voulge_01_named_01_bloodied.png" left="-65" right="15" top="-70" bottom="60" />
-  <sprite id="icon_legend_military_goedendag_01_named_01" offsetY="35" ic="FF323941" width="130" height="142" img="icons\icon_legend_military_goedendag_01_named_01.png" left="-64" right="18" top="-55" bottom="41" />
-  <sprite id="icon_legend_military_goedendag_01_named_01_bloodied" offsetY="35" ic="FF2C3140" width="130" height="142" img="icons\icon_legend_military_goedendag_01_named_01_bloodied.png" left="-64" right="18" top="-55" bottom="41" />
+  <sprite id="icon_legend_military_goedendag_named_01" offsetY="35" ic="FF323941" width="130" height="142" img="icons\icon_legend_military_goedendag_01_named_01.png" left="-64" right="18" top="-55" bottom="41" />
+  <sprite id="icon_legend_military_goedendag_named_01_bloodied" offsetY="35" ic="FF2C3140" width="130" height="142" img="icons\icon_legend_military_goedendag_01_named_01_bloodied.png" left="-64" right="18" top="-55" bottom="41" />
   <sprite id="icon_legend_halberd_named_01" offsetY="35" ic="FF3F4756" width="130" height="142" img="icons\icon_legend_halberd_named_01.png" left="-56" right="14" top="-57" bottom="53" />
   <sprite id="icon_legend_halberd_named_01_bloodied" offsetY="35" ic="FF394153" width="130" height="142" img="icons\icon_legend_halberd_named_01_bloodied.png" left="-56" right="14" top="-57" bottom="53" />
   <sprite id="icon_legend_halberd_01" offsetY="35" ic="FF424952" width="150" height="160" img="icons\icon_legend_halberd_01.png" left="-59" right="11" top="-61" bottom="53" />

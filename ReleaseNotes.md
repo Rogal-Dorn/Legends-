@@ -4541,6 +4541,7 @@ Coven leaders can have southern beasts
 Mummies can spawn in the Undead Crises
 Bandit Raiders always have a hat
 Militia Veterans no longer spawn naked
+Adds named Goedendag variant
 
 **Fixes**
 Swordmasters no longer drop unlayered helmets
