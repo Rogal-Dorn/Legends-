@@ -231,6 +231,12 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/skill", {
 	{
 		this.removeEffect();
 	}
+	
+	function onDeath()
+	{
+		this.onRemoved();
+	}
+	
 	function onCombatFinished()
 	{
 		this.removeSelf();

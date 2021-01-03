@@ -243,6 +243,12 @@ this.legend_transformed_boar_effect <- this.inherit("scripts/skills/skill", {
 		}
 	}
 
+	function onDeath()
+	{
+		this.onRemoved();
+	}
+
+
 	function removeEffect()
 	{
 		local actor = this.getContainer().getActor();
