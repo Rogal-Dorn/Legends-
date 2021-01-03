@@ -9,9 +9,9 @@ this.legend_shoot_dart <- this.inherit("scripts/skills/skill", {
 		this.m.Name = "Shoot Dart";
 		this.m.Description = "a quick puff of air to propel a dart";
 		this.m.KilledString = "Darted";
-		this.m.Icon = "skills/active_17.png";
-		this.m.IconDisabled = "skills/active_17_sw.png";
-		this.m.Overlay = "active_17";
+		this.m.Icon = "skills/blowgun_square.png";
+		this.m.IconDisabled = "skills/blowgun_square_sw.png";
+		this.m.Overlay = "blowgun_square";
 		this.m.SoundOnUse = [
 			"sounds/combat/dlc4/sling_use_01.wav",
 			"sounds/combat/dlc4/sling_use_02.wav",
