@@ -610,22 +610,6 @@ gt.Const.World.Spawn.GrandMelee <-
 				{
 					Type = this.Const.World.Spawn.Troops.Lindwurm,
 					Cost = 80
-				},
-				{
-					Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-					Cost = 100
-				},
-				{
-					Type = this.Const.World.Spawn.Troops.LegendStollwurm,
-					Cost = 270
-				},
-				{
-					Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
-					Cost = 350
-				},
-				{
-					Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
-					Cost = 400
 				}
 
 			]
@@ -939,6 +923,18 @@ gt.Const.World.Spawn.GrandMelee <-
 					Cost = 80,
 				},
 				{
+					Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+					Cost = 200
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendStollwurm,
+					Cost = 350
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
+					Cost = 350
+				},
+				{
 					Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
 					Cost = 200,
 					MinGuards = 2,
@@ -966,6 +962,10 @@ gt.Const.World.Spawn.GrandMelee <-
 					MinR = 400,
 					Cost = 60
 
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
+					Cost = 400
 				}
 			]
 		}

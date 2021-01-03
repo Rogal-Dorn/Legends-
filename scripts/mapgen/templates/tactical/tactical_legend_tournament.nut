@@ -127,38 +127,43 @@ this.tactical_legend_tournament <- this.inherit("scripts/mapgen/tactical_templat
 				return;
 			}		
 		
-		local r = this.Math.rand(1, 10);	
+		local r = this.Math.rand(1, 9);	
 		switch(r){
 			case 1:
-				local DryPatch = this.MapGen.get("tactical.patch.stone_circle");
+				DryPatch = this.MapGen.get("tactical.patch.stone_sea");
 				return;
 			case 2:
-				local DryPatch = this.MapGen.get("tactical.patch.stone_sea");
-				return;
-			case 3:
 				local DryPatch = this.MapGen.get("tactical.patch.dry");
 				return;
-			case 4:
+			case 3:
 				local DryPatch = this.MapGen.get("tactical.patch.bones");
 				return;
-			case 5:
+			case 4:
 				local DryPatch = this.MapGen.get("tactical.patch.forest_leaves");
 				return;
-			case 6:
+			case 5:
 				local DryPatch = this.MapGen.get("tactical.patch.arena");
 				return;
-			case 7:
+			case 6:
 				local DryPatch = this.MapGen.get("tactical.patch.tundra_stony");
 				return;
-			case 8:
+			case 7:
 				local DryPatch = this.MapGen.get("tactical.patch.autumn_stony");
 				return;
-			case 9:
+			case 8:
 				local DryPatch = this.MapGen.get("tactical.patch.snow_less");
 				return;
-			case 10:
-				local DryPatch = this.MapGen.get("tactical.patch.forest_mushrooms");
-				return;
+				
+			// causes an error trying to set null 
+			//case 9:
+			//	local local DryPatch = this.MapGen.get("tactical.tactical.patch.stone_circle");
+			//	return;
+			
+			// causes an error when looking for isSmallTree
+			//case 10:
+			//	local DryPatch = this.MapGen.get("tactical.patch.forest_mushrooms");
+			//	return;
+			
 			}	
 
 		local r = this.Math.rand(1, 10);	
