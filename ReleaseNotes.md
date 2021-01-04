@@ -4592,3 +4592,7 @@ Added Wallace Sallet, with a named variant (painted version)
 
 **New Scenarios**
 Adds @BobPenguin Mage Scenario submod
+
+**Fixes**
+Fixed Scavanger Retinue not being unlocked by all beggar, cripple, refugee and salve backgrounds
+Fixes drums of war/life icons not showing
