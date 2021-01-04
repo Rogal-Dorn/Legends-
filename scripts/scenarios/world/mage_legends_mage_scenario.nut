@@ -7,7 +7,7 @@ this.mage_legends_mage_scenario <- this.inherit("scripts/scenarios/world/startin
 		this.m.Name = "Mage";
 		this.m.Description = "[p=c][img]gfx/ui/events/event_120.png[/img][/p][p]You have always been different from those around you. By training your spirit, you discovered that you could concentrate the magic that normally only exists as a whisper in the background. Bring together those who would support you and make good use of your power.\n\n[color=#bcad8c]Sage:[/color] Educated people want to work for you, the uneducated fear you.\n[color=#bcad8c]Teacher[/color] Anyone you fight with gains the Student perk.\n[color=#bcad8c]Avatar:[/color] If your mage dies, the campaign ends.[/p]";
 		this.m.Difficulty = 3;
-		this.m.Order = 50;
+		this.m.Order = 160;
 		this.m.IsFixedLook = true;
 	}
 

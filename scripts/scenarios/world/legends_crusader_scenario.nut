@@ -6,7 +6,7 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 		this.m.Name = "Crusader";
 		this.m.Description = "[p=c][img]gfx/ui/events/event_35.png[/img][/p][p]Sent on a holy quest to rid the world of undead, you walk a righteous path. \n\n[color=#bcad8c]Pure of Heart:[/color] You cannot recruit outlaw backgrounds, while pious recruits cost less.\n[color=#bcad8c]Strict Sermons:[/color] You will grant the Fortified Mind perk to anyone who joins you in battle.\n[color=#bcad8c]Begin alone. Avatar:[/color] If your crusader dies, the campaign ends.[/p]";
 		this.m.Difficulty = 3;
-		this.m.Order = 8;
+		this.m.Order = 70;
 		this.m.IsFixedLook = true;
 	}
 
