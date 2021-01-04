@@ -51,6 +51,9 @@
 <sprite id="blood_potion_circle" ic="FF23165B" img="skills\blood_potion_circle.png" />
 <sprite id="ichor_potion_circle" ic="FF23165B" img="skills\ichor_potion_circle.png" />
 <sprite id="drums_of_life_circle" ic="FF23165B" img="skills\drums_of_life_circle.png" />
+<sprite id="drums_of_life_square" ic="FF23165B" img="skills\drums_of_life_square.png" />
+<sprite id="drums_of_war_square" ic="FF23165B" img="skills\drums_of_war_square.png" />
+<sprite id="drums_of_war_circle" ic="FF23165B" img="skills\drums_of_war_circle.png" />
 <sprite id="prayer_purple" ic="FF23165B" img="skills\prayer_purple.png" />
 <sprite id="prayer_green" ic="FF23165B" img="skills\prayer_green.png" />
 <sprite id="prayer_blue" ic="FF23165B" img="skills\prayer_green.png" />
