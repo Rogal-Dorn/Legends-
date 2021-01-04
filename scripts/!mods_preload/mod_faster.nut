@@ -177,7 +177,7 @@
 
 		if (!_entity.isHiddenToPlayer() || this.m.TargetTile.IsVisibleForPlayer)
 		{
-			this.getAgent().declareEvaluationDelay(1200);
+			this.getAgent().declareEvaluationDelay(2000);
 			this.getAgent().declareAction(1000);
 		}
 
