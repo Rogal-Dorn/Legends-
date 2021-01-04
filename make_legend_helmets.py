@@ -2175,7 +2175,7 @@ def main():
         #print('"' + layer + '/' + fname + '",')
         # continue
 
-        dirpath = os.path.join(os.path.dirname(os.path.abspath(__file__)), "helmets", layer)
+        dirpath = os.path.join(os.path.dirname(os.path.abspath(__file__)), "helmet_scripts", layer)
         if not os.path.exists(dirpath):
             os.makedirs(dirpath)
 
