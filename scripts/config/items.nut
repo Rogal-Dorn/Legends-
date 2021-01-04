@@ -135,12 +135,28 @@ gt.Const.Items.LegendNamedSouthernArmorLayers <- [
 ]
 
 
+gt.Const.Items.LegendNamedHoodLayers <- [
+];
+
+gt.Const.Items.LegendNamedHelmLayers <- [
+];
+
+gt.Const.Items.LegendNamedVanityLayers <- [
+]
+
+
 gt.Const.Items.LegendNamedArmorLayers <- []
 gt.Const.Items.LegendNamedArmorLayers.extend(this.Const.Items.LegendNamedClothLayers)
 gt.Const.Items.LegendNamedArmorLayers.extend(this.Const.Items.LegendNamedChainLayers)
 gt.Const.Items.LegendNamedArmorLayers.extend(this.Const.Items.LegendNamedPlateLayers)
 gt.Const.Items.LegendNamedArmorLayers.extend(this.Const.Items.LegendNamedTabardLayers)
 gt.Const.Items.LegendNamedArmorLayers.extend(this.Const.Items.LegendNamedCloakLayers)
+
+
+gt.Const.Items.LegendNamedHelmetLayers <- []
+gt.Const.Items.LegendNamedHelmetLayers.extend(this.Const.Items.LegendNamedHoodLayers)
+gt.Const.Items.LegendNamedHelmetLayers.extend(this.Const.Items.LegendNamedHelmLayers)
+gt.Const.Items.LegendNamedHelmetLayers.extend(this.Const.Items.LegendNamedVanityLayers)
 
 gt.Const.Items.NamedHelmets <- [
 	"helmets/named/golden_feathers_helmet",
