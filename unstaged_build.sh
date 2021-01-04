@@ -78,12 +78,12 @@ while read -r line; do
             :
             #echo "skipping $line"
         elif [[ "$xpath" == make_legend_helmets.py ]]; then
-            rm -rf helmets
-            mkdir -p "helmets"
+            rm -rf helmet_scripts
+            mkdir -p "helmet_scripts"
             python make_legend_helmets.py
             handleExit
             mkdir -p "$BBDir\\scripts\items\legend_helmets"
-            cp -R helmets/. "$BBDir\\scripts\items\legend_helmets"
+            cp -R helmet_scripts/. "$BBDir\\scripts\items\legend_helmets"
 
             for i in "${HelmetBrushes[@]}"
             do
