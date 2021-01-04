@@ -36,19 +36,22 @@ this.scavenger_follower <- this.inherit("scripts/retinue/follower", {
 			"background.beggar",
 			"background.cripple",
 			"background.refugee",
-			"background.slave"
+			"background.slave",
+			"background.female_beggar",
+			"background.legend_commander_beggar",
+			"background.legend_commander_beggar_female"
 		];
 
 		foreach( bro in brothers )
 		{
 			local id = bro.getBackground().getID();
-			
+
 			if (availableBGs.find(id) != null)
 			{
 				this.m.Requirements[0].IsSatisfied = true;
 				return;
 			}
-		}			
+		}
 	}
 
 });
