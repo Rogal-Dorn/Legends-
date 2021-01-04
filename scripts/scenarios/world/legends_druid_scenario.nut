@@ -6,7 +6,7 @@ this.legends_druid_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		this.m.Name = "Druid";
 		this.m.Description = "[p=c][img]gfx/ui/events/event_25.png[/img][/p][p]The druids of the wild woods are wary of humans, prefering the company of beasts \n\n[color=#bcad8c]Wildform:[/color] Can take on the form of beasts in battle.\n[color=#bcad8c]Solitary:[/color] The Druid hates nearly all humans except wildlings, herbalists and practictioners of wild magic \n[color=#bcad8c]Avatar:[/color] If your druid dies, its game over.[/p]";
 		this.m.Difficulty = 3;
-		this.m.Order = 27;
+		this.m.Order = 110;
 		this.m.IsFixedLook = true;
 	}
 

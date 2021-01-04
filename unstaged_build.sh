@@ -97,12 +97,12 @@ while read -r line; do
             copyBrushes
 
         elif [[ "$xpath" == make_legend_armor.py ]]; then
-            rm -rf legend_armor
-            mkdir -p "legend_armor"
+            rm -rf legend_armor_scripts
+            mkdir -p "legend_armor_scripts"
             python make_legend_armor.py
             handleExit
             mkdir -p "$BBDir\\scripts\items\legend_armor"
-            cp -R legend_armor/. "$BBDir\\scripts\items\legend_armor"
+            cp -R legend_armor_scripts/. "$BBDir\\scripts\items\legend_armor"
             for i in "${ArmorBrushes[@]}"
             do
                 echo "Building $i brush..."

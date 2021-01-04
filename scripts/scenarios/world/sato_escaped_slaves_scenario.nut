@@ -6,7 +6,7 @@ this.sato_escaped_slaves_scenario <- this.inherit("scripts/scenarios/world/start
 		this.m.Name = "Escaped Slaves";
 		this.m.Description = "[p=c][img]gfx/ui/events/event_166.png[/img][/p][p]You lead a group of slaves trying to escape their cruel fate, but you can't run forever. Can you keep your band intact and start a new life as mercenaries?\n\n[color=#bcad8c]Escapees:[/color] Start with five escaped Indebted, and find others held in captivity.\n[color=#bcad8c]Brothers in Chains:[/color] Your newfound family of Indebted are stronger together and gain skill based on how many you field.\n[color=#bcad8c]Downtrodden and Discarded:[/color] Good relations with any faction decay 15% faster, and bad relations recover 15% slower.[/p]";
 		this.m.Difficulty = 3;
-		this.m.Order = 87;
+		this.m.Order = 120;
 	}
 
 	function isValid()

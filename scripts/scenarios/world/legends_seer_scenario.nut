@@ -6,7 +6,7 @@ this.legends_seer_scenario <- this.inherit("scripts/scenarios/world/starting_sce
 		this.m.Name = "Seer";
 		this.m.Description = "[p=c][img]gfx/ui/events/event_120.png[/img][/p][p]After studying alchemy and mystic secrets for years, you have set out to confront the evils of the world \n\n[color=#bcad8c]Bookworm:[/color] Educated people want to work for you, the uneducated find you boring to be around.\n[color=#bcad8c]Teacher[/color] Anyone you fight with gains the Student perk.\n[color=#bcad8c]Avatar:[/color] If your seer dies, the campaign ends.[/p]";
 		this.m.Difficulty = 3;
-		this.m.Order = 22;
+		this.m.Order = 250;
 		this.m.IsFixedLook = true;
 	}
 
