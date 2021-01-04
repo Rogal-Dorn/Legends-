@@ -129,6 +129,11 @@ vanilla = [
     "named/sallet_green_helmet",
     "named/witchhunter_helm",
     "named/wolf_helmet",
+    "named/italo_norman_helm_named",
+    "named/barbute_named",
+    "named/bascinet_named",
+    "named/kettle_helm_named",
+    "named/wallace_sallet_named",
     "nasal_helmet",
     "nasal_helmet_with_closed_mail",
     "nasal_helmet_with_mail",
@@ -1355,6 +1360,21 @@ layers = [
 
 
 helmets = r"""
+<sprite id="italo_norman_helm_named_01" offsetY="35" ic="FF383D5F" width="104" height="142" img="entity\legend_helmets\italo_norman_helm_named_01.png" left="-31" right="30" top="-18" bottom="70" />
+<sprite id="italo_norman_helm_named_01_damaged" offsetY="35" ic="FF383D5F" width="104" height="142" img="entity\legend_helmets\italo_norman_helm_named_01_damaged.png" left="-31" right="30" top="-18" bottom="70" />
+<sprite id="italo_norman_helm_named_01_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444850" width="131" height="125" img="entity\legend_helmets\italo_norman_helm_named_01_dead.png" left="-60" right="13" top="-68" bottom="5" />
+<sprite id="wallace_sallet_named_01" offsetY="35" ic="FF383D5F" width="104" height="142" img="entity\legend_helmets\wallace_sallet_named_01.png" left="-29" right="28" top="-12" bottom="70" />
+<sprite id="wallace_sallet_named_01_damaged" offsetY="35" ic="FF383D5F" width="104" height="142" img="entity\legend_helmets\wallace_sallet_named_01_damaged.png" left="-29" right="28" top="-12" bottom="70" />
+<sprite id="wallace_sallet_named_01_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444850" width="131" height="125" img="entity\legend_helmets\wallace_sallet_named_01_dead.png" left="-53" right="10" top="-60" bottom="6" />
+<sprite id="bascinet_named_01" offsetY="35" ic="FF383D5F" width="104" height="142" img="entity\legend_helmets\bascinet_named_01.png" left="-32" right="32" top="-20" bottom="70" />
+<sprite id="bascinet_named_01_damaged" offsetY="35" ic="FF383D5F" width="104" height="142" img="entity\legend_helmets\bascinet_named_01_damaged.png" left="-32" right="32" top="-20" bottom="70" />
+<sprite id="bascinet_named_01_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444850" width="131" height="125" img="entity\legend_helmets\bascinet_named_01_dead.png" left="-53" right="20" top="-70" bottom="10" />
+<sprite id="barbute_named_01" offsetY="35" ic="FF383D5F" width="104" height="142" img="entity\legend_helmets\barbute_named_01.png" left="-28" right="29" top="-11" bottom="70" />
+<sprite id="barbute_named_01_damaged" offsetY="35" ic="FF383D5F" width="104" height="142" img="entity\legend_helmets\barbute_named_01_damaged.png" left="-28" right="29" top="-11" bottom="70" />
+<sprite id="barbute_named_01_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444850" width="131" height="125" img="entity\legend_helmets\barbute_named_01_dead.png" left="-44" right="23" top="-64" bottom="8" />
+<sprite id="kettle_helm_named_01" offsetY="35" ic="FF383D5F" width="104" height="142" img="entity\legend_helmets\kettle_helm_named_01.png" left="-35" right="33" top="-12" bottom="77" />
+<sprite id="kettle_helm_named_01_damaged" offsetY="35" ic="FF383D5F" width="104" height="142" img="entity\legend_helmets\kettle_helm_named_01_damaged.png" left="-35" right="33" top="-12" bottom="77" />
+<sprite id="kettle_helm_named_01_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF444850" width="131" height="125" img="entity\legend_helmets\kettle_helm_named_01_dead.png" left="-53" right="20" top="-64" bottom="8" />
 <sprite id="legend_frogmouth_01" offsetY="35" ic="FF383D5F" width="184" height="222" img="entity\legend_helmets\legend_frogmouth_01.png" left="-41" right="43" top="-28" bottom="106" />
 <sprite id="legend_frogmouth_01_damaged" offsetY="35" ic="FF353857" width="184" height="222" img="entity\legend_helmets\legend_frogmouth_01_damaged.png" left="-41" right="43" top="-29" bottom="105" />
 <sprite id="legend_frogmouth_01_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF353957" width="191" height="185" img="entity\legend_helmets\legend_frogmouth_01_dead.png" left="-88" right="22" top="-92" bottom="10" />
