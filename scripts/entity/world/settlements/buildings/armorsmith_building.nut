@@ -581,7 +581,36 @@ this.armorsmith_building <- this.inherit("scripts/entity/world/settlements/build
 					P = 1.0,
 					S = "helmets/italo_norman_helm"
 				});
-
+				list.push({
+					R = 80,
+					P = 1.0,
+					S = "helmets/wallace_sallet"
+				});
+				list.push({
+					R = 80,
+					P = 1.0,
+					S = "helmets/legend_enclave_vanilla_skullcap_01"
+				});
+				list.push({
+					R = 80,
+					P = 1.0,
+					S = "helmets/legend_enclave_vanilla_great_helm_01"
+				});
+				list.push({
+					R = 80,
+					P = 1.0,
+					S = "helmets/legend_enclave_vanilla_great_bascinet_01"
+				});
+				list.push({
+					R = 80,
+					P = 1.0,
+					S = "helmets/legend_enclave_vanilla_armet_02"
+				});
+				list.push({
+					R = 80,
+					P = 1.0,
+					S = "helmets/legend_enclave_vanilla_great_bascinet_02"
+				});
 				if (this.Math.rand(1, 100) <= 33)
 				{
 					list.push({
