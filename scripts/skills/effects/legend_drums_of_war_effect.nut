@@ -5,8 +5,8 @@ this.legend_drums_of_war_effect <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "effects.legend_drums_of_war";
 		this.m.Name = "Drums of War";
 		this.m.Description = "";
-		this.m.Icon = "skills/status_effect_105.png";
-		this.m.Overlay = "status_effect_105";
+		this.m.Icon = "ui/perks/drums_of_war.png";
+		this.m.Overlay = "drums_of_war_circle";
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
 		this.m.IsHidden = true;

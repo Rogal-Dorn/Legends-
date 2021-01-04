@@ -44,8 +44,8 @@ this.named_crossbow <- this.inherit("scripts/items/weapons/named/named_weapon", 
 
 	function updateVariant()
 	{
-		this.m.IconLarge = "weapons/melee/crossbow_01_named_0" + this.m.Variant + ".png";
-		this.m.Icon = "weapons/melee/crossbow_01_named_0" + this.m.Variant + "_70x70.png";
+		this.m.IconLarge = "weapons/ranged/crossbow_01_named_0" + this.m.Variant + ".png";
+		this.m.Icon = "weapons/ranged/crossbow_01_named_0" + this.m.Variant + "_70x70.png";
 		this.m.ArmamentIcon = "icon_named_crossbow_0" + this.m.Variant;
 	}
 
