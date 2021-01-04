@@ -24,14 +24,14 @@ fi
 
 
 echo "Building helmets..."
-rm -rf helmets
+rm -rf helmet_scripts
 handleExit
-mkdir -p "helmets"
+mkdir -p "helmet_scripts"
 handleExit
 python make_legend_helmets.py
 handleExit
 mkdir -p "$BBDir\\scripts\\items\\legend_helmets"
-cp -R helmets/. "$BBDir\\scripts\\items\\legend_helmets"
+cp -R helmet_scripts/. "$BBDir\\scripts\\items\\legend_helmets"
 handleExit
 
 echo "Building armors..."

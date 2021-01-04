@@ -1,13 +1,11 @@
 brushes/
-helmets/
+helmet_scripts/
 legend_armor_scripts/
 unpacked/legend_armor/0
 unpacked/legend_armor/1
 unpacked/legend_armor/2
 
 
-
-!scripts/items/legend_helmets/helmets/
 !unpacked/**/helmets
 
 scripts/items/legend_armor/cloth/
