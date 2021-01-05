@@ -52,11 +52,17 @@ this.night_effect <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.IsHidden = !_properties.IsAffectedByNight;
 
-		if (_properties.IsAffectedByNight)
+		if (_properties.IsAffectedByNight && !this.getContainer().hasSkill("trait.night_owl"))
 		{
 			_properties.Vision -= 2;
 			_properties.RangedSkillMult *= 0.7;
 			_properties.RangedDefense *= 0.7;
+		}
+		if (_properties.IsAffectedByNight && this.getContainer().hasSkill("trait.night_owl"))
+		{
+			_properties.Vision -= 1;
+			_properties.RangedSkillMult *= 0.85;
+			_properties.RangedDefense *= 0.85;
 		}
 	}
 

@@ -59,7 +59,7 @@ this.tiny_trait <- this.inherit("scripts/skills/traits/character_trait", {
 
 	function onUpdate( _properties )
 	{
-		_properties.MeleeDamageMult *= 0.85;
+		_properties.MeleeDamageMult *= 0.9;
 		_properties.MeleeDefense += 5;
 		_properties.RangedDefense += 5;
 	}
