@@ -102,7 +102,7 @@ this.swordmaster <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Head) && this.Math.rand(1, 100) <= 90)
 		{
-		
+
 			this.m.Items.equip(this.Const.World.Common.pickHelmet([
 				[3, "nasal_helmet"],
 				[2, "nasal_helmet_with_mail"],

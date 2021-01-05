@@ -340,8 +340,8 @@ gt.Const.Perks.EvocationMagicTree <- {
 		gt.Const.Perks.PerkDefs.MageLegendMasteryMagicMissileFocus
 		],
 		[
-		gt.Const.Perks.PerkDefs.MageLegendMagicChainLightning, 
-		gt.Const.Perks.PerkDefs.MageLegendMasteryBurningHand
+		gt.Const.Perks.PerkDefs.MageLegendMagicChainLightning,
+		gt.Const.Perks.PerkDefs.MageLegendMasteryBurningHands
 		],
 		[
 		gt.Const.Perks.PerkDefs.MageLegendMagicPsybeam,
