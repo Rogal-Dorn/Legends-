@@ -165,12 +165,12 @@ gt.Const.Items.NamedHelmets <- [
 	"helmets/named/sallet_green_helmet",
 	"helmets/named/wolf_helmet",
 	"helmets/named/legend_frogmouth_helm_crested_painted",
-	"helmets/named/legend_frogmouth_helm_decorated"
-	"helmets/named/wallace_sallet_named"
-	"helmets/named/barbute_named"
-	"helmets/named/bascinet_named"
-	"helmets/named/kettle_helm_named"
-	"helmets/named/italo_norman_helm_named"
+	"helmets/named/legend_frogmouth_helm_decorated",
+	// "helmets/named/wallace_sallet_named"
+	// "helmets/named/barbute_named"
+	// "helmets/named/bascinet_named"
+	// "helmets/named/kettle_helm_named"
+	// "helmets/named/italo_norman_helm_named"
 ];
 
 

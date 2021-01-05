@@ -326,9 +326,64 @@ this.armorsmith_building <- this.inherit("scripts/entity/world/settlements/build
 				R = 45,
 				P = 1.0,
 				S = "helmets/reinforced_mail_coif"
-			}
+			},
 		];
 
+		list.push({
+			R = 80,
+			P = 1.0,
+			S = "helmets/legend_enclave_vanilla_skullcap_01"
+		});
+		list.push({
+			R = 80,
+			P = 1.0,
+			S = "helmets/legend_enclave_vanilla_great_helm_01"
+		});
+		list.push({
+			R = 80,
+			P = 1.0,
+			S = "helmets/legend_enclave_vanilla_great_bascinet_01"
+		});
+		list.push({
+			R = 80,
+			P = 1.0,
+			S = "helmets/legend_enclave_vanilla_great_bascinet_02"
+		});
+		list.push({
+			R = 80,
+			P = 1.0,
+			S = "helmets/legend_enclave_vanilla_armet_01"
+		});
+		list.push({
+			R = 80,
+			P = 1.0,
+			S = "helmets/legend_enclave_vanilla_kettle_sallet_01"
+		});
+
+		if (!this.World.LegendsMod.Configs().LegendArmorsEnabled())
+		{
+			list.push({
+				R = 80,
+				P = 1.0,
+				S = "helmets/legend_enclave_vanilla_great_bascinet_03"
+			});
+			list.push({
+				R = 80,
+				P = 1.0,
+				S = "helmets/legend_enclave_vanilla_armet_02"
+			});
+			list.push({
+				R = 80,
+				P = 1.0,
+				S = "helmets/legend_enclave_vanilla_kettle_sallet_02"
+			});
+			list.push({
+				R = 80,
+				P = 1.0,
+				S = "helmets/legend_enclave_vanilla_kettle_sallet_03"
+			});
+
+		}
 
 		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
@@ -453,6 +508,7 @@ this.armorsmith_building <- this.inherit("scripts/entity/world/settlements/build
 				P = 1.0,
 				S = "misc/paint_white_green_yellow_item"
 			});
+
 			if (!this.World.LegendsMod.Configs().LegendArmorsEnabled())
 			{
 				list.push({
@@ -574,52 +630,28 @@ this.armorsmith_building <- this.inherit("scripts/entity/world/settlements/build
 				S = "helmets/conic_helmet_with_faceguard"
 			});
 
-			if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
-			{
-				list.push({
-					R = 80,
-					P = 1.0,
-					S = "helmets/italo_norman_helm"
-				});
-				list.push({
-					R = 80,
-					P = 1.0,
-					S = "helmets/wallace_sallet"
-				});
-				list.push({
-					R = 80,
-					P = 1.0,
-					S = "helmets/legend_enclave_vanilla_skullcap_01"
-				});
-				list.push({
-					R = 80,
-					P = 1.0,
-					S = "helmets/legend_enclave_vanilla_great_helm_01"
-				});
-				list.push({
-					R = 80,
-					P = 1.0,
-					S = "helmets/legend_enclave_vanilla_great_bascinet_01"
-				});
-				list.push({
-					R = 80,
-					P = 1.0,
-					S = "helmets/legend_enclave_vanilla_armet_02"
-				});
-				list.push({
-					R = 80,
-					P = 1.0,
-					S = "helmets/legend_enclave_vanilla_great_bascinet_02"
-				});
-				if (this.Math.rand(1, 100) <= 33)
-				{
-					list.push({
-						R = 99,
-						P = 2.0,
-						S = "helmets/italo_norman_helm_named"
-					});
-				}
-			}
+			// if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+			// {
+			// 	list.push({
+			// 		R = 80,
+			// 		P = 1.0,
+			// 		S = "helmets/italo_norman_helm"
+			// 	});
+			// 	list.push({
+			// 		R = 80,
+			// 		P = 1.0,
+			// 		S = "helmets/wallace_sallet"
+			// 	});
+
+			// 	if (this.Math.rand(1, 100) <= 33)
+			// 	{
+			// 		list.push({
+			// 			R = 99,
+			// 			P = 2.0,
+			// 			S = "helmets/italo_norman_helm_named"
+			// 		});
+			// 	}
+			// }
 		}
 		else
 		{
