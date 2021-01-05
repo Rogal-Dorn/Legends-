@@ -139,6 +139,16 @@ gt.Const.Items.LegendNamedHoodLayers <- [
 ];
 
 gt.Const.Items.LegendNamedHelmLayers <- [
+	"legend_helmets/helm/legend_helmet_italo_norman_helm_named",
+	"legend_helmets/helm/legend_helmet_barbute_named",
+	"legend_helmets/helm/legend_helmet_bascinet_named",
+	"legend_helmets/helm/legend_helmet_kettle_helm_named",
+	"legend_helmets/helm/legend_helmet_wallace_sallet_named",
+];
+
+gt.Const.Items.LegendNamedTopLayers <- [
+	"legend_helmets/top/legend_helmet_bascinet_visor_named",
+	"legend_helmets/top/legend_helmet_wallace_sallet_visor_named"
 ];
 
 gt.Const.Items.LegendNamedVanityLayers <- [
@@ -156,6 +166,7 @@ gt.Const.Items.LegendNamedArmorLayers.extend(this.Const.Items.LegendNamedCloakLa
 gt.Const.Items.LegendNamedHelmetLayers <- []
 gt.Const.Items.LegendNamedHelmetLayers.extend(this.Const.Items.LegendNamedHoodLayers)
 gt.Const.Items.LegendNamedHelmetLayers.extend(this.Const.Items.LegendNamedHelmLayers)
+gt.Const.Items.LegendNamedHelmetLayers.extend(this.Const.Items.LegendNamedTopLayers)
 gt.Const.Items.LegendNamedHelmetLayers.extend(this.Const.Items.LegendNamedVanityLayers)
 
 gt.Const.Items.NamedHelmets <- [
