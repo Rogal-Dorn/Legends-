@@ -6,7 +6,7 @@ this.legends_risen_legion_scenario <- this.inherit("scripts/scenarios/world/star
 		this.m.Name = "Legion";
 		this.m.Description = "[p=c][img]gfx/ui/events/event_73.png[/img][/p]An ancient legion risen from the dead to reclaim the world.\n\n[color=#bcad8c]Dreaded:[/color] All towns will begin hostile to you.\n[color=#bcad8c]Beyond death:[/color] Every character in your party has a 66% chance to survive death\n[color=#bcad8c]Dead walking:[/color] You can not hire in towns, but you may find recruits by patrolling near mass graves and sunken castles.\n";
 		this.m.Difficulty = 3;
-		this.m.Order = 12;
+		this.m.Order = 140;
 	}
 
 

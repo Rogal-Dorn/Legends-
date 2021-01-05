@@ -5,7 +5,7 @@ this.legend_drums_of_life_effect <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "effects.legend_drums_of_life";
 		this.m.Name = "Drums of Life";
 		this.m.Description = "";
-		this.m.Icon = "ui/perks/drums_of_life_circle.png";
+		this.m.Icon = "ui/perks/drums_of_life.png";
 		this.m.Overlay = "drums_of_life_circle";
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;

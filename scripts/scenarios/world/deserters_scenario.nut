@@ -6,7 +6,7 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		this.m.Name = "Deserters";
 		this.m.Description = "[p=c][img]gfx/ui/events/event_88.png[/img][/p][p]For too long have you been dragged from one bloody battle to another at the whim of lords sitting in high towers. Last night, you absconded from camp together with three others. You\'re dressed like soldiers still, but you\'re deserters, and the noose will be your end if you stay here for too long.\n[color=#bcad8c]Deserters:[/color] Start with three deserters and decent armor, but lower funds, you can only be joined by outlaws or combat backgrounds, and a noble house that wants to hunt you down.\n[color=#bcad8c]First to Run:[/color] Your men always are first to act in the very first round of combat.\n[color=#c90000]Like Minded:[/color] Increased chance of finding craven dastards, deserters and the disowned. [/p]";
 		this.m.Difficulty = 2;
-		this.m.Order = 10;
+		this.m.Order = 100;
 	}
 
 	function isValid()
@@ -58,7 +58,7 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 			[1, "gambeson"],
 			[2, "basic_mail_shirt"]
 		])
-		
+
 		armor.setCondition(armor.getConditionMax() * this.Math.rand(25, 100) * 0.01);
 		items.equip(armor);
 	}

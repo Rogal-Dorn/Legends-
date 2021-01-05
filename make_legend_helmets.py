@@ -598,11 +598,11 @@ layers = [
  "title" :  "Flat Top Helm", \
  "desc" :  "A outstandingly well made and maintained flat full-metal helmet with noseguard." \
 },
-{"name" : "barbute"                     , "layer" : "helm", "min" : 1, "max" : 7, "value" : 2600, "con" : 110, "stam" : -3, "vis" : -1, "hair" : "true", "beard" : "false",  \
+{"name" : "barbute"                     , "layer" : "helm", "min" : 1, "max" : 7, "value" : 2600, "con" : 180, "stam" : -7, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Barbute", \
  "desc" :  "A sturdy yet light barbute helmet, a design uncommon in these lands, made from especially light and durable steel." \
 },
-{"name" : "barbute_named"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 3000, "con" : 200, "stam" : -12, "vis" : -2, "hair" : "true", "beard" : "true", "named" : True, "rminViz" : -1, "rmaxViz" : -2, "rminStam" : -9, "rmaxStam" : -12, "rminCond" : 200, "rmaxCond" : 225, "names" : Names,  \
+{"name" : "barbute_named"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 3000, "con" : 200, "stam" : -7, "vis" : -2, "hair" : "true", "beard" : "true", "named" : True, "rminViz" : -1, "rmaxViz" : -2, "rminStam" : -5, "rmaxStam" : -7, "rminCond" : 200, "rmaxCond" : 225, "names" : Names,  \
  "title" :  "Barbute", \
  "desc" :  "A superb barbute helmet of foreign origin, this helmet has been blackened and polished to a dark shine. " \
 },
@@ -630,15 +630,15 @@ layers = [
  "title" :  "Rusted Kettle Helm", \
  "desc" :  "A full-metal helmet with a broad rim, it has been poorly maintained and is now rusted, dented and will never be fulyl repaired." \
 },
-{"name" : "kettle_helm"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 1600, "con" : 160, "stam" : -12, "vis" : -2, "hair" : "true", "beard" : "false",  \
+{"name" : "kettle_helm"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 1600, "con" : 160, "stam" : -6, "vis" : -2, "hair" : "true", "beard" : "false",  \
  "title" :  "Kettle Helm", \
  "desc" :  "A full-metal helmet with a broad rim." \
 },
-{"name" : "kettle_helm_named"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 2500, "con" : 180, "stam" : -16, "vis" : -2, "hair" : "true", "beard" : "false", "named" : True, "rminViz" : -1, "rmaxViz" : -2, "rminStam" : -3, "rmaxStam" : -6, "rminCond" : 160, "rmaxCond" : 185, "names" : Names, \
+{"name" : "kettle_helm_named"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 2500, "con" : 180, "stam" : -6, "vis" : -2, "hair" : "true", "beard" : "false", "named" : True, "rminViz" : -1, "rmaxViz" : -2, "rminStam" : -3, "rmaxStam" : -6, "rminCond" : 160, "rmaxCond" : 185, "names" : Names, \
  "title" :  "Kettle Helm", \
  "desc" :  "An exceptional and sturdy kettle helm. Blackened and polished, it has a gilded point." \
 },
-{"name" : "enclave_kettle"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 2100, "con" : 160, "stam" : -15, "vis" : -2, "hair" : "true", "beard" : "false",  \
+{"name" : "enclave_kettle"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 2100, "con" : 160, "stam" : -8, "vis" : -2, "hair" : "true", "beard" : "false",  \
  "title" :  "Kettle Sallet", \
  "desc" :  "A full-metal sallet with a broad rim." \
 },
@@ -686,11 +686,11 @@ layers = [
  "title" :  "Bronze Helm", \
  "desc" :  "Bronze Helm" \
 },
-{"name" : "great_helm"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 3000, "con" : 220, "stam" : -15, "vis" : -3, "hair" : "true", "beard" : "false",  \
+{"name" : "great_helm"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 3000, "con" : 220, "stam" : -15, "vis" : -3, "hair" : "true", "beard" : "true",  \
  "title" :  "Great Helm", \
  "desc" :  "A closed metal helm with breathing holes. Great in the way of protection but hard to breathe in and limiting the field of view." \
 },
-{"name" : "enclave_great_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 3000, "con" : 220, "stam" : -15, "vis" : -3, "hair" : "true", "beard" : "false",  \
+{"name" : "enclave_great_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 3000, "con" : 220, "stam" : -15, "vis" : -3, "hair" : "true", "beard" : "true",  \
  "title" :  "Great Helm", \
  "desc" :  "A closed metal helm with breathing holes. Great in the way of protection but hard to breathe in and limiting the field of view." \
 },
@@ -698,7 +698,7 @@ layers = [
  "title" :  "Armet", \
  "desc" :  "A finely crafted close helm of outstanding workmanship" \
 },
-{"name" : "enclave_armet"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 3000, "con" : 130, "stam" : -6, "vis" : -1, "hair" : "true", "beard" : "true",  \
+{"name" : "enclave_armet"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 3000, "con" : 200, "stam" : -10, "vis" : -1, "hair" : "true", "beard" : "true",  \
  "title" :  "Armet", \
  "desc" :  "A finely crafted armet of outstanding workmanship" \
 },
@@ -722,11 +722,11 @@ layers = [
  "title" :  "Heavy Lamellar Helmet", \
  "desc" :  "A heavy helmet made from overlapping metal plates." \
 },
-{"name" : "italo_norman_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1500, "con" : 120, "stam" : -10, "vis" : -1, "hair" : "true", "beard" : "true",  \
+{"name" : "italo_norman_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1500, "con" : 160, "stam" : -8, "vis" : -1, "hair" : "true", "beard" : "true",  \
  "title" :  "Italio Norman Helm", \
  "desc" :  "A curved metal helm in a distinctive style. It has a large duck-bill shaped faceplate covering the front" \
 },
-{"name" : "italo_norman_helm_named"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 3000, "con" : 180, "stam" : -10, "vis" : -1, "hair" : "true", "beard" : "true", "named" : True, "rminViz" : 0, "rmaxViz" : -1, "rminStam" : -7, "rmaxStam" : -10, "rminCond" : 220, "rmaxCond" : 245, "names" : Names,  \
+{"name" : "italo_norman_helm_named"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 3000, "con" : 220, "stam" : -8, "vis" : -1, "hair" : "true", "beard" : "true", "named" : True, "rminViz" : 0, "rmaxViz" : -1, "rminStam" : -7, "rmaxStam" : -10, "rminCond" : 220, "rmaxCond" : 245, "names" : Names,  \
  "title" :  "Conic Helm", \
  "desc" :  "A well-built and lavishly decorated pointed conic helm. It has a large duck-bill shaped faceplate covering the front." \
 },
@@ -2155,7 +2155,7 @@ def main():
         #print('"' + layer + '/' + fname + '",')
         # continue
 
-        dirpath = os.path.join(os.path.dirname(os.path.abspath(__file__)), "helmets", layer)
+        dirpath = os.path.join(os.path.dirname(os.path.abspath(__file__)), "helmet_scripts", layer)
         if not os.path.exists(dirpath):
             os.makedirs(dirpath)
 
