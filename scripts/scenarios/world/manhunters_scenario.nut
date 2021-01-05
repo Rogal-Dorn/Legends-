@@ -6,7 +6,7 @@ this.manhunters_scenario <- this.inherit("scripts/scenarios/world/starting_scena
 		this.m.Name = "Manhunters";
 		this.m.Description = "[p=c][img]gfx/ui/events/event_172.png[/img][/p][p]Constant conflict between city states and nomads makes for good business. The bulk of your outfit are captives, forced to fight to earn their freedom, and their ranks grow after each battle.\n\n[color=#bcad8c]Army of Captives:[/color] Start with two manhunters and four indebted. Take up to 16 men into battle at once. Having equal or fewer indebted than non-indebted will make your men dissatisfied.\n[color=#bcad8c]Overseers:[/color] All non-indebted can whip indebted in combat to reset their morale and buff their stats.\n[color=#bcad8c]Captives:[/color] Indebted earn 25% less experience, are capped at level 7, and will die if struck down.[/p]";
 		this.m.Difficulty = 2;
-		this.m.Order = 70;
+		this.m.Order = 161;
 		this.m.IsFixedLook = true;
 	}
 
@@ -68,7 +68,7 @@ this.manhunters_scenario <- this.inherit("scripts/scenarios/world/starting_scena
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Offhand));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
-		
+
 		items.equip(this.Const.World.Common.pickHelmet([
 			[1, "oriental/southern_head_wrap"]
 		]));

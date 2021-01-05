@@ -6,7 +6,7 @@ this.legends_assassin_scenario <- this.inherit("scripts/scenarios/world/starting
 		this.m.Name = "Assassin";
 		this.m.Description = "[p=c][img]gfx/ui/events/event_51.png[/img][/p][p] A quick, efficient and ruthless assassin. You strike from the shadows and collect the rewards. \n\n[color=#bcad8c]Dirty Deeds:[/color] You will grant the Camouflage perk to anyone who joins you in battle. \n[color=#bcad8c]Underworld:[/color] You have a small chance of finding other Assassins for hire.\n[color=#bcad8c]Avatar:[/color] Begin alone. If you die, it is game over.[/p]";
 		this.m.Difficulty = 2;
-		this.m.Order = 3;
+		this.m.Order = 20;
 		this.m.IsFixedLook = true;
 	}
 
@@ -217,7 +217,7 @@ this.legends_assassin_scenario <- this.inherit("scripts/scenarios/world/starting
 		bro.getBackground().addPerk(this.Const.Perks.PerkDefs.LegendHidden, 6);
 		bro.getBackground().addPerk(this.Const.Perks.PerkDefs.LegendAssassinate, 7);
 		bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_hidden"));
-		
+
 	}
 
 	function onBuildPerkTree( _tree )

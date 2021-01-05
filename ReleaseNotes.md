@@ -4612,3 +4612,10 @@ Assassin scenario no longer creates cultists
 Crusader no longer has the evoker traits in adventuring party
 Crusaders have fortified mind and mind over body 
 Swordmaster crash due to omail 
+
+
+**Fixes**
+Fixed Scavanger Retinue not being unlocked by all beggar, cripple, refugee and salve backgrounds
+Fixes drums of war/life icons not showing
+Alphabetize company origin starts
+

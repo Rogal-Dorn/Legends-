@@ -135,12 +135,28 @@ gt.Const.Items.LegendNamedSouthernArmorLayers <- [
 ]
 
 
+gt.Const.Items.LegendNamedHoodLayers <- [
+];
+
+gt.Const.Items.LegendNamedHelmLayers <- [
+];
+
+gt.Const.Items.LegendNamedVanityLayers <- [
+]
+
+
 gt.Const.Items.LegendNamedArmorLayers <- []
 gt.Const.Items.LegendNamedArmorLayers.extend(this.Const.Items.LegendNamedClothLayers)
 gt.Const.Items.LegendNamedArmorLayers.extend(this.Const.Items.LegendNamedChainLayers)
 gt.Const.Items.LegendNamedArmorLayers.extend(this.Const.Items.LegendNamedPlateLayers)
 gt.Const.Items.LegendNamedArmorLayers.extend(this.Const.Items.LegendNamedTabardLayers)
 gt.Const.Items.LegendNamedArmorLayers.extend(this.Const.Items.LegendNamedCloakLayers)
+
+
+gt.Const.Items.LegendNamedHelmetLayers <- []
+gt.Const.Items.LegendNamedHelmetLayers.extend(this.Const.Items.LegendNamedHoodLayers)
+gt.Const.Items.LegendNamedHelmetLayers.extend(this.Const.Items.LegendNamedHelmLayers)
+gt.Const.Items.LegendNamedHelmetLayers.extend(this.Const.Items.LegendNamedVanityLayers)
 
 gt.Const.Items.NamedHelmets <- [
 	"helmets/named/golden_feathers_helmet",
@@ -150,6 +166,11 @@ gt.Const.Items.NamedHelmets <- [
 	"helmets/named/wolf_helmet",
 	"helmets/named/legend_frogmouth_helm_crested_painted",
 	"helmets/named/legend_frogmouth_helm_decorated"
+	"helmets/named/wallace_sallet_named"
+	"helmets/named/barbute_named"
+	"helmets/named/bascinet_named"
+	"helmets/named/kettle_helm_named"
+	"helmets/named/italo_norman_helm_named"
 ];
 
 
@@ -198,6 +219,7 @@ gt.Const.Items.NamedMeleeWeapons <- [
 	"weapons/named/named_mace",
 	"weapons/named/named_spear",
 	"weapons/named/named_sword",
+	"weapons/named/named_longsword",
 	"weapons/named/named_two_handed_hammer",
 	"weapons/named/named_warbrand",
 	"weapons/named/named_warhammer",
