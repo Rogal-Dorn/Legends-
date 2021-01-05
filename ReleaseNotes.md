@@ -4595,7 +4595,10 @@ Adds @BobPenguin Mage Scenario submod
 * Evoker now also uses a subset of the mage attack skills
 * Burning hands balanced around fire lance 
 
+
+
 **changes**
+Adds Taro's Turn It In mod, so you can turn in most noble quests ast any of their settlements 
 Unarmed:
 *Unarmed mastery now reduces the AP of hand to hand, grapple and kick . It no longer increases teh hit chance of hand to hand 
 *Sprint now lets you move quickly across 4 tiles , does not work on rough ground or across zone of control 
