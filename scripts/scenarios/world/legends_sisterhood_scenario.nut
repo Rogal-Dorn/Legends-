@@ -6,7 +6,7 @@ this.legends_sisterhood_scenario <- this.inherit("scripts/scenarios/world/starti
 		this.m.Name = "Sisterhood";
 		this.m.Description = "[p=c][img]gfx/ui/events/event_91.png[/img][/p][p]Born into a world dominated by kings and bishops, you have studied the old ways of the wise women. Now you lead a band of powerful women shaping their own destinies. \n\n[color=#bcad8c]Sisterhood:[/color] You can only hire women, and each gains the Hold Out perk.\n[color=#bcad8c]Threads of fate:[/color] Your chants and trances alter the minds of your allies and enemies.\n[color=#bcad8c]Rune stones:[/color] You can craft powerful items imbued with ancient runes.\n[color=#bcad8c]Avatar:[/color] If you die, it is game over[/p]";
 		this.m.Difficulty = 2;
-		this.m.Order = 23;
+		this.m.Order = 260;
 		this.m.IsFixedLook = true;
 	}
 

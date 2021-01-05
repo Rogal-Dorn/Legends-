@@ -6,7 +6,7 @@ this.rangers_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		this.m.Name = "Band of Poachers";
 		this.m.Description = "[p=c][img]gfx/ui/events/event_10.png[/img][/p][p]For years you\'ve made a decent living by poaching in the local woods, evading your lord\'s men by being quick on your feet. But pickings have become slimmer and slimmer, and you\'re faced with a decision - how to make a living when all you know is how to use a bow?\n\n[color=#bcad8c]Hunters:[/color] Start with a group of three woodsmen.\n[color=#bcad8c]Expert Scouts:[/color] You move faster and can always get a scouting report for any enemies near you.\n[color=#bcad8c]Travel Light:[/color] You can carry fewer items in your company\'s inventory.[/p]";
 		this.m.Difficulty = 2;
-		this.m.Order = 4;
+		this.m.Order = 30;
 	}
 
 	function isValid()

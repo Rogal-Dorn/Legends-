@@ -6,7 +6,7 @@ this.southern_quickstart_scenario <- this.inherit("scripts/scenarios/world/start
 		this.m.Name = "Southern Mercenaries";
 		this.m.Description = "[p=c][img]gfx/ui/events/event_156.png[/img][/p][p]You and your small band of mercenaries have done the dirty work of small-time merchants for years, yet you\'re barely a step above brigands. You want to be bigger than that. You want it all. And the Gilder will reveal to you the way.\n\n[color=#bcad8c]A quick start into the southern part of the world, without any particular advantages or disadvantages.[/color][/p]";
 		this.m.Difficulty = 1;
-		this.m.Order = 11;
+		this.m.Order = 270;
 	}
 
 	function isValid()

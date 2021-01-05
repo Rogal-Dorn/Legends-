@@ -78,7 +78,8 @@ this.legend_crusader_background <- this.inherit("scripts/skills/backgrounds/char
 				this.Const.Perks.LargeTree,
 				this.Const.Perks.IndestructibleTree,
 				this.Const.Perks.MartyrTree,
-				this.Const.Perks.InspirationalTree
+				this.Const.Perks.IntelligentTree,
+				this.Const.Perks.InspirationalTree,
 				this.Const.Perks.FitTree
 			],
 			Enemy = [
