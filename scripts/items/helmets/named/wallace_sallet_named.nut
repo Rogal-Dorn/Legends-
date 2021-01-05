@@ -40,4 +40,3 @@ this.wallace_sallet_named <- this.inherit("scripts/items/helmets/named/named_hel
 	}
 
 });
-
