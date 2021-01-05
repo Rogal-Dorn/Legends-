@@ -1399,22 +1399,6 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 
 		this.addPerkGroup(cultistGroup);
 	}
-	
-	function LearnKnifeSkills()
-	{
-		this.m.IsConverted = true;
-		local cultistGroup = [
-						[this.Const.Perks.PerkDefs.LegendSpecialistKnifeSkill],
-						[],
-						[this.Const.Perks.PerkDefs.LegendSpecialistKnifeDamage],
-						[],
-						[],
-						[this.Const.Perks.PerkDefs.LegendHidden],
-						[this.Const.Perks.PerkDefs.LegendAssassinate]
-					];
-
-		this.addPerkGroup(cultistGroup);
-	}
 
 	function onSerialize( _out )
 	{

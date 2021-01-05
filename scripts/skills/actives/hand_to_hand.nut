@@ -120,21 +120,6 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + damage_Armor_min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + damage_Armor_max + "[/color] armor damage"
 			});
 		}
-		if(!this.getContainer().getActor().getCurrentProperties().IsSpecializedInFists) {
-			ret.push({
-				id = 6,
-				type = "text",
-				icon = "ui/icons/hitchance.png",
-				text = "Has [color=" + this.Const.UI.Color.NegativeValue + "]-10%[/color] chance to hit"
-			});
-		} else {
-			ret.push({
-				id = 6,
-				type = "text",
-				icon = "ui/icons/hitchance.png",
-				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] chance to hit"
-			});
-		}
 
 		return ret;
 	}
@@ -212,16 +197,14 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 			}
 			_properties.DamageRegularMin += this.Math.floor(damageMin);
 			_properties.DamageRegularMax += this.Math.floor(damageMax);
-			_properties.MeleeSkill += _properties.IsSpecializedInFists ? 10 : -10;
-
-
-			this.m.DirectDamageMult = _properties.IsSpecializedInFists ? 0.5 : 0.1;
 		}
 	}
 
 	function onAfterUpdate( _properties )
 	{
 		this.m.FatigueCostMult = _properties.IsSpecializedInFists ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
+		this.m.FatigueCostMult = _properties.IsSpecializedInFists ? 3 : 4;
+
 	}
 
 	function onUse( _user, _targetTile )

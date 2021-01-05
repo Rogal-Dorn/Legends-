@@ -84,10 +84,6 @@ this.legend_upgrading_effort_situation <- this.inherit("scripts/entity/world/set
 
 		_draftList.push("legend_blacksmith_background");
 		_draftList.push("legend_blacksmith_background");
-		_draftList.push("legend_blacksmith_background");
-		_draftList.push("legend_blacksmith_background");
-		_draftList.push("legend_blacksmith_background");
-		_draftList.push("legend_blacksmith_background");
 
 	}
 

@@ -90,9 +90,9 @@ this.assassin_background <- this.inherit("scripts/skills/backgrounds/character_b
 				this.Const.Perks.LightArmorTree,
 			],
 			Traits = [
-				this.Const.Perks.TrainedTree,
+				this.Const.Perks.FitTree,
 				this.Const.Perks.CalmTree,
-				this.Const.Perks.AgileTree,
+				this.Const.Perks.LargeTree,
 				this.Const.Perks.ViciousTree
 			],
 			Enemy = [

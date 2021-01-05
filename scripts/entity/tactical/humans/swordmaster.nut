@@ -106,7 +106,7 @@ this.swordmaster <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Items.equip(this.Const.World.Common.pickHelmet([
 				[3, "nasal_helmet"],
 				[2, "nasal_helmet_with_mail"],
-				[2, "omail_coif"],
+				[2, "mail_coif"],
 				[1, "feathered_hat"],
 				[1, "headscarf"]
 			]))
