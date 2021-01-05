@@ -413,7 +413,7 @@ layers = [
  "title" :  "Bronze Chain", \
  "desc" :  "Bronze Chain" \
 },
-{"name" : "enclave_bevor"                     , "layer" : "hood", "min" : 1, "max" : 1, "base" : True, "value" : 450, "con" : 100, "stam" : -7, "vis" : 0, "hair" : "false", "beard" : "false",  \
+{"name" : "enclave_bevor"                     , "layer" : "hood", "min" : 1, "max" : 1, "base" : True, "value" : 450, "con" : 100, "stam" : -7, "vis" : 0, "hair" : "false", "beard" : "true",  \
  "title" :  "Bevor", \
  "desc" :  "A solid metal bevor" \
 },
@@ -570,11 +570,11 @@ layers = [
  "title" :  "Nomad Leather Cap", \
  "desc" :  "A light nomad leather cap." \
 },
-{"name" : "southern_cap_smooth"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 140, "con" : 40, "stam" : -2, "vis" : 0, "hair" : "true", "beard" : "false",  \
+{"name" : "southern_cap_smooth"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 140, "con" : 40, "stam" : -2, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Southern Smooth Cap", \
  "desc" :  "A smooth metal cap" \
 },
-{"name" : "southern_cap_spiked"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 140, "con" : 40, "stam" : -2, "vis" : 0, "hair" : "true", "beard" : "false",  \
+{"name" : "southern_cap_spiked"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 140, "con" : 40, "stam" : -2, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Southern Spiked Cap", \
  "desc" :  "A metal skull cap with a fashionable spike" \
 },
@@ -618,11 +618,11 @@ layers = [
  "title" :  "Bascinet", \
  "desc" :  "A heavy and durable bascinet. This one has a pointed head and is blackened." \
 },
-{"name" : "enclave_great_bascinet"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 2800, "con" : 260, "stam" : -13, "vis" : -2, "hair" : "true", "beard" : "false",  \
+{"name" : "enclave_great_bascinet"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 2800, "con" : 260, "stam" : -13, "vis" : -2, "hair" : "true", "beard" : "true",  \
  "title" :  "Peaked Bascinet", \
  "desc" :  "A well made peaked bascinet" \
 },
-{"name" : "enclave_venitian_bascinet"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 2800, "con" : 260, "stam" : -13, "vis" : -2, "hair" : "true", "beard" : "false",  \
+{"name" : "enclave_venitian_bascinet"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 2800, "con" : 260, "stam" : -13, "vis" : -2, "hair" : "true", "beard" : "true",  \
  "title" :  "Great Bascinet", \
  "desc" :  "A tall helm composed of a peaked bascinet and riveted cheek protection." \
 },
@@ -642,7 +642,7 @@ layers = [
  "title" :  "Kettle Sallet", \
  "desc" :  "A full-metal sallet with a broad rim." \
 },
-{"name" : "enclave_skullcap"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1900, "con" : 140, "stam" : -7, "vis" : -2, "hair" : "true", "beard" : "false",  \
+{"name" : "enclave_skullcap"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1900, "con" : 140, "stam" : -7, "vis" : -2, "hair" : "false", "beard" : "false",  \
  "title" :  "Metal Skullcap", \
  "desc" :  "A metal cap that covers the head." \
 },
