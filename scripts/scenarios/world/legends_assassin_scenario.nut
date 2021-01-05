@@ -126,11 +126,19 @@ this.legends_assassin_scenario <- this.inherit("scripts/scenarios/world/starting
 	function onUpdateDraftList( _list, _gender)
 	{
 		local r;
-		r = this.Math.rand(0, 199);
+		r = this.Math.rand(0, 99);
 
 		if (r == 0)
 		{
 			_list.push("assassin_background");
+		}
+
+		local r;
+		r = this.Math.rand(0, 99);
+
+		if (r == 0)
+		{
+			_list.push("assassin_southern_background");
 		}
 
 		local r;
@@ -204,7 +212,10 @@ this.legends_assassin_scenario <- this.inherit("scripts/scenarios/world/starting
 			bro.improveMood(1.0, "Is excited at becoming part of outlaw company");
 		}
 		bro.improveMood(0.5, "Learned a new skill");
-		bro.getBackground().LearnKnifeSkills();
+		bro.getBackground().addPerk(this.Const.Perks.PerkDefs.LegendSpecialistKnifeSkill, 1);
+		bro.getBackground().addPerk(this.Const.Perks.PerkDefs.LegendSpecialistKnifeDamage, 3);
+		bro.getBackground().addPerk(this.Const.Perks.PerkDefs.LegendHidden, 6);
+		bro.getBackground().addPerk(this.Const.Perks.PerkDefs.LegendAssassinate, 7);
 		bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_hidden"));
 
 	}

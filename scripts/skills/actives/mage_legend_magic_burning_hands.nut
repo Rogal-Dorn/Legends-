@@ -42,17 +42,19 @@ this.mage_legend_magic_burning_hands <- this.inherit("scripts/skills/actives/mag
 		this.m.IsIgnoredAsAOO = true;
 		this.m.IsShowingProjectile = false;
 		this.m.IsDoingForwardMove = false;
-		this.m.ActionPointCost = 7;
+		//halved AP allows a choice between a puff or sustained application
+		this.m.ActionPointCost = 4;
 		this.m.FatigueCost = 60;
-		this.m.MinRange = 2;
+		this.m.MinRange = 1;
 		this.m.MaxRange = 2;
 		this.m.MaxLevelDifference = 8;
 
 		this.m.DirectDamageMult = 0.3;
 		this.m.DamageArmorMult = 0.7;
 		this.m.ResolveScaling = 2;
-		this.m.BaseDamageRegularMin = 25;
-		this.m.BaseDamageRegularMax = 40;
+		//looks small, but its balanced around fire lance which can do 80-120 if it hits both targets, this can do 90-135 damage to a group. 
+		this.m.BaseDamageRegularMin = 10;
+		this.m.BaseDamageRegularMax = 15;
 	}
 
 	function onUpdate( _properties )
@@ -63,8 +65,9 @@ this.mage_legend_magic_burning_hands <- this.inherit("scripts/skills/actives/mag
 	function applyPerks() {
 		if (this.m.Container.hasSkill("perk.mage_legend_mastery_burning_hands"))
 		{
-			this.m.BaseDamageRegularMin = 45;
-			this.m.BaseDamageRegularMax = 60;
+			//doubles total output
+			this.m.BaseDamageRegularMin = 20;
+			this.m.BaseDamageRegularMax = 30;
 		}
 	}
 
