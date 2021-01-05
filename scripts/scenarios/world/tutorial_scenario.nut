@@ -6,7 +6,7 @@ this.tutorial_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 		this.m.Name = "Rebuilding a Company";
 		this.m.Description = "[p=c][img]gfx/ui/events/event_21.png[/img][/p][p]You are second-in-command in a mercenary company that has been tracking a brigand named Hoggart for some time now. An unexpected turn of events leaves the company in shatters, and you in charge to rebuild it to its former glory.\n\n[color=#bcad8c]Recommended for new players as it includes some helpful guidance in the beginning.[/color][/p]";
 		this.m.Difficulty = 1;
-		this.m.Order = 21;
+		this.m.Order = 240;
 	}
 
 	function onSpawnAssets()

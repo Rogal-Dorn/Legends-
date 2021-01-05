@@ -6,7 +6,7 @@ this.legends_party_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		this.m.Name = "Adventuring Party";
 		this.m.Description = "[p=c][img]gfx/ui/events/event_134.png[/img][/p][p]After an unlikely meeting in a tavern, an unlikely group of strangers have formed an adventuring party. They have set out in search of both dragons and dungeons.\n\n[color=#bcad8c]A party of six overpowered adventurers, each with their own skills.[/color][/p]";
 		this.m.Difficulty = 1;
-		this.m.Order = 2;
+		this.m.Order = 10;
 	}
 
 	function isValid()
@@ -44,7 +44,7 @@ this.legends_party_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[0].getSkills().add(this.new("scripts/skills/traits/mad_trait"));
 		bros[0].getSkills().add(this.new("scripts/skills/traits/deathwish_trait"));
 		bros[1].setStartValuesEx([
-			"legend_assassin_background"
+			"assassin_background"
 		]);
 		bros[1].getBackground().m.RawDescription = "{%name% was weird when you met him. After some time traveling with your party you found out %name% was hired to assassinate local lord. %name%  wanted to use your company just for temporary disguise but decided to stay. }";
 		bros[1].setPlaceInFormation(4);
@@ -65,8 +65,8 @@ this.legends_party_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[3].getBackground().m.RawDescription = "%name% is a cunning woman, knowledgable on nearly ever subject. She spends her time gathering ingredients and tinkering with concoctions to use in battle, she assures you nothing she does is magic, but it sure looks like it.";
 		bros[3].setPlaceInFormation(12);
 		bros[3].setVeteranPerks(2);
-		bros[2].getSkills().add(this.new("scripts/skills/traits/bright_trait"));
-		bros[2].getSkills().add(this.new("scripts/skills/traits/light_trait"));
+		bros[3].getSkills().add(this.new("scripts/skills/traits/bright_trait"));
+		bros[3].getSkills().add(this.new("scripts/skills/traits/light_trait"));
 		bros[4].setStartValuesEx([
 			"legend_noble_commander_background"
 		]);
