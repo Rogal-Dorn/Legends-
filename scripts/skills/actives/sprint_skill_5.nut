@@ -5,9 +5,9 @@ this.sprint_skill_5 <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "actives.sprint";
 		this.m.Name = "Sprint";
 		this.m.Description = "Quickly sprint over a short distance in a straight line. Can not be used on difficult terrain, across different height levels or through enemy Zones of Control.";
-		this.m.Icon = "skills/active_52.png";
-		this.m.IconDisabled = "skills/active_52_sw.png";
-		this.m.Overlay = "active_52";
+		this.m.Icon = "skills/perk_sprint.png";
+		this.m.IconDisabled = "skills/perk_sprint_sw.png";
+		this.m.Overlay = "perk_37_active";
 		this.m.SoundOnUse = [];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.OtherTargeted;

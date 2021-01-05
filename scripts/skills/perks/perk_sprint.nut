@@ -17,7 +17,7 @@ this.perk_sprint <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.m.Container.hasSkill("actives.sprint"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/sprint_skill"));
+			this.m.Container.add(this.new("scripts/skills/actives/sprint_skill_5"));
 		}
 	}
 
