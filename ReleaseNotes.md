@@ -4626,4 +4626,5 @@ Swordmaster crash due to omail
 Fixed Scavanger Retinue not being unlocked by all beggar, cripple, refugee and salve backgrounds
 Fixes drums of war/life icons not showing
 Alphabetize company origin starts
+Fixes hair and beard clipping issues on some helms 
 
