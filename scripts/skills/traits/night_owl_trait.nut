@@ -6,7 +6,7 @@ this.night_owl_trait <- this.inherit("scripts/skills/traits/character_trait", {
 		this.m.ID = "trait.night_owl";
 		this.m.Name = "Night Owl";
 		this.m.Icon = "ui/traits/trait_icon_57.png";
-		this.m.Description = "Some characters adapt to low light conditions better than others, and this individual is especially good at it.";
+		this.m.Description = "Some characters adapt to low light conditions better than others, and this individual is especially good at it. Halves the usual night penalties";
 		this.m.Titles = [
 			"Night Owl",
 			"Eagle Eyes"
@@ -19,7 +19,7 @@ this.night_owl_trait <- this.inherit("scripts/skills/traits/character_trait", {
 
 	function getTooltip()
 	{
-		return [
+return [
 			{
 				id = 1,
 				type = "title",
@@ -34,18 +34,24 @@ this.night_owl_trait <- this.inherit("scripts/skills/traits/character_trait", {
 				id = 10,
 				type = "text",
 				icon = "ui/icons/vision.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] Vision during Nighttime"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] Vision during Night time"
+			},
+			{
+				id = 10,
+				type = "text",
+				icon = "ui/icons/ranged_skill.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+15%[/color] Ranged Skill during Night time"
+			},
+			{
+				id = 10,
+				type = "text",
+				icon = "ui/icons/ranged_defense.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+15%[/color] Ranged Defense during Night time"
 			}
 		];
 	}
 
-	function onUpdate( _properties )
-	{
-		if (this.getContainer().hasSkill("special.night") && _properties.IsAffectedByNight == true)
-		{
-			_properties.Vision += 1;
-		}
-	}
+
 
 });
 
