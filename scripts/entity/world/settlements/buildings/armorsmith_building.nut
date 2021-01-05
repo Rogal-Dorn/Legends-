@@ -629,29 +629,6 @@ this.armorsmith_building <- this.inherit("scripts/entity/world/settlements/build
 				P = 1.0,
 				S = "helmets/conic_helmet_with_faceguard"
 			});
-
-			// if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
-			// {
-			// 	list.push({
-			// 		R = 80,
-			// 		P = 1.0,
-			// 		S = "helmets/italo_norman_helm"
-			// 	});
-			// 	list.push({
-			// 		R = 80,
-			// 		P = 1.0,
-			// 		S = "helmets/wallace_sallet"
-			// 	});
-
-			// 	if (this.Math.rand(1, 100) <= 33)
-			// 	{
-			// 		list.push({
-			// 			R = 99,
-			// 			P = 2.0,
-			// 			S = "helmets/italo_norman_helm_named"
-			// 		});
-			// 	}
-			// }
 		}
 		else
 		{
