@@ -41,7 +41,8 @@ this.legend_boar_gore <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-	local p = actor.getCurrentProperties();
+		local actor = this.getContainer().getActor()
+		local p = actor.getCurrentProperties();
 		local mult = p.MeleeDamageMult;
 		local bodyHealth = actor.getHitpointsMax();
 		local average = (actor.getInitiative() +  bodyHealth) / 4;
@@ -198,7 +199,7 @@ this.legend_boar_gore <- this.inherit("scripts/skills/skill", {
 			damageMax = 50 + maxFalloff;
 			}
 
-			
+
 
 
 			if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_muscularity"))
