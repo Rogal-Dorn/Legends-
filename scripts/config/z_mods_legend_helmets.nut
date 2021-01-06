@@ -94,7 +94,7 @@ gt.Const.LegendMod.HelmObjs.extend([
             [1, "hood/legend_helmet_chain_hood_full"] //90
         ],
         Helms = [
-            [1, "helm/legend_helmet_flat_top_polished"] //150
+            [1, "helm/legend_helmet_flat_top_helm_polished"] //150
         ],
         Tops = [
             [1, "top/legend_helmet_faceplate_flat"] //45
@@ -680,7 +680,7 @@ gt.Const.LegendMod.HelmObjs.extend([
             [4, "hood/legend_helmet_chain_hood"],//80
         ],
         Helms = [
-            [1, "helm/legend_kettle_helm_named"] //160
+            [1, "helm/legend_helmet_kettle_helm_named"] //160
         ],
         Tops = [
             [1, "top/legend_helmet_chain_attachment"], //40
