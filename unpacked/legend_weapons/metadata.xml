@@ -398,7 +398,7 @@
   <sprite id="icon_flail_two_handed_02_named_03_bloodied" offsetY="35" ic="FF353949" width="130" height="142" img="icons\icon_flail_two_handed_02_named_03_bloodied.png" left="-65" right="17" top="-50" bottom="64" />
 
 
-  <sprite id="icon_legend_flail_ranged_02_named_0" offsetY="35" ic="FF3A3E4A" width="130" height="142" img="icons\icon_legend_flail_ranged_02_named_01.png" left="-65" right="17" top="-50" bottom="64" />
+  <sprite id="icon_legend_flail_ranged_02_named_01" offsetY="35" ic="FF3A3E4A" width="130" height="142" img="icons\icon_legend_flail_ranged_02_named_01.png" left="-65" right="17" top="-50" bottom="64" />
   <sprite id="icon_legend_flail_ranged_02_named_01_bloodied" offsetY="35" ic="FF353949" width="130" height="142" img="icons\icon_legend_flail_ranged_02_named_01_bloodied.png" left="-65" right="17" top="-50" bottom="64" />
   <sprite id="icon_legend_flail_ranged_01" offsetY="35" ic="FF424B55" width="124" height="142" img="icons\icon_legend_flail_ranged_01.png" left="-62" right="22" />
   <sprite id="icon_legend_flail_ranged_01_bloodied" offsetY="35" ic="FF343B4F" width="124" height="142" img="icons\icon_legend_flail_ranged_01_bloodied.png" left="-62" right="22" />

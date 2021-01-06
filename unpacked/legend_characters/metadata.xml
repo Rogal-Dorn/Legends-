@@ -1,5 +1,12 @@
 <brush name="gfx/legend_characters.png" version="17">
 
+<sprite id="permanent_injury_scarred" offsetY="35" ic="FF597AA9" width="104" height="142" img="entity\injury\injury_scarred_01.png" left="-21" right="29" top="-20" bottom="48" />
+<sprite id="permanent_injury_scarred_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4F6B9B" width="131" height="125" img="entity\injury\injury_scarred_01.png" left="-44" right="16" top="-58" bottom="0" />
+
+<sprite id="permanent_injury_burned" offsetY="35" ic="FF597AA9" width="104" height="142" img="entity\injury\injury_burned.png" left="-21" right="29" top="-20" bottom="48" />
+<sprite id="permanent_injury_burned_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4F6B9B" width="131" height="125" img="entity\injury\injury_burned.png" left="-44" right="16" top="-58" bottom="0" />
+
+
 <sprite id="bust_head_50" offsetY="35" ic="FF5877A6" width="104" height="142" img="entity\heads\bust_head_50.png" left="-20" right="30" top="-21" bottom="47" />
 <sprite id="bust_head_50_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4F699A" width="131" height="125" img="entity\heads\bust_head_50_dead.png" left="-44" right="14" top="-56" bottom="0" />
 <sprite id="bust_head_51" offsetY="35" ic="FF5877A6" width="104" height="142" img="entity\heads\bust_head_51.png" left="-20" right="30" top="-21" bottom="47" />
