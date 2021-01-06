@@ -16,7 +16,7 @@ this.legend_shiv <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
 		this.m.ArmamentIcon = "icon_legend_shiv_01";
-		this.m.Value = 15;
+		this.m.Value = 3;
 		this.m.Condition = 13.0;
 		this.m.ConditionMax = 13.0;
 		this.m.RegularDamage = 10;

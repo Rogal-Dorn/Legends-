@@ -71,9 +71,7 @@ this.manhunter_background <- this.inherit("scripts/skills/backgrounds/character_
 				this.Const.Perks.FastTree
 			],
 			Enemy = [
-				this.Const.Perks.CivilizationTree,
-				this.Const.Perks.OutlandersTree
-
+				this.Const.Perks.NomadsTree
 			],
 			Class = [],
 			Magic = []

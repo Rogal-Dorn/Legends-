@@ -35,9 +35,9 @@ cp -R helmet_scripts/. "$BBDir\\scripts\\items\\legend_helmets"
 handleExit
 
 echo "Building armors..."
-rm -rf legend_armor
+rm -rf legend_armor_scripts
 handleExit
-mkdir -p "legend_armor"
+mkdir -p "legend_armor_scripts"
 handleExit
 python make_legend_armor.py
 handleExit

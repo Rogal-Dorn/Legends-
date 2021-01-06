@@ -91,10 +91,14 @@ this.fountain_of_youth_item <- this.inherit("scripts/items/item", {
 		_actor.getSprite("permanent_injury_2").Visible = false;
 		_actor.getSprite("permanent_injury_3").Visible = false;
 		_actor.getSprite("permanent_injury_4").Visible = false;
+		_actor.getSprite("permanent_injury_scarred").Visible = false;
+		_actor.getSprite("permanent_injury_burned").Visible = false;
 		_actor.getSprite("permanent_injury_1").resetBrush();
 		_actor.getSprite("permanent_injury_2").resetBrush();
 		_actor.getSprite("permanent_injury_3").resetBrush();
 		_actor.getSprite("permanent_injury_4").resetBrush();
+		_actor.getSprite("permanent_injury_scarred").resetBrush();
+		_actor.getSprite("permanent_injury_burned").resetBrush();
 		return true;
 	}
 

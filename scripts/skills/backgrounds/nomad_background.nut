@@ -96,8 +96,9 @@ this.nomad_background <- this.inherit("scripts/skills/backgrounds/character_back
 				this.Const.Perks.DeviousTree
 			],
 			Enemy = [
-				this.Const.Perks.CivilizationTree,
-				this.Const.Perks.BeastsTree
+				this.Const.Perks.SouthernersTree,
+				this.Const.Perks.DirewolfTree
+				
 			],
 			Class = [],
 			Magic = []

@@ -100,6 +100,8 @@ local virtualSpeed = 1.0;
         bro.getSprite("permanent_injury_2").Visible = false;
         bro.getSprite("permanent_injury_3").Visible = false;
         bro.getSprite("permanent_injury_4").Visible = false;
+        bro.getSprite("permanent_injury_scarred").Visible = false;
+        bro.getSprite("permanent_injury_burned").Visible = false;
         bro.improveMood(10.0, "Has enjoyed Vilain's debug mode");
         break;
       case "Trait":

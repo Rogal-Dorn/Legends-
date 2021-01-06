@@ -37,7 +37,7 @@ this.noble_sergeant <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.Math.rand(1, 100) <= 33)
 		{
-			local r = this.Math.rand(1, 3);
+			local r = this.Math.rand(1, 4);
 
 			if (r == 1)
 			{
@@ -55,6 +55,12 @@ this.noble_sergeant <- this.inherit("scripts/entity/tactical/human", {
 			{
 				local sprite = this.getSprite("permanent_injury_1");
 				sprite.setBrush("permanent_injury_01");
+				sprite.Visible = true;
+			}
+			else if (r == 4)
+			{
+				local sprite = this.getSprite("permanent_injury_scarred");
+				sprite.setBrush("permanent_injury_scarred");
 				sprite.Visible = true;
 			}
 		}

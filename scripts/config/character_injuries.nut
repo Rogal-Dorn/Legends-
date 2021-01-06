@@ -341,6 +341,14 @@ gt.Const.Injury.Permanent <- [
 	{
 		ID = "injury.missing_hand",
 		Script = "injury_permanent/missing_hand_injury"
+	},
+	{
+		ID = "injury.legend_scarred_injury",
+		Script = "injury_permanent/legend_scarred_injury"
+	},
+	{
+		ID = "injury.legend_burned_injury",
+		Script = "injury_permanent/legend_scarred_injury"
 	}
 ];
 gt.Const.Injury.Flagellation <- [
