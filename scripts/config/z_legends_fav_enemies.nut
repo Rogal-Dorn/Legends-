@@ -219,8 +219,6 @@ gt.Const.LegendMod.FavoriteSoutherners <- [
 	this.Const.EntityType.Assassin,
 	this.Const.EntityType.SatoManhunter,
 	this.Const.EntityType.SatoManhunterVeteran,
-	this.Const.EntityType.SatoManhunterRanged,
-	this.Const.EntityType.SatoManhunterVeteranRanged,
 	this.Const.EntityType.Gladiator,
 	this.Const.EntityType.PeasantSouthern,
 ];
