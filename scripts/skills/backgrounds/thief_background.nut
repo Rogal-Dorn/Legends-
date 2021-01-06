@@ -79,6 +79,7 @@ this.thief_background <- this.inherit("scripts/skills/backgrounds/character_back
 			],
 			Enemy = [
 				this.Const.Perks.NoblesTree,
+				this.Const.Perks.SouthernersTree,
 				this.Const.Perks.MercenaryTree
 			],
 			Class = [this.Const.Perks.KnifeClassTree],
