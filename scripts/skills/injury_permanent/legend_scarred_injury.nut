@@ -55,7 +55,15 @@ this.legend_scarred_injury <- this.inherit("scripts/skills/injury_permanent/perm
 	function onApplyAppearance()
 	{
 		local sprite = this.getContainer().getActor().getSprite("permanent_injury_scarred");
-		sprite.setBrush("permanent_injury_scarred");
+		if (this.getContainer().getActor().getEthnicity() == 1)
+		{
+			sprite.setBrush("permanent_injury_scarred_southern");
+		}
+		else
+		{
+			sprite.setBrush("permanent_injury_scarred");
+		}
+
 		sprite.Visible = true;
 	}
 
