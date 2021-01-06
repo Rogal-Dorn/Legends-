@@ -4633,4 +4633,6 @@ Crusaders have fortified mind and mind over body
 Swordmaster crash due to omail
 Fixed Drunk Nobleman event
 Fixed sureshot trait tooltip
-
+Cleans up many blurry helmet images
+Items spawn correctly in druid scenario
+Fixes missing kettle and flat top helmet errors
