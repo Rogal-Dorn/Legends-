@@ -362,7 +362,7 @@ layers = [
 
 
 
-{"name": "legend_armor_ancient_double_mail",              "layer": "chain", "min": 1, "max": 1, "value" : 750, "con" : 80, "stam" : -14, "impactSound" : "chain", "invSound" : "leather", \
+{"name": "legend_armor_ancient_double_mail",              "layer": "chain", "min": 1, "max": 5, "value" : 750, "con" : 80, "stam" : -14, "impactSound" : "chain", "invSound" : "leather", \
     "title" :  "Ancient Double Layer Mail", \
     "desc" :  "Includes A heavy and rotten double-layered mail of ancient design.", \
     "adesc" :""
