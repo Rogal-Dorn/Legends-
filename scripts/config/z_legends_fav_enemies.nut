@@ -217,6 +217,15 @@ gt.Const.LegendMod.FavoriteSoutherners <- [
 	this.Const.EntityType.Officer,
 	this.Const.EntityType.Engineer,
 	this.Const.EntityType.Assassin,
+	this.Const.EntityType.SatoManhunter,
+	this.Const.EntityType.SatoManhunterVeteran,
+	this.Const.EntityType.SatoManhunterRanged,
+	this.Const.EntityType.SatoManhunterVeteranRanged,
+	this.Const.EntityType.Gladiator,
+	this.Const.EntityType.PeasantSouthern,
+];
+
+gt.Const.LegendMod.FavoriteNomad <- [
 	this.Const.EntityType.Slave,
 	this.Const.EntityType.Gladiator,
 	this.Const.EntityType.NomadCutthroat,
@@ -535,6 +544,18 @@ gt.Const.LegendMod.GetFavoriteEnemyValue <- function ( _type )
 		break;
 		case "this.Const.EntityType.PeasantSouthern":
 		value = 25;
+		break;
+		case "this.Const.EntityType.SatoManhunter":
+		value = 5;
+		break;
+		case "this.Const.EntityType.SatoManhunterVeteran":
+		value = 3;
+		break;
+		case "this.Const.EntityType.SatoManhunterRanged":
+		value = 6;
+		break;
+		case "this.Const.EntityType.SatoManhunterVeteranRanged":
+		value = 4;
 		break;
 		case "this.Const.EntityType.SkeletonLich":
 		value = 0.3;

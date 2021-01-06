@@ -81,7 +81,7 @@ this.legend_holyflame_skill <- this.inherit("scripts/skills/skill", {
 	function isUsable()
 	{
 
-		return !this.Tactical.isActive() || this.skill.isUsable() && !this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions());
+		return !this.Tactical.isActive() || this.skill.isUsable();
 	}
 
 	function onUse( _user, _targetTile )
@@ -89,14 +89,29 @@ this.legend_holyflame_skill <- this.inherit("scripts/skills/skill", {
 		local targets = [];
 		targets.push(_targetTile);
 
+		for( local i = 0; i != 6; i = ++i )
+		{
+			if (!_targetTile.hasNextTile(i))
+			{
+				continue
+			}
+			local tile = _targetTile.getNextTile(i);
+			targets.push(tile);
+		}
+
 		local p = {
 			Type = "legend_holyflame",
 			Tooltip = "This is hallowed ground. Our allies shall be sanctified, becoming immune to injury. The undead shall be consecrated, able to gain injury and unable to resurrect.",
 			IsAppliedAtRoundStart = false,
 			IsAppliedAtTurnEnd = true,
 			IsAppliedOnMovement = false,
+			IsByPlayer = _user.isPlayerControlled(),
 			Timeout = this.Time.getRound() + 2,
 			Callback = this.Const.Tactical.Common.onApplyHolyFlame
+			function Applicable( _a )
+			{
+				return true;
+			}
 		};
 
 		foreach( tile in targets )

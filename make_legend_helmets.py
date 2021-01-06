@@ -1013,7 +1013,7 @@ layers = [
  "title" :  "Unhold head Spike", \
  "desc" :  "The heavy spiked armor used by barbarian unholds" \
 },
-{"name" : "faceplate_gold"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 550, "con" : 52, "stam" : -3, "vis" : -2, "hair" : "false", "beard" : "true", "named" : True, "rminViz" : -2, "rmaxViz" : -1, "rminStam" : -8, "rmaxStam" : -6, "rminCond" : 105, "rmaxCond" : 135, "names" : Names,  \
+{"name" : "faceplate_gold"                     , "layer" : "top", "min" : 1, "max" : 2, "value" : 550, "con" : 52, "stam" : -3, "vis" : -2, "hair" : "false", "beard" : "true", "named" : True, "rminViz" : -2, "rmaxViz" : -1, "rminStam" : -8, "rmaxStam" : -6, "rminCond" : 105, "rmaxCond" : 135, "names" : Names,  \
  "title" :  "Gold Faceplate", \
  "desc" :  "A gilded faceplate of excellent quality" \
 },

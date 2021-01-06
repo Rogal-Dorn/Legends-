@@ -100,7 +100,7 @@ this.slave_background <- this.inherit("scripts/skills/backgrounds/character_back
 				this.Const.Perks.LargeTree,
 				this.Const.Perks.IndestructibleTree
 			],
-			Enemy = [],
+			Enemy = [this.Const.Perks.SouthernersTree],
 			Class = [this.Const.Perks.FistsClassTree],
 			Magic = []
 		}

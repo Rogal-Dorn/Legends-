@@ -4603,7 +4603,7 @@ Scarred
 - 10% reduction to hitpoints and fatigue
 - 75% chance to survive if struck down by non fatal blow
 
-**changes**
+**Changes**
 Adds Taro's Turn It In mod, so you can turn in most noble quests ast any of their settlements
 Adds a couple of LeVilainJoueur's tweaks
 * Night Owl halves the effect of night on ranged skill and defense
@@ -4621,15 +4621,16 @@ Battle standards
 * Pitchfork skills secondary effect now affect the battle standard
 * Inspiring presence now adds 10 damage when wielding the battle standard, backfire chance reduced to 0.04% per point under 100 resolve
 
-
 **Fixes**
+Favoured perks for southerners and nomads now work.  Nomad is on manhunter and crucified crusader. southerners is on nomads, thieves and slaves
+Assassin scenario no longer creates cultists
+Crucified crusader and crusader have a dynamic perk tree set
+Crusader no longer has the evoker traits in adventuring party
+Crusaders have fortified mind and mind over body
 Fixed Scavanger Retinue not being unlocked by all beggar, cripple, refugee and salve backgrounds
 Fixes drums of war/life icons not showing
 Alphabetize company origin starts
 Fixes hair and beard clipping issues on some helms
-Assassin scenario no longer creates cultists
-Crusader no longer has the evoker traits in adventuring party
-Crusaders have fortified mind and mind over body
 Swordmaster crash due to omail
 Fixed Drunk Nobleman event
 Fixed sureshot trait tooltip
@@ -4637,3 +4638,4 @@ Cleans up many blurry helmet images
 Items spawn correctly in druid scenario
 Fixes missing kettle and flat top helmet errors
 Fix error in boar_gore tooltips
+Shank price reduced
