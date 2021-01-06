@@ -4636,3 +4636,4 @@ Fixed sureshot trait tooltip
 Cleans up many blurry helmet images
 Items spawn correctly in druid scenario
 Fixes missing kettle and flat top helmet errors
+Fix error in boar_gore tooltips
