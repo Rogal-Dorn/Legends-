@@ -62,6 +62,34 @@ this.crusader_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[2];
 		this.m.Modifiers.ToolConsumption = this.Const.LegendMod.ResourceModifiers.ToolConsumption[2];
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[2];
+		this.m.PerkTreeDynamic = {
+			Weapon = [
+				this.Const.Perks.GreatSwordTree,
+				this.Const.Perks.FlailTree,
+				this.Const.Perks.HammerTree,
+				this.Const.Perks.MaceTree,
+				this.Const.Perks.CrossbowTree
+			],
+			Defense = [
+				this.Const.Perks.ShieldTree,
+				this.Const.Perks.HeavyArmorTree
+			],
+			Traits = [
+				this.Const.Perks.TrainedTree,
+				this.Const.Perks.LargeTree,
+				this.Const.Perks.IndestructibleTree,
+				this.Const.Perks.MartyrTree,
+				this.Const.Perks.IntelligentTree,
+				this.Const.Perks.InspirationalTree,
+				this.Const.Perks.FitTree
+			],
+			Enemy = [
+					this.Const.Perks.ZombieTree,
+					this.Const.Perks.SkeletonTree
+					],
+			Class = [],
+			Magic = []
+		}
 	}
 
 	function getTooltip()

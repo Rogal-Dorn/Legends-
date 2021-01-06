@@ -2068,6 +2068,15 @@ gt.Const.Perks.PerkDefObjects <- [
 		Const = "LegendFavouredEnemySoutherner"
 	},
 	{
+		ID = "perk.legend_favoured_enemy_nomad",
+		Script = "scripts/skills/perks/perk_legend_favoured_enemy_nomad",
+		Name = this.Const.Strings.PerkName.LegendFavouredEnemyNomad,
+		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyNomad,
+		Icon = "ui/perks/favoured_nomad_01.png",
+		IconDisabled = "ui/perks/favoured_nomad_bw.png",
+		Const = "LegendFavouredEnemyNomad"
+	},
+	{
 		ID = "perk.mastery.greatsword",
 		Script = "scripts/skills/perks/perk_mastery_greatsword",
 		Name = this.Const.Strings.PerkName.LegendSpecGreatSword,

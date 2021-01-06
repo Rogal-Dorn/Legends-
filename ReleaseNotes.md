@@ -4621,18 +4621,21 @@ Battle standards
 * Pitchfork skills secondary effect now affect the battle standard
 * Inspiring presence now adds 10 damage when wielding the battle standard, backfire chance reduced to 0.04% per point under 100 resolve
 
+Favoured perks for southerners and nomads now work.  Nomad is on manhunter and crucified crusader. southerners is on nomads, thieves and slaves 
+
+
 **fixes**
 Assassin scenario no longer creates cultists
 Crusader no longer has the evoker traits in adventuring party
 Crusaders have fortified mind and mind over body
 Swordmaster crash due to omail
-
-
-**Fixes**
+Crucified crusader and crusader have a dynamic perk tree set 
 Fixed Scavanger Retinue not being unlocked by all beggar, cripple, refugee and salve backgrounds
 Fixes drums of war/life icons not showing
 Alphabetize company origin starts
 Fixes hair and beard clipping issues on some helms
-Cleans up many blurry helmet images 
+Cleans up many blurry, missing, or inconsistent helmet and armor images 
 Items spawn correctly in druid scenario 
 Fixes missing kettle and flat top helmet errors 
+shank price reduced 
+sureshot tooltip updated 
