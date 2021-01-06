@@ -4600,7 +4600,7 @@ Burned
 - 10% reduction to Melee+Ranged Attack+Defend skills
 - Reduces enemy resolve by 15
 Scarred
-- 10% reduction on hitpoints and fatigue
+- 10% reduction to hitpoints and fatigue
 - 75% chance to survive if struck down by non fatal blow
 
 **changes**
@@ -4621,16 +4621,16 @@ Battle standards
 * Pitchfork skills secondary effect now affect the battle standard
 * Inspiring presence now adds 10 damage when wielding the battle standard, backfire chance reduced to 0.04% per point under 100 resolve
 
-**fixes**
-Assassin scenario no longer creates cultists
-Crusader no longer has the evoker traits in adventuring party
-Crusaders have fortified mind and mind over body
-Swordmaster crash due to omail
-
 
 **Fixes**
 Fixed Scavanger Retinue not being unlocked by all beggar, cripple, refugee and salve backgrounds
 Fixes drums of war/life icons not showing
 Alphabetize company origin starts
 Fixes hair and beard clipping issues on some helms
+Assassin scenario no longer creates cultists
+Crusader no longer has the evoker traits in adventuring party
+Crusaders have fortified mind and mind over body
+Swordmaster crash due to omail
+Fixed Drunk Nobleman event
+Fixed sureshot trait tooltip
 
