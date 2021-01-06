@@ -963,7 +963,7 @@ layers = [
  "title" :  "Sallet Visor", \
  "desc" :  "This visor bears an exquisite caricature of a beast's face on the front, putting terror into any who gaze upon it." \
 },
-{"name" : "enclave_venitian_bascinet_visor"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 450, "con" : 45, "stam" : -3, "vis" : -1, "hair" : "false", "beard" : "true",  \
+{"name" : "enclave_venitian_bascinet_visor"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 450, "con" : 45, "stam" : -3, "vis" : -2, "hair" : "false", "beard" : "true",  \
  "title" :  "Great Bascinet Visor", \
  "desc" :  "A visor that fits on the great bascinet, covering the the only hole for the face, it increases the wearer's defense greatly." \
 },
@@ -979,7 +979,7 @@ layers = [
  "title" :  "Full Faceplate", \
  "desc" :  "A very well crafted full faceplate" \
 },
-{"name" : "bascinet_visor_named"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 1500, "con" : 80, "stam" : -4, "vis" : -2, "hair" : "false", "beard" : "true", "named" : True, "rminViz" : -1, "rmaxViz" : -2, "rminStam" : -2, "rmaxStam" : -4, "rminCond" : 80, "rmaxCond" : 105, "names" : Names,  \
+{"name" : "bascinet_visor_named"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 1500, "con" : 80, "stam" : -4, "vis" : -3, "hair" : "false", "beard" : "true", "named" : True, "rminViz" : -1, "rmaxViz" : -3, "rminStam" : -2, "rmaxStam" : -4, "rminCond" : 80, "rmaxCond" : 105, "names" : Names,  \
  "title" :  "Pointed Visor", \
  "desc" :  "A gilded visor with a pointed snout and plenty of holes to breath through." \
 },

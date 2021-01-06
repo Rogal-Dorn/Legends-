@@ -372,7 +372,7 @@ gt.Const.LegendMod.HelmObjs.extend([
 }]
 },
 	{
-        ID = "wallace_sallet_named", //170, -10, -2, 1000
+        ID = "named/wallace_sallet_named", //170, -10, -2, 1000
         Script = "",
         Sets = [{
         Hoods = [
@@ -398,7 +398,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         ]
     }]
     },{
-        ID = "kettle_helm_named", //170, -10, -2, 1000
+        ID = "named/kettle_helm_named", //170, -10, -2, 1000
         Script = "",
         Sets = [{
         Hoods = [
@@ -423,7 +423,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         ]
     }]
     },{
-        ID = "bascinet_named", //170, -10, -2, 1000
+        ID = "named/bascinet_named", //170, -10, -2, 1000
         Script = "",
         Sets = [{
         Hoods = [
@@ -447,7 +447,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         ]
     }]
     },{
-        ID = "barbute_named", //170, -10, -2, 1000
+        ID = "named/barbute_named", //170, -10, -2, 1000
         Script = "",
         Sets = [{
         Hoods = [
@@ -472,7 +472,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         ]
     }]
     },{
-        ID = "italo_norman_helm_named", //170, -10, -2, 1000
+        ID = "named/italo_norman_helm_named", //170, -10, -2, 1000
         Script = "",
         Sets = [{
         Hoods = [
