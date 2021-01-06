@@ -23,6 +23,18 @@ this.legend_scarred_injury <- this.inherit("scripts/skills/injury_permanent/perm
 				text = this.getDescription()
 			},
 			{
+				id = 7,
+				type = "text",
+				icon = "ui/icons/health.png",
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-10%[/color] Hitpoints"
+			},
+			{
+				id = 7,
+				type = "text",
+				icon = "ui/icons/fatigue.png",
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-10%[/color] Max Fatigue"
+			},
+			{
 				id = 11,
 				type = "text",
 				icon = "ui/icons/special.png",
@@ -36,6 +48,8 @@ this.legend_scarred_injury <- this.inherit("scripts/skills/injury_permanent/perm
 	function onUpdate( _properties )
 	{
 		_properties.SurviveWithInjuryChanceMult *= 2.27;
+		_properties.HitpointsMult *= 0.90;
+		_properties.StaminaMult *= 0.90;
 	}
 
 	function onApplyAppearance()
