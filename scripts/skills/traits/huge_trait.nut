@@ -41,7 +41,13 @@ this.huge_trait <- this.inherit("scripts/skills/traits/character_trait", {
 				id = 12,
 				type = "text",
 				icon = "ui/icons/regular_damage.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] Melee Damage"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] Melee Damage"
+			},
+			{
+				id = 12,
+				type = "text",
+				icon = "ui/icons/regular_damage.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] Ranged Damage"
 			},
 			{
 				id = 10,
@@ -60,7 +66,8 @@ this.huge_trait <- this.inherit("scripts/skills/traits/character_trait", {
 
 	function onUpdate( _properties )
 	{
-		_properties.MeleeDamageMult *= 1.1;
+		_properties.MeleeDamageMult *= 1.05;
+		_properties.RangedDamageMult *= 1.05;
 		_properties.MeleeDefense -= 5;
 		_properties.RangedDefense -= 5;
 	}

@@ -60,7 +60,8 @@ gt.Const.Items.AmmoType <- {
 	Spears = 4,
 	Powder = 8,
 	Pebbles = 16,
-	Rocks = 32
+	Rocks = 32,
+	Darts = 64
 };
 gt.Const.Items.Property <- {
 	None = 0,
@@ -134,12 +135,39 @@ gt.Const.Items.LegendNamedSouthernArmorLayers <- [
 ]
 
 
+gt.Const.Items.LegendNamedHoodLayers <- [
+];
+
+gt.Const.Items.LegendNamedHelmLayers <- [
+	"legend_helmets/helm/legend_helmet_italo_norman_helm_named",
+	"legend_helmets/helm/legend_helmet_barbute_named",
+	"legend_helmets/helm/legend_helmet_bascinet_named",
+	"legend_helmets/helm/legend_helmet_kettle_helm_named",
+	"legend_helmets/helm/legend_helmet_wallace_sallet_named",
+];
+
+gt.Const.Items.LegendNamedTopLayers <- [
+	"legend_helmets/top/legend_helmet_bascinet_visor_named",
+	"legend_helmets/top/legend_helmet_wallace_sallet_visor_named"
+];
+
+gt.Const.Items.LegendNamedVanityLayers <- [
+]
+
+
 gt.Const.Items.LegendNamedArmorLayers <- []
 gt.Const.Items.LegendNamedArmorLayers.extend(this.Const.Items.LegendNamedClothLayers)
 gt.Const.Items.LegendNamedArmorLayers.extend(this.Const.Items.LegendNamedChainLayers)
 gt.Const.Items.LegendNamedArmorLayers.extend(this.Const.Items.LegendNamedPlateLayers)
 gt.Const.Items.LegendNamedArmorLayers.extend(this.Const.Items.LegendNamedTabardLayers)
 gt.Const.Items.LegendNamedArmorLayers.extend(this.Const.Items.LegendNamedCloakLayers)
+
+
+gt.Const.Items.LegendNamedHelmetLayers <- []
+gt.Const.Items.LegendNamedHelmetLayers.extend(this.Const.Items.LegendNamedHoodLayers)
+gt.Const.Items.LegendNamedHelmetLayers.extend(this.Const.Items.LegendNamedHelmLayers)
+gt.Const.Items.LegendNamedHelmetLayers.extend(this.Const.Items.LegendNamedTopLayers)
+gt.Const.Items.LegendNamedHelmetLayers.extend(this.Const.Items.LegendNamedVanityLayers)
 
 gt.Const.Items.NamedHelmets <- [
 	"helmets/named/golden_feathers_helmet",
@@ -148,7 +176,12 @@ gt.Const.Items.NamedHelmets <- [
 	"helmets/named/sallet_green_helmet",
 	"helmets/named/wolf_helmet",
 	"helmets/named/legend_frogmouth_helm_crested_painted",
-	"helmets/named/legend_frogmouth_helm_decorated"
+	"helmets/named/legend_frogmouth_helm_decorated",
+	"helmets/named/wallace_sallet_named",
+	"helmets/named/barbute_named",
+	"helmets/named/bascinet_named",
+	"helmets/named/kettle_helm_named",
+	"helmets/named/italo_norman_helm_named"
 ];
 
 
@@ -197,6 +230,7 @@ gt.Const.Items.NamedMeleeWeapons <- [
 	"weapons/named/named_mace",
 	"weapons/named/named_spear",
 	"weapons/named/named_sword",
+	"weapons/named/named_longsword",
 	"weapons/named/named_two_handed_hammer",
 	"weapons/named/named_warbrand",
 	"weapons/named/named_warhammer",
@@ -212,7 +246,10 @@ gt.Const.Items.NamedMeleeWeapons <- [
 	"weapons/named/legend_named_sickle",
 	"weapons/named/legend_named_shovel",
 	"weapons/named/legend_named_flail",
-	"weapons/named/legend_named_infantry_axe"
+	"weapons/named/legend_named_infantry_axe",
+	"weapons/named/legend_named_warhammer",
+	"weapons/named/legend_named_gladius",
+	"weapons/named/legend_named_military_goedendag"
 ];
 gt.Const.Items.NamedRangedWeapons <- [
 	"weapons/named/named_crossbow",

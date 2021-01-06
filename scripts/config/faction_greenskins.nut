@@ -270,8 +270,27 @@ gt.Const.Tactical.Actor.KoboldFighter <- {
 	Bravery = 55,
 	Stamina = 100,
 	MeleeSkill = 55,
-	RangedSkill = 55,
-	MeleeDefense = 20,
+	RangedSkill = 60,
+	MeleeDefense = 15,
+	RangedDefense = 10,
+	Initiative = 130,
+	FatigueEffectMult = 1.0,
+	MoraleEffectMult = 1.0,
+	Armor = [
+		0,
+		0
+	],
+	FatigueRecoveryRate = 20
+};
+gt.Const.Tactical.Actor.KoboldWolfrider <- {
+	XP = 150,
+	ActionPoints = 13,
+	Hitpoints = 40,
+	Bravery = 55,
+	Stamina = 100,
+	MeleeSkill = 55,
+	RangedSkill = 60,
+	MeleeDefense = 15,
 	RangedDefense = 10,
 	Initiative = 130,
 	FatigueEffectMult = 1.0,

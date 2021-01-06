@@ -204,21 +204,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		return this.m.IsConverted;
 	}
 
-	function Convert()
-	{
-		this.m.IsConverted = true;
-		local cultistGroup = [
-						[this.Const.Perks.PerkDefs.LegendSpecialistNinetailsSkill],
-						[this.Const.Perks.PerkDefs.LegendSpecCultHood],
-						[this.Const.Perks.PerkDefs.LegendSpecialistNinetailsDamage],
-						[],
-						[this.Const.Perks.PerkDefs.LegendPrepareGraze],
-						[this.Const.Perks.PerkDefs.LegendSpecCultArmor],
-						[this.Const.Perks.PerkDefs.LegendLacerate]
-					];
 
-		this.addPerkGroup(cultistGroup);
-	}
 
 	function getEthnicity()
 	{
@@ -463,7 +449,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			return this.m.PerkTree;
 		}
 
-		local pT = this.Const.Perks.getPerksTree(this.getID());
+		local pT = this.Const.Perks.PerksTreeTemplate
 		if (pT == null)
 		{
 			return [];
@@ -1396,6 +1382,22 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 	function setGender(_gender)
 	{
 
+	}
+
+	function Convert()
+	{
+		this.m.IsConverted = true;
+		local cultistGroup = [
+						[this.Const.Perks.PerkDefs.LegendSpecialistNinetailsSkill],
+						[this.Const.Perks.PerkDefs.LegendSpecCultHood],
+						[this.Const.Perks.PerkDefs.LegendSpecialistNinetailsDamage],
+						[],
+						[this.Const.Perks.PerkDefs.LegendPrepareGraze],
+						[this.Const.Perks.PerkDefs.LegendSpecCultArmor],
+						[this.Const.Perks.PerkDefs.LegendLacerate]
+					];
+
+		this.addPerkGroup(cultistGroup);
 	}
 
 	function onSerialize( _out )

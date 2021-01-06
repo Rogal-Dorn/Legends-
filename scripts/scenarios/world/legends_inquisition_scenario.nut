@@ -6,7 +6,7 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 		this.m.Name = "The Inquisition";
 		this.m.Description = "[p=c][img]gfx/ui/events/event_40.png[/img][/p]There is a great evil in the world, the undead walk the earth and cultists hide in every town. The holy must purge the filth. \n\n[color=#bcad8c]Righteous Cause:[/color] Can not recruit outlaw backgrounds; however, the pious will flock to join your cause. \n[color=#bcad8c]Penitence:[/color] Anyone you hire gains the Mind over Body perk.\n";
 		this.m.Difficulty = 2;
-		this.m.Order = 25;
+		this.m.Order = 280;
 		this.m.IsFixedLook = true;
 	}
 

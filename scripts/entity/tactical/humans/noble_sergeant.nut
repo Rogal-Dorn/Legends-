@@ -37,7 +37,7 @@ this.noble_sergeant <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.Math.rand(1, 100) <= 33)
 		{
-			local r = this.Math.rand(1, 3);
+			local r = this.Math.rand(1, 4);
 
 			if (r == 1)
 			{
@@ -55,6 +55,12 @@ this.noble_sergeant <- this.inherit("scripts/entity/tactical/human", {
 			{
 				local sprite = this.getSprite("permanent_injury_1");
 				sprite.setBrush("permanent_injury_01");
+				sprite.Visible = true;
+			}
+			else if (r == 4)
+			{
+				local sprite = this.getSprite("permanent_injury_scarred");
+				sprite.setBrush("permanent_injury_scarred");
 				sprite.Visible = true;
 			}
 		}
@@ -102,36 +108,20 @@ this.noble_sergeant <- this.inherit("scripts/entity/tactical/human", {
 			this.getSprite("surcoat").setBrush("surcoat_" + (banner < 10 ? "0" + banner : banner));
 		}
 
-		local r = this.Math.rand(1, 7);
+		local weapons = [
+			"weapons/warhammer",
+			"weapons/fighting_axe",
+			"weapons/arming_sword",
+			"weapons/winged_mace",
+			"weapons/hand_axe",
+			"weapons/military_cleaver",
+			"weapons/legend_battle_glaive",
+			"weapons/legend_swordstaff",
+			"weapons/legend_infantry_axe",
+			"weapons/legend_military_goedendag",
+		];
 
-		if (r == 1)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/warhammer"));
-		}
-		else if (r == 2)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/fighting_axe"));
-		}
-		else if (r == 3)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/arming_sword"));
-		}
-		else if (r == 4)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/winged_mace"));
-		}
-		else if (r == 5)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/military_cleaver"));
-		}
-		else if (r == 6)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/legend_battle_glaive"));
-		}
-		else if (r == 7)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/legend_swordstaff"));
-		}
+		this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
 			[1, "reinforced_mail_hauberk"],

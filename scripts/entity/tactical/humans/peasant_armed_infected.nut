@@ -33,16 +33,41 @@ this.peasant_armed_infected <- this.inherit("scripts/entity/tactical/human", {
 		dirt.Alpha = this.Math.rand(0, 255);
 		this.getSprite("socket").setBrush("bust_base_militia");
 
-		if ("LegendsMod" in this.World && this.World.LegendsMod != null && this.World.LegendsMod.Configs().LegendTherianthropyEnabled())
+		this.m.Skills.add(this.new("scripts/skills/injury_permanent/legend_vermesthropy_injury"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_true_form"));
+		
+		if (this.Math.rand(1, 100) <= 80)
 		{
-			this.m.Skills.add(this.new("scripts/skills/injury_permanent/legend_vermesthropy_injury"));
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_true_form"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_control_instincts"));
 		}
+		if (this.Math.rand(1, 100) <= 60)
+		{
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_surpress_urges"));
+		}	
+		if (this.Math.rand(1, 100) <= 40)
+		{
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_master_anger"));
+		}	
 
+		if (this.Math.rand(1, 100) <= 20)
+		{
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_fortified_mind"));
+		}			
+		
+		if (this.Math.rand(1, 100) <= 10)
+		{
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_fortified_mind"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_rally_the_troops"));
+		}
+		
+		this.m.Skills.add(this.new("scripts/skills/traits/weasel_trait"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_back_to_basics"));
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 		{
 			this.m.Hitpoints = b.Hitpoints * 1.5;
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_backstabber"));
+			
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
 		}
 	}
@@ -50,7 +75,7 @@ this.peasant_armed_infected <- this.inherit("scripts/entity/tactical/human", {
 	function assignRandomEquipment()
 	{
 		local r;
-		r = this.Math.rand(1, 4);
+		r = this.Math.rand(1, 14);
 
 		if (r == 1)
 		{
@@ -68,17 +93,74 @@ this.peasant_armed_infected <- this.inherit("scripts/entity/tactical/human", {
 		{
 			this.m.Items.equip(this.new("scripts/items/weapons/pickaxe"));
 		}
+		else if (r == 5)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/legend_wooden_pitchfork"));
+		}	
+		else if (r == 6)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/legend_wooden_spear"));
+		}		
+		else if (r == 7)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/legend_shovel"));
+		}	
+		else if (r == 8)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/legend_hoe"));
+		}	
+		else if (r == 9)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/legend_saw"));
+		}	
+		else if (r == 10)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/legend_hammer"));
+		}		
+		else if (r == 11)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/legend_scythe"));
+		}	
+		else if (r == 12)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/legend_sickle"));
+		}	
+		else if (r == 13)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/legend_chain"));
+		}		
+		else if (r == 14)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/legend_shiv"));
+		}	
+		
+		local r;
+		r = this.Math.rand(1, 4);
+
+		if (r == 1)
+		{
+		this.m.Items.equip(this.new("scripts/items/shields/buckler_shield"));
+		}
+		
+		local r;
+		r = this.Math.rand(1, 2);
+
+		if (r == 1)
+		{
+		this.m.Items.equip(this.new("scripts/items/weapons/legend_sling"));
+		}
+		
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
-			[1, "sackcloth"],
+			[2, "sackcloth"],
 			[1, "thick_tunic"],
-			[1, "apron"],
+			[2, "apron"],
 			[1, "tattered_sackcloth"],
-			[6, "linen_tunic"]
+			[2, "linen_tunic"]
 		]));
 
 
-		if (this.Math.rand(1, 100) <= 33)
+		if (this.Math.rand(1, 100) <= 50)
 		{
 			local helmet = [
 				[1, "hood"],

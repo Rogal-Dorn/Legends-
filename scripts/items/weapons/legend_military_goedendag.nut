@@ -7,8 +7,9 @@ this.legend_military_goedendag <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Name = "Military Goedendag";
 		this.m.Description = "A military grade metal-reinforced club with a spike at the top. Can be used to thrust at the enemy, or pummel them into submission.";
 		this.m.Categories = "Spear/Mace, Two-Handed";
-		this.m.IconLarge = "weapons/melee/legend_military_goedendag_01.png";
-		this.m.Icon = "weapons/melee/legend_military_goedendag_01_70x70.png";
+		this.m.Variants = [1,2]
+		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() -1)];
+		this.updateVariant();
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;
@@ -17,7 +18,6 @@ this.legend_military_goedendag <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
-		this.m.ArmamentIcon = "icon_legend_military_goedendag_01";
 		this.m.Value = 2000;
 		this.m.ShieldDamage = 0;
 		this.m.Condition = 80.0;
@@ -29,6 +29,14 @@ this.legend_military_goedendag <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.DirectDamageMult = 0.4;
 		this.m.ChanceToHitHead = 0;
 	}
+
+	function updateVariant()
+	{
+		this.m.IconLarge = "weapons/melee/legend_military_goedendag_0" + this.m.Variant + ".png";
+		this.m.Icon = "weapons/melee/legend_military_goedendag_0" + this.m.Variant + "_70x70.png";
+		this.m.ArmamentIcon = "icon_legend_military_goedendag_0" + this.m.Variant;
+	}
+
 
 	function onEquip()
 	{

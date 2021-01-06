@@ -97,34 +97,17 @@ this.obtain_item_contract <- this.inherit("scripts/contracts/contract", {
 				if (r <= 10)
 				{
 					this.Flags.set("IsRiskReward", true);
-					local i = this.Math.rand(1, 6);
-					local item;
+					local weapons = [
+						"weapons/ancient/ancient_sword",
+						"weapons/ancient/crypt_cleaver",
+						"weapons/ancient/rhomphaia",
+						"weapons/ancient/khopesh",
+						"weapons/ancient/warscythe",
+						"weapons/ancient/legend_gladius",
+						"weapons/ancient/bladed_pike"
+					];
 
-					if (i == 1)
-					{
-						item = this.new("scripts/items/weapons/ancient/ancient_sword");
-					}
-					else if (i == 2)
-					{
-						item = this.new("scripts/items/weapons/ancient/bladed_pike");
-					}
-					else if (i == 3)
-					{
-						item = this.new("scripts/items/weapons/ancient/crypt_cleaver");
-					}
-					else if (i == 4)
-					{
-						item = this.new("scripts/items/weapons/ancient/khopesh");
-					}
-					else if (i == 5)
-					{
-						item = this.new("scripts/items/weapons/ancient/rhomphaia");
-					}
-					else if (i == 6)
-					{
-						item = this.new("scripts/items/weapons/ancient/warscythe");
-					}
-
+					local item =  this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]);
 					this.Contract.m.RiskItem = item;
 				}
 

@@ -326,9 +326,64 @@ this.armorsmith_building <- this.inherit("scripts/entity/world/settlements/build
 				R = 45,
 				P = 1.0,
 				S = "helmets/reinforced_mail_coif"
-			}
+			},
 		];
 
+		list.push({
+			R = 80,
+			P = 1.0,
+			S = "helmets/legend_enclave_vanilla_skullcap_01"
+		});
+		list.push({
+			R = 80,
+			P = 1.0,
+			S = "helmets/legend_enclave_vanilla_great_helm_01"
+		});
+		list.push({
+			R = 80,
+			P = 1.0,
+			S = "helmets/legend_enclave_vanilla_great_bascinet_01"
+		});
+		list.push({
+			R = 80,
+			P = 1.0,
+			S = "helmets/legend_enclave_vanilla_great_bascinet_02"
+		});
+		list.push({
+			R = 80,
+			P = 1.0,
+			S = "helmets/legend_enclave_vanilla_armet_01"
+		});
+		list.push({
+			R = 80,
+			P = 1.0,
+			S = "helmets/legend_enclave_vanilla_kettle_sallet_01"
+		});
+
+		if (!this.World.LegendsMod.Configs().LegendArmorsEnabled())
+		{
+			list.push({
+				R = 80,
+				P = 1.0,
+				S = "helmets/legend_enclave_vanilla_great_bascinet_03"
+			});
+			list.push({
+				R = 80,
+				P = 1.0,
+				S = "helmets/legend_enclave_vanilla_armet_02"
+			});
+			list.push({
+				R = 80,
+				P = 1.0,
+				S = "helmets/legend_enclave_vanilla_kettle_sallet_02"
+			});
+			list.push({
+				R = 80,
+				P = 1.0,
+				S = "helmets/legend_enclave_vanilla_kettle_sallet_03"
+			});
+
+		}
 
 		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
@@ -344,54 +399,17 @@ this.armorsmith_building <- this.inherit("scripts/entity/world/settlements/build
 				}
 			}
 
-			local armorsL = [
-				[15, 1.0, "cloth/legend_gambeson"],
-				[15, 1.0, "cloth/legend_padded_surcoat"],
-				[20, 1.0, "chain/legend_armor_mail_shirt_simple"],
-				[20, 1.0, "chain/legend_armor_mail_shirt"],
-				[35, 1.0, "chain/legend_armor_hauberk_sleevless"],
-				[35, 1.0, "chain/legend_armor_short_mail"],
-				[35, 1.0, "chain/legend_armor_basic_mail"],
-				[35, 1.0, "chain/legend_armor_hauberk"],
-				[40, 1.0, "chain/legend_armor_hauberk_full"],
-				[40, 1.0, "chain/legend_armor_reinforced_mail"],
-				[50, 1.0, "chain/legend_armor_reinforced_mail_shirt"],
-				[35, 1.0, "plate/legend_armor_leather_padded"],
-				[35, 1.0, "plate/legend_armor_leather_noble"],
-				[35, 1.0, "plate/legend_armor_leather_lamellar_harness_reinforced"],
-				[40, 1.0, "plate/legend_armor_leather_lamellar"],
-				[40, 1.0, "plate/legend_armor_leather_riveted"],
-				[40, 1.0, "plate/legend_armor_leather_riveted_light"],
-				[45, 1.0, "plate/legend_armor_leather_scale"],
-				[50, 1.0, "plate/legend_armor_leather_lamellar_harness_heavy"],
-				[50, 1.0, "plate/legend_armor_leather_brigandine"],
-				[50, 1.0, "plate/legend_armor_leather_lamellar_reinforced"],
-				[55, 1.0, "plate/legend_armor_leather_lamellar_heavy"],
-				[55, 1.0, "plate/legend_armor_leather_brigandine_hardened"],
-				[55, 1.0, "plate/legend_armor_leather_brigandine_hardened_full"],
-				[60, 1.0, "plate/legend_armor_plate_chest"],
-				[60, 1.0, "plate/legend_armor_scale_shirt"],
-				[65, 1.0, "plate/legend_armor_plate_cuirass"],
-				[65, 1.0, "plate/legend_armor_scale"],
-				[70, 1.0, "plate/legend_armor_scale_coat"],
-				[75, 1.0, "plate/legend_armor_plate_full"],
-				[75, 1.0, "plate/legend_armor_plate_full_greaves"],
-				[65, 1.0, "cloak/legend_armor_cloak_common"],
-				[99, 2.0, "named/legend_armor_cloak_rich"],
-				[85, 1.0, "cloak/legend_armor_cloak_noble"],
-				[50, 1.0, "cloak/legend_armor_cloak_heavy"],
-				[65, 1.0, "tabard/legend_common_tabard"]
-			]
-
-			foreach( a in armorsL)
+			foreach( i in this.Const.Items.LegendNamedHelmetLayers )
 			{
-				list.push({
-					R = a[0],
-					P = a[1],
-					S = "legend_armor/" + a[2]
-				});
+				if (this.Math.rand(1, 100) <= 33)
+				{
+					list.push({
+						R = 99,
+						P = 2.0,
+						S = i
+					});
+				}
 			}
-
 		}
 
 		foreach( i in this.Const.Items.NamedArmors )
@@ -490,6 +508,7 @@ this.armorsmith_building <- this.inherit("scripts/entity/world/settlements/build
 				P = 1.0,
 				S = "misc/paint_white_green_yellow_item"
 			});
+
 			if (!this.World.LegendsMod.Configs().LegendArmorsEnabled())
 			{
 				list.push({
@@ -598,6 +617,11 @@ this.armorsmith_building <- this.inherit("scripts/entity/world/settlements/build
 			list.push({
 				R = 75,
 				P = 1.0,
+				S = "helmets/conic_helmet_with_closed_mail"
+			});
+			list.push({
+				R = 75,
+				P = 1.0,
 				S = "helmets/nordic_helmet_with_closed_mail"
 			});
 			list.push({
@@ -624,6 +648,8 @@ this.armorsmith_building <- this.inherit("scripts/entity/world/settlements/build
 				S = "helmets/flat_top_with_closed_mail"
 			});
 		}
+
+
 
 		this.m.Settlement.onUpdateShopList(this.m.ID, list);
 		this.fillStash(list, this.m.Stash, 1.25, false);

@@ -247,12 +247,12 @@ gt.Const.Perks.DivinationMagicTree <- {
 	],
 	Tree = [
 		[gt.Const.Perks.PerkDefs.LegendPush],
-		[],
-		[],
+		[gt.Const.Perks.PerkDefs.MageLegendMagicDaze],
+		[gt.Const.Perks.PerkDefs.LegendScry],
 		[gt.Const.Perks.PerkDefs.LegendEntice],
-		[],
-		[],
-		[]
+		[gt.Const.Perks.PerkDefs.MageLegendMagicWebBolt],
+		[gt.Const.Perks.PerkDefs.MageLegendMagicPsybeam],
+		[gt.Const.Perks.PerkDefs.MageLegendMagicSleep]
 	]
 };
 
@@ -278,13 +278,13 @@ gt.Const.Perks.DruidMagicTree <- {
 		"druidic arts"
 	],
 	Tree = [
+		[gt.Const.Perks.PerkDefs.LegendWither],
 		[gt.Const.Perks.PerkDefs.LegendRoots],
-		[],
 		[gt.Const.Perks.PerkDefs.LegendPrayerOfLife],
 		[],
 		[gt.Const.Perks.PerkDefs.LegendSummonStorm],
 		[gt.Const.Perks.PerkDefs.LegendDrumsOfLife],
-		[]
+		[gt.Const.Perks.PerkDefs.LegendInsects]
 	]
 };
 
@@ -299,7 +299,7 @@ gt.Const.Perks.DruidTransformTree <- {
 		[],
 		[gt.Const.Perks.PerkDefs.LegendWolfform],
 		[gt.Const.Perks.PerkDefs.LegendBearform],
-		[gt.Const.Perks.PerkDefs.LegendTreeform],
+		[],
 		[gt.Const.Perks.PerkDefs.LegendTrueForm]
 	]
 };
@@ -313,7 +313,7 @@ gt.Const.Perks.TransmutationMagicTree <- {
 	Tree = [
 		[],
 		[gt.Const.Perks.PerkDefs.LegendGatherer],
-		[gt.Const.Perks.PerkDefs.LegendLevitate],
+		[],
 		[],
 		[gt.Const.Perks.PerkDefs.LegendPotionBrewer],
 		[gt.Const.Perks.PerkDefs.LegendRoots],
@@ -327,13 +327,30 @@ gt.Const.Perks.EvocationMagicTree <- {
 		"evocation"
 	],
 	Tree = [
-		[gt.Const.Perks.PerkDefs.LegendMagicMissile],
-		[],
-		[],
-		[],
-		[gt.Const.Perks.PerkDefs.LegendChainLightning],
-		[],
-		[gt.Const.Perks.PerkDefs.LegendFirefield]
+		[
+		gt.Const.Perks.PerkDefs.MageLegendMagicMissile
+		],
+		[
+		gt.Const.Perks.PerkDefs.MageLegendMagicBurningHands
+		],
+		[
+		gt.Const.Perks.PerkDefs.MageLegendMagicHailstone
+		],
+		[
+		gt.Const.Perks.PerkDefs.MageLegendMasteryMagicMissileFocus
+		],
+		[
+		gt.Const.Perks.PerkDefs.MageLegendMagicChainLightning,
+		gt.Const.Perks.PerkDefs.MageLegendMasteryBurningHands
+		],
+		[
+		gt.Const.Perks.PerkDefs.MageLegendMagicPsybeam,
+		gt.Const.Perks.PerkDefs.MageLegendMasteryHailstone
+		],
+		[
+		gt.Const.Perks.PerkDefs.MageLegendMasteryMagicMissileMastery,
+		gt.Const.Perks.PerkDefs.LegendFirefield
+		]
 	]
 };
 

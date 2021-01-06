@@ -72,7 +72,6 @@ gt.Const.LegendMod.HelmObjs.extend([
         Hoods = [
             [4, "hood/legend_helmet_simple_hood"], //30
             [1, "hood/legend_helmet_padded_cap"], //40
-            [1, "hood/legend_helmet_hood_cloth_wide"], //30
             [1, "hood/legend_helmet_padded_cap"], //40
         ],
         Helms = [
@@ -95,7 +94,7 @@ gt.Const.LegendMod.HelmObjs.extend([
             [1, "hood/legend_helmet_chain_hood_full"] //90
         ],
         Helms = [
-            [1, "helm/legend_helmet_flat_top_face_plate"] //130
+            [1, "helm/legend_helmet_flat_top_polished"] //150
         ],
         Tops = [
             [1, "top/legend_helmet_faceplate_flat"] //45
@@ -152,7 +151,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         Helms = [
             [1, "helm/legend_helmet_basinet"], //130
             [1, "helm/legend_helmet_conic_helm"], //170
-            [1, "helm/legend_helmet_nordic_helm"], //185
+            [1, "helm/legend_helmet_nordic_helm"], //175
         ],
         Tops = [
             [1, "top/legend_helmet_eyemask"], //35
@@ -353,7 +352,7 @@ gt.Const.LegendMod.HelmObjs.extend([
             [1, "vanity/legend_helmet_feathered_hat"] //10
         ]
     }]
-    },{ //lower than avg dura, todo
+    },{ 
         ID = "flat_top_helmet", //125, -7, -1
         Script = "",
         Sets = [{
@@ -681,7 +680,7 @@ gt.Const.LegendMod.HelmObjs.extend([
             [4, "hood/legend_helmet_chain_hood"],//80
         ],
         Helms = [
-            [1, "helm/legend_helmet_kettle_helm"] //130
+            [1, "helm/legend_kettle_helm_named"] //160
         ],
         Tops = [
             [1, "top/legend_helmet_chain_attachment"], //40
@@ -698,7 +697,7 @@ gt.Const.LegendMod.HelmObjs.extend([
             [1, "hood/legend_helmet_chain_hood"],//80
         ],
         Helms = [
-            [1, "helm/legend_helmet_kettle_helm"] //130
+            [1, "helm/legend_enclave_kettle"] //130
         ],
         Tops = [
         ],
@@ -716,7 +715,7 @@ gt.Const.LegendMod.HelmObjs.extend([
             [1, "hood/legend_helmet_simple_hood"] //30
         ],
         Helms = [
-            [1, "helm/legend_helmet_kettle_helm"] //130
+            [1, "helm/legend_helmet_kettle_helm"] //85
         ],
         Tops = [],
         Vanity = [  ]
@@ -879,12 +878,12 @@ gt.Const.LegendMod.HelmObjs.extend([
         ID = "nasal_helmet_with_mail", //200
         Script = "",
         Sets = [{
-        Hoods = [ //way below avg
+        Hoods = [ 
             [1, "hood/legend_helmet_chain_scarf"], //70
             [4, "hood/legend_helmet_chain_hood"],//80
         ],
         Helms = [
-            [1, "helm/legend_helmet_norman_helm"] //50
+            [1, "helm/legend_helmet_italo_norman_helm"] //120
         ],
         Tops = [
         ],
@@ -900,7 +899,7 @@ gt.Const.LegendMod.HelmObjs.extend([
             [1, "hood/legend_helmet_rotten_chain_scarf"] //60
         ],
         Helms = [
-            [1, "helm/legend_helmet_norman_helm"] //50
+            [1, "helm/legend_helmet_italo_norman_helm"] //120
         ],
         Tops = [
         ],
@@ -1127,7 +1126,7 @@ gt.Const.LegendMod.HelmObjs.extend([
             [1, "hood/legend_helmet_chain_hood_full"] //90
         ],
         Helms = [
-            [1, "helm/legend_helmet_nordic_helm"] //185
+            [1, "helm/legend_helmet_nordic_helm_high"] //195
         ],
         Tops = [],
         Vanity = []
@@ -1136,11 +1135,11 @@ gt.Const.LegendMod.HelmObjs.extend([
         ID = "nordic_helmet", //125
         Script = "",
         Sets = [{
-        Hoods = [ //way over
+        Hoods = [ 
             [1, "hood/legend_helmet_simple_hood"] //30
         ],
         Helms = [
-            [1, "helm/legend_helmet_nordic_helm"] //185
+            [1, "helm/legend_helmet_nordic_helm_low"] //95
         ],
         Tops = [],
         Vanity = []
@@ -1413,19 +1412,12 @@ gt.Const.LegendMod.HelmObjs.extend([
         Hoods = [
             [1, "hood/legend_helmet_padded_hood"], //50, -2, 0
             [1, "hood/legend_helmet_chain_scarf"], //70, -4, 0
-            [1, "hood/legend_helmet_chain_hood_full"], //90, -6, 0
-            [1, "hood/legend_helmet_enclave_bevor"] //100, -7, 0
+            [1, "hood/legend_helmet_chain_hood_full"] //90, -6, 0
         ],
         Helms = [
              [1, "helm/legend_helmet_enclave_armet"] //130, -6, -1
         ],
         Tops = [
-            [2, ""],
-            [1, "top/legend_helmet_enclave_great_jaw"], //40, -3, 0
-			[1, "top/legend_helmet_faceplate_pointed"], //25, -1, -1
-			[1, "top/legend_helmet_faceplate_pointed_slit"], //35, -1, -2
-            [1, "top/legend_helmet_faceplate_snub_nose"], //20, -1, -1
-			[1, "top/legend_helmet_faceplate_snub_slit"] //40, -2, -1
         ],
         Vanity = [
             [10, ""],
@@ -1445,19 +1437,13 @@ gt.Const.LegendMod.HelmObjs.extend([
         Hoods = [
             [1, "hood/legend_helmet_padded_hood"], //50, -2, 0
             [1, "hood/legend_helmet_chain_scarf"], //70, -4, 0
-            [1, "hood/legend_helmet_chain_hood_full"], //90, -6, 0
-            [1, "hood/legend_helmet_enclave_bevor"] //100, -7, 0
+            [1, "hood/legend_helmet_chain_hood_full"] //90, -6, 0
         ],
         Helms = [
              [1, "helm/legend_helmet_enclave_armet"] //130, -6, -1
         ],
         Tops = [
-            [2, ""],
-            [1, "top/legend_helmet_enclave_great_jaw"], //40, -3, 0
-			[1, "top/legend_helmet_faceplate_pointed"], //25, -1, -1
-			[1, "top/legend_helmet_faceplate_pointed_slit"], //35, -1, -2
-            [1, "top/legend_helmet_faceplate_snub_nose"], //20, -1, -1
-			[1, "top/legend_helmet_faceplate_snub_slit"] //40, -2, -1
+            [1, "top/legend_helmet_enclave_armet_visor"] //40, -3, 0
         ],
         Vanity = [
             [10, ""],
@@ -1477,15 +1463,14 @@ gt.Const.LegendMod.HelmObjs.extend([
         Hoods = [
             [1, "hood/legend_helmet_padded_hood"], //50, -2, 0
             [1, "hood/legend_helmet_chain_scarf"], //70, -4, 0
-            [1, "hood/legend_helmet_chain_hood_full"], //90, -6, 0
-            [1, "hood/legend_helmet_enclave_bevor"] //100, -7, 0
+            [1, "hood/legend_helmet_chain_hood_full"] //90, -6, 0
         ],
         Helms = [
-             [1, "helm/legend_helmet_enclave_great_basinet"] //260, -13, -2
+             [1, "helm/legend_helmet_enclave_venitian_bascinet"] //260, -13, -2
         ],
         Tops = [
             [2, ""],
-            [1, "top/legend_helmet_enclave_great_jaw"], //40, -3, 0
+            [2, "top/legend_helmet_enclave_venitian_bascinet_visor"], //40, -3, 0
 			[1, "top/legend_helmet_faceplate_pointed"], //25, -1, -1
             [1, "top/legend_helmet_faceplate_flat"], //22, -1, -1
 			[1, "top/legend_helmet_faceplate_pointed_slit"], //35, -1, -2
@@ -1510,15 +1495,14 @@ gt.Const.LegendMod.HelmObjs.extend([
         Hoods = [
             [1, "hood/legend_helmet_padded_hood"], //50, -2, 0
             [1, "hood/legend_helmet_chain_scarf"], //70, -4, 0
-            [1, "hood/legend_helmet_chain_hood_full"], //90, -6, 0
-            [1, "hood/legend_helmet_enclave_bevor"] //100, -7, 0
+            [1, "hood/legend_helmet_chain_hood_full"] //90, -6, 0
         ],
         Helms = [
-             [1, "helm/legend_helmet_enclave_great_basinet"] //260, -13, -2
+             [1, "helm/legend_helmet_enclave_great_bascinet"] //260, -13, -2
         ],
         Tops = [
-            [2, ""],
-            [1, "top/legend_helmet_enclave_great_jaw"], //40, -3, 0
+            [10, ""],
+            [2, "top/legend_helmet_enclave_great_bascinet_visor"], //40, -3, 0
 			[1, "top/legend_helmet_faceplate_pointed"], //25, -1, -1
             [1, "top/legend_helmet_faceplate_flat"], //22, -1, -1
 			[1, "top/legend_helmet_faceplate_pointed_slit"], //35, -1, -2
@@ -1543,15 +1527,14 @@ gt.Const.LegendMod.HelmObjs.extend([
         Hoods = [
             [1, "hood/legend_helmet_padded_hood"], //50, -2, 0
             [1, "hood/legend_helmet_chain_scarf"], //70, -4, 0
-            [1, "hood/legend_helmet_chain_hood_full"], //90, -6, 0
-            [1, "hood/legend_helmet_enclave_bevor"] //100, -7, 0
+            [1, "hood/legend_helmet_chain_hood_full"] //90, -6, 0
         ],
         Helms = [
-             [1, "helm/legend_helmet_enclave_great_basinet"] //260, -13, -2
+             [1, "helm/legend_helmet_enclave_great_bascinet"] //260, -13, -2
         ],
         Tops = [
             [2, ""],
-            [1, "top/legend_helmet_enclave_great_jaw"], //40, -3, 0
+            [2, "top/legend_helmet_enclave_great_bascinet_visor"], //40, -3, 0
 			[1, "top/legend_helmet_faceplate_pointed"], //25, -1, -1
             [1, "top/legend_helmet_faceplate_flat"], //22, -1, -1
 			[1, "top/legend_helmet_faceplate_pointed_slit"],//35, -1, -2
@@ -1576,20 +1559,12 @@ gt.Const.LegendMod.HelmObjs.extend([
         Hoods = [
             [1, "hood/legend_helmet_padded_hood"], //50, -2, 0
             [1, "hood/legend_helmet_chain_scarf"], //70, -4, 0
-            [1, "hood/legend_helmet_chain_hood_full"], //90, -6, 0
-            [1, "hood/legend_helmet_enclave_bevor"] //100, -7, 0
+            [1, "hood/legend_helmet_chain_hood_full"] //90, -6, 0
         ],
         Helms = [
-             [1, "helm/legend_helmet_enclave_great_basinet"] //260, -13, -2
+             [1, "helm/legend_helmet_enclave_great_helm"] //220, -15, -3
         ],
         Tops = [
-            [2, ""],
-            [1, "top/legend_helmet_enclave_great_jaw"], //40, -3, 0
-			[1, "top/legend_helmet_faceplate_pointed"], //25, -1, -1
-            [1, "top/legend_helmet_faceplate_flat"], //22, -1, -1
-			[1, "top/legend_helmet_faceplate_pointed_slit"], //35, -1, -2
-            [1, "top/legend_helmet_faceplate_snub_nose"], //20, -1, -1
-			[1, "top/legend_helmet_faceplate_snub_slit"] //40, -2, -1
         ],
         Vanity = [
             [10, ""],
@@ -1701,7 +1676,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         Script = "",
         Sets = [{
             Hoods = [
-                [1, "hood/legend_helmet_chain_scarf"], //70, -4
+                [1, "hood/legend_helmet_chain_scarf"] //70, -4
             ],
             Helms = [
             ],
@@ -1712,6 +1687,58 @@ gt.Const.LegendMod.HelmObjs.extend([
             Vanity = [
             ]
         }]
+    },{
+        ID = "italo_norman_helm", //170, -10, -2, 1000
+        Script = "",
+        Sets = [{
+        Hoods = [
+            [1, "hood/legend_helmet_padded_hood"], //50, -2, 0
+            [1, "hood/legend_helmet_chain_hood_full"], //90, -6, 0
+            [1, "hood/legend_helmet_southern_chain_hood"] //90, -6, 0
+        ],
+        Helms = [
+             [1, "helm/legend_helmet_italo_norman_helm"] //140, -7, -2
+        ],
+        Tops = [
+        ],
+        Vanity = [
+            [10, ""],
+            [1, "vanity/legend_helmet_noble_feather"],
+            [1, "vanity/legend_helmet_side_feather"],
+            [1, "vanity/legend_helmet_plait"], //10
+            [1, "vanity/legend_helmet_noble_feather"],
+            [1, "vanity/legend_helmet_side_wings"],
+            [1, "vanity/legend_helmet_side_wings_gold"],
+            [1, "vanity/legend_helmet_top_feather"],
+        ]
+    }]
+    },
+	{
+        ID = "wallace_sallet", //170, -10, -2, 1000
+        Script = "",
+        Sets = [{
+        Hoods = [
+            [1, "hood/legend_helmet_padded_hood"], //50, -2, 0
+            [1, "hood/legend_helmet_chain_hood_full"], //90, -6, 0
+            [1, "hood/legend_helmet_southern_chain_hood"] //90, -6, 0
+        ],
+        Helms = [
+             [1, "helm/legend_helmet_wallace_sallet"] //140, -7, -2
+        ],
+        Tops = [
+               [1, "top/legend_helmet_wallace_sallet_visor"] //60, -2, -1
+        ],
+        Vanity = [
+            [10, ""],
+            [1, "vanity/legend_helmet_noble_feather"],
+            [1, "vanity/legend_helmet_side_feather"],
+            [1, "vanity/legend_helmet_plait"], //10
+            [1, "vanity/legend_helmet_noble_feather"],
+            [1, "vanity/legend_helmet_side_wings"],
+            [1, "vanity/legend_helmet_side_wings_gold"],
+            [1, "vanity/legend_helmet_top_feather"],
+        ]
+    }]
     }
 ])
 

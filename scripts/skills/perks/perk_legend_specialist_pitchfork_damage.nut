@@ -25,7 +25,7 @@ this.perk_legend_specialist_pitchfork_damage <- this.inherit("scripts/skills/ski
 				_properties.DamageRegularMin += 4;
 				_properties.DamageRegularMax += 12;
 			}
-			if(itemID == "weapon.pike" || itemID == "weapon.hooked_blade" || itemID == "weapon.billhook"  || itemID == "weapon.goblin_pike"   || itemID == "weapon.bladed_pike"  || itemID == "weapon.broken_bladed_pike" || itemID == "weapon.named_pike" || itemID == "weapon.named_billhook" || itemID == "weapon.warscythe" || itemID == "weapon.legend_halberd" || itemID == "weapon.legend_military_voulge" || itemID == "weapon.legend_voulge" || itemID == "weapon.legend_named_halberd" || itemID == "weapon.legend_named_voulge" || itemID == "weapon.swordlance" || itemID == "weapon.named_swordlance")
+			if(itemID == "weapon.pike" || itemID == "weapon.hooked_blade" || itemID == "weapon.billhook"  || itemID == "weapon.goblin_pike"   || itemID == "weapon.bladed_pike"  || itemID == "weapon.broken_bladed_pike" || itemID == "weapon.named_pike" || itemID == "weapon.named_billhook" || itemID == "weapon.warscythe" || itemID == "weapon.legend_halberd" || itemID == "weapon.legend_military_voulge" || itemID == "weapon.legend_voulge" || itemID == "weapon.legend_named_halberd" || itemID == "weapon.legend_named_voulge" || itemID == "weapon.swordlance" || itemID == "weapon.named_swordlance" || itemID == "weapon.player_banner")
 			{
 				_properties.DamageRegularMin += 1;
 				_properties.DamageRegularMax += 3;

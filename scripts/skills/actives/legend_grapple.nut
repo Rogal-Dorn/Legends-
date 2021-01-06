@@ -80,6 +80,7 @@ this.legend_grapple<- this.inherit("scripts/skills/skill", {
 	function onAfterUpdate( _properties )
 	{
 		this.m.FatigueCostMult = _properties.IsSpecializedInFists ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
+		this.m.FatigueCostMult = _properties.IsSpecializedInFists ? 3 : 4;
 	}
 
 	function onUse( _user, _targetTile )

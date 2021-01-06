@@ -4462,9 +4462,175 @@ Fixes perks going off screen. Bumped to the next perk level.
 Fixes camp repair and salvage infinite bugs
 Updates Faster Mod to fix reported faster mod crashes
 
+
+
 15.0.0.22
 
+**Changes**
+Slaves are now gauranteed perks for cleavers and flails instead of hammers and axes, to reflect their intimate experience on the receiving end of chains and whips
+Named Legend Warhammers should spawn now
+More weapon spawn varieties for Bandit Leaders, Bandit Raiders, Bandit Thuds, Bandit Veterans, Bandit Warlords, Zombie Knights, Bounty Hunters, Gladiators, Hedge Knights, Knights, Mercenairies, Swordmasters
+
 **Fixes**
+Scenarios now work again
 Fixes the "Veteran/ranged manhunter" from causing errors when it spawns with a named armor
+Fixes the difficulty level of Sato's manhunter enemy parties
 Fixes the gladius icon
 Fixes peaceable tooltip
+Fixes rare missing wide cloth helmet bug
+Some more tweaks to faster mod to catch potential crashes
+
+**Weapons**
+Added two new named halberd variants
+Added a named longsword
+Added a named sword variant
+Added two new estoc variants (@GRIBABAS)
+Added new Footmans Axe named and regular variants (@GRIBABAS)
+Replaced legend flail art (@GRIBABAS)
+Added new named Gladius (@GRIBABAS)
+Added a named voulge variant
+
+**Armor Tweaks**
+Added milanese plate armor variant
+Added layered version of enclave's great helm and venitian bascinet
+Added armet visor, great bascinet visor, venitian bascinet visor
+Most helm vanity layers changed to have lower durability, cost and fatigue. No more heavy protective feather, or 200 gold straw hats.  This in turn lowers the defense of some enemies and the cost of some rescruits
+Added Italo-norman helm
+
+
+15.0.0.23 The Grand Tournament
+
+**New legendary location**
+The Grand Tournament is an exclusive location only accessible when you have at least three mercenaries who have become arena veterans.
+There are three events in the tournament.  Grand Melee, Gauntlet and Show Match.
+In all three modes you fight as many battles in a row as you can, without limit.
+each battle the prize will double and the difficulty will gradually increase exponentially.
+ The tournament map is procedurally generated from terrain of all kinds
+The rules of the Grand Melee are:
+* The prize begins at 1000 gold,
+* You fight procedurally generated parties made up of both humans and beasts of all kinds
+* You get to keep the loot from each battle
+The Gauntlet :
+The prize begins at 500 gold
+you fight procedural parties made up of all human enemies
+Show matches:
+Prize begins at 100 gold
+You fight against set parties of your own choosing
+
+**Adventuring Party**
+Undoes some of the previous nerfs to background stat ranges, though the backgrounds also cost more. This also affects these characters when hired in other scenarios
+* Berserker has more bravery and defense, other stats are more consistently high, but with lower peak values. Has better armor and helmet. No longer loyal. bastard sword instead of orc flail. Cost increased to 35/3500.
+* Crusader hitpoints and ranged defence increased, initiative decreased. cost increased.
+* Seer stamina, melee, defense all made a bit better. peak init decreased. starts at level 2, cost increased.
+* Assassin has the proper assassin perks, and increased stats. cost increased
+Each character now comes traits that reflect their background story.
+* berserker is mad and has a deathwish
+* assassin is agressive and unpredicatable
+* crusader is superstitious and an undead killer
+* seer is bright and light
+* noble is cocky and a weasle. no longer a drunkard in party, thought still drunk in noble scenario
+* ranger is a pragmatic and a sureshot.
+
+**Assassin**
+commander stats increased. to avoid negative stats.
+Recruits have the entire knife perk group, not just hidden.
+Knife perk group now grants assassinate perk rather than untouchable, which is still granted by the devious group.
+Assassinate perk now only grants +50% damage while hidden. Though it grants another 50% if used by an assassin background and another 50% if used by the commander.
+
+**Druid**
+Druids no longer have transform skills, instead they have healing and debuff abilities
+Scenario begins with a therianthropic potion that lets you inflict a random therianthropic injury on one person
+Commander perk tree reworked to give a good option at each level for four build directions, heal, debuff, unarmed and staff
+
+**Therianthropy**
+Transformation changes:
+*Bear grants +200% health, +50% melee defense. Its abilities damage still scale with health and initiative
+*Boar grants +100% Stamina, and fatigue recovery +100% hitpoints and +25% Resolve. Gore now scales with health and initiative
+*Wolf grants +100% health and melee defense, movement costs are decreased by 1 per tile and mvoement fatigue costs are decreased
+*Rat grants 3 action points, poisoned bites, and 25 melee defense while retreating. it also inflicts -50% Resolve
+
+
+Taking the perks to control your transformation now gradually grants the ability to use some items
+* bears can use a bag once they Master Anger
+* boars can use their bag at Control Instincts and use a mainhand weapon at Master Anger
+* wolves can use their bag at Surpress Urges, mainhand at Control Instincts and offhand at Master Anger
+* rats can use their bag at Surpress Urges, mainhand and offhand at Control Instincts and armor at Master Anger
+Tooltips for each injury updated to explain the injury a bit better.
+Barbarian champions can no longer turn into schrats, there should be no way to get this ability now.
+
+
+**Changes**
+Devious perk group now grants untouchable
+Huge changed from +10% damage to melee, to +5% damage to both melee and ranged.  reduction to defenses remains
+Pragmatic changed from +10% melee skill and -10% chance to hit head, to +5% to both melee and ranged skill, and -20 chance to hit head.
+Sureshot changed from +5 ranged still to +10% ranged damage and -5 ranged defense
+Drunkard event - you can now try to talk the drunkard out of their addiction, it has a low chance
+Adds southern backgrounds to random party
+Coven leaders can have southern beasts
+Mummies can spawn in the Undead Crises
+Bandit Raiders always have a hat
+Militia Veterans no longer spawn naked
+Adds named Goedendag variant
+Reduced the spawn of Tier 3 Nachos - they should spawn later and in smaller quantities
+
+**Fixes**
+Transformations no longer get beards on death, instead they revert to human
+Swordmasters no longer drop unlayered helmets
+Fixes a slew of retinue followers not being able to properly find backgrounds
+fixes incorrectly applied traits on noble servant
+
+**Armor Tweaks**
+Added three named helms (named bascinet, named kettle helm, named barbute)
+Fixed kettle helms giving too much armor  in the early game
+Goblin chain helm and spike helm values swapped
+Straw hat vanity layer buffed to 5 durability
+Adds low and high variants to flat tops, nordic, norman and kettle helms to mimic vanilla armor variabilitiy by unit type.  These will reduce the average head armor of zombies, footmen, militia . Inceases average armor on bandit raiders, veterans and warlords, swordmasters and halberdiers
+Added Wallace Sallet, with a named variant (painted version)
+
+
+15.0.0.24
+
+**New Scenarios**
+Adds @BobPenguin Mage Scenario submod
+* Evoker now also uses a subset of the mage attack skills
+* Burning hands balanced around fire lance
+
+**New Permanent Injuries**
+Burned
+- 10% reduction to Melee+Ranged Attack+Defend skills
+- Reduces enemy resolve by 15
+Scarred
+- 10% reduction on hitpoints and fatigue
+- 75% chance to survive if struck down by non fatal blow
+
+**changes**
+Adds Taro's Turn It In mod, so you can turn in most noble quests ast any of their settlements
+Adds a couple of LeVilainJoueur's tweaks
+* Night Owl halves the effect of night on ranged skill and defense
+* tiny changed to 10% to be in line with Huge
+* Nine lives also grants a 1/9 chance to survive with an injury
+
+Unarmed:
+*Unarmed mastery now reduces the AP of hand to hand, grapple and kick . It no longer increases teh hit chance of hand to hand
+*Sprint now lets you move quickly across 4 tiles , does not work on rough ground or across zone of control
+Assassins
+*Assassin commander now has grapple and choke
+* Southern assassins are now called Hashassins and now have correctly assassinate and untouchable. They are agile knife specialists.
+* Northern assassin are now Fit, Large, Calm and vicious, and unarmed specialists. They can now be recruited from mountain forts in the north
+Battle standards
+* Pitchfork skills secondary effect now affect the battle standard
+* Inspiring presence now adds 10 damage when wielding the battle standard, backfire chance reduced to 0.04% per point under 100 resolve
+
+**fixes**
+Assassin scenario no longer creates cultists
+Crusader no longer has the evoker traits in adventuring party
+Crusaders have fortified mind and mind over body
+Swordmaster crash due to omail
+
+
+**Fixes**
+Fixed Scavanger Retinue not being unlocked by all beggar, cripple, refugee and salve backgrounds
+Fixes drums of war/life icons not showing
+Alphabetize company origin starts
+Fixes hair and beard clipping issues on some helms
+

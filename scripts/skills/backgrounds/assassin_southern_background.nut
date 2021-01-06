@@ -4,7 +4,7 @@ this.assassin_southern_background <- this.inherit("scripts/skills/backgrounds/ch
 	{
 		this.character_background.create();
 		this.m.ID = "background.assassin_southern";
-		this.m.Name = "Assassin";
+		this.m.Name = "Hashassin";
 		this.m.Icon = "ui/backgrounds/background_53.png";
 		this.m.BackgroundDescription = "An assassin has to be quick on his feet and skilled with the use of weapons.";
 		this.m.GoodEnding = "%name% the assassin departed the %companyname% with a large chest of gold and traveled far away. From what rumors you\'ve heard, he built a castle in the mountains east of the southern kingdoms. You\'re not sure if it\'s true, but there\'s been a steady increase in dead viziers and lords alike as of late.";
@@ -72,13 +72,13 @@ this.assassin_southern_background <- this.inherit("scripts/skills/backgrounds/ch
 			],
 			Traits = [
 				this.Const.Perks.CalmTree,
-				this.Const.Perks.FastTree,
+				this.Const.Perks.FitTree,
 				this.Const.Perks.AgileTree,
-				this.Const.Perks.DeviousTree
+				this.Const.Perks.ViciousTree
 			],
 			Enemy = [this.Const.Perks.CivilizationTree],
 			Class = [this.Const.Perks.KnifeClassTree],
-			Magic = []
+			Magic = [this.Const.Perks.AssassinMagicTree]
 		}
 	}
 

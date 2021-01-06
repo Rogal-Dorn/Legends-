@@ -5,7 +5,9 @@ this.named_mace <- this.inherit("scripts/items/weapons/named/named_weapon", {
 	function create()
 	{
 		this.named_weapon.create();
-		this.m.Variant = this.Math.rand(1, 5);
+		this.m.Variants = [1,2,3,4,5]
+		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() -1)];
+
 		this.updateVariant();
 		this.m.ID = "weapon.named_mace";
 		this.m.NameList = this.Const.Strings.MaceNames;

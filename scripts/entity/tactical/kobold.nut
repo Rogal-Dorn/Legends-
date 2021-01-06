@@ -62,7 +62,7 @@ this.kobold <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.DamageReceived] = 0.5;
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.Idle] = 1.25;
 		this.m.SoundPitch = this.Math.rand(150, 160) * 0.01;
-		this.m.Tags.add("goblin");
+		this.m.Flags.add("goblin");
 	}
 
 	function onDeath( _killer, _skill, _tile, _fatalityType )
@@ -199,7 +199,7 @@ this.kobold <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_bullseye"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_anticipation"));
 		this.m.Skills.add(this.new("scripts/skills/actives/footwork"));
-
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_boondock_blade"));
 		if (this.Const.DLC.Unhold)
 		{
 			this.m.Skills.add(this.new("scripts/skills/actives/wake_ally_skill"));

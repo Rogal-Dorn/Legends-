@@ -153,6 +153,17 @@ this.forest1 <- this.inherit("scripts/mapgen/tactical_template", {
 		tile.setBrush("tile_forest_01");
 		local n = 0;
 
+		if (!("IsSmallTree" in _rect))
+		{
+			_rect.IsSmallTree <- false
+		}
+
+		if (!("IsTreeAllowed" in _rect))
+		{
+			_rect.IsTreeAllowed <- false
+		}
+
+
 		if (!_rect.IsEmpty && this.Math.rand(1, 100) < this.m.ChanceToSpawnObject * _objectSpawnChanceMult)
 		{
 			if (_rect.IsSmallTree)

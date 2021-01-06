@@ -50,11 +50,19 @@ this.legend_peasant_squire <- this.inherit("scripts/entity/tactical/human", {
 
 	function assignRandomEquipment()
 	{
-		this.m.Items.equip(this.new("scripts/items/weapons/shortsword"));
-		this.m.Items.equip(this.new("scripts/items/shields/wooden_shield"));
+		if (this.Math.rand(1, 100) <= 66) {
+			this.m.Items.equip(this.new("scripts/items/weapons/shortsword"));
+			this.m.Items.equip(this.new("scripts/items/shields/wooden_shield"));
+		}
+		else
+		{
+			local weapons = [
+				"weapons/legend_ranged_wooden_flail",
+			];
+			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
+		}
 
-
-			this.m.Items.equip(this.Const.World.Common.pickArmor([
+		this.m.Items.equip(this.Const.World.Common.pickArmor([
 			[1, "leather_tunic"]
 		]));
 

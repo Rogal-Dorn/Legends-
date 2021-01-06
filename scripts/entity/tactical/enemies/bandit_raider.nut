@@ -140,7 +140,13 @@ this.bandit_raider <- this.inherit("scripts/entity/tactical/human", {
 				}
 				else if (r == 6)
 				{
-					this.m.Items.equip(this.new("scripts/items/weapons/two_handed_wooden_flail"));
+					local weapons = [
+						"weapons/two_handed_wooden_flail",
+						"weapons/legend_ranged_flail",
+						"weapons/legend_reinforced_flail",
+					];
+
+					this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 
 					if (("Assets" in this.World) && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 					{
@@ -353,19 +359,17 @@ this.bandit_raider <- this.inherit("scripts/entity/tactical/human", {
 		])
 		this.m.Items.equip(item);
 
-		if (this.Math.rand(1, 100) <= 85)
+
+		local item = this.Const.World.Common.pickHelmet([
+			[1, "nasal_helmet"],
+			[1, "dented_nasal_helmet"],
+			[1, "rusty_mail_coif"],
+			[1, "headscarf"],
+			[1, "nasal_helmet_with_rusty_mail"]
+		])
+		if (item != null)
 		{
-			local item = this.Const.World.Common.pickHelmet([
-				[1, "nasal_helmet"],
-				[1, "dented_nasal_helmet"],
-				[1, "rusty_mail_coif"],
-				[1, "headscarf"],
-				[1, "nasal_helmet_with_rusty_mail"]
-			])
-			if (item != null)
-			{
-				this.m.Items.equip(item);
-			}
+			this.m.Items.equip(item);
 		}
 	}
 

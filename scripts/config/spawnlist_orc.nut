@@ -167,7 +167,7 @@ gt.Const.World.Spawn.OrcRaiders <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendOrcElite,
-					MinR = 800,
+					MinR = 400,
 					Cost = 100,
 					Roll = true
 				}
@@ -179,7 +179,7 @@ gt.Const.World.Spawn.OrcRaiders <-
 				{
 					Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
 					MinR = 0.50 * 1115,
-					Cost = 80,
+					Cost = 60,
 					Roll = true
 				}
 			]

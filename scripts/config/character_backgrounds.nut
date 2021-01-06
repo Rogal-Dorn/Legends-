@@ -343,7 +343,6 @@ gt.Const.CharacterBackgroundsRandom <- [
 	"hunter_background",
 	"juggler_background",
 	"killer_on_the_run_background",
-	// "legend_baker_background",
 	"legend_cannibal_background",
 	"legend_crusader_background",
 	"legend_berserker_background",
@@ -402,9 +401,10 @@ gt.Const.CharacterBackgroundsRandom <- [
 	"legend_berserker_background",
 	"legend_necrosavant_background",
 	"legend_noble_event_background",
-	// "legend_philosopher_background",
-	// "legend_astrologist_background",
-	"legend_conjurer_background"
+	"legend_conjurer_background",
+	"slave_background",
+	"slave_soutern_background",
+	"assassin_southern_background"
 ];
 gt.Const.HorseBackgrounds <- [
 	"legend_horse_destrier",

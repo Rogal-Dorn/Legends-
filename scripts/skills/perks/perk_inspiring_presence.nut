@@ -32,14 +32,14 @@ this.perk_inspiring_presence <- this.inherit("scripts/skills/skill", {
 			if (ally.getMoraleState() != this.Const.MoraleState.Ignore && ally.getMoraleState() != this.Const.MoraleState.Confident)
 			{
 				local resolve_ally = ally.getCurrentProperties().getBravery();
-				local waverchance = (250 - resolve) / 100
+				local waverchance = (200 - resolve) * 0.01
 				local r = this.Math.rand(1, resolve);
 				if (r <= waverchance)
 				{
 					ally.setMoraleState(this.Const.MoraleState.Wavering);
 					this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(ally) + " is wavering after being scared by a speech");
 				}
-				else if (r >= resolve_ally / 3)
+				else if (r >= (resolve_ally * 0.33))
 				{
 					ally.setMoraleState(this.Const.MoraleState.Confident);
 					this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(ally) + " is confident due to an inspiring speech");
@@ -49,6 +49,21 @@ this.perk_inspiring_presence <- this.inherit("scripts/skills/skill", {
 				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(ally) + " was not paying attention to a speech");
 				}
 
+			}
+		}
+	}
+	
+	function onUpdate( _properties )
+	{
+		local actor = this.getContainer().getActor();
+		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		if (item != null)
+		{
+			local itemID = item.getID();
+			if(itemID == "weapon.player_banner")
+			{
+				_properties.DamageRegularMin += 10;
+				_properties.DamageRegularMax += 10;
 			}
 		}
 	}

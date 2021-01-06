@@ -74,14 +74,13 @@ this.swordmaster <- this.inherit("scripts/entity/tactical/human", {
 		{
 			local weapons = [
 				"weapons/noble_sword",
-				"weapons/arming_sword"
+				"weapons/arming_sword",
+				"weapons/legend_estoc"
 			];
 
 			if (this.Const.DLC.Wildmen || this.Const.DLC.Desert)
 			{
 				weapons.extend([
-					"weapons/noble_sword",
-					"weapons/arming_sword",
 					"weapons/shamshir"
 				]);
 			}
@@ -98,19 +97,20 @@ this.swordmaster <- this.inherit("scripts/entity/tactical/human", {
 				[1, "footman_armor"],
 				[1, "leather_scale_armor"],
 				[1, "light_scale_armor"]
-			]));			
+			]));
 		}
 
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Head) && this.Math.rand(1, 100) <= 90)
 		{
-			local helmet = [
-				"helmets/nasal_helmet",
-				"helmets/nasal_helmet_with_mail",
-				"helmets/mail_coif",
-				"helmets/headscarf",
-				"helmets/feathered_hat"
-			];
-			this.m.Items.equip(this.new("scripts/items/" + helmet[this.Math.rand(0, helmet.len() - 1)]));
+
+			this.m.Items.equip(this.Const.World.Common.pickHelmet([
+				[3, "nasal_helmet"],
+				[2, "nasal_helmet_with_mail"],
+				[2, "mail_coif"],
+				[1, "feathered_hat"],
+				[1, "headscarf"]
+			]))
+
 		}
 	}
 
@@ -123,7 +123,8 @@ this.swordmaster <- this.inherit("scripts/entity/tactical/human", {
 
 		this.getSprite("miniboss").setBrush("bust_miniboss");
 		local weapons = [
-			"weapons/named/named_sword"
+			"weapons/named/named_sword",
+			"weapons/named/legend_named_estoc"
 		];
 
 		if (this.Const.DLC.Wildmen || this.Const.DLC.Desert)

@@ -7,15 +7,14 @@ this.legend_voulge <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Name = "Voulge";
 		this.m.Description = "A polearm with a heavy knife blade, reminiscent of a butcher\'s cleaver on a stick.";
 		this.m.Categories = "Cleaver, Two-Handed";
-		this.m.IconLarge = "weapons/melee/legend_voulge_01.png";
-		this.m.Icon = "weapons/melee/legend_voulge_01_70x70.png";
+		this.m.Variant = 1
+		this.updateVariant();
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
-		this.m.ArmamentIcon = "icon_legend_voulge_01";
 		this.m.Value = 900;
 		this.m.Condition = 56.0;
 		this.m.ConditionMax = 56.0;
@@ -27,6 +26,13 @@ this.legend_voulge <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RegularDamageMax = 85;
 		this.m.ArmorDamageMult = 0.8;
 		this.m.DirectDamageMult = 0.25;
+	}
+
+	function updateVariant()
+	{
+		this.m.IconLarge = "weapons/melee/legend_voulge_0" + this.m.Variant + ".png";
+		this.m.Icon = "weapons/melee/legend_voulge_0" + this.m.Variant + "_70x70.png";
+		this.m.ArmamentIcon = "icon_legend_voulge_0" + this.m.Variant;
 	}
 
 	function onEquip()

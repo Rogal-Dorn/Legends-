@@ -6,7 +6,7 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		this.m.Name = "Warlock";
 		this.m.Description = "[p=c][img]gfx/ui/events/event_46.png[/img][/p][p] Death is no barrier, others flee from its yawning abyss, but you embrace the other side. \n\n[color=#bcad8c]Necromancy:[/color] Start with undead companions and a scythe that summons the dead.\n[color=#bcad8c]Gruesome harvest:[/color] Collect human corpses to fashion new minions, maintain them with medical supplies\n[color=#bcad8c]Blood magic:[/color] Drain blood, feast on corpses and use your own blood in rituals.\n[color=#bcad8c]Avatar:[/color] When the warlock dies, the spells fade and the game ends.[/p]";
 		this.m.Difficulty = 2;
-		this.m.Order = 26;
+		this.m.Order = 310;
 	}
 
 	function isValid()

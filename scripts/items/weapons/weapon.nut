@@ -28,7 +28,8 @@ this.weapon <- this.inherit("scripts/items/item", {
 		IsAgainstShields = false,
 		IsAoE = false,
 		IsEnforcingRangeLimit = false,
-		IsBloodied = false
+		IsBloodied = false,
+		Variants = []
 	},
 	function getRangeMin()
 	{
@@ -620,11 +621,12 @@ this.weapon <- this.inherit("scripts/items/item", {
 	function updateRuneSigil()
 	{
 		this.item.updateRuneSigil();
-		if (this.m.ArmamentIcon.find("runed_") != null)
-		{
-			return;
-		}
-		this.m.ArmamentIcon = "runed_" + this.m.ArmamentIcon;
+		// return
+		// if (this.m.ArmamentIcon.find("runed_") != null)
+		// {
+		// 	return;
+		// }
+		// this.m.ArmamentIcon = "runed_" + this.m.ArmamentIcon;
 	}
 
 

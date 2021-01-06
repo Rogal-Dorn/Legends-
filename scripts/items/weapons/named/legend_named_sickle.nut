@@ -16,7 +16,7 @@ this.legend_named_sickle <- this.inherit("scripts/items/weapons/named/named_weap
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
-		this.m.ArmamentIcon = "icon_legend_sickle_01";
+		this.m.ArmamentIcon = "icon_legend_sickle_02";
 		this.m.Value = 4500;
 		this.m.Condition = 50.0;
 		this.m.ConditionMax = 50.0;

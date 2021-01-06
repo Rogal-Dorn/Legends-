@@ -6,8 +6,8 @@ this.legend_crusader_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.ID = "background.legend_crusader";
 		this.m.Name = "Holy Crusader";
 		this.m.Icon = "ui/backgrounds/crusader.png";
-		this.m.HiringCost = 2000;
-		this.m.DailyCost = 25;
+		this.m.HiringCost = 3500;
+		this.m.DailyCost = 35;
 		this.m.Excluded = [
 			"trait.weasel",
 			"trait.fear_undead",
@@ -78,7 +78,8 @@ this.legend_crusader_background <- this.inherit("scripts/skills/backgrounds/char
 				this.Const.Perks.LargeTree,
 				this.Const.Perks.IndestructibleTree,
 				this.Const.Perks.MartyrTree,
-				this.Const.Perks.InspirationalTree
+				this.Const.Perks.IntelligentTree,
+				this.Const.Perks.InspirationalTree,
 				this.Const.Perks.FitTree
 			],
 			Enemy = [
@@ -181,8 +182,8 @@ this.legend_crusader_background <- this.inherit("scripts/skills/backgrounds/char
 	{
 		local c = {
 			Hitpoints = [
-				0,
-				0
+				10,
+				10
 			],
 			Bravery = [
 				10,
@@ -197,20 +198,20 @@ this.legend_crusader_background <- this.inherit("scripts/skills/backgrounds/char
 				10
 			],
 			RangedSkill = [
-				-10,
-				-10
+				-5,
+				-5
 			],
 			MeleeDefense = [
 				15,
 				15
 			],
 			RangedDefense = [
-				-10,
-				-10
+				0,
+				0
 			],
 			Initiative = [
-				-10,
-				-10
+				-20,
+				-20
 			]
 		};
 		return c;

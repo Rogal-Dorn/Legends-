@@ -6,7 +6,7 @@ this.legends_risen_legion_scenario <- this.inherit("scripts/scenarios/world/star
 		this.m.Name = "Legion";
 		this.m.Description = "[p=c][img]gfx/ui/events/event_73.png[/img][/p]An ancient legion risen from the dead to reclaim the world.\n\n[color=#bcad8c]Dreaded:[/color] All towns will begin hostile to you.\n[color=#bcad8c]Beyond death:[/color] Every character in your party has a 66% chance to survive death\n[color=#bcad8c]Dead walking:[/color] You can not hire in towns, but you may find recruits by patrolling near mass graves and sunken castles.\n";
 		this.m.Difficulty = 3;
-		this.m.Order = 12;
+		this.m.Order = 140;
 	}
 
 
@@ -95,7 +95,7 @@ this.legends_risen_legion_scenario <- this.inherit("scripts/scenarios/world/star
 				items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
 				items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Ammo));
 				items.equip(this.Const.World.Common.pickHelmet([[1, "ancient/ancient_gladiator_helmet"]]));
-				items.equip(this.new("scripts/items/weapons/ancient/ancient_sword"));
+				items.equip(this.new("scripts/items/weapons/ancient/legend_gladius"));
 				items.equip(this.new("scripts/items/tools/throwing_net"));
 				items.addToBag(this.new("scripts/items/tools/throwing_net"));
 				items.addToBag(this.new("scripts/items/tools/throwing_net"));

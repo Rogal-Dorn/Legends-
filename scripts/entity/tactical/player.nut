@@ -140,7 +140,10 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 	function getDailyCost()
 	{
-		local wageMult = (this.m.CurrentProperties.DailyWageMult * (("State" in this.World) && this.World.State != null ? this.World.Assets.m.DailyWageMult : 1.0)) - this.World.State.getPlayer().getWageModifier();
+		if (!("State" in this.World)) {
+			return 0
+		}
+		local wageMult = (this.m.CurrentProperties.DailyWageMult * (this.World.State != null ? this.World.Assets.m.DailyWageMult : 1.0)) - (this.World.State != null ? this.World.State.getPlayer().getWageModifier() : 0.0);
 		//local costAdj = this.Math.max(0, this.m.CurrentProperties.DailyWageMult * barterMult);
 		return this.Math.max(0, this.m.CurrentProperties.DailyWage * wageMult);
 	}
@@ -996,54 +999,73 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.Math.rand(1, 100) <= this.Const.Combat.SurviveWithInjuryChance * this.m.CurrentProperties.SurviveWithInjuryChanceMult || this.World.Assets.m.IsSurvivalGuaranteed && !this.m.Skills.hasSkillOfType(this.Const.SkillType.PermanentInjury) && (this.World.Assets.getOrigin().getID() != "scenario.manhunters" || this.getBackground().getID() != "background.slave"))
 		{
-
-
 			local potential = [];
 			local injuries = this.Const.Injury.Permanent;
 			local numPermInjuries = 0;
 
 			foreach (inj in injuries)
 			{
-				if (inj.ID == "injury.broken_elbow_joint" && !this.m.Skills.hasSkill("injury.broken_elbow_joint") && !this.m.Skills.hasSkill("trait.legend_prosthetic_forearm"))
+				if (inj.ID == "injury.broken_elbow_joint" && this.m.Skills.hasSkill("trait.legend_prosthetic_forearm"))
 				{
-					potential.push(inj);
+					continue;
 				}
-				else if (inj.ID == "injury.broken_knee" && !this.m.Skills.hasSkill("injury.broken_knee") && !this.m.Skills.hasSkill("trait.legend_prosthetic_leg"))
+				else if (inj.ID == "injury.broken_knee" && this.m.Skills.hasSkill("trait.legend_prosthetic_leg"))
 				{
-					potential.push(inj);
+					continue;
 				}
-				else if (inj.ID == "injury.maimed_foot" && !this.m.Skills.hasSkill("injury.maimed_foot") && !this.m.Skills.hasSkill("trait.legend_prosthetic_foot"))
+				else if (inj.ID == "injury.maimed_foot" && this.m.Skills.hasSkill("trait.legend_prosthetic_foot"))
 				{
-					potential.push(inj);
+					continue;
 				}
-				else if (inj.ID == "injury.missing_ear" && !this.m.Skills.hasSkill("injury.missing_ear") && !this.m.Skills.hasSkill("trait.legend_prosthetic_ear"))
+				else if (inj.ID == "injury.missing_ear" && this.m.Skills.hasSkill("trait.legend_prosthetic_ear"))
 				{
-					potential.push(inj);
+					continue;
 				}
-				else if (inj.ID == "injury.missing_eye" && !this.m.Skills.hasSkill("injury.missing_eye") && !this.m.Skills.hasSkill("trait.legend_prosthetic_eye"))
+				else if (inj.ID == "injury.missing_eye" && this.m.Skills.hasSkill("trait.legend_prosthetic_eye"))
 				{
-					potential.push(inj);
+					continue;
 				}
-				else if (inj.ID == "injury.missing_finger" && !this.m.Skills.hasSkill("injury.missing_finger") && !this.m.Skills.hasSkill("trait.legend_prosthetic_finger"))
+				else if (inj.ID == "injury.missing_finger" && this.m.Skills.hasSkill("trait.legend_prosthetic_finger"))
 				{
-					potential.push(inj);
+					continue;
 				}
-				else if (inj.ID == "injury.missing_hand" && !this.m.Skills.hasSkill("injury.missing_hand") && !this.m.Skills.hasSkill("trait.legend_prosthetic_hand"))
+				else if (inj.ID == "injury.missing_hand" && this.m.Skills.hasSkill("trait.legend_prosthetic_hand"))
 				{
-					potential.push(inj);
+					continue;
 				}
-				else if (inj.ID == "injury.missing_nose" && !this.m.Skills.hasSkill("injury.missing_nose") && !this.m.Skills.hasSkill("trait.legend_prosthetic_nose"))
+				else if (inj.ID == "injury.missing_nose" && this.m.Skills.hasSkill("trait.legend_prosthetic_nose"))
 				{
-					potential.push(inj);
+					continue;
 				}
-				else if (inj.ID != "injury.broken_elbow_joint" && inj.ID != "injury.broken_knee" && inj.ID != "injury.maimed_foot" && inj.ID != "injury.missing_ear" && inj.ID != "injury.missing_eye" && inj.ID != "injury.missing_finger" && inj.ID != "injury.missing_hand" && inj.ID != "injury.missing_nose" && !this.m.Skills.hasSkill(inj.ID))
+				else if (inj.ID == "injury.legend_burned_injury")
+				{
+
+					if (this.m.Skills.hasSkill(inj.ID))
+					{
+						numPermInjuries = ++numPermInjuries;
+						continue
+					}
+
+					local isBurned = false
+					foreach (b in this.Const.Injury.Burning)
+					{
+						if (this.m.Skills.hasSkill(b.ID))
+						{
+							isBurned = true;
+							break
+						}
+					}
+					if (isBurned) {
+						potential.push(inj);
+					}
+				}
+				else if (!this.m.Skills.hasSkill(inj.ID))
 				{
 					potential.push(inj);
 				}
 				else
 				{
 					numPermInjuries = ++numPermInjuries;
-
 				}
 			}
 
@@ -2716,6 +2738,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			this.getSkills().add(this.new("scripts/skills/injury_permanent/legend_aperthropy_injury"));
 			this.getBackground().addPerkGroup(TherianthropyGroup);
 			this.logDebug(this.getName() + " gained aperthropy");
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(this.getName()) + " is infected with aperthropy ");
 		}
 
 		if (_killer.getSkills().hasSkill("injury.legend_arborthropy") && !this.getSkills().hasSkill("injury.legend_arborthropy"))
@@ -2730,6 +2753,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			this.getSkills().add(this.new("scripts/skills/injury_permanent/legend_lycanthropy_injury"));
 			this.getBackground().addPerkGroup(TherianthropyGroup);
 			this.logDebug(this.getName() + " gained lycanthropy");
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(this.getName()) + " is infected with lycanthropy ");
 		}
 
 		if (_killer.getSkills().hasSkill("injury.legend_ursathropy") && !this.getSkills().hasSkill("injury.legend_ursathropy"))
@@ -2737,6 +2761,14 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			this.getSkills().add(this.new("scripts/skills/injury_permanent/legend_ursathropy_injury"));
 			this.getBackground().addPerkGroup(TherianthropyGroup);
 			this.logDebug(this.getName() + " gained ursathropy");
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(this.getName()) + " is infected with ursathropy ");
+		}
+		if (_killer.getSkills().hasSkill("injury.legend_vermesthropy") && !this.getSkills().hasSkill("injury.legend_vermesthropy"))
+		{
+			this.getSkills().add(this.new("scripts/skills/injury_permanent/legend_vermesthropy_injury"));
+			this.getBackground().addPerkGroup(TherianthropyGroup);
+			this.logDebug(this.getName() + " gained vermesthropy");
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(this.getName()) + " is infected with vermesthropy ");
 		}
 	}
 
@@ -2759,35 +2791,28 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 					];
 		local r = this.Math.rand(1,99);
 
-		if (r <= 50 && !this.getSkills().hasSkill("injury.legend_lycanthropy"))
+		if (r <= 60 && !this.getSkills().hasSkill("injury.legend_lycanthropy"))
 		{
 			this.getSkills().add(this.new("scripts/skills/injury_permanent/legend_lycanthropy_injury"));
 			this.getBackground().addPerkGroup(TherianthropyGroup);
 			this.logDebug(this.getName() + " gained lycanthropy");
 		}
 
-		if (r > 50 && r <= 75 && !this.getSkills().hasSkill("injury.legend_aperthropy"))
+		if (r > 50 && r <= 80 && !this.getSkills().hasSkill("injury.legend_aperthropy"))
 		{
 			this.getSkills().add(this.new("scripts/skills/injury_permanent/legend_aperthropy_injury"));
 			this.getBackground().addPerkGroup(TherianthropyGroup);
 			this.logDebug(this.getName() + " gained aperthropy");
 		}
 
-		if (r > 75 && r <= 90 && !this.getSkills().hasSkill("injury.legend_arborthropy"))
-		{
-			this.getSkills().add(this.new("scripts/skills/injury_permanent/legend_arborthropy_injury"));
-			this.getBackground().addPerkGroup(TherianthropyGroup);
-			this.logDebug(this.getName() + " gained arborthropy");
-		}
-
-		if (r > 90 && r <= 98 && !this.getSkills().hasSkill("injury.legend_ursathropy"))
+		if (r > 80 && r <= 95 && !this.getSkills().hasSkill("injury.legend_ursathropy"))
 		{
 			this.getSkills().add(this.new("scripts/skills/injury_permanent/legend_ursathropy_injury"));
 			this.getBackground().addPerkGroup(TherianthropyGroup);
 			this.logDebug(this.getName() + " gained ursathropy");
 		}
 
-		if (r == 99 && !this.getSkills().hasSkill("injury.legend_vermesthropy"))
+		if (r == 95 && !this.getSkills().hasSkill("injury.legend_vermesthropy"))
 		{
 			this.getSkills().add(this.new("scripts/skills/injury_permanent/legend_vermesthropy_injury"));
 			this.getBackground().addPerkGroup(TherianthropyGroup);

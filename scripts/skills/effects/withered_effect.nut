@@ -17,7 +17,7 @@ this.withered_effect <- this.inherit("scripts/skills/skill", {
 
 	function getDescription()
 	{
-		return "By means of dark magic, this character has withered to have the physique of an old man. Will slowly wear off over [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.TurnsLeft + "[/color] more turn(s).";
+		return "By means of rotten magic, this character has withered to have the physique of an old man. Will slowly wear off over [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.TurnsLeft + "[/color] more turn(s).";
 	}
 
 	function getTooltip()

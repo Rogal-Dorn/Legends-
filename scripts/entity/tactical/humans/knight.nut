@@ -106,16 +106,12 @@ this.knight <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Mainhand))
 		{
-			r = this.Math.rand(1, 2);
+			local weapons = [
+				"weapons/fighting_axe",
+				"weapons/noble_sword"
+			];
+			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 
-			if (r == 1)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/fighting_axe"));
-			}
-			else if (r == 2)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/noble_sword"));
-			}
 		}
 
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Offhand))
@@ -158,9 +154,6 @@ this.knight <- this.inherit("scripts/entity/tactical/human", {
 				[2, "legend_enclave_vanilla_great_bascinet_01"],
 				[2, "legend_enclave_vanilla_great_bascinet_02"],
 				[2, "legend_enclave_vanilla_great_bascinet_03"],
-				[2, "legend_enclave_vanilla_kettle_sallet_01"],
-				[2, "legend_enclave_vanilla_kettle_sallet_02"],
-				[2, "legend_enclave_vanilla_kettle_sallet_03"],
 				[15, "faction_helm", banner],
 				[5, "legend_frogmouth_helm"],
 				[1, "legend_frogmouth_helm_crested"]
@@ -181,6 +174,7 @@ this.knight <- this.inherit("scripts/entity/tactical/human", {
 			"weapons/named/named_greatsword",
 			"weapons/named/named_mace",
 			"weapons/named/named_sword"
+			"weapons/named/named_longsword"
 		];
 		local shields = clone this.Const.Items.NamedShields;
 		local armor = [
@@ -210,8 +204,9 @@ this.knight <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Items.equip(h);
 		}
 		this.m.Items.equip(this.Const.World.Common.pickHelmet([
-			[3, "named/legend_frogmouth_helm_crested_painted"],
-			[1, "named/legend_helm_full_named"]
+            [3, "named/legend_frogmouth_helm_crested_painted"],
+            [3, "named/bascinet_named"],
+            [1, "named/legend_helm_full_named"]
 		]))
 
 

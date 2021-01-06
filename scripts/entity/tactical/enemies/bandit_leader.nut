@@ -107,7 +107,8 @@ this.bandit_leader <- this.inherit("scripts/entity/tactical/human", {
 					"weapons/greataxe",
 					"weapons/legend_swordstaff",
 					"weapons/legend_bastardsword",
-					"weapons/warbrand"
+					"weapons/warbrand",
+					"weapons/legend_estoc"
 				]);
 			}
 
@@ -151,7 +152,7 @@ this.bandit_leader <- this.inherit("scripts/entity/tactical/human", {
 				]);
 			}
 
-			this.m.Items.equip(this.Const.World.Common.pickArmor(armor))	
+			this.m.Items.equip(this.Const.World.Common.pickArmor(armor))
 		}
 
 		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Head) == null)

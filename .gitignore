@@ -1,8 +1,11 @@
 brushes/
-helmets/
-legend_armor/
+helmet_scripts/
+legend_armor_scripts/
+unpacked/legend_armor/0
+unpacked/legend_armor/1
+unpacked/legend_armor/2
 
-!scripts/items/legend_helmets/helmets/
+
 !unpacked/**/helmets
 
 scripts/items/legend_armor/cloth/
@@ -19,6 +22,7 @@ gfx/*.png
 *.DS_Store
 temp.nut
 
+unpacked/legend_enemies/metadata.xml
 unpacked/**/*dead_arrows.png
 unpacked/**/*dead_javelin.png
 unpacked/legend_armor/metadata.xml
@@ -27,9 +31,11 @@ unpacked/legend_helmets/0
 unpacked/legend_helmets/1
 unpacked/legend_helmets/2
 unpacked/legend_helmets/3
+unpacked/legend_helmets/4
 !unpacked/dead_arrows.png
 !unpacked/dead_javelin.png
-unpacked/legend_enemies/metadata.xml
 !**/bust_naked_body_00_dead*
 
 
+
+unpacked/legend_helmets/4/metadata.xml

@@ -69,7 +69,8 @@ this.militia_veteran <- this.inherit("scripts/entity/tactical/human", {
 				"weapons/shortsword"
 				"weapons/legend_militia_glaive",
 				"weapons/legend_glaive",
-				"weapons/legend_infantry_axe"
+				"weapons/legend_infantry_axe",
+				"weapons/legend_military_goedendag",
 			];
 
 			if (this.Const.DLC.Unhold)
@@ -99,7 +100,7 @@ this.militia_veteran <- this.inherit("scripts/entity/tactical/human", {
 			[1, "gambeson"],
 			[1, "padded_leather"],
 			[1, "padded_surcoat"],
-			[1, "leather_lamelar"],
+			[1, "leather_lamellar"],
 			[1, "thick_tunic"]
 		]));
 

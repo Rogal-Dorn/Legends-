@@ -278,15 +278,16 @@ gt.Const.Strings.EntityName <- [
 	"Horse",
 	"Ancient Gladiator",
 	"Bandit Rabble Poacher",
-	"Bandit Vermes",
+	"Infected Bandit",
 	"Manhunter",
-	"Manhunter Veteran"	
+	"Manhunter Veteran"
 	"Embalmed Slave",
 	"Embalmed Soldier",
 	"Embalmed Noble",
 	"Embalmed Queen",
-	"Kobold Fighter"
-	
+	"Kobold Fighter",
+	"Kobold Wolfrider"
+
 ];
 gt.Const.Strings.EntityNamePlural <- [
 	"Necromancers",
@@ -441,7 +442,8 @@ gt.Const.Strings.EntityNamePlural <- [
 	"Embalmed Soldiers",
 	"Embalmed Nobles",
 	"Embalmed Queens",
-	"Kobold Fighters"
+	"Kobold Fighters",
+	"Kobold Wolfriders"
 
 ];
 gt.Const.Strings.Tactical.EntityName <- {
@@ -2018,9 +2020,28 @@ gt.Const.Strings.PerkName <- {
 	LegendWoodworking = "Woodworking",
 	LegendSurpressUrges = "Surpress Urges",
 	LegendControlInstincts = "Control Instincts",
-	LegendMasterAnger = "Master Anger"
-
+	LegendMasterAnger = "Master Anger",
+	MageLegendMagicBurningHands = "Burning Hands",
+	MageLegendMagicChainLightning = "Chain Lightning",
+	MageLegendMagicCircleOfProtection = "Circle of Protection",
+	MageLegendMagicDaze = "Daze",
+	MageLegendMagicHailstone = "Hailstone",
+	MageLegendMagicHealingWind = "Healing Wind",
+	MageLegendMagicImbue = "Imbue",
+	MageLegendMagicLevitate = "Levitate",
+	MageLegendMagicMissile = "Magic Missile",
+	MageLegendMagicPsybeam = "Psybeam",
+	MageLegendMagicSleep = "Sleep",
+	MageLegendMagicSoothingWind = "Soothing Wind",
+	MageLegendMagicTeleport = "Teleport",
+	MageLegendMagicWebBolt = "Web Bolt",
+	MageLegendMasteryBurningHands = "Intense Flames",
+	MageLegendMasteryChainLightning = "Polarized",
+	MageLegendMasteryHailstone = "Dense Ice",
+	MageLegendMasteryMagicMissileFocus = "Magic Missile Focus",
+	MageLegendMasteryMagicMissileMastery = "Magic Missile Mastery"
 };
+
 gt.Const.Strings.PerkDescription <- {
 	Relentless = "Don\'t slow down! At all times your Initiative is reduced only by [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] of your accumulated Fatigue, instead of all of it. In addition, using the \'Wait\' command will no longer give you a penalty to Initiative in the next round.\n[color=#0b0084]From the Fit perk group[/color]",
 	ReturnFavor = "Unlocks the \'Return Favor\' skill which when active has a [color=" + this.Const.UI.Color.PositiveValue + "]75%[/color] chance to stun and stagger any opponent missing a melee attack against this character in retaliation. Immunities and resistances against being stunned still apply. [color=#0b0084]From the Mace perk group[/color]",
@@ -2073,7 +2094,7 @@ gt.Const.Strings.PerkDescription <- {
 	Deflect = "Learn to better deflect hits to the side instead of blocking them head on. Shield damage received is reduced by [color=" + this.Const.UI.Color.NegativeValue + "]-50%[/color] to a minimum of 1.",
 	Evade = "A moving target is an elusive one. On getting hit with a ranged attack, there is a [color=" + this.Const.UI.Color.PositiveValue + "]33%[/color] chance to only take a gracing hit and suffer only [color=" + this.Const.UI.Color.PositiveValue + "]33%[/color] of the normal damage.",
 	ShieldExpert = "Learn to better deflect hits to the side instead of blocking them head on.\n\nThe shield defense bonus is increased by [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color]. This also applies to the additional defense bonus of the Shieldwall skill.\n\nShield damage received is reduced by [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] to a minimum of 1.\n\nThe \'Knock Back\' skill gains [color=" + this.Const.UI.Color.PositiveValue + "]+15%[/color] chance to hit. \n[color=#0b0084]From the Shield perk group[/color]",
-	NineLives = "Once per battle, upon receiving a killing blow, survive instead with a few hitpoints left and have all damage over time effects (e.g. bleeding, poisoned) cured. The next hit is likely to kill you for good, of course, but improved defensive stats until your next turn help you to survive until then. \n[color=#0b0084]From the Tenacious perk group[/color]",
+	NineLives = "Once per battle, upon receiving a killing blow, survive instead with a few hitpoints left and have all damage over time effects (e.g. bleeding, poisoned) cured. The next hit is likely to kill you for good, of course, but improved defensive stats until your next turn help you to survive until then. Also grants a one in nine chance to survive a fatal blow with an injury. \n[color=#0b0084]From the Tenacious perk group[/color]",
 	BatteringRam = "Immunity against being stunned.",
 	LastStand = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] additional Melee and Ranged Defense for every 2% of missing hitpoints below 66%. When below 33% health this character becomes immune to the effects of fresh injuries, and is not upset by health losses. \n[color=#0b0084]From the Martyr perk group[/color]",
 	Ironside = "All damage received is reduced by [color=" + this.Const.UI.Color.NegativeValue + "]-5%[/color] for every opponent adjacent and in melee range, up to a [color=" + this.Const.UI.Color.NegativeValue + "]-30%[/color] total damage reduction.",
@@ -2089,10 +2110,10 @@ gt.Const.Strings.PerkDescription <- {
 	Captain = "Use a sergeant on the battlefield as an extension of your leadership and to keep everyone in line. Allies at a range of 5 tiles or less will get [color=" + this.Const.UI.Color.PositiveValue + "]15%[/color] of this character\'s Resolve as a bonus added to their own, up to a maximum of this character\'s Resolve.\n\nDoes not stack; the sergeant with the highest Resolve will apply the bonus.",
 	BoondockBlade = "When in a hiding place, such as high grass, gain a bonus of [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] to Melee Skill, Ranged Skill, and Melee and Ranged Defense.",
 	ArtfulDodger = "Zone of Control is ignored when moving away from enemy combatants in melee.",
-	InspiringPresence = "A rousing speech at the start of every battle grants allies a chance to start the battle at confident morale unless prohibited by character traits. The percentage chance for each ally to gain confident morale, is a third of your resolve.  There is a small chance the speech backfires and sets your ally to wavering instead. There is a 2% chance of backfire at 50 resolve, decreasing to 0% at 150 resolve.  \n[color=#0b0084]From the Inspirational perk group[/color]",
+	InspiringPresence = "A rousing speech at the start of every battle inspires your allies. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] damage while wielding a battle standard. Grants allies a chance to start the battle at confident morale unless prohibited by character traits. The percentage chance for each ally to gain confident morale, 33% of your resolve. For each point of resolve below 100 there is a 0.04% chance the speech backfires and causes wavering morale. \n[color=#0b0084]From the Inspirational perk group[/color]",
 	Inspire = "Unlocks the \'Inspire\' skill which can push allies to go beyond their limits, granting them additional Action Points. \n[color=#0b0084]From the Inspirational perk group[/color]",
 	Underdog = "I\'m used to it. The defense malus due to being surrounded by opponents is reduced by 5. If an attacker has the Backstabber perk, the effect of that perk is negated, and the normal defense malus due to being surrounded is applied instead. \n[color=#0b0084]From the Trained perk group[/color]",
-	Sprint = "Unlocks the \'Sprint\' skill which allows you to decrease the AP cost of movement by 1 per tile, at an increased fatigue cost of 50%. \n[color=#0b0084]From the Agile perk group[/color]",
+	Sprint = "Unlocks the \'Sprint\' skill which allows you to quickly cover 4 tiles in a straight line, does not work across rough terrain or through enemy zones of control \n[color=#0b0084]From the Agile perk group[/color]",
 	Recover = "Unlocks the \'Recover\' skill which allows for resting a turn in order to reduce accumulated Fatigue by [color=" + this.Const.UI.Color.NegativeValue + "]5.5% [/color]for each action point available. Recover can not be used if another skill is used. \n[color=#0b0084]From the Fit perk group[/color]",
 	FirstMove = "Always act first in the very first round of combat, before any of your opponents do.",
 	Backstabber = "Honor doesn\'t win you fights, stabbing the enemy where it hurts does. The bonus to hitchance in melee is doubled to [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] for each ally surrounding and distracting your target. \n[color=#0b0084]From the Dagger perk group[/color]",
@@ -2214,8 +2235,8 @@ gt.Const.Strings.PerkDescription <- {
 	LegendSpecialistMilitiaSkill = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+12[/color] melee skill while using a militia spear, ancient spear or wooden spear. Only 25% of this skill applies to other spears  \n[color=#0b0084]From the Militia perk group[/color]",
 	LegendSpecialistPickaxeDamage = "Allows this character to mine for materials while assigned to gather in camp, and provides a small chance to harvest when smashing rocks in battle. Gain [color=" + this.Const.UI.Color.PositiveValue + "]4-12[/color] damage while using a pickaxe, or [color=" + this.Const.UI.Color.PositiveValue + "]1-3[/color] damage when weilding 2 handed hammers. \n[color=#0b0084]From the Miner perk group[/color]",
 	LegendSpecialistPickaxeSkill = " Allows Pickaxes and hammers to crush rocks in battle. Gain [color=" + this.Const.UI.Color.PositiveValue + "]12[/color] melee skill while using a pickaxe, or [color=" + this.Const.UI.Color.PositiveValue + "]3[/color] melee skill while using other 2 handed hammers. \n[color=#0b0084]From the Miner perk group[/color]",
-	LegendSpecialistPitchforkDamage = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+4-12[/color] damage while using a Pitchfork, Wooden Pitchfork, Hoe, Scythe or Wooden Flail. 25% of this perk applies to other Polearms  \n[color=#0b0084]From the Farmer perk group[/color]",
-	LegendSpecialistPitchforkSkill = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]12[/color] melee skill and [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] armor damage while using a Pitchfork, Wooden Pitchfork, Hoe, Scythe or Wooden Flail. 25% of this perk applies to other Polearms  \n[color=#0b0084]From the Farmer perk group[/color]",
+	LegendSpecialistPitchforkDamage = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+4-12[/color] damage while using a Pitchfork, Wooden Pitchfork, Hoe, Scythe or Wooden Flail. 25% of this perk applies to other polearms including banners  \n[color=#0b0084]From the Farmer perk group[/color]",
+	LegendSpecialistPitchforkSkill = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]12[/color] melee skill and [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] armor damage while using a Pitchfork, Wooden Pitchfork, Hoe, Scythe or Wooden Flail. 25% of this perk applies to other polearms and banners  \n[color=#0b0084]From the Farmer perk group[/color]",
 	LegendSpecialistShortbowDamage = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+4-12[/color] damage while using a shortbow, wonky bow or goblin bow. Only 25% of this skill applies to other bows. \n[color=#0b0084]From the Shortbow perk group[/color]",
 	LegendSpecialistShortbowSkill = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+12[/color] ranged skill and 25% armor penetration while using a shortbow, wonky bow or goblin bow. Only 25% of this applies to other bows.  \n[color=#0b0084]From the Shortbow perk group[/color] ",
 	LegendSpecialistShovelDamage = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+4-12[/color] damage while using a shovel. 25% of this skill applies to two handed maces  \n[color=#0b0084]From the Gravedigger perk group[/color]",
@@ -2283,7 +2304,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendSpecStaffStun = "Master the movements required to spin your staff in a great flourish that lands with additional force. Any strike with a staff that would normally daze, also stuns and staggers. \n[color=#0b0084]From the Staff perk group[/color]",
 	LegendSpecStaffSkill = "Twist and thrust with your staff to deflect blows and intercept strikes. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+16[/color] melee and ranged defense while wielding a staff. 50% of this bonus is applied to swordstaves and instruments. \n[color=#0b0084]From the Staff perk group[/color]",
 	LegendDrumsOfWar = "Learn powerful rythms that drive your allies on. Unlocks the Drums of War skill that restores [color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] fatigue to every ally within eight tiles. Can only be used with a Drum or Lute equipped. \n[color=#0b0084]From the Bard perk group[/color]",
-	LegendSpecFists = "Master the martial arts of unarmed combat. Reduces the fatigue cost of Hand to Hand, Kick and Grapple. Increases armor penetration and increases chance to hit for Hand to Hand, adds damage to Kick. \n[color=#0b0084]From the Unarmed perk group[/color]",
+	LegendSpecFists = "Master the martial arts of unarmed combat. Reduces the AP and fatigue costs of Hand to Hand, Kick and Grapple. Increases armor penetration and increases chance to hit for Hand to Hand, adds damage to Kick. \n[color=#0b0084]From the Unarmed perk group[/color]",
 	LegendKick = "Put all your force into a lunging kick, pushing your opponent away and inflicting fatigue. Grants the \'Kick\' ability. Targets will take damage if falling off an edge.  A successful kick cancels Shieldwall, Spearwall and Riposte. \n[color=#0b0084]From the Unarmed perk group[/color] ",
 	LegendGrapple = "Grab your opponent and manhandle them to the ground, inflicting fatigue and grappling them for two turns. Grants the \'Grapple\' ability, which can only be used with your offhand free. \n[color=#0b0084]From the Unarmed perk group[/color]",
 	LegendFieldTreats = "Make liberal use of alcohol and food to motivate your mercenaries. Spend 20 food to take someone from wavering to steady, cannot be applied to someone who has already been rallied.",
@@ -2307,7 +2328,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendPrepareGraze = "Long slow deep rending scratches can leave many bleeding grazes. Grants the active skill Prepare to Bleed that primes your next strike to inflict weak but long lasting bleeding.",
 	LegendSlaughter = "If it bleeds, we can kill it. An existing injury can open up avenues of attack for the final slaughter. Gain [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] damage when attacking a bleeding enemy.",
 	LegendUntouchable = "Staying hidden is about more than just clever disguise, one must be prepared to avoid stray blows and arrows in the heat of battle. Extends your camouflage by two turns. ",
-	LegendAssassinate = "Becoming invisible is impressive, but it is what you do with this power that really count.  Striking from the shadows allows you to bypass enemy defenses and strike for their unfended weak points. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+200%[/color] damage while hidden",
+	LegendAssassinate = "Becoming invisible is impressive, but it is what you do with this power that really count.  Striking from the shadows allows you to bypass enemy defenses and strike for their unfended weak points. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color] maximum and minimum damage while hidden. Grants an additional [color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color] damage to Assassin backgrounds while hidden",
 	LegendMealPreperation = "A good company chef can make a meal from whatever can be scrounged up, and have it in your belly before camp breaks. Unlocks a chance to get better food rewards when this character hunts in camp. The chance and rewards increase as you level up. Includes porridge, pies and puddings. [color=#0b0084]From the Chef perk group[/color] ",
 	LegendAlcoholBrewing = "Any camp worth its salt will have an alcohol still fashioned out of whatever can be pulled together. Unlocks a chance to get alcohol as a reward when this character hunts in camp. The rewards increase as you level up. Includes beer, wine and mead. Also allows alcohol crafting in the crafting tent. [color=#0b0084]From the Chef perk group[/color]",
 	LegendHorseCharge = "Use the great weight and speed of the horse to charge forward. Move up to four spaces and attack an enemy",
@@ -2381,6 +2402,25 @@ gt.Const.Strings.PerkDescription <- {
 	LegendSurpressUrges = "Allows this character to control shapeshifting to some extent, no longer deliberately striking allies while transformed by effects like lycanthropy [color=#0b0084]From the Therianthropy perk group[/color]",
 	LegendControlInstincts = "Further improves this character\'s self control while transformed, no longer deliberately striking allies while transformed [color=#0b0084]From the Therianthropy perk group[/color]",
 	LegendMasterAnger = "Allows the character to transform at will, no longer randomly transforming during battle [color=#0b0084]From the Therianthropy perk group[/color]"
+	MageLegendMagicBurningHands = "Unleash a cone of blistering heat from your palms, can hit up to 9 targets for 10-15 damage.",
+	MageLegendMagicChainLightning = "Fire a bolt of lightning at an enemy that can arc to two adjacent enemies.",
+	MageLegendMagicCircleOfProtection = "A magic circle that protects all allies within at casting. Leaving the circle breaks the protection.",
+	MageLegendMagicDaze = "Assault the senses of your target with a conjured flurry of colorful sparks, whirs, and pops. Such an astonishing display is sure to leave anyone too bewildered to fight effectively. Does no damage.",
+	MageLegendMagicHailstone = "Conjure a heavy ball of ice to crush your enemies.",
+	MageLegendMagicHealingWind = "Restore the health of all allies within 8 tiles. Must be holding a magic staff to use.",
+	MageLegendMagicImbue = "Imbue someone with magical power, temporarily increasing accuracy and damage.",
+	MageLegendMagicLevitate = "Levitate someone off the ground, granting them the ability to move freely across all terrain for a short duration.",
+	MageLegendMagicMissile = "A burst of force, leaping forward into a foe.",
+	MageLegendMagicPsybeam = "Launch a mental attack in the form of a ray at an enemy to stun or daze them. Does no damage.",
+	MageLegendMagicSleep = "Use soothing vapours to lull an enemy to sleep. The chance of success is determined by the resolves of the user and target.",
+	MageLegendMagicSoothingWind = "Restore the fatigue of all allies within 8 tiles. Must be holding a magic staff to use.",
+	MageLegendMagicTeleport = "Teleport a short distance away.",
+	MageLegendMagicWebBolt = "Send a web of silk out to ensnare an opponent, rooting them in place halving their damage, defenses and initiative",
+	MageLegendMasteryBurningHands = "Increases the intensity of your heat, doubles the damage of burning hands. ",
+	MageLegendMasteryChainLightning = "Lightning gains +10% chance to hit and +1 range.",
+	MageLegendMasteryHailstone = "Hailstone can now ignore 65% of armor and inflicts 125% damage to armor.",
+	MageLegendMasteryMagicMissileFocus = "Reduce AP cost of Magic Missile by 1.",
+	MageLegendMasteryMagicMissileMastery = "Reduce AP and cost of Magic Missile by 1. Reduce the base fatigue cost of Magic Missile from 16 to 10."
 
 };
 gt.Const.Strings.Tooltip <- {

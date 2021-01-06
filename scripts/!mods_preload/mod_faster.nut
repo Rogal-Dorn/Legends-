@@ -115,8 +115,8 @@
 
 			if (_entity.isAlive() && (!_entity.isHiddenToPlayer() || this.m.TargetTile.IsVisibleForPlayer))
 			{
-				this.getAgent().declareAction(900);
-				local delay = this.Math.maxf(800, this.m.SelectedSkill.getDelay() + 750 + 850);
+				this.getAgent().declareAction(1000);
+				local delay = this.Math.maxf(800, this.m.SelectedSkill.getDelay() + 1800);
 				this.getAgent().declareEvaluationDelay(delay);
 			}
 
@@ -177,8 +177,8 @@
 
 		if (!_entity.isHiddenToPlayer() || this.m.TargetTile.IsVisibleForPlayer)
 		{
-			this.getAgent().declareEvaluationDelay(1000);
-			this.getAgent().declareAction(900);
+			this.getAgent().declareEvaluationDelay(2000);
+			this.getAgent().declareAction(1000);
 		}
 
 		this.m.TargetTile = null;

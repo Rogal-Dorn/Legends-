@@ -161,7 +161,11 @@ this.retinue_manager <- {
 	function upgradeInventory()
 	{
 		++this.m.InventoryUpgrades;
-		this.World.Assets.getStash().resize(this.World.Assets.getStash().getCapacity() + 27);
+		if (this.World.State.getPlayer() != null)
+		{
+			this.World.State.getPlayer().calculateModifiers();
+		}
+		//this.World.Assets.getStash().resize(this.World.Assets.getStash().getCapacity() + 27);
 	}
 
 	function create()

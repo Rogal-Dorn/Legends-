@@ -74,7 +74,8 @@ this.patch_forest_thick_snow <- this.inherit("scripts/mapgen/tactical_template",
 						W = 1,
 						H = 1,
 						IsEmpty = false,
-						IsTreeAllowed = isTreeAllowed
+						IsTreeAllowed = isTreeAllowed,
+						IsSmallTree = false
 					}, 100.0);
 					tile.IsSpecialTerrain = true;
 				}

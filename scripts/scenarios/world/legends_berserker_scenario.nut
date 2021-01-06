@@ -6,7 +6,7 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 		this.m.Name = "Berserker";
 		this.m.Description = "[p=c][img]gfx/ui/events/event_139.png[/img][/p][p]You are a barbarian berserker, driven by an unbound rage. Watching your family slaughtered drove you into a self destructive frenzy of violence and revenge.\n\n[color=#bcad8c]Berserker Madness:[/color] Unlock powerful abilities that allow you to fight naked and bare-handed.\n[color=#bcad8c]Infectious Rage:[/color] Only the insane, violent or desperate will join you. You will grant the Berserk perk to anyone who joins you in battle. You have a tiny chance of finding other berserkers for hire.\n[color=#bcad8c]Avatar:[/color] Begin alone. If you die, it is game over.[/p]";
 		this.m.Difficulty = 2;
-		this.m.Order = 7;
+		this.m.Order = 60;
 		this.m.IsFixedLook = true;
 	}
 
@@ -33,7 +33,7 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 		]);
 		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
 		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_berserk"));
-		
+
 		// bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_bearform"));
 
 		// bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_favoured_enemy_direwolf"));

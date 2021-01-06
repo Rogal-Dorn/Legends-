@@ -51,28 +51,16 @@ this.skeleton_heavy_bodyguard <- this.inherit("scripts/entity/tactical/skeleton"
 
 	function assignRandomEquipment()
 	{
-		local r = this.Math.rand(1, 5);
+		local weapons = [
+			"weapons/ancient/ancient_sword",
+			"weapons/ancient/crypt_cleaver",
+			"weapons/ancient/rhomphaia",
+			"weapons/ancient/khopesh",
+			"weapons/ancient/warscythe",
+			"weapons/ancient/legend_gladius",
+		];
 
-		if (r == 1)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/ancient_sword"));
-		}
-		else if (r == 2)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/crypt_cleaver"));
-		}
-		else if (r == 3)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/rhomphaia"));
-		}
-		else if (r == 4)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/khopesh"));
-		}
-		else if (r == 5)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/warscythe"));
-		}
+		this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 
 		if (this.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand) == null)
 		{
@@ -85,9 +73,9 @@ this.skeleton_heavy_bodyguard <- this.inherit("scripts/entity/tactical/skeleton"
 			[1, "ancient/ancient_plate_harness"],
 			[1, "ancient/ancient_plated_mail_hauberk"]
 		];
-		local item = this.Const.World.Common.pickArmor(armor); 		
+		local item = this.Const.World.Common.pickArmor(armor);
 		this.m.Items.equip(item);
-		
+
 		local item = this.Const.World.Common.pickHelmet([
 			[66, "ancient/ancient_honorguard_helmet"]
 		])

@@ -239,3 +239,22 @@ gt.Const.Tactical.Actor.BanditOutrider <- {
 	],
 	FatigueRecoveryRate = 20
 };
+gt.Const.Tactical.Actor.BanditVermes <- {
+	XP = 100,
+	ActionPoints = 9,
+	Hitpoints = 40,
+	Bravery = 50,
+	Stamina = 95,
+	MeleeSkill = 55,
+	RangedSkill = 45,
+	MeleeDefense = 0,
+	RangedDefense = 0,
+	Initiative = 95,
+	FatigueEffectMult = 1.0,
+	MoraleEffectMult = 1.0,
+	Armor = [
+		0,
+		0
+	],
+	FatigueRecoveryRate = 15
+};

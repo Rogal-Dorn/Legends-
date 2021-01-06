@@ -41,7 +41,9 @@ this.patch_swamp_pond <- this.inherit("scripts/mapgen/tactical_template", {
 							Y = y,
 							W = 1,
 							H = 1,
-							IsEmpty = false
+							IsEmpty = false,
+							IsTreeAllowed = false,
+							IsSmallTree = false
 						});
 					}
 					else
@@ -51,7 +53,9 @@ this.patch_swamp_pond <- this.inherit("scripts/mapgen/tactical_template", {
 							Y = y,
 							W = 1,
 							H = 1,
-							IsEmpty = false
+							IsEmpty = false,
+							IsTreeAllowed = false,
+							IsSmallTree = false
 						});
 					}
 				}

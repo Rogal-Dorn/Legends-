@@ -24,14 +24,14 @@ fi
 
 
 echo "Building helmets..."
-rm -rf helmets
+rm -rf helmet_scripts
 handleExit
-mkdir -p "helmets"
+mkdir -p "helmet_scripts"
 handleExit
 python make_legend_helmets.py
 handleExit
 mkdir -p "$BBDir\\scripts\\items\\legend_helmets"
-cp -R helmets/. "$BBDir\\scripts\\items\\legend_helmets"
+cp -R helmet_scripts/. "$BBDir\\scripts\\items\\legend_helmets"
 handleExit
 
 echo "Building armors..."
@@ -42,7 +42,7 @@ handleExit
 python make_legend_armor.py
 handleExit
 mkdir -p "$BBDir\scripts\\items\\legend_armor"
-cp -R legend_armor/. "$BBDir\\scripts\\items\\legend_armor"
+cp -R legend_armor_scripts/. "$BBDir\\scripts\\items\\legend_armor"
 handleExit
 
 echo "Building enemies..."
@@ -65,6 +65,7 @@ declare -a BRUSHES=(
 "legend_helmets/1"
 "legend_helmets/2"
 "legend_helmets/3"
+"legend_helmets/4"
 "legend_armor/0"
 "legend_armor/1"
 "legend_armor/2"

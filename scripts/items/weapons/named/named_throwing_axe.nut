@@ -15,7 +15,9 @@ this.named_throwing_axe <- this.inherit("scripts/items/weapons/named/named_weapo
 		this.named_weapon.create();
 		this.m.Ammo = 5;
 		this.m.AmmoMax = 5;
-		this.m.Variant = this.Math.rand(1, 3);
+		this.m.Variants = [1,2,3]
+		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() -1)];
+
 		this.updateVariant();
 		this.m.ID = "weapon.named_throwing_axe";
 		this.m.NameList = this.Const.Strings.ThrowingAxeNames;

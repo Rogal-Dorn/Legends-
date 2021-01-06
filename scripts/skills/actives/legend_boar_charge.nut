@@ -88,7 +88,7 @@ this.legend_boar_charge <- this.inherit("scripts/skills/skill", {
 
 		
 		local target = _targetTile.getEntity();
-
+		local success = this.attackEntity(_user, target);
 		if (this.m.SoundOnUse.len() != 0)
 		{
 			this.Sound.play(this.m.SoundOnUse[this.Math.rand(0, this.m.SoundOnUse.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
@@ -171,6 +171,66 @@ this.legend_boar_charge <- this.inherit("scripts/skills/skill", {
 			_entity.onDamageReceived(_tag.Attacker, _tag.Skill, _tag.HitInfo);
 		}
 	}
+	function onAnySkillUsed( _skill, _targetEntity, _properties )
+	{
+		if (_skill == this)
+		{
+			local actor = this.getContainer().getActor();
+			local bodyHealth = actor.getHitpointsMax();
+			local average = (actor.getInitiative() +  bodyHealth) / 4;
+			local damageMin = 5;
+			local damageMax = 10;
+			local avgMin = average - 100;
+			local avgMax = average - 90;
+
+			if ((average - 100) > 0)
+			{
+				damageMin += avgMin;
+			}
+
+			if ((average - 90) > 0)
+			{
+				damageMax += avgMax;
+			}
+
+
+			if (damageMin > 50)
+			{
+			local minMod = (damageMin - 50);
+			local minFalloff = this.Math.pow(minMod, 0.5);
+			damageMin = 50 + minFalloff;
+			}
+
+			if (damageMax > 50)
+			{
+			local maxMod = (damageMax - 50);
+			local maxFalloff = this.Math.pow(maxMod, 0.5);
+			damageMax = 50 + maxFalloff;
+			}
+
+			
+
+
+			if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_muscularity"))
+			{
+				local muscularity = this.Math.floor(bodyHealth * 0.1);
+				damageMax += muscularity;
+			}
+
+			if (this.getContainer().hasSkill("background.brawler") || this.getContainer().hasSkill("background.legend_commander_berserker" || this.getContainer().hasSkill("background.legend_berserker")) )
+			{
+				damageMin = damageMin * 1.25;
+				damageMax = damageMax * 1.25;
+			}
+			_properties.DamageRegularMin += this.Math.floor(damageMin);
+			_properties.DamageRegularMax += this.Math.floor(damageMax);
+			_properties.MeleeSkill += _properties.IsSpecializedInFists ? 10 : -10;
+
+
+			this.m.DirectDamageMult = _properties.IsSpecializedInFists ? 0.5 : 0.1;
+		}
+	}
+
 
 });
 
