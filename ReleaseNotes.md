@@ -4597,9 +4597,10 @@ Adds @BobPenguin Mage Scenario submod
 
 **New Permanent Injuries**
 Burned
-- 10% reduction to Melee/Ranged Attack+Defend skills
+- 10% reduction to Melee+Ranged Attack+Defend skills
 - Reduces enemy resolve by 15
 Scarred
+- 10% reduction on hitpoints and fatigue
 - 75% chance to survive if struck down by non fatal blow
 
 **changes**
