@@ -418,7 +418,7 @@ layers = [
  "title" :  "Bronze Chain", \
  "desc" :  "Bronze Chain" \
 },
-{"name" : "enclave_bevor"                     , "layer" : "hood", "min" : 1, "max" : 1, "base" : True, "value" : 450, "con" : 100, "stam" : -7, "vis" : 0, "hair" : "false", "beard" : "false",  \
+{"name" : "enclave_bevor"                     , "layer" : "hood", "min" : 1, "max" : 1, "base" : True, "value" : 450, "con" : 100, "stam" : -7, "vis" : 0, "hair" : "false", "beard" : "true",  \
  "title" :  "Bevor", \
  "desc" :  "A solid metal bevor" \
 },
@@ -575,11 +575,11 @@ layers = [
  "title" :  "Nomad Leather Cap", \
  "desc" :  "A light nomad leather cap." \
 },
-{"name" : "southern_cap_smooth"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 140, "con" : 40, "stam" : -2, "vis" : 0, "hair" : "true", "beard" : "false",  \
+{"name" : "southern_cap_smooth"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 140, "con" : 40, "stam" : -2, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Southern Smooth Cap", \
  "desc" :  "A smooth metal cap" \
 },
-{"name" : "southern_cap_spiked"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 140, "con" : 40, "stam" : -2, "vis" : 0, "hair" : "true", "beard" : "false",  \
+{"name" : "southern_cap_spiked"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 140, "con" : 40, "stam" : -2, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Southern Spiked Cap", \
  "desc" :  "A metal skull cap with a fashionable spike" \
 },
@@ -623,11 +623,11 @@ layers = [
  "title" :  "Bascinet", \
  "desc" :  "A heavy and durable bascinet. This one has a pointed head and is blackened." \
 },
-{"name" : "enclave_great_bascinet"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 2800, "con" : 260, "stam" : -13, "vis" : -2, "hair" : "true", "beard" : "false",  \
+{"name" : "enclave_great_bascinet"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 2800, "con" : 260, "stam" : -13, "vis" : -2, "hair" : "true", "beard" : "true",  \
  "title" :  "Peaked Bascinet", \
  "desc" :  "A well made peaked bascinet" \
 },
-{"name" : "enclave_venitian_bascinet"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 2800, "con" : 260, "stam" : -13, "vis" : -2, "hair" : "true", "beard" : "false",  \
+{"name" : "enclave_venitian_bascinet"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 2800, "con" : 260, "stam" : -13, "vis" : -2, "hair" : "true", "beard" : "true",  \
  "title" :  "Great Bascinet", \
  "desc" :  "A tall helm composed of a peaked bascinet and riveted cheek protection." \
 },
@@ -647,7 +647,7 @@ layers = [
  "title" :  "Kettle Sallet", \
  "desc" :  "A full-metal sallet with a broad rim." \
 },
-{"name" : "enclave_skullcap"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1900, "con" : 140, "stam" : -7, "vis" : -2, "hair" : "true", "beard" : "false",  \
+{"name" : "enclave_skullcap"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1900, "con" : 140, "stam" : -7, "vis" : -2, "hair" : "false", "beard" : "false",  \
  "title" :  "Metal Skullcap", \
  "desc" :  "A metal cap that covers the head." \
 },
@@ -1013,7 +1013,7 @@ layers = [
  "title" :  "Unhold head Spike", \
  "desc" :  "The heavy spiked armor used by barbarian unholds" \
 },
-{"name" : "faceplate_gold"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 550, "con" : 52, "stam" : -3, "vis" : -2, "hair" : "false", "beard" : "true", "named" : True, "rminViz" : -2, "rmaxViz" : -1, "rminStam" : -8, "rmaxStam" : -6, "rminCond" : 105, "rmaxCond" : 135, "names" : Names,  \
+{"name" : "faceplate_gold"                     , "layer" : "top", "min" : 1, "max" : 2, "value" : 550, "con" : 52, "stam" : -3, "vis" : -2, "hair" : "false", "beard" : "true", "named" : True, "rminViz" : -2, "rmaxViz" : -1, "rminStam" : -8, "rmaxStam" : -6, "rminCond" : 105, "rmaxCond" : 135, "names" : Names,  \
  "title" :  "Gold Faceplate", \
  "desc" :  "A gilded faceplate of excellent quality" \
 },
@@ -2054,6 +2054,30 @@ helmets = r"""
   <sprite id="runed_jester_padded_10_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF305374" width="191" height="185" img="entity\legend_helmets\runed_jester_padded_10_dead.png" left="-80" right="22" top="-76" bottom="8" />
 """
 
+def checkForIcon(iconpath, variants):
+    dirpath = os.path.join(os.path.dirname(os.path.abspath(__file__)), "gfx", "ui", "items", "legend_helmets")
+    parts = iconpath.split("/")
+
+    for p in parts:
+        dirpath = os.path.join(dirpath, p)
+
+    if len(variants) == 0:
+        if not os.path.exists(dirpath + ".png"):
+            print("Missing " + dirpath)
+            return True
+        return False
+
+    has_missing = False
+    for v in variants:
+        variant = str(v)
+        if v < 10:
+            variant = "0" + variant
+        if not os.path.exists(dirpath + "_" + variant + ".png"):
+            print("Missing " + dirpath + "_" + variant)
+            has_missing = True
+
+    return has_missing
+
 def makeSheet(num):
     dirpath = os.path.join(os.path.dirname(os.path.abspath(__file__)), "unpacked", "legend_helmets", "" + str(num))
     if not os.path.exists(dirpath):
@@ -2154,6 +2178,7 @@ def makeBrushes():
     F.close()
 
 def main():
+    has_missing = False
     for d in layers:
 
         layer = d["layer"]
@@ -2187,6 +2212,8 @@ def main():
 
         title = d["title"]
         desc = d["desc"]
+
+        has_missing = has_missing or checkForIcon("inventory_" + d["name"], variants)
 
         opts = dict(
             test="true",
@@ -2245,6 +2272,9 @@ def main():
 
 
     makeBrushes()
+
+    if has_missing:
+        raise ValueError("Missing gfx icons")
 
     # filepath = os.path.join(os.path.dirname(os.path.abspath(__file__)), "temp.nut")
     # F = open(filepath, "w")

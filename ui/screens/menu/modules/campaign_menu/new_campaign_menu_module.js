@@ -1239,7 +1239,7 @@ NewCampaignMenuModule.prototype.buildConfigPage = function () {
 	row.append(control);
 	this.mLegendMagicCheckbox = $('<input type="checkbox" id="cb-legendmagic"/>');
 	control.append(this.mLegendMagicCheckbox);
-	this.mLegendMagicCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendmagic">Legend Magic</label>');
+	this.mLegendMagicCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendmagic">Legend Magic (Experimental)</label>');
 	control.append(this.mLegendMagicCheckboxLabel);
 	this.mLegendMagicCheckbox.iCheck({
 		checkboxClass: 'icheckbox_flat-orange',

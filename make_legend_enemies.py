@@ -30,7 +30,7 @@ brush_only_layers = [
     {"template": [Normal], "entity":"goblins", "name": "bust_kobold", "suffix": "dead",    "min" : 1, "max" : 5, "w": 118, "h": 94, "left": -59, "right" :59, "top": -67, "bottom": 27, "offsetY" : 35},
 
     {"template": [Normal], "entity":"goblins", "name": "head_kobold",                      "min" : 1, "max" : 5, "w": 82, "h": 64, "left": -41, "right" :41, "top": -32, "bottom": 32, "offsetY" : 35},
-    {"template": [Normal], "entity":"goblins", "name": "head_kobold", "suffix": "dead",    "min" : 1, "max" : 5, "w": 82, "h": 64, "left": -41, "right" :41, "top": -32, "bottom": 32, "offsetY" : 35},
+    {"template": [Normal], "entity":"goblins", "name": "head_kobold", "suffix": "dead",    "min" : 1, "max" : 5, "w": 70, "h": 50, "left": -45, "right" :25, "top": -65, "bottom": -15, "offsetY" : 35},
 ]
 
 

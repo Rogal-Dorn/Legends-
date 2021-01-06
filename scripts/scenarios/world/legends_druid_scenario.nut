@@ -73,7 +73,7 @@ this.legends_druid_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		//	bros[0].getSkills().add(this.new("scripts/skills/injury_permanent/legend_vermesthropy_injury"));
 		//	this.logDebug(this.getName() + " gained vermesthropy");
 		//}
-
+		this.World.Assets.m.Money = this.World.Assets.m.Money * 0.5;
 
 		bros[0].getFlags().set("IsPlayerCharacter", true);
 		bros[0].setPlaceInFormation(3);
@@ -81,8 +81,11 @@ this.legends_druid_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/legend_fresh_fruit_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/roots_and_berries_item"));
+		this.World.Assets.getStash().add(this.new("scripts/items/supplies/pickled_mushrooms_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/accessory/legend_apothecary_mushrooms_item"));
-		this.World.Assets.getStash().add(this.new("scripts/items/accessory/legend_wolfsbane_necklace_item"));
+		this.World.Assets.getStash().add(this.new("scripts/items/accessory/therianthropy_potion_item"));
+		this.World.Assets.getStash().add(this.new("scripts/items/misc/legend_wolfsbane_item"));
+		this.World.Assets.getStash().add(this.new("scripts/items/misc/legend_mistletoe_item"));
 	}
 
 	function onSpawnPlayer()
@@ -207,7 +210,7 @@ this.legends_druid_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		local garbage = [];
 		foreach( i, bro in bros )
 		{
-			if (bro.getBackground().getID() == "background.wildman" || bro.getBackground().getID() == "background.wildwoman" || bro.getBackground().getID() == "background.legend_herbalist"  || bro.getBackground().getID() == "background.legend_druid"  || bro.getBackground().getID() == "background.houndmaster"  || bro.getBackground().getID() == "background.legend_conjurer"  || bro.getBackground().getID() == "background.legend_enchanter"  || bro.getBackground().getID() == "background.legend_runesmith"  || bro.getBackground().getID() == "background.legend_entrancer"  || bro.getBackground().getID() == "background.legend_donkey"  || bro.getBackground().getID() == "background.legend_spiritualist")
+			if (bro.getBackground().getID() == "background.wildman" || bro.getBackground().getID() == "background.wildwoman" || bro.getBackground().getID() == "background.legend_herbalist"  || bro.getBackground().getID() == "background.legend_druid"  || bro.getBackground().getID() == "background.houndmaster"  || bro.getBackground().getID() == "background.legend_conjurer"  || bro.getBackground().getID() == "background.legend_enchanter" || bro.getBackground().getID() == "background.legend_runesmith"  || bro.getBackground().getID() == "background.legend_entrancer"  || bro.getBackground().getID() == "background.legend_donkey"  || bro.getBackground().getID() == "background.legend_spiritualist")
 			{
 				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.9);
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.9);

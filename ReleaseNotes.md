@@ -4593,37 +4593,49 @@ Added Wallace Sallet, with a named variant (painted version)
 **New Scenarios**
 Adds @BobPenguin Mage Scenario submod
 * Evoker now also uses a subset of the mage attack skills
-* Burning hands balanced around fire lance 
+* Burning hands balanced around fire lance
 
+**New Permanent Injuries**
+Burned
+- 10% reduction to Melee+Ranged Attack+Defend skills
+- Reduces enemy resolve by 15
+Scarred
+- 10% reduction to hitpoints and fatigue
+- 75% chance to survive if struck down by non fatal blow
 
-
-**changes**
-Adds Taro's Turn It In mod, so you can turn in most noble quests ast any of their settlements 
-Adds a couple of LeVilainJoueur's tweaks 
-* Night Owl halves the effect of night on ranged skill and defense 
-* tiny changed to 10% to be in line with Huge 
-* Nine lives also grants a 1/9 chance to survive with an injury 
+**Changes**
+Adds Taro's Turn It In mod, so you can turn in most noble quests ast any of their settlements
+Adds a couple of LeVilainJoueur's tweaks
+* Night Owl halves the effect of night on ranged skill and defense
+* tiny changed to 10% to be in line with Huge
+* Nine lives also grants a 1/9 chance to survive with an injury
 
 Unarmed:
-*Unarmed mastery now reduces the AP of hand to hand, grapple and kick . It no longer increases teh hit chance of hand to hand 
-*Sprint now lets you move quickly across 4 tiles , does not work on rough ground or across zone of control 
+*Unarmed mastery now reduces the AP of hand to hand, grapple and kick . It no longer increases teh hit chance of hand to hand
+*Sprint now lets you move quickly across 4 tiles , does not work on rough ground or across zone of control
 Assassins
-*Assassin commander now has grapple and choke 
+*Assassin commander now has grapple and choke
 * Southern assassins are now called Hashassins and now have correctly assassinate and untouchable. They are agile knife specialists.
-* Northern assassin are now Fit, Large, Calm and vicious, and unarmed specialists. They can now be recruited from mountain forts in the north 
+* Northern assassin are now Fit, Large, Calm and vicious, and unarmed specialists. They can now be recruited from mountain forts in the north
 Battle standards
-* Pitchfork skills secondary effect now affect the battle standard 
-* Inspiring presence now adds 10 damage when wielding the battle standard, backfire chance reduced to 0.04% per point under 100 resolve 
-
-**fixes** 
-Assassin scenario no longer creates cultists 
-Crusader no longer has the evoker traits in adventuring party
-Crusaders have fortified mind and mind over body 
-Swordmaster crash due to omail 
-
+* Pitchfork skills secondary effect now affect the battle standard
+* Inspiring presence now adds 10 damage when wielding the battle standard, backfire chance reduced to 0.04% per point under 100 resolve
 
 **Fixes**
+Favoured perks for southerners and nomads now work.  Nomad is on manhunter and crucified crusader. southerners is on nomads, thieves and slaves
+Assassin scenario no longer creates cultists
+Crucified crusader and crusader have a dynamic perk tree set
+Crusader no longer has the evoker traits in adventuring party
+Crusaders have fortified mind and mind over body
 Fixed Scavanger Retinue not being unlocked by all beggar, cripple, refugee and salve backgrounds
 Fixes drums of war/life icons not showing
 Alphabetize company origin starts
-
+Fixes hair and beard clipping issues on some helms
+Swordmaster crash due to omail
+Fixed Drunk Nobleman event
+Fixed sureshot trait tooltip
+Cleans up many blurry helmet images
+Items spawn correctly in druid scenario
+Fixes missing kettle and flat top helmet errors
+Fix error in boar_gore tooltips
+Shank price reduced

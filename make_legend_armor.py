@@ -362,7 +362,7 @@ layers = [
 
 
 
-{"name": "legend_armor_ancient_double_mail",              "layer": "chain", "min": 1, "max": 1, "value" : 750, "con" : 80, "stam" : -14, "impactSound" : "chain", "invSound" : "leather", \
+{"name": "legend_armor_ancient_double_mail",              "layer": "chain", "min": 1, "max": 5, "value" : 750, "con" : 80, "stam" : -14, "impactSound" : "chain", "invSound" : "leather", \
     "title" :  "Ancient Double Layer Mail", \
     "desc" :  "Includes A heavy and rotten double-layered mail of ancient design.", \
     "adesc" :""
@@ -418,7 +418,7 @@ layers = [
     "desc" :  "A reinforced mail shirt with shoulder guards providing excellent protection against most weapons.", \
     "adesc" : "Includes a reinforced mail shirt in excellent condition."
 },
-{"name": "legend_armor_reinforced_rotten_mail_shirt",     "layer": "chain", "min": 1, "max": 1, "value" : 200, "con" : 45, "stam" : -7, "impactSound" : "chain", "invSound" : "leather", \
+{"name": "legend_armor_reinforced_rotten_mail_shirt",     "layer": "chain", "min": 1, "max": 4, "value" : 200, "con" : 45, "stam" : -7, "impactSound" : "chain", "invSound" : "leather", \
     "title" :  "Rotten Reinforced Mail Shirt", \
     "desc" :  "A reinforced mail shirt that is rotting at the seams.", \
     "adesc" : "Includes a reinforced mail shirt that has seen better days."
@@ -428,7 +428,7 @@ layers = [
     "desc" :  "A long and heavy reinforced chainmail that offers good protection but is very fatiguing to wear.", \
     "adesc" : "Includes a long and heavy reinforced chainmail that offers good protection but is very fatiguing to wear."
 },
-{"name": "legend_armor_reinforced_worn_mail_shirt",       "layer": "chain", "min": 1, "max": 1, "value" : 350, "con" : 65, "stam" : -11, "impactSound" : "chain", "invSound" : "leather", \
+{"name": "legend_armor_reinforced_worn_mail_shirt",       "layer": "chain", "min": 1, "max": 4, "value" : 350, "con" : 65, "stam" : -11, "impactSound" : "chain", "invSound" : "leather", \
     "title" :  "Worn Reinforced Mail Shirt", \
     "desc" :  "A reinforced mail shirt that lost some parts over the years.", \
     "adesc" : "Includes a reinforced mail shirt that has seen better days."
@@ -1180,6 +1180,31 @@ LayerArrow = '<sprite id="$arrow" offsetX="6" offsetY="10" f="64FB" ic="$ic" wid
 LayerJavelin = '<sprite id="$javelin" offsetX="6" offsetY="10" f="64FB" ic="$ic" width="131" height="134" img="$javelin_path" left="-11" right="35" top="-5" bottom="67" />\n'
 
 
+def checkForIcon(iconpath, variants):
+    dirpath = os.path.join(os.path.dirname(os.path.abspath(__file__)), "gfx", "ui", "items")
+    parts = iconpath.split("/")
+    if parts[0] == "armor":
+        return False
+    for p in parts:
+        dirpath = os.path.join(dirpath, p)
+
+    if len(variants) == 0:
+        if not os.path.exists(dirpath + ".png"):
+            print("Missing " + iconpath)
+            return True
+        return False
+
+    has_missing = False
+    for v in variants:
+        variant = str(v)
+        if v < 10:
+            variant = "0" + variant
+        if not os.path.exists(dirpath + "_" + variant + ".png"):
+            print("Missing " + iconpath + "_" + variant)
+            has_missing = True
+
+    return has_missing
+
 
 def makeSheet(num):
     dirpath = os.path.join(os.path.dirname(os.path.abspath(__file__)), "unpacked", "legend_armor", "" + str(num))
@@ -1203,6 +1228,7 @@ def main():
     IC = 4280560954
 
     #Build Nuts
+    has_missing = False
     for d in layers:
 
         inherit = ""
@@ -1268,6 +1294,18 @@ def main():
             overlayLarge = "armor/inventory_" + d["vanilla"] + "_armor"
             overlay = "armor/icon_" + d["vanilla"]  + "_armor"
             icon = "armor/icon_" + d["vanilla"]  + "_armor"
+
+        if inherit != "":
+            if inherit == "legend_padded_surcoat":
+                has_missing = has_missing or checkForIcon("legend_armor/inventory_" + "legend_gambeson", variants)
+                has_missing = has_missing or checkForIcon("legend_armor/icon_" + "legend_gambeson", variants)
+            else:
+                has_missing = has_missing or checkForIcon("legend_armor/inventory_" + inherit, variants)
+                has_missing = has_missing or checkForIcon("legend_armor/icon_" + inherit, variants)
+        else:
+            has_missing = has_missing or checkForIcon(overlayLarge, variants)
+            has_missing = has_missing or checkForIcon(icon, variants)
+
 
         namesL = []
         if "names" in d:
@@ -1414,6 +1452,9 @@ def main():
 
     Brush.write('</brush>\n')
     Brush.close()
+
+    if has_missing:
+        raise ValueError("Missing gfx icons")
 
 
 main()

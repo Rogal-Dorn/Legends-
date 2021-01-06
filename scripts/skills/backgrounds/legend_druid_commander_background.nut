@@ -75,7 +75,7 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Good;
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[2];
-		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[3];
+		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[2];
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[3];
 		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[3];
 		this.m.Modifiers.Terrain = [
@@ -341,8 +341,6 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");
 		stash.removeByID("supplies.ground_grains");
-		stash.add(this.new("scripts/items/supplies/roots_and_berries_item"));
-		stash.add(this.new("scripts/items/supplies/medicine_item"));
 
 		items.equip(this.Const.World.Common.pickArmor([
 			[1, "barbarians/hide_and_bone_armor"]
@@ -352,7 +350,6 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 			[1, "barbarians/bear_headpiece"]
 		]));
 
-		//items.equip(this.new("scripts/items/accessory/legend_wolfsbane_necklace_item"));
 	}
 
 	function onSerialize( _out )
