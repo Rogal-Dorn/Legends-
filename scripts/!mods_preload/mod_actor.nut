@@ -193,12 +193,12 @@
 	{
 		return this.getCurrentProperties().PercentOnKillOtherActorModifier;
 	}
-	
+
 	o.getFlatOnKillOtherActorModifier <- function ()
 	{
 		return this.getCurrentProperties().FlatOnKillOtherActorModifier;
 	}
-	
+
 
 	o.isStabled <- function ()
 	{
@@ -552,7 +552,7 @@
 			// 	this.getTile().removeZoneOfControl(this.getFaction());
 			// }
 			this.setZoneOfControl(this.getTile(), this.hasZoneOfControl());
-			
+
 			this.m.Skills.removeByID("effects.shieldwall");
 			this.m.Skills.removeByID("effects.spearwall");
 			this.m.Skills.removeByID("effects.riposte");
@@ -862,6 +862,16 @@
 			}
 		}
 
+		if (this.hasSprite("permanent_injury_scarred"))
+		{
+			this.getSprite("permanent_injury_scarred").Visible = !_appearance.HideHead;
+		}
+
+		if (this.hasSprite("permanent_injury_burned"))
+		{
+			this.getSprite("permanent_injury_burned").Visible = !_appearance.HideHead;
+		}
+
 
 	}
 
@@ -1000,7 +1010,7 @@
 		{
 			this.World.Contracts.onActorKilled(this, _killer, this.Tactical.State.getStrategicProperties().CombatID);
 			this.World.Events.onActorKilled(this, _killer, this.Tactical.State.getStrategicProperties().CombatID);
-			
+
 			if (this.Tactical.State.getStrategicProperties() != null && this.Tactical.State.getStrategicProperties().IsArenaMode)
 			{
 				if (_killer == null || _killer.getID() == this.getID())
