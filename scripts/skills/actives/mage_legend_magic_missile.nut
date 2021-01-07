@@ -82,7 +82,7 @@ this.mage_legend_magic_missile <- this.inherit("scripts/skills/actives/mage_lege
 			if (this.m.Container.hasSkill("perk.mage_legend_mastery_magic_missile_mastery"))
 			{
 				this.m.ActionPointCost = 3;
-				this.m.FatigueCost = ReducedFatigueCost;
+				this.m.FatigueCost = this.m.ReducedFatigueCost;
 			}
 			else
 			{
@@ -95,7 +95,7 @@ this.mage_legend_magic_missile <- this.inherit("scripts/skills/actives/mage_lege
 			if (this.m.Container.hasSkill("perk.mage_legend_mastery_magic_missile_mastery"))
 			{
 				this.m.ActionPointCost = 4;
-				this.m.FatigueCost = ReducedFatigueCost;
+				this.m.FatigueCost = this.m.ReducedFatigueCost;
 			}
 		}
 	}

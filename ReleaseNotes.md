@@ -4650,3 +4650,9 @@ https://drive.google.com/file/d/1iPGmM1_fWtMzW7PHSsXsbERxMQIWHZ5x/view?usp=shari
 Fixes Vala warden not working for non-Vala summoners
 Fixes errors loading enclave helmets
 Fixes named and legendary item checks for ambitions
+Fixes error on entering Grand tournament with Veterans in group
+Fixes error with Mage's magic missle
+
+
+**Changes**
+Runed items now have a glow around border instead of item (experimenting here, feedback welcome)
