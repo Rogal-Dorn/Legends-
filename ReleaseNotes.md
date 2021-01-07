@@ -4648,3 +4648,4 @@ https://drive.google.com/file/d/1iPGmM1_fWtMzW7PHSsXsbERxMQIWHZ5x/view?usp=shari
 
 **Fixes**
 Fixes Vala warden not working for non-Vala summoners
+Fixes errors loading enclave helmets

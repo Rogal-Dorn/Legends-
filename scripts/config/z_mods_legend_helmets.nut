@@ -697,7 +697,7 @@ gt.Const.LegendMod.HelmObjs.extend([
             [1, "hood/legend_helmet_chain_hood"],//80
         ],
         Helms = [
-            [1, "helm/legend_enclave_kettle"] //130
+            [1, "helm/legend_helmet_enclave_kettle"] //130
         ],
         Tops = [
         ],
