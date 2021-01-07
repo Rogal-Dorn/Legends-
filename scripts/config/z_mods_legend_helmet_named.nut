@@ -392,8 +392,7 @@ gt.Const.LegendMod.HelmObjs.extend([
             [1, "vanity/legend_helmet_side_feather"],
             [1, "vanity/legend_helmet_plait"], //10
             [1, "vanity/legend_helmet_noble_feather"],
-            [1, "vanity/legend_helmet_side_wings"],
-            [1, "vanity/legend_helmet_side_wings_gold"],
+
             [1, "vanity/legend_helmet_top_feather"],
         ]
     }]
@@ -417,8 +416,7 @@ gt.Const.LegendMod.HelmObjs.extend([
             [1, "vanity/legend_helmet_side_feather"],
             [1, "vanity/legend_helmet_plait"], //10
             [1, "vanity/legend_helmet_noble_feather"],
-            [1, "vanity/legend_helmet_side_wings"],
-            [1, "vanity/legend_helmet_side_wings_gold"],
+
             [1, "vanity/legend_helmet_top_feather"],
         ]
     }]
@@ -441,8 +439,7 @@ gt.Const.LegendMod.HelmObjs.extend([
             [1, "vanity/legend_helmet_side_feather"],
             [1, "vanity/legend_helmet_plait"], //10
             [1, "vanity/legend_helmet_noble_feather"],
-            [1, "vanity/legend_helmet_side_wings"],
-            [1, "vanity/legend_helmet_side_wings_gold"],
+
             [1, "vanity/legend_helmet_top_feather"],
         ]
     }]
@@ -466,8 +463,7 @@ gt.Const.LegendMod.HelmObjs.extend([
             [1, "vanity/legend_helmet_side_feather"],
             [1, "vanity/legend_helmet_plait"], //10
             [1, "vanity/legend_helmet_noble_feather"],
-            [1, "vanity/legend_helmet_side_wings"],
-            [1, "vanity/legend_helmet_side_wings_gold"],
+
             [1, "vanity/legend_helmet_top_feather"],
         ]
     }]
@@ -491,8 +487,7 @@ gt.Const.LegendMod.HelmObjs.extend([
             [1, "vanity/legend_helmet_side_feather"],
             [1, "vanity/legend_helmet_plait"], //10
             [1, "vanity/legend_helmet_noble_feather"],
-            [1, "vanity/legend_helmet_side_wings"],
-            [1, "vanity/legend_helmet_side_wings_gold"],
+
             [1, "vanity/legend_helmet_top_feather"],
         ]
     }]
