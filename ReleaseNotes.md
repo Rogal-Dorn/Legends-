@@ -4639,3 +4639,12 @@ Items spawn correctly in druid scenario
 Fixes missing kettle and flat top helmet errors
 Fix error in boar_gore tooltips
 Shank price reduced
+
+
+https://drive.google.com/file/d/1iPGmM1_fWtMzW7PHSsXsbERxMQIWHZ5x/view?usp=sharing
+
+
+15.0.0.25
+
+**Fixes**
+Fixes Vala warden not working for non-Vala summoners
