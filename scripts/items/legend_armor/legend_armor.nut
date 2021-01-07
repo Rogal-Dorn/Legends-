@@ -892,6 +892,32 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		}
 	}
 
+	function isItemType( _t )
+	{
+		if (_t == this.Const.Items.ItemType.Named || _t == this.Const.Items.ItemType.Legendary)
+		{
+			if ((this.m.ItemType & _t) != 0) {
+				return true
+			}
+
+			foreach( u in this.m.Upgrades )
+			{
+				if (u == null)
+				{
+					continue;
+				}
+
+				if (u.isItemType(_t)) {
+					return true
+				}
+			}
+
+			return false
+		}
+
+		return (this.m.ItemType & _t) != 0;
+	}
+
 	// function getBuyPrice()
 	// {
 	// 	local basePrice = this.armor.getBuyPrice();
