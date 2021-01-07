@@ -204,7 +204,14 @@ this.hedge_knight <- this.inherit("scripts/entity/tactical/human", {
 		// 	[1, "named/green_coat_of_plates_armor"]
 		// ]));
 
-
+		//this.m.Items.equip(this.Const.World.Common.pickHelmet([
+        //    [3, "named/legend_frogmouth_helm_crested_painted"],
+        //    [3, "named/bascinet_named"],
+        //   [3, "named/kettle_helm_named"],
+        //    [3, "named/barbute_named"],
+        //    [3, "named/italo_norman_helm_named"],
+        //    [1, "named/legend_helm_full_named"]
+		//]));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_relentless"));
 		return true;
 	}

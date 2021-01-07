@@ -4639,3 +4639,7 @@ Items spawn correctly in druid scenario
 Fixes missing kettle and flat top helmet errors
 Fix error in boar_gore tooltips
 Shank price reduced
+
+**Armor Tweaks**
+Added new plate armor "Krastenbrust style"
+Changed values for certain helms to balance out some stats
