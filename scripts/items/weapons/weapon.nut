@@ -418,7 +418,7 @@ this.weapon <- this.inherit("scripts/items/item", {
 	function getIconLargeOverlay()
 	{
 		if (this.isRuned()) {
-			return ["layers/named_inventory_glow.png"];
+			return ["layers/glow_runed_inventory.png"];
 		}
 		return  [""];
 

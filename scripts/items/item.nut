@@ -1209,34 +1209,34 @@ this.item <- {
 
 	function updateRuneSigil()
 	{
-		local iconLargeParts = split(this.m.IconLarge, "/");
-		local iconParts = split(this.m.Icon, "/");
-		local text = ""
-		if(this.m.IconLarge.find("runed_") == null) {
-			for (local i = 0; i < iconLargeParts.len(); i = ++i)
-			{
-				if (i == iconLargeParts.len() - 1)
-				{
-					text = text + "runed_" + iconLargeParts[i]
-				} else {
-					text = text + iconLargeParts[i] + "/";
-				}
-			}
-			this.m.IconLarge = text;
-		}
-		if(this.m.Icon.find("runed_") == null) {
-			text = ""
-			for (local i = 0; i < iconParts.len(); i = ++i)
-			{
-				if (i == iconParts.len() - 1)
-				{
-					text = text + "runed_" + iconParts[i]
-				} else {
-					text = text + iconParts[i] + "/";
-				}
-			}
-			this.m.Icon = text;
-		}
+		// local iconLargeParts = split(this.m.IconLarge, "/");
+		// local iconParts = split(this.m.Icon, "/");
+		// local text = ""
+		// if(this.m.IconLarge.find("runed_") == null) {
+		// 	for (local i = 0; i < iconLargeParts.len(); i = ++i)
+		// 	{
+		// 		if (i == iconLargeParts.len() - 1)
+		// 		{
+		// 			text = text + "runed_" + iconLargeParts[i]
+		// 		} else {
+		// 			text = text + iconLargeParts[i] + "/";
+		// 		}
+		// 	}
+		// 	this.m.IconLarge = text;
+		// }
+		// if(this.m.Icon.find("runed_") == null) {
+		// 	text = ""
+		// 	for (local i = 0; i < iconParts.len(); i = ++i)
+		// 	{
+		// 		if (i == iconParts.len() - 1)
+		// 		{
+		// 			text = text + "runed_" + iconParts[i]
+		// 		} else {
+		// 			text = text + iconParts[i] + "/";
+		// 		}
+		// 	}
+		// 	this.m.Icon = text;
+		// }
 		if (this.m.Name.find("(Runed)") == null)
 		{
 			this.m.Name =  this.m.Name + "[color=" + this.Const.UI.Color.RuneColor + "] (Runed)[/color]";
