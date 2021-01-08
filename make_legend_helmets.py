@@ -531,12 +531,6 @@ layers = [
  "title" :  "Orc Behemoth Helm", \
  "desc" :  "The distinctive helm of an orc behemoth" \
 },
-
-{"name" : "enclave_skullcap"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 600, "con" : 120, "stam" : -12, "vis" : -1, "hair" : "true", "beard" : "false",  \
- "title" :  "Metal Skullcap", \
- "desc" :  "A metal cap that covers the head." \
-},
-
 {"name" : "crude_metal_helm"                     , "layer" : "helm", "min" : 1, "max" : 3, "value" :350, "con" : 100, "stam" : -10, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Crude Metal Helm", \
  "desc" :  "Although crudely made and rusty, this metal helmet is a durable and sturdy piece of armor." \
@@ -553,7 +547,6 @@ layers = [
  "title" :  "Northern Ritual Helmet", \
  "desc" :  "This menacing and heavy full faced mask of solid iron is used during barbarian warbands rituals for reasons unknown." \
 },
-
 {"name" : "heavy_plate_helm_named"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1300, "con" : 170, "stam" : -15, "vis" : -3, "hair" : "true", "beard" : "false", "named" : True, "rminViz" : -2, "rmaxViz" : -3, "rminStam" : -13, "rmaxStam" : -15, "rminCond" : 170, "rmaxCond" : 195, "names" : Names,  \
  "title" :  "Famed Heavy Plate Helm", \
  "desc" :  "This heavy helmet has ornamental horns attached and is of exceptional quality among the barbarian clans. This is a sign of high standing and reputation within barbarian warbands." \
@@ -566,7 +559,6 @@ layers = [
  "title" :  "Heavy Spiked Helm", \
  "desc" :  "his helmet must have belonged to a distinct warrior of the barbarians. Its size and design appear alien to all southern folks." \
 },
-
 {"name" : "southern_leather_helm"                     , "layer" : "helm", "min" : 1, "max" : 5, "value" : 60, "con" : 25, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Leather helm", \
  "desc" :  "A traditional southern leather helm" \
@@ -615,7 +607,7 @@ layers = [
  "title" :  "Steppe Helm", \
  "desc" :  "A nasal helmet witch an attached mail neck guard fashioned in the way of the steppe folks." \
 },
-{"name" : "basinet"                     , "layer" : "helm", "min" : 1, "max" : 7, "value" : 1400, "con" : 130, "stam" : -7, "vis" : -1, "hair" : "true", "beard" : "false",  \
+{"name" : "basinet"                     , "layer" : "helm", "min" : 1, "max" : 7, "value" : 1400, "con" : 145, "stam" : -7, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Basinet", \
  "desc" :  "A well made metal bascinet" \
 },
@@ -647,11 +639,11 @@ layers = [
  "title" :  "Kettle Sallet", \
  "desc" :  "A full-metal sallet with a broad rim." \
 },
-{"name" : "enclave_skullcap"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1900, "con" : 140, "stam" : -7, "vis" : -2, "hair" : "false", "beard" : "false",  \
+{"name" : "enclave_skullcap"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1900, "con" : 120, "stam" : -7, "vis" : -2, "hair" : "false", "beard" : "false",  \
  "title" :  "Metal Skullcap", \
  "desc" :  "A metal cap that covers the head." \
 },
-{"name" : "wallace_sallet"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1900, "con" : 140, "stam" : -7, "vis" : -1, "hair" : "true", "beard" : "false",  \
+{"name" : "wallace_sallet"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1900, "con" : 150, "stam" : -7, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Sallet", \
  "desc" :  "A deep sallet covering the head protectively." \
 },
@@ -727,7 +719,7 @@ layers = [
  "title" :  "Heavy Lamellar Helmet", \
  "desc" :  "A heavy helmet made from overlapping metal plates." \
 },
-{"name" : "italo_norman_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1500, "con" : 160, "stam" : -8, "vis" : -1, "hair" : "true", "beard" : "true",  \
+{"name" : "italo_norman_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1500, "con" : 190, "stam" : -9, "vis" : -1, "hair" : "true", "beard" : "true",  \
  "title" :  "Italio Norman Helm", \
  "desc" :  "A curved metal helm in a distinctive style. It has a large duck-bill shaped faceplate covering the front" \
 },

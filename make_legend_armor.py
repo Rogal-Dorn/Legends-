@@ -629,6 +629,11 @@ layers = [
     "desc" :  "A complete harness of steel plate armor.", \
     "adesc" : "Includes a full set of solid plated steel with greaves."
 },
+{"name": "legend_armor_plate_krastenbrust",               "layer": "plate", "min": 1, "max": 1, "value" : 5000, "con" : 170, "stam" : -26, "impactSound" : "leather", "invSound" : "leather", \
+    "title" :  "Full Harness of Plate Armor", \
+    "desc" :  "A complete harness of steel plate armor.", \
+    "adesc" : "Includes a full set of solid plated steel with greaves."
+},
 {"name": "legend_armor_plate_full",                       "layer": "plate", "min": 1, "max": 1, "value" : 4500, "con" : 160, "stam" : -22, "impactSound" : "leather", "invSound" : "leather", \
     "title" :  "Full Coat of Plate Armor", \
     "desc" :  "A full set of solid plated steel.", \
