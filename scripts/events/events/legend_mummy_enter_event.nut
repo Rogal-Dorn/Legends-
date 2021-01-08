@@ -132,9 +132,11 @@ this.legend_mummy_enter_event <- this.inherit("scripts/events/event", {
 									}
 									else
 									{
-										local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/legend_mummy_light", tile.Coords);
-										e.setFaction(f);
-										e.assignRandomEquipment();
+
+									local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/legend_vampire_lord", tile.Coords);
+									e.setFaction(f);
+									e.assignRandomEquipment();										
+						
 										light = --light;
 										light_tiles.push(tile);
 									}
@@ -142,7 +144,7 @@ this.legend_mummy_enter_event <- this.inherit("scripts/events/event", {
 							}
 							while (light > 0);
 
-							local toRise = 5;
+							local toRise = 3;
 
 							do
 							{
@@ -151,7 +153,7 @@ this.legend_mummy_enter_event <- this.inherit("scripts/events/event", {
 
 								if (p.SquareCoords.X > 14)
 								{
-									p.Level = 3;
+									p.Level = 1;
 									toRise = --toRise;
 								}
 
@@ -180,7 +182,7 @@ this.legend_mummy_enter_event <- this.inherit("scripts/events/event", {
 							}
 							while (queen > 0);
 
-							local treasureHunters = 3;
+							local treasureHunters = 4;
 
 							do
 							{
@@ -193,7 +195,7 @@ this.legend_mummy_enter_event <- this.inherit("scripts/events/event", {
 								}
 								else
 								{
-									local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/legend_vampire_lord", tile.Coords);
+									local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/legend_mummy_medium", tile.Coords);
 									e.setFaction(f);
 									e.assignRandomEquipment();
 									treasureHunters = --treasureHunters;
@@ -201,7 +203,7 @@ this.legend_mummy_enter_event <- this.inherit("scripts/events/event", {
 							}
 							while (treasureHunters > 0);
 
-							local medium = 8;
+							local medium = 12;
 
 							do
 							{
@@ -214,9 +216,10 @@ this.legend_mummy_enter_event <- this.inherit("scripts/events/event", {
 								}
 								else
 								{
-									local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/legend_mummy_medium", tile.Coords);
+
+									local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/legend_mummy_light", tile.Coords);
 									e.setFaction(f);
-									e.assignRandomEquipment();
+									e.assignRandomEquipment();	
 									medium = --medium;
 								}
 							}
