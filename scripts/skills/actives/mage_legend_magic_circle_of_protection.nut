@@ -63,6 +63,10 @@ this.mage_legend_magic_circle_of_protection <- this.inherit("scripts/skills/acti
 
 	function tileInCircleRange(_targetTile)
 	{
+		if (this.m.Tile == null)
+		{
+			return false;
+		}
 		return _targetTile.getDistanceTo(this.m.Tile) <= this.m.Range;
 	}
 
@@ -172,6 +176,11 @@ this.mage_legend_magic_circle_of_protection <- this.inherit("scripts/skills/acti
 
 	function onMovementCompleted( _tile )
 	{
+		if (this.m.TurnsRemaining <= 0)
+		{
+			return;
+		}
+
 		if (!this.tileInCircleRange(_tile))
 		{
 			this.endEffect();
