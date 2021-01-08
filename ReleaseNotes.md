@@ -4640,9 +4640,7 @@ Fixes missing kettle and flat top helmet errors
 Fix error in boar_gore tooltips
 Shank price reduced
 
-
 https://drive.google.com/file/d/1iPGmM1_fWtMzW7PHSsXsbERxMQIWHZ5x/view?usp=sharing
-
 
 15.0.0.25
 
@@ -4656,3 +4654,8 @@ Fixes error with Mage's magic missle
 
 **Changes**
 Runed items now have a glow around border instead of item (experimenting here, feedback welcome)
+
+**Armor Tweaks**
+Added new plate armor "Krastenbrust style"
+Changed values for certain helms to balance out some stats
+

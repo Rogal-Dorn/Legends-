@@ -181,6 +181,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"plate/legend_armor_plate_chest_rotten",
 			"plate/legend_armor_plate_cuirass",
 			"plate/legend_armor_plate_milanese",
+			"plate/legend_armor_plate_krastenbrust",
 			"plate/legend_armor_plate_full",
 			"plate/legend_armor_plate_full_greaves",
 			"plate/legend_armor_plate_full_greaves_named",
