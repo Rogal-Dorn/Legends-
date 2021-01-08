@@ -4649,7 +4649,7 @@ Fixes Vala warden not working for non-Vala summoners
 Fixes errors loading enclave helmets
 Fixes named and legendary item checks for ambitions
 Fixes error on entering Grand tournament with Veterans in group
-Fixes error with Mage's magic missle
+Fixes error with Mage's magic missle and Circle of protection crashing.
 Fixes Knowledge potion remaining after 3 battles
 
 
