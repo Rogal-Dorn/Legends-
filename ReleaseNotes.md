@@ -4642,7 +4642,9 @@ Shank price reduced
 
 https://drive.google.com/file/d/1iPGmM1_fWtMzW7PHSsXsbERxMQIWHZ5x/view?usp=sharing
 
-15.0.0.25
+
+
+15.0.0.24a
 
 **Fixes**
 Fixes Vala warden not working for non-Vala summoners
