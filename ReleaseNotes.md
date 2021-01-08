@@ -4650,6 +4650,7 @@ Fixes errors loading enclave helmets
 Fixes named and legendary item checks for ambitions
 Fixes error on entering Grand tournament with Veterans in group
 Fixes error with Mage's magic missle
+Fixes Knowledge potion remaining after 3 battles
 
 
 **Changes**
