@@ -4600,10 +4600,10 @@ Burned
 - 10% reduction to Melee+Ranged Attack+Defend skills
 - Reduces enemy resolve by 15
 Scarred
-- 10% reduction on hitpoints and fatigue
+- 10% reduction to hitpoints and fatigue
 - 75% chance to survive if struck down by non fatal blow
 
-**changes**
+**Changes**
 Adds Taro's Turn It In mod, so you can turn in most noble quests ast any of their settlements
 Adds a couple of LeVilainJoueur's tweaks
 * Night Owl halves the effect of night on ranged skill and defense
@@ -4621,21 +4621,47 @@ Battle standards
 * Pitchfork skills secondary effect now affect the battle standard
 * Inspiring presence now adds 10 damage when wielding the battle standard, backfire chance reduced to 0.04% per point under 100 resolve
 
-Favoured perks for southerners and nomads now work.  Nomad is on manhunter and crucified crusader. southerners is on nomads, thieves and slaves 
-
-
-**fixes**
+**Fixes**
+Favoured perks for southerners and nomads now work.  Nomad is on manhunter and crucified crusader. southerners is on nomads, thieves and slaves
 Assassin scenario no longer creates cultists
+Crucified crusader and crusader have a dynamic perk tree set
 Crusader no longer has the evoker traits in adventuring party
 Crusaders have fortified mind and mind over body
-Swordmaster crash due to omail
-Crucified crusader and crusader have a dynamic perk tree set 
 Fixed Scavanger Retinue not being unlocked by all beggar, cripple, refugee and salve backgrounds
 Fixes drums of war/life icons not showing
 Alphabetize company origin starts
 Fixes hair and beard clipping issues on some helms
-Cleans up many blurry, missing, or inconsistent helmet and armor images 
-Items spawn correctly in druid scenario 
-Fixes missing kettle and flat top helmet errors 
-shank price reduced 
-sureshot tooltip updated 
+Swordmaster crash due to omail
+Fixed Drunk Nobleman event
+Fixed sureshot trait tooltip
+Cleans up many blurry helmet images
+Items spawn correctly in druid scenario
+Fixes missing kettle and flat top helmet errors
+Fix error in boar_gore tooltips
+Shank price reduced
+
+https://drive.google.com/file/d/1iPGmM1_fWtMzW7PHSsXsbERxMQIWHZ5x/view?usp=sharing
+
+
+
+15.0.0.24a
+
+**Fixes**
+Fixes Vala warden not working for non-Vala summoners
+Fixes errors loading enclave helmets
+Fixes named and legendary item checks for ambitions
+Fixes error on entering Grand tournament with Veterans in group
+Fixes error with Mage's magic missle and Circle of protection crashing.
+Fixes Knowledge potion remaining after 3 battles
+
+
+**Changes**
+Runed items now have a glow around border instead of item (experimenting here, feedback welcome)
+
+**Armor Tweaks**
+Added new plate armor "Krastenbrust style"
+Changed values for certain helms to balance out some stats
+
+**IMPORTANT**: PLease remove any temporary patches you have from previous versions, thank you!
+**Download**: https://drive.google.com/file/d/1h5wWVv36L_0JNTNI3MimY8Ydg98dRyjN/view?usp=sharing
+**To Install**: Simply drag and drop this file to your data folder, please do not unzip this file!

@@ -38,10 +38,10 @@ this.sureshot_trait <- this.inherit("scripts/skills/traits/character_trait", {
 				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] Ranged Damage"
 			},
 			{
-				id = 10,
+				id = 11,
 				type = "text",
-				icon = "ui/icons/ranged_skill.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]+5[/color] Ranged Defense"
+				icon = "ui/icons/ranged_defense.png",
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-5[/color] Ranged Defense"
 			}
 		];
 	}

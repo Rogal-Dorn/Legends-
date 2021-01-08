@@ -119,7 +119,7 @@ this.building <- {
 				if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 				{
 					local index = script.find("helmets/");
-					if (index != null)
+					if (index != null && script.find("legend_helmets") == null)
 					{
 						isHelm = true;
 						script = script.slice(index + "helmets/".len());

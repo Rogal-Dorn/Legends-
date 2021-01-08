@@ -406,6 +406,24 @@ this.weapon <- this.inherit("scripts/items/item", {
 		return result;
 	}
 
+	function getIconOverlay()
+	{
+		if (this.isRuned()) {
+			return ["layers/glow_runed_icon.png"];
+		}
+		return  [""];
+
+	}
+
+	function getIconLargeOverlay()
+	{
+		if (this.isRuned()) {
+			return ["layers/glow_runed_inventory.png"];
+		}
+		return  [""];
+
+	}
+
 	function playInventorySound( _eventType )
 	{
 		this.Sound.play(this.m.EquipSound[this.Math.rand(0, this.m.EquipSound.len() - 1)], this.Const.Sound.Volume.Inventory);

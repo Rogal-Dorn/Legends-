@@ -18,7 +18,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	function onSpawnAssets()
 	{
 		local roster = this.World.getPlayerRoster();
-		local partysize = 1;
+		local partysize = 2;
 		local broLevelMax = 11;
 
 		for( local i = 0; i < partysize; i = ++i )
@@ -53,6 +53,8 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		this.World.Assets.getStash().resize(2000);
 
 		local bros = roster.getAll();
+		bros[0].m.Skills.add(this.new("scripts/skills/injury_permanent/legend_burned_injury"));
+		bros[1].m.Skills.add(this.new("scripts/skills/injury_permanent/legend_scarred_injury"));
 
 		this.World.Assets.m.Money = 50000;
 		this.World.Assets.m.ArmorParts = 200;
@@ -179,6 +181,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"plate/legend_armor_plate_chest_rotten",
 			"plate/legend_armor_plate_cuirass",
 			"plate/legend_armor_plate_milanese",
+			"plate/legend_armor_plate_krastenbrust",
 			"plate/legend_armor_plate_full",
 			"plate/legend_armor_plate_full_greaves",
 			"plate/legend_armor_plate_full_greaves_named",

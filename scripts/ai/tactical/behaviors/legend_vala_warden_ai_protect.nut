@@ -60,32 +60,17 @@ this.legend_vala_warden_ai_protect <- this.inherit("scripts/ai/tactical/behavior
 			return this.Const.AI.Behavior.Score.Zero;
 		}
 
-		local myTile = _entity.getTile();
-
-		local AllBrothers = this.World.getPlayerRoster().getAll();
-		local vips = 0;
-
-		foreach( a in AllBrothers )
-		{
-			if (a.getBackground().getID() != "background.legend_vala" && a.getBackground().getID() != "background.legend_commander_vala")
-			{
-				continue;
-			}
-
-			if (!a.isAlive() || !a.isPlacedOnMap())
-			{
-				continue;
-			}
-
-			vips = ++vips;
-			break;
-		}
-
-		if (vips == 0)
+		if (_entity.m.Vala == null)
 		{
 			return this.Const.AI.Behavior.Score.Zero;
 		}
 
+		if (!_entity.m.Vala.isAlive() || !_entity.m.Vala.isPlacedOnMap())
+		{
+			return this.Const.AI.Behavior.Score.Zero;
+		}
+
+		local myTile = _entity.getTile();
 		local func = this.selectBestTargetTile(_entity);
 
 		while (resume func == null)

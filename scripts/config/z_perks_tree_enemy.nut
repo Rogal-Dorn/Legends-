@@ -302,7 +302,7 @@ gt.Const.Perks.CivilizationTree <- {
 		[],
 		[gt.Const.Perks.PerkDefs.LegendFavouredEnemyMercenary],
 		[gt.Const.Perks.PerkDefs.LegendFavouredEnemyNoble,
-		gt.Const.Perks.PerkDefs.LegendFavouredEnemySoutherners
+		 gt.Const.Perks.PerkDefs.LegendFavouredEnemySoutherner
 		],
 		[]
 	]
@@ -367,7 +367,7 @@ gt.Const.Perks.OutlandersTree <- {
 		[],
 		[],
 		[
-		 gt.Const.Perks.PerkDefs.LegendFavouredEnemyBandit, 
+		 gt.Const.Perks.PerkDefs.LegendFavouredEnemyBandit,
 		 gt.Const.Perks.PerkDefs.LegendFavouredEnemyNomad
 		 ],
 		[gt.Const.Perks.PerkDefs.LegendFavouredEnemyBarbarian],
