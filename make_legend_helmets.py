@@ -1154,6 +1154,10 @@ layers = [
  "title" :  "Noble Hat", \
  "desc" :  "A fashionable hat for courtesans" \
 },
+{"name" : "ancient_wig"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
+ "title" :  "Ancient Wig", \
+ "desc" :  "A wig from an ancient embalmed noble" \
+},
 {"name" : "noble_hood"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Noble Hood", \
  "desc" :  "A hood made of high quality materials" \

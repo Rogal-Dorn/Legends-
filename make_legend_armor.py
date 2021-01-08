@@ -271,6 +271,11 @@ layers = [
     "desc" :  "Better than running naked.", \
     "adesc" :""
 },
+{"name": "legend_bandages",                              "layer": "cloth", "min": 1, "max": 2, "value" : 1, "con" : 5, "stam" : 0, "impactSound" : "leather", "invSound" : "cloth", \
+    "title" :  "Bandages", \
+    "desc" :  "More for dressing wounds than protection", \
+    "adesc" :""
+},
 {"name": "legend_sackcloth_patched",                      "layer": "cloth", "min": 1, "max": 8, "value" : 25, "con" : 15, "stam" : -1, "impactSound" : "leather", "invSound" : "cloth", "brush": "legend_sackcloth", "variants" : [3,19,20,21,22,23,24,25], \
     "title" :  "Leather Wraps", \
     "desc" :  "Various patches of rough leather sewn together.", \
@@ -609,6 +614,17 @@ layers = [
     "desc" :  "A sturdy, but heavy and partly decayed ancient scale harness.", \
     "adesc" : "Includes an heavy and partly decayed ancient scale harness."
 },
+{"name": "legend_armor_plate_ancient_scale_coat_restored",         "layer": "plate", "min": 1, "max": 1, "value" : 3000, "con" : 170, "stam" : -23, "impactSound" : "plate", "invSound" : "leather", \
+    "title" :  "Embalmed Ancient Scale Coat", \
+    "desc" :  "A scale coat of ancient design that is miraculously well preserved and functional.", \
+    "adesc" : "Includes an ancient heavy scale coat."
+},
+{"name": "legend_armor_plate_ancient_scale_harness_restored",      "layer": "plate", "min": 1, "max": 1, "value" : 500, "con" : 130, "stam" : -15, "impactSound" : "plate", "invSound" : "leather", \
+    "title" :  "Embalmed Ancient Scale Harness", \
+    "desc" :  "A sturdy, ancient scale harness that is remarkably well preserved and functional.", \
+    "adesc" : "Includes an ancient scale harness."
+},
+
 {"name": "legend_armor_plate_chest",                      "layer": "plate", "min": 1, "max": 1, "value" : 2250, "con" : 125, "stam" : -17, "impactSound" : "plate", "invSound" : "leather", \
     "title" :  "Breastplate Armor", \
     "desc" :  "A breastplate of solid plated steel.", \
@@ -839,8 +855,11 @@ layers = [
 },
 
 
-
-
+{"name": "legend_wrap",                              "layer": "cloth", "min": 1, "max": 1, "value" : 15, "con" : 5, "stam" : 0, "impactSound" : "leather", "invSound" : "cloth", \
+    "title" :  "Ceremonial Wrap", \
+    "desc" :  "A cloth wrap of ancient design", \
+    "adesc" :""
+},
 {"name": "legend_common_tabard",           "layer": "tabard", "min": 101, "max": 113, "value" : 200, "con" : 5, "stam" : 0, "bravery" : 2, "impactSound" : "leather", "invSound" : "cloth", "brush" : "legend_tabard",\
     "title" :  "Tabard", \
     "desc" :  "A flowing cloth covering for armor, to show your allegiance. Offers minimal protection and small boost to morale.", \
