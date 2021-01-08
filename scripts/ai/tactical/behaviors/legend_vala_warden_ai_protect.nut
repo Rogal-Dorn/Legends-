@@ -60,12 +60,12 @@ this.legend_vala_warden_ai_protect <- this.inherit("scripts/ai/tactical/behavior
 			return this.Const.AI.Behavior.Score.Zero;
 		}
 
-		if (_entity.m.Vala == null)
+		if (_entity.getValaWarden() == null)
 		{
 			return this.Const.AI.Behavior.Score.Zero;
 		}
 
-		if (!_entity.m.Vala.isAlive() || !_entity.m.Vala.isPlacedOnMap())
+		if (!_entity.getValaWarden().isAlive() || !_entity.getValaWarden().isPlacedOnMap())
 		{
 			return this.Const.AI.Behavior.Score.Zero;
 		}
