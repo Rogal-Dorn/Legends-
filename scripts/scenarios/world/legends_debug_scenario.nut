@@ -455,6 +455,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"named/legend_named_swordstaff",
 			"named/legend_named_voulge",
 			"named/legend_named_warhammer",
+			"named/legend_named_butchers_cleaver",
 			"named/named_axe",
 			"named/named_bardiche",
 			"named/named_battle_whip",

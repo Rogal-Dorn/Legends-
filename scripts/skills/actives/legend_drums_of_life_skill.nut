@@ -53,7 +53,14 @@ this.legend_drums_of_life_skill <- this.inherit("scripts/skills/skill", {
 	function isUsable()
 	{
 		local mainhand = this.m.Container.getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		return (mainhand == null || mainhand.getID() == "weapon.lute" || mainhand.getID() == "weapon.named_lute" || mainhand.getID() == "weapon.legend_drum"  || mainhand.getID() == "weapon.legend_drum") && this.skill.isUsable();
+		if (mainhand == null)
+		{
+			return false;
+		}
+		if (!this.skill.isUsable) {
+			return false;
+		}
+		return this.Const.Items.MusicalItems.find(mainhand.getID())
 	}
 
 	function onUse( _user, _targetTile )
