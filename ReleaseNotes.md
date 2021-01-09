@@ -4665,3 +4665,8 @@ Changed values for certain helms to balance out some stats
 **IMPORTANT**: PLease remove any temporary patches you have from previous versions, thank you!
 **Download**: https://drive.google.com/file/d/1h5wWVv36L_0JNTNI3MimY8Ydg98dRyjN/view?usp=sharing
 **To Install**: Simply drag and drop this file to your data folder, please do not unzip this file!
+
+15.0.0.25
+
+**Fixes**
+Knights rarely spawning with a named helmet that didn't exist

@@ -508,25 +508,6 @@ gt.Const.LegendMod.HelmObjs.extend([
 		]
     }]
     },{
-        ID = "legend_helm_full_named", //350, -21, -3, 3500
-        Script = "",
-        Sets = [{
-        Hoods = [
-            [1, "hood/legend_helmet_chain_hood"] //80, -5, 0, 310
-        ],
-        Helms = [
-            [1, "helm/legend_helmet_great_helm"] //220, -15, -3, 3000
-        ],
-        Tops = [
-			[1, "top/legend_helmet_faceplate_full_gold"], //57, -1, -1
-		],
-        Vanity = [
-			[1, "vanity/legend_helmet_noble_feather"], //10
-			[1, "vanity/legend_helmet_noble_buckle"], //10
-			[3, ""] //10
-		]
-    }]
-    },{
         ID = "legend_helm_curved", //325, -21, -3, 3500
         Script = "",
         Sets = [{
