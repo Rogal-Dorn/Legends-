@@ -275,8 +275,8 @@ gt.Const.LegendMod.ArmorObjs.extend([
         ]
     }]
 },{
-    ID = "ancient/legend_mummy_bandages", // 10
-    Script = "scripts/items/armor/ancient/legend_mummy_bandages",
+    ID = "ancient/legend_mummy_plate", // 10
+    Script = "scripts/items/armor/ancient/legend_mummy_plate",
     Sets = [{
         Cloth = [
         ],
@@ -291,8 +291,41 @@ gt.Const.LegendMod.ArmorObjs.extend([
         Attachments =[
         ]
     }]
-}
-{
+},{
+    ID = "legend_armor_plate_ancient_scale_coat_restored", // 10
+    Script = "scripts/items/armor/ancient/legend_armor_plate_ancient_scale_coat_restored",
+    Sets = [{
+        Cloth = [
+        ],
+        Chain = [
+        ],
+        Plate = [
+        ],
+        Cloak = [
+        ],
+        Tabard = [
+        ],
+        Attachments =[
+        ]
+    }]
+},{
+    ID = "legend_armor_plate_ancient_scale_harness_restored", // 10
+    Script = "scripts/items/armor/ancient/legend_armor_plate_ancient_scale_harness_restored",
+    Sets = [{
+        Cloth = [
+        ],
+        Chain = [
+        ],
+        Plate = [
+        ],
+        Cloak = [
+        ],
+        Tabard = [
+        ],
+        Attachments =[
+        ]
+    }]
+},{
     ID = "ancient/legend_mummy_royal_plate", // 10
     Script = "scripts/items/armor/ancient/legend_mummy_royal_plate",
     Sets = [{
