@@ -615,11 +615,11 @@ layers = [
  "title" :  "Bascinet", \
  "desc" :  "A heavy and durable bascinet. This one has a pointed head and is blackened." \
 },
-{"name" : "enclave_great_bascinet"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 2800, "con" : 260, "stam" : -13, "vis" : -2, "hair" : "true", "beard" : "true",  \
+{"name" : "enclave_great_bascinet"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 2800, "con" : 210, "stam" : -13, "vis" : -2, "hair" : "true", "beard" : "true",  \
  "title" :  "Peaked Bascinet", \
  "desc" :  "A well made peaked bascinet" \
 },
-{"name" : "enclave_venitian_bascinet"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 2800, "con" : 260, "stam" : -13, "vis" : -2, "hair" : "true", "beard" : "true",  \
+{"name" : "enclave_venitian_bascinet"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 2800, "con" : 210, "stam" : -13, "vis" : -2, "hair" : "true", "beard" : "true",  \
  "title" :  "Great Bascinet", \
  "desc" :  "A tall helm composed of a peaked bascinet and riveted cheek protection." \
 },
