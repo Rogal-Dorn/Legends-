@@ -4673,3 +4673,5 @@ Changed values for certain helms to balance out some stats
 Knights rarely spawning with a named helmet that didn't exist
 Fixes the vala warden crashes.
 
+**Armor Tweaks**
+Added new plate armor
