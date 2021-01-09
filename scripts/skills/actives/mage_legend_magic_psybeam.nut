@@ -8,8 +8,8 @@ this.mage_legend_magic_psybeam <- this.inherit("scripts/skills/actives/mage_lege
 		this.m.Name = "Psybeam";
 		this.m.Description = "Launch a mental attack in the form of a ray at an enemy. Does no damage.";
 		this.m.KilledString = "Stunned";
-		this.m.Icon = "skills/mage_legend_magic_psybeam_square.png";
-		this.m.IconDisabled = "skills/mage_legend_magic_psybeam_square_bw.png";
+		this.m.Icon = "skills/psybeam_square_01.png";
+		this.m.IconDisabled = "skills/psybeam_square_01_bw.png";
 		this.m.Overlay = "mage_legend_magic_psybeam_square";
 		this.m.SoundOnUse = [
 			"sounds/combat/stupefy_01.wav",
