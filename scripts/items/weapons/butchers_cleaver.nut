@@ -1,32 +1,30 @@
-this.legend_named_butchers_cleaver <- this.inherit("scripts/items/weapons/named/named_weapon", {
+this.butchers_cleaver <- this.inherit("scripts/items/weapons/weapon", {
 	m = {},
 	function create()
 	{
-		this.named_weapon.create();
-		this.m.ID = "weapon.legend_named_butchers_cleaver";
-		this.m.NameList = this.Const.Strings.CleaverNames;
-		this.m.Name = "Butcher\'s Bone Cleaver";
-		this.m.Description = "A superbly crafted tool with a thick rectangular blade used for hacking through meat and bone.";
+		this.weapon.create();
+		this.m.ID = "weapon.butchers_cleaver";
+		this.m.Name = "Butcher\'s Cleaver";
+		this.m.Description = "A tool with a thick rectangular blade used for hacking through meat and bone.";
 		this.m.Categories = "Cleaver, One-Handed";
-		this.m.IconLarge = "weapons/melee/cleaver_02_named.png";
-		this.m.Icon = "weapons/melee/cleaver_02_named_70x70.png";
+		this.m.IconLarge = "weapons/melee/cleaver_02.png";
+		this.m.Icon = "weapons/melee/cleaver_02_70x70.png";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.IsDoubleGrippable = true;
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
-		this.m.ArmamentIcon = "icon_cleaver_02_named";
+		this.m.ArmamentIcon = "icon_cleaver_02";
 		this.m.ShieldDamage = 0;
-		this.m.Condition = 56.0;
-		this.m.ConditionMax = 56.0;
+		this.m.Condition = 40.0;
+		this.m.ConditionMax = 40.0;
 		this.m.StaminaModifier = -6;
-		this.m.Value = 1100;
-		this.m.RegularDamage = 35;
-		this.m.RegularDamageMax = 45;
+		this.m.Value = 110;
+		this.m.RegularDamage = 20;
+		this.m.RegularDamageMax = 35;
 		this.m.ArmorDamageMult = 0.75;
 		this.m.DirectDamageMult = 0.25;
-		this.randomizeValues();
 	}
 
 	function onEquip()

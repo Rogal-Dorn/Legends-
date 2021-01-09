@@ -31,7 +31,7 @@ this.legend_named_butchers_cleaver <- this.inherit("scripts/items/weapons/named/
 
 	function onEquip()
 	{
-		this.weapon.onEquip();
+		this.named_weapon.onEquip();
 		local cleave = this.new("scripts/skills/actives/cleave");
 		cleave.m.Icon = "skills/active_68.png";
 		cleave.m.IconDisabled = "skills/active_68_sw.png";
