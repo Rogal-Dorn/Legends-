@@ -4687,6 +4687,7 @@ Most mage perks have new art, soothing wind nerfed to 4 tiles
 Knights rarely spawning with a named helmet that didn't exist
 Fixes the vala warden crashes.
 Updates Turn It In mod to resolve contracts not disapearing
+Fixes crahs in historian jumped by cultist event
 
 **Armor Tweaks**
 Added new plate armor
