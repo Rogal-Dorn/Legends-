@@ -124,7 +124,7 @@ this.historian_mysterious_text_event <- this.inherit("scripts/events/event", {
 						properties.IsAutoAssigningBases = false;
 						properties.Entities = [];
 						properties.PlayerDeploymentType = this.Const.Tactical.DeploymentType.Center;
-						properties.EnemyDeploymentCallback = this.Const.Tactical.DeploymentType.Circle;
+						properties.EnemyDeploymentType = this.Const.Tactical.DeploymentType.Circle;
 						this.Const.World.Common.addUnitsToCombat(properties.Entities, this.Const.World.Spawn.Direwolves, this.Math.rand(40, 70), this.Const.Faction.Enemy);
 						this.Const.World.Common.addUnitsToCombat(properties.Entities, this.Const.World.Spawn.Ghouls, this.Math.rand(40, 70), this.Const.Faction.Enemy);
 						this.World.State.startScriptedCombat(properties, false, false, true);
