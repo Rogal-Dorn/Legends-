@@ -4669,9 +4669,26 @@ Changed values for certain helms to balance out some stats
 
 15.0.0.25
 
+
+**Unarmed changes **
+Hand to Hand scaling is now simply  ((Ini + HP )/ 4). That is half the average.  This removes the upper cap. Tooltip updated to be clearer
+Hand to hand now only scales on hp and ini if you take the Unarmed Trainting perk, which is in t1 of unarmed perk tree. This means enemies no longer have unarmed unless given this perk
+A new unarmed lunge perk added to unarmed tree to give more mobility to unarmed builds
+
+**Changes**
+Lute specialisation skills now includes drums and named lutes
+Instruments now use Mace bash and count as maces
+New named butcher's cleaver added, butchers skills apply to it, spawns on champion butchers
+Unholds are bigger trolls and ocassionally have unhold gfs
+Mastaba fight rearranged to be more swarmy and not have folks stuck on poles unles they want to be
+Most mage perks have new art, soothing wind nerfed to 4 tiles
+
 **Fixes**
 Knights rarely spawning with a named helmet that didn't exist
 Fixes the vala warden crashes.
+Updates Turn It In mod to resolve contracts not disapearing
 
 **Armor Tweaks**
 Added new plate armor
+
+

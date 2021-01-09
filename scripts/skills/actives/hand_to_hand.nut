@@ -4,7 +4,7 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.hand_to_hand";
 		this.m.Name = "Hand-to-Hand Attack";
-		this.m.Description = "Let them fly!  Maximum damage is the average of your hitpoints and initiative minus 90";
+		this.m.Description = "Let them fly! Use your limbs to inflict damage on your enemy. Damage depends on training.";
 		this.m.KilledString = "Pummeled to death";
 		this.m.Icon = "skills/active_08.png";
 		this.m.IconDisabled = "skills/active_08_sw.png";
@@ -104,22 +104,60 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 				text = this.getCostString()
 			}
 		];
-		ret.push({
-			id = 4,
-			type = "text",
-			icon = "ui/icons/regular_damage.png",
-			text = "Inflicts damage based on hitpoints and initiative [color=" + this.Const.UI.Color.DamageValue + "]" + damage_regular_min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + damage_regular_max + "[/color] damage, up to [color=" + this.Const.UI.Color.DamageValue + "]" + damage_direct_max + "[/color] damage can ignore armor"
-		});
-
-		if (damage_Armor_max > 0)
+		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_unarmed_training"))
 		{
+			ret.push({
+				id = 4,
+				type = "text",
+				icon = "ui/icons/regular_damage.png",
+				text = "Unarmed Training inflicts half the average of your hitpoints and initiative. This will deal [color=" + this.Const.UI.Color.DamageValue + "]" + damage_regular_min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + damage_regular_max + "[/color] damage, up to [color=" + this.Const.UI.Color.DamageValue + "]" + damage_direct_max + "[/color] damage can ignore armor"
+			});
+			
+			if (damage_Armor_max > 0)
+			{
+				ret.push({
+					id = 5,
+					type = "text",
+					icon = "ui/icons/armor_damage.png",
+					text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + damage_Armor_min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + damage_Armor_max + "[/color] armor damage"
+				});
+			}			
+			
+		}
+		else
+		{
+			ret.push({
+				id = 4,
+				type = "text",
+				icon = "ui/icons/regular_damage.png",
+				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + 5 + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + 10 + "[/color] damage"
+			});
+		}
+		
+		if (this.getContainer().hasSkill("background.brawler") || this.getContainer().hasSkill("background.legend_commander_berserker") || this.getContainer().hasSkill("background.legend_berserker") || this.getContainer().hasSkill("background.legend_druid_commander") || this.getContainer().hasSkill("background.legend_druid") )
+		{		
+			if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_unarmed_training"))
+			{
 			ret.push({
 				id = 5,
 				type = "text",
-				icon = "ui/icons/armor_damage.png",
-				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + damage_Armor_min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + damage_Armor_max + "[/color] armor damage"
+				icon = "ui/icons/regular_damage.png",
+				text = "Includes +25% damage due to background"
 			});
-		}
+			}
+		}	
+		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_muscularity"))		
+		{		
+			if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_unarmed_training"))
+			{
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/regular_damage.png",
+				text = "Includes [color=" + this.Const.UI.Color.DamageValue + "]" + muscularity + "[/color] damage due to Muscularity"
+			});
+			}
+		}	
 
 		return ret;
 	}
@@ -138,10 +176,6 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		if (this.isUsable())
-		{
-			_properties.DamageArmorMult *= 0.5;
-		}
 	}
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
@@ -150,11 +184,11 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 		{
 			local actor = this.getContainer().getActor();
 			local bodyHealth = actor.getHitpointsMax();
-			local average = (actor.getInitiative() +  bodyHealth) / 2;
+			local average = (actor.getInitiative() +  bodyHealth) / 4;
 			local damageMin = 5;
 			local damageMax = 10;
-			local avgMin = average - 100;
-			local avgMax = average - 90;
+			local avgMin = average - 10;
+			local avgMax = average + 10;
 
 			if ((average - 100) > 0)
 			{
@@ -195,15 +229,24 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 				damageMin = damageMin * 1.25;
 				damageMax = damageMax * 1.25;
 			}
+			if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_unarmed_training"))
+			{
 			_properties.DamageRegularMin += this.Math.floor(damageMin);
 			_properties.DamageRegularMax += this.Math.floor(damageMax);
+			}
+			else
+			{
+			_properties.DamageRegularMin = 5;
+			_properties.DamageRegularMax = 10;
+			_properties.DamageArmorMult = 0.5;			
+			}
 		}
 	}
 
 	function onAfterUpdate( _properties )
 	{
 		this.m.FatigueCostMult = _properties.IsSpecializedInFists ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
-		this.m.FatigueCostMult = _properties.IsSpecializedInFists ? 3 : 4;
+		this.m.ActionPointCost = _properties.IsSpecializedInFists ? 3 : 4;
 
 	}
 

@@ -19,7 +19,7 @@ this.perk_legend_specialist_butcher_damage <- this.inherit("scripts/skills/skill
 		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
 		if (item != null)
 		{
-			if(item.getID() == "weapon.butchers_cleaver")
+			if(item.getID() == "weapon.butchers_cleaver" || item.getID() == "weapon.legend_named_butchers_cleaver")
 			{
 			_properties.DamageRegularMin += 4;
 			_properties.DamageRegularMax += 12;

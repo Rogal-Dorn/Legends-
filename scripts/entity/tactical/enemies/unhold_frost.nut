@@ -38,7 +38,14 @@ this.unhold_frost <- this.inherit("scripts/entity/tactical/enemies/unhold", {
 		injury_body.setBrush("bust_unhold_01_injured");
 		this.addSprite("armor");
 		local head = this.addSprite("head");
+		if(this.Math.rand(1, 100) < 1;)
+		{
+		head.setBrush("bust_unhold_head_06");
+		}
+		else
+		{
 		head.setBrush("bust_unhold_head_01");
+		}
 		head.Saturation = body.Saturation;
 		head.Color = body.Color;
 		this.addSprite("helmet");
