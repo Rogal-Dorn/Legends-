@@ -18,6 +18,150 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	function onSpawnAssets()
 	{
 
+		local roster = this.World.getPlayerRoster();
+		for( local i = 0; i < 6; i = ++i )
+		{
+			local bro = roster.create("scripts/entity/tactical/player");
+			bro.getSkills().add(this.new("scripts/skills/perks/perk_rotation"));
+			bro.fillTalentValues(3);
+		}
+		local bros = roster.getAll();
+
+		// Noble Commander Create 
+
+		bros[0].setStartValuesEx([
+			"legend_noble_commander_background"
+		], false);
+		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
+		bros[0].getFlags().set("IsPlayerCharacter", true);
+		bros[0].setPlaceInFormation(13);
+		bros[0].setVeteranPerks(2);
+		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_rotation"));
+		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_roster_2"));
+		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_roster_4"));
+		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_rally_the_troops"));
+		bros[0].getSkills().add(this.new("scripts/skills/traits/drunkard_trait"));
+		bros[0].getSkills().add(this.new("scripts/skills/traits/legend_noble_killer_trait"));
+		bros[0].getSkills().add(this.new("scripts/skills/effects_world/drunk_effect"));
+
+		// End Noble Commander Create
+		// Noble Shield 1 Create
+
+		bros[1].setStartValuesEx([
+		"legend_noble_shield"
+		], false);
+		local items = bros[1].getItems();
+		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Offhand));
+		local r = this.Math.rand(1, 2);
+		local shield;
+		if (r == 1)
+		{
+			shield = this.new("scripts/items/shields/faction_kite_shield");
+		}
+		else if (r == 2)
+		{
+			shield = this.new("scripts/items/shields/faction_heater_shield");
+		}
+		items.equip(shield);
+
+		bros[1].getBackground().m.RawDescription = "Though a lowly footman %name% has one of the most upbeat outlooks on life you\'ve ever encountered. Unfortunately that extends to an over evaluation of self worth, expecting more pay than most.";
+		bros[1].getBackground().buildDescription(true);
+		bros[1].getSkills().add(this.new("scripts/skills/traits/optimist_trait"));
+		bros[1].getSkills().add(this.new("scripts/skills/traits/determined_trait"));
+		bros[1].getSkills().add(this.new("scripts/skills/traits/greedy_trait"));
+		bros[1].setPlaceInFormation(3);
+		bros[1].setVeteranPerks(2);
+
+		// End Noble Shield 1 Create
+		// Noble 2h create
+
+		bros[2].setStartValuesEx([
+		"legend_noble_2h"
+		], false);
+		bros[2].getBackground().m.RawDescription = "%name% is a hulking figure, both upward and outward. Not much of a talker, but a big eater.";
+		bros[2].getBackground().buildDescription(true);
+		bros[2].getSkills().removeByID("trait.tiny");
+		bros[2].getSkills().add(this.new("scripts/skills/traits/huge_trait"));
+		bros[2].getSkills().add(this.new("scripts/skills/traits/fat_trait"));
+		bros[2].getSkills().add(this.new("scripts/skills/traits/gluttonous_trait"));
+		bros[2].setPlaceInFormation(4);
+		bros[2].setVeteranPerks(2);
+
+		// End Noble 2h Create
+		// Noble Shield 2 Create
+
+		bros[3].setStartValuesEx([
+			"legend_noble_shield"
+		], false);
+		local items = bros[3].getItems();
+		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Offhand));
+		r = this.Math.rand(1, 2);
+		local shield;
+
+		if (r == 1)
+		{
+			shield = this.new("scripts/items/shields/faction_kite_shield");
+		}
+		else if (r == 2)
+		{
+			shield = this.new("scripts/items/shields/faction_heater_shield");
+		}
+		items.equip(shield);
+		bros[3].getBackground().m.RawDescription = "%name%\'s parents both served your family, it runs in the blood. While %name% is dependable in a fight and would never dream of leaving you, it also reduces their %name%\'s ambition and drive";
+		bros[3].getBackground().buildDescription(true);
+		bros[3].getSkills().add(this.new("scripts/skills/traits/pragmatic_trait"));
+		bros[3].getSkills().add(this.new("scripts/skills/traits/loyal_trait"));
+		bros[3].getSkills().add(this.new("scripts/skills/traits/slack_trait"));
+		bros[3].setPlaceInFormation(5);
+		bros[3].setVeteranPerks(2);
+
+		// End Noble Shield 2 Create
+		// Noble Servant Create
+
+		bros[4].setStartValuesEx([
+		"servant_background"
+		], false);
+		bros[4].getBackground().m.RawDescription = "%name% has been a servant in your family for 5 generations now, it is unclear how anyone has survived this long, but there are no indications of the old coot giving up any time soon.";
+		bros[4].getBackground().buildDescription(true);
+		bros[4].getSkills().add(this.new("scripts/skills/traits/old_trait"));
+		bros[4].getSkills().add(this.new("scripts/skills/traits/loyal_trait"));
+		bros[4].getSkills().add(this.new("scripts/skills/traits/lucky_trait"));
+		bros[4].getSkills().add(this.new("scripts/skills/traits/survivor_trait"));
+		bros[4].setPlaceInFormation(12);
+		bros[4].setVeteranPerks(2);
+		local items = bros[4].getItems();
+		items.equip(this.Const.World.Common.pickArmor([
+			[1, "linen_tunic"]
+		]));
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, "feathered_hat"]
+		]));
+		items.equip(this.new("scripts/items/supplies/legend_pudding_item"));
+		items.addToBag(this.new("scripts/items/supplies/wine_item"));
+		
+		// End Noble Servant Create
+		// Arbalester Create
+
+		bros[5].setStartValuesEx([
+		"legend_noble_ranged"
+		], false);
+		bros[5].getBackground().m.RawDescription = "%name% has one the house archery contest several years running, but never shuts up about it. The constant stream of narration, makes the great aim easy to dodge.";
+		bros[5].getBackground().buildDescription(true);
+		bros[5].getSkills().add(this.new("scripts/skills/traits/sureshot_trait"));
+		bros[5].getSkills().add(this.new("scripts/skills/traits/teamplayer_trait"));
+		bros[5].getSkills().add(this.new("scripts/skills/traits/predictable_trait"));
+		if (bros[5].getBaseProperties().RangedSkill  <= 60) {
+			bros[5].getBaseProperties().RangedSkill  += 5;
+		}
+
+		bros[5].setPlaceInFormation(14);
+		bros[5].setVeteranPerks(2);
+
+		// End arbalester create
+
+
+		this.World.Assets.getStash().add(this.new("scripts/items/supplies/cured_rations_item"));
+
 		this.World.Assets.m.BusinessReputation = 100;
 		this.World.Assets.m.Money = this.World.Assets.m.Money * 3;
 	}
@@ -82,162 +226,15 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		local f = randomVillage.getFactionOfType(this.Const.FactionType.NobleHouse);
 		f.addPlayerRelation(-100.0, "You chose the wrong faction");
 		local banner = f.getBanner();
-		local names = [];
 
-		for( local i = 0; i < 6; i = ++i )
-		{
-			while (true)
-			{
-				local n = this.Const.Strings.CharacterNames[this.Math.rand(0, this.Const.Strings.CharacterNames.len() - 1)];
-
-				if (names.find(n) == null)
-				{
-					names.push(n);
-					break;
-				}
-			}
-		}
-
-		local roster = this.World.getPlayerRoster();
-
-		for( local i = 0; i < 6; i = ++i )
-		{
-			local bro = roster.create("scripts/entity/tactical/player");
-			bro.setPlaceInFormation(3 + i);
-
-		}
-		// noble dude start
-		local bros = roster.getAll();
-		bros[0].setStartValuesEx([
-			"legend_noble_commander_background"
-		], false);
-		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
-		bros[0].getFlags().set("IsPlayerCharacter", true);
-		bros[0].setPlaceInFormation(13);
-		bros[0].setVeteranPerks(2);
-		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_rotation"));
-		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_roster_2"));
-		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_roster_4"));
-		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_rally_the_troops"));
-		bros[0].getSkills().add(this.new("scripts/skills/traits/drunkard_trait"));
-		bros[0].getSkills().add(this.new("scripts/skills/traits/legend_noble_killer_trait"));
-		bros[0].getSkills().add(this.new("scripts/skills/effects_world/drunk_effect"));
-		//------- noble dude end || shield dude start
-		bros[1].setStartValuesEx([
-		"legend_noble_shield"
-		], false);
-		local items = bros[1].getItems();
-		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Offhand));
-		local r = this.Math.rand(1, 2);
-		local shield;
-
-		if (r == 1)
-		{
-			shield = this.new("scripts/items/shields/faction_kite_shield");
-		}
-		else if (r == 2)
-		{
-			shield = this.new("scripts/items/shields/faction_heater_shield");
-		}
-		shield.setFaction(banner);
-		items.equip(shield);
-
-		bros[1].getBackground().m.RawDescription = "Though a lowly footman %name% has one of the most upbeat outlooks on life you\'ve ever encountered. Unfortunately that extends to an over evaluation of self worth, expecting more pay than most.";
-		bros[1].getBackground().buildDescription(true);
-		bros[1].getSkills().add(this.new("scripts/skills/traits/optimist_trait"));
-		bros[1].getSkills().add(this.new("scripts/skills/traits/determined_trait"));
-		bros[1].getSkills().add(this.new("scripts/skills/traits/greedy_trait"));
-		bros[1].setPlaceInFormation(3);
-		bros[1].setVeteranPerks(2);
-		bros[1].getSkills().add(this.new("scripts/skills/perks/perk_rotation"));
-		//------- shield dude end
-		bros[2].setStartValuesEx([
-		"legend_noble_2h"
-		]);
-		bros[2].getBackground().m.RawDescription = "%name% is a hulking figure, both upward and outward. Not much of a talker, but a big eater.";
-		bros[2].getBackground().buildDescription(true);
-		bros[2].getSkills().removeByID("trait.tiny");
-		bros[2].getSkills().add(this.new("scripts/skills/traits/huge_trait"));
-		bros[2].getSkills().add(this.new("scripts/skills/traits/fat_trait"));
-		bros[2].getSkills().add(this.new("scripts/skills/traits/gluttonous_trait"));
-		bros[2].setPlaceInFormation(4);
-		bros[2].setVeteranPerks(2);
-		bros[2].getSkills().add(this.new("scripts/skills/perks/perk_rotation"));
-		//------ shield dude end || second shield dude start
-		bros[3].setStartValuesEx([
-		"legend_noble_shield"
-		], false);
-		local items = bros[3].getItems();
-		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Offhand));
-		r = this.Math.rand(1, 2);
-		local shield;
-
-		if (r == 1)
-		{
-			shield = this.new("scripts/items/shields/faction_kite_shield");
-		}
-		else if (r == 2)
-		{
-			shield = this.new("scripts/items/shields/faction_heater_shield");
-		}
-		shield.setFaction(banner);
-		items.equip(shield);
-		bros[3].getBackground().m.RawDescription = "%name%\'s parents both served your family, it runs in the blood. While %name% is dependable in a fight and would never dream of leaving you, it also reduces their %name%\'s ambition and drive";
-		bros[3].getBackground().buildDescription(true);
-		bros[3].getSkills().add(this.new("scripts/skills/traits/pragmatic_trait"));
-		bros[3].getSkills().add(this.new("scripts/skills/traits/loyal_trait"));
-		bros[3].getSkills().add(this.new("scripts/skills/traits/slack_trait"));
-		bros[3].setPlaceInFormation(5);
-		bros[3].setVeteranPerks(2);
-		bros[3].getSkills().add(this.new("scripts/skills/perks/perk_rotation"));
-		//------- second shield dude end || servanat start
-		bros[4].setStartValuesEx([
-		"servant_background"
-		], false);
-		bros[4].getBackground().m.RawDescription = "%name% has been a servant in your family for 5 generations now, it is unclear how anyone has survived this long, but there are no indications of the old coot giving up any time soon.";
-		bros[4].getBackground().buildDescription(true);
-		bros[4].getSkills().add(this.new("scripts/skills/traits/old_trait"));
-		bros[4].getSkills().add(this.new("scripts/skills/traits/loyal_trait"));
-		bros[4].getSkills().add(this.new("scripts/skills/traits/lucky_trait"));
-		bros[4].getSkills().add(this.new("scripts/skills/traits/survivor_trait"));
-		bros[4].setPlaceInFormation(12);
-		bros[4].setVeteranPerks(2);
-		local items = bros[4].getItems();
-		items.equip(this.Const.World.Common.pickArmor([
-			[1, "linen_tunic"]
-		]));
-		items.equip(this.Const.World.Common.pickHelmet([
-			[1, "feathered_hat"]
-		]));
-		items.equip(this.new("scripts/items/supplies/legend_pudding_item"));
-		items.addToBag(this.new("scripts/items/supplies/wine_item"));
-		bros[4].getSkills().add(this.new("scripts/skills/perks/perk_rotation"));
-		//------- servant end || arbalester start
-		bros[5].setStartValuesEx([
-		"legend_noble_ranged"
-		], false);
-		bros[5].getBackground().m.RawDescription = "%name% has one the house archery contest several years running, but never shuts up about it. The constant stream of narration, makes the great aim easy to dodge.";
-		bros[5].getBackground().buildDescription(true);
-		bros[5].getSkills().add(this.new("scripts/skills/traits/sureshot_trait"));
-		bros[5].getSkills().add(this.new("scripts/skills/traits/teamplayer_trait"));
-		bros[5].getSkills().add(this.new("scripts/skills/traits/predictable_trait"));
-		if (bros[5].getBaseProperties().RangedSkill  <= 60) {
-			bros[5].getBaseProperties().RangedSkill  += 5;
-		}
-
-		bros[5].setPlaceInFormation(14);
-		bros[5].setVeteranPerks(2);
-
-		bros[5].getSkills().add(this.new("scripts/skills/perks/perk_rotation"));
-		//------ arbalester end
-
-		this.World.Assets.getStash().add(this.new("scripts/items/supplies/cured_rations_item"));
+		local brothers = this.World.getPlayerRoster().getAll();
+		
+		//1, 3 are shield brothers
+		brothers[1].getItems().getItemAtSlot(this.Const.ItemSlot.Offhand).setFaction(banner)
+		brothers[3].getItems().getItemAtSlot(this.Const.ItemSlot.Offhand).setFaction(banner)
 
 		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
 		{
-
-			local brothers = this.World.getPlayerRoster().getAll();
-
 			foreach( bro in brothers )
 			{
 				local items = bro.getItems();
