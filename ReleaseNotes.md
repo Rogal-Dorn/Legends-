@@ -4642,13 +4642,31 @@ Shank price reduced
 
 https://drive.google.com/file/d/1iPGmM1_fWtMzW7PHSsXsbERxMQIWHZ5x/view?usp=sharing
 
-15.0.0.25
+
+
+15.0.0.24a
 
 **Fixes**
 Fixes Vala warden not working for non-Vala summoners
 Fixes errors loading enclave helmets
+Fixes named and legendary item checks for ambitions
+Fixes error on entering Grand tournament with Veterans in group
+Fixes error with Mage's magic missle and Circle of protection crashing.
+Fixes Knowledge potion remaining after 3 battles
+
+
+**Changes**
+Runed items now have a glow around border instead of item (experimenting here, feedback welcome)
 
 **Armor Tweaks**
 Added new plate armor "Krastenbrust style"
 Changed values for certain helms to balance out some stats
-Added new plate armor Triangle plate
+
+**IMPORTANT**: PLease remove any temporary patches you have from previous versions, thank you!
+**Download**: https://drive.google.com/file/d/1h5wWVv36L_0JNTNI3MimY8Ydg98dRyjN/view?usp=sharing
+**To Install**: Simply drag and drop this file to your data folder, please do not unzip this file!
+
+15.0.0.25
+
+**Armor Tweaks**
+Added new plate armor
