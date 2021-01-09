@@ -141,6 +141,7 @@ this.hedge_knight <- this.inherit("scripts/entity/tactical/human", {
 				[5, "legend_helm_curved"],
 				[2, "wallace_sallet"],
 				[2, "italo_norman_helm"],
+				[2, "legend_enclave_vanilla_great_helm_01"],
 				[2, "legend_enclave_vanilla_armet_01"],
 				[2, "legend_enclave_vanilla_armet_02"],
 				[2, "legend_enclave_vanilla_great_bascinet_01"],

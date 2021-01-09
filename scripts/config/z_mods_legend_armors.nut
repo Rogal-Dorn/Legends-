@@ -120,6 +120,7 @@ gt.Const.LegendMod.ArmorObjs.extend([{
             [1, "plate/legend_armor_plate_full"],
 			[1, "plate/legend_armor_plate_milanese"],
 			[1, "plate/legend_armor_plate_krastenbrust"],
+			[1, "plate/legend_armor_plate_triangle"],
         ],
         Cloak = [
             [20, ""],
