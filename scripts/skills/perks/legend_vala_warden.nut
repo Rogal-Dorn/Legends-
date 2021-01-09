@@ -30,6 +30,11 @@ this.legend_vala_warden <- this.inherit("scripts/skills/skill", {
 
 	}
 
+	function getWarden()
+	{
+		return this.m.WardenEntity;
+	}
+
 
 	function getTooltip()
 	{
