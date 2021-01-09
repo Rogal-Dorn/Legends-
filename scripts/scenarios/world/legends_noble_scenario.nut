@@ -106,11 +106,11 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			bro.setPlaceInFormation(3 + i);
 
 		}
-
+		// noble dude start
 		local bros = roster.getAll();
 		bros[0].setStartValuesEx([
 			"legend_noble_commander_background"
-		]);
+		], false);
 		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
 		bros[0].getFlags().set("IsPlayerCharacter", true);
 		bros[0].setPlaceInFormation(13);
@@ -122,9 +122,10 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[0].getSkills().add(this.new("scripts/skills/traits/drunkard_trait"));
 		bros[0].getSkills().add(this.new("scripts/skills/traits/legend_noble_killer_trait"));
 		bros[0].getSkills().add(this.new("scripts/skills/effects_world/drunk_effect"));
+		//------- noble dude end || shield dude start
 		bros[1].setStartValuesEx([
 		"legend_noble_shield"
-		]);
+		], false);
 		local items = bros[1].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Offhand));
 		local r = this.Math.rand(1, 2);
@@ -143,12 +144,13 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 		bros[1].getBackground().m.RawDescription = "Though a lowly footman %name% has one of the most upbeat outlooks on life you\'ve ever encountered. Unfortunately that extends to an over evaluation of self worth, expecting more pay than most.";
 		bros[1].getBackground().buildDescription(true);
-		bros[3].getSkills().add(this.new("scripts/skills/traits/optimist_trait"));
-		bros[3].getSkills().add(this.new("scripts/skills/traits/determined_trait"));
-		bros[3].getSkills().add(this.new("scripts/skills/traits/greedy_trait"));
+		bros[1].getSkills().add(this.new("scripts/skills/traits/optimist_trait"));
+		bros[1].getSkills().add(this.new("scripts/skills/traits/determined_trait"));
+		bros[1].getSkills().add(this.new("scripts/skills/traits/greedy_trait"));
 		bros[1].setPlaceInFormation(3);
 		bros[1].setVeteranPerks(2);
 		bros[1].getSkills().add(this.new("scripts/skills/perks/perk_rotation"));
+		//------- shield dude end
 		bros[2].setStartValuesEx([
 		"legend_noble_2h"
 		]);
@@ -161,9 +163,10 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[2].setPlaceInFormation(4);
 		bros[2].setVeteranPerks(2);
 		bros[2].getSkills().add(this.new("scripts/skills/perks/perk_rotation"));
+		//------ shield dude end || second shield dude start
 		bros[3].setStartValuesEx([
 		"legend_noble_shield"
-		]);
+		], false);
 		local items = bros[3].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Offhand));
 		r = this.Math.rand(1, 2);
@@ -187,9 +190,10 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[3].setPlaceInFormation(5);
 		bros[3].setVeteranPerks(2);
 		bros[3].getSkills().add(this.new("scripts/skills/perks/perk_rotation"));
+		//------- second shield dude end || servanat start
 		bros[4].setStartValuesEx([
 		"servant_background"
-		]);
+		], false);
 		bros[4].getBackground().m.RawDescription = "%name% has been a servant in your family for 5 generations now, it is unclear how anyone has survived this long, but there are no indications of the old coot giving up any time soon.";
 		bros[4].getBackground().buildDescription(true);
 		bros[4].getSkills().add(this.new("scripts/skills/traits/old_trait"));
@@ -208,23 +212,24 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		items.equip(this.new("scripts/items/supplies/legend_pudding_item"));
 		items.addToBag(this.new("scripts/items/supplies/wine_item"));
 		bros[4].getSkills().add(this.new("scripts/skills/perks/perk_rotation"));
+		//------- servant end || arbalester start
 		bros[5].setStartValuesEx([
 		"legend_noble_ranged"
-		]);
+		], false);
 		bros[5].getBackground().m.RawDescription = "%name% has one the house archery contest several years running, but never shuts up about it. The constant stream of narration, makes the great aim easy to dodge.";
 		bros[5].getBackground().buildDescription(true);
 		bros[5].getSkills().add(this.new("scripts/skills/traits/sureshot_trait"));
 		bros[5].getSkills().add(this.new("scripts/skills/traits/teamplayer_trait"));
 		bros[5].getSkills().add(this.new("scripts/skills/traits/predictable_trait"));
-		if (bros[4].getBaseProperties().RangedSkill  <= 60) {
-			bros[4].getBaseProperties().RangedSkill  += 5;
+		if (bros[5].getBaseProperties().RangedSkill  <= 60) {
+			bros[5].getBaseProperties().RangedSkill  += 5;
 		}
 
 		bros[5].setPlaceInFormation(14);
 		bros[5].setVeteranPerks(2);
 
 		bros[5].getSkills().add(this.new("scripts/skills/perks/perk_rotation"));
-
+		//------ arbalester end
 
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/cured_rations_item"));
 
