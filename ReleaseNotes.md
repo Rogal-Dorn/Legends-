@@ -4681,9 +4681,7 @@ Instruments now use Mace bash and count as maces
 New named butcher's cleaver added, butchers skills apply to it, spawns on champion butchers  
 Unholds are bigger trolls and ocassionally have unhold gfs 
 Mastaba fight rearranged to be more swarmy and not have folks stuck on poles unles they want to be 
+Most mage perks have new art, soothing wind nerfed to 4 tiles 
 
-**fixes**
-Most mage perks have new art 
-
-
-
+**fixes** 
+Updates Turn It In mod to resolve contracts not disapearing 
