@@ -11,8 +11,8 @@ this.mage_legend_magic_burning_hands <- this.inherit("scripts/skills/actives/mag
 		this.m.Name = "Burning Hands";
 		this.m.Description = "Unleash a cone of blistering heat from your palms.";
 		this.m.KilledString = "Burned";
-		this.m.Icon = "skills/mage_legend_magic_burning_hands_square.png";
-		this.m.IconDisabled = "skills/mage_legend_magic_burning_hands_square_bw.png";
+		this.m.Icon = "skills/burning_hands_01.png";
+		this.m.IconDisabled = "skills/burning_hands_01_bw.png";
 		this.m.Overlay = "mage_legend_magic_burning_hands_square";
 		this.m.SoundOnUse = [
 			"sounds/combat/fire_01.wav",
