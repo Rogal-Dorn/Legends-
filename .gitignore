@@ -22,7 +22,7 @@ gfx/*.png
 *.DS_Store
 temp.nut
 
-# unpacked/legend_enemies/metadata.xml
+unpacked/legend_enemies/metadata.xml
 unpacked/**/*dead_arrows.png
 unpacked/**/*dead_javelin.png
 unpacked/legend_armor/metadata.xml

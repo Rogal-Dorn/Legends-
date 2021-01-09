@@ -347,7 +347,7 @@ enemies = r"""
 
 <sprite id="bust_unhold_body_04_injured" offsetX="-5" offsetY="35" ic="FF181946" width="174" height="214" img="entity\beasts\bust_unhold_body_04_injured.png" left="-78" right="50" top="-48" bottom="62" />
 <sprite id="bust_unhold_body_04" offsetX="-5" offsetY="35" ic="FF272C3A" width="174" height="214" img="entity\beasts\bust_unhold_body_04.png" left="-64" right="70" top="-67" bottom="83" />
-<sprite id="bust_unhold_body_04_dead" offsetY="30" f="6403" ic="FF23283B" width="169" height="139" img="entity\beasts\bbust_unhold_body_04_dead.png" left="-83" right="79" top="-70" bottom="62" />
+<sprite id="bust_unhold_body_04_dead" offsetY="30" f="6403" ic="FF23283B" width="169" height="139" img="entity\beasts\bust_unhold_body_04_dead.png" left="-83" right="79" top="-70" bottom="62" />
 <sprite id="bust_unhold_head_04" offsetX="-5" offsetY="35" f1="-30" f2="10" ic="FF39455B" width="174" height="214" img="entity\beasts\bust_unhold_head_04.png" left="-69" right="21" top="-24" bottom="68" />
 <sprite id="bust_unhold_head_04_dead" offsetY="30" f1="40" f2="-20" ic="FF343E56" width="169" height="139" img="entity\beasts\bust_unhold_head_04_dead.png" left="4" right="76" top="-62" bottom="8" />
 <sprite id="bust_unhold_head_04_dead_bloodpool" offsetY="30" f="6420" f1="40" f2="-20" width="169" height="139" img="entity\beasts\bust_unhold_head_04_dead_bloodpool.png" left="-9" right="85" top="-64" bottom="16" />
