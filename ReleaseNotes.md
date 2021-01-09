@@ -4651,3 +4651,4 @@ Fixes errors loading enclave helmets
 **Armor Tweaks**
 Added new plate armor "Krastenbrust style"
 Changed values for certain helms to balance out some stats
+Added new plate armor Triangle plate
