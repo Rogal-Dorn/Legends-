@@ -6,9 +6,9 @@ this.mage_legend_magic_soothing_wind <- this.inherit("scripts/skills/actives/mag
 	{
 		this.m.ID = "actives.mage_legend_magic_soothing_wind";
 		this.m.Name = "Soothing Wind";
-		this.m.Description = "Restore the fatigue of all allies within 8 tiles. Must be holding a magic staff to use.";
-		this.m.Icon = "skills/mage_legend_magic_soothing_wind_square.png";
-		this.m.IconDisabled = "skills/mage_legend_magic_soothing_wind_square_bw.png";
+		this.m.Description = "Restore the fatigue of all allies within 4 tiles. Must be holding a magic staff to use.";
+		this.m.Icon = "skills/soothing_wind_01.png";
+		this.m.IconDisabled = "skills/soothing_wind_01_bw.png";
 		this.m.Overlay = "mage_legend_magic_soothing_wind_square_bw";
 		this.m.SoundOnUse = [
 			"sounds/enemies/dlc4/wardrums_01.wav",
@@ -70,7 +70,7 @@ this.mage_legend_magic_soothing_wind <- this.inherit("scripts/skills/actives/mag
 		local restoreAmount = this.getRestoreAmount();
 		foreach( a in actors )
 		{
-			if (myTile.getDistanceTo(a.getTile()) > 8)
+			if (myTile.getDistanceTo(a.getTile()) > 4)
 			{
 				continue;
 			}
