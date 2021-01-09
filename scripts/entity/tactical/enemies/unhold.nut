@@ -240,8 +240,8 @@ this.unhold <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Items.getAppearance().Body = "bust_unhold_body_02";
 		this.addSprite("socket").setBrush("bust_base_beasts");
 		local body = this.addSprite("body");
-		if(this.Math.rand(1, 100) < 5;)
-		{		
+		if(this.Math.rand(1, 100) < 5)
+		{
 		body.setBrush("bust_unhold_body_04");
 		}
 		else
@@ -254,8 +254,8 @@ this.unhold <- this.inherit("scripts/entity/tactical/actor", {
 		injury_body.Visible = false;
 		injury_body.setBrush("bust_unhold_02_injured");
 		this.addSprite("armor");
-		local head = this.addSprite("head");	
-		if(this.Math.rand(1, 100) < 3;)
+		local head = this.addSprite("head");
+		if(this.Math.rand(1, 100) < 3)
 		{
 		head.setBrush("bust_unhold_head_04");
 		}

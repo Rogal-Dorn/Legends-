@@ -37,7 +37,7 @@ this.unhold_bog <- this.inherit("scripts/entity/tactical/enemies/unhold", {
 		injury_body.setBrush("bust_unhold_03_injured");
 		this.addSprite("armor");
 		local head = this.addSprite("head");
-		if(this.Math.rand(1, 100) < 2;)
+		if(this.Math.rand(1, 100) < 2)
 		{
 		head.setBrush("bust_unhold_head_05");
 		}
