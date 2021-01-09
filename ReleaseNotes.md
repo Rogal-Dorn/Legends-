@@ -4670,3 +4670,4 @@ Changed values for certain helms to balance out some stats
 
 **Fixes**
 Knights rarely spawning with a named helmet that didn't exist
+Fixes noble scenario units having 4-5 traits
