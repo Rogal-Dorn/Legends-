@@ -13,11 +13,20 @@ this.legend_vala_warden_script <- this.inherit("scripts/entity/tactical/actor", 
 			this.m.Vala = this.WeakTableRef(_v);
 		}
 	}
+
+	function getValaWarden()
+	{
+		if (this.m.Vala == null)
+		{
+			return null;
+		}
+		return this.m.Vala.getWarden();
+	}
+
 	function setName( _n )
 	{
 		this.m.Name = _n;
 	}
-
 
 
 	function create()
