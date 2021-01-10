@@ -12,11 +12,11 @@ gt.Const.Perks.BeastClassTree <- {
 	],
 	Tree = [
 		[],
-		[],
+		[gt.Const.Perks.PerkDefs.LegendNetRepair],
 		[gt.Const.Perks.PerkDefs.LegendNetCasting],
 		[gt.Const.Perks.PerkDefs.LegendMasteryNets],
 		[gt.Const.Perks.PerkDefs.LegendEscapeArtist],
-		[gt.Const.Perks.PerkDefs.LegendNetRepair],
+		[],
 		[]
 	]
 };
@@ -81,7 +81,7 @@ gt.Const.Perks.FistsClassTree <- {
 		[gt.Const.Perks.PerkDefs.LegendSpecFists],
 		[gt.Const.Perks.PerkDefs.LegendUnarmedLunge],
 		[gt.Const.Perks.PerkDefs.LegendChoke],
-		[]
+		[gt.Const.Perks.PerkDefs.PushTheAdvantage]
 	]
 };
 

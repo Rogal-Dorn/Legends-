@@ -37,4 +37,9 @@ this.perk_legend_tools_drawers <- this.inherit("scripts/skills/skill", {
 		this.World.State.getPlayer().calculateArmorPartsModifier();
 	}
 
+	function onUpdate( _properties )
+	{
+		_properties.Stamina += 3;
+	}
+
 });
