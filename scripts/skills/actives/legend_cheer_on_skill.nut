@@ -61,7 +61,10 @@ this.legend_cheer_on_skill <- this.inherit("scripts/skills/skill", {
 		{
 			return false;
 		}
-		return (mainhand.getID() == "weapon.lute" || mainhand.getID() == "weapon.named_lute" || mainhand.getID() == "weapon.legend_drum") && this.skill.isUsable();
+		if (!this.skill.isUsable) {
+			return false;
+		}
+		return this.Const.Items.MusicalItems.find(mainhand.getID())
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )

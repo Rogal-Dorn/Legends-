@@ -6,8 +6,8 @@ this.mage_legend_magic_imbue <- this.inherit("scripts/skills/actives/mage_legend
 		this.m.Name = "Imbue";
 		this.m.Description = "Imbue someone with magical power, increasing accuracy and damage for 3 turns.";
 		this.m.KilledString = "Imbued";
-		this.m.Icon = "skills/mage_legend_magic_imbue_square.png";
-		this.m.IconDisabled = "skills/mage_legend_magic_imbue_square_bw.png";
+		this.m.Icon = "skills/magic_imbue_01.png";
+		this.m.IconDisabled = "skills/magic_imbue_01_bw.png";
 		this.m.Overlay = "mage_legend_magic_imbue_square";
 		this.m.SoundOnUse = [
 			"sounds/humans/0/human_fatigue_01.wav"
