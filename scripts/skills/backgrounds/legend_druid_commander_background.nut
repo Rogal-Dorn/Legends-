@@ -112,12 +112,10 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.Pathfinder,
 				this.Const.Perks.PerkDefs.Recover,
 				this.Const.Perks.PerkDefs.LegendAlert
-	
 			],
 			[
 				this.Const.Perks.PerkDefs.LegendScryTrance,
 				this.Const.Perks.PerkDefs.LegendGatherer,
-				this.Const.Perks.PerkDefs.LegendSummonFalcon,
 				this.Const.Perks.PerkDefs.LegendKick,
 				this.Const.Perks.PerkDefs.FortifiedMind,
 				this.Const.Perks.PerkDefs.CoupDeGrace,
@@ -141,8 +139,7 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.Relentless,
 				this.Const.Perks.PerkDefs.LegendSecondWind
 			],
-			[
-				
+			[		
 				this.Const.Perks.PerkDefs.LegendPoisonImmunity,
 				this.Const.Perks.PerkDefs.LegendSpecBandage,
 				this.Const.Perks.PerkDefs.LegendSpecPoison,
@@ -152,13 +149,12 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.SpecThrowing,
 				this.Const.Perks.PerkDefs.LegendMasteryStaves,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyGoblin,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyBandit,		
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyBandit	
 			],
 			[
 				this.Const.Perks.PerkDefs.LegendPotionBrewer,
 				this.Const.Perks.PerkDefs.LegendChoke,
 				this.Const.Perks.PerkDefs.LegendReadOmensTrance,
-				this.Const.Perks.PerkDefs.LegendSummonStorm,
 				this.Const.Perks.PerkDefs.LegendInsects,
 				this.Const.Perks.PerkDefs.LoneWolf,
 				this.Const.Perks.PerkDefs.Footwork,
@@ -172,17 +168,18 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.LegendDistantVisions,
 				this.Const.Perks.PerkDefs.LegendUnarmedLunge,
 				this.Const.Perks.PerkDefs.LegendMuscularity,
-				this.Const.Perks.PerkDefs.LegendSummonBear
+				this.Const.Perks.PerkDefs.LegendSummonStorm,
 				this.Const.Perks.PerkDefs.Berserk,
 				this.Const.Perks.PerkDefs.Nimble,
 				this.Const.Perks.PerkDefs.LegendMindOverBody,
 				this.Const.Perks.PerkDefs.LastStand,
-				this.Const.Perks.PerkDefs.Rebound,		
+				this.Const.Perks.PerkDefs.Rebound		
 			],
 			[
 				this.Const.Perks.PerkDefs.LegendMiasma,
 				this.Const.Perks.PerkDefs.LegendFieldTriage,
 				this.Const.Perks.PerkDefs.LegendTumble,
+				this.Const.Perks.PerkDefs.LegendSummonBear,
 				this.Const.Perks.PerkDefs.Fearsome,
 				this.Const.Perks.PerkDefs.Duelist,
 				this.Const.Perks.PerkDefs.KillingFrenzy,
