@@ -3452,6 +3452,15 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/unarmed_lunge.png",
 		IconDisabled = "ui/perks/unarmed_lunge_bw.png",
 		Const = "LegendUnarmedLunge"
+	},
+	{
+		ID = "perk.boondock_blade",
+		Script = "scripts/skills/perks/perk_boondock_blade",
+		Name = this.Const.Strings.PerkName.BoondockBlade,
+		Tooltip = this.Const.Strings.PerkDescription.BoondockBlade,
+		Icon = "ui/perks/unarmed_lunge.png", //TODO
+		IconDisabled = "ui/perks/unarmed_lunge_bw.png",
+		Const = "BoondockBlade"
 	}
 ];
 gt.Const.Perks.PerkDefs <- {};
