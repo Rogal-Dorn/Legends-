@@ -81,7 +81,7 @@ gt.Const.Perks.FistsClassTree <- {
 		[gt.Const.Perks.PerkDefs.LegendSpecFists],
 		[gt.Const.Perks.PerkDefs.LegendUnarmedLunge],
 		[gt.Const.Perks.PerkDefs.LegendChoke],
-		[]
+		[gt.Const.Perks.PerkDefs.PushTheAdvantage]
 	]
 };
 

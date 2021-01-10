@@ -68,44 +68,47 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[3];
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[1];
 		this.m.CustomPerkTree = [
-			[
+			[		
+				this.Const.Perks.PerkDefs.LegendSpecialistKnifeSkill,
+				this.Const.Perks.PerkDefs.Pathfinder,
+				this.Const.Perks.PerkDefs.CripplingStrikes,
 				this.Const.Perks.PerkDefs.Adrenalin,
+				this.Const.Perks.PerkDefs.LegendUnarmedTraining,
 				this.Const.Perks.PerkDefs.Recover,
 				this.Const.Perks.PerkDefs.FastAdaption,
 				this.Const.Perks.PerkDefs.BagsAndBelts,
-				this.Const.Perks.PerkDefs.Pathfinder,
-				this.Const.Perks.PerkDefs.CripplingStrikes,
 				this.Const.Perks.PerkDefs.LegendBackToBasics,
 				this.Const.Perks.PerkDefs.Colossus,
-				this.Const.Perks.PerkDefs.NineLives,
-				this.Const.Perks.PerkDefs.Pathfinder,
+				this.Const.Perks.PerkDefs.BagsAndBelts,
 				this.Const.Perks.PerkDefs.LegendAlert
 			],
 			[
+				this.Const.Perks.PerkDefs.LegendBlendIn,
+				this.Const.Perks.PerkDefs.Backstabber,
+				this.Const.Perks.PerkDefs.LegendKick,
+				this.Const.Perks.PerkDefs.Sprint,
+				this.Const.Perks.PerkDefs.DevastatingStrikes,
 				this.Const.Perks.PerkDefs.QuickHands,
 				this.Const.Perks.PerkDefs.Dodge,
 				this.Const.Perks.PerkDefs.CoupDeGrace,
 				this.Const.Perks.PerkDefs.Bullseye,
 				this.Const.Perks.PerkDefs.HoldOut,
 				this.Const.Perks.PerkDefs.LegendComposure,
-				this.Const.Perks.PerkDefs.LegendKick,
-				this.Const.Perks.PerkDefs.DevastatingStrikes,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyCaravan,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyBandit
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyCaravan	
 			],
 			[
+				this.Const.Perks.PerkDefs.LegendSpecialistKnifeDamage,
+				this.Const.Perks.PerkDefs.LegendGrapple,
+				this.Const.Perks.PerkDefs.LegendHairSplitter,
+				this.Const.Perks.PerkDefs.LegendEscapeArtist,
+				this.Const.Perks.PerkDefs.BoondockBlade,
+				this.Const.Perks.PerkDefs.LegendTrueBeliever,
 				this.Const.Perks.PerkDefs.Anticipation,
 				this.Const.Perks.PerkDefs.Rotation,
 				this.Const.Perks.PerkDefs.Feint,
-				this.Const.Perks.PerkDefs.Backstabber,
 				this.Const.Perks.PerkDefs.Debilitate,
 				this.Const.Perks.PerkDefs.Relentless,
-				this.Const.Perks.PerkDefs.LegendGrapple,
-				this.Const.Perks.PerkDefs.LegendTrueBeliever,
-				this.Const.Perks.PerkDefs.LegendPrepareBleed,
-				this.Const.Perks.PerkDefs.LegendEscapeArtist,
-				this.Const.Perks.PerkDefs.Sprint
-
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyBandit
 			],
 			[
 				this.Const.Perks.PerkDefs.SpecDagger,
@@ -117,43 +120,49 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 				this.Const.Perks.PerkDefs.LegendSpecFists,
 				this.Const.Perks.PerkDefs.LegendSpecPoison,
 				this.Const.Perks.PerkDefs.LegendPoisonImmunity,
-				this.Const.Perks.PerkDefs.LegendHidden
+				this.Const.Perks.PerkDefs.LegendHidden,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyMercenary,
 				this.Const.Perks.PerkDefs.LegendRoster3
 			],
 			[
-				this.Const.Perks.PerkDefs.LoneWolf,
-				this.Const.Perks.PerkDefs.Footwork,
-				this.Const.Perks.PerkDefs.Overwhelm,
 				this.Const.Perks.PerkDefs.LegendGrapple,
-				this.Const.Perks.PerkDefs.Vengeance,
-				this.Const.Perks.PerkDefs.LegendLithe,
+				this.Const.Perks.PerkDefs.LegendUnarmedLunge,
 				this.Const.Perks.PerkDefs.PushTheAdvantage,
-				this.Const.Perks.PerkDefs.LegendBlendIn,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyMercenary,
+				this.Const.Perks.PerkDefs.DoubleStrike,
+				this.Const.Perks.PerkDefs.LegendEvasion,
+				this.Const.Perks.PerkDefs.LegendHeightenedReflexes,
+				this.Const.Perks.PerkDefs.LoneWolf,	
+				this.Const.Perks.PerkDefs.Overwhelm,	
+				this.Const.Perks.PerkDefs.Vengeance,
+				this.Const.Perks.PerkDefs.LegendLithe,	
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyNoble
 				this.Const.Perks.PerkDefs.LegendRoster4
 			],
 			[
+				this.Const.Perks.PerkDefs.LegendChoke,
+				this.Const.Perks.PerkDefs.LegendLeap,
+				this.Const.Perks.PerkDefs.LegendWindReader,
 				this.Const.Perks.PerkDefs.Berserk,
 				this.Const.Perks.PerkDefs.Underdog,
 				this.Const.Perks.PerkDefs.LegendBalance,
 				this.Const.Perks.PerkDefs.LegendClarity,
 				this.Const.Perks.PerkDefs.HeadHunter,
-				this.Const.Perks.PerkDefs.LegendChoke,
-				this.Const.Perks.PerkDefs.LegendEvasion,
-				this.Const.Perks.PerkDefs.LegendSlaughter,
+				this.Const.Perks.PerkDefs.Nimble,
 				this.Const.Perks.PerkDefs.LegendMatchingSet,
 				this.Const.Perks.PerkDefs.LegendSecondWind
 				this.Const.Perks.PerkDefs.LegendRoster5
 			],
 			[
+				this.Const.Perks.PerkDefs.LegendAssassinate,
+				this.Const.Perks.PerkDefs.LegendUntouchable,
+				this.Const.Perks.PerkDefs.LegendTumble,
+				this.Const.Perks.PerkDefs.CloseCombatArcher,
 				this.Const.Perks.PerkDefs.KillingFrenzy,
 				this.Const.Perks.PerkDefs.Duelist,
-				this.Const.Perks.PerkDefs.Nimble,
+				this.Const.Perks.PerkDefs.Rebound,
+				this.Const.Perks.PerkDefs.BattleFlow,
+				this.Const.Perks.PerkDefs.PerfectFocus,
 				this.Const.Perks.PerkDefs.LegendFreedomOfMovement,
-				this.Const.Perks.PerkDefs.LegendChoke,
-				this.Const.Perks.PerkDefs.LegendUntouchable,
-				this.Const.Perks.PerkDefs.LegendAssassinate,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemySwordmaster
 				this.Const.Perks.PerkDefs.LegendRoster6
 			]
@@ -215,28 +224,28 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 				10
 			],
 			Bravery = [
-				10,
-				10
+				0,
+				0
 			],
 			Stamina = [
-				10,
-				10
+				0,
+				0
 			],
 			MeleeSkill = [
 				25,
 				15
 			],
 			RangedSkill = [
-				8,
-				16
+				4,
+				8
 			],
 			MeleeDefense = [
 				12,
 				8
 			],
 			RangedDefense = [
-				4,
-				8
+				8,
+				12
 			],
 			Initiative = [
 				20,
@@ -294,10 +303,10 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 		local stash = this.World.Assets.getStash();
 		stash.removeByID("supplies.ground_grains");
 		stash.removeByID("supplies.ground_grains");
-		stash.add(this.new("scripts/items/supplies/roots_and_berries_item"));
-		stash.add(this.new("scripts/items/supplies/medicine_item"));
+		stash.add(this.new("scripts/items/supplies/rice_item"));
+		stash.add(this.new("scripts/items/supplies/dried_lamb_item"));
 		local items = this.getContainer().getActor().getItems();
-		items.equip(this.new("scripts/items/weapons/rondel_dagger"));
+		items.equip(this.new("scripts/items/weapons/knife"));
 		items.equip(this.Const.World.Common.pickArmor([
 			[1, "thick_dark_tunic"]
 		]));

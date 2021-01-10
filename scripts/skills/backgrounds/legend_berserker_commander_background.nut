@@ -94,6 +94,7 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 			[
 				this.Const.Perks.PerkDefs.FastAdaption,
 				this.Const.Perks.PerkDefs.CripplingStrikes,
+				this.Const.Perks.PerkDefs.LegendUnarmedTraining,
 				this.Const.Perks.PerkDefs.Colossus,
 				this.Const.Perks.PerkDefs.Adrenalin,
 				this.Const.Perks.PerkDefs.NineLives,
@@ -145,6 +146,7 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 			[
 				this.Const.Perks.PerkDefs.LoneWolf,
 				this.Const.Perks.PerkDefs.Footwork,
+				this.Const.Perks.PerkDefs.LegendChoke,
 				this.Const.Perks.PerkDefs.Slaughterer,
 				this.Const.Perks.PerkDefs.Vengeance,
 				this.Const.Perks.PerkDefs.LegendBattleheart,
@@ -161,7 +163,9 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 				this.Const.Perks.PerkDefs.Nimble,
 				this.Const.Perks.PerkDefs.ReturnFavor,
 				this.Const.Perks.PerkDefs.LastStand,
+				this.Const.Perks.PerkDefs.LegendUnarmedLunge,
 				this.Const.Perks.PerkDefs.Rebound,
+				this.Const.Perks.PerkDefs.LastStand,
 				this.Const.Perks.PerkDefs.LegendChoke,
 				this.Const.Perks.PerkDefs.LegendMuscularity,
 				this.Const.Perks.PerkDefs.LegendForwardPush
@@ -169,6 +173,7 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 			[
 				this.Const.Perks.PerkDefs.Fearsome,
 				this.Const.Perks.PerkDefs.Duelist,
+				this.Const.Perks.PerkDefs.LegendTumble,
 				this.Const.Perks.PerkDefs.KillingFrenzy,
 				this.Const.Perks.PerkDefs.BattleFlow,
 				this.Const.Perks.PerkDefs.Stalwart,
