@@ -52,14 +52,17 @@ function getTooltip()
 
 	function isUsable()
 	{
-		if (mainhand == null)
+		local main = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		if (main == null)
 		{
 			return false;
 		}
-		if (!this.skill.isUsable) {
+
+		if (!this.skill.isUsable()) {
 			return false;
 		}
-		return this.Const.Items.MusicalItems.find(mainhand.getID())
+
+		return this.Const.Items.MusicalItems.find(main.getID()) != null;
 
 	}
 
