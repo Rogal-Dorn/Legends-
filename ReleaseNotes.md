@@ -4677,9 +4677,16 @@ A new unarmed lunge perk added to unarmed tree to give more mobility to unarmed 
 
 **commander perk trees**
 Berserker tweaked to provide better options for two handed swords, beast fighting and unarmed 
-Ranger tweaked to be more of a hunter, add dog handling, nets a shortbow perks. no longer summons bears, begins with a shortbow 
-Assassin tweaked to provide better builds for dagger, unarmed and mobility 
-Druid tweaked to have builds for sickle, and better crafting and magic paths . begins with a sickle 
+* Gains bags and belts, unarmed training, favoured enemy direwolves and goblins, greatsword specialisation, reach advantage, unarmed lunge, doublestrike and bloodbath
+* Loses fast adaption, one handed sword specialisation, begins with much weaker weapons. 
+Ranger tweaked to be more of a hunter, add dog handling, nets a shortbow perks.
+* Gains Small Game, Poachers Arm, Net Repair, Net Casting Net Mastery, hair splitter, summon hound, dog whisperer, dog breeder, pack leader, dog master
+* Loses Summon bear, Summon wolf, feint, gifted, fast adaption, student, relentless. begins with shortbow 
+Assassin tweaked to provide better builds for dagger, unarmed and mobility.
+* Gains knife fighting, prisoners rush, unarmed training, unarmed lunge, escape artist, unarmed lunge, leap, tumble, wind reader, heightened refleces, battleflow, perfect focus  
+* loses nine lives, prepare bleed, slaughter, rondel dagger on start. 
+Druid tweaked to have builds for sickle, and better crafting and combat . begins with a sickle 
+* Gains gatherer's cuts, harvest twists, herbcraft, potion brewer, unarmed lunge, tumble , clarity 
 
 **Changes**
 Lute specialisation skills now includes drums and named lutes
@@ -4710,7 +4717,6 @@ Wolfsbane description typo fixed
 Miasma's tooltip updated to explain what it does, fatigue and AP cost increased 
 Summon storm's description updated to explain exactly what it does 
 dark tunics no longer overlap the body 
-
 
 **Armor Tweaks**
 Added new plate armor
