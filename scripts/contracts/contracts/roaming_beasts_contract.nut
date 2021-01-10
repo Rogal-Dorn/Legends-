@@ -61,7 +61,11 @@ this.roaming_beasts_contract <- this.inherit("scripts/contracts/contract", {
 				{
 					this.Flags.set("IsHumans", true);
 				}
-				else if (r < 99)
+				else if (r == 100 && this.World.LegendsMod.Configs().LegendTherianthropyEnabled())
+				{
+					this.Flags.set("IsVermes", true);
+				}
+				else
 				{
 					local village = this.Contract.getHome().get();
 					local twists = [];
@@ -174,11 +178,6 @@ this.roaming_beasts_contract <- this.inherit("scripts/contracts/contract", {
 						}
 					}
 				}
-				else
-				{
-					this.Flags.set("IsVermes", true);
-				}
-
 
 				local playerTile = this.World.State.getPlayer().getTile();
 				local tile = this.Contract.getTileToSpawnLocation(playerTile, 5, 10);

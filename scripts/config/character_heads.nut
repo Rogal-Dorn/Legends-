@@ -502,9 +502,7 @@ gt.Const.Hair.AllMale <- [
 	"southern_05",
 	"southern_06",
 	"southern_07",
-	"southern_08",
-	"legends_01",
-	"legends_02"
+	"southern_08"
 ];
 
 gt.Const.Hair.Berserker <- [
