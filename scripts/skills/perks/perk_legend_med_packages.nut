@@ -38,4 +38,9 @@ this.perk_legend_med_packages <- this.inherit("scripts/skills/skill", {
 		this.World.State.getPlayer().calculateMedsModifier();
 	}
 
+	function onUpdate( _properties )
+	{
+		_properties.BraveryMult *= 1.05;
+	}
+
 });
