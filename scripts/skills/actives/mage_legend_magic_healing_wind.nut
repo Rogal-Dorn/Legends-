@@ -7,7 +7,7 @@ this.mage_legend_magic_healing_wind <- this.inherit("scripts/skills/actives/mage
 		this.m.ID = "actives.mage_legend_magic_healing_wind";
 		this.m.Name = "Healing Mist";
 		this.m.Description = "Restore the health of all allies within 8 tiles. Must be holding a magic staff to use.";
-		this.m.Icon = "skills/perks/magic_mist_01.png";
+		this.m.Icon = "skills/magic_mist_01.png";
 		this.m.IconDisabled = "skills/magic_mist_01_bw.png";
 		this.m.Overlay = "mage_legend_magic_healing_wind_square";
 		this.m.SoundOnUse = [
