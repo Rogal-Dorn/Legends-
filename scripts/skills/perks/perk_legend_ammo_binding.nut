@@ -40,4 +40,9 @@ this.perk_legend_ammo_binding <- this.inherit("scripts/skills/skill", {
 		this.World.State.getPlayer().calculateAmmoModifier();
 	}
 
+	function onUpdate( _properties )
+	{
+		_properties.RangedSkillMult *= 1.05;
+	}
+
 });
