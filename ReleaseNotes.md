@@ -4705,5 +4705,4 @@ smashing shields now acts as it should
 
 **Armor Tweaks**
 Added new plate armor
-
-
+Fixes noble scenario units having 4-5 traits
