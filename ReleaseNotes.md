@@ -4675,6 +4675,12 @@ Hand to Hand scaling is now simply  ((Ini + HP )/ 4). That is half the average. 
 Hand to hand now only scales on hp and ini if you take the Unarmed Trainting perk, which is in t1 of unarmed perk tree. This means enemies no longer have unarmed unless given this perk
 A new unarmed lunge perk added to unarmed tree to give more mobility to unarmed builds
 
+**commander perk trees**
+Berserker tweaked to provide better options for two handed swords, beast fighting and unarmed 
+Ranger tweaked to add dog handling, nets a shortbow perks. no longer summons bears 
+Assassin tweaked to provide better dagger build, unarmed and mobility 
+Druid tweaked to have builds for sickle, and better crafting and magic paths  
+
 **Changes**
 Lute specialisation skills now includes drums and named lutes
 Instruments now use Mace bash and count as maces
@@ -4683,10 +4689,19 @@ Unholds are bigger trolls and ocassionally have unhold gfs
 Mastaba fight rearranged to be more swarmy and not have folks stuck on poles unles they want to be
 Most mage perks have new art, soothing wind nerfed to 4 tiles
 
+
+**resource perks**
+Ammunition bindings now also increase ranged skill by 5% 
+Ammunition bundes now also increas ranged defense by 5% 
+Medicine packages and medicine ingrediants both increase resolve by 5% 
+Tools drawers and tools spares increase fatigue 
+
+
 **Fixes**
 Knights rarely spawning with a named helmet that didn't exist
 Fixes the vala warden crashes.
 Updates Turn It In mod to resolve contracts not disapearing
+smashing shields now acts as it should 
 
 **Armor Tweaks**
 Added new plate armor
