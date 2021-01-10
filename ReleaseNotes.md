@@ -4713,7 +4713,7 @@ Wolfsbane description typo fixed
 Miasma's tooltip updated to explain what it does, fatigue and AP cost increased
 Summon storm's description updated to explain exactly what it does
 dark tunics no longer overlap the body
-
+BanditVerme will not spawn if Lycanthropy is disabled.
 
 **Armor Tweaks**
 Added new plate armor
