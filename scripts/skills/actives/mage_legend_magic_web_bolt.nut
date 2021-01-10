@@ -7,8 +7,8 @@ this.mage_legend_magic_web_bolt <- this.inherit("scripts/skills/actives/mage_leg
 		this.m.ID="actives.mage_legend_magic_web_bolt";
 		this.m.Name = "Web Bolt";
 		this.m.Description = "Send a web of silk out to ensnare an opponent, rooting them in place halving their damage, defenses and initiative";
-		this.m.Icon = "skills/active_114.png";
-		this.m.IconDisabled = "skills/active_114.png";
+		this.m.Icon = "skills/web_bolt_01.png";
+		this.m.IconDisabled = "skills/web_bolt_01_bw.png";
 		this.m.Overlay = "active_114";
 		this.m.SoundOnUse = [
 			"sounds/enemies/dlc2/giant_spider_shoot_net_hit_01.wav",

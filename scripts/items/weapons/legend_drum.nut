@@ -7,8 +7,8 @@ this.legend_drum <- this.inherit("scripts/items/weapons/weapon", {
 		this.weapon.create();
 		this.m.ID = "weapon.legend_drum";
 		this.m.Name = "Drum";
-		this.m.Description = "A musical instrument, can produce inspiring rythms, if you have the skill. The drum sticks make short staves in a pinch.";
-		this.m.Categories = "Musical Instrument, Staff, Two-Handed";
+		this.m.Description = "A musical instrument, can produce inspiring rythms, if you have the skill. The drum sticks make weak maces in a pinch.";
+		this.m.Categories = "Musical Instrument, Mace, Two-Handed";
 		this.m.IconLarge = "weapons/melee/drum_01.png";
 		this.m.Icon = "weapons/melee/drum_01_70x70.png";
 		this.m.BreakingSound = "sounds/combat/lute_break_01.wav";
@@ -33,9 +33,8 @@ this.legend_drum <- this.inherit("scripts/items/weapons/weapon", {
 	function onEquip()
 	{
 		this.weapon.onEquip();
-		this.addSkill(this.new("scripts/skills/actives/legend_staff_bash"));
-		local s = this.new("scripts/skills/actives/legend_staff_knock_out");
-		s.m.IsFromLute = true;
+		this.addSkill(this.new("scripts/skills/actives/bash"));
+		local s = this.new("scripts/skills/actives/knock_out");
 		this.addSkill(s);
 	}
 

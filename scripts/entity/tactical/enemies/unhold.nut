@@ -240,7 +240,14 @@ this.unhold <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Items.getAppearance().Body = "bust_unhold_body_02";
 		this.addSprite("socket").setBrush("bust_base_beasts");
 		local body = this.addSprite("body");
+		if(this.Math.rand(1, 100) < 5)
+		{
+		body.setBrush("bust_unhold_body_04");
+		}
+		else
+		{
 		body.setBrush("bust_unhold_body_02");
+		}
 		body.varySaturation(0.1);
 		body.varyColor(0.09, 0.09, 0.09);
 		local injury_body = this.addSprite("injury");
@@ -248,7 +255,14 @@ this.unhold <- this.inherit("scripts/entity/tactical/actor", {
 		injury_body.setBrush("bust_unhold_02_injured");
 		this.addSprite("armor");
 		local head = this.addSprite("head");
+		if(this.Math.rand(1, 100) < 3)
+		{
+		head.setBrush("bust_unhold_head_04");
+		}
+		else
+		{
 		head.setBrush("bust_unhold_head_02");
+		}
 		head.Saturation = body.Saturation;
 		head.Color = body.Color;
 		this.addSprite("helmet");

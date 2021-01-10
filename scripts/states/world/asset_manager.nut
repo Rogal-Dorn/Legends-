@@ -1251,25 +1251,17 @@ this.asset_manager <- {
 					}
 					this.World.State.getWorldScreen().updateContract(activeContract);
 				}
-				local hasBeenFound = false;
 				foreach (town in towns)
 				{
 					if ((town.isMilitary() || town == activeContract.m.Home) && activeContract.isPlayerAt(town))
 					{
-						hasBeenFound = true;
 						activeContract.m.Home = this.WeakTableRef(town)
 						break
 					}
-				}
-				if (hasBeenFound)
-				{
-					foreach (town in towns)
-					{
-						town.getSprite("selection").Visible = false;
-					}
-				}
-					
+				}					
 			}
+				
+			update(_worldState)
 
 
 	}
