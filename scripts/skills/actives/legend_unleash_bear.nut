@@ -144,6 +144,12 @@ this.legend_unleash_bear <- this.inherit("scripts/skills/skill", {
 		local entity = this.Tactical.spawnEntity(this.m.Script, _targetTile.Coords.X, _targetTile.Coords.Y);
 		entity.setFaction(this.Const.Faction.PlayerAnimals);
 		entity.setName(this.m.EntityName);
+		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_dogwhisperer"))
+		{
+			entity.getSkills().add(this.new("scripts/skills/perks/perk_fortified_mind"));
+			entity.getSkills().add(this.new("scripts/skills/perks/perk_colossus"));
+			entity.getSkills().add(this.new("scripts/skills/perks/perk_underdog"));
+		}
 
 		return true;
 	}

@@ -2042,7 +2042,7 @@ gt.Const.Strings.PerkName <- {
 	MageLegendMasteryMagicMissileFocus = "Magic Missile Focus",
 	MageLegendMasteryMagicMissileMastery = "Magic Missile Mastery",
 	LegendUnarmedTraining = "Unarmed Training",
-	LegendUnarmedLunge = "Unarmed Movement"
+	LegendUnarmedLunge = "Unarmed Lunge"
 };
 
 gt.Const.Strings.PerkDescription <- {
@@ -2325,7 +2325,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendMindOverBody = "Push your body beyond what is humanly possible through your sheer force of will. Spend less fatigue on skills for each point of Resolve over 60. \n[color=#0b0084]From the Intelligent perk group[/color]",
 	LegendEscapeArtist = "Others see it as magic, but your deft hands know better. Grants a baseline 99% chance to break free from rooting effects, such as nets and webs. \n[color=#0b0084]From the Nets perk group[/color]",
 	LegendGatherer = "Knowledge of the landscape and vegetation provides a wealth of opportunities when gathering in camp. Apothecaries usualy gain their level as a percentage reduction in hours required to find special items. This skill doubles that bonus to twice their level. When the total bonus from all apothecaries is above 10%, they can also find mushrooms, poisons, antidotes and powders [color=#0b0084]From the Apothecary perk group[/color]",
-	LegendPotionBrewer = "Expertise in potions and tinctures allows the creation of potions while gathering in camp. This skill unlocks the chance to create lionheart, ironwill, recovery and cat potions while gathering. An apocethery or vala must gather the ingredients for the potion brewer. When the total level of all potion brewers gathering is above 20, they have a chance to create potions of knowledge and oblivion. Also unlocks alcohol crafting in the crafting tent. [color=#0b0084]From the Apothecary perk group[/color]",
+	LegendPotionBrewer = "Expertise in potions and tinctures allows the creation of potions while gathering in camp. This skill unlocks the chance to create lionheart, ironwill, recovery and cat potions while gathering. An apocethery, druid or vala must gather the ingredients for the potion brewer. When the total level of all potion brewers gathering is above 20, they have a chance to create potions of knowledge and oblivion. Also unlocks alcohol crafting in the crafting tent. [color=#0b0084]From the Apothecary perk group[/color]",
 	LegendSpecCultHood = "In Pain we find the truth of ourselves. We have no identity beyond servitude, our glory is agony. While your face is obscured by a cultist hood, gain [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] of your resolve as a bonus to melee and ranged defense. Also works with Cultist leather hood, leather helmet, decayed sack helm or mask of davkul",
 	LegendSpecCultArmor = "Pain is the embrace of God, our bodies keep us from bliss. Only in suffering can we know truth.  Gain [color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color] of your missing health as resolve, while wearing cultist robes, sackcloth, hide or leather wraps",
 	LegendPrepareBleed = "Time spent assessing an enemy, finding the arteries, will pay off in blood shed on the field. Grants the active skill Prepare to Bleed that primes your next strike to inflict intense but short lived bleeding.",
@@ -2425,8 +2425,8 @@ gt.Const.Strings.PerkDescription <- {
 	MageLegendMasteryHailstone = "Hailstone can now ignore 65% of armor and inflicts 125% damage to armor.",
 	MageLegendMasteryMagicMissileFocus = "Reduce AP cost of Magic Missile by 1.",
 	MageLegendMasteryMagicMissileMastery = "Reduce AP and cost of Magic Missile by 1. Reduce the base fatigue cost of Magic Missile from 16 to 10.",
-	LegendUnarmedTraining = "Focusing on technique, form and stances has given you greater control over your unarmed strikes. Increases the damage of your unarmed attacks based on your hitpoints and initiative. The damage is hitpoints plus initiative divided by four.",
-	LegendUnarmedLunge = "Unlocks the \'Unarmed Lunge\' skill that lets you move a tile and attack in a single action while unarmed. Does 10-20 damage without Unarmed Training. With Unarmed Training it does damage based on your Initiative and Hitpoints. Costs less fatigue and Action points if you have Unarmed Mastery. Costs less Action Points if you have Tumble."
+	LegendUnarmedTraining = "Focusing on technique, form and stances has given you greater control over your unarmed strikes. Increases the damage of your unarmed attacks based on your hitpoints and initiative. The damage is hitpoints plus initiative divided by four. [color=#0b0084]From the Unarmed perk group[/color]",
+	LegendUnarmedLunge = "Unlocks the \'Unarmed Lunge\' skill that lets you move a tile and attack in a single action while unarmed. Does 10-20 damage without Unarmed Training. With Unarmed Training it does damage based on your Initiative and Hitpoints. Costs less fatigue and Action points if you have Unarmed Mastery. Costs less Action Points if you have Tumble. [color=#0b0084]From the Unarmed perk group[/color]"
 
 };
 gt.Const.Strings.Tooltip <- {
