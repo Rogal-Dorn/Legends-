@@ -595,11 +595,11 @@ layers = [
  "title" :  "Flat Top Helm", \
  "desc" :  "A outstandingly well made and maintained flat full-metal helmet with noseguard." \
 },
-{"name" : "barbute"                     , "layer" : "helm", "min" : 1, "max" : 7, "value" : 2600, "con" : 180, "stam" : -7, "vis" : -1, "hair" : "true", "beard" : "false",  \
+{"name" : "barbute"                     , "layer" : "helm", "min" : 1, "max" : 7, "value" : 2600, "con" : 180, "stam" : -11, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Barbute", \
  "desc" :  "A sturdy yet light barbute helmet, a design uncommon in these lands, made from especially light and durable steel." \
 },
-{"name" : "barbute_named"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 3000, "con" : 200, "stam" : -7, "vis" : -2, "hair" : "true", "beard" : "true", "named" : True, "rminViz" : -1, "rmaxViz" : -2, "rminStam" : -5, "rmaxStam" : -7, "rminCond" : 200, "rmaxCond" : 225, "names" : Names,  \
+{"name" : "barbute_named"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 4500, "con" : 200, "stam" : -11, "vis" : -2, "hair" : "true", "beard" : "true", "named" : True, "rminViz" : -1, "rmaxViz" : -2, "rminStam" : -9, "rmaxStam" : -11, "rminCond" : 200, "rmaxCond" : 225, "names" : Names,  \
  "title" :  "Barbute", \
  "desc" :  "A superb barbute helmet of foreign origin, this helmet has been blackened and polished to a dark shine. " \
 },
@@ -611,7 +611,7 @@ layers = [
  "title" :  "Basinet", \
  "desc" :  "A well made metal bascinet" \
 },
-{"name" : "bascinet_named"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 3000, "con" : 190, "stam" : -10, "vis" : -1, "hair" : "true", "beard" : "false", "named" : True, "rminViz" : 0, "rmaxViz" : -1, "rminStam" : -7, "rmaxStam" : -10, "rminCond" : 190, "rmaxCond" : 215, "names" : Names,  \
+{"name" : "bascinet_named"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 5000, "con" : 220, "stam" : -13, "vis" : -1, "hair" : "true", "beard" : "false", "named" : True, "rminViz" : 0, "rmaxViz" : -1, "rminStam" : -10, "rmaxStam" : -13, "rminCond" : 220, "rmaxCond" : 235, "names" : Names,  \
  "title" :  "Bascinet", \
  "desc" :  "A heavy and durable bascinet. This one has a pointed head and is blackened." \
 },
@@ -631,7 +631,7 @@ layers = [
  "title" :  "Kettle Helm", \
  "desc" :  "A full-metal helmet with a broad rim." \
 },
-{"name" : "kettle_helm_named"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 2500, "con" : 180, "stam" : -6, "vis" : -2, "hair" : "true", "beard" : "false", "named" : True, "rminViz" : -1, "rmaxViz" : -2, "rminStam" : -3, "rmaxStam" : -6, "rminCond" : 160, "rmaxCond" : 185, "names" : Names, \
+{"name" : "kettle_helm_named"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 4500, "con" : 180, "stam" : -8, "vis" : -2, "hair" : "true", "beard" : "false", "named" : True, "rminViz" : -1, "rmaxViz" : -1, "rminStam" : -6, "rmaxStam" : -8, "rminCond" : 160, "rmaxCond" : 185, "names" : Names, \
  "title" :  "Kettle Helm", \
  "desc" :  "An exceptional and sturdy kettle helm. Blackened and polished, it has a gilded point." \
 },
@@ -639,7 +639,7 @@ layers = [
  "title" :  "Kettle Sallet", \
  "desc" :  "A full-metal sallet with a broad rim." \
 },
-{"name" : "enclave_skullcap"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1900, "con" : 120, "stam" : -7, "vis" : -2, "hair" : "false", "beard" : "false",  \
+{"name" : "enclave_skullcap"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1900, "con" : 75, "stam" : -5, "vis" : -1, "hair" : "false", "beard" : "false",  \
  "title" :  "Metal Skullcap", \
  "desc" :  "A metal cap that covers the head." \
 },
@@ -695,7 +695,7 @@ layers = [
  "title" :  "Armet", \
  "desc" :  "A finely crafted close helm of outstanding workmanship" \
 },
-{"name" : "enclave_armet"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 3000, "con" : 200, "stam" : -10, "vis" : -1, "hair" : "true", "beard" : "true",  \
+{"name" : "enclave_armet"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 4250, "con" : 240, "stam" : -12, "vis" : -1, "hair" : "true", "beard" : "true",  \
  "title" :  "Armet", \
  "desc" :  "A finely crafted armet of outstanding workmanship" \
 },
@@ -755,7 +755,7 @@ layers = [
  "title" :  "Dentist Helmet", \
  "desc" :  "Dentist Helmet" \
 },
-{"name" : "tailed_conic"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 4500, "con" : 185, "stam" : -15, "vis" : -2, "hair" : "true", "beard" : "false", "named" : True, "rminViz" : -1, "rmaxViz" : -2, "rminStam" : -12, "rmaxStam" : -15, "rminCond" : 185, "rmaxCond" : 210, "names" : Names,  \
+{"name" : "tailed_conic"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 4500, "con" : 185, "stam" : -11, "vis" : -2, "hair" : "true", "beard" : "false", "named" : True, "rminViz" : -1, "rmaxViz" : -2, "rminStam" : -12, "rmaxStam" : -15, "rminCond" : 185, "rmaxCond" : 210, "names" : Names,  \
  "title" :  "Feathered Nasal Helmet", \
  "desc" :  "A hardened nasal helmet with a unique neckguard made from leather scales." \
 },
