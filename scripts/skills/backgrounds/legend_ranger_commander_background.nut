@@ -78,60 +78,68 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 		];
 		this.m.CustomPerkTree = [
 			[
+				this.Const.Perks.PerkDefs.LegendMarkTarget,
+				this.Const.Perks.PerkDefs.LegendSummonHound,
+				this.Const.Perks.PerkDefs.LegendSpecialistShortbowSkill,
 				this.Const.Perks.PerkDefs.CripplingStrikes,
-				this.Const.Perks.PerkDefs.FastAdaption,
 				this.Const.Perks.PerkDefs.BagsAndBelts,
 				this.Const.Perks.PerkDefs.Student,
 				this.Const.Perks.PerkDefs.Recover,
 				this.Const.Perks.PerkDefs.Pathfinder,
 				this.Const.Perks.PerkDefs.Lookout,
-				this.Const.Perks.PerkDefs.LegendMarkTarget,
 				this.Const.Perks.PerkDefs.LegendBackToBasics,
 				this.Const.Perks.PerkDefs.LegendAlert,
-				this.Const.Perks.PerkDefs.LegendSummonHound
 				this.Const.Perks.PerkDefs.LegendRoster2
 			],
 			[
-				this.Const.Perks.PerkDefs.CoupDeGrace,
 				this.Const.Perks.PerkDefs.Bullseye,
+				this.Const.Perks.PerkDefs.LegendHairSplitter,
+				this.Const.Perks.PerkDefs.LegendDogWhisperer,
+				this.Const.Perks.PerkDefs.LegendNetRepair,
+				this.Const.Perks.PerkDefs.Debilitate,
+				this.Const.Perks.PerkDefs.Sprint,
 				this.Const.Perks.PerkDefs.Dodge,
 				this.Const.Perks.PerkDefs.QuickHands,
-				this.Const.Perks.PerkDefs.Gifted,
+				this.Const.Perks.PerkDefs.CoupDeGrace,
 				this.Const.Perks.PerkDefs.LegendNightvision,
-				this.Const.Perks.PerkDefs.Debilitate,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyDirewolf,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemySpider,
-				this.Const.Perks.PerkDefs.Sprint,
-				this.Const.Perks.PerkDefs.LegendOnslaught
+				this.Const.Perks.PerkDefs.LegendFavouredEnemySpider
+				
 			],
 			[
+				this.Const.Perks.PerkDefs.LegendSpecialistShortbowDamage,
+				this.Const.Perks.PerkDefs.LegendNetCasting,
+				this.Const.Perks.PerkDefs.LegendDogBreeder,
+				this.Const.Perks.PerkDefs.LegendSummonFalcon,
 				this.Const.Perks.PerkDefs.Backstabber,
 				this.Const.Perks.PerkDefs.Anticipation,
 				this.Const.Perks.PerkDefs.Rotation,
-				this.Const.Perks.PerkDefs.Feint,
 				this.Const.Perks.PerkDefs.Relentless,
 				this.Const.Perks.PerkDefs.DoubleStrike,
 				this.Const.Perks.PerkDefs.LegendAmmoBinding,
 				this.Const.Perks.PerkDefs.DevastatingStrikes,
-				this.Const.Perks.PerkDefs.LegendSummonFalcon
+				this.Const.Perks.PerkDefs.LegendOnslaught,
 				this.Const.Perks.PerkDefs.LegendRoster3
 			],
 			[
+				this.Const.Perks.PerkDefs.SpecCrossbow,
+				this.Const.Perks.PerkDefs.SpecBow,
+				this.Const.Perks.PerkDefs.LegendMasteryNets,
+				this.Const.Perks.PerkDefs.LegendPackleader,
 				this.Const.Perks.PerkDefs.SpecAxe,
 				this.Const.Perks.PerkDefs.SpecSword,
 				this.Const.Perks.PerkDefs.SpecDagger,
-				this.Const.Perks.PerkDefs.SpecCrossbow,
-				this.Const.Perks.PerkDefs.SpecBow,
+                this.Const.Perks.PerkDefs.SpecThrowing,				
 				this.Const.Perks.PerkDefs.LegendMasterySlings,
-				this.Const.Perks.PerkDefs.LegendMasteryNets,
 				this.Const.Perks.PerkDefs.LegendSpecPoison,
 				this.Const.Perks.PerkDefs.SpecThrowing
 			],
 			[
+				this.Const.Perks.PerkDefs.CloseCombatArcher,
+				this.Const.Perks.PerkDefs.LegendDogMaster,
 				this.Const.Perks.PerkDefs.Overwhelm,
 				this.Const.Perks.PerkDefs.LoneWolf,
-				this.Const.Perks.PerkDefs.Footwork,
-				this.Const.Perks.PerkDefs.CloseCombatArcher,
+				this.Const.Perks.PerkDefs.LegendEvasion,
 				this.Const.Perks.PerkDefs.Ballistics,
 				this.Const.Perks.PerkDefs.LegendHeightenedReflexes,
 				this.Const.Perks.PerkDefs.LegendIncoming,
@@ -139,7 +147,6 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.PerkDefs.LegendLithe,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyOrk,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyGoblin,
-				this.Const.Perks.PerkDefs.LegendSummonWolf,
 				this.Const.Perks.PerkDefs.LegendRoster5
 			],
 			[
@@ -158,18 +165,15 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.PerkDefs.LegendRoster6
 			],
 			[
+				this.Const.Perks.PerkDefs.LegendBigGameHunter,
 				this.Const.Perks.PerkDefs.KillingFrenzy,
 				this.Const.Perks.PerkDefs.PerfectFocus,
 				this.Const.Perks.PerkDefs.BattleFlow,
-				//this.Const.Perks.PerkDefs.LegendGuideSteps,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyUnhold,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyLindwurm,
-				this.Const.Perks.PerkDefs.LegendEvasion,
 				this.Const.Perks.PerkDefs.LegendBalance,
 				this.Const.Perks.PerkDefs.LegendHidden,
 				this.Const.Perks.PerkDefs.LegendFreedomOfMovement,
-				this.Const.Perks.PerkDefs.LegendBigGameHunter,
-				this.Const.Perks.PerkDefs.LegendSummonBear,
 				this.Const.Perks.PerkDefs.LegendRoster7
 			],
 			[],
@@ -294,7 +298,7 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 
 
 		local r;
-		items.equip(this.new("scripts/items/weapons/hunting_bow"));
+		items.equip(this.new("scripts/items/weapons/short_bow"));
 		items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
 
 		local stash = this.World.Assets.getStash()

@@ -78,7 +78,7 @@ this.weapon <- this.inherit("scripts/items/item", {
 
 	function getShieldDamage()
 	{
-		local bonus = 0;
+		local bonus = 1;
 		if (this.getContainer() == null)
 		{
 			return this.m.ShieldDamage;
@@ -90,9 +90,10 @@ this.weapon <- this.inherit("scripts/items/item", {
 		local skill = this.getContainer().getActor().getSkills().getSkillByID("perk.legend_smashing_shields")
 		if (skill == null)
 		{
+			local bonus = skill.getModifier();
 			return this.m.ShieldDamage;
 		}
-		local bonus = skill.getModifier();
+		
 		return this.Math.round( this.m.ShieldDamage + this.m.ShieldDamage * bonus);
 		}
 

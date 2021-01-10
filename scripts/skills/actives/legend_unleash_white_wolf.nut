@@ -151,6 +151,13 @@ this.legend_unleash_white_wolf <- this.inherit("scripts/skills/skill", {
 			entity.setMoraleState(this.Const.MoraleState.Confident);
 		}
 
+		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_dogwhisperer"))
+		{
+			entity.getSkills().add(this.new("scripts/skills/perks/perk_fortified_mind"));
+			entity.getSkills().add(this.new("scripts/skills/perks/perk_colossus"));
+			entity.getSkills().add(this.new("scripts/skills/perks/perk_underdog"));
+		}
+
 		if (!this.World.getTime().IsDaytime)
 		{
 			entity.getSkills().add(this.new("scripts/skills/special/night_effect"));

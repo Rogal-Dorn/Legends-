@@ -1260,8 +1260,6 @@ this.asset_manager <- {
 					}
 				}					
 			}
-				
-			update(_worldState)
 
 
 	}

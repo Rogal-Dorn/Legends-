@@ -37,5 +37,10 @@ this.perk_legend_tools_spares <- this.inherit("scripts/skills/skill", {
 		}
 		this.World.State.getPlayer().calculateArmorPartsModifier();
 	}
+	
+	function onUpdate( _properties )
+	{
+		_properties.Stamina += 6;
+	}
 
 });

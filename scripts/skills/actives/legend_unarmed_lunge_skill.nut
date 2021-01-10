@@ -9,12 +9,12 @@ this.legend_unarmed_lunge_skill <- this.inherit("scripts/skills/skill", {
 	},
 	function create()
 	{
-		this.m.ID = "actives.lunge";
+		this.m.ID = "actives.legend_unarmed_lunge";
 		this.m.Name = "Jump Attack";
 		this.m.Description = "A jump forward and attack combined into a single move";
 		this.m.KilledString = "Hit";
-		this.m.Icon = "skills/active_135.png";
-		this.m.IconDisabled = "skills/active_135_sw.png";
+		this.m.Icon = "skills/unarmed_lunge_square.png";
+		this.m.IconDisabled = "skills/unarmed_lunge_square_bw.png";
 		this.m.Overlay = "active_135";
 		this.m.SoundOnUse = [
 			"sounds/combat/dlc2/lunge_move_01.wav",

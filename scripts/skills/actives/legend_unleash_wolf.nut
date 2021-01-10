@@ -54,8 +54,8 @@ this.legend_unleash_wolf <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "actives.legend_unleash_wolf";
 		this.m.Name = "Summon Wolf";
 		this.m.Description = "Summon a faithful wolf. Needs a free tile adjacent. Only one per battle";
-		this.m.Icon = "skills/active_165.png";
-		this.m.IconDisabled = "skills/active_165_sw.png";
+		this.m.Icon = "skills/wolf2_square.png";
+		this.m.IconDisabled = "skills/wolf2_square_bw.png";
 		this.m.Overlay = "active_165";
 		this.m.SoundOnUse = [
 			"sounds/enemies/wolf_idle_00.wav",
@@ -166,6 +166,18 @@ this.legend_unleash_wolf <- this.inherit("scripts/skills/skill", {
 		local entity = this.Tactical.spawnEntity(this.m.Script, _targetTile.Coords.X, _targetTile.Coords.Y);
 		entity.setFaction(this.Const.Faction.PlayerAnimals);
 		entity.setName(this.m.EntityName);
+
+		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_dogwhisperer"))
+		{
+			entity.getSkills().add(this.new("scripts/skills/perks/perk_fortified_mind"));
+			entity.getSkills().add(this.new("scripts/skills/perks/perk_colossus"));
+			entity.getSkills().add(this.new("scripts/skills/perks/perk_underdog"));
+		}
+
+		if (this.getContainer().hasSkill("background.houndmaster"))
+		{
+			entity.setMoraleState(this.Const.MoraleState.Confident);
+		}
 
 		return true;
 	}

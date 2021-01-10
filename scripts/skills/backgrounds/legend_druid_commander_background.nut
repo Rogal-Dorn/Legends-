@@ -100,92 +100,91 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 			0.0 //oasis
 		];
 			this.m.CustomPerkTree = [
-			[
+			[	
+				this.Const.Perks.PerkDefs.LegendMedIngredients,
+				this.Const.Perks.PerkDefs.LegendWither,
+				this.Const.Perks.PerkDefs.LegendUnarmedTraining,
+				this.Const.Perks.PerkDefs.LegendSpecStaffSkill,
+				this.Const.Perks.PerkDefs.LegendSpecialistSickleSkill,
 				this.Const.Perks.PerkDefs.Student,
 				this.Const.Perks.PerkDefs.Colossus,
 				this.Const.Perks.PerkDefs.NineLives,
 				this.Const.Perks.PerkDefs.Pathfinder,
 				this.Const.Perks.PerkDefs.Recover,
-				this.Const.Perks.PerkDefs.LegendSpecStaffSkill,
-				this.Const.Perks.PerkDefs.LegendAlert,
-				this.Const.Perks.PerkDefs.LegendTrueForm,
-				this.Const.Perks.PerkDefs.LegendGatherer,
-				this.Const.Perks.PerkDefs.LegendMedIngredients,
-				this.Const.Perks.PerkDefs.LegendWither
-				
+				this.Const.Perks.PerkDefs.LegendAlert
 			],
 			[
+				this.Const.Perks.PerkDefs.LegendScryTrance,
+				this.Const.Perks.PerkDefs.LegendGatherer,
+				this.Const.Perks.PerkDefs.LegendKick,
+				this.Const.Perks.PerkDefs.FortifiedMind,
 				this.Const.Perks.PerkDefs.CoupDeGrace,
 				this.Const.Perks.PerkDefs.Dodge,
 				this.Const.Perks.PerkDefs.HoldOut,
 				this.Const.Perks.PerkDefs.LegendComposure,
 				this.Const.Perks.PerkDefs.QuickHands,
-				this.Const.Perks.PerkDefs.FortifiedMind,
 				this.Const.Perks.PerkDefs.LegendSmackdown,
-				this.Const.Perks.PerkDefs.LegendOnslaught,
-				this.Const.Perks.PerkDefs.LegendKick,
-				this.Const.Perks.PerkDefs.LegendScryTrance,
-				this.Const.Perks.PerkDefs.LegendSummonFalcon
+				this.Const.Perks.PerkDefs.LegendOnslaught			
 			],
 			[
+				this.Const.Perks.PerkDefs.LegendRoots,
+				this.Const.Perks.PerkDefs.LegendHerbcraft,
+				this.Const.Perks.PerkDefs.LegendPrayerOfLife,
+				this.Const.Perks.PerkDefs.LegendGrapple,
+				this.Const.Perks.PerkDefs.LegendSpecialistSickleDamage,
+				this.Const.Perks.PerkDefs.LegendSpecStaffStun,
 				this.Const.Perks.PerkDefs.Rotation,
 				this.Const.Perks.PerkDefs.Taunt,
 				this.Const.Perks.PerkDefs.Feint,
 				this.Const.Perks.PerkDefs.Relentless,
-				this.Const.Perks.PerkDefs.LegendSpecStaffStun,
-				this.Const.Perks.PerkDefs.LegendGrapple,
-				this.Const.Perks.PerkDefs.LegendSecondWind,
-				this.Const.Perks.PerkDefs.LegendRoots,
-				this.Const.Perks.PerkDefs.LegendPrayerOfLife
-
+				this.Const.Perks.PerkDefs.LegendSecondWind
 			],
-			[
+			[		
+				this.Const.Perks.PerkDefs.LegendPoisonImmunity,
+				this.Const.Perks.PerkDefs.LegendSpecBandage,
+				this.Const.Perks.PerkDefs.LegendSpecPoison,
 				this.Const.Perks.PerkDefs.LegendSummonWolf,
+				this.Const.Perks.PerkDefs.LegendSpecFists,
+				this.Const.Perks.PerkDefs.SpecSword,
 				this.Const.Perks.PerkDefs.SpecThrowing,
 				this.Const.Perks.PerkDefs.LegendMasteryStaves,
-				this.Const.Perks.PerkDefs.LegendSpecFists,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyGoblin,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyBandit,
-				this.Const.Perks.PerkDefs.LegendSpecBandage,
-				this.Const.Perks.PerkDefs.LegendPoisonImmunity,
-				this.Const.Perks.PerkDefs.LegendSpecPoison,
-				this.Const.Perks.PerkDefs.LegendPotionBrewer
-	
-				
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyBandit	
 			],
 			[
+				this.Const.Perks.PerkDefs.LegendPotionBrewer,
+				this.Const.Perks.PerkDefs.LegendChoke,
+				this.Const.Perks.PerkDefs.LegendReadOmensTrance,
+				this.Const.Perks.PerkDefs.LegendInsects,
 				this.Const.Perks.PerkDefs.LoneWolf,
 				this.Const.Perks.PerkDefs.Footwork,
 				this.Const.Perks.PerkDefs.Vengeance,
 				this.Const.Perks.PerkDefs.LegendBattleheart,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyOrk,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyNoble
-				this.Const.Perks.PerkDefs.LegendChoke,
-				this.Const.Perks.PerkDefs.LegendSummonStorm,
-				this.Const.Perks.PerkDefs.LegendInsects,
-				this.Const.Perks.PerkDefs.LegendReadOmensTrance
 			],
 			[
+				this.Const.Perks.PerkDefs.LegendDrumsOfLife,
+				this.Const.Perks.PerkDefs.LegendDistantVisions,
+				this.Const.Perks.PerkDefs.LegendUnarmedLunge,
+				this.Const.Perks.PerkDefs.LegendMuscularity,
+				this.Const.Perks.PerkDefs.LegendSummonStorm,
 				this.Const.Perks.PerkDefs.Berserk,
 				this.Const.Perks.PerkDefs.Nimble,
 				this.Const.Perks.PerkDefs.LegendMindOverBody,
 				this.Const.Perks.PerkDefs.LastStand,
-				this.Const.Perks.PerkDefs.Rebound,
-				this.Const.Perks.PerkDefs.LegendInsects,
-				this.Const.Perks.PerkDefs.LegendMuscularity,
-				this.Const.Perks.PerkDefs.LegendDrumsOfLife,
-				this.Const.Perks.PerkDefs.LegendDistantVisions,
-				this.Const.Perks.PerkDefs.LegendSummonBear
+				this.Const.Perks.PerkDefs.Rebound		
 			],
 			[
+				this.Const.Perks.PerkDefs.LegendMiasma,
+				this.Const.Perks.PerkDefs.LegendFieldTriage,
+				this.Const.Perks.PerkDefs.LegendTumble,
+				this.Const.Perks.PerkDefs.LegendSummonBear,
 				this.Const.Perks.PerkDefs.Fearsome,
 				this.Const.Perks.PerkDefs.Duelist,
 				this.Const.Perks.PerkDefs.KillingFrenzy,
 				this.Const.Perks.PerkDefs.BattleFlow,
 				this.Const.Perks.PerkDefs.Stalwart,
-				this.Const.Perks.PerkDefs.LegendUberNimble,
-				this.Const.Perks.PerkDefs.LegendMiasma,
-				this.Const.Perks.PerkDefs.LegendFieldTriage,
 				this.Const.Perks.PerkDefs.LegendFreedomOfMovement
 			
 			]
@@ -341,7 +340,7 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");
 		stash.removeByID("supplies.ground_grains");
-
+		items.equip(this.new("scripts/items/weapons/legend_sickle"));
 		items.equip(this.Const.World.Common.pickArmor([
 			[1, "barbarians/hide_and_bone_armor"]
 		]));
