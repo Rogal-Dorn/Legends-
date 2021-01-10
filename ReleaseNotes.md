@@ -4671,15 +4671,16 @@ Changed values for certain helms to balance out some stats
 
 
 **Unarmed changes **
-Hand to Hand scaling is now simply  ((Ini + HP )/ 4). That is half the average.  This removes the upper cap. Tooltip updated to be clearer
+Hand to Hand scaling is now simply  ((Ini + HP )/ 3).  This removes the upper cap. Tooltip updated to be clearer.
 Hand to hand now only scales on hp and ini if you take the Unarmed Trainting perk, which is in t1 of unarmed perk tree. This means enemies no longer have unarmed unless given this perk
 A new unarmed lunge perk added to unarmed tree to give more mobility to unarmed builds
 
 **commander perk trees**
 Berserker tweaked to provide better options for two handed swords, beast fighting and unarmed
-Ranger tweaked to add dog handling, nets a shortbow perks. no longer summons bears
-Assassin tweaked to provide better dagger build, unarmed and mobility
-Druid tweaked to have builds for sickle, and better crafting and magic paths
+Ranger tweaked to be more of a hunter, add dog handling, nets a shortbow perks. no longer summons bears, begins with a shortbow
+Assassin tweaked to provide better builds for dagger, unarmed and mobility
+Druid tweaked to have builds for sickle, and better crafting and magic paths . begins with a sickle
+
 
 **Changes**
 Lute specialisation skills now includes drums and named lutes
@@ -4703,7 +4704,16 @@ Fixes the vala warden crashes.
 Updates Turn It In mod to resolve contracts not disapearing
 Fixes crahs in historian jumped by cultist event
 Fixes noble scenario units having 4-5 traits
-smashing shields now acts as it should
+smashing shields now acts as it should , it was inadvertently reducing shield damage from everyone who didn't have it.
+fixes Insects swarm active skill icon
+Dog whisperer applies to hsummound hounds, wolves, whitewolves and bears
+Wither correctly applies withered instead of debilitiated, tooltip updated .
+Withered now lowers a targets damage, initaitive and fatigue for 30%, reducing by 10% each turn
+Wolfsbane description typo fixed
+Miasma's tooltip updated to explain what it does, fatigue and AP cost increased
+Summon storm's description updated to explain exactly what it does
+dark tunics no longer overlap the body
+
 
 **Armor Tweaks**
 Added new plate armor
