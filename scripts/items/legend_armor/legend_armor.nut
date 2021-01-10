@@ -918,6 +918,22 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		return (this.m.ItemType & _t) != 0;
 	}
 
+	function hasLayerID(_id)
+	{
+		foreach( u in this.m.Upgrades )
+		{
+			if (u == null)
+			{
+				continue;
+			}
+
+			if (u.getID() == _id) {
+				return true
+			}
+		}
+		return false
+	}
+
 	// function getBuyPrice()
 	// {
 	// 	local basePrice = this.armor.getBuyPrice();

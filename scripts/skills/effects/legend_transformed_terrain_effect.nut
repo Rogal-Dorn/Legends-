@@ -98,10 +98,8 @@ this.legend_transformed_terrain_effect <- this.inherit("scripts/skills/skill", {
 
 		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_true_form"))
 		{
-			this.m.TurnsLeft = 8;
+			this.m.TurnsLeft = 6;
 		}
-
-
 
 	}
 

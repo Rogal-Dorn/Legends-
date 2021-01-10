@@ -8,7 +8,7 @@ this.legend_rat_bite_skill <- this.inherit("scripts/skills/skill", {
 		this.m.KilledString = "Gnawed";
 		this.m.Icon = "skills/rat_bite.png";
 		this.m.IconDisabled = "skills/rat_bite_bw.png";
-		this.m.Overlay = "rate_bite";
+		this.m.Overlay = "rat_bite";
 		this.m.SoundOnUse = [
 			"sounds/enemies/zombie_bite_01.wav",
 			"sounds/enemies/zombie_bite_02.wav",

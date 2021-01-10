@@ -30,16 +30,32 @@ this.perk_legend_specialist_cult_armor <- this.inherit("scripts/skills/skill", {
 				case "armor.body.reinforced_animal_hide_armor":
 				case "armor.body.hide_and_bone_armor":
 				case "armor.body.animal_hide_armor":
-				case "legend.armor.body.patched_sackcloth":
-				case "legend.armor.body.tattered_sackcloth":
-				case "legend.armor.body.sackcloth":
+				case "legend_armor.body.legend_sackcloth_patched":
+				case "legend_armor.body.legend_sackcloth_tattered":
+				case "legend_armor.body.legend_sackcloth":
+				case "legend_armor.body.legend_wrap":
 				case "legend_armor.body.cultist_leather_robe":
-				case "legend.armor.body.monk_robes":
-				case "legend_armor.body.animal_hide_armor":
-				case "legend_armor.body.legend_hide_and_bone_armor":
-				case "legend_armor.body.reinforced_animal_hide_armor":
+				case "legend_armor.body.legend_robes":
 					_properties.Bravery += this.Math.floor(healthMissing * 0.5);
-					break;
+					return
+			}
+
+			if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+			{
+				local validLayers = [
+					"legend_armor.body.legend_animal_hide_armor",
+					"legend_armor.body.legend_hide_and_bone_armor",
+					"legend_armor.body.legend_reinforced_animal_hide_armor"
+				]
+
+				foreach (v in validLayers)
+				{
+					if (item.hasLayerID(v))
+					{
+						_properties.Bravery += this.Math.floor(healthMissing * 0.5);
+						return
+					}
+				}
 			}
 		}
 	}
