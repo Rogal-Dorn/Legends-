@@ -123,6 +123,8 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyGoblin,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyDirewolf,
 				this.Const.Perks.PerkDefs.Rotation,
+				this.Const.Perks.PerkDefs.Brawny,
+				this.Const.Perks.PerkDefs.Anticipation,
 				this.Const.Perks.PerkDefs.Taunt,
 				this.Const.Perks.PerkDefs.Feint,
 				this.Const.Perks.PerkDefs.Debilitate,
@@ -171,7 +173,6 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 				this.Const.Perks.PerkDefs.Nimble,
 				this.Const.Perks.PerkDefs.LastStand,
 				this.Const.Perks.PerkDefs.Rebound,
-				this.Const.Perks.PerkDefs.LegendLacerate,
 				this.Const.Perks.PerkDefs.LastStand,
 				this.Const.Perks.PerkDefs.LegendMuscularity,
 				this.Const.Perks.PerkDefs.LegendForwardPush
@@ -347,9 +348,6 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 		stash.add(this.new("scripts/items/accessory/berserker_mushrooms_item"));
 		stash.add(this.new("scripts/items/accessory/berserker_mushrooms_item"));
 		stash.add(this.new("scripts/items/supplies/roots_and_berries_item"));
-		stash.add(this.new("scripts/items/supplies/medicine_item"));
-		stash.add(this.new("scripts/items/weapons/throwing_axe"));
-		
 		items.equip(this.Const.World.Common.pickArmor([
 			[1, "werewolf_hide_armor"]
 		]));
@@ -358,28 +356,27 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 
 		if (r == 0)
 		{
-			items.equip(this.new("scripts/items/weapons/ancient/rhomphaia"));
 		}
 		else if (r == 1)
 		{
-			items.equip(this.new("scripts/items/weapons/warbrand"));
+			items.equip(this.new("scripts/items/weapons/legend_chain"));
 		}
 		else if (r == 2)
 		{
-			items.equip(this.new("scripts/items/weapons/ancient/crypt_cleaver"));
+			items.equip(this.new("scripts/items/weapons/butchers_cleaver"));
 		}
 
 		else if (r == 3)
 		{
-			items.equip(this.new("scripts/items/weapons/greenskins/orc_flail_2h"));
+			items.equip(this.new("scripts/items/weapons/throwing_axe"));
 		}
 		else if (r == 4)
 		{
-			items.equip(this.new("scripts/items/weapons/greenskins/orc_axe_2h"));
+			items.equip(this.new("scripts/items/weapons/hatchet"));
 		}
 		else if (r == 5)
 		{
-			items.equip(this.new("scripts/items/weapons/legend_infantry_axe"));
+			items.equip(this.new("scripts/items/weapons/woodcutters_axe"));
 		}
 
 		this.getContainer().getActor().TherianthropeInfectionRandom();

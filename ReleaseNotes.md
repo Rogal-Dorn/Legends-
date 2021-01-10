@@ -4677,10 +4677,16 @@ A new unarmed lunge perk added to unarmed tree to give more mobility to unarmed 
 
 **commander perk trees**
 Berserker tweaked to provide better options for two handed swords, beast fighting and unarmed
-Ranger tweaked to be more of a hunter, add dog handling, nets a shortbow perks. no longer summons bears, begins with a shortbow
-Assassin tweaked to provide better builds for dagger, unarmed and mobility
-Druid tweaked to have builds for sickle, and better crafting and magic paths . begins with a sickle
-
+* Gains bags and belts, unarmed training, favoured enemy direwolves and goblins, greatsword specialisation, reach advantage, unarmed lunge, doublestrike and bloodbath
+* Loses fast adaption, one handed sword specialisation, begins with much weaker weapons.
+Ranger tweaked to be more of a hunter, add dog handling, nets a shortbow perks.
+* Gains Small Game, Poachers Arm, Net Repair, Net Casting Net Mastery, hair splitter, summon hound, dog whisperer, dog breeder, pack leader, dog master
+* Loses Summon bear, Summon wolf, feint, gifted, fast adaption, student, relentless. begins with shortbow
+Assassin tweaked to provide better builds for dagger, unarmed and mobility.
+* Gains knife fighting, prisoners rush, unarmed training, unarmed lunge, escape artist, unarmed lunge, leap, tumble, wind reader, heightened refleces, battleflow, perfect focus
+* loses nine lives, prepare bleed, slaughter, rondel dagger on start.
+Druid tweaked to have builds for sickle, and better crafting and combat . begins with a sickle
+* Gains gatherer's cuts, harvest twists, herbcraft, potion brewer, unarmed lunge, tumble , clarity
 
 **Changes**
 Lute specialisation skills now includes drums and named lutes
@@ -4690,23 +4696,19 @@ Unholds are bigger trolls and ocassionally have unhold gfs
 Mastaba fight rearranged to be more swarmy and not have folks stuck on poles unles they want to be
 Most mage perks have new art, soothing wind nerfed to 4 tiles
 
-
 **resource perks**
 Ammunition bindings now also increase ranged skill by 5%
 Ammunition bundes now also increas ranged defense by 5%
 Medicine packages and medicine ingrediants both increase resolve by 5%
 Tools drawers and tools spares increase fatigue
 
-
 **Fixes**
 Knights rarely spawning with a named helmet that didn't exist
 Fixes the vala warden crashes.
 Updates Turn It In mod to resolve contracts not disapearing
-Fixes crash in historian jumped by cultist event
-Fixes noble scenario units having 4-5 traits
 smashing shields now acts as it should , it was inadvertently reducing shield damage from everyone who didn't have it.
 fixes Insects swarm active skill icon
-Dog whisperer applies to summound hounds, wolves, whitewolves and bears
+Dog whisperer applies to hsummound hounds, wolves, whitewolves and bears
 Wither correctly applies withered instead of debilitiated, tooltip updated .
 Withered now lowers a targets damage, initaitive and fatigue for 30%, reducing by 10% each turn
 Wolfsbane description typo fixed
@@ -4716,9 +4718,11 @@ dark tunics no longer overlap the body
 BanditVerme will not spawn if Lycanthropy is disabled.
 Fix incorrect base image for beggar scenario.
 Fixes armor layers not working on Cultist Penance perk
+Fixes crash in historian jumped by cultist event
 
 **Armor Tweaks**
 Added new plate armor
+Tweaks to various Enclave helmets and armors stats
 
 
 
