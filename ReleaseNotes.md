@@ -4670,7 +4670,7 @@ Changed values for certain helms to balance out some stats
 15.0.0.25
 
 
-**Unarmed changes **
+**Unarmed changes**
 Hand to Hand scaling is now simply  ((Ini + HP )/ 3).  This removes the upper cap. Tooltip updated to be clearer.
 Hand to hand now only scales on hp and ini if you take the Unarmed Trainting perk, which is in t1 of unarmed perk tree. This means enemies no longer have unarmed unless given this perk
 A new unarmed lunge perk added to unarmed tree to give more mobility to unarmed builds
@@ -4702,11 +4702,11 @@ Tools drawers and tools spares increase fatigue
 Knights rarely spawning with a named helmet that didn't exist
 Fixes the vala warden crashes.
 Updates Turn It In mod to resolve contracts not disapearing
-Fixes crahs in historian jumped by cultist event
+Fixes crash in historian jumped by cultist event
 Fixes noble scenario units having 4-5 traits
 smashing shields now acts as it should , it was inadvertently reducing shield damage from everyone who didn't have it.
 fixes Insects swarm active skill icon
-Dog whisperer applies to hsummound hounds, wolves, whitewolves and bears
+Dog whisperer applies to summound hounds, wolves, whitewolves and bears
 Wither correctly applies withered instead of debilitiated, tooltip updated .
 Withered now lowers a targets damage, initaitive and fatigue for 30%, reducing by 10% each turn
 Wolfsbane description typo fixed
@@ -4714,6 +4714,8 @@ Miasma's tooltip updated to explain what it does, fatigue and AP cost increased
 Summon storm's description updated to explain exactly what it does
 dark tunics no longer overlap the body
 BanditVerme will not spawn if Lycanthropy is disabled.
+Fix incorrect base image for beggar scenario.
+Fixes armor layers not working on Cultist Penance perk
 
 **Armor Tweaks**
 Added new plate armor
