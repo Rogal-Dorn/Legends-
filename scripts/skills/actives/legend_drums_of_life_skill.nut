@@ -57,10 +57,10 @@ this.legend_drums_of_life_skill <- this.inherit("scripts/skills/skill", {
 		{
 			return false;
 		}
-		if (!this.skill.isUsable) {
+		if (!this.skill.isUsable()) {
 			return false;
 		}
-		return this.Const.Items.MusicalItems.find(mainhand.getID())
+		return this.Const.Items.MusicalItems.find(mainhand.getID()) != null;
 	}
 
 	function onUse( _user, _targetTile )

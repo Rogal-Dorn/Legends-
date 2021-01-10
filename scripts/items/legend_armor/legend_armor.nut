@@ -800,6 +800,11 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 
 	function onUpdateProperties( _properties )
 	{
+		if (this.getContainer() == null)
+		{
+			return;
+		}
+
 		if (this.getContainer().getActor() == null)
 		{
 			return;

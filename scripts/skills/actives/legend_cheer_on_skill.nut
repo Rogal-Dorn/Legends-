@@ -61,10 +61,10 @@ this.legend_cheer_on_skill <- this.inherit("scripts/skills/skill", {
 		{
 			return false;
 		}
-		if (!this.skill.isUsable) {
+		if (!this.skill.isUsable()) {
 			return false;
 		}
-		return this.Const.Items.MusicalItems.find(mainhand.getID())
+		return this.Const.Items.MusicalItems.find(main.getID()) != null;
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )

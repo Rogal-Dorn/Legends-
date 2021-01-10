@@ -946,6 +946,11 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 
 	function onUpdateProperties( _properties )
 	{
+		if (this.getContainer() == null)
+		{
+			return;
+		}
+
 		if (this.getContainer().getActor() == null)
 		{
 			return;

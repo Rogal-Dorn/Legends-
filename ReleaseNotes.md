@@ -4695,6 +4695,7 @@ New named butcher's cleaver added, butchers skills apply to it, spawns on champi
 Unholds are bigger trolls and ocassionally have unhold gfs
 Mastaba fight rearranged to be more swarmy and not have folks stuck on poles unles they want to be
 Most mage perks have new art, soothing wind nerfed to 4 tiles
+Reduces the number of infected Barbarians if Lycanthropy is enabled. (about 1 in 20 will be infected now)
 
 **resource perks**
 Ammunition bindings now also increase ranged skill by 5%
@@ -4719,6 +4720,7 @@ BanditVerme will not spawn if Lycanthropy is disabled.
 Fix incorrect base image for beggar scenario.
 Fixes armor layers not working on Cultist Penance perk
 Fixes crash in historian jumped by cultist event
+Fixes crashes from the BanditVerme and Barbarian Were transformations.
 
 **Armor Tweaks**
 Added new plate armor
