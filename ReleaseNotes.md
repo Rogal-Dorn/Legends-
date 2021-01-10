@@ -4688,8 +4688,10 @@ Knights rarely spawning with a named helmet that didn't exist
 Fixes the vala warden crashes.
 Updates Turn It In mod to resolve contracts not disapearing
 Fixes crahs in historian jumped by cultist event
+Fixes noble scenario units having 4-5 traits
 
 **Armor Tweaks**
 Added new plate armor
+
 
 
