@@ -755,7 +755,7 @@ layers = [
  "title" :  "Dentist Helmet", \
  "desc" :  "Dentist Helmet" \
 },
-{"name" : "tailed_conic"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 4500, "con" : 185, "stam" : -15, "vis" : -2, "hair" : "true", "beard" : "false", "named" : True, "rminViz" : -1, "rmaxViz" : -2, "rminStam" : -12, "rmaxStam" : -15, "rminCond" : 185, "rmaxCond" : 210, "names" : Names,  \
+{"name" : "tailed_conic"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 4500, "con" : 185, "stam" : -11, "vis" : -2, "hair" : "true", "beard" : "false", "named" : True, "rminViz" : -1, "rmaxViz" : -2, "rminStam" : -12, "rmaxStam" : -15, "rminCond" : 185, "rmaxCond" : 210, "names" : Names,  \
  "title" :  "Feathered Nasal Helmet", \
  "desc" :  "A hardened nasal helmet with a unique neckguard made from leather scales." \
 },
