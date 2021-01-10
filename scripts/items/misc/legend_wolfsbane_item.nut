@@ -4,7 +4,7 @@ this.legend_wolfsbane_item <- this.inherit("scripts/items/item", {
 	{
 		this.m.ID = "misc.legend_wolfsbane";
 		this.m.Name = "Wolfsbane";
-		this.m.Description = "This perenial species of poisonous flower typically grows in moutnain meadows. Can be used to great effect on were creatures.";
+		this.m.Description = "This perenial species of poisonous flower typically grows in mountain meadows. Can be used to craft things with great effect on were creatures.";
 		this.m.Icon = "misc/inventory_wolfsbane.png";
 		this.m.SlotType = this.Const.ItemSlot.None;
 		this.m.ItemType = this.Const.Items.ItemType.Misc | this.Const.Items.ItemType.Crafting;

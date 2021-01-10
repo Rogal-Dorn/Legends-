@@ -1,6 +1,6 @@
 this.withered_effect <- this.inherit("scripts/skills/skill", {
 	m = {
-		TurnsLeft = 2
+		TurnsLeft = 3
 	},
 	function create()
 	{
@@ -37,19 +37,19 @@ this.withered_effect <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/regular_damage.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-" + this.m.TurnsLeft * 25 + "%[/color] Damage"
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-" + this.m.TurnsLeft * 10 + "%[/color] Damage"
 			},
 			{
 				id = 12,
 				type = "text",
 				icon = "ui/icons/initiative.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-" + this.m.TurnsLeft * 25 + "%[/color] Initiative"
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-" + this.m.TurnsLeft * 10 + "%[/color] Initiative"
 			},
 			{
 				id = 12,
 				type = "text",
 				icon = "ui/icons/fatigue.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-" + this.m.TurnsLeft * 25 + "%[/color] Max Fatigue"
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-" + this.m.TurnsLeft * 10 + "%[/color] Max Fatigue"
 			},
 			{
 				id = 11,
@@ -86,9 +86,9 @@ this.withered_effect <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		local actor = this.getContainer().getActor();
-		_properties.DamageTotalMult *= 1.0 - this.m.TurnsLeft * 0.25;
-		_properties.InitiativeMult *= 1.0 - this.m.TurnsLeft * 0.25;
-		_properties.StaminaMult *= 1.0 - this.m.TurnsLeft * 0.25;
+		_properties.DamageTotalMult *= 1.0 - this.m.TurnsLeft * 0.10;
+		_properties.InitiativeMult *= 1.0 - this.m.TurnsLeft * 0.10;
+		_properties.StaminaMult *= 1.0 - this.m.TurnsLeft * 0.10;
 		_properties.FatigueRecoveryRate -= this.m.TurnsLeft * 5;
 
 		if (actor.hasSprite("status_stunned") && !this.getContainer().hasSkill("effects.stunned"))

@@ -5,8 +5,8 @@ this.insects_skill <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "actives.insects";
 		this.m.Name = "Swarm of Insects";
 		this.m.Description = "";
-		this.m.Icon = "skills/active_69.png";
-		this.m.IconDisabled = "skills/active_32_sw.png";
+		this.m.Icon = "skills/insects_square.png";
+		this.m.IconDisabled = "skills/insects_square_bw.png";
 		this.m.Overlay = "active_69";
 		this.m.SoundOnUse = [
 			"sounds/enemies/swarm_of_insects_01.wav",

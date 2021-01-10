@@ -298,7 +298,7 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 
 
 		local r;
-		items.equip(this.new("scripts/items/weapons/hunting_bow"));
+		items.equip(this.new("scripts/items/weapons/short_bow"));
 		items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
 
 		local stash = this.World.Assets.getStash()

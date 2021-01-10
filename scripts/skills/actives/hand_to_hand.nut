@@ -42,7 +42,7 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 		local p = actor.getCurrentProperties();
 		local mult = p.MeleeDamageMult;
 		local bodyHealth = actor.getHitpointsMax();
-		local average = (actor.getInitiative() +  bodyHealth) / 2;
+		local average = (actor.getInitiative() +  bodyHealth) / 3;
 		local damageMin = 5;
 		local damageMax = 10;
 		local avgMin = average - 100;
@@ -150,11 +150,12 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 		{		
 			if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_unarmed_training"))
 			{
+		
 			ret.push({
 				id = 6,
 				type = "text",
 				icon = "ui/icons/regular_damage.png",
-				text = "Includes [color=" + this.Const.UI.Color.DamageValue + "]" + muscularity + "[/color] damage due to Muscularity"
+				text = "Includes [color=" + this.Const.UI.Color.DamageValue + "]+10%[/color] of your hitpoints as damage due to Muscularity"
 			});
 			}
 		}	
@@ -184,7 +185,7 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 		{
 			local actor = this.getContainer().getActor();
 			local bodyHealth = actor.getHitpointsMax();
-			local average = (actor.getInitiative() +  bodyHealth) / 4;
+			local average = (actor.getInitiative() +  bodyHealth) / 3;
 			local damageMin = 5;
 			local damageMax = 10;
 			local avgMin = average - 10;
