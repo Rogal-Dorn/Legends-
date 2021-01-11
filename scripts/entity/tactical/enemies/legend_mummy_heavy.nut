@@ -46,14 +46,7 @@ this.legend_mummy_heavy <- this.inherit("scripts/entity/tactical/legend_mummy", 
 	{
 		local r = this.Math.rand(1, 2);
 
-		if (r == 1)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/crypt_cleaver"));
-		}
-		else if (r == 2)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/legend_fan_axe"));
-		}
+		this.m.Items.equip(this.new("scripts/items/weapons/ancient/legend_fan_axe"));
 
 		if (this.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand) == null)
 		{
@@ -61,7 +54,7 @@ this.legend_mummy_heavy <- this.inherit("scripts/entity/tactical/legend_mummy", 
 		}
 
 		local armor = [
-			[15, "ancient/legend_mummy_plate"],
+			[15, "legend_wrap"],
 			[5, "ancient/legend_mummy_bandages"],
 			[80, "ancient/legend_mummy_royal_plate"]
 		];
@@ -69,8 +62,9 @@ this.legend_mummy_heavy <- this.inherit("scripts/entity/tactical/legend_mummy", 
 		this.m.Items.equip(item);
 
 		local item = this.Const.World.Common.pickHelmet([
-		//	[60, "ancient/legend_mummy_crown_king"],
-		//	[6, "ancient/legend_mummy_beard"]
+			[2, "ancient/legend_ancient_wig"],
+			[5, "ancient/legend_mummy_headband"],
+			[1, "ancient/legend_mummy_crown_king"]
 		])
 		if (item != null)
 		{
