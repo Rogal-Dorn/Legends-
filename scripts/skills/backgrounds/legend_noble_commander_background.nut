@@ -73,6 +73,7 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 		];
 		this.m.CustomPerkTree = [
 			[
+				this.Const.Perks.PerkDefs.LegendCheerOn,
 				this.Const.Perks.PerkDefs.Adrenalin,
 				this.Const.Perks.PerkDefs.Backstabber,
 				this.Const.Perks.PerkDefs.CripplingStrikes,
@@ -85,12 +86,12 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.LegendBackToBasics
 			],
 			[
+				this.Const.Perks.PerkDefs.FortifiedMind,
 				this.Const.Perks.PerkDefs.CoupDeGrace,
 				this.Const.Perks.PerkDefs.Dodge,
 				this.Const.Perks.PerkDefs.HoldOut,
 				this.Const.Perks.PerkDefs.SteelBrow,
 				this.Const.Perks.PerkDefs.QuickHands,
-				this.Const.Perks.PerkDefs.FortifiedMind,
 				this.Const.Perks.PerkDefs.Gifted,
 				this.Const.Perks.PerkDefs.Sprint,
 				this.Const.Perks.PerkDefs.LegendComposure,
@@ -99,6 +100,7 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 			],
 			[
 				this.Const.Perks.PerkDefs.Brawny,
+				this.Const.Perks.PerkDefs.LegendBarterConvincing,
 				this.Const.Perks.PerkDefs.Anticipation,
 				this.Const.Perks.PerkDefs.Rotation,
 				this.Const.Perks.PerkDefs.Taunt,
@@ -111,6 +113,7 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.LegendRoster3
 			],
 			[
+				
 				this.Const.Perks.PerkDefs.SpecPolearm,
 				this.Const.Perks.PerkDefs.SpecSword,
 				this.Const.Perks.PerkDefs.SpecDagger,
@@ -123,11 +126,13 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.LegendRoster4
 			],
 			[
+				this.Const.Perks.PerkDefs.LegendBarterTrustworthy,
 				this.Const.Perks.PerkDefs.ReachAdvantage,
 				this.Const.Perks.PerkDefs.Overwhelm,
 				this.Const.Perks.PerkDefs.Underdog,
 				this.Const.Perks.PerkDefs.Footwork,
 				this.Const.Perks.PerkDefs.LegendLithe,
+				this.Const.Perks.PerkDefs.LegendHeightenedReflexes,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyBandit,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyBarbarian,
 				this.Const.Perks.PerkDefs.LegendHoldTheLine,
@@ -135,6 +140,8 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 			],
 			[
 				this.Const.Perks.PerkDefs.Berserk,
+				this.Const.Perks.PerkDefs.LegendDangerPay,
+				this.Const.Perks.PerkDefs.LegendPaymaster,
 				this.Const.Perks.PerkDefs.LegendClarity,
 				this.Const.Perks.PerkDefs.HeadHunter,
 				this.Const.Perks.PerkDefs.BattleForged,
@@ -146,6 +153,8 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 			],
 			[
 				this.Const.Perks.PerkDefs.Fearsome,
+				this.Const.Perks.PerkDefs.LegendBribe,
+				this.Const.Perks.PerkDefs.LegendBarterGreed,
 				this.Const.Perks.PerkDefs.KillingFrenzy,
 				this.Const.Perks.PerkDefs.Duelist,
 				this.Const.Perks.PerkDefs.Inspire,
@@ -229,16 +238,16 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 	{
 		local c = {
 			Hitpoints = [
-				-20,
-				-20
+				-15,
+				-15
 			],
 			Bravery = [
-				20,
+				25,
 				25
 			],
 			Stamina = [
-				0,
-				0
+				-10,
+				-10
 			],
 			MeleeSkill = [
 				10,
@@ -253,8 +262,8 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 				5
 			],
 			RangedDefense = [
-				5,
-				5
+				15,
+				15
 			],
 			Initiative = [
 				-20,
