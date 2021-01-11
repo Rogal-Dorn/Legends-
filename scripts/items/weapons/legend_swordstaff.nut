@@ -33,7 +33,6 @@ this.legend_swordstaff <- this.inherit("scripts/items/weapons/weapon", {
 		this.weapon.onEquip();
 		this.addSkill(this.new("scripts/skills/actives/thrust"));
 		this.addSkill(this.new("scripts/skills/actives/spearwall"));
-		this.addSkill(this.new("scripts/skills/actives/riposte"));
 		this.addSkill(this.new("scripts/skills/actives/lunge_skill"));
 	}
 

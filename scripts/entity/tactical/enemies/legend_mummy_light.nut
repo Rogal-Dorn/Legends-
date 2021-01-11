@@ -36,20 +36,10 @@ this.legend_mummy_light <- this.inherit("scripts/entity/tactical/legend_mummy", 
 
 	function assignRandomEquipment()
 	{
-		local r = this.Math.rand(1, 3);
 
-		if (r == 1)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/ancient_sword"));
-		}
-		else if (r == 2)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/falx"));
-		}
-		else if (r == 3)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/ancient_spear"));
-		}
+
+		this.m.Items.equip(this.new("scripts/items/weapons/ancient/legend_kopesh"));
+
 
 		if (this.Math.rand(1, 100) <= 66)
 		{
@@ -57,9 +47,9 @@ this.legend_mummy_light <- this.inherit("scripts/entity/tactical/legend_mummy", 
 		}
 
 		local armor = [
-			[2, "ancient/ancient_ripped_cloth"],
-			[3, "ancient/legend_mummy_bandages"],
-			[1, ""]
+			[2, "ancient/legend_mummy_bandages"],
+			[3, ""]
+
 		];
 		local item = this.Const.World.Common.pickArmor(armor);
 		this.m.Items.equip(item);
@@ -67,8 +57,8 @@ this.legend_mummy_light <- this.inherit("scripts/entity/tactical/legend_mummy", 
 
 
 		item = this.Const.World.Common.pickHelmet([
-			[66, "ancient/legend_mummy_headband"],
-			[34, ""]
+			[1, "ancient/legend_mummy_bandages"],
+			[4, ""]
 		])
 		if (item != null)
 		{

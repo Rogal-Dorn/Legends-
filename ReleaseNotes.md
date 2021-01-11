@@ -4675,7 +4675,7 @@ Hand to Hand scaling is now simply  ((Ini + HP )/ 3).  This removes the upper ca
 Hand to hand now only scales on hp and ini if you take the Unarmed Trainting perk, which is in t1 of unarmed perk tree. This means enemies no longer have unarmed unless given this perk
 A new unarmed lunge perk added to unarmed tree to give more mobility to unarmed builds
 
-**commander perk trees**
+**commander changes**
 Berserker tweaked to provide better options for two handed swords, beast fighting and unarmed
 * Gains bags and belts, unarmed training, favoured enemy direwolves and goblins, greatsword specialisation, reach advantage, unarmed lunge, doublestrike and bloodbath
 * Loses fast adaption, one handed sword specialisation, begins with much weaker weapons.
@@ -4687,10 +4687,13 @@ Assassin tweaked to provide better builds for dagger, unarmed and mobility.
 * loses nine lives, prepare bleed, slaughter, rondel dagger on start.
 Druid tweaked to have builds for sickle, and better crafting and combat . begins with a sickle
 * Gains gatherer's cuts, harvest twists, herbcraft, potion brewer, unarmed lunge, tumble , clarity
+Noble  gains barter perks and cheer on. stats tweaked to have slightly better hitpoints and rdef at the expense of stamina.
+
 
 **Changes**
 Lute specialisation skills now includes drums and named lutes
 Instruments now use Mace bash and count as maces
+Cheer on can now be used when wielding a banner 
 New named butcher's cleaver added, butchers skills apply to it, spawns on champion butchers
 Unholds are bigger trolls and ocassionally have unhold gfs
 Mastaba fight rearranged to be more swarmy and not have folks stuck on poles unles they want to be
