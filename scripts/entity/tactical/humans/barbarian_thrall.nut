@@ -60,7 +60,7 @@ this.barbarian_thrall <- this.inherit("scripts/entity/tactical/human", {
 
 		if ("LegendsMod" in this.World && this.World.LegendsMod != null && this.World.LegendsMod.Configs().LegendTherianthropyEnabled())
 		{
-			if(this.Math.rand(1, 10) == 1)
+			if(this.Math.rand(1, 20) == 1)
 			{
 				this.m.Skills.add(this.new("scripts/skills/injury_permanent/legend_lycanthropy_injury"));
 			}

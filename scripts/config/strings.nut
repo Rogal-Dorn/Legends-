@@ -2390,7 +2390,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendRoots = "Summon roots and vines to entangle your enemies",
 	LegendWolfform = "Transform into a nimble wolf, decreasing movement costs. Requires free hands",
 	LegendTreeform = "Transform into a deadly schrat, gaining scrat defenses and attacks. Requires free hands",
-	LegendTrueForm = "Increases the length of your transformations to 8 turns",
+	LegendTrueForm = "Increases the length of your transformations to 6 turns",
 	LegendSummonStorm = "Control the elements, calling down the rain. The first cast brings on light rain, the second cast brings a heavy storm and the thrill of being in the heart of the storm boosts your resolve. Must have empty hands",
 	LegendCallLightning = "Call down lightning upon your enemies. Grants a 10% chance to unleash lightning on each unit withing 4 tiles. Must have empty hands and it must be raining.",
 	LegendScryTrance = "Scries an area of 12 tiles around the user. The user will be unable to move or act during the trance until cancelled. Minimum of 1 turn channel.",

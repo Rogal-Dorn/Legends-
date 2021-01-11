@@ -800,6 +800,11 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 
 	function onUpdateProperties( _properties )
 	{
+		if (this.getContainer() == null)
+		{
+			return;
+		}
+
 		if (this.getContainer().getActor() == null)
 		{
 			return;
@@ -916,6 +921,22 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		}
 
 		return (this.m.ItemType & _t) != 0;
+	}
+
+	function hasLayerID(_id)
+	{
+		foreach( u in this.m.Upgrades )
+		{
+			if (u == null)
+			{
+				continue;
+			}
+
+			if (u.getID() == _id) {
+				return true
+			}
+		}
+		return false
 	}
 
 	// function getBuyPrice()

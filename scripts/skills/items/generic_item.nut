@@ -17,8 +17,13 @@ this.generic_item <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		if (this.m.Item != null && this.m.Item.getContainer() != null)
+
+		if (this.m.Item != null)
 		{
+			if (typeof this.m.Item == "instance")
+			{
+				this.m.Item = this.m.Item.get()
+			}
 			this.m.Item.onUpdateProperties(_properties);
 		}
 		else
@@ -30,8 +35,12 @@ this.generic_item <- this.inherit("scripts/skills/skill", {
 
 	function onTurnStart()
 	{
-		if (this.m.Item != null && this.m.Item.getContainer() != null)
+		if (this.m.Item != null)
 		{
+			if (typeof this.m.Item == "instance")
+			{
+				this.m.Item = this.m.Item.get()
+			}
 			this.m.Item.onTurnStart();
 		}
 		else

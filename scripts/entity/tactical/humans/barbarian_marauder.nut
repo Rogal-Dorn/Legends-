@@ -70,7 +70,7 @@ this.barbarian_marauder <- this.inherit("scripts/entity/tactical/human", {
 
 		if ("LegendsMod" in this.World && this.World.LegendsMod != null && this.World.LegendsMod.Configs().LegendTherianthropyEnabled())
 		{
-			if(this.Math.rand(1, 10) == 1)
+			if(this.Math.rand(1, 20) == 1)
 			{
 				this.m.Skills.add(this.new("scripts/skills/actives/legend_boar_charge"));
 				this.m.Skills.add(this.new("scripts/skills/injury_permanent/legend_aperthropy_injury"));
@@ -174,7 +174,7 @@ this.barbarian_marauder <- this.inherit("scripts/entity/tactical/human", {
 		}
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor(armor));
-		
+
 		local item = this.Const.World.Common.pickHelmet([
 			[1, "barbarians/leather_headband"],
 			[1, "barbarians/bear_headpiece"],
