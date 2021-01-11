@@ -118,7 +118,7 @@ this.legends_beggar_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		while (1);
 
 		this.World.State.m.Player = this.World.spawnEntity("scripts/entity/world/player_party", randomVillageTile.Coords.X, randomVillageTile.Coords.Y);
-		this.World.Assets.updateLook(112);
+		this.World.Assets.updateLook(111);
 		this.World.getCamera().setPos(this.World.State.m.Player.getPos());
 		randomVillage.getFactionOfType(this.Const.FactionType.Settlement).addPlayerRelation(40.0, "Considered local heroes for keeping the village safe");
 		this.Time.scheduleEvent(this.TimeUnit.Real, 1000, function ( _tag )
