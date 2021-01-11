@@ -328,24 +328,24 @@ gt.Const.Perks.EvocationMagicTree <- {
 	],
 	Tree = [
 		[
-		gt.Const.Perks.PerkDefs.MageLegendMagicMissile
+		gt.Const.Perks.PerkDefs.LegendMagicMissile
 		],
 		[
-		gt.Const.Perks.PerkDefs.MageLegendMagicBurningHands
+		//gt.Const.Perks.PerkDefs.MageLegendMagicBurningHands
 		],
 		[
-		gt.Const.Perks.PerkDefs.MageLegendMagicHailstone
+		//gt.Const.Perks.PerkDefs.MageLegendMagicHailstone
 		],
 		[
 		gt.Const.Perks.PerkDefs.MageLegendMasteryMagicMissileFocus
 		],
 		[
-		gt.Const.Perks.PerkDefs.MageLegendMagicChainLightning,
-		gt.Const.Perks.PerkDefs.MageLegendMasteryBurningHands
+		gt.Const.Perks.PerkDefs.LegendChainLightning,
+		//gt.Const.Perks.PerkDefs.MageLegendMasteryBurningHands
 		],
 		[
-		gt.Const.Perks.PerkDefs.MageLegendMagicPsybeam,
-		gt.Const.Perks.PerkDefs.MageLegendMasteryHailstone
+		//gt.Const.Perks.PerkDefs.MageLegendMagicPsybeam,
+		//gt.Const.Perks.PerkDefs.MageLegendMasteryHailstone
 		],
 		[
 		gt.Const.Perks.PerkDefs.MageLegendMasteryMagicMissileMastery,
