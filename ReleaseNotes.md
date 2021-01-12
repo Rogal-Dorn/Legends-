@@ -4734,6 +4734,7 @@ Fixes incorrect base image for beggar scenario.
 Fixes armor layers not working on Cultist Penance perk
 Fixes crash in historian jumped by cultist event
 Fixes crashes from the BanditVerme and Barbarian Were transformations.
+Increases the time delay on barbarian defend rotation to hopefully help fix faster crashes.
 
 **Armor Tweaks**
 Added new plate armor
