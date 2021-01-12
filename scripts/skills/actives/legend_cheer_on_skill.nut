@@ -64,7 +64,8 @@ this.legend_cheer_on_skill <- this.inherit("scripts/skills/skill", {
 		if (!this.skill.isUsable()) {
 			return false;
 		}
-		return this.Const.Items.MusicalItems.find(main.getID()) != null;
+
+		return this.Const.Items.MusicalBannerItems.find(mainhand.getID())
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )

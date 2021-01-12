@@ -44,6 +44,12 @@ this.nomad_ranged_background <- this.inherit("scripts/skills/backgrounds/nomad_b
 		};
 		return c;
 	}
+	
+	function onAdded()
+	{
+		this.character_background.onAdded();
+		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_throw_sand"));
+	}	
 
 	function onAddEquipment()
 	{

@@ -4667,7 +4667,7 @@ Changed values for certain helms to balance out some stats
 **To Install**: Simply drag and drop this file to your data folder, please do not unzip this file!
 
 
-15.0.0.25
+15.0.0.25 MMA masters
 
 **Therianthropy**
 Rewrote Therianthropy code, all known crashes and visual artifacts fixed
@@ -4675,12 +4675,13 @@ Rewrote Therianthropy code, all known crashes and visual artifacts fixed
 BanditVerme will not spawn if Lycanthropy is disabled.
 Reduced chances of Barbarians having the infection. About 1 in 20 chance now
 
+
 **Unarmed changes**
 Hand to Hand scaling is now simply  ((Ini + HP )/ 3).  This removes the upper cap. Tooltip updated to be clearer.
-Hand to hand now only scales on hp and ini if you take the Unarmed Trainting perk, which is in t1 of unarmed perk tree. This means enemies no longer have unarmed unless given this perk
+Hand to hand now only scales on hp and ini if you take the Unarmed Training perk, which is in t1 of unarmed perk tree. This means enemies no longer have unarmed unless given this perk
 A new unarmed lunge perk added to unarmed tree to give more mobility to unarmed builds
 
-**commander perk trees**
+**Commander changes**
 Berserker tweaked to provide better options for two handed swords, beast fighting and unarmed
 * Gains bags and belts, unarmed training, favoured enemy direwolves and goblins, greatsword specialisation, reach advantage, unarmed lunge, doublestrike and bloodbath
 * Loses fast adaption, one handed sword specialisation, begins with much weaker weapons.
@@ -4688,41 +4689,48 @@ Ranger tweaked to be more of a hunter, add dog handling, nets a shortbow perks.
 * Gains Small Game, Poachers Arm, Net Repair, Net Casting Net Mastery, hair splitter, summon hound, dog whisperer, dog breeder, pack leader, dog master
 * Loses Summon bear, Summon wolf, feint, gifted, fast adaption, student, relentless. begins with shortbow
 Assassin tweaked to provide better builds for dagger, unarmed and mobility.
-* Gains knife fighting, prisoners rush, unarmed training, unarmed lunge, escape artist, unarmed lunge, leap, tumble, wind reader, heightened refleces, battleflow, perfect focus
-* loses nine lives, prepare bleed, slaughter, rondel dagger on start.
+* Gains knife fighting, prisoners rush, unarmed training, unarmed lunge, escape artist, unarmed lunge, leap, tumble, wind reader, heightened reflexes, battleflow, perfect focus, boondock blade.
+* loses nine lives, underdog, prepare bleed, slaughter, rondel dagger on start. Loses swift trait, gains aggressive.
 Druid tweaked to have builds for sickle, and better crafting and combat . begins with a sickle
 * Gains gatherer's cuts, harvest twists, herbcraft, potion brewer, unarmed lunge, tumble , clarity
+Noble  gains barter perks and cheer on. stats tweaked to have slightly better hitpoints and rdef at the expense of stamina.
 
 **Changes**
 Lute specialisation skills now includes drums and named lutes
 Instruments now use Mace bash and count as maces
+Cheer on can now be used when wielding a banner
 New named butcher's cleaver added, butchers skills apply to it, spawns on champion butchers
 Unholds are bigger trolls and ocassionally have unhold gfs
-Mastaba fight rearranged to be more swarmy and not have folks stuck on poles unles they want to be
 Most mage perks have new art, soothing wind nerfed to 4 tiles
 Reduces the number of infected Barbarians if Lycanthropy is enabled. (about 1 in 20 will be infected now)
-Updates to latest Turn it in Mod
+
+Mage scenario removed pending upgrades
+Evokers get their old tree back, but with missile upgrade perks
+Mastaba fight rearranged to be more swarmy and not have folks stuck on poles unles they want to be
+Embalmed have new weapons and armor, a wig, toga, restored ancient armors, a new kopesh, kopis and royal sword staff.
+Throw dirt now uses to hit chance, lasts two turns and can only be used once per fight.
+Hired nomads come with throw dirt as a perk
 
 **resource perks**
 Ammunition bindings now also increase ranged skill by 5%
-Ammunition bundes now also increas ranged defense by 5%
-Medicine packages and medicine ingrediants both increase resolve by 5%
+Ammunition bundles now also increases ranged defense by 5%
+Medicine Packages and Medicine Ingredients both increase resolve by 5%
 Tools drawers and tools spares increase fatigue
 
 **Fixes**
 Knights rarely spawning with a named helmet that didn't exist
 Fixes the vala warden crashes.
-Updates Turn It In mod to resolve contracts not disapearing
-smashing shields now acts as it should , it was inadvertently reducing shield damage from everyone who didn't have it.
-fixes Insects swarm active skill icon
-Dog whisperer applies to hsummound hounds, wolves, whitewolves and bears
-Wither correctly applies withered instead of debilitiated, tooltip updated .
+Updates to latest Turn it in Mod
+Smashing shields now acts as it should , it was inadvertently reducing shield damage from everyone who didn't have it.
+Fixes Insects swarm active skill icon
+Dog whisperer applies to summoned hounds, wolves, whitewolves and bears
+Wither correctly applies withered instead of debilitated, tooltip updated .
 Withered now lowers a targets damage, initaitive and fatigue for 30%, reducing by 10% each turn
 Wolfsbane description typo fixed
 Miasma's tooltip updated to explain what it does, fatigue and AP cost increased
 Summon storm's description updated to explain exactly what it does
-dark tunics no longer overlap the body
-Fix incorrect base image for beggar scenario.
+Dark tunics no longer overlap the body
+Fixes incorrect base image for beggar scenario.
 Fixes armor layers not working on Cultist Penance perk
 Fixes crash in historian jumped by cultist event
 Fixes crashes from the BanditVerme and Barbarian Were transformations.

@@ -5,7 +5,7 @@ this.perk_boondock_blade <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "perk.boondock_blade";
 		this.m.Name = this.Const.Strings.PerkName.BoondockBlade;
 		this.m.Description = this.Const.Strings.PerkDescription.BoondockBlade;
-		this.m.Icon = "skills/passive_03.png";
+		this.m.Icon = "skills/status_effect_08.png";
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;
