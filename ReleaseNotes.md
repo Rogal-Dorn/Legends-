@@ -4682,8 +4682,8 @@ Ranger tweaked to be more of a hunter, add dog handling, nets a shortbow perks.
 * Gains Small Game, Poachers Arm, Net Repair, Net Casting Net Mastery, hair splitter, summon hound, dog whisperer, dog breeder, pack leader, dog master
 * Loses Summon bear, Summon wolf, feint, gifted, fast adaption, student, relentless. begins with shortbow
 Assassin tweaked to provide better builds for dagger, unarmed and mobility.
-* Gains knife fighting, prisoners rush, unarmed training, unarmed lunge, escape artist, unarmed lunge, leap, tumble, wind reader, heightened reflexes, battleflow, perfect focus
-* loses nine lives, prepare bleed, slaughter, rondel dagger on start.
+* Gains knife fighting, prisoners rush, unarmed training, unarmed lunge, escape artist, unarmed lunge, leap, tumble, wind reader, heightened reflexes, battleflow, perfect focus, boondock blade. 
+* loses nine lives, underdog, prepare bleed, slaughter, rondel dagger on start. Loses swift trait, gains aggressive. 
 Druid tweaked to have builds for sickle, and better crafting and combat . begins with a sickle
 * Gains gatherer's cuts, harvest twists, herbcraft, potion brewer, unarmed lunge, tumble , clarity
 Noble  gains barter perks and cheer on. stats tweaked to have slightly better hitpoints and rdef at the expense of stamina.
@@ -4700,6 +4700,9 @@ Mage scenario removed pending upgrades
 Evokers get their old tree back, but with missile upgrade perks  
 Mastaba fight rearranged to be more swarmy and not have folks stuck on poles unles they want to be
 Embalmed have new weapons and armor, a wig, toga, restored ancient armors, a new kopesh, kopis and royal sword staff. 
+throw dirt now uses to hit chance, lasts two turns and can only be used once per fight.
+Hired nomads come with throw dirt as a perk 
+
 
 **resource perks**
 Ammunition bindings now also increase ranged skill by 5%

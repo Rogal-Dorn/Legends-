@@ -177,6 +177,12 @@ this.nomad_background <- this.inherit("scripts/skills/backgrounds/character_back
 		return c;
 	}
 
+	function onAdded()
+	{
+		this.character_background.onAdded();
+		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_throw_sand"));
+	}
+
 	function onAddEquipment()
 	{
 		local items = this.getContainer().getActor().getItems();

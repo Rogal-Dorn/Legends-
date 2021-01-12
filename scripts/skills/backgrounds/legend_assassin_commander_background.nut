@@ -97,6 +97,7 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyCaravan	
 			],
 			[
+				this.Const.Perks.PerkDefs.BoondockBlade,
 				this.Const.Perks.PerkDefs.LegendSpecialistKnifeDamage,
 				this.Const.Perks.PerkDefs.LegendGrapple,
 				this.Const.Perks.PerkDefs.LegendHairSplitter,
@@ -142,7 +143,6 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 				this.Const.Perks.PerkDefs.LegendLeap,
 				this.Const.Perks.PerkDefs.LegendWindReader,
 				this.Const.Perks.PerkDefs.Berserk,
-				this.Const.Perks.PerkDefs.Underdog,
 				this.Const.Perks.PerkDefs.LegendBalance,
 				this.Const.Perks.PerkDefs.LegendClarity,
 				this.Const.Perks.PerkDefs.HeadHunter,
@@ -219,7 +219,7 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 	{
 		local c = {
 			Hitpoints = [
-				10,
+				5,
 				10
 			],
 			Bravery = [
@@ -231,7 +231,7 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 				0
 			],
 			MeleeSkill = [
-				25,
+				15,
 				15
 			],
 			RangedSkill = [
@@ -247,7 +247,7 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 				12
 			],
 			Initiative = [
-				20,
+				15,
 				15
 			]
 		};
@@ -286,9 +286,7 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 	{
 		this.character_background.onAdded();
 		local actor = this.getContainer().getActor();
-		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_hidden"));
-		this.m.Container.add(this.new("scripts/skills/traits/quick_trait"));
-		//this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
+		this.m.Container.add(this.new("scripts/skills/traits/aggressive_trait"));
 	}
 
 	function onAddEquipment()
