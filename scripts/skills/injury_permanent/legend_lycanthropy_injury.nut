@@ -1,124 +1,25 @@
-this.legend_lycanthropy_injury <- this.inherit("scripts/skills/injury_permanent/permanent_injury", {
+this.legend_lycanthropy_injury <- this.inherit("scripts/skills/injury_permanent/legend_infected_injury", {
 	m = {},
 	function create()
 	{
-		this.permanent_injury.create();
+		this.legend_infected_injury.create();
 		this.m.ID = "injury.legend_lycanthropy";
 		this.m.Name = "Lycanthrope";
 		this.m.Description = "This character is cursed with lycanthropy and will transform into a wolf, dropping all gear and attacking wildly unless controlled. It is rumoured wolfsbane may help.";
 		this.m.Icon = "ui/injury/injury_lycanthropy.png";
+		this.m.Effect = "scripts/skills/effects/legend_transformed_wolf_effect";
 	}
 
 	function getTooltip()
 	{
-	 	local day = this.World.getTime().Days;
-		local month = day / 28;
-		local monthfloor = this.Math.floor(month);
-		local ret = [
-			{
-				id = 1,
-				type = "title",
-				text = this.getName()
-			},
-			{
-				id = 2,
-				type = "description",
-				text = this.getDescription()
-			},
-			{
-				id = 16,
-				type = "text",
-				icon = "ui/icons/special.png",
-				text = "When transformed you will lose control of them, they will drop all their items and turn into a rat, with a poisonous Bite and Claws. They will gain 2 action points, and they will gain 25 melee defense while retreating, but their resolve will halve."
-			},
-			{
-				id = 17,
-				type = "text",
-				icon = "ui/icons/special.png",
-				text = "The infection has unlocked a new set of perks which help manage the disease. These perks will give you control over their transformations, and let them wield weapons while transformed."
-			}
-		];
-		this.addTooltipHint(ret);
-
-		if (this.World.getTime().IsDaytime && month != monthfloor)
-		{
-			ret.push({
-				id = 16,
-				type = "text",
-				icon = "ui/icons/special.png",
-				text = "10% chance to transform per turn during battle in daylight."
-			});
-		}
-
-		if (!this.World.getTime().IsDaytime && month != monthfloor)
-		{
-			ret.push({
-				id = 16,
-				type = "text",
-				icon = "ui/icons/special.png",
-				text = "20% chance to transform per turn during battle at night."
-			});
-		}
-
-		if (month == monthfloor)
-		{
-			ret.push({
-				id = 16,
-				type = "text",
-				icon = "ui/icons/special.png",
-				text = "it is currently a full moon, the transformation will happen during any battle tonight"
-			});
-		}
-
+		local ret = this.legend_infected_injury.getTooltip()
+		ret.push({
+			id = 16,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "When transformed you will lose control of them, they will drop all their items and turn into a rat, with a poisonous Bite and Claws. They will gain 2 action points, and they will gain 25 melee defense while retreating, but their resolve will halve."
+		})
 		return ret;
-	}
-
-	function onUpdate( _properties )
-	{
-	}
-
-	function onApplyAppearance()
-	{
-	}
-
-	function onTurnStart()
-	{
-		local actor = this.getContainer().getActor();
-		if(!actor.getSkills().hasSkill("effect.legend_transformed_wolf") && !actor.getSkills().hasSkill("effect.legend_transformed_bear") && !actor.getSkills().hasSkill("effect.legend_transformed_boar") && !actor.getSkills().hasSkill("effect.legend_transformed_rat") && !actor.getSkills().hasSkill("effect.legend_transformed_tree") && !actor.getSkills().hasSkill("effects.legend_wolfsbane"))
-		{
-
-
-			if (!actor.getSkills().hasSkill("perk.legend_master_anger")  )
-			{
-				local r = this.Math.rand(1,10);
-				local day = this.World.getTime().Days;
-				local month = day / 28;
-				local monthfloor = this.Math.floor(month);
-
-				if (r == 1 && this.World.getTime().IsDaytime && month != monthfloor)
-				{
-					actor.getSkills().add(this.new("scripts/skills/effects/legend_transformed_wolf_effect"));
-				}
-
-				if (r <= 2 && !this.World.getTime().IsDaytime && month != monthfloor)
-				{
-
-					actor.getSkills().add(this.new("scripts/skills/effects/legend_transformed_wolf_effect"));
-
-				}
-
-				if (month == monthfloor)
-				{
-					actor.getSkills().add(this.new("scripts/skills/effects/legend_transformed_wolf_effect"));
-				}
-			}
-			else
-			{
-				actor.getSkills().add(this.new("scripts/skills/actives/legend_transform_into_wolf"));
-
-			}
-		}
-
 	}
 
 });

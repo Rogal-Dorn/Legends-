@@ -208,7 +208,10 @@ gt.tnf_debug.factions <- [
 gt.tnf_debug.actors <- {
   //M for MONSTER                Summons a random enemy from list
   M = [
-    "BanditVermes"
+    "BanditVermes",
+    "BarbarianThrall",
+    "BarbarianMarauder",
+    "BarbarianChosen",
     // "KoboldFighter",
     // "KoboldWolfrider"
     // "GoblinSkirmisher",

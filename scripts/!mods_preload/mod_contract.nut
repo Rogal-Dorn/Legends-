@@ -47,6 +47,43 @@
 	}
 
 
+	local onClear = o.onClear;
+	o.onClear = function()
+	{
+		local contract_faction = this.World.FactionManager.getFaction(this.getFaction())
+		local towns = contract_faction.getSettlements()
+		foreach (town in towns)
+		{
+			town.getSprite("selection").Visible = false;
+		}
+		onClear()
+	}
+
+	while (!("onDeserialize" in o)) o = o[o.SuperName];
+	local onDeserialize = o.onDeserialize;
+	o.onDeserialize = function(_in)
+	{
+		onDeserialize( _in )
+		if (this.m.Flags.get("UpdatedBulletpoints"))
+		{
+
+			local contract_faction = this.World.FactionManager.getFaction(this.getFaction())
+			local towns = contract_faction.getSettlements()
+			this.m.BulletpointsObjectives.pop()
+			if (this.m.Type == "contract.big_game_hunt"){
+				this.m.BulletpointsObjectives.push("Return to any town of " + contract_faction.getName() + " to get paid")
+			}
+			else{
+				this.m.BulletpointsObjectives.push("Return to any town of " + contract_faction.getName())
+			}
+			foreach (town in towns)
+			{
+				town.getSprite("selection").Visible = true;
+			}
+			this.World.State.getWorldScreen().updateContract(this);
+		}
+	}
+
     o.buildText <- function(_text)
 	{
 		local brothers = this.World.getPlayerRoster().getAll();

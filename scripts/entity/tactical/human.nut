@@ -700,37 +700,53 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 		}
 	}
 
+	function setArmorAlpha(level)
+	{
+		foreach (a in this.Const.CharacterSprites.Armor)
+		{
+			if (!this.hasSprite(a))
+			{
+				continue;
+			}
+			this.getSprite(a).Alpha = level;
+		}
+	}
+
 	function setArmorSaturation(level)
 	{
-		this.getSprite("armor").Saturation = level;
-		this.getSprite("armor_layer_chain").Saturation = level;
-		this.getSprite("armor_layer_plate").Saturation = level;
-		this.getSprite("armor_layer_tabbard").Saturation = level;
-		this.getSprite("armor_layer_cloak").Saturation = level;
-		this.getSprite("armor_upgrade_back").Saturation = level;
-		this.getSprite("helmet_vanity_lower").Saturation = level;
-		this.getSprite("helmet").Saturation = level;
-		this.getSprite("helmet_damage").Saturation = level;
-		this.getSprite("helmet_helm").Saturation = level;
-		this.getSprite("helmet_top").Saturation = level;
-		this.getSprite("helmet_vanity").Saturation = level;
-		this.getSprite("shield_icon").Saturation = level;
+		foreach (a in this.Const.CharacterSprites.Armor)
+		{
+			if (!this.hasSprite(a))
+			{
+				continue;
+			}
+			this.getSprite(a).Saturation = level;
+		}
 	}
 
 	function setArmorBrightness(level)
 	{
-		this.getSprite("armor").setBrightness(level);
-		this.getSprite("armor_layer_chain").setBrightness(level);
-		this.getSprite("armor_layer_plate").setBrightness(level);
-		this.getSprite("armor_layer_tabbard").setBrightness(level);
-		this.getSprite("armor_layer_cloak").setBrightness(level);
-		this.getSprite("armor_upgrade_back").setBrightness(level);
-		this.getSprite("helmet_vanity_lower").setBrightness(level);
-		this.getSprite("helmet").setBrightness(level);
-		this.getSprite("helmet_damage").setBrightness(level);
-		this.getSprite("helmet_helm").setBrightness(level);
-		this.getSprite("helmet_top").setBrightness(level);
-		this.getSprite("helmet_vanity").setBrightness(level);
+		foreach (a in this.Const.CharacterSprites.Armor)
+		{
+			if (!this.hasSprite(a))
+			{
+				continue;
+			}
+			this.getSprite(a).setBrightness(level);
+		}
+	}
+
+	function setBrushAlpha(level)
+	{
+		this.setArmorAlpha(10);
+		foreach (a in this.Const.CharacterSprites.Human)
+		{
+			if (!this.hasSprite(a))
+			{
+				continue;
+			}
+			this.getSprite(a).Alpha = level;
+		}
 	}
 
 	function onDamageReceived( _attacker, _skill, _hitInfo )
