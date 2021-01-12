@@ -21,13 +21,29 @@ this.throw_dirt_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
 		this.m.IsVisibleTileNeeded = true;
-		this.m.IsUsingHitchance = false;
+		this.m.IsUsingHitchance = true;
 		this.m.ActionPointCost = 3;
 		this.m.FatigueCost = 5;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 1;
 		this.m.MaxLevelDifference = 1;
 	}
+
+	function isUsable()
+	{
+		if (this.getContainer().hasSkill("effects.legend_threw_sand_effect"))
+		{
+			return false;
+		}
+
+		if (this.m.Entity != null || !this.skill.isUsable())
+		{
+			return false;
+		}
+
+		return true;
+	}
+
 
 	function onVerifyTarget( _originTile, _targetTile )
 	{
@@ -46,6 +62,7 @@ this.throw_dirt_skill <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
+		_user.getSkills().add(this.new("scripts/skills/effects/legend_threw_sand_effect"));
 		if (_targetTile.getEntity().isAlliedWithPlayer())
 		{
 			local effect = {

@@ -1,6 +1,6 @@
 this.distracted_effect <- this.inherit("scripts/skills/skill", {
 	m = {
-		TurnsLeft = 1
+		TurnsLeft = 2
 	},
 	function create()
 	{

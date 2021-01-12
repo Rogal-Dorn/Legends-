@@ -2041,7 +2041,8 @@ gt.Const.Strings.PerkName <- {
 	MageLegendMasteryMagicMissileFocus = "Magic Missile Focus",
 	MageLegendMasteryMagicMissileMastery = "Magic Missile Mastery",
 	LegendUnarmedTraining = "Unarmed Training",
-	LegendUnarmedLunge = "Unarmed Lunge"
+	LegendUnarmedLunge = "Unarmed Lunge",
+	LegendThrowSand = "Throw Sand"
 };
 
 gt.Const.Strings.PerkDescription <- {
@@ -2138,7 +2139,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendCascade = "Let loose a cascade of three striking heads on your opponent. Will strike over or around shield cover.",
 	LegendEvasion = "Enables the character to move swiftly and safely through any Zone of Control for one whole turn without incurring any free attacks. \n[color=#0b0084]From the Devious perk group[/color]",
 	LegendRust = "Unlocks a ranged attack that can deform, rip and otherwise render the target\'s armor unusable with great effect. Although the impact will be felt through the thickest of armor, it won\'t greatly injure the wearer.",
-	LegendWither = "Debilitate a target for one turn, reducing their ability to inflict damage by [color=" + this.Const.UI.Color.NegativeValue + "]-50%[/color].",
+	LegendWither = "Wither and age a target for three turns, reducing their damage, initiative and fatigeu by [color=" + this.Const.UI.Color.NegativeValue + "]-30%[/color], the effect lessens by 10% each turn.",
 	LegendDeathtouch = "Your fingers turn ghostly and pass through steel and flesh, tearing at the soul of your victim",
 	LegendHex = "You tie your soul to your enemy, your pain becomes their pain",
 	LegendMiasma = "Release a cloud of noxious gasses that are harmful to any living being",
@@ -2381,7 +2382,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendShieldsUp = "Drilling your troops in a shieldwall prepares their reaction time to avoid early deaths on the battlefield. Taking this perk ensures every mercenary with a shield will use shieldwall before the start of each battle. ",
 	LegendIncoming = "Providing advanced warning of an incoming volley can allow your troops to find cover or step aside. Grants [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] ranged defence to all allies within [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] tiles for one turn",
 	LegendZombieBite = "braaaains",
-	LegendCheerOn = "Use your way with song to cheer on an ally. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] AP to an ally within three tiles. Can only be used with a Drum or Lute equipped. \n[color=#0b0084]From the Bard perk group[/color]",
+	LegendCheerOn = "Use your way with song to cheer on an ally. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] AP to an ally within three tiles. Can only be used with an Instrument or Banner equipped. \n[color=#0b0084]From the Bard perk group[/color]",
 	LegendLeap = "Use your athletic skill to leap high and far, covering two tiles distance but at a great fatigue cost. Unlocks the \'Leap\' skill",
 	LegendTumble = "Make use of your acrobatic skill to improve your movements. Halves the fatigue and action point costs of Footwork, Leap and Lunge.",
 	LegendHairSplitter = "Years of practice throwing things at apples above heads have granted a magnetic attraction to the cranium. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+30%[/color] chance to hit the head",
@@ -2424,7 +2425,8 @@ gt.Const.Strings.PerkDescription <- {
 	MageLegendMasteryMagicMissileFocus = "Reduce AP cost of Magic Missile by 1.",
 	MageLegendMasteryMagicMissileMastery = "Reduce AP and cost of Magic Missile by 1. Reduce the base fatigue cost of Magic Missile from 16 to 10.",
 	LegendUnarmedTraining = "Focusing on technique, form and stances has given you greater control over your unarmed strikes. Increases the damage of your unarmed attacks based on your hitpoints and initiative. The damage is hitpoints plus initiative divided by four. [color=#0b0084]From the Unarmed perk group[/color]",
-	LegendUnarmedLunge = "Unlocks the \'Unarmed Lunge\' skill that lets you move a tile and attack in a single action while unarmed. Does 10-20 damage without Unarmed Training. With Unarmed Training it does damage based on your Initiative and Hitpoints. Costs less fatigue and Action points if you have Unarmed Mastery. Costs less Action Points if you have Tumble. [color=#0b0084]From the Unarmed perk group[/color]"
+	LegendUnarmedLunge = "Unlocks the \'Unarmed Lunge\' skill that lets you move a tile and attack in a single action while unarmed. Does 10-20 damage without Unarmed Training. With Unarmed Training it does damage based on your Initiative and Hitpoints. Costs less fatigue and Action points if you have Unarmed Mastery. Costs less Action Points if you have Tumble. [color=#0b0084]From the Unarmed perk group[/color]",
+	LegendThrowSand = "Unlocks the \'Throw Dirt\' skill that lets you throw dirt in the eyes of an enemy to distract them. Can be used once per fight."
 
 };
 gt.Const.Strings.Tooltip <- {
