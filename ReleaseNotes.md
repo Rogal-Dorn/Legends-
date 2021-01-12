@@ -4669,6 +4669,11 @@ Changed values for certain helms to balance out some stats
 
 15.0.0.25
 
+**Therianthropy**
+Rewrote Therianthropy code, all known crashes and visual artifacts fixed
+-Known issue: if faster mod enabled, on rare occaisons enemy will go invisible after transforming, but will return next turn. (much like unhold invisible bug)
+BanditVerme will not spawn if Lycanthropy is disabled.
+Reduced chances of Barbarians having the infection. About 1 in 20 chance now
 
 **Unarmed changes**
 Hand to Hand scaling is now simply  ((Ini + HP )/ 3).  This removes the upper cap. Tooltip updated to be clearer.
@@ -4696,6 +4701,7 @@ Unholds are bigger trolls and ocassionally have unhold gfs
 Mastaba fight rearranged to be more swarmy and not have folks stuck on poles unles they want to be
 Most mage perks have new art, soothing wind nerfed to 4 tiles
 Reduces the number of infected Barbarians if Lycanthropy is enabled. (about 1 in 20 will be infected now)
+Updates to latest Turn it in Mod
 
 **resource perks**
 Ammunition bindings now also increase ranged skill by 5%
@@ -4716,7 +4722,6 @@ Wolfsbane description typo fixed
 Miasma's tooltip updated to explain what it does, fatigue and AP cost increased
 Summon storm's description updated to explain exactly what it does
 dark tunics no longer overlap the body
-BanditVerme will not spawn if Lycanthropy is disabled.
 Fix incorrect base image for beggar scenario.
 Fixes armor layers not working on Cultist Penance perk
 Fixes crash in historian jumped by cultist event

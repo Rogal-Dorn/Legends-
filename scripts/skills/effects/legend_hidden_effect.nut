@@ -36,7 +36,7 @@ this.legend_hidden_effect <- this.inherit("scripts/skills/skill", {
 					text = "[color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color] Maximum Damage from the Assassinate perk"
 				}
 			]);
-			
+
 			if (actor.getSkills().hasSkill("background.legend_assassin") || actor.getSkills().hasSkill("background.assassin") || actor.getSkills().hasSkill("background.assassin_southern"))
 			{
 					{
@@ -46,7 +46,7 @@ this.legend_hidden_effect <- this.inherit("scripts/skills/skill", {
 						text = "[color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color] Maximum Damage from being an assassin"
 					}
 			}
-					
+
 			if (actor.getSkills().hasSkill("bbackground.legend_commander_assassin"))
 			{
 					{
@@ -55,7 +55,7 @@ this.legend_hidden_effect <- this.inherit("scripts/skills/skill", {
 						icon = "ui/icons/regular_damage.png",
 						text = "[color=" + this.Const.UI.Color.PositiveValue + "]+100%[/color] Maximum Damage from being an assassin"
 					}
-			}			
+			}
 		}
 
 		ret.push({
@@ -94,7 +94,7 @@ this.legend_hidden_effect <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
-	local actor = this.getContainer().getActor();
+		local actor = this.getContainer().getActor();
 		if (actor.getTile().IsVisibleForPlayer)
 		{
 			if (this.Const.Tactical.HideParticles.len() != 0)
@@ -105,69 +105,19 @@ this.legend_hidden_effect <- this.inherit("scripts/skills/skill", {
 				}
 			}
 		}
-		actor.getSprite("armor").Alpha = 10;
-		actor.getSprite("helmet_vanity_lower").Alpha = 10;
-		actor.getSprite("helmet").Alpha = 10;
-		actor.getSprite("helmet_damage").Alpha = 10;
-		actor.getSprite("helmet_helm").Alpha = 10;
-		actor.getSprite("helmet_top").Alpha = 10;
-		actor.getSprite("helmet_vanity").Alpha = 10;
 
-		actor.getSprite("shield_icon").Alpha = 10;
-		actor.getSprite("armor_layer_chain").Alpha = 10;
-		actor.getSprite("armor_layer_plate").Alpha = 10;
-		actor.getSprite("armor_layer_tabbard").Alpha = 10;
-		actor.getSprite("armor_layer_tabbard").Alpha = 10;
-		actor.getSprite("head").Alpha = 10;
-		actor.getSprite("body").Alpha = 10;
-		actor.getSprite("hair").Alpha = 10;
-		actor.getSprite("beard").Alpha = 10;
+		actor.setBrushAlpha(10);
 		actor.getSprite("hair").Visible = false;
 		actor.getSprite("beard").Visible = false;
-		actor.getSprite("tattoo_head").Alpha = 10;
-		actor.getSprite("tattoo_body").Alpha = 10;
-		actor.getSprite("quiver").Alpha = 10;
-		actor.getSprite("arms_icon").Alpha = 10;
-		actor.getSprite("dirt").Alpha = 10;
-		actor.getSprite("accessory").Alpha = 10;
-		actor.getSprite("surcoat").Alpha = 10;
-		actor.getSprite("armor_upgrade_back").Alpha = 10;
-		actor.getSprite("armor_upgrade_front").Alpha = 10;
-		actor.getSprite("socket").Alpha = 10;
 	}
 
 	function onRemoved()
 	{
 		this.getContainer().getActor().setHidden(false);
 		local actor = this.getContainer().getActor();
-		actor.getSprite("armor").Alpha = 255;
-		actor.getSprite("helmet_vanity_lower").Alpha = 255;
-		actor.getSprite("helmet").Alpha = 255;
-		actor.getSprite("helmet_damage").Alpha = 255;
-		actor.getSprite("helmet_helm").Alpha = 255;
-		actor.getSprite("helmet_top").Alpha = 255;
-		actor.getSprite("helmet_vanity").Alpha = 255;
-		actor.getSprite("shield_icon").Alpha = 255;
-		actor.getSprite("armor_layer_chain").Alpha = 255;
-		actor.getSprite("armor_layer_plate").Alpha = 255;
-		actor.getSprite("armor_layer_tabbard").Alpha = 255;
-		actor.getSprite("armor_layer_cloak").Alpha = 255;
-		actor.getSprite("head").Alpha = 255;
-		actor.getSprite("body").Alpha = 255;
-		actor.getSprite("hair").Alpha = 255;
-		actor.getSprite("beard").Alpha = 255;
+		actor.setBrushAlpha(255);
 		actor.getSprite("hair").Visible = true;
 		actor.getSprite("beard").Visible = true;
-		actor.getSprite("tattoo_head").Alpha = 255;
-		actor.getSprite("tattoo_body").Alpha = 255;
-		actor.getSprite("quiver").Alpha = 255;
-		actor.getSprite("arms_icon").Alpha = 255;
-		actor.getSprite("dirt").Alpha = 255;
-		actor.getSprite("accessory").Alpha = 255;
-		actor.getSprite("surcoat").Alpha = 255;
-		actor.getSprite("armor_upgrade_back").Alpha = 255;
-		actor.getSprite("armor_upgrade_front").Alpha = 255;
-		actor.getSprite("socket").Alpha = 255;
 		local actor = this.getContainer().getActor();
 		if (actor.getTile().IsVisibleForPlayer)
 		{
@@ -188,43 +138,21 @@ this.legend_hidden_effect <- this.inherit("scripts/skills/skill", {
 		{
 			_properties.DamageRegularMin *= 1.5;
 			_properties.DamageRegularMax *= 1.5;
-			
+
 			if (actor.getSkills().hasSkill("background.legend_assassin") || actor.getSkills().hasSkill("background.assassin") || actor.getSkills().hasSkill("background.assassin_southern"))
 			{
 			_properties.DamageRegularMax *= 1.5;
-			}	
+			}
 			if (actor.getSkills().hasSkill("bbackground.legend_commander_assassin"))
 			{
 			_properties.DamageRegularMax *= 2.0;
-			}	
+			}
 		}
-		
-		_properties.TargetAttractionMult *= 0.5;
 
-		actor.getSprite("armor").Alpha = 10;
-		actor.getSprite("helmet").Alpha = 10;
-		actor.getSprite("shield_icon").Alpha = 10;
-		actor.getSprite("armor_layer_chain").Alpha = 10;
-		actor.getSprite("armor_layer_plate").Alpha = 10;
-		actor.getSprite("armor_layer_tabbard").Alpha = 10;
-		actor.getSprite("armor_layer_tabbard").Alpha = 10;
-		actor.getSprite("head").Alpha = 10;
-		actor.getSprite("body").Alpha = 10;
-		actor.getSprite("hair").Alpha = 10;
-		actor.getSprite("beard").Alpha = 10;
+		_properties.TargetAttractionMult *= 0.5;
+		actor.setBrushAlpha(10);
 		actor.getSprite("hair").Visible = false;
 		actor.getSprite("beard").Visible = false;
-		actor.getSprite("tattoo_head").Alpha = 10;
-		actor.getSprite("tattoo_body").Alpha = 10;
-		actor.getSprite("quiver").Alpha = 10;
-		actor.getSprite("arms_icon").Alpha = 10;
-		actor.getSprite("dirt").Alpha = 10;
-		actor.getSprite("accessory").Alpha = 10;
-		actor.getSprite("surcoat").Alpha = 10;
-		actor.getSprite("armor_upgrade_back").Alpha = 10;
-		actor.getSprite("armor_upgrade_front").Alpha = 10;
-		actor.getSprite("socket").Alpha = 10;
-
 	}
 
 	function onTurnEnd()
