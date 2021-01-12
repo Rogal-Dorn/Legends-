@@ -417,16 +417,15 @@ gt.Const.LegendMod.HelmObjs.extend([
     Helms = [
     ],
     Tops = [
-	[1, "top/legend_helmet_southern_veil"],
-	[1, "top/legend_helmet_southern_veil"],
-	[1, ""]
+	  [2, "top/legend_helmet_southern_veil"],
+    [1, "top/legend_helmet_southern_veil_coin"],
+	  [1, ""]
 	],
     Vanity = [
         [1, "vanity/legend_helmet_southern_cloth_headress"],
-		[1, "vanity/legend_helmet_southern_earings"],
-		[1, "top/legend_helmet_southern_veil_coin"],
-		[1, "vanity/legend_helmet_southern_headress_coin"],
-		[1, ""]
+        [1, "vanity/legend_helmet_southern_earings"],
+        [1, "vanity/legend_helmet_southern_headress_coin"],
+        [1, ""]
     ]
 }]
 },{
