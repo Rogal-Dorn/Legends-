@@ -181,6 +181,7 @@
 			this.getAgent().declareAction(1500);
 		}
 
+
 		this.m.TargetTile = null;
 		this.m.Skill = null;
 		return true;
