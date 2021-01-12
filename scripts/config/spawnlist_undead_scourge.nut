@@ -110,11 +110,6 @@ gt.Const.World.Spawn.UndeadScourge <-
 					MinR = 600,
 					Type = this.Const.World.Spawn.Troops.LegendVampireLord,
 					Cost = 60
-				},
-				{
-					MinR = 1200,
-					Type = this.Const.World.Spawn.Troops.LegendMummyQueen,
-					Cost = 70
 				}
 			]
 		},
