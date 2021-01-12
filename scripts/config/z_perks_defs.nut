@@ -3458,9 +3458,18 @@ gt.Const.Perks.PerkDefObjects <- [
 		Script = "scripts/skills/perks/perk_boondock_blade",
 		Name = this.Const.Strings.PerkName.BoondockBlade,
 		Tooltip = this.Const.Strings.PerkDescription.BoondockBlade,
-		Icon = "ui/perks/unarmed_lunge.png", //TODO
-		IconDisabled = "ui/perks/unarmed_lunge_bw.png",
+		Icon = "ui/perks/boondock_01.png", //TODO
+		IconDisabled = "ui/perks/boondock_01_bw.png",
 		Const = "BoondockBlade"
+	},
+	{
+		ID = "perk.legend_throw_sand",
+		Script = "scripts/skills/perks/perk_legend_throw_sand",
+		Name = this.Const.Strings.PerkName.LegendThrowSand,
+		Tooltip = this.Const.Strings.PerkDescription.LegendThrowSand,
+		Icon = "ui/perks/throw_sand_01.png", 
+		IconDisabled = "ui/perks/throw_sand_01_bw.png",
+		Const = "LegendThrowSand"
 	}
 ];
 gt.Const.Perks.PerkDefs <- {};
