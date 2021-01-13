@@ -771,9 +771,9 @@ layers = [
     "adesc" : "Covered in a padded shirt"
 },
 {"name": "legend_southern_arm_guards",                "layer": "plate", "min": 1, "max": 1, "value" : 300, "con" : 30, "stam" : -2, "impactSound" : "plate", "invSound" : "leather", "brush" : "southern_arm_gaurds",\
-    "title" :  "Southern arm gaurds", \
-    "desc" :  "Leather arm gaurds worn by southern assassins", \
-    "adesc" : "has leathered arm gaurds"
+    "title" :  "Southern arm guards", \
+    "desc" :  "Leather arm guards worn by southern assassins", \
+    "adesc" : "has leathered arm guards"
 },
 {"name": "legend_southern_strips",                   "layer": "plate", "min": 1, "max": 4, "value" : 180, "con" : 40, "stam" : -4, "impactSound" : "plate", "invSound" : "leather", "brush" : "southern_strips",\
     "title" :  "Linothorax", \
