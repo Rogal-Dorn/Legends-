@@ -257,7 +257,7 @@ this.lunge_skill <- this.inherit("scripts/skills/skill", {
 		if (_skill == this)
 		{
 			local a = this.getContainer().getActor();
-			local s = this.Math.minf(2.0, 2.0 * (this.Math.max(0, a.getInitiative() + (_targetEntity != null ? this.getFatigueCost() : 0)) / 175.0));
+			local s = this.Math.minf(2.0, 2.0 * (this.Math.max(0, a.getInitiative() + (_targetEntity != null ? this.getFatigueCost() * a.getCurrentProperties().FatigueToInitiativeRate : 0)) / 175.0));
 			_properties.DamageTotalMult *= s;
 		}
 	}

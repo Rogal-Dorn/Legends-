@@ -17,12 +17,19 @@ this.horn_plate_upgrade <- this.inherit("scripts/items/armor_upgrades/armor_upgr
 		this.m.SpriteDamagedBack = "upgrade_22_back";
 		this.m.SpriteCorpseFront = null;
 		this.m.SpriteCorpseBack = "upgrade_22_back_dead";
+		this.m.ConditionModifier = 30;
 		this.m.Value = 1200;
 	}
 
 	function getTooltip()
 	{
 		local result = this.armor_upgrade.getTooltip();
+		result.push({
+			id = 13,
+			type = "text",
+			icon = "ui/icons/armor_body.png",
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+30[/color] Durability"
+		});
 		result.push({
 			id = 7,
 			type = "text",

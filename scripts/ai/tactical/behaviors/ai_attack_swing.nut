@@ -112,12 +112,6 @@ this.ai_attack_swing <- this.inherit("scripts/ai/tactical/behavior", {
 			{
 				local score = 1.0;
 				local combinedValue = this.queryTargetValue(_entity, target, _skill);
-
-				if (this.getAgent().getForcedOpponent() != null && this.getAgent().getForcedOpponent().getID() == target.getID())
-				{
-					score = score + 1;
-				}
-
 				local targetTile = target.getTile();
 				local dir = ourTile.getDirectionTo(target.getTile());
 				local dir_left = dir - 1 >= 0 ? dir - 1 : this.Const.Direction.COUNT - 1;
@@ -137,11 +131,6 @@ this.ai_attack_swing <- this.inherit("scripts/ai/tactical/behavior", {
 						{
 							combinedValue = combinedValue + this.queryTargetValue(_entity, tile.getEntity(), _skill);
 							score = score + 1.0;
-
-							if (this.getAgent().getForcedOpponent() != null && this.getAgent().getForcedOpponent().getID() == tile.getEntity().getID())
-							{
-								score = score + 1;
-							}
 						}
 					}
 				}
@@ -160,11 +149,6 @@ this.ai_attack_swing <- this.inherit("scripts/ai/tactical/behavior", {
 						{
 							combinedValue = combinedValue + this.queryTargetValue(_entity, tile.getEntity(), _skill);
 							score = score + 1.0;
-
-							if (this.getAgent().getForcedOpponent() != null && this.getAgent().getForcedOpponent().getID() == tile.getEntity().getID())
-							{
-								score = score + 1;
-							}
 						}
 					}
 				}

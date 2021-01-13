@@ -17,6 +17,7 @@ this.additional_padding_upgrade <- this.inherit("scripts/items/armor_upgrades/ar
 		this.m.SpriteDamagedBack = "upgrade_03_back";
 		this.m.SpriteCorpseFront = "upgrade_03_front_dead";
 		this.m.SpriteCorpseBack = "upgrade_03_back_dead";
+		this.m.StaminaModifier = 2;
 		this.m.Value = 700;
 	}
 
@@ -28,6 +29,12 @@ this.additional_padding_upgrade <- this.inherit("scripts/items/armor_upgrades/ar
 			type = "text",
 			icon = "ui/icons/direct_damage.png",
 			text = "Reduces damage ignoring armor by [color=" + this.Const.UI.Color.NegativeValue + "]33%[/color]"
+		});
+		result.push({
+			id = 14,
+			type = "text",
+			icon = "ui/icons/fatigue.png",
+			text = "[color=" + this.Const.UI.Color.NegativeValue + "]-2[/color] Maximum Fatigue"
 		});
 		return result;
 	}

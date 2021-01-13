@@ -1240,7 +1240,7 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 				party.setFootprintType(this.Const.World.FootprintsType.Barbarians);
 				party.getLoot().Money = this.Math.rand(0, 50);
 				party.getLoot().ArmorParts = this.Math.rand(0, 10);
-				party.getLoot().Medicine = this.Math.rand(0, 10);
+				party.getLoot().Medicine = this.Math.rand(0, 5);
 				party.getLoot().Ammo = this.Math.rand(0, 30);
 
 				if (this.Math.rand(1, 100) <= 50)

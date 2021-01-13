@@ -372,7 +372,7 @@ this.skill_container <- {
 
 		foreach( skill in this.m.Skills )
 		{
-			if (!skill.getID() == _id)
+			if (skill.getID() == _id)
 			{
 				num = ++num;
 			}

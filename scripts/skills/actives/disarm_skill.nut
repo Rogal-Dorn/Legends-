@@ -26,9 +26,9 @@ this.disarm_skill <- this.inherit("scripts/skills/skill", {
 		this.m.InjuriesOnBody = this.Const.Injury.CuttingBody;
 		this.m.InjuriesOnHead = this.Const.Injury.CuttingHead;
 		this.m.DirectDamageMult = 0.0;
-		this.m.HitChanceBonus = -15;
+		this.m.HitChanceBonus = -20;
 		this.m.ActionPointCost = 5;
-		this.m.FatigueCost = 25;
+		this.m.FatigueCost = 30;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 3;
 	}
@@ -68,11 +68,11 @@ this.disarm_skill <- this.inherit("scripts/skills/skill", {
 
 		if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInCleavers)
 		{
-			this.m.HitChanceBonus = 0;
+			this.m.HitChanceBonus = -10;
 		}
 		else
 		{
-			this.m.HitChanceBonus = -15;
+			this.m.HitChanceBonus = -20;
 		}
 	}
 
@@ -104,7 +104,11 @@ this.disarm_skill <- this.inherit("scripts/skills/skill", {
 		{
 			if (!this.getContainer().getActor().getCurrentProperties().IsSpecializedInCleavers)
 			{
-				_properties.MeleeSkill -= 15;
+				_properties.MeleeSkill -= 20;
+			}
+			else
+			{
+				_properties.MeleeSkill -= 10;
 			}
 
 			_properties.DamageTotalMult = 0.0;

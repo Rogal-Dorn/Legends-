@@ -328,7 +328,7 @@ this.orc_berserker <- this.inherit("scripts/entity/tactical/actor", {
 		this.addDefaultStatusSprites();
 		this.getSprite("status_rooted").Scale = 0.6;
 		this.m.Skills.add(this.new("scripts/skills/special/double_grip"));
-		this.m.Skills.add(this.new("scripts/skills/actives/hand_to_hand"));
+		this.m.Skills.add(this.new("scripts/skills/actives/hand_to_hand_orc"));
 		this.m.Skills.add(this.new("scripts/skills/actives/charge"));
 		this.m.Skills.add(this.new("scripts/skills/effects/berserker_rage_effect"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_battering_ram"));

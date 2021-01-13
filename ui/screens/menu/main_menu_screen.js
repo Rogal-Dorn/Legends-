@@ -24,7 +24,7 @@ var MainMenuScreen = function()
     this.mMainMenuModule = null;
     this.mLoadCampaignModule = null;
 	this.mNewCampaignModule = null;
-    this.mScenarioMenuModule = null; // TODO: Remove if Early Access
+    this.mScenarioMenuModule = null;
     this.mOptionsMenuModule = null;
     this.mCreditsModule = null;
 
@@ -243,19 +243,21 @@ MainMenuScreen.prototype.show = function (_animate)
 {
     this.mMainMenuModule.showMainMenu(false);
 
-    this.mBackgroundImage.attr('src', Path.GFX + Asset.BACKGROUND_MAIN_MENU);
+    var bg = ['08', '09', '10'];
+
+    this.mBackgroundImage.attr('src', Path.GFX + Asset.BACKGROUND_MAIN_MENU + bg[Math.floor(Math.random() * bg.length)] + '.jpg');
     this.mContainer.removeClass('display-none').addClass('display-block');
 
     if(_animate)
     {
-        this.mBackgroundImage.velocity("finish", true).velocity({ scaleX: 1.3, scaleY: 1.3, translateX: 200.0, translateY: 50.0 },
+        /*this.mBackgroundImage.velocity("finish", true).velocity({ scaleX: 1.3, scaleY: 1.3, translateX: 200.0, translateY: 50.0 },
         {
             duration: 0
         }).velocity("finish", true).velocity({ scaleX: 1.0, scaleY: 1.0, translateX: 0.0, translateY: 0.0 },
         {
             duration: 25000,
             easing: 'ease-out'
-        });
+        });*/
     }
 
     this.notifyBackendOnShown();

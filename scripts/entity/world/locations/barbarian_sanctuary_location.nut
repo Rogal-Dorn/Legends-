@@ -33,7 +33,7 @@ this.barbarian_sanctuary_location <- this.inherit("scripts/entity/world/location
 		this.dropMoney(this.Math.rand(300, 700), _lootTable);
 		this.dropArmorParts(this.Math.rand(25, 50), _lootTable);
 		this.dropAmmo(this.Math.rand(0, 50), _lootTable);
-		this.dropMedicine(this.Math.rand(10, 25), _lootTable);
+		this.dropMedicine(this.Math.rand(5, 15), _lootTable);
 		local treasure = [
 			"trade/furs_item",
 			"trade/furs_item",

@@ -254,7 +254,7 @@ this.orc_young <- this.inherit("scripts/entity/tactical/actor", {
 		this.addDefaultStatusSprites();
 		this.getSprite("status_rooted").Scale = 0.55;
 		this.m.Skills.add(this.new("scripts/skills/special/double_grip"));
-		this.m.Skills.add(this.new("scripts/skills/actives/hand_to_hand"));
+		this.m.Skills.add(this.new("scripts/skills/actives/hand_to_hand_orc"));
 		this.m.Skills.add(this.new("scripts/skills/actives/charge"));
 
 		if (this.Const.DLC.Unhold)

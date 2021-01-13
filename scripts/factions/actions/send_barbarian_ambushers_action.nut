@@ -98,7 +98,7 @@ this.send_barbarian_ambushers_action <- this.inherit("scripts/factions/faction_a
 		party.getFlags().set("IsRandomlySpawned", true);
 		party.getLoot().Money = this.Math.rand(0, 50);
 		party.getLoot().ArmorParts = this.Math.rand(0, 10);
-		party.getLoot().Medicine = this.Math.rand(0, 10);
+		party.getLoot().Medicine = this.Math.rand(0, 5);
 		party.getLoot().Ammo = this.Math.rand(0, 30);
 
 		if (this.Math.rand(1, 100) <= 50)

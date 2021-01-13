@@ -19,6 +19,7 @@ this.bone_platings_upgrade <- this.inherit("scripts/items/armor_upgrades/armor_u
 		this.m.SpriteDamagedBack = "upgrade_06_back_damaged";
 		this.m.SpriteCorpseFront = null;
 		this.m.SpriteCorpseBack = "upgrade_06_back_dead";
+		this.m.StaminaModifier = 2;
 		this.m.Value = 850;
 	}
 
@@ -30,6 +31,12 @@ this.bone_platings_upgrade <- this.inherit("scripts/items/armor_upgrades/armor_u
 			type = "text",
 			icon = "ui/icons/special.png",
 			text = "Completely absorbs the first hit of every combat encounter which doesn\'t ignore armor"
+		});
+		result.push({
+			id = 14,
+			type = "text",
+			icon = "ui/icons/fatigue.png",
+			text = "[color=" + this.Const.UI.Color.NegativeValue + "]-2[/color] Maximum Fatigue"
 		});
 		return result;
 	}

@@ -86,7 +86,7 @@ this.send_barbarian_roamers_action <- this.inherit("scripts/factions/faction_act
 		party.setFootprintType(this.Const.World.FootprintsType.Barbarians);
 		party.getFlags().set("IsRandomlySpawned", true);
 		party.getLoot().ArmorParts = this.Math.rand(0, 5);
-		party.getLoot().Medicine = this.Math.rand(0, 6);
+		party.getLoot().Medicine = this.Math.rand(0, 3);
 		party.getLoot().Ammo = this.Math.rand(10, 30);
 
 		if (this.Math.rand(1, 100) <= 25)

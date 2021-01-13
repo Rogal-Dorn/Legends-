@@ -173,8 +173,7 @@ var Asset =
 	IMAGE_TAVERN_DRINK:                                 'ui/events/event_24.png',
 
     // backgrounds
-	BACKGROUND_MAIN_MENU:					'ui/screens/main_menu_screen_01.jpg',
-	BACKGROUND_MAIN_MENU_COLOR:				'ui/screens/main_menu_screen_01_color.png',
+	BACKGROUND_MAIN_MENU:					'ui/screens/loading_screen_',
     BACKGROUND_INVENTORY:				    'ui/screens/inventory_background.png',
 
     // header
