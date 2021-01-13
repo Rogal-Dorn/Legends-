@@ -914,10 +914,17 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			addSkills = this.Math.min(addSkills, inTraining.getMaxSkillsCanBeAdded() - 1);
 			inTraining.addRandomSkills(this, addSkills);
 		}
+
+		if (this.World.getPlayerRoster().getSize() == 25 && this.World.Assets.getOrigin().getID() == "scenario.militia")
+		{
+			this.updateAchievement("HumanWave", 1, 1);
+		}
+
 		if (this.World.State.getPlayer() != null)
 		{
 			this.World.State.getPlayer().calculateModifiers();
 		}
+
 	}
 
 	function onCombatStart()

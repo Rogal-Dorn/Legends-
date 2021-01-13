@@ -2762,7 +2762,7 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 	function loading_screen_onQueryData()
 	{
 		return {
-			imagePath = "ui/screens/main_menu_screen_01.jpg",
+			imagePath = this.Const.LoadingScreens[this.Math.rand(0, this.Const.LoadingScreens.len() - 1)],
 			text = this.Const.TipOfTheDay[this.Math.rand(0, this.Const.TipOfTheDay.len() - 1)]
 		};
 	}

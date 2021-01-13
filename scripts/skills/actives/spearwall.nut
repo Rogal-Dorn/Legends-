@@ -30,7 +30,7 @@ this.spearwall <- this.inherit("scripts/skills/skill", {
 
 	function getDescription()
 	{
-		return "Prepare to immediately attack any opponent that attempts to move into melee range and, on a hit, prevent that opponent from closing in. Targets hit will receive half the damage of a normal " + this.m.BaseAttackName + " attack. Can not be used while already engaged in melee.";
+		return "Prepare to immediately attack any opponent that attempts to move into melee range and, on a hit, prevent that opponent from closing in. Targets hit will receive half the damage of a normal " + this.m.BaseAttackName + " attack.";
 	}
 
 	function getTooltip()

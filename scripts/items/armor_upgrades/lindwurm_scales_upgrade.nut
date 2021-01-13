@@ -18,8 +18,8 @@ this.lindwurm_scales_upgrade <- this.inherit("scripts/items/armor_upgrades/armor
 		this.m.SpriteCorpseFront = null;
 		this.m.SpriteCorpseBack = "upgrade_04_back_dead";
 		this.m.Value = 800;
-		this.m.ConditionModifier = 40;
-		this.m.StaminaModifier = 2;
+		this.m.ConditionModifier = 60;
+		this.m.StaminaModifier = 3;
 	}
 
 	function getTooltip()
@@ -29,13 +29,13 @@ this.lindwurm_scales_upgrade <- this.inherit("scripts/items/armor_upgrades/armor
 			id = 13,
 			type = "text",
 			icon = "ui/icons/armor_body.png",
-			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+40[/color] Durability"
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+60[/color] Durability"
 		});
 		result.push({
 			id = 14,
 			type = "text",
 			icon = "ui/icons/fatigue.png",
-			text = "[color=" + this.Const.UI.Color.NegativeValue + "]-2[/color] Maximum Fatigue"
+			text = "[color=" + this.Const.UI.Color.NegativeValue + "]-3[/color] Maximum Fatigue"
 		});
 		result.push({
 			id = 15,

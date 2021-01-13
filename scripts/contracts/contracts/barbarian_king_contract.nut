@@ -82,7 +82,7 @@ this.barbarian_king_contract <- this.inherit("scripts/contracts/contract", {
 				this.Contract.m.Destination = this.WeakTableRef(party);
 				party.getLoot().Money = this.Math.rand(150, 250);
 				party.getLoot().ArmorParts = this.Math.rand(10, 30);
-				party.getLoot().Medicine = this.Math.rand(5, 10);
+				party.getLoot().Medicine = this.Math.rand(3, 6);
 				party.getLoot().Ammo = this.Math.rand(10, 30);
 				party.addToInventory("supplies/roots_and_berries_item");
 				party.addToInventory("supplies/dried_fruits_item");

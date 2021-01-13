@@ -17,12 +17,20 @@ this.unhold_fur_upgrade <- this.inherit("scripts/items/armor_upgrades/armor_upgr
 		this.m.SpriteDamagedBack = "upgrade_02_back";
 		this.m.SpriteCorpseFront = "upgrade_02_front_dead";
 		this.m.SpriteCorpseBack = "upgrade_02_back_dead";
+		this.m.ConditionModifier = 10;
+		this.m.StaminaModifier = 0;
 		this.m.Value = 1000;
 	}
 
 	function getTooltip()
 	{
 		local result = this.armor_upgrade.getTooltip();
+		result.push({
+			id = 14,
+			type = "text",
+			icon = "ui/icons/armor_body.png",
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Durability"
+		});
 		result.push({
 			id = 7,
 			type = "text",

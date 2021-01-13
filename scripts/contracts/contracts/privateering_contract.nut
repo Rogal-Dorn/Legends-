@@ -193,7 +193,7 @@ this.privateering_contract <- this.inherit("scripts/contracts/contract", {
 				this.Contract.m.UnitsSpawned.push(party.getID());
 				party.getLoot().Money = this.Math.rand(50, 200);
 				party.getLoot().ArmorParts = this.Math.rand(0, 25);
-				party.getLoot().Medicine = this.Math.rand(0, 5);
+				party.getLoot().Medicine = this.Math.rand(0, 3);
 				party.getLoot().Ammo = this.Math.rand(0, 30);
 				local r = this.Math.rand(1, 4);
 

@@ -108,6 +108,12 @@ this.restore_location_contract <- this.inherit("scripts/contracts/contract", {
 						this.World.Contracts.showActiveContract();
 						this.Contract.setState("ReturnForEscort");
 					}
+					else if (this.Flags.get("IsFleeing"))
+					{
+						this.Contract.setScreen("Failure2");
+						this.World.Contracts.showActiveContract();
+						return;
+					}
 					else if (this.Flags.get("IsEmpty"))
 					{
 						this.Contract.setScreen("Empty");
@@ -136,6 +142,14 @@ this.restore_location_contract <- this.inherit("scripts/contracts/contract", {
 				if (_combatID == "RestoreLocationContract")
 				{
 					this.Flags.set("IsVictory", true);
+				}
+			}
+
+			function onRetreatedFromCombat( _combatID )
+			{
+				if (_combatID == "RestoreLocationContract")
+				{
+					this.Flags.set("IsFleeing", true);
 				}
 			}
 
@@ -547,6 +561,28 @@ this.restore_location_contract <- this.inherit("scripts/contracts/contract", {
 					{
 						this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnContractFail);
 						this.World.FactionManager.getFaction(this.Contract.getFaction()).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractFail, "Failed to protect a building trek");
+						this.World.Contracts.finishActiveContract(true);
+						return 0;
+					}
+
+				}
+			]
+		});
+		this.m.Screens.push({
+			ID = "Failure2",
+			Title = "After the battle",
+			Text = "[img]gfx/ui/events/event_71.png[/img]{Your men failed to secure the %location% and so you shouldn\'t expect any pay.}",
+			Image = "",
+			Characters = [],
+			List = [],
+			ShowEmployer = false,
+			Options = [
+				{
+					Text = "Darn it!",
+					function getResult()
+					{
+						this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnContractFail);
+						this.World.FactionManager.getFaction(this.Contract.getFaction()).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractFail, "Failed to secure the " + this.Contract.m.Location.getName());
 						this.World.Contracts.finishActiveContract(true);
 						return 0;
 					}

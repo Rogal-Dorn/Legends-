@@ -135,7 +135,7 @@ this.defend_holy_site_contract <- this.inherit("scripts/contracts/contract", {
 					party.setDescription("Conscripted soldiers loyal to their city state.");
 					party.getLoot().Money = this.Math.rand(50, 200);
 					party.getLoot().ArmorParts = this.Math.rand(0, 25);
-					party.getLoot().Medicine = this.Math.rand(0, 5);
+					party.getLoot().Medicine = this.Math.rand(0, 3);
 					party.getLoot().Ammo = this.Math.rand(0, 30);
 					local r = this.Math.rand(1, 4);
 
@@ -1184,7 +1184,7 @@ this.defend_holy_site_contract <- this.inherit("scripts/contracts/contract", {
 		party.setDescription("Professional soldiers in service to local lords.");
 		party.getLoot().Money = this.Math.rand(50, 200);
 		party.getLoot().ArmorParts = this.Math.rand(0, 25);
-		party.getLoot().Medicine = this.Math.rand(0, 5);
+		party.getLoot().Medicine = this.Math.rand(0, 3);
 		party.getLoot().Ammo = this.Math.rand(0, 30);
 		local r = this.Math.rand(1, 4);
 
@@ -1287,7 +1287,7 @@ this.defend_holy_site_contract <- this.inherit("scripts/contracts/contract", {
 		party.setAlwaysAttackPlayer(true);
 		party.getLoot().Money = this.Math.rand(50, 200);
 		party.getLoot().ArmorParts = this.Math.rand(0, 25);
-		party.getLoot().Medicine = this.Math.rand(0, 5);
+		party.getLoot().Medicine = this.Math.rand(0, 3);
 		party.getLoot().Ammo = this.Math.rand(0, 30);
 		local r = this.Math.rand(1, 4);
 
