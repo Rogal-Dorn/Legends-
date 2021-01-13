@@ -244,7 +244,7 @@ gt.Const.FactionArchetypes <- [
 				"Report thy neighbour, to protect him",
 				"All seeing",
 				"Knowledge is safety",
-				"Shadows gaurd",
+				"Shadows guard",
 				"Loose lips sink ships",
 				"Need to know only",
 				"Protected by secrecy",
@@ -257,7 +257,7 @@ gt.Const.FactionArchetypes <- [
 				this.Const.FactionTrait.Collector,
 				this.Const.FactionTrait.Tyrant
 			],
-			Description = "The house of %noblehousename% is well known for its jealously gaurded horde of treasures. The horded treasures of %noblehousename% are whispered through the lands, and still they crave more",
+			Description = "The house of %noblehousename% is well known for its jealously guarded horde of treasures. The horded treasures of %noblehousename% are whispered through the lands, and still they crave more",
 			Mottos = [
 				"One of everything",
 				"To the zoo",

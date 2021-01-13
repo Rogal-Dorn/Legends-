@@ -1184,6 +1184,10 @@
 		return this.Math.max(0, c - 1 - this.m.CurrentProperties.StartSurroundCountAt);
 	}
 
+	o.setBrushAlpha <- function(level)
+	{
+	}
+
 	local szFn = o.onSerialize
 	o.onSerialize = function( _out )
 	{

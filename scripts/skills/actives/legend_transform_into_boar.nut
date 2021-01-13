@@ -1,6 +1,6 @@
 this.legend_transform_into_boar <- this.inherit("scripts/skills/skill", {
 	m = {
-		IsSpent = false 
+		IsSpent = false
 	},
 	function create()
 	{
@@ -63,9 +63,7 @@ this.legend_transform_into_boar <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
-
-			this.m.Container.add(this.new("scripts/skills/effects/legend_transformed_boar_effect"));
-
+		this.m.Container.add(this.new("scripts/skills/effects/legend_transformed_boar_effect"));
 	}
 
 	function onTurnStart()
@@ -75,7 +73,7 @@ this.legend_transform_into_boar <- this.inherit("scripts/skills/skill", {
 
 	function onRemoved()
 	{
-		this.m.Container.removeByID("effect.legend_transformed_boar"); 
+		this.m.Container.removeByID("effect.legend_transformed_boar");
 	}
 
 });

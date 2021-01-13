@@ -2950,15 +2950,6 @@ gt.Const.Perks.PerkDefObjects <- [
 		Const = "LegendWolfform"
 	},
 	{
-		ID = "perk.legend_treeform",
-		Script = "scripts/skills/perks/perk_legend_treeform",
-		Name = this.Const.Strings.PerkName.LegendTreeform,
-		Tooltip = this.Const.Strings.PerkDescription.LegendTreeform,
-		Icon = "ui/perks/tree_circle.png",
-		IconDisabled = "ui/perks/tree_circle_bw.png",
-		Const = "LegendTreeform"
-	},
-	{
 		ID = "perk.legend_true_form",
 		Script = "scripts/skills/perks/perk_legend_true_form",
 		Name = this.Const.Strings.PerkName.LegendTrueForm,

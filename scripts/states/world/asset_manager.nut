@@ -1219,49 +1219,44 @@ this.asset_manager <- {
 		{
 			this.World.LegendsMod.Configs().m.IsHelmets += (this.Const.DLC.Wildmen && this.Const.DLC.Desert) ? 1 : 0
 		}
-		
-		// Adds Taro's Turn it in Mod 
-			local excluded_contracts =
-			[
-				"contract.patrol",
-				"contract.escort_envoy"
-			]
-			local activeContract = this.World.Contracts.getActiveContract();
-			if (activeContract && this.World.FactionManager.getFaction(activeContract.getFaction()).m.Type == this.Const.FactionType.NobleHouse && excluded_contracts.find(activeContract.m.Type) == null && 
-			(activeContract.getActiveState().ID == "Return" || (activeContract.m.Type == "contract.big_game_hunt" && activeContract.getActiveState().Flags.get("HeadsCollected") != 0)))
+
+		// Adds Taro's Turn it in Mod
+		local excluded_contracts =
+		[
+			"contract.patrol",
+			"contract.escort_envoy"
+		]
+		local activeContract = this.World.Contracts.getActiveContract();
+		if (activeContract && this.World.FactionManager.getFaction(activeContract.getFaction()).m.Type == this.Const.FactionType.NobleHouse && excluded_contracts.find(activeContract.m.Type) == null &&
+		(activeContract.getActiveState().ID == "Return" || (activeContract.m.Type == "contract.big_game_hunt" && activeContract.getActiveState().Flags.get("HeadsCollected") != 0)))
+		{
+			local contract_faction = this.World.FactionManager.getFaction(activeContract.getFaction())
+			local towns = contract_faction.getSettlements()
+			if (!activeContract.m.Flags.get("UpdatedBulletpoints"))
 			{
-				local contract_faction = this.World.FactionManager.getFaction(activeContract.getFaction())
-				local towns = contract_faction.getSettlements()
-				if (!activeContract.m.Flags.get("UpdatedBulletpoints"))
-				{
-					activeContract.m.BulletpointsObjectives.pop()
-					if (activeContract.m.Type == "contract.big_game_hunt"){
-						activeContract.m.BulletpointsObjectives.push("Return to any marked town of " + contract_faction.getName() + " to get paid")
-					}
-					else{
-						activeContract.m.BulletpointsObjectives.push("Return to any marked town of " + contract_faction.getName())
-					}
-					activeContract.m.Flags.set("UpdatedBulletpoints", true)
-					foreach (town in towns)
-					{
-						if (town.isMilitary() || town == activeContract.m.Home)
-						{
-							town.getSprite("selection").Visible = true;
-						}
-					}
-					this.World.State.getWorldScreen().updateContract(activeContract);
+				activeContract.m.BulletpointsObjectives.pop()
+				if (activeContract.m.Type == "contract.big_game_hunt"){
+					activeContract.m.BulletpointsObjectives.push("Return to any town of " + contract_faction.getName() + " to get paid")
 				}
+				else{
+					activeContract.m.BulletpointsObjectives.push("Return to any town of " + contract_faction.getName())
+				}
+				activeContract.m.Flags.set("UpdatedBulletpoints", true)
 				foreach (town in towns)
 				{
-					if ((town.isMilitary() || town == activeContract.m.Home) && activeContract.isPlayerAt(town))
-					{
-						activeContract.m.Home = this.WeakTableRef(town)
-						break
-					}
-				}					
+					town.getSprite("selection").Visible = true;
+				}
+				this.World.State.getWorldScreen().updateContract(activeContract);
 			}
-
-
+			foreach (town in towns)
+			{
+				if (activeContract.isPlayerAt(town))
+				{
+					activeContract.m.Home = this.WeakTableRef(town)
+					break
+				}
+			}
+		}
 	}
 
 	function updateAverageMoodState()
