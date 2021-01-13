@@ -4670,8 +4670,8 @@ Changed values for certain helms to balance out some stats
 15.0.0.25 mma masters 
 
 **Unarmed changes**
-Hand to Hand scaling is now simply  ((Ini + HP )/ 3).  This removes the upper cap. Tooltip updated to be clearer.
-Hand to hand now only scales on hp and ini if you take the Unarmed Training perk, which is in t1 of unarmed perk tree. This means enemies no longer have unarmed unless given this perk
+Hand to Hand scaling is now simply  ((Ini + HP )/ 4).  This removes the upper cap. Tooltip updated to be clearer.
+Hand to hand now only scales on hp and ini if you take the Unarmed Training perk, which is in the unarmed perk tree. This means enemies no longer have unarmed unless given this perk
 A new unarmed lunge perk added to unarmed tree to give more mobility to unarmed builds
 
 **Commander changes**
@@ -4702,7 +4702,7 @@ Mastaba fight rearranged to be more swarmy and not have folks stuck on poles unl
 Embalmed have new weapons and armor, a wig, toga, restored ancient armors, a new kopesh, kopis and royal sword staff. 
 throw dirt now uses to hit chance, lasts two turns and can only be used once per fight.
 Hired nomads come with throw dirt as a perk 
-
+Implements BlueyD's Freedom of Movement submod, it uses intiative instead of fatigue now 
 
 **resource perks**
 Ammunition bindings now also increase ranged skill by 5%

@@ -20,50 +20,33 @@ this.perk_legend_freedom_of_movement <- this.inherit("scripts/skills/skill", {
 	function getTooltip()
 	{
 		local tooltip = this.skill.getTooltip();
-
-		{
-			tooltip.push({
-				id = 6,
-				type = "text",
-				icon = "ui/icons/special.png",
-				text = "When an enemy attacks you, subtract their fatigue as a percent from your fatigue as a percent. Gain that as hitpoint damage reduction."
-			});
-		}
-
-
+		tooltip.push({
+			id = 6,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "Gain hit point damage reduction proportional to the difference between your current initiative and your attacker\'s, up to 75% for 100 initiative."
+		});
 		return tooltip;
 	}
 
-
-
 	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
 	{
-		//local ourFatigue = this.getContainer().getActor().getFatigue();
-		//local ourFatigueMax = this.getContainer().getActor().getFatigueMax();
-		//local ourFatiguePercent = ourFatigueMax / 100;
-		//local ourFatiguePercentCurrent = ourFatigue / ourFatiguePercent;
-		//
-		//local enemyFatigue = _attacker.getFatigue();
-		//local enemyFatigueMax = _attacker.getFatigueMax();
-		//local enemyFatiguePercent = enemyFatigueMax / 100;
-		//local enemyFatiguePercentCurrent = enemyFatigue / enemyFatiguePercent;
-
-		if (_attacker == null || (_attacker != null && _attacker.getID() == this.getContainer().getActor().getID()) || _skill == null || !_skill.isAttack() || !_skill.isUsingHitchance())
+		if (_attacker == null || _attacker != null && _attacker.getID() == this.getContainer().getActor().getID() || _skill == null || !_skill.isAttack() || !_skill.isUsingHitchance())
 		{
 			return;
 		}
 
-		local ourFatiguePercentCurrent = this.getContainer().getActor().getFatiguePct();
-		local enemyFatiguePercentCurrent = _attacker.getFatiguePct();
-		
+		local ourCurrentInitiative = this.getContainer().getActor().getInitiative();
+		local enemyCurrentInitiative = _attacker.getInitiative();
 		local bonus = 1;
 
-		if (ourFatiguePercentCurrent < enemyFatiguePercentCurrent)
+		if (ourCurrentInitiative > enemyCurrentInitiative)
 		{
-			local diff = enemyFatiguePercentCurrent - ourFatiguePercentCurrent;
-			local diffPoint = this.Math.max(5, this.Math.min(95, diff)) * 0.01;
+			local diff = (ourCurrentInitiative - enemyCurrentInitiative) / 100;
+			local diffPoint = this.Math.min(1, this.Math.pow(diff, 0.4)) * 0.8;
 			bonus = 1 - diffPoint;
 		}
+
 		_properties.DamageReceivedRegularMult *= bonus;
 	}
 
