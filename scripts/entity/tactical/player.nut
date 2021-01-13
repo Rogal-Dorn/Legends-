@@ -2738,7 +2738,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			this.getSkills().add(this.new("scripts/skills/injury_permanent/legend_aperthropy_injury"));
 			this.getBackground().addPerkGroup(TherianthropyGroup);
 			this.logDebug(this.getName() + " gained aperthropy");
-			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(this.getName()) + " is infected with aperthropy ");
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(this) + " is infected with aperthropy ");
 		}
 
 		if (_killer.getSkills().hasSkill("injury.legend_arborthropy") && !this.getSkills().hasSkill("injury.legend_arborthropy"))
@@ -2746,6 +2746,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			this.getSkills().add(this.new("scripts/skills/injury_permanent/legend_arborthropy_injury"));
 			this.getBackground().addPerkGroup(TherianthropyGroup);
 			this.logDebug(this.getName() + " gained arborthropy");
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(this) + " is infected with arborthropy ");
 		}
 
 		if (_killer.getSkills().hasSkill("injury.legend_lycanthropy") && !this.getSkills().hasSkill("injury.legend_lycanthropy"))
@@ -2753,7 +2754,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			this.getSkills().add(this.new("scripts/skills/injury_permanent/legend_lycanthropy_injury"));
 			this.getBackground().addPerkGroup(TherianthropyGroup);
 			this.logDebug(this.getName() + " gained lycanthropy");
-			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(this.getName()) + " is infected with lycanthropy ");
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(this) + " is infected with lycanthropy ");
 		}
 
 		if (_killer.getSkills().hasSkill("injury.legend_ursathropy") && !this.getSkills().hasSkill("injury.legend_ursathropy"))
@@ -2761,14 +2762,14 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			this.getSkills().add(this.new("scripts/skills/injury_permanent/legend_ursathropy_injury"));
 			this.getBackground().addPerkGroup(TherianthropyGroup);
 			this.logDebug(this.getName() + " gained ursathropy");
-			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(this.getName()) + " is infected with ursathropy ");
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(this) + " is infected with ursathropy ");
 		}
 		if (_killer.getSkills().hasSkill("injury.legend_vermesthropy") && !this.getSkills().hasSkill("injury.legend_vermesthropy"))
 		{
 			this.getSkills().add(this.new("scripts/skills/injury_permanent/legend_vermesthropy_injury"));
 			this.getBackground().addPerkGroup(TherianthropyGroup);
 			this.logDebug(this.getName() + " gained vermesthropy");
-			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(this.getName()) + " is infected with vermesthropy ");
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(this) + " is infected with vermesthropy ");
 		}
 	}
 
