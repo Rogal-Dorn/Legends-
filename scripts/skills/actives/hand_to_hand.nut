@@ -105,7 +105,7 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 			}
 		];
 
-		if (mod.HasTraining)
+		if (mods.HasTraining)
 		{
 			ret.push({
 				id = 4,
@@ -121,11 +121,11 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 				id = 4,
 				type = "text",
 				icon = "ui/icons/regular_damage.png",
-				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + mod.Min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + mod.Max + "[/color] damage"
+				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + mods.Min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + mods.Max + "[/color] damage"
 			});
 		}
 
-		if (mod.HasBro)
+		if (mods.HasBro)
 		{
 			ret.push({
 				id = 5,
@@ -135,7 +135,7 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 			});
 		}
 
-		if (mod.HasMusc)
+		if (mods.HasMusc)
 		{
 			ret.push({
 				id = 6,

@@ -17,7 +17,7 @@ this.perk_legend_throw_sand <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.m.Container.hasSkill("actives.throw_dirt"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/sthrow_dirt_skill"));
+			this.m.Container.add(this.new("scripts/skills/actives/throw_dirt_skill"));
 		}
 	}
 
