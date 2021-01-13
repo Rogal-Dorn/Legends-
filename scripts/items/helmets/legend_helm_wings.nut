@@ -23,7 +23,7 @@ this.legend_helm_wings <- this.inherit("scripts/items/helmets/helmet", {
 		this.m.Condition = 335;
 		this.m.ConditionMax = 335;
 		this.m.StaminaModifier = -22;
-		this.m.Vision = -0;
+		this.m.Vision = 0;
 	}
 
 	function updateVariant()

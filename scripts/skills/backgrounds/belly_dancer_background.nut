@@ -135,10 +135,10 @@ this.belly_dancer_background <- this.inherit("scripts/skills/backgrounds/charact
 			[3, "oriental/cloth_sash"],
 			[1, ""]
 		]))
-		
-			items.equip(this.Const.World.Common.pickHelmet([
+
+		items.equip(this.Const.World.Common.pickHelmet([
 			[1, ""],
-			[4, "southern_jewelry"]
+			[4, "legend_jewelry"]
 		]));
 	}
 });
