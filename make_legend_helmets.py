@@ -2048,6 +2048,10 @@ helmets = r"""
   <sprite id="runed_jester_padded_10" offsetY="35" ic="FF2E5B82" width="184" height="222" img="entity\legend_helmets\runed_jester_padded_10.png" left="-34" right="42" top="-28" bottom="100" />
   <sprite id="runed_jester_padded_10_damaged" offsetY="35" ic="FF2E5374" width="184" height="222" img="entity\legend_helmets\runed_jester_padded_10_damaged.png" left="-34" right="42" top="-29" bottom="87" />
   <sprite id="runed_jester_padded_10_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF305374" width="191" height="185" img="entity\legend_helmets\runed_jester_padded_10_dead.png" left="-80" right="22" top="-76" bottom="8" />
+<sprite id="legend_jewelry_01" offsetY="35" ic="FF4E5053" width="184" height="222" img="entity\legend_helmets\legend_jewelry_01.png" left="-67" right="68" top="-40" bottom="108" />
+<sprite id="legend_jewelry_01_damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="entity\legend_helmets\legend_jewelry_01_damaged.png" left="-67" right="68" top="-40" bottom="108" />
+<sprite id="legend_jewelry_01_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_helmets\legend_jewelry_01_dead.png" left="-57" right="59" top="-53" bottom="55" />
+
 """
 
 def checkForIcon(iconpath, variants):

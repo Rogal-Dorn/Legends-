@@ -8,6 +8,7 @@ gt.tnf_debug <- {};
 // are at the file bottom  //
 //*************************//
 
+
 gt.tnf_debug.getAttributesValues <- function (character, levelup = true, perk = true) {
   local attributes = {
     Hitpoints     = 0,
@@ -208,7 +209,7 @@ gt.tnf_debug.factions <- [
 gt.tnf_debug.actors <- {
   //M for MONSTER                Summons a random enemy from list
   M = [
-    "BanditVermes"
+    "SkeletonGladiator",
     // "KoboldFighter",
     // "KoboldWolfrider"
     // "GoblinSkirmisher",

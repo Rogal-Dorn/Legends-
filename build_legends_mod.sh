@@ -103,6 +103,10 @@ while read -r line; do
         :
     elif [ "$line" == "scripts/config/world_entity_common.nut" ]; then
         :
+    elif [ "$line" == "scripts/!mods_preload/!config/tnf_debugMode_lib.nut" ]; then
+        :
+    elif [ "$line" == "scripts/!mods_preload/tnf_debugMode.nut" ]; then
+        :
     else
         #echo "$line"
         path=$( echo ${line%/*} )
