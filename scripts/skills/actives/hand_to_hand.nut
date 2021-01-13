@@ -154,37 +154,8 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 			local bodyHealth = actor.getHitpoints();
 			local intiative = actor.getInitiative()
 			local average = (intiative + bodyHealth) * 0.25;
-			local damageMin = 5;
-			local damageMax = 10;
-			local avgMin = average - 10;
-			local avgMax = average + 10;
-
-			//if ((average - 100) > 0)
-			//{
-			//	damageMin += avgMin;
-			//}
-
-			//if ((average - 90) > 0)
-			//{
-			//	damageMax += avgMax;
-			//}
-
-
-			//if (damageMin > 50)
-			//{
-			//local minMod = (damageMin - 50);
-			//local minFalloff = this.Math.pow(minMod, 0.5);
-			////damageMin = 50 + minFalloff;
-			//}
-
-			//if (damageMax > 50)
-			//{
-			//local maxMod = (damageMax - 50);
-			//local maxFalloff = this.Math.pow(maxMod, 0.5);
-			////damageMax = 50 + maxFalloff;
-			//}
-
-			
+			local damageMin = average - 10;
+			local damageMin = average + 10;
 
 
 			if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_muscularity"))
