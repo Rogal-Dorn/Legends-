@@ -71,6 +71,8 @@ declare -a BRUSHES=(
 "legend_armor/2"
 )
 
+mkdir -p brushes
+
 for i in "${BRUSHES[@]}"
 do
     echo "Building $i brush..."
