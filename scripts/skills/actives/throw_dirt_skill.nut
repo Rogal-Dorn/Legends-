@@ -36,12 +36,7 @@ this.throw_dirt_skill <- this.inherit("scripts/skills/skill", {
 			return false;
 		}
 
-		if (this.m.Entity != null || !this.skill.isUsable())
-		{
-			return false;
-		}
-
-		return true;
+		return this.skill.isUsable();
 	}
 
 
