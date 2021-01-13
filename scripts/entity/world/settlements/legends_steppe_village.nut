@@ -9,11 +9,11 @@ this.legends_steppe_village <- this.inherit("scripts/entity/world/settlements/le
 			"Brunnenthal",
 			"Erlach",
 			"Treiten",
-                        "Pilgerort,"
-                        "Heiligort,"
-                        "Trocken,"
-                        "Barbarisch,"
-                        "Dunkelhautig,"
+			"Pilgerort",
+			"Heiligort",
+			"Trocken",
+			"Barbarisch",
+			"Dunkelhautig",
 			"Tentlingen",
 			"Himmelsdorf",
 			"Thurn",
