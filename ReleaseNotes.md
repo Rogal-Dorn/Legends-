@@ -4746,4 +4746,6 @@ Added new plate armor
 Tweaks to various Enclave helmets and armors stats
 
 
+15.0.0.26
 
+Swaps perks around within perk groups to improve the light armor perk group 
