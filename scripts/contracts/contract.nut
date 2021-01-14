@@ -936,14 +936,6 @@ this.contract <- {
 
 	function onClear()
 	{
-			local contract_faction = this.World.FactionManager.getFaction(this.getFaction())
-			local towns = contract_faction.getSettlements()
-			foreach (town in towns)
-			{
-				town.getSprite("selection").Visible = false;
-			}
-			onClear()	
-	
 	}
 
 	function onCancel()
@@ -1738,30 +1730,7 @@ this.contract <- {
 		for( local i = 0; i != bulletpoints; i = ++i )
 		{
 			this.m.BulletpointsObjectives.push(_in.readString());
-		
 		}
-		// Adds Taro's Turn It In Mod 
-		if (this.m.Flags.get("UpdatedBulletpoints"))
-			{
-
-				local contract_faction = this.World.FactionManager.getFaction(this.getFaction())
-				local towns = contract_faction.getSettlements()
-				this.m.BulletpointsObjectives.pop()
-				if (this.m.Type == "contract.big_game_hunt"){
-					this.m.BulletpointsObjectives.push("Return to any marked town of " + contract_faction.getName() + " to get paid")
-				}
-				else{
-					this.m.BulletpointsObjectives.push("Return to any marked town of " + contract_faction.getName())
-				}
-				foreach (town in towns)
-				{
-					if (town.isMilitary() || town == this.m.Home)
-					{
-						town.getSprite("selection").Visible = true;
-					}
-				}
-				this.World.State.getWorldScreen().updateContract(this);
-			}
 
 		bulletpoints = _in.readU8();
 

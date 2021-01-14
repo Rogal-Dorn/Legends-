@@ -788,11 +788,11 @@ gt.Const.Perks.FitTree <- {
 		],
 		[],
 		[
-			gt.Const.Perks.PerkDefs.Relentless
+			
 		],
 		[],
 		[],
-		[],
+		[gt.Const.Perks.PerkDefs.Overwhelm],
 		[
 			gt.Const.Perks.PerkDefs.Rebound
 		]

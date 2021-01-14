@@ -60,9 +60,9 @@ gt.Const.Perks.LightArmorTree <- {
 		"light armor"
 	],
 	Tree = [
-		[gt.Const.Perks.PerkDefs.Lookout],
-		[gt.Const.Perks.PerkDefs.Dodge],
 		[],
+		[gt.Const.Perks.PerkDefs.Dodge],
+		[gt.Const.Perks.PerkDefs.Relentless],
 		[],
 		[],
 		[gt.Const.Perks.PerkDefs.Nimble],
