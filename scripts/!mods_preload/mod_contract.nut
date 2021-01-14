@@ -1,12 +1,26 @@
-::mods_hookNewObjectOnce("contracts/contract", function ( o )
+::mods_hookClass("contracts/contract", function ( o )
 {
-
-	if (!("_mod_legend" in o))
+	local onClear = o.onClear;
+	o.onClear = function()
 	{
-		o._mod_legend <- true;
+		local contract_faction = this.World.FactionManager.getFaction(this.getFaction())
+		local towns = contract_faction.getSettlements()
+		foreach (town in towns)
+		{
+			town.getSprite("selection").Visible = false;
+		}
+		onClear()
 	}
+})
 
-	o.create = function ()
+::mods_hookBaseClass("contracts/contract", function(o) {
+	while(!("EmployerID" in o.m)) o = o[o.SuperName]; // find the base class
+    if(!("_mod_legend" in o))
+    {
+        o._mod_legend <- true;// only override the methods once per base instance
+    }
+
+	o.create = function()
 	{
 		local r;
 
@@ -45,10 +59,267 @@
 		this.m.TempFlags = this.new("scripts/tools/tag_collection");
 		this.createStates();
 		this.createScreens();
-	};
-	
-	
-	o.buildText = function ( _text )
+	}
+
+	local onDeserialize = o.onDeserialize;
+	o.onDeserialize = function(_in)
+	{
+		onDeserialize( _in )
+		if (this.m.Flags.get("UpdatedBulletpoints"))
+		{
+			local contract_faction = this.World.FactionManager.getFaction(this.getFaction())
+			local towns = contract_faction.getSettlements()
+			this.m.BulletpointsObjectives.pop()
+			if (this.m.Type == "contract.big_game_hunt"){
+				this.m.BulletpointsObjectives.push("Return to any town of " + contract_faction.getName() + " to get paid")
+			}
+			else{
+				this.m.BulletpointsObjectives.push("Return to any town of " + contract_faction.getName())
+			}
+			foreach (town in towns)
+			{
+				town.getSprite("selection").Visible = true;
+			}
+			this.World.State.getWorldScreen().updateContract(this);
+		}
+	}
+
+	local payFn = o.m.Payment.getOnCompletion;
+	o.m.Payment.getOnCompletion = function ()
+	{
+		local val = payFn();
+		return this.Math.max(this.Const.Difficulty.MinPayments[this.World.Assets.getEconomicDifficulty()], val)
+	}
+
+	local headFn = o.m.Payment.getPerCount
+	o.m.Payment.getPerCount = function ()
+	{
+		local val = headFn();
+		return this.Math.max(this.Const.Difficulty.MinHeadPayments[this.World.Assets.getEconomicDifficulty()], val)
+	}
+
+	o.getScaledDifficultyMult = function()
+	{
+		local s = this.Math.maxf(0.75, 0.94 * this.Math.pow(0.01 * this.World.State.getPlayer().getStrength(), 0.89));
+		local d = this.Math.minf(5.0, s);
+		return d * this.Const.Difficulty.EnemyMult[this.World.Assets.getCombatDifficulty()];
+	}
+
+	o.getPaymentMult = function()
+	{
+		local repDiffMult = this.Math.pow(this.getScaledDifficultyMult(), 0.5);
+		local broMult = this.World.State.getPlayer().getBarterMult();
+		return (this.m.PaymentMult + broMult) * (this.m.DifficultyMult * repDiffMult) * this.World.Assets.m.ContractPaymentMult;
+	}
+
+	o.addUnitsToEntity = function ( _entity, _partyList, _resources )
+	{
+		local p;
+
+		if (typeof(_partyList) == "table")
+		{
+			p = this.Const.World.Common.buildDynamicTroopList(_partyList, _resources)
+		}
+		else
+		{
+			local total_weight = 0;
+			local potential = [];
+
+			foreach( party in _partyList )
+			{
+				if (party.Cost < _resources * 0.7)
+				{
+					continue;
+				}
+
+				if (party.Cost > _resources)
+				{
+					break;
+				}
+
+				potential.push(party);
+				total_weight = total_weight + party.Cost;
+			}
+
+			if (potential.len() == 0)
+			{
+				local best;
+				local bestCost = 9000;
+
+				foreach( party in _partyList )
+				{
+					if (this.Math.abs(_resources - party.Cost) <= bestCost)
+					{
+						best = party;
+						bestCost = this.Math.abs(_resources - party.Cost);
+					}
+				}
+
+				p = best;
+			}
+			else
+			{
+				local pick = this.Math.rand(1, total_weight);
+
+				foreach( party in potential )
+				{
+					if (pick <= party.Cost)
+					{
+						p = party;
+						break;
+					}
+
+					pick = pick - party.Cost;
+				}
+			}
+		}
+
+		local troopMbMap = {};
+
+		foreach( t in p.Troops )
+		{
+			local key = "Enemy" + t.Type.ID;
+			if (!(key in troopMbMap))
+			{
+				troopMbMap[key] <- this.Const.LegendMod.GetFavEnemyBossChance(t.Type.ID);
+			}
+
+			local mb = troopMbMap[key];
+
+			if (this.getDifficultyMult() >= 1.45)
+			{
+				mb += 15;
+			}
+			else if (this.getDifficultyMult() >= 1.15)
+			{
+				mb += 5;
+			}
+			else if (this.getDifficultyMult() >= 0.85)
+			{
+				mb += 0;
+			}
+			else
+			{
+				mb += -99;
+			}
+
+			for( local i = 0; i != t.Num; i = ++i )
+			{
+				this.Const.World.Common.addTroop(_entity, t, false, mb);
+			}
+		}
+
+		if (_entity.isLocation())
+		{
+			_entity.resetDefenderSpawnDay();
+		}
+
+		_entity.updateStrength();
+	}
+
+	o.getUIMiddleOverlay = function()
+	{
+		if (("ShowDifficulty" in this.m.ActiveScreen) && this.m.ActiveScreen.ShowDifficulty)
+		{
+			switch ((this.getDifficulty()))
+			{
+				case 1:
+					return {
+						Image = "ui/images/difficulty_easy.png",
+						IsProcedural = false
+					};
+				case 2:
+					return {
+						Image = "ui/images/difficulty_medium.png",
+						IsProcedural = false
+					};
+				case 3:
+					return {
+						Image = "ui/images/difficulty_hard.png",
+						IsProcedural = false
+					};
+			}
+			return {
+				Image = "ui/images/difficulty_legend.png",
+				IsProcedural = false
+			};
+		}
+		else
+		{
+			return null;
+		}
+	}
+
+	o.getUIDifficultySmall = function()
+	{
+		switch (this.getDifficulty())
+		{
+			case 1:
+				return "ui/icons/difficulty_easy";
+			case 2:
+				return "ui/icons/difficulty_medium";
+			case 3:
+				return "ui/icons/difficulty_hard";
+			default:
+				return  "ui/icons/difficulty_legend";
+		}
+	}
+
+	o.getDifficulty <- function ()
+	{
+		if (this.m.DifficultyMult < 0.9)
+		{
+			return 1;
+		}
+
+		if (this.m.DifficultyMult >= 0.9 && this.m.DifficultyMult < 1.1)
+		{
+			return 2;
+		}
+
+		if (this.m.DifficultyMult >= 1.1 && this.m.DifficultyMult < 1.4)
+		{
+			return 3;
+		}
+
+		return 4;
+	}
+
+	o.resolveSituation = function ( _situationInstance, _settlement, _list = null)
+	{
+		if (_situationInstance == 0 || _settlement == null || typeof _settlement == "instance" && _settlement.isNull())
+		{
+			return 0;
+		}
+
+		local s = _settlement.getSituationByInstance(_situationInstance);
+		local ret = _situationInstance;
+
+		if (s != null)
+		{
+			if(this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
+			{
+				ret = _settlement.resolveSituationByInstance(_situationInstance);
+			}
+			else
+			{
+				ret = _settlement.removeSituationByInstance(_situationInstance);
+			}
+		}
+
+		if (_list != null && s != null && !_settlement.hasSituation(s.getID()))
+		{
+			_list.push({
+				id = 10,
+				icon = s.getIcon(),
+				text = s.getRemovedString(_settlement.getName())
+			});
+		}
+
+		return ret;
+	}
+
+    o.buildText <- function(_text)
 	{
 		local brothers = this.World.getPlayerRoster().getAll();
 		local brother1 = this.Math.rand(0, brothers.len() - 1);
@@ -62,13 +333,10 @@
 			}
 		}
 
-		if (brothers.len() < 2)
-		{
-			brother1 = "unknown";
-			brother2 = "unknown";
-		}
-		else
-		{
+		if (brothers.len() < 2) {
+			brother1 = "unknown"
+			brother2 = "unknown"
+		} else {
 			brother1 = brothers[brother1].getName();
 			brother2 = brothers[brother2].getName();
 		}
@@ -163,288 +431,6 @@
 			this.m.Payment.getOnCompletion() + this.m.Payment.getInAdvance()
 		]);
 		return this.buildTextFromTemplate(_text, vars);
-	};
+	}
 
-	o.getScaledDifficultyMult = function ()
-	{
-		local s = this.Math.maxf(0.75, 0.94 * this.Math.pow(0.01 * this.World.State.getPlayer().getStrength(), 0.89));
-		local d = this.Math.minf(5.0, s);
-		return d * this.Const.Difficulty.EnemyMult[this.World.Assets.getCombatDifficulty()];
-	};
-	o.getPaymentMult = function ()
-	{
-		local repDiffMult = this.Math.pow(this.getScaledDifficultyMult(), 0.5);
-		local broMult = this.World.State.getPlayer().getBarterMult();
-		return (this.m.PaymentMult + broMult) * (this.m.DifficultyMult * repDiffMult) * this.World.Assets.m.ContractPaymentMult;
-	};
-	
-	o.addUnitsToEntity = function ( _entity, _partyList, _resources )
-	{
-		local p;
-
-		if (typeof _partyList == "table")
-		{
-			p = this.Const.World.Common.buildDynamicTroopList(_partyList, _resources);
-		}
-		else
-		{
-			local total_weight = 0;
-			local potential = [];
-
-			foreach( party in _partyList )
-			{
-				if (party.Cost < _resources * 0.7)
-				{
-					continue;
-				}
-
-				if (party.Cost > _resources)
-				{
-					break;
-				}
-
-				potential.push(party);
-				total_weight = total_weight + party.Cost;
-			}
-
-			if (potential.len() == 0)
-			{
-				local best;
-				local bestCost = 9000;
-
-				foreach( party in _partyList )
-				{
-					if (this.Math.abs(_resources - party.Cost) <= bestCost)
-					{
-						best = party;
-						bestCost = this.Math.abs(_resources - party.Cost);
-					}
-				}
-
-				p = best;
-			}
-			else
-			{
-				local pick = this.Math.rand(1, total_weight);
-
-				foreach( party in potential )
-				{
-					if (pick <= party.Cost)
-					{
-						p = party;
-						break;
-					}
-
-					pick = pick - party.Cost;
-				}
-			}
-		}
-
-		local troopMbMap = {};
-
-		foreach( t in p.Troops )
-		{
-			local key = "Enemy" + t.Type.ID;
-
-			if (!(key in troopMbMap))
-			{
-				troopMbMap[key] <- this.Const.LegendMod.GetFavEnemyBossChance(t.Type.ID);
-			}
-
-			local mb = troopMbMap[key];
-
-			if (this.getDifficultyMult() >= 1.45)
-			{
-				mb = mb + 15;
-			}
-			else if (this.getDifficultyMult() >= 1.15)
-			{
-				mb = mb + 5;
-			}
-			else if (this.getDifficultyMult() >= 0.85)
-			{
-				mb = mb + 0;
-			}
-			else
-			{
-				mb = mb + -99;
-			}
-
-			for( local i = 0; i != t.Num; i = i )
-			{
-				this.Const.World.Common.addTroop(_entity, t, false, mb);
-				i = ++i;
-			}
-		}
-
-		if (_entity.isLocation())
-		{
-			_entity.resetDefenderSpawnDay();
-		}
-
-		_entity.updateStrength();
-	};
-	o.getUIMiddleOverlay = function ()
-	{
-		if (("ShowDifficulty" in this.m.ActiveScreen) && this.m.ActiveScreen.ShowDifficulty)
-		{
-			switch(this.getDifficulty())
-			{
-			case 1:
-				return {
-					Image = "ui/images/difficulty_easy.png",
-					IsProcedural = false
-				};
-
-			case 2:
-				return {
-					Image = "ui/images/difficulty_medium.png",
-					IsProcedural = false
-				};
-
-			case 3:
-				return {
-					Image = "ui/images/difficulty_hard.png",
-					IsProcedural = false
-				};
-			}
-
-			return {
-				Image = "ui/images/difficulty_legend.png",
-				IsProcedural = false
-			};
-		}
-		else
-		{
-			return null;
-		}
-	};
-	o.getUIDifficultySmall = function ()
-	{
-		switch(this.getDifficulty())
-		{
-		case 1:
-			return "ui/icons/difficulty_easy";
-
-		case 2:
-			return "ui/icons/difficulty_medium";
-
-		case 3:
-			return "ui/icons/difficulty_hard";
-		}
-
-		return "ui/icons/difficulty_legend";
-	};
-	o.getDifficulty <- function ()
-	{
-		if (this.m.DifficultyMult < 0.9)
-		{
-			return 1;
-		}
-
-		if (this.m.DifficultyMult >= 0.9 && this.m.DifficultyMult < 1.1)
-		{
-			return 2;
-		}
-
-		if (this.m.DifficultyMult >= 1.1 && this.m.DifficultyMult < 1.4)
-		{
-			return 3;
-		}
-
-		return 4;
-	};
-	o.resolveSituation <- function ( _situationInstance, _settlement, _list = null )
-	{
-		if (_situationInstance == 0 || _settlement == null || typeof _settlement == "instance" && _settlement.isNull())
-		{
-			return 0;
-		}
-
-		local s = _settlement.getSituationByInstance(_situationInstance);
-		local ret = _situationInstance;
-
-		if (s != null)
-		{
-			if (this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
-			{
-				ret = _settlement.resolveSituationByInstance(_situationInstance);
-			}
-			else
-			{
-				ret = _settlement.removeSituationByInstance(_situationInstance);
-			}
-		}
-
-		if (_list != null && s != null && !_settlement.hasSituation(s.getID()))
-		{
-			_list.push({
-				id = 10,
-				icon = s.getIcon(),
-				text = s.getRemovedString(_settlement.getName())
-			});
-		}
-
-		return ret;
-	};
-});
-
-::mods_hookBaseClass("contracts/contract", function ( o )
-{
-	o.m.Payment <-clone(o[o.SuperName].m.Payment)
-	local payFn = o.m.Payment.getOnCompletion;
-	o.m.Payment.getOnCompletion = function ()
-	{
-		local val = payFn();
-		return this.Math.max(this.Const.Difficulty.MinPayments[this.World.Assets.getEconomicDifficulty()], val);
-	};
-	local headFn = o.m.Payment.getPerCount;
-	o.m.Payment.getPerCount = function ()
-	{
-		local val = headFn();
-		return this.Math.max(this.Const.Difficulty.MinHeadPayments[this.World.Assets.getEconomicDifficulty()], val);
-	};
-	
-	local onClear = o.onClear;
-	o.onClear = function ()
-	{
-		local contract_faction = this.World.FactionManager.getFaction(this.getFaction());
-		local towns = contract_faction.getSettlements();
-
-		foreach( town in towns )
-		{
-			town.getSprite("selection").Visible = false;
-		}
-
-		onClear();
-	};
-
-	local onDeserialize = o.onDeserialize;
-	o.onDeserialize = function ( _in )
-	{
-		onDeserialize(_in);
-
-		if (this.m.Flags.get("UpdatedBulletpoints"))
-		{
-			local contract_faction = this.World.FactionManager.getFaction(this.getFaction());
-			local towns = contract_faction.getSettlements();
-			this.m.BulletpointsObjectives.pop();
-
-			if (this.m.Type == "contract.big_game_hunt")
-			{
-				this.m.BulletpointsObjectives.push("Return to any town of " + contract_faction.getName() + " to get paid");
-			}
-			else
-			{
-				this.m.BulletpointsObjectives.push("Return to any town of " + contract_faction.getName());
-			}
-
-			foreach( town in towns )
-			{
-				town.getSprite("selection").Visible = true;
-			}
-
-			this.World.State.getWorldScreen().updateContract(this);
-		}
-	};
 });
