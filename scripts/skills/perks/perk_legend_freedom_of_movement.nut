@@ -14,7 +14,7 @@ this.perk_legend_freedom_of_movement <- this.inherit("scripts/skills/skill", {
 
 	function getDescription()
 	{
-		return "You are moving with freedom ";
+		return "You are moving with freedom";
 	}
 
 	function getTooltip()
