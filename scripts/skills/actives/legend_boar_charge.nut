@@ -6,7 +6,7 @@ this.legend_boar_charge <- this.inherit("scripts/skills/skill", {
 		this.m.Name = "Boar Charge";
 		this.m.Description = "";
 		this.m.Icon = "skills/boar_charge.png";
-		this.m.IconDisabled = "skills/boar_charge.png";
+		this.m.IconDisabled = "skills/boar_charge_bw.png";
 		this.m.Overlay = "active_53";
 		this.m.SoundOnUse = [
 			"sounds/combat/boarcharge.wav"
@@ -79,14 +79,6 @@ this.legend_boar_charge <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
-	
-
-		if (!this.m.Container.hasSkill("effect.legend_transformed_boar"))
-		{
-			this.m.Container.add(this.new("scripts/skills/effects/legend_transformed_boar_effect"));
-		}
-
-		
 		local target = _targetTile.getEntity();
 		local success = this.attackEntity(_user, target);
 		if (this.m.SoundOnUse.len() != 0)
@@ -208,7 +200,7 @@ this.legend_boar_charge <- this.inherit("scripts/skills/skill", {
 			damageMax = 50 + maxFalloff;
 			}
 
-			
+
 
 
 			if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_muscularity"))

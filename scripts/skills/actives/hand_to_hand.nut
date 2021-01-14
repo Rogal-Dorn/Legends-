@@ -36,33 +36,59 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 		this.m.MaxRange = 1;
 	}
 
-	function getTooltip()
+	function getMods()
 	{
+		local ret = {
+			Min = 5,
+			Max = 10,
+			HasMusc = false,
+			HasBro = false,
+			HasTraining = false
+		}
 		local actor = this.getContainer().getActor();
 
-		local bodyHealth = actor.getHitpoints();
-		local initiative = actor.getInitiative();
-		local average = (initiative + bodyHealth) * 0.25;
-
-		local damageMin = average - 10;
-		local damageMax = average + 10;
-
-		if (this.getContainer().hasSkill("background.brawler") || this.getContainer().hasSkill("background.legend_commander_berserker") || this.getContainer().hasSkill("background.legend_berserker") || this.getContainer().hasSkill("background.legend_druid_commander") || this.getContainer().hasSkill("background.legend_druid") )
+		if (actor.getSkills().hasSkill("perk.legend_unarmed_training"))
 		{
-			damageMin = damageMin * 1.25;
-			damageMax = damageMax * 1.25;
+			local average = (actor.getInitiative() + actor.getHitpoints()) * 0.25;
+			ret.Min = average - 10;
+			ret.Max = average + 10;
+			ret.HasTraining = true;
 		}
 
-		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_muscularity"))
+		if (actor.getSkills().hasSkill("perk.legend_muscularity"))
 		{
-			local muscularity = this.Math.floor(bodyHealth * 0.1);
-			damageMin += muscularity;
-			damageMax += muscularity;
+			ret.Max += this.Math.floor(actor.getHitpoints() * 0.1);
+			ret.HasMusc = true;
 		}
 
-            damageMin = this.Math.floor(damageMin);
-			damageMax = this.Math.floor(damageMax);
+		local backgrounds = [
+			"background.legend_druid_commander",
+			"background.legend_druid",
+			"background.brawler",
+			"background.legend_commander_berserker",
+			"background.legend_berserker"
+		];
 
+		foreach (bg in backgrounds)
+		{
+			if (!actor.getSkills().hasSkill(bg))
+			{
+				continue;
+			}
+			ret.Min *= 1.25;
+			ret.Max *= 1.25;
+			ret.HasBro = true;
+			break;
+		}
+
+		ret.Min = this.Math.floor(ret.Min);
+		ret.Max = this.Math.floor(ret.Max);
+		return ret;
+	}
+
+	function getTooltip()
+	{
+		local mods = this.getMods();
 		local ret = [
 			{
 				id = 1,
@@ -80,52 +106,46 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 				text = this.getCostString()
 			}
 		];
-		
-		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_unarmed_training"))
+
+		if (mods.HasTraining)
 		{
 			ret.push({
 				id = 4,
 				type = "text",
 				icon = "ui/icons/regular_damage.png",
-				text = "Unarmed Training inflicts half the average of your hitpoints and initiative. This will deal [color=" + this.Const.UI.Color.DamageValue + "]" + damageMin + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + damageMax + "[/color] damage"
+				text = "Unarmed Training inflicts half the average of your hitpoints and initiative. This will deal [color=" + this.Const.UI.Color.DamageValue + "]" + mods.Min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + mods.Max + "[/color] damage"
 			});
-					
+
 		}
-		if (!this.getContainer().getActor().getSkills().hasSkill("perk.legend_unarmed_training"))
+		else
 		{
 			ret.push({
 				id = 4,
 				type = "text",
 				icon = "ui/icons/regular_damage.png",
-				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + 5 + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + 10 + "[/color] damage"
+				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + mods.Min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + mods.Max + "[/color] damage"
 			});
 		}
-		
-		if (this.getContainer().hasSkill("background.brawler") || this.getContainer().hasSkill("background.legend_commander_berserker") || this.getContainer().hasSkill("background.legend_berserker") || this.getContainer().hasSkill("background.legend_druid_commander") || this.getContainer().hasSkill("background.legend_druid") )
-		{		
-			if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_unarmed_training"))
-			{
+
+		if (mods.HasBro)
+		{
 			ret.push({
 				id = 5,
 				type = "text",
 				icon = "ui/icons/regular_damage.png",
 				text = "Includes +25% damage due to background"
 			});
-			}
-		}	
-		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_muscularity"))		
-		{		
-			if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_unarmed_training"))
-			{
-		
+		}
+
+		if (mods.HasMusc)
+		{
 			ret.push({
 				id = 6,
 				type = "text",
 				icon = "ui/icons/regular_damage.png",
 				text = "Includes [color=" + this.Const.UI.Color.DamageValue + "]+10%[/color] of your hitpoints as damage due to Muscularity"
 			});
-			}
-		}	
+		}
 
 		return ret;
 	}
@@ -148,43 +168,17 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
-		if (_skill == this)
+		if (_skill != this)
 		{
-			local actor = this.getContainer().getActor();
-			local bodyHealth = actor.getHitpoints();
-			local intiative = actor.getInitiative()
-			local average = (intiative + bodyHealth) * 0.25;
-			local damageMin = average - 10;
-			local damageMin = average + 10;
+			return;
+		}
 
-
-			if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_muscularity"))
-			{
-				local muscularity = this.Math.floor(bodyHealth * 0.1);
-				damageMax += muscularity;
-			}
-
-			if (this.getContainer().hasSkill("background.brawler") || this.getContainer().hasSkill("background.legend_commander_berserker" || this.getContainer().hasSkill("background.legend_berserker")) )
-			{
-				damageMin *= 1.25;
-				damageMax *= 1.25;
-			}
-			
-            damageMin = this.Math.floor(damageMin);
-			damageMax = this.Math.floor(damageMax);			
-			
-			if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_unarmed_training"))
-			{
-			_properties.DamageRegularMin += this.Math.floor(damageMin);
-			_properties.DamageRegularMax += this.Math.floor(damageMax);
-			}
-			
-			if (!this.getContainer().getActor().getSkills().hasSkill("perk.legend_unarmed_training"))
-			{
-			_properties.DamageRegularMin = 5;
-			_properties.DamageRegularMax = 10;
-			_properties.DamageArmorMult = 0.5;			
-			}
+		local mods = this.getMods();
+		_properties.DamageRegularMin += mods.Min;
+		_properties.DamageRegularMax += mods.Max
+		if (!mods.HasTraining)
+		{
+			_properties.DamageArmorMult = 0.5;
 		}
 	}
 
