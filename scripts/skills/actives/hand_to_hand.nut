@@ -81,6 +81,8 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 			break;
 		}
 
+		ret.Min = this.Math.floor(ret.Min);
+		ret.Max = this.Math.floor(ret.Max);
 		return ret;
 	}
 

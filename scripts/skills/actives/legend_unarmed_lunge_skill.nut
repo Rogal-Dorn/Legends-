@@ -1,5 +1,7 @@
 this.legend_unarmed_lunge_skill <- this.inherit("scripts/skills/skill", {
 	m = {
+		APCost = 6,
+		FatMult = 1.0,
 		SoundOnAttack = [
 			"sounds/combat/dlc2/lunge_attack_01.wav",
 			"sounds/combat/dlc2/lunge_attack_02.wav",
@@ -41,7 +43,7 @@ this.legend_unarmed_lunge_skill <- this.inherit("scripts/skills/skill", {
 		this.m.InjuriesOnHead = this.Const.Injury.PiercingHead;
 		this.m.HitChanceBonus = 0;
 		this.m.DirectDamageMult = 0.25;
-		this.m.ActionPointCost = 6;
+		this.m.ActionPointCost = this.m.APCost;
 		this.m.FatigueCost = 30;
 		this.m.MinRange = 2;
 		this.m.MaxRange = 2;
@@ -50,9 +52,109 @@ this.legend_unarmed_lunge_skill <- this.inherit("scripts/skills/skill", {
 		this.m.ChanceSmash = 33;
 	}
 
+	function getMods()
+	{
+		local ret = {
+			Min = 10,
+			Max = 20,
+			HasMusc = false,
+			HasBro = false,
+			HasTraining = false
+		}
+
+		local actor = this.getContainer().getActor();
+		if (actor.getSkills().hasSkill("perk.legend_unarmed_training"))
+		{
+			ret.Min = 5;
+			ret.Max = 10;
+			ret.HasTraining = true;
+			local average = (actor.getInitiative() +  actor.getHitpointsMax()) / 4;
+			local avgMin = average - 10;
+			local avgMax = average + 10;
+
+			if ((average - 100) > 0)
+			{
+				ret.Min += avgMin;
+			}
+
+			if ((average - 90) > 0)
+			{
+				ret.Max += avgMax;
+			}
+
+
+			if (ret.Min > 50)
+			{
+				local minMod = (ret.Min - 50);
+				local minFalloff = this.Math.pow(minMod, 0.5);
+				ret.Min = 50 + minFalloff;
+			}
+
+			if (ret.Max > 50)
+			{
+				local maxMod = (ret.Max - 50);
+				local maxFalloff = this.Math.pow(maxMod, 0.5);
+				ret.Max = 50 + maxFalloff;
+			}
+		}
+
+
+		if (actor.getSkills().hasSkill("perk.legend_muscularity"))
+		{
+			ret.Max += this.Math.floor(actor.getHitpoints() * 0.1);
+			ret.HasMusc = true;
+		}
+
+		local backgrounds = [
+			"background.legend_druid_commander",
+			"background.legend_druid",
+			"background.brawler",
+			"background.legend_commander_berserker",
+			"background.legend_berserker"
+		];
+
+		foreach (bg in backgrounds)
+		{
+			if (!actor.getSkills().hasSkill(bg))
+			{
+				continue;
+			}
+			ret.Min *= 1.25;
+			ret.Max *= 1.25;
+			ret.HasBro = true;
+			break;
+		}
+
+		ret.Min = this.Math.floor(ret.Min);
+		ret.Max = this.Math.floor(ret.Max);
+		return ret;
+	}
+
 	function getTooltip()
 	{
+		local mods = this.getMods();
 		local ret = this.getDefaultTooltip();
+
+		if (mods.HasBro)
+		{
+			ret.push({
+				id = 5,
+				type = "text",
+				icon = "ui/icons/regular_damage.png",
+				text = "Includes +25% damage due to background"
+			});
+		}
+
+		if (mods.HasMusc)
+		{
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/regular_damage.png",
+				text = "Includes [color=" + this.Const.UI.Color.DamageValue + "]+10%[/color] of your hitpoints as damage due to Muscularity"
+			});
+		}
+
 		ret.extend([
 			{
 				id = 6,
@@ -87,7 +189,7 @@ this.legend_unarmed_lunge_skill <- this.inherit("scripts/skills/skill", {
 				text = "Costs [color=" + this.Const.UI.Color.PositiveValue + "]-1[/color] Action Point due to unarmed training"
 			});
 		}
-		
+
 		if (this.getContainer().getActor().getCurrentProperties().IsFleetfooted)
 		{
 			ret.push({
@@ -129,16 +231,14 @@ this.legend_unarmed_lunge_skill <- this.inherit("scripts/skills/skill", {
 		{
 			if (!_targetTile.hasNextTile(i))
 			{
+				continue;
 			}
-			else
-			{
-				local tile = _targetTile.getNextTile(i);
+			local tile = _targetTile.getNextTile(i);
 
-				if (tile.IsEmpty && tile.getDistanceTo(myTile) == 1 && this.Math.abs(myTile.Level - tile.Level) <= 1 && this.Math.abs(_targetTile.Level - tile.Level) <= 1)
-				{
-					hasTile = true;
-					break;
-				}
+			if (tile.IsEmpty && tile.getDistanceTo(myTile) == 1 && this.Math.abs(myTile.Level - tile.Level) <= 1 && this.Math.abs(_targetTile.Level - tile.Level) <= 1)
+			{
+				hasTile = true;
+				break;
 			}
 		}
 
@@ -158,21 +258,23 @@ this.legend_unarmed_lunge_skill <- this.inherit("scripts/skills/skill", {
 	function onAfterUpdate( _properties )
 	{
 
+		this.m.ActionPointCost = this.m.APCost;
+		this.m.FatigueCostMult = this.m.FatMult;
 		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_unarmed_training"))
 		{
 			this.m.FatigueCostMult *= 0.5;
 		}
-		
+
 		if (_properties.IsFleetfooted)
-		{	
-		this.m.ActionPointCost -= 1;
+		{
+			this.m.ActionPointCost -= 1;
 		}
 
 		if (_properties.IsSpecializedInFists)
-		{	
-		this.m.ActionPointCost -= 1;
+		{
+			this.m.ActionPointCost -= 1;
 		}
-		
+
 	}
 
 	function onUse( _user, _targetTile )
@@ -185,17 +287,17 @@ this.legend_unarmed_lunge_skill <- this.inherit("scripts/skills/skill", {
 		{
 			if (!_targetTile.hasNextTile(i))
 			{
+				continue;
 			}
-			else
-			{
-				local tile = _targetTile.getNextTile(i);
 
-				if (tile.IsEmpty && tile.getDistanceTo(myTile) == 1 && this.Math.abs(myTile.Level - tile.Level) <= 1 && this.Math.abs(_targetTile.Level - tile.Level) <= 1)
-				{
-					destTile = tile;
-					break;
-				}
+			local tile = _targetTile.getNextTile(i);
+
+			if (tile.IsEmpty && tile.getDistanceTo(myTile) == 1 && this.Math.abs(myTile.Level - tile.Level) <= 1 && this.Math.abs(_targetTile.Level - tile.Level) <= 1)
+			{
+				destTile = tile;
+				break;
 			}
+
 		}
 
 		if (destTile == null)
@@ -226,27 +328,24 @@ this.legend_unarmed_lunge_skill <- this.inherit("scripts/skills/skill", {
 		{
 			if (!myTile.hasNextTile(i))
 			{
+				continue;
 			}
-			else
+
+			local tile = myTile.getNextTile(i);
+
+			if (!tile.IsOccupiedByActor)
 			{
-				local tile = myTile.getNextTile(i);
-
-				if (!tile.IsOccupiedByActor)
-				{
-				}
-				else
-				{
-					local actor = tile.getEntity();
-
-					if (actor.isAlliedWith(_entity) || actor.getCurrentProperties().IsStunned)
-					{
-					}
-					else
-					{
-						ZOC.push(actor);
-					}
-				}
+				continue;
 			}
+
+			local actor = tile.getEntity();
+
+			if (actor.isAlliedWith(_entity) || actor.getCurrentProperties().IsStunned)
+			{
+				continue;
+			}
+
+			ZOC.push(actor);
 		}
 
 		foreach( actor in ZOC )
@@ -296,66 +395,22 @@ this.legend_unarmed_lunge_skill <- this.inherit("scripts/skills/skill", {
 		this.Tactical.getNavigator().teleport(_tag.User, _tag.TargetTile, null, null, false);
 	}
 
-function onAnySkillUsed( _skill, _targetEntity, _properties )
+	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
-		if (_skill == this)
+		if (_skill != this)
 		{
-			local actor = this.getContainer().getActor();
-			local bodyHealth = actor.getHitpointsMax();
-			local average = (actor.getInitiative() +  bodyHealth) / 4;
-			local damageMin = 5;
-			local damageMax = 10;
-			local avgMin = average - 10;
-			local avgMax = average + 10;
-
-			if ((average - 100) > 0)
-			{
-				damageMin += avgMin;
-			}
-
-			if ((average - 90) > 0)
-			{
-				damageMax += avgMax;
-			}
-
-
-			if (damageMin > 50)
-			{
-			local minMod = (damageMin - 50);
-			local minFalloff = this.Math.pow(minMod, 0.5);
-			damageMin = 50 + minFalloff;
-			}
-
-			if (damageMax > 50)
-			{
-			local maxMod = (damageMax - 50);
-			local maxFalloff = this.Math.pow(maxMod, 0.5);
-			damageMax = 50 + maxFalloff;
-			}
-
-			if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_muscularity"))
-			{
-				local muscularity = this.Math.floor(bodyHealth * 0.1);
-				damageMax += muscularity;
-			}
-
-			if (this.getContainer().hasSkill("background.brawler") || this.getContainer().hasSkill("background.legend_commander_berserker" || this.getContainer().hasSkill("background.legend_berserker")) )
-			{
-				damageMin = damageMin * 1.25;
-				damageMax = damageMax * 1.25;
-			}
-			if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_unarmed_training"))
-			{
-			_properties.DamageRegularMin += this.Math.floor(damageMin);
-			_properties.DamageRegularMax += this.Math.floor(damageMax);
-			}
-			else
-			{
-			_properties.DamageRegularMin = 10;
-			_properties.DamageRegularMax = 20;
-			_properties.DamageArmorMult = 0.5;			
-			}
+			return;
 		}
+
+		local mods = this.getMods()
+		_properties.DamageRegularMin += mods.Min;
+		_properties.DamageRegularMax += mods.Max;
+
+		if (!mods.HasTraining)
+		{
+			_properties.DamageArmorMult = 0.5;
+		}
+
 	}
 
 });
