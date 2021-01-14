@@ -186,12 +186,12 @@ gt.Const.Perks.BowTree <- {
 		"bows"
 	],
 	Tree = [
-		[],//gt.Const.Perks.PerkDefs.BowRange
+		[gt.Const.Perks.PerkDefs.Lookout],//gt.Const.Perks.PerkDefs.BowRange
 		[gt.Const.Perks.PerkDefs.Bullseye],
 		[],
 		[gt.Const.Perks.PerkDefs.SpecBow],
 		[gt.Const.Perks.PerkDefs.LegendWindReader],
-		[gt.Const.Perks.PerkDefs.Overwhelm],
+		[],
 		[]
 	]
 };
