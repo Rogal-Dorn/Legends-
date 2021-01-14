@@ -46,19 +46,6 @@
 		this.createScreens();
 	}
 
-
-	local onClear = o.onClear;
-	o.onClear = function()
-	{
-		local contract_faction = this.World.FactionManager.getFaction(this.getFaction())
-		local towns = contract_faction.getSettlements()
-		foreach (town in towns)
-		{
-			town.getSprite("selection").Visible = false;
-		}
-		onClear()
-	}
-
 	while (!("onDeserialize" in o)) o = o[o.SuperName];
 	local onDeserialize = o.onDeserialize;
 	o.onDeserialize = function(_in)
@@ -434,4 +421,19 @@
 		return ret;
 	}
 
+});
+
+::mods_hookClass("contracts/contract", function ( o )
+{
+	local onClear = o.onClear;		
+	o.onClear = function()
+	{
+		local contract_faction = this.World.FactionManager.getFaction(this.getFaction())
+		local towns = contract_faction.getSettlements()
+		foreach (town in towns)
+		{
+			town.getSprite("selection").Visible = false;
+		}
+		onClear()
+	}
 });

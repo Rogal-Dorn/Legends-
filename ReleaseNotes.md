@@ -4748,5 +4748,9 @@ Tweaks to various Enclave helmets and armors stats
 
 15.0.0.26
 
+**changes** 
 Swaps perks around within perk groups to improve the light armor perk group, based on feedback 
 Grand tournament rounds get harder faster, based on feedback 
+
+**fixes**
+fixes bug in the legends implementation of Turn it In that resulted in the contract never clearing
