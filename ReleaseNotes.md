@@ -4707,10 +4707,10 @@ Reduces the number of infected Barbarians if Lycanthropy is enabled. (about 1 in
 Mage scenario removed pending upgrades
 Evokers get their old tree back, but with missile upgrade perks
 Mastaba fight rearranged to be more swarmy and not have folks stuck on poles unles they want to be
-Embalmed have new weapons and armor, a wig, toga, restored ancient armors, a new kopesh, kopis and royal sword staff. 
+Embalmed have new weapons and armor, a wig, toga, restored ancient armors, a new kopesh, kopis and royal sword staff.
 throw dirt now uses to hit chance, lasts two turns and can only be used once per fight.
-Hired nomads come with throw dirt as a perk 
-Implements BlueyD's Freedom of Movement submod, it uses intiative instead of fatigue now 
+Hired nomads come with throw dirt as a perk
+Implements BlueyD's Freedom of Movement submod, it uses intiative instead of fatigue now
 Embalmed have new weapons and armor, a wig, toga, restored ancient armors, a new kopesh, kopis and royal sword staff.
 Throw dirt now uses to hit chance, lasts two turns and can only be used once per fight.
 Hired nomads come with throw dirt as a perk
@@ -4748,9 +4748,10 @@ Tweaks to various Enclave helmets and armors stats
 
 15.0.0.26
 
-**changes** 
-Swaps perks around within perk groups to improve the light armor perk group, based on feedback 
-Grand tournament rounds get harder faster, based on feedback 
+**changes**
+Swaps perks around within perk groups to improve the light armor perk group, based on feedback
+Grand tournament rounds get harder faster, based on feedback
 
 **fixes**
 fixes bug in the legends implementation of Turn it In that resulted in the contract never clearing
+fixes error on getting named items in arena.
