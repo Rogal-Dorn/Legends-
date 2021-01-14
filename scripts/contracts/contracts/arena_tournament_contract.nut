@@ -39,7 +39,7 @@ this.arena_tournament_contract <- this.inherit("scripts/contracts/contract", {
 				)
 			);
 		}
-		
+
 		local cnh;
 		if (idx == 1)
 		{
@@ -53,8 +53,14 @@ this.arena_tournament_contract <- this.inherit("scripts/contracts/contract", {
 			{
 				nameList.push(item)
 			}
-			foreach(u in item.getUpgrades()) //if upgrade named
+			foreach(i in item.getUpgrades()) //if upgrade named
 			{
+				if (i != 1)
+				{
+					continue;
+				}
+
+				local u = item.getUpgrade(i)
 				if (u.isItemType(this.Const.Items.ItemType.Named))
 				{
 					nameList.push(u)
