@@ -1083,7 +1083,7 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
  	function selectFight(scale, type, lootingStopped)
 	{
 		local round = this.World.Flags.get("LegendTournamentRound");
-		local roundDifficulty = 0.7 + (round * 0.1);
+		local roundDifficulty = 0.7 + (round * 0.3);
 		this.World.Flags.increment("LegendTournamentRound", 1);
 		local p = this.Const.Tactical.CombatInfo.getClone();
 		p.LocationTemplate = clone this.Const.Tactical.LocationTemplate;
