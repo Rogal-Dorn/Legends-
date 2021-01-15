@@ -2194,7 +2194,7 @@ gt.Const.Perks.PerkDefObjects <- [
 		Const = "LegendDrumsOfWar"
 	},
 	{
-		ID = "perk.mastery.fist",
+		ID = "perk.mastery_fist",
 		Script = "scripts/skills/perks/perk_mastery_fist",
 		Name = this.Const.Strings.PerkName.LegendSpecFists,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpecFists,
