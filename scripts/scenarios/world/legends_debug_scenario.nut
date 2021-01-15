@@ -641,7 +641,6 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"helm/legend_helmet_orc_scale_helm",
 			"helm/legend_helmet_orc_great_helm",
 			"helm/legend_helmet_orc_behemoth_helmet",
-			"helm/legend_helmet_enclave_skullcap",
 			"helm/legend_helmet_crude_metal_helm",
 			"helm/legend_helmet_crude_cylinder_helm",
 			"helm/legend_helmet_heavy_plate_helm",
@@ -791,6 +790,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"vanity/legend_helmet_noble_feather",
 			"vanity/legend_helmet_noble_floppy_hat",
 			"vanity/legend_helmet_noble_hat",
+			"vanity/legend_helmet_ancient_wig",
 			"vanity/legend_helmet_noble_hood",
 			"vanity/legend_helmet_wreath",
 			"vanity/legend_helmet_orc_bones",
@@ -861,9 +861,12 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		"helmets/legend_ancient_lich_headpiece",
 		"helmets/legend_goblin_leader_helmet",
 		"helmets/legend_goblin_shaman_helmet",
+		"helmets/legend_goblin_light_helmet",
+		"helmets/legend_goblin_skirmisher_helmet",
 		"helmets/legend_unhold_helmet_heavy",
 		"helmets/legend_unhold_helmet_light",
-		"helmets/legend_orc_berserker_helmet"
+		"helmets/legend_orc_berserker_helmet",
+		"helmets/legend_ancient_wig"
 		]
 
 		foreach(h in asloots)
