@@ -4751,7 +4751,11 @@ Tweaks to various Enclave helmets and armors stats
 **changes**
 Swaps perks around within perk groups to improve the light armor perk group, based on feedback
 Grand tournament rounds get harder faster, based on feedback
+Reduces hand to hand and unarmed lunge damage by 50%
 
 **fixes**
 fixes bug in the legends implementation of Turn it In that resulted in the contract never clearing
 fixes error on getting named items in arena.
+fixes crashes spawing mummies.
+fixes mod_faster crash when throwing axes
+fixes double damage gnarled staff

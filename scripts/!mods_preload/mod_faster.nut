@@ -158,7 +158,7 @@
 	}
 });
 
-::mods_hookNewObject("ai/tactical/behaviors/ai_defend_rotation ", function(o) {
+::mods_hookNewObject("ai/tactical/behaviors/ai_defend_rotation", function(o) {
 	o.onExecute = function( _entity )
 	{
 		if (this.m.IsFirstExecuted)
@@ -189,6 +189,49 @@
 
 });
 
+
+::mods_hookNewObject("ai/tactical/behaviors/ai_attack_default", function(o) {
+	o.onExecute = function( _entity )
+	{
+		if (this.m.IsFirstExecuted)
+		{
+			this.getAgent().adjustCameraToTarget(this.m.TargetTile);
+			this.m.IsFirstExecuted = false;
+			return false;
+		}
+
+		if (this.m.TargetTile != null && this.m.TargetTile.IsOccupiedByActor)
+		{
+			if (this.Const.AI.VerboseMode)
+			{
+				this.logInfo("* " + _entity.getName() + ": Using " + this.m.Skill.getName() + " against " + this.m.TargetTile.getEntity().getName() + "!");
+			}
+
+			local dist = _entity.getTile().getDistanceTo(this.m.TargetTile);
+			this.m.Skill.use(this.m.TargetTile);
+
+			if (_entity.isAlive() && (!_entity.isHiddenToPlayer() || this.m.TargetTile.IsVisibleForPlayer))
+			{
+				this.getAgent().declareAction();
+				local delay = this.m.Skill.getDelay();
+				if (dist > 1 && this.m.Skill.isShowingProjectile())
+				{
+					delay = this.Math.max(750, delay)
+					this.getAgent().declareEvaluationDelay(delay);
+				}
+				else if (delay != 0)
+				{
+					this.getAgent().declareEvaluationDelay(delay);
+				}
+			}
+
+			this.m.TargetTile = null;
+		}
+
+		return true;
+	}
+
+});
 
 
 ::mods_hookNewObject("ai/tactical/behaviors/ai_attack_split", function(o) {
@@ -258,3 +301,4 @@ o.useSkill = function(_entity)
 // HACK: and for the unhold sweep attack (and the fling attack)
 ::mods_hookNewObject("skills/actives/fling_back_skill", function(o) { o.m.Delay *= 2; });
 ::mods_hookNewObject("skills/actives/sweep_skill", function(o) { o.m.Delay *= 2; });
+::mods_hookNewObject("skills/actives/throw_axe", function(o) { o.m.Delay *= 2; });
