@@ -34,7 +34,6 @@ this.legend_staff_gnarled <- this.inherit("scripts/items/weapons/weapon", {
 	function onEquip()
 	{
 		this.weapon.onEquip();
-		this.weapon.onEquip();
 		local s = this.new("scripts/skills/actives/legend_staff_bash");
 		s.m.Icon = "skills/staff_bash_gnarled.png";
 		s.m.IconDisabled = "skills/staff_bash_gnarled_bw.png";
