@@ -4762,3 +4762,4 @@ fixes error on getting named items in arena.
 fixes crashes spawing mummies.
 fixes mod_faster crash when throwing axes
 fixes double damage gnarled staff
+Fixes sprint icon not found error 
