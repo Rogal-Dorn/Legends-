@@ -4752,6 +4752,9 @@ Tweaks to various Enclave helmets and armors stats
 Swaps perks around within perk groups to improve the light armor perk group, based on feedback
 Grand tournament rounds get harder faster, based on feedback
 Reduces hand to hand and unarmed lunge damage by 50%
+Magic backgrounds are 10x rarer with magic enabled. 
+Noble Warriors, Noble Footsoldiers, blacksmiths and Arbelesters can now be recrutied from forts. they will also show up near military camps 
+Noble footsolders are less likely to be wearing very expensive hats 
 
 **fixes**
 fixes bug in the legends implementation of Turn it In that resulted in the contract never clearing

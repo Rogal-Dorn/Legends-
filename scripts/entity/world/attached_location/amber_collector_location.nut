@@ -36,7 +36,7 @@ this.amber_collector_location <- this.inherit("scripts/entity/world/attached_loc
 			local r;
 			if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_seer")
 			{
-			r = this.Math.rand(0, 5);
+			r = this.Math.rand(0, 50);
 				if (r == 1)
 				{
 				_list.push("legend_spiritualist_background");
@@ -44,11 +44,15 @@ this.amber_collector_location <- this.inherit("scripts/entity/world/attached_loc
 			}
 			else if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_sisterhood")
 			{
+				r = this.Math.rand(0, 9);
+				if (r == 1)
+				{
 				_list.push("legend_spiritualist_background");
+				}
 			}
 			else
 			{
-			r = this.Math.rand(0, 9);
+			r = this.Math.rand(0, 90);
 				if (r == 1)
 				{
 				_list.push("legend_spiritualist_background");

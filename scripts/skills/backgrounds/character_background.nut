@@ -98,9 +98,9 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			Enemy = 1,
 			EnemyChance = 0.01,
 			Class = 1,
-			ClassChance = 0.05,
+			ClassChance = 0.01,
 			Magic = 1,
-			MagicChance = 0.002
+			MagicChance = 0.001
 		},
 		PerkTreeDynamicMinsBeast = {
 			Weapon = 8,
@@ -109,9 +109,9 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			Enemy = 1,
 			EnemyChance = 0.05,
 			Class = 1,
-			ClassChance = 0.05,
+			ClassChance = 0.02,
 			Magic = 1,
-			MagicChance = 0.002
+			MagicChance = 0.001
 		},
 		PerkTreeDynamic = {
 			Weapon = [

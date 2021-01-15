@@ -30,7 +30,7 @@ this.trapper_location <- this.inherit("scripts/entity/world/attached_location", 
 		local r;
 		if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_seer")
 		{
-		r = this.Math.rand(0, 5);
+		r = this.Math.rand(0, 50);
 			if (r == 1)
 			{
 				_list.push("legend_conjurer_background");
@@ -38,7 +38,7 @@ this.trapper_location <- this.inherit("scripts/entity/world/attached_location", 
 		}
 		else
 		{
-			r = this.Math.rand(0, 9);
+			r = this.Math.rand(0, 90);
 			if (r == 1)
 			{
 				_list.push("legend_conjurer_background");

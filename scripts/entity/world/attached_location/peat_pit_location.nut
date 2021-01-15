@@ -37,7 +37,7 @@ this.peat_pit_location <- this.inherit("scripts/entity/world/attached_location",
 			local r;
 			if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_seer")
 			{
-			r = this.Math.rand(0, 25);
+			r = this.Math.rand(0, 250);
 				if (r == 1)
 				{
 			     _list.push("legend_death_summoner_background");
@@ -45,7 +45,7 @@ this.peat_pit_location <- this.inherit("scripts/entity/world/attached_location",
 			}
 			else
 			{
-			r = this.Math.rand(0, 49);
+			r = this.Math.rand(0, 500);
 				if (r == 1)
 				{
 				  _list.push("legend_death_summoner_background");
@@ -54,7 +54,11 @@ this.peat_pit_location <- this.inherit("scripts/entity/world/attached_location",
 
 			if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_warlock")
 			{
+				r = this.Math.rand(0, 9);
+				if (r == 1)
+				{
 			 	_list.push("legend_death_summoner_background");
+				}
 			}
 		}
 	}
