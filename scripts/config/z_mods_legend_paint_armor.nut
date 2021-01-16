@@ -1,4 +1,14 @@
-gt.Const.LegendMod.ArmorColors([
+if (!("LegendMod" in gt.Const))
+{
+	gt.Const.LegendMod <- {};
+}
+
+if (!("ArmorColors" in gt.Const.LegendMod))
+{
+    gt.Const.LegendMod.ArmorColors <- [];
+}
+
+gt.Const.LegendMod.ArmorColors.extend([
     {
         ID = "southern_shoulder_cloth",
         Sets = [{
@@ -7,12 +17,12 @@ gt.Const.LegendMod.ArmorColors([
 			[1]
 		],
         Red = [
-            [5] 
+            [5]
         ],
 		Pink = [],
 		Purple = [],
         Blue = [
-           
+
         ],
 		Aqua = [],
 		Green = [
@@ -41,14 +51,14 @@ gt.Const.LegendMod.ArmorColors([
 			[2]
 		],
         Red = [
-            [6] 
+            [6]
         ],
 		Pink = [
 			[8]
 		],
 		Purple = [],
         Blue = [
-           
+
         ],
 		Aqua = [],
 		Green = [
@@ -129,15 +139,15 @@ gt.Const.LegendMod.ArmorColors([
 			[9]
 		]
     }]
-	},	
+	},
     {
         ID = "cloak_rich",
         Sets = [{
         Yellow = [
-			
+
 		],
         Orange = [
-	
+
 		],
         Red = [
 			[2]
@@ -175,7 +185,7 @@ gt.Const.LegendMod.ArmorColors([
 			 [5]
 		],
         Orange = [
-	
+
 		],
         Red = [
 			[4]
@@ -184,10 +194,10 @@ gt.Const.LegendMod.ArmorColors([
 
 		],
 		Purple = [
-	
+
 		],
         Blue = [
-        
+
         ],
 		Aqua = [],
 		Green = [
@@ -206,7 +216,7 @@ gt.Const.LegendMod.ArmorColors([
 			  [1]
 		]
     }]
-	},	
+	},
     {
         ID = "legend_gambeson",
         Sets = [{
@@ -231,7 +241,7 @@ gt.Const.LegendMod.ArmorColors([
 
 		],
 		Purple = [
-	
+
 		],
         Blue = [
 			 [3],
@@ -281,7 +291,7 @@ gt.Const.LegendMod.ArmorColors([
 			  [0]
 		]
     }]
-	},	
+	},
     {
         ID = "legend_padded_surcoat",
         Sets = [{
@@ -289,7 +299,7 @@ gt.Const.LegendMod.ArmorColors([
 
 		],
         Orange = [
-	
+
 		],
         Red = [
 			[41],
@@ -303,7 +313,7 @@ gt.Const.LegendMod.ArmorColors([
 
 		],
 		Purple = [
-	
+
 		],
         Blue = [
 			[53],
@@ -341,18 +351,18 @@ gt.Const.LegendMod.ArmorColors([
 			 [64]
         ],
 		Unpainted = [
-			 
+
 		]
     }]
-	},	
+	},
     {
         ID = "leather_brigandine_named",
         Sets = [{
         Yellow = [
-		
+
 		],
         Orange = [
-	
+
 		],
         Red = [
 		[2]
@@ -379,7 +389,7 @@ gt.Const.LegendMod.ArmorColors([
 			[10]
 		],
 		White = [
-			
+
 		],
         Black = [
 
@@ -396,7 +406,7 @@ gt.Const.LegendMod.ArmorColors([
 			[6]
 		],
         Orange = [
-	
+
 		],
         Red = [
 			[3]
@@ -411,7 +421,7 @@ gt.Const.LegendMod.ArmorColors([
 			[2]
         ],
 		Aqua = [
-	
+
 		],
 		Green = [
 
@@ -420,16 +430,16 @@ gt.Const.LegendMod.ArmorColors([
 			[1]
 		],
 		White = [
-			
+
 		],
         Black = [
 
         ],
 		Unpainted = [
-		
+
 		]
     }]
-	},		
+	},
     {
         ID = "legend_leather_riveted",
         Sets = [{
@@ -443,10 +453,10 @@ gt.Const.LegendMod.ArmorColors([
 			[1]
 		],
 		Pink = [
-			
+
 		],
 		Purple = [
-			
+
 		],
         Blue = [
 			[6],
@@ -459,7 +469,7 @@ gt.Const.LegendMod.ArmorColors([
 			[4]
 		],
 		Brown = [
-		
+
 		],
 		White = [
 			[8]
@@ -468,10 +478,10 @@ gt.Const.LegendMod.ArmorColors([
 			[9]
         ],
 		Unpainted = [
-		
+
 		]
     }]
-	},		
+	},
     {
         ID = "legend_leather_studded_jacket_named",
         Sets = [{
@@ -488,7 +498,7 @@ gt.Const.LegendMod.ArmorColors([
 			[4]
 		],
 		Purple = [
-			
+
 		],
         Blue = [
 			[5],
@@ -514,7 +524,7 @@ gt.Const.LegendMod.ArmorColors([
 			[1]
 		]
     }]
-	},	
+	},
     {
         ID = "legend_robes",
         Sets = [{
@@ -531,13 +541,13 @@ gt.Const.LegendMod.ArmorColors([
 			[15]
 		],
 		Purple = [
-			
+
 		],
         Blue = [
 			[12]
         ],
 		Aqua = [
-		
+
 		],
 		Green = [
 			[14]
@@ -546,16 +556,16 @@ gt.Const.LegendMod.ArmorColors([
 			[13]
 		],
 		White = [
-			
+
 		],
         Black = [
-			
+
         ],
 		Unpainted = [
 			[1]
 		]
     }]
-	},		
+	},
     {
         ID = "legend_rusty_mail_shirt",
         Sets = [{
@@ -586,10 +596,10 @@ gt.Const.LegendMod.ArmorColors([
 			[6]
 		],
 		Brown = [
-		
+
 		],
 		White = [
-			
+
 		],
         Black = [
 			[11]
@@ -598,7 +608,7 @@ gt.Const.LegendMod.ArmorColors([
 			[1]
 		]
     }]
-	},		
+	},
     {
         ID = "legend_sackcloth",
         Sets = [{
@@ -614,13 +624,13 @@ gt.Const.LegendMod.ArmorColors([
 		Pink = [
 		],
 		Purple = [
-			
+
 		],
         Blue = [
 			[7]
         ],
 		Aqua = [
-		
+
 		],
 		Green = [
 			[8]
@@ -632,13 +642,13 @@ gt.Const.LegendMod.ArmorColors([
 			[6]
 		],
         Black = [
-			
+
         ],
 		Unpainted = [
 			[1]
 		]
     }]
-	},		
+	},
     {
         ID = "legend_tabard",
         Sets = [{
@@ -669,7 +679,7 @@ gt.Const.LegendMod.ArmorColors([
 			[110]
         ],
 		Aqua = [
-		
+
 		],
 		Green = [
 			[5],
@@ -689,15 +699,15 @@ gt.Const.LegendMod.ArmorColors([
 			[102]
         ],
 		Unpainted = [
-			
+
 		]
     }]
-	},	
+	},
     {
         ID = "legend_tunic",
         Sets = [{
         Yellow = [
-			
+
 		],
         Orange = [
 			[9]
@@ -709,7 +719,7 @@ gt.Const.LegendMod.ArmorColors([
 			[11]
 		],
 		Purple = [
-			
+
 		],
         Blue = [
 			[2],
@@ -730,30 +740,30 @@ gt.Const.LegendMod.ArmorColors([
 			[10]
 		],
         Black = [
-			
+
         ],
 		Unpainted = [
 			[1]
 		]
     }]
-	},	
+	},
     {
         ID = "legend_tunic_collar_thin",
         Sets = [{
         Yellow = [
-			
+
 		],
         Orange = [
-		
+
 		],
         Red = [
 			[1]
 		],
 		Pink = [
-			
+
 		],
 		Purple = [
-			
+
 		],
         Blue = [
 			[5]
@@ -768,24 +778,24 @@ gt.Const.LegendMod.ArmorColors([
 			[2]
 		],
 		White = [
-			
+
 		],
         Black = [
-			
+
         ],
 		Unpainted = [
-			
+
 		]
     }]
-	},	
+	},
     {
         ID = "legend_tunic_collar_wide",
         Sets = [{
         Yellow = [
-			
+
 		],
         Orange = [
-		
+
 		],
         Red = [
 			[1]
@@ -794,7 +804,7 @@ gt.Const.LegendMod.ArmorColors([
 			[7]
 		],
 		Purple = [
-			
+
 		],
         Blue = [
 			[2]
@@ -817,10 +827,10 @@ gt.Const.LegendMod.ArmorColors([
 			[10]
         ],
 		Unpainted = [
-			
+
 		]
     }]
-	},	
+	},
     {
         ID = "legend_tunic_wrap",
         Sets = [{
@@ -828,16 +838,16 @@ gt.Const.LegendMod.ArmorColors([
 			[7]
 		],
         Orange = [
-		
+
 		],
         Red = [
 			[5]
 		],
 		Pink = [
-		
+
 		],
 		Purple = [
-			
+
 		],
         Blue = [
 			[1]
@@ -863,7 +873,7 @@ gt.Const.LegendMod.ArmorColors([
 			[10]
 		]
     }]
-	},	
+	},
     {
         ID = "peasant_dress",
         Sets = [{
@@ -871,7 +881,7 @@ gt.Const.LegendMod.ArmorColors([
 			[2]
 		],
         Orange = [
-		
+
 		],
         Red = [
 			[1],
@@ -908,7 +918,7 @@ gt.Const.LegendMod.ArmorColors([
 			[21]
 		],
 		White = [
-			
+
 		],
         Black = [
 			[22]
@@ -917,7 +927,7 @@ gt.Const.LegendMod.ArmorColors([
 			[13]
 		]
     }]
-	},	
+	},
     {
         ID = "shoulder_cloth",
         Sets = [{
@@ -946,7 +956,7 @@ gt.Const.LegendMod.ArmorColors([
 			[4]
 		],
 		Brown = [
-		
+
 		],
 		White = [
 			[11]
@@ -958,7 +968,7 @@ gt.Const.LegendMod.ArmorColors([
 			[1]
 		]
     }]
-	},	
+	},
     {
         ID = "southern_belt_left",
         Sets = [{
@@ -976,13 +986,13 @@ gt.Const.LegendMod.ArmorColors([
 			[14]
 		],
 		Purple = [
-			
+
 		],
         Blue = [
-		
+
         ],
 		Aqua = [
-			
+
 		],
 		Green = [
 			[4],
@@ -1009,7 +1019,7 @@ gt.Const.LegendMod.ArmorColors([
         ID = "southern_belt_sash",
         Sets = [{
         Yellow = [
-		
+
 		],
         Orange = [
 			[11]
@@ -1066,19 +1076,19 @@ gt.Const.LegendMod.ArmorColors([
 			[4]
 		],
         Red = [
-			
+
 		],
 		Pink = [
-			
+
 		],
 		Purple = [
-			
+
 		],
         Blue = [
-		
+
         ],
 		Aqua = [
-			
+
 		],
 		Green = [
 			[3]
@@ -1090,18 +1100,18 @@ gt.Const.LegendMod.ArmorColors([
 			[6]
 		],
         Black = [
-			
+
         ],
 		Unpainted = [
 			[1]
 		]
     }]
-	},	
+	},
     {
         ID = "southern_cloth",
         Sets = [{
         Yellow = [
-		
+
 		],
         Orange = [
 			[1]
@@ -1110,7 +1120,7 @@ gt.Const.LegendMod.ArmorColors([
 			[2]
 		],
 		Pink = [
-			
+
 		],
 		Purple = [
 			[12]
@@ -1133,7 +1143,7 @@ gt.Const.LegendMod.ArmorColors([
 			[10]
 		],
 		White = [
-			
+
 		],
         Black = [
 			[14]
@@ -1142,7 +1152,7 @@ gt.Const.LegendMod.ArmorColors([
 			[3]
 		]
     }]
-	},	
+	},
     {
         ID = "southern_gambeson",
         Sets = [{
@@ -1156,16 +1166,16 @@ gt.Const.LegendMod.ArmorColors([
 			[3]
 		],
 		Pink = [
-			
+
 		],
 		Purple = [
-			
+
 		],
         Blue = [
 			[6]
         ],
 		Aqua = [
-			
+
 		],
 		Green = [
 			[5]
@@ -1174,16 +1184,16 @@ gt.Const.LegendMod.ArmorColors([
 			[2]
 		],
 		White = [
-			
+
 		],
         Black = [
 			[7]
         ],
 		Unpainted = [
-			
+
 		]
     }]
-	},	
+	},
     {
         ID = "southern_leather_jacket",
         Sets = [{
@@ -1196,19 +1206,19 @@ gt.Const.LegendMod.ArmorColors([
 			[3]
 		],
 		Pink = [
-			
+
 		],
 		Purple = [
-			
+
 		],
         Blue = [
-		
+
         ],
 		Aqua = [
-			
+
 		],
 		Green = [
-		
+
 		],
 		Brown = [
 			[2]
@@ -1234,19 +1244,19 @@ gt.Const.LegendMod.ArmorColors([
 			[7]
 		],
         Red = [
-		
+
 		],
 		Pink = [
-			
+
 		],
 		Purple = [
-			
+
 		],
         Blue = [
-		
+
         ],
 		Aqua = [
-			
+
 		],
 		Green = [
 			[9]
@@ -1264,7 +1274,7 @@ gt.Const.LegendMod.ArmorColors([
 			[3]
 		]
     }]
-	},	
+	},
     {
         ID = "southern_noble_cloth",
         Sets = [{
@@ -1285,7 +1295,7 @@ gt.Const.LegendMod.ArmorColors([
 			[5],
 		],
         Blue = [
-			
+
 			[6]
         ],
 		Aqua = [
@@ -1295,19 +1305,19 @@ gt.Const.LegendMod.ArmorColors([
 			[8]
 		],
 		Brown = [
-			
+
 		],
 		White = [
-			
+
 		],
         Black = [
-		
+
         ],
 		Unpainted = [
-			
+
 		]
     }]
-	},	
+	},
     {
         ID = "southern_noble_cloth",
         Sets = [{
@@ -1328,13 +1338,13 @@ gt.Const.LegendMod.ArmorColors([
 			[4]
 		],
 		Purple = [
-			
+
 		],
         Blue = [
 			[3]
         ],
 		Aqua = [
-			
+
 		],
 		Green = [
 			[2]
@@ -1343,16 +1353,16 @@ gt.Const.LegendMod.ArmorColors([
 			[5]
 		],
 		White = [
-			
+
 		],
         Black = [
-		
+
         ],
 		Unpainted = [
 			[1]
 		]
     }]
-	},	
+	},
     {
         ID = "southern_robe",
         Sets = [{
@@ -1366,16 +1376,16 @@ gt.Const.LegendMod.ArmorColors([
 			[3]
 		],
 		Pink = [
-		
+
 		],
 		Purple = [
-			
+
 		],
         Blue = [
-		
+
         ],
 		Aqua = [
-			
+
 		],
 		Green = [
 			[4]
@@ -1393,7 +1403,7 @@ gt.Const.LegendMod.ArmorColors([
 			[2]
 		]
     }]
-	},	
+	},
     {
         ID = "southern_scarf",
         Sets = [{
@@ -1433,16 +1443,16 @@ gt.Const.LegendMod.ArmorColors([
 			[7]
 		],
 		White = [
-			
+
 		],
         Black = [
 			[1]
         ],
 		Unpainted = [
-			
+
 		]
     }]
-	},	
+	},
     {
         ID = "southern_scarf_wrap",
         Sets = [{
@@ -1461,13 +1471,13 @@ gt.Const.LegendMod.ArmorColors([
 			[6]
 		],
 		Purple = [
-	
+
 		],
         Blue = [
 			[7]
         ],
 		Aqua = [
-		
+
 		],
 		Green = [
 			[8],
@@ -1487,10 +1497,10 @@ gt.Const.LegendMod.ArmorColors([
 			[17]
         ],
 		Unpainted = [
-			
+
 		]
     }]
-	},	
+	},
     {
         ID = "southern_tabard",
         Sets = [{
@@ -1500,7 +1510,7 @@ gt.Const.LegendMod.ArmorColors([
 		],
         Orange = [
 			[2]
-			
+
 		],
         Red = [
 			[3]
@@ -1515,7 +1525,7 @@ gt.Const.LegendMod.ArmorColors([
 			[9]
         ],
 		Aqua = [
-		
+
 		],
 		Green = [
 			[8]
@@ -1532,13 +1542,13 @@ gt.Const.LegendMod.ArmorColors([
 			[13]
 		],
         Black = [
-		
+
         ],
 		Unpainted = [
 			[1]
 		]
     }]
-	},		
+	},
     {
         ID = "southern_thin_belt",
         Sets = [{
@@ -1587,12 +1597,12 @@ gt.Const.LegendMod.ArmorColors([
 			[1]
 		]
     }]
-	},	
+	},
     {
         ID = "southern_wrap",
         Sets = [{
         Yellow = [
-		
+
 		],
         Orange = [
 			[5]
@@ -1602,16 +1612,16 @@ gt.Const.LegendMod.ArmorColors([
 			[4]
 		],
 		Pink = [
-		
+
 		],
 		Purple = [
-	
+
 		],
         Blue = [
-	
+
         ],
 		Aqua = [
-			
+
 		],
 		Green = [
 			[6],
@@ -1621,7 +1631,7 @@ gt.Const.LegendMod.ArmorColors([
 			[2]
 		],
 		White = [
-		
+
 		],
         Black = [
 			[8]
@@ -1630,7 +1640,7 @@ gt.Const.LegendMod.ArmorColors([
 			[1]
 		]
     }]
-	},		
+	},
     {
         ID = "southern_wrap_left",
         Sets = [{
@@ -1648,16 +1658,16 @@ gt.Const.LegendMod.ArmorColors([
 			[14]
 		],
 		Pink = [
-		
+
 		],
 		Purple = [
-	
+
 		],
         Blue = [
-	
+
         ],
 		Aqua = [
-			
+
 		],
 		Green = [
 			[10],
@@ -1671,16 +1681,16 @@ gt.Const.LegendMod.ArmorColors([
 			[13]
 		],
 		White = [
-		
+
 		],
         Black = [
-		
+
         ],
 		Unpainted = [
 			[1]
 		]
     }]
-	},	
+	},
     {
         ID = "southern_wrap_right",
         Sets = [{
@@ -1698,19 +1708,19 @@ gt.Const.LegendMod.ArmorColors([
 			[9]
 		],
 		Pink = [
-		
+
 		],
 		Purple = [
-	
+
 		],
         Blue = [
-	
+
         ],
 		Aqua = [
-			
+
 		],
 		Green = [
-	
+
 		],
 		Brown = [
 			[7],
@@ -1719,23 +1729,23 @@ gt.Const.LegendMod.ArmorColors([
 			[11]
 		],
 		White = [
-		
+
 		],
         Black = [
-		
+
         ],
 		Unpainted = [
 			[12]
 		]
     }]
-	},	
+	},
     {
         ID = "tabard_named",
         Sets = [{
         Yellow = [
 			[11],
 			[12],
-			[21]			
+			[21]
 		],
         Orange = [
 			[10]
@@ -1744,7 +1754,7 @@ gt.Const.LegendMod.ArmorColors([
 			[8],
 			[9],
 			[20]
-		],	
+		],
 		Pink = [
 			[6],
 			[7]
@@ -1777,13 +1787,13 @@ gt.Const.LegendMod.ArmorColors([
 
 		],
 		White = [
-		
+
 		],
         Black = [
 			[19]
         ],
 		Unpainted = [
-			
+
 		]
     }]
 	},
@@ -1799,12 +1809,12 @@ gt.Const.LegendMod.ArmorColors([
 		],
         Red = [
 			[20]
-		],	
+		],
 		Pink = [
-	
+
 		],
 		Purple = [
-			
+
 		],
         Blue = [
 			[9],
@@ -1833,7 +1843,7 @@ gt.Const.LegendMod.ArmorColors([
 			[24]
 		],
 		White = [
-			
+
 		],
         Black = [
 			[11]
@@ -1842,7 +1852,7 @@ gt.Const.LegendMod.ArmorColors([
 			[1]
 		]
     }]
-	},	
+	},
    {
         ID = "wizard_robe",
         Sets = [{
@@ -1854,7 +1864,7 @@ gt.Const.LegendMod.ArmorColors([
 		],
         Red = [
 			[11]
-		],	
+		],
 		Pink = [
 			[9],
 			[10]
@@ -1878,14 +1888,14 @@ gt.Const.LegendMod.ArmorColors([
 
 		],
 		White = [
-			
+
 		],
         Black = [
-		
+
         ],
 		Unpainted = [
-			
+
 		]
     }]
-	},			
+	},
 ])

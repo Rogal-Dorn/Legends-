@@ -1,4 +1,4 @@
-gt.Const.LegendMod.PaintColors([
+gt.Const.LegendMod.PaintColors <-
     {
         Yellow = ["yellow", "yellows"],
         Orange = ["orange", "oranges"],
@@ -12,6 +12,4 @@ gt.Const.LegendMod.PaintColors([
 		White = ["light tone", "light tones"],
         Black = ["dark tone", "dark tones"],
 		Unpainted = ["unpainted", "unpainted tones"]
-    }]
-	},	
-])
+    }

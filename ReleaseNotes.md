@@ -4748,13 +4748,16 @@ Tweaks to various Enclave helmets and armors stats
 
 15.0.0.26
 
+**Houndmaster**
+Dog Handler Perk - allows houndmaster to designate a target to attack or protect for unleashed animals.
+
 **changes**
 Swaps perks around within perk groups to improve the light armor perk group, based on feedback
 Grand tournament rounds get harder faster, based on feedback
 Reduces hand to hand and unarmed lunge damage by 50%
-Magic backgrounds are 10x rarer with magic enabled. 
-Noble Warriors, Noble Footsoldiers, blacksmiths and Arbelesters can now be recrutied from forts. they will also show up near military camps 
-Noble footsolders are less likely to be wearing very expensive hats 
+Magic backgrounds are 10x rarer with magic enabled.
+Noble Warriors, Noble Footsoldiers, blacksmiths and Arbelesters can now be recrutied from forts. they will also show up near military camps
+Noble footsolders are less likely to be wearing very expensive hats
 
 **fixes**
 fixes bug in the legends implementation of Turn it In that resulted in the contract never clearing
@@ -4762,5 +4765,8 @@ fixes error on getting named items in arena.
 fixes crashes spawing mummies.
 fixes mod_faster crash when throwing axes
 fixes double damage gnarled staff
-Fixes sprint icon not found error 
-Jewelry no longer hides hair 
+Fixes sprint icon not found error
+Jewelry no longer hides hair
+Fixes AI not doing anything when using crusader holy flame perk
+Fixes missing mummy wig preventing mastaba from loading
+Fixes gravedigger perk not applying to all two handed maces

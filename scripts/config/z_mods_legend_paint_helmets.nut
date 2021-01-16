@@ -1,11 +1,21 @@
-gt.Const.LegendMod.HelmColors([
+if (!("LegendMod" in gt.Const))
+{
+	gt.Const.LegendMod <- {};
+}
+
+if (!("HelmColors" in gt.Const.LegendMod))
+{
+    gt.Const.LegendMod.HelmColors <- [];
+}
+
+gt.Const.LegendMod.HelmColors.extend([
     {
         ID = "back_crest",
         Sets = [{
         Yellow = [],
         Orange = [],
         Red = [
-            [1] 
+            [1]
         ],
 		Pink = [],
 		Purple = [],
@@ -30,7 +40,7 @@ gt.Const.LegendMod.HelmColors([
         Yellow = [],
         Orange = [],
         Red = [
-            [3] 
+            [3]
         ],
 		Pink = [],
 		Purple = [],
@@ -57,7 +67,7 @@ gt.Const.LegendMod.HelmColors([
 		],
         Orange = [],
         Red = [
-            [3] 
+            [3]
         ],
 		Pink = [],
 		Purple = [],
@@ -79,7 +89,7 @@ gt.Const.LegendMod.HelmColors([
 			[7]
 		]
     }]
-	},	
+	},
     {
         ID = "basinet",
         Sets = [{
@@ -111,7 +121,7 @@ gt.Const.LegendMod.HelmColors([
 			[1]
 		]
     }]
-	},	
+	},
     {
         ID = "chain_hood",
         Sets = [{
@@ -144,7 +154,7 @@ gt.Const.LegendMod.HelmColors([
 			[2]
 		]
     }]
-	},	
+	},
     {
         ID = "cloth_bandana",
         Sets = [{
@@ -205,7 +215,7 @@ gt.Const.LegendMod.HelmColors([
 		Unpainted = [
 		]
     }]
-	},	
+	},
     {
         ID = "cloth_scarf",
         Sets = [{
@@ -236,7 +246,7 @@ gt.Const.LegendMod.HelmColors([
 		Unpainted = [
 		]
     }]
-	},	
+	},
     {
         ID = "conic_helm",
         Sets = [{
@@ -777,11 +787,11 @@ gt.Const.LegendMod.HelmColors([
         Orange = [
 			[6],
 			[50]
-			
+
 		],
         Red = [
 			[42]
-			
+
         ],
 		Pink = [
 			[4],
@@ -845,7 +855,7 @@ gt.Const.LegendMod.HelmColors([
 			[59],
 			[60],
 			[64]
-			
+
 		],
 		Brown = [
 			[43],
@@ -982,7 +992,7 @@ gt.Const.LegendMod.HelmColors([
 			[4]
         ],
 		Pink = [
-			[3]	
+			[3]
 		],
 		Purple = [
 			[2]
@@ -1197,7 +1207,7 @@ gt.Const.LegendMod.HelmColors([
 			[3]
         ],
 		Aqua = [
-			[5]	
+			[5]
 		],
 		Green = [
 			[4]
@@ -1735,7 +1745,7 @@ gt.Const.LegendMod.HelmColors([
 			[4]
 		]
     }]
-	},	
+	},
     {
         ID = "southern_turban_full",
         Sets = [{
@@ -1743,7 +1753,7 @@ gt.Const.LegendMod.HelmColors([
 			[1]
 		],
         Orange = [
-			[5]	
+			[5]
 		],
         Red = [
 
@@ -1772,7 +1782,7 @@ gt.Const.LegendMod.HelmColors([
 			[4]
 		]
     }]
-	},	
+	},
     {
         ID = "southern_turban_light",
         Sets = [{
@@ -1780,10 +1790,10 @@ gt.Const.LegendMod.HelmColors([
 			[1]
 		],
         Orange = [
-			[2]	
+			[2]
 		],
         Red = [
-			[4]	
+			[4]
         ],
 		Pink = [
 		],
@@ -1814,10 +1824,10 @@ gt.Const.LegendMod.HelmColors([
 			[1]
 		],
         Orange = [
-			[2]	
+			[2]
 		],
         Red = [
-			[4]	
+			[4]
         ],
 		Pink = [
 		],
@@ -1841,7 +1851,7 @@ gt.Const.LegendMod.HelmColors([
 			[5]
 		]
     }]
-	},	
+	},
     {
         ID = "southern_turban_light",
         Sets = [{
@@ -1880,7 +1890,7 @@ gt.Const.LegendMod.HelmColors([
 			[1]
 		]
     }]
-	},	
+	},
     {
         ID = "southern_veil",
         Sets = [{
@@ -1903,25 +1913,25 @@ gt.Const.LegendMod.HelmColors([
 			[7]
         ],
 		Aqua = [
-	
+
 		],
 		Green = [
 			[6]
 		],
 		Brown = [
-			
+
 		],
 		White = [
 			[8]
 		],
         Black = [
-		
+
 		],
 		Unpainted = [
-		
+
 		]
     }]
-	},	
+	},
     {
         ID = "southern_turban_pattern",
         Sets = [{
@@ -1957,7 +1967,7 @@ gt.Const.LegendMod.HelmColors([
 			[1]
 		]
     }]
-	},	
+	},
     {
         ID = "viking_helm",
         Sets = [{
@@ -1995,7 +2005,7 @@ gt.Const.LegendMod.HelmColors([
 			[1]
 		]
     }]
-	},	
+	},
     {
         ID = "warlock_hood",
         Sets = [{
@@ -2071,7 +2081,7 @@ gt.Const.LegendMod.HelmColors([
 			[6]
 		]
     }]
-	},	
+	},
     {
         ID = "witchhunter_helm",
         Sets = [{
@@ -2107,10 +2117,10 @@ gt.Const.LegendMod.HelmColors([
 			[1]
 		],
 		Unpainted = [
-		
+
 		]
     }]
-	},	
+	},
     {
         ID = "wizard_cowl",
         Sets = [{
@@ -2151,17 +2161,17 @@ gt.Const.LegendMod.HelmColors([
 			[13]
 		],
 		Brown = [
-		
+
 		],
 		White = [
-		
+
 		],
         Black = [
-			
+
 		],
 		Unpainted = [
-		
+
 		]
     }]
-	}	
+	}
 ])
