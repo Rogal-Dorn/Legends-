@@ -1,4 +1,4 @@
-gt.Const.LegendMod.HelmColors.extend([
+gt.Const.LegendMod.HelmColors([
     {
         ID = "back_crest",
         Sets = [{
@@ -810,7 +810,7 @@ gt.Const.LegendMod.HelmColors.extend([
 			[39],
 			[40],
 			[47],
-			[48].
+			[48],
 			[55],
 			[61]
 		],

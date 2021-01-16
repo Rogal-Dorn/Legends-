@@ -1,4 +1,4 @@
-gt.Const.LegendMod.ArmorColors.extend([
+gt.Const.LegendMod.ArmorColors([
     {
         ID = "southern_shoulder_cloth",
         Sets = [{
@@ -320,7 +320,7 @@ gt.Const.LegendMod.ArmorColors.extend([
 			[49],
 			[50],
 			[51],
-			[52].
+			[52],
 			[66],
 			[68]
 		],
