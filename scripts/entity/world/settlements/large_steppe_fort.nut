@@ -114,7 +114,9 @@ this.large_steppe_fort <- this.inherit("scripts/entity/world/settlement", {
 			"sellsword_background",
 			"sellsword_background",
 			"swordmaster_background",
-			"hedge_knight_background"
+			"hedge_knight_background",
+			"legend_ironmonger_background",
+			"legend_noble_2h"
 		];
 		this.m.StablesList = [
 			"legend_horse_destrier",

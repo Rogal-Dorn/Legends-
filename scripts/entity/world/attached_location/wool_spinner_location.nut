@@ -34,7 +34,11 @@ this.wool_spinner_location <- this.inherit("scripts/entity/world/attached_locati
 		}
 		if(this.World.LegendsMod.Configs().LegendMagicEnabled())
 		{
+			r = this.Math.rand(0, 90);
+			if (r == 1)
+			{
 			_list.push("legend_enchanter_background");
+			}
 		}
 	}
 

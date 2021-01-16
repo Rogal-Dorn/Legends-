@@ -33,12 +33,15 @@ this.mushroom_grove_location <- this.inherit("scripts/entity/world/attached_loca
 			local r;
 			if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_berserker")
 			{
-
+				r = this.Math.rand(0, 9);
+				if (r == 1)
+				{
 				_list.push("legend_berserker_background");
+				}
 			}
 			else
 			{
-			r = this.Math.rand(0, 9);
+			r = this.Math.rand(0, 90);
 				if (r == 1)
 				{
 				_list.push("legend_berserker_background");

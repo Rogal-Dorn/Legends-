@@ -39,7 +39,7 @@ this.herbalists_grove_location <- this.inherit("scripts/entity/world/attached_lo
 			local r;
 			if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_seer")
 			{
-			r = this.Math.rand(0, 5);
+			r = this.Math.rand(0, 50);
 				if (r == 1)
 				{
 				_list.push("legend_druid_background");
@@ -47,12 +47,15 @@ this.herbalists_grove_location <- this.inherit("scripts/entity/world/attached_lo
 			}
 			else if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_druid")
 			{
-
+				r = this.Math.rand(0, 9);
+				if (r == 1)
+				{
 				_list.push("legend_druid_background");
+				}
 			}
 			else
 			{
-			r = this.Math.rand(0, 9);
+			r = this.Math.rand(0, 90);
 				if (r == 1)
 				{
 				_list.push("legend_druid_background");

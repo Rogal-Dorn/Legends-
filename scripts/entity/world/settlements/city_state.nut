@@ -40,7 +40,7 @@ this.city_state <- this.inherit("scripts/entity/world/settlement", {
 			"eunuch_southern_background",
 			"slave_background",
 			"slave_background",
-			"slave_southern_background",
+			"female_slave_background",
 			"slave_southern_background",
 			"slave_southern_background",
 			"slave_southern_background",
@@ -55,6 +55,7 @@ this.city_state <- this.inherit("scripts/entity/world/settlement", {
 			"nomad_background",
 			"nomad_background",
 			"nomad_ranged_background",
+			"juggler_southern_background",
 			"assassin_southern_background"
 		];
 

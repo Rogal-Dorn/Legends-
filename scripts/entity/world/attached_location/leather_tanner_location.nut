@@ -29,7 +29,7 @@ this.leather_tanner_location <- this.inherit("scripts/entity/world/attached_loca
 			local r;
 			if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_seer")
 			{
-			r = this.Math.rand(0, 25);
+			r = this.Math.rand(0, 250);
 				if (r == 1)
 				{
 				_list.push("legend_ancient_summoner_background");
@@ -37,11 +37,15 @@ this.leather_tanner_location <- this.inherit("scripts/entity/world/attached_loca
 			}
 			else if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_warlock")
 			{
+				r = this.Math.rand(0, 9);
+				if (r == 1)
+				{
 				_list.push("legend_ancient_summoner_background");
+				}
 			}
 			else
 			{
-			r = this.Math.rand(0, 49);
+			r = this.Math.rand(0, 500);
 				if (r == 1)
 				{
 				_list.push("legend_ancient_summoner_background");
