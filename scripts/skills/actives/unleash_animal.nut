@@ -21,7 +21,7 @@ this.unleash_animal <- this.inherit("scripts/skills/skill", {
 		{
 			this.getContainer().add(this.new("scripts/skills/actives/legend_attack_target"));
 		}
-		local skill = this.getContainer().getSkillByID("actives.legend_protect_target");
+		local skill = this.getContainer().getSkillByID("actives.legend_attack_target");
 		skill.addPet(entity.getID());
 
 		if (!this.getContainer().hasSkill("actives.legend_protect_target"))
