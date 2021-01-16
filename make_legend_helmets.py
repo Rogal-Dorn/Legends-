@@ -1254,7 +1254,7 @@ layers = [
  "title" :  "Ancient Southern Headress", \
  "desc" :  "A headress of a long dead civilisation" \
 },
-{"name" : "mummy_headband"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
+{"name" : "mummy_headband"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Ancient Southern Headband", \
  "desc" :  "A serpent headband from a long dead civlisation" \
 },
@@ -1262,23 +1262,23 @@ layers = [
  "title" :  "Southern Cloth Headress", \
  "desc" :  "A southern headress made of soft fabrics" \
 },
-{"name" : "southern_veil"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 10, "con" : 1, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "true",  \
+{"name" : "southern_veil"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 10, "con" : 1, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Southern Veil", \
  "desc" :  "A thin wispy southern veil" \
 },
 
-{"name" : "southern_veil_coin"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 50, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "true",  \
+{"name" : "southern_veil_coin"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 50, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Southern Coin Veil", \
  "desc" :  "A southern veil made of coins threaded togther" \
 },
-{"name" : "southern_earings"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 10, "con" : 1, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
+{"name" : "southern_earings"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 10, "con" : 1, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Southern Earings", \
  "desc" :  "Delicate southern metal earings" \
 },
 
 
 
-{"name" : "southern_headress_coin"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 30, "con" : 3, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
+{"name" : "southern_headress_coin"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 30, "con" : 3, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Southern Coin Headress", \
  "desc" :  "A southern headress of coins strung together" \
 },
