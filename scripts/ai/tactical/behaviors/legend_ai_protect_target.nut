@@ -8,7 +8,7 @@ this.legend_ai_protect_target <- this.inherit("scripts/ai/tactical/behavior", {
 		IsDoneThisTurn = false
 	},
 
-	function setMaster( _m )
+	function setTarget( _m )
 	{
 		if (typeof _m == "instance")
 		{

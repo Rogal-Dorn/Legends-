@@ -4752,6 +4752,7 @@ Tweaks to various Enclave helmets and armors stats
 Dog Handler Perk - allows houndmaster to designate a target to attack or protect for unleashed animals.
 
 **changes**
+Update mod_hooks version 19.2
 Swaps perks around within perk groups to improve the light armor perk group, based on feedback
 Grand tournament rounds get harder faster, based on feedback
 Reduces hand to hand and unarmed lunge damage by 50%

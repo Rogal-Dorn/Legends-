@@ -1,11 +1,12 @@
 this.legend_protect_target <- this.inherit("scripts/skills/skill", {
 	m = {
-		Pet = []
+		Pet = [],
+		LastTarget = null
 	},
 
 	function create()
 	{
-		this.m.ID = "actives.protect";
+		this.m.ID = "actives.legend_protect_target";
 		this.m.Name = "Defend! Good boy!";
 		this.m.Description = "Order your pets to protect a target.";
 		this.m.Icon = "skills/active_175.png";
@@ -27,7 +28,7 @@ this.legend_protect_target <- this.inherit("scripts/skills/skill", {
 		this.m.IsAttack = false;
 		this.m.IsIgnoredAsAOO = true;
 		this.m.IsUsingHitchance = false;
-		this.m.ActionPointCost = 0;
+		this.m.ActionPointCost = 2;
 		this.m.FatigueCost = 3;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 9;
@@ -116,13 +117,18 @@ this.legend_protect_target <- this.inherit("scripts/skills/skill", {
 
 	function onVerifyTarget( _originTile, _targetTile )
 	{
+
 		if (!this.skill.onVerifyTarget(_originTile, _targetTile))
 		{
 			return false;
 		}
 
-		local target = _targetTile.getEntity();
+		if (_targetTile.getEntity().getID() == _originTile.getEntity().getID())
+		{
+			return true;
+		}
 
+		local target = _targetTile.getEntity();
 		if (!this.m.Container.getActor().isAlliedWith(target))
 		{
 			return false;
@@ -157,34 +163,33 @@ this.legend_protect_target <- this.inherit("scripts/skills/skill", {
 				continue;
 			}
 
-			local hasSkill = pet.getSkills().hasSkill("effects.legend_guard")
+			local skill = pet.getSkills().getSkillByID("effects.legend_guard")
 
 			if (_t == null)
 			{
-				if (hasSkill)
+				if (skill != null)
 				{
-					local skill = pet.getSkills().getSkillByID("effects.legend_guard")
 					skill.setTarget(null)
 				}
 				continue;
 			}
 
-			if (!hasSkill)
+			if (skill == null)
 			{
-				pet.getSkills().add(this.new("scripts/skills/effects/legend_guard_effect"));
+				skill = this.new("scripts/skills/effects/legend_guard_effect")
+				pet.getSkills().add(skill);
 			}
 
-			local guard = pet.getSkills().getSkillByID("effects.legend_guard");
-			guard.setTarget(target);
+			skill.setTarget(_t);
 			this.spawnIcon("status_effect_103", pet.getTile());
-			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " orders " + this.Const.UI.getColorizedEntityName(pet) + " to protect " + this.Const.UI.getColorizedEntityName(target));
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(pet) + " is now protecting " + this.Const.UI.getColorizedEntityName(_t));
 		}
 
 		if (_t == null)
 		{
 			return;
 		}
-		target.getSkills().add(this.new("scripts/skills/effects/guarded_effect"));
+		_t.getSkills().add(this.new("scripts/skills/effects/guarded_effect"));
 		this.m.LastTarget = _t.getID();
 	}
 

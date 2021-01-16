@@ -7,7 +7,7 @@ this.legend_attack_target <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.ID = "actives.legend_attack_target";
-		this.m.Name = "Go Get\'em Boys!";
+		this.m.Name = "Chopper sick balls!";
 		this.m.Description = "Orders your pet to prioritize attacking a specific target.";
 		this.m.Icon = "ui/perks/perk_38_active.png";
 		this.m.IconDisabled = "ui/perks/perk_38_active_sw.png";
@@ -26,10 +26,10 @@ this.legend_attack_target <- this.inherit("scripts/skills/skill", {
 		this.m.IsAttack = false;
 		this.m.IsIgnoredAsAOO = true;
 		this.m.IsUsingHitchance = false;
-		this.m.ActionPointCost = 0;
+		this.m.ActionPointCost = 2;
 		this.m.FatigueCost = 3;
 		this.m.MinRange = 1;
-		this.m.MaxRange = 99;
+		this.m.MaxRange = 9;
 		this.m.MaxLevelDifference = 4;
 		this.m.IsRemovedAfterBattle = true;
 	}
@@ -164,7 +164,7 @@ this.legend_attack_target <- this.inherit("scripts/skills/skill", {
 		{
 			return;
 		}
-		target.getSkills().add(this.new("scripts/skills/effects/marked_effect"));
+		_t.getSkills().add(this.new("scripts/skills/effects/marked_effect"));
 		this.m.LastTarget = _t.getID();
 	}
 
