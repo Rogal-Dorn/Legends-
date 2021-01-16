@@ -1150,14 +1150,12 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 
 		if (candidate_veteran.len() == 0)
 		{
-			//return "A";
-			return "C";
-
+			return "A";
 		}
 
 		this.m.Veteran = candidate_veteran[this.Math.rand(0, candidate_veteran.len() - 1)]
 
-		if ( candidate_veteran < 3 )
+		if ( candidate_veteran.len() < 3 )
 		{
 			return "B";
 		}
