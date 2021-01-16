@@ -205,7 +205,7 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 		local items = this.getContainer().getActor().getItems();
 		local r;
 		items.equip(this.Const.World.Common.pickHelmet([
-			[1, "hunters_hat"],
+			[3, "hunters_hat"],
 			[1, "aketon_cap"],
 			[1, "open_leather_cap"]
 		]));
