@@ -635,7 +635,7 @@ layers = [
  "title" :  "Kettle Helm", \
  "desc" :  "An exceptional and sturdy kettle helm. Blackened and polished, it has a gilded point." \
 },
-{"name" : "enclave_kettle"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 2100, "con" : 160, "stam" : -8, "vis" : -2, "hair" : "true", "beard" : "false",  \
+{"name" : "enclave_kettle"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1600, "con" : 160, "stam" : -6, "vis" : -2, "hair" : "true", "beard" : "false",  \
  "title" :  "Kettle Sallet", \
  "desc" :  "A full-metal sallet with a broad rim." \
 },
