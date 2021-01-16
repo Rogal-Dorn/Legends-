@@ -1,4 +1,4 @@
-::mods_hookNewObject("scripts/contracts/contract/barbarian_king_contract", function(o) {
+::mods_hookNewObject("contracts/contract/barbarian_king_contract", function(o) {
 
 
 	local csFn = o.createScreens;
