@@ -1,6 +1,6 @@
-this.legend_unleash_hound <- this.inherit("scripts/skills/skill", {
+this.legend_unleash_hound <- this.inherit("scripts/skills/actives/unleash_animal", {
 	m = {
-		Entity = null,			
+		Entity = null,
 		EntityName = "Hound",
 		Script = "scripts/entity/tactical/warhound",
 		Sounds0 = [
@@ -77,7 +77,7 @@ this.legend_unleash_hound <- this.inherit("scripts/skills/skill", {
 
 	function addResources()
 	{
-		this.skill.addResources();
+		this.unleash_animal.addResources();
 
 		foreach( r in this.m.Sounds0 )
 		{
@@ -140,7 +140,7 @@ this.legend_unleash_hound <- this.inherit("scripts/skills/skill", {
 			return false;
 		}
 
-		if (this.m.Entity != null || !this.skill.isUsable())
+		if (this.m.Entity != null || !this.unleash_animal.isUsable())
 		{
 			return false;
 		}
@@ -151,7 +151,7 @@ this.legend_unleash_hound <- this.inherit("scripts/skills/skill", {
 	function onVerifyTarget( _originTile, _targetTile )
 	{
 		local actor = this.getContainer().getActor();
-		return this.skill.onVerifyTarget(_originTile, _targetTile) && _targetTile.IsEmpty;
+		return this.unleash_animal.onVerifyTarget(_originTile, _targetTile) && _targetTile.IsEmpty;
 	}
 
 	function onUse( _user, _targetTile )
@@ -160,17 +160,13 @@ this.legend_unleash_hound <- this.inherit("scripts/skills/skill", {
 		local entity = this.Tactical.spawnEntity(this.m.Script, _targetTile.Coords.X, _targetTile.Coords.Y);
 		entity.setFaction(this.Const.Faction.PlayerAnimals);
 		entity.setName(this.m.EntityName);
-		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_dogwhisperer"))
-		{
-			entity.getSkills().add(this.new("scripts/skills/perks/perk_fortified_mind"));
-			entity.getSkills().add(this.new("scripts/skills/perks/perk_colossus"));
-			entity.getSkills().add(this.new("scripts/skills/perks/perk_underdog"));
-		}
 
 		if (this.getContainer().hasSkill("background.houndmaster"))
 		{
 			entity.setMoraleState(this.Const.MoraleState.Confident);
 		}
+
+		this.addAnimalSkills(entity);
 
 		if (!this.World.getTime().IsDaytime)
 		{
