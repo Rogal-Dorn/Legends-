@@ -47,7 +47,7 @@ this.legend_ironmonger_background <- this.inherit("scripts/skills/backgrounds/ch
 				this.Const.Perks.ThrowingTree
 			],
 			Defense = [
-				this.Const.Perks.MediumArmorTree
+				this.Const.Perks.HeavyArmorTree
 			],
 			Traits = [
 				this.Const.Perks.IndestructibleTree,

@@ -64,9 +64,14 @@ this.legend_death_summoner_background <- this.inherit("scripts/skills/background
 				this.Const.Perks.ViciousTree
 			],
 			Enemy = [],
-			Class = [],
+			Class = [this.Const.Perks.NinetailsClassTree],
 			Magic = [this.Const.Perks.ZombieMagicTree]
 		}
+	}
+
+	function isCultist()
+	{
+		return true;
 	}
 
 	function getTooltip()
@@ -138,7 +143,7 @@ this.legend_death_summoner_background <- this.inherit("scripts/skills/background
 		this.getContainer().getActor().fillTalentValues(1, true);
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.Const.World.Common.pickHelmet([
-			[1, ""],
+			[1, "cultist_hood"],
 			[1, "dark_cowl"],
 			[1, "witchhunter_hat"]
 		]));
@@ -146,7 +151,28 @@ this.legend_death_summoner_background <- this.inherit("scripts/skills/background
 		items.equip(this.Const.World.Common.pickArmor([
 			[1, "thick_dark_tunic"]
 		]));
-		items.equip(this.new("scripts/items/weapons/legend_grisly_scythe"));
-		local stash = this.World.Assets.getStash()
+		local r;
+		r = this.Math.rand(0, 8);
+
+		if (r == 0)
+		{
+			items.equip(this.new("scripts/items/weapons/legend_scythe"));
+		}
+		else if (r == 1)
+		{
+			items.equip(this.new("scripts/items/weapons/legend_staff"));
+		}
+		else if (r == 2)
+		{
+			items.equip(this.new("scripts/items/weapons/legend_staff_gnarled"));
+		}
+		else if (r == 3)
+		{
+			items.equip(this.new("scripts/items/weapons/battle_whip"));
+		}
+		else if (r >= 4)
+		{
+		 items.equip(this.new("scripts/items/weapons/legend_cat_o_nine_tails"));
+		}
 	}
 });
