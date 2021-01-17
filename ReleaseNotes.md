@@ -4771,3 +4771,8 @@ Jewelry no longer hides hair
 Fixes AI not doing anything when using crusader holy flame perk
 Fixes missing mummy wig preventing mastaba from loading
 Fixes gravedigger perk not applying to all two handed maces
+
+IMPORTANT: PLease remove any temporary patches you have from previous versions, thank you!
+Download: https://drive.google.com/file/d/1g27rzdbG2AclEPJ1hfqroJLrSfhrEnpG/view?usp=sharing
+To Install: Simply drag and drop this file to your data folder, please do not unzip this file!
+
