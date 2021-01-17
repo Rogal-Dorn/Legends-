@@ -4771,3 +4771,12 @@ Jewelry no longer hides hair
 Fixes AI not doing anything when using crusader holy flame perk
 Fixes missing mummy wig preventing mastaba from loading
 Fixes gravedigger perk not applying to all two handed maces
+
+15.0.0.27
+
+**changes**
+increases minium view distance when camped 
+
+**fixes**
+crash on entering town with a woolspinner location 
+
